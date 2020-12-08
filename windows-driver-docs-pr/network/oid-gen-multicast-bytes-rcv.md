@@ -1,16 +1,15 @@
 ---
 title: OID_GEN_MULTICAST_BYTES_RCV
 description: 作为查询，OID_GEN_MULTICAST_BYTES_RCV OID 指定了在未发生错误的情况下接收的多播/功能数据包中的字节数。
-ms.assetid: 9c360aeb-f9b0-41d2-a6e0-feacd5419f55
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_GEN_MULTICAST_BYTES_RCV 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 5451484b20d76869c9d79c19806bedfcb30fbd66
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: e60b6062a66e077f949726705d4a9837002bb60a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89217995"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96786099"
 ---
 # <a name="oid_gen_multicast_bytes_rcv"></a>OID \_ 生成 \_ 多播 \_ 字节 \_ RCV
 
@@ -55,7 +54,7 @@ ms.locfileid: "89217995"
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [OID \_ 生成 \_ 统计信息](oid-gen-statistics.md)

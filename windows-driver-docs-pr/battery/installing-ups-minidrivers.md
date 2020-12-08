@@ -1,17 +1,16 @@
 ---
 title: 安装 UPS 微型驱动程序
 description: 安装 UPS 微型驱动程序
-ms.assetid: 37f91b0d-79b1-4482-9db7-8007f78194ac
 keywords:
 - 微型驱动程序 WDK，安装
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c5a3fab29ad4d13d519bf80a0f5ce1d414b6eea8
-ms.sourcegitcommit: 7a7e61b4147a4aa86bf820fd0b0c7681fe17e544
+ms.openlocfilehash: 47a93feafdaf3026eaf08dabb7bf0f4777f12f20
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89056905"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96784337"
 ---
 # <a name="installing-ups-minidrivers"></a>安装 UPS 微型驱动程序
 

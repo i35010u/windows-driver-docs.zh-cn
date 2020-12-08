@@ -1,7 +1,6 @@
 ---
 title: 将打印机驱动程序与 CPSUI 配合使用
 description: 将打印机驱动程序与 CPSUI 配合使用
-ms.assetid: 898a855d-6a9a-4f98-9ee4-bad439427326
 keywords:
 - 公共属性表用户界面 WDK 打印，显示属性表页
 - CPSUI WDK 打印，显示属性页面页面
@@ -12,12 +11,12 @@ keywords:
 - 属性表页 WDK 打印，关于 CPSUI 与打印机驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cc60847f434b8e063dfb387cd52cc72d7368b3e9
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: e936592a58559456e72c2cb1a1359065ce3da67c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89212635"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96785995"
 ---
 # <a name="using-cpsui-with-printer-drivers"></a>将打印机驱动程序与 CPSUI 配合使用
 
@@ -33,7 +32,7 @@ ms.locfileid: "89212635"
 
 3.  CPSUI 调用后台处理程序的 PFNPROPSHEETUI 类型的回调函数。
 
-4.  后台处理程序的 PFNPROPSHEETUI 类型回调函数使用[**CPSFUNC \_ 添加 \_ PFNPROPSHEETUI**](/previous-versions/ff546391(v=vs.85))函数代码调用 CPSUI 的[**ComPropSheet**](/windows-hardware/drivers/ddi/compstui/nc-compstui-pfncompropsheet) (函数) ，以通知 CPSUI 适当的打印机接口 DLL [**DrvDocumentPropertySheets**](/windows-hardware/drivers/ddi/winddiui/nf-winddiui-drvdocumentpropertysheets)函数的地址。
+4.  后台处理程序的 PFNPROPSHEETUI 类型回调函数使用 [**CPSFUNC \_ 添加 \_ PFNPROPSHEETUI**](/previous-versions/ff546391(v=vs.85))函数代码调用 CPSUI 的 [**ComPropSheet**](/windows-hardware/drivers/ddi/compstui/nc-compstui-pfncompropsheet) (函数) ，以通知 CPSUI 适当的打印机接口 DLL [**DrvDocumentPropertySheets**](/windows-hardware/drivers/ddi/winddiui/nf-winddiui-drvdocumentpropertysheets)函数的地址。
 
 5.  CPSUI 调用打印机接口 DLL 的 **DrvDocumentPropertySheets** 函数。
 

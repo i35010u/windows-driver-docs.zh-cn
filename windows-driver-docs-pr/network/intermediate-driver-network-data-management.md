@@ -1,19 +1,18 @@
 ---
 title: 中间驱动程序网络数据管理
 description: 中间驱动程序网络数据管理
-ms.assetid: 12f708b9-32f2-470c-bc4d-7c1b0c1012b1
 keywords:
 - 中级驱动程序 WDK 网络，网络数据管理
 - NDIS 中间驱动程序 WDK，网络数据管理
 - 网络数据管理 WDK NDIS 中间
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ef0dd62bf85915d4cad11c5e3725af80f9cdfbfb
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 80358d32e5b5407609f3f80ce54d914389ffe975
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89215626"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96786139"
 ---
 # <a name="intermediate-driver-network-data-management"></a>中间驱动程序网络数据管理
 

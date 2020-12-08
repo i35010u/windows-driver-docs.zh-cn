@@ -1,7 +1,6 @@
 ---
 title: 控制目标
 description: 控制目标
-ms.assetid: b329e9a2-7d24-4612-9aa1-9d7955a61473
 keywords:
 - Windows 设备测试框架 WDK，操作接口
 - WDTF WDK，操作接口
@@ -18,12 +17,12 @@ keywords:
 - 测试脚本 WDK WDTF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 52bb62e44496a5582e07b542364e3fb3993e7988
-ms.sourcegitcommit: b839cc39f4f5c80107e4433b00fe497bdffcda53
+ms.openlocfilehash: f74c2d1f080791fb72b6e7f31c52be1deb4aa0f6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/04/2020
-ms.locfileid: "96595341"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96785403"
 ---
 # <a name="controlling-targets"></a>控制目标
 

@@ -1,15 +1,14 @@
 ---
 title: V4 打印机驱动程序渲染体系结构
 description: V4 打印机驱动程序模型的呈现体系结构与 XPSDrv 体系结构相同。
-ms.assetid: 132BB5D5-426C-4449-8562-B5E43E331858
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 04a3f0a7d68b1049971b22ccfb3860d883190d17
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: d16798c4029196eed7dccef3288d29a7a8d21216
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89211921"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96785919"
 ---
 # <a name="v4-printer-driver-rendering-architecture"></a>V4 打印机驱动程序渲染体系结构
 

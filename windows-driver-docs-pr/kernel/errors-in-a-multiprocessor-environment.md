@@ -1,7 +1,6 @@
 ---
 title: 多处理器环境出错
 description: 多处理器环境出错
-ms.assetid: 8a76b8d6-14d8-4709-8b15-e8b6b5094a1b
 keywords:
 - 可靠性 WDK 内核，争用条件
 - 争用条件 WDK 内核
@@ -13,12 +12,12 @@ keywords:
 - 线程冲突 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8a12469e12d5777864920a04d481b5f391ed76bf
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 53ae2be98e3fa53f51a40f4d0481c56a60c01c0d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89192695"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96785135"
 ---
 # <a name="errors-in-a-multiprocessor-environment"></a>多处理器环境出错
 
@@ -32,7 +31,7 @@ ms.locfileid: "89192695"
 
 ### <a name="encountering-a-race-condition-when-referencing-global-or-file-object-specific-data"></a>引用全局或特定于对象的对象数据时遇到争用条件
 
-在以下代码片段中，当驱动程序访问 **LpcInfo**中的全局数据时，可能会出现争用条件：
+在以下代码片段中，当驱动程序访问 **LpcInfo** 中的全局数据时，可能会出现争用条件：
 
 ```cpp
    PLPC_INFO pLpcInfo = &Data.LpcInfo; //Pointer to global data
@@ -46,7 +45,7 @@ ms.locfileid: "89192695"
 
 由于 IOCTL 调用，多个线程输入此代码可能会导致内存泄漏，因为指针被覆盖。 若要避免此问题，驱动程序应使用 **ExInterlocked * Xxx*** 例程，或在更改全局数据时使用某种类型的锁。 驱动程序的要求确定可接受的锁类型。 有关详细信息，请参阅 [自旋锁](./introduction-to-spin-locks.md)、 [内核调度程序对象](./introduction-to-kernel-dispatcher-objects.md)和 [**ExAcquireResourceSharedLite**](/previous-versions/ff544363(v=vs.85))。
 
-下面的示例尝试重新分配特定于文件的缓冲区 (** &gt; LocalAddress**) 以保存终结点地址：
+下面的示例尝试重新分配特定于文件的缓冲区 (**&gt; LocalAddress**) 以保存终结点地址：
 
 ```cpp
    Endpoint = FileObject->FsContext;

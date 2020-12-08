@@ -1,7 +1,6 @@
 ---
 title: WSDMON 端口监视器
 description: WSDMON 端口监视器
-ms.assetid: fd6b0136-ca6e-4882-b6b9-be868f0dfc18
 keywords:
 - 打印监视器 WDK，WSDMON
 - WSDMON 端口监视器 WDK
@@ -10,12 +9,12 @@ keywords:
 - WSD 相容性 WDK 打印
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8dfc071efc24a31814fe735f26eae13424f73344
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: afd11d2b000cdd455908c9a3dadeee625b898fed
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89205855"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96785763"
 ---
 # <a name="wsdmon-port-monitor"></a>WSDMON 端口监视器
 

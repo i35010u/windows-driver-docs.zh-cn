@@ -1,18 +1,17 @@
 ---
 title: WDTF 对象日志记录
 description: WDTF 对象日志记录
-ms.assetid: A99E62D1-31A2-46B5-841B-F3969854E39A
 keywords:
 - 记录 WDK WDTF
 - 跟踪 WDK WDTF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 185082ae01c6a3908985e154632e5a4d2f441a4c
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: 129a04541ffe579848de13ca6ee47ea945179fc7
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89402694"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96785377"
 ---
 # <a name="wdtf-object-logging"></a>WDTF 对象日志记录
 

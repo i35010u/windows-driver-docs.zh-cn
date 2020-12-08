@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ DIRECTSOUND3DBUFFER \_ 速度
 description: KSPROPERTY \_ DIRECTSOUND3DBUFFER \_ 速度属性指定三维声音缓冲区的速度。
-ms.assetid: 34afca42-0280-4d54-922d-f204cbfec084
 keywords:
 - KSPROPERTY_DIRECTSOUND3DBUFFER_VELOCITY 音频设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ed54915071fc45504784a2a4b19eb9a6af14b6af
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: f69594b6dd79f8454f149a36e9ceda8053e6d5d9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102558"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96784395"
 ---
 # <a name="ksproperty_directsound3dbuffer_velocity"></a>KSPROPERTY \_ DIRECTSOUND3DBUFFER \_ 速度
 
@@ -74,7 +73,7 @@ KSPROPERTY \_ DIRECTSOUND3DBUFFER \_ 速度属性请求返回状态 " \_ 成功"
 
 -   DS3DBUFFER 结构的 **vVelocity** 成员。
 
--   **IDirectSound3DBuffer：： GetVelocity**和**IDirectSound3DBuffer：： GetVelocity**方法。
+-   **IDirectSound3DBuffer：： GetVelocity** 和 **IDirectSound3DBuffer：： GetVelocity** 方法。
 
 <a name="requirements"></a>要求
 ------------

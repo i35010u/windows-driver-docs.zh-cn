@@ -1,7 +1,6 @@
 ---
-title: KSPROPERTY\_AUDIO\_DEV\_SPECIFIC
-description: KSPROPERTY\_音频\_开发人员\_特定的属性用于访问特定于设备的节点中的特定于设备的属性 (KSNODETYPE\_开发人员\_特定)。
-ms.assetid: f3f2e340-7403-4c86-841f-7008afda28a5
+title: KSPROPERTY \_ \_ \_ 特定于音频的开发
+description: KSPROPERTY \_ AUDIO \_ DEV \_ 特定属性用于访问特定于设备的节点中特定于设备的属性， (KSNODETYPE \_ DEV \_ 特定) 。
 keywords:
 - KSPROPERTY_AUDIO_DEV_SPECIFIC 音频设备
 topic_type:
@@ -14,22 +13,22 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dd1b56d5f89cf793677082e9197c3da2718d73e7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7f07324df2ad0930427d41b91c8c1874970a9034
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333060"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96784527"
 ---
-# <a name="kspropertyaudiodevspecific"></a>KSPROPERTY\_AUDIO\_DEV\_SPECIFIC
+# <a name="ksproperty_audio_dev_specific"></a>KSPROPERTY \_ \_ \_ 特定于音频的开发
 
 
-`KSPROPERTY_AUDIO_DEV_SPECIFIC`属性用于访问特定于设备的节点中的特定于设备的属性 ([**KSNODETYPE\_开发人员\_特定**](ksnodetype-dev-specific.md))。
+属性用于访问特定于设备的节点中特定于设备的 `KSPROPERTY_AUDIO_DEV_SPECIFIC` 属性 ([**KSNODETYPE \_ DEV \_ 特定**](ksnodetype-dev-specific.md)) 。
 
 ## <span id="ddk_ksproperty_audio_dev_specific_ks"></span><span id="DDK_KSPROPERTY_AUDIO_DEV_SPECIFIC_KS"></span>
 
 
-### <a name="span-idusagesummarytablespanspan-idusagesummarytablespanspan-idusagesummarytablespanusage-summary-table"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用率摘要表
+### <a name="span-idusage_summary_tablespanspan-idusage_summary_tablespanspan-idusage_summary_tablespanusage-summary-table"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用情况摘要表
 
 <table>
 <colgroup>
@@ -41,7 +40,7 @@ ms.locfileid: "63333060"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Get</th>
+<th align="left">获取</th>
 <th align="left">设置</th>
 <th align="left">目标</th>
 <th align="left">属性描述符类型</th>
@@ -50,29 +49,29 @@ ms.locfileid: "63333060"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>&lt;device-specific&gt;</p></td>
-<td align="left"><p>&lt;device-specific&gt;</p></td>
-<td align="left"><p>&lt;device-specific&gt;</p></td>
-<td align="left"><p>&lt;device-specific&gt;</p></td>
-<td align="left"><p>&lt;device-specific&gt;</p></td>
+<td align="left"><p>&lt;设备特定&gt;</p></td>
+<td align="left"><p>&lt;设备特定&gt;</p></td>
+<td align="left"><p>&lt;设备特定&gt;</p></td>
+<td align="left"><p>&lt;设备特定&gt;</p></td>
+<td align="left"><p>&lt;设备特定&gt;</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-以特定于设备的格式表示的属性值 （操作数据）。
+) 操作数据 (的属性值以特定于设备的格式表示。
 
-该属性是否支持 get 或 set 属性请求也是特定于设备。
+属性是否支持获取或设置属性请求也是特定于设备的。
 
-### <a name="span-idreturnvaluespanspan-idreturnvaluespanspan-idreturnvaluespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>返回值
+### <a name="span-idreturn_valuespanspan-idreturn_valuespanspan-idreturn_valuespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>返回值
 
-此属性返回任一状态\_成功或第三方提供商的音频驱动程序确定的设备特定值。
+此属性返回状态 \_ 成功或由音频驱动程序的第三方提供程序确定的设备特定值。
 
 <a name="remarks"></a>备注
 -------
 
-在 Windows Vista 和更高版本的 Windows，一个附加选项卡中 (标记为**自定义**) 中提供**声音**小程序中的**控制面板**。 **自定义**选项卡显示用于自动增益控制 (AGC) 和特定于设备的属性的控件。 下表显示了在中公开的控件**声音**各种小程序`KSPROPERTY_AUDIO_DEV_SPECIFIC`属性和数据类型的组合。
+在 Windows Vista 和更高版本的 Windows 中，"**控制面板**" 的 "**声音**" 小程序中提供了一个附加选项卡 (标签为 "**自定义**) "。 " **自定义** " 选项卡显示 (AGC) 和特定于设备的属性的自动获取控件的控件。 下表显示了在 **声音** 小程序中为各种 `KSPROPERTY_AUDIO_DEV_SPECIFIC` 属性和数据类型组合公开的控件。
 
 <table>
 <colgroup>
@@ -84,7 +83,7 @@ ms.locfileid: "63333060"
 <tr class="header">
 <th align="left">KSPROPERTY</th>
 <th align="left">数据类型</th>
-<th align="left">控件</th>
+<th align="left">控制</th>
 </tr>
 </thead>
 <tbody>
@@ -100,7 +99,7 @@ ms.locfileid: "63333060"
 </tr>
 <tr class="odd">
 <td align="left"><p>KSPROPERTY_AUDIO_DEV_SPECIFIC</p></td>
-<td align="left"><p>长</p></td>
+<td align="left"><p>LONG</p></td>
 <td align="left"><p>Slider</p></td>
 </tr>
 <tr class="even">
@@ -113,11 +112,11 @@ ms.locfileid: "63333060"
 
  
 
-**KSPROPERTY\_音频\_AGC**必须用于公开实际 AGC 功能的设备中。 其他特定于设备的功能必须通过使用公开`KSPROPERTY_AUDIO_DEV_SPECIFIC`。
+**KSPROPERTY \_必须使用音频 \_ AGC** 公开设备中的实际 AGC 功能。 其他特定于设备的功能必须使用公开 `KSPROPERTY_AUDIO_DEV_SPECIFIC` 。
 
-若要查看**自定义**选项卡上，选择音频呈现或中的捕获设备**声音**小程序，然后单击*属性*。
+若要查看 " **自定义** " 选项卡，请在 **声音** 小程序中选择音频呈现器或捕获设备，然后单击 " *属性*"。
 
-有关如何实现的属性处理程序的示例`KSPROPERTY_AUDIO_DEV_SPECIFIC`属性，请参阅**CMiniportTopologyMSVAD::PropertyHandlerDevSpecific** Basetopo.cpp 文件中的方法。
+有关如何为属性实现属性处理程序的示例 `KSPROPERTY_AUDIO_DEV_SPECIFIC` ，请参阅 Basetopo 文件中的 **CMiniportTopologyMSVAD：:P ropertyhandlerdevspecific** 方法。
 
 <a name="requirements"></a>要求
 ------------
@@ -129,22 +128,22 @@ ms.locfileid: "63333060"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>Version</p></td>
+<td align="left"><p>版本</p></td>
 <td align="left"><p>在 Windows Vista 和更高版本的 Windows 操作系统中可用。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>Header</p></td>
-<td align="left">Ksmedia.h （包括 Ksmedia.h）</td>
+<td align="left"><p>标头</p></td>
+<td align="left">Ksmedia (包含 Ksmedia) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[**KSNODETYPE\_开发人员\_特定**](ksnodetype-dev-specific.md)
+[**KSNODETYPE \_ 开发人员 \_ 特定**](ksnodetype-dev-specific.md)
 
-[**KSPROPERTY\_AUDIO\_AGC**](ksproperty-audio-agc.md)
+[**KSPROPERTY \_ 音频 \_ AGC**](ksproperty-audio-agc.md)
 
  
 

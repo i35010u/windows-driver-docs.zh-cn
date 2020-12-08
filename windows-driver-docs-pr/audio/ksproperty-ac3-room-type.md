@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ E-ac3 \_ 房间 \_ 类型
 description: KSPROPERTY \_ E-ac3 \_ 房间 \_ 类型属性指定在其中生成最终音频会话的混合房间的类型和校准。
-ms.assetid: 4e160fda-01f2-4517-bbc3-a9ae5b19f6c2
 keywords:
 - KSPROPERTY_AC3_ROOM_TYPE 音频设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 602c180bb4e0722aea80194a044955408f13f30d
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: cb19c07f863ef7952303193165c6615593335c02
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102333"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96784569"
 ---
 # <a name="ksproperty_ac3_room_type"></a>KSPROPERTY \_ E-ac3 \_ 房间 \_ 类型
 

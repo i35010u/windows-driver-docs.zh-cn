@@ -1,19 +1,18 @@
 ---
 title: 具有离散值的数据范围
 description: 具有离散值的数据范围
-ms.assetid: 330edd60-0469-4351-bfb1-29b29e133c1a
 keywords:
 - 数据交集处理程序 WDK 音频，离散值数据范围
 - 离散值数据范围 WDK 音频
 - 数据范围 WDK 音频，离散值
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 78559ed27b1a1cff7c8d8608fa1479531d0e8e3a
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 206a91a69806e0da7fd07d726c6505af9a97e0dd
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89208155"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96784883"
 ---
 # <a name="data-ranges-with-discrete-values"></a>具有离散值的数据范围
 

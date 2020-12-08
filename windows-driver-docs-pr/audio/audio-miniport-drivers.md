@@ -1,7 +1,6 @@
 ---
 title: 音频微型端口驱动程序
 description: 音频微型端口驱动程序
-ms.assetid: cf52759e-5da6-41a2-994d-4be15de9ae3d
 keywords:
 - WDM 音频驱动程序 WDK，微型端口驱动程序
 - 音频驱动程序 WDK，微型端口驱动程序
@@ -9,12 +8,12 @@ keywords:
 - 微型端口驱动程序 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 320e0031e3909b0306b074d51f1fb56d739ea048
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 5f1eda1800042767c182aed073eaf9b7078a7327
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89208299"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96784965"
 ---
 # <a name="audio-miniport-drivers"></a>音频微型端口驱动程序
 

@@ -1,15 +1,14 @@
 ---
 title: 工具示例
 description: 此目录中的驱动程序示例包含特意的代码错误，这些错误旨在显示静态驱动程序验证程序的功能和功能 (SDV) 。
-ms.assetid: 0B0487B1-C14D-4CD8-AE81-875E8886004D
 ms.date: 11/15/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 6721518036d752aba0d945bc6a04fe54170a0c56
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 0fa3fd79a3f18807736b90707d32d979c4a42b48
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89190227"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96785645"
 ---
 # <a name="tools-samples"></a>工具示例
 

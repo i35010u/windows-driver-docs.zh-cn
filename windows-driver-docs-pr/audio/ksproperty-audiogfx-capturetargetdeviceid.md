@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ AUDIOGFX \_ CAPTURETARGETDEVICEID
 description: KSPROPERTY \_ AUDIOGFX \_ CAPTURETARGETDEVICEID 属性用于向 GFX 筛选器发出捕获流源音频设备的即插即用设备 ID。
-ms.assetid: df4505c5-f9ff-4f8a-8521-90031c0b23e4
 keywords:
 - KSPROPERTY_AUDIOGFX_CAPTURETARGETDEVICEID 音频设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7870a5393e4779567056eeffdcc2f17e2b05d859
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 84c37ec6f78ecb129457a40bf7e889c587a5dc53
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102604"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96784423"
 ---
 # <a name="ksproperty_audiogfx_capturetargetdeviceid"></a>KSPROPERTY \_ AUDIOGFX \_ CAPTURETARGETDEVICEID
 

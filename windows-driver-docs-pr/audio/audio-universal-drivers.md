@@ -1,15 +1,14 @@
 ---
 title: 音频的通用 Windows 驱动程序
 description: 在 Windows 10 中，你可以编写一个通用音频驱动程序，该驱动程序将跨多种硬件类型工作。
-ms.assetid: F4B56B3F-792F-4887-AF0F-FFC1F000CB8F
 ms.date: 10/18/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: a5d206a67186cc8f30a2e29313ccd42724ee36eb
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 2d31454e3792b16e0ce141f83189c6fabece3c2c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90714832"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96784957"
 ---
 # <a name="universal-windows-drivers-for-audio"></a>音频的通用 Windows 驱动程序
 
@@ -122,9 +121,9 @@ SYSVAD 示例中仍提供了传统的 INF 文件。
 
 ### <a name="apo-vendor-specific-tuning-parameters-and-feature-configuration"></a>APO 供应商特定优化参数和功能配置
 
-必须通过扩展 INF 包安装所有 APO 的供应商系统特定的设置、参数和优化值。 在许多情况下，可以使用 [INF AddReg 指令](../install/inf-addreg-directive.md)简单地执行此方法。 在更复杂的情况下，可以使用优化文件。  
+必须通过扩展 INF 包安装所有 APO 的供应商系统特定的设置、参数和优化值。 在许多情况下，可以使用 [INF AddReg 指令](../install/inf-addreg-directive.md)简单地执行此方法。 在更复杂的情况下，可以使用优化文件。  
 
-基本驱动程序包不能依赖于这些自定义，因此 (功能，尽管当然，) 的功能可能会降低。  
+基本驱动程序包不能依赖于这些自定义，因此 (功能，尽管当然，) 的功能可能会降低。  
 
 ### <a name="uwp-audio-settings-apps"></a>UWP 音频设置应用
 
@@ -132,17 +131,17 @@ SYSVAD 示例中仍提供了传统的 INF 文件。
 
 ### <a name="programmatically-launching-uwp-hardware-support-apps"></a>以编程方式启动 UWP 硬件支持应用
 
-若要以编程方式启动 UWP 硬件支持应用（基于驱动程序事件） (例如，在将新的音频设备连接到) 时，请使用 Windows Shell Api。 Windows 10 Shell Api 支持基于资源激活或直接通过 [IApplicationActivationManager](/windows/win32/api/shobjidl_core/nf-shobjidl_core-iapplicationactivationmanager-activateapplication)启动 UWP UI 的方法。 可在 [自动启动 Windows 10 UWP 应用](/windows/uwp/xbox-apps/automate-launching-uwp-apps#launch-activation)中找到有关自动启动 uwp 应用程序的更多详细信息。  
+若要以编程方式启动 UWP 硬件支持应用（基于驱动程序事件） (例如，在将新的音频设备连接到) 时，请使用 Windows Shell Api。 Windows 10 Shell Api 支持基于资源激活或直接通过 [IApplicationActivationManager](/windows/win32/api/shobjidl_core/nf-shobjidl_core-iapplicationactivationmanager-activateapplication)启动 UWP UI 的方法。 可在 [自动启动 Windows 10 UWP 应用](/windows/uwp/xbox-apps/automate-launching-uwp-apps#launch-activation)中找到有关自动启动 uwp 应用程序的更多详细信息。  
 
 ### <a name="apo-and-device-driver-vendor-use-of-the-audiomodules-api"></a>APO 和设备驱动程序供应商使用 AudioModules API
 
-音频模块 API/DDI 设计用于标准化通信传输 (而不是协议) ，用于在 UWP 应用程序或用户模式服务之间传递到内核驱动程序模块或 DSP 处理块的命令。 音频模块需要驱动程序，该驱动程序实现正确的 DDI 以支持模块枚举和通信。 命令作为二进制传递，解释/定义留给创建者。  
+音频模块 API/DDI 设计用于标准化通信传输 (而不是协议) ，用于在 UWP 应用程序或用户模式服务之间传递到内核驱动程序模块或 DSP 处理块的命令。 音频模块需要驱动程序，该驱动程序实现正确的 DDI 以支持模块枚举和通信。 命令作为二进制传递，解释/定义留给创建者。  
 
 音频模块目前并未设计用于方便在音频引擎中运行的 UWP 应用和 SW APO 之间进行直接通信。
 
 有关音频模块的详细信息，请参阅 [实现音频模块通信](./implementing-audio-module-communication.md) 和 [配置和查询音频设备模块](./configure-and-query-audiodevicemodules.md)。
 
-### <a name="apo-hwid-strings-construction"></a>APO HWID 字符串构造  
+### <a name="apo-hwid-strings-construction"></a>APO HWID 字符串构造  
 
 APO 硬件 Id 结合了标准信息和供应商定义的字符串。
 
@@ -156,8 +155,8 @@ SWC\VEN_v(4)&AID_a(4)
 
 其中：
 
--  (4) 为 APO 设备供应商提供4个字符的标识符。 这将由 Microsoft 管理。  
--  (4) 是 APO 供应商定义的 APO 的4个字符的标识符。  
+-  (4) 为 APO 设备供应商提供4个字符的标识符。 这将由 Microsoft 管理。  
+-  (4) 是 APO 供应商定义的 APO 的4个字符的标识符。  
 - n (4) 是由四个字符组成的 PCI SIG 为父设备的子系统供应商指定的标识符。 这通常是 OEM 标识符。
 - s (4) 是父设备的由4个字符供应商定义的子系统标识符。 这通常是 OEM 产品标识符。
 
@@ -173,9 +172,9 @@ Windows 即插即用系统评估日期和驱动程序版本，以确定存在多
 
 ### <a name="use-a-windows-service-to-facilitate-uwp---apo-communication"></a>使用 Windows 服务来促进 UWP < > APO 通信
 
-管理用户模式组件（例如，如果你的设计包含 RPC 服务器来帮助 UWP < > APO 通信），则不一定需要 Windows 服务，我们建议在 Windows 服务中实现该功能，然后控制在音频引擎中运行的 APO。  
+管理用户模式组件（例如，如果你的设计包含 RPC 服务器来帮助 UWP < > APO 通信），则不一定需要 Windows 服务，我们建议在 Windows 服务中实现该功能，然后控制在音频引擎中运行的 APO。  
 
-## <a name="building-the-sysvad-universal-audio-sample-for-windows10-desktop"></a>构建适用于 Windows 10 桌面版的 Sysvad 通用音频示例
+## <a name="building-the-sysvad-universal-audio-sample-for-windows-10-desktop"></a>构建适用于 Windows 10 桌面版的 Sysvad 通用音频示例
 
 完成以下步骤以生成适用于 Windows 10 桌面的 sysvad 示例。
 
@@ -195,7 +194,7 @@ Windows 即插即用系统评估日期和驱动程序版本，以确定存在多
 
 6. 将以下文件复制到要安装 sysvad 驱动程序的系统：
 
-|文件|说明|
+|文件|描述|
 |----|----|
 | TabletAudioSample.sys      | 驱动程序文件。                                                                  |
 | tabletaudiosample .inf      |  (INF) 包含安装驱动程序所需的信息的信息。 |
@@ -220,7 +219,7 @@ Windows 即插即用系统评估日期和驱动程序版本，以确定存在多
 
 5. 在目标计算机上找到 MP3 或其他音频文件，然后双击以播放该文件。 然后在 "声音" 对话框中，验证与 Microsoft 虚拟音频设备 (WDM) -Sysvad 示例驱动程序关联的卷级别指示器中是否存在活动。
 
-## <a name="building-the-sysvad-universal-audio-sample-for-windows10-mobile"></a>构建适用于 Windows 10 移动版的 Sysvad 通用音频示例
+## <a name="building-the-sysvad-universal-audio-sample-for-windows-10-mobile"></a>构建适用于 Windows 10 移动版的 Sysvad 通用音频示例
 
 完成以下步骤以生成适用于 Windows 10 移动版的 sysvad 示例。
 

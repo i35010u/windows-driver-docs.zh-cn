@@ -1,17 +1,16 @@
 ---
 title: 应用 Speaker-Configuration 设置
 description: 应用 Speaker-Configuration 设置
-ms.assetid: 98fe96cc-8436-4400-9b39-86d188e085c9
 keywords:
 - 扬声器失败-配置请求 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8941b762ccbdd7385ee9b33d2f59f8ab4623f4e7
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: b2d9953b54f1cf95f4a6f5742a84e1004c8d97fe
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89208367"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96785029"
 ---
 # <a name="applying-speaker-configuration-settings"></a>应用 Speaker-Configuration 设置
 
@@ -19,13 +18,13 @@ ms.locfileid: "89208367"
 ## <span id="applying_speaker_configuration_settings"></span><span id="APPLYING_SPEAKER_CONFIGURATION_SETTINGS"></span>
 
 
-**注意**   此信息适用于 Windows XP 及更早版本的操作系统。 从 Windows Vista 开始， **IDirectSound：： GetSpeakerConfig** 和 **IDirectSound：： SetSpeakerConfig** 已弃用。
+**注意**  此信息适用于 Windows XP 及更早版本的操作系统。 从 Windows Vista 开始， **IDirectSound：： GetSpeakerConfig** 和 **IDirectSound：： SetSpeakerConfig** 已弃用。
 
  
 
 DirectSound 将跟踪其当前的扬声器配置设置，并在每次创建新的 DirectSound 设备时将该设置应用于音频硬件。
 
-应用程序可以通过调用 **IDirectSound：： SetSpeakerConfig** 方法来更改系统范围的扬声器配置，该方法更新注册表中的扬声器配置设置。 方法还尝试对硬件立即应用新设置，尽管音频设备通常无法在 DirectSound 对象存在时更改扬声器设置。 有关 DirectSound 为此方法定义的扬声器配置的列表，请参阅 [转换扬声器配置请求](translating-speaker-configuration-requests.md)。
+应用程序可以通过调用 **IDirectSound：： SetSpeakerConfig** 方法来更改系统范围的扬声器配置，该方法更新注册表中的扬声器配置设置。 方法还尝试对硬件立即应用新设置，尽管音频设备通常无法在 DirectSound 对象存在时更改扬声器设置。 有关 DirectSound 为此方法定义的扬声器配置的列表，请参阅 [转换 Speaker-Configuration 请求](translating-speaker-configuration-requests.md)。
 
 用户可以通过 " **媒体属性** " 页中的 "扬声器配置" 对话框（在 "控制面板" 中 ( # A0) 来更改配置。 例如，若要查找 Windows XP 下的 DirectSound 扬声器配置对话框，请遵循以下步骤：
 
@@ -47,7 +46,7 @@ DirectSound 使用 [**KSPROPERTY \_ 音频 \_ 通道 \_ 配置**](./ksproperty-a
 
 每次应用程序创建 DirectSound 对象或调用 **IDirectSound：： SetSpeakerConfig** 方法时，DirectSound 都会将演讲者配置请求发送到3D 和 DAC 节点。 音频设备在管理活动流时，通常无法更改其扬声器配置，DirectSound 尝试尽可能避免此限制。 例如，在创建 DirectSound 对象时，DirectSound 会在实例化筛选器后、在筛选器中实例化任何 pin 之前发送发言人配置请求，即在创建任何流之前。
 
-如果调用 **SetSpeakerConfig**，则此限制更难避免。 当应用程序调用 **SetSpeakerConfig**时，适配器驱动程序通常无法 DirectSound 的发言人配置请求。 这是因为 DirectSound 对象已存在，这意味着该设备已经具有要管理的活动流。
+如果调用 **SetSpeakerConfig**，则此限制更难避免。 当应用程序调用 **SetSpeakerConfig** 时，适配器驱动程序通常无法 DirectSound 的发言人配置请求。 这是因为 DirectSound 对象已存在，这意味着该设备已经具有要管理的活动流。
 
 在这种情况下，适配器驱动程序有两个选项可用于处理扬声器配置请求失败：
 
@@ -57,7 +56,7 @@ DirectSound 使用 [**KSPROPERTY \_ 音频 \_ 通道 \_ 配置**](./ksproperty-a
 
 第一种方法可提供更好的用户体验，因为如果用户通过 "扬声器配置" 对话框选择了新设置，则更改会立即在所有应用程序中生效-而不只是 DirectSound 应用程序。 当然，如果在选择新设置时运行任何音频应用程序，更改将推迟到所有音频应用程序终止之前。 ) 使用第二个选项，但是，在 DirectSound 应用程序运行之前，更改不会生效。 ( 例如，如果使用 Windows 多媒体 waveOut API 的应用程序是在更改控制面板设置后运行的第一个应用程序，则用户可能会想知道新设置没有明显的效果。
 
-为了响应发送到3D 或 DAC 节点的发言人配置请求，典型的适配器驱动程序仅在任何音频应用程序当前未实例化任何 pin 时才更新音频硬件中的扬声器配置。 这意味着，如果 waveOut 应用程序（例如）在第二个应用程序调用 **DirectSoundCreate**时打开一个或多个 pin，驱动程序可能需要将对音频设备扬声器配置的任何挂起的更改推迟到以后的时间。
+为了响应发送到3D 或 DAC 节点的发言人配置请求，典型的适配器驱动程序仅在任何音频应用程序当前未实例化任何 pin 时才更新音频硬件中的扬声器配置。 这意味着，如果 waveOut 应用程序（例如）在第二个应用程序调用 **DirectSoundCreate** 时打开一个或多个 pin，驱动程序可能需要将对音频设备扬声器配置的任何挂起的更改推迟到以后的时间。
 
 如果你的驱动程序无法完成更改设备扬声器配置的请求，则该请求应仅失败。 在 DirectSound 对象创建或 **SetSpeakerConfig** 调用期间，如果无法进行发言人配置请求，则不会导致 DirectSound 对象创建或 **SetSpeakerConfig** 调用失败。
 

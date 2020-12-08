@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ 音频 \_ 响度
 description: KSPROPERTY \_ AUDIO \_ 响度属性指定是否为响度节点 (KSNODETYPE 响度) 中的通道启用或禁用响度 (总体动态范围和低音提升) \_ 。
-ms.assetid: bc567e98-8a04-44f0-9ddf-7b71abf659a5
 keywords:
 - KSPROPERTY_AUDIO_LOUDNESS 音频设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1918ee3b79b4accd9a8d6b8b79371fff7c3d9242
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: e8b07adc0a5ac059565247849855fe0446aad20a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102640"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96784515"
 ---
 # <a name="ksproperty_audio_loudness"></a>KSPROPERTY \_ 音频 \_ 响度
 

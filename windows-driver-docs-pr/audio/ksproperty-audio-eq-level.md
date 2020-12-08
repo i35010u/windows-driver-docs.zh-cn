@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ 音频 \_ EQ \_ 级别
 description: KSPROPERTY \_ AUDIO \_ EQ \_ LEVEL 属性指定包含 n 个 frequency 区段条目的均衡表的均衡级别。 这是 (KSNODETYPE 均衡器) 的 EQ 节点中通道的属性 \_ 。
-ms.assetid: 17c34af2-dbeb-472c-9825-9dc64f7f96bd
 keywords:
 - KSPROPERTY_AUDIO_EQ_LEVEL 音频设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 66a8fd936168d89237686f00afd8982053486d79
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: c5cb6f8c98f31b6b951bcaae9620b2d6e4970ee0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102642"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96784521"
 ---
 # <a name="ksproperty_audio_eq_level"></a>KSPROPERTY \_ 音频 \_ EQ \_ 级别
 

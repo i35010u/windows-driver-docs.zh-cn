@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ 音频 \_ 延迟
 description: "\"KSPROPERTY \\_ 音频 \\_ 延迟\" 属性表示延迟节点 (KSNODETYPE \\_ 延迟) 引入指定通道的时间延迟。"
-ms.assetid: ac260b83-1d7c-49d7-b325-ea0f21646d39
 keywords:
 - KSPROPERTY_AUDIO_DELAY 音频设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1b2daf332afc2bf7661c715643eaf4a27e4471ae
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: a67675e51c9443c7b08c84a0ac32b4b47eaebf63
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102124"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96784531"
 ---
 # <a name="ksproperty_audio_delay"></a>KSPROPERTY \_ 音频 \_ 延迟
 

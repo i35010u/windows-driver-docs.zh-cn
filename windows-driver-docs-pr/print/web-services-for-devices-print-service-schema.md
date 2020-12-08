@@ -1,15 +1,14 @@
 ---
 title: 设备打印服务架构的 Web 服务
 description: 设备打印服务架构的 Web 服务
-ms.assetid: 6a629b69-73a9-4d78-ace1-4cb2c807db14
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7d75170227c492b6ce4d0ef7cc595dc87ace9c01
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 769571901a03f6169b0f1903c64daeb6c703e996
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89211866"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96785815"
 ---
 # <a name="web-services-for-devices-print-service-schema"></a>设备打印服务架构的 Web 服务
 

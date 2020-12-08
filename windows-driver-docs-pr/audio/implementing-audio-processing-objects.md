@@ -1,15 +1,14 @@
 ---
 title: 实现音频处理对象
 description: 本主题介绍如何 (APO) 实现音频处理对象。 有关的一般信息，请参阅音频处理对象体系结构。
-ms.assetid: 822FAF10-DAB3-48D1-B782-0C80B072D3FB
 ms.date: 06/12/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: cf0b8488e76ce3145928703207817118edc0d95e
-ms.sourcegitcommit: 20eac54e419a594f7cea766ee28f158559dfd79c
+ms.openlocfilehash: fa4a68ae94b81152e64e54383ecaacd8f88c3bfa
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91754982"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96784761"
 ---
 # <a name="implementing-audio-processing-objects"></a>实现音频处理对象
 
@@ -82,7 +81,7 @@ a. 您可以使用 GitHub 工具来处理示例。 你还可以将通用驱动�
 
 b. 将 master.zip 文件下载到本地硬盘驱动器。
 
-c. Selecct 并按住 (或右键单击) *Windows-driver-samples-master.zip*，然后选择 " **全部提取**"。 指定一个新文件夹，或浏览到将存储所提取文件的现有文件夹。 例如，可以指定*C： \\ DriverSamples \\ *作为要将文件提取到的新文件夹。
+c. Selecct 并按住 (或右键单击) *Windows-driver-samples-master.zip*，然后选择 " **全部提取**"。 指定一个新文件夹，或浏览到将存储所提取文件的现有文件夹。 例如，可以指定 *C： \\ DriverSamples \\* 作为要将文件提取到的新文件夹。
 
 d. 提取文件后，导航到以下子文件夹： *C： \\ DriverSamples \\ 音频 \\ Sysvad*
 
@@ -123,15 +122,15 @@ SwapAPO 示例的主头文件为 SwapAPO。 下面总结了其他主要代码元
 
 ## <a name="implementing-the-com-object-audio-processing-code"></a>实现 COM 对象音频处理代码
 
-可以通过将自定义类基于在 Baseaudioprocessingobject 文件中声明的 **CBaseAudioProcessingObject** 基类来包装系统提供的 APO。 此方法涉及到在 **CBaseAudioProcessingObject** 基类中引入新功能，以创建自定义的 APO。 **CBaseAudioProcessingObject**基类实现 APO 所需的大部分功能。 它为所需的三个接口中的大多数方法提供默认实现。 主要的例外是 [**IAudioProcessingObjectRT：： APOProcess**](/windows/win32/api/audioenginebaseapo/nf-audioenginebaseapo-iaudioprocessingobjectrt-apoprocess) 方法。
+可以通过将自定义类基于在 Baseaudioprocessingobject 文件中声明的 **CBaseAudioProcessingObject** 基类来包装系统提供的 APO。 此方法涉及到在 **CBaseAudioProcessingObject** 基类中引入新功能，以创建自定义的 APO。 **CBaseAudioProcessingObject** 基类实现 APO 所需的大部分功能。 它为所需的三个接口中的大多数方法提供默认实现。 主要的例外是 [**IAudioProcessingObjectRT：： APOProcess**](/windows/win32/api/audioenginebaseapo/nf-audioenginebaseapo-iaudioprocessingobjectrt-apoprocess) 方法。
 
 通过使用 **CBaseAudioProcessingObject**，你可以更轻松地实现 APO。 如果 APO 没有特殊的格式要求并且操作所需的 float32 格式，则 **CBaseAudioProcessingObject** 中包含的接口方法的默认实现应足以满足需要。 给定默认实现，只能实现三个主要方法： [**IAudioProcessingObject：： IsInputFormatSupported**](/windows/win32/api/audioenginebaseapo/nf-audioenginebaseapo-iaudioprocessingobject-isinputformatsupported)、 [**IAudioProcessingObjectRT：： APOProcess**](/windows/win32/api/audioenginebaseapo/nf-audioenginebaseapo-iaudioprocessingobjectrt-apoprocess)和 **ValidateAndCacheConnectionInfo**。
 
 若要基于 **CBaseAudioProcessingObject** 类开发您的，请执行以下步骤：
 
-1. 创建从 **CBaseAudioProcessingObject**继承的类。
+1. 创建从 **CBaseAudioProcessingObject** 继承的类。
 
-    下面的 c + + 代码示例演示如何创建从 **CBaseAudioProcessingObject**继承的类。 对于此概念的实际实现，请按照 **音频处理对象驱动程序示例** 部分中的说明操作，转到交换示例，然后引用 *Swapapo* 文件。
+    下面的 c + + 代码示例演示如何创建从 **CBaseAudioProcessingObject** 继承的类。 对于此概念的实际实现，请按照 **音频处理对象驱动程序示例** 部分中的说明操作，转到交换示例，然后引用 *Swapapo* 文件。
 
     ```cpp
     // Custom APO class - LFX
@@ -143,7 +142,7 @@ SwapAPO 示例的主头文件为 SwapAPO。 下面总结了其他主要代码元
     };
     ```
 
-    **注意**   由于 SFX APO 执行的信号处理不同于 MFX 或 EFX APO 执行的信号处理，因此必须为每个创建单独的类。
+    **注意**   由于 SFX APO 执行的信号处理不同于 MFX 或 EFX APO 执行的信号处理，因此必须为每个创建单独的类。
 
 2. 实现以下三种方法：
 
@@ -177,7 +176,7 @@ HRESULT CSwapAPOGFX::ValidateAndCacheConnectionInfo( ... )
 }
 ```
 
-**注意**   类继承自**CBaseAudioProcessingObject**的剩余接口和方法在 Audioenginebaseapo 文件中进行了详细介绍。
+**注意**  类继承自 **CBaseAudioProcessingObject** 的剩余接口和方法在 Audioenginebaseapo 文件中进行了详细介绍。
 
 ## <a name="replacing-system-supplied-apos"></a>替换系统提供的
 
@@ -222,7 +221,7 @@ CMyFromScratchAPO::IsInputFormatSupported {
 
 面向 Windows 10 的驱动程序应动态地链接到通用 CRT。
 
-如果需要支持 Windows 8，1，请通过在 C/c + + 中设置项目属性，代码生成启用静态链接。 对于发布版本，请将 "运行时库" 设置为 */mt* ，或将 */MTd* 设置为用于调试版本。 进行此更改的原因是，对于驱动程序，很难再分发 MSVCRT.LIB &lt; 的 &gt; 二进制文件。 解决方案是以静态方式链接 libcmt.dll。 有关详细信息，请参阅 [/md、/mt、/ld (使用运行时库) ](/cpp/build/reference/md-mt-ld-use-run-time-library) 。
+如果需要支持 Windows 8，1，请通过在 C/c + + 中设置项目属性，代码生成启用静态链接。 对于发布版本，请将 "运行时库" 设置为 */mt* ，或将 */MTd* 设置为用于调试版本。 进行此更改的原因是，对于驱动程序，很难再分发 MSVCRT.LIB &lt; 的 &gt; 二进制文件。 解决方案是以静态方式链接 libcmt.dll。 有关详细信息，请参阅 [/md、/mt、/ld (使用 Run-Time 库) ](/cpp/build/reference/md-mt-ld-use-run-time-library) 。
 
 ### <a name="disable-use-of-an-embedded-manifest"></a>禁止使用嵌入清单
 
@@ -544,7 +543,7 @@ KSNODETYPE_SPEAKER  = "{DFF21CE1-F70F-11D0-B917-00A0C9223196}"
 ...
 ```
 
-对于 KSNODETYPE， **NULL**值为 NULL \_ 表示此 APO 与任何类型的 KS 节点类型兼容。 例如，若要指示 APO 仅与 KSNODETYPE 发言人的 KS 节点类型兼容 \_ ，则 INF 文件会显示 ks 节点类型和 APO 关联，如下所示：
+对于 KSNODETYPE， **NULL** 值为 NULL \_ 表示此 APO 与任何类型的 KS 节点类型兼容。 例如，若要指示 APO 仅与 KSNODETYPE 发言人的 KS 节点类型兼容 \_ ，则 INF 文件会显示 ks 节点类型和 APO 关联，如下所示：
 
 ```inf
 ;; Key value pairs

@@ -1,18 +1,17 @@
 ---
 title: 在 Windows 更新上为生物识别驱动程序排名
 description: 在 Windows 更新上为生物识别驱动程序排名
-ms.assetid: fc8634ab-0ecd-4390-9834-825f60fe68ce
 keywords:
 - 生物识别驱动程序 WDK，Windows 更新排名
 - 排名生物识别驱动程序 WDK 生物识别
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 37df547662f378510284310f8b61f6979e6459e7
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 0e0b73da5dfb2d137f95dc244092f3fefc8024b1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89095417"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96784281"
 ---
 # <a name="ranking-a-biometric-driver-on-windows-update"></a>在 Windows 更新上为生物识别驱动程序排名
 

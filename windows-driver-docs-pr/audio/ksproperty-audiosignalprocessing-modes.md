@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ AUDIOSIGNALPROCESSING \_ 模式
 description: KSPROPERTY \_ AUDIOSIGNALPROCESSING \_ 模式属性返回 pin 工厂支持的音频信号处理模式的列表。
-ms.assetid: 95536F80-D4E0-48CB-8DB2-603C4CEF0053
 keywords:
 - KSPROPERTY_AUDIOSIGNALPROCESSING_MODES 音频设备
 topic_type:
@@ -14,17 +13,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c0d4bbe5d94ffc4b5c93034fde563fe88c1b2567
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: ed24ac9cc4c2d2ac1068697a3b16b1d2889921e4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102596"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96784413"
 ---
 # <a name="ksproperty_audiosignalprocessing_modes"></a>KSPROPERTY \_ AUDIOSIGNALPROCESSING \_ 模式
 
 
-**KSPROPERTY \_ AUDIOSIGNALPROCESSING \_ 模式**属性返回 pin 工厂支持的音频信号处理模式的列表。
+**KSPROPERTY \_ AUDIOSIGNALPROCESSING \_ 模式** 属性返回 pin 工厂支持的音频信号处理模式的列表。
 
 ### <a name="span-idusage_summary_tablespanspan-idusage_summary_tablespanspan-idusage_summary_tablespanusage-summary-table"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用情况摘要表
 
@@ -62,7 +61,7 @@ ms.locfileid: "90102596"
 
 ### <a name="span-idreturn_valuespanspan-idreturn_valuespanspan-idreturn_valuespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>返回值
 
-**KSPROPERTY \_AUDIOSIGNALPROCESSING \_ 模式** 返回 **KSMULTIPLE \_ 项** ，后跟零 (0) 或多个 guid。 KSMULTIPLE \_ 项。Count 成员包含 Guid 的数目。 KSMULTIPLE \_ 项。Size 成员包含属性值的总大小。 每个 GUID 标识在**KSP \_ pin**结构的*PinId*成员中指定的 Pin ID 的音频驱动程序所支持的信号处理模式。
+**KSPROPERTY \_AUDIOSIGNALPROCESSING \_ 模式** 返回 **KSMULTIPLE \_ 项** ，后跟零 (0) 或多个 guid。 KSMULTIPLE \_ 项。Count 成员包含 Guid 的数目。 KSMULTIPLE \_ 项。Size 成员包含属性值的总大小。 每个 GUID 标识在 **KSP \_ pin** 结构的 *PinId* 成员中指定的 Pin ID 的音频驱动程序所支持的信号处理模式。
 
 在 Windows 8.1 有两个已定义的音频信号处理模式：音频 \_ SIGNALPROCESSINGMODE \_ 默认值和音频 \_ SIGNALPROCESSINGMODE \_ RAW。
 
@@ -73,7 +72,7 @@ ms.locfileid: "90102596"
 <a name="remarks"></a>备注
 -------
 
-**KSPROPERTY \_ AUDIOSIGNALPROCESSING \_ 模式**的基本支持处理程序应获得**KSP \_ PIN**结构，且仅在非环回流式处理 pin 上公布支持。 音频驱动程序应仅支持主机和卸载 pin 上的信号处理模式。 对于环回或桥接，音频驱动程序仍应支持属性，但会返回一个 **KSMULTIPLE \_ 项目** 结构，其 *Count* 参数设置为零 (0) 。
+**KSPROPERTY \_ AUDIOSIGNALPROCESSING \_ 模式** 的基本支持处理程序应获得 **KSP \_ PIN** 结构，且仅在非环回流式处理 pin 上公布支持。 音频驱动程序应仅支持主机和卸载 pin 上的信号处理模式。 对于环回或桥接，音频驱动程序仍应支持属性，但会返回一个 **KSMULTIPLE \_ 项目** 结构，其 *Count* 参数设置为零 (0) 。
 
 开发的任何音频微型端口驱动程序都 (Portcls) ，可实现 [**IMiniportAudioSignalProcessing：： GetModes**](/windows-hardware/drivers/ddi/portcls/nf-portcls-iminiportaudiosignalprocessing-getmodes) 方法。
 
@@ -88,7 +87,7 @@ ms.locfileid: "90102596"
 <tbody>
 <tr class="odd">
 <td align="left"><p>版本</p></td>
-<td align="left"><p>Windows 8.1</p></td>
+<td align="left"><p>Windows 8.1</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>标头</p></td>

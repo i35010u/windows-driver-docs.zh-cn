@@ -1,15 +1,14 @@
 ---
 title: Power 框架 (PoFx) 驱动程序示例
 description: 此目录中的驱动程序示例提供了为设备编写自定义 PoFx 驱动程序的起点。
-ms.assetid: BA2CC8F0-E337-4A5E-987F-1B40213F5983
 ms.date: 11/19/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 770ddd2edd57da054086cd341dda496444e2c203
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 2583d38209665e96a45d1db55901ffaf0cfa1dd0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89187843"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96785607"
 ---
 # <a name="power-framework-pofx-driver-samples"></a>Power 框架 (PoFx) 驱动程序示例
 

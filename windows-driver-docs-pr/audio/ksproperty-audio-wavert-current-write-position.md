@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ 音频 \_ WAVERT \_ 当前 \_ 写入 \_ 位置
 description: KSPROPERTY \_ 音频 \_ WAVERT \_ 当前 \_ 写入 \_ 位置属性请求指定 WAVERT 缓冲区的当前写入位置（以字节为单位）。 卸载驱动程序可以使用此写入位置信息来了解 WaveRT 缓冲区中的有效数据量。
-ms.assetid: 05C62E23-2460-4E92-BEE8-08D31A8BFD86
 keywords:
 - KSPROPERTY_AUDIO_WAVERT_CURRENT_WRITE_POSITION 音频设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ab2e3bc237b35ad8481c7d6519fbb63dddd923c0
-ms.sourcegitcommit: 20eac54e419a594f7cea766ee28f158559dfd79c
+ms.openlocfilehash: 8acd80b0f3daef00d31994f40106d4de234bceb0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91755024"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96784447"
 ---
 # <a name="ksproperty_audio_wavert_current_write_position"></a>KSPROPERTY \_ 音频 \_ WAVERT \_ 当前 \_ 写入 \_ 位置
 

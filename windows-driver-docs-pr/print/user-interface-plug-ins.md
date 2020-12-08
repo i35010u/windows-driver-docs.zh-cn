@@ -1,7 +1,6 @@
 ---
 title: 用户界面插件
 description: 用户界面插件
-ms.assetid: 22ac2af6-37d8-4913-95af-9c3dc8576d40
 keywords:
 - 打印机驱动程序自定义 WDK，用户界面插件
 - 自定义打印机驱动程序 WDK，用户界面插件
@@ -13,12 +12,12 @@ keywords:
 - UI 插件 WDK 打印
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fdf3d255e94ebe47a424fcd5172481937ddd2fe8
-ms.sourcegitcommit: dff3834724bd5204c4a47204540fe8125dd37b20
+ms.openlocfilehash: f70316b81e43d8392664ba8e32a82bebfc67b2c0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70750054"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96785997"
 ---
 # <a name="user-interface-plug-ins"></a>用户界面插件
 
@@ -34,13 +33,13 @@ ms.locfileid: "70750054"
 
 [UI 插件的 COM 接口](com-interfaces-for-ui-plug-ins.md)
 
-[提供 DEVMODE 结构添加](providing-devmode-structure-additions.md)
+[提供 DEVMODE 结构补充](providing-devmode-structure-additions.md)
 
 [从 UI 插件访问驱动程序设置](accessing-driver-settings-from-ui-plug-ins.md)
 
 [修改驱动程序提供的属性表页](modifying-a-driver-supplied-property-sheet-page.md)
 
-[替换驱动程序提供的属性页](replacing-driver-supplied-property-sheet-pages.md)
+[替换驱动程序提供的属性表页](replacing-driver-supplied-property-sheet-pages.md)
 
 [添加新的属性表页](adding-new-property-sheet-pages.md)
 

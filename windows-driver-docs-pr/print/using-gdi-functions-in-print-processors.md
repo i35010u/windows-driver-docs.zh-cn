@@ -1,19 +1,18 @@
 ---
 title: 使用打印处理器中的 GDI 函数
 description: 使用打印处理器中的 GDI 函数
-ms.assetid: 2ad62308-ab42-4475-ac42-f753d5091251
 keywords:
 - EMF 记录播放 WDK 打印处理器
 - GDI 函数 WDK 打印处理器
 - NT EMF WDK 打印处理器
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a5a288788899ca97cbd16f107495b30a7a33c1e7
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 61f9df57e346852b35a5dd11704bc9bccc6efa3b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104756"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96785993"
 ---
 # <a name="using-gdi-functions-in-print-processors"></a>使用打印处理器中的 GDI 函数
 

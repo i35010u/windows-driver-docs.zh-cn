@@ -1,34 +1,33 @@
 ---
 title: 驱动程序特定查询的 WSD 架构扩展
 description: 驱动程序特定查询的 WSD 架构扩展
-ms.assetid: 508a9f87-8fd2-4c95-8efb-5d1d7201981a
 keywords:
 - WSD 架构扩展 WDK 打印机
 - 架构扩展 WDK WSD
-- 特定于驱动程序查询 WDK 打印机
+- 特定于驱动程序的查询 WDK 打印机
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0f3eb2b76e34da8f3b025e4905692c1c0cde5992
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b4c99a6131feae5bcdb09e0b327ef439787694d3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63355641"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96785775"
 ---
 # <a name="wsd-schema-extensions-for-driver-specific-queries"></a>驱动程序特定查询的 WSD 架构扩展
 
 
-如中所述[自定义打印机端口监视器](customizing-the-printer-port-monitors.md)，Web Services for Devices (WSD) 端口监视器支持标准的子集打印架构，以便每个驱动程序可以发送查询并了解响应。 但是，特定的驱动程序可能需要通过打印机的 Web 服务接口的其他信息。
+如 [自定义打印机端口监视器](customizing-the-printer-port-monitors.md)中所述，适用于设备的 Web 服务 (WSD) 端口监视器支持标准打印架构的一部分，因此每个驱动程序都可以发送查询并了解响应。 但是，特定的驱动程序可能需要其他信息，这些信息可通过打印机的 Web 服务界面获得。
 
-对于查询有关典型打印机属性，必须创建包含定义的属性的查询。 下面的主题介绍了四个 WsdBidi.xsd 文件中定义的提供一种方法来检索此类信息构造。
+对于涉及典型打印机属性的查询，您必须创建包含您定义的属性的查询。 以下主题介绍了 WsdBidi 文件中定义的四个构造，提供一种方法来检索此类信息。
 
 [Const](const.md)
 
-[安装](installed.md)
+[已安装](installed.md)
 
 [列表](list.md)
 
-[值](value.md)
+值
 
  
 

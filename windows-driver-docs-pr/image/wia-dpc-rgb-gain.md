@@ -1,9 +1,8 @@
 ---
-title: WIA\_DPC\_RGB\_GAIN
-description: WIA\_DPC\_RGB\_提升属性包含 null 终止的 Unicode 字符串，分别表示红色、 绿色和蓝色性能提升，应用到图像数据。
-ms.assetid: 26448818-0885-4084-a0f3-c9e25d15dbf2
+title: WIA \_ DPC \_ RGB \_ 增益
+description: WIA \_ DPC \_ RGB \_ 增益属性包含以 Null 结尾的 Unicode 字符串，分别表示应用于图像数据的红色、绿色和蓝色增益。
 keywords:
-- WIA_DPC_RGB_GAIN 成像设备
+- WIA_DPC_RGB_GAIN 图像设备
 topic_type:
 - apiref
 api_name:
@@ -14,31 +13,31 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 88a3536a8f14dd75103352bfb170d1f471603b54
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ae5960c58cd1662ae3d6e784ac9c4d74ea8b5624
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63392561"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96785167"
 ---
-# <a name="wiadpcrgbgain"></a>WIA\_DPC\_RGB\_GAIN
+# <a name="wia_dpc_rgb_gain"></a>WIA \_ DPC \_ RGB \_ 增益
 
 
-WIA\_DPC\_RGB\_提升属性包含 null 终止的 Unicode 字符串，分别表示红色、 绿色和蓝色性能提升，应用到图像数据。 例如，"4: 25:50"表示 4 较红色提升、 25，绿色提升和 50 的蓝色增益。
+WIA \_ DPC \_ RGB \_ 增益属性包含以 Null 结尾的 Unicode 字符串，分别表示应用于图像数据的红色、绿色和蓝色增益。 例如，"4:25:50" 表示4的红色收益、25的绿色增益以及50的蓝色收益。
 
 ## <span id="ddk_wia_dpc_rgb_gain_si"></span><span id="DDK_WIA_DPC_RGB_GAIN_SI"></span>
 
 
-属性类型：VT\_BSTR
+属性类型： VT \_ BSTR
 
-有效值：WIA\_PROP\_NONE 或 WIA\_PROP\_列表
+有效值： WIA " \_ \_ 无" 或 "wia" 内容 \_ \_ 列表
 
-访问权限：读取/写入
+访问权限：读/写
 
 <a name="remarks"></a>备注
 -------
 
-WIA\_DPC\_RGB\_提升属性进行分析，如下所示：*R*:*G*:*B*。 *R*表示的红色提升*G*表示绿色提升，和*B*表示蓝色增益。 例如，red RGB 比率 = 4，绿色 = 2，蓝色 = 3，"4:2:3"或"2000:1000:1500"可能是 RGB 字符串。 这些值是相对于彼此。 可用于添加粒度较大的数，但颜色将相同如果红色、 绿色和蓝色的比保持不变。 此属性的值的字符串分析器应支持 UINT16 整数*R*， *G*，并*B*。
+WIA \_ DPC \_ RGB \_ 增益属性按如下方式进行分析： *R*：*G*：*B*。 *R* 代表红色增益， *G* 表示绿色增益， *B* 代表蓝色增益。 例如，对于红色 = 4，绿色 = 2，蓝色 = 3 的 RGB 比率，RGB 字符串可以是 "4:2:3" 或 "2000:1000:1500"。 这些值彼此相关。 您可以使用较大的数字来增加粒度，但如果红色、绿色和蓝色的比率保持不变，颜色将相同。 此属性值的字符串分析器应支持 *R*、 *G* 和 *B* 的 UINT16 整数。
 
 <a name="requirements"></a>要求
 ------------
@@ -50,12 +49,12 @@ WIA\_DPC\_RGB\_提升属性进行分析，如下所示：*R*:*G*:*B*。 *R*表�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Version</p></td>
-<td><p>在 Windows Vista 和更高版本操作系统中已过时，并应不再使用。 但是，此属性仍定义 Windows Vista 中与应用程序和用于 Windows Server 2003、 Windows XP 和早期版本的 Windows 设备的兼容性。</p></td>
+<td><p>版本</p></td>
+<td><p>在 Windows Vista 和更高版本的操作系统中已过时，不应再使用。 但是，在 Windows Vista 中仍定义此属性，以与为 Windows Server 2003、Windows XP 和 windows 的早期版本设计的应用程序和设备兼容。</p></td>
 </tr>
 <tr class="even">
-<td><p>Header</p></td>
-<td>Wiadef.h （包括 Wiadef.h）</td>
+<td><p>标头</p></td>
+<td>Wiadef (包含 Wiadef) </td>
 </tr>
 </tbody>
 </table>

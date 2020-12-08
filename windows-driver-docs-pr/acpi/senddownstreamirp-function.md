@@ -1,20 +1,19 @@
 ---
 title: SendDownStreamIrp 函数
 description: SendDownStreamIrp 函数
-ms.assetid: 09a06041-5b26-4796-b9b8-d7d27321d955
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 11524754e57b35b510dd2a7ee2b957309162b317
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 25e43eb9f94c54f2d7f0d85bc9922c036129ab46
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89184815"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96785059"
 ---
 # <a name="senddownstreamirp-function"></a>SendDownStreamIrp 函数
 
 
-`SendDownStreamIrp`本主题中提供的函数的代码示例演示如何实现将同步 IOCTL 请求发送到 ACPI 驱动程序的驱动程序提供的函数。 `SendDownStreamIrp`函数可用于发送[**ioctl \_ acpi \_ Eval \_ 方法**](/windows-hardware/drivers/ddi/acpiioct/ni-acpiioct-ioctl_acpi_eval_method)请求、 [**Ioctl \_ acpi \_ eval \_ 方法 \_ EX**](/windows-hardware/drivers/ddi/acpiioct/ni-acpiioct-ioctl_acpi_eval_method_ex)请求或[**ioctl \_ acpi \_ 枚举 \_ 子**](/windows-hardware/drivers/ddi/acpiioct/ni-acpiioct-ioctl_acpi_enum_children)请求。
+`SendDownStreamIrp`本主题中提供的函数的代码示例演示如何实现将同步 IOCTL 请求发送到 ACPI 驱动程序的驱动程序提供的函数。 `SendDownStreamIrp`函数可用于发送 [**ioctl \_ acpi \_ Eval \_ 方法**](/windows-hardware/drivers/ddi/acpiioct/ni-acpiioct-ioctl_acpi_eval_method)请求、 [**Ioctl \_ acpi \_ eval \_ 方法 \_ EX**](/windows-hardware/drivers/ddi/acpiioct/ni-acpiioct-ioctl_acpi_eval_method_ex)请求或 [**ioctl \_ acpi \_ 枚举 \_ 子**](/windows-hardware/drivers/ddi/acpiioct/ni-acpiioct-ioctl_acpi_enum_children)请求。
 
 `SendDownStreamIrp`本部分中包含的函数的示例代码执行以下操作序列：
 

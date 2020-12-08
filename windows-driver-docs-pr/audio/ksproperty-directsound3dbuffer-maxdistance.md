@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ DIRECTSOUND3DBUFFER \_ MAXDISTANCE
 description: KSPROPERTY \_ DIRECTSOUND3DBUFFER \_ MAXDISTANCE 属性指定三维声音缓冲区的最大距离。
-ms.assetid: efa69fe3-834a-42be-a578-f284b07b93c4
 keywords:
 - KSPROPERTY_DIRECTSOUND3DBUFFER_MAXDISTANCE 音频设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: be29c7fbcbcda0314df7433404366e540a705056
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: bb75df641595d9fab120272116fc3ebf5e34b412
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102576"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96784397"
 ---
 # <a name="ksproperty_directsound3dbuffer_maxdistance"></a>KSPROPERTY \_ DIRECTSOUND3DBUFFER \_ MAXDISTANCE
 
@@ -74,7 +73,7 @@ KSPROPERTY \_ DIRECTSOUND3DBUFFER \_ MAXDISTANCE 属性请求返回状态 \_ SUC
 
 -   DS3DBUFFER 结构的 **flMaxDistance** 成员。
 
--   **IDirectSound3DBuffer：： GetMaxDistance**和**IDirectSound3DBuffer：： SetMaxDistance**方法。
+-   **IDirectSound3DBuffer：： GetMaxDistance** 和 **IDirectSound3DBuffer：： SetMaxDistance** 方法。
 
 <a name="requirements"></a>要求
 ------------

@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ HRTF3D \_ 参数
 description: KSPROPERTY \_ HRTF3D \_ PARAMS 属性将一组3-d 参数值应用于 HRTF 算法。
-ms.assetid: f7a7cfa9-de76-418a-be84-2519de454c89
 keywords:
 - KSPROPERTY_HRTF3D_PARAMS 音频设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 45b9ae81d7294b2e3db10b91db31d6ab312d4369
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: a6c79e9d9af98c65ac2b4166c0bcf9d182b0719c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102002"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96784359"
 ---
 # <a name="ksproperty_hrtf3d_params"></a>KSPROPERTY \_ HRTF3D \_ 参数
 

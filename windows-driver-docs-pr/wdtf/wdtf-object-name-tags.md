@@ -1,15 +1,14 @@
 ---
 title: WDTF 对象名称标记
 description: WDTF OBJECT_NAME 标记用于 WDTF 对象日志记录。
-ms.assetid: 25C669DD-12D0-4C78-802F-CB8E26C4FD80
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ae33e6f3a063960ad122e053977ae7a14977d5db
-ms.sourcegitcommit: 9b3dec2f2cd9a7ed9b340b4794ce6ff4134d8ebe
+ms.openlocfilehash: 881507e98ff13c723e2e7ddd319538e0482b3e0c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/07/2020
-ms.locfileid: "91787651"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96785343"
 ---
 # <a name="wdtf-object-name-tags"></a>WDTF 对象名称标记
 

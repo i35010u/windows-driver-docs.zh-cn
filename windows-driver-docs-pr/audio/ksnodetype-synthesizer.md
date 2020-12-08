@@ -1,7 +1,6 @@
 ---
 title: KSNODETYPE \_ 合成器
 description: KSNODETYPE \_ 合成器
-ms.assetid: ef5f5068-c312-4e14-905e-c815d6e9aac2
 keywords:
 - KSNODETYPE_SYNTHESIZER 音频设备
 topic_type:
@@ -12,12 +11,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2b41765c75622f3e57bf68558490ff737db38d5a
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 48fa0fe73410347fb004e27591be52259071bf58
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89206999"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96784593"
 ---
 # <a name="ksnodetype_synthesizer"></a>KSNODETYPE \_ 合成器
 

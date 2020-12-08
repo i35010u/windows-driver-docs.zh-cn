@@ -1,18 +1,17 @@
 ---
 title: 评估 ACPI 控制方法
 description: 评估 ACPI 控制方法
-ms.assetid: 00cf7530-30e6-4ff2-8a26-1c5143413b56
 keywords:
 - ACPI 控制方法 WDK，评估
 - ACPI 设备 WDK，评估控制方法
 ms.date: 05/19/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: fb75413b07dad956b048214e7f6dddf780ffded8
-ms.sourcegitcommit: a44ade167cdfb541cf1818e9f9e3726f23f90b66
+ms.openlocfilehash: 5dce33415ba63df31e65cbe020650043683b2c91
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94361253"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96785071"
 ---
 # <a name="evaluating-acpi-control-methods"></a>评估 ACPI 控制方法
 

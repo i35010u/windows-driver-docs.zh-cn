@@ -1,7 +1,6 @@
 ---
-title: KSNODETYPE\_SWMIDI
-description: KSNODETYPE\_SWMIDI
-ms.assetid: 88866be1-e6da-4252-a31b-bc1a8d558683
+title: KSNODETYPE \_ SWMIDI
+description: KSNODETYPE \_ SWMIDI
 keywords:
 - KSNODETYPE_SWMIDI 音频设备
 topic_type:
@@ -12,14 +11,14 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 618db9dd17b0393e581e9232aee6a0e92969b37b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1f1d8f061da03adb8f67f27e6c5bb66d57c2d8a0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333178"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96784595"
 ---
-# <a name="ksnodetypeswmidi"></a>KSNODETYPE\_SWMIDI
+# <a name="ksnodetype_swmidi"></a>KSNODETYPE \_ SWMIDI
 
 
 ## <span id="ddk_ksnodetype_swmidi_ks"></span><span id="DDK_KSNODETYPE_SWMIDI_KS"></span>

@@ -1,28 +1,27 @@
 ---
 title: 使用主题清单
 description: 使用主题清单
-ms.assetid: 8b3feb56-501b-4f35-937e-0be99338ae01
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 95adc51aa8b632a387da2e6cb25cdb1782a2bdbe
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 87ddfee7bdc00be6073d3b3853f0195f70c56c50
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63387110"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96785977"
 ---
 # <a name="using-theme-manifests"></a>使用主题清单
 
 
-如果您添加到您的打印驱动程序适用于 Windows XP 主题清单，您可以确保该用户界面元素在您的驱动程序匹配的 Windows XP 视觉样式。
+如果将主题清单添加到适用于 Windows XP 的打印驱动程序，则可以确保驱动程序中的用户界面元素与 Windows XP 视觉样式匹配。
 
-在 Windows XP 中的视觉样式是 Shell 公共控件 （Comctl32.dll，6.0 版） 中的更改的结果。 此版本是 5.0 版与几乎完全向后的兼容。 但是，某些问题可能与驱动程序版本 6.0 下运行时为 5.0 版编写的。 若要避免此类问题，打印系统不会强制驱动程序，以使用 Comctl32.dll 版本 6.0。 示例主题清单，请参阅\\src\\打印\\oemdll\\ThemeUI\\ThemeUI.Manifest WDK 中的。
+Windows XP 中的视觉样式是 Shell 公共控件 ( # A0，版本 6.0) 的更改的结果。 此版本几乎完全向后兼容5.0 版。 但是，当驱动程序在版本6.0 下运行时，为版本5.0 编写的驱动程序可能会出现一些问题。 为了避免此类问题，打印系统不会强制驱动程序使用版本 6.0 Comctl32.dll。 有关主题清单的示例，请 \\ 参阅 \\ \\ oemdll \\ 中的 src print ThemeUI \\ ThemeUI。
 
-如果主题清单添加到您指定的 Comctl32.dll 版本 6 依赖项的驱动程序时，它将正常工作以及 Windows 2000 上 Windows XP 和更高版本的操作系统版本。 Windows 2000 将忽略清单;因此任何使用的激活上下文的适当地将失败。 请注意由于 Comctl32.dll 版本 5.0 不包含在全局程序集缓存 (GAC) 中，指定此版本的 DLL 的依赖项的清单中断该组件。 在此情况下，调用 Win32 API **LoadLibrary**尝试加载 Comctl32.dll 时失败。
+如果你将主题清单添加到指定依赖版本6的 Comctl32.dll 的依赖项，则它将在 Windows XP 及更高版本的操作系统版本以及 Windows 2000 上正常工作。 Windows 2000 忽略清单;因此，任何使用激活上下文都将正常失败。 请注意，由于 Comctl32.dll 版本5.0 不包含在全局程序集缓存中 (GAC) ，因此，指定此版本的 DLL 的依赖项的清单将中断组件。 在这种情况下，在尝试加载 Comctl32.dll 时，对 Win32 API **LoadLibrary** 的调用将失败。
 
-应用程序可以具有全局 （或应用程序） 的清单。 如果此全局清单包含使用 Comctl32.dll 版本 6.0 的重定向，这会强制所有用户界面的应用程序创建要使用相同的主题。 结果之一就是从全局清单的应用程序启动的驱动程序可能会被迫使用 Comctl32.dll 版本 6.0，而不考虑任何驱动程序清单中的 Comctl32.dll 重定向该打印机。
+应用程序可以具有全局 (或应用程序) 清单。 如果此全局清单包含使用 Comctl32.dll 版本6.0 的重定向，则会强制应用程序创建的所有 UI 使用同一主题。 这样做的一个结果是，无论驱动程序清单中是否存在任何 Comctl32.dll 重定向，使用全局清单从应用程序启动的打印机驱动程序都可能被强制使用 Comctl32.dll 版本6.0。
 
-有关清单和程序集、 激活上下文，独立应用程序和共享的并行程序集的详细信息，请参阅 Microsoft Windows SDK 文档。
+有关清单和程序集、激活上下文、独立应用程序和并行程序集共享的详细信息，请参阅 Microsoft Windows SDK 文档。
 
  
 

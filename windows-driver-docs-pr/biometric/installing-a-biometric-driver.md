@@ -1,18 +1,17 @@
 ---
 title: 安装生物识别驱动程序
 description: 安装生物识别驱动程序
-ms.assetid: f1ae7346-c55b-484e-a94a-b4e22f5fafed
 keywords:
 - 生物识别驱动程序 WDK，安装
 - 安装生物识别驱动程序 WDK 生物识别
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5ef55de86857b02d6665a06bab207a5357c447b6
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: d848a1cdf2fe57ea0ca2828ce60505af7ae19131
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89095421"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96784285"
 ---
 # <a name="installing-a-biometric-driver"></a>安装生物识别驱动程序
 

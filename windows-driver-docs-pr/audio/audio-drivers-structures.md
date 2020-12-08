@@ -1,15 +1,14 @@
 ---
 title: 音频驱动程序结构
 description: 音频驱动程序结构
-ms.assetid: 8257342f-474a-42b3-809d-96fdeede398b
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 04e8cfdcd63cbd12a3043d6b252c8caf4237313f
-ms.sourcegitcommit: 20eac54e419a594f7cea766ee28f158559dfd79c
+ms.openlocfilehash: c39a1bc46b76d68b4ed4c571758b8f2391954ab7
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91754900"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96784997"
 ---
 # <a name="audio-drivers-structures"></a>音频驱动程序结构
 

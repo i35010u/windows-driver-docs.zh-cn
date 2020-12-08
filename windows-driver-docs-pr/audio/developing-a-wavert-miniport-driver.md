@@ -1,15 +1,14 @@
 ---
 title: 开发 WaveRT 微型端口驱动程序
 description: 开发 WaveRT 微型端口驱动程序
-ms.assetid: d2d37c9e-fbfb-4bf3-bd7d-c8e19070a3f1
 ms.date: 07/03/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0a4a4f10f792e349f5f1cad8187a1b78db0714da
-ms.sourcegitcommit: 372464be981a39781c71049126f36891cb5d0cad
+ms.openlocfilehash: 7f91de9821f751c5de74fb5c5a32884d589d9f36
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91646026"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96784871"
 ---
 # <a name="developing-a-wavert-miniport-driver"></a>开发 WaveRT 微型端口驱动程序
 
@@ -54,7 +53,7 @@ Windows Vista 和更高版本的 Windows 操作系统为 UAA 兼容音频设备�
 
     获取此类型的位置寄存器的读取后，客户端可以通过对编解码器添加或减去延迟来估算正在通过 Dac 或 ADCs 移动的样本的当前位置。 客户端从 **KSPROPERTY \_ RTAUDIO \_ HWLATENCY** 属性请求中获取编解码器延迟。 出于此原因，当端口驱动程序调用 **IMiniportWaveRTStream：： GetHardwareLatency** 方法以响应此类型的属性请求时，WaveRT 微型端口驱动程序必须准确地报告编解码器延迟。
 
-    请注意，WaveRT 端口驱动程序支持缺少位置寄存器的现有硬件设计。 对于具有此限制的设备，WaveRT 微型端口驱动程序必须通过返回 " ** \_ 不 \_ 受支持的状态**" 错误代码来调用[**IMiniportWaveRTStream：： GetPositionRegister**](/windows-hardware/drivers/ddi/portcls/nf-portcls-iminiportwavertstream-getpositionregister)方法，这会强制端口驱动程序对[**KSPROPERTY \_ RTAUDIO \_ POSITIONREGISTER**](./ksproperty-rtaudio-positionregister.md)属性请求失败。 在这种情况下，客户端必须通过 [**KSPROPERTY \_ 音频 \_ 位置**](./ksproperty-audio-position.md) 属性获取当前位置，这会在每次读取位置导致用户模式和内核模式间转换的开销。
+    请注意，WaveRT 端口驱动程序支持缺少位置寄存器的现有硬件设计。 对于具有此限制的设备，WaveRT 微型端口驱动程序必须通过返回 " **\_ 不 \_ 受支持的状态**" 错误代码来调用 [**IMiniportWaveRTStream：： GetPositionRegister**](/windows-hardware/drivers/ddi/portcls/nf-portcls-iminiportwavertstream-getpositionregister)方法，这会强制端口驱动程序对 [**KSPROPERTY \_ RTAUDIO \_ POSITIONREGISTER**](./ksproperty-rtaudio-positionregister.md)属性请求失败。 在这种情况下，客户端必须通过 [**KSPROPERTY \_ 音频 \_ 位置**](./ksproperty-audio-position.md) 属性获取当前位置，这会在每次读取位置导致用户模式和内核模式间转换的开销。
 
 -   **时钟寄存器。** 时钟寄存器是 WaveRT 兼容音频设备的可选但有用的硬件功能。 音频应用程序可以使用时钟寄存器在两个或更多独立音频设备中同步音频流，这些设备具有不同且不同步的硬件时钟。 如果没有时钟寄存器，应用程序将无法检测硬件时钟之间的偏差并对其进行补偿。
 

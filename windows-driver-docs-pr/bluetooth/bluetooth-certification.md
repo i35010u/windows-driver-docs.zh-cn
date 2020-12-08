@@ -1,15 +1,14 @@
 ---
 title: 蓝牙认证
 description: 介绍适用于蓝牙无线电收发器的 Windows 硬件认证计划要求
-ms.assetid: B9AC4035-E52E-4B2B-8AE5-76F314C35EDD
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f4ed2bffd714a09999a86c421f2930f473047753
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 82436dddab127f4ce87f647c3606e25642bee592
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91733449"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96784253"
 ---
 # <a name="bluetooth-certification"></a>蓝牙认证
 

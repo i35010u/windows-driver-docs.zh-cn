@@ -1,24 +1,23 @@
 ---
 title: SDEL 中的设备关系令牌
 description: 描述可用于在 SDEL 内表示设备关系的令牌的表
-ms.assetid: A99d68D2-31A2-99B5-841F-A8249539A39F
 keywords:
 - 令牌
 - 设备关系
 ms.date: 09/03/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: dc678655fec97d7c41c0607ec1d97ebea17254ed
-ms.sourcegitcommit: bd72676caf2bf5c9738c4081c778316919b85d30
+ms.openlocfilehash: 9afe3c9740728b476d6d7120d45ff62ae671d29a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89456645"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96785387"
 ---
 # <a name="device-relation-tokens-in-sdel"></a>SDEL 中的设备关系令牌
 
 下表描述了可用于表示 SDEL 中设备关系的标记。 所有这些关系都包含带有 "-或-self" 后缀的版本。 这些 "-或-self" 版本返回当前设备和所有指定的相关设备。
 
-|关系标记|可能的结果|说明|
+|关系标记|可能的结果|描述|
 |----|----|----|
 |上述|0到多个|提供以某种方式映射到上述所有设备的方法。 目前，此关系在逻辑上等同于 "disk/self/祖先/OR 祖先////////////"。|
 |祖先 (ancestor)|0到多个|扩展父关系，使其包含所有父项，包括 RootDevice。|

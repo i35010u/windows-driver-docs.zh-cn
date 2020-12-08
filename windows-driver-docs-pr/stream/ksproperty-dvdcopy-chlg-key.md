@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ DVDCOPY \_ CHLG \_ KEY
 description: KSPROPERTY \_ DVDCOPY \_ CHLG \_ KEY 属性用于传输 DVD 解码器和 dvd 驱动器提供的总线质询密钥。
-ms.assetid: 744ea965-29dc-401f-8f68-7d63b58b6151
 keywords:
 - KSPROPERTY_DVDCOPY_CHLG_KEY 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: abe3e1584ef3c09204e1930a11d60b9f6d085e43
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: f6e538ff4407c4449c39096205d98abf3c143ec3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102730"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96785459"
 ---
 # <a name="ksproperty_dvdcopy_chlg_key"></a>KSPROPERTY \_ DVDCOPY \_ CHLG \_ KEY
 
@@ -86,7 +85,7 @@ KSPROPERTY \_ DVDCOPY \_ CHLG \_ KEY 属性用于传输 DVD 解码器和 dvd 驱
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KS \_ DVDCOPY \_ CHLGKEY**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-_ks_dvdcopy_chlgkey)

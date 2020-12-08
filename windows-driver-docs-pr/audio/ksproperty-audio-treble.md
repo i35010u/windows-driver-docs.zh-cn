@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ 音频 \_ 高音
 description: KSPROPERTY \_ 音频 \_ 高音属性为色调节点中通道指定高音级别， (KSNODETYPE \_ 声调) 。
-ms.assetid: eee12fac-fbde-44d5-9172-538b9c486697
 keywords:
 - KSPROPERTY_AUDIO_TREBLE 音频设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e329d8bc1a3531e1638ea8d8523db93f45aa32db
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: f0f7a86cbecf50f6550253ab5182dade4dece5bf
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102038"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96784455"
 ---
 # <a name="ksproperty_audio_treble"></a>KSPROPERTY \_ 音频 \_ 高音
 
@@ -79,7 +78,7 @@ KSPROPERTY \_ 音频 \_ 高音属性为色调节点中通道指定高音级别�
 
 KSPROPERTY \_ 音频 \_ 高音属性请求返回状态 " \_ 成功" 以指示它已成功完成。 否则，请求将返回相应的错误状态代码。
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 声调节点可以支持用于控制高音级别、中端级别、低音级别和低音增强的属性。 有关详细信息，请参阅 [**KSNODETYPE \_ 声调**](ksnodetype-tone.md)。

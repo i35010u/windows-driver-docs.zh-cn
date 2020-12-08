@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ DIRECTSOUND3DBUFFER \_ 模式
 description: KSPROPERTY \_ DIRECTSOUND3DBUFFER \_ MODE 属性指定三维声音缓冲区的处理模式。
-ms.assetid: a3b15544-c534-47ea-a02e-5c8f9ccee414
 keywords:
 - KSPROPERTY_DIRECTSOUND3DBUFFER_MODE 音频设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cc12c2a9c0b71985e2724d0946129bc82daeef50
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: dea0a00fbd9ebba2d76665865df7dbb5bfe49d37
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102564"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96784399"
 ---
 # <a name="ksproperty_directsound3dbuffer_mode"></a>KSPROPERTY \_ DIRECTSOUND3DBUFFER \_ 模式
 
@@ -82,7 +81,7 @@ KSPROPERTY \_ DIRECTSOUND3DBUFFER \_ 模式属性请求返回状态 " \_ 成功"
 
 -   DS3DBUFFER 结构的 **dwMode** 成员。
 
--   **IDirectSound3DBuffer：： GetMode**和**IDirectSound3DBuffer：： SetMode**方法。
+-   **IDirectSound3DBuffer：： GetMode** 和 **IDirectSound3DBuffer：： SetMode** 方法。
 
 <a name="requirements"></a>要求
 ------------

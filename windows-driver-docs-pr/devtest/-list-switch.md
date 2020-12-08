@@ -1,9 +1,8 @@
 ---
 title: /List 开关
-description: 增强型存储证书管理工具的 /List 开关列出了所有的 IEEE 1667 合规 USB 存储设备连接到计算机。
-ms.assetid: ae0e2991-32db-42b3-839d-83b7e2b8b35f
+description: 增强的存储证书管理工具的/List 开关列出了连接到计算机的所有符合 IEEE 1667 的 USB 存储设备。
 keywords:
-- / 列表交换机驱动程序开发工具
+- /List 交换机驱动程序开发工具
 topic_type:
 - apiref
 api_name:
@@ -12,17 +11,17 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: da7b84a0cf06767ae209e6822168982ad87c8f45
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a4b8530c6495509949c210bb546958c55a536b8b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63361458"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96785239"
 ---
 # <a name="list-switch"></a>/List 开关
 
 
-**/List**增强存储证书管理工具的开关列出了所有的 IEEE 1667 合规 USB 存储设备连接到计算机。 此开关也可用来列出 （以及它们的属性） 的证书的身份验证接收器证书 (ASC) 存储中指定的 USB 存储设备中。
+增强的存储证书管理工具的 **/list** 开关列出了连接到计算机的所有符合 IEEE 1667 的 USB 存储设备。 此开关还可用于列出证书 (及其属性) 在指定 USB 存储设备中的身份验证接收器证书 (ASC) 存储区中。
 
 ```
     EhStorCertMgrCmd /List [-Volume:
@@ -33,22 +32,22 @@ ms.locfileid: "63361458"
 ## <a name="span-idsubparametersspanspan-idsubparametersspanspan-idsubparametersspansubparameters"></a><span id="Subparameters"></span><span id="subparameters"></span><span id="SUBPARAMETERS"></span>子参数
 
 
-<span id="_______-Volume_______"></span><span id="_______-volume_______"></span><span id="_______-VOLUME_______"></span> **-卷：**   
-IEEE 1667 合规的 USB 存储卷名称。 此参数的格式的详细信息，请参阅[增强存储证书管理工具的概述](overview-of-the-enhanced-storage-certificate-management-tool.md)。
+<span id="_______-Volume_______"></span><span id="_______-volume_______"></span><span id="_______-VOLUME_______"></span>**-Volume：**   
+符合 IEEE 1667 的 USB 存储的卷名。 有关此参数的格式的详细信息，请参阅 [增强的存储证书管理工具概述](overview-of-the-enhanced-storage-certificate-management-tool.md)。
 
-**请注意**若要生成的 IEEE 1667 合规 USB 存储设备的当前连接到计算机的卷名称的列表，请键入**EhStorCertMgrCmd /List**在命令提示符，然后按 Enter。
+**注意**  要生成当前连接到计算机的符合 IEEE 1667 的 USB 存储设备的卷名称列表，请在命令提示符下键入 **EhStorCertMgrCmd/list** ，然后按 enter。
 
 
 
-### <a name="span-idcommentsspanspan-idcommentsspancomments"></a><span id="comments"></span><span id="COMMENTS"></span>注释
+### <a name="span-idcommentsspanspan-idcommentsspancomments"></a><span id="comments"></span><span id="COMMENTS"></span>提出
 
-如果您使用 **/list**切换不带任何参数，该工具将报告所有 IEEE 1667 合规 USB 存储设备连接到计算机上。 在这种情况下，报告仅 USB 存储设备的卷名称。
+如果使用不带任何参数的 **/list** 开关，则该工具将报告连接到计算机的所有符合 IEEE 1667 的 USB 存储设备。 在这种情况下，只会报告 USB 存储设备的卷名。
 
-有关特定的 USB 存储设备的详细信息，请使用 **-卷**参数来指定的设备。 在这种情况下，该工具报告 ASC 存储中的设备中存在的证书。
+有关特定 USB 存储设备的详细信息，请使用 **-Volume** 参数来指定设备。 在这种情况下，该工具将报告设备中 ASC 存储区中存在的证书。
 
 ### <a name="span-idexamplespanspan-idexamplespanexample"></a><span id="example"></span><span id="EXAMPLE"></span>示例
 
-此示例演示如何列出的 IEEE 1667 合规 USB 存储设备连接到计算机。
+此示例演示如何列出连接到计算机的符合 IEEE 1667 的 USB 存储设备。
 
 ```
 EhStorCertMgrCmd /List
@@ -59,7 +58,7 @@ Executing list switch...
 Volume Name : \\?\usbstor#ieee1667control&ven_msft&prod_disk_sim_v0.01&rev_0.01#123456789&0&control#{4f40006f-b933-4550-b532-2b58cee614d3}
 ```
 
-此示例演示如何列出有关 IEEE 1667 合规 USB 存储设备 ASC 存储区中证书的详细信息。
+此示例显示了如何在与 IEEE 1667 兼容的 USB 存储设备的 ASC 存储区中列出证书的详细信息。
 
 ```
 EhStorCertMgrCmd.exe /List -Volume:"\\?\usbstor#ieee1667control&ven_msft&prod_disk_sim_v0.01&rev_0.01#123456789&0&control#{4f40006f-b933-4550-b532-2b58cee614d3}"

@@ -1,17 +1,16 @@
 ---
 title: HS_PLUGIN_RESET 函数
 description: 主机调用 HS_PLUGIN_RESET 函数，通知插件必须重置其状态。
-ms.assetid: 9f5683c9-b426-4802-85bd-c1ce770b9e46
 keywords:
 - typedef DWORD (WINAPI HS_PLUGIN_RESET 从 Windows Vista 开始) 函数网络驱动程序
 ms.date: 07/31/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: eaf92ee04458e3f446fcfbea476190100e250d66
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: 53ad85d621217b353ebe57ef2dd97cc873f6c28b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89403008"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96786171"
 ---
 # <a name="hs_plugin_reset-function"></a>HS \_ 插件 \_ RESET 函数
 
@@ -62,7 +61,7 @@ ms.locfileid: "89403008"
 <td><p>Windows 10 移动版</p></td>
 </tr>
 <tr class="even">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Hotspotoffloadplugin (包含 Hotspotoffloadplugin) </td>
 </tr>
 </tbody>

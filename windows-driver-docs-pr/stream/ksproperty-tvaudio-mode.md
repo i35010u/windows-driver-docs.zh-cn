@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ TVAUDIO \_ 模式
 description: KSPROPERTY \_ TVAUDIO \_ MODE 属性设置设备的音频模式。 必须实现此属性。
-ms.assetid: ef2db4b9-307f-4f70-8c9f-1344420c8cba
 keywords:
 - KSPROPERTY_TVAUDIO_MODE 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dbf04389a2624d53b5bd617c1fdd2b435b188f94
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: aabd9dea7f7c9a3c9579cddedef4d6d807f54d51
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104968"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96785452"
 ---
 # <a name="ksproperty_tvaudio_mode"></a>KSPROPERTY \_ TVAUDIO \_ 模式
 
@@ -63,7 +62,7 @@ KSPROPERTY \_ TVAUDIO \_ MODE 属性设置设备的音频模式。 必须实现�
 
  (操作数据) 的属性值是一个 ULONG，用于指定当前电视音频模式，如立体声或 mono 音频和语言设置。
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 KSPROPERTY **Mode** \_ TVAUDIO S 结构的 Mode 成员 \_ 指定音频模式。
@@ -84,7 +83,7 @@ KSPROPERTY **Mode** \_ TVAUDIO S 结构的 Mode 成员 \_ 指定音频模式。
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSPROPERTY**](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)

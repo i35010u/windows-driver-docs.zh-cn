@@ -1,17 +1,16 @@
 ---
 title: ValidatePrintTicket 概述
 description: 每个插件将调用 IPrintOemPrintTicketProvider：： ValidatePrintTicket 方法来验证 PrintTicket。
-ms.assetid: 3a4cf946-c931-4f71-9f1a-4efec4dfe866
 keywords:
 - ValidatePrintTicket
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a9f34af636a35f1fb043c7e9796b484fb6b9b83c
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 57d51a3c9840d624b91ff5924b9445bc63e47905
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89211895"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96785865"
 ---
 # <a name="validateprintticket-overview"></a>ValidatePrintTicket 概述
 

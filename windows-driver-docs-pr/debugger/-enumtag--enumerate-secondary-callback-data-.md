@@ -1,9 +1,8 @@
 ---
 title: .enumtag（枚举辅助回调数据）
-description: .Enumtag 命令显示辅助 bug 检查回调数据和所有数据标记。
-ms.assetid: 2146ebb9-96ce-4eb0-8c23-c9aaa5ed7f73
+description: Enumtag 命令显示辅助 bug 检查回调数据和所有数据标记。
 keywords:
-- .enumtag （辅助回调数据枚举） Windows 调试
+- enumtag (枚举辅助回调数据) Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: c9987446b2e863e298d6a223b1533185ade168aa
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1404ad86820c4a25be6648bd676fd96727bb2949
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63336779"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96785315"
 ---
 # <a name="enumtag-enumerate-secondary-callback-data"></a>.enumtag（枚举辅助回调数据）
 
 
-**.Enumtag**命令显示辅助 bug 检查回调数据和所有数据标记。
+**Enumtag** 命令显示辅助 bug 检查回调数据和所有数据标记。
 
 ```dbgcmd
 .enumtag 
@@ -40,12 +39,12 @@ ms.locfileid: "63336779"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>模式</strong></p></td>
-<td align="left"><p>内核模式下</p></td>
+<td align="left"><p><strong>交货</strong></p></td>
+<td align="left"><p>仅限内核模式</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>目标</strong></p></td>
-<td align="left"><p>实时、 崩溃转储</p></td>
+<td align="left"><p>实时，故障转储</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>平台</strong></p></td>
@@ -56,18 +55,18 @@ ms.locfileid: "63336779"
 
  
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-有关详细信息以及有关显示此数据的其他方法，请参阅[读取 Bug 检查回调数据](reading-bug-check-callback-data.md)。
+有关详细信息和显示此数据的其他方式，请参阅 [读取 Bug 检查回调数据](reading-bug-check-callback-data.md)。
 
 <a name="remarks"></a>备注
 -------
 
-可以使用 **.enumtag**命令仅发生的 bug 检查后或在调试时的内核模式崩溃转储文件。
+仅在发生了 bug 检查或调试内核模式故障转储文件后，才能使用 **enumtag** 命令。
 
-对于每个辅助 bug 块检查回调数据 **.enumtag**命令显示了 （采用 GUID 格式） 的标记和数据 （作为 ASCII 字符和字节）。
+对于每个辅助 bug 检查回调数据块， **enumtag** 命令将以 GUID 格式显示标记 () 并将数据 (为字节，并) ASCII 字符。
 
-请考虑下面的示例。
+请看下面的示例。
 
 ```dbgcmd
 kd> .enumtag
@@ -87,7 +86,7 @@ kd> .enumtag
   00 00 00 00 00 00 00 00                          ........
 ```
 
-在此示例中，辅助数据的第一批都有一个 GUID）{87654321-0000-0000-0000000000000000}) 为相应的标记，第二个批处理的数据都有一个 GUID ({12345678-0000-0000-0000000000000000}) 为其标记。 但是，数据不是以有用的格式。
+在此示例中，第一批辅助数据的 {87654321-0000-0000-0000000000000000} 标记) 为 guid ) ，第二批数据的 guid ({12345678-0000-0000-0000000000000000}) 作为其标记。 但数据的格式不是很有用。
 
  
 

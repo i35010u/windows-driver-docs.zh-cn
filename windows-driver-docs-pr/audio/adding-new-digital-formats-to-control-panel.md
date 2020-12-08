@@ -1,22 +1,21 @@
 ---
 title: 向控制面板添加新的数字格式
 description: 向控制面板添加新的数字格式
-ms.assetid: ce36738c-6471-4b68-82ad-80b8509c052b
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2f063c2d35dc62e8d9310a0adbfdc8b2b4f58908
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a9db331771f7210066d470aecce3d08771aa1748
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63325997"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96785037"
 ---
 # <a name="adding-new-digital-formats-to-control-panel"></a>向控制面板添加新的数字格式
 
 
-在 Windows Vista 和更高版本的 Windows 中，可以通过 SPDIF 开发第三方的数字音频格式，以流式传输，并使此格式在控制面板中可用。
+在 Windows Vista 和更高版本的 Windows 中，你可以开发通过 SPDIF 流式传输并使其在 "控制面板" 中可用的第三方数字音频格式。
 
-开发您的数字音频格式后，定义新的 GUID 格式，并使用 INF 文件来安装关联的音频驱动程序。 INF 文件中的以下代码演示如何将有关新数字音频格式的必要信息添加到注册表：
+开发数字音频格式后，为格式定义新的 GUID，并使用 INF 文件来安装关联的音频驱动程序。 INF 文件中的以下代码显示了如何将有关新数字音频格式的必要信息添加到注册表中：
 
 ```inf
 [Version]
@@ -37,9 +36,9 @@ My_SubKey = "SOFTWARE\Microsoft\Windows\CurrentVersion\MMDevices\SPDIF_Formats\{
 ...
 ```
 
-在前面的示例中所示的 GUID\[字符串\]部分用于说明为新的数字格式定义的 GUID 的位置。 HKLM 用作标准的缩写 HKEY\_本地\_机。
+在前面的示例中，"字符串" 部分中显示的 GUID \[ \] 用于说明为新数字格式定义的 guid 的位置。 HKLM 用作 HKEY 本地计算机的标准缩写 \_ \_ 。
 
-**重要**  Mycion.ico 和 Testfile.wav 的两个 HKLM 行项所需。 "C:\\Program Files\\MyVendor\\"使用文件夹以显示你必须为您的驱动程序相关图标创建相应的文件夹和测试批文件。
+**重要提示**  Mycion 和 Testfile.txt 的两个 HKLM 行条目都是必需的。 "C： \\ Program Files \\ MyVendor \\ " 文件夹已用于显示您必须为与驱动程序相关的图标和测试波形文件创建相应的文件夹。
 
  
 

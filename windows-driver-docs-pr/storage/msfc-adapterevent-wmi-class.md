@@ -1,15 +1,14 @@
 ---
 title: MSFC \_ ADAPTEREVENT WMI 类
 description: MSFC \_ ADAPTEREVENT WMI 类
-ms.assetid: 83077288-e3f6-4b21-80ed-677aad7d2979
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 44f8bf19f763ed6b68ad9e79bf8df9a52e9e1e3a
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 59332f683098ddb38f8d83089287b70f8f5c1a46
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89191129"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96785566"
 ---
 # <a name="msfc_adapterevent-wmi-class"></a>MSFC \_ ADAPTEREVENT WMI 类
 
@@ -19,7 +18,7 @@ ms.locfileid: "89191129"
 
 支持 T11 委员会 *光纤通道 HBA API* 规范的 hba 微型端口驱动程序使用 MSFC \_ AdapterEvent 类将适配器事件的特征报告给已注册为通知这些事件的 WMI 客户端。
 
-MSFC \_ AdapterEvent 类在 *Hbaapi*中定义如下：
+MSFC \_ AdapterEvent 类在 *Hbaapi* 中定义如下：
 
 ```cpp
 class MSFC_AdapterEvent : WMIEvent  {

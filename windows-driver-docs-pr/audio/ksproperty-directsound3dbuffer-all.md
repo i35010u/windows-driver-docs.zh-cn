@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ DIRECTSOUND3DBUFFER \_ ALL
 description: KSPROPERTY \_ DIRECTSOUND3DBUFFER \_ all 属性用于获取或设置指定缓冲区的所有 DirectSound 3d 缓冲区属性。
-ms.assetid: 7c62a0f2-080b-42cd-a30e-7ceb5edad894
 keywords:
 - KSPROPERTY_DIRECTSOUND3DBUFFER_ALL 音频设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 29a83ce814d10d6e841efdc0b42f66bc340fe26a
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 87712bc3955b5a0294cb37eceda99e77931cb6e5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102588"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96784409"
 ---
 # <a name="ksproperty_directsound3dbuffer_all"></a>KSPROPERTY \_ DIRECTSOUND3DBUFFER \_ ALL
 

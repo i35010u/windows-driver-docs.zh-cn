@@ -1,17 +1,16 @@
 ---
 title: Windows Vista 中供应商提供的 INF 文件的示例
 description: 本附录包含一个示例，演示如何实现一个引用 Bth 的供应商提供的 INF 文件。
-ms.assetid: 37865571-D632-4A69-A2AB-D0B2570A6F9D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b075b45dfbf27a19ab95e1dd1a305875ac32c42f
-ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
+ms.openlocfilehash: 833aff34e40f3c0f0bb7da95dcca61598b44bda1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90010101"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96784241"
 ---
-# <a name="appendix-b-an-example-of-a-vendor-provided-inf-file-for-use-in-windows-vista"></a>附录 B：供应商提供的用于 Windows Vista 的 INF 文件示例
+# <a name="appendix-b-an-example-of-a-vendor-provided-inf-file-for-use-in-windows-vista"></a>附录 B：在 Windows Vista 中使用的供应商提供的 INF 文件示例
 
 本附录包含一个示例，演示如何实现一个引用 Bth 的供应商提供的 INF 文件。 实现此特定示例是为了安装与 Windows XP 或 Windows Vista 中的蓝牙规范的版本2.0 和 EDR 兼容的收音机。 其他类型的蓝牙设备的 INF 文件类似。
 
@@ -92,12 +91,12 @@ SourceDisk       = "Windows Vista CD"
 
 **注意：**
 
-1. **版本**部分应将**CLASSGUID**和**DriverVer**指令设置如下：
+1. **版本** 部分应将 **CLASSGUID** 和 **DriverVer** 指令设置如下：
     - **CLASSGUID**：使用适用于蓝牙设备的 MICROSOFT 类 GUID ( {e0cbf06c cd8b-4647-bb8a-263b43f0f974} ) ，而不是第三方 guid。
     - **DriverVer**：如果要取代默认的内置驱动程序，则必须将驱动程序版本设置为提供比 Bth 中内容更高的排名匹配。 有关将驱动程序配置为取代 box 驱动程序的默认驱动程序的详细信息，请参阅 [安装收件箱驱动程序的专用版本](../install/installing-private-builds-of-in-box-drivers--windows-vista-and-later-.md)。
 
 2. 硬件 ID。 VID 和 PID 的组合对于制造商和设备必须是唯一的。 这可确保相同的硬件 ID 与多个设备不对应。
-3. **Include** 和 **需要** 指令。 这三个部分中的 **Include** 指令引用 Bth。 **需求**指令指示应在设备安装过程中处理 Bth 中的哪些部分。
-4. 引用**DeleteRegKeys**部分的**DelReg**指令删除阻止 WINDOWS 为设备创建 PDO 或 devnode 的注册表项或值。 例如，传真服务配置文件当前位于 Windows Vista 不受支持服务的列表中，因此它是 **UnsupportedServices** 注册表项的值。 此示例从 **UnsupportedServices** 项中删除传真服务配置文件，以便 Windows 为设备创建 devnode。
+3. **Include** 和 **需要** 指令。 这三个部分中的 **Include** 指令引用 Bth。 **需求** 指令指示应在设备安装过程中处理 Bth 中的哪些部分。
+4. 引用 **DeleteRegKeys** 部分的 **DelReg** 指令删除阻止 WINDOWS 为设备创建 PDO 或 devnode 的注册表项或值。 例如，传真服务配置文件当前位于 Windows Vista 不受支持服务的列表中，因此它是 **UnsupportedServices** 注册表项的值。 此示例从 **UnsupportedServices** 项中删除传真服务配置文件，以便 Windows 为设备创建 devnode。
 
 强烈建议你在设备和 INF 文件上运行最新的 WHQL 测试，并在 Windows 更新上发布 INF 文件包。 这可确保客户在将其新的蓝牙收音机连接到计算机时，可以自动从 Internet 下载 INF 文件。

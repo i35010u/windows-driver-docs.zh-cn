@@ -1,7 +1,6 @@
 ---
 title: DEVPKEY_DeviceClass_PropPageProvider
 description: DEVPKEY_DeviceClass_PropPageProvider
-ms.assetid: 467a050e-9dd4-4b3b-a942-ee29667ac264
 keywords:
 - DEVPKEY_DeviceClass_PropPageProvider 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: d0342174885d9d3cd4b9025bf2ca38f6a753e416
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 9b2f3c1e9c2a963a6e5c9ff6a38ba4d31da9ddb6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90715566"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96785155"
 ---
 # <a name="devpkey_deviceclass_proppageprovider"></a>DEVPKEY_DeviceClass_PropPageProvider
 
@@ -72,7 +71,7 @@ DEVPKEY_DeviceClass_PropPageProvider 设备属性表示 [设备安装程序类](
 
 DEVPKEY_DeviceClass_PropPageProvider 的值是类注册表项下的 **EnumPropPages32** 注册表值的值。 此值包含类属性页提供程序 DLL 的名称和设备安装程序类的提供程序的入口点。
 
-设备安装程序类的**EnumPropPages32**注册表值可由安装该类的 inf 文件的 inf [**ClassInstall32 部分**](./inf-classinstall32-section.md)中包含的[**inf AddReg 指令**](./inf-addreg-directive.md)设置。
+设备安装程序类的 **EnumPropPages32** 注册表值可由安装该类的 inf 文件的 inf [**ClassInstall32 部分**](./inf-classinstall32-section.md)中包含的 [**inf AddReg 指令**](./inf-addreg-directive.md)设置。
 
 可以调用 [**SetupDiGetClassProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdigetclasspropertyw) 或 [**SetupDiGetClassPropertyEx**](/windows/win32/api/setupapi/nf-setupapi-setupdigetclasspropertyexw) 来检索 DEVPKEY_DeviceClass_PropPageProvider 的值。
 

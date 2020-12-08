@@ -1,15 +1,14 @@
 ---
 title: 网络驱动程序示例
 description: 此目录中的驱动程序示例提供了为设备编写自定义网络驱动程序的起点。
-ms.assetid: 97C88E82-96AA-41AD-9B1F-3EB848A08BD8
 ms.date: 12/02/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 75c52e8a3f2b2642065342f4f4432e04d529e729
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: b603a31dd61776bc8b96d3980e3df66829309dc5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89192451"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96785617"
 ---
 # <a name="networking-driver-samples"></a>网络驱动程序示例
 
@@ -33,5 +32,5 @@ ms.locfileid: "89192451"
 | [WFP MSN Messenger 监视器](/samples/microsoft/windows-driver-samples/windows-filtering-platform-msn-messenger-monitor-sample) | 演示 Windows 筛选平台 (WFP) 的流检查功能的示例应用程序和驱动程序。 |
 | [WFP 流编辑](/samples/microsoft/windows-driver-samples/windows-filtering-platform-stream-edit-sample) | 演示如何使用 Windows 筛选平台 (WFP) ，将传输控制协议的字符串模式替换 (TCP) 连接。 |
 | [Windows 筛选平台](/samples/microsoft/windows-driver-samples/windows-filtering-platform-sample) | 这是一个示例防火墙。 它有一个命令行接口，可用于在各种情况下在不同的 WFP 层上添加筛选器。 此外，它还公开用于注入、基本操作、代理和流检查的标注。 |
-| [本机 Wi-fi IHV 服务](/samples/microsoft/windows-driver-samples/ihv-sample-ui) | 演示适用于本机 Wi-fi 的 IHV 扩展性。 |
+| [本机 Wi-Fi IHV 服务](/samples/microsoft/windows-driver-samples/ihv-sample-ui) | 演示适用于本机 Wi-fi 的 IHV 扩展性。 |
 | [WSK TCP Echo 服务器](/samples/microsoft/windows-driver-samples/wsk-tcp-echo-server) | 此示例驱动程序是一个最小的驱动程序，旨在演示如何使用 Winsock 内核 (WSK) 编程接口。 |

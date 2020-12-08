@@ -1,7 +1,6 @@
 ---
 title: 在格式标记与子格式 GUID 之间进行转换
 description: 在格式标记与子格式 GUID 之间进行转换
-ms.assetid: 299ad5d3-df62-41cf-a18f-daa83cc60ef3
 keywords:
 - 非 PCM 音频格式 WDK，subformat GUID 转换
 - subformat Guid WDK 音频
@@ -11,12 +10,12 @@ keywords:
 - 波形格式标记 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 019247482fbdb3dfeaecdae4cb63a0ceb2d25281
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: c463ad5b99aa4ba691cacc674a4a89446650bdc7
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89208197"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96784897"
 ---
 # <a name="converting-between-format-tags-and-subformat-guids"></a>在格式标记与子格式 GUID 之间进行转换
 
@@ -26,7 +25,7 @@ ms.locfileid: "89208197"
 
 处理非 PCM 波浪 \_ 格式的 \_ 可扩展格式的准则类似于波形格式标记指定的非 pcm 格式的规则。 具体而言，波形 \_ 格式的 \_ 可扩展格式应该具有独立于 PCM 格式的工厂的 pin 工厂，并且它需要自己的数据范围交集处理程序。
 
-波形 \_ 格式可扩展格式的音频格式 \_ 由[**KSDATAFORMAT**](/windows-hardware/drivers/ddi/ks/ns-ks-ksdataformat)结构的**SubFormat**成员中的 GUID 指定。 每个已注册的波形格式标记都有相应的 subformat GUID，它是由 \_ Ksmedia 中的 DEFINE WAVEFORMATEX \_ guid 宏生成的。 例如，波形 \_ 格式 \_ 杜比 \_ e-ac3 spdif 标记对应的 GUID \_ 定义为定义 \_ WAVEFORMATEX \_ GUID (WAVE \_ 格式 \_ 杜 \_ e-ac3 \_ SPDIF) 。
+波形 \_ 格式可扩展格式的音频格式 \_ 由 [**KSDATAFORMAT**](/windows-hardware/drivers/ddi/ks/ns-ks-ksdataformat)结构的 **SubFormat** 成员中的 GUID 指定。 每个已注册的波形格式标记都有相应的 subformat GUID，它是由 \_ Ksmedia 中的 DEFINE WAVEFORMATEX \_ guid 宏生成的。 例如，波形 \_ 格式 \_ 杜比 \_ e-ac3 spdif 标记对应的 GUID \_ 定义为定义 \_ WAVEFORMATEX \_ GUID (WAVE \_ 格式 \_ 杜 \_ e-ac3 \_ SPDIF) 。
 
 此 Ksmedia 中的代码片段演示了如何将新的 GUID 定义为 autoinitialized 静态变量：
 

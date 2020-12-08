@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ DIRECTSOUND3DLISTENER \_ 方向
 description: KSPROPERTY \_ DIRECTSOUND3DLISTENER \_ 方向属性指定3d 侦听器的方向。
-ms.assetid: 324b0def-e989-4dd1-9266-17d018dd512c
 keywords:
 - KSPROPERTY_DIRECTSOUND3DLISTENER_ORIENTATION 音频设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 16b871345b59b3a9e4ae4ae6f6d73a73e1442d50
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 0bdf9ec902e8a6f3333eca02738f3f66ce6e052d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102530"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96784381"
 ---
 # <a name="ksproperty_directsound3dlistener_orientation"></a>KSPROPERTY \_ DIRECTSOUND3DLISTENER \_ 方向
 

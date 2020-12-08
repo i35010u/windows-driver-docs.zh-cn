@@ -1,15 +1,14 @@
 ---
 title: PackageInfo XML 架构概述
 description: PackageInfo XML 架构概述
-ms.assetid: 5873604e-564e-4c8e-bfc7-526aac5767fa
 ms.date: 07/05/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 9c9638f0bbe8e564f43af73d830c7c8a50fb7e10
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: c6c82fea93fc680c5de6c432487417ec89f18d91
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89402882"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96786225"
 ---
 # <a name="packageinfo-xml-schema-overview"></a>PackageInfo XML 架构概述
 
@@ -19,7 +18,8 @@ ms.locfileid: "89402882"
 
 PackageInfo.xml 文档中的数据是根据此部分中所述的 PackageInfo XML 架构设置格式的。
 
-**注意**  该 XML 文档必须使用 UTF-8 编码进行保存。
+**注意**  
+该 XML 文档必须使用 UTF-8 编码进行保存。
 
  
 

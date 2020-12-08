@@ -1,18 +1,17 @@
 ---
 title: 属性页插件
 description: 属性页插件
-ms.assetid: cf5f5861-1670-413c-9c42-c1b6eb6d719a
 keywords:
 - 内核流式处理代理 WDK AVStream，属性页
 - 属性页 WDK AVStream
 ms.date: 06/18/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 181017f904a2238e51dadd72809cb0b85a9128da
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 9f0d7f127b2a273fb17b9ff2633f548c51c6fc3c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89186759"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96785441"
 ---
 # <a name="property-page-plug-in"></a>属性页插件
 
@@ -39,7 +38,7 @@ CFactoryTemplate g_Templates[] =
 };
 ```
 
-属性页应从类 [CBasePropertyPage](/previous-versions//ms780508(v=vs.85)) 派生，并应重写 **CBasePropertyPage**的若干方法：
+属性页应从类 [CBasePropertyPage](/previous-versions//ms780508(v=vs.85)) 派生，并应重写 **CBasePropertyPage** 的若干方法：
 
 ```cpp
 class CMyPropPage: public CBasePropertyPage
@@ -62,7 +61,7 @@ private:
 
 若要初始化属性页，承载属性表将调用 [IPropertyPage：： SetPageSite](/windows/win32/api/ocidl/nf-ocidl-ipropertypage-setpagesite)。 此调用会导致调用插件的 **OnConnect** 方法。 在进行此调用时，属性页已连接到筛选器，但尚未显示属性页。
 
-在对 **OnConnect** 的调用中提供的参数是指向 KS 代理的接口，然后可以查询该代理以获取指向 **IKsPropertySet**的指针。 然后，可以调用 [**IKsPropertySet：： Get**](/windows-hardware/drivers/ddi/ksproxy/nf-ksproxy-ikspropertyset-get) 和 [**IKsPropertySet：： Set**](/windows-hardware/drivers/ddi/dsound/nf-dsound-ikspropertyset-set) 以操作驱动程序的公开属性。
+在对 **OnConnect** 的调用中提供的参数是指向 KS 代理的接口，然后可以查询该代理以获取指向 **IKsPropertySet** 的指针。 然后，可以调用 [**IKsPropertySet：： Get**](/windows-hardware/drivers/ddi/ksproxy/nf-ksproxy-ikspropertyset-get) 和 [**IKsPropertySet：： Set**](/windows-hardware/drivers/ddi/dsound/nf-dsound-ikspropertyset-set) 以操作驱动程序的公开属性。
 
 还必须提供 **CreateInstance** 方法。 系统调用属性页的方法来创建属性页的实例。 此方法应调用类的构造函数来对其进行实例化。
 

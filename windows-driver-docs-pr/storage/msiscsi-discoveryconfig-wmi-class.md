@@ -1,15 +1,14 @@
 ---
 title: MSiSCSI \_ DISCOVERYCONFIG WMI 类
 description: MSiSCSI \_ DISCOVERYCONFIG WMI 类
-ms.assetid: dbf170ba-92ab-47bd-a076-5f54129305a5
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: c7480341925fba2570d6cb2c04cbfaa4e3affc53
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: a2729c6a57ba7a38222d6afe6b4c34bd69c4cdd9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89193191"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96785523"
 ---
 # <a name="msiscsi_discoveryconfig-wmi-class"></a>MSiSCSI \_ DISCOVERYCONFIG WMI 类
 
@@ -19,7 +18,7 @@ ms.locfileid: "89193191"
 
 MSiSCSI \_ DISCOVERYCONFIG WMI 类报告发起程序使用哪些方法来执行发现。
 
-此类在 *配置*中定义为，如下所示。
+此类在 *配置* 中定义为，如下所示。
 
 ```cpp
 class MSiSCSI_DiscoveryConfig {

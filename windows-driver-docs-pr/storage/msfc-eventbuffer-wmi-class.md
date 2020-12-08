@@ -1,15 +1,14 @@
 ---
 title: MSFC \_ EVENTBUFFER WMI 类
 description: MSFC \_ EVENTBUFFER WMI 类
-ms.assetid: ce16e42c-5d0b-47e9-9baa-53dcec482940
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: d1b8b19eb8ee3a84e35ba35a07124147f45ad7e2
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: e9fd6310e05cadff319b5d6f68e54721e44dfee2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89184203"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96785569"
 ---
 # <a name="msfc_eventbuffer-wmi-class"></a>MSFC \_ EVENTBUFFER WMI 类
 
@@ -19,7 +18,7 @@ ms.locfileid: "89184203"
 
 支持 T11 委员会 *光纤通道 HBA API* 规范的 hba 微型端口驱动程序使用 MSFC \_ EventBuffer 类将适配器事件数据报告给已注册为通知这些事件的 WMI 客户端。
 
-MSFC \_ EventBuffer 类在 *Hbaapi*中定义如下：
+MSFC \_ EventBuffer 类在 *Hbaapi* 中定义如下：
 
 ```cpp
 class MSFC_EventBuffer { 

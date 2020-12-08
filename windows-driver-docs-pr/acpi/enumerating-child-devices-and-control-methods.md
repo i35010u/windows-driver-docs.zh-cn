@@ -1,7 +1,6 @@
 ---
 title: 枚举子设备和控制方法
 description: 枚举子设备和控制方法
-ms.assetid: fe0553df-a5b9-46c4-8e1d-8b89a7d4ad67
 keywords:
 - ACPI 设备 WDK，枚举子设备
 - ACPI 设备 WDK，枚举控制方法
@@ -9,12 +8,12 @@ keywords:
 - ACPI 控制方法 WDK，枚举
 ms.date: 10/12/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 4b417e8429eaed3d98d5b7d8dd2538fce7838477
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 24d5cf4675e91789f9e8f65747c8d2f46f7aefd0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89184869"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96785079"
 ---
 # <a name="enumerating-child-devices-and-control-methods"></a>枚举子设备和控制方法
 
@@ -31,7 +30,7 @@ ms.locfileid: "89184869"
  _FOO            control method
 ```
 
-若要使用 [**ioctl \_ acpi \_ EVAL \_ 方法 \_ ex**](/windows-hardware/drivers/ddi/acpiioct/ni-acpiioct-ioctl_acpi_eval_method_ex) 或 [**ioctl \_ acpi \_ ASYNC \_ eval \_ 方法 \_ **](/windows-hardware/drivers/ddi/acpiioct/ni-acpiioct-ioctl_acpi_async_eval_method_ex)，例如，设备的驱动程序提供了 ACPI 命名空间中的控制方法的路径和名称。 为了帮助获取设备的路径和名称以及设备的子对象，Windows 支持 [**IOCTL \_ ACPI \_ 枚举 \_ 子级**](/windows-hardware/drivers/ddi/acpiioct/ni-acpiioct-ioctl_acpi_enum_children) 请求。 引用此部分中提供的简化 ACPI 命名空间作为示例，设备 "ABCD" 的设备堆栈中的驱动程序可以使用此请求执行以下操作：
+若要使用 [**ioctl \_ acpi \_ EVAL \_ 方法 \_ ex**](/windows-hardware/drivers/ddi/acpiioct/ni-acpiioct-ioctl_acpi_eval_method_ex) 或 [**ioctl \_ acpi \_ ASYNC \_ eval \_ 方法 \_**](/windows-hardware/drivers/ddi/acpiioct/ni-acpiioct-ioctl_acpi_async_eval_method_ex)，例如，设备的驱动程序提供了 ACPI 命名空间中的控制方法的路径和名称。 为了帮助获取设备的路径和名称以及设备的子对象，Windows 支持 [**IOCTL \_ ACPI \_ 枚举 \_ 子级**](/windows-hardware/drivers/ddi/acpiioct/ni-acpiioct-ioctl_acpi_enum_children) 请求。 引用此部分中提供的简化 ACPI 命名空间作为示例，设备 "ABCD" 的设备堆栈中的驱动程序可以使用此请求执行以下操作：
 
 -   枚举设备 "ABCD" 和 "ABCD" 的直接子设备。 例如，请求可用于返回 " \\ abcd，" \\ abcd。CHL1、' 和 ' \\ ABCD。CHL2.'
 
@@ -41,7 +40,7 @@ ms.locfileid: "89184869"
 
 驱动程序获取控制方法的路径和名称后，它可以提供路径和名称作为 IOCTL \_ acpi EVAL 方法的输入， \_ 例如 \_ \_ 或 ioctl \_ acpi \_ ASYNC \_ eval \_ 方法 \_ （如）以 [同步方式评估 acpi 控制方法](evaluating-acpi-control-methods-synchronously.md)中所述。
 
-[**IOCTL \_ ACPI \_ 枚举 \_ 子级**](/windows-hardware/drivers/ddi/acpiioct/ni-acpiioct-ioctl_acpi_enum_children)请求将包含以下成员的驱动程序分配的可变长度[**ACPI \_ 枚举 \_ 子级 \_ 输入 \_ 缓冲区**](/windows-hardware/drivers/ddi/acpiioct/ns-acpiioct-_acpi_enum_children_input_buffer)结构作为输入：
+[**IOCTL \_ ACPI \_ 枚举 \_ 子级**](/windows-hardware/drivers/ddi/acpiioct/ni-acpiioct-ioctl_acpi_enum_children)请求将包含以下成员的驱动程序分配的可变长度 [**ACPI \_ 枚举 \_ 子级 \_ 输入 \_ 缓冲区**](/windows-hardware/drivers/ddi/acpiioct/ns-acpiioct-_acpi_enum_children_input_buffer)结构作为输入：
 
 <a href="" id="signature"></a>**信号**  
 输入缓冲区的签名，必须将其设置为 ACPI \_ 枚举 \_ 子级 \_ 输入 \_ 缓冲区 \_ 签名。
@@ -59,7 +58,7 @@ ms.locfileid: "89184869"
 枚举 \_ 子级和枚举子级名称的按 \_ 位 \_ \_ "或 \_ " 是 "筛选器" 枚举其名称与 " **名称** " 成员所提供的名称相同的子对象。
 
 <a href="" id="namelength"></a>**NameLength**  
-**名称**数组包含的 ASCII 字符数。
+**名称** 数组包含的 ASCII 字符数。
 
 <a href="" id="name"></a>**路径名**  
 以 NULL 结尾的四字符 ASCII 数组，其中包含 ACPI 驱动程序用于将子对象的枚举限制为具有相同名称的对象的子对象的名称。
@@ -70,10 +69,10 @@ IOCTL \_ ACPI \_ 枚举 \_ 子请求返回驱动程序分配的可变长度 ACPI
 输出缓冲区的签名，必须将其设置为 ACPI \_ 枚举 \_ 子 \_ 输出 \_ 缓冲区 \_ 签名。
 
 <a href="" id="numberofchildren"></a>**NumberOfChildren**  
-\_ \_ **子**数组中 ACPI 枚举子级类型的元素的数目。
+\_ \_ **子** 数组中 ACPI 枚举子级类型的元素的数目。
 
 <a href="" id="children"></a>**观看**  
-ACPI 枚举子级类型的元素的 \_ 数组 \_ 。 ACPI **Name** \_ 枚举子结构的名称成员 \_ 包含子对象的路径和名称，**标志**成员指示子对象是否具有子对象。
+ACPI 枚举子级类型的元素的 \_ 数组 \_ 。 ACPI **Name** \_ 枚举子结构的名称成员 \_ 包含子对象的路径和名称，**标志** 成员指示子对象是否具有子对象。
 
 如果驱动程序分配的输出缓冲区不够大，无法返回所有枚举的子名称，ACPI 驱动程序将不返回任何子名称，并将请求的 **状态** 成员设置 \_ \_ 为状态 \_ 缓冲区 \_ 溢出。 在这种情况下，如果输出缓冲区的大小（以字节为单位）至少为 **sizeof** (ACPI \_ 枚举 \_ 子 \_ 输出 \_ 缓冲区 \_ 签名) ，acpi 驱动程序还会将 **NumberOfChildren** 设置为检索请求的路径和名称所需的大小（以字节为单位）。
 

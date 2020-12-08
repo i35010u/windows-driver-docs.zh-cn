@@ -1,7 +1,6 @@
 ---
 title: 为音频适配器安装设备接口
 description: 为音频适配器安装设备接口
-ms.assetid: 824cc6a2-702a-4e51-91b1-ab776b1babf1
 keywords:
 - 音频适配器 WDK，设备接口
 - 适配器驱动程序 WDK 音频，设备接口
@@ -11,12 +10,12 @@ keywords:
 - 音频设备接口 WDK
 ms.date: 10/27/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cb53c185b24a1f0462c5f58ea527b358472663cf
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: be63e6eeb033d324c5a5e946afddac855e5d895a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89207043"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96784737"
 ---
 # <a name="installing-device-interfaces-for-an-audio-adapter"></a>为音频适配器安装设备接口
 
@@ -30,7 +29,7 @@ ms.locfileid: "89207043"
 
 下表列出了音频适配器最有可能用于说明其 subdevices 功能的拓扑类别。
 
-|类别|说明|
+|Category|描述|
 |--- |--- |
 |KSCATEGORY_ACOUSTIC_ECHO_CANCEL|可以执行声音回声取消的音频设备 (参阅 [DirectSound 捕获效果](directsound-capture-effects.md)) 在此类别下注册自身。|
 |KSCATEGORY_AUDIO|所有音频设备会自行注册此类别。|
@@ -43,7 +42,7 @@ ms.locfileid: "89207043"
 |KSCATEGORY_DRM_DESCRAMBLE|可以对受 DRM 保护的波形流进行译码的音频设备会在此类别下注册自身 (请参阅 [数字 Rights Management](digital-rights-management.md)) 。|
 
 
-有关拓扑类别的完整列表，请参阅 \_ 头文件 Ks 和 Ksmedia 中定义的 KSCATEGORY*XXX* guid。
+有关拓扑类别的完整列表，请参阅 \_ 头文件 Ks 和 Ksmedia 中定义的 KSCATEGORY *XXX* guid。
 
 所有音频设备都在 KSCATEGORY 音频下进行分类 \_ ，但音频设备还可能会分类到 \_) 或 KSCATEGORY \_ 合成器 (为合成器) 的其他类别，如 KSCATEGORY RENDER (。 对于 INF 文件为设备指定的每个类别，Windows Installer 会在类别名称下为该设备生成一组注册表项， (参阅 [筛选器工厂](filter-factories.md)) 。
 
@@ -108,7 +107,7 @@ ms.locfileid: "89207043"
   WaveDeviceMixerName="XYZ Audio Device Super Mixer"
 ```
 
-**AddInterface**指令为 KSCATEGORY XXX 设备接口指定的字符串名称 \_ *XXX*不能进行本地化，因为适配器驱动程序在内部使用与字符串常量相同的名称。 Windows 驱动程序工具包中的示例适配器驱动程序 (WDK) 为其音频设备接口使用以下字符串名称：
+**AddInterface** 指令为 KSCATEGORY XXX 设备接口指定的字符串名称 \_ *XXX* 不能进行本地化，因为适配器驱动程序在内部使用与字符串常量相同的名称。 Windows 驱动程序工具包中的示例适配器驱动程序 (WDK) 为其音频设备接口使用以下字符串名称：
 
 ```inf
   KSNAME_Wave="Wave"

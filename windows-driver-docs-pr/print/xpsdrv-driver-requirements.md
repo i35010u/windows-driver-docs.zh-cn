@@ -1,17 +1,16 @@
 ---
 title: XPSDrv 驱动程序要求
 description: XPSDrv 驱动程序要求
-ms.assetid: 382b53eb-a69a-452a-8403-876640a9129e
 keywords:
 - 版本 3 XPS 驱动程序 WDK XPSDrv，要求
 ms.date: 06/15/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 1f71ee420fff8e330962e455bca59546617e1916
-ms.sourcegitcommit: a16fd2876383265b4ad336dea624e4b13fc13a1b
+ms.openlocfilehash: bfd91e02584b67c7435d42762c9d161c8a50ed2b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88643993"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96785707"
 ---
 # <a name="xpsdrv-driver-requirements"></a>XPSDrv 驱动程序要求
 

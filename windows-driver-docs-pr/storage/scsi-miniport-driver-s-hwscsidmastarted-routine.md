@@ -1,19 +1,18 @@
 ---
 title: SCSI 微型端口驱动程序的 HwScsiDmaStarted 例程
 description: SCSI 微型端口驱动程序的 HwScsiDmaStarted 例程
-ms.assetid: 697839f0-e912-42a5-abe0-f6bb946c86d8
 keywords:
 - SCSI 微型端口驱动程序 WDK 存储，HwScsiDmaStarted
 - HwScsiDmaStarted
 - DMA 控制器 WDK SCSI
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 120dacfaf8252bbc4b6c56a416d669c447df1622
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 222f669bb4e87a91eb3adabe215ec7c4e5389c08
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89188487"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96785475"
 ---
 # <a name="scsi-miniport-drivers-hwscsidmastarted-routine"></a>SCSI 微型端口驱动程序的 HwScsiDmaStarted 例程
 
@@ -25,10 +24,10 @@ ms.locfileid: "89188487"
 
 特别是，只有当 HBA 提供应用程序专用支持且应用程序直接将大型传输请求发送到微型端口驱动程序时，微型端口驱动程序才必须执行多个从属 DMA 传输操作才能满足给定的 SRB。 否则，存储类驱动程序负责将大型传输请求拆分为一组部分传输请求，每个请求调整为符合 HBA 的功能 (参阅 [存储类驱动程序](introduction-to-storage-class-drivers.md)) 。
 
-当系统 DMA 控制器准备好在系统内存和 HBA 之间传输数据时， **ScsiPortIoMapTransfer**将调用微型端口驱动程序的*HwScsiDmaStarted*例程。 *HwScsiDmaStarted* 必须设置 HBA 以进行传输操作。
+当系统 DMA 控制器准备好在系统内存和 HBA 之间传输数据时， **ScsiPortIoMapTransfer** 将调用微型端口驱动程序的 *HwScsiDmaStarted* 例程。 *HwScsiDmaStarted* 必须设置 HBA 以进行传输操作。
 
 当传输操作完成后，微型端口驱动程序必须先调用 [**ScsiPortFlushDma**](/windows-hardware/drivers/ddi/srb/nf-srb-scsiportflushdma) ，然后再调用 **ScsiPortNotification** 和 SRB 和/或调用 **ScsiPortIoMapTransfer** ，以便在 HBA 专用于用户模式应用程序支持的情况下为应用程序提供的缓冲区中的子范围再次设置 DMA 控制器。
 
-**ScsiPortFlushDma** 刷新 DMA 控制器中缓存的所有剩余数据。 请注意，即使尚未调用微型端口驱动程序的*HwScsiDmaStarted*例程，也可以调用**ScsiPortFlushDma**来取消系统 DMA 传输。
+**ScsiPortFlushDma** 刷新 DMA 控制器中缓存的所有剩余数据。 请注意，即使尚未调用微型端口驱动程序的 *HwScsiDmaStarted* 例程，也可以调用 **ScsiPortFlushDma** 来取消系统 DMA 传输。
 
 有关详细信息，请参阅 [**ScsiPortIoMapTransfer**](/windows-hardware/drivers/ddi/srb/nf-srb-scsiportiomaptransfer) 和 [**ScsiPortFlushDma**](/windows-hardware/drivers/ddi/srb/nf-srb-scsiportflushdma) 。

@@ -1,15 +1,14 @@
 ---
 title: USB 双向扩展程序
 description: 描述对 USB 设备的双向支持，结合使用双向 XML 文件和称为 USB 双向扩展器的 Javascript 文件。
-ms.assetid: C4012369-F1C6-4EBC-8DAE-F4E551DE782D
 ms.date: 06/11/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 00555e51cfc9c5ec829b16718dc9ad58b9b62718
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 146c3dc159468747d360e637edfde7ddc586c4d4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89212637"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96786009"
 ---
 # <a name="usb-bidi-extender"></a>USB 双向扩展程序
 
@@ -23,11 +22,11 @@ USB 双向扩展器允许应用程序将双向与 USB 结合使用作为传输�
 
 在中 Windows 8.1 扩展了 v4 驱动程序模型，以便为基于主机的设备提供支持。 除此之外，USBMon 已更新为允许 Ihv 使用 JavaScript 代码来更好地控制打印路径以及执行打印作业的操作。 更新包括添加提供新的双向 JavaScript 入口点的 Api。 这些 Api 与 USBMon 中的现有函数对齐。
 
-**startPrintJob**。 此新函数与 USBMon 中的 startDocPort 对齐。 在连接到基于主机的打印设备的端口上启动每个新的 USB 打印作业时，USBMon 将调用 IHV 提供的 JavaScript，以允许它执行所需的任何预作业处理。 这可能包括在作业属性包中设置作业全局属性、在设备上查询当前状态和配置数据或不执行任何操作。 完成的任务与设备和 IHV 完全相关。
+**startPrintJob**。 此新函数与 USBMon 中的 startDocPort 对齐。 在连接到 Host-Based 打印设备的端口上启动每个新的 USB 打印作业时，USBMon 将调用 IHV 提供的 JavaScript，以允许它执行所需的任何预作业处理。 这可能包括在作业属性包中设置作业全局属性、在设备上查询当前状态和配置数据或不执行任何操作。 完成的任务与设备和 IHV 完全相关。
 
 **writePrintData**。 此新函数与 USBMon 中的 writePort 对齐。 当 USBMon 在打印操作期间从后台处理程序收到每个 writePort 函数调用时，所提供的打印数据需要通过 IHV JavaScript 函数发送到基于主机的设备。 这允许 IHV JS 在此时确定应发送到设备的内容。 IHV 可以根据需要删除、添加或保存部分数据缓冲区。 这允许 IHV 完全控制何时发送到设备。 这会使 IHV 有机会将 (保存在某个永久性) 流中，以便在从后台处理程序接收到所有数据后进行处理，从而帮助启用此类方案作为手动双工。 IHV 还可以使用 printerBidiSchemaResponses 对象来返回处理作业期间的打印作业状态或设备状态。
 
-**endPrintJob**。 此新函数与 USBMon 中的 endDocPort 对齐。 当 USBMon 在连接到基于主机的打印设备的端口上收到每个 USB 打印作业的 endDocPort 调用时，USBMon 将调用 IHV 提供的 JavaScript，以允许它执行所需的任何后处理作业。 这可能包括将任何保留的数据发送到设备、返回双向架构值以开始手动全双工或 IHV/设备需要的任何其他内容。
+**endPrintJob**。 此新函数与 USBMon 中的 endDocPort 对齐。 当 USBMon 接收到连接到 Host-Based 打印设备的端口上的每个 USB 打印作业的 endDocPort 调用时，USBMon 将调用 IHV 提供的 JavaScript，以允许它执行所需的任何操作后处理。 这可能包括将任何保留的数据发送到设备、返回双向架构值以开始手动全双工或 IHV/设备需要的任何其他内容。
 
 下图提供了 USB 双向扩展体系结构的概述，其中显示了使用 **getStatus** 方法通过 USBPrint 接口从设备获取未经请求的状态的方案。
 

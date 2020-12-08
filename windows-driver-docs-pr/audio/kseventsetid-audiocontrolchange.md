@@ -1,17 +1,16 @@
 ---
 title: KSEVENTSETID \_ AudioControlChange
 description: KSEVENTSETID \_ AudioControlChange
-ms.assetid: 5189c284-d53a-4fc4-981c-7d6b3851dab1
 keywords:
 - KSEVENTSETID_AudioControlChange
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 03ec40b514bfc1e33c178093ba0db4ab7cc547b8
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 68e3f84f1bd928c835a82f10087af43315b9d2a1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89209031"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96784679"
 ---
 # <a name="kseventsetid_audiocontrolchange"></a>KSEVENTSETID \_ AudioControlChange
 

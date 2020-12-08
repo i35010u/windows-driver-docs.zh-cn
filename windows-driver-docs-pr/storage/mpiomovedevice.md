@@ -1,7 +1,6 @@
 ---
 title: MPIOMoveDevice 函数
-description: MPIOMoveDevice 方法用于在设备上设置活动的路径。
-ms.assetid: aa3da461-ea55-4f60-b957-eb6b6cc3aeec
+description: MPIOMoveDevice 方法用于设置设备上的活动路径。
 keywords:
 - MPIOMoveDevice 函数存储设备
 topic_type:
@@ -14,40 +13,40 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 9d99804d6eb0aecdbf9d529ec0627f077c519538
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7141814c1818d0feaa7ee88c9f825c4f101a9e56
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63377470"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96785593"
 ---
 # <a name="mpiomovedevice-function"></a>MPIOMoveDevice 函数
 
 
-MPIOMoveDevice 方法用于在设备上设置活动的路径。
+MPIOMoveDevice 方法用于设置设备上的活动路径。
 
 <a name="syntax"></a>语法
 ------
 
 ```ManagedCPlusPlus
 void MPIOMoveDevice(
-   [in, Description("MPIO Disk Ordinal"):amended] uint32    DiskOrdinal,
-   [in, Description("Move Flags."):amended] uint32          Flags,
+   [in, Description("MPIO Disk Ordinal"):amended] uint32    DiskOrdinal,
+   [in, Description("Move Flags."):amended] uint32          Flags,
    [in, Description("PathID to set Active"):amended] uint64 PathID
 );
 ```
 
-<a name="parameters"></a>Parameters
+<a name="parameters"></a>参数
 ----------
 
 *DiskOrdinal*   
-32-位域，指定 MPIO 磁盘序号值。
+指定 MPIO 磁盘序号值的32位域。
 
-*标志*   
-32-位域，指定与移动设备相关联的标志。
+*随意*   
+一个32位域，指定与设备移动关联的标志。
 
 *PathID*   
-64-位域，指定与设备相关联的路径。
+指定与设备关联的路径的64位域。
 
 <a name="return-value"></a>返回值
 ------------
@@ -57,7 +56,7 @@ void MPIOMoveDevice(
 <a name="remarks"></a>备注
 -------
 
-此 WMI 方法属于 MPIO\_WMI\_方法 WMI 类。
+此 WMI 方法属于 MPIO \_ wmi \_ 方法 wmi 类。
 
 <a name="requirements"></a>要求
 ------------
@@ -70,11 +69,11 @@ void MPIOMoveDevice(
 <tbody>
 <tr class="odd">
 <td align="left"><p>目标平台</p></td>
-<td align="left">桌面设备</td>
+<td align="left">台式机</td>
 </tr>
 <tr class="even">
-<td align="left"><p>Header</p></td>
-<td align="left">MPIOwmi.h （包括 MPIOwmi.h）</td>
+<td align="left"><p>标头</p></td>
+<td align="left">MPIOwmi (包含 MPIOwmi) </td>
 </tr>
 </tbody>
 </table>

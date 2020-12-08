@@ -1,7 +1,6 @@
 ---
 title: 电池状态和通知例程的交互
 description: 电池状态和通知例程的交互
-ms.assetid: 1f9a3785-4ea4-4b56-bc66-247dfe222377
 keywords:
 - 电池通知 WDK
 - 电池 miniclass 驱动程序 WDK，通知
@@ -9,12 +8,12 @@ keywords:
 - 电池类驱动程序 WDK，通知
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f3381b70d126d808df59fb748ee4fb8202ebe2b4
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 018b9aad5aaf19c1ab700ef303613e70933db258
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90716604"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96784329"
 ---
 # <a name="interaction-of-battery-status-and-notification-routines"></a>电池状态和通知例程的交互
 

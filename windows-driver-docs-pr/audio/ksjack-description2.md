@@ -1,7 +1,6 @@
 ---
 title: KSJACK \_ DESCRIPTION2 结构
 description: KSJACK \_ DESCRIPTION2 结构指定支持插孔存在检测的插孔的功能和当前状态。
-ms.assetid: 0db29870-20d0-459b-a531-3dea5d073183
 keywords:
 - KSJACK_DESCRIPTION2 构造音频设备
 - PKSJACK_DESCRIPTION2 结构指针音频设备
@@ -15,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2fc3745dfdb4d63b0a1f0d339ffe35a995a5b53c
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 1e8c43efd9e64be43c0b2d2ce2b9c134c4dd84a9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89207031"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96784665"
 ---
 # <a name="ksjack_description2-structure"></a>KSJACK \_ DESCRIPTION2 结构
 
@@ -74,7 +73,7 @@ typedef struct _tagKSJACK_DESCRIPTION2 {
 <a name="remarks"></a>备注
 -------
 
-如果音频设备缺少插孔状态检测，则必须始终将[**KSJACK \_ 说明**](ksjack-description.md)结构的**Connectionmultiplexer.isconnected**成员设置为**TRUE**。 为了消除**connectionmultiplexer.isconnected**的**TRUE**值这一双重含义产生的多义性，客户端应用程序可以调用[IKsJackDescription2：： GetJackDescription2](/windows/win32/api/devicetopology/nf-devicetopology-iksjackdescription2-getjackdescription2)来读取结构的**JackCapabilities**标志 `KSJACK_DESCRIPTION2` 。 如果此标志具有 JACKDESC2 的 \_ " \_ 检测 \_ 功能位" 设置，则表示端点确实支持插孔状态检测。 在这种情况下，可以解释 **connectionmultiplexer.isconnected** 成员的返回值，以准确反映插孔的插入状态。
+如果音频设备缺少插孔状态检测，则必须始终将 [**KSJACK \_ 说明**](ksjack-description.md)结构的 **Connectionmultiplexer.isconnected** 成员设置为 **TRUE**。 为了消除 **connectionmultiplexer.isconnected** 的 **TRUE** 值这一双重含义产生的多义性，客户端应用程序可以调用 [IKsJackDescription2：： GetJackDescription2](/windows/win32/api/devicetopology/nf-devicetopology-iksjackdescription2-getjackdescription2)来读取结构的 **JackCapabilities** 标志 `KSJACK_DESCRIPTION2` 。 如果此标志具有 JACKDESC2 的 \_ " \_ 检测 \_ 功能位" 设置，则表示端点确实支持插孔状态检测。 在这种情况下，可以解释 **connectionmultiplexer.isconnected** 成员的返回值，以准确反映插孔的插入状态。
 
 <a name="requirements"></a>要求
 ------------

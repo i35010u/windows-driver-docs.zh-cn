@@ -1,19 +1,18 @@
 ---
 title: 实现 IAdapterPowerManagement
 description: 实现 IAdapterPowerManagement
-ms.assetid: 654b86a7-845c-415b-99e4-c7be92cb9b9c
 keywords:
 - IAdapterPowerManagement
 - 适配器驱动程序 WDK 音频，电源管理
 - 音频适配器驱动程序 WDK，电源管理
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0a77939a99402d63c8f06cfafd7eb4e492871f06
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 1fd8c0e0e1438ce3e6ced9963d41cd6bdb00ab00
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89209115"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96784747"
 ---
 # <a name="implementing-iadapterpowermanagement"></a>实现 IAdapterPowerManagement
 
@@ -25,7 +24,7 @@ ms.locfileid: "89209115"
 
 可以使用 \_ 标头文件 Portcls 中的 IMP IAdapterPowerManagement 定义将 [**IAdapterPowerManagement：:P owerchangestate**](/windows-hardware/drivers/ddi/portcls/nf-portcls-iadapterpowermanagement-powerchangestate)、 [**IAdapterPowerManagement：： QueryPowerChangeState**](/windows-hardware/drivers/ddi/portcls/nf-portcls-iadapterpowermanagement-querypowerchangestate)和 [**IAdapterPowerManagement：： QueryDeviceCapabilities**](/windows-hardware/drivers/ddi/portcls/nf-portcls-iadapterpowermanagement-querydevicecapabilities) 方法的函数声明添加到驱动程序的 **CAdapterCommon** 类定义。
 
-在 PortCls 系统驱动程序调用适配器的设备启动例程期间 (参阅[启动设备](../kernel/starting-a-device.md)) ，适配器应通过调用[**PcRegisterAdapterPowerManagement**](/windows-hardware/drivers/ddi/portcls/nf-portcls-pcregisteradapterpowermanagement)向 PortCls 注册其**IAdapterPowerManagement**接口。 有关代码示例，请参阅 WDK 中 Sb16 示例适配器驱动程序中的 **StartDevice** 函数。 **PcRegisterAdapterPowerManagement**函数的第一个参数是指向适配器驱动程序的**CAdapterCommon**对象的**IUnknown**指针。 PortCls 查询此对象的 **IAdapterPowerManagement** 接口。
+在 PortCls 系统驱动程序调用适配器的设备启动例程期间 (参阅 [启动设备](../kernel/starting-a-device.md)) ，适配器应通过调用 [**PcRegisterAdapterPowerManagement**](/windows-hardware/drivers/ddi/portcls/nf-portcls-pcregisteradapterpowermanagement)向 PortCls 注册其 **IAdapterPowerManagement** 接口。 有关代码示例，请参阅 WDK 中 Sb16 示例适配器驱动程序中的 **StartDevice** 函数。 **PcRegisterAdapterPowerManagement** 函数的第一个参数是指向适配器驱动程序的 **CAdapterCommon** 对象的 **IUnknown** 指针。 PortCls 查询此对象的 **IAdapterPowerManagement** 接口。
 
 当 PortCls 调用适配器驱动程序的 **IAdapterPowerManagement：:P owerchangestate** 方法更改设备的电源状态时，适配器驱动程序应在适配器的 **CAdapterCommon** 对象中缓存设备的新电源状态。 在 **CAdapterCommon：： Init** 调用期间 (查看在 WDK 的示例适配器驱动程序) 的实现，驱动程序应将初始电源状态设置为 [DeviceState](../kernel/devicestate.md)) 中描述的 PowerDeviceD0 (，然后再从成功的初始化中返回。 仅当已知设备处于适当的电源状态时，驱动程序才能写入硬件。 例如，在 WDK 的 Sb16 示例驱动程序中，驱动程序只会在 PowerDeviceD0 状态下写入硬件。
 

@@ -1,18 +1,17 @@
 ---
 title: 电池微型类驱动程序的 DriverEntry 例程
 description: 电池微型类驱动程序的 DriverEntry 例程
-ms.assetid: dc7c9f75-835b-4646-b30b-24c9dcb6ed2d
 keywords:
 - 电池 miniclass 驱动程序 WDK，例程
 - DriverEntry WDK 电池
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 607a9c76e0ef96c8c94da0be3b4c19d437e41691
-ms.sourcegitcommit: 7a7e61b4147a4aa86bf820fd0b0c7681fe17e544
+ms.openlocfilehash: 5799bdf5c79b3e817120c70db80b7599857182e3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89056909"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96784345"
 ---
 # <a name="driverentry-routine-of-a-battery-miniclass-driver"></a>电池微型类驱动程序的 DriverEntry 例程
 
@@ -24,9 +23,9 @@ ms.locfileid: "89056909"
 
 Miniclass 驱动程序的 [*DriverEntry*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_initialize) 例程设置以下特定于驱动程序的入口点：
 
--   [*Unload*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_unload) *DriverObject* - &gt; **DriverUnload**中的 Unload 例程
+-   [*Unload*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_unload) *DriverObject* - &gt; **DriverUnload** 中的 Unload 例程
 
--   [*AddDevice*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_add_device) *DriverObject* - &gt; **DriverExtension** - &gt; **AddDevice**中的驱动程序的 AddDevice 例程
+-   [*AddDevice*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_add_device) *DriverObject* - &gt; **DriverExtension** - &gt; **AddDevice** 中的驱动程序的 AddDevice 例程
 
 -   [*DRIVER_DISPATCH*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch) *DriverObject* - &gt; **MajorFunction** \[ [**IRP \_ MJ \_ POWER**](../kernel/irp-mj-power.md)中的 DRIVER_DISPATCH 回调函数\]
 

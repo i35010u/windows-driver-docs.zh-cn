@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ AUDIOENGINE \_ 缓冲区 \_ 大小 \_ 范围
 description: KSPROPERTY \_ AUDIOENGINE \_ BUFFER \_ size \_ RANGE 属性指示在调用时，硬件音频引擎可为给定数据格式支持的缓冲区的最小大小和最大大小。 指定缓冲区大小（以字节为单位）。
-ms.assetid: 6A5DF24C-A328-4814-A410-2B1E13402A2B
 keywords:
 - KSPROPERTY_AUDIOENGINE_BUFFER_SIZE_RANGE 音频设备
 topic_type:
@@ -14,17 +13,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b5d0be41798c8693753c3c3b30963cb47763d138
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: ae7fb526cd03a976697ba67492d8d2c1086f842e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102024"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96784441"
 ---
 # <a name="ksproperty_audioengine_buffer_size_range"></a>KSPROPERTY \_ AUDIOENGINE \_ 缓冲区 \_ 大小 \_ 范围
 
 
-**KSPROPERTY \_ AUDIOENGINE \_ BUFFER \_ size \_ RANGE**属性指示在调用时，硬件音频引擎可为给定数据格式支持的缓冲区的最小大小和最大大小。 指定缓冲区大小（以字节为单位）。
+**KSPROPERTY \_ AUDIOENGINE \_ BUFFER \_ size \_ RANGE** 属性指示在调用时，硬件音频引擎可为给定数据格式支持的缓冲区的最小大小和最大大小。 指定缓冲区大小（以字节为单位）。
 
 ### <a name="span-idusage_summary_tablespanspan-idusage_summary_tablespanspan-idusage_summary_tablespanusage-summary-table"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用情况摘要表
 
@@ -60,12 +59,12 @@ ms.locfileid: "90102024"
 
 ### <a name="span-idreturn_valuespanspan-idreturn_valuespanspan-idreturn_valuespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>返回值
 
-**KSPROPERTY \_ AUDIOENGINE \_ 缓冲区 \_ 大小 \_ 范围**属性请求返回状态 " ** \_ 成功**" 以指示它已成功完成。 否则，请求将返回相应的错误状态代码。
+**KSPROPERTY \_ AUDIOENGINE \_ 缓冲区 \_ 大小 \_ 范围** 属性请求返回状态 " **\_ 成功**" 以指示它已成功完成。 否则，请求将返回相应的错误状态代码。
 
 <a name="remarks"></a>备注
 -------
 
-请务必注意，在调用方调用 **KSPROPERTY \_ AUDIOENGINE \_ BUFFER \_ SIZE \_ 范围** 属性之前，调用方将填充 [**KSDATAFORMAT \_ WAVEFORMATEX**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksdataformat_waveformatex) 结构的字段。 因此，当调用 **KSPROPERTY \_ AUDIOENGINE \_ 缓冲区 \_ 大小 \_ 范围** 时，音频驱动程序将接收一个 KSP \_ 节点，后跟来自调用方的已填充 **KSDATAFORMAT \_ WAVEFORMATEX** 结构。 驱动程序使用此结构中的数据格式信息来确定最小和最大缓冲区大小以适应指定的数据格式。 成功调用此属性后，内核流式处理 (KS) 筛选器将填充[**KSAUDIOENGINE \_ 缓冲区 \_ 大小 \_ 范围**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-_tagksaudioengine_buffer_size_range)结构的**MinBufferBytes**和**MaxBufferBytes**字段。
+请务必注意，在调用方调用 **KSPROPERTY \_ AUDIOENGINE \_ BUFFER \_ SIZE \_ 范围** 属性之前，调用方将填充 [**KSDATAFORMAT \_ WAVEFORMATEX**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksdataformat_waveformatex) 结构的字段。 因此，当调用 **KSPROPERTY \_ AUDIOENGINE \_ 缓冲区 \_ 大小 \_ 范围** 时，音频驱动程序将接收一个 KSP \_ 节点，后跟来自调用方的已填充 **KSDATAFORMAT \_ WAVEFORMATEX** 结构。 驱动程序使用此结构中的数据格式信息来确定最小和最大缓冲区大小以适应指定的数据格式。 成功调用此属性后，内核流式处理 (KS) 筛选器将填充 [**KSAUDIOENGINE \_ 缓冲区 \_ 大小 \_ 范围**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-_tagksaudioengine_buffer_size_range)结构的 **MinBufferBytes** 和 **MaxBufferBytes** 字段。
 
 <a name="requirements"></a>要求
 ------------

@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ DVDCOPY \_ DEC \_ KEY2
 description: KSPROPERTY \_ DVDCOPY \_ DEC \_ KEY2 属性检索作为 DVD 版权保护身份验证过程的一部分提供给解码器的第二个总线密钥。
-ms.assetid: 48e62fec-773d-46b6-838b-5e1e457cb6a3
 keywords:
 - KSPROPERTY_DVDCOPY_DEC_KEY2 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ee4360028a4bf3a327365e40fb8b03eeb6f14e10
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 8099138ec77a84becad3a04dbac7ccc0fa900bca
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106706"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96785457"
 ---
 # <a name="ksproperty_dvdcopy_dec_key2"></a>KSPROPERTY \_ DVDCOPY \_ DEC \_ KEY2
 
@@ -84,7 +83,7 @@ KSPROPERTY \_ DVDCOPY \_ DEC \_ KEY2 属性检索作为 DVD 版权保护身份�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KS \_ DVDCOPY \_ BUSKEY**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-_ks_dvdcopy_buskey)

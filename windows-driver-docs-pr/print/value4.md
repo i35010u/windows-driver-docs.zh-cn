@@ -1,17 +1,16 @@
 ---
 title: Value (TCP/IP)
 description: TCP/IP 值构造允许使用从特定 MIB 对象检索数据的查询来扩展双向通信架构。
-ms.assetid: 46b24830-10a1-405b-9c12-b5804f76d668
 keywords:
 - 值构造
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bf567cbe5f6ad969573bde04f629430a346bdc22
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: df5ca1995cb7d3a34a4ecaf194b8de3242c07c87
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106330"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96785847"
 ---
 # <a name="value-tcpip"></a>Value (TCP/IP)
 
@@ -26,7 +25,7 @@ ms.locfileid: "90106330"
 <thead>
 <tr class="header">
 <th>Attribute</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -39,7 +38,7 @@ ms.locfileid: "90106330"
 <td><p> (可选) 一个布尔值，该值指示端口监视器是否向驱动程序发送通知。 <strong>TRUE</strong>值指示端口监视器向驱动程序发送通知;<strong>FALSE</strong>表示端口监视器不向驱动程序发送通知。</p></td>
 </tr>
 <tr class="odd">
-<td><p><strong>name</strong></p></td>
+<td><p>name</p></td>
 <td><p>架构值的名称。</p></td>
 </tr>
 <tr class="even">
@@ -59,13 +58,13 @@ ms.locfileid: "90106330"
 
  
 
-**注意**   支持 SNMP 协议的网络设备可以是不同 subdevices （如处理器、网络、打印机和磁盘存储）的主机。 网络打印机中实现的 MIB 表包含按设备索引编制索引的条目。 为了从 MIB 表检索数据 (如输入纸盒) 的名称，该查询必须具有正确标识 subdevice 的设备索引。 标准 TCP/IP 端口监视器允许通过端口配置 UI 手动配置设备索引。 使用 **deviceIndex**= "true" 的双向扩展会生成一个 OID，其中包含从端口配置 UI 获取的适当的设备索引。 此外，如果 `Value` 构造包含在属性实例中，则 OID 的末尾将追加零个索引。
+**注意**  支持 SNMP 协议的网络设备可以是不同 subdevices （如处理器、网络、打印机和磁盘存储）的主机。 网络打印机中实现的 MIB 表包含按设备索引编制索引的条目。 为了从 MIB 表检索数据 (如输入纸盒) 的名称，该查询必须具有正确标识 subdevice 的设备索引。 标准 TCP/IP 端口监视器允许通过端口配置 UI 手动配置设备索引。 使用 **deviceIndex**= "true" 的双向扩展会生成一个 OID，其中包含从端口配置 UI 获取的适当的设备索引。 此外，如果 `Value` 构造包含在属性实例中，则 OID 的末尾将追加零个索引。
 
  
 
 ### <a name="code-example"></a><a href="" id="code-example"></a> 代码示例
 
-下面的代码示例通过向**Printer**属性添加新的属性 "**系统**" 来扩展双向通信架构。 **系统**属性具有 `Value` 具有**name**、 **type**和**oid**特性的构造。
+下面的代码示例通过向 **Printer** 属性添加新的属性 "**系统**" 来扩展双向通信架构。 **系统** 属性具有 `Value` 具有 **name**、 **type** 和 **oid** 特性的构造。
 
 ```cpp
 <Property name="Printer">

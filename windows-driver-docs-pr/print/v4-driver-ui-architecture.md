@@ -1,15 +1,14 @@
 ---
 title: V4 驱动程序 UI 体系结构
 description: V4 驱动程序体系结构的高级设计目标是为 Microsoft Store 应用用户界面提供内置支持。
-ms.assetid: 6318E480-C567-4866-8E88-B19904408C59
 ms.date: 09/28/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: c29bac37176d4bf37289bf77ad2e50359b01b706
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 90c1d2299dc5a3bfd8a418dc8c5b5cb7916fbde6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89211917"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96785907"
 ---
 # <a name="v4-driver-ui-architecture"></a>V4 驱动程序 UI 体系结构
 

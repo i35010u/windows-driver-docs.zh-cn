@@ -1,7 +1,6 @@
 ---
 title: WavePci 设备的硬件要求
 description: WavePci 设备的硬件要求
-ms.assetid: 58a73ac1-baba-42df-a590-e7282f902157
 keywords:
 - WavePci 硬件要求 WDK 音频
 - 总线主 WDK 音频
@@ -14,12 +13,12 @@ keywords:
 - 拆分 buffer 帧 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5afb48d29bedf04c562c90252fe5796ae240495e
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: ad2debfd9451886ba9362afbce8eb5ffe7085126
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89209205"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96784781"
 ---
 # <a name="hardware-requirements-for-wavepci-devices"></a>WavePci 设备的硬件要求
 

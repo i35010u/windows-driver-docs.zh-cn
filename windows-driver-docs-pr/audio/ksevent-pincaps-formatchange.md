@@ -1,7 +1,6 @@
 ---
 title: KSEVENT \_ PINCAPS \_ FORMATCHANGE
 description: KSEVENT \_ PINCAPS \_ FORMATCHANGE 事件向音频堆栈表明音频设备的音频数据格式已更改。
-ms.assetid: ca9ee246-7fca-42df-89e0-7ace6b1f808a
 keywords:
 - KSEVENT_PINCAPS_FORMATCHANGE 音频设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 76e626f2c501068ea550848e8ed44b6ece11cb21
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: a38dde990fb015ac7a3f25fb68b7b7ca77bad88d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102658"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96784685"
 ---
 # <a name="ksevent_pincaps_formatchange"></a>KSEVENT \_ PINCAPS \_ FORMATCHANGE
 
@@ -74,7 +73,7 @@ static PCEVENT_ITEM FormatChangePinEvent[] = {
 
 在上面的代码示例中，MyEventHandler 自定义事件处理程序必须监视 `KSEVENT_PINCAPS_FORMATCHANGE` 事件，并在触发 KSEVENT PINCAPS FORMATCHANGE 时将其注册到 Portcls \_ \_ 。 微型端口驱动程序必须调用 [**IPortEvents：： AddEventToEventList**](/windows-hardware/drivers/ddi/portcls/nf-portcls-iportevents-addeventtoeventlist) 方法来注册事件。
 
-若要获取微型端口驱动程序支持的 pin、节点、连接和属性的说明，端口驱动程序将调用 [**IMiniport：： GetDescription**](/windows-hardware/drivers/ddi/portcls/nf-portcls-iminiport-getdescription) 方法。 此方法调用将返回 [**PCFILTER \_ 描述符**](/windows-hardware/drivers/ddi/portcls/ns-portcls-pcfilter_descriptor) 结构，该结构指向 ([**PCAUTOMATION \_ 表**](/windows-hardware/drivers/ddi/portcls/ns-portcls-pcautomation_table)) 的自动化表。 **PCAUTOMATION \_ 表**结构包含**事件**成员。 此成员指向与微型端口驱动程序所支持的筛选器相关联的事件的数组。 因此，您必须将 **Events** 成员设置为指向事件数组，该事件数组包含事件的 **PCEVENT \_ 项** 结构 `KSEVENT_PINCAPS_FORMATCHANGE` 。
+若要获取微型端口驱动程序支持的 pin、节点、连接和属性的说明，端口驱动程序将调用 [**IMiniport：： GetDescription**](/windows-hardware/drivers/ddi/portcls/nf-portcls-iminiport-getdescription) 方法。 此方法调用将返回 [**PCFILTER \_ 描述符**](/windows-hardware/drivers/ddi/portcls/ns-portcls-pcfilter_descriptor) 结构，该结构指向 ([**PCAUTOMATION \_ 表**](/windows-hardware/drivers/ddi/portcls/ns-portcls-pcautomation_table)) 的自动化表。 **PCAUTOMATION \_ 表** 结构包含 **事件** 成员。 此成员指向与微型端口驱动程序所支持的筛选器相关联的事件的数组。 因此，您必须将 **Events** 成员设置为指向事件数组，该事件数组包含事件的 **PCEVENT \_ 项** 结构 `KSEVENT_PINCAPS_FORMATCHANGE` 。
 
 当微型端口驱动程序检测到动态格式更改时，它必须调用 [**IPortEvents：： GenerateEventList**](/windows-hardware/drivers/ddi/portcls/nf-portcls-iportevents-generateeventlist) 方法来向 `KSEVENT_PINCAPS_FORMATCHANGE` 事件发出信号。
 

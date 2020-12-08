@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ 音频 \_ 回音 \_ 电平
 description: "\"KSPROPERTY \\_ 音频 \\_ 回音 \\_ 级别\" 属性指定当前 reverberation 级别。 这是回音节点 (KSNODETYPE 回音) 的属性 \\_ 。"
-ms.assetid: f38396a2-5528-4085-a051-fcfb73e9c1d1
 keywords:
 - KSPROPERTY_AUDIO_REVERB_LEVEL 音频设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 532881b64cc89ef412a571a220afe1d864dfa661
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 3b76b2ee3d6bfeda1994ae08be5da59c68d6e7a3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102050"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96784475"
 ---
 # <a name="ksproperty_audio_reverb_level"></a>KSPROPERTY \_ 音频 \_ 回音 \_ 电平
 

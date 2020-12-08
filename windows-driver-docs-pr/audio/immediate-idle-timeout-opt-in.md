@@ -1,15 +1,14 @@
 ---
 title: 选择加入即时空闲超时
 description: 本主题讨论在不再需要电源时 Windows 8 驱动程序可用于选择立即断电状态的 ImmediateIdle 注册表值。
-ms.assetid: 43721EC9-4901-4C68-9CCC-E0A71BF2200E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4226843694f42a4da0a02700eb6b9b695631e997
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: be64e7479a4a8d7d2f62cbde7fe9489198c3c4e0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89209121"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96784769"
 ---
 # <a name="span-idaudioimmediate_idle_timeout_opt-inspanimmediate-idle-timeout-opt-in"></a><span id="audio.immediate_idle_timeout_opt-in"></span>选择加入即时空闲超时
 
@@ -20,7 +19,7 @@ ms.locfileid: "89209121"
 
 HKLM \\ System \\ CurrentControlSet \\ Control \\ 类 \\ {4D36E96C-E325-11CE-BFC1-08002BE10318} \\ &lt; UVXYZ &gt; \\ PowerSettings。
 
-除了 [PortCls 注册表电源设置](portcls-registry-power-settings.md)中显示的默认电源设置值外，还会在 *ImmediateIdle*中包括以下行：
+除了 [PortCls 注册表电源设置](portcls-registry-power-settings.md)中显示的默认电源设置值外，还会在 *ImmediateIdle* 中包括以下行：
 
 ``` syntax
 "ImmediateIdle"=hex:00,00,00,00  

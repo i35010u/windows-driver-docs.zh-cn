@@ -1,7 +1,6 @@
 ---
 title: 数据交集
 description: 数据交集
-ms.assetid: a1588ce0-a091-4bfd-98a9-4d78e2fc847f
 keywords:
 - 数据交集处理程序 WDK 音频，关于数据交集
 - 数据交集 WDK 音频
@@ -11,12 +10,12 @@ keywords:
 - 源引脚 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c0978a318336443a1f79ba4579e2cbbc3d3df8fd
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 6d350ee9724687938c2eccfcdc555eec63df93a4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89208169"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96784885"
 ---
 # <a name="data-intersection"></a>数据交集
 
@@ -28,7 +27,7 @@ ms.locfileid: "89208169"
 
 例如，在 Windows Server 2003、Windows XP、Windows 2000 和 Windows Me/98 中， [SysAudio 系统驱动程序](kernel-mode-wdm-audio-components.md#sysaudio_system_driver) 通过连接支持兼容音频数据格式的一对筛选器 pin 来使用数据交叉技术来构造音频筛选器关系图。
 
-[Pin 工厂](pin-factories.md)将每个 pin 支持的一组格式指定为数据范围的数组，其中每个数据区域都是[**KSDATARANGE \_ AUDIO**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksdatarange_audio)类型的结构。 数据范围指定常规格式类型，可为 [**KSDATAFORMAT \_ WAVEFORMATEX**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksdataformat_waveformatex) 或 [**KSDATAFORMAT \_ DSOUND**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksdataformat_dsound)。 此外，数据范围还为以下每个参数指定了一系列值：
+[Pin 工厂](pin-factories.md)将每个 pin 支持的一组格式指定为数据范围的数组，其中每个数据区域都是 [**KSDATARANGE \_ AUDIO**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksdatarange_audio)类型的结构。 数据范围指定常规格式类型，可为 [**KSDATAFORMAT \_ WAVEFORMATEX**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksdataformat_waveformatex) 或 [**KSDATAFORMAT \_ DSOUND**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksdataformat_dsound)。 此外，数据范围还为以下每个参数指定了一系列值：
 
 -   每个样本的位数
 
@@ -46,7 +45,7 @@ KSDATARANGE \_ 音频结构同时为每样本位和采样频率范围指定最�
 
 -   它们的采样频率范围重叠。
 
-如前所述，KSDATAFORMAT \_ 音频结构表示一个硬件型号，其中 pin 支持的最小通道数始终为1。 根据此模型，任意两个 pin 的通道数范围应始终重叠，因为这两个 pin 至少支持一个通道。 显然，最小数量为1个通道的硬件适配器不符合此模型，但适配器驱动程序可以包含专用的数据交集处理程序来处理此类问题 (参阅 [专用数据交集处理程序](proprietary-data-intersection-handlers.md)) 中的示例。
+如前所述，KSDATAFORMAT \_ 音频结构表示一个硬件型号，其中 pin 支持的最小通道数始终为1。 根据此模型，任意两个 pin 的通道数范围应始终重叠，因为这两个 pin 至少支持一个通道。 显然，最小数量为1个通道的硬件适配器不符合此模型，但适配器驱动程序可以包含专用的数据交集处理程序来处理此类问题 (参阅 [专有 Data-Intersection 处理程序](proprietary-data-intersection-handlers.md)) 中的示例。
 
 为两个插针查找一对相交的数据范围时，处理程序将从交集区域中选择一个通用数据格式，如下所示：
 

@@ -1,7 +1,6 @@
 ---
 title: KSNODETYPE \_ 三维 \_ 效果
 description: KSNODETYPE \_ 三维 \_ 效果
-ms.assetid: 8b19423b-c1ad-4b59-bdae-a53bb99469ea
 keywords:
 - KSNODETYPE_3D_EFFECTS 音频设备
 topic_type:
@@ -12,12 +11,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2abebdcec3ce07edd414a4e843e3d6a9189f4337
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: f134b61848623f8e6e3df76ac985428af417a54e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89207040"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96784661"
 ---
 # <a name="ksnodetype_3d_effects"></a>KSNODETYPE \_ 三维 \_ 效果
 
@@ -35,7 +34,7 @@ KSNODETYPE \_ 3d \_ 效果节点用于通过以下可选属性控制 DirectSound
 
 [**KSPROPERTY \_ 音频 \_ 立体声 \_ 扬声器 \_ 几何**](ksproperty-audio-stereo-speaker-geometry.md)
 
-有关详细信息，请参阅 [DirectSound 演讲者-配置设置](./directsound-speaker-configuration-settings.md)。
+有关详细信息，请参阅 [DirectSound Speaker-Configuration 设置](./directsound-speaker-configuration-settings.md)。
 
 此外，DirectSound 要求 KSNODETYPE \_ 三维 \_ 效果节点支持以下3d 侦听器和3d 缓冲区属性：
 

@@ -1,15 +1,14 @@
 ---
 title: 音频驱动程序接口
 description: 音频驱动程序接口
-ms.assetid: f0c3b2b6-e38b-4088-a70d-749cd772ac4c
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e77dd0d7ab6e7f19cad363e9b457726f34d5ffa1
-ms.sourcegitcommit: 372464be981a39781c71049126f36891cb5d0cad
+ms.openlocfilehash: 65e8696bcd26ca8776fc18d7b1e8e088f77cf2c6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91645975"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96785001"
 ---
 # <a name="audio-drivers-interfaces"></a>音频驱动程序接口
 

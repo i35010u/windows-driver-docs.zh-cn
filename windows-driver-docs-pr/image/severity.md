@@ -1,9 +1,8 @@
 ---
 title: 严重性元素
-description: 所需的严重性元素指定当前 DeviceCondition 或 ConditionHistoryEntry 元素的严重级别。
-ms.assetid: 51c08a50-0c2b-40d9-883e-32460c2024ad
+description: Required 严重性元素指定当前 DeviceCondition 或 ConditionHistoryEntry 元素的严重性级别。
 keywords:
-- 严重性元素成像设备
+- 严重性元素图像处理设备
 topic_type:
 - apiref
 api_name:
@@ -12,19 +11,19 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 151f43ce4cd552d1bed5d31a49fd29700d79451c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5401e909d4a91023e0ba7357338c12561fa20065
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63389613"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96785173"
 ---
 # <a name="severity-element"></a>严重性元素
 
 
-所需**严重性**元素指定当前的严重性级别[ **DeviceCondition** ](devicecondition.md)或者[ **ConditionHistoryEntry** ](conditionhistoryentry.md)元素。
+Required **严重性** 元素指定当前 [**DeviceCondition**](devicecondition.md) 或 [**ConditionHistoryEntry**](conditionhistoryentry.md) 元素的严重性级别。
 
-<a name="usage"></a>用法
+<a name="usage"></a>使用情况
 -----
 
 ```xml
@@ -56,16 +55,16 @@ ms.locfileid: "63389613"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><span id="Informational"></span><span id="informational"></span><span id="INFORMATIONAL"></span>信息性</p></td>
-<td><p>这种情况是仅用于用户信息和图像采购流程没有明显影响。</p></td>
+<td><p><span id="Informational"></span><span id="informational"></span><span id="INFORMATIONAL"></span>条</p></td>
+<td><p>此条件仅适用于用户信息，并且对映像采集过程没有明显影响。</p></td>
 </tr>
 <tr class="even">
-<td><p><span id="Warning"></span><span id="warning"></span><span id="WARNING"></span>警告</p></td>
-<td><p>这种情况不在当前正在影响处理，但该条件可能会变得严重如果它不应共同参加到。</p></td>
+<td><p><span id="Warning"></span><span id="warning"></span><span id="WARNING"></span>出现</p></td>
+<td><p>这种情况目前不会影响处理，但是如果不参与，则条件可能会变得至关重要。</p></td>
 </tr>
 <tr class="odd">
-<td><p><span id="Critical"></span><span id="critical"></span><span id="CRITICAL"></span>关键</p></td>
-<td><p>设备无法继续处理，直到此问题得以解决。</p></td>
+<td><p><span id="Critical"></span><span id="critical"></span><span id="CRITICAL"></span>来说</p></td>
+<td><p>在解决此问题之前，设备无法继续处理。</p></td>
 </tr>
 </tbody>
 </table>
@@ -75,7 +74,7 @@ ms.locfileid: "63389613"
 ## <a name="child-elements"></a>子元素
 
 
-没有子元素。
+没有任何子元素。
 
 ## <a name="parent-elements"></a>父元素
 
@@ -102,9 +101,9 @@ ms.locfileid: "63389613"
 <a name="remarks"></a>备注
 -------
 
-WSD 扫描服务确定**严重性**分配给每个错误条件的级别。
+WSD 扫描服务确定分配给每个错误条件的 **严重性** 级别。
 
-您都可以扩展和子集的允许的值为此元素。
+可以扩展和子集化此元素的允许值。
 
 ## <a name="see-also"></a>请参阅
 

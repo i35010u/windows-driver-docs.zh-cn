@@ -1,7 +1,6 @@
 ---
 title: WDTF 体系结构和概述
 description: 了解 Microsoft Windows 设备测试框架如何 (WDTF) 使你能够创建、管理、重复使用和扩展以设备为中心的基于方案的自动测试。
-ms.assetid: 7e7660ec-1f17-4987-82c0-f62cca3a99b9
 keywords:
 - Windows 设备测试框架 WDK
 - WDTF WDK
@@ -11,12 +10,12 @@ keywords:
 - 测试脚本 WDK WDTF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ed674f44b3be973f804561feb41650481db6a29b
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 4e2dae5e8e615d0c45f6b289a40b98ab4b7af76e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91734495"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96785341"
 ---
 # <a name="wdtf-architecture-and-overview"></a>WDTF 体系结构和概述
 
@@ -31,13 +30,13 @@ ms.locfileid: "91734495"
 
 此外，还可以通过驱动测试管理器 (DTM) 使用某些 WDTF 示例，而无需任何其他编码。
 
-**注意**   DTM 是[Windows 硬件认证工具包的一部分 (HCK) ](/windows-hardware/test/hlk/)和 Microsoft Windows 徽标工具包 (WLK) 。 在 DTM 中运行基于 WDTF 的测试时，将为你安装 WDTF。
+**注意**  DTM 是 [Windows 硬件认证工具包的一部分 (HCK)](/windows-hardware/test/hlk/) 和 Microsoft Windows 徽标工具包 (WLK) 。 在 DTM 中运行基于 WDTF 的测试时，将为你安装 WDTF。
 
  
 
 上图显示了用于创建基于组件的方案的模型，该模型使你能够专注于一组设备（而不是单个设备）的通用功能。 即使许多设备需要对某些接口进行特殊实现，它们也非常容易添加。 当方案涉及到使用新功能时，可以 [添加](extending-the-framework.md) 一个将该功能包装到 WDTF 的简单 COM 自动化接口。
 
-## <a name="in-this-section"></a>在此部分中
+## <a name="in-this-section"></a>在本节中
 
 
 -   [WDTF 体系结构](wdtf-architecture.md)

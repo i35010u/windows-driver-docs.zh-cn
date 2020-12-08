@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ 音频 \_ MUX \_ 源
 description: KSPROPERTY \_ 音频 \_ MUX \_ source 属性指定多路复用器的输出流的源。 这是 MUX 节点 (KSNODETYPE MUX) 的属性 \_ 。
-ms.assetid: 631d12f2-3f30-4d3e-a0b2-731634858897
 keywords:
 - KSPROPERTY_AUDIO_MUX_SOURCE 音频设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e94adb3aa88e8a8ec8bbbaa09fea0bface3558c9
-ms.sourcegitcommit: 372464be981a39781c71049126f36891cb5d0cad
+ms.openlocfilehash: 29a57be4ecf4fef0f8b6dbaafe41d67215f2c392
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91645965"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96784493"
 ---
 # <a name="ksproperty_audio_mux_source"></a>KSPROPERTY \_ 音频 \_ MUX \_ 源
 
@@ -67,10 +66,10 @@ KSPROPERTY \_ 音频 \_ MUX \_ source 属性指定多路复用器的输出流的
 
 KSPROPERTY \_ 音频 \_ MUX \_ 源属性请求返回状态 " \_ 成功" 以指示已成功完成。 否则，请求将返回相应的错误状态代码。
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
-Pin ID 标识 MUX 节点上的逻辑 pin。 有关筛选器内某个节点上的逻辑插针 Id 的讨论，请参阅 [**PCCONNECTION \_ 描述符**](/windows-hardware/drivers/ddi/portcls/ns-portcls-_pcconnection_descriptor)。
+Pin ID 标识 MUX 节点上的逻辑 pin。 有关筛选器内某个节点上的逻辑插针 Id 的讨论，请参阅 [**PCCONNECTION \_ 描述符**](/previous-versions/windows/hardware/drivers/ff537688(v=vs.85))。
 
 <a name="requirements"></a>要求
 ------------
@@ -95,5 +94,5 @@ Pin ID 标识 MUX 节点上的逻辑 pin。 有关筛选器内某个节点上的
 
 [**KSNODEPROPERTY**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty)
 
-[**PCCONNECTION \_ 描述符**](/windows-hardware/drivers/ddi/portcls/ns-portcls-_pcconnection_descriptor)
+[**PCCONNECTION \_ 描述符**](/previous-versions/windows/hardware/drivers/ff537688(v=vs.85))
 

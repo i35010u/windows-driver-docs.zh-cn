@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ AUDIOENGINE \_ DEVICEFORMAT
 description: KSPROPERTY \_ AUDIOENGINE \_ DEVICEFORMAT 属性请求检索或更改音频引擎节点的状态，有关其设备格式设置。
-ms.assetid: 07821ACC-F561-4A40-9E2C-CB30B25521CB
 keywords:
 - KSPROPERTY_AUDIOENGINE_DEVICEFORMAT 音频设备
 topic_type:
@@ -14,17 +13,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3425bf4a7f47a35731f0bba008abd6d9196f2876
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: e6996ef59e2c6bc597dcf164c1d82ddb0b4de3da
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102012"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96784439"
 ---
 # <a name="ksproperty_audioengine_deviceformat"></a>KSPROPERTY \_ AUDIOENGINE \_ DEVICEFORMAT
 
 
-**KSPROPERTY \_ AUDIOENGINE \_ DEVICEFORMAT**属性请求检索或更改音频引擎节点的状态，有关其设备格式设置。
+**KSPROPERTY \_ AUDIOENGINE \_ DEVICEFORMAT** 属性请求检索或更改音频引擎节点的状态，有关其设备格式设置。
 
 ### <a name="span-idusage_summary_tablespanspan-idusage_summary_tablespanspan-idusage_summary_tablespanusage-summary-table"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用情况摘要表
 
@@ -60,7 +59,7 @@ ms.locfileid: "90102012"
 
 ### <a name="span-idreturn_valuespanspan-idreturn_valuespanspan-idreturn_valuespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>返回值
 
-**KSPROPERTY \_ AUDIOENGINE \_ DEVICEFORMAT**属性请求返回**状态 \_ SUCCESS**以指示已成功完成。 否则，请求将返回相应的错误状态代码。
+**KSPROPERTY \_ AUDIOENGINE \_ DEVICEFORMAT** 属性请求返回 **状态 \_ SUCCESS** 以指示已成功完成。 否则，请求将返回相应的错误状态代码。
 
 <a name="requirements"></a>要求
 ------------

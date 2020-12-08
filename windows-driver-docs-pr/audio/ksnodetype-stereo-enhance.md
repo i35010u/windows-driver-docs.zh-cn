@@ -1,7 +1,6 @@
 ---
-title: KSNODETYPE\_立体声\_增强
-description: KSNODETYPE\_立体声\_增强
-ms.assetid: 2abf791c-ca07-4b3b-88b4-38d815df2736
+title: KSNODETYPE \_ 立体声 \_ 增强
+description: KSNODETYPE \_ 立体声 \_ 增强
 keywords:
 - KSNODETYPE_STEREO_ENHANCE 音频设备
 topic_type:
@@ -12,14 +11,14 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1b14804843c85db0ddd9d86222fbe1ba65ccc9b7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0605221e2d13c88c86ffa00c864bc4b0b85b7c3e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333194"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96784603"
 ---
-# <a name="ksnodetypestereoenhance"></a>KSNODETYPE\_立体声\_增强
+# <a name="ksnodetype_stereo_enhance"></a>KSNODETYPE \_ 立体声 \_ 增强
 
 
 ## <span id="ddk_ksnodetype_stereo_enhance_ks"></span><span id="DDK_KSNODETYPE_STEREO_ENHANCE_KS"></span>

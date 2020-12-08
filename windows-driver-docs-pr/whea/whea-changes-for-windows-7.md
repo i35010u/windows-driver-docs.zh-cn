@@ -1,7 +1,6 @@
 ---
 title: Windows 7 的 WHEA 更改
 description: Windows 7 的 WHEA 更改
-ms.assetid: d92c2be0-732b-4fcd-b517-5cb9eccf962b
 keywords:
 - Windows 硬件错误体系结构 WDK，Windows 7 更改
 - WHEA WDK，Windows 7 更改
@@ -9,12 +8,12 @@ keywords:
 - Windows 7 WDK WHEA，WHEA 更改
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f3fa60e7cc3fb01bde27994886b390a89813e478
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 10a325597863f20d21dfef522717847637f1fb4d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89216306"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96785329"
 ---
 # <a name="whea-changes-for-windows-7"></a>Windows 7 的 WHEA 更改
 

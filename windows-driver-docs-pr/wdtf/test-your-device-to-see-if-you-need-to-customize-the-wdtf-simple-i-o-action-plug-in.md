@@ -1,15 +1,14 @@
 ---
 title: 测试存在还是需要自定义 WDTF 简单 i/o 操作插件
 description: 如果已使用 Visual Studio 配置了用于测试的远程计算机，则可以运行一个实用工具测试，该测试显示具有 WDTF 简单 i/o 插件的所有设备。
-ms.assetid: 7AD2F8DD-8428-4C30-A3B0-B6678986DCCD
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d2ca890568d118430f3771e6773902d3520b1f30
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: 0c097a9fcc42c227ba2eca6108426a30a39f6cc9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89402666"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96785353"
 ---
 # <a name="how-to-determine-if-a-custom-wdtf-simple-io-action-plug-in-is-required-for-your-device"></a>如何确定设备是否需要自定义 WDTF 简单 i/o 操作插件
 
@@ -22,7 +21,7 @@ ms.locfileid: "89402666"
 -   在测试计算机上对其进行测试签名和安装的驱动程序包。 若要验证是否正确安装了驱动程序，请参阅如何测试驱动程序包。
 -   测试针对部署配置和预配的计算机。 请参阅 [使用 Visual Studio 在运行时测试驱动程序](/windows-hardware/drivers)
 
-<a name="instructions"></a>Instructions
+<a name="instructions"></a>说明
 ------------
 
 ### <a name="test-your-device-to-see-if-you-need-to-customize-the-wdtf-simple-io-action-plug-in"></a>测试您的设备，查看是否需要自定义 WDTF 简单 i/o 操作插件
@@ -32,7 +31,7 @@ WDK 提供一项实用程序测试，你可以运行该测试来确定设备类�
 1.  打开 **驱动程序测试组资源管理器**。 从 "驱动程序" 菜单中，单击 " **驱动程序 &gt; 测试 &gt; 驱动程序测试组资源管理器**"
 2.  创建新的测试组。
 3.  在 "驱动程序测试组" 窗口中，单击 " **添加/删除测试**"。
-4.  在 "**添加或删除测试**" 对话框中，从 "**设备测试类别**" 列表中选择 "**所有测试" \\ 实用程序**，然后添加**具有 WDTF 简单 i/o 插件的测试显示设备**。单击 **"确定"**。 保存测试组。
+4.  在 "**添加或删除测试**" 对话框中，从 "**设备测试类别**" 列表中选择 "**所有测试" \\ 实用程序**，然后添加 **具有 WDTF 简单 i/o 插件的测试显示设备**。单击 **"确定"**。 保存测试组。
 5.  运行包含实用程序测试 **显示设备（具有 WDTF 简单 i/o 插件）** 的测试组。
 6.  打开测试的 TestTextlog，并验证是否已将设备报告为具有 WDTF 简单 i/o 插件的设备。 如果设备已列出，则无需为设备创建简单的 i/o 插件。 你可以运行设备基础测试，并将自动选择设备类型的正确插件。 有关提供的测试的信息，请参阅 [如何选择和配置设备基础测试](/windows-hardware/drivers)。
 

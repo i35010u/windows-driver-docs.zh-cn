@@ -1,15 +1,14 @@
 ---
 title: 文件系统驱动程序示例
 description: 此目录中的驱动程序示例提供了为设备编写自定义文件系统驱动程序的起点。
-ms.assetid: 9F2F995E-EA20-4877-B96C-5FF082CE886D
 ms.date: 11/15/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 1062ffd2677864add9e43aec2b4fa92f62bf2f34
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 3c3569e16f959ff89f7dd843eeb49f5a4e3eaf4c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89187273"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96785671"
 ---
 # <a name="file-system-driver-samples"></a>文件系统驱动程序示例
 

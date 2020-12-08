@@ -1,15 +1,14 @@
 ---
 title: 初始化标注驱动程序
 description: 初始化标注驱动程序
-ms.assetid: c9fbc3d9-fcb9-4087-a3d9-d97c64711305
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f1af9404329ebc88fc117cceea4726178232934b
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 79b95be8b5d0c64d1198e4dbfa825d7717da4564
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89210731"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96786149"
 ---
 # <a name="initializing-a-callout-driver"></a>初始化标注驱动程序
 

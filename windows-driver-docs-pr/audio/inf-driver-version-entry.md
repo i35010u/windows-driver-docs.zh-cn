@@ -1,7 +1,6 @@
 ---
 title: INF Driver-Version 条目
 description: INF Driver-Version 条目
-ms.assetid: 092cd9ed-8988-4ffd-9958-1267f3c52819
 keywords:
 - 版本号 WDK 音频
 - INF 文件 WDK 音频
@@ -12,12 +11,12 @@ keywords:
 - INF DriverVer 指令
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ecd2aacb4e1b71cf83697ae5dcd376b725ee7d78
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 04d58afe3ba7e89fddf9df3cd393057b89bb750a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89209461"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96784743"
 ---
 # <a name="inf-driver-version-entry"></a>INF Driver-Version 条目
 
@@ -31,7 +30,7 @@ ms.locfileid: "89209461"
 
 **DriverVer** = *mm*  / *dd*  / *yyyy* \[ ，*x*。*y*。*v*。*z*\]
 
-Date 参数*mm* / *dd* / *yyyy*包含两位数的月份代码*mm*、两位数的日期代码*dd*和四位数年份代码*yyyy*。 此参数指定驱动程序包的日期并应用于所有驱动程序文件，包括 INF 文件。 连字符 ( ) 可用作日期字段分隔符，以代替斜杠 (/) 。 在两个版本的驱动程序之间进行选择时，操作系统使用 **DriverVer** 日期来执行驱动程序版本比较。 此日期还会显示在设备管理器显示的 " **驱动程序日期** " 值中。
+Date 参数 *mm* / *dd* / *yyyy* 包含两位数的月份代码 *mm*、两位数的日期代码 *dd* 和四位数年份代码 *yyyy*。 此参数指定驱动程序包的日期并应用于所有驱动程序文件，包括 INF 文件。 连字符 ( ) 可用作日期字段分隔符，以代替斜杠 (/) 。 在两个版本的驱动程序之间进行选择时，操作系统使用 **DriverVer** 日期来执行驱动程序版本比较。 此日期还会显示在设备管理器显示的 " **驱动程序日期** " 值中。
 
 可选的版本号 *x*。*y*。*v*。*z* （如上所示）仅用于显示目的，例如，在设备管理器) 显示的 **驱动程序版本号** 中 (。 操作系统不会将此值用于驱动程序选择。 编译驱动程序文件时，请确保在驱动程序的资源文件中的 *FILEVERSION* 参数中指定的内部版本号与 INF 文件中的 **DriverVer** 版本号匹配。
 

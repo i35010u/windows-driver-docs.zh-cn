@@ -1,7 +1,6 @@
 ---
 title: KSNODETYPE \_ 干扰 \_
 description: KSNODETYPE \_ 干扰 \_
-ms.assetid: 416504e2-38eb-4cfd-ae20-6f1f44a82abd
 keywords:
 - KSNODETYPE_NOISE_SUPPRESS 音频设备
 topic_type:
@@ -12,12 +11,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d9718661e4618bce9d93802a06e4df839e301655
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 95a04e47cc0ac7de6bdd5eff5a99caa9ac1159d8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89207005"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96784615"
 ---
 # <a name="ksnodetype_noise_suppress"></a>KSNODETYPE \_ 干扰 \_
 

@@ -1,7 +1,6 @@
 ---
 title: 响应电池状态查询
 description: 响应电池状态查询
-ms.assetid: 756d7dd3-c4cc-4185-95cf-5a28ce86cacc
 keywords:
 - 电池状态 WDK
 - 电池电量低 WDK
@@ -11,12 +10,12 @@ keywords:
 - 电池故障 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b5a9013fa32e80e3f60abef12fe7df8dad2bbe30
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 8174e9bfc20d08539d3639c3a1eac7589f2e6cf3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90716578"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96784321"
 ---
 # <a name="responding-to-battery-status-queries"></a>响应电池状态查询
 
@@ -36,7 +35,7 @@ NTSTATUS
     );
 ```
 
-*上下文*参数是指向上下文区域的指针，该上下文区域由 miniclass 驱动程序分配，并在设备初始化时在[**电池 \_ 微型端口 \_ 信息**](/windows/win32/api/batclass/ns-batclass-battery_miniport_info)结构中传递给类驱动程序。 *BatteryTag*参数是之前由 BatteryMiniQueryTag 返回的值。
+*上下文* 参数是指向上下文区域的指针，该上下文区域由 miniclass 驱动程序分配，并在设备初始化时在 [**电池 \_ 微型端口 \_ 信息**](/windows/win32/api/batclass/ns-batclass-battery_miniport_info)结构中传递给类驱动程序。 *BatteryTag* 参数是之前由 BatteryMiniQueryTag 返回的值。
 
 在 "缓冲电池 \_ 状态" 结构中，miniclass 驱动程序会根据 miniclass 驱动程序可以确定的范围，将电池的电压、容量和充电/放电速率报告给你。 Miniclass 驱动程序还报告以下一个或多个常量，用于描述电池的电源状况：
 

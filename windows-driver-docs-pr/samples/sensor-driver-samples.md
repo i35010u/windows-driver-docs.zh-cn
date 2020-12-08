@@ -1,15 +1,14 @@
 ---
 title: 传感器驱动程序示例
 description: 此目录中的驱动程序示例提供了为设备编写自定义传感器驱动程序的起点。
-ms.assetid: D3B69433-6427-40B2-B3A1-8F48E014BE63
 ms.date: 11/19/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 4d302b2eda2bf5f82a3e80704c79c705cacf2e07
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 27eec2f06e77ca68011fd060ec5b112922366446
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89189251"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96785599"
 ---
 # <a name="sensor-driver-samples"></a>传感器驱动程序示例
 

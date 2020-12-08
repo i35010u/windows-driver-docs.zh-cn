@@ -1,35 +1,34 @@
 ---
 title: 将 WBDI 用于非 PnP 设备或专有堆栈
 description: 将 WBDI 用于非 PnP 设备或专有堆栈
-ms.assetid: 0143eae4-4ca8-4b25-9a97-2cace74f8de9
 keywords:
-- 生物识别驱动程序 WDK，旧
+- 生物识别驱动程序 WDK，旧版
 - 生物识别驱动程序 WDK，非 PnP 设备
-- 生物识别驱动程序 WDK、 专有堆栈
+- 生物识别驱动程序 WDK，专用堆栈
 - 旧驱动程序堆栈 WDK 生物识别
 - 非 PnP 设备 WDK 生物识别
-- 专有堆栈 WDK 生物识别
+- 专用堆栈生物识别
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3103760af97d510a505a5119e5bc2b0fc3439ec6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7876e5e6c8fb6aca4a0e08d5f2ecaaa651c84ede
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328349"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96784263"
 ---
 # <a name="using-wbdi-with-non-pnp-devices-or-proprietary-stacks"></a>将 WBDI 用于非 PnP 设备或专有堆栈
 
 
-WBDI 不支持非 PnP 设备。 但是，非 PnP 生物识别设备和使用非 WBDI 驱动程序堆栈的设备仍可通过使用 WBDI 中。
+WBDI 不支持非 PnP 设备。 但是，非 PnP 生物识别设备和使用非 WBDI 驱动程序堆栈的设备仍可以与 WBDI 进行交互。
 
-有两种主要方法使用 WBDI 旧驱动程序堆栈：
+使用 WBDI 的旧驱动程序堆栈有两种主要方法：
 
-1.  创建新的传感器插件来管理生物识别读取器到达和离开的。
+1.  创建新的传感器插件来管理生物识别读卡器到达和出发。
 
-2.  在检测到生物识别功能或事件的现有设备堆栈上安装总线筛选器。 然后，总线筛选器创建 WBDI 驱动程序的 PDO。
+2.  在检测生物识别功能或事件的现有设备堆栈上安装总线筛选器。 然后，总线筛选器会为 WBDI 驱动程序创建一个 PDO。
 
-创建一个筛选器来管理 WBDI PDOs 较简单的两个解决方案，这是 Microsoft 推荐的方法。
+创建筛选器以管理 WBDI PDOs 是两个解决方案中的更简单的方法，这是 Microsoft 建议的方法。
 
  
 

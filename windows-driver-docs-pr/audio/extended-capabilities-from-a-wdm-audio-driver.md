@@ -1,7 +1,6 @@
 ---
 title: 从 WDM 音频驱动程序扩展的功能
 description: 从 WDM 音频驱动程序扩展的功能
-ms.assetid: 8ee081ee-623d-4eaf-953f-20ccfbbe9800
 keywords:
 - WDM 音频扩展 WDK，关于旧版支持扩展
 - WDM 音频扩展 WDK，设备 Id
@@ -11,12 +10,12 @@ keywords:
 - 特定于硬件的信息 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 125885b9eebe7bf03b62ca995a05d190354d95e6
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 17feb60cade7fc0a8fe7a2047f84f5f66070295f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89208003"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96784807"
 ---
 # <a name="extended-capabilities-from-a-wdm-audio-driver"></a>从 WDM 音频驱动程序扩展的功能
 
@@ -42,7 +41,7 @@ ms.locfileid: "89208003"
 
 为提供对此信息的访问，WDM 音频驱动程序 \_ \_ 在筛选器自动化表中为 KSPROPERTY 常规组件 id 指定属性处理程序。
 
-应用程序可以通过以下旧版 Windows 多媒体 Api 从驱动程序的 KSCOMPONENTID 结构访问数据： **aux**、 **midiIn**、 **midiOut**、 **混合器**、 **waveIn**和 **waveOut**。 客户端通过调用下表中的一个多媒体函数并传入扩展功能结构作为第二个参数，来查询驱动程序以获取此信息。
+应用程序可以通过以下旧版 Windows 多媒体 Api 从驱动程序的 KSCOMPONENTID 结构访问数据： **aux**、 **midiIn**、 **midiOut**、 **混合器**、 **waveIn** 和 **waveOut**。 客户端通过调用下表中的一个多媒体函数并传入扩展功能结构作为第二个参数，来查询驱动程序以获取此信息。
 
 <table>
 <colgroup>
@@ -52,7 +51,7 @@ ms.locfileid: "89208003"
 <thead>
 <tr class="header">
 <th align="left">多媒体函数</th>
-<th align="left">扩展功能结构</th>
+<th align="left">Extended-Capabilities 结构</th>
 </tr>
 </thead>
 <tbody>
@@ -85,11 +84,11 @@ ms.locfileid: "89208003"
 
  
 
-接收到来自筛选器的属性处理程序的 KSCOMPONENTID 结构后，WDMAud 系统驱动程序 ( # A0) 将此结构中的数据转换为*xxx*GetDevCaps 函数使用的*xxx*CAPS2 格式。
+接收到来自筛选器的属性处理程序的 KSCOMPONENTID 结构后，WDMAud 系统驱动程序 ( # A0) 将此结构中的数据转换为 *xxx* GetDevCaps 函数使用的 *xxx* CAPS2 格式。
 
-在验证传递给函数的功能结构是否足以包含制造商、产品和名称 Guid 后， *xxx*GetDevCaps 函数会将此信息复制到扩展结构中，然后再返回。  (当前未使用 KSCOMPONENTID 中的组件 GUID。 ) 
+在验证传递给函数的功能结构是否足以包含制造商、产品和名称 Guid 后， *xxx* GetDevCaps 函数会将此信息复制到扩展结构中，然后再返回。  (当前未使用 KSCOMPONENTID 中的组件 GUID。 ) 
 
-WDMAud 将 **版本** 和 **修订** 成员从 KSCOMPONENTID 连接起来，以形成 *xxx*GetDevCaps 函数复制到功能结构 **vDriverVersion** 成员的16位版本号：
+WDMAud 将 **版本** 和 **修订** 成员从 KSCOMPONENTID 连接起来，以形成 *xxx* GetDevCaps 函数复制到功能结构 **vDriverVersion** 成员的16位版本号：
 
 **vDriverVersion** = (**版本** &lt; &lt; 8) | (**修订**& 0xff) 
 
@@ -97,17 +96,17 @@ Microsoft 以前要求供应商为其音频设备注册制造商 Id 和产品 Id
 
 在 Windows XP 和更高版本中，不再需要已注册的 Id;它们由通过 KSPROPERTY 常规组件程序属性提供的制造商和产品 Guid 替换 \_ \_ 。 与已注册的 Id 相比，Guid 更为方便，因为 Guid 本质上是唯一的，很容易生成，并且无需注册。
 
-但是，如果你已经向 Microsoft (注册了产品和制造商 Id 并且它们位于 Mmreg) 中，则可以使用 \_ Mmreg \_ PID 和 INIT \_ Mmreg \_ MID 将你的产品和制造商 id 转换为 guid。 如果使用这些宏生成 Guid，则 WDMAud 可以从 Guid 恢复原始产品和制造商 Id，并将这些 Id 复制到由*xxx*GetDevCaps 调用填充的功能结构的**wPid**和**wMid**成员中。
+但是，如果你已经向 Microsoft (注册了产品和制造商 Id 并且它们位于 Mmreg) 中，则可以使用 \_ Mmreg \_ PID 和 INIT \_ Mmreg \_ MID 将你的产品和制造商 id 转换为 guid。 如果使用这些宏生成 Guid，则 WDMAud 可以从 Guid 恢复原始产品和制造商 Id，并将这些 Id 复制到由 *xxx* GetDevCaps 调用填充的功能结构的 **wPid** 和 **wMid** 成员中。
 
-否则，如果没有已注册的制造商和产品 Id，只需使用 Guidgen.exe 实用程序来生成制造商和产品 Guid 即可。  (Guidgen.exe 包含在 Microsoft Windows SDK 中。 ) 当驱动程序的 Guid 为此类型时，WDMAud 将默认的常量 MM \_ 映射和 MM \_ PID \_ 映射分别加载到由*xxx*GetDevCaps 调用填充的功能结构的**wMid**和**wPid**成员中。
+否则，如果没有已注册的制造商和产品 Id，只需使用 Guidgen.exe 实用程序来生成制造商和产品 Guid 即可。  (Guidgen.exe 包含在 Microsoft Windows SDK 中。 ) 当驱动程序的 Guid 为此类型时，WDMAud 将默认的常量 MM \_ 映射和 MM \_ PID \_ 映射分别加载到由 *xxx* GetDevCaps 调用填充的功能结构的 **wMid** 和 **wPid** 成员中。
 
-WDMAud 使用 KSCOMPONENTID 结构中的 **名称** GUID 在注册表中查找 "名称" 密钥。 此密钥位于注册表路径名称 HKLM \\ 系统 \\ CurrentControlSet \\ Control \\ MediaCategories 下。 设备的 "名称" 键包含一个关联的字符串值，该字符串值包含设备名称。 *Xxx*GetDevCaps 函数将此名称字符串的前31个字符复制到功能结构的**szPname**成员中。 对于长度超过31个字符的设备名称，客户端应用程序可以打开注册表项并直接读取整个字符串。 驱动程序可以通过以下两种方式之一填充此注册表项：
+WDMAud 使用 KSCOMPONENTID 结构中的 **名称** GUID 在注册表中查找 "名称" 密钥。 此密钥位于注册表路径名称 HKLM \\ 系统 \\ CurrentControlSet \\ Control \\ MediaCategories 下。 设备的 "名称" 键包含一个关联的字符串值，该字符串值包含设备名称。 *Xxx* GetDevCaps 函数将此名称字符串的前31个字符复制到功能结构的 **szPname** 成员中。 对于长度超过31个字符的设备名称，客户端应用程序可以打开注册表项并直接读取整个字符串。 驱动程序可以通过以下两种方式之一填充此注册表项：
 
 -   驱动程序可以在安装时指定设备 INF 文件中的条目。
 
 -   驱动程序可以在其筛选器初始化例程执行期间加载条目。
 
-Name GUID 是可选的。 如果驱动程序将 KSCOMPONENTID 中的 **名称** 成员设置为 GUID \_ NULL 值，则 WDMAud 会为 *xxx*GetDevCaps 函数提供设备的友好名称，该名称将此名称复制到功能结构的 **szPname** 成员中。
+Name GUID 是可选的。 如果驱动程序将 KSCOMPONENTID 中的 **名称** 成员设置为 GUID \_ NULL 值，则 WDMAud 会为 *xxx* GetDevCaps 函数提供设备的友好名称，该名称将此名称复制到功能结构的 **szPname** 成员中。
 
 如果筛选器不公开 KSPROPERTY 常规组件器属性的处理程序 \_ \_ ，则 WDMAud 将使用默认值来代替 KSCOMPONENTID 结构中的数据。 功能结构的旧部分的默认值如下所示：
 

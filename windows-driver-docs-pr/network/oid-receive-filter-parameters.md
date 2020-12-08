@@ -1,25 +1,24 @@
 ---
 title: OID_RECEIVE_FILTER_PARAMETERS
 description: 过量驱动程序发出 OID_RECEIVE_FILTER_PARAMETERS 的 OID 方法请求，以获取网络适配器上的筛选器的当前配置参数。
-ms.assetid: 1bb12945-0dad-47b9-9f44-e05efe292979
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_RECEIVE_FILTER_PARAMETERS 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: f641546dba0170a5426bcf3b0d28c133ed9a4af8
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: c04f52d1d8ff94463bb99f68da6d6618a63aca6a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91734181"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96786067"
 ---
 # <a name="oid_receive_filter_parameters"></a>OID \_ 接收 \_ 筛选器 \_ 参数
 
 
 过量驱动程序发出 OID \_ 接收筛选器参数的 oid 方法请求 \_ \_ ，以获取网络适配器上的筛选器的当前配置参数。
 
-[**Ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的**InformationBuffer**成员包含指向[**NDIS \_ 接收 \_ 筛选器 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_parameters)结构的指针。 NDIS 使用输入结构中的 **FilterId** 成员来确定筛选器。
+[**Ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的 **InformationBuffer** 成员包含指向 [**NDIS \_ 接收 \_ 筛选器 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_parameters)结构的指针。 NDIS 使用输入结构中的 **FilterId** 成员来确定筛选器。
 
-成功从 OID 方法请求返回后， [**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的**InformationBuffer**成员包含指向缓冲区的指针。 此缓冲区的格式设置为包含以下内容：
+成功从 OID 方法请求返回后， [**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的 **InformationBuffer** 成员包含指向缓冲区的指针。 此缓冲区的格式设置为包含以下内容：
 
 -   用于指定 NDIS 接收筛选器参数的 [**ndis \_ 接收 \_ 筛选器 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_parameters) 结构。
 
@@ -45,7 +44,7 @@ NDIS 接收筛选器在以下 NDIS 接口中使用：
 NDIS 处理 \_ \_ 微型端口驱动程序的 oid 接收筛选器参数的 oid 请求 \_ ，并返回以下状态代码之一：
 
 <a href="" id="ndis-status-success"></a>NDIS \_ 状态 \_ 成功  
-请求已成功完成。 **InformationBuffer**指向[**NDIS \_ 接收 \_ 筛选器 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_parameters)结构。
+请求已成功完成。 **InformationBuffer** 指向 [**NDIS \_ 接收 \_ 筛选器 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_parameters)结构。
 
 <a href="" id="ndis-status-pending"></a>NDIS \_ 状态 \_ 挂起  
 请求正在等待完成。 请求完成后，NDIS 会将最终状态代码和结果传递给调用方的 OID 请求完成处理程序。
@@ -79,7 +78,7 @@ NDIS 处理 \_ \_ 微型端口驱动程序的 oid 接收筛选器参数的 oid �
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)

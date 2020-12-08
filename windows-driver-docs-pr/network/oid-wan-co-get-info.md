@@ -1,16 +1,15 @@
 ---
 title: OID_WAN_CO_GET_INFO
 description: OID_WAN_CO_GET_INFO OID 请求微型端口驱动程序返回适用于其 NIC 上 (VCs) 所有虚拟连接的信息。 此信息以 NDIS_WAN_CO_INFO 结构返回，如下所示。
-ms.assetid: c97130a5-68e1-4c69-a5a5-9781ea59af0c
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_WAN_CO_GET_INFO 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: ce0d75d2d455ac5248bbfa7f3307b1d91dbaf080
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 1573ca7ca1a2937b72ae6da26e9d3eeaac5e74a0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89216994"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96786045"
 ---
 # <a name="oid_wan_co_get_info"></a>OID \_ WAN \_ CO \_ 获取 \_ 信息
 
@@ -39,7 +38,7 @@ OID \_ WAN \_ CO \_ 获取 \_ 信息 OID 请求微型端口驱动程序返回适
 <a href="" id="maxsendwindow"></a>**MaxSendWindow**  
 指定 CoNDIS WAN 微型端口驱动程序可以在 VC 上处理的未完成数据包的最大数量。 此成员必须设置为至少一个。
 
-NDISWAN 驱动程序使用此成员的值来限制在 NDISWAN 保留发送数据包之前，它在向微型端口驱动程序的 *MiniportCoSendPackets* 函数发送请求时所提交的数据包数。 这些数据包将排队等候，直到微型端口驱动程序完成未完成的发送。 微型端口驱动程序可以使用微型端口驱动程序传递给[**NdisMCoIndicateStatus**](/previous-versions/windows/hardware/network/ff553458(v=vs.85))的[**WAN \_ CO \_ LINKPARAMS**](/previous-versions/windows/hardware/network/ff565819(v=vs.85))结构中的**SendWindow**成员，以动态方式和每个 VC 来调整此值。 NDISWAN 使用当前 **SendWindow** 值作为其未处理发送的限制。 如果微型端口驱动程序将 **SendWindow** 设置为零，则 NDISWAN 必须停止发送特定 VC 的数据包。 也就是说，微型端口驱动程序指定 "发送" 窗口已关闭，这实际上指定它不能接受来自 NDISWAN 的任何数据包。
+NDISWAN 驱动程序使用此成员的值来限制在 NDISWAN 保留发送数据包之前，它在向微型端口驱动程序的 *MiniportCoSendPackets* 函数发送请求时所提交的数据包数。 这些数据包将排队等候，直到微型端口驱动程序完成未完成的发送。 微型端口驱动程序可以使用微型端口驱动程序传递给 [**NdisMCoIndicateStatus**](/previous-versions/windows/hardware/network/ff553458(v=vs.85))的 [**WAN \_ CO \_ LINKPARAMS**](/previous-versions/windows/hardware/network/ff565819(v=vs.85))结构中的 **SendWindow** 成员，以动态方式和每个 VC 来调整此值。 NDISWAN 使用当前 **SendWindow** 值作为其未处理发送的限制。 如果微型端口驱动程序将 **SendWindow** 设置为零，则 NDISWAN 必须停止发送特定 VC 的数据包。 也就是说，微型端口驱动程序指定 "发送" 窗口已关闭，这实际上指定它不能接受来自 NDISWAN 的任何数据包。
 
 由于 CoNDIS WAN 微型端口驱动程序必须在内部将数据包排队，因此 **MaxSendWindow** 的值理论上 **最大** ( ULONG) 。 但是，此驱动程序确定的值应反映 NIC 的链接速度或硬件功能。 例如，如果微型端口驱动程序的 NIC 始终具有至少四个数据包的空间，则微型端口驱动程序会将 **MaxSendWindow** 设置为4，以便可以将任何传入的 *MiniportCoSendPackets* 包立即放在硬件上。
 
@@ -119,7 +118,7 @@ NDISWAN 驱动程序使用此成员的值来限制在 NDISWAN 保留发送数据
 
 例如，支持旧 RAS 帧的微型端口驱动程序必须自动检测 PPP 帧中的 RAS 帧。 如果微型端口驱动程序检测到默认情况以外的组帧方案，则该微型端口驱动程序应自动将其帧切换到新检测到的帧中。
 
-带有 [OID \_ WAN \_ CO \_ 获取 \_ 链接 \_ 信息](oid-wan-co-get-link-info.md) 的后续查询应指示检测到的帧。 如果尚未检测到帧，则返回**FramingBits**的 NDIS \_ WAN \_ CO \_ 获取 \_ 链接 \_ 信息信息中的 FramingBits 应为零。
+带有 [OID \_ WAN \_ CO \_ 获取 \_ 链接 \_ 信息](oid-wan-co-get-link-info.md) 的后续查询应指示检测到的帧。 如果尚未检测到帧，则返回 **FramingBits** 的 NDIS \_ WAN \_ CO \_ 获取 \_ 链接 \_ 信息信息中的 FramingBits 应为零。
 
 如果随后在 \_ \_ FramingBits 成员为零的 OID wan CO 集链接信息中调用 WAN 微型端口驱动程序 \_ \_ \_ ，则微型端口驱动程序应尝试在每个帧接收时自动检测组帧。 **FramingBits**
 
@@ -146,7 +145,7 @@ NDISWAN 驱动程序使用此成员的值来限制在 NDISWAN 保留发送数据
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**NdisMCoIndicateStatus**](/previous-versions/windows/hardware/network/ff553458(v=vs.85))

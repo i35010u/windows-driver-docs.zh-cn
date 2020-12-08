@@ -1,17 +1,16 @@
 ---
 title: DirectMusic 流数据格式
 description: DirectMusic 流数据格式
-ms.assetid: f3aae6c0-6b9d-43fa-9ef1-d6702017f55d
 keywords:
 - DirectMusic WDK 音频，流数据格式
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f315e9280f9b12a3166ff952cbed682c512b1df5
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: fbf40c3b19d437eccef950cd3539bb5c7ab17b06
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89208123"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96784851"
 ---
 # <a name="directmusic-stream-data-format"></a>DirectMusic 流数据格式
 

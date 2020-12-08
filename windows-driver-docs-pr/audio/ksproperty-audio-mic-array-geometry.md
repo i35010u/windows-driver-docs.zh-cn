@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ 音频 \_ MIC \_ 数组 \_ 几何图形
 description: KSPROPERTY \_ 音频 \_ MIC \_ array \_ GEOMETRY 属性指定麦克风阵列的几何。
-ms.assetid: c9153c65-06d1-4968-8d70-64aafc760a8c
 keywords:
 - KSPROPERTY_AUDIO_MIC_ARRAY_GEOMETRY 音频设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 05/08/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: ef9b6713f94da1dbacbc3845f06ea206993a9d94
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 9579e93cfa29d3b7bc2e0a01d629ae8cd4082d8b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102644"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96784511"
 ---
 # <a name="ksproperty_audio_mic_array_geometry"></a>KSPROPERTY \_ 音频 \_ MIC \_ 数组 \_ 几何图形
 

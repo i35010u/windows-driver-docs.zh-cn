@@ -1,15 +1,14 @@
 ---
 title: 评估不带输入参数的控制方法
 description: 评估不带输入参数的控制方法
-ms.assetid: dd989b4d-46db-4fe3-aa7b-8dbfe37057cb
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 571b1bee167e214bc1eb77efb6d081af9ecb0033
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 5d8f50db14393b9bee0c57f7bb7028fa85d948a6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89184858"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96785075"
 ---
 # <a name="evaluating-a-control-method-without-input-arguments"></a>评估不带输入参数的控制方法
 
@@ -36,9 +35,9 @@ ms.locfileid: "89184858"
     inputBuffer.Signature = ACPI_EVAL_INPUT_BUFFER_SIGNATURE;
 ```
 
-*GetAbcData* 还会分配一个 [**ACPI \_ EVAL \_ 输出 \_ 缓冲区**](/windows-hardware/drivers/ddi/acpiioct/ns-acpiioct-_acpi_eval_output_buffer_v1) 结构 *outputBuffer*，但不会设置 *outputBuffer*的任何成员。
+*GetAbcData* 还会分配一个 [**ACPI \_ EVAL \_ 输出 \_ 缓冲区**](/windows-hardware/drivers/ddi/acpiioct/ns-acpiioct-_acpi_eval_output_buffer_v1) 结构 *outputBuffer*，但不会设置 *outputBuffer* 的任何成员。
 
-然后， *GetAbcData*调用驱动程序提供的名为[SendDownStreamIrp](senddownstreamirp-function.md)的函数来执行以下操作：
+然后， *GetAbcData* 调用驱动程序提供的名为 [SendDownStreamIrp](senddownstreamirp-function.md)的函数来执行以下操作：
 
 1.  调用 [**IoBuildDeviceIoControlRequest**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iobuilddeviceiocontrolrequest) 以生成请求。
 
@@ -46,7 +45,7 @@ ms.locfileid: "89184858"
 
 3.  等待 i/o 管理器向驱动程序发出低级驱动程序完成请求的信号。
 
-在 i/o 管理器发出请求后， **SendDownStreamIrp**将返回该请求的信号。 前面提到的代码示例执行以下操作：
+在 i/o 管理器发出请求后， **SendDownStreamIrp** 将返回该请求的信号。 前面提到的代码示例执行以下操作：
 
 1.  检查请求的状态，并在较低级别的驱动程序未返回状态为 "成功" 时返回而不进行其他处理 \_ 。
 
@@ -56,7 +55,7 @@ ms.locfileid: "89184858"
 
 虽然此步骤未包含在示例代码中，但驱动程序还应在处理输出数据后调用 [**IoCompleteRequest**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocompleterequest) 来完成挂起的 IOCTL \_ acpi \_ EVAL \_ 方法请求或 IOCTL \_ acpi \_ eval \_ 方法请求，驱动程序发送该请求以评估控制方法。
 
-以下示例中使用的 ACPI 数据结构和常量是在 *Acpiioct*中定义的。
+以下示例中使用的 ACPI 数据结构和常量是在 *Acpiioct* 中定义的。
 
 ```cpp
 NTSTATUS

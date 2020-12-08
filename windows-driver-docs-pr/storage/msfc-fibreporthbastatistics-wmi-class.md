@@ -1,15 +1,14 @@
 ---
 title: MSFC \_ FIBREPORTHBASTATISTICS WMI 类
 description: MSFC \_ FIBREPORTHBASTATISTICS WMI 类
-ms.assetid: 24c787b6-b9f7-4c9b-8d1d-6b2796f65622
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 8ddb29281707151d4e490a1c67362122752f8a94
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: b0e009bd8797d620bc28fda108ace515f2ace4fe
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89188507"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96785557"
 ---
 # <a name="msfc_fibreporthbastatistics-wmi-class"></a>MSFC \_ FIBREPORTHBASTATISTICS WMI 类
 
@@ -19,7 +18,7 @@ ms.locfileid: "89188507"
 
 WMI 客户端使用 MSFC \_ FibrePortHBAStatistics 类来查询 hba 微型端口驱动程序，以获取与 hba 上端口相关的统计信息。 MSFC \_ FibrePortHBAStatistics 类报告 [MSFC \_ HBAPortStatistics WMI 类](msfc-hbaportstatistics-wmi-class.md) 中的所有信息，以及端口的一些标识符信息。
 
-MSFC \_ FibrePortHBAStatistics 类在 *Hbaapi*中定义如下：
+MSFC \_ FibrePortHBAStatistics 类在 *Hbaapi* 中定义如下：
 
 ```cpp
 class MSFC_FibrePortHBAStatistics

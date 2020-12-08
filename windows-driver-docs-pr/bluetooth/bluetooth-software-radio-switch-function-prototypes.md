@@ -1,15 +1,14 @@
 ---
 title: 蓝牙软件无线电开关函数原型
 description: 了解以前的 windows 版本中的蓝牙版本和配置文件支持。 请参阅要求、建议和代码示例。
-ms.assetid: A5A81EAA-0DC7-4725-AA0D-5C4867DDE47C
 ms.date: 02/12/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: f1254083fc3c202660add7a34a13a93a44c3b15b
-ms.sourcegitcommit: 2aedb606f9f14e74687f0d3da60e14fc6ffffa7e
+ms.openlocfilehash: c18745346f19df4ff129f1f22a64331a4aa59da8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91544332"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96784223"
 ---
 # <a name="bluetooth-software-radio-switch-function-prototypes"></a>蓝牙软件无线电开关函数原型
 
@@ -51,7 +50,7 @@ DLL 注册
 
 若要启用菜单和控制面板小程序中的软件单选钮控制，必须注册此支持 DLL。 将以下注册表值设置为完整路径 (可能包括) 到相关 DLL 的环境变量。
 
-密钥： HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Services\BTHPORT\Parameters\Radio 支持
+键： HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\BTHPORT\Parameters\Radio Support
 
 值名称： "SupportDLL"
 
@@ -59,7 +58,7 @@ DLL 注册
 
 示例：
 
-[HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Services\BTHPORT\Parameters\Radio 支持]
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\BTHPORT\Parameters\Radio Support]
 
 "SupportDLL" = "C： \\ Program Files \\ Fabrikam \\BthSupport.dll"
 
@@ -81,11 +80,11 @@ Windows 8 收音机管理要求 DLL 在本地服务帐户上下文中执行其�
 
 Windows 注册表编辑器版本 5.00
 
-[HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Services\BthServ]
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\BthServ]
 
-[HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Services\BthServ\Parameters]
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\BthServ\Parameters]
 
-[HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Services\BthServ\Parameters\Radio 支持]
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\BthServ\Parameters\Radio Support]
 
 "SupportDLL" = hex (2) ：25，00，73，00，79，00，73，00，74，00，65，00，6d，00，72，00，6f，00，6f，\
 

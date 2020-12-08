@@ -1,15 +1,14 @@
 ---
 title: 对运行基于 WDTF 的测试时出现的问题进行诊断
 description: 若要帮助解决有关运行基于 WDTF 的测试的问题，可以使用调试器。
-ms.assetid: 24257B50-ED9C-4D45-A245-1EC855463D33
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b32118ec5200211126e4196b9ab2e38ae065dca2
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: 074dbed62814f098c9f057b26e61f2d62ce1ec56
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89402690"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96785395"
 ---
 # <a name="diagnosing-problems-running-wdtf-based-tests"></a>对运行基于 WDTF 的测试时出现的问题进行诊断
 
@@ -44,7 +43,7 @@ ms.locfileid: "89402690"
     !process fffffa80093c6340
     ```
 
-    在堆栈上查找包含**WDTF**的线程 \* 。
+    在堆栈上查找包含 **WDTF** 的线程 \* 。
 
 4.  对于 Te.ProcessHost.exe () ，请重复步骤3。
 

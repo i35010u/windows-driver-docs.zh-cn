@@ -1,24 +1,23 @@
 ---
 title: 专用扩展
 description: 专用扩展
-ms.assetid: 4329fade-2458-4a60-a06c-4069fc339f3e
 keywords:
 - 扩展命令 ( 命令) ，专用扩展
 - 扩展命令 ( 命令) 专用扩展，另请参阅各个扩展类型
 ms.date: 06/05/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 489054600674ea0dd1064cc27e7bde647ebe7a60
-ms.sourcegitcommit: 2244845d5c74f5d260de1e1a994ae3cdcfaaa90a
+ms.openlocfilehash: 1a9f7c34b7834bb035fa57f80c88afc6dcc3efda
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/09/2020
-ms.locfileid: "94386076"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96785269"
 ---
 # <a name="specialized-extensions"></a>专用扩展
 
 引用的此部分讨论扩展 Dll 中不经常使用的扩展命令。
 
-## <a name="in-this-section"></a>本节内容
+## <a name="in-this-section"></a>在本节中
 
 -   [存储内核调试程序扩展](storage-kernel-debugger-extensions.md)
 -   [蓝牙扩展 (Bthkd.dll)](bluetooh-extensions--bthkd-dll-.md)

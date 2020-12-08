@@ -1,16 +1,15 @@
 ---
 title: OID_GEN_MEDIA_SUPPORTED
 description: 作为查询，OID_GEN_MEDIA_SUPPORTED OID 指定了 NIC 可支持的媒体类型，但不一定是 NIC 当前使用的媒体类型。
-ms.assetid: e7b8d2b1-4e84-416f-aeb3-75591ed44b22
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_GEN_MEDIA_SUPPORTED 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 64fa4e23038c7d565f747078a55a329741fb13b7
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 044d099aa05ffefe5ecedb6bdde7ef762249ee58
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89214607"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96786103"
 ---
 # <a name="oid_gen_media_supported"></a>支持 OID 生成 \_ \_ 媒体 \_
 
@@ -56,14 +55,14 @@ NDIS 6.0 和更高版本的微型端口驱动程序不会收到此 OID 请求。
 <a href="" id="ndismedium802-3"></a>**NdisMedium802 \_ 3**  
 以太网 (802.3) 。
 
-**注意**   NDIS 5。符合802.11 接口的*x*微型端口驱动程序必须使用这种媒体类型。 有关802.11 接口的详细信息，请参阅 [802.11 无线 LAN 微型端口驱动程序](/previous-versions/windows/hardware/network/ff543933(v=vs.85))。
+**注意**  NDIS 5。符合802.11 接口的 *x* 微型端口驱动程序必须使用这种媒体类型。 有关802.11 接口的详细信息，请参阅 [802.11 无线 LAN 微型端口驱动程序](/previous-versions/windows/hardware/network/ff543933(v=vs.85))。
 
  
 
 <a href="" id="ndismedium802-5"></a>**NdisMedium802 \_ 5**  
  (802.5) 的令牌环。 对于 NDIS 6.0 和更高版本的驱动程序，此媒体类型不受支持。
 
-**注意**   从 Windows 8 开始，操作系统将不支持所有微型端口驱动程序的此媒体类型。
+**注意**  从 Windows 8 开始，操作系统将不支持所有微型端口驱动程序的此媒体类型。
 
  
 
@@ -92,7 +91,7 @@ ATM. 对于 NDIS 6.0 和更高版本的驱动程序，此媒体类型不受支�
 本机802.11。 此媒体类型由符合本机802.11 接口的微型端口驱动程序使用。 有关此接口的详细信息，请参阅 [本机802.11 无线 LAN 微型端口驱动程序](/previous-versions/windows/hardware/wireless/ff560648(v=vs.85))。
 
 <a href="" id="ndismediumwirelesswan"></a>**NdisMediumWirelessWan**  
-各种类型的 **NdisWireless * * * Xxx* 媒体。 此媒体类型不能从 Windows Vista 和更高版本的 Windows 开始使用。
+各种类型的 **NdisWireless**_Xxx_ 媒体。 此媒体类型不能从 Windows Vista 和更高版本的 Windows 开始使用。
 
 <a href="" id="ndismediumirda"></a>**NdisMediumIrda**  
 红外 (IrDA) 。
@@ -118,7 +117,7 @@ NDIS 环回网络。
 <a href="" id="ndismediumip"></a>**NdisMediumIP**  
 能够发送和接收原始 IP 数据包的通用介质。
 
-NDIS 5。 支持无线 LAN (WLAN) 或无线 WAN (WWAN) 数据包的*x*微型端口驱动程序会显示给操作系统，并将 NDIS 作为以太网数据包。 这些 NDIS 驱动程序必须为 WWAN 或 WLAN 网络提供对以太网网络的支持。 此类驱动程序将其媒体声明为 **NdisMedium802 \_ 3** 并将以太网模拟到更高级别的 NDIS 驱动程序。 此类驱动程序还必须在 [OID 的 \_ \_ 物理 \_ 介质](oid-gen-physical-medium.md) 中声明它们所支持的适当物理介质。
+NDIS 5。 支持无线 LAN (WLAN) 或无线 WAN (WWAN) 数据包的 *x* 微型端口驱动程序会显示给操作系统，并将 NDIS 作为以太网数据包。 这些 NDIS 驱动程序必须为 WWAN 或 WLAN 网络提供对以太网网络的支持。 此类驱动程序将其媒体声明为 **NdisMedium802 \_ 3** 并将以太网模拟到更高级别的 NDIS 驱动程序。 此类驱动程序还必须在 [OID 的 \_ \_ 物理 \_ 介质](oid-gen-physical-medium.md) 中声明它们所支持的适当物理介质。
 
 有关 NDIS 1.x WLAN 微型端口驱动程序的详细信息，请参阅 [802.11 无线 LAN 微型端口驱动程序](/previous-versions/windows/hardware/network/ff543933(v=vs.85))。
 
@@ -144,7 +143,7 @@ NDIS 6.0 和更高版本的微型端口驱动程序，支持显示到操作系�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**NdisMIndicateReceiveNetBufferLists**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismindicatereceivenetbufferlists)

@@ -1,15 +1,14 @@
 ---
 title: TrustedCertificate (MobileBroadbandInfo)
 description: TrustedCertificate (MobileBroadbandInfo)
-ms.assetid: d22a488d-445e-4011-b881-f2cf49aa4049
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: eeda4b7d6345f64b00e4dce26b41a60ec0d453cc
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: 40baf2f1422029e826e8918e537d8422cc8de65d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89402880"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96786189"
 ---
 # <a name="trustedcertificate-mobilebroadbandinfo"></a>TrustedCertificate (MobileBroadbandInfo)
 
@@ -42,7 +41,7 @@ TrustedCertificate 元素指定可信证书的使用者名称和颁发者名称�
 <thead>
 <tr class="header">
 <th>元素</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -51,7 +50,7 @@ TrustedCertificate 元素指定可信证书的使用者名称和颁发者名称�
 <td><p>受信任的证书的使用者名称。</p></td>
 </tr>
 <tr class="even">
-<td><p><a href="issuername.md" data-raw-source="[IssuerName](issuername.md)">IssuerName</a></p></td>
+<td><p><a href="issuername.md" data-raw-source="[IssuerName](issuername.md)"></a>  IssuerName</p></td>
 <td><p>受信任证书的颁发者名称。</p></td>
 </tr>
 </tbody>
@@ -70,7 +69,7 @@ TrustedCertificate 元素指定可信证书的使用者名称和颁发者名称�
 <thead>
 <tr class="header">
 <th>元素</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>

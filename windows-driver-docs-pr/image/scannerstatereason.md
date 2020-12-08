@@ -1,9 +1,8 @@
 ---
 title: ScannerStateReason 元素
-description: 可选 ScannerStateReason 元素指定一条有关扫描程序处于其当前状态的信息。
-ms.assetid: 7f10476a-d3ef-40a1-a355-ab735a6afe60
+description: 可选的 ScannerStateReason 元素指定有关扫描仪处于其当前状态的原因的一条信息。
 keywords:
-- ScannerStateReason 元素成像设备
+- ScannerStateReason 元素图像设备
 topic_type:
 - apiref
 api_name:
@@ -12,19 +11,19 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e5442865363ffa6dc9ab774d8fbf29e1d57a031a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3eac7f2bf5d747dafa24ba9ef22a068d9f130ae7
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63370046"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96785185"
 ---
 # <a name="scannerstatereason-element"></a>ScannerStateReason 元素
 
 
-可选**ScannerStateReason**元素指定一条有关扫描程序处于其当前状态的信息。
+可选的 **ScannerStateReason** 元素指定有关扫描仪处于其当前状态的原因的一条信息。
 
-<a name="usage"></a>用法
+<a name="usage"></a>使用情况
 -----
 
 ```xml
@@ -61,11 +60,11 @@ ms.locfileid: "63370046"
 </tr>
 <tr class="even">
 <td><p><span id="Calibrating"></span><span id="calibrating"></span><span id="CALIBRATING"></span>校准</p></td>
-<td><p>扫描设备校准及其内部组件进行准备，以便获取映像。</p></td>
+<td><p>扫描设备正在校准其内部组件，以便准备获取映像。</p></td>
 </tr>
 <tr class="odd">
 <td><p><span id="CoverOpen"></span><span id="coveropen"></span><span id="COVEROPEN"></span>CoverOpen</p></td>
-<td><p>一个扫描设备上的多个后台处于打开状态。</p></td>
+<td><p>扫描设备中的一个或多个内容已打开。</p></td>
 </tr>
 <tr class="even">
 <td><p><span id="InterlockOpen"></span><span id="interlockopen"></span><span id="INTERLOCKOPEN"></span>InterlockOpen</p></td>
@@ -73,31 +72,31 @@ ms.locfileid: "63370046"
 </tr>
 <tr class="odd">
 <td><p><span id="InternalStorageFull"></span><span id="internalstoragefull"></span><span id="INTERNALSTORAGEFULL"></span>InternalStorageFull</p></td>
-<td><p>当前正在写入到的内部存储组件已满。</p></td>
+<td><p>当前写入的内部存储组件已满。</p></td>
 </tr>
 <tr class="even">
 <td><p><span id="LampError"></span><span id="lamperror"></span><span id="LAMPERROR"></span>LampError</p></td>
-<td><p>扫描程序 lamp 失败的原因和图像采集无法继续。</p></td>
+<td><p>扫描仪灯出现故障，无法继续进行图像采集。</p></td>
 </tr>
 <tr class="odd">
 <td><p><span id="LampWarming"></span><span id="lampwarming"></span><span id="LAMPWARMING"></span>LampWarming</p></td>
-<td><p>扫描程序 lamp 正在预热进行准备，以便获取映像。</p></td>
+<td><p>扫描仪灯正在预热，准备获取映像。</p></td>
 </tr>
 <tr class="even">
 <td><p><span id="MediaJam"></span><span id="mediajam"></span><span id="MEDIAJAM"></span>MediaJam</p></td>
-<td><p>媒体被印象中其中一个输入源，因此图像获取失败。</p></td>
+<td><p>媒体在一个输入源中卡住，因此图像采集失败。</p></td>
 </tr>
 <tr class="odd">
 <td><p><span id="MultipleFeedError"></span><span id="multiplefeederror"></span><span id="MULTIPLEFEEDERROR"></span>MultipleFeedError</p></td>
-<td><p>ADF 是同时提供多个的介质。</p></td>
+<td><p>ADF 同时送入了多片介质。</p></td>
 </tr>
 <tr class="even">
-<td><p><span id="None"></span><span id="none"></span><span id="NONE"></span>无</p></td>
-<td><p>没有当前状态说明。</p></td>
+<td><p><span id="None"></span><span id="none"></span><span id="NONE"></span>内容</p></td>
+<td><p>没有当前的状态原因。</p></td>
 </tr>
 <tr class="odd">
-<td><p><span id="Paused"></span><span id="paused"></span><span id="PAUSED"></span>已暂停</p></td>
-<td><p>扫描程序已暂停，并扫描程序状态为已停止。 在此状态下，扫描程序不会产生扫描生成的输出。</p></td>
+<td><p><span id="Paused"></span><span id="paused"></span><span id="PAUSED"></span>悬停</p></td>
+<td><p>扫描仪已暂停，扫描程序状态为 "已停止"。 在此状态下，扫描程序不会生成扫描的输出。</p></td>
 </tr>
 </tbody>
 </table>
@@ -107,7 +106,7 @@ ms.locfileid: "63370046"
 ## <a name="child-elements"></a>子元素
 
 
-没有子元素。
+没有任何子元素。
 
 ## <a name="parent-elements"></a>父元素
 
@@ -131,11 +130,11 @@ ms.locfileid: "63370046"
 <a name="remarks"></a>备注
 -------
 
-其中一些原因描述扫描程序不能根据当前定义的 WSD 扫描服务操作一组输入的扫描程序状态。 例如，可以是扫描程序**已暂停**即使没有任何"*PauseScanner*"操作。 因为某些其他协议或控制台操作可能会导致扫描程序进入该状态，这种状态都存在。
+其中一些原因描述了扫描程序无法根据当前定义的 WSD 扫描服务操作设置输入的扫描程序状态。 例如，即使不存在 "*PauseScanner*" 操作，也可以 **暂停** 扫描仪。 存在这种状态的原因是其他一些协议或控制台操作可能导致扫描程序进入该状态。
 
-WSD 扫描服务必须支持代表将在其实现可检测的条件的值。 因此，WSD 扫描服务可以支持仅可以检测到的允许值的子集。
+WSD 扫描服务必须支持代表其实现中检测到的条件的值。 因此，WSD 扫描服务只能支持它可以检测到的允许值的子集。
 
-您可以扩展允许的值，但扩展此列表在客户端上的时会有影响。 客户端通常本地化[ **ScannerStateReasons** ](scannerstatereasons.md)值 （与其他字符串变量的值） 为最终用户的语言，因此客户端将无法识别供应商扩展值。 但是，客户端可以显示直接接收的值。 此值应在英语中，因此一些最终用户可能无法理解的值。 此外，扫描服务可以使用常规**AttentionRequired**值，然后在扫描程序控制台中，用户将看到当它们是在扫描仪上说明问题。
+您可以扩展允许的值，但在客户端上扩展此列表时可能会有影响。 通常情况下，客户端会将 [**ScannerStateReasons**](scannerstatereasons.md) 值本地化 (与最终用户的语言) 的其他字符串变量值相同，因此客户端将无法识别供应商扩展值。 但是，客户端可以显示直接接收的值。 此值应为英语，因此某些最终用户可能无法理解该值。 或者，扫描服务可以使用一般的 **AttentionRequired** 值，然后在 scanner 控制台上解释问题，用户会在扫描程序中看到该问题。
 
 ## <a name="see-also"></a>请参阅
 

@@ -1,7 +1,6 @@
 ---
 title: 分配 DMA 引擎
 description: 分配 DMA 引擎
-ms.assetid: 45b772ce-e6ae-4102-bad4-734f8f079817
 keywords:
 - HD 音频，DMA 引擎
 - 高清晰音频 (HD 音频) ，DMA 引擎
@@ -11,12 +10,12 @@ keywords:
 - 捕获 DMA 引擎 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2c29b0d8a2db99cbb84e4e51b667e11abfd2e3e2
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 3a8639264258c57f0ac3c30b24466a5199ea94bf
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89208377"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96785033"
 ---
 # <a name="allocating-dma-engines"></a>分配 DMA 引擎
 
@@ -35,7 +34,7 @@ HD 音频控制器包含固定数量的 DMA 引擎。 每个引擎都可以对�
 
 同样，为捕获流分配 DMA 引擎时， [**AllocateRenderDmaEngine**](/windows-hardware/drivers/ddi/hdaudio/nc-hdaudio-pallocate_render_dma_engine) 例程会分配一个捕获 DMA 引擎（如果有）。 如果捕获 DMA 引擎的供应用完了，例程将分配一个双向 DMA 引擎（如果有）。
 
-可在两个版本的 HD audio DDI 中使用 "分配*Xxx*DmaEngine" 例程。
+可在两个版本的 HD audio DDI 中使用 "分配 *Xxx* DmaEngine" 例程。
 
  
 

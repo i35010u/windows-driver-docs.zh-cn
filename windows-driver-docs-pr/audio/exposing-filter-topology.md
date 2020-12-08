@@ -1,7 +1,6 @@
 ---
 title: 公开筛选器拓扑
 description: 公开筛选器拓扑
-ms.assetid: bf791f40-b2fb-48fe-8350-3b926db4ead7
 keywords:
 - 拓扑筛选 WDK 音频
 - 筛选拓扑 WDK 音频
@@ -10,12 +9,12 @@ keywords:
 - 音频筛选 WDK 音频，露出拓扑
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3b66c5390de19a0e1495d660fe1bea98b3b944ac
-ms.sourcegitcommit: 372464be981a39781c71049126f36891cb5d0cad
+ms.openlocfilehash: 310e6ee181d9366228a3ccbacd726b11a62d0877
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91645971"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96784817"
 ---
 # <a name="exposing-filter-topology"></a>公开筛选器拓扑
 
@@ -29,9 +28,9 @@ ms.locfileid: "91645971"
 
 -   节点在 [**PCNODE \_ 描述符**](/windows-hardware/drivers/ddi/portcls/ns-portcls-pcnode_descriptor) 结构的静态数组中指定。 每个节点的 ID 都是其在数组中的序号。
 
--   连接 (插针、固定到节点或节点到节点) 在 [**PCCONNECTION \_ 描述符**](/windows-hardware/drivers/ddi/portcls/ns-portcls-_pcconnection_descriptor) 结构的静态数组中指定。
+-   连接 (插针、固定到节点或节点到节点) 在 [**PCCONNECTION \_ 描述符**](/previous-versions/windows/hardware/drivers/ff537688(v=vs.85)) 结构的静态数组中指定。
 
-微型端口驱动程序在从其[**IMiniport：： GetDescription**](/windows-hardware/drivers/ddi/portcls/nf-portcls-iminiport-getdescription)方法输出的[**PCFILTER \_ 描述符**](/windows-hardware/drivers/ddi/portcls/ns-portcls-pcfilter_descriptor)结构中公开这三个数组。
+微型端口驱动程序在从其 [**IMiniport：： GetDescription**](/windows-hardware/drivers/ddi/portcls/nf-portcls-iminiport-getdescription)方法输出的 [**PCFILTER \_ 描述符**](/windows-hardware/drivers/ddi/portcls/ns-portcls-pcfilter_descriptor)结构中公开这三个数组。
 
 ### <a name="span-idexamplespanspan-idexamplespanspan-idexamplespanexample"></a><span id="Example"></span><span id="example"></span><span id="EXAMPLE"></span>实例
 
@@ -104,7 +103,7 @@ PCCONNECTION_DESCRIPTOR MiniportConnections[] =
 
 ![阐释简单筛选器拓扑的关系图](images/audtop.png)
 
-此筛选器是一个简单的 [拓扑筛选器](topology-filters.md)示例，适配器驱动程序通过将其 [IMiniportTopology](/windows-hardware/drivers/ddi/portcls/nn-portcls-iminiporttopology) 对象绑定到 PortCls 系统驱动程序创建的 [IPortTopology](/windows-hardware/drivers/ddi/portcls/nn-portcls-iporttopology) 对象来形成。 筛选器的输入 (接收器) 和输出 (源) pin 的名称为 KSPIN \_ WAVEOUT \_ SRC 和 KSPIN \_ 发言人 \_ DST。 这两个针脚都带有模拟信号。 **混音**器 API 将这些引脚的连接公开为源和目标混合器行 (MIXERLINE \_ COMPONENTTYPE \_ SRC \_ WAVEOUT 和 MIXERLINE \_ COMPONENTTYPE \_ DST \_ 发言人) 。
+此筛选器是一个简单的 [拓扑筛选器](topology-filters.md)示例，适配器驱动程序通过将其 [IMiniportTopology](/windows-hardware/drivers/ddi/portcls/nn-portcls-iminiporttopology) 对象绑定到 PortCls 系统驱动程序创建的 [IPortTopology](/windows-hardware/drivers/ddi/portcls/nn-portcls-iporttopology) 对象来形成。 筛选器的输入 (接收器) 和输出 (源) pin 的名称为 KSPIN \_ WAVEOUT \_ SRC 和 KSPIN \_ 发言人 \_ DST。 这两个针脚都带有模拟信号。 **混音** 器 API 将这些引脚的连接公开为源和目标混合器行 (MIXERLINE \_ COMPONENTTYPE \_ SRC \_ WAVEOUT 和 MIXERLINE \_ COMPONENTTYPE \_ DST \_ 发言人) 。
 
 下表说明了讨论 KS 引脚到混音器线的映射时可能会造成混淆的原因。
 

@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ 音频 \_ 位置
 description: "\"KSPROPERTY \\_ 音频 \\_ 位置\" 属性指定 pin 的音频流的声音缓冲区中的播放和写入光标的当前位置。"
-ms.assetid: 859990bc-18c0-429a-afb6-07b5adc98630
 keywords:
 - KSPROPERTY_AUDIO_POSITION 音频设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: eb513e4e75b1521b6884f8dc722d583a3a0474ab
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 5757aafaf5ac3f8e0b9be0c049fe05d5ab6274dc
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102076"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96784485"
 ---
 # <a name="ksproperty_audio_position"></a>KSPROPERTY \_ 音频 \_ 位置
 

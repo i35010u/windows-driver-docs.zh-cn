@@ -1,7 +1,6 @@
 ---
 title: DirectSound 捕获效果
 description: DirectSound 捕获效果
-ms.assetid: 5dcadcea-0b6a-447d-828d-a7f256f97088
 keywords:
 - DirectSound WDK 音频，捕获效果
 - 回声抵消乐曲音频
@@ -11,12 +10,12 @@ keywords:
 - 全双工应用程序 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f62cf595292a9cfb7267d02c73a49412efcdd953
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 3acc11d644fa14dd0d4c271d9f35da17a9d75bec
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102366"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96784849"
 ---
 # <a name="directsound-capture-effects"></a>DirectSound 捕获效果
 
@@ -32,7 +31,7 @@ DirectSound 8 添加了一些新功能，用于启用和控制音频捕获过程
 
 在全双工音频应用程序（如电话会议）中，将在生成捕获流的麦克风中选取要通过扬声器输出的呈现流的回声。 在房间或其他物理环境中描述声音反射后，全双工系统将使用 AEC 监视呈现流，以取消它添加到捕获流中的回显。 系统可以通过使用 NS 检测噪音峰值，并从流中删除，从而进一步提高捕获流的质量。
 
-全双工 DirectSound 应用程序可以使用 **IDirectSoundCaptureFXAec** 和 **IDirectSoundCaptureFXNoiseSuppress** 接口来控制 AEC 和 NS 的影响。 **IDirectSoundCaptureBuffer：： GetObjectInPath**方法用这些接口检索指向对象的指针。 **DirectSoundFullDuplexCreate**函数将创建**IDirectSoundCaptureBuffer**对象，并且调用方传递给此函数的参数包括一个 DSCEFFECTDESC 结构数组。 数组指定在捕获缓冲区中启用的效果。 数组中每个结构的 **guidDSCFXClass** 成员包含一个指定效果的 GUID： AEC 或 NS。 下表显示了每个 GUID 的 DirectSound 名称，以及同一 GUID 值的 KS 名称。 有关详细信息，请参阅 DirectX 8.0 SDK 文档。
+全双工 DirectSound 应用程序可以使用 **IDirectSoundCaptureFXAec** 和 **IDirectSoundCaptureFXNoiseSuppress** 接口来控制 AEC 和 NS 的影响。 **IDirectSoundCaptureBuffer：： GetObjectInPath** 方法用这些接口检索指向对象的指针。 **DirectSoundFullDuplexCreate** 函数将创建 **IDirectSoundCaptureBuffer** 对象，并且调用方传递给此函数的参数包括一个 DSCEFFECTDESC 结构数组。 数组指定在捕获缓冲区中启用的效果。 数组中每个结构的 **guidDSCFXClass** 成员包含一个指定效果的 GUID： AEC 或 NS。 下表显示了每个 GUID 的 DirectSound 名称，以及同一 GUID 值的 KS 名称。 有关详细信息，请参阅 DirectX 8.0 SDK 文档。
 
 <table>
 <colgroup>

@@ -1,15 +1,14 @@
 ---
 title: 插孔说明属性
 description: 插孔说明属性
-ms.assetid: 6398efc9-4435-4234-bd72-1ed0f96c9f9f
 ms.date: 05/08/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 789d07736a63304e86d48258ecb36451c40aad02
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: cd2459394856706902dc93d513194f4672065258
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89209073"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96784707"
 ---
 # <a name="jack-description-property"></a>插孔说明属性
 
@@ -112,7 +111,7 @@ KSJACK_DESCRIPTION ar_SPDIF_Jacks[] =
 <thead>
 <tr class="header">
 <th align="left">Pin ID</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -300,11 +299,11 @@ PropertyHandler_TopoFilter(IN PPCPROPERTY_REQUEST PropertyRequest)
 
 前面的代码示例引用了前面定义的三个 KSJACK \_ 说明变量-SynthIn \_ 插座、MicIn \_ 插孔和 LineOut \_ 插孔。 如果客户端在筛选器中查询了有效 pin 的插孔说明，但其中一个不是桥接 (，因此没有) 的插孔说明，则查询将成功 (状态代码状态 " \_ 成功") ，但属性处理程序返回的是包含 KSMULTIPLE \_ 项结构而不是其他内容的空的插孔说明。 如果客户端指定了一个无效的 pin ID (标识不存在的 pin) ，则处理程序将返回状态代码状态 \_ 无效 \_ 参数。
 
-若要支持 KSPROPERTY \_ 插座说明属性，需要另外两处修改简单的 MSVAD 示例 \_ 。 它们是：
+若要支持 KSPROPERTY \_ 插座说明属性，需要另外两处修改简单的 MSVAD 示例 \_ 。 这些是：
 
 -   将前面代码示例中的 **PropertyHandlerJackDescription** 方法的声明添加到头文件 Mintopo 中的 CMiniportTopology 类定义。
 
--   实现拓扑筛选器的自动化表，并将此表的地址加载到头文件 Toptable 中[**PCFILTER \_ 描述符**](/windows-hardware/drivers/ddi/portcls/ns-portcls-pcfilter_descriptor)结构的**AutomationTable**成员中。 此结构名为 **MiniportFilterDescriptor**。
+-   实现拓扑筛选器的自动化表，并将此表的地址加载到头文件 Toptable 中 [**PCFILTER \_ 描述符**](/windows-hardware/drivers/ddi/portcls/ns-portcls-pcfilter_descriptor)结构的 **AutomationTable** 成员中。 此结构名为 **MiniportFilterDescriptor**。
 
 若要实现筛选器的自动化表，请在 **MiniportFilterDescriptor**) 的定义之前，将以下代码插入到头文件 Toptable (：
 
@@ -322,7 +321,7 @@ static PCPROPERTY_ITEM PropertiesTopoFilter[] =
 DEFINE_PCAUTOMATION_TABLE_PROP(AutomationTopoFilter, PropertiesTopoFilter);
 ```
 
-在上面的代码示例中， [**PCPROPERTY \_ 项**](/windows-hardware/drivers/ddi/portcls/ns-portcls-pcproperty_item)结构的**处理程序**成员包含指向在上一步中添加到 Mintopo 的属性处理程序的函数指针。 若要使该属性处理程序可从头文件访问， **extern**请 \_ 在头文件的开头插入 PropertyHandler TopoFilter 的 extern 函数声明。
+在上面的代码示例中， [**PCPROPERTY \_ 项**](/windows-hardware/drivers/ddi/portcls/ns-portcls-pcproperty_item)结构的 **处理程序** 成员包含指向在上一步中添加到 Mintopo 的属性处理程序的函数指针。 若要使该属性处理程序可从头文件访问， **extern** 请 \_ 在头文件的开头插入 PropertyHandler TopoFilter 的 extern 函数声明。
 
 有关 "插座说明" 属性的详细信息，请参阅 [Subdevices 的插座说明](jack-descriptions-for-dynamic-audio-subdevices.md)。
 

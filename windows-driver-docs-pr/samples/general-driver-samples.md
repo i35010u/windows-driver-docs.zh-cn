@@ -1,15 +1,14 @@
 ---
 title: 相机驱动程序示例
 description: 此目录中的示例提供了为设备编写自定义驱动程序的起点。
-ms.assetid: C5DC72F1-D093-47D0-9AC3-680878C5A868
 ms.date: 12/03/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: ad78a0068296a4b89bcb7d8ab517dca8fda4d3f4
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 3b62744419224fb02bdeb335c2c0a094eadfcd78
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89187271"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96785643"
 ---
 # <a name="general-driver-samples"></a>相机驱动程序示例
 
@@ -33,12 +32,12 @@ ms.locfileid: "89187271"
 | [RegFltr](/samples/microsoft/windows-driver-samples/regfltr-sample-driver) | 说明如何编写注册表筛选器驱动程序。 |
 | [简单媒体源](/samples/microsoft/windows-driver-samples/simplemediasource-sample) | 演示如何编写自定义媒体源和驱动程序包。 |
 | [系统 DMA](/samples/microsoft/windows-driver-samples/system-dma) | 演示 V3 系统 DMA 的用法。 其中显示了驱动程序如何使用 Windows 支持的系统 DMA 控制器将数据写入到使用 DMA 的硬件位置。 |
-| [Toaster 示例驱动程序](/samples/microsoft/windows-driver-samples/toaster-sample-driver) | 一系列重复的样本，其中演示了内核模式驱动程序框架 (KMDF) 和用户模式驱动程序框架 (UMDF) 版本1中的 Windows 驱动程序开发的基本方面。 |
+| [Toaster 示例驱动程序](/samples/microsoft/windows-driver-samples/toaster-sample-driver) | 一系列迭代的示例，演示了 Kernel-Mode Driver Framework (KMDF) 和 User-Mode Driver Framework (UMDF) 版本1的 Windows 驱动程序开发的基本方面。 |
 | [Toaster 包示例](/samples/microsoft/windows-driver-samples/toaster-package-sample-driver) | 模拟 toaster 示例驱动程序的硬件优先和软件优先安装。 |
-| [Toaster 示例 (UMDF 版本 2) ](/samples/microsoft/windows-driver-samples/toaster-sample-umdf-version-2) | 一系列使用用户模式驱动程序框架（ (UMDF) 版本2）演示 Windows 驱动程序开发基本方面的示例。 |
+| [Toaster 示例 (UMDF 版本 2) ](/samples/microsoft/windows-driver-samples/toaster-sample-umdf-version-2) | 一系列使用 User-Mode Driver Framework (UMDF) 版本2演示 Windows 驱动程序开发的基本方面的示例。 |
 | [EventDrv](/samples/microsoft/windows-driver-samples/eventdrv) | 内核模式跟踪提供程序和驱动程序。 该驱动程序不控制任何硬件;它只是生成跟踪事件。 它旨在演示如何使用驱动程序中 Windows (ETW) API 的事件跟踪。 |
 | [系统跟踪控制](/samples/microsoft/windows-driver-samples/systemtraceprovider) | 演示如何使用事件跟踪控制 Api 从系统跟踪提供程序收集事件。 |
 | [Tracedrv](/samples/microsoft/windows-driver-samples/tracedrv) | 为软件跟踪检测的示例驱动程序。|
-| [UMDF 驱动程序主干](/samples/microsoft/windows-driver-samples/umdf-driver-skeleton-sample-umdf-version-1) | 演示如何使用用户模式驱动程序框架编写最小的驱动程序并显示最佳实践。 |
+| [UMDF 驱动程序主干](/samples/microsoft/windows-driver-samples/umdf-driver-skeleton-sample-umdf-version-1) | 演示如何使用 User-Mode Driver Framework 编写最小的驱动程序并显示最佳实践。 |
 | [适用于通用驱动程序的驱动程序包安装工具包](/samples/microsoft/windows-driver-samples/driver-package-installation-toolkit-for-universal-drivers) | 说明通用驱动程序设计的 DCHU 原则。 |
 | [WinHEC 2017 实验室](/samples/microsoft/windows-driver-samples/winhec-2017-lab) | WinHEC 2017 实验室中的 Toaster 示例： Toaster 驱动程序、PlugInToaster 和 Toaster 支持应用程序。 |

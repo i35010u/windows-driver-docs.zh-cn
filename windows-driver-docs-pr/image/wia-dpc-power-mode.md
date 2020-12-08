@@ -1,9 +1,8 @@
 ---
-title: WIA\_DPC\_电源\_模式
-description: WIA\_DPC\_电源\_模式属性定义摄像机设备的当前电源。
-ms.assetid: b99d9ebc-6a1f-4bfc-be3a-07dba5b38186
+title: WIA \_ DPC \_ 电源 \_ 模式
+description: WIA \_ DPC \_ 电源 \_ 模式属性定义了照相机设备的当前电源。
 keywords:
-- WIA_DPC_POWER_MODE 成像设备
+- WIA_DPC_POWER_MODE 图像设备
 topic_type:
 - apiref
 api_name:
@@ -14,33 +13,33 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 71a09fae56d34b7259a6fc8a423c7adfe32d7606
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 59e6b8e83081c3eae425c49359d676f41d358c94
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63392563"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96785169"
 ---
-# <a name="wiadpcpowermode"></a>WIA\_DPC\_电源\_模式
+# <a name="wia_dpc_power_mode"></a>WIA \_ DPC \_ 电源 \_ 模式
 
 
-WIA\_DPC\_电源\_模式属性定义摄像机设备的当前电源。
+WIA \_ DPC \_ 电源 \_ 模式属性定义了照相机设备的当前电源。
 
 ## <span id="ddk_wia_dpc_power_mode_si"></span><span id="DDK_WIA_DPC_POWER_MODE_SI"></span>
 
 
-属性类型：VT\_I4
+属性类型： VT \_ I4
 
-有效值：WIA\_PROP\_NONE
+有效值： WIA " \_ \_ 无"
 
 访问权限：只读
 
 <a name="remarks"></a>备注
 -------
 
-应用程序读取 WIA\_DPC\_电源\_使用模式属性以确定哪些 power 源照相机。
+应用程序读取 WIA \_ DPC \_ 电源 \_ 模式属性来确定相机使用的电源。
 
-下表描述了有效使用 WIA 的常量\_DPC\_电源\_模式。
+下表介绍了在 WIA \_ DPC \_ 电源模式下有效的常量 \_ 。
 
 <table>
 <colgroup>
@@ -49,18 +48,18 @@ WIA\_DPC\_电源\_模式属性定义摄像机设备的当前电源。
 </colgroup>
 <thead>
 <tr class="header">
-<th>ReplTest1</th>
+<th>值</th>
 <th>定义</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><p>POWERMODE_BATTERY</p></td>
-<td><p>照相机设备电池电源运行。</p></td>
+<td><p>照相机设备正在使用电池电源运行。</p></td>
 </tr>
 <tr class="even">
 <td><p>POWERMODE_LINE</p></td>
-<td><p>照相机设备正在运行的电源适配器。</p></td>
+<td><p>照相机设备在电源适配器上运行。</p></td>
 </tr>
 </tbody>
 </table>
@@ -77,12 +76,12 @@ WIA\_DPC\_电源\_模式属性定义摄像机设备的当前电源。
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Version</p></td>
-<td><p>在 Windows Vista 和更高版本操作系统中已过时，并应不再使用。 但是，此属性仍定义 Windows Vista 中与应用程序和用于 Windows Server 2003、 Windows XP 和早期版本的 Windows 设备的兼容性。</p></td>
+<td><p>版本</p></td>
+<td><p>在 Windows Vista 和更高版本的操作系统中已过时，不应再使用。 但是，在 Windows Vista 中仍定义此属性，以与为 Windows Server 2003、Windows XP 和 windows 的早期版本设计的应用程序和设备兼容。</p></td>
 </tr>
 <tr class="even">
-<td><p>Header</p></td>
-<td>Wiadef.h （包括 Wiadef.h）</td>
+<td><p>标头</p></td>
+<td>Wiadef (包含 Wiadef) </td>
 </tr>
 </tbody>
 </table>

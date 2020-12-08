@@ -1,19 +1,18 @@
 ---
 title: 打印功能的 Win32 API 支持
 description: 打印功能的 Win32 API 支持
-ms.assetid: 1b40cc3e-c6f6-460f-b514-4ef3a001f563
 keywords:
 - 打印功能 WDK，Win32 API 支持
 - DrvDeviceCapabilities
 - Win32 应用程序 WDK 打印
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 51c99493c8b0db8fc0e83aa881f54b4bf981aead
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: b10127cdd42c01212739da35caed6fa210adeaa0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89211869"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96785807"
 ---
 # <a name="win32-api-support-for-print-capabilities"></a>打印功能的 Win32 API 支持
 
@@ -22,7 +21,7 @@ Windows Vista 打印子系统提供兼容性支持，使 Windows Presentation Fo
 
 ![说明打印功能数据流的图示](images/ptpccomp.gif)
 
-[XPSDrv 打印驱动程序](xpsdrv-printer-drivers.md)和基于 GDI 的版本3打印驱动程序均支持[**DrvDeviceCapabilities**](/windows-hardware/drivers/ddi/winddiui/nf-winddiui-drvdevicecapabilities)函数。 当 Win32 应用程序调用 **DrvDeviceCapabilities** 或 **GetDevCap** 函数时，打印子系统将调用 **DrvDeviceCapabilities** 以从打印驱动程序收集设备功能信息。
+[XPSDrv 打印驱动程序](xpsdrv-printer-drivers.md)和基于 GDI 的版本3打印驱动程序均支持 [**DrvDeviceCapabilities**](/windows-hardware/drivers/ddi/winddiui/nf-winddiui-drvdevicecapabilities)函数。 当 Win32 应用程序调用 **DrvDeviceCapabilities** 或 **GetDevCap** 函数时，打印子系统将调用 **DrvDeviceCapabilities** 以从打印驱动程序收集设备功能信息。
 
 当 WPF 应用程序从打印驱动程序请求 PrintCapabilities 文档时，打印子系统将执行以下操作之一：
 

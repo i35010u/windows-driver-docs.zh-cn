@@ -1,15 +1,14 @@
 ---
 title: Windows 内核模式安全字符串库
 description: Windows 内核模式安全字符串库
-ms.assetid: a54cd20c-2c2d-462d-b9fc-112e99562e52
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 7d928afe0d61dfe5023a56be0eab0cc25aa693ab
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 4d9ec92ada1db9bf6833299639d7e84ced6b5531
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89187023"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96785105"
 ---
 # <a name="windows-kernel-mode-safe-string-library"></a>Windows 内核模式安全字符串库
 
@@ -20,7 +19,7 @@ ms.locfileid: "89187023"
 
 有关使用安全字符串的详细信息，请参阅 [使用安全字符串函数](using-safe-string-functions.md)。
 
-请注意，此外还提供了一个单独的运行时库，用于在内核中提供字符串功能的一般 C 编程。 有关运行库 (RTL) 的详细信息，请参阅 [Windows 内核模式运行时库](windows-kernel-mode-run-time-library.md)。 请注意，尽管这两个库都带有 "**Rtl**" 前缀，但它们不是同一库。
+请注意，此外还提供了一个单独的运行时库，用于在内核中提供字符串功能的一般 C 编程。 有关运行库 (RTL) 的详细信息，请参阅 [Windows Kernel-Mode Run-Time 库](windows-kernel-mode-run-time-library.md)。 请注意，尽管这两个库都带有 "**Rtl**" 前缀，但它们不是同一库。
 
  
 

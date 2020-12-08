@@ -1,15 +1,14 @@
 ---
 title: 购买
 description: 购买
-ms.assetid: e753ba12-650e-4116-bb2e-dc17fc7bddee
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0bb745916b5d148968c1b06dbe5cc8b0ca51c532
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: 833358a6e48e3a8fbd3d78d6326aa5339f963c53
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89403216"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96786193"
 ---
 # <a name="purchase"></a>购买
 
@@ -52,7 +51,7 @@ ServiceInformation 目录中的文件的名称。
 <thead>
 <tr class="header">
 <th>元素</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>

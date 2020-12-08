@@ -1,17 +1,16 @@
 ---
 title: 生物识别驱动程序入门
 description: 生物识别驱动程序入门
-ms.assetid: 7f5dcac2-db0d-4ddd-9e57-886db324e38b
 keywords:
 - 生物识别驱动程序 WDK，关于生物识别驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3f20584f3a329436fa618850bdc9a4edbb5ad37d
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 2d1304133d04727d8eb9174a7e4504eca8be0a66
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89095893"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96784297"
 ---
 # <a name="getting-started-with-biometric-drivers"></a>生物识别驱动程序入门
 

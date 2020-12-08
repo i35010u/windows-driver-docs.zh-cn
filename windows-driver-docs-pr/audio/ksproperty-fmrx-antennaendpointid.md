@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ FMRX \_ ANTENNAENDPOINTID
 description: KSTOPOLOGY \_ ENDPOINTID 属性包含终结点的相关信息，该终结点将用作调频天线。
-ms.assetid: 96B831E8-2372-413E-A9DE-63248F4F5863
 keywords:
 - KSPROPERTY_FMRX_ANTENNAENDPOINTID 音频设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b4c2a40b508659794d575af0881c321551390a3d
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 55fae62018ff8178cb49f1eaac43583292800204
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102506"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96784363"
 ---
 # <a name="ksproperty_fmrx_antennaendpointid"></a>KSPROPERTY \_ FMRX \_ ANTENNAENDPOINTID
 
@@ -81,7 +80,7 @@ KSPROPERTY \_ FMRX \_ ANTENNAENDPOINTID 属性请求返回终结点的名称和 
 </tr>
 <tr class="even">
 <td align="left"><p>最低受支持的服务器</p></td>
-<td align="left"><p>Windows Server 2016</p></td>
+<td align="left"><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>客户端</p></td>

@@ -1,19 +1,18 @@
 ---
 title: 创建音频驱动程序对象
 description: 创建音频驱动程序对象
-ms.assetid: c5d1b1b6-fc47-4227-bcca-1119488dce3b
 keywords:
 - 音频驱动程序对象 WDK
 - COM 对象创建 WDK 音频
 - 对象 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 53c64ef2a96392d609750567af5f6be6aea0e58a
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: aa147bdaa8160fffcf3f14fcfbd5411107f2f35e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89208193"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96784893"
 ---
 # <a name="creating-audio-driver-objects"></a>创建音频驱动程序对象
 
@@ -39,7 +38,7 @@ NTSTATUS CreateMyObject(
 ### <a name="span-idparametersspanspan-idparametersspanparameters"></a><span id="parameters"></span><span id="PARAMETERS"></span>参数
 
 <span id="Unknown"></span><span id="unknown"></span><span id="UNKNOWN"></span>*未知*  
-指向 **IUnknown** 接口的指针的指针。 函数通过 *Unknown*输出对新创建的对象的引用。
+指向 **IUnknown** 接口的指针的指针。 函数通过 *Unknown* 输出对新创建的对象的引用。
 
 <span id="ClassId"></span><span id="classid"></span><span id="CLASSID"></span>*ClassId*  
 指定通过引用传递的类 GUID。 仅当函数创建多个类的对象时，才使用此参数。 否则，将其设置为 **NULL**。
@@ -52,7 +51,7 @@ NTSTATUS CreateMyObject(
 
 前三个参数与 COM **CoCreateInstance** 函数的参数相同。 有关此类型的创建函数的示例，请参阅 Microsoft Windows 驱动程序工具包 (WDK) 中的 Fmsynth 示例音频驱动程序中的 **CreateMiniportMidiFM** 函数。
 
-另一种约定是为类提供新的*Xxx* 函数。 此类函数提供了一种简单的方法来实例化 (创建和初始化) 对象，如下面的示例中所示：
+另一种约定是为类提供新的 *Xxx* 函数。 此类函数提供了一种简单的方法来实例化 (创建和初始化) 对象，如下面的示例中所示：
 
 ```cpp
 NTSTATUS NewMyObject(
@@ -63,9 +62,9 @@ NTSTATUS NewMyObject(
  );
 ```
 
-NewMyObject 函数创建并初始化对象，然后将指针传递回接口。 由于初始化参数是类特定的，因此是新的*Xxx* 函数的原型。 新的*Xxx* 函数为对象的构造函数提供了方便的访问。
+NewMyObject 函数创建并初始化对象，然后将指针传递回接口。 由于初始化参数是类特定的，因此是新的 *Xxx* 函数的原型。 新的 *Xxx* 函数为对象的构造函数提供了方便的访问。
 
-有关此类型的新*Xxx* 函数的示例，请参阅 [**PcNewDmaChannel**](/windows-hardware/drivers/ddi/portcls/nf-portcls-pcnewdmachannel)。
+有关此类型的新 *Xxx* 函数的示例，请参阅 [**PcNewDmaChannel**](/windows-hardware/drivers/ddi/portcls/nf-portcls-pcnewdmachannel)。
 
  
 

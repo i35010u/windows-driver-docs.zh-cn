@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ AUDIOENGINE \_ VOLUMELEVEL
 description: KSPROPERTY \_ AUDIOENGINE \_ VOLUMELEVEL 属性指定给定流中通道的音量级别。
-ms.assetid: E10E2ADC-BD76-4871-85DA-19385A0D77EE
 keywords:
 - KSPROPERTY_AUDIOENGINE_VOLUMELEVEL 音频设备
 topic_type:
@@ -14,17 +13,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b6b86ae715624f126d7bc203dcd2dd5281792bd9
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: d6f93b071f631dfbbf05a003416bf3e0b1db2c53
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102606"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96784429"
 ---
 # <a name="ksproperty_audioengine_volumelevel"></a>KSPROPERTY \_ AUDIOENGINE \_ VOLUMELEVEL
 
 
-**KSPROPERTY \_ AUDIOENGINE \_ VOLUMELEVEL**属性指定给定流中通道的音量级别。
+**KSPROPERTY \_ AUDIOENGINE \_ VOLUMELEVEL** 属性指定给定流中通道的音量级别。
 
 ### <a name="span-idusage_summary_tablespanspan-idusage_summary_tablespanspan-idusage_summary_tablespanusage-summary-table"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用情况摘要表
 
@@ -75,12 +74,12 @@ ms.locfileid: "90102606"
 
 ### <a name="span-idreturn_valuespanspan-idreturn_valuespanspan-idreturn_valuespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>返回值
 
-[**KSPROPERTY \_ AUDIOENGINE \_ SUPPORTEDDEVICEFORMATS**](ksproperty-audioengine-supporteddeviceformats.md)属性请求返回**状态 \_ SUCCESS**以指示已成功完成。 否则，请求将返回相应的错误状态代码。
+[**KSPROPERTY \_ AUDIOENGINE \_ SUPPORTEDDEVICEFORMATS**](ksproperty-audioengine-supporteddeviceformats.md)属性请求返回 **状态 \_ SUCCESS** 以指示已成功完成。 否则，请求将返回相应的错误状态代码。
 
 <a name="remarks"></a>备注
 -------
 
-**KSPROPERTY \_ AUDIOENGINE \_ VOLUMELEVEL**的属性描述符指定频道号。 如果穿过音频引擎节点的流包含 *n* 个通道，通道将从0到 *n-1*进行编号。 另请注意，如果通道值为0xFFFFFFFF，则表明请求适用于所有通道。 如果在流未处于运行状态时发出了属性请求，则会立即将卷级别设置为请求的级别。 如果流在卷级别斜坡正在进行时仍保持运行状态，则流的卷级别会立即设置为当前淡化的目标级别。 如果在现有的卷级别斜坡正在进行时发出新的属性请求，则新的斜坡请求必须从当前的音量级别开始，即当新请求到达时，已达到了该卷的级别。
+**KSPROPERTY \_ AUDIOENGINE \_ VOLUMELEVEL** 的属性描述符指定频道号。 如果穿过音频引擎节点的流包含 *n* 个通道，通道将从0到 *n-1* 进行编号。 另请注意，如果通道值为0xFFFFFFFF，则表明请求适用于所有通道。 如果在流未处于运行状态时发出了属性请求，则会立即将卷级别设置为请求的级别。 如果流在卷级别斜坡正在进行时仍保持运行状态，则流的卷级别会立即设置为当前淡化的目标级别。 如果在现有的卷级别斜坡正在进行时发出新的属性请求，则新的斜坡请求必须从当前的音量级别开始，即当新请求到达时，已达到了该卷的级别。
 
 <a name="requirements"></a>要求
 ------------

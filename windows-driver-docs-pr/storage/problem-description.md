@@ -1,20 +1,19 @@
 ---
-title: 问题说明
-description: 问题说明
-ms.assetid: 5e811011-9848-43fc-969d-abdf1ad45acf
+title: 问题描述
+description: 问题描述
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1820f418472043b269176364cd998ab1804517bb
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 380617099d783b7e5dbf81d35a169f12e74a47a8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63366375"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96785481"
 ---
-# <a name="problem-description"></a>问题说明
+# <a name="problem-description"></a>问题描述
 
 
-在 Windows 计算机系统、 故障转储和休眠状态中具有特殊的存储驱动程序、 端口和微型端口支持崩溃转储驱动程序提供支持。 当系统崩溃时，转储数据写入磁盘而不典型的存储堆栈中使用这些特殊的驱动程序集。 这些驱动程序而无需使用文件系统卷或卷管理器驱动程序写入数据，并且它们不以前支持崩溃转储堆栈中添加的任何驱动程序。
+在 Windows 计算机系统中，故障转储驱动程序提供了故障转储驱动程序，该驱动程序支持特殊的存储驱动程序，包括端口和微型端口。 系统崩溃时，转储数据使用这些特殊的驱动程序集（而不是典型的存储堆栈）写入磁盘。 这些驱动程序会在不使用文件系统或卷管理器驱动程序的情况下写入数据，它们以前不支持在故障转储堆栈中添加任何驱动程序。
 
  
 

@@ -1,26 +1,25 @@
 ---
-title: KSEVENTSETID\_PinCapsChange
-description: KSEVENTSETID\_PinCapsChange
-ms.assetid: a8fc4b57-9e80-49e5-a0fc-92bb38724ea0
+title: KSEVENTSETID \_ PinCapsChange
+description: KSEVENTSETID \_ PinCapsChange
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d712210e803d269ebe4810b45006973703236711
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5bdf64ebdb9eafb13c630ae1429a296c93d701f2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333335"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96784677"
 ---
-# <a name="kseventsetidpincapschange"></a>KSEVENTSETID\_PinCapsChange
+# <a name="kseventsetid_pincapschange"></a>KSEVENTSETID \_ PinCapsChange
 
 
-在 Windows 7 和更高版本的 Windows 操作系统、`KSEVENTSETID_PinCapsChange`音频驱动程序使用事件集以通知的音频格式，jack 信息或音频设备的其他某个属性已更改的操作系统。
+在 windows 7 和更高版本的 Windows 操作系统中， `KSEVENTSETID_PinCapsChange` 音频驱动程序使用该事件集通知操作系统音频格式、插孔信息或音频设备的某个其他属性已更改。
 
-在此集中的事件项指定为以下 KSEVENT\_PINCAPS\_CHANGENOTIFICATIONS 枚举值：
+此集中的事件项被指定为以下 KSEVENT \_ PINCAPS \_ CHANGENOTIFICATIONS 枚举值：
 
-[**KSEVENT\_PINCAPS\_格式**](ksevent-pincaps-formatchange.md)
+[**KSEVENT \_ PINCAPS \_ FORMATCHANGE**](ksevent-pincaps-formatchange.md)
 
-[**KSEVENT\_PINCAPS\_JACKINFOCHANGE**](ksevent-pincaps-jackinfochange.md)
+[**KSEVENT \_ PINCAPS \_ JACKINFOCHANGE**](ksevent-pincaps-jackinfochange.md)
 
  
 

@@ -1,7 +1,6 @@
 ---
 title: 音频位置属性
 description: 音频位置属性
-ms.assetid: 893fea84-9136-4107-96d2-8a4e2ab7bd2a
 keywords:
 - 播放位置 WDK 音频
 - 录制位置 WDK 音频
@@ -18,19 +17,19 @@ keywords:
 - 端口驱动程序 WDK 音频，位置属性
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5954faa70e40ab9978869aba92d5e8a14fd97fed
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 888b3e82c7f0655dc8a53fe3afd86f3be068a674
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89208303"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96784981"
 ---
 # <a name="audio-position-property"></a>音频位置属性
 
 
 音频驱动程序的客户端使用 [**KSPROPERTY \_ 音频 \_ 位置**](./ksproperty-audio-position.md) 属性来获取和设置音频流中的当前位置。 属性使用 [**KSAUDIO \_ 位置**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksaudio_position) 结构来描述当前位置。 结构包含两个成员： **PlayOffset** 和 **WriteOffset**。
 
-**PlayOffset**和**WriteOffset**成员定义当前为独占使用音频设备而保留的客户端缓冲区区域的边界。 客户端必须假定设备当前正在访问此区域中包含的任何数据。 因此，客户端必须仅访问位于此区域之外的缓冲区部分。 当流前进时，区域的边界会移动。
+**PlayOffset** 和 **WriteOffset** 成员定义当前为独占使用音频设备而保留的客户端缓冲区区域的边界。 客户端必须假定设备当前正在访问此区域中包含的任何数据。 因此，客户端必须仅访问位于此区域之外的缓冲区部分。 当流前进时，区域的边界会移动。
 
 如果客户端缓冲区具有循环 (也就是说，流类型为 [**KSINTERFACE \_ 标准 \_ 循环 \_ 流式处理**](../stream/ksinterface-standard-looped-streaming.md)) ， **PlayOffset** 和 **WriteOffset** 是缓冲区相对偏移量。 也就是说，它们被指定为从循环客户端缓冲区开始的字节偏移量。 当偏移量增量到缓冲区的末尾时，它将环绕到缓冲区的开头。  (缓冲区开始处的偏移量为零。 ) 因此，两次偏移都不会超出缓冲区大小。
 

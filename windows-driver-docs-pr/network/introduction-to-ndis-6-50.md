@@ -1,15 +1,14 @@
 ---
 title: NDIS 6.50 简介
 description: 本部分介绍了 NDIS 6.50，并介绍了 NDIS 6.40 中的更改。 NDIS 6.50 包含在 Windows 10 版本1507及更高版本中。
-ms.assetid: 8D2EA09D-3FA3-467B-861A-AA15C790FCD3
 ms.date: 09/30/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: a15679312b94395f5c998fb42811543b57eac6c8
-ms.sourcegitcommit: d9f17c0b13f24fd40232b9c1f4fc5b83e0d58c3a
+ms.openlocfilehash: 2bc1074e5d780c2f7b636e9caa3bdcb069fd4ec1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/07/2020
-ms.locfileid: "91815881"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96786127"
 ---
 # <a name="introduction-to-ndis-650"></a>NDIS 6.50 简介
 

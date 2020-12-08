@@ -1,7 +1,6 @@
 ---
 title: WDTF 体系结构
 description: WDTF 体系结构
-ms.assetid: 8c110e97-6870-41f1-a4f3-4d44b2974c1a
 keywords:
 - Windows 设备测试框架 WDK，体系结构
 - WDTF WDK，体系结构
@@ -19,12 +18,12 @@ keywords:
 - 查询语言 WDK WDTF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4e47231ea942b204a34c6a65c4bd5dc834f7ef4a
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: ff1891d212f657e0fe3dec56bb800bb279e25f30
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89403536"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96785351"
 ---
 # <a name="wdtf-architecture"></a>WDTF 体系结构
 
@@ -39,17 +38,17 @@ ms.locfileid: "89403536"
 WDTF 聚合对象 ([**IWDTF2**](/windows-hardware/drivers/ddi/index)) 是整个框架的初始实例化点。 必须通过此对象访问框架中的所有内容。
 
 <a href="" id="systemdepot-property"></a>[**SystemDepot**](/windows-hardware/drivers/ddi/wdtf/nf-wdtf-iwdtf2-get_systemdepot) 属性  
-[**SystemDepot**](/windows-hardware/drivers/ddi/wdtf/nf-wdtf-iwdtf2-get_systemdepot)属性 ([**IWDTFSystemDepot2**](/windows-hardware/drivers/ddi/wdtf/nn-wdtf-iwdtfsystemdepot2)) 只包含本地计算机，你可以通过[**ThisSystem**](/windows-hardware/drivers/ddi/wdtf/nf-wdtf-iwdtfsystemdepot2-get_thissystem)属性访问该计算机。
+[**SystemDepot**](/windows-hardware/drivers/ddi/wdtf/nf-wdtf-iwdtf2-get_systemdepot)属性 ([**IWDTFSystemDepot2**](/windows-hardware/drivers/ddi/wdtf/nn-wdtf-iwdtfsystemdepot2)) 只包含本地计算机，你可以通过 [**ThisSystem**](/windows-hardware/drivers/ddi/wdtf/nf-wdtf-iwdtfsystemdepot2-get_thissystem)属性访问该计算机。
 
 <a href="" id="devicedepot-property"></a>[**DeviceDepot**](/windows-hardware/drivers/ddi/wdtf/nf-wdtf-iwdtf2-get_devicedepot) 属性  
-[**DeviceDepot**](/windows-hardware/drivers/ddi/wdtf/nf-wdtf-iwdtf2-get_devicedepot)属性 ([**IWDTFDeviceDepot2**](/windows-hardware/drivers/ddi/wdtf/nn-wdtf-iwdtfdevicedepot2)) 表示计算机上可用的所有设备的集合。 通过使用[简单的数据计算语言](simple-data-evaluation-language-overview.md) (SDEL) ，方案脚本可以使用[**查询**](/windows-hardware/drivers/ddi/wdtf/nf-wdtf-iwdtftargets2-query)方法查询 (**，该) **方法满足在搜索字符串中指定的一个或多个条件。 如上图所示， **Query** 返回符合条件 ([**IWDTFTargets2**](/windows-hardware/drivers/ddi/wdtf/nn-wdtf-iwdtftargets2)) 的目标集合。 此外， **DeviceDepot** 属性还具有一个 [**RootDevice**](/windows-hardware/drivers/ddi/wdtf/nf-wdtf-iwdtfdevicedepot2-get_rootdevice) 属性，该属性表示逻辑设备对象，该对象是所有物理存在的父级 (也称为计算机中的 *非虚拟*) 设备。
+[**DeviceDepot**](/windows-hardware/drivers/ddi/wdtf/nf-wdtf-iwdtf2-get_devicedepot)属性 ([**IWDTFDeviceDepot2**](/windows-hardware/drivers/ddi/wdtf/nn-wdtf-iwdtfdevicedepot2)) 表示计算机上可用的所有设备的集合。 通过使用 [简单的数据计算语言](simple-data-evaluation-language-overview.md) (SDEL) ，方案脚本可以使用 [**查询**](/windows-hardware/drivers/ddi/wdtf/nf-wdtf-iwdtftargets2-query)方法查询 (**，该)** 方法满足在搜索字符串中指定的一个或多个条件。 如上图所示， **Query** 返回符合条件 ([**IWDTFTargets2**](/windows-hardware/drivers/ddi/wdtf/nn-wdtf-iwdtftargets2)) 的目标集合。 此外， **DeviceDepot** 属性还具有一个 [**RootDevice**](/windows-hardware/drivers/ddi/wdtf/nf-wdtf-iwdtfdevicedepot2-get_rootdevice) 属性，该属性表示逻辑设备对象，该对象是所有物理存在的父级 (也称为计算机中的 *非虚拟*) 设备。
 
 <a href="" id="iwdtftarget2"></a>[**IWDTFTarget2**](/windows-hardware/drivers/ddi/wdtf/nn-wdtf-iwdtftarget2)  
-[**IWDTFTarget2**](/windows-hardware/drivers/ddi/wdtf/nn-wdtf-iwdtftarget2)接口表示测试活动的*目标*。 您通过框架执行的所有活动都涉及至少一个目标。 目标可以具有以下形式之一：
+[**IWDTFTarget2**](/windows-hardware/drivers/ddi/wdtf/nn-wdtf-iwdtftarget2)接口表示测试活动的 *目标*。 您通过框架执行的所有活动都涉及至少一个目标。 目标可以具有以下形式之一：
 
--   *设备类型目标*表示连接到计算机的硬件 (或软件) 设备。
+-   *设备类型目标* 表示连接到计算机的硬件 (或软件) 设备。
 
--   *系统类型目标*表示整个计算机。
+-   *系统类型目标* 表示整个计算机。
 
 目标包含描述它们所代表的设备或计算机的属性。
 

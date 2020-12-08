@@ -1,15 +1,14 @@
 ---
 title: 蓝牙驱动程序示例
 description: 此目录中的驱动程序示例提供了为设备编写自定义蓝牙驱动程序的起点。
-ms.assetid: 7ED22CAF-51DC-4EE4-BBF6-9D56554368BF
 ms.date: 11/15/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: dd4532adbb4092409e0a64eb8cd1cd5b840335d5
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 9e58ff70544d2a64785d9c825eb5d222b4191c30
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89192232"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96785655"
 ---
 # <a name="bluetooth-driver-samples"></a>蓝牙驱动程序示例
 

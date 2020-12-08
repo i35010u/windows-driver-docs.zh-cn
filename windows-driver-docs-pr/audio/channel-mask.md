@@ -1,7 +1,6 @@
 ---
 title: 声道掩码
 description: 声道掩码
-ms.assetid: 875ed000-ac53-4365-8381-3fe08d45cbcc
 keywords:
 - 数据格式化 WDK 音频
 - 格式化 WDK 音频、数据
@@ -26,12 +25,12 @@ keywords:
 - 数据格式化 WDK 音频，通道掩码
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 29741fae5632cbd3d26657778f886f2c1cd3a705
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 8ac38331f33be42e73bab6a5d5d9dfcf59ca6b25
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89208221"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96784927"
 ---
 # <a name="channel-mask"></a>声道掩码
 
@@ -56,7 +55,7 @@ ms.locfileid: "89208221"
 <tr class="header">
 <th align="left">位数</th>
 <th align="left">发言人位置</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>

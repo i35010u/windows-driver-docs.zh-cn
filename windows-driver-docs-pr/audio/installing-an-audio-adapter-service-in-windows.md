@@ -1,7 +1,6 @@
 ---
 title: 安装音频适配器服务
 description: 安装音频适配器服务
-ms.assetid: 465005da-bf06-497b-801c-fe5aa19a3974
 keywords:
 - 音频适配器 WDK，服务安装
 - 适配器驱动程序 WDK 音频，服务安装
@@ -9,12 +8,12 @@ keywords:
 - 适配器服务 WDK 音频
 ms.date: 10/26/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5a2b9269b695a5af41ad502878921f577b92cb87
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 6a1faf3244cc565f404cbe52e0cc8b9ca6311749
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89209437"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96784741"
 ---
 # <a name="installing-an-audio-adapter-service-in-windows"></a>在 Windows 中安装音频适配器服务
 

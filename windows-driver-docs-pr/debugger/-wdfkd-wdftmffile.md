@@ -1,7 +1,6 @@
 ---
 title: wdfkd.wdftmffile
 description: Wdftmffile 扩展将 ( tmf) 文件设置为在调试器为 wdfkd 或 wdflogdump 的错误日志设置格式时使用的跟踪消息格式。
-ms.assetid: 7099440c-bfea-472f-b9ee-943026afdb81
 keywords:
 - wdfkd wdftmffile Windows 调试
 ms.date: 05/23/2017
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 2f70bf8f684821018109afd2c1c258eddc48d199
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: f882fd0b8d0f1c4acebb7417f33147e1b112bb04
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89217890"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96785301"
 ---
 # <a name="wdfkdwdftmffile"></a>!wdfkd.wdftmffile
 
 
-**！ Wdfkd wdftmffile**扩展将跟踪消息格式设置 ( tmf) 文件，以便调试器在设置内核模式驱动程序框架 (KMDF) 错误日志记录时使用[**wdfkd 或**](-wdfkd-wdflogdump.md) [**wdflogdump**](-wdfkd-wdfcrashdump.md)扩展。
+当调试器 Kernel-Mode Driver Framework (KMDF) 错误日志记录 [**时，**](-wdfkd-wdflogdump.md) **wdftmffile** [**扩展将**](-wdfkd-wdfcrashdump.md) ( tmf) 文件设置为要使用的文件的跟踪消息格式。
 
 ```dbgcmd
 !wdfkd.wdftmffile TMFpath

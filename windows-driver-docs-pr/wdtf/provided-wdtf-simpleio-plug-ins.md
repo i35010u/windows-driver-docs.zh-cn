@@ -1,15 +1,14 @@
 ---
 title: 提供的 WDTF 简单 I/O 插件
 description: 简单 i/o 插件是 Windows 驱动程序测试框架的扩展 (WDTF) ，用于实现特定于设备的特定 i/o 功能。
-ms.assetid: 948E8CF5-24A1-4A7C-BD18-374F989AD053
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9135af4339d88c18c0edf1a359dc2aeac8778121
-ms.sourcegitcommit: a44ade167cdfb541cf1818e9f9e3726f23f90b66
+ms.openlocfilehash: c8198da11fd4347d049bd94e9129a62471aaf0f4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94361589"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96785371"
 ---
 # <a name="provided-wdtf-simple-io-plug-ins"></a>提供的 WDTF 简单 I/O 插件
 
@@ -63,9 +62,9 @@ xperf.exe -stop "NT Kernel Logger" Audio_SimpleIo
 xperf.exe -merge Audio_SimpleIo_Kernel.etl Audio_SimpleIo.etl Audio_SimpleIo _Merged.etl
 ```
 
-- 查看合并的跟踪文件，其中包含 Xperf ( **xperfview** ) 。
+- 查看合并的跟踪文件，其中包含 Xperf (**xperfview**) 。
 
-## <a name="bluetooth"></a>Bluetooth
+## <a name="bluetooth"></a>蓝牙
 
 ### <a name="bluetooth-requirements"></a>蓝牙要求
 

@@ -1,7 +1,6 @@
 ---
-title: KSPROPERTY\_音频\_合唱团\_调制\_深度
-description: KSPROPERTY\_音频\_合唱团\_调制\_DEPTH 属性指定合唱团调制深度。 这是合唱团节点的属性 (KSNODETYPE\_合唱团)。
-ms.assetid: A14DA707-7ED6-4E86-87C7-9A4E40062FE8
+title: KSPROPERTY \_ 音频 \_ CHORUS \_ 调制 \_ 深度
+description: KSPROPERTY \_ AUDIO \_ CHORUS \_ 调制 \_ depth 属性指定 CHORUS 的调制深度。 这是 chorus 节点 (KSNODETYPE chorus) 的属性 \_ 。
 keywords:
 - KSPROPERTY_AUDIO_CHORUS_MODULATION_DEPTH 音频设备
 topic_type:
@@ -14,19 +13,19 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 59517963e67bb31a94db8267cf1c7578826f2bb1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2bbead27b2a56c0fa55fdd62a33ffd542ae46949
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333088"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96784549"
 ---
-# <a name="kspropertyaudiochorusmodulationdepth"></a>KSPROPERTY\_音频\_合唱团\_调制\_深度
+# <a name="ksproperty_audio_chorus_modulation_depth"></a>KSPROPERTY \_ 音频 \_ CHORUS \_ 调制 \_ 深度
 
 
-KSPROPERTY\_音频\_合唱团\_调制\_DEPTH 属性指定合唱团调制深度。 这是合唱团节点的属性 ([**KSNODETYPE\_合唱团**](ksnodetype-chorus.md))。
+KSPROPERTY \_ AUDIO \_ CHORUS \_ 调制 \_ depth 属性指定 CHORUS 的调制深度。 这是 chorus 节点 ([**KSNODETYPE \_ chorus**](ksnodetype-chorus.md)) 的属性。
 
-### <a name="span-idusagesummarytablespanspan-idusagesummarytablespanspan-idusagesummarytablespanusage-summary-table"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用率摘要表
+### <a name="span-idusage_summary_tablespanspan-idusage_summary_tablespanspan-idusage_summary_tablespanusage-summary-table"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用情况摘要表
 
 <table>
 <colgroup>
@@ -38,7 +37,7 @@ KSPROPERTY\_音频\_合唱团\_调制\_DEPTH 属性指定合唱团调制深度�
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Get</th>
+<th align="left">获取</th>
 <th align="left">设置</th>
 <th align="left">目标</th>
 <th align="left">属性描述符类型</th>
@@ -49,7 +48,7 @@ KSPROPERTY\_音频\_合唱团\_调制\_DEPTH 属性指定合唱团调制深度�
 <tr class="odd">
 <td align="left"><p>是</p></td>
 <td align="left"><p>是</p></td>
-<td align="left"><p>Filter</p></td>
+<td align="left"><p>筛选器</p></td>
 <td align="left"><p>KSNODEPROPERTY</p></td>
 <td align="left"><p>ULONG</p></td>
 </tr>
@@ -58,14 +57,14 @@ KSPROPERTY\_音频\_合唱团\_调制\_DEPTH 属性指定合唱团调制深度�
 
  
 
-属性值为类型为 ULONG，它指定合唱团调制深度。 它表示以毫秒为单位，并设置调制器的速度 （频率）。 值可以介于 0 和 1/256th 增量 255.9961。 若要解决此问题，属性值应表示为定点 16.16 值，满足以下条件：
+属性值为 ULONG 类型，它指定 chorus 的调制深度。 它以毫秒为单位表示，并设置调制器的速度 (频率) 。 该值的范围是从0到255.9961，以 1/256th 为增量。 为此，应将属性值表示为固定点16.16 值，其中以下为 true：
 
--   值 0x00010000 表示 1 毫秒
--   值为 0xFFFFFFFF 表示 (65536 的 1/65536) ms
+-   值0x00010000 表示1毫秒
+-   值0xFFFFFFFF 表示 (65536-1/65536) ms
 
-### <a name="span-idreturnvaluespanspan-idreturnvaluespanspan-idreturnvaluespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>返回值
+### <a name="span-idreturn_valuespanspan-idreturn_valuespanspan-idreturn_valuespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>返回值
 
-KSPROPERTY\_音频\_合唱团\_调制\_深度属性请求将返回状态\_成功以指示已成功完成。 否则，请求将返回相应的错误状态代码。
+KSPROPERTY \_ 音频 CHORUS 的 " \_ 深度" \_ \_ 属性请求返回状态 " \_ 成功" 以指示它已成功完成。 否则，请求将返回相应的错误状态代码。
 
 <a name="requirements"></a>要求
 ------------
@@ -77,20 +76,20 @@ KSPROPERTY\_音频\_合唱团\_调制\_深度属性请求将返回状态\_成功
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>Version</p></td>
-<td align="left"><p>Windows Vista</p></td>
+<td align="left"><p>版本</p></td>
+<td align="left"><p>Windows Vista</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>Header</p></td>
+<td align="left"><p>标头</p></td>
 <td align="left">Ksmedia.h</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[**KSNODETYPE\_合唱团**](ksnodetype-chorus.md)
+[**KSNODETYPE \_ CHORUS**](ksnodetype-chorus.md)
 
  
 

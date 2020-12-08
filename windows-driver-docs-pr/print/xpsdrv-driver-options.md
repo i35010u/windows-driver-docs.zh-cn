@@ -1,33 +1,32 @@
 ---
 title: XPSDrv 驱动程序选项
 description: XPSDrv 驱动程序选项
-ms.assetid: 51db3cce-a95a-4084-9927-542c2d06312a
 keywords:
-- 版本 3 的 XPS 驱动程序 WDK XPSDrv，选项
+- 版本 3 XPS 驱动程序 WDK XPSDrv，选项
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3262266b384cd4db9201604e90318157590d6c40
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 59aee922948c15185b0b6119ebe3e381ede27e06
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390243"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96785715"
 ---
 # <a name="xpsdrv-driver-options"></a>XPSDrv 驱动程序选项
 
 
-可以使用以下方法之一来实现 XPSDrv 打印机驱动程序的配置模块：
+您可以使用以下方法之一来实现 XPSDrv 打印驱动程序的配置模块：
 
 <a href="" id="text-file-only-------"></a>**仅文本文件**   
-配置模块由 GPD 或 PPD 文件定义，并使用 Undriv 或 PScript5 配置模块实现的所有配置函数。 文本文件的唯一方法提供了最快的开发时间和开发成本最低，但它具有有限的自定义项的支持。 此方法最适合用于 XPSDrv 传递或基本 XPSDrv 打印驱动程序。
+配置模块由 GPD 或 PPD 文件定义，并使用 Undriv 或 PScript5 配置模块来实现所有配置功能。 纯文本文件方法提供最快的开发时间和最低的开发成本，但它对自定义的支持有限。 此方法最适合用于 XPSDrv passthrough 或 basic XPSDrv 打印驱动程序。
 
 <a href="" id="plug-in-------"></a>**插件**   
-配置模块定义由 GPD 或 PPD 文件和一个或多个 Unidrv 或 PScript5 打印驱动程序配置插件。插件方法可以灵活地自定义配置行为和用户体验，同时依赖于所有其他方面的 Unidrv 或 PScript5 配置模块的某些方面。 此方法的所需的开发时间取决于所需的打印驱动程序自定义的程度。 此方法适合于所有类型的打印驱动程序。
+配置模块由 GPD 或 PPD 文件以及一个或多个 Unidrv 或 PScript5 打印驱动程序配置插件定义。利用插件方法，你可以灵活地自定义配置行为和用户体验的某些方面，同时依赖于 Unidrv 或 PScript5 配置模块来执行所有其他方面的操作。 此方法所需的开发时间取决于您所需的打印驱动程序的自定义程度。 此方法适用于所有类型的打印驱动程序。
 
-此类的一个插件，Mxdwdui.dll，Microsoft 提供的启用配置的 Microsoft XPS 文档转换器 (MXDC) 通过[IPrintOemUIMXDC COM 接口](iprintoemuimxdc-com-interface.md)。 MXDC 从基于 GDI 的应用程序以生成 XPS 包将转换输出。 此插件来快速将功能添加到 XPS 驱动程序的使用率是举例说明如何使用你自己的插件。
+Microsoft 提供了一个此类插件 Mxdwdui.dll，通过 [IPRINTOEMUIMXDC COM 接口](iprintoemuimxdc-com-interface.md) (MXDC) 启用配置 Microsoft XPS 文档转换器。 MXDC 转换基于 GDI 的应用程序的输出以生成 XPS 包。 此插件利用插件快速向 XPS 驱动程序添加功能的示例是可以使用自己的插件完成的操作。
 
-<a href="" id="monolithic"></a>**整体化**  
-完全定义并实施配置模块。 整体式方法通常是开销最高的方法，因为必须执行所有打印驱动程序开发和测试，但此方法还提供了充分进行自定义的机会。
+<a href="" id="monolithic"></a>**集成**  
+你完全定义并实现配置模块。 整体方法通常是成本最高的方法，因为您必须执行所有打印驱动程序开发和测试，但此方法还为自定义提供了最大机会。
 
  
 

@@ -1,7 +1,6 @@
 ---
 title: 实现操作区域处理程序
 description: 实现操作区域处理程序
-ms.assetid: e435393c-d637-45c1-ab65-0b23f796ec02
 keywords:
 - ACPI 设备 WDK，操作区域
 - 操作区域 WDK ACPI
@@ -9,12 +8,12 @@ keywords:
 - WDM 函数驱动程序 WDK ACPI，操作区域
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 21293b40988b936b757bcf99dd8d0112f151bb15
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 5b6e82545d18188d14d671de05aee390bc16a3d3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89184841"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96785065"
 ---
 # <a name="implementing-an-operation-region-handler"></a>实现操作区域处理程序
 

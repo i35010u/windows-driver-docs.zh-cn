@@ -1,22 +1,21 @@
 ---
 title: 音频驱动程序枚举
 description: 本部分介绍各种音频属性和结构所使用的枚举。
-ms.assetid: 9C7530BE-C63F-438C-A853-9A7E47C240E9
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 529f508028e13e0168889740c41a820eba9afd52
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: c28ea1eab368bd00b1229437f3ff9e0130a01844
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89208343"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96785005"
 ---
 # <a name="audio-drivers-enumerations"></a>音频驱动程序枚举
 
 
 本部分介绍各种音频属性和结构所使用的枚举。
 
-## <a name="span-idwindows_10_and_later_operating_systemsspanspan-idwindows_10_and_later_operating_systemsspanspan-idwindows_10_and_later_operating_systemsspanwindows10-and-later-operating-systems"></a><span id="Windows_10_and_later_operating_systems"></span><span id="windows_10_and_later_operating_systems"></span><span id="WINDOWS_10_AND_LATER_OPERATING_SYSTEMS"></span>Windows 10 及更高版本的操作系统
+## <a name="span-idwindows_10_and_later_operating_systemsspanspan-idwindows_10_and_later_operating_systemsspanspan-idwindows_10_and_later_operating_systemsspanwindows-10-and-later-operating-systems"></a><span id="Windows_10_and_later_operating_systems"></span><span id="windows_10_and_later_operating_systems"></span><span id="WINDOWS_10_AND_LATER_OPERATING_SYSTEMS"></span>Windows 10 及更高版本的操作系统
 
 
 以下枚举用于 Windows 10 及更高版本的操作系统：
@@ -29,7 +28,7 @@ ms.locfileid: "89208343"
 
 [**电话服务 \_PROVIDERCHANGEOP**](/windows-hardware/drivers/ddi/ksmedia/ne-ksmedia-telephony_providerchangeop)。 由音频驱动程序结构用来指定提供程序所请求的更改操作的类型。
 
-## <a name="span-idwindows_8_and_later_operating_systemsspanspan-idwindows_8_and_later_operating_systemsspanspan-idwindows_8_and_later_operating_systemsspanwindows8-and-later-operating-systems"></a><span id="Windows_8_and_later_operating_systems"></span><span id="windows_8_and_later_operating_systems"></span><span id="WINDOWS_8_AND_LATER_OPERATING_SYSTEMS"></span>Windows 8 及更高版本的操作系统
+## <a name="span-idwindows_8_and_later_operating_systemsspanspan-idwindows_8_and_later_operating_systemsspanspan-idwindows_8_and_later_operating_systemsspanwindows-8-and-later-operating-systems"></a><span id="Windows_8_and_later_operating_systems"></span><span id="windows_8_and_later_operating_systems"></span><span id="WINDOWS_8_AND_LATER_OPERATING_SYSTEMS"></span>Windows 8 及更高版本的操作系统
 
 
 以下枚举用于 Windows 8 及更高版本的操作系统：
@@ -44,7 +43,7 @@ ms.locfileid: "89208343"
 
 [**eChannelTargetType**](/windows-hardware/drivers/ddi/portcls/ne-portcls-echanneltargettype)。 由微型端口驱动程序用来指示 (目标) 在音频数据流路径中的节点类型。
 
-## <a name="span-idwindows_7_and_earlier_operating_systemsspanspan-idwindows_7_and_earlier_operating_systemsspanspan-idwindows_7_and_earlier_operating_systemsspanwindows7-and-earlier-operating-systems"></a><span id="Windows_7_and_earlier_operating_systems"></span><span id="windows_7_and_earlier_operating_systems"></span><span id="WINDOWS_7_AND_EARLIER_OPERATING_SYSTEMS"></span>Windows 7 和更早版本的操作系统
+## <a name="span-idwindows_7_and_earlier_operating_systemsspanspan-idwindows_7_and_earlier_operating_systemsspanspan-idwindows_7_and_earlier_operating_systemsspanwindows-7-and-earlier-operating-systems"></a><span id="Windows_7_and_earlier_operating_systems"></span><span id="windows_7_and_earlier_operating_systems"></span><span id="WINDOWS_7_AND_EARLIER_OPERATING_SYSTEMS"></span>Windows 7 和更早版本的操作系统
 
 
 以下枚举是在 Windows 7 及更早版本的操作系统中引入的：

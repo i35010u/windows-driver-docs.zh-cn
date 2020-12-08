@@ -1,7 +1,6 @@
 ---
 title: 适用于内核模式软件合成器的 Wave 接收器
 description: 适用于内核模式软件合成器的 Wave 接收器
-ms.assetid: 37ba9ad5-8b35-4252-a6fd-46dead924294
 keywords:
 - 波形接收器 WDK 音频，内核模式软件合成程序
 - MIDI 传输 WDK 音频
@@ -9,12 +8,12 @@ keywords:
 - 合成 WDK 音频，MIDI 传输
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1683ae7c9e2e6613de1cdab35981fda0437e169c
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 8efaf6324b34c1f4a3126d2d005d144f278eb246
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89208391"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96785057"
 ---
 # <a name="a-wave-sink-for-kernel-mode-software-synthesizers"></a>适用于内核模式软件合成器的 Wave 接收器
 
@@ -40,7 +39,7 @@ ms.locfileid: "89208391"
 
 尽管硬件合成器可能会依赖于端口驱动程序的波形接收器进行呈现，但对 MIDI 流的调用会将足够的 **延迟添加到** MIDI 流，使其不严重许多交互式应用程序。 为了减少流延迟，硬件合成程序可能会建立与混合和波形渲染硬件的内部连接，而不是使用端口驱动程序的波形接收器。 这种类型的合成器将上图右侧的波形输出插针替换为硬编码连接 (表示为) 到硬件混合器的 *桥接* 。
 
-**ISynthSinkDMus**接口提供了一些方法，可通过波形接收器呈现波形数据、从引用时间转换为采样时间和背面，并同步到主时钟：
+**ISynthSinkDMus** 接口提供了一些方法，可通过波形接收器呈现波形数据、从引用时间转换为采样时间和背面，并同步到主时钟：
 
 [**ISynthSinkDMus::RefTimeToSample**](/windows-hardware/drivers/ddi/dmusicks/nf-dmusicks-isynthsinkdmus-reftimetosample)
 

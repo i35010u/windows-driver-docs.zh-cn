@@ -1,15 +1,14 @@
 ---
 title: WaveRT 端口驱动程序简介
 description: WaveRT 端口驱动程序简介
-ms.assetid: 48b2b59e-385e-4814-ac20-c4b1a08f32dc
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 293517b9a90f40906a94a1132c93ba12999726da
-ms.sourcegitcommit: 20eac54e419a594f7cea766ee28f158559dfd79c
+ms.openlocfilehash: 66626a10c04f28201e6192d79daeaf1c81927a44
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91754976"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96784711"
 ---
 # <a name="introducing-the-wavert-port-driver"></a>WaveRT 端口驱动程序简介
 

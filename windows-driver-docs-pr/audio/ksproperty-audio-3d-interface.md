@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ AUDIO \_ 3d \_ 接口
 description: KSPROPERTY \_ AUDIO \_ 3d \_ INTERFACE 属性指定用于处理声音缓冲区中的数据的3d 算法。
-ms.assetid: 76c56e61-23ef-43ad-b66b-2412fd247b6e
 keywords:
 - KSPROPERTY_AUDIO_3D_INTERFACE 音频设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9bf18b54b5efb06fc918fbe38b4520411fd66cf0
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 09852d90cca16e6f28d64f01584677f5a06a33bc
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102156"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96784559"
 ---
 # <a name="ksproperty_audio_3d_interface"></a>KSPROPERTY \_ AUDIO \_ 3d \_ 接口
 

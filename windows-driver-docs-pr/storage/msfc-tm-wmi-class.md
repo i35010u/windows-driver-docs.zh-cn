@@ -1,15 +1,14 @@
 ---
 title: MSFC \_ TM WMI 类
 description: MSFC \_ TM WMI 类
-ms.assetid: c81b9b2a-6381-4ff9-a579-bee53ac8678d
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: bf48f032f9ca8b39ac459a402ce9407306133cf8
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 3bb11609c8f034087b6fbc3ecc87960cc437d87f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89184057"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96785529"
 ---
 # <a name="msfc_tm-wmi-class"></a>MSFC \_ TM WMI 类
 
@@ -19,7 +18,7 @@ ms.locfileid: "89184057"
 
 WMI 提供程序使用 MSFC \_ TM WMI 类来时间戳事件。
 
-MSFC \_ TM 类在 *Hbaapi*中定义如下：
+MSFC \_ TM 类在 *Hbaapi* 中定义如下：
 
 ```cpp
 class MSFC_TM {

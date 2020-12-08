@@ -1,15 +1,14 @@
 ---
 title: PackageInfo XML 架构定义
 description: PackageInfo XML 架构定义
-ms.assetid: b0e4f800-816a-4d8b-a68b-56dc468caf52
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e16bbf56688a10e1ac46432daf682b9e0621a35f
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: dea3dd5aecd897b14e3b0a1f27d30e3a2f896c7b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89403302"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96786233"
 ---
 # <a name="packageinfo-xml-schema-definition"></a>PackageInfo XML 架构定义
 

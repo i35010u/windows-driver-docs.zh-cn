@@ -1,7 +1,6 @@
 ---
 title: 使用计时器
 description: 介绍如何使用框架的内置计时器支持。 适用于从版本2开始的 KMDF 驱动程序和 UMDF 驱动程序。
-ms.assetid: f3bca5bf-fa5f-4b8f-ad28-26d29fc33963
 keywords:
 - 计时器 WDK KMDF
 - framework 对象 WDK KMDF，计时器对象
@@ -11,29 +10,29 @@ keywords:
 - 开始计时器 WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 995a27cc2f33bab90afdb8b33de944eeb1b3d56a
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 8996222c36b1f41b6eaf7f2ed9fca9eb68a17c80
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89192951"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96785411"
 ---
 # <a name="using-timers"></a>使用计时器
 
 
-本主题介绍如何使用框架的内置计时器支持。 它同时适用于内核模式驱动程序框架 (KMDF) 驱动程序和用户模式驱动程序框架 (UMDF) 驱动程序，从版本2开始。
+本主题介绍如何使用框架的内置计时器支持。 它适用于 Kernel-Mode Driver Framework (KMDF) 驱动程序以及从版本2开始的 User-Mode 驱动程序框架 (UMDF) 驱动程序。
 
 该框架提供了一个 *计时器对象* ，使驱动程序可以创建计时器。 当驱动程序创建计时器对象并启动计时器时钟后，框架将在经过指定的时间后调用驱动程序提供的回调函数。 或者，您的驱动程序可以设置计时器，以便每当经过指定的一段时间，框架就会重复调用回调函数。
 
 若要创建框架计时器对象，驱动程序必须调用 [**WdfTimerCreate**](/windows-hardware/drivers/ddi/wdftimer/nf-wdftimer-wdftimercreate) 方法。 此方法注册一个 [*EvtTimerFunc*](/windows-hardware/drivers/ddi/wdftimer/nc-wdftimer-evt_wdf_timer) 回调函数和一个周期性时间间隔。 如果希望框架只调用一次回调函数，则驱动程序将为周期性时间间隔指定零。
 
-通常，您会知道您的驱动程序将需要每个设备的计时器数。 因此，驱动程序可以通过在其[*EvtDriverDeviceAdd*](/windows-hardware/drivers/ddi/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)回调函数中调用[**WdfTimerCreate**](/windows-hardware/drivers/ddi/wdftimer/nf-wdftimer-wdftimercreate)来创建计时器对象，并且它可以在设备或队列对象的[上下文空间](framework-object-context-space.md)中存储计时器对象句柄。
+通常，您会知道您的驱动程序将需要每个设备的计时器数。 因此，驱动程序可以通过在其 [*EvtDriverDeviceAdd*](/windows-hardware/drivers/ddi/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)回调函数中调用 [**WdfTimerCreate**](/windows-hardware/drivers/ddi/wdftimer/nf-wdftimer-wdftimercreate)来创建计时器对象，并且它可以在设备或队列对象的 [上下文空间](framework-object-context-space.md)中存储计时器对象句柄。
 
 若要启动计时器，驱动程序将调用 [**WdfTimerStart**](/windows-hardware/drivers/ddi/wdftimer/nf-wdftimer-wdftimerstart)，同时传递 "截止时间"。 框架将启动计时器的时钟，并在指定的时间量已过后调用 [*EvtTimerFunc*](/windows-hardware/drivers/ddi/wdftimer/nc-wdftimer-evt_wdf_timer) 回调函数。
 
 如果驱动程序在调用 [**WdfTimerCreate**](/windows-hardware/drivers/ddi/wdftimer/nf-wdftimer-wdftimercreate)时提供了一个周期性时间间隔，则该计时器称为 *定期计时器*。 在初始 "截止时间" 结束后，定期计时器的时钟将继续运行，并且每当周期性时间间隔结束后，框架将重复调用驱动程序的回调函数。 定期计时器不会自动启动。 与非定期计时器一样，驱动程序在创建计时器以首次启动时仍必须调用 [**WdfTimerStart**](/windows-hardware/drivers/ddi/wdftimer/nf-wdftimer-wdftimerstart) 。
 
-驱动程序可以从其[*EvtTimerFunc*](/windows-hardware/drivers/ddi/wdftimer/nc-wdftimer-evt_wdf_timer)回调函数调用[**WdfTimerStart**](/windows-hardware/drivers/ddi/wdftimer/nf-wdftimer-wdftimerstart) ，以便在计时器过期后重新启动非定期计时器。
+驱动程序可以从其 [*EvtTimerFunc*](/windows-hardware/drivers/ddi/wdftimer/nc-wdftimer-evt_wdf_timer)回调函数调用 [**WdfTimerStart**](/windows-hardware/drivers/ddi/wdftimer/nf-wdftimer-wdftimerstart) ，以便在计时器过期后重新启动非定期计时器。
 
 若要停止计时器，驱动程序可以调用 [**WdfTimerStop**](/windows-hardware/drivers/ddi/wdftimer/nf-wdftimer-wdftimerstop)。 驱动程序可以重复启动和停止计时器，从而重复使用计时器。
 
@@ -41,7 +40,7 @@ ms.locfileid: "89192951"
 
 在版本1.9 之前的 KMDF 版本中，如果希望所有驱动程序的回调函数都以 IRQL = 被动级别运行，则无法轻松使用 timer 对象 \_ 。 该框架实现 timer 对象的 [*EvtTimerFunc*](/windows-hardware/drivers/ddi/wdftimer/nc-wdftimer-evt_wdf_timer) 回调函数作为延迟的过程调用 (DPC) ，该调用在 IRQL = 调度级别进行调用 \_ 。 因此，如果希望计时器过期代码在被动级别运行， \_ 则 *EvtTimerFunc* 回调函数必须将在被动级别运行的 [工作项](using-framework-work-items.md) 排队 \_ 。
 
-在 KMDF 版本1.9 及更高版本中，可以创建 *被动级别计时器*，这是在被动级别运行的计时器 \_ 。 若要创建被动级别计时器，请在驱动程序调用[**WdfTimerCreate**](/windows-hardware/drivers/ddi/wdftimer/nf-wdftimer-wdftimercreate)时指定[**WdfExecutionLevelPassive**](/windows-hardware/drivers/ddi/wdfobject/ne-wdfobject-_wdf_execution_level)执行级别。 因此，框架将 [*EvtTimerFunc*](/windows-hardware/drivers/ddi/wdftimer/nc-wdftimer-evt_wdf_timer) 回调函数实现为在被动级别运行的工作项 \_ 。 请注意，被动级别的计时器不能是定期计时器。
+在 KMDF 版本1.9 及更高版本中，可以创建 *被动级别计时器*，这是在被动级别运行的计时器 \_ 。 若要创建被动级别计时器，请在驱动程序调用 [**WdfTimerCreate**](/windows-hardware/drivers/ddi/wdftimer/nf-wdftimer-wdftimercreate)时指定 [**WdfExecutionLevelPassive**](/windows-hardware/drivers/ddi/wdfobject/ne-wdfobject-_wdf_execution_level)执行级别。 因此，框架将 [*EvtTimerFunc*](/windows-hardware/drivers/ddi/wdftimer/nc-wdftimer-evt_wdf_timer) 回调函数实现为在被动级别运行的工作项 \_ 。 请注意，被动级别的计时器不能是定期计时器。
 
 从 UMDF 版本2.0 开始，框架将 timer 对象的 [*EvtTimerFunc*](/windows-hardware/drivers/ddi/wdftimer/nc-wdftimer-evt_wdf_timer) 回调函数实现为用户模式线程池中的工作线程。 因此，UMDF 驱动程序的计时器回调函数始终在被动 \_ 级别运行。
 
@@ -52,7 +51,7 @@ ms.locfileid: "89192951"
 
 从 KMDF 版本1.13 和 UMDF 版本2.0 开始，不提供任何唤醒计时器。
 
-若要创建无唤醒计时器，请将[**WDF \_ 计时器 \_ 配置**](/windows-hardware/drivers/ddi/wdftimer/ns-wdftimer-_wdf_timer_config)的**TolerableDelay**成员设置为**TolerableDelayUnlimited**。
+若要创建无唤醒计时器，请将 [**WDF \_ 计时器 \_ 配置**](/windows-hardware/drivers/ddi/wdftimer/ns-wdftimer-_wdf_timer_config)的 **TolerableDelay** 成员设置为 **TolerableDelayUnlimited**。
 
 有关无唤醒计时器的详细信息，请参阅 [无唤醒计时器](../kernel/no-wake-timers.md)。
 
@@ -63,9 +62,9 @@ ms.locfileid: "89192951"
 
 高分辨率计时器仅适用于 KMDF 驱动程序，从 KMDF 版本1.13 开始。
 
-若要创建高分辨率计时器，请将[**WDF \_ 计时器 \_ 配置**](/windows-hardware/drivers/ddi/wdftimer/ns-wdftimer-_wdf_timer_config)的**UseHighResolutionTimer**成员设置为**WdfTrue**，然后将**Period**值调整为所需的分辨率。
+若要创建高分辨率计时器，请将 [**WDF \_ 计时器 \_ 配置**](/windows-hardware/drivers/ddi/wdftimer/ns-wdftimer-_wdf_timer_config)的 **UseHighResolutionTimer** 成员设置为 **WdfTrue**，然后将 **Period** 值调整为所需的分辨率。
 
-下表显示了基于驱动程序为 **句点**提供的不同值的计时器行为的示例。 这些示例假定系统时钟滴答时间间隔为15毫秒。
+下表显示了基于驱动程序为 **句点** 提供的不同值的计时器行为的示例。 这些示例假定系统时钟滴答时间间隔为15毫秒。
 
 <table>
 <colgroup>

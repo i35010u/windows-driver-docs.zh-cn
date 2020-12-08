@@ -1,7 +1,6 @@
 ---
 title: 非 PCM 支持的背景
 description: 非 PCM 支持的背景
-ms.assetid: 4f0e1101-e4cc-4bde-a178-fb47fe24ae4d
 keywords:
 - 非 PCM 音频格式 WDK，DirectSound
 - 非 PCM 音频格式 WDK，waveOut
@@ -9,12 +8,12 @@ keywords:
 - DirectSound WDK 音频，非 PCM 支持
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e2366b48a76dcc2a5fa8d26989c6b378fc8d3b16
-ms.sourcegitcommit: 20eac54e419a594f7cea766ee28f158559dfd79c
+ms.openlocfilehash: d81baa0089714ed941702617720077dbf1aae0bd
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91754892"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96784953"
 ---
 # <a name="background-of-non-pcm-support"></a>非 PCM 支持的背景
 
@@ -42,7 +41,7 @@ WDM 驱动程序可以支持 WAVEFORMATEX 和 WAVEFORMATEXTENSIBLE 形式的 PCM
 
 调用 **SetFormat** 指定主缓冲区的数据格式只对声卡所选的最终混合格式产生间接影响。 主缓冲区对象用于获取 **IDirectSound3DListener** 接口并设置设备的全局卷和平移，但不表示来自声卡的单个输出流。 相反，KMixer 会混合主缓冲区数据，以允许多个 DSSCL \_ WRITEPRIMARY DirectSound 客户端同时运行。
 
-在 Windows 2000 和 Windows 98 上，DirectSound 仅支持 PCM 数据。  (这种情况同样适用于 DirectShow，这种情况下会使用 DirectSound 的呈现器。 ) 使用非 PCM 格式对 **CreateSoundBuffer** 的调用始终会失败，即使驱动程序支持格式也是如此。 出现故障的原因有两个。 首先，每当 DirectSound 创建一个 KS pin 时，它都会自动指定 KSDATAFORMAT \_ 子类型 \_ PCM，而不是从用于创建**IDIRECTSOUNDBUFFER**对象的 WAVEFORMATEX 结构的**wFormatTag**成员派生子类型。 其次，DirectSound 要求每个数据路径都具有卷和 SRC (采样速率转换) 节点 ([**KSNODETYPE \_ 卷**](./ksnodetype-volume.md) 和 [**KSNODETYPE \_ SRC**](./ksnodetype-src.md)) ，而不考虑客户端请求 DirectSound 缓冲区上的平移、音量还是频率控制。 如果数据通过 KMixer 或设备执行硬件混合，则满足此要求。 但对于非 PCM 格式，KMixer 不存在于数据路径中，驱动程序本身通常会在系统要求执行硬件混合时失败。
+在 Windows 2000 和 Windows 98 上，DirectSound 仅支持 PCM 数据。  (这种情况同样适用于 DirectShow，这种情况下会使用 DirectSound 的呈现器。 ) 使用非 PCM 格式对 **CreateSoundBuffer** 的调用始终会失败，即使驱动程序支持格式也是如此。 出现故障的原因有两个。 首先，每当 DirectSound 创建一个 KS pin 时，它都会自动指定 KSDATAFORMAT \_ 子类型 \_ PCM，而不是从用于创建 **IDIRECTSOUNDBUFFER** 对象的 WAVEFORMATEX 结构的 **wFormatTag** 成员派生子类型。 其次，DirectSound 要求每个数据路径都具有卷和 SRC (采样速率转换) 节点 ([**KSNODETYPE \_ 卷**](./ksnodetype-volume.md) 和 [**KSNODETYPE \_ SRC**](./ksnodetype-src.md)) ，而不考虑客户端请求 DirectSound 缓冲区上的平移、音量还是频率控制。 如果数据通过 KMixer 或设备执行硬件混合，则满足此要求。 但对于非 PCM 格式，KMixer 不存在于数据路径中，驱动程序本身通常会在系统要求执行硬件混合时失败。
 
 Windows XP 及更高版本和 Windows Me 消除了阻止 DirectSound 应用程序使用非 PCM 格式的限制。 DirectSound 8 (及更高版本) 使用正确的格式子类型，并且不再自动需要每个数据路径中的卷和 SRC 节点。
 

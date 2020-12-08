@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ DIRECTSOUND3DBUFFER \_ CONEORIENTATION
 description: KSPROPERTY \_ DIRECTSOUND3DBUFFER \_ CONEORIENTATION 属性为三维声音缓冲区指定声音投影圆锥的方向。
-ms.assetid: c1253114-a2e4-48ff-8219-d932f182478e
 keywords:
 - KSPROPERTY_DIRECTSOUND3DBUFFER_CONEORIENTATION 音频设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3c77b85a106fcc07eed3fadca7bc9eb00827aba6
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 61dd09407f1d027ec77a8318bec731245216e779
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102578"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96784407"
 ---
 # <a name="ksproperty_directsound3dbuffer_coneorientation"></a>KSPROPERTY \_ DIRECTSOUND3DBUFFER \_ CONEORIENTATION
 
@@ -74,7 +73,7 @@ KSPROPERTY \_ DIRECTSOUND3DBUFFER \_ CONEORIENTATION 属性请求返回状态 \_
 
 -   DS3DBUFFER 结构的 **vConeOrientation** 成员。
 
--   **IDirectSound3DBuffer：： GetConeOrientation**和**IDirectSound3DBuffer：： SetConeOrientation**方法。
+-   **IDirectSound3DBuffer：： GetConeOrientation** 和 **IDirectSound3DBuffer：： SetConeOrientation** 方法。
 
 <a name="requirements"></a>要求
 ------------

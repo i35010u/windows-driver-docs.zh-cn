@@ -1,15 +1,14 @@
 ---
 title: 在 KMDF 和 UMDF 2 驱动程序中使用即时跟踪记录器 (IFR)
 description: 从 Windows 10 开始，可以生成 WDF 驱动程序，以便它通过 Windows 软件跟踪预处理获取其他驱动程序调试信息。
-ms.assetid: CA2A7ED3-4372-4EE9-8B04-042A8C864BD5
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 231cb4daea948099e8da397dde371704cfd8e479
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: adef6ba741fb8d06a7fb5f394c4b7fccc7ea229e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89187325"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96785409"
 ---
 # <a name="using-inflight-trace-recorder-ifr-in-kmdf-and-umdf-2-drivers"></a>在 KMDF 和 UMDF 2 驱动程序中使用即时跟踪记录器 (IFR)
 
@@ -30,7 +29,7 @@ ms.locfileid: "89187325"
 
     -   在同一个菜单中，将 " **扫描配置数据** " 设置为包含跟踪信息的文件，例如 "trace"。
 
-2.  在调用 WPP 宏的每个源文件中，添加标识[跟踪消息标头](../devtest/trace-message-header-file.md)的** \# include**指令 (TMH) 文件。 文件名必须具有 tmh 格式的 &lt; *驱动程序* &gt; **.tmh**名称。
+2.  在调用 WPP 宏的每个源文件中，添加标识 [跟踪消息标头](../devtest/trace-message-header-file.md)的 **\# include** 指令 (TMH) 文件。 文件名必须具有 tmh 格式的 &lt; *驱动程序* &gt; **.tmh** 名称。
 
     例如，如果驱动程序包含两个源文件（称为 *mydriver1.inf* 和 *mydriver2.inf 会被*），则 *mydriver1.inf* 必须包含：
 
@@ -61,24 +60,24 @@ ms.locfileid: "89187325"
     )
     ```
 
-    在此示例中：
+    在本示例中：
 
     -   **OsrUsbFxTraceGuid** 是 {D23A0C5A-D307-4F0E-AE8E-E2A355AD5DAB} GUID 的友好名称。
     -   跟踪标记用于区分在驱动程序处理不同类型的 i/o 请求时生成的跟踪消息。
 
-4.  驱动程序 (KMDF 和 UMDF 2) 必须使用驱动程序对象和注册表路径 [** \_ \_ 为内核模式驱动程序调用 WPP INIT 跟踪**](/previous-versions/windows/hardware/drivers/ff556193(v=vs.85)) ，通常来自 [**DriverEntry**](./driverentry-for-kmdf-drivers.md)：
+4.  驱动程序 (KMDF 和 UMDF 2) 必须使用驱动程序对象和注册表路径 [**\_ \_ 为 Kernel-Mode 驱动程序调用 WPP INIT 跟踪**](/previous-versions/windows/hardware/drivers/ff556193(v=vs.85)) ，通常来自 [**DriverEntry**](./driverentry-for-kmdf-drivers.md)：
 
     ```cpp
     WPP_INIT_TRACING( DriverObject, RegistryPath );
     ```
 
-    若要停用跟踪，KMDF 和 UMDF 2 驱动程序都调用[*EvtCleanupCallback*](/windows-hardware/drivers/ddi/wdfobject/nc-wdfobject-evt_wdf_object_context_cleanup)或[*EvtDriverUnload*](/windows-hardware/drivers/ddi/wdfdriver/nc-wdfdriver-evt_wdf_driver_unload)中[** \_ 的内核模式驱动程序的 WPP 清理**](/previous-versions/windows/hardware/drivers/ff556183(v=vs.85))：
+    若要停用跟踪，KMDF 和 UMDF 2 驱动程序都调用 [*EvtCleanupCallback*](/windows-hardware/drivers/ddi/wdfobject/nc-wdfobject-evt_wdf_object_context_cleanup)或 [*EvtDriverUnload*](/windows-hardware/drivers/ddi/wdfdriver/nc-wdfdriver-evt_wdf_driver_unload)中 [**\_ Kernel-Mode 驱动程序的 WPP 清除**](/previous-versions/windows/hardware/drivers/ff556183(v=vs.85))：
 
     ```cpp
     WPP_CLEANUP( WdfDriverWdmGetDriverObject( Driver ));
     ```
 
-    [**WPP \_ 清除**](/previous-versions/windows/hardware/drivers/ff556183(v=vs.85))宏采用类型为 PDRIVER 的参数 \_ ，因此，如果驱动程序的[**DriverEntry**](./driverentry-for-kmdf-drivers.md)失败，则可以跳过调用[**WdfDriverWdmGetDriverObject**](/windows-hardware/drivers/ddi/wdfdriver/nf-wdfdriver-wdfdriverwdmgetdriverobject) ，而使用指向 WDM 驱动程序对象的指针调用**WPP \_ 清理**。
+    [**WPP \_ 清除**](/previous-versions/windows/hardware/drivers/ff556183(v=vs.85))宏采用类型为 PDRIVER 的参数 \_ ，因此，如果驱动程序的 [**DriverEntry**](./driverentry-for-kmdf-drivers.md)失败，则可以跳过调用 [**WdfDriverWdmGetDriverObject**](/windows-hardware/drivers/ddi/wdfdriver/nf-wdfdriver-wdfdriverwdmgetdriverobject) ，而使用指向 WDM 驱动程序对象的指针调用 **WPP \_ 清理**。
 
     从 UMDF 版本2.15 开始，UMDF 驱动程序使用这些宏的内核模式签名来初始化和清理跟踪。 这意味着，对于 KMDF 和 UMDF，调用看起来相同。
 
@@ -97,7 +96,7 @@ ms.locfileid: "89187325"
     }
     ```
 
-    如果跟踪控制器启用**跟踪 \_ 级别 \_ 错误**级别和**DBG \_ 读取**跟踪标志，则对**TraceEvents**的调用会生成跟踪消息。 该消息包含驱动程序定义的常量 **测试 \_ 板 \_ 传输 \_ 缓冲区 \_ 大小**的值。
+    如果跟踪控制器启用 **跟踪 \_ 级别 \_ 错误** 级别和 **DBG \_ 读取** 跟踪标志，则对 **TraceEvents** 的调用会生成跟踪消息。 该消息包含驱动程序定义的常量 **测试 \_ 板 \_ 传输 \_ 缓冲区 \_ 大小** 的值。
 
 6.  若要更改驱动程序日志使用的循环缓冲区大小，请在以下注册表位置中修改 **LogPages** 注册表值：
 
@@ -121,7 +120,7 @@ ms.locfileid: "89187325"
 **UMDF 驱动程序的实时调试**
 
 1.  使用 [**！ wdfkd wdfldr**](../debugger/-wdfkd-wdfldr.md) 扩展显示有关当前动态绑定到 WDF 的驱动程序的信息。 查找用户模式驱动程序。 输入关联的主机进程。
-2.  键入 **！ wdfkd. wdflogdump** * &lt;YourDriverName.dll&gt; &lt; 标志 &gt; * ，其中* &lt; 标志 &gt; *为：
+2.  键入 **！ wdfkd. wdflogdump** *&lt;YourDriverName.dll&gt; &lt; 标志 &gt;* ，其中 *&lt; 标志 &gt;* 为：
 
     -   0x1 –合并的框架和驱动程序日志
     -   0x2 –驱动程序日志
@@ -132,7 +131,7 @@ ms.locfileid: "89187325"
 **在 UMDF 驱动程序崩溃后查看即时 Trace 录像机日志**
 
 1. 在 WinDbg 中，选择 " **文件"-" &gt; 打开故障转储**"，然后指定要调试的小型转储文件。
-2. 键入[**！ wdfkd. wdfcrashdump * &lt;YourDriverName.dll&gt; &lt; driver host &gt; &lt; 选项 &gt; 的进程 ID***](../debugger/-wdfkd-wdfcrashdump.md)，其中* &lt; Option &gt; *是：
+2. 键入 [**！ wdfkd. wdfcrashdump *&lt;YourDriverName.dll&gt; &lt; driver host &gt; &lt; 选项 &gt; 的进程 ID***](../debugger/-wdfkd-wdfcrashdump.md)，其中 *&lt; Option &gt;* 是：
 
    -   0x1 –合并的框架和驱动程序日志
    -   0x2 –驱动程序日志

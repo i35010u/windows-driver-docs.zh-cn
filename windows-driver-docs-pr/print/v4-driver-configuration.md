@@ -1,15 +1,14 @@
 ---
 title: V4 打印机驱动程序配置
 description: 了解 v4 打印机驱动程序模型如何支持可大大简化的配置层，其中包括 V4 打印机驱动程序本地化之类的主题。
-ms.assetid: 1EAF1322-43A6-4DB5-B059-721FBF640B77
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 00fea354644afc5c2046f7e325a47282b321d52f
-ms.sourcegitcommit: cccf9ba62af357aad1016addbbf6c42c7f564412
+ms.openlocfilehash: b1cac4951cd1ab777279f62bc0ab9a6826077177
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/01/2020
-ms.locfileid: "91606451"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96785947"
 ---
 # <a name="v4-printer-driver-configuration"></a>V4 打印机驱动程序配置
 

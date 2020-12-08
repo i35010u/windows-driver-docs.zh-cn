@@ -1,15 +1,14 @@
 ---
 title: 入门与 TAEF
 description: '入门测试创作和执行框架 (TAEF) '
-ms.assetid: 7F57C5EF-141A-4303-9B9F-2EC118324BF8
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 84e0979c3dd3516f87753ee5cb0fd8f2fb84f2ba
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: d34ea129656fca2e3806a941a43002823e38f577
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89402942"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96785433"
 ---
 # <a name="getting-started"></a>入门
 
@@ -54,7 +53,7 @@ TE.exe UnitTests\Wex.Common.Tests.dll
     msiexec /i "Test Authoring and Execution Framework x64-x64_en-us.msi"
     ```
 
-    -或-
+    -或者-
 
     ``` syntax
     msiexec /i "Test Authoring and Execution Framework x86-x86_en-us.msi"

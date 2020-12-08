@@ -1,15 +1,14 @@
 ---
 title: V4 打印机驱动程序本地化
 description: Windows 8 提供了标准的本地化显示字符串，以支持打印机扩展和 UWP 设备应用程序的开发。
-ms.assetid: 5C587AF2-C51E-4728-A214-7FC1F8A6E445
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 67a17656659e67e6649fe42b9afb1224af973dc3
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 64bb216d930d2a7c8b88f6e9f2722d7c7defc15b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89211933"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96785945"
 ---
 # <a name="v4-printer-driver-localization"></a>V4 打印机驱动程序本地化
 
@@ -118,7 +117,7 @@ Windows 8 提供了标准的本地化显示字符串，以支持打印机扩展�
 <thead>
 <tr class="header">
 <th>文件类型</th>
-<th>Instructions</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>

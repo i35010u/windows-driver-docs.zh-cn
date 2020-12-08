@@ -1,7 +1,6 @@
 ---
 title: 音频筛选器图
 description: 音频筛选器图
-ms.assetid: 823de0d5-9368-4ae6-9f11-a8daa0640edd
 keywords:
 - 音频筛选 WDK 音频，图形
 - 筛选器图形 WDK 音频，关于筛选器图形
@@ -13,12 +12,12 @@ keywords:
 - KS 筛选器图形 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f979dc882c3305e37553ebc9779240ca765f3b82
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 0091c6970f0eac6af0307224841dd1b9e4fe388b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89208335"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96785025"
 ---
 # <a name="audio-filter-graphs"></a>音频筛选器图
 
@@ -32,7 +31,7 @@ KS 筛选器图是已连接在一起以处理一个或多个数据流的 KS 筛�
 
 在该图中，筛选器图从两个波形滤镜顶部的引脚延伸到两个拓扑过滤器底部的针脚。 用户模式软件模块和外部音频设备 (即，扬声器和麦克风) 位于图形外。
 
-图下半部分的四个筛选器表示音频适配器上的硬件设备，可呈现和捕获波形流。 图中所示的每个筛选器都是通过将端口驱动程序绑定到微型端口驱动程序来实现的。 适配器驱动程序通过将 WaveRT、WavePci 或 WaveCyclic 端口驱动程序绑定到相应的波浪*Xxx* 微型端口驱动程序形成波形筛选器。 适配器驱动程序通过将拓扑端口驱动程序绑定到拓扑微型端口驱动程序形成拓扑筛选器。
+图下半部分的四个筛选器表示音频适配器上的硬件设备，可呈现和捕获波形流。 图中所示的每个筛选器都是通过将端口驱动程序绑定到微型端口驱动程序来实现的。 适配器驱动程序通过将 WaveRT、WavePci 或 WaveCyclic 端口驱动程序绑定到相应的波浪 *Xxx* 微型端口驱动程序形成波形筛选器。 适配器驱动程序通过将拓扑端口驱动程序绑定到拓扑微型端口驱动程序形成拓扑筛选器。
 
 在该图的左侧，来自 DirectSound 或 waveOut 应用程序的音频流 (顶部) 通过扬声器 (底部) 播放。 在右侧，"DirectSoundCapture" 或 "waveIn" 应用程序 (top ") 记录从麦克风 (底部) 输入的流。 在这两个方面，在 Windows Vista 中对系统执行混合的音频引擎实例在 wave 筛选器和应用程序之间是 interposed 的。  (在 Windows Server 2003、Windows XP、Windows 2000 和 Windows Me/98 中， [KMixer 系统驱动程序](kernel-mode-wdm-audio-components.md#kmixer_system_driver) 是系统混音器。 ) 
 

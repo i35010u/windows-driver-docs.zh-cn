@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ E-ac3 \_ 备用 \_ 音频
 description: KSPROPERTY \_ E-ac3 \_ 备用 \_ 音频属性指定是否应将 AC 3 编码流中的两个 mono 通道解释为立体声对或两个独立的程序通道。
-ms.assetid: fff2c52f-c996-4dfe-a46e-9f937cbd0d8c
 keywords:
 - KSPROPERTY_AC3_ALTERNATE_AUDIO 音频设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fbadccad6618c816293f0b48c294274cf1fac603
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: a2d7c4ba064da57d6c0fec83c473bf9f0a57058a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102356"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96784583"
 ---
 # <a name="ksproperty_ac3_alternate_audio"></a>KSPROPERTY \_ E-ac3 \_ 备用 \_ 音频
 

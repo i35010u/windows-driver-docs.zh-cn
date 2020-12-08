@@ -1,15 +1,14 @@
 ---
 title: PackageInfo XML 示例
 description: PackageInfo XML 示例
-ms.assetid: 4e514e79-d450-4cae-a40d-16ce86f95e43
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4423396f6367719c74f2cc9c8b86c0878461abeb
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: 5f40465563590125c79b2359d784bfb8a7b47cbc
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89403300"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96786239"
 ---
 # <a name="packageinfo-xml-example"></a>PackageInfo XML 示例
 

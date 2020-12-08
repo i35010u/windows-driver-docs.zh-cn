@@ -1,16 +1,15 @@
 ---
 title: OID_RECEIVE_FILTER_MOVE_FILTER
 description: 过量驱动程序会 (OID 发出对象标识符) 设置 OID_RECEIVE_FILTER_MOVE_FILTER 移动先前配置的接收筛选器。
-ms.assetid: CC899ABD-EE6B-4932-889F-984C8B5A403F
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_RECEIVE_FILTER_MOVE_FILTER 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 8996df77a99082b77adda2ad3f7eda06bb2e78a7
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: e3c167426b3d7291372bf167f80efc8abc9bb644
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106740"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96786065"
 ---
 # <a name="oid_receive_filter_move_filter"></a>OID \_ 接收 \_ 筛选器 \_ 移动 \_ 筛选器
 
@@ -19,9 +18,9 @@ ms.locfileid: "90106740"
 
 过量驱动程序将此 OID 集请求颁发给网络适配器的 PCIe 物理功能 (PF) 的微型端口驱动程序。 对于支持单个根 i/o 虚拟化 (SR-IOV) 接口的 PF 小型端口驱动程序，需要此 OID 集请求。
 
-[**Ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的**InformationBuffer**成员包含指向[**ndis \_ 接收 \_ 筛选器 \_ 移动 \_ 筛选器 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_move_filter_parameters)结构的指针。
+[**Ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的 **InformationBuffer** 成员包含指向 [**ndis \_ 接收 \_ 筛选器 \_ 移动 \_ 筛选器 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_move_filter_parameters)结构的指针。
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 在将 OID 集请求转发到 PF 微型端口驱动程序之前，NDIS 验证 [**ndis \_ 接收 \_ 筛选器 \_ 移动 \_ 筛选器 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_move_filter_parameters) 结构的成员。

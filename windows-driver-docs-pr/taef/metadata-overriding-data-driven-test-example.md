@@ -1,20 +1,19 @@
 ---
 title: 元数据覆盖数据驱动的测试示例
 description: 元数据覆盖数据驱动的测试示例
-ms.assetid: F39A556F-1816-4272-ABDE-62164AE09685
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ef422f67aeca894b264e45d4013127bbaefa4b82
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fa80cc258325c0ed8472b0ec86bd64102766b851
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63355507"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96785421"
 ---
 # <a name="metadata-overriding-data-driven-test-example"></a>元数据覆盖数据驱动的测试示例
 
 
-本部分介绍了数据驱动测试例举的操作的一些高级的功能。 如果仍是否涵盖了基础知识，您可能开始想[简单数据驱动的示例。](simple-data-driven-test-example.md)
+本部分介绍了通过示例进行的数据驱动测试的一些高级功能。 如果你仍在介绍基础知识，你可能想要从一个 [简单的数据驱动的示例着手。](simple-data-driven-test-example.md)
 
 引用的示例：
 
@@ -22,9 +21,9 @@ ms.locfileid: "63355507"
 
 -   DataDrivenMetadataOverridingExample
 
-如果进行比较的示例中介绍到的此部分涵盖[简单的数据驱动示例](simple-data-driven-test-example.md)页上，你会注意到，唯一的区别是该元数据，在测试中的不同级别的属性具有已添加。 允许第一个介绍如何编写基本测试。
+如果将此部分中所述的示例与 " [简单数据驱动示例](simple-data-driven-test-example.md) " 页中所述的示例进行比较，则您会注意到，唯一的区别在于，在测试中的各个级别上的元数据和属性已添加。 首先，让我们了解一下如何编写基本测试。
 
-在本机的示例中，观察行 5 和 10 中下面的代码示例：
+在本机示例中，观察下面代码示例中的第5行和第10行：
 
 ```cpp
 1   class MetadataOverridingDataDrivenExample
@@ -41,9 +40,9 @@ ms.locfileid: "63355507"
 12  }
 ```
 
-类"MetadataOverridingDataDrivenExample"中定义的所有测试都的优先级为 2。 请记住，测试可以重写在高于其 （类或模块） 的级别上指定任何元数据。 在这种情况下，DataDrivenTest 方法仍维护优先级 2，并具有其"所有者"定义为"WEX"。 现在，如果这是非数据驱动的测试，您可以选择基于此，任何/选择:"@Priority= 2" 或 /select:"@Owner= WEX"，并在其中执行测试方法。 但**通过数据驱动测试，您可以进一步重写在测试方法级别适用的属性通过指定"行"级别的元数据。**
+因此类 "MetadataOverridingDataDrivenExample" 中定义的所有测试的优先级均为2。 请记住，测试可以将其上级别指定的任何元数据覆盖 (类或模块) 。 在这种情况下，DataDrivenTest 方法仍保持优先级2，并将其 "所有者" 定义为 "WEX"。 现在，如果这是一个非数据驱动的测试，则可以选择基于任何此/select： " @Priority = 2" 或/select： " @Owner = ' WEX '"，并在其中执行测试方法。 但 **对于数据驱动的测试，可以通过在 "行" 级别指定元数据来进一步覆盖测试方法级别适用的属性。**
 
-让我们看一下 XML 文件以了解如何。
+让我们看看该 XML 文件以了解如何操作。
 
 ```cpp
     1  <?xml version="1.0"?>
@@ -72,9 +71,9 @@ ms.locfileid: "63355507"
     24  </Data>
 ```
 
-在前 3 个行中，该示例重写一些元数据通过显式指定特定的数据值集的元数据。 最后一组数据但是具有不同的元数据作为包含它的方法：优先级 = 2，所有者 = WEX。
+在前三行中，该示例通过显式指定特定数据值集的元数据来重写某些元数据。 但最后一组数据与包含它的方法具有相同的元数据： Priority = 2，Owner = WEX。
 
-让我们看一看托管代码之前查找到的所选内容和执行这些测试。
+首先，让我们看一下托管代码，然后查看这些测试的选择和执行。
 
 ```cpp
 1   [TestClass]
@@ -96,9 +95,9 @@ ms.locfileid: "63355507"
 ...
 ```
 
-将在这里也完全模拟本机示例中的属性。
+你将在此处完全模拟本机示例中的属性。
 
-现在，重写更好地了解一下：
+现在，让我们先了解一下替代的内容：
 
 ``` syntax
 TE.exe Examples\CSharp.DataDriven.Example.dll /select:"@Name='*overriding*' and @Priority=1"
@@ -106,8 +105,8 @@ TE.exe Examples\CSharp.DataDriven.Example.dll /select:"@Name='*overriding*' and 
 
 将运行
 
--   WEX.Examples.DataDrivenMetadataOverridingExample.DataDrivenTest\#0
--   WEX.Examples.DataDrivenMetadataOverridingExample.DataDrivenTest\#2
+-   WEX.例如，DataDrivenMetadataOverridingExample. DataDrivenTest \# 0
+-   WEX.例如，DataDrivenMetadataOverridingExample. DataDrivenTest \# 2
 
 ``` syntax
 TE.exe Examples\CPP.DataDriven.Example.dll /select:"@Name='*overriding*' and @Priority=1"
@@ -115,25 +114,25 @@ TE.exe Examples\CPP.DataDriven.Example.dll /select:"@Name='*overriding*' and @Pr
 
 将运行：
 
--   WEX::TestExecution::Examples::MetadataOverridingDataDrivenExample::DataDrivenTest\#0
--   WEX::TestExecution::Examples::MetadataOverridingDataDrivenExample::DataDrivenTest\#2
+-   WEX：： Testexecution.completed：：示例：： MetadataOverridingDataDrivenExample：:D ataDrivenTest \# 0
+-   WEX：： Testexecution.completed：：示例：： MetadataOverridingDataDrivenExample：:D ataDrivenTest \# 2
 
-## <a name="span-idexerciseforthereaderspanspan-idexerciseforthereaderspanspan-idexerciseforthereaderspanexercise-for-the-reader"></a><span id="Exercise_for_the_reader"></span><span id="exercise_for_the_reader"></span><span id="EXERCISE_FOR_THE_READER"></span>留给读者进行练习
+## <a name="span-idexercise_for_the_readerspanspan-idexercise_for_the_readerspanspan-idexercise_for_the_readerspanexercise-for-the-reader"></a><span id="Exercise_for_the_reader"></span><span id="exercise_for_the_reader"></span><span id="EXERCISE_FOR_THE_READER"></span>读者的练习
 
 
-作为一个练习，请尝试添加新的元数据值。 只改变在上述示例中，选择条件
+作为练习，尝试添加新的元数据值。 仅改变以上示例中的选择条件，
 
 ``` syntax
 /select:"@Name='*overriding*' and @Owner='WEX'"
 ```
 
-将运行数据驱动测试具有索引\#0 和\#中托管和本机示例 3
+将 \# \# 在托管和本机示例中运行带有索引0和3的数据驱动的测试
 
 ``` syntax
  /select:"@Name='*overriding*' and @Priority=2"
 ```
 
-将运行数据驱动测试具有索引\#1 和\#3，也可以在托管的示例运行 NonDataDrivenTest
+将运行索引为1和3的数据驱动测试 \# \# ，并在托管示例中运行 NonDataDrivenTest
 
 ``` syntax
 TE.exe Examples\CPP.DataDriven.Example.dll Examples\CSharp.DataDriven.Example.dll /name:*overriding* /listproperties

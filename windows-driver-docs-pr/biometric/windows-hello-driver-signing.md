@@ -1,18 +1,17 @@
 ---
 title: Windows Hello 指纹驱动程序签名过程
 description: Windows Hello 指纹驱动程序签名过程
-ms.assetid: 803f4326-32ce-44b4-a2fb-6c6f245c3728
 keywords:
 - 生物识别驱动程序 WDK，windows hello
 - 签名生物识别驱动程序
 ms.date: 07/19/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c1067c95e922d6880f1ee6f0984ff9a659ce25df
-ms.sourcegitcommit: cfd4d8ee889c6a3feed79ae112662f6c095b6a36
+ms.openlocfilehash: 41cfab6dba9f030b3d3bf4815fabcc5b5edac25c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94417426"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96784265"
 ---
 # <a name="windows-hello-steps-to-submit-a-fingerprint-driver"></a>Windows Hello：提交指纹驱动程序的步骤
 
@@ -35,9 +34,9 @@ Microsoft 在生物识别传感器上引入了新的要求，以遵守 Windows H
 ### <a name="step-three-modify-the-driver-configuration-xml-file"></a>步骤3：修改驱动程序配置 xml 文件
 提交驱动程序时，Windows 10 版本1703指纹检测测试将进行检查，以确保 <vendorCompliance> 和 <securityReview> 标记包含在以下字段中：
 
-**bugId** ：包含之前批准的安全审核信息的以前的 HLK 提交 ID 号; 如果提交正在进行全新的安全检查，则为0。
+**bugId**：包含之前批准的安全审核信息的以前的 HLK 提交 ID 号; 如果提交正在进行全新的安全检查，则为0。
 
-**updateExistingSubmission** ：如果提交作为之前已完成安全检查的提交的更新，则为 true; 否则为 false。
+**updateExistingSubmission**：如果提交作为之前已完成安全检查的提交的更新，则为 true; 否则为 false。
 
 #### <a name="example"></a>示例
  ```cpp

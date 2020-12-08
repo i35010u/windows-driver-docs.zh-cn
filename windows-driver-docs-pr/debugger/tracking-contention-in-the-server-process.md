@@ -1,17 +1,16 @@
 ---
 title: 跟踪服务器进程中的争用
 description: 跟踪服务器进程中的争用
-ms.assetid: ef0c0294-a010-439b-82dd-25148e05a7f1
 keywords:
 - RPC 调试，跟踪争用
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 935cad63601665b2f24e98809497c48514600e61
-ms.sourcegitcommit: 958a5ced83856df22627c06eb42c9524dd547906
+ms.openlocfilehash: 23051c02fa3e2e75d051f380a306d7ba4c677c71
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83235422"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96785255"
 ---
 # <a name="tracking-contention-in-the-server-process"></a>跟踪服务器进程中的争用
 
@@ -23,7 +22,7 @@ ms.locfileid: "83235422"
 
 如果工作线程数超过50，则服务器进程的争用可能会过多。 导致此问题的常见原因是 icriminate 使用堆、内存不足或通过单个关键部分序列化服务器中的大部分活动。
 
-若要查看给定服务器进程中的线程数，请使用[**！ rpcexts. getthreadinfo**](-rpcexts-getthreadinfo.md)扩展，或将 DbgRpc 与 **-t**开关一起使用。 提供进程 ID （在以下示例中为0xC4）：
+若要查看给定服务器进程中的线程数，请使用 [**！ rpcexts. getthreadinfo**](-rpcexts-getthreadinfo.md) 扩展，或将 DbgRpc 与 **-t** 开关一起使用。 在以下示例中提供进程 ID (，0xC4) ：
 
 ```console
 D:\wmsg>dbgrpc -t -P c4
@@ -43,7 +42,7 @@ Searching for thread info ...
 
 如果有超过100个线程，则调试器应附加到此进程，并调查原因。
 
-**注意**   远程运行查询（如**dbgrpc）** 在服务器和网络上非常昂贵。 如果在脚本中使用此查询，应确保此命令运行不太频繁。
+**注意**   远程运行查询（如 **dbgrpc）** 在服务器和网络上非常昂贵。 如果在脚本中使用此查询，应确保此命令运行不太频繁。
 
  
 

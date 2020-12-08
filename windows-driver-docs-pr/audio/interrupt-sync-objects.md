@@ -1,7 +1,6 @@
 ---
 title: 中断同步对象
 description: 中断同步对象
-ms.assetid: c9e228e0-6178-442d-a82a-6b14ed67c9d2
 keywords:
 - helper 对象 WDK 音频，中断同步对象
 - 中断同步对象 WDK 音频
@@ -12,12 +11,12 @@ keywords:
 - 非中断例程 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1ffd60d9fe4ff2f753072d80a9416e5531903498
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: e59efb92386d40043ac592d91c8391a437b56205
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89209087"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96784721"
 ---
 # <a name="interrupt-sync-objects"></a>中断同步对象
 
@@ -74,7 +73,7 @@ PortCls 系统驱动程序实现 [IInterruptSync](/windows-hardware/drivers/ddi/
 
 在上述任何一种模式中，如果任何注册的 Isr 返回状态成功，则 sync 对象将向操作系统确认中断 \_ 。 在所有三种模式中，如果所有中断源指示它们未成功处理中断，则同步对象会将失败的结果代码返回给操作系统。
 
-**IInterruptSync**接口支持以下方法：
+**IInterruptSync** 接口支持以下方法：
 
 [**IInterruptSync::CallSynchronizedRoutine**](/windows-hardware/drivers/ddi/portcls/nf-portcls-iinterruptsync-callsynchronizedroutine)
 

@@ -1,15 +1,14 @@
 ---
 title: 实现概述
 description: 本主题概述了在为能够处理硬件卸载音频流的音频适配器开发驱动程序时必须注意的实现关键点。
-ms.assetid: B93B9A6D-7317-482B-A0B8-298CE8F21193
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5d7238f9ef4d9b200ca3dc6ebffa6a4f2f420e9d
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: fca19abf18e9552b269ebbf6536fdf4aa2e519fc
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89209123"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96784767"
 ---
 # <a name="implementation-overview"></a>实现概述
 

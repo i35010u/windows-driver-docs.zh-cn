@@ -1,15 +1,14 @@
 ---
 title: 计划购买
 description: 计划购买
-ms.assetid: e4713e66-a26d-4408-885e-877259e4450b
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0caaf8fa19fead7ff5a85d857273dfe2f212903d
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 6a3d22c0b16e41f86bff5392dcaf84f551a09446
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89209841"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96786211"
 ---
 # <a name="plan-purchase"></a>计划购买
 
@@ -24,7 +23,7 @@ ms.locfileid: "89209841"
 
 -   **购买或顶级体验** 必须在你的应用中维护 (的采购业务逻辑详细信息，如计划信息、支付和信用卡验证) 。 Windows 支持 web 服务或移动电话协议，如非结构化补充服务数据 (USSD) ，以便与后端系统进行交互以开发此业务逻辑。
 
--   **预配** 在用户购买计划后，Windows 必须预配设备，并且必须在其后端激活设备。 预配定义为：将基于 Windows 的计算机配置为连接到运营商网络所需的信息。 这通常发生在购买订阅之后。 设置信息包含移动宽带配置文件 (访问点名称 \[ APN \] 、用户名和密码) 、热点配置文件、wi-fi 凭据和计划信息。 Windows 可以使用此信息自动连接到网络，无需用户输入。 
+-   **预配** 在用户购买计划后，Windows 必须预配设备，并且必须在其后端激活设备。 预配定义为：将基于 Windows 的计算机配置为连接到运营商网络所需的信息。 这通常发生在购买订阅之后。 设置信息包含移动宽带配置文件 (访问点名称 \[ APN \] 、用户名和密码) 、热点配置文件、Wi-Fi 凭据和计划信息。 Windows 可以使用此信息自动连接到网络，无需用户输入。 
 
 有关预配的详细信息，请参阅 [帐户预配](account-provisioning.md)。
 

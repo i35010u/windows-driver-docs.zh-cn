@@ -1,17 +1,16 @@
 ---
 title: GUID_NDIS_GEN_LINK_PARAMETERS
 description: 本主题描述了 NDIS WMI 接口的 GUID_NDIS_GEN_LINK_PARAMETERS GUID。
-ms.assetid: 83895adf-2e66-4820-8037-52eb352b82fc
 keywords:
 - GUID_NDIS_GEN_LINK_PARAMETERS，WDK GUID_NDIS_GEN_LINK_PARAMETERS 网络驱动程序
 ms.date: 11/22/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3c159dd79119f5a43635968df4f3cff852f8614b
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 5df2995caaea7513d0bbc9b80c43258f469d737b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89207561"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96786169"
 ---
 # <a name="guid_ndis_gen_link_parameters"></a>GUID_NDIS_GEN_LINK_PARAMETERS
 

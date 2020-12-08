@@ -1,15 +1,14 @@
 ---
 title: MSiSCSI \_ HBASESSIONCONFIG WMI 类
 description: MSiSCSI \_ HBASESSIONCONFIG WMI 类
-ms.assetid: ef3ac7d0-be4a-457e-b837-a6434776dfc1
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 745d0a2e8fb52528bb5d33a443941ceff1588feb
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 9bcb6396b9535e1dadcfc76b3bd761f4b6ef18a2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89193183"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96785501"
 ---
 # <a name="msiscsi_hbasessionconfig-wmi-class"></a>MSiSCSI \_ HBASESSIONCONFIG WMI 类
 
@@ -21,7 +20,7 @@ ms.locfileid: "89193183"
 
 由于此类与存储微型端口驱动程序的特定实例相关联，因此微型端口驱动程序必须使用微型端口驱动程序管理 (PDO) 的特定物理设备对象的名称注册该类。
 
-MSiSCSI \_ HBASessionConfig 类在 *管理 mof*中定义为如下。
+MSiSCSI \_ HBASessionConfig 类在 *管理 mof* 中定义为如下。
 
 ```cpp
 class MSiSCSI_HBASessionConfig {

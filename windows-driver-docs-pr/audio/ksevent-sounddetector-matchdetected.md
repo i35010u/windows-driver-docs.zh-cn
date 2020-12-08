@@ -1,7 +1,6 @@
 ---
 title: KSEVENT \_ SOUNDDETECTOR \_ MATCHDETECTED
 description: KSEVENT \_ SOUNDDETECTOR \_ MATCHDETECTED 事件由音频驱动程序生成，每当检测到匹配项时，通知操作系统。
-ms.assetid: 595EBC90-3903-495C-9811-A47B7BC4D98D
 keywords:
 - KSEVENT_SOUNDDETECTOR_MATCHDETECTED 音频设备
 topic_type:
@@ -14,17 +13,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f46a5e86d9a752c09acb717fde41e3f32c238d99
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 31d7e488acca8a921bd63bb67e2f7eaf9bba5a61
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102652"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96784681"
 ---
 # <a name="ksevent_sounddetector_matchdetected"></a>KSEVENT \_ SOUNDDETECTOR \_ MATCHDETECTED
 
 
-**KSEVENT \_ SOUNDDETECTOR \_ MATCHDETECTED**事件由音频驱动程序生成，每当检测到匹配项时，通知操作系统。
+**KSEVENT \_ SOUNDDETECTOR \_ MATCHDETECTED** 事件由音频驱动程序生成，每当检测到匹配项时，通知操作系统。
 
 ### <a name="span-idusage_summary_tablespanspan-idusage_summary_tablespanusage-summary-table"></a><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用情况摘要表
 
@@ -72,7 +71,7 @@ ms.locfileid: "90102652"
 </tr>
 <tr class="even">
 <td align="left"><p>最低受支持的服务器</p></td>
-<td align="left"><p>Windows Server 2016</p></td>
+<td align="left"><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>标头</p></td>

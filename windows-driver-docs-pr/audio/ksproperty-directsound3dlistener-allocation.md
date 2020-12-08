@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ DIRECTSOUND3DLISTENER \_ 分配
 description: KSPROPERTY \_ DIRECTSOUND3DLISTENER \_ 分配属性用于告知驱动程序何时为其侦听器数据分配和释放存储。
-ms.assetid: 2e7256d0-578d-4b6e-aa5f-9e42e649523b
 keywords:
 - KSPROPERTY_DIRECTSOUND3DLISTENER_ALLOCATION 音频设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f0aec8c10d0d9c07ac9a68f5387e21786a165e61
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: da6256430633ca4f5533ecdbad2bbee2775addb9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102542"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96784387"
 ---
 # <a name="ksproperty_directsound3dlistener_allocation"></a>KSPROPERTY \_ DIRECTSOUND3DLISTENER \_ 分配
 

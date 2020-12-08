@@ -1,18 +1,17 @@
 ---
 title: 值宏
 description: 值宏
-ms.assetid: 265b2d35-5e91-4c47-a145-1e9f8c497c2c
 keywords:
 - 值宏 WDK GPD 文件
 - 引用宏
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f9911ddbd5c1638367dc204bcf03eaa1ec0ad3fa
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3ffedb83e8f2c5eb22eef100084c31444e95be11
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380527"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96785852"
 ---
 # <a name="value-macros"></a>值宏
 
@@ -20,21 +19,21 @@ ms.locfileid: "63380527"
 
 
 
-值宏用于指定一组你想要单独插入的一个或多个值，包括反复 GPD 文件。 值可以是任意[GPD 值类型](gpd-value-types.md)。
+值宏用于指定要在 GPD 文件中单独和重复插入的一个或多个值的集合。 值可以是任何 [GPD 值类型](gpd-value-types.md)。
 
-以下规则适用于使用的值宏：
+以下规则适用于值宏的使用：
 
--   值宏定义中 GPD 文件必须位于之前对它的任何引用。
+-   GPD 文件中的值宏定义必须位于引用它之前。
 
--   在根级别定义的值宏 (即，而不是在大括号) 可通过定义它，它定义之后的 GPD 文件。 否则，值宏的作用域是包含其定义的左和右大括号的组。
+-   在根级别定义的值宏 (即，不在大括号) 中，可以通过定义它的 GPD 文件来使用。 否则，值宏的作用域是包含其定义的左大括号和右大括号集。
 
--   值宏必须解析为之一[GPD 值类型](gpd-value-types.md)。
+-   值宏必须解析为 [GPD 值类型](gpd-value-types.md)之一。
 
--   如果所有值都是文本字符串，但值宏不能引用自身，值宏定义可以引用其他以前定义的值的宏。
+-   如果所有值都是文本字符串，则值宏定义可以引用以前定义的其他值宏，但值宏无法引用其自身。
 
 -   值宏不接受参数。
 
--   如果具有相同名称创建两个值宏，第一个定义实际上是，直到 GPD 分析器遇到第二个定义。 第二个定义，然后将替换第一个。 如果第二个定义的作用域结束时，恢复过程的第一个定义。
+-   如果创建两个具有相同名称的值宏，则第一个定义将生效，直到 GPD 分析器遇到第二个定义。 然后，第二个定义将替换第一个。 如果第二个定义的作用域结束，则会恢复第一个定义。
 
 ### <a name="value-macro-format"></a>值宏格式
 
@@ -46,20 +45,20 @@ ms.locfileid: "63380527"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>* 宏：<em>ValueMacroGroupName</em> { <em>ValueMacroBody</em> }</p></td>
+<td><p>* 宏： <em>ValueMacroGroupName</em> { <em>ValueMacroBody</em> }</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-其中*ValueMacroGroupName*是唯一的名称，并*ValueMacroBody*一组唯一的值名称和关联的值，如下所示：
+其中， *ValueMacroGroupName* 是唯一的名称， *ValueMacroBody* 是一组唯一的值名称和关联的值，如下所示：
 
-*ValueMacroName* :*MacroValue*
+*ValueMacroName* ： *MacroValue*
 
-其中*ValueMacroName*是唯一的宏的名称，并*MacroValue*表示[GPD 值类型](gpd-value-types.md)。 (*MacroValue* ，只要已解析的字符串表示 GPD 值类型可以包括对以前定义的值宏的引用。)
+其中， *ValueMacroName* 是唯一的宏名称， *MacroValue* 表示 [GPD 值类型](gpd-value-types.md)。  (*MacroValue* 可以包括对以前定义的值宏的引用，前提是解析后的字符串表示 GPD 值类型。 ) 
 
-例如，可能会按如下所示定义一组常用的命令前缀的值宏：
+例如，可以为一组常用的命令前缀定义值宏，如下所示：
 
 ```cpp
 *Macros: HP4L
@@ -70,7 +69,7 @@ ms.locfileid: "63380527"
 }
 ```
 
-请注意， *ValueMacroGroupName* (HP4L 在示例中) 是可选的处理为注释。
+请注意，示例) 中的 *ValueMacroGroupName* (HP4L 是可选的，并被视为注释。
 
 ### <a name="referencing-value-macros"></a>引用值宏
 
@@ -78,9 +77,9 @@ ms.locfileid: "63380527"
 
 = *ValueMacroName*
 
-其中*ValueMacroName*是唯一的名称，在以前指定\*定义宏的宏条目。
+其中 *ValueMacroName* 是一个唯一名称，以前在 \* 定义宏的 Macros 项中指定。
 
-例如，为其中一个 HP4L 宏命令规范中的引用，可以使用以下项：
+例如，若要在命令规范内引用其中一个 HP4L 宏，可以使用以下项：
 
 ```cpp
 *Command: CmdSelect
@@ -89,7 +88,7 @@ ms.locfileid: "63380527"
 }
 ```
 
-可以通过将宏引用结合起来使用 nonmacro 值赋值的时，才是当所有的宏定义和其他值表示文本或命令的子字符串，该示例中所示。 在所有其他情况下，宏引用必须代表要分配的整个值。
+仅当所有宏定义和其他值都表示文本或命令子字符串时，才可以通过结合宏引用和 nonmacro 值来分配值，如示例中所示。 在所有其他情况下，宏引用必须表示要分配的整个值。
 
  
 

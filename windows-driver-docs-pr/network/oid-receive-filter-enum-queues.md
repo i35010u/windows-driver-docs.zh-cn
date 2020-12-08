@@ -1,23 +1,22 @@
 ---
 title: OID_RECEIVE_FILTER_ENUM_QUEUES
 description: 过量驱动程序和用户模式应用程序)  (OID 发出对象标识符，OID_RECEIVE_FILTER_ENUM_QUEUES 获取在网络适配器上分配的所有接收队列的列表。
-ms.assetid: e8a946a2-9ee9-42a0-8175-fbc592d404d1
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_RECEIVE_FILTER_ENUM_QUEUES 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 5537b131b1f3a939a29cb87a6e1ca76f22397c53
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 0fe8dce688ed57b6a10adfacb34925881781c8d8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90101436"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96786087"
 ---
 # <a name="oid_receive_filter_enum_queues"></a>OID \_ 接收 \_ 筛选器 \_ 枚举 \_ 队列
 
 
 过量驱动程序和用户模式应用程序) OID 接收筛选器枚举队列的查询请求中发出对象标识符 (OID， \_ \_ \_ \_ 以获取在网络适配器上分配的所有接收队列的列表。
 
-成功从 OID 查询请求返回后， [**ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的**InformationBuffer**成员包含指向[**ndis \_ 接收 \_ 队列 \_ 信息 \_ 数组**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_queue_info_array)结构的指针，该结构后跟每个筛选器的[**ndis \_ 接收 \_ 队列 \_ 信息**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_queue_info)结构。
+成功从 OID 查询请求返回后， [**ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的 **InformationBuffer** 成员包含指向 [**ndis \_ 接收 \_ 队列 \_ 信息 \_ 数组**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_queue_info_array)结构的指针，该结构后跟每个筛选器的 [**ndis \_ 接收 \_ 队列 \_ 信息**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_queue_info)结构。
 
 <a name="remarks"></a>备注
 -------
@@ -85,7 +84,7 @@ NDIS 处理 \_ \_ 微型端口驱动程序的 oid 接收筛选器枚举队列的
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)

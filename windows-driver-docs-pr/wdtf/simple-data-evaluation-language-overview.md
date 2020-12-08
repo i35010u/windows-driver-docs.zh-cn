@@ -1,7 +1,6 @@
 ---
 title: 简单数据评估语言概述
 description: WDTF 包括一个简单的查询语言，用于简化基于属性或关系收集目标的任务。
-ms.assetid: 84c2a1d6-6bec-4aeb-b858-c29f50d74390
 keywords:
 - Windows 设备测试框架 WDK，SDEL
 - WDTF WDK，SDEL
@@ -17,12 +16,12 @@ keywords:
 - 布尔逻辑 WDK WDTF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2149d09094b88e2322cced24cbd545aa70c75352
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: e6f4e8c501f34db5068bb42d214931d47ff3d1a8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91733017"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96785365"
 ---
 # <a name="simple-data-evaluation-language-overview"></a>简单数据评估语言概述
 
@@ -37,7 +36,7 @@ WDTF 包括一个简单的查询语言，用于简化基于属性或关系收集
 
 SDEL 使用特性标记执行匹配和检索数据。 所有 SDEL 令牌只能包含字母数字字符和连字符， ( ) 。
 
-*特性*是指附加到目标的一段数据。 特性中的实际值将存储为 **变量**。 如果在属性后放置比较运算符后跟一个 *测试* 值，则 SDEL 将执行比较匹配。 应将测试值放在单引号或双引号中--此表示法允许在测试值中使用实际的单引号或双引号，但不能同时使用这两者。 如果测试值仅包含字母数字字符和连字符 ( ) ，则可以省略引号。
+*特性* 是指附加到目标的一段数据。 特性中的实际值将存储为 **变量**。 如果在属性后放置比较运算符后跟一个 *测试* 值，则 SDEL 将执行比较匹配。 应将测试值放在单引号或双引号中--此表示法允许在测试值中使用实际的单引号或双引号，但不能同时使用这两者。 如果测试值仅包含字母数字字符和连字符 ( ) ，则可以省略引号。
 
 ### <a name="comparison-operations"></a>比较运算
 
@@ -95,7 +94,7 @@ If Device.Eval("IsDisableable=true") Then
 End If
 ```
 
-你还可以使用 [**Eval**](/windows-hardware/drivers/ddi/wdtf/nf-wdtf-iwdtftarget2-eval) 测试属性是否存在。 当您传递**Eval**而不是比较运算符或值时，如果特性或命名空间包含除**VT \_ 空**) 以外的任何 (值，则**eval**将返回**变体 \_ TRUE** 。 下面的 VBScript 代码示例使用 **Eval** 确定目标是否具有 SymbolicLink 关键字。
+你还可以使用 [**Eval**](/windows-hardware/drivers/ddi/wdtf/nf-wdtf-iwdtftarget2-eval) 测试属性是否存在。 当您传递 **Eval** 而不是比较运算符或值时，如果特性或命名空间包含除 **VT \_ 空**) 以外的任何 (值，则 **eval** 将返回 **变体 \_ TRUE** 。 下面的 VBScript 代码示例使用 **Eval** 确定目标是否具有 SymbolicLink 关键字。
 
 ```cpp
 If Device.Eval("SymbolicLink") Then
@@ -129,19 +128,19 @@ WScript.Echo "FriendlyName: " & Device.GetValue("parent/parent/FriendlyName")
 
 ![说明 target：： getrelations 方法的关系图](images/wdtf-getrelations.gif)
 
-[**IWDTFTarget2：： GetRelations**](/windows-hardware/drivers/ddi/wdtf/nf-wdtf-iwdtftarget2-getrelations)方法仅接受 SDEL 语句语法的关系说明符部分，并返回一个[**IWDTFTargets2**](/windows-hardware/drivers/ddi/wdtf/nn-wdtf-iwdtftargets2)集合接口，其中包含满足关系条件的所有目标。 下面的 VBScript 代码示例返回一个集合，其中包含原始目标及其所有同级。
+[**IWDTFTarget2：： GetRelations**](/windows-hardware/drivers/ddi/wdtf/nf-wdtf-iwdtftarget2-getrelations)方法仅接受 SDEL 语句语法的关系说明符部分，并返回一个 [**IWDTFTargets2**](/windows-hardware/drivers/ddi/wdtf/nn-wdtf-iwdtftargets2)集合接口，其中包含满足关系条件的所有目标。 下面的 VBScript 代码示例返回一个集合，其中包含原始目标及其所有同级。
 
 ```cpp
 Set TestDevices = Device.GetRelations("parent/child/", "")
 ```
 
-[**GetRelations**](/windows-hardware/drivers/ddi/wdtf/nf-wdtf-iwdtftarget2-getrelations)的第二个参数可以有选择性地包含要传递给满足特定关系的每个目标的[**Eval**](/windows-hardware/drivers/ddi/wdtf/nf-wdtf-iwdtftarget2-eval)方法的语句。 例如，如果将 *IsDisableable = true* 添加为第二个参数，则上面的代码示例将仅返回可禁用的设备及其同级。
+[**GetRelations**](/windows-hardware/drivers/ddi/wdtf/nf-wdtf-iwdtftarget2-getrelations)的第二个参数可以有选择性地包含要传递给满足特定关系的每个目标的 [**Eval**](/windows-hardware/drivers/ddi/wdtf/nf-wdtf-iwdtftarget2-eval)方法的语句。 例如，如果将 *IsDisableable = true* 添加为第二个参数，则上面的代码示例将仅返回可禁用的设备及其同级。
 
 如果没有匹配项，则返回包含零项的集合。
 
 ## <a name="collecting-targets-by-using-query"></a>使用查询收集目标
 
-[**IWDTFDeviceDepot2**](/windows-hardware/drivers/ddi/wdtf/nn-wdtf-iwdtfdevicedepot2)接口包含一个**查询**方法。 此方法采用为 [**IWDTFTarget2：： Eval**](/windows-hardware/drivers/ddi/wdtf/nf-wdtf-iwdtftarget2-eval) 方法设计的 SDEL 语句，并返回 [**IWDTFTargets2**](/windows-hardware/drivers/ddi/wdtf/nn-wdtf-iwdtftargets2) 集合接口的新实例，该实例包含符合查询条件的目标的子集。 以下 VBScript 代码示例列举了所有非虚拟设备，并显示了每个设备的友好名称。
+[**IWDTFDeviceDepot2**](/windows-hardware/drivers/ddi/wdtf/nn-wdtf-iwdtfdevicedepot2)接口包含一个 **查询** 方法。 此方法采用为 [**IWDTFTarget2：： Eval**](/windows-hardware/drivers/ddi/wdtf/nf-wdtf-iwdtftarget2-eval) 方法设计的 SDEL 语句，并返回 [**IWDTFTargets2**](/windows-hardware/drivers/ddi/wdtf/nn-wdtf-iwdtftargets2) 集合接口的新实例，该实例包含符合查询条件的目标的子集。 以下 VBScript 代码示例列举了所有非虚拟设备，并显示了每个设备的友好名称。
 
 ```cpp
 For Each Device In WDTF.DeviceDepot.Query("IsPhantom=false")
@@ -149,11 +148,11 @@ For Each Device In WDTF.DeviceDepot.Query("IsPhantom=false")
 Next
 ```
 
-返回的集合包含 [**IWDTFTargets2：： query**](/windows-hardware/drivers/ddi/wdtf/nf-wdtf-iwdtftargets2-query) 方法，该方法具有与 **IWDTFDeviceDepot2：： query**相同的实现。 **IWDTFTargets2：： Query** 从满足 SDEL 语句的原始集合返回目标的子集。
+返回的集合包含 [**IWDTFTargets2：： query**](/windows-hardware/drivers/ddi/wdtf/nf-wdtf-iwdtftargets2-query) 方法，该方法具有与 **IWDTFDeviceDepot2：： query** 相同的实现。 **IWDTFTargets2：： Query** 从满足 SDEL 语句的原始集合返回目标的子集。
 
 ## <a name="boolean-logic-in-sdel"></a>SDEL 中的布尔逻辑
 
-[**IWDTFTarget2：： GetRelations**](/windows-hardware/drivers/ddi/wdtf/nf-wdtf-iwdtftarget2-getrelations)方法只能接受布尔值**或**运算符，但对[**IWDTFTargets2：： Query**](/windows-hardware/drivers/ddi/wdtf/nf-wdtf-iwdtftargets2-query)、 [**IWDTFTarget2：： Eval**](/windows-hardware/drivers/ddi/wdtf/nf-wdtf-iwdtftarget2-eval)和[**IWDTFTarget2：： GetValue**](/windows-hardware/drivers/ddi/wdtf/nf-wdtf-iwdtftarget2-getvalue)方法的调用可以使用 boolean**和**and **OR**运算符。 对于 **查询** 方法和 **Eval** 方法，运算符的作用类似于常规布尔运算符，并按预期返回结果。 但是，对于 **GetValue** 方法， **并** 将在其自身的两侧组合值， **或** 将仅返回从左) 开始 (找到的第一个值。
+[**IWDTFTarget2：： GetRelations**](/windows-hardware/drivers/ddi/wdtf/nf-wdtf-iwdtftarget2-getrelations)方法只能接受布尔值 **或** 运算符，但对 [**IWDTFTargets2：： Query**](/windows-hardware/drivers/ddi/wdtf/nf-wdtf-iwdtftargets2-query)、 [**IWDTFTarget2：： Eval**](/windows-hardware/drivers/ddi/wdtf/nf-wdtf-iwdtftarget2-eval)和 [**IWDTFTarget2：： GetValue**](/windows-hardware/drivers/ddi/wdtf/nf-wdtf-iwdtftarget2-getvalue)方法的调用可以使用 boolean **和** and **OR** 运算符。 对于 **查询** 方法和 **Eval** 方法，运算符的作用类似于常规布尔运算符，并按预期返回结果。 但是，对于 **GetValue** 方法， **并** 将在其自身的两侧组合值， **或** 将仅返回从左) 开始 (找到的第一个值。
 
 ## <a name="parentheses-in-sdel"></a>SDEL 中的括号
 

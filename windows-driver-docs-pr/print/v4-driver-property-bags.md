@@ -1,15 +1,14 @@
 ---
 title: V4 打印机驱动程序属性包
 description: V4 打印驱动程序模型提供了许多属性包，便于从自定义 UI 应用程序到呈现过程的数据流。
-ms.assetid: 4E20303A-BEB3-4928-BA5A-356D978FA2BE
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 68322327e0edea9e53364210ea567a62971d7bf4
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 4de704703d13a5f828f3621401e091be0768d1f3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105436"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96785929"
 ---
 # <a name="v4-printer-driver-property-bags"></a>V4 打印机驱动程序属性包
 
@@ -28,7 +27,7 @@ V4 打印驱动程序模型提供了许多属性包，便于从自定义 UI 应�
 <thead>
 <tr class="header">
 <th>组件</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -127,23 +126,23 @@ DEVMODE 属性包映射的 XML 文件由 INFGate 工具验证。
 
 3. 使用 QueueProperties 指令在驱动程序清单中指定队列属性包。
 
-管理员使用 PowerShell 配置 queue 属性包。 以下命令-允许 (cmdlet) 是打印机对象的子项，可以使用 printer cmdlet 获取该对象。
+管理员使用 PowerShell 配置 queue 属性包。 以下命令-允许 (cmdlet) 是打印机对象的子项，可以使用 Get-Printer cmdlet 获取该对象。
 
-| Cmdlet 名称                                                                                                  | 说明                                                             |
+| Cmdlet 名称                                                                                                  | 描述                                                             |
 |--------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------|
-| PrinterProperty-printerName &lt; printerName &gt; 名称 &lt; 名称名称\*&gt;                            | 检索一个或多个属性 ( 名称支持通配)               |
-| PrinterProperty-inputObject &lt; printerPropertyObject&gt;                                               | 使用持久化 printerPropertyObject 更改打印队列属性。 |
+| Get-PrinterProperty-printerName &lt; printerName &gt; 名称名称 &lt;\*&gt;                            | 检索一个或多个属性 ( 名称支持通配)               |
+| Set-PrinterProperty-inputObject &lt; printerPropertyObject&gt;                                               | 使用持久化 printerPropertyObject 更改打印队列属性。 |
 | PrinterProperty-printerName &lt; printerName &gt; -propertyname &lt; 属性 &gt; &lt; 值&gt; | 将指定的属性更改为指定的值。                  |
 
 
 
-可**安装选项**。 例如，双面打印器的状态将作为单个属性公开给队列属性包。 每个属性的名称如下所示，其中的功能名称基于驱动程序的 GPD 或 PPD 文件中的功能名称：
+可 **安装选项**。 例如，双面打印器的状态将作为单个属性公开给队列属性包。 每个属性的名称如下所示，其中的功能名称基于驱动程序的 GPD 或 PPD 文件中的功能名称：
 
 - Config： &lt; 功能名称&gt;
 
 例如，Config： DuplexUnit
 
-属性的值是管理员已选择的选项的关键字名称。 例如，已安装。 可使用用于队列属性的 PrinterProperty cmdlet 编辑可安装选项。
+属性的值是管理员已选择的选项的关键字名称。 例如，已安装。 可使用与用于队列属性相同的 Set-PrinterProperty cmdlet 来编辑可安装选项。
 
 **注意**  从 Windows 8.1 开始，拥有管理员权限的用户或创建打印队列的用户可以更改 UWP 设备应用中队列属性包的可安装选项和每队列配置设置。
 

@@ -1,15 +1,14 @@
 ---
 title: '用于打印机 (打印的 UWP 设备应用) '
 description: 用于打印机的 UWP 设备应用允许 Ihv 通过自定义打印机首选项和通知支持突出显示其设备的特殊功能。
-ms.assetid: 687ECBA2-2DEF-4C62-A587-17A281490B59
 ms.date: 07/07/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 7ed4201a25fa8dc9ceef85cd974e838b980f7b15
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: f867c808e84feaf4cddc9d96655c25916dc91aa0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89211931"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96785951"
 ---
 # <a name="uwp-device-apps-for-printers-print"></a>用于打印机 (打印的 UWP 设备应用) 
 

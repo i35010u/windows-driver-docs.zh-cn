@@ -1,17 +1,16 @@
 ---
 title: 使用 GetFeatureAttribute
 description: 使用 GetFeatureAttribute
-ms.assetid: e5050cb1-c178-405d-bb0e-fd7827198bca
 keywords:
 - GetFeatureAttribute
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 89e08e076a0ff7fcc7ca6497f53122ebad96033e
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 389800cb8471e77f70d1549a584fa7341d7fef26
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89205867"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96785991"
 ---
 # <a name="using-getfeatureattribute"></a>使用 GetFeatureAttribute
 

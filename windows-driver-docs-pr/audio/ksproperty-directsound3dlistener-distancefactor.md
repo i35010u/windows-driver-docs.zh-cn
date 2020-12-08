@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ DIRECTSOUND3DLISTENER \_ DISTANCEFACTOR
 description: KSPROPERTY \_ DIRECTSOUND3DLISTENER \_ DISTANCEFACTOR 属性指定应应用于任何距离值的距离系数。
-ms.assetid: 38daa5d8-d70f-4484-bf5a-a9a365296313
 keywords:
 - KSPROPERTY_DIRECTSOUND3DLISTENER_DISTANCEFACTOR 音频设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: efa5ecff2a50de804cfc119fa01c0d563feb6136
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: ec21c8580d401ad5032b6c6747d4d66fb8395d56
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102536"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96784383"
 ---
 # <a name="ksproperty_directsound3dlistener_distancefactor"></a>KSPROPERTY \_ DIRECTSOUND3DLISTENER \_ DISTANCEFACTOR
 
@@ -74,7 +73,7 @@ KSPROPSETID \_ DirectSound3DBuffer 和 KSPROPSETID DirectSound3DListener 属性�
 
 默认情况下，距离系数为1，因此以米为单位表示距离。  (也是默认速度单位为每秒计量数。 ) 
 
-客户端可以通过发送 KSPROPERTY DirectSound3DListener DISTANCEFACTOR ** \_ DirectSound3DBuffer** 请求指定不同的距离系数来更改 KSPROPSETID 和 **KSPROPSETID \_ DirectSound3DListener** 属性的距离单位 \_ \_ 。
+客户端可以通过发送 KSPROPERTY DirectSound3DListener DISTANCEFACTOR **\_ DirectSound3DBuffer** 请求指定不同的距离系数来更改 KSPROPSETID 和 **KSPROPSETID \_ DirectSound3DListener** 属性的距离单位 \_ \_ 。
 
 DirectSound 使用此属性实现 **IDirectSound3DListener：： GetDistanceFactor** 和 **IDirectSound3DListener：： SetDistanceFactor** 方法，如 Microsoft Windows SDK 文档中所述。
 

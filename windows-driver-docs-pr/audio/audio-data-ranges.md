@@ -1,7 +1,6 @@
 ---
 title: 音频数据范围
 description: 音频数据范围
-ms.assetid: 690fafda-fb35-43da-9de1-6cbc3bf8eb6c
 keywords:
 - 数据范围 WDK 音频
 - 范围值 WDK 音频
@@ -12,12 +11,12 @@ keywords:
 - 数据范围 WDK 音频，关于音频数据范围
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f15c48d688ac9422f34e7a169ccdfd388c2f0a9c
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 6986822d194094e8589ba5c879a88c3c49cd6f53
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89208357"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96785021"
 ---
 # <a name="audio-data-ranges"></a>音频数据范围
 
@@ -29,7 +28,7 @@ KS 筛选器上的每个 pin 都声明它支持的数据格式。 Pin 工厂将�
 
 当微型端口驱动程序实例化 pin 时，它会将 pin 配置为使用它从 pin 的数据范围选择的特定数据格式处理流。 此工作是通过微型端口驱动程序的数据交集处理程序来完成的，该处理程序选择两个 pin 共用的音频数据格式，以便可以进行连接。 有关详细信息，请参阅 [数据交集处理程序](data-intersection-handlers.md)。
 
-有关使用属性请求来查询音频 pin 的数据范围并选择数据交集的信息，请参阅 [固定数据范围和交集属性](pin-data-range-and-intersection-properties.md)。
+若要了解如何使用属性请求来查询音频 pin 的数据范围并选择数据交集，请参阅 [固定 Data-Range 和交集属性](pin-data-range-and-intersection-properties.md)。
 
 为了指定波形 pin 的数据范围， [**KSDATARANGE**](/previous-versions/ff561658(v=vs.85)) 结构后跟信息，该信息描述了 pin 支持的样本大小、频率和通道的范围。 此信息（包括 KSDATARANGE 结构本身）封装在 [**KSDATARANGE \_ 音频**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksdatarange_audio) 结构中。
 

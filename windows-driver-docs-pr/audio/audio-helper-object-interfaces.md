@@ -1,15 +1,14 @@
 ---
 title: 音频帮助程序对象接口
 description: 音频帮助程序对象接口
-ms.assetid: 94d3f7f3-7ccc-4f66-b5fa-95f18b8a0f17
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 95fb7b1afe7cea97f83fd6c2c661f8e671f96704
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 703db3a5fbc268e9cafb17b071aca3944662eba1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89208325"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96784975"
 ---
 # <a name="audio-helper-object-interfaces"></a>音频帮助程序对象接口
 
@@ -28,7 +27,7 @@ ms.locfileid: "89208325"
 
 [IDrmPort2](/windows-hardware/drivers/ddi/portcls/nn-portcls-idrmport2)
 
-帮助微型端口驱动程序跟踪复合 DRM 权限。 这是 **IDrmPort**的扩展版本。
+帮助微型端口驱动程序跟踪复合 DRM 权限。 这是 **IDrmPort** 的扩展版本。
 
 [IInterruptSync](/windows-hardware/drivers/ddi/portcls/nn-portcls-iinterruptsync)
 

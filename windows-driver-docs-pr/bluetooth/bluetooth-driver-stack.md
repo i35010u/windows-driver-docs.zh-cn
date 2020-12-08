@@ -1,19 +1,18 @@
 ---
 title: 蓝牙驱动程序堆栈
 description: 蓝牙驱动程序堆栈
-ms.assetid: fb13c300-f8ed-4d82-8625-79db4d7feac5
 keywords:
 - 蓝牙 WDK，驱动程序堆栈
 - 驱动程序堆栈 WDK 蓝牙
 - 堆积 WDK 蓝牙
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 464546133002dd88daea523b582b06c881bac2d0
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 38e01c57f32547a72d4ca240c1f145d0142fd544
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91733445"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96784257"
 ---
 # <a name="bluetooth-driver-stack"></a>蓝牙驱动程序堆栈
 
@@ -25,16 +24,16 @@ ms.locfileid: "91733445"
 ![阐释蓝牙驱动程序堆栈的关系图](images/bluetooth-architecture.png)
 
 -   **用户模式**
-    -   **用户模式应用**程序-一种用户模式应用程序，它通过已发布的 Api 访问蓝牙驱动程序堆栈。 有关详细信息，请参阅关于 Windows SDK 文档中的 [蓝牙](/windows/win32/bluetooth/about-bluetooth) 。
+    -   **用户模式应用** 程序-一种用户模式应用程序，它通过已发布的 Api 访问蓝牙驱动程序堆栈。 有关详细信息，请参阅关于 Windows SDK 文档中的 [蓝牙](/windows/win32/bluetooth/about-bluetooth) 。
 
-        **注意**   用户模式应用程序应链接到*BthProps*（而不是*IrProps*），以便使用[**BluetoothSetLocalServiceInfo**](/windows/win32/api/bluetoothapis/nf-bluetoothapis-bluetoothsetlocalserviceinfo)等 api。
+        **注意**  用户模式应用程序应链接到 *BthProps*（而不是 *IrProps*），以便使用 [**BluetoothSetLocalServiceInfo**](/windows/win32/api/bluetoothapis/nf-bluetoothapis-bluetoothsetlocalserviceinfo)等 api。
 
          
 
 -   **配置文件驱动程序的示例**
     -   **Wap 内核模式驱动程序**- (WAP) 组件的无线应用程序协议是配置文件驱动程序的一个示例，它在 Windows 网络堆栈和 BthPort 之间进行通信，同时访问 L2CAP 接口和 L2CAP 中包含的 SDP 接口。 其他可能的配置文件包括高级音频分发配置文件 (A2DP) 、A/V 远程控制配置文件 (AVRCP) 、泛型 A/V 分布配置文件 (GAVDP) 和常见 ISDN 访问 (CIP) 配置文件。
     -   **音频内核模式驱动程序**-配置文件驱动程序的一个示例，它在 Windows 音频堆栈与 BthPort 之间进行通信，并访问后者中包含的 SCO 接口。 可能的配置文件包括免提免费配置文件 (HFP) ，耳机配置文件 (HSP) ，无线电话服务配置文件 (CTP) 和对讲机配置文件 (ICP) 。
-        **注意**   Windows 8 开头的 Windows 中包含此配置文件驱动程序。
+        **注意**  Windows 8 开头的 Windows 中包含此配置文件驱动程序。
 
          
 
@@ -42,7 +41,7 @@ ms.locfileid: "91733445"
 -   **蓝牙驱动程序堆栈组件**
     -   **IrProps**-一个组件，用于对为第一个版本的蓝牙驱动程序堆栈创建的配置文件驱动程序的向后兼容。
 
-        **请注意**，提供  **IrProps**只是为了向后兼容。 使用 **BthProps** 组件进行新的开发。
+        **请注意**，提供 **IrProps** 只是为了向后兼容。   使用 **BthProps** 组件进行新的开发。
 
          
 
@@ -59,13 +58,13 @@ ms.locfileid: "91733445"
         用户模式应用程序可使用 Windows SDK 中所述的 Winsock 接口访问 RfComm。
 
     -   **BthModem**-用于实现虚拟 COM 端口和拨号网络的组件 (DUN) 。 BthModem 通过 TDI 接口将所有 i/o 和控制操作定向到 RfComm。 BthModem 的上部边缘与 *Serial.sys* 通信，使成为无线 COM 端口的外观。
-        **注意**   此组件在 Windows RT 中不可用。
+        **注意**  此组件在 Windows RT 中不可用。
 
          
 
     -   **BthEnum**-蓝牙总线驱动程序。 BthEnum 与即插即用 (PnP) 管理器通信，以创建和销毁用于启用蓝牙服务的设备对象。 BthEnum 为连接的远程设备支持的每个服务创建一个 PDO。 例如，当用户连接支持蓝牙的鼠标时，Windows 将发现鼠标支持蓝牙 HID 服务，并为导致 PnP 管理器加载 HidBth 的 HID 服务创建一个 PDO。
 
-        **注意**   对于*Bth*中指定的**UnsupportedServices**注册表项中显示的服务，BthEnum 将不会创建 PDOs。
+        **注意** 对于 *Bth* 中指定的 **UnsupportedServices** 注册表项中显示的服务，BthEnum 将不会创建 PDOs。
 
          
 
@@ -73,8 +72,8 @@ ms.locfileid: "91733445"
 
     -   **BthPort**-BthUsb 微型端口加载的微型驱动程序。 BthPort 提供了四个组件：
         -   HCI 组件通过主机控制器接口与蓝牙规范中定义 (HCI) 的本地支持蓝牙的无线电通信。 由于所有启用 Bluetooth 的无线电设备都实现了 HCI 规范，因此 BthPort 能够与任何启用 Bluetooth 的无线电通信，而不管制造商或型号如何。
-        -   SCO 组件实现面向同步连接的 (SCO) 协议。 此协议支持创建到远程设备的点到点连接。 SCO 客户端通过 [构建并发送](building-and-sending-a-brb.md) 蓝牙请求块 (BRBs) 与 SCO 接口通信。
+        -   SCO 组件实现同步 Connection-Oriented (SCO) 协议。 此协议支持创建到远程设备的点到点连接。 SCO 客户端通过 [构建并发送](building-and-sending-a-brb.md) 蓝牙请求块 (BRBs) 与 SCO 接口通信。
         -   L2CAP 实现蓝牙逻辑链接控制和适配协议。 此协议支持将无损通道创建到远程设备。 L2CAP 客户端通过构建并发送蓝牙请求块 (BRBs) 来与 L2CAP 接口通信。
         -   SDP 实现蓝牙服务发现协议。
-    -   **BthUsb.sys**-从 **BthPort**抽象总线接口的微型端口。
+    -   **BthUsb.sys**-从 **BthPort** 抽象总线接口的微型端口。
 

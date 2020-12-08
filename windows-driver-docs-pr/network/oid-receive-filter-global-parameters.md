@@ -1,23 +1,22 @@
 ---
 title: OID_RECEIVE_FILTER_GLOBAL_PARAMETERS
 description: 过量驱动程序发出 OID 查询请求，OID_RECEIVE_FILTER_GLOBAL_PARAMETERS 获取网络适配器的全局接收筛选参数。
-ms.assetid: be6f7210-d1f9-4490-838a-806488df41da
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_RECEIVE_FILTER_GLOBAL_PARAMETERS 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: c22524f43306b11e225c88cf8c24fcbfbf782dc6
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 043ef64ef65d267de5146014f0a586021fcc7435
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91733635"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96786077"
 ---
 # <a name="oid_receive_filter_global_parameters"></a>OID \_ 接收 \_ 筛选器 \_ 全局 \_ 参数
 
 
 过量驱动程序发出 oid 查询请求，OID \_ 接收 \_ 筛选器 \_ 全局 \_ 参数用于获取网络适配器的全局接收筛选参数。
 
-成功从 OID 查询请求返回后， [**ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的**InformationBuffer**成员包含指向[**ndis \_ 接收 \_ 筛选器 \_ 全局 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_global_parameters)结构的指针。
+成功从 OID 查询请求返回后， [**ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的 **InformationBuffer** 成员包含指向 [**ndis \_ 接收 \_ 筛选器 \_ 全局 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_global_parameters)结构的指针。
 
 <a name="remarks"></a>备注
 -------
@@ -71,7 +70,7 @@ NDIS 处理 \_ \_ 多端口驱动程序的 oid 接收筛选器全局参数的 oi
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)

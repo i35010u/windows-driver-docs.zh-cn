@@ -1,19 +1,18 @@
 ---
 title: 默认数据交集处理程序
 description: 默认数据交集处理程序
-ms.assetid: 5c70a6e4-702f-4fd0-bb3e-2cde2955b2ad
 keywords:
 - 数据交集处理程序 WDK 音频，默认
 - 默认数据交集处理程序
 - 最小数据交集处理程序 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 23a12e1bdeb150be9f0088538bc2a3c34a439687
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 2a8fb8ea86398ffb9dfff845c7f631210eb410a4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89208151"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96784877"
 ---
 # <a name="default-data-intersection-handlers"></a>默认数据交集处理程序
 

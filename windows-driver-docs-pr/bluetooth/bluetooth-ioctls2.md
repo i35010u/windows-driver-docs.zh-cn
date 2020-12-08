@@ -1,7 +1,6 @@
 ---
 title: 蓝牙 IOCTL
 description: 蓝牙 IOCTL
-ms.assetid: 384ea4bb-863c-4da7-bf81-85d2de734ef7
 keywords:
 - 蓝牙 WDK，IOCTLs
 - IOCTLs WDK 蓝牙
@@ -9,12 +8,12 @@ keywords:
 - 远程蓝牙 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 34f14d092e0fb1dde62491ed552978b29f10cc71
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 0ab73be3744c41c0f733abe91e9b64f9ccf873e7
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91733447"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96784231"
 ---
 # <a name="bluetooth-ioctls"></a>蓝牙 IOCTL
 

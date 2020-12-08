@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ 音频 \_ 低音
 description: KSPROPERTY \_ 音频 \_ 低音属性指定色调节点中通道的低音级别 (KSNODETYPE \_ 声调) 。
-ms.assetid: 64f2f1c9-9275-4fcf-b187-a097b218924e
 keywords:
 - KSPROPERTY_AUDIO_BASS 音频设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6accef7ebf1723a76a20889bb4b52b700f16952d
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 0684e4f75738717940e72ff0e621b96d85950e44
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102148"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96784553"
 ---
 # <a name="ksproperty_audio_bass"></a>KSPROPERTY \_ 音频 \_ 低音
 
@@ -77,7 +76,7 @@ KSPROPERTY \_ 音频 \_ 低音属性指定色调节点中通道的低音级别 (
 
 KSPROPERTY \_ 音频 \_ 低音属性请求返回状态 " \_ 成功" 以指示它已成功完成。 否则，请求将返回相应的错误状态代码。
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 筛选器将成功执行 KSPROPERTY \_ 音频 \_ 低音设置-属性请求，该请求指定超出筛选范围的值，但会将该值固定到支持的范围。 但在后续请求中，此属性将输出所使用的实际值。

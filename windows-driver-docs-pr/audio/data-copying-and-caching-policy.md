@@ -1,7 +1,6 @@
 ---
 title: 数据复制和缓存策略
 description: 数据复制和缓存策略
-ms.assetid: 1867f2bd-240c-4525-9f02-98b8f1d54b17
 keywords:
 - HD 音频，缓存
 - 高清晰音频 (HD 音频) ，缓存
@@ -13,12 +12,12 @@ keywords:
 - 数据复制 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a644ed56ba533fcb30634df0ab7dbca2c5f9f60f
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 4323fe071ed46fa71e4380e2a1903612d332da90
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89208181"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96784887"
 ---
 # <a name="data-copying-and-caching-policy"></a>数据复制和缓存策略
 
@@ -31,7 +30,7 @@ WaveCyclic 微型端口驱动程序在 DMA 缓冲区（HD Audio 控制器硬件�
 
 对于播放和捕获流，驱动程序可以启用 DMA 缓冲区内存 (缓存类型 **MmCached**) 的缓存，并依赖 PCI 控制器的总线侦听机制来确保缓存的一致性，从而实现最佳性能。 但是，某些 PCI Express 控制器实现不会使 HD 音频控制器的同步数据传输 (如 Intel 初始 PCI Express 芯片) 。
 
-函数驱动程序无法检测 PCI 控制器硬件是否支持侦听 DMA 缓冲区传输或执行同步数据传输。 为了避免潜在的缓存一致性问题，驱动程序通过将该内存的缓存类型指定为 **MmWriteCombined**来禁用 DMA 缓冲区内存的缓存。  (**MmNonCached** 也会运行，但也可能不会执行。 ) 如果你编写基于示例函数驱动程序的自定义适配器驱动程序，则 WaveCyclic 微型端口驱动程序应采用类似方式，除非你可以验证 PCI 控制器确实支持侦听 DMA 缓冲区传输。
+函数驱动程序无法检测 PCI 控制器硬件是否支持侦听 DMA 缓冲区传输或执行同步数据传输。 为了避免潜在的缓存一致性问题，驱动程序通过将该内存的缓存类型指定为 **MmWriteCombined** 来禁用 DMA 缓冲区内存的缓存。  (**MmNonCached** 也会运行，但也可能不会执行。 ) 如果你编写基于示例函数驱动程序的自定义适配器驱动程序，则 WaveCyclic 微型端口驱动程序应采用类似方式，除非你可以验证 PCI 控制器确实支持侦听 DMA 缓冲区传输。
 
 若要支持不执行总线侦听的设备和系统，自定义函数驱动程序必须遵循以下规则：
 

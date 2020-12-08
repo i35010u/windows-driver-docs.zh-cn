@@ -1,22 +1,21 @@
 ---
 title: WDM 音频中的 DirectSound 硬件加速
 description: WDM 音频中的 DirectSound 硬件加速
-ms.assetid: 75c34a10-1956-4117-b5b9-73de6d615521
 keywords:
-- DirectSound WDK 音频硬件加速
+- DirectSound WDK 音频，硬件加速
 - 硬件加速 WDK DirectSound
-- 混合使用硬件 WDK DirectSound
-- pin WDK 音频，硬件混合
-- SRC WDK 音频硬件加速
-- 采样率转换 WDK 音频硬件加速
+- 混合硬件 WDK DirectSound
+- 固定 WDK 音频，硬件混合
+- SRC WDK 音频，硬件加速
+- 采样速率转换 WDK 音频，硬件加速
 ms.date: 10/27/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6abaac1b70d120c98f6cca4b7eb655ca330e81c6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 71c8290118c7b214a7f3cdff97f8ceb509774d36
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333774"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96784841"
 ---
 # <a name="directsound-hardware-acceleration-in-wdm-audio"></a>WDM 音频中的 DirectSound 硬件加速
 
@@ -24,23 +23,23 @@ ms.locfileid: "63333774"
 ## <span id="directsound_hardware_acceleration_in_wdm_audio"></span><span id="DIRECTSOUND_HARDWARE_ACCELERATION_IN_WDM_AUDIO"></span>
 
 
-本部分介绍了 WDM 音频驱动程序支持的 DirectSound 硬件加速。 论述了以下主题：
+本部分介绍 DirectSound 硬件加速的 WDM 音频驱动程序支持。 本文讨论了以下主题：
 
-[DirectSound 硬件加速的概述](overview-of-directsound-hardware-acceleration.md)
+[DirectSound 硬件加速概述](overview-of-directsound-hardware-acceleration.md)
 
-[WDM 音频中支持 2D DirectSound 加速](supporting-2d-directsound-acceleration-in-wdm-audio.md)
+[支持在 WDM 音频中进行 2D DirectSound 加速](supporting-2d-directsound-acceleration-in-wdm-audio.md)
 
-[WDM 音频中支持三维 DirectSound 加速](supporting-3d-directsound-acceleration-in-wdm-audio.md)
+[支持在 WDM 音频中进行 3D DirectSound 加速](supporting-3d-directsound-acceleration-in-wdm-audio.md)
 
 [DirectSound 节点排序要求](directsound-node-ordering-requirements.md)
 
-[支持 2D 和 3D Pin 的混合](supporting-a-mixture-of-2d-and-3d-pins.md)
+[支持混合使用 2D 和 3D 引脚](supporting-a-mixture-of-2d-and-3d-pins.md)
 
 [DirectSound 硬件加速和 SRC 滑块](directsound-hardware-acceleration-and-src-sliders.md)
 
 [公开自定义音频属性集](exposing-custom-audio-property-sets.md)
 
-[预提取的偏移量](prefetch-offsets.md)
+[预提取偏移量](prefetch-offsets.md)
 
  
 

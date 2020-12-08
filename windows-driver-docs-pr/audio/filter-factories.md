@@ -1,7 +1,6 @@
 ---
 title: 筛选器工厂
 description: 筛选器工厂
-ms.assetid: e836f941-274f-4e27-8069-753ef9ef2a06
 keywords:
 - 音频筛选 WDK 音频，筛选器工厂
 - 筛选器工厂 WDK 音频
@@ -12,12 +11,12 @@ keywords:
 - 实例化对 WDK 音频的筛选器
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a1c856196aa1e4362ce41513884e1dd0e174f2a2
-ms.sourcegitcommit: 372464be981a39781c71049126f36891cb5d0cad
+ms.openlocfilehash: 2b17c9c9045a950f5f734ff892bc53b4f3d22d96
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91645987"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96784805"
 ---
 # <a name="filter-factories"></a>筛选器工厂
 
@@ -31,7 +30,7 @@ ms.locfileid: "91645987"
 
 与任何其他 Microsoft Windows 驱动模型 (WDM) 驱动程序一样，筛选器工厂处理电源管理和安装功能。 在安装过程中，驱动程序的 INF 文件将注册一个或多个筛选器设备名称 (参阅) 的 [设备标识字符串](../install/device-identification-strings.md) 。 此过程将名称加载到系统注册表中，并将每个筛选器工厂与一个或多个 KS 筛选器类别关联，如 [安装音频适配器的设备接口](installing-device-interfaces-for-an-audio-adapter.md)中所述。 所有音频设备都在 KSCATEGORY 音频下进行分类 \_ ，但音频设备还可能会分类为音频渲染设备的 KSCATEGORY 渲染 (，如音频 \_ 渲染) 设备的渲染 \_ () 。 驱动程序通过在其下注册该设备的筛选器的各种类别来公布设备的常规功能。 例如，当 [SysAudio 系统驱动程序](kernel-mode-wdm-audio-components.md#sysaudio_system_driver)需要特定类型的音频设备时，它会在注册表中查找属于相应类别的设备。
 
-操作系统使用安装 API （如 [设备安装组件](../install/system-provided-device-installation-components.md)中所述）来发现和枚举注册表中的所有 KSCATEGORY \_ 音频筛选器工厂。 每个工厂的注册表项都指定筛选器工厂的友好名称和其设备名称，这是客户端传递给实例化筛选器的创建文件调用的长字符串。 此调用可能会从内核模式 [**ZwCreateFile**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntcreatefile) 或从用户模式 **CreateFile** 。 筛选器是一个内核模式对象，由内核句柄标识。 创建文件调用返回客户端可以用来引用筛选器的实例句柄。 音频图形中的用户模式客户端或上游筛选器可以使用此句柄来发送或转发对筛选器的 IOCTL 请求。 有关 **CreateFile**的详细信息，请参阅 Microsoft Windows SDK 文档。
+操作系统使用安装 API （如 [设备安装组件](../install/system-provided-device-installation-components.md)中所述）来发现和枚举注册表中的所有 KSCATEGORY \_ 音频筛选器工厂。 每个工厂的注册表项都指定筛选器工厂的友好名称和其设备名称，这是客户端传递给实例化筛选器的创建文件调用的长字符串。 此调用可能会从内核模式 [**ZwCreateFile**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntcreatefile) 或从用户模式 **CreateFile** 。 筛选器是一个内核模式对象，由内核句柄标识。 创建文件调用返回客户端可以用来引用筛选器的实例句柄。 音频图形中的用户模式客户端或上游筛选器可以使用此句柄来发送或转发对筛选器的 IOCTL 请求。 有关 **CreateFile** 的详细信息，请参阅 Microsoft Windows SDK 文档。
 
 例如，典型的 WDM 音频适配器卡可能驻留在 PCI 总线上，并且包含用于呈现或捕获波数据的多个 i/o 连接器。 该卡上的单个音频设备可能包含模拟音频输出插孔，用于驱动一套扬声器和一 lineout 线，并使用模拟音频输入插孔接收来自麦克风和 linein 电缆的信号。 WDM 音频系统将设备表示为一个筛选器，并将音频插孔表示为该筛选器上的 pin。
 
@@ -51,7 +50,7 @@ ms.locfileid: "91645987"
 
 [**PCNODE \_ 描述符**](/windows-hardware/drivers/ddi/portcls/ns-portcls-pcnode_descriptor)
 
-[**PCCONNECTION \_ 描述符**](/windows-hardware/drivers/ddi/portcls/ns-portcls-_pcconnection_descriptor)
+[**PCCONNECTION \_ 描述符**](/previous-versions/windows/hardware/drivers/ff537688(v=vs.85))
 
 若要从微型端口驱动程序获取筛选器描述符，端口驱动程序将调用 [**IMiniport：： GetDescription**](/windows-hardware/drivers/ddi/portcls/nf-portcls-iminiport-getdescription) 方法。
 

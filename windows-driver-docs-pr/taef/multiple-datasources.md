@@ -1,31 +1,30 @@
 ---
 title: 多个数据源
 description: 多个数据源
-ms.assetid: FD0B252F-1D70-4840-986F-94FF80D42246
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bd2518c0b91964ed13e57d4ff3a1d7c410b27f08
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 864ef8d39093bd4d4c2064eba25ce170093ce5a2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63355501"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96785415"
 ---
 # <a name="multiple-datasources"></a>多个数据源
 
 
-当您正在寻找一个或多个数据源的组合扩展时，多个数据源非常有用 ([基于表的数据源](table-data-source.md)， [PICT 基于数据源](pict-data-source.md)，或[基于 WMI 的数据源](wmi-data-source.md)).
+在查找 ([基于表的数据](table-data-source.md)源、 [基于 PICT](pict-data-source.md)的数据源或 [基于 WMI 的数据源](wmi-data-source.md)) 的一个或多个数据源的组合扩展时，多个数据源很有用。
 
-编写您测试的设计来高效地使用此功能极其重要。 让我们看一个示例的帮助的原因也是如此。 假设多个数据源的一部分，您要指定两个表基于数据源、 一个基于 WMI 的数据源和一个 PICT 基于数据源。 为了叙述方便，比方说，第一个表有 4 行、 第二个 5 行、 WMI 查询返回 2 个结果和 PICT 数据源生成 6 成对组合。 TAEF 将提出了两个集的参数的组合扩展。 这意味着将调用有问题的测试方法 (4 X 5 X 2 X 6 =) **240**倍 ！ 增加使用的参数的不同组合的测试方法调用的数量可能会产生逐渐减小结果，就会测试覆盖率。 因此，务必要设计经过认真考虑和权衡其他备选方法通过使用多个数据源的测试。 以下是要考虑一些的要点：
+精心设计测试设计，以有效地利用此功能。 我们来看一个示例，其中包含这样的示例。 假设你想要指定两个基于表的数据源，一个基于 WMI 的数据源和一个基于 PICT 的数据源。 对于参数，假设第一个表有4行，第二个行包含5行，WMI 查询返回2个结果，并且 PICT 数据源生成6个成对组合。 TAEF 将提供这些参数集的组合扩展。 这意味着将在 4 X 5 X 2 X 6 =) **240** 次 (调用相关测试方法！ 随着测试覆盖率的增加，将测试方法的调用次数与参数的不同组合增加可能会产生更多的结果。 这使得在使用多个数据源时，使用多个数据源设计测试非常重要。 下面是你可能需要考虑的一些要点：
 
--   请确保添加值具有多个表。 如果您不需要它们分隔开来，您所能想到了有效的参数组合自己。
--   检查是否可以使用约束，而不是多个表使用 PICT 模型文件。
--   检查是否是有价值的重构到多个测试的测试用例并将从多个数据源子集关联与每个新创建子测试。
+-   请确保它添加了一个包含多个表的值。 如果不需要单独使用这些参数，则可以自行使用参数的有效组合。
+-   检查是否可以将 PICT 模型文件与约束一起使用，而不是使用多个表。
+-   检查是否存在将你的测试用例重构为多个测试的值，以及如何将多个数据源中的子集与每个新创建的子测试相关联。
 
-## <a name="span-idspecifymultipledatasourcesspanspan-idspecifymultipledatasourcesspanspan-idspecifymultipledatasourcesspanspecify-multiple-datasources"></a><span id="Specify_multiple_DataSources"></span><span id="specify_multiple_datasources"></span><span id="SPECIFY_MULTIPLE_DATASOURCES"></span>指定多个数据源
+## <a name="span-idspecify_multiple_datasourcesspanspan-idspecify_multiple_datasourcesspanspan-idspecify_multiple_datasourcesspanspecify-multiple-datasources"></a><span id="Specify_multiple_DataSources"></span><span id="specify_multiple_datasources"></span><span id="SPECIFY_MULTIPLE_DATASOURCES"></span>指定多个数据源
 
 
-此处的关键方面是如何指定数据源。 让我们看看我们本机和托管的示例中的代码段。
+此处的关键方面是如何指定数据源。 让我们看看本机和托管示例中的代码片段。
 
 ### <a name="span-idnativespanspan-idnativespanspan-idnativespannative"></a><span id="Native"></span><span id="native"></span><span id="NATIVE"></span>本机
 
@@ -51,9 +50,9 @@ ms.locfileid: "63355501"
 19  } /* namespace Examples */ } /* namespace TestExecution */ } /* namespace WEX */
 ```
 
-请参阅行 11、 15 和 16 在上面的示例。 一般情况下，模式遵循以指定数据源是以分号分隔每个数据源规范的列表。 该规范看在托管代码也非常相似。
+请参阅上述示例中的第11、15和16行。 通常，用于指定数据源的模式是每个数据源规范的以分号分隔的列表。 规范在托管代码中的外观非常类似。
 
-### <a name="span-idmanagedspanspan-idmanagedspanspan-idmanagedspanmanaged"></a><span id="Managed"></span><span id="managed"></span><span id="MANAGED"></span>托管
+### <a name="span-idmanagedspanspan-idmanagedspanspan-idmanagedspanmanaged"></a><span id="Managed"></span><span id="managed"></span><span id="MANAGED"></span>经过
 
 ```cpp
 [TestMethod]
@@ -83,21 +82,21 @@ public void First()
 }
 ```
 
-示例还演示了如何在多个行中指定多个数据源。 当然，您可以在单独的一行 （如下所示），指定数据源，但您可以通过使用上面所示的构造显著提高可读性。
+这些示例还演示了在多行中指定多个数据源的方式。 当然，您可能已在一行上指定了数据源 (如下所示) ，但您可以使用以上所示的构造显著提高可读性。
 
-## <a name="span-idspecifyingdatasourceonasinglelinespanspan-idspecifyingdatasourceonasinglelinespanspan-idspecifyingdatasourceonasinglelinespanspecifying-datasource-on-a-single-line"></a><span id="Specifying_DataSource_on_a_single_line"></span><span id="specifying_datasource_on_a_single_line"></span><span id="SPECIFYING_DATASOURCE_ON_A_SINGLE_LINE"></span>在单个行上指定数据源
+## <a name="span-idspecifying_datasource_on_a_single_linespanspan-idspecifying_datasource_on_a_single_linespanspan-idspecifying_datasource_on_a_single_linespanspecifying-datasource-on-a-single-line"></a><span id="Specifying_DataSource_on_a_single_line"></span><span id="specifying_datasource_on_a_single_line"></span><span id="SPECIFYING_DATASOURCE_ON_A_SINGLE_LINE"></span>在单行上指定数据源
 
 
 ```cpp
 [DataSource("Table:CSharpAdvancedDataDrivenTests.xml#FirstTable;WMI:SELECT ProcessId FROM Win32_Service WHERE Name='Themes'")]
 ```
 
-只是为了再次重申：**将生成的每个单独的数据源的数据集的每个 n 向组合扩展一次运行的测试方法**。 例如，对于上面的托管示例中，安全地假定只有一个主题服务运行，并且知道有 3 行中提供的表数据源，测试方法将 3 次调用 （1 个）。 在本机示例的情况下，在 SecondTable 测试方法中，有两个表指定的数据源。 第一个表包含 3 个行，第二个表包含 4 行。 因此测试方法将调用为 12 倍 (3 X 4)。
+只是为了重新迭代： **对于每个单独数据源生成的数据集，将为每个 n 单向组合扩展运行一次测试方法**。 例如，对于上面托管的示例，安全假设只有一个主题服务在运行，并且知道提供的表数据源中有3行，则测试方法将被调用 (1 X 3) 三次。 在本机示例中，在 SecondTable 测试方法中，指定了两个表源。 第一个表包含3行，第二个表包含4行。 因此，测试方法将被调用 (3 X 4) 的12倍。
 
-## <a name="span-idconstraintsthatapplywhilespecifyingmultipledatasourcesspanspan-idconstraintsthatapplywhilespecifyingmultipledatasourcesspanspan-idconstraintsthatapplywhilespecifyingmultipledatasourcesspanconstraints-that-apply-while-specifying-multiple-datasources"></a><span id="Constraints_that_apply_while_specifying_Multiple_DataSources"></span><span id="constraints_that_apply_while_specifying_multiple_datasources"></span><span id="CONSTRAINTS_THAT_APPLY_WHILE_SPECIFYING_MULTIPLE_DATASOURCES"></span>指定多个数据源时应用的约束
+## <a name="span-idconstraints_that_apply_while_specifying_multiple_datasourcesspanspan-idconstraints_that_apply_while_specifying_multiple_datasourcesspanspan-idconstraints_that_apply_while_specifying_multiple_datasourcesspanconstraints-that-apply-while-specifying-multiple-datasources"></a><span id="Constraints_that_apply_while_specifying_Multiple_DataSources"></span><span id="constraints_that_apply_while_specifying_multiple_datasources"></span><span id="CONSTRAINTS_THAT_APPLY_WHILE_SPECIFYING_MULTIPLE_DATASOURCES"></span>指定多个数据源时应用的约束
 
 
-仅当你想要指定基于表的数据源中的多个数据源规范时，约束都适用。 **表数据源**必须指定为表：&lt;reative XML 文件路径&gt;\#&lt;TableId&gt;。 如果 TAEF 发现"TableId"用作单独的元数据时，它将假定数据源是一个基于表的数据源并继续操作。
+仅当要在多源规范中指定基于表的数据源时，约束才适用。 必须将 **表数据源** 指定为表： &lt; reative path to XML file &gt; \# &lt; TableId &gt; 。 如果 TAEF 发现以单独的元数据形式提供 "TableId"，它将假定数据源是基于单个表的数据源，然后继续。
 
  
 

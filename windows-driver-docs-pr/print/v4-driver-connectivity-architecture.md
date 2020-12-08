@@ -1,15 +1,14 @@
 ---
 title: V4 驱动程序连接体系结构
 description: V4 打印驱动程序模型通过双向架构提供对双向通信的丰富支持，简称为双向。
-ms.assetid: ED7C4A2D-449E-4271-9348-86EAC03B6E64
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d3c643aeb25251c0928207f0f57a11b40d5060e8
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 58797621d2c9ab98bb8ec71928fbe3712e5ba1cb
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89211929"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96785935"
 ---
 # <a name="v4-driver-connectivity-architecture"></a>V4 驱动程序连接体系结构
 
@@ -57,10 +56,10 @@ V4 驱动程序模型或打印类驱动程序不支持第三方端口监视器�
 </tr>
 <tr class="even">
 <td>关于</td>
-<td>来自 <a href="/windows-hardware/design/whitepapers/implementing-web-services-on-devices-for-printing" data-raw-source="[WS-Print Specification](/windows-hardware/design/whitepapers/implementing-web-services-on-devices-for-printing)">Ws 打印规范</a> 或 ws 打印1.1 规范的标准属性通过端口监视器填充到双向架构。</td>
+<td>来自 <a href="/windows-hardware/design/whitepapers/implementing-web-services-on-devices-for-printing" data-raw-source="[WS-Print Specification](/windows-hardware/design/whitepapers/implementing-web-services-on-devices-for-printing)">WS 打印规范</a> 或 WS-Print 1.1 规范的标准属性通过端口监视器填充到双向架构。</td>
 <td><p>您必须提供以下文件：</p>
 XML 双向扩展文件</td>
-<td>打印设备必须支持 WS Print v1.1 协议。</td>
+<td>打印设备必须支持 WS-Print 1.1 协议。</td>
 </tr>
 <tr class="odd">
 <td>TCP/IP (SNMP) </td>

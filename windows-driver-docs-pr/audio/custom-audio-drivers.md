@@ -1,7 +1,6 @@
 ---
 title: 自定义音频驱动程序
 description: 自定义音频驱动程序
-ms.assetid: d5f19a72-0b43-4fe1-b0e1-0198344b4d19
 keywords:
 - WDM 音频驱动程序 WDK，自定义
 - 音频驱动程序 WDK，自定义
@@ -10,12 +9,12 @@ keywords:
 - PortCls WDK 音频，自定义音频驱动程序
 ms.date: 05/08/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 50a72641928a23ea63f9805f7e30bddb6d6dd06a
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 703ccc2827a9ecef81781cc7f3062eb97208b423
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89208185"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96784891"
 ---
 # <a name="custom-audio-drivers"></a>自定义音频驱动程序
 

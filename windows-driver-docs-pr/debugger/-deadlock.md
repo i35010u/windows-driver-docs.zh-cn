@@ -1,9 +1,8 @@
 ---
-title: 死
+title: deadlock
 description: 死锁扩展显示了驱动程序验证程序的死锁检测选项收集的死锁的相关信息。
-ms.assetid: c0e6074f-8afe-4526-a30f-427aac67ab99
 keywords:
-- 死锁检测（驱动程序验证程序）
+- '驱动程序验证程序 (的死锁检测) '
 - 死锁 Windows 调试
 ms.date: 05/23/2017
 topic_type:
@@ -13,17 +12,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 541c9a0ae1ab9c980c3f5009f1e027dff13f929c
-ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
+ms.openlocfilehash: a30fd3a820de0e4b2a02e6dac5e886e1cb7876e5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "75209126"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96785323"
 ---
 # <a name="deadlock"></a>!deadlock
 
 
-**！死锁**扩展显示了驱动程序验证程序的**死锁检测**选项收集的死锁的相关信息。
+**！死锁** 扩展显示了驱动程序验证程序的 **死锁检测** 选项收集的死锁的相关信息。
 
 ```dbgcmd
 !deadlock 
@@ -46,8 +45,8 @@ ms.locfileid: "75209126"
 <td align="left"><p>不可用</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>Windows XP 和更高版本</strong></p></td>
-<td align="left"><p>Kdexts</p></td>
+<td align="left"><p><strong>Windows XP 及更高版本</strong></p></td>
+<td align="left"><p>Kdexts.dll</p></td>
 </tr>
 </tbody>
 </table>
@@ -56,18 +55,18 @@ ms.locfileid: "75209126"
 
 ### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-有关驱动程序验证程序的信息，请参阅 Windows 驱动程序工具包（WDK）文档。
+有关驱动程序验证程序的信息，请参阅 Windows 驱动程序工具包 (WDK) 文档。
 
 <a name="remarks"></a>备注
 -------
 
-此扩展仅在以下情况下提供有用信息：驱动程序验证程序的**死锁检测**选项检测到锁定层次结构冲突，并发出[**bug 检查 0xC4**](bug-check-0xc4--driver-verifier-detected-violation.md) （驱动程序\_验证程序\_检测到\_违规）。
+此扩展将仅在以下情况下提供有用信息：驱动程序验证程序的 **死锁检测** 选项检测到锁定层次结构冲突和发出 [**bug 检查 0XC4**](bug-check-0xc4--driver-verifier-detected-violation.md) (驱动程序 \_ 验证程序 \_ 检测到 \_ 冲突) 。
 
-如果没有任何参数， **！死锁**扩展将导致显示基本的锁层次结构拓扑。 如果此问题不是简单的循环死锁，则此命令将描述发生的情况。
+如果没有任何参数， **！死锁** 扩展将导致显示基本的锁层次结构拓扑。 如果此问题不是简单的循环死锁，则此命令将描述发生的情况。
 
-**！死锁 1**扩展会导致显示堆栈跟踪。 显示的堆栈将是在获取锁时处于活动状态的堆栈。
+**！死锁 1** 扩展会导致显示堆栈跟踪。 显示的堆栈将是在获取锁时处于活动状态的堆栈。
 
-下面是一个示例：
+以下是示例：
 
 ```dbgcmd
 0:kd> !deadlock
@@ -163,9 +162,9 @@ b1bf5d5d 8b4648           mov     eax,[esi+0x48]
 
 现在，你知道了源文件的名称和进行获取的行号。 在这种情况下，源文件将显示线程的行为如下所示：
 
--   线程1： **DummyActivateVcComplete**采用了**虚**微型端口锁。 然后，它称为**dummyQueueRecvBuffers**，它采用了**虚拟**全局锁。
+-   线程1： **DummyActivateVcComplete** 采用了 **虚** 微型端口锁。 然后，它称为 **dummyQueueRecvBuffers**，它采用了 **虚拟** 全局锁。
 
--   线程2： **dummyRxInterruptOnCompletion**采用全局锁。 然后，几行后，它会使用微型端口锁。
+-   线程2： **dummyRxInterruptOnCompletion** 采用全局锁。 然后，几行后，它会使用微型端口锁。
 
 此时，死锁会完全清晰。
 

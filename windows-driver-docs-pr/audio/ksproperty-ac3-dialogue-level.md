@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ E-ac3 \_ 对话框 \_ 级别
 description: KSPROPERTY \_ E-ac3 \_ 对话框 \_ LEVEL 属性指定 AC 3 编码流中音频程序内的口述对话的平均音量级别。
-ms.assetid: 8b88b631-abf7-4407-a7c1-ddacf849a81e
 keywords:
 - KSPROPERTY_AC3_DIALOGUE_LEVEL 音频设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2ca51a9930f4bf9dca762e33de040cf2a1ebaf4c
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 87a709fc0c48ac539d22ee41454ae5584eab8b88
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102348"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96784579"
 ---
 # <a name="ksproperty_ac3_dialogue_level"></a>KSPROPERTY \_ E-ac3 \_ 对话框 \_ 级别
 

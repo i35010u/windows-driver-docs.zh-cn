@@ -1,7 +1,6 @@
 ---
 title: 端口类简介
 description: 端口类简介
-ms.assetid: 5f986e0c-d021-4dee-85d3-ad69a3708dd8
 keywords:
 - 音频微型端口驱动程序 WDK，端口类
 - 微型端口驱动程序 WDK 音频，端口类
@@ -17,12 +16,12 @@ keywords:
 - PortCls WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6f37b65f9cbe4c67b866d2d4643f1d3198525ff5
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 2d7bf690f763a0f04f550a4cd209d10fd6d4f389
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89209091"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96784723"
 ---
 # <a name="introduction-to-port-class"></a>端口类简介
 
@@ -40,7 +39,7 @@ PortCls 在 Portcls.sys 系统文件中实现为导出驱动程序 (内核模式
 
 -   适配器驱动程序可调用的一组 helper 函数
 
--   *音频端口*驱动程序的集合
+-   *音频端口* 驱动程序的集合
 
 音频设备的硬件供应商负责提供 *适配器驱动程序*。 适配器驱动程序包括初始化和微型端口驱动程序管理代码 (包括 [**DriverEntry**](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_initialize) 函数) 和 *音频微型端口* 驱动程序的集合。
 
@@ -48,7 +47,7 @@ PortCls 在 Portcls.sys 系统文件中实现为导出驱动程序 (内核模式
 
 通常，端口驱动程序为每个音频 subdevice 类提供大部分功能。 例如，WaveRT 端口驱动程序执行将音频数据流式传输到基于 DMA 的音频设备所需的大部分工作，而微型端口驱动程序提供特定于设备的详细信息，如 DMA 地址和设备名称。
 
-音频适配器驱动程序和微型端口驱动程序通常是使用 Microsoft c + + 编写的，广泛使用 COM 接口。 端口-微型端口驱动程序体系结构促进了模块化设计。 微型端口驱动程序编写器应将其驱动程序实现为从 [IMiniport](/windows-hardware/drivers/ddi/portcls/nn-portcls-iminiport) 接口派生的 c + + 类，该接口是标头文件 Portcls 中定义的。 硬件初始化在驱动程序加载时执行-通常在**IMiniport**派生类的**Init**方法中 (例如， [**IMiniportWaveRT：： Init**](/windows-hardware/drivers/ddi/portcls/nf-portcls-iminiportwavert-init)) 。 有关音频微型端口驱动程序的 COM 实现的详细信息，请参阅 [内核中的 com](com-in-the-kernel.md)。
+音频适配器驱动程序和微型端口驱动程序通常是使用 Microsoft c + + 编写的，广泛使用 COM 接口。 端口-微型端口驱动程序体系结构促进了模块化设计。 微型端口驱动程序编写器应将其驱动程序实现为从 [IMiniport](/windows-hardware/drivers/ddi/portcls/nn-portcls-iminiport) 接口派生的 c + + 类，该接口是标头文件 Portcls 中定义的。 硬件初始化在驱动程序加载时执行-通常在 **IMiniport** 派生类的 **Init** 方法中 (例如， [**IMiniportWaveRT：： Init**](/windows-hardware/drivers/ddi/portcls/nf-portcls-iminiportwavert-init)) 。 有关音频微型端口驱动程序的 COM 实现的详细信息，请参阅 [内核中的 com](com-in-the-kernel.md)。
 
 下图说明了端口和微型端口驱动程序之间的关系，以及它们在音频堆栈中的位置。
 

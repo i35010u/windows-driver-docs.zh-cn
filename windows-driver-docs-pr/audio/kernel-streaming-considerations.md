@@ -1,15 +1,14 @@
 ---
 title: 内核流式处理注意事项
 description: 内核流式处理注意事项主题阐明了与蓝牙绕过音频流相关的要求和其他特别注意事项。
-ms.assetid: CFC4ACA0-050D-48E1-AA6A-7649040EBF7A
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 314508710c729d65afb3a63fe265f303d4b603f9
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: d74f9841da5dfc01800d3c6e85eae03d06957dd1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89207047"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96784701"
 ---
 # <a name="kernel-streaming-considerations"></a>内核流式处理注意事项
 
@@ -25,11 +24,11 @@ ms.locfileid: "89207047"
 ## <a name="span-idtopologyspanspan-idtopologyspanspan-idtopologyspantopology"></a><span id="Topology"></span><span id="topology"></span><span id="TOPOLOGY"></span>拓扑
 
 
-所有蓝牙免提设备都支持捕获和呈现。 因此，音频驱动程序应公开用于免提设备的内核流式处理 (KS) 拓扑，如下面的关系图中所示，支持呈现和捕获。
+所有蓝牙 Hands-Free 设备都支持捕获和呈现。 因此，音频驱动程序应公开 Hands-Free 设备的内核流式处理 () 拓扑，如下面的关系图所示，以支持呈现和捕获。
 
 ![显示音频驱动程序为免提设备公开的 ks 拓扑的关系图，以支持呈现和捕获。](images/btth-bypass-topology.png)
 
-**注意**   音频驱动程序开发人员可以选择是为捕获路径和呈现路径还是单独的筛选器实施单个筛选器。 但是，HFP 设备仅允许 GUID \_ DEVINTERFACE \_ 蓝牙 \_ HFP \_ SCO \_ HCIBYPASS 设备接口上的单个文件对象。 因此，使用两个筛选器的设计需要允许两个筛选器共享单个文件对象。
+**注意**  音频驱动程序开发人员可以选择是为捕获路径和呈现路径还是单独的筛选器实施单个筛选器。 但是，HFP 设备仅允许 GUID \_ DEVINTERFACE \_ 蓝牙 \_ HFP \_ SCO \_ HCIBYPASS 设备接口上的单个文件对象。 因此，使用两个筛选器的设计需要允许两个筛选器共享单个文件对象。
 
  
 

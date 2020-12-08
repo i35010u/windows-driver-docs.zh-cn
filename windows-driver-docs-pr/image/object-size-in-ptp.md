@@ -1,15 +1,14 @@
 ---
 title: PTP 中的对象大小
 description: PTP 中的对象大小
-ms.assetid: bc54e057-3c98-457b-859a-79d216b2a34d
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a21b550712d4c40042110061d35f889ba14e6b0d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3026d70666c1260cffcb3bbab48b41a3f174d328
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379650"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96785203"
 ---
 # <a name="object-size-in-ptp"></a>PTP 中的对象大小
 
@@ -17,7 +16,7 @@ ms.locfileid: "63379650"
 
 
 
-ObjectInfo 数据集的 ObjectCompressedSize 字段是可选的中 PIMA 15740 标准，但 Microsoft PTP WIA 微型驱动程序需要此字段，才能为非零值。
+ObjectInfo 数据集的 ObjectCompressedSize 字段在 PIMA INDIAN DIABETES 15740 标准中是可选的，但 Microsoft PTP WIA 微型驱动程序要求此字段为非零值。
 
  
 

@@ -1,15 +1,14 @@
 ---
 title: DirectMusic 用户模式合成器和合成器接收器接口
 description: DirectMusic 用户模式合成器和合成器接收器接口
-ms.assetid: 2b25f605-d9e6-415e-8f45-08f7cdd2f625
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 300de362dd4b7c01131403ceec710f040d8c888f
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 88b307440a0aea1a727f866e69cb011b7c8207bc
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90714794"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96784853"
 ---
 # <a name="directmusic-user-mode-synth-and-synth-sink-interfaces"></a>DirectMusic 用户模式合成器和合成器接收器接口
 

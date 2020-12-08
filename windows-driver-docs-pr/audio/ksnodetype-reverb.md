@@ -1,7 +1,6 @@
 ---
-title: KSNODETYPE\_混响
-description: KSNODETYPE\_混响
-ms.assetid: 789503d8-b642-4c66-ad06-55431ca075b8
+title: KSNODETYPE \_ 回音
+description: KSNODETYPE \_ 回音
 keywords:
 - KSNODETYPE_REVERB 音频设备
 topic_type:
@@ -12,26 +11,26 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a63436780f419149ddb2680291de923446d6c6b4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 169aec910f605415be4819938b8107ac852d3ddc
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333176"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96784609"
 ---
-# <a name="ksnodetypereverb"></a>KSNODETYPE\_混响
+# <a name="ksnodetype_reverb"></a>KSNODETYPE \_ 回音
 
 
 ## <span id="ddk_ksnodetype_reverb_ks"></span><span id="DDK_KSNODETYPE_REVERB_KS"></span>
 
 
-KSNODETYPE\_混响节点表示混响 （或"混响"） 控件。 混响节点有一个输入的流和一个输出流，以及输入和输出流具有相同的数据格式。 该节点将混响添加到输出流。
+KSNODETYPE \_ 回音节点表示 ) 控件的一个 reverberation (或 "回音"。 回音节点有一个输入流和一个输出流，并且输入流和输出流具有相同的数据格式。 节点将 reverberation 添加到输出流中。
 
-KSNODETYPE\_混响节点应支持以下必需的属性：
+KSNODETYPE \_ 回音节点应支持以下必需属性：
 
-[**KSPROPERTY\_AUDIO\_REVERB\_LEVEL**](ksproperty-audio-reverb-level.md)
+[**KSPROPERTY \_ 音频 \_ 回音 \_ 电平**](ksproperty-audio-reverb-level.md)
 
-[**KSPROPERTY\_AUDIO\_REVERB\_TIME**](ksproperty-audio-reverb-time.md)
+[**KSPROPERTY \_ 音频 \_ 回音 \_ 时间**](ksproperty-audio-reverb-time.md)
 
  
 

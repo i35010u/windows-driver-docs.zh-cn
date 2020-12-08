@@ -1,15 +1,14 @@
 ---
 title: ValidatePrintTicket 打印票证支持
 description: 打印子系统调用此方法来验证 PrintTicket 对象的内容和格式。
-ms.assetid: 3a893bce-9d05-4672-8e97-410fc84d6053
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a552f0036071b250995f7be74271efa464273bfd
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 94b576374f15ed633e91b4e867f8da9ce12aa932
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89211889"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96785851"
 ---
 # <a name="validateprintticket-print-ticket-support"></a>ValidatePrintTicket 打印票证支持
 

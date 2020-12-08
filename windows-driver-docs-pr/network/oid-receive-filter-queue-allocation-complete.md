@@ -1,23 +1,22 @@
 ---
 title: OID_RECEIVE_FILTER_QUEUE_ALLOCATION_COMPLETE
 description: NDIS 协议驱动程序发出对象标识符 (OID) 方法请求 OID_RECEIVE_FILTER_QUEUE_ALLOCATION_COMPLETE，以通知微型端口驱动程序已为当前的接收队列分配完成分配。
-ms.assetid: d09fcab5-4c3b-432a-ba9e-fd4269537de6
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_RECEIVE_FILTER_QUEUE_ALLOCATION_COMPLETE 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 92f9a6023c5b441c8831e5dd88f040082ffe73dd
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 6f3992435d83c6103e296478b1045497fd864447
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105884"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96786063"
 ---
 # <a name="oid_receive_filter_queue_allocation_complete"></a>OID \_ 接收 \_ 筛选器 \_ 队列 \_ 分配 \_ 完成
 
 
 NDIS 协议驱动程序发出对象标识符 (oid) 方法请求 OID \_ 接收 \_ 筛选器 \_ 队列 \_ 分配 \_ 完成，通知微型端口驱动程序已为当前的接收队列分配完成分配。
 
-[**Ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的**InformationBuffer**成员包含指向[**ndis \_ 接收 \_ 队列 \_ 分配 \_ 完成 \_ 数组**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_queue_allocation_complete_array)结构的指针，该结构后跟每个队列的[**ndis \_ 接收 \_ 队列 \_ 分配 \_ 完成 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_queue_allocation_complete_parameters)结构。 成功从 OID 方法请求返回后， **NDIS \_ OID \_ 请求**结构的**InformationBuffer**成员包含指向相同结构数组的指针，每个**NDIS \_ 接收 \_ 队列 \_ 分配 \_ 完成 \_ 参数**结构的**CompletionStatus**成员都包含每个队列的完成状态。
+[**Ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的 **InformationBuffer** 成员包含指向 [**ndis \_ 接收 \_ 队列 \_ 分配 \_ 完成 \_ 数组**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_queue_allocation_complete_array)结构的指针，该结构后跟每个队列的 [**ndis \_ 接收 \_ 队列 \_ 分配 \_ 完成 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_queue_allocation_complete_parameters)结构。 成功从 OID 方法请求返回后， **NDIS \_ OID \_ 请求** 结构的 **InformationBuffer** 成员包含指向相同结构数组的指针，每个 **NDIS \_ 接收 \_ 队列 \_ 分配 \_ 完成 \_ 参数** 结构的 **CompletionStatus** 成员都包含每个队列的完成状态。
 
 <a name="remarks"></a>备注
 -------
@@ -93,7 +92,7 @@ NDIS 协议驱动程序发出对象标识符 (oid) 方法请求 OID \_ 接收 \_
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**NdisMIndicateReceiveNetBufferLists**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismindicatereceivenetbufferlists)

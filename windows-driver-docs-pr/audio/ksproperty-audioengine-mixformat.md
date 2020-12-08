@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ AUDIOENGINE \_ MIXFORMAT
 description: KSPROPERTY \_ AUDIOENGINE \_ MIXFORMAT 属性请求检索硬件音频引擎中混音器的设置。
-ms.assetid: 12353E72-1092-44B4-861A-90C198237670
 keywords:
 - KSPROPERTY_AUDIOENGINE_MIXFORMAT 音频设备
 topic_type:
@@ -14,17 +13,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 22f7d8067b1befe9e53981fd5c870a965d91ffff
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 0676107084b325784b97cc4ba126a31ef8478458
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102008"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96784431"
 ---
 # <a name="ksproperty_audioengine_mixformat"></a>KSPROPERTY \_ AUDIOENGINE \_ MIXFORMAT
 
 
-**KSPROPERTY \_ AUDIOENGINE \_ MIXFORMAT**属性请求检索硬件音频引擎中混音器的设置。
+**KSPROPERTY \_ AUDIOENGINE \_ MIXFORMAT** 属性请求检索硬件音频引擎中混音器的设置。
 
 ### <a name="span-idusage_summary_tablespanspan-idusage_summary_tablespanspan-idusage_summary_tablespanusage-summary-table"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用情况摘要表
 
@@ -60,7 +59,7 @@ ms.locfileid: "90102008"
 
 ### <a name="span-idreturn_valuespanspan-idreturn_valuespanspan-idreturn_valuespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>返回值
 
-**KSPROPERTY \_ AUDIOENGINE \_ MIXFORMAT**属性请求返回**状态 \_ SUCCESS**以指示已成功完成。 否则，请求将返回相应的错误状态代码。
+**KSPROPERTY \_ AUDIOENGINE \_ MIXFORMAT** 属性请求返回 **状态 \_ SUCCESS** 以指示已成功完成。 否则，请求将返回相应的错误状态代码。
 
 <a name="remarks"></a>备注
 -------

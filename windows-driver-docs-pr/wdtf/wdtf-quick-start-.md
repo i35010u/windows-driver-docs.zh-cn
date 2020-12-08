@@ -1,15 +1,14 @@
 ---
 title: WDTF 快速入门
 description: Windows 驱动程序工具包提供了一个集成解决方案，用于编写、部署和运行使用 Windows 驱动程序测试框架 (WDTF) 的测试。
-ms.assetid: 77402D9A-DD21-4B7F-B052-43DB8C04EA1B
 ms.date: 10/22/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 2139f339382bc972d1498f222017d777ab9fa5c2
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: 489fab2dff64767994f246ea11ed3c6d31249806
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89403530"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96785333"
 ---
 # <a name="wdtf-quick-start"></a>WDTF 快速入门
 

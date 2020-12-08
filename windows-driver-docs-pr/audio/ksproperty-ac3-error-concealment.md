@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ E-ac3 \_ 错误 \_ CONCEALMENT
 description: KSPROPERTY \_ E-ac3 \_ ERROR \_ CONCEALMENT 属性指定在播放过程中应隐藏 AC 3 编码流中的错误的方式。
-ms.assetid: bdf3dd8f-0757-4679-b051-63736503c5b4
 keywords:
 - KSPROPERTY_AC3_ERROR_CONCEALMENT 音频设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 449b0bb4b5134713435977bae1d9aa4543c50be8
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: a98a84ba8205fc313da0ef166ee8f2ceeb58045c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102340"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96784571"
 ---
 # <a name="ksproperty_ac3_error_concealment"></a>KSPROPERTY \_ E-ac3 \_ 错误 \_ CONCEALMENT
 

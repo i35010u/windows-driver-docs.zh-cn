@@ -1,36 +1,35 @@
 ---
 title: OID_SWITCH_PORT_PROPERTY_ADD
 description: Hyper-v 可扩展交换机的协议边缘 (OID 发出对象标识符) 设置 OID_SWITCH_PORT_PROPERTY_ADD 请求，通知有关为可扩展交换机端口添加策略属性的可扩展交换机扩展。
-ms.assetid: 6F246E5A-A02A-4303-9DB0-51E2FD4DC9E7
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_SWITCH_PORT_PROPERTY_ADD 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 7a29e7515f9f7eb6ae3d0a94315227f91c049bce
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 59543d75f4ca8ded2ff9e4b8117cd2fcb3e564b0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106722"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96786061"
 ---
 # <a name="oid_switch_port_property_add"></a>OID \_ 交换机 \_ 端口 \_ 属性 \_ 添加
 
 
 Hyper-v 可扩展交换机的协议边缘 (OID 发出对象标识符) 设置 OID \_ 交换机 \_ 端口 \_ 属性 " \_ 添加"，以通知可扩展交换机扩展有关为可扩展交换机端口添加策略属性的信息。
 
-[**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的**InformationBuffer**成员包含指向缓冲区的指针。 此缓冲区包含以下数据：
+[**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的 **InformationBuffer** 成员包含指向缓冲区的指针。 此缓冲区包含以下数据：
 
 -   [**NDIS \_ 交换机 \_ 端口 \_ 属性 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_port_property_parameters)结构，指定端口策略的参数的标识和类型。
 
--   包含端口策略参数的属性缓冲区。 属性缓冲区包含一个结构，该结构基于[**NDIS \_ 交换机 \_ 端口 \_ 属性 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_port_property_parameters)结构的**PropertyType**成员。 例如，如果 **PropertyType** 成员设置为 **NdisSwitchPortPropertyTypeVlan**，则属性缓冲区包含 [**NDIS \_ 交换机 \_ 端口 \_ 属性 \_ VLAN**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_port_property_vlan) 结构。
+-   包含端口策略参数的属性缓冲区。 属性缓冲区包含一个结构，该结构基于 [**NDIS \_ 交换机 \_ 端口 \_ 属性 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_port_property_parameters)结构的 **PropertyType** 成员。 例如，如果 **PropertyType** 成员设置为 **NdisSwitchPortPropertyTypeVlan**，则属性缓冲区包含 [**NDIS \_ 交换机 \_ 端口 \_ 属性 \_ VLAN**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_port_property_vlan) 结构。
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 转发扩展可以处理 OID \_ 交换机 \_ 端口 \_ 属性添加的 oid 设置请求 \_ 。 所有其他类型的扩展都必须调用 [**NdisFOidRequest**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfoidrequest) ，将 OID 请求转发到可扩展交换机驱动程序堆栈中的下一个扩展。
 
 此扩展可以通过返回 \_ \_ \_ OID 请求未接受的 NDIS 状态数据来否决添加端口属性 \_ 。 例如，如果扩展无法分配资源来强制在端口上配置策略，则它应否决添加请求。
 
-**注意**   如果扩展返回其他 NDIS \_ 状态 \_ *Xxx*错误状态代码，则创建通知也被否决。 然而，为暂时性方案返回状态代码（例如返回 NDIS \_ 状态 \_ 资源）可能会导致创建通知重试。
+**注意** 如果扩展返回其他 NDIS \_ 状态 \_ *Xxx* 错误状态代码，则创建通知也被否决。 然而，为暂时性方案返回状态代码（例如返回 NDIS \_ 状态 \_ 资源）可能会导致创建通知重试。
 
  
 

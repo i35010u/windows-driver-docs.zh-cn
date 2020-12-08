@@ -1,7 +1,6 @@
 ---
 title: 公开多声道节点
 description: 公开多声道节点
-ms.assetid: 48ee3b33-fb97-4e71-bf6f-5dbdb76aa7f8
 keywords:
 - 音频属性 WDK，多通道节点
 - WDM 音频属性 WDK，多通道节点
@@ -18,12 +17,12 @@ keywords:
 - 通道多通道支持 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 69d1826d22af05cece1fc13254bfa3021239c272
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 2a24c037c27599b84466a0e4fba7b48f56e0a923
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89208015"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96784819"
 ---
 # <a name="exposing-multichannel-nodes"></a>公开多声道节点
 
@@ -39,7 +38,7 @@ ms.locfileid: "89208015"
 
 [**KSNODETYPE \_ 音**](./ksnodetype-tone.md)
 
-特别是，没有任何机制可用于在节点上显式查询它支持的通道数。 尽管存在此问题的解决方法，但存在一些缺点。 例如，客户端可以使用 [**KSPROPERTY \_ AUDIO \_ VOLUMELEVEL**](./ksproperty-audio-volumelevel.md) 属性以迭代方式查询每个通道的卷级别的卷节点 ([**KSNODETYPE \_ 卷**](./ksnodetype-volume.md)) -0、1等等--直到请求返回错误，指示不存在更多通道。 但是，这种方法需要多个查询，并且太低效，无法处理更新的多通道音频设备。 在 Windows XP 和更高版本的操作系统中，通过在[**KSPROPERTY \_ MEMBERSHEADER**](/windows-hardware/drivers/ddi/ks/ns-ks-ksproperty_membersheader)结构的**Flags**成员中定义两个附加的标志位来解决此限制，属性处理程序会输出该标志来响应基本支持查询：
+特别是，没有任何机制可用于在节点上显式查询它支持的通道数。 尽管存在此问题的解决方法，但存在一些缺点。 例如，客户端可以使用 [**KSPROPERTY \_ AUDIO \_ VOLUMELEVEL**](./ksproperty-audio-volumelevel.md) 属性以迭代方式查询每个通道的卷级别的卷节点 ([**KSNODETYPE \_ 卷**](./ksnodetype-volume.md)) -0、1等等--直到请求返回错误，指示不存在更多通道。 但是，这种方法需要多个查询，并且太低效，无法处理更新的多通道音频设备。 在 Windows XP 和更高版本的操作系统中，通过在 [**KSPROPERTY \_ MEMBERSHEADER**](/windows-hardware/drivers/ddi/ks/ns-ks-ksproperty_membersheader)结构的 **Flags** 成员中定义两个附加的标志位来解决此限制，属性处理程序会输出该标志来响应基本支持查询：
 
 -   KSPROPERTY \_ 成员 \_ 标志 \_ BASICSUPPORT 多 \_ 通道
 
@@ -49,7 +48,7 @@ ms.locfileid: "89208015"
 
     处理程序在此标志位和 KSPROPERTY \_ 成员 \_ 标志 BASICSUPPORT 多通道标志位之间执行位或运算， \_ \_ 以指示单个属性值在节点中的所有通道上统一应用。 例如，如果硬件只为所有通道提供单个卷级控制，则卷节点的基本支持处理程序将设置 KSPROPERTY \_ MEMBER \_ 标志 \_ BASICSUPPORT \_ 统一标志以指示此限制。 如果未设置此标志，则每个通道的卷级别可以独立于其他通道的卷级别进行控制。
 
-    **注意**   \_ \_ \_ \_ Windows VISTA 操作系统不使用 KSPROPERTY 成员标志 BASICSUPPORT 统一标志。
+    **注意**  \_ \_ \_ \_ Windows VISTA 操作系统不使用 KSPROPERTY 成员标志 BASICSUPPORT 统一标志。
 
      
 

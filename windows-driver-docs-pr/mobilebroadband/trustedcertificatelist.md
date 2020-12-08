@@ -1,15 +1,14 @@
 ---
 title: TrustedCertificateList
 description: TrustedCertificateList
-ms.assetid: 116ee448-b0a8-4441-845c-945fc5ae0ddd
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 22a0fa1e9e3214929cf9ae9e027badc305b2892e
-ms.sourcegitcommit: 7e4d9508198a30bdc1cb6eda83852dda4e42213e
+ms.openlocfilehash: 06399c2786d74956a2873f1b0598abf66c1c3506
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89304272"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96786179"
 ---
 # <a name="trustedcertificatelist"></a>TrustedCertificateList
 
@@ -41,7 +40,7 @@ TrustedCertificateList 元素指定操作员的受信任证书列表。
 <thead>
 <tr class="header">
 <th>元素</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -65,7 +64,7 @@ TrustedCertificateList 元素指定操作员的受信任证书列表。
 <thead>
 <tr class="header">
 <th>元素</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>

@@ -1,15 +1,14 @@
 ---
 title: V4 打印机驱动程序用户界面
 description: V4 打印驱动程序支持 Windows 桌面 UI 和 Microsoft Store 应用 UI 中的自定义。
-ms.assetid: DE45C0F3-3385-451D-AD29-94D28089E9C3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8c8bd83dd13d16e8809be026767fe852e59eec18
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 2049b6d0c8116797bd1bea1c70702090fe081f3a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89211901"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96785877"
 ---
 # <a name="v4-printer-driver-user-interfaces"></a>V4 打印机驱动程序用户界面
 

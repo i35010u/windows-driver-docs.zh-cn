@@ -1,7 +1,6 @@
 ---
 title: XPS 筛选器
 description: XPS 筛选器
-ms.assetid: dd8044a6-6558-488e-9508-a83718fabb7d
 keywords:
 - XPSDrv 打印机驱动程序 WDK，呈现模块
 - 渲染模块 WDK XPSDrv，XPS 筛选器
@@ -11,12 +10,12 @@ keywords:
 - IPrintPipelineFilter
 ms.date: 06/15/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 804cf002262580459e7554312ff8d74f97984c90
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 6e0b4e8cf3b2f478e1cf9978315fe6743d3a73fc
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89215381"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96785739"
 ---
 # <a name="xps-filters"></a>XPS 筛选器
 

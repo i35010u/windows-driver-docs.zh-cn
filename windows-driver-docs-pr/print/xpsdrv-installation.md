@@ -1,18 +1,17 @@
 ---
 title: XPSDrv 安装
 description: XPSDrv 安装
-ms.assetid: 0b5ef114-2862-46f9-bd32-ae09fa4e6a92
 keywords:
 - XPSDrv 打印机驱动程序 WDK，安装
 - INF 文件 WDK 打印，XPSDrv 打印机驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 84dec8ad715ce7f45958f5abea15f82291e39f5e
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 58c28dac8ef71f2786a1d29b40c845b4cc2f7fa8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89216322"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96785717"
 ---
 # <a name="xpsdrv-installation"></a>XPSDrv 安装
 

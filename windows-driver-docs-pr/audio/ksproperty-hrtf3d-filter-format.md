@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ HRTF3D \_ 筛选器 \_ 格式
 description: KSPROPERTY \_ HRTF3D \_ filter \_ FORMAT 属性检索 HRTF 算法使用的筛选器格式。
-ms.assetid: 7e4e869e-60ae-4266-93e4-0b6118951417
 keywords:
 - KSPROPERTY_HRTF3D_FILTER_FORMAT 音频设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5264bd0a055cbd12e9a1bd8a57b970c74e31fb5b
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 140463d8ce5c44d49ac00462e8fcda202d01441d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102494"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96784367"
 ---
 # <a name="ksproperty_hrtf3d_filter_format"></a>KSPROPERTY \_ HRTF3D \_ 筛选器 \_ 格式
 

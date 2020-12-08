@@ -1,7 +1,6 @@
 ---
 title: 音频属性请求
 description: 音频属性请求
-ms.assetid: dcfd139c-fca3-4068-8324-aa2c952dbc1f
 keywords:
 - 音频属性 WDK，请求
 - WDM 音频属性 WDK，请求
@@ -15,12 +14,12 @@ keywords:
 - 属性请求 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f0ec708d6d102e9be60a821e9730acb3ccd2e7dd
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 2730228c1c18072218f66f9ed2f0a77fba16c9ce
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90714824"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96784961"
 ---
 # <a name="audio-property-requests"></a>音频属性请求
 

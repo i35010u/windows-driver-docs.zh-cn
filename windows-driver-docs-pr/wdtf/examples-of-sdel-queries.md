@@ -1,18 +1,17 @@
 ---
 title: SDEL 查询示例
 description: SDEL 查询中使用的设备关系标记的示例
-ms.assetid: A99d68D2-31A2-99B5-841F-A3969334E39A
 keywords:
 - SDEL
 - SDEL 查询
 ms.date: 09/03/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: d8ec47e71bf7ff2598734f91593eafc0d94d5e7d
-ms.sourcegitcommit: bd72676caf2bf5c9738c4081c778316919b85d30
+ms.openlocfilehash: f92c0d4f9d53e48b93b0fcf3e549ad09ea535748
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89456644"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96785383"
 ---
 # <a name="examples-of-sdel-queries"></a>SDEL 查询示例
 

@@ -1,7 +1,6 @@
 ---
 title: IRP_MJ_LOCK_CONTROL
 description: IRP \_ MJ \_ 锁定 \_ 控制
-ms.assetid: db21d779-c423-42bd-a94b-4d8c8fd1f7cb
 keywords:
 - IRP_MJ_LOCK_CONTROL 可安装的文件系统驱动程序
 topic_type:
@@ -12,12 +11,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7d50a1c6d8630f40753708f17ce224caff2390f1
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 895995b32d0ffec8c475b76cdc6ec8fa97aaff7e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89065938"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96785227"
 ---
 # <a name="irp_mj_lock_control"></a>IRP \_ MJ \_ 锁定 \_ 控制
 
@@ -74,10 +73,10 @@ IRP \_ MJ \_ LOCK \_ 控制请求由 i/o 管理器和其他操作系统组件以
 
 执行任何所需的处理后，文件系统筛选器驱动程序应将 IRP 向下传递到堆栈中的下一个较低的驱动程序。
 
-## <a name="parameters"></a>parameters
+## <a name="parameters"></a>参数
 
 
-文件系统或筛选器驱动程序与给定的 IRP 一起调用[**IoGetCurrentIrpStackLocation**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetcurrentirpstacklocation) ，以获取指向其自己的*IrpSp*[**堆栈位置**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_stack_location)的指针，如以下列表所示。  (IRP 显示为 *irp*。 ) 驱动程序可以使用在处理锁定控制请求中的以下 irp 成员和 irp 堆栈位置设置的信息：
+文件系统或筛选器驱动程序与给定的 IRP 一起调用 [**IoGetCurrentIrpStackLocation**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetcurrentirpstacklocation) ，以获取指向其自己的 *IrpSp*[**堆栈位置**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_stack_location)的指针，如以下列表所示。  (IRP 显示为 *irp*。 ) 驱动程序可以使用在处理锁定控制请求中的以下 irp 成员和 irp 堆栈位置设置的信息：
 
 <a href="" id="deviceobject"></a>*DeviceObject*  
 指向目标设备对象的指针。
@@ -86,9 +85,9 @@ IRP \_ MJ \_ LOCK \_ 控制请求由 i/o 管理器和其他操作系统组件以
 指向 [**IO \_ 状态 \_ 块**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_status_block) 结构的指针，该结构接收最终完成状态和有关请求的操作的信息。
 
 <a href="" id="irpsp--fileobject"></a>*IrpSp- &gt; FileObject*  
-指向与 *DeviceObject*关联的文件对象的指针。
+指向与 *DeviceObject* 关联的文件对象的指针。
 
-*IrpSp- &gt; FileObject*参数包含指向**RelatedFileObject**字段的指针，该字段也是文件 \_ 对象结构。 文件对象结构的 **RelatedFileObject** 字段在 \_ 处理 IRP \_ MJ LOCK 控件期间无效 \_ \_ ，不应使用。
+*IrpSp- &gt; FileObject* 参数包含指向 **RelatedFileObject** 字段的指针，该字段也是文件 \_ 对象结构。 文件对象结构的 **RelatedFileObject** 字段在 \_ 处理 IRP \_ MJ LOCK 控件期间无效 \_ \_ ，不应使用。
 
 <a href="" id="irpsp--flags"></a>*IrpSp- &gt; 标志*  
 以下一项或多项操作：

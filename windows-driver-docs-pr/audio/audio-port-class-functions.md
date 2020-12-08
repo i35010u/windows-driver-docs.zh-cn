@@ -1,15 +1,14 @@
 ---
 title: 音频端口类函数
 description: 音频端口类函数
-ms.assetid: dc8f32e8-b01c-4f06-a32f-c08f76001f79
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7b7f810b9bffbc5cd24f8086b890c3996784605f
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: a8f8e1bd9dd59cf8e4e9f46f9f4e1d8a5ec90be7
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89208295"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96784967"
 ---
 # <a name="audio-port-class-functions"></a>音频端口类函数
 

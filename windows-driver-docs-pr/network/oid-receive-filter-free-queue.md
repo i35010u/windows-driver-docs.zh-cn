@@ -1,25 +1,24 @@
 ---
 title: OID_RECEIVE_FILTER_FREE_QUEUE
 description: NDIS 协议驱动程序 (OID 发出对象标识符) 将 OID_RECEIVE_FILTER_FREE_QUEUE 的请求设置为释放接收队列。
-ms.assetid: ee8cff69-2f5e-4798-9c18-28e996dd1dd4
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_RECEIVE_FILTER_FREE_QUEUE 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: f01b0be8d872baf14dc9bae78ce91ea87e513e9a
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 547c1dec5e349ec2e114cc6b1f6850ea6f090a99
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102788"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96786085"
 ---
 # <a name="oid_receive_filter_free_queue"></a>OID \_ 接收 \_ 筛选器 \_ 可用 \_ 队列
 
 
 NDIS 协议驱动程序发出对象标识符 (OID) 设置 OID \_ 接收 \_ 筛选器 \_ 可用队列的请求 \_ ，以释放接收队列。
 
-[**Ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的**InformationBuffer**成员包含指向[**ndis \_ 接收 \_ 队列 \_ 可用 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_queue_free_parameters)结构的指针，该结构具有类型为**ndis \_ 接收 \_ 队列 \_ ID**的队列标识符。
+[**Ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的 **InformationBuffer** 成员包含指向 [**ndis \_ 接收 \_ 队列 \_ 可用 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_queue_free_parameters)结构的指针，该结构具有类型为 **ndis \_ 接收 \_ 队列 \_ ID** 的队列标识符。
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 \_ \_ \_ \_ 对于 NDIS 6.20 和更高版本的微型端口驱动程序，oid 请求 oid 接收筛选器免费队列是可选的。 这对于支持虚拟机队列接口的微型端口驱动程序是必需的。
@@ -30,7 +29,7 @@ NDIS 协议驱动程序发出对象标识符 (OID) 设置 OID \_ 接收 \_ 筛�
 
 1.  网络适配器停止数据的 DMA 传输以接收与接收队列关联的缓冲区，在此之后，队列必须进入 DMA 停止状态。 网络适配器在收到 [oid \_ 接收筛选器 " \_ \_ 清除 \_ 筛选器](oid-receive-filter-clear-filter.md) oid 请求" 时可能会停止 DMA 活动，以清除接收队列中的最后一个 set 筛选器。
 
-2.  微型端口驱动程序使用[**ndis \_ 接收 \_ 队列 \_ 状态**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_receive_queue_state)结构设置为 " **NdisReceiveQueueOperationalStateDmaStopped** " 的**QueueState**成员生成[**NDIS \_ 状态 \_ 接收 \_ 队列 \_ 状态**](./ndis-status-receive-queue-state.md)状态指示，以通知 NDIS 已停止 DMA 传输。
+2.  微型端口驱动程序使用 [**ndis \_ 接收 \_ 队列 \_ 状态**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_receive_queue_state)结构设置为 " **NdisReceiveQueueOperationalStateDmaStopped** " 的 **QueueState** 成员生成 [**NDIS \_ 状态 \_ 接收 \_ 队列 \_ 状态**](./ndis-status-receive-queue-state.md)状态指示，以通知 NDIS 已停止 DMA 传输。
 
 3.  微型端口驱动程序等待该队列的所有指示接收数据包返回到微型端口驱动程序。
 
@@ -54,7 +53,7 @@ NDIS 协议驱动程序发出对象标识符 (OID) 设置 OID \_ 接收 \_ 筛�
 <thead>
 <tr class="header">
 <th>术语</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -134,7 +133,7 @@ NDIS 为此请求返回以下状态代码之一：
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [*MiniportHaltEx*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_halt)

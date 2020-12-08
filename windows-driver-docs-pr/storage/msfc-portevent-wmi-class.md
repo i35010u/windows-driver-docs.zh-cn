@@ -1,15 +1,14 @@
 ---
 title: MSFC \_ PORTEVENT WMI 类
 description: MSFC \_ PORTEVENT WMI 类
-ms.assetid: 38b8e358-b118-4a0c-ac47-2f257d0ed1bf
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: cb47fd99c0f4e3e21e04eb520dda4bee5a9e70be
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 59f82d32338f37f8ef60fc908603ed011e8e8460
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89184675"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96785531"
 ---
 # <a name="msfc_portevent-wmi-class"></a>MSFC \_ PORTEVENT WMI 类
 
@@ -19,7 +18,7 @@ ms.locfileid: "89184675"
 
 WMI 提供程序使用 MSFC \_ PORTEVENT WMI 类来报告端口事件。
 
-MSFC \_ PortEvent 类在 *Hbaapi*中定义如下：
+MSFC \_ PortEvent 类在 *Hbaapi* 中定义如下：
 
 ```cpp
 class MSFC_PortEvent : WMIEvent {

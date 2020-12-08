@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ DIRECTSOUND3DLISTENER \_ ROLLOFFFACTOR
 description: KSPROPERTY \_ DIRECTSOUND3DLISTENER \_ ROLLOFFFACTOR 属性指定3d 侦听器的 rolloff 系数。
-ms.assetid: 3eef80ef-921b-4364-b31d-14a62f305f5d
 keywords:
 - KSPROPERTY_DIRECTSOUND3DLISTENER_ROLLOFFFACTOR 音频设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9cc033b5f2fe4b2030df24ada7e3f80ba10e8553
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: ff598f1571744a1ff9b420a9bb29b35aca7d763b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102522"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96784373"
 ---
 # <a name="ksproperty_directsound3dlistener_rollofffactor"></a>KSPROPERTY \_ DIRECTSOUND3DLISTENER \_ ROLLOFFFACTOR
 

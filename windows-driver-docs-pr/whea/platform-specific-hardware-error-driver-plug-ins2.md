@@ -1,27 +1,26 @@
 ---
 title: 特定于平台的硬件错误驱动程序插件
 description: 特定于平台的硬件错误驱动程序插件
-ms.assetid: 473d9206-9db2-4bc7-bc76-6be2fb77b20b
 keywords:
 - Windows 硬件错误体系结构 WDK，特定于平台的硬件错误驱动程序插件
 - 硬件错误 WDK WHEA，特定于平台的硬件错误驱动程序插件
 - 错误 WDK WHEA，特定于平台的硬件错误驱动程序插件
-- 特定于平台的硬件错误驱动程序插件 WDK WHEA
+- 平台特定硬件错误驱动程序插件 WDK WHEA
 - 硬件错误驱动程序插件 WDK WHEA
 - PSHED 插件 WDK WHEA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e35ca6f7280b4adb106573ca7f961c2f0fed18e0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a78e0520acdbeef123bee078ddf99fa587517b52
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63340732"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96785093"
 ---
 # <a name="platform-specific-hardware-error-driver-plug-ins"></a>特定于平台的硬件错误驱动程序插件
 
 
-本部分讨论特定于平台的硬件错误驱动程序 (PSHED) 插件，并且包括以下主题：
+本部分讨论平台特定硬件错误驱动程序 (PSHED) 插件，并包括以下主题：
 
 [PSHED 插件简介](introduction-to-pshed-plug-ins.md)
 
@@ -29,13 +28,13 @@ ms.locfileid: "63340732"
 
 [PSHED 插件操作](pshed-plug-in-operations.md)
 
-[PSHED 插件指导原则](pshed-plug-in-guidelines.md)
+[PSHED 插件指南](pshed-plug-in-guidelines.md)
 
 [构建 PSHED 插件](building-a-pshed-plug-in.md)
 
 [PSHED 插件安装](pshed-plug-in-installation.md)
 
-**请注意**  PSHED 插件支持 Windows Server 2008、 Windows Vista SP1 和更高版本的 Windows 中。
+**注意**  Windows Server 2008、Windows Vista SP1 和更高版本的 Windows 支持 PSHED 插件。
 
  
 

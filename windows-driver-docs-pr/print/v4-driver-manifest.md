@@ -1,15 +1,14 @@
 ---
 title: V4 驱动程序清单
 description: V4 打印驱动程序清单包含特定于打印机的安装指令，并与 INF 文件一起使用。
-ms.assetid: 187A10B7-2AAC-46D9-998C-C8724D8E3862
 ms.date: 07/13/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 4545a2d88efdb04cff3c61eed755dfd12f2b578c
-ms.sourcegitcommit: b3e38d06762246c77cedd8e82d740ebea104c538
+ms.openlocfilehash: 5140b486806efc7a77b2c784b66e74db1e1a48fa
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91662405"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96785923"
 ---
 # <a name="v4-driver-manifest"></a>V4 驱动程序清单
 
@@ -191,7 +190,7 @@ Queue：这是默认配置，它与 Windows 8 行为匹配。
 </tr>
 <tr class="even">
 <td><p><strong>RetrievePrintDeviceCapabilitiesFromDevice</strong></p>
-<p>v4 驱动程序可以指定它们必须检索 WS 打印 v2.0 打印机中的 PrintDeviceCapabilities 文件，前提是它们将 PrintDeviceCapabilities 文件设置为驱动程序的数据文件，而 DataFileType 还表明数据文件属于 MIME 类型 "application/vnd.apple.mpegurl. ms-PrintDeviceCapabilities + xml"。 有效选项：</p>
+<p>v4 驱动程序可以指定它们必须从 WS-Print v2.0 打印机检索 PrintDeviceCapabilities 文件，前提是它们将 PrintDeviceCapabilities 文件设置为驱动程序的数据文件，而 DataFileType 还表明数据文件属于 MIME 类型 "application/vnd.apple.mpegurl ms-PrintDeviceCapabilities + xml"。 有效选项：</p>
 <p>有效选项：</p>
 <p>True：允许将驱动程序的本地数据文件替换为设备上的 PrintDeviceCapabilities 文件。</p>
 <p>False：不会将驱动程序的本地数据文件替换为设备中的 PrintDeviceCapabilities 文件。</p>
@@ -199,7 +198,7 @@ Queue：这是默认配置，它与 Windows 8 行为匹配。
 <td><p>无。</p></td>
 <td><p>示例：</p>
 <p>RetrievePrintDeviceCapabilitiesFromDevice =</p>
-<p>是</p></td>
+<p>true</p></td>
 </tr>
 </tbody>
 </table>

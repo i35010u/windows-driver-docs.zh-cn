@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ 音频 \_ 通道 \_ 配置
 description: KSPROPERTY \_ 音频 \_ 通道 \_ CONFIG 属性指定节点输出的音频流中的通道的实际空间位置。
-ms.assetid: 5ce9bf4a-c84e-4d7e-8e75-896c88ec1a72
 keywords:
 - KSPROPERTY_AUDIO_CHANNEL_CONFIG 音频设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e90101babb0da6bc0e78aa6cc7b29ce94e874646
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: db3b2986ed7137dee28f19c25245fd90effe0a07
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102140"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96784551"
 ---
 # <a name="ksproperty_audio_channel_config"></a>KSPROPERTY \_ 音频 \_ 通道 \_ 配置
 
@@ -67,10 +66,10 @@ KSPROPERTY \_ 音频 \_ 通道 \_ CONFIG 属性指定节点输出的音频流中
 
 KSPROPERTY \_ 音频 \_ 通道 \_ CONFIG 属性请求返回状态 " \_ 成功" 以指示已成功完成。 否则，请求将返回相应的错误状态代码。
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
-用作 DAC 节点的属性时 ([**KSNODETYPE \_ DAC**](ksnodetype-dac.md)) 或3D 节点 ([**KSNODETYPE \_ 三维 \_ 效果**](ksnodetype-3d-effects.md)) ，则 KSPROPERTY \_ 音频 \_ 通道 \_ CONFIG 属性指定 DirectSound 发言人配置。 对于立体声扬声器配置，此属性与 [**KSPROPERTY \_ 音频 \_ 立体声 \_ 扬声器 \_ 几何**](ksproperty-audio-stereo-speaker-geometry.md) 属性结合使用，可区分耳机和几个立体声扬声器配置。 有关扬声器配置的详细信息，请参阅 [DirectSound 演讲者-配置设置](./directsound-speaker-configuration-settings.md)。
+用作 DAC 节点的属性时 ([**KSNODETYPE \_ DAC**](ksnodetype-dac.md)) 或3D 节点 ([**KSNODETYPE \_ 三维 \_ 效果**](ksnodetype-3d-effects.md)) ，则 KSPROPERTY \_ 音频 \_ 通道 \_ CONFIG 属性指定 DirectSound 发言人配置。 对于立体声扬声器配置，此属性与 [**KSPROPERTY \_ 音频 \_ 立体声 \_ 扬声器 \_ 几何**](ksproperty-audio-stereo-speaker-geometry.md) 属性结合使用，可区分耳机和几个立体声扬声器配置。 有关扬声器配置的详细信息，请参阅 [DirectSound Speaker-Configuration 设置](./directsound-speaker-configuration-settings.md)。
 
 DirectSound 还使用 KSPROPERTY \_ 音频 \_ 通道 \_ CONFIG 属性在 "平移" 节点上查询其通道配置。 "平移节点" 是第二个卷节点 ([**KSNODETYPE \_ volume**](ksnodetype-volume.md)) ，它满足 [DirectSound 节点顺序要求](./directsound-node-ordering-requirements.md)。 Microsoft Windows SDK 文档中所述的 **IDirectSoundBuffer：： SetPan** 方法的 DirectSound 实现 () 使用平移节点的 [**KSPROPERTY \_ 音频 \_ VOLUMELEVEL**](ksproperty-audio-volumelevel.md) 属性来控制平移。
 

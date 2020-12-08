@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ 音频 \_ MID
 description: KSPROPERTY \_ AUDIO \_ MID 属性指定 "色调" 节点中通道的中间频率级别 (KSNODETYPE \_ 色调) 。
-ms.assetid: cb2555d4-5224-42a6-b364-70de91a44924
 keywords:
 - KSPROPERTY_AUDIO_MID 音频设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 975cc95cafe45eb583d9b7af5c9fd85a47701b7a
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 01180cdffbd7cfccdcbd3aa859d51b6af90cdd81
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102614"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96784507"
 ---
 # <a name="ksproperty_audio_mid"></a>KSPROPERTY \_ 音频 \_ MID
 

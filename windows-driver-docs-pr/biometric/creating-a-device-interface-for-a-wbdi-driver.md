@@ -1,18 +1,17 @@
 ---
 title: 为 WBDI 驱动程序创建设备接口
 description: 为 WBDI 驱动程序创建设备接口
-ms.assetid: 8595092c-9105-4638-814a-74cdfa372638
 keywords:
 - 生物识别驱动程序 WDK，设备接口
 - 设备接口 WDK 生物识别
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a7969da0edf7f958648094f9df826f21dfd5162b
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: ce4e7dc7eb448b51375638faee3a5879a39e6193
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89095241"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96784299"
 ---
 # <a name="creating-a-device-interface-for-a-wbdi-driver"></a>为 WBDI 驱动程序创建设备接口
 

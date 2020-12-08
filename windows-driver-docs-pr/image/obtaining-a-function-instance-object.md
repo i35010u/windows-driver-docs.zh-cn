@@ -1,15 +1,14 @@
 ---
 title: 获取函数实例对象
 description: 获取函数实例对象
-ms.assetid: 2c750281-031b-4b9f-9012-3b341ebe1cd9
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1fb7f29558d0feb9d40dd957a62c589904bad4ec
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 11919d5c6a5721f48152fc2a436762a896b940a9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89192723"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96785199"
 ---
 # <a name="obtaining-a-function-instance-object"></a>获取函数实例对象
 

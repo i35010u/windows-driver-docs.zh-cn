@@ -1,18 +1,17 @@
 ---
 title: 矢量打印属性
 description: 矢量打印属性
-ms.assetid: a44124b7-8272-4901-86be-5d99402fc453
 keywords:
-- 向量打印属性 WDK Unidrv
-- 常规打印机属性 WDK Unidrv 矢量
+- 矢量打印属性 WDK Unidrv
+- 常规打印机属性 WDK Unidrv，矢量
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 384fe2274fa8f0bb493ad83d4fa8a3c4ee07df2d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9fc415103db0b9d91cc9f9bdc299ee0101545da6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63381104"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96785829"
 ---
 # <a name="vector-printing-attributes"></a>矢量打印属性
 
@@ -20,7 +19,7 @@ ms.locfileid: "63381104"
 
 
 
-向量打印属性是[常规属性](general-attributes.md)，用于指定打印机的特征矢量打印功能。 这些属性构成单个组：
+矢量打印特性是指定打印机矢量打印功能的特征的 [常规属性](general-attributes.md) 。 这些属性构成单个组：
 
 [矩形区域填充属性](rectangle-area-fill-attributes.md)
 

@@ -1,15 +1,14 @@
 ---
 title: 使用网站预配 Windows
 description: 使用网站预配 Windows
-ms.assetid: ba60fddd-a248-4afb-9390-f9277ef1f094
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3a1c9750754e9a8a634f3e46be6af3ba7cb9098f
-ms.sourcegitcommit: 34bc742a0de40bcc4eda99f32622c58584a7f9f2
+ms.openlocfilehash: 8ef6e9d4cf14523b74e299d431243c1760e4fe0b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/09/2020
-ms.locfileid: "94384179"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96786185"
 ---
 # <a name="provisioning-windows-using-a-website"></a>使用网站预配 Windows
 
@@ -90,7 +89,7 @@ ms.locfileid: "94384179"
 
 当 Windows 使用移动运营商的 URL 从 APN 数据库) 的 [operator](operator.md) 元素中 (AccountExperienceURL 属性时，windows 将提供完成移动宽带网站激活所需的设备信息。 此设备信息将作为 HTTPS 请求的参数传递到网站。
 
-Url 的格式为 **https://Operator url \[ ？ propN = valN \[&\] \* \] propN = valN** ，其中：
+Url 的格式为 **https://Operator url \[ ？ propN = valN \[&\] \* \] propN = valN**，其中：
 
 -   **操作员 URL** 你的 URL，并将其存储在 APN 数据库中
 

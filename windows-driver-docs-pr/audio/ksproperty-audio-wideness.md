@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ 音频 \_ 宽度
 description: KSPROPERTY \_ AUDIO \_ 宽度属性指定立体声图像的宽度 (明显宽度) 。
-ms.assetid: 56b18337-c29b-437f-b52f-8d804d857729
 keywords:
 - KSPROPERTY_AUDIO_WIDENESS 音频设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 71f50e8fab3f1a7945585457a55356f74a2958df
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 9d0e38486a11ff4c56febab5172c48456948db22
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102030"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96784445"
 ---
 # <a name="ksproperty_audio_wideness"></a>KSPROPERTY \_ 音频 \_ 宽度
 

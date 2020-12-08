@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ AEC \_ 干扰 \_ 填充 \_ 启用
 description: KSPROPERTY \_ AEC \_ 干扰 " \_ 启用" \_ 属性用于启用和禁用背景杂色填充。 这是 AEC 节点的一个可选属性， (KSNODETYPE \_ \_ 的声音回声 \_ 取消) 。
-ms.assetid: 7c0ed4ba-d25e-42b5-b213-fbe74040a453
 keywords:
 - KSPROPERTY_AEC_NOISE_FILL_ENABLE 音频设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 289891795f3d9945343bd1a3da49f2f5c7693e79
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 816f40ed500e6cd7e427fc2e482f539ebfc342f7
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102316"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96784565"
 ---
 # <a name="ksproperty_aec_noise_fill_enable"></a>KSPROPERTY \_ AEC \_ 干扰 \_ 填充 \_ 启用
 

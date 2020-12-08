@@ -1,15 +1,14 @@
 ---
 title: PackageIdentity
 description: PackageIdentity
-ms.assetid: b5533962-ea42-416e-bbd8-ce9dce1a9a40
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 701f64cbdaae5ee06f94996b85419e724c745f15
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: 78c81fc3771d700a8221e4752860170eea8dffe3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89403306"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96786243"
 ---
 # <a name="packageidentity"></a>PackageIdentity
 
@@ -38,19 +37,19 @@ PackageIdentity 元素指定在用户插入设备时应显示为建议的自动�
 <tr class="header">
 <th>Attribute</th>
 <th>类型</th>
-<th>必选</th>
-<th>说明</th>
+<th>必须</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>名称</p></td>
+<td><p>“属性”</p></td>
 <td><p>tns： PackageNameType</p></td>
 <td><p>是</p></td>
 <td><p>从应用程序清单的标识元素的 "名称" 属性中复制此元素，如 "备注" 中所述。</p></td>
 </tr>
 <tr class="even">
-<td><p>发布者</p></td>
+<td><p>Publisher</p></td>
 <td><p>tns： PublisherType</p></td>
 <td><p>是</p></td>
 <td><p>从应用程序清单的标识元素的发行者特性复制此元素，如 "备注" 中所述。</p></td>
@@ -76,7 +75,7 @@ PackageIdentity 元素指定在用户插入设备时应显示为建议的自动�
 <thead>
 <tr class="header">
 <th>元素</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>

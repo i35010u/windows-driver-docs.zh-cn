@@ -1,7 +1,6 @@
 ---
 title: HD 音频 DDI 版本之间的差异
 description: HD 音频 DDI 版本之间的差异
-ms.assetid: e24071d3-9021-40c0-907a-91ada8a1306b
 keywords:
 - HD 音频，DDI 版本差异
 - 高清晰音频 (HD 音频) ，DDI 版本差异
@@ -9,12 +8,12 @@ keywords:
 - HDAUDIO_BUS_INTERFACE_BDL 结构
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 883ca641aa615fe212c465cfd1e212d337de03d5
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 4d5a257294b5193354199efdfc1bd8b67157f63e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89208145"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96784865"
 ---
 # <a name="differences-between-the-hd-audio-ddi-versions"></a>HD 音频 DDI 版本之间的差异
 
@@ -59,7 +58,7 @@ HDAUDIO \_ 总线 \_ 接口和 HDAUDIO \_ 总线 \_ 接口 \_ BDL 版本具有�
 
 -   将 DMA 引擎设置为使用缓冲区和 BDL。
 
-相反，第二个 DDI 版本中的 **AllocateContiguousDmaBuffer** 例程为 DMA 缓冲区和 BDL 分配存储，但依赖于调用方来初始化 BDL。 **SetupDmaEngineWithBdl**例程将 DMA 引擎设置为使用缓冲区和调用方初始化的 BDL。
+相反，第二个 DDI 版本中的 **AllocateContiguousDmaBuffer** 例程为 DMA 缓冲区和 BDL 分配存储，但依赖于调用方来初始化 BDL。 **SetupDmaEngineWithBdl** 例程将 DMA 引擎设置为使用缓冲区和调用方初始化的 BDL。
 
 BDL 包含 DMA 引擎的分散/收集队列中的物理内存块的列表。 通过调用 **SetupDmaEngineWithBdl** 来设置 BDL，客户端可以在数据流中指定 DMA 引擎生成中断的点。 客户端通过在所选 BDL 项中的) 位上设置 " (完成后中断" 来执行此项。 利用此功能，客户端可以精确控制在处理音频流期间发生的 IOC 中断的时间。 音频调制解调器驱动程序还使用第二个 DDI 版本来获取准确的系统时钟信息。
 

@@ -1,36 +1,35 @@
 ---
 title: 执行组
 description: 执行组
-ms.assetid: CC196843-A225-4193-9386-EE024B5D0B68
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 12a4760edfc51e39b74bba662284ae9b29274836
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.openlocfilehash: 945a8354c12589334f30b01a72595b7ed4ee0e7c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349992"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96785443"
 ---
 # <a name="execution-groups"></a>执行组
 
 
-请确保您熟悉的基本执行[TAEF](index.md)并且知道如何[作者测试](authoring-tests.md)使用它，然后继续进行本部分中。 您可能想要通过用户指南中列出的某些数据驱动的测试示例演练。
+请确保熟悉 [TAEF](index.md) 的基本执行，并知道如何使用它 [创作测试](authoring-tests.md) ，然后再继续此部分。 你可能还需要浏览用户指南中列出的一些数据驱动的测试示例。
 
-## <a name="span-idscenario-basedtestingwithtaefspanspan-idscenario-basedtestingwithtaefspanspan-idscenario-basedtestingwithtaefspanscenario-based-testing-with-taef"></a><span id="Scenario-Based_Testing_with_TAEF"></span><span id="scenario-based_testing_with_taef"></span><span id="SCENARIO-BASED_TESTING_WITH_TAEF"></span>使用 TAEF 基于方案的测试
-
-
-当谈及场景级别测试时，实际上都谈论一系列测试，其中执行下一次测试有意义才成功进行了上一个测试在方案中。 在某些情况下，您可能甚至没有需要执行下一步测试时，如果前面的测试失败的所有信息。 向此目标，同时保持为测试方法和测试方案，从而允许执行的单位 TAEF 支持所谓的"ExecutionGroup"s。 您可以基于方案的测试中 TAEF 无论时仍有其他功能，如数据驱动的测试。 如果您设计你的方案利用数据驱动的测试，可以应用在类级别使用 TAEF 提供的数据驱动的类功能的数据驱动的支持。 **通过将应用在类级别的数据驱动的支持，可以具有的所有测试您的类中的每一行按顺序执行。**
-
-此页将集中讨论如何指定"ExecutionGroup"的测试类中的序列。
-
-## <a name="span-idexecutiongroupsspanspan-idexecutiongroupsspanspan-idexecutiongroupsspanexecution-groups"></a><span id="Execution_Groups"></span><span id="execution_groups"></span><span id="EXECUTION_GROUPS"></span>执行组
+## <a name="span-idscenario-based_testing_with_taefspanspan-idscenario-based_testing_with_taefspanspan-idscenario-based_testing_with_taefspanscenario-based-testing-with-taef"></a><span id="Scenario-Based_Testing_with_TAEF"></span><span id="scenario-based_testing_with_taef"></span><span id="SCENARIO-BASED_TESTING_WITH_TAEF"></span>通过 TAEF 进行基于方案的测试
 
 
-在讨论之前执行组，务必要注意和记住**TAEF，在测试类中的执行顺序是在其中你具有限定它们为测试 order\_对于本机代码或添加了的METHOD(...)\[TestMethod\]属性之前在托管代码方法**。 TAEF 不保证类本身的执行顺序。
+当您谈论方案级别的测试时，您实际上就是讨论一系列测试，在这种情况下，只有在方案中的以前测试成功时，执行下一个测试才有意义。 在某些情况下，如果上一次测试失败，您甚至可能没有执行下一个测试所需的所有信息。 为此，同时将执行单元保持为测试方法并允许测试方案，TAEF 支持所谓的 "ExecutionGroup"。 可以在 TAEF 中使用基于方案的测试，而无需考虑数据驱动测试等其他功能。 如果设计方案来利用数据驱动的测试，则可以使用 TAEF 提供的数据驱动类功能，在类级别应用数据驱动的支持。 **通过在类级别应用数据驱动的支持，可以按顺序对每一行执行类中的所有测试。**
 
-**现在，在基于方案的测试中，它可能不足以只保证执行顺序，还需要保证所有以前的测试在方案中成功，再继续下一测试在方案中。** 这是概念的可以在其中找到的"ExecutionGroup"非常有用。
+本页重点介绍如何在类中将一系列测试指定为 "ExecutionGroup"。
 
-请考虑本机示例：
+## <a name="span-idexecution_groupsspanspan-idexecution_groupsspanspan-idexecution_groupsspanexecution-groups"></a><span id="Execution_Groups"></span><span id="execution_groups"></span><span id="EXECUTION_GROUPS"></span>执行组
+
+
+在讨论执行组之前，请务必注意， **在 TAEF 中，在类中执行测试的顺序就是您在使用本机代码的情况下将其限定为测试 \_ 方法 ( ) ，或者在 \[ \] 托管代码的情况下将 TestMethod 属性添加到方法之前**。 TAEF 不保证类本身的执行顺序。
+
+**现在，在基于方案的测试中，如果只是保证执行顺序，则还需要确保方案中以前的所有测试都已成功完成，然后再继续下一次测试。** 在这里，你可以找到 "ExecutionGroup" 的概念。
+
+假设有一个本机示例：
 
 ```cpp
 1     class ExecutionDependencyExample
@@ -57,11 +56,11 @@ ms.locfileid: "57349992"
 22    };
 ```
 
-请参阅上面的 c + + 文件代码段中的第 4 行。 在此特定情况下，你正在限定类 ExecutionDependencyExample 属于名为"DependentTests""ExecutionGroup"内的所有测试。 这意味着"Test1"、"Test2"和"Test3"是"DependentTests"执行组的一部分。 如前文所述，当且仅当 Test1 获取已成功执行，并将传递，将获取执行 Test2。 同样会执行 Test3 当且仅当 Test2 获取已成功执行，并将传递。
+请参阅上述 c + + 文件代码段中的第4行。 在此特定情况下，你将限定类 ExecutionDependencyExample 中的所有测试，使其属于名为 "DependentTests" 的 "ExecutionGroup"。 这意味着 "Test1"、"Test2" 和 "Test3" 是 "DependentTests" 执行组的一部分。 如前所述，当且仅当 Test1 成功执行并通过时，才会执行 Test2。 当且仅当 Test2 成功执行并通过时，才会执行类似的 Test3。
 
-你将看到 Test2 设计失败 （请参阅第 14 行和上面的第 15）。
+你将看到 Test2 已设计为失败 (请参阅上面的第14和15行) 。
 
-Test2 在我们"DependentTests""ExecutionGroup"中失败，因为 Test3 不会立即执行，并改为将其标记为阻止。 请尝试的运行上述测试并查看这是否的确属实。
+由于 "DependentTests" "ExecutionGroup" 中的 Test2 失败，将不会执行 Test3，而是将其标记为 "已阻止"。 允许尝试运行上述测试，并查看是否确实确实如此。
 
 ``` syntax
 te Examples\CPP.ExecutionDependency.Example.dll
@@ -89,9 +88,9 @@ Non-passing Tests:
 Summary: Total=3, Passed=1, Failed=1, Blocked=1, Not Run=0, Skipped=0
 ```
 
-请注意，作为预测，传递 Test1、 Test2 失败，和 Test3 已被阻止。 与 Test3，TAEF 记录一条消息指出 Test3 属于某个执行组和未成功执行前面的测试。
+请注意，正如预测、Test1 通过、Test2 失败和 Test3 被阻止。 对于 Test3，TAEF 记录一条消息，指出 Test3 属于执行组，而以前的测试未成功执行。
 
-此错误消息还指出，应选择当前测试正在执行的属于同一 ExecutionGroup 之前的所有测试。 换而言之，如果你尝试运行仅 Test2 在运行时使用选择条件，您会发现，Test2 将无法按原样执行依赖于 Test1，正在同一 ExecutionGroup 的一部分。
+此错误消息还指出应选择属于同一 ExecutionGroup 的当前正在执行的测试之前的所有测试。 换句话说，如果尝试在运行时使用选择条件仅运行 Test2，则会发现 Test2 将被阻止，因为它的执行依赖于 Test1，因而是同一 ExecutionGroup 的一部分。
 
 ``` syntax
 te Examples\CPP.ExecutionDependency.Example.dll /name:*Test2*
@@ -105,7 +104,7 @@ EndGroup: WEX::TestExecution::Examples::ExecutionDependencyExample::Test2 [Block
 Summary: Total=1, Passed=0, Failed=0, Blocked=1, Not Run=0, Skipped=0
 ```
 
-如果选择 Test1，这是 ExecutionGroup 中的第一个测试，但是，它将成功地运行。
+不过，如果选择 "Test1"，即 ExecutionGroup 中的第一个测试，则它将成功运行。
 
 ``` syntax
 te Examples\CPP.ExecutionDependency.Example.dll /name:*Test1*
@@ -117,11 +116,11 @@ EndGroup: WEX::TestExecution::Examples::ExecutionDependencyExample::Test1 [Passe
 Summary: Total=1, Passed=1, Failed=0, Blocked=0, Not Run=0, Skipped=0
 ```
 
-此外，如果您有不属于 ExecutionGroup 的测试，它们将不考虑执行结果的继续操作它们 ExecutionGroup 内测试执行。 还有可能有多个 ExecutionGroup 类中。 但是请注意 ExecutionGroup 不能跨类。 如果这样做，将改为将它们视为两个单独 ExecutionGroups，一个在每个类。
+此外，如果你的测试不属于 ExecutionGroup，则它们将会执行，而不考虑在 ExecutionGroup 中执行测试的执行结果。 在一个类中也可以有多个 ExecutionGroup。 但请注意，ExecutionGroup 不能跨各个类。 如果这样做，它们将被视为两个独立的 ExecutionGroups，每个类一个。
 
-消息还指出，应在 Test3 Test2 与相同的环境中运行。 允许尝试了解一些更详细地这个方面。 由于成为 ExecutionGroup 实际上意味着正在基于方案的测试的一部分，它就变得至关重要的所有测试请求并因此在同一环境中执行。 例如，如果线程处理模型内 ExecutionGroup 发生更改，您将看到被阻止的测试。 例如，在上述示例中，Test2 旨在成功执行，但有 ThreadingModel 属性设置为 MTA，如果仍将阻止 Test3。
+该消息还指出，应在与 Test2 相同的环境中运行 Test3。 让我们更详细地了解这一点。 由于是 ExecutionGroup 的一部分，这实际上意味着是基于方案的测试的一部分，因此，所有测试请求并因此在相同的环境中执行，这一点非常重要。 例如，如果线程模型在 ExecutionGroup 内发生更改，则会看到 "已阻止的测试"。 例如，在上面的示例中，Test2 设计为成功执行，但将 "ThreadingModel" 属性设置为 "MTA"，则仍会阻止 Test3。
 
-我们来看另一个示例：示例\\TAEF\\CSharp\\ExecutionDependentGroupsExample （请参阅最新的 TAEF 版本共享）
+让我们看另一个示例：示例 \\ TAEF \\ CSharp \\ ExecutionDependentGroupsExample (请参阅最新的 TAEF 发布共享) 
 
 ```cpp
 1     [TestClass]
@@ -193,14 +192,14 @@ Summary: Total=1, Passed=1, Failed=0, Blocked=0, Not Run=0, Skipped=0
 67    }
 ```
 
-此示例中有 4 个不同的执行组：
+此示例包含4个不同的执行组：
 
--   "第一个执行组"包含 Test1、 Test2;这两种应传递成功。
--   "第二个执行组"包含 Test3 和 Test4。 Test4 处于此 ExecutionGroup 中的最后一个测试，它将失败。
--   "第三个执行组"包含 Test5、 Test6 和 Test7。 Test5 执行并成功通过，尽管从上一 ExecutionGroup Test4 失败。 Test6 设计失败，这将导致 Test7 才会被阻止。
--   "第四个执行组"包含 Test8 和 Test9。 再次重申，虽然从上一 ExecutionGroup Test7 已被阻止是由于为 Test6 失败，因此 Test8 将成功执行，并将 Test9 如此。
+-   "第一个执行组" 包含 Test1、Test2;这两个应成功通过。
+-   "第二个执行组" 包含 Test3 和 Test4。 Test4 是此 ExecutionGroup 的最后一次测试，失败。
+-   "第三执行组" 包含 Test5、Test6 和 Test7。 Test5 会成功执行并传递，尽管之前 ExecutionGroup 中的 Test4 失败。 Test6 设计为失败，这将导致 Test7 被阻止。
+-   "第四个执行组" 包含 Test8 和 Test9。 同样，althought Test7 从以前的 ExecutionGroup 被阻止，因为 Test6 发生了故障，Test8 将成功执行，并将 Test9。
 
-可以了解在此示例中更好地 ExecutionGroups，让我们来列出在此示例中的属性。
+为了更好地理解本例中的 ExecutionGroups，让我们来列出此示例中的属性。
 
 ``` syntax
 te Examples\CSharp.ExecutionDependentGroups.Example.dll /listproperties
@@ -231,7 +230,7 @@ Test Authoring and Execution Framework v2.9.3k for x86
                         Property[ExecutionGroup] = Fourth Execution Group
 ```
 
-在执行上述测试时，以下输出确认的预测的执行顺序。
+执行上述测试后，以下输出可确认预测的执行顺序。
 
 ``` syntax
 te Examples\CSharp.ExecutionDependentGroups.Example.dll
@@ -290,7 +289,7 @@ Failed Tests:
 Summary: Total=9, Passed=6, Failed=2, Blocked=1, Not Run=0, Skipped=0
 ```
 
-请注意，测试执行顺序是按预期方式。
+请注意，测试执行顺序与预期相同。
 
  
 

@@ -1,7 +1,6 @@
 ---
 title: XPSDrv 配置模块
 description: XPSDrv 配置模块
-ms.assetid: 439d7769-57d1-41f9-a3db-da254b4b7cae
 keywords:
 - XPSDrv 打印机驱动程序 WDK，配置模块
 - 配置模块 WDK XPSDrv，关于配置模块
@@ -10,12 +9,12 @@ keywords:
 - 事件通知 WDK XPSDrv
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 67ff3f7f82210d03f44a1896fbe74b6a621a2de2
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: ff2298f31be35f385e4f8a16c0b61a5abb21ea94
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89215389"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96785731"
 ---
 # <a name="xpsdrv-configuration-module"></a>XPSDrv 配置模块
 

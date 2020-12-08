@@ -1,40 +1,39 @@
 ---
 title: 从 ScsiPort 移植到 StorPort
 description: 从 ScsiPort 移植到 StorPort
-ms.assetid: 2a14051d-dc23-4420-a3e5-0827b16b1e42
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8b4868d662d747d964e662280dff9be86aaea6e8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 549ea2e50ecbe91975a0d78336f527dc330bbc9b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63366385"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96785495"
 ---
 # <a name="porting-from-scsiport-to-storport"></a>从 ScsiPort 移植到 StorPort
 
 
-以下是所需端口中基于 Scsiport 的微型端口驱动程序的示例代码，以便基于 Storport 微型端口驱动程序的迁移活动的摘要：
+下面概述了将示例代码从基于 Scsiport 的微型端口驱动程序移植到基于 Storport 的微型端口驱动程序所必需的移植活动：
 
 -   删除所有 NextRequest 和 NextLuRequest 调用
 
--   重命名所有 StorPortXxx ScsiPortXxx 调用
+-   将所有 ScsiPortXxx 调用重命名为 StorPortXxx
 
--   添加 BuildIo 例程 (移动约 75%的代码从 StartIo)
+-   添加 BuildIo 例程 (移动了大约75% 的代码 StartIo) 
 
 -   将驱动程序转换为全双工操作
 
--   添加队列管理例程 （错误处理，适配器重新启动）
+-   添加队列管理例程 (错误处理、适配器重启) 
 
--   添加了 LUN 和目标重置支持
+-   添加 LUN 和目标重置支持
 
--   添加代码以在内部分配队列标记 （硬件限制）
+-   添加代码以在内部分配队列标记 (硬件限制) 
 
--   添加同步总线重置和完整适配器重启的例程
+-   为总线重置和完整适配器重启添加同步例程
 
--   添加支持 SRB\_函数\_POWER （通过 SRB 适配器关闭）
+-   \_通过 SRB) 添加对 SRB 函数 \_ POWER (适配器关闭的支持
 
--   添加 StorPortSetDeviceQueueDepth 调用-LUN 队列深度设置为 31
+-   添加 StorPortSetDeviceQueueDepth 调用--LUN 队列深度设置为31
 
  
 

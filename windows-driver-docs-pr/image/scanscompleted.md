@@ -1,9 +1,8 @@
 ---
 title: ScansCompleted 元素
-description: 所需的 ScansCompleted 元素指定扫描的映像的数量。
-ms.assetid: 71634b6b-1c61-46a0-8cde-01a975c09270
+description: 必需的 ScansCompleted 元素指定要扫描的映像数。
 keywords:
-- ScansCompleted 元素成像设备
+- ScansCompleted 元素图像设备
 topic_type:
 - apiref
 api_name:
@@ -12,19 +11,19 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 81013fd6a543b9bfbccb98665afadb346d9cdb18
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 49c449708517261215558d58a1123fc473949955
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63356227"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96785175"
 ---
 # <a name="scanscompleted-element"></a>ScansCompleted 元素
 
 
-所需**ScansCompleted**元素指定的扫描的映像数量。
+必需的 **ScansCompleted** 元素指定要扫描的映像数。
 
-<a name="usage"></a>用法
+<a name="usage"></a>使用情况
 -----
 
 ```xml
@@ -41,12 +40,12 @@ ms.locfileid: "63356227"
 <a name="text-value"></a>文本值
 ----------
 
-必需。 介于 1 到 2147483648 的整数值。
+必需。 1到2147483648之间的一个整数值。
 
 ## <a name="child-elements"></a>子元素
 
 
-没有子元素。
+没有任何子元素。
 
 ## <a name="parent-elements"></a>父元素
 
@@ -76,9 +75,9 @@ ms.locfileid: "63356227"
 <a name="remarks"></a>备注
 -------
 
-WSD 扫描服务多个时间扫描一张纸的媒体时，必须递增**ScansCompleted**每次进行计数。 在双工模式下，生成两个扫描中的扫描媒体表的每一侧**ScansCompleted**计数。
+如果多次扫描媒体工作表，则 WSD 扫描服务每次都必须递增 **ScansCompleted** 计数。 媒体工作表的每一侧都在双工模式下扫描，并在 **ScansCompleted** 计数中生成两次扫描。
 
-**ScansCompleted**可能不知道计数，直到扫描程序已完成处理该作业。 WSD 扫描服务必须更新**ScansCompleted**元素时更多具体信息不可用。
+在扫描程序完成作业处理之前， **ScansCompleted** 计数可能未知。 当更准确的信息可用时，WSD 扫描服务必须更新 **ScansCompleted** 元素。
 
 ## <a name="see-also"></a>请参阅
 

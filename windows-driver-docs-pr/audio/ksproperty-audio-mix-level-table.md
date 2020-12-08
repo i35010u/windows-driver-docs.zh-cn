@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ AUDIO \_ 混音 \_ 级 \_ 表
 description: KSPROPERTY \_ AUDIO \_ MIX \_ LEVEL LEVEL \_ TABLE 属性指定 supermixer 节点 (KSNODETYPE SUPERMIX) 的组合级别 \_ 。 它提供所有输入和输出通道的信息。
-ms.assetid: 1a1b486b-06e4-462b-8fe9-9d3581c82d06
 keywords:
 - KSPROPERTY_AUDIO_MIX_LEVEL_TABLE 音频设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 09/04/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 4b5336aa6f849145d2d1c448545cf00d2e22dff2
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: f43986487cda280be9757e944b7991f451ceb892
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102100"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96784513"
 ---
 # <a name="ksproperty_audio_mix_level_table"></a>KSPROPERTY \_ AUDIO \_ 混音 \_ 级 \_ 表
 
@@ -77,7 +76,7 @@ KSPROPERTY \_ AUDIO \_ MIX \_ LEVEL LEVEL \_ TABLE 属性指定 supermixer 节�
 <thead>
 <tr class="header">
 <th align="left">Array 元素</th>
-<th align="left">输入-输出路径</th>
+<th align="left">Input-Output 路径</th>
 </tr>
 </thead>
 <tbody>
@@ -118,9 +117,9 @@ KSPROPERTY \_ AUDIO \_ MIX \_ LEVEL LEVEL \_ TABLE 属性指定 supermixer 节�
 
 ![说明 supermixer 节点的 mixlevel 数组元素映射的关系图](images/supermix.png)
 
-如果没有路径将输入通道*i*连接到输出通道*j*，则筛选器应将数组元素 MixLevel 的**静音**成员设置 \[ *i* \* *j* \] 为**TRUE**。
+如果没有路径将输入通道 *i* 连接到输出通道 *j*，则筛选器应将数组元素 MixLevel 的 **静音** 成员设置 \[ *i* \* *j* \] 为 **TRUE**。
 
-KSAUDIO MIXLEVEL 数组的大小 \_ 是从从[**KSPROPERTY \_ 音频 \_ 混音 \_ 级别 \_ 帽**](ksproperty-audio-mix-level-caps.md)检索到的[**KSAUDIO \_ MIXCAP \_ 表**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksaudio_mixcap_table)结构计算而来的。 如果结构的 **InputChannels** 和 **OutputChannels** 成员包含值 *m* 和 *n*，则数组大小为
+KSAUDIO MIXLEVEL 数组的大小 \_ 是从从 [**KSPROPERTY \_ 音频 \_ 混音 \_ 级别 \_ 帽**](ksproperty-audio-mix-level-caps.md)检索到的 [**KSAUDIO \_ MIXCAP \_ 表**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksaudio_mixcap_table)结构计算而来的。 如果结构的 **InputChannels** 和 **OutputChannels** 成员包含值 *m* 和 *n*，则数组大小为
 
 *m* \* *n* \* **sizeof** (KSAUDIO \_ MIXLEVEL) 
 
@@ -128,7 +127,7 @@ KSAUDIO MIXLEVEL 数组的大小 \_ 是从从[**KSPROPERTY \_ 音频 \_ 混音 \
 
 KSPROPERTY \_ 音频 \_ 组合 \_ 级别 \_ 表属性请求返回状态 " \_ 成功" 以指示已成功完成。 否则，请求将返回相应的错误状态代码。
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 此筛选器将成功 \_ \_ \_ \_ 指定组合级别值 (**level** 成员 of KSAUDIO \_ MIXLEVEL) 超出了筛选器的范围，但 (会以) 静默方式将值设置为支持的范围。 但是，在后续请求中获取此属性时，筛选器将输出所使用的实际值。

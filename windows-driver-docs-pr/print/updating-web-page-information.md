@@ -1,20 +1,19 @@
 ---
 title: 更新网页信息
 description: 更新网页信息
-ms.assetid: 3ea2c8c0-7e46-47ff-8c32-82760eafd893
 keywords:
 - 打印网页 WDK，更新信息
-- 正在更新信息的网页 WDK 打印机
-- 自定义打印网页 WDK，更新信息
-- 更新打印的 Web 页面信息
+- 网页 WDK 打印机，更新信息
+- 自定义的打印网页 WDK，更新信息
+- 更新打印网页信息
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fb2dab33b6b60c55f5b836b06875bfe5a5a29d12
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ad4986b2a483833186288041c599d8e302edac92
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63346539"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96786013"
 ---
 # <a name="updating-web-page-information"></a>更新网页信息
 
@@ -22,7 +21,7 @@ ms.locfileid: "63346539"
 
 
 
-打印服务器不支持服务器推送更新有关打印服务器的 Web 页的信息。 客户端请求操作 （假定用户的浏览器可以识别的 HTML 指定"刷新"参数） 支持，并且可以包含在自定义页面。 （有关客户端请求的详细信息，请参阅相应的 HTML 文档。）
+打印服务器不支持服务器推送以更新有关打印服务器网页的信息。 支持客户端请求操作 (假设用户的浏览器识别 HTML 指定的 "refresh" 参数) 并且可以包含在自定义页面中。  (有关客户端请求的详细信息，请参阅相应的 HTML 文档。 ) 
 
  
 

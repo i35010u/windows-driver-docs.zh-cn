@@ -1,15 +1,14 @@
 ---
 title: V4 打印机驱动程序开发最佳做法
 description: 由于 v4 打印机驱动程序是直接从驱动程序存储区调用的，并且它们也应该与低权限应用程序（如 Internet Explorer）进行通信，因此在开发 v4 打印机驱动程序时，请务必遵循建议的最佳实践。
-ms.assetid: D26241F5-A514-40D3-8618-70C8636B7405
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 118f08583027bacc750e56414065ecd9ab1952b3
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 3651dd2207ebd05b3088bd018a1b11fc0defc7d7
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89211907"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96785885"
 ---
 # <a name="v4-printer-driver-development-best-practices"></a>V4 打印机驱动程序开发最佳做法
 

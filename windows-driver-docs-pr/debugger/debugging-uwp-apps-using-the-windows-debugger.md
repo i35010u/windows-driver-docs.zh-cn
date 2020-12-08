@@ -1,15 +1,14 @@
 ---
 title: 使用 Windows 调试器调试 Windows 应用程序
 description: 可以使用 Windows 调试器 (WinDbg、CDB 和 NTSD) 调试 Windows 应用。 在调试时，可以使用 PLMDebug 工具控制挂起、继续和终止 Windows 应用程序。
-ms.assetid: 87AA23A1-AB70-48CC-8F96-350C121F250E
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 543dd85a6da85e92cc86ed2be04be4ce8d5516c9
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: a35bcf856314bf31d54f6c086d5317ee5816ed6e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89216733"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96785297"
 ---
 # <a name="debugging-windows-apps-using-the-windows-debugger"></a>使用 Windows 调试器调试 Windows 应用程序
 

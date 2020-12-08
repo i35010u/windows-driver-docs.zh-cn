@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ FMRX \_ 状态
 description: KSPROPERTY \_ FMRX \_ STATE 属性指定是否启用调频无线电。
-ms.assetid: A975221C-3300-4A44-9E8C-9AB4B4C54C32
 keywords:
 - KSPROPERTY_FMRX_STATE 音频设备
 topic_type:
@@ -14,17 +13,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1b14b5cdc3391b06dca88aa1b4aa8782fc32d052
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: e4de9909e0a4ad1e3ffbe9c2d8b44122e048b20c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102502"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96784365"
 ---
 # <a name="ksproperty_fmrx_state"></a>KSPROPERTY \_ FMRX \_ 状态
 
 
-**KSPROPERTY \_ FMRX \_ STATE**属性指定是否启用调频无线电。
+**KSPROPERTY \_ FMRX \_ STATE** 属性指定是否启用调频无线电。
 
 ### <a name="span-idusage_summary_tablespanspan-idusage_summary_tablespanspan-idusage_summary_tablespanusage-summary-table"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用情况摘要表
 
@@ -67,7 +66,7 @@ ms.locfileid: "90102502"
 <a name="remarks"></a>备注
 -------
 
-可以通过在 wave 滤镜上设置 **KSPROPERTY \_ FMRX \_ STATE** 属性来启用或禁用调频广播。 FM volume 和路由 (终结点选择) 由拓扑筛选器上的 [**KSPROPERTY \_ FMRX \_ volume**](ksproperty-fmrx-volume.md) 和 [**KSPROPERTY \_ FMRX \_ ENDPOINTID**](ksproperty-fmrx-endpointid.md) 属性控制。 **KSPROPERTY \_ FMRX \_ volume**属性的基本支持应返回最小卷、最大卷和卷范围。
+可以通过在 wave 滤镜上设置 **KSPROPERTY \_ FMRX \_ STATE** 属性来启用或禁用调频广播。 FM volume 和路由 (终结点选择) 由拓扑筛选器上的 [**KSPROPERTY \_ FMRX \_ volume**](ksproperty-fmrx-volume.md) 和 [**KSPROPERTY \_ FMRX \_ ENDPOINTID**](ksproperty-fmrx-endpointid.md) 属性控制。 **KSPROPERTY \_ FMRX \_ volume** 属性的基本支持应返回最小卷、最大卷和卷范围。
 
 新的 [**KSNODETYPE \_ FM \_ RX**](ksnodetype-fm-rx.md) 拓扑节点终结点实现为系统中的任何其他音频终结点，并且它支持所有音频终结点属性。 此终结点还支持在 [KSPROPSETID \_ 插座](kspropsetid-jack.md) 属性集下定义的插座属性。 此终结点在启动时处于拔出状态。 如果驱动程序支持捕获调频广播，则启用调频广播后，此终结点将变为活动状态。 在 **KSNODETYPE \_ FM \_ RX** 拓扑节点上创建捕获 pin 后，可通过调频接收机接收音频捕获。
 
@@ -86,7 +85,7 @@ ms.locfileid: "90102502"
 </tr>
 <tr class="even">
 <td align="left"><p>最低受支持的服务器</p></td>
-<td align="left"><p>Windows Server 2016</p></td>
+<td align="left"><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>客户端</p></td>

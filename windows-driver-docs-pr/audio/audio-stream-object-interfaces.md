@@ -1,15 +1,14 @@
 ---
 title: 音频流对象接口
 description: 音频流对象接口
-ms.assetid: 9d68016a-ddb1-4fbb-b6cc-384f8c76552c
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a6812cf7961672c8a9357a9a8c3e9da30e07b701
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 8d74ecaabdd1c443230901ddd54d0cf6b1ee50cf
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89208243"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96784959"
 ---
 # <a name="audio-stream-object-interfaces"></a>音频流对象接口
 

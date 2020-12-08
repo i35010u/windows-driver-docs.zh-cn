@@ -1,7 +1,6 @@
 ---
 title: DirectMusic DDI 概述
 description: DirectMusic DDI 概述
-ms.assetid: 95870103-197c-4b7c-b6ee-cac176b62dfc
 keywords:
 - DirectMusic WDK 音频，关于 DirectMusic DDI
 - 用户模式 synths WDK 音频
@@ -13,12 +12,12 @@ keywords:
 - Dmu 微型端口驱动程序 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d03ddbd43bd328f3372de78b189d4f92343bbf46
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: d34e3e0d3fa1a9fa36b036b7aae158e2e8b0b268
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90714806"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96784855"
 ---
 # <a name="directmusic-ddi-overview"></a>DirectMusic DDI 概述
 
@@ -28,7 +27,7 @@ ms.locfileid: "90714806"
 
 实现用户模式 synths 所需的设计原则也适用于内核模式 synths。 出于此原因，本指南首先介绍用户模式实现，并逐步介绍特定的内核模式主题。
 
-通常，最佳设计策略是首先编写 DirectMusic *设备驱动程序接口 * 的软件实现， (在用户模式下运行的 DDI) 。 即使最终产品是使用硬件组件的内核模式实现，此方法也非常有用。 在用户模式版本完成后，可以将软件转换为内核模式，以及与硬件建立的连接，一次一项功能。 有关详细信息，请参阅 [用户模式与内核模式](user-mode-versus-kernel-mode.md)。
+通常，最佳设计策略是首先编写 DirectMusic *设备驱动程序接口* 的软件实现， (在用户模式下运行的 DDI) 。 即使最终产品是使用硬件组件的内核模式实现，此方法也非常有用。 在用户模式版本完成后，可以将软件转换为内核模式，以及与硬件建立的连接，一次一项功能。 有关详细信息，请参阅 [用户模式与内核模式](user-mode-versus-kernel-mode.md)。
 
 DirectMusic 使用以下用户模式接口控制用户模式合成程序，并与内核流式处理驱动程序通信：
 
@@ -60,7 +59,7 @@ DirectMusic 使用此接口从 DirectX 6.1 和更高版本中的用户模式访�
 
 [IPortDMus](/windows-hardware/drivers/ddi/dmusicks/nn-dmusicks-iportdmus)
 
-Dmu 微型端口驱动程序实现 **IMiniportDMus**、 **ISynthSinkDMus**和 **IMXF** 接口。 Dmu 端口驱动程序实现了 **IAllocatorMXF**、 **IMasterClock**和 **IPortDMus** 接口，并将它们公开给微型端口驱动程序。
+Dmu 微型端口驱动程序实现 **IMiniportDMus**、 **ISynthSinkDMus** 和 **IMXF** 接口。 Dmu 端口驱动程序实现了 **IAllocatorMXF**、 **IMasterClock** 和 **IPortDMus** 接口，并将它们公开给微型端口驱动程序。
 
  
 

@@ -1,22 +1,21 @@
 ---
 title: MS \_ SMHBA \_ FC \_ 端口 WMI 类
 description: MS \_ SMHBA \_ FC \_ 端口 WMI 类
-ms.assetid: 671f14e4-c591-4df2-85a1-2db3f802ef5e
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 7df1f53d398495b404d5125d890224f3a49a6ac1
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 5ee2288fd6178c3740b699e1d57bf451188ac5d3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89188014"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96785581"
 ---
 # <a name="ms_smhba_fc_port-wmi-class"></a>MS \_ SMHBA \_ FC \_ 端口 WMI 类
 
 
 支持存储管理 API 的 HBA 微型端口驱动程序使用 MS \_ SMHBA \_ FC \_ 端口类公开关联 FC 适配器的端口属性。 每个端口都应有此类的一个实例。
 
-\_ \_ 在 Hbaapi 中，MS SMHBA FC \_ 端口类定义如下*Hbaapi.mof*：
+\_ \_ 在 Hbaapi 中，MS SMHBA FC \_ 端口类定义如下 *Hbaapi.mof*：
 
 ```cpp
 class MS_SMHBA_FC_Port 

@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ 音频 \_ PEAKMETER
 description: KSPROPERTY \_ AUDIO \_ PEAKMETER 属性检索 \_ 自上次重置 PEAKMETER 节点后 PEAKMETER 节点上发生的最高音频信号级别 (KSNODETYPE PEAKMETER) 。
-ms.assetid: c8c2c9ed-61ea-4bbe-b376-c956f051416e
 keywords:
 - KSPROPERTY_AUDIO_PEAKMETER 音频设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 04/17/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 7b963acb32c178f31d14356ff5e0bce0bc9a6693
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: ff11787e232822019575e9983f5de8151eb3a95e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102086"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96784489"
 ---
 # <a name="ksproperty_audio_peakmeter"></a>KSPROPERTY \_ 音频 \_ PEAKMETER
 

@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ 音频 \_ 算法 \_ 实例
 description: KSPROPERTY \_ 音频 \_ 算法 \_ 实例属性指定 (DSP) 算法的数字信号处理，该算法用于实现节点应用于音频数据流的第三方效果。
-ms.assetid: 8c27f856-de46-42a2-9f1f-e0cef1ee0f6e
 keywords:
 - KSPROPERTY_AUDIO_ALGORITHM_INSTANCE 音频设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e70dbc9205cfc7dc775a15b64ac82bb8f4fc4c20
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: c917591e65888ab3000106c59fecbfd618557c7d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102152"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96784557"
 ---
 # <a name="ksproperty_audio_algorithm_instance"></a>KSPROPERTY \_ 音频 \_ 算法 \_ 实例
 
@@ -79,12 +78,12 @@ KSPROPERTY \_ 音频 \_ 算法 \_ 实例属性指定 (DSP) 算法的数字信号
 
 KSPROPERTY \_ 音频 \_ 算法 \_ 实例属性请求返回状态 " \_ 成功" 以指示已成功完成。 否则，请求将返回相应的错误状态代码。
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
-此属性用于控制由 AEC 节点执行的 DSP 算法 (KSNODETYPE 的 "回声" [** \_ \_ \_ 取消**](ksnodetype-acoustic-echo-cancel.md)) 或 "噪音禁止显示" 节点 ([**KSNODETYPE \_ 噪声 \_ 禁止显示**](ksnodetype-noise-suppress.md)) 。
+此属性用于控制由 AEC 节点执行的 DSP 算法 (KSNODETYPE 的 "回声" [**\_ \_ \_ 取消**](ksnodetype-acoustic-echo-cancel.md)) 或 "噪音禁止显示" 节点 ([**KSNODETYPE \_ 噪声 \_ 禁止显示**](ksnodetype-noise-suppress.md)) 。
 
-算法实例 GUID 与调用方传递给**IDirectSoundCapture：： CreateCaptureBuffer**方法或**DIRECTSOUNDFULLDUPLEXCREATE**函数的 DSCEFFECTDESC 结构的**guidDSCFXInstance**成员中的值相匹配。 有关详细信息，请参阅 Microsoft Windows SDK 文档。
+算法实例 GUID 与调用方传递给 **IDirectSoundCapture：： CreateCaptureBuffer** 方法或 **DIRECTSOUNDFULLDUPLEXCREATE** 函数的 DSCEFFECTDESC 结构的 **guidDSCFXInstance** 成员中的值相匹配。 有关详细信息，请参阅 Microsoft Windows SDK 文档。
 
 <a name="requirements"></a>要求
 ------------

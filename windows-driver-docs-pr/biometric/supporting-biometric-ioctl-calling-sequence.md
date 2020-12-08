@@ -1,19 +1,18 @@
 ---
 title: 支持生物识别 IOCTL 调用序列
 description: 支持生物识别 IOCTL 调用序列
-ms.assetid: e6555895-8936-4f5d-8f2b-05b5283edbee
 keywords:
 - 生物识别驱动程序 WDK，支持 IOCTLs
 - 支持 IOCTLs WDK 生物识别
 - IOCTLs WDK 生物识别
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 66725341fe4717fb1ff89f1212f3f2a8bd19a9d5
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 84e06a2ee4f6835c91f139d9eac5921a33cfc719
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89095409"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96784273"
 ---
 # <a name="supporting-biometric-ioctl-calling-sequence"></a>支持生物识别 IOCTL 调用序列
 
@@ -28,7 +27,7 @@ WBDI 是基于 Windows 标准 IOCTL 的接口。 编写 WBDI 驱动程序时，�
 
 2.  接下来，驱动程序接收 [**IOCTL \_ 生物识别 \_ \_ 传感器 \_ 状态**](/windows-hardware/drivers/ddi/winbio_ioctl/ni-winbio_ioctl-ioctl_biometric_get_sensor_status)。 驱动程序应填写 [**WINBIO \_ 诊断**](/windows-hardware/drivers/ddi/winbio_ioctl/ns-winbio_ioctl-_winbio_diagnostics) 结构的相关成员并完成该请求。
 
-3.  如果驱动程序指示在从 IOCTL 生物识别获取传感器状态请求中返回的[**WINBIO \_ 诊断**](/windows-hardware/drivers/ddi/winbio_ioctl/ns-winbio_ioctl-_winbio_diagnostics)结构的**SensorStatus**成员中需要校准 \_ \_ \_ \_ ，则驱动程序接下来会接收[**ioctl \_ 生物识别 \_ 校准**](/windows-hardware/drivers/ddi/winbio_ioctl/ni-winbio_ioctl-ioctl_biometric_calibrate)请求。 驱动程序必须为此 IOCTL 提供处理程序。 校准设备后，回调应返回 [**WINBIO \_ 校准 \_ 信息**](/windows-hardware/drivers/ddi/winbio_ioctl/ns-winbio_ioctl-_winbio_calibration_info) 结构。
+3.  如果驱动程序指示在从 IOCTL 生物识别获取传感器状态请求中返回的 [**WINBIO \_ 诊断**](/windows-hardware/drivers/ddi/winbio_ioctl/ns-winbio_ioctl-_winbio_diagnostics)结构的 **SensorStatus** 成员中需要校准 \_ \_ \_ \_ ，则驱动程序接下来会接收 [**ioctl \_ 生物识别 \_ 校准**](/windows-hardware/drivers/ddi/winbio_ioctl/ni-winbio_ioctl-ioctl_biometric_calibrate)请求。 驱动程序必须为此 IOCTL 提供处理程序。 校准设备后，回调应返回 [**WINBIO \_ 校准 \_ 信息**](/windows-hardware/drivers/ddi/winbio_ioctl/ns-winbio_ioctl-_winbio_calibration_info) 结构。
 
 4.  现在，驱动程序可以接收 [**IOCTL \_ 生物识别 \_ 捕获 \_ 数据**](/windows-hardware/drivers/ddi/winbio_ioctl/ni-winbio_ioctl-ioctl_biometric_capture_data) 请求。 由于任何时候都只能挂起一个捕获，因此此请求的处理程序应该首先确认没有任何请求处于挂起状态。 如果请求处于挂起状态，则完成包含 WINBIO \_ E 数据收集的请求 \_ \_ \_ \_ 。
 

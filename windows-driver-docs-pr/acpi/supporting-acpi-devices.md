@@ -1,7 +1,6 @@
 ---
 title: 支持 ACPI 设备
 description: 支持 ACPI 设备
-ms.assetid: ebaf2e66-4f56-48ca-93ca-f34e694c0d73
 keywords:
 - 高级配置和电源接口规范 WDK
 - ACPI 设备 WDK
@@ -13,12 +12,12 @@ keywords:
 - WDM 函数驱动程序 WDK ACPI
 ms.date: 05/19/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 390ba5181631c6f581c0320c40605045bf4a6867
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 789662c79480343c28ad241efbd50a6470bf2dd4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89184813"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96785053"
 ---
 # <a name="supporting-acpi-devices"></a>支持 ACPI 设备
 

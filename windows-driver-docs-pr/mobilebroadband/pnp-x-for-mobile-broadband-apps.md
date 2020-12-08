@@ -1,15 +1,14 @@
 ---
 title: 适合移动宽带应用的 PnP-X
 description: 适合移动宽带应用的 PnP-X
-ms.assetid: f8f4756e-00b6-4778-9d67-73653865cf54
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d1da63bdd09fc636268767eb18ae53717211ea40
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 6354b161afc2cda6fc2ba6be80204e80bebbd43e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89210809"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96786195"
 ---
 # <a name="pnp-x-for-mobile-broadband-apps"></a>适合移动宽带应用的 PnP-X
 

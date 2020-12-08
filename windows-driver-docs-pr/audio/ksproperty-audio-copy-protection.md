@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ 音频 \_ 复制 \_ 保护
 description: KSPROPERTY \_ audio \_ copy \_ protection 属性指定音频流的复制保护状态。
-ms.assetid: 68896bd4-9ffe-4632-a3b2-441b5d04208a
 keywords:
 - KSPROPERTY_AUDIO_COPY_PROTECTION 音频设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8b40104b60845326fbcb3a95a176541895818801
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 489b923ce75f6ba20e0ff22ac1e7b7be31526bb9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102128"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96784541"
 ---
 # <a name="ksproperty_audio_copy_protection"></a>KSPROPERTY \_ 音频 \_ 复制 \_ 保护
 

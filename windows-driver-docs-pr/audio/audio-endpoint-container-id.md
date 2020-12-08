@@ -1,15 +1,14 @@
 ---
 title: 音频终结点容器 ID
 description: 音频终结点容器 ID 主题讨论了可用于获取与蓝牙音频设备关联的音频终结点的容器 ID 的可靠方法。
-ms.assetid: 82A852FF-688C-496A-AFF1-C68B0CC1756A
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fbc76b664f9d68caca4a52bc5c1b50e851f7db5b
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 2ddfef2008240371e1788ade26fcb7631fcef94b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89208329"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96784995"
 ---
 # <a name="audio-endpoint-container-id"></a>音频终结点容器 ID
 

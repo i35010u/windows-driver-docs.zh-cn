@@ -1,19 +1,18 @@
 ---
 title: NDIS 6.20 简介
 description: NDIS 6.20 简介
-ms.assetid: a0a25173-5f57-4317-b963-20ba9bb3f95b
 keywords:
 - NDIS 6.20 WDK
 - NDIS 6.20 WDK，关于
-- 网络驱动程序接口规格 (NDIS) 6.20 WDK
+- 网络驱动程序接口规范 (NDIS) 6.20 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: da44e7f54512dd8fddee3e286891277691f8235d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6ce9b0a1001b955b62b58f960d0c3361b661a59e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380602"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96786135"
 ---
 # <a name="introduction-to-ndis-620"></a>NDIS 6.20 简介
 
@@ -21,26 +20,26 @@ ms.locfileid: "63380602"
 
 
 
-本部分介绍网络驱动程序接口规范 (NDIS) 6.20 并描述其主要设计新增功能。 在 Windows 7 和 Windows Server 2008 R2 和更高版本的 NDIS 6.20。
+本部分介绍 (NDIS) 6.20 的网络驱动程序接口规格，并介绍了其主要的设计添加。 NDIS 6.20 包含在 Windows 7 和 Windows Server 2008 R2 及更高版本中。
 
-熟悉 NDIS 6.0 和 NDIS 6.1 之前应了解 NDIS 6.20:
+在了解 NDIS 6.20 之前，应熟悉 NDIS 6.0 和 NDIS 6.1：
 
--   NDIS 6.0 的详细信息，请参阅[简介 NDIS 6.0](introduction-to-ndis-6-0.md)。
+-   有关 NDIS 6.0 的详细信息，请参阅 [ndis 6.0 简介](introduction-to-ndis-6-0.md)。
 
--   有关 NDIS 6.1 的详细信息，请参阅[简介 NDIS 6.1](introduction-to-ndis-6-1.md)。
+-   有关 NDIS 6.1 的详细信息，请参阅 [ndis 6.1 简介](introduction-to-ndis-6-1.md)。
 
-NDIS 6.20 和早期版本之间的差异的说明以及有关移植到 NDIS 6.20 的驱动程序的详细信息，请参阅[移植 NDIS 6.x 驱动程序到 NDIS 6.20](porting-ndis-6-x-drivers-to-ndis-6-20.md)。
+有关 NDIS 6.20 和更早版本之间的差异的说明，以及有关将驱动程序移植到 NDIS 6.20 的详细信息，请参阅 [将 ndis 1.X 驱动程序迁移到 ndis 6.20](porting-ndis-6-x-drivers-to-ndis-6-20.md)。
 
-本部分包括以下主题：
+本节包括下列主题：
 
--   [在 NDIS 6.20 的电源管理增强功能](power-management-enhancements-in-ndis-6-20.md)
--   [在 NDIS 6.20 中的虚拟机队列 (VMQ)](virtual-machine-queue--vmq--in-ndis-6-20.md)
--   [在 NDIS 6.20 超过 64 个处理器的支持](support-for-more-than-64-processors-in-ndis-6-20.md)
--   [在 NDIS 6.20 接收端限制](receive-side-throttle-in-ndis-6-20.md)
--   [NDIS 6.20 的媒体可扩展性](media-extensibility-in-ndis-6-20.md)
--   [实现 6.20 NDIS 驱动程序](implementing-an-ndis-6-20-driver.md)
+-   [NDIS 6.20 中的电源管理增强](power-management-enhancements-in-ndis-6-20.md)
+-   [NDIS 6.20 中的虚拟机队列 (VMQ)](virtual-machine-queue--vmq--in-ndis-6-20.md)
+-   [NDIS 6.20 中对超过 64 个处理器的支持](support-for-more-than-64-processors-in-ndis-6-20.md)
+-   [NDIS 6.20 中的接收端限制](receive-side-throttle-in-ndis-6-20.md)
+-   [NDIS 6.20 中的媒体可扩展性](media-extensibility-in-ndis-6-20.md)
+-   [实现 NDIS 6.20 驱动程序](implementing-an-ndis-6-20-driver.md)
 -   [使用 NDIS 6.20 数据结构](using-ndis-6-20-data-structures.md)
--   [编译 6.20 NDIS 驱动程序](compiling-an-ndis-6-20-driver.md)
+-   [编译 NDIS 6.20 驱动程序](compiling-an-ndis-6-20-driver.md)
 
 ## <a name="related-topics"></a>相关主题
 

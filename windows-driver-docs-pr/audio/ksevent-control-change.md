@@ -1,7 +1,6 @@
 ---
 title: KSEVENT \_ 控件 \_ 更改
 description: KSEVENT \_ 控件 \_ 更改事件指示在表示硬件卷控制旋钮、静音开关或其他类型手动控制的节点上发生了控件值更改。使用情况摘要 TableTargetEvent 描述符 TypeEvent 值 TypePinKSE \_ NODEKSEVENTDATA (操作数据的事件值类型) 是一个 KSEVENTDATA 结构，它指定要用于事件的通知类型。
-ms.assetid: 32d8e14c-f21d-4bac-8d98-8aca40e30b60
 keywords:
 - KSEVENT_CONTROL_CHANGE 音频设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 720846545ffec49b9ebee2eda7fb391273ca45ea
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: b3c7f4f3ae156eb8f7e9002312bddfecc011ad0a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102680"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96784699"
 ---
 # <a name="ksevent_control_change"></a>KSEVENT \_ 控件 \_ 更改
 

@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ 音频 \_ 采样 \_ 率
 description: "\"KSPROPERTY \\_ 音频 \\_ 采样 \\_ 速率\" 属性指定节点采样其输入流以生成其输出流的速率。"
-ms.assetid: c5e48678-3b9a-4e5b-ae7b-16f9dcae7492
 keywords:
 - KSPROPERTY_AUDIO_SAMPLING_RATE 音频设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3abce4f1bd2974ca5bb8874163b74a0a7bae896f
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: f9a9d651a0ef24f4bcbb0181ef74a891273ec59f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102044"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96784471"
 ---
 # <a name="ksproperty_audio_sampling_rate"></a>KSPROPERTY \_ 音频 \_ 采样 \_ 率
 
@@ -67,7 +66,7 @@ ms.locfileid: "90102044"
 
 KSPROPERTY \_ 音频 \_ 采样 \_ 率属性请求返回状态 " \_ 成功" 以指示已成功完成。 否则，请求将返回相应的错误状态代码。
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 如果节点不支持指定的采样速率，则微型端口驱动程序应在设置属性请求上返回错误。

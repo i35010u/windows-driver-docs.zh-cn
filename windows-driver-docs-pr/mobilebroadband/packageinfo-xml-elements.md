@@ -1,15 +1,14 @@
 ---
 title: PackageInfo XML 元素列表
 description: PackageInfo XML 元素列表
-ms.assetid: eb08c164-d901-4806-a9f1-f538f3ff00e3
 ms.date: 07/05/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 8511bb620fd4c4a47bb0871128e322d5d2254169
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: f46b93ae667735dec9ae1c784fab06093dc2401f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89403304"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96786241"
 ---
 # <a name="packageinfo-xml-elements-list"></a>PackageInfo XML 元素列表
 
@@ -37,7 +36,7 @@ ms.locfileid: "89403304"
 
     -   [PackageStructure](packagestructure.md)
 
-        -   Metadata
+        -   Metadata 
 
     -   [关系](relationships.md)
 
@@ -47,9 +46,9 @@ ms.locfileid: "89403304"
 
     -   [MetadataBuilderInformation](metadatabuilderinformation.md)
 
-        -   [应用程序](application-service-schema.md)
+        -   应用程序
 
-        -   [版本](version.md)
+        -   [Version](version.md)
 
  
 

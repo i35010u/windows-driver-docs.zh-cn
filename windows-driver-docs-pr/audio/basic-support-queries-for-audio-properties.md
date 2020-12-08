@@ -1,7 +1,6 @@
 ---
 title: 音频属性的基本支持查询
 description: 音频属性的基本支持查询
-ms.assetid: d08b6f86-e4fd-4b2c-bfaa-191bcbac3ff8
 keywords:
 - 音频属性 WDK，基本支持查询
 - WDM 音频属性 WDK，基本支持查询
@@ -11,12 +10,12 @@ keywords:
 - 范围值 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 46c7e7443e3ff3e27ef107f0f288754f4218495d
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: efbb0efdf87f645ca4d87f6ff5a5a6c911d51570
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89208239"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96784937"
 ---
 # <a name="basic-support-queries-for-audio-properties"></a>音频属性的基本支持查询
 
@@ -44,9 +43,9 @@ ms.locfileid: "89208239"
 
 处理程序写入到值缓冲区中的属性特定信息可能包含属性值的数据范围。 KSPROPERTY MEMBERSHEADER 的 **MembersSize** 成员 \_ 表明是否包含数据范围：
 
--   如果不需要范围， **MembersSize**为零。 例如，如果属性值的类型为 BOOL，就会出现这种情况。
+-   如果不需要范围， **MembersSize** 为零。 例如，如果属性值的类型为 BOOL，就会出现这种情况。
 
--   **MembersSize**如果 KSPROPERTY \_ MEMBERSHEADER 结构后跟一个或多个属性值的范围说明符，则 MembersSize 为非零值。
+-   **MembersSize** 如果 KSPROPERTY \_ MEMBERSHEADER 结构后跟一个或多个属性值的范围说明符，则 MembersSize 为非零值。
 
 对于类型为 BOOL 的属性值，不需要范围说明符，因为范围隐式限制为值 **TRUE** 和 **FALSE**。 但是，需要范围描述符来指定具有整数类型的属性值的范围。
 
@@ -58,7 +57,7 @@ ms.locfileid: "89208239"
 
 [**KSPROPERTY \_ 步进 \_ 长**](/windows-hardware/drivers/ddi/ks/ns-ks-ksproperty_stepping_long)
 
-这三个结构按前面列表中显示的顺序打包到缓冲区中的相邻位置。 处理请求时，微型端口驱动程序将最小和最大音量级别写入**Bounds**到 KSPROPERTY \_ 单步执行长结构的边界成员中 \_ 。
+这三个结构按前面列表中显示的顺序打包到缓冲区中的相邻位置。 处理请求时，微型端口驱动程序将最小和最大音量级别写入 **Bounds** 到 KSPROPERTY \_ 单步执行长结构的边界成员中 \_ 。
 
 有关包含范围说明符数组的基本支持请求的示例，请参阅 [公开多通道节点](exposing-multichannel-nodes.md)中的图。 有关基本支持属性请求的详细信息，请参阅 [KS 属性](../stream/ks-properties.md)。 有关代码示例，请参阅 Microsoft Windows 驱动程序工具包 (WDK) 中的 [示例音频驱动程序](sample-audio-drivers.md) 中的属性处理程序实现。
 

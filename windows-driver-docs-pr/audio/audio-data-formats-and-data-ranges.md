@@ -1,15 +1,14 @@
 ---
 title: 音频数据格式和数据范围
 description: 音频数据格式和数据范围
-ms.assetid: 85aa74b4-8e33-49f4-82e7-561baa55c265
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5a94c4280925bfac0b147ae15495dc3869701a9b
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: de74c0e216d39e4976efc228f71e1578bf96aa4e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89208359"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96785027"
 ---
 # <a name="audio-data-formats-and-data-ranges"></a>音频数据格式和数据范围
 

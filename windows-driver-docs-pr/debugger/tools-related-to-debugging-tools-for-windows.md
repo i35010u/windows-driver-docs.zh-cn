@@ -1,15 +1,14 @@
 ---
 title: 与 Windows 调试工具相关的工具
 description: 本部分介绍与调试相关但未包含在 Windows 包调试工具中的工具。
-ms.assetid: A121BF0C-53BF-48E0-9000-3BDA255FD884
 ms.date: 06/05/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: fc131d1a8b76131e2d21f389add9b23a91239be3
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 960aabb0dc02a10142a9da75fc2b0f95dd23853a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89209845"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96785259"
 ---
 # <a name="tools-related-to-debugging-tools-for-windows"></a>与 Windows 调试工具相关的工具
 

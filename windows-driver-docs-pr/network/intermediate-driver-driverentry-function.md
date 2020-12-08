@@ -1,7 +1,6 @@
 ---
 title: 中间驱动程序 DriverEntry 函数
 description: 中间驱动程序 DriverEntry 函数
-ms.assetid: 85b4d5c0-8ec9-41a9-a34e-578a85d411e3
 keywords:
 - 中间驱动程序 WDK 网络，入口点
 - NDIS 中间驱动程序 WDK，入口点
@@ -9,12 +8,12 @@ keywords:
 - DriverEntry WDK 网络
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 25ecdf914b4d66b64b4fc383c5133000ece618b5
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 800895e51dca613c3edea4a10e2595e7b2e7d478
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89215628"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96786145"
 ---
 # <a name="intermediate-driver-driverentry-function"></a>中间驱动程序 DriverEntry 函数
 
@@ -38,7 +37,7 @@ ms.locfileid: "89215628"
 
 请注意，卸载处理程序与 [*MiniportHaltEx*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_halt) 函数不同：卸载处理程序具有更全局的作用域， *MiniportHaltEx* 函数的作用域限制为特定的微型端口适配器。 中间驱动程序应清除状态信息，并在每个绑定到它的基础微型端口驱动程序停止时重新分配资源。 有关处理虚拟微型端口的暂停操作的信息，请参阅 [停止虚拟微型端口](halting-a-virtual-miniport.md)。
 
-[*ProtocolUninstall*](/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_uninstall) 是一个可选的卸载处理程序。 在传递到[**NdisRegisterProtocolDriver**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisregisterprotocoldriver)的*ProtocolCharacteristics*结构中注册此函数的入口点。 为了响应用户请求以卸载中间驱动程序，NDIS 调用了 *ProtocolUninstall* 。 对于每个绑定适配器，NDIS 都调用一次 [*ProtocolUnbindAdapterEx*](/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_unbind_adapter_ex) ，并调用 *ProtocolUninstall*。 在系统实际卸载驱动程序之前，将调用此处理程序。 这种计时使你可以释放任何设备对象或其他资源，否则可能会阻止系统调用已注册到 **NdisMRegisterMiniportDriver** 并卸载驱动程序的卸载处理程序。
+[*ProtocolUninstall*](/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_uninstall) 是一个可选的卸载处理程序。 在传递到 [**NdisRegisterProtocolDriver**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisregisterprotocoldriver)的 *ProtocolCharacteristics* 结构中注册此函数的入口点。 为了响应用户请求以卸载中间驱动程序，NDIS 调用了 *ProtocolUninstall* 。 对于每个绑定适配器，NDIS 都调用一次 [*ProtocolUnbindAdapterEx*](/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_unbind_adapter_ex) ，并调用 *ProtocolUninstall*。 在系统实际卸载驱动程序之前，将调用此处理程序。 这种计时使你可以释放任何设备对象或其他资源，否则可能会阻止系统调用已注册到 **NdisMRegisterMiniportDriver** 并卸载驱动程序的卸载处理程序。
 
 **DriverEntry** 可以初始化自旋锁，以保护中间驱动程序分配的任何全局共享资源，如状态变量、结构和内存区域。 驱动程序使用这些资源跟踪连接并跟踪正在进行的发送或驱动程序分配的队列。
 

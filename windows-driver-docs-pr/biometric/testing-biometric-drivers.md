@@ -1,18 +1,17 @@
 ---
 title: 测试生物识别驱动程序
 description: 测试生物识别驱动程序
-ms.assetid: 4ffcdb49-db38-4d11-82e7-04674c2ed92a
 keywords:
 - 生物识别驱动程序 WDK，测试
 - 测试生物识别驱动程序 WDK 生物识别
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 97049b728ffa7caf32d0ac3d4959ef09dfe18b5d
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 82c668dd62e14b35cebe0114061331169ae53331
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89095407"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96784269"
 ---
 # <a name="testing-biometric-drivers"></a>测试生物识别驱动程序
 

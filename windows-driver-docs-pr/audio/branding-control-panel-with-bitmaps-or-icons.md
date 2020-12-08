@@ -1,7 +1,6 @@
 ---
 title: 使用位图或图标打造控件面板的品牌
 description: 使用位图或图标打造控件面板的品牌
-ms.assetid: 1520cf9e-6813-41aa-aa88-39a1a6c27f74
 keywords:
 - 音频适配器 WDK，控制面板品牌
 - 适配器驱动程序 WDK 音频、控制面板品牌
@@ -16,12 +15,12 @@ keywords:
 - 图像品牌 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6641b1b7f2e639f583dc15955430632a2a0ca792
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: c938b65e882c4493a08513fdbb9cc82be13601c1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89208223"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96784923"
 ---
 # <a name="branding-control-panel-with-bitmaps-or-icons"></a>使用位图或图标打造控件面板的品牌
 
@@ -43,9 +42,9 @@ ms.locfileid: "89208223"
 
 -   SndVol32 程序 ( # A0) 
 
-在 Windows Vista 中，用户可以在 "控制面板" 中的*声音*应用程序的 "**播放**和**记录**" 页中查看品牌信息 ( # A0) 。
+在 Windows Vista 中，用户可以在 "控制面板" 中的 *声音* 应用程序的 "**播放** 和 **记录**" 页中查看品牌信息 ( # A0) 。
 
-品牌信息存储在音频设备根密钥下的 **署名** 子项下的注册表中，该根密钥位于 media 类键下。 **品牌**子项可包含下表中显示的一个或多个 REG \_ SZ 值。
+品牌信息存储在音频设备根密钥下的 **署名** 子项下的注册表中，该根密钥位于 media 类键下。 **品牌** 子项可包含下表中显示的一个或多个 REG \_ SZ 值。
 
 <table>
 <colgroup>
@@ -78,7 +77,7 @@ ms.locfileid: "89208223"
 
 前面提到的页面中显示的专有设备名称是设备的友好名称。 此友好名称由安装设备的 INF 文件的 "添加注册表" 部分中的指令指定。 此指令包含关键字 "FriendlyName"，如 [**INF AddReg 指令**](../install/inf-addreg-directive.md)中的示例中所示。 在 Windows XP 中，" **卷** " 页和 SndVol32 仅显示名称字符串的前31个字符。 超过最大长度的字符串会被截断。 在 Windows Vista 和更高版本的 Windows 中，当设备名称显示在 "控制面板" 中时，将删除此31个字符的限制。 使用早于 Windows Vista 的 Windows 版本（例如 [MCI \_ GetDevCaps](/windows/win32/multimedia/mci-getdevcaps)）所支持的 api 时，31字符限制仍适用于你向 API 提供的设备名称。
 
-**重要提示**   在 Windows Vista 和更高版本的 Windows 中，不再支持使用第三方品牌的位图图像。 要品牌音频设备控制的第三方音频驱动程序开发人员必须使用图标。 这些图标支持的像素尺寸为32x32 或48x48。
+**重要提示**   在 Windows Vista 和更高版本的 Windows 中，不再支持使用第三方品牌的位图图像。 要品牌音频设备控制的第三方音频驱动程序开发人员必须使用图标。 这些图标支持的像素尺寸为32x32 或48x48。
 
  
 
@@ -96,7 +95,7 @@ ms.locfileid: "89208223"
 
 可以将 **图标** 值的示例指令更改为使用 "imagefile" 格式，但在这种情况下，字符串值应包含带有 .ico 文件扩展名的文件的路径名称。
 
-对于 "文件，resourceid" 格式，控制面板软件会搜索相同的搜索路径列表，如 Microsoft Windows SDK 文档) ** (所述** 。 如果此路径列表中不包含该文件，则该软件还会搜索驱动程序目录 (参阅 [**INF DestinationDirs 部分**](../install/inf-destinationdirs-section.md)) 。 这种格式使得映像无需在 INF 文件中指定绝对路径名称，即可轻松地将其存储在驱动程序文件中。
+对于 "文件，resourceid" 格式，控制面板软件会搜索相同的搜索路径列表，如 Microsoft Windows SDK 文档) **(所述** 。 如果此路径列表中不包含该文件，则该软件还会搜索驱动程序目录 (参阅 [**INF DestinationDirs 部分**](../install/inf-destinationdirs-section.md)) 。 这种格式使得映像无需在 INF 文件中指定绝对路径名称，即可轻松地将其存储在驱动程序文件中。
 
 ### <a name="span-idexample_2spanspan-idexample_2span-example-2"></a><span id="example_2"></span><span id="EXAMPLE_2"></span> 示例 2
 

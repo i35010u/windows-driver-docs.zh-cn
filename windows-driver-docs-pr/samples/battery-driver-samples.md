@@ -1,15 +1,14 @@
 ---
 title: 电池驱动程序示例
 description: 此目录中的电池驱动程序示例提供了为设备编写自定义驱动程序的起点。
-ms.assetid: 0C73DBE1-6214-4E7F-A3EE-AEC87F8BE99C
 ms.date: 11/15/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: f74a0de4a1e794cf22659f0cde46a06e9f1fdd8c
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 64fa8772e1e8388ba170bbb4a74b5ffb7c37f37c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89192237"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96785665"
 ---
 # <a name="battery-driver-samples"></a>电池驱动程序示例
 

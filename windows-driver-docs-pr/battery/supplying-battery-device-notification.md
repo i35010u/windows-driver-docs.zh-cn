@@ -1,7 +1,6 @@
 ---
 title: 提供电池设备通知
 description: 提供电池设备通知
-ms.assetid: 7104c43b-84f1-496d-9552-608101f5b379
 keywords:
 - 电池通知 WDK
 - 电池 miniclass 驱动程序 WDK，通知
@@ -12,12 +11,12 @@ keywords:
 - 电池类驱动程序 WDK，通知
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4504c83b531d67be26e324c75d706272393e4f70
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 2fb1eee34fa7b297e2b1197983496798037b72d0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90716574"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96784315"
 ---
 # <a name="supplying-battery-device-notification"></a>提供电池设备通知
 

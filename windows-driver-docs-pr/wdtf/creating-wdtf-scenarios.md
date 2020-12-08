@@ -1,7 +1,6 @@
 ---
 title: 创建 WDTF 方案
 description: 使用 WDTF 方案，你可以使用 WDTF 框架构建以设备为中心的自动化和自定义测试方案。
-ms.assetid: f9e3de20-28be-40c6-802c-f4637b3f6c20
 keywords:
 - Windows 设备测试框架 WDK，脚本
 - WDTF WDK，脚本
@@ -12,12 +11,12 @@ keywords:
 - 热更换设备 WDK WDTF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 19dbed82cf161690f6247e6d28f9ca8e443751aa
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: b3aa9771c300432f8b86f6f4bbb125aa987f7e30
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89402688"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96785397"
 ---
 # <a name="creating-wdtf-scenarios"></a>创建 WDTF 方案
 
@@ -34,7 +33,7 @@ ms.locfileid: "89402688"
 
 ### <a name="simple-wdtf-scenario"></a>简单的 WDTF 方案
 
-以下 VBScript 代码示例 (WDTF \_ Sample1) 显示一个简化方案，该方案使用 WDTF 来启用和禁用每个非虚拟设备。 *非虚拟设备*是任何物理上存在的设备。 有关完整示例，请参阅 [示例 WDTF 方案](sample-wdtf-scenarios.md)。
+以下 VBScript 代码示例 (WDTF \_Sample1.vbs) 显示了一个简化的方案，该方案使用 WDTF 来启用和禁用每个非虚拟设备。 *非虚拟设备* 是任何物理上存在的设备。 有关完整示例，请参阅 [示例 WDTF 方案](sample-wdtf-scenarios.md)。
 
 ```cpp
 Set WDTF = WScript.CreateObject("WDTF.WDTF")
@@ -48,17 +47,17 @@ For Each Device In WDTF.DeviceDepot.Query("IsPhantom=false AND IsDisableable")
 Next
 ```
 
-可以通过运行 **CScript.exe WDTF \_ Sample1**运行此方案。
+可以通过运行 **CScript.exe WDTF \_Sample1.vbs** 运行此方案。
 
 ### <a name="storing-target-information-by-using-context"></a>使用上下文存储目标信息
 
-某些编程语言（例如 VBScript）不容易管理对象引用。 为了简化 WDTF 中的这一管理，每个目标都提供一个 [**上下文**](/windows-hardware/drivers/ddi/wdtf/nf-wdtf-iwdtftarget2-put_context) 属性，可用于存储任意键/值对（包括对活动对象的引用）。 此属性特别适用于存储操作接口，以便以后可以使用。 以下 VBScript 代码示例在命名**上下文**项中存储[**IWDTFSimpleIOStressAction2**](/windows-hardware/drivers/ddi/wdtfinterfaces/nn-wdtfinterfaces-iwdtfsimpleiostressaction2)操作。
+某些编程语言（例如 VBScript）不容易管理对象引用。 为了简化 WDTF 中的这一管理，每个目标都提供一个 [**上下文**](/windows-hardware/drivers/ddi/wdtf/nf-wdtf-iwdtftarget2-put_context) 属性，可用于存储任意键/值对（包括对活动对象的引用）。 此属性特别适用于存储操作接口，以便以后可以使用。 以下 VBScript 代码示例在命名 **上下文** 项中存储 [**IWDTFSimpleIOStressAction2**](/windows-hardware/drivers/ddi/wdtfinterfaces/nn-wdtfinterfaces-iwdtfsimpleiostressaction2)操作。
 
 ```cpp
 deviceObj.Context("IWDTFSimpleIOStressAction2") = SimpleIOObj
 ```
 
-稍后，你的方案可以通过[**上下文**](/windows-hardware/drivers/ddi/wdtf/nf-wdtf-iwdtftarget2-put_context)再次访问来停止、暂停或重新启动[**IWDTFSimpleIOStressAction2**](/windows-hardware/drivers/ddi/wdtfinterfaces/nn-wdtfinterfaces-iwdtfsimpleiostressaction2)接口，如下面的代码示例所示。
+稍后，你的方案可以通过 [**上下文**](/windows-hardware/drivers/ddi/wdtf/nf-wdtf-iwdtftarget2-put_context)再次访问来停止、暂停或重新启动 [**IWDTFSimpleIOStressAction2**](/windows-hardware/drivers/ddi/wdtfinterfaces/nn-wdtfinterfaces-iwdtfsimpleiostressaction2)接口，如下面的代码示例所示。
 
 ```cpp
 Device.Context("IWDTFSimpleIOStressAction2").Stop

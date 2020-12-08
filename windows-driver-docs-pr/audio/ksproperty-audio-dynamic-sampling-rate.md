@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ 音频 \_ 动态 \_ 采样 \_ 速率
 description: "\"KSPROPERTY \\_ 音频 \\_ 动态 \\_ 采样 \\_ 速率\" 属性用于启用和禁用节点采样率的动态跟踪。"
-ms.assetid: ff99c670-ef93-4730-8be4-1ed7c01c5381
 keywords:
 - KSPROPERTY_AUDIO_DYNAMIC_SAMPLING_RATE 音频设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a8b61607fe4da3a81011675f9a5269c3300aa023
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 7ff865f653ed49ede702d1d7e108e0d2da9a65b8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102650"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96784525"
 ---
 # <a name="ksproperty_audio_dynamic_sampling_rate"></a>KSPROPERTY \_ 音频 \_ 动态 \_ 采样 \_ 速率
 

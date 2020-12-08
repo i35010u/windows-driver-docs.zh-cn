@@ -1,15 +1,14 @@
 ---
 title: AVStream 驱动程序示例
 description: 此目录中的 AVStream 驱动程序示例提供了为设备编写自定义流媒体驱动程序的起点。
-ms.assetid: 7ABE9DCB-6EF1-4A96-A2EC-B446D4DED7C7
 ms.date: 11/15/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 1f0035dadf59bf42f334bf9e4ce0c70fbf9e3db1
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 3142000bfa41afb69891dab0f332887e5687e66f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89192239"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96785675"
 ---
 # <a name="avstream-driver-samples"></a>AVStream 驱动程序示例
 
