@@ -1,25 +1,24 @@
 ---
 title: C28150
-description: 警告 C28150 函数导致 IRQ 级别的设置高于最大值为所分析函数可接受。
-ms.assetid: 7ad53801-fa7f-49c1-a1f0-715c9f4951d1
+description: 警告 C28150 此函数会导致 IRQ 级别设置为高于要分析的函数的最大可接受值。
 keywords:
-- 警告列出 WDK PREfast for Drivers
-- 错误列出 WDK PREfast for Drivers
+- 列出用于驱动程序的 WDK PREfast 的警告
+- 为驱动程序列出的 WDK PREfast 的错误
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 f1_keywords:
 - C28150
-ms.openlocfilehash: d1ff92b9b831a75c62a5422b823f7bc91fce19b6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1d6b85982ddb058bfb8a25d51c07aa90d1f0d720
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63361367"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96793171"
 ---
 # <a name="c28150"></a>C28150
 
 
-警告 C28150:该函数导致 IRQ 级别设置高于最大值为所分析函数可接受
+警告 C28150：该函数导致 IRQ 级别设置为高于要分析的函数的最大可接受值
 
 <table>
 <colgroup>
@@ -28,17 +27,17 @@ ms.locfileid: "63361367"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>其他信息</strong></p></td>
-<td align="left"><p>级别限制来自当前函数的批注。</p></td>
+<td align="left"><p>其他信息</p></td>
+<td align="left"><p>级别限制来自当前函数的注释。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-指定的函数引发了上面的 IRQL 允许当前函数调用花费的最大 IRQL。
+指定函数在当前函数调用所允许的最大 IRQL 以上引发了 IRQL。
 
-在已批注与函数内会出现此警告 **\_ \_drv\_maxIRQL**批注和指示该函数中的编码错误或误解在批注中的函数的协定。
+此警告出现在已使用 **\_ \_ winspool.drv \_ maxIRQL** 批注批注的函数中，并且指示函数中的编码错误或批注中函数协定的误解。
 
  
 

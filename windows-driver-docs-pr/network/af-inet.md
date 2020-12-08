@@ -1,16 +1,15 @@
 ---
 title: AF_INET
 description: AF_INET
-ms.assetid: 59e12f8d-02eb-413c-bc04-6b9b6e4adde6
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 AF_INET 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: fe103e522b83ee9558544298984ea40cbdf7b122
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: d8bbb9dc22f8553feda1f1e576689655a25ddc3c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90716720"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96794731"
 ---
 # <a name="af_inet"></a>AF \_ INET
 
@@ -19,7 +18,7 @@ AF \_ INET address 系列是 IPv4 地址族。
 
 ### <a name="socket-address-structure"></a>套接字地址结构
 
-使用结构 [** \_ 中的 SOCKADDR**](/windows/win32/api/ws2def/ns-ws2def-sockaddr_in) 指定 IPv4 传输地址。
+使用结构 [**\_ 中的 SOCKADDR**](/windows/win32/api/ws2def/ns-ws2def-sockaddr_in) 指定 IPv4 传输地址。
 
 ### <a name="socket-types"></a>套接字类型
 
@@ -38,7 +37,7 @@ IPv4 支持以下套接字类型：
 
 ### <a name="protocols"></a>协议
 
-\_WSK 头文件中定义了 IPPROTO 枚举的以下 IPV4 IPPROTO*XXX*协议值：
+\_WSK 头文件中定义了 IPPROTO 枚举的以下 IPV4 IPPROTO *XXX* 协议值：
 
 <a href="" id="ipproto-ip"></a>IPPROTO \_ IP  
 Internet 协议选项
@@ -107,15 +106,15 @@ Internet 数据报协议
 
 WSK 应用程序在调用 [**WskSocket**](/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_socket) 函数或 [**WskSocketConnect**](/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_socket_connect) 函数来创建新的套接字时指定协议。
 
-当 WSK 应用程序调用[**WskControlSocket**](/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_control_socket)函数来设置或检索传输协议级别或网络协议级别套接字选项时，它还将协议 (指定为*Level*参数) 。
+当 WSK 应用程序调用 [**WskControlSocket**](/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_control_socket)函数来设置或检索传输协议级别或网络协议级别套接字选项时，它还将协议 (指定为 *Level* 参数) 。
 
 ### <a name="combinations"></a>各种
 
 对于每个 WSK [套接字类别](./winsock-kernel-socket-categories.md)，IPv4 支持以下套接字类型和协议组合：
 
-基本套接 SOCK \_ STREAM + IPPROTO \_ TCP SOCK \_ DGRAM + IPPROTO \_ UDP SOCK \_ RAW + IPPROTO \_ *XXX*侦听套接字 SOCK \_ STREAM + IPPROTO \_ TCP
+基本套接 SOCK \_ STREAM + IPPROTO \_ TCP SOCK \_ DGRAM + IPPROTO \_ UDP SOCK \_ RAW + IPPROTO \_ *XXX* 侦听套接字 SOCK \_ STREAM + IPPROTO \_ TCP
 
-数据报套接字 SOCK \_ DGRAM + IPPROTO \_ UDP SOCK \_ RAW + IPPROTO \_ *Xxx*面向连接的套接字 SOCK \_ STREAM + IPPROTO \_ TCP
+数据报套接字 SOCK \_ DGRAM + IPPROTO \_ UDP SOCK \_ RAW + IPPROTO \_ *Xxx* Connection-Oriented 套接字 SOCK \_ STREAM + IPPROTO \_ TCP
 
 <a name="requirements"></a>要求
 ------------

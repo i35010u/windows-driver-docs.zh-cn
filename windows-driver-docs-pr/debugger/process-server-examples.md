@@ -1,17 +1,16 @@
 ---
 title: 进程服务器示例
 description: 进程服务器示例
-ms.assetid: f87e6ff5-05a4-4dae-8151-913ea469b4ec
 keywords:
 - 进程服务器，示例
 ms.date: 06/08/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 6d1e4618071c9b407aa5b75f16b9bf828ae12dc1
-ms.sourcegitcommit: 8097a09d2f989a9b3dca250c4e2ffd4cec2172e3
+ms.openlocfilehash: e89697848f782bf562a42b50be601f68339b9041
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84563159"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96793233"
 ---
 # <a name="process-server-examples"></a>进程服务器示例
 
@@ -29,7 +28,7 @@ E:\Debugging Tools for Windows> dbgsrv -t tcp:port=1025
 G:\Debugging Tools> windbg -premote tcp:server=BOX17,port=1025 -p 122 
 ```
 
-以下是另一个示例。 在这种情况下，将选择 NPIPE 协议，并使用 CDB 而不是 WinDbg。 第一个用户选择一个管道名称。 这可以是任何字母数字字符串，在此示例中为 "AnotherPipe"。 第一个用户打开提升的命令提示符窗口（以管理员身份运行），并通过输入以下命令启动调试服务器：
+以下是另一个示例。 在这种情况下，将选择 NPIPE 协议，并使用 CDB 而不是 WinDbg。 第一个用户选择一个管道名称。 这可以是任何字母数字字符串，在此示例中为 "AnotherPipe"。 第一个用户打开提升的命令提示符窗口 (以管理员身份运行) 并通过输入以下命令启动调试服务器：
 
 ```console
 E:\Debugging Tools for Windows> dbgsrv -t npipe:pipe=AnotherPipe
@@ -52,10 +51,10 @@ Debugger Server - npipe:Pipe=MainPipe
 Remote Process Server - npipe:Pipe=AnotherPipe
 ```
 
-显示两个管道。 但只有一个进程服务器，另一个是调试服务器，我们对此不感兴趣。 因此， **AnotherPipe**必须是正确的名称。 技术人员输入以下命令来启动智能客户端：
+显示两个管道。 但只有一个进程服务器，另一个是调试服务器，我们对此不感兴趣。 因此， **AnotherPipe** 必须是正确的名称。 技术人员输入以下命令来启动智能客户端：
 
 ```console
 G:\Debugging Tools> cdb -premote npipe:server=BOX17,pipe=AnotherPipe -v sol.exe
 ```
 
-有关使用进程服务器的更复杂示例，请参阅[中间的符号](symbols-in-the-middle.md)。
+有关使用进程服务器的更复杂示例，请参阅 [中间的符号](symbols-in-the-middle.md)。

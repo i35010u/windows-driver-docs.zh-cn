@@ -1,15 +1,14 @@
 ---
 title: 安装分段筛选器
 description: 安装分段筛选器
-ms.assetid: 39f96c16-2408-460c-8aa3-08b6a6584bef
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b010ec23df86f8d66c58b64d4db748d7156aad66
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 0393a4a9edacbfc8e70a9ed9aa33dae28a814022
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89184473"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96793639"
 ---
 # <a name="installing-a-segmentation-filter"></a>安装分段筛选器
 
@@ -40,7 +39,7 @@ Mysegfilter.dll=1
 ...
 ```
 
-* &lt; UiClassId &gt; *是驱动程序为 WIA \_ DIP \_ UI CLSID 属性返回的值 \_ 。 * &lt; FilterClassId &gt; *是分段筛选器实现的类 ID。 *Mysegfilter.dll* 是包含分段筛选器的实现的 DLL。
+*&lt; UiClassId &gt;* 是驱动程序为 WIA \_ DIP \_ UI CLSID 属性返回的值 \_ 。 *&lt; FilterClassId &gt;* 是分段筛选器实现的类 ID。 *Mysegfilter.dll* 是包含分段筛选器的实现的 DLL。
 
 设备 [**INF AddReg 指令**](../install/inf-addreg-directive.md) 中的第一个条目将分段筛选器注册为驱动程序的扩展，接下来的三个条目将分段筛选器注册为 COM 组件。
 

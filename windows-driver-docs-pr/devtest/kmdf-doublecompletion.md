@@ -1,7 +1,6 @@
 ---
 title: 'DoubleCompletion 规则 (kmdf) '
 description: DoubleCompletion 规则指定驱动程序不得完成 i/o 请求两次。
-ms.assetid: F005501B-29B5-42CE-8CAD-EDA00E1E5D82
 ms.date: 05/21/2018
 keywords:
 - 'DoubleCompletion 规则 (kmdf) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 289e32b9b145e9e5a8d70194d9ce6b049edc3852
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 63fb9014e84d593742a3a7de3b2f02cc957d2ed5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107418"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96795082"
 ---
 # <a name="doublecompletion-rule-kmdf"></a>DoubleCompletion 规则 (kmdf) 
 
 
-**DoubleCompletion**规则指定驱动程序不得完成 i/o 请求两次。 对于同一请求，不应在一行中调用以下方法两次： [**WdfRequestComplete**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcomplete)、 [**WdfRequestCompleteWithInformation**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcompletewithinformation)、 [**WdfRequestCompleteWithPriorityBoost**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcompletewithpriorityboost)。
+**DoubleCompletion** 规则指定驱动程序不得完成 i/o 请求两次。 对于同一请求，不应在一行中调用以下方法两次： [**WdfRequestComplete**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcomplete)、 [**WdfRequestCompleteWithInformation**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcompletewithinformation)、 [**WdfRequestCompleteWithPriorityBoost**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcompletewithpriorityboost)。
 
 此规则与 [DoubleCompletionLocal](kmdf-doublecompletionlocal.md) 规则之间的区别在于仅在默认 i/o 队列回调函数内执行 DoubleCompletionLocal 规则。
 

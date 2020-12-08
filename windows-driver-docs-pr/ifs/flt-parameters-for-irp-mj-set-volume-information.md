@@ -1,7 +1,6 @@
 ---
 title: IRP_MJ_SET_VOLUME_INFORMATION 联合的 FLT_PARAMETERS
 description: 操作的 FLT \_ IO \_ 参数块结构的 MajorFunction 字段 \_ 为 IRP \_ MJ \_ 设置 \_ 卷 \_ 信息时使用的联合组件。
-ms.assetid: 316ce14c-02ea-45ab-8a2f-1b096f631d23
 keywords:
 - IRP_MJ_SET_VOLUME_INFORMATION 联合可安装文件系统驱动程序的 FLT_PARAMETERS
 - FLT_PARAMETERS 联合可安装文件系统驱动程序
@@ -16,30 +15,30 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 86668e809b8fe989b9368f1068d2a3ac95c86577
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 4d8f54127d8927c3b2f1054f47ff1039883f5aa0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105192"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96793795"
 ---
 # <a name="flt_parameters-for-irp_mj_set_volume_information-union"></a>\_IRP MJ 的 FLT \_ 参数 \_ 设置 \_ 卷 \_ 信息联合
 
 
-操作的[**FLT \_ IO \_ 参数 \_ 块**](/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_io_parameter_block)结构的**MajorFunction**字段为[**IRP \_ MJ \_ 设置 \_ 卷 \_ 信息**](irp-mj-set-volume-information.md)时使用的联合组件。
+操作的 [**FLT \_ IO \_ 参数 \_ 块**](/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_io_parameter_block)结构的 **MajorFunction** 字段为 [**IRP \_ MJ \_ 设置 \_ 卷 \_ 信息**](irp-mj-set-volume-information.md)时使用的联合组件。
 
 <a name="syntax"></a>语法
 ------
 
 ```ManagedCPlusPlus
 typedef union _FLT_PARAMETERS {
-  ...    ;
+  ...    ;
   struct {
-    ULONG                                  Length;
+    ULONG                                  Length;
     FS_INFORMATION_CLASS POINTER_ALIGNMENT FsInformationClass;
-    PVOID                                  VolumeBuffer;
-  } SetVolumeInformation;
-  ...    ;
+    PVOID                                  VolumeBuffer;
+  } SetVolumeInformation;
+  ...    ;
 } FLT_PARAMETERS, *PFLT_PARAMETERS;
 ```
 
@@ -50,7 +49,7 @@ typedef union _FLT_PARAMETERS {
 包含以下成员的结构。
 
 **长度**  
-**VolumeBuffer**缓冲区的长度（以字节为单位）。
+**VolumeBuffer** 缓冲区的长度（以字节为单位）。
 
 **FsInformationClass**  
 要为卷设置的信息的类型。 下列类型作之一：
@@ -90,7 +89,7 @@ typedef union _FLT_PARAMETERS {
 <a name="remarks"></a>备注
 -------
 
-[**IRP \_ MJ \_ 集 \_ 卷 \_ 信息**](irp-mj-set-volume-information.md)操作的[**FLT \_ 参数**](/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_parameters)结构包含由回调数据表示的设置卷信息操作的参数) 结构中 ([**FLT \_ 回调 \_ 数据**](/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_callback_data)。 它包含在 FLT \_ IO \_ 参数 \_ 块结构中。
+[**IRP \_ MJ \_ 集 \_ 卷 \_ 信息**](irp-mj-set-volume-information.md)操作的 [**FLT \_ 参数**](/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_parameters)结构包含由回调数据表示的设置卷信息操作的参数) 结构中 ([**FLT \_ 回调 \_ 数据**](/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_callback_data)。 它包含在 FLT \_ IO \_ 参数 \_ 块结构中。
 
 IRP \_ MJ \_ 设置 \_ 卷 \_ 信息是基于 IRP 的操作。
 
@@ -110,7 +109,7 @@ IRP \_ MJ \_ 设置 \_ 卷 \_ 信息是基于 IRP 的操作。
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**文件 \_ FS \_ 控制 \_ 信息**](/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_file_fs_control_information)

@@ -1,28 +1,27 @@
 ---
 title: USB 视频类驱动程序堆栈
 description: USB 视频类驱动程序堆栈
-ms.assetid: 8dd9ce8d-eaa0-43d3-a27a-5b328220e10e
 keywords:
-- 有关 USB 视频类驱动程序堆栈 USB 视频类驱动程序 WDK AVStream
-- 有关 USB 视频类驱动程序堆栈的视频类驱动程序 WDK USB
-- 有关 USB 视频类驱动程序堆栈 UVC 驱动程序 WDK AVStream
+- USB 视频类驱动程序 WDK AVStream，关于 USB 视频类驱动程序堆栈
+- 视频类驱动程序 WDK USB，关于 USB 视频类驱动程序堆栈
+- UVC driver AVStream，关于 USB 视频类驱动程序堆栈
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1022e62929af8bb960230bd4f47f5cbc555861c6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 752ddde2b39e5cec40c867a5e5d55e6de63c0a85
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63360148"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96795263"
 ---
 # <a name="usb-video-class-driver-stack"></a>USB 视频类驱动程序堆栈
 
 
-当供应商使用 Microsoft 提供的 USB 视频类驱动程序时，它们提供仅硬件。 Microsoft 提供的所有驱动程序支持。
+当供应商使用 Microsoft 提供的 USB 视频类驱动程序时，它们只提供硬件。 Microsoft 提供了所有驱动程序支持。
 
-（可选） 供应商可以扩展的 USB 视频类驱动程序添加特定于设备的功能。
+供应商也可以扩展 USB 视频类驱动程序，以添加特定于设备的功能。
 
-USB 视频类驱动程序堆栈在下图中所示：
+以下关系图显示了 USB 视频类驱动程序堆栈：
 
 ![说明 usb 视频类驱动程序堆栈的关系图 ](images/uvc2.png)
 

@@ -1,19 +1,18 @@
 ---
 title: 在 WinDbg 中进行程序集代码调试
 description: 在 WinDbg 中，可以通过输入命令或使用 "反汇编" 窗口来查看程序集代码。
-ms.assetid: e00ea29e-4153-4588-8353-de69910bfc65
 keywords:
 - 调试信息窗口，"反汇编" 窗口
 - “反汇编”窗口
 - 程序集调试，反汇编窗口
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 78441a68380019f9e499013ecf883ba6753b3cd9
-ms.sourcegitcommit: f610410e1500f0b0a4ca008b52679688ab51033d
+ms.openlocfilehash: b6273dbebfc23747ad0aa1df83725fc763cac643
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/15/2020
-ms.locfileid: "88252985"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96794027"
 ---
 # <a name="assembly-code-debugging-in-windbg"></a>在 WinDbg 中进行程序集代码调试
 
@@ -23,12 +22,12 @@ ms.locfileid: "88252985"
 ## <a name="span-iddebugger_command_windowspanspan-iddebugger_command_windowspanspan-iddebugger_command_windowspandebugger-command-window"></a><span id="Debugger_Command_Window"></span><span id="debugger_command_window"></span><span id="DEBUGGER_COMMAND_WINDOW"></span>调试器命令窗口
 
 
-可以通过在调试器命令窗口中输入 [**u、ub、uu (Unassemble) **](u--unassemble-.md) 命令之一来查看程序集代码。
+可以通过在调试器命令窗口中输入 [**u、ub、uu (Unassemble)**](u--unassemble-.md) 命令之一来查看程序集代码。
 
 ## <a name="span-idddk_disassembly_window_dbgspanspan-idddk_disassembly_window_dbgspandissasembly-window"></a><span id="ddk_disassembly_window_dbg"></span><span id="DDK_DISASSEMBLY_WINDOW_DBG"></span>Dissasembly 窗口
 
 
-若要打开或切换到 "反汇编" 窗口，请从 "**视图**" 菜单中选择 " **Dissasembly** "。  (还可以按 ALT + 7，或在**Disassembly** ![ ](images/tbdisasm2.png) 工具栏上的 "反汇编" 按钮)  (屏幕截图中选择 "反汇编" 按钮。 ALT + SHIFT + 7 将关闭 "反汇编" 窗口。 ) 
+若要打开或切换到 "反汇编" 窗口，请从 "**视图**" 菜单中选择 " **Dissasembly** "。  (还可以按 ALT + 7，或在 **Disassembly** ![ ](images/tbdisasm2.png) 工具栏上的 "反汇编" 按钮)  (屏幕截图中选择 "反汇编" 按钮。 ALT + SHIFT + 7 将关闭 "反汇编" 窗口。 ) 
 
 下面的屏幕截图显示了一个 "反汇编" 窗口示例。
 
@@ -46,7 +45,7 @@ ms.locfileid: "88252985"
 
 -   "**前往当前地址**" 打开源窗口，其中包含与 "反汇编" 窗口中所选行对应的源文件，并突出显示此行。
 
--   在**当前指令之前进行拆装**会导致当前行位于 "反汇编" 窗口的中间。 此命令是默认选项。 如果清除此命令，则当前行将出现在 "反汇编" 窗口的顶部，这可节省时间，因为反向反汇编可能非常耗时。
+-   在 **当前指令之前进行拆装** 会导致当前行位于 "反汇编" 窗口的中间。 此命令是默认选项。 如果清除此命令，则当前行将出现在 "反汇编" 窗口的顶部，这可节省时间，因为反向反汇编可能非常耗时。
 
 -   **突出显示当前源行中的说明** 将导致突出显示与当前源代码行对应的所有说明。 通常，单个源行将对应于多个程序集指令。 如果代码已经过优化，则这些程序集指令可能不是连续的。 此命令可用于查找从当前源行中收集的所有说明。
 

@@ -1,18 +1,17 @@
 ---
 title: 显示（Windows 2000 模型）简介
 description: 显示（Windows 2000 模型）简介
-ms.assetid: c1083cce-2113-4286-88aa-9b3bd5157027
 keywords:
-- 显示有关显示器驱动程序模型的驱动程序模型 WDK Windows 2000
-- Windows 2000 显示器驱动程序模型 WDK，有关显示器驱动程序模型
+- 显示驱动程序模型 WDK Windows 2000，关于显示器驱动程序模型
+- Windows 2000 显示器驱动程序模型 WDK，关于显示器驱动程序模型
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8fbb77b8167001d514f96d68db0a5f73f44eb724
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: aa59efa5f4f92426c7c8af7b1a73757c429712a3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63362117"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96793011"
 ---
 # <a name="introduction-to-display-windows-2000-model"></a>显示（Windows 2000 模型）简介
 
@@ -20,11 +19,11 @@ ms.locfileid: "63362117"
 ## <span id="ddk_introduction_to_display_windows_2000_model__gg"></span><span id="DDK_INTRODUCTION_TO_DISPLAY_WINDOWS_2000_MODEL__GG"></span>
 
 
-在基于 NT 的操作系统运行的图形适配器需要配对*显示器驱动程序*并*微型端口驱动程序*。 本部分介绍这些驱动程序，并提供与都相关的以下信息：
+在基于 NT 的操作系统上运行的图形适配器需要配对的 *显示驱动* 程序和 *视频微型端口驱动程序*。 本部分介绍这些驱动程序并提供与这两种方法相关的下列信息：
 
-[Windows 2000 的显示器体系结构](windows-2000-display-architecture.md)
+[Windows 2000 显示体系结构](windows-2000-display-architecture.md)
 
-[常规设计和实现策略](general-design-and-implementation-strategies.md)
+[常规设计和实施策略](general-design-and-implementation-strategies.md)
 
 [访问图形适配器](accessing-the-graphics-adapter.md)
 
@@ -32,7 +31,7 @@ ms.locfileid: "63362117"
 
 [创建图形 INF 文件](creating-graphics-inf-files.md)
 
-[兼容性测试以进行显示和视频微型端口驱动程序的要求](compatibility-testing-requirements-for-display-and-video-miniport-driv.md)
+[显示和视频微型端口驱动程序的兼容性测试要求](compatibility-testing-requirements-for-display-and-video-miniport-driv.md)
 
  
 

@@ -1,15 +1,14 @@
 ---
 title: 标签标记
 description: 标签标记
-ms.assetid: 29b2b4b1-c599-4bea-9d83-3a10eedac4a6
 ms.date: 01/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: f77bd7dae4dd9ea9f081e1ff4b83a3b47d604078
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 96289b2f1485d18d5b7e8376d1b0303d04e61c69
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89065804"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96792977"
 ---
 # <a name="label-token"></a>标签标记
 
@@ -21,15 +20,15 @@ ms.locfileid: "89065804"
 
 ### <a name="span-idbitsspanspan-idbitsspanbits"></a><span id="bits"></span><span id="BITS"></span>带宽
 
-<span id="_10_00_"></span>** \[ 10:00 \] **位0到10表示寄存器号)  (偏移量。
+<span id="_10_00_"></span>**\[ 10:00 \]** 位0到10表示寄存器号)  (偏移量。
 
-<span id="_12_11_"></span>** \[ 12:11 \] **位11和12是 \[ \] 用于指示[寄存器类型](/windows-hardware/drivers/ddi/d3d9types/ne-d3d9types-_d3dshader_param_register_type)的第四个和第五个第三位。
+<span id="_12_11_"></span>**\[ 12:11 \]** 位11和12是 \[ \] 用于指示 [寄存器类型](/windows-hardware/drivers/ddi/d3d9types/ne-d3d9types-_d3dshader_param_register_type)的第四个和第五个第三位。
 
-<span id="_27_13_"></span>** \[ 27:13 \] **为像素着色器 (PS) 和顶点着色器 (与) 一起预留。 此值设置为0x0。
+<span id="_27_13_"></span>**\[ 27:13 \]** 为像素着色器 (PS) 和顶点着色器 (与) 一起预留。 此值设置为0x0。
 
-<span id="_30_28_"></span>** \[ 30:28 \] **位28到30是 \[ \] 用于指示[寄存器类型](/windows-hardware/drivers/ddi/d3d9types/ne-d3d9types-_d3dshader_param_register_type)的前三位0、1、2。
+<span id="_30_28_"></span>**\[ 30:28 \]** 位28到30是 \[ \] 用于指示 [寄存器类型](/windows-hardware/drivers/ddi/d3d9types/ne-d3d9types-_d3dshader_param_register_type)的前三位0、1、2。
 
-<span id="_31_"></span>** \[ 31 \] **位31为0x1。
+<span id="_31_"></span>**\[ 31 \]** 位31为0x1。
 
 ### <a name="span-idcommentsspanspan-idcommentsspancomments"></a><span id="comments"></span><span id="COMMENTS"></span>提出
 

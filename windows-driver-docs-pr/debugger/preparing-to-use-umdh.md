@@ -1,7 +1,6 @@
 ---
 title: 准备使用 UMDH
 description: 准备使用 UMDH
-ms.assetid: 9adebe43-3167-4e1a-ac98-db19ace944be
 keywords:
 - UMDH，准备使用 UMDH
 - UMDH，禁用 BSTR 缓存
@@ -10,16 +9,16 @@ keywords:
 - 堆栈跟踪数据库
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ff74d79d10aa05b22891cfa9401a1ad21298fb5c
-ms.sourcegitcommit: f610410e1500f0b0a4ca008b52679688ab51033d
+ms.openlocfilehash: 728983e4bd6f633f562428bb9feacc9384ce9228
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/15/2020
-ms.locfileid: "88253107"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96793235"
 ---
 # <a name="preparing-to-use-umdh"></a>准备使用 UMDH
 
-必须先完成本部分所述的配置任务，然后才能使用用户模式转储堆 (UMDH) 来捕获进程的堆分配。 如果计算机配置不正确，UMDH 将不会生成任何结果，也不会导致结果不完整或不正确。
+必须先完成本部分所述的配置任务，然后才能使用 User-Mode 转储堆 (UMDH) 捕获进程的堆分配。 如果计算机配置不正确，UMDH 将不会生成任何结果，也不会导致结果不完整或不正确。
 
 ### <a name="create-the-user-mode-stack-trace-database"></a>创建用户模式堆栈跟踪数据库
 
@@ -33,9 +32,9 @@ ms.locfileid: "88253107"
 
     **gflags/I** *ImageName* **+ ust**
 
-默认情况下，在 x86 处理器上 Windows 收集的堆栈跟踪数据量限制为 32 MB，在 x64 处理器上限制为 64 MB。 如果必须增加此数据库的大小，请选择 "GFlags" 图形界面中的 " **映像文件** " 选项卡，键入进程名称，按 **tab** 键，选中 " **Stack Backtrace (Megs) ** " 复选框，在 "关联" 文本框中键入值 (，以) MB 为单位），然后选择 " **应用**"。
+默认情况下，在 x86 处理器上 Windows 收集的堆栈跟踪数据量限制为 32 MB，在 x64 处理器上限制为 64 MB。 如果必须增加此数据库的大小，请选择 "GFlags" 图形界面中的 " **映像文件** " 选项卡，键入进程名称，按 **tab** 键，选中 " **Stack Backtrace (Megs)** " 复选框，在 "关联" 文本框中键入值 (，以) MB 为单位），然后选择 " **应用**"。
 
-**注意**   仅在必要时增加此数据库，因为它可能会耗尽有限的 Windows 资源。 如果不再需要更大的大小，则将此设置返回到其原始值。
+**注意**   仅在必要时增加此数据库，因为它可能会耗尽有限的 Windows 资源。 如果不再需要更大的大小，则将此设置返回到其原始值。
 
 这些设置会影响程序的所有新实例。 它不会影响当前正在运行的程序实例。
 
@@ -57,7 +56,7 @@ set _NT_SYMBOL_PATH=c:\myapp\symbols;\\myshare\winsymbols
 set _NT_SYMBOL_PATH=c:\myapp\symbols;srv*c:\mycache*https://msdl.microsoft.com/download/symbols
 ```
 
-**重要提示**   假设您有两台计算机：一*台日志记录计算机*，您可以在其中创建 UMDH 日志以及分析 UMDH 日志的*分析计算机*。 分析计算机上的符号路径必须指向在日志记录时日志记录计算机上加载的 Windows 版本的符号。 不要将分析计算机上的符号路径指向符号服务器。 如果这样做，UMDH 将检索分析计算机上运行的 Windows 版本的符号，UMDH 将不会显示有意义的结果。
+**重要提示**  假设您有两台计算机：一 *台日志记录计算机* ，您可以在其中创建 UMDH 日志以及分析 UMDH 日志的 *分析计算机* 。 分析计算机上的符号路径必须指向在日志记录时日志记录计算机上加载的 Windows 版本的符号。 不要将分析计算机上的符号路径指向符号服务器。 如果这样做，UMDH 将检索分析计算机上运行的 Windows 版本的符号，UMDH 将不会显示有意义的结果。
 
 
 ### <a name="disable-bstr-caching"></a>禁用 BSTR 缓存

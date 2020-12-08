@@ -1,7 +1,6 @@
 ---
 title: 创建和绑定 SAN 套接字
 description: 创建和绑定 SAN 套接字
-ms.assetid: 0589bd82-40d3-42df-926c-93093fb0617f
 keywords:
 - SAN 连接设置 WDK，套接字创建和绑定
 - SAN 套接字 WDK San
@@ -15,12 +14,12 @@ keywords:
 - SAN 套接字 WDK，绑定
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8ec07a5924f6b7f063ef625b48b4799d14b35360
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 89d5d3eb6d3ff7aa0ca6de86aed913ac12e7ca0b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89214750"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96794771"
 ---
 # <a name="creating-and-binding-san-sockets"></a>创建和绑定 SAN 套接字
 
@@ -34,7 +33,7 @@ SAN 服务提供商创建的套接字与 TCP/IP 服务提供程序在应用程�
 
 随附套接字的 IP 地址和 TCP 端口也与 TCP/IP 服务提供商创建的套接字相同。 SAN 数据通过 SAN 服务提供商创建的配套套接字传输，而不是由 TCP/IP 服务提供商创建的套接字传输。 SAN 套接字对应用程序不可见。 从应用程序的角度来看，数据是在其请求为数据传输创建的套接字上传输的。
 
-**注意**   交换机始终使用 TCP/IP 服务提供程序在*原始套接字*上传输数据。 因此，此开关不会请求 SAN 服务提供程序创建原始套接字。
+**注意**  交换机始终使用 TCP/IP 服务提供程序在 *原始套接字* 上传输数据。 因此，此开关不会请求 SAN 服务提供程序创建原始套接字。
 
  
 
@@ -54,7 +53,7 @@ SAN 服务提供商创建的套接字与 TCP/IP 服务提供程序在应用程�
 
 1.  如果应用程序请求将套接字绑定到特定的网络接口控制器 (NIC) 或通配符 IP 地址 (0.0.0.0) ，则开关接收到 **WSPBind** 调用。 绑定到通配符 IP 地址的套接字可以侦听来自所有 Nic 的传入连接请求。
 
-    **注意**   从 Windows Vista 开始，通配符 IP 地址0.0.0.0 不可用。
+    **注意**  从 Windows Vista 开始，通配符 IP 地址0.0.0.0 不可用。
     此外，从 Windows Vista 开始，如果 **IPAutoconfigurationEnabled** 注册表项设置为值0，将禁用自动 ip 地址分配，并且不分配 ip 地址。 在这种情况下， **ipconfig** 命令行工具不会显示 IP 地址。 如果将密钥设置为非零值，则会自动分配 IP 地址。 此密钥可位于注册表中的以下路径：
 
     **HKEY \_ 本地 \_ 计算机 \\ 系统 \\ 当前控制集 \\ 服务 \\ Tcpip \\ 参数 \\ IPAutoconfigurationEnabled**
@@ -103,7 +102,7 @@ SAN 服务提供商创建的套接字与 TCP/IP 服务提供程序在应用程�
 
 ### <a name="failing-a-companion-socket-call"></a>未能通过伴随套接字呼叫
 
--   如果 SAN 服务提供程序在上述任何调用 **WSPSocket**、 **WSPBind**或 **WSPSetSockOpt** 函数时失败，则该开关将调用 san 服务提供程序的 [**WSPCloseSocket**](/previous-versions/windows/hardware/network/ff566273(v=vs.85)) 函数以销毁 san 套接字。 然后，交换机使用 TCP/IP 提供程序来继续处理应用程序套接字。 请注意，在交换机使用 SAN 服务提供程序建立连接后，交换机无法使用 TCP/IP 提供程序来处理应用程序的套接字。 在这种情况下，开关会将相应的错误返回到应用程序。
+-   如果 SAN 服务提供程序在上述任何调用 **WSPSocket**、 **WSPBind** 或 **WSPSetSockOpt** 函数时失败，则该开关将调用 san 服务提供程序的 [**WSPCloseSocket**](/previous-versions/windows/hardware/network/ff566273(v=vs.85)) 函数以销毁 san 套接字。 然后，交换机使用 TCP/IP 提供程序来继续处理应用程序套接字。 请注意，在交换机使用 SAN 服务提供程序建立连接后，交换机无法使用 TCP/IP 提供程序来处理应用程序的套接字。 在这种情况下，开关会将相应的错误返回到应用程序。
 
 ### <a name="connecting-the-companion-socket"></a>连接配套套接字
 

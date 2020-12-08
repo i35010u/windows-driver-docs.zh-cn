@@ -1,56 +1,55 @@
 ---
-title: '\ 名称'
-description: '\ 名称'
-ms.assetid: 5259ea1a-a251-479b-88f1-711d5933868a
+title: 路径名
+description: 路径名
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 60ad341ded00ca35003f72d070765794133ffe1b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9452da06e20fbd4cfa3ec58b3f7e45ee0157b5ec
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63372879"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96794269"
 ---
 # <a name="name"></a>\[名称\]
 
 
-架构路径：\\Printer.Consumables。\[名称\]
+架构路径： \\ Printer。 \[路径名\]
 
-节点类型： 属性
+节点类型：属性
 
-说明： 此属性是供应商映射可使用名称。 名称对应于此可使用的特定于供应商的唯一 ID。 此 ID 可以与相同的类型和颜色组合多个消费品的可能性。 \[名称\]并总是必需的属性和名称不能包含任何空格。
+说明：此属性是供应商映射的可执行名称。 该名称对应于此可执行的供应商特定的唯一 ID。 此 ID 允许具有相同类型和颜色组合的多个耗材。 \[Name \] 属性始终是必需的，并且名称不能包含任何空格。
 
 此属性包含以下子值：
 
-在任务栏的搜索框中键入
+类型
 
 颜色
 
 已安装
 
-级别
+Level
 
 模式
 
-### <a name="span-idtypespanspan-idtypespan-type"></a><span id="type"></span><span id="TYPE"></span> Type
+### <a name="span-idtypespanspan-idtypespan-type"></a><span id="type"></span><span id="TYPE"></span> 类别
 
-架构路径：\\Printer.Consumables。\[名称\]。类型
+架构路径： \\ Printer。 \[名称 \] 。类别
 
-节点类型： 值
+节点类型：值
 
-说明： 此值表示的类型的引用可使用。
+说明：此值表示所引用的可执行类型。
 
-提供了以下预定义的类型：
+以下预定义类型可用：
 
 墨迹
 
-墨粉
+盒
 
 开发人员
 
 FuserOil
 
-蜡
+Wax
 
 WasteToner
 
@@ -58,17 +57,17 @@ WasteInk
 
 WasteWax
 
-供应商可以添加特定于其打印进程或打印设备的值。
+供应商可以添加特定于其打印过程或打印设备的值。
 
-### <a name="span-idcolorspanspan-idcolorspan-color"></a><span id="color"></span><span id="COLOR"></span> Color
+### <a name="span-idcolorspanspan-idcolorspan-color"></a><span id="color"></span><span id="COLOR"></span> 颜色
 
-架构路径：\\Printer.Consumables。\[名称\]。颜色
+架构路径： \\ Printer。 \[名称 \] 。颜色
 
-节点类型： BIDI\_字符串
+节点类型：双向 \_ 字符串
 
-说明： 此值表示引用可使用的颜色。 此数据值是可选的因为某些类型的可使用实际上不具有与其关联的颜色。
+说明：此值表示所引用的可执行对象的颜色。 此数据值是可选的，因为某些类型的可执行文件实际上并没有与之关联的颜色。
 
-预定义以下颜色类型。
+预定义了以下颜色类型。
 
 黑色
 
@@ -76,11 +75,11 @@ WasteWax
 
 颜色
 
-蓝绿色
+蓝
 
 灰色
 
-厚︹
+绿色
 
 洋红色
 
@@ -94,43 +93,43 @@ PhotoMagenta
 
 PhotoYellow
 
-红色
+Red
 
 白色
 
-独︹
+Yellow
 
-每个供应商可以将任何特定的值添加到其打印进程和设备。
+每个供应商可以添加特定于其打印过程和设备的任何值。
 
-### <a name="span-idinstalledspanspan-idinstalledspan-installed"></a><span id="installed"></span><span id="INSTALLED"></span> 安装
+### <a name="span-idinstalledspanspan-idinstalledspan-installed"></a><span id="installed"></span><span id="INSTALLED"></span> 随
 
-架构路径：\\Printer.Consumables。\[名称\]。安装
+架构路径： \\ Printer。 \[名称 \] 。随
 
-节点类型： 值
+节点类型：值
 
-数据类型： BIDI\_BOOL
+数据类型：双向 \_ BOOL
 
-说明： 此值指示是否在设备上安装的可使用项的类型和颜色描述。
+说明：该值指示是否在设备上安装了类型和颜色描述的可耗用项。
 
-### <a name="span-idlevelspanspan-idlevelspan-level"></a><span id="level"></span><span id="LEVEL"></span> 级别
+### <a name="span-idlevelspanspan-idlevelspan-level"></a><span id="level"></span><span id="LEVEL"></span> 调配
 
-架构路径：\\Printer.Consumables。\[名称\]。级别
+架构路径： \\ Printer。 \[名称 \] 。调配
 
-节点类型： 值
+节点类型：值
 
-数据类型： BIDI\_INT
+数据类型：双向 \_ INT
 
-说明：此值表示引用可使用的当前级别。 此值的单位是百分比。 完全级别将具有的值为 100，并且空级别值为 0。 如果级别不是可衡量的则返回值-1 （未知）。
+说明：此值表示所引用的可执行的当前级别。 此值的单位为百分比点。 完全级别的值将为100，空级别的值将为0。 如果无法度量级别，则应返回值-1 (未知) 。
 
-### <a name="span-idmodelspanspan-idmodelspan-model"></a><span id="model"></span><span id="MODEL"></span> 模型
+### <a name="span-idmodelspanspan-idmodelspan-model"></a><span id="model"></span><span id="MODEL"></span> Model
 
-架构路径：\\Printer.Consumables。\[名称\]。模型
+架构路径： \\ Printer。 \[名称 \] 。模式
 
-节点类型： 值
+节点类型：值
 
-数据类型：BIDI\_字符串
+数据类型：双向 \_ 字符串
 
-说明： 一个可选值，表示被引用可使用供应商模型指示符。 此值允许客户端将完全可使用安装在设备的特定类型和颜色组合的哪个版本区分开来。
+说明：一个可选值，表示所引用的可执行对象的供应商模型指示器。 通过此值，客户端可以精确区分设备中安装的特定类型和颜色组合的版本。
 
  
 

@@ -1,15 +1,14 @@
 ---
 title: 将项树更改通知给应用程序
 description: 将项树更改通知给应用程序
-ms.assetid: 6b3cb1d0-ab9f-4895-8c3f-f66c398960bb
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ef6bafb059b1ce7b6d5620b6dc803ed811327359
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: c73edc7f839b1605b1993b07a359a8870431c696
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89184493"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96793673"
 ---
 # <a name="informing-an-application-of-item-tree-changes"></a>将项树更改通知给应用程序
 

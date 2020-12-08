@@ -1,18 +1,17 @@
 ---
 title: 通过面向连接的套接字接收数据
 description: 通过面向连接的套接字接收数据
-ms.assetid: 189fa236-25d6-4eea-ad77-df76363576db
 keywords:
 - 面向连接的套接字 WDK Winsock 内核
 - WskReceive
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bb3877c7e66bd8f3ac0b24fc4ace1218000e95e3
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 1364403a7303f10839e1e0ae506c78ad7e6a1b90
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89216954"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96793367"
 ---
 # <a name="receiving-data-over-a-connection-oriented-socket"></a>通过面向连接的套接字接收数据
 
@@ -169,7 +168,7 @@ NTSTATUS WSKAPI
 }
 ```
 
-如果面向连接的套接字的[*WskReceiveEvent*](/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_receive_event)事件回调函数未检索*DataIndication*参数指向的[**WSK \_ 数据 \_ 指示**](/windows-hardware/drivers/ddi/wsk/ns-wsk-_wsk_data_indication)结构列表中包含的所有数据，则它可以通过返回 "挂起" 状态，保留该列表以供进一步处理 \_ 。 在这种情况下，WSK 应用程序必须调用 [**WskRelease**](/previous-versions/windows/hardware/drivers/ff571144(v=vs.85)) 函数，以便在 \_ \_ 完成从列表中的结构检索所有数据后，将 WSK 数据指示结构的列表释放回 WSK 子系统。
+如果面向连接的套接字的 [*WskReceiveEvent*](/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_receive_event)事件回调函数未检索 *DataIndication* 参数指向的 [**WSK \_ 数据 \_ 指示**](/windows-hardware/drivers/ddi/wsk/ns-wsk-_wsk_data_indication)结构列表中包含的所有数据，则它可以通过返回 "挂起" 状态，保留该列表以供进一步处理 \_ 。 在这种情况下，WSK 应用程序必须调用 [**WskRelease**](/previous-versions/windows/hardware/drivers/ff571144(v=vs.85)) 函数，以便在 \_ \_ 完成从列表中的结构检索所有数据后，将 WSK 数据指示结构的列表释放回 WSK 子系统。
 
 如果面向连接的套接字的 *WskReceiveEvent* 事件回调函数只接受收到的数据的总字节数，则必须将 *BytesAccepted* 参数指向的变量设置为实际接受的数据字节数。 但是，如果套接字的 *WskReceiveEvent* 事件回调函数接受所有接收到的数据，则不需要设置 *BytesAccepted* 参数指向的变量。
 

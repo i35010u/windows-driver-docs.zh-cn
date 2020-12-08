@@ -1,7 +1,6 @@
 ---
 title: KSCATEGORY_NETWORK_CAMERA
 description: KSCATEGORY_NETWORK_CAMERA
-ms.assetid: FE86C0D5-3512-4DC9-891D-60E46BA33F51
 keywords:
 - KSCATEGORY_NETWORK_CAMERA 设备和驱动程序安装
 topic_type:
@@ -15,12 +14,12 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.custom: 19H1
-ms.openlocfilehash: f2e1fd4582d3d07da17d5629ccaef7850a0b8d99
-ms.sourcegitcommit: a260b60c121b25f06e8672afaaa8a3b197b17534
+ms.openlocfilehash: 66498a0531772ba103a8ae2bcdd1e8acd704a2b7
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85839121"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96794823"
 ---
 # <a name="kscategory_network_camera"></a>KSCATEGORY_NETWORK_CAMERA
 
@@ -34,7 +33,7 @@ KSCATEGORY_NETWORK_CAMERA GUID 定义如下：
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">特性</th>
+<th align="left">Attribute</th>
 <th align="left">设置</th>
 </tr>
 </thead>
@@ -63,7 +62,7 @@ KSCATEGORY_NETWORK_CAMERA GUID 定义如下：
 <tbody>
 <tr class="odd">
 <td align="left"><p>标头</p></td>
-<td align="left">Ks （包含 Ks）</td>
+<td align="left">Ks (包含 Ks .h) </td>
 </tr>
 </tbody>
 </table>

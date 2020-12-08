@@ -1,25 +1,24 @@
 ---
 title: OID_WDI_GET_BSS_ENTRY_LIST
 description: OID_WDI_GET_BSS_ENTRY_LIST 用于请求适配器指示已由端口缓存的 BSS 网络的列表。
-ms.assetid: 0eaa2b3a-6a1f-49e1-9556-81691892e666
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 OID_WDI_GET_BSS_ENTRY_LIST 网络驱动程序
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 1d60f86a5ff9f50e6340bd4be6c53ef66a841024
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: e2480f658c16090646c9b79ab5e3bb6b5d438104
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89213297"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96794347"
 ---
 # <a name="oid_wdi_get_bss_entry_list"></a>OID \_ WDI \_ 获取 \_ BSS \_ 条目 \_ 列表
 
 
 OID \_ WDI \_ 获取 \_ bss \_ 条目 \_ 列表用于请求适配器指示已由端口缓存的 BSS 网络的列表。
 
-| 作用域 | 设置序列化任务 | 正常执行时间 (秒)  |
+| 范围 | 设置序列化任务 | 正常执行时间 (秒)  |
 |-------|--------------------------|---------------------------------|
 | 端口  | 不支持的设置        | 1                               |
 
@@ -64,7 +63,7 @@ Microsoft 组件使用指示条目的列表将 BSS 列表报告给操作系统�
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
-<td><p>Windows Server 2016</p></td>
+<td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
 <td><p>标头</p></td>

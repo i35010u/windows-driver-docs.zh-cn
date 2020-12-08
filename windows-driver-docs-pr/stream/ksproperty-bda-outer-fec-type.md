@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ BDA \_ OUTER \_ FEC \_ 类型
 description: 客户端使用 KSPROPERTY \_ BDA \_ outer \_ FEC \_ 类型来控制外部正向纠错 (FEC) 类型的解调器节点。
-ms.assetid: 952fd2d6-20c8-4fb3-a92a-1e6bcedfd68b
 keywords:
 - KSPROPERTY_BDA_OUTER_FEC_TYPE 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: de7c2bbc280ca55114fcdcd9130b673728845f60
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 62aa5ca67a42c2750b49e428bf9edb6e4aaacaa1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89183833"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96793349"
 ---
 # <a name="ksproperty_bda_outer_fec_type"></a>KSPROPERTY \_ BDA \_ OUTER \_ FEC \_ 类型
 
@@ -84,7 +83,7 @@ KSP **NodeId** \_ 节点的节点标识号指定了解调器节点的标识符�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**FECMethod**](/previous-versions/windows/desktop/mstv/fecmethod)

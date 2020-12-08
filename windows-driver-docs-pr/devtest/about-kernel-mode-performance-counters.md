@@ -1,15 +1,14 @@
 ---
 title: 关于内核模式性能计数器
 description: 关于内核模式性能计数器
-ms.assetid: 57655e65-6db4-487d-8831-282e8d30d84e
 ms.date: 08/05/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 1e49bc431b34f79a831f04696be2ceb4a77d4c98
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 1b59f2fdf850d6ceab0b2f4b87eabbfa42069f44
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89385065"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96795147"
 ---
 # <a name="about-kernel-mode-performance-counters"></a>关于内核模式性能计数器
 

@@ -1,20 +1,19 @@
 ---
 title: MB 适配器常规属性要求
 description: MB 适配器常规属性要求
-ms.assetid: c2bfb625-3455-41e0-abdd-ab7204eaae0a
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ac38d0b73d300458d0cae45ca87a8de83ca9f466
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: ad13609fcabe920227d8527c443247194eb9c171
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89215228"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96793465"
 ---
 # <a name="mb-adapter-general-attribute-requirements"></a>MB 适配器常规属性要求
 
 
-下表描述了微型端口驱动程序应将 [**NDIS \_ 微型端口 \_ 适配器 \_ \_ **](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_adapter_general_attributes) 的成员变量设置为的值。 当微型端口驱动程序初始化期间，MB 微型端口驱动程序必须使用这些值来从其[*MiniportInitializeEx*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_initialize)函数调用[**NdisMSetMiniportAttributes**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsetminiportattributes) 。
+下表描述了微型端口驱动程序应将 [**NDIS \_ 微型端口 \_ 适配器 \_ \_**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_adapter_general_attributes) 的成员变量设置为的值。 当微型端口驱动程序初始化期间，MB 微型端口驱动程序必须使用这些值来从其 [*MiniportInitializeEx*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_initialize)函数调用 [**NdisMSetMiniportAttributes**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsetminiportattributes) 。
 
 <table>
 <colgroup>

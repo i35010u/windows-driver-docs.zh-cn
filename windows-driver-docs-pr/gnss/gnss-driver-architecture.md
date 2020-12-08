@@ -1,15 +1,14 @@
 ---
 title: 全局导航卫星系统 (GNSS) 驱动程序体系结构
 description: 概述全局导航附属系统 (GNSS) UMDF 2.0 驱动程序体系结构和 i/o 注意事项，并讨论几种类型的跟踪和修复会话。
-ms.assetid: 11B54F92-DC84-4D74-9BBE-C85047AD2167
 ms.date: 10/27/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 9848f3a4c93695b39757f22fdbd303beaa48d691
-ms.sourcegitcommit: 4706c0fddf0a9300a5ce6cae646330c73d10c042
+ms.openlocfilehash: 4f10d35389f39b6ff9aeab11240a98c595c3a95c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96441604"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96795011"
 ---
 # <a name="global-navigation-satellite-system-gnss-driver-architecture"></a>全局导航卫星系统 (GNSS) 驱动程序体系结构
 

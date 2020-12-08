@@ -1,17 +1,16 @@
 ---
 title: MB 基于设备的重置和恢复
 description: MB 基于设备的重置和恢复
-ms.assetid: CA75B63B-53EE-41BF-B2B6-E008F5598399
 keywords:
 - MB 基于设备的重置和恢复、基于移动宽带设备的重置和恢复、移动宽带微型端口驱动程序基于设备的重置和恢复
 ms.date: 08/09/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 303cd692f3271827c0133d359ba882313f8708c3
-ms.sourcegitcommit: 20eac54e419a594f7cea766ee28f158559dfd79c
+ms.openlocfilehash: 03f1d3980e35e7964491eaaf50dadb22aaf188a8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91754998"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96793458"
 ---
 # <a name="mb-device-based-reset-and-recovery"></a>MB 基于设备的重置和恢复
 
@@ -56,7 +55,7 @@ MB 基于设备的重置和恢复检测和尝试解决以下类型的故障：
 | 4              | 基于设备 | 功能级别设备重置 (FLDR)  |
 | 5              | 基于设备 | 平台级别设备重置 (PLDR)  |
 
-恢复顺序已更改，在某些情况下，对于某些类型的故障，某些情况下会绕过某些类型的重置机制。 例如，如果在切换飞行模式时出现命令超时，则操作系统不会切换飞行模式来修复它。如果 MBB 设备不响应任何 MBIM 命令，则操作系统会直接与基于设备的重置机制联系。
+恢复顺序已更改，在某些情况下，对于某些类型的故障，某些情况下会绕过某些类型的重置机制。 例如，如果在切换飞行模式时出现命令超时，则操作系统不会切换飞行模式来修复它。 如果 MBB 设备不响应任何 MBIM 命令，则操作系统会直接与基于设备的重置机制联系。
 
 对于启用 MBIM 函数的 UDE 客户端驱动程序，Windows 10 1809 版包含一个新的 API，可用于在 UDECx 客户端驱动程序检测到错误时请求重置。 以下部分介绍了这些新的基于设备的重置 mechanims，包括 PCI 的 FLDR、PLDR 和 UDECx reset。
 
@@ -64,13 +63,13 @@ MB 基于设备的重置和恢复检测和尝试解决以下类型的故障：
 
 ### <a name="function-level-device-reset-fldr"></a>功能级设备重置 (FLDR) 
 
-在系统影响方面，函数级设备重置是基于设备的最浅重置。 它发生在设备内部，并对其他设备不可见，在整个重置过程中，该设备保持连接到总线，并返回到有效状态 (换言之，在该过程之后) 初始状态。 这可以由总线驱动程序或固件提供。 如果总线规范定义满足要求的带内重置机制，则总线驱动程序实现 FLDR 处理程序。 固件编写器可能会使用其自己的 FLDR 实现（如重置线路或电源切换）替代总线定义的 FLDR，但仍遵循 FLDR 的要求。 
+在系统影响方面，函数级设备重置是基于设备的最浅重置。 它发生在设备内部，并对其他设备不可见，在整个重置过程中，该设备保持连接到总线，并返回到有效状态 (换言之，在该过程之后) 初始状态。 这可以由总线驱动程序或固件提供。 如果总线规范定义满足要求的带内重置机制，则总线驱动程序实现 FLDR 处理程序。 固件编写器可能会使用其自己的 FLDR 实现（如重置线路或电源切换）替代总线定义的 FLDR，但仍遵循 FLDR 的要求。 
 
-### <a name="platform-level-device-reset-pldr"></a>平台级别设备重置 (PLDR)   
+### <a name="platform-level-device-reset-pldr"></a>平台级别设备重置 (PLDR)   
 
 对于不能使用 FLDR 或作为 FLDR 的最后滑雪场补充的情况，平台级设备重置。 这种重置机制导致在电源周期中将设备报告为缺少总线 (，例如) 或影响多台设备 (如共享电源导轨或设备) 中的重置线路。 在 ACPI 表中指定了 reset 方法，该方法可能会实现为切换专用重置线路或对 D3 电源资源进行重启。 执行 PLDR 时，OS 会泪水并重建所有受影响设备的堆栈，以确保一切都从处于纯洁状态启动。
 
-### <a name="reset-recovery-for-ude-devices"></a>重置 UDE 设备的恢复 
+### <a name="reset-recovery-for-ude-devices"></a>重置 UDE 设备的恢复 
 
 对于启用 MBIM 函数的 UDE 客户端驱动程序，Windows 10 1809 版包含一个 API，可用于在 UDECx 客户端驱动程序检测到错误时请求重置。 客户端驱动程序通过调用新方法 [**UdecxWdfDeviceNeedsReset**](/windows-hardware/drivers/ddi/udecxwdfdevice/nf-udecxwdfdevice-udecxwdfdeviceneedsreset)指定重置类型（如果支持) ，则指定它希望 UDECx 尝试设备 (）。 这些重置类型包括 **PlatformLevelDeviceReset** 和 **FunctionLevelDeviceReset** ，它们是 [**UDECX_WDF_DEVICE_RESET_TYPE**](/windows-hardware/drivers/ddi/udecxwdfdevice/ne-udecxwdfdevice-_udecx_wdf_device_reset_type) 枚举的值。 启动重置后，UDECx 将调用驱动程序的 [*EVT_UDECX_WDF_DEVICE_RESET*](/windows-hardware/drivers/ddi/udecxwdfdevice/nc-udecxwdfdevice-evt_udecx_wdf_device_reset) 回调函数，并确保在此过程中不会调用任何其他回调。 客户端驱动程序应执行任何重置相关操作（如释放任何资源），然后通过调用 [**UdecxWdfDeviceResetComplete**](/windows-hardware/drivers/ddi/udecxwdfdevice/nf-udecxwdfdevice-udecxwdfdeviceresetcomplete)来完成信号重置。
 
@@ -83,72 +82,72 @@ MB 基于设备的重置和恢复检测和尝试解决以下类型的故障：
 
 ### <a name="requirements-for-fldr"></a>FLDR 的要求
 
-若要支持设备上的 FLDR，设备 ( # A1 范围内必须 `_RST` 定义一个方法。 执行时，该方法必须仅重置该设备，而不应触摸另一台设备。 设备还必须在总线上保持连接状态。 
+若要支持设备上的 FLDR，设备 ( # A1 范围内必须 `_RST` 定义一个方法。 执行时，该方法必须仅重置该设备，而不应触摸另一台设备。 设备还必须在总线上保持连接状态。 
 
 ```cpp
-Device(PCI0)  
-{  
-Device(USB0)  
-{  
-    Name(_ADR, 0x1d0000)  
-    Name(_S4D, 0x2)  
-    Name(_S3D, 0x2)  
-    …  
-    Method(_RST, 0x0, NotSerialized)  
-    {  
-            //  
-            // Perform reset of the USB0 device  
-            //  
-    } 
-} 
-} 
+Device(PCI0)  
+{  
+Device(USB0)  
+{  
+    Name(_ADR, 0x1d0000)  
+    Name(_S4D, 0x2)  
+    Name(_S3D, 0x2)  
+    …  
+    Method(_RST, 0x0, NotSerialized)  
+    {  
+            //  
+            // Perform reset of the USB0 device  
+            //  
+    } 
+} 
+} 
 ```
 
 ### <a name="requirements-for-pldr"></a>PLDR 的要求
 
-在 PLDR 中，受其他设备重置影响的设备表示为 "共享" `PowerResource` 以进行重置。 设备声明它们对的依赖项 `PowerResource` 以重置，并 `PowerResource` 实现 `_RST` 方法。 
+在 PLDR 中，受其他设备重置影响的设备表示为 "共享" `PowerResource` 以进行重置。 设备声明它们对的依赖项 `PowerResource` 以重置，并 `PowerResource` 实现 `_RST` 方法。 
 
 ```cpp
-Device(PCI0)  
-{  
-PowerResource(URST, 0x5, 0x0)  
-{  
-    //  
-    // Dummy _ON and _OFF methods. All power resources must have these  
-    // two defined.  
-    // Method(_ON, 0x0, NotSerialized)  
-    {  
-    }  
-    Method(_OFF, 0x0, NotSerialized)  
-    {  
-    }  
-    Method(_RST, 0x0, NotSerialized)  
-    {  
-            //  
-            // Perform reset of the USB0 and USB1 devices  
-            //  
-    } 
-}  
-Device(USB0)  
-{  
-    Name(_ADR, 0x1d0000)  
-    Name(_S4D, 0x2)  
-    Name(_S3D, 0x2)  
-    …  
-    Name(_PRR, Package(0x1) { ^URST })  
-}  
-Device(USB1)  
-{  
-    Name(_ADR, 0x1d0001)  
-    Name(_S4D, 0x2)  
-    Name(_S3D, 0x2)  
-    …  
-    Name(_PRR, Package(0x1) { ^URST })  
-} 
-} 
+Device(PCI0)  
+{  
+PowerResource(URST, 0x5, 0x0)  
+{  
+    //  
+    // Dummy _ON and _OFF methods. All power resources must have these  
+    // two defined.  
+    // Method(_ON, 0x0, NotSerialized)  
+    {  
+    }  
+    Method(_OFF, 0x0, NotSerialized)  
+    {  
+    }  
+    Method(_RST, 0x0, NotSerialized)  
+    {  
+            //  
+            // Perform reset of the USB0 and USB1 devices  
+            //  
+    } 
+}  
+Device(USB0)  
+{  
+    Name(_ADR, 0x1d0000)  
+    Name(_S4D, 0x2)  
+    Name(_S3D, 0x2)  
+    …  
+    Name(_PRR, Package(0x1) { ^URST })  
+}  
+Device(USB1)  
+{  
+    Name(_ADR, 0x1d0001)  
+    Name(_S4D, 0x2)  
+    Name(_S3D, 0x2)  
+    …  
+    Name(_PRR, Package(0x1) { ^URST })  
+} 
+} 
 ```
 
-或者，可以通过将设备置于 D3Cold 电源状态并返回到 D0 来实现 PLDR，实质上是重新启动设备。 在这种情况下， `_PR3` 在设备范围内声明足以支持 PLDR。 `_PR3`如果设备范围内未引用任何设备，ACPI 将使用来确定设备之间的重置依赖项 `_PRR` 。 有关详细信息，请参阅 [重置和恢复设备](../kernel/resetting-and-recovering-a-device.md)。 
+或者，可以通过将设备置于 D3Cold 电源状态并返回到 D0 来实现 PLDR，实质上是重新启动设备。 在这种情况下， `_PR3` 在设备范围内声明足以支持 PLDR。 `_PR3`如果设备范围内未引用任何设备，ACPI 将使用来确定设备之间的重置依赖项 `_PRR` 。 有关详细信息，请参阅 [重置和恢复设备](../kernel/resetting-and-recovering-a-device.md)。 
 
 ## <a name="related-links"></a>相关链接
 

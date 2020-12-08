@@ -1,17 +1,16 @@
 ---
 title: 代码完整性检查
 description: 驱动程序验证程序的代码完整性检查
-ms.assetid: ad6c4762-354d-446d-bcda-a2e99c37c589
 keywords:
 - 驱动程序验证程序的代码完整性检查
 ms.date: 09/14/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d7804f37063120b9e94654bdeca3e57c60720799
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 723fcb96c49def910f60b24a9411b8a31d958260
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89384249"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96795095"
 ---
 # <a name="code-integrity-checking"></a>代码完整性检查
 
@@ -77,7 +76,7 @@ ms.locfileid: "89384249"
 
 * **在命令行中**
 
-    在命令行中，代码完整性检查由 **0x02000000 (位 25) **表示。 例如：
+    在命令行中，代码完整性检查由 **0x02000000 (位 25)** 表示。 例如：
 
     `verifier /flags 0x02000000 /driver MyDriver.sys`
 

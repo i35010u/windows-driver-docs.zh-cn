@@ -1,7 +1,6 @@
 ---
 title: SymSrv 的高级用法
 description: SymSrv 的高级用法
-ms.assetid: 16d4dda0-4bcf-4450-9972-e20d71efc845
 keywords:
 - SymSrv，功能
 - 缓存符号
@@ -11,12 +10,12 @@ keywords:
 - " (符号服务器的下游存储) "
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bd114d42cca0410c93513073da82c9e513ff338d
-ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
+ms.openlocfilehash: 394ae347516e238f7776d41f0a1f52ffcaf1b75e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88969188"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96793299"
 ---
 # <a name="advanced-symsrv-use"></a>SymSrv 的高级用法
 
@@ -51,7 +50,7 @@ set _NT_SYMBOL_PATH = srv*\\Server\Share
 指定符号服务器 DLL 的名称。 如果使用的是 SymSrv 符号服务器，将始终 symsrv.dll。
 
 <span id="srv"></span><span id="SRV"></span>**srv**  
-这是 **symsrv \*symsrv.dll**的简写形式。
+这是 **symsrv \*symsrv.dll** 的简写形式。
 
 <span id="DownstreamStore"></span><span id="downstreamstore"></span><span id="DOWNSTREAMSTORE"></span>*DownstreamStore*  
 指定下游存储区。 这是将用于缓存各个符号文件的本地目录或网络共享。
@@ -62,16 +61,16 @@ set _NT_SYMBOL_PATH = srv*\\Server\Share
 
 如果 *DownstreamStore* 指定的目录不存在，则 SymStore 将尝试创建它。
 
-如果省略*DownstreamStore*参数，并且不包含额外的星号（换言之，如果你使用只带有两个星号的一个星号或**symsrv** ）的**srv** ，则不会创建下游存储。 调试器将直接从服务器加载所有符号文件，而无需在本地对其进行缓存。
+如果省略 *DownstreamStore* 参数，并且不包含额外的星号（换言之，如果你使用只带有两个星号的一个星号或 **symsrv** ）的 **srv** ，则不会创建下游存储。 调试器将直接从服务器加载所有符号文件，而无需在本地对其进行缓存。
 
-**注意**   如果要从 HTTP 或 HTTPS 站点访问符号，或者符号存储区使用压缩文件，则始终使用下游存储。 如果未指定下游存储，将在主目录的符号子目录中创建一个。
+**注意**   如果要从 HTTP 或 HTTPS 站点访问符号，或者符号存储区使用压缩文件，则始终使用下游存储。 如果未指定下游存储，将在主目录的符号子目录中创建一个。
 
  
 
 <span id="__Server_Share"></span><span id="__server_share"></span><span id="__SERVER_SHARE"></span>*\\\\服务器 \\ 共享*  
 指定远程符号存储的服务器和共享。
 
-如果使用下游存储，则调试器将首先查找此存储中的符号文件。 如果未找到符号文件，则调试器将从指定的 *服务器* 中查找符号文件并 *共享*，然后在下游存储中缓存此文件的副本。 文件将被复制到*DownstreamStore*下的树中的子目录，该子目录与其在* \\ \\ 服务器 \\ 共享*下的树中的位置相对应。
+如果使用下游存储，则调试器将首先查找此存储中的符号文件。 如果未找到符号文件，则调试器将从指定的 *服务器* 中查找符号文件并 *共享*，然后在下游存储中缓存此文件的副本。 文件将被复制到 *DownstreamStore* 下的树中的子目录，该子目录与其在 *\\ \\ 服务器 \\ 共享* 下的树中的位置相对应。
 
 符号服务器不一定是符号路径中的唯一条目。 如果符号路径包含多个条目，则调试器会按照从左到右的顺序 (按顺序从左到右) 检查每个项是否存在所需的符号文件，不管符号服务器或实际目录是否已命名。
 
@@ -111,7 +110,7 @@ set _NT_SYMBOL_PATH=srv*\\localserver\myshare\mycache*https://www.company.com/ma
 
 可以指定任意数量的下游存储，用星号隔开。 这些存储称为 *级联符号存储区*。
 
-在初始**srv \\ *** 或**symsrv \\ **<strong>ServerDLL</strong> * \* * * 之后，每个后续标记表示一个符号位置。 首先检查最远的令牌。 空标记（由行中的两个星号指示）或字符串末尾的星号表示默认的下游存储区。
+在初始 **srv \\** _ 或 _ *symsrv \\ ** <strong>ServerDLL</strong>* \* * * 之后，每个后续标记表示一个符号位置。 首先检查最远的令牌。 空标记（由行中的两个星号指示）或字符串末尾的星号表示默认的下游存储区。
 
 下面是一个符号路径示例，它使用两个下游存储来保存所访问的主符号存储区中的信息。 这可能称为 "主存储"、"中间级别存储" 和 "本地缓存"：
 
@@ -182,9 +181,9 @@ srv*C:\Symbols*\\Machine1\Symbols*https://SymProxyName/Symbols;srv*C:\WebSymbols
 
 ### <a name="span-idcache_localsymbolcachespanspan-idcache_localsymbolcachespancachelocalsymbolcache"></a><span id="cache_localsymbolcache"></span><span id="CACHE_LOCALSYMBOLCACHE"></span>缓存 \* *localsymbolcache*
 
-创建符号的本地缓存的另一种方法是使用符号路径中的** \\ cache**<em>* localsymbolcache</em>字符串。 这不是符号服务器元素的一部分，而是符号路径中单独的元素。 调试器将使用指定的目录 *localsymbolcache* 来存储从显示在此字符串右侧符号路径中的任何元素加载的任何符号。 这使你可以对从任何位置下载的符号（而不仅仅是符号服务器下载的符号）使用本地缓存。
+创建符号的本地缓存的另一种方法是使用符号路径中的 **\\ cache**<em>* localsymbolcache</em>字符串。 这不是符号服务器元素的一部分，而是符号路径中单独的元素。 调试器将使用指定的目录 *localsymbolcache* 来存储从显示在此字符串右侧符号路径中的任何元素加载的任何符号。 这使你可以对从任何位置下载的符号（而不仅仅是符号服务器下载的符号）使用本地缓存。
 
-例如，以下符号路径将不缓存从* \\ \\ someshare*获取的符号。 它将使用 c： \\ mysymbols 缓存从* \\ \\ anothershare*中获取的符号，因为以* \\ \\ anothershare*开头的元素出现在**cache \* c： \\ mysymbols**元素的右侧。 它还将使用 c： \\ mysymbols 缓存来自 Microsoft 公共符号存储区的符号，因为符号服务器所使用的常用语法)  (具有两个或多个星号的 **srv** 。 此外，如果你随后使用 [**. sympath +**](-sympath--set-symbol-path-.md) 命令将其他位置添加到此路径，则还将缓存这些新元素，因为它们将追加到路径的右侧。
+例如，以下符号路径将不缓存从 *\\ \\ someshare* 获取的符号。 它将使用 c： \\ mysymbols 缓存从 *\\ \\ anothershare* 中获取的符号，因为以 *\\ \\ anothershare* 开头的元素出现在 **cache \* c： \\ mysymbols** 元素的右侧。 它还将使用 c： \\ mysymbols 缓存来自 Microsoft 公共符号存储区的符号，因为符号服务器所使用的常用语法)  (具有两个或多个星号的 **srv** 。 此外，如果你随后使用 [**. sympath +**](-sympath--set-symbol-path-.md) 命令将其他位置添加到此路径，则还将缓存这些新元素，因为它们将追加到路径的右侧。
 
 ```console
 _NT_SYMBOL_PATH=\\someshare\that\cachestar\ignores;srv*c:\mysymbols*https://msdl.microsoft.com/download/symbols;cache*c:\mysymbols;\\anothershare\that\gets\cached
@@ -192,7 +191,7 @@ _NT_SYMBOL_PATH=\\someshare\that\cachestar\ignores;srv*c:\mysymbols*https://msdl
 
 ### <a name="span-idhow_symsrv_locates_filesspanspan-idhow_symsrv_locates_filesspanhow-symsrv-locates-files"></a><span id="how_symsrv_locates_files"></span><span id="HOW_SYMSRV_LOCATES_FILES"></span>SymSrv 如何查找文件
 
-SymSrv 创建所需符号文件的完全限定的 UNC 路径。 此路径以指向在 \_ NT \_ 符号 \_ 路径环境变量中记录的符号存储区的路径开头。 然后， **SymbolServer** 例程用于标识所需文件的名称;此名称作为目录名称附加到路径。 然后追加另一个目录名称，其中包括 *id*的串联、 *两个*和 *三* 个传递给 **SymbolServer**的参数。 如果其中任何一个值为零，则忽略它们。
+SymSrv 创建所需符号文件的完全限定的 UNC 路径。 此路径以指向在 \_ NT \_ 符号 \_ 路径环境变量中记录的符号存储区的路径开头。 然后， **SymbolServer** 例程用于标识所需文件的名称;此名称作为目录名称附加到路径。 然后追加另一个目录名称，其中包括 *id* 的串联、 *两个* 和 *三* 个传递给 **SymbolServer** 的参数。 如果其中任何一个值为零，则忽略它们。
 
 将在生成的目录中搜索符号文件或符号存储指针文件。
 

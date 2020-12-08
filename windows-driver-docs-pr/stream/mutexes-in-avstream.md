@@ -1,20 +1,19 @@
 ---
 title: AVStream 中的互斥
 description: AVStream 中的互斥
-ms.assetid: 011edaaa-7449-41c3-8cfb-0d319901af8b
 keywords:
-- AVStream 互斥体 WDK
-- 互斥体，WDK AVStream
-- WDK AVStream 对象
+- AVStream mutex WDK
+- mutex WDK AVStream
+- 对象 WDK AVStream
 - 层次结构 WDK AVStream
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 65dda3311d6ffbc40dedd06e6d1b396e1b79cde5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ab350181c256ef930e512db0d7b867d6eb137850
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63329938"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96795275"
 ---
 # <a name="mutexes-in-avstream"></a>AVStream 中的互斥
 
@@ -22,19 +21,19 @@ ms.locfileid: "63329938"
 
 
 
-AVStream 微型驱动程序通过使用互斥锁和过程控制门同步访问对象。 有关过程控制门的详细信息，请参阅[AVStream 在流控制门](flow-control-gates-in-avstream.md)。
+AVStream 微型驱动程序使用互斥体和进程控制入口同步对对象的访问。 有关过程控制入口的详细信息，请参阅 [AVStream 中的流控制入口](flow-control-gates-in-avstream.md)。
 
-AVStream 具有三个不同的 mutex，所有这些都是直接访问的微型驱动程序：
+AVStream 具有三个不同的互斥体，微型驱动程序可以直接访问这些互斥体：
 
-[设备在 AVStream 的互斥体](device-mutex-in-avstream.md)
+[AVStream 中的设备互斥](device-mutex-in-avstream.md)
 
-[筛选器控件中 AVStream 的互斥体](filter-control-mutex-in-avstream.md)
+[AVStream 中的筛选器控件互斥](filter-control-mutex-in-avstream.md)
 
-[处理在 AVStream 互斥体](processing-mutex-in-avstream.md)
+[在 AVStream 中处理互斥](processing-mutex-in-avstream.md)
 
-使用设备互斥体同步设备以筛选从层次结构对象。 使用筛选器控件互斥体同步中筛选器以固定的对象。
+使用设备 mutex 将设备中的层次结构对象同步到筛选器。 使用筛选器控件互斥体将对象从筛选器同步到 pin。
 
-多个 AVStream API 函数需要保留该特定的互斥体。 相关函数引用页状态如果调用该特定函数时，应保留特定的互斥体。
+多个 AVStream API 函数要求持有特定的 mutex。 相关函数引用页状态（如果在调用该特定函数时应持有特定互斥体）。
 
  
 

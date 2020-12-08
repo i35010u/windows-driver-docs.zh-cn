@@ -1,17 +1,16 @@
 ---
 title: CoNDIS WAN 的其他优势
 description: CoNDIS WAN 的其他优势
-ms.assetid: 5b937ae4-1486-4563-a863-5c02ba57c7df
 keywords:
 - CoNDIS WAN 驱动程序 WDK 网络，优点
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2a4530b206a078518ff60bf56b4009ab168465a6
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: dcbc32ee1a31e0687e8aeaefa220198240b9aa50
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89211641"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96793423"
 ---
 # <a name="other-benefits-of-condis-wan"></a>CoNDIS WAN 的其他优势
 

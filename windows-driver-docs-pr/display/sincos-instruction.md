@@ -1,15 +1,14 @@
 ---
 title: SINCOS 指令格式
 description: SINCOS 指令格式
-ms.assetid: df9b51ef-5a9f-4222-a0be-a40d5b577f9a
 ms.date: 01/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: ded4d0557cc3bd8816b893181ba87f8fd415137d
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: d3f5fd447e1bed7d953863bc2e15543e2fcd1738
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89066626"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96793865"
 ---
 # <a name="sincos-instruction-format"></a>SINCOS 指令格式
 

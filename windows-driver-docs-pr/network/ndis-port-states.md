@@ -1,7 +1,6 @@
 ---
 title: NDIS 端口状态
 description: NDIS 端口状态
-ms.assetid: bb13edd2-815b-488a-b36c-21a48809a143
 keywords:
 - 端口 WDK NDIS，状态
 - NDIS 端口 WDK，状态
@@ -11,12 +10,12 @@ keywords:
 - 初始化状态 WDK NDIS 端口
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f645a2f5ae2ccfffe22eebe6c6ba655e148b0fba
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 2239c490e9b8e4714395b9cf453a95caf789409a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89206066"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96793451"
 ---
 # <a name="ndis-port-states"></a>NDIS 端口状态
 
@@ -37,9 +36,9 @@ NDIS 端口身份验证状态指示端口是否受控 (需要授权) 、数据�
 
 微型端口驱动程序可以激活端口，或使用 PnP 事件停用端口。 有关激活和停用端口的详细信息，请参阅 [激活 Ndis 端口](activating-an-ndis-port.md) 和 [停用 ndis 端口](deactivating-an-ndis-port.md)。
 
-过量驱动程序使用[oid \_ 生成 \_ 端口 \_ 状态](./oid-gen-port-state.md)OID 获取在[**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的**PortNumber**成员中指定的端口的当前状态。 NDIS 处理此 OID，微型端口驱动程序不会收到此 OID 查询。
+过量驱动程序使用 [oid \_ 生成 \_ 端口 \_ 状态](./oid-gen-port-state.md)OID 获取在 [**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的 **PortNumber** 成员中指定的端口的当前状态。 NDIS 处理此 OID，微型端口驱动程序不会收到此 OID 查询。
 
-支持 NDIS 端口的微型端口驱动程序必须使用 [**ndis \_ 状态 \_ 端口 \_ 状态**](./ndis-status-port-state.md) 指示来指示 ndis 端口状态的更改。 微型端口驱动程序必须在[**NDIS \_ 状态 \_ 指示**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_status_indication)结构的**PortNumber**成员中设置端口号。
+支持 NDIS 端口的微型端口驱动程序必须使用 [**ndis \_ 状态 \_ 端口 \_ 状态**](./ndis-status-port-state.md) 指示来指示 ndis 端口状态的更改。 微型端口驱动程序必须在 [**NDIS \_ 状态 \_ 指示**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_status_indication)结构的 **PortNumber** 成员中设置端口号。
 
 NDIS 和过量驱动程序使用 [oid \_ GEN \_ 端口 \_ 身份验证 \_ 参数](./oid-gen-port-authentication-parameters.md) OID 设置 NDIS 端口的当前身份验证状态。 支持 NDIS 端口的微型端口驱动程序必须支持此 OID。
 

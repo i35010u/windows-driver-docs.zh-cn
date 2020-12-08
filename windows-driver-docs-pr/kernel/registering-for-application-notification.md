@@ -1,7 +1,6 @@
 ---
 title: 注册应用程序通知
 description: 注册应用程序通知
-ms.assetid: e8f76014-6068-4012-96c6-88ea2bbd9bbf
 keywords:
 - 动态硬件分区 WDK，应用程序通知
 - 硬件分区 WDK 动态，应用程序通知
@@ -11,12 +10,12 @@ keywords:
 - 注册应用程序通知 WDK 动态硬件分区
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cf7a8964ba8dd6dfdb67af2807c94ecc65a1b5a6
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 5a1e017ac8471a5971c0df41ae7e94de4bfbe036
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91733663"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96793517"
 ---
 # <a name="registering-for-application-notification"></a>注册应用程序通知
 
@@ -87,7 +86,7 @@ MemoryNotifyHandle =
     );
 ```
 
-**注意**   如果应用程序只需收到有关处理器的通知，则无需注册内存事件通知。 同样，如果应用程序只需收到有关内存的通知，则无需注册处理器事件的通知。
+**注意**   如果应用程序只需收到有关处理器的通知，则无需注册内存事件通知。 同样，如果应用程序只需收到有关内存的通知，则无需注册处理器事件的通知。
 
  
 

@@ -1,37 +1,36 @@
 ---
-title: 扩展的示例，用于定义"64 位"字段
-description: 演示如何通过将"64 位"字段添加到 IOCTL 控制代码修改用于 64 位的 32 位驱动程序。
-ms.assetid: 642b67eb-880c-4057-b5de-c89ef8e8601e
+title: 定义 "64 位" 字段的扩展示例
+description: 演示如何通过向 IOCTL 控件代码添加 "64 位" 字段来修改64位的32位驱动程序。
 keywords:
-- 32 位 I/O 支持 WDK 64 位、 64 位字段定义
-- 64 位域定义 WDK 内核
+- 32位 i/o 支持 WDK 64 位，已定义64位字段
+- 64位字段定义的 WDK 内核
 - 位域 WDK 64 位
-- 单独的控件代码 WDK 64 位
+- 分离控制代码 WDK 64 位
 - 控制代码 WDK 64 位
 - 文件系统控制代码 WDK 64 位
 - FSCTL WDK 64 位
-- I/O 控制代码 WDK 内核，在 64 位驱动程序中的 32 位 I/O
-- Ioctl WDK 内核，在 64 位驱动程序中的 32 位 I/O
+- I/o 控制代码 WDK 内核，64位驱动程序中的32位 i/o
+- IOCTLs WDK 内核，64位驱动程序中的32位 i/o
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7a449c9a3da97a07b0fbf9b81d3a0aeaccdb9e62
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2f2eb2749cf786d095a23c0044cef665837a5256
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63361976"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96793567"
 ---
-# <a name="extended-example-defining-a-64bit-field"></a>扩展示例：定义一个"64 位"字段
+# <a name="extended-example-defining-a-64bit-field"></a>扩展示例：定义 "64 位" 字段
 
 
 
 
 
-下面的示例演示如何通过将"64 位"字段添加到 IOCTL 控制代码修改用于 64 位的 32 位驱动程序。 请注意，此示例显示只需要修改的驱动程序代码的部分。
+下面的示例演示如何通过向 IOCTL 控件代码添加 "64 位" 字段来修改64位的32位驱动程序。 请注意，此示例仅显示需要修改的驱动程序代码的部分。
 
 ### <a name="original-driver-code"></a>原始驱动程序代码
 
-下面是该驱动程序的 32 位版本：
+下面是驱动程序的32位版本：
 
 ### <a name="header-file"></a>标头文件
 
@@ -104,9 +103,9 @@ TestdrvDeviceControl(
 }
 ```
 
-### <a name="driver-code-with-thunking-support"></a>通过形式转换支持的驱动程序代码
+### <a name="driver-code-with-thunking-support"></a>具有 Thunk 支持的驱动程序代码
 
-下面是该驱动程序的 64 位版本：
+下面是驱动程序的64位版本：
 
 ### <a name="header-file"></a>标头文件
 

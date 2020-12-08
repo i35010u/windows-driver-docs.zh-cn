@@ -1,7 +1,6 @@
 ---
 title: 'FileObjectConfigured 规则 (kmdf) '
 description: FileObjectConfigured 规则指定对 WdfRequestGetFileObject 方法的调用，前面是对 WdfDeviceInitSetFileObjectConfig 的调用。
-ms.assetid: bec6e071-f7cc-48c7-a01b-e7288ffb6f5e
 ms.date: 05/21/2018
 keywords:
 - 'FileObjectConfigured 规则 (kmdf) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 967e8b459ecfd1fce8fb47e8c9a9ad12e0fb75b7
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 523b4c2d559014c8e7c000dda471c20ca6a2fb43
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107390"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96793061"
 ---
 # <a name="fileobjectconfigured-rule-kmdf"></a>FileObjectConfigured 规则 (kmdf) 
 
 
-**FileObjectConfigured**规则指定对[**WdfRequestGetFileObject**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestgetfileobject)方法的调用，前面是对[**WdfDeviceInitSetFileObjectConfig**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceinitsetfileobjectconfig)的调用。
+**FileObjectConfigured** 规则指定对 [**WdfRequestGetFileObject**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestgetfileobject)方法的调用，前面是对 [**WdfDeviceInitSetFileObjectConfig**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceinitsetfileobjectconfig)的调用。
 
 **驱动程序模型： KMDF**
 

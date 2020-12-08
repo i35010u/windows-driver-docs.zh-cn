@@ -1,18 +1,17 @@
 ---
 title: 第六个图片解码配置
 description: 第六个图片解码配置
-ms.assetid: 3d4f70c7-bdad-4511-a180-2825c4bafd5f
 keywords:
-- 压缩解码集 WDK DirectX VA 的图片
+- 压缩的图片解码设置 WDK DirectX VA
 - 图片解码设置 WDK DirectX VA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2bc024045e6399508635989a6a5e86da6218971d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3a8590f5567942847debc2f49491aaebf9439ae2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391229"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96793863"
 ---
 # <a name="sixth-picture-decoding-configuration"></a>第六个图片解码配置
 
@@ -20,7 +19,7 @@ ms.locfileid: "63391229"
 ## <span id="ddk_sixth_picture_decoding_configuration_gg"></span><span id="DDK_SIXTH_PICTURE_DECODING_CONFIGURATION_GG"></span>
 
 
-此集 （通过此集中的第五个首选的配置） 中的第六个配置定义一样[解码配置的第一张图](first-picture-decoding-configuration.md)有以下例外。
+此集中的第六个配置 (在此集中的第五个配置) 的定义方式与 [第一个图片解码配置](first-picture-decoding-configuration.md) 相同，但以下情况例外。
 
 <table>
 <colgroup>
@@ -30,7 +29,7 @@ ms.locfileid: "63391229"
 <thead>
 <tr class="header">
 <th align="left">成员</th>
-<th align="left">ReplTest1</th>
+<th align="left">“值”</th>
 </tr>
 </thead>
 <tbody>

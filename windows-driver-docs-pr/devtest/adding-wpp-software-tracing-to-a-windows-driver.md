@@ -1,15 +1,14 @@
 ---
 title: 将 WPP 软件跟踪添加到 Windows 驱动程序
 description: 若要在跟踪提供程序中（如内核模式驱动程序或用户模式应用程序）使用 WPP 软件跟踪，需要 (或检测驱动程序源文件) 中添加代码，并修改驱动程序项目。 本部分将介绍这些步骤。
-ms.assetid: 487BA8AA-950A-4F3C-9E3E-EBE1DA35D4B1
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 24e7c2807a6fa5e0041761b3d315287f73c0c1db
-ms.sourcegitcommit: f86e44d595be2c9e4efe3c196f6c0a9c71f4231e
+ms.openlocfilehash: 1d18465d0fa5a1a8e842a4413ad2b0677af45184
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96470530"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96795117"
 ---
 # <a name="adding-wpp-software-tracing-to-a-windows-driver"></a>将 WPP 软件跟踪添加到 Windows 驱动程序
 
@@ -112,7 +111,7 @@ ms.locfileid: "96470530"
 <thead>
 <tr class="header">
 <th align="left">术语</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>

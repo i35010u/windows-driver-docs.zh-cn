@@ -1,20 +1,19 @@
 ---
 title: WIA 设备的 INF 文件
 description: WIA 设备的 INF 文件
-ms.assetid: 65eac8b5-35d2-4537-8646-a35a1cf9aced
 ms.date: 07/18/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 5ae7a1de6a227954ccd3b8b839683b67065581bb
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 0c9dc941698c210e3370719808f09040b20a7883
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90716404"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96793675"
 ---
 # <a name="inf-files-for-wia-devices"></a>WIA 设备的 INF 文件
 
 
-静态映像设备的默认类安装程序 *sti \_ci.dll*可识别一组特殊的 INF 文件条目。 在 INF 文件中，这些条目必须位于设备的 [**INF DDInstall 部分**](../install/inf-ddinstall-section.md)中。 下表中描述了这些条目。
+静态映像设备的默认类安装程序 *sti \_ci.dll* 可识别一组特殊的 INF 文件条目。 在 INF 文件中，这些条目必须位于设备的 [**INF DDInstall 部分**](../install/inf-ddinstall-section.md)中。 下表中描述了这些条目。
 
 <table>
 <colgroup>
@@ -33,14 +32,14 @@ ms.locfileid: "90716404"
 <tr class="odd">
 <td><p><strong>类别</strong></p></td>
 <td><p>StillImage</p></td>
-<td><p>必需</p></td>
+<td><p>必须</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>DeviceType</strong></p></td>
 <td><p>1用于扫描仪</p>
 <p>2照相机</p>
 <p>3对于流式处理视频</p></td>
-<td><p>必需</p></td>
+<td><p>必须</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>DeviceSubType</strong></p></td>
@@ -48,7 +47,7 @@ ms.locfileid: "90716404"
 <td><p>可选</p></td>
 </tr>
 <tr class="even">
-<td><p><strong>Connection</strong></p></td>
+<td><p><strong>连接</strong></p></td>
 <td><p>对于连接到串行端口或并行端口的非即插即用设备，这可能是串行或并行的，以限制用户在安装过程中选择的端口。</p></td>
 <td><p>可选</p>
 <p>如果未指定，则用户可以选择任何串行端口或并行端口。</p></td>
@@ -85,7 +84,7 @@ ms.locfileid: "90716404"
 <td><p>标识供应商提供的数据部分，其中列出了仍为图像设备事件。 本节中的每个条目都必须采用以下格式：</p>
 <p><em>事件名称</em><strong>= "</strong><em>String</em><strong>"、{</strong><em>GUID</em><strong>}、</strong>应用</p>
 <p><em>事件名称是事件</em> 的内部名称， <em>String</em> 是事件的显示字符串， <em>guid</em> 是事件的 guid，而 <em>应用</em> 指定发生事件时要启动的图像处理应用程序。 若要启动当前注册的应用程序，请使用星号 (<strong>*</strong> <em>应用</em>) 。</p></td>
-<td><p>必需</p></td>
+<td><p>必须</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>PortSelect</strong></p></td>
@@ -100,8 +99,8 @@ ms.locfileid: "90716404"
 
  
 
-**注意**   为了与设备进行通信，用户模式客户端 (微型驱动程序) 必须向 WIA 服务询问设备的文件名以及指定要创建或打开的对象的名称的字符串。  (文件名不必是磁盘文件的名称。 ) 响应此类查询，WIA 服务将从 **CreateFileName** 注册表项中获取设备的文件名。  (*usbscan.sys* 和 *scsiscan.sys* 内核模式驱动程序会创建此项，这与类安装程序一样。 ) 微型驱动程序通过调用 [**IStiDeviceControl：： GetMyDevicePortName**](/windows-hardware/drivers/ddi/stiusd/nf-stiusd-istidevicecontrol-getmydeviceportname) 方法接收此文件名。 然后，微型驱动程序可以在调用 Microsoft Windows SDK 文档) 中描述的 [**CreateFile**](/windows/win32/api/fileapi/nf-fileapi-createfilea) (函数时使用此文件名，以打开设备的句柄。
-如果手动安装了设备，则类安装程序会创建 **CreateFileName** 条目，并将其值设置为依赖于端口选择页面上用户选择的值： COM*X*、LPT*X*或 AUTO。 某些设备 (网络扫描仪，例如手动安装) ，无需端口。 在这种情况下，生成的端口选择对话框会使用户感到困惑。 可以通过在设备 INF 文件的 " [**Inf DDInstall" 部分**](../install/inf-ddinstall-section.md) 添加以下条目来阻止显示此对话框：
+**注意**   为了与设备进行通信，用户模式客户端 (微型驱动程序) 必须向 WIA 服务询问设备的文件名以及指定要创建或打开的对象的名称的字符串。  (文件名不必是磁盘文件的名称。 ) 响应此类查询，WIA 服务将从 **CreateFileName** 注册表项中获取设备的文件名。  (*usbscan.sys* 和 *scsiscan.sys* 内核模式驱动程序会创建此项，这与类安装程序一样。 ) 微型驱动程序通过调用 [**IStiDeviceControl：： GetMyDevicePortName**](/windows-hardware/drivers/ddi/stiusd/nf-stiusd-istidevicecontrol-getmydeviceportname) 方法接收此文件名。 然后，微型驱动程序可以在调用 Microsoft Windows SDK 文档) 中描述的 [**CreateFile**](/windows/win32/api/fileapi/nf-fileapi-createfilea) (函数时使用此文件名，以打开设备的句柄。
+如果手动安装了设备，则类安装程序会创建 **CreateFileName** 条目，并将其值设置为依赖于端口选择页面上用户选择的值： COM *X*、LPT *X* 或 AUTO。 某些设备 (网络扫描仪，例如手动安装) ，无需端口。 在这种情况下，生成的端口选择对话框会使用户感到困惑。 可以通过在设备 INF 文件的 " [**Inf DDInstall" 部分**](../install/inf-ddinstall-section.md) 添加以下条目来阻止显示此对话框：
 
  
 
@@ -109,9 +108,9 @@ ms.locfileid: "90716404"
      PortSelect=NO
 ```
 
-**注意**   此项值的副作用是**CreateFileName**项设置为 AUTO。 请注意，如果微型驱动程序接收到了文件名的自动，则它必须能够确定应该与之通信的设备。
+**注意**  此项值的副作用是 **CreateFileName** 项设置为 AUTO。 请注意，如果微型驱动程序接收到了文件名的自动，则它必须能够确定应该与之通信的设备。
 
-**注意**   对于 PropertyPages，WIA 驱动程序必须使用不同的扩展性机制才能添加属性页。 它还必须将其自己的 GUID 添加到其 INF 文件中的 **UI 类 ID** 条目，并且必须提供特定的 UI 扩展性注册 (请参阅 [用户界面扩展注册表项](user-interface-extension-registry-entries.md)) 用于要替换的 ui 组件（如公用对话框）或添加（如上下文菜单和属性页）。 WIA 驱动程序还必须为组件本身提供 UI 扩展性注册。
+**注意**  对于 PropertyPages，WIA 驱动程序必须使用不同的扩展性机制才能添加属性页。 它还必须将其自己的 GUID 添加到其 INF 文件中的 **UI 类 ID** 条目，并且必须提供特定的 UI 扩展性注册 (请参阅 [用户界面扩展注册表项](user-interface-extension-registry-entries.md)) 用于要替换的 ui 组件（如公用对话框）或添加（如上下文菜单和属性页）。 WIA 驱动程序还必须为组件本身提供 UI 扩展性注册。
 
  
 
@@ -166,7 +165,7 @@ ms.locfileid: "90716404"
 
 静态映像设备（ *sti*）的默认 INF 文件为每种设备类型定义了两个安装节，如下所示：
 
--   [**INF DDInstall 部分**](../install/inf-ddinstall-section.md)，必须在供应商提供的 INF 文件的*DDInstall*部分中引用，如下表所示。
+-   [**INF DDInstall 部分**](../install/inf-ddinstall-section.md)，必须在供应商提供的 INF 文件的 *DDInstall* 部分中引用，如下表所示。
 
     <table>
     <colgroup>

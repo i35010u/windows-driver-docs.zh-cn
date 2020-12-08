@@ -1,7 +1,6 @@
 ---
 title: KSCATEGORY_MIXER
 description: KSCATEGORY_MIXER
-ms.assetid: b17696ed-d8d6-4d02-a23b-64ebc8505afd
 keywords:
 - KSCATEGORY_MIXER 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 7192207246a4a261fd2fdc1db63ad3ee9fc7b0ac
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 2f54cf24a77aa29b537f384699904d51bc0a3b47
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89095007"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96794865"
 ---
 # <a name="kscategory_mixer"></a>KSCATEGORY_MIXER
 
@@ -74,7 +73,7 @@ KS 设备的驱动程序将注册 KSCATEGORY_MIXER 的实例，以向操作系�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSPROPERTY_TOPOLOGY_CATEGORIES**](../stream/ksproperty-topology-categories.md)

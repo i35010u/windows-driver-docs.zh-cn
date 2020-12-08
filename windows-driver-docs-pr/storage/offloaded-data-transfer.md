@@ -4,15 +4,14 @@ description: 卸载了数据传输
 appliesto:
 - Windows Server 2019
 - Windows Server 2016
-ms.assetid: EDFA6AFB-7D14-44F8-A105-E74182D26398
 ms.date: 10/04/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: b14901c533d67a47b1def85b5a8d4c6ce3169e0d
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 64280acdefd9211ec74c77f82ba1efba94e1ce62
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89191691"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96794199"
 ---
 # <a name="offloaded-data-transfer"></a>卸载了数据传输
 
@@ -29,7 +28,7 @@ ms.locfileid: "89191691"
 3. 应用程序将带有标记的卸载写入请求发送到目标存储设备的复制管理器。
 4. 存储阵列复制管理器将数据从源设备移动到目标设备，并将卸载写入结果返回到应用程序。
 
-## <a name="identify-an-odx-capable-source-and-destination"></a>标识支持 ODX 的源和目标
+## <a name="identify-an-odx-capable-source-and-destination"></a>确定 ODX-Capable 源和目标
 
 为了支持 ODX，存储阵列必须为支持 ODX 的存储阵列实现相关的 T10 标准规范，其中包括对令牌执行的读取和写入操作。 在 LUN 设备枚举过程中 (系统启动或即插即用事件) ，Windows 将通过以下步骤收集或更新存储目标设备的 ODX 功能信息。
 
@@ -154,7 +153,7 @@ ODX 根据存储阵列的功能使用稳健的错误处理算法。 如果在支
 - 在数据迁移应用程序客户端系统中，复制卸载应用程序向源 LUN 发出卸载读取请求，并从源 LUN 接收令牌，然后向目标 LUN 发出带有令牌的卸载写入请求。 在两个不同的存储系统上，复制管理器将源 LUN 中的数据移动到目标 LUN。
 - 也可以在同一位置的一台服务器上操作大规模数据迁移。
 
-### <a name="host-controlled-data-transfer-within-a-tiered-storage-device"></a>分层存储设备中受主机控制的数据传输
+### <a name="host-controlled-data-transfer-within-a-tiered-storage-device"></a>分层存储设备中的 Host-Controlled 数据传输
 
 分层存储设备将数据分类为不同类型的存储媒体，以降低成本、提高性能并解决容量问题。 类别可以基于所需的保护级别、性能要求、使用频率和其他注意事项。
 

@@ -1,9 +1,8 @@
 ---
 title: wudfext.wudfdownkmirp
-description: Wudfext.downkmmirp 扩展到指定的用户模式的 I/O 请求数据包 (UM IRP) 中显示内核模式 I/O 请求数据包 (IRP) 相对应。
-ms.assetid: f5c42040-2349-4469-a398-12a238ff170e
+description: Downkmmirp 扩展显示 (IRP) 的内核模式 i/o 请求包，它与指定的用户模式 i/o 请求数据包 (UM IRP) 相对应。
 keywords:
-- wudfext.wudfdownkmirp Windows 调试
+- wudfext wudfdownkmirp Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,29 +11,29 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: b5ff320dbf704fd8440d8ca943556bc84fdcc4be
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b790f1555543712fa6bb5f51069270d8a87970b5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63349095"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96794081"
 ---
 # <a name="wudfextwudfdownkmirp"></a>!wudfext.wudfdownkmirp
 
 
-**！ Wudfext.downkmmirp**扩展到指定的用户模式的 I/O 请求数据包 (UM IRP) 中显示内核模式 I/O 请求数据包 (IRP) 相对应。
+**！ Wudfext downkmmirp** 扩展显示与指定用户模式 i/o 请求数据包 (UM IRP) 对应的内核模式 i/o 请求数据包 (IRP) 。
 
 ```dbgcmd
 !wudfext.wudfdownkmirp Address
 ```
 
-## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>参数
+## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>Parameters
 
 
-<span id="_______Address______"></span><span id="_______address______"></span><span id="_______ADDRESS______"></span> *Address*   
-指定其相应的内核模式 IRP 将用来显示 UM IRP 的地址。
+<span id="_______Address______"></span><span id="_______address______"></span><span id="_______ADDRESS______"></span>*地址*   
+指定将显示其对应内核模式 IRP 的 UM IRP 的地址。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 <table>
 <colgroup>
@@ -55,14 +54,14 @@ ms.locfileid: "63349095"
 
  
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-有关详细信息，请参阅[用户模式驱动程序框架调试](user-mode-driver-framework-debugging.md)。
+有关详细信息，请参阅 [用户模式驱动程序框架调试](user-mode-driver-framework-debugging.md)。
 
 <a name="remarks"></a>备注
 -------
 
-可以使用[ **！ wudfext.umirps** ](-wudfext-umirps.md)扩展命令以在主机进程显示所有未完成 UM Irp 的列表。
+你可以使用 [**！ wudfext umirps**](-wudfext-umirps.md) 扩展命令显示主机进程中所有未完成的 UM irp 的列表。
 
  
 

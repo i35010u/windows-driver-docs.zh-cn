@@ -1,17 +1,16 @@
 ---
 title: 在移动宽带元数据创作向导中添加硬件 ID
 description: 在移动宽带元数据创作向导中添加硬件 ID
-ms.assetid: 1A540E7F-CA03-4CFA-8711-6CDBD7E152AD
 keywords:
 - 在移动宽带元数据创作向导中添加硬件 ID
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 21d6dd1a8c952de0324d7475194d953f7bae1ebd
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: f5e6b53acfacee59d742da5b27e34416a96a575f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91734095"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96795135"
 ---
 # <a name="add-hardware-ids-in-the-mobile-broadband-metadata-authoring-wizard"></a>在移动宽带元数据创作向导中添加硬件 ID
 
@@ -25,13 +24,13 @@ ms.locfileid: "91734095"
 
 1. 单击 " **关联** " 选项卡。
 
-2. 在 " **硬件 ID**" 旁边，单击 **加号 (+) **。
+2. 在 " **硬件 ID**" 旁边，单击 **加号 (+)**。
 
 3. 从 " **服务类型**" 旁边的列表中，选择下列选项之一：
 
     - 如果有 MobileBroadbandMetadataSubmission.xml 文件，请在 " **HardwareID** " 组下，单击 " **导入**"，然后选择 MobileBroadbandMetadataSubmission.xml 文件。 该工具根据 MobileBroadbandMetadataSubmission.xml 文件生成硬件 ID，硬件 Id 显示在 **HardwareID** 组中。
 
-      如果要使用 SIM 上的 IMSI 值匹配包，请选择 " **GSM 提供程序 (IMSI) **"。
+      如果要使用 SIM 上的 IMSI 值匹配包，请选择 " **GSM 提供程序 (IMSI)**"。
 
       GSM 网络操作员应指定要应用设备元数据包的 IMSI 范围。
 
@@ -47,9 +46,9 @@ ms.locfileid: "91734095"
 
       - 下一页显示与你的范围相对应的生成的 **硬件 ID** 值。 列表中可能会出现几个 **硬件 ID** 值。 确保选中所有这些选项，然后单击 " **下一步**"。
 
-        可以通过单击 "**关联**" 选项卡上 "**硬件 ID** " 下的**加号 ("+) ** " 按钮添加更多范围。可以在同一包提交中添加 IMSI 范围以及 ICCID 范围。
+        可以通过单击 "**关联**" 选项卡上 "**硬件 ID** " 下的 **加号 ("+)** " 按钮添加更多范围。可以在同一包提交中添加 IMSI 范围以及 ICCID 范围。
 
-    - 若要指定 ICCID 范围，请选择 " **GSM 提供程序 (ICCID) **"。
+    - 若要指定 ICCID 范围，请选择 " **GSM 提供程序 (ICCID)**"。
 
       GSM 网络运营商可以使用 ICCID 范围来匹配其服务元数据包。
 
@@ -62,7 +61,7 @@ ms.locfileid: "91734095"
 
       - 下一页显示与你的范围相对应的生成的 **硬件 ID** 值。 列表中可能会出现几个 **硬件 ID** 值。 确保选中所有这些选项，然后单击 " **下一步**"。
 
-      - 可以通过单击 "**关联**" 选项卡上 "**硬件 ID** " 下的**加号 ("+) ** " 按钮添加更多范围。可以将 IMSI 范围以及 ICCID 范围添加到相同的包提交中。
+      - 可以通过单击 "**关联**" 选项卡上 "**硬件 ID** " 下的 **加号 ("+)** " 按钮添加更多范围。可以将 IMSI 范围以及 ICCID 范围添加到相同的包提交中。
 
 - 如果要使用移动宽带调制解调器上的 "提供程序 ID" 值进行匹配，请选择 " **CDMA 提供程序 id**"。
   
@@ -72,14 +71,14 @@ ms.locfileid: "91734095"
   - 输入 " **提供程序 ID**"，它是3GPP2 分配给操作员)  (SID 的系统标识号。
   
       > [!NOTE]
-      > 可以通过单击 "**关联**" 选项卡上的**加号 ("+) ** " 按钮添加多个**提供程序 ID**值。您可以添加**提供程序 ID**和**提供程序名称**值的组合，以便进行匹配。
+      > 可以通过单击 "**关联**" 选项卡上的 **加号 ("+)** " 按钮添加多个 **提供程序 ID** 值。您可以添加 **提供程序 ID** 和 **提供程序名称** 值的组合，以便进行匹配。
 
   - 你指定的每个 **提供程序 ID** 值在 " **关联** " 选项卡上显示为特殊格式的硬件 ID 条目。 请确保已选中每个复选框，并在完成输入提供程序 Id 后单击 " **下一步** "。
 
 - 如果要使用移动宽带调制解调器上的访问接口名称进行匹配，请选择 " **CDMA 提供程序名称** "，或选择 "提供程序 ID"。
 
   > [!NOTE]
-  > 如果提供给客户的所有移动宽带硬件都使用提供程序 ID 值，则不需要在设备元数据包中添加 **提供程序名称** 信息。 仅当提供程序 ID 为空或值为零时，才会检查**提供程序名称**是否匹配。 有关详细信息，请参阅 [WWAN \_ 注册 \_ 状态结构](/windows-hardware/drivers/ddi/wwan/ns-wwan-_wwan_registration_state)。
+  > 如果提供给客户的所有移动宽带硬件都使用提供程序 ID 值，则不需要在设备元数据包中添加 **提供程序名称** 信息。 仅当提供程序 ID 为空或值为零时，才会检查 **提供程序名称** 是否匹配。 有关详细信息，请参阅 [WWAN \_ 注册 \_ 状态结构](/windows-hardware/drivers/ddi/wwan/ns-wwan-_wwan_registration_state)。
 
   - 输入 **提供程序名称**。 此区分大小写的值用于生成硬件 Id。 如果你具有以各种方式表示 **提供程序名称** 的移动宽带硬件，请分别输入每个变体，以考虑操作员名称的所有大写和拼写组合。
 

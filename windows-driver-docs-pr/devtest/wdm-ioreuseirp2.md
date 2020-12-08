@@ -1,7 +1,6 @@
 ---
 title: 'IoReuseIrp2 规则 (wdm) '
 description: IoReuseIrp2 规则指定，驱动程序应仅对先前在驱动程序中分配的 Irp 使用 IoReuseIrp。
-ms.assetid: 707E14EA-96C2-4B50-B381-C3FCF45FA26C
 ms.date: 05/21/2018
 keywords:
 - 'IoReuseIrp2 规则 (wdm) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 41e26a75f05f7189a1e11faa167159a13e4cfc43
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: ccda79ab95ef5fb1825257bce5ad29cd25ab935f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106522"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96795041"
 ---
 # <a name="ioreuseirp2-rule-wdm"></a>IoReuseIrp2 规则 (wdm) 
 
 
-**IoReuseIrp2**规则指定，驱动程序应仅对先前在驱动程序中分配的 Irp 使用[**IoReuseIrp**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioreuseirp) 。
+**IoReuseIrp2** 规则指定，驱动程序应仅对先前在驱动程序中分配的 Irp 使用 [**IoReuseIrp**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioreuseirp) 。
 
 **驱动程序模型： WDM**
 

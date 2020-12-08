@@ -1,7 +1,6 @@
 ---
 title: IRP_MJ_QUERY_OPEN 联合的 FLT_PARAMETERS
 description: 当 IRP_MJ_QUERY_OPEN 操作的 FLT_IO_PARAMETER_BLOCK 结构的 MajorFunction 字段时，将使用以下联合组件。
-ms.assetid: 5B78E1D8-F724-404D-8750-3D52BB9B4910
 keywords:
 - IRP_MJ_QUERY_OPEN 联合可安装文件系统驱动程序的 FLT_PARAMETERS
 - FLT_PARAMETERS 联合可安装文件系统驱动程序
@@ -16,31 +15,31 @@ api_type:
 - HeaderDef
 ms.date: 10/12/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: e8eefaae98b75d17312ceeef1d7b75934011a287
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: cd0d75d866eccce77b80142213ce5d44dc2f2115
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89063620"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96794943"
 ---
 # <a name="flt_parameters-for-irp_mj_query_open-union"></a>\_IRP_MJ_QUERY_OPEN 联合的 FLT 参数
 
 
-当 IRP_MJ_QUERY_OPEN 操作的[**FLT \_ IO \_ 参数 \_ 块**](/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_io_parameter_block)结构的**MajorFunction**字段时，将使用以下联合组件。
+当 IRP_MJ_QUERY_OPEN 操作的 [**FLT \_ IO \_ 参数 \_ 块**](/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_io_parameter_block)结构的 **MajorFunction** 字段时，将使用以下联合组件。
 
 <a name="syntax"></a>语法
 ------
 
 ```ManagedCPlusPlus
 typedef union _FLT_PARAMETERS {
-  ...    ;
+  ...    ;
   struct {
     PIRP                   Irp;
     PVOID                  FileInformation;
     PULONG                 Length;
     FILE_INFORMATION_CLASS FileInformationClass;
   } QueryOpen;
-  ...    ;
+  ...    ;
 } FLT_PARAMETERS, *PFLT_PARAMETERS;
 ```
 
@@ -51,10 +50,10 @@ typedef union _FLT_PARAMETERS {
 * 指向与此操作关联的 IRP 的指针。 
 
 **FileInformation**  
-* 指向调用方分配的缓冲区的指针，例程在该缓冲区中写入有关文件对象的请求信息。 *FileInformationClass*成员指定调用方请求的信息类型。 
+* 指向调用方分配的缓冲区的指针，例程在该缓冲区中写入有关文件对象的请求信息。 *FileInformationClass* 成员指定调用方请求的信息类型。 
 
 **长度**
-*  **FileInformation**指向的缓冲区的大小（以字节为单位）。
+*  **FileInformation** 指向的缓冲区的大小（以字节为单位）。
 
 **FileInformationClass**
 * 在 FileInformation 指向的缓冲区中指定要返回的有关文件的信息的类型。 设备和中间驱动程序可以指定以下任何 [**FILE_INFORMATION_CLASS**](/windows-hardware/drivers/ddi/wdm/ne-wdm-_file_information_class) 值。 其他值会导致调用失败，且不应传递给 PreQueryOpen/PostQueryOpen 调用。 
@@ -68,7 +67,7 @@ typedef union _FLT_PARAMETERS {
 ## <a name="remarks"></a>备注
 
 
-IRP_MJ_QUERY_OPEN 操作的[**FLT \_ 参数**](/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_parameters)结构包含 ([**FLT \_ 回调 \_ 数据**](/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_callback_data)) 结构的回调数据所表示的**QueryOpen**操作的参数。 它包含在 FLT \_ IO \_ 参数 \_ 块结构中。
+IRP_MJ_QUERY_OPEN 操作的 [**FLT \_ 参数**](/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_parameters)结构包含 ([**FLT \_ 回调 \_ 数据**](/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_callback_data)) 结构的回调数据所表示的 **QueryOpen** 操作的参数。 它包含在 FLT \_ IO \_ 参数 \_ 块结构中。
 
 IRP_MJ_QUERY_OPEN 是 (FSFilter) 回调操作的文件系统。
 
@@ -94,7 +93,7 @@ IRP_MJ_QUERY_OPEN 是 (FSFilter) 回调操作的文件系统。
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**FLT \_ 回调 \_ 数据**](/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_callback_data)

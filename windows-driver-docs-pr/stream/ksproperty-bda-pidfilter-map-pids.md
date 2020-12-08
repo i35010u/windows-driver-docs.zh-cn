@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ BDA \_ PIDFILTER \_ 映射 \_ PID
 description: 客户端使用 KSPROPERTY \_ BDA \_ PIDFILTER \_ MAP \_ pid 通知 PID 筛选器节点有关应传递到下游筛选器或节点的传输流包的 MPEG2 pid 列表。
-ms.assetid: 33d2775c-308a-4af0-81ae-b174990926ad
 keywords:
 - KSPROPERTY_BDA_PIDFILTER_MAP_PIDS 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e637f342b4f01de3320534fce57639c5c2cbe2fe
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: b8a1b0787835a630b9259821f9b98ad83ecf7575
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89190563"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96793345"
 ---
 # <a name="ksproperty_bda_pidfilter_map_pids"></a>KSPROPERTY \_ BDA \_ PIDFILTER \_ 映射 \_ PID
 
@@ -86,7 +85,7 @@ PID 筛选器节点将随此属性提供的列表与节点当前通过下游传�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**BDA \_ PID \_ 映射**](/windows-hardware/drivers/ddi/bdatypes/ns-bdatypes-_bda_pid_map)

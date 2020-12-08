@@ -1,19 +1,18 @@
 ---
 title: DirectX VA 简介
 description: DirectX VA 简介
-ms.assetid: e7d4faf7-f6ec-49ec-8116-faeed1ddd01c
 keywords:
 - DirectX 视频加速 WDK Windows 2000 显示，关于 DirectX 视频加速
 - 视频加速 WDK DirectX，关于 DirectX 视频加速
 - VA WDK DirectX，关于 DirectX 视频加速
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cf6e6b29945cb12be59b2c8771a11e3af80cb485
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 5fa88c539f4ac15418dfa527804ca8fda1303cb8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89063916"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96793013"
 ---
 # <a name="introduction-to-directx-va"></a>DirectX VA 简介
 

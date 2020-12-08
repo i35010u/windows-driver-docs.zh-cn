@@ -1,15 +1,14 @@
 ---
 title: 查询数据包合并功能
 description: 查询数据包合并功能
-ms.assetid: CD1839B5-2279-4E8C-ADD8-7869A3123B86
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9842f5db04a05c9c60bd80a23f64c2aa7676173d
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 73e74d32d3ff1c8ecf529a7e0a13471fd81ece41
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89212055"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96793381"
 ---
 # <a name="querying-packet-coalescing-capabilities"></a>查询数据包合并功能
 

@@ -1,7 +1,6 @@
 ---
 title: 编码器代码示例
 description: 编码器代码示例
-ms.assetid: cbe773ad-2222-4d62-8e1e-6d47418a3e7c
 keywords:
 - 可变比特率 WDK 编码器
 - 编码器设备 WDK AVStream
@@ -16,12 +15,12 @@ keywords:
 - 注册表 WDK 编码器
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 50c29ac008e8acefe84e5e6019bb88849bbd75e2
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: d905bcee0f965e5325e33e19398c5ad05cbd479d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89191823"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96795345"
 ---
 # <a name="encoder-code-examples"></a>编码器代码示例
 
@@ -115,7 +114,7 @@ DEFINE_KSPROPERTY_TABLE(ENCAPI_BitRate) {
 ```
 
 > [!NOTE]
-> *Get*属性处理程序返回编码比特率，并且*设置*属性处理程序必须先测试传入传入的值是否有效，然后再使用它。
+> *Get* 属性处理程序返回编码比特率，并且 *设置* 属性处理程序必须先测试传入传入的值是否有效，然后再使用它。
 
 ## <a name="implementing-supported-encoding-bit-rate-modes"></a>实现支持的编码比特率模式
 
@@ -193,7 +192,7 @@ DEFINE_KSPROPERTY_TABLE(ENCAPI_BitRateMode) {
 ```
 
 > [!NOTE]
-> *Get*属性处理程序应返回编码比特率模式，*并且在使用*传入的传入值之前必须先测试该传入传入的值是否有效。
+> *Get* 属性处理程序应返回编码比特率模式，*并且在使用* 传入的传入值之前必须先测试该传入传入的值是否有效。
 
 然后，将属性集指定为 [**KSFILTER \_ 描述符**](/windows-hardware/drivers/ddi/ks/ns-ks-_ksfilter_descriptor) 结构的自动化表。
 
@@ -233,7 +232,7 @@ FilterDescriptor = {
 
 ## <a name="specifying-the-encoders-capabilities-in-the-registry"></a>在注册表中指定编码器的功能
 
-下面的代码示例演示如何在*Device Parameters*注册表项下创建*功能*注册表项，以及如何创建和指定*功能*项下的子项和值。 当驱动程序初始化时执行此代码。
+下面的代码示例演示如何在 *Device Parameters* 注册表项下创建 *功能* 注册表项，以及如何创建和指定 *功能* 项下的子项和值。 当驱动程序初始化时执行此代码。
 
 > [!NOTE]
 > 以下代码假设每个物理设备上存在单个硬件编码器。 如果你的硬件包含多个编码器，则必须循环访问 **IoGetDeviceInterfaces** 函数的调用中返回的列表，并为每个编码器注册功能。

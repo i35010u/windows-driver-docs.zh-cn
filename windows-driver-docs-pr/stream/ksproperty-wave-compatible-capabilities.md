@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ WAVE \_ 兼容 \_ 功能
 description: "\"KSPROPERTY \\_ wave \\_ 兼容 \\_ 功能\" 属性确定设备的波形兼容功能。"
-ms.assetid: 59b24d84-8b98-4928-aaae-46cb14c0d140
 keywords:
 - KSPROPERTY_WAVE_COMPATIBLE_CAPABILITIES 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 459f4cc38927d0925bb59d8ba3916bf0b4e671e3
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: cba043ede201b5dbd2aa6c2646abf722a4c21e09
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107512"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96794165"
 ---
 # <a name="ksproperty_wave_compatible_capabilities"></a>KSPROPERTY \_ WAVE \_ 兼容 \_ 功能
 
@@ -79,7 +78,7 @@ ms.locfileid: "90107512"
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSPROPERTY**](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)

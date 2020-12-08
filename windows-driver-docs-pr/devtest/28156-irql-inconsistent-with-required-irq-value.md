@@ -1,25 +1,24 @@
 ---
 title: C28156
-description: 警告 C28156 实际 IRQL 是与所需的 IRQL 不一致。
-ms.assetid: dc9c108f-adf1-4364-9d2b-711c8c9db939
+description: 警告 C28156 实际的 IRQL 与所需 IRQL 不一致。
 keywords:
-- 警告列出 WDK PREfast for Drivers
-- 错误列出 WDK PREfast for Drivers
+- 列出用于驱动程序的 WDK PREfast 的警告
+- 为驱动程序列出的 WDK PREfast 的错误
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 f1_keywords:
 - C28156
-ms.openlocfilehash: 21851e4e6fb8a9b1af265a6309b9a6a17a3ddd7c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 51e2e4a72c43b55ea56c3fd0fec8e2d8befc2c75
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63361508"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96793161"
 ---
 # <a name="c28156"></a>C28156
 
 
-警告 C28156:实际 IRQL 是与所需的 IRQL 不一致
+警告 C28156：实际的 IRQL 与所需 IRQL 不一致
 
 <table>
 <colgroup>
@@ -28,15 +27,15 @@ ms.locfileid: "63361508"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>其他信息</strong></p></td>
-<td align="left"><p>在退出时的值未设置为所需的值。</p></td>
+<td align="left"><p>其他信息</p></td>
+<td align="left"><p>退出时的值未设置为所需的值。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-**\_IRQL\_需要\_** 批注指定当该函数完成后，但该驱动程序是在其中至少一个路径时，驱动程序，应在特定的 IRQL 执行在不同的 IRQL 在函数完成时执行。
+**\_ IRQL \_ 要求 \_** 使用批注指定在函数完成时，驱动程序应以特定的 irql 执行，但至少有一个路径在函数完成时，在不同的 irql 下执行驱动程序。
 
  
 

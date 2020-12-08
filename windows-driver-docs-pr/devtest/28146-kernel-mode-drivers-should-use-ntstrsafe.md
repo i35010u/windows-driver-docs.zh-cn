@@ -1,7 +1,6 @@
 ---
 title: C28146
 description: 警告 C28146 内核模式驱动程序应使用 ntstrsafe.h 而，而不是 strsafe。 在源文件中找到。
-ms.assetid: 00e3e96e-b31b-4060-8193-d69b7cca8181
 keywords:
 - 列出用于驱动程序的 WDK PREfast 的警告
 - 为驱动程序列出的 WDK PREfast 的错误
@@ -9,12 +8,12 @@ ms.date: 04/20/2017
 ms.localizationpriority: medium
 f1_keywords:
 - C28146
-ms.openlocfilehash: 4962ec22aee4692cdd3b55812fc4605fe3ec8f51
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 217b3e939f72c781b2d5ac74e768825006a1e4cb
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89383541"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96793189"
 ---
 # <a name="c28146"></a>C28146
 

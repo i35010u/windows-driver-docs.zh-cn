@@ -1,7 +1,6 @@
 ---
 title: 调谐器属性
 description: 调谐器属性
-ms.assetid: 43a0c018-fb0e-4a45-9c9a-5896f1e728ac
 keywords:
 - 调谐器属性 WDK 视频捕获
 - PROPSETID_TUNER
@@ -9,12 +8,12 @@ keywords:
 - 电视调谐器属性 WDK 视频捕获
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5a5e2409965f9c4936191431d6c935e37343ecc6
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: a19e39193866c15d344b14969e09cd9e7ec8d174
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106316"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96795265"
 ---
 # <a name="tuner-properties"></a>调谐器属性
 

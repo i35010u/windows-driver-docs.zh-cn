@@ -1,7 +1,6 @@
 ---
 title: KSCATEGORY_MULTIPLEXER
 description: KSCATEGORY_MULTIPLEXER
-ms.assetid: 3023769a-9b98-4c12-90b1-f83294a45ab0
 keywords:
 - KSCATEGORY_MULTIPLEXER 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 1051af1a1f4d69d27ff61c9fc17128baab025e13
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 1e2576fb733702bcdec6ad52986e67c4842cf7b2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89095679"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96794863"
 ---
 # <a name="kscategory_multiplexer"></a>KSCATEGORY_MULTIPLEXER
 
@@ -56,7 +55,7 @@ ms.locfileid: "89095679"
 
 KS 设备的驱动程序将注册 KSCATEGORY_MULTIPLEXER 的实例，以向操作系统指示设备支持 KSCATEGORY_MULTIPLEXER 功能类别。
 
-有关如何在 INF 文件中注册此功能类别的示例，请参阅 WDK 的*src/swtuner/algtuner*目录中的软件调谐器示例附带的*Bdan* inf 文件。
+有关如何在 INF 文件中注册此功能类别的示例，请参阅 WDK 的 *src/swtuner/algtuner* 目录中的软件调谐器示例附带的 *Bdan* inf 文件。
 
 有关 multiplexers (的信息，请参阅 [拓扑筛选器](../audio/topology-filters.md)。
 

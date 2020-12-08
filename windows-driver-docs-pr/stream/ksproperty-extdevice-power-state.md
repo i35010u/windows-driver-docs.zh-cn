@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ EXTDEVICE \_ 电源 \_ 状态
 description: KSPROPERTY \_ EXTDEVICE \_ 电源 \_ 状态属性设置或获取外部设备的电源状态。
-ms.assetid: bfca1f3d-b563-4ddd-b823-85487b4a4093
 keywords:
 - KSPROPERTY_EXTDEVICE_POWER_STATE 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e8da055f7a2ba3474fce07875b7d899f0d88a0ce
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 8503d94e742d0aadb2b27c9a018e5f4d0a3d02e3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106704"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96795303"
 ---
 # <a name="ksproperty_extdevice_power_state"></a>KSPROPERTY \_ EXTDEVICE \_ 电源 \_ 状态
 
@@ -66,7 +65,7 @@ KSPROPERTY \_ EXTDEVICE \_ 电源 \_ 状态属性设置或获取外部设备的�
 <a name="remarks"></a>备注
 -------
 
-KSPROPERTY **PowerState** \_ EXTDEVICE S 结构的 PowerState 成员 \_ 指定外部设备的电源设置。 **PowerState**成员可能设置为等于 "开" 或 "待机"。 例如，备有电池的外部设备（如 DV 摄像机）可能会关闭。 接通电源的 DVHS 设备可能会置于备用状态。 如果设备处于备用状态，则可能会在以后对其通电。
+KSPROPERTY **PowerState** \_ EXTDEVICE S 结构的 PowerState 成员 \_ 指定外部设备的电源设置。 **PowerState** 成员可能设置为等于 "开" 或 "待机"。 例如，备有电池的外部设备（如 DV 摄像机）可能会关闭。 接通电源的 DVHS 设备可能会置于备用状态。 如果设备处于备用状态，则可能会在以后对其通电。
 
 <a name="requirements"></a>要求
 ------------
@@ -84,7 +83,7 @@ KSPROPERTY **PowerState** \_ EXTDEVICE S 结构的 PowerState 成员 \_ 指定�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSPROPERTY**](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)

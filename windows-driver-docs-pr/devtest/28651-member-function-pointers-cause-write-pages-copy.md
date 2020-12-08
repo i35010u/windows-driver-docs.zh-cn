@@ -1,28 +1,27 @@
 ---
 title: C28651
-description: 警告 C28651 静态初始值设定项导致由于成员函数指针的写入页上的副本。
-ms.assetid: 2E7B61A7-FF15-46C3-87B4-36CAA2E52CAC
+description: 警告 C28651 静态初始值设定项导致在写入页上复制，原因是成员函数指针。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 f1_keywords:
 - C28651
-ms.openlocfilehash: 5b88a6b49e6bbfe43d99dd51563943688f3b92fe
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 21e4af494deac36385bf9f0149dd797142134388
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63345882"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96794019"
 ---
 # <a name="c28651"></a>C28651
 
 
-警告 C28651:由于成员函数指针的写入页上的静态初始值设定项导致复制过程
+警告 C28651：静态初始值设定项导致在写入页上复制，原因是成员函数指针
 
-静态初始值设定项的全局或静态的 const 变量可以通常是完全在编译时计算，因此 RDATA 中生成。 但如果任何初始值设定项是其所在的非静态函数指针到成员函数，整个初始值设定项可能会放置在写入时复制页面，其中具有性能成本。
+全局或静态 const 变量的静态初始值设定项通常可以在编译时完全计算，从而在 RDATA 中生成。 但是，如果任何初始值设定项是指向成员的指针函数（其中它是非静态函数），则整个初始值设定项可以置于 "写入时复制" 页中，这会产生性能开销。
 
-对于需要快速加载和最大程度减少写入页上的复制的二进制文件，请考虑确保静态初始值设定项中的所有函数指针不都指针到成员函数。 如果指针到成员函数是必需的编写简单的静态成员函数包装对实际成员函数的调用。
+对于需要快速加载和最小化写入页上副本的二进制文件，请考虑确保静态初始值设定项中的所有函数指针不是指向成员的指针函数。 如果需要指向成员的指针函数，请编写一个简单的静态成员函数，用于包装对实际成员函数的调用。
 
-## <a name="span-idexamplespanspan-idexamplespanspan-idexamplespanexample"></a><span id="Example"></span><span id="example"></span><span id="EXAMPLE"></span>示例
+## <a name="span-idexamplespanspan-idexamplespanspan-idexamplespanexample"></a><span id="Example"></span><span id="example"></span><span id="EXAMPLE"></span>实例
 
 
 下面的代码示例生成此错误。

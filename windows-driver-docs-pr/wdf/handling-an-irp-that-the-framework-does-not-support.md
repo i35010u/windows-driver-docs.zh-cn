@@ -1,19 +1,18 @@
 ---
 title: 处理框架不支持的 IRP
 description: 处理框架不支持的 IRP
-ms.assetid: 0481f335-f63b-4f93-8eb4-523a70082302
 keywords:
 - 不支持的 WDM Irp WDK KMDF
 - Irp WDK KMDF，不受支持
 - WDM Irp WDK KMDF，不支持
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 031f91669d454e6941c9a4a82bd444771c034824
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: e0f461b405ab28e1cc321479506d224d2f9ad252
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89183943"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96795229"
 ---
 # <a name="handling-an-irp-that-the-framework-does-not-support"></a>处理框架不支持的 IRP
 

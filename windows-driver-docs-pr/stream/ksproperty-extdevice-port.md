@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ EXTDEVICE \_ 端口
 description: KSPROPERTY \_ EXTDEVICE \_ port 属性检索外部设备的端口类型。
-ms.assetid: 7513c37f-0c93-4078-ba85-cbc98304880f
 keywords:
 - KSPROPERTY_EXTDEVICE_PORT 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 74d0c78ed0bd6ef61ad71a5a7897cfc2e0ee0a91
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 754c80fdfd72dc8484db5eb4a873813c1ab97642
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105414"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96795311"
 ---
 # <a name="ksproperty_extdevice_port"></a>KSPROPERTY \_ EXTDEVICE \_ 端口
 
@@ -66,7 +65,7 @@ KSPROPERTY \_ EXTDEVICE \_ port 属性检索外部设备的端口类型。
 <a name="remarks"></a>备注
 -------
 
-KSPROPERTY **DevPort** \_ EXTDEVICE S 结构的 DevPort 成员 \_ 指定外部设备的端口类型。 **DevPort**成员可设置为等于开发 \_ 端口 \_ 1394、开发 \_ 端口 \_ USB 等。这些令牌在 Microsoft DirectX SDK 中的*xprtdefs*文件中定义。
+KSPROPERTY **DevPort** \_ EXTDEVICE S 结构的 DevPort 成员 \_ 指定外部设备的端口类型。 **DevPort** 成员可设置为等于开发 \_ 端口 \_ 1394、开发 \_ 端口 \_ USB 等。这些令牌在 Microsoft DirectX SDK 中的 *xprtdefs* 文件中定义。
 
 <a name="requirements"></a>要求
 ------------
@@ -84,7 +83,7 @@ KSPROPERTY **DevPort** \_ EXTDEVICE S 结构的 DevPort 成员 \_ 指定外部�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSPROPERTY**](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)

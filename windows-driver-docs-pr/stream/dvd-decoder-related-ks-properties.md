@@ -1,7 +1,6 @@
 ---
 title: 与 DVD 解码器相关的 KS 属性
 description: 与 DVD 解码器相关的 KS 属性
-ms.assetid: 97ce831e-429b-4097-a9f4-625315fe1247
 keywords:
 - DVD 解码器微型驱动程序 WDK，KS 属性
 - 解码器微型驱动程序 WDK DVD，KS 属性
@@ -9,12 +8,12 @@ keywords:
 - 属性设置 WDK DVD 解码器
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d411e643b80df00d3ce77c2cf334240bfdb5eb67
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: d61fa8d55803fbb208983d3d01757d3bfc12b1a3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106374"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96795357"
 ---
 # <a name="dvd-decoder-related-ks-properties"></a>与 DVD 解码器相关的 KS 属性
 

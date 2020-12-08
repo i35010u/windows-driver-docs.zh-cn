@@ -1,18 +1,17 @@
 ---
 title: 无法初始化输出缓冲区
 description: 无法初始化输出缓冲区
-ms.assetid: 8c038a94-8506-44e3-ac7f-82b58d791124
 keywords:
 - 输出缓冲区 WDK 内核
 - 初始化输出缓冲区
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2b5069ce9d6e1a0b5d1b67d27fb0a68dbcf178ae
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: bd5334f56326c155c3b17267b5770f5d1a5fe971
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89189063"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96793541"
 ---
 # <a name="failure-to-initialize-output-buffers"></a>无法初始化输出缓冲区
 

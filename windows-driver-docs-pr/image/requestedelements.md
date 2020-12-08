@@ -1,9 +1,8 @@
 ---
 title: RequestedElements 元素
-description: 所需的 RequestedElements 元素标识的客户端调用 GetScannerElementsRequest 或 GetJobElementsRequest 时需要的数据元素。
-ms.assetid: 0023afc1-723d-4b6a-9f1a-0bc21a309a65
+description: 必需的 RequestedElements 元素用于标识客户端在调用 GetScannerElementsRequest 或 GetJobElementsRequest 时要获取的数据的元素。
 keywords:
-- RequestedElements 元素成像设备
+- RequestedElements 元素图像设备
 topic_type:
 - apiref
 api_name:
@@ -12,19 +11,19 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 414b47dd5bf9aadf6beb7d9c4056d23bdfa4002c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2379923644838b1b886c5f8379b835411f497a4e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63367005"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96793635"
 ---
 # <a name="requestedelements-element"></a>RequestedElements 元素
 
 
-所需**RequestedElements**元素标识的客户端希望当调用的数据元素[ **GetScannerElementsRequest** ](getscannerelementsrequest.md)或[**GetJobElementsRequest**](getjobelementsrequest.md)。
+必需的 **RequestedElements** 元素用于标识客户端在调用 [**GetScannerElementsRequest**](getscannerelementsrequest.md) 或 [**GetJobElementsRequest**](getjobelementsrequest.md)时要获取的数据的元素。
 
-<a name="usage"></a>用法
+<a name="usage"></a>使用情况
 -----
 
 ```xml
@@ -52,7 +51,7 @@ ms.locfileid: "63367005"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><a href="name-for-requestedelements-element.md" data-raw-source="[&lt;strong&gt;Name for RequestedElements Element&lt;/strong&gt;](name-for-requestedelements-element.md)"><strong>RequestedElements 元素名称</strong></a></p></td>
+<td><p><a href="name-for-requestedelements-element.md" data-raw-source="[&lt;strong&gt;Name for RequestedElements Element&lt;/strong&gt;](name-for-requestedelements-element.md)"><strong>RequestedElements 元素的名称</strong></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -82,7 +81,7 @@ ms.locfileid: "63367005"
 <a name="remarks"></a>备注
 -------
 
-**RequestedElements**元素包含一个或多个**名称**元素的父**RequestedElements**标识查询客户端的数据的元素。
+**RequestedElements** 元素包含一个或多个 parent **RequestedElements** 元素的 **Name** 元素，这些元素用于标识客户端正在查询的数据。
 
 ## <a name="see-also"></a>请参阅
 
@@ -91,7 +90,7 @@ ms.locfileid: "63367005"
 
 [**GetScannerElementsRequest**](getscannerelementsrequest.md)
 
-[**RequestedElements 元素名称**](name-for-requestedelements-element.md)
+[**RequestedElements 元素的名称**](name-for-requestedelements-element.md)
 
  
 

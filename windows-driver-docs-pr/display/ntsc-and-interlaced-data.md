@@ -1,26 +1,25 @@
 ---
 title: NTSC 和隔行扫描数据
 description: NTSC 和隔行扫描数据
-ms.assetid: 216b6219-aeb8-4e8a-8ac4-cd4d25a93e13
 keywords:
-- 交错视频 WDK 的视频端口扩展
-- DirectX VPE 支持 WDK DirectDraw，交错视频
-- 绘制 VPEs WDK DirectDraw，交错视频
-- DirectDraw VPEs WDK Windows 2000 显示，交错视频
-- 视频端口扩展 WDK DirectDraw，交错视频
-- VPEs WDK DirectDraw 隔行扫描视频
-- NTSC WDK 的视频端口扩展
-- 扫描行 WDK 的视频端口扩展
-- 帧 WDK 的视频端口扩展
+- 隔行扫描视频 WDK 视频端口扩展
+- DirectX VPE 支持 WDK DirectDraw、隔行扫描视频
+- 绘制 VPEs WDK DirectDraw，隔行扫描视频
+- DirectDraw VPEs WDK Windows 2000 显示，隔行扫描视频
+- 视频端口扩展 WDK DirectDraw，隔行扫描视频
+- VPEs WDK DirectDraw，隔行扫描视频
+- NTSC WDK 视频端口扩展
+- 扫描线条 WDK 视频端口扩展
+- 帧 WDK 视频端口扩展
 - 国家电视系统委员会 WDK VPEs
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 45809ce0d73a3470c0572234fa834bace8850e21
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2706d3a2f5f8a6871c3145f20a836f1ae465283c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63384084"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96792975"
 ---
 # <a name="ntsc-and-interlaced-data"></a>NTSC 和隔行扫描数据
 
@@ -28,13 +27,13 @@ ms.locfileid: "63384084"
 ## <span id="ddk_ntsc_and_interlaced_data_gg"></span><span id="DDK_NTSC_AND_INTERLACED_DATA_GG"></span>
 
 
-国家电视系统委员会 (NTSC) 标准提供了一系列的每秒的游戏如果在 59.94 交错字段，每部分都由 1/59.94 的第二个。 扫描线偶数字段之间的奇数的字段的扫描行在论据在空间上的中间。 但是，由于电视监视器荧光持久性，两个字段是永远不会显示电视屏幕上一次。 在查看器始终会看到甚至字段或奇数的字段，但永远不会同时。
+国内电视系统委员会 (NTSC) standard 提供一系列59.94 交错字段，每秒由 1/59.94 隔开。 偶数字段的扫描行在奇号字段的扫描行之间秋季间隔。 不过，由于电视显示器的 phosphor 持久性，两个字段绝不会同时显示在电视屏幕上。 查看器始终会看到偶数字段或奇数字段，但绝不会同时出现这两种情况。
 
-一个*帧*NTSC 是完全不相关的两个顺序字段任意分组。 也就是说，在帧中的第一个字段是没有更多相关的同一框架中的第二个字段大于到上一帧中的第二个字段。 阶段替换行 (PAL) 格式和顺序的颜色与内存 (SECAM) 标准的工作方式与在每秒约 50 个字段。
+NTSC 中的 *帧* 是完全不相关的两个连续字段的任意分组。 也就是说，框架中的第一个字段与前一帧中的第二个字段相比，与第二个字段不在同一帧中。 阶段替换行 (PAL) 格式， (SECAM) 标准工作的有序颜色，每秒大约50个字段。
 
-如果视频包含高动态内容，奇数字段中的数据可能不同于，即使字段中。 因为您永远不会查看时这两个字段在同一时间，并密切关注执行很好地集成数据，这不会出现问题导致在电视监视器上。 计算机上，但是，此交错的数据通常是交错到单个缓冲区，然后使用渐进式扫描显示。 这意味着在同时，可能性较大 motion 项目的两个字段都可见。
+如果视频包含高动作内容，则奇数字段中的数据可能不同于偶数字段中的数据。 这不会导致电视显示器上出现问题，因为你不会同时查看这两个字段，并且眼就会在集成数据的情况下执行良好的任务。 但是，在计算机上，此交错数据通常交错为单个缓冲区，然后使用渐进式扫描来显示。 这意味着，这两个字段在同一时间可见，因此可能会出现运动项目。
 
-将放入到数字视频光盘 (DVD) 上的视频，然后重播的过程很复杂。 通常情况下，对源材料放在磁盘上创建的电视节目，以便每个框架都具有交错的两个字段。 电影惊喜 24 帧每秒 (fps)，但是，必须转换为每秒与电视兼容的游戏如果在 59.94 字段。
+将视频放入数字视频光盘 (DVD) ，然后将其重播的过程很复杂。 通常，在磁盘上放置的源材料是为电视创建的，因此每个帧都有两个交错字段。 每秒24帧的胶片快照 (fps) ，但是，每秒必须转换为59.94 个字段，才能兼容电视节目。
 
  
 

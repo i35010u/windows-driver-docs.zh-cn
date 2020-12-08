@@ -1,7 +1,6 @@
 ---
 title: 初始化和注册提供程序模块
 description: 初始化和注册提供程序模块
-ms.assetid: 967271ce-e4f5-45ce-9249-746d2fe698c1
 keywords:
 - 提供程序模块 WDK 网络模块注册程序，初始化
 - 提供商模块 WDK 网络模块注册程序，注册
@@ -10,12 +9,12 @@ keywords:
 - NmrRegisterProvider
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2653872a12bbed08ca55f427572c2fcc077ea565
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 3bbda3750350fd37095022d3afe692263268160a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89206433"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96794460"
 ---
 # <a name="initializing-and-registering-a-provider-module"></a>初始化和注册提供程序模块
 
@@ -167,7 +166,7 @@ NTSTATUS
 
 如果提供程序模块是多个 NPI 的提供程序，则它必须初始化一组独立的数据结构，并为它支持的每个 NPI 调用 [**NmrRegisterProvider**](/windows-hardware/drivers/ddi/netioddk/nf-netioddk-nmrregisterprovider) 。 如果网络模块既是提供程序模块又是客户端模块 (也就是说，它是一个 NPI 的提供程序以及另一个 NPI) 的客户端，它必须初始化两个独立的数据结构集，一个用于提供程序接口，一个用于客户端接口，并同时调用 **NmrRegisterProvider** 和 [**NmrRegisterClient**](/windows-hardware/drivers/ddi/netioddk/nf-netioddk-nmrregisterclient)。
 
-提供程序模块不需要从其[**DriverEntry**](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_initialize)函数中调用[**NmrRegisterProvider**](/windows-hardware/drivers/ddi/netioddk/nf-netioddk-nmrregisterprovider) 。 例如，在提供程序模块是复杂驱动程序的子组件的情况下，仅当激活提供程序模块子组件时，才会注册提供程序模块。
+提供程序模块不需要从其 [**DriverEntry**](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_initialize)函数中调用 [**NmrRegisterProvider**](/windows-hardware/drivers/ddi/netioddk/nf-netioddk-nmrregisterprovider) 。 例如，在提供程序模块是复杂驱动程序的子组件的情况下，仅当激活提供程序模块子组件时，才会注册提供程序模块。
 
 有关实现提供程序模块的 [**Unload**](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_unload) 函数的详细信息，请参阅 [卸载提供程序模块](unloading-a-provider-module.md)。
 

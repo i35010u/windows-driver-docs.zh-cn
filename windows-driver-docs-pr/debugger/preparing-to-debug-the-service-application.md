@@ -1,15 +1,14 @@
 ---
 title: 准备调试服务应用程序
 description: 准备调试服务应用程序
-ms.assetid: 332b7bcf-22e4-4b98-bcb3-3646f8bd63fd
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2967f4b5d31b49adbfbf25f9f967948ffb761429
-ms.sourcegitcommit: 89b8a43480246dd726e3632aab2db9cf2eb7505d
+ms.openlocfilehash: d1588d418f03ae83dc70475771a30068d81f9d3b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92254056"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96793242"
 ---
 # <a name="preparing-to-debug-the-service-application"></a>准备调试服务应用程序
 
@@ -46,7 +45,7 @@ HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execu
     c:\Debuggers\ntsd.exe -server ServerTransport -noio -y SymbolPath 
     ```
 
-    如果调试会话在 Windows 完全加载之前开始，则您可能无法从远程共享访问符号;在这种情况下，必须使用本地符号。 *ServerTransport* 必须指定 Windows 内核实现的传输协议，而不会与用户模式服务（如 TCP 或 NPIPE）进行交互。 有关 *ServerTransport*的语法，请参阅 [**激活调试服务器**](activating-a-debugging-server.md)。
+    如果调试会话在 Windows 完全加载之前开始，则您可能无法从远程共享访问符号;在这种情况下，必须使用本地符号。 *ServerTransport* 必须指定 Windows 内核实现的传输协议，而不会与用户模式服务（如 TCP 或 NPIPE）进行交互。 有关 *ServerTransport* 的语法，请参阅 [**激活调试服务器**](activating-a-debugging-server.md)。
 
 -   如果计划从内核模式调试器控制用户模式调试器，请使用-d 选项指定 NTSD。 例如：
 
@@ -68,7 +67,7 @@ HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execu
 
 如果希望服务应用程序在崩溃或遇到异常时进入调试器，则需要此准备步骤。 如果要服务应用程序通过调用 **DebugBreak** 函数进入调试器，还需要执行此步骤。
 
-**注意**   如果已启用初始化代码调试 ("启用初始化代码调试" 一节中所述的步骤 ) ，则应跳过此步骤。 启用初始化代码调试后，调试器将在启动时附加到服务应用程序，这会导致所有崩溃、异常和对 **DebugBreak** 的调用都路由到调试器，无需额外的准备工作。
+**注意**   如果已启用初始化代码调试 ("启用初始化代码调试" 一节中所述的步骤 ) ，则应跳过此步骤。 启用初始化代码调试后，调试器将在启动时附加到服务应用程序，这会导致所有崩溃、异常和对 **DebugBreak** 的调用都路由到调试器，无需额外的准备工作。
 
  
 
@@ -82,13 +81,13 @@ HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execu
 
     如果你运行的是 Windows Vista 或更高版本的 Windows，请不要选择此选项。
 
--   如果计划使用远程调试，请使用-noio 选项指定 NTSD。 这会导致 NTSD 在不使用任何控制台的情况下运行，只能通过远程连接访问。 若要安装包含-server 参数的事后调试器，必须手动编辑注册表;有关详细信息，请参阅 [启用事后调试](enabling-postmortem-debugging.md)。 例如， **AeDebug**键的**调试器**值可以是以下值：
+-   如果计划使用远程调试，请使用-noio 选项指定 NTSD。 这会导致 NTSD 在不使用任何控制台的情况下运行，只能通过远程连接访问。 若要安装包含-server 参数的事后调试器，必须手动编辑注册表;有关详细信息，请参阅 [启用事后调试](enabling-postmortem-debugging.md)。 例如， **AeDebug** 键的 **调试器** 值可以是以下值：
 
     ```console
     ntsd -server npipe:pipe=myproc%x -noio -p %ld -e %ld -g -y SymbolPath 
     ```
 
-    在管道规范中， **% x** 标记替换为启动调试器的进程的进程 ID。 这可以确保如果有多个进程启动事后调试程序，则每个进程都具有唯一的管道名称。 如果调试会话在 Windows 完全加载之前开始，则您可能无法从远程共享访问符号;在这种情况下，必须使用本地符号。 *ServerTransport* 必须指定 Windows 内核实现的传输协议，而不会与用户模式服务（如 TCP 或 NPIPE）进行交互。 有关 *ServerTransport*的语法，请参阅 [**激活调试服务器**](activating-a-debugging-server.md)。
+    在管道规范中， **% x** 标记替换为启动调试器的进程的进程 ID。 这可以确保如果有多个进程启动事后调试程序，则每个进程都具有唯一的管道名称。 如果调试会话在 Windows 完全加载之前开始，则您可能无法从远程共享访问符号;在这种情况下，必须使用本地符号。 *ServerTransport* 必须指定 Windows 内核实现的传输协议，而不会与用户模式服务（如 TCP 或 NPIPE）进行交互。 有关 *ServerTransport* 的语法，请参阅 [**激活调试服务器**](activating-a-debugging-server.md)。
 
 -   如果计划从内核模式调试器控制用户模式调试器，请使用-d 选项指定 NTSD。 例如：
 
@@ -96,7 +95,7 @@ HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execu
     ntsd -iaec -d -y SymbolPath 
     ```
 
-    如果选择此方法并想要从符号服务器访问用户模式符号，则应将此方法与远程调试结合使用。 在这种情况下，请通过-ddefer 选项指定 NTSD。 选择不与用户模式服务（如 TCP 或 NPIPE）交互的 Windows 内核实现的传输协议。 若要安装包含-server 参数的事后调试器，必须手动编辑注册表;有关详细信息，请参阅 [启用事后调试](enabling-postmortem-debugging.md)。 例如， **AeDebug**键的**调试器**值可以是以下值：
+    如果选择此方法并想要从符号服务器访问用户模式符号，则应将此方法与远程调试结合使用。 在这种情况下，请通过-ddefer 选项指定 NTSD。 选择不与用户模式服务（如 TCP 或 NPIPE）交互的 Windows 内核实现的传输协议。 若要安装包含-server 参数的事后调试器，必须手动编辑注册表;有关详细信息，请参阅 [启用事后调试](enabling-postmortem-debugging.md)。 例如， **AeDebug** 键的 **调试器** 值可以是以下值：
 
     ```console
     ntsd -server npipe:pipe=myproc%x -ddefer -p %ld -e %ld -g -y SymbolPath 
@@ -116,7 +115,7 @@ HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execu
 HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control
 ```
 
-在此项下，找到或创建一个名为 **ServicesPipeTimeout**的 DWORD 数据值。 将此项设置为你希望服务在超时之前等待的时间量（以毫秒为单位）。例如，值为60000，值为86400000为24小时。 如果未设置此注册表值，则默认超时约为30秒。
+在此项下，找到或创建一个名为 **ServicesPipeTimeout** 的 DWORD 数据值。 将此项设置为你希望服务在超时之前等待的时间量（以毫秒为单位）。例如，值为60000，值为86400000为24小时。 如果未设置此注册表值，则默认超时约为30秒。
 
 此值的意义在于，当启动每个服务时，时钟开始运行，当达到超时值时，附加到服务的任何调试器都将终止。 因此，您选择的值应该比启动服务和完成调试会话之间的总时间要长。
 
@@ -170,7 +169,7 @@ HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control
     HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsNT\CurrentVersion\SvcHost\LocalServiceNoNetwork 
     ```
 
-    并且它可能包含 **CoInitializeSecurityParam**、 **AuthenticationCapabilities**和其他值等值。 你将跳到新创建的密钥：
+    并且它可能包含 **CoInitializeSecurityParam**、 **AuthenticationCapabilities** 和其他值等值。 你将跳到新创建的密钥：
 
     ```text
     HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsNT\CurrentVersion\SvcHost\TempGrp 

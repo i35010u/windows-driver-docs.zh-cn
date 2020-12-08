@@ -1,7 +1,6 @@
 ---
 title: 管理多个 GPU 方案的资源
 description: 管理多个 GPU 方案的资源
-ms.assetid: f3dc10b1-76e9-4f31-b253-149b6300611d
 keywords:
 - GPU WDK Windows 7 显示
 - GPU WDK Windows 7 显示，多个
@@ -15,12 +14,12 @@ keywords:
 - 多 Gpu WDK Windows 2008 资源 R2 显示，管理资源
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 59a8b8f9cb05bac07a01008ce8a03b1a17c577a7
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 6215e8643bd640b48fbaf20d58d6e6e1b7547445
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89065710"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96793887"
 ---
 # <a name="managing-resources-for-multiple-gpu-scenarios"></a>管理多个 GPU 方案的资源
 

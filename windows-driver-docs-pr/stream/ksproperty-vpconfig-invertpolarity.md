@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ VPCONFIG \_ INVERTPOLARITY
 description: KSPROPERTY \_ VPCONFIG \_ INVERTPOLARITY 属性用于切换全局极性标志，并强制反转视频端口。
-ms.assetid: c0b69aa4-0f81-42b4-9a69-5afcf702f5f1
 keywords:
 - KSPROPERTY_VPCONFIG_INVERTPOLARITY 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 998ede2d10f055f85a8e41ca5ae2df2ca75f2e35
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 9a9d7fb74c4ba8c5cba46a33aba187a8f3e3fc0a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106676"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96795295"
 ---
 # <a name="ksproperty_vpconfig_invertpolarity"></a>KSPROPERTY \_ VPCONFIG \_ INVERTPOLARITY
 
@@ -86,7 +85,7 @@ KSPROPERTY \_ VPCONFIG \_ INVERTPOLARITY 属性请求返回状态 " \_ 成功" �
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSPROPERTY**](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)

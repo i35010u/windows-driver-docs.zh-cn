@@ -1,15 +1,14 @@
 ---
 title: 驱动程序的代码分析概述
 description: Windows 驱动程序工具包为 Microsoft Visual Studio Ultimate 2012 中的代码分析工具提供了特定于驱动程序的扩展。
-ms.assetid: 2A780608-F386-4838-A4EB-022C2F0EED3B
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1e2ad254d4ff1cdf04a741adfca0a66b57b22597
-ms.sourcegitcommit: 878a1cb0149dc18ccbd31774e12bad76084dfa24
+ms.openlocfilehash: f598f3f1311e3b1936f516a48a7ec4cb36f7758a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94937813"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96795113"
 ---
 # <a name="code-analysis-for-drivers-overview"></a>驱动程序的代码分析概述
 

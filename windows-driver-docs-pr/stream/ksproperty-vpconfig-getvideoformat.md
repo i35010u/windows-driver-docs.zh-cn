@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ VPCONFIG \_ GETVIDEOFORMAT
 description: KSPROPERTY \_ VPCONFIG \_ GETVIDEOFORMAT 属性检索受支持像素格式的数组。
-ms.assetid: 74cc8cbc-cd81-43e1-ba15-3105a4c70808
 keywords:
 - KSPROPERTY_VPCONFIG_GETVIDEOFORMAT 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8492f01617ec30fefae193a6a24f6c365614aadd
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 4f7f87fd4e0c577726e8d02b6227cf37012f9df2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102685"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96794173"
 ---
 # <a name="ksproperty_vpconfig_getvideoformat"></a>KSPROPERTY \_ VPCONFIG \_ GETVIDEOFORMAT
 
@@ -79,7 +78,7 @@ KSPROPERTY \_ VPCONFIG \_ GETVIDEOFORMAT 属性检索受支持像素格式的数
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSPROPERTY**](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)

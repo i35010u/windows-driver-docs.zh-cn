@@ -1,7 +1,6 @@
 ---
 title: 管理显示调色板
 description: 管理显示调色板
-ms.assetid: a0ff1a9c-82dc-4317-a0ec-c387027a52ba
 keywords:
 - 显示驱动程序 WDK Windows 2000，调色板
 - 颜色查找表 WDK Windows 2000 显示
@@ -13,12 +12,12 @@ keywords:
 - RGB 颜色 WDK Windows 2000 显示
 ms.date: 10/11/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 7c008eb45166e5f4c8a85b0155f7ba9666c2c15a
-ms.sourcegitcommit: a44ade167cdfb541cf1818e9f9e3726f23f90b66
+ms.openlocfilehash: 10c63da0dd2dc1aa33b8fa0e9371df320979ef08
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94361401"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96793909"
 ---
 # <a name="managing-display-palettes"></a>管理显示调色板
 
@@ -28,7 +27,7 @@ ms.locfileid: "94361401"
 
 GDI 采用每个 RGB 值，并将其转换为设备 *颜色索引* ，以便能够显示。 GDI 使用预先计算的和缓存的表进行翻译。 这些表可作为用户对象 [**XLATEOBJ**](/windows/win32/api/winddi/ns-winddi-xlateobj)的驱动程序来访问。 因此，采用源颜色并将其移动到目标设备的每个 GDI 图形函数都使用 XLATEOBJ 结构来转换颜色。 有关调色板以及 GDI 如何处理它们的详细信息，请参阅 [调色板的 Gdi 支持](gdi-support-for-palettes.md)。
 
-如果视频硬件支持可设置的调色板，则当其已完成将颜色映射到应用程序所请求的 *设备调色板* 时，GDI 将在显示驱动程序中调用 [**DrvSetPalette**](/windows/win32/api/winddi/nf-winddi-drvsetpalette)函数。 GDI 将新调色板传递到显示驱动程序，驱动程序将查询 [**PALOBJ**](/windows/win32/api/winddi/ns-winddi-palobj) 以设置其内部硬件调色板，使其与视频硬件的调色板更改相匹配。 这称为 *调色板实现* 。
+如果视频硬件支持可设置的调色板，则当其已完成将颜色映射到应用程序所请求的 *设备调色板* 时，GDI 将在显示驱动程序中调用 [**DrvSetPalette**](/windows/win32/api/winddi/nf-winddi-drvsetpalette)函数。 GDI 将新调色板传递到显示驱动程序，驱动程序将查询 [**PALOBJ**](/windows/win32/api/winddi/ns-winddi-palobj) 以设置其内部硬件调色板，使其与视频硬件的调色板更改相匹配。 这称为 *调色板实现*。
 
 **DrvSetPalette** 函数向驱动程序提供 *PDEV* 的句柄，并请求驱动程序实现该设备的调色板。 驱动程序应设置硬件调色板，使其与给定调色板中的条目尽可能匹配。
 

@@ -1,19 +1,18 @@
 ---
 title: 处理视频帧
 description: 处理视频帧
-ms.assetid: 0f613186-1887-4d67-95d6-f562124c69ab
 keywords:
 - 视频处理 WDK DirectX VA，视频帧处理
 - 视频帧处理 WDK DirectX VA
 - 帧 WDK DirectX VA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 05a3bda696d739ec4e164110c9a10f8a93ea31e4
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 0478ccdf55a638d3db031a05414cebfdc7275b46
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89066412"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96792945"
 ---
 # <a name="processing-video-frames"></a>处理视频帧
 

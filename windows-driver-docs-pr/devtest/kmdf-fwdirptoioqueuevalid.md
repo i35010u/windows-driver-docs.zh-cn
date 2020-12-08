@@ -1,7 +1,6 @@
 ---
 title: 'FwdIrpToIoQueueValid 规则 (kmdf) '
 description: 规则 FwdIrpToIoQueueValid 指定驱动程序使用 EvtDeviceWdmIrpDispatch 回调或 EvtDeviceWdmIrpPreprocess 回调中的 WdfDeviceWdmDispatchIrpToIoQueue 方法将 IRP 发送到 i/o 队列。
-ms.assetid: 338A1577-AD16-4632-BD8D-C9FDBC4FCDBD
 ms.date: 05/21/2018
 keywords:
 - 'FwdIrpToIoQueueValid 规则 (kmdf) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 77add453ba533a965c006e8c856efa2da26d2ac2
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 909e8910bfc8b966d96702e828d8b5f1102cb274
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107388"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96793055"
 ---
 # <a name="fwdirptoioqueuevalid-rule-kmdf"></a>FwdIrpToIoQueueValid 规则 (kmdf) 
 
 
-规则**FwdIrpToIoQueueValid**指定驱动程序使用[*EvtDeviceWdmIrpDispatch*](/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdfdevice_wdm_irp_dispatch)回调或[*EvtDeviceWdmIrpPreprocess*](/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdfdevice_wdm_irp_preprocess)回调中的[**WdfDeviceWdmDispatchIrpToIoQueue**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicewdmdispatchirptoioqueue)方法将 IRP 发送到 i/o 队列。
+规则 **FwdIrpToIoQueueValid** 指定驱动程序使用 [*EvtDeviceWdmIrpDispatch*](/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdfdevice_wdm_irp_dispatch)回调或 [*EvtDeviceWdmIrpPreprocess*](/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdfdevice_wdm_irp_preprocess)回调中的 [**WdfDeviceWdmDispatchIrpToIoQueue**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicewdmdispatchirptoioqueue)方法将 IRP 发送到 i/o 队列。
 
 **驱动程序模型： KMDF**
 

@@ -1,29 +1,28 @@
 ---
-title: KSMETHODSETID\_StreamAllocator
-description: KSMETHODSETID\_StreamAllocator
-ms.assetid: 21097c03-9299-41a6-a0de-48be72f38778
+title: KSMETHODSETID \_ StreamAllocator
+description: KSMETHODSETID \_ StreamAllocator
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a894bddc69f8078b2a2bc1a6714bb83e0e697a72
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4502c956e287f49a75b6ddb93369acaea0fcc422
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63367458"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96795337"
 ---
-# <a name="ksmethodsetidstreamallocator"></a>KSMETHODSETID\_StreamAllocator
+# <a name="ksmethodsetid_streamallocator"></a>KSMETHODSETID \_ StreamAllocator
 
 
 ## <span id="ddk_ksmethodsetid_streamallocator_ks"></span><span id="DDK_KSMETHODSETID_STREAMALLOCATOR_KS"></span>
 
 
-KSMETHODSETID\_StreamAllocator 方法集指定用于基于 IRP 的分配器接口函数。
+KSMETHODSETID \_ StreamAllocator 方法集指定基于 IRP 的分配器接口的函数。
 
-该方法设置包括：
+此方法集包括：
 
-[**KSMETHOD\_STREAMALLOCATOR\_分配**](ksmethod-streamallocator-alloc.md)
+[**KSMETHOD \_ STREAMALLOCATOR \_ 分配**](ksmethod-streamallocator-alloc.md)
 
-[**KSMETHOD\_STREAMALLOCATOR\_免费**](ksmethod-streamallocator-free.md)
+[**KSMETHOD \_ STREAMALLOCATOR \_ 免费**](ksmethod-streamallocator-free.md)
 
  
 

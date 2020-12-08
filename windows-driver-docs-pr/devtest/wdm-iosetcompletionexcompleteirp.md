@@ -1,7 +1,6 @@
 ---
 title: 'IoSetCompletionExCompleteIrp 规则 (wdm) '
 description: IoSetCompletionExCompleteIrp 规则指定 IoSetCompletionRoutineEx 例程返回一个 NTSTATUS 值。
-ms.assetid: 892ADDF3-9FC0-48A9-AECC-71722A10B2BE
 ms.date: 05/21/2018
 keywords:
 - 'IoSetCompletionExCompleteIrp 规则 (wdm) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 61d566d6d5bd4c817b8f0dde6e9f63b8e918a855
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 3b02f2d62079e11598b9a592be7a2086963f3d5e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103684"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96795039"
 ---
 # <a name="iosetcompletionexcompleteirp-rule-wdm"></a>IoSetCompletionExCompleteIrp 规则 (wdm) 
 
 
-**IoSetCompletionExCompleteIrp**规则指定[**IoSetCompletionRoutineEx**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iosetcompletionroutineex)例程返回一个 NTSTATUS 值。 驱动程序必须检查此值以确定在调用[**IoCallDriver**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver)或[**PoCallDriver**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-pocalldriver)之前是否已成功注册[*IoCompletion*](/windows-hardware/drivers/ddi/wdm/nc-wdm-io_completion_routine)例程，如果**IoSetCompletionRoutineEx**失败，则应完成 IRP 并返回调度例程。
+**IoSetCompletionExCompleteIrp** 规则指定 [**IoSetCompletionRoutineEx**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iosetcompletionroutineex)例程返回一个 NTSTATUS 值。 驱动程序必须检查此值以确定在调用 [**IoCallDriver**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver)或 [**PoCallDriver**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-pocalldriver)之前是否已成功注册 [*IoCompletion*](/windows-hardware/drivers/ddi/wdm/nc-wdm-io_completion_routine)例程，如果 **IoSetCompletionRoutineEx** 失败，则应完成 IRP 并返回调度例程。
 
 **驱动程序模型： WDM**
 

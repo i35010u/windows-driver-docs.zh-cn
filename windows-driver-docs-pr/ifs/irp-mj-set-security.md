@@ -1,7 +1,6 @@
 ---
 title: IRP_MJ_SET_SECURITY
 description: IRP \_ MJ \_ 设置 \_ 安全性
-ms.assetid: 8d8b06b9-5d63-4506-831c-9c533dbe95f4
 keywords:
 - IRP_MJ_SET_SECURITY 可安装的文件系统驱动程序
 topic_type:
@@ -12,12 +11,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a95c24bea52aa30cb47db3bf50d4659ef769fe77
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: a76e5e8d3ae2188371e5f68bb1a9053370b462ff
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89063048"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96793747"
 ---
 # <a name="irp_mj_set_security"></a>IRP \_ MJ \_ 设置 \_ 安全性
 
@@ -37,10 +36,10 @@ IRP \_ MJ \_ SET \_ SECURITY 请求由 i/o 管理器发送。 例如，在用户
 
 筛选器驱动程序应将此 IRP 传递到堆栈上的下一个较低的驱动程序。
 
-## <a name="parameters"></a>parameters
+## <a name="parameters"></a>参数
 
 
-文件系统或筛选器驱动程序与给定的 IRP 一起调用[**IoGetCurrentIrpStackLocation**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetcurrentirpstacklocation) ，以获取指向其自己的*IrpSp*[**堆栈位置**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_stack_location)的指针，如以下列表所示。  (IRP 显示为 *irp*。 ) 驱动程序可以使用在处理 set security information 请求中的以下 irp 成员和 irp 堆栈位置设置的信息：
+文件系统或筛选器驱动程序与给定的 IRP 一起调用 [**IoGetCurrentIrpStackLocation**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetcurrentirpstacklocation) ，以获取指向其自己的 *IrpSp*[**堆栈位置**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_stack_location)的指针，如以下列表所示。  (IRP 显示为 *irp*。 ) 驱动程序可以使用在处理 set security information 请求中的以下 irp 成员和 irp 堆栈位置设置的信息：
 
 <a href="" id="deviceobject"></a>*DeviceObject*  
 指向目标设备对象的指针。
@@ -49,9 +48,9 @@ IRP \_ MJ \_ SET \_ SECURITY 请求由 i/o 管理器发送。 例如，在用户
 指向 [**IO \_ 状态 \_ 块**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_status_block) 结构的指针，该结构接收最终完成状态和有关请求的操作的信息。
 
 <a href="" id="irpsp--fileobject"></a>*IrpSp- &gt; FileObject*  
-指向与 *DeviceObject*关联的文件对象的指针。
+指向与 *DeviceObject* 关联的文件对象的指针。
 
-*IrpSp- &gt; FileObject*参数包含指向**RelatedFileObject**字段的指针，该字段也是文件 \_ 对象结构。 文件对象结构的 **RelatedFileObject** 字段在 \_ 处理 IRP \_ MJ 集安全性期间无效 \_ \_ ，不应使用。
+*IrpSp- &gt; FileObject* 参数包含指向 **RelatedFileObject** 字段的指针，该字段也是文件 \_ 对象结构。 文件对象结构的 **RelatedFileObject** 字段在 \_ 处理 IRP \_ MJ 集安全性期间无效 \_ \_ ，不应使用。
 
 <a href="" id="irpsp--majorfunction"></a>*IrpSp- &gt; MajorFunction*  
 指定 IRP \_ MJ \_ 设置 \_ 安全性。
@@ -95,7 +94,7 @@ IRP \_ MJ \_ SET \_ SECURITY 请求由 i/o 管理器发送。 例如，在用户
 
  
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**IO \_ 堆栈 \_ 位置**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_stack_location)

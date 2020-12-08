@@ -1,19 +1,18 @@
 ---
 title: 安装收件箱驱动程序或预安装的驱动程序
 description: 安装收件箱驱动程序或预安装的驱动程序
-ms.assetid: 6949897e-12e8-4d86-8f20-4b10a612ef72
 keywords:
 - 硬件-首次安装 WDK 设备安装
 - 收件箱驱动程序安装 WDK
 - 预安装的驱动程序 WDK 设备安装
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e5f6679e596a11439d7746c0c3e5c27590ca2366
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 07c0162dbb041aa6526256e064c8b486a3eef8bd
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90101572"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96794899"
 ---
 # <a name="installing-an-inbox-driver-or-a-preinstalled-driver"></a>安装收件箱驱动程序或预安装的驱动程序
 

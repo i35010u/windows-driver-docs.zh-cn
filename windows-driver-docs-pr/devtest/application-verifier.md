@@ -1,7 +1,6 @@
 ---
 title: 应用程序验证工具
 description: 应用程序验证工具
-ms.assetid: b5bb30ab-c05b-4fcc-affe-678285d49076
 keywords:
 - '验证驱动程序 (应用程序验证工具) '
 - '驱动程序验证 (应用程序验证工具) '
@@ -10,12 +9,12 @@ keywords:
 - 用户模式应用程序测试
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dc2e889c88cc592f462f5ea7cc02ca3b1ecc4438
-ms.sourcegitcommit: 9e5a99dc75dfee3caa9a242adc0ed22ae4df9f29
+ms.openlocfilehash: d2af59d64acab53d586616e9b37976f135e682bb
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89043119"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96793117"
 ---
 # <a name="application-verifier"></a>应用程序验证工具
 

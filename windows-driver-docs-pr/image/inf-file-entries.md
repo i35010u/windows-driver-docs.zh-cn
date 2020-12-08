@@ -1,15 +1,14 @@
 ---
 title: INF 文件条目
 description: INF 文件条目
-ms.assetid: 8af2cbe7-f249-4e2f-940f-b50bc451cabe
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 06986259d2420fdffd29be15c989d406c0f26ef5
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: de36ceebe0b54613291e10e48b07e81e7482e92f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89189159"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96793685"
 ---
 # <a name="inf-file-entries"></a>INF 文件条目
 
@@ -31,9 +30,9 @@ ms.locfileid: "89189159"
 
 以下信息适用于 Windows XP 和更高版本。 Windows Me INF 文件不使用 **Include** 和 **需要** 指令，因此不能使用这种类型的 inf。
 
-[**INF DDInstall 部分**](../install/inf-ddinstall-section.md)应包含指令**Include**= sti。 此外， **需求** 指令应引用 **STI。MICRODRIVERSection**，以及相应的设备类型部分。 这会提供必要的 USDClass 和 CLSID **AddReg** 指令，因此不需要在 INF 中显式包含这些指令。
+[**INF DDInstall 部分**](../install/inf-ddinstall-section.md)应包含指令 **Include**= sti。 此外， **需求** 指令应引用 **STI。MICRODRIVERSection**，以及相应的设备类型部分。 这会提供必要的 USDClass 和 CLSID **AddReg** 指令，因此不需要在 INF 中显式包含这些指令。
 
-**注意**   不需要在**CopyFiles**指令中包含*wiafbdrv.dll* 。
+**注意** 不需要在 **CopyFiles** 指令中包含 *wiafbdrv.dll* 。
 
  
 

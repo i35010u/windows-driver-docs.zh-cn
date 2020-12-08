@@ -1,9 +1,8 @@
 ---
 title: wudfext.wudfdumpobjects
-description: Wudfext.wudfdumpobjects 扩展显示未完成的 UMDF 对象。
-ms.assetid: 2ede7f2e-124c-494d-9188-5a28617a0bdb
+description: Wudfdumpobjects 扩展显示未完成的 UMDF 对象。 wudfext
 keywords:
-- wudfext.wudfdumpobjects Windows 调试
+- wudfext wudfdumpobjects Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,29 +11,29 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 3aab71a2c315c9e5bd798a8fe0c7978cb11f9615
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: af164887aeb2342eddc3c543f65e6dc54d5f90e0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63347894"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96794063"
 ---
 # <a name="wudfextwudfdumpobjects"></a>!wudfext.wudfdumpobjects
 
 
-**！ Wudfext.wudfdumpobjects**扩展显示未完成的 UMDF 对象。
+**！ Wudfext wudfdumpobjects** 扩展显示未完成的 UMDF 对象。
 
 ```dbgcmd
 !wudfext.wudfdumpobjects ObjTrackerAddress
 ```
 
-## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>参数
+## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>Parameters
 
 
-<span id="_______ObjTrackerAddress______"></span><span id="_______objtrackeraddress______"></span><span id="_______OBJTRACKERADDRESS______"></span> *ObjTrackerAddress*   
-指定要跟踪泄漏的对象的地址。 当发生了泄漏时，此地址显示在调试器中的驱动程序停止消息。
+<span id="_______ObjTrackerAddress______"></span><span id="_______objtrackeraddress______"></span><span id="_______OBJTRACKERADDRESS______"></span>*ObjTrackerAddress*   
+指定跟踪泄漏对象的地址。 发生泄漏时，此地址显示在调试器中的驱动程序停止消息中。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 <table>
 <colgroup>
@@ -47,7 +46,7 @@ ms.locfileid: "63347894"
 <td align="left"><p>不可用</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>使用 UMDF 1.7 和更高版本的 Windows XP</strong></p></td>
+<td align="left"><p><strong>Windows XP （UMDF 版本1.7 及更高版本）</strong></p></td>
 <td align="left"><p>Wudfext.dll</p></td>
 </tr>
 </tbody>
@@ -55,20 +54,20 @@ ms.locfileid: "63347894"
 
  
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-有关详细信息，请参阅[用户模式驱动程序框架调试](user-mode-driver-framework-debugging.md)。
+有关详细信息，请参阅 [用户模式驱动程序框架调试](user-mode-driver-framework-debugging.md)。
 
 <a name="remarks"></a>备注
 -------
 
-如果 UMDF 对象跟踪选项 (**TrackObjects**) 已启用在 WDF 验证程序，你可以使用 **！ wudfext.wudfdumpobjects**若要查看任何泄漏驱动程序卸载后保留的对象。
+如果在 WDF 验证程序中启用了 (**TrackObjects**) 的 UMDF 对象跟踪选项，则可以使用 **！ wudfext wudfdumpobjects** 查看驱动程序卸载后保留的任何泄漏对象。
 
-如果**TrackObjects**启用选项，当检测到泄漏时，将自动显示对象跟踪器的地址。 将此地址用作*ObjTrackerAddress*执行时 **！ wudfext.wudfdumpobjects**。
+如果已启用 **TrackObjects** 选项，则在检测到泄漏时，将自动显示对象跟踪器的地址。 执行 wudfext 时将此地址用作 *ObjTrackerAddress* 。 **wudfdumpobjects**。
 
-可以在任何时候，使用此扩展，即使 UMDF 已不中断到调试器。
+即使 UMDF 尚未中断到调试器中，也可以在任何时候使用此扩展。
 
-如果 UMDF 为 1.9 版或更高版本，你可以使用[ **！ wudfext.umdevstack** ](-wudfext-umdevstack.md)或[ **！ wudfext.umdevstacks** ](-wudfext-umdevstacks.md)来确定的地址对象跟踪器。 然后可以将此地址传递给 **！ wudfext.wudfdumpobjects**。 下面是一个示例：
+如果 UMDF 为版本1.9 或更高版本，则可以使用 [**！ wudfext; umdevstack**](-wudfext-umdevstack.md) 或 [**！ wudfext**](-wudfext-umdevstacks.md) 来确定对象跟踪器的地址。 然后，可以将此地址传递给 **！ wudfext. wudfdumpobjects**。 以下是示例：
 
 ```dbgcmd
 0: kd> !umdevstacks 

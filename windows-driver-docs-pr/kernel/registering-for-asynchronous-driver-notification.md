@@ -1,7 +1,6 @@
 ---
 title: 注册异步驱动程序通知
 description: 注册异步驱动程序通知
-ms.assetid: e1f97a65-7c82-4d7b-97ec-0293fc69fd8c
 keywords:
 - 驱动程序通知 WDK 动态硬件分区，注册
 - 异步通知 WDK 动态硬件分区
@@ -10,12 +9,12 @@ keywords:
 - 注册驱动程序通知 WDK 动态硬件分区
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4424256fd4d534e34452083c47d42fe5f8a52a24
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 785e8a5b7fbacd40fb3f4b3dad5651e3f4d6aacc
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89187739"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96793509"
 ---
 # <a name="registering-for-asynchronous-driver-notification"></a>注册异步驱动程序通知
 
@@ -78,7 +77,7 @@ Status =
     );
 ```
 
-**注意**   如果设备驱动程序只需收到有关处理器的通知，则无需为内存实现回调函数或注册以获取有关内存的通知。 同样，如果只需通知设备驱动程序的内存，则无需为处理器实现回调函数或注册以获取有关处理器的通知。
+**注意**   如果设备驱动程序只需收到有关处理器的通知，则无需为内存实现回调函数或注册以获取有关内存的通知。 同样，如果只需通知设备驱动程序的内存，则无需为处理器实现回调函数或注册以获取有关处理器的通知。
 
  
 

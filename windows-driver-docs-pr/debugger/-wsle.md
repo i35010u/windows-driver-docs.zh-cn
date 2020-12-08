@@ -1,7 +1,6 @@
 ---
 title: wsle
-description: Wsle 扩展显示所有工作集列表项 (WSLEs)。
-ms.assetid: 9540ac44-a44b-4af6-acdd-baa275e8d004
+description: Wsle 扩展显示 (WSLEs) 的所有工作集列表项。
 keywords:
 - wsle Windows 调试
 ms.date: 05/23/2017
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 5be76a7c7b1c9aa173203eed745b2fc4e0819a12
-ms.sourcegitcommit: 424c435700d8f8a85bdaa83e8ddaab9568c8d347
+ms.openlocfilehash: b9c469862a3c852c90ba24bcb4ddc0341a5f484d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/26/2019
-ms.locfileid: "70025335"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96794127"
 ---
 # <a name="wsle"></a>!wsle
 
 
-**! Wsle** extension 显示所有工作集列表项 (WSLEs)。
+**！ Wsle** 扩展显示 (WSLEs) 的所有工作集列表项。
 
 语法
 

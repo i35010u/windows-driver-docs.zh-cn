@@ -1,7 +1,6 @@
 ---
 title: 选择标志和级别
 description: 选择标志和级别
-ms.assetid: cde1ef3e-ab1b-4725-b18d-8f7704cc9f5a
 keywords:
 - 跟踪标志 WDK
 - 标志 WDK 软件跟踪
@@ -11,33 +10,33 @@ keywords:
 - 跟踪会话 WDK，级别
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9a27e35b9a5678c9ae4da847c0591aed83cf9022
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 652ee4fcef9a544b65555e2f0145b0b9952e30c8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63352439"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96793985"
 ---
 # <a name="selecting-flags-and-levels"></a>选择标志和级别
 
 
-**跟踪标志和级别选择**对话框中，可选择[跟踪标志](trace-flags.md)并[跟踪级别](trace-level.md)跟踪会话中每个提供程序。 **跟踪标志和级别选择**对话框方便地显示所有的标志和提供程序，提供级别，以便不需要记住它们。
+" **跟踪标志和级别选择** " 对话框允许您为跟踪会话中的每个提供程序选择 [跟踪标志](trace-flags.md) 和 [跟踪级别](trace-level.md) 。 " **跟踪标志和级别选择** " 对话框可方便地显示提供程序提供的所有标志和级别，因此无需记住它们。
 
-或者，可以设置**标志**并**级别**值中手动**高级日志会话选项**对话框。 有关信息，请参阅[设置高级跟踪会话选项](setting-advanced-trace-session-options.md)。
+或者，可以在 "**高级日志会话选项**" 对话框中手动设置 **标志** 和 **级别** 值。 有关信息，请参阅 [设置高级跟踪会话选项](setting-advanced-trace-session-options.md)。
 
-本部分包括：
+本节包括：
 
-[打开跟踪标志和级别所选内容对话框](opening-the-tracing-flags-and-level-selection-dialog-box.md)
+[打开跟踪标志和级别选择对话框](opening-the-tracing-flags-and-level-selection-dialog-box.md)
 
-[使用跟踪标志和级别所选内容对话框](using-the-tracing-flags-and-level-selection-dialog-box.md)
+[使用跟踪标志和级别选择对话框](using-the-tracing-flags-and-level-selection-dialog-box.md)
 
-### <a name="span-idcommentsspanspan-idcommentsspancomments"></a><span id="comments"></span><span id="COMMENTS"></span>注释
+### <a name="span-idcommentsspanspan-idcommentsspancomments"></a><span id="comments"></span><span id="COMMENTS"></span>提出
 
-**跟踪标志和级别选择**TraceView 可以找到时，才启用对话框[PDB 符号文件](pdb-symbol-files.md)提供程序或它可以找到[跟踪消息控件 (.tmc) 文件](trace-message-control-file.md) TMF 路径中的提供程序 (通过使用指定的已**设置 TMF 搜索路径**选项)。 否则为**设置标志和级别**按钮，用于打开**跟踪标志和级别选择**对话框框处于禁用状态。 对话框的使用时始终禁用**选择 TMF 文件**选项。
+仅当 TraceView 可以找到提供程序的 [PDB 符号文件](pdb-symbol-files.md)或在 TMF 路径中 ( 找到该提供程序的 [) 文件](trace-message-control-file.md)时，才会启用 "**跟踪标志和级别选择**" 对话框， () 中使用 "**设置 TMF 搜索路径**" 选项指定。 否则，将禁用打开 **跟踪标志和级别选择** 对话框的 "**设置标志和级别**" 按钮。 使用 " **选择 TMF 文件** " 选项时，始终禁用对话框。
 
-如果**跟踪标志和级别选择**对话框框处于禁用状态，您可以设置的跟踪标志和级别的提供程序中手动**高级跟踪会话选项**对话框。 有关说明，请参阅[设置高级跟踪会话选项](setting-advanced-trace-session-options.md)。
+如果 " **跟踪标志和级别选择** " 对话框处于禁用状态，则可以在 " **高级跟踪会话选项** " 对话框中手动设置跟踪标志和该提供程序的级别。 有关说明，请参阅 [设置高级跟踪会话选项](setting-advanced-trace-session-options.md)。
 
-标志和级别的跟踪提供程序属性。 通常情况下，标志表示越来越详细的报告级别和级别表示 （信息、 警告或错误） 事件的严重性。
+标志和级别是跟踪提供程序的属性。 通常，标志表示越来越详细的报表级别，它们表示事件的严重性 (信息、警告或错误) 。
 
  
 

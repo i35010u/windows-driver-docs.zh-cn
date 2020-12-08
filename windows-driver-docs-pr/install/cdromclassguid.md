@@ -1,7 +1,6 @@
 ---
 title: CdRomClassGuid
 description: CdRomClassGuid
-ms.assetid: 406c28c9-8ef3-4ccc-bb70-a13b8d1ad64e
 keywords:
 - CdRomClassGuid 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: fb988ba12f275edeb759baac575d1a22dba59ccd
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: bd1f5a391fc1d58865bea0e176306f980f4d56b2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91734268"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96794911"
 ---
 # <a name="cdromclassguid"></a>CdRomClassGuid
 
@@ -51,7 +50,7 @@ WDK 中的存储 [示例](https://go.microsoft.com/fwlink/p/?LinkId=618052) 包�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**GUID_DEVINTERFACE_CDROM**](guid-devinterface-cdrom.md)

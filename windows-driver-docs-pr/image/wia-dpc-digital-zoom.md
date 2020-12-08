@@ -1,9 +1,8 @@
 ---
-title: WIA\_DPC\_DIGITAL\_ZOOM
-description: WIA\_DPC\_数字\_缩放属性包含有效的缩放比率数字照相机的获取图像的缩放因子 10。
-ms.assetid: 5f1ec791-fd51-4397-ac7d-5012c020ef0a
+title: WIA \_ DPC \_ 数字 \_ 缩放
+description: WIA \_ DPC \_ 数字 \_ 缩放属性包含数字相机获取的图像的有效缩放比例，其缩放比例为10倍。
 keywords:
-- WIA_DPC_DIGITAL_ZOOM 成像设备
+- WIA_DPC_DIGITAL_ZOOM 图像设备
 topic_type:
 - apiref
 api_name:
@@ -14,31 +13,31 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 72220258d68750b6fb2c9e06d53bf51ab79e6767
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e52482af90beed93e095df25c0644b96d33a4dd8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390760"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96793603"
 ---
-# <a name="wiadpcdigitalzoom"></a>WIA\_DPC\_DIGITAL\_ZOOM
+# <a name="wia_dpc_digital_zoom"></a>WIA \_ DPC \_ 数字 \_ 缩放
 
 
-WIA\_DPC\_数字\_缩放属性包含有效的缩放比率数字照相机的获取图像的缩放因子 10。
+WIA \_ DPC \_ 数字 \_ 缩放属性包含数字相机获取的图像的有效缩放比例，其缩放比例为10倍。
 
 ## <span id="ddk_wia_dpc_digital_zoom_si"></span><span id="DDK_WIA_DPC_DIGITAL_ZOOM_SI"></span>
 
 
-属性类型：VT\_I4
+属性类型： VT \_ I4
 
-有效值：WIA\_PROP\_列表或 WIA\_PROP\_范围
+有效值： WIA 内容 \_ \_ 列表或 wia 的 \_ 内容 \_ 范围
 
-访问权限：读取/写入
+访问权限：读/写
 
 <a name="remarks"></a>备注
 -------
 
-WIA\_DPC\_数字\_缩放值为 10 对应于数字缩放 (1 X)，这是相机捕获的标准场景大小不存在。 照相机位置捕获标准场景大小的四分之一的 2 X 缩放到对应的值为 20。
+WIA \_ DPC \_ 数字 \_ 缩放值10对应于缺少数字缩放 (1x) ，这是相机捕获的标准场景大小。 值20对应于2X 缩放，其中，照相机捕获标准场景大小的四分之一。
 
 <a name="requirements"></a>要求
 ------------
@@ -50,12 +49,12 @@ WIA\_DPC\_数字\_缩放值为 10 对应于数字缩放 (1 X)，这是相机捕�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Version</p></td>
-<td><p>在 Windows Vista 和更高版本操作系统中已过时，并应不再使用。 但是，此属性仍定义 Windows Vista 中与应用程序和用于 Windows Server 2003、 Windows XP 和早期版本的 Windows 设备的兼容性。</p></td>
+<td><p>版本</p></td>
+<td><p>在 Windows Vista 和更高版本的操作系统中已过时，不应再使用。 但是，在 Windows Vista 中仍定义此属性，以与为 Windows Server 2003、Windows XP 和 windows 的早期版本设计的应用程序和设备兼容。</p></td>
 </tr>
 <tr class="even">
-<td><p>Header</p></td>
-<td>Wiadef.h （包括 Wiadef.h）</td>
+<td><p>标头</p></td>
+<td>Wiadef (包含 Wiadef) </td>
 </tr>
 </tbody>
 </table>

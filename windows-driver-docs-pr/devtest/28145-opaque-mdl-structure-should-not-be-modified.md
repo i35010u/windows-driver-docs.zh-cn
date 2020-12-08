@@ -1,29 +1,28 @@
 ---
 title: C28145
-description: 警告的 C28145 不透明 MDL 结构不应修改由驱动程序。
-ms.assetid: efbd667b-fb0e-4a4d-bb6a-e8249c113a91
+description: 警告 C28145 不透明 MDL 结构不应由驱动程序修改。
 keywords:
-- 警告列出 WDK PREfast for Drivers
-- 错误列出 WDK PREfast for Drivers
+- 列出用于驱动程序的 WDK PREfast 的警告
+- 为驱动程序列出的 WDK PREfast 的错误
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 f1_keywords:
 - C28145
-ms.openlocfilehash: ba336ed8a7c353fa107cd4378f3f5eb917049005
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0cb7dd4feadb9b4f2740a533af715b4b9f4cb478
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63361527"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96793193"
 ---
 # <a name="c28145"></a>C28145
 
 
-警告 C28145:不透明 MDL 结构不应修改由驱动程序
+警告 C28145：不透明 MDL 结构不应由驱动程序修改
 
-驱动程序代码正在改变 MDL 结构的成员。
+驱动程序代码正在更改 MDL 结构的成员。
 
-**MdlFlags**字段用于所有 MDL 字段用作代理。 应修改任何字段除外 MDL\_映射\_可以\_会失败，用于需要 Microsoft Windows 98 或 Windows NT (SP4) 兼容的驱动程序，因此 MDL\_页\_锁定，这用于需要 Windows 2000 兼容的驱动程序。
+**MdlFlags** 字段用作所有 MDL 字段的代理。 不应修改任何字段，但 MDL \_ 映射 \_ 可能会 \_ 失败，后者用于需要 Microsoft Windows 98 或 WINDOWS NT (SP4) 兼容的驱动程序和 \_ 已锁定的 MDL 页面（用于 \_ 需要与 Windows 2000 兼容的驱动程序的驱动程序）。
 
  
 

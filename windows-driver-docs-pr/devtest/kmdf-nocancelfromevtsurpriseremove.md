@@ -1,7 +1,6 @@
 ---
 title: 'NoCancelFromEvtSurpriseRemove 规则 (kmdf) '
 description: NoCancelFromEvtSurpriseRemove 规则指定 WDF 驱动程序不应取消来自 EvtDeviceSurpriseRemoval 回调函数的请求，而应使用自托管 i/o 回调函数。
-ms.assetid: 15C95BD4-6D19-4CCA-9B2E-679B2F3058F1
 ms.date: 05/21/2018
 keywords:
 - 'NoCancelFromEvtSurpriseRemove 规则 (kmdf) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: c07da73b97a270128176509109b1ea28d493a715
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 6db497adf4a89e0c0ca2678838fccdc396b47cea
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103834"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96793049"
 ---
 # <a name="nocancelfromevtsurpriseremove-rule-kmdf"></a>NoCancelFromEvtSurpriseRemove 规则 (kmdf) 
 
 
-**NoCancelFromEvtSurpriseRemove**规则指定 WDF 驱动程序不应取消来自[*EvtDeviceSurpriseRemoval*](/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_surprise_removal)回调函数的请求，而应使用自托管 i/o 回调函数。 *EvtDeviceSurpriseRemoval* 回调函数未与电源线路径同步。
+**NoCancelFromEvtSurpriseRemove** 规则指定 WDF 驱动程序不应取消来自 [*EvtDeviceSurpriseRemoval*](/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_surprise_removal)回调函数的请求，而应使用自托管 i/o 回调函数。 *EvtDeviceSurpriseRemoval* 回调函数未与电源线路径同步。
 
 **驱动程序模型： KMDF**
 

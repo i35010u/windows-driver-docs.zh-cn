@@ -1,7 +1,6 @@
 ---
 title: 'FailD0EntryIoTargetState 规则 (kmdf) '
 description: FailD0EntryIoTargetState 规则指定如果 EvtDeviceD0Entry 失败，则在 EvtDeviceD0Entry 中启动的 USB 连续读取器的 i/o 目标将在同一回调中正确停止。
-ms.assetid: 7FB616EB-2079-42AE-A724-990EFBF3F84D
 ms.date: 05/21/2018
 keywords:
 - 'FailD0EntryIoTargetState 规则 (kmdf) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: b18a7b700ab330ac82096df7947ec2b33f30c441
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 41065b7240747caacddb49270db691f0d87d67b1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107394"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96793069"
 ---
 # <a name="faild0entryiotargetstate-rule-kmdf"></a>FailD0EntryIoTargetState 规则 (kmdf) 
 
 
-**FailD0EntryIoTargetState**规则指定如果*EvtDeviceD0Entry*失败，则在[*EvtDeviceD0Entry*](/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_d0_entry)中启动的 USB 连续读取器的 i/o 目标将在同一回调中正确停止。
+**FailD0EntryIoTargetState** 规则指定如果 *EvtDeviceD0Entry* 失败，则在 [*EvtDeviceD0Entry*](/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_d0_entry)中启动的 USB 连续读取器的 i/o 目标将在同一回调中正确停止。
 
 当 [*EvtDeviceD0Entry*](/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_d0_entry) 回调函数失败时，框架不会执行驱动程序的 [*EvtDeviceD0Exit*](/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_d0_exit) 回调函数。
 

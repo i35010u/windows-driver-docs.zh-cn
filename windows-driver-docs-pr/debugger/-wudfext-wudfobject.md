@@ -1,9 +1,8 @@
 ---
 title: wudfext.wudfobject
-description: Wudfext.wudfobject 扩展显示的 WDF 对象，其父级和子级关系有关的信息。
-ms.assetid: cb9398fb-24f5-4692-9a08-543bf1317b19
+description: Wudfext. wudfobject 扩展显示有关 WDF 对象及其父关系和子关系的信息。
 keywords:
-- wudfext.wudfobject Windows 调试
+- wudfext wudfobject Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,44 +11,44 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 10c5d683983efa900cb14cc5e0ac4f813357c59c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ab7c13ed5df118d0e72cabac4943b8ca4077100f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63351595"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96794059"
 ---
 # <a name="wudfextwudfobject"></a>!wudfext.wudfobject
 
 
-**！ Wudfext.wudfobject**扩展插件都会显示一个 WDF 对象，其父级和子级关系有关的信息。
+**！ Wudfext wudfobject** 扩展显示有关 WDF 对象及其父关系和子关系的信息。
 
 ```dbgcmd
 !wudfext.wudfobject pWDFObject Flags TypeName
 ```
 
-## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>参数
+## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>Parameters
 
 
-<span id="_______pWDFObject______"></span><span id="_______pwdfobject______"></span><span id="_______PWDFOBJECT______"></span> *pWDFObject*   
-指定要显示有关的信息的 WDF 接口的地址。
+<span id="_______pWDFObject______"></span><span id="_______pwdfobject______"></span><span id="_______PWDFOBJECT______"></span>*pWDFObject*   
+指定要显示其相关信息的 WDF 接口的地址。
 
-<span id="_______Flags______"></span><span id="_______flags______"></span><span id="_______FLAGS______"></span> *标志*   
-可选。 指定要显示的信息的类型。 *标志*可以是以下位的任意组合。 默认值为 0x01。
+<span id="_______Flags______"></span><span id="_______flags______"></span><span id="_______FLAGS______"></span>*标志*   
+可选。 指定要显示的信息的类型。 *标志* 可以是以下位的任意组合。 默认值为0x01。
 
-<span id="Bit_0__0x01_"></span><span id="bit_0__0x01_"></span><span id="BIT_0__0X01_"></span>位 0 (0x01)  
-若要获取的父和子关系，将显示在对象层次结构的步骤以递归方式。
+<span id="Bit_0__0x01_"></span><span id="bit_0__0x01_"></span><span id="BIT_0__0X01_"></span>位 0 (0x01)   
+以递归方式通过对象层次结构来获取显示的父关系和子关系。
 
-<span id="Bit_1__0x02_"></span><span id="bit_1__0x02_"></span><span id="BIT_1__0X02_"></span>位 1 (0x02)  
-显示有关对象的摘要信息。
+<span id="Bit_1__0x02_"></span><span id="bit_1__0x02_"></span><span id="BIT_1__0X02_"></span>位 1 (0x02)   
+只显示有关对象的摘要信息。
 
-<span id="Bit_8__0x80_"></span><span id="bit_8__0x80_"></span><span id="BIT_8__0X80_"></span>8 位 (0x80)  
-步骤以递归方式通过对象层次结构，并显示有关内部框架的详细信息。
+<span id="Bit_8__0x80_"></span><span id="bit_8__0x80_"></span><span id="BIT_8__0X80_"></span>位 8 (0x80)   
+以递归方式通过对象层次结构，并显示有关内部框架的详细信息。
 
-<span id="_______TypeName______"></span><span id="_______typename______"></span><span id="_______TYPENAME______"></span> *TypeName*   
-可选。 指定的接口类型 (例如， **IWDFDevice**)。 如果为值*TypeName*是提供，该扩展使用的值作为接口的类型。 如果星号 (\*) 作为提供*TypeName*，或者如果*TypeName*是省略，该扩展会尝试自动确定提供的接口的类型。
+<span id="_______TypeName______"></span><span id="_______typename______"></span><span id="_______TYPENAME______"></span>*TypeName*   
+可选。 指定接口的类型 (例如 **IWDFDevice**) 。 如果为 *TypeName* 提供了一个值，扩展将使用值作为该接口的类型。 如果将星号 (\*) 提供为 *typename*，或者省略 *typename* ，则扩展将尝试自动确定所提供的接口的类型。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 <table>
 <colgroup>
@@ -70,20 +69,20 @@ ms.locfileid: "63351595"
 
  
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-有关详细信息，请参阅[用户模式驱动程序框架调试](user-mode-driver-framework-debugging.md)。
+有关详细信息，请参阅 [用户模式驱动程序框架调试](user-mode-driver-framework-debugging.md)。
 
 <a name="remarks"></a>备注
 -------
 
-可以使用 **！ wudfext.wudfobject**若要列出，例如，子对象的**IWDFDevice**对象，通常包括设备的队列。
+例如，你可以使用 **！ wudfext** 来列出 **IWDFDevice** 对象的子对象，该对象通常包含设备的队列。
 
-此外可以使用 **！ wudfext.wudfobject**查找与特定设备，若要检查的状态 （例如，WDF 对象是否在过程中删除），一个 WDF 对象，或确定 WDF 相关联的 WDF 对象对象的当前引用计数。
+你还可以使用 **！ wudfext** 来查找与特定设备关联的 wdf 对象，以检查 wdf 对象的状态 (例如，是否) wdf 对象处于删除过程中，或确定 wdf 对象的当前引用计数。
 
-**！ Wudfext.wudfobject**扩展还显示的回调函数和上下文对象与每个框架对象并尝试确定 framework 对象的类型相关联，驱动程序。 最后一种功能可能无法使用某些编译器。
+**！ Wudfext wudfobject** 扩展还显示与每个框架对象关联的驱动程序的回调函数和上下文对象，并尝试确定框架对象的类型。 这最后一项功能可能不适用于某些编译器。
 
-以下是一些示例。 在第一个示例中， [ **！ wudfext.umdevstacks** ](-wudfext-umdevstack.md)设备对象的地址，此地址随后将传递到可让 0x03050E70 **！ wudfext.wudfobject**。 0x1 标志是包括在内，以显示该对象的所有子级。
+下面是一些示例。 在第一个示例中， [**！ wudfext**](-wudfext-umdevstack.md)提供0x03050E70 作为设备对象的地址，然后将此地址传递给 **！ wudfext。** 包含0x1 标志是为了显示此对象的所有子级。
 
 ```dbgcmd
 0: kd> !umdevstacks 
@@ -132,7 +131,7 @@ IWDFDevice 0x3050e70 Fx: 0x3050e30 [Ref 2]
                     No Children
 ```
 
-下面是举例 **！ wudfext.wudfobject**显示文件对象：
+下面是显示文件对象的 **！ wudfext** 的示例：
 
 ```dbgcmd
 kd> !wudfobject 0xf5060 
@@ -141,7 +140,7 @@ IWDFFile 0xf5060 Fx: 0xf4fe8 [Ref 1]
   No Children
 ```
 
-下面是举例 **！ wudfext.wudfobject**显示驱动程序对象：
+下面是显示驱动程序对象的 **！ wudfext** 的示例：
 
 ```dbgcmd
 kd> !wudfobject 0xf2db8 0x01 

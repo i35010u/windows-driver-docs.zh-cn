@@ -1,24 +1,23 @@
 ---
 title: C28625
-description: 将优化掉用于清除敏感数据的警告 C28625 函数调用。
-ms.assetid: 9ae44fbc-9a56-41e4-9972-d76d9b62033c
+description: 警告 C28625 用于清除敏感数据的函数调用将被优化掉。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 f1_keywords:
 - C28625
-ms.openlocfilehash: 49384914d5f3f3f3f834d5eba57ace3743e0cfd1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 22df476503f0a751a4789fc446de27d9ebb776aa
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379481"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96793125"
 ---
 # <a name="c28625"></a>C28625
 
 
-警告 C28625:将优化掉用于清除敏感数据的函数调用
+警告 C28625：用于清除敏感数据的函数调用将被优化掉
 
-当前函数调用可能会在编译期间，这可能使敏感数据保留在内存中进行优化。 使用**SecureZeroMemory**或**RtlSecureZeroMemory**函数。 启发式方法查找的标识符名称包含诸如"密钥"或"通过"以触发此警告。
+在编译过程中，可能会对当前函数调用进行优化，这可能会导致敏感数据保留在内存中。 改为使用 **SecureZeroMemory** 或 **RtlSecureZeroMemory** 函数。 试探法查找包含项（如 "key" 或 "pass"）的标识符名称以触发此警告。
 
  
 

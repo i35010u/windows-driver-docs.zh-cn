@@ -1,7 +1,6 @@
 ---
 title: 文件系统筛选器驱动程序类和类 GUID
 description: 文件系统筛选器驱动程序类和类 GUID
-ms.assetid: dd247b06-4529-4818-9239-b89c25f5c1df
 keywords:
 - Guid WDK 文件系统
 - 类 Guid WDK 文件系统
@@ -10,12 +9,12 @@ keywords:
 - 文件系统筛选器驱动程序 WDK、类
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8bea2bfadda64385422894aed55e724372f114ab
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 2ef1d91312ec087e2bf5d168e29ea13ee88dd967
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89063668"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96794949"
 ---
 # <a name="file-system-filter-driver-classes-and-class-guids"></a>文件系统筛选器驱动程序类和类 GUID
 
@@ -29,11 +28,11 @@ Microsoft Windows XP 和更高版本的操作系统为文件系统筛选器驱�
 
 本主题列出了文件系统筛选器驱动程序的安装程序类。 在每个类的定义中， **class** 和 **ClassGuid** 项包含应在筛选器的 Inf 文件的 [**inf 版本部分**](../install/inf-version-section.md) 中指定的值。 筛选器驱动程序应使用与驱动程序的 INF 文件中指定的加载顺序组相匹配的类和 GUID。
 
-在 INF 文件中为设备（而不是**类**类名称条目）提供适当的类 GUID 值，  =  *class-name*可以显著提高搜索系统 INF 文件的性能。
+在 INF 文件中为设备（而不是 **类** 类名称条目）提供适当的类 GUID 值，  =  *class-name* 可以显著提高搜索系统 INF 文件的性能。
 
 以下列表包括文件系统筛选器驱动程序的系统定义的类和类 Guid。 此列表中的条目对应于在 Windows XP 和更高版本的操作系统中为文件系统筛选器驱动程序创建的加载顺序组。
 
-**注意**   三个加载顺序组不会显示在列表中，因为它们不被视为安装类，因此不会为它们分配类 Guid： Filter、FSFilter Top 和 FSFilter 底端。
+**注意**   三个加载顺序组不会显示在列表中，因为它们不被视为安装类，因此不会为它们分配类 Guid： Filter、FSFilter Top 和 FSFilter 底端。
 
  
 

@@ -1,9 +1,8 @@
 ---
 title: wudfext.wudfdevicequeues
-description: Wudfext.wudfdevicequeues 扩展显示有关设备的所有 I/O 队列的信息。
-ms.assetid: 985e6d93-018f-436a-a75c-088251398539
+description: Wudfext. wudfdevicequeues 扩展显示有关设备的所有 i/o 队列的信息。
 keywords:
-- wudfext.wudfdevicequeues Windows 调试
+- wudfext wudfdevicequeues Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,29 +11,29 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: ef0bce7454c02dd7e0fcc096a128aac9e9b173e9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ce6dccd0664ae3bfe8ef5a82c5bf3d9da037b8d4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63347933"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96794085"
 ---
 # <a name="wudfextwudfdevicequeues"></a>!wudfext.wudfdevicequeues
 
 
-**！ Wudfext.wudfdevicequeues**扩展显示有关设备的所有 I/O 队列的信息。
+**！ Wudfext wudfdevicequeues** 扩展显示有关设备的所有 i/o 队列的信息。
 
 ```dbgcmd
 !wudfext.wudfdevicequeues pWDFDevice
 ```
 
-## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>参数
+## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>Parameters
 
 
-<span id="_______pWDFDevice______"></span><span id="_______pwdfdevice______"></span><span id="_______PWDFDEVICE______"></span> *pWDFDevice*   
-指定的地址**IWDFDevice**要为其显示其相关联的 I/O 队列的所有信息的接口。 [ **！ Wudfext.wudfdriverinfo** ](-wudfext-wudfdriverinfo.md)扩展命令确定地址**IWDFDevice**。
+<span id="_______pWDFDevice______"></span><span id="_______pwdfdevice______"></span><span id="_______PWDFDEVICE______"></span>*pWDFDevice*   
+指定要显示其所有关联 i/o 队列相关信息的 **IWDFDevice** 接口的地址。 [**！ Wudfext wudfdriverinfo**](-wudfext-wudfdriverinfo.md) extension 命令确定 **IWDFDevice** 的地址。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 <table>
 <colgroup>
@@ -55,14 +54,14 @@ ms.locfileid: "63347933"
 
  
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-有关详细信息，请参阅[用户模式驱动程序框架调试](user-mode-driver-framework-debugging.md)。
+有关详细信息，请参阅 [用户模式驱动程序框架调试](user-mode-driver-framework-debugging.md)。
 
 <a name="remarks"></a>备注
 -------
 
-以下是一种 **！ wudfext.wudfdevicequeues**显示：
+下面是 **！ wudfext** 显示的示例：
 
 ```dbgcmd
 ## kd> !wudfdevicequeues 0xf2f80 

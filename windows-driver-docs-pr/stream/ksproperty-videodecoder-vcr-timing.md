@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ VIDEODECODER \_ VCR \_ 计时
 description: KSPROPERTY \_ VIDEODECODER \_ VCR \_ 计时属性控制 vcr 是否需要来自磁带源或广播源的视频。 此属性是可选的。
-ms.assetid: 66d194e4-df9e-4f8a-9767-414311c205da
 keywords:
 - KSPROPERTY_VIDEODECODER_VCR_TIMING 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7f87d0aa8ea53fdc1fc6347adfcc08ce9237eb71
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: f1fed2576c5a157724574a3d9db063caaa505c3d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107246"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96794175"
 ---
 # <a name="ksproperty_videodecoder_vcr_timing"></a>KSPROPERTY \_ VIDEODECODER \_ VCR \_ 计时
 

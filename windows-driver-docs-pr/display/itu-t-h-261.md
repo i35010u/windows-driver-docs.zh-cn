@@ -1,19 +1,18 @@
 ---
 title: ITU-T H.261
 description: ITU-T H.261
-ms.assetid: 00fb9001-2896-4ecd-b6ee-5b36bc6e72cd
 keywords:
-- ITU T H.261 WDK DirectX VA
-- H.261 WDK DirectX VA
-- 预测阻止 WDK DirectX VA
+- ITU-T 261 WDK DirectX VA
+- H. 261 WDK DirectX VA
+- 预测块 WDK DirectX VA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f66f4242a3db24e27de5fbfdc50de2dbfecad9d7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 636278c848e498e6ea64931c9d0ab3b3d2f9070a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63362091"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96792987"
 ---
 # <a name="itu-t-h261"></a>ITU-T H.261
 
@@ -21,13 +20,13 @@ ms.locfileid: "63362091"
 ## <span id="ddk_itu_t_h_261_gg"></span><span id="DDK_ITU_T_H_261_GG"></span>
 
 
-此标准的标题为"视听服务 px64 为/秒，视频编解码器"ITU-T 建议 H.261。 此建议包含稍后在其他视频编解码器标准中使用相同的基本设计。 H.261 使用 8 位样本 Y、 Cb 和 Cr 组件，4:2:0 采样，16x16 宏块基于运动补偿 8x8 IDCT 之字形反系数、 标量量化和可变长度编码基于的组合的系数个数的扫描零值的运行长度和量化索引值。
+此标准标题为 "视听 Services at px64 kbit/s" 的视频编解码器，"ITU-T 建议 261"。 此建议包含与其他视频编解码器标准相同的基本设计。 261对 Y、Cb 和 Cr 组件使用8位样本，4:2:0 采样，基于16x16 宏块的运动补偿，8x8 IDCT，基于0值运行长度和量化索引值的组合，系数的系数、标量量化和系数的可变长度编码。
 
-所有 H.261 预测块都使用只进预测从上一张图片。 H.261 不具有半示例准确预测的筛选器，而是使用一种名为可以打开或关闭在每个宏块的运动补偿预测过程的循环筛选器 （H.261 规范的第 3.2.3 部分） 的低通滤波器。
+所有261预测块使用上图中的只进预测。 261不具有半样本准确预测筛选器，而是使用一种名为 "循环筛选器" 的低传递筛选器，该筛选器) 261 规范的 "循环筛选器 (" 部分，可在每个宏块的运动补偿预测期间关闭或打开。
 
-**Annex D 图形**
+**附录 D 图形**
 
-可以通过读取回到主机上的加速器四个已解码的图片和作为分辨率更高的图形图片显示在它们存在交错执行支持建议 H.261 Annex D 图传输模式。
+建议的261附录 D 图形传输模式可以通过将四个已解码的图片从该加速器上传回主机，并将其交错显示为更高分辨率的图形来支持。
 
  
 

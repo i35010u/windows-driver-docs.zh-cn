@@ -1,27 +1,26 @@
 ---
 title: C28157
-description: 警告 C28157 IRQL 从未恢复。
-ms.assetid: 3c60253f-5d89-4bb7-9787-9a2aa42bf7fb
+description: 警告 C28157 不会还原 IRQL。
 keywords:
-- 警告列出 WDK PREfast for Drivers
-- 错误列出 WDK PREfast for Drivers
+- 列出用于驱动程序的 WDK PREfast 的警告
+- 为驱动程序列出的 WDK PREfast 的错误
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 f1_keywords:
 - C28157
-ms.openlocfilehash: 1314dab061dfe7c82dba8a4f7e17c2e5f00fb79e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ed690171704f32536566ea5f4d2b519bef0cf35a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63361349"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96793157"
 ---
 # <a name="c28157"></a>C28157
 
 
-警告 C28157:IRQL 从未恢复
+警告 C28157：不还原 IRQL
 
-当前函数具有 **\_IRQL\_还原\_** 批注，这要求，操作完成时，该驱动程序应在执行之前的 IRQL 值已还原的 IRQL。 但是，没有至少一个驱动程序正在其中执行不同的 IRQL 在函数完成时的路径。
+当前函数的 **\_ \_ 还原 \_** 批注需要使用 irql，后者要求完成时，驱动程序应在从以前的 irql 值还原的 irql 下执行。 但是，在该函数完成时，至少有一个路径在不同的 IRQL 处执行驱动程序。
 
  
 

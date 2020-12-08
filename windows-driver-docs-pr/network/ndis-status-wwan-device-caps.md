@@ -1,17 +1,16 @@
 ---
 title: NDIS_STATUS_WWAN_DEVICE_CAPS
 description: 微型端口驱动程序使用 NDIS_STATUS_WWAN_DEVICE_CAPS 通知来响应 OID_WWAN_DEVICE_CAPS 查询请求。 微型端口驱动程序无法使用此通知发送未经请求的事件。此通知使用 NDIS_WWAN_DEVICE_CAPS 结构。
-ms.assetid: e21e2928-c50d-4dec-a575-7e306fecf20f
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 NDIS_STATUS_WWAN_DEVICE_CAPS 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: d969079301efbba5551530e62a09647027dd6caa
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 24803f37e07c9822e1a2fb1bb5b25766f3b236e9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89209693"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96794370"
 ---
 # <a name="ndis_status_wwan_device_caps"></a>NDIS \_ 状态 \_ WWAN \_ 设备 \_ CAP
 
@@ -45,7 +44,7 @@ ms.locfileid: "89209693"
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [OID \_ WWAN \_ 设备 \_ CAP](./oid-wwan-device-caps.md)

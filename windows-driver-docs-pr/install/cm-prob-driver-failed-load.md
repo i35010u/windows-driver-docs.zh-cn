@@ -1,17 +1,16 @@
 ---
 title: CM_PROB_DRIVER_FAILED_LOAD
 description: CM_PROB_DRIVER_FAILED_LOAD
-ms.assetid: 84d88db9-338b-4318-ba05-696521c96dd6
 keywords:
 - CM_PROB_DRIVER_FAILED_LOAD
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8565d102528ec239f7034fc4133d887aaf51cf1c
-ms.sourcegitcommit: 8739f3683432345092305565815baa68c82bef43
+ms.openlocfilehash: 52c7610a241730f2dcd3e5f108e0e978fba5510e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96482565"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96794901"
 ---
 # <a name="code-39---cm_prob_driver_failed_load"></a>代码 39 - CM_PROB_DRIVER_FAILED_LOAD
 

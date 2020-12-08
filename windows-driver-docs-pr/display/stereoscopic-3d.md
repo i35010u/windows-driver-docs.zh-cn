@@ -1,15 +1,14 @@
 ---
 title: 立体 3D
 description: Windows 8 为 stereoscopic 3-d 方案 (DDI) 平台提供了一致的 API 和设备驱动程序接口，例如游戏和视频播放。
-ms.assetid: 2F83E5C6-E333-4BF6-A133-C65A23DAEF62
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0afce64884c6b2454a01f4cc133e5bc2626d1d2f
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 943eb993891d7e87845ea8d0d78b9e0073d383c2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107210"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96792933"
 ---
 # <a name="stereoscopic-3d"></a>立体 3D
 
@@ -54,7 +53,7 @@ Windows 8 为 stereoscopic 3-d 方案 (DDI) 平台提供了一致的 API 和设�
 
 " **启用立体声** 设置" 是具有以下状态的复选框：
 
--   "不可用" (灰显或不可见) ：在不**能使用**立体声显示的系统上显示。
+-   "不可用" (灰显或不可见) ：在不 **能使用** 立体声显示的系统上显示。
 -   设置为 " **已启用** " (选中) ：这是能够在立体声显示器上呈现的系统上的默认设置，表示立体声点播。 默认情况下，桌面窗口管理器 (DWM) 为 mono 模式。 仅当用户 (按需) 启动一个立体声应用时，DWM 才切换为立体声模式。 请注意，在选中此复选框时，DWM 可以为 mono 或立体声模式。
 -   设置为 **已禁用** (取消选中) ：如果用户取消选中此设置，则 DWM 处于 mono 模式。 在这种情况下，立体声应用程序以 mono 模式显示。
 
@@ -79,8 +78,8 @@ Windows 8 为 stereoscopic 3-d 方案 (DDI) 平台提供了一致的 API 和设�
 
 -   [*BltDXGI*](/windows-hardware/drivers/ddi/dxgiddi/ns-dxgiddi-dxgi_ddi_base_functions)
 -   [*Blt1DXGI*](/windows-hardware/drivers/ddi/dxgiddi/ns-dxgiddi-dxgi1_2_ddi_base_functions)
--   [*CreateResource (D3D10) *](/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_createresource)
--   [*CreateResource (D3D11) *](/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_createresource)
+-   [*CreateResource (D3D10)*](/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_createresource)
+-   [*CreateResource (D3D11)*](/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_createresource)
 -   [*RotateResourceIdentitiesDXGI*](/windows-hardware/drivers/ddi/dxgiddi/ns-dxgiddi-dxgi_ddi_base_functions)
 -   [**D3DDDI \_ ALLOCATIONINFO**](/windows-hardware/drivers/ddi/d3dukmdt/ns-d3dukmdt-_d3dddi_allocationinfo)
 -   [**D3D10DDIARG \_ CREATERESOURCE**](/windows-hardware/drivers/ddi/d3d10umddi/ns-d3d10umddi-d3d10ddiarg_createresource)

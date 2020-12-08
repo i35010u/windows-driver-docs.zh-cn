@@ -1,15 +1,14 @@
 ---
 title: 地址和地址范围语法
 description: 地址和地址范围语法
-ms.assetid: 3d4f41f1-07ec-484d-a748-27fbbb9bd0b2
 ms.date: 07/24/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 65fa76dd1e92c8e508f2af6ea5694fad637b1e73
-ms.sourcegitcommit: 9102e34c3322d8697dbb6f9a1d78879147a73373
+ms.openlocfilehash: b6b0280a81d298901ee838cda5205379a1f33e04
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87264466"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96793321"
 ---
 # <a name="address-and-address-range-syntax"></a>地址和地址范围语法
 
@@ -19,7 +18,7 @@ ms.locfileid: "87264466"
 
 在调试器中指定地址的方法有多种。
 
-地址始终为*虚拟地址*，但文档特别指出了另一种类型的地址。 在用户模式下，调试器根据[当前进程](controlling-processes-and-threads.md)的页面目录解释虚拟地址。 在内核模式下，调试器根据[进程上下文](changing-contexts.md#process-context)指定的进程的页目录解释虚拟地址。 还可以直接设置*用户模式地址上下文*。 有关用户模式地址上下文的详细信息，请参阅[**context （设置用户模式地址上下文）**](-context--set-user-mode-address-context-.md)。
+地址始终为 *虚拟地址*，但文档特别指出了另一种类型的地址。 在用户模式下，调试器根据 [当前进程](controlling-processes-and-threads.md)的页面目录解释虚拟地址。 在内核模式下，调试器根据 [进程上下文](changing-contexts.md#process-context) 指定的进程的页目录解释虚拟地址。 还可以直接设置 *用户模式地址上下文*。 有关用户模式地址上下文的详细信息，请参阅 [**。上下文 (将 User-Mode 地址上下文) 集**](-context--set-user-mode-address-context-.md)。
 
 ### <a name="span-idaddress_modes_and_segment_supportspanspan-idaddress_modes_and_segment_supportspanaddress-modes-and-segment-support"></a><span id="address_modes_and_segment_support"></span><span id="ADDRESS_MODES_AND_SEGMENT_SUPPORT"></span>地址模式和段支持
 
@@ -34,7 +33,7 @@ ms.locfileid: "87264466"
 <thead>
 <tr class="header">
 <th align="left">前缀</th>
-<th align="left">名称</th>
+<th align="left">“属性”</th>
 <th align="left">地址类型</th>
 </tr>
 </thead>
@@ -42,7 +41,7 @@ ms.locfileid: "87264466"
 <tr class="odd">
 <td align="left"><p>%</p></td>
 <td align="left"><p>公寓</p></td>
-<td align="left"><p>32位地址（也是16位选择器，它指向32位段）和64位系统上的64位地址。</p></td>
+<td align="left"><p>32位地址 (也是16位选择器，它指向64位系统上的32位段) 和64位地址。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>&</p></td>
@@ -93,20 +92,20 @@ Address 参数用于指定变量和函数的位置。 下表说明了可在 CDB 
 </tr>
 <tr class="even">
 <td align="left"><p><strong>%</strong>[[offset]]</p></td>
-<td align="left"><p>虚拟内存空间中的绝对地址（32位或64位）。 基于 x86 和基于 x64 的。</p></td>
+<td align="left"><p>虚拟内存空间中 (32 位或64位) 的绝对地址。 基于 x86 和基于 x64 的。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>名称 [[ <strong>+</strong> | <strong>−</strong> ]] 偏移量</p></td>
-<td align="left"><p>平面32位或64位地址。 <em>name</em>可以是任何符号。 <em>offset</em>指定偏移量。 此偏移量可以是其前缀所指示的地址模式。 无前缀指定默认的模式地址。 您可以将偏移量指定为正（+）或负（−）值。</p></td>
+<td align="left"><p>平面32位或64位地址。 <em>name</em> 可以是任何符号。 <em>offset</em> 指定偏移量。 此偏移量可以是其前缀所指示的地址模式。 无前缀指定默认的模式地址。 可以将偏移量指定为正值 (+) 或负数 (−) 值。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-使用[**dg （显示选择器）**](dg--display-selector-.md)命令查看段描述符信息。
+使用 [**dg (显示选择器)**](dg--display-selector-.md) 命令查看段描述符信息。
 
-在 MASM 表达式中，还可以使用**poi**运算符来取消引用任何指针。 例如，如果地址0x00123456 处的指针指向 address location 0x00420000，则以下两个命令是等效的。
+在 MASM 表达式中，还可以使用 **poi** 运算符来取消引用任何指针。 例如，如果地址0x00123456 处的指针指向 address location 0x00420000，则以下两个命令是等效的。
 
 ```dbgcmd
 0:000> dd 420000 
@@ -119,9 +118,9 @@ Address 参数用于指定变量和函数的位置。 下表说明了可在 CDB 
 0:000> dd *( (long*) 0x123456 ) 
 ```
 
-一些[伪寄存器](pseudo-register-syntax.md)还保存公用地址，如当前程序计数器位置。
+一些 [伪寄存器](pseudo-register-syntax.md) 还保存公用地址，如当前程序计数器位置。
 
-还可以通过指定原始源文件名和行号来指示应用程序中的地址。 有关如何指定此信息的详细信息，请参阅[源行语法](source-line-syntax.md)。
+还可以通过指定原始源文件名和行号来指示应用程序中的地址。 有关如何指定此信息的详细信息，请参阅 [源行语法](source-line-syntax.md)。
 
 ### <a name="span-idaddress_rangesspanspan-idaddress_rangesspanaddress-ranges"></a><span id="address_ranges"></span><span id="ADDRESS_RANGES"></span>地址范围
 
@@ -133,27 +132,27 @@ Address 参数用于指定变量和函数的位置。 下表说明了可在 CDB 
 0x00001000  0x00001007
 ```
 
-若要通过地址和对象计数指定地址范围，请指定 address 参数、字母 L （大写或小写）和值参数。 地址指定开始地址。 值指定要检查或显示的对象数。 对象的大小取决于命令。 例如，如果对象大小为1字节，则以下示例是从地址0x00001000 开始的8个字节的范围。
+若要通过地址和对象计数指定地址范围，请指定 address 参数、字母 L (大写或小写) ，以及值参数。 地址指定开始地址。 值指定要检查或显示的对象数。 对象的大小取决于命令。 例如，如果对象大小为1字节，则以下示例是从地址0x00001000 开始的8个字节的范围。
 
 ```dbgcmd
 0x00001000  L8
 ```
 
-但是，如果对象大小是一个双字（32位或4个字节），则以下两个范围分别给出8个字节的范围。
+但是，如果对象大小是双字 (32 位或4个字节) ，则以下两个范围分别给出8个字节的范围。
 
 ```dbgcmd
 0x00001000  0x00001007
 0x00001000  L2
 ```
 
-还可以通过两种方法来指定值（**L * * * 大小*范围说明符）：
+可以通过两种其他方法指定 **L**_大小_ 范围说明符 (的值) ：
 
--   **L?** *大小*（带问号）表示与 **l * * 大小*相同，只是**l？** *Size*删除调试器的自动范围限制。 通常，范围限制为 256 MB，因为较大的范围是版式错误。 如果要指定大于 256 MB 的范围，则必须使用**L？** *大小*语法。
+-   **L?** 使用问号 (*大小*) 表示与 **l**_大小_ 相同，只不过 **l？** *Size* 删除调试器的自动范围限制。 通常，范围限制为 256 MB，因为较大的范围是版式错误。 如果要指定大于 256 MB 的范围，则必须使用 **L？** *大小* 语法。
 
--   **L** *大小*（带有连字符）指定以给定地址结束的*长度范围*。 例如， **80000000 L20**指定从0X80000000 到0x8000001F 的范围， **80000000 L-20**指定从0x7FFFFFE0 到0x7fffffff 的范围。
+-   **左** *(带有* 连字符) 指定以给定地址结束 *的长度范围* 。 例如， **80000000 L20** 指定从0X80000000 到0x8000001F 的范围， **80000000 L-20** 指定从0x7FFFFFE0 到0x7fffffff 的范围。
 
 要求地址范围的某些命令接受单个地址作为参数。 在这种情况下，该命令使用某些默认对象计数来计算范围的大小。 通常，地址范围为最后一个参数的命令将允许此语法。 有关每个命令的确切语法和默认范围大小，请参阅每个命令的参考主题。
 
 ## <a name="see-also"></a>另请参阅
 
-若要显示有关内存的信息，请使用[！ address](-address.md)命令。 若要搜索内存，请使用[s （搜索内存）](s--search-memory-.md)命令。 若要显示内存的内容，请使用[d，da，db，dc，dd，dd，df，dp，dq，du，dw （显示内存）](d--da--db--dc--dd--dd--df--dp--dq--du--dw--dw--dyb--dyd--display-memor.md)命令。 有关如何使用内存窗口查看和编辑内存的信息，请参阅[使用内存窗口](memory-window.md)。
+若要显示有关内存的信息，请使用 [！ address](-address.md) 命令。 若要搜索内存，请使用 [ (Search memory) ](s--search-memory-.md) 命令。 若要显示内存内容，请使用 [d，da，db，dc，dd，dd，df，dp，dq，du，dw (显示内存) ](d--da--db--dc--dd--dd--df--dp--dq--du--dw--dw--dyb--dyd--display-memor.md) 命令。 有关如何使用内存窗口查看和编辑内存的信息，请参阅 [使用内存窗口](memory-window.md)。

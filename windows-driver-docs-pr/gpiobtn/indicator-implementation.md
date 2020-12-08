@@ -1,15 +1,14 @@
 ---
 title: 指示器实现
 description: 本主题介绍指标实现。
-ms.assetid: 60BCE8C7-416E-4D5B-9B32-9B398CEA6A8A
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 26d2b4453de14da59d7ae3b4e79e0b6058c89ac7
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 48960383ad1e3f602d6070a10faf4f94c7c6380c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91734087"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96794983"
 ---
 # <a name="indicator-implementation"></a>指示器实现
 

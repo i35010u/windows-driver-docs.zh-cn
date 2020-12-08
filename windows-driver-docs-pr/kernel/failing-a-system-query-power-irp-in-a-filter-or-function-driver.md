@@ -1,7 +1,6 @@
 ---
 title: 使筛选器或函数驱动程序中的系统 Query-Power IRP 失败
 description: 使筛选器或函数驱动程序中的系统 Query-Power IRP 失败
-ms.assetid: 7c4ceb8e-94f4-4ff7-9d45-1094e9a861fd
 keywords:
 - 查询-power Irp WDK 电源管理
 - 筛选器驱动程序 WDK 电源管理
@@ -9,12 +8,12 @@ keywords:
 - 查询失败-power Irp
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ffab36e8850a8c1b52062c5e2469ff9cc5685bcf
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 33cff100f729f3bfda194a4d01b16822c074ee60
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89188877"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96793561"
 ---
 # <a name="failing-a-system-query-power-irp-in-a-filter-or-function-driver"></a>使筛选器或函数驱动程序中的系统 Query-Power IRP 失败
 

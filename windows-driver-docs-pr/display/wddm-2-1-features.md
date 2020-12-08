@@ -1,15 +1,14 @@
 ---
 title: WDDM 2.1 功能
 description: 本部分提供有关 Windows 显示驱动程序模型 (WDDM) 版本2.1 中的新功能和增强功能的详细信息。
-ms.assetid: 7dc0d0ad-98da-4bd6-bed9-f70525b682bc
 ms.date: 01/10/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 5e0f1cbb40ee9f0bb364dc48b301b1da91bcc175
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: a556820f7545b911e60bdb8e8124c6b7ff474b61
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104526"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96793829"
 ---
 # <a name="wddm-21-features"></a>WDDM 2.1 功能
 
@@ -20,7 +19,7 @@ WDDM 2.1 本身是可选的。 如果实现，则它是必需的和可选的驱�
 
 **WDDM 2.1 要求表**
 
-| Feature | 适用范围 |
+| 功能 | 适用范围 |
 | --- | --- |
 | 提供和回收改进 | 必需 |
 | 视频内存管理 | 可选 |
@@ -80,7 +79,7 @@ Windows 10 周年纪念版包含使用 Windows 游戏栏和 GameDVR 全屏游戏
 
 ## <a name="driver-store-and-side-by-side-driver-installation"></a>驱动程序存储区和并行驱动程序安装
 
-WDDM 2.1 介绍了如何通过 *驱动程序存储区*安装图形驱动程序。 这种安装图形驱动程序的机制可以提高 Windows 更新的驱动程序更新的复原能力，消除驱动程序文件版本不匹配导致系统 instabilities 和用户启动的重新启动。 每个后续的驱动程序更新将从驱动程序存储区中的唯一位置直接运行 (即 `System32\DriverStore\FileRepository\[…]`) ，从而避免驱动程序文件覆盖和不匹配。
+WDDM 2.1 介绍了如何通过 *驱动程序存储区* 安装图形驱动程序。 这种安装图形驱动程序的机制可以提高 Windows 更新的驱动程序更新的复原能力，消除驱动程序文件版本不匹配导致系统 instabilities 和用户启动的重新启动。 每个后续的驱动程序更新将从驱动程序存储区中的唯一位置直接运行 (即 `System32\DriverStore\FileRepository\[…]`) ，从而避免驱动程序文件覆盖和不匹配。
 
 驱动程序存储区的功能实现需要更改图形驱动程序 INF 文件，以确保将驱动程序文件复制到唯一的驱动程序存储库中。 本文档的 " [Inf 要求](#graphics-inf-requirements) " 部分更详细地介绍了 inf 更改。
 
@@ -92,7 +91,7 @@ WDDM 2.1 介绍了如何将 GPU 着色器编译器堆栈从 DirectX 字节代码
 
 * 更高性能的编译器： 
 
-    * 启用*运行时着色器性能*以提供改进的性能。 
+    * 启用 *运行时着色器性能* 以提供改进的性能。 
     * DXIL 提供了一组新的内部函数，使你能够在 Gpu 中的 SIMD 处理器通道之间共享数据。
 
 * 工作流灵活性-DXIL 使开发人员能够控制其自己的自定义工具和优化传递，并选择在生成时与运行时应用的编译步骤。
@@ -170,7 +169,7 @@ KMD 中的 DDI 接口版本如下所示：
 
 ## <a name="graphics-inf-requirements"></a>图形 INF 要求
 
-与 WDDM 2.0 或以前的驱动程序相比，WDDM 2.1 图形驱动程序的 INF 要求不同。 它们是：
+与 WDDM 2.0 或以前的驱动程序相比，WDDM 2.1 图形驱动程序的 INF 要求不同。 这些是：
 
 1. WDDM 2.1 的功能分数必须与 WDDM 2.0 图形驱动程序 (D1) 的功能分数完全相同。
 
@@ -301,7 +300,7 @@ D3D9 DDI|14
 #### <a name="examples"></a>示例
 
 > [!NOTE]
-> 不需要用前导零填充数字，也就是说，123不需要为 AAAAA-BBBBB-CCCCC-DDDDDD-EEEEEE 或 DDDDD 字段表示为00123。 在以前版本的 Windows 操作系统中，最后两个字段的数量为4位，即 CCCC。DDDD. 因此，适用于 Windows 10 和 WDDM 2.0 之前的驱动程序版本的示例只有4位数。
+> 不需要用前导零填充数字，也就是说，123不需要为 AAAAA-BBBBB-CCCCC-DDDDDD-EEEEEE 或 DDDDD 字段表示为00123。 在以前版本的 Windows 操作系统中，最后两个字段的数量为4位，即 CCCC。 因此，适用于 Windows 10 和 WDDM 2.0 之前的驱动程序版本的示例只有4位数。
 
 * Windows Vista WDDM 1.0：
 

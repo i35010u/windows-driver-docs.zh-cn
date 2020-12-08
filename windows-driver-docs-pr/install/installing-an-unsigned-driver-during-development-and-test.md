@@ -1,7 +1,6 @@
 ---
 title: 在开发和测试期间安装未签名驱动程序
 description: 在开发和测试期间安装未签名驱动程序
-ms.assetid: b7b08d5a-40cf-498f-8645-6b02d803f62f
 keywords:
 - 驱动程序签名 WDK，未签名的驱动程序
 - 对驱动程序进行签名 WDK，未签名的驱动程序
@@ -14,12 +13,12 @@ keywords:
 - F8 密钥 WDK drvier 签名
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b964a20d5e172ba7565e8bfe54927904abc7e148
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: d719ad760ebd699f1719819bcf3eea3409682b8d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89096011"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96794895"
 ---
 # <a name="installing-an-unsigned-driver-during-development-and-test"></a>在开发和测试期间安装未签名驱动程序
 
@@ -38,9 +37,9 @@ Windows Vista 和更高版本的 Windows 支持 F8 高级启动选项--"禁用�
 bcdedit -debug on
 ```
 
-若要使用 BCDEdit，用户必须是系统上 Administrators 组的成员，并从提升的命令提示符运行该命令。 若要打开提升的命令提示符窗口，请创建 *Cmd.exe*的桌面快捷方式，选择并按住 (或右键单击该快捷方式) ，然后选择 " **以管理员身份运行**"。
+若要使用 BCDEdit，用户必须是系统上 Administrators 组的成员，并从提升的命令提示符运行该命令。 若要打开提升的命令提示符窗口，请创建 *Cmd.exe* 的桌面快捷方式，选择并按住 (或右键单击该快捷方式) ，然后选择 " **以管理员身份运行**"。
 
-### <a name="enforcing-kernel-mode-signature-verification-in-kernel-debugging-mode"></a><a href="" id="enforcing-kernel-mode-signature-verification-in-kernel-debugging-mode"></a> 在内核调试模式下强制执行内核模式签名验证
+### <a name="enforcing-kernel-mode-signature-verification-in-kernel-debugging-mode"></a><a href="" id="enforcing-kernel-mode-signature-verification-in-kernel-debugging-mode"></a> 在内核调试模式下强制 Kernel-Mode 签名验证
 
 但是，在某些情况下，开发人员可能需要附加内核调试器，还需要维护加载时签名的执行。 例如，当驱动程序堆栈具有未签名的驱动程序 (例如无法加载的筛选器驱动程序) 时，可能会使整个堆栈无效。 由于附加调试器允许加载未签名的驱动程序，因此，一旦附加调试器，问题就会消失。 调试此类问题可能比较困难。
 
@@ -60,7 +59,7 @@ HKLM\SYSTEM\CurrentControlSet\Control\CI\DebugFlags
 
 如果注册表中不存在此注册表值，或者其值不基于前面所述的标志，则内核将始终在内核调试模式下加载驱动程序，而不管驱动程序是否已签名。
 
-**注意**   默认情况下，注册表中不存在此注册表值。 必须创建值才能调试内核模式签名验证。
+**注意**  默认情况下，注册表中不存在此注册表值。 必须创建值才能调试内核模式签名验证。
 
  
 

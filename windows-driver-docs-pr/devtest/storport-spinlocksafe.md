@@ -1,7 +1,6 @@
 ---
 title: 'SpinLockSafe 规则 (storport) '
 description: 此规则验证持有自旋锁时不调用 IoStartNextPacket 和 IoCompleteRequest 例程。
-ms.assetid: 12D36178-C00D-44A7-9DA0-E0663DF1FFDC
 ms.date: 05/21/2018
 keywords:
 - 'SpinLockSafe 规则 (storport) '
@@ -12,12 +11,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 1a1d7143791fc6ce6d880e101f1d67468b9a9063
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: b572d25ba766621d8b9d9cb2046667f5e7862a28
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107052"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96793963"
 ---
 # <a name="spinlocksafe-rule-storport"></a>SpinLockSafe 规则 (storport) 
 

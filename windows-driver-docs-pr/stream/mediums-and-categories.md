@@ -1,7 +1,6 @@
 ---
 title: 媒体和类别
 description: 媒体和类别
-ms.assetid: 2bc83ce6-7f79-44e7-a0fb-7b9f56771730
 keywords:
 - 视频捕获 WDK AVStream，媒体
 - 捕获视频 WDK AVStream，媒体
@@ -13,12 +12,12 @@ keywords:
 - 固定连接 WDK 视频捕获
 ms.date: 06/18/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 3b7d032528b854d3a8a9d63e4f9d221e469853c6
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: d5f170a05e8ca098a5d79d2d19f97b5058f62e29
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89188349"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96793337"
 ---
 # <a name="mediums-and-categories"></a>媒体和类别
 

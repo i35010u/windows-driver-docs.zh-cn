@@ -1,15 +1,14 @@
 ---
 title: 通过应用程序安装设备元数据包
 description: 通过应用程序安装设备元数据包
-ms.assetid: 3fec5938-b81b-4efe-8bcd-b2ef4b1c4b8b
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 74df4280c67346fc0da6d42144735c3195c7a896
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: dbee7b3857aa78fec83ec730c67e38c4fb499455
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91733696"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96794871"
 ---
 # <a name="installing-device-metadata-packages-through-an-application"></a>通过应用程序安装设备元数据包
 
@@ -30,9 +29,9 @@ ms.locfileid: "91733696"
 
     例如，如果包的区域设置为 EN-US，则当子目录当前不存在时，应用程序必须在设备元数据存储路径下创建 *en-us* 子目录。
 
-2.  将设备元数据包复制到[设备元数据存储](device-metadata-store.md)中的相应* &lt; 区域设置 &gt; *子目录。
+2.  将设备元数据包复制到 [设备元数据存储](device-metadata-store.md)中的相应 *&lt; 区域设置 &gt;* 子目录。
 
-    **注意** 如果使用[CopyFile]( https://go.microsoft.com/fwlink/p/?linkid=189596)函数复制设备元数据包，请指定完整路径名称，其中包括相应的* &lt; 区域设置 &gt; *子目录。 通过执行此操作， [CopyFile]( https://go.microsoft.com/fwlink/p/?linkid=189596) 将为包创建关联的子目录（如果它们不存在于本地计算机上）。
+    **注意** 如果使用 [CopyFile]( https://go.microsoft.com/fwlink/p/?linkid=189596)函数复制设备元数据包，请指定完整路径名称，其中包括相应的 *&lt; 区域设置 &gt;* 子目录。 通过执行此操作， [CopyFile]( https://go.microsoft.com/fwlink/p/?linkid=189596) 将为包创建关联的子目录（如果它们不存在于本地计算机上）。
 
 
 

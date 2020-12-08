@@ -1,7 +1,6 @@
 ---
 title: C28143
 description: 警告 C28143 调用也的调度例程还必须返回 STATUS_PENDING。
-ms.assetid: 3b9e6c4f-73d1-4abc-9495-85bb56e2532b
 keywords:
 - 列出用于驱动程序的 WDK PREfast 的警告
 - 为驱动程序列出的 WDK PREfast 的错误
@@ -9,12 +8,12 @@ ms.date: 04/20/2017
 ms.localizationpriority: medium
 f1_keywords:
 - C28143
-ms.openlocfilehash: c4af3096a51668c5c7c0c5bc8cdd327226ad2d7b
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 8857221aa58939a22d39d3fbb8732baf8b5915a2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89382593"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96793201"
 ---
 # <a name="c28143"></a>C28143
 

@@ -1,7 +1,6 @@
 ---
 title: IRP_MJ_CREATE_MAILSLOT
 description: IRP_MJ_CREATE_MAILSLOT
-ms.assetid: 6cd04fd0-ee36-421f-8877-f409aba31b17
 keywords:
 - IRP_MJ_CREATE_MAILSLOT 文件系统驱动程序
 topic_type:
@@ -12,12 +11,12 @@ api_type:
 - NA
 ms.date: 11/06/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 9afa82d2e0723019a29a3f94b1336e17f1a69003
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: cc2377236e654b40364fbf005dbf367e11547b0a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89065558"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96793789"
 ---
 # <a name="irp_mj_create_mailslot"></a>IRP_MJ_CREATE_MAILSLOT
 
@@ -46,7 +45,7 @@ IRP_MJ_CREATE_MAILSLOT 的处理与 [IRP_MJ_CREATE](irp-mj-create.md)几乎相�
 
 通常，旧筛选器驱动程序不应返回 **STATUS_PENDING** 来响应 **IRP_MJ_CREATE_MAILSLOT**。 但是，如果较低级别的驱动程序返回 **STATUS_PENDING**，则旧筛选器驱动程序应将此状态值向上传递到驱动程序链。
 
-## <a name="parameters"></a>parameters
+## <a name="parameters"></a>参数
 
 文件系统或旧筛选器驱动程序使用给定的 IRP 调用 [**IoGetCurrentIrpStackLocation**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetcurrentirpstacklocation) ，以获取指向其自己的 irp 中的 [**堆栈位置**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_stack_location) 的指针。 在下面的参数中， *irp* 指向 irp，并 *IrpSp* 指向 IO_STACK_LOCATION。 驱动程序可以使用 IRP 的下列成员中设置的信息，并使用 IRP 堆栈位置来处理创建请求：
 
@@ -69,23 +68,23 @@ IRP_MJ_CREATE_MAILSLOT 的处理与 [IRP_MJ_CREATE](irp-mj-create.md)几乎相�
 
 - *IrpSp->CreateMailslot。 SecurityContext->AccessState* 是一个指向 [ACCESS_STATE](/windows-hardware/drivers/ddi/wdm/ns-wdm-_access_state) 结构的指针，该结构包含对象的主题上下文、授予访问类型和剩余所需的访问类型。
 
-- *IrpSp->CreateMailslot. SecurityContext->DesiredAccess* 是一个 ACCESS_MASK 结构，该结构指定为 mailslot 请求的访问权限。 有关详细信息，请参阅[**IoCreateFileSpecifyDeviceObjectHint**](/windows-hardware/drivers/ddi/ntddk/nf-ntddk-iocreatefilespecifydeviceobjecthint)的*DesiredAccess*参数说明。
+- *IrpSp->CreateMailslot. SecurityContext->DesiredAccess* 是一个 ACCESS_MASK 结构，该结构指定为 mailslot 请求的访问权限。 有关详细信息，请参阅 [**IoCreateFileSpecifyDeviceObjectHint**](/windows-hardware/drivers/ddi/ntddk/nf-ntddk-iocreatefilespecifydeviceobjecthint)的 *DesiredAccess* 参数说明。
 
 - *IrpSp->参数. CreateMailslot* 是标志的位掩码，用于指定创建或打开 mailslot 时要应用的选项，以及当 mailslot 已经存在时要执行的操作。
 
-  此参数的高8位对应于[**IoCreateFileSpecifyDeviceObjectHint**](/windows-hardware/drivers/ddi/ntddk/nf-ntddk-iocreatefilespecifydeviceobjecthint)的*处置*参数。
+  此参数的高8位对应于 [**IoCreateFileSpecifyDeviceObjectHint**](/windows-hardware/drivers/ddi/ntddk/nf-ntddk-iocreatefilespecifydeviceobjecthint)的 *处置* 参数。
 
-  此成员的低24位对应于[**IoCreateFileSpecifyDeviceObjectHint**](/windows-hardware/drivers/ddi/ntddk/nf-ntddk-iocreatefilespecifydeviceobjecthint)的*CreateOptions*参数。
+  此成员的低24位对应于 [**IoCreateFileSpecifyDeviceObjectHint**](/windows-hardware/drivers/ddi/ntddk/nf-ntddk-iocreatefilespecifydeviceobjecthint)的 *CreateOptions* 参数。
 
-- *IrpSp->参数. CreateMailslot. ShareAccess* 是为 mailslot 请求的共享访问权限位掩码。 如果此成员为零，则请求进行独占访问。 有关详细信息，请参阅[**IoCreateFileSpecifyDeviceObjectHint**](/windows-hardware/drivers/ddi/ntddk/nf-ntddk-iocreatefilespecifydeviceobjecthint)的*ShareAccess*参数说明。
+- *IrpSp->参数. CreateMailslot. ShareAccess* 是为 mailslot 请求的共享访问权限位掩码。 如果此成员为零，则请求进行独占访问。 有关详细信息，请参阅 [**IoCreateFileSpecifyDeviceObjectHint**](/windows-hardware/drivers/ddi/ntddk/nf-ntddk-iocreatefilespecifydeviceobjecthint)的 *ShareAccess* 参数说明。
 
 - *IrpSp->参数. CreateMailslot. 参数* 是指向 [MAILSLOT_CREATE_PARAMETERS](/windows-hardware/drivers/ddi/wdm/ns-wdm-_mailslot_create_parameters) 结构的指针，该结构包含创建 MAILSLOT 时的 CREATE 参数。
 
-- *IrpSp->FileObject* 是一个指针，指向 I/o 管理器创建的文件对象，用于表示要创建或打开的 mailslot。 当文件系统处理 IRP_MJ_CREATE_MAILSLOT 请求时，它会将此文件对象中的 **FsContext** 和可能的 **FsContext2** 字段设置为特定于文件系统的值。 因此，在文件系统处理创建请求之前，不能将 **FsContext** 和 **FsContext2** 字段的值视为有效。 有关详细信息，请参阅 [文件流、流上下文和每个流的上下文](./file-streams--stream-contexts--and-per-stream-contexts.md)。
+- *IrpSp->FileObject* 是一个指针，指向 I/o 管理器创建的文件对象，用于表示要创建或打开的 mailslot。 当文件系统处理 IRP_MJ_CREATE_MAILSLOT 请求时，它会将此文件对象中的 **FsContext** 和可能的 **FsContext2** 字段设置为特定于文件系统的值。 因此，在文件系统处理创建请求之前，不能将 **FsContext** 和 **FsContext2** 字段的值视为有效。 有关详细信息，请参阅 [文件流、流上下文和 Per-Stream 上下文](./file-streams--stream-contexts--and-per-stream-contexts.md)。
 
   [**IoCancelFileOpen**](/windows-hardware/drivers/ddi/ntddk/nf-ntddk-iocancelfileopen) (和 [**FltCancelFileOpen**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltcancelfileopen)) 在文件对象的 " **标志** " 字段中设置 FO_FILE_OPEN_CANCELLED 标志。 设置此标志指示 IRP_MJ_CREATE_MAILSLOT 请求已取消，并将为此文件对象发出 [**IRP_MJ_CLOSE**](irp-mj-close.md) 请求。 一旦取消创建请求，就无法重新颁发。
 
-  *>IrpSp FileObject*参数包含指向**RelatedFileObject**字段的指针，该字段也是 FILE_OBJECT 的结构。 FILE_OBJECT 结构的 " **RelatedFileObject** " 字段用于指示给定的 mailslot 是相对于已打开的文件对象打开的。 这通常表示相对文件是一个目录，但基于流的文件可能会相对于现有的文件流打开。 FILE_OBJECT 结构的 **RelatedFileObject** 字段仅在处理 IRP_MJ_CREATE_MAILSLOT 期间有效。
+  *>IrpSp FileObject* 参数包含指向 **RelatedFileObject** 字段的指针，该字段也是 FILE_OBJECT 的结构。 FILE_OBJECT 结构的 " **RelatedFileObject** " 字段用于指示给定的 mailslot 是相对于已打开的文件对象打开的。 这通常表示相对文件是一个目录，但基于流的文件可能会相对于现有的文件流打开。 FILE_OBJECT 结构的 **RelatedFileObject** 字段仅在处理 IRP_MJ_CREATE_MAILSLOT 期间有效。
 
 ## <a name="see-also"></a>请参阅
 

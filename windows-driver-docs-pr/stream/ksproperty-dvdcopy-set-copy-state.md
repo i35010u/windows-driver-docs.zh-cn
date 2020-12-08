@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ DVDCOPY \_ 设置 \_ 复制 \_ 状态
 description: KSPROPERTY \_ DVDCOPY \_ 设置 \_ 复制 \_ 状态属性设置 DVD 解码器流的复制状态。 此属性可用于实现。
-ms.assetid: f4e46d79-c70b-413a-9702-a73d3776ee2c
 keywords:
 - KSPROPERTY_DVDCOPY_SET_COPY_STATE 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c63e944006fd8932bcd539f59824082024b7a1b7
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 1c27efdacdd490ace92ab3db669edc1da4433e2d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107260"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96795307"
 ---
 # <a name="ksproperty_dvdcopy_set_copy_state"></a>KSPROPERTY \_ DVDCOPY \_ 设置 \_ 复制 \_ 状态
 
@@ -66,11 +65,11 @@ KSPROPERTY \_ DVDCOPY \_ 设置 \_ 复制 \_ 状态属性设置 DVD 解码器流
 <a name="remarks"></a>备注
 -------
 
-此属性指示此 pin 是否需要 CSS 身份验证。 如果未实现该属性，则假定默认值为 ks [** \_ DVDCOPYSTATE**](/windows-hardware/drivers/ddi/ksmedia/ne-ksmedia-ks_dvdcopystate)枚举中的**ks \_ DVDCOPYSTATE \_ AUTHENTICATION \_ 必需**值。
+此属性指示此 pin 是否需要 CSS 身份验证。 如果未实现该属性，则假定默认值为 ks [**\_ DVDCOPYSTATE**](/windows-hardware/drivers/ddi/ksmedia/ne-ksmedia-ks_dvdcopystate)枚举中的 **ks \_ DVDCOPYSTATE \_ AUTHENTICATION \_ 必需** 值。
 
-此属性的主要用途是用于支持具有相同 decrypter 的多个 pin 的解码器。 例如，如果一个筛选器同时提供了子画面和视频解码，则只需为这两个 pin 中的一个提供交换密钥。 如果筛选器将返回某个 pin ** \_ \_ \_ 不 \_ 需要 ks DVDCOPYSTATE authentication** ，则必须始终在对其发出属性的第一个 pin 上返回 **ks \_ DVDCOPYSTATE \_ authentication \_ ** 。
+此属性的主要用途是用于支持具有相同 decrypter 的多个 pin 的解码器。 例如，如果一个筛选器同时提供了子画面和视频解码，则只需为这两个 pin 中的一个提供交换密钥。 如果筛选器将返回某个 pin **\_ \_ \_ 不 \_ 需要 ks DVDCOPYSTATE authentication** ，则必须始终在对其发出属性的第一个 pin 上返回 **ks \_ DVDCOPYSTATE \_ authentication \_** 。
 
-当此属性作为 **Get** 调用发出时，筛选器可以使用 ** \_ \_ \_ 所需的 ks DVDCOPYSTATE authentication** 或 ks \_ DVDCOPYSTATE authentication 进行响应 \_ \_ \_ 。
+当此属性作为 **Get** 调用发出时，筛选器可以使用 **\_ \_ \_ 所需的 ks DVDCOPYSTATE authentication** 或 ks \_ DVDCOPYSTATE authentication 进行响应 \_ \_ \_ 。
 
 如果此属性作为 **集** 调用发出，则这是一个信息性调用，由硬件解码器用来指示正在输入版权保护协商的哪个阶段。 解码器可以 \_ 通过以下方式之一来保持设置状态，直到收到正确的位，指出需要新的 CSS 密钥：
 

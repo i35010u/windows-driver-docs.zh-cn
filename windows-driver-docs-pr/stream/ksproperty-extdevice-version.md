@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ EXTDEVICE \_ 版本
 description: KSPROPERTY \_ EXTDEVICE \_ version 属性检索外部设备的版本。
-ms.assetid: cb5133c9-b723-4d28-b591-8c65a8cc52a5
 keywords:
 - KSPROPERTY_EXTDEVICE_VERSION 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3b131b1dfb10a22e02bee7d7909aa308d62fb607
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 020bafc3106fa06f7736a2abd086065a970c4eaf
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106702"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96795299"
 ---
 # <a name="ksproperty_extdevice_version"></a>KSPROPERTY \_ EXTDEVICE \_ 版本
 
@@ -84,7 +83,7 @@ KSPROPERTY **pawchString** \_ EXTDEVICE S 结构的 pawchString 成员 \_ 描述
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSPROPERTY**](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)

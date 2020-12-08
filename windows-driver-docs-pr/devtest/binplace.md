@@ -1,26 +1,25 @@
 ---
 title: BinPlace
 description: BinPlace
-ms.assetid: ba5a9242-d766-459f-9152-63f7f764f82b
 keywords:
 - 构建驱动程序 WDK，BinPlace
-- 构建 WDK、 BinPlace 的驱动程序
+- 驱动程序构建 WDK，BinPlace
 - 生成示例 WDK，BinPlace
-- 构建 WDK、 BinPlace 示例
+- 示例生成 WDK，BinPlace
 - 构建软件组件 WDK，BinPlace
-- 构建 WDK、 BinPlace 的软件组件
+- 构建 WDK、BinPlace 的软件组件
 - BinPlace WDK
 - 符号文件 WDK BinPlace
-- BinPlace WDK，有关 BinPlace
+- BinPlace WDK，关于 BinPlace
 - 文件 WDK BinPlace
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a3d5e6ea423ed1a53d45482381041231e784a8c8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8979f04018d0718fd71331cddff4c665a5d000ab
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63378443"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96793997"
 ---
 # <a name="binplace"></a>BinPlace
 
@@ -28,15 +27,15 @@ ms.locfileid: "63378443"
 ## <span id="ddk_binplace_tools"></span><span id="DDK_BINPLACE_TOOLS"></span>
 
 
-BinPlace 是用于管理大型代码项目的工具。 它可以移动的可执行文件、 符号文件和任何其他类型的文件。 它还可以从可执行文件中提取的符号，并可以从符号文件中删除私有符号。
+BinPlace 是用于管理大型代码项目的工具。 它可以移动可执行文件、符号文件和任何其他类型的文件。 它还可以从可执行文件提取符号，并可以从符号文件中删除私有符号。
 
-BinPlace 非常有用，如果您正在生成大量的模块并将通知传递不同的包。 如果没有大型项目中，您仍会发现 BinPlace 有用的操作的符号文件。
+如果要构建大量的模块并在各种包中提供这些模块，则 BinPlace 非常有用。 如果你没有大型项目，你仍会发现 BinPlace 对操作符号文件非常有用。
 
-本部分包括：
+本节包括：
 
 [BinPlace 功能](binplace-capabilities.md)
 
-[公共符号和私有符号](public-symbols-and-private-symbols.md)
+[公共符号和专用符号](public-symbols-and-private-symbols.md)
 
 [符号文件系统](symbol-file-systems.md)
 

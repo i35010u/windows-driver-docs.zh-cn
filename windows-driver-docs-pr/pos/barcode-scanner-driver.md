@@ -1,19 +1,18 @@
 ---
 title: 条形码扫描仪驱动程序示例
 description: 条形码扫描器驱动程序示例演示如何为条形码扫描器创建通用驱动程序，并将其用作创建新条形码扫描器驱动程序的模板。
-ms.assetid: 29374910-AF1A-40E4-8A5D-B48D7D2FD5D8
 ms.date: 09/07/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0360f2d68ed8bbd3bce63638e576788e2db4cde7
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: ad1f2546c5cda311a48785187befb343714e6239
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89190427"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96794335"
 ---
 # <a name="barcode-scanner-driver-sample"></a>条形码扫描仪驱动程序示例
 
-条形码扫描器驱动程序示例演示如何为条形码扫描器创建通用驱动程序，并将其用作创建新条形码扫描器驱动程序的模板。 该示例使用用户模式驱动程序框架 (UMDF) 2.0，并演示了基本功能，如声明设备以进行独占访问。 示例驱动程序可以在 x86、amd64 和 ARM 平台上编译和部署。 有关通用驱动程序的详细信息，请参阅 [通用 Windows 驱动程序入门](../develop/getting-started-with-windows-drivers.md)。
+条形码扫描器驱动程序示例演示如何为条形码扫描器创建通用驱动程序，并将其用作创建新条形码扫描器驱动程序的模板。 该示例使用 User-Mode Driver Framework (UMDF) 2.0，并演示了一些基本功能，如声明设备以进行独占访问。 示例驱动程序可以在 x86、amd64 和 ARM 平台上编译和部署。 有关通用驱动程序的详细信息，请参阅 [通用 Windows 驱动程序入门](../develop/getting-started-with-windows-drivers.md)。
 
 ## <a name="requirements"></a>要求
 
@@ -44,7 +43,7 @@ GitHub 上提供了 [Windows 驱动程序示例](https://github.com/Microsoft/Wi
 
 1. 已从 Internet 下载项目 zip 文件，因此打开解决方案时可能会看到安全警告。 如果执行此操作，请选择 **"确定"** 完成项目加载。
 
-1. 在 Visual Studio 中，找到 **解决方案资源管理器**。 如果尚未打开，则从 "**视图**" 菜单中选择 "**解决方案资源管理器**"。 在 **解决方案资源管理器**中，可以看到项目及其包含的源文件。
+1. 在 Visual Studio 中，找到 **解决方案资源管理器**。 如果尚未打开，则从 "**视图**" 菜单中选择 "**解决方案资源管理器**"。 在 **解决方案资源管理器** 中，可以看到项目及其包含的源文件。
 
 ## <a name="build-the-sample-using-visual-studio"></a>使用 Visual Studio 生成示例
 
@@ -70,7 +69,7 @@ GitHub 上提供了 [Windows 驱动程序示例](https://github.com/Microsoft/Wi
 
     在该文件夹中，你将看到以下文件：
 
-    | 文件                        | 说明                                                                  |
+    | 文件                        | 描述                                                                  |
     |-----------------------------|------------------------------------------------------------------------------|
     | SampleBarcodeScannerDrv.dll | 驱动程序文件。                                                             |
     | SampleBarcodeScannerDrv .inf | 一个 INF 文件，其中包含安装驱动程序所需的信息。          |

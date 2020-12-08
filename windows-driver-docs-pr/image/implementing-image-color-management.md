@@ -1,15 +1,14 @@
 ---
 title: 实现图像颜色管理
 description: 实现图像颜色管理
-ms.assetid: b3184a8b-4f32-4cb0-8f68-777d85110142
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d001c8565ef4b89fa040450c6bc5c179d98daf04
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 9850c727133dbbfb4ddb7519d86e92c9a180690b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89190089"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96793699"
 ---
 # <a name="implementing-image-color-management"></a>实现图像颜色管理
 

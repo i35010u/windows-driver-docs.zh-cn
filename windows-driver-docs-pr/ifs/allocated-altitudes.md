@@ -1,19 +1,18 @@
 ---
 title: 已分配筛选器高度
 description: 列出由 Microsoft 分配的文件系统筛选器
-ms.assetid: EC1993FB-5219-4C0C-A76A-05937A461C5A
 ms.date: 03/11/2020
 keywords:
 - 筛选器驱动程序高度
 - 微筛选器驱动程序海拔
 ms.localizationpriority: medium
 ms.custom: contperfq1
-ms.openlocfilehash: 14ec5d52b50728958d505f794749fe939921bbcb
-ms.sourcegitcommit: f2fbb6e54e085e9329288cee49860fe380be9c4c
+ms.openlocfilehash: b7f5ef63499e07eff67c14466afa9b8aab556cfc
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91778764"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96793799"
 ---
 # <a name="allocated-filter-altitudes"></a>已分配筛选器高度
 
@@ -67,7 +66,7 @@ ms.locfileid: "91778764"
 | tpfilter.sys | 401000 | RedPhone 安全性 |
 | MBIG2Prot.sys | 400920 | Malwarebytes Inc。 |
 | mbamwatchdog.sys | 400900 | Malwarebytes 公司 |
-| DSESafeCtrlDrv.sys | 400803 | 上海 Eff-软 IT |
+| DSESafeCtrlDrv.sys | 400803 | 上海 Eff-Soft |
 | edevmon.sys | 400800 | ESET spol。 s r.o。 |
 | vmwflstor.sys | 400700 | VMware，Inc。 |
 | TsQBDrv.sys | 400600 | 腾讯技术 |
@@ -78,8 +77,8 @@ ms.locfileid: "91778764"
 
 | 微                  | 海拔高度 | Company                                 |
 |-----------------------------|----------|-----------------------------------------|
-| klboot.sys | 389510 | Kaspersky 等实验室 |
-| klfdefsf.sys | 389500 | Kaspersky 等实验室 |
+| klboot.sys | 389510 | Kaspersky Lab |
+| klfdefsf.sys | 389500 | Kaspersky Lab |
 | SeRdr.sys | 389450 | rhipe 澳大利亚 Pty |
 | storagedrv.sys | 389400 | SMTechnology Co。 |
 | path8flt.sys | 389320 | Telefónica 数字 |
@@ -159,8 +158,8 @@ ms.locfileid: "91778764"
 | FSTrace.sys | 388910 | Niriva LLC |
 | YahooStorage.sys | 388900 | Yahoo 日本公司 |
 | KeWF.sys | 388890 | KEBA AG |
-| epregflt.sys | 388888 | 检查点软件 |
-| epklib.sys | 388886 | 检查点软件 |
+| epregflt.sys | 388888 | Check Point Software |
+| epklib.sys | 388886 | Check Point Software |
 | zsfprt.sys | 388880 | k4solution Co。 |
 | dsflt.sys | 388876 | cEncrypt |
 | bfaccess.sys | 388872 | bitFence Inc。 |
@@ -365,8 +364,8 @@ ms.locfileid: "91778764"
 | secRMM.sys | 385880 | Squadra 技术 |
 | dgfilter.sys | 385870 | DataGravity Inc。 |
 | WFP_MRT.sys | 385860 | FireEye Inc。 |
-| klrsps.sys | 385815 | Kaspersky 等实验室 |
-| klsnsr.sys | 385810 | Kaspersky 等实验室 |
+| klrsps.sys | 385815 | Kaspersky Lab |
+| klsnsr.sys | 385810 | Kaspersky Lab |
 | TaniumRecorderDrv.sys | 385800 | Tanium |
 | CdsgFsFilter.sys | 385700 | CRU 数据安全组 |
 | mssecflt.sys | 385600 | Microsoft |
@@ -406,7 +405,7 @@ ms.locfileid: "91778764"
 | cFSfdrv | 383120 | Chaewool |
 | ajfsprot.sys | 383110 | Analytik Jena AG |
 | isafermon | 383100 |  (c) SMS |
-| kfac.sys | 383000 | 北京 JinChen Software。 |
+| kfac.sys | 383000 | 北京 CA-JinChen 软件合作。 |
 | GUMHFilter.sys | 382910 | Glarysoft 有限公司。 |
 | PsAcFileAccessFilter.sys | 382902 | FUJITSU 软件 |
 | FJGSDis2.sys | 382900 | FUJITSU 有限 |
@@ -686,9 +685,9 @@ ms.locfileid: "91778764"
 | filemon.sys | 362950 | Temasoft S.R.L. |
 | SCAegis.sys | 362940 | Sogou 有限公司。 |
 | ep_minifilter.sys | 362930 | ForcePoint LLC。 |
-| klifks.sys | 362902 | Kaspersky 等实验室 |
-| klifaa.sys | 362901 | Kaspersky 等实验室 |
-| Klifsm.sys | 362900 | Kaspersky 等实验室 |
+| klifks.sys | 362902 | Kaspersky Lab |
+| klifaa.sys | 362901 | Kaspersky Lab |
+| Klifsm.sys | 362900 | Kaspersky Lab |
 | Spotlight.sys | 362870 | Cigent 技术 Inc。 |
 | nxrmflt.sys | 362860 | NextLabs |
 | vast.sys | 362850 | PolyLogyx LLC |
@@ -777,7 +776,7 @@ ms.locfileid: "91778764"
 | wdocsafe.sys | 328722 | Cheetah Mobile Inc。 |
 | lbprotect.sys | 328720 | Cheetah Mobile Inc。 |
 | eamonm.sys | 328700 | ESET、spol。 s r.o。 |
-| klam.sys | 328650 | Kaspersky 等实验室 |
+| klam.sys | 328650 | Kaspersky Lab |
 | MaxProc64.sys | 328620 | 最大安全软件 |
 | MaxProtector.sys | 328610 | 最大安全软件 |
 | maxcryptmon.sys | 328601 | 最大安全软件 |
@@ -823,8 +822,8 @@ ms.locfileid: "91778764"
 | 360qpesv.sys | 327404 | 360软件 (北京)  |
 | dsark.sys | 327402 | Qihoo 360 |
 | 360avflt.sys | 327400 | Qihoo 360 |
-| sciptflt.sys | 327334 | SECUI 公司 |
-| scifsflt.sys | 327333 | SECUI 公司 |
+| sciptflt.sys | 327334 | SECUI Corporation |
+| scifsflt.sys | 327333 | SECUI Corporation |
 | ANVfsm.sys | 327310 | Arcdo |
 | CDrRSFlt.sys | 327300 | Arcdo |
 | mfdriver.sys | 327250 | Imperva Inc。 |
@@ -851,7 +850,7 @@ ms.locfileid: "91778764"
 | AshAvScan.sys | 326700 | Ashampoo GmbH & |
 | Zyfm.sys | 326666 | ZhengYong InfoTech |
 | csaav.sys | 326600 | Cisco 系统 |
-| oavfm.sys | 326550 | HSM IT 服务 Gmbh |
+| oavfm.sys | 326550 | HSM IT-Services Gmbh |
 | SegMD.sys | 326520 | Segurmatica |
 | SegMP.sys | 326510 | Segurmatica |
 | SegF.sys | 326500 | Segurmatica |
@@ -928,7 +927,7 @@ ms.locfileid: "91778764"
 | crnsysm.sys | 324310 | Coranti Inc。 |
 | crncache32.sys | 324300 | Coranti Inc。 |
 | crncache64.sys | 324300 | Coranti Inc。 |
-| egambit.sys | 324242 | TEHTRI-安全性 |
+| egambit.sys | 324242 | TEHTRI-Security |
 | drwebfwft.sys | 324210 | 医生 Web |
 | DwShield.sys | 324200 | 医生 Web |
 | DwShield64.sys | 324200 | 医生 Web |
@@ -1028,14 +1027,14 @@ ms.locfileid: "91778764"
 | acdrv.sys | 320520 | OnMoon 公司 LLC |
 | tmfsdrv2.sys | 320510 | Teramind |
 | avgntflt.sys | 320500 | Avira GmbH |
-| klam.sys | 320450 | Kaspersky 等实验室 |
+| klam.sys | 320450 | Kaspersky Lab |
 | klbg.sys | 320440 | Kaspersky |
 | kldback.sys | 320430 | Kaspersky |
 | kldlinf.sys | 320420 | Kaspersky |
 | kldtool.sys | 320410 | Kaspersky |
-| klif.sys | 320401 | Kaspersky 等实验室 |
+| klif.sys | 320401 | Kaspersky Lab |
 | klif.sys | 320400 | Kaspersky |
-| klam.sys | 320350 | Kaspersky 等实验室 |
+| klam.sys | 320350 | Kaspersky Lab |
 | hsmltwhl.sys | 320340 | Hitachi 解决方案 |
 | hssfwhl.sys | 320330 | Hitachi 解决方案 |
 | DeepInsFS.sys | 320323 | 深层 Instinct 有限公司。 |
@@ -1099,7 +1098,7 @@ ms.locfileid: "91778764"
 | 微                  | 海拔高度 | Company                                 |
 |-----------------------------|----------|-----------------------------------------|
 | File_monitor.sys | 289000 | Acronis |
-| Klcdp.sys | 288900 | Kaspersky 等实验室 |
+| Klcdp.sys | 288900 | Kaspersky Lab |
 | splitinfmon.sys | 288800 | 拆分无限大 |
 | versamatic.sys | 288700 | Acertant 技术 |
 | Yfilemon.sys | 288690 | Yarisoft |
@@ -1149,7 +1148,7 @@ ms.locfileid: "91778764"
 | usbguard.sys | 268330 | 杭州梳理技术 |
 | gibepdevflt.sys | 268320 | 组 IB 有限公司 |
 | EffeDriver.sys | 268310 | DROVA |
-| Klshadow.sys | 268300 | Kaspersky 等实验室 |
+| Klshadow.sys | 268300 | Kaspersky Lab |
 | TN28.sys | 268290 | ID 身份验证技术 |
 | PGDriver.sys | 268280 | Avecto 有限公司 |
 | itseczvdb.sys | 268270 | Innotium Inc。 |
@@ -1295,7 +1294,7 @@ ms.locfileid: "91778764"
 |-----------------------------|----------|-----------------------------------------|
 | file_protector.sys | 227000 | Acronis |
 | fbwf.sys | 226000 | Microsoft |
-| Klsysrec.sys | 221500 | Kaspersky 等实验室 |
+| Klsysrec.sys | 221500 | Kaspersky Lab |
 | SFDRV.SYS | 221400 | Utixo LLC |
 | sp_prot.sys | 221300 | Xacti 公司 |
 | nsfilep.sys | 221200 | Netsupport 有限 |
@@ -1379,8 +1378,8 @@ ms.locfileid: "91778764"
 | HPArcHsmX64.sys | 181610 | Hewlett-Packard，Co。 |
 | hphsmflt.sys | 181600 | Hewlett-Packard，Co。 |
 | cparchsm.sys | 181610 | Micro Focus |
-| RepHsm.sys | 181500 | 双重取 Software，Inc。 |
-| RepSIS.sys | 181490 | 双重采用软件 |
+| RepHsm.sys | 181500 | Double-Take Software，Inc。 |
+| RepSIS.sys | 181490 | Double-Take 软件 |
 | SquashCompressionFsFilter.sys | 181410 | Squash 压缩 |
 | GXHSM.sys | 181400 | Commvault Systems，Inc。 |
 | EdsiHsm.sys | 181300 | 企业数据解决方案，Inc。 |
@@ -1446,8 +1445,8 @@ ms.locfileid: "91778764"
 | ffecore.sys | 148900 | Winmagic |
 | bkfs.sys | 148880 | 杭州 JoyBlock 有限公司 |
 | fangcloud.sys | 148860 | 杭州 Yifangyun |
-| klvfs.sys | 148810 | Kaspersky 等实验室 |
-| Klfle.sys | 148800 | Kaspersky 等实验室 |
+| klvfs.sys | 148810 | Kaspersky Lab |
+| Klfle.sys | 148800 | Kaspersky Lab |
 | ISFP.sys | 148701 | ALPS 系统集成 |
 | ISIRM.sys | 148700 | ALPS 系统 INTEGRATION CO。 |
 | ASUSSecDrive.sys | 148650 | ASU |
@@ -1552,7 +1551,7 @@ ms.locfileid: "91778764"
 | pgpfs.sys | 142810 | Symantec |
 | fencry.sys | 142800 | Symantec |
 | TmFileEncDmk.sys | 142700 | 走向微 Inc。 |
-| cpefs.sys | 142600 | 加密-Pro |
+| cpefs.sys | 142600 | Crypto-Pro |
 | dekfs.sys | 142500 | KasherLab，有限公司 |
 | qlockfilter.sys | 142400 | Binqsoft Inc。 |
 | RRFilterDriverStack_d3.sys | 142300 | 合理保留 |
@@ -1596,7 +1595,7 @@ ms.locfileid: "91778764"
 
 | 微                  | 海拔高度 | Company                                 |
 |-----------------------------|----------|-----------------------------------------|
-| Klvirt.sys | 138100 | Kaspersky 等实验室 |
+| Klvirt.sys | 138100 | Kaspersky Lab |
 | thsmmf.sys | 138060 | Talon 存储解决方案 |
 | VMagic.sys | 138050 | AI 咨询 |
 | GetSAS.sys | 138040 | SAS 研究所 Inc。 |
@@ -1716,7 +1715,7 @@ ms.locfileid: "91778764"
 | ScuaRaw.sys | 87500 | SCUA Seguran&#231;da 信息&#231;&#227;o |
 | HDSFilter.sys | 87400 | NeoAutus 自动化系统 |
 | ikfsmflt.sys | 87300 | IronKey Inc。 |
-| Klsec.sys | 87200 | Kaspersky 等实验室 |
+| Klsec.sys | 87200 | Kaspersky Lab |
 | XtimUSBFsFilterDrv.sys | 87190 | Dalian CP-SDT 有限公司 |
 | RGFLT_FM.sys | 87180 | Hauri |
 | flockflt.sys | 87170 | Ahranta Inc。 |
@@ -1770,7 +1769,7 @@ ms.locfileid: "91778764"
 | SePwld.sys | 84310 | Humming 头，Inc。 |
 | SePprd.sys | 84300 | Humming 头，Inc。 |
 | InPFlter.sys | 84200 | Humming 头，Inc。 |
-| CProCtrl.sys | 84100 | 加密-Pro |
+| CProCtrl.sys | 84100 | Crypto-Pro |
 | spyshelter.sys | 84000 | Datpol |
 | clpinspprot.sys | 83900 | 信息技术公司公司有限公司。 |
 | uvmfsflt.sys | 83376 | NEC 公司  |
@@ -1858,8 +1857,8 @@ ms.locfileid: "91778764"
 | aictracedrv_b.sys | 47000 | AI 咨询 |
 | hhdcfltr.sys | 46900 | Seagate 技术 |
 | Npsvctrig.sys | 46000 | Microsoft |
-| klvfs.sys | 44900 | Kaspersky 等实验室 |
-| klbackupflt.sys | 44890 | Kaspersky 等实验室 |
+| klvfs.sys | 44900 | Kaspersky Lab |
+| klbackupflt.sys | 44890 | Kaspersky Lab |
 | rsfxdrv.sys | 41000 | Microsoft |
 | defilter.sys | 40900 | Microsoft |
 | AppVVemgr.sys | 40800 | Microsoft |

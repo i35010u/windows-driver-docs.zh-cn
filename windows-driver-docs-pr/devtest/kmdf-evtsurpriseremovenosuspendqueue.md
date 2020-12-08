@@ -1,7 +1,6 @@
 ---
 title: 'EvtSurpriseRemoveNoSuspendQueue 规则 (kmdf) '
 description: EvtSurpriseRemoveNoSuspendQueue 规则指定 WDF 驱动程序不应使用 EvtDeviceSurpriseRemoval 回调函数排出、停止或清除队列，而应使用自托管 i/o 回调函数。
-ms.assetid: A22CC69F-AC48-4E2A-BE7E-9272810CB171
 ms.date: 05/21/2018
 keywords:
 - 'EvtSurpriseRemoveNoSuspendQueue 规则 (kmdf) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: e6062a5f7c398b75b2fd8a305fbd2dbc0c1ec2c2
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 1e8601c715ccc00a5dc7cd6d5ab5d57309e5b471
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107396"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96793075"
 ---
 # <a name="evtsurpriseremovenosuspendqueue-rule-kmdf"></a>EvtSurpriseRemoveNoSuspendQueue 规则 (kmdf) 
 
 
-**EvtSurpriseRemoveNoSuspendQueue**规则指定 WDF 驱动程序不应使用[*EvtDeviceSurpriseRemoval*](/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_surprise_removal)回调函数排出、停止或清除队列，而应使用自托管 i/o 回调函数。 *EvtDeviceSurpriseRemoval*回调函数未与电源线路径同步。
+**EvtSurpriseRemoveNoSuspendQueue** 规则指定 WDF 驱动程序不应使用 [*EvtDeviceSurpriseRemoval*](/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_surprise_removal)回调函数排出、停止或清除队列，而应使用自托管 i/o 回调函数。 *EvtDeviceSurpriseRemoval* 回调函数未与电源线路径同步。
 
 **驱动程序模型： KMDF**
 

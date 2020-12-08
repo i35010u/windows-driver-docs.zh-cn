@@ -1,23 +1,22 @@
 ---
 title: USB 视频类实现
 description: USB 视频类实现
-ms.assetid: b390d741-9ddc-4bac-bca2-73e32461c5ed
 keywords:
 - USB 视频类驱动程序 WDK AVStream，实现
 - 视频类驱动程序 WDK USB，实现
 - UVC 驱动程序 WDK AVStream，实现
 ms.date: 06/19/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 79192ff08619c058feca76ee4d6f70665668b99d
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 286374184158ee149723e2101581f2aa9c9c4718
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89192333"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96795261"
 ---
 # <a name="usb-video-class-implementation"></a>USB 视频类实现
 
-Microsoft 提供的 USB 视频类 (UVC) 驱动程序 ( # A0) 是以 pin 为中心的 AVStream 微型驱动程序。 它为操作系统枚举的每个 USB 视频类的兼容设备实例创建筛选器工厂。 驱动程序还会为设备上的每个输入或输出终端创建一个 pin 工厂，并将[**KSPIN \_ 描述符**](/windows-hardware/drivers/ddi/ks/ns-ks-kspin_descriptor)结构的**数据流**成员设置为相关值。
+Microsoft 提供的 USB 视频类 (UVC) 驱动程序 ( # A0) 是以 pin 为中心的 AVStream 微型驱动程序。 它为操作系统枚举的每个 USB 视频类的兼容设备实例创建筛选器工厂。 驱动程序还会为设备上的每个输入或输出终端创建一个 pin 工厂，并将 [**KSPIN \_ 描述符**](/windows-hardware/drivers/ddi/ks/ns-ks-kspin_descriptor)结构的 **数据流** 成员设置为相关值。
 
 USB 视频类驱动程序使用设备描述符报告的内部设备拓扑来构造由筛选器、节点和连接组成的内核流式处理 (KS) 拓扑图。
 

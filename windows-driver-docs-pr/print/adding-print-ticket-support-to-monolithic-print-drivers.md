@@ -1,7 +1,6 @@
 ---
 title: 将打印票证支持添加到一体式打印驱动程序
 description: 将打印票证支持添加到一体式打印驱动程序
-ms.assetid: 82c65b9a-6e7b-4acd-93aa-33d696ddc421
 keywords:
 - 打印机接口 DLL WDK，打印票证支持
 - 单一打印驱动程序 WDK
@@ -9,12 +8,12 @@ keywords:
 - IPrintTicketProvider
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1797e617948b8c8d421f8fd56f65374e56ced1b7
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: f1931a34e831b3697cf1a80b177acd89ac335c96
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89218274"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96794217"
 ---
 # <a name="adding-print-ticket-support-to-monolithic-print-drivers"></a>将打印票证支持添加到一体式打印驱动程序
 

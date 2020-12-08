@@ -1,15 +1,14 @@
 ---
 title: WDDM 驱动程序和功能上限
 description: 本主题介绍 Windows 显示驱动程序模型 (WDDM) 驱动程序功能 (cap) 。
-ms.assetid: 452ADF64-A5CC-4694-BE31-FBED29B32DC1
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c4186cf6e687136903a08ed8ddad5bdf5b99f8f3
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 0005e29e8261243563b205c70a72269d3328e61c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89067006"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96793821"
 ---
 # <a name="wddm-driver-and-feature-caps"></a>WDDM 驱动程序和功能上限
 
@@ -23,8 +22,8 @@ ms.locfileid: "89067006"
 | WDDM 驱动程序类型 | DDI 要求                                                                                                                                                                                                                                           |
 |------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 完整图形    |  (DDIs，实现所有特定于呈现和特定于显示的必需设备驱动程序接口)                                                                                                                                                             |
-| 仅显示     | 实现所有显示特定的 DDIs，并为所有特定于呈现器的 DDIs 返回空指针。                                                                                                                                                         |
-| 仅呈现      | 实现所有特定于呈现的 DDIs，并为所有特定于显示的 DDIs 返回 null 指针，或为完整的 WDDM 驱动程序实现所有 DDIs，但报表显示 \_ 适配器 \_ 信息。NumVidPnSources = 0 并显示 \_ 适配器 \_ 信息。NumVidPnTargets = 0。 |
+| Display-Only     | 实现所有显示特定的 DDIs，并为所有特定于呈现器的 DDIs 返回空指针。                                                                                                                                                         |
+| Render-Only      | 实现所有特定于呈现的 DDIs，并为所有特定于显示的 DDIs 返回 null 指针，或为完整的 WDDM 驱动程序实现所有 DDIs，但报表显示 \_ 适配器 \_ 信息。NumVidPnSources = 0 并显示 \_ 适配器 \_ 信息。NumVidPnTargets = 0。 |
 
  
 
@@ -32,7 +31,7 @@ ms.locfileid: "89067006"
 
 **WDDM 1.2 功能上限**
 
-| Feature                                                                                                                                          | 完整图形驱动程序 | 仅限呈现的驱动程序 | 仅显示驱动程序 | 功能上限                                                                                                                                                                                                                   |
+| 功能                                                                                                                                          | 完整图形驱动程序 | 仅限呈现的驱动程序 | 仅显示驱动程序 | 功能上限                                                                                                                                                                                                                   |
 |--------------------------------------------------------------------------------------------------------------------------------------------------|----------------------|--------------------|---------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | WDDM 版本                                                                                                                                     | M                    | M                  | M                   | [**DXGK \_DRIVERCAPS**](/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgk_drivercaps)。**WDDMVersion**                                                                                                                                                                |
 | [即插即用 (PnP) 启动和停止](plug-and-play--pnp--start-and-stop-cases.md)：对非 VGA 的 Bug 检查和 PnP 停止支持                   | M                    | NA                 | M                   | [**DXGK \_DRIVERCAPS**](/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgk_drivercaps)。**SupportNonVGA**                                                                                                                                                              |

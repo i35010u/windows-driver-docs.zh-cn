@@ -1,7 +1,6 @@
 ---
 title: 'IRP_MJ_SET_INFORMATION (IFS) '
 description: IRP\_MJ\_SET\_INFORMATION
-ms.assetid: cc1b539c-8d39-4f4d-93b1-ce9fcdb8c555
 keywords:
 - IRP_MJ_SET_INFORMATION 可安装的文件系统驱动程序
 topic_type:
@@ -12,12 +11,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9d3ce8da5ae732ec6c0dee72fd2f856a793f6573
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 773674b1a75bb08655b49533560fa167343c05c8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104794"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96793761"
 ---
 # <a name="irp_mj_set_information-ifs"></a>IRP \_ MJ \_ SET \_ INFORMATION (IFS) 
 
@@ -62,7 +61,7 @@ FileValidDataLengthInformation
 ## <a name="parameters"></a>参数
 
 
-文件系统或筛选器驱动程序与给定的 IRP 一起调用[**IoGetCurrentIrpStackLocation**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetcurrentirpstacklocation) ，以获取指向其自己的*IrpSp*[**堆栈位置**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_stack_location)的指针，如以下列表所示。  (IRP 显示为 *irp*。 ) 驱动程序可以使用在处理 set file information 请求中的以下 irp 成员和 irp 堆栈位置设置的信息：
+文件系统或筛选器驱动程序与给定的 IRP 一起调用 [**IoGetCurrentIrpStackLocation**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetcurrentirpstacklocation) ，以获取指向其自己的 *IrpSp*[**堆栈位置**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_stack_location)的指针，如以下列表所示。  (IRP 显示为 *irp*。 ) 驱动程序可以使用在处理 set file information 请求中的以下 irp 成员和 irp 堆栈位置设置的信息：
 
 <a href="" id="deviceobject"></a>*DeviceObject*  
 指向目标设备对象的指针。
@@ -86,15 +85,15 @@ FileValidDataLengthInformation
 
 [**文件 \_ 有效的 \_ 数据 \_ 长度 \_ 信息**](/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_file_valid_data_length_information)
 
-<a href="" id="irp--iostatus"></a>*Irp- &gt;IoStatus* 指向 [**IO \_ 状态 \_ 块**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_status_block) 结构的指针，该结构接收最终完成状态和有关请求的操作的信息。 有关详细信息，请参阅[**ZwSetInformationFile**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntsetinformationfile)的*IoStatusBlock*参数说明。
+<a href="" id="irp--iostatus"></a>*Irp- &gt;IoStatus* 指向 [**IO \_ 状态 \_ 块**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_status_block) 结构的指针，该结构接收最终完成状态和有关请求的操作的信息。 有关详细信息，请参阅 [**ZwSetInformationFile**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntsetinformationfile)的 *IoStatusBlock* 参数说明。
 
-<a href="" id="irpsp--fileobject"></a>*IrpSp- &gt;* 指向与*DeviceObject*关联的文件对象的 FileObject 指针。
+<a href="" id="irpsp--fileobject"></a>*IrpSp- &gt;* 指向与 *DeviceObject* 关联的文件对象的 FileObject 指针。
 
-*IrpSp- &gt; FileObject*参数包含指向**RelatedFileObject**字段的指针，该字段也是文件 \_ 对象结构。 文件对象结构的 **RelatedFileObject** 字段在 \_ 处理 IRP \_ MJ 集信息期间无效 \_ \_ ，不应使用。
+*IrpSp- &gt; FileObject* 参数包含指向 **RelatedFileObject** 字段的指针，该字段也是文件 \_ 对象结构。 文件对象结构的 **RelatedFileObject** 字段在 \_ 处理 IRP \_ MJ 集信息期间无效 \_ \_ ，不应使用。
 
 <a href="" id="irpsp--majorfunction"></a>*IrpSp- &gt;MajorFunction* 指定 IRP \_ MJ \_ 集 \_ 信息。
 
-<a href="" id="irpsp--parameters-setfile-advanceonly"></a>*IrpSp- &gt;SetFile. AdvanceOnly* 用于文件结束操作的标志。 这会确定在**FileInformationClass**FileEndOfFileInformation 时，使用**EndOfFile**成员[**文件的 \_ \_ \_ 文件 \_ 结尾**](/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_file_end_of_file_information)  ==  **FileEndOfFileInformation**。 如果 **为 TRUE**，则仅当文件增加当前有效数据长度时，才从 **EndOfFile** 设置新的有效数据长度。 如果 **为 FALSE**，则从 **EndOfFile**设置新的文件大小。
+<a href="" id="irpsp--parameters-setfile-advanceonly"></a>*IrpSp- &gt;SetFile. AdvanceOnly* 用于文件结束操作的标志。 这会确定在 **FileInformationClass** FileEndOfFileInformation 时，使用 **EndOfFile** 成员 [**文件的 \_ \_ \_ 文件 \_ 结尾**](/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_file_end_of_file_information)  ==  **FileEndOfFileInformation**。 如果 **为 TRUE**，则仅当文件增加当前有效数据长度时，才从 **EndOfFile** 设置新的有效数据长度。 如果 **为 FALSE**，则从 **EndOfFile** 设置新的文件大小。
 
 <a href="" id="irpsp--parameters-setfile-clustercount"></a>*IrpSp- &gt;SetFile* 保留供系统使用。
 
@@ -151,18 +150,18 @@ FileValidDataLengthInformation
 
  
 
-<a href="" id="irpsp--parameters-setfile-fileobject"></a>*IrpSp- &gt;* 用于重命名或链接操作的 SetFile。 如果 *irp &gt;AssociatedIrp.SystemBuffer &gt; * 包含完全限定的文件名，或者 *irp- &gt;AssociatedIrp.SystemBuffer- &gt; RootDirectory* 为非**NULL**，则此成员是作为操作目标的文件的父目录的文件对象指针。 否则为 **NULL**。
+<a href="" id="irpsp--parameters-setfile-fileobject"></a>*IrpSp- &gt;* 用于重命名或链接操作的 SetFile。 如果 *irp &gt;AssociatedIrp.SystemBuffer &gt;* 包含完全限定的文件名，或者 *irp- &gt;AssociatedIrp.SystemBuffer- &gt; RootDirectory* 为非 **NULL**，则此成员是作为操作目标的文件的父目录的文件对象指针。 否则为 **NULL**。
 
-<a href="" id="irpsp--parameters-setfile-length"></a>*IrpSp- &gt;SetFile* * &gt; temBuffer 所AssociatedIrp.Sys*指向的缓冲区的长度（以字节为单位）。
+<a href="" id="irpsp--parameters-setfile-length"></a>*IrpSp- &gt;SetFile* *&gt; temBuffer 所AssociatedIrp.Sys* 指向的缓冲区的长度（以字节为单位）。
 
 <a href="" id="irpsp--parameters-setfile-replaceifexists"></a>*IrpSp- &gt;SetFile* 设置为 **TRUE** ，以指定如果已存在具有相同名称的文件，则应将其替换为给定的文件。 如果重命名操作在已存在具有给定名称的文件时失败，则设置为 **FALSE** 。
 
 <a name="remarks"></a>备注
 -------
 
-缓存管理器将 **AdvanceOnly** 成员设置为 **TRUE** ，以通知文件系统将磁盘上的当前有效数据长度提升到 **EndOfFile**中的新有效数据长度。 如果 **AdvanceOnly** 为 **FALSE**，则会设置 **EndOfFile** 成员中的新文件大小，该大小可大于或小于当前文件大小。
+缓存管理器将 **AdvanceOnly** 成员设置为 **TRUE** ，以通知文件系统将磁盘上的当前有效数据长度提升到 **EndOfFile** 中的新有效数据长度。 如果 **AdvanceOnly** 为 **FALSE**，则会设置 **EndOfFile** 成员中的新文件大小，该大小可大于或小于当前文件大小。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**文件 \_ 分配 \_ 信息**](/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_file_allocation_information)

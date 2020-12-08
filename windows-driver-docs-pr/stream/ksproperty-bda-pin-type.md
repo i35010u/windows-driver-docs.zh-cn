@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ BDA \_ PIN \_ 类型
 description: 客户端使用 KSPROPERTY \_ BDA \_ pin \_ 类型检索指定 PIN 类型的值。
-ms.assetid: 3d2a976b-67ff-4469-aa96-7aa8bd5f229e
 keywords:
 - KSPROPERTY_BDA_PIN_TYPE 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5825f60c160c7656cc845bebb3310b769dcf0885
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 0f4e6b6e6d611e54b1c07a5a3e7c51ba52fe5835
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89185727"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96793339"
 ---
 # <a name="ksproperty_bda_pin_type"></a>KSPROPERTY \_ BDA \_ PIN \_ 类型
 
@@ -61,7 +60,7 @@ ms.locfileid: "89185727"
 
  
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 返回的值指定 pin 类型。
@@ -78,7 +77,7 @@ ms.locfileid: "89185727"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Bdamedia (包含 Bdamedia) </td>
 </tr>
 </tbody>

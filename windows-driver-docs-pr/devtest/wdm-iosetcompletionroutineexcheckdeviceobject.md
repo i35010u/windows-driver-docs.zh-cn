@@ -1,7 +1,6 @@
 ---
 title: 'IoSetCompletionRoutineExCheckDeviceObject 规则 (wdm) '
 description: IoSetCompletionRoutineExCheckDeviceObject 规则指定，如果当前设备对象未传递到 IoSetCompletionRoutineEx，而较低的设备对象为，则可能会导致争用条件，即使完成例程尚未运行，也可以卸载当前设备对象。
-ms.assetid: 037E4CED-FBC7-480F-B81F-561396A217C6
 ms.date: 05/21/2018
 keywords:
 - 'IoSetCompletionRoutineExCheckDeviceObject 规则 (wdm) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 1bf70d450fbefdaca0fce8bf9ae0b5572db0bbb2
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 432f2b6f94e12836734f0bc07f44ee93a2df04d9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103664"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96795033"
 ---
 # <a name="iosetcompletionroutineexcheckdeviceobject-rule-wdm"></a>IoSetCompletionRoutineExCheckDeviceObject 规则 (wdm) 
 
 
-**IoSetCompletionRoutineExCheckDeviceObject**规则指定，如果当前设备对象未传递到[**IoSetCompletionRoutineEx**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iosetcompletionroutineex) ，而较低的设备对象为，则可能会导致争用条件，即使完成例程尚未运行，也可以卸载当前设备对象。
+**IoSetCompletionRoutineExCheckDeviceObject** 规则指定，如果当前设备对象未传递到 [**IoSetCompletionRoutineEx**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iosetcompletionroutineex) ，而较低的设备对象为，则可能会导致争用条件，即使完成例程尚未运行，也可以卸载当前设备对象。
 
 **驱动程序模型： WDM**
 

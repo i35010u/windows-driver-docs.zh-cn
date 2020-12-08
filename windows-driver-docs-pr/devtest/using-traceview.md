@@ -1,15 +1,14 @@
 ---
 title: 使用 TraceView
 description: 使用 TraceView
-ms.assetid: 2feedbe0-ee42-487d-b8b9-06c2bc4532ee
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9688d92e340d540cdcb294ebcbe41febbf5538e8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e99b16318580e04452a1d506cd01fb554e48f934
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379877"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96795073"
 ---
 # <a name="using-traceview"></a>使用 TraceView
 
@@ -26,7 +25,7 @@ ms.locfileid: "63379877"
 
 [停止跟踪会话](stopping-a-trace-session.md)
 
-[重新启动跟踪会话](restarting-a-trace-session.md)
+[重启跟踪会话](restarting-a-trace-session.md)
 
 [删除跟踪会话](removing-a-trace-session.md)
 
@@ -34,7 +33,7 @@ ms.locfileid: "63379877"
 
 [解决 TraceView 错误](resolving-traceview-errors.md)
 
-[高级的 TraceView 功能](advanced-traceview-features.md)
+[TraceView 高级功能](advanced-traceview-features.md)
 
 [TraceView 命令行接口](traceview-command-line-interface.md)
 

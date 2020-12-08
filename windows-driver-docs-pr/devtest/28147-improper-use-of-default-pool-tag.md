@@ -1,7 +1,6 @@
 ---
 title: C28147
 description: 警告 C28147 使用默认池标记 ( "kdD" 或 "mdW" ) 对此函数的调用不能实现池标记目的。
-ms.assetid: 4838b006-349e-45d1-8ac3-42cbf0d880b7
 keywords:
 - 列出用于驱动程序的 WDK PREfast 的警告
 - 为驱动程序列出的 WDK PREfast 的错误
@@ -9,12 +8,12 @@ ms.date: 04/20/2017
 ms.localizationpriority: medium
 f1_keywords:
 - C28147
-ms.openlocfilehash: eec51295585a126f30f59f4224671d09681274f1
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 81f8df7cfab2a30c040d89db78c6bfb94bdcbc91
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89383535"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96793183"
 ---
 # <a name="c28147"></a>C28147
 

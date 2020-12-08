@@ -1,7 +1,6 @@
 ---
 title: 静态驱动程序验证程序规则列表文件
 description: 静态驱动程序验证程序规则列表文件
-ms.assetid: 941df64c-b66b-4e7b-b340-9ef6b57d895d
 keywords:
 - 静态驱动程序验证程序 WDK，输入文件
 - StaticDV WDK，输入文件
@@ -12,12 +11,12 @@ keywords:
 - 规则列表文件 WDK 静态驱动程序验证程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9e3f4dd1fd0b74a39164900e2f85289c8e3a710d
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 23e22fbb9365bd06be832c7c287a19992c7b6d76
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89383885"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96793977"
 ---
 # <a name="static-driver-verifier-rule-list-file"></a>静态驱动程序验证程序规则列表文件
 

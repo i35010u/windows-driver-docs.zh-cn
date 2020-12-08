@@ -1,15 +1,14 @@
 ---
 title: 图像应用程序对话框扩展
 description: 图像应用程序对话框扩展
-ms.assetid: 4bb7d2f9-58c3-4cfa-aa6b-a4bd9335d2ac
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 343642d3ca7181c7cff77e042d3d7e3289015292
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 3cbba2f933d20eb8f3a4ca2a253819d0e1c89a4f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89193087"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96793721"
 ---
 # <a name="image-application-dialog-extensions"></a>图像应用程序对话框扩展
 
@@ -17,7 +16,7 @@ ms.locfileid: "89193087"
 
 
 
-有三种机制可用于扩展 WIA 图像应用程序对话框。 这些方法包括：
+有三种机制可用于扩展 WIA 图像应用程序对话框。 其中包括：
 
 -   在需要为设备显示图标的任何位置，提供一个用于替代系统提供的图标的设备图标。 为此，请实现 [**IWiaUIExtension：： GetDeviceIcon**](/previous-versions/windows/hardware/drivers/ff545075(v=vs.85)) 方法。
 

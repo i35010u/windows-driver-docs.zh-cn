@@ -1,15 +1,14 @@
 ---
 title: 查询虚拟功能的 PCI 基址寄存器
 description: 查询虚拟功能的 PCI 基址寄存器
-ms.assetid: 99C2BF61-E87E-4C3B-BE7E-C16B5318EC1A
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b9cc305bc971709ae72184832980c059e54e49e1
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 8ec6e089c09063a9e706ee0176b8d52aeeb9b6e1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89210079"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96793371"
 ---
 # <a name="querying-the-pci-base-address-registers-of-a-virtual-function"></a>查询虚拟功能的 PCI 基址寄存器
 
@@ -33,11 +32,11 @@ PCI 驱动程序通过以下方式执行此 PCI BAR 查询：
 
 由于对 PCI 配置空间的访问是一项特权操作，因此它只能由 Hyper-v 父分区的管理操作系统中运行的组件执行。 当 VPCI 总线驱动程序查询 PCI 条时，NDIS)  (OID 发出对象标识符，将 [oid \_ SRIOV \_ 探测 \_ 条](./oid-sriov-probed-bars.md) 的查询请求发送到 PF 微型端口驱动程序。 此 OID 查询请求返回的结果将转发到 VPCI 总线驱动程序，以便它可以确定 VF 网络适配器所需的内存地址空间量。
 
-**注意**   OID \_ SRIOV BAR 资源的 oid 请求 \_ \_ 只能由 NDIS 发出。 OID 请求不得由过量驱动程序发出，如协议或筛选器驱动程序。
+**注意**  OID \_ SRIOV BAR 资源的 oid 请求 \_ \_ 只能由 NDIS 发出。 OID 请求不得由过量驱动程序发出，如协议或筛选器驱动程序。
 
  
 
-OID \_ SRIOV \_ 探测的 \_ 条查询请求包含 [**NDIS \_ SRIOV \_ 探测 \_ 条 \_ 信息**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_probed_bars_info) 结构。 当 PF 微型端口驱动程序处理此 OID 时，驱动程序必须返回由**NDIS \_ SRIOV \_ 探测 \_ 条 \_ 信息**结构的**BASEREGISTERVALUESOFFSET**成员引用的数组中的 PCI BAR 值。 对于数组中的每个偏移量，PF 微型端口驱动程序必须将数组元素设置为位于物理网络适配器 PCI 配置空间内相同偏移量的条的 ULONG 值。
+OID \_ SRIOV \_ 探测的 \_ 条查询请求包含 [**NDIS \_ SRIOV \_ 探测 \_ 条 \_ 信息**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_probed_bars_info) 结构。 当 PF 微型端口驱动程序处理此 OID 时，驱动程序必须返回由 **NDIS \_ SRIOV \_ 探测 \_ 条 \_ 信息** 结构的 **BASEREGISTERVALUESOFFSET** 成员引用的数组中的 PCI BAR 值。 对于数组中的每个偏移量，PF 微型端口驱动程序必须将数组元素设置为位于物理网络适配器 PCI 配置空间内相同偏移量的条的 ULONG 值。
 
 驱动程序返回的每个条形值的值都必须与在管理操作系统中运行的 PCI 驱动程序执行的 PCI BAR 查询遵循的值相同。 PF 微型端口驱动程序可以调用 [**NdisMQueryProbedBars**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismqueryprobedbars) 来确定此信息。
 

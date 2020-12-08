@@ -1,9 +1,8 @@
 ---
 title: ~u（解冻线程）
-description: ~ U 命令取消冻结指定的线程。不要混淆此命令使用 U （反汇编） 命令。
-ms.assetid: 6ac3c84a-3734-4b16-a239-4233e186c2df
+description: ~ U 命令 unfreezes 指定线程。请勿将此命令与 U (Unassemble) 命令混淆。
 keywords:
-- ~ u （取消冻结线程） Windows 调试
+- ~ u (解冻线程) Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,29 +11,29 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: f1a6a3486589d110713195e82536b06ba07b7f68
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4293e3c6786e7938ef5c1c78e044858de2f43a65
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63334170"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96795177"
 ---
 # <a name="u-unfreeze-thread"></a>~u（解冻线程）
 
 
-**~ U**命令取消冻结指定的线程。
+**~ U** 命令 unfreezes 指定线程。
 
-不要将使用此命令相混淆[ **U （反汇编）** ](u--unassemble-.md)命令。
+请勿将此命令与 [**U (Unassemble)**](u--unassemble-.md) 命令混淆。
 
 ```dbgcmd
 ~Thread u 
 ```
 
-## <a name="span-idddkcmdunfreezethreaddbgspanspan-idddkcmdunfreezethreaddbgspanparameters"></a><span id="ddk_cmd_unfreeze_thread_dbg"></span><span id="DDK_CMD_UNFREEZE_THREAD_DBG"></span>参数
+## <a name="span-idddk_cmd_unfreeze_thread_dbgspanspan-idddk_cmd_unfreeze_thread_dbgspanparameters"></a><span id="ddk_cmd_unfreeze_thread_dbg"></span><span id="DDK_CMD_UNFREEZE_THREAD_DBG"></span>参数
 
 
-<span id="_______Thread______"></span><span id="_______thread______"></span><span id="_______THREAD______"></span> *线程*   
-指定的线程或线程取消。 有关语法的详细信息，请参阅[线程语法](thread-syntax.md)。
+<span id="_______Thread______"></span><span id="_______thread______"></span><span id="_______THREAD______"></span>*Thread*   
+指定要解冻的一个或一些线程。 有关语法的详细信息，请参阅 [线程语法](thread-syntax.md)。
 
 ### <a name="span-idenvironmentspanspan-idenvironmentspanspan-idenvironmentspanenvironment"></a><span id="Environment"></span><span id="environment"></span><span id="ENVIRONMENT"></span>环境
 
@@ -45,12 +44,12 @@ ms.locfileid: "63334170"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>模式</strong></p></td>
-<td align="left"><p>仅限用户模式</p></td>
+<td align="left"><p><strong>交货</strong></p></td>
+<td align="left"><p>仅用户模式</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>目标</strong></p></td>
-<td align="left"><p>实时、 崩溃转储</p></td>
+<td align="left"><p>实时，故障转储</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>平台</strong></p></td>
@@ -61,36 +60,36 @@ ms.locfileid: "63334170"
 
  
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-详细了解如何已冻结线程的行为和控制冻结的其他命令的列表，以及挂起的线程，请参阅[控制进程和线程](controlling-processes-and-threads.md)。
+若要详细了解冻结线程的行为方式和控制线程的冻结和挂起的其他命令的列表，请参阅 [控制进程和线程](controlling-processes-and-threads.md)。
 
 <a name="remarks"></a>备注
 -------
 
-仅在用户模式下，可以指定线程。 在内核模式下颚化符 （~） 是指一个处理器。
+只能在用户模式下指定线程。 在内核模式下，颚化 (~) 引用处理器。
 
-下面的示例显示如何使用 ~ 命令。
+下面的示例演示如何使用 ~ 命令。
 
-下面的命令显示所有线程的当前状态。
+以下命令显示所有线程的当前状态。
 
 ```dbgcmd
 0:000> ~* k
 ```
 
-以下命令冻结导致当前异常的线程。
+下面的命令冻结导致当前异常的线程。
 
 ```dbgcmd
 0:000> ~# f
 ```
 
-以下命令将检查挂起此线程的状态。
+以下命令将检查此线程的状态是否为 "已挂起"。
 
 ```dbgcmd
 0:000> ~* k
 ```
 
-以下命令取消冻结线程号 123。
+以下命令 unfreezes 线程号123。
 
 ```dbgcmd
 0:000> ~123 u

@@ -1,19 +1,18 @@
 ---
 title: 功率表接口
 description: 功率表接口
-ms.assetid: be3ffb33-f1da-403d-b888-378ffd5cac8a
 keywords:
 - 电源计量和预算 WDK，接口
 - 电源指示器接口 WDK
 - PMI WDK 电源计量器
 ms.date: 10/09/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bee92fbccd93498bf8938906d74e862e44331ef2
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: c7748f170010adbf5230e8bb419fa63532fead5f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89189769"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96794291"
 ---
 # <a name="power-meter-interface"></a>功率表接口
 
@@ -37,6 +36,6 @@ PMI 还支持对电源计量事件的通知，例如在达到或超过电源阈�
 有关 PMI IOCTL 接口的详细信息，请参阅 [Pmi IOCTLs](/windows-hardware/drivers/ddi/pmi/index)。
 
  
-**注意**   Windows 7、Windows Server 2008 R2 和更高版本的 Windows 操作系统支持 PMB 基础结构。
+**注意**   Windows 7、Windows Server 2008 R2 和更高版本的 Windows 操作系统支持 PMB 基础结构。
 
 

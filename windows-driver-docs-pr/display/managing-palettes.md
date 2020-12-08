@@ -1,7 +1,6 @@
 ---
 title: 管理调色板
 description: 管理调色板
-ms.assetid: 7917b01f-f57d-4262-80b6-9e11e797e3b5
 keywords:
 - GDI WDK Windows 2000 显示，颜色
 - 图形驱动程序 WDK Windows 2000 显示，颜色
@@ -10,12 +9,12 @@ keywords:
 - 绘制 WDK GDI，颜色
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fb60d44d7add782c52857372dc1c370b8c7cef6c
-ms.sourcegitcommit: a44ade167cdfb541cf1818e9f9e3726f23f90b66
+ms.openlocfilehash: 7137534189e2ff618cbe0b67b70d6e91fb5b4898
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94361397"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96793901"
 ---
 # <a name="managing-palettes"></a>管理调色板
 

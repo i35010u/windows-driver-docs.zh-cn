@@ -1,7 +1,6 @@
 ---
 title: 示例 WDM 设备对象
 description: 示例 WDM 设备对象
-ms.assetid: 8da56415-5018-468c-99c7-3969e5c00285
 keywords:
 - 设备对象 WDK 内核，示例
 - 鼠标 WDK 内核
@@ -13,12 +12,12 @@ keywords:
 - 筛选 DOs WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 294219d32d2332d6a677c19352304c7bc8882418
-ms.sourcegitcommit: a44ade167cdfb541cf1818e9f9e3726f23f90b66
+ms.openlocfilehash: ba28e3be716938d20e04ca036198102d761f9255
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94361597"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96793581"
 ---
 # <a name="example-wdm-device-objects"></a>示例 WDM 设备对象
 
@@ -26,7 +25,7 @@ ms.locfileid: "94361597"
 
 
 
-下图说明了代表键盘和鼠标设备的设备对象，该图中显示的是键盘和鼠标设备，其中显示了 [键盘和鼠标的硬件配置](sample-device-and-driver-configuration.md#keyboard-and-mouse-hardware-configurations)。 图中所示的键盘和鼠标驱动程序图说明了 [键盘和鼠标驱动程序层](sample-device-and-driver-configuration.md#keyboard-and-mouse-driver-layers) 通过调用 i/o 支持例程 ( [**IoCreateDevice**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocreatedevice)) 来创建这些设备对象。
+下图说明了代表键盘和鼠标设备的设备对象，该图中显示的是键盘和鼠标设备，其中显示了 [键盘和鼠标的硬件配置](sample-device-and-driver-configuration.md#keyboard-and-mouse-hardware-configurations)。 图中所示的键盘和鼠标驱动程序图说明了 [键盘和鼠标驱动程序层](sample-device-and-driver-configuration.md#keyboard-and-mouse-driver-layers) 通过调用 i/o 支持例程 ([**IoCreateDevice**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocreatedevice)) 来创建这些设备对象。
 
 ![键盘和鼠标设备对象](images/2sampdos.png)
 

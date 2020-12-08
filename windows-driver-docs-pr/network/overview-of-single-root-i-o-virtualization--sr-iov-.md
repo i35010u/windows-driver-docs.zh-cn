@@ -1,16 +1,15 @@
 ---
 title: 单根 I/O 虚拟化 (SR-IOV) 概述
 description: 单根 I/O 虚拟化 (SR-IOV) 概述
-ms.assetid: B241F468-F568-4500-9356-E576CEBA8F3B
 ms.date: 11/17/2020
 ms.localizationpriority: medium
 ms.custom: contperfq2
-ms.openlocfilehash: a391a94ed05adc586fb809de1f6e858f7a053c4b
-ms.sourcegitcommit: 73216293357f08eb00d8b154fa377a090644ca4f
+ms.openlocfilehash: 5c580dc511d719f26193f4561d741eae13ba1007
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94810115"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96793425"
 ---
 # <a name="overview-of-single-root-io-virtualization-sr-iov"></a>单根 I/O 虚拟化 (SR-IOV) 概述
 

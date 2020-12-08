@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ VIDEOPROCAMP \_ 对比度
 description: KSPROPERTY \_ VIDEOPROCAMP \_ 对比度属性控制相机 (亮度增益) 设置。 此属性是可选的。
-ms.assetid: 0e94aec4-b258-44be-aa6e-f0a40b803564
 keywords:
 - KSPROPERTY_VIDEOPROCAMP_CONTRAST 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b82426a017346cca6cdfe70e97574b77692d548f
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: d7bc02bb937313771b027fbaa4b8053338d6515b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103006"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96795297"
 ---
 # <a name="ksproperty_videoprocamp_contrast"></a>KSPROPERTY \_ VIDEOPROCAMP \_ 对比度
 
@@ -63,7 +62,7 @@ KSPROPERTY \_ VIDEOPROCAMP \_ 对比度属性控制相机 (亮度增益) 设置�
 
  (操作数据) 的属性值是指定相机对比度设置的 LONG 值。 对比度值表示为增益系数乘以100。
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 KSPROPERTY **Value** \_ VIDEOPROCAMP S 结构的 Value 成员 \_ 指定对比度值。

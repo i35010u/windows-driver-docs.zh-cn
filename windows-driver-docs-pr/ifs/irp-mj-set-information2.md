@@ -1,15 +1,14 @@
 ---
 title: 检查 IRP_MJ_SET_INFORMATION 操作的 Oplock 状态
 description: 检查 IRP_MJ_SET_INFORMATION 操作的 Oplock 状态
-ms.assetid: d164be8d-cf42-4b96-9883-e0f8223bfde4
 ms.date: 11/25/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: a32dbb85a64992efc694fae1523e5b5afb4b8955
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: dc141fce33f8872ab40f1af12288615594f37f04
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89063056"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96793757"
 ---
 # <a name="checking-the-oplock-state-of-an-irp_mj_set_information-operation"></a>检查 IRP_MJ_SET_INFORMATION 操作的 Oplock 状态
 
@@ -45,7 +44,7 @@ ms.locfileid: "89063056"
 
   - 读取请求：不需要确认;操作会立即继续。
 
-  - 读取句柄请求：尽管需要确认中断，但操作会立即继续 (即，无需等待确认) 。
+  - Read-Handle 请求：尽管需要确认中断，但操作会立即继续 (即，无需等待确认) 。
 
   - 级别1、批处理、筛选器、读写和读写处理请求：必须先收到确认，然后才能继续操作。
 
@@ -61,7 +60,7 @@ ms.locfileid: "89063056"
 
 - 正在重命名其锁定的流的祖先目录，或正在设置祖先目录的短名称。
 
-### <a name="conditions-for-level-1-level-2-read-and-read-write-operations"></a>级别1、级别2、读取和读写操作的条件
+### <a name="conditions-for-level-1-level-2-read-and-read-write-operations"></a>级别1、级别2、读取和 Read-Write 操作的条件
 
 - Oplock 不会中断。
 
@@ -73,7 +72,7 @@ ms.locfileid: "89063056"
 
   - 批处理和筛选请求中断到无。
 
-  - 读取-处理请求中断。
+  - 要读取 Read-Handle 请求中断。
 
   - 读写-处理请求中断到读写。
 
@@ -85,7 +84,7 @@ ms.locfileid: "89063056"
 
 - 当操作发生在具有 oplock 键的 FILE_OBJECT 上，而该操作与拥有 oplock 的 FILE_OBJECT 的键不同， **并且** 在 [FILE_DISPOSITION_INFORMATION](/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_file_disposition_information)时，IRP_MJ_SET_INFORMATION (对 FileDispositionInformation) 中断。DeleteFile 是 * * TRUE * * * *。 如果 oplock 中断：
 
-  - 读取-处理请求中断。
+  - 要读取 Read-Handle 请求中断。
 
   - 读写-处理请求中断到读写。
 

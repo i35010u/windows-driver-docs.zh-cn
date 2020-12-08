@@ -1,18 +1,17 @@
 ---
 title: BinPlace 宏和环境变量
 description: BinPlace 宏和环境变量
-ms.assetid: f990e132-f6d7-46e1-8c86-6ae3f0483bd5
 keywords:
 - BinPlace WDK，环境变量
 - 环境变量 WDK BinPlace
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bae637faa2878514f3f80d37132b2181e2a17a5b
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 34b7b6a00dbdfc4508c9cc7f8d4459d9ec572a90
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89384393"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96794005"
 ---
 # <a name="binplace-macros-and-environment-variables"></a>BinPlace 宏和环境变量
 

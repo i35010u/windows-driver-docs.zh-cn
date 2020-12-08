@@ -1,24 +1,23 @@
 ---
 title: OID_WDI_GET_AUTO_POWER_SAVE
 description: OID_WDI_GET_AUTO_POWER_SAVE 获取端口的省电状态。
-ms.assetid: b7a14348-66ad-4728-986d-05145eb49b27
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 OID_WDI_GET_AUTO_POWER_SAVE 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 66c64a6541d517c462e1f4a1306ee1203b87e2ca
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 9da5f7217d8557a0c5f2cbd8cb9114052c2812bd
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89213295"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96794349"
 ---
 # <a name="oid_wdi_get_auto_power_save"></a>OID \_ WDI \_ 获取 \_ 自动 \_ 节能 \_
 
 
 OID \_ WDI \_ GET \_ 自动省 \_ 电 \_ 获取端口的省电状态。
 
-| 作用域 | 设置序列化任务 | 正常执行时间 (秒)  |
+| 范围 | 设置序列化任务 | 正常执行时间 (秒)  |
 |-------|--------------------------|---------------------------------|
 | 端口  | 不适用           | 1                               |
 
@@ -54,7 +53,7 @@ OID \_ WDI \_ GET \_ 自动省 \_ 电 \_ 获取端口的省电状态。
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
-<td><p>Windows Server 2016</p></td>
+<td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
 <td><p>标头</p></td>

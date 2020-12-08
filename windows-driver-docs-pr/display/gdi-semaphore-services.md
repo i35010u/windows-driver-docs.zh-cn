@@ -1,7 +1,6 @@
 ---
 title: GDI 信号灯服务
 description: GDI 信号灯服务
-ms.assetid: b91211a7-19c3-4974-9222-f8eb64c29cc8
 keywords:
 - GDI WDK Windows 2000 显示，信号服务
 - 图形驱动程序 WDK Windows 2000 显示，信号服务
@@ -9,12 +8,12 @@ keywords:
 - 信号灯
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 84f80c8064e6dfaad6b9271172dd8190c98875a6
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 7980c1df55bbed947c116bba26b1b935ee1c6ae2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90715672"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96793953"
 ---
 # <a name="gdi-semaphore-services"></a>GDI 信号灯服务
 
@@ -32,7 +31,7 @@ GDI 提供与信号和安全信号量相关的服务选择。 驱动程序可以
 <thead>
 <tr class="header">
 <th align="left">函数</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>

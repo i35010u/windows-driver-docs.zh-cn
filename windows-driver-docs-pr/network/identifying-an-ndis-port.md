@@ -1,7 +1,6 @@
 ---
 title: 标识 NDIS 端口
 description: 标识 NDIS 端口
-ms.assetid: 40917e62-5424-4c46-9b5b-a1a15812ef59
 keywords:
 - 端口 WDK NDIS，identifyng
 - NDIS 端口 WDK，identifyng
@@ -9,12 +8,12 @@ keywords:
 - 端口号 WDK NDIS
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9c0a1eafc5e11d7e2b73773cf2f7a9dc738d2e20
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 0b8633c5aa9da89f41304618b788e191c3636397
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89217062"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96794468"
 ---
 # <a name="identifying-an-ndis-port"></a>标识 NDIS 端口
 

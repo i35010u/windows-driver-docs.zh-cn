@@ -1,17 +1,16 @@
 ---
 title: 管理多头内存
 description: 管理多头内存
-ms.assetid: 37cda124-0c3b-4af4-92b8-329440dd3221
 keywords:
 - 多头硬件 WDK DirectX 9.0，内存管理
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 270b30bc4ca51c716e44c766abc13e267cd531a9
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 26f8216844ab757e6b1742abc0c787069cb5264a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90715306"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96793899"
 ---
 # <a name="managing-multiple-head-memory"></a>管理多头内存
 
@@ -19,13 +18,13 @@ ms.locfileid: "90715306"
 ## <span id="ddk_managing_multiple_head_memory_gg"></span><span id="DDK_MANAGING_MULTIPLE_HEAD_MEMORY_GG"></span>
 
 
-\_在 DDSCAPS2 ADDITIONALPRIMARY 的**dwCaps2**成员中，为从属标题上[**DDSCAPS2**](/previous-versions/windows/hardware/drivers/ff550292(v=vs.85))的每个曲面设置 "" 功能位，将通知这些曲面是从分配给打印头的视频内存中分配的最后一个表面。 然后，从属头应该放弃控制将其视频内存分配给主头，因为从属头保证在应用程序的生存期内不会收到后续的 [*DdCreateSurface*](/previous-versions/windows/hardware/drivers/ff549263(v=vs.85)) 调用。
+\_在 DDSCAPS2 ADDITIONALPRIMARY 的 **dwCaps2** 成员中，为从属标题上 [**DDSCAPS2**](/previous-versions/windows/hardware/drivers/ff550292(v=vs.85))的每个曲面设置 "" 功能位，将通知这些曲面是从分配给打印头的视频内存中分配的最后一个表面。 然后，从属头应该放弃控制将其视频内存分配给主头，因为从属头保证在应用程序的生存期内不会收到后续的 [*DdCreateSurface*](/previous-versions/windows/hardware/drivers/ff549263(v=vs.85)) 调用。
 
 驱动程序必须确保主头能够分配与从属磁头关联的内存。
 
 当运行时调用驱动程序的 [*DdDestroySurface*](/windows/win32/api/ddrawint/nc-ddrawint-pdd_surfcb_destroysurface) 函数来销毁设置 DDSCAPS2 ADDITIONALPRIMARY 功能位的从属头上的图面时 \_ ，会通知驱动程序，使从属头再次控制其视频内存管理。
 
-大多数情况下，在现有 DirectDraw 过程中，这种选择哪一种拥有视频内存是固有的。 尤其是在下列情况下：
+大多数情况下，在现有 DirectDraw 过程中，这种选择哪一种拥有视频内存是固有的。 具体而言：
 
 -   使用 DDSCAPS2 ADDITIONALPRIMARY 位进行 *DdCreateSurface* 调用后，运行时保证不会在从属机头上发出后续分配请求 \_ 。 因此，在任何时候，都不需要驱动程序限制其自己的视频内存池的分配。
 

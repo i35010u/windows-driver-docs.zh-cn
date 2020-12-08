@@ -1,28 +1,27 @@
 ---
 title: 实现扫描仪存储项树
 description: 实现扫描仪存储项树
-ms.assetid: e65a2a61-4d31-4336-9712-444943f4f4d3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: aa4ee1b5c3559eaa834ef319bb26605a4415553e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1050a05d56e1e6773785a2b08686d585ca600543
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339662"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96793687"
 ---
 # <a name="implementing-scanner-storage-item-trees"></a>实现扫描仪存储项树
 
 
-本部分包含有关标志和属性使用的其他信息与配备有存储的扫描程序。 它还包含有关将数据从扫描程序存储传输的信息。
+本部分包含有关标志和属性的其他信息，这些信息适用于与存储设备一起使用的扫描仪。 它还包含有关从扫描程序存储传输数据的信息。
 
-本部分包括：
+本节包括：
 
-[扫描程序存储标志 WIA 项](wia-item-flags-for-scanner-storage.md)
+[扫描仪存储的 WIA 项标志](wia-item-flags-for-scanner-storage.md)
 
-[扫描程序存储的 WIA 项属性](wia-item-properties-for-scanner-storage.md)
+[扫描仪存储的 WIA 项属性](wia-item-properties-for-scanner-storage.md)
 
-[从存储扫描程序传输数据](transferring-data-from-scanner-storage.md)
+[从扫描仪存储传输数据](transferring-data-from-scanner-storage.md)
 
  
 

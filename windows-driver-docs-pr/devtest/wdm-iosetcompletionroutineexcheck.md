@@ -1,7 +1,6 @@
 ---
 title: 'IoSetCompletionRoutineExCheck 规则 (wdm) '
 description: IoSetCompletionRoutineExCheck 规则指定 IoSetCompletionRoutineEx 例程返回一个 NTSTATUS 值。
-ms.assetid: 047298DB-851A-4406-AD6D-5A276960ABE4
 ms.date: 05/21/2018
 keywords:
 - 'IoSetCompletionRoutineExCheck 规则 (wdm) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: adfdaad21ab7bbb6f7ba8cdc2317439ff1b1fa2d
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 1f3ac141695e4147651ace9c23f66e3aab86b00d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103670"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96795035"
 ---
 # <a name="iosetcompletionroutineexcheck-rule-wdm"></a>IoSetCompletionRoutineExCheck 规则 (wdm) 
 
 
-**IoSetCompletionRoutineExCheck**规则指定[**IoSetCompletionRoutineEx**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iosetcompletionroutineex)例程返回一个 NTSTATUS 值。 驱动程序必须选中此值，以确定是否已成功注册 [*IoCompletion*](/windows-hardware/drivers/ddi/wdm/nc-wdm-io_completion_routine) 例程，然后再调用 [**IoCallDriver**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver) 或 [**PoCallDriver**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-pocalldriver)。
+**IoSetCompletionRoutineExCheck** 规则指定 [**IoSetCompletionRoutineEx**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iosetcompletionroutineex)例程返回一个 NTSTATUS 值。 驱动程序必须选中此值，以确定是否已成功注册 [*IoCompletion*](/windows-hardware/drivers/ddi/wdm/nc-wdm-io_completion_routine) 例程，然后再调用 [**IoCallDriver**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver) 或 [**PoCallDriver**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-pocalldriver)。
 
 如果成功注册了 [*IoCompletion*](/windows-hardware/drivers/ddi/wdm/nc-wdm-io_completion_routine) 例程，则 [**IoSetCompletionRoutineEx**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iosetcompletionroutineex) 会分配在执行 *IoCompletion* 例程之前保持分配的内存。 驱动程序必须确保 *IoCompletion* 例程通过调用 [**IoCallDriver**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver) 或 [**PoCallDriver**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-pocalldriver) 来执行，否则内核将泄漏内存。
 

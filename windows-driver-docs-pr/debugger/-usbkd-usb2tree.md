@@ -1,7 +1,6 @@
 ---
 title: usbkd.usb2tree
 description: Usbkd. usb2tree 命令显示 USB 2.0 树。
-ms.assetid: 6BEFE154-C8F0-466C-AB68-71C6304D0DEA
 keywords:
 - usbkd usb2tree Windows 调试
 ms.date: 05/23/2017
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 94075ed6ae2a37ecac72dbe373f3847963cd08e0
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: c1d06d5a53df7008aca2481ee4c0e3e899275a75
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89213574"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96795183"
 ---
 # <a name="usbkdusb2tree"></a>!usbkd.usb2tree
 
 
-**！ Usbkd. usb2tree**命令显示[USB 2.0 树](usb-2-0-extensions.md#usb-2-tree)。
+**！ Usbkd. usb2tree** 命令显示 [USB 2.0 树](usb-2-0-extensions.md#usb-2-tree)。
 
 ```dbgcmd
 !usbkd.usb2tree
@@ -39,7 +38,7 @@ ms.locfileid: "89213574"
 
 输出使用 [ (DML) 的调试器标记语言 ](debugger-markup-language-commands.md) 来提供链接。 这些链接执行命令，以便为树中的对象指定相关的详细信息。 例如，你可以单击其中一个 [**！ devobj**](-devobj.md) 链接来获取与 EHCI 执行单元关联的功能设备对象的相关信息。 作为单击链接的替代方法，可以手动输入命令： **！ devobj ffffe00001ca7050**
 
-**注意**   DML 功能在 WinDbg 中可用，但在 Visual Studio 或 KD 中不可用。
+**注意**  DML 功能在 WinDbg 中可用，但在 Visual Studio 或 KD 中不可用。
 
  
 
@@ -51,7 +50,7 @@ Usb3kd.dll
 <a name="remarks"></a>备注
 -------
 
-**！ Usb2tree**命令是针对许多[USB 2.0 调试程序扩展命令](usb-2-0-extensions.md)的父命令。 这些命令显示的信息基于这些驱动程序维护的数据结构：
+**！ Usb2tree** 命令是针对许多 [USB 2.0 调试程序扩展命令](usb-2-0-extensions.md)的父命令。 这些命令显示的信息基于这些驱动程序维护的数据结构：
 
 -   usbehci.sys USB 2 主机控制器 (微型端口驱动程序) 
 -   usbuhci.sys USB 2 主机控制器 (微型端口驱动程序) 

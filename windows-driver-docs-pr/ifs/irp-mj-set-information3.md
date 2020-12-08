@@ -1,7 +1,6 @@
 ---
 title: IRP_MJ_SET_INFORMATION 上的安全检查
 description: 描述文件系统对 IRP_MJ_SET_INFORMATION 进行安全检查的方式
-ms.assetid: 2a6c837c-85c9-46d8-85d8-d779f22be54e
 keywords:
 - IRP_MJ_SET_INFORMATION
 - 安全 WDK 文件系统，添加安全检查
@@ -11,16 +10,16 @@ keywords:
 - 命名 WDK 文件系统
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 30581f6fc6877e5540c36c154432b7f554b3049f
-ms.sourcegitcommit: df50dc10210c124f2c7fb173d6e4fb796f56e5bd
+ms.openlocfilehash: da3c2796f3b04afc46b6463a09251aa95bacc39d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86949733"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96793755"
 ---
 # <a name="security-checks-on-irp_mj_set_information"></a>IRP_MJ_SET_INFORMATION 上的安全检查
 
-在某些情况下，"设置信息" 中的 "重命名" 和 "硬链接" 事例可能需要安全检查。 具体来说，如果调用方想要通过将 " **ReplaceIfExists** " 字段设置为 " **TRUE**" 来删除 "重命名" 或 "硬链接" 的目标，则文件系统必须执行安全检查，以确保调用方具有删除目标的适当权限。 此外，文件系统（如策略）也可以有某些类型的文件，而不希望以这种方式（例如，注册表配置单元和页面文件）删除。 下面的代码示例确定调用方是否具有适当的安全权限来删除文件：
+在某些情况下，"设置信息" 中的 "重命名" 和 "硬链接" 事例可能需要安全检查。 具体来说，如果调用方想要通过将 " **ReplaceIfExists** " 字段设置为 " **TRUE**" 来删除 "重命名" 或 "硬链接" 的目标，则文件系统必须执行安全检查，以确保调用方具有删除目标的适当权限。 此外，某些类型的文件系统（如策略）也可能不希望以这种方式删除 (注册表配置单元和页面文件，例如) 。 下面的代码示例确定调用方是否具有适当的安全权限来删除文件：
 
 ```cpp
 NTSTATUS FsdCheckDeleteFileAccess(POW_IRP_CONTEXT IrpContext,

@@ -1,18 +1,17 @@
 ---
 title: DVD 区域化
 description: DVD 区域化
-ms.assetid: 931441c8-9521-43c9-86f1-dbf75d36e190
 keywords:
 - DVD 解码器微型驱动程序 WDK
 - 实行 WDK DVD 解码器
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 84632344c5d17f2ad74d019d5f6f453b2de4bdae
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 0d36feb3255df8e29748b682727e4cc5108262eb
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89187427"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96795355"
 ---
 # <a name="dvd-regionalization"></a>DVD 区域化
 

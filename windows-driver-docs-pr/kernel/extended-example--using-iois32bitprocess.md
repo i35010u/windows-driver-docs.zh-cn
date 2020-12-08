@@ -1,18 +1,17 @@
 ---
 title: 使用 IoIs32bitProcess 的扩展示例
 description: 使用 IoIs32bitProcess 的扩展示例
-ms.assetid: bb73d16c-9f9f-41ff-ac0b-8af31c6f55f4
 keywords:
 - 32位 i/o 支持 WDK 64 位，IoIs32bitProcess
 - IoIs32bitProcess
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 286a1cb92aae0e027062fb8afa89c1f71450dbf9
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: cadf4d8c19f247812fb0ca470231daa69bcdcffc
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89184269"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96793565"
 ---
 # <a name="extended-example-using-iois32bitprocess"></a>扩展示例：使用 IoIs32bitProcess
 

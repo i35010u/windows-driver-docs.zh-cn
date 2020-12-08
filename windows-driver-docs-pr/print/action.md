@@ -1,7 +1,6 @@
 ---
 title: action 元素
 description: 可选操作元素描述当用户单击气球消息中的按钮时将完成的操作。
-ms.assetid: dae207ad-072e-4de6-b6a2-f1188ce91065
 keywords:
 - 操作元素打印设备
 topic_type:
@@ -12,18 +11,18 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d862750047e14995ed1ec9f00d74bb1a84419676
-ms.sourcegitcommit: b3e38d06762246c77cedd8e82d740ebea104c538
+ms.openlocfilehash: 26991d7b1a9002a60435c691e6b5cf7053866271
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91662389"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96794245"
 ---
 # <a name="action-element"></a>action 元素
 
 可选 **操作** 元素描述当用户单击气球消息中的按钮时将完成的操作。
 
-**操作**元素在此 URI 的*asyncui*命名空间中定义：
+**操作** 元素在此 URI 的 *asyncui* 命名空间中定义：
 
 ```xml
 https://schemas.microsoft.com/2003/print/asyncui/v1/request
@@ -54,8 +53,8 @@ https://schemas.microsoft.com/2003/print/asyncui/v1/request
 <tr class="header">
 <th>属性</th>
 <th>类型</th>
-<th>必需</th>
-<th>说明</th>
+<th>必须</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -94,7 +93,7 @@ https://schemas.microsoft.com/2003/print/asyncui/v1/request
 <thead>
 <tr class="header">
 <th>元素</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -108,7 +107,7 @@ https://schemas.microsoft.com/2003/print/asyncui/v1/request
 
 ## <a name="remarks"></a>备注
 
-**操作**元素与一个交互式气球一起使用，它与常规气球类似，但它包含一个按钮，用户单击该按钮即可。
+**操作** 元素与一个交互式气球一起使用，它与常规气球类似，但它包含一个按钮，用户单击该按钮即可。
 
 ## <a name="examples"></a>示例
 

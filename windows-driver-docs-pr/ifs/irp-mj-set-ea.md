@@ -1,7 +1,6 @@
 ---
 title: IRP_MJ_SET_EA
 description: IRP \_ MJ \_ 设置 \_ EA
-ms.assetid: f9e1f867-a473-46ac-a1c0-63534c4c0755
 keywords:
 - IRP_MJ_SET_EA 可安装的文件系统驱动程序
 topic_type:
@@ -12,12 +11,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e0da3bc48ec73ee9e005d816a9d7fc9ab41bbfa7
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: bef39a79d5eb369278c4a7ebf6f82da0af29e598
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89066172"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96793773"
 ---
 # <a name="irp_mj_set_ea"></a>IRP \_ MJ \_ 设置 \_ EA
 
@@ -30,17 +29,17 @@ I/o 管理器发送 IRP \_ MJ \_ set \_ EA 请求，以设置文件的扩展属�
 ## <a name="operation-file-system-drivers"></a>操作：文件系统驱动程序
 
 
-如果文件系统支持扩展属性，则文件系统驱动程序应处理请求并完成 IRP。 否则，文件系统驱动程序将返回 ** \_ \_ 不 \_ 受支持的状态 EAS**。
+如果文件系统支持扩展属性，则文件系统驱动程序应处理请求并完成 IRP。 否则，文件系统驱动程序将返回 **\_ \_ 不 \_ 受支持的状态 EAS**。
 
 ## <a name="operation-file-system-filter-drivers"></a>操作：文件系统筛选器驱动程序
 
 
 筛选器驱动程序应将此 IRP 传递到堆栈上的下一个较低的驱动程序。
 
-## <a name="parameters"></a>parameters
+## <a name="parameters"></a>参数
 
 
-文件系统或筛选器驱动程序与给定的 IRP 一起调用[**IoGetCurrentIrpStackLocation**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetcurrentirpstacklocation) ，以获取指向其自己的*IrpSp*[**堆栈位置**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_stack_location)的指针，如以下列表所示。  (IRP 显示为 *irp*。 ) 驱动程序可以使用在处理 set 扩展属性请求中的以下 irp 成员和 irp 堆栈位置设置的信息：
+文件系统或筛选器驱动程序与给定的 IRP 一起调用 [**IoGetCurrentIrpStackLocation**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetcurrentirpstacklocation) ，以获取指向其自己的 *IrpSp*[**堆栈位置**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_stack_location)的指针，如以下列表所示。  (IRP 显示为 *irp*。 ) 驱动程序可以使用在处理 set 扩展属性请求中的以下 irp 成员和 irp 堆栈位置设置的信息：
 
 <a href="" id="deviceobject"></a>*DeviceObject*  
 指向目标设备对象的指针。
@@ -58,9 +57,9 @@ I/o 管理器发送 IRP \_ MJ \_ set \_ EA 请求，以设置文件的扩展属�
 指向调用方提供的 [**文件 \_ 完整 \_ EA \_ information**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_file_full_ea_information)结构化输入缓冲区的指针，该缓冲区接收扩展属性信息。 用于方法 \_ 不是 i/o。
 
 <a href="" id="irpsp--fileobject"></a>*IrpSp- &gt; FileObject*  
-指向与 *DeviceObject*关联的文件对象的指针。
+指向与 *DeviceObject* 关联的文件对象的指针。
 
-*IrpSp- &gt; FileObject*参数包含指向**RelatedFileObject**字段的指针，该字段也是文件 \_ 对象结构。 文件对象结构的 **RelatedFileObject** 字段在 \_ 处理 IRP \_ MJ 集 EA 期间无效 \_ \_ ，不应使用。
+*IrpSp- &gt; FileObject* 参数包含指向 **RelatedFileObject** 字段的指针，该字段也是文件 \_ 对象结构。 文件对象结构的 **RelatedFileObject** 字段在 \_ 处理 IRP \_ MJ 集 EA 期间无效 \_ \_ ，不应使用。
 
 <a href="" id="irpsp--majorfunction"></a>*IrpSp- &gt; MajorFunction*  
 指定 IRP \_ MJ \_ 集 \_ EA。

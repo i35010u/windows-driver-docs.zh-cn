@@ -1,15 +1,14 @@
 ---
 title: 键盘和鼠标类驱动程序
 description: 非 HID 键盘和鼠标可通过多个旧式总线进行连接，但仍使用相同的类驱动程序。
-ms.assetid: 0771D802-4F1D-4612-8376-ED3113DCC652
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 11e06eb7acf8690b22e9af7c6d58d5ffe94de5ce
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 811e08abf7e7e5f8899c99b97827c86c755969f0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90716802"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96794992"
 ---
 # <a name="keyboard-and-mouse-class-drivers"></a>键盘和鼠标类驱动程序
 
@@ -77,7 +76,7 @@ Mouclass 实现了 Mouclass 服务，并 mouclass.sys 了其可执行映像。
 
 **Kbdclass** 和 **Mouclass** 可支持两种不同模式下的多个设备。 在 *一对一模式下*，每个设备都有一个独立的设备堆栈。 类驱动程序创建一个独立类并将其附加到每个设备堆栈。 每个设备堆栈都有自己的控制状态和输入缓冲区。 Microsoft Win32 子系统通过唯一的文件对象从每个设备访问输入。
 
-在 *grandmaster 模式*下，类驱动程序将按照以下方式操作所有设备：
+在 *grandmaster 模式* 下，类驱动程序将按照以下方式操作所有设备：
 
 - 类驱动程序创建一个表示所有设备的 *grandmaster 类* ，并为每个设备创建一个 *从属类* 。
 
@@ -91,7 +90,7 @@ Mouclass 实现了 Mouclass 服务，并 mouclass.sys 了其可执行映像。
 
 - Grandmaster 维护一个全局设备状态。
 
-如果将 Kbdclass 和 Mouclass 的注册表项值**ConnectMultiplePorts**设置为 (0x00，则和会在一对一模式下操作，**在 \\ \\ \\ *** &lt; &gt; *** \\ **此类服务参数下， *class service*为 Kbdclass 或 Mouclass) 。 否则，Kbdclass 和 Mouclass 将在 grandmaster 模式下运行。
+如果将 Kbdclass 和 Mouclass 的注册表项值 **ConnectMultiplePorts** 设置为 (0x00，则和会在一对一模式下操作，**在 \\ \\ \\ 此**_&lt; &gt;_ 类服务 *_\\ 参数_* 下， *class service* 为 Kbdclass 或 Mouclass) 。 否则，Kbdclass 和 Mouclass 将在 grandmaster 模式下运行。
 
 ## <a name="open-and-close-via-the-class-driver"></a>通过类驱动程序打开和关闭
 
@@ -155,7 +154,7 @@ Windows 2000 和 Windows XP 包含一个新的扫描代码映射器，该映射�
 HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Keyboard Layout
 ```
 
-**注意**   还有一个**键盘布局**键 (注意控制键下) 的复数形式，但不应修改该键。
+**注意**  还有一个 **键盘布局** 键 (注意控制键下) 的复数形式，但不应修改该键。
 
 在 **键盘布局** 键中，必须添加 **Scancode 映射** 值。 此值的类型为 REG \_ BINARY (小 Endian 格式) ，并且具有下表中指定的数据格式。
 
@@ -267,11 +266,11 @@ I8042prt 支持使用以下内部设备控制请求来查询有关鼠标设备�
 
 - 处理特定于设备的输入。
 
-- 创建[**MouseClassServiceCallback**](/previous-versions/ff542394(v=vs.85))所需的[**鼠标 \_ 输入 \_ 数据**](/windows/win32/api/ntddmou/ns-ntddmou-mouse_input_data)结构。
+- 创建 [**MouseClassServiceCallback**](/previous-versions/ff542394(v=vs.85))所需的 [**鼠标 \_ 输入 \_ 数据**](/windows/win32/api/ntddmou/ns-ntddmou-mouse_input_data)结构。
 
-- \_ \_ 通过在其 ISR 调度完成例程中调用**MOUSECLASSSERVICECALLBACK** ，将鼠标输入数据结构传输到 Mouclass 数据队列。
+- \_ \_ 通过在其 ISR 调度完成例程中调用 **MOUSECLASSSERVICECALLBACK** ，将鼠标输入数据结构传输到 Mouclass 数据队列。
 
-对于绝对指针设备，设备的函数驱动程序必须**LastX** **LastY** **Flags** \_ \_ 按以下方式设置鼠标输入数据结构的 LastX、最后和 Flags 成员：
+对于绝对指针设备，设备的函数驱动程序必须 **LastX** **LastY** **Flags** \_ \_ 按以下方式设置鼠标输入数据结构的 LastX、最后和 Flags 成员：
 
 - 除了按设备的最大容量划分设备输入值之外，驱动程序还可以通过0xFFFF 来缩放设备输入值：
 
@@ -280,9 +279,9 @@ I8042prt 支持使用以下内部设备控制请求来查询有关鼠标设备�
     LastY = ((device input y value) * 0xFFFF ) / (Maximum y capability of the device)
     ```
 
-- 驱动程序 \_ \_ 在 **FLAGS**中设置鼠标移动绝对标志。
+- 驱动程序 \_ \_ 在 **FLAGS** 中设置鼠标移动绝对标志。
 
-- 如果应通过窗口管理器将输入映射到整个虚拟桌面，则驱动程序会 \_ \_ 在 **标志**中设置鼠标虚拟桌面标志。 如果 \_ \_ 未设置鼠标虚拟桌面标志，则窗口管理器仅将输入映射到主监视器。
+- 如果应通过窗口管理器将输入映射到整个虚拟桌面，则驱动程序会 \_ \_ 在 **标志** 中设置鼠标虚拟桌面标志。 如果 \_ \_ 未设置鼠标虚拟桌面标志，则窗口管理器仅将输入映射到主监视器。
 
 下面按设备类型指定如何实现对绝对定位设备的特殊要求：
 
@@ -296,12 +295,12 @@ I8042prt 支持使用以下内部设备控制请求来查询有关鼠标设备�
 
 - Serenum 枚举的即插即用 COM 端口设备：
 
-    需要即插即用函数驱动程序。 函数驱动程序将创建所需的鼠标 \_ 输入 \_ 数据结构，缩放设备输入数据，并在 \_ \_ 调用 **MouseClassServiceCallback**之前设置鼠标移动绝对标志。
+    需要即插即用函数驱动程序。 函数驱动程序将创建所需的鼠标 \_ 输入 \_ 数据结构，缩放设备输入数据，并在 \_ \_ 调用 **MouseClassServiceCallback** 之前设置鼠标移动绝对标志。
 
 - 非即插即用 COM 端口设备：
 
-    需要设备特定的函数驱动程序。 函数驱动程序将创建所需的鼠标 \_ 输入 \_ 数据结构，缩放设备输入数据，并在 \_ \_ 调用 **MouseClassServiceCallback**之前设置鼠标移动绝对标志。
+    需要设备特定的函数驱动程序。 函数驱动程序将创建所需的鼠标 \_ 输入 \_ 数据结构，缩放设备输入数据，并在 \_ \_ 调用 **MouseClassServiceCallback** 之前设置鼠标移动绝对标志。
 
 - 不受支持的总线上的设备：
 
-    需要设备特定的函数驱动程序。 函数驱动程序将创建所需的鼠标 \_ 输入 \_ 数据结构，缩放设备输入数据，并在 \_ \_ 调用 **MouseClassServiceCallback**之前设置鼠标移动绝对标志。
+    需要设备特定的函数驱动程序。 函数驱动程序将创建所需的鼠标 \_ 输入 \_ 数据结构，缩放设备输入数据，并在 \_ \_ 调用 **MouseClassServiceCallback** 之前设置鼠标移动绝对标志。

@@ -1,33 +1,32 @@
 ---
 title: NABTS 类别
 description: NABTS 类别
-ms.assetid: 7d064ed4-1bd9-4457-83c8-8b1fee10251c
 keywords:
-- 流类别 WDK 视频捕获 NABTS
+- 流类别 WDK 视频捕获，NABTS
 - PINNAME_VIDEO_NABTS
-- North American 广播 Teletext 标准 WDK 视频捕获
+- 北美广播 Teletext 标准 WDK 视频捕获
 - NABTS WDK 视频捕获
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 70ab8fb0b906e12c40432a1128e2a257cb008720
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f2c80cbff509cd0e7ec9bc7c22dc84449daef841
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63352684"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96795271"
 ---
 # <a name="nabts-categories"></a>NABTS 类别
 
 
-以下 GUID 对应于 North American 广播 Teletext 标准 (NABTS) 类别：
+以下 GUID 对应于北美广播 Teletext Standard (NABTS) 类别：
 
--   **PINNAME\_VIDEO\_NABTS**
+-   **PINNAME \_ VIDEO \_ NABTS**
 
-    输出插针，North American 广播 Teletext 标准 (NABTS) 类别提供的原始解码的流或转发错误更正 (FEC) NABTS 数据。
+    北美广播 Teletext 标准 (NABTS) 类别输出插针提供解码的原始或转发错误更正流 (FEC) NABTS 数据。
 
-原始之间的唯一区别或 FEC NABTS 数据为的子格式 GUID 值
+Raw 或 FEC NABTS data 的唯一区别在于 SubFormat GUID 的值
 
-指定时**PINNAME\_视频\_NABTS**插针，使用下表中列出的信息。
+指定 **PINNAME \_ VIDEO \_ NABTS** pin 时，使用下表中列出的信息。
 
 <table>
 <colgroup>
@@ -36,8 +35,8 @@ ms.locfileid: "63352684"
 </colgroup>
 <thead>
 <tr class="header">
-<th>特性</th>
-<th>ReplTest1</th>
+<th>Attribute</th>
+<th>值</th>
 </tr>
 </thead>
 <tbody>
@@ -55,23 +54,23 @@ ms.locfileid: "63352684"
 </tr>
 <tr class="even">
 <td><p><strong>SubFormat GUID</strong></p></td>
-<td><p>KSDATAFORMAT_SUBTYPE_NABTS (原始 NABTS)</p>
-<p>KSDATAFORMAT_SUBTYPE_NABTS_FEC （前向纠错 NABTS）</p></td>
+<td><p>KSDATAFORMAT_SUBTYPE_NABTS (raw NABTS) </p>
+<p>KSDATAFORMAT_SUBTYPE_NABTS_FEC (向前纠错 NABTS) </p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>说明符 GUID</strong></p></td>
 <td><p>KSDATAFORMAT_SPECIFIER_NONE</p></td>
 </tr>
 <tr class="even">
-<td><p><strong>扩展标头大小</strong></p></td>
+<td><p><strong>扩展的标头大小</strong></p></td>
 <td><p>0</p></td>
 </tr>
 <tr class="odd">
-<td><p><strong>所需的属性集</strong></p></td>
+<td><p><strong>必需的属性集</strong></p></td>
 <td><p>无</p></td>
 </tr>
 <tr class="even">
-<td><p><strong>所需的事件集</strong></p></td>
+<td><p><strong>必需的事件集</strong></p></td>
 <td><p>无</p></td>
 </tr>
 <tr class="odd">

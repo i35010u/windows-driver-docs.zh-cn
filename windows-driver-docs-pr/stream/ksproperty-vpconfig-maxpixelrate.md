@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ VPCONFIG \_ MAXPIXELRATE
 description: KSPROPERTY \_ VPCONFIG \_ MAXPIXELRATE 属性指定基于像素格式的最大像素速率，并按连接的高度) 指定维度 (宽度。
-ms.assetid: 5a1e70b6-32ab-4a6c-82f7-3e6e828262a4
 keywords:
 - KSPROPERTY_VPCONFIG_MAXPIXELRATE 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f9c175aec27e240e305bd22d92c6d236f784aea5
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 3b392ecb2ecda8829c756181a91bf5afbe302c93
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104474"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96795293"
 ---
 # <a name="ksproperty_vpconfig_maxpixelrate"></a>KSPROPERTY \_ VPCONFIG \_ MAXPIXELRATE
 
@@ -79,7 +78,7 @@ KSPROPERTY \_ VPCONFIG \_ MAXPIXELRATE 属性指定基于像素格式的最大�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSPROPERTY**](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)

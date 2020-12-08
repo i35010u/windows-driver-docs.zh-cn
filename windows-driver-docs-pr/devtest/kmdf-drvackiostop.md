@@ -1,7 +1,6 @@
 ---
 title: 'DrvAckIoStop 规则 (kmdf) '
 description: DrvAckIoStop 规则验证驱动程序是否能够识别出挂起的请求，同时驱动程序的电源管理队列正在关闭，驱动程序会相应地确认、完成或取消挂起的请求。
-ms.assetid: 4C6F8919-C3DF-4DE2-94EF-45475CE9E0C0
 ms.date: 05/21/2018
 keywords:
 - 'DrvAckIoStop 规则 (kmdf) '
@@ -12,12 +11,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 31a2313b89e0d5f424955e7f29fca9e6890ba789
-ms.sourcegitcommit: 878a1cb0149dc18ccbd31774e12bad76084dfa24
+ms.openlocfilehash: 68c0d883c50250eb10c53ff5b7e1a764d9da4b77
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94937807"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96793107"
 ---
 # <a name="drvackiostop-rule-kmdf"></a>DrvAckIoStop 规则 (kmdf) 
 

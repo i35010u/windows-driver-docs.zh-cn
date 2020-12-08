@@ -1,7 +1,6 @@
 ---
 title: 'IoBuildFsdIrpSignalEventInCompletionTimeout 规则 (wdm) '
 description: 当驱动程序在较低的驱动程序返回之前，IoBuildFsdIrpSignalEventInCompletionTimeout 规则会报告缺陷，因为需要在完成例程中发出 IRP 的事件。
-ms.assetid: EE191EDB-62BE-46F3-92B2-CE9090AD02E2
 ms.date: 05/21/2018
 keywords:
 - 'IoBuildFsdIrpSignalEventInCompletionTimeout 规则 (wdm) '
@@ -12,12 +11,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 64ff375dfb167067da2c733dac7879d0469d5c8c
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: d0864b3395e967879bad8151df0e61f4054759ab
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106884"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96795049"
 ---
 # <a name="iobuildfsdirpsignaleventincompletiontimeout-rule-wdm"></a>IoBuildFsdIrpSignalEventInCompletionTimeout 规则 (wdm) 
 

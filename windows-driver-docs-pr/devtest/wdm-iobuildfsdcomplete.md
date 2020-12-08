@@ -1,7 +1,6 @@
 ---
 title: 'IoBuildFsdComplete 规则 (wdm) '
 description: IoBuildFsdComplete 规则指定如果 IRP 是使用 IoBuildAsynchronousFsdRequest 创建的，则驱动程序不应调用 IoCompleteRequest。
-ms.assetid: 51F3411F-0D59-4341-94C3-8FAF4B98BB3E
 ms.date: 05/21/2018
 keywords:
 - 'IoBuildFsdComplete 规则 (wdm) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: deab2441e5b5d6e3ff4d672bf8001cc56e416568
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 5af60e4dca51d32e1ae747d1a64decf58721b463
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106770"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96795069"
 ---
 # <a name="iobuildfsdcomplete-rule-wdm"></a>IoBuildFsdComplete 规则 (wdm) 
 
 
-**IoBuildFsdComplete**规则指定如果 IRP 是使用[**IoBuildAsynchronousFsdRequest**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iobuildasynchronousfsdrequest)创建的，则驱动程序不应调用[**IoCompleteRequest**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocompleterequest) 。
+**IoBuildFsdComplete** 规则指定如果 IRP 是使用 [**IoBuildAsynchronousFsdRequest**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iobuildasynchronousfsdrequest)创建的，则驱动程序不应调用 [**IoCompleteRequest**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocompleterequest) 。
 
 **驱动程序模型： WDM**
 

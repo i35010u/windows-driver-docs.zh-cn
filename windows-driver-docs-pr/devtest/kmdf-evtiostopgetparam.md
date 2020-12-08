@@ -1,7 +1,6 @@
 ---
 title: 'EvtIoStopGetParam 规则 (kmdf) '
 description: EvtIoStopGetParam 规则检查 WdfRequestGetParameters 是否不在 EvtIoStop 回调中调用。
-ms.assetid: 4693DA4D-2298-45C3-8F07-24C861DD85BB
 ms.date: 05/21/2018
 keywords:
 - 'EvtIoStopGetParam 规则 (kmdf) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: b3292d06a3c04bb1421d340ba751564c1e8d3109
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 9101a954651434e735b88b27bc62cf158351d1e9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107400"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96793087"
 ---
 # <a name="evtiostopgetparam-rule-kmdf"></a>EvtIoStopGetParam 规则 (kmdf) 
 
 
-**EvtIoStopGetParam**规则检查[**WdfRequestGetParameters**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestgetparameters)是否不在[*EvtIoStop*](/windows-hardware/drivers/ddi/wdfio/nc-wdfio-evt_wdf_io_queue_io_stop)回调中调用。
+**EvtIoStopGetParam** 规则检查 [**WdfRequestGetParameters**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestgetparameters)是否不在 [*EvtIoStop*](/windows-hardware/drivers/ddi/wdfio/nc-wdfio-evt_wdf_io_queue_io_stop)回调中调用。
 
 **驱动程序模型： KMDF**
 

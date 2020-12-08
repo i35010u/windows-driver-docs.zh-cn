@@ -1,15 +1,14 @@
 ---
 title: 查询虚拟功能的参数
 description: 查询虚拟功能的参数
-ms.assetid: D834762D-9141-4F0F-B76D-5C8ABB016B64
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3dd7ed979729f8be69469064de19596bd633b46e
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: cd76e11322a9579273c2e16b7f96b198c10f14bd
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89215102"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96793379"
 ---
 # <a name="querying-the-parameters-of-a-virtual-function"></a>查询虚拟功能的参数
 
@@ -24,13 +23,13 @@ ms.locfileid: "89215102"
 
 -   通过发出 Oid NIC 交换机的 OID 方法请求 [ \_ \_ \_ 分配 \_ VF](./oid-nic-switch-allocate-vf.md)。
 
-    如果此 OID 请求成功完成，则过量驱动程序会在返回的[**NDIS \_ NIC \_ 交换机 \_ VF \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vf_parameters)结构的**VFID**成员中接收新创建的 VF 的标识符。
+    如果此 OID 请求成功完成，则过量驱动程序会在返回的 [**NDIS \_ NIC \_ 交换机 \_ VF \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vf_parameters)结构的 **VFID** 成员中接收新创建的 VF 的标识符。
 
-    **注意**   只有过量驱动程序才能以这种方式获取 VF 标识符。
+    **注意**  只有过量驱动程序才能以这种方式获取 VF 标识符。
 
      
 
-成功从 OID 方法请求返回后， [**ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的**InformationBuffer**成员包含指向[**NDIS \_ NIC \_ 交换机 \_ VF \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vf_parameters)结构的指针。 此结构包含指定的 VF 的配置参数。
+成功从 OID 方法请求返回后， [**ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的 **InformationBuffer** 成员包含指向 [**NDIS \_ NIC \_ 交换机 \_ VF \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vf_parameters)结构的指针。 此结构包含指定的 VF 的配置参数。
 
 NDIS 为微型端口驱动程序处理 [OID \_ NIC \_ 交换机 \_ VF \_ 参数](./oid-nic-switch-vf-parameters.md) 请求。 NDIS 从检查以下源中返回的数据的内部缓存返回信息：
 

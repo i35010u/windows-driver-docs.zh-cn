@@ -1,7 +1,6 @@
 ---
 title: 'NonFDONotPowerPolicyOwnerAPI 规则 (kmdf) '
 description: NonFDONotPowerPolicyOwnerAPI 规则指定如果非 FDO 驱动程序不是电源策略所有者，则无法调用某些 DDIs。
-ms.assetid: 91105318-12ae-44a0-ae3b-248e84f8cc93
 ms.date: 05/21/2018
 keywords:
 - 'NonFDONotPowerPolicyOwnerAPI 规则 (kmdf) '
@@ -12,19 +11,19 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: f010606c1a01b4f0895fc61b21bce729995a2b8f
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 0f1f1901233846f1d8ddc81f6659742b2e37331e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106166"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96793045"
 ---
 # <a name="nonfdonotpowerpolicyownerapi-rule-kmdf"></a>NonFDONotPowerPolicyOwnerAPI 规则 (kmdf) 
 
 
-**NonFDONotPowerPolicyOwnerAPI**规则指定如果非 FDO 驱动程序不是电源策略所有者，则无法调用某些 DDIs。
+**NonFDONotPowerPolicyOwnerAPI** 规则指定如果非 FDO 驱动程序不是电源策略所有者，则无法调用某些 DDIs。
 
-如果驱动程序属性规则 **NotPowerPolicyOwner** 通过，而另一个属性规则 **FDODriver**失败，则驱动程序无法调用以下方法：
+如果驱动程序属性规则 **NotPowerPolicyOwner** 通过，而另一个属性规则 **FDODriver** 失败，则驱动程序无法调用以下方法：
 
 [**WdfDeviceInitSetPowerPolicyEventCallbacks**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceinitsetpowerpolicyeventcallbacks) 
 [**WdfDeviceAssignS0IdleSettings**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceassigns0idlesettings) 

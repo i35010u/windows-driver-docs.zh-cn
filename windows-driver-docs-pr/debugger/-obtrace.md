@@ -1,7 +1,6 @@
 ---
 title: obtrace
-description: Obtrace 扩展显示指定的对象的对象引用跟踪数据。
-ms.assetid: 6a124f9f-1c2f-4303-b84f-0032fb912cc1
+description: Obtrace 扩展显示指定对象的对象引用跟踪数据。
 keywords:
 - obtrace Windows 调试
 ms.date: 05/23/2017
@@ -12,29 +11,29 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 28eb455d377c3ce9e0442528aa2291f9240b1d0d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c20f7ca26f35dd0bbc8d28a3e079eed3615e0c5d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63334472"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96795225"
 ---
 # <a name="obtrace"></a>!obtrace
 
 
-**！ Obtrace**扩展显示指定的对象的对象引用跟踪数据。
+**！ Obtrace** extension 显示指定对象的对象引用跟踪数据。
 
 ```dbgcmd
 !obtrace Object
 ```
 
-## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>参数
+## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>Parameters
 
 
-<span id="_______Object______"></span><span id="_______object______"></span><span id="_______OBJECT______"></span> *Object*   
-一个指向该对象或路径。
+<span id="_______Object______"></span><span id="_______object______"></span><span id="_______OBJECT______"></span>*对象*   
+指向对象或路径的指针。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 <table>
 <colgroup>
@@ -55,18 +54,18 @@ ms.locfileid: "63334472"
 
  
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-有关全局标志实用工具 (GFlags) 的详细信息，请参阅 Windows Driver Kit (WDK) 文档和*Microsoft Windows Internals*由 Mark Russinovich 和 David solomon 合著。
+有关全球标志实用程序 (GFlags) 的详细信息，请参阅 Windows 驱动程序工具包 (WDK) 文档和 *Microsoft Windows 内部机制* ，Mark Russinovich 和 David 所罗门群岛。
 
 <a name="remarks"></a>备注
 -------
 
-只要对象引用计数器递增或递减，Windows 的对象引用跟踪功能记录顺序的堆栈跟踪。
+每当对象引用计数器递增或递减时，Windows 的对象引用跟踪功能都将记录顺序堆栈跟踪。
 
-然后再使用此扩展显示的对象引用跟踪数据，必须使用[GFlags](gflags.md)以启用[对象引用跟踪](object-reference-tracing.md)指定的对象。 可以启用作为内核标志 （运行） 设置，在其中更改将立即生效，但消失后关闭或重新启动; 如果对象引用跟踪或者，作为注册表设置，这需要重启，但在更改之前保持有效。
+使用此扩展显示对象引用跟踪数据之前，必须使用 [GFlags](gflags.md) 为指定的对象启用 [对象引用跟踪](object-reference-tracing.md) 。 您可以启用对象引用跟踪作为内核标志 (运行时) 设置，更改将立即生效，但如果关闭或重新启动，则会消失;或者作为注册表设置，这需要重新启动，但在更改之前仍有效。
 
-下面是输出的示例 **！ obtrace**扩展：
+下面是 **！ obtrace** 扩展的输出示例：
 
 ```dbgcmd
 kd> !obtrace 0xfa96f700
@@ -117,7 +116,7 @@ Sequence  (+/-)  Stack
 References: 3, Dereferences 2
 ```
 
-中的主要指标 **！ obtrace 0xfa96f700**显示下表中列出。
+下表列出了 **！ obtrace 0xfa96f700** 显示的主要指标。
 
 <table>
 <colgroup>
@@ -133,23 +132,23 @@ References: 3, Dereferences 2
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>序列</strong></p></td>
-<td align="left"><p>表示操作的顺序。</p></td>
+<td align="left"><p>表示运算的顺序。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>+/-</strong></p></td>
 <td align="left"><p>指示引用或取消引用操作。</p>
-<p>+ 1 指示引用操作。</p>
-<p>-1 指示取消引用操作。</p>
-<p>+ /-n 指示多个引用/取消引用操作。</p></td>
+<p>+ 1 表示引用操作。</p>
+<p>-1 表示取消引用操作。</p>
+<p>+/-n 指示多次引用/取消引用操作。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-基于 x64 的目标计算机上的对象引用跟踪可能会不完整，因为它不是始终可以获取堆栈跟踪在 IRQL 级别高于被动\_级别。
+基于 x64 的目标计算机上的对象引用跟踪可能是不完整的，因为并非总是可以在比被动级别更高的 IRQL 级别获取堆栈跟踪 \_ 。
 
-可以通过按 CTRL + BREAK （在 WinDbg) 或 （在 KD) CTRL + C 来停止在任何时间执行。
+您可以随时通过按) 中的 CTRL + BREAK (，或在 KD) 中按 CTRL + C (停止执行。
 
  
 

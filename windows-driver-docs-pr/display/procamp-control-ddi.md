@@ -1,15 +1,14 @@
 ---
 title: ProcAmp 控制 DDI
 description: ProcAmp 控制 DDI
-ms.assetid: 102e21eb-bad4-4ab5-8630-9ac37c33f20a
 ms.date: 01/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 31dd406f7f7378df0629f1e935d1ccf42025bf1c
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 473b1d03ee356eca16090776117c05dda2a647a9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89066448"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96792959"
 ---
 # <a name="procamp-control-ddi"></a>ProcAmp 控制 DDI
 

@@ -1,7 +1,6 @@
 ---
 title: 'EvtIoResumeGetParam 规则 (kmdf) '
 description: EvtIoResumeGetParam 规则指定在 EvtIoResumeGetParam 回调函数中未调用 WdfRequestGetParameters。
-ms.assetid: C06D967A-629A-44E5-BD68-00480BB0EE81
 ms.date: 05/21/2018
 keywords:
 - 'EvtIoResumeGetParam 规则 (kmdf) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: df705dc4d90aee78569e54aeda328d07e00022c7
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 28d5f08c13fd312a32a8a1c7a5cbed439459f955
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107408"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96793108"
 ---
 # <a name="evtioresumegetparam-rule-kmdf"></a>EvtIoResumeGetParam 规则 (kmdf) 
 
 
-**EvtIoResumeGetParam**规则指定在**EvtIoResumeGetParam**回调函数中未调用[**WdfRequestGetParameters**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestgetparameters) 。
+**EvtIoResumeGetParam** 规则指定在 **EvtIoResumeGetParam** 回调函数中未调用 [**WdfRequestGetParameters**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestgetparameters) 。
 
 **驱动程序模型： KMDF**
 

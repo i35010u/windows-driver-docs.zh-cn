@@ -1,9 +1,8 @@
 ---
 title: InputSize 元素
-description: 可选 InputSize 元素指定的原始扫描媒体的大小。
-ms.assetid: 406cfff9-7357-467f-a07a-340e32d9220f
+description: 可选的 InputSize 元素指定原始扫描介质的大小。
 keywords:
-- InputSize 元素成像设备
+- InputSize 元素图像设备
 topic_type:
 - apiref
 api_name:
@@ -12,19 +11,19 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2c983a30712fd93c9e31f275cc14e9a3b0af40b2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 20c22b0accc6fb0703dbf2aec9106011e6060898
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63326078"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96793655"
 ---
 # <a name="inputsize-element"></a>InputSize 元素
 
 
-可选**InputSize**元素指定原始扫描媒体的大小。
+可选的 **InputSize** 元素指定原始扫描介质的大小。
 
-<a name="usage"></a>用法
+<a name="usage"></a>使用情况
 -----
 
 ```xml
@@ -46,9 +45,9 @@ ms.locfileid: "63326078"
 </colgroup>
 <thead>
 <tr class="header">
-<th>特性</th>
-<th>在任务栏的搜索框中键入</th>
-<th>必需</th>
+<th>属性</th>
+<th>类型</th>
+<th>必须</th>
 <th>描述</th>
 </tr>
 </thead>
@@ -58,7 +57,7 @@ ms.locfileid: "63326078"
 <td><p>xs:string</p></td>
 <td><p>否</p></td>
 <td><p></p>
-<p>可选。 一个布尔值，必须为 0，为 false，1 或 true。<strong>falsetrue</strong></p></td>
+<p>可选。 必须为0、false、1或 true 的布尔值。<strong>falsetrue</strong></p></td>
 </tr>
 </tbody>
 </table>
@@ -110,9 +109,9 @@ ms.locfileid: "63326078"
 <a name="remarks"></a>备注
 -------
 
-**InputSize**元素可以包含[ **DocumentSizeAutoDetect** ](documentsizeautodetect.md)或者[ **InputMediaSize** ](inputmediasize.md)元素，但不可同时使用两者。 **DocumentSizeAutoDetect**指定设备自动检测到的原始页面大小。 **InputMediaSize**指定要进行扫描当前作业的媒体的大小。
+**InputSize** 元素可包含 [**DocumentSizeAutoDetect**](documentsizeautodetect.md)或 [**InputMediaSize**](inputmediasize.md)元素，但不能同时包含两者。 **DocumentSizeAutoDetect** 指定设备 u) 检测原始页面的大小。 **InputMediaSize** 指定要为当前作业扫描的媒体的大小。
 
-客户端可以指定可选**MustHonor**属性时，才**InputSize**元素包含在**CreateScanJobRequest**层次结构。 有关详细信息**MustHonor**及其使用情况，请参阅[ **CreateScanJobRequest**](createscanjobrequest.md)。
+仅当 **InputSize** 元素包含在 **CreateScanJobRequest** 层次结构内时，客户端才能指定可选的 **MustHonor** 属性。 有关 **MustHonor** 及其用法的详细信息，请参阅 [**CreateScanJobRequest**](createscanjobrequest.md)。
 
 ## <a name="see-also"></a>请参阅
 

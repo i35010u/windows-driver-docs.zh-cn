@@ -1,7 +1,6 @@
 ---
 title: 创建组件以使用 SAN
 description: 创建组件以使用 SAN
-ms.assetid: b7405eda-734e-43f0-b0fe-747a06766291
 keywords:
 - 系统区域网络 WDK，创建组件
 - SAN WDK，创建组件
@@ -10,12 +9,12 @@ keywords:
 - 传输数据 WDK San
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d95c86328a337522a1c2cd81e63b2d0802b4440f
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 7426a8c11841738e836eefbe472b99de09c59d9e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89218444"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96794659"
 ---
 # <a name="creating-components-for-using-a-san"></a>创建组件以使用 SAN
 

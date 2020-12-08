@@ -1,17 +1,16 @@
 ---
 title: 用户模式调试期间的安全性
 description: 用户模式调试期间的安全性
-ms.assetid: e198c29a-d793-4974-8ee3-f26679bd70b4
 keywords:
-- 安全注意事项，用户模式下调试
+- 安全注意事项，用户模式调试
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f12e1df4c3f97408bc6c840177e3fc11597fbaee
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 38ec446928d8ed9b48d78c8b5da061a40ac7a557
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63381989"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96795169"
 ---
 # <a name="security-during-user-mode-debugging"></a>用户模式调试期间的安全性
 
@@ -19,19 +18,19 @@ ms.locfileid: "63381989"
 ## <span id="ddk_security_during_user_mode_debugging_dbg"></span><span id="DDK_SECURITY_DURING_USER_MODE_DEBUGGING_DBG"></span>
 
 
-当用户模式下调试程序处于活动状态时，它可以有效地控制任何计算机上的进程。
+当用户模式调试器处于活动状态时，它可以有效地控制计算机上的任何进程。
 
-有三种方法在用户模式下调试期间，可能会出现安全问题：
+在用户模式调试过程中可能会出现安全问题，有三种可能的方法：
 
--   如果使用已损坏或破坏性扩展 Dll，它们可能会导致调试程序执行意外的操作，还可能会影响应用程序而非你的目标。
+-   如果你使用损坏或破坏性的扩展 Dll，它们可能会导致你的调试器执行意外的操作，可能会影响你的目标以外的应用程序。
 
--   很可能已损坏或破坏性的符号文件也可能导致调试器执行意外的操作，还可能会影响应用程序而非你的目标。
+-   损坏或破坏性符号文件可能还会导致调试器执行意外的操作，可能会影响目标以外的应用程序。
 
--   如果运行远程调试会话时，发生意外客户端可能会尝试链接到你的服务器。 或者，可能是在需要在客户端可能会尝试执行未预计到的操作。
+-   如果正在运行远程调试会话，则意外的客户端可能会尝试链接到您的服务器。 或者可能是您期望的客户端可能会尝试执行您未预期的操作。
 
-有关如何防范意外的远程连接的建议，请参阅[安全在远程调试](security-during-remote-debugging.md)。 远程客户端已加入一个用户模式下调试会话后，没有任何方法来限制其访问对您的计算机上的进程。
+有关如何防范意外远程连接的建议，请参阅 [远程调试过程中的安全性](security-during-remote-debugging.md)。 远程客户端加入用户模式调试会话之后，无法限制其对计算机上进程的访问。
 
-如果没有执行远程调试，你应仍请注意错误的符号文件和扩展 Dll。 无法加载符号或你不信任的扩展 ！
+如果未执行远程调试，则还应注意错误的符号文件和扩展 Dll。 不要加载您不信任的符号或扩展！
 
  
 

@@ -1,7 +1,6 @@
 ---
 title: 用于更改驱动程序测试和调试启动选项的工具
 description: 用于更改驱动程序测试和调试启动选项的工具
-ms.assetid: 4fd58868-7a43-42e3-adf9-5a82593c1675
 keywords:
 - 工具 WDK，启动选项
 - 驱动程序开发工具 WDK，启动选项
@@ -14,12 +13,12 @@ keywords:
 - 负载配置 WDK 启动选项
 ms.date: 04/19/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 3cc3990b9110cce2edb554f9659d256407ac5fc9
-ms.sourcegitcommit: 3464f10ffa0727e38fbe225cfab52bb8c2bb1747
+ms.openlocfilehash: 56b04c9b9155551439ae3d8226dea038ee3a9819
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93352984"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96793989"
 ---
 # <a name="tools-for-changing-boot-options-for-driver-testing-and-debugging"></a>用于更改驱动程序测试和调试启动选项的工具
 

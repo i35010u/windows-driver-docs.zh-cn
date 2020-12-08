@@ -1,15 +1,14 @@
 ---
 title: 自定义端口功能状态
 description: 自定义端口功能状态
-ms.assetid: 87E88302-6FEA-4D71-A80D-E7AD6D42C0BE
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d6e9c70fc8b2d30663e47691a4d1458fb41f9650
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: a4d48448eff7e7d17a2cac780b0025546a7d2e21
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89210203"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96794653"
 ---
 # <a name="custom-port-feature-status"></a>自定义端口功能状态
 

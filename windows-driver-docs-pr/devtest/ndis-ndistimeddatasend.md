@@ -1,7 +1,6 @@
 ---
 title: 'NdisTimedDataSend 规则 (ndis) '
 description: NdisTimedDataSend 规则验证当 NDIS 驱动程序调用 MiniportSendNetBufferLists 时，微型端口驱动程序在30秒内完成了发送请求。
-ms.assetid: 2240254E-4381-4009-ACF2-DA481CB065FE
 ms.date: 05/21/2018
 keywords:
 - 'NdisTimedDataSend 规则 (ndis) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 213d9d9740a0855b2c136decf56673b753eff047
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 8ef0bc18409206a221727a2627b75b595c7811bc
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105836"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96795079"
 ---
 # <a name="ndistimeddatasend-rule-ndis"></a>NdisTimedDataSend 规则 (ndis) 
 
 
-**NdisTimedDataSend**规则验证当 NDIS 驱动程序调用[*MiniportSendNetBufferLists*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_send_net_buffer_lists)时，微型端口驱动程序在30秒内完成了发送请求。
+**NdisTimedDataSend** 规则验证当 NDIS 驱动程序调用 [*MiniportSendNetBufferLists*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_send_net_buffer_lists)时，微型端口驱动程序在30秒内完成了发送请求。
 
 您可以使用内核调试器来帮助确定问题的原因。 检查 PendingNbl 的规则 \_ 状态，它指向导致超时的挂起缓冲区列表。 使用 [**！ ndiskd**](../debugger/-ndiskd-nbl.md) 调试程序扩展来检查 [**NET \_ BUFFER \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)。 有关使用调试器的信息，请参阅 [Windows 调试](../debugger/index.md)。
 

@@ -1,17 +1,16 @@
 ---
 title: 在设备元数据创作向导中添加硬件和模型 ID
 description: 在设备元数据创作向导中添加硬件和模型 ID
-ms.assetid: 1BF563AE-B37B-4105-BA76-2D13F88B2BBD
 keywords:
 - 在设备元数据创作向导中添加硬件和模型 ID
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4ccaaf8ec11d33e77bc1a428b8783421667e4ccb
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 4bb9e551916b82a7802c6047883ccdd24ae0a28a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89384569"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96795129"
 ---
 # <a name="add-hardware-and-model-ids-in-the-device-metadata-authoring-wizard"></a>在设备元数据创作向导中添加硬件和模型 ID
 
@@ -25,20 +24,20 @@ ms.locfileid: "89384569"
 ### <a name="span-idto_add_a_hardware_id_spanspan-idto_add_a_hardware_id_spanspan-idto_add_a_hardware_id_spanto-add-a-hardware-id"></a><span id="To_add_a_Hardware_ID_"></span><span id="to_add_a_hardware_id_"></span><span id="TO_ADD_A_HARDWARE_ID_"></span>添加硬件 ID
 
 1.  单击 " **关联** " 选项卡。
-2.  在 " **硬件 ID**" 旁边，单击 **加号 (+) **。
+2.  在 " **硬件 ID**" 旁边，单击 **加号 (+)**。
 3.  在出现的框中，输入硬件 ID。
-    **注意**   如果可能，请使用包含公司供应商 ID 的值。 例如： USB \\ VID \_ 045E&PID \_ 0047
+    **注意**  如果可能，请使用包含公司供应商 ID 的值。 例如： USB \\ VID \_ 045E&PID \_ 0047
 
      
 
-4.  单击“确定”。
+4.  单击 **“确定”** 。
 
 ### <a name="span-idto_add_a_model_id_spanspan-idto_add_a_model_id_spanspan-idto_add_a_model_id_spanto-add-a-model-id"></a><span id="To_add_a_Model_ID_"></span><span id="to_add_a_model_id_"></span><span id="TO_ADD_A_MODEL_ID_"></span>添加模型 ID
 
 1.  单击 " **关联** " 选项卡。
-2.  单击 " **模型 ID**" 旁边的 **加号 (+) **。
+2.  单击 " **模型 ID**" 旁边的 **加号 (+)**。
 3.  在出现的框中，输入模型 ID 的 GUID 值。
-4.  单击“确定”。
+4.  单击 **“确定”** 。
 
 有关每种设备样式的硬件 ID 的详细信息，请参阅 [设备元数据包概述](../install/overview-of-device-metadata-packages.md)。
 

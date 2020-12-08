@@ -1,22 +1,21 @@
 ---
 title: 安装 WIA 错误处理驱动程序扩展
 description: 安装 WIA 错误处理驱动程序扩展
-ms.assetid: 8a16b0db-25ed-4512-8b45-0256fed6b83e
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 42239d5ce8c1a6b002e0218e0ad0d14c9592f721
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3140d2564d1000210450d2749f8fb5301425c57c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63326075"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96793643"
 ---
 # <a name="installing-a-wia-error-handling-driver-extension"></a>安装 WIA 错误处理驱动程序扩展
 
 
-应与 WIA 驱动程序一起安装的错误处理扩展插件。 若要安装该驱动程序以及驱动程序的错误处理程序，必须对驱动程序的 INF 文件完成少量的新增功能。
+错误处理扩展插件应该与 WIA 驱动程序一起安装。 若要将驱动程序的错误处理程序与驱动程序一起安装，必须为驱动程序的 INF 文件添加少量的添加操作。
 
-下面的示例演示如何修改现有的驱动程序 INF 文件以包括错误处理程序。
+下面的示例演示如何修改现有的驱动程序 INF 文件，使其包含错误处理程序。
 
 ```INF
 MyDriver.AddReg]
@@ -39,11 +38,11 @@ myerrhandler.dll=1
 ...
 ```
 
-{UiClassId} 类 ID 为的值，以驱动程序返回的 WIA\_DIP\_UI\_CLSID 属性和 {ErrorHandlerCLSID} 是错误处理程序的类 ID。 在此示例中， *myerrhandler.dll*包含错误处理程序的实现。
+{UiClassId} 类 ID 是驱动程序为 WIA \_ DIP UI CLSID 属性返回的值 \_ \_ ，而 {ErrorHandlerCLSID} 是错误处理程序的类 id。 在此示例中， *myerrhandler.dll* 包含错误处理程序的实现。
 
-中的第一个条目**AddReg**部分是为 WIA 扩展的驱动程序注册错误处理程序。 以下三项注册为 COM 组件的错误处理程序。
+**AddReg** 节中的第一项是将错误处理程序注册为驱动程序的 WIA 扩展。 以下三个项将错误处理程序注册为 COM 组件。
 
-*ThreadingModel*值的错误处理扩展插件必须**同时**。
+错误处理扩展插件的 *ThreadingModel* 值必须同时为 **两者**。
 
  
 

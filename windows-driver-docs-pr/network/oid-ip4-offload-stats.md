@@ -1,17 +1,16 @@
 ---
 title: OID_IP4_OFFLOAD_STATS
 description: 本主题介绍) OID_IP4_OFFLOAD_STATS 对象标识符 (OID。
-ms.assetid: 7ffe9703-5370-410f-bccd-4a430835edd0
 keywords:
 - OID_IP4_OFFLOAD_STATS
 ms.date: 11/06/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7b3b6331e6da441b17f9ab25203908c19b84d91f
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 00c28b1e4a3ffe0ccd35421d7f35ee6fa2cc5c1f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89209683"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96793435"
 ---
 # <a name="oid_ip4_offload_stats"></a>OID_IP4_OFFLOAD_STATS
 

@@ -1,22 +1,21 @@
 ---
 title: WDI_TLV_P2P_GO_NEGOTIATION_RESPONSE_INFO
-description: WDI_TLV_P2P_GO_NEGOTIATION_RESPONSE_INFO 是 TLV 包含 Wi-Fi Direct 组所有者协商响应信息。
-ms.assetid: A0BB2CF6-4168-4973-92D0-EFF9F596F1BE
+description: WDI_TLV_P2P_GO_NEGOTIATION_RESPONSE_INFO 是包含 Wi-Fi 直属组所有者协商响应信息的 TLV。
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_P2P_GO_NEGOTIATION_RESPONSE_INFO 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: ff66fdf272a0c2a480dcd5594f458feeaa6978fd
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e02ac7e771a0191b50eac6f992a14224415e9f50
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63374546"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96794337"
 ---
-# <a name="wditlvp2pgonegotiationresponseinfo"></a>WDI\_TLV\_P2P\_转\_协商\_响应\_信息
+# <a name="wdi_tlv_p2p_go_negotiation_response_info"></a>WDI \_ TLV \_ P2P \_ 中转 \_ 协商 \_ 响应 \_ 信息
 
 
-WDI\_TLV\_P2P\_转\_协商\_响应\_信息是 TLV 包含 Wi-Fi Direct 组所有者协商响应信息。
+WDI \_ tlv \_ P2P \_ 中转 \_ 协商 \_ 响应 \_ 信息是一个 TLV，其中包含 Wi-Fi 直接组所有者协商响应信息。
 
 ## <a name="tlv-type"></a>TLV 类型
 
@@ -26,15 +25,15 @@ WDI\_TLV\_P2P\_转\_协商\_响应\_信息是 TLV 包含 Wi-Fi Direct 组所有�
 ## <a name="length"></a>长度
 
 
-所有的大小 （以字节为单位） 总和包含 TLVs。
+Sum (包含所有 TLVs 的大小的) 字节。
 
 ## <a name="values"></a>值
 
 
-| 在任务栏的搜索框中键入                                                                                                           | 允许多个 TLV 实例 | 可选 | 描述                                                             |
+| 类型                                                                                                           | 允许多个 TLV 实例 | 可选 | 说明                                                             |
 |----------------------------------------------------------------------------------------------------------------|--------------------------------|----------|-------------------------------------------------------------------------|
-| [**WDI\_TLV\_P2P\_GO\_NEGOTIATION\_RESPONSE\_PARAMETERS**](wdi-tlv-p2p-go-negotiation-response-parameters.md) |                                |          | 指定 Wi-Fi Direct 组所有者协商响应参数。 |
-| [**WDI\_TLV\_P2P\_GROUP\_ID**](wdi-tlv-p2p-group-id.md)                                                       |                                | X        | 指定本地 Wi-Fi Direct 转组 ID。                       |
+| [**WDI \_ TLV \_ P2P \_ 中转 \_ 协商 \_ 响应 \_ 参数**](wdi-tlv-p2p-go-negotiation-response-parameters.md) |                                |          | 指定 Wi-Fi 直接组所有者协商响应参数。 |
+| [**WDI \_ TLV \_ P2P \_ 组 \_ ID**](wdi-tlv-p2p-group-id.md)                                                       |                                | X        | 指定本地 Wi-Fi Direct 中转的组 ID。                       |
 
  
 
@@ -53,10 +52,10 @@ WDI\_TLV\_P2P\_转\_协商\_响应\_信息是 TLV 包含 Wi-Fi Direct 组所有�
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
-<td><p>Windows Server 2016</p></td>
+<td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Wditypes.hpp</td>
 </tr>
 </tbody>

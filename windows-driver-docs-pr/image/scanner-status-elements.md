@@ -1,22 +1,21 @@
 ---
 title: 扫描仪状态元素
 description: 扫描仪状态元素
-ms.assetid: 9c616805-a25b-4fd3-bc84-4bf40b58cab6
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 630ca755ac141b86d41cb90da4e81a4307f26b30
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3a0b152478d100d816f737085ec40ebaf96993ce
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63370303"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96793633"
 ---
 # <a name="scanner-status-elements"></a>扫描仪状态元素
 
 
-本部分介绍**ScannerStatus**元素及其子项。 **ScannerStatus** WSD 扫描服务架构的部分包含的信息 （例如时间以及更改扫描程序中的条件） 的自动机时控件。
+本部分介绍 **ScannerStatus** 元素及其子元素。 WSD 扫描服务架构的 " **ScannerStatus** " 部分包含自动机时出错 (的信息，例如扫描器) 控件中的时间和更改条件。
 
-本部分包括：
+本节包括：
 
 [**ActiveConditions**](activeconditions.md)
 
@@ -30,7 +29,7 @@ ms.locfileid: "63370303"
 
 [**DeviceCondition**](devicecondition.md)
 
-[**DeviceCondition 和 ConditionHistoryEntry 的 name 元素**](name-element-for-devicecondition-and-conditionhistoryentry.md)
+[**DeviceCondition 和 ConditionHistoryEntry 的名称元素**](name-element-for-devicecondition-and-conditionhistoryentry.md)
 
 [**ScannerCurrentTime**](scannercurrenttime.md)
 
@@ -42,7 +41,7 @@ ms.locfileid: "63370303"
 
 [**ScannerStatus**](scannerstatus.md)
 
-[**严重级别**](severity.md)
+[**严重性**](severity.md)
 
 [**时间**](time.md)
 

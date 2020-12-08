@@ -1,18 +1,17 @@
 ---
 title: PSHED 插件简介
 description: PSHED 插件简介
-ms.assetid: 31c540ec-c1d0-48e3-9eab-b458a5213f7e
 keywords:
 - 平台特定硬件错误驱动程序插件 WDK WHEA，关于特定于平台的硬件错误驱动程序插件
 - PSHED 插件 WDK WHEA，关于特定于平台的硬件错误驱动程序插件
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f83496bdf77fd8e780652b09098044778b2c8cf4
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: caf20b3074f71ae0a4056099802fae001a5b9b18
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91732689"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96794131"
 ---
 # <a name="introduction-to-pshed-plug-ins"></a>PSHED 插件简介
 

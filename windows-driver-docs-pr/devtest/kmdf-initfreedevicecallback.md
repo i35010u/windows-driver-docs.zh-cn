@@ -1,7 +1,6 @@
 ---
 title: 'InitFreeDeviceCallback 规则 (kmdf) '
 description: InitFreeDeviceCallback 规则指定，如果驱动程序在初始化新框架设备对象时遇到错误，则驱动程序必须调用 WdfDeviceInitFree; 如果驱动程序从对 WdfControlDeviceInitAllocate 的调用接收到 WDFDEVICE INIT 结构，则为 \_ 。
-ms.assetid: 518f60cf-283a-4924-8bbd-2f5e26d3e850
 ms.date: 05/21/2018
 keywords:
 - 'InitFreeDeviceCallback 规则 (kmdf) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 1ad5760c47f5544cfaafa63b8ec90872d5a8fe69
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: b6a59c04226a42d3120efb8a649f7a902e64c013
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107386"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96793059"
 ---
 # <a name="initfreedevicecallback-rule-kmdf"></a>InitFreeDeviceCallback 规则 (kmdf) 
 
 
-InitFreeDeviceCallback 规则指定，如果驱动程序在初始化新框架设备对象时遇到错误，则驱动程序必须调用[**WdfDeviceInitFree**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceinitfree) ; 如果驱动程序从对[**WdfControlDeviceInitAllocate**](/windows-hardware/drivers/ddi/wdfcontrol/nf-wdfcontrol-wdfcontroldeviceinitallocate)的调用接收到[**WDFDEVICE \_ INIT**](../wdf/wdfdevice_init.md)结构，则为。
+InitFreeDeviceCallback 规则指定，如果驱动程序在初始化新框架设备对象时遇到错误，则驱动程序必须调用 [**WdfDeviceInitFree**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceinitfree) ; 如果驱动程序从对 [**WdfControlDeviceInitAllocate**](/windows-hardware/drivers/ddi/wdfcontrol/nf-wdfcontrol-wdfcontroldeviceinitallocate)的调用接收到 [**WDFDEVICE \_ INIT**](../wdf/wdfdevice_init.md)结构，则为。
 
 **驱动程序模型： KMDF**
 

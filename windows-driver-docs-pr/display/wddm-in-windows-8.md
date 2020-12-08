@@ -1,15 +1,14 @@
 ---
 title: WDDM 1.2 和 Windows 8
 description: 本部分提供了有关 Windows 显示驱动程序模型中的新功能和增强功能的详细信息 (WDDM) 版本1.2，该版本可从 Windows 8 开始使用。 还介绍了硬件要求、实现准则和使用方案。
-ms.assetid: 8757ADDD-EDCA-4C09-BB71-2ED925DB2E41
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ad5f570ab6f3f561c49e99a3fa8285403be15c58
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 20cbc33c379eddd11f77fcd8513d40442aa0ace8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91734197"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96793815"
 ---
 # <a name="wddm-12-and-windows-8"></a>WDDM 1.2 和 Windows 8
 
@@ -27,7 +26,7 @@ ms.locfileid: "91734197"
 <thead>
 <tr class="header">
 <th align="left">主题</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -60,12 +59,12 @@ ms.locfileid: "91734197"
 
  
 
-## <a name="span-idintroductionspanspan-idintroductionspanspan-idintroductionspanintroduction"></a><span id="Introduction"></span><span id="introduction"></span><span id="INTRODUCTION"></span>产品介绍
+## <a name="span-idintroductionspanspan-idintroductionspanspan-idintroductionspanintroduction"></a><span id="Introduction"></span><span id="introduction"></span><span id="INTRODUCTION"></span>简介
 
 
 WDDM 随 Windows Vista 一起引入，作为 Windows XP 或 [windows 2000 显示器驱动程序模型的替换 (XDDM) ](windows-2000-display-driver-model-design-guide.md)。 在 Windows Vista 中，WDDM 体系结构提供了一项功能，可用于启用新功能，如桌面合成、增强的容错、视频内存管理器、GPU 计划程序、Direct3D 表面的跨进程共享等。 WDDM 专门设计用于新式图形设备，这些设备是带有像素着色器2.0 或更高性能的 Microsoft Direct3D 9，具有支持 WDDM 功能所需的所有硬件功能。 WDDM for Windows Vista 称为 "WDDM 1.0"。
 
-Windows 7 对驱动程序模型进行了增量更改，以支持 Windows 7 的特性和功能，并且称为 "WDDM 1.1"。 WDDM 1.1 是 WDDM 1.0 的 strict 超集。 WDDM 1.1 引入了对 Microsoft Direct3D 11、Windows 图形设备接口 (GDI) 硬件加速、连接和配置显示、DirectX 视频加速 (VA) 高清晰 (DXVA-HD) 以及许多其他功能的支持。 有关这些功能的详细信息，请参阅 [适用于 Windows 7 的图形指南](/previous-versions/windows/hardware/download/dn550976(v=vs.85))。
+Windows 7 对驱动程序模型进行了增量更改，以支持 Windows 7 的特性和功能，并且称为 "WDDM 1.1"。 WDDM 1.1 是 WDDM 1.0 的 strict 超集。 WDDM 1.1 引入了对 Microsoft Direct3D 11、Windows 图形设备接口 (GDI) 硬件加速、连接和配置显示、DirectX 视频加速 (VA) High-Definition (DXVA-HD) 以及许多其他功能的支持。 有关这些功能的详细信息，请参阅 [适用于 Windows 7 的图形指南](/previous-versions/windows/hardware/download/dn550976(v=vs.85))。
 
 Windows 8 引入了一组新特性和功能，需要更改图形驱动程序。 这些增量更改会使最终用户和开发人员受益，并提高系统的可靠性。 启用这些 Windows 8 功能的 WDDM 驱动程序模型称为 "WDDM 1.2"。 WDDM 1.2 是 WDDM 1.1 和 WDDM 1.0 的超集。 这些更改可以用简化形式表示，如下表所示：
 
@@ -117,7 +116,8 @@ Windows 8 引入了一组新特性和功能，需要更改图形驱动程序。 
 
  
 
-**注意**   对于 Windows 8 和 WDDM 1.2，不再支持 XDDM，并且 XDDM 驱动程序不会加载到 Windows 8 客户端或服务器上。 对于传统上依赖于 XDDM 的情况，Windows 8 允许迁移到 WDDM，如下表所示。
+**注意**  
+对于 Windows 8 和 WDDM 1.2，不再支持 XDDM，并且 XDDM 驱动程序不会加载到 Windows 8 客户端或服务器上。 对于传统上依赖于 XDDM 的情况，Windows 8 允许迁移到 WDDM，如下表所示。
 
 独立硬件供应商 (Ihv) 和系统构建者应该采用最适合于其客户的其他 WDDM 解决方案。 这意味着，Windows 8 系统将始终具有基于 WDDM 的驱动程序。
 
@@ -143,14 +143,14 @@ Windows 8 引入了一组新特性和功能，需要更改图形驱动程序。 
 <td align="left">XDDM IHV 驱动程序</td>
 <td align="left">系统构建者需要使用 IHV 才能获取：
 <ul>
-<li>仅显示 WDDM 驱动程序或</li>
+<li>Display-Only WDDM 驱动程序或</li>
 <li>完整图形 WDDM 驱动程序</li>
 </ul>
 <p>其他 Microsoft 基本显示器驱动程序</p></td>
 </tr>
 <tr class="odd">
 <td align="left">XDDM 虚拟化驱动程序</td>
-<td align="left">系统构建者需要使用 IHV 才能获取仅限显示的新虚拟化驱动程序</td>
+<td align="left">系统构建者需要使用 IHV 才能获取新的 Display-Only 虚拟化驱动程序</td>
 </tr>
 <tr class="even">
 <td align="left">适用于 Int10 的 CSM 支持统一可扩展固件接口 (UEFI) </td>
@@ -169,7 +169,8 @@ Windows 8 引入了一组新特性和功能，需要更改图形驱动程序。 
 
  
 
-**注意**   Microsoft 提供了一个基于 WDDM 的基本显示器驱动程序，该驱动程序是先前的内置 XDDM 标准 VGA 驱动程序的替代，它提供了基本的显示功能以及基于软件的二维和三维呈现方式。
+**注意**  
+Microsoft 提供了一个基于 WDDM 的基本显示器驱动程序，该驱动程序是先前的内置 XDDM 标准 VGA 驱动程序的替代，它提供了基本的显示功能以及基于软件的二维和三维呈现方式。
 
  
 
@@ -217,14 +218,14 @@ WDDM 1.2 引入了新类型的图形驱动程序，面向特定方案，如下�
 <td align="left">可选</td>
 </tr>
 <tr class="even">
-<td align="left">仅显示</td>
+<td align="left">Display-Only</td>
 <td align="left">不允许</td>
 <td align="left">可选</td>
 <td align="left">可选</td>
 <td align="left">可选</td>
 </tr>
 <tr class="odd">
-<td align="left">仅呈现</td>
+<td align="left">Render-Only</td>
 <td align="left">可选，作为非主适配器</td>
 <td align="left">可选</td>
 <td align="left">可选</td>

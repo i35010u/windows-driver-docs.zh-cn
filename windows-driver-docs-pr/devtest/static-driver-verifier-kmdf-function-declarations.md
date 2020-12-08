@@ -1,15 +1,14 @@
 ---
 title: 静态驱动程序验证程序 KMDF 函数声明
 description: 静态驱动程序验证程序 KMDF 函数声明
-ms.assetid: 1623f3a4-e318-41b3-bbcf-d443202f31e6
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 86eb08eb4e5b6d0124dab8fa1e7849ee4104cb2e
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: d8f1020f53529d2fa7074dd5262741b4c2b1c6e1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106206"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96793981"
 ---
 # <a name="static-driver-verifier-kmdf-function-declarations"></a>静态驱动程序验证程序 KMDF 函数声明
 

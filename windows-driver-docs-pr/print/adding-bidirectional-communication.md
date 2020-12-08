@@ -1,7 +1,6 @@
 ---
 title: 添加双向通信
 description: 添加双向通信
-ms.assetid: 30767eda-e456-4928-afac-40edd2ab48fc
 keywords:
 - 打印后台处理程序自定义 WDK，双向通信
 - 后台处理程序自定义 WDK 打印，双向通信
@@ -10,12 +9,12 @@ keywords:
 - 双向通信 WDK 打印
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 476a7cfcb72c03ef93b8c0a0959d80c45e14b790
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: c8039ee24b1d2d5eb79f7bfa59232ce8cd269c13
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89218278"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96794241"
 ---
 # <a name="adding-bidirectional-communication"></a>添加双向通信
 

@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ BDA \_ LNB \_ 交换机 \_ 频率
 description: 客户端使用 KSPROPERTY \_ BDA \_ LNB \_ SWITCH \_ frequency 来通知 rf 调谐器节点有关的传入 RF 信号的频率，调谐器应通过这些信号通知低干扰块 (LNB) 设备在 LNB 转移 RF 信号的频率时，通过使用带外)  (，反之亦然，反之亦然。
-ms.assetid: a448bad1-40dc-4596-bc18-9522144e33a7
 keywords:
 - KSPROPERTY_BDA_LNB_SWITCH_FREQUENCY 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cfc7c174e84954e67a079d7a35e7a6e92cab0ac6
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 68b1a82b149aff660a526b8a4d9a75e452ac6ae4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89192167"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96795317"
 ---
 # <a name="ksproperty_bda_lnb_switch_frequency"></a>KSPROPERTY \_ BDA \_ LNB \_ 交换机 \_ 频率
 
@@ -61,7 +60,7 @@ ms.locfileid: "89192167"
 
  
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 KSP **NodeId** \_ 节点的节点标识号指定了 RF 调谐器节点的标识符。
@@ -82,7 +81,7 @@ KSP **NodeId** \_ 节点的节点标识号指定了 RF 调谐器节点的标识�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Bdamedia (包含 Bdamedia) </td>
 </tr>
 </tbody>

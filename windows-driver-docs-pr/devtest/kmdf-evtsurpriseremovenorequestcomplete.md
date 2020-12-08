@@ -1,7 +1,6 @@
 ---
 title: 'EvtSurpriseRemoveNoRequestComplete 规则 (kmdf) '
 description: EvtSurpriseRemoveNoRequestComplete 规则指定 WDF 驱动程序不应使用 EvtDeviceSurpriseRemoval 回调完成请求，而应使用自托管 i/o 回调函数。
-ms.assetid: A815CFA0-72A9-4FBC-8432-6212CB696F99
 ms.date: 05/21/2018
 keywords:
 - 'EvtSurpriseRemoveNoRequestComplete 规则 (kmdf) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: ce40d880fdbdbdae0d92b896084214e8eea2fc0a
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 98c8661ff695f3935369adebfd1f2adde8008f86
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107398"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96793081"
 ---
 # <a name="evtsurpriseremovenorequestcomplete-rule-kmdf"></a>EvtSurpriseRemoveNoRequestComplete 规则 (kmdf) 
 
 
-**EvtSurpriseRemoveNoRequestComplete**规则指定 WDF 驱动程序不应使用[*EvtDeviceSurpriseRemoval*](/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_surprise_removal)回调完成请求，而应使用自托管 i/o 回调函数。 *EvtDeviceSurpriseRemoval* 回调未与电源线路径同步。
+**EvtSurpriseRemoveNoRequestComplete** 规则指定 WDF 驱动程序不应使用 [*EvtDeviceSurpriseRemoval*](/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_surprise_removal)回调完成请求，而应使用自托管 i/o 回调函数。 *EvtDeviceSurpriseRemoval* 回调未与电源线路径同步。
 
 **驱动程序模型： KMDF**
 

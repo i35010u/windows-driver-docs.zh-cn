@@ -1,20 +1,19 @@
 ---
 title: SKU 差分指令
 description: 对于 Windows Server 2008 和 Windows Vista SP1，已修改内置的显示驱动程序 Inf，使其包含仅将驱动程序表示为客户端的新值，也就是说，驱动程序将不会安装在 Windows 的服务器 Sku 上。
-ms.assetid: 9E31BD57-41B6-40DF-AF27-8EAC66BDFE09
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ce37d064d0b7f91d12088e68ad38770303268949
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 0313dcb71af9f34b913530b4d722bc9f162153e8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89066602"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96793859"
 ---
 # <a name="sku-differentiation-directive"></a>SKU 差分指令
 
 
-对于 Windows Server 2008 和 Windows Vista SP1，已修改内置的显示驱动程序 Inf，使其包含仅将驱动程序表示为 *客户端*的新值，也就是说，驱动程序将不会安装在 Windows 的服务器 sku 上。 Windows 8 中的所有显示器驱动程序都需要此指令。
+对于 Windows Server 2008 和 Windows Vista SP1，已修改内置的显示驱动程序 Inf，使其包含仅将驱动程序表示为 *客户端* 的新值，也就是说，驱动程序将不会安装在 Windows 的服务器 sku 上。 Windows 8 中的所有显示器驱动程序都需要此指令。
 
 在 SP1 之前的 Windows Vista 中，使用了以下值：
 
@@ -48,7 +47,7 @@ X64:
 
 因此，即使服务器系统的驱动程序存储中存在仅限客户端的驱动程序包，也无法安装该驱动程序。
 
-[**INF 制造商部分**](../install/inf-manufacturer-section.md)主题显示了如何添加*TargetOSVersion* ，以根据各种标准筛选设备安装。 其中一个条件是 *ProductType*，可用于指定可在其上安装包的 sku 类别。 为 *ProductType*定义了以下值：
+[**INF 制造商部分**](../install/inf-manufacturer-section.md)主题显示了如何添加 *TargetOSVersion* ，以根据各种标准筛选设备安装。 其中一个条件是 *ProductType*，可用于指定可在其上安装包的 sku 类别。 为 *ProductType* 定义了以下值：
 
 ``` syntax
 0x0000001 (VER_NT_WORKSTATION)

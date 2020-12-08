@@ -1,7 +1,6 @@
 ---
 title: Bug 检查 0x191 PF_DETECTED_CORRUPTION
-description: PF_DETECTED_CORRUPTION bug 检查具有 0x00000191 值。
-ms.assetid: 570D22A7-E3EB-4A53-9188-640907FF39A5
+description: PF_DETECTED_CORRUPTION bug 检查的值为0x00000191。
 keywords:
 - Bug 检查 0x191 PF_DETECTED_CORRUPTION
 - PF_DETECTED_CORRUPTION
@@ -13,31 +12,31 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 8a38d7b03d165f4e5ce0803d673d0966e3321284
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: dd890684bd11ae0a34babe38f7253a5ebeb096fc
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67519831"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96793281"
 ---
-# <a name="bug-check-0x191-pfdetectedcorruption"></a>Bug 检查 0x191：PF\_检测到\_损坏
+# <a name="bug-check-0x191-pf_detected_corruption"></a>Bug 检查0x191： PF \_ 检测到 \_ 损坏
 
 
-PF\_检测到\_损坏错误检查的值为 0x00000191。
+PF \_ 检测到 \_ 的损坏 bug 检查的值为0x00000191。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题面向程序员。 如果您是在使用计算机时收到蓝屏错误代码的客户，请参阅[蓝屏错误疑难解答](https://www.windows.com/stopcode)。
 
 
-## <a name="pfdetectedcorruption-parameters"></a>PF\_检测到\_损坏参数
+## <a name="pf_detected_corruption-parameters"></a>PF \_ 检测到 \_ 损坏参数
 
 
 | 参数 | 描述 |
 |-----------|-------------|
 | 1         | 保留    |
-| 2         | 保留    |
-| 3         | 保留    |
-| 4         | 保留    |
+| 2         | 预留    |
+| 3         | 预留    |
+| 4         | 预留    |
 
  
 

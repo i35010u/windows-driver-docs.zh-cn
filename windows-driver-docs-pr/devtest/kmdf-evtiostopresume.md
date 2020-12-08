@@ -1,7 +1,6 @@
 ---
 title: 'EvtIoStopResume 规则 (kmdf) '
 description: EvtIoStopResume 规则指定如果驱动程序注册 EvtIoStop 回调函数，然后调用重新排队参数等于 FALSE 的 WdfRequestStopAcknowledge，则驱动程序必须注册 EvtIoResume 回调函数。
-ms.assetid: 52bcaf8a-545c-4607-89c3-d4474bd50376
 ms.date: 05/21/2018
 keywords:
 - 'EvtIoStopResume 规则 (kmdf) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: aa27d577cca8e073aee09feff949ef7b45d5afea
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 71b4380ba8fe15baeb28625c254658d449c7d55f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107402"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96793083"
 ---
 # <a name="evtiostopresume-rule-kmdf"></a>EvtIoStopResume 规则 (kmdf) 
 
 
-**EvtIoStopResume**规则指定如果驱动程序注册[*EvtIoStop*](/windows-hardware/drivers/ddi/wdfio/nc-wdfio-evt_wdf_io_queue_io_stop)回调函数，然后调用*重新排队*参数等于**FALSE**的[**WdfRequestStopAcknowledge**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequeststopacknowledge) ，则驱动程序必须注册[*EvtIoResume*](/windows-hardware/drivers/ddi/wdfio/nc-wdfio-evt_wdf_io_queue_io_resume)回调函数。 当设备再次进入 D0 状态时，框架会向 **EvtIoResume** 回调函数传递请求。
+**EvtIoStopResume** 规则指定如果驱动程序注册 [*EvtIoStop*](/windows-hardware/drivers/ddi/wdfio/nc-wdfio-evt_wdf_io_queue_io_stop)回调函数，然后调用 *重新排队* 参数等于 **FALSE** 的 [**WdfRequestStopAcknowledge**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequeststopacknowledge) ，则驱动程序必须注册 [*EvtIoResume*](/windows-hardware/drivers/ddi/wdfio/nc-wdfio-evt_wdf_io_queue_io_resume)回调函数。 当设备再次进入 D0 状态时，框架会向 **EvtIoResume** 回调函数传递请求。
 
 **驱动程序模型： KMDF**
 

@@ -1,7 +1,6 @@
 ---
 title: 硬件转换和照明
 description: 硬件转换和照明
-ms.assetid: b45aa56e-2d8c-412a-b581-a1e2002d4fac
 keywords:
 - Direct3D WDK Windows 2000 显示器、硬件 tansform 和照明
 - 纹理转换 WDK Direct3D
@@ -9,12 +8,12 @@ keywords:
 - 照明 WDK Direct3D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bad290c1a2c22c909d172fee6664d335c64d25a1
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: a825dded74e7ce11c13e66008c526d17e331ea08
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89064778"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96793935"
 ---
 # <a name="hardware-transform-and-lighting"></a>硬件转换和照明
 
@@ -24,7 +23,7 @@ ms.locfileid: "89064778"
 
 几何操作的硬件加速（如照明和转换）已启用对最新直接 X 版本的 [**D3dDrawPrimitives2**](/windows-hardware/drivers/ddi/d3dhal/nc-d3dhal-lpd3dhal_drawprimitives2cb) DDI 的修改。 在 API 级别，支持硬件中的顶点操作的设备与仅进行光栅化的设备单独枚举。
 
-已扩展现有大写字母结构以指示可能存在于硬件加速转换设备上的功能。 例如，受支持光源的数量是用[**D3DLIGHTINGCAPS**](/windows-hardware/drivers/ddi/d3dcaps/ns-d3dcaps-_d3dlightingcaps)结构的**dwNumLights**成员设置的，该结构与[**D3DDEVICEDESC \_ V1**](/windows-hardware/drivers/ddi/d3dhal/ns-d3dhal-_d3ddevicedesc_v1)结构一起报告。
+已扩展现有大写字母结构以指示可能存在于硬件加速转换设备上的功能。 例如，受支持光源的数量是用 [**D3DLIGHTINGCAPS**](/windows-hardware/drivers/ddi/d3dcaps/ns-d3dcaps-_d3dlightingcaps)结构的 **dwNumLights** 成员设置的，该结构与 [**D3DDEVICEDESC \_ V1**](/windows-hardware/drivers/ddi/d3dhal/ns-d3dhal-_d3ddevicedesc_v1)结构一起报告。
 
 下表列出了其他标志：
 
@@ -35,7 +34,7 @@ ms.locfileid: "89064778"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Flag</th>
+<th align="left">标志</th>
 <th align="left">含义</th>
 </tr>
 </thead>

@@ -1,18 +1,17 @@
 ---
 title: 从打印机驱动程序访问插件接口
 description: 从打印机驱动程序访问插件接口
-ms.assetid: 639734c9-1aac-428c-bd5b-803607f1cf66
 keywords:
 - COM 接口 WDK 打印，访问插件接口
 - 插件 WDK 打印，访问接口
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 194254f9511c6e5f9d2725ec2118d533f02e3737
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: c61676b39bb0e16eedd1a3bd12067b982e1a6749
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89217961"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96794247"
 ---
 # <a name="accessing-plug-in-interfaces-from-printer-drivers"></a>从打印机驱动程序访问插件接口
 
@@ -26,7 +25,7 @@ ms.locfileid: "89217961"
 
 2.  驱动程序调用插件的 `DllGetClassObject` 函数，该函数返回指向插件的 IClassFactory 接口的指针。
 
-3.  驱动程序调用 IClassFactory 接口的 CreateInstance 方法，并指定 **IID \_ IUnknown**的接口标识符，这会使方法创建插件的 [IPrintOemUI](iprintoemui-com-interface.md)、 [IPrintOemUI2](iprintoemui2-com-interface.md)、 [IPrintOemUni](iprintoemuni-com-interface.md)、 [IPrintOemUni2](iprintoemuni2-com-interface.md)、 [IPrintOemUni3](iprintoemuni3-com-interface.md)、 [IPrintOemPS](iprintoemps-com-interface.md)或 [IPrintOemPS2](iprintoemps2-com-interface.md) 接口的实例，并返回指向该实例的 IUnknown 接口的指针。
+3.  驱动程序调用 IClassFactory 接口的 CreateInstance 方法，并指定 **IID \_ IUnknown** 的接口标识符，这会使方法创建插件的 [IPrintOemUI](iprintoemui-com-interface.md)、 [IPrintOemUI2](iprintoemui2-com-interface.md)、 [IPrintOemUni](iprintoemuni-com-interface.md)、 [IPrintOemUni2](iprintoemuni2-com-interface.md)、 [IPrintOemUni3](iprintoemuni3-com-interface.md)、 [IPrintOemPS](iprintoemps-com-interface.md)或 [IPrintOemPS2](iprintoemps2-com-interface.md) 接口的实例，并返回指向该实例的 IUnknown 接口的指针。
 
 4.  驱动程序调用 IUnknown 接口的 QueryInterface 方法，以确定插件支持哪个版本的 [IPrintOemUI](iprintoemui-com-interface.md)、 [IPrintOemUI2](iprintoemui2-com-interface.md)、 [IPrintOemUni](iprintoemuni-com-interface.md)、 [IPrintOemUni2](iprintoemuni2-com-interface.md)、 [IPrintOemUni3](iprintoemuni3-com-interface.md)、 [IPrintOemPS](iprintoemps-com-interface.md)或 [IPrintOemPS2](iprintoemps2-com-interface.md) 接口，并接收指向支持的接口的指针。
 

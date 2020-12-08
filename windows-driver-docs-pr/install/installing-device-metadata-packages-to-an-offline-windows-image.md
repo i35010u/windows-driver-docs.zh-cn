@@ -1,40 +1,39 @@
 ---
 title: 将设备元数据包安装到脱机 Windows 映像
 description: 将设备元数据包安装到脱机 Windows 映像
-ms.assetid: 53480324-951f-4c51-9b5b-051ce1a3b709
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f8fa07b9c066b08e52724f052feec8087c3faf19
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0536a066c074031100a21d220915e15ac14b7534
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63366295"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96794869"
 ---
 # <a name="installing-device-metadata-packages-to-an-offline-windows-image"></a>将设备元数据包安装到脱机 Windows 映像
 
 
-计算机 Oem 可以通过将包复制到本地设备元数据存储到脱机 Windows 映像添加设备元数据包。 此存储区是在以下位置：
+计算机 Oem 可以将设备元数据包添加到 Windows 脱机映像，方法是将包复制到本地设备元数据存储。 此存储位于以下位置：
 
 ```cpp
 %PROGRAMDATA%\Microsoft\Windows\DeviceMetadataStore\<locale>
 ```
 
-您必须首先创建 *&lt;区域设置&gt;* 子目录基于设备元数据包的目标区域设置。 然后必须将元数据的包复制到适当 *&lt;区域设置&gt;* 子目录。
+必须首先根据设备元数据包的目标区域设置创建 *&lt; 区域设置 &gt;* 子目录。 然后，必须将该元数据包复制到相应的 *&lt; 区域设置 &gt;* 子目录。
 
-例如，设备元数据包的英国英语语言本地化必须复制到以下位置：
+例如，必须将为英国英语本地化的设备元数据包复制到以下位置：
 
 ```cpp
 %PROGRAMDATA%\Microsoft\Windows\DeviceMetadataStore\EN-GB
 ```
 
-设备元数据包的日语语言本地化必须复制到以下位置：
+必须将为日语本地化的设备元数据包复制到以下位置：
 
 ```cpp
 %PROGRAMDATA%\Microsoft\Windows\DeviceMetadataStore\JA
 ```
 
-有关详细信息，请参阅[设备元数据存储区](device-metadata-store.md)。
+有关详细信息，请参阅 [设备元数据存储](device-metadata-store.md)。
 
  
 

@@ -1,25 +1,24 @@
 ---
 title: C28162
-description: 警告 C28162 退出同时保留使用浮点硬件的权限。
-ms.assetid: e5e12470-4b38-457e-91a2-aae4b21ee466
+description: 在持有使用浮点硬件的权利时警告 C28162 退出。
 keywords:
-- 警告列出 WDK PREfast for Drivers
-- 错误列出 WDK PREfast for Drivers
+- 列出用于驱动程序的 WDK PREfast 的警告
+- 为驱动程序列出的 WDK PREfast 的错误
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 f1_keywords:
 - C28162
-ms.openlocfilehash: dcbb74dbc12e3923ff1ef7baa14f358e1f73d567
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5925c7d07fc87c35d7ff927d56cbcabc9679883c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63361335"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96793145"
 ---
 # <a name="c28162"></a>C28162
 
 
-警告 C28162:退出同时保留使用浮点硬件的权限
+警告 C28162：在持有使用浮点硬件的权利时退出
 
 <table>
 <colgroup>
@@ -28,15 +27,15 @@ ms.locfileid: "63361335"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>其他信息</strong></p></td>
-<td align="left"><p>此函数已批注退出并还原的浮点数。</p></td>
+<td align="left"><p>其他信息</p></td>
+<td align="left"><p>已将此函数批注为已还原浮点。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-**\_内核\_float\_还原\_** 批注用来释放使用浮点数的权限，但其中没有已知的函数检测到通过函数的路径执行成功调用操作。 此警告可能表示的条件 (**\_时\_**) 需要批注，或者它可能指示编码错误。
+**\_ 内核 \_ 浮点 \_ 还原 \_** 批注用于释放使用浮点的权限，但检测到通过函数的路径，但没有已知的函数可用于执行该操作。 此警告可能表明需要) 批注 **\_ 时 \_** 出现条件 (，或它可能指示编码错误。
 
  
 

@@ -1,18 +1,17 @@
 ---
 title: Boot.ini 文件中的启动选项
 description: Boot.ini 是位于系统分区根目录的文本文件，通常 c:\Boot.ini。 Boot.ini 存储具有基于 x86 和 x64 处理器的计算机的 BIOS 固件为计算机的启动选项。
-ms.assetid: a2593b6d-03df-49d1-ae77-efec4c2ac8be
 keywords:
 - Boot.ini 文件 WDK
 - 启动选项 WDK，Boot.ini 文件
 ms.date: 04/22/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 7360b508d86be7a229f5f9d01703343077af8eb7
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: f9bf1ee7b1812d61df6e7d2e175b9f9a2a655702
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89384381"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96793987"
 ---
 # <a name="boot-options-in-a-bootini-file"></a>Boot.ini 文件中的启动选项
 

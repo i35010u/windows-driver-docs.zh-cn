@@ -1,9 +1,8 @@
 ---
 title: 高度元素
-description: 所需的高度元素包含具有高度扫描程序扫描图像的列表。
-ms.assetid: b45a967e-9ce9-417a-96f2-c199ab302b88
+description: 必需的高度元素包含扫描程序可以扫描图像的高度的列表。
 keywords:
-- 高度元素成像设备
+- 高度元素图像设备
 topic_type:
 - apiref
 api_name:
@@ -12,19 +11,19 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 70b7ad6b8a7e165a71a3e70dfc041afb756ba676
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 35e266906a0c2bbaf68ea18d898d155b4b80fbc9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63330274"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96793743"
 ---
 # <a name="heights-element"></a>高度元素
 
 
-所需**高度**元素包含具有高度扫描程序扫描图像的列表。
+必需的 **高度** 元素包含扫描程序可以扫描图像的高度的列表。
 
-<a name="usage"></a>用法
+<a name="usage"></a>使用情况
 -----
 
 ```xml
@@ -52,7 +51,7 @@ ms.locfileid: "63330274"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><a href="height.md" data-raw-source="[&lt;strong&gt;Height&lt;/strong&gt;](height.md)"><strong>Height</strong></a></p></td>
+<td><p><a href="height.md" data-raw-source="[&lt;strong&gt;Height&lt;/strong&gt;](height.md)"><strong>高度</strong></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -85,9 +84,9 @@ ms.locfileid: "63330274"
 <a name="remarks"></a>备注
 -------
 
-每个[**高度**](height.md)子元素指定为有效的每英寸点数设备扫描图像的垂直像素数。
+每个 [**Height**](height.md) 子元素指定设备可以扫描图像的每英寸的有效垂直像素数。
 
-[**宽度**](widths.md)元素包含在扫描仪支持的宽度的列表。
+[**宽度**](widths.md)元素包含扫描仪支持的宽度列表。
 
 ## <a name="see-also"></a>请参阅
 
@@ -96,11 +95,11 @@ ms.locfileid: "63330274"
 
 [**FilmResolutions**](filmresolutions.md)
 
-[**Height**](height.md)
+[**高度**](height.md)
 
 [**PlatenResolutions**](platenresolutions.md)
 
-[**Width**](width.md)
+[**宽度**](width.md)
 
 [**Widths**](widths.md)
 

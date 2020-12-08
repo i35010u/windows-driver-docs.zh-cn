@@ -1,7 +1,6 @@
 ---
 title: 管理 PDEV
 description: 管理 PDEV
-ms.assetid: f7badbe8-b24f-438a-8937-95bb98de6310
 keywords:
 - PDEV WDK DirectDraw
 - 绘制 WDK DirectDraw，PDEV
@@ -10,12 +9,12 @@ keywords:
 - 已启用 PDEV WDK DirectDraw
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5b1255f9bf3d75fd41170ab12c349d8e64de2d68
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 0f1936829e15da34e8f81db2cef915916be9e879
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90715300"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96793897"
 ---
 # <a name="managing-pdevs"></a>管理 PDEV
 
@@ -37,7 +36,7 @@ ms.locfileid: "90715300"
 
 -   [**DrvDisableDirectDraw**](/windows/win32/api/winddi/nf-winddi-drvdisabledirectdraw)
 
--   仅限系统内存的[**D3dCreateSurfaceEx**](/windows/win32/api/ddrawint/nc-ddrawint-pdd_createsurfaceex) () 
+-   仅限系统内存的 [**D3dCreateSurfaceEx**](/windows/win32/api/ddrawint/nc-ddrawint-pdd_createsurfaceex) () 
 
 -   [**D3dDestroyDDLocal**](/windows/win32/api/ddrawint/nc-ddrawint-pdd_destroyddlocal)
 

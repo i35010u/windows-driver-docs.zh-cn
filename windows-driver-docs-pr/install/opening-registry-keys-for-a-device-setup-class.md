@@ -1,18 +1,17 @@
 ---
 title: 打开设备安装程序类的注册表项
 description: 打开设备安装程序类的注册表项
-ms.assetid: B747EB2B-892C-4465-98E0-245FF7BC1E70
 keywords:
 - 注册表 WDK 设备安装，打开设备安装程序类的注册表项
 - 设备设置类 WDK 设备安装，打开注册表项
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: da7fc58c1af8adeceb11e4980d94dd9928f3b6dc
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: a17d6f54c91cae45191ffb492b9b63dc37fee395
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90716340"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96793601"
 ---
 # <a name="opening-registry-keys-for-a-device-setup-class"></a>打开设备安装程序类的注册表项
 

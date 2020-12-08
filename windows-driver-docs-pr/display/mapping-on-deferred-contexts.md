@@ -1,7 +1,6 @@
 ---
 title: 延迟上下文中的映射
 description: 延迟上下文中的映射
-ms.assetid: 29c44639-ea5e-4255-8e8c-f6d5e3af0dfb
 keywords:
 - Direct3D 版本 11 WDK Windows 7 显示，延迟上下文，映射
 - Direct3D 版本 11 WDK Windows Server 2008 R2 显示，延迟上下文，映射
@@ -11,12 +10,12 @@ keywords:
 - 延迟的上下文 WDK Windows Server 2008 R2 显示，映射
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e1ef41cec9ad944db401ea898a1866a53da8c825
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 27910c375323d680ba01c0e35d8f9ef4bb5a4ce3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89065416"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96793885"
 ---
 # <a name="mapping-on-deferred-contexts"></a>延迟上下文中的映射
 
@@ -27,7 +26,7 @@ ms.locfileid: "89065416"
 
 每个资源映射可以直接向别名资源提供指针。 实现此类型的别名需要额外负担延迟的上下文记录。 例如，延迟的上下文记录可能需要为有别名的纹理创建新视图。 需要与驱动程序别名集成，这似乎变得合理。 执行命令列表时，最后一个上下文本地创建的资源 (满足映射丢弃调用) 必须将替换为 "当前" 资源，该资源将为即时上下文支持动态资源，依此类推。
 
-在调用驱动程序的[**CommandListExecute**](/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_commandlistexecute)函数后，仍必须同时在延迟的上下文、映射丢弃调用和直接上下文上同时支持对驱动程序的[**ResourceCopy**](/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_resourcecopy)函数的调用，在这种情况下，本地延迟上下文资源理想情况下将交换到 "当前" 资源的直接上下文版本。 不经常使用对包含动态资源目标的驱动程序的 **ResourceCopy** 函数的调用，因此应使用写入时复制机制。 如果调用 **ResourceCopy** ，在映射丢弃调用之后或在将命令列表本地资源保留为当前的即时上下文的情况下，它会影响延迟上下文上的动态资源，则应在概念上分配一个新资源来提供副本的新目标，如果该操作是 [**ResourceCopyRegion**](/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_resourcecopyregion)) ，则必须将旧资源复制到新资源 (。
+在调用驱动程序的 [**CommandListExecute**](/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_commandlistexecute)函数后，仍必须同时在延迟的上下文、映射丢弃调用和直接上下文上同时支持对驱动程序的 [**ResourceCopy**](/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_resourcecopy)函数的调用，在这种情况下，本地延迟上下文资源理想情况下将交换到 "当前" 资源的直接上下文版本。 不经常使用对包含动态资源目标的驱动程序的 **ResourceCopy** 函数的调用，因此应使用写入时复制机制。 如果调用 **ResourceCopy** ，在映射丢弃调用之后或在将命令列表本地资源保留为当前的即时上下文的情况下，它会影响延迟上下文上的动态资源，则应在概念上分配一个新资源来提供副本的新目标，如果该操作是 [**ResourceCopyRegion**](/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_resourcecopyregion)) ，则必须将旧资源复制到新资源 (。
 
  
 

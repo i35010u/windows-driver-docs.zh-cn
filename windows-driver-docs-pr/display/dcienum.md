@@ -1,7 +1,6 @@
 ---
 title: DCIEnum
 description: DCIEnum
-ms.assetid: 641af20a-9b0d-4aaf-a871-f8a295f0bcb4
 keywords:
 - DCIEnum 显示设备
 topic_type:
@@ -12,12 +11,12 @@ api_type:
 - NA
 ms.date: 01/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 7a7b7041493686873b27c127e5e5ada73e0e4112
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c957ddab48c73604273a26821d72175139ecfd1f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327514"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96793031"
 ---
 # <a name="dcienum"></a>DCIEnum
 
@@ -25,9 +24,9 @@ ms.locfileid: "63327514"
 ## <span id="ddk_dcienum_gg"></span><span id="DDK_DCIENUM_GG"></span>
 
 
-不使用此函数;使用最新的 DirectX 图形接口改为与您 DirectDraw 支持的驱动程序进行通信。
+请勿使用此函数;请改用最新的 DirectX 图形界面与 DirectDraw 支持的驱动程序通信。
 
-**DCIEnum**函数枚举的一个面部分。
+**DCIEnum** 函数枚举图面的各个部分。
 
  
 

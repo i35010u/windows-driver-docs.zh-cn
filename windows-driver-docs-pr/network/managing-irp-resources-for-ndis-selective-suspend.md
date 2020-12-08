@@ -1,15 +1,14 @@
 ---
 title: 管理 NDIS 选择性挂起的 IRP 资源
 description: 管理 NDIS 选择性挂起的 IRP 资源
-ms.assetid: 542A96A7-AD6D-4780-8FEF-34730A663C1A
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 45647fead0cceef80c16a058c4315deab3988119
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 0ccfb4fb8b9d4d9833020578379cd696785412ed
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89206741"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96794456"
 ---
 # <a name="managing-irp-resources-for-ndis-selective-suspend"></a>管理 NDIS 选择性挂起的 IRP 资源
 

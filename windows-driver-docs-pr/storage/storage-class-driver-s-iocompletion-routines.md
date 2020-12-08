@@ -1,17 +1,16 @@
 ---
 title: 存储类驱动程序的 IoCompletion 例程
 description: 存储类驱动程序的 IoCompletion 例程
-ms.assetid: 03cf50be-1b7d-4e5b-8ee5-bbdef860d893
 keywords:
 - IoCompletion
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1c52cca3650ea2077d13e4330145e0b263c1688c
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: eb73f5f7ddf31738e05d48050e23b15e20980446
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91734409"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96794193"
 ---
 # <a name="storage-class-drivers-iocompletion-routines"></a>存储类驱动程序的 IoCompletion 例程
 
@@ -29,7 +28,7 @@ ms.locfileid: "91734409"
 
 如果驱动程序的 *BuildRequest* 例程请求端口驱动程序为请求返回请求感知信息，则它的 *IoCompletion* 例程要么调用内部 *InterpretRequestSense* 例程，要么实现内嵌相同的功能。 有关详细信息，请参阅 [存储类驱动程序的 InterpretRequestSense 例程](storage-class-driver-s-interpretrequestsense-routine.md)。
 
-存储类驱动程序负责重试因目标控制器错误、总线重置或请求超时而失败的请求。 当端口驱动程序返回一个特定请求，并将其**SrbStatus**设置为指示这种错误时，该类驱动程序可以从其*IoCompletion*例程调用*RetryRequest*例程，也可以从其*InterpretRequestSense*例程调用它。 有关详细信息，请参阅 [存储类驱动程序的 RetryRequest 例程](storage-class-driver-s-retryrequest-routine.md)。
+存储类驱动程序负责重试因目标控制器错误、总线重置或请求超时而失败的请求。 当端口驱动程序返回一个特定请求，并将其 **SrbStatus** 设置为指示这种错误时，该类驱动程序可以从其 *IoCompletion* 例程调用 *RetryRequest* 例程，也可以从其 *InterpretRequestSense* 例程调用它。 有关详细信息，请参阅 [存储类驱动程序的 RetryRequest 例程](storage-class-driver-s-retryrequest-routine.md)。
 
 有关 *IoCompletion* 例程的一般信息，请参阅 [完成 irp](../kernel/completing-irps.md)。
 

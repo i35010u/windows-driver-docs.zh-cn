@@ -1,15 +1,14 @@
 ---
 title: ReleaseDeviceRequested
 description: 当另一个客户端尝试声明设备时，将发生 ReleaseDeviceRequested 事件。
-ms.assetid: 0fcb8905-1370-4260-9456-6c80e2186dfc
 ms.date: 09/28/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 4d238c90979e7abe2449f610190e6bb59e52a07b
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: a6bc931289d08b413f6a374950f066ce56f50109
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89192903"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96794305"
 ---
 # <a name="releasedevicerequested"></a>ReleaseDeviceRequested
 

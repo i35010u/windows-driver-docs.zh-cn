@@ -1,7 +1,6 @@
 ---
 title: 示例 WDM 设备堆栈
 description: 示例 WDM 设备堆栈
-ms.assetid: 1128e098-9ef4-4bc3-aa09-74df3142fb11
 keywords:
 - 设备堆栈 WDK 内核，示例
 - 游戏杆 WDK 设备堆栈
@@ -15,12 +14,12 @@ keywords:
 - PCI 总线设备堆栈 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1964c880b5680cb786a5b070e86cbeb7b1b8a268
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: b61745bc5179b81a4decbb735ddefb5fa8d6d5af
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89188293"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96793575"
 ---
 # <a name="example-wdm-device-stack"></a>示例 WDM 设备堆栈
 

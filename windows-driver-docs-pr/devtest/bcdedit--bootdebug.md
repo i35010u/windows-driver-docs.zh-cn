@@ -1,7 +1,6 @@
 ---
 title: BCDEdit /bootdebug
-description: /Bootdebug boot 选项启用或禁用当前或指定的 Windows 操作系统启动项的启动调试。
-ms.assetid: 85d0a25e-c411-4d7e-ae11-ce5bed1a37b8
+description: /bootdebug 启动选项可启用或禁用当前或指定的 Windows 操作系统启动项目的启动调试。
 ms.date: 04/22/2019
 keywords:
 - BCDEdit/bootdebug 驱动程序开发工具
@@ -12,12 +11,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 14c7f8db2cdeeb5c70bd7a18bc5c555c96a635f6
-ms.sourcegitcommit: f2fbb6e54e085e9329288cee49860fe380be9c4c
+ms.openlocfilehash: eace51810421cdd3278a73d351a204f31ebb3a21
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91778780"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96794015"
 ---
 # <a name="bcdedit-bootdebug"></a>BCDEdit /bootdebug
 

@@ -1,18 +1,17 @@
 ---
 title: 处理 E_INVALIDARG 返回值
 description: 处理 E_INVALIDARG 返回值
-ms.assetid: 312b2452-71b3-4fbe-93fb-f4b0e6099c0f
 keywords:
 - 用户模式显示驱动程序 WDK Windows Vista，E_INVALIDARG 返回值
 - E_INVALIDARG 返回值 WDK 显示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4c57d24e737187007b570da1853b96fe16883248
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 590b546f9a93ce1b2c7d3c6b6eb5af6d9d680756
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89067416"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96795007"
 ---
 # <a name="handling-the-e_invalidarg-return-value"></a>处理 E \_ INVALIDARG 返回值
 

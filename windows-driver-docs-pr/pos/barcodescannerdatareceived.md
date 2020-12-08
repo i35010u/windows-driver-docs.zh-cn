@@ -1,15 +1,14 @@
 ---
 title: BarcodeScannerDataReceived
 description: 成功扫描事件之后，BarcodeScannerDataReceived 事件发生。
-ms.assetid: 3dd7699a-5e2b-484b-bd83-c37ee7f0e851
 ms.date: 09/07/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 3efddbbc30476f896a9ad73c7f2d65c52f902573
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 9933787164b175a8fabac6fef683db8dc1a6f1f2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89190425"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96794329"
 ---
 # <a name="barcodescannerdatareceived"></a>BarcodeScannerDataReceived
 
@@ -31,15 +30,15 @@ typedef struct _PosBarcodeScannerDataReceivedEventData
 
 下表显示此事件的数据缓冲区的内存布局。
 
-| 内存值                                            | 说明                                                                                                                          |
+| 内存值                                            | 描述                                                                                                                          |
 |---------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------|
 | 0x00000005                                   | **标头。事件 = PosEventType：： BarcodeScannerDataReceived**                                                           |
 | 0000020 + 扫描数据长度 + 标签数据长度 | **DataLength** = sizeof (**PosBarcodeScannerDataReceivedEventData**) + **ScanDataLength**  +  **ScanDataLabelLength** |
 | UINT32                                       | **PosBarcodeScannerDataReceivedEventData**                                                                       |
 | UINT32                                       | **PosBarcodeScannerDataReceivedEventData.ScanDataLength**                                                                 |
 | UINT32                                       | **PosBarcodeScannerDataReceivedEventData.ScanDataLabelLength**                                                            |
-| 位 \[\]                                    | 原始扫描数据的**ScanDataLength**字节数                                                                                 |
-| 位 \[\]                                    | 解码扫描数据的**ScanDataLabelLength**字节数                                                                     |
+| 位 \[\]                                    | 原始扫描数据的 **ScanDataLength** 字节数                                                                                 |
+| 位 \[\]                                    | 解码扫描数据的 **ScanDataLabelLength** 字节数                                                                     |
 
 ## <a name="requirements"></a>要求
 

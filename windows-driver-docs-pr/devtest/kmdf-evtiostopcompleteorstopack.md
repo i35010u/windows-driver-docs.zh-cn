@@ -1,7 +1,6 @@
 ---
 title: 'EvtIoStopCompleteOrStopAck 规则 (kmdf) '
 description: EvtIoStopCompleteOrStopAck 规则指定在 EvtIoStop 回调函数中，驱动程序为框架提供的每个 i/o 请求调用以下方法之一。
-ms.assetid: d534a08e-4bee-4ec6-ac6b-03a6454fb60f
 ms.date: 05/21/2018
 keywords:
 - 'EvtIoStopCompleteOrStopAck 规则 (kmdf) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 3835c22c9cf7d2b27df56d12bfc5b62533aec733
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 30f4b3ef009ae01065453dbe3b3423457ff99e2e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107404"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96793091"
 ---
 # <a name="evtiostopcompleteorstopack-rule-kmdf"></a>EvtIoStopCompleteOrStopAck 规则 (kmdf) 
 
 
-**EvtIoStopCompleteOrStopAck**规则指定在[*EvtIoStop*](/windows-hardware/drivers/ddi/wdfio/nc-wdfio-evt_wdf_io_queue_io_stop)回调函数中，驱动程序为框架提供的每个 i/o 请求调用以下方法之一。 如果未执行此操作，驱动程序可能会阻止系统进入另一个低功率状态。
+**EvtIoStopCompleteOrStopAck** 规则指定在 [*EvtIoStop*](/windows-hardware/drivers/ddi/wdfio/nc-wdfio-evt_wdf_io_queue_io_stop)回调函数中，驱动程序为框架提供的每个 i/o 请求调用以下方法之一。 如果未执行此操作，驱动程序可能会阻止系统进入另一个低功率状态。
 
 [**WdfRequestComplete**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcomplete) 
 [**WdfRequestCompleteWithInformation**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcompletewithinformation) 

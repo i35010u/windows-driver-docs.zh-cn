@@ -1,7 +1,6 @@
 ---
 title: 路径的 GDI 服务
 description: 路径的 GDI 服务
-ms.assetid: 8fc51b7e-d787-48ed-a865-528547abefc5
 keywords:
 - GDI WDK Windows 2000 显示，路径
 - 图形驱动程序 WDK Windows 2000 显示，路径
@@ -10,18 +9,18 @@ keywords:
 - 填充路径 WDK GDI
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e1a4e224333226ef9da4ce6622033b5e6d01630f
-ms.sourcegitcommit: a32079f3cc5d564d3b12576f832ed442a6b1a918
+ms.openlocfilehash: c9d52ecb61a169941fef9fd567df03edfc1803ca
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92793488"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96793937"
 ---
 # <a name="gdi-services-for-paths"></a>路径的 GDI 服务
 
 为了帮助矢量设备填充复杂区域，其驱动程序可以调用下表中列出的用于创建、修改和枚举路径的引擎函数。 驱动程序可以通过 [**PATHOBJ**](/windows/win32/api/winddi/ns-winddi-pathobj) 结构访问路径。
 
-| GDI 路径服务函数 | 说明 |
+| GDI 路径服务函数 | 描述 |
 | ------------------------- | ----------- |
 | [**EngCreatePath**](/windows/win32/api/winddi/nf-winddi-engcreatepath) | 为驱动程序的临时使用分配一个路径。 在从其当前的绘图调用返回到 GDI 之前，驱动程序应删除此路径。 |
 | [**EngDeletePath**](/windows/win32/api/winddi/nf-winddi-engdeletepath) | 删除由 **EngCreatePath** 函数分配的路径。 |

@@ -1,19 +1,18 @@
 ---
 title: 内核模式视频传输回调函数
 description: 内核模式视频传输回调函数
-ms.assetid: 1edd5b68-91da-4846-87bd-6fcabb9e5abf
 keywords:
 - DxApi 微型端口驱动程序 WDK DirectDraw，内核模式视频传输回调函数
 - 内核模式视频传输 WDK DirectDraw，回调函数
 - 回调函数 WDK 内核模式视频传输
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a10fd42b3453521dc8b25e2eca273a6533534e73
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 657551537de8c6ab6c58e69fdef8f8c9aa9bbb28
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90716450"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96792979"
 ---
 # <a name="kernel-mode-video-transport-callback-functions"></a>内核模式视频传输回调函数
 
@@ -31,7 +30,7 @@ ms.locfileid: "90716450"
 <thead>
 <tr class="header">
 <th align="left">DxApi 回调函数</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>

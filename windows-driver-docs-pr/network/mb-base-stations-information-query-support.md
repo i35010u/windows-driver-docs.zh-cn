@@ -1,23 +1,22 @@
 ---
 title: MB 基站信息查询支持
 description: MB 基站信息查询支持
-ms.assetid: 200954a6-0f6c-4c00-86cb-510399f7b713
 keywords:
 - MB 基站信息查询，移动宽带基站信息查询
 ms.date: 08/14/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 79e14414568a08a2c6d4620dac75e87768b5c0d3
-ms.sourcegitcommit: a3ccb07628a9cd8936d7f88f4aab8faf9379cae5
+ms.openlocfilehash: db4503f36eb4d287b16fc868b56918999fb95081
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92088123"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96793457"
 ---
 # <a name="mb-base-stations-information-query-support"></a>MB 基站信息查询支持
 
 ## <a name="overview"></a>概述
 
-"基站信息查询接口" 用于提供基于位置的服务和蜂窝基站信息，如 *基站 ID*、 *时间提前*和其他可用于计算移动订阅者地理位置的参数。 收集的信息与当前为订阅者提供服务的移动电话基站以及邻居移动基站相关。 
+"基站信息查询接口" 用于提供基于位置的服务和蜂窝基站信息，如 *基站 ID*、 *时间提前* 和其他可用于计算移动订阅者地理位置的参数。 收集的信息与当前为订阅者提供服务的移动电话基站以及邻居移动基站相关。 
 
 本主题为 Windows 定义了基站信息查询接口，因为 MBIM 1.0 规范不会通过任何现有 Cid 提供此信息。 此接口在 Windows 10 版本1709及更高版本中可用。 
 
@@ -50,7 +49,7 @@ MBIM_COMMAND_MSG 的 InformationBuffer 包含 MBIM_BASE_STATIONS_INFO_REQ strutu
 
 MBIM_BASE_STATIONS_INFO_REQ 结构应在 InformationBuffer for 查询中使用。 它用于配置单元信息的各个方面，如要发送的响应中的邻居单元格度量的最大数目。 
 
-| Offset | 大小 | 字段 | 类型 | 说明 |
+| Offset | 大小 | 字段 | 类型 | 描述 |
 | --- | --- | --- | --- | --- |
 | 0 | 4 | MaxGSMCount | SIZE | GSM 网络度量报表中返回的 GSM 相邻单元的最大项数 [MBIM_GSM_NMR](#mbim_gsm_nmr)。 默认容量为15。 |
 | 4 | 4 | MaxUMTSCount | SIZE | 在 [MBIM_UMTS_MRL](#mbim_umts_mrl)中，在 UMTS 度量结果列表中返回的相邻单元 UMTS 的最大项数。 默认容量为15。 |
@@ -70,7 +69,7 @@ MBIM_BASE_STATIONS_INFO 结构应用于响应的 MBIM_COMMAND_DONE InformationBu
 
 MBIM_BASE_STATIONS_INFO 结构包含有关服务和邻居基站的信息。
 
-| Offset | 大小 | 字段 | 类型 | 说明 |
+| Offset | 大小 | 字段 | 类型 | 描述 |
 | --- | --- | --- | --- | --- |
 | 0 | 4 | SystemType | MBIM_DATA_CLASS | 指示为其提供单元信息的) 的系统类型 (或类型。 此成员是 MBIM_DATA_CLASS 中定义的一个或多个系统类型的位掩码。 |
 | 4 | 4 | GSMServingCellOffset | OFFSET | 从该结构的开头计算的偏移量（以字节为单位），到包含 GSM 服务单元信息的缓冲区。 如果服务单元的技术不是 GSM，此成员可能为 NULL。 |
@@ -91,7 +90,7 @@ MBIM_BASE_STATIONS_INFO 结构包含有关服务和邻居基站的信息。
 | 64 | 4 | LTEMrlSize | SIZE | 缓冲区的总大小（以字节为单位），该缓冲区包含以 [MBIM_LTE_MRL](#mbim_lte_mrl)格式表示的 LTE 度量结果列表。 |
 | 68 | 4 | CDMAMrlOffset | OFFSET | 从该结构的开头算起的偏移量（以字节为单位），该偏移量为包含 CDMA 测量结果列表的缓冲区。 如果度量值报告中未返回 CDMA 邻居网络，此成员可为 NULL。 |
 | 72 | 4 | CDMAMrlSize | SIZE | 缓冲区的总大小（以字节为单位），该缓冲区包含以 [MBIM_CDMA_MRL](#mbim_cdma_mrl)格式表示的 CDMA 度量结果列表。 |
-| 76 |   | DataBuffer | DATABUFFER | 包含 *GSMServingCell*、 *UMTSServingCell*、 *TDSCDMAServingCell*、 *LTEServingCell*、 *GSMNmr*、 *UMTSMrl*、 *TDSCDMAMrl*、 *LTEMrl*和 *CDMAMrl*的数据缓冲区。 |
+| 76 |   | DataBuffer | DATABUFFER | 包含 *GSMServingCell*、 *UMTSServingCell*、 *TDSCDMAServingCell*、 *LTEServingCell*、 *GSMNmr*、 *UMTSMrl*、 *TDSCDMAMrl*、 *LTEMrl* 和 *CDMAMrl* 的数据缓冲区。 |
 
 #### <a name="gsm-cell-data-structures"></a>GSM 单元数据结构
 
@@ -99,23 +98,23 @@ MBIM_BASE_STATIONS_INFO 结构包含有关服务和邻居基站的信息。
 
 MBIM_GSM_SERVING_CELL_INFO 结构包含有关 GSM 服务单元的信息。
 
-| Offset | 大小 | 字段 | 类型 | 说明 |
+| Offset | 大小 | 字段 | 类型 | 描述 |
 | --- | --- | --- | --- | --- |
 | 0 | 4 | ProviderIdOffset | OFFSET | 从该结构的开头算起的偏移量（以字节为单位），该偏移量是一个数字 (0-9) 名为 *ProviderId* 的字符串，用于表示网络提供程序标识。 此字符串是三位数 Mobile 国家/地区代码的串联 (MCC) 和两个或三个数字的移动网络代码 (MNC) 。 当没有返回 *ProviderId* 信息时，此成员可能为 NULL。 |
-| 4 | 4 | ProviderIdSize | 大小 (0-12)  | 用于 *ProviderId*的大小。 |
+| 4 | 4 | ProviderIdSize | 大小 (0-12)  | 用于 *ProviderId* 的大小。 |
 | 8 | 4 | LocationAreaCode | UINT32 | 位置区代码 (0-65535) 。 如果此信息不可用，则使用0xFFFFFFFF。 |
 | 12 | 4 | CellID | UINT32 | 单元 ID (0-65535) 。 如果此信息不可用，则使用0xFFFFFFFF。 |
 | 16 | 4 | TimingAdvance | UINT32 | 计时提前 (0-255) 位，其中位句点是 48/13μs。 如果此信息不可用，则使用0xFFFFFFFF。 |
 | 20 | 4 | ARFCN | UINT32 | 服务单元 (0-1023) 的绝对射频通道号。 如果此信息不可用，则使用0xFFFFFFFF。 |
 | 24 | 4 | BaseStationId | UINT32 | 基站 ID-基站颜色代码和网络标识代码。 如果此信息不可用，则使用0xFFFFFFFF。 |
 | 28 | 4 | RxLevel | UINT32 | 所接收的服务单元的信号强度 (0-63) ，其中 <p>`X = 0, if RSS < -110 dBm`</p><p>`X = 63, if RSS > -47 dBm`</p><p>`X = integer [RSS + 110], if -110 <= RSS <= -47`</p> 如果此信息不可用，则使用0xFFFFFFFF。 |
-| 32 |   | DataBuffer | DATABUFFER | 包含 *ProviderId*的数据缓冲区。 |
+| 32 |   | DataBuffer | DATABUFFER | 包含 *ProviderId* 的数据缓冲区。 |
 
 ##### <a name="mbim_gsm_nmr"></a><a name="mbim_gsm_nmr"></a>MBIM_GSM_NMR
 
 MBIM_GSM_NMR 结构包含相邻 GSM 单元 (NMR) 的网络度量报表。
 
-| Offset | 大小 | 字段 | 类型 | 说明 |
+| Offset | 大小 | 字段 | 类型 | 描述 |
 | --- | --- | --- | --- | --- |
 | 0 | 4 | Elementcount 多于 (EC)  | UINT32 | 此元素后面的 NMR 项的计数。 |
 | 4 |   | DataBuffer | DATABUFFER | NMR 记录的数组，每个记录都指定为 [MBIM_GSM_NMR_INFO](#mbim_gsm_nmr_info) 结构。 |
@@ -124,16 +123,16 @@ MBIM_GSM_NMR 结构包含相邻 GSM 单元 (NMR) 的网络度量报表。
 
 MBIM_GSM_NMR_INFO 结构包含有关相邻 GSM 单元的信息。
 
-| Offset | 大小 | 字段 | 类型 | 说明 |
+| Offset | 大小 | 字段 | 类型 | 描述 |
 | --- | --- | --- | --- | --- |
 | 0 | 4 | ProviderIdOffset | OFFSET | 从该结构的开头算起的偏移量（以字节为单位），该偏移量是一个数字 (0-9) 名为 *ProviderId* 的字符串，用于表示网络提供程序标识。 此字符串是三位数 Mobile 国家/地区代码的串联 (MCC) 和两个或三个数字的移动网络代码 (MNC) 。 当没有返回 *ProviderId* 信息时，此成员可能为 NULL。 |
-| 4 | 4 | ProviderIdSize | 大小 (0-12)  | 用于 *ProviderId*的大小。 |
+| 4 | 4 | ProviderIdSize | 大小 (0-12)  | 用于 *ProviderId* 的大小。 |
 | 8 | 4 | LocationAreaCode | UINT32 | 位置区代码 (0-65535) 。 如果此信息不可用，则使用0xFFFFFFFF。 |
 | 12 | 4 | CellID | UINT32 | 单元 ID (0-65535) 。 如果此信息不可用，则使用0xFFFFFFFF。 |
 | 16 | 4 | ARFCN | UINT32 | 服务单元 (0-1023) 的绝对射频通道号。 如果此信息不可用，则使用0xFFFFFFFF。 |
 | 20 | 4 | BaseStationId | UINT32 | 服务单元的收音机基站 ID (0-63) 。 如果此信息不可用，则使用0xFFFFFFFF。 |
 | 24 | 4 | RxLevel | UINT32 | 所接收的服务单元的信号强度 (0-63) ，其中 <p>`X = 0, if RSS < -110 dBm`</p><p>`X = 63, if RSS > -47 dBm`</p><p>`X = integer [RSS + 110], if -110 <= RSS <= -47`</p> 如果此信息不可用，则使用0xFFFFFFFF。 |
-| 28 |   | DataBuffer | DATABUFFER | 包含 *ProviderId*的数据缓冲区。 |
+| 28 |   | DataBuffer | DATABUFFER | 包含 *ProviderId* 的数据缓冲区。 |
 
 #### <a name="umts-cell-data-structures"></a>UMTS 单元数据结构
 
@@ -141,10 +140,10 @@ MBIM_GSM_NMR_INFO 结构包含有关相邻 GSM 单元的信息。
 
 MBIM_UMTS_SERVING_CELL_INFO 结构包含 UMTS 服务单元的相关信息。
 
-| Offset | 大小 | 字段 | 类型 | 说明 |
+| Offset | 大小 | 字段 | 类型 | 描述 |
 | --- | --- | --- | --- | --- |
 | 0 | 4 | ProviderIdOffset | OFFSET | 从该结构的开头算起的偏移量（以字节为单位），该偏移量是一个数字 (0-9) 名为 *ProviderId* 的字符串，用于表示网络提供程序标识。 此字符串是三位数 Mobile 国家/地区代码的串联 (MCC) 和两个或三个数字的移动网络代码 (MNC) 。 当没有返回 *ProviderId* 信息时，此成员可能为 NULL。 |
-| 4 | 4 | ProviderIdSize | 大小 (0-12)  | 用于 *ProviderId*的大小。 |
+| 4 | 4 | ProviderIdSize | 大小 (0-12)  | 用于 *ProviderId* 的大小。 |
 | 8 | 4 | LocationAreaCode | UINT32 | 位置区代码 (0-65535) 。 如果此信息不可用，则使用0xFFFFFFFF。 |
 | 12 | 4 | CellID | UINT32 | 单元 ID (0-268435455) 。 如果此信息不可用，则使用0xFFFFFFFF。 |
 | 16 | 4 | FrequencyInfoUL | UINT32 | 频率信息上行 (0-16383) 。 如果此信息不可用，则使用0xFFFFFFFF。 |
@@ -155,13 +154,13 @@ MBIM_UMTS_SERVING_CELL_INFO 结构包含 UMTS 服务单元的相关信息。
 | 36 | 4 | RSCP | INT32 | 为服务单元提供的信号码的幂。 范围为-120 到-25，单位为1dBm。 如果此信息不可用，则使用0。 |
 | 40 | 4 | ECNO | INT32 | 服务单元的信噪比的信号;CPICH 的每个 PN 芯片的接收能耗与接收的总数之比。 范围为-50 到0，单位为1dBm。 如果此信息不可用，请使用1。 |
 | 44 | 4 | PathLoss | UINT32 | 服务单元 (46-173) 的路径丢失。 如果此信息不可用，则使用0xFFFFFFFF。 |
-| 48 |   | DataBuffer | DATABUFFER | 包含 *ProviderId*的数据缓冲区。 |
+| 48 |   | DataBuffer | DATABUFFER | 包含 *ProviderId* 的数据缓冲区。 |
 
 ##### <a name="mbim_umts_mrl"></a><a name="mbim_umts_mrl"></a>MBIM_UMTS_MRL
 
 MBIM_UMTS_MRL 结构包含邻近 UMTS 单元 (MRL) 的已测量结果列表。
 
-| Offset | 大小 | 字段 | 类型 | 说明 |
+| Offset | 大小 | 字段 | 类型 | 描述 |
 | --- | --- | --- | --- | --- |
 | 0 | 4 | Elementcount 多于 (EC)  | UINT32 | 此元素后面的 MRL 项的计数。 |
 | 4 |   | DataBuffer | DATABUFFER | MRL 记录的数组，每个记录都指定为 [MBIM_UMTS_MRL_INFO](#mbim_gsm_nmr_info) 结构。 |
@@ -170,10 +169,10 @@ MBIM_UMTS_MRL 结构包含邻近 UMTS 单元 (MRL) 的已测量结果列表。
 
 MBIM_UMTS_MRL_INFO 结构包含有关相邻 UMTS 单元格的信息。
 
-| Offset | 大小 | 字段 | 类型 | 说明 |
+| Offset | 大小 | 字段 | 类型 | 描述 |
 | --- | --- | --- | --- | --- |
 | 0 | 4 | ProviderIdOffset | OFFSET | 从该结构的开头算起的偏移量（以字节为单位），该偏移量是一个数字 (0-9) 名为 *ProviderId* 的字符串，用于表示网络提供程序标识。 此字符串是三位数 Mobile 国家/地区代码的串联 (MCC) 和两个或三个数字的移动网络代码 (MNC) 。 当没有返回 *ProviderId* 信息时，此成员可能为 NULL。 |
-| 4 | 4 | ProviderIdSize | 大小 (0-12)  | 用于 *ProviderId*的大小。 |
+| 4 | 4 | ProviderIdSize | 大小 (0-12)  | 用于 *ProviderId* 的大小。 |
 | 8 | 4 | LocationAreaCode | UINT32 | 位置区代码 (0-65535) 。 如果此信息不可用，则使用0xFFFFFFFF。 |
 | 12 | 4 | CellID | UINT32 | 单元 ID (0-268435455) 。 如果此信息不可用，则使用0xFFFFFFFF。 |
 | 16 | 4 | UARFCN | UINT32 | 服务单元 (0-16383) 的 UTRA 绝对射频通道号。 如果此信息不可用，则使用0xFFFFFFFF。 |
@@ -181,7 +180,7 @@ MBIM_UMTS_MRL_INFO 结构包含有关相邻 UMTS 单元格的信息。
 | 24 | 4 | RSCP | INT32 | 为服务单元提供的信号码的幂。 范围为-120 到-25，单位为1dBm。 如果此信息不可用，则使用0xFFFFFFFF。 |
 | 28 | 4 | ECNO | INT32 | 服务单元的信噪比的信号;CPICH 的每个 PN 芯片的接收能耗与接收的总数之比。 范围为-50 到0，单位为1dBm。 如果此信息不可用，请使用1。 |
 | 32 | 4 | PathLoss | UINT32 | 服务单元 (46-173) 的路径丢失。 如果此信息不可用，则使用0xFFFFFFFF。 |
-| 36 |   | DataBuffer | DATABUFFER | 包含 *ProviderId*的数据缓冲区。 |
+| 36 |   | DataBuffer | DATABUFFER | 包含 *ProviderId* 的数据缓冲区。 |
 
 #### <a name="tdscdma-cell-data-structures"></a>TDSCDMA 单元数据结构
 
@@ -189,10 +188,10 @@ MBIM_UMTS_MRL_INFO 结构包含有关相邻 UMTS 单元格的信息。
 
 MBIM_TDSCDMA_SERVING_CELL_INFO 结构包含 TDSCDMA 服务单元的相关信息。
 
-| Offset | 大小 | 字段 | 类型 | 说明 |
+| Offset | 大小 | 字段 | 类型 | 描述 |
 | --- | --- | --- | --- | --- |
 | 0 | 4 | ProviderIdOffset | OFFSET | 从该结构的开头算起的偏移量（以字节为单位），该偏移量是一个数字 (0-9) 名为 *ProviderId* 的字符串，用于表示网络提供程序标识。 此字符串是三位数 Mobile 国家/地区代码的串联 (MCC) 和两个或三个数字的移动网络代码 (MNC) 。 当没有返回 *ProviderId* 信息时，此成员可能为 NULL。 |
-| 4 | 4 | ProviderIdSize | 大小 (0-12)  | 用于 *ProviderId*的大小。 |
+| 4 | 4 | ProviderIdSize | 大小 (0-12)  | 用于 *ProviderId* 的大小。 |
 | 8 | 4 | LocationAreaCode | UINT32 | 位置区代码 (0-65535) 。 如果此信息不可用，则使用0xFFFFFFFF。 |
 | 12 | 4 | CellID | UINT32 | 单元 ID (0-268435455) 。 如果此信息不可用，则使用0xFFFFFFFF。 |
 | 16 | 4 | UARFCN | UINT32 | 服务单元 (0-16383) 的 UTRA 绝对射频通道号。 如果此信息不可用，则使用0xFFFFFFFF。 |
@@ -200,13 +199,13 @@ MBIM_TDSCDMA_SERVING_CELL_INFO 结构包含 TDSCDMA 服务单元的相关信息�
 | 24 | 4 | TimingAdvance | UINT32 | 计时提前 (0-1023) 。 对于所有 timeslots，此成员的值都相同。 如果此信息不可用，则使用0xFFFFFFFF。 |
 | 28 | 4 | RSCP | INT32 | 为服务单元提供的信号码的幂。 范围为-120 到-25，以1dBm 在问题8中筛选的单位。 如果此信息不可用，则使用0xFFFFFFFF。 |
 | 32 | 4 | PathLoss | UINT32 | 服务单元 (46-158) 的路径丢失。 如果此信息不可用，则使用0xFFFFFFFF。 |
-| 36 |   | DataBuffer | DATABUFFER | 包含 *ProviderId*的数据缓冲区。 |
+| 36 |   | DataBuffer | DATABUFFER | 包含 *ProviderId* 的数据缓冲区。 |
 
 ##### <a name="mbim_tdscdma_mrl"></a><a name="mbim_tdscdma_mrl"></a>MBIM_TDSCDMA_MRL
 
 MBIM_TDSCDMA_MRL 结构包含邻近 TDSCDMA 单元 (MRL) 的已测量结果列表。
 
-| Offset | 大小 | 字段 | 类型 | 说明 |
+| Offset | 大小 | 字段 | 类型 | 描述 |
 | --- | --- | --- | --- | --- |
 | 0 | 4 | Elementcount 多于 (EC)  | UINT32 | 此元素后面的 MRL 项的计数。 |
 | 4 |   | DataBuffer | DATABUFFER | MRL 记录的数组，每个记录都指定为 [MBIM_TDSCDMA_MRL_INFO](#mbim_tdscdma_mrl_info) 结构。 |
@@ -215,10 +214,10 @@ MBIM_TDSCDMA_MRL 结构包含邻近 TDSCDMA 单元 (MRL) 的已测量结果列�
 
 MBIM_TDSCDMA_MRL_INFO 结构包含有关相邻 TDSCDMA 单元格的信息。
 
-| Offset | 大小 | 字段 | 类型 | 说明 |
+| Offset | 大小 | 字段 | 类型 | 描述 |
 | --- | --- | --- | --- | --- |
 | 0 | 4 | ProviderIdOffset | OFFSET | 从该结构的开头算起的偏移量（以字节为单位），该偏移量是一个数字 (0-9) 名为 *ProviderId* 的字符串，用于表示网络提供程序标识。 此字符串是三位数 Mobile 国家/地区代码的串联 (MCC) 和两个或三个数字的移动网络代码 (MNC) 。 当没有返回 *ProviderId* 信息时，此成员可能为 NULL。 |
-| 4 | 4 | ProviderIdSize | 大小 (0-12)  | 用于 *ProviderId*的大小。 |
+| 4 | 4 | ProviderIdSize | 大小 (0-12)  | 用于 *ProviderId* 的大小。 |
 | 8 | 4 | LocationAreaCode | UINT32 | 位置区代码 (0-65535) 。 如果此信息不可用，则使用0xFFFFFFFF。 |
 | 12 | 4 | CellID | UINT32 | 单元 ID (0-268435455) 。 如果此信息不可用，则使用0xFFFFFFFF。 |
 | 16 | 4 | UARFCN | UINT32 | 服务单元 (0-16383) 的 UTRA 绝对射频通道号。 如果此信息不可用，则使用0xFFFFFFFF。 |
@@ -226,7 +225,7 @@ MBIM_TDSCDMA_MRL_INFO 结构包含有关相邻 TDSCDMA 单元格的信息。
 | 24 | 4 | TimingAdvance | UINT32 | 计时提前 (0-1023) 。 对于所有 timeslots，此成员的值都相同。 如果此信息不可用，则使用0xFFFFFFFF。 |
 | 28 | 4 | RSCP | INT32 | 为服务单元提供的信号码的幂。 范围为-120 到-25，以1dBm 在问题8中筛选的单位。 如果此信息不可用，则使用0xFFFFFFFF。 |
 | 32 | 4 | PathLoss | UINT32 | 服务单元 (46-158) 的路径丢失。 如果此信息不可用，则使用0xFFFFFFFF。 |
-| 36 |   | DataBuffer | DATABUFFER | 包含 *ProviderId*的数据缓冲区。 |
+| 36 |   | DataBuffer | DATABUFFER | 包含 *ProviderId* 的数据缓冲区。 |
 
 #### <a name="lte-cell-data-structures"></a>LTE 单元数据结构
 
@@ -234,10 +233,10 @@ MBIM_TDSCDMA_MRL_INFO 结构包含有关相邻 TDSCDMA 单元格的信息。
 
 MBIM_LTE_SERVING_CELL_INFO 结构包含有关 LTE 服务单元的信息。
 
-| Offset | 大小 | 字段 | 类型 | 说明 |
+| Offset | 大小 | 字段 | 类型 | 描述 |
 | --- | --- | --- | --- | --- |
 | 0 | 4 | ProviderIdOffset | OFFSET | 从该结构的开头算起的偏移量（以字节为单位），该偏移量是一个数字 (0-9) 名为 *ProviderId* 的字符串，用于表示网络提供程序标识。 此字符串是三位数 Mobile 国家/地区代码的串联 (MCC) 和两个或三个数字的移动网络代码 (MNC) 。 当没有返回 *ProviderId* 信息时，此成员可能为 NULL。 |
-| 4 | 4 | ProviderIdSize | 大小 (0-12)  | 用于 *ProviderId*的大小。 |
+| 4 | 4 | ProviderIdSize | 大小 (0-12)  | 用于 *ProviderId* 的大小。 |
 | 8 | 4 | CellID | UINT32 | 单元 ID (0-268435455) 。 如果此信息不可用，则使用0xFFFFFFFF。 |
 | 12 | 4 | EARFCN | UINT32 | 服务单元 (0-65535) 的射频通道号。 如果此信息不可用，则使用0xFFFFFFFF。 |
 | 16 | 4 | PhysicalCellID | UINT32 | 物理单元 ID (0-503) 。 如果此信息不可用，则使用0xFFFFFFFF。 |
@@ -245,13 +244,13 @@ MBIM_LTE_SERVING_CELL_INFO 结构包含有关 LTE 服务单元的信息。
 | 24 | 4 | RSRP | INT32 | 平均参考信号接收功率。 范围为-140 到-44，单位为1dBm。 如果此信息不可用，则使用0xFFFFFFFF。 |
 | 28 | 4 | RSRQ | INT32 | 平均引用信号接收质量。 范围为-20 到-3，单位为1dBm。 如果此信息不可用，则使用0xFFFFFFFF。 |
 | 32 | 4 | TimingAdvance | UINT32 | 计时提前 (0-255) 。 如果此信息不可用，则使用0xFFFFFFFF。 |
-| 36 |   | DataBuffer | DATABUFFER | 包含 *ProviderId*的数据缓冲区。 |
+| 36 |   | DataBuffer | DATABUFFER | 包含 *ProviderId* 的数据缓冲区。 |
 
 ##### <a name="mbim_lte_mrl"></a><a name="mbim_lte_mrl"></a>MBIM_LTE_MRL
 
 MBIM_LTE_MRL 结构包含 "已测量的结果" 列表 (相邻的 LTE 单元的 MRL) 。
 
-| Offset | 大小 | 字段 | 类型 | 说明 |
+| Offset | 大小 | 字段 | 类型 | 描述 |
 | --- | --- | --- | --- | --- |
 | 0 | 4 | Elementcount 多于 (EC)  | UINT32 | 此元素后面的 MRL 项的计数。 |
 | 4 |   | DataBuffer | DATABUFFER | MRL 记录的数组，每个记录都指定为 [MBIM_LTE_MRL_INFO](#mbim_lte_mrl_info) 结构。 |
@@ -260,17 +259,17 @@ MBIM_LTE_MRL 结构包含 "已测量的结果" 列表 (相邻的 LTE 单元的 M
 
 MBIM_LTE_MRL_INFO 结构包含有关相邻的 LTE 单元格的信息。
 
-| Offset | 大小 | 字段 | 类型 | 说明 |
+| Offset | 大小 | 字段 | 类型 | 描述 |
 | --- | --- | --- | --- | --- |
 | 0 | 4 | ProviderIdOffset | OFFSET | 从该结构的开头算起的偏移量（以字节为单位），该偏移量是一个数字 (0-9) 名为 *ProviderId* 的字符串，用于表示网络提供程序标识。 此字符串是三位数 Mobile 国家/地区代码的串联 (MCC) 和两个或三个数字的移动网络代码 (MNC) 。 当没有返回 *ProviderId* 信息时，此成员可能为 NULL。 |
-| 4 | 4 | ProviderIdSize | 大小 (0-12)  | 用于 *ProviderId*的大小。 |
+| 4 | 4 | ProviderIdSize | 大小 (0-12)  | 用于 *ProviderId* 的大小。 |
 | 8 | 4 | CellID | UINT32 | 单元 ID (0-268435455) 。 如果此信息不可用，则使用0xFFFFFFFF。 |
 | 12 | 4 | EARFCN | UINT32 | 服务单元 (0-65535) 的射频通道号。 如果此信息不可用，则使用0xFFFFFFFF。 |
 | 16 | 4 | PhysicalCellID | UINT32 | 物理单元 ID (0-503) 。 如果此信息不可用，则使用0xFFFFFFFF。 |
 | 20 | 4 | TAC | UINT32 | 跟踪区域代码 (0-65535) 。 如果此信息不可用，则使用0xFFFFFFFF。 |
 | 24 | 4 | RSRP | INT32 | 平均参考信号接收功率。 范围为-140 到-44，单位为1dBm。 如果此信息不可用，则使用0xFFFFFFFF。 |
 | 28 | 4 | RSRQ | INT32 | 平均引用信号接收质量。 范围为-20 到-3，单位为1dBm。 如果此信息不可用，则使用0xFFFFFFFF。 |
-| 32 |   | DataBuffer | DATABUFFER | 包含 *ProviderId*的数据缓冲区。 |
+| 32 |   | DataBuffer | DATABUFFER | 包含 *ProviderId* 的数据缓冲区。 |
 
 #### <a name="cdma-cell-data-structures"></a>CDMA 单元数据结构
 
@@ -278,16 +277,16 @@ MBIM_LTE_MRL_INFO 结构包含有关相邻的 LTE 单元格的信息。
 
 MBIM_CDMA_MRL 结构包含) 和邻近 CDMA 单元的已测量结果列表 (MRL。
 
-| Offset | 大小 | 字段 | 类型 | 说明 |
+| Offset | 大小 | 字段 | 类型 | 描述 |
 | --- | --- | --- | --- | --- |
 | 0 | 4 | Elementcount 多于 (EC)  | UINT32 | 此元素后面的 MRL 项的计数。 |
 | 4 |   | DataBuffer | DATABUFFER | MRL 记录的数组，每个记录都指定为 [MBIM_CDMA_MRL_INFO](#mbim_cdma_mrl_info) 结构。 |
 
 ##### <a name="mbim_cdma_mrl_info"></a><a name="mbim_cdma_mrl_info"></a>MBIM_CDMA_MRL_INFO
 
-MBIM_CDMA_MRL_INFO 的数据结构是为 CDMA2000 网络类型设计的。 可以同时有多个 CDMA2000 服务单元。 在同一列表中将返回提供单元格和相邻单元格的。 **ServingCellFlag**字段指示单元格是否为服务单元。
+MBIM_CDMA_MRL_INFO 的数据结构是为 CDMA2000 网络类型设计的。 可以同时有多个 CDMA2000 服务单元。 在同一列表中将返回提供单元格和相邻单元格的。 **ServingCellFlag** 字段指示单元格是否为服务单元。
 
-| Offset | 大小 | 字段 | 类型 | 说明 |
+| Offset | 大小 | 字段 | 类型 | 描述 |
 | --- | --- | --- | --- | --- |
 | 0 | 4 | ServingCellFlag | UINT32 | 指示这是否为服务单元。 如果值为1，则表示服务单元格，值为0时表示相邻单元格。 在调用) 时，一次可能有多个服务单元格 (值得注意。 |
 | 4 | 4 | NID | UINT32 | 网络 ID (0-65535) 。 如果此信息不可用，则使用0xFFFFFFFF。 |
@@ -341,7 +340,7 @@ MBIM_CDMA_MRL_INFO 的数据结构是为 CDMA2000 网络类型设计的。 可�
 
 #### <a name="mbim_location_info"></a><a name="mbim_location_info"></a>MBIM_LOCATION_INFO
 
-| Offset | 大小 | 字段 | 类型 | 说明 |
+| Offset | 大小 | 字段 | 类型 | 描述 |
 | --- | --- | --- | --- | --- |
 | 0 | 4 | LocationAreaCode | UINT32 | 当前位置的 GSM/UMTS 区号。 如果当前系统类型不适用，则返回0xFFFFFFFF。 |
 | 4 | 4 | TrackingAreaCode | UINT32 | 当前位置的 LTE 跟踪区域代码。 如果当前系统类型不适用，则返回0xFFFFFFFF。 |
@@ -351,7 +350,7 @@ MBIM_CDMA_MRL_INFO 的数据结构是为 CDMA2000 网络类型设计的。 可�
 
 事件 InformationBuffer 包含 MBIM_LOCATION_INFO 结构。
 
-如果*Location area code* / *跟踪区域代码*的值更改为有效值，则发送此事件。 此事件不会在*CellID*更改时或*位置区域代码* / *跟踪区域代码*变为无效时发送。
+如果 *Location area code* / *跟踪区域代码* 的值更改为有效值，则发送此事件。 此事件不会在 *CellID* 更改时或 *位置区域代码* / *跟踪区域代码* 变为无效时发送。
 
 ### <a name="status-codes"></a>状态代码
 

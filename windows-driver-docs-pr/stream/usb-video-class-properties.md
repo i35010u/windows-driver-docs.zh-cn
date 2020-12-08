@@ -1,7 +1,6 @@
 ---
 title: USB 视频类属性
 description: USB 视频类的客户端可以使用本主题中所述的以下视频捕获属性集。
-ms.assetid: 6295926b-4ec5-42f5-98ca-a375d36f917b
 keywords:
 - USB 视频类驱动程序 WDK AVStream，属性
 - 视频类驱动程序 WDK USB，属性
@@ -9,12 +8,12 @@ keywords:
 - 属性集 WDK USB 视频类
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: edf81acc76264294f7ec28d7ec72d66370d54cf2
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 91ee5b8b9623a99b6b2ce1faf6dc949f913afd7b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89193137"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96795257"
 ---
 # <a name="usb-video-class-properties"></a>USB 视频类属性
 
@@ -32,7 +31,7 @@ USB 视频类的客户端可以使用以下视频捕获属性集：
 
 [PROPSETID \_VIDCAP \_ 选择器](./propsetid-vidcap-selector.md) PROPSETID VIDCAP 选择器中包含的属性项 \_ \_ 基于节点。
 
-调用 [**KsSynchronousDeviceControl**](/windows-hardware/drivers/ddi/ksproxy/nf-ksproxy-kssynchronousdevicecontrol) 或 **DeviceIoControl** ，以发出来自用户模式组件的属性请求。 Microsoft Windows SDK 文档中介绍了**DeviceIoControl** 。
+调用 [**KsSynchronousDeviceControl**](/windows-hardware/drivers/ddi/ksproxy/nf-ksproxy-kssynchronousdevicecontrol) 或 **DeviceIoControl** ，以发出来自用户模式组件的属性请求。 Microsoft Windows SDK 文档中介绍了 **DeviceIoControl** 。
 
 以上四个属性集中包含的每个属性项在 DirectShow COM 接口中都有相应的方法。 有关这些方法的详细信息，请参阅 Windows SDK 中的 DirectShow 文档。
 

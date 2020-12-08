@@ -1,19 +1,18 @@
 ---
 title: 安装特定于设备的应用程序
 description: 安装特定于设备的应用程序
-ms.assetid: 47e54ea6-f391-420a-aa69-caf7225b1147
 keywords:
 - 安装应用程序 WDK，特定于设备的应用程序
 - 设备安装应用程序 WDK，特定于设备的应用程序
 - 设备特定的应用程序 WDK 设备安装
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 32f9f2d2dd3e25594ca6e91310d15905fefddf79
-ms.sourcegitcommit: 057b72e8a44ba8f4282e072edc7be0b7e9341d2a
+ms.openlocfilehash: b8c8f017a196e98d62e22849d9ee2b68097acd63
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "89412436"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96794867"
 ---
 # <a name="installing-device-specific-applications"></a>安装特定于设备的应用程序
 
@@ -32,7 +31,7 @@ ms.locfileid: "89412436"
     1.  在分发介质上启动 *设备安装应用程序* 以安装特定于设备的应用程序。
     2.  提示用户从 Internet 下载设备安装应用程序的较新版本。
 
-    独立硬件供应商 (Ihv) 可以使用各种方法来提供 [硬件优先安装](hardware-first-installation.md) 解决方案，以便安装特定于设备的应用程序。 有关这些方法的详细信息，请参阅 [硬件-第一次安装设备特定的应用程序](device-installation-application-not-included-in-the-driver-package.md)。
+    独立硬件供应商 (Ihv) 可以使用各种方法来提供 [硬件优先安装](hardware-first-installation.md) 解决方案，以便安装特定于设备的应用程序。 有关这些方法的详细信息，请参阅 [Device-Specific 应用程序的硬件首次安装](device-installation-application-not-included-in-the-driver-package.md)。
 
     有关共同安装程序的详细信息，请参阅 [编写共同安装程序](writing-a-co-installer.md)。
 

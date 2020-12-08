@@ -1,15 +1,14 @@
 ---
 title: 将可扩展交换机目标端口数据添加到数据包
 description: 将可扩展交换机目标端口数据添加到数据包
-ms.assetid: C921D9F8-B6FB-4B53-8CC5-CC941720FF37
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cebfc9496aec637387dd2518b7a3c80056514ed7
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: ddf95d60901e15137630c07d36323550b7578d11
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89216010"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96794813"
 ---
 # <a name="adding-extensible-switch-destination-port-data-to-a-packet"></a>将可扩展交换机目标端口数据添加到数据包
 
@@ -28,7 +27,7 @@ ms.locfileid: "89216010"
 
 ![显示连接到可扩展交换机端口的网络适配器的数据包流量的数据路径的流程图](images/vswitchteam2.png)
 
-每个可扩展交换机目标端口都是在[**ndis \_ 交换机 \_ 转发 \_ 目标 \_ 数组**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_switch_forwarding_destination_array)结构内由[**ndis \_ 交换机 \_ 端口 \_ 目标**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_switch_port_destination)元素指定的。 此数组包含在数据包的 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list) 结构的带外 (OOB) 转发上下文中。 有关此上下文的详细信息，请参阅 [Hyper-v 可扩展交换机转发上下文](hyper-v-extensible-switch-forwarding-context.md)。
+每个可扩展交换机目标端口都是在 [**ndis \_ 交换机 \_ 转发 \_ 目标 \_ 数组**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_switch_forwarding_destination_array)结构内由 [**ndis \_ 交换机 \_ 端口 \_ 目标**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_switch_port_destination)元素指定的。 此数组包含在数据包的 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list) 结构的带外 (OOB) 转发上下文中。 有关此上下文的详细信息，请参阅 [Hyper-v 可扩展交换机转发上下文](hyper-v-extensible-switch-forwarding-context.md)。
 
 如果在可扩展交换机驱动程序堆栈中绑定并启用了转发扩展，则该扩展将负责确定从可扩展交换机入口数据路径获取的每个数据包的目标端口，除非数据包为 NVGRE 数据包。 有关此数据路径的详细信息，请参阅 [Hyper-v 可扩展交换机数据路径概述](overview-of-the-hyper-v-extensible-switch-data-path.md)。 有关 NVGRE 数据包的详细信息，请参阅 [混合转发](hybrid-forwarding.md)。
 
@@ -38,9 +37,9 @@ ms.locfileid: "89216010"
 
 当转发扩展为在入口数据路径上获取的数据包确定目标端口时，必须遵循以下指导原则：
 
--   扩展必须使用目标端口信息初始化[**ndis 交换机 \_ \_ 转发 \_ 目标 \_ 数组**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_switch_forwarding_destination_array)结构内的[**ndis \_ 交换机 \_ 端口 \_ 目标**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_switch_port_destination)结构。
+-   扩展必须使用目标端口信息初始化 [**ndis 交换机 \_ \_ 转发 \_ 目标 \_ 数组**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_switch_forwarding_destination_array)结构内的 [**ndis \_ 交换机 \_ 端口 \_ 目标**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_switch_port_destination)结构。
 
-    如果目标端口未连接到外部网络适配器，则扩展必须将[**ndis \_ 交换机 \_ 端口 \_ 目标**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_switch_port_destination)结构的**NicIndex**成员设置为**ndis \_ 交换机 \_ 默认 \_ NIC \_ 索引**。
+    如果目标端口未连接到外部网络适配器，则扩展必须将 [**ndis \_ 交换机 \_ 端口 \_ 目标**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_switch_port_destination)结构的 **NicIndex** 成员设置为 **ndis \_ 交换机 \_ 默认 \_ NIC \_ 索引**。
 
     如果目标端口连接到可扩展交换机外部网络适配器，则扩展可以指定要将发送请求转发到的基础物理网络适配器的索引。 此扩展通过将 **NicIndex** 成员设置为 \_ \_ \_ 绑定到外部网络适配器的目标网络适配器的非零 NDIS 交换机 NIC 索引值来实现此目的。
 
@@ -48,7 +47,7 @@ ms.locfileid: "89216010"
 
 -   扩展必须将目标端口仅添加到具有活动网络适配器连接的端口。 如果扩展插件转发了 [OID \_ 交换机 \_ NIC \_ 断开连接](./oid-switch-nic-disconnect.md) 请求，则它不能添加与断开连接的网络适配器关联的目标端口。
 
--   为了提高性能，扩展必须仅添加对数据包传递有效的端口目标。 在这种情况下，扩展必须将目标端口的[**NDIS \_ 交换机 \_ 端口 \_ 目标**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_switch_port_destination)结构的**IsExcluded**成员设置为 FALSE。
+-   为了提高性能，扩展必须仅添加对数据包传递有效的端口目标。 在这种情况下，扩展必须将目标端口的 [**NDIS \_ 交换机 \_ 端口 \_ 目标**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_switch_port_destination)结构的 **IsExcluded** 成员设置为 FALSE。
 
 -   若要保留 802.1 Q 虚拟局域网 (VLAN) 数据传递到端口之前，该扩展会将 **PreserveVLAN** 成员设置为 TRUE。
 
@@ -60,7 +59,7 @@ ms.locfileid: "89216010"
 
 -   如果转发扩展插件为数据包添加了多个目标端口，则必须执行以下步骤：
 
-    1.  该扩展首先使用[**网络 \_ 缓冲区 \_ 列表 \_ 开关 \_ 转发 \_ 详细**](/windows-hardware/drivers/ddi/ndis/nf-ndis-net_buffer_list_switch_forwarding_detail)信息宏访问数据包的[**NDIS \_ 交换机 \_ 转发 \_ 详细信息 \_ 网络 \_ 缓冲区 \_ 列表 \_ 信息**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_switch_forwarding_detail_net_buffer_list_info)结构。 然后，扩展插件读取 **NumAvailableDestinations** 成员，以确定目标端口数组中有多少个未使用的目标端口元素。 如果扩展需要的目标端口比数组中的可用目标端口多，则必须调用 [*GrowNetBufferListDestinations*](/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_grow_net_buffer_list_destinations) 函数为数组中的其他目标端口分配空间。
+    1.  该扩展首先使用 [**网络 \_ 缓冲区 \_ 列表 \_ 开关 \_ 转发 \_ 详细**](/windows-hardware/drivers/ddi/ndis/nf-ndis-net_buffer_list_switch_forwarding_detail)信息宏访问数据包的 [**NDIS \_ 交换机 \_ 转发 \_ 详细信息 \_ 网络 \_ 缓冲区 \_ 列表 \_ 信息**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_switch_forwarding_detail_net_buffer_list_info)结构。 然后，扩展插件读取 **NumAvailableDestinations** 成员，以确定目标端口数组中有多少个未使用的目标端口元素。 如果扩展需要的目标端口比数组中的可用目标端口多，则必须调用 [*GrowNetBufferListDestinations*](/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_grow_net_buffer_list_destinations) 函数为数组中的其他目标端口分配空间。
 
         当扩展调用 [*GrowNetBufferListDestinations*](/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_grow_net_buffer_list_destinations)时，它会将 *NumberOfNewDestinations* 参数设置为要添加到包中的新目标端口数。
 
@@ -82,17 +81,17 @@ ms.locfileid: "89216010"
 
     1.  此扩展在已分配扩展的 [**NDIS \_ 交换机 \_ 端口 \_ 目标**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_switch_port_destination) 结构中初始化数据包的目标端口信息。
 
-    2.  此扩展调用 [*AddNetBufferListDestination*](/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_add_net_buffer_list_destination) ，以将更改提交到数据包的 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list) 结构。 此扩展在*DESTINATION*参数中传递[**NDIS \_ 交换机 \_ 端口 \_ 目标**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_switch_port_destination)结构的地址。
+    2.  此扩展调用 [*AddNetBufferListDestination*](/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_add_net_buffer_list_destination) ，以将更改提交到数据包的 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list) 结构。 此扩展在 *DESTINATION* 参数中传递 [**NDIS \_ 交换机 \_ 端口 \_ 目标**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_switch_port_destination)结构的地址。
 
         **注意**  扩展不应调用 [*UpdateNetBufferListDestinations*](/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_update_net_buffer_list_destinations) 函数以将更改提交到只有一个目标端口的数据包。
 
 -   当转发扩展插件调用 [*AddNetBufferListDestination*](/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_add_net_buffer_list_destination) 或 [*UpdateNetBufferListDestinations*](/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_update_net_buffer_list_destinations) 来提交目标端口的更改时，可扩展交换机接口将不会删除在 [**NDIS \_ 交换机 \_ 转发 \_ 目标 \_ 数组**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_switch_forwarding_destination_array) 结构的元素中指定的可扩展交换机端口。 数据包发送或接收操作完成后，如果需要，接口可以随意删除端口。
 
-    **注意** 转发扩展将目标端口的更改提交到转发上下文后，不能删除目标端口，并且只能更改目标端口的[**NDIS \_ 交换机 \_ 端口 \_ 目标**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_switch_port_destination)结构的**IsExcluded**成员。 有关详细信息，请参阅 [排除数据包传递到可扩展交换机目标端口](excluding-packet-delivery-to-extensible-switch-destination-ports.md)。
+    **注意** 转发扩展将目标端口的更改提交到转发上下文后，不能删除目标端口，并且只能更改目标端口的 [**NDIS \_ 交换机 \_ 端口 \_ 目标**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_switch_port_destination)结构的 **IsExcluded** 成员。 有关详细信息，请参阅 [排除数据包传递到可扩展交换机目标端口](excluding-packet-delivery-to-extensible-switch-destination-ports.md)。
 
 -   转发扩展必须同步其对对象标识符的处理 (OID) 设置 [oid \_ 交换机 \_ NIC \_ 断开连接](./oid-switch-nic-disconnect.md) 的请求以及为断开连接的网络适配器添加目标端口的代码。
 
-    如果为[OID \_ 交换机 \_ NIC \_ 断开](./oid-switch-nic-disconnect.md)请求调用转发扩展的[*FilterOidRequest*](/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_oid_request) ，则扩展可以执行以下操作之一：
+    如果为 [OID \_ 交换机 \_ NIC \_ 断开](./oid-switch-nic-disconnect.md)请求调用转发扩展的 [*FilterOidRequest*](/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_oid_request) ，则扩展可以执行以下操作之一：
 
     -   如果名为 [**NdisFOidRequest**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfoidrequest) 的扩展插件请求转发此 OID 请求，则它不能将断开连接的网络适配器的端口指定为数据包的目标端口。
 

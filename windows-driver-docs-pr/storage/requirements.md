@@ -1,15 +1,14 @@
 ---
 title: 接收器驱动程序系统要求
 description: 描述存储接收器驱动程序系统满足的要求
-ms.assetid: d939a319-f321-455e-a34d-220a3faf6092
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ea45873dbf545ea664e4065c8043ea73f2f36ef3
-ms.sourcegitcommit: df50dc10210c124f2c7fb173d6e4fb796f56e5bd
+ms.openlocfilehash: d229e05a52292dcdd16606da9ee4b77c6c62d011
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86949737"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96793361"
 ---
 # <a name="silo-driver-system-requirements"></a>接收器驱动程序系统要求
 

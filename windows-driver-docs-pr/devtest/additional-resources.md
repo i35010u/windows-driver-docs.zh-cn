@@ -1,19 +1,18 @@
 ---
 title: 其他资源
 description: 其他资源
-ms.assetid: 3C4D4D58-7B81-4791-A040-903BED94B46E
 keywords:
 - 设备元数据资源
 - 设备体验资源
 - UWP 设备应用资源
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2fd92304fc4307ace697a058059ac5c70f8aee3b
-ms.sourcegitcommit: cccf9ba62af357aad1016addbbf6c42c7f564412
+ms.openlocfilehash: 70126bbe8c5accc87ad988446daed7f68dedf633
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/01/2020
-ms.locfileid: "91606453"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96795115"
 ---
 # <a name="additional-resources"></a>其他资源
 

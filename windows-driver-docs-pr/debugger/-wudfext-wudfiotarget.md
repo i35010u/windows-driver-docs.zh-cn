@@ -1,9 +1,8 @@
 ---
 title: wudfext.wudfiotarget
-description: Wudfext.wudfiotarget 扩展显示有关包括目标的状态和已发送请求的列表的 I/O 目标信息。
-ms.assetid: ccd241d6-c9c8-4518-902c-f119cf5b73fe
+description: Wudfext. wudfiotarget 扩展显示有关 i/o 目标的信息，包括目标的状态和已发送请求的列表。
 keywords:
-- wudfext.wudfiotarget Windows 调试
+- wudfext wudfiotarget Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,32 +11,32 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: f4c50159c04826100e7e9fd6e36a3d8e5990731c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 370b65a5a1864e76167cf80bc6785110017a3521
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63351377"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96794057"
 ---
 # <a name="wudfextwudfiotarget"></a>!wudfext.wudfiotarget
 
 
-**！ Wudfext.wudfiotarget**扩展显示有关包括目标的状态和已发送请求的列表的 I/O 目标的信息。
+**！ Wudfext wudfiotarget** 扩展显示有关 i/o 目标的信息，包括目标的状态和已发送请求的列表。
 
 ```dbgcmd
 !wudfext.wudfiotarget pWDFTarget TypeName
 ```
 
-## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>参数
+## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>Parameters
 
 
-<span id="_______pWDFTarget______"></span><span id="_______pwdftarget______"></span><span id="_______PWDFTARGET______"></span> *pWDFTarget*   
-指定的地址**IWDFIoTarget**接口来显示有关的信息。 [ **！ Wudfext.wudfobject** ](-wudfext-wudfobject.md)扩展命令确定地址**IWDFIoTarget**。
+<span id="_______pWDFTarget______"></span><span id="_______pwdftarget______"></span><span id="_______PWDFTARGET______"></span>*pWDFTarget*   
+指定要显示其相关信息的 **IWDFIoTarget** 接口的地址。 [**！ Wudfext wudfobject**](-wudfext-wudfobject.md) extension 命令确定 **IWDFIoTarget** 的地址。
 
-<span id="_______TypeName______"></span><span id="_______typename______"></span><span id="_______TYPENAME______"></span> *TypeName*   
-可选。 指定的接口类型 (例如， **IWDFDevice**)。 如果为值*TypeName*是提供，该扩展使用的值作为接口的类型。 如果星号 (\*) 作为提供*TypeName*，或者如果*TypeName*是省略，该扩展会尝试自动确定提供的接口的类型。
+<span id="_______TypeName______"></span><span id="_______typename______"></span><span id="_______TYPENAME______"></span>*TypeName*   
+可选。 指定接口的类型 (例如 **IWDFDevice**) 。 如果为 *TypeName* 提供了一个值，扩展将使用值作为该接口的类型。 如果将星号 (\*) 提供为 *typename*，或者省略 *typename* ，则扩展将尝试自动确定所提供的接口的类型。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 <table>
 <colgroup>
@@ -50,7 +49,7 @@ ms.locfileid: "63351377"
 <td align="left"><p>不可用</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>使用 UMDF 1.7 和更高版本的 Windows XP</strong></p></td>
+<td align="left"><p><strong>Windows XP （UMDF 版本1.7 及更高版本）</strong></p></td>
 <td align="left"><p>Wudfext.dll</p></td>
 </tr>
 </tbody>
@@ -58,9 +57,9 @@ ms.locfileid: "63351377"
 
  
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-有关详细信息，请参阅[用户模式驱动程序框架调试](user-mode-driver-framework-debugging.md)。
+有关详细信息，请参阅 [用户模式驱动程序框架调试](user-mode-driver-framework-debugging.md)。
 
  
 

@@ -1,11 +1,10 @@
 ---
 title: .remote（创建 Remote.exe 服务器）
-description: .Remote 命令启动 Remote.exe 服务器，启用到当前调试会话的远程连接。
-ms.assetid: fa3de33c-ba8c-4e9c-9899-b9a43f3195bf
+description: Remote 命令启动 Remote.exe 服务器，启用到当前调试会话的远程连接。
 keywords:
-- 创建 Remote.exe 服务器 (.remote) 命令
-- remote.exe，创建 Remote.exe 服务器 (.remote) 命令通过远程调试
-- .remote （创建 Remote.exe 服务器） Windows 调试
+- Create Remote.exe Server ( remote) 命令
+- 通过 remote.exe 远程调试，创建 Remote.exe Server ( 远程) 命令
+- 。远程 () Windows 调试创建 Remote.exe 服务器
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -14,31 +13,31 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 86f546e75d8e999298b0b59aaad0573291ef9dce
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 980450e43dca361067c8db14f6f21d708d1ddac2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63338916"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96795199"
 ---
 # <a name="remote-create-remoteexe-server"></a>.remote（创建 Remote.exe 服务器）
 
 
-**.Remote**命令启动[Remote.exe Server](starting-a-remote-exe-session.md)，启用到当前调试会话的远程连接。
+**Remote** 命令启动 [Remote.exe 服务器](starting-a-remote-exe-session.md)，启用到当前调试会话的远程连接。
 
 ```dbgcmd
 .remote session
 ```
 
-## <a name="span-idddkmetacreateremoteexeserverdbgspanspan-idddkmetacreateremoteexeserverdbgspanparameters"></a><span id="ddk_meta_create_remote_exe_server_dbg"></span><span id="DDK_META_CREATE_REMOTE_EXE_SERVER_DBG"></span>参数
+## <a name="span-idddk_meta_create_remote_exe_server_dbgspanspan-idddk_meta_create_remote_exe_server_dbgspanparameters"></a><span id="ddk_meta_create_remote_exe_server_dbg"></span><span id="DDK_META_CREATE_REMOTE_EXE_SERVER_DBG"></span>参数
 
 
-<span id="_______session______"></span><span id="_______SESSION______"></span> *session*   
-指定提供给的调试会话的名称。
+<span id="_______session______"></span><span id="_______SESSION______"></span>*会话*   
+指定为调试会话指定的名称。
 
 ### <a name="span-idenvironmentspanspan-idenvironmentspanspan-idenvironmentspanenvironment"></a><span id="Environment"></span><span id="environment"></span><span id="ENVIRONMENT"></span>环境
 
-可以使用 **.remote**命令中 KD 和 CDB，但您不能在 WinDbg 中使用。
+可以在 KD 和 CDB 中使用 **remote** 命令，但不能在 WinDbg 中使用它。
 
 <table>
 <colgroup>
@@ -47,12 +46,12 @@ ms.locfileid: "63338916"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>模式</strong></p></td>
-<td align="left"><p>用户模式下，内核模式</p></td>
+<td align="left"><p><strong>交货</strong></p></td>
+<td align="left"><p>用户模式，内核模式</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>目标</strong></p></td>
-<td align="left"><p>实时、 崩溃转储</p></td>
+<td align="left"><p>实时，故障转储</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>平台</strong></p></td>
@@ -63,14 +62,14 @@ ms.locfileid: "63338916"
 
  
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-有关如何使用 Remote.exe 服务器和 Remote.exe 客户端的详细信息，请参阅[Remote.exe 通过远程调试](remote-debugging-through-remote-exe.md)。
+有关如何使用 Remote.exe 服务器和 Remote.exe 客户端的详细信息，请参阅 Remote.exe中的 [远程调试 ](remote-debugging-through-remote-exe.md)。
 
 <a name="remarks"></a>备注
 -------
 
-**.Remote**命令创建 Remote.exe 过程以及如何启用到 Remote.exe 服务器当前的调试器。 此服务器允许 Remote.exe 客户端连接到当前调试会话。
+**Remote** 命令创建 Remote.exe 进程，并将当前调试器转换为 Remote.exe 服务器。 此服务器使 Remote.exe 的客户端能够连接到当前的调试会话。
 
  
 

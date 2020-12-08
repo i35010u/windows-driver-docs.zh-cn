@@ -1,7 +1,6 @@
 ---
 title: 关于驱动程序的事件跟踪
 description: 关于驱动程序的事件跟踪
-ms.assetid: 1b5c85b1-5b7a-48bc-bdd4-356316d4467f
 keywords:
 - Windows WDK 事件跟踪，关于 Windows 的事件跟踪
 - ETW WDK，关于 Windows 的事件跟踪
@@ -10,12 +9,12 @@ keywords:
 - 内核模式 ETW WDK 软件跟踪
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1728bc642cc29497ce0b2c3fff561416696051a3
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: f4197de9ec46c1f0a1bc4bf705db8c38bc06335d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89384575"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96795153"
 ---
 # <a name="about-event-tracing-for-drivers"></a>关于驱动程序的事件跟踪
 
@@ -27,7 +26,7 @@ Windows (ETW) 的事件跟踪是一种高效而有效的机制，用于跟踪和
 <thead>
 <tr class="header">
 <th align="left">术语</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -46,7 +45,7 @@ Windows (ETW) 的事件跟踪是一种高效而有效的机制，用于跟踪和
 </tbody>
 </table>
 
-## <a name="the-etw-kernel-mode-api"></a>ETW 内核模式 API
+## <a name="the-etw-kernel-mode-api"></a>ETW Kernel-Mode API
 
 ETW 应用程序编程接口 (API) 提供一组可用于内核模式组件和驱动程序的函数。 [WMI 事件跟踪](../kernel/wmi-event-tracing.md) 和 [WPP 软件跟踪](wpp-software-tracing.md) 均使用 ETW。 驱动程序开发人员可以使用这些函数将驱动程序注册为 ETW 提供程序。 ETW 提供程序可以引发事件，并可以将其发布到 Windows 事件日志，也可以将其事件写入 ETW 会话，后者会写入跟踪文件或传递给实时使用者。 事件是描述系统中感兴趣的事件的实体，由 ETW 提供程序确定的一组属性进行定义。
 

@@ -1,7 +1,6 @@
 ---
 title: 'EvtIoStopCancel 规则 (kmdf) '
 description: EvtIoStopCancel 规则指定在 EvtIoStop 回调函数中，驱动程序为不可取消的 i/o 请求调用以下方法之一。
-ms.assetid: 579f25d3-3db5-4fec-bd5b-a09c41ff652c
 ms.date: 05/21/2018
 keywords:
 - 'EvtIoStopCancel 规则 (kmdf) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 9399996a176db98d42367c2f4e4b7fdccbba8ad3
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 16e95a2beb1cb5a121e7b6f86e99cd0b12ed9d1f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107406"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96793101"
 ---
 # <a name="evtiostopcancel-rule-kmdf"></a>EvtIoStopCancel 规则 (kmdf) 
 
 
-**EvtIoStopCancel**规则指定在[*EvtIoStop*](/windows-hardware/drivers/ddi/wdfio/nc-wdfio-evt_wdf_io_queue_io_stop)回调函数中，驱动程序为不可取消的 i/o 请求调用以下方法之一。
+**EvtIoStopCancel** 规则指定在 [*EvtIoStop*](/windows-hardware/drivers/ddi/wdfio/nc-wdfio-evt_wdf_io_queue_io_stop)回调函数中，驱动程序为不可取消的 i/o 请求调用以下方法之一。
 
 [**WdfRequestComplete**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcomplete) 
 [**WdfRequestCompleteWithInformation**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcompletewithinformation) 

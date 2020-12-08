@@ -1,7 +1,6 @@
 ---
 title: 支持高阶修补图面
 description: 支持高阶修补图面
-ms.assetid: 020fb91c-c8cd-43e8-a180-bbb2ef606be8
 keywords:
 - 高阶修补的图面 WDK DirectX 9。0
 - 置换映射 WDK DirectX 9。0
@@ -10,12 +9,12 @@ keywords:
 - 修补的图面 WDK DirectX 9。0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 502a71a0430710ad945cda03119489d58626c5b7
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: a80599491892889e1541e098df541e640769c28b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89067224"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96793855"
 ---
 # <a name="supporting-high-order-patched-surfaces"></a>支持高阶修补图面
 
@@ -43,7 +42,7 @@ ms.locfileid: "89067224"
 
 驱动程序将返回 D3DCAPS9 结构，以响应 **GetDriverInfo2** 查询，如 [报告 DirectX 8.0 Style Direct3D 功能](reporting-directx-8-0-style-direct3d-capabilities.md)中所述的那样返回 D3DCAPS8 结构。 支持 [GetDriverInfo2](supporting-getdriverinfo2.md)中介绍了此查询的支持。
 
-驱动程序在 \_ \_ [**DDPIXELFORMAT**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-_ddpixelformat)结构的**dwOperations**成员中指定 D3DFORMAT OP DMAP 标志，该标志用于标记置换图采样格式的特定表面格式。 创建纹理图面时，Direct3D 运行时会将 \_ DDSCAPSEX ([**DDSCAPS2**](/previous-versions/windows/hardware/drivers/ff550292(v=vs.85))) 结构的**dwCaps3**成员的 DDSCAPS3 DMAP 位设置为，以指示可以在镶嵌单元中对纹理进行采样。
+驱动程序在 \_ \_ [**DDPIXELFORMAT**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-_ddpixelformat)结构的 **dwOperations** 成员中指定 D3DFORMAT OP DMAP 标志，该标志用于标记置换图采样格式的特定表面格式。 创建纹理图面时，Direct3D 运行时会将 \_ DDSCAPSEX ([**DDSCAPS2**](/previous-versions/windows/hardware/drivers/ff550292(v=vs.85))) 结构的 **dwCaps3** 成员的 DDSCAPS3 DMAP 位设置为，以指示可以在镶嵌单元中对纹理进行采样。
 
 请注意，仅当 D3DRS \_ PATCHSEGMENTS 呈现状态的值小于 1.0 f 时，DirectX 9.0 和更高版本的驱动程序才能关闭 N 修补程序功能。 DirectX 8.1 和更早版本的驱动程序无需以这种方式运行。
 
@@ -65,7 +64,7 @@ D3DRS \_ ENABLEADAPTIVETESSELLATION = **FALSE**
 
 D3DDMAPSAMPLER 采样器也是 DirectX 9.0 的新示例，用于分割单元以设置置换地图纹理。
 
-**注意**   DirectX 9.0 和更高版本的应用程序可使用 \_ D3DSAMPLERSTATETYPE 枚举中的 D3DSAMP DMAPOFFSET 值控制 presampled 置换地图中的偏移量（以顶点为）。 运行时将用户模式采样器状态映射 (D3DSAMP \_ *Xxx*) 为内核模式 D3DTSS \_ *Xxx*值，以便不需要 DirectX 9.0 和更高版本的驱动程序来处理用户模式采样器状态。 因此，驱动程序必须改为处理 \_ DP2TEXTURESTAGESTATE D3DDP2OP 操作的[**D3DHAL \_ TEXTURESTAGESTATE**](/windows-hardware/drivers/ddi/d3dhal/ns-d3dhal-_d3dhal_dp2texturestagestate)结构的**TSState**成员中的 D3DTSS DMAPOFFSET 值 \_ 。 有关 D3DSAMPLERSTATETYPE 和 presampled 置换映射的详细信息，请参阅最新的 DirectX SDK 文档。
+**注意**   DirectX 9.0 和更高版本的应用程序可使用 \_ D3DSAMPLERSTATETYPE 枚举中的 D3DSAMP DMAPOFFSET 值控制 presampled 置换地图中的偏移量（以顶点为）。 运行时将用户模式采样器状态映射 (D3DSAMP \_ *Xxx*) 为内核模式 D3DTSS \_ *Xxx* 值，以便不需要 DirectX 9.0 和更高版本的驱动程序来处理用户模式采样器状态。 因此，驱动程序必须改为处理 \_ DP2TEXTURESTAGESTATE D3DDP2OP 操作的 [**D3DHAL \_ TEXTURESTAGESTATE**](/windows-hardware/drivers/ddi/d3dhal/ns-d3dhal-_d3dhal_dp2texturestagestate)结构的 **TSState** 成员中的 D3DTSS DMAPOFFSET 值 \_ 。 有关 D3DSAMPLERSTATETYPE 和 presampled 置换映射的详细信息，请参阅最新的 DirectX SDK 文档。
 
  
 

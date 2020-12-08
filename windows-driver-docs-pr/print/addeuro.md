@@ -1,7 +1,6 @@
 ---
 title: AddEuro
 description: AddEuro
-ms.assetid: 1d27fbb0-787f-4fb2-8a1c-3c68598d6d41
 keywords:
 - 微型驱动程序 WDK Pscript，AddEuro 功能
 - AddEuro 功能 WDK 打印
@@ -10,12 +9,12 @@ keywords:
 - ADHasEuro
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6b6f9b92332844915598b403820d54363f3832e8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a1eecd489712c7b1bd68e78e8b1ef52b767d3b31
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63341366"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96794239"
 ---
 # <a name="addeuro"></a>AddEuro
 
@@ -23,13 +22,13 @@ ms.locfileid: "63341366"
 
 
 
-欧元符号，如下图中所示是基本的货币单位的欧盟国家/地区中使用的货币符号。
+欧元符号（如下图所示）是欧盟的国家/地区中使用的基本货币单位的货币符号。
 
-![示意图，欧元符号](images/euro.png)
+![欧元符号图](images/euro.png)
 
-AddEuro 功能将此符号添加到打印机的设备字体。 启用 AddEuro 后，在显示设备会显示欧元符号将还打印在纸张上，文档发送到打印机时。 如果此功能不可用或已禁用，将选择非别名设备字体的用户将能够在屏幕上，请参阅欧元符号，但将在纸上看到一个大型循环点。 启用此功能，用户可以打印欧元符号，指示为打印机的设备字体中可用。
+AddEuro 功能将此符号添加到打印机的设备字体。 启用 AddEuro 时，在将文档发送到打印机时，显示设备上显示的欧元符号也将打印在纸张上。 如果此功能不可用或已禁用，则选择非别名设备字体的用户将可以在屏幕上看到 Euro 符号，但会在纸张上看到大圆点。 启用此功能后，用户可以打印欧元符号，无论其在打印机的设备字体中是否可用。
 
-AddEuro 使用私有*PPD*关键字\* **ADHasEuro**，允许打印机制造商设置最佳的默认值。
+AddEuro 使用私有 *PPD* 关键字 \* **ADHasEuro**，以允许打印机制造商设置最佳默认值。
 
 <table>
 <colgroup>
@@ -44,19 +43,19 @@ AddEuro 使用私有*PPD*关键字\* **ADHasEuro**，允许打印机制造商设
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><em><strong>ADHasEuro</strong>:True</p></td>
-<td><p>打印机已不需要下载一个内置欧元符号。 利用此值，默认情况下禁用 AddEuro。</p></td>
+<td><p><em><strong>ADHasEuro</strong>： True</p></td>
+<td><p>打印机已经具有不需要下载的内置欧元符号。 使用此值，默认情况下，AddEuro 处于禁用状态。</p></td>
 </tr>
 <tr class="even">
-<td><p></em><strong>ADHasEuro</strong>:False</p></td>
-<td><p>打印机不具有内置的欧元符号;如果为调用应用程序，则应下载此符号。 利用此值，默认情况下，无论何种 PostScript 版本启用 AddEuro。</p></td>
+<td><p></em><strong>ADHasEuro </strong> ： False</p></td>
+<td><p>打印机没有内置的欧元符号;如果是由应用程序调用的，则应下载此符号。 如果使用此值，则默认情况下将启用 AddEuro，而不考虑 PostScript 版本。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-如果\* **ADHasEuro**关键字未出现，则前 3011，与 PostScript 版本的打印机的默认情况下，启用和禁用默认情况下，对于版本 3011 或之后 AddEuro 功能。
+如果 \* 未显示 *_ADHasEuro_* 关键字，则默认情况下，对于使用3011之前的 PostScript 版本的打印机启用 AddEuro 功能，默认情况下，对于版本3011或之后禁用该功能。
 
  
 

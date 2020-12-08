@@ -1,15 +1,14 @@
 ---
 title: POS 事件
 description: 使用 ReadFile 描述从设备驱动程序传递到服务 (POS) API 层的点的事件。
-ms.assetid: 1123b789-c0ee-4490-9081-79c08fc31417
 ms.date: 09/07/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 3ee4b7a8a1844a13cf87ccfa06ccf278eef85a5c
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: cf9c93b29acaba675edd6d127cfb57cad73a4abd
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90714866"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96794307"
 ---
 # <a name="pos-events"></a>POS 事件
 

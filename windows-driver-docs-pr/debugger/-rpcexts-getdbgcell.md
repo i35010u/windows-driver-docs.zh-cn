@@ -1,9 +1,8 @@
 ---
 title: rpcexts.getdbgcell
-description: Rpcexts.getdbgcell 扩展显示指定的单元格的 RPC 状态信息。
-ms.assetid: 28be074f-6756-4610-aa86-1162b83fd0a7
+description: Rpcexts. getdbgcell 扩展显示指定单元的 RPC 状态信息。
 keywords:
-- rpcexts.getdbgcell Windows 调试
+- rpcexts getdbgcell Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,36 +11,36 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 2e95847021c0f8c860a3c55e875be357e9e3b3cf
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1bdc33470af22ebc35d5931a2f012fe87ca4f127
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63338865"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96795181"
 ---
 # <a name="rpcextsgetdbgcell"></a>!rpcexts.getdbgcell
 
 
-**！ Rpcexts.getdbgcell**扩展显示指定的单元格的 RPC 状态信息。
+**！ Rpcexts getdbgcell** 扩展显示指定单元的 RPC 状态信息。
 
 ```dbgcmd
 !rpcexts.getdbgcell ProcessID CellID1.CellID2 
 !rpcexts.getdbgcell -?
 ```
 
-## <a name="span-idddkrpcextsgetdbgcelldbgspanspan-idddkrpcextsgetdbgcelldbgspanparameters"></a><span id="ddk__rpcexts_getdbgcell_dbg"></span><span id="DDK__RPCEXTS_GETDBGCELL_DBG"></span>参数
+## <a name="span-idddk__rpcexts_getdbgcell_dbgspanspan-idddk__rpcexts_getdbgcell_dbgspanparameters"></a><span id="ddk__rpcexts_getdbgcell_dbg"></span><span id="DDK__RPCEXTS_GETDBGCELL_DBG"></span>参数
 
 
-<span id="_______ProcessID______"></span><span id="_______processid______"></span><span id="_______PROCESSID______"></span> *ProcessID*   
-指定的进程 ID (PID) 的服务器包含所需单元格的过程。
+<span id="_______ProcessID______"></span><span id="_______processid______"></span><span id="_______PROCESSID______"></span>*ProcessID*   
+指定进程的进程 ID (PID) ，其服务器包含所需的单元格。
 
-<span id="_______cellid1.cellid2______"></span><span id="_______CELLID1.CELLID2______"></span> *CellID1*.*CellID2*   
-指定要显示的单元格的数量。
+<span id="_______cellid1.cellid2______"></span><span id="_______CELLID1.CELLID2______"></span>*CellID1*。*CellID2*   
+指定要显示的单元格的编号。
 
 <span id="_______-_______"></span> **-?**   
-在命令提示符窗口中显示此扩展的一些简要帮助文本。
+在命令提示符窗口中显示此扩展的一些简短帮助文本。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 <table>
 <colgroup>
@@ -62,16 +61,16 @@ ms.locfileid: "63338865"
 
  
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-有关调试 Microsoft 远程过程调用 (RPC) 的详细信息，请参阅[RPC 调试](rpc-debugging.md)。
+有关调试 Microsoft 远程过程调用 (RPC) 的详细信息，请参阅 [Rpc 调试](rpc-debugging.md)。
 
 <a name="remarks"></a>备注
 -------
 
-与 CDB 或用户模式下 WinDbg，则仅可以使用此扩展。
+此扩展只能与 CDB 一起使用，也可与用户模式 WinDbg 一起使用。
 
-下面是一个示例：
+以下是示例：
 
 ```dbgcmd
 0:002> !rpcexts.getdbgcell c4 0.19
@@ -87,7 +86,7 @@ Last update time (in seconds since boot):1453.459 (0x5AD.1CB)
 Caller (PID/TID) is: d0.1ac (208.428)
 ```
 
-有关使用 DbgRpc 工具的类似示例，请参阅[获取 RPC 单元格信息](get-rpc-cell-information.md)。
+有关使用 DbgRpc 工具的类似示例，请参阅 [获取 RPC 单元信息](get-rpc-cell-information.md)。
 
  
 

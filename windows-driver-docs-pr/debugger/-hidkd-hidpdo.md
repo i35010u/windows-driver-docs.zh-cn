@@ -1,9 +1,8 @@
 ---
 title: hidkd.hidpdo
-description: Hidkd.hidpdo 命令显示与物理设备对象 (PDO) 相关联的 HID 信息。
-ms.assetid: B7FF3B62-AC41-4CFC-A9D6-609B1204E4CA
+description: Hidkd. hidpdo 命令显示与 (PDO) 的物理设备对象相关联的 HID 信息。
 keywords:
-- hidkd.hidpdo Windows 调试
+- hidkd hidpdo Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,29 +11,29 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 3cc6d6bec5d6ff8bdd59bcf6344cdc8be7f7bcfb
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 10b72815981ea9f51c1756938b78e815e95c75c5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63336506"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96793327"
 ---
 # <a name="hidkdhidpdo"></a>!hidkd.hidpdo
 
 
-**！ Hidkd.hidpdo**命令将显示与物理设备对象 (PDO) 相关联的 HID 信息。
+**！ Hidkd hidpdo** 命令显示与 (PDO) 的物理设备对象相关联的 HID 信息。
 
 ```dbgcmd
 !hidkd.hidpdo pdo
 ```
 
-## <a name="span-idddkdevobjdbgspanspan-idddkdevobjdbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>参数
+## <a name="span-idddk__devobj_dbgspanspan-idddk__devobj_dbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>参数
 
 
-<span id="_______pdo______"></span><span id="_______PDO______"></span> *pdo*   
-PDO 的地址。 若要获取 PDOs 与 HID 驱动程序相关联的地址，请使用[ **！ usbhid.hidtree** ](-hidkd-hidtree.md)命令。
+<span id="_______pdo______"></span><span id="_______PDO______"></span>*pdo*   
+PDO 的地址。 若要获取与 HID 驱动程序相关联的 PDOs 的地址，请使用 [**！ usbhid. hidtree**](-hidkd-hidtree.md) 命令。
 
-## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 
 Hidkd.dll
@@ -42,7 +41,7 @@ Hidkd.dll
 <a name="examples"></a>示例
 --------
 
-下面是输出的示例 **！ hidpdo**命令。 此示例首先调用[ **！ hidtree** ](-hidkd-hidtree.md)获取 PDO 的地址。
+下面是 **！ hidpdo** 命令的输出示例。 该示例首先调用 [**！ hidtree**](-hidkd-hidtree.md) 以获取 PDO 的地址。
 
 ```dbgcmd
 0: kd> !hidkd.hidtree
@@ -76,10 +75,10 @@ FDO  VendorID:0x045E(Microsoft Corporation) ProductID:0x0745 Version:0x0634
   Wait Wake IRP : !irp 0xffffe00004fc57d0 (pending on \Driver\HidUsb)
 ```
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[HID 的扩展](hid-extensions.md)
+[HID 扩展](hid-extensions.md)
 
  
 

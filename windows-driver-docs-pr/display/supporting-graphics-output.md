@@ -1,19 +1,18 @@
 ---
 title: 支持图形输出
 description: 支持图形输出
-ms.assetid: 2ac9b01d-9dca-44b4-9645-9c5eefb2ef1b
 keywords:
 - GDI WDK Windows 2000 显示，图形输出
 - 图形驱动程序 WDK Windows 2000 显示，输出
 - 绘制 WDK GDI，图形输出
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: acb52081d1fc9e84e293b4460c0ca0a14f1c3b0b
-ms.sourcegitcommit: abe7fe9f3fbee8d12641433eeab623a4148ffed3
+ms.openlocfilehash: 06784201a4b34fe0b869a46ed5d11e839582d822
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92185213"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96793857"
 ---
 # <a name="supporting-graphics-output"></a>支持图形输出
 

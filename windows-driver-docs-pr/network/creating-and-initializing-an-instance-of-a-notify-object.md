@@ -1,7 +1,6 @@
 ---
 title: 创建和初始化通知对象的实例
 description: 创建和初始化通知对象的实例
-ms.assetid: 933d24cc-d1a0-4768-9bba-4c78150a84da
 keywords:
 - 通知对象 WDK 网络，实例
 - 网络通知对象 WDK，实例
@@ -9,12 +8,12 @@ keywords:
 - 正在初始化通知对象实例
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fd9cee7d9516b8bbfeb0a00ce38d39717e1f643b
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 55bb73439473d513ce37889609e82a3e7d3699f7
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89210207"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96794729"
 ---
 # <a name="creating-and-initializing-an-instance-of-a-notify-object"></a>创建和初始化通知对象的实例
 
@@ -36,11 +35,11 @@ ms.locfileid: "89210207"
 
 网络配置子系统创建 notify 对象的实例后，子系统将调用对象的 [**INetCfgComponentControl：： initialize**](/previous-versions/windows/hardware/network/ff547729(v=vs.85)) 方法来初始化对象实例。 在此调用中，子系统传递 **INetCfgComponent** 接口指针。 此 **INetCfgComponent** 向通知对象提供对象的组件的实例，该实例可供对象用于访问和控制组件。 在此调用中，子系统还会传递 **INetCfg** 接口指针，以提供通知对象，其中包含通知对象用于访问网络配置的所有方面的网络配置对象的实例。
 
-**Initialize**方法应将网络配置子系统提供的**INetCfgComponent**和**INetCfg**接口指针分配给 notify 类的数据成员。 **初始化** 之后，应调用：
+**Initialize** 方法应将网络配置子系统提供的 **INetCfgComponent** 和 **INetCfg** 接口指针分配给 notify 类的数据成员。 **初始化** 之后，应调用：
 
 -   用于递增网络配置对象的引用计数的 **INetCfg：： AddRef** 方法
 
--   **INetCfgComponent：： AddRef**方法递增拥有通知对象的组件的引用计数
+-   **INetCfgComponent：： AddRef** 方法递增拥有通知对象的组件的引用计数
 
 在 **Initialize** 返回之前，不会调用其他通知对象接口方法。
 

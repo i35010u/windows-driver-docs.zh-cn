@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ 波形 \_ 输出 \_ 功能
 description: KSPROPERTY \_ wave \_ output \_ 功能属性返回波形设备的波形输出功能。
-ms.assetid: 9e5e8ed1-0d08-45b7-b683-df7ce4424c26
 keywords:
 - KSPROPERTY_WAVE_OUTPUT_CAPABILITIES 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9a896e13fa2f354f1709cac924d422a9ec70f20c
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: db82b348f455e4f3db812a7877a68e8c2dc9026e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102376"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96794163"
 ---
 # <a name="ksproperty_wave_output_capabilities"></a>KSPROPERTY \_ 波形 \_ 输出 \_ 功能
 
@@ -79,7 +78,7 @@ KSPROPERTY \_ wave \_ output \_ 功能属性返回波形设备的波形输出功
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSPROPERTY**](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)

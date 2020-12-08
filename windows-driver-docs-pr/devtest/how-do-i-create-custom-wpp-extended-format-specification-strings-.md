@@ -1,15 +1,14 @@
 ---
 title: 如何实现创建自定义 WPP 扩展格式规范字符串
 description: 如何实现创建自定义 WPP 扩展格式规范字符串
-ms.assetid: 6c4c47c6-71b2-48a0-bab3-8498029b8244
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7e0fc783d19b7b08490d841dd027308973a876b7
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: d217a3e6e5693393a4728b5a8e0d706117bebe77
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89383435"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96795087"
 ---
 # <a name="how-do-i-create-custom-wpp-extended-format-specification-strings"></a>如何创建自定义的 WPP 扩展格式规范字符串？
 
@@ -71,7 +70,7 @@ struct in6_addr IPAddressV6 = {0};
 DoTraceMessage(Noise, "IN6_ADDR  = %!IPV6ADDR!", &IPAddressV6);
 ```
 
-**注意**   可以创建复杂类型 (MACADDR) ，以跟踪固定长度的媒体访问控制 (MAC) 地址。 可以按照用于 IPV6ADDDR 复杂类型的过程来指定此复杂类型。
+**注意**  可以创建复杂类型 (MACADDR) ，以跟踪固定长度的媒体访问控制 (MAC) 地址。 可以按照用于 IPV6ADDDR 复杂类型的过程来指定此复杂类型。
 
  
 
@@ -129,7 +128,7 @@ DoTraceMessage(Noise, "IN6_ADDR  = %!IPV6ADDR!", &IPAddressV6);
     </tbody>
     </table>
 
-    此语句定义用于初始化 \_ 可变长度缓冲区的 xstr t 结构的宏。 必须使用此宏在[**DoTraceMessage**](/previous-versions/windows/hardware/previsioning-framework/ff544918(v=vs.85))的*VariableList*参数中传递长度可变的缓冲区。
+    此语句定义用于初始化 \_ 可变长度缓冲区的 xstr t 结构的宏。 必须使用此宏在 [**DoTraceMessage**](/previous-versions/windows/hardware/previsioning-framework/ff544918(v=vs.85))的 *VariableList* 参数中传递长度可变的缓冲区。
 
 4.  <span codelanguage=""></span>
     <table>
@@ -150,7 +149,7 @@ DoTraceMessage(Noise, "IN6_ADDR  = %!IPV6ADDR!", &IPAddressV6);
     -   对 WPP LOGPAIR 的第一次调用会 \_ 传递变长缓冲区的大小。
     -   对 WPP LOGPAIR 的第二次调用会 \_ 传递缓冲区本身的地址。
 
-    **注意**   此宏要求 \_ 通过调用日志 LENSTR 为长度可变的缓冲区初始化 xstr t 结构 \_ 。 因此，必须通过 LOG LENSTR 宏将可变长度缓冲区传递到 [**DoTraceMessage**](/previous-versions/windows/hardware/previsioning-framework/ff544918(v=vs.85)) \_ 。
+    **注意**  此宏要求 \_ 通过调用日志 LENSTR 为长度可变的缓冲区初始化 xstr t 结构 \_ 。 因此，必须通过 LOG LENSTR 宏将可变长度缓冲区传递到 [**DoTraceMessage**](/previous-versions/windows/hardware/previsioning-framework/ff544918(v=vs.85)) \_ 。
 
      
 
@@ -163,4 +162,4 @@ CHAR HexDump[1024] = {0, 1, 2, 3, 4, 5, 6, 7} ;
 DoTraceMessage(Noise, "HEXDUMP: %!HEXDUMP! ", LOG_LENSTR(sizeof(HexDump),(PCHAR)HexDump));
 ```
 
-**注意**   可以创建复杂类型 (HEXBYTES) 用于跟踪长度可变的缓冲区。 可以按照用于 HEXDUMP 复杂类型的过程来指定此复杂类型。 
+**注意**  可以创建复杂类型 (HEXBYTES) 用于跟踪长度可变的缓冲区。 可以按照用于 HEXDUMP 复杂类型的过程来指定此复杂类型。 

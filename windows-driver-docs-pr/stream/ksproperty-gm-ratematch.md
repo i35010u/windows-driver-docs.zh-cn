@@ -1,9 +1,8 @@
 ---
-title: KSPROPERTY\_GM\_RATEMATCH
-description: KSPROPERTY\_GM\_RATEMATCH 属性当前不支持。
-ms.assetid: b712d709-e871-49e9-b92e-c439be1687ac
+title: KSPROPERTY \_ GM \_ RATEMATCH
+description: '\_ \_ 当前不支持 KSPROPERTY GM RATEMATCH 属性。'
 keywords:
-- KSPROPERTY_GM_RATEMATCH 流式处理媒体设备
+- KSPROPERTY_GM_RATEMATCH 流媒体设备
 topic_type:
 - apiref
 api_name:
@@ -12,17 +11,17 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 796d967d1aded1feb3c405ec775012841c0d1b14
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 62ded3d26a36fd1fa55b269fb613788c9a478a19
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63360121"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96794183"
 ---
-# <a name="kspropertygmratematch"></a>KSPROPERTY\_GM\_RATEMATCH
+# <a name="ksproperty_gm_ratematch"></a>KSPROPERTY \_ GM \_ RATEMATCH
 
 
-KSPROPERTY\_GM\_RATEMATCH 属性当前不支持。
+\_ \_ 当前不支持 KSPROPERTY GM RATEMATCH 属性。
 
 <a name="requirements"></a>要求
 ------------
@@ -34,7 +33,7 @@ KSPROPERTY\_GM\_RATEMATCH 属性当前不支持。
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Version</p></td>
+<td><p>版本</p></td>
 <td><p>不支持。</p></td>
 </tr>
 </tbody>

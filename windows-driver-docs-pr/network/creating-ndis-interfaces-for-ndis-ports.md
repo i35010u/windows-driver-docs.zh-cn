@@ -1,19 +1,18 @@
 ---
 title: 创建 NDIS 端口的 NDIS 接口
 description: 创建 NDIS 端口的 NDIS 接口
-ms.assetid: 3a856e4d-e32a-4c8a-8fa0-9976966bdf87
 keywords:
 - 端口 WDK NDIS，创建 NDIS 接口
 - NDIS 端口 WDK，创建 NDIS 接口
 - 注册 NDIS 接口提供程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6c73492023c3ee5bc87658bade0c5007c20f1b6e
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 209ed83c943adf24b85256e203c40cfde76cd62e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89210209"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96794657"
 ---
 # <a name="creating-ndis-interfaces-for-ndis-ports"></a>创建 NDIS 端口的 NDIS 接口
 

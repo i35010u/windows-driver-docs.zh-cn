@@ -1,7 +1,6 @@
 ---
 title: 'DoubleCompletionLocal 规则 (kmdf) '
 description: DoubleCompletionLocal 规则指定驱动程序不得完成 i/o 请求两次。
-ms.assetid: 06a660f3-3916-477f-86ef-2566f5d07c48
 ms.date: 05/21/2018
 keywords:
 - 'DoubleCompletionLocal 规则 (kmdf) '
@@ -12,12 +11,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 40dcaf3ed175f714c286b56d12651ffe7a8f6d07
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 400e914d30e7a4cc4911e50fbb54d980383ac00c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107416"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96795081"
 ---
 # <a name="doublecompletionlocal-rule-kmdf"></a>DoubleCompletionLocal 规则 (kmdf) 
 

@@ -1,7 +1,6 @@
 ---
 title: Bug 检查 0x145 SECURE_BOOT_VIOLATION
-description: SECURE_BOOT_VIOLATION bug 检查具有 0x00000145 值。 这表示无法启动安全启动策略实施。
-ms.assetid: C877C655-D94D-45B5-82DB-1361F0B020D2
+description: SECURE_BOOT_VIOLATION bug 检查的值为0x00000145。 这表明无法启动安全启动策略强制。
 keywords:
 - Bug 检查 0x145 SECURE_BOOT_VIOLATION
 - SECURE_BOOT_VIOLATION
@@ -13,31 +12,31 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: bf036f42c57d31dbe389a5023f7c280b0ceff51a
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: 53c6abf2722df5c88e1bb212f756571e7c313e19
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67520124"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96794031"
 ---
-# <a name="bug-check-0x145-securebootviolation"></a>Bug 检查 0x145：安全\_启动\_冲突
+# <a name="bug-check-0x145-secure_boot_violation"></a>Bug 检查0x145：安全 \_ 启动 \_ 冲突
 
 
-SECURE\_启动\_冲突错误检查的值为 0x00000145。 这表示无法由于无效的策略或所需的操作未完成启动安全启动策略实施。
+安全 \_ 启动 \_ 冲突 bug 检查的值为0x00000145。 这表示由于策略无效或未完成所需的操作，无法启动安全启动策略强制。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题面向程序员。 如果您是在使用计算机时收到蓝屏错误代码的客户，请参阅[蓝屏错误疑难解答](https://www.windows.com/stopcode)。
 
 
-## <a name="securebootviolation-parameters"></a>安全\_启动\_冲突参数
+## <a name="secure_boot_violation-parameters"></a>安全 \_ 启动 \_ 冲突参数
 
 
 | 参数 | 描述                        |
 |-----------|------------------------------------|
-| 1         | 失败的状态代码。    |
+| 1         | 故障的状态代码。    |
 | 2         | 安全启动策略的地址。 |
 | 3         | 安全启动策略的大小。    |
-| 4         | 保留                           |
+| 4         | 预留                           |
 
  
 

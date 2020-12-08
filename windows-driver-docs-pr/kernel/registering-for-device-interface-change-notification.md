@@ -1,7 +1,6 @@
 ---
 title: 注册设备接口更改通知
 description: 注册设备接口更改通知
-ms.assetid: 680e4c5c-dac6-41b1-b754-aee782145ed0
 keywords:
 - 通知 WDK PnP，设备接口更改
 - EventCategoryDeviceInterfaceChange 通知
@@ -10,12 +9,12 @@ keywords:
 - IoRegisterPlugPlayNotification
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f5ea6e740e61fe7c361987020c4bf8e882fff2f5
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 0d57397ca505a86b6f2612c6f34160c07989bbee
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89191839"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96793505"
 ---
 # <a name="registering-for-device-interface-change-notification"></a>注册设备接口更改通知
 
@@ -27,7 +26,7 @@ ms.locfileid: "89191839"
 
 以下信息适用于为设备接口更改通知调用此例程：
 
--   指定**EventCategoryDeviceInterfaceChange**的*EventCategory* 。
+-   指定 **EventCategoryDeviceInterfaceChange** 的 *EventCategory* 。
 
 -   *EventCategoryData* 必须指向设备接口类的 GUID。
 
@@ -43,7 +42,7 @@ ms.locfileid: "89191839"
 
 为响应设备接口到达通知而打开设备的句柄的驱动程序应在设备上注册 **EventCategoryTargetDeviceChange** 事件。  (参阅 [使用 PnP 目标设备更改通知](using-pnp-target-device-change-notification.md)。 ) 
 
-驱动程序通过使用**IoRegisterPlugPlayNotification**返回的*NotificationEntry*调用[**IoUnregisterPlugPlayNotification**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iounregisterplugplaynotification)来取消通知注册。
+驱动程序通过使用 **IoRegisterPlugPlayNotification** 返回的 *NotificationEntry* 调用 [**IoUnregisterPlugPlayNotification**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iounregisterplugplaynotification)来取消通知注册。
 
  
 

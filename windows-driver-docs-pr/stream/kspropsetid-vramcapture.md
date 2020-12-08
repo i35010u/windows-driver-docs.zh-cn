@@ -1,34 +1,33 @@
 ---
-title: KSPROPSETID\_VramCapture
-description: KSPROPSETID\_VramCapture
-ms.assetid: 369bb258-5335-42f7-bd2f-7bfc9848e7f0
+title: KSPROPSETID \_ VramCapture
+description: KSPROPSETID \_ VramCapture
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c1bea11f87dfb05a28cedaf9d3236115ab501f7a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 59c7829b555051cf31cbd8c863af3861f8c5a1d4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63324803"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96794155"
 ---
-# <a name="kspropsetidvramcapture"></a>KSPROPSETID\_VramCapture
+# <a name="kspropsetid_vramcapture"></a>KSPROPSETID \_ VramCapture
 
 
-视频流式处理固定的支持**KSPROPSETID\_VramCapture**属性集。 在此集中的所有属性都是强制性的 vram 能够图面上捕获和传输。
+视频流 pin 支持 **KSPROPSETID \_ VramCapture** 属性集。 此集中的所有属性都是 VRAM surface 捕获和传输的必需属性。
 
-如果不支持这些属性，到图面捕获默认值基于捕获和传输到系统内存。
+如果这些属性不受支持，则捕获默认为基于曲面的捕获，并传输到系统内存。
 
-在此集中的属性项由 KSPROPERTY\_VIDMEM\_传输的枚举值，如在标头文件中，定义*Ksmedia.h*。
+此集中的属性项由 KSPROPERTY \_ VIDMEM \_ 传输枚举值指定，如标头文件 *Ksmedia* 中所定义。
 
-**KSPROPSETID\_VramCapture**属性集包含以下属性：
+**KSPROPSETID \_ VramCapture** 属性集包括以下属性：
 
-[**KSPROPERTY\_DISPLAY\_适配器\_GUID**](ksproperty-display-adapter-guid.md)
+[**KSPROPERTY \_ 显示 \_ 适配器 \_ GUID**](ksproperty-display-adapter-guid.md)
 
-[**KSPROPERTY\_PREFERRED\_捕获\_图面**](ksproperty-preferred-capture-surface.md)
+[**KSPROPERTY \_ 首选 \_ 捕获 \_ 图面**](ksproperty-preferred-capture-surface.md)
 
-[**KSPROPERTY\_当前\_捕获\_图面**](ksproperty-current-capture-surface.md)
+[**KSPROPERTY \_ 当前 \_ 捕获 \_ 图面**](ksproperty-current-capture-surface.md)
 
-[**KSPROPERTY\_地图\_捕获\_处理\_TO\_VRAM 能够\_地址**](ksproperty-map-capture-handle-to-vram-address.md)
+[**KSPROPERTY \_ 映射 \_ \_ \_ 到 \_ VRAM 地址的捕获句柄 \_**](ksproperty-map-capture-handle-to-vram-address.md)
 
  
 

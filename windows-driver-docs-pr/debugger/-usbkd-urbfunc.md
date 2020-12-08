@@ -1,7 +1,6 @@
 ---
 title: usbkd.urbfunc
 description: Usbkd. urbfunc 命令显示 URB 函数代码的名称。
-ms.assetid: 111DD6CD-D7DB-4772-B6DD-8EA88587FD1F
 keywords:
 - usbkd urbfunc Windows 调试
 ms.date: 05/23/2017
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: ddd33bcce854344644375c6e529a47140f23e6e5
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 84977bab8ae94abdfcae8c3c828b0f7c2ab46505
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89216738"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96795173"
 ---
 # <a name="usbkdurbfunc"></a>!usbkd.urbfunc
 
 
-**！ Usbkd. urbfunc**命令显示 URB 函数代码的名称。
+**！ Usbkd. urbfunc** 命令显示 URB 函数代码的名称。
 
 ```dbgcmd
 !usbkd.urbfunc FunctionCode
@@ -42,7 +41,7 @@ Usbkd.dll
 <a name="examples"></a>示例
 --------
 
-下面是 **！ urbfunc**的输出示例。
+下面是 **！ urbfunc** 的输出示例。
 
 ```dbgcmd
 0: kd> !usbkd.urbfunc 0xA

@@ -1,7 +1,6 @@
 ---
 title: 'IoBuildSynchronousFsdRequestNoFree 规则 (wdm) '
 description: IoBuildSynchronousFsdRequestNoFree 规则指定调用 IoBuildSynchronousFsdRequest 的驱动程序不得调用 IoFreeIrp。
-ms.assetid: 516D6B53-866D-477D-AB9C-6E44BB285BA8
 ms.date: 05/21/2018
 keywords:
 - 'IoBuildSynchronousFsdRequestNoFree 规则 (wdm) '
@@ -12,19 +11,19 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 350755fb6361d9662907b107b184285844a21a62
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 5b65e9ebcb9480a46450cfc7875c743162bcbbc6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107348"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96795045"
 ---
 # <a name="iobuildsynchronousfsdrequestnofree-rule-wdm"></a>IoBuildSynchronousFsdRequestNoFree 规则 (wdm) 
 
 
-**IoBuildSynchronousFsdRequestNoFree**规则指定调用[**IoBuildSynchronousFsdRequest**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iobuildsynchronousfsdrequest)的驱动程序不得调用[**IoFreeIrp**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iofreeirp)。
+**IoBuildSynchronousFsdRequestNoFree** 规则指定调用 [**IoBuildSynchronousFsdRequest**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iobuildsynchronousfsdrequest)的驱动程序不得调用 [**IoFreeIrp**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iofreeirp)。
 
-**IoBuildSynchronousFsdRequestNoFree**规则报告不应为此 IRP 调用[**IoFreeIrp**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iofreeirp) 。
+**IoBuildSynchronousFsdRequestNoFree** 规则报告不应为此 IRP 调用 [**IoFreeIrp**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iofreeirp) 。
 
 **驱动程序模型： WDM**
 

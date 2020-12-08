@@ -1,23 +1,22 @@
 ---
 title: OID_WWAN_PREFERRED_PROVIDERS
 description: OID_WWAN_PREFERRED_PROVIDERS 返回有关基于 GSM 的设备的首选提供程序列表的信息。
-ms.assetid: fa70f1ac-5b14-44f8-a2c4-d2163fe81c5a
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_WWAN_PREFERRED_PROVIDERS 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 635d6263ee39d1bcecee9132eca69a2e50f31cff
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 27c9063776b6055ff9866fefce4806a60df09699
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89216138"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96793427"
 ---
 # <a name="oid_wwan_preferred_providers"></a>OID \_ WWAN \_ 首选 \_ 提供程序
 
 
 OID \_ WWAN \_ 首选 \_ 提供程序返回有关基于 GSM 的设备的首选提供程序列表的信息。 基于 CDMA 的设备的微型端口驱动程序无需支持此 OID。
 
-微型端口驱动程序必须异步处理集和查询请求，最初 \_ 返回 \_ \_ 原始请求所需的 ndis 状态指示，稍后发送 [**ndis \_ 状态 \_ WWAN \_ 首选 \_ 提供**](ndis-status-wwan-preferred-providers.md) 程序状态通知，其中包含 [**ndis \_ WWAN \_ 首选 \_ **](/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_preferred_providers) 提供程序结构，以提供有关 (PPL) 的首选提供程序列表的信息，而不考虑完成集或查询请求。
+微型端口驱动程序必须异步处理集和查询请求，最初 \_ 返回 \_ \_ 原始请求所需的 ndis 状态指示，稍后发送 [**ndis \_ 状态 \_ WWAN \_ 首选 \_ 提供**](ndis-status-wwan-preferred-providers.md) 程序状态通知，其中包含 [**ndis \_ WWAN \_ 首选 \_**](/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_preferred_providers) 提供程序结构，以提供有关 (PPL) 的首选提供程序列表的信息，而不考虑完成集或查询请求。
 
 <a name="remarks"></a>备注
 -------
@@ -56,7 +55,7 @@ OID \_ WWAN \_ 首选 \_ 提供程序返回有关基于 GSM 的设备的首选�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**NDIS \_ WWAN \_ 首选 \_ 提供程序**](/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_preferred_providers)

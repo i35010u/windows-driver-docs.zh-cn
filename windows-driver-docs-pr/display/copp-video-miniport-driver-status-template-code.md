@@ -1,17 +1,16 @@
 ---
 title: COPP 视频微型端口驱动程序状态模板代码
 description: COPP 视频微型端口驱动程序状态模板代码
-ms.assetid: 4d0d0f95-8a21-4863-9930-ddee7d944c04
 keywords:
-- WDK COPP 的状态信息
+- 状态信息 WDK COPP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6f59194f385daa93503174b640e6a7f71b56ad9f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4d5dce9d03dda44dbf5b83902fe4bcf1e1ae3b66
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331315"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96795023"
 ---
 # <a name="copp-video-miniport-driver-status-template-code"></a>COPP 视频微型端口驱动程序状态模板代码
 
@@ -19,9 +18,9 @@ ms.locfileid: "63331315"
 ## <span id="ddk_copp_video_miniport_driver_status_template_code_gg"></span><span id="DDK_COPP_VIDEO_MINIPORT_DRIVER_STATUS_TEMPLATE_CODE_GG"></span>
 
 
-本部分仅适用于 Windows Server 2003 SP1 和更高版本，和 Windows XP SP2 及更高版本。
+本部分仅适用于 Windows Server 2003 SP1 及更高版本以及 Windows XP SP2 及更高版本。
 
-下面的示例代码用于检索受保护的视频会话 COPP DirectX VA 设备对象与关联的状态。
+使用以下示例代码来检索与 COPP DirectX VA 设备对象相关联的受保护视频会话的状态。
 
 ```cpp
 VP_STATUS

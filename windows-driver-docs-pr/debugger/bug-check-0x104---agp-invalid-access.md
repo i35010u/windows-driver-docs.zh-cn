@@ -1,7 +1,6 @@
 ---
 title: Bug 检查 0x104 AGP_INVALID_ACCESS
-description: AGP_INVALID_ACCESS bug 检查具有 0x00000104 值。 这表示 GPU 编写到范围的加速图形不以前已提交的端口 (AGP) 内存。
-ms.assetid: c1f5322e-847a-424f-b117-1714b8572a4f
+description: AGP_INVALID_ACCESS bug 检查的值为0x00000104。 这表明，写入一系列加速图形端口的 GPU (AGP) 内存之前未提交。
 keywords:
 - Bug 检查 0x104 AGP_INVALID_ACCESS
 - AGP_INVALID_ACCESS
@@ -13,23 +12,23 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: d4ef01ed0620ab573cf2d126b5413744e90b194e
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: 2c28d9fcb37b2f239039e659d093d45e55cda67d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67521582"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96793293"
 ---
-# <a name="bug-check-0x104-agpinvalidaccess"></a>Bug 检查 0x104：AGP\_无效\_访问
+# <a name="bug-check-0x104-agp_invalid_access"></a>Bug 检查0x104： AGP \_ 无效 \_ 访问
 
 
-AGP\_无效\_访问错误检查的值为 0x00000104。 这表示 GPU 编写到范围的加速图形不以前已提交的端口 (AGP) 内存。
+AGP \_ 无效 \_ 访问 bug 检查的值为0x00000104。 这表明，写入一系列加速图形端口的 GPU (AGP) 内存之前未提交。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题面向程序员。 如果您是在使用计算机时收到蓝屏错误代码的客户，请参阅[蓝屏错误疑难解答](https://www.windows.com/stopcode)。
 
 
-## <a name="agpinvalidaccess-parameters"></a>AGP\_无效\_访问参数
+## <a name="agp_invalid_access-parameters"></a>AGP \_ 无效 \_ 访问参数
 
 
 <table>
@@ -46,7 +45,7 @@ AGP\_无效\_访问错误检查的值为 0x00000104。 这表示 GPU 编写到�
 <tbody>
 <tr class="odd">
 <td align="left"><p>1</p></td>
-<td align="left"><p>偏移量 （以 ULONG) 内 AGP verifier 页已损坏的第一个 ULONG 数据</p></td>
+<td align="left"><p>将 AGP 验证器页中的 ULONG)  (到已损坏的第一个 ULONG 数据的偏移量</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>2</p></td>
@@ -68,12 +67,12 @@ AGP\_无效\_访问错误检查的值为 0x00000104。 这表示 GPU 编写到�
 <a name="cause"></a>原因
 -----
 
-通常情况下，此 bug 检查引起的无符号或不正确经过测试的视频驱动程序。 它还可能引起较旧的 BIOS。
+通常，此 bug 检查是由未签名或未正确测试的视频驱动程序引起的。 它也可能由旧的 BIOS 引起。
 
-<a name="resolution"></a>分辨率
+<a name="resolution"></a>解决方法
 ----------
 
-检查显示驱动程序和计算机 BIOS 更新。
+检查显示器驱动程序和计算机 BIOS 更新。
 
  
 

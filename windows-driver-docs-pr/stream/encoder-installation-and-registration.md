@@ -1,7 +1,6 @@
 ---
 title: 编码器安装和注册
 description: 编码器安装和注册
-ms.assetid: 6ce0c504-977a-4db5-b5ee-128b69ce8eba
 keywords:
 - 内核流式处理类别 WDK 编码器
 - 编码器设备 WDK AVStream
@@ -16,12 +15,12 @@ keywords:
 - 内核流式处理代理 WDK AVStream
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c28a91bf15e5686973e9390e32676b6eb76f3582
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: d15ba3697cef0664bac60a4647f11361a7ddca14
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89191439"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96795335"
 ---
 # <a name="encoder-installation-and-registration"></a>编码器安装和注册
 
@@ -59,8 +58,8 @@ needs=[Your driver's DDInstall section],KS.Registration,KSCAPTUR.Registration.NT
 <thead>
 <tr class="header">
 <th>接口 GUID</th>
-<th>名称</th>
-<th>说明</th>
+<th>“属性”</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -126,8 +125,8 @@ HKR,Capabilities,"{12345678-1234-1234-1234-12345678abcd}",,guid1
 <thead>
 <tr class="header">
 <th>内核流式处理类别 GUID</th>
-<th>名称</th>
-<th>说明</th>
+<th>“属性”</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -146,7 +145,7 @@ HKR,Capabilities,"{12345678-1234-1234-1234-12345678abcd}",,guid1
 
  
 
-若要注册编码器筛选器，请 \_ 在驱动程序的 *DDInstall*中指定 KSCATEGORY 编码器 GUID。**Interface** INF file 部分。 例如：
+若要注册编码器筛选器，请 \_ 在驱动程序的 *DDInstall* 中指定 KSCATEGORY 编码器 GUID。**Interface** INF file 部分。 例如：
 
 ```INF
 [Your Driver's DDInstall.Interface section]
@@ -166,7 +165,7 @@ KSProxy.CLSID="17CCA71B-ECD7-11D0-B908-00A0C9223196"
 MyEncoderDeviceFriendlyName="My Encoder Device"
 ```
 
-**注意：** 为*KSNAME \_ 筛选器*指定的 GUID 必须与在描述筛选器的[**KSFILTER \_ 描述符**](/windows-hardware/drivers/ddi/ks/ns-ks-_ksfilter_descriptor)结构中指定的**ReferenceGuid**成员匹配。
+**注意：** 为 *KSNAME \_ 筛选器* 指定的 GUID 必须与在描述筛选器的 [**KSFILTER \_ 描述符**](/windows-hardware/drivers/ddi/ks/ns-ks-_ksfilter_descriptor)结构中指定的 **ReferenceGuid** 成员匹配。
 
  
 
