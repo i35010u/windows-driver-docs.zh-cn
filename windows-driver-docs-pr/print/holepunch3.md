@@ -1,36 +1,35 @@
 ---
 title: HolePunch
 description: HolePunch
-ms.assetid: 259c5182-71c4-4d68-9609-4b9d90d9b4c5
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c3f2a77cee0881f2c78fb9399005d5fba0274290
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0e6fee071230685e0e56cf011557d5e6bfeacb18
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63360529"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96835829"
 ---
 # <a name="holepunch"></a>HolePunch
 
 
-架构路径：\\Printer.Finishing.HolePunch
+架构路径： \\ HolePunch。
 
-节点类型： 属性
+节点类型：属性
 
-说明： 此属性包含的所有信息描述设备孔打孔附件。
+说明：此属性包含描述设备打孔附件的所有信息。
 
-HolePunch 属性包含一个子值，安装，并[模式](pattern2.md)并[位置](location2.md)属性。
+HolePunch 属性包含一个子值（已安装）以及 [模式](pattern2.md) 和 [位置](location2.md) 属性。
 
-### <a name="span-idinstalledspanspan-idinstalledspan-installed"></a><span id="installed"></span><span id="INSTALLED"></span> 安装
+### <a name="span-idinstalledspanspan-idinstalledspan-installed"></a><span id="installed"></span><span id="INSTALLED"></span> 随
 
-架构路径：\\Printer.Finishing.HolePunch:Installed
+架构路径： \\ HolePunch：已安装
 
-节点类型： 值
+节点类型：值
 
-数据类型： BIDI\_BOOL
+数据类型：双向 \_ BOOL
 
-说明： 确定打印设备是否已安装的打孔机一个孔。 如果 **，则返回 TRUE**，安装的打孔机; 如果**FALSE**，未安装的打孔机。
+描述：确定打印设备是否安装了打孔机制。 如果 **为 TRUE**，则安装打孔机制;如果 **为 FALSE**，则不安装打孔机制。
 
  
 

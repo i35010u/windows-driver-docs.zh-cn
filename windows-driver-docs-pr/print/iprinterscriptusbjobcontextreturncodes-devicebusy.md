@@ -1,10 +1,9 @@
 ---
 title: IPrinterScriptUsbJobContextReturnCodes DeviceBusy 方法
-description: 返回一个值"3"，以通知 USBMon 设备通信通道这次不接受数据。
+description: 返回值 "3"，通知 USBMon 设备通信通道目前不接受数据。
 MSHAttr:
 - PreferredSiteName:MSDN
 - PreferredLib:/library/windows/hardware
-ms.assetid: D1205445-2587-4C9D-B383-587F06A3E899
 keywords:
 - DeviceBusy 方法打印设备
 - DeviceBusy 方法打印设备，IPrinterScriptUsbJobContextReturnCodes 接口
@@ -17,41 +16,41 @@ api_type:
 - COM
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 437e48ed6f6a274b92751d32f40d2cb58580835c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e7a5b4c4809e9d6cf5d6c417336d7881561ed082
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63349213"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96835551"
 ---
-# <a name="iprinterscriptusbjobcontextreturncodesdevicebusy-method"></a>IPrinterScriptUsbJobContextReturnCodes::DeviceBusy 方法
+# <a name="iprinterscriptusbjobcontextreturncodesdevicebusy-method"></a>IPrinterScriptUsbJobContextReturnCodes：:D eviceBusy 方法
 
-返回一个值"3"，以通知 USBMon 设备通信通道这次不接受数据。
+返回值 "3"，通知 USBMon 设备通信通道目前不接受数据。
 
 <a name="syntax"></a>语法
 ------
 
 ```cpp
 HRESULT DeviceBusy(
-  [out, retval] UINT32 *value
+  [out, retval] UINT32 *value
 );
 ```
 
-<a name="parameters"></a>Parameters
+<a name="parameters"></a>参数
 ----------
 
 *值* \[out，retval\]  
-值，该值指示信道这次不接受数据。
+一个值，该值指示通信通道目前不接受数据。
 
 <a name="return-value"></a>返回值
 ------------
 
-此方法返回**HRESULT**值。
+此方法返回 **HRESULT** 值。
 
 <a name="remarks"></a>备注
 -------
 
-**DeviceBusy**是只读的方法。 返回的值为"3"并不表示失败，并 USBMon 应通知打印后台处理程序设备正忙。 USBMon 然后可以在更高版本时再次调用函数。 从打印数据流 (printData) 处理的字节数是 writePrintDataProgress 对象中返回。
+**DeviceBusy** 为只读方法。 返回值 "3" 不表示失败，USBMon 应通知打印后台处理程序设备处于繁忙状态。 然后，USBMon 可以稍后再次调用该函数。 在 writePrintDataProgress 对象中返回 (printData) 从打印数据流处理的字节数。
 
 <a name="requirements"></a>要求
 ------------
@@ -72,7 +71,7 @@ HRESULT DeviceBusy(
 </tr>
 <tr class="odd">
 <td><p>目标平台</p></td>
-<td>桌面设备</td>
+<td>台式机</td>
 </tr>
 </tbody>
 </table>

@@ -1,17 +1,16 @@
 ---
 title: 启用应用程序验证工具
 description: 启用应用程序验证工具
-ms.assetid: a91e244e-e3b6-4975-8385-1da06cc3ae83
 keywords:
 - '启用应用程序验证器 (全局标志) '
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8faaa703dfeaf1093bf5329a4146b27e5e60ad64
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 9a8d61e56916f84dbbb4ede057a722bd638b9518
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89211177"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96834787"
 ---
 # <a name="enable-application-verifier"></a>启用应用程序验证工具
 
@@ -19,7 +18,7 @@ ms.locfileid: "89211177"
 ## <span id="ddk_enable_application_verifier_dtools"></span><span id="DDK_ENABLE_APPLICATION_VERIFIER_DTOOLS"></span>
 
 
-**启用应用程序验证程序**标志可启用用于用户模式应用程序测试的系统功能，如页堆验证、锁定检查和处理检查。
+**启用应用程序验证程序** 标志可启用用于用户模式应用程序测试的系统功能，如页堆验证、锁定检查和处理检查。
 
 <table>
 <colgroup>

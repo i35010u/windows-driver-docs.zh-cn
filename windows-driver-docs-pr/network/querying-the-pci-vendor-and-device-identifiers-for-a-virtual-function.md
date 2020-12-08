@@ -1,15 +1,14 @@
 ---
 title: 查询虚拟功能的 PCI 供应商和设备 Id
 description: 查询虚拟功能的 PCI 供应商和设备标识符
-ms.assetid: A2FB0A35-A89B-4028-92BA-E75739B080FD
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d8122c2deca2c435d92be748036903172905f7ed
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 07780003181e6f44106a37dc540732fa85ff683e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89216968"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96836299"
 ---
 # <a name="querying-the-pci-vendor-and-device-identifiers-for-a-virtual-function"></a>查询虚拟功能的 PCI 供应商和设备标识符
 

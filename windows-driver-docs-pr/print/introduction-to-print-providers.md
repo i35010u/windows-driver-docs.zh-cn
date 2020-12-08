@@ -1,7 +1,6 @@
 ---
 title: 打印提供程序简介
 description: 打印提供程序简介
-ms.assetid: a0e5e8c8-7af4-4715-9036-64ae851b307d
 keywords:
 - 打印提供程序 WDK，关于打印提供程序
 - 打印作业 WDK，打印提供程序
@@ -10,12 +9,12 @@ keywords:
 - 作业 WDK 打印，打印提供程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4c3ea1c5b98c682237254fd223bdc6e1347359fb
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 8dc93ee0de260347eb17bd4cff292306f440613b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89213129"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96835639"
 ---
 # <a name="introduction-to-print-providers"></a>打印提供程序简介
 

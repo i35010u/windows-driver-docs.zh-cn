@@ -1,7 +1,6 @@
 ---
 title: 处理存储类驱动程序中的 PnP 初始化
 description: 处理存储类驱动程序中的 PnP 初始化
-ms.assetid: 472e52c8-a214-418b-a82f-fd4a9bcc894e
 keywords:
 - 存储类驱动程序 WDK、PnP
 - 类驱动程序 WDK 存储，PnP
@@ -12,12 +11,12 @@ keywords:
 - 类驱动程序 WDK 存储，初始化
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d00163a8f2eec6a8d2775085309c48b3159f04d7
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 46515f6483229bda3bf7f86d9fbe3cb663534b81
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91733607"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96835237"
 ---
 # <a name="handling-pnp-initialization-in-a-storage-class-driver"></a>处理存储类驱动程序中的 PnP 初始化
 

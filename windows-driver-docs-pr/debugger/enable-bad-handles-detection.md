@@ -1,17 +1,16 @@
 ---
 title: 启用错误句柄检测
 description: 启用错误句柄检测
-ms.assetid: beeecb82-a270-416e-8a2a-dd64af3d052e
 keywords:
-- 启用错误句柄检测 （全局标志）
+- " (全局标志启用错误的句柄检测) "
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8900ace3d7395e6fac8b4557a756a397bfeb2fb5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 41bf4fbc5c8e6d332efcd407f89e6a6382954fbb
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63323387"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96834769"
 ---
 # <a name="enable-bad-handles-detection"></a>启用错误句柄检测
 
@@ -19,7 +18,7 @@ ms.locfileid: "63323387"
 ## <span id="ddk_enable_bad_handles_detection_dtools"></span><span id="DDK_ENABLE_BAD_HANDLES_DETECTION_DTOOLS"></span>
 
 
-**启用错误句柄检测**标志，则引发用户模式异常 (状态\_无效\_处理) 的用户模式进程时将无效句柄传递对对象管理器。
+**Enable bad handles detection** \_ \_ 每当用户模式进程向对象管理器传递无效的句柄时，"启用错误的句柄" 检测标志将引发用户模式异常 (状态无效的句柄) 。
 
 <table>
 <colgroup>
@@ -41,7 +40,7 @@ ms.locfileid: "63323387"
 </tr>
 <tr class="even">
 <td align="left"><p><strong>目标</strong></p></td>
-<td align="left"><p>整个系统的注册表项，内核标志</p></td>
+<td align="left"><p>系统范围内的注册表项，内核标志</p></td>
 </tr>
 </tbody>
 </table>

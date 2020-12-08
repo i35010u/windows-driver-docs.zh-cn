@@ -1,39 +1,38 @@
 ---
-title: GDL 练习 3 创建根级别构造
-description: GDL 练习 3 创建根级别构造
-ms.assetid: 3c7ad284-b77c-4ad3-8334-2fe5b026e340
+title: GDL 练习3创建 Root-Level 构造
+description: GDL 练习3创建 Root-Level 构造
 keywords:
-- GDL WDK 示例
+- GDL WDK，示例
 - 示例 WDK GDL
 - 教程 WDK GDL
-- GDL WDK 教程
+- GDL WDK，教程
 - 构造 WDK GDL，创建构造
 - 创建 GDL 构造 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: acd075821593522ea53e5aefc061c59afb183815
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7d802b7f709d1ed695764fa923598a00c89ea95e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63388116"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96835977"
 ---
-# <a name="gdl-exercise-3-creating-root-level-constructs"></a>GDL 练习 3：创建根级构造
+# <a name="gdl-exercise-3-creating-root-level-constructs"></a>GDL 练习3：创建 Root-Level 构造
 
 
-### <a href="" id="exercise"></a> 练习
+### <a name="exercise"></a><a href="" id="exercise"></a> 小心谨慎
 
-修改的架构[练习 1](gdl-exercise-1--implementing-a-gdl-schema.md)引入名为的构造\*PFeature 可以仅在根级别找到的。
+修改 [练习 1](gdl-exercise-1--implementing-a-gdl-schema.md) 的架构，引入一个名为 \* PFeature 的构造，该构造只能在根级别找到。
 
 使用以下条件：
 
--   \*PFeature 可以具有任何实例的名称。
+-   \*PFeature 可以具有任何实例名称。
 
--   \*PFeature 成员是名为的属性 **\*名称** 并 **\*DefaultOption**。
+-   \*PFeature 成员是名为 **\* Name** 和 **\* DefaultOption** 的属性。
 
--   \*PFeature 具有一个名为构造成员 **\*Poption** ，应声明为虚拟的。
+-   \*PFeature 有一个名为 **\* Poption** 的构造成员，该成员应声明为 virtual。
 
-### <a href="" id="solution"></a> 解决方案
+### <a name="solution"></a><a href="" id="solution"></a> 解决方案
 
 以下模板满足上述条件。
 

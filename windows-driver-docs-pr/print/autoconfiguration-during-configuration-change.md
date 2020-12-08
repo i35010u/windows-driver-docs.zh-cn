@@ -1,18 +1,17 @@
 ---
 title: 配置更改期间的自动配置
 description: 配置更改期间的自动配置
-ms.assetid: 0294d34d-06e4-4e57-8f4d-4100ab482852
 keywords:
 - 配置更改期间自动配置 WDK 打印机
 - 在配置更改期间打印机自动配置 WDK 打印机
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 09b8db93840bed1246b12dd4fe124a3ce040ccd7
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 032e587777e1812fcca61ce1fbc0233fc0a2e571
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89216414"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96836093"
 ---
 # <a name="autoconfiguration-during-configuration-change"></a>配置更改期间的自动配置
 

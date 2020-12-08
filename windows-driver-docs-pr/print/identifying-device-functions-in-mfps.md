@@ -1,15 +1,14 @@
 ---
 title: 识别 MFP 中的设备函数
 description: 识别 MFP 中的设备函数
-ms.assetid: 14016c43-b93a-4009-848b-1bcf3f1d94b6
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dedb30945c8f6d62571359a2ac89f068d2500955
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 11051854d23ad3bb056798f206a3fea42a779d26
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89215767"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96835729"
 ---
 # <a name="identifying-device-functions-in-mfps"></a>识别 MFP 中的设备函数
 

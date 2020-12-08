@@ -1,7 +1,6 @@
 ---
 title: 磁带驱动程序简介
 description: 磁带驱动程序
-ms.assetid: d6d8ac92-0713-401c-9551-fc8e08e903f4
 keywords:
 - 磁带驱动程序 WDK 存储
 - 存储磁带驱动程序 WDK
@@ -10,12 +9,12 @@ keywords:
 - 存储磁带驱动程序 WDK，关于磁带驱动程序
 ms.date: 12/15/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 8155742fd68251f3492694551799337adf5ee2e6
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: d7d4a9a0a59861b8de876741831549ff0ad7fe74
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89185737"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96834905"
 ---
 # <a name="introduction-to-tape-drivers"></a>磁带驱动程序简介
 

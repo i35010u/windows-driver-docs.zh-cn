@@ -1,7 +1,6 @@
 ---
 title: 处理设备管理的图面
 description: 处理设备管理的图面
-ms.assetid: 4403165f-c528-450e-9c96-77a9ce0778aa
 keywords:
 - Unidrv，设备管理的图面
 - 设备管理的图面 WDK Unidrv
@@ -11,12 +10,12 @@ keywords:
 - Unidrv WDK 打印
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 42c6fb235a2fc45dba8ab522db9941c718c8bfcb
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 3e0ad7b53d0fa76f22fc524727eaaa9ff1d73dcb
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89206701"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96835835"
 ---
 # <a name="handling-device-managed-surfaces"></a>处理设备管理的图面
 
@@ -49,7 +48,7 @@ ms.locfileid: "89206701"
 
 每次要呈现打印作业时都将调用 [**IPrintOemUni：:D riverdms**](/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintoemuni-driverdms) 方法，因此呈现插件可以为每个作业指定 (GDI 管理的或设备管理的) 呈现图面的类型。 在用户界面中，选择 "选择" 选项上的 "表面" 选项要求您同时提供 [用户界面插件](user-interface-plug-ins.md)。
 
-### <a name="drawing-text-on-a-device-managed-surface"></a>在设备管理的图面上绘制文本
+### <a name="drawing-text-on-a-device-managed-surface"></a>在 Device-Managed 图面上绘制文本
 
 呈现插件必须将 Unidrv 的 [**DrvTextOut**](/windows/win32/api/winddi/nf-winddi-drvtextout) 函数与) 的所有其他图形 DDI 绘图函数一起挂钩 (。 为设备管理的图面创建文本涉及以下四个函数之间的交互：
 
@@ -73,7 +72,7 @@ ms.locfileid: "89206701"
 
 5.  如果 [**IPrintOemDriverUni：:D rvunitextout**](/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintoemdriveruni-drvunitextout) 不能使用可下载字体 (因为该字体不可用或) 旋转，它将调用呈现插件的 [**IPrintOemUni：： TextOutAsBitmap**](/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintoemuni-textoutasbitmap) 方法，该方法将文本绘制为位图。
 
-6.  [**IPrintOemDriverUni：:D rvunitextout**](/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintoemdriveruni-drvunitextout)返回后， [**DrvTextOut**](/windows/win32/api/winddi/nf-winddi-drvtextout)挂钩函数必须根据**DrvTextOut**函数的*prclExtra*参数所指定的矩形绘制下划线和删除线，并在支持) 时使用向量命令 (。
+6.  [**IPrintOemDriverUni：:D rvunitextout**](/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintoemdriveruni-drvunitextout)返回后， [**DrvTextOut**](/windows/win32/api/winddi/nf-winddi-drvtextout)挂钩函数必须根据 **DrvTextOut** 函数的 *prclExtra* 参数所指定的矩形绘制下划线和删除线，并在支持) 时使用向量命令 (。
 
  
 

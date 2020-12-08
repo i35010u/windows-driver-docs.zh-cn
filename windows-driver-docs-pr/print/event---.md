@@ -1,42 +1,41 @@
 ---
-title: Event\ \ \
-description: Event\ \ \
-ms.assetid: a3b0b3f1-03d6-4309-9efe-d2588c7240cb
+title: 事件 \\
+description: 事件 \\
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a8a68c1b668ad98fe333b55db5bb21726f67dc33
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ade10d464871cb5fad7d64ea576e0ef8e25766d9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63324239"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96836067"
 ---
-# <a name="event"></a>事件\#\#\#
+# <a name="event"></a>引发\#\#\#
 
 
-架构路径：\\Printer.Status.Detailed.Event\#\#\#
+架构路径： \\ Printer。状态。详细信息\#\#\#
 
-节点类型： 属性
+节点类型：属性
 
-说明： 一个生成基于事件 Id 的设备中的事件名称。 每个数字后缀应是唯一的给定的事件。 如果设备重复使用特定的数字后缀，则应允许应用程序以确定是否已过期之前的数字后缀与关联的事件足够的时间。 此属性包含的所有值条目描述所讨论的事件。
+说明：基于设备中的事件 Id 生成的事件名称。 每个数字后缀对于给定事件都应是唯一的。 如果设备重复使用特定的数字后缀，则它应留出足够的时间让应用程序确定以前与数字后缀关联的事件是否已过期。 此属性包含描述相关事件的所有值项。
 
-事件\#\# \#属性中含有两个对子值名称和严重性，并且是父[组件](component2.md)属性。
+事件 \# \# \# 属性包含两个子值： "名称" 和 "严重性"，是 "[组件](component2.md)" 属性的父项。
 
 ### <a name="span-idnamespanspan-idnamespan-name"></a><span id="name"></span><span id="NAME"></span> 名称
 
-架构路径：\\Printer.Status.Detailed.Event\#\#\#： 名称
+架构路径： \\ Printer。状态。详细信息 \# \# \# ：名称
 
-节点类型： 值
+节点类型：值
 
-数据类型： BIDI\_字符串
+数据类型：双向 \_ 字符串
 
-当前的错误条件的说明： 一个简短的说明。 有不同的事件的每个组件的名称。
+说明：当前错误条件的简短说明。 每个组件都有不同的事件名称。
 
-名称的典型值如下所示：
+Name 的典型值如下所示：
 
 CoverOpen
 
-卡纸问题
+纸
 
 DoorOpen
 
@@ -68,19 +67,19 @@ WasteReceptacleAlmostFull
 
 WasteReceptacleFull
 
-### <a name="span-idseverityspanspan-idseverityspan-severity"></a><span id="severity"></span><span id="SEVERITY"></span> 严重级别
+### <a name="span-idseverityspanspan-idseverityspan-severity"></a><span id="severity"></span><span id="SEVERITY"></span> 对应
 
-架构路径：\\Printer.Status.Summary:Detailed。事件\#\#\#： 严重性
+架构路径： \\ Printer. Status。 Summary：详细信息。事件 \# \# \# ：严重性
 
-节点类型： 值
+节点类型：值
 
-数据类型： BIDI\_字符串
+数据类型：双向 \_ 字符串
 
-说明： 当前事件的严重性级别。 打印机确定分配到的错误条件的严重性级别。
+说明：当前事件的严重级别。 打印机确定分配给错误条件的严重性级别。
 
-允许使用以下值：
+允许以下值：
 
-信息性
+信息
 
 警告
 

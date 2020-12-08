@@ -1,15 +1,14 @@
 ---
 title: Windows 8.1 中的网络内核调试支持的以太网 NIC
 description: 当目标计算机运行 Windows 8.1 时，可以通过以太网网络电缆进行内核调试。 目标计算机必须具有支持的网络接口卡 (NIC) 或网络适配器。
-ms.assetid: C608A406-C008-4075-B6BE-C14CFFC3A820
 ms.date: 02/20/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 3bb654ad61811871c0e2f517a2ee6cab4c9053f2
-ms.sourcegitcommit: 17c1bbc5ea0bef3bbc87794b030a073f905dc942
+ms.openlocfilehash: c87c2ea072abe168fc2ed633e3ec31addccf4008
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88802661"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96834689"
 ---
 # <a name="supported-ethernet-nics-for-network-kernel-debugging-in-windows-81"></a>Windows 8.1 中的网络内核调试支持的以太网 NIC
 
@@ -19,7 +18,7 @@ ms.locfileid: "88802661"
 
 若要通过网络电缆进行内核调试，目标计算机必须具有支持的网络适配器。 当目标计算机运行 Windows 8.1 时，将支持此处列出的网络适配器进行内核调试。
 
-**注意**   支持在所选的10个千兆位网络适配器上进行内核调试是 Windows 8.1 中的一项新功能。 在 Windows 8 中不支持通过 10 gb 网络适配器进行调试。 有关适用于内核调试的 Windows 8 支持的网络适配器列表，请参阅 [windows 8 中的网络内核调试支持的以太网 nic](supported-ethernet-nics-for-network-kernel-debugging-in-windows-8.md)。
+**注意**  支持在所选的10个千兆位网络适配器上进行内核调试是 Windows 8.1 中的一项新功能。 在 Windows 8 中不支持通过 10 gb 网络适配器进行调试。 有关适用于内核调试的 Windows 8 支持的网络适配器列表，请参阅 [windows 8 中的网络内核调试支持的以太网 nic](supported-ethernet-nics-for-network-kernel-debugging-in-windows-8.md)。
 
 ## <a name="span-idsystem_requirementsspanspan-idsystem_requirementsspanspan-idsystem_requirementsspansystem-requirements"></a><span id="System_Requirements"></span><span id="system_requirements"></span><span id="SYSTEM_REQUIREMENTS"></span>系统要求
 
@@ -36,7 +35,7 @@ ms.locfileid: "88802661"
 -  选择并按住 (或右键单击 "网络适配器" 节点) ，然后选择 " **属性**"。
 -  在 " **详细信息** " 选项卡的 " **属性**" 下，选择 " **硬件 id**"。
 
-供应商和设备 Id 显示为即使 \_ *VENDORID*和 DEV \_ *DeviceID*。 例如，如果你看到 PCI \\ 即使 \_ 8086&DEV \_ 104B，则供应商 id 为8086，设备 id 为104B。
+供应商和设备 Id 显示为即使 \_ *VENDORID* 和 DEV \_ *DeviceID*。 例如，如果你看到 PCI \\ 即使 \_ 8086&DEV \_ 104B，则供应商 id 为8086，设备 id 为104B。
 
 ## <a name="span-idvendor_id_8086__intel_corporationspanspan-idvendor_id_8086__intel_corporationspanspan-idvendor_id_8086__intel_corporationspanvendor-id-8086-intel-corporation"></a><span id="Vendor_ID_8086__Intel_Corporation"></span><span id="vendor_id_8086__intel_corporation"></span><span id="VENDOR_ID_8086__INTEL_CORPORATION"></span>供应商 ID 8086，Intel Corporation
 

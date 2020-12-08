@@ -1,7 +1,6 @@
 ---
 title: 'SpinLockRelease 规则 (ndis) '
 description: SpinLockRelease 规则指定驱动程序不得在不首先获取旋转锁 (NdisReleaseSpinLock) 的情况下将其释放。
-ms.assetid: D9E69C92-6EB4-4981-A7FE-3B987BC84C97
 ms.date: 05/21/2018
 keywords:
 - 'SpinLockRelease 规则 (ndis) '
@@ -12,12 +11,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 4f1ab2a863ca06aab46d202ef4392b04b6f6a34f
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 22ef4c3db0e357d33377a1d9d86cb4e8f6ad1ac7
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102820"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96834667"
 ---
 # <a name="spinlockrelease-rule-ndis"></a>SpinLockRelease 规则 (ndis) 
 

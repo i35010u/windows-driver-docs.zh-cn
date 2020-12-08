@@ -1,20 +1,19 @@
 ---
 title: ISCSI \_ REDIRECTSESSIONINFO WMI 类
 description: ISCSI \_ REDIRECTSESSIONINFO WMI 类
-ms.assetid: eb1ec866-2dcd-4099-a24f-ae1d0c702b95
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: c447af8ed94ca355de963a7c90adf29382883960
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: ca30ead99628e38fdb847819b8067638351e61d8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89188519"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96835099"
 ---
 # <a name="iscsi_redirectsessioninfo-wmi-class"></a>ISCSI \_ REDIRECTSESSIONINFO WMI 类
 
 
-ISCSI \_ REDIRECTSESSIONINFO WMI 类包含 iscsi 会话的连接集合。 此类在*管理 mof*中定义为：
+ISCSI \_ REDIRECTSESSIONINFO WMI 类包含 iscsi 会话的连接集合。 此类在 *管理 mof* 中定义为：
 
 ```cpp
 class ISCSI_RedirectSessionInfo

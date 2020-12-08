@@ -1,18 +1,17 @@
 ---
 title: 按打印机接口 DLL 定义的函数
 description: 按打印机接口 DLL 定义的函数
-ms.assetid: 8b0ae796-67cf-4619-a0a7-6cb6aab8c2e4
 keywords:
 - 打印机接口 DLL WDK，函数
 - 功能 WDK 打印机接口 DLL
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 03d4beadae87deb96d8dafd2eedfffa76b52378d
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 93275a5efa633654bed31fdb05f62640f3e96e5f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104678"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96836031"
 ---
 # <a name="functions-defined-by-printer-interface-dlls"></a>按打印机接口 DLL 定义的函数
 

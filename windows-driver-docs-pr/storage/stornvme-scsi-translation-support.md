@@ -1,19 +1,18 @@
 ---
 title: StorNVMe SCSI 转换支持
 description: StorNVMe SCSI 转换支持
-ms.assetid: cd903ef8-9528-46a5-a276-06cf2fff2b88
 ms.date: 05/12/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 4fb3ca8602a8b69dd06936144c44d36fe70741d7
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 392437955a44a5b82d4d489d34f0db188ef7b614
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89189415"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96834951"
 ---
 # <a name="stornvme-scsi-translation-support"></a>StorNVMe SCSI 转换支持
 
-下表列出了 SCSI 命令和已转换的 NVMe 命令 (s) （如果适用）。 Windows 10 版本1903及更高版本上的**StorNVMe**符合 SCSI 转换参考修订版1.5。
+下表列出了 SCSI 命令和已转换的 NVMe 命令 (s) （如果适用）。 Windows 10 版本1903及更高版本上的 **StorNVMe** 符合 SCSI 转换参考修订版1.5。
 
 有关其他信息，请参阅使用 [NVMe 驱动器](/windows/win32/fileio/working-with-nvme-devices#protocol-specific-queries) 。
 
@@ -39,6 +38,6 @@ ms.locfileid: "89189415"
 | Unmap                   | 数据集管理          |
 | 验证10               | Verify                      |
 | 验证16               | Verify                      |
-| 写入10                | Write                       |
-| 写入16                | Write                       |
+| 写入10                | 写入                       |
+| 写入16                | 写入                       |
 | 写入缓冲区            | 固件下载，激活 |

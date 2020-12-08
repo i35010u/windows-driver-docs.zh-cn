@@ -1,19 +1,18 @@
 ---
 title: 关于变换器类驱动程序
 description: 更换器类驱动程序
-ms.assetid: c1c2330c-9cfc-432f-945c-630dc16aa54d
 keywords:
 - 更换器驱动程序 WDK 存储，类驱动程序
 - 存储更换器驱动程序 WDK、类驱动程序
 - 类驱动程序 WDK 存储，更换器驱动程序
 ms.date: 12/15/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 0ab265ab38b8c63d45d511ed6df449050b4735a5
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 6eb6f5dcb58739b82a949b5db56ca8a19b07920d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89186643"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96834903"
 ---
 # <a name="about-the-changer-class-driver"></a>关于变换器类驱动程序
 
@@ -27,10 +26,10 @@ ms.locfileid: "89186643"
 
 - 有助于初始化 class/miniclass 驱动程序对。
 
-- 调用 **转换器 * * * Xxx* miniclass driver 例程，以确定为设备特定的信息分配的空间量，并准备转换器以接收其他请求。
+- 调用 **变换** 器 _Xxx_ miniclass 驱动程序例程，以确定为特定于设备的信息分配的空间量，并准备转换器以接收其他请求。
 
-- 对 [**IRP_MJ_DEVICE_CONTROL**](../kernel/irp-mj-device-control.md) 请求执行与设备无关的预处理，调用相应的 **转换器 * * ** miniclass 例程，并完成请求。
+- 对 [**IRP_MJ_DEVICE_CONTROL**](../kernel/irp-mj-device-control.md) 请求执行与设备无关的预处理，调用相应的 **转换器**_Xxx_ miniclass 例程，并完成请求。
 
 - 针对错误执行与设备无关的预处理，并调用 miniclass 驱动程序的 [**ChangerError**](/windows-hardware/drivers/ddi/mcd/nf-mcd-changererror) 例程进行特定于设备的处理。
 
-- 调用 **转换器 * * * Xxx* miniclass 驱动程序例程以获取产品数据、更改元素状态或查询查询或卷标记数据。
+- 调用 **变换** 器 _Xxx_ miniclass 驱动程序例程以获取产品数据、更改元素状态或查询查询或卷标记数据。

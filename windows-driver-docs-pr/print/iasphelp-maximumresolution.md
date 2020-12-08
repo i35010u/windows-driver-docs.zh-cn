@@ -1,13 +1,12 @@
 ---
-title: Iasphelp get\_MaximumResolution 方法
-description: MaximumResolution 属性启用 ASP 网页，以确定打印机的最大分辨率。
+title: Iasphelp get \_ MaximumResolution 方法
+description: 使用 MaximumResolution 属性可以使 ASP 网页确定打印机的最大分辨率。
 MS-HAID:
 - webfnc\_156e8337-489a-44e6-9c81-0a8f6dd3aa08.xml
 - print.iasphelp\_maximumresolution
 MSHAttr:
 - PreferredSiteName:MSDN
 - PreferredLib:/library/windows/hardware
-ms.assetid: 74dffe85-0e6d-4c2c-a933-2afb68624c76
 keywords:
 - get_MaximumResolution 方法打印设备
 - get_MaximumResolution 方法打印设备，Iasphelp 接口
@@ -20,36 +19,36 @@ api_type:
 - COM
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9c9d90063a67bbbc9003780781ad6af5b6108f31
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 390df12f7551807a10d478ac0f24f24504b69f73
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63392835"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96835767"
 ---
-# <a name="iasphelpgetmaximumresolution-method"></a>Iasphelp::get\_MaximumResolution 方法
+# <a name="iasphelpget_maximumresolution-method"></a>Iasphelp：： get \_ MaximumResolution 方法
 
-**MaximumResolution**属性启用 ASP 网页，以确定打印机的最大分辨率。
+使用 **MaximumResolution** 属性可以使 ASP 网页确定打印机的最大分辨率。
 
 <a name="syntax"></a>语法
 ------
 
 ```cpp
 HRESULT get_MaximumResolution(
-  [out] long *pVal
+  [out] long *pVal
 );
 ```
 
-<a name="parameters"></a>Parameters
+<a name="parameters"></a>参数
 ----------
 
-*pVal* \[out\]  
-要接收一个数值表示打印机的最大分辨率，以每英寸点数的调用方提供的位置。
+*pVal* \[弄\]  
+调用方提供的位置，用于接收表示打印机最大分辨率（以每英寸点数为单位）的数字值。
 
 <a name="return-value"></a>返回值
 ------------
 
-下表中，此属性返回的值之一。
+此属性返回下表中的值之一。
 
 <table>
 <colgroup>
@@ -69,7 +68,7 @@ HRESULT get_MaximumResolution(
 </tr>
 <tr class="even">
 <td><strong>E_HANDLE</strong></td>
-<td><p><a href="iasphelp-open.md" data-raw-source="[&lt;strong&gt;Iasphelp::Open&lt;/strong&gt;](iasphelp-open.md)"> <strong>Iasphelp::Open</strong> </a>尚未调用方法。</p></td>
+<td><p>未调用 <a href="iasphelp-open.md" data-raw-source="[&lt;strong&gt;Iasphelp::Open&lt;/strong&gt;](iasphelp-open.md)"><strong>Iasphelp：： Open</strong></a> 方法。</p></td>
 </tr>
 <tr class="odd">
 <td><strong>E_OUTOFMEMORY</strong></td>
@@ -80,7 +79,7 @@ HRESULT get_MaximumResolution(
 
 ## <a name="vbscript-example"></a>VBScript 示例
 
-[ **Iasphelp::Open** ](iasphelp-open.md)前必须调用方法**Iasphelp::MaximumResolution**属性可以进行查询。
+在查询 **Iasphelp：： MaximumResolution** 属性之前，必须先调用 [**Iasphelp：： Open**](iasphelp-open.md)方法。
 
 ```vb
 Dim objPrinter, MaxRes
@@ -101,11 +100,11 @@ MaxRes = objPrinter.MaximumResolution
 <tbody>
 <tr class="odd">
 <td><p>目标平台</p></td>
-<td>桌面设备</td>
+<td>台式机</td>
 </tr>
 </tbody>
 </table>
 
 ## <a name="see-also"></a>请参阅
 
-[**Iasphelp::Open**](iasphelp-open.md)
+[**Iasphelp：： Open**](iasphelp-open.md)

@@ -1,7 +1,6 @@
 ---
 title: 处理设备电源状态的 IRP_MN_QUERY_POWER
 description: 处理设备电源状态的 IRP_MN_QUERY_POWER
-ms.assetid: 902619bc-068a-4613-b99d-78a243f7fee6
 keywords:
 - IRP_MN_QUERY_POWER
 - 设备电源状态 WDK 内核
@@ -13,12 +12,12 @@ keywords:
 - 调度例程 WDK 电源管理
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 277611c661e45cfc4f5f2e09c1699402a387f57a
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 6a4ffec7c273698d7f733c768384c5fb308d2e90
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89188291"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96836405"
 ---
 # <a name="handling-irp_mn_query_power-for-device-power-states"></a>处理 IRP \_ MN \_ 查询 \_ 电源的设备电源状态
 
@@ -26,7 +25,7 @@ ms.locfileid: "89188291"
 
 
 
-设备查询-power IRP 会查询单个设备的状态更改，并将其发送到设备堆栈中的所有驱动程序。 此类 IRP 在 i/o 堆栈位置的 DevicePowerState**成员中**指定了**DevicePowerState** 。
+设备查询-power IRP 会查询单个设备的状态更改，并将其发送到设备堆栈中的所有驱动程序。 此类 IRP 在 i/o 堆栈位置的 DevicePowerState **成员中** 指定了 **DevicePowerState** 。
 
 驱动程序在传递堆栈时处理查询电源 Irp。
 
@@ -44,7 +43,7 @@ ms.locfileid: "89188291"
 
 3.  从其 [*DispatchPower*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch) 例程返回错误状态。
 
-如果驱动程序成功执行了查询-power IRP，则它不能启动任何操作，也不会执行任何其他操作，否则会阻止其成功完成后续 **IRP \_ MN \_ \_ ** 为查询电源状态的请求。
+如果驱动程序成功执行了查询-power IRP，则它不能启动任何操作，也不会执行任何其他操作，否则会阻止其成功完成后续 **IRP \_ MN \_ \_** 为查询电源状态的请求。
 
 成功完成 IRP 的驱动程序必须为用于查询状态的集电源 IRP 做好准备，并按如下所示向下传递查询 IRP：
 
@@ -60,9 +59,9 @@ ms.locfileid: "89188291"
 
 6.  在 windows 7 和 Windows Vista 中调用 [**IoCallDriver**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver) () 或 windows Server 2003、windows XP 和 windows 2000) 中的 [**PoCallDriver**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-pocalldriver) (，将 query IRP 传递到下一个较低版本的驱动程序。 不要完成 IRP。
 
-7.  返回状态为 " \_ 挂起"。 驱动程序不得更改 ** &gt; IoStatus**的值。
+7.  返回状态为 " \_ 挂起"。 驱动程序不得更改 **&gt; IoStatus** 的值。
 
-当查询-power IRP 达到总线驱动程序时，如果驱动程序可以更改为指定电源状态，则总线驱动程序将调用**PoStartNextPowerIrp** (仅) windows Server 2003、windows XP 和 windows 2000，并将 IoStatus 状态设置为 "成功" ** &gt; 。** \_ 然后，总线驱动程序调用 **IoCompleteRequest**，指定 IO \_ 无 \_ 增量。
+当查询-power IRP 达到总线驱动程序时，如果驱动程序可以更改为指定电源状态，则总线驱动程序将调用 **PoStartNextPowerIrp** (仅) windows Server 2003、windows XP 和 windows 2000，并将 IoStatus 状态设置为 "成功" **&gt; 。** \_ 然后，总线驱动程序调用 **IoCompleteRequest**，指定 IO \_ 无 \_ 增量。
 
 典型设备堆栈中的驱动程序处理设备查询-power IRP，如下所示：
 

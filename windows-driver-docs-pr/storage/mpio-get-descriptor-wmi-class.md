@@ -1,15 +1,14 @@
 ---
 title: MPIO \_ 获取 \_ 描述符 WMI 类
 description: MPIO \_ 获取 \_ 描述符 WMI 类
-ms.assetid: 6d48c0b5-c20f-4017-aae5-0b00fa5de18d
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 75934e2391b6b7f3a5c45ccecfb7d7ad0c1a3527
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 9d04c990837d01bf592e543f5a4c1580dda357a1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89187697"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96835017"
 ---
 # <a name="mpio_get_descriptor-wmi-class"></a>MPIO \_ 获取 \_ 描述符 WMI 类
 

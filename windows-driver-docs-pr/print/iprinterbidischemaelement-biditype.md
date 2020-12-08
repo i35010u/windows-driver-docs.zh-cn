@@ -1,10 +1,9 @@
 ---
 title: IPrinterBidiSchemaElement BidiType 方法
-description: BidiType 方法返回 Bidi 架构元素类型。
+description: BidiType 方法返回双向架构元素类型。
 MSHAttr:
 - PreferredSiteName:MSDN
 - PreferredLib:/library/windows/hardware
-ms.assetid: 7E074633-E3AA-45F3-A0B6-621E97E983A8
 keywords:
 - BidiType 方法打印设备
 - BidiType 方法打印设备，IPrinterBidiSchemaElement 接口
@@ -17,36 +16,36 @@ api_type:
 - COM
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d7271f72d0ea0d010a4c8a15549f99dbdfd8f91e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: deae0a43be629aff0be3aa373e494af4b2b366e3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63371205"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96835601"
 ---
-# <a name="iprinterbidischemaelementbiditype-method"></a>IPrinterBidiSchemaElement::BidiType 方法
+# <a name="iprinterbidischemaelementbiditype-method"></a>IPrinterBidiSchemaElement：： BidiType 方法
 
-BidiType 方法返回 Bidi 架构元素类型。
+BidiType 方法返回双向架构元素类型。
 
 <a name="syntax"></a>语法
 ------
 
 ```cpp
 HRESULT BidiType(
-  [out, retval] PrinterBidiSchemaElementType *pType
+  [out, retval] PrinterBidiSchemaElementType *pType
 );
 ```
 
-<a name="parameters"></a>Parameters
+<a name="parameters"></a>参数
 ----------
 
-*pType* \[out, retval\]  
+*pType* \[out，retval\]  
 返回的元素类型。
 
 <a name="return-value"></a>返回值
 ------------
 
-此方法返回**HRESULT**值。
+此方法返回 **HRESULT** 值。
 
 <a name="requirements"></a>要求
 ------------
@@ -59,11 +58,11 @@ HRESULT BidiType(
 <tbody>
 <tr class="odd">
 <td><p>目标平台</p></td>
-<td>桌面设备</td>
+<td>台式机</td>
 </tr>
 <tr class="even">
-<td><p>Version</p></td>
-<td><p>Windows 8 及更高版本</p></td>
+<td><p>版本</p></td>
+<td><p>Windows 8 及更高版本</p></td>
 </tr>
 </tbody>
 </table>

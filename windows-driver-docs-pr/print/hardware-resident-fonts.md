@@ -1,18 +1,17 @@
 ---
 title: 硬件中的字体
 description: 硬件中的字体
-ms.assetid: 359735c2-bfa3-4c32-82a5-1d455c4eacb1
 keywords:
-- 打印机字体说明 WDK Unidrv，驻留在硬件中的字体
-- 驻留在硬件中的字体 WDK Unidrv
+- 打印机字体说明 WDK Unidrv，硬件驻留字体
+- 硬件驻留字体 WDK Unidrv
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1c43bb2017697472d74065064bb9e57fbc258063
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d1ed409ccf568b4b40bed7a5ec01121f95c5b153
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63360533"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96835831"
 ---
 # <a name="hardware-resident-fonts"></a>硬件中的字体
 
@@ -20,17 +19,17 @@ ms.locfileid: "63360533"
 
 
 
-如果您的打印机包含驻留在硬件中的字体，必须提供.ufm 或.ifi 文件内这些字体的字体标准规范。
+如果你的打印机包含硬件驻留字体，则必须在 ufm 或 ifi 文件中提供这些字体的字体规格规范。
 
-单独.ufm 或.ifi 文件中描述的每个硬件常驻字体。 若要使这些文件可供 Unidrv，执行以下操作：
+每个硬件驻留字体都在单独的 ufm 或 ifi 文件中进行了介绍。 若要使这些文件可供 Unidrv 使用，请执行以下操作：
 
--   在打印机的资源 DLL 中，指定.ufm 文件使用 RC\_UFM 资源类型，并指定使用 RC.ifi 文件\_字体资源类型。
+-   在打印机的资源 DLL 中，通过使用 RC ufm 资源类型来指定 ufm 文件 \_ ，并使用 rc \_ 字体资源类型指定 ifi 文件。
 
--   在打印机的 GPD 文件中，使用\*项 ResourceDLL 属性来指定资源 DLL 的名称。
+-   在打印机的 GPD 文件中，使用 \* ResourceDLL 属性指定资源 DLL 的名称。
 
--   在打印机的 GPD 文件中，使用\*DeviceFonts 项以指定与 RC 相关联的资源标识符\_UFM 或 RC\_字体资源 DLL 中的条目。
+-   在打印机的 GPD 文件中，使用 \* DeviceFonts 条目来指定与 \_ 资源 DLL 中 rc UFM 或 rc 字体条目关联的资源标识符 \_ 。
 
-格式\*DeviceFonts 条目如下所示：
+DeviceFonts 条目的格式 \* 如下所示：
 
 <table>
 <colgroup>
@@ -38,16 +37,16 @@ ms.locfileid: "63360533"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p><strong>* DeviceFonts:LIST (</strong><em>FontResourceID</em><strong>,</strong> <em>FontResourceID</em><strong>,</strong> ...<strong>)</strong></p></td>
+<td><p><strong>* DeviceFonts： LIST (</strong> <em>FontResourceID</em><strong>，</strong> <em>FontResourceID</em><strong>，</strong> .。。<strong>) </strong></p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-其中*FontResourceID*是 RC\_UFM 与.ufm 文件或 rc 版关联的资源标识符\_与.ifi 文件相关联的字体资源标识符。
+其中， *FontResourceID* 是 \_ 与 UFM 文件关联的 rc UFM 资源标识符，或 \_ 与 IFI 文件关联的 rc 字体资源标识符。
 
-以下是一个示例：
+下面是一个示例：
 
 ```cpp
 *% Assume that RC_FONT_xxx ids are references to 
@@ -59,7 +58,7 @@ ms.locfileid: "63360533"
 +                  =RC_FONT_TIMESNRBI)
 ```
 
-可以包含多个\*DeviceFonts 中的条目[Unidrv 微型驱动程序](unidrv-minidrivers.md)。 GPD 分析器串联多个条目，并使所有列出的字体可用于所有配置的打印机的功能。 如果你需要指定一些字体是仅适用于某些配置，可以包括\*内的 DeviceFonts 条目[条件语句](conditional-statements.md)。
+可以 \* 在 [Unidrv 微型驱动程序](unidrv-minidrivers.md)中包含多个 DeviceFonts 条目。 GPD 分析器将多个条目连接起来，并使所有列出的字体可用于打印机功能的所有配置。 如果需要指定某些字体仅适用于某些配置，则可以 \* 在 [条件语句](conditional-statements.md)中包含 DeviceFonts 项。
 
  
 

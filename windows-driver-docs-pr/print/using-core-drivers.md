@@ -1,20 +1,19 @@
 ---
 title: 使用核心驱动程序
 description: 使用核心驱动程序
-ms.assetid: 333f3f17-0cdc-48d3-bb30-f8e2d7216d89
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fffa11f020d3233267b23e614e818898019365f7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 76cc8622b28f386b6325e2b49be0437117c833ca
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339643"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96835467"
 ---
 # <a name="using-core-drivers"></a>使用核心驱动程序
 
 
-打印驱动程序编写人员可以使用通过列出的核心模型的 INF，模型部分中的 GUID 并使用他们所写的核心推动因素**PackageAware**并**CoreDriverSections**关键字。
+打印驱动程序编写器可以通过在 INF 的 "模型" 部分中列出核心模型 GUID 并使用 **PackageAware** 和 **CoreDriverSections** 关键字，来使用它们编写的核心驱动程序。
 
 例如：
 

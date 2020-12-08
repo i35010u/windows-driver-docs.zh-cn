@@ -1,7 +1,6 @@
 ---
 title: 附加到卷的筛选器设备对象
 description: 附加到卷的筛选器设备对象
-ms.assetid: cf152065-fc03-4f5f-b65b-13a76e83d745
 keywords:
 - 筛选设备对象 WDK 文件系统
 - 筛选器驱动程序 WDK 文件系统，设备对象 i/o 请求
@@ -10,12 +9,12 @@ keywords:
 - 设备对象 i/o 请求 WDK 文件系统
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8503782bc784937db73febc78f3f1b285266f93f
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 2d5333de1f460a77098e0b72f6bd8747d1ac1a31
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89065064"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96836481"
 ---
 # <a name="filter-device-object-attached-to-a-volume"></a>附加到卷的筛选器设备对象
 
@@ -119,7 +118,7 @@ ms.locfileid: "89065064"
 
 默认情况下，文件系统筛选器设备对象（附加到卷）需要将所有无法识别或不需要的 Irp 传递到驱动程序堆栈上的下一个较低版本的驱动程序。 此外，它们必须实现 **FastIoDetachDevice**。
 
-**注意**   在 Microsoft Windows XP 和更高版本中，以下快速 i/o 回调例程已过时，不应由文件系统筛选器驱动程序使用： **AcquireForCcFlush**
+**注意**   在 Microsoft Windows XP 和更高版本中，以下快速 i/o 回调例程已过时，不应由文件系统筛选器驱动程序使用： **AcquireForCcFlush**
 
 **AcquireFileForNtCreateSection**
 

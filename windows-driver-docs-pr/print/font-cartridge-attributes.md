@@ -1,19 +1,18 @@
 ---
 title: 字体盒属性
 description: 字体盒属性
-ms.assetid: d1f99322-9c77-428a-beb5-6d0ff166c3e5
 keywords:
-- 打印机字体说明 WDK Unidrv，盒式磁带
-- 字体盒 WDK Unidrv
-- 插件字体 WDK Unidrv
+- 打印机字体说明 WDK Unidrv、盒式磁带
+- 字体盒式 WDK Unidrv
+- 字体盒式 WDK Unidrv
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d4072ce5fd3e5f6d5479f451ad6802efda50ebc5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7f4021a3dce7251a7031117242a0fea00f7fc533
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63363241"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96836041"
 ---
 # <a name="font-cartridge-attributes"></a>字体盒属性
 
@@ -21,7 +20,7 @@ ms.locfileid: "63363241"
 
 
 
-下表包含属性可以包含在\*FontCartridge GPD 条目。
+下表包含可包含在 \* FONTCARTRIDGE GPD 条目中的属性。
 
 <table>
 <colgroup>
@@ -33,34 +32,34 @@ ms.locfileid: "63363241"
 <tr class="header">
 <th>属性名称</th>
 <th>特性参数</th>
-<th>备注</th>
+<th>注释</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><p><strong><em>CartridgeName</strong></p></td>
-<td><p>表示插件名称的文本字符串。</p></td>
-<td><p>必需的除非 *<strong>rcCartridgeNameID</strong>指定。</p></td>
+<td><p>表示磁带盒名称的文本字符串。</p></td>
+<td><p>必需，除非指定 *<strong>rcCartridgeNameID</strong> 。</p></td>
 </tr>
 <tr class="even">
 <td><p><strong></em>字体</strong></p></td>
-<td><p>表示包含在插件中所提供的纵向和横向方向的字体的 RC_UFM 或 RC_FONT 资源标识符的列表。</p></td>
-<td><p>在至少一个<em><strong>字体</strong>，*<strong>PortraitFonts</strong>或 *<strong>LandscapeFonts</strong>必须指定。 字体资源标识符应连续编号均为 1。</p></td>
+<td><p>RC_UFM 或 RC_FONT 资源标识符的列表，它们表示磁带盒中包含的、纵向和横向方向可用的字体。</p></td>
+<td><p>至少必须指定一种 <em> <strong>字体</strong>，*<strong>PortraitFonts</strong>或 *<strong>LandscapeFonts</strong> 。 字体资源标识符应连续从1开始编号。</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong></em>LandscapeFonts</strong></p></td>
-<td><p>表示仅适用于横向方向的字体包含在该插件的 RC_UFM 或 RC_FONT 资源标识符的列表。</p></td>
-<td><p>在至少一个<em><strong>字体</strong>，*<strong>PortraitFonts</strong>或 *<strong>LandscapeFonts</strong>必须指定。 字体资源标识符应连续编号均为 1。</p></td>
+<td><p>RC_UFM 或 RC_FONT 资源标识符的列表，这些标识符表示盒中包含的字体，这些字体仅适用于横向打印。</p></td>
+<td><p>至少必须指定一种 <em> <strong>字体</strong>，*<strong>PortraitFonts</strong>或 *<strong>LandscapeFonts</strong> 。 字体资源标识符应连续从1开始编号。</p></td>
 </tr>
 <tr class="even">
 <td><p><strong></em>PortraitFonts</strong></p></td>
-<td><p>表示仅适用于纵向方向的字体包含在该插件的 RC_UFM 或 RC_FONT 资源标识符的列表。</p></td>
-<td><p>在至少一个<em><strong>字体</strong>，*<strong>PortraitFonts</strong>或 *<strong>LandscapeFonts</strong>必须指定。 字体资源标识符应连续编号均为 1。</p></td>
+<td><p>RC_UFM 或 RC_FONT 资源标识符的列表，它们代表盒中包含的字体，这些字体仅可用于纵向显示。</p></td>
+<td><p>至少必须指定一种 <em> <strong>字体</strong>，*<strong>PortraitFonts</strong>或 *<strong>LandscapeFonts</strong> 。 字体资源标识符应连续从1开始编号。</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong></em>rcCartridgeNameID</strong></p></td>
-<td><p>表示插件名称的字符串资源的资源标识符。</p></td>
-<td><p>必需的除非 *<strong>CartridgeName</strong>指定。</p></td>
+<td><p>表示磁带盒名称的字符串资源的资源标识符。</p></td>
+<td><p>必需，除非指定 *<strong>CartridgeName</strong> 。</p></td>
 </tr>
 </tbody>
 </table>

@@ -1,15 +1,14 @@
 ---
 title: ISCSI \_ IP \_ 地址 WMI 类
 description: ISCSI \_ IP \_ 地址 WMI 类
-ms.assetid: 3ceeb54f-ecc5-40c5-b0a8-8c6f86203f1c
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: e3410358a5a4d0742683a38c23752a3ffdebb3af
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 11f85e5c72060eaea98f8e95a090d319cdb57591
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89188813"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96835113"
 ---
 # <a name="iscsi_ip_address-wmi-class"></a>ISCSI \_ IP \_ 地址 WMI 类
 
@@ -17,7 +16,7 @@ ms.locfileid: "89188813"
 ## <span id="ddk_iscsi_ip_address_wmi_class_kr"></span><span id="DDK_ISCSI_IP_ADDRESS_WMI_CLASS_KR"></span>
 
 
-ISCSI \_ ip \_ 地址类提供与所使用的 ip 协议版本无关的 ip 地址的定义。 此类是在 *常见的 mof*中定义的。
+ISCSI \_ ip \_ 地址类提供与所使用的 ip 协议版本无关的 ip 地址的定义。 此类是在 *常见的 mof* 中定义的。
 
 ```cpp
 class ISCSI_IP_Address {

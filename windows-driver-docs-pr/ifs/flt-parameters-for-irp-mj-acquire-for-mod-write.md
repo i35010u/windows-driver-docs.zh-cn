@@ -1,7 +1,6 @@
 ---
 title: IRP_MJ_ACQUIRE_FOR_MOD_WRITE 联合的 FLT_PARAMETERS
 description: 当 IRP_MJ_ACQUIRE_FOR_MOD_WRITE 操作的 FLT_IO_PARAMETER_BLOCK 结构的 MajorFunction 字段时，将使用以下联合组件。
-ms.assetid: f950f8df-fcaa-4af7-9227-eb069f289176
 keywords:
 - IRP_MJ_ACQUIRE_FOR_MOD_WRITE 联合可安装文件系统驱动程序的 FLT_PARAMETERS
 - FLT_PARAMETERS 联合可安装文件系统驱动程序
@@ -16,27 +15,27 @@ api_type:
 - HeaderDef
 ms.date: 07/17/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 3ecc0e98ba2aeaf14fc291899f0a2c84eb49a477
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 9fb62a4790854ca97e8815cd3c102ebf923d5ea6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89063644"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96836475"
 ---
 # <a name="flt_parameters-for-irp_mj_acquire_for_mod_write-union"></a>IRP_MJ_ACQUIRE_FOR_MOD_WRITE 联合的 FLT_PARAMETERS
 
-当 IRP_MJ_ACQUIRE_FOR_MOD_WRITE 操作的[**FLT_IO_PARAMETER_BLOCK**](/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_io_parameter_block)结构的**MajorFunction**字段时，将使用以下联合组件。
+当 IRP_MJ_ACQUIRE_FOR_MOD_WRITE 操作的 [**FLT_IO_PARAMETER_BLOCK**](/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_io_parameter_block)结构的 **MajorFunction** 字段时，将使用以下联合组件。
 
 ## <a name="syntax"></a>语法
 
 ```ManagedCPlusPlus
 typedef union _FLT_PARAMETERS {
-  ...    ;
+  ...    ;
   struct {
     PLARGE_INTEGER EndingOffset;
-    PERESOURCE     *ResourceToRelease;
-  } AcquireForModifiedPageWriter;
-  ...    ;
+    PERESOURCE     *ResourceToRelease;
+  } AcquireForModifiedPageWriter;
+  ...    ;
 } FLT_PARAMETERS, *PFLT_PARAMETERS;
 ```
 
@@ -67,7 +66,7 @@ IRP_MJ_ACQUIRE_FOR_MOD_WRITE 是 (FSFilter) 回调操作的文件系统。 在�
 **标头**： *Fltkernel* (包含 *Fltkernel*) 
 
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [FLT_CALLBACK_DATA](/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_callback_data)
 

@@ -1,7 +1,6 @@
 ---
 title: 重复使用 DMA 事务对象
 description: 重复使用 DMA 事务对象
-ms.assetid: 4adb8653-48b6-4e22-aba3-b909c95b8d15
 keywords:
 - DMA 事务 WDK KMDF，重复使用事务对象
 - DMA 操作 WDK KMDF，事务
@@ -9,12 +8,12 @@ keywords:
 - 重复使用 DMA 事务对象 WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f125bf22fb197e1ea6ea6dc998c0e13d56837240
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: ed724a1c20a3e33139f0a353707cfb869c0f396d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89191515"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96834855"
 ---
 # <a name="reusing-dma-transaction-objects"></a>重复使用 DMA 事务对象
 

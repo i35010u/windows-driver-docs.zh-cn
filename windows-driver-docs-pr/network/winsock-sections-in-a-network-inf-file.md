@@ -1,19 +1,18 @@
 ---
 title: 网络 INF 文件中的 Winsock 节
 description: 网络 INF 文件中的 Winsock 节
-ms.assetid: 179a8570-287b-446e-8b56-a9f23071e84d
 keywords:
 - INF 文件 WDK 网络，Winsock 部分
 - 网络 INF 文件 WDK，Winsock 部分
 - Winsock 部分 WDK 网络
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5ed7d375c9f1d58e8c123242765ca855291812a8
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: c17b15e2db9cf6610a36116244e449a91a35534a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107092"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96836213"
 ---
 # <a name="winsock-sections-in-a-network-inf-file"></a>网络 INF 文件中的 Winsock 节
 
@@ -26,9 +25,9 @@ ms.locfileid: "90107092"
 > Windows 8 及更高版本中已弃用 Winsock 依赖项。
 
 
-*Winsock 安装*节必须包含**AddSock**指令。 **AddSock**指令指定了一个名为的供应商名称部分，其中包含要添加到组件的**HKEY \_ 本地 \_ 计算机 \\ 系统 \\ CurrentControlSet \\ Services \\ *TransportDriverName* \\ Params \\ Winsock**键的值。
+*Winsock 安装* 节必须包含 **AddSock** 指令。 **AddSock** 指令指定了一个名为的供应商名称部分，其中包含要添加到组件的 **HKEY \_ 本地 \_ 计算机 \\ 系统 \\ CurrentControlSet \\ Services \\ *TransportDriverName* \\ Params \\ Winsock** 键的值。
 
-**AddSock**指令引用的由供应商命名的部分必须包含以下必需值：
+**AddSock** 指令引用的由供应商命名的部分必须包含以下必需值：
 
 <table>
 <colgroup>
@@ -44,7 +43,7 @@ ms.locfileid: "90107092"
 <tbody>
 <tr class="odd">
 <td align="left"><p>TransportService</p></td>
-<td align="left"><p>一个 REG_SZ 值，该值指定协议的服务名称。 此值必须与协议的 <strong>Ndi\Service</strong> 值相同。 有关详细信息，请参阅 <a href="adding-service-related-values-to-the-ndi-key.md" data-raw-source="[Adding Service-Related Values to the Ndi Key](adding-service-related-values-to-the-ndi-key.md)">将与服务相关的值添加到 Ndi 项</a>。</p></td>
+<td align="left"><p>一个 REG_SZ 值，该值指定协议的服务名称。 此值必须与协议的 <strong>Ndi\Service</strong> 值相同。 有关详细信息，请参阅 <a href="adding-service-related-values-to-the-ndi-key.md" data-raw-source="[Adding Service-Related Values to the Ndi Key](adding-service-related-values-to-the-ndi-key.md)">将 Service-Related 值添加到 Ndi 项</a>。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>HelperDllName</p></td>
@@ -112,7 +111,7 @@ ms.locfileid: "90107092"
 <thead>
 <tr class="header">
 <th align="left">命名空间</th>
-<th align="left">值</th>
+<th align="left">“值”</th>
 </tr>
 </thead>
 <tbody>
@@ -207,7 +206,7 @@ Version = 2
 
 INF 文件可以通过包含 *winsock-remove* 部分来删除协议的 winsock 依赖关系。 若要创建 *Winsock 删除* 节，请添加。用于协议的 *删除* 节名称的 Winsock 扩展。 例如，如果协议的 " *删除* " 部分命名为 "ipx"，则协议的 " *Winsock 删除* " 部分必须命名为 "Ipx"。删除 winsock。
 
-*Winsock-remove*部分包含指定 INF 写入器命名部分的**DelSock**指令。 INF 写入方命名部分必须指定要删除的传输服务。 如果先前已为协议注册了 **providerid** ，则供应商命名部分还必须指定要删除的 **providerid** 。
+*Winsock-remove* 部分包含指定 INF 写入器命名部分的 **DelSock** 指令。 INF 写入方命名部分必须指定要删除的传输服务。 如果先前已为协议注册了 **providerid** ，则供应商命名部分还必须指定要删除的 **providerid** 。
 
 下面的示例演示了删除 IPX 协议的 Winsock 依赖项的两个部分：
 

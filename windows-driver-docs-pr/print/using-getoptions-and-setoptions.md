@@ -1,18 +1,17 @@
 ---
 title: 使用 GetOptions 和 SetOptions
 description: 使用 GetOptions 和 SetOptions
-ms.assetid: c8b5c235-0b74-47c8-b6ba-eba810a8467b
 keywords:
 - GetOptions
 - SetOptions
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f75feac586ffc1d281ddafac7157d09e178c262d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d7f43f4cb5267e1260cac4954c1c9a4ad6da8922
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63374229"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96835427"
 ---
 # <a name="using-getoptions-and-setoptions"></a>使用 GetOptions 和 SetOptions
 
@@ -20,25 +19,25 @@ ms.locfileid: "63374229"
 
 
 
-**GetOptions**可以调用以检索其关键字列出指向的缓冲区中的功能的驱动程序的当前设置*pmszFeaturesRequested*输入的参数。
+可以调用 **GetOptions** 来检索驱动程序的当前设置，其关键字在 *pmszFeaturesRequested* 输入参数指向的缓冲区中列出。
 
-例如，在调用**GetOptions**，假设该*pmszFeaturesRequested*输入的缓冲区包含此字符串 (在多\_SZ 格式):
+例如，在对 **GetOptions** 的调用中，假定 *pmszFeaturesRequested* 输入缓冲区包含此字符串 (采用多个 \_ SZ 格式) ：
 
 ```cpp
 "PageSize\0Duplex\0Resolution\0\0"
 ```
 
-之后**GetOptions**方法返回时，输出*pmszFeatureOptionBuf*可能包含以下字符串 (也在多\_SZ 格式):
+**GetOptions** 方法返回后，输出 *pmszFeatureOptionBuf* 可以包含以下字符串 (以多个 \_ SZ 格式) ：
 
 ```cpp
 "PageSize\0Letter\0Duplex\0DuplexTumble\0Resolution\0300dpi\0\0"
 ```
 
-此示例演示**GetOptions** PageSize （字母）、 双工 (DuplexTumble) 和分辨率 (300 dpi) 检索选项关键字。
+此示例显示， **GetOptions** 检索到 PageSize 的选项关键字 (Letter) 、双工 (DuplexTumble) 和分辨率 (300dpi) 。
 
-**SetOptions**可以调用以进行更改的驱动程序的当前设置，根据在功能/选项关键字对*pmszFeatureOptionBuf*输入的缓冲区。
+可以调用 **SetOptions** ，以根据 *pmszFeatureOptionBuf* 输入缓冲区中的功能/选项关键字对更改驱动程序的当前设置。
 
-有两种类别的支持的功能：
+支持的功能有两类：
 
 [PPD 功能](ppd-features.md)
 

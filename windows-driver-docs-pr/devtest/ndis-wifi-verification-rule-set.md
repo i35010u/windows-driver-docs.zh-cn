@@ -1,15 +1,14 @@
 ---
 title: NDIS/WIFI 验证规则集
-description: 请注意，你可以从 Windows 8.1 开始测试 NDIS/WIFI 驱动程序与这些规则。.
-ms.assetid: B856F42E-E4AD-4178-AF71-3E68A23209C9
+description: 请注意，你可以从 Windows 8.1 开始测试 NDIS/WIFI 驱动程序与这些规则。 .
 ms.date: 05/21/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: ff6b131e0755e43457cf2dbe57fc0ae7e01c159a
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: ca2f14eb283692f8e0b8a84cce2a94a8f6e6bff7
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103082"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96834663"
 ---
 # <a name="ndiswifi-verification-rule-set"></a>NDIS/WIFI 验证规则集
 
@@ -30,7 +29,7 @@ ms.locfileid: "90103082"
 <thead>
 <tr class="header">
 <th align="left">主题</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>

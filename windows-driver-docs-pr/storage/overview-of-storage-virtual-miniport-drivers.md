@@ -1,28 +1,27 @@
 ---
 title: 存储器虚拟微型端口驱动程序概述
 description: 存储器虚拟微型端口驱动程序概述
-ms.assetid: 5aee56e6-610c-4718-8566-9285682049cb
 keywords:
 - 存储虚拟微型端口驱动程序 WDK，关于
 - 虚拟微型端口驱动程序 WDK
-- 微型端口驱动程序 WDK 存储虚拟
+- 微型端口驱动程序 WDK 存储，虚拟
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 66912362b0e66c6938ab804e8e09d5bb8cc209d3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e1443562f786b399725b71495a861d7c9ad60c5c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63389416"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96834993"
 ---
 # <a name="overview-of-storage-virtual-miniport-drivers"></a>存储器虚拟微型端口驱动程序概述
 
 
-若要扩展的 Windows Vista Service Pack 1 (SP1) 和 Windows Server 2008 Storport 接口的用途，Microsoft 还定义了虚拟微型端口 (VMiniport) 驱动程序接口。 此接口可用于当前具有严格无意将它们与物理硬件的微型端口驱动程序。 这些更改并删除对硬件关联 （"物理"） 微型端口驱动程序来调用仅 Storport 例程的限制。 与物理微型端口驱动程序，不同虚拟微型端口驱动程序可以进行 WDM 的文档所述对 Windows 驱动程序模型 (WDM) 例程的调用。 除非另有说明，从这一刻起术语"微型端口"将用于到"虚拟微型端口"，请参阅。
+为了扩展 Storport 接口的有用性，对于带有 Service Pack 1 (SP1) 和 Windows Server 2008 的 Windows Vista，Microsoft 已定义虚拟小型端口 (VMiniport) 驱动程序接口。 此接口适用于当前与物理硬件无严格关联的微型端口驱动程序。 这些更改不会消除硬件相关 ( "物理" ) 微型端口驱动程序的限制，只调用 Storport 例程。 与物理微型端口驱动程序不同的是，虚拟小型端口驱动程序可以调用 Windows 驱动模型 (WDM) 例程，如 WDM 文档状态。 除非另有说明，否则将使用 "微型端口" 这一术语来表示 "虚拟小型端口"。
 
-虚拟微型端口驱动程序接口释放依赖于用于处理内存和同步端口驱动程序 (Storport) 微型端口。 接口使虚拟微型端口驱动程序之前暂时不可用的方式执行 I/O。 这些更改将定向到，但不是限于将来启用存储技术 （例如 iSCSI 和 Infiniband） 和非标准的存储接口。
+虚拟微型端口驱动程序接口释放依赖于端口驱动程序的端口驱动程序 (Storport) 用于处理内存和同步。 接口使虚拟微型端口驱动程序能够以目前不可用的方式执行 i/o。 这些更改的目标是（但不限于）在将来启用 iSCSI 等存储技术，以及非标准存储接口。
 
-实现 VMiniport 驱动程序时要格外小心。 尽管扩展提供更大的灵活性，他们需要更多关注中检测错误，验证路径和 I/O 计时。 在这里，提供了一些示例，但仍不可能以应对预期的不正确地使用内核接口的所有可能的结果。
+实现 VMiniport 驱动程序时，请务必小心。 尽管扩展具有更大的灵活性，但在检测错误、验证路径和 i/o 计时时需要更多的关注。 此处提供一些示例，但无法正确预测使用内核接口的所有可能的结果。
 
  
 

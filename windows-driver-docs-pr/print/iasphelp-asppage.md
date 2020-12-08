@@ -7,7 +7,6 @@ MS-HAID:
 MSHAttr:
 - PreferredSiteName:MSDN
 - PreferredLib:/library/windows/hardware
-ms.assetid: 325c0666-b4c4-48b5-b14f-bdb81e1ee5d2
 keywords:
 - get_AspPage 方法打印设备
 - get_AspPage 方法打印设备，Iasphelp 接口
@@ -20,12 +19,12 @@ api_type:
 - COM
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 96384e717c5ae648ce4680487cfd460f1b067ac0
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: d09a1a341042d594ffb4a1c9003036158fd13475
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89210611"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96835813"
 ---
 # <a name="iasphelpget_asppage-method"></a>Iasphelp：： get \_ AspPage 方法
 
@@ -37,8 +36,8 @@ ms.locfileid: "89210611"
 
 ```cpp
 HRESULT get_AspPage(
-  [in]  DWORD dwPage,
-  [out] BSTR  *pVal
+  [in]  DWORD dwPage,
+  [out] BSTR  *pVal
 );
 ```
 
@@ -91,7 +90,7 @@ HRESULT get_AspPage(
 
 若要确定在何处查找页面的 ASP 文件，该方法使用 [显示 "打印机详细信息" 页](./which-printer-details-page-is-displayed-.md)中所述的算法？。
 
-在查询**Iasphelp：： AspPage**属性之前，必须先调用[**Iasphelp：： Open**](iasphelp-open.md)方法。
+在查询 **Iasphelp：： AspPage** 属性之前，必须先调用 [**Iasphelp：： Open**](iasphelp-open.md)方法。
 
 ```vb
     Dim objPrinter, strPrinter, str
@@ -112,11 +111,11 @@ HRESULT get_AspPage(
 <tbody>
 <tr class="odd">
 <td><p>目标平台</p></td>
-<td>“桌面”</td>
+<td>台式机</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [**Iasphelp：： Open**](iasphelp-open.md)

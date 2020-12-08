@@ -1,15 +1,14 @@
 ---
 title: 基于 GPD/PPD 的功能说明更改
 description: 基于 GPD/PPD 的功能说明更改
-ms.assetid: 22333d78-f78f-4031-a9f3-50b43ec746b6
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4f32c67258922ab39b2df3ea480ed2c1fc0f7e88
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: f3e4c4575114541845423582e0c66b40e8ef331c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89205911"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96835861"
 ---
 # <a name="gpdppd-based-feature-description-changes"></a>基于 GPD/PPD 的功能说明更改
 
@@ -63,7 +62,7 @@ Msxpsinc gpd 和 Msxpsinc 文件，你可以决定如何为筛选器管道构造
 
 在核心驱动程序的 DEVMODE 结构中，这些自定义 GPD 或 PPD 功能的设置存储在选项数组中。
 
-**注意**   对于 Windows 7， **MxdcGetPDEVAdjustment**函数具有用于横向旋转的新参数。 有关详细信息，请参阅 [**MxdcXDCGetPDEVAdjustment**](/windows-hardware/drivers/ddi/mxdc/nf-mxdc-mxdcgetpdevadjustment)。
+**注意**   对于 Windows 7， **MxdcGetPDEVAdjustment** 函数具有用于横向旋转的新参数。 有关详细信息，请参阅 [**MxdcXDCGetPDEVAdjustment**](/windows-hardware/drivers/ddi/mxdc/nf-mxdc-mxdcgetpdevadjustment)。
 
  
 

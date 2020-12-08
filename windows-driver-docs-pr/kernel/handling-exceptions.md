@@ -1,7 +1,6 @@
 ---
 title: 处理异常
 description: 处理异常
-ms.assetid: 20040d86-5088-48ec-a5b9-54760d143871
 keywords:
 - 结构化异常处理 WDK 内核
 - 异常 WDK 内核
@@ -13,12 +12,12 @@ keywords:
 - 页读取错误 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 38ec4e5f2a7ea6ac9847ead08db6042ee9f10be6
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: dbd1859cc0a51ed22267be9a7615d22a1eebaee9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89185263"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96836417"
 ---
 # <a name="handling-exceptions"></a>处理异常
 
@@ -45,7 +44,7 @@ ms.locfileid: "89185263"
     -    (尝试在保护页面内的某个位置加载或存储数据时，会发生防护页面冲突) 
     -   页读取错误 (尝试将页面读入内存并遇到并发 i/o 错误) 
 
-*访问冲突*是指尝试在当前页面保护设置下不允许的页面上执行操作。 在下列情况下会发生访问冲突：
+*访问冲突* 是指尝试在当前页面保护设置下不允许的页面上执行操作。 在下列情况下会发生访问冲突：
 
 -   读取或写入操作无效，如写入只读页面。
 
@@ -53,7 +52,7 @@ ms.locfileid: "89185263"
 
 -   访问当前驻留但专门用于系统组件的页面。 例如，不允许用户模式代码访问内核正在使用的页。
 
-如果某个操作可能导致异常，则驱动程序应将此操作包含在 **try/except** 块中。 用户模式下的位置访问是异常的典型原因。 例如， [**ProbeForWrite**](/windows-hardware/drivers/ddi/wdm/nf-wdm-probeforwrite) 例程检查驱动程序是否可以实际写入用户模式缓冲区。 如果不能，则引发状态 \_ 访问 \_ 冲突异常。 在下面的代码示例中，驱动程序在**try/except**中调用**ProbeForWrite** ，以便它可以处理生成的异常（如果应该发生）。
+如果某个操作可能导致异常，则驱动程序应将此操作包含在 **try/except** 块中。 用户模式下的位置访问是异常的典型原因。 例如， [**ProbeForWrite**](/windows-hardware/drivers/ddi/wdm/nf-wdm-probeforwrite) 例程检查驱动程序是否可以实际写入用户模式缓冲区。 如果不能，则引发状态 \_ 访问 \_ 冲突异常。 在下面的代码示例中，驱动程序在 **try/except** 中调用 **ProbeForWrite** ，以便它可以处理生成的异常（如果应该发生）。
 
 ```cpp
 try {
@@ -84,7 +83,7 @@ try {
 
 -   [**ProbeForWrite**](/windows-hardware/drivers/ddi/wdm/nf-wdm-probeforwrite)
 
-对用户模式缓冲区的内存访问也可能导致访问冲突。 有关详细信息，请参阅 [引用用户空间地址中的错误](errors-in-referencing-user-space-addresses.md)。
+对用户模式缓冲区的内存访问也可能导致访问冲突。 有关详细信息，请参阅 [引用 User-Space 地址中的错误](errors-in-referencing-user-space-addresses.md)。
 
 请注意，结构化异常处理不同于 c + + 异常。 内核不支持 c + + 异常。
 

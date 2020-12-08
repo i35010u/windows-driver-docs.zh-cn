@@ -1,30 +1,29 @@
 ---
 title: OID_SWITCH_NIC_CREATE
 description: Hyper-v 可扩展交换机的协议边缘 (OID 发出对象标识符) 设置 OID_SWITCH_NIC_CREATE 请求，通知底层可扩展交换机扩展在可扩展交换机端口与外部或虚拟网络适配器之间建立了新连接。 完全建立连接后，可扩展交换机的协议边缘发出 OID_SWITCH_NIC_CONNECT 的 OID 设置请求。
-ms.assetid: 1D6B2C6B-A63E-4A20-B534-AF12714F5FB5
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_SWITCH_NIC_CREATE 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: a23c3965498764d1357294dce0cf4fa6760509b5
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 09c55fdd5b2bca9e16df4130eeeba25fd173876c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89218361"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96836325"
 ---
 # <a name="oid_switch_nic_create"></a>OID \_ 交换机 \_ NIC \_ 创建
 
 
 Hyper-v 可扩展交换机的协议边缘 (OID 发出对象标识符) 设置 OID \_ 交换机 NIC CREATE 的请求， \_ \_ 通知底层可扩展交换机扩展在可扩展交换机端口与外部或虚拟网络适配器之间建立了新连接。 完全建立连接后，可扩展交换机的协议边缘会发出 oid [ \_ 交换机 \_ NIC \_ CONNECT](oid-switch-nic-connect.md)的 oid 设置请求。
 
-[**Ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的**InformationBuffer**成员包含指向[**NDIS \_ 交换机 \_ NIC \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_nic_parameters)结构的指针。
+[**Ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的 **InformationBuffer** 成员包含指向 [**NDIS \_ 交换机 \_ NIC \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_nic_parameters)结构的指针。
 
 <a name="remarks"></a>备注
 -------
 
-[**NDIS \_ 交换机 \_ NIC \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_nic_parameters)结构的**PortId**成员指定为其进行创建通知的可扩展交换机端口。 可扩展交换机扩展可以通过发出 oid [ \_ 交换机 \_ 端口 \_ 数组](oid-switch-port-array.md)的 oid 查询请求，获取可扩展交换机上此端口和其他端口的参数信息。
+[**NDIS \_ 交换机 \_ NIC \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_nic_parameters)结构的 **PortId** 成员指定为其进行创建通知的可扩展交换机端口。 可扩展交换机扩展可以通过发出 oid [ \_ 交换机 \_ 端口 \_ 数组](oid-switch-port-array.md)的 oid 查询请求，获取可扩展交换机上此端口和其他端口的参数信息。
 
-[**NDIS \_ 交换机 \_ NIC \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_nic_parameters)结构的**index**成员指定为其进行创建通知的网络适配器的索引。 具有指定 **索引** 值的网络适配器连接到由 **PortId** 成员指定的可扩展交换机端口。 有关这些索引值的详细信息，请参阅 [网络适配器索引值](./network-adapter-index-values.md)。
+[**NDIS \_ 交换机 \_ NIC \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_nic_parameters)结构的 **index** 成员指定为其进行创建通知的网络适配器的索引。 具有指定 **索引** 值的网络适配器连接到由 **PortId** 成员指定的可扩展交换机端口。 有关这些索引值的详细信息，请参阅 [网络适配器索引值](./network-adapter-index-values.md)。
 
 当其收到 oid 交换机 NIC CREATE 的 OID 集请求时 \_ \_ \_ ，扩展必须遵循以下准则：
 
@@ -36,27 +35,27 @@ Hyper-v 可扩展交换机的协议边缘 (OID 发出对象标识符) 设置 OID
 
     -   向对其发出 OID 交换机 nic CREATE OID 请求的基础网络适配器转发或发起 oid [ \_ 交换器 \_ NIC \_ 请求](oid-switch-nic-request.md) 的 oid 请求 \_ \_ \_ 。
 
-    -   从为其发出 OID 交换机 nic CREATE OID 请求的基础网络适配器转发或产生 ndis 状态 [** \_ \_ 切换 \_ NIC \_ 状态**](./ndis-status-switch-nic-status.md) 的 ndis 状态指示 \_ \_ \_ 。
+    -   从为其发出 OID 交换机 nic CREATE OID 请求的基础网络适配器转发或产生 ndis 状态 [**\_ \_ 切换 \_ NIC \_ 状态**](./ndis-status-switch-nic-status.md) 的 ndis 状态指示 \_ \_ \_ 。
 
     -   调用 [*ReferenceSwitchNic*](/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_reference_switch_nic) ，以在可扩展交换机端口上为指定网络适配器连接递增可扩展交换机引用计数器。
 
-    **注意**   该扩展可能会截获 OID \_ 交换机 \_ nic \_ CREATE 和[oid \_ 交换机 \_ nic \_ CONNECT](oid-switch-nic-connect.md)的 oid 请求之间指定端口的发送或接收数据包。 在这种情况下，扩展应转发发送或接收数据包请求，而不是将其取消。
+    **注意**  该扩展可能会截获 OID \_ 交换机 \_ nic \_ CREATE 和 [oid \_ 交换机 \_ nic \_ CONNECT](oid-switch-nic-connect.md)的 oid 请求之间指定端口的发送或接收数据包。 在这种情况下，扩展应转发发送或接收数据包请求，而不是将其取消。
 
      
 
 -   此扩展可以通过返回 \_ \_ \_ OID 请求不接受的 NDIS 状态数据来否决创建通知 \_ 。 例如，如果某个扩展无法满足指定端口上的配置策略，则扩展应否决创建通知。
 
-    如果该扩展插件返回其他 NDIS \_ 状态 \_ *Xxx*状态代码，则创建通知也被否决。 然而，为暂时性方案返回状态代码（例如返回 NDIS \_ 状态 \_ 资源）可能会导致创建通知重试。
+    如果该扩展插件返回其他 NDIS \_ 状态 \_ *Xxx* 状态代码，则创建通知也被否决。 然而，为暂时性方案返回状态代码（例如返回 NDIS \_ 状态 \_ 资源）可能会导致创建通知重试。
 
     如果扩展不否决 OID 请求，则应在请求完成时监视状态。 扩展应执行此操作，以确定可扩展交换机控制路径中的基础扩展或可扩展交换机接口是否否决了 OID 请求。
 
-    **注意**   如果[**NDIS \_ 交换机 \_ NIC \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_nic_parameters)结构的**索引**成员指定的网络适配器索引值为零，则扩展只能否决 OID 请求。
+    **注意** 如果 [**NDIS \_ 交换机 \_ NIC \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_nic_parameters)结构的 **索引** 成员指定的网络适配器索引值为零，则扩展只能否决 OID 请求。
 
      
 
 -   如果扩展不否决创建通知，则必须调用 [**NdisFOidRequest**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfoidrequest) 将此 OID 请求转发到可扩展交换机驱动程序堆栈中的基础扩展。
 
-    **注意**   扩展应监视此 OID 请求的完成状态。 此扩展将执行此命令以检测可扩展交换机驱动程序堆栈中的基础扩展是否否决了创建通知。
+    **注意**  扩展应监视此 OID 请求的完成状态。 此扩展将执行此命令以检测可扩展交换机驱动程序堆栈中的基础扩展是否否决了创建通知。
 
      
 
@@ -64,7 +63,7 @@ Hyper-v 可扩展交换机的协议边缘 (OID 发出对象标识符) 设置 OID
 
 -   此扩展只能在可扩展交换机的协议边缘发出 [oid \_ 交换机 \_ NIC \_ CONNECT](oid-switch-nic-connect.md)的 oid 集请求后，将数据包流量转发到可扩展交换机端口。
 
-    **注意**   在某些情况下，在发出 oid [ \_ 交换机 \_ NIC \_ CONNECT](oid-switch-nic-connect.md)的 oid 设置请求之前，可通过可扩展交换机将数据包流量转发到端口。
+    **注意**  在某些情况下，在发出 oid [ \_ 交换机 \_ NIC \_ CONNECT](oid-switch-nic-connect.md) 的 oid 设置请求之前，可通过可扩展交换机将数据包流量转发到端口。
 
      
 
@@ -74,7 +73,7 @@ Hyper-v 可扩展交换机的协议边缘 (OID 发出对象标识符) 设置 OID
 
 有关可扩展交换机端口和网络适配器连接状态的详细信息，请参阅 [Hyper-v 可扩展交换机端口和网络适配器状态](./hyper-v-extensible-switch-port-and-network-adapter-states.md)。
 
-**注意**   扩展不能发出自己的 OID 设置 OID \_ 交换机 \_ NIC CREATE 的请求 \_ 。
+**注意**  扩展不能发出自己的 OID 设置 OID \_ 交换机 \_ NIC CREATE 的请求 \_ 。
 
  
 
@@ -111,7 +110,7 @@ Hyper-v 可扩展交换机的协议边缘 (OID 发出对象标识符) 设置 OID
 
  
 
-**注意**   如果扩展完成了 OID 设置请求，则它不能返回 NDIS \_ 状态 " \_ 成功"。
+**注意**  如果扩展完成了 OID 设置请求，则它不能返回 NDIS \_ 状态 " \_ 成功"。
 
  
 
@@ -158,7 +157,7 @@ Hyper-v 可扩展交换机的协议边缘 (OID 发出对象标识符) 设置 OID
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 ****

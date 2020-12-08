@@ -1,15 +1,14 @@
 ---
 title: SPB 连接锁
 description: 连接锁可用于使两个客户端在简单外围总线 (SPB) 上共享对目标外围设备的访问。
-ms.assetid: 073D9854-0F51-4518-A22B-0A0546694E30
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 90e32c8b6aa6ed507b5b4382f3378d864449fe06
-ms.sourcegitcommit: c766ab74e32eb44795cbbd1a4f352d3a6a9adc14
+ms.openlocfilehash: 6cc7e56523aed34963eb18c00f4a84f9d52daad8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89389569"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96835397"
 ---
 # <a name="spb-connection-locks"></a>SPB 连接锁
 
@@ -18,7 +17,7 @@ ms.locfileid: "89389569"
 
 客户端使用 [**ioctl \_ spb \_ 锁定 \_ 连接**](https://msdn.microsoft.com/library/windows/hardware/jj819324) 和 [**ioctl \_ spb \_ 解锁 \_ 连接**](https://msdn.microsoft.com/library/windows/hardware/jj819325) 请求，以获取和释放 SPB 上目标设备上的连接锁。 客户端将 (IOCTL) 请求的这些 i/o 控制发送到设备的文件对象。
 
-与 SPB 连接的外围设备的驱动程序通常是用户模式驱动程序框架 (UMDF) 驱动程序或内核模式驱动程序框架 (KMDF) 驱动程序。 为了将 IOCTL 请求发送到已连接到 SPB 的外围设备，UMDF 驱动程序会调用方法，例如 [**IWDFIoRequest：： send**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest-send)。 KMDF 驱动程序调用诸如 [**WdfIoTargetSendIoctlSynchronously**](/windows-hardware/drivers/ddi/wdfiotarget/nf-wdfiotarget-wdfiotargetsendioctlsynchronously)的方法。
+与 SPB 连接的外围设备的驱动程序通常是 User-Mode Driver Framework (UMDF) 驱动程序或 Kernel-Mode Driver Framework (KMDF) 驱动程序。 为了将 IOCTL 请求发送到已连接到 SPB 的外围设备，UMDF 驱动程序会调用方法，例如 [**IWDFIoRequest：： send**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest-send)。 KMDF 驱动程序调用诸如 [**WdfIoTargetSendIoctlSynchronously**](/windows-hardware/drivers/ddi/wdfiotarget/nf-wdfiotarget-wdfiotargetsendioctlsynchronously)的方法。
 
 通常，不需要连接锁。 大多数客户端驱动程序在 SPB 上始终具有对目标设备的独占访问权限。 只有在相对罕见的情况下才需要连接锁，在这种情况下，两个客户端必须共享对同一目标设备的访问权限，并且一个或两个客户端有时必须具有对设备的独占访问权限，才能实现一系列 i/o 操作。
 
@@ -53,7 +52,7 @@ ms.locfileid: "89389569"
 
 控制器锁不同于连接锁。 控制器锁允许将一系列 i/o 传输到总线上的目标设备，并将其作为单个原子总线操作执行。 控制器锁定生效时，将延迟传输到总线上的其他设备，直到控制器锁释放。 有关详细信息，请参阅 [原子总线操作](./atomic-bus-operations.md)。
 
-**注意**   在某些实现中，连接锁可能会导致传输到总线上的其他设备。 但是，此行为是依赖于实现的，并且客户端驱动程序不应依赖于它。 相反，控制器锁定会可靠地阻止其他客户端访问与持有控制器锁定的客户端相同的目标设备，并且客户端可以安全地依赖于此行为。
+**注意**  在某些实现中，连接锁可能会导致传输到总线上的其他设备。 但是，此行为是依赖于实现的，并且客户端驱动程序不应依赖于它。 相反，控制器锁定会可靠地阻止其他客户端访问与持有控制器锁定的客户端相同的目标设备，并且客户端可以安全地依赖于此行为。
 
  
 

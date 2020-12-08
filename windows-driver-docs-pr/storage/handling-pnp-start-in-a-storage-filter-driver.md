@@ -1,7 +1,6 @@
 ---
 title: 处理存储筛选器驱动程序中的 PnP 启动
 description: 处理存储筛选器驱动程序中的 PnP 启动
-ms.assetid: 02a87fec-772d-4416-bd3a-5c7f98e8d55e
 keywords:
 - 存储筛选器驱动程序 WDK、PnP
 - 筛选器驱动程序 WDK 存储，PnP
@@ -9,12 +8,12 @@ keywords:
 - PnP WDK 存储
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2f3a9a56e4bdad0c08646758055735ea6a5562e5
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 0e2447d24a6bd3ed53f46067ea025b8edf83b833
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91733115"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96835221"
 ---
 # <a name="handling-pnp-start-in-a-storage-filter-driver"></a>处理存储筛选器驱动程序中的 PnP 启动
 

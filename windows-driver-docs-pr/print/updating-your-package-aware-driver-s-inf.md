@@ -1,15 +1,14 @@
 ---
 title: 更新包感知驱动程序的 INF
 description: 更新包感知驱动程序的 INF
-ms.assetid: d0bf489d-d084-40df-b5aa-69cdf679993f
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 38a2165fec664df33a61d97abf5e3ac30a4b111d
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 07abe2567e05644e6f5a5cd848589c54675335ab
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89211943"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96835471"
 ---
 # <a name="updating-your-package-aware-drivers-inf"></a>更新包感知驱动程序的 INF
 

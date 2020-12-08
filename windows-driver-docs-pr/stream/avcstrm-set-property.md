@@ -1,9 +1,8 @@
 ---
-title: AVCSTRM\_SET\_PROPERTY
-description: AVCSTRM\_SET\_PROPERTY
-ms.assetid: 5053eed7-23cf-46e7-bcd4-6eb2038d65bb
+title: AVCSTRM \_ 设置 \_ 属性
+description: AVCSTRM \_ 设置 \_ 属性
 keywords:
-- AVCSTRM_SET_PROPERTY 流式处理媒体设备
+- AVCSTRM_SET_PROPERTY 流媒体设备
 topic_type:
 - apiref
 api_name:
@@ -12,20 +11,20 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fcb6ad0e38c902a6910f54f85f01a623b547f418
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 882fe756a325e69d67d63876478cc7ed9209d5f3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63364073"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96834899"
 ---
-# <a name="avcstrmsetproperty"></a>AVCSTRM\_SET\_PROPERTY
+# <a name="avcstrm_set_property"></a>AVCSTRM \_ 设置 \_ 属性
 
 
 ## <span id="ddk_avcstrm_set_property_ks"></span><span id="DDK_AVCSTRM_SET_PROPERTY_KS"></span>
 
 
-**AVCSTRM\_设置\_属性**当前未实现函数代码。
+当前未实现 **AVCSTRM \_ SET \_ 属性** 函数代码。
 
  
 

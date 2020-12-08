@@ -1,15 +1,14 @@
 ---
 title: 锁定规则集 (Storport)
 description: 了解如何使用 (Storport) 的规则来验证驱动程序是否正确管理共享资源，以及如何选择锁定规则集。
-ms.assetid: FBB75F07-E689-4B7C-B053-E0B6A3772764
 ms.date: 05/21/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: e76cb5db7cf49066f90f179ee62e72a9ae8a5191
-ms.sourcegitcommit: 372464be981a39781c71049126f36891cb5d0cad
+ms.openlocfilehash: 3ac78d63e3adc4a6bbc59ead1f75680ab0801ae6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91646107"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96836527"
 ---
 # <a name="locking-rule-set-storport"></a>锁定规则集 (Storport)
 
@@ -27,7 +26,7 @@ ms.locfileid: "91646107"
 <thead>
 <tr class="header">
 <th align="left">主题</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -44,7 +43,7 @@ ms.locfileid: "91646107"
 <td align="left"><p>此规则验证驱动程序在未首先通过<strong>KeAcquireInStackQueuedSpinLock</strong>获取锁定的情况下不会调用<strong>KeReleaseInStackQueuedSpinLock</strong> 。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="storport-spinlock.md" data-raw-source="[&lt;strong&gt;SpinLock&lt;/strong&gt;](storport-spinlock.md)"><strong>旋转锁</strong></a></p></td>
+<td align="left"><p><a href="storport-spinlock.md" data-raw-source="[&lt;strong&gt;SpinLock&lt;/strong&gt;](storport-spinlock.md)"><strong>SpinLock</strong></a></p></td>
 <td align="left"><p>此规则验证是否立即调用 <strong>KeAcquireSpinLock</strong> ，然后调用 <strong>KeReleaseSpinlock</strong>。 如果驱动程序在释放锁之前再次调用 <strong>KeAcquireSpinLockRaiseToDpc</strong> 或 <strong>KeAcquireSpinLock</strong> ，则该规则将失败。 此外，在退出调度或取消例程之前，驱动程序必须释放旋转锁。</p></td>
 </tr>
 <tr class="odd">
@@ -86,7 +85,7 @@ ms.locfileid: "91646107"
 
 2.  单击 " **规则** " 选项卡。在 " **规则集**" 下，选择 " **锁定**"。
 
-    若要从 Visual Studio 开发人员命令提示符窗口中选择默认规则集，请使用 **/check**选项指定**sdv** 。 例如：
+    若要从 Visual Studio 开发人员命令提示符窗口中选择默认规则集，请使用 **/check** 选项指定 **sdv** 。 例如：
 
     ```
     msbuild /t:sdv /p:Inputs="/check:Locking.sdv" mydriver.VcxProj /p:Configuration="Win8 Release" /p:Platform=Win32

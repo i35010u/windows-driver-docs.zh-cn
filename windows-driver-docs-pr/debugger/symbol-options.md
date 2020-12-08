@@ -1,7 +1,6 @@
 ---
 title: 符号选项
 description: 符号选项
-ms.assetid: 4a501ea3-431c-4c11-8826-154eb8799a64
 keywords:
 - 符号，设置符号选项
 - 符号，SYMOPT_XXXX
@@ -9,12 +8,12 @@ keywords:
 - CV 记录
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9832b751affe05bd31977c0a82280a3e2f692e7b
-ms.sourcegitcommit: 89b8a43480246dd726e3632aab2db9cf2eb7505d
+ms.openlocfilehash: 21d540333a3d14d6b83bd81a8d4d5a87cbcfafbb
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92254062"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96834687"
 ---
 # <a name="symbol-options"></a>符号选项
 
@@ -162,7 +161,7 @@ ms.locfileid: "92254062"
 <td align="left"><p><a href="#symopt-no-prompts" data-raw-source="[SYMOPT_NO_PROMPTS](#symopt-no-prompts)">SYMOPT_NO_PROMPTS</a></p></td>
 <td align="left"><p>在 KD 和 CDB 中</p>
 <p>在 WinDbg 中关闭</p></td>
-<td align="left"><p>关闭</p></td>
+<td align="left"><p>关</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x80000000</p></td>
@@ -177,9 +176,9 @@ ms.locfileid: "92254062"
 
 ### <a name="span-idchanging-the-symbol-option-settingsspanspan-idchanging_the_symbol_option_settingsspanchanging-the-symbol-option-settings"></a><span id="changing-the-symbol-option-settings"></span><span id="CHANGING_THE_SYMBOL_OPTION_SETTINGS"></span>更改符号选项设置
 
-[**Symopt (设置符号选项) **](-symopt--set-symbol-options-.md)命令可用于更改或显示符号选项设置。 此外，还可以使用多个命令行参数和命令来更改这些设置;各个 SYMOPT XXX 部分中列出了这些 \_ *XXX*内容。
+[**Symopt (设置符号选项)**](-symopt--set-symbol-options-.md)命令可用于更改或显示符号选项设置。 此外，还可以使用多个命令行参数和命令来更改这些设置;各个 SYMOPT XXX 部分中列出了这些 \_ *XXX* 内容。
 
-还可以通过 **-sflags**[命令行选项](command-line-options.md)一次性控制所有设置。 此选项的后面可以是十进制数字，也可以是前缀为 **0x**的十六进制数。 建议使用十六进制，因为符号标志以这种方式正确对齐。 使用此方法时要格外小心，因为它会设置整个位域并将覆盖所有符号处理程序默认值。 例如， **-sflags 0x401** 不仅会启用 SYMOPT \_ 精确符号，而且不 \_ \_ 区分大小写 \_ ，还会关闭通常默认启用的所有其他选项！
+还可以通过 **-sflags**[命令行选项](command-line-options.md)一次性控制所有设置。 此选项的后面可以是十进制数字，也可以是前缀为 **0x** 的十六进制数。 建议使用十六进制，因为符号标志以这种方式正确对齐。 使用此方法时要格外小心，因为它会设置整个位域并将覆盖所有符号处理程序默认值。 例如， **-sflags 0x401** 不仅会启用 SYMOPT \_ 精确符号，而且不 \_ \_ 区分大小写 \_ ，还会关闭通常默认启用的所有其他选项！
 
 如果在没有任何符号相关的命令行选项的情况下启动这些程序，则 total 标志位的默认值将在 WinDbg 中0x30237、在 CDB 和 KD 中为0xB0227，在 [this->dbh 工具](dbh.md)中为0x10C13。
 
@@ -203,7 +202,7 @@ ms.locfileid: "92254062"
 
 此符号选项称为 *延迟符号加载* 或 *延迟符号加载*。 处于活动状态时，在加载目标模块时，实际上不会加载符号。 而是在需要时由调试器加载符号。 有关详细信息，请参阅 [延迟符号加载](deferred-symbol-loading.md) 。
 
-默认情况下，在所有调试器中启用此选项。 在 CDB 和 KD 中，-s 命令行选项将关闭此选项。 还可以通过使用[tools.ini](configuring-tools-ini.md)文件中的**LAZYLOAD**变量在 CDB 中关闭它。 调试器运行后，可以使用 **. symopt + 0x4** 或. symopt-0x4 来打开或关闭此选项。
+默认情况下，在所有调试器中启用此选项。 在 CDB 和 KD 中，-s 命令行选项将关闭此选项。 还可以通过使用 [tools.ini](configuring-tools-ini.md)文件中的 **LAZYLOAD** 变量在 CDB 中关闭它。 调试器运行后，可以使用 **. symopt + 0x4** 或. symopt-0x4 来打开或关闭此选项。
 
 默认情况下，此选项在 THIS->DBH 中处于关闭状态。 THIS->DBH 运行后，可以通过分别使用 symopt + 4 或 symopt-4 来打开或关闭该功能。
 
@@ -219,7 +218,7 @@ ms.locfileid: "92254062"
 
 此符号选项允许从源文件中读取行号信息。 此选项必须为 on，源调试才能正常工作。
 
-在 KD 和 CDB 中，此选项在默认情况下是关闭的;在 WinDbg 中，默认情况下此选项处于启用状态。 在 CDB 和 KD 中，-line 命令行选项将启用此选项。 调试器运行后，可以分别使用 **. symopt + 0x10** 或 symopt-0x10 来打开或关闭它。 还可以通过使用 [** (切换源代码行支持) **](-lines--toggle-source-line-support-.md) 命令来打开和关闭它。
+在 KD 和 CDB 中，此选项在默认情况下是关闭的;在 WinDbg 中，默认情况下此选项处于启用状态。 在 CDB 和 KD 中，-line 命令行选项将启用此选项。 调试器运行后，可以分别使用 **. symopt + 0x10** 或 symopt-0x10 来打开或关闭它。 还可以通过使用 [**(切换源代码行支持)**](-lines--toggle-source-line-support-.md) 命令来打开和关闭它。
 
 默认情况下，此选项在 THIS->DBH 中处于启用状态。 THIS->DBH 运行后，可以使用 symopt + 10 或 symopt-10 分别打开或关闭该功能。
 
@@ -331,7 +330,7 @@ ms.locfileid: "92254062"
 
 仅 (内核模式) 此符号选项指示 [安全模式](secure-mode.md) 是否处于活动状态。
 
-默认情况下，所有调试器中的安全模式均为关闭状态。 可以使用-secure 命令行选项激活它。 如果调试器正在运行，处于休眠模式，并且尚未建立任何调试服务器，则可以通过使用 **. symopt + 0x40000** 或 [**安全 (激活安全模式) **](-secure--activate-secure-mode-.md)启用安全模式。
+默认情况下，所有调试器中的安全模式均为关闭状态。 可以使用-secure 命令行选项激活它。 如果调试器正在运行，处于休眠模式，并且尚未建立任何调试服务器，则可以通过使用 **. symopt + 0x40000** 或 [**安全 (激活安全模式)**](-secure--activate-secure-mode-.md)启用安全模式。
 
 默认情况下，此选项在 THIS->DBH 中处于关闭状态。 THIS->DBH 运行后，可以使用 symopt + 40000 或 symopt-40000 分别打开或关闭该功能。
 
@@ -343,7 +342,7 @@ ms.locfileid: "92254062"
 
 有关详细信息，请参阅 [防火墙和代理服务器](firewalls-and-proxy-servers.md)。
 
-在 KD 和 CDB 中，此选项在默认情况下是打开的;在 WinDbg 中，此选项在默认情况下处于关闭状态。 调试器运行后，可以使用 **. symopt + 0x80000** 或 symopt-0x80000 分别打开或关闭该调试器，然后 [** (再) **](-reload--reload-module-.md) 命令。 此外，还可以使用 [**！符号提示符 off**](-sym.md) 和 **！符号提示** 扩展命令，然后再执行 **. reload.sql (reload.sql Module) ** 命令来打开和关闭它。
+在 KD 和 CDB 中，此选项在默认情况下是打开的;在 WinDbg 中，此选项在默认情况下处于关闭状态。 调试器运行后，可以使用 **. symopt + 0x80000** 或 symopt-0x80000 分别打开或关闭该调试器，然后 [**(再)**](-reload--reload-module-.md) 命令。 此外，还可以使用 [**！符号提示符 off**](-sym.md) 和 **！符号提示** 扩展命令，然后再执行 **. reload.sql (reload.sql Module)** 命令来打开和关闭它。
 
 默认情况下，此选项在 THIS->DBH 中处于关闭状态。 THIS->DBH 运行后，可以使用 symopt + 80000 或 symopt-80000 分别打开或关闭该功能。
 
@@ -361,7 +360,7 @@ ms.locfileid: "92254062"
 
 默认情况下，此选项在所有调试器中处于关闭状态。 可以使用-n 命令行选项激活它。 调试器运行后，可以分别使用 **. symopt + 0x80000000** 或 symopt-0x80000000 来打开或关闭该调试器。 还可以通过使用 [**！符号干扰**](-sym.md) 和 **！符号 quiet** extension 命令来打开和关闭它。
 
-**注意**   不应将此选项与干扰*源*加载相混淆--由[**Srcnoisy (干扰源加载) **](-srcnoisy--noisy-source-loading-.md)命令。
+**注意**   不应将此选项与干扰 *源* 加载相混淆--由 [**Srcnoisy (干扰源加载)**](-srcnoisy--noisy-source-loading-.md) 命令。
 
  
 

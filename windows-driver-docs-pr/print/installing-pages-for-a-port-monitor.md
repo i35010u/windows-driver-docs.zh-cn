@@ -1,19 +1,18 @@
 ---
 title: 安装端口监视器的页面
 description: 安装端口监视器的页面
-ms.assetid: acb1a6f9-65d1-4097-b702-28dc4da8e4cf
 keywords:
-- 安装自定义打印网页 WDK
-- 自定义打印网页 WDK，安装
-- 端口监视 WDK 打印、 自定义 Web 页
+- 安装自定义的打印网页 WDK
+- 自定义的打印网页 WDK，安装
+- 端口监视 WDK 打印，自定义网页
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d9912601babe39bcdc84a5e0fe19010fe48f0a60
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 24254f565a44f43debe2b0da79179bce864f6edd
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63366570"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96835653"
 ---
 # <a name="installing-pages-for-a-port-monitor"></a>安装端口监视器的页面
 
@@ -21,9 +20,9 @@ ms.locfileid: "63366570"
 
 
 
-用于不使用标准 TCP/IP 端口监视器的打印机，可以提供自定义的打印机的详细信息页。 将页面的 ASP 文件，以及所有从属文件 （如.gif 文件或链接的网页的 ASP 文件） 放入监视器的子目录 (&lt;根&gt;\\&lt;监视器&gt;，其中&lt;监视&gt;监视器名称返回为在端口中匹配\_信息\_2 结构; 有关详细信息，请参阅 Microsoft Windows SDK 文档)。 监视器的安装程序必须执行此任务。
+你可以提供自定义的打印机详细信息页，以便与不使用标准 TCP/IP 端口监视器的打印机一起使用。 将页面的 ASP 文件以及所有从属文件 (如) 的链接页的 .gif 文件或 ASP 文件）放置在监视器子目录 (&lt; 根 &gt; \\ &lt; 监视器中 &gt; ，其中的 &lt; 监视器 &gt; 与端口信息2结构中返回的监视器名称匹配 \_ \_ ; 有关详细信息，请参阅 Microsoft Windows SDK 文档) 。 监视器的安装程序必须执行此任务。
 
-页面的初始 ASP 文件必须命名为 Page1.asp。 所有 ASP 文件的名称格式为页*N*.asp，其中*N*是 1、 2、 3，依此类推，microsoft 保留。
+页面的初始 ASP 文件必须命名为 Page1. .asp。 Microsoft 保留所有格式为 Page *n.*.ASP 的 asp 文件名，其中 *N* 为1、2、3等。
 
  
 

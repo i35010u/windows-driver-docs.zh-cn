@@ -1,15 +1,14 @@
 ---
 title: DSM \_ QueryLBPolicy \_ V2 WMI 类
 description: DSM \_ QueryLBPolicy \_ V2 WMI 类
-ms.assetid: 748db832-9ddb-4ca0-a229-9f5d95f5c24b
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: f926ad008a92d076f58799333a5cdefbb8ae9ffd
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: ed3c6d27e2aa535460102c7c3149f347d02e5fb6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89190225"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96835329"
 ---
 # <a name="dsm_querylbpolicy_v2-wmi-class"></a>DSM \_ QueryLBPolicy \_ V2 WMI 类
 

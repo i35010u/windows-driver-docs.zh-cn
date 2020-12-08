@@ -1,15 +1,14 @@
 ---
 title: ISCSI \_ DISCOVEREDTARGETPORTAL2 WMI 类
 description: ISCSI \_ DISCOVEREDTARGETPORTAL2 WMI 类
-ms.assetid: 3ca74715-2997-4f8b-9bca-062b14e404bf
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: c3cc3dc2d4c5bfa412523d1b7960c28a9fa7109d
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 0cba8003ffc39c11ec51ab67db6c93be6947df6d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89190191"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96835123"
 ---
 # <a name="iscsi_discoveredtargetportal2-wmi-class"></a>ISCSI \_ DISCOVEREDTARGETPORTAL2 WMI 类
 
@@ -20,7 +19,7 @@ ISCSI \_ DiscoveredTargetPortal2 类似于 [ISCSI \_ DiscoveredTargetPortal wmi 
 
 ISCSI \_ DISCOVEREDTARGETPORTAL2 wmi 类是 [ISCSI \_ TargetPortal wmi 类](iscsi-targetportal-wmi-class.md)提供的信息的超集，后者仅定义目标门户地址。
 
-ISCSI \_ DISCOVEREDTARGETPORTAL2 WMI 类是在 *发现*中定义的未发布的类。
+ISCSI \_ DISCOVEREDTARGETPORTAL2 WMI 类是在 *发现* 中定义的未发布的类。
 
 当 WMI 工具套件编译此类定义时，它将生成 [**ISCSI \_ DiscoveredTargetPortal2**](/windows-hardware/drivers/ddi/iscsifnd/ns-iscsifnd-_iscsi_discoveredtargetportal2) 数据结构
 

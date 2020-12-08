@@ -1,19 +1,18 @@
 ---
 title: Unidrv 渲染器
 description: Unidrv 渲染器
-ms.assetid: 5c19eb9c-149b-4587-a12d-f01164231b51
 keywords:
-- Unidrv、 呈现器
+- Unidrv，呈现器
 - 呈现器 WDK Unidrv
 - Unidrv WDK 打印
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 757707092f723c9a93b3bd2b08a91bb5497510a2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: be4c90d4a500f2043d7166a71ec8f7cb1b474dd4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63346521"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96835477"
 ---
 # <a name="unidrv-renderer"></a>Unidrv 渲染器
 
@@ -21,11 +20,11 @@ ms.locfileid: "63346521"
 
 
 
-Unidrv 呈现器作为[打印机图形 DLL](printer-graphics-dll.md) ，并因此将导出定义由 Microsoft 设备驱动程序接口 (DDI) 的图形驱动程序的函数。 当应用程序调用图形设备接口 (GDI) 函数将映像发送到打印机设备时，内核模式图形引擎会调用呈现器的图形 DDI 函数。 这些图形 DDI 函数帮助 GDI 绘制打印作业的页面图像。
+Unidrv 呈现器作为 [打印机图形 DLL](printer-graphics-dll.md) 实现，因此，导出由 Microsoft 设备驱动程序接口定义的函数， (DDI) 用于图形驱动程序。 当应用程序调用图形设备接口 (GDI) 函数将图像发送到打印机设备时，内核模式图形引擎将调用呈现器的图形 DDI 函数。 这些图形 DDI 函数有助于在绘图打印作业的页面图像时使用 GDI。
 
-程序还负责发送呈现器呈现图像数据，以及打印机命令序列，打印后台处理程序，后者随后将定向映像和命令指向打印机硬件。 呈现器发送的打印机命令中指定[Unidrv 微型驱动程序](unidrv-minidrivers.md)。
+呈现器还负责将呈现的图像数据以及打印机命令序列发送到打印后台处理程序，然后将映像和命令定向到打印机硬件。 呈现器发送的打印机命令在 [Unidrv 微型驱动程序](unidrv-minidrivers.md)中指定。
 
-可以通过提供修改 Unidrv 的呈现操作[呈现插件](rendering-plug-ins.md)。
+可以通过提供 [呈现插件](rendering-plug-ins.md)来修改 Unidrv 的呈现操作。
 
  
 

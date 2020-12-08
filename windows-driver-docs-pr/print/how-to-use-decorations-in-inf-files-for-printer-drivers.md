@@ -1,7 +1,6 @@
 ---
 title: 如何使用打印机驱动程序 INF 文件中的修饰
 description: 如何使用打印机驱动程序 INF 文件中的修饰
-ms.assetid: 772e2797-8019-4715-870c-b7cd2b8e65f2
 keywords:
 - 多处理器体系结构 WDK 打印机
 - 基于 x86 的驱动程序示例 WDK 打印机
@@ -11,12 +10,12 @@ keywords:
 - 修饰 INF WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4bf8269b2e1b080c5da33c60bc0c22fd9a4c16c6
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 31e5b2ee0c74acc02247ade6f8dfe944c14c29c1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89210609"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96835827"
 ---
 # <a name="how-to-use-decorations-in-inf-files-for-printer-drivers"></a>如何使用打印机驱动程序 INF 文件中的修饰
 

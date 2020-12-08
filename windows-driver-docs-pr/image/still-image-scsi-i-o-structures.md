@@ -1,15 +1,14 @@
 ---
 title: 静态图像 SCSI I/O 结构
 description: 静态图像 SCSI I/O 结构
-ms.assetid: 2cf17295-e3af-4109-bfdd-118aecf80bbe
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ee65f387e5c2b8db2a4158d0b452c2d5dd9c1451
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 07223d5551d64ac702d1000d9f0dd5aa072489f7
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90716212"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96836427"
 ---
 # <a name="still-image-scsi-io-structures"></a>静态图像 SCSI I/O 结构
 
@@ -27,7 +26,7 @@ ms.locfileid: "90716212"
 <thead>
 <tr class="header">
 <th>结构</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -44,5 +43,5 @@ ms.locfileid: "90716212"
 
  
 
-这些结构在 *scsiscan*中定义。
+这些结构在 *scsiscan* 中定义。
 

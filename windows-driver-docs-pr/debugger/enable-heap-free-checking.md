@@ -1,17 +1,16 @@
 ---
 title: 启用堆释放检查
 description: 启用堆释放检查
-ms.assetid: d97d6aac-608c-4c0a-8702-c078ed4820db
 keywords:
-- 启用堆免费检查 （全局标志）
+- " (全局标志启用堆免费检查) "
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e269447c45690ec48c6c188136aa5d324dfe869e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f2e3d0283cdeb4765dcd82cba4a3cca9ed5f8710
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63330703"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96834753"
 ---
 # <a name="enable-heap-free-checking"></a>启用堆释放检查
 
@@ -19,7 +18,7 @@ ms.locfileid: "63330703"
 ## <span id="ddk_enable_heap_free_checking_dtools"></span><span id="DDK_ENABLE_HEAP_FREE_CHECKING_DTOOLS"></span>
 
 
-**启用堆免费检查**标志时释放它验证每个堆分配。
+**启用堆自由检查** 标志会在释放每个堆分配后对其进行验证。
 
 <table>
 <colgroup>
@@ -41,16 +40,16 @@ ms.locfileid: "63330703"
 </tr>
 <tr class="even">
 <td align="left"><p><strong>目标</strong></p></td>
-<td align="left"><p>整个系统的注册表项、 内核标志和图像文件注册表项</p></td>
+<td align="left"><p>系统范围的注册表项、内核标志、映像文件注册表项</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-### <a name="span-idseealsospanspan-idseealsospansee-also"></a><span id="see_also"></span><span id="SEE_ALSO"></span>另请参阅
+### <a name="span-idsee_alsospanspan-idsee_alsospansee-also"></a><span id="see_also"></span><span id="SEE_ALSO"></span>另请参阅
 
-[启用堆结尾检查](enable-heap-tail-checking.md)，[启用堆参数检查](enable-heap-parameter-checking.md)
+[启用堆结尾检查](enable-heap-tail-checking.md)， [启用堆参数检查](enable-heap-parameter-checking.md)
 
  
 

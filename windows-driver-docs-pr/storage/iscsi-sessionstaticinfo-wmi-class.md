@@ -1,15 +1,14 @@
 ---
 title: ISCSI \_ SESSIONSTATICINFO WMI 类
 description: ISCSI \_ SESSIONSTATICINFO WMI 类
-ms.assetid: e6ef8389-c4f3-4498-9864-6e4c1e8ca5b5
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: a69d8a3b6108abb999518374271783faff8fb231
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: d67610fcd31941f7a4ae686e0c71971ade1280ad
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89185457"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96835093"
 ---
 # <a name="iscsi_sessionstaticinfo-wmi-class"></a>ISCSI \_ SESSIONSTATICINFO WMI 类
 
@@ -17,7 +16,7 @@ ms.locfileid: "89185457"
 ## <span id="ddk_iscsi_sessionstaticinfo_wmi_class_kr"></span><span id="DDK_ISCSI_SESSIONSTATICINFO_WMI_CLASS_KR"></span>
 
 
-ISCSI \_ SessionStaticInfo 类用于存储会话的静态特性。 此类在 *管理 mof*中定义为：
+ISCSI \_ SessionStaticInfo 类用于存储会话的静态特性。 此类在 *管理 mof* 中定义为：
 
 ```cpp
 class ISCSI_SessionStaticInfo {

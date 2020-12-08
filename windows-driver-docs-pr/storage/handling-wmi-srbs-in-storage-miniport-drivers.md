@@ -1,7 +1,6 @@
 ---
 title: 处理存储器微型端口驱动程序中的 WMI SRB
 description: 处理存储器微型端口驱动程序中的 WMI SRB
-ms.assetid: 92b78611-7e6f-4d77-9133-635df96584f0
 keywords:
 - 存储微型端口驱动程序 WDK，WMI SRBs
 - 微型端口驱动程序 WDK 存储，WMI SRBs
@@ -10,12 +9,12 @@ keywords:
 - SRB WMI 支持 WDK 存储
 ms.date: 10/08/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 15515cee83d7c2a23f5c460c58a2066aea234120
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 4220c93eb170684a4e0d76120f11a7dae3b0f227
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89188823"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96835193"
 ---
 # <a name="handling-wmi-srbs-in-storage-miniport-drivers"></a>处理存储器微型端口驱动程序中的 WMI SRB
 
@@ -29,7 +28,7 @@ ms.locfileid: "89188823"
 
 2. 实现微型端口驱动程序回调例程。
 
-    SCSI 端口 WMI 库可简化对小型端口驱动程序的 WMI SRBs 的处理。 若要使用 SCSI 端口 WMI 库，请实现[SCSI 微型端口驱动程序例程](scsi-miniport-driver-routines.md)中所述的*HwScsiWmiXxx*回调例程。
+    SCSI 端口 WMI 库可简化对小型端口驱动程序的 WMI SRBs 的处理。 若要使用 SCSI 端口 WMI 库，请实现 [SCSI 微型端口驱动程序例程](scsi-miniport-driver-routines.md)中所述的 *HwScsiWmiXxx* 回调例程。
 
 3. 将所需的代码添加到微型端口驱动 [**程序的 DriverEntry 的 SCSI 微型端口驱动程序**](driverentry-of-scsi-miniport-driver.md) 例程。
 

@@ -1,33 +1,32 @@
 ---
 title: 配置格式的改进
-description: V4 打印机驱动程序中的配置格式已经过改进，允许控制复制计数和标点符号的替换项。
-ms.assetid: 66FC6BAF-26DD-4E18-B8C9-0BF494346917
+description: V4 打印机驱动程序中的配置格式已经过改进，可以控制复制计数和标点替换。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 44c02b747e7f86229cea1fb608cf23178d474553
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 176430fa3a4868063344c4c60362d1a6a5e7976c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390577"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96835719"
 ---
 # <a name="improvements-in-configuration-formats"></a>配置格式的改进
 
 
-V4 打印机驱动程序中的配置格式已经过改进，允许控制复制计数和标点符号的替换项。
+V4 打印机驱动程序中的配置格式已经过改进，可以控制复制计数和标点替换。
 
-**份数**
+**复制计数**
 
-如果基于 GPD 的打印机驱动程序使用 XPS PCL6 呈现筛选器，但不支持硬件副本，它必须指定 **\*HardwareCopies**指令来实现对副本计数的控制。 如果指令为设置为 ON，或未指定，这会指示筛选器将硬件副本的相应 PCL6 命令发送到设备，以处理多个副本。 否则，如果指令设置为 OFF，该筛选器将生成的软件副本。
+如果基于 GPD 的打印机驱动程序使用的是 XPS 到 PCL6 呈现筛选器，但不支持硬件副本，则它必须指定 **\* HardwareCopies** 指令来实现对副本计数的控制。 如果指令设置为 ON 或未指定，则会指示筛选器将硬件副本的相应 PCL6 命令发送到设备，以处理多个副本。 否则，如果指令设置为 OFF，则筛选器将生成软件副本。
 
-**没有标点替换项**
+**无标点替换**
 
-由于历史实现中使用 v3 打印机驱动程序，而某些设备可能需要如句点 （.） 或连字符 （-） 用于 PrintCapabilities 和 PrintTicket 实现标点字符。 默认行为是字符替换项将继续进行。 若要配置标点字符代替，指定以下、 根级别的特性：
+由于使用 v3 打印机驱动程序的历史实现，某些设备可能需要标点符号（如句点 (）。 ) 或要在 PrintCapabilities 和 PrintTicket 实现中使用的连字符 ( ) 。 默认行为是将继续进行字符替换。 若要配置标点字符替换，请指定以下根级别属性：
 
 | 文件类型 | 指令                      | 所需的值 |
 |-----------|--------------------------------|----------------|
-| GPD       | \*NoPunctuationCharSubstitute? | True           |
-| PPD       | \*MSPunctuationCharSubstitute  | True           |
+| GPD       | \*NoPunctuationCharSubstitute? | 正确           |
+| 信息库       | \*MSPunctuationCharSubstitute  | 正确           |
 
  
 

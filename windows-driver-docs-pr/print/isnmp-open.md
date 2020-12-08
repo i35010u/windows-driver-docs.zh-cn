@@ -1,16 +1,15 @@
 ---
 title: ISNMP Open 方法
-description: Open 方法启用 ASP Web 页后，可以创建指定的 SNMP 代理的通信路径。
+description: 使用 Open 方法，ASP 网页可以创建到指定 SNMP 代理的通信路径。
 MS-HAID:
 - webfnc\_2be497fa-98d8-4fb3-997c-fa1345ed4648.xml
 - print.isnmp\_open
 MSHAttr:
 - PreferredSiteName:MSDN
 - PreferredLib:/library/windows/hardware
-ms.assetid: a5d1a8a2-5953-4b7f-8f8e-cb84520ae9e8
 keywords:
-- Open 方法打印设备
-- Open 方法打印设备，ISNMP 接口
+- 打开方法打印设备
+- 开放式方法打印设备，ISNMP 接口
 - ISNMP 接口打印设备，Open 方法
 topic_type:
 - apiref
@@ -22,48 +21,48 @@ api_type:
 - COM
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e5f5975b57e19f5dda2cb96ffe5788b1e9d14835
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fc99c544b0ac4de0521796c27430092348343758
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63384180"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96835503"
 ---
-# <a name="isnmpopen-method"></a>ISNMP::Open 方法
+# <a name="isnmpopen-method"></a>ISNMP：： Open 方法
 
-`Open`方法启用 ASP Web 页后，可以创建指定的 SNMP 代理的通信路径。
+`Open`方法使 ASP 网页能够创建到指定 SNMP 代理的通信路径。
 
 <a name="syntax"></a>语法
 ------
 
 ```cpp
 HRESULT Open(
-  [in] BSTR    bstrHost,
-  [in] BSTR    bstrCommunity,
-  [in] VARIANT varRetry,
-  [in] VARIANT varTimeout
+  [in] BSTR    bstrHost,
+  [in] BSTR    bstrCommunity,
+  [in] VARIANT varRetry,
+  [in] VARIANT varTimeout
 );
 ```
 
-<a name="parameters"></a>Parameters
+<a name="parameters"></a>参数
 ----------
 
-*bstrHost* \[in\]  
-调用方提供标识 SNMP 代理系统的字符串指针。 这可以是点分十进制 IP 地址或可被解析为 IP 地址、 IPX 地址 （采用 8.12 表示法） 或以太网地址的主机名称。
+*bstrHost* \[中\]  
+调用方提供的指向标识 SNMP 代理系统的字符串的指针。 此 IP 地址可以是以点分隔的 IP 地址，也可以是可解析为 IP 地址的主机名、IPX 地址 (8.12 表示法) 或以太网地址。
 
-*bstrCommunity* \[in\]  
-调用方提供表示 SNMP 代理系统的社区名称的字符串指针。
+*bstrCommunity* \[中\]  
+调用方提供的指向字符串的指针，该字符串表示 SNMP 代理系统的社区名称。
 
-*varRetry* \[in\]  
-可选的调用方提供的重试值。 如果未指定，使用默认值。 建议的值为 2。
+*varRetry* \[中\]  
+可选，调用方提供的重试值。 如果未指定，则使用默认值。 建议值为2。
 
-*varTimeout* \[in\]  
-可选的调用方提供的超时值，以毫秒为单位。 如果未指定，使用默认值。 建议的值为 1000年。
+*varTimeout* \[中\]  
+可选，调用方提供的超时值（以毫秒为单位）。 如果未指定，则使用默认值。 建议值为1000。
 
 <a name="return-value"></a>返回值
 ------------
 
-此外可以返回 Win32 错误代码。
+也可以返回 Win32 错误代码。
 
 <table>
 <colgroup>
@@ -83,20 +82,20 @@ HRESULT Open(
 </tr>
 <tr class="even">
 <td><strong>E_INVALIDARG</strong></td>
-<td><p>任一<em>varRetry</em>或<em>varTimeOut</em>值无法转换为短整型。</p></td>
+<td><p>无法将 <em>varRetry</em> 或 <em>varTimeOut</em> 值转换为短整型。</p></td>
 </tr>
 <tr class="odd">
 <td><strong>E_FAIL</strong></td>
-<td><p>在调用<strong>SnmpMgrOpen</strong>失败。</p></td>
+<td><p>对 <strong>SnmpMgrOpen</strong> 的调用失败。</p></td>
 </tr>
 </tbody>
 </table>
 
 ## <a name="vbscript-example"></a>VBScript 示例
 
-此方法调用**SnmpMgrOpen**函数，它具有相同的参数作为`ISNMP::Open`。 有关此函数的详细信息，请参阅 Windows SDK 文档。
+此方法调用 **SnmpMgrOpen** 函数，该函数与具有相同的参数 `ISNMP::Open` 。 有关此函数的详细信息，请参阅 Windows SDK 文档。
 
-之后`ISNMP::Open`调用中，SNMP 代理的通信路径保持打开状态，直到[ **ISNMP::Close** ](isnmp-close.md)调用方法时，或直到`ISNMP::Open`再次调用。
+调用后 `ISNMP::Open` ，SNMP 代理的通信路径保持打开状态，直到调用 [**ISNMP：： Close**](isnmp-close.md) 方法或 `ISNMP::Open` 再次调用。
 
 ```vb
 Dim StrIP, strCommunity, objSNMP
@@ -117,15 +116,15 @@ objSNMP.Open strIP, strCommunity, 2, 1000
 <tbody>
 <tr class="odd">
 <td><p>目标平台</p></td>
-<td>桌面设备</td>
+<td>台式机</td>
 </tr>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Olesnmp.h</td>
+<td><p>标头</p></td>
+<td>Olesnmp</td>
 </tr>
 </tbody>
 </table>
 
 ## <a name="see-also"></a>请参阅
 
-[**ISNMP::Close**](isnmp-close.md)
+[**ISNMP：： Close**](isnmp-close.md)

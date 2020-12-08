@@ -1,7 +1,6 @@
 ---
 title: 处理 IRP_MN_REGINFO 和 IRP_MN_REGINFO_EX 以注册块
 description: 处理 IRP_MN_REGINFO 和 IRP_MN_REGINFO_EX 以注册块
-ms.assetid: 2c17fc63-3c33-4d03-8c46-8d56242556d1
 keywords:
 - WMI WDK 内核，用 WMI 注册
 - 注册 WMI 数据提供程序
@@ -14,12 +13,12 @@ keywords:
 - 注册块
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1cb6de6e1ba285f184f34025a135a9023e8e69e0
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 1ed967bb29cc21e73f3c6176f17c9a98eb9fa60b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89188283"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96836407"
 ---
 # <a name="handling-irp_mn_reginfo-and-irp_mn_reginfo_ex-to-register-blocks"></a>处理 IRP \_ MN \_ REGINFO 和 irp \_ MN \_ REGINFO \_ EX to Register 块
 
@@ -33,7 +32,7 @@ ms.locfileid: "89188283"
 
 在这种情况下，驱动程序：
 
-1.  在[**WMIREGINFO**](/windows-hardware/drivers/ddi/wmistr/ns-wmistr-wmireginfow)结构中填充指定**Parameters.WMI.Buffer** ：
+1.  在 [**WMIREGINFO**](/windows-hardware/drivers/ddi/wmistr/ns-wmistr-wmireginfow)结构中填充指定 **Parameters.WMI.Buffer** ：
 
     -   驱动程序提供的所有注册数据的字节数，包括代表另一驱动程序提供的数据。
 
@@ -53,15 +52,15 @@ ms.locfileid: "89188283"
 
     如果正在向静态实例名称注册块，驱动程序将设置以下成员之一来指定块的静态实例名称数据：
 
-    -   如果驱动程序使用**Flags** WMIREG \_ 标志 \_ 实例列表设置标志 \_ ，则它会将**InstanceNameList**设置为静态实例名称字符串列表的偏移量。 WMI 通过索引向此列表指定后续请求中的实例。
+    -   如果驱动程序使用 **Flags** WMIREG \_ 标志 \_ 实例列表设置标志 \_ ，则它会将 **InstanceNameList** 设置为静态实例名称字符串列表的偏移量。 WMI 通过索引向此列表指定后续请求中的实例。
 
-    -   如果驱动程序使用**Flags** WMIREG \_ 标志 \_ 实例 BASENAME 设置标志 \_ ，则它会将**BaseNameOffset**设置为基名称字符串的偏移量。 WMI 使用此字符串生成块的静态实例名称。
+    -   如果驱动程序使用 **Flags** WMIREG \_ 标志 \_ 实例 BASENAME 设置标志 \_ ，则它会将 **BaseNameOffset** 设置为基名称字符串的偏移量。 WMI 使用此字符串生成块的静态实例名称。
 
-    -   如果驱动程序通过**Flags** WMIREG \_ 标志 \_ 实例 PDO 设置标志 \_ ，则会将**pdo**设置为传递给驱动程序的[*AddDevice*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_add_device)例程的 pdo。 WMI 使用 PDO 的设备实例路径为块生成静态实例名称。 处理**IRP \_ MN \_ REGINFO \_ EX**请求时，驱动程序必须在通过**Pdo**传递的物理设备对象上调用[**ObReferenceObject**](/windows-hardware/drivers/ddi/wdm/nf-wdm-obfreferenceobject)例程。  (系统将自动调用 [**ObDereferenceObject**](/windows-hardware/drivers/ddi/wdm/nf-wdm-obdereferenceobject) ，以取消对对象的引用;该驱动程序不能执行此操作。 ) 
+    -   如果驱动程序通过 **Flags** WMIREG \_ 标志 \_ 实例 PDO 设置标志 \_ ，则会将 **pdo** 设置为传递给驱动程序的 [*AddDevice*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_add_device)例程的 pdo。 WMI 使用 PDO 的设备实例路径为块生成静态实例名称。 处理 **IRP \_ MN \_ REGINFO \_ EX** 请求时，驱动程序必须在通过 **Pdo** 传递的物理设备对象上调用 [**ObReferenceObject**](/windows-hardware/drivers/ddi/wdm/nf-wdm-obfreferenceobject)例程。  (系统将自动调用 [**ObDereferenceObject**](/windows-hardware/drivers/ddi/wdm/nf-wdm-obdereferenceobject) ，以取消对对象的引用;该驱动程序不能执行此操作。 ) 
 
-    驱动程序将实例名称字符串或基名称字符串分别写入 **InstanceNameList** 或 **BaseName**所指示的偏移量。
+    驱动程序将实例名称字符串或基名称字符串分别写入 **InstanceNameList** 或 **BaseName** 所指示的偏移量。
 
-3.  如果驱动程序代表另一个驱动程序注册块 (作为类驱动程序可以代表 miniclass 驱动程序的驱动程序) ，则驱动程序将使用其他驱动程序块的注册信息填充另一[**WMIREGINFO**](/windows-hardware/drivers/ddi/wmistr/ns-wmistr-wmireginfow)结构和[**WMIREGGUID**](/windows-hardware/drivers/ddi/wmistr/ns-wmistr-wmiregguidw)结构列表，并将第一个**WMIREGINFO**中的**NextWmiRegInfo**设置为**从第一个 WMIREGINFO 开始**到第二个**WMIREGINFO**结构开始的偏移量（以字节为单位）。
+3.  如果驱动程序代表另一个驱动程序注册块 (作为类驱动程序可以代表 miniclass 驱动程序的驱动程序) ，则驱动程序将使用其他驱动程序块的注册信息填充另一 [**WMIREGINFO**](/windows-hardware/drivers/ddi/wmistr/ns-wmistr-wmireginfow)结构和 [**WMIREGGUID**](/windows-hardware/drivers/ddi/wmistr/ns-wmistr-wmiregguidw)结构列表，并将第一个 **WMIREGINFO** 中的 **NextWmiRegInfo** 设置为 **从第一个 WMIREGINFO 开始** 到第二个 **WMIREGINFO** 结构开始的偏移量（以字节为单位）。
 
  
 

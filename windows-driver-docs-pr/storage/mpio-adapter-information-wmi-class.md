@@ -1,15 +1,14 @@
 ---
 title: MPIO \_ 适配器 \_ 信息 WMI 类
 description: MPIO \_ 适配器 \_ 信息 WMI 类
-ms.assetid: 748205a5-d37b-4080-b6ce-9176139cef4a
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 6abb1222e8f358981e98fb1c92a2335921b0c1c6
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: f0d7921d42da2e43f993804f4735e9f56b4eb6ef
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89191291"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96835041"
 ---
 # <a name="mpio_adapter_information-wmi-class"></a>MPIO \_ 适配器 \_ 信息 WMI 类
 

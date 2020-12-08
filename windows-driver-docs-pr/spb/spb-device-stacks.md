@@ -1,22 +1,21 @@
 ---
 title: SPB 设备堆栈
 description: Acpi.sys 为 SPB 上的外围设备创建 PDO。
-ms.assetid: 21AB67A2-AA3C-4998-A532-78D6F6F76244
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 35811cc8e750cb6d801775a74dc676db97d26473
-ms.sourcegitcommit: a44ade167cdfb541cf1818e9f9e3726f23f90b66
+ms.openlocfilehash: ce0e8fe546cdc33b483379740e4f3371c8da6cec
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94361583"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96835391"
 ---
 # <a name="spb-device-stacks"></a>SPB 设备堆栈
 
 
 Windows 驱动模型完全分离了用于控制外围设备的驱动程序组件 (例如，从管理总线控制器的驱动程序组件的总线上的温度传感器) ，后者可在外围设备之间传输数据和控制信息。 这种隔离使外设的硬件供应商能够连接到简单的 [外围总线](/previous-versions/hh450903(v=vs.85)) (SPB) 来编写驱动程序，该驱动程序可控制设备的各种总线控制器、总线类型和硬件平台。 同样，SPB 控制器的硬件供应商可以为此控制器写入一个驱动程序，该驱动程序可以启用到各种外围设备的连接。
 
-在 Windows 中，连接到即插即用 (PnP) 总线的外围设备由两个或更多 [*设备对象*](../kernel/introduction-to-device-objects.md)表示。 此设备的设备对象按层次结构组织，以形成 *设备堆栈* 。 *功能* 设备对象 (FDO) 表示设备的内部状态，由控制外围设备内部功能的函数驱动程序创建和拥有。 堆栈中的 FDO 下是一个 (PDO) 的 *物理* 设备对象，表示设备与总线的连接。 PDO 由总线控制器驱动程序创建并拥有，该驱动程序检测并枚举 PnP 管理器的设备。 此 PDO 包含 (的信息，例如总线地址) 总线控制器通过总线访问设备所需的信息。 如果函数驱动程序需要总线控制器的帮助在设备上执行 i/o 操作，则函数驱动程序会将 i/o 请求数据包 (IRP 发送到 PDO) 设备堆栈，并且总线控制器驱动程序接收 IRP。 有关详细信息，请参阅 [设备对象和设备堆栈](../kernel/introduction-to-device-objects.md)。
+在 Windows 中，连接到即插即用 (PnP) 总线的外围设备由两个或更多 [*设备对象*](../kernel/introduction-to-device-objects.md)表示。 此设备的设备对象按层次结构组织，以形成 *设备堆栈*。 *功能* 设备对象 (FDO) 表示设备的内部状态，由控制外围设备内部功能的函数驱动程序创建和拥有。 堆栈中的 FDO 下是一个 (PDO) 的 *物理* 设备对象，表示设备与总线的连接。 PDO 由总线控制器驱动程序创建并拥有，该驱动程序检测并枚举 PnP 管理器的设备。 此 PDO 包含 (的信息，例如总线地址) 总线控制器通过总线访问设备所需的信息。 如果函数驱动程序需要总线控制器的帮助在设备上执行 i/o 操作，则函数驱动程序会将 i/o 请求数据包 (IRP 发送到 PDO) 设备堆栈，并且总线控制器驱动程序接收 IRP。 有关详细信息，请参阅 [设备对象和设备堆栈](../kernel/introduction-to-device-objects.md)。
 
 与此相反，SPB (例如，I i2c 或 SPI 总线) 不支持 PnP，并且 SPB 控制器驱动程序不会检测和枚举 SPB 上的外围设备。 相反，硬件平台的 ACPI 固件介绍了这些设备及其总线连接，并且 Acpi.sys 的 ACPI 驱动程序为 PnP 管理器枚举这些设备。
 

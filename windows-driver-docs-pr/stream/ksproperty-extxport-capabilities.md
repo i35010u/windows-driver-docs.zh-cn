@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ EXTXPORT \_ 功能
 description: KSPROPERTY \_ EXTXPORT \_ 功能属性检索外部设备的传输特定功能。
-ms.assetid: 5394d05c-0c3e-4413-a61e-21445117a350
 keywords:
 - KSPROPERTY_EXTXPORT_CAPABILITIES 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 85d14e9f06789e2fddf3dcfd510b312afc2efe80
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 9a1439c84161efd5ca795270d8f42fa3f6c5b021
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105404"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96834881"
 ---
 # <a name="ksproperty_extxport_capabilities"></a>KSPROPERTY \_ EXTXPORT \_ 功能
 
@@ -63,7 +62,7 @@ KSPROPERTY \_ EXTXPORT \_ 功能属性检索外部设备的传输特定功能。
 
  (操作数据) 的属性值是一个指定外部传输功能的 ULONG。
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 KSPROPERTY EXTXPORT 结构的 **功能** 成员 \_ \_ 介绍了传输特定的功能。

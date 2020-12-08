@@ -1,17 +1,16 @@
 ---
 title: IPrintCorePS2 COM 接口
 description: IPrintCorePS2 COM 接口
-ms.assetid: d5eb6962-2201-405f-9a22-2b11fb6d0360
 keywords:
 - IPrintCorePS2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d02e7803ca1fb65f019aa2d19b61787704953eab
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 75a05f1b0d68f13ac0cebe9634f6cc4f5452755f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90101736"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96835599"
 ---
 # <a name="iprintcoreps2-com-interface"></a>IPrintCorePS2 COM 接口
 
@@ -29,7 +28,7 @@ ms.locfileid: "90101736"
 <thead>
 <tr class="header">
 <th>方法</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>

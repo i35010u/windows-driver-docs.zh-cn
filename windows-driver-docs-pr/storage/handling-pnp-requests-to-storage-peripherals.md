@@ -1,7 +1,6 @@
 ---
 title: 处理对存储外设的 PnP 请求
 description: 处理对存储外设的 PnP 请求
-ms.assetid: 9c7ea576-11e6-46d7-b04c-ce412a0fc569
 keywords:
 - 外围设备 WDK 存储、PnP 请求
 - 存储外围设备 WDK、PnP 请求
@@ -9,12 +8,12 @@ keywords:
 - 即插即用 WDK 存储
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c834ce1fd344c31df4d443e585b693473b9ae03f
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: f7934f841beaad265e72e81665bcb965c1d7b523
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89187541"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96835223"
 ---
 # <a name="handling-pnp-requests-to-storage-peripherals"></a>处理对存储外设的 PnP 请求
 

@@ -1,17 +1,16 @@
 ---
 title: 使用 GetGlobalAttribute
 description: 使用 GetGlobalAttribute
-ms.assetid: 0e23ecba-7d89-44f5-b6a7-7d6be9a56765
 keywords:
 - GetGlobalAttribute
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 293b09cc5cd8bbcd0a958b046fa10fb5649956ec
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 37ce9d4ec7c711cca350181533c4537be505b270
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89209241"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96835433"
 ---
 # <a name="using-getglobalattribute"></a>使用 GetGlobalAttribute
 

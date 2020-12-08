@@ -1,17 +1,16 @@
 ---
-title: ISNMP GetList 方法
-description: GetList 方法，ASP 网页，以获得与数组 SNMP Oid 关联的值。
+title: ISNMP 执行 getlist 方法
+description: 使用执行 getlist 方法可以获取与 SNMP Oid 数组相关联的值。
 MS-HAID:
 - webfnc\_44ada708-01e2-42c3-8080-bd7cf0e46b0e.xml
 - print.isnmp\_getlist
 MSHAttr:
 - PreferredSiteName:MSDN
 - PreferredLib:/library/windows/hardware
-ms.assetid: 6ee90c77-578e-4c2c-b955-4b549625ca14
 keywords:
-- GetList 方法打印设备
-- GetList 方法打印设备，ISNMP 接口
-- ISNMP 接口打印设备，GetList 方法
+- 执行 getlist 方法打印设备
+- 执行 getlist 方法打印设备，ISNMP 接口
+- ISNMP 接口打印设备，执行 getlist 方法
 topic_type:
 - apiref
 api_name:
@@ -22,40 +21,40 @@ api_type:
 - COM
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c0005ceda8efe8fa4fa8d47c2b2e80a0395c0ed7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 494938b6e521da584bca517d93369c6c8b25aefe
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63384186"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96835507"
 ---
-# <a name="isnmpgetlist-method"></a>ISNMP::GetList 方法
+# <a name="isnmpgetlist-method"></a>ISNMP：：执行 getlist 方法
 
-`GetList`方法启用 ASP 网页，以获得与数组 SNMP Oid 关联的值。
+`GetList`方法使 ASP 网页能够获取与 SNMP oid 数组关联的值。
 
 <a name="syntax"></a>语法
 ------
 
 ```cpp
 HRESULT GetList(
-  [in]  VARIANT *varList,
-  [out] VARIANT *varValue
+  [in]  VARIANT *varList,
+  [out] VARIANT *varValue
 );
 ```
 
-<a name="parameters"></a>Parameters
+<a name="parameters"></a>参数
 ----------
 
-*varList* \[in\]  
-调用方提供的 SNMP OID 字符串数组指针。
+*varList* \[中\]  
+调用方提供的指向 SNMP OID 字符串的数组的指针。
 
-*varValue* \[out\]  
-调用方提供的位置接收的 SNMP OID 值数组的地址的指针。
+*varValue* \[弄\]  
+调用方提供的指向接收 SNMP OID 值数组地址的位置的指针。
 
 <a name="return-value"></a>返回值
 ------------
 
-此外可以返回 Win32 错误代码。
+也可以返回 Win32 错误代码。
 
 <table>
 <colgroup>
@@ -75,7 +74,7 @@ HRESULT GetList(
 </tr>
 <tr class="even">
 <td><strong>E_FAIL</strong></td>
-<td><p><strong>ISNMP::Open</strong>尚未调用方法。</p></td>
+<td><p>未调用 <strong>ISNMP：： Open</strong> 方法。</p></td>
 </tr>
 <tr class="odd">
 <td><strong>E_INVALIDARG</strong></td>
@@ -90,9 +89,9 @@ HRESULT GetList(
 
 ## <a name="vbscript-example"></a>VBScript 示例
 
-此方法调用**SnmpMgrRequest**函数获取 SNMP OID 值。 有关此函数的详细信息，请参阅 Windows SDK 文档。
+此方法调用 **SnmpMgrRequest** 函数以获取 SNMP OID 值。 有关此函数的详细信息，请参阅 Windows SDK 文档。
 
-[ **ISNMP::Open** ](isnmp-open.md)前必须调用方法`ISNMP::GetList`可以调用方法。
+必须先调用 [**ISNMP：： Open**](isnmp-open.md) 方法，然后才能 `ISNMP::GetList` 调用方法。
 
 ```vb
 Dim StrIP, strCommunity, objSNMP, OIDArray, OIDValueArray
@@ -115,15 +114,15 @@ OIDValueArray = objSNMP.GetList (OIDArray)
 <tbody>
 <tr class="odd">
 <td><p>目标平台</p></td>
-<td>桌面设备</td>
+<td>台式机</td>
 </tr>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Olesnmp.h</td>
+<td><p>标头</p></td>
+<td>Olesnmp</td>
 </tr>
 </tbody>
 </table>
 
 ## <a name="see-also"></a>请参阅
 
-[**ISNMP::Open**](isnmp-open.md)
+[**ISNMP：： Open**](isnmp-open.md)

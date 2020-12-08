@@ -1,7 +1,6 @@
 ---
 title: 将协议驱动程序移植到 NDIS 6.20 的更改摘要
 description: 将协议驱动程序移植到 NDIS 6.20 所要做出的更改摘要
-ms.assetid: d47b29a5-3385-4023-b94c-5cfbc225f48a
 keywords:
 - NDIS 6.20 WDK，移植协议驱动程序
 - 将协议驱动程序移植到 NDIS 6.20 WDK
@@ -9,12 +8,12 @@ keywords:
 - 协议驱动程序 WDK，移植到 NDIS 6.20
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6236ea178ea3e4f68b55e0fb031e734c7d95d2ae
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 612a0ff4b44aeacb1e8128c62af7bf420739e9a0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89214310"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96836283"
 ---
 # <a name="summary-of-changes-required-to-port-a-protocol-driver-to-ndis-620"></a>将协议驱动程序移植到 NDIS 6.20 所要做出的更改摘要
 
@@ -44,7 +43,7 @@ NDIS 6.20 保持与早期的 NDIS 版本的向后兼容性。 有关向后兼容
     有关支持超过64个处理器的详细信息，请参阅 [NDIS 6.20 中对超过64个处理器的支持](support-for-more-than-64-processors-in-ndis-6-20.md)。
 
 <a href="" id="driver-initialization-------"></a>**驱动程序初始化**   
--   在传递到[**NdisRegisterProtocolDriver**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisregisterprotocoldriver)函数的[**ndis \_ 协议 \_ 驱动程序 \_ 特征**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_protocol_driver_characteristics)结构的**MajorNdisVersion**和**MinorNdisVersion**成员中，将 ndis 版本设置为6.20。
+-   在传递到 [**NdisRegisterProtocolDriver**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisregisterprotocoldriver)函数的 [**ndis \_ 协议 \_ 驱动程序 \_ 特征**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_protocol_driver_characteristics)结构的 **MajorNdisVersion** 和 **MinorNdisVersion** 成员中，将 ndis 版本设置为6.20。
 
 -   将 NDIS 协议驱动程序特征结构的 **MajorDriverVersion** 和 **MinorDriverVersion** 成员中的协议驱动程序版本设置 \_ \_ \_ 为合适的特定于驱动程序的值。
 

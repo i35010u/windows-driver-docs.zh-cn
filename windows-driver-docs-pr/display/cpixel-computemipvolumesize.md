@@ -1,7 +1,6 @@
 ---
 title: CPixel ComputeMipVolumeSize 方法
-description: CPixel ComputeMipVolumeSize 方法确定将 mipmap 的纹理卷分配所需的内存量。
-ms.assetid: f759421a-a41e-4705-8a18-124f7efb059b
+description: CPixel ComputeMipVolumeSize 方法确定分配 mipmap 纹理卷所需的内存量。
 keywords:
 - ComputeMipVolumeSize 方法显示设备
 - ComputeMipVolumeSize 方法显示设备，CPixel 接口
@@ -16,53 +15,53 @@ api_type:
 - COM
 ms.date: 01/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: c308fcb3462440e902b071e73e608bc7c6ea7370
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: cf6b19f6c7f83210722af2bac8c3c89598ea0746
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390003"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96834641"
 ---
-# <a name="cpixelcomputemipvolumesize-method"></a>CPixel::ComputeMipVolumeSize 方法
+# <a name="cpixelcomputemipvolumesize-method"></a>CPixel：： ComputeMipVolumeSize 方法
 
 
-**CPixel::ComputeMipVolumeSize**方法确定将 mipmap 的纹理卷分配所需的内存量。
+**CPixel：： ComputeMipVolumeSize** 方法确定分配 mipmap 纹理卷所需的内存量。
 
 <a name="syntax"></a>语法
 ------
 
 ```ManagedCPlusPlus
 static UINT ComputeMipVolumeSize(
-   UINT      cpWidth,
-   UINT      cpHeight,
-   UINT      cpDepth,
-   UINT      cLevels,
+   UINT      cpWidth,
+   UINT      cpHeight,
+   UINT      cpDepth,
+   UINT      cLevels,
    D3DFORMAT Format
 );
 ```
 
-<a name="parameters"></a>Parameters
+<a name="parameters"></a>参数
 ----------
 
-*cpWidth*以像素为单位的 mipmap 卷指定的宽度。
+*cpWidth* 指定 mipmap 卷的宽度（以像素为单位）。
 
-*cpHeight*以像素为单位的 mipmap 卷指定的高度。
+*cpHeight* 指定 mipmap 卷的高度（以像素为单位）。
 
-*cpDepth*以像素为单位的 mipmap 卷指定的深度。
+*cpDepth* 指定 mipmap 卷的深度（以像素为单位）。
 
-*cLevels*指定 mipmap 卷纹理的级别数。
+*cLevels* 指定 mipmap 量纹理的级别数。
 
-*格式*D3DFORMAT 枚举中的值用于指定的图面上的格式。
+*格式* 使用 D3DFORMAT 枚举中的值指定表面格式。
 
 <a name="return-value"></a>返回值
 ------------
 
-返回的大小，以字节为单位的 mipmap 卷。
+返回 mipmap 卷的大小（以字节为单位）。
 
 <a name="remarks"></a>备注
 -------
 
-有关 D3DFORMAT 详细信息，请参阅 Microsoft DirectX SDK 文档。
+有关 D3DFORMAT 的详细信息，请参阅 Microsoft DirectX SDK 文档。
 
 <a name="requirements"></a>要求
 ------------
@@ -75,11 +74,11 @@ static UINT ComputeMipVolumeSize(
 <tbody>
 <tr class="odd">
 <td align="left"><p>目标平台</p></td>
-<td align="left">桌面设备</td>
+<td align="left">台式机</td>
 </tr>
 <tr class="even">
-<td align="left"><p>Header</p></td>
-<td align="left">Pixel.hpp （包括 Pixel.hpp）</td>
+<td align="left"><p>标头</p></td>
+<td align="left">Hpp (包含 hpp) </td>
 </tr>
 </tbody>
 </table>

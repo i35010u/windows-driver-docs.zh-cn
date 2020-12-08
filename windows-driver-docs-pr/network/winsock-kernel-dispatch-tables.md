@@ -1,7 +1,6 @@
 ---
 title: Winsock 内核调度表
 description: Winsock 内核调度表
-ms.assetid: 391c6868-fb85-41ea-ada5-6ba90750300c
 keywords:
 - Winsock 内核 WDK 网络，调度表
 - WSK WDK 网络，调度表
@@ -14,12 +13,12 @@ keywords:
 - 事件回调函数 WDK Winsock 内核
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f8497b00cd2f6e330777107b84246a19959a9e8e
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: b2d680b3e4c031a08bc8cef5b572b8f3c75bcf1f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107202"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96836251"
 ---
 # <a name="winsock-kernel-dispatch-tables"></a>Winsock 内核调度表
 
@@ -90,7 +89,7 @@ Winsock 内核 (WSK) 套接字的 [套接字对象](winsock-kernel-objects.md) �
 
  
 
-**注意**   基本套接字不支持任何事件回调函数。 因此，不会为基本套接字定义任何客户端调度表结构。
+**注意**  基本套接字不支持任何事件回调函数。 因此，不会为基本套接字定义任何客户端调度表结构。
 
  
 

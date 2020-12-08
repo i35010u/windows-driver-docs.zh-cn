@@ -4,7 +4,6 @@ description: IPrinterScriptUsbJobContextReturnCodes 接口表示 IHV 为其 Java
 MSHAttr:
 - PreferredSiteName:MSDN
 - PreferredLib:/library/windows/hardware
-ms.assetid: 8E34748E-B9F9-4404-9B40-04EA72EEA322
 keywords:
 - IPrinterScriptUsbJobContextReturnCodes 接口打印设备
 - IPrinterScriptUsbJobContextReturnCodes 接口打印设备，描述
@@ -16,12 +15,12 @@ api_type:
 - COM
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8bf16113db3441f950e805b3a39d927d64c2f909
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 301678f342e8bdff5903b291ba568ee49edba63d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89217151"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96835541"
 ---
 # <a name="iprinterscriptusbjobcontextreturncodes-interface"></a>IPrinterScriptUsbJobContextReturnCodes 接口
 
@@ -32,13 +31,13 @@ IPrinterScriptUsbJobContextReturnCodes 接口表示 IHV 为其 JavaScript 函数
 <a name="members"></a>成员
 -------
 
-**IPrinterScriptUsbJobContextReturnCodes**接口继承自[**IUnknown**](/windows/win32/api/unknwn/nn-unknwn-iunknown)接口。 **IPrinterScriptUsbJobContextReturnCodes** 还具有下列类型的成员：
+**IPrinterScriptUsbJobContextReturnCodes** 接口继承自 [**IUnknown**](/windows/win32/api/unknwn/nn-unknwn-iunknown)接口。 **IPrinterScriptUsbJobContextReturnCodes** 还具有下列类型的成员：
 
 -   [方法](#methods)
 
 ### <a name="methods"></a>方法
 
-**IPrinterScriptUsbJobContextReturnCodes**接口具有这些方法。
+**IPrinterScriptUsbJobContextReturnCodes** 接口具有这些方法。
 
 <table>
 <colgroup>
@@ -48,7 +47,7 @@ IPrinterScriptUsbJobContextReturnCodes 接口表示 IHV 为其 JavaScript 函数
 <thead>
 <tr class="header">
 <th>方法</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -86,7 +85,7 @@ IPrinterScriptUsbJobContextReturnCodes 接口表示 IHV 为其 JavaScript 函数
 <tbody>
 <tr class="odd">
 <td><p>最低受支持的客户端</p></td>
-<td><p>Windows 8.1</p></td>
+<td><p>Windows 8.1</p></td>
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>

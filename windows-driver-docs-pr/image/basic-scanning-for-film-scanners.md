@@ -1,15 +1,14 @@
 ---
 title: 底片扫描仪的基本扫描
 description: 底片扫描仪的基本扫描
-ms.assetid: ca25c14d-120e-4e53-9d57-ba5663536bae
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5a3133bb83c3e7b7478023ef7c368fd77b386eb3
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 74a0adc53db2ce78f7f64a2585046b09390f4d02
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89188087"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96836437"
 ---
 # <a name="basic-scanning-for-film-scanners"></a>底片扫描仪的基本扫描
 

@@ -1,17 +1,16 @@
 ---
 title: 轻量 MIP 贴图的 CPixel 支持方法
 description: 轻量 MIP 贴图的 CPixel 支持方法
-ms.assetid: 79204a0c-c3a8-4059-a1be-9febf20a8cbd
 keywords:
 - CPixel 接口，描述
 ms.date: 01/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 8832c0fc9935416ee37ab2b8614457086a0e84f6
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: c2247a812a8b22da7a19e694285ca944d8d96f4d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91733089"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96834619"
 ---
 # <a name="cpixel-support-methods-for-lightweight-mip-maps"></a>轻量 MIP 贴图的 CPixel 支持方法
 
@@ -23,7 +22,7 @@ ms.locfileid: "91733089"
 
 有关 *PixLib* 库的详细信息，请参阅硬件开发人员中心中的 [PixLib](/samples/browse/) 示例。
 
-要使你的驱动程序使用以下**CPixel**类方法，你必须在代码中包含*hpp*文件，并在生成驱动程序时链接到*PixLib。*
+要使你的驱动程序使用以下 **CPixel** 类方法，你必须在代码中包含 *hpp* 文件，并在生成驱动程序时链接到 *PixLib。*
 
 <table>
 <colgroup>
@@ -33,7 +32,7 @@ ms.locfileid: "91733089"
 <thead>
 <tr class="header">
 <th align="left">CPixel 类方法</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>

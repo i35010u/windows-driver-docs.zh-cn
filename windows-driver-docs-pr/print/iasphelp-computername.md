@@ -1,13 +1,12 @@
 ---
-title: Iasphelp get\_ComputerName 方法
-description: ComputerName 属性启用 ASP 网页，若要获取打印服务器的名称。
+title: Iasphelp 获取 \_ ComputerName 方法
+description: ComputerName 属性允许 ASP 网页获取打印服务器的名称。
 MS-HAID:
 - webfnc\_fd5c59b9-c223-4762-898d-693e9960619c.xml
 - print.iasphelp\_computername
 MSHAttr:
 - PreferredSiteName:MSDN
 - PreferredLib:/library/windows/hardware
-ms.assetid: 20fbd286-5b09-4c30-ae6c-4245854bc7b3
 keywords:
 - get_ComputerName 方法打印设备
 - get_ComputerName 方法打印设备，Iasphelp 接口
@@ -20,36 +19,36 @@ api_type:
 - COM
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b8f62d992c2123c5e3cbcb6df40c559ceba78a20
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fc0157e1e91fdfdbb43f7c7d9e29fed07294e944
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63392886"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96835795"
 ---
-# <a name="iasphelpgetcomputername-method"></a>Iasphelp::get\_ComputerName 方法
+# <a name="iasphelpget_computername-method"></a>Iasphelp：：获取 \_ ComputerName 方法
 
-**ComputerName**属性启用 ASP 网页，若要获取打印服务器的名称。
+**ComputerName** 属性允许 ASP 网页获取打印服务器的名称。
 
 <a name="syntax"></a>语法
 ------
 
 ```cpp
 HRESULT get_ComputerName(
-  [out] BSTR *pVal
+  [out] BSTR *pVal
 );
 ```
 
-<a name="parameters"></a>Parameters
+<a name="parameters"></a>参数
 ----------
 
-*pVal* \[out\]  
-调用方提供指向用于接收指向计算机名称字符串的指针的位置。
+*pVal* \[弄\]  
+调用方提供的指向接收指向计算机名称字符串的指针的位置的指针。
 
 <a name="return-value"></a>返回值
 ------------
 
-此方法可以返回下列值之一。
+此方法可以返回这些值之一。
 
 <table>
 <colgroup>
@@ -94,7 +93,7 @@ CompName = objPrinter.ComputerName
 <tbody>
 <tr class="odd">
 <td><p>目标平台</p></td>
-<td>桌面设备</td>
+<td>台式机</td>
 </tr>
 </tbody>
 </table>

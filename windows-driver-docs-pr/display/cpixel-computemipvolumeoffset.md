@@ -1,7 +1,6 @@
 ---
 title: CPixel ComputeMipVolumeOffset 方法
-description: CPixel ComputeMipVolumeOffset 方法确定 mipmap 卷纹理的子宗卷偏移量。
-ms.assetid: 4fb2f49a-2c1a-4b07-bbd3-76c4e345b243
+description: CPixel ComputeMipVolumeOffset 方法确定 mipmap 量纹理的 subvolume 偏移量。
 keywords:
 - ComputeMipVolumeOffset 方法显示设备
 - ComputeMipVolumeOffset 方法显示设备，CPixel 接口
@@ -16,17 +15,17 @@ api_type:
 - COM
 ms.date: 01/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: f05d5372ef430cc729bfe3a4d4fea6cac0108750
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e48cdead7d3a6debb8e19b3a3d9476a718547a2f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380433"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96834643"
 ---
-# <a name="cpixelcomputemipvolumeoffset-method"></a>CPixel::ComputeMipVolumeOffset 方法
+# <a name="cpixelcomputemipvolumeoffset-method"></a>CPixel：： ComputeMipVolumeOffset 方法
 
 
-**CPixel::ComputeMipVolumeOffset**方法确定 mipmap 卷纹理的子宗卷偏移量。
+**CPixel：： ComputeMipVolumeOffset** 方法确定 mipmap 量纹理的 subvolume 偏移量。
 
 <a name="syntax"></a>语法
 ------
@@ -34,25 +33,25 @@ ms.locfileid: "63380433"
 ```ManagedCPlusPlus
 static void  ComputeMipVolumeOffset(
    const D3DVOLUME_DESC *pDescTopLevel,
-         UINT           iLevel,
-         BYTE           *pBits,
-   const D3DBOX         *pBox,
-   const D3DLOCKED_BOX  *pLockedBoxData
+         UINT           iLevel,
+         BYTE           *pBits,
+   const D3DBOX         *pBox,
+   const D3DLOCKED_BOX  *pLockedBoxData
 );
 ```
 
-<a name="parameters"></a>Parameters
+<a name="parameters"></a>参数
 ----------
 
-*pDescTopLevel*指针，指向 D3DVOLUME\_DESC 结构描述 mipmap 的纹理卷的最高级别。
+*pDescTopLevel* 指向 \_ 描述 mipmap 纹理量顶层的 D3DVOLUME DESC 结构的指针。
 
-*iLevel*指定确定偏移量的 mipmap 卷级别。
+*iLevel* 指定确定偏移量的 mipmap 卷的级别。
 
-*pBits* mipmap 卷纹理的顶级开头的指针或**NULL**如果调用方只需偏移量。
+*pBits* 指向 mipmap 卷纹理顶层的开头的指针; 如果调用方只需要偏移量，则为 **NULL** 。
 
-*pBox*描述子宗卷的 D3DBOX 结构的指针或**NULL**如果调用方只需子项的开头。
+*pBox* 指向 D3DBOX 结构的指针，该结构描述 subvolume; 如果调用方只需要子部分的开头，则为 **NULL** 。
 
-*pLockedBoxData*指针，指向 D3DLOCKED\_框结构，它接收的指针或锁定的卷区域偏移量。
+*pLockedBoxData* 指向 D3DLOCKED \_ 框结构的指针，该结构接收锁定卷区域的指针或偏移量。
 
 <a name="return-value"></a>返回值
 ------------
@@ -62,9 +61,9 @@ static void  ComputeMipVolumeOffset(
 <a name="remarks"></a>备注
 -------
 
-最高级别和子宗卷，在给定的图面上的说明、 mipmap 卷的级别和指针**CPixel::ComputeMipVolumeOffset**返回的指针或偏移量到锁定的框区域**pBits**隶属 D3DLOCKED\_框中结构的时间**pLockedBoxData**。
+给定了表面说明，mipmap 卷的级别、指向顶层的指针和 subvolume、 **CPixel：： ComputeMipVolumeOffset** 将在 pBits 的 **D3DLOCKED 成员的 pLockedBoxData 成员** 中返回指针或偏移量 \_ 。 **pLockedBoxData**
 
-详细了解 D3DLOCKED\_中，D3DVOLUME\_DESC，以及 D3DBOX，请参阅 Microsoft DirectX SDK 文档。
+有关 D3DLOCKED \_ BOX、D3DVOLUME \_ DESC 和 D3DBOX 的详细信息，请参阅 MICROSOFT DirectX SDK 文档。
 
 <a name="requirements"></a>要求
 ------------
@@ -77,11 +76,11 @@ static void  ComputeMipVolumeOffset(
 <tbody>
 <tr class="odd">
 <td align="left"><p>目标平台</p></td>
-<td align="left">桌面设备</td>
+<td align="left">台式机</td>
 </tr>
 <tr class="even">
-<td align="left"><p>Header</p></td>
-<td align="left">Pixel.hpp （包括 Pixel.hpp）</td>
+<td align="left"><p>标头</p></td>
+<td align="left">Hpp (包含 hpp) </td>
 </tr>
 </tbody>
 </table>

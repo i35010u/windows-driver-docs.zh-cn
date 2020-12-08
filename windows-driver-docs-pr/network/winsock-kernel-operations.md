@@ -1,18 +1,17 @@
 ---
 title: Winsock 内核操作主题
 description: Winsock 内核操作主题
-ms.assetid: 5e336c62-8808-418e-8bd4-d54c4c747854
 keywords:
 - Winsock 内核 WDK 网络，操作
 - WSK WDK 网络，操作
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cb22866e9a096f5fdab243654a9ca505b7e6beac
-ms.sourcegitcommit: 93c924b8f409fc7f704cc67cc026d70b8ad25d30
+ms.openlocfilehash: 5fff8f4091c4194e6dd2233a383058399f8261f8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91739489"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96836231"
 ---
 # <a name="winsock-kernel-operations-topics"></a>Winsock 内核操作主题
 

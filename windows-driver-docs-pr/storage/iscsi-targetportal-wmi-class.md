@@ -1,15 +1,14 @@
 ---
 title: ISCSI \_ TARGETPORTAL WMI 类
 description: ISCSI \_ TARGETPORTAL WMI 类
-ms.assetid: b163b2e7-8f12-4cd2-a682-7b755f28792e
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 5f2e628616717f1e549a727b2e6a73276414ac91
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 419d219219f0b7ce73ead8b05516fa18349d98ee
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89187807"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96835077"
 ---
 # <a name="iscsi_targetportal-wmi-class"></a>ISCSI \_ TARGETPORTAL WMI 类
 
@@ -19,7 +18,7 @@ ms.locfileid: "89187807"
 
 ISCSI \_ TargetPortal 类定义目标门户。 此定义包含套接字号和 IP 地址，独立于发起方和目标使用的 IP 协议的版本。
 
-此类在 *Common mof*中定义为：
+此类在 *Common mof* 中定义为：
 
 ```cpp
 class ISCSI_TargetPortal {

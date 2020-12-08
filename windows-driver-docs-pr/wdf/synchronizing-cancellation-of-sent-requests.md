@@ -1,7 +1,6 @@
 ---
 title: 将取消已发送请求的操作同步
 description: 将取消已发送请求的操作同步
-ms.assetid: e7ec65c9-bc7b-46ea-853d-3e23b1763666
 keywords:
 - 请求处理 WDK KMDF，取消请求
 - I/o 请求 WDK KMDF，取消
@@ -11,12 +10,12 @@ keywords:
 - 已发送请求取消 WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c37408b7bbc7ce11c5ee579cee39e69cb9a30f75
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 093ab7cdbe11191ffb67d8bde70bc20e2279e77f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89190745"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96836577"
 ---
 # <a name="synchronizing-cancellation-of-sent-requests"></a>将取消已发送请求的操作同步
 

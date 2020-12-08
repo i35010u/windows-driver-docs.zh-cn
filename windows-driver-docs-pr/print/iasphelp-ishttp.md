@@ -1,13 +1,12 @@
 ---
-title: Iasphelp get\_IsHTTP 方法
-description: IsHTTP 属性启用 ASP 网页，以确定是否将打印机连接到 HTTP 端口。
+title: Iasphelp get \_ IsHTTP 方法
+description: 使用 IsHTTP 属性可以使 ASP 网页确定打印机是否已连接到 HTTP 端口。
 MS-HAID:
 - webfnc\_e3e58eea-498f-4e85-8072-2c49ac50d733.xml
 - print.iasphelp\_ishttp
 MSHAttr:
 - PreferredSiteName:MSDN
 - PreferredLib:/library/windows/hardware
-ms.assetid: 54aaed11-8f18-433b-b774-c695a85b813e
 keywords:
 - get_IsHTTP 方法打印设备
 - get_IsHTTP 方法打印设备，Iasphelp 接口
@@ -20,36 +19,36 @@ api_type:
 - COM
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9f6058d7e5de23aa7b556a7a87241dabfdaaa976
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 372ed2860d95cd5a7553ffc388ed31a2726ce08d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63392851"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96835779"
 ---
-# <a name="iasphelpgetishttp-method"></a>Iasphelp::get\_IsHTTP 方法
+# <a name="iasphelpget_ishttp-method"></a>Iasphelp：： get \_ IsHTTP 方法
 
-**IsHTTP**属性启用 ASP 网页，以确定是否将打印机连接到 HTTP 端口。
+使用 **IsHTTP** 属性可以使 ASP 网页确定打印机是否已连接到 HTTP 端口。
 
 <a name="syntax"></a>语法
 ------
 
 ```cpp
 HRESULT get_IsHTTP(
-  [out] BOOL *pVal
+  [out] BOOL *pVal
 );
 ```
 
-<a name="parameters"></a>Parameters
+<a name="parameters"></a>参数
 ----------
 
-*pVal* \[out\]  
-指向接收的内存位置的调用方提供指针 **，则返回 TRUE**如果打印机已连接到 HTTP 端口，并**FALSE**否则为。
+*pVal* \[弄\]  
+如果打印机连接到 HTTP 端口，则调用方提供的指向内存位置的指针，如果打印机已连接到 HTTP 端口，则为 **TRUE** ; 否则为 **FALSE** 。
 
 <a name="return-value"></a>返回值
 ------------
 
-下表中，该属性返回的值之一。
+属性返回下表中的值之一。
 
 <table>
 <colgroup>
@@ -69,7 +68,7 @@ HRESULT get_IsHTTP(
 </tr>
 <tr class="even">
 <td><strong>E_HANDLE</strong></td>
-<td><p><a href="iasphelp-open.md" data-raw-source="[&lt;strong&gt;Iasphelp::Open&lt;/strong&gt;](iasphelp-open.md)"> <strong>Iasphelp::Open</strong> </a>尚未调用方法。</p></td>
+<td><p>未调用 <a href="iasphelp-open.md" data-raw-source="[&lt;strong&gt;Iasphelp::Open&lt;/strong&gt;](iasphelp-open.md)"><strong>Iasphelp：： Open</strong></a> 方法。</p></td>
 </tr>
 <tr class="odd">
 <td><strong>E_OUTOFMEMORY</strong></td>
@@ -80,7 +79,7 @@ HRESULT get_IsHTTP(
 
 ## <a name="vbscript-example"></a>VBScript 示例
 
-[ **Iasphelp::Open** ](iasphelp-open.md)前必须调用方法**Iasphelp::IsHTTP**属性可以进行查询。
+在查询 **Iasphelp：： IsHTTP** 属性之前，必须先调用 [**Iasphelp：： Open**](iasphelp-open.md)方法。
 
 ```vb
 Dim objPrinter, IsHTTPPort
@@ -101,11 +100,11 @@ IsHTTPPort = objPrinter.IsHTTP
 <tbody>
 <tr class="odd">
 <td><p>目标平台</p></td>
-<td>桌面设备</td>
+<td>台式机</td>
 </tr>
 </tbody>
 </table>
 
 ## <a name="see-also"></a>请参阅
 
-[**Iasphelp::Open**](iasphelp-open.md)
+[**Iasphelp：： Open**](iasphelp-open.md)

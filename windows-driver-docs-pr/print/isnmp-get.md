@@ -1,15 +1,14 @@
 ---
 title: ISNMP Get 方法
-description: Get 方法启用 ASP 网页，以获取标识 SNMP OID 的值。
+description: Get 方法使 ASP 网页能够获取由 SNMP OID 标识的值。
 MS-HAID:
 - webfnc\_e3167766-cd60-4ae7-9c06-9a1ccb5ac3b9.xml
 - print.isnmp\_get
 MSHAttr:
 - PreferredSiteName:MSDN
 - PreferredLib:/library/windows/hardware
-ms.assetid: 0cecdc34-63d9-46da-ba4e-a44780f5bb25
 keywords:
-- Get 方法打印设备
+- 获取方法打印设备
 - 获取方法打印设备，ISNMP 接口
 - ISNMP 接口打印设备，Get 方法
 topic_type:
@@ -22,40 +21,40 @@ api_type:
 - COM
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e938b7782787e61f2b741848e54a00da6e0a1892
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fd17239b9186e9be40ffd06a0049fa7146d53447
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63384193"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96835509"
 ---
-# <a name="isnmpget-method"></a>ISNMP::Get 方法
+# <a name="isnmpget-method"></a>ISNMP：： Get 方法
 
-`Get`方法启用 ASP 网页，以获取标识 SNMP OID 的值。
+使用 `Get` 方法，ASP 网页可以获取由 SNMP OID 标识的值。
 
 <a name="syntax"></a>语法
 ------
 
 ```cpp
 HRESULT Get(
-  [in]  BSTR    bstrOID,
-  [out] VARIANT *varValue
+  [in]  BSTR    bstrOID,
+  [out] VARIANT *varValue
 );
 ```
 
-<a name="parameters"></a>Parameters
+<a name="parameters"></a>参数
 ----------
 
-*bstrOID* \[in\]  
-调用方提供指向 OID 字符串指针。
+*bstrOID* \[中\]  
+调用方提供的 OID 字符串指针。
 
-*varValue* \[out\]  
-要接收的 OID 值的调用方提供的位置。
+*varValue* \[弄\]  
+调用方提供的用于接收 OID 值的位置。
 
 <a name="return-value"></a>返回值
 ------------
 
-此外可以返回 Win32 错误代码。
+也可以返回 Win32 错误代码。
 
 <table>
 <colgroup>
@@ -75,7 +74,7 @@ HRESULT Get(
 </tr>
 <tr class="even">
 <td><strong>E_FAIL</strong></td>
-<td><p><strong>ISNMP::Open</strong>尚未调用方法。</p></td>
+<td><p>未调用 <strong>ISNMP：： Open</strong> 方法。</p></td>
 </tr>
 <tr class="odd">
 <td><strong>E_INVALIDARG</strong></td>
@@ -90,9 +89,9 @@ HRESULT Get(
 
 ## <a name="vbscript-example"></a>VBScript 示例
 
-此方法调用**SnmpMgrRequest**函数获取的 OID 值。 有关此函数的详细信息，请参阅 Windows SDK 文档。
+此方法调用 **SnmpMgrRequest** 函数以获取 OID 值。 有关此函数的详细信息，请参阅 Windows SDK 文档。
 
-[ **ISNMP::Open** ](isnmp-open.md)前必须调用方法`ISNMP::Get`可以调用方法。
+必须先调用 [**ISNMP：： Open**](isnmp-open.md) 方法，然后才能 `ISNMP::Get` 调用方法。
 
 ```vb
 Dim StrIP, strCommunity, objSNMP, OIDValue
@@ -114,15 +113,15 @@ OIDValue = objSNMP.Get ("43.18.1.1.2")
 <tbody>
 <tr class="odd">
 <td><p>目标平台</p></td>
-<td>桌面设备</td>
+<td>台式机</td>
 </tr>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Olesnmp.h</td>
+<td><p>标头</p></td>
+<td>Olesnmp</td>
 </tr>
 </tbody>
 </table>
 
 ## <a name="see-also"></a>请参阅
 
-[**ISNMP::Open**](isnmp-open.md)
+[**ISNMP：： Open**](isnmp-open.md)

@@ -1,18 +1,17 @@
 ---
 title: 打印提供程序定义的函数
 description: 打印提供程序定义的函数
-ms.assetid: 4fae4b69-ed4b-47b6-b6e8-41733aed51a5
 keywords:
 - 打印提供程序 WDK，函数
 - 函数 WDK 打印提供程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9c12a8bc3d4091f4ed016feb84ac578ccdecd028
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 0fdb724473748006193bf8e8c703e0554b738f56
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106718"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96836037"
 ---
 # <a name="functions-defined-by-print-providers"></a>打印提供程序定义的函数
 
@@ -20,7 +19,8 @@ ms.locfileid: "90106718"
 
 
 
-**警告**   从 Windows 10 开始，不推荐使用支持第三方打印提供程序的 Api。 Microsoft 不建议对第三方打印提供商进行任何投资。 此外，在可用 v4 打印驱动程序模型的 Windows 8 和更高版本产品上，第三方打印提供商可能不会创建或管理使用 v4 打印驱动程序的队列。
+**警告**  
+从 Windows 10 开始，不推荐使用支持第三方打印提供程序的 Api。 Microsoft 不建议对第三方打印提供商进行任何投资。 此外，在可用 v4 打印驱动程序模型的 Windows 8 和更高版本产品上，第三方打印提供商可能不会创建或管理使用 v4 打印驱动程序的队列。
 
  
 
@@ -66,7 +66,7 @@ ms.locfileid: "90106718"
 <thead>
 <tr class="header">
 <th>函数</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -89,7 +89,7 @@ ms.locfileid: "90106718"
 <thead>
 <tr class="header">
 <th>函数</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -164,7 +164,7 @@ ms.locfileid: "90106718"
 <thead>
 <tr class="header">
 <th>函数</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -215,7 +215,7 @@ ms.locfileid: "90106718"
 <thead>
 <tr class="header">
 <th>函数</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -266,7 +266,7 @@ ms.locfileid: "90106718"
 
  
 
-**注意**   **System.printing.printqueue.addjob**.。。**ScheduleJob**序列是**StartDocPrinter**的一种替代方法。**EndDocPrinter**序列。
+**注意**  **System.printing.printqueue.addjob**.。。**ScheduleJob** 序列是 **StartDocPrinter** 的一种替代方法。**EndDocPrinter** 序列。
 
  
 
@@ -280,7 +280,7 @@ ms.locfileid: "90106718"
 <thead>
 <tr class="header">
 <th>函数</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -314,7 +314,7 @@ ms.locfileid: "90106718"
 <thead>
 <tr class="header">
 <th>函数</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -377,7 +377,7 @@ ms.locfileid: "90106718"
 <thead>
 <tr class="header">
 <th>函数</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -408,7 +408,7 @@ ms.locfileid: "90106718"
 <thead>
 <tr class="header">
 <th>函数</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -454,7 +454,7 @@ ms.locfileid: "90106718"
 <thead>
 <tr class="header">
 <th>函数</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -513,7 +513,7 @@ ms.locfileid: "90106718"
 <thead>
 <tr class="header">
 <th>函数</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>

@@ -1,25 +1,24 @@
 ---
-title: 加密\_类型\_限定符
-description: 加密\_类型\_限定符
-ms.assetid: a1caedb8-18ab-4810-ac46-691925df250e
+title: 加密 \_ 类型 \_ 限定符
+description: 加密 \_ 类型 \_ 限定符
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 5f5b6b6e139ed6eacb8df1b1712b909ecdbeb7ca
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 88e0aefa11bd31e9d9d22b5f346386cf79170b9c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380651"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96835311"
 ---
-# <a name="encryptiontypesqualifiers"></a>加密\_类型\_限定符
+# <a name="encryption_types_qualifiers"></a>加密 \_ 类型 \_ 限定符
 
 
 ## <span id="ddk_encryption_types_qualifiers_kr"></span><span id="DDK_ENCRYPTION_TYPES_QUALIFIERS_KR"></span>
 
 
-加密\_类型\_限定符 WMI 属性限定符的值，用于指示哪些形式的加密 HBA 支持一组相对应。
+加密 \_ 类型 \_ 限定符 WMI 属性限定符对应于一组值，这些值指示 HBA 支持的加密形式。
 
-下表描述了与加密相关联的值\_类型\_限定符属性限定符。
+下表描述了与加密 \_ 类型限定符属性限定符关联的值 \_ 。
 
 <table>
 <colgroup>
@@ -43,7 +42,7 @@ ms.locfileid: "63380651"
 </tr>
 <tr class="odd">
 <td align="left"><p>ISCSI_ENCRYPT_AES_CTR</p></td>
-<td align="left"><p>HBA 支持使用 XCBC AES CTR CBC MAC 加密。</p></td>
+<td align="left"><p>HBA 支持通过 XCBC 进行 AES CTR/CBC MAC 加密。</p></td>
 </tr>
 </tbody>
 </table>

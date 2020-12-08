@@ -1,25 +1,24 @@
 ---
-title: ISCSI\_连接\_状态\_类型\_限定符
-description: ISCSI\_连接\_状态\_类型\_限定符
-ms.assetid: 53242205-4fd3-471d-abe2-35474491b29d
+title: ISCSI \_ 连接 \_ 状态 \_ 类型 \_ 限定符
+description: ISCSI \_ 连接 \_ 状态 \_ 类型 \_ 限定符
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: de5a7bebe25dc2c725ef2cd32e8b8078db200dff
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6609b1b777c00216432319a90569293819b689db
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63372762"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96835145"
 ---
-# <a name="iscsiconnectionstatetypequalifiers"></a>ISCSI\_连接\_状态\_类型\_限定符
+# <a name="iscsi_connection_state_type_qualifiers"></a>ISCSI \_ 连接 \_ 状态 \_ 类型 \_ 限定符
 
 
 ## <span id="ddk_iscsi_connection_state_type_qualifiers_kr"></span><span id="DDK_ISCSI_CONNECTION_STATE_TYPE_QUALIFIERS_KR"></span>
 
 
-ISCSI\_连接\_状态\_类型\_限定符 WMI 属性限定符对应于一组表示连接状态的值。
+ISCSI \_ 连接 \_ 状态 \_ 类型 \_ 限定符 WMI 属性限定符对应于一组表示连接状态的值。
 
-下表描述了 ISCSI\_连接\_状态\_类型\_限定符值。
+下表描述了 ISCSI \_ 连接 \_ 状态 \_ 类型 \_ 限定符值。
 
 <table>
 <colgroup>
@@ -35,15 +34,15 @@ ISCSI\_连接\_状态\_类型\_限定符 WMI 属性限定符对应于一组表�
 <tbody>
 <tr class="odd">
 <td align="left"><p>0</p></td>
-<td align="left"><p>连接为在登录请求阶段。 已建立连接，但目标仍未发送的最后一位集的有效的登录响应。</p></td>
+<td align="left"><p>连接在 "登录请求" 阶段。 已建立连接，但目标仍未发送最终位集的有效登录响应。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>1</p></td>
-<td align="left"><p>目标已发送的最后一位集的有效的登录响应，该连接是在完整的功能阶段中，发起方可以将 SCSI 命令和数据发送到目标。</p></td>
+<td align="left"><p>目标已经发送了一个有效的登录响应，并设置了最后一个位，该连接处于完全功能阶段，发起方可以向目标发送 SCSI 命令和数据。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>2</p></td>
-<td align="left"><p>发起方发送有效注销命令，但尚未关闭连接。</p></td>
+<td align="left"><p>发起方发送了有效的注销命令，但连接尚未关闭。</p></td>
 </tr>
 </tbody>
 </table>

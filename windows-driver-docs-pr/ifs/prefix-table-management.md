@@ -1,7 +1,6 @@
 ---
 title: 前缀表管理
 description: 前缀表管理
-ms.assetid: a48ed460-fab9-4a6d-bd2f-454b4932ea61
 keywords:
 - RDBSS WDK 文件系统，前缀表
 - 重定向驱动器缓冲子系统 WDK 文件系统，前缀表
@@ -10,12 +9,12 @@ keywords:
 - 版本戳记 WDK RDBSS
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3f328295e7dcc7b699e86978104aa693d9770041
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 4a8473f13e8a7eedc4ad090eb4a76646cb2174ee
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104524"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96836441"
 ---
 # <a name="prefix-table-management"></a>前缀表管理
 
@@ -43,11 +42,11 @@ RDBSS 中的名称管理的当前实现使用具有以下组件的表：
 
 这些前缀表管理例程由 RDBSS 在内部使用，以响应 MUP 发出的调用，以声明名称或形成 NET 根结构的创建路径 \_ 。 这些 RDBSS 前缀表管理例程还可以由网络小型重定向程序使用，前提是在访问表之前获取适当的锁，并且在工作完成时释放锁。 驱动程序的正常使用情况如下所示：
 
--   通过调用 **RxAcquirePrefixTableLockShared**获取共享锁。
+-   通过调用 **RxAcquirePrefixTableLockShared** 获取共享锁。
 
 -   通过调用 [**RxPrefixTableLookupName**](/windows-hardware/drivers/ddi/prefix/nf-prefix-rxprefixtablelookupname)查找名称。
 
--   通过调用 **RxReleasePrefixTableLock**释放共享锁。
+-   通过调用 **RxReleasePrefixTableLock** 释放共享锁。
 
 请注意，某些例程仅在 Windows XP 和早期版本的 Windows 上实现。 [**RxPrefixTableLookupName**](/windows-hardware/drivers/ddi/prefix/nf-prefix-rxprefixtablelookupname) 是在所有版本的 Windows 上实现的唯一前缀表管理例程
 
@@ -61,7 +60,7 @@ RDBSS 前缀表管理例程包括：
 <thead>
 <tr class="header">
 <th align="left">例程所返回的值</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>

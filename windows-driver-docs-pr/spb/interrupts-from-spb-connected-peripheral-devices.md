@@ -1,15 +1,14 @@
 ---
 title: 来自 SPB 连接的外围设备的中断
 description: 与 PCI （如 PCI）不同，简单的外围总线 (SPB) （例如，i2c 或 SPI）不提供标准化的、特定于总线的方式来将中断请求传达给处理器。
-ms.assetid: E302BB21-582E-494E-9ADD-72703EF32446
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 06d7f72cb220af57a831710d8b483348b3be685a
-ms.sourcegitcommit: c766ab74e32eb44795cbbd1a4f352d3a6a9adc14
+ms.openlocfilehash: 03eb0050156ecd331641c0cd1c4b85c95536fade
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89389563"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96835435"
 ---
 # <a name="interrupts-from-spb-connected-peripheral-devices"></a>来自 SPB 连接的外围设备的中断
 
@@ -33,7 +32,7 @@ ms.locfileid: "89389563"
 
 从 Windows 8 开始， [用户模式驱动程序框架](../wdf/overview-of-the-umdf.md) (umdf) 支持用于 umdf 驱动程序的 isr。 用于 SPB 外围设备的 UMDF 驱动程序会调用 [**IWDFDevice3：： CreateInterrupt**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdevice3-createinterrupt) 方法，将 ISR 连接到设备上的中断。 当设备通知中断请求时，内核的陷阱处理程序会将 ISR 计划为在被动级别运行。 有关详细信息，请参阅 [访问硬件和处理中断](../wdf/accessing-hardware-and-handling-interrupts.md)。
 
-从 Windows 8 开始， [内核模式驱动程序框架](../wdf/index.md) (KMDF) 支持被动级 isr。 用于 SPB 外围设备的 KMDF 驱动程序调用 [**WdfInterruptCreate**](/windows-hardware/drivers/ddi/wdfinterrupt/nf-wdfinterrupt-wdfinterruptcreate) 方法，将被动级别 ISR 连接到设备中断。 此方法的输入参数之一是指向 [**WDF \_ 中断 \_ CONFIG**](/windows-hardware/drivers/ddi/wdfinterrupt/ns-wdfinterrupt-_wdf_interrupt_config) 结构的指针，该结构包含中断的配置信息。 若要将 ISR 配置为在被动级别运行，请将此结构的 **PassiveHandling** 成员设置为 **TRUE**。 有关详细信息，请参阅 [支持被动级别中断](../wdf/supporting-passive-level-interrupts.md)。
+从 Windows 8 开始， [内核模式驱动程序框架](../wdf/index.md) (KMDF) 支持被动级 isr。 用于 SPB 外围设备的 KMDF 驱动程序调用 [**WdfInterruptCreate**](/windows-hardware/drivers/ddi/wdfinterrupt/nf-wdfinterrupt-wdfinterruptcreate) 方法，将被动级别 ISR 连接到设备中断。 此方法的输入参数之一是指向 [**WDF \_ 中断 \_ CONFIG**](/windows-hardware/drivers/ddi/wdfinterrupt/ns-wdfinterrupt-_wdf_interrupt_config) 结构的指针，该结构包含中断的配置信息。 若要将 ISR 配置为在被动级别运行，请将此结构的 **PassiveHandling** 成员设置为 **TRUE**。 有关详细信息，请参阅 [支持 Passive-Level 中断](../wdf/supporting-passive-level-interrupts.md)。
 
  
 

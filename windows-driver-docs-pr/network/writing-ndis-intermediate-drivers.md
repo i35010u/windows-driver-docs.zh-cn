@@ -1,7 +1,6 @@
 ---
 title: 开始编写 NDIS 中间驱动程序
 description: 开始编写 NDIS 中间驱动程序
-ms.assetid: c37224b2-8d96-44c2-8b56-884089b9cfcd
 keywords:
 - 中间驱动程序 WDK 网络
 - 网络驱动程序 WDK，中间驱动程序
@@ -11,12 +10,12 @@ keywords:
 - 中间驱动程序 WDK 网络，NDIS 6。0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2fc4a0b79f9e0718016545adef1926af86fb6eb9
-ms.sourcegitcommit: 366a15d68eb58d01a8ca6de7b982f62ac8b7deaf
+ms.openlocfilehash: 62be8e91a6fe89393ed34e248d93d11034768a9e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/19/2020
-ms.locfileid: "90811988"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96836177"
 ---
 # <a name="getting-started-writing-ndis-intermediate-drivers"></a>开始编写 NDIS 中间驱动程序
 

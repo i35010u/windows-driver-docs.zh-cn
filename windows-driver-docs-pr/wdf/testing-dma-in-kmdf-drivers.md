@@ -1,15 +1,14 @@
 ---
 title: 在 KMDF 驱动程序中测试 DMA
 description: 在 KMDF 驱动程序中测试 DMA
-ms.assetid: 1D37F8B3-EAFC-4BB0-988D-64ADF30DBC40
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7580fb70d78c0cc2bcede27a84a8b17cc42d2346
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 4eac3ce3cfc3ce27e5bf271a307a3d218ff6328b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89191397"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96836563"
 ---
 # <a name="testing-dma-in-kmdf-drivers"></a>在 KMDF 驱动程序中测试 DMA
 
@@ -20,7 +19,7 @@ ms.locfileid: "89191397"
 
 -   [驱动程序验证程序](../devtest/driver-verifier.md) 包括检测各种 DMA 操作的不当使用的特定验证测试。 有关特定于 DMA 的验证的详细信息，请参阅 [Dma 验证](../devtest/dma-verification.md)。
 
--   [**！ Dma**](../debugger/-dma.md)内核调试器扩展显示有关[驱动程序验证程序](../devtest/driver-verifier.md)正在验证的 dma 子系统和 dma 设备驱动程序的信息。
+-   [**！ Dma**](../debugger/-dma.md)内核调试器扩展显示有关 [驱动程序验证程序](../devtest/driver-verifier.md)正在验证的 dma 子系统和 dma 设备驱动程序的信息。
 
 -   [内核模式驱动程序框架扩展](../debugger/kernel-mode-driver-framework-extensions--wdfkd-dll-.md)包含以下特定于 DMA 的命令：
 

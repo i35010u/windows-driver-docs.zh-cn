@@ -1,15 +1,14 @@
 ---
 title: SpbCx 接口
 description: SPB 框架扩展 (SpbCx) 有两个接口。
-ms.assetid: 2449BB88-1912-43F9-97E6-B56158D92E55
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 568adfebf25dd6dac806552272c670c0809c165e
-ms.sourcegitcommit: 6c42efc074ab939e7737d6c2b016d3f3a75954e1
+ms.openlocfilehash: 0f6701df555f6fb95e0cb393178a378bbb07961e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90741028"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96835385"
 ---
 # <a name="spbcx-interfaces"></a>SpbCx 接口
 
@@ -30,13 +29,13 @@ SpbCx 设备驱动程序接口 (DDI) 包含由 spb 控制器驱动程序实现�
 
 若要通知事件 (的 SPB 控制器驱动程序，例如客户端) 发出的 i/o 请求，SpbCx 将调用由 SPB 控制器驱动程序实现的 [事件回调函数](/previous-versions/hh450911(v=vs.85)) 。
 
-在从 SpbCx 回调期间，SPB 控制器驱动程序代码将在任意线程上下文中运行。 接收到需要由 SPB 控制器驱动程序处理的 i/o 请求后，SpbCx 会在 SpbCx 调用 *EvtSpb*Xxx 函数来执行请求的操作之前，执行请求的任何请求预处理。 例如，若要使用户模式缓冲区可用于回调函数，SpbCx 可能需要在发出 i/o 请求的线程的上下文中运行。  ([*EvtIoInCallerContext*](/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_io_in_caller_context) 函数是唯一不能依赖 SpbCx 来预处理请求的回调函数。 ) 
+在从 SpbCx 回调期间，SPB 控制器驱动程序代码将在任意线程上下文中运行。 接收到需要由 SPB 控制器驱动程序处理的 i/o 请求后，SpbCx 会在 SpbCx 调用 *EvtSpb* Xxx 函数来执行请求的操作之前，执行请求的任何请求预处理。 例如，若要使用户模式缓冲区可用于回调函数，SpbCx 可能需要在发出 i/o 请求的线程的上下文中运行。  ([*EvtIoInCallerContext*](/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_io_in_caller_context) 函数是唯一不能依赖 SpbCx 来预处理请求的回调函数。 ) 
 
-若要注册一组 *EvtSpb*Xxx 回调函数，则 SPB 控制器驱动程序将调用 [**SpbDeviceInitialize**](/windows-hardware/drivers/ddi/spbcx/nf-spbcx-spbdeviceinitialize) 方法。 此驱动程序调用 [**SpbControllerSetIoOtherCallback**](/windows-hardware/drivers/ddi/spbcx/nf-spbcx-spbcontrollersetioothercallback) 方法来注册 *EvtIoInCallerContext* 回调函数。
+若要注册一组 *EvtSpb* Xxx 回调函数，则 SPB 控制器驱动程序将调用 [**SpbDeviceInitialize**](/windows-hardware/drivers/ddi/spbcx/nf-spbcx-spbdeviceinitialize) 方法。 此驱动程序调用 [**SpbControllerSetIoOtherCallback**](/windows-hardware/drivers/ddi/spbcx/nf-spbcx-spbcontrollersetioothercallback) 方法来注册 *EvtIoInCallerContext* 回调函数。
 
 SpbCx DDI 使用 WDFDEVICE 对象句柄类型来表示 SPB 控制器的设备对象。 包含 Wdf 头文件以定义 WDFDEVICE 和其他 KMDF 对象句柄类型。 此外，DDI 使用两个 SPB 特定的对象句柄类型 [**SPBREQUEST**](./spbcx-object-handles.md) 和 [**SPBTARGET**](./spbcx-object-handles.md)，它们类似于 KMDF 定义的 WDFREQUEST 和 WDFTARGET 对象句柄类型。 SPBREQUEST 句柄表示 i/o 请求。 SPBTARGET 句柄表示到总线上已为 i/o 操作打开的外围设备的逻辑连接。
 
-简单的外围总线（如 i2c 和 SPI）通常由芯片 (SoC) 模块上的系统使用，这些端口的低 pin 计数很重要。 SoC 模块经常用作手持设备中需要低功率消耗的处理器。 因为 SPB 控制器线路消耗的电量相对较少，所以 SpbCx 中的电源管理代码可能比较简单。 默认情况下，SpbCx 确保已打开 SPB 控制器的电源，然后再调用 SPB 控制器驱动程序中的任何事件回叫方法。 有关详细信息，请参阅[**SPB \_ 控制器 \_ CONFIG**](/windows-hardware/drivers/ddi/spbcx/ns-spbcx-_spb_controller_config)中的**PowerManaged**成员的说明。
+简单的外围总线（如 i2c 和 SPI）通常由芯片 (SoC) 模块上的系统使用，这些端口的低 pin 计数很重要。 SoC 模块经常用作手持设备中需要低功率消耗的处理器。 因为 SPB 控制器线路消耗的电量相对较少，所以 SpbCx 中的电源管理代码可能比较简单。 默认情况下，SpbCx 确保已打开 SPB 控制器的电源，然后再调用 SPB 控制器驱动程序中的任何事件回叫方法。 有关详细信息，请参阅 [**SPB \_ 控制器 \_ CONFIG**](/windows-hardware/drivers/ddi/spbcx/ns-spbcx-_spb_controller_config)中的 **PowerManaged** 成员的说明。
 
 如有必要，SPB 控制器驱动程序可以通过调用 [**WdfDeviceStopIdle**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicestopidle) 和 [**WdfDeviceResumeIdle**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceresumeidle) 方法显式关闭和关闭控制器的电源。
 
@@ -46,7 +45,7 @@ SpbCx DDI 使用 WDFDEVICE 对象句柄类型来表示 SPB 控制器的设备对
 
 此 SDDL 字符串限制对操作系统 (及其用户模式组件) 、Administrators 组成员和 [用户模式驱动程序框架](../wdf/overview-of-the-umdf.md) (UMDF) 驱动程序的访问权限。 有关 SDDL 字符串的详细信息，请参阅 [适用于设备对象的 SDDL](../kernel/sddl-for-device-objects.md)。
 
-此外， [*EvtSpbControllerIoOther*](/windows-hardware/drivers/ddi/spbcx/nc-spbcx-evt_spb_controller_other) 函数必须验证从用户模式客户端接收的自定义 i/o 控制请求中的所有参数。 对于所有其他 *EvtSpb*Xxx 函数，SpbCx 会在将这些参数传递到 SPB 控制器驱动程序之前，验证来自用户模式客户端的 i/o 请求中的参数。 有关设备安全的详细信息，请参阅 [保护设备对象](../kernel/controlling-device-access.md)。
+此外， [*EvtSpbControllerIoOther*](/windows-hardware/drivers/ddi/spbcx/nc-spbcx-evt_spb_controller_other) 函数必须验证从用户模式客户端接收的自定义 i/o 控制请求中的所有参数。 对于所有其他 *EvtSpb* Xxx 函数，SpbCx 会在将这些参数传递到 SPB 控制器驱动程序之前，验证来自用户模式客户端的 i/o 请求中的参数。 有关设备安全的详细信息，请参阅 [保护设备对象](../kernel/controlling-device-access.md)。
 
 返回状态代码的 SpbCx DDI 中的所有方法和回调函数返回 NTSTATUS 值。 此 DDI 中的驱动程序支持方法遵循适用于 KMDF 接口的常用约定，SpbCx 使用的所有对象都遵循 KMDF 对象的常见约定。 有关详细信息，请参阅 [框架对象简介](../wdf/introduction-to-framework-objects.md)。
 

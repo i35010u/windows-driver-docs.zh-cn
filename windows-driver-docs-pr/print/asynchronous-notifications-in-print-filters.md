@@ -1,7 +1,6 @@
 ---
 title: 打印筛选器中的异步通知
 description: 打印筛选器中的异步通知
-ms.assetid: 52b0790b-4927-4e1b-8ae5-6e2afc7c9df6
 keywords:
 - 渲染模块 WDK XPSDrv，XPS 筛选器
 - XPS 筛选器 WDK XPSDrv
@@ -9,12 +8,12 @@ keywords:
 - 异步通知 WDK XP
 ms.date: 06/01/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 9172159f7db09c1384c3ced7cf3015d0a28898fb
-ms.sourcegitcommit: 51cba71be022c726c04c29ba5c0360860b65d7a4
+ms.openlocfilehash: 25092ea3ad0b5b2f23ed1126578484198554a659
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/09/2020
-ms.locfileid: "89562213"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96836133"
 ---
 # <a name="asynchronous-notifications-in-print-filters"></a>打印筛选器中的异步通知
 

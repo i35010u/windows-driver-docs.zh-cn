@@ -1,7 +1,6 @@
 ---
 title: IRP_MJ_QUERY_QUOTA
 description: IRP \_ MJ \_ 查询 \_ 配额
-ms.assetid: eb48b5ef-7eac-49d4-ab23-2d3efe783fa3
 keywords:
 - IRP_MJ_QUERY_QUOTA 可安装的文件系统驱动程序
 topic_type:
@@ -12,12 +11,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0d765ae4f22c4fe2d5a8f46679211cd68c6f9d98
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: b706920eff3f34c636d5d0e4acf88c5e0aebcf77
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89063064"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96836453"
 ---
 # <a name="irp_mj_query_quota"></a>IRP \_ MJ \_ 查询 \_ 配额
 
@@ -33,9 +32,9 @@ IRP \_ MJ \_ 查询 \_ 配额请求由 i/o 管理器发送。 例如，在用户
 
 筛选器驱动程序应将此 IRP 传递到堆栈上的下一个较低的驱动程序，除非它需要显式覆盖配额行为。
 
-## <a name="parameters"></a>parameters
+## <a name="parameters"></a>参数
 
-文件系统或筛选器驱动程序与给定的 IRP 一起调用[**IoGetCurrentIrpStackLocation**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetcurrentirpstacklocation) ，以获取指向其自己的*IrpSp*[**堆栈位置**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_stack_location)的指针，如以下列表所示。  (IRP 显示为 *irp*。 ) 驱动程序可以使用在处理查询配额信息请求中的以下 irp 成员和 irp 堆栈位置设置的信息：
+文件系统或筛选器驱动程序与给定的 IRP 一起调用 [**IoGetCurrentIrpStackLocation**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetcurrentirpstacklocation) ，以获取指向其自己的 *IrpSp*[**堆栈位置**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_stack_location)的指针，如以下列表所示。  (IRP 显示为 *irp*。 ) 驱动程序可以使用在处理查询配额信息请求中的以下 irp 成员和 irp 堆栈位置设置的信息：
 
 ### <a name="deviceobject"></a>*DeviceObject*  
 
@@ -56,7 +55,7 @@ IRP \_ MJ \_ 查询 \_ 配额请求由 i/o 管理器发送。 例如，在用户
 
 ### <a name="irp-associatedirpsystembuffer"></a>*Irp->AssociatedIrp.SystemBuffer*
 
-一个指针，指向系统提供的用于中间系统缓冲区的缓冲区（如果 \_ \_ 在 *DeviceObject->标志*中设置了 "执行缓冲 IO" 标记）。 否则，此成员设置为 **NULL**。
+一个指针，指向系统提供的用于中间系统缓冲区的缓冲区（如果 \_ \_ 在 *DeviceObject->标志* 中设置了 "执行缓冲 IO" 标记）。 否则，此成员设置为 **NULL**。
 
 ### <a name="irp-iostatus"></a>*Irp->IoStatus*
 
@@ -68,15 +67,15 @@ IRP \_ MJ \_ 查询 \_ 配额请求由 i/o 管理器发送。 例如，在用户
 
 ### <a name="irpsp-fileobject"></a>*IrpSp->FileObject*
 
-指向与 *DeviceObject*关联的文件对象的指针。
+指向与 *DeviceObject* 关联的文件对象的指针。
 
-*>IrpSp FileObject*参数包含指向**RelatedFileObject**字段的指针，该字段也是文件 \_ 对象结构。 文件对象结构的 **RelatedFileObject** 字段在 \_ 处理 IRP \_ MJ 查询配额期间无效 \_ \_ ，不应使用。
+*>IrpSp FileObject* 参数包含指向 **RelatedFileObject** 字段的指针，该字段也是文件 \_ 对象结构。 文件对象结构的 **RelatedFileObject** 字段在 \_ 处理 IRP \_ MJ 查询配额期间无效 \_ \_ ，不应使用。
 
 ### <a name="irpsp-flags"></a>*IrpSp->标志*
 
 此成员可以是以下一项或多项：
 
-|Flag|含义|
+|标志|含义|
 |----|----|
 |SL_INDEX_SPECIFIED|从配额列表中的条目开始扫描，该配额列表中的索引由 *>IrpSp 指定。 QueryQuota. StartSid*|
 |SL_RESTART_SCAN|从列表中的第一个条目开始扫描。 如果未设置此标志，则从上一个 IRP_MJ_QUERY_QUOTA 请求恢复扫描。|
@@ -105,7 +104,7 @@ typedef struct _FILE_GET_QUOTA_INFORMATION {
 |成员|含义|
 |-----|----|
 |NextEntryOffset|下一个 FILE_GET_QUOTA_INFORMATION 条目的字节偏移量（如果缓冲区中存在多个条目）。 如果此成员不在此成员后面，则为零。|
-|SidLength|**Sid**成员的长度（以字节为单位）。|
+|SidLength|**Sid** 成员的长度（以字节为单位）。|
 |Sid|SID)  (安全标识符|
 
 ### <a name="irpsp-parametersqueryquotasidlistlength"></a>*IrpSp->参数. QueryQuota. SidListLength*
@@ -116,7 +115,7 @@ Sid 列表的长度（以字节为单位）（如果已指定）。
 
 指向某个 SID 的可选指针，它指示返回的信息是从第一个项之外的项开始。 如果指定 SID 列表，则忽略此参数。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [**FILE \_ 获取 \_ 配额 \_ 信息**](/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_file_get_quota_information)
 

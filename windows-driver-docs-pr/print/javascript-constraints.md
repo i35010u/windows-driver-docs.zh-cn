@@ -1,15 +1,14 @@
 ---
 title: JavaScript 约束
 description: V4 打印机驱动程序模型支持从 v3 IPrintOemPrintTicketProvider 接口派生的扩展约束和 PrintTicket 处理。
-ms.assetid: CD2EF726-CF0F-4BB6-9F41-794699568F17
 ms.date: 06/05/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: ac6c1fc61494a985f1e1b04f17a87a714762626d
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: cce2139e2d303f04db709ad9fcb4a24b08d93645
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89210046"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96835495"
 ---
 # <a name="javascript-constraints"></a>JavaScript 约束
 
@@ -105,7 +104,7 @@ JavaScript 约束可用于增加 PrintCapabilities，验证 Printticket 并处�
 function validatePrintTicket(printTicket, scriptContext)
 ```
 
-**参数**
+**Parameters**
 
 - *printTicket*
 
@@ -117,7 +116,7 @@ function validatePrintTicket(printTicket, scriptContext)
 
 **返回值**
 
-| 返回值 | 说明 |
+| 返回值 | 描述 |
 | --- | --- |
 | 0 | 指示 *printTicket* 参数无效，无法更正。 等效于 [E \_ PRINTTICKET \_ 格式](/windows/win32/api/prntvpt/nf-prntvpt-ptmergeandvalidateprintticket)。 |
 | 1 | 指示 *printTicket* 参数是此打印机的有效 printticket。 等效于 [S \_ PT \_ 无 \_ 冲突](/windows/win32/api/prntvpt/nf-prntvpt-ptmergeandvalidateprintticket)。 |
@@ -133,7 +132,7 @@ function validatePrintTicket(printTicket, scriptContext)
 function completePrintCapabilities(printTicket, scriptContext, printCapabilities)
 ```
 
-**参数**
+**Parameters**
 
 - *printTicket*
 
@@ -161,11 +160,11 @@ function completePrintCapabilities(printTicket, scriptContext, printCapabilities
 function convertDevModeToPrintTicket(devModeProperties, scriptContext, printTicket)
 ```
 
-**参数**
+**Parameters**
 
 - *devModeProperties*
 
-\[\] **IPrinterScriptablePropertyBag**对象中。
+\[\] **IPrinterScriptablePropertyBag** 对象中。
 
 - *scriptContext*
 
@@ -173,7 +172,7 @@ function convertDevModeToPrintTicket(devModeProperties, scriptContext, printTick
 
 - *printTicket*
 
-  \[\] \[ out 中 \] 表示 PrintTicket 的[**IPrintSchemaTicket**](/windows-hardware/drivers/ddi/printerextension/nn-printerextension-iprintschematicket)对象。
+  \[\] \[ out 中 \] 表示 PrintTicket 的 [**IPrintSchemaTicket**](/windows-hardware/drivers/ddi/printerextension/nn-printerextension-iprintschematicket)对象。
 
 **返回值**
 
@@ -189,7 +188,7 @@ function convertDevModeToPrintTicket(devModeProperties, scriptContext, printTick
 function convertPrintTicketToDevMode(printTicket, scriptContext, devModeProperties)
 ```
 
-**参数**
+**Parameters**
 
 - *printTicket*
 
@@ -201,7 +200,7 @@ function convertPrintTicketToDevMode(printTicket, scriptContext, devModeProperti
 
 - *devModeProperties*
 
-  \[\] \[ \] **IPrinterScriptablePropertyBag**对象，该对象表示 DEVMODE 属性包。
+  \[\] \[ \] **IPrinterScriptablePropertyBag** 对象，该对象表示 DEVMODE 属性包。
 
 **返回值**
 

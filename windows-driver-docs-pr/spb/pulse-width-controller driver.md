@@ -1,20 +1,19 @@
 ---
 title: SoC 上 PWM 模块的 PWM 驱动程序
 description: PWM 控制器是 SoC 和内存映射到 SoC 地址空间的一部分。 编写一个内核模式驱动程序，该驱动程序操作 PWM 寄存器并提供对应用程序的访问。
-ms.assetid: 911375A9-6761-45C1-BB5E-79BC0E4409AC
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5febc2d215b1f456f889bf90bf8b3735d4951d6b
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: d5eb78c32120612290775c52007845830827c467
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90715872"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96835415"
 ---
 # <a name="pwm-driver-for-an-on-soc-pwm-module"></a>SoC 上 PWM 模块的 PWM 驱动程序
 若要访问脉冲宽度调制 (PWM) 控制器，该控制器是 SoC 和内存映射到 SoC 地址空间的一部分，则需要编写一个内核模式驱动程序。 驱动程序必须注册 PWM 控制器的设备类接口，以便 UWP 应用可以通过在 Pwm 命名空间中定义的 PWM WinRT Api 访问系统公开的 PWM 设备。 
 
-**注意**    如果已通过 I<sup>2</sup>C、SPI 或 UART 控制器使用外接程序 PWM 模块，则可以使用 [**PWM**](/uwp/api/windows.devices.pwm) 和 [**PWM**](/uwp/api/windows.devices.pwm.provider) 命名空间中定义的 api 从 UWP 应用程序访问该模块。 
+**注意**    如果已通过 I <sup>2</sup>C、SPI 或 UART 控制器使用外接程序 PWM 模块，则可以使用 [**PWM**](/uwp/api/windows.devices.pwm) 和 [**PWM**](/uwp/api/windows.devices.pwm.provider) 命名空间中定义的 api 从 UWP 应用程序访问该模块。 
 
 PWM 设备抽象成单个控制器和一个或多个 pin。 控制控制器或 pin 是通过 PWM 定义的 IOCTLs 来完成的。 例如，LCD 显示驱动程序将此类请求发送到 PWM 驱动程序，以控制 LCD 背光级别。 
 
@@ -325,7 +324,7 @@ PwmCreateRequestGetAccess(
 |状态功能|默认值|说明|
 |---|---|--|
 |已打开-用于写入|错误| False 指示控制器已关闭或已打开以进行读取;如果为 True，则表示它已打开以进行写入。|
-|所需时间| MinimumPeriod| |
+|Desired-Period| MinimumPeriod| |
 
 ![控制器状态机](images/controller-state-machine.png)
 
@@ -338,11 +337,11 @@ PwmCreateRequestGetAccess(
 |---------------------|---------------|------------------------------------------------------------------------------------------------------------------|
 | 已打开-用于写入 |     错误     | False 表示关闭或打开以进行读取;如果为 True，则表示它已打开以进行写入。 |
 |  主动-周期  |       0       |                                                                                                                  |
-|     已启动      |     错误     |                                 False 表示已停止;True 表示开始。                                 |
+|     Is-Started      |     错误     |                                 False 表示已停止;True 表示开始。                                 |
 
 ![Pin 状态机](images/pins-state-machine.png)
 
-Pin 状态机的中心围绕2个状态的组合： "已打开-写入" 和 "已启动"。 其他 pin 状态（如极性和活动的工作周期）会保持不变，因为它们的值不会影响可在 pin 上执行的操作的类型。 请注意，每次打开以进行写入的 pin 都由打开它以进行写入的调用方关闭时，该 pin 会恢复其默认值 (停止、默认极性和活动的工作周期) 。 另请注意，在状态为 "已启动" 的状态下，转换为 "已启动" = "true"，因为它在该状态下无效。
+Pin 状态机的中心围绕2个状态的组合： "已打开-写入" 和 "已启动"。 其他 pin 状态（如极性和活动的工作周期）会保持不变，因为它们的值不会影响可在 pin 上执行的操作的类型。 请注意，每次打开以进行写入的 pin 都由打开它以进行写入的调用方关闭时，该 pin 会恢复其默认值 (停止、默认极性和活动的工作周期) 。 另请注意，在 Is-Started 为 true 的状态上 Set-Polarity 转换被保留，因为它在该状态下无效。
 
 给定状态中未提及的任何转换都意味着此类转换无效或不可能，并应使用适当的错误状态完成相应的请求。 
 
@@ -528,7 +527,7 @@ IOCTL 请求已发送到错误目标。 例如，控制器 IOCTL 请求是使用
 
 输入或输出缓冲区的大小小于处理请求所需的最小缓冲区大小。 使用 WdfRequestRetrieveInputBuffer 或 WdfRequestRetrieveOutputBuffer 检索和验证输入和输出缓冲区的 WDF 驱动程序可以按原样返回其相应的错误状态。 所有 IOCTLs 都定义了输入和/或定义的输出缓冲区，其中包含一个描述该缓冲区的相应结构，其中输入和输出结构名称 *分别具有输入和 _OUTPUT 后缀。输入缓冲区最小大小为 sizeof (PWM*<em>*输入) 而输出缓冲区最小大小为 SIZEOF (PWM*</em>_OUTPUT) 。 
 
-IOCTL 代码 | 说明|
+IOCTL 代码 | 描述|
 ---|---|
 |IOCTL_PWM_CONTROLLER_GET_ACTUAL_PERIOD | 检索脉冲宽度调制 (PWM) 控制器的有效输出信号周期，因为它将在输出通道上测量。 返回 PWM_CONTROLLER_GET_ACTUAL_PERIOD_OUTPUT 值。 Irp->IoStatus 设置为以下列表中的一个值。 <ul><li>STATUS_SUCCESS</li><li>STATUS_NOT_SUPPORTED</li><li>STATUS_INVALID_DEVICE_REQUEST<li>STATUS_BUFFER_TOO_SMALL</li></ul>|
 | IOCTL_PWM_CONTROLLER_GET_INFO| 检索有关脉冲宽度调制 (PWM) 控制器的信息。 此信息不会在控制器初始化后发生更改。 <p>调用方应传递大小刚好为 PWM_CONTROLLER_INFO 结构的输出缓冲区。 驱动程序从请求输出缓冲区的大小中推断出结构的版本。 </p><p>如果缓冲区大小小于最低的结构版本大小，则使用 STATUS_BUFFER_TOO_SMALL 的 IOCTL 完成状态来完成请求。 否则，驱动程序将假定可在提供的输出缓冲区中容纳的最高结构版本并成功完成请求。 </p><p>较新的 PWM_CONTROLLER_INFO 版本的字节大小大于以前版本的大小</p>Irp->IoStatus 设置为以下列表中的一个值。 <ul><li>STATUS_SUCCESS</li><li>STATUS_NOT_SUPPORTED</li><li>STATUS_INVALID_DEVICE_REQUEST<li>STATUS_BUFFER_TOO_SMALL</li></ul>|

@@ -1,25 +1,24 @@
 ---
 title: GDL 模板指令
 description: GDL 模板指令
-ms.assetid: 67400ddc-2575-4ceb-b204-66daf9708a4c
 keywords:
-- WDK GDL，指令模板
+- 模板 WDK GDL，指令
 - 指令 WDK GDL，模板指令
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 99322162d66bd0ed65a424d0e054c11d4dde1151
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5bb95b2963f8a1ade1ed1a6653abedc7b393cd82
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390616"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96835903"
 ---
 # <a name="gdl-template-directives"></a>GDL 模板指令
 
 
 以下 GDL 指令适用于模板：
 
-[Additive](additive-template-directive.md)
+[加法](additive-template-directive.md)
 
 [ArrayLabel](arraylabel-template-directive.md)
 
@@ -29,7 +28,7 @@ ms.locfileid: "63390616"
 
 [ElementType](elementtype-template-directive.md)
 
-[继承](inherits-template-directive.md)
+[派生](inherits-template-directive.md)
 
 [成员](member-template-directive.md)
 
@@ -41,11 +40,11 @@ ms.locfileid: "63390616"
 
 [模板](template-template-directive.md)
 
-[Type](type-template-directive.md)
+[类型](type-template-directive.md)
 
 [ValueType](valuetype-template-directive.md)
 
-有关如何使用模板指令的详细信息，请参阅[指令的模板示例](template-directive-example.md)
+有关如何使用模板指令的详细信息，请参阅 [模板指令示例](template-directive-example.md)
 
  
 

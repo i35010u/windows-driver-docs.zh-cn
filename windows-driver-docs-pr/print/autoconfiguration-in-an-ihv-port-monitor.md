@@ -1,26 +1,25 @@
 ---
 title: IHV 端口监视器中的自动配置
 description: IHV 端口监视器中的自动配置
-ms.assetid: c41c8502-902a-448c-8f96-fb196e68ee6e
 keywords:
 - IHV 端口监视器自动配置 WDK 打印机
 - 自动配置 WDK 打印机，IHV 端口监视器
 - 打印机自动配置 WDK 打印机，IHV 端口监视器
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5616dc1c20c83d9cee4b897847d565ead4effefe
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: bceab0c5fa507100d043fb594e601fe264331d44
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89208449"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96836077"
 ---
 # <a name="autoconfiguration-in-an-ihv-port-monitor"></a>IHV 端口监视器中的自动配置
 
 
 打算开发端口监视器的 IHV 必须将其设计为支持自动配置。 若要为 IHV 端口监视器中的自动配置提供支持，请遵循以下准则：
 
--   实现[**SendRecvBidiDataFromPort**](/previous-versions/ff562071(v=vs.85))函数，并将此函数的地址放置在[**MONITOR2**](/windows-hardware/drivers/ddi/winsplp/ns-winsplp-_monitor2)结构的**pfnSendRecvBidiDataFromPort**成员中。
+-   实现 [**SendRecvBidiDataFromPort**](/previous-versions/ff562071(v=vs.85))函数，并将此函数的地址放置在 [**MONITOR2**](/windows-hardware/drivers/ddi/winsplp/ns-winsplp-_monitor2)结构的 **pfnSendRecvBidiDataFromPort** 成员中。
 
 -   支持 [双向通信架构](./bidi-communications-schema-reference.md)。
 

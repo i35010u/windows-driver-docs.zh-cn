@@ -1,19 +1,18 @@
 ---
 title: 视频微型端口驱动程序中的计时器
 description: 视频微型端口驱动程序中的计时器
-ms.assetid: 257ea76e-7be6-4895-8e83-0f50c96e5969
 keywords:
 - 视频微型端口驱动程序 WDK Windows 2000，定时器
 - 计时器音频视频微型端口
 - HwVidTimer
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 266c3f6c33cd32659747bccab72d856d07c880bf
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 8763589698c464f53701c87fdfc6249c66215b9c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89063738"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96836489"
 ---
 # <a name="timers-in-video-miniport-drivers"></a>视频微型端口驱动程序中的计时器
 
@@ -27,7 +26,7 @@ ms.locfileid: "89063738"
 
 调用 [**VideoPortStartTimer**](/windows-hardware/drivers/ddi/video/nf-video-videoportstarttimer)后，视频端口驱动程序每秒调用 *HwVidTimer* 一次，直到视频微型端口驱动程序调用 [**VideoPortStopTimer**](/windows-hardware/drivers/ddi/video/nf-video-videoportstoptimer)。 视频微型端口驱动程序可以重复启用和禁用对 *HwVidTimer* 函数的调用。
 
-请注意， *HwVidTimer* 函数不能禁用对 **VideoPortStopTimer**的调用。 另一个视频微型端口驱动程序函数必须通过使用**VideoPortStartTimer**和**VideoPortStopTimer**控制对*HwVidTimer*函数的调用的启用或禁用。
+请注意， *HwVidTimer* 函数不能禁用对 **VideoPortStopTimer** 的调用。 另一个视频微型端口驱动程序函数必须通过使用 **VideoPortStartTimer** 和 **VideoPortStopTimer** 控制对 *HwVidTimer* 函数的调用的启用或禁用。
 
  
 

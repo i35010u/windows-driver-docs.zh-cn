@@ -1,15 +1,14 @@
 ---
 title: NDIS 如何检测空闲的网络适配器
 description: NDIS 如何检测空闲的网络适配器
-ms.assetid: 1FF01B0B-9826-4467-8071-D26CA5E5EF4F
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7ac1583ccfdf224b1b91c67158549535d2ddc4c2
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: ee4551cec89e4d89ce59d410db9df4c6d52f40f1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89209735"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96836337"
 ---
 # <a name="how-ndis-detects-idle-network-adapters"></a>NDIS 如何检测空闲的网络适配器
 
@@ -20,11 +19,11 @@ ms.locfileid: "89209735"
 
 -   NDIS 还监视过量协议驱动程序发出的 [**NdisOidRequest**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisoidrequest) 和 [**NdisDirectOidRequest**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisdirectoidrequest) 调用。
 
-    **注意**   NDIS 仅监视 (OID) 请求不由 NDIS 直接处理的基础微型端口驱动程序的对象标识符。
+    **注意**  NDIS 仅监视 (OID) 请求不由 NDIS 直接处理的基础微型端口驱动程序的对象标识符。
 
      
 
-NDIS 确定网络适配器在空闲超时期限内未检测到适配器上的任何活动时处于空闲状态。 此超时期限的持续时间由** \* SSIDLETIMEOUT**标准化 INF 关键字的值指定。 有关此关键字的详细信息，请参阅 [用于 NDIS 选择性挂起的标准化 INF 关键字](standardized-inf-keywords-for-ndis-selective-suspend.md)。
+NDIS 确定网络适配器在空闲超时期限内未检测到适配器上的任何活动时处于空闲状态。 此超时期限的持续时间由 **\* SSIDLETIMEOUT** 标准化 INF 关键字的值指定。 有关此关键字的详细信息，请参阅 [用于 NDIS 选择性挂起的标准化 INF 关键字](standardized-inf-keywords-for-ndis-selective-suspend.md)。
 
 网络适配器进入空闲状态后，NDIS 将启动选择性挂起操作。 完成此操作后，网络适配器将被转换为低功耗状态。
 

@@ -1,18 +1,17 @@
 ---
 title: 设备安装期间的自动配置
 description: 设备安装期间的自动配置
-ms.assetid: 04b53767-4b5e-450d-96ab-b029cdf62b36
 keywords:
 - 设备安装过程中自动配置 WDK 打印机
 - 打印机自动配置 WDK 打印机，在设备安装过程中
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7eebef7a658e3d4252dd071172827badc6db085e
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: c4ddd2256f76e2da833709339270fe9d24518832
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89208467"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96836089"
 ---
 # <a name="autoconfiguration-during-device-installation"></a>设备安装期间的自动配置
 

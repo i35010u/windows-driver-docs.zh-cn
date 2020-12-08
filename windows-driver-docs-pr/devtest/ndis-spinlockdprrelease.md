@@ -1,7 +1,6 @@
 ---
 title: 'SpinLockDprRelease 规则 (ndis) '
 description: SpinLockDprRelease 规则验证仅当旋转锁为 \ 0034; 解除锁定 \ 0034; 时才调用对 NdisAcquireSpinLock 或 NdisDprAcquireSpinLock 的调用。状态.
-ms.assetid: B726B1AD-F49D-479B-AF1B-99E8901E2315
 ms.date: 05/21/2018
 keywords:
 - 'SpinLockDprRelease 规则 (ndis) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 22702c9d7f6c8d2df73da3221fcdb13f42b8fd23
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: f97d8a6de9f292aefb59a18f4fa3f0dbba0c759e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102202"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96834671"
 ---
 # <a name="spinlockdprrelease-rule-ndis"></a>SpinLockDprRelease 规则 (ndis) 
 
 
-**SpinLockDprRelease**规则验证仅当旋转锁为 "未锁定" 状态时，才调用对[**NdisAcquireSpinLock**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisacquirespinlock)或[**NdisDprAcquireSpinLock**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisdpracquirespinlock)的调用。 此规则还检查在退出微型端口处理程序例程之前，旋转锁已释放。
+**SpinLockDprRelease** 规则验证仅当旋转锁为 "未锁定" 状态时，才调用对 [**NdisAcquireSpinLock**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisacquirespinlock)或 [**NdisDprAcquireSpinLock**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisdpracquirespinlock)的调用。 此规则还检查在退出微型端口处理程序例程之前，旋转锁已释放。
 
 **驱动程序模型： NDIS**
 

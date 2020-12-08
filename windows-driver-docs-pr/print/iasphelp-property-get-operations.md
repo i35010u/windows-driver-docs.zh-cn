@@ -7,19 +7,18 @@ MS-HAID:
 MSHAttr:
 - PreferredSiteName:MSDN
 - PreferredLib:/library/windows/hardware
-ms.assetid: f454b544-a17f-4542-b930-4e52b6667d55
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a6115e1d802b32804799f912dd0857f7f6625bc1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a5e021ca5bbd2a009c80a3d30679b524095a0d46
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63358623"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96835739"
 ---
 # <a name="iasphelp-property-get-operations"></a>Iasphelp 属性获取操作
 
-本部分介绍的"属性 get"操作**Iasphelp**对象。 操作包括：
+本部分介绍 **Iasphelp** 对象的 "属性 get" 操作。 运算包括：
 
 [**Iasphelp::AspPage**](iasphelp-asppage.md)
 
@@ -27,19 +26,19 @@ ms.locfileid: "63358623"
 
 [**Iasphelp::AvgJobSizeUnit**](iasphelp-avgjobsizeunit.md)
 
-[**Iasphelp::Color**](iasphelp-color.md)
+[**Iasphelp：： Color**](iasphelp-color.md)
 
-[**Iasphelp::Community**](iasphelp-community.md)
+[**Iasphelp：：社团**](iasphelp-community.md)
 
-[**Iasphelp::ComputerName**](iasphelp-computername.md)
+[**Iasphelp：： ComputerName**](iasphelp-computername.md)
 
-[**Iasphelp::DriverName**](iasphelp-drivername.md)
+[**Iasphelp：:D riverName**](iasphelp-drivername.md)
 
-[**Iasphelp::Duplex**](iasphelp-duplex.md)
+[**Iasphelp：:D uplex**](iasphelp-duplex.md)
 
 [**Iasphelp::ErrorDscp**](iasphelp-errordscp.md)
 
-[**Iasphelp::IPAddress**](iasphelp-ipaddress.md)
+[**Iasphelp：： IPAddress**](iasphelp-ipaddress.md)
 
 [**Iasphelp::IsCluster**](iasphelp-iscluster.md)
 
@@ -57,20 +56,20 @@ ms.locfileid: "63358623"
 
 [**Iasphelp::MibErrorDscp**](iasphelp-miberrordscp.md)
 
-[**Iasphelp::PageRate**](iasphelp-pagerate.md)
+[**Iasphelp：:P ageRate**](iasphelp-pagerate.md)
 
-[**Iasphelp::PageRateUnit**](iasphelp-pagerateunit.md)
+[**Iasphelp：:P ageRateUnit**](iasphelp-pagerateunit.md)
 
-[**Iasphelp::PaperNames**](iasphelp-papernames.md)
+[**Iasphelp：:P aperNames**](iasphelp-papernames.md)
 
-[**Iasphelp::PendingJobCount**](iasphelp-pendingjobcount.md)
+[**Iasphelp：:P endingJobCount**](iasphelp-pendingjobcount.md)
 
-[**Iasphelp::PortName**](iasphelp-portname.md)
+[**Iasphelp：:P ortName**](iasphelp-portname.md)
 
-[**Iasphelp::ShareName**](iasphelp-sharename.md)
+[**Iasphelp：：共享名**](iasphelp-sharename.md)
 
 [**Iasphelp::SNMPDevice**](iasphelp-snmpdevice.md)
 
 [**Iasphelp::SNMPSupported**](iasphelp-snmpsupported.md)
 
-[**Iasphelp::Status**](iasphelp-status.md)
+[**Iasphelp：： Status**](iasphelp-status.md)

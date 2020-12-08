@@ -1,19 +1,18 @@
 ---
 title: Storport 驱动程序支持例程
 description: 了解 Storport 驱动程序例程，如直接内存访问和 i/o 请求处理支持例程。
-ms.assetid: 15f20a83-43cc-40d4-8fa6-031affca5ee2
 keywords:
 - Storport 驱动程序支持例程
 - 存储 WDK
 - 存储支持例程
 ms.date: 10/08/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 1da0f52308cea75b2e3aeeb3c04a916f53b6acc3
-ms.sourcegitcommit: f1d6c2d0cdbecdc69ba65ed3b530755fc73c8e5e
+ms.openlocfilehash: 4e716b3ed6c72cd08a848c866d3c25241c41f48b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91590385"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96834945"
 ---
 # <a name="storport-driver-support-routines"></a>Storport 驱动程序支持例程
 
@@ -25,7 +24,7 @@ ms.locfileid: "91590385"
 
 Storport 驱动程序提供以下 (DMA) 支持例程的直接内存访问。
 
-| 例程所返回的值 | 说明 |
+| 例程所返回的值 | 描述 |
 | ------- | ----------- |
 | **StorPortBuildScatterGatherList** | 为指定的数据缓冲区创建散点/集合列表。 |
 | **StorPortGetScatterGatherList** | 检索指定 SCSI 请求块 (SRB) 的关联分散/收集列表。 |
@@ -35,7 +34,7 @@ Storport 驱动程序提供以下 (DMA) 支持例程的直接内存访问。
 
 Storport 提供以下常规支持例程。
 
-| 例程所返回的值 | 说明 |
+| 例程所返回的值 | 描述 |
 | ------- | ----------- |
 | **StorPortDebugPrint** | 如果附加了调试器，则向内核调试器打印调试字符串。 |
 | **StorPortEtwEvent2** | 向存储跟踪通道发布 Windows (ETW) 事件的事件跟踪。 小型端口可以记录两个常规用途的 ETW 参数。 ETW 参数以两个名称-值对的形式表示。 |
@@ -52,7 +51,7 @@ Storport 提供以下常规支持例程。
 | **StorPortIsCurrentOsInstallationUpgrade** | 检查 Windows 的当前安装是否从以前的版本升级。 |
 | **StorPortIsDeviceOperationAllowed** | 允许微型端口确定是否允许对某个设备管理类执行操作。 |
 | **StorPortLogError** | 通知端口驱动程序出现错误。 |
-| **StorPortLogSystemEvent** | 授予微型端口驱动程序对 Windows 内核事件设施功能的完全访问权限，从而使微型端口驱动程序可以创建真正用于排查存储问题的事件日志条目。 它为 **StorPortLogError**提供了更好的替代方法。 |
+| **StorPortLogSystemEvent** | 授予微型端口驱动程序对 Windows 内核事件设施功能的完全访问权限，从而使微型端口驱动程序可以创建真正用于排查存储问题的事件日志条目。 它为 **StorPortLogError** 提供了更好的替代方法。 |
 | **StorPortQueryDepthSList** | 检索 Storport 管理的单向链接列表中的条目数。 |
 | **StorPortQueryPerformanceCounter** | 查询并返回当前系统性能计数器的值。 |
 | **StorPortQuerySystemTime** | 获取当前系统时间。 |
@@ -65,7 +64,7 @@ Storport 提供以下常规支持例程。
 
 Storport 提供以下 i/o 请求处理支持例程。
 
-| 例程所返回的值 | 说明 |
+| 例程所返回的值 | 描述 |
 | ------- | ----------- |
 | **StorPortBusy** | 通知端口驱动程序适配器当前正忙，处理未处理的请求。 |
 | **StorPortCompleteRequest** | 完成所有未完成的请求，将 SRB 状态值设置为 SrbStatus。 |
@@ -86,7 +85,7 @@ Storport 提供以下 i/o 请求处理支持例程。
 
 Storport 驱动程序提供以下初始化支持例程。
 
-| 例程所返回的值 | 说明 |
+| 例程所返回的值 | 描述 |
 | ------- | ----------- |
 | **StorPortEnablePassiveInitialization** | 使微型端口的 HwStorPassiveInitializeRoutine 回调例程在微型端口初始化期间 PASSIVE_LEVEL 执行。 |
 | **StorPortGetActiveGroupCount** | 返回系统中存在的处理器组的数目。 |
@@ -111,7 +110,7 @@ Storport 驱动程序提供以下初始化支持例程。
 
 Storport 驱动程序提供以下中断支持例程。
 
-| 例程所返回的值 | 说明 |
+| 例程所返回的值 | 描述 |
 | ------- | ----------- |
 | **StorPortGetMSIInfo** | 为指定消息检索 (MSI) 信息的消息信号中断。 |
 | **StorPortSynchronizeAccess** | 提供对微型端口驱动程序的设备扩展的同步访问。 |
@@ -123,18 +122,18 @@ Storport 驱动程序提供以下中断支持例程。
 
 Storport 驱动程序提供以下锁定支持例程。
 
-| 例程所返回的值 | 说明 |
+| 例程所返回的值 | 描述 |
 | ------- | ----------- |
 | **StorPortAcquireMSISpinLock** | 获取与指定的消息相关联 (MSI) 自旋锁的消息信号中断。 |
 | **StorPortAcquireSpinLock** | 获取指定的旋转锁。 |
 | **StorPortReleaseMSISpinLock** | 为指定的消息释放以前获取的 MSI 旋转锁。 |
-| **StorPortReleaseSpinLock** | 释放 **StorPortAcquireSpinLock**获取的旋转锁。 |
+| **StorPortReleaseSpinLock** | 释放 **StorPortAcquireSpinLock** 获取的旋转锁。 |
 
 ## <a name="memory-management-support-routines"></a>内存管理支持例程
 
 Storport 驱动程序提供了以下内存管理支持例程。
 
-| 例程所返回的值 | 说明 |
+| 例程所返回的值 | 描述 |
 | ------- | ----------- |
 | **StorPortAllocateContiguousMemorySpecifyCacheNode** | 分配一系列物理上不连续的非分页内存。 |
 | **StorPortAllocateMdl** | 分配 MDL 以说明给定的非分页池内存。 |
@@ -155,14 +154,14 @@ Storport 驱动程序提供了以下内存管理支持例程。
 | **StorPortGetPhysicalAddress** | 将给定的虚拟地址范围转换为 DMA 操作的物理地址范围。 |
 | **StorPortGetSystemAddress** | 返回 (SRB) 的指定 SCSI 请求块的数据缓冲区的系统空间中的虚拟地址。 |
 | **StorPortGetUncachedExtension** | 分配由 CPU 和设备共享的未缓存的公共缓冲区。 |
-| **StorPortMarkDumpMemory** | 微型端口应标记用于转储文件或休眠文件的内存。 已标记的内存将保留，并在从休眠操作恢复后保持有效。 要标记的内存由在对 **StorPortMarkDumpMemory**的调用中使用的地址和范围长度来指定。 |
+| **StorPortMarkDumpMemory** | 微型端口应标记用于转储文件或休眠文件的内存。 已标记的内存将保留，并在从休眠操作恢复后保持有效。 要标记的内存由在对 **StorPortMarkDumpMemory** 的调用中使用的地址和范围长度来指定。 |
 | **StorPortMoveMemory** | 将内存从一个缓冲区复制到另一个缓冲区。 |
 
 ## <a name="notification-support-routines"></a>通知支持例程
 
 Storport 驱动程序提供以下通知支持例程。
 
-| 例程所返回的值 | 说明 |
+| 例程所返回的值 | 描述 |
 | ------- | ----------- |
 | **StorPortAsyncNotificationDetected** | 向 Storport 驱动程序通知存储设备状态更改事件。 |
 | **StorPortNotification** | 向 Storport 驱动程序通知某些事件和条件。 |
@@ -172,7 +171,7 @@ Storport 驱动程序提供以下通知支持例程。
 
 Storport 驱动程序提供以下端口并注册 i/o 支持例程。
 
-| 例程所返回的值 | 说明 |
+| 例程所返回的值 | 描述 |
 | ------- | ----------- |
 | **StorPortGetDeviceBase** | 将 i/o 地址映射到系统地址空间。 |
 | **StorPortFreeDeviceBase** | 释放由 StorPortGetDeviceBase 映射的一系列设备 i/o 内存。 |
@@ -210,7 +209,7 @@ Storport 驱动程序提供以下端口并注册 i/o 支持例程。
 
 Storport 驱动程序提供以下运行时电源管理支持例程。
 
-| 例程所返回的值 | 说明 |
+| 例程所返回的值 | 描述 |
 | ------- | ----------- |
 | **StorPortInitializePoFxPower** | 使用电源管理框架 (PoFx) 注册存储设备。 |
 | **StorPortPoFxActivateComponent** | 递增存储设备上指定组件的激活引用计数。 |
@@ -223,7 +222,7 @@ Storport 驱动程序提供以下运行时电源管理支持例程。
 
 Storport 驱动程序提供以下计时器支持例程。
 
-| 例程所返回的值 | 说明 |
+| 例程所返回的值 | 描述 |
 | ------- | ----------- |
 | **StorPortFreeTimer** | 释放先前由 **StorPortInitializeTimer** 例程创建的 Storport 计时器上下文对象。 |
 | **StorPortInitializeTimer** | 创建 Storport 计时器上下文对象。 |

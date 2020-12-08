@@ -1,15 +1,14 @@
 ---
 title: 更新非包感知驱动程序的核心驱动程序文件
 description: 更新非包感知驱动程序的核心驱动程序文件
-ms.assetid: ce5da376-edac-4cd1-8750-9981bb5b709d
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3f174f0fb17e62ba247650ad611349bd226ebb89
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 692f044012afa2770d03c6b480eea9148219d2de
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91734415"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96835473"
 ---
 # <a name="updating-core-drivers-files-for-non-package-aware-drivers"></a>更新非包感知驱动程序的核心驱动程序文件
 

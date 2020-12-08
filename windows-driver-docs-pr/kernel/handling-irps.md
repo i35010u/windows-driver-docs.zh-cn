@@ -1,7 +1,6 @@
 ---
 title: 处理 IRP
 description: 处理 IRP
-ms.assetid: 5fb6d2b9-17ee-4e76-95e9-dd5a7d1e79de
 keywords:
 - 内核模式驱动程序 WDK、Irp
 - Irp WDK 内核
@@ -9,12 +8,12 @@ keywords:
 - IRP WDK，请参阅 Irp WDK
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f4cec18327879127dd6c36aa7a83be510f9c9ac1
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: 73d4488e80671af5790be06ff70c532f29e23135
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89402956"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96836395"
 ---
 # <a name="handling-irps"></a>处理 IRP
 

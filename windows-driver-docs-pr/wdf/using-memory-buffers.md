@@ -1,7 +1,6 @@
 ---
 title: 使用内存缓冲区
 description: 使用内存缓冲区
-ms.assetid: f5699837-f1ba-4088-82b3-d7e27341fb46
 keywords:
 - 内存缓冲区 WDK KMDF
 - 缓冲区 WDK KMDF
@@ -13,12 +12,12 @@ keywords:
 - 本地缓冲区 WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 027e82681bbcf0010f8d5cb1354ec6ca8a8c1a22
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 3682758c986a22fd9c00371997b5a1b2134ec2f7
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89187751"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96836561"
 ---
 # <a name="using-memory-buffers"></a>使用内存缓冲区
 
@@ -40,7 +39,7 @@ ms.locfileid: "89187751"
 
 -   [**WdfMemoryCreateFromLookaside**](/windows-hardware/drivers/ddi/wdfmemory/nf-wdfmemory-wdfmemorycreatefromlookaside)，它从 [后备链表列表](#using-lookaside-lists)创建内存缓冲区。
 
-若要获取表示接收到的 i/o 请求缓冲区的内存对象，驱动程序将调用 [**WdfRequestRetrieveInputMemory**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestretrieveinputmemory) 和 [**WdfRequestRetrieveOutputMemory**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestretrieveoutputmemory)。 有关检索 i/o 请求的缓冲区的详细信息，请参阅 [在基于框架的驱动程序中访问数据缓冲区](./accessing-data-buffers-in-wdf-drivers.md)。
+若要获取表示接收到的 i/o 请求缓冲区的内存对象，驱动程序将调用 [**WdfRequestRetrieveInputMemory**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestretrieveinputmemory) 和 [**WdfRequestRetrieveOutputMemory**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestretrieveoutputmemory)。 有关检索 i/o 请求的缓冲区的详细信息，请参阅 [访问 Framework-Based 驱动程序中的数据缓冲区](./accessing-data-buffers-in-wdf-drivers.md)。
 
 若要获取内存对象缓冲区的地址和大小，驱动程序将调用 [**WdfMemoryGetBuffer**](/windows-hardware/drivers/ddi/wdfmemory/nf-wdfmemory-wdfmemorygetbuffer)。
 
@@ -54,7 +53,7 @@ ms.locfileid: "89187751"
 
 ### <a name="using-lookaside-lists"></a><a href="" id="using-lookaside-lists"></a> 使用后备链表列表
 
-如果你的驱动程序需要的多个缓冲区大小大致相同，应从 *后备链表列表*中进行分配。 驱动程序通过调用 [**WdfLookasideListCreate**](/windows-hardware/drivers/ddi/wdfmemory/nf-wdfmemory-wdflookasidelistcreate)创建后备链表列表。 随后，驱动程序可以通过调用 [**WdfMemoryCreateFromLookaside**](/windows-hardware/drivers/ddi/wdfmemory/nf-wdfmemory-wdfmemorycreatefromlookaside)从后备链表列表中获取缓冲区。
+如果你的驱动程序需要的多个缓冲区大小大致相同，应从 *后备链表列表* 中进行分配。 驱动程序通过调用 [**WdfLookasideListCreate**](/windows-hardware/drivers/ddi/wdfmemory/nf-wdfmemory-wdflookasidelistcreate)创建后备链表列表。 随后，驱动程序可以通过调用 [**WdfMemoryCreateFromLookaside**](/windows-hardware/drivers/ddi/wdfmemory/nf-wdfmemory-wdfmemorycreatefromlookaside)从后备链表列表中获取缓冲区。
 
 每次驱动程序调用 [**WdfMemoryCreateFromLookaside**](/windows-hardware/drivers/ddi/wdfmemory/nf-wdfmemory-wdfmemorycreatefromlookaside)时，框架都将创建一个内存对象，从后备链表列表中获取一个缓冲区，并将该缓冲区分配给该对象。 当驱动程序使用完其中一个内存对象时，它将调用 [**WdfObjectDelete**](/windows-hardware/drivers/ddi/wdfobject/nf-wdfobject-wdfobjectdelete)，这将删除内存对象并将缓冲区空间返回到后备链表列表。
 
@@ -76,7 +75,7 @@ ms.locfileid: "89187751"
 
 ### <a name="aligning-buffers"></a>对齐缓冲区
 
-你的驱动程序可以使用 " [**wdf \_ 对齐 \_ 大小 \_ **](/windows-hardware/drivers/ddi/wdfcore/nf-wdfcore-wdf_align_size_up) " 或 " [**wdf 调整 \_ \_ 大小 \_ **](/windows-hardware/drivers/ddi/wdfcore/nf-wdfcore-wdf_align_size_down) " 功能来计算与指定的对齐偏移量对齐的缓冲区大小。 如果你的驱动程序必须在地址对齐边界开始时分配多个连续缓冲区，则此计算非常有用。
+你的驱动程序可以使用 " [**wdf \_ 对齐 \_ 大小 \_**](/windows-hardware/drivers/ddi/wdfcore/nf-wdfcore-wdf_align_size_up) " 或 " [**wdf 调整 \_ \_ 大小 \_**](/windows-hardware/drivers/ddi/wdfcore/nf-wdfcore-wdf_align_size_down) " 功能来计算与指定的对齐偏移量对齐的缓冲区大小。 如果你的驱动程序必须在地址对齐边界开始时分配多个连续缓冲区，则此计算非常有用。
 
  
 

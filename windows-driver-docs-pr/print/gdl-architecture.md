@@ -1,7 +1,6 @@
 ---
 title: GDL 体系结构
 description: GDL 体系结构
-ms.assetid: 3e796218-ab2a-40a7-a0e3-caeec5c6656e
 keywords:
 - GDL WDK，体系结构
 - 创建快照 WDK GDL
@@ -12,12 +11,12 @@ keywords:
 - 体系结构 WDK GDL
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 54269290e93530851ec7b6bc5db1c65b6f66c299
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: d8542500758239d818122d3c2bcee895dd18b017
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89217157"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96836017"
 ---
 # <a name="gdl-architecture"></a>GDL 体系结构
 
@@ -32,7 +31,7 @@ ms.locfileid: "89217157"
 
 在定义了数据集和架构之后，客户端可以通过指定配置来创建数据集的快照：
 
-1.  此插件通过[**IPrintOemUI：:P ublishdriverinterface**](/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintoemui-publishdriverinterface)方法获取指向**IPrintCoreHelperUni**接口的指针。
+1.  此插件通过 [**IPrintOemUI：:P ublishdriverinterface**](/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintoemui-publishdriverinterface)方法获取指向 **IPrintCoreHelperUni** 接口的指针。
 
 2.  此插件通过调用 [**IPrintCoreHelperUni：： CreateGDLSnapshot**](/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintcorehelperuni-creategdlsnapshot) 或 [**IPrintCoreHelperUni：： CreateDefaultGDLSnapshot**](/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintcorehelperuni-createdefaultgdlsnapshot)请求访问快照。 如果该插件调用了 **CreateGDLSnapshot**，则调用方提供 DEVMODE 结构，该结构包含分析器用于确定快照视图的配置。
 
@@ -44,7 +43,7 @@ ms.locfileid: "89217157"
 
 如果省略了架构，则分析器将只执行架构验证，快照值将在快照中表示为最初在 GDL 源文件中定义的字节字符串。
 
-**注意**   **PublishDriverInterface**方法也是**IPrintOemUni**接口和其他接口的一部分。 因此插件不一定从 IPrintOemUI 获取 helper 接口 [**：:P ublishdriverinterface**](/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintoemui-publishdriverinterface)。 它可以从 **IPrintOemUni：:P ublishdriverinterface** 或其他位置获取 helper 接口，具体取决于插件实现的接口类型。
+**注意**  **PublishDriverInterface** 方法也是 **IPrintOemUni** 接口和其他接口的一部分。 因此插件不一定从 IPrintOemUI 获取 helper 接口 [**：:P ublishdriverinterface**](/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintoemui-publishdriverinterface)。 它可以从 **IPrintOemUni：:P ublishdriverinterface** 或其他位置获取 helper 接口，具体取决于插件实现的接口类型。
 
  
 

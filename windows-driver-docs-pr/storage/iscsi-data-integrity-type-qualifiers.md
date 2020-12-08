@@ -1,25 +1,24 @@
 ---
-title: ISCSI\_数据\_完整性\_类型\_限定符
-description: ISCSI\_数据\_完整性\_类型\_限定符
-ms.assetid: 46b795ef-ef10-49e4-97ff-d30eb724cce2
+title: ISCSI \_ 数据 \_ 完整性 \_ 类型 \_ 限定符
+description: ISCSI \_ 数据 \_ 完整性 \_ 类型 \_ 限定符
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: ea49d7cb431c2f2728e74205b1b42c898b1cec74
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 319dc45858764e9da28345023a68a2fa0b47648a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534369"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96835137"
 ---
-# <a name="iscsidataintegritytypequalifiers"></a>ISCSI\_数据\_完整性\_类型\_限定符
+# <a name="iscsi_data_integrity_type_qualifiers"></a>ISCSI \_ 数据 \_ 完整性 \_ 类型 \_ 限定符
 
 
 ## <span id="ddk_iscsi_data_integrity_type_qualifiers_kr"></span><span id="DDK_ISCSI_DATA_INTEGRITY_TYPE_QUALIFIERS_KR"></span>
 
 
-ISCSI\_数据\_完整性\_类型\_限定符 WMI 属性限定符对应于一组值，指示用于保证数据完整性的方法。
+ISCSI \_ 数据 \_ 完整性 \_ 类型 \_ 限定符 WMI 属性限定符对应于一组值，这些值指示用于确保数据完整性的技术。
 
-下表描述了 ISCSI\_数据\_完整性\_类型\_限定符值。
+下表描述了 ISCSI \_ 数据 \_ 完整性 \_ 类型 \_ 限定符值。
 
 <table>
 <colgroup>
@@ -35,11 +34,11 @@ ISCSI\_数据\_完整性\_类型\_限定符 WMI 属性限定符对应于一组�
 <tbody>
 <tr class="odd">
 <td align="left"><p>0</p></td>
-<td align="left"><p>数据执行操作没有完整性检查。</p></td>
+<td align="left"><p>不会对数据执行完整性检查。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>1</p></td>
-<td align="left"><p>对数据执行 32 位循环冗余检查。</p></td>
+<td align="left"><p>对数据执行32位循环冗余检查。</p></td>
 </tr>
 </tbody>
 </table>

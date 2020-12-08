@@ -1,20 +1,19 @@
 ---
 title: LogoutFromTarget
 description: LogoutFromTarget
-ms.assetid: 29be7228-2b18-4f88-8a5a-e7406ef91b1c
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 016ebd89547cde2a6938deecd9f6d5ec70ddaf62
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 2e333905afa9c7bc2b5dea1d176175f0a0c76747
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89190183"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96835057"
 ---
 # <a name="logoutfromtarget"></a>LogoutFromTarget
 
 
-**LogoutFromTarget**方法指示管理 iSCSI 发起程序 HBA 的微型端口驱动程序，以从本地计算机的设备堆栈中注销目标并删除目标的逻辑单元。
+**LogoutFromTarget** 方法指示管理 iSCSI 发起程序 HBA 的微型端口驱动程序，以从本地计算机的设备堆栈中注销目标并删除目标的逻辑单元。
 
 实现 [MSiSCSI \_ 操作 WMI 类](msiscsi-operations-wmi-class.md) 的微型端口驱动程序无需支持此方法。
 

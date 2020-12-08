@@ -1,7 +1,6 @@
 ---
 title: GetBindingSupport 函数
 description: GetBindingSupport 方法检索当前为指定端口启用的绑定功能。
-ms.assetid: 50c90379-613f-42f1-80fe-7bc1b77a53bf
 keywords:
 - GetBindingSupport 函数存储设备
 topic_type:
@@ -15,25 +14,25 @@ api_type:
 - LibDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: b490255c066c63b9c4afa9b4ef570342505f9967
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 1f2d7be937a74c5a1ab434c53d3cbf9c9cdcc59c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89185449"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96835259"
 ---
 # <a name="getbindingsupport-function"></a>GetBindingSupport 函数
 
 
-**GetBindingSupport**方法检索当前为指定端口启用的绑定功能。
+**GetBindingSupport** 方法检索当前为指定端口启用的绑定功能。
 
 <a name="syntax"></a>语法
 ------
 
 ```ManagedCPlusPlus
 void GetBindingSupport(
-   [in, HBAType("HBA_WWN")] uint8                PortWWN[8],
-   [out, HBA_STATUS_QUALIFIERS] HBA_STATUS       HBAStatus,
+   [in, HBAType("HBA_WWN")] uint8                PortWWN[8],
+   [out, HBA_STATUS_QUALIFIERS] HBA_STATUS       HBAStatus,
    [out, HBA_BIND_TYPE_QUALIFIERS] HBA_BIND_TYPE BindType
 );
 ```
@@ -45,7 +44,7 @@ void GetBindingSupport(
 一个全球名称，指示要检索其持久性绑定的端口。
 
 *HBAStatus*   
-返回时，包含操作的状态。 有关允许值及其说明的列表，请参阅 [HBA \_ 状态](hba-status.md)。 微型端口驱动程序在[**GetBindingSupport \_ OUT**](/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_getbindingsupport_out)结构的**HBAStatus**成员中返回此信息。
+返回时，包含操作的状态。 有关允许值及其说明的列表，请参阅 [HBA \_ 状态](hba-status.md)。 微型端口驱动程序在 [**GetBindingSupport \_ OUT**](/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_getbindingsupport_out)结构的 **HBAStatus** 成员中返回此信息。
 
 *BindType*   
 指示 HBA 及其微型端口驱动程序提供与永久性绑定相关的一组特定功能的位图。 有关此参数可以具有的值的列表，请参阅 [HBA \_ 绑定 \_ 类型](hba-bind-type.md) WMI 类限定符的说明。
@@ -73,7 +72,7 @@ void GetBindingSupport(
 <tbody>
 <tr class="odd">
 <td align="left"><p>目标平台</p></td>
-<td align="left">“桌面”</td>
+<td align="left">台式机</td>
 </tr>
 <tr class="even">
 <td align="left"><p>标头</p></td>

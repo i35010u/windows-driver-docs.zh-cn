@@ -1,17 +1,16 @@
 ---
 title: IPrintOemDriverPS COM 接口
 description: IPrintOemDriverPS COM 接口
-ms.assetid: 32975728-501f-45ac-a53d-34cf286bc433
 keywords:
 - IPrintOemDriverPS
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4a4da91efdb642a8e2056d28986288e366c8d462
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 9e16b98c2acafd57d6bb700b6b0637fc4e533d4c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102968"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96835527"
 ---
 # <a name="iprintoemdriverps-com-interface"></a>IPrintOemDriverPS COM 接口
 
@@ -31,7 +30,7 @@ ms.locfileid: "90102968"
 <thead>
 <tr class="header">
 <th>方法</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>

@@ -4,7 +4,6 @@ description: IPrinterScriptUsbJobContext 接口作为参数传递给 startPrintJ
 MSHAttr:
 - PreferredSiteName:MSDN
 - PreferredLib:/library/windows/hardware
-ms.assetid: 236F6B00-39D8-4084-BAE0-C349AD550040
 keywords:
 - IPrinterScriptUsbJobContext 接口打印设备
 - IPrinterScriptUsbJobContext 接口打印设备，描述
@@ -16,12 +15,12 @@ api_type:
 - COM
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b5f8d097d883e61bbd1410108f1c994b93c8a30f
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 1a5ab7e04abef5a3b770286bda10f1ff72748c69
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89206699"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96835559"
 ---
 # <a name="iprinterscriptusbjobcontext-interface"></a>IPrinterScriptUsbJobContext 接口
 
@@ -30,13 +29,13 @@ IPrinterScriptUsbJobContext 接口作为参数传递给 **startPrintJob** JavaSc
 <a name="members"></a>成员
 -------
 
-**IPrinterScriptUsbJobContext**接口继承自[**IUnknown**](/windows/win32/api/unknwn/nn-unknwn-iunknown)接口。 **IPrinterScriptUsbJobContext** 还具有下列类型的成员：
+**IPrinterScriptUsbJobContext** 接口继承自 [**IUnknown**](/windows/win32/api/unknwn/nn-unknwn-iunknown)接口。 **IPrinterScriptUsbJobContext** 还具有下列类型的成员：
 
 -   [方法](#methods)
 
 ### <a name="methods"></a>方法
 
-**IPrinterScriptUsbJobContext**接口具有这些方法。
+**IPrinterScriptUsbJobContext** 接口具有这些方法。
 
 <table>
 <colgroup>
@@ -46,7 +45,7 @@ IPrinterScriptUsbJobContext 接口作为参数传递给 **startPrintJob** JavaSc
 <thead>
 <tr class="header">
 <th>方法</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -84,7 +83,7 @@ IPrinterScriptUsbJobContext 接口作为参数传递给 **startPrintJob** JavaSc
 <tbody>
 <tr class="odd">
 <td><p>最低受支持的客户端</p></td>
-<td><p>Windows 8.1</p></td>
+<td><p>Windows 8.1</p></td>
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>

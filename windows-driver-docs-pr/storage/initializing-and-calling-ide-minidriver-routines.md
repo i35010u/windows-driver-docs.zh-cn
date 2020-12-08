@@ -1,7 +1,6 @@
 ---
 title: 初始化和调用 IDE 微型驱动程序例程
 description: 初始化和调用 IDE 微型驱动程序例程
-ms.assetid: ae7b19a9-0a2e-4231-b008-879b7f6c8566
 keywords:
 - IDE 控制器微型驱动程序 WDK 存储，初始化
 - 存储 IDE 控制器微型驱动程序 WDK，初始化
@@ -10,12 +9,12 @@ keywords:
 - 初始化 IDE 控制器微型驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fd78ffaf5d32a3e2fdc4cfd5bb70bbede4758b1a
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 036594dcfd80c3a7b295908ec6c441013ea4240e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89184681"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96835149"
 ---
 # <a name="initializing-and-calling-ide-minidriver-routines"></a>初始化和调用 IDE 微型驱动程序例程
 
@@ -51,7 +50,7 @@ ms.locfileid: "89184681"
 
 此例程指示是否可以同时访问其控制器的两个通道。
 
-此例程为 *XferMode*中指示的每个设备返回最佳 PIO 模式和最佳 DMA 模式。
+此例程为 *XferMode* 中指示的每个设备返回最佳 PIO 模式和最佳 DMA 模式。
 
 此例程指示 (UDMA) 传输模式为最新且最适用于设备的超直接内存访问。
 

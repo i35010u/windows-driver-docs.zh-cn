@@ -1,16 +1,15 @@
 ---
 title: OID_SRIOV_BAR_RESOURCES
 description: NDIS 发出对象标识符 (OID) 方法请求 OID_SRIOV_BAR_RESOURCES，以确定分配给 PCI Express (PCIe) 基址寄存器 ()  (VF) 的内存资源。
-ms.assetid: CA29591B-EBFB-4B12-A980-F3FAD65207E2
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_SRIOV_BAR_RESOURCES 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 01be4af9e807ebc398f4767901ba8aba60877140
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: df782d76b6eabf7e8777163e5a36429b6595d653
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104722"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96836333"
 ---
 # <a name="oid_sriov_bar_resources"></a>OID \_ SRIOV \_ BAR \_ 资源
 
@@ -19,30 +18,30 @@ NDIS 发出对象标识符 (oid) 方法请求 OID \_ SRIOV \_ BAR \_ 资源，�
 
 NDIS 向网络适配器的 PCIe 物理功能 (PF) 的微型端口驱动程序发出此 OID 方法请求。 对于支持单个根 i/o 虚拟化 (SR-IOV) 接口的 PF 小型端口驱动程序，需要此 OID 方法请求。
 
-[**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的**InformationBuffer**成员包含指向缓冲区的指针。 此缓冲区包含以下结构：
+[**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的 **InformationBuffer** 成员包含指向缓冲区的指针。 此缓冲区包含以下结构：
 
 -   用于指定 PF 微端口驱动程序返回其资源信息的 VF 和栏的 [**NDIS \_ SRIOV \_ BAR \_ 资源 \_ 信息**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_bar_resources_info) 结构。
 
--   一个 [**CM \_ 部分 \_ 资源 \_ 描述符**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_cm_partial_resource_descriptor) 结构，它遵循 [**NDIS \_ SRIOV \_ BAR \_ 资源 \_ 信息**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_bar_resources_info) 结构。 **CM \_ 部分 \_ 资源 \_ 描述符**结构包含有关分配给指定条形的内存资源的信息。
+-   一个 [**CM \_ 部分 \_ 资源 \_ 描述符**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_cm_partial_resource_descriptor) 结构，它遵循 [**NDIS \_ SRIOV \_ BAR \_ 资源 \_ 信息**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_bar_resources_info) 结构。 **CM \_ 部分 \_ 资源 \_ 描述符** 结构包含有关分配给指定条形的内存资源的信息。
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 NDIS 发出 OID SRIOV BAR 资源的 OID 方法请求， \_ \_ \_ 以获取分配给 VF 栏的内存资源的系统物理地址和长度。 在它发出 OID 方法请求之前，NDIS 按以下方式设置 [**ndis \_ SRIOV \_ BAR \_ 资源 \_ 信息**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_bar_resources_info) 结构的格式：
 
--   NDIS 将[**ndis \_ SRIOV \_ BAR \_ 资源 \_ 信息**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_bar_resources_info)结构的**VFId**成员设置为与 VF 关联的标识符。
+-   NDIS 将 [**ndis \_ SRIOV \_ BAR \_ 资源 \_ 信息**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_bar_resources_info)结构的 **VFId** 成员设置为与 VF 关联的标识符。
 
--   NDIS 将[**ndis \_ SRIOV \_ BAR \_ 资源 \_ 信息**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_bar_resources_info)结构的**BARINDEX**成员设置为指定 VF 的条形索引。 条形索引是 PCI 配置空间中的栏表内寄存器的偏移量。
+-   NDIS 将 [**ndis \_ SRIOV \_ BAR \_ 资源 \_ 信息**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_bar_resources_info)结构的 **BARINDEX** 成员设置为指定 VF 的条形索引。 条形索引是 PCI 配置空间中的栏表内寄存器的偏移量。
 
--   NDIS 将[**ndis \_ SRIOV \_ bar \_ 资源 \_ 信息**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_bar_resources_info)结构的**BarResourcesOffset**成员设置为偏移量（以字节为单位），从**NDIS \_ SRIOV \_ bar \_ 资源 \_ 信息**结构开始到[**CM \_ 部分 \_ 资源 \_ 说明符**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_cm_partial_resource_descriptor)结构。
+-   NDIS 将 [**ndis \_ SRIOV \_ bar \_ 资源 \_ 信息**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_bar_resources_info)结构的 **BarResourcesOffset** 成员设置为偏移量（以字节为单位），从 **NDIS \_ SRIOV \_ bar \_ 资源 \_ 信息** 结构开始到 [**CM \_ 部分 \_ 资源 \_ 说明符**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_cm_partial_resource_descriptor)结构。
 
-**注意**   过量驱动程序（如协议或筛选器驱动程序）不能将 OID SRIOV BAR 资源的 OID 方法请求发送 \_ \_ \_ 到 PF 微型端口驱动程序。
+**注意**  过量驱动程序（如协议或筛选器驱动程序）不能将 OID SRIOV BAR 资源的 OID 方法请求发送 \_ \_ \_ 到 PF 微型端口驱动程序。
 
  
 
-当 PF 微型端口驱动程序接收到 OID 方法请求时，驱动程序将通过在[**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的**InformationBuffer**成员中设置[**CM \_ 部分 \_ 资源 \_ 描述符**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_cm_partial_resource_descriptor)结构的格式，来返回指定条形图的资源。 驱动程序将 **CM \_ 部分 \_ 资源 \_ 描述符** 结构与与指定 VF 的栏相关联的系统硬件资源进行格式化。
+当 PF 微型端口驱动程序接收到 OID 方法请求时，驱动程序将通过在 [**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的 **InformationBuffer** 成员中设置 [**CM \_ 部分 \_ 资源 \_ 描述符**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_cm_partial_resource_descriptor)结构的格式，来返回指定条形图的资源。 驱动程序将 **CM \_ 部分 \_ 资源 \_ 描述符** 结构与与指定 VF 的栏相关联的系统硬件资源进行格式化。
 
-**注意**   驱动程序必须为**CmResourceTypeMemory**的资源类型设置结构格式。
+**注意**  驱动程序必须为 **CmResourceTypeMemory** 的资源类型设置结构格式。
 
  
 

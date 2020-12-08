@@ -1,19 +1,18 @@
 ---
 title: 初始化打印监视器
 description: 初始化打印监视器
-ms.assetid: 006727dd-aa0f-451c-b1c9-983d0c6401df
 keywords:
 - 打印监视器 WDK，初始化
 - 初始化打印监视器
 - LoadLibrary
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0c714680104f6f97518b200f62281c851d6a6db3
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 93ca4b038aac06c72527ef771449df84162eff2f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89205891"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96835695"
 ---
 # <a name="initializing-a-print-monitor"></a>初始化打印监视器
 

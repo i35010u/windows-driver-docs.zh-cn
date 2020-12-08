@@ -1,7 +1,6 @@
 ---
 title: 处理 SRB_FUNCTION_FLUSH 和 SRB_FUNCTION_SHUTDOWN
 description: 处理 SRB_FUNCTION_FLUSH 和 SRB_FUNCTION_SHUTDOWN
-ms.assetid: d4b8b3e5-d895-42ca-bd28-9d3cef805654
 keywords:
 - SCSI 微型端口驱动程序 WDK 存储，HwScsiStartIo
 - HwScsiStartIo
@@ -9,12 +8,12 @@ keywords:
 - SRB_FUNCTION_SHUTDOWN
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a6b6606d4b3c281904c46947a07c13c6ce8b60bb
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 8ce03d518a81f6fce3d21cbb408424161226ce64
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89191317"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96835213"
 ---
 # <a name="handling-srb_function_flush-and-srb_function_shutdown"></a>处理 SRB \_ 函数 \_ FLUSH 和 SRB \_ 函数 \_ 关闭
 

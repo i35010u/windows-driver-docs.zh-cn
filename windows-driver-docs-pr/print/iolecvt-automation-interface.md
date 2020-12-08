@@ -7,19 +7,18 @@ MS-HAID:
 MSHAttr:
 - PreferredSiteName:MSDN
 - PreferredLib:/library/windows/hardware
-ms.assetid: 286ab231-c215-45cc-b0da-97ec8adf2de1
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6014271e2bfd8496eabcd46cad290e5930c06386
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 9aba4617fca01ebd2bee047166dba8fc75a30d47
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89213659"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96835611"
 ---
 # <a name="iolecvt-automation-interface"></a>IOleCvt 自动化接口
 
-通过 **IOleCvt** 对象的自动化接口，ASP 网页可执行各种格式的字符串转换。 这些方法包括：
+通过 **IOleCvt** 对象的自动化接口，ASP 网页可执行各种格式的字符串转换。 其中包括：
 
 -   从 Unicode 到 ANSI 的转换
 
@@ -33,7 +32,7 @@ ms.locfileid: "89213659"
 
 Windows 2000 及更高版本支持 **IOleCvt** 接口。
 
-**IOleCvt**对象的编程标识符为 OlePrn. OleCvt。
+**IOleCvt** 对象的编程标识符为 OlePrn. OleCvt。
 
 有关如何从 ASP 网页访问打印机的详细信息，请参阅 [Internet 打印](./internet-printing.md)。
 

@@ -1,10 +1,9 @@
 ---
 title: IPrinterScriptUsbJobContext JobPropertyBag 方法
-description: 返回与当前打印作业相关联的属性包。
+description: 返回与当前打印作业关联的属性包。
 MSHAttr:
 - PreferredSiteName:MSDN
 - PreferredLib:/library/windows/hardware
-ms.assetid: 6309CCD2-D53A-4B21-970E-AF19D1DACEE3
 keywords:
 - JobPropertyBag 方法打印设备
 - JobPropertyBag 方法打印设备，IPrinterScriptUsbJobContext 接口
@@ -17,41 +16,41 @@ api_type:
 - COM
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9f31afd0131ee0b0c89d83c0608108fbeacd8e8e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 992b5a94746c9e5ae937661d770c33f4d71d8d3c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63349251"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96835561"
 ---
-# <a name="iprinterscriptusbjobcontextjobpropertybag-method"></a>IPrinterScriptUsbJobContext::JobPropertyBag 方法
+# <a name="iprinterscriptusbjobcontextjobpropertybag-method"></a>IPrinterScriptUsbJobContext：： JobPropertyBag 方法
 
-返回与当前打印作业相关联的属性包。
+返回与当前打印作业关联的属性包。
 
 <a name="syntax"></a>语法
 ------
 
 ```cpp
 HRESULT JobPropertyBag(
-  [out, retval] IPrinterScriptablePropertyBag **ppPropertyBag
+  [out, retval] IPrinterScriptablePropertyBag **ppPropertyBag
 );
 ```
 
-<a name="parameters"></a>Parameters
+<a name="parameters"></a>参数
 ----------
 
-*ppPropertyBag* \[out, retval\]  
-属性包与当前打印作业相关联。
+*ppPropertyBag* \[out，retval\]  
+与当前打印作业关联的属性包。
 
 <a name="return-value"></a>返回值
 ------------
 
-此方法返回**HRESULT**值。
+此方法返回 **HRESULT** 值。
 
 <a name="remarks"></a>备注
 -------
 
-**JobPropertyBag**是只读的方法。 IHV JavaScript 函数可以使用此属性包来存储属性或特定于当前正在处理打印作业的数据。 当前作业的持续期间存在此属性包。
+**JobPropertyBag** 为只读方法。 IHV JavaScript 函数可以使用此属性包来存储特定于当前正在处理的打印作业的属性或数据。 此属性包在当前作业的持续时间内存在。
 
 <a name="requirements"></a>要求
 ------------
@@ -72,7 +71,7 @@ HRESULT JobPropertyBag(
 </tr>
 <tr class="odd">
 <td><p>目标平台</p></td>
-<td>桌面设备</td>
+<td>台式机</td>
 </tr>
 </tbody>
 </table>

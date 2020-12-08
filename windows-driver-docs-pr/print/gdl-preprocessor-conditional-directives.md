@@ -1,7 +1,6 @@
 ---
 title: GDL 预处理器条件指令
 description: GDL 预处理器条件指令
-ms.assetid: 5eb4bcbf-3f5e-44cc-b4e5-716a15e43b15
 keywords:
 - 指令 WDK GDL，源文件预处理器指令
 - 源文件 WDK GDL，预处理器指令
@@ -10,21 +9,21 @@ keywords:
 - 条件指令 WDK GDL
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 508e588296219506421258d73e1f10200cc8553f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c0ef9b066a3a5d48db63f3a4cbfa254e260e812e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380017"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96835943"
 ---
 # <a name="gdl-preprocessor-conditional-directives"></a>GDL 预处理器条件指令
 
 
-GDL 预处理器条件指令定义条件构造。 每个条件构造开头 **\#Ifdef**指令和终止 **\#Endif**指令。 在中间 **\#Elseifdef**指令可能会出现零，有一个或多个时间。 可选 **\#Else**指令必须显示最后一个之间 **\#Elseifdef**指令 （如果有使用） 和最后一个 **\#Endif**指令。
+GDL 预处理器条件指令定义条件构造。 每个条件构造都以 **\# Ifdef** 指令开头，并由 **\# Endif** 指令终止。 在 between 之间， **\# Elseifdef** 指令可能出现零次、一次或多次。 如果任何已使用) 和最后一个 **\# Endif** 指令，则可选的 **\# Else** 指令必须出现在最后一个 **\# Elseifdef** 指令之间 (。
 
-这些指令的每个分区为条件节，则允许插入数据 （非预处理器指令）每个部分是保留的分析的下一阶段或预处理如下所述过程中删除。 这并不是处理和不包含任何条件构造中的数据始终保留。
+其中每个指令都将中间数据分区 (非预处理器指令) 为条件部分;在预处理过程中，将保留每个部分用于分析或删除的下一个阶段，如下所述。 始终会保留未处理且不包含在任何条件构造中的数据。
 
-可以嵌套的条件部分指令。 从整个条件构造 **\#Ifdef**结束语 **\#Endif**必须位于完全封闭的条件构造的一部分。
+条件节指令可以嵌套。 从 **\# Ifdef** 到结束 **\# Endif** 的整个条件构造必须完全驻留在封闭条件构造的一个部分中。
 
 GDL 使用以下条件指令：
 
@@ -32,7 +31,7 @@ GDL 使用以下条件指令：
 
 [\#Elseifdef](-elseifdef-conditional-preprocessor-directive.md)
 
-[\#Else](-else-conditional-preprocessor-directive.md)
+[\#其它](-else-conditional-preprocessor-directive.md)
 
 [\#Endif](-endif-conditional-preprocessor-directive.md)
 

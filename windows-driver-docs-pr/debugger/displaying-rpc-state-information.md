@@ -1,17 +1,16 @@
 ---
 title: 显示 RPC 状态信息
 description: 显示 RPC 状态信息
-ms.assetid: 9931cf62-a7c2-4270-8664-a77a82207aa9
 keywords:
-- RPC 调试、 显示 RPC 状态信息
+- RPC 调试，显示 RPC 状态信息
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4391d3286be2d33b5c0843d39fb9c5047fe78171
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6dd0eb963eb0ecebf33d9d404720dbc9bdc35e73
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63363926"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96836549"
 ---
 # <a name="displaying-rpc-state-information"></a>显示 RPC 状态信息
 
@@ -19,23 +18,23 @@ ms.locfileid: "63363926"
 ## <span id="ddk_displaying_rpc_state_information_dbg"></span><span id="DDK_DISPLAYING_RPC_STATE_INFORMATION_DBG"></span>
 
 
-RPC 运行时状态的所有信息都包含在单元格。 单元格是信息的可以查看和更新单独的最小单位。 DbgRpc 工具和 RPC 调试器扩展允许您以查看任何给定的单元格的内容或运行高级查询。
+所有 RPC 运行时状态信息都包含在单元格中。 单元是可单独查看和更新的信息的最小单位。 DbgRpc 工具和 RPC 调试器扩展都允许您查看任何给定单元的内容或运行高级查询。
 
-每个键的对象中 RPC 运行时将保持其状态信息的一个或多个单元格。 每个单元格有一个单元格的 id。 当一个对象引用另一个对象时，它是通过指定该对象的单元格 id。
+RPC Run-Time 中的每个密钥对象将维护一个或多个有关其状态的信息单元。 每个单元都有一个单元 ID。 当对象引用另一对象时，它通过指定该对象的单元 ID 来实现此目的。
 
-RPC 运行时可以维护有关的信息的关键对象是终结点、 线程、 连接对象、 服务器调用 (SCALL) 对象和客户端调用 (CCALL) 对象。 服务器调用对象通常被当做*调用对象*。
+RPC Run-Time 可以维护的关键对象包括终结点、线程、连接对象、服务器调用 (SCALL) 对象和客户端调用 (CCALL) 对象。 服务器调用对象通常称为 *调用对象*。
 
-RPC 状态信息查询生成相同的信息，无论您使用 DbgRpc 工具或 RPC 调试器扩展。 以下部分介绍如何在每个车辆中使用的查询：
+无论你使用的是 DbgRpc 工具还是 RPC 调试器扩展，RPC 状态信息查询都会生成相同的信息。 以下各部分介绍如何在每个车辆中使用查询：
 
-[使用 RPC 调试程序扩展](using-the-rpc-debugger-extensions.md)
+[使用 RPC 调试器扩展](using-the-rpc-debugger-extensions.md)
 
 [使用 DbgRpc 工具](using-the-dbgrpc-tool.md)
 
-最基本的查询只是显示的单个单元格：
+最基本的查询只显示单个单元：
 
-[获取 RPC 单元格的信息](get-rpc-cell-information.md)
+[获取 RPC 单元信息](get-rpc-cell-information.md)
 
-下面的高级查询均可用：
+还提供了以下高级查询：
 
 [获取 RPC 终结点信息](get-rpc-endpoint-information.md)
 

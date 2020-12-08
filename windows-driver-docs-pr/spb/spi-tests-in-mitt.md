@@ -1,21 +1,20 @@
 ---
 title: MITT 中的 SPI 测试
 description: MITT 软件包中包含的 SPI 测试模块。
-ms.assetid: 8240841C-FFA0-48EC-AB7E-4E15E262C23D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b110da665fe2b8ea819c6fa39375330e4f889bd9
-ms.sourcegitcommit: 0c3cab853b0b75149b7604eef03275f997792a84
+ms.openlocfilehash: 4138683a5e37b5c54bd0ca71d2cbc9e8f877ed84
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96157323"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96835401"
 ---
 # <a name="spi-tests-in-mitt"></a>MITT 中的 SPI 测试
 
 MITT 软件包中包含的 SPI 测试模块可用于测试数据传输是否适用于受测系统上的 SPI 控制器及其驱动程序。 MITT 板充当连接到 SPI 总线的客户端设备。
 
-## <a name="before-you-begin"></a>开始之前
+## <a name="before-you-begin"></a>在开始之前
 
 - 获取 MITT 板、SPI 或 UART 适配器板。 请参阅 [购买使用 MITT 的硬件](./multi-interface-test-tool--mitt--.md)。
 - [下载 MITT](/previous-versions/dn919810(v=vs.85))软件包。 在受测系统上安装它。

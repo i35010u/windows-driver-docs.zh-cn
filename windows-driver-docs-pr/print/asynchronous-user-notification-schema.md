@@ -1,22 +1,21 @@
 ---
 title: 异步用户通知架构
 description: 异步用户通知架构
-ms.assetid: a9a11663-d5e5-4337-8be3-bdb6d3b0e436
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fd5b84ee161ae558137b327c23376aeff7e7aa07
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4be4e7a26a72e1f06d3d9e102b2ba1aa54d12126
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331208"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96836131"
 ---
 # <a name="asynchronous-user-notification-schema"></a>异步用户通知架构
 
 
-本部分提供的打印机驱动程序可用于提供到客户端计算机的异步事件通知消息的 XML 架构的信息。 此功能是 Windows Vista 开始提供。
+本部分提供了有关 XML 架构的信息，打印机驱动程序可以使用该架构将异步事件通知消息提供给客户端计算机。 此功能从 Windows Vista 开始提供。
 
-### <a name="span-idxmlschemaelementsspanspan-idxmlschemaelementsspan-xml-schema-elements"></a><span id="xml_schema_elements"></span><span id="XML_SCHEMA_ELEMENTS"></span> XML 架构元素
+### <a name="span-idxml_schema_elementsspanspan-idxml_schema_elementsspan-xml-schema-elements"></a><span id="xml_schema_elements"></span><span id="XML_SCHEMA_ELEMENTS"></span> XML 架构元素
 
 [**action**](action.md)
 
@@ -24,13 +23,13 @@ ms.locfileid: "63331208"
 
 [**balloonUI**](balloonui.md)
 
-[**bitmap**](bitmap.md)
+[**图**](bitmap.md)
 
 [**body**](body.md)
 
-[**button**](button.md)
+[**鼠标**](button.md)
 
-[**buttons**](buttons.md)
+[**按钮**](buttons.md)
 
 [**customData**](customdata.md)
 
@@ -38,7 +37,7 @@ ms.locfileid: "63331208"
 
 [**messageBoxUI**](messageboxui.md)
 
-[**parameter**](parameter.md)
+[**参数**](parameter.md)
 
 [**requestClose**](requestclose.md)
 

@@ -2,14 +2,13 @@
 description: 本部分提供有关仔细管理 USB 带宽的指南。
 title: USB 带宽分配
 ms.date: 04/20/2017
-ms.assetid: a1533825-a28f-45eb-9a54-c7298022c385
 ms.localizationpriority: medium
-ms.openlocfilehash: 2250563c30e85a19f065a5a3aaa6412b392175f0
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: ff0f998026a6e2a6b75d0af57e664b3e3d367845
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107320"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96834861"
 ---
 # <a name="usb-bandwidth-allocation"></a>USB 带宽分配
 
@@ -77,11 +76,11 @@ USB 2.0 规范要求同步设备在其默认接口设置上具有零带宽终结
 ### <a name="maximum-transfer-size"></a>最大传输大小
 
 
-*最大传输大小*指定 USB 驱动程序堆栈中的硬编码限制。 由于系统资源限制，传输大小低于这些限制可能会失败。 若要避免这种类型的故障并确保 Windows 的所有版本之间的兼容性，请避免使用较大的传输大小进行 USB 传输。
+*最大传输大小* 指定 USB 驱动程序堆栈中的硬编码限制。 由于系统资源限制，传输大小低于这些限制可能会失败。 若要避免这种类型的故障并确保 Windows 的所有版本之间的兼容性，请避免使用较大的传输大小进行 USB 传输。
 
-> **注意**  
+> **注意**  
 >
-> 在 Windows XP、Windows Server 2003 和更高版本中， [**USBD \_ 管道 \_ 信息**](/windows-hardware/drivers/ddi/usb/ns-usb-_usbd_pipe_information)结构的**MaximumTransferSize**成员已过时。 USB 驱动程序堆栈忽略组合和非复合设备的 **MaximumTransferSize** 中的值。
+> 在 Windows XP、Windows Server 2003 和更高版本中， [**USBD \_ 管道 \_ 信息**](/windows-hardware/drivers/ddi/usb/ns-usb-_usbd_pipe_information)结构的 **MaximumTransferSize** 成员已过时。 USB 驱动程序堆栈忽略组合和非复合设备的 **MaximumTransferSize** 中的值。
 >
 > 在 Windows 2000 中，USB 驱动程序堆栈会将 **MaximumTransferSize** 初始化为 USBD \_ 默认的 \_ 最大 \_ 传输 \_ 大小。 客户端驱动程序可以在配置设备时设置较小的值。 对于复合设备，每个函数的客户端驱动程序只能为非默认接口设置中的管道更改 **MaximumTransferSize** 。
 
@@ -101,7 +100,7 @@ USB 传输大小服从以下限制：
 <th>Windows 8.1，Windows 8</th>
 <th>Windows 7、Windows Vista</th>
 <th>Windows XP 和 Windows Server 2003</th>
-<th>Windows 2000</th>
+<th>Windows 2000</th>
 </tr>
 </thead>
 <tbody>
@@ -157,17 +156,17 @@ USB 传输大小服从以下限制：
 
  
 
-使用 **MaximumTransferSize** 限制传输大小不会直接影响设备消耗的带宽量。 客户端驱动程序必须更改接口设置，或限制在[**USBD \_ 管道 \_ 信息**](/windows-hardware/drivers/ddi/usb/ns-usb-_usbd_pipe_information)的**MaximumPacketSize**成员中设置的最大数据包大小。
+使用 **MaximumTransferSize** 限制传输大小不会直接影响设备消耗的带宽量。 客户端驱动程序必须更改接口设置，或限制在 [**USBD \_ 管道 \_ 信息**](/windows-hardware/drivers/ddi/usb/ns-usb-_usbd_pipe_information)的 **MaximumPacketSize** 成员中设置的最大数据包大小。
 
 ### <a name="maximum-packet-size"></a>最大数据包大小
 
 
-*最大数据包大小*由端点描述符的**wMaxPacketSize**字段定义。 客户端驱动程序可以在设备的选择-接口请求中控制 USB 数据包大小。 更改此值不会更改设备上的 **wMaxPacketSize** 。
+*最大数据包大小* 由端点描述符的 **wMaxPacketSize** 字段定义。 客户端驱动程序可以在设备的选择-接口请求中控制 USB 数据包大小。 更改此值不会更改设备上的 **wMaxPacketSize** 。
 
 对于该请求， [**URB**](/windows-hardware/drivers/ddi/usb/ns-usb-_urb) 中的是管道的 [**USBD \_ 管道 \_ 信息**](/windows-hardware/drivers/ddi/usb/ns-usb-_usbd_pipe_information) 结构。 在该结构中，
 
--   修改[**USBD \_ 管道 \_ 信息**](/windows-hardware/drivers/ddi/usb/ns-usb-_usbd_pipe_information)结构的**MaximumPacketSize**成员。 将其设置为小于或等于 "当前接口" 设置的 "设备固件" 中定义的 **wMaxPacketSize** 的值。
--   \_ \_ \_ \_ 在**PipeFlags**成员[**USBD \_ 管道 \_ 信息**](/windows-hardware/drivers/ddi/usb/ns-usb-_usbd_pipe_information)结构中设置 USBD PF 更改最大数据包标志。
+-   修改 [**USBD \_ 管道 \_ 信息**](/windows-hardware/drivers/ddi/usb/ns-usb-_usbd_pipe_information)结构的 **MaximumPacketSize** 成员。 将其设置为小于或等于 "当前接口" 设置的 "设备固件" 中定义的 **wMaxPacketSize** 的值。
+-   \_ \_ \_ \_ 在 **PipeFlags** 成员 [**USBD \_ 管道 \_ 信息**](/windows-hardware/drivers/ddi/usb/ns-usb-_usbd_pipe_information)结构中设置 USBD PF 更改最大数据包标志。
 
 有关选择接口设置的信息，请参阅 [如何为 USB 设备选择配置](how-to-select-a-configuration-for-a-usb-device.md)。
 
@@ -176,9 +175,9 @@ USB 传输大小服从以下限制：
 
 当客户端驱动程序发出读取请求时，传输缓冲区必须是最大数据包大小的倍数。 即使驱动程序需要的数据小于最大数据包大小，它仍必须请求整个数据包。 如果设备发送的数据包小于 (短数据包) 的最大大小，则表明传输已完成。
 
-**注意**  
+**注意**  
 
-在较旧的控制器上，客户端驱动程序可以重写此行为。 在 data transfer [**URB**](/windows-hardware/drivers/ddi/usb/ns-usb-_urb)的**TransferFlags**成员中，客户端驱动程序必须设置 USBD \_ SHORT \_ transfer \_ OK 标志。 该标志允许设备发送小于 **wMaxPacketSize**的数据包。
+在较旧的控制器上，客户端驱动程序可以重写此行为。 在 data transfer [**URB**](/windows-hardware/drivers/ddi/usb/ns-usb-_urb)的 **TransferFlags** 成员中，客户端驱动程序必须设置 USBD \_ SHORT \_ transfer \_ OK 标志。 该标志允许设备发送小于 **wMaxPacketSize** 的数据包。
 
 在 xHCI 主机控制器上， \_ \_ \_ 为大容量和中断终结点忽略 USBD SHORT 传输正常。 在 EHCI 控制器上传输短数据包不会导致错误。
 
@@ -191,7 +190,7 @@ USB 传输大小服从以下限制：
 
 当写入设备时，USB 驱动程序堆栈驱动程序不会对数据包大小施加相同的限制。 某些客户端驱动程序必须频繁传输少量的控制数据来管理其设备。 在这种情况下，将数据传输限制为大小相同的数据包是不切实际的。 因此，在数据写入过程中，驱动程序堆栈不会将任何特殊意义分配给大小小于终结点的最大大小的数据包。 这允许客户端驱动程序将大容量传输到大于或等于最大值的多个 URBs。
 
-驱动程序必须通过不超过最大大小的数据包来结束传输，或者用长度为零的数据包分隔传输结束。 直到驱动程序发送一个小于 *wMaxPacketSize*的数据包，才能完成传输。 如果传输大小是最大值的倍数，则驱动程序必须发送一个长度为零的分隔数据包，以显式终止传输
+驱动程序必须通过不超过最大大小的数据包来结束传输，或者用长度为零的数据包分隔传输结束。 直到驱动程序发送一个小于 *wMaxPacketSize* 的数据包，才能完成传输。 如果传输大小是最大值的倍数，则驱动程序必须发送一个长度为零的分隔数据包，以显式终止传输
 
 根据 USB 规范的要求，用长度为零的数据包来界定数据传输是客户端驱动程序的责任。 USB 驱动程序堆栈不会自动生成这些数据包。
 
@@ -199,6 +198,6 @@ USB 传输大小服从以下限制：
 ## <a name="delimiting-usb-data-transfers-with-packets-smaller-than-wmaxpacketsize"></a>用小于 wMaxPacketSize 的数据包分隔 USB 数据传输
 
 
-兼容的 USB 2.0/1.1 驱动程序必须将最大大小的数据包传输 (*wMaxPacketSize*) ，然后通过不超过最大大小的数据包结束传输，或者通过长度为零的数据包来界定传输的结束时间。 直到驱动程序发送一个小于 *wMaxPacketSize*的数据包，才能完成传输。 如果传输大小是最大值的倍数，则驱动程序必须发送一个长度为零的分隔数据包，以显式终止传输
+兼容的 USB 2.0/1.1 驱动程序必须将最大大小的数据包传输 (*wMaxPacketSize*) ，然后通过不超过最大大小的数据包结束传输，或者通过长度为零的数据包来界定传输的结束时间。 直到驱动程序发送一个小于 *wMaxPacketSize* 的数据包，才能完成传输。 如果传输大小是最大值的倍数，则驱动程序必须发送一个长度为零的分隔数据包，以显式终止传输
 
 根据 USB 规范的要求，用长度为零的数据包来界定数据传输是设备驱动程序的责任。 系统 USB 堆栈不会自动生成这些数据包。

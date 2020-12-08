@@ -1,35 +1,34 @@
 ---
 title: GDL 带引号字符串
 description: GDL 带引号字符串
-ms.assetid: 52d6f1bf-0b8c-4aa7-8cc8-1a18def224be
 keywords:
 - 构造 WDK GDL，字符串
-- GDL WDK 字符串
+- GDL WDK，字符串
 - 字符串 WDK GDL，带引号的字符串
 - 带引号的字符串 WDK GDL
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0911ff78717c40e1bdc78f39c7fd1a4c2e5306e1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: abb83afa73f5c390030188fc0a631994f788f318
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63366343"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96835937"
 ---
 # <a name="gdl-quoted-strings"></a>GDL 带引号字符串
 
 
-一个*带引号的字符串*开头和结尾的双引号字符 （"）。 有以下例外带引号的字符串的一部分，将按原义视为之间出现的任何字符：
+*带引号的字符串* 以双引号字符开始和结束， ( ") 。 出现在中的任何字符将按原义形式视为引号字符串的一部分，但以下情况例外：
 
--   百分比符号加上双引号 (%") 将被视为原义双引号字符 （"）。
+-   百分号和双引号 (% ") 被视为文本双引号 (" ) 。
 
--   百分比符号和小于号 (%&lt;) 被视为小于符号的文本 (&lt;)。
+-   百分比符号加上小于符号 (% &lt;) 被视为小于符号 (&lt;) 。
 
--   百分比符号后跟任何其他字符被视为文字百分号 （%）。
+-   后跟任何其他字符的百分号符号被视为文本百分比符号 (% ) 。
 
--   小于符号 (&lt;) 引入了[HexSubString](gdl-hexsubstrings.md)上下文。
+-   小于符号 (&lt;) 引入 [HexSubString](gdl-hexsubstrings.md) 上下文。
 
--   带引号的字符串可以出现在嵌套的上下文;仅 HexSubString 上下文被识别 uoted 字符串内。
+-   带引号的字符串可以出现在嵌套的上下文中;在 uoted 字符串内只能识别 HexSubString 上下文。
 
  
 

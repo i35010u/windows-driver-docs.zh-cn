@@ -1,13 +1,12 @@
 ---
-title: Iasphelp get\_PageRateUnit 方法
-description: PageRateUnit 启用 ASP 网页，以确定分页速率表示的单位。
+title: Iasphelp get \_ PageRateUnit 方法
+description: 使用 PageRateUnit，ASP 网页可以确定表示页面速率的单位。
 MS-HAID:
 - webfnc\_c3c557fb-2ce9-4260-838a-4bd0e56fb63d.xml
 - print.iasphelp\_pagerateunit
 MSHAttr:
 - PreferredSiteName:MSDN
 - PreferredLib:/library/windows/hardware
-ms.assetid: 1b528527-a03a-4fab-b118-5c744759a0a1
 keywords:
 - get_PageRateUnit 方法打印设备
 - get_PageRateUnit 方法打印设备，Iasphelp 接口
@@ -20,31 +19,31 @@ api_type:
 - COM
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: acbf199ce49bb180b2640134d7e8f09c46be1fab
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 909004dca49762061fbefae42adc243d919823cd
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63386622"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96835759"
 ---
-# <a name="iasphelpgetpagerateunit-method"></a>Iasphelp::get\_PageRateUnit 方法
+# <a name="iasphelpget_pagerateunit-method"></a>Iasphelp：： get \_ PageRateUnit 方法
 
-**PageRateUnit**启用 ASP 网页，以确定分页速率表示的单位。
+使用 **PageRateUnit** ，ASP 网页可以确定表示页面速率的单位。
 
 <a name="syntax"></a>语法
 ------
 
 ```cpp
 HRESULT get_PageRateUnit(
-  [out] long *pVal
+  [out] long *pVal
 );
 ```
 
-<a name="parameters"></a>Parameters
+<a name="parameters"></a>参数
 ----------
 
-*pVal* \[out\]  
-指向接收值，该值指示页速率中使用的单位的内存位置的调用方提供的指针。 下表中显示四个可能的值。
+*pVal* \[弄\]  
+调用方提供的指向内存位置的指针，该内存位置接收指示在页面速率中使用的单位的值。 下表显示了四个可能的值。
 
 <table>
 <colgroup>
@@ -53,36 +52,36 @@ HRESULT get_PageRateUnit(
 </colgroup>
 <thead>
 <tr class="header">
-<th>值</th>
+<th>“值”</th>
 <th>含义</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><p>1</p></td>
-<td><p>打印速度单位为每分钟页数。</p></td>
+<td><p>打印速率单位为每分钟页数。</p></td>
 </tr>
 <tr class="even">
 <td><p>2</p></td>
-<td><p>打印速度单位为每秒的字符。</p></td>
+<td><p>每秒打印速率单位为个字符。</p></td>
 </tr>
 <tr class="odd">
 <td><p>3</p></td>
-<td><p>打印速度单位为每分钟的行。</p></td>
+<td><p>每分钟打印速率单位数。</p></td>
 </tr>
 <tr class="even">
 <td><p>4</p></td>
-<td><p>打印速度单位为每分钟英寸为单位。</p></td>
+<td><p>每分钟打印速率单位为英寸。</p></td>
 </tr>
 </tbody>
 </table>
 
-这些值对应于常量 PRINTRATEUNIT\_PPM、 PRINTRATEUNIT\_CPS、 PRINTRATEUNIT\_LPM 和 PRINTRATEUNIT\_IPM，Wingdi.h 标头文件中定义。 有关这些常量的详细信息，请参阅的说明**DeviceCapabilities** Windows SDK 文档中的函数。
+这些值对应于 \_ \_ \_ \_ 在 Wingdi 标头文件中定义的常量 PRINTRATEUNIT PPM、PRINTRATEUNIT CPS、PRINTRATEUNIT LPM 和 PRINTRATEUNIT IPM。 有关这些常量的详细信息，请参阅 Windows SDK 文档中的 **DeviceCapabilities** 函数说明。
 
 <a name="return-value"></a>返回值
 ------------
 
-下表中，此属性返回的值之一。
+此属性返回下表中的值之一。
 
 <table>
 <colgroup>
@@ -102,7 +101,7 @@ HRESULT get_PageRateUnit(
 </tr>
 <tr class="even">
 <td><strong>E_HANDLE</strong></td>
-<td><p><a href="iasphelp-open.md" data-raw-source="[&lt;strong&gt;Iasphelp::Open&lt;/strong&gt;](iasphelp-open.md)"> <strong>Iasphelp::Open</strong> </a>尚未调用方法。</p></td>
+<td><p>未调用 <a href="iasphelp-open.md" data-raw-source="[&lt;strong&gt;Iasphelp::Open&lt;/strong&gt;](iasphelp-open.md)"><strong>Iasphelp：： Open</strong></a> 方法。</p></td>
 </tr>
 <tr class="odd">
 <td><strong>E_OUTOFMEMORY</strong></td>
@@ -113,9 +112,9 @@ HRESULT get_PageRateUnit(
 
 ## <a name="vbscript-example"></a>VBScript 示例
 
-通过查询此属性来确定的单位[ **Iasphelp::PageRate** ](iasphelp-pagerate.md)表示属性值。
+查询此属性，以确定表示 [**Iasphelp：:P agerate**](iasphelp-pagerate.md) 属性值的单位。
 
-[ **Iasphelp::Open** ](iasphelp-open.md)前必须调用方法**Iasphelp::PageRateUnit**属性可以进行查询。
+在查询 **Iasphelp：:P agerateunit** 属性之前，必须先调用 [**Iasphelp：： Open**](iasphelp-open.md)方法。
 
 ```vb
 Dim objPrinter, PtrPageRateUnit
@@ -136,13 +135,13 @@ PtrPageRate = objPrinter.PageRateUnit
 <tbody>
 <tr class="odd">
 <td><p>目标平台</p></td>
-<td>桌面设备</td>
+<td>台式机</td>
 </tr>
 </tbody>
 </table>
 
 ## <a name="see-also"></a>请参阅
 
-[**Iasphelp::PageRate**](iasphelp-pagerate.md)
+[**Iasphelp：:P ageRate**](iasphelp-pagerate.md)
 
-[**Iasphelp::Open**](iasphelp-open.md)
+[**Iasphelp：： Open**](iasphelp-open.md)

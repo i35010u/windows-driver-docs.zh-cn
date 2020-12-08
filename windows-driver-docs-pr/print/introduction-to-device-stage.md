@@ -1,15 +1,14 @@
 ---
 title: 设备阶段简介
 description: 设备阶段简介
-ms.assetid: 375cd28e-0a85-4652-bd9a-a220d00b6deb
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5c1284ab72a188aea0a55352954fe45582074325
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 215b8f529725fd447b0d4142ec06542d5eb5ac76
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63324861"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96835649"
 ---
 # <a name="introduction-to-device-stage"></a>设备阶段简介
 
@@ -18,7 +17,7 @@ ms.locfileid: "63324861"
 
 [什么是设备阶段？](what-is-device-stage-.md)
 
-[获取详细信息](getting-more-information.md)
+[获取更多信息](getting-more-information.md)
 
  
 

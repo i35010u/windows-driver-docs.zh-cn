@@ -1,25 +1,24 @@
 ---
 title: 修改 SRB
 description: 修改 SRB
-ms.assetid: 9077cfab-c17c-4c8e-9740-0895f227fb4b
 keywords:
 - SCSI 微型端口驱动程序 WDK 存储，HwScsiStartIo
 - HwScsiStartIo
 - SRB 修改 WDK 存储
 ms.date: 10/08/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 89f089a42470c780b290aecb24b4e0a6d8097c9e
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 88d736826409cca32cb58b7f1f331e3d83c455b8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89187805"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96835047"
 ---
 # <a name="modifying-srbs"></a>修改 SRB
 
 如前面部分所述，如果微型端口驱动程序维护每个请求的状态信息，则 SCSI 微型端口驱动程序的 [**DriverEntry**](driverentry-of-scsi-miniport-driver.md) 例程必须请求端口驱动程序为 SRB 扩展插件分配内存。
 
-否则，SCSI 微型端口驱动程序只能出于以下目的将值写入*到 SRBs*中*only* ：
+否则，SCSI 微型端口驱动程序只能出于以下目的将值写入 *到 SRBs* 中 *only* ：
 
 - 返回 **SrbStatus** 和 **ScsiStatus** 成员中有关每个操作的所需状态
 

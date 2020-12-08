@@ -1,7 +1,6 @@
 ---
 title: 实现 XPS 筛选器
 description: 实现 XPS 筛选器
-ms.assetid: 681f533f-d6f6-43a3-be0b-10d8c1a6f12e
 keywords:
 - XPSDrv 打印机驱动程序 WDK，呈现模块
 - 渲染模块 WDK XPSDrv，XPS 筛选器
@@ -10,12 +9,12 @@ keywords:
 - IPrintPipelineFilter
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7e1e27f6969e20839ca953f488be45f09d63f9a5
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 202395624a157e91cd10bbdebba36362a227094e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89216040"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96835727"
 ---
 # <a name="implementing-xps-filters"></a>实现 XPS 筛选器
 
@@ -28,13 +27,13 @@ ms.locfileid: "89216040"
 
 2.  在 [IPrintPipelinePropertyBag](/windows-hardware/drivers/ddi/filterpipeline/nn-filterpipeline-iprintpipelinepropertybag) 接口中处理相关数据。
 
-3.  调用**IInterFilterCommunicator**接口 (pIInterFilterCom) 的[**IInterFilterCommunicator：： RequestReader**](/windows-hardware/drivers/ddi/filterpipeline/nf-filterpipeline-iinterfiltercommunicator-requestreader)和[**IInterFilterCommunicator：： RequestWriter**](/windows-hardware/drivers/ddi/filterpipeline/nf-filterpipeline-iinterfiltercommunicator-requestwriter)方法，以初始化筛选器的提供程序和使用者接口。
+3.  调用 **IInterFilterCommunicator** 接口 (pIInterFilterCom) 的 [**IInterFilterCommunicator：： RequestReader**](/windows-hardware/drivers/ddi/filterpipeline/nf-filterpipeline-iinterfiltercommunicator-requestreader)和 [**IInterFilterCommunicator：： RequestWriter**](/windows-hardware/drivers/ddi/filterpipeline/nf-filterpipeline-iinterfiltercommunicator-requestwriter)方法，以初始化筛选器的提供程序和使用者接口。
 
 如果数据包含 PrintTicket 部分，则可以通过 Microsoft Win32 PrintTicket 或 PrintCapabilities API 访问数据。 对于基于 XPSDrv 的 UniDrv 和 PScript5 驱动程序，筛选器可以访问 [IPrintCoreHelper](/windows-hardware/drivers/ddi/prcomoem/nn-prcomoem-iprintcorehelper) Interface core UniDrv 或 PScript5 driver 作为其配置服务。
 
 筛选器还可以通过属性包访问专用的配置数据，具体取决于驱动程序设计。
 
-筛选器间 Communicator 是筛选器管道管理器的一部分，用于处理筛选器管道中筛选器之间的通信。 当筛选器管道管理器初始化筛选器时，会将筛选器中的 Communicator 接口 [)  (传递](/windows-hardware/drivers/ddi/filterpipeline/nn-filterpipeline-iinterfiltercommunicator) 给筛选器，以便筛选器可以获取为该筛选器定义的读取和写入接口。
+Inter-Filter Communicator 是筛选器管道管理器的一部分，用于处理筛选器管道中的筛选器之间的通信。 当筛选器管道管理器初始化筛选器时，会将 Inter-Filter Communicator 接口 ([IInterFilterCommunicator](/windows-hardware/drivers/ddi/filterpipeline/nn-filterpipeline-iinterfiltercommunicator)) 传递到筛选器，以便筛选器可以获取为该筛选器定义的读取和写入接口。
 
 Microsoft 提供 XPS 文档和流接口，但你可以创建自己的筛选器内部筛选器接口。 Microsoft 提供以下接口：
 

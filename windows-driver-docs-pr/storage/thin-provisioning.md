@@ -1,15 +1,14 @@
 ---
 title: 精简预配
 description: 精简预配
-ms.assetid: 0D65DDCC-D207-4EA8-B5D6-56DF57221EE3
 ms.date: 10/04/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 06391a99ff82342b856bec4a1e5c859e5e1bd7f2
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: ed87b6979c859f2bd6a2fa2b7a07b8bc11fc175b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89189209"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96834901"
 ---
 # <a name="thin-provisioning"></a>精简预配
 

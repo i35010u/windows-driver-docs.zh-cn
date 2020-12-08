@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ ATN \_ 读取器
 description: KSPROPERTY \_ ATN \_ READER 属性检索当前磁带位置 (ATN) 的绝对轨迹号。
-ms.assetid: ac127aa0-5a47-41b2-9a2d-96090231d43e
 keywords:
 - KSPROPERTY_ATN_READER 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a1b49e8c1c849b401f88c6b39a3200601bc46187
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: aa1bbc09f06dac05bef4d6b6be67182f7924d70d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105160"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96834895"
 ---
 # <a name="ksproperty_atn_reader"></a>KSPROPERTY \_ ATN \_ 读取器
 
@@ -66,7 +65,7 @@ KSPROPERTY \_ ATN \_ READER 属性检索当前磁带位置 (ATN) 的绝对轨迹
 <a name="remarks"></a>备注
 -------
 
-KSPROPERTY **TimecodeSamp**时间 \_ 码 S 结构的 TimecodeSamp 成员 \_ 描述当前磁带位置的绝对跟踪号。
+KSPROPERTY **TimecodeSamp** 时间 \_ 码 S 结构的 TimecodeSamp 成员 \_ 描述当前磁带位置的绝对跟踪号。
 
 <a name="requirements"></a>要求
 ------------
@@ -84,7 +83,7 @@ KSPROPERTY **TimecodeSamp**时间 \_ 码 S 结构的 TimecodeSamp 成员 \_ 描�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSPROPERTY**](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)

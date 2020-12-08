@@ -1,18 +1,17 @@
 ---
 title: 安装和配置打印机驱动程序
 description: 安装和配置打印机驱动程序
-ms.assetid: 77534f45-daa5-460c-97d4-0f0c3c54f4b4
 keywords:
 - 安装驱动程序 WDK 打印机
 - 打印机驱动程序安装 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 02a28baf02fd491aa2ed7545c7ee6c6dc90bce54
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 15ea571d5e733d8dc55ebe116117f4f41ac16b09
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63366597"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96835679"
 ---
 # <a name="installing-and-configuring-printer-drivers"></a>安装和配置打印机驱动程序
 
@@ -20,13 +19,13 @@ ms.locfileid: "63366597"
 
 
 
-本部分介绍安装和配置打印机驱动程序。 它包括以下主题：
+本部分介绍打印机驱动程序的安装和配置。 它包括以下主题：
 
 [打印机安装基础知识](printer-installation-basics.md)
 
-[打印机插](plug-and-play-for-printers.md)
+[打印机即插即用](plug-and-play-for-printers.md)
 
-[从网络上安装打印机](installing-printers-over-a-network.md)
+[通过网络安装打印机](installing-printers-over-a-network.md)
 
 [打印机配置](printer-configuration.md)
 

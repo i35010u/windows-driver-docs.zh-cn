@@ -1,7 +1,6 @@
 ---
 title: 管理文件系统中的权限
 description: 描述如何在文件系统中管理权限
-ms.assetid: a8df1a44-6fb7-4c16-a29d-785d06dd50e4
 keywords:
 - 安全 WDK 文件系统，特权
 - 权限 WDK 文件系统
@@ -16,12 +15,12 @@ keywords:
 - 还原特权 WDK 文件系统
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 948c0e63a89dd83e24f415ce8e995c4ce968a321
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: bda03d28e40b29ae5c847bbffcd23d477ef45226
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89063272"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96836439"
 ---
 # <a name="managing-privileges-in-a-file-system"></a>管理文件系统中的权限
 

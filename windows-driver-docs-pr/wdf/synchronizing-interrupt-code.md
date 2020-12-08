@@ -1,19 +1,18 @@
 ---
 title: 同步中断代码
 description: 了解同步中断代码的相关信息。 查看使硬件中断的驱动程序代码变得复杂的因素，并查看用于避免这些问题的规则。
-ms.assetid: a24477dc-f75d-4ab6-8695-d8a85247e276
 keywords:
 - 硬件中断 WDK KMDF，同步
 - 中断 WDK KMDF，同步
 - 同步 WDK 中断
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cc775e22406f6f3eb664033553ef9a866dadf9fd
-ms.sourcegitcommit: fc94eb0d5a41ef81c1b3ab91ad725386db0be0c2
+ms.openlocfilehash: a1c38931c68993a0d6fc3a2660f35097681d99a7
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91603617"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96836567"
 ---
 # <a name="synchronizing-interrupt-code"></a>同步中断代码
 
@@ -34,11 +33,11 @@ ms.locfileid: "91603617"
 
 -   仅 [*EvtInterruptIsr*](/windows-hardware/drivers/ddi/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_isr) 回调函数可访问可变中断数据，如包含中断信息的设备寄存器。
 
-    [*EvtInterruptIsr*](/windows-hardware/drivers/ddi/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_isr)回调函数应将可变数据移到驱动程序定义的中断数据缓冲区，驱动程序的[*EvtInterruptDpc*](/windows-hardware/drivers/ddi/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_dpc)回调函数、 [*EvtInterruptWorkItem*](/windows-hardware/drivers/ddi/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_workitem)回调函数或多个[*EvtDpcFunc*](/windows-hardware/drivers/ddi/wdfdpc/nc-wdfdpc-evt_wdf_dpc)回调函数可以访问。
+    [*EvtInterruptIsr*](/windows-hardware/drivers/ddi/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_isr)回调函数应将可变数据移到驱动程序定义的中断数据缓冲区，驱动程序的 [*EvtInterruptDpc*](/windows-hardware/drivers/ddi/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_dpc)回调函数、 [*EvtInterruptWorkItem*](/windows-hardware/drivers/ddi/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_workitem)回调函数或多个 [*EvtDpcFunc*](/windows-hardware/drivers/ddi/wdfdpc/nc-wdfdpc-evt_wdf_dpc)回调函数可以访问。
 
     如果驱动程序为其中断对象提供 [*EvtInterruptDpc*](/windows-hardware/drivers/ddi/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_dpc) 或 [*EvtInterruptWorkItem*](/windows-hardware/drivers/ddi/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_workitem) 回调函数，则存储中断数据的最佳位置是中断对象的 [上下文空间](framework-object-context-space.md)。 中断对象的回调函数可以通过使用其接收的对象句柄来访问对象的上下文空间。
 
-    如果驱动程序为每个[*EvtInterruptIsr*](/windows-hardware/drivers/ddi/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_isr)回调函数提供多个[*EvtDpcFunc*](/windows-hardware/drivers/ddi/wdfdpc/nc-wdfdpc-evt_wdf_dpc)回调函数，则可以在每个 DPC 对象的上下文空间中存储中断数据。
+    如果驱动程序为每个 [*EvtInterruptIsr*](/windows-hardware/drivers/ddi/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_isr)回调函数提供多个 [*EvtDpcFunc*](/windows-hardware/drivers/ddi/wdfdpc/nc-wdfdpc-evt_wdf_dpc)回调函数，则可以在每个 DPC 对象的上下文空间中存储中断数据。
 
 -   所有访问中断数据缓冲区的驱动程序代码都必须进行同步，以便一次只有一个例程访问数据。
 
@@ -61,9 +60,9 @@ ms.locfileid: "91603617"
 
     或者，在 KMDF 版本1.11 及更高版本中，驱动程序可以通过调用 [**WdfInterruptQueueWorkItemForIsr**](/windows-hardware/drivers/ddi/wdfinterrupt/nf-wdfinterrupt-wdfinterruptqueueworkitemforisr)来请求中断工作项。  (回忆，驱动程序的 [*EvtInterruptIsr*](/windows-hardware/drivers/ddi/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_isr) 回调函数可以调用 **WdfInterruptQueueWorkItemForIsr** 或 [**WdfInterruptQueueDpcForIsr**](/windows-hardware/drivers/ddi/wdfinterrupt/nf-wdfinterrupt-wdfinterruptqueuedpcforisr)，但不能同时调用两者。 ) 
 
--   如果对驱动程序的[*EvtInterruptDpc*](/windows-hardware/drivers/ddi/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_dpc)和[*EvtDpcFunc*](/windows-hardware/drivers/ddi/wdfdpc/nc-wdfdpc-evt_wdf_dpc)回调函数以及与设备关联的其他回调函数进行同步时，您的驱动程序可以将该函数的**AutomaticSerialization**成员设置为 TRUE，并将其设置为**TRUE** 。 [** \_ \_ **](/windows-hardware/drivers/ddi/wdfinterrupt/ns-wdfinterrupt-_wdf_interrupt_config) [** \_ \_ **](/windows-hardware/drivers/ddi/wdfdpc/ns-wdfdpc-_wdf_dpc_config) 或者，驱动程序可以使用 [框架自旋锁](using-framework-locks.md#framework-spin-locks)。 将 **AutomaticSerialization** 成员设置为 **TRUE** (不会将 [*EvtInterruptIsr*](/windows-hardware/drivers/ddi/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_isr) 回调函数与其他回调函数同步。 如本主题前面所述，使用 [**WdfInterruptSynchronize**](/windows-hardware/drivers/ddi/wdfinterrupt/nf-wdfinterrupt-wdfinterruptsynchronize) 或 [**WdfInterruptAcquireLock**](/previous-versions/ff547340(v=vs.85)) 来同步 *EvtInterruptIsr* 回调函数。 ) 
+-   如果对驱动程序的 [*EvtInterruptDpc*](/windows-hardware/drivers/ddi/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_dpc)和 [*EvtDpcFunc*](/windows-hardware/drivers/ddi/wdfdpc/nc-wdfdpc-evt_wdf_dpc)回调函数以及与设备关联的其他回调函数进行同步时，您的驱动程序可以将该函数的 **AutomaticSerialization** 成员设置为 TRUE，并将其设置为 **TRUE** 。 [**\_ \_**](/windows-hardware/drivers/ddi/wdfinterrupt/ns-wdfinterrupt-_wdf_interrupt_config) [**\_ \_**](/windows-hardware/drivers/ddi/wdfdpc/ns-wdfdpc-_wdf_dpc_config) 或者，驱动程序可以使用 [框架自旋锁](using-framework-locks.md#framework-spin-locks)。 将 **AutomaticSerialization** 成员设置为 **TRUE** (不会将 [*EvtInterruptIsr*](/windows-hardware/drivers/ddi/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_isr) 回调函数与其他回调函数同步。 如本主题前面所述，使用 [**WdfInterruptSynchronize**](/windows-hardware/drivers/ddi/wdfinterrupt/nf-wdfinterrupt-wdfinterruptsynchronize) 或 [**WdfInterruptAcquireLock**](/previous-versions/ff547340(v=vs.85)) 来同步 *EvtInterruptIsr* 回调函数。 ) 
 
-有关同步驱动程序例程的详细信息，请参阅 [基于框架的驱动程序的同步技术](./using-automatic-synchronization.md)。
+有关同步驱动程序例程的详细信息，请参阅 [Framework-Based 驱动程序的同步技术](./using-automatic-synchronization.md)。
 
  
 

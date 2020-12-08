@@ -1,28 +1,27 @@
 ---
 title: GDL 空白字符
 description: GDL 空白字符
-ms.assetid: 703c41c0-3e12-465a-823f-c32990a52382
 keywords:
-- 构造 WDK GDL，空白字符
-- 延续 linebreak WDK GDL
+- 构造 WDK GDL，空格字符
+- 继续 linebreak WDK GDL
 - linebreak 序列 WDK GDL
 - 分析器 WDK GDL，处理空白
-- GDL WDK，空白字符
+- GDL WDK，空格字符
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 652c91e476f1d749ceb567b20ecfdfafc200b64a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 297eee811612033dcb1da0a3434aae345ce747fb
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63329710"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96835875"
 ---
 # <a name="gdl-whitespace-characters"></a>GDL 空白字符
 
 
-*空白字符*定义为在空格、 制表符或延续 linebreak。 一个*延续 linebreak*是加号 （+） 后面紧跟 linebreak 序列。 (A *linebreak 序列*是"\\n\\r"、"\\r\\n"，"\\n"，或"\\r"表示为 C 字符串。)
+*空白字符* 定义为空格、制表符或继续 linebreak。 *继续 linebreak* 是 linebreak 序列，后面紧跟加号 (+) 。  (*linebreak 序列* 为 " \\ n \\ r"、" \\ r \\ n"、" \\ n" 或 " \\ r" 表示为 C 字符串。 ) 
 
-在按原义解释空格[带引号的字符串](gdl-quoted-strings.md)和任意值上下文中。 出现在其他位置的空格被视为非文本。 GDL 分析器将合并非文本空格;也就是说，任意数量的连续非文本空白字符将替换为一个空格字符。 不合并文本的空白。
+在 [带引号的字符串](gdl-quoted-strings.md) 和任意值上下文中，将按原义解释空白。 出现在其他位置的空白被视为非文本。 GDL 分析器合并非文本空格;也就是说，任意数目的连续非文本空白字符都将替换为一个空格字符。 文本空格不合并。
 
  
 

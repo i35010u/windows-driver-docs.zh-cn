@@ -1,7 +1,6 @@
 ---
 title: 关于通知对象
 description: 关于通知对象
-ms.assetid: 87e4bcb6-dbdc-487d-9e21-0738165bf834
 keywords:
 - 通知对象 WDK 网络，关于通知对象
 - 网络通知对象 WDK，关于通知对象
@@ -10,12 +9,12 @@ keywords:
 - 子系统 WDK 网络配置
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2d380e837e993f46e01c9a913d3b0f6b965fbee2
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 3ea47515a7b804b3f5e24bd8ba6aff95c1312a94
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89214069"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96836369"
 ---
 # <a name="about-notify-objects"></a>关于通知对象
 
@@ -31,7 +30,7 @@ ms.locfileid: "89214069"
 
 -   客户端，如 Microsoft 网络客户端
 
-**注意**   网卡不支持且无法拥有通知对象。 加入配置网络或安装和卸载的物理或虚拟网卡必须使用 INF 文件或设备共同安装程序机制。
+**注意**  网卡不支持且无法拥有通知对象。 加入配置网络或安装和卸载的物理或虚拟网卡必须使用 INF 文件或设备共同安装程序机制。
 有关详细信息，请参阅 [编写共同安装程序](../install/writing-a-co-installer.md)。
 
  
@@ -44,7 +43,7 @@ Notify 对象执行以下操作：
 
 若要请求和接收通知并相互通信，通知对象和网络配置子系统 (COM) 接口实现组件对象模型。
 
-通知对象是驻留在动态链接库中 (Dll) 的 COM 对象。 这些 Dll 是 COM *组件服务器*。 每种类型的网络组件都与安装特定类型的网络组件并注册这些网络组件所拥有的 COM*类对象*的*类安装程序*相关联。 网络组件的主要安装阶段完成后，将注册对象。 若要注册 COM 类对象，类安装程序将调用该对象的 DLL 入口点函数。
+通知对象是驻留在动态链接库中 (Dll) 的 COM 对象。 这些 Dll 是 COM *组件服务器*。 每种类型的网络组件都与安装特定类型的网络组件并注册这些网络组件所拥有的 COM *类对象* 的 *类安装程序* 相关联。 网络组件的主要安装阶段完成后，将注册对象。 若要注册 COM 类对象，类安装程序将调用该对象的 DLL 入口点函数。
 
 只要操作系统安装、升级或删除网络功能，或者在应用程序配置网络时，操作系统或这些应用程序都必须启动网络配置子系统。 网络配置子系统启动后，将创建一个通知对象的实例，并且通知对象将执行特定的操作。
 

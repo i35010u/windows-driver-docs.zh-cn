@@ -1,15 +1,14 @@
 ---
 title: MPIO \_ 驱动器 \_ 信息 WMI 类
 description: MPIO \_ 驱动器 \_ 信息 WMI 类
-ms.assetid: 4c116157-5f5b-4213-abdd-9128ebbfa341
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: f27adbd0764139b43fb1c1e75eabeb20ef3a298a
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 0789549769acd54438750f24feb2fafba8582d23
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89193197"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96835025"
 ---
 # <a name="mpio_drive_info-wmi-class"></a>MPIO \_ 驱动器 \_ 信息 WMI 类
 

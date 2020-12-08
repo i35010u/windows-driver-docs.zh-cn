@@ -1,7 +1,6 @@
 ---
 title: usbkd.usbdpc
 description: Usbkd. usbdpc 命令显示 _XDPC_CONTEXT 结构中存储的信息。
-ms.assetid: 51ED1BB0-416B-4B2B-9F4D-61F841224126
 keywords:
 - usbkd usbdpc Windows 调试
 ms.date: 05/23/2017
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: ad105da3f7c82188683097ad507486ed20afd51f
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 71fe2910d32a167281b1a5c73f8c52780f5a265e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89213525"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96834793"
 ---
 # <a name="usbkdusbdpc"></a>!usbkd.usbdpc
 
 
-**！ Usbkd. usbdpc**命令显示** \_ XDPC \_ 上下文**结构中存储的信息。
+**！ Usbkd. usbdpc** 命令显示 **\_ XDPC \_ 上下文** 结构中存储的信息。
 
 ```dbgcmd
 !usbkd.usbdpc StructAddr
@@ -53,7 +52,7 @@ UHCI MINIPORT(s) dt usbport!_USBPORT_MINIPORT_DRIVER ffffe00001e77010
 ...
 ```
 
-在上面的输出中，FDO 的设备扩展的地址显示为 [DML](debugger-markup-language-commands.md) command **！ uhci \_ info ffffe00001c7d1a0**的参数。
+在上面的输出中，FDO 的设备扩展的地址显示为 [DML](debugger-markup-language-commands.md) command **！ uhci \_ info ffffe00001c7d1a0** 的参数。
 
 单击 DML 命令或将设备扩展的地址传递给 [**！ usbhcdext**](-usbkd-usbhcdext.md) 以获取 XDPC 列表。
 
@@ -69,7 +68,7 @@ UHCI MINIPORT(s) dt usbport!_USBPORT_MINIPORT_DRIVER ffffe00001e77010
 ...
 ```
 
-在上面的输出中， `ffffe00001c7df18` 是** \_ XDPC \_ 上下文**结构的地址。 将此地址传递给 **！ usbdpc**。
+在上面的输出中， `ffffe00001c7df18` 是 **\_ XDPC \_ 上下文** 结构的地址。 将此地址传递给 **！ usbdpc**。
 
 ```dbgcmd
 0: kd> !usbkd.usbdpc ffffe00001c7df18

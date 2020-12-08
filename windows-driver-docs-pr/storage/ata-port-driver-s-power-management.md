@@ -1,18 +1,17 @@
 ---
 title: ATA 端口驱动程序的电源管理
 description: ATA 端口驱动程序的电源管理
-ms.assetid: 01c37fed-3b5b-4dd9-bdbd-5c5499a2ddcf
 keywords:
 - ATA 端口驱动程序 WDK，电源管理
 - 电源管理 WDK ATA 端口驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cc3e227371fd68a43cc4a945a70111676d9d100b
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: fc19c1c996222e9919fff120fd9a75c9e337889e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91733719"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96835363"
 ---
 # <a name="ata-port-drivers-power-management"></a>ATA 端口驱动程序的电源管理
 

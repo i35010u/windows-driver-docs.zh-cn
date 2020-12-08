@@ -1,18 +1,17 @@
 ---
 title: 日志记录清单概述
 description: 日志记录清单概述
-ms.assetid: abf550c5-6b70-4043-b2e9-d3dc5096cc4e
 keywords:
-- 日志查看器，清单
-- 日志查看器，清单，概述
+- LogViewer，清单
+- LogViewer，清单，概述
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6eea59260a5928503ff0e670758c24d5983bbf9b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: db12a895256dcac1494d3195ba9abe12d0461e0d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63366458"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96834713"
 ---
 # <a name="overview-of-the-logging-manifest"></a>日志记录清单概述
 
@@ -20,17 +19,17 @@ ms.locfileid: "63366458"
 ## <span id="ddk_overview_of_the_logging_manifest_dtoolq"></span><span id="DDK_OVERVIEW_OF_THE_LOGGING_MANIFEST_DTOOLQ"></span>
 
 
-日志记录清单是定义的函数和拦截和记录的 COM 接口的"标头"文件组。 这些不是，则返回 trueC++标头文件，它们是显式声明所需的记录器的信息的略有不同格式。
+日志记录清单是一组 "标头" 文件，用于定义截获和记录的函数和 COM 接口。 它们不是真正的 c + + 头文件，它们采用略有不同的格式，可显式声明记录器所需的信息。
 
-例如，清单格式的功能包括以下功能：
+例如，清单格式有助于以下功能：
 
--   OUT 参数的名称。 这些是应记录在自己的方式执行函数以及被淘汰的参数。
+-   指定 OUT 参数。 这两个参数都应同时记录在函数中，同时也会在外进行。
 
--   定义的标志掩码。 此功能允许日志查看器来分解成更易于阅读其构成位标签的 DWORD 标记。
+-   标记掩码的定义。 此功能允许 LogViewer 将 DWORD 标志拆分为其构成位标签，以便于阅读。
 
--   失败的情况下的定义。 此功能允许日志查看器来添加阴影的函数返回了失败状态代码或另一个错误代码的行。 此外，如果该函数将设置线程的"LastError"值，日志查看器可以存储消失的错误代码和扩展到其相应的用户可读的错误消息。
+-   故障事例的定义。 此功能允许 LogViewer 为已返回失败状态代码的函数行或其他错误代码设置底纹。 此外，如果该函数为线程设置了 "LastError" 值，则 LogViewer 可以存储错误代码，并将其扩展到其对应的可读错误消息。
 
--   可以使用别名的日志差异的参数的名称。 此功能提供日志查看器将常量字符串分配给指针和句柄等变化执行执行时的数据导出到文件的值的选项。 然后可以使用差异比较工具来比较两个执行日志的差异。 如果指针和句柄值不是使用别名，它们将在两个文件进行比较时产生不相关的差异。
+-   指定可以为日志差分指定别名的参数。 此功能为 LogViewer 提供了在将数据导出到文件时，为从执行更改为执行（如指针和句柄）的值的选项。 然后，可以使用差异比较工具比较两个执行日志的差异。 如果指针和句柄值没有化名，它们会在比较两个文件时产生不相关的差异。
 
  
 

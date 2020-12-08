@@ -1,15 +1,14 @@
 ---
 title: HID 按钮驱动程序
 description: 使用适用于 GPIO 按钮的 Microsoft 提供的按钮驱动程序;否则，请实现将 HID 数据注入操作系统的驱动程序。
-ms.assetid: FBA8141D-8DBA-4C68-8BB5-44B3EDB7D062
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4cfc5208afc136a671165b2a879c9645bf6e1c0f
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 655766d393ec8663669c86274b9097acf0c7418c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106264"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96836499"
 ---
 # <a name="hid-button-drivers"></a>HID 按钮驱动程序
 

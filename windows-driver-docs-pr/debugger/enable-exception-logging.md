@@ -1,17 +1,16 @@
 ---
 title: 启用异常日志记录
 description: 启用异常日志记录
-ms.assetid: 3bb645f8-995a-4da8-abca-bb9ba93beb81
 keywords:
-- 启用异常日志记录 （全局标志）
+- '启用 (全局标志的异常日志记录) '
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ac75feea139975ea623d21a3eab87356e0dcd56c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0267aba8675ceea31e5f347bb86f2553df40eb28
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63330715"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96834757"
 ---
 # <a name="enable-exception-logging"></a>启用异常日志记录
 
@@ -19,7 +18,7 @@ ms.locfileid: "63330715"
 ## <span id="ddk_enable_exception_logging_dtools"></span><span id="DDK_ENABLE_EXCEPTION_LOGGING_DTOOLS"></span>
 
 
-**启用异常日志记录**标志在内核运行时库中创建的异常记录。 可以从内核调试程序来访问日志。
+**启用异常日志记录** 标志会在内核运行时库中创建异常记录的日志。 可以从内核调试器访问日志。
 
 <table>
 <colgroup>
@@ -29,7 +28,7 @@ ms.locfileid: "63330715"
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>缩写</strong></p></td>
-<td align="left"><p>能</p></td>
+<td align="left"><p>eel</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>十六进制值</strong></p></td>
@@ -41,7 +40,7 @@ ms.locfileid: "63330715"
 </tr>
 <tr class="even">
 <td align="left"><p><strong>目标</strong></p></td>
-<td align="left"><p>整个系统的注册表项，内核标志</p></td>
+<td align="left"><p>系统范围内的注册表项，内核标志</p></td>
 </tr>
 </tbody>
 </table>

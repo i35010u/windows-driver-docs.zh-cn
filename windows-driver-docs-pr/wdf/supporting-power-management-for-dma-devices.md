@@ -1,7 +1,6 @@
 ---
 title: 支持适用于 DMA 设备的电源管理
 description: 支持适用于 DMA 设备的电源管理
-ms.assetid: abbb8f60-560f-41c9-85c5-1ec82078b99e
 keywords:
 - DMA 操作 WDK KMDF，电源管理
 - 总线主控 DMA WDK KMDF，电源管理
@@ -10,12 +9,12 @@ keywords:
 - 启用程序对象 WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d409fb05b9fe66c4bd6d1e007f979a689e902e4a
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 979ba9b463ebff52ea4fdfcad2b749fd2f212581
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89190773"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96834837"
 ---
 # <a name="supporting-power-management-for-dma-devices"></a>支持适用于 DMA 设备的电源管理
 

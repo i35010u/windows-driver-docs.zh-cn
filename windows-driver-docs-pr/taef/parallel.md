@@ -1,34 +1,33 @@
 ---
-title: 并行
-description: 并行
-ms.assetid: E2AF7B3A-B614-4fe1-9CFB-0860F68E895C
+title: 并行程序
+description: 并行程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4f3579444172825987cbde409823b564f3a8725d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c74371122db97e04ffec849a8ec5ab963a81f3be
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63355475"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96834865"
 ---
-# <a name="parallel"></a>并行
+# <a name="parallel"></a>并行程序
 
 
-TAEF 提供了一种机制来跨多个处理器的并行执行测试。
+TAEF 提供一种在多个处理器上并行执行测试的机制。
 
-## <a name="span-idparallelismguaranteesspanspan-idparallelismguaranteesspanspan-idparallelismguaranteesspanparallelism-guarantees"></a><span id="Parallelism_Guarantees"></span><span id="parallelism_guarantees"></span><span id="PARALLELISM_GUARANTEES"></span>并行性保证
+## <a name="span-idparallelism_guaranteesspanspan-idparallelism_guaranteesspanspan-idparallelism_guaranteesspanparallelism-guarantees"></a><span id="Parallelism_Guarantees"></span><span id="parallelism_guarantees"></span><span id="PARALLELISM_GUARANTEES"></span>并行性保证
 
 
--   没有两个测试未[标记为可并行化](#markingtestsasparallelizable)曾经将并发执行。
--   可以与其他并行和非并行测试同时运行并行测试。
--   所有模块/类/测试设置和清理将都运行以线性方式在同一进程中相关的测试之前和之后。
--   如果模块或类中包含至少一个并行测试，可能在不同进程并行执行模块/类安装程序。
--   并行执行模式是与不兼容[ **"/ inproc"** ](executing-tests.md)执行机制。
+-   不会同时执行两个未 [标记为可并行化](#markingtestsasparallelizable) 的测试。
+-   并行测试可以同时与其他并行和非并行测试一起运行。
+-   所有模块/类/测试设置和清理将在同一进程中的相关测试前后以线性方式运行。
+-   如果模块或类至少包含一个并行测试，则可能会在不同的进程上并行执行模块/类安装程序。
+-   并行执行模式与 [**"/inproc"**](executing-tests.md) 执行机制不兼容。
 
 ## <a name="span-idmarkingtestsasparallelizablespanspan-idmarkingtestsasparallelizablespanspan-idmarkingtestsasparallelizablespanmarking-tests-as-parallelizable"></a><span id="MarkingTestsAsParallelizable"></span><span id="markingtestsasparallelizable"></span><span id="MARKINGTESTSASPARALLELIZABLE"></span>将测试标记为可并行化
 
 
-示例 （本机代码）：
+本机代码 (示例) ：
 
 ```cpp
 class MyTests
@@ -42,7 +41,7 @@ class MyTests
 };
 ```
 
-如同 TAEF 中其他常规元数据，这可以在类或模块级别指定和将继承该类或模块中包含的所有测试。 例如，若要将标记为可并行化整个程序集可以执行以下 （之外任何类或测试规范） 在 cpp 文件编译到您的测试 DLL:
+与 TAEF 中的其他通用元数据一样，可以在类或模块级别指定此项，& 将由此类或模块中包含的所有测试继承。 例如，若要将整个程序集标记为可并行化，可以在编译到测试 DLL 的 cpp 文件中的任何类或测试规范) 之外执行以下 (：
 
 ```cpp
 BEGIN_MODULE()
@@ -50,7 +49,7 @@ BEGIN_MODULE()
 END_MODULE()
 ```
 
-然后，此更广范围可以是在较小作用域，以禁用并行操作的特定测试用例或类，如下所示重写：
+然后，可以在较小的范围内覆盖此范围更广的范围，以禁用特定测试用例或类的并行度，如下所示：
 
 ```cpp
 class MyTests
@@ -63,12 +62,12 @@ class MyTests
 };
 ```
 
-无论设置是最接近的测试方法 （方法元数据为最接近，则类，则模块） 将用于确定是否在使用其他测试来并行运行此测试。
+无论哪一项设置与测试方法最接近 (方法元数据都是最接近的类，然后使用模块) 来决定是否与其他测试并行运行此测试。
 
-## <a name="span-idenablingparallelismatthecommandlinespanspan-idenablingparallelismatthecommandlinespanspan-idenablingparallelismatthecommandlinespanenabling-parallelism-at-the-command-prompt"></a><span id="EnablingParallelismAtTheCommandLine"></span><span id="enablingparallelismatthecommandline"></span><span id="ENABLINGPARALLELISMATTHECOMMANDLINE"></span>在命令提示符下启用并行度
+## <a name="span-idenablingparallelismatthecommandlinespanspan-idenablingparallelismatthecommandlinespanspan-idenablingparallelismatthecommandlinespanenabling-parallelism-at-the-command-prompt"></a><span id="EnablingParallelismAtTheCommandLine"></span><span id="enablingparallelismatthecommandline"></span><span id="ENABLINGPARALLELISMATTHECOMMANDLINE"></span>在命令提示符下启用并行
 
 
-并行执行是一项选择加入的功能。 尽管可以将测试标记为并行，TAEF 将继续以线性方式执行测试，除非在命令提示符下启用并行执行模式：
+并行执行是一项可选功能。 尽管可将测试标记为并行，TAEF 仍将继续以线性方式执行测试，除非在命令提示符下启用了并行执行模式：
 
 ``` syntax
 te unittests\* /parallel

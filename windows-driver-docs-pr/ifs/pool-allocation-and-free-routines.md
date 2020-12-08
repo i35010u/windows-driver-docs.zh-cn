@@ -1,7 +1,6 @@
 ---
 title: 池分配和免费例程
 description: 池分配和免费例程
-ms.assetid: 757eebc0-ebd4-49a1-acea-6c27956b4b23
 keywords:
 - RDBSS WDK 文件系统，池分配
 - 重定向驱动器缓冲子系统 WDK 文件系统，池分配
@@ -11,12 +10,12 @@ keywords:
 - 免费例程 WDK RDBSS
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 51a8871cc4c91e0bc219abb7eb5bd5c034775068
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: a9015402f9ad128bbd7dfbcfbd266b49dc6b582a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104028"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96836445"
 ---
 # <a name="pool-allocation-and-free-routines"></a>池分配和免费例程
 
@@ -40,7 +39,7 @@ RDBSS 提供了许多用于池分配的例程。 通常，使用宏调用这些�
 <thead>
 <tr class="header">
 <th align="left">例程所返回的值</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -64,7 +63,7 @@ RDBSS 提供了许多用于池分配的例程。 通常，使用宏调用这些�
 
  
 
-*Ntrxdef*头文件中定义了许多宏，它们调用这些例程。 通常使用以下宏，而不是直接调用上表中列出的例程。
+*Ntrxdef* 头文件中定义了许多宏，它们调用这些例程。 通常使用以下宏，而不是直接调用上表中列出的例程。
 
 <table>
 <colgroup>

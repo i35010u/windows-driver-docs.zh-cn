@@ -1,20 +1,19 @@
 ---
 title: DeleteInitiatorNodeName
 description: DeleteInitiatorNodeName
-ms.assetid: 955ff574-a73b-42fa-8302-1012de5c9fee
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 4147aa89857ad760b382f08cdca11ced637a2a6d
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: bfd50d6f48cd3c2e5f5059b21b1afacfed2b8741
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89192675"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96835347"
 ---
 # <a name="deleteinitiatornodename"></a>DeleteInitiatorNodeName
 
 
-**DeleteInitiatorNodeName**方法通知微型端口驱动程序，该驱动程序管理 HBA 发起程序，指示的 iSCSI 节点名称不再有效。 在某些情况下，发起方 Hba 使用质询握手身份验证协议中的节点名称 (CHAP) 身份验证。
+**DeleteInitiatorNodeName** 方法通知微型端口驱动程序，该驱动程序管理 HBA 发起程序，指示的 iSCSI 节点名称不再有效。 在某些情况下，发起方 Hba 使用质询握手身份验证协议中的节点名称 (CHAP) 身份验证。
 
 实现 [MSiSCSI \_ 操作 WMI 类](msiscsi-operations-wmi-class.md) 的微型端口驱动程序无需支持此方法。
 

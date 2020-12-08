@@ -1,7 +1,6 @@
 ---
 title: 编写网络迁移 DLL
 description: 编写网络迁移 DLL
-ms.assetid: a6a9e57a-cc39-4cdf-a374-4791ddd4a5da
 keywords:
 - 网络迁移 DLL WDK
 - 网络组件升级 WDK，网络迁移 DLL
@@ -11,12 +10,12 @@ keywords:
 - Dll WDK 网络迁移
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3e6ccd7c177c453e44fddcd99ed809813be73852
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 8ea0aed2cc4aa8b4ec7064f7ae820ffb51e0059c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89217463"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96836187"
 ---
 # <a name="writing-a-network-migration-dll"></a>编写网络迁移 DLL
 
@@ -24,7 +23,7 @@ ms.locfileid: "89217463"
 
 
 
-**注意**   Microsoft Windows XP (SP1 及更高版本) 、Microsoft Windows Server 2003 和更高版本的操作系统不支持供应商提供的网络升级。
+**注意**  Microsoft Windows XP (SP1 及更高版本) 、Microsoft Windows Server 2003 和更高版本的操作系统不支持供应商提供的网络升级。
 
  
 
@@ -32,7 +31,7 @@ ms.locfileid: "89217463"
 
 网络迁移 DLL 必须：
 
--   **在 preupgrade 操作系统下加载 (Windows NT 3.51 或 Windows 4.0) **
+-   **在 preupgrade 操作系统下加载 (Windows NT 3.51 或 Windows 4.0)**
 
     DLL 无法调用特定于 Windows 2000 或更高版本的任何函数或使用特定于 Windows 2000 或更高版本的任何功能。 如果 DLL 在 postupgrade (GUI 模式) 阶段中运行，则它还必须在 Windows 2000 和更高版本的操作系统下加载。
 
@@ -42,7 +41,7 @@ ms.locfileid: "89217463"
 
 -   **在 Winnt32.exe 阶段不进行任何不可逆更改**
 
-    在此阶段，DLL 不得进行任何不可逆更改，如删除文件或修改注册表项，因为用户可以取消网络组件或操作系统的升级。 但是，DLL 可以修改其临时工作目录中的文件，该文件由 NetSetup 在对 **PreUpgradeInitialize**的调用中指定。
+    在此阶段，DLL 不得进行任何不可逆更改，如删除文件或修改注册表项，因为用户可以取消网络组件或操作系统的升级。 但是，DLL 可以修改其临时工作目录中的文件，该文件由 NetSetup 在对 **PreUpgradeInitialize** 的调用中指定。
 
  
 

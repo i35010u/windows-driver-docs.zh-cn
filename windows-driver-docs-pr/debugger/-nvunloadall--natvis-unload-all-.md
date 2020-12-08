@@ -1,7 +1,6 @@
 ---
 title: .nvunloadall（NatVis 全部卸载）
 description: Nvunloadall 命令从调试器环境中卸载所有 NatVis 文件。
-ms.assetid: E018D09A-1B52-4D9E-944E-7F61841EAE1A
 keywords:
 - . nvunloadall (NatVis 卸载所有) Windows 调试
 ms.date: 05/23/2017
@@ -12,12 +11,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 3884ac7e7b03878277d32ee1dd08c979c603f012
-ms.sourcegitcommit: 878a1cb0149dc18ccbd31774e12bad76084dfa24
+ms.openlocfilehash: a4f6e2aeb7c248dff0a5bf22ddcf3b4b040a45c6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94937775"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96836555"
 ---
 # <a name="nvunloadall-natvis-unload-all"></a>.nvunloadall（NatVis 全部卸载）
 

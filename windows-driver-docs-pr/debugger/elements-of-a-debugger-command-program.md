@@ -1,17 +1,16 @@
 ---
 title: 调试器命令程序的元素
 description: 调试器命令程序的元素
-ms.assetid: f964e358-2f3f-4780-87ea-e1374ae861e6
 keywords:
-- 调试器命令程序中元素
+- 调试器命令程序，元素
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 768d0ea10108f11fda5aa334d696ed9d501190be
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9c3fea1d66cbf38ee976b6c05728372e99089a76
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63323132"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96834773"
 ---
 # <a name="elements-of-a-debugger-command-program"></a>调试器命令程序的元素
 
@@ -19,25 +18,25 @@ ms.locfileid: "63323132"
 ## <span id="ddk_elements_of_a_debugger_command_program_dbg"></span><span id="DDK_ELEMENTS_OF_A_DEBUGGER_COMMAND_PROGRAM_DBG"></span>
 
 
-一个*调试器命令程序*是包含调试器命令和控制流令牌，例如一个小型应用程序 **.if**， **。 有关**，和 **.while**. (有关控制流令牌及其语法的完整列表，请参阅[控制流令牌](control-flow-tokens.md)。)
+*调试器命令程序* 是一个小型应用程序，其中包含调试器命令和控制流标记，如 **。如果** 为，则为; 如果 **为**，则 **为。**  (有关控制流令牌及其语法的完整列表，请参阅 [控制流令牌](control-flow-tokens.md)。 ) 
 
-你可以使用大括号 ( **{}** ) 括起更大的命令块中的语句块。 当您输入的每个块时，块中的所有别名都评估。 如果稍后更改别名命令块中的值，该点后的命令将不要使用新别名值，除非它们是从属块内。
+你可以使用大括号 ( **{}** ) 将语句块置于更大的命令块中。 输入每个块后，将对块内的所有别名进行评估。 如果以后在命令块中更改别名的值，则在该点之后的命令将不使用新的别名值，除非它们位于从属块内。
 
-不能使用一对括号来创建一个块。 您必须添加左大括号前的控制流令牌。 如果你想要创建一个块，只有在要评估的别名，应使用[ **.block** ](-block.md)令牌之前左大括号。
+不能使用一对大括号创建块。 必须在左大括号前添加一个控制流标记。 如果只想创建一个块来计算别名，则应在左大括号前使用 [**. 块**](-block.md) 标记。
 
-可以使用调试器命令程序[名用户为别名或固定名称的别名](using-aliases.md)作为其本地变量。 如果你想要使用数字或类型化变量，则可以使用 * *$t * * * n*[伪寄存器](pseudo-register-syntax.md)。
+调试器命令程序可以使用 [用户命名的别名或固定名称的别名](using-aliases.md) 作为本地变量。 如果要使用数值或类型化变量，可以使用 **$t**_n_[伪寄存器](pseudo-register-syntax.md)。
 
-仅当它们不是其他文本旁边评估用户命名别名。 如果你想要评估其他文本，使用旁边的别名[ **$ {} （别名解释器）** ](-------alias-interpreter-.md)令牌。 此令牌具有可选开关，您可以评估不同的方式中的别名。
+仅当不在其他文本旁边时才会计算用户命名的别名。 如果要评估其他文本旁边的别名，请使用 [**$ {} (别名解释器)**](-------alias-interpreter-.md) 令牌。 此令牌包含可选的开关，使你能够以多种方式评估别名。
 
-可以向调试器命令程序添加注释，通过使用两个美元符号 ([ **$$ （注释说明符）** ](-----comment-specifier-.md))。 应插入一个令牌和其元素 （如大括号或条件） 之间的注释。
+您可以使用两个货币符号 ([**$ $ (注释说明符)**](-----comment-specifier-.md)) 向调试器命令程序添加注释。 不应在标记及其元素之间插入注释 (例如大括号或条件) 。
 
-**请注意**  不应使用一个星号 ([  **\* （注释行说明符）** ](----comment-line-specifier-.md))。 因为有一个星号指定的注释不以分号结尾，则表示忽略程序的其余部分。
+**注意**  不应使用星号 () ) [**\* (注释行说明符**](----comment-line-specifier-.md)。 由于用星号指定的注释不以分号结尾，因此将忽略该程序的其余部分。
 
  
 
-通常情况下，应使用调试器命令程序内的 MASM 语法。 当您必须使用C++元素 （例如，指定的结构或类成员），可以使用 **@@c+ + （)** 令牌以切换到C++该子句的语法。
+通常，应在调试器命令程序中使用 MASM 语法。 如果必须使用 c + + 元素 (例如指定结构或类) 的成员，则可以使用 **@ @c + + ( )** 标记来切换到该子句的 c + + 语法。
 
-**$Scmp**， **$sicmp**，并 **$spat** MASM 语法中的字符串运算符是特别有用。 有关这些运算符的详细信息，请参阅[MASM 数字和运算符](masm-numbers-and-operators.md)。
+MASM 语法中的 **$scmp**、 **$sicmp** 和 **$spat** 字符串运算符特别有用。 有关这些运算符的详细信息，请参阅 [MASM 数字和运算符](masm-numbers-and-operators.md)。
 
  
 

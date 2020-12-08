@@ -1,15 +1,14 @@
 ---
 title: 获取更新的核心驱动程序包
 description: 获取更新的核心驱动程序包
-ms.assetid: 7fac00e4-1d3e-4bb7-95cd-298176de374d
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 636426b5d33295972aa7760dda4e6fe73d250262
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: ec7ee0b5f3202018d22db7c80b41cc743de3d49c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89217733"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96835865"
 ---
 # <a name="getting-the-updated-core-driver-package"></a>获取更新的核心驱动程序包
 

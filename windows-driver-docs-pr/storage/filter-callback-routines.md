@@ -1,15 +1,14 @@
 ---
 title: 筛选器回调例程
 description: 筛选器回调例程
-ms.assetid: 3d9f874c-f026-40fc-a97d-0d4cefa3d1f9
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6b19b79dbed82d55069473c36ba58d608d9de195
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 8ac23c7d8620fa6630ee0bec183eb1c0808b4752
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89186894"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96835301"
 ---
 # <a name="filter-callback-routines"></a>筛选器回调例程
 

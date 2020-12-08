@@ -1,18 +1,17 @@
 ---
 title: 安装 ICC 配置文件
 description: 安装 ICC 配置文件
-ms.assetid: d9253ee8-c414-46a9-899f-46ae32cee41a
 keywords:
 - 颜色管理 WDK 打印，安装 ICC 配置文件
 - ICC 配置文件 WDK 打印
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9bf3544b17d9316bd207f280513aaa4ded6b15b8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: dc22d4c3ae40d62fef47860ba94af6ceb196521b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63366801"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96835655"
 ---
 # <a name="installing-icc-profiles"></a>安装 ICC 配置文件
 
@@ -20,9 +19,9 @@ ms.locfileid: "63366801"
 
 
 
-若要安装的打印机 ICC 配置文件，文件必须列在[打印机 INF 文件](printer-inf-files.md)。
+若要为打印机安装 ICC 配置文件，这些文件必须在 [打印机 INF 文件](printer-inf-files.md)中列出。
 
-下面是会导致两个 ICC 配置文件文件安装的.inf 文件的示例。 请注意，配置文件将写入到颜色目录，它具有[打印机 dirid](printer-dirids.md) 66003 的值。
+下面是导致安装两个 ICC 配置文件的 .inf 文件的示例。 请注意，配置文件将写入颜色目录，其 [打印机 dirid](printer-dirids.md) 值为66003。
 
 ```cpp
 [Version]

@@ -1,17 +1,16 @@
 ---
 title: Windows 10 中的网络内核调试支持的以太网 Nic，版本 1809 (Redstone 5) 版本17763
 description: 了解当目标计算机运行的是 Windows 10 版本1809时，通过以太网网络电缆进行内核调试。
-ms.assetid: 0F0469FD-8518-4670-9868-7C3C5297BD22
 ms.date: 06/03/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 2458d186dd77c7938f76fb8e1d8df7cc5bf1252a
-ms.sourcegitcommit: 372464be981a39781c71049126f36891cb5d0cad
+ms.openlocfilehash: be86634b835b729c8e0eee5ba1694fda42735a63
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91646085"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96834711"
 ---
-# <a name="supported-ethernet-nics-for-network-kernel-debugging-in-windows10-version-1809-redstone-5-build-17763"></a>Windows 10 中的网络内核调试支持的以太网 Nic，版本 1809 (Redstone 5) 版本17763
+# <a name="supported-ethernet-nics-for-network-kernel-debugging-in-windows-10-version-1809-redstone-5-build-17763"></a>Windows 10 中的网络内核调试支持的以太网 Nic，版本 1809 (Redstone 5) 版本17763
 
 若要通过以太网网络电缆进行内核调试，目标计算机必须具有支持的网络接口卡 (NIC) 。
 

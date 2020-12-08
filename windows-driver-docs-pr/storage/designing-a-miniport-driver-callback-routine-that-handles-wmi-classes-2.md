@@ -1,18 +1,17 @@
 ---
 title: 设计微型端口驱动程序回调例程来处理 WMI 类
 description: 设计可以通过方法处理 WMI 类的微型端口驱动程序回调例程
-ms.assetid: f5a0331a-1daa-4ef5-bf99-14b3a3393956
 keywords:
 - WMI SRBs WDK 存储，设计回调例程
 - 回调例程 WDK WMI SRBs
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d942162ecbce9c1057c288650859566c7fcd738b
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 53f42c40e574dc8fe449c318f793c9b853c3680b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89184713"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96835345"
 ---
 # <a name="designing-a-miniport-driver-callback-routine-that-handles-wmi-classes-with-methods"></a>设计可以通过方法处理 WMI 类的微型端口驱动程序回调例程
 
@@ -73,7 +72,7 @@ class MSFC_HBAFCPInfo
 };
 ```
 
-**MSFC \_ HBAAdapterMethods**类包含两个**GetDiscoveredPortAttributes**和**GetPortAttributesByWWN**方法。 MSFC \_ HBAFCPInfo 类包含 **GetFcpTargetMapping**中的一种方法。
+**MSFC \_ HBAAdapterMethods** 类包含两个 **GetDiscoveredPortAttributes** 和 **GetPortAttributesByWWN** 方法。 MSFC \_ HBAFCPInfo 类包含 **GetFcpTargetMapping** 中的一种方法。
 
 当 SCSI 端口 WMI 库调度例程调用微型端口驱动程序的 execute 方法回调例程时，它将传入一个 *GuidIndex* 值，该值标识 WMI 类、标识类中方法的 *MethodId* 值和一个 *InstanceIndex* 值，用于标识要处理的类的多个实例。 对于任何给定的类、方法和类实例组合，回调例程应采取相应的操作。
 
@@ -130,13 +129,13 @@ HwScsiWmiExecuteMethod (
 
 WMI 工具套件 (**mofcomp.exe** 和 **wmimofck**) 通过自动生成二进制类型库和标头文件（为每个 WMI 类 GUID 索引和每个方法标识符定义一个符号常量）简化了写入此例程的任务。 有关如何使用这些工具的详细信息，请参阅 [编译驱动程序的 MOF 文件](../kernel/compiling-a-driver-s-mof-file.md) 和 [使用 wmimofck.exe](../kernel/using-wmimofck-exe.md)。
 
-**Wmimofck**工具从**mofcomp.exe**生成的 bmf 二进制文件生成 .h 文件。 它通过将后缀 "GuidIndex" 连接到 WMI 类的名称，形成类索引的符号常数的名称。 例如，使用 **MSFC \_ FibrePortHBAMethods** 类时，该工具会创建一个名为 **MSFC \_ FibrePortHBAMethodsGuidIndex** 的符号常量，表示该类的 GUID 索引。 与此类似，该工具将使用方法名称来形成表示方法的符号常数，但不添加任何后缀。 方法的符号常数的名称只是方法的名称。 在此示例中，switch 语句测试方法标识符的值。 Switch 语句中的每个用例都对应于一个方法名称。
+**Wmimofck** 工具从 **mofcomp.exe** 生成的 bmf 二进制文件生成 .h 文件。 它通过将后缀 "GuidIndex" 连接到 WMI 类的名称，形成类索引的符号常数的名称。 例如，使用 **MSFC \_ FibrePortHBAMethods** 类时，该工具会创建一个名为 **MSFC \_ FibrePortHBAMethodsGuidIndex** 的符号常量，表示该类的 GUID 索引。 与此类似，该工具将使用方法名称来形成表示方法的符号常数，但不添加任何后缀。 方法的符号常数的名称只是方法的名称。 在此示例中，switch 语句测试方法标识符的值。 Switch 语句中的每个用例都对应于一个方法名称。
 
 用于定义 WMI 类方法的 MOF 语法类似于例程;但是，WMI 方法不是例程。 当 **mofcomp.exe** 和 **WMIMOFCK** 工具处理 MOF 文件中的方法定义时，它们将为方法生成两个单独的 C 语言结构声明。 一个结构是在 MOF 文件中通过 "in" 前缀标识的参数，另一个是 \[ " \] \[ out" 前缀标识为输出参数的参数的另一个结构 \] 。
 
-**Wmimofck**工具通过将 "IN" 的后缀连接到方法的名称，形成包含方法的输入参数的结构的名称 \_ 。 例如，如果方法的名称为 **GetDiscoveredPortAttributes**，则 **wmimofck** 将自动为中名为 GetDiscoveredPortAttributes 的结构生成声明 \_ 。 同样， **wmimofck** 为名为 GetDiscoveredPortAttributes 的结构生成一个声明 \_ ，该结构包含方法的输出参数。
+**Wmimofck** 工具通过将 "IN" 的后缀连接到方法的名称，形成包含方法的输入参数的结构的名称 \_ 。 例如，如果方法的名称为 **GetDiscoveredPortAttributes**，则 **wmimofck** 将自动为中名为 GetDiscoveredPortAttributes 的结构生成声明 \_ 。 同样， **wmimofck** 为名为 GetDiscoveredPortAttributes 的结构生成一个声明 \_ ，该结构包含方法的输出参数。
 
-下面的代码片段演示了 execute 方法回调例程如何在名为**MSFC \_ HBAPortMethods**的类中验证名为**GetDiscoveredPortAttributes**的方法的输入和输出缓冲区的大小：
+下面的代码片段演示了 execute 方法回调例程如何在名为 **MSFC \_ HBAPortMethods** 的类中验证名为 **GetDiscoveredPortAttributes** 的方法的输入和输出缓冲区的大小：
 
 ```cpp
 case MSFC_HBAPortMethodsGuidIndex:

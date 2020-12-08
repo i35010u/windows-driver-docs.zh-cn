@@ -1,15 +1,14 @@
 ---
 title: IDE 端口驱动程序
 description: IDE 端口驱动程序
-ms.assetid: 8e292680-6fa7-4f6b-b4ec-6f0f0d795d03
 ms.date: 10/08/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 1298fc67464c4e1bca718f6f818e7ba765be2c60
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: f7ae5496b66e10a65415ae93557b4c3ea9504677
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89188819"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96835157"
 ---
 # <a name="ide-port-driver"></a>IDE 端口驱动程序
 
@@ -20,7 +19,7 @@ ms.locfileid: "89188819"
 
 在 Microsoft Windows 2000 和 Windows XP 中，IDE 端口驱动程序 *atapi.sys* 是一个独立的驱动程序，它不再链接到 *scsiport.sys*，也不链接到任何其他包装驱动程序。
 
-适用于 Windows 2000 和 Windows XP 的 IDE 驱动程序模型中提供了三个系统提供的驱动程序： *atapi.sys* (端口驱动程序) 、 *pciidex.sys* (控制器驱动程序 *) 和pciide.sys(通用 * 控制器微型驱动程序) 。 下图演示了这三个驱动程序。
+适用于 Windows 2000 和 Windows XP 的 IDE 驱动程序模型中提供了三个系统提供的驱动程序： *atapi.sys* (端口驱动程序) 、 *pciidex.sys* (控制器驱动程序 *) 和pciide.sys(通用* 控制器微型驱动程序) 。 下图演示了这三个驱动程序。
 
 ![windows 2000 和 windows xp ide 驱动程序堆栈 ](images/idedrvrs.png)
 

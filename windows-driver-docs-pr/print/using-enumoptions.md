@@ -1,17 +1,16 @@
 ---
 title: 使用 EnumOptions
 description: 使用 EnumOptions
-ms.assetid: 6ce16d28-eff7-4701-a592-046f364cda44
 keywords:
 - EnumOptions
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5ce4ebc7f2eb92905d5577525c3baf4a19654bf1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d8f62dcc80add80a307f53e9e79579b695ec4771
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63330291"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96835443"
 ---
 # <a name="using-enumoptions"></a>使用 EnumOptions
 
@@ -19,21 +18,21 @@ ms.locfileid: "63330291"
 
 
 
-可以使用调用方**EnumOptions**检索支持的驱动程序功能和任何 PPD 功能的选项的关键字列表。 PPD 功能**EnumOptions**始终受支持，并返回 PPD.定义的选项
+调用方可以使用 **EnumOptions** 检索支持的驱动程序功能和任何 PPD 功能选项的关键字列表。 对于 PPD 功能，始终支持 **EnumOptions** ，并返回由 PPD 定义的选项。
 
-有关驱动程序功能， **EnumOptions**仅支持当前受支持，具有一组固定的选项的功能。 例如: %addeuro 有两个选项："True"和"False"，以及 %pageorder 具有两个选项"FrontToBack"和"BackToFront"。 **EnumOptions** %addeuro （如果语言级别为 2 和更高版本） 支持，如为 %pageorder （如果已启用后台处理程序 EMF 后台处理）。 但如 %CustomPageSize、 %psmemory，以及其他功能具有无限的数量的可能的选项，这意味着**EnumOptions**不支持它们。
+对于驱动程序功能， **EnumOptions** 仅支持当前受支持的功能，并且具有一组固定的选项。 例如：% AddEuro 有两个选项： "True" 和 "False"，% PageOrder 有两个选项 "FrontToBack" 和 "BackToFront"。 如果语言级别为2和更) 高，则% AddEuro (支持 **EnumOptions** ，如果 (启用) 了后台处理 EMF 假脱机，则为% PageOrder。 但某些功能（例如% CustomPageSize、% PSMemory）和其他功能具有无限数量的可能选项，这意味着不支持 **EnumOptions** 。
 
-当前不支持的驱动程序功能或支持的驱动程序功能不是可通过枚举**EnumOptions**， **EnumOptions**返回 E\_NOTIMPL。
+对于当前不支持的驱动程序功能，或对于不可通过 **EnumOptions** 枚举的受支持驱动程序功能， **EnumOptions** 将返回 E \_ NOTIMPL。
 
-此外，在某些情况下可能不支持驱动程序功能的一些选项。 例如，如果在 Windows 2000 和更高版本的操作系统版本中，然后选择"手册"选项禁用后台处理程序 EMF 后台处理不支持 %pagepersheet 功能。 另举一例，如果打印机不具有 Type42 光栅器，然后"NativeTrueType"不支持选项 %ttdownloadformat。 这些不受支持的选项不会出现在 EnumOptions 输出关键字列表。
+此外，某些情况下可能不支持驱动程序功能的某些选项。 例如，如果在 Windows 2000 和更高版本的操作系统版本上禁用了后台处理程序 EMF 假脱机，则% PagePerSheet 功能不支持 "手册" 选项。 在另一个示例中，如果打印机没有 Type42 光栅，则% TTDownloadFormat 不支持 "NativeTrueType" 选项。 这些不受支持的选项不会显示在 EnumOptions 的 "输出关键字" 列表中。
 
-Pscript 以特殊方式处理以下功能关键字：
+Pscript 以特殊方式处理以下特征关键字：
 
--   \*CustomPageSize 功能关键字将转换为的一个选项\*PageSize 功能关键字，使用"CustomPageSize"所选项关键字。 调用**GetOptionAttribute**来获取其 PPD 参数。
+-   \*CustomPageSize 功能关键字转换为 \* PageSize 功能关键字的选项，其中 "CustomPageSize" 是 option 关键字。 调用 **GetOptionAttribute** 获取其 PPD 参数。
 
--   \*ManualFeed True 项转换为的一个选项\*InputSlot 功能关键字，使用"ManualFeed"所选项关键字名称。
+-   \*ManualFeed True 条目转换为 \* InputSlot feature 关键字的选项，其中 "ManualFeed" 是选项关键字名称。
 
--   有关\*InputSlot 功能关键字，Pscript 始终添加驱动程序生成的选项与选项关键字名称"\*UseFormTrayTable"作为第一个选项 ("\*"中使用前缀选项关键字名称以避免可能的名称冲突 PPD 定义选项） 后, 跟 PPD.中定义的选项 如果"\*UseFormTrayTable"选择选项后，Pscript 将使用的送纸器格式分配表来自动选择支持选定的纸张大小的送纸器。
+-   对于 \* InputSlot 功能关键字，Pscript 始终将选项关键字名称为 "UseFormTrayTable" 的驱动程序生成的选项添加 \* 为第一个选项 (在 \* 选项关键字名称中使用 "" 前缀，以避免可能与 ppd 中定义的选项的名称冲突) ，其后是 ppd 中定义的选项。 如果选择了 " \* UseFormTrayTable" 选项，则 Pscript 将使用 "送纸器分配" 表来自动选择支持所选纸张大小的送纸器。
 
  
 

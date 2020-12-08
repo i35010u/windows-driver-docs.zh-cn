@@ -1,17 +1,16 @@
 ---
 title: GetSupportedVersions
 description: IPrintTicketProvider GetSupportedVersions 方法返回打印驱动程序支持的打印架构的主版本号。 目前，版本1是存在的唯一版本，因此此方法只能返回一个受支持的版本。
-ms.assetid: 0b648cc3-4d61-401c-b626-34db2b026b2a
 keywords:
 - GetSupportedVersions
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 77536b124297b8a0d1c519a1aa8d3d6f20159326
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: f7d8aca1be2fb1e83ead15ee5057ebafa9901fa6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89217737"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96835867"
 ---
 # <a name="getsupportedversions"></a>GetSupportedVersions
 

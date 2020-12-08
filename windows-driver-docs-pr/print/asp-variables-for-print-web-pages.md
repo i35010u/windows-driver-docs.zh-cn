@@ -1,7 +1,6 @@
 ---
 title: 打印网页的 ASP 变量
 description: 打印网页的 ASP 变量
-ms.assetid: eab0d5e0-0e20-443c-b714-a2b2327894e4
 keywords:
 - 自定义的打印网页 WDK，ASP 变量
 - ASP 变量 WDK 打印机
@@ -10,12 +9,12 @@ keywords:
 - 网页 WDK 打印机，ASP 变量
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 64cf038546ac01e01e942f85e02c1eb61b6b60f6
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: ab285c72c31de3d1e01573a78e93edc20a0c9d59
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89218270"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96836139"
 ---
 # <a name="asp-variables-for-print-web-pages"></a>打印网页的 ASP 变量
 
@@ -81,7 +80,7 @@ MS \_ 设备
 
 MS \_ DHTMLEnabled
 
-如果客户端支持动态 HTML，则为**TRUE** ;否则**为 FALSE**。
+如果客户端支持动态 HTML，则为 **TRUE** ;否则 **为 FALSE**。
 
 否
 
@@ -141,7 +140,7 @@ MS \_ 打印机
 
 MS \_ SNMP
 
-如果将 SNMP 与打印机一起使用，**则为 TRUE** ; 否则为**FALSE**。
+如果将 SNMP 与打印机一起使用，**则为 TRUE** ; 否则为 **FALSE**。
 
 是
 

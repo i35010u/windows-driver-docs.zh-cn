@@ -1,30 +1,29 @@
 ---
 title: IRP_MJ_QUERY_SECURITY 和 IRP_MJ_SET_SECURITY
 description: IRP_MJ_QUERY_SECURITY 和 IRP_MJ_SET_SECURITY
-ms.assetid: 64216496-55f0-4ad4-b475-341ed9eb6886
 keywords:
 - IRP_MJ_QUERY_SECURITY
 - IRP_MJ_SET_SECURITY
 - 安全 WDK 文件系统，添加安全检查
-- 安全检查 WDK 的文件系统，IRP_MJ_SET_SECURITY
-- 安全检查 WDK 的文件系统，IRP_MJ_QUERY_SECURITY
+- 安全检查 WDK 文件系统，IRP_MJ_SET_SECURITY
+- 安全检查 WDK 文件系统，IRP_MJ_QUERY_SECURITY
 - 安全描述符 WDK 文件系统，安全检查
-- 描述符 WDK 文件系统，安全检查
+- 描述符文件系统，安全检查
 - 检索安全描述符
-- 查询的安全描述符
+- 查询安全描述符
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f97cf8905c6699ceaaad773ee83d78f28c934b88
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3af3974855b9cef7294549ef391e0c5c267b2897
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63324482"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96836449"
 ---
-# <a name="irpmjquerysecurity-and-irpmjsetsecurity"></a>IRP\_MJ\_查询\_安全性和 IRP\_MJ\_设置\_安全
+# <a name="irp_mj_query_security-and-irp_mj_set_security"></a>IRP \_ mj \_ 查询 \_ 安全性和 irp \_ mj \_ 设置 \_ 安全性
 
 
-幸运的是文件系统中，对于实际存储和检索的安全描述符操作是相对较不透明。 这是由于不需要了解任何描述符的文件系统的自相关格式的安全描述符的特性。 因此，处理查询操作通常是一个非常简单的练习。 下面是从文件系统实现示例：
+幸运的是，对于文件系统，安全描述符的实际存储和检索相对不透明。 这是由自相关格式的安全描述符的性质引起的，无需对文件系统进行任何理解。 因此，处理查询操作通常是一种非常简单的做法。 下面是文件系统实现的示例：
 
 ```cpp
 NTSTATUS FsdCommonQuerySecurity( PIRP_CONTEXT IrpContext)
@@ -65,15 +64,15 @@ NTSTATUS FsdCommonQuerySecurity( PIRP_CONTEXT IrpContext)
 }
 ```
 
-请注意，此例程依赖于外部函数以加载实际的安全描述符从持久性存储区 （在此实现中，例程只能加载的安全描述符，如果它以前尚未加载）。 由于安全描述符是不透明的文件系统，则必须使用安全引用监视器将描述符复制到用户的缓冲区。 我们注意到两个点相对于此代码示例：
+请注意，此例程依赖于外部函数从此实现中的持久性存储 (加载实际安全描述符，因此，仅在以前未) 加载安全描述符的情况下才加载它。 因为安全描述符对文件系统不透明，所以必须使用安全引用监视器将描述符复制到用户的缓冲区中。 对于此代码示例，请注意两个要点：
 
-1.  错误代码状态的转换\_缓冲区\_过\_警告代码状态到小型\_缓冲区\_溢出才可为某些 Windows 安全工具提供正确的行为。
+1.  \_ \_ \_ \_ \_ 若要为某些 Windows 安全工具提供正确的行为，必须将错误代码状态缓冲区转换为警告代码状态缓冲区溢出。
 
-2.  因为两种查询，并且通常完成集合安全操作，会出现错误处理用户缓冲区可以和将，直接使用用户缓冲区。 请注意，这由控制**标志**设备的成员\_通过文件系统创建的对象。 在基于此代码的文件系统实现，调用的函数需要使用\_ \_try 块以防止无效用户缓冲区。
+2.  处理用户缓冲区时可能会发生错误，这是因为查询和设置的安全操作通常都是直接使用用户缓冲区来完成的。 请注意，这由文件系统创建的设备对象的 **Flags** 成员控制 \_ 。 在基于此代码的文件系统实现中，调用函数需要使用 \_ \_ try 块来防范无效的用户缓冲区。
 
-如何从存储加载文件系统的安全描述符的具体情况 ( **FsdLoadSecurityDescriptor**函数在此示例中) 将取决于完全实现的安全描述符存储在文件系统中。
+在此示例中，文件系统如何从存储中加载安全描述符 (**FsdLoadSecurityDescriptor** 函数) 将完全取决于文件系统中安全描述符存储的实现。
 
-存储安全描述符是稍微要复杂。 文件系统可能需要确定是否安全描述符共享文件系统支持的安全描述符是否匹配现有的安全描述符。 对于不匹配的安全描述符，文件系统可能需要为此新的安全描述符分配新的存储空间。 下面是用于替换上一个文件的安全描述符的示例例程。
+存储安全描述符更多。 如果文件系统支持安全描述符共享，则文件系统可能需要确定安全描述符是否与现有的安全描述符相匹配。 对于不匹配的安全描述符，文件系统可能需要为此新的安全描述符分配新存储。 下面是一个用于替换文件上的安全描述符的示例例程。
 
 ```cpp
 NTSTATUS FsdCommonSetSecurity(PIRP_CONTEXT IrpContext)
@@ -212,7 +211,7 @@ NTSTATUS FsdCommonSetSecurity(PIRP_CONTEXT IrpContext)
 }
 ```
 
-请注意，这是哪一种实现中的某个区域会发生显著变化从文件系统到文件系统。 例如，支持安全描述符共享的文件系统将需要添加显式逻辑来查找匹配的安全描述符。 此示例是仅尝试为实施者提供的指导。
+请注意，这是一个实现方式明显不同于文件系统的区域。 例如，支持安全描述符共享的文件系统需要添加显式逻辑来查找匹配的安全描述符。 此示例仅尝试向实现者提供指导。
 
  
 

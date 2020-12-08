@@ -1,32 +1,31 @@
 ---
-title: GDL 练习 5 定义名称限制为不同的功能
-description: GDL 练习 5 定义名称限制为不同的功能
-ms.assetid: 8e6c59d7-c748-4133-ba70-e5be413bae54
+title: GDL 练习5定义不同功能的名称限制
+description: GDL 练习5定义不同功能的名称限制
 keywords:
-- GDL WDK 示例
+- GDL WDK，示例
 - 示例 WDK GDL
 - 教程 WDK GDL
-- GDL WDK 教程
-- 模板 WDK GDL，定义命名限制
+- GDL WDK，教程
+- 模板 WDK GDL，定义名称限制
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cd23569edcce53cec862af2adbe17cb9352d546d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7e145a75653cec4c892c6bece295c02988de8a8f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63342587"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96835963"
 ---
-# <a name="gdl-exercise-5-defining-name-limits-for-different-features"></a>GDL 练习 5：定义不同功能的名称限制
+# <a name="gdl-exercise-5-defining-name-limits-for-different-features"></a>GDL 练习5：定义不同功能的名称限制
 
 
-### <a href="" id="exercise"></a> 练习
+### <a name="exercise"></a><a href="" id="exercise"></a> 小心谨慎
 
-使用中的模板[练习 4](gdl-exercise-4--defining-variants-of-constructs.md)，定义\*名称： 出现在构造\*属于 POption \*PFeature:InputTray 使其限制为 16 个字符最大值和\*名称： 出现在\*POption 属于\*PFeature:PaperSize 被限制为 24 个字符最大值。
+使用 [练习 4](gdl-exercise-4--defining-variants-of-constructs.md)中的模板，定义在 \* POption 中显示的名称：构造，该构造 \* 是 \* PFeature： InputTray 的一部分，因此，最大长度限制为16个字符，并且 \* 名称：显示在 \* PFeature： PaperSize 中的 POption 内 \* 最多可包含24个字符。
 
-进行此更改而不删除或修改任何以前定义的模板。 创建简单的 GDL 数据文件，以验证条目的适当操作。
+进行此更改，而不删除或修改任何先前定义的模板。 创建一个简单的 GDL 数据文件，以验证是否正确 templatization 了条目。
 
-### <a href="" id="solution"></a> 解决方案
+### <a name="solution"></a><a href="" id="solution"></a> 解决方案
 
 以下模板满足条件。
 
@@ -108,7 +107,7 @@ ms.locfileid: "63342587"
 }
 ```
 
-**请注意**   Using[继承](gdl-template-inheritance.md)，可以进一步细化和派生基类的变体，而无需更改任何以前的模板或通过破坏的架构的意图的上一模板建立。 此功能是继承的另一个优势。 继承提供了第三方扩展主架构而无需更改或违反主架构的功能。
+**注意**   使用 [继承](gdl-template-inheritance.md)，可以进一步优化和派生基类上的变体，而无需更改以前的模板所建立的架构的目的，也不会破坏。 此功能是继承的另一个优点。 继承为第三方提供了在不更改或违反 master 架构的情况下扩展 master 架构的能力。
 
  
 

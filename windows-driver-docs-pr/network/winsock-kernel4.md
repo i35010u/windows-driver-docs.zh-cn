@@ -1,7 +1,6 @@
 ---
 title: Winsock 内核主题
 description: Winsock 内核主题
-ms.assetid: 89d389ff-1a5e-4889-8009-c0fe3b6273f9
 keywords:
 - Winsock 内核 WDK 网络
 - WSK WDK 网络
@@ -10,12 +9,12 @@ keywords:
 - 套接字 WDK Winsock 内核
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 11d312ed7b032721895fb36364b382ac75654619
-ms.sourcegitcommit: 93c924b8f409fc7f704cc67cc026d70b8ad25d30
+ms.openlocfilehash: d0796ede537f85d880a76d0cd98fc7cfdaf44fe2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91739495"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96836217"
 ---
 # <a name="winsock-kernel-topics"></a>Winsock 内核主题
 

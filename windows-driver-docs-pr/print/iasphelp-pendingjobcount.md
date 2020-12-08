@@ -1,13 +1,12 @@
 ---
-title: Iasphelp get\_PendingJobCount 方法
-description: PendingJobCount 属性启用 ASP 网页来确定挂起的打印作业的数目。
+title: Iasphelp get \_ PendingJobCount 方法
+description: 使用 PendingJobCount 属性可以确定挂起的打印作业的数目。
 MS-HAID:
 - webfnc\_fd1cbaac-f195-4a38-8788-990eb9b3fd6c.xml
 - print.iasphelp\_pendingjobcount
 MSHAttr:
 - PreferredSiteName:MSDN
 - PreferredLib:/library/windows/hardware
-ms.assetid: e0d00abd-0b2a-403c-a7b2-f1f2587b977f
 keywords:
 - get_PendingJobCount 方法打印设备
 - get_PendingJobCount 方法打印设备，Iasphelp 接口
@@ -20,36 +19,36 @@ api_type:
 - COM
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7c7f5efc765e7422e0700169211963424b0ca8e9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 87bc56f35520698a70740edddf21d0e37bd1f09e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63361860"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96835757"
 ---
-# <a name="iasphelpgetpendingjobcount-method"></a>Iasphelp::get\_PendingJobCount 方法
+# <a name="iasphelpget_pendingjobcount-method"></a>Iasphelp：： get \_ PendingJobCount 方法
 
-**PendingJobCount**属性启用 ASP 网页来确定挂起的打印作业的数目。
+使用 **PendingJobCount** 属性可以确定挂起的打印作业的数目。
 
 <a name="syntax"></a>语法
 ------
 
 ```cpp
 HRESULT get_PendingJobCount(
-  [out] long *pVal
+  [out] long *pVal
 );
 ```
 
-<a name="parameters"></a>Parameters
+<a name="parameters"></a>参数
 ----------
 
-*pVal* \[out\]  
-指向接收挂起的打印作业的数量的内存位置的调用方提供的指针。
+*pVal* \[弄\]  
+调用方提供的指向内存位置的指针，该内存位置接收挂起的打印作业的数目。
 
 <a name="return-value"></a>返回值
 ------------
 
-下表中，此属性返回的值之一。
+此属性返回下表中的值之一。
 
 <table>
 <colgroup>
@@ -69,7 +68,7 @@ HRESULT get_PendingJobCount(
 </tr>
 <tr class="even">
 <td><strong>E_HANDLE</strong></td>
-<td><p><a href="iasphelp-open.md" data-raw-source="[&lt;strong&gt;Iasphelp::Open&lt;/strong&gt;](iasphelp-open.md)"> <strong>Iasphelp::Open</strong> </a>尚未调用方法。</p></td>
+<td><p>未调用 <a href="iasphelp-open.md" data-raw-source="[&lt;strong&gt;Iasphelp::Open&lt;/strong&gt;](iasphelp-open.md)"><strong>Iasphelp：： Open</strong></a> 方法。</p></td>
 </tr>
 <tr class="odd">
 <td><strong>E_OUTOFMEMORY</strong></td>
@@ -80,7 +79,7 @@ HRESULT get_PendingJobCount(
 
 ## <a name="vbscript-example"></a>VBScript 示例
 
-查询此属性之前，调用[ **Iasphelp::CalcJobETA** ](iasphelp-calcjobeta.md)方法来初始化的属性值。
+在查询此属性之前，请调用 [**Iasphelp：： CalcJobETA**](iasphelp-calcjobeta.md) 方法来初始化属性值。
 
 ```vb
 Dim objPrinter
@@ -102,13 +101,13 @@ PendingJobs = objPrinter.PendingJobCount
 <tbody>
 <tr class="odd">
 <td><p>目标平台</p></td>
-<td>桌面设备</td>
+<td>台式机</td>
 </tr>
 </tbody>
 </table>
 
 ## <a name="see-also"></a>请参阅
 
-[**Iasphelp::Open**](iasphelp-open.md)
+[**Iasphelp：： Open**](iasphelp-open.md)
 
 [**Iasphelp::CalcJobETA**](iasphelp-calcjobeta.md)

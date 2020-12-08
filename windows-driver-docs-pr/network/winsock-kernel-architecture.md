@@ -1,7 +1,6 @@
 ---
 title: Winsock 内核体系结构
 description: Winsock 内核体系结构
-ms.assetid: 3a43c200-4180-4d1b-8ca6-ee82a84b9194
 keywords:
 - Winsock 内核 WDK 网络，体系结构
 - WSK WDK 网络，体系结构
@@ -10,12 +9,12 @@ keywords:
 - 子系统 WDK Winsock 内核
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a6653d1d1ee7694bf95a30da927ccb3f61d6e44e
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: b052a48fd34a6972c729990219db1293a5562470
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89206709"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96836259"
 ---
 # <a name="winsock-kernel-architecture"></a>Winsock 内核体系结构
 

@@ -1,42 +1,41 @@
 ---
 title: HOTSPOT_PLUGIN_APIS 结构
 description: HOTSPOT_PLUGIN_APIS 结构包含热点插件 Api 函数表。
-ms.assetid: eee56f84-2c7f-4218-b7ec-b4fc0181d767
 keywords:
 - 从 Windows Vista 开始 HOTSPOT_PLUGIN_APIS 结构网络驱动程序
 - 从 Windows Vista 开始 PHOTSPOT_PLUGIN_APIS 结构指针网络驱动程序
 ms.date: 07/31/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 31d5e707aea91d187b648d25556a20df7e99f622
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: fa38ed5c5f4ae954a1ec710f47238f5eefc61cb5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89403124"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96836349"
 ---
 # <a name="hotspot_plugin_apis-structure"></a>热点 \_ 插件 \_ api 结构
 
 [!include[Wi-Fi Hotspot Offloading deprecation](../includes/wi-fi-hotspot-offloading-deprecation.md)]
 
 
-**作用点 \_ 插件 \_ Api**结构包含热点插件 api 函数表。 调用 [**HSPluginInitPlugin**](hsplugininitplugin.md) 来初始化插件时，插件会返回此函数表。 该表包含热点主机调用以与插件通信的函数。
+**作用点 \_ 插件 \_ Api** 结构包含热点插件 api 函数表。 调用 [**HSPluginInitPlugin**](hsplugininitplugin.md) 来初始化插件时，插件会返回此函数表。 该表包含热点主机调用以与插件通信的函数。
 
 <a name="syntax"></a>语法
 ------
 
 ```ManagedCPlusPlus
 typedef struct _HOTSPOT_PLUGIN_APIS {
-  HS_PLUGIN_QUERY_SUPPORTED_SIMS     HSPluginQuerySupportedSIMs;
-  HS_PLUGIN_QUERY_HIDDEN_NETWORK     HSPluginQueryCellularExceptionHosts;
-  HS_PLUGIN_IS_HOTSPOT_NETWORK       HSPluginIsHotspotNetwork;
-  HS_PLUGIN_PRE_CONNECT_INIT         HSPluginPreConnectInit;
-  HS_PLUGIN_START_POST_CONNECT_AUTH  HSPluginStartPostConnectAuth;
-  HS_PLUGIN_STOP_POST_CONNECT_AUTH   HSPluginStopPostConnectAuth;
+  HS_PLUGIN_QUERY_SUPPORTED_SIMS     HSPluginQuerySupportedSIMs;
+  HS_PLUGIN_QUERY_HIDDEN_NETWORK     HSPluginQueryCellularExceptionHosts;
+  HS_PLUGIN_IS_HOTSPOT_NETWORK       HSPluginIsHotspotNetwork;
+  HS_PLUGIN_PRE_CONNECT_INIT         HSPluginPreConnectInit;
+  HS_PLUGIN_START_POST_CONNECT_AUTH  HSPluginStartPostConnectAuth;
+  HS_PLUGIN_STOP_POST_CONNECT_AUTH   HSPluginStopPostConnectAuth;
   HS_PLUGIN_DISCONNECT_FROM_NETWORK  HSPluginDisconnectFromNetwork;
-  HS_PLUGIN_RESET                    HSPluginReset;
-  HS_PLUGIN_SEND_KEEP_ALIVE          HSPluginSendKeepAlive;
-  HS_PLUGIN_CHECK_FOR_UPDATES        HSPluginCheckForUpdates;
-  HS_PLUGIN_DEINIT                   HSPluginDeinit;
+  HS_PLUGIN_RESET                    HSPluginReset;
+  HS_PLUGIN_SEND_KEEP_ALIVE          HSPluginSendKeepAlive;
+  HS_PLUGIN_CHECK_FOR_UPDATES        HSPluginCheckForUpdates;
+  HS_PLUGIN_DEINIT                   HSPluginDeinit;
 } HOTSPOT_PLUGIN_APIS, *PHOTSPOT_PLUGIN_APIS;
 ```
 
@@ -51,7 +50,7 @@ typedef struct _HOTSPOT_PLUGIN_APIS {
 **HSPluginQueryCellularExceptionHosts**  
 在插件初始化过程中调用 API。
 
-如果插件已通过[**hs \_ 插件 \_ 配置文件**](hs-plugin-profile.md)结构指定了**hs \_ 标志 \_ 功能 \_ 网络 \_ 类型 \_ 隐藏**功能，则由该热点主机调用。 有关详细信息，请参阅 [**HS \_ 插件 \_ 查询 \_ 隐藏 \_ 网络**](hs-plugin-query-hidden-network.md)。
+如果插件已通过 [**hs \_ 插件 \_ 配置文件**](hs-plugin-profile.md)结构指定了 **hs \_ 标志 \_ 功能 \_ 网络 \_ 类型 \_ 隐藏** 功能，则由该热点主机调用。 有关详细信息，请参阅 [**HS \_ 插件 \_ 查询 \_ 隐藏 \_ 网络**](hs-plugin-query-hidden-network.md)。
 
 **HSPluginIsHotspotNetwork**  
 处理扫描结果时调用了 API。
@@ -108,13 +107,13 @@ typedef struct _HOTSPOT_PLUGIN_APIS {
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Hotspotoffloadplugin (包含 Hotspotoffloadplugin) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**HSPluginInitPlugin**](hsplugininitplugin.md)

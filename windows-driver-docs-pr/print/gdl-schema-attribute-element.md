@@ -1,28 +1,27 @@
 ---
 title: GDL 架构属性元素
 description: GDL 架构属性元素
-ms.assetid: b46c0c6c-28af-4121-9182-65dc23b0ce7d
 keywords:
-- GDL WDK 元素
-- GDL WDK 架构
+- GDL WDK，元素
+- GDL WDK，架构
 - attribute 元素 WDK GDL
 - GDL_ATTRIBUTE WDK GDL
 - GDL_UntypedAtt WDK GDL
-- 非类型化的属性 WDK GDL
+- 非类型化属性 WDK GDL
 - 快照 WDK GDL，结构
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ff08d7b1f570dc8f52d67260c996251feeac2f71
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ae035114679f6198b5d999db9ccc80ec77f8b82c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380167"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96835923"
 ---
 # <a name="gdl-schema-attribute-element"></a>GDL 架构属性元素
 
 
-所有的数据类型&lt;GDL\_特性&gt;根据每个实例使用指定元素**xsi: type**。 属性没有特定的数据类型定义指定的泛型属性元素的实例 (&lt;GDL\_UntypedAtt&gt;)，这是在架构中定义 GDL 生成，如下所示：
+所有 &lt; GDL 属性元素的数据 \_ 类型 &gt; 都是使用 **xsi： type** 基于每个实例指定的。 没有特定数据类型定义的属性是泛型 attribute 元素的指定实例 (&lt; GDL \_ UntypedAtt &gt;) ，它在 GDL 生成的架构中定义，如下所示：
 
 ```cpp
     <complexType name="GDL_UntypedAtt"  mixed="true">
@@ -34,15 +33,15 @@ ms.locfileid: "63380167"
     </complexType>
 ```
 
-更具体的数据类型不所描述的属性的内容时使用此泛型数据类型。 通用的数据类型不限制可以出现的元素内容。 由 GDL 数据类型模板确定实际元素内容。
+当特性的内容未由更具体的数据类型描述时，将使用此泛型数据类型。 泛型数据类型不限制可显示的元素内容。 实际元素内容由 GDL 数据类型模板决定。
 
-&lt;GDL\_UntypedAtt&gt;有两个属性：**名称**并**个性**。 **名称**是必需的包含 GDL 属性的关键字名称。 **个性**是可选的如果该属性定义为指定的个性标记\*数据类型：多个\_个性。
+&lt;GDL \_ UntypedAtt &gt; 有两个属性： **Name** 和 **个性**。 **名称** 是必需的，并保存 GDL 属性的关键字名称。 "**个性**" 是可选的，如果属性定义为 DataType，则指定 "个性" 标记 \* ：多项 \_ 个性。
 
-如果 GDL 数据类型的值的专门定义 XSD 架构中，通过引用定义的数据类型**xsi: type**属性。 XML\_类型、 枚举和 XSD\_定义数据类型在 XSD 架构中创建新的数据类型。
+如果值的 GDL 数据类型是在 XSD 架构中明确定义的，则该定义的数据类型由 **xsi： type** 特性引用。 XML \_ 类型、枚举器和 xsd \_ 定义的数据类型在 XSD 架构中创建新的数据类型。
 
-GDL 复合数据类型由泛型数据类型表示。 复合数据类型的实例包含可能包含其他子元素的子元素或表示简单的 XML 数据类型的字符内容。 由定义的子元素的名称 **\*ElementTags**指令的数据类型模板。
+GDL 复合数据类型由泛型数据类型表示。 复合数据类型的实例包含可能包含其他子元素的子元素或表示简单 XML 数据类型的字符内容。 子元素的名称由 DATATYPE 模板的 **\* ElementTags** 指令定义。
 
-没有定义的数据类型或不是与模板关联或不符合指定的数据类型的预期的语法的 GDL 属性的值由&lt;CDATA&gt;主题中&lt;GDL\_属性&gt;元素。 此部分中，客户端或其他分析器筛选器来处理他们所需的值。 此类未知的数据类型将不包含**xsi: type**属性。 多个&lt;CDATA&gt;可能会要求部分表示的值，如果值包含字符串"\]\]&gt;"。
+如果 GDL 属性的值没有定义的数据类型，或者未与模板关联，或者不符合指定数据类型所需的语法，则 &lt; &gt; 在 &lt; GDL \_ ATTRIBUTE 元素中由 CDATA 节表示 &gt; 。 此部分使客户端或其他 Parser-Filters 可以根据需要处理该值。 这种未知数据类型将不包含 **xsi： type** 属性。 &lt; &gt; 如果值包含字符串 ""，则可能需要多个 CDATA 节来表示值 \] \] &gt; 。
 
  
 

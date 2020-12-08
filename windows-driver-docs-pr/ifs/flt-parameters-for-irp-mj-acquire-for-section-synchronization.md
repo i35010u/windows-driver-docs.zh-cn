@@ -1,7 +1,6 @@
 ---
 title: IRP_MJ_ACQUIRE_FOR_SECTION_SYNCHRONIZATION 联合的 FLT_PARAMETERS
 description: 当 IRP_MJ_ACQUIRE_FOR_SECTION_SYNCHRONIZATION 操作的 FLT_IO_PARAMETER_BLOCK 结构的 MajorFunction 字段时，将使用以下联合组件。
-ms.assetid: ea3ae072-4a98-48df-871a-cc7d882b96b8
 keywords:
 - IRP_MJ_ACQUIRE_FOR_SECTION_SYNCHRONIZATION 联合可安装文件系统驱动程序的 FLT_PARAMETERS
 - FLT_PARAMETERS 联合可安装文件系统驱动程序
@@ -16,28 +15,28 @@ api_type:
 - HeaderDef
 ms.date: 07/17/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: efc6eec502b53238f152d6d0f2a1706ca568fe94
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: d355991875b2c3ac7d373e250792b1fcdfaae525
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89063637"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96836477"
 ---
 # <a name="flt_parameters-for-irp_mj_acquire_for_section_synchronization-union"></a>IRP_MJ_ACQUIRE_FOR_SECTION_SYNCHRONIZATION 联合的 FLT_PARAMETERS
 
-当 IRP_MJ_ACQUIRE_FOR_SECTION_SYNCHRONIZATION 操作的[**FLT_IO_PARAMETER_BLOCK**](/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_io_parameter_block)结构的**MajorFunction**字段时，将使用以下联合组件。
+当 IRP_MJ_ACQUIRE_FOR_SECTION_SYNCHRONIZATION 操作的 [**FLT_IO_PARAMETER_BLOCK**](/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_io_parameter_block)结构的 **MajorFunction** 字段时，将使用以下联合组件。
 
 ## <a name="syntax"></a>语法
 
 ```ManagedCPlusPlus
 typedef union _FLT_PARAMETERS {
-  ...    ;
+  ...    ;
   struct {
     FS_FILTER_SECTION_SYNC_TYPE SyncType;
-    ULONG POINTER_ALIGNMENT     PageProtection;
+    ULONG POINTER_ALIGNMENT     PageProtection;
     PFS_FILTER_SECTION_SYNC_OUTPUT OutputInformation;
-  } AcquireForSectionSynchronization;
-  ...    ;
+  } AcquireForSectionSynchronization;
+  ...    ;
 } FLT_PARAMETERS, *PFLT_PARAMETERS;
 ```
 
@@ -72,7 +71,7 @@ IRP_MJ_ACQUIRE_FOR_SECTION_SYNCHRONIZATION 是 (FSFilter) 回调操作的文件�
 **标头**： Fltkernel (包含 Fltkernel) 
 
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [**FLT_CALLBACK_DATA**](/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_callback_data)
 

@@ -1,22 +1,21 @@
 ---
 title: I2C 读取（功能索引 27）
-description: 此函数读取 Inter-Integrated 线路 (I2C) 注册。
-ms.assetid: 64D8999D-2E10-4836-9C17-7D809D9527BD
+description: 此函数读取 I2C) register (Inter-Integrated 电路。
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 00585e1794fa558c54ba1e4eefdfb03a42abd294
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f96bea16c1eb18fc0d7a598e6ac8f616419dc246
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383061"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96835161"
 ---
 # <a name="i2c-read-function-index-27"></a>I2C 读取（功能索引 27）
 
 
-此函数读取 Inter-Integrated 线路 (I2C) 注册。 此功能，需要使用特定于供应商的寄存器的方案。 它还用于调试。
+此函数读取 I2C) register (Inter-Integrated 电路。 此功能启用需要使用特定于供应商的寄存器的方案。 它还用于调试。
 
-## <a name="span-idinputspanspan-idinputspanspan-idinputspaninput"></a><span id="Input"></span><span id="input"></span><span id="INPUT"></span>输入
+## <a name="span-idinputspanspan-idinputspanspan-idinputspaninput"></a><span id="Input"></span><span id="input"></span><span id="INPUT"></span>送
 
 
 ### <a name="span-idargs3spanspan-idargs3spanspan-idargs3spanargs3"></a><span id="Args3"></span><span id="args3"></span><span id="ARGS3"></span>Args3
@@ -32,8 +31,8 @@ ms.locfileid: "63383061"
 <tr class="header">
 <th align="left">字段</th>
 <th align="left">字节长度</th>
-<th align="left">字节偏移</th>
-<th align="left">描述</th>
+<th align="left">字节偏移量</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>
@@ -41,20 +40,20 @@ ms.locfileid: "63383061"
 <td align="left"><strong>页</strong></td>
 <td align="left">1</td>
 <td align="left">0</td>
-<td align="left"><p>I2C 注册所在的页。</p></td>
+<td align="left"><p>I2C 寄存器所在的页面。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>Offset</strong></td>
 <td align="left">1</td>
 <td align="left">1</td>
-<td align="left"><p>注册的页面内偏移量。</p></td>
+<td align="left"><p>寄存器在页面内的偏移量。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-## <a name="span-idoutputspanspan-idoutputspanspan-idoutputspanoutput"></a><span id="Output"></span><span id="output"></span><span id="OUTPUT"></span>Output
+## <a name="span-idoutputspanspan-idoutputspanspan-idoutputspanoutput"></a><span id="Output"></span><span id="output"></span><span id="OUTPUT"></span>输出
 
 
 <table>
@@ -68,7 +67,7 @@ ms.locfileid: "63383061"
 <tr class="header">
 <th align="left">字段</th>
 <th align="left">字节长度</th>
-<th align="left">字节偏移</th>
+<th align="left">字节偏移量</th>
 <th align="left">描述</th>
 </tr>
 </thead>
@@ -77,27 +76,27 @@ ms.locfileid: "63383061"
 <td align="left"><strong>状态</strong></td>
 <td align="left">4</td>
 <td align="left">0</td>
-<td align="left"><p>此函数可返回以下特定于函数的错误代码：</p>
-<p>1：无效的页面。</p>
-<p>转到<a href="-dsm-interface-for-byte-addressable-energy-backed-function-class--function-interface-1-.md" data-raw-source="[_DSM Method Output](-dsm-interface-for-byte-addressable-energy-backed-function-class--function-interface-1-.md)">_DSM 方法输出</a>有关详细信息。</p></td>
+<td align="left"><p>此函数可能返回以下 Function-Specific 错误代码：</p>
+<p>1：页无效。</p>
+<p>有关详细信息，请参阅 <a href="-dsm-interface-for-byte-addressable-energy-backed-function-class--function-interface-1-.md" data-raw-source="[_DSM Method Output](-dsm-interface-for-byte-addressable-energy-backed-function-class--function-interface-1-.md)">_DSM 方法输出</a> 。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><strong>数据</strong></td>
+<td align="left">数据</td>
 <td align="left">1</td>
 <td align="left">4</td>
-<td align="left"><p>在指定的数据寄存器。</p></td>
+<td align="left"><p>指定寄存器中的数据。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
-[I2C 写入 （函数索引 28）](i2c-write--function-index-28-.md)
+[I2C 写入（功能索引 28）](i2c-write--function-index-28-.md)
 
-[\_字节可寻址能源的 DSM 接口支持的函数类 （函数接口 1）](-dsm-interface-for-byte-addressable-energy-backed-function-class--function-interface-1-.md)
+[\_用于字节寻址的支持能源的函数类 (函数接口 1) 的 DSM 接口 ](-dsm-interface-for-byte-addressable-energy-backed-function-class--function-interface-1-.md)
 
  
 

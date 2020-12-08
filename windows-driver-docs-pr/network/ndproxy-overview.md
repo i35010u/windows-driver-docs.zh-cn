@@ -1,23 +1,22 @@
 ---
 title: NDPROXY 概述
 description: NDPROXY 概述
-ms.assetid: 98d01249-8a6d-42b3-a91c-811352c8b638
 keywords:
 - NDPROXY WDK 网络
 - NDISWAN WDK 网络
 - 体系结构 WDK WAN，NDPROXY
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 691c85252f83e6ace065ebc1680a6a627ee60093
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 0d9988e10c953cdd1fa1d41e2d7284b97e1f66d4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89210163"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96836341"
 ---
 # <a name="ndproxy-overview"></a>NDPROXY 概述
 
-**注意**   如果你正在阅读本页，因为 Microsoft 安全公告27年11月 2013 [ (2914486) ](/security-updates/SecurityAdvisories/2014/2914486)影响 Windows XP 和 windows Server 2003，你可能会发现此可信计算[博客文章](https://msrc-blog.microsoft.com/2013/11/27/microsoft-releases-security-advisory-2914486/)有帮助。
+**注意**  如果你正在阅读本页，因为 Microsoft 安全公告27年11月 2013 [ (2914486)](/security-updates/SecurityAdvisories/2014/2914486) 影响 Windows XP 和 windows Server 2003，你可能会发现此可信计算 [博客文章](https://msrc-blog.microsoft.com/2013/11/27/microsoft-releases-security-advisory-2914486/) 有帮助。
 
 NDPROXY 是系统提供的驱动程序，可将 WAN 微型端口驱动程序、呼叫管理器和微型端口呼叫管理器) 的 NDISWAN 和 CoNDIS WAN (驱动程序连接到 TAPI 服务。 本主题介绍在 [支持 Telephonic 服务的 CONDIS WAN 操作](./condis-wan-operations-that-support-telephonic-services.md)中进一步记录的 NDPROXY 操作。
 
@@ -35,7 +34,7 @@ NDPROXY 通过 NDISWAN 驱动程序和以下内容之一进行 NDIS 通信：
 
 无论配置如何，小型端口驱动程序接口和 NDISWAN 和 NDPROXY 的调用管理器接口都是相同的。
 
-**注意**   如果需要支持多个硬件平台，则可以在单独的调用管理器中使用微型端口驱动程序。 在这种情况下，可以结合使用同一调用管理器和多个微型端口驱动程序来简化开发。
+**注意**  如果需要支持多个硬件平台，则可以在单独的调用管理器中使用微型端口驱动程序。 在这种情况下，可以结合使用同一调用管理器和多个微型端口驱动程序来简化开发。
 
 以下列表汇总了 NDPROXY 与 CoNDIS WAN 驱动程序堆栈中的其他组件之间存在的接口：
 

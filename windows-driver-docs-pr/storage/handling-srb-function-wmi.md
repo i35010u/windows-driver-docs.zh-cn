@@ -1,7 +1,6 @@
 ---
 title: 处理 SRB_FUNCTION_WMI
 description: 处理 SRB_FUNCTION_WMI
-ms.assetid: df20b9dc-1b67-4044-8abe-3cf5714076b3
 keywords:
 - SCSI 微型端口驱动程序 WDK 存储，HwScsiStartIo
 - HwScsiStartIo
@@ -9,22 +8,22 @@ keywords:
 - WMI WDK SCSI
 ms.date: 10/08/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: b1a7950daaea4a195b38c64e29d747fcc33c92d0
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 0ff92dcf3a746c9ddb8326023d273aa764172f4d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89188827"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96835195"
 ---
 # <a name="handling-srb_function_wmi"></a>处理 SRB_FUNCTION_WMI
 
-如果主机总线适配器 (HBA) 支持 [Windows Management Instrumentation](../kernel/implementing-wmi.md) (wmi) ，则端口驱动程序会将 wmi 请求发送到微型端口驱动程序。 HBA 通过将[*PORT_CONFIGURATION_INFORMATION*](/windows-hardware/drivers/ddi/srb/ns-srb-_port_configuration_information)结构的 "WmiDataProvider" 字段设置为[**DriverEntry**](driverentry-of-scsi-miniport-driver.md)例程中的**TRUE**来指示它支持 WMI。
+如果主机总线适配器 (HBA) 支持 [Windows Management Instrumentation](../kernel/implementing-wmi.md) (wmi) ，则端口驱动程序会将 wmi 请求发送到微型端口驱动程序。 HBA 通过将 [*PORT_CONFIGURATION_INFORMATION*](/windows-hardware/drivers/ddi/srb/ns-srb-_port_configuration_information)结构的 "WmiDataProvider" 字段设置为 [**DriverEntry**](driverentry-of-scsi-miniport-driver.md)例程中的 **TRUE** 来指示它支持 WMI。
 
 小型小型驱动程序的编写器准备用来处理 WMI 请求的小型端口，如下所示：
 
 - 如果微型端口公开自定义数据块或事件块，则它应在 MOF 文件中定义此类块，并将其编译为微型端口的二进制图像中的二进制资源。 有关详细信息，请参阅 [Windows Management Instrumentation](../kernel/implementing-wmi.md)。
 
-- 如[SCSI 微型端口驱动程序例程](scsi-miniport-driver-routines.md)中所述，实现必需的和可选的*HwScsiWmiXxx*回调例程。
+- 如 [SCSI 微型端口驱动程序例程](scsi-miniport-driver-routines.md)中所述，实现必需的和可选的 *HwScsiWmiXxx* 回调例程。
 
 - 处理 SRB_FUNCTION_WMI。
 
@@ -60,6 +59,6 @@ ms.locfileid: "89188827"
 
 - 将 **Srb->DataTransferLength** 和 **Srb >SrbStatus** 分别设置为 [**ScsiPortWmiGetReturnSize**](/windows-hardware/drivers/ddi/scsiwmi/nf-scsiwmi-scsiportwmigetreturnsize) 和 [**ScsiPortWmiGetReturnStatus**](/windows-hardware/drivers/ddi/scsiwmi/nf-scsiwmi-scsiportwmigetreturnstatus)返回的值。
 
-- 通过**RequestComplete**和**NextRequest**或 (**NextLuRequest**) 再次调用[**ScsiPortNotification**](/windows-hardware/drivers/ddi/srb/nf-srb-scsiportnotification) 。
+- 通过 **RequestComplete** 和 **NextRequest** 或 (**NextLuRequest**) 再次调用 [**ScsiPortNotification**](/windows-hardware/drivers/ddi/srb/nf-srb-scsiportnotification) 。
 
 有关 WMI 的详细信息，请参阅 [Windows Management Instrumentation](../kernel/implementing-wmi.md)。

@@ -1,7 +1,6 @@
 ---
 title: 'SpinLockDpr 规则 (ndis) '
 description: SpinLockDpr 规则验证 NDIS 旋转锁定接口的正确使用。此规则指定仅当旋转锁定处于未锁定状态时才对 NdisDprAcquireSpinLock 进行调用。
-ms.assetid: 60056fae-54d1-4365-bcb5-02c63e4fb521
 ms.date: 05/21/2018
 keywords:
 - 'SpinLockDpr 规则 (ndis) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: bb9851f9cf6a8d7f8b08c2a7f85614c6ae991d76
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 0c296fcf43c215ee5ce7b36ae0334c85303059f3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102200"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96834677"
 ---
 # <a name="spinlockdpr-rule-ndis"></a>SpinLockDpr 规则 (ndis) 
 
 
-**SpinLockDpr**规则验证 NDIS 旋转锁定接口的正确使用。
+**SpinLockDpr** 规则验证 NDIS 旋转锁定接口的正确使用。
 
 此规则指定仅当旋转锁定处于未锁定状态时才对 [**NdisDprAcquireSpinLock**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisdpracquirespinlock) 进行调用。 此规则还验证在微型端口处理程序例程退出之前是否释放自旋锁。
 

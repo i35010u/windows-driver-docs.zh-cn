@@ -1,17 +1,16 @@
 ---
 title: MPEG1_A
 description: MPEG1_A
-ms.assetid: 2c4d79b7-3331-49f9-a561-6e5b609543df
 keywords:
 - MPEG1_A 受限配置文件 WDK DirectX VA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 064eff868162b011c2a63ea66c0047f81b336212
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 3ea41a7328e1243380d6e81263b1980b4d68e62f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89063522"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96836509"
 ---
 # <a name="mpeg1_a"></a>MPEG1 \_
 
@@ -23,7 +22,7 @@ ms.locfileid: "89063522"
 
 ### <a name="span-idrestrictions_on_dxva_connectmodespanspan-idrestrictions_on_dxva_connectmodespanspan-idrestrictions_on_dxva_connectmodespanrestrictions-on-dxva_connectmode"></a><span id="Restrictions_on_DXVA_ConnectMode"></span><span id="restrictions_on_dxva_connectmode"></span><span id="RESTRICTIONS_ON_DXVA_CONNECTMODE"></span>DXVA ConnectMode 的限制 \_
 
-当[**DXVA \_ ConfigPictureDecode**](/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_configpicturedecode)结构的**dwFunction**成员中定义的*bDXVA \_ Func*变量等于1时，适用于[**DXVA \_ ConnectMode**](/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_connectmode)结构的以下限制。
+当 [**DXVA \_ ConfigPictureDecode**](/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_configpicturedecode)结构的 **dwFunction** 成员中定义的 *bDXVA \_ Func* 变量等于1时，适用于 [**DXVA \_ ConnectMode**](/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_connectmode)结构的以下限制。
 
 <table>
 <colgroup>
@@ -33,7 +32,7 @@ ms.locfileid: "89063522"
 <thead>
 <tr class="header">
 <th align="left">结构成员</th>
-<th align="left">值</th>
+<th align="left">“值”</th>
 </tr>
 </thead>
 <tbody>
@@ -56,7 +55,7 @@ ms.locfileid: "89063522"
 <thead>
 <tr class="header">
 <th align="left">结构成员</th>
-<th align="left">值</th>
+<th align="left">“值”</th>
 </tr>
 </thead>
 <tbody>
@@ -147,7 +146,7 @@ ms.locfileid: "89063522"
 <thead>
 <tr class="header">
 <th align="left">wMBtype 位</th>
-<th align="left">值</th>
+<th align="left">“值”</th>
 </tr>
 </thead>
 <tbody>

@@ -1,10 +1,9 @@
 ---
 title: IPrinterBidiSchemaResponses AddRequeryKey 方法
-description: AddRequeryKey 方法将添加新的查询密钥，以重新查询从 getSchemas 调用返回时。
+description: AddRequeryKey 方法添加新的查询密钥，以在从 getSchemas 调用返回时重新查询。
 MSHAttr:
 - PreferredSiteName:MSDN
 - PreferredLib:/library/windows/hardware
-ms.assetid: D2C418C4-3C1B-4CEA-9F39-036C4DB2A483
 keywords:
 - AddRequeryKey 方法打印设备
 - AddRequeryKey 方法打印设备，IPrinterBidiSchemaResponses 接口
@@ -17,36 +16,36 @@ api_type:
 - COM
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 335f75d02acd7c6661a013aec81c2e4beb1898b0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9eee89b72ffa11d129979806bf1fd0c1a4037b92
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63351655"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96835569"
 ---
-# <a name="iprinterbidischemaresponsesaddrequerykey-method"></a>IPrinterBidiSchemaResponses::AddRequeryKey 方法
+# <a name="iprinterbidischemaresponsesaddrequerykey-method"></a>IPrinterBidiSchemaResponses：： AddRequeryKey 方法
 
-AddRequeryKey 方法将添加新的查询密钥，以重新查询从 getSchemas 调用返回时。
+AddRequeryKey 方法添加新的查询密钥，以在从 getSchemas 调用返回时重新查询。
 
 <a name="syntax"></a>语法
 ------
 
 ```cpp
 HRESULT AddRequeryKey(
-  [in] BSTR   bstrQueryKey
+  [in] BSTR   bstrQueryKey
 );
 ```
 
-<a name="parameters"></a>Parameters
+<a name="parameters"></a>参数
 ----------
 
- *bstrQueryKey* \[in\]  
-新的查询密钥。
+ *bstrQueryKey* \[中\]  
+新查询密钥。
 
 <a name="return-value"></a>返回值
 ------------
 
-此方法返回**HRESULT**值。
+此方法返回 **HRESULT** 值。
 
 <a name="requirements"></a>要求
 ------------
@@ -59,11 +58,11 @@ HRESULT AddRequeryKey(
 <tbody>
 <tr class="odd">
 <td><p>目标平台</p></td>
-<td>桌面设备</td>
+<td>台式机</td>
 </tr>
 <tr class="even">
-<td><p>Version</p></td>
-<td><p>Windows 8 及更高版本</p></td>
+<td><p>版本</p></td>
+<td><p>Windows 8 及更高版本</p></td>
 </tr>
 </tbody>
 </table>

@@ -1,15 +1,14 @@
 ---
 title: DSM \_ QuerySupportedLBPolicies \_ V2 WMI 类
 description: DSM \_ QuerySupportedLBPolicies \_ V2 WMI 类
-ms.assetid: d60cf06d-595b-425d-bf22-f0986267ba09
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 3d508a174765a49a1200e11274b8298235015290
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 2f3768f7e15b498cc2440abc76748c7f72c36cff
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89192671"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96835325"
 ---
 # <a name="dsm_querysupportedlbpolicies_v2-wmi-class"></a>DSM \_ QuerySupportedLBPolicies \_ V2 WMI 类
 

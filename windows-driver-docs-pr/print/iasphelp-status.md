@@ -1,13 +1,12 @@
 ---
-title: Iasphelp get\_状态方法
-description: Status 属性启用 ASP 网页，以确定打印机状态。
+title: Iasphelp 获取 \_ 状态方法
+description: "\"状态\" 属性允许 ASP 网页确定打印机状态。"
 MS-HAID:
 - webfnc\_30feffa7-1aa0-4b66-9d0a-1f66025272c3.xml
 - print.iasphelp\_status
 MSHAttr:
 - PreferredSiteName:MSDN
 - PreferredLib:/library/windows/hardware
-ms.assetid: cff9dd7d-722b-4917-84ca-d6b17e8e64a4
 keywords:
 - get_Status 方法打印设备
 - get_Status 方法打印设备，Iasphelp 接口
@@ -20,36 +19,36 @@ api_type:
 - COM
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 69bd9d6bbf5284ec1676acafc7677186caf2b19b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5125f3090ca97205c9f1eb17f0241a34f9163206
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63341330"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96835735"
 ---
-# <a name="iasphelpgetstatus-method"></a>Iasphelp::get\_状态方法
+# <a name="iasphelpget_status-method"></a>Iasphelp：： get \_ Status 方法
 
-**状态**属性启用 ASP 网页，以确定打印机状态。
+" **状态** " 属性允许 ASP 网页确定打印机状态。
 
 <a name="syntax"></a>语法
 ------
 
 ```cpp
 HRESULT get_Status(
-  [out] long *pVal
+  [out] long *pVal
 );
 ```
 
-<a name="parameters"></a>Parameters
+<a name="parameters"></a>参数
 ----------
 
-*pVal* \[out\]  
-调用方提供指向用于接收打印机状态标志的位置。 有关详细信息，请参阅以下备注部分。
+*pVal* \[弄\]  
+调用方提供的指向接收打印机状态标志的位置的指针。 有关更多信息，请参见下面的“备注”部分。
 
 <a name="return-value"></a>返回值
 ------------
 
-此外可以返回 Win32 错误代码。
+也可以返回 Win32 错误代码。
 
 <table>
 <colgroup>
@@ -69,7 +68,7 @@ HRESULT get_Status(
 </tr>
 <tr class="even">
 <td><strong>E_HANDLE</strong></td>
-<td><p><a href="iasphelp-open.md" data-raw-source="[&lt;strong&gt;Iasphelp::Open&lt;/strong&gt;](iasphelp-open.md)"> <strong>Iasphelp::Open</strong> </a>尚未调用方法。</p></td>
+<td><p>未调用 <a href="iasphelp-open.md" data-raw-source="[&lt;strong&gt;Iasphelp::Open&lt;/strong&gt;](iasphelp-open.md)"><strong>Iasphelp：： Open</strong></a> 方法。</p></td>
 </tr>
 <tr class="odd">
 <td><strong>E_OUTOFMEMORY</strong></td>
@@ -80,9 +79,9 @@ HRESULT get_Status(
 
 ## <a name="vbscript-example"></a>VBScript 示例
 
-属性值是 0 或一个或多个打印机的按位 OR 打印机状态代码\_状态\_*XXX*标头中定义的标记文件的 Winspool.h**状态**成员的打印机\_信息\_2 结构。 有关此结构的详细信息，请参阅 Windows SDK 文档。
+属性值是打印机状态代码，它是0，或者是 \_ \_ *XXX* 在标头文件 Winspool.drv 中为 **Status** 打印机 \_ 信息 \_ 2 结构的状态成员定义的一个或多个打印机状态 XXX 标志的按位 "或"。 有关此结构的详细信息，请参阅 Windows SDK 文档。
 
-[ **Iasphelp::Open** ](iasphelp-open.md)前必须调用方法**Iasphelp::Status**属性可以进行查询。
+必须先调用 [**Iasphelp：： Open**](iasphelp-open.md) 方法，然后才能查询 **Iasphelp：： Status** 属性。
 
 ```vb
 Dim objPrinter, PtrStatus
@@ -103,11 +102,11 @@ PtrStatus = objPrinter.Status
 <tbody>
 <tr class="odd">
 <td><p>目标平台</p></td>
-<td>桌面设备</td>
+<td>台式机</td>
 </tr>
 </tbody>
 </table>
 
 ## <a name="see-also"></a>请参阅
 
-[**Iasphelp::Open**](iasphelp-open.md)
+[**Iasphelp：： Open**](iasphelp-open.md)

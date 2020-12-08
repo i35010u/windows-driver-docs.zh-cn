@@ -1,7 +1,6 @@
 ---
 title: CPixel ComputeSurfaceOffset 方法
-description: CPixel ComputeSurfaceOffset 方法确定一个面 subrectangular 偏移的量。
-ms.assetid: 3589ea80-94f8-418b-895d-c52310536e45
+description: CPixel ComputeSurfaceOffset 方法确定图面的 subrectangular 偏移量。
 keywords:
 - ComputeSurfaceOffset 方法显示设备
 - ComputeSurfaceOffset 方法显示设备，CPixel 接口
@@ -16,17 +15,17 @@ api_type:
 - COM
 ms.date: 01/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: a160240c166a36f15ef9dd7a19206d1e784f2cce
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e306ce21d0d2cd98aa62dee9bf1dd631a5523284
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390001"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96834635"
 ---
-# <a name="cpixelcomputesurfaceoffset-method"></a>CPixel::ComputeSurfaceOffset 方法
+# <a name="cpixelcomputesurfaceoffset-method"></a>CPixel：： ComputeSurfaceOffset 方法
 
 
-**CPixel::ComputeSurfaceOffset**方法确定的一个面 subrectangular 偏移量。
+**CPixel：： ComputeSurfaceOffset** 方法确定图面的 subrectangular 偏移量。
 
 <a name="syntax"></a>语法
 ------
@@ -34,22 +33,22 @@ ms.locfileid: "63390001"
 ```ManagedCPlusPlus
 static void ComputeSurfaceOffset(
    const D3DSURFACE_DESC *pDescTopLevel,
-         BYTE            *pBits,
-   const RECT            *pRect,
-         D3DLOCKED_RECT  *pLockedRectData
+         BYTE            *pBits,
+   const RECT            *pRect,
+         D3DLOCKED_RECT  *pLockedRectData
 );
 ```
 
-<a name="parameters"></a>Parameters
+<a name="parameters"></a>参数
 ----------
 
-*pDescTopLevel*指针，指向 D3DSURFACE\_DESC 结构描述图面。
+*pDescTopLevel* 指向 \_ 描述图面的 D3DSURFACE DESC 结构的指针。
 
-*pBits*面开头的指针或**NULL**如果调用方只需偏移量。
+*pBits* 指向图面的开头的指针; 如果调用方只需要偏移量，则为 **NULL** 。
 
-*pRect*描述 subrectangular 区域的 RECT 结构的指针或**NULL**如果调用方只需在图面开头。
+*pRect* 指向描述 subrectangular 区域的 RECT 结构的指针; 如果调用方只需要图面的开头，则为 **NULL** 。
 
-*pLockedRectData*指针，指向 D3DLOCKED\_RECT 结构，它接收的指针或对锁定的矩形区域的偏移量。
+*pLockedRectData* 指向 D3DLOCKED \_ RECT 结构的指针，该结构接收锁定的矩形区域的指针或偏移量。
 
 <a name="return-value"></a>返回值
 ------------
@@ -59,9 +58,9 @@ static void ComputeSurfaceOffset(
 <a name="remarks"></a>备注
 -------
 
-给定的图面上的说明的图面上和 subrectangle，开头的指针**CPixel::ComputeSurfaceOffset**返回的指针或偏移量中锁定的矩形区域**pBits**隶属 D3DLOCKED\_RECT 结构的时间**pLockedRectData**。
+给定表面说明，指向图面的开头，subrectangle， **CPixel：： ComputeSurfaceOffset** 将在 D3DLOCKED 的 pLockedRectData RECT 结构的 **pBits** 成员中返回指针或偏移量 \_ 。 **pLockedRectData**
 
-详细了解 D3DLOCKED\_RECT、 D3DSURFACE\_DESC 和矩形，请参阅 Microsoft DirectX SDK 文档。
+有关 D3DLOCKED \_ RECT、D3DSURFACE \_ DESC 和 RECT 的详细信息，请参阅 MICROSOFT DirectX SDK 文档。
 
 <a name="requirements"></a>要求
 ------------
@@ -74,11 +73,11 @@ static void ComputeSurfaceOffset(
 <tbody>
 <tr class="odd">
 <td align="left"><p>目标平台</p></td>
-<td align="left">桌面设备</td>
+<td align="left">台式机</td>
 </tr>
 <tr class="even">
-<td align="left"><p>Header</p></td>
-<td align="left">Pixel.hpp （包括 Pixel.hpp）</td>
+<td align="left"><p>标头</p></td>
+<td align="left">Hpp (包含 hpp) </td>
 </tr>
 </tbody>
 </table>

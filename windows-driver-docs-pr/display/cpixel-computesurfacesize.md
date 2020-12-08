@@ -1,7 +1,6 @@
 ---
 title: CPixel ComputeSurfaceSize 方法
-description: CPixel ComputeSurfaceSize 方法确定要分配一个面所需的内存量。
-ms.assetid: aeee0757-b381-4579-abae-1190399f3a0d
+description: CPixel ComputeSurfaceSize 方法确定分配图面所需的内存量。
 keywords:
 - ComputeSurfaceSize 方法显示设备
 - ComputeSurfaceSize 方法显示设备，CPixel 接口
@@ -16,47 +15,47 @@ api_type:
 - COM
 ms.date: 01/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 38a0f1072efb3d4a664c053e6e1ddd61af5fce71
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 90b7325c41b3c4506806e8e6fb54b1a47a9c90f1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63389998"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96834623"
 ---
-# <a name="cpixelcomputesurfacesize-method"></a>CPixel::ComputeSurfaceSize 方法
+# <a name="cpixelcomputesurfacesize-method"></a>CPixel：： ComputeSurfaceSize 方法
 
 
-**CPixel::ComputeSurfaceSize**方法确定要分配一个面所需的内存量。
+**CPixel：： ComputeSurfaceSize** 方法确定分配图面所需的内存量。
 
 <a name="syntax"></a>语法
 ------
 
 ```ManagedCPlusPlus
 static UINT ComputeSurfaceSize(
-   UINT      cpWidth,
-   UINT      cpHeight,
+   UINT      cpWidth,
+   UINT      cpHeight,
    D3DFORMAT Format
 );
 ```
 
-<a name="parameters"></a>Parameters
+<a name="parameters"></a>参数
 ----------
 
-*cpWidth*指定的宽度以像素为单位的图面。
+*cpWidth* 指定图面的宽度（以像素为单位）。
 
-*cpHeight*以像素为单位的图面中指定的高度。
+*cpHeight* 指定图面的高度（以像素为单位）。
 
-*格式*D3DFORMAT 枚举中的值用于指定的图面上的格式。
+*格式* 使用 D3DFORMAT 枚举中的值指定表面格式。
 
 <a name="return-value"></a>返回值
 ------------
 
-返回的大小，以字节为单位在图面。
+返回图面的大小（以字节为单位）。
 
 <a name="remarks"></a>备注
 -------
 
-有关 D3DFORMAT 详细信息，请参阅 Microsoft DirectX SDK 文档。
+有关 D3DFORMAT 的详细信息，请参阅 Microsoft DirectX SDK 文档。
 
 <a name="requirements"></a>要求
 ------------
@@ -69,11 +68,11 @@ static UINT ComputeSurfaceSize(
 <tbody>
 <tr class="odd">
 <td align="left"><p>目标平台</p></td>
-<td align="left">桌面设备</td>
+<td align="left">台式机</td>
 </tr>
 <tr class="even">
-<td align="left"><p>Header</p></td>
-<td align="left">Pixel.hpp （包括 Pixel.hpp）</td>
+<td align="left"><p>标头</p></td>
+<td align="left">Hpp (包含 hpp) </td>
 </tr>
 </tbody>
 </table>

@@ -1,22 +1,21 @@
 ---
 title: 主要 I/O 路径
 description: 主要 I/O 路径
-ms.assetid: 643842e4-a75e-4d86-a1f7-d1a4468b5e17
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5addbfc40365043d8cfed8f03674968192b7cca9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: de9e65aff11abe55749a803699ac4c5918765e15
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63355571"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96835053"
 ---
 # <a name="main-io-path"></a>主要 I/O 路径
 
 
-Storport 必须要提供的体系结构改进之一是 HwBuildIo 例程。 尽管此 Storport 微型端口驱动程序入口点是可选的我们强烈建议。 LSI\_U3 驱动程序通过实现 LsiU3BuildIo 例程来充分利用此项改进。 无锁 HwStartIo 例程保留，并且此例程，只要修改未共享的内存时，可能会在 HwStartIo 例程在基于 Scsiport 的微型端口驱动程序的情况下执行之前执行的处理之前调用此入口点。 这允许大部分所需启动单独的 I/O 请求，以同时在多处理器系统上执行的处理。
+Storport 提供的一项体系结构改进是 HwBuildIo 例程。 尽管此 Storport 微型端口驱动程序入口点是可选的，但强烈建议这样做。 LSI \_ U3 驱动程序通过实现 LsiU3BuildIo 例程来利用此改进。 此入口点在未持有任何锁的 HwStartIo 例程之前调用，只要不修改共享内存，此例程就可能会执行之前在 HwStartIo 例程中完成的处理（对于基于 Scsiport 的微型端口驱动程序）。 这允许在多处理器系统上并行执行所需的大多数处理，以启动单独的 i/o 请求。
 
-LsiU3StartIo 例程将驱动程序队列标记分配给输入/输出请求。 这需要，因为 Storport 分配每个 LUN 基础，而不是为每个适配器基础上的队列标记。 适配器硬件被限制为最多为 256 的未完成 I/o。
+LsiU3StartIo 例程将驱动程序队列标记分配给 i/o 请求。 这是必需的，因为 Storport 基于每个 LUN 分配队列标记，而不是基于每个适配器。 适配器硬件的最大限制为256个未完成 i/o。
 
  
 

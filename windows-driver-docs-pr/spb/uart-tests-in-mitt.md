@@ -1,21 +1,20 @@
 ---
 title: MITT 中的 UART 测试
 description: MITT 软件包包括用于验证到 UART 控制器及其驱动程序的数据传输的测试。 MITT 板的 UART 接口充当 UART 回送设备。
-ms.assetid: 239F131C-5416-4E86-B0EE-E3156CDA11CF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a44070ec345f5785ddd210871f077abe3b964944
-ms.sourcegitcommit: 0c3cab853b0b75149b7604eef03275f997792a84
+ms.openlocfilehash: c8d4a552b6f701c8450451eefa704d8220bf1478
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96157309"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96835395"
 ---
 # <a name="uart-tests-in-mitt"></a>MITT 中的 UART 测试
 
 MITT 软件包包括用于验证到 UART 控制器及其驱动程序的数据传输的测试。 MITT 板的 UART 接口充当 UART 回送设备。
 
-## <a name="before-you-begin"></a>开始之前
+## <a name="before-you-begin"></a>在开始之前
 
 - 获取 MITT 板和 UART 适配器板。 请参阅 [购买使用 MITT 的硬件](./multi-interface-test-tool--mitt--.md)。
 - [下载 MITT](/previous-versions/dn919810(v=vs.85))软件包。 在受测系统上安装它。

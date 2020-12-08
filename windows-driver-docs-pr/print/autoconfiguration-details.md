@@ -1,18 +1,17 @@
 ---
 title: 自动配置详细信息
 description: 自动配置详细信息
-ms.assetid: ba596ce3-724d-45c4-85ee-2486a31a0c01
 keywords:
 - 自动配置 WDK 打印机，关于打印机自动配置
 - 打印机自动配置 WDK 打印机，关于打印机自动配置
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e347d19a20aca29341d8a1dae62a9d1d98047ea2
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 47faa4a692b11bad96c1381989ad614cf9337638
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89216442"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96836095"
 ---
 # <a name="autoconfiguration-details"></a>自动配置详细信息
 

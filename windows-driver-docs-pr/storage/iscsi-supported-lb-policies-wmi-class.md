@@ -1,20 +1,19 @@
 ---
 title: 支持 ISCSI 的 \_ \_ LB \_ 策略 WMI 类
 description: 支持 ISCSI 的 \_ \_ LB \_ 策略 WMI 类
-ms.assetid: c11eebe8-519a-473d-9e9c-8a787333223e
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: ef37565fc3ddf289a07a4fd6af85dedc851a91d6
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 66b19b91725ed59ad66ad934c31e4cd68eefcb04
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89187829"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96835081"
 ---
 # <a name="iscsi_supported_lb_policies-wmi-class"></a>支持 ISCSI 的 \_ \_ LB \_ 策略 WMI 类
 
 
-支持 ISCSI \_ 的 \_ LB \_ 策略 WMI 类包含有关支持多连接 ISCSI 会话的负载平衡策略的信息。 此类在*管理 mof*中定义为：
+支持 ISCSI \_ 的 \_ LB \_ 策略 WMI 类包含有关支持多连接 ISCSI 会话的负载平衡策略的信息。 此类在 *管理 mof* 中定义为：
 
 ```cpp
 class ISCSI_Supported_LB_Policies {

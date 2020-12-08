@@ -1,18 +1,17 @@
 ---
 title: 下载字体属性
 description: 下载字体属性
-ms.assetid: 335413d0-cf0a-4dd9-b1a4-345945c63395
 keywords:
 - 下载的字体属性 WDK Unidrv
 - 字体属性 WDK Unidrv
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b12c310b3089961b40335a729b68e24f5d279b0b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 13af54b8fea2bb9f472ed15e706e9a3aaebbfca7
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331197"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96836121"
 ---
 # <a name="attributes-for-downloaded-fonts"></a>下载字体属性
 
@@ -20,7 +19,7 @@ ms.locfileid: "63331197"
 
 
 
-下表列出了属性描述对下载的字体的打印机的支持。
+下表列出了描述打印机对下载字体的支持的属性。
 
 <table>
 <colgroup>
@@ -32,57 +31,57 @@ ms.locfileid: "63331197"
 <tr class="header">
 <th>属性名称</th>
 <th>特性参数</th>
-<th>备注</th>
+<th>注释</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><p><strong><em>DLSymbolSet</strong></p></td>
-<td><p>常量，表示设置下载 TrueType 字体时要使用的符号。 可以是 PC 8 或 ROMAN 8。</p></td>
-<td><p>可选。 如果未指定，字形范围被假定为指定的限制范围内连续 *<strong>MinGlyphID</strong>和 *<strong>MaxGlyphID</strong>。</p></td>
+<td><p>常数，表示下载 TrueType 字体时要使用的符号集。 可以是 PC 8 或罗马8。</p></td>
+<td><p>可选。 如果未指定此值，则认为标志符号范围在 *<strong>MinGlyphID</strong> 和 *<strong>MaxGlyphID</strong>指定的限制内是连续的。</p></td>
 </tr>
 <tr class="even">
 <td><p><strong></em>FontFormat</strong></p></td>
 <td><p></p>
-常量值，该值指示下载支持的类型。 必须是以下值之一：为 HPPCL HPPCL_RES HPPCL_OUTLINE OEM_CALLBACK</td>
-<td><p>所需打印机可以下载字体。 如果指定 OEM_CALLBACK，则必须提供字体回调函数。 有关这些回叫的详细信息，请参阅<a href="customizing-microsoft-s-printer-drivers.md" data-raw-source="[Customizing Microsoft's Printer Drivers](customizing-microsoft-s-printer-drivers.md)">自定义 Microsoft 的打印机驱动程序</a>。</p></td>
+指示支持的下载类型的常量值。 必须是以下项之一： HPPCL HPPCL_RES HPPCL_OUTLINE OEM_CALLBACK</td>
+<td><p>如果打印机可下载字体，则为必需。 如果指定 OEM_CALLBACK，则必须提供字体回调函数。 有关这些回调的详细信息，请参阅 <a href="customizing-microsoft-s-printer-drivers.md" data-raw-source="[Customizing Microsoft's Printer Drivers](customizing-microsoft-s-printer-drivers.md)">自定义 Microsoft 的打印机驱动程序</a>。</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong><em>MaxFontID</strong></p></td>
-<td><p>表示为软字体的最大标识符的数字值。</p></td>
-<td><p>可选。 如果未指定，默认值为 65535。</p></td>
+<td><p>表示软字体的最大标识符的数字值。</p></td>
+<td><p>可选。 如果未指定，则默认值为65535。</p></td>
 </tr>
 <tr class="even">
 <td><p><strong></em>MaxGlyphID</strong></p></td>
-<td><p>表示下载的字体标志符号的最大标识符的数字值。</p></td>
-<td><p>可选。 如果未指定并<em> <strong>DLSymbolSet</strong>未指定，默认值为 255。 已忽略的如果 *<strong>DLSymbolSet</strong>指定。</p></td>
+<td><p>表示已下载字体标志符号的最大标识符的数字值。</p></td>
+<td><p>可选。 如果未指定但未 <em> 指定<strong>DLSymbolSet</strong> ，则默认值为255。 如果指定 *<strong>DLSymbolSet</strong> ，则忽略。</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong></em>MaxNumDownFonts</strong></p></td>
-<td><p>表示可以一次在打印机内存中存储的软字体的最大数目的数字值。</p></td>
-<td><p>可选。 如果未指定，Unidrv 假定可以存储无限的数量的软字体。</p></td>
+<td><p>数值，表示一次可以存储在打印机内存中的软字体的最大数目。</p></td>
+<td><p>可选。 如果未指定，Unidrv 将假定可以存储不限数量的软字体。</p></td>
 </tr>
 <tr class="even">
 <td><p><strong><em>MinFontID</strong></p></td>
-<td><p>表示为软字体的最小标识符的数字值。</p></td>
-<td><p>可选。 如果未指定，默认值是一个。</p></td>
+<td><p>表示软字体的最小标识符的数字值。</p></td>
+<td><p>可选。 如果未指定，则默认值为1。</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong></em>MinGlyphID</strong></p></td>
-<td><p>表示下载的字体标志符号的最小标识符的数字值。</p></td>
-<td><p>可选。 如果未指定并<em> <strong>DLSymbolSet</strong>未指定，默认值为 32。 已忽略的如果 *<strong>DLSymbolSet</strong>指定。</p></td>
+<td><p>表示已下载字体标志符号的最小标识符的数字值。</p></td>
+<td><p>可选。 如果未指定但未 <em> 指定<strong>DLSymbolSet</strong> ，则默认值为32。 如果指定 *<strong>DLSymbolSet</strong> ，则忽略。</p></td>
 </tr>
 <tr class="even">
 <td><p><strong></em>TextHalftoneThreshold</strong></p></td>
-<td><p>确定 Unidrv 是否执行 TrueType 字体中的文本半色调的数字值。 如果驱动程序的分辨率大于或等于此属性，Unidrv 半色调文本中指定的值。</p></td>
-<td><p>可选。 默认值为 600。</p></td>
+<td><p>确定 Unidrv 是否为 TrueType 字体执行文本半色调的数值。 如果驱动程序的分辨率大于或等于此属性中指定的值，则 Unidrv 的半色调文本。</p></td>
+<td><p>可选。 默认值是 600秒。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-有关示例，请参阅[示例 GPD 文件](sample-gpd-files.md)。
+有关示例，请参阅 [示例 GPD 文件](sample-gpd-files.md)。
 
  
 

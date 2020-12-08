@@ -1,19 +1,18 @@
 ---
 title: 在 Direct3D 中执行浮点运算
 description: 在 Direct3D 中执行浮点运算
-ms.assetid: 2da736cf-d062-4c5a-b9f5-6b35f199660f
 keywords:
 - 浮点运算 WDK Direct3D
 - Direct3D WDK Windows 2000 显示，浮点操作
 - 回调函数 WDK Direct3D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c41824856c6af6c44ae019390321fa73ee218783
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 7692d7d5afb80d20a1e05d262ba2be3d3492f6f8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90717194"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96834593"
 ---
 # <a name="performing-floating-point-operations-in-direct3d"></a>在 Direct3D 中执行浮点运算
 

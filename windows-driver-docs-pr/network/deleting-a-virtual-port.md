@@ -1,22 +1,21 @@
 ---
 title: 删除虚拟端口
 description: 删除虚拟端口
-ms.assetid: CBE7AC59-D878-44BA-8FE6-168EC17A2D67
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6e6643f81285aa3d01f8a6f9c36e4ad47eea0392
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 781248a3efc91c7108a3f3ad55b95346e735a762
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89218434"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96836347"
 ---
 # <a name="deleting-a-virtual-port"></a>删除虚拟端口
 
 
 过量驱动程序会 (OID 发出对象标识符) 设置 [oid \_ nic \_ 交换机 \_ delete \_ VPORT](./oid-nic-switch-delete-vport.md) 以删除网络适配器的 NIC 交换机上的非默认虚拟端口 (VPORT) 。 过量驱动程序只能通过发出 [oid \_ NIC \_ SWITCH \_ CREATE \_ VPort](./oid-nic-switch-create-vport.md)的 oid 方法请求，删除先前创建的 VPort。
 
-[**Ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的**InformationBuffer**成员包含指向[**NDIS \_ NIC \_ SWITCH \_ DELETE \_ VPORT \_ PARAMETERS**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_delete_vport_parameters)结构的指针。
+[**Ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的 **InformationBuffer** 成员包含指向 [**NDIS \_ NIC \_ SWITCH \_ DELETE \_ VPORT \_ PARAMETERS**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_delete_vport_parameters)结构的指针。
 
 过量驱动程序（例如虚拟化堆栈）可以删除先前创建的非默认 VPort。 过量驱动程序通过发出 [oid \_ NIC \_ SWITCH \_ CREATE \_ VPort](./oid-nic-switch-create-vport.md)的 Oid 方法请求来创建一个 VPort。
 
@@ -24,9 +23,9 @@ ms.locfileid: "89218434"
 
 -   在删除 VPort 之前，过量驱动程序必须清除或移动驱动程序以前在 VPort 上设置的所有接收筛选器。 接收筛选器通过 oid [ \_ 接收 \_ 筛选器 \_ 集 \_ 筛选器](./oid-receive-filter-set-filter.md) 的 oid 请求进行设置，并通过 oid [ \_ 接收 \_ 筛选器 \_ 移动 \_ 筛选器](./oid-receive-filter-move-filter.md)的 oid 请求进行移动。
 
--   过量驱动程序将[**NDIS \_ NIC \_ 交换机 \_ DELETE \_ VPORT \_ PARAMETERS**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_delete_vport_parameters)结构的**VPortId**成员设置为要删除的非默认 VPORT 的标识符。
+-   过量驱动程序将 [**NDIS \_ NIC \_ 交换机 \_ DELETE \_ VPORT \_ PARAMETERS**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_delete_vport_parameters)结构的 **VPortId** 成员设置为要删除的非默认 VPORT 的标识符。
 
-    **注意**   过量驱动程序不得将**VPortId**成员设置为**NDIS \_ 默认 \_ 端口 \_ 号**。 此 VPort 标识符是为附加到 PCI Express (PCIe) 物理功能 (PF) 网络适配器上的默认 VPort 预留的。 默认 VPort 始终存在，但不会通过 OID [ \_ NIC \_ 开关 \_ DELETE \_ VPort](./oid-nic-switch-delete-vport.md)的 oid 设置请求显式删除。
+    **注意**  过量驱动程序不得将 **VPortId** 成员设置为 **NDIS \_ 默认 \_ 端口 \_ 号**。 此 VPort 标识符是为附加到 PCI Express (PCIe) 物理功能 (PF) 网络适配器上的默认 VPort 预留的。 默认 VPort 始终存在，但不会通过 OID [ \_ NIC \_ 开关 \_ DELETE \_ VPort](./oid-nic-switch-delete-vport.md)的 oid 设置请求显式删除。
 
      
 

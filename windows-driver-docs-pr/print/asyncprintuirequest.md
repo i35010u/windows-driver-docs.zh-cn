@@ -1,7 +1,6 @@
 ---
 title: asyncPrintUIRequest 元素
 description: 必需的 asyncPrintUIRequest 元素描述由打印机驱动程序发出的请求，以在客户端计算机上创建消息。
-ms.assetid: 992e3c97-b148-4802-be48-3067adb6dd0d
 keywords:
 - asyncPrintUIRequest 元素打印设备
 topic_type:
@@ -12,18 +11,18 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: aac1479b453a1795d5188c74abe279f6e8a3d7fe
-ms.sourcegitcommit: b3e38d06762246c77cedd8e82d740ebea104c538
+ms.openlocfilehash: 7a7c2a89125a46331f9549d2f0c16a4abd608982
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91662479"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96836127"
 ---
 # <a name="asyncprintuirequest-element"></a>asyncPrintUIRequest 元素
 
 必需的 **asyncPrintUIRequest** 元素描述由打印机驱动程序发出的请求，以在客户端计算机上创建消息。
 
-**AsyncPrintUIRequest**元素在*asyncui*命名空间中的此 URI 处定义：
+**AsyncPrintUIRequest** 元素在 *asyncui* 命名空间中的此 URI 处定义：
 
 ```xml
 https://schemas.microsoft.com/2003/print/asyncui/v1/request
@@ -53,7 +52,7 @@ https://schemas.microsoft.com/2003/print/asyncui/v1/request
 <thead>
 <tr class="header">
 <th>元素</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>

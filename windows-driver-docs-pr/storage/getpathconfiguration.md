@@ -1,7 +1,6 @@
 ---
 title: GetPathConfiguration 函数
 description: GetPathConfiguration 方法用于检索每个路径的设备信息。
-ms.assetid: 1661746f-5a5a-48af-b876-c57f19de4923
 keywords:
 - GetPathConfiguration 函数存储设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 5d81c1dbbd0dd708699cb1f70f5cc068dd02f3d7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f59843a48bfed66853a5acfb6e76df2bb382f179
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63354075"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96835250"
 ---
 # <a name="getpathconfiguration-function"></a>GetPathConfiguration 函数
 
@@ -32,22 +31,22 @@ GetPathConfiguration 方法用于检索每个路径的设备信息。
 ```ManagedCPlusPlus
 void GetPathConfiguration(
    [in, Description("64-bit Path Identifier"):amended] uint64 PathID,
-   [out] uint32                                               EntryCount,
-   [out, WmiSizeIs("EntryCount")] SCSI_ADDR                   Address[]
+   [out] uint32                                               EntryCount,
+   [out, WmiSizeIs("EntryCount")] SCSI_ADDR                   Address[]
 );
 ```
 
-<a name="parameters"></a>Parameters
+<a name="parameters"></a>参数
 ----------
 
 *PathID*   
-64-位域，指定与设备相关联的路径。
+指定与设备关联的路径的64位域。
 
 *EntryCount*   
-32-位域，指示输出中包含的条目数。
+表示输出包含的条目数的32位域。
 
 *地址\[\]*   
-一个数组，包含任意多个 SCSI\_ADDR 结构按照*EntryCount*参数。
+一个数组，其中包含 EntryCount 参数指定的任意多个 SCSI \_ 地址结构。 *EntryCount*
 
 <a name="return-value"></a>返回值
 ------------
@@ -57,7 +56,7 @@ void GetPathConfiguration(
 <a name="remarks"></a>备注
 -------
 
-此 WMI 方法属于 MPIO\_WMI\_方法 WMI 类。
+此 WMI 方法属于 MPIO \_ wmi \_ 方法 wmi 类。
 
 <a name="requirements"></a>要求
 ------------
@@ -70,11 +69,11 @@ void GetPathConfiguration(
 <tbody>
 <tr class="odd">
 <td align="left"><p>目标平台</p></td>
-<td align="left">桌面设备</td>
+<td align="left">台式机</td>
 </tr>
 <tr class="even">
-<td align="left"><p>Header</p></td>
-<td align="left">MPIOwmi.h （包括 MPIOwmi.h）</td>
+<td align="left"><p>标头</p></td>
+<td align="left">MPIOwmi (包含 MPIOwmi) </td>
 </tr>
 </tbody>
 </table>

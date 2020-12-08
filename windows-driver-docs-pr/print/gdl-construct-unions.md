@@ -1,7 +1,6 @@
 ---
 title: GDL 构造联合
 description: GDL 构造联合
-ms.assetid: 0ca237fe-7f47-4b9c-8963-676a2afd1140
 keywords:
 - 构造 WDK GDL，联合
 - 逻辑构造 WDK GDL
@@ -10,24 +9,24 @@ keywords:
 - 同级构造 WDK GDL
 - 联合 WDK GDL
 - 分析器 WDK GDL，处理联合
-- GDL WDK 联合
+- GDL WDK，联合
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d657e3fbb9bc98a70d394d2bd25b0cc55a89bd5f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 088981367776a5606cf87048294add754d07bb6d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63342199"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96835993"
 ---
 # <a name="gdl-construct-unions"></a>GDL 构造联合
 
 
-如果具有相同的多个构造构造类型和 GDL 源中定义构造标记文件，该构造的逻辑表示形式 ([逻辑构造，](syntactical-and-logical-constructs-in-gdl.md)) 将包含的原始内容的并集GDL 源代码文件中定义的构造。
+如果在 GDL 源文件中定义了多个具有相同构造类型和构造标记的构造，该构造 ([逻辑构造](syntactical-and-logical-constructs-in-gdl.md)) 的逻辑表示形式将包含 GDL 源文件中定义的原始构造的内容的并集。
 
-构造类型和构造标记一起唯一地指定或定义一种逻辑构造 （在其父项的上下文）。 与 XML，当两个不同*同级*定义了构造，每个都具有相同的构造类型和构造标记，则结果是一个逻辑构造。 事实上，甚至是语法同级不需要构造，它们可以是逻辑的同级。 (*语法同级*显式驻留在同一构造正文中，并*逻辑同级*这两个子级的同一个逻辑构造。)
+构造类型和构造标记一起在其父) 的上下文中唯一指定或定义逻辑构造 (。 与 XML 不同，定义了两个 *同级* 构造后，每个构造具有相同的构造类型和构造标记，结果为一个逻辑构造。 事实上，构造甚至不需要为非同级语法，它们也可以是逻辑同级。  (*语法同级* 显式驻留在同一构造主体中，而 *逻辑同级* 都是同一逻辑构造的子。 ) 
 
-逻辑构造的内容是同级元素的内容的联合。 在快照中显示的内容是逻辑构造，未构造，因为它们最初语法定义 GDL 源文件中。 在下面的代码示例中，有两个同级构造，它们都具有构造类型：\*人员和具有构造标记：FlorenceF。
+逻辑构造的内容是同级内容的联合。 快照中显示的内容是逻辑构造，而不是在 GDL 源文件中最初进行语法定义的构造。 在下面的代码示例中，有两个同级构造，两者都是构造类型： \* Person 和 With 构造标记： FlorenceF。
 
 ```cpp
 *Person: FlorenceF
@@ -48,7 +47,7 @@ ms.locfileid: "63342199"
 }
 ```
 
-根据上述规则，两个同级定义单一的逻辑构造，它包含两个同级的并集。
+根据上述规则，两个同级定义一个逻辑构造，其中包含两个同级的联合。
 
 ```cpp
 *Person: FlorenceF
@@ -66,9 +65,9 @@ ms.locfileid: "63342199"
 }
 ```
 
-请注意，在前面的示例合并已创建具有相同的构造类型的两个新的同级构造：\*公司和构造标记：Contoso Pharmaceuticals。
+请注意，上一示例中的合并已创建两个具有相同构造类型的新同级构造： \* Contoso 制药。
 
-如果应用相同规则再次 （以递归方式），下面的代码会产生。
+如果 (递归) 再次应用相同的规则，则会生成以下代码。
 
 ```cpp
 *Person: FlorenceF
@@ -83,11 +82,11 @@ ms.locfileid: "63342199"
 }
 ```
 
-任何时对其进行分析，上述三个 GDL 片段生成相同的内部表示形式。 内部表示形式最近似的最后一个片段。
+在分析上述三个 GDL 片段时，会生成相同的内部表示形式。 内部表示形式最接近于最后一个片段。
 
-当[特性](gdl-attributes.md)具有相同[关键字](gdl-keywords.md)multiply 是定义，没有合并会发生。 每个定义仍存在于内部表示形式。 模板指令 **\*累加性** 用来指定哪些值传输到快照。
+如果对具有相同[关键字](gdl-keywords.md)的[属性](gdl-attributes.md)进行了多次定义，则不会发生任何合并。 每个定义仍存在于内部表示形式中。 模板指令 **\* 累加** 性用于指定将哪些值或值传输到快照。
 
-GDL 分析器采用 GDL 流的语法表示形式，并创建内部 GDL 命令的逻辑表示形式。 这些命令的内部表示形式然后转换为 XML，并将变为快照。
+GDL 分析器采用 GDL 流的语法表示形式，并创建 GDL 命令的内部逻辑表示形式。 然后，这些命令的内部表示形式将转换为 XML，并成为快照。
 
  
 

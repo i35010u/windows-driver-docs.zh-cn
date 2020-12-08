@@ -1,22 +1,21 @@
 ---
 title: Internet 打印
 description: Internet 打印
-ms.assetid: be448fee-a86e-4a78-8d50-5753a7b2c8f0
 keywords:
-- 打印机驱动程序 WDK Internet
+- 打印机驱动程序 WDK，Internet
 - Internet 打印 WDK
-- 打印队列 WDK，Internet 打印
-- 队列 WDK 打印机 Internet 打印
+- 打印队列-WDK，Internet 打印
+- 队列 WDK 打印机，Internet 打印
 - 打印网页 WDK
 - 网页 WDK 打印机
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 986257ed6eb2e2b5420fe6b7962a1ab760c5297b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 785d9abf24a0d8253ce3114289eee862578d6b6d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63345300"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96835645"
 ---
 # <a name="internet-printing"></a>Internet 打印
 
@@ -24,15 +23,15 @@ ms.locfileid: "63345300"
 
 
 
-本部分提供了以下主题：
+本部分提供下列主题：
 
-[从应用程序打印到 Url](printing-to-urls-from-applications.md)
+[从应用程序打印到 URL](printing-to-urls-from-applications.md)
 
 [查看打印网页](viewing-print-web-pages.md)
 
 [自定义打印网页](customizing-print-web-pages.md)
 
-[在网页上安装打印驱动程序](installing-print-drivers-from-a-web-page.md)
+[从网页安装打印驱动程序](installing-print-drivers-from-a-web-page.md)
 
  
 

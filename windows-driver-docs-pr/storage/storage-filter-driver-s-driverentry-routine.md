@@ -1,7 +1,6 @@
 ---
 title: 存储筛选器驱动程序的 DriverEntry 例程
 description: 存储筛选器驱动程序的 DriverEntry 例程
-ms.assetid: 801daf42-259d-45ab-a5c5-88acb2d35bef
 keywords:
 - 存储筛选器驱动程序 WDK，DriverEntry
 - 筛选器驱动程序 WDK 存储，DriverEntry
@@ -9,12 +8,12 @@ keywords:
 - DriverEntry WDK 存储
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d1263c1dee13b53a973d44f8d0caf36b77146149
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 9d1de9fcd091d7ce9fa7c155590658dfa2bd1fe5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91733613"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96834975"
 ---
 # <a name="storage-filter-drivers-driverentry-routine"></a>存储筛选器驱动程序的 DriverEntry 例程
 

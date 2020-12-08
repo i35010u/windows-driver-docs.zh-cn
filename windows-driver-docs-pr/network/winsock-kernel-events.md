@@ -1,7 +1,6 @@
 ---
 title: Winsock 内核事件
 description: Winsock 内核事件
-ms.assetid: 84f7b547-cfbf-468b-b80e-1441c8aa3cf3
 keywords:
 - Winsock 内核 WDK 网络，事件
 - WSK WDK 网络，事件
@@ -14,19 +13,19 @@ keywords:
 - 通知 WDK Winsock 内核
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3f4dea6050ec9cecfd3d6b58b3e86f34c730e517
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 7f5c5f7260b33f594aec997f7f96acfda7144dac
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90101646"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96836249"
 ---
 # <a name="winsock-kernel-events"></a>Winsock 内核事件
 
 
 Winsock 内核 (WSK) 子系统可以在发生某些套接字事件时（例如，当在套接字上收到新数据时，或者套接字已断开连接时）异步通知 WSK 应用程序。 若要为 WSK 应用程序异步通知套接字事件，WSK 应用程序必须实现相应的事件回调函数并在其创建的套接字上启用这些事件回调函数。
 
-**注意**   WSK 应用程序不需要实现或使用事件回调函数。 WSK 应用程序可通过调用相应的 WSK 套接字函数来执行大多数 WSK 套接字操作。 需要使用事件回调函数的唯一 WSK 功能是侦听套接字上的条件-接受模式。 有关使用 WSK 函数与使用事件回调函数之间的优点和缺点的详细信息，请参阅 [使用 Winsock 内核函数与事件回调函数](using-winsock-kernel-functions-vs--event-callback-functions.md)。
+**注意**  WSK 应用程序不需要实现或使用事件回调函数。 WSK 应用程序可通过调用相应的 WSK 套接字函数来执行大多数 WSK 套接字操作。 需要使用事件回调函数的唯一 WSK 功能是侦听套接字上的条件-接受模式。 有关使用 WSK 函数与使用事件回调函数之间的优点和缺点的详细信息，请参阅 [使用 Winsock 内核函数与事件回调函数](using-winsock-kernel-functions-vs--event-callback-functions.md)。
 
  
 

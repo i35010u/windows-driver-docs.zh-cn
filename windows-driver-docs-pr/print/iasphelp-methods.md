@@ -7,22 +7,21 @@ MS-HAID:
 MSHAttr:
 - PreferredSiteName:MSDN
 - PreferredLib:/library/windows/hardware
-ms.assetid: 1d0fa5d9-0046-4f48-b171-afdc6fb32df3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bc622da3091310913054ff97492946be1b6055bd
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4e1709098e8915fa09bc1210d23c2bfc8bbef042
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63392829"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96835771"
 ---
 # <a name="iasphelp-methods"></a>Iasphelp 方法
 
-本部分介绍的自动化接口定义的方法**Iasphelp**对象。 方法是：
+本部分介绍 **Iasphelp** 对象的自动化接口定义的方法。 这两个方法是：
 
 [**Iasphelp::CalcJobETA**](iasphelp-calcjobeta.md)
 
-[**Iasphelp::Close**](iasphelp-close.md)
+[**Iasphelp：： Close**](iasphelp-close.md)
 
-[**Iasphelp::Open**](iasphelp-open.md)
+[**Iasphelp：： Open**](iasphelp-open.md)

@@ -1,7 +1,6 @@
 ---
 title: 错误源控件
 description: 错误源控件
-ms.assetid: f73d9006-a7e7-4a0d-9654-004f53286743
 keywords:
 - Windows 硬件错误体系结构 WDK，错误源控制
 - WHEA WDK，错误源控制
@@ -12,12 +11,12 @@ keywords:
 - 错误源控制 WDK WHEA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 30eecc7296654d42fb7295896ddc8318467396df
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 6bbfb5e4c74d6613b6247d5c8bc78221a5ef4b3d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89206153"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96834827"
 ---
 # <a name="error-source-control"></a>错误源控件
 

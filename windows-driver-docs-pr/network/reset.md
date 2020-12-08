@@ -1,7 +1,6 @@
 ---
 title: 重置
 description: 重置
-ms.assetid: 5f37eca3-08b6-4bac-9d02-8a8ebd8c1904
 keywords:
 - 面向连接的 NDIS WDK，重置 Nic
 - CoNDIS WDK 网络，重置 Nic
@@ -10,12 +9,12 @@ keywords:
 - 网络接口卡 WDK 网络，重置
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 59c2bd30c53299db5695d48615aeab17be59e5e4
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 19df25af0d75e3beb2b90e8ab221599b5e012660
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89215074"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96836301"
 ---
 # <a name="reset"></a>重置
 
@@ -25,7 +24,7 @@ ms.locfileid: "89215074"
 
 NDIS 可以调用微型端口驱动程序或 MCM 驱动程序的 [*MiniportResetEx*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_reset) 函数来重置 NIC。
 
-**注意**   重新设置之前处于活动状态且有效且有效且在重置后有效的 AF、SAP 和 VC 句柄。
+**注意**  重新设置之前处于活动状态且有效且有效且在重置后有效的 AF、SAP 和 VC 句柄。
 
  
 

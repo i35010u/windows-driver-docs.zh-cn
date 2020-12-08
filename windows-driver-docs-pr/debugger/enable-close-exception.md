@@ -1,17 +1,16 @@
 ---
 title: 启用关闭异常
 description: 启用关闭异常
-ms.assetid: 4089df14-3204-4a48-b67f-cf6bd53100a5
 keywords:
-- 启用关闭异常 （全局标志）
+- '启用 (全局标志的关闭异常) '
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 47bd62aa61664b6a25b5e15b1badf8e023d03932
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ad437fea5fd7a7b125c11e038a5ff1f808fc163c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63353643"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96834767"
 ---
 # <a name="enable-close-exception"></a>启用关闭异常
 
@@ -19,7 +18,7 @@ ms.locfileid: "63353643"
 ## <span id="ddk_enable_close_exception_dtools"></span><span id="DDK_ENABLE_CLOSE_EXCEPTION_DTOOLS"></span>
 
 
-**启用关闭异常**标志，则引发用户模式异常时无效的句柄传递给**CloseHandle**接口或相关的接口，如**SetEvent**，需要作为自变量的句柄。
+每当无效的句柄传递到 **CloseHandle** 接口或将句柄作为参数的相关接口（如 **SetEvent**）时， **Enable close exception** 标志将引发用户模式异常。
 
 <table>
 <colgroup>
@@ -41,14 +40,14 @@ ms.locfileid: "63353643"
 </tr>
 <tr class="even">
 <td align="left"><p><strong>目标</strong></p></td>
-<td align="left"><p>整个系统的注册表项，内核标志</p></td>
+<td align="left"><p>系统范围内的注册表项，内核标志</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-**请注意**  此标志仍受支持，但[启用错误句柄检测](enable-bad-handles-detection.md)标志 (bhd) 执行的句柄使用的更复杂的检查，是首选。
+**注意**   此标志仍受支持，但是 " [启用错误的句柄检测](enable-bad-handles-detection.md) " 标志 (bhd ") ，这会对句柄使用执行更全面的检查，这是首选选项。
 
  
 

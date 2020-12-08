@@ -1,22 +1,21 @@
 ---
 title: IPrintOemCommon COM 接口
 description: IPrintOemCommon COM 接口
-ms.assetid: 1d4b2f77-6682-4a4b-8d7f-34acd03523e1
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 498bb3ba233bc8ccaeda2b234a6ff90a5adb6222
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0495406174e5e52dd4e2b2639d83446b53bf06e9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63349184"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96835517"
 ---
 # <a name="iprintoemcommon-com-interface"></a>IPrintOemCommon COM 接口
 
 
-`IPrintOemCommon` COM 接口，插件来指定或获取设备信息。 此接口提供用户界面和呈现插件之间通用的功能。
+`IPrintOemCommon`COM 接口允许插件指定或获取设备信息。 此接口提供用户界面和呈现插件之间通用的功能。
 
-下表列出并描述所有方法的`IPrintOemCommon`接口定义。
+下表列出并描述了该接口定义的所有方法 `IPrintOemCommon` 。
 
 <table>
 <colgroup>
@@ -31,19 +30,19 @@ ms.locfileid: "63349184"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><strong>IPrintOemCommon::DevMode</strong></p></td>
+<td><p><strong>IPrintOemCommon：:D evMode</strong></p></td>
 <td><p>对专用 DEVMODEW 成员执行操作。</p></td>
 </tr>
 <tr class="even">
-<td><p><strong>IPrintOemCommon::GetInfo</strong></p></td>
-<td><p>返回一个即插即用项的标识信息。</p></td>
+<td><p><strong>IPrintOemCommon：： GetInfo</strong></p></td>
+<td><p>返回插件的标识信息。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-有关如何为 UI 插件实现这些方法的信息，请参阅[IPrintOemUI COM 接口](iprintoemui-com-interface.md)。
+有关如何为 UI 插件实现这些方法的信息，请参阅 [IPRINTOEMUI COM Interface](iprintoemui-com-interface.md)。
 
  
 

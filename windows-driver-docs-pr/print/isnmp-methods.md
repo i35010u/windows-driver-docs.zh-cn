@@ -7,34 +7,33 @@ MS-HAID:
 MSHAttr:
 - PreferredSiteName:MSDN
 - PreferredLib:/library/windows/hardware
-ms.assetid: f261446b-3f9e-4fcc-a9a9-d1b7307a18e8
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cfa0234849422cefae3d5b7b2579f995dc97f88e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 07982c692784dd84865637d745bc4018c8f6344c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63384189"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96835505"
 ---
 # <a name="isnmp-methods"></a>ISNMP 方法
 
-本部分介绍的自动化接口定义的方法**ISNMP**对象。 方法是：
+本部分介绍 **ISNMP** 对象的自动化接口定义的方法。 这两个方法是：
 
-[**ISNMP::Close**](isnmp-close.md)
+[**ISNMP：： Close**](isnmp-close.md)
 
-[**ISNMP::Get**](isnmp-get.md)
+[**ISNMP：： Get**](isnmp-get.md)
 
 [**ISNMP::GetAsByte**](isnmp-getasbyte.md)
 
-[**ISNMP::GetList**](isnmp-getlist.md)
+[**ISNMP：：执行 getlist**](isnmp-getlist.md)
 
 [**ISNMP::GetTree**](isnmp-gettree.md)
 
 [**ISNMP::OIDFromString**](isnmp-oidfromstring.md)
 
-[**ISNMP::Open**](isnmp-open.md)
+[**ISNMP：： Open**](isnmp-open.md)
 
-[**ISNMP::Set**](isnmp-set.md)
+[**ISNMP：： Set**](isnmp-set.md)
 
 [**ISNMP::SetList**](isnmp-setlist.md)

@@ -1,24 +1,23 @@
 ---
 title: 处理 SRB_FUNCTION_PNP
 description: 处理 SRB_FUNCTION_PNP
-ms.assetid: 25490320-8d6b-4c5a-a585-4f628ea72393
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 77ed3adba063aad446afb0a47a36f6a798ff0b95
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7ea486fc7c52a5fedc1770a61d35527a32988d79
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383132"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96835207"
 ---
-# <a name="handling-srbfunctionpnp"></a>处理 SRB\_函数\_PNP
+# <a name="handling-srb_function_pnp"></a>处理 SRB \_ 函数 \_ PNP
 
 
-端口驱动程序将发送 SCSI\_PNP\_请求\_微型端口驱动程序块请求，以通知的 Windows 即插即用和播放 (PnP) 事件影响到适配器连接的存储设备微型端口驱动程序。
+端口驱动程序将 SCSI \_ PNP \_ 请求 \_ 块请求发送到微型端口驱动程序，以通知 Windows 即插即用 (PNP) 事件的微型端口驱动程序影响连接到该适配器的存储设备。
 
-这些请求只是表示通知即插即用事件发生和微型端口驱动程序不需要任何操作。 微型端口驱动程序可执行 （例如，例如禁用其硬件） 的即插即用请求的上下文中的实际工作，但不是需要执行此操作。
+这些请求仅表示出现 PnP 事件的通知，并且无需微型端口驱动程序执行任何操作。 微型端口驱动程序可以在 PnP 请求的上下文中执行实际工作 (例如禁用其硬件，例如) ，但不需要执行此操作。
 
-如果 SRB 的函数成员设置为 SRB\_函数\_PNP，SRB 是一种结构的类型 SCSI\_PNP\_请求\_阻止。
+如果 SRB 的函数成员设置为 SRB \_ function \_ pnp，则 SRB 为类型为 "SCSI \_ PNP \_ 请求块" 的结构 \_ 。
 
  
 

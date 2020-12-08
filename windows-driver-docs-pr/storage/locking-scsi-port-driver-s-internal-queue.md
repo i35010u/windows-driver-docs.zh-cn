@@ -1,15 +1,14 @@
 ---
 title: 锁定 SCSI 端口驱动程序的内部队列
 description: 锁定 SCSI 端口驱动程序的内部队列
-ms.assetid: ea5be4e1-4908-431c-9c80-96539157b87e
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e938816dd8fa1ef0db51995733118bcac7199012
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e1645a3e6b5a13f4b0ac1ffdc045dbf60eec3225
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63355621"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96835061"
 ---
 # <a name="locking-scsi-port-drivers-internal-queue"></a>锁定 SCSI 端口驱动程序的内部队列
 
@@ -17,17 +16,17 @@ ms.locfileid: "63355621"
 ## <span id="ddk_locking_scsi_port_driver_s_internal_queue_kg"></span><span id="DDK_LOCKING_SCSI_PORT_DRIVER_S_INTERNAL_QUEUE_KG"></span>
 
 
-在类驱动程序和其他更高级别的驱动程序可以强制 SCSI 端口来暂停其队列中请求的处理。 在类驱动程序通过将其发送类型 SRB SRB 暂停 SCSI Port 的队列\_函数\_锁\_队列。 在类驱动程序通常会中止更改设备的电源状态，以便在 SCSI Port 的队列中请求的处理。 更改设备的电源状态之后, 的类驱动程序对队列进行解锁。 序列是按如下所示：
+类驱动程序和其他更高级别的驱动程序可以强制 SCSI 端口暂停处理其队列中的请求。 类驱动程序通过向其发送 SRB \_ 函数锁定队列类型的 SRB 来停止 SCSI 端口的队列 \_ \_ 。 类驱动程序通常会阻止处理 SCSI 端口的队列中的请求，从而更改设备的电源状态。 更改设备的电源状态后，类驱动程序会解锁队列。 顺序如下：
 
-1.  类驱动程序锁定 SCSI Port 的队列 (使用 IRP\_MJ\_SRB SRB 函数值的 SCSI\_函数\_锁\_队列)。
+1.  类驱动程序使用 IRP MJ SCSI 锁定 SCSI 端口的队列 (\_ \_ ，其 SRB 函数值为 SRB \_ function \_ LOCK \_ queue) 。
 
-2.  类驱动程序请求的电源状态更改 (使用 IRP\_MJ\_SRB 使用 SCSI\_标志\_绕过\_已锁定\_队列标志设置，以确保未排队 IRP 幂)。
+2.  类驱动程序请求更改电源状态 (使用 IRP \_ MJ \_ SCSI，并设置了 SRB \_ 标志 \_ 旁路 \_ 锁定 \_ 队列标志，以确保 power IRP 未排队) 。
 
-3.  类驱动程序解锁 SCSI Port 的队列 (IRP\_MJ\_SRB SRB 函数值的 SCSI\_函数\_解锁\_队列和 SRB\_标志\_绕过\_锁定\_队列标志设置)。
+3.  类驱动程序解锁 SCSI 端口的队列 (IRP \_ MJ \_ SCSI，SRB 函数值为 SRB \_ function \_ UNLOCK \_ queue，并使用 SRB \_ FLAGS \_ 绕过 \_ 锁定 \_ 队列标志集) 。
 
-解锁其队列后，SCSI 端口恢复处理排队的 Srb。 类驱动程序不应尝试绕过已被另一个驱动程序锁定的队列。
+队列解锁后，SCSI 端口会恢复处理排队 SRBs。 类驱动程序不应尝试绕过被其他驱动程序锁定的队列。
 
-有关从类驱动程序的角度来看解锁队列的详细信息，请参阅[存储类驱动程序 ReleaseQueue 例程](storage-class-driver-s-releasequeue-routine.md)。
+有关从类驱动程序的角度对队列进行解锁的详细信息，请参阅 [存储类驱动程序的 ReleaseQueue 例程](storage-class-driver-s-releasequeue-routine.md)。
 
  
 

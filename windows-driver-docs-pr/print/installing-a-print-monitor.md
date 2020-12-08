@@ -1,7 +1,6 @@
 ---
 title: 安装打印监视器
 description: 安装打印监视器
-ms.assetid: 2ab993fd-647b-40aa-981c-1bc270ec79a4
 keywords:
 - 打印监视器 WDK，安装
 - 安装打印监视器 WDK
@@ -10,12 +9,12 @@ keywords:
 - 端口监视 WDK 打印，安装
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 877a173fc750a62f07dfad85c3ed12e1ac253749
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 29ae6e4629eac866ea9de3b19e0e8a8400371319
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89210599"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96835683"
 ---
 # <a name="installing-a-print-monitor"></a>安装打印监视器
 

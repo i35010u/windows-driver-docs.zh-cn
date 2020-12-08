@@ -1,15 +1,14 @@
 ---
 title: 使用 XPS 光栅化服务
 description: 使用 XPS 光栅化服务
-ms.assetid: a6a3746a-3638-464b-bca0-60003f37af76
 ms.date: 06/12/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: ba2b087ff957a795b7199c957f830def9ae0aa67
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 4b23e2cd35c0fc628cd417adeef2f46cc93c8505
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89211941"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96835419"
 ---
 # <a name="using-the-xps-rasterization-service"></a>使用 XPS 光栅化服务
 
@@ -25,7 +24,7 @@ XPS 光栅化服务是在系统文件 Xpsrasterservice.dll 中实现的。 但�
   <FilterServiceProvider dll = "XpsRasterService.dll" />
 ```
 
-**FilterServiceProvider**元素是**筛选器**元素的子元素，它列出管道中的筛选器。 在管道初始化期间，打印筛选器管道管理器加载 XPS 光栅化服务，并通过属性包使该服务可访问该服务。 有关加载 XPS 光栅化服务的筛选器管道配置文件的示例，请参阅 WDK 中的 XpsRasFilter 示例。 此示例位于你的 WDK 安装中的 Src \\ Print \\ Xpsrasfilter 文件夹中。
+**FilterServiceProvider** 元素是 **筛选器** 元素的子元素，它列出管道中的筛选器。 在管道初始化期间，打印筛选器管道管理器加载 XPS 光栅化服务，并通过属性包使该服务可访问该服务。 有关加载 XPS 光栅化服务的筛选器管道配置文件的示例，请参阅 WDK 中的 XpsRasFilter 示例。 此示例位于你的 WDK 安装中的 Src \\ Print \\ Xpsrasfilter 文件夹中。
 
 ## <a name="obtaining-an-xps-rasterization-factory"></a>获取 XPS 光栅化工厂
 
@@ -35,9 +34,9 @@ XPS 光栅化服务是在系统文件 Xpsrasterservice.dll 中实现的。 但�
 
 若要获取指向 XPS 光栅化工厂对象的指针，XPSDrv 筛选器将调用 [**IPrintPipelinePropertyBag：： GetProperty**](/windows-hardware/drivers/ddi/filterpipeline/nf-filterpipeline-iprintpipelinepropertybag-getproperty) 方法。 属性名称 "MS \_ IXpsRasterizationFactory" 标识光栅化工厂对象。 对于此属性，从 **GetProperty** 获取的值是对光栅化工厂对象的 **IUnknown** 接口的引用。 获取此接口后，筛选器必须调用 [IUnknown：： QueryInterface](/windows/win32/api/unknwn/nf-unknwn-iunknown-queryinterface(q)) 方法，以获取对该对象的 [IXpsRasterizationFactory](/windows-hardware/drivers/ddi/xpsrassvc/nn-xpsrassvc-ixpsrasterizationfactory) 接口的引用。 随后，筛选器可以调用 [**IXpsRasterizationFactory：： CreateRasterizer**](/windows-hardware/drivers/ddi/xpsrassvc/nf-xpsrassvc-ixpsrasterizationfactory-createrasterizer) 方法来创建 XPS 光栅器对象。
 
-当不再需要 factory 对象时，该筛选器应通过对对象的**IXpsRasterizationFactory**接口调用[release](/windows/win32/api/unknwn/nf-unknwn-iunknown-release)方法来释放对象。
+当不再需要 factory 对象时，该筛选器应通过对对象的 **IXpsRasterizationFactory** 接口调用 [release](/windows/win32/api/unknwn/nf-unknwn-iunknown-release)方法来释放对象。
 
-下面的代码示例演示如何从**IPrintPipelinePropertyBag**接口实例获取**IXpsRasterizationFactory**接口实例：
+下面的代码示例演示如何从 **IPrintPipelinePropertyBag** 接口实例获取 **IXpsRasterizationFactory** 接口实例：
 
 ```cpp
 //
@@ -106,7 +105,7 @@ XPSDrv 筛选器按照以下步骤创建 XPS 光栅器对象：
 
 - 若要创建 XPS 光栅器对象，筛选器会将 XPS OM 对象的 **IXpsOMPage** 接口传递到 xps 光栅化工厂的 **IXpsRasterizationFactory：： CreateRasterizer** 方法。
 
-如果不再需要 XPS 光栅器对象，筛选器应通过对对象的**IXpsRasterizer**接口调用**release**方法来释放对象。 有关使用 XPS 光栅化服务的 XPSDrv 筛选器的示例实现，请参阅 WDK 中的 XpsRasFilter 示例驱动程序。
+如果不再需要 XPS 光栅器对象，筛选器应通过对对象的 **IXpsRasterizer** 接口调用 **release** 方法来释放对象。 有关使用 XPS 光栅化服务的 XPSDrv 筛选器的示例实现，请参阅 WDK 中的 XpsRasFilter 示例驱动程序。
 
 若要与 XPS 光栅化服务一起使用，固定页面内的画布和视觉对象画笔最多可以嵌套到64级别。 有关画布和视觉对象画笔的详细信息，请下载 [XML 纸张规范](https://download.microsoft.com/download/1/6/a/16acc601-1b7a-42ad-8d4e-4f0aa156ec3e/XPS_1_0.exe)。
 
@@ -118,7 +117,7 @@ width = (8.5 英寸) x (600 DPI) = 5100 点
 
 height = (11 英寸) x (600 DPI) = 6600 点
 
-若要创建固定页面的矩形区域的位图图像，XPSDrv 筛选器会调用 XPS 光栅器对象的 [**IXpsRasterizer：： RasterizeRect**](/windows-hardware/drivers/ddi/xpsrassvc/nf-xpsrassvc-ixpsrasterizer-rasterizerect) 方法。 此方法始终产生像素大小为32位的位图。 像素格式由标头文件 Wincodec 中定义的 GUID 值 **guid \_ WICPixelFormat32bppPBGRA**指定。 格式包含8位红色、绿色和蓝色分量，并使用标准 (sRGB) 颜色空间。 此外，该格式还包含一个8位 alpha 分量。 每个像素值中的颜色分量由 alpha 分量预乘。 有关此格式的详细信息，请参阅 [本机像素格式概述](/windows/desktop/wic/-wic-codec-native-pixel-formats)。
+若要创建固定页面的矩形区域的位图图像，XPSDrv 筛选器会调用 XPS 光栅器对象的 [**IXpsRasterizer：： RasterizeRect**](/windows-hardware/drivers/ddi/xpsrassvc/nf-xpsrassvc-ixpsrasterizer-rasterizerect) 方法。 此方法始终产生像素大小为32位的位图。 像素格式由标头文件 Wincodec 中定义的 GUID 值 **guid \_ WICPixelFormat32bppPBGRA** 指定。 格式包含8位红色、绿色和蓝色分量，并使用标准 (sRGB) 颜色空间。 此外，该格式还包含一个8位 alpha 分量。 每个像素值中的颜色分量由 alpha 分量预乘。 有关此格式的详细信息，请参阅 [本机像素格式概述](/windows/desktop/wic/-wic-codec-native-pixel-formats)。
 
 某些 XPSDrv 筛选器可能会对 XPS 光栅器对象生成的位图执行额外的处理。 例如，彩色打印机的筛选器可能会将位图转换为 CMYK 像素格式，然后才能在打印机的页面描述语言中将其发送到打印机。
 

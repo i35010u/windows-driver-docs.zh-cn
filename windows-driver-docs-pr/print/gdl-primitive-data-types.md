@@ -1,24 +1,23 @@
 ---
 title: GDL 基元数据类型
 description: GDL 基元数据类型
-ms.assetid: e9a0a58b-ae29-46b1-8928-18686a89bd10
 keywords:
 - 模板 WDK GDL，数据类型
 - 数据类型 WDK GDL，基元
 - 分析器 WDK GDL，基元数据类型
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 460af16d6e5da6691287bb737cfc9e6f8a1adb17
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 43015f602a147f1bbcf09d3819a84e98b7b4abeb
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380174"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96835939"
 ---
 # <a name="gdl-primitive-data-types"></a>GDL 基元数据类型
 
 
-GDL 分析器筛选器具有内置的支持*基元数据类型*。 基元数据类型被归类为传递、 XML、 枚举和筛选器定义的数据类型。
+GDL 分析器筛选器对 *基元数据类型* 提供内置支持。 基元数据类型归类为传递、XML、枚举和筛选器定义的数据类型。
 
 以下基元 datypes 用于 GDL 模板：
 
@@ -30,7 +29,7 @@ GDL 分析器筛选器具有内置的支持*基元数据类型*。 基元数据�
 
 [枚举器](enumerator-template-data-type.md)
 
-[筛选](filter-template-data-type.md)
+[Filter](filter-template-data-type.md)
 
  
 

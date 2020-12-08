@@ -1,7 +1,6 @@
 ---
 title: AVCSTRM \_ 读取
 description: AVCSTRM \_ 读取
-ms.assetid: 0bc0c8ae-15b8-4f52-b081-f3eb31ac4478
 keywords:
 - AVCSTRM_READ 流媒体设备
 topic_type:
@@ -12,12 +11,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 592832aca0f244b6495c8b6739ec79e971d610b8
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 2ba59e0139ad0b1fd11989ff4af2ff694f71ffcc
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89192883"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96834897"
 ---
 # <a name="avcstrm_read"></a>AVCSTRM \_ 读取
 
@@ -25,7 +24,7 @@ ms.locfileid: "89192883"
 ## <span id="ddk_avcstrm_read_ks"></span><span id="DDK_AVCSTRM_READ_KS"></span>
 
 
-**AVCSTRM \_ READ**函数代码用于提交使用指定流中的数据填充的数据缓冲区*avcstrm.sys* 。
+**AVCSTRM \_ READ** 函数代码用于提交使用指定流中的数据填充的数据缓冲区 *avcstrm.sys* 。
 
 ### <a name="io-status-block"></a>I/o 状态块
 
@@ -41,7 +40,7 @@ ms.locfileid: "89192883"
 <thead>
 <tr class="header">
 <th>错误状态</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -70,9 +69,9 @@ ms.locfileid: "89192883"
 
  
 
-### <a name="comments"></a>说明
+### <a name="comments"></a>注释
 
-此函数使用 AVC 流请求块结构中的**CommandData**联合的**BufferStruct**成员 \_ ，如下 \_ \_ 所示。
+此函数使用 AVC 流请求块结构中的 **CommandData** 联合的 **BufferStruct** 成员 \_ ，如下 \_ \_ 所示。
 
 ```cpp
 typedef struct _AVC_STREAM_REQUEST_BLOCK {
@@ -96,7 +95,7 @@ typedef struct _AVC_STREAM_REQUEST_BLOCK {
 
 ### <a name="requirements"></a>要求
 
-**标头：** 在 *avcstrm*中声明。 包括 *avcstrm*。
+**标头：** 在 *avcstrm* 中声明。 包括 *avcstrm*。
 
 ### <a name="span-idavc_stream_request_block_inputspanspan-idavc_stream_request_block_inputspanavc_stream_request_block-input"></a><span id="avc_stream_request_block_input"></span><span id="AVC_STREAM_REQUEST_BLOCK_INPUT"></span>AVC \_ 流 \_ 请求 \_ 块输入
 
@@ -109,7 +108,7 @@ typedef struct _AVC_STREAM_REQUEST_BLOCK {
 <span id="BufferStruct"></span><span id="bufferstruct"></span><span id="BUFFERSTRUCT"></span>**BufferStruct**  
 指定读取操作应将数据放置到的缓冲区。
 
-子单元驱动程序必须首先分配 IRP 和 [**AVC \_ 流 \_ 请求 \_ 块**](/windows-hardware/drivers/ddi/avcstrm/ns-avcstrm-_avc_stream_request_block) 结构。 接下来，它应使用 [**INIT \_ AVCSTRM \_ 标头**](/windows-hardware/drivers/ddi/avcstrm/nf-avcstrm-init_avcstrm_header) 宏来初始化 AVC \_ 流 \_ 请求 \_ 块结构，并 **将 \_ AVCSTRM** 作为 REQUEST 参数传递到宏。 接下来，子单位驱动程序将 **AVCStreamContext** 成员设置为流上下文 (处理提供要读取数据的流) 。 最后，子单位驱动程序设置**CommandData**联合的**BufferStruct**成员，该成员描述读取操作将数据放入的缓冲区。
+子单元驱动程序必须首先分配 IRP 和 [**AVC \_ 流 \_ 请求 \_ 块**](/windows-hardware/drivers/ddi/avcstrm/ns-avcstrm-_avc_stream_request_block) 结构。 接下来，它应使用 [**INIT \_ AVCSTRM \_ 标头**](/windows-hardware/drivers/ddi/avcstrm/nf-avcstrm-init_avcstrm_header) 宏来初始化 AVC \_ 流 \_ 请求 \_ 块结构，并 **将 \_ AVCSTRM** 作为 REQUEST 参数传递到宏。 接下来，子单位驱动程序将 **AVCStreamContext** 成员设置为流上下文 (处理提供要读取数据的流) 。 最后，子单位驱动程序设置 **CommandData** 联合的 **BufferStruct** 成员，该成员描述读取操作将数据放入的缓冲区。
 
 若要发送此请求，子组会 [**将 irp \_ MJ \_ 内部 \_ 设备 \_ 控制**](../kernel/irp-mj-internal-device-control.md) irp，并将 irp 集的 **IoControlCode** 成员提交给 [**IOCTL \_ AVCSTRM \_ 类**](/windows-hardware/drivers/ddi/avcstrm/ni-avcstrm-ioctl_avcstrm_class) ，并将 irp 集的 **Argument1** 成员设置为 AVC \_ 流 \_ 请求 \_ 块结构，该结构描述要执行的读取操作。
 

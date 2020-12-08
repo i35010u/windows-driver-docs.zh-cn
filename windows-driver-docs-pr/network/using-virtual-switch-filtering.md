@@ -1,15 +1,14 @@
 ---
 title: 使用虚拟交换机筛选
 description: 使用虚拟交换机筛选
-ms.assetid: 09325037-F9A4-45C8-97E0-8FCA7D42A120
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 004c518b5e664ada3c6c6bc952dfaf35c1060d82
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 26459f9d281e0c4859fb3a876853824425464c0c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89212723"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96836273"
 ---
 # <a name="using-virtual-switch-filtering"></a>使用虚拟交换机筛选
 
@@ -31,11 +30,11 @@ Windows 8 和更高版本的 Windows 支持虚拟交换机筛选。
 * [*FWPS \_ VSWITCH \_ 运行时 \_ 状态 \_ 还原 \_ CALLBACK0*](/windows-hardware/drivers/ddi/fwpsk/nc-fwpsk-fwps_vswitch_runtime_state_restore_callback0)
 * [*FWPS \_ VSWITCH \_ 运行时 \_ 状态 \_ SAVE \_ CALLBACK0*](/windows-hardware/drivers/ddi/fwpsk/nc-fwpsk-fwps_vswitch_runtime_state_save_callback0)
 
-[**FWPS \_ VSWITCH \_ 事件 \_ 类型**](/windows-hardware/drivers/ddi/fwpsk/ne-fwpsk-fwps_vswitch_event_type_)枚举定义虚拟交换机通知函数的*事件*类型参数的值。
+[**FWPS \_ VSWITCH \_ 事件 \_ 类型**](/windows-hardware/drivers/ddi/fwpsk/ne-fwpsk-fwps_vswitch_event_type_)枚举定义虚拟交换机通知函数的 *事件* 类型参数的值。
 
 标注驱动程序最终必须调用 [**FwpsvSwitchEventsUnsubscribe0**](/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpsvswitcheventsunsubscribe0) 以释放系统资源。
 
-如果注解驱动程序 \_ 从 WFP 通知函数返回 "挂起" 状态，则 wfp 会将 \_ 挂起的状态返回到 OID 请求处理程序。 标注驱动程序必须调用 [**FwpsvSwitchNotifyComplete0**](/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpsvswitchnotifycomplete0) 函数来完成挂起的操作。 **FwpsvSwitchNotifyComplete0**调用后，WFP 会调用[**NdisFOidRequestComplete**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfoidrequestcomplete)函数来完成虚拟交换机的 OID。
+如果注解驱动程序 \_ 从 WFP 通知函数返回 "挂起" 状态，则 wfp 会将 \_ 挂起的状态返回到 OID 请求处理程序。 标注驱动程序必须调用 [**FwpsvSwitchNotifyComplete0**](/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpsvswitchnotifycomplete0) 函数来完成挂起的操作。 **FwpsvSwitchNotifyComplete0** 调用后，WFP 会调用 [**NdisFOidRequestComplete**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfoidrequestcomplete)函数来完成虚拟交换机的 OID。
 
 回调不应在通知函数的上下文中同步添加或删除 WFP 筛选器。 此外，如果通知函数允许回调返回状态 \_ "挂起"，并且标注返回状态 " \_ 挂起"，则在完成通知之前，标注不应添加或删除 WFP 筛选器。
 

@@ -1,7 +1,6 @@
 ---
 title: DsmSetLoadBalancePolicy 函数
 description: DsmSetLoadBalancePolicy 方法用于设置 DSM 负载平衡策略。
-ms.assetid: f53a776a-b350-4424-855a-49323587c57b
 keywords:
 - DsmSetLoadBalancePolicy 函数存储设备
 topic_type:
@@ -14,17 +13,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: e521c2c2fb4e78d9a14e2d154b87e4426bd53d56
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: d609f1b96b0fe5317561e9f2128368ba44336544
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89184707"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96835367"
 ---
 # <a name="dsmsetloadbalancepolicy-function"></a>DsmSetLoadBalancePolicy 函数
 
 
-**DsmSetLoadBalancePolicy**方法用于设置 DSM 负载平衡策略。
+**DsmSetLoadBalancePolicy** 方法用于设置 DSM 负载平衡策略。
 
 <a name="syntax"></a>语法
 ------
@@ -32,7 +31,7 @@ ms.locfileid: "89184707"
 ```ManagedCPlusPlus
 void DsmSetLoadBalancePolicy(
    [in, Description("New Load Balance policy to be set"):amended] DSM_Load_Balance_Policy LoadBalancePolicy,
-   [out, Description("Status of the operation"):amended] uint32                           Status
+   [out, Description("Status of the operation"):amended] uint32                           Status
 );
 ```
 
@@ -42,7 +41,7 @@ void DsmSetLoadBalancePolicy(
 *LoadBalancePolicy*   
 [**DsmSetLoadBalancePolicy \_ OUT**](/windows-hardware/drivers/ddi/mpiodisk/ns-mpiodisk-_dsmsetloadbalancepolicy_out)结构。
 
-*状态值*   
+*状态*   
 操作的状态。
 
 <a name="return-value"></a>返回值
@@ -66,7 +65,7 @@ void DsmSetLoadBalancePolicy(
 <tbody>
 <tr class="odd">
 <td align="left"><p>目标平台</p></td>
-<td align="left">“桌面”</td>
+<td align="left">台式机</td>
 </tr>
 <tr class="even">
 <td align="left"><p>标头</p></td>

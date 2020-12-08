@@ -1,7 +1,6 @@
 ---
 title: 附加到文件系统的筛选器设备对象
 description: 附加到文件系统的筛选器设备对象
-ms.assetid: 5fb0ec43-a639-4b2a-8057-3313e9dee457
 keywords:
 - 筛选设备对象 WDK 文件系统
 - 设备对象 i/o 请求 WDK 文件系统
@@ -9,12 +8,12 @@ keywords:
 - 文件系统筛选器驱动程序 WDK，设备对象 i/o 请求
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5aad518e1094f9e778d35fd2891d5cbf46023678
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: efabaa6f9cdb5af9ecc22596190080a91bde2228
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89063648"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96836483"
 ---
 # <a name="filter-device-object-attached-to-a-file-system"></a>附加到文件系统的筛选器设备对象
 

@@ -1,18 +1,17 @@
 ---
 title: 'PnP 管理器将系统资源重新分发 (UMDF 1) '
 description: PnP 管理器重新分发系统资源
-ms.assetid: c8e6277b-b1e5-449f-b5a0-f5a46b46e56e
 keywords:
 - 电源管理方案 WDK UMDF，PnP 管理器重新分发系统资源
 - 重新分发系统资源方案 WDK UMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 75a421b605d2d85f5ae4e108152030ed547d091c
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: acf623bd4f5329dd4aca1f01385e3bdaa14b3554
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89191411"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96834833"
 ---
 # <a name="the-pnp-manager-redistributes-system-resources-umdf-1"></a>PnP 管理器将系统资源重新分发 (UMDF 1) 
 

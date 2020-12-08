@@ -1,15 +1,14 @@
 ---
 title: DSM \_ QUERYUNIQUEID WMI 类
 description: DSM \_ QUERYUNIQUEID WMI 类
-ms.assetid: 576e208d-972c-47ba-ab30-a05bf3d0943d
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 49befce6c9776fe387db779fc0d0abcc74511879
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 32e288518c1e6397fe5327b006d48447fc7688d9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89190219"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96835323"
 ---
 # <a name="dsm_queryuniqueid-wmi-class"></a>DSM \_ QUERYUNIQUEID WMI 类
 

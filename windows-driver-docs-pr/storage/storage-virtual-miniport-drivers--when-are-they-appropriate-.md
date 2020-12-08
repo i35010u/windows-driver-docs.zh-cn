@@ -1,22 +1,21 @@
 ---
-title: 存储虚拟微型端口驱动程序时是否合适
-description: 存储虚拟微型端口驱动程序时是否合适
-ms.assetid: 45b9eab9-15b8-4244-bd16-e8850211b8bf
+title: 适用时的存储虚拟微型端口驱动程序
+description: 适用时的存储虚拟微型端口驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 184525d984acba8f2a99f1773b7adf0fb161c1c8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1642da1662eae1a4ecf178c1b3d8db019deca1bf
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63354543"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96834971"
 ---
-# <a name="storage-virtual-miniport-drivers-when-are-they-appropriate"></a>存储器虚拟微型端口驱动程序：何时适合使用它们？
+# <a name="storage-virtual-miniport-drivers-when-are-they-appropriate"></a>存储虚拟微型端口驱动程序：何时适合？
 
 
-虚拟微型端口驱动程序适合，它完全模拟一个或多个设备，或它不具有自己的控制的任何硬件，但它与另一台设备使用设备的驱动程序作为传输的 I/O 请求。 例如，使用随机存取内存 (RAM) 来存储其数据的磁盘设备通常称为 RAMDISK。 这是不当使用虚拟微型端口驱动程序的一个很好示例。 另一个示例就是提供一个用于发送和接收存储命令和数据的通信链接的网络适配器的某种类型的使用。 网络适配器具有其自己控制其硬件的设备驱动程序，但只与该驱动程序，并不是基础硬件的虚拟微型端口通信。
+虚拟微型端口驱动程序适用于完全模拟一个或多个设备，或者它没有自己的硬件来控制，但会使用其设备驱动程序作为 i/o 请求的传输方式与其他设备通信。 例如，使用随机存取内存 (RAM) 存储其数据的磁盘设备通常称为 RAMDISK。 这是适当使用虚拟微型端口驱动程序的一个好示例。 另一个示例是使用某种类型的网络适配器，该适配器提供用于发送和接收存储命令和数据的通信链接。 网络适配器具有其自己的设备驱动程序，可控制其硬件，但虚拟微型端口仅与驱动程序通信，而不与基础硬件通信。
 
-当它直接控制实际硬件，例如，主机总线适配器时，不适合虚拟微型端口。
+如果虚拟小型端口直接控制实际硬件（例如，主机总线适配器），则它不适合。
 
  
 

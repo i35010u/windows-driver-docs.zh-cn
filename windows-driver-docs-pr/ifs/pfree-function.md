@@ -1,7 +1,6 @@
 ---
 title: PFREE_FUNCTION 函数指针
 description: PFREE_FUNCTION 类型化例程可由文件系统旧筛选器驱动程序注册为筛选器的 FreeCallback 回调例程。
-ms.assetid: 291b57d9-3bef-4acb-a571-86b67a03cd08
 keywords:
 - PFREE_FUNCTION 函数指针可安装的文件系统驱动程序
 topic_type:
@@ -14,16 +13,16 @@ api_type:
 - UserDefined
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 96a9f39c955c401ef5fe92ec4190090ae7147126
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: bd2a91ba42d7a9c4e8d975ba0a7e4ebeb392cede
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89063012"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96836447"
 ---
 # <a name="pfree_function-function-pointer"></a>PFREE_FUNCTION 函数指针
 
-**PFREE_FUNCTION**类型化例程可由文件系统旧筛选器驱动程序注册为筛选器的*FreeCallback*回调例程。 文件系统通过使用[**FsRtlTeardownPerFileContexts**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-fsrtlteardownperfilecontexts)删除文件上下文对象，或使用[**FsRtlTeardownPerStreamContexts**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-fsrtlteardownperstreamcontexts)删除流上下文对象时，文件系统将调用*FreeCallback* 。
+**PFREE_FUNCTION** 类型化例程可由文件系统旧筛选器驱动程序注册为筛选器的 *FreeCallback* 回调例程。 文件系统通过使用 [**FsRtlTeardownPerFileContexts**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-fsrtlteardownperfilecontexts)删除文件上下文对象，或使用 [**FsRtlTeardownPerStreamContexts**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-fsrtlteardownperstreamcontexts)删除流上下文对象时，文件系统将调用 *FreeCallback* 。
 
 必须使用 **FREE_FUNCTION** 类型来声明回调例程。 有关详细信息，请参阅 "备注" 部分中的示例。
 
@@ -31,11 +30,11 @@ ms.locfileid: "89063012"
 
 ```ManagedCPlusPlus
 typedef VOID ( *FreeCallback)(
-  _In_ PVOID Buffer
+  _In_ PVOID Buffer
 );
 ```
 
-## <a name="parameters"></a>parameters
+## <a name="parameters"></a>参数
 
 *缓冲区* \[中\]  
 指向要释放的 [**FSRTL_PER_FILE_CONTEXT**](/previous-versions/ff547352(v=vs.85)) 或 [**FSRTL_PER_STREAM_CONTEXT**](/previous-versions/ff547357(v=vs.85)) 结构的指针。
@@ -49,12 +48,12 @@ typedef VOID ( *FreeCallback)(
 
 当文件系统泪水文件的每个文件上下文对象时，它必须调用 [**FsRtlTeardownPerFileContexts**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-fsrtlteardownperfilecontexts)。 此例程调用与文件关联的所有每文件上下文结构的 *FreeCallback* 例程。 此回调例程必须释放用于 [**FSRTL_PER_FILE_CONTEXT**](/previous-versions/ff547352(v=vs.85)) 对象的任何内存以及任何关联的上下文信息。 这也适用于调用 [**FsRtlTeardownPerStreamContexts**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-fsrtlteardownperstreamcontexts) 时的每个流上下文， *FreeCallback* 将释放用于 [**FSRTL_PER_STREAM_CONTEXT**](/previous-versions/ff547357(v=vs.85)) 对象的内存。
 
-有关如何在调用 *FreeCallback*期间同步对每个文件上下文对象或按流上下文对象的访问的备注，请参阅 [**FsRtlTeardownPerFileContexts**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-fsrtlteardownperfilecontexts) 和 [**FsRtlTeardownPerStreamContexts**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-fsrtlteardownperstreamcontexts)。
+有关如何在调用 *FreeCallback* 期间同步对每个文件上下文对象或按流上下文对象的访问的备注，请参阅 [**FsRtlTeardownPerFileContexts**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-fsrtlteardownperfilecontexts) 和 [**FsRtlTeardownPerStreamContexts**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-fsrtlteardownperstreamcontexts)。
 
 > [!NOTE]
-> *FreeCallback*例程无法以递归方式向下调用文件系统或获取任何文件系统资源。
+> *FreeCallback* 例程无法以递归方式向下调用文件系统或获取任何文件系统资源。
 
-若要定义名为*MyFreeFunction*的*FreeCallback*回调函数，必须先提供[静态驱动程序验证](../devtest/static-driver-verifier.md)器 (SDV) 和其他验证工具需要的函数声明，如下所示：
+若要定义名为 *MyFreeFunction* 的 *FreeCallback* 回调函数，必须先提供 [静态驱动程序验证](../devtest/static-driver-verifier.md)器 (SDV) 和其他验证工具需要的函数声明，如下所示：
 
 ```cpp
 FREE_FUNCTION MyFreeFunction;
@@ -81,7 +80,7 @@ VOID
 **IRQL**： <= APC_LEVEL
 
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [**FsRtlTeardownPerFileContexts**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-fsrtlteardownperfilecontexts)
 
@@ -91,7 +90,7 @@ VOID
 
 [**FSRTL_PER_STREAM_CONTEXT**](/previous-versions/ff547357(v=vs.85))
 
-[在旧文件系统筛选器驱动程序中跟踪每文件上下文](./tracking-per-file-context-in-a-legacy-file-system-filter-driver.md)
+[跟踪旧文件系统筛选器驱动程序中的 Per-File 上下文](./tracking-per-file-context-in-a-legacy-file-system-filter-driver.md)
 
-[跟踪旧式文件系统筛选器驱动程序中的每个流的上下文](./file-streams--stream-contexts--and-per-stream-contexts.md
+[跟踪旧文件系统筛选器驱动程序中的 Per-Stream 上下文](./file-streams--stream-contexts--and-per-stream-contexts.md
 )

@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ PIN \_ 名称
 description: 客户端使用 KSPROPERTY 的 \_ pin \_ 名称检索 pin 工厂的注册表名称。 这是一个本地化的 Unicode 字符串。
-ms.assetid: 763c3116-95f5-4d32-8c46-d8d91f537bd4
 keywords:
 - KSPROPERTY_PIN_NAME 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 640218d403a670c68fdc278bf26fbd66a5bb4eb0
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 4e19901b8ce522a61ba0d57048520816d5bb14e3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103644"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96834879"
 ---
 # <a name="ksproperty_pin_name"></a>KSPROPERTY \_ PIN \_ 名称
 
@@ -84,7 +83,7 @@ Stream 微型驱动程序不需要直接处理此属性;流类驱动程序使用
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSP \_ PIN**](/windows-hardware/drivers/ddi/ks/ns-ks-ksp_pin)

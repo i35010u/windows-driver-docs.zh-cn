@@ -1,15 +1,14 @@
 ---
 title: 获取注入的错误（功能索引 18）
 description: 此函数返回有关当前注入的错误的信息。
-ms.assetid: 60D4E64C-ABB6-4B24-971F-594306D8C07C
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 51cafcd33b6004d1acb7316af53e7a66af26886c
-ms.sourcegitcommit: 2f37e8de9759164804a3b1c7f5c9e497a607539b
+ms.openlocfilehash: 8592d621ef0f7c59f1a2bf8cba84d489eede74ab
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83851330"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96835289"
 ---
 # <a name="get-injected-errors-function-index-18"></a>获取注入的错误（功能索引 18）
 
@@ -17,7 +16,7 @@ ms.locfileid: "83851330"
 此函数返回有关当前注入的错误的信息。
 
 > [!NOTE]
-> 标有星号（）的所有寄存器 \* 都是在可通过字节寻址的可处理电源接口规范中定义的寄存器。
+> 标记为星形 () 的所有寄存器 \* 都是在可通过字节可寻址的、支持电源的接口规范中定义的寄存器。
 
  
 
@@ -43,7 +42,7 @@ ms.locfileid: "83851330"
 <th align="left">字段</th>
 <th align="left">字节长度</th>
 <th align="left">字节偏移量</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -51,29 +50,29 @@ ms.locfileid: "83851330"
 <td align="left"><strong>状态</strong></td>
 <td align="left">4</td>
 <td align="left">0</td>
-<td align="left"><p>请参阅<a href="-dsm-interface-for-byte-addressable-energy-backed-function-class--function-interface-1-.md" data-raw-source="[_DSM Method Output](-dsm-interface-for-byte-addressable-energy-backed-function-class--function-interface-1-.md)">_DSM 方法输出</a>获取详细信息。</p></td>
+<td align="left"><p>请参阅 <a href="-dsm-interface-for-byte-addressable-energy-backed-function-class--function-interface-1-.md" data-raw-source="[_DSM Method Output](-dsm-interface-for-byte-addressable-energy-backed-function-class--function-interface-1-.md)">_DSM 方法输出</a> 获取详细信息。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>注入的操作失败</strong></td>
 <td align="left">2</td>
 <td align="left">4</td>
 <td align="left"><p>当前注入了哪些操作或非易失性内存错误的相关信息。</p>
-<p><em>Byte 0 – <em>INJECT_OPS_FAILURES</em> （2，0x60）</p>
-<p></em>Byte 1 –如果<em>INJECT_BAD_BLOCKS</em>为 "1" （字节0的第7位），则 <em> <em>INJECT_BAD_BLOCK_CAP</em> （2，0x67）。 否则，此应为0。</p></td>
+<p><em>Byte 0 – <em>INJECT_OPS_FAILURES</em> (2) </p>
+<p></em>字节1–如果<em>INJECT_BAD_BLOCKS</em>为 "1" (字节 0) 第7位，则 <em> <em>INJECT_BAD_BLOCK_CAP</em> (2，0x67) 。 否则，此应为0。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><strong>插入的能量源故障</strong></td>
 <td align="left">1</td>
 <td align="left">6</td>
-<td align="left"><p>有关当前插入了哪些能量源错误的信息。</p>
-<p></em>Byte 0 – <em>INJECT_ES_FAILURES</em> （2，0x64）</p></td>
+<td align="left"><p>有关当前注入哪个能量源 (ES) 错误的信息。</p>
+<p></em>Byte 0 – <em>INJECT_ES_FAILURES</em> (2) </p></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>插入固件更新失败</strong></td>
 <td align="left">1</td>
 <td align="left">7</td>
 <td align="left"><p>当前插入了哪些固件操作错误的相关信息。</p>
-<p>* Byte 0 – <em>INJECT_FW_FAILURES</em> （2，0x65）</p></td>
+<p>* Byte 0 – <em>INJECT_FW_FAILURES</em> (2) </p></td>
 </tr>
 </tbody>
 </table>
@@ -92,7 +91,7 @@ ms.locfileid: "83851330"
 
 [查询错误注入状态（功能索引 16）](query-error-injection-status--function-index-16-.md)
 
-[\_用于字节寻址的支持能源的函数类的 DSM 接口（Function Interface 1）](-dsm-interface-for-byte-addressable-energy-backed-function-class--function-interface-1-.md)
+[\_用于字节寻址的支持能源的函数类 (函数接口 1) 的 DSM 接口 ](-dsm-interface-for-byte-addressable-energy-backed-function-class--function-interface-1-.md)
 
  
 

@@ -1,19 +1,18 @@
 ---
 title: GPD 文件项
 description: GPD 文件项
-ms.assetid: b563e7b5-8b04-4757-877e-c2b856817d39
 keywords:
 - GPD 文件 WDK Unidrv，条目
-- WDK GPD 文件条目
+- 项 WDK GPD 文件
 - GPD 文件条目 WDK Unidrv
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f86e48c849dedbdfb3de39651f3ecd823d032c36
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 319e40099c6e15ed85f1d0440fb4e850d928911f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63385198"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96835863"
 ---
 # <a name="gpd-file-entries"></a>GPD 文件项
 
@@ -21,9 +20,9 @@ ms.locfileid: "63385198"
 
 
 
-GPD 文件组成，使用 GPD 语言说明的项的每个光栅打印机的特定于设备的特征。 本部分包括描述 GPD 文件条目的以下主题：
+GPD 文件由使用 GPD 语言的条目组成，用于描述每个光栅打印机的设备特定特性。 本部分包括以下主题，其中介绍了 GPD 文件条目：
 
-[GPD 文件条目格式](gpd-file-entry-format.md)
+[GPD 文件项格式](gpd-file-entry-format.md)
 
 [GPD 值类型](gpd-value-types.md)
 
