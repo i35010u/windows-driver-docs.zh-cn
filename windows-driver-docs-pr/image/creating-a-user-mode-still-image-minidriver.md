@@ -1,15 +1,14 @@
 ---
 title: 创建用户模式静态图像微型驱动程序
 description: 创建用户模式静态图像微型驱动程序
-ms.assetid: 94fdbeba-5b4a-4b66-b381-ec362b6d38c9
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 068de4dc8ed2378faa264b569d8f39e5714a5455
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8234a9b7bfc4cdba1d3c519ad526d27e3733c33d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63386320"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96820269"
 ---
 # <a name="creating-a-user-mode-still-image-minidriver"></a>创建用户模式静态图像微型驱动程序
 
@@ -17,25 +16,25 @@ ms.locfileid: "63386320"
 
 
 
-所有用户模式下仍映像微型驱动程序必须都实现接口方法由定义[IStiUSD COM 接口](istiusd-com-interface.md)。 此实现是相对简单，使用以下过程。
+所有用户模式静止图像微型驱动程序必须实现 [ISTIUSD COM 接口](istiusd-com-interface.md)定义的接口方法。 此实现相对简单，使用以下过程。
 
-**若要实现由 IStiUSD COM 接口定义的方法：**
+**实现 IStiUSD COM 接口定义的方法：**
 
-1.  获取 GUID 的接口，并将其包含在标头文件和安装信息 (INF) 文件中。
+1.  获取接口的 GUID，并将其包含在标头文件中，并将安装信息包含 (INF) 文件中。
 
-2.  创建实现文件 (.cpp) 等。
+2.  创建 () 的实现文件。
 
-3.  创建自定义的类定义，使用**IStiUSD**作为继承的类。
+3.  使用 **IStiUSD** 作为继承类来创建自定义类定义。
 
-4.  实现的所有已定义的方法[IStiUSD COM 接口](istiusd-com-interface.md)。 如果不需要一种方法，它必须返回 STIERR\_不受支持。
+4.  实现所有已为 [ISTIUSD COM 接口](istiusd-com-interface.md)定义的方法。 如果不需要某个方法，则该方法必须返回 \_ 不受支持的 STIERR。
 
 本部分提供有关以下主题的信息：
 
-[静止图像的设备事件](still-image-device-events.md)
+[静态图像设备事件](still-image-device-events.md)
 
 [传输模式](transfer-modes.md)
 
-[仍映像驱动程序的安全问题](security-issues-for-still-image-drivers.md)
+[静态图像驱动程序的安全问题](security-issues-for-still-image-drivers.md)
 
  
 

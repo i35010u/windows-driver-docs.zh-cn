@@ -1,15 +1,14 @@
 ---
 title: 适用于 windows 8 的 Windows 全新调试工具
 description: 适用于 windows 8 的 Windows 全新调试工具
-ms.assetid: 1AC2595A-800F-4F40-9C9D-61DE5398CBEB
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0a15efcf8076792b276b6aa31be2afa9ccc1c963
-ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
+ms.openlocfilehash: 8c8c5439aa7a82ec9eff7f47d661fc7ebd24bb58
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84534454"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96819863"
 ---
 # <a name="debugging-tools-for-windows-new-for-windows-8"></a>Windows 调试工具：Windows 8 的新增功能
 
@@ -25,9 +24,9 @@ ms.locfileid: "84534454"
 -   [USB 3.0 扩展](usb-3-extensions.md)
 -   [RCDRKD 扩展](rcdrkd-extensions.md)
 
-除了 Visual Studio，您还可以通过 sse Windows 调试器来调试 Windows 应用程序。 适用于 Windows 的调试工具包包括[**PLMDebug**](plmdebug.md)，使你能够手动控制挂起、继续、调试和终止 Windows 应用程序。
+除了 Visual Studio，您还可以通过 sse Windows 调试器来调试 Windows 应用程序。 用于 Windows 的调试工具包包括 [**PLMDebug.exe**](plmdebug.md)，使你能够手动控制挂起、继续、调试和终止 Windows 应用程序。
 
-Sos 是用于调试托管代码的组件。 Windows 8 调试工具包不包括 sos。 有关如何获取 sos 的信息，请参阅在[调试托管代码](debugging-managed-code.md)中*获取 sos 调试扩展（sos）* 。
+Sos.dll 是用于调试托管代码的组件。 Windows 8 调试工具包不包含 sos.dll。 有关如何获取 sos.dll 的信息，请参阅在 [调试托管代码](debugging-managed-code.md) *( # A1) 获取 SOS 调试扩展*。
 
 ## <a name="related-topics"></a>相关主题
 

@@ -1,15 +1,14 @@
 ---
 title: StorNVMe 功能支持
 description: 介绍 StorNVMe 支持的 NVMe 功能
-ms.assetid: 96b62fbb-bcf3-402d-ba29-0a61dc95c92c
 ms.date: 08/07/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: a15259973e08593d128852d047955f9f0a314e85
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: c77ff1b3e192c074311574d67742b14acf800293
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89189411"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96820535"
 ---
 # <a name="stornvme-feature-support"></a>StorNVMe 功能支持
 
@@ -31,9 +30,9 @@ ms.locfileid: "89189411"
 | 主机内存缓冲区                                             | X | |
 | 重播受保护的内存块                                  |   | |
 | 设备自检操作                                    | X | 无本机支持;通过 [IOCTL_STORAGE_PROTOCOL_COMMAND](/windows-hardware/drivers/ddi/ntddstor/ni-ntddstor-ioctl_storage_protocol_command)提供的功能。|
-| 命名空间管理                                           | X | 无本机支持;在 WinPE 模式下通过 [IOCTL_STORAGE_PROTOCOL_COMMAND](/windows-hardware/drivers/ddi/ntddstor/ni-ntddstor-ioctl_storage_protocol_command) 提供的功能。 |
+| 命名空间管理                                           | X | 无本机支持;在 WinPE 模式下通过 [IOCTL_STORAGE_PROTOCOL_COMMAND](/windows-hardware/drivers/ddi/ntddstor/ni-ntddstor-ioctl_storage_protocol_command) 提供的功能。 |
 | 启动分区                                                |   | |
-| 遥测技术                                                      | X | 通过 [IOCTL_SCSI_PASS_THROUGH](/windows-hardware/drivers/ddi/ntddscsi/ni-ntddscsi-ioctl_scsi_pass_through) 使用带有缓冲模式的命令 SCSIOP_READ_DATA_BUFF16 作为 READ_BUFFER_MODE_ERROR_HISTORY 支持。 还可通过 [IOCTL_STORAGE_QUERY_PROPERTY](/windows-hardware/drivers/ddi/ntddstor/ni-ntddstor-ioctl_storage_query_property)通过 StorageAdapterProtocolSpecificProperty/StorageDeviceProtocolSpecificProperty 获得。 对于主机遥测，还可以从 Windows 10 2004 版开始 [IOCTL_STORAGE_GET_DEVICE_INTERNAL_LOG](/windows-hardware/drivers/ddi/ntddstor/ni-ntddstor-ioctl_storage_get_device_internal_log) 。 |
+| 遥测                                                      | X | 通过 [IOCTL_SCSI_PASS_THROUGH](/windows-hardware/drivers/ddi/ntddscsi/ni-ntddscsi-ioctl_scsi_pass_through) 使用带有缓冲模式的命令 SCSIOP_READ_DATA_BUFF16 作为 READ_BUFFER_MODE_ERROR_HISTORY 支持。 还可通过 [IOCTL_STORAGE_QUERY_PROPERTY](/windows-hardware/drivers/ddi/ntddstor/ni-ntddstor-ioctl_storage_query_property)通过 StorageAdapterProtocolSpecificProperty/StorageDeviceProtocolSpecificProperty 获得。 对于主机遥测，还可以从 Windows 10 2004 版开始 [IOCTL_STORAGE_GET_DEVICE_INTERNAL_LOG](/windows-hardware/drivers/ddi/ntddstor/ni-ntddstor-ioctl_storage_get_device_internal_log) 。 |
 | 净化操作                                            | X | 在 WinPE 模式下通过 [IOCTL_STORAGE_PROTOCOL_COMMAND](/windows-hardware/drivers/ddi/ntddstor/ni-ntddstor-ioctl_storage_protocol_command) 支持。 |
 | 读取恢复级别                                            |   | |
 | 耐用性组                                               | X | 可以通过[IOCTL_STORAGE_QUERY_PROPERTY](/windows-hardware/drivers/ddi/ntddstor/ni-ntddstor-ioctl_storage_query_property)检索信息 |

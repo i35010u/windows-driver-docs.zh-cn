@@ -1,7 +1,6 @@
 ---
 title: 'SpChangeIrql 规则 (storport) '
 description: 此规则验证 StorPort 回调例程是否返回的 IRQL 级别与调用它们的级别相同。
-ms.assetid: 7F54D12B-D027-4A59-97A5-97287571AAF3
 ms.date: 05/21/2018
 keywords:
 - 'SpChangeIrql 规则 (storport) '
@@ -12,12 +11,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: ae58bd180dd05d30d3ca6b2735f0c57c7fcd6ecd
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 9311de172cc400f995e4b20031868fee1e5c8164
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107062"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96819617"
 ---
 # <a name="spchangeirql-rule-storport"></a>SpChangeIrql 规则 (storport) 
 

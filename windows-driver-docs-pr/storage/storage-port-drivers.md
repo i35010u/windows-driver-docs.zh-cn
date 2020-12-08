@@ -1,19 +1,18 @@
 ---
 title: 存储端口驱动程序简介
 description: 存储端口驱动程序
-ms.assetid: 5ff4916c-7d1f-4b61-a332-6ed89df9db56
 keywords:
 - 存储端口驱动程序 WDK
 - 存储端口驱动程序 WDK，关于存储端口驱动程序
 - 端口驱动程序 WDK 存储
 ms.date: 12/15/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: eb894a7dc857a7d774908f365b06c78f7972306e
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 46a2cf09e45316e38c0f90764a6b9a3e536ecefd
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89189431"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96820547"
 ---
 # <a name="introduction-to-storage-port-drivers"></a>存储端口驱动程序简介
 

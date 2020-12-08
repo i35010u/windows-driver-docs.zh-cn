@@ -1,22 +1,21 @@
 ---
 title: 访问 WER 报表中的 UMDF 元数据
-description: 本主题介绍在用户模式驱动程序框架 (UMDF) 崩溃时操作系统创建的 Windows 错误报告 (WER) 报告的位置和内容。系统为 WUDFHostProblem、WUDFUnhandledException 和 WUDFVerifierFailure 三个不同的 UMDF 事件类型生成 WER 报告。当反射器终止驱动程序主机进程时，有时由于超过了主机超时阈值，系统将生成一个名为 "" 的文件，其中包含 WER 信息。 具体而言，如果您尝试在没有访问实时调试目标的情况下调试 UMDF 驱动程序，则 wer 包含 UMDF 元数据可能会很有帮助。
-ms.assetid: ca5fe108-b4fb-4c90-87bc-9901854780d3
+description: 本主题介绍 Windows 错误报告 (WER) 报告的位置和内容，当 User-Mode 驱动程序框架 (UMDF) 故障时，操作系统将创建该报告。系统为 WUDFHostProblem、WUDFUnhandledException 和 WUDFVerifierFailure 三个不同的 UMDF 事件类型生成 WER 报告。当反射器终止驱动程序主机进程时，有时由于超过了主机超时阈值，系统将生成一个名为 "" 的文件，其中包含 WER 信息。 具体而言，如果您尝试在没有访问实时调试目标的情况下调试 UMDF 驱动程序，则 wer 包含 UMDF 元数据可能会很有帮助。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c177dbbcd4add40151c9cab1a196f0e0a00835d2
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: e5b9b5c41ba78bf4a97ddfe00b12430b7362d1ce
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106922"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96821181"
 ---
 # <a name="accessing-umdf-metadata-in-wer-reports"></a>访问 WER 报表中的 UMDF 元数据
 
 
-本主题介绍在用户模式驱动程序框架 (UMDF) 崩溃时操作系统创建的 Windows 错误报告 (WER) 报告的位置和内容。
+本主题介绍 Windows 错误报告 (WER) 报告的位置和内容，当 User-Mode 驱动程序框架 (UMDF) 故障时，操作系统将创建该报告。
 
-系统会为三种不同的 UMDF 事件类型生成 WER 报告： **WUDFHostProblem**、 **WUDFUnhandledException**和 **WUDFVerifierFailure**。
+系统会为三种不同的 UMDF 事件类型生成 WER 报告： **WUDFHostProblem**、 **WUDFUnhandledException** 和 **WUDFVerifierFailure**。
 
 当反射器终止驱动程序主机进程时，有时由于超过了 [主机超时](how-umdf-enforces-time-outs.md) 阈值，系统将生成一个名为 "node.js" 的文件，其中包含 wer 信息。 具体而言，如果您尝试在没有访问实时调试目标的情况下调试 UMDF 驱动程序，则 wer 包含 UMDF 元数据可能会很有帮助。
 
@@ -31,7 +30,7 @@ get-winevent -providername "Windows Error Reporting" | where-object {$_.Message 
 ## <a name="wudfhostproblem-sample-report"></a>WUDFHostProblem 示例报表
 
 
-下面是 **WUDFHostProblem**类型的示例 UMDF WER 报告。 它是从上面所述的 ReportQueue 目录中获得的。 如果使用 PowerShell 检索报表，则字段可能标记为 P0、P1、P2，而不是 Sig \[ 0 \] ，sig \[ 1 \] ，sig \[ 2 \] 。 否则，这些字段是相同的，并包含相同的可能值。 此示例是通过使用 OSR USB-FX2 硬件参考板的某个 WDK 示例生成的。
+下面是 **WUDFHostProblem** 类型的示例 UMDF WER 报告。 它是从上面所述的 ReportQueue 目录中获得的。 如果使用 PowerShell 检索报表，则字段可能标记为 P0、P1、P2，而不是 Sig \[ 0 \] ，sig \[ 1 \] ，sig \[ 2 \] 。 否则，这些字段是相同的，并包含相同的可能值。 此示例是通过使用 OSR USB-FX2 硬件参考板的某个 WDK 示例生成的。
 
 ```cpp
 Sig[0].Name=EventClass
@@ -153,7 +152,7 @@ WdfComponentMax</code>
 </tr>
 <tr class="odd">
 <td align="left">6</td>
-<td align="left">Message</td>
+<td align="left">消息</td>
 <td align="left"><p>此字段的第一个数字始终为1，指示操作涉及 IRP。 后续位数分别指示 IRP 的 <strong>MajorFunction</strong> 和 <strong>MinorFunction</strong> 。</p>
 <p>例如，在上面的示例报表中，此字段包含值11b00。 这意味着该操作是一个 IRP，反映器代表驱动程序主机进程处理，其主要函数值为 IRP_MJ_PNP，次函数值为 IRP_MN_START_DEVICE (1 = IRP message，1b = IRP_MJ_PNP，00 = IRP_MN_START_DEVICE) 。</p></td>
 </tr>
@@ -175,7 +174,7 @@ WdfComponentMax</code>
 ## <a name="wudfunhandledexception-fields"></a>WUDFUnhandledException 字段
 
 
-下表描述了 **WUDFUnhandledException**类型的报表中字段的可能值。
+下表描述了 **WUDFUnhandledException** 类型的报表中字段的可能值。
 
 <table>
 <colgroup>
@@ -258,7 +257,7 @@ WdfComponentMax</code>
 ## <a name="wudfverifierfailure-fields"></a>WUDFVerifierFailure 字段
 
 
-下表描述了 **WUDFVerifierFailure**类型的报表中字段的可能值。
+下表描述了 **WUDFVerifierFailure** 类型的报表中字段的可能值。
 
 <table>
 <colgroup>
@@ -286,7 +285,7 @@ WdfComponentMax</code>
 </tr>
 <tr class="odd">
 <td align="left">2</td>
-<td align="left">类别</td>
+<td align="left">Category</td>
 <td align="left"><p>此字段包含下列值之一：</p>
 <ul>
 <li>内部</li>

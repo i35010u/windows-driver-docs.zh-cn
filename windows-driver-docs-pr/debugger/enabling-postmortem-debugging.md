@@ -1,16 +1,15 @@
 ---
 title: 启用事后调试
 description: 本主题介绍如何启用事后调试
-ms.assetid: ae116b60-fed2-4e1d-98a8-9fe83f460c50
 keywords: 调试. 调试，Windbg，事后调试，实时调试，JIT 调试，AeDebug 注册表项
 ms.date: 09/17/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 68aff3f255916d0b36363acb15edf0881de4bb14
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 68bfe078b9864d134308e00cca347cda0db5dd11
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90715006"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96820933"
 ---
 # <a name="enabling-postmortem-debugging"></a>启用事后调试
 
@@ -28,7 +27,7 @@ Windows 根据配置值以及哪些调试程序处于活动状态，以各种方
 
 1.  如果用户模式调试器当前已附加到出错进程，则所有错误都将导致目标中断此调试器。
 
-    只要附加了用户模式调试器，就不会再使用其他错误处理方法--即使 [**gn (未处理异常) **](gn--gn--go-with-exception-not-handled-.md) 命令。
+    只要附加了用户模式调试器，就不会再使用其他错误处理方法--即使 [**gn (未处理异常)**](gn--gn--go-with-exception-not-handled-.md) 命令。
 
 2.  如果没有附加用户模式调试器，并且执行代码具有其自己的异常处理例程 (例如， **try-except**) ，则此异常处理例程将尝试处理错误。
 
@@ -36,11 +35,11 @@ Windows 根据配置值以及哪些调试程序处于活动状态，以各种方
 
     在 Windows 启动过程中，必须打开内核调试连接。 如果希望防止用户模式中断进入内核调试器，可以将 KDbgCtrl 实用工具与 **-du** 参数一起使用。 有关如何配置内核调试连接以及如何使用 KDbgCtrl 的详细信息，请参阅 [获取调试设置](getting-set-up-for-debugging.md)。
 
-    在内核调试器中，您可以使用 [**gh () 处理异常 **](gh--go-with-exception-handled-.md) ，以忽略错误并继续运行目标。 您可以使用 [**gn ("未处理异常") **](gn--gn--go-with-exception-not-handled-.md) ，绕过内核调试器并继续执行步骤4。
+    在内核调试器中，您可以使用 [**gh () 处理异常**](gh--go-with-exception-handled-.md) ，以忽略错误并继续运行目标。 您可以使用 [**gn ("未处理异常")**](gn--gn--go-with-exception-not-handled-.md) ，绕过内核调试器并继续执行步骤4。
 
 4.  如果步骤1、2和3中的条件不适用，Windows 将激活在 AeDebug 注册表值中配置的调试工具。 在此情况下，可以提前选择任何程序作为工具使用。 选择的程序称为 *事后调试器*。
 
-5.  如果步骤1、2和3中的条件不适用，并且未注册事后调试器，则 Windows 错误报告 (WER) 会显示一条消息，并在有任何可用的情况下提供解决方案。 如果在注册表中设置了适当的值，则 WER 还会写入内存转储文件。 有关详细信息，请参阅 [使用 WER](/windows/win32/wer/using-wer) 和 [收集用户模式转储](/windows/win32/wer/collecting-user-mode-dumps)。
+5.  如果步骤1、2和3中的条件不适用，并且未注册事后调试器，则 Windows 错误报告 (WER) 会显示一条消息，并在有任何可用的情况下提供解决方案。 如果在注册表中设置了适当的值，则 WER 还会写入内存转储文件。 有关详细信息，请参阅 [使用 WER](/windows/win32/wer/using-wer) 和 [收集 User-Mode 转储](/windows/win32/wer/collecting-user-mode-dumps)。
 
 **DebugBreak 函数**
 
@@ -57,9 +56,9 @@ Windows 错误报告 (WER) 使用在 AeDebug 注册表项中设置的值创建�
 
 **HKLM** \\**软件** \\**Microsoft** \\**WINDOWS NT** \\**CurrentVersion** \\**AeDebug**
 
-有两个重要的主注册表值： " *调试器* " 和 " *自动*"。 *调试器* 注册表值指定事后调试器的命令行。 *自动*注册表值指定是自动启动事后调试器，还是首先显示确认消息框。
+有两个重要的主注册表值： " *调试器* " 和 " *自动*"。 *调试器* 注册表值指定事后调试器的命令行。 *自动* 注册表值指定是自动启动事后调试器，还是首先显示确认消息框。
 
-<span id="Debugger__REG_SZ_"></span><span id="debugger__reg_sz_"></span><span id="DEBUGGER__REG_SZ_"></span>**调试器 (REG \_ SZ) **  
+<span id="Debugger__REG_SZ_"></span><span id="debugger__reg_sz_"></span><span id="DEBUGGER__REG_SZ_"></span>**调试器 (REG \_ SZ)**  
 
 此 REG \_ SZ 值指定将处理事后调试的调试器。
 
@@ -73,7 +72,7 @@ DWORD (% ld) 事件句柄重复到事后调试进程。 如果事后调试器发
 
 void \* (% p) - \_ \_ 在目标进程的地址空间中分配的 JIT 调试信息结构的地址。 结构包含其他异常信息和上下文。
 
-<span id="Auto__REG_SZ_"></span><span id="auto__reg_sz_"></span><span id="AUTO__REG_SZ_"></span>**自动 (REG \_SZ) ** 此 REG \_ SZ 值始终是 **0** 或 **1**。
+<span id="Auto__REG_SZ_"></span><span id="auto__reg_sz_"></span><span id="AUTO__REG_SZ_"></span>**自动 (REG \_SZ)** 此 REG \_ SZ 值始终是 **0** 或 **1**。
 
 如果 " **自动** " 设置为 **0**，则在开始调试调试过程之前，将显示确认消息框。
 
@@ -156,13 +155,14 @@ Debugger = "<Path>\WinDbg -p %ld -e %ld -g"
 Auto = 1
 ```
 
-在示例中， * &lt; Path &gt; *是调试程序所在的目录。
+在示例中， *&lt; Path &gt;* 是调试程序所在的目录。
 
 如前文所述，-p 和-e 参数传递了进程 ID 和事件。
 
-**-G**将 g (中转) 命令传递给 WinDbg，并继续执行当前指令。
+**-G** 将 g (中转) 命令传递给 WinDbg，并继续执行当前指令。
 
-**注意**   传递 g (中转) 命令时出现重大问题。 此方法的问题是，异常并不总是重复，这通常是由于在重新启动代码时不再存在的暂时情况。 有关此问题的详细信息，请参阅 [**。 jdinfo (使用 JIT \_ 调试 \_ 信息) **](-jdinfo--use-jit-debug-info-.md)。
+**注意**  
+传递 g (中转) 命令时出现重大问题。 此方法的问题是，异常并不总是重复，这通常是由于在重新启动代码时不再存在的暂时情况。 有关此问题的详细信息，请参阅 [**。 jdinfo (使用 JIT \_ 调试 \_ 信息)**](-jdinfo--use-jit-debug-info-.md)。
 
 若要避免此问题，请使用 jdinfo 或/j.。 此方法允许调试器位于相关代码失败的上下文中。 有关详细信息，请参阅本主题后面的实时 [ (JIT) 调试](#jit) 。
 
@@ -204,7 +204,7 @@ C:\Program Files (x86)\Windows Kits\10\Debuggers\x86\ntsd.exe -iaec [KeyString]
 
 如果此命令成功，则不显示任何内容，并在出现故障时显示新的控制台窗口。
 
-**注意**   由于-p% ld-e% ld-g 参数总是首先出现在事后调试器的命令行上，因此不应使用-iaec 开关来指定-server 参数，因为-server 在命令行上首先显示时将无法工作。 若要安装包含此参数的事后调试器，必须手动编辑注册表。
+**注意**  由于-p% ld-e% ld-g 参数总是首先出现在事后调试器的命令行上，因此不应使用-iaec 开关来指定-server 参数，因为-server 在命令行上首先显示时将无法工作。 若要安装包含此参数的事后调试器，必须手动编辑注册表。
 
  
 
@@ -275,7 +275,7 @@ ProcDump 是一个 "打包" 的可执行文件，其中包含应用程序的32�
 
 **设置出错应用程序的上下文**
 
-如前文所述，使用 JIT \_ 调试信息参数将上下文设置为导致崩溃的异常非常有必要 \_ 。 有关此内容的详细信息，请参阅 [**。 jdinfo (使用 JIT \_ 调试 \_ 信息) **](-jdinfo--use-jit-debug-info-.md)。
+如前文所述，使用 JIT \_ 调试信息参数将上下文设置为导致崩溃的异常非常有必要 \_ 。 有关此内容的详细信息，请参阅 [**。 jdinfo (使用 JIT \_ 调试 \_ 信息)**](-jdinfo--use-jit-debug-info-.md)。
 
 **Windows 调试工具**
 
@@ -286,7 +286,7 @@ Debugger = "<Path>\windbg.exe -p %ld -e %ld -c ".jdinfo 0x%p"
 Auto = 1
 ```
 
-% P 参数是 \_ \_ 目标进程的地址空间中的 JIT 调试信息结构的地址。 % P 参数使用0x 预先追加，以便将其解释为十六进制值。 有关详细信息，请参阅 [**。 jdinfo (使用 JIT \_ 调试 \_ 信息) **](-jdinfo--use-jit-debug-info-.md)。
+% P 参数是 \_ \_ 目标进程的地址空间中的 JIT 调试信息结构的地址。 % P 参数使用0x 预先追加，以便将其解释为十六进制值。 有关详细信息，请参阅 [**。 jdinfo (使用 JIT \_ 调试 \_ 信息)**](-jdinfo--use-jit-debug-info-.md)。
 
 若要调试32和64位应用的组合，请配置 (以上所述) 的32和64位注册表项，并将正确的路径设置为64位和 32 WinDbg.exe 的位置。
 
@@ -298,9 +298,9 @@ Auto = 1
 <Path>\windbg.exe -p %ld -e %ld -c ".dump /j %p /u <DumpPath>\AeDebug.dmp; qd"
 ```
 
-使用/u 选项生成唯一的文件名，以允许自动创建多个转储文件。 有关选项的详细信息，请参阅 [**。 dump (创建转储文件) **](-dump--create-dump-file-.md)。
+使用/u 选项生成唯一的文件名，以允许自动创建多个转储文件。 有关选项的详细信息，请参阅 [**。 dump (创建转储文件)**](-dump--create-dump-file-.md)。
 
-创建的转储会将 JITDEBUG \_ 信息数据存储为默认的异常上下文。 请使用 .exr-1 显示异常记录和 ecxr，以设置上下文，而不是使用 jdinfo 查看异常信息和设置上下文。 有关详细信息，请参阅 [**。 .exr (显示异常记录) **](-exr--display-exception-record-.md) 和 [**. Ecxr () 显示异常上下文记录 **](-ecxr--display-exception-context-record-.md)。
+创建的转储会将 JITDEBUG \_ 信息数据存储为默认的异常上下文。 请使用 .exr-1 显示异常记录和 ecxr，以设置上下文，而不是使用 jdinfo 查看异常信息和设置上下文。 有关详细信息，请参阅 [**。 .exr (显示异常记录)**](-exr--display-exception-record-.md) 和 [**. Ecxr () 显示异常上下文记录**](-ecxr--display-exception-context-record-.md)。
 
 **Windows 错误报告-q/qd**
 

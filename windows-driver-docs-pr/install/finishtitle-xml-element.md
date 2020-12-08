@@ -1,7 +1,6 @@
 ---
 title: finishTitle XML 元素
 description: finishTitle XML 元素
-ms.assetid: d8730b49-9cc0-46f4-88a1-fd5543063277
 keywords:
 - finishTitle XML 元素设备和驱动程序安装
 topic_type:
@@ -12,12 +11,12 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 937e51954b5e129921a97c452ede064515b47e38
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: a4344af8cab79e8cd9c670e2c1b42ed28d1f7fed
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89095527"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96820195"
 ---
 # <a name="finishtitle-xml-element"></a>finishTitle XML 元素
 
@@ -83,7 +82,7 @@ dpinst>
 
 如果未指定 **finishTitle** 元素，则 DPInst 将显示默认的 "完成" 页上显示的默认标题文本。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**finishText**](finishtext-xml-element.md)

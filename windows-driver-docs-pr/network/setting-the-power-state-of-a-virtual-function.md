@@ -1,15 +1,14 @@
 ---
 title: 设置虚拟功能的电源状态
 description: 设置虚拟功能的电源状态
-ms.assetid: 7504677D-9B3A-47A2-9990-7BBF50A832EA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: df81e366a82994e906ebf36e5d28d83a7da80720
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: a1a0864bf4f8fb74f1e718957840269a15f97ddf
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89207793"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96820005"
 ---
 # <a name="setting-the-power-state-of-a-virtual-function"></a>设置虚拟功能的电源状态
 
@@ -20,15 +19,15 @@ ms.locfileid: "89207793"
 
 在发出 oid [ \_ SRIOV \_ set \_ VF \_ 电源 \_ 状态](./oid-sriov-set-vf-power-state.md)的 oid 集请求之前，过量驱动程序必须按以下方式设置 [**NDIS \_ SRIOV \_ 设置 \_ vf \_ 电源 \_ 状态 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_set_vf_power_state_parameters) 结构的成员：
 
--   **VFId**成员必须设置为要从中读取信息的 VF 的标识符。
+-   **VFId** 成员必须设置为要从中读取信息的 VF 的标识符。
 
--   **PowerState**成员必须设置为 VF 应转换到的电源状态。
+-   **PowerState** 成员必须设置为 VF 应转换到的电源状态。
 
 -   如果网络适配器必须 \# 在 Pci Express 总线) 上 (其唤醒信号 \# ，并且 pci 总线上的 PME 信号 () 在其进入低功耗状态时被断言，则必须将 **WakeEnable** 成员设置为 TRUE。 否则，此成员必须设置为 FALSE。
 
 当向此 OID 集请求颁发了 PF 微型端口驱动程序时，必须遵循以下准则：
 
--   PF 微型端口驱动程序必须验证由[**NDIS \_ SRIOV \_ SET \_ vf \_ 电源 \_ 状态 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_set_vf_power_state_parameters)结构的**VFId**成员指定的 VF 是否具有以前分配的资源。 在 oid [ \_ NIC \_ 交换机 \_ 分配 \_ vf](./oid-nic-switch-allocate-vf.md)的 oid 方法请求期间，PF 微型端口驱动程序为 VF 分配资源。 如果指定的 VF 未处于已分配状态，则驱动程序必须使 OID 请求失败。
+-   PF 微型端口驱动程序必须验证由 [**NDIS \_ SRIOV \_ SET \_ vf \_ 电源 \_ 状态 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_set_vf_power_state_parameters)结构的 **VFId** 成员指定的 VF 是否具有以前分配的资源。 在 oid [ \_ NIC \_ 交换机 \_ 分配 \_ vf](./oid-nic-switch-allocate-vf.md)的 oid 方法请求期间，PF 微型端口驱动程序为 VF 分配资源。 如果指定的 VF 未处于已分配状态，则驱动程序必须使 OID 请求失败。
 
 -   电源状态操作只能影响指定的 VF。 此操作不能影响同一网络适配器上的其他 VFs 或 PF。
 

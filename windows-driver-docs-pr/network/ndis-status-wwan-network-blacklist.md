@@ -1,16 +1,15 @@
 ---
 title: NDIS_STATUS_WWAN_NETWORK_BLACKLIST
 description: 微型端口驱动程序使用 NDIS_STATUS_WWAN_NETWORK_BLACKLIST 通知来通知移动宽带 (MB) 服务与先前 OID_WWAN_NETWORK_BLACKLIST 查询或设置请求的完成有关。
-ms.assetid: 38ED7C51-D352-4B48-BF80-433A7C4642AB
 ms.date: 08/21/2018
 keywords: -从 Windows Vista 开始 NDIS_STATUS_WWAN_NETWORK_BLACKLIST 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 0389ceb502c5b1ed6a577c35d72ef394b2cb379e
-ms.sourcegitcommit: 29c2e6dd8a3de3c11822d990adf1edd774f8a136
+ms.openlocfilehash: 1f914384b58e65f1e99ef47714e869b58de68328
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91230019"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96820617"
 ---
 # <a name="ndis_status_wwan_network_blacklist"></a>NDIS_STATUS_WWAN_NETWORK_BLACKLIST
 

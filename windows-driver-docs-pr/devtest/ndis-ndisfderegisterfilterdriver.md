@@ -1,7 +1,6 @@
 ---
 title: 'NdisFDeregisterFilterDriver 规则 (ndis) '
 description: 筛选器驱动程序必须从其 FilterDriverUnload 例程调用 NdisFDeregisterFilterDriver。
-ms.assetid: 24EEB6F6-EEBC-482B-BCAE-DE43277DE899
 ms.date: 05/21/2018
 keywords:
 - 'NdisFDeregisterFilterDriver 规则 (ndis) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 17b35cdce2182b8bb6b18061d773e9d0a0bc837e
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: defddb0bd19eee3106bc034d8981a6c46586e884
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106372"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96819687"
 ---
 # <a name="ndisfderegisterfilterdriver-rule-ndis"></a>NdisFDeregisterFilterDriver 规则 (ndis) 
 
 
-筛选器驱动程序必须从其[**FilterDriverUnload**](../network/unloading-a-filter-driver.md)例程调用[**NdisFDeregisterFilterDriver**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfderegisterfilterdriver) 。
+筛选器驱动程序必须从其 [**FilterDriverUnload**](../network/unloading-a-filter-driver.md)例程调用 [**NdisFDeregisterFilterDriver**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfderegisterfilterdriver) 。
 
 **驱动程序模型： NDIS**
 

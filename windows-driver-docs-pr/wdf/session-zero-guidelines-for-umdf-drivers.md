@@ -1,15 +1,14 @@
 ---
 title: UMDF 驱动程序的初级指南
 description: UMDF 驱动程序的初级指南
-ms.assetid: 67EF6762-AA31-4D35-8EB3-04F9CD34C7D1
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 10c1c8627a830c0d3b4732e5e56107d9c37753da
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 785636177194774236ac07fa74fd8dae60e2f78a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91734313"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96821147"
 ---
 # <a name="session-zero-guidelines-for-umdf-drivers"></a>UMDF 驱动程序的初级指南
 
@@ -25,13 +24,13 @@ ms.locfileid: "91734313"
 
     UMDF 驱动程序可以调用 Windows 函数来执行以下任务：
 
-    -   驱动程序可以调用 **SetupDi * * Xxx* 函数来检索即插即用设备属性。 例如， [OSR USB Fx2 学习工具包的 UMDF 示例驱动程序](/samples/browse/) 调用 [**SetupDiGetDeviceRegistryProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdigetdeviceregistrypropertya) 来检索设备总线类型的 GUID。
-        **注意**   UMDF 驱动程序无法安全地调用许多 **SetupDi * * Xxx*函数，但调用检索设备节点属性的函数是安全的。
+    -   驱动程序可以调用 **SetupDi**_Xxx_ 函数来检索即插即用设备属性。 例如， [OSR USB Fx2 学习工具包的 UMDF 示例驱动程序](/samples/browse/) 调用 [**SetupDiGetDeviceRegistryProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdigetdeviceregistrypropertya) 来检索设备总线类型的 GUID。
+        **注意**  UMDF 驱动程序无法安全地调用许多 **SetupDi**_Xxx_ 函数，但调用检索设备节点属性的函数是安全的。
 
          
 
     -   从手动队列检索 i/o 请求的驱动程序可能会创建一个周期性计时器以轮询队列。 例如， [WudfVhidmini](/samples/browse/) 示例通过调用 [**CreateThreadpoolTimer**](/windows/win32/api/threadpoolapiset/nf-threadpoolapiset-createthreadpooltimer)来注册计时器回调例程，然后通过调用 [**SetThreadpoolTimer**](/windows/win32/api/threadpoolapiset/nf-threadpoolapiset-setthreadpooltimer)来设置一个周期性计时器。
-        **注意**   从版本1.11 开始，UMDF 提供对工作项的支持。 有关详细信息，请参阅 [使用工作项](using-workitems.md)。
+        **注意**  从版本1.11 开始，UMDF 提供对工作项的支持。 有关详细信息，请参阅 [使用工作项](using-workitems.md)。
 
          
 

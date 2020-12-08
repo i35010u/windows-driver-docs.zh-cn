@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ CAMERACONTROL \_ 扩展 \_ FACEAUTH \_ 模式
 description: KSPROPERTY \_ CAMERACONTROL \_ 扩展 \_ FACEAUTH \_ 模式是用于打开和关闭人脸身份验证的属性 ID。
-ms.assetid: 240AABDB-585B-462E-B391-1CB55BA563D5
 keywords:
 - KSPROPERTY_CAMERACONTROL_EXTENDED_FACEAUTH_MODE 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 09/10/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 8acddeae4d3f1adf7dbcc8754d7b7b743f9e3b51
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: faa866deb22845e134318534641e50c753ef26bb
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106714"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96821195"
 ---
 # <a name="ksproperty_cameracontrol_extended_faceauth_mode"></a>KSPROPERTY \_ CAMERACONTROL \_ 扩展 \_ FACEAUTH \_ 模式
 
@@ -45,7 +44,7 @@ ms.locfileid: "90106714"
 <tr class="odd">
 <td><p>版本 1</p></td>
 <td><p>Pin</p></td>
-<td><p>同步</p></td>
+<td><p>Synchronous</p></td>
 </tr>
 </tbody>
 </table>
@@ -69,7 +68,7 @@ ms.locfileid: "90106714"
 </colgroup>
 <thead>
 <tr class="header">
-<th>Flag</th>
+<th>标志</th>
 <th>描述</th>
 </tr>
 </thead>
@@ -96,7 +95,7 @@ ms.locfileid: "90106714"
 
 默认情况下，如果是常规用途 IR 相机，则驱动程序应将 **KSPROPERTY \_ CAMERACONTROL \_ EXTENDED \_ FACEAUTH \_ 模式** 设置为 " **KSCAMERA \_ EXTENDEDPROP \_ FACEAUTH \_ mode \_ DISABLED** "。 否则，它应设置为 **KSCAMERA \_ EXTENDEDPROP \_ FACEAUTH \_ 模式 \_ 背景 \_ 减法** 或 **KSCAMERA \_ EXTENDEDPROP \_ FACEAUTH \_ 模式 \_ 备用 \_ 帧 \_ 照明**。
 
-如果要使用 Windows Hello 以外的一般方案，红外相机应播发 **KSCAMERA \_ EXTENDEDPROP \_ FACEAUTH \_ 模式 \_ ** 。
+如果要使用 Windows Hello 以外的一般方案，红外相机应播发 **KSCAMERA \_ EXTENDEDPROP \_ FACEAUTH \_ 模式 \_** 。
 
 用于人脸登录的 IR 相机应支持 **KSCAMERA \_ EXTENDEDPROP \_ FACEAUTH \_ 模式 \_ 备用 \_ 帧 \_ 照明** 或 **KSCAMERA \_ EXTENDEDPROP \_ FACEAUTH \_ 模式 \_ 背景 \_ 减** 功能它们只支持其中一个标志。
 

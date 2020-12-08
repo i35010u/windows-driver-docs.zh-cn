@@ -1,18 +1,17 @@
 ---
 title: 框架对象摘要
 description: 框架对象摘要
-ms.assetid: 799284a5-91c0-47b0-8f20-75a5f8e2284d
 keywords:
 - framework 对象 WDK KMDF，已列出
 - framework 对象 WDK KMDF，摘要
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a148401bba269b93f3cc55182a540f049083fe5e
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 1ccf6bbef43cb90704f9b7c66d5b935db067ad23
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89190807"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96821107"
 ---
 # <a name="summary-of-framework-objects"></a>框架对象摘要
 
@@ -21,9 +20,9 @@ ms.locfileid: "89190807"
 
 有关回调和方法以及哪些框架适用的列表，请参阅 [WDF 回调和方法摘要](/windows-hardware/drivers/ddi/_wdf/)。
 
-|名称|Handle|目标|默认父级|驱动程序是否可以覆盖默认父级？|“模式”|参考|
+|“属性”|Handle|目的|默认父级|驱动程序是否可以覆盖默认父级？|“模式”|参考|
 |--- |--- |--- |--- |--- |--- |--- |
-|子列表对象|WDFCHILDLIST|表示连接到父设备的子设备的列表。|设备对象|否|KM|[WDF 子列表对象引用](/windows-hardware/drivers/ddi/wdfchildlist/)|
+|子列表对象|WDFCHILDLIST|表示连接到父设备的子设备的列表。|设备对象|否|KM|[WDF Child-List 对象引用](/windows-hardware/drivers/ddi/wdfchildlist/)|
 |集合对象|WDFCOLLECTION|表示对象集合。|驱动程序对象|是|KM/UM|[WDF 集合对象引用](/windows-hardware/drivers/ddi/wdfcollection/)|
 |通用缓冲区对象|WDFCOMMONBUFFER|表示公共缓冲区。|DMA 启用程序对象|否|KM|[WDF 公用缓冲区对象引用](/windows-hardware/drivers/ddi/wdfcommonbuffer/)|
 |设备对象|WDFDEVICE|表示设备。|驱动程序对象|否|KM/UM|[WDF 设备对象引用](/windows-hardware/drivers/ddi/wdfdevice/)|
@@ -52,7 +51,7 @@ ms.locfileid: "89190807"
 |等待-锁定对象|WDFWAITLOCK|表示等待锁。|驱动程序对象|是|KM/UM|[WDF 同步方法](/windows-hardware/drivers/ddi/wdfsync/)|
 |WMI 实例对象|WDFWMIINSTANCE|表示 WMI 数据块的实例。|WMI 提供程序对象|否|KM|[WDF WMI 参考](/windows-hardware/drivers/ddi/wdfwmi/)|
 |WMI 提供程序对象|WDFWMIPROVIDER|表示 WMI 数据块。|设备对象|否|KM|[WDF WMI 参考](/windows-hardware/drivers/ddi/wdfwmi/)|
-|工作项对象|WDFWORKITEM|表示工作项。|无|是|KM/UM|[WDF 工作项对象引用](/windows-hardware/drivers/ddi/wdfworkitem/)|
+|工作项对象|WDFWORKITEM|表示工作项。|无|是|KM/UM|[WDF Work-Item 对象引用](/windows-hardware/drivers/ddi/wdfworkitem/)|
 
 
  

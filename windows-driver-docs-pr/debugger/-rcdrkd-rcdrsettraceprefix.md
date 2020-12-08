@@ -1,7 +1,6 @@
 ---
 title: rcdrkd.rcdrsettraceprefix
 description: Rcdrkd. rcdrsettraceprefix 扩展设置跟踪消息前缀。
-ms.assetid: BFA987B8-7013-4112-A674-064ED59741C0
 keywords:
 - rcdrkd rcdrsettraceprefix Windows 调试
 ms.date: 05/23/2017
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 4e310baaa8536c1043f820fd652d8b588e8c97cc
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 26f78c78c6bbd29bfa393ed1cd186cfb0078143a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89212289"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96821019"
 ---
 # <a name="rcdrkdrcdrsettraceprefix"></a>!rcdrkd.rcdrsettraceprefix
 
 
-**！ Rcdrkd rcdrsettraceprefix**扩展设置跟踪消息前缀。
+**！ Rcdrkd rcdrsettraceprefix** 扩展设置跟踪消息前缀。
 
 ```dbgcmd
 !rcdrkd.rcdrsettraceprefix TracePrefixString 

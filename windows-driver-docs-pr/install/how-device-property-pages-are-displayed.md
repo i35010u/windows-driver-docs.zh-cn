@@ -1,30 +1,29 @@
 ---
 title: 设备属性页的显示方式
 description: 设备属性页的显示方式
-ms.assetid: 14967f38-2f46-475d-a062-afcb7bd3042b
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 59896b3cf839ece04b087989455de5579c662722
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 953b7dbccf6756177f8ca5bac56ffc76f165e632
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63325808"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96821445"
 ---
 # <a name="how-device-property-pages-are-displayed"></a>设备属性页的显示方式
 
 
-设备属性页将显示在以下方面：
+设备属性页的显示方式如下：
 
--   设备管理器显示的属性页的设备的属性将显示任何时间。
+-   设备管理器在显示设备属性的任何时间显示属性页。
 
--   从 Windows 7 开始**设备和打印机**显示属性页任何时间在用户右键单击设备。 若要显示在属性页**设备和打印机**，执行以下操作：
+-   从 Windows 7 开始，无论用户何时右键单击设备， **设备和打印机** 都将显示属性页。 若要在 " **设备和打印机**" 中显示 "属性" 页，请执行以下操作：
 
-    -   右键单击中的图标**设备和打印机**表示连接到系统的设备。
+    -   右键单击 " **设备和打印机** " 中表示连接到系统的设备的图标。
 
-    -   单击**属性**。
+    -   单击 **“属性”**。
 
-    -   上**属性**窗口中，单击**硬件**选项卡，然后依次**属性**。
+    -   在 " **属性** " 窗口中，单击 " **硬件** " 选项卡，然后单击 " **属性**"。
 
  
 

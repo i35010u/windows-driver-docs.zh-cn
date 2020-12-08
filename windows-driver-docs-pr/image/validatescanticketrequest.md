@@ -1,7 +1,6 @@
 ---
 title: ValidateScanTicketRequest 元素
 description: 所需的 ValidateScanTicketRequest 操作元素使客户端能够确定未来扫描操作的设置是否有效。
-ms.assetid: 366b0d71-1494-48fa-94f5-1832d7f119a4
 keywords:
 - ValidateScanTicketRequest 元素图像设备
 topic_type:
@@ -12,19 +11,19 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5e8ae7777343f12162de5f37a4d203b99181244c
-ms.sourcegitcommit: ab64169b631da4db3f0b895600f1c38a22cb7e2e
+ms.openlocfilehash: 0a32416576fa7873014df79bf1ac06a2b10bd8d1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75652929"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96819523"
 ---
 # <a name="validatescanticketrequest-element"></a>ValidateScanTicketRequest 元素
 
 
-所需的**ValidateScanTicketRequest**操作元素使客户端能够确定未来扫描操作的设置是否有效。
+所需的 **ValidateScanTicketRequest** 操作元素使客户端能够确定未来扫描操作的设置是否有效。
 
-<a name="usage"></a>Usage
+<a name="usage"></a>使用情况
 -----
 
 ```xml
@@ -33,7 +32,7 @@ ms.locfileid: "75652929"
 </wscn:ValidateScanTicketRequest>
 ```
 
-<a name="attributes"></a>属性
+<a name="attributes"></a>特性
 ----------
 
 没有特性。
@@ -65,13 +64,13 @@ ms.locfileid: "75652929"
 <a name="remarks"></a>备注
 -------
 
-客户端可以使用**ValidateScanTicketRequest**元素来验证各种设置更改和组合。
+客户端可以使用 **ValidateScanTicketRequest** 元素来验证各种设置更改和组合。
 
-[**ScanTicket**](scanticket.md)包含客户端在将来的扫描操作中要提交的所有设置。 **ScanTicket**只能包含客户端要在扫描程序中替代的处理元素，也可以包含 WSD 扫描服务支持的每个可能的元素。
+[**ScanTicket**](scanticket.md) 包含客户端在将来的扫描操作中要提交的所有设置。 **ScanTicket** 只能包含客户端要在扫描程序中替代的处理元素，也可以包含 WSD 扫描服务支持的每个可能的元素。
 
-如果 WSD 扫描服务成功处理**ValidateScanTicketRequest**，它将在[**ValidateScanTicketResponse**](validatescanticketresponse.md)操作中返回其验证信息。 否则，扫描服务应返回相应的错误代码。
+如果 WSD 扫描服务成功处理 **ValidateScanTicketRequest**，它将在 [**ValidateScanTicketResponse**](validatescanticketresponse.md) 操作中返回其验证信息。 否则，扫描服务应返回相应的错误代码。
 
-此操作可以返回所有常见的[**WSD 扫描服务操作错误代码**](common-wsd-scan-service-operation-error-codes.md)。 有关如何报告错误的详细信息，请参阅[WSD 扫描服务操作错误报告](wsd-scan-service-operation-error-reporting.md)。
+此操作可以返回所有常见的 [**WSD 扫描服务操作错误代码**](common-wsd-scan-service-operation-error-codes.md)。 有关如何报告错误的详细信息，请参阅 [WSD 扫描服务操作错误报告](wsd-scan-service-operation-error-reporting.md)。
 
 此操作还可能会返回以下错误代码：
 
@@ -81,10 +80,10 @@ ms.locfileid: "75652929"
 
     | 错误属性 | 定义                                                                                                                                                     |
     |----------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|
-    | 代码\[\]       | soap：发送方                                                                                                                                                    |
+    | \[代码\]       | soap：发送方                                                                                                                                                    |
     | \[子代码\]    | wscn:ClientErrorConflictingRequiredParameters                                                                                                                  |
     | \[原因\]     | DocumentParameters 元素中的多个元素的 MustHonor 设置为 true，但将设置为 true 的所有设置都将导致扫描器设备冲突。 |
-    | \[详细信息\]     | 无                                                                                                                                                           |
+    | Detail\[\]     | 无                                                                                                                                                           |
 
      
 
@@ -197,7 +196,7 @@ ms.locfileid: "75652929"
 </soap:Envelope>
 ```
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [**ScanTicket**](scanticket.md)
 

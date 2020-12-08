@@ -1,15 +1,14 @@
 ---
 title: WindowsInfo
 description: WindowsInfo
-ms.assetid: 62b3a7d3-503e-4815-aadb-8c67318c54e0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 26c4efa92e52a90f67da092648d5470d78db9008
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: 60e06f3b3554ac2b3510ef4284a6d648bdb67f7c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89402729"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96820630"
 ---
 # <a name="windowsinfo"></a>WindowsInfo
 
@@ -42,7 +41,7 @@ WindowsInfo 元素是 [WINDOWSINFO XML 架构](windowsinfo-xml-schema.md)的父�
 <thead>
 <tr class="header">
 <th>元素</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>

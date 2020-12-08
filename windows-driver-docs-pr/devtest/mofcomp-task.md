@@ -1,15 +1,14 @@
 ---
 title: Mofcomp 任务
 description: Windows 驱动程序工具包 (WDK) 提供 Mofcomp.exe 任务，以便在使用 MSBuld 构建驱动程序时可以运行 Mofcomp.exe 工具。
-ms.assetid: 94B70223-393F-49C9-B2C9-34FF64D26454
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ff7f743bc549171b7a374c4e40934688486d0198
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: d1fe53cb89e8edbd4a346d5363b1fb67025e8541
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89382729"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96819719"
 ---
 # <a name="mofcomp-task"></a>Mofcomp 任务
 
@@ -48,7 +47,7 @@ mofcomp.exe -WMI b.mof
 <th align="left">Mofcomp.exe 任务参数</th>
 <th align="left">项元数据</th>
 <th align="left">工具切换</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -151,7 +150,7 @@ mofcomp.exe -WMI b.mof
 <td align="left">可选的布尔参数。 请求编译器仅执行语法检查并打印相应的错误消息。 此开关不能使用其他开关。</td>
 </tr>
 <tr class="even">
-<td align="left">ToolPath</td>
+<td align="left"> ToolPath</td>
 <td align="left">$ (MofcompToolPath) </td>
 <td align="left"></td>
 <td align="left">可选的字符串参数。 允许您指定该工具所在的文件夹的完整路径。</td>
@@ -169,7 +168,7 @@ mofcomp.exe -WMI b.mof
 <td align="left">可选的布尔参数。 如果为 true，则跟踪此任务的文件访问模式。</td>
 </tr>
 <tr class="odd">
-<td align="left">UserName</td>
+<td align="left">用户名</td>
 <td align="left">% (Mofcomp.exe) </td>
 <td align="left"><strong>-U：</strong><em> &lt; 用户名 &gt; </em></td>
 <td align="left">可选的字符串参数。 指定用户名作为登录用户的名称。</td>

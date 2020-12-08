@@ -1,7 +1,6 @@
 ---
 title: finishText XML 元素
 description: finishText XML 元素
-ms.assetid: b8c63f75-e0d3-458f-9265-a19d6f64ac6b
 keywords:
 - finishText XML 元素设备和驱动程序安装
 topic_type:
@@ -12,12 +11,12 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 4a7ca46aad152dd1c4050816b4ce5172db5ccfaa
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 11cdfcba8bcfe866b778bdbd1b5cc53ebeb3ee35
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89095531"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96820197"
 ---
 # <a name="finishtext-xml-element"></a>finishText XML 元素
 
@@ -83,7 +82,7 @@ dpinst>
 
 如果未指定 **finishText** 元素，则 DPInst 会显示默认完成文本，指示安装是成功还是失败。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**finishTitle**](finishtitle-xml-element.md)

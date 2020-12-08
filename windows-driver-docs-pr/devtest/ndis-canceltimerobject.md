@@ -1,7 +1,6 @@
 ---
 title: 'CancelTimerObject 规则 (ndis) '
 description: CancelTimerObject 规则指定按替代顺序调用 NdisSetTimerObject 和 NdisCancelTimerObject。 最终的目标是确保在 MiniportHaltEx 结束时取消所有计时器。
-ms.assetid: F31AF8D2-4F40-43A3-893E-53FCC2299730
 ms.date: 05/21/2018
 keywords:
 - 'CancelTimerObject 规则 (ndis) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 3a110cba5aa8325f3894237b1376b1ac95756aaa
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 5afcbdb20b83a6ae1e9ce2d520a10e83ac1ef6cb
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105488"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96819705"
 ---
 # <a name="canceltimerobject-rule-ndis"></a>CancelTimerObject 规则 (ndis) 
 
 
-**CancelTimerObject**规则指定按替代顺序调用[**NdisSetTimerObject**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndissettimerobject)和[**NdisCancelTimerObject**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscanceltimerobject) 。 最终的目标是确保在 [*MiniportHaltEx*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_halt) 结束时取消所有计时器。
+**CancelTimerObject** 规则指定按替代顺序调用 [**NdisSetTimerObject**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndissettimerobject)和 [**NdisCancelTimerObject**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscanceltimerobject) 。 最终的目标是确保在 [*MiniportHaltEx*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_halt) 结束时取消所有计时器。
 
 此规则使用三种不同的状态。 设置或取消计时器时，状态将更改。 如果在 [*MiniportHaltEx*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_halt) 退出时仍设置计时器，则规则将报告缺陷。
 

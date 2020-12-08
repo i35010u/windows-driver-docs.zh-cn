@@ -1,15 +1,14 @@
 ---
 title: Storport 事件日志扩展
 description: Storport 事件日志扩展
-ms.assetid: 03b0bdef-cefa-4ad8-b9bf-a5f6b5f64cc6
 ms.date: 06/13/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 21ec591f38bf1faf4f76b4643591f085104f4fa0
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: cebfad51150a453e96e8cee2958b3086a8bc7e7c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89184657"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96820525"
 ---
 # <a name="storport-event-log-extensions"></a>Storport 事件日志扩展
 

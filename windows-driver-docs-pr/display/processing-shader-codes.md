@@ -1,7 +1,6 @@
 ---
 title: 处理着色器代码
 description: 处理着色器代码
-ms.assetid: c858766c-b414-4971-b4d9-23ec94aca8ea
 keywords:
 - 用户模式显示驱动程序 WDK Windows Vista，着色器代码
 - 着色器代码 WDK 显示
@@ -13,12 +12,12 @@ keywords:
 - 声明 WDK 显示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a832ee11babbdc699da0b940da5ea79e072dcd53
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 6b0afb0d5c9f7f71fc894b63e8d3331c281ae4c9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89066440"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96820375"
 ---
 # <a name="processing-shader-codes"></a>处理着色器代码
 
@@ -29,7 +28,7 @@ ms.locfileid: "89066440"
 
 有关各个着色器代码的格式和组成每个着色器代码的标记的详细信息，请参阅 [Direct3D 着色器代码](./direct3d-shader-codes.md)。
 
-**注意**   当应用程序创建顶点着色器、像素着色器和顶点声明时，每个以[结束标记](./end-token.md)结尾的着色器代码和声明。 当 Direct3D 运行时依次将顶点和像素着色器创建请求传递给用户模式显示驱动程序时，请求附带的顶点着色器代码将以结束标记结束。 但是，当运行时传递顶点声明创建请求时，请求附带的顶点声明不会以结束标记结束。
+**注意**   当应用程序创建顶点着色器、像素着色器和顶点声明时，每个以 [结束标记](./end-token.md)结尾的着色器代码和声明。 当 Direct3D 运行时依次将顶点和像素着色器创建请求传递给用户模式显示驱动程序时，请求附带的顶点着色器代码将以结束标记结束。 但是，当运行时传递顶点声明创建请求时，请求附带的顶点声明不会以结束标记结束。
 
  
 

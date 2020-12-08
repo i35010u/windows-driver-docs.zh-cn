@@ -1,18 +1,17 @@
 ---
 title: 编写后操作回调例程
 description: 编写后操作回调例程
-ms.assetid: 4940e38d-107b-45c4-aa71-6e8543330f39
 keywords:
 - postoperation 回调例程 WDK 文件系统微筛选器，写入
 - 编写回调例程
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3cca24a0f84197359175532fae543a07d13885f8
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 6c9b187838a12a04203125b146f92039c9f51246
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89063200"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96821451"
 ---
 # <a name="writing-postoperation-callback-routines"></a>编写后操作回调例程
 
@@ -30,7 +29,7 @@ Postoperation 回调例程可以执行下列操作之一：
 
 [**Postoperation 回调例程**](/windows-hardware/drivers/ddi/fltkernel/nc-fltkernel-pflt_post_operation_callback) 与旧式文件系统筛选器驱动程序中使用的 *完成例程* 类似。
 
-微筛选器驱动程序以注册[**preoperation 回调例程**](/windows-hardware/drivers/ddi/fltkernel/nc-fltkernel-pflt_pre_operation_callback)的相同方式为特定类型的 i/o 操作注册一个 postoperation 回调例程，即，将回调例程的入口点存储在[**FLT \_ 注册**](/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_registration)结构的**OperationRegistration**成员中，微筛选器驱动程序将该入口点作为参数[**传递到 FltRegisterFilter 的**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltregisterfilter) **DriverEntry**例程中。
+微筛选器驱动程序以注册 [**preoperation 回调例程**](/windows-hardware/drivers/ddi/fltkernel/nc-fltkernel-pflt_pre_operation_callback)的相同方式为特定类型的 i/o 操作注册一个 postoperation 回调例程，即，将回调例程的入口点存储在 [**FLT \_ 注册**](/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_registration)结构的 **OperationRegistration** 成员中，微筛选器驱动程序将该入口点作为参数 [**传递到 FltRegisterFilter 的**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltregisterfilter) **DriverEntry** 例程中。
 
 微筛选器驱动程序只接收到其已为其注册 preoperation 或 postoperation 回调例程的 i/o 操作类型。 微筛选器驱动程序可以为给定类型的 i/o 操作注册一个 preoperation 回调例程，而无需注册 postoperation 回调，反之亦然。
 

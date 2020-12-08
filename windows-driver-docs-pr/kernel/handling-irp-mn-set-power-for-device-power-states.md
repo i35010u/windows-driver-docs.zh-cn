@@ -1,7 +1,6 @@
 ---
 title: 处理设备电源状态的 IRP_MN_SET_POWER
 description: 处理设备电源状态的 IRP_MN_SET_POWER
-ms.assetid: b4a19995-7933-41f7-b951-15ce0e4627da
 keywords:
 - IRP_MN_SET_POWER
 - 设备电源状态 WDK 内核
@@ -13,12 +12,12 @@ keywords:
 - 调度例程 WDK 电源管理
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1ce28be980eb553714acf284627c6ed274aaa3f9
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 3dded567a565e20d442b296ef3e4e1e94d1ccdd4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89188285"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96821437"
 ---
 # <a name="handling-irp_mn_set_power-for-device-power-states"></a>处理 IRP \_ MN \_ 设置 \_ 设备电源状态的电源
 
@@ -26,7 +25,7 @@ ms.locfileid: "89188285"
 
 
 
-设备设置-power IRP 请求为单个设备更改状态，并将其发送到设备堆栈中的所有驱动程序。 此类 IRP 在 i/o 堆栈位置的 DevicePowerState**成员中**指定了**DevicePowerState** 。
+设备设置-power IRP 请求为单个设备更改状态，并将其发送到设备堆栈中的所有驱动程序。 此类 IRP 在 i/o 堆栈位置的 DevicePowerState **成员中** 指定了 **DevicePowerState** 。
 
 驱动程序在关闭后，会处理关闭的 Irp。 对于开机 Irp，驱动程序将 [*IoCompletion*](/windows-hardware/drivers/ddi/wdm/nc-wdm-io_completion_routine) 例程设置为 irp 向下传递堆栈，然后处理 *IoCompletion* 例程中的 irp，因为 irp 将在堆栈上传输。 典型设备堆栈中的驱动程序将处理设备集电源 IRP，如下所示：
 
@@ -46,7 +45,7 @@ ms.locfileid: "89188285"
 
 每个驱动程序都应跟踪其设备的电源状态。 电源管理器不会将此信息提供给驱动程序。
 
-处理 [**IRP \_ MN \_ 设置 \_ **](./irp-mn-set-power.md) 设备电源状态的电源请求时，驱动程序应该尽快从 *DispatchPower* 例程返回。 对于由处理同一 IRP 的代码发出信号的内核事件，驱动程序不得在其 *DispatchPower* 例程中等待。 由于 power Irp 在整个系统中同步，因此可能会发生死锁。
+处理 [**IRP \_ MN \_ 设置 \_**](./irp-mn-set-power.md) 设备电源状态的电源请求时，驱动程序应该尽快从 *DispatchPower* 例程返回。 对于由处理同一 IRP 的代码发出信号的内核事件，驱动程序不得在其 *DispatchPower* 例程中等待。 由于 power Irp 在整个系统中同步，因此可能会发生死锁。
 
 为确保最高级别的系统性能（特别是对于多媒体应用程序），驱动程序应在中断请求级别执行耗时的操作， (IRQL) 等于被动 \_ 级别。 若要执行 IRQL = 被动级别的操作 \_ ，驱动程序可以使用 [专用线程](device-dedicated-threads.md) 或 [系统工作线程](system-worker-threads.md)。 有关优化多媒体平台驱动程序性能的指南，请参阅 [流媒体设备设计指南](../stream/index.md)。
 

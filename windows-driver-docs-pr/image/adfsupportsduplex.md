@@ -1,9 +1,8 @@
 ---
 title: ADFSupportsDuplex 元素
-description: 所需的 ADFSupportsDuplex 元素指定附加的自动文档送纸器 (ADF) 是否支持扫描介质的两面。
-ms.assetid: 0e85243a-5b15-4b51-9608-c8036639c735
+description: 必需的 ADFSupportsDuplex 元素指定附加的自动文档送纸器 (ADF) 是否支持扫描介质的两侧。
 keywords:
-- ADFSupportsDuplex 元素成像设备
+- ADFSupportsDuplex 元素图像设备
 topic_type:
 - apiref
 api_name:
@@ -12,19 +11,19 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 85e2fc11b83db7de19411f95922f59037bf37cd2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 954d4da42de44b6f8d2dd92233fde49226e58569
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63367073"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96819627"
 ---
 # <a name="adfsupportsduplex-element"></a>ADFSupportsDuplex 元素
 
 
-所需**ADFSupportsDuplex**元素指定附加的自动文档送纸器 (ADF) 是否支持扫描介质的两面。
+必需的 **ADFSupportsDuplex** 元素指定附加的自动文档送纸器 (ADF) 是否支持扫描介质的两侧。
 
-<a name="usage"></a>用法
+<a name="usage"></a>使用情况
 -----
 
 ```xml
@@ -41,12 +40,12 @@ ms.locfileid: "63367073"
 <a name="text-value"></a>文本值
 ----------
 
-必需。 一个布尔值，必须为 0，1，为 false，或，则返回 true。**false**或 **，则返回 true**
+必需。 必须为0、1、false 或 true 的布尔值。**false** 或 **true**
 
 ## <a name="child-elements"></a>子元素
 
 
-没有子元素。
+没有任何子元素。
 
 ## <a name="parent-elements"></a>父元素
 
@@ -70,9 +69,9 @@ ms.locfileid: "63367073"
 <a name="remarks"></a>备注
 -------
 
-如果扫描设备已支持双工扫描 ADF，WSD 扫描服务应返回 1 (**，则返回 true**); 否则为它应返回 0 (**false**)。
+如果扫描设备的 ADF 支持双工扫描，则 WSD 扫描服务应返回 1 (**true**) ;否则，它应返回 0 (**false**) 。
 
-不能扩展此元素允许的值。
+不能扩展此元素的允许值。
 
 ## <a name="see-also"></a>请参阅
 

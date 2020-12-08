@@ -1,7 +1,6 @@
 ---
 title: 发送 HID 报告
 description: 发送 HID 报告
-ms.assetid: a4571b79-847b-4db0-be02-ac2f922162bb
 keywords:
 - 报告 WDK HID，发送
 - 发送报表
@@ -11,18 +10,18 @@ keywords:
 - HID 报告 WDK，发送
 ms.date: 09/10/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 475772583fe7e072ca1a31662a3f12527028d81f
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 96b1598336f1df02edfae74595b539aa135ab08e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91734367"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96820329"
 ---
 # <a name="sending-hid-reports"></a>发送 HID 报告
 
 本部分介绍用户模式应用程序和内核模式驱动程序如何将 HID 报表发送到 [hid 集合](hid-collections.md)。
 
-## <a name="sending-hid-reports-by-user-mode-applications"></a>通过用户模式应用程序发送 HID 报表
+## <a name="sending-hid-reports-by-user-mode-applications"></a>通过 User-Mode 应用程序发送 HID 报表
 
 用户模式应用程序应使用 [WriteFile](/windows/win32/api/fileapi/nf-fileapi-writefile) 作为其主要方法，将输出报告持续发送到 HID 集合。 应用程序还可以使用 **HidD_SetXxx** 例程将输出报告和功能报告发送到集合。 但是，应用程序应仅使用这些例程来设置集合的当前状态。 某些设备可能不支持 [HidD_SetOutputReport](/windows-hardware/drivers/ddi/hidsdi/nf-hidsdi-hidd_setoutputreport) ，如果使用此例程，它们将不会响应。
 
@@ -38,7 +37,7 @@ ms.locfileid: "91734367"
 
 [HidD_SetFeature](/windows-hardware/drivers/ddi/hidsdi/nf-hidsdi-hidd_setfeature) 向 HID 集合发送功能报表。
 
-## <a name="sending-hid-reports-by-kernel-mode-drivers"></a>通过内核模式驱动程序发送 HID 报表
+## <a name="sending-hid-reports-by-kernel-mode-drivers"></a>Kernel-Mode 驱动程序发送 HID 报表
 
 内核模式驱动程序应使用 [IRP_MJ_WRITE](../ifs/irp-mj-write.md) 请求作为其主要方法，将输出报告持续发送到 HID 集合。 驱动程序还可以使用 **IOCTL_HID_SET_Xxx** 请求将输出报告和功能报告发送到集合。 但是，驱动程序应仅使用这些 i/o 请求来设置集合的当前状态。 某些设备可能不支持 [IOCTL_HID_SET_OUTPUT_REPORT](/windows-hardware/drivers/ddi/hidclass/ni-hidclass-ioctl_hid_set_output_report) ，并将在使用此请求时停止响应。
 

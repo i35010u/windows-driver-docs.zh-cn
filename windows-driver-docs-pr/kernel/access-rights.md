@@ -1,7 +1,6 @@
 ---
 title: 访问权限
 description: 访问权限
-ms.assetid: 518e60db-7058-4ebe-8640-eb8f6b9e7645
 keywords:
 - 访问权限 WDK 对象
 - 一般访问权限 WDK 对象
@@ -10,25 +9,25 @@ keywords:
 - 对象访问权限 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d5e5a83fbad1512d095f58338da6446e77fe2d3c
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 9bd59b43b30a75c9fc4bc2ca2071683f19fcb5f5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89184797"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96820677"
 ---
 # <a name="access-rights"></a>访问权限
 
 
-*访问*权限是对对象执行特定操作的权限。 例如，"文件 \_ 读取 \_ 数据访问权限" 指定从文件读取的权限。
+*访问* 权限是对对象执行特定操作的权限。 例如，"文件 \_ 读取 \_ 数据访问权限" 指定从文件读取的权限。
 
 打开对象的句柄时，需要指定一组与可以对对象执行的操作相对应的访问权限。 系统对照对象的安全描述符检查指定的访问权限，以查看当前用户是否允许每个操作。  (有关详细信息，请参阅 [安全描述符](../ifs/security-descriptors.md)。 ) 
 
 访问权限分为两种类型：
 
-*特定*访问权限是执行单个操作的权限。 具体的访问权限取决于对象的类型。
+*特定* 访问权限是执行单个操作的权限。 具体的访问权限取决于对象的类型。
 
-*一般*访问权限是一种执行一组类似操作的权限。 泛型访问权限独立于对象的类型。
+*一般* 访问权限是一种执行一组类似操作的权限。 泛型访问权限独立于对象的类型。
 
 *标准访问权限* 是适用于所有对象类型的特定访问权限。 例如，删除访问权限是删除对象的权限，而不考虑类型。 有关可用的标准访问权限的详细信息，请参阅 [**访问 \_ 掩码**](access-mask.md)。
 

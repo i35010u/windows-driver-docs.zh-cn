@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ BDA \_ 节点 \_ 类型
 description: 客户端使用 KSPROPERTY \_ BDA \_ 节点 \_ 类型来检索节点类型的列表。
-ms.assetid: 8fe72434-3635-4c2c-a72a-1fd398e488d8
 keywords:
 - KSPROPERTY_BDA_NODE_TYPES 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fb189f49541cefd5635690f384964c1dd2334410
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 695372a667d32fd3b0e4d2db49dab895dd57c617
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89191109"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96820467"
 ---
 # <a name="ksproperty_bda_node_types"></a>KSPROPERTY \_ BDA \_ 节点 \_ 类型
 
@@ -82,7 +81,7 @@ ms.locfileid: "89191109"
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**BdaPropertyNodeTypes**](/windows-hardware/drivers/ddi/bdasup/nf-bdasup-bdapropertynodetypes)

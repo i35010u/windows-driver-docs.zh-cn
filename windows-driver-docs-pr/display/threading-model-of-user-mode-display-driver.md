@@ -1,7 +1,6 @@
 ---
 title: 用户模式显示驱动程序的线程模型
 description: 用户模式显示驱动程序的线程模型
-ms.assetid: 43bb6032-5f34-434b-8404-aef6a424a2ee
 keywords:
 - 线程 WDK 显示，用户模式驱动程序
 - 同步 WDK 显示，用户模式驱动程序
@@ -9,12 +8,12 @@ keywords:
 - 用户模式显示驱动程序 WDK Windows Vista，线程处理
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 09afd295543793771a94892afb893506ba59e48a
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 2c627b7e36eef3d0a0f6f95e0abde41108ad6eaa
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89063750"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96820789"
 ---
 # <a name="threading-model-of-user-mode-display-driver"></a>用户模式显示驱动程序的线程模型
 
@@ -28,7 +27,7 @@ ms.locfileid: "89063750"
 
 -   应用程序可以在两个不同的线程上使用一台 Direct3D 设备，该9.0 设备与 DirectX 5.0 运行时创建的 Microsoft DirectDraw 设备一起创建。
 
-**注意**   使用同一个显示设备的两个或多个线程永远不能同时在用户模式显示驱动程序中运行。
+**注意**   使用同一个显示设备的两个或多个线程永远不能同时在用户模式显示驱动程序中运行。
 
  
 

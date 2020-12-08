@@ -1,15 +1,14 @@
 ---
 title: 查看热点身份验证示例
 description: 查看热点身份验证示例
-ms.assetid: 8ff2ed49-489e-4865-9eb5-0739c4e7a627
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 91d64775b2751cd6fba122ceac46afc9f0c849ba
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 69ef47457ceedd55613f9f50f6cba2af4d8a0d46
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89214796"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96821401"
 ---
 # <a name="review-the-hotspot-authentication-sample"></a>查看热点身份验证示例
 

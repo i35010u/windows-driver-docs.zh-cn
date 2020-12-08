@@ -1,7 +1,6 @@
 ---
 title: GetActiveJobsResponse 元素
 description: 必需的 GetActiveJobsResponse 元素返回所有当前活动扫描作业的与作业相关的变量的摘要。
-ms.assetid: 77efef7f-451d-49f8-80c1-6ab12c98ee7b
 keywords:
 - GetActiveJobsResponse 元素图像设备
 topic_type:
@@ -12,19 +11,19 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 02e604cc11af151776ea059e2102abc8c0439d1d
-ms.sourcegitcommit: ab64169b631da4db3f0b895600f1c38a22cb7e2e
+ms.openlocfilehash: 12cd15b5f740b20dc86cb9f5f3487a8905266752
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75652977"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96819555"
 ---
 # <a name="getactivejobsresponse-element"></a>GetActiveJobsResponse 元素
 
 
-必需的**GetActiveJobsResponse**元素返回所有当前活动扫描作业的与作业相关的变量的摘要。
+必需的 **GetActiveJobsResponse** 元素返回所有当前活动扫描作业的与作业相关的变量的摘要。
 
-<a name="usage"></a>Usage
+<a name="usage"></a>使用情况
 -----
 
 ```xml
@@ -33,7 +32,7 @@ ms.locfileid: "75652977"
 </wscn:GetActiveJobsResponse>
 ```
 
-<a name="attributes"></a>属性
+<a name="attributes"></a>特性
 ----------
 
 没有特性。
@@ -65,11 +64,11 @@ ms.locfileid: "75652977"
 <a name="remarks"></a>备注
 -------
 
-WSD 扫描服务必须支持**GetActiveJobsResponse**操作。
+WSD 扫描服务必须支持 **GetActiveJobsResponse** 操作。
 
-客户端可以调用[**GetActiveJobsRequest**](getactivejobsrequest.md)来确定所有当前活动扫描作业的与作业相关的变量的值。 WSD 扫描服务必须使用包含客户端请求的信息的**GetActiveJobsResponse**元素或适当的错误代码进行响应。
+客户端可以调用 [**GetActiveJobsRequest**](getactivejobsrequest.md) 来确定所有当前活动扫描作业的与作业相关的变量的值。 WSD 扫描服务必须使用包含客户端请求的信息的 **GetActiveJobsResponse** 元素或适当的错误代码进行响应。
 
-**GetActiveJobsResponse**包含一个[**ActiveJobs**](activejobs.md)元素，该元素包含所有作业的摘要。
+**GetActiveJobsResponse** 包含一个 [**ActiveJobs**](activejobs.md) 元素，该元素包含所有作业的摘要。
 
 <a name="examples"></a>示例
 --------
@@ -153,7 +152,7 @@ WSD 扫描服务必须支持**GetActiveJobsResponse**操作。
 </soap:Envelope>
 ```
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**ActiveJobs**](activejobs.md)

@@ -1,24 +1,23 @@
 ---
 title: 请求显示自定义 UI
 description: 请求显示自定义 UI
-ms.assetid: 4b7366d9-e55a-4b24-b75f-a5f133b80ca7
 keywords:
 - 自定义 UI WDK 本机 802.11 IHV UI 扩展 DLL，请求显示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 79ad05b811c94bd065f3afe754c4b6408cfed58b
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 2f321a23c515974110c96759d020b2a619ac4541
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91732525"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96820009"
 ---
 # <a name="requesting-the-display-of-a-custom-ui"></a>请求显示自定义 UI
 
 
 
 
- 
+ 
 
 本机 802.11 IHV 扩展 DLL 可以通过本机 802.11 IHV UI 扩展 DLL 请求 (UI) 中显示自定义用户界面。 例如，IHV 扩展 DLL 可能会请求向显示自定义 UI：
 
@@ -28,7 +27,7 @@ ms.locfileid: "91732525"
 
 -   向最终用户通知 WLAN 网络身份验证的结果。
 
-若要启动自定义 UI 或显示通知，本机 802.11 IHV 扩展 DLL 将调用[**Dot11ExtSendUIRequest**](/windows-hardware/drivers/ddi/wlanihv/nc-wlanihv-dot11ext_send_ui_request) ，并通过此函数的*pIhvUIRequest*参数将指针传递到[**DOT11EXT \_ IHV \_ UI \_ 请求**](/windows-hardware/drivers/ddi/wlanihv/ns-wlanihv-_dot11ext_ihv_ui_request)结构。
+若要启动自定义 UI 或显示通知，本机 802.11 IHV 扩展 DLL 将调用 [**Dot11ExtSendUIRequest**](/windows-hardware/drivers/ddi/wlanihv/nc-wlanihv-dot11ext_send_ui_request) ，并通过此函数的 *pIhvUIRequest* 参数将指针传递到 [**DOT11EXT \_ IHV \_ UI \_ 请求**](/windows-hardware/drivers/ddi/wlanihv/ns-wlanihv-_dot11ext_ihv_ui_request)结构。
 
 通过 [**DOT11EXT \_ IHV \_ UI \_ 请求**](/windows-hardware/drivers/ddi/wlanihv/ns-wlanihv-_dot11ext_ihv_ui_request) 结构，本机 802.11 ihv 扩展 DLL 通过以下数据指定自定义 UI：
 
@@ -48,6 +47,6 @@ ms.locfileid: "91732525"
 
 -   如果适配器正在连接到 WLAN 网络，请求将显示为标准网络连接用户界面中的一组向导页面。 有关此过程的详细信息，请参阅在 [网络连接向导中显示自定义 UI 页面](displaying-custom-ui-pages-within-the-network-connection-wizard.md)。
 
- 
+ 
 
- 
+ 

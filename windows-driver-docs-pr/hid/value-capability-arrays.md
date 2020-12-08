@@ -1,7 +1,6 @@
 ---
 title: 值功能数组
 description: 值功能数组
-ms.assetid: d447dda6-a1e5-4e57-b06f-f79f8662c236
 keywords:
 - 价值功能阵列 WDK HID
 - 阵列 WDK HID
@@ -9,12 +8,12 @@ keywords:
 - 用法值阵列 WDK HID
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7035c432de73922c90789229c6eb8cf7b24a682a
-ms.sourcegitcommit: 9145bffd4cc3b990a9ebff43b588db6ef2001f5d
+ms.openlocfilehash: d40428251bd2f4241d8e7d6768f8d450f4b6ad71
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/09/2020
-ms.locfileid: "89592447"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96820281"
 ---
 # <a name="value-capability-arrays"></a>值功能数组
 
@@ -22,7 +21,7 @@ ms.locfileid: "89592447"
 
 
 
-*值功能数组*包含有关特定类型的 HID 报表的[顶级集合](top-level-collections.md)支持的值使用情况的信息。 有关集合的值功能数组的信息包含在其 [**HIDP \_ cap**](/windows-hardware/drivers/ddi/hidpi/ns-hidpi-_hidp_caps) 结构中。
+*值功能数组* 包含有关特定类型的 HID 报表的 [顶级集合](top-level-collections.md)支持的值使用情况的信息。 有关集合的值功能数组的信息包含在其 [**HIDP \_ cap**](/windows-hardware/drivers/ddi/hidpi/ns-hidpi-_hidp_caps) 结构中。
 
 用户模式应用程序或内核模式驱动程序使用以下 [HIDClass 支持例程](/windows-hardware/drivers/ddi/index) 之一获取按钮功能信息：
 

@@ -1,7 +1,6 @@
 ---
 title: 'StorPortFindAdapter 规则 (storport) '
 description: HwStorFindAdapter 例程必须在端口 \_ 配置信息结构中设置 MaximumTransferLength 和 NumberOfPhysicalBreaks 字段 \_ 。
-ms.assetid: 8BE79E99-078E-4CCE-A6C1-0DEB1F1252DA
 ms.date: 05/21/2018
 keywords:
 - 'StorPortFindAdapter 规则 (storport) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: ebaa10675b2af0da4a0bddad7d842474d989ca83
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 6335dce894f1a6297c88870274dd0712d44dcd72
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105240"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96820851"
 ---
 # <a name="storportfindadapter-rule-storport"></a>StorPortFindAdapter 规则 (storport) 
 
 
-[**HwStorFindAdapter**](/windows-hardware/drivers/ddi/storport/nc-storport-hw_find_adapter)例程必须在**端口 \_ 配置 \_ 信息**结构中设置**MaximumTransferLength**和**NumberOfPhysicalBreaks**字段。 默认情况下，这两个字段的值均为 **SP \_ 未初始化 \_ 值**。 如果在退出**FindAdapter**时，这些字段中的任一字段仍设置为** \_ 未初始化的 SP \_ 值**，则驱动程序将无法通过该规则。
+[**HwStorFindAdapter**](/windows-hardware/drivers/ddi/storport/nc-storport-hw_find_adapter)例程必须在 **端口 \_ 配置 \_ 信息** 结构中设置 **MaximumTransferLength** 和 **NumberOfPhysicalBreaks** 字段。 默认情况下，这两个字段的值均为 **SP \_ 未初始化 \_ 值**。 如果在退出 **FindAdapter** 时，这些字段中的任一字段仍设置为 **\_ 未初始化的 SP \_ 值**，则驱动程序将无法通过该规则。
 
 **驱动程序模型： Storport**
 

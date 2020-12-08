@@ -1,19 +1,18 @@
 ---
 title: 监视驱动程序验证程序
 description: 监视驱动程序验证程序
-ms.assetid: 58b672b8-66f3-436b-900b-11bb94575fb6
 keywords:
 - 驱动程序验证程序 WDK，监视
 - 驱动程序验证器管理器
 - 验证程序实用工具
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1e714836517f0317a7f3205a1f7e49320cf936d0
-ms.sourcegitcommit: 2244845d5c74f5d260de1e1a994ae3cdcfaaa90a
+ms.openlocfilehash: 42ec30ad522c8d1dfaaa4eaf9317a0656293d46f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/09/2020
-ms.locfileid: "94386090"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96819717"
 ---
 # <a name="monitoring-driver-verifier"></a>监视驱动程序验证程序
 

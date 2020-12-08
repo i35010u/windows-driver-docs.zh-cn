@@ -1,18 +1,17 @@
 ---
 title: 静态工具和 CodeQL
 description: 在 Windows 驱动程序源代码中使用静态工具和 CodeQL 来发现并修复任何被视为 Must-Fix 的问题
-ms.assetid: 134a5889-8ab9-4954-a10f-ac6fbafcd207
 keywords:
 - 动态验证工具 WDK
 - 静态验证工具 WDK
 ms.date: 12/03/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 10457aa08e5fad1b4ebd82fe3a0ddd420fa02bdf
-ms.sourcegitcommit: a78a2a85e3c012a8e07a1f7709ff2ce0042e643a
+ms.openlocfilehash: 7716d243dd735d5b7548634c31005fd34617a89c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96557441"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96819673"
 ---
 # <a name="codeql-and-the-static-tools-logo-test"></a>CodeQL 和静态工具徽标测试
 

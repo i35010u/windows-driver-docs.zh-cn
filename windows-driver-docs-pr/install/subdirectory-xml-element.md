@@ -1,7 +1,6 @@
 ---
 title: subDirectory XML 元素
 description: subDirectory XML 元素
-ms.assetid: 41f86668-148e-4d7c-89b8-e3c21efffd7b
 keywords:
 - 子目录 XML 元素设备和驱动程序安装
 topic_type:
@@ -12,19 +11,19 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 53d118c1b322a503fefaee5dc3721738e4cb7e47
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 1b253b7337d1cb2295172fcf832d78d3e3fd916a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89096207"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96820701"
 ---
 # <a name="subdirectory-xml-element"></a>subDirectory XML 元素
 
 
 \[DIFx 已弃用，有关详细信息，请参阅 [DIFx 指导原则](./difx-guidelines.md)。\]
 
-**子目录**XML 元素指定 DPInst 工作目录下的一个或所有子目录。
+**子目录** XML 元素指定 DPInst 工作目录下的一个或所有子目录。
 
 ### <a name="element-tag"></a>元素标记
 
@@ -91,7 +90,7 @@ ms.locfileid: "89096207"
 </search>
 ```
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**寻找**](search-xml-element.md)

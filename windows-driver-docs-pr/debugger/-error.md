@@ -1,7 +1,6 @@
 ---
-title: 错误
-description: 错误扩展解码，并显示一个错误值有关的信息。
-ms.assetid: 4999ab4b-2f55-47d4-b9a7-6f1231271fcc
+title: error
+description: 错误扩展会对错误值进行解码并显示有关的信息。
 keywords:
 - 错误代码
 - Win32 错误代码
@@ -15,27 +14,27 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 52979ccbfc69d9f31a38f833e4552d15e3e9a2d6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5cca89e177299389144a3a557a10a276dde08828
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63334515"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96820421"
 ---
 # <a name="error"></a>!error
 
 
-**！ 错误**扩展进行解码，并显示一个错误值有关的信息。
+**！错误** 扩展将解码并显示有关错误值的信息。
 
 ```dbgcmd
 !error Value [Flags]
 ```
 
-## <a name="span-idddkerrordbgspanspan-idddkerrordbgspanparameters"></a><span id="ddk__error_dbg"></span><span id="DDK__ERROR_DBG"></span>参数
+## <a name="span-idddk__error_dbgspanspan-idddk__error_dbgspanparameters"></a><span id="ddk__error_dbg"></span><span id="DDK__ERROR_DBG"></span>参数
 
 
-<span id="_______Value______"></span><span id="_______value______"></span><span id="_______VALUE______"></span> *值*   
-指定以下的错误代码之一：
+<span id="_______Value______"></span><span id="_______value______"></span><span id="_______VALUE______"></span>*值*   
+指定以下错误代码之一：
 
 -   Win32
 
@@ -45,10 +44,10 @@ ms.locfileid: "63334515"
 
 -   NetAPI
 
-<span id="_______Flags______"></span><span id="_______flags______"></span><span id="_______FLAGS______"></span> *标志*   
-如果*标志*设置为 1，错误代码读取为 NTSTATUS 代码。
+<span id="_______Flags______"></span><span id="_______flags______"></span><span id="_______FLAGS______"></span>*标志*   
+如果 *Flags* 设置为1，则错误代码将作为 NTSTATUS 代码读取。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 <table>
 <colgroup>
@@ -72,7 +71,7 @@ ms.locfileid: "63334515"
 <a name="remarks"></a>备注
 -------
 
-下面的示例演示如何使用 **！ 错误**。
+下面的示例演示如何使用 **！错误**。
 
 ```dbgcmd
 0:000> !error 2

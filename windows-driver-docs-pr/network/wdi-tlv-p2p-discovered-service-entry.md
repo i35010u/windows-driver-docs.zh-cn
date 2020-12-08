@@ -1,17 +1,16 @@
 ---
 title: WDI_TLV_P2P_DISCOVERED_SERVICE_ENTRY
 description: WDI_TLV_P2P_DISCOVERED_SERVICE_ENTRY 是包含发现的服务项的 TLV。
-ms.assetid: B8D453FF-49CA-4106-97DA-008893760E92
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_P2P_DISCOVERED_SERVICE_ENTRY 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 86c6c39efb9cf5a2754cda2cd432c72b78366ca0
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 84dac543114795f7a9e71075056558fb3a5a6325
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89211511"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96821226"
 ---
 # <a name="wdi_tlv_p2p_discovered_service_entry"></a>WDI \_ TLV \_ P2P \_ 发现的 \_ 服务 \_ 条目
 
@@ -23,7 +22,7 @@ WDI \_ tlv \_ P2P \_ 发现的 \_ 服务 \_ 条目是包含发现的服务条目
 
 0x112
 
-## <a name="length"></a>Length
+## <a name="length"></a>长度
 
 
 Sum (包含所有 TLVs 的大小的) 字节。
@@ -56,7 +55,7 @@ Sum (包含所有 TLVs 的大小的) 字节。
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
-<td><p>Windows Server 2016</p></td>
+<td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
 <td><p>标头</p></td>

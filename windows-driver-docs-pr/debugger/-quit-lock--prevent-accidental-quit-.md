@@ -1,9 +1,8 @@
 ---
 title: .quit_lock（防止意外退出）
-description: .Quit_lock 命令设置密码，以防用户意外结束调试会话。
-ms.assetid: fd40e642-beba-4da0-a072-6493588980de
+description: .Quit_lock 命令设置密码以防止意外终止调试会话。
 keywords:
-- .quit_lock （防止意外退出） Windows 调试
+- .quit_lock (防止意外退出) Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: a3c975a14ce2adfeabd2604b35c06d1bbb92b629
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 73044bc7859a985bcdacabdc88942cbb821db406
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63335757"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96821027"
 ---
-# <a name="quitlock-prevent-accidental-quit"></a>.quit\_锁 （防止意外后退出）
+# <a name="quit_lock-prevent-accidental-quit"></a>。退出 \_ 锁 (防止意外退出) 
 
 
-**.Quit\_锁**命令将设置密码，以防用户意外结束调试会话。
+**Quit \_ lock** 命令设置密码以防止意外终止调试会话。
 
 ```dbgcmd
 .quit_lock /s NewPassword 
@@ -30,14 +29,14 @@ ms.locfileid: "63335757"
 .quit_lock 
 ```
 
-## <a name="span-idddkmetapreventaccidentalquitdbgspanspan-idddkmetapreventaccidentalquitdbgspanparameters"></a><span id="ddk_meta_prevent_accidental_quit_dbg"></span><span id="DDK_META_PREVENT_ACCIDENTAL_QUIT_DBG"></span>参数
+## <a name="span-idddk_meta_prevent_accidental_quit_dbgspanspan-idddk_meta_prevent_accidental_quit_dbgspanparameters"></a><span id="ddk_meta_prevent_accidental_quit_dbg"></span><span id="DDK_META_PREVENT_ACCIDENTAL_QUIT_DBG"></span>参数
 
 
-<span id="________s_NewPassword_____________"></span><span id="________s_newpassword_____________"></span><span id="________S_NEWPASSWORD_____________"></span> **/s** **** *NewPassword*   
-阻止调试会话结束，并将存储*NewPassword*。 无法结束直到您使用的调试器会话 **.quit\_锁定 /q**命令及此相同的密码。 *NewPassword*可以是任意字符串。 如果它包含空格，必须将*NewPassword*引号引起来。
+<span id="________s_NewPassword_____________"></span><span id="________s_newpassword_____________"></span><span id="________S_NEWPASSWORD_____________"></span>**/s**  **** *NewPassword*   
+阻止调试会话结束并存储 *NewPassword*。 在将 **. quit \_ lock/q** 命令与此同一密码一起使用之前，无法结束调试器会话。 *NewPassword* 可以是任意字符串。 如果包含空格，则必须用引号将 *NewPassword* 引起来。
 
-<span id="________q_Password______________"></span><span id="________q_password______________"></span><span id="________Q_PASSWORD______________"></span> **/q** **** *Password*   
-启用调试会话结束。 *密码*必须与设置的密码相匹配 **.quit\_锁定 /s**命令。
+<span id="________q_Password______________"></span><span id="________q_password______________"></span><span id="________Q_PASSWORD______________"></span>**/q**  **** *密码*   
+使调试会话结束。 *密码* 必须与用 **. quit \_ lock/s** 命令设置的密码匹配。
 
 ### <a name="span-idenvironmentspanspan-idenvironmentspanspan-idenvironmentspanenvironment"></a><span id="Environment"></span><span id="environment"></span><span id="ENVIRONMENT"></span>环境
 
@@ -48,12 +47,12 @@ ms.locfileid: "63335757"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>模式</strong></p></td>
-<td align="left"><p>用户模式下，内核模式</p></td>
+<td align="left"><p><strong>交货</strong></p></td>
+<td align="left"><p>用户模式，内核模式</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>目标</strong></p></td>
-<td align="left"><p>实时、 崩溃转储</p></td>
+<td align="left"><p>实时，故障转储</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>平台</strong></p></td>
@@ -67,17 +66,17 @@ ms.locfileid: "63335757"
 <a name="remarks"></a>备注
 -------
 
-不带参数， **.quit\_锁**显示当前的锁状态，包括密码的完整文本。
+如果没有参数，则 **退出 \_ 锁** 将显示当前锁定状态，包括密码的完整文本。
 
-可以重复 **.quit\_锁定 /s**命令以更改现有密码。
+可以重复使用 **quit \_ lock/s** 命令更改现有密码。
 
-当你使用 **.quit\_锁定 /q**，删除该锁。 此命令不会关闭调试器。 相反，命令将仅，您可以根据需要按一般方式退出会话。
+使用时，请 **退出 \_ 锁/q**。 此命令不会关闭调试器。 相反，该命令仅允许您在需要时以典型方式退出会话。
 
-**请注意**  密码不是"机密"。 附加到调试会话的远程用户可以使用 **.quit\_锁**来确定密码。 此命令的目的是防止意外使用[ **q (Quit)** ](q--qq--quit-.md)命令。 此命令是在重新启动调试会话可能会很困难 （例如，远程在调试期间） 特别有用。
+**注意**   密码不是 "机密"。 任何附加到调试会话的远程用户都可以使用 **。请退出 \_ 锁** 来确定密码。 此命令的目的是为了防止意外使用 [**q (Quit)**](q--qq--quit-.md) 命令。 如果重新启动调试会话可能很难 (例如，在远程调试) 期间，此命令特别有用。
 
  
 
-不能使用 **.quit\_锁定 /s**命令，在[安全模式下](activating-secure-mode.md)。 如果安全模式下才使用此命令激活，保留密码保护，但不能更改或删除密码。
+不能在 [安全模式下](activating-secure-mode.md)使用 **. quit \_ lock/s** 命令。 如果在激活安全模式之前使用此命令，则密码保护将保留，但你无法更改或删除密码。
 
  
 

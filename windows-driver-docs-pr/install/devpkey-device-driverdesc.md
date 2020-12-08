@@ -1,7 +1,6 @@
 ---
 title: DEVPKEY_Device_DriverDesc
 description: DEVPKEY_Device_DriverDesc
-ms.assetid: abe484ec-f9f8-4f22-b18b-64ffb88a94a2
 keywords:
 - DEVPKEY_Device_DriverDesc 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 31e517d4cd8dcaefeb8203b27cc7bc37d30a8eae
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 2571eaa2eb501cf0d9d279b8ef2fe4867b6161a3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90717436"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96820205"
 ---
 # <a name="devpkey_device_driverdesc"></a>DEVPKEY_Device_DriverDesc
 
@@ -67,7 +66,7 @@ DEVPKEY_Device_DriverDesc 设备属性表示为设备实例安装的驱动程序
 <a name="remarks"></a>备注
 -------
 
-DEVPKEY_Device_DriverDesc 的值由安装设备的 INF 文件的 " [**Inf*模型*" 部分**](./inf-models-section.md)提供的*设备说明*条目值设置。
+DEVPKEY_Device_DriverDesc 的值由安装设备的 INF 文件的 " [**Inf *模型*" 部分**](./inf-models-section.md)提供的 *设备说明* 条目值设置。
 
 DEVPKEY_Device_DriverDesc 的值不会显示在最终用户对话框中，也不会出于操作系统的任何原因而使用。
 

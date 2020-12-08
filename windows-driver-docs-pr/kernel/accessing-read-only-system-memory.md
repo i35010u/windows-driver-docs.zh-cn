@@ -1,7 +1,6 @@
 ---
 title: 访问只读的系统内存
 description: 访问只读的系统内存
-ms.assetid: d2c1f933-3a7e-4e82-b96d-4f019b27abd5
 keywords:
 - 内存管理 WDK 内核，只读内存
 - 只读内存 WDK 内核
@@ -9,12 +8,12 @@ keywords:
 - 全局字符串 WDK 内存
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c6d2fd7e0d6f30697410c3267b8a42f8a6e688d9
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: d50e590bde48d8885fa7910b46cd15de408d0e8d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89189094"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96820675"
 ---
 # <a name="accessing-read-only-system-memory"></a>访问只读的系统内存
 

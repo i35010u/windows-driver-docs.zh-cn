@@ -1,7 +1,6 @@
 ---
 title: Windows 上的 DTrace
 description: DTrace 是一个命令行工具工具，用于显示系统信息和事件。
-ms.assetid: abf23d76-423d-4d1e-afde-83739015bbfe
 keywords:
 - DTrace WDK
 - 软件跟踪 WDK，DTrace
@@ -13,12 +12,12 @@ keywords:
 - 跟踪消息格式化文件 WDK
 ms.date: 11/14/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 3bee4d103a3628d66af26741b886f0d4adbd1a29
-ms.sourcegitcommit: 372464be981a39781c71049126f36891cb5d0cad
+ms.openlocfilehash: 0b6573cab97080d8e362091a264d4ab1e22656a2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91646020"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96819803"
 ---
 # <a name="dtrace-on-windows"></a>Windows 上的 DTrace
 
@@ -195,7 +194,7 @@ bcdedit /set dtrace ON
 > [!NOTE]
 > 如果你使用的是 BitLocker，请在对启动值进行更改时将其禁用。 如果不这样做，系统可能会提示你输入 BitLocker 恢复密钥。 从这种情况恢复的一种方法是启动到恢复控制台并还原 bcdedit 值 `bcdedit /set {default} dtrace on` 。 如果操作系统更新移除了值并将其添加到中，则若要恢复操作系统，请使用 bcdedit 删除值 `bcdedit /deletevalue {default} dtrace` 。 然后，禁用 BitLocker 并重新启用 dtrace `bcdedit /set dtrace ON` 。
 
-在计算机上配置 VSM (虚拟安全模式) ，通过将 "HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Control\DeviceGuard\EnableVirtualizationBasedSecurity" 设置为1以启用 VSM 和安全内核，启用内核函数边界跟踪 (FBT) 。
+在计算机上配置 VSM (虚拟安全模式) ，通过将 "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\DeviceGuard\EnableVirtualizationBasedSecurity" 设置为1以启用 VSM 和安全内核，启用内核函数边界跟踪 (FBT) 。
 
 为此，请使用 REG Add 命令，如下所示：
 
@@ -397,7 +396,7 @@ C:\> dtrace -qn "pid$target:::entry { @k[probemod] = count();} tick-10s{printa(@
 
 ```
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [DTrace Windows 编程](dtrace-programming.md)
 

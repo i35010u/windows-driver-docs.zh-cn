@@ -1,29 +1,28 @@
 ---
-title: MSiSCSI\_操作 WMI 类
-description: MSiSCSI\_操作 WMI 类
-ms.assetid: 993118db-cddf-438a-8fdd-566353a6246b
+title: MSiSCSI \_ 操作 WMI 类
+description: MSiSCSI \_ 操作 WMI 类
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 5c1750284c9eb452d5af8eac6d9f0a6062d1eeb6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0ff877c5d853ea6f301c2e7112ed860c7a9f17fb
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63387449"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96821215"
 ---
-# <a name="msiscsioperations-wmi-class"></a>MSiSCSI\_操作 WMI 类
+# <a name="msiscsi_operations-wmi-class"></a>MSiSCSI \_ 操作 WMI 类
 
 
 ## <span id="ddk_msiscsi_operations_wmi_class_kr"></span><span id="DDK_MSISCSI_OPERATIONS_WMI_CLASS_KR"></span>
 
 
-MSiSCSI\_操作 WMI 类提供的 iSCSI 发起程序服务使用与 HBA 发起程序进行通信的 WMI 方法。
+MSiSCSI \_ 操作 wmi 类提供 iSCSI 发起程序服务用来与 HBA 发起程序通信的 wmi 方法。
 
-因为此类与存储微型端口驱动程序的特定实例相关联，微型端口驱动程序必须注册使用的微型端口驱动程序管理的特定的物理设备对象 (PDO) 名称的类。
+由于此类与存储微型端口驱动程序的特定实例相关联，因此微型端口驱动程序必须使用微型端口驱动程序管理 (PDO) 的特定物理设备对象的名称注册该类。
 
-此 WMI 类都有无数据块;因此，当 WMI 工具套件编译此类定义，它不会生成对应于类的任何结构声明。 编译确实会生成具有类方法中，关联的结构声明并描述了这些内容在类方法的参考页。
+此 WMI 类没有数据块;因此，当 WMI 工具套件编译此类定义时，它不会生成任何对应于类的结构声明。 编译会生成与类方法关联的结构声明，这些声明在类方法的引用页中进行了介绍。
 
-属于此类的每个方法的托管的对象格式 (MOF) 语法所述的方法的参考页。 以下主题介绍了这些方法和其随附的结构：
+对于属于此类的每个方法，托管对象格式 (MOF) 语法在该方法的参考页中进行了介绍。 以下主题介绍了这些方法及其随附的结构：
 
 [AddConnectionToSession](addconnectiontosession.md)
 

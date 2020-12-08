@@ -1,21 +1,20 @@
 ---
-title: Hello World 实现文件
-description: Hello World 实现文件
-ms.assetid: f81df130-44de-48c5-bfd1-d7e7084e91de
+title: Hello World "实现文件
+description: Hello World "实现文件
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4ff5467ea957c0700bd990a393122c08127ff806
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2cf280989ca67e31ddb2d1977e50fb358b2cc022
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339693"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96820273"
 ---
-# <a name="hello-world-implementation-file"></a>Hello World 实现文件
+# <a name="hello-world-implementation-file"></a>"Hello World" 实现文件
 
-此 WIA 微型驱动程序是一个简单的 DLL 导出两个函数 (请参阅[Hello World 定义文件](--hello-world---definition-file.md))，并实现三个 COM 接口 (请参阅[提供 COM 接口](providing-a-com-interface.md))。 下面的 WIA 微型驱动程序代码示例可以编译到工作驱动程序。 此 WIA 微型驱动程序创建的项树的根项，但没有子项，并不能将数据传输。
+此 WIA 微型驱动程序是一个简单的 DLL，该 DLL 导出两个函数 (参阅 ["Hello World" 定义文件](--hello-world---definition-file.md)) 并实现三个 com 接口 (参阅 [提供 com) 接口](providing-a-com-interface.md) 。 以下 WIA 微型驱动程序代码示例可以编译到工作的驱动程序中。 此 WIA 微型驱动程序创建的项树具有根项，但没有子项，无法传输数据。
 
-*Hellowld.cpp*文件应包含以下：
+*Hellowld* 文件应包含以下内容：
 
 ```cpp
 #ifndef WIN32_LEAN_AND_MEAN

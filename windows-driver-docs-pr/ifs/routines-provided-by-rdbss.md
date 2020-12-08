@@ -1,19 +1,18 @@
 ---
 title: RDBSS 提供的例程
 description: RDBSS 提供的例程
-ms.assetid: 37631760-ac89-4ef0-ad7c-ed3e68aa1ceb
 keywords:
 - RDBSS WDK 文件系统，例程
 - 重定向的驱动器缓冲子系统 WDK 文件系统、例程
 - 例程 WDK RDBSS
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0f52fbe8270b963a69a13ef1a371d0092ff1e4c2
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: e233b3d938e1e2349fc42a54b65ca2c98a8c9ee5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102428"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96819577"
 ---
 # <a name="routines-provided-by-rdbss"></a>RDBSS 提供的例程
 
@@ -31,7 +30,7 @@ ms.locfileid: "90102428"
 <thead>
 <tr class="header">
 <th align="left">例程所返回的值</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>

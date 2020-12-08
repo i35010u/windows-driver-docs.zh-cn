@@ -1,7 +1,6 @@
 ---
 title: 'IoFreeIrp 规则 (storport) '
 description: 此规则验证 IoAllocateIrp 分配的 IRP 是否将由 IoFreeIrp 或其完成例程进行释放，以由 IoSetCompletionRoutine 设置。
-ms.assetid: CAEDE78A-B0FF-4963-8C9B-146E4A489E1D
 ms.date: 05/21/2018
 keywords:
 - 'IoFreeIrp 规则 (storport) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 6205016f2f526e4798b2a662f68e586e3f4ec4ac
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 0d841e14ac7acf0f703a8b03794f8295a4cd40a4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107074"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96819643"
 ---
 # <a name="iofreeirp-rule-storport"></a>IoFreeIrp 规则 (storport) 
 
 
-此规则验证 **IoAllocateIrp** 分配的 IRP 是否将由 **IoFreeIrp** 或其完成例程进行释放，以由 **IoSetCompletionRoutine**设置。
+此规则验证 **IoAllocateIrp** 分配的 IRP 是否将由 **IoFreeIrp** 或其完成例程进行释放，以由 **IoSetCompletionRoutine** 设置。
 
 **驱动程序模型： Storport**
 

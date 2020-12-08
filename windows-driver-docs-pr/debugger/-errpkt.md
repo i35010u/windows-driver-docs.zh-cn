@@ -1,7 +1,6 @@
 ---
 title: errpkt
 description: Errpkt 扩展显示 Windows 硬件错误体系结构 (WHEA) 硬件错误数据包的内容。
-ms.assetid: cf4b1dfa-3b15-45d4-b5e2-1da7cdbca350
 keywords:
 - errpkt Windows 调试
 ms.date: 05/23/2017
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 3e208ab0c41ddcc0cf0fc2a4debb864ea812fee9
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: a01aa1089cadc63bc3fd4f608d0ac10d6e358b78
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89208761"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96819911"
 ---
 # <a name="errpkt"></a>!errpkt
 
 
-**！ Errpkt**扩展显示 Windows 硬件错误体系结构 (WHEA) 硬件错误数据包的内容。
+**！ Errpkt** 扩展显示 Windows 硬件错误体系结构 (WHEA) 硬件错误数据包的内容。
 
 ```dbgcmd
 !errpkt Address 
@@ -44,15 +43,15 @@ ms.locfileid: "89208761"
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>Windows 2000</strong></p></td>
-<td align="left"><p>Unavailable</p></td>
+<td align="left"><p>不可用</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>Windows XP</strong></p></td>
-<td align="left"><p>Unavailable</p></td>
+<td align="left"><p>不可用</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>Windows Server 2003</strong></p></td>
-<td align="left"><p>Unavailable</p></td>
+<td align="left"><p>不可用</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>Windows Vista 及更高版本</strong></p></td>
@@ -67,7 +66,7 @@ ms.locfileid: "89208761"
 
 ### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-[**！ Whea**](-whea.md)和[**！ errrec**](-errrec.md)扩展可用于显示其他 whea 信息。 有关 WHEA 的常规信息，请参阅 Windows 驱动程序工具包中的 [Windows 硬件错误体系结构 (WHEA) ](../whea/index.md) (WDK) 文档。
+[**！ Whea**](-whea.md)和 [**！ errrec**](-errrec.md)扩展可用于显示其他 whea 信息。 有关 WHEA 的常规信息，请参阅 Windows 驱动程序工具包中的 [Windows 硬件错误体系结构 (WHEA) ](../whea/index.md) (WDK) 文档。
 
 <a name="remarks"></a>备注
 -------

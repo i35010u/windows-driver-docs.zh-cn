@@ -1,7 +1,6 @@
 ---
 title: 'ReqSendFail 规则 (kmdf) '
 description: ReqSendFail 规则指定在 WdfRequestSend 方法可能失败的情况下，驱动程序必须设置正确的完成状态。
-ms.assetid: 324e0351-5879-4d10-a877-1da9b7424c4e
 ms.date: 05/21/2018
 keywords:
 - 'ReqSendFail 规则 (kmdf) '
@@ -12,19 +11,19 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 9dcd22cedb4db921cc5e246b9ef71ec786b21b59
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 8c4c95dcd5aba21175f625655a41914a46c3a4bb
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103710"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96819731"
 ---
 # <a name="reqsendfail-rule-kmdf"></a>ReqSendFail 规则 (kmdf) 
 
 
-**ReqSendFail**规则指定在[**WdfRequestSend**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestsend)方法可能失败的情况下，驱动程序必须设置正确的完成状态。
+**ReqSendFail** 规则指定在 [**WdfRequestSend**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestsend)方法可能失败的情况下，驱动程序必须设置正确的完成状态。
 
-如果[**WdfRequestSend**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestsend)无法发送请求，即使**FALSE** \_ \_ \_ \_ \_ \_ 在驱动程序的请求选项中设置了 WDF 请求发送选项发送和忘记标志，也可能返回 FALSE。 在这种情况下，驱动程序应该通过调用 [**WdfRequestComplete**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcomplete)、 [**WdfRequestCompleteWithInformation**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcompletewithinformation)或 [**WdfRequestCompleteWithPriorityBoost**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcompletewithpriorityboost)，或者通过调用 [**WdfObjectDelete**](/windows-hardware/drivers/ddi/wdfobject/nf-wdfobject-wdfobjectdelete)，来完成请求的完成状态。
+如果 [**WdfRequestSend**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestsend)无法发送请求，即使 **FALSE** \_ \_ \_ \_ \_ \_ 在驱动程序的请求选项中设置了 WDF 请求发送选项发送和忘记标志，也可能返回 FALSE。 在这种情况下，驱动程序应该通过调用 [**WdfRequestComplete**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcomplete)、 [**WdfRequestCompleteWithInformation**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcompletewithinformation)或 [**WdfRequestCompleteWithPriorityBoost**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcompletewithpriorityboost)，或者通过调用 [**WdfObjectDelete**](/windows-hardware/drivers/ddi/wdfobject/nf-wdfobject-wdfobjectdelete)，来完成请求的完成状态。
 
 **驱动程序模型： KMDF**
 

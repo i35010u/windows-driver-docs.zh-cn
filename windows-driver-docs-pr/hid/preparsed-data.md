@@ -1,18 +1,17 @@
 ---
 title: 预分析的数据
 description: 预分析的数据
-ms.assetid: 50ac2877-4c45-4d55-b5cc-013486892fbf
 keywords:
 - 分析的数据 WDK HID
 - preparsed 数据 WDK HID
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7684cd229b9edc5b49a901c5ad0b9fb74bdf643d
-ms.sourcegitcommit: 9145bffd4cc3b990a9ebff43b588db6ef2001f5d
+ms.openlocfilehash: e2929cca1a7e33b94f1485228fd7ecbb7b96e881
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/09/2020
-ms.locfileid: "89592387"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96820333"
 ---
 # <a name="preparsed-data"></a>预分析的数据
 

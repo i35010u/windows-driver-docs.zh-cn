@@ -1,7 +1,6 @@
 ---
 title: D3DKMT \_ SCATTERBLT 结构
 description: 了解 \_ 保留供系统使用的 D3DKMT SCATTERBLT 结构。 请勿在您的驱动程序中使用。
-ms.assetid: 94463e11-8a18-4d23-b7b6-d2486dc7dc9d
 keywords:
 - D3DKMT_SCATTERBLT 结构显示设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 01/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 29ec73be0a720e662fe62691c7a6b0f6596a1cc3
-ms.sourcegitcommit: fc94eb0d5a41ef81c1b3ab91ad725386db0be0c2
+ms.openlocfilehash: ab4fb057bbf7db555914306149ad287741db2502
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91603633"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96819597"
 ---
 # <a name="d3dkmt_scatterblt-structure"></a>D3DKMT \_ SCATTERBLT 结构
 
@@ -32,10 +31,10 @@ ms.locfileid: "91603633"
 ```ManagedCPlusPlus
 typedef struct _D3DKMT_SCATTERBLT {
   ULONG64 hLogicalSurfaceDestination;
-  LONG64  hDestinationCompSurfDWM;
-  UINT64  DestinationCompositionBindingId;
-  RECT    SourceRect;
-  POINT   DestinationOffset;
+  LONG64  hDestinationCompSurfDWM;
+  UINT64  DestinationCompositionBindingId;
+  RECT    SourceRect;
+  POINT   DestinationOffset;
 } D3DKMT_SCATTERBLT;
 ```
 

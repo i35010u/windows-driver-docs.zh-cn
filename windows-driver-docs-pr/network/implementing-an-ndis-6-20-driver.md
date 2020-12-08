@@ -1,17 +1,16 @@
 ---
 title: 实现 NDIS 6.20 驱动程序
 description: 实现 NDIS 6.20 驱动程序
-ms.assetid: 6c6f83ff-2a6f-4e5d-acc0-70835429312d
 keywords:
 - NDIS 6.20 WDK，实现驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6af50ad24429c2c90fd5cf48d1afccef8524e29f
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: e8e9073bf1b8e4ee6a8645999b6f1b9099dc8792
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89206443"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96821313"
 ---
 # <a name="implementing-an-ndis-620-driver"></a>实现 NDIS 6.20 驱动程序
 
@@ -21,7 +20,7 @@ ms.locfileid: "89206443"
 
 当 ndis 6.20 驱动程序使用 NDIS 注册时，它必须报告正确的 NDIS 版本。
 
-必须在 NDIS Xxx 驱动程序特征结构中更新主要和次要 NDIS 版本号 \_ *Xxx* \_ \_ ，才能支持 ndis 6.20。 **MajorNdisVersion**成员必须包含6个，并且**MinorNdisVersion**成员必须包含20个。 此要求适用于微型端口、协议和筛选器驱动程序。 还必须更新编译器的版本信息，请参阅 [编译 NDIS 6.20 驱动程序](compiling-an-ndis-6-20-driver.md)。
+必须在 NDIS Xxx 驱动程序特征结构中更新主要和次要 NDIS 版本号 \_ *Xxx* \_ \_ ，才能支持 ndis 6.20。 **MajorNdisVersion** 成员必须包含6个，并且 **MinorNdisVersion** 成员必须包含20个。 此要求适用于微型端口、协议和筛选器驱动程序。 还必须更新编译器的版本信息，请参阅 [编译 NDIS 6.20 驱动程序](compiling-an-ndis-6-20-driver.md)。
 
 对于 NDIS 6.20 和更高版本的微型端口驱动程序，NDIS 6.20 电源管理服务是必需的。 有关 NDIS 6.20 电源管理接口的详细信息，请参阅 [ndis 6.20 中的电源管理增强功能](power-management-enhancements-in-ndis-6-20.md)。
 

@@ -1,9 +1,8 @@
 ---
 title: fpsearch
-description: Fpsearch 扩展搜索指定的地址已释放特殊池。
-ms.assetid: 70375723-7156-47ec-b6e1-b3c51b5caaf9
+description: Fpsearch 扩展将搜索指定地址的已释放特殊池。
 keywords:
-- 特殊的池
+- 特殊池
 - fpsearch Windows 调试
 ms.date: 05/23/2017
 topic_type:
@@ -13,32 +12,32 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 7a8e116eef4a8758a7824482a4ef37ba4ec5deb7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 806f24d63f8ff4a37c839302e7a117ce7db6ecfc
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63336620"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96821079"
 ---
 #  <a name="fpsearch"></a>!fpsearch
 
 
-**！ Fpsearch**扩展搜索指定的地址已释放特殊池。
+**！ Fpsearch** extension 搜索指定地址的已释放特殊池。
 
 ```dbgcmd
 !fpsearch [Address] [Flag]
 ```
 
-## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>参数
+## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>Parameters
 
 
-<span id="_______Address______"></span><span id="_______address______"></span><span id="_______ADDRESS______"></span> *Address*   
-指定的虚拟地址。
+<span id="_______Address______"></span><span id="_______address______"></span><span id="_______ADDRESS______"></span>*地址*   
+指定虚拟地址。
 
-<span id="_______Flag______"></span><span id="_______flag______"></span><span id="_______FLAG______"></span> *Flag*   
-如果集，调试器将搜索已释放的特殊池空闲列表上显示的原始内容的每一页。
+<span id="_______Flag______"></span><span id="_______flag______"></span><span id="_______FLAG______"></span>*标志*   
+如果已设置，则调试器将在搜索已释放的特殊池时，在可用列表中显示每个页面的原始内容。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 <table>
 <colgroup>
@@ -62,11 +61,11 @@ ms.locfileid: "63336620"
 <a name="remarks"></a>备注
 -------
 
-地址显示在解除分配时包括的虚拟地址、 页码帧 (PFN)、 池标记、 大小、 是否有可分页的地址上的数据、 线程 ID 和调用堆栈。
+地址的显示内容包括虚拟地址、页面框架编号 (PFN) 、池标记、大小、地址中的数据是否可分页、线程 ID 以及释放时的调用堆栈。
 
-如果*地址*设置为-1，则调试器会显示整个已释放的特殊池。
+如果 *Address* 设置为-1，则调试器将显示整个已释放的特殊池。
 
-如果调试器已释放特殊池中找不到指定的地址，它不显示任何内容。下面是输出的来自此扩展插件示例：
+如果调试器在已释放的特殊池中找不到指定的地址，则它不会显示任何内容。下面是此扩展的输出示例：
 
 ```dbgcmd
 kd> !fpsearch -1 1
@@ -120,7 +119,7 @@ CEAD000  00000000 00000000 00000000 00000000 ................
 CEAD000  00000000 00000000 00000000 00000000 ................
 ```
 
-可以通过按 CTRL + BREAK （在 WinDbg) 或 CTRL + C （中 KD) 来停止执行任何时候。
+您可以通过在 WinDbg) 中按 CTRL + BREAK (或在 KD) 中按 CTRL + C (，随时停止执行。
 
  
 

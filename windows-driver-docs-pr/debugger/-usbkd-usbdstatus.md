@@ -1,7 +1,6 @@
 ---
 title: usbkd.usbdstatus
 description: Usbkd. usbdstatus 命令显示 USBD 状态代码的名称。
-ms.assetid: 9983433E-1D17-47C6-972B-0A02B228A6AE
 keywords:
 - usbkd usbdstatus Windows 调试
 ms.date: 05/23/2017
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: bf8614cf30336bed2d27241f9fe389acc2d9e332
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 5a6123a976b52cf39e052ed1417bad40c93203b8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89213521"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96820383"
 ---
 # <a name="usbkdusbdstatus"></a>!usbkd.usbdstatus
 
 
-**！ Usbkd. usbdstatus**命令显示 USBD 状态代码的名称。
+**！ Usbkd. usbdstatus** 命令显示 USBD 状态代码的名称。
 
 ```dbgcmd
 !usbkd.usbdstatus StatusCode
@@ -42,7 +41,7 @@ Usbkd.dll
 <a name="examples"></a>示例
 --------
 
-下面是 **！ usbdstatus**的输出示例。
+下面是 **！ usbdstatus** 的输出示例。
 
 ```dbgcmd
 1: kd> !usbkd.usbdstatus 0xC0000008

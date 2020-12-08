@@ -1,18 +1,17 @@
 ---
 title: 将 I/O 请求发送到较低的驱动程序
 description: 将 I/O 请求发送到较低的驱动程序
-ms.assetid: 89868b4d-e2c1-4f38-b81e-a96b8cff3e4f
 keywords:
 - I/o 请求 WDK UMDF，更低的驱动程序
 - 请求处理 WDK UMDF，更低的驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7b6fe2e3112af328f3a2bd378d1d09c2b718b24a
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: ab5728e5e107efdc932945abea7025334d3dcda4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89184281"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96821159"
 ---
 # <a name="sending-io-requests-to-lower-drivers"></a>将 I/O 请求发送到较低的驱动程序
 

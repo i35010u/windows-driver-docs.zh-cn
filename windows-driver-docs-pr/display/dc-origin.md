@@ -1,18 +1,17 @@
 ---
 title: DC 原点
 description: DC 原点
-ms.assetid: 7e997f6b-fec4-4aa4-b0ed-0d02cb3f844d
 keywords:
-- DC 源 WDK GDI
-- 图面协商 WDK GDI，DC 源
+- DC 来源 WDK GDI
+- surface 协商 WDK GDI，DC 原点
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c81d8a2f2c936af10d8bb7c5725525a1b707a204
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: dbedafe2fa88d96099a0211c47db0b9fc13b05d8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63373925"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96819591"
 ---
 # <a name="dc-origin"></a>DC 原点
 
@@ -20,7 +19,7 @@ ms.locfileid: "63373925"
 ## <span id="ddk_dc_origin_gg"></span><span id="DDK_DC_ORIGIN_GG"></span>
 
 
-应用程序所需保留 2²⁷ 数组内的其图形 2²⁷ 像素。 设备空间 DDI 级别，因为窗口管理器可能会抵消在两个签名 27 位坐标，通过应用程序的坐标系统的图形在有额外的大小*DC 源*。 DC 原点看不到驱动程序，并驱动程序标识的图形坐标仅后应用偏移量。
+应用程序需要将其图形保存在2²⁷的数组中，而不是2²⁷像素。 设备空间在图形 DDI 级别具有更大的大小，因为窗口管理器可能会将应用程序的坐标系统偏移一个有符号的27位坐标，即 *DC 原点*。 DC 原点对驱动程序不可见，驱动程序仅在应用偏移量后标识图形坐标。
 
  
 

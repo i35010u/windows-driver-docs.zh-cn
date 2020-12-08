@@ -1,7 +1,6 @@
 ---
 title: 为 SAN 代理驱动程序分配和释放内存
 description: 为 SAN 代理驱动程序分配和释放内存
-ms.assetid: c196f202-159c-4296-9888-818eaeaada73
 keywords:
 - 代理驱动程序 WDK San，内存分配
 - SAN 代理驱动程序 WDK，内存分配
@@ -9,12 +8,12 @@ keywords:
 - 释放 SAN 代理驱动程序的内存
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6afe869b18a427857fc372726671e70221ddd940
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 4bffc9257edff5f5794414d008c1e3581c75e2d7
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89206515"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96820129"
 ---
 # <a name="allocating-and-releasing-memory-for-a-san-proxy-driver"></a>为 SAN 代理驱动程序分配和释放内存
 

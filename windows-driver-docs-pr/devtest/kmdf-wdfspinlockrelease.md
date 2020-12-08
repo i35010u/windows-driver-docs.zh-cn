@@ -1,7 +1,6 @@
 ---
 title: 'WdfSpinlockRelease 规则 (kmdf) '
 description: WdfSpinlockRelease 规则指定对 WdfSpinLockAcquire 和 WdfSpinlockRelease 的调用在 KMDF 事件回调函数内按平衡方式使用。
-ms.assetid: ecb07a60-d55c-4990-aeef-5c880c13c2a1
 ms.date: 05/21/2018
 keywords:
 - 'WdfSpinlockRelease 规则 (kmdf) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 3fd1fd234e7144c41991410a5a7b83a5949e41c4
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 44249513e2161630b55b97b443cad00f102740c7
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107150"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96820863"
 ---
 # <a name="wdfspinlockrelease-rule-kmdf"></a>WdfSpinLockRelease 规则 (kmdf) 
 
 
-**WdfSpinLockRelease**规则指定对[**WdfSpinLockAcquire**](/previous-versions/windows/hardware/drivers/ff550040(v=vs.85))和**WdfSpinLockRelease**的调用在 KMDF 事件回调函数内按平衡方式使用。 当 KMDF 事件回调函数返回时，驱动程序不应持有通过先前对 **WdfSpinLockAcquire**的调用获取的框架旋转锁对象。
+**WdfSpinLockRelease** 规则指定对 [**WdfSpinLockAcquire**](/previous-versions/windows/hardware/drivers/ff550040(v=vs.85))和 **WdfSpinLockRelease** 的调用在 KMDF 事件回调函数内按平衡方式使用。 当 KMDF 事件回调函数返回时，驱动程序不应持有通过先前对 **WdfSpinLockAcquire** 的调用获取的框架旋转锁对象。
 
 **驱动程序模型： KMDF**
 

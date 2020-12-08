@@ -1,15 +1,14 @@
 ---
 title: 使用工作项
 description: 使用工作项
-ms.assetid: 4617A33F-9026-45FF-9CC2-7215423E6D35
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ae1be24c6fcc8732f0905a759df305d039585c68
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 267f49f2e50b5511a84652ed7d1bf98ce97edda5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89187329"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96821097"
 ---
 # <a name="using-work-items"></a>使用工作项
 
@@ -33,7 +32,7 @@ ms.locfileid: "89187329"
 
 2.  存储有关工作项的信息。
 
-    通常，驱动程序使用工作项对象的上下文内存来存储有关 [*OnWorkItem*](/windows-hardware/drivers/ddi/wudfworkitem/nc-wudfworkitem-wudf_workitem_function) 回调函数应执行的任务的信息。 调用 *OnWorkItem* 回调函数时，它可以通过访问此上下文内存来检索信息。 有关如何分配和访问上下文内存的信息，请参阅[**IWDFObject：： AssignContext**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfobject-assigncontext)。
+    通常，驱动程序使用工作项对象的上下文内存来存储有关 [*OnWorkItem*](/windows-hardware/drivers/ddi/wudfworkitem/nc-wudfworkitem-wudf_workitem_function) 回调函数应执行的任务的信息。 调用 *OnWorkItem* 回调函数时，它可以通过访问此上下文内存来检索信息。 有关如何分配和访问上下文内存的信息，请参阅 [**IWDFObject：： AssignContext**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfobject-assigncontext)。
 
 3.  将工作项添加到系统的工作项队列中。
 

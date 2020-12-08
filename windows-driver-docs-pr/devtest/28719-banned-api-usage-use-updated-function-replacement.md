@@ -1,24 +1,23 @@
 ---
 title: C28719
-description: 警告 C28719 禁止的 API 使用情况。
-ms.assetid: 6520148d-3756-47f5-9a1d-c005496681ba
+description: 警告 C28719 禁止使用的 API。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 f1_keywords:
 - C28719
-ms.openlocfilehash: 3469dd6d73bd6b3829f1a15f49174afc36d7e2ae
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ed6193b6b5c74ee417c4479b8676f1c97ddbe859
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63371570"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96819797"
 ---
 # <a name="c28719"></a>C28719
 
 
-警告 C28719:已禁止的 API 用法
+警告 C28719：已禁止的 API 用法
 
-此警告意味着，正在使用的函数已禁止，并具有更为可靠和安全替换。
+此警告表明，使用的功能已被禁止，并具有更可靠和更安全的替换。
 
  
 

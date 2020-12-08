@@ -1,15 +1,14 @@
 ---
 title: 待机休眠优化
 description: Windows 8 为图形堆栈提供优化，你的驱动程序可以选择利用它来提高睡眠和恢复系统性能。
-ms.assetid: 1E71BFDF-3C67-41F6-968A-8AE54B54CCCB
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f8f3ba136e85f8d1c93bc5fed0a2ded96220ba27
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 144dba0922ce8bfe3edcbc77a55c43745d59ff7d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89066562"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96820819"
 ---
 # <a name="standby-hibernate-optimizations"></a>待机休眠优化
 
@@ -22,7 +21,7 @@ Windows 8 为图形堆栈提供优化，你的驱动程序可以选择利用它�
 
 **驱动程序实现-完整图形和仅呈现**：可选
 
-** [WHCK](/windows-hardware/test/hlk/windows-hardware-lab-kit)要求和测试**： **Device. Graphics ¦ StandbyHibernateFlags**
+**[WHCK](/windows-hardware/test/hlk/windows-hardware-lab-kit)要求和测试**： **Device. Graphics ¦ StandbyHibernateFlags**
 
 
  
@@ -36,7 +35,7 @@ Windows 8 为图形堆栈提供优化，你的驱动程序可以选择利用它�
 -   [**DXGK \_ SEGMENTDESCRIPTOR3**](/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgk_segmentdescriptor3)
 -   [**DXGK \_ SEGMENTFLAGS**](/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgk_segmentflags)
 
-可以支持此功能的每个设备都应利用这些休眠优化。 当 WDDM 1.2 或更高版本的驱动程序枚举段功能时，它还必须设置一个或多个备用休眠标志 **PreservedDuringStandby**、 **PreservedDuringHibernate**和 **PartiallyPreservedDuringHibernate**。 有关更多详细信息，请参阅 [**DXGK \_ SEGMENTFLAGS**](/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgk_segmentflags) 主题的备注。
+可以支持此功能的每个设备都应利用这些休眠优化。 当 WDDM 1.2 或更高版本的驱动程序枚举段功能时，它还必须设置一个或多个备用休眠标志 **PreservedDuringStandby**、 **PreservedDuringHibernate** 和 **PartiallyPreservedDuringHibernate**。 有关更多详细信息，请参阅 [**DXGK \_ SEGMENTFLAGS**](/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgk_segmentflags) 主题的备注。
 
 ## <a name="span-idstandbyoptspanspan-idstandbyoptspanusing-standby-hibernate-optimizations"></a><span id="standbyopt"></span><span id="STANDBYOPT"></span>使用备用休眠优化
 

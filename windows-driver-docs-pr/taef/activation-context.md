@@ -1,15 +1,14 @@
 ---
 title: 激活上下文
 description: 激活上下文
-ms.assetid: 76584379-2AEF-47e0-B14E-C7698903658F
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 62fbfd6b59692d02f33fef1773dda7c7cf95c0b0
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: af7510b5259d9e232cef708d58f0f5b3dae2ca6a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89403210"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96819935"
 ---
 # <a name="activation-context"></a>激活上下文
 

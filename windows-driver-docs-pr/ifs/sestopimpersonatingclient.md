@@ -1,7 +1,6 @@
 ---
 title: SeStopImpersonatingClient 例程
 description: SeStopImpersonatingClient 例程结束调用线程的用户模拟。
-ms.assetid: 1aab384b-919c-4709-9ceb-66616c622714
 keywords:
 - SeStopImpersonatingClient 例程可安装文件系统驱动程序
 topic_type:
@@ -14,17 +13,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2aa94f0d7091127a9448a4c2d9578706b9659a61
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 22ee9426fbd6e90fe8258a063f014b867f9aee38
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89062976"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96820743"
 ---
 # <a name="sestopimpersonatingclient-routine"></a>SeStopImpersonatingClient 例程
 
 
-**SeStopImpersonatingClient**例程结束调用线程的用户模拟。
+**SeStopImpersonatingClient** 例程结束调用线程的用户模拟。
 
 <a name="syntax"></a>语法
 ------
@@ -33,7 +32,7 @@ ms.locfileid: "89062976"
 VOID SeStopImpersonatingClient(void);
 ```
 
-<a name="parameters"></a>parameters
+<a name="parameters"></a>参数
 ----------
 
 此例程没有参数。
@@ -59,7 +58,7 @@ VOID SeStopImpersonatingClient(void);
 <tbody>
 <tr class="odd">
 <td align="left"><p>目标平台</p></td>
-<td align="left">桌面型</td>
+<td align="left">台式机</td>
 </tr>
 <tr class="even">
 <td align="left"><p>版本</p></td>

@@ -1,15 +1,14 @@
 ---
 title: 使用 Visual Studio 进行调试
 description: 从 Windows 驱动程序工具包开始 (WDK) 8，驱动程序开发环境和 Windows 调试器集成到 Microsoft Visual Studio 中。
-ms.assetid: B961B0C9-FF6C-4F6B-AC15-CA1B405A4C4C
 ms.date: 05/11/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 6ab080fbb8a0dc4ba976155013aded38d76aa7bd
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 9afd9301bd203e1cb8033b41b8cca1b8dbd99add
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89214832"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96819833"
 ---
 # <a name="debugging-using-visual-studio"></a>使用 Visual Studio 进行调试
 

@@ -1,7 +1,6 @@
 ---
 title: 修改参数
 description: 修改参数
-ms.assetid: 01accd7f-7aa6-4f83-b8b4-81c04cd48dac
 keywords:
 - 筛选器管理器 WDK 文件系统微筛选器，修改参数
 - 交换缓冲 WDK 文件系统微筛选器
@@ -10,12 +9,12 @@ keywords:
 - MDLs WDK 文件系统
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e47d5f1745e16cbb74bc93349349529724dcd016
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 19290ab63f4950feeb2933fdb96774e5f303939f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89066154"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96821457"
 ---
 # <a name="modifying-parameters"></a>修改参数
 

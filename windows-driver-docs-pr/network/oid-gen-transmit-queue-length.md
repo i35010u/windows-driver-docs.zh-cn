@@ -1,16 +1,15 @@
 ---
 title: OID_GEN_TRANSMIT_QUEUE_LENGTH
 description: 作为查询，OID_GEN_TRANSMIT_QUEUE_LENGTH OID 指定当前排队等待传输的数据包数，无论是在 NIC 上还是在驱动程序内部队列中。
-ms.assetid: 042a7df3-a204-45f8-b147-96def7438b4a
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_GEN_TRANSMIT_QUEUE_LENGTH 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 2a0dd6a03847a7a740f9ae98d4894530412ba5c8
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 247ea0b8b13908c1e824e35493f8a96b3fd22570
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89217989"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96821273"
 ---
 # <a name="oid_gen_transmit_queue_length"></a>OID \_ 代 \_ 传输 \_ 队列 \_ 长度
 
@@ -57,7 +56,7 @@ ms.locfileid: "89217989"
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [OID \_ 生成 \_ 统计信息](oid-gen-statistics.md)

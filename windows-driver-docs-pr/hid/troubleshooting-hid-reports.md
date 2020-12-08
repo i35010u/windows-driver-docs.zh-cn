@@ -1,7 +1,6 @@
 ---
 title: 排查 HID 报告问题
 description: 排查 HID 报告问题
-ms.assetid: 8fbf641b-461b-44c2-9cc5-c1547abc75d6
 keywords:
 - HID 报告 WDK，故障排除
 - 报告 WDK HID，故障排除
@@ -10,12 +9,12 @@ keywords:
 - 错误 WDK HID 报告
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c19ea863a0d193a4b27f41e811ed1256eda48a53
-ms.sourcegitcommit: 9145bffd4cc3b990a9ebff43b588db6ef2001f5d
+ms.openlocfilehash: 180bfce3da472629e035d180e0300bc967998b32
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/09/2020
-ms.locfileid: "89592451"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96820278"
 ---
 # <a name="troubleshooting-hid-reports"></a>排查 HID 报告问题
 
@@ -31,7 +30,7 @@ ms.locfileid: "89592451"
 
 ### <a name="hid-report-id-errors"></a><a href="" id="hid-report-id-errors"></a> HID 报表 ID 错误
 
-当应用程序或驱动程序从 HID 集合接收到 HID 报表时，它可以是集合包含 (的任何报表，因为集合可以按任意顺序) 返回报表。 **HidP \_ Get * * Xxx* 例程返回以下状态值，指示报表 ID 错误：
+当应用程序或驱动程序从 HID 集合接收到 HID 报表时，它可以是集合包含 (的任何报表，因为集合可以按任意顺序) 返回报表。 **HidP \_ Get**_Xxx_ 例程返回以下状态值，指示报表 ID 错误：
 
 <a href="" id="hidp-status-incompatible-report-id"></a>HIDP \_ 状态 \_ 不兼容 \_ 报表 \_ ID  
 请求的使用情况位于 HID 集合支持的报表中，但不在应用程序或驱动程序所指定的报表中。
@@ -45,9 +44,9 @@ ms.locfileid: "89592451"
 
 根据此示例，假设应用程序或驱动程序从集合接收到报表，并调用 [**HidP \_ GetUsageValue**](/windows-hardware/drivers/ddi/hidpi/nf-hidpi-hidp_getusagevalue) 来提取当前值 "value X"。 如果报表的 ID 为7，则例程将返回 HIDP \_ 状态 \_ 不兼容 \_ 报表 \_ ID，这表示设备支持值 x，但报表中不存在值 x。 另一方面，如果应用程序或驱动程序请求 "值 Z" 的值，例程将返回 " \_ \_ 找不到 HIDP 状态 \_ " \_ ，这表示值 Z 不在集合支持的任何报表中。
 
-当应用程序或驱动程序使用 **HidP \_ set * * * Xxx* 例程在报表中设置使用情况时，这些例程还可以返回相同的两个状态值。 找不到 HIDP \_ 状态 \_ 使用情况的含义与 \_ \_ **HIDP \_ Get ** * * Xxx 例程相同。 但是，HIDP \_ 状态 \_ 不兼容 \_ 报表 ID 的含义 \_ 是不同的。 此状态值指示报表以前配置了报表 ID，并且调用方指定的使用不属于该报表 ID。 使用上图作为示例，在应用程序或驱动程序使用 [**HidP \_ SetUsages**](/windows-hardware/drivers/ddi/hidpi/nf-hidpi-hidp_setusages) 将 "Button 2" 设置为零初始化报表后，报表将配置为报表 ID 7。 如果应用程序或驱动程序随后尝试使用 [**HidP \_ SetUsageValue**](/windows-hardware/drivers/ddi/hidpi/nf-hidpi-hidp_setusagevalue) 在同一报表中设置 "值 X"，则例程将返回 HidP \_ 状态 \_ 不兼容的 \_ 报表 \_ ID。
+当应用程序或驱动程序使用 **HidP \_ set**_Xxx_ 例程来设置报表中的用法时，例程还可以返回相同的两个状态值。 找不到 HIDP \_ 状态 \_ 使用情况的含义与 \_ \_ **HIDP \_ 获取**_Xxx_ 例程的含义相同。 但是，HIDP \_ 状态 \_ 不兼容 \_ 报表 ID 的含义 \_ 是不同的。 此状态值指示报表以前配置了报表 ID，并且调用方指定的使用不属于该报表 ID。 使用上图作为示例，在应用程序或驱动程序使用 [**HidP \_ SetUsages**](/windows-hardware/drivers/ddi/hidpi/nf-hidpi-hidp_setusages) 将 "Button 2" 设置为零初始化报表后，报表将配置为报表 ID 7。 如果应用程序或驱动程序随后尝试使用 [**HidP \_ SetUsageValue**](/windows-hardware/drivers/ddi/hidpi/nf-hidpi-hidp_setusagevalue) 在同一报表中设置 "值 X"，则例程将返回 HidP \_ 状态 \_ 不兼容的 \_ 报表 \_ ID。
 
-如果** \_ HidP**<em>Xxx</em>例程返回 HidP \_ 状态 \_ 不兼容 \_ 报表 \_ ID，则调用方应执行下列操作之一：
+如果 **\_ HidP**<em>Xxx</em>例程返回 HidP \_ 状态 \_ 不兼容 \_ 报表 \_ ID，则调用方应执行下列操作之一：
 
 -   如果调用方正在设置用法，则它应分配正确长度的新报表，对其进行零初始化，然后再次调用例程。 在成功设置报表中的所有用法后，调用方可以将报表发送到集合。
 

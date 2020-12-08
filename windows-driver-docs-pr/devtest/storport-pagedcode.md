@@ -1,7 +1,6 @@
 ---
 title: 'PagedCode 规则 (storport) '
 description: 此规则验证在 \_ 调用分页代码宏时，驱动程序是否处于 IRQL 调度 \_ 级别。 在 IRQL 调度级别执行的任何代码 \_ 必须位于非分页内存中，以避免导致页错误。
-ms.assetid: 7FED3FEF-E6E5-4C26-8777-0A4BCCE0E1EE
 ms.date: 05/21/2018
 keywords:
 - 'PagedCode 规则 (storport) '
@@ -12,12 +11,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 6fc9571899836d33b44265bac8f6cbe8d11ea82e
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 626c48d831f4f8d1843cc4dea50d1f37f02b16c1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107068"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96819623"
 ---
 # <a name="pagedcode-rule-storport"></a>PagedCode 规则 (storport) 
 

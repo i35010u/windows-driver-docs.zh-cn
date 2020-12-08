@@ -1,19 +1,18 @@
 ---
 title: NDIS 协议驱动程序安装
 description: NDIS 协议驱动程序安装
-ms.assetid: D783E386-91A2-4E6E-8340-78E0FFA14974
 keywords:
 - 协议驱动程序 WDK 网络，安装
 - NDIS 协议驱动程序 WDK，安装
 - 安装 NDIS 协议驱动程序 WDK 网络
 ms.date: 01/16/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: b5b4384dfefa4e3bf9b39107385ee521f35dcd0e
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: da6ad922df032851b328da0715a50124bca5d6f7
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89211755"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96821279"
 ---
 # <a name="ndis-protocol-driver-installation"></a>NDIS 协议驱动程序安装
 

@@ -1,7 +1,6 @@
 ---
 title: 启动受保护的视频会话
 description: 启动受保护的视频会话
-ms.assetid: c92f2d1a-ac15-49d4-858b-ff207ff4810c
 keywords:
 - 复制保护 WDK COPP，启动受保护的视频会话
 - 视频复制保护 WDK COPP，启动受保护的视频会话
@@ -9,12 +8,12 @@ keywords:
 - 受保护的视频 WDK COPP，启动会话
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0202c946dba42bc7f3f10f0417ae5e8d6020c21c
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 3dc0be29f5ab8cc136d4051e4efcd8b4d75b32f8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89066560"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96820811"
 ---
 # <a name="starting-a-protected-video-session"></a>启动受保护的视频会话
 

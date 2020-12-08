@@ -1,18 +1,17 @@
 ---
 title: 增强的 I/O 验证
 description: 增强的 I/O 验证
-ms.assetid: ce8a0b22-fa27-45e5-b013-b3accf604ed4
 keywords:
 - 增强的 i/o 验证功能 WDK 驱动程序验证程序
 - I/o 验证功能 WDK 驱动程序验证程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2d986afc0b0499c79e57ec775242512e8173562a
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 4240eefc1ba06be852358126a621a4dad3381e2f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89383237"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96819783"
 ---
 # <a name="enhanced-io-verification"></a>增强的 I/O 验证
 
@@ -51,9 +50,9 @@ ms.locfileid: "89383237"
 
 增强型 i/o 验证捕获的驱动程序错误的显示方式与 [级别 2 I/o 验证](i-o-verification.md)所捕获的驱动程序错误相同。
 
-在蓝屏上，消息 **IO 系统验证错误** 和字符串 **WDM 驱动程序错误** *XXX*指出了这些错误，其中 *XXX* 是 i/o 错误代码。
+在蓝屏上，消息 **IO 系统验证错误** 和字符串 **WDM 驱动程序错误** *XXX* 指出了这些错误，其中 *XXX* 是 i/o 错误代码。
 
-在故障转储文件中，消息 **错误检查 0xC9 (DRIVER \_ VERIFIER \_ IOMANAGER \_ 违例) **，以及 i/o 错误代码来记录这些错误。 在这种情况下，i/o 错误代码将显示为 bug 检查0xC9 的第一个参数。
+在故障转储文件中，消息 **错误检查 0xC9 (DRIVER \_ VERIFIER \_ IOMANAGER \_ 违例)**，以及 i/o 错误代码来记录这些错误。 在这种情况下，i/o 错误代码将显示为 bug 检查0xC9 的第一个参数。
 
 在 (KD 或 WinDbg) 的内核调试器中，消息 **WDM 驱动程序错误** 和描述性文本字符串指出了这些错误。 当内核调试器处于活动状态时，可以忽略第2级错误并恢复系统操作。  (在任何其他 bug 检查中都不可能。 ) 
 
@@ -63,13 +62,13 @@ ms.locfileid: "89383237"
 
 可以通过使用驱动程序验证器管理器或 Verifier.exe 命令行为一个或多个驱动程序激活增强的 i/o 验证功能。 有关详细信息，请参阅 [选择驱动程序验证程序选项](selecting-driver-verifier-options.md)。
 
-**注意**   在 windows 7 和更高版本的 Windows 操作系统中，当你选择 " [I/o 验证](i-o-verification.md)" 时，将自动激活增强的 i/o 验证。 不能将其选择为单独的选项。
+**注意**  在 windows 7 和更高版本的 Windows 操作系统中，当你选择 " [I/o 验证](i-o-verification.md)" 时，将自动激活增强的 i/o 验证。 不能将其选择为单独的选项。
 
  
 
 -   **在命令行中**
 
-    在命令行中，增强的 i/o 验证选项由 **第6个 (0x40) **表示。 若要激活增强型 i/o 验证，请使用0x40 的标志值或将0x40 添加到标志值。 例如：
+    在命令行中，增强的 i/o 验证选项由 **第6个 (0x40)** 表示。 若要激活增强型 i/o 验证，请使用0x40 的标志值或将0x40 添加到标志值。 例如：
 
     ```
     verifier /flags 0x40 /driver MyDriver.sys
@@ -88,7 +87,7 @@ ms.locfileid: "89383237"
 -   **使用驱动程序验证器管理器**
 
     1.  启动驱动程序验证器管理器。 在命令提示符窗口中键入 **Verifier** 。
-    2.  选择 " **为代码开发人员 (创建自定义设置") ** ，然后单击 " **下一步**"。
+    2.  选择 " **为代码开发人员 (创建自定义设置")** ，然后单击 " **下一步**"。
     3.  选择 " **从完整列表中选择单个设置**"。
     4.  选择 (检查) **增强的 i/o 验证**。
 

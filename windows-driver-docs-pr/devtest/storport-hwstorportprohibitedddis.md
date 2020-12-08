@@ -1,7 +1,6 @@
 ---
 title: 'HwStorPortProhibitedDDIs 规则 (storport) '
 description: 此规则包含 WDM DDIs (的列表，其中包含不应在物理 StorPort 微型端口驱动程序中调用的互锁函数) 。
-ms.assetid: E2093A43-7639-458E-95F7-A5BB2D7F7E9B
 ms.date: 05/21/2018
 keywords:
 - 'HwStorPortProhibitedDDIs 规则 (storport) '
@@ -12,12 +11,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: f24897dcbe74d8e834450e32c6381ae36ef903b8
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: d931dadb27887fd522472961c68e34b4f46acbb7
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107076"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96819645"
 ---
 # <a name="hwstorportprohibitedddis-rule-storport"></a>HwStorPortProhibitedDDIs 规则 (storport) 
 

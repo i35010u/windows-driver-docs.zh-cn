@@ -1,7 +1,6 @@
 ---
 title: 使用常用缓冲区
 description: 使用常用缓冲区
-ms.assetid: 81a56f62-917e-4798-b2cc-6469c802fab8
 keywords:
 - DMA 操作 WDK KMDF，常见缓冲区
 - 总线主控 DMA WDK KMDF，常见缓冲区
@@ -9,12 +8,12 @@ keywords:
 - 缓冲区 WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e856a1fb0cc150e8bb1643e1e43a046f03a5efce
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 102b9ee97f672f2f4e6f3b2babaee2a952e7ebdc
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91732571"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96821099"
 ---
 # <a name="using-common-buffers"></a>使用常用缓冲区
 
@@ -36,7 +35,7 @@ DMA 设备的驱动程序有时必须分配设备和驱动程序都可以访问�
 
 -   调用 [**WdfCommonBufferGetAlignedVirtualAddress**](/windows-hardware/drivers/ddi/wdfcommonbuffer/nf-wdfcommonbuffer-wdfcommonbuffergetalignedvirtualaddress) 以获取缓冲区的虚拟地址，驱动程序可以访问该地址。
 
-下面的代码示例是从[PLX9x5x](/samples/browse/)示例的*Init .c*文件中获取的。 此代码显示了 KMDF 驱动程序如何分配通用缓冲空间。
+下面的代码示例是从 [PLX9x5x](/samples/browse/)示例的 *Init .c* 文件中获取的。 此代码显示了 KMDF 驱动程序如何分配通用缓冲空间。
 
 ```cpp
 // Allocate common buffer for building writes
@@ -58,7 +57,7 @@ DevExt->WriteCommonBufferBaseLA =
 RtlZeroMemory( DevExt->WriteCommonBufferBase, DevExt->WriteCommonBufferSize);
 ```
 
-如果在调用[**WdfDmaEnablerCreate**](/windows-hardware/drivers/ddi/wdfdmaenabler/nf-wdfdmaenabler-wdfdmaenablercreate)之前驱动程序调用[**WdfDeviceSetAlignmentRequirement**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicesetalignmentrequirement) ，则**WdfDmaEnablerCreate**创建的缓冲区将与驱动程序指定给**WdfDeviceSetAlignmentRequirement**的内存地址边界对齐。 否则，公共缓冲区会与 word 地址边界对齐。 或者，驱动程序可以调用 [**WdfCommonBufferCreateWithConfig**](/windows-hardware/drivers/ddi/wdfcommonbuffer/nf-wdfcommonbuffer-wdfcommonbuffercreatewithconfig) 来指定单个缓冲区的对齐方式。
+如果在调用 [**WdfDmaEnablerCreate**](/windows-hardware/drivers/ddi/wdfdmaenabler/nf-wdfdmaenabler-wdfdmaenablercreate)之前驱动程序调用 [**WdfDeviceSetAlignmentRequirement**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicesetalignmentrequirement) ，则 **WdfDmaEnablerCreate** 创建的缓冲区将与驱动程序指定给 **WdfDeviceSetAlignmentRequirement** 的内存地址边界对齐。 否则，公共缓冲区会与 word 地址边界对齐。 或者，驱动程序可以调用 [**WdfCommonBufferCreateWithConfig**](/windows-hardware/drivers/ddi/wdfcommonbuffer/nf-wdfcommonbuffer-wdfcommonbuffercreatewithconfig) 来指定单个缓冲区的对齐方式。
 
 若要获取驱动程序已分配的公用缓冲区的长度，驱动程序可以调用 [**WdfCommonBufferGetLength**](/windows-hardware/drivers/ddi/wdfcommonbuffer/nf-wdfcommonbuffer-wdfcommonbuffergetlength)。
 

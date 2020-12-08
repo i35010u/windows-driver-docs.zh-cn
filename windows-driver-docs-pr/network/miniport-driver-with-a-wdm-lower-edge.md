@@ -1,7 +1,6 @@
 ---
 title: 包含 WDM 下边缘的微型端口驱动程序
 description: 包含 WDM 下边缘的微型端口驱动程序
-ms.assetid: e3acbcfe-b63d-441d-ab5f-26ee54a5d3ec
 keywords:
 - NDIS-WDM 微型端口驱动程序 WDK 网络，关于 NDIS-WDM 微型端口驱动程序
 - NDIS-WDM 微型端口驱动程序 WDK 网络，组件
@@ -11,12 +10,12 @@ keywords:
 - WDM 低边缘 WDK 网络，关于 WDM 下边缘
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b9a3c22f3928333b744c379fd3342d3a8c901d50
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 659ee32941006575b9743d8aa59b861d84d4908b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89215564"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96820089"
 ---
 # <a name="miniport-driver-with-a-wdm-lower-edge"></a>包含 WDM 下边缘的微型端口驱动程序
 

@@ -1,7 +1,6 @@
 ---
 title: 摘要消息文件
 description: 摘要消息文件
-ms.assetid: 90d82aee-5836-4f69-8e52-48400e1445cc
 keywords:
 - Tracefmt WDK，摘要消息文件
 - 摘要消息文件 WDK Tracefmt
@@ -10,12 +9,12 @@ keywords:
 - sum 文件
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b25bcba43d22216fe50b2e5f5f5be98cad3c9ee5
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 01ea918e5cbe6c441f40cae72a5b906ef1c8055e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89384509"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96820849"
 ---
 # <a name="summary-message-file"></a>摘要消息文件
 
@@ -23,7 +22,7 @@ ms.locfileid: "89384509"
 ## <span id="ddk_summary_message_file_tools"></span><span id="DDK_SUMMARY_MESSAGE_FILE_TOOLS"></span>
 
 
-摘要消息文件是一个文本文件，其中包含有关软件跟踪的信息。 Tracefmt 在处理跟踪日志或跟踪会话中的消息之后* ( 创建摘要消息) 文件。*
+摘要消息文件是一个文本文件，其中包含有关软件跟踪的信息。 Tracefmt 在处理跟踪日志或跟踪会话中的消息之后 *( 创建摘要消息) 文件。*
 
 摘要消息文件包含统计摘要中的以下数据：
 

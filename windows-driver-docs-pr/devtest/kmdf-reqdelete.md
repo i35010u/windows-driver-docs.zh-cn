@@ -1,7 +1,6 @@
 ---
 title: 'ReqDelete 规则 (kmdf) '
 description: ReqDelete 规则指定不向 WdfRequestCompleteXxx 函数传递驱动程序创建的请求。 相反，请求应在完成时删除。
-ms.assetid: 66e86353-46f7-4aa4-a4be-16277f4924e3
 ms.date: 05/21/2018
 keywords:
 - 'ReqDelete 规则 (kmdf) '
@@ -12,21 +11,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 4d43fc888af2ec812e92bd9a878f5ac1376cb034
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: c2f086bc398a629b4ed84c269093c890d2622bf7
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90101514"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96819755"
 ---
 # <a name="reqdelete-rule-kmdf"></a>ReqDelete 规则 (kmdf) 
 
 
-**ReqDelete**规则指定不向*WdfRequestCompleteXxx*函数传递驱动程序创建的请求。 相反，请求应在完成时删除。
+**ReqDelete** 规则指定不向 *WdfRequestCompleteXxx* 函数传递驱动程序创建的请求。 相反，请求应在完成时删除。
 
 如果驱动程序在对 [**WdfRequestCreate**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcreate)的调用中创建框架请求对象，则当驱动程序完成请求时，应使用 [**WdfObjectDelete**](/windows-hardware/drivers/ddi/wdfobject/nf-wdfobject-wdfobjectdelete) 删除该请求。
 
-驱动程序无法对请求对象调用 [**WdfRequestComplete**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcomplete)、 [**WdfRequestCompleteWithInformation**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcompletewithinformation) 或 [**WdfRequestCompleteWithPriorityBoost**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcompletewithpriorityboost) 函数。 *WdfRequestCompleteXxx*函数是为框架提供的请求保留的。
+驱动程序无法对请求对象调用 [**WdfRequestComplete**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcomplete)、 [**WdfRequestCompleteWithInformation**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcompletewithinformation) 或 [**WdfRequestCompleteWithPriorityBoost**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcompletewithpriorityboost) 函数。 *WdfRequestCompleteXxx* 函数是为框架提供的请求保留的。
 
 **驱动程序模型： KMDF**
 

@@ -1,31 +1,30 @@
 ---
 title: 静态驱动程序验证程序规则
 description: 静态驱动程序验证程序规则
-ms.assetid: cbfd84c8-9a62-47ff-83a3-8f0d598faac0
 keywords:
-- 静态驱动程序验证程序 WDK 规则
-- StaticDV WDK 规则
-- SDV WDK 规则
-- 规则 WDK Static Driver Verifier
-- 用于检查接口规范语言
+- 静态驱动程序验证程序 WDK，规则
+- StaticDV WDK，规则
+- SDV WDK，规则
+- 规则 WDK 静态驱动程序验证程序
+- 用于界面检查的规范语言
 - SLIC
-- 驱动程序操作 WDK Static Driver Verifier
-- 条件表达式 WDK Static Driver Verifier
-- 赋值语句 WDK Static Driver Verifier
-- 中止语句 WDK Static Driver Verifier
+- 驱动程序操作 WDK 静态驱动程序验证程序
+- 条件表达式 WDK 静态驱动程序验证程序
+- 赋值语句 WDK 静态驱动程序验证程序
+- 中止语句 WDK 静态驱动程序验证程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cfc0923c953bf218990dd7d26aaf0663dc3d4434
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 25da4e30eba3be2c722c966e1968842d4bdf6353
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63345761"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96819685"
 ---
 # <a name="static-driver-verifier-rule"></a>静态驱动程序验证程序规则
 
 
-验证规则定义所必需的驱动程序和操作系统的内核接口之间正确交互。 规则是用规范语言的接口检查 （slic 表），一种简单的语言，由 Microsoft Research 开发明确实现此目的。
+验证规则定义在操作系统的驱动程序和内核接口之间进行适当交互的要求。 规则以规范语言编写，用于 (SLIC) 的界面检查，这是 Microsoft Research 专门为此目的开发的一种简单语言。
 
  
 

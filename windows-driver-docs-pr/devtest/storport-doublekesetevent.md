@@ -1,7 +1,6 @@
 ---
 title: 'DoubleKeSetEvent 规则 (storport) '
 description: 此规则验证是否未在同一事件对象上两次调用 KeSetEvent。 如果将相同的事件对象传递到例程，则驱动程序将无法满足规则。
-ms.assetid: A9BA2D40-865B-4BD4-86A3-78D695F2DB4D
 ms.date: 05/21/2018
 keywords:
 - 'DoubleKeSetEvent 规则 (storport) '
@@ -12,12 +11,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: e52d33b117183005f2266c2e0a378a89016e928a
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: ef83751adfd5aacfd3fa05b479553175308e4c69
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107186"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96819651"
 ---
 # <a name="doublekesetevent-rule-storport"></a>DoubleKeSetEvent 规则 (storport) 
 

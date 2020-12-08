@@ -1,15 +1,14 @@
 ---
 title: 了解 TYMED
 description: 了解 TYMED
-ms.assetid: 36110923-c346-4367-8b7d-ef4d003ed88c
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 203c64fcc59a56f50264dac7f9ea9487cd65b9d6
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 74911cac7e54b972493509b79368c715c7867843
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89184121"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96819535"
 ---
 # <a name="understanding-tymed"></a>了解 TYMED
 

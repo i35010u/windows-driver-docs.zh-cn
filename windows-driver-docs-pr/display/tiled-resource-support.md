@@ -1,15 +1,14 @@
 ---
 title: 平铺资源支持
 description: " (WDDM) 1.3 及更高版本的驱动程序，Windows 显示驱动程序模型可以支持平铺资源。 此功能是从 Windows 8.1 开始的新功能。"
-ms.assetid: 02F3DFB8-2407-412A-B518-9AF4A3E1466A
 ms.date: 10/20/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: b003bade2e8e22046674ed5f89253d6462742e7e
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: b931b606984a7db37abcc4da08203a1d045edd75
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89065986"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96820787"
 ---
 # <a name="tiled-resource-support"></a>平铺资源支持
 
@@ -38,7 +37,7 @@ ms.locfileid: "89065986"
 * [**D3DWDDM1 \_ 3DDI \_ 平铺 \_ 资源 \_ 支持 \_ 标志**](/windows-hardware/drivers/ddi/d3d10umddi/ne-d3d10umddi-d3dwddm1_3ddi_tiled_resources_support_flag)
 * [**D3D10 \_ 2DDICAPS \_ TYPE**](/windows-hardware/drivers/ddi/d3d10umddi/ne-d3d10umddi-d3d10_2ddicaps_type) (**D3DWDDM1 \_ 3DDICAPS \_ D3D11 \_ OPTIONS1** 常量值) 
 * [**D3D10 \_DDI \_ 筛选器**](/windows-hardware/drivers/ddi/d3d10umddi/ne-d3d10umddi-d3d10_ddi_filter) (**D3DWDDM1 \_ 3DDI \_ FILTER \_ XXX** 常数值) 
-* [**D3D10 \_DDI \_ 资源 \_ 杂项 \_ 标志**](/windows-hardware/drivers/ddi/d3d10umddi/ne-d3d10umddi-d3d10_ddi_resource_misc_flag) (**D3DWDDM1 \_ 3DDI \_ 资源 \_ 杂项 \_ ** 平铺和 **D3DWDDM1 \_ 3DDI \_ 资源 \_ 杂项 \_ 磁贴 \_ 池** 常量值) 
+* [**D3D10 \_DDI \_ 资源 \_ 杂项 \_ 标志**](/windows-hardware/drivers/ddi/d3d10umddi/ne-d3d10umddi-d3d10_ddi_resource_misc_flag) (**D3DWDDM1 \_ 3DDI \_ 资源 \_ 杂项 \_** 平铺和 **D3DWDDM1 \_ 3DDI \_ 资源 \_ 杂项 \_ 磁贴 \_ 池** 常量值) 
 * [**D3D10DDIARG \_CREATEDEVICE**](/windows-hardware/drivers/ddi/d3d10umddi/ns-d3d10umddi-d3d10ddiarg_createdevice) (**pWDDM1 \_ 3DeviceFuncs** 成员) 
 * [**D3D11DDIARG \_CREATEDEFERREDCONTEXT**](/windows-hardware/drivers/ddi/d3d10umddi/ns-d3d10umddi-d3d11ddiarg_createdeferredcontext) (**pWDDM1 \_ 3ContextFuncs** 成员) 
 

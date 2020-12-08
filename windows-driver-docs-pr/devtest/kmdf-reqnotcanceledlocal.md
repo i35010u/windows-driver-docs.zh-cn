@@ -1,7 +1,6 @@
 ---
 title: 'ReqNotCanceledLocal 规则 (kmdf) '
 description: ReqNotCanceledLocal 规则指定如果在默认 i/o 队列回调函数中完成标记为可取消的请求，则必须在完成 i/o 请求之前调用 WdfRequestUnmarkCancelable 方法。
-ms.assetid: 3cc3d517-6fb9-46b2-9d22-6bdbef442007
 ms.date: 05/21/2018
 keywords:
 - 'ReqNotCanceledLocal 规则 (kmdf) '
@@ -12,19 +11,19 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: c47b4fd3499755836a7667cd5a5d7f8bbdae3bdc
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 91413064f331e0dc02fc5e0d7a894ba5fb3b1d2b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102822"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96819741"
 ---
 # <a name="reqnotcanceledlocal-rule-kmdf"></a>ReqNotCanceledLocal 规则 (kmdf) 
 
 
-**ReqNotCanceledLocal**规则指定如果在默认 i/o 队列回调函数中完成标记为可取消的请求，则必须在完成 i/o 请求之前调用[**WdfRequestUnmarkCancelable**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestunmarkcancelable)方法。 必须完成 i/o 请求，除非该请求在调用 **WdfRequestUnmarkCancelable**之前取消。
+**ReqNotCanceledLocal** 规则指定如果在默认 i/o 队列回调函数中完成标记为可取消的请求，则必须在完成 i/o 请求之前调用 [**WdfRequestUnmarkCancelable**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestunmarkcancelable)方法。 必须完成 i/o 请求，除非该请求在调用 **WdfRequestUnmarkCancelable** 之前取消。
 
-如果 [**WdfRequestMarkCancelable**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestmarkcancelable) 通过调用 [**WdfRequestComplete**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcomplete)、 [**WdfRequestCompleteWithInformation**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcompletewithinformation)或 [**WdfRequestCompleteWithPriorityBoost**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcompletewithpriorityboost)) 完成了标记为可取消的请求 (，则必须在完成 i/o 请求之前调用 [**WdfRequestUnmarkCancelable**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestunmarkcancelable) 方法。 除非 **WdfRequestUnmarkCancelable** 方法返回的状态为 "已 ** \_ 取消**"，否则该请求可以完成。
+如果 [**WdfRequestMarkCancelable**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestmarkcancelable) 通过调用 [**WdfRequestComplete**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcomplete)、 [**WdfRequestCompleteWithInformation**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcompletewithinformation)或 [**WdfRequestCompleteWithPriorityBoost**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcompletewithpriorityboost)) 完成了标记为可取消的请求 (，则必须在完成 i/o 请求之前调用 [**WdfRequestUnmarkCancelable**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestunmarkcancelable) 方法。 除非 **WdfRequestUnmarkCancelable** 方法返回的状态为 "已 **\_ 取消**"，否则该请求可以完成。
 
 请求的默认 i/o 队列回调函数为 [*EvtIoDefault*](/windows-hardware/drivers/ddi/wdfio/nc-wdfio-evt_wdf_io_queue_io_default)、 [*EvtIoRead*](/windows-hardware/drivers/ddi/wdfio/nc-wdfio-evt_wdf_io_queue_io_read)、 [*EvtIoWrite*](/windows-hardware/drivers/ddi/wdfio/nc-wdfio-evt_wdf_io_queue_io_write)、 [*EvtIoDeviceControl*](/windows-hardware/drivers/ddi/wdfio/nc-wdfio-evt_wdf_io_queue_io_device_control)、 [*EvtIoInternalDeviceControl*](/windows-hardware/drivers/ddi/wdfio/nc-wdfio-evt_wdf_io_queue_io_internal_device_control)。
 

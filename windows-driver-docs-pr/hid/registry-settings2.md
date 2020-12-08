@@ -1,7 +1,6 @@
 ---
 title: 注册表设置
 description: 注册表设置
-ms.assetid: a2536911-0467-4bd0-a63b-55341f0d7567
 keywords:
 - 操纵杆 WDK HID，注册表设置
 - 虚拟游戏杆驱动程序 WDK HID，注册表设置
@@ -9,12 +8,12 @@ keywords:
 - 注册表 WDK 游戏杆
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 417ae386819fb415c34740c4c8ff9a65849fe280
-ms.sourcegitcommit: a866b3470025d85b25a48857a81f893179698e7e
+ms.openlocfilehash: 7cfbaaed963adb7ef61374b34fda004a0cd23812
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92356009"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96820323"
 ---
 # <a name="registry-settings"></a>注册表设置
 
@@ -165,7 +164,7 @@ struct {
 </tbody>
 </table>
 
- **DwType**成员包含表示预定义游戏杆类型的数字。 如果 OEM 校准实用程序设置了此值，则应在 Mmddk 中定义的值范围之外设置值。 确切的值并不重要，因为它是由标准控制面板重置的。
+ **DwType** 成员包含表示预定义游戏杆类型的数字。 如果 OEM 校准实用程序设置了此值，则应在 Mmddk 中定义的值范围之外设置值。 确切的值并不重要，因为它是由标准控制面板重置的。
 
 ## <a name="current-settings"></a>当前设置
 
@@ -228,4 +227,4 @@ struct {
 }
 ```
 
-用户值、当前设置和已保存的设置都存储在注册表中的 "当前" 游戏杆驱动程序的路径下。 安装了驱动程序的每个操纵杆设备在路径 REGSTR 路径 JOYCONFIG 下都有一个名为 \_ \_ Msjstick. winspool.drv xxxx 的键 &lt; *xxxx* &gt; ，其中*xxxx*是用于使密钥名称唯一的四位数字。 该数字与已安装的多媒体 (声音、视频和游戏控制器) 驱动程序的数目相关。 在启动时，Msjstick 将初始化为每个游戏控制器驱动程序的配置。 由于它每次只能处理一个配置，因此，每个配置都将替换最后一个，而 "当前" 驱动程序则是最后一个要初始化的驱动程序。 这意味着，在安装新的驱动程序时，用户可能会丢失所有当前设置，并且无法通过假设这些注册表值的路径始终相同来构造微型驱动程序。
+用户值、当前设置和已保存的设置都存储在注册表中的 "当前" 游戏杆驱动程序的路径下。 安装了驱动程序的每个操纵杆设备在路径 REGSTR 路径 JOYCONFIG 下都有一个名为 \_ \_ Msjstick. winspool.drv xxxx 的键 &lt; *xxxx* &gt; ，其中 *xxxx* 是用于使密钥名称唯一的四位数字。 该数字与已安装的多媒体 (声音、视频和游戏控制器) 驱动程序的数目相关。 在启动时，Msjstick 将初始化为每个游戏控制器驱动程序的配置。 由于它每次只能处理一个配置，因此，每个配置都将替换最后一个，而 "当前" 驱动程序则是最后一个要初始化的驱动程序。 这意味着，在安装新的驱动程序时，用户可能会丢失所有当前设置，并且无法通过假设这些注册表值的路径始终相同来构造微型驱动程序。

@@ -1,15 +1,14 @@
 ---
 title: 创建 WIA 微驱动程序
 description: 创建 WIA 微驱动程序
-ms.assetid: 4f453569-d768-47fb-9b70-ebb51e303cf0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ca477307338a98a28a8dab8feb92b670f1d17dd5
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: c33db99053634f648bd245d86c81eff1e6ea2681
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89191733"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96820265"
 ---
 # <a name="creating-a-wia-microdriver"></a>创建 WIA 微驱动程序
 
@@ -19,7 +18,7 @@ ms.locfileid: "89191733"
 
 许多平板扫描仪的控制方式类似。 模型之间的常见行为已抽象到 Microsoft 提供的通用驱动程序（称为 WIA 平板驱动程序）。 此驱动程序调用由扫描程序供应商提供的名为 microdriver 的 DLL，该 DLL 实现任何所需的特定于设备的行为。 然后，可以将 WIA 平板驱动程序与 microdriver 一起用作 WIA 微型驱动程序。 使用 microdriver 的优点是非常易于实现和调试。 并非所有扫描仪都可以通过 microdriver 支持。 它最适用于无双面打印器或其他高级) 功能 (的简单设备，或者需要基本功能驱动程序时。
 
-**注意**   本部分介绍的 WIA microdrivers 为 WIA 1.0。 当前没有 WIA 2.0 对应的 WIA microdriver 模型。 如果你开发的 WIA microdriver 在具有支持 WIA 2.0 (Windows Vista 或更) 高版本的 Windows 版本的计算机上运行，则此 WIA microdriver 将像任何其他 WIA 1.0 设备一样工作，并将在 WIA 1.0 兼容模式下由 WIA 2.0 应用程序使用。
+**注意**  本部分介绍的 WIA microdrivers 为 WIA 1.0。 当前没有 WIA 2.0 对应的 WIA microdriver 模型。 如果你开发的 WIA microdriver 在具有支持 WIA 2.0 (Windows Vista 或更) 高版本的 Windows 版本的计算机上运行，则此 WIA microdriver 将像任何其他 WIA 1.0 设备一样工作，并将在 WIA 1.0 兼容模式下由 WIA 2.0 应用程序使用。
 
  
 

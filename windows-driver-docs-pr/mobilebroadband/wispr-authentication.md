@@ -1,15 +1,14 @@
 ---
 title: WISPr 身份验证概述
 description: WISPr 身份验证概述
-ms.assetid: 49782d7f-c2f9-408d-971c-1af4d93d4d8d
 ms.date: 07/05/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: f068ba7c8721f8bbf6ab435b49a6fdb284a40bcb
-ms.sourcegitcommit: 67efcd26f7be8f50c92b141ccd14c9c68f4412d8
+ms.openlocfilehash: 72d579481485319c8edcfbbd7d78daa1f2a5870a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88902638"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96820621"
 ---
 # <a name="wispr-authentication-overview"></a>WISPr 身份验证概述
 

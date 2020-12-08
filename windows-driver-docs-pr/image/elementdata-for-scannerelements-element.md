@@ -1,9 +1,8 @@
 ---
-title: ElementData ScannerElements 元素
-description: 所需的 ElementData 元素包含为扫描程序相关架构请求返回的数据。
-ms.assetid: 852a7f8a-cd87-467b-8793-8a7d7943f2a9
+title: ScannerElements 元素的 ElementData
+description: 必需的 ElementData 元素包含为与扫描程序相关的架构请求返回的数据。
 keywords:
-- ElementData ScannerElements 元素成像设备
+- ElementData for ScannerElements element Imaging 设备
 topic_type:
 - apiref
 api_name:
@@ -12,19 +11,19 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: df93a1b4bbc408cff1de244b816cdc714a45eae9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a7c28dbd677322efe82d0cab83f8b5d3b41744cf
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63364463"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96819553"
 ---
-# <a name="elementdata-for-scannerelements-element"></a>ElementData ScannerElements 元素
+# <a name="elementdata-for-scannerelements-element"></a>ScannerElements 元素的 ElementData
 
 
-所需**ElementData**元素包含为扫描程序相关架构请求返回的数据。
+必需的 **ElementData** 元素包含为与扫描程序相关的架构请求返回的数据。
 
-<a name="usage"></a>用法
+<a name="usage"></a>使用情况
 -----
 
 ```xml
@@ -47,26 +46,26 @@ ms.locfileid: "63364463"
 </colgroup>
 <thead>
 <tr class="header">
-<th>特性</th>
-<th>在任务栏的搜索框中键入</th>
-<th>必需</th>
+<th>属性</th>
+<th>类型</th>
+<th>必须</th>
 <th>描述</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><strong><strong>名称</strong></strong></p></td>
+<td><p><strong><strong>“属性”</strong></strong></p></td>
 <td><p>xs:string</p></td>
 <td><p>否</p></td>
 <td><p></p>
-<p>必需。 以下 QNames:xmlns:ScannerDescriptionReturn currentScannerDescription schema.xmlns:ScannerConfigurationReturn 当前 ScannerConfiguration schema.xmlns:ScannerStatusReturn 当前 ScannerStatus schema.xmlns:D 之一efaultScanTicketReturn 当前 DefaultScanTicket schema.xmlns:VendorSectionReturn 到 WSD 扫描服务供应商定义的扩展的标识部分。</p></td>
+<p>必需。 以下 QNames： xmlns： ScannerDescriptionReturn 中的一种： currentScannerDescription schema.xmlns： ScannerConfigurationReturn 当前 ScannerConfiguration schema.xmlns： ScannerStatusReturn 当前 ScannerStatus schema.xmlns： DefaultScanTicketReturn 当前 DefaultScanTicket schema.xmlns： VendorSectionReturn 已识别供应商定义的扩展到 WSD 扫描服务的部分。</p></td>
 </tr>
 <tr class="even">
 <td><p><strong><strong>有效</strong></strong></p></td>
 <td><p>xs:string</p></td>
 <td><p>否</p></td>
 <td><p></p>
-<p>必需。 一个布尔值，必须为 0，为 false，1 或 true。</p></td>
+<p>必需。 必须为0、false、1或 true 的布尔值。</p></td>
 </tr>
 </tbody>
 </table>
@@ -121,11 +120,11 @@ ms.locfileid: "63364463"
 <a name="remarks"></a>备注
 -------
 
-在客户端调用[ **GetScannerElementsRequest** ](getscannerelementsrequest.md)来确定扫描程序相关的元素的值。 WSD 扫描服务将返回此信息**ElementData**通过元素[ **GetScannerElementsResponse** ](getscannerelementsresponse.md)操作。
+客户端调用 [**GetScannerElementsRequest**](getscannerelementsrequest.md) 来确定与扫描程序相关的元素的值。 WSD 扫描服务通过 [**GetScannerElementsResponse**](getscannerelementsresponse.md)操作在 **ElementData** 元素中返回此信息。
 
-QName 值**名称**属性必须为架构关键字，表示为其客户端请求的信息在 WSD 扫描服务中的顶级节。 命名空间前缀和冒号分隔的有效元素名称，必须指定扫描服务。
+**Name** 属性的 QName 值必须是一个 schema 关键字，表示客户端请求其信息的 WSD 扫描服务内的顶级部分。 扫描服务必须同时指定命名空间前缀和有效的以冒号分隔的元素名称。
 
-**有效**属性指示客户端提供的架构关键字是否有效。 WSD 扫描服务将此属性设置为 **，则返回 true**如果它可以将请求的架构关键字映射到有效部分的架构; 否则，它必须将此属性设置**false**。
+**有效** 的属性指示客户端提供的架构关键字是否有效。 如果 WSD 扫描服务可以将请求的架构关键字映射到其架构的有效部分，则将此特性设置为 **true** ;否则，它必须将此属性设置为 **false**。
 
 ## <a name="see-also"></a>请参阅
 

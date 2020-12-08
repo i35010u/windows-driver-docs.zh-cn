@@ -1,9 +1,8 @@
 ---
 title: .eventlog（显示最近的事件）
-description: .Eventlog 命令显示新的 Microsoft Win32 调试事件，如模块加载、 进程创建和终止和线程创建和终止。
-ms.assetid: 8075007a-42a2-4973-bb04-cca9a4a1b9b6
+description: Eventlog 命令显示最近的 Microsoft Win32 调试事件，如模块加载、进程创建和终止以及线程创建和终止。
 keywords:
-- .eventlog （显示最新事件） Windows 调试
+- eventlog (显示) Windows 调试的最近事件
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 56a217b2d6bd5da76af50c85d8ad134bc23bf859
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 05740ce76d4f20f4e5435e56944a6152adc977e3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63334501"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96819905"
 ---
 # <a name="eventlog-display-recent-events"></a>.eventlog（显示最近的事件）
 
 
-**.Eventlog**命令将显示新的 Microsoft Win32 调试事件，如模块加载、 进程创建和终止和线程创建和终止。
+**Eventlog** 命令显示最近的 Microsoft Win32 调试事件，如模块加载、进程创建和终止以及线程创建和终止。
 
 ```dbgcmd
 .eventlog 
@@ -37,12 +36,12 @@ ms.locfileid: "63334501"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>模式</strong></p></td>
-<td align="left"><p>用户模式下，内核模式</p></td>
+<td align="left"><p><strong>交货</strong></p></td>
+<td align="left"><p>用户模式，内核模式</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>目标</strong></p></td>
-<td align="left"><p>实时、 崩溃转储</p></td>
+<td align="left"><p>实时，故障转储</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>平台</strong></p></td>
@@ -56,9 +55,9 @@ ms.locfileid: "63334501"
 <a name="remarks"></a>备注
 -------
 
-**.Eventlog**命令显示了仅 1024年个字符。
+**Eventlog** 命令仅显示1024个字符。
 
-下面的示例演示 **.eventlog**命令。
+下面的示例演示 **eventlog** 命令。
 
 ```dbgcmd
 0:000> .eventlog

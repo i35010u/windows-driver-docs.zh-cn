@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ BDA \_ NULL \_ 转换 \_ 启动
 description: 客户端使用 KSPROPERTY \_ BDA \_ NULL \_ 转换 \_ 启动来禁用节点之前应用到信号的任何转换，并允许信号无变化地通过节点。
-ms.assetid: 4713d167-7f49-42d6-a2fc-cfdfe5a737ae
 keywords:
 - KSPROPERTY_BDA_NULL_TRANSFORM_START 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e5ba0fb72edbec7960392f0b189a5b09defe7fed
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 21f55d57c3a7e414f3a8e18748cd7ba43fe4e0f1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89191093"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96820457"
 ---
 # <a name="ksproperty_bda_null_transform_start"></a>KSPROPERTY \_ BDA \_ NULL \_ 转换 \_ 启动
 
@@ -71,7 +70,7 @@ ms.locfileid: "89191093"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Bdamedia (包含 Bdamedia) </td>
 </tr>
 </tbody>

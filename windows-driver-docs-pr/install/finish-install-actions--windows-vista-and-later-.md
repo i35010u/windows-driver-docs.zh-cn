@@ -1,7 +1,6 @@
 ---
 title: Finish-Install 操作
 description: Finish-Install 操作
-ms.assetid: 52c7f166-ee74-46b6-815b-5d360d829b4c
 keywords:
 - 完成-安装操作 WDK 设备安装
 - 安装程序完成-安装操作 WDK 设备安装
@@ -10,17 +9,17 @@ keywords:
 - 共同安装程序 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2674d3a0af65a22dc64a10ab1253347ec4a94097
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: f2f33bf77b6008f8bf275db1d58ac62ea7e5e1a4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91732871"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96820209"
 ---
 # <a name="finish-install-actions"></a>Finish-Install 操作
 
 
-**注意**   通用或移动驱动程序包不支持本部分中介绍的功能。 请参阅 [使用通用 INF 文件](using-a-universal-inf-file.md)。
+**注意**  通用或移动驱动程序包不支持本部分中介绍的功能。 请参阅 [使用通用 INF 文件](using-a-universal-inf-file.md)。
 
  
 
@@ -40,9 +39,9 @@ ms.locfileid: "91732871"
 
     例如，假设设备制造商除了需要安装设备的驱动程序外，还需要安装设备特定的应用程序，并且特定于设备的应用程序具有其自己的用户界面的安装程序。 为了提供最佳的用户体验，设备制造商将运行安装程序作为 "完成-安装" 操作。 这样，当 Windows 检测到设备并找到驱动程序时，Windows 将首先安装驱动程序，然后运行该应用程序的安装程序。
 
--   若要运行只能在交互式用户上下文中运行的安装程序， (客户端安装) 。 例如，可以通过使用[驱动程序包](driver-packages.md)inf 文件的[**inf ControlFlags 部分**](inf-controlflags-section.md)中的**InteractiveInstall**指令来启动此类安装程序。
+-   若要运行只能在交互式用户上下文中运行的安装程序， (客户端安装) 。 例如，可以通过使用 [驱动程序包](driver-packages.md)inf 文件的 [**inf ControlFlags 部分**](inf-controlflags-section.md)中的 **InteractiveInstall** 指令来启动此类安装程序。
 
-    **注意**   从 Windows Vista 开始，此类安装程序无法以与 Windows 早期版本相同的方式运行。 这是因为 Windows Vista 和更高版本的 Windows 不支持在客户端安装中安装设备。 但是，如果驱动程序包包括类安装程序、类共同安装程序或启动安装程序的设备共同安装程序，则此类安装程序可以作为 "完成-安装" 操作运行。
+    **注意**  从 Windows Vista 开始，此类安装程序无法以与 Windows 早期版本相同的方式运行。 这是因为 Windows Vista 和更高版本的 Windows 不支持在客户端安装中安装设备。 但是，如果驱动程序包包括类安装程序、类共同安装程序或启动安装程序的设备共同安装程序，则此类安装程序可以作为 "完成-安装" 操作运行。
 
      
 

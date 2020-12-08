@@ -1,15 +1,14 @@
 ---
 title: 查询和更改 RSC 状态
 description: 本部分介绍如何查询或更改当前接收段合并， (RSC 功能的微型端口驱动程序的 RSC) 状态。
-ms.assetid: 5455FBB2-3603-44EF-B1C6-494D31DD820D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: de92e5b469d367401f27faf8f08a59c138c4eb29
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: c43fe3c4d8da6094ff42e1f22d38ed68fc234b21
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89212079"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96820043"
 ---
 # <a name="querying-and-changing-rsc-state"></a>查询和更改 RSC 状态
 
@@ -34,7 +33,7 @@ ms.locfileid: "89212079"
 <thead>
 <tr class="header">
 <th align="left">术语</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>

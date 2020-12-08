@@ -1,15 +1,14 @@
 ---
 title: 指示对远程 NDIS QoS 参数的更改
 description: 指示对远程 NDIS QoS 参数的更改
-ms.assetid: E09EBF25-96B6-417F-9538-D0BEBE5B9E19
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1780e59d0e6c12fd8bbe436d82b3bdee4a063636
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 08c07d3a5ba4e8ea78eeb04046eea70b644ca9db
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89217596"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96821318"
 ---
 # <a name="indicating-changes-to-the-remote-ndis-qos-parameters"></a>指示对远程 NDIS QoS 参数的更改
 
@@ -41,43 +40,43 @@ ms.locfileid: "89217596"
 
     -   一种 [**ndis \_ qos \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_qos_parameters) 结构，其中包含 ndis qos 配置设置，以及 ndis qos 通信类的全局操作参数。
 
-    -   [**NDIS \_ QOS \_ 分类 \_ 元素**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_qos_classification_element)结构的数组。 其中每个结构都指定一个流量分类，该分类由数据包数据模式 (*条件*) 和关联的 IEEE 802.1 p 优先级级别 (*操作*) 定义。 如果网络适配器在传输或 *传出*数据包中找到与条件匹配的模式，则它会将关联的优先级分配给数据包。 该适配器还会将其他 NDIS QoS 策略应用到基于优先级别的数据包。
+    -   [**NDIS \_ QOS \_ 分类 \_ 元素**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_qos_classification_element)结构的数组。 其中每个结构都指定一个流量分类，该分类由数据包数据模式 (*条件*) 和关联的 IEEE 802.1 p 优先级级别 (*操作*) 定义。 如果网络适配器在传输或 *传出* 数据包中找到与条件匹配的模式，则它会将关联的优先级分配给数据包。 该适配器还会将其他 NDIS QoS 策略应用到基于优先级别的数据包。
 
 2.  小型端口通过远程 NDIS QoS 参数初始化 [**NDIS \_ qos \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_qos_parameters) 结构。 驱动程序必须提供从远程对等方发送的 DCBX 帧接收的完整远程参数集。
 
-    当微型端口驱动程序初始化**标题**成员时，它会将**标头**的**类型**成员设置为 NDIS \_ 对象 \_ 类型 \_ QOS \_ 参数。 微型端口驱动程序将**标头**的**修订**成员设置为 ndis \_ qos \_ 参数 \_ 修订版本 \_ 1，将**Size**成员设置为 ndis \_ SIZEOF \_ qos \_ 参数 \_ 修订版本 \_ 1。
+    当微型端口驱动程序初始化 **标题** 成员时，它会将 **标头** 的 **类型** 成员设置为 NDIS \_ 对象 \_ 类型 \_ QOS \_ 参数。 微型端口驱动程序将 **标头** 的 **修订** 成员设置为 ndis \_ qos \_ 参数 \_ 修订版本 \_ 1，将 **Size** 成员设置为 ndis \_ SIZEOF \_ qos \_ 参数 \_ 修订版本 \_ 1。
 
-    如果相应成员包含自微型端口驱动程序先前颁发了[**ndis \_ 状态 \_ QOS \_ 远程 \_ 参数 \_ 更改**](./ndis-status-qos-remote-parameters-change.md)状态指示以来发生更改的数据，微型端口驱动程序将设置相应的**NDIS \_ QOS \_ 参数 \_ *Xxx* \_ 更改**标志。
+    如果相应成员包含自微型端口驱动程序先前颁发了 [**ndis \_ 状态 \_ QOS \_ 远程 \_ 参数 \_ 更改**](./ndis-status-qos-remote-parameters-change.md)状态指示以来发生更改的数据，微型端口驱动程序将设置相应的 **NDIS \_ QOS \_ 参数 \_ *Xxx* \_ 更改** 标志。
 
-    **注意**  将这些**NDIS \_ QOS \_ 参数设置为 \_ *Xxx* \_ 更改**标志是可选的。 NDIS 始终假定指定了 [**ndis \_ QOS \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_qos_parameters) 的成员，即使它们未从前面的 [**NDIS \_ 状态 \_ QOS \_ 远程 \_ 参数 \_ 更改**](./ndis-status-qos-remote-parameters-change.md) 状态指示中进行了更改。
+    **注意**  将这些 **NDIS \_ QOS \_ 参数设置为 \_ *Xxx* \_ 更改** 标志是可选的。 NDIS 始终假定指定了 [**ndis \_ QOS \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_qos_parameters) 的成员，即使它们未从前面的 [**NDIS \_ 状态 \_ QOS \_ 远程 \_ 参数 \_ 更改**](./ndis-status-qos-remote-parameters-change.md) 状态指示中进行了更改。
 
     微型端口驱动程序将 **Flags** 成员设置为指定在 [**NDIS \_ QOS \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_qos_parameters) 结构成员中包含的数据的状态信息。
 
-    例如，微型端口驱动程序为包含自微型端口驱动程序先前颁发了[**NDIS \_ 状态 \_ QOS \_ 远程 \_ 参数 \_ 更改**](./ndis-status-qos-remote-parameters-change.md)状态指示以来发生更改的数据的成员，在**flags**成员中设置相应的**NDIS \_ QOS \_ 参数 \_ *Xxx* \_ CHANGED**标志。
+    例如，微型端口驱动程序为包含自微型端口驱动程序先前颁发了 [**NDIS \_ 状态 \_ QOS \_ 远程 \_ 参数 \_ 更改**](./ndis-status-qos-remote-parameters-change.md)状态指示以来发生更改的数据的成员，在 **flags** 成员中设置相应的 **NDIS \_ QOS \_ 参数 \_ *Xxx* \_ CHANGED** 标志。
 
     有关如何设置 **标志** 成员的详细信息，请参阅 [设置 **标志** 成员的准则](#guidelines-for-setting-the-flags-member)。
 
 3.  小型小型驱动程序为来自远程 NDIS QoS 参数的每个通信分类初始化 [**NDIS \_ QOS \_ 分类 \_ 元素**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_qos_classification_element) 结构。 驱动程序将这些元素添加到缓冲区中的 [**NDIS \_ QOS \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_qos_parameters) 结构末尾之后。
 
-    **注意** 微型端口驱动程序不得 \_ \_ \_ \_ \_ 在任何[**NDIS \_ qos \_ 分类 \_ 元素**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_qos_classification_element)结构的**FLAGS**成员中设置由微型端口标志强制执行的 NDIS QOS 分类。
+    **注意** 微型端口驱动程序不得 \_ \_ \_ \_ \_ 在任何 [**NDIS \_ qos \_ 分类 \_ 元素**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_qos_classification_element)结构的 **FLAGS** 成员中设置由微型端口标志强制执行的 NDIS QOS 分类。
 
-    驱动程序将[**NDIS \_ QOS \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_qos_parameters)结构的**NumClassificationElements**成员设置为数组中的分类元素数。 驱动程序将 **FirstClassificationElementOffset** 成员设置为缓冲区开头的第一个元素的字节偏移量。 驱动程序还将 **ClassificationElementSize** 成员设置为数组中每个元素的长度（以字节为单位）。
+    驱动程序将 [**NDIS \_ QOS \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_qos_parameters)结构的 **NumClassificationElements** 成员设置为数组中的分类元素数。 驱动程序将 **FirstClassificationElementOffset** 成员设置为缓冲区开头的第一个元素的字节偏移量。 驱动程序还将 **ClassificationElementSize** 成员设置为数组中每个元素的长度（以字节为单位）。
 
     **注意**  从 NDIS 6.30 开始，微型端口驱动程序必须将 **ClassificationElementSize** 成员设置为 `sizeof(NDIS_QOS_CLASSIFICATION_ELEMENT`) 。
 
 4.  微型端口驱动程序通过以下方式初始化状态指示的 [**NDIS \_ 状态 \_ 指示**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_status_indication) 结构：
 
-    -   **StatusCode**成员必须设置为 NDIS \_ 状态 \_ QOS \_ 远程 \_ 参数 \_ 更改。
+    -   **StatusCode** 成员必须设置为 NDIS \_ 状态 \_ QOS \_ 远程 \_ 参数 \_ 更改。
 
-    -   **StatusBuffer**成员必须设置为指向包含远程 NDIS QoS 参数的缓冲区的指针。
+    -   **StatusBuffer** 成员必须设置为指向包含远程 NDIS QoS 参数的缓冲区的指针。
 
-    -   **StatusBufferSize**成员必须设置为缓冲区的长度（以字节为单位）。
+    -   **StatusBufferSize** 成员必须设置为缓冲区的长度（以字节为单位）。
 
 5.  微型端口驱动程序通过调用 [**NdisMIndicateStatusEx**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismindicatestatusex)发出状态指示。 驱动程序必须将指向 [**NDIS \_ 状态 \_ 指示**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_status_indication) 结构的指针传递到 *StatusIndication* 参数。
 
 ## <a name="guidelines-for-setting-the-flags-member"></a>有关设置标志成员的准则
 
-微型端口驱动程序在[**NDIS \_ QOS \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_qos_parameters)结构的**flags**成员中设置以下标志，以指定在网络适配器上配置或更改了哪些操作 NDIS QOS 参数：
+微型端口驱动程序在 [**NDIS \_ QOS \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_qos_parameters)结构的 **flags** 成员中设置以下标志，以指定在网络适配器上配置或更改了哪些操作 NDIS QOS 参数：
 
 <a href="" id="ndis-qos-parameters-ets-configured"></a>**NDIS \_ QOS \_ 参数 \_ ETS \_ 已配置**  
 如果设置了此标志，则微型端口驱动程序已将网络适配器配置为具有以下成员中包含的 ETS 参数：
@@ -129,7 +128,7 @@ ms.locfileid: "89217596"
 
 -   **FirstClassificationElementOffset**
 
-**注意** 如果[**ndis \_ qos \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_qos_parameters)结构包含 ndis qos 参数设置，则必须设置**ndis \_ qos \_ 参数 \_ *Xxx* \_ 配置**的标志。 无论设置是否已更改，微型端口驱动程序都必须设置这些标志。 但是，驱动程序必须仅为已更改的设置设置**NDIS \_ QOS \_ 参数 \_ *Xxx* \_ 更改**标志。
+**注意** 如果 [**ndis \_ qos \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_qos_parameters)结构包含 ndis qos 参数设置，则必须设置 **ndis \_ qos \_ 参数 \_ *Xxx* \_ 配置** 的标志。 无论设置是否已更改，微型端口驱动程序都必须设置这些标志。 但是，驱动程序必须仅为已更改的设置设置 **NDIS \_ QOS \_ 参数 \_ *Xxx* \_ 更改** 标志。
 
 ## <a name="guidelines-for-indicating-invalid-remote-ndis-qos-parameters"></a>指示无效远程 NDIS QoS 参数的准则
 
@@ -148,16 +147,16 @@ ms.locfileid: "89217596"
 
 1.  由于微型端口驱动程序未报告任何有效的远程 NDIS QoS 参数，因此必须先使用零填充 [**NDIS \_ QoS \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_qos_parameters) 结构。
 
-    当微型端口驱动程序初始化此结构的**标头**成员时，它会将**标头**的**类型**成员设置为 NDIS \_ 对象 \_ 类型 \_ QOS \_ 参数。 微型端口驱动程序将**标头**的**修订**成员设置为 ndis \_ qos \_ 参数 \_ 修订版本 \_ 1，将**Size**成员设置为 ndis \_ SIZEOF \_ qos \_ 参数 \_ 修订版本 \_ 1。
+    当微型端口驱动程序初始化此结构的 **标头** 成员时，它会将 **标头** 的 **类型** 成员设置为 NDIS \_ 对象 \_ 类型 \_ QOS \_ 参数。 微型端口驱动程序将 **标头** 的 **修订** 成员设置为 ndis \_ qos \_ 参数 \_ 修订版本 \_ 1，将 **Size** 成员设置为 ndis \_ SIZEOF \_ qos \_ 参数 \_ 修订版本 \_ 1。
 
-    微型端口驱动程序在**flags**成员中设置相应的**NDIS \_ QOS \_ 参数 \_ *Xxx* \_ 已更改**标志。
+    微型端口驱动程序在 **flags** 成员中设置相应的 **NDIS \_ QOS \_ 参数 \_ *Xxx* \_ 已更改** 标志。
 
 2.  微型端口驱动程序通过以下方式初始化状态指示的 [**NDIS \_ 状态 \_ 指示**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_status_indication) 结构：
 
-    -   **StatusCode**成员必须设置为 NDIS \_ 状态 \_ QOS \_ 远程 \_ 参数 \_ 更改。
+    -   **StatusCode** 成员必须设置为 NDIS \_ 状态 \_ QOS \_ 远程 \_ 参数 \_ 更改。
 
-    -   **StatusBuffer**成员必须设置为[**NDIS \_ QOS \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_qos_parameters)结构的地址。
+    -   **StatusBuffer** 成员必须设置为 [**NDIS \_ QOS \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_qos_parameters)结构的地址。
 
-    -   **StatusBufferSize**成员必须设置为 `sizeof(NDIS_QOS_PARAMETERS)` 。
+    -   **StatusBufferSize** 成员必须设置为 `sizeof(NDIS_QOS_PARAMETERS)` 。
 
 3.  微型端口驱动程序通过调用 [**NdisMIndicateStatusEx**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismindicatestatusex)发出状态指示。 驱动程序必须将指向 [**NDIS \_ 状态 \_ 指示**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_status_indication) 结构的指针传递到 *StatusIndication* 参数。

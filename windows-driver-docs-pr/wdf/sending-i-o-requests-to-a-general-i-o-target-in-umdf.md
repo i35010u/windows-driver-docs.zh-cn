@@ -1,18 +1,17 @@
 ---
 title: 在 UMDF 中将 I/O 请求发送到常规 I/O 目标
 description: 在 UMDF 中将 I/O 请求发送到常规 I/O 目标
-ms.assetid: f373afa8-292a-47bb-af6f-5035287d1e8c
 keywords:
 - 一般 i/o 目标为 WDK UMDF，将 i/o 请求发送到
 - 发送 i/o 请求 WDK UMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9d052196bb36327e56fc2622c9fe52093fa96f6f
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 4ab4c9eed36afd0043f334237bf17b389cf9cb50
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107158"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96821179"
 ---
 # <a name="sending-io-requests-to-a-general-io-target-in-umdf"></a>在 UMDF 中将 I/O 请求发送到常规 I/O 目标
 

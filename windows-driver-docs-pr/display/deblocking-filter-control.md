@@ -1,19 +1,18 @@
 ---
 title: 除块筛选器控制
 description: 除块筛选器控制
-ms.assetid: b332421e-da15-4c42-aedb-32f4ba24101e
 keywords:
-- 宏块 WDK DirectX VA，消除马赛克功能筛选器控件
-- 消除筛选器控件 WDK DirectX VA 马赛克功能
-- 色度预测阻止 WDK DirectX VA
+- macroblocks WDK DirectX VA，deblocking filter control
+- deblocking 筛选器控件 WDK DirectX VA
+- 色度预测块 WDK DirectX VA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 83355c2bdaf029b2cc517b33cd3e932452eb3476
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e347429d123c81bc454bf56cf4fb716875ee6260
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383291"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96820837"
 ---
 # <a name="deblocking-filter-control"></a>除块筛选器控制
 
@@ -21,9 +20,9 @@ ms.locfileid: "63383291"
 ## <span id="ddk_deblocking_filter_control_gg"></span><span id="DDK_DEBLOCKING_FILTER_CONTROL_GG"></span>
 
 
-消除马赛克功能筛选器控制命令 （如果存在） 为每个宏块中的亮度块发送一次和色度块的每个对发送一次。 筛选器控制命令宏块内的光栅扫描顺序发送。 筛选器控制命令发送的亮度色度任何阻塞之前的所有块。 筛选器控制命令随后会发送一个色度 4:2:0 块，然后为一个色度 4:2:2 块 (如果 4:2:2 正在使用中)，然后针对两个色度 4:4： 如果需要 4 个命令 (相同的筛选将应用于这两种色度*组件*).
+Deblocking 筛选器控件命令（如果存在）将为宏块中的每个明亮块发送一次，并为每对色度块发送一次。 筛选器控件命令是在宏块内以光栅扫描顺序发送的。 在色度的任何块之前，将针对亮度的所有块发送筛选器控件命令。 然后，将为一个色度4:2:0 块发送筛选器控制命令，然后针对一个色度4:2:2 块 (如果4:2:2 正在) 使用，则对于两个色度4:4:4 命令 (相同的筛选将应用于这两个色度 *组件*) 。
 
-对每个块的筛选是通过指定消除马赛克在块中后, 跟消除马赛克功能在块的左边缘之间的上边缘之间的功能。 消除马赛克功能为色度只能指定一次，并 Cb 和 Cr 分量使用相同的 deblocking 命令。 例如，包含 4 16x16 宏块的消除马赛克功能： 使用 8x8 块 2:0 数据通过发送完成四个两个 （顶部和左侧） 边缘滤波命令集的亮度块后, 接一组的两个色度的两个边缘滤波命令块。
+每个块的筛选都是通过在块的上边缘指定 deblocking 来完成的，后跟块左边缘的 deblocking。 Deblocking 仅指定给色度一次，并同时用于 Cb 和 Cr 组件的相同 Deblocking 命令。 例如，通过向亮度块发送两组两个 (top 和 left) 的边缘筛选命令，然后为两个色度块发送一组两个边缘筛选命令，就可以使用8x8 块中包含4:2:0 数据的16x16 宏块的 deblocking。
 
  
 

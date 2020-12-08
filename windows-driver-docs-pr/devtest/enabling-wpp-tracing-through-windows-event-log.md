@@ -1,15 +1,14 @@
 ---
 title: 如何通过 Windows 事件日志服务启用 WPP 跟踪
 description: Windows 事件日志服务支持 WPP 日志记录和解码。 本主题介绍如何通过 Windows 事件日志服务启用 WPP 跟踪。
-ms.assetid: cd5dad3e-fa25-4ec2-bc17-9332b4c00d17
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1cc25245b0eb4248c2a531e2e1e39218b80df6d9
-ms.sourcegitcommit: 17c1bbc5ea0bef3bbc87794b030a073f905dc942
+ms.openlocfilehash: 7e3fad0788c7e236af69ebcb4d28ff07756c0eb1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88802739"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96819761"
 ---
 # <a name="how-to-enable-wpp-tracing-through-the-windows-event-log-service"></a>如何通过 Windows 事件日志服务启用 WPP 跟踪
 
@@ -55,7 +54,7 @@ Windows 事件日志服务支持 WPP 日志记录和解码。 本主题介绍如
 
 不能指定或单独选择控制位。 若要启用此通道的所有 WPP 事件，请将关键字值指定为0XFFFFFFFF。 在内部，控制位映射到关键字;如果知道哪个位映射到特定关键字，则可以选择该关键字以获取特定的一组事件。 在示例清单中，关键字值为0xFFFF，因为需要的 WPP 控制位少于16个。 若要在安装后获取一组特定的事件，可以使用 wevtutil.exe 命令行实用程序更改关键字。 命令为：
 
-**wevtutil** **sl** * &lt; 通道名称 &gt; ***/k：*** &lt; 对应于控件位 &gt; 的关键字值*
+**wevtutil** **sl**  * &lt; 通道名称 &gt; * **/k：**_&lt; 对应于控件 &gt; 位的关键字值_
 
 请注意，必须先禁用通道，才能更改关键字值。
 

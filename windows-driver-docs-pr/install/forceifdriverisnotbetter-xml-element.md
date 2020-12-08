@@ -1,7 +1,6 @@
 ---
 title: forceIfDriverIsNotBetter XML 元素
 description: forceIfDriverIsNotBetter XML 元素
-ms.assetid: ba83c8fd-cc8e-44fd-96ed-855bb42c2493
 keywords:
 - forceIfDriverIsNotBetter XML 元素设备和驱动程序安装
 topic_type:
@@ -12,19 +11,19 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: e3dba0f8c4e14c75e71aacd355e556870b446973
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 638c76b962b2c25b0340688ad984ef0b8db31d0f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89095505"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96820187"
 ---
 # <a name="forceifdriverisnotbetter-xml-element"></a>forceIfDriverIsNotBetter XML 元素
 
 
 \[DIFx 已弃用，有关详细信息，请参阅 [DIFx 指导原则](./difx-guidelines.md)。\]
 
-**ForceIfDriverIsNotBetter** XML 元素是一个空元素，用于将**forceIfDriverIsNotBetter**标志设置为 ON，这会将 DPInst 配置为在设备上安装驱动程序，即使当前安装在设备上的驱动程序比新驱动程序更匹配。
+**ForceIfDriverIsNotBetter** XML 元素是一个空元素，用于将 **forceIfDriverIsNotBetter** 标志设置为 ON，这会将 DPInst 配置为在设备上安装驱动程序，即使当前安装在设备上的驱动程序比新驱动程序更匹配。
 
 ### <a name="element-tag"></a>元素标记
 
@@ -67,7 +66,7 @@ ms.locfileid: "89095505"
 
 ### <a name="remarks"></a><a href="" id="comments"></a>注释
 
-默认情况下， **forceIfDriverIsNotBetter** 标志设置为 OFF。 您可以通过将**forceIfDriverIsNotBetter**元素包含为 dpinst 描述符文件中[**dpinst XML 元素**](dpinst-xml-element.md)的子元素或使用 **/f**命令行开关，将**forceIfDriverIsNotBetter**标志设置为 ON。
+默认情况下， **forceIfDriverIsNotBetter** 标志设置为 OFF。 您可以通过将 **forceIfDriverIsNotBetter** 元素包含为 dpinst 描述符文件中 [**dpinst XML 元素**](dpinst-xml-element.md)的子元素或使用 **/f** 命令行开关，将 **forceIfDriverIsNotBetter** 标志设置为 ON。
 
 下面的代码示例演示了 **forceIfDriverIsNotBetter** 元素。
 
@@ -79,7 +78,7 @@ ms.locfileid: "89095505"
 </dpinst>
 ```
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**dpinst**](dpinst-xml-element.md)

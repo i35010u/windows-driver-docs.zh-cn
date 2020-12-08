@@ -1,7 +1,6 @@
 ---
 title: MRxSetSdInfo 例程
 description: TheMRxSetSdInfo 例程由 RDBSS 调用，请求网络小型重定向程序设置文件系统对象的安全描述符信息。
-ms.assetid: 2a03dde1-440c-4e59-b989-ca4b58b91f3a
 keywords:
 - MRxSetSdInfo 例程可安装文件系统驱动程序
 - PMRX_CALLDOWN
@@ -15,17 +14,17 @@ api_type:
 - UserDefined
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 898811b7045a8fd272b3a38a5d0e16f0f5f124c4
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 536c2eba9dc348361eca5672dba0409e59dc5321
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89067382"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96820753"
 ---
 # <a name="mrxsetsdinfo-routine"></a>MRxSetSdInfo 例程
 
 
-[RDBSS](./the-rdbss-driver-and-library.md)调用*MRxSetSdInfo*例程来请求网络小型重定向程序设置文件系统对象的安全描述符信息。
+[RDBSS](./the-rdbss-driver-and-library.md)调用 *MRxSetSdInfo* 例程来请求网络小型重定向程序设置文件系统对象的安全描述符信息。
 
 <a name="syntax"></a>语法
 ------
@@ -34,12 +33,12 @@ ms.locfileid: "89067382"
 PMRX_CALLDOWN MRxSetSdInfo;
 
 NTSTATUS MRxSetSdInfo(
-  _Inout_ PRX_CONTEXT RxContext
+  _Inout_ PRX_CONTEXT RxContext
 )
 { ... }
 ```
 
-<a name="parameters"></a>parameters
+<a name="parameters"></a>参数
 ----------
 
 *RxContext* \[in、out\]  
@@ -108,11 +107,11 @@ NTSTATUS MRxSetSdInfo(
 
 RDBSS 发出对 *MRxSetSdInfo* 的调用，以响应接收 [**IRP \_ MJ \_ SET \_ 安全**](irp-mj-set-security.md) 请求。
 
-在调用 *MRxSetSdInfo*之前，RDBSS 会修改 \_ *RXCONTEXT* 参数指向的 RX 上下文结构中的以下成员：
+在调用 *MRxSetSdInfo* 之前，RDBSS 会修改 \_ *RXCONTEXT* 参数指向的 RX 上下文结构中的以下成员：
 
-**SetSecurity. SecurityInformation**成员设置为**IrpSp-SetSecurity. &gt; SecurityInformation**。
+**SetSecurity. SecurityInformation** 成员设置为 **IrpSp-SetSecurity. &gt; SecurityInformation**。
 
-**SetSecurity. SecurityDescriptor**成员设置为**IrpSp-SetSecurity. &gt; SecurityDescriptor**。
+**SetSecurity. SecurityDescriptor** 成员设置为 **IrpSp-SetSecurity. &gt; SecurityDescriptor**。
 
 <a name="requirements"></a>要求
 ------------
@@ -125,7 +124,7 @@ RDBSS 发出对 *MRxSetSdInfo* 的调用，以响应接收 [**IRP \_ MJ \_ SET \
 <tbody>
 <tr class="odd">
 <td align="left"><p>目标平台</p></td>
-<td align="left">桌面型</td>
+<td align="left">台式机</td>
 </tr>
 <tr class="even">
 <td align="left"><p>标头</p></td>
@@ -134,7 +133,7 @@ RDBSS 发出对 *MRxSetSdInfo* 的调用，以响应接收 [**IRP \_ MJ \_ SET \
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**MRxIsValidDirectory**](/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_chkdir_calldown)

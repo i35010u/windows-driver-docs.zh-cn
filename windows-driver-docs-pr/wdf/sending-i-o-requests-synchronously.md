@@ -1,7 +1,6 @@
 ---
 title: 同步发送 I/O 请求
 description: 同步发送 I/O 请求
-ms.assetid: e7e9f2d2-afc5-439b-8a04-72d117114fae
 keywords:
 - 一般 i/o 目标 WDK KMDF，将 i/o 请求发送到
 - 发送 i/o 请求 WDK KMDF
@@ -9,12 +8,12 @@ keywords:
 - 同步发送 i/o 请求 WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4ace2fd5a7586383ee87ecc688b8f513965125b7
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 76b43c45efff367a09fe7d4f95e288da3ed987d0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107154"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96821177"
 ---
 # <a name="sending-io-requests-synchronously"></a>同步发送 I/O 请求
 

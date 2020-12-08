@@ -1,28 +1,27 @@
 ---
 title: 使用自定义字符集发送短信
 description: 使用自定义字符集发送短信
-ms.assetid: c1f19c16-66f5-4bcd-ba28-950eaa6472d2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 76d978497c3245c4168e9c20263f7c43fed6e6bf
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 188a1617cbfeae9e3545c32087e401db18f769ff
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63384647"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96821399"
 ---
 # <a name="send-sms-by-using-custom-character-sets"></a>使用自定义字符集发送短信
 
 
-如果文本模式界面需要访问原始消息协议数据单元 (PDU) 来实现不支持的方案，Windows 8、 Windows 8.1 和 Windows 10 启用 PDU 模式发送和读取收到的 SMS 消息。
+如果需要访问原始消息协议数据单元 (PDU) 以实现文本模式接口、Windows 8、Windows 8.1 和 Windows 10 不支持的方案，则可以使用 PDU 模式发送和读取收到的短信。
 
-您可能需要使用在以下情况下的 PDU 模式 SMS 接口：
+在以下情况下，你可能需要使用 PDU 模式 SMS 接口：
 
--   若要发送或通过使用单个 Shift 表的国家/地区语言或国家/地区语言锁定 Shift 表定义中读取收到的短信[3GPP TS 23.038](https://go.microsoft.com/fwlink/?LinkId=329080)。
+-   使用国家/地区的单班次表或国家语言锁定转换表（如 [3GPP TS 23.038](https://go.microsoft.com/fwlink/?LinkId=329080)中所定义）发送或读取收到的短信。
 
--   若要发送多个部分组成的短信使用不同的字符集设置为每个段。
+-   为每个段使用不同的字符集发送多部分短信。
 
-**若要使用的 PDU 模式界面发送短信的 JavaScript 代码示例**
+**使用 PDU 模式接口发送 SMS 消息的 JavaScript 代码示例**
 
 ``` syntax
 function smsDevicePDUSend()
@@ -65,7 +64,7 @@ function hexToByteArray(hexString)
 }
 ```
 
-**若要通过使用 PDU 模式界面读取收到的短信消息的 JavaScript 代码示例**
+**JavaScript 代码示例，用于通过使用 PDU 模式接口读取接收到的 SMS 消息**
 
 ``` syntax
 function smsDeviceRead()
@@ -110,10 +109,10 @@ function smsMessageReadSuccess(smsMessage)
 }
 ```
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
-[开发 SMS 应用程序](developing-sms-apps.md)
+[开发短信应用](developing-sms-apps.md)
 
  
 

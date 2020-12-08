@@ -1,7 +1,6 @@
 ---
 title: 'ReqMarkCancelableSend 规则 (kmdf) '
 description: ReqMarkCancelableSend 规则指定通过调用 WdfRequestMarkCancelable，驱动程序转发的请求未标记为可取消。
-ms.assetid: 8fb40977-7a34-4bb8-ba98-16e98fbd9137
 ms.date: 05/21/2018
 keywords:
 - 'ReqMarkCancelableSend 规则 (kmdf) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 066ad3efe91080f244a0e434084ffec73ad22d8e
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 38bc0f2ac3f92231742bef40600b800f30932bdd
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106786"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96819749"
 ---
 # <a name="reqmarkcancelablesend-rule-kmdf"></a>ReqMarkCancelableSend 规则 (kmdf) 
 
 
-**ReqMarkCancelableSend**规则指定通过调用[**WdfRequestMarkCancelable**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestmarkcancelable)，驱动程序转发的请求未标记为可取消。
+**ReqMarkCancelableSend** 规则指定通过调用 [**WdfRequestMarkCancelable**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestmarkcancelable)，驱动程序转发的请求未标记为可取消。
 
 若要将请求标记为可取消，驱动程序必须拥有该请求。 当请求发送到另一个驱动程序时，以前的驱动程序将不再具有所有权，并且必须在请求上调用 [**WdfRequestUnmarkCancelable**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestunmarkcancelable) （如果之前标记为可取消）。
 

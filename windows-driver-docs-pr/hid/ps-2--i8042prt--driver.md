@@ -1,15 +1,14 @@
 ---
 title: PS/2 (i8042prt) 驱动程序
 description: 本主题介绍了 I8042prt 的功能，这是用于 PS/2 样式键盘和鼠标设备的 Microsoft Windows 2000 和更高版本的系统函数驱动程序。
-ms.assetid: BB1046EE-8780-46ED-8CEB-63110643D325
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ba8367fa5001ee9474a9970229ce119d2edeed00
-ms.sourcegitcommit: cfd4d8ee889c6a3feed79ae112662f6c095b6a36
+ms.openlocfilehash: b48f07d5544226ec9bec3bd2207b78d03b57af33
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94417439"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96820327"
 ---
 # <a name="ps2-i8042prt-driver"></a>PS/2 (i8042prt) 驱动程序
 

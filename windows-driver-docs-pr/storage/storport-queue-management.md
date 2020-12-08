@@ -1,18 +1,17 @@
 ---
 title: Storport 队列管理
 description: Storport 队列管理
-ms.assetid: 29fddcac-abc9-4aa4-8485-56120805ae34
 keywords:
 - Storport 驱动程序 WDK，队列管理
 - 队列 WDK Storport
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e82f3fbc2bdc73e902a2c90bf639b3a250e3278e
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: eb30f2573f298114cb54e3a65a3c2983f93210c5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90101638"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96820513"
 ---
 # <a name="storport-queue-management"></a>Storport 队列管理
 

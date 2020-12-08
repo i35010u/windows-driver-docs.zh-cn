@@ -1,7 +1,6 @@
 ---
 title: GDI 内存服务
 description: GDI 内存服务
-ms.assetid: 60b45f8f-766b-498c-a0c2-3e93ea4b43b9
 keywords:
 - GDI WDK Windows 2000 显示，内存服务
 - 图形驱动程序 WDK Windows 2000 显示，内存服务
@@ -9,12 +8,12 @@ keywords:
 - 内存 WDK GDI
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cee96c855a1b45a69807459c0bcb29b376a425c5
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: e08846ca0c7b77702b255db6ad181d7bf15a515e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90717218"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96819593"
 ---
 # <a name="gdi-memory-services"></a>GDI 内存服务
 
@@ -32,7 +31,7 @@ GDI 为驱动程序编写器提供了多个与内存相关的服务，包括分�
 <thead>
 <tr class="header">
 <th align="left">函数</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>

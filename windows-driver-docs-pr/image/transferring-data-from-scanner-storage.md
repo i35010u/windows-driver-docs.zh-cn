@@ -1,26 +1,25 @@
 ---
 title: 从扫描仪存储传输数据
 description: 从扫描仪存储传输数据
-ms.assetid: 6fc9c825-509c-4c18-a859-e1f5504879b8
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a6ce69d59e36bd43e2c8d0d4d9d777332266e439
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4c1ddbea2c740a262f3903288d9d8de5033f7c53
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383712"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96819545"
 ---
 # <a name="transferring-data-from-scanner-storage"></a>从扫描仪存储传输数据
 
 
-若要从扫描程序存储项传输数据，WIA 应用程序应枚举存储文件夹和所包含的根存储项和作为传输源使用每个单独的文件项 （若要将所包含的数据传输的文件项特定的项）。
+若要从扫描程序存储项传输数据，WIA 应用程序应枚举根存储项所包含的存储文件夹和文件项，并使用每个单独的文件项作为传输源 (传输该特定项) 包含的数据。
 
-有关**WiaItemTypeImage**文件项，该应用程序可能会读取现有 WIA\_IPS\_*Xxx*或 WIA\_IPA\_*Xxx*（或两者） 描述图像格式 （如果支持） 的属性。 应用程序还可能会使用此信息来选择要从扫描程序存储下载图像。
+对于 **WiaItemTypeImage** 文件项，应用程序可以读取现有的 wia \_ IPS \_ *Xxx* 或 WIA \_ IPA \_ *xxx* (或) 描述图像格式的属性 (如果支持) 。 应用程序还可以使用此信息从扫描程序存储中选择要下载的映像。
 
-将数据传输到扫描程序存储文件夹项之一，WIA 应用程序应枚举可用的存储文件夹项、 选择的文件夹或创建新的文件夹选项，和将数据上传到它。
+若要将数据传输到某个扫描仪存储文件夹项，WIA 应用程序应枚举可用的存储文件夹项，选择一个文件夹或创建一个新的文件夹项，然后将数据上传到其中。
 
-**请注意**  外的根存储文件夹应不允许此枚举操作。
+**注意**  不应允许在根存储文件夹之外使用此枚举操作。
 
  
 

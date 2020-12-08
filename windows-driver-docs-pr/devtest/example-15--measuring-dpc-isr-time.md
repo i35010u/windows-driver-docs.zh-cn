@@ -1,7 +1,6 @@
 ---
 title: 示例15度量 DPC/ISR 时间
 description: 示例15度量 DPC/ISR 时间
-ms.assetid: 47936b8b-fd04-44dc-9cd9-77e9d89b4499
 keywords:
 - 延迟的过程调用 WDK 软件跟踪
 - Dpc WDK 软件跟踪
@@ -10,12 +9,12 @@ keywords:
 - 时间 WDK 软件跟踪
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b34b2e83ba7224496167e0b65f9493fa66da2b85
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 3906d40a6ee5e0a10b247cddacde988f6e60a60b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89383453"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96819759"
 ---
 # <a name="example-15-measuring-dpcisr-time"></a>示例 15：测量 DPC/ISR 时间
 
@@ -49,7 +48,7 @@ Microsoft 建议 Dpc 运行时间不能超过100微秒，Isr 不应超过25微�
 tracelog -start -f test01.etl -dpcisr -UsePerfCounter -b 64
 ```
 
-**Tracelog**命令启动跟踪会话。 由于 "NT 内核记录器" 是默认的会话名称，因此您不需要指定它，并且您不能使用 **-guid** 参数来指定提供程序文件。 该命令使用 **-f** 参数指示日志会话，并将跟踪消息定向到 *test01* 事件跟踪日志文件。
+**Tracelog** 命令启动跟踪会话。 由于 "NT 内核记录器" 是默认的会话名称，因此您不需要指定它，并且您不能使用 **-guid** 参数来指定提供程序文件。 该命令使用 **-f** 参数指示日志会话，并将跟踪消息定向到 *test01* 事件跟踪日志文件。
 
 此命令包含 **-dpcisr** 参数，用于启用对 Dpc、isr、上下文切换和图像加载的跟踪。
 
@@ -91,7 +90,7 @@ Log Filename:           c:\Tracelog\test01.etl
 tracelog -q
 ```
 
-**Tracelog**命令采用会话名称，但在这种情况下不需要提供此项，因为 "NT 内核记录器" 是默认值。
+**Tracelog** 命令采用会话名称，但在这种情况下不需要提供此项，因为 "NT 内核记录器" 是默认值。
 
 对于此命令，Tracelog 将显示会话的属性。
 
@@ -134,7 +133,7 @@ tracelog -update -b 128 -max 40
 tracelog -stop
 ```
 
-**Tracelog**命令通常需要会话名称，但是因为 "NT 内核记录器" 是默认值，所以会话名称不是必需的。
+**Tracelog** 命令通常需要会话名称，但是因为 "NT 内核记录器" 是默认值，所以会话名称不是必需的。
 
 ### <a name="span-idstep_5__create_a_dpc_isr_report_spanspan-idstep_5__create_a_dpc_isr_report_spanstep-5-create-a-dpcisr-report"></a><span id="step_5__create_a_dpc_isr_report_"></span><span id="STEP_5__CREATE_A_DPC_ISR_REPORT_"></span>步骤5：创建 DPC/ISR 报表。
 

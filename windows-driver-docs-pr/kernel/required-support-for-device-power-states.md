@@ -1,7 +1,6 @@
 ---
 title: 设备电源状态所需的支持
 description: 设备电源状态所需的支持
-ms.assetid: f7218f2a-d4ad-4b9a-af90-057801e714a2
 keywords:
 - 持续电能 WDK 内核
 - 延迟 WDK 电源管理
@@ -12,12 +11,12 @@ keywords:
 - 端口驱动程序 WDK 电源管理
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0975cf40a911cf459437772ffe1d21f1d8e9f7d5
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 4c34378e218ccdb6923d660ba7eac8c5ed71a017
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89187735"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96820657"
 ---
 # <a name="required-support-for-device-power-states"></a>设备电源状态所需的支持
 

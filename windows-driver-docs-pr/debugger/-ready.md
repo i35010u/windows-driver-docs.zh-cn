@@ -1,7 +1,6 @@
 ---
 title: 准备好
 description: Ready 扩展显示系统中的每个线程处于 "就绪" 状态的摘要信息。
-ms.assetid: 1dc94ceb-7d06-4874-999c-059c86f51ea0
 keywords:
 - 线程，准备好的线程
 - 就绪 Windows 调试
@@ -13,17 +12,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 58822a0bec39ea4c98d96ef349a3c6b9f77e2694
-ms.sourcegitcommit: bb3b62a57ba3aea4a0adeefd2d81993367b7b334
+ms.openlocfilehash: 17863ce8c3a554ab295e9742fb85303196a0d434
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88148431"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96821005"
 ---
 # <a name="ready"></a>!ready
 
 
-**！ Ready**扩展显示系统中的每个线程处于就绪状态的摘要信息。
+**！ Ready** 扩展显示系统中的每个线程处于就绪状态的摘要信息。
 
 ```dbgcmd
 !ready [Flags]
@@ -60,7 +59,7 @@ ms.locfileid: "88148431"
 <td align="left"><p>Kdextx86.dll</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>Windows XP 及更高版本</strong></p></td>
+<td align="left"><p><strong>Windows XP 及更高版本</strong></p></td>
 <td align="left"><p>Kdexts.dll</p></td>
 </tr>
 </tbody>

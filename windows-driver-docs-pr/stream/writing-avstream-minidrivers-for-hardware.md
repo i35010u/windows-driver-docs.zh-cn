@@ -1,7 +1,6 @@
 ---
 title: 为硬件编写 AVStream 微型驱动程序
 description: 为硬件编写 AVStream 微型驱动程序
-ms.assetid: d7dc42d7-efd0-41ff-abab-d97c508a41e6
 keywords:
 - AVStream WDK，硬件
 - 硬件 WDK AVStream
@@ -13,12 +12,12 @@ keywords:
 - 解码 WDK AVStream
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ae2411831b164d1a137e9496724f2186dc2b4ae2
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 54f9a00c27df89894a79e5f4a7e4e95174332547
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89192763"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96819941"
 ---
 # <a name="writing-avstream-minidrivers-for-hardware"></a>为硬件编写 AVStream 微型驱动程序
 
@@ -32,7 +31,7 @@ ms.locfileid: "89192763"
 
 如果有多个应用程序可能使用您的设备同时生成筛选器关系图，则必须小心阻止关系图之间的干扰。 具体而言，如果使用设备在应用程序中构造图形，则不能干扰使用处于非停止状态的设备的应用程序。
 
-可以通过在图形转换到 KSSTATE 获取后加载微代码来避免干扰 \_ 。 这将保护当前正在运行的关系图，因为在另一个关系图当前正在运行时，新的关系图不会转换为 **KSSTATE \_ 获取** 。 若要接收有关 pin 状态更改的通知，请在[**KSPIN \_ 调度**](/windows-hardware/drivers/ddi/ks/ns-ks-_kspin_dispatch)结构中提供一个[*AVStrMiniPinSetDeviceState*](/windows-hardware/drivers/ddi/ks/nc-ks-pfnkspinsetdevicestate)回调例程。
+可以通过在图形转换到 KSSTATE 获取后加载微代码来避免干扰 \_ 。 这将保护当前正在运行的关系图，因为在另一个关系图当前正在运行时，新的关系图不会转换为 **KSSTATE \_ 获取** 。 若要接收有关 pin 状态更改的通知，请在 [**KSPIN \_ 调度**](/windows-hardware/drivers/ddi/ks/ns-ks-_kspin_dispatch)结构中提供一个 [*AVStrMiniPinSetDeviceState*](/windows-hardware/drivers/ddi/ks/nc-ks-pfnkspinsetdevicestate)回调例程。
 
 不过，为了最大限度地减少图形启动时间，你可能希望在图形进入 KSSTATE 获取之前加载微代码 \_ 。 在这种情况下，请考虑在启动过程中在低优先级后台线程中加载微代码。 此解决方案不会干扰其他应用程序，减少图形启动时间，而且不应在异步完成时加长启动时间。
 

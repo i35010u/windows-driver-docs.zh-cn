@@ -1,9 +1,8 @@
 ---
 title: rpcexts.rpcreadstack
-description: Rpcexts.rpcreadstack 扩展读取 RPC 客户端的堆栈，并检索调用信息。
-ms.assetid: e0988ac9-dc6e-4a4f-9096-6af2e70dcd42
+description: Rpcexts. rpcreadstack 扩展读取 RPC 客户端堆栈并检索调用信息。
 keywords:
-- rpcexts.rpcreadstack Windows 调试
+- rpcexts rpcreadstack Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,29 +11,29 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: b0f586e84621a94a5472151c447b115307869fd4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 053e0575cbdd8e5da9a8910cedebf586165b0eba
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63338874"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96821001"
 ---
 # <a name="rpcextsrpcreadstack"></a>!rpcexts.rpcreadstack
 
 
-**！ Rpcexts.rpcreadstack**扩展读取 RPC 客户端的堆栈，并检索调用信息。
+**！ Rpcexts rpcreadstack** 扩展读取 RPC 客户端堆栈并检索调用信息。
 
 ```dbgcmd
 !rpcexts.rpcreadstack ThreadStackPointer
 ```
 
-## <a name="span-idddkrpcextsrpcreadstackdbgspanspan-idddkrpcextsrpcreadstackdbgspanparameters"></a><span id="ddk__rpcexts_rpcreadstack_dbg"></span><span id="DDK__RPCEXTS_RPCREADSTACK_DBG"></span>参数
+## <a name="span-idddk__rpcexts_rpcreadstack_dbgspanspan-idddk__rpcexts_rpcreadstack_dbgspanparameters"></a><span id="ddk__rpcexts_rpcreadstack_dbg"></span><span id="DDK__RPCEXTS_RPCREADSTACK_DBG"></span>参数
 
 
-<span id="_______ThreadStackPointer______"></span><span id="_______threadstackpointer______"></span><span id="_______THREADSTACKPOINTER______"></span> *ThreadStackPointer*   
-指定指向线程堆栈指针。
+<span id="_______ThreadStackPointer______"></span><span id="_______threadstackpointer______"></span><span id="_______THREADSTACKPOINTER______"></span>*ThreadStackPointer*   
+指定指向线程堆栈的指针。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 <table>
 <colgroup>
@@ -55,16 +54,16 @@ ms.locfileid: "63338874"
 
  
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-有关调试 Microsoft 远程过程调用 (RPC) 的详细信息，请参阅[RPC 调试](rpc-debugging.md)。
+有关调试 Microsoft 远程过程调用 (RPC) 的详细信息，请参阅 [Rpc 调试](rpc-debugging.md)。
 
 <a name="remarks"></a>备注
 -------
 
-此扩展的一个常见用途，请参阅[分析停滞调用问题](analyzing-a-stuck-call-problem.md)。
+有关此扩展的常见用法，请参阅 [分析停滞调用问题](analyzing-a-stuck-call-problem.md)。
 
-下面是一个示例：
+以下是示例：
 
 ```dbgcmd
 0:001> !rpcexts.rpcreadstack 68fba4

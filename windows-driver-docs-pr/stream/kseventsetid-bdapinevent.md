@@ -1,39 +1,38 @@
 ---
-title: KSEVENTSETID\_BdaPinEvent
-description: KSEVENTSETID\_BdaPinEvent
-ms.assetid: f81b9973-f4ae-4b39-a4e1-bbaff21c5d41
+title: KSEVENTSETID \_ BdaPinEvent
+description: KSEVENTSETID \_ BdaPinEvent
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4fb8e3320e00b1f4985615b20460447d15b85a1f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 538f6a51feeb5aa83de12ec77592d5742dbe76ae
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63329649"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96819971"
 ---
-# <a name="kseventsetidbdapinevent"></a>KSEVENTSETID\_BdaPinEvent
+# <a name="kseventsetid_bdapinevent"></a>KSEVENTSETID \_ BdaPinEvent
 
 
 ## <span id="ddk_kseventsetid_bdapinevent_ks"></span><span id="DDK_KSEVENTSETID_BDAPINEVENT_KS"></span>
 
 
-KSEVENTSETID\_BdaPinEvent 是 BDA pin 事件集。 它用于通知筛选器或请求发送到特定的插针相关的事件通知的应用程序。
+KSEVENTSETID \_ BdaPinEvent 是 BDA 引脚事件集。 它用于向筛选器或应用程序通知请求与特定 pin 相关的事件的通知。
 
-都可以与以下事件：
+可用事件如下：
 
-<span id="KSEVENT_BDA_PIN_CONNECTED"></span><span id="ksevent_bda_pin_connected"></span>[**KSEVENT\_BDA\_PIN\_CONNECTED**](ksevent-bda-pin-connected.md)  
-Pin 将成为连接时通知。
+<span id="KSEVENT_BDA_PIN_CONNECTED"></span><span id="ksevent_bda_pin_connected"></span>[**\_ \_ 已连接 KSEVENT BDA PIN \_**](ksevent-bda-pin-connected.md)  
+当 pin 连接时发出通知。
 
-<span id="KSEVENT_BDA_PIN_DISCONNECTED"></span><span id="ksevent_bda_pin_disconnected"></span>[**KSEVENT\_BDA\_PIN\_已断开连接**](ksevent-bda-pin-disconnected.md)  
-Pin 断开连接时通知。
+<span id="KSEVENT_BDA_PIN_DISCONNECTED"></span><span id="ksevent_bda_pin_disconnected"></span>[**KSEVENT \_ BDA \_ PIN 已 \_ 断开连接**](ksevent-bda-pin-disconnected.md)  
+Pin 断开连接时发出通知。
 
-### <a name="comments"></a>备注
+### <a name="comments"></a>注释
 
-网络提供程序筛选器使用此设置来注册这些事件发生时与 pin 相关的事件通知的事件。
+当这些事件发生时，网络提供程序筛选器使用此事件集注册与 pin 相关的事件的通知。
 
-如果 BDA 微型驱动程序未定义此事件集，则 BDA 支持库添加了支持通过以下任一方法创建 pin 后**BdaCreatePin**或**BdaInitFilter**函数。
+如果 BDA 微型驱动程序未定义此事件集，则在 **BdaCreatePin** 或 **BdaInitFilter** 函数创建 pin 时，bda 支持库将添加支持。
 
-如果 BDA 微型驱动程序定义自己的处理程序为此事件集，微型驱动程序是负责信号中设置通知筛选器或插件的以前请求过通知此事件的事件。
+如果某个 BDA 微型驱动程序定义了其自己的此事件集的处理程序，则微型驱动程序负责向此事件集中的事件发出信号，以通知以前请求通知的筛选器或插件。
 
  
 

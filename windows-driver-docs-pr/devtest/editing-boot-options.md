@@ -1,7 +1,6 @@
 ---
 title: 编辑启动选项
 description: 编辑启动选项
-ms.assetid: b50b3ac8-154a-4c26-907f-11e274a5c7c8
 keywords:
 - 启动选项 WDK，编辑
 - 编辑启动选项
@@ -10,12 +9,12 @@ keywords:
 - 启动条目 WDK
 ms.date: 04/23/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: ae396fa3da9b7fa42e3da76380e0edca460c72f8
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 0b0a8a2b56b4362fdb60e7d57212bcaa5cb907a8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89383247"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96819777"
 ---
 # <a name="editing-boot-options"></a>编辑启动选项
 
@@ -42,8 +41,8 @@ ms.locfileid: "89383247"
 
 -  [更改启动菜单](changing-the-boot-menu-time-out.md)超时。可以缩短启动菜单超时，以便 Windows 快速启动。 或者，将延长启动菜单超时，以便有充足的时间来选择首选的启动条目。
 
-## <a name="related-topics"></a>“相关主题” 
- [BCDEdit 命令行选项](/windows-hardware/manufacture/desktop/bcdedit-command-line-options)
+## <a name="related-topics"></a>相关主题 
+ [BCDEdit Command-Line 选项](/windows-hardware/manufacture/desktop/bcdedit-command-line-options)
 
 > [!CAUTION]
 > 需要管理权限才能使用 BCDEdit 来修改 BCD。 使用 BCDEdit /set 命令更改某些启动项目选项可能导致计算机无法运行。 请改为使用系统配置实用程序 (MSConfig.exe) 更改启动设置。

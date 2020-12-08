@@ -1,15 +1,14 @@
 ---
 title: 关系
 description: 关系
-ms.assetid: 78443a49-96c6-45d9-a4f3-8213005f82d5
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c27a4bd53fcba937b3773baebb1a29587e52359e
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: 5eda600a54500ce84c308007ad4658ec2c2da5e7
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89403206"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96821413"
 ---
 # <a name="relationships"></a>关系
 
@@ -48,7 +47,7 @@ ms.locfileid: "89403206"
 <thead>
 <tr class="header">
 <th>元素</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -76,7 +75,7 @@ ms.locfileid: "89403206"
 <thead>
 <tr class="header">
 <th>元素</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>

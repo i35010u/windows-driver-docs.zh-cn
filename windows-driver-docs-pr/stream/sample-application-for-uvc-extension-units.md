@@ -1,18 +1,17 @@
 ---
 title: UVC 扩展单元的示例应用程序
 description: UVC 扩展单元的示例应用程序
-ms.assetid: f900b0b1-3469-442f-8593-2094a0966d4a
 keywords:
 - 扩展单元-WDK USB 视频类、示例、示例应用程序
 - 示例代码 WDK USB 视频类，UVC 扩展单元
 ms.date: 09/08/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 5e853c597b5ca57081e907e16f535e327363911e
-ms.sourcegitcommit: 51cba71be022c726c04c29ba5c0360860b65d7a4
+ms.openlocfilehash: e9ec94af14c63cc3546984da17a972db365db996
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/09/2020
-ms.locfileid: "89562219"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96821185"
 ---
 # <a name="sample-application-for-uvc-extension-units"></a>UVC 扩展单元的示例应用程序
 
@@ -82,4 +81,4 @@ ms.locfileid: "89562219"
 
 在这种情况下， **pUnkOuter** 应为指向捕获筛选器的指针，该指针表示) 设备 (UVC 的 USB 视频类。 将捕获筛选器添加到筛选器关系图后，可以查询 **IKsTopologyInfo** 接口的筛选器，如下面的示例代码所示。
 
-编写 **FindExtensionNode** 函数的代码以查找必需的扩展单元节点并在 *dwExtensionNode*中返回其 ID。 此 ID 在此示例代码中对 **IKsTopologyInfo：： CreateNodeInstance** 方法的后续调用中使用。
+编写 **FindExtensionNode** 函数的代码以查找必需的扩展单元节点并在 *dwExtensionNode* 中返回其 ID。 此 ID 在此示例代码中对 **IKsTopologyInfo：： CreateNodeInstance** 方法的后续调用中使用。

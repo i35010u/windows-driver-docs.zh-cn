@@ -1,7 +1,6 @@
 ---
 title: Bug 检查 0x116 VIDEO_TDR_FAILURE
 description: VIDEO_TDR_FAILURE bug 检查的值为0x00000116。 这表示试图重置显示驱动程序并从超时恢复失败。
-ms.assetid: 06fe312a-e2d3-479f-b0fb-06c0ac79be32
 keywords:
 - Bug 检查 0x116 VIDEO_TDR_FAILURE
 - VIDEO_TDR_FAILURE
@@ -14,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 5833321ff9f4bfcf8170a28c5ab18cfde0f28996
-ms.sourcegitcommit: 20eac54e419a594f7cea766ee28f158559dfd79c
+ms.openlocfilehash: b3d734845258505ff6f321b9ea9c8873ca5a3a7b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91755020"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96820981"
 ---
 # <a name="bug-check-0x116-video_tdr_failure"></a>Bug 检查0x116：视频 \_ TDR \_ 失败
 
@@ -41,7 +40,7 @@ ms.locfileid: "91755020"
 <thead>
 <tr class="header">
 <th align="left">参数</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -124,7 +123,7 @@ MODULE_NAME: nvlddmkm
 IMAGE_NAME:  nvlddmkm.sys
 ```
 
-您可以使用 " [**lm (List 已加载模块") **](lm--list-loaded-modules-.md)命令显示有关错误驱动程序的信息，包括时间戳。
+您可以使用 " [**lm (List 已加载模块")**](lm--list-loaded-modules-.md)命令显示有关错误驱动程序的信息，包括时间戳。
 
 ```dbgcmd
 1: kd> lmvm nvlddmkm
@@ -181,7 +180,7 @@ fffff801`6470c144 48ff257d2deaff  jmp     qword ptr [nvlddmkm+0x6eeec8 (fffff801
 fffff801`6470c14b cc              int     3
 ```
 
-你可能希望使用 [**k、kb、glm-kc-qnw、kd、kp、kp、kv (显示 Stack Backtrace) **](k--kb--kc--kd--kp--kp--kv--display-stack-backtrace-.md) 命令来检查堆栈跟踪。
+你可能希望使用 [**k、kb、glm-kc-qnw、kd、kp、kp、kv (显示 Stack Backtrace)**](k--kb--kc--kd--kp--kp--kv--display-stack-backtrace-.md) 命令来检查堆栈跟踪。
 
 ```dbgcmd
 1: kd> k

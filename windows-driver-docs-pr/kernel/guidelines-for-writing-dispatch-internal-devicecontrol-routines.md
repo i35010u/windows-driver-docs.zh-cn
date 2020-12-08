@@ -1,7 +1,6 @@
 ---
 title: 有关编写 Dispatch(Internal)DeviceControl 例程的指导原则
 description: 有关编写 Dispatch(Internal)DeviceControl 例程的指导原则
-ms.assetid: e64ab28e-2904-41c2-a262-405bc129b9bb
 keywords:
 - 调度例程 WDK 内核，DispatchDeviceControl 例程
 - 调度例程 WDK 内核，DispatchInternalDeviceControl 例程
@@ -13,12 +12,12 @@ keywords:
 - 设备控制调度例程 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c5efeda95989d7e36c8eee8e947e782b810c69e6
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: e5f77c7369925fb47345db134025dbf7581e1cd6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89183876"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96820661"
 ---
 # <a name="guidelines-for-writing-dispatchinternaldevicecontrol-routines"></a>有关编写 Dispatch(Internal)DeviceControl 例程的指导原则
 
@@ -52,7 +51,7 @@ ms.locfileid: "89183876"
 其中，status 值集是状态缓冲区之一 \_ \_ 太 \_ 小或状态 \_ 无效 \_ 参数。
 每个设备驱动程序的 *DispatchDeviceControl* 或 *DispatchInternalDeviceControl* 例程必须通过使用相应的 NTSTATUS 值设置 i/o 状态块来处理无法识别的 i/o 控制代码，将其 **信息** 字段设置为零，并使用 IO *PriorityBoost* 完成 IRP， \_ 无 \_ 增量。
 
-设备驱动程序句柄的特定 i/o 控制代码必须包含相同类型设备的任何特定于设备类型的、系统定义的 i/o 控制代码。 有关这些 i/o 控制代码的系统定义结构的声明，请参阅 Windows 驱动程序工具包 (WDK) 的设备特定部分，详细了解每种设备类型的系统要求和相应的 (Windows SDK) 头文件，每个文件以前缀 *ntdd*开头。
+设备驱动程序句柄的特定 i/o 控制代码必须包含相同类型设备的任何特定于设备类型的、系统定义的 i/o 控制代码。 有关这些 i/o 控制代码的系统定义结构的声明，请参阅 Windows 驱动程序工具包 (WDK) 的设备特定部分，详细了解每种设备类型的系统要求和相应的 (Windows SDK) 头文件，每个文件以前缀 *ntdd* 开头。
 
 紧耦合类/端口驱动程序对的类驱动程序可以处理和完成设备控制请求的一个子集，而无需将其传递到基础端口驱动程序。 但是，此类驱动程序必须通过所有需要更改设备状态的有效设备控制请求，以及需要返回有关设备的可变信息（如当前波特率、音量或视频模式）的请求。
 

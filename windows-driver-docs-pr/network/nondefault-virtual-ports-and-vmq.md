@@ -1,15 +1,14 @@
 ---
 title: 非默认虚拟端口和 VMQ
 description: 非默认虚拟端口和 VMQ
-ms.assetid: 5F6F5378-2CA7-491D-953C-6F98B855B51A
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 77350d5dd4a1a85c5e7f408d1abb55f722856f52
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 572d7159e1d2f96f148520e26bab870f092d97b3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89217817"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96820569"
 ---
 # <a name="nondefault-virtual-ports-and-vmq"></a>非默认虚拟端口和 VMQ
 
@@ -48,12 +47,12 @@ PF 微型端口驱动程序在对 [*MiniportInitializeEx*](/windows-hardware/dri
 
 -   **MaxNumVFs**，指定可在网络适配器上分配的最大 VFs 数。
 
-从 NDIS 6.30 开始，当微型端口驱动程序初始化[**NDIS_NIC_SWITCH_CAPABILITIES**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_capabilities)结构时，它可以 \_ \_ \_ 在 NicSwitchCapabilities 成员中设置 NDIS NIC 交换机 cap \_ 单一 \_ VPORT \_ 池标志。 **NicSwitchCapabilities** 此标志指定可以从网络适配器上的 VPort 池 nonreserved 的方式创建非默认 VPorts。 这允许按照所需的方式创建和分配可用的非默认 VPorts 到 PF 和分配的 VFs。 如果网络适配器支持 VMQ 接口，则分配到 PF 的非默认 VPorts 也可用于 VM 接收队列。
+从 NDIS 6.30 开始，当微型端口驱动程序初始化 [**NDIS_NIC_SWITCH_CAPABILITIES**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_capabilities)结构时，它可以 \_ \_ \_ 在 NicSwitchCapabilities 成员中设置 NDIS NIC 交换机 cap \_ 单一 \_ VPORT \_ 池标志。 **NicSwitchCapabilities** 此标志指定可以从网络适配器上的 VPort 池 nonreserved 的方式创建非默认 VPorts。 这允许按照所需的方式创建和分配可用的非默认 VPorts 到 PF 和分配的 VFs。 如果网络适配器支持 VMQ 接口，则分配到 PF 的非默认 VPorts 也可用于 VM 接收队列。
 
 如果设置了 NDIS \_ NIC \_ 交换机 \_ cap \_ 单一 \_ VPORT \_ 池标志，则将创建可用的非默认 VPorts，并将其分配给 PF 并分配给 VFs。 可创建并分配到 PF 的最大 VPorts 数与驱动程序在 **MaxNumVPorts** 成员中报告的值相同。 微型端口驱动程序必须保留一个 VPort，以将其用作分配到 PF 的默认 VPort。 因此，可分配到 PF 并用于 VM 接收队列的非默认 VPorts 数量 (**MaxNumVPorts**– 1) 。
 
 > [!NOTE]
-> 如果设置了此标志，则不会为 VF 分配保留创建和分配非默认 VPorts。 因此，如果某个 VF 的可用 VPorts 用尽，则可能不会为 VF 分配 VPort。 
+> 如果设置了此标志，则不会为 VF 分配保留创建和分配非默认 VPorts。 因此，如果某个 VF 的可用 VPorts 用尽，则可能不会为 VF 分配 VPort。 
 
 如果 \_ \_ 未设置 NDIS NIC 交换机 \_ cap \_ 单一 \_ VPORT \_ 池标志，则将为 VF 分配保留创建和分配非默认的 VPorts。 可创建并分配到 PF 并用于 VM 接收队列的其他非默认 VPorts 的最大数目为 (**MaxNumVPorts**–**MaxNumVFs**) 。
 

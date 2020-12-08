@@ -1,18 +1,17 @@
 ---
 title: EngExtCpp 扩展
 description: EngExtCpp 扩展
-ms.assetid: 0eed4aa8-c70a-429e-b887-9b35352517ce
 keywords:
 - EngExtCpp 扩展
 - 扩展，ExtEngCpp
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fac16aab0297a999724cd71f0f851704450d3d2c
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: f0d17256dffa69d1d6370355d22121007a26ea8b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89216740"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96820899"
 ---
 # <a name="engextcpp-extensions"></a>EngExtCpp 扩展
 

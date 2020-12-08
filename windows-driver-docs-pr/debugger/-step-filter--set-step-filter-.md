@@ -1,9 +1,8 @@
 ---
 title: .step_filter（设置步骤筛选器）
-description: 在跟踪过程中，.step_filter 命令将创建将跳过 （跳过） 的函数的列表。
-ms.assetid: 9ce2bed4-fac0-4537-a129-7cb9f1e8725e
+description: .Step_filter 命令将创建一个函数列表，这些函数将在跟踪) 时跳过 (。
 keywords:
-- .step_filter （设置步骤筛选器） Windows 调试
+- 在 Windows 调试) .step_filter (设置步骤筛选器
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: a39a8bf4fe882844e31ee9f23d7756017f7e70ab
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9bb43e5bdf5bcdcbe519ebce867e26081a7d3cfd
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63334252"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96820387"
 ---
-# <a name="stepfilter-set-step-filter"></a>步骤\_筛选器 （设置步骤筛选器）
+# <a name="step_filter-set-step-filter"></a>。步骤 \_ 筛选器 (设置步骤筛选器) 
 
 
-**步骤\_筛选器**命令将在跟踪过程中创建将跳过 （跳过） 的函数的列表。 这可通过代码跟踪，并跳过只有某些函数。 它还可以控制在一行上有多个函数调用时单步执行到源模式中使用。
+**逐步 \_ 筛选器** 命令创建一个函数列表，该列表将跳过跟踪时)  (逐句通过的函数。 这允许您跟踪代码并仅跳过某些功能。 当一行上有多个函数调用时，还可以在源模式下使用它控制步进。
 
 ```dbgcmd
 .step_filter "FilterList" 
@@ -30,13 +29,13 @@ ms.locfileid: "63334252"
 .step_filter 
 ```
 
-## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>参数
+## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>Parameters
 
 
 <span id="_FilterList_"></span><span id="_filterlist_"></span><span id="_FILTERLIST_"></span>**"**<em>FilterList</em>**"**  
-指定与要跳过函数相关联的符号。 *筛选器列表*可以包含任意数量的以分号分隔的文本模式。 每种模式可能包含多个通配符和说明符;请参阅[字符串通配符语法](string-wildcard-syntax.md)有关详细信息。 在跟踪过程中，其符号与至少一个这些模式匹配的函数将被跳过。 每次 **"**<em>筛选器列表</em>**"** 是使用，所有先前的筛选器列表被丢弃，和完全替换为新列表。
+指定与要逐过程的函数关联的符号。 *FilterList* 可以包含任意数量的文本模式，用分号分隔。 其中每个模式可能包含各种通配符和说明符;有关详细信息，请参阅 [字符串通配符语法](string-wildcard-syntax.md) 。 其符号与其中至少一个模式匹配的函数将在跟踪期间逐步进行。 每次使用 **"**<em>FilterList</em>**"** 时，以前的筛选器列表将被丢弃，并完全替换为新列表。
 
-<span id="________c______"></span><span id="________C______"></span> **/c**   
+<span id="________c______"></span><span id="________C______"></span>**/c**   
 清除筛选器列表。
 
 ### <a name="span-idenvironmentspanspan-idenvironmentspanspan-idenvironmentspanenvironment"></a><span id="Environment"></span><span id="environment"></span><span id="ENVIRONMENT"></span>环境
@@ -48,16 +47,16 @@ ms.locfileid: "63334252"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>模式</strong></p></td>
-<td align="left"><p>用户模式下，内核模式</p></td>
+<td align="left"><p><strong>交货</strong></p></td>
+<td align="left"><p>用户模式，内核模式</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>目标</strong></p></td>
-<td align="left"><p>实时、 崩溃转储</p></td>
+<td align="left"><p>实时，故障转储</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>平台</strong></p></td>
-<td align="left"><p>全部</p></td>
+<td align="left"><p>all</p></td>
 </tr>
 </tbody>
 </table>
@@ -67,31 +66,31 @@ ms.locfileid: "63334252"
 <a name="remarks"></a>备注
 -------
 
-不带任何参数，**步骤\_筛选器**显示当前筛选器列表。
+如果没有任何参数，则 " **步骤 \_ 筛选器** " 将显示当前筛选器列表。
 
-通常情况下，跟踪命令 (例如， [ **t** ](t--trace-.md)或 windbg[调试 | 单步执行](debug---step-into.md)按钮![单步执行按钮的屏幕截图](images/tbinto.png)) 跟踪为函数调用。 但是，如果符号与被调用函数将匹配由指定的模式*筛选器列表*，将于--阶梯函数，就像步骤命令 (例如， [ **p**](p--step-.md)) 已使用。
+通常情况下，跟踪命令 (例如，使用 "单步执行" 按钮 [**的 "逐**](t--trace-.md) 步骤" 和 " [单步](debug---step-into.md) 执行" 按钮 ![ 屏幕截图 ](images/tbinto.png)) 跟踪功能调用。 但是，如果与所调用函数关联的符号与 *FilterList* 指定的模式相匹配，则该函数将逐步执行，就像在使用步骤命令 (例如， [**p**](p--step-.md)) 已使用过。
 
-如果指令指针位于筛选器列表中列出的代码内，任何跟踪或步骤的命令将跳出此函数，如[ **gu** ](gu--go-up-.md)命令或 WinDbg**单步跳出**按钮。 当然，此筛选器将阻止此类代码拥有已跟踪到第一个位置中，因此这仅将会发生如果更改了筛选器或命中断点。
+如果指令指针位于 "筛选器" 列表中列出的代码内，则任何跟踪或步骤命令都将跳出此函数，如 [**gu**](gu--go-up-.md) 命令或 WinDbg " **跳出** " 按钮。 当然，此筛选器会阻止此类代码在第一个位置进行跟踪，因此仅当更改了筛选器或命中断点时才会发生这种情况。
 
-例如，以下命令将会导致跳过所有 CRT 调用跟踪命令：
+例如，以下命令将导致跟踪命令跳过所有 CRT 调用：
 
 ```dbgcmd
 .step_filter "msvcrt!*" 
 ```
 
-**步骤\_筛选器**时在源模式中进行调试，命令是最有用的因为可以有多个函数将调用一个源行上。 [ **P** ](p--step-.md)并[ **t** ](t--trace-.md)命令不能用于分隔这些函数调用。
+在源模式下进行调试时， **步骤 \_ 筛选器** 命令最有用，因为单个源行上可以有多个函数调用。 [**P**](p--step-.md)和 [**t**](t--trace-.md)命令不能用于分隔这些函数调用。
 
-例如，在以下行中， [ **t** ](t--trace-.md)命令将单步执行 GetTickCount 和 printf，而[ **p** ](p--step-.md)命令将单步通过这两个函数调用：
+例如，在下面的行中， [**t**](t--trace-.md) 命令将单步执行 GetTickCount 和 printf，而 [**p**](p--step-.md) 命令将逐过程执行两个函数调用：
 
 ```dbgcmd
 printf( "%x\n", GetTickCount() );
 ```
 
-**步骤\_筛选器**命令允许你仍将其他跟踪时筛选出这些调用之一。
+通过 " **步骤 \_ 筛选器** " 命令，您可以筛选出其中的一个调用，同时仍跟踪另一个。
 
-函数的符号来标识，因为有单个筛选器可以包括整个模块。 这可以筛选出框架函数-例如，Microsoft 基础类 (MFC) 或活动模板库 (ATL) 调用。
+由于这些函数由符号标识，因此单个筛选器可以包含整个模块。 这使你可以筛选出 framework 函数-例如，Microsoft 基础类 (MFC) 或活动模板库 (ATL) 调用。
 
-在调试中程序集模式时，每次调用是在不同的行，以便您可以选择是否要单步或跟踪行的行。 因此**步骤\_筛选器**不是在程序集模式下很有用。
+在程序集模式下进行调试时，每次调用都在不同的行上，因此可以选择逐行执行还是逐行跟踪。 因此，在程序集模式下 **步骤 \_ 筛选器** 并不十分有用。
 
  
 

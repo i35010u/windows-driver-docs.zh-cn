@@ -1,24 +1,23 @@
 ---
 title: WDI NDIS 空闲检测
-description: 此下图显示了简单的状态关系图的 NDIS 空闲检测，使用到 USB 选择性挂起的驱动器。
-ms.assetid: A2E5D433-7825-434E-811F-B24A26913BEC
+description: 下图显示了 NDIS 空闲检测的简单状态图，它用于驱动 USB 选择性挂起。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ce606ba5ca558dfdf7e9e82c161752b9c1eb7cc1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d8fe760cbea42d0db96839f4572ec09be4f7634e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63385374"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96821225"
 ---
 # <a name="wdi-ndis-idle-detection"></a>WDI NDIS 空闲检测
 
 
-此下图显示了简单的状态关系图的 NDIS 空闲检测，使用到 USB 选择性挂起的驱动器。
+下图显示了 NDIS 空闲检测的简单状态图，它用于驱动 USB 选择性挂起。
 
-![wdi ndis 空闲检测 usb 选择性挂起](images/wdi-idle-detection-selective-suspend.png)
+![wdi 用于 usb 选择性挂起的 ndis 空闲检测](images/wdi-idle-detection-selective-suspend.png)
 
-如果 WDI 设备/驱动程序支持 USB 选择性挂起，NDIS 检测到其空闲状态，以将设备发送到低功耗状态 (D2)。
+如果 WDI 设备/驱动程序支持 USB 选择性挂起，NDIS 将检测其空闲状态以将设备发送到低功耗状态 (D2) 。
 
  
 

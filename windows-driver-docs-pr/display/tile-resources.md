@@ -1,15 +1,14 @@
 ---
 title: 平铺资源
 description: 对于磁贴资源，设备分页队列上运行的异步视频内存管理器服务是不够的。
-ms.assetid: D48D2046-64A6-4B0E-9235-84DD2A83DB39
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5e7f6f034eda65ac0d99fd5d7f09ced5054c21ad
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: c11de9237f160d3e5f797fa617f80c574e78f889
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89063760"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96820803"
 ---
 # <a name="tile-resources"></a>平铺资源
 
@@ -43,7 +42,7 @@ ms.locfileid: "89063760"
 
 将对每个进程的特权 GPU 虚拟地址空间进行初始化，以便在地址空间中可以看到进程 GPU 页表，通过该地址空间，update 命令可以使用 GPU 更新各种页面表项。 此外，进程创建的所有磁贴池还会映射到地址空间。
 
-伴生上下文更新页面表条目的方式有点特殊，需要一些说明。 当 *映射* 操作排队等待共享系统上下文中执行时，视频内存管理器将知道要映射到的物理地址，并且这些物理地址可以直接显示在关联的分页缓冲区中。 在这种情况下，使用[*UpdatePageTable*](./dxgkddiupdatepagetable.md)分页操作，视频内存管理器保证在某些特定页面上执行分页操作之前，将这些页面重新用于其他目的。
+伴生上下文更新页面表条目的方式有点特殊，需要一些说明。 当 *映射* 操作排队等待共享系统上下文中执行时，视频内存管理器将知道要映射到的物理地址，并且这些物理地址可以直接显示在关联的分页缓冲区中。 在这种情况下，使用 [*UpdatePageTable*](./dxgkddiupdatepagetable.md)分页操作，视频内存管理器保证在某些特定页面上执行分页操作之前，将这些页面重新用于其他目的。
 
 但是，对于伴生上下文中页表的同步更新，这种情况会更加困难。 视频内存管理器知道在生成更新操作时引用的图块池的物理页，但是，假设这些操作将在任意长 GPU 等待后排队 (应用甚至可能会死锁，并且永远不会发出信号) ，视频内存管理器并不知道在分页操作实际执行时，磁贴池的物理页面是什么，视频内存管理器不会在该位置将磁贴池保留任意长时间。
 

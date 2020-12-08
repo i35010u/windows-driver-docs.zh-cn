@@ -1,15 +1,14 @@
 ---
 title: TrustedCertificates
 description: TrustedCertificates
-ms.assetid: f035a453-d767-4cb5-b556-dfcf7b0b1962
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e343de27669d347f3708e97cf9fef2590518902a
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: 11391d825d2511f703d905297eab6cd39c6266ef
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89403460"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96820629"
 ---
 # <a name="trustedcertificates"></a>TrustedCertificates
 
@@ -42,7 +41,7 @@ TrustedCertificates 元素指定受信任的证书的列表。
 <thead>
 <tr class="header">
 <th>元素</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -66,7 +65,7 @@ TrustedCertificates 元素指定受信任的证书的列表。
 <thead>
 <tr class="header">
 <th>元素</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>

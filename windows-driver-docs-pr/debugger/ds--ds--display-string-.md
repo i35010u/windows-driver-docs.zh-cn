@@ -1,7 +1,6 @@
 ---
 title: ds、dS（显示字符串）
 description: Ds 和 dS 命令显示 STRING、ANSI_STRING 或 UNICODE_STRING 结构。
-ms.assetid: cb05e89c-6c83-476b-a577-a6aeefd8cdd6
 keywords:
 - ds、dS (显示字符串) Windows 调试
 ms.date: 05/03/2018
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: f9ebe09fb97b8fb7b81740d8d45b91052a5bfaec
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: fa714efa52d99d8cd8b385bc597c01fc1860a5db
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89209375"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96820377"
 ---
 # <a name="ds-ds-display-string"></a>ds、dS（显示字符串）
 
 
-**Ds**和**DS**命令显示字符串、ANSI \_ 字符串或 UNICODE \_ 字符串*结构*。 
+**Ds** 和 **DS** 命令显示字符串、ANSI \_ 字符串或 UNICODE \_ 字符串 *结构*。 
 
 这些命令不会显示以 null 分隔的字符串，而是显示字符串结构。
 
@@ -81,7 +80,7 @@ d{s|S} [/c Width] [Address]
 <a name="remarks"></a>备注
 -------
 
-如果要在 "局部变量" 窗口或 "WinDbg 监视窗口中显示 Unicode 字符串，则需要使用" [**启用 \_ Unicode (启用 unicode 显示) **](-enable-unicode--enable-unicode-display-.md) 命令。
+如果要在 "局部变量" 窗口或 "WinDbg 监视窗口中显示 Unicode 字符串，则需要使用" [**启用 \_ Unicode (启用 unicode 显示)**](-enable-unicode--enable-unicode-display-.md) 命令。
 
  
 

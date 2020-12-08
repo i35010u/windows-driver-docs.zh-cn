@@ -1,7 +1,6 @@
 ---
 title: 'CancelSpinLock 规则 (storport) '
 description: CancelSpinLock 规则 (Storport) 规则验证对 IoAcquireCancelSpinLock 的每个调用是否立即后跟对 IoReleaseCancelSpinLock 的调用。
-ms.assetid: 36DF0FF0-03CB-4AA1-BD3A-0B7B32AEE3DD
 ms.date: 05/21/2018
 keywords:
 - 'CancelSpinLock 规则 (storport) '
@@ -12,19 +11,19 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 5bb9a3baeff8b96fdca786769f8615b23d7cc8fc
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 7872edb5816b031a34e1c53ecda701c814c58766
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107078"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96819663"
 ---
 # <a name="cancelspinlock-rule-storport"></a>CancelSpinLock 规则 (storport) 
 
 
-**CancelSpinLock 规则 (Storport) **规则验证对[**IoAcquireCancelSpinLock**](/previous-versions/windows/hardware/drivers/ff548196(v=vs.85))的每个调用是否立即后跟对[**IoReleaseCancelSpinLock**](/previous-versions/windows/hardware/drivers/ff549550(v=vs.85))的调用。
+**CancelSpinLock 规则 (Storport)** 规则验证对 [**IoAcquireCancelSpinLock**](/previous-versions/windows/hardware/drivers/ff548196(v=vs.85))的每个调用是否立即后跟对 [**IoReleaseCancelSpinLock**](/previous-versions/windows/hardware/drivers/ff549550(v=vs.85))的调用。
 
-如果不首先获取 cancel 自旋锁，则不得调用[**IoReleaseCancelSpinLock**](/previous-versions/windows/hardware/drivers/ff549550(v=vs.85)) 。 此外，当微型端口回调例程退出时，它不得持有任何 cancel 自旋锁
+如果不首先获取 cancel 自旋锁，则不得调用 [**IoReleaseCancelSpinLock**](/previous-versions/windows/hardware/drivers/ff549550(v=vs.85)) 。 此外，当微型端口回调例程退出时，它不得持有任何 cancel 自旋锁
 
 **驱动程序模型： Storport**
 

@@ -1,15 +1,14 @@
 ---
 title: 在 UMDF 1) 上维护中断 (
 description: 为中断提供服务
-ms.assetid: 79BA75B3-E10F-4AC1-A2C5-A502BF821188
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7ae8b6585dad10b53afe44feb95b3728df80bb9d
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 72dc1f0637d6b0688f922c0ac2e48474cf9e510d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91732593"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96821155"
 ---
 # <a name="servicing-an-interrupt-umdf-1"></a>在 UMDF 1) 上维护中断 (
 
@@ -27,7 +26,7 @@ ms.locfileid: "91732593"
 
 通常， [*OnInterruptIsr*](/windows-hardware/drivers/ddi/wudfinterrupt/nc-wudfinterrupt-wudf_interrupt_isr) 回调函数会安排一个工作项，以便以后处理保存的信息。 基于框架的驱动程序将工作项例程作为 [*OnInterruptWorkItem*](/windows-hardware/drivers/ddi/wudfinterrupt/nc-wudfinterrupt-wudf_interrupt_workitem) 回调函数实现。
 
-大多数驱动程序对每种类型的中断使用单个 [*OnInterruptWorkItem*](/windows-hardware/drivers/ddi/wudfinterrupt/nc-wudfinterrupt-wudf_interrupt_workitem) 回调函数。 若要计划*OnInterruptWorkItem*回调函数的执行，驱动程序必须从[*OnInterruptIsr*](/windows-hardware/drivers/ddi/wudfinterrupt/nc-wudfinterrupt-wudf_interrupt_isr)回调函数内调用[**IWDFInterrupt：： QueueWorkItemForIsr**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfinterrupt-queueworkitemforisr) 。
+大多数驱动程序对每种类型的中断使用单个 [*OnInterruptWorkItem*](/windows-hardware/drivers/ddi/wudfinterrupt/nc-wudfinterrupt-wudf_interrupt_workitem) 回调函数。 若要计划 *OnInterruptWorkItem* 回调函数的执行，驱动程序必须从 [*OnInterruptIsr*](/windows-hardware/drivers/ddi/wudfinterrupt/nc-wudfinterrupt-wudf_interrupt_isr)回调函数内调用 [**IWDFInterrupt：： QueueWorkItemForIsr**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfinterrupt-queueworkitemforisr) 。
 
 如果你的驱动程序为每个设备创建多个框架队列对象，则可以考虑对每个队列使用单独的工作项对象和 [*OnWorkItem*](/windows-hardware/drivers/ddi/wudfworkitem/nc-wudfworkitem-wudf_workitem_function) 回调函数。 若要计划 *OnWorkItem* 回调函数的执行，驱动程序必须首先通过调用 [**IWdfDevice3：： CreateWorkItem**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdevice3-createworkitem)（通常来自驱动程序的 [**IDriverEntry：： OnDeviceAdd**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-idriverentry-ondeviceadd) 回调函数）来创建一个或多个工作项对象。 然后，驱动程序的 [*OnInterruptIsr*](/windows-hardware/drivers/ddi/wudfinterrupt/nc-wudfinterrupt-wudf_interrupt_isr) 回调函数可以调用 [**IWDFWorkItem：：排队**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfworkitem-enqueue)。
 

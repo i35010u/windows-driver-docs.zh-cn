@@ -1,16 +1,15 @@
 ---
 title: OID_GEN_MAC_OPTIONS
 description: 作为查询，OID_GEN_MAC_OPTIONS OID 指定了一个位掩码，用于定义基础驱动程序或 NIC 的可选属性。
-ms.assetid: 2a093bcb-ae6f-491c-a596-03e6f47b0b86
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_GEN_MAC_OPTIONS 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 3d96e7bd1e0de98eaa4d231c8dce6131173e4003
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 7d824b25f91ce43b505017a07d98d511a31780ca
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89214605"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96821283"
 ---
 # <a name="oid_gen_mac_options"></a>OID \_ 生成 \_ MAC \_ 选项
 
@@ -60,7 +59,7 @@ NIC 没有内部环回支持，因此 NDIS 将代表此驱动程序管理环回�
 <a href="" id="ndis-mac-option-full-duplex"></a>NDIS \_ MAC \_ 选项 \_ 全双工 \_  
 微型端口驱动程序支持 SMP 平台上的全双工传输和指示。
 
-**注意**   此标志已弃用，无法供 NDIS 5.0 和更高版本小型端口驱动程序使用。 NDIS 5.0 和更高版本忽略此标志。
+**注意**  此标志已弃用，无法供 NDIS 5.0 和更高版本小型端口驱动程序使用。 NDIS 5.0 和更高版本忽略此标志。
 
  
 
@@ -70,7 +69,7 @@ NIC 没有内部环回支持，因此 NDIS 将代表此驱动程序管理环回�
 <a href="" id="ndis-mac-option-8021p-priority"></a>NDIS \_ MAC \_ 选项 \_ 8021P \_ 优先级  
 NIC 及其驱动程序支持 802.1 p 包优先级。 有关详细信息，请参阅 [数据包优先级](/previous-versions/windows/hardware/network/ff562331(v=vs.85))。 数据包优先级值是从较高层驱动程序的 [**网络 \_ 缓冲区**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer) 结构接收的。 适当的信息在数据包的 MAC 标头中生成并通过网络传输。 此外，此 NIC 及其驱动程序支持从网络接收的数据包的 MAC 标头提取相应的信息。 此信息将在网络 \_ 缓冲区结构中转发到更高层的驱动程序。
 
-**注意**   NDIS 6.0 和更高版本及更高版本的微型端口驱动程序必须设置 NDIS \_ MAC \_ 选项 \_ 8021P \_ PRIORITY 标志。
+**注意**  NDIS 6.0 和更高版本及更高版本的微型端口驱动程序必须设置 NDIS \_ MAC \_ 选项 \_ 8021P \_ PRIORITY 标志。
 
  
 
@@ -90,7 +89,7 @@ VlanId, REG_DWORD
 <a href="" id="ndis-mac-option-reserved"></a>已 \_ 保留 NDIS MAC \_ 选项 \_  
 保留以供 NDIS 内部使用。
 
-**注意**   设置 NDIS \_ mac 选项 8021Q VLAN 标志的微型端口驱动程序 \_ \_ \_ 还必须设置 ndis \_ mac \_ 选项 \_ 8021P \_ 优先级标志。 换句话说，支持 802.1 Q 的微型端口驱动程序还必须支持 802.1 p。
+**注意**  设置 NDIS \_ mac 选项 8021Q VLAN 标志的微型端口驱动程序 \_ \_ \_ 还必须设置 ndis \_ mac \_ 选项 \_ 8021P \_ 优先级标志。 换句话说，支持 802.1 Q 的微型端口驱动程序还必须支持 802.1 p。
 
  
 
@@ -110,7 +109,7 @@ VlanId, REG_DWORD
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [*MiniportInitializeEx*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_initialize)

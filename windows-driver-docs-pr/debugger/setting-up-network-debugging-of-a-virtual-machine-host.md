@@ -1,15 +1,14 @@
 ---
 title: 使用 KDNET 设置虚拟机的网络调试
 description: 本主题介绍如何配置与 Hyper-v 虚拟机的内核调试连接。
-ms.assetid: E4C4D2A1-2FB0-4028-8A52-30B8F4F738D0
 ms.date: 09/21/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 44ee050da8ba90a406504696b68afff3bf12f9d6
-ms.sourcegitcommit: a1b2e27c3487a099180fb928f64e7ce3d94f21a8
+ms.openlocfilehash: 614c48358757b61e7d188bb508baeaf6ccc62f0c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90846532"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96819829"
 ---
 # <a name="setting-up-network-debugging-of-a-virtual-machine---kdnet"></a>设置虚拟机的网络调试-KDNET
 
@@ -33,7 +32,7 @@ ms.locfileid: "90846532"
 |----------|----------|
 | 连接类型 | 外部网络|
 | 允许管理操作系统共享此网络适配器 | 已启用 |
-| VLAN ID | 已禁用 |
+| VLAN ID | 禁用 |
 
 **3. 禁用安全启动**
 
@@ -132,7 +131,7 @@ C:\Program Files (x86)\Windows Kits\10\Debuggers\x64
 
 7. 完成配置调试器设置后，重新启用 BitLocker 和安全启动。
 
-8. 由于具有增强会话支持的 VM 在断点留在断点时可能会超时，因此请使用 VM 中的 "**查看**" 下拉菜单禁用*增强会话*支持。 
+8. 由于具有增强会话支持的 VM 在断点留在断点时可能会超时，因此请使用 VM 中的 "**查看**" 下拉菜单禁用 *增强会话* 支持。 
 
 9. 加载并运行调试器后，将重新启动 VM。 下一步将介绍此过程。 
 
@@ -193,6 +192,6 @@ C:\>Ping <HostComputerIPAddress>
 
 ## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
-[使用虚拟 COM 端口手动设置虚拟机的内核模式调试](attaching-to-a-virtual-machine--kernel-mode-.md)
+[使用虚拟 COM 端口手动设置虚拟机 Kernel-Mode 调试](attaching-to-a-virtual-machine--kernel-mode-.md)
 
 [手动设置网络连接](setting-up-a-network-debugging-connection.md)

@@ -1,7 +1,6 @@
 ---
 title: 'DoubleExFreePool 规则 (storport) '
 description: 此规则验证驱动程序是否不会尝试释放相同的池内存块。
-ms.assetid: D7EAD257-02CA-418C-B67D-FADCB4F7A6C1
 ms.date: 05/21/2018
 keywords:
 - 'DoubleExFreePool 规则 (storport) '
@@ -12,19 +11,19 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 62306a5c21f7f9ac9f10edf1decba3dcaaf82c01
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 74ee72ecf6040e69525d55c03d602cb65cc1b677
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104336"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96819659"
 ---
 # <a name="doubleexfreepool-rule-storport"></a>DoubleExFreePool 规则 (storport) 
 
 
 此规则验证驱动程序是否不会尝试释放相同的池内存块。
 
-规则将跟踪首先传递到 **ExFreePool**的内存指针。 如果再次传递同一指针，则驱动程序将无法满足规则。 如果驱动程序调用 **RemoveHeadList** 或 **RemoveEntryList**，则规则通过。
+规则将跟踪首先传递到 **ExFreePool** 的内存指针。 如果再次传递同一指针，则驱动程序将无法满足规则。 如果驱动程序调用 **RemoveHeadList** 或 **RemoveEntryList**，则规则通过。
 
 **驱动程序模型： Storport**
 

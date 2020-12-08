@@ -1,7 +1,6 @@
 ---
 title: 'PcTimedWaveRtStreamSetState 规则 (音频) '
 description: PcTimedWaveRtStreamSetState 规则指定 ProtCls 微型端口驱动程序在所需时间内通过 IMiniportWaveRTStream SetState 进行状态转换。
-ms.assetid: D49869E0-9108-460B-8FA3-4FD99C3EA81E
 ms.date: 05/21/2018
 keywords:
 - 'PcTimedWaveRtStreamSetState 规则 (音频) '
@@ -12,12 +11,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: b861982eb8d3f68b50f1e3c85608334eba92beb8
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 614ef576b938bd6dcd9cf75aab6e0aac27e727b4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103974"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96820887"
 ---
 # <a name="pctimedwavertstreamsetstate-rule-audio"></a>PcTimedWaveRtStreamSetState 规则 (音频) 
 

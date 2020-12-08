@@ -1,15 +1,14 @@
 ---
 title: 报告数据包合并功能
 description: 报告数据包合并功能
-ms.assetid: 6118F648-87FE-4B9E-9535-1602F4FF79D2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8cf7d4402c7e0f3450afacd662539007ba719711
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: c60a37126e1b7e10a3fae3cd3d0ff1195caab531
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89206247"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96820013"
 ---
 # <a name="reporting-packet-coalescing-capabilities"></a>报告数据包合并功能
 
@@ -22,15 +21,15 @@ ms.locfileid: "89206247"
 
 -   包合并会接收当前在网络适配器上启用的筛选功能。
 
-**注意** 可以通过** \* PacketCoalescing** INF 关键字设置来启用或禁用对包合并的微型端口驱动程序支持。 此设置显示在网络适配器的 " **高级** " 属性页中。 有关 "数据包合并 INF 文件" 设置的详细信息，请参阅 [用于数据包合并的标准化 INF 关键字](standardized-inf-keywords-for-packet-coalescing.md)。
+**注意** 可以通过 **\* PacketCoalescing** INF 关键字设置来启用或禁用对包合并的微型端口驱动程序支持。 此设置显示在网络适配器的 " **高级** " 属性页中。 有关 "数据包合并 INF 文件" 设置的详细信息，请参阅 [用于数据包合并的标准化 INF 关键字](standardized-inf-keywords-for-packet-coalescing.md)。
 
 
 
-微型端口驱动程序通过 [**NDIS \_ 接收 \_ 筛选器 \_ 功能**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_capabilities) 结构报告基础网络适配器的数据包合并和筛选功能。 如果注册表中的** \* PacketCoalescing**关键字设置的值为1，则启用数据包合并，并且微型端口驱动程序将按以下方式初始化**NDIS \_ 接收 \_ 筛选器 \_ 功能**结构：
+微型端口驱动程序通过 [**NDIS \_ 接收 \_ 筛选器 \_ 功能**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_capabilities) 结构报告基础网络适配器的数据包合并和筛选功能。 如果注册表中的 **\* PacketCoalescing** 关键字设置的值为1，则启用数据包合并，并且微型端口驱动程序将按以下方式初始化 **NDIS \_ 接收 \_ 筛选器 \_ 功能** 结构：
 
-1.  微型端口驱动程序初始化 **标头** 成员。 驱动程序将**标头**的**类型**成员设置为 NDIS \_ 对象 \_ 类型 \_ 默认值。
+1.  微型端口驱动程序初始化 **标头** 成员。 驱动程序将 **标头** 的 **类型** 成员设置为 NDIS \_ 对象 \_ 类型 \_ 默认值。
 
-    如果驱动程序支持数据包合并，则它会将**标头**的**修订**成员设置为 ndis \_ 接收 \_ 筛选器 \_ 功能 \_ 修订版 \_ 2，并将**Size**成员设置为 ndis \_ SIZEOF \_ 接收 \_ 筛选器 \_ 功能 \_ 修订版 \_ 2。
+    如果驱动程序支持数据包合并，则它会将 **标头** 的 **修订** 成员设置为 ndis \_ 接收 \_ 筛选器 \_ 功能 \_ 修订版 \_ 2，并将 **Size** 成员设置为 ndis \_ SIZEOF \_ 接收 \_ 筛选器 \_ 功能 \_ 修订版 \_ 2。
 
 2.  微型端口驱动程序在 \_ \_ \_ \_ \_ \_ \_ \_ **SUPPORTEDQUEUEPROPERTIES** 成员中设置默认队列标志支持的 NDIS 接收筛选包合并。
 
@@ -46,7 +45,7 @@ ms.locfileid: "89206247"
 
 
 
-3.  微型端口驱动程序设置 \_ EnabledFilterTypes 成员中的 "NDIS 接收 \_ 筛选器 \_ 数据包 \_ 合并 \_ 筛选器 \_ 已启用" **EnabledFilterTypes**标志。
+3.  微型端口驱动程序设置 \_ EnabledFilterTypes 成员中的 "NDIS 接收 \_ 筛选器 \_ 数据包 \_ 合并 \_ 筛选器 \_ 已启用" **EnabledFilterTypes** 标志。
 
     **注意**  如果驱动程序设置此标志，则它还必须在 \_ \_ \_ \_ \_ \_ \_ \_ **SUPPORTEDQUEUEPROPERTIES** 成员中设置默认队列标志支持的 NDIS 接收筛选器数据包合并。 否则，NDIS 将通过返回 NDIS [**NdisMSetMiniportAttributes**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsetminiportattributes) \_ 状态 \_ 错误特性来对 NdisMSetMiniportAttributes 的调用失败 \_ 。
 
@@ -150,9 +149,9 @@ ms.locfileid: "89206247"
 
 -   微型端口驱动程序初始化 [**NDIS \_ 微型端口 \_ 适配器 \_ 硬件 \_ 辅助 \_ 属性**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_adapter_hardware_assist_attributes) 结构。
 
-    如果注册表中的** \* PacketCoalescing**关键字设置的值为1，则微型端口驱动程序会将**HardwareReceiveFilterCapabilities**成员设置为指向先前初始化的[**NDIS \_ 接收 \_ 筛选器 \_ 功能**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_capabilities)结构的指针。
+    如果注册表中的 **\* PacketCoalescing** 关键字设置的值为1，则微型端口驱动程序会将 **HardwareReceiveFilterCapabilities** 成员设置为指向先前初始化的 [**NDIS \_ 接收 \_ 筛选器 \_ 功能**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_capabilities)结构的指针。
 
-    如果注册表中的** \* PacketCoalescing**关键字设置的值为零，则微型端口驱动程序不会播发对数据包合并的支持。 它必须将 **HardwareReceiveFilterCapabilities** 成员设置为 NULL。
+    如果注册表中的 **\* PacketCoalescing** 关键字设置的值为零，则微型端口驱动程序不会播发对数据包合并的支持。 它必须将 **HardwareReceiveFilterCapabilities** 成员设置为 NULL。
 
 -   驱动程序调用 [**NdisMSetMiniportAttributes**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsetminiportattributes) ，并将 *MiniportAttributes* 参数设置为指向 [**NDIS \_ 微型端口 \_ 适配器 \_ 硬件 \_ 协助 \_ 属性**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_adapter_hardware_assist_attributes) 结构的指针。
 

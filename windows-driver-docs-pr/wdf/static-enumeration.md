@@ -1,19 +1,18 @@
 ---
 title: 静态枚举
 description: 静态枚举
-ms.assetid: 58377f17-a9dc-4096-af23-36f8d8dbb87e
 keywords:
 - 静态枚举 WDK KMDF
 - 静态子列表 WDK KMDF
 - 遍历静态子列表 WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 48763497f3c294911619f54da97bdc43ab51fb22
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 824c1e031db443cd6b91748b715eeb5ac926066c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89190813"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96821121"
 ---
 # <a name="static-enumeration"></a>静态枚举
 
@@ -48,11 +47,11 @@ ms.locfileid: "89190813"
 
 有关创建 PDO 的详细信息，请参阅 [在总线驱动程序中创建设备对象](creating-device-objects-in-a-bus-driver.md)。
 
-调用 **WdfDeviceCreate**之后，驱动程序必须调用 [**WdfFdoAddStaticChild**](/windows-hardware/drivers/ddi/wdffdo/nf-wdffdo-wdffdoaddstaticchild) ，将子设备添加到子列表中。
+调用 **WdfDeviceCreate** 之后，驱动程序必须调用 [**WdfFdoAddStaticChild**](/windows-hardware/drivers/ddi/wdffdo/nf-wdffdo-wdffdoaddstaticchild) ，将子设备添加到子列表中。
 
 ### <a name="modifying-a-static-child-list"></a>修改静态子列表
 
-由于驱动程序只应为预先确定和永久的设备配置使用静态子列表，因此，在创建静态子列表后，不需要驱动程序修改它。 如果驱动程序确定子设备不可访问，则驱动程序可以调用 [**WdfPdoMarkMissing**](/windows-hardware/drivers/ddi/wdfpdo/nf-wdfpdo-wdfpdomarkmissing)。  (如果子设备仍可访问，但不响应且不可用，则驱动程序应将[**WDF \_ 设备 \_ 状态**](/windows-hardware/drivers/ddi/wdfdevice/ns-wdfdevice-_wdf_device_state)结构的**失败**成员设置为**WdfTrue** ，然后调用[**WdfDeviceSetDeviceState**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicesetdevicestate)。 ) 
+由于驱动程序只应为预先确定和永久的设备配置使用静态子列表，因此，在创建静态子列表后，不需要驱动程序修改它。 如果驱动程序确定子设备不可访问，则驱动程序可以调用 [**WdfPdoMarkMissing**](/windows-hardware/drivers/ddi/wdfpdo/nf-wdfpdo-wdfpdomarkmissing)。  (如果子设备仍可访问，但不响应且不可用，则驱动程序应将 [**WDF \_ 设备 \_ 状态**](/windows-hardware/drivers/ddi/wdfdevice/ns-wdfdevice-_wdf_device_state)结构的 **失败** 成员设置为 **WdfTrue** ，然后调用 [**WdfDeviceSetDeviceState**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicesetdevicestate)。 ) 
 
 ### <a name="traversing-a-static-child-list"></a>遍历静态子列表
 

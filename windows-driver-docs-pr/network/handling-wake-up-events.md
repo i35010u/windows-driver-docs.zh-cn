@@ -1,18 +1,17 @@
 ---
 title: 处理唤醒事件
 description: 处理唤醒事件
-ms.assetid: 4989d5a4-158c-41db-ab2d-fc995b67a822
 keywords:
 - 唤醒功能，WDK 网络，处理唤醒事件
 - 特定于总线的唤醒线路 WDK 网络
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2686018280d148ad1bfa31cd8cce8ff81c693344
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: fcef588382784dcb919474d54352e1e41809f567
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89207935"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96821373"
 ---
 # <a name="handling-wake-up-events"></a>处理唤醒事件
 

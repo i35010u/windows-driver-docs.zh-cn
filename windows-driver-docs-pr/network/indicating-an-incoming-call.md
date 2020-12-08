@@ -1,19 +1,18 @@
 ---
 title: 指示来电
 description: 指示来电
-ms.assetid: ca7f4a1f-47a2-4ac0-b4a2-d0367163135f
 keywords:
 - 调用设置 WDK CoNDIS
 - 传入呼叫 WDK CoNDIS
 - 指示传入呼叫 WDK CoNDIS
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a53781f017a05d56729e796174ea61355c5c3cdc
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: a34650b1a13a3017f76299c5603abdd9634f6441
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89206449"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96820113"
 ---
 # <a name="indicating-an-incoming-call"></a>指示来电
 
@@ -49,15 +48,15 @@ ms.locfileid: "89206449"
 
 *ProtocolClIncomingCall* 可以同步完成，也可以返回 NDIS \_ 状态 " \_ 挂起" 并通过 [**NdisClIncomingCallComplete**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisclincomingcallcomplete)异步完成。 调用 **NdisClIncomingCallComplete** 会导致 NDIS 调用调用管理器或 MCM 驱动程序的 [**ProtocolCmIncomingCallComplete**](/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_cm_incoming_call_complete) 函数。
 
-\_ *ProtocolClIncomingCall*或提供给**NdisClIncomingCallComplete**的同步完成返回的 NDIS 状态代码指示客户端接受或拒绝传入呼叫。 客户端还会在缓冲的联合 \_ 调用参数结构中返回调用的调用参数 \_ 。 如果客户端发现调用参数不可接受，则它可以（如果是由信号协议允许）通过在**Flags** \_ \_ 已更改调用参数的情况下使用调用参数设置标志成员 \_ \_ 并在缓冲的联合 \_ 调用 \_ 参数结构中提供经过修改的调用参数，来请求调用参数中的更改。
+\_ *ProtocolClIncomingCall* 或提供给 **NdisClIncomingCallComplete** 的同步完成返回的 NDIS 状态代码指示客户端接受或拒绝传入呼叫。 客户端还会在缓冲的联合 \_ 调用参数结构中返回调用的调用参数 \_ 。 如果客户端发现调用参数不可接受，则它可以（如果是由信号协议允许）通过在 **Flags** \_ \_ 已更改调用参数的情况下使用调用参数设置标志成员 \_ \_ 并在缓冲的联合 \_ 调用 \_ 参数结构中提供经过修改的调用参数，来请求调用参数中的更改。
 
 如果客户端接受传入呼叫，则呼叫管理器或 MCM 驱动程序应发送信号消息，向调用方指明调用已被接受。 否则，呼叫管理器或 MCM 驱动程序应发送信号消息，指示调用已被拒绝。 如果客户端在调用参数中请求更改，则调用管理器或 MCM 驱动程序将发送信号消息，请求在调用参数中进行更改。
 
 如果客户端接受呼叫，或者客户端在调用参数中请求的更改已被远程方接受，则呼叫管理器将调用 [**NdisCmDispatchCallConnected**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscmdispatchcallconnected)，MCM 驱动程序将调用 [**NdisMCmDispatchCallConnected**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismcmdispatchcallconnected)。 调用 **ndis (M) CmDispatchCallConnected** 导致 ndis 调用客户端的 *ProtocolClCallConnected* 函数。
 
-如果客户端拒绝了呼叫，并且调用管理器或 MCM 驱动程序已经为传入呼叫激活了一个 VC，则调用管理器或 MCM 驱动程序将调用 **Ndis (M) CmDeactivateVc** ，以便在启用 vc 后停用 vc。 然后，调用管理器或 MCM 驱动程序可以通过在调用管理器的情况下调用[**NdisCoDeleteVc**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscodeletevc)或[**NDISMCMDELETEVC**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismcmdeletevc) （对于 MCM 驱动程序）来启动[删除 VC](deleting-a-vc.md) 。
+如果客户端拒绝了呼叫，并且调用管理器或 MCM 驱动程序已经为传入呼叫激活了一个 VC，则调用管理器或 MCM 驱动程序将调用 **Ndis (M) CmDeactivateVc** ，以便在启用 vc 后停用 vc。 然后，调用管理器或 MCM 驱动程序可以通过在调用管理器的情况下调用 [**NdisCoDeleteVc**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscodeletevc)或 [**NDISMCMDELETEVC**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismcmdeletevc) （对于 MCM 驱动程序）来启动 [删除 VC](deleting-a-vc.md) 。
 
-如果客户端接受呼叫但未成功建立端到端连接 (因为例如，远程方 t) 调用) ，则调用管理器或 MCM 驱动程序将不会调用 **Ndis (M) CmDispatchCallConnected**。 相反，它将调用 **ndis (M) CmDispatchIncomingCloseCall**，这会导致 ndis 调用客户端的 *ProtocolClIncomingCloseCall* 函数。 然后，客户端必须调用 [**NdisClCloseCall**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisclclosecall) 来完成拆卸呼叫。 然后，调用管理器或 MCM 驱动程序调用 **Ndis (M) CmDeactivateVC** 来 [停用](deactivating-a-vc.md) 它为传入调用创建的 VC。 然后，调用管理器或 MCM 驱动程序可以通过在调用管理器的情况下调用[**NdisCoDeleteVc**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscodeletevc)或[**NDISMCMDELETEVC**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismcmdeletevc) （对于 MCM 驱动程序）来启动[删除 VC](deleting-a-vc.md) 。
+如果客户端接受呼叫但未成功建立端到端连接 (因为例如，远程方 t) 调用) ，则调用管理器或 MCM 驱动程序将不会调用 **Ndis (M) CmDispatchCallConnected**。 相反，它将调用 **ndis (M) CmDispatchIncomingCloseCall**，这会导致 ndis 调用客户端的 *ProtocolClIncomingCloseCall* 函数。 然后，客户端必须调用 [**NdisClCloseCall**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisclclosecall) 来完成拆卸呼叫。 然后，调用管理器或 MCM 驱动程序调用 **Ndis (M) CmDeactivateVC** 来 [停用](deactivating-a-vc.md) 它为传入调用创建的 VC。 然后，调用管理器或 MCM 驱动程序可以通过在调用管理器的情况下调用 [**NdisCoDeleteVc**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscodeletevc)或 [**NDISMCMDELETEVC**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismcmdeletevc) （对于 MCM 驱动程序）来启动 [删除 VC](deleting-a-vc.md) 。
 
  
 

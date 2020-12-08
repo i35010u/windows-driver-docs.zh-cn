@@ -1,7 +1,6 @@
 ---
 title: 管理内核对象
 description: 管理内核对象
-ms.assetid: d45aca94-67b7-444d-8585-713ec982e3bc
 keywords:
 - 内核模式驱动程序 WDK，对象管理
 - 对象管理器 WDK 内核
@@ -12,12 +11,12 @@ keywords:
 - 内核模式对象 WDK
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c4402d58c100a7881c7a80215e02498e4c0cb7db
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: cfdeb528a22240e7a146171f135f72e439a21cb2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89403506"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96821421"
 ---
 # <a name="managing-kernel-objects"></a>管理内核对象
 
@@ -49,7 +48,7 @@ Windows 对象管理器控制作为内核模式操作系统一部分的 *对象*
 
 可以通过指针引用内核模式对象。 对象可以具有对象名称。 有关对象名称的详细信息，请参阅 [对象名称](object-names.md)。
 
-用户模式程序员只能通过间接寻址使用 *句柄*来引用对象。 如果对象具有名称，您可以使用它来获取用户模式下的句柄。 有关句柄的详细信息，请参阅 [对象句柄](object-handles.md)。
+用户模式程序员只能通过间接寻址使用 *句柄* 来引用对象。 如果对象具有名称，您可以使用它来获取用户模式下的句柄。 有关句柄的详细信息，请参阅 [对象句柄](object-handles.md)。
 
 内核模式对象具有非常具体的生命周期。 有关对象生命周期的详细信息，请参阅 [对象的生命周期](life-cycle-of-an-object.md)。
 

@@ -1,7 +1,6 @@
 ---
 title: 'IrqlKeReleaseSpinLock 规则 (storport) '
 description: 此规则验证仅在 IRQL 调度级别调用 KeReleaseSpinLock \_ 。 它还必须将 IRQL 设置为以前的 IRQL 级别。 通常，此调用之前会调用 KeAcquireSpinLock。
-ms.assetid: A1AEE8C9-F5F1-4BBE-8291-1E61D73AFC6A
 ms.date: 05/21/2018
 keywords:
 - 'IrqlKeReleaseSpinLock 规则 (storport) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: a8693e4ba02d11572878a92097c0613853edfdeb
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 3a986c4147fe638c9c8742487cfcf17f851502b6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107070"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96819629"
 ---
 # <a name="irqlkereleasespinlock-rule-storport"></a>IrqlKeReleaseSpinLock 规则 (storport) 
 
 
-此规则验证是否仅在**IRQL = 调度 \_ 级别**调用**KeReleaseSpinLock** 。 它还必须将 IRQL 设置为以前的 IRQL 级别。 通常，此调用之前会调用 **KeAcquireSpinLock**。
+此规则验证是否仅在 **IRQL = 调度 \_ 级别** 调用 **KeReleaseSpinLock** 。 它还必须将 IRQL 设置为以前的 IRQL 级别。 通常，此调用之前会调用 **KeAcquireSpinLock**。
 
 **驱动程序模型： Storport**
 

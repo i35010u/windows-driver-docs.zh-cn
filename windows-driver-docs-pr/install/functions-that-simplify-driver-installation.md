@@ -1,7 +1,6 @@
 ---
 title: 用于简化驱动程序安装的函数
 description: 用于简化驱动程序安装的函数
-ms.assetid: 7201b260-6239-4c76-8d48-7e2df9c662cd
 keywords:
 - 功能 WDK，简化驱动程序安装
 - DiInstallDevice
@@ -12,12 +11,12 @@ keywords:
 - 即插即用 WDK 设备安装
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 056b31c9c36c1ffb7dfa3479d6f3f9358d9f6981
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 71ab49590eda89f33f651fd1d88f979e226432b9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90716884"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96820157"
 ---
 # <a name="functions-that-simplify-driver-installation"></a>用于简化驱动程序安装的函数
 
@@ -26,7 +25,7 @@ ms.locfileid: "90716884"
 
 ### <a name="diinstalldevice-windows-vista-and-later-versions-of-windows"></a><a href="" id="diinstalldevice--windows-vista-and-later-versions-of-windows-"></a> DiInstallDevice (windows Vista 和更高版本的 Windows) 
 
-[**DiInstallDevice**](/windows/win32/api/newdev/nf-newdev-diinstalldevice)函数将安装特定驱动程序，该驱动程序安装在系统中的特定设备上的[驱动程序存储区](driver-store.md)中。
+[**DiInstallDevice**](/windows/win32/api/newdev/nf-newdev-diinstalldevice)函数将安装特定驱动程序，该驱动程序安装在系统中的特定设备上的 [驱动程序存储区](driver-store.md)中。
 
 如果以下两个条件都成立，则安装应用程序应仅使用此函数：
 
@@ -48,7 +47,7 @@ ms.locfileid: "90716884"
 
 ### <a name="diinstalldriver-windows-vista-and-later-versions-of-windows"></a><a href="" id="diinstalldriver--windows-vista-and-later-versions-of-windows-"></a> DiInstallDriver (windows Vista 和更高版本的 Windows) 
 
-[**DiInstallDriver**](/windows/win32/api/newdev/nf-newdev-diinstalldrivera)函数预安装[驱动程序存储区](driver-store.md)中的[驱动程序包](driver-packages.md)，然后在系统中出现的所有设备上安装驱动程序，该系统具有硬件 ID 或与驱动程序包匹配的兼容 ID。
+[**DiInstallDriver**](/windows/win32/api/newdev/nf-newdev-diinstalldrivera)函数预安装 [驱动程序存储区](driver-store.md)中的 [驱动程序包](driver-packages.md)，然后在系统中出现的所有设备上安装驱动程序，该系统具有硬件 ID 或与驱动程序包匹配的兼容 ID。
 
 调用 **DiInstallDriver** 或 [**UpdateDriverForPlugAndPlayDevices**](/windows/win32/api/newdev/nf-newdev-updatedriverforplugandplaydevicesa) 是安装应用程序为设备安装新驱动程序的最简单方法。 **DiInstallDriver** 和 **UpdateDriverForPlugAndPlayDevices** 执行相同的基本安装操作。 不过， **UpdateDriverForPlugAndPlayDevices** 支持其他安装选项。
 
@@ -58,7 +57,7 @@ ms.locfileid: "90716884"
 
 -   强制安装指定的驱动程序，而不管驱动程序是否比当前安装在设备上的驱动程序更适合于设备。
 
-    **警告**   强制安装驱动程序可能会导致使用更兼容或更低的驱动程序替换更兼容或更高的驱动程序。
+    **警告**   强制安装驱动程序可能会导致使用更兼容或更低的驱动程序替换更兼容或更高的驱动程序。
 
      
 
@@ -82,7 +81,7 @@ ms.locfileid: "90716884"
 
 [**UpdateDriverForPlugAndPlayDevices**](/windows/win32/api/newdev/nf-newdev-updatedriverforplugandplaydevicesa)函数将驱动程序安装在系统中存在的硬件 id 或兼容 ID 与驱动程序包匹配的所有设备上。
 
-调用此函数或 [**DiInstallDriver**](/windows/win32/api/newdev/nf-newdev-diinstalldrivera) 是安装应用程序安装新驱动程序的最简单方法，该驱动程序是系统中设备的最佳匹配项。 **UpdateDriverForPlugAndPlayDevices**的基本操作类似于**DiInstallDriver**的操作。 不过， **UpdateDriverForPlugAndPlayDevices** 支持其他安装选项。
+调用此函数或 [**DiInstallDriver**](/windows/win32/api/newdev/nf-newdev-diinstalldrivera) 是安装应用程序安装新驱动程序的最简单方法，该驱动程序是系统中设备的最佳匹配项。 **UpdateDriverForPlugAndPlayDevices** 的基本操作类似于 **DiInstallDriver** 的操作。 不过， **UpdateDriverForPlugAndPlayDevices** 支持其他安装选项。
 
 默认情况下，如果驱动程序比设备上当前安装的驱动程序更适合于设备，则 **UpdateDriverForPlugAndPlayDevices** 仅在设备上安装驱动程序。
 
@@ -90,7 +89,7 @@ ms.locfileid: "90716884"
 
 -   强制安装指定的驱动程序，而不管驱动程序是否比当前安装在设备上的驱动程序更适合于设备。
 
-    **警告**   强制安装驱动程序可能会导致使用更兼容或更低的驱动程序替换更兼容或更高的驱动程序。
+    **警告**   强制安装驱动程序可能会导致使用更兼容或更低的驱动程序替换更兼容或更高的驱动程序。
 
      
 

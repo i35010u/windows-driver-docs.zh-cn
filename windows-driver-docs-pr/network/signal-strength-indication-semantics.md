@@ -1,15 +1,14 @@
 ---
 title: 信号强度指示语义
 description: 信号强度指示语义
-ms.assetid: d28476f8-d567-4fe0-9cb9-4a78d8b0e05b
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dd15d62560c3dcfec7bc81ce71b4aad0bee89520
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 57f37be986a4b19d1d75ee5ab00c70baa6fc0bf7
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89207781"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96819983"
 ---
 # <a name="signal-strength-indication-semantics"></a>信号强度指示语义
 

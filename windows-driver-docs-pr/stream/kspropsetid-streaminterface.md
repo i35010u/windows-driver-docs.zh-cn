@@ -1,25 +1,24 @@
 ---
-title: KSPROPSETID\_StreamInterface
-description: KSPROPSETID\_StreamInterface
-ms.assetid: 74f3500e-71f3-4e0c-bf97-143d4a63d44f
+title: KSPROPSETID \_ StreamInterface
+description: KSPROPSETID \_ StreamInterface
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d4c84448833610b7a69d9befddff476779926545
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f7d1ea22f7a5df433f84965123148f64a6159c08
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63323515"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96819951"
 ---
-# <a name="kspropsetidstreaminterface"></a>KSPROPSETID\_StreamInterface
+# <a name="kspropsetid_streaminterface"></a>KSPROPSETID \_ StreamInterface
 
 
 ## <span id="ddk_kspropsetid_streaminterface_ks"></span><span id="DDK_KSPROPSETID_STREAMINTERFACE_KS"></span>
 
 
-KSPROPSETID\_StreamInterface 属性集包括：
+KSPROPSETID \_ StreamInterface 属性集包括：
 
-[**KSPROPERTY\_STREAMINTERFACE\_HEADERSIZE**](ksproperty-streaminterface-headersize.md)
+[**KSPROPERTY \_ STREAMINTERFACE \_ HEADERSIZE**](ksproperty-streaminterface-headersize.md)
 
  
 

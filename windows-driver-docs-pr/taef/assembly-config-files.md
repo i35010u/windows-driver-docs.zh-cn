@@ -1,20 +1,19 @@
 ---
 title: 程序集配置文件
 description: 程序集配置文件
-ms.assetid: 53BAC457-BB6A-44a8-AD8D-3B621F41A245
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 94126e655c9be35b6b71264345d73a030dae9e65
-ms.sourcegitcommit: 9b4760aae390b36dbdf9e0dd729a4a643c3f7831
+ms.openlocfilehash: b268b928f4dcc92bd4752a092d907d9d3d4b1170
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90565259"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96819927"
 ---
 # <a name="assembly-config-files"></a>程序集配置文件
 
 
-TAEF 支持测试程序集配置文件。 配置文件的名称应与你的测试程序集 + ".config" 的名称相同。 如果有一个名为 **MyUnitTests.dll**的测试程序集，则配置文件应命名为 **MyUnitTests.dll.config**。
+TAEF 支持测试程序集配置文件。 配置文件的名称应与你的测试程序集 + ".config" 的名称相同。 如果有一个名为 **MyUnitTests.dll** 的测试程序集，则配置文件应命名为 **MyUnitTests.dll.config**。
 
 应将配置文件放置在测试程序集文件所在的同一目录中。
 

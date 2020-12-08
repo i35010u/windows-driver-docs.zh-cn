@@ -1,15 +1,14 @@
 ---
 title: 授予 Oplock
 description: 授予 Oplock
-ms.assetid: 7faf17ef-1596-4952-9575-616f66b37ed6
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b988725288f1117e88dba9511d57869d1246b177
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 66e6c236dd9086f817f5992a7db5e04e3e32dc64
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91732725"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96821465"
 ---
 # <a name="granting-oplocks"></a>授予 Oplock
 
@@ -29,7 +28,7 @@ ms.locfileid: "91732725"
 
 -   FSCTL \_ 请求 \_ OPLOCK
 
-列表中的前四个 FSCTLs 用于请求旧版 oplock。 最后一个 FSCTL 用于向 Windows 7 oplock 请求请求 \_ oplock 输入 \_ \_ 标志 \_ 请求标志，该标志在请求 oplock 输入缓冲区结构的**Flags**成员中指定 \_ ，并 \_ \_ 作为[DeviceIoControl](/windows/win32/api/ioapiset/nf-ioapiset-deviceiocontrol)的*lpInBuffer*参数进行传递。 同样，可以使用 [**ZwFsControlFile**](/previous-versions/ff566462(v=vs.85)) 从内核模式请求 Windows 7 oplock。 文件系统微筛选器必须使用 [**FltAllocateCallbackData**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltallocatecallbackdata) 和 [**FltPerformAsynchronousIo**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltperformasynchronousio) 来请求 Windows 7 oplock。 若要指定需要四个 Windows 7 oplock 中的哪一个，请 \_ \_ \_ \_ \_ \_ \_ \_ \_ 在请求**RequestedOplockLevel** \_ OPLOCK \_ 输入缓冲区结构的 RequestedOplockLevel 成员中设置 \_ 一个或多个标志 OPLOCK 级别缓存读取、oplock 级别缓存句柄或 oplock 级别缓存写入。 有关详细信息，请参阅 [**FSCTL \_ 请求 \_ OPLOCK**](./fsctl-request-oplock.md)。
+列表中的前四个 FSCTLs 用于请求旧版 oplock。 最后一个 FSCTL 用于向 Windows 7 oplock 请求请求 \_ oplock 输入 \_ \_ 标志 \_ 请求标志，该标志在请求 oplock 输入缓冲区结构的 **Flags** 成员中指定 \_ ，并 \_ \_ 作为 [DeviceIoControl](/windows/win32/api/ioapiset/nf-ioapiset-deviceiocontrol)的 *lpInBuffer* 参数进行传递。 同样，可以使用 [**ZwFsControlFile**](/previous-versions/ff566462(v=vs.85)) 从内核模式请求 Windows 7 oplock。 文件系统微筛选器必须使用 [**FltAllocateCallbackData**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltallocatecallbackdata) 和 [**FltPerformAsynchronousIo**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltperformasynchronousio) 来请求 Windows 7 oplock。 若要指定需要四个 Windows 7 oplock 中的哪一个，请 \_ \_ \_ \_ \_ \_ \_ \_ \_ 在请求 **RequestedOplockLevel** \_ OPLOCK \_ 输入缓冲区结构的 RequestedOplockLevel 成员中设置 \_ 一个或多个标志 OPLOCK 级别缓存读取、oplock 级别缓存句柄或 oplock 级别缓存写入。 有关详细信息，请参阅 [**FSCTL \_ 请求 \_ OPLOCK**](./fsctl-request-oplock.md)。
 
 当对 oplock 进行请求并且可以授予 oplock 时，文件系统会返回状态 \_ "挂起 (，因此，永远不会为同步 i/o) 授予 oplock。 在 oplock 中断之前，FSCTL IRP 不会完成。 如果无法授予 oplock，则返回相应的错误代码。 最常返回的错误代码为状态 \_ OPLOCK \_ \_ ，但状态 \_ 无效 \_ 参数 (及其等效的用户模式模拟) 。
 
@@ -149,7 +148,7 @@ NTFS 文件系统通过 "文件 \_ 保留 \_ OPFILTER create" 选项标志为此
 <ul>
 <li>此外，如果现有 oplock 与新请求具有相同的 oplock 密钥，则其 IRP 将使用 STATUS_OPLOCK_SWITCHED_TO_NEW_HANDLE 完成。</li>
 </ul></li>
-<li>读取句柄和现有 oplock 具有与新请求不同的 oplock 密钥：已授予请求。 多个读取和读取句柄 oplock 可以共存于同一流 (请参阅此表后面的说明) 。
+<li>Read-Handle 和现有 oplock 具有与新请求不同的 oplock 密钥：已授予请求。 多个读取和 Read-Handle oplock 可以在同一流上共存 (请参阅此表后面的说明) 。
 <ul>
 <li>否则 (oplock 密钥) 返回 STATUS_OPLOCK_NOT_GRANTED。</li>
 </ul></li>
@@ -157,7 +156,7 @@ NTFS 文件系统通过 "文件 \_ 保留 \_ OPFILTER create" 选项标志为此
 </ul></td>
 </tr>
 <tr class="even">
-<td align="left"><p>读取句柄</p></td>
+<td align="left"><p>Read-Handle</p></td>
 <td align="left"><p>仅当满足以下所有条件时才授予：</p>
 <ul>
 <li>请求适用于给定的文件流。
@@ -189,7 +188,7 @@ NTFS 文件系统通过 "文件 \_ 保留 \_ OPFILTER create" 选项标志为此
 </ul></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>读写</p></td>
+<td align="left"><p>Read-Write</p></td>
 <td align="left"><p>仅当满足以下所有条件时才授予：</p>
 <ul>
 <li>请求适用于给定的文件流。
@@ -212,7 +211,7 @@ NTFS 文件系统通过 "文件 \_ 保留 \_ OPFILTER create" 选项标志为此
 <p>请注意，如果当前 oplock 状态为：</p>
 <ul>
 <li><p>无 Oplock：已授予请求。</p></li>
-<li>读取或读/写，并且现有 oplock 与请求具有相同的 oplock 密钥：现有 oplock 的 IRP 已通过 STATUS_OPLOCK_SWITCHED_TO_NEW_HANDLE 完成，并授予请求。
+<li>"读取" 或 "Read-Write" 和 "现有 oplock" 与请求具有相同的 oplock 密钥：现有 oplock 的 IRP 已通过 STATUS_OPLOCK_SWITCHED_TO_NEW_HANDLE 完成，并授予请求。
 <ul>
 <li>否则，将返回 STATUS_OPLOCK_NOT_GRANTED。</li>
 </ul></li>
@@ -255,5 +254,5 @@ NTFS 文件系统通过 "文件 \_ 保留 \_ OPFILTER create" 选项标志为此
 
  
 
-**注意**   读取和级别 2 oplock 可以共存于同一流上，读取和读取句柄 oplock 可能共存，但级别2和读取-句柄 oplock 可能不会共存。
+**注意**   读取和级别 2 oplock 可以共存于同一流上，并且读取和 Read-Handle oplock 可能会共存，但级别2和 Read-Handle oplock 可能不共存。
 

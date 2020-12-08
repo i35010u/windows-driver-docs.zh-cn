@@ -1,22 +1,21 @@
 ---
 title: WDI_TLV_P2P_DISCOVERY_CHANNEL_SETTINGS
-description: WDI_TLV_P2P_DISCOVERY_CHANNEL_SETTINGS 是包含 Wi-Fi Direct 发现通道设置 TLV。
-ms.assetid: 50BD3F70-4C12-4984-8E3F-AEC9F5C3CDCA
+description: WDI_TLV_P2P_DISCOVERY_CHANNEL_SETTINGS 是包含 Wi-Fi 直接发现通道设置的 TLV。
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_P2P_DISCOVERY_CHANNEL_SETTINGS 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: c2b2dbe8ebd052196883ddea5cbf1e3500129f10
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4d3c13be2475c440b201713d53f60feda66679be
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63362487"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96821217"
 ---
-# <a name="wditlvp2pdiscoverychannelsettings"></a>WDI\_TLV\_P2P\_发现\_通道\_设置
+# <a name="wdi_tlv_p2p_discovery_channel_settings"></a>WDI \_ TLV \_ P2P \_ 发现 \_ 通道 \_ 设置
 
 
-WDI\_TLV\_P2P\_发现\_通道\_设置是包含 Wi-Fi Direct 发现通道设置 TLV。
+WDI \_ tlv \_ P2P \_ 发现 \_ 通道 \_ 设置是包含 Wi-Fi 直接发现通道设置的 tlv。
 
 ## <a name="tlv-type"></a>TLV 类型
 
@@ -26,15 +25,15 @@ WDI\_TLV\_P2P\_发现\_通道\_设置是包含 Wi-Fi Direct 发现通道设置 T
 ## <a name="length"></a>长度
 
 
-所有的大小 （以字节为单位） 总和包含 TLVs。
+Sum (包含所有 TLVs 的大小的) 字节。
 
 ## <a name="values"></a>值
 
 
-| 在任务栏的搜索框中键入                                                                   | 允许多个 TLV 实例 | 可选 | 描述                         |
+| 类型                                                                   | 允许多个 TLV 实例 | 可选 | 说明                         |
 |------------------------------------------------------------------------|--------------------------------|----------|-------------------------------------|
-| [**WDI\_TLV\_P2P\_侦听\_持续时间**](wdi-tlv-p2p-listen-duration.md) |                                |          | 周期持续时间和侦听时间。 |
-| [**WDI\_TLV\_BAND\_CHANNEL**](wdi-tlv-band-channel.md)                | X                              |          | 要扫描的频道的列表。       |
+| [**WDI \_ TLV \_ P2P \_ 侦听 \_ 持续时间**](wdi-tlv-p2p-listen-duration.md) |                                |          | 周期持续时间和侦听时间。 |
+| [**WDI \_ TLV \_ 波段 \_ 通道**](wdi-tlv-band-channel.md)                | X                              |          | 要扫描的通道的列表。       |
 
  
 
@@ -53,10 +52,10 @@ WDI\_TLV\_P2P\_发现\_通道\_设置是包含 Wi-Fi Direct 发现通道设置 T
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
-<td><p>Windows Server 2016</p></td>
+<td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Wditypes.hpp</td>
 </tr>
 </tbody>

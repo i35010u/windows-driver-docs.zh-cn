@@ -1,17 +1,16 @@
 ---
 title: 查询面向连接的微型端口驱动程序
 description: 查询面向连接的微型端口驱动程序
-ms.assetid: 9e9926f6-cf90-48af-885f-59725721948d
 keywords:
 - 面向连接的驱动程序 WDK 网络
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 813706e55e3931f2a9f2d5ef004f4ecd4e488c4e
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: d69a2155d2a7309086ad675a889d20e3417f9443
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89215148"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96820053"
 ---
 # <a name="querying-a-connection-oriented-miniport-driver"></a>查询面向连接的微型端口驱动程序
 
@@ -25,7 +24,7 @@ NDIS 还可以代表自己调用微型端口驱动程序的 [*MiniportCoOidReque
 
 ![说明查询面向连接的微型端口驱动程序的示意图](images/fig5-3.png)
 
-面向连接的微型端口驱动程序必须能够为特定 NIC (VCs) 的所有虚拟连接提供全局基础信息，还可以为每个 VC 提供相关信息。 例如，如果向[*MiniportCoOidRequest*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_co_oid_request)提供了一个非**NULL** *NdisVcHandle* ，用于执行[OID \_ GEN \_ 共同 \_ RCV \_ CRC \_ 错误](./oid-gen-co-rcv-crc-error.md)的查询，则微型端口驱动程序将返回在指定的 VC 上的所有接收中遇到的 CRC 错误的数目。 对于具有 **NULL** *NdisVcHandle*的同一请求，微型端口驱动程序将返回通过 NIC 的所有传入接收所遇到的 CRC 错误总数。
+面向连接的微型端口驱动程序必须能够为特定 NIC (VCs) 的所有虚拟连接提供全局基础信息，还可以为每个 VC 提供相关信息。 例如，如果向 [*MiniportCoOidRequest*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_co_oid_request)提供了一个非 **NULL** *NdisVcHandle* ，用于执行 [OID \_ GEN \_ 共同 \_ RCV \_ CRC \_ 错误](./oid-gen-co-rcv-crc-error.md)的查询，则微型端口驱动程序将返回在指定的 VC 上的所有接收中遇到的 CRC 错误的数目。 对于具有 **NULL** *NdisVcHandle* 的同一请求，微型端口驱动程序将返回通过 NIC 的所有传入接收所遇到的 CRC 错误总数。
 
 下面的列表包含面向连接的微型端口驱动程序的必需常规操作 Oid 集：
 
@@ -55,7 +54,7 @@ NDIS 还可以代表自己调用微型端口驱动程序的 [*MiniportCoOidReque
 
 小型端口驱动程序的 [*MiniportCoOidRequest*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_co_oid_request) 函数必须准备好响应查询或将其设置为上述任何 oid。
 
-当[*MiniportCoOidRequest*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_co_oid_request)使用 OID \_ GEN \_ 共同 MAC 选项调用 MiniportCoOidRequest 时 \_ \_ ，它必须返回一个位掩码，该位掩码指定微型端口驱动程序执行的可选操作。 标志集包括：
+当 [*MiniportCoOidRequest*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_co_oid_request)使用 OID \_ GEN \_ 共同 MAC 选项调用 MiniportCoOidRequest 时 \_ \_ ，它必须返回一个位掩码，该位掩码指定微型端口驱动程序执行的可选操作。 标志集包括：
 
 -   NDIS \_ MAC \_ 选项 \_ 无 \_ 环回。 如果设置了此标志，则微型端口驱动程序不会环回传递到 [**MiniportCoSendNetBufferLists**](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_co_send_net_buffer_lists) 的数据包，该数据包将定向到同一台计算机上的接收方，并且微型端口驱动程序要求 NDIS 执行环回。 如果 NDIS 执行数据包环回，数据包将不会向下传递到微型端口驱动程序。 小型端口驱动程序始终设置此标志，除非 NIC 执行硬件环回。
 
@@ -63,9 +62,9 @@ NDIS 还可以代表自己调用微型端口驱动程序的 [*MiniportCoOidReque
 
 微型端口驱动程序绝不能使用 NDIS \_ MAC \_ 选项 \_ 保留标志，该标志是为 NDIS 内部使用保留的。
 
-还将使用特定于媒体的 OID 来查询[*MiniportCoOidRequest*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_co_oid_request) ，以确定 NIC 的当前地址。
+还将使用特定于媒体的 OID 来查询 [*MiniportCoOidRequest*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_co_oid_request) ，以确定 NIC 的当前地址。
 
-有关详细信息，请参阅 [面向连接的呼叫管理器和客户端的 oid](./oids-for-connection-oriented-call-managers-and-clients.md) 和 [常规对象](/previous-versions/windows/hardware/network/ff546510(v=vs.85))。
+有关详细信息，请参阅 [Connection-Oriented 调用管理器和客户端](./oids-for-connection-oriented-call-managers-and-clients.md) 以及 [常规对象](/previous-versions/windows/hardware/network/ff546510(v=vs.85))的 oid。
 
  
 

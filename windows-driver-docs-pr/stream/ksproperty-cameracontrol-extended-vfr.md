@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ CAMERACONTROL \_ 扩展 \_ VFR
 description: KSPROPERTY \_ CAMERACONTROL \_ EXTENDED \_ VFR 是一个属性 ID，用于指定是否需要在驱动程序上使用可变的帧速率。
-ms.assetid: 9B528421-B5AA-4092-9F7B-71A18732ABA8
 keywords:
 - KSPROPERTY_CAMERACONTROL_EXTENDED_VFR 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 09/11/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: a4885377bd382d54fb1c312bfa80aea6e7e4c402
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 3d31b7fcfad48d9281e292f9beaa710e5541d9aa
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89187371"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96820449"
 ---
 # <a name="ksproperty_cameracontrol_extended_vfr"></a>KSPROPERTY \_ CAMERACONTROL \_ 扩展 \_ VFR
 
@@ -44,7 +43,7 @@ KSPROPERTY \_ CAMERACONTROL \_ EXTENDED \_ VFR 是一个属性 ID，用于指定
 <tr class="odd">
 <td><p>版本 1</p></td>
 <td><p>Pin</p></td>
-<td><p>同步</p></td>
+<td><p>Synchronous</p></td>
 </tr>
 </tbody>
 </table>
@@ -115,7 +114,7 @@ KSPROPERTY \_ CAMERACONTROL \_ EXTENDED \_ VFR 是一个属性 ID，用于指定
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Ksmedia.h</td>
 </tr>
 </tbody>

@@ -1,15 +1,14 @@
 ---
 title: 通过 USB 进行的 HID 电源管理
 description: USB 上的 HID 使用 USB 挂起对设备进行电源管理。
-ms.assetid: 7B5E10B0-2EEA-450A-9E21-B60215F60027
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 032373f631ef0a723a2479911ccca6ac17b30e76
-ms.sourcegitcommit: 8835925c6a88efc301dc5e8bd9bca87082416eb6
+ms.openlocfilehash: 14acca8a76d96ad6f43f46d2f64dca0765cb6e82
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/18/2020
-ms.locfileid: "90777585"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96820335"
 ---
 # <a name="hid-power-management-over-usb"></a>基于 USB 的 HID 电源管理
 

@@ -1,9 +1,8 @@
 ---
 title: .sound_notify（使用通知音）
-description: .Sound_notify 命令使 WinDbg 进入等待的命令状态时要播放的声音。
-ms.assetid: 72ef33ea-1c75-4add-80eb-a0d824571948
+description: 当 WinDbg 进入等待命令状态时，.sound_notify 命令将导致播放声音。
 keywords:
-- .sound_notify （使用通知声音） Windows 调试
+- .sound_notify (使用通知声音) Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: fb846550287246a942cbd36da74bfadf122013a2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e02f10eb8a12358b87db55559e812ff211686f70
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63338841"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96819897"
 ---
-# <a name="soundnotify-use-notification-sound"></a>.sound\_通知 （使用通知声音）
+# <a name="sound_notify-use-notification-sound"></a>。声音 \_ 通知 (使用通知声音) 
 
 
-**.Sound\_通知**命令使 WinDbg 进入等待的命令状态时要播放的声音。
+当 WinDbg 进入等待命令状态时， **声音 \_ 通知** 命令会导致播放声音。
 
 ```dbgcmd
 .sound_notify /ed 
@@ -30,21 +29,21 @@ ms.locfileid: "63338841"
 .sound_notify /d 
 ```
 
-## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>参数
+## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>Parameters
 
 
-<span id="________ed______"></span><span id="________ED______"></span> **/ed**   
-将导致默认 Windows 警报声 WinDbg 进入等待的命令状态时要播放。
+<span id="________ed______"></span><span id="________ED______"></span>**/ed**   
+导致在 WinDbg 进入等待命令状态时播放默认的 Windows 警报声音。
 
-<span id="________ef_______File______"></span><span id="________ef_______file______"></span><span id="________EF_______FILE______"></span> **/ef** **** *文件*   
-会导致包含在指定的文件，WinDbg 将进入等待的命令状态时要播放的声音。
+<span id="________ef_______File______"></span><span id="________ef_______file______"></span><span id="________EF_______FILE______"></span>**/ef**  **** *文件*   
+使指定文件中包含的声音在 WinDbg 进入等待命令状态时播放。
 
-<span id="________d"></span><span id="________D"></span> **/d**  
-禁用的声音播放。
+<span id="________d"></span><span id="________D"></span>**/d**  
+禁止播放声音。
 
 ### <a name="span-idenvironmentspanspan-idenvironmentspanspan-idenvironmentspanenvironment"></a><span id="Environment"></span><span id="environment"></span><span id="ENVIRONMENT"></span>环境
 
-此命令仅在 WinDbg 中可用，并能在脚本文件。
+此命令仅在 WinDbg 中可用，不能在脚本文件中使用。
 
 <table>
 <colgroup>
@@ -53,16 +52,16 @@ ms.locfileid: "63338841"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>模式</strong></p></td>
-<td align="left"><p>用户模式下，内核模式</p></td>
+<td align="left"><p><strong>交货</strong></p></td>
+<td align="left"><p>用户模式，内核模式</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>目标</strong></p></td>
-<td align="left"><p>实时、 崩溃转储</p></td>
+<td align="left"><p>实时，故障转储</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>目标</strong></p></td>
-<td align="left"><p>全部</p></td>
+<td align="left"><p>all</p></td>
 </tr>
 </tbody>
 </table>

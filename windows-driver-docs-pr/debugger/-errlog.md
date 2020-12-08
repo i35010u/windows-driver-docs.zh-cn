@@ -1,7 +1,6 @@
 ---
 title: .errlog
 description: .Errlog 扩展在 i/o 系统的错误日志中显示任何挂起项的内容。
-ms.assetid: 2ef6331e-fa83-4515-8d70-5094e40b8497
 keywords:
 - .errlog Windows 调试
 ms.date: 05/23/2017
@@ -12,12 +11,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 3365c0ed36d7793ecb4a668684ea1ba3a46f285b
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: d7d819ac70f96d83ee365e9a7533f693727fb450
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89206603"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96819915"
 ---
 # <a name="errlog"></a>!errlog
 
@@ -44,7 +43,7 @@ ms.locfileid: "89206603"
 <td align="left"><p>Kdextx86.dll</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>Windows XP 及更高版本</strong></p></td>
+<td align="left"><p><strong>Windows XP 及更高版本</strong></p></td>
 <td align="left"><p>Kdexts.dll</p></td>
 </tr>
 </tbody>
@@ -59,7 +58,7 @@ ms.locfileid: "89206603"
 <a name="remarks"></a>备注
 -------
 
-此命令显示有关 i/o 系统的错误日志中任何挂起事件的信息。 这些事件由对 [**IoWriteErrorLogEntry**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-iowriteerrorlogentry) 函数的调用排队等候写入系统的事件日志，以便 **事件查看器**以后查看。
+此命令显示有关 i/o 系统的错误日志中任何挂起事件的信息。 这些事件由对 [**IoWriteErrorLogEntry**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-iowriteerrorlogentry) 函数的调用排队等候写入系统的事件日志，以便 **事件查看器** 以后查看。
 
 仅显示由 [**IoWriteErrorLogEntry**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-iowriteerrorlogentry) 排队但未提交到错误日志的条目。
 

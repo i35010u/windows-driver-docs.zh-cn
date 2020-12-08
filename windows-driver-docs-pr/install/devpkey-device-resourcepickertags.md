@@ -1,7 +1,6 @@
 ---
 title: DEVPKEY_Device_ResourcePickerTags
 description: DEVPKEY_Device_ResourcePickerTags
-ms.assetid: 9ad9dddf-3211-4296-a806-1639cfc0f644
 keywords:
 - DEVPKEY_Device_ResourcePickerTags 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: b7f8e76244dc42e96128c155715140fd1420968f
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 7fb171a2400420d9609387ca99ff05f727ab7e64
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90715592"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96821453"
 ---
 # <a name="devpkey_device_resourcepickertags"></a>DEVPKEY_Device_ResourcePickerTags
 
@@ -67,7 +66,7 @@ DEVPKEY_Device_ResourcePickerTags 设备属性表示设备实例的资源选取�
 <a name="remarks"></a>备注
 -------
 
-你可以使用安装设备的 INF 文件的[**Inf *DDInstall*部分**](./inf-ddinstall-section.md)中包含的[**inf AddReg 指令**](./inf-addreg-directive.md)来设置 DEVPKEY_Device_ResourcePickerTags 的值。
+你可以使用安装设备的 INF 文件的 [**Inf *DDInstall* 部分**](./inf-ddinstall-section.md)中包含的 [**inf AddReg 指令**](./inf-addreg-directive.md)来设置 DEVPKEY_Device_ResourcePickerTags 的值。
 
 可以通过调用 [**SetupDiGetDeviceProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)来检索 PKEY_Device_ResourcePickerTags 的值。
 

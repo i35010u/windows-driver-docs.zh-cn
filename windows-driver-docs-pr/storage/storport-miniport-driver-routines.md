@@ -1,19 +1,18 @@
 ---
 title: Storport 驱动程序微型端口例程
 description: 介绍了 Storport 微型端口驱动程序例程，以及 SCSI 端口驱动程序的设计和 Storport 驱动程序的设计之间的差异。
-ms.assetid: f035cf06-d2ef-41da-a59a-0c00c626e3fb
 keywords:
 - Storport 驱动程序支持例程
 - 存储 WDK
 - 存储支持例程
 ms.date: 10/08/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 22ca15e1881f6cba9ceb34e9e43ad3e1496b5dbd
-ms.sourcegitcommit: abe7fe9f3fbee8d12641433eeab623a4148ffed3
+ms.openlocfilehash: c58782c7789e28de6d9bd34539bbadaeb1a3e614
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92185237"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96820505"
 ---
 # <a name="storport-driver-miniport-routines"></a>Storport 驱动程序微型端口例程
 
@@ -23,7 +22,7 @@ Storport 微型端口驱动程序例程在大多数方面都等效于其 SCSI �
 
 例如，使用 Storport 驱动程序的微型端口驱动程序必须始终准备好在 [HwStorStartIo](/windows-hardware/drivers/ddi/storport/nc-storport-hw_startio) 例程完成后接收另一个 i/o 请求。 使用 SCSI 端口的微型端口驱动程序无需执行此操作。 SCSI 端口版本不会接收到新的 i/o 请求，直到使用 [StorPortNotification](/windows-hardware/drivers/ddi/storport/nf-storport-storportnotification) 函数显式发出端口驱动程序的信号，然后才能处理另一请求。
 
-如果小型端口驱动程序的 Storport 版本无法在提交请求时处理请求，则它将具有一组队列管理功能，而不能用于 SCSI 端口版本，使其能够处理重载。 与 SCSI 端口版本一样，微型端口驱动程序的 Storport 版本完成了 **SRB_STATUS_BUSY**的请求，但与 scsi 端口版本不同的是，它还可以使用 [StorPortDeviceBusy](/windows-hardware/drivers/ddi/storport/nf-storport-storportdevicebusy) 例程将设备队列标记为忙。 类似的功能允许微型端口驱动程序在适配器范围内暂停和恢复处理。
+如果小型端口驱动程序的 Storport 版本无法在提交请求时处理请求，则它将具有一组队列管理功能，而不能用于 SCSI 端口版本，使其能够处理重载。 与 SCSI 端口版本一样，微型端口驱动程序的 Storport 版本完成了 **SRB_STATUS_BUSY** 的请求，但与 scsi 端口版本不同的是，它还可以使用 [StorPortDeviceBusy](/windows-hardware/drivers/ddi/storport/nf-storport-storportdevicebusy) 例程将设备队列标记为忙。 类似的功能允许微型端口驱动程序在适配器范围内暂停和恢复处理。
 
 有关 Storport 驱动程序提供的支持例程的详细信息，请参阅 [storport 驱动程序支持例程](storport-driver-support-routines.md)。
 
@@ -31,11 +30,11 @@ Storport 微型端口驱动程序例程在大多数方面都等效于其 SCSI �
 
 下面是微型端口驱动程序例程：
 
-| 例程所返回的值 | 说明 |
+| 例程所返回的值 | 描述 |
 | ------- | ----------- |
 | [HW_MESSAGE_SIGNALED_INTERRUPT_ROUTINE](/windows-hardware/drivers/ddi/storport/nc-storport-hw_message_signaled_interrupt_routine) | 处理 (MSI) 的消息信号中断。 |
 | [HW_ADAPTER_CONTROL](/windows-hardware/drivers/ddi/storport/nc-storport-hw_adapter_control) | 执行同步操作以控制适配器的状态或行为，如停止或重启 HBA 以进行电源管理。 |
-| [HW_BUILDIO](/windows-hardware/drivers/ddi/storport/nc-storport-hw_buildio) | 在将共享系统数据结构传递到 **HwStorStartIo**之前，处理对该 SRB 的不同步访问。 |
+| [HW_BUILDIO](/windows-hardware/drivers/ddi/storport/nc-storport-hw_buildio) | 在将共享系统数据结构传递到 **HwStorStartIo** 之前，处理对该 SRB 的不同步访问。 |
 | [HW_DPC_ROUTINE](/windows-hardware/drivers/ddi/storport/nc-storport-hw_dpc_routine) | 通过延迟的过程调用 (DPC) 机制，通过延迟的过程调用，延迟在调度 IRQL 处执行。 |
 | [HW_FIND_ADAPTER](/windows-hardware/drivers/ddi/storport/nc-storport-hw_find_adapter) | 使用提供的配置来确定是否支持特定的 HBA，如果是，则返回有关该适配器的配置信息。 |
 | [HW_INITIALIZE](/windows-hardware/drivers/ddi/storport/nc-storport-hw_initialize) | 在系统重新启动或出现电源故障后初始化微型端口驱动程序。 |

@@ -1,15 +1,14 @@
 ---
 title: “传输微型驱动程序”概述
 description: 本部分包含需要创建自己的 HID 微型驱动程序的供应商的详细信息。
-ms.assetid: 5142A2C9-AE6E-4CE6-AF16-2CF811D6C10F
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 196485bc89c776a8028507c5e09d14db7258ac0f
-ms.sourcegitcommit: 74a8dc9ef1da03857dec5cab8d304e2869ba54a7
+ms.openlocfilehash: 3e13e5d83edc94598f823fbf53c8dc6f351b13c5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90759896"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96820279"
 ---
 # <a name="transport-minidriver-overview"></a>“传输微型驱动程序”概述
 
@@ -23,7 +22,7 @@ ms.locfileid: "90759896"
 2.  KMDF –内核模式驱动程序框架
 3.  WDM –旧 Windows 驱动模型
 
-**注意**   Microsoft 鼓励硬件供应商尽可能使用机箱内传输微型驱动程序。 但是，如果你的设备需要不受支持的传输，Microsoft 建议使用 Windows 驱动程序框架 (UMDF 或 KMDF) 作为你的微型驱动程序的驱动程序模型。 仅当 Windows 驱动程序框架不支持特定传输时，才应创建 WDM 微型驱动程序。
+**注意**  Microsoft 鼓励硬件供应商尽可能使用机箱内传输微型驱动程序。 但是，如果你的设备需要不受支持的传输，Microsoft 建议使用 Windows 驱动程序框架 (UMDF 或 KMDF) 作为你的微型驱动程序的驱动程序模型。 仅当 Windows 驱动程序框架不支持特定传输时，才应创建 WDM 微型驱动程序。
 
 Microsoft 建议开发人员使用 UMDF 框架作为起点。 仅当功能不可用于 UMDF 时，请考虑编写 KMDF 驱动程序。 有关这两个驱动程序框架中的功能比较的信息，请参阅将 UMDF 2 功能与 KMDF 进行比较。
 

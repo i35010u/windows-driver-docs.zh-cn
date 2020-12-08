@@ -1,7 +1,6 @@
 ---
 title: 支持无线电管理
 description: 当用户在其 Windows 8 便携式计算机、笔记本或平板电脑上的 "电脑设置" 中选择 "无线" 选项时，他们可以打开或关闭任何连接的无线设备。
-ms.assetid: AA7AB429-30C5-4C10-AA85-41ED9EAEE69A
 keywords:
 - 收音机管理 API
 - 收音机管理 API，示例
@@ -10,19 +9,19 @@ keywords:
 - 收音机管理，GPS
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cf052d0c9b63a89aad719b57d780e4300869d6bd
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 562427999526bf9a8bf166cb849aa6baa1848bfb
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89193257"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96820763"
 ---
 # <a name="supporting-radio-management"></a>支持无线电管理
 
 > [!IMPORTANT]
 > 此文档和 Windows 8.1 的地理位置驱动程序示例已弃用。
 
-当用户在其 Windows 8 便携式计算机、笔记本或平板电脑上的 "电脑设置" 中选择 "无线" 选项时，他们可以打开或关闭任何连接的无线设备。 这些无线设备可能包括 Wi-fi 天线或 GPS 设备。 PC 设置与给定无线设备之间的内部链接是 [无线电管理 API](/previous-versions/windows/hardware/radio/hh406615(v=vs.85)) 和给定设备的相应收音机管理 DLL。
+当用户在其 Windows 8 便携式计算机、笔记本或平板电脑上的 "电脑设置" 中选择 "无线" 选项时，他们可以打开或关闭任何连接的无线设备。 这些无线设备可能包括 Wi-Fi 天线或 GPS 设备。 PC 设置与给定无线设备之间的内部链接是 [无线电管理 API](/previous-versions/windows/hardware/radio/hh406615(v=vs.85)) 和给定设备的相应收音机管理 DLL。
 
 收音机管理 API 是一组作为 Windows 驱动程序工具包附带的 COM/Win32 接口。 这些接口包括以下方法：
 
@@ -91,13 +90,13 @@ ms.locfileid: "89193257"
 
 设备驱动程序最初接收并处理 **CMyQueue：： OnDeviceIoControl** 方法中的任何 IOCTL。 如果此方法标识四个单选管理 IOCTLs 中的一个，则会将该 IOCTL 转发到 **CMyDevice：:P rocessiocontrolradiomanagement** 方法以便进一步处理。 此方法反过来将 IOCTL 转发到 **CSensorManager：:P rocessiocontrolradiomanagement**。 在最后一种方法中，通过调用 **CSensorDDI** 类设置或检索无线电状态。
 
-**CSensorDDI**类包含一个检索无线电状态 (**CSensorDDI：： OnGetRadioState**) 的方法，以及一个 (**CSensorDDI：： OnSetRadioState**) 设置无线电状态的方法。 这是在模拟硬件的示例设备驱动程序中发生最终 IOCTL 处理的地方。 对于实际设备驱动程序， **CSensorDDI：： OnGetRadioState** 方法会从设备固件请求无线电状态，而 **CSensorDDI：： OnSetRadioState** 方法会向固件发出请求以设置状态。
+**CSensorDDI** 类包含一个检索无线电状态 (**CSensorDDI：： OnGetRadioState**) 的方法，以及一个 (**CSensorDDI：： OnSetRadioState**) 设置无线电状态的方法。 这是在模拟硬件的示例设备驱动程序中发生最终 IOCTL 处理的地方。 对于实际设备驱动程序， **CSensorDDI：： OnGetRadioState** 方法会从设备固件请求无线电状态，而 **CSensorDDI：： OnSetRadioState** 方法会向固件发出请求以设置状态。
 
 ## <a name="debugging-the-radio-management-dll"></a>调试收音机管理 DLL
 
 可以通过完成以下步骤，在 Visual Studio 中调试收音机管理 DLL。
 
-1. 打开 Visual Studio，并在 c + + RadioManagerGPS 文件夹中选择**SampleRM. vcsproj** 。 \\
+1. 打开 Visual Studio，并在 c + + RadioManagerGPS 文件夹中选择 **SampleRM. vcsproj** 。 \\
 
 1. 选择 " **调试"/"附加到进程**"。 在 " **附加到进程** " 对话框中显示的可用进程列表中，选择 "dllhost.exe"。
 

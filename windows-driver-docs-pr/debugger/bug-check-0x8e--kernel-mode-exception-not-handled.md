@@ -1,7 +1,6 @@
 ---
 title: Bug 检查 0x8E KERNEL_MODE_EXCEPTION_NOT_HANDLED
 description: KERNEL_MODE_EXCEPTION_NOT_HANDLED bug 检查的值为0x0000008E。 此 bug 检查指示内核模式应用程序生成了错误处理程序未捕获的异常。
-ms.assetid: 987ee868-5622-44e4-979c-3ae93a98b5b1
 keywords:
 - Bug 检查 0x8E KERNEL_MODE_EXCEPTION_NOT_HANDLED
 - KERNEL_MODE_EXCEPTION_NOT_HANDLED
@@ -13,19 +12,19 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: c99c06bbc8f72656731870be709275e345063a65
-ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
+ms.openlocfilehash: 0b0d54f363cd39bbd6e083c200ce43d15ea50daa
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84534598"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96819873"
 ---
 # <a name="bug-check-0x8e-kernel_mode_exception_not_handled"></a>Bug 检查0x8E： \_ \_ \_ 未处理内核模式 \_ 异常
 
 \_未处理的内核模式 \_ 异常 \_ \_ bug 检查的值为0x0000008E。 此 bug 检查指示内核模式应用程序生成了错误处理程序未捕获的异常。
 
 > [!IMPORTANT]
-> 本主题适用于程序员。 如果你是在使用计算机时收到蓝屏错误代码的客户，请参阅[排查蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题面向程序员。 如果您是在使用计算机时收到蓝屏错误代码的客户，请参阅[蓝屏错误疑难解答](https://www.windows.com/stopcode)。
 
 ## <a name="kernel_mode_exception_not_handled-parameters"></a>内核 \_ 模式 \_ 异常 \_ 未 \_ 处理的参数
 
@@ -38,7 +37,7 @@ ms.locfileid: "84534598"
 <thead>
 <tr class="header">
 <th align="left">参数</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -56,7 +55,7 @@ ms.locfileid: "84534598"
 </tr>
 <tr class="even">
 <td align="left"><p>4</p></td>
-<td align="left"><p>保留</p></td>
+<td align="left"><p>预留</p></td>
 </tr>
 </tbody>
 </table>
@@ -74,7 +73,7 @@ ms.locfileid: "84534598"
 
 -   0xC0000005：状态 \_ 访问 \_ 冲突表明发生了内存访问冲突。
 
-有关异常代码的完整列表，请参阅位于 Microsoft Windows 驱动程序工具包（WDK）的 inc 目录中的 Ntstatus .h 文件。
+有关异常代码的完整列表，请参阅位于 Microsoft Windows 驱动程序工具包的 inc 目录中的 Ntstatus .h 文件 (WDK) 。
 
 <a name="resolution"></a>解决方法
 ----------
@@ -92,9 +91,9 @@ ms.locfileid: "84534598"
 
 - 禁用 BIOS 内存选项，例如缓存或隐藏。
 
-如果打算调试此问题，您可能会发现很难获得堆栈跟踪。 参数2（异常地址）应确定导致此问题的驱动程序或函数。
+如果打算调试此问题，您可能会发现很难获得堆栈跟踪。 参数 2 (异常地址) 应标识导致此问题的驱动程序或函数。
 
-如果发生异常代码0x80000003，则会命中硬编码断点或断言，但计算机是使用 **/NODEBUG**开关启动的。 此问题很少发生。 如果它反复发生，请确保已连接内核调试器，并且计算机是通过 **/debug**开关启动的。
+如果发生异常代码0x80000003，则会命中硬编码断点或断言，但计算机是使用 **/NODEBUG** 开关启动的。 此问题很少发生。 如果它反复发生，请确保已连接内核调试器，并且计算机是通过 **/debug** 开关启动的。
 
 如果发生异常代码数0x80000002，陷阱帧会提供其他信息。
 

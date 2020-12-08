@@ -1,42 +1,41 @@
 ---
 title: 在 CDB 中结束调试会话
-description: 可以通过输入 q (Quit) 命令来退出 CDB。 此命令也会关闭正在调试的应用程序。
-ms.assetid: B32AD09D-7F88-420E-94BD-59FAE6EC1720
+description: 可以通过输入 q (Quit) 命令退出 CDB。 此命令还会关闭正在调试的应用程序。
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 60741484442d6e66411251968fbc88af001a412c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 137bd6156a91fc7af406859d9fdbc3fbab2ad9ef
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63340575"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96820923"
 ---
 # <a name="ending-a-debugging-session-in-cdb"></a>在 CDB 中结束调试会话
 
 
-可以通过输入退出 CDB [ **q (Quit)** ](q--qq--quit-.md)命令。 此命令也会关闭正在调试的应用程序。
+可以通过输入 [**q (Quit)**](q--qq--quit-.md) 命令退出 CDB。 此命令还会关闭正在调试的应用程序。
 
-[ **Qd （Quit 和分离）** ](qd--quit-and-detach-.md)命令，从目标应用程序中分离 CDB、 退出调试器，并保持运行的目标应用程序。 如果您使用了 **-pd**如果出于任何原因终止会话，则会出现在启动调试器，分离时的命令行选项。 (此技术使得 **-pd**调试敏感的进程，如客户端服务器运行时子系统 (CSRSS)，您不想要结束时尤其有用。)
+[**Qd (退出并分离)**](qd--quit-and-detach-.md)命令从目标应用程序分离 CDB，退出调试器，并使目标应用程序保持运行。 如果在启动调试器时使用了 **-pd** 命令行选项，则在会话出于任何原因结束时，将发生分离。  (在调试敏感进程（例如客户端服务器 Run-Time 子系统 (CSRSS) ）时，此方法 **会特别有用** ，因为您不希望结束。 ) 
 
-如果调试器未响应，可以通过按退出[ **CTRL + B** ](ctrl-b--quit-local-debugger-.md) ，然后输入。 此方法是辅助退出机制。 它突然结束调试器，它类似于结束进程通过任务管理器或关闭窗口。
+如果调试器未响应，可以按 [**CTRL + B**](ctrl-b--quit-local-debugger-.md) 退出，然后按 enter。 此方法是一种辅助退出机制。 它突然结束调试器，类似于通过任务管理器或通过关闭窗口来结束进程。
 
-若要结束用户模式下调试会话，请返回到休眠模式下，调试器和关闭目标应用程序，可以使用以下方法：
+若要结束用户模式调试会话，请将调试器返回到休眠模式，然后关闭目标应用程序，可以使用以下方法：
 
--   输入[ **.kill （终止进程）** ](-kill--kill-process-.md)命令。
+-   输入 [**kill (Kill Process)**](-kill--kill-process-.md) 命令。
 
-若要结束用户模式下调试会话，请为休眠模式中，并再次运行目标应用程序的情况下，可以使用以下方法将返回调试器：
+若要结束用户模式调试会话，请将调试器返回到休眠模式，然后将目标应用程序设置为再次运行，可以使用以下方法：
 
--   输入[ **.detach （与进程分离）** ](-detach--detach-from-process-.md)命令。 如果你正在调试多个目标，此命令将当前目标从分离，并将剩余目标的调试会话继续。
+-   输入 [**(从进程中分离的)**](-detach--detach-from-process-.md) "命令。 如果正在调试多个目标，则此命令从当前目标中分离，并继续与剩余目标的调试会话。
 
--   输入[ **qd （Quit 和分离）** ](qd--quit-and-detach-.md)命令。
+-   输入 [**qd (Quit 并分离)**](qd--quit-and-detach-.md) 命令。
 
--   输入[ **q (Quit)** ](q--qq--quit-.md)命令时，如果启动的调试器 **-pd**选项。
+-   如果已通过 **-pd** 选项启动调试器，请输入 [**q (Quit)**](q--qq--quit-.md)命令。
 
-若要用户模式下调试会话结束，返回调试器到休眠模式，但使目标应用程序处于调试状态，可以使用以下方法：
+若要结束用户模式调试会话，请将调试器恢复到休眠模式，但使目标应用程序处于调试状态，可以使用以下方法：
 
--   输入[ **.abandon （放弃进程）** ](-abandon--abandon-process-.md)命令。
+-   输入 [**(放弃进程)**](-abandon--abandon-process-.md) 命令。
 
-有关重新附加到目标的详细信息，请参阅[重新附加到目标应用程序](reattaching-to-the-target-application.md)。
+有关重新附加到目标的详细信息，请参阅重新 [附加到目标应用程序](reattaching-to-the-target-application.md)。
 
  
 

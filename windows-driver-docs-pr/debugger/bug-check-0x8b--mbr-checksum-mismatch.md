@@ -1,7 +1,6 @@
 ---
 title: Bug 检查 0x8B MBR_CHECKSUM_MISMATCH
-description: MBR_CHECKSUM_MISMATCH bug 检查具有 0x0000008B 值。 此 bug 检查指示 MBR 校验和中出现不匹配。
-ms.assetid: 7db57605-b6ff-49b9-8a79-3325512825b9
+description: MBR_CHECKSUM_MISMATCH bug 检查的值为0x0000008B。 此 bug 检查表明 MBR 校验和中出现不匹配。
 keywords:
 - Bug 检查 0x8B MBR_CHECKSUM_MISMATCH
 - MBR_CHECKSUM_MISMATCH
@@ -13,23 +12,23 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 8444a2b370675eb90a644ae751fbf055cdbd82d6
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: 754deb1a5f670a4205921491098ebd5cfd9a23ae
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67519148"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96819885"
 ---
-# <a name="bug-check-0x8b-mbrchecksummismatch"></a>Bug 检查 0x8B：MBR\_校验和\_不匹配
+# <a name="bug-check-0x8b-mbr_checksum_mismatch"></a>Bug 检查0x8B： MBR \_ 校验和 \_ 不匹配
 
 
-MBR\_校验和\_不匹配错误检查的值为 0x0000008B。 此 bug 检查指示 MBR 校验和中出现不匹配。
+MBR \_ 校验和 \_ bug 检查的值为0x0000008B。 此 bug 检查表明 MBR 校验和中出现不匹配。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题面向程序员。 如果您是在使用计算机时收到蓝屏错误代码的客户，请参阅[蓝屏错误疑难解答](https://www.windows.com/stopcode)。
 
 
-## <a name="mbrchecksummismatch-parameters"></a>MBR\_校验和\_不匹配参数
+## <a name="mbr_checksum_mismatch-parameters"></a>MBR \_ 校验和 \_ 不匹配参数
 
 
 <table>
@@ -46,19 +45,19 @@ MBR\_校验和\_不匹配错误检查的值为 0x0000008B。 此 bug 检查指�
 <tbody>
 <tr class="odd">
 <td align="left"><p>1</p></td>
-<td align="left"><p>从 MBR 磁盘签名</p></td>
+<td align="left"><p>MBR 的磁盘签名</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>2</p></td>
-<td align="left"><p>操作系统加载程序计算 MBR 校验和</p></td>
+<td align="left"><p>操作系统加载器计算的 MBR 校验和</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>3</p></td>
-<td align="left"><p>系统会计算 MBR 校验和</p></td>
+<td align="left"><p>系统计算的 MBR 校验和</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>4</p></td>
-<td align="left"><p>保留</p></td>
+<td align="left"><p>预留</p></td>
 </tr>
 </tbody>
 </table>
@@ -68,14 +67,14 @@ MBR\_校验和\_不匹配错误检查的值为 0x0000008B。 此 bug 检查指�
 <a name="cause"></a>原因
 -----
 
-MBR\_校验和\_启动过程中发生的不匹配错误检查，Microsoft Windows 操作系统计算的 MBR 校验和与加载程序将传入的校验和不匹配时。
+\_ \_ 当 Microsoft Windows 操作系统计算的 mbr 校验和与加载器传入的校验和不匹配时，在启动过程中将发生 mbr 校验和不匹配 bug 检查。
 
-此错误通常指示病毒。
+此错误通常表示病毒。
 
-<a name="resolution"></a>分辨率
+<a name="resolution"></a>解决方法
 ----------
 
-有许多形式的病毒，可以检测到不是全部。 通常情况下，较新的病毒通常可以检测到只能由最近升级了病毒扫描程序。 应使用受写保护的磁盘包含病毒扫描程序启动并尝试清除感染。
+可以检测到多种形式的病毒，而不能检测到所有病毒。 通常，较新病毒通常只能由最近升级的病毒扫描程序检测到。 应使用包含病毒扫描程序的写保护磁盘启动，并尝试清除感染。
 
  
 

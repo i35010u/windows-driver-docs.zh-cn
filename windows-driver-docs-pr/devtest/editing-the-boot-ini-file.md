@@ -1,7 +1,6 @@
 ---
 title: 编辑 Boot.ini 文件
 description: 在 Windows Vista 之前，在 Boot.ini 文本文件中运行 Windows 应用商店启动选项的基于 BIOS 的计算机。
-ms.assetid: 9edbbd5e-36b5-4a80-925d-a007a4469984
 keywords:
 - Bootcfg 工具
 - Boot.ini 文件 WDK，编辑
@@ -22,12 +21,12 @@ keywords:
 - 启动选项 WDK，编辑
 ms.date: 07/03/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 7378a002cb5c37e9aed8e8624d2433e3dec26c5b
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 5d3b9c2c83378589b07c8c81a6c38a48782fbcf2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89383245"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96819775"
 ---
 # <a name="editing-the-bootini-file"></a>编辑 Boot.ini 文件
 

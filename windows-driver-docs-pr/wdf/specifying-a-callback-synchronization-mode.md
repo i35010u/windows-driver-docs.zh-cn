@@ -1,7 +1,6 @@
 ---
 title: 指定回调同步模式
 description: 指定回调同步模式
-ms.assetid: 3e041493-1095-47cb-b9a7-879a4cf1bd2e
 keywords:
 - 回调同步 WDK UMDF
 - 同步 WDK UMDF
@@ -11,21 +10,21 @@ keywords:
 - 锁定 WDK UMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e2ecd283b209caa8dcdf06730bae7d46a91979f5
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 2ee6d4f686f00da6f94e7e32da7863229becab92
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89184271"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96821153"
 ---
 # <a name="specifying-a-callback-synchronization-mode"></a>指定回调同步模式
 
 
 [!include[UMDF 1 Deprecation](../includes/umdf-1-deprecation.md)]
 
-驱动程序可以指定框架如何调用回调函数。 在调用 [**IWDFDriver：： CreateDevice**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdriver-createdevice) 方法为设备创建 [设备对象](framework-device-object.md) 之前，驱动程序为设备指定同步 (或锁定) 模式。 若要指定同步模式，驱动程序应调用 [**IWDFDeviceInitialize：： SetLockingConstraint**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdeviceinitialize-setlockingconstraint) 方法。 当调用[**IDriverEntry：： OnDeviceAdd**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-idriverentry-ondeviceadd)方法将设备添加到系统时，驱动程序将收到指向[IWDFDeviceInitialize](/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iwdfdeviceinitialize)接口的指针。
+驱动程序可以指定框架如何调用回调函数。 在调用 [**IWDFDriver：： CreateDevice**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdriver-createdevice) 方法为设备创建 [设备对象](framework-device-object.md) 之前，驱动程序为设备指定同步 (或锁定) 模式。 若要指定同步模式，驱动程序应调用 [**IWDFDeviceInitialize：： SetLockingConstraint**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdeviceinitialize-setlockingconstraint) 方法。 当调用 [**IDriverEntry：： OnDeviceAdd**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-idriverentry-ondeviceadd)方法将设备添加到系统时，驱动程序将收到指向 [IWDFDeviceInitialize](/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iwdfdeviceinitialize)接口的指针。
 
-驱动程序可以 \_ \_ 在**IWDFDeviceInitialize：： SetLockingConstraint**的*LockType*参数中的 WDF 回调约束枚举类型中指定以下值之一，以标识锁定模式。  (或锁定) 指定的约束类型取决于硬件设备可以利用的并行度以及驱动程序可以处理的数量。
+驱动程序可以 \_ \_ 在 **IWDFDeviceInitialize：： SetLockingConstraint** 的 *LockType* 参数中的 WDF 回调约束枚举类型中指定以下值之一，以标识锁定模式。  (或锁定) 指定的约束类型取决于硬件设备可以利用的并行度以及驱动程序可以处理的数量。
 
 <table>
 <colgroup>
@@ -34,7 +33,7 @@ ms.locfileid: "89184271"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">值</th>
+<th align="left">“值”</th>
 <th align="left">含义</th>
 </tr>
 </thead>
@@ -52,7 +51,7 @@ ms.locfileid: "89184271"
 
  
 
-**注意**   如果驱动程序未调用**IWDFDeviceInitialize：： SetLockingConstraint**来指定值，则框架会将此属性的默认值设置为**WdfDeviceLevel**。
+**注意**   如果驱动程序未调用 **IWDFDeviceInitialize：： SetLockingConstraint** 来指定值，则框架会将此属性的默认值设置为 **WdfDeviceLevel**。
 
  
 

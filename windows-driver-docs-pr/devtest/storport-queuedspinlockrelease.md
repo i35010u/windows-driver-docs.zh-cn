@@ -1,7 +1,6 @@
 ---
 title: 'QueuedSpinLockRelease 规则 (storport) '
 description: 此规则验证驱动程序在未首先通过 KeAcquireInStackQueuedSpinLock 获取锁定的情况下不会调用 KeReleaseInStackQueuedSpinLock。
-ms.assetid: F523D77B-F848-4128-9B6D-7D92E01C4632
 ms.date: 05/21/2018
 keywords:
 - 'QueuedSpinLockRelease 规则 (storport) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 05c68689f4b78651ff41898880ff68f1b2a0195b
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 739a8e4c29b5d537ba460b7692f44c29b41646f4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107064"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96819619"
 ---
 # <a name="queuedspinlockrelease-rule-storport"></a>QueuedSpinLockRelease 规则 (storport) 
 
 
-此规则验证驱动程序在未首先通过**KeAcquireInStackQueuedSpinLock**获取锁定的情况下不会调用**KeReleaseInStackQueuedSpinLock** 。
+此规则验证驱动程序在未首先通过 **KeAcquireInStackQueuedSpinLock** 获取锁定的情况下不会调用 **KeReleaseInStackQueuedSpinLock** 。
 
 **驱动程序模型： Storport**
 

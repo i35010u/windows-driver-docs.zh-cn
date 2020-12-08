@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ BDA \_ PIDFILTER \_ 列表 \_ PID
 description: 客户端使用 KSPROPERTY \_ BDA \_ PIDFILTER \_ LIST \_ pid 从 PID 筛选器节点检索它的 pid 列表，该节点标识节点从输入流传递到输出流的数据包组。
-ms.assetid: fc7dc0af-af74-4bd1-b99c-f06de25aae3c
 keywords:
 - KSPROPERTY_BDA_PIDFILTER_LIST_PIDS 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 182a9121e4b3803bd4d931af96985b0f880dd28e
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 5cf238ed0d4e267b48b0264788bfe7e31c384118
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89183821"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96820451"
 ---
 # <a name="ksproperty_bda_pidfilter_list_pids"></a>KSPROPERTY \_ BDA \_ PIDFILTER \_ 列表 \_ PID
 
@@ -82,7 +81,7 @@ KSP **NodeId** \_ 节点的节点标识号指定 PID 筛选器节点的标识符
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSP \_ 节点**](/windows-hardware/drivers/ddi/ks/ns-ks-ksp_node)

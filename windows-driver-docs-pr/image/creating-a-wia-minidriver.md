@@ -1,15 +1,14 @@
 ---
 title: 创建 WIA 微型驱动程序
 description: 创建 WIA 微型驱动程序
-ms.assetid: 7ed02bcd-cacf-4a29-9f3f-1972c39ff0ae
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2423faafcc8c3a026fae48deed25beb5249ce324
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 23b6fb8d50d628627410187a3d2337c54c66d9d1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63386315"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96820261"
 ---
 # <a name="creating-a-wia-minidriver"></a>创建 WIA 微型驱动程序
 
@@ -19,15 +18,15 @@ ms.locfileid: "63386315"
 
 WIA 微型驱动程序应该能够执行以下操作：
 
-[提供一个 COM 接口](providing-a-com-interface.md)
+[提供 COM 接口](providing-a-com-interface.md)
 
-[提供的 IStiUSD 接口](providing-an-istiusd-interface.md)
+[提供 IStiUSD 接口](providing-an-istiusd-interface.md)
 
-[初始化自身](initializing-the-wia-minidriver.md)
+[自行初始化](initializing-the-wia-minidriver.md)
 
-[生成项树的驱动程序](creating-the-wia-driver-item-tree.md)
+[构建驱动程序项树](creating-the-wia-driver-item-tree.md)
 
-[通知项树更改应用程序](informing-an-application-of-item-tree-changes.md)
+[向应用程序通知项树更改](informing-an-application-of-item-tree-changes.md)
 
 [使用 WIA 属性](using-wia-properties.md)
 

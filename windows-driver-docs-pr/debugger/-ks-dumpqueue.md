@@ -1,9 +1,8 @@
 ---
-title: ks.dumpqueue
-description: Ks.dumpqueue 扩展显示有关与给定 AVStream 对象关联的队列或与 port 类对象相关联的流的信息。
-ms.assetid: d641b4e6-73d9-4c44-b2c6-0b6c688da368
+title: ks. dumpqueue
+description: Dumpqueue 扩展显示与给定 AVStream 对象关联的队列或与端口类对象关联的流的相关信息。
 keywords:
-- ks.dumpqueue Windows 调试
+- dumpqueue Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,32 +11,32 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: ed7a37d652f4b91abec804e45a75ee91a46dac7f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2709c9fbf933aee0020b0ec672077c40a9512bec
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63336302"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96821045"
 ---
 # <a name="ksdumpqueue"></a>!ks.dumpqueue
 
 
-**！ Ks.dumpqueue**扩展显示有关与给定 AVStream 对象关联的队列或与 port 类对象相关联的流的信息。
+**Dumpqueue** 扩展显示与给定 AVStream 对象关联的队列或与端口类对象相关联的流的相关信息。
 
 ```dbgcmd
 !ks.dumpqueue Object [Level] 
 ```
 
-## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>参数
+## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>Parameters
 
 
-<span id="_______Object______"></span><span id="_______object______"></span><span id="_______OBJECT______"></span> *Object*   
-指定指向要为其显示队列对象的指针。 *对象*必须为类型 PKSPIN，PKSFILTER，CKsPin\*，CKsFilter\*，CKsQueue\*，CPortPin\*，或 CPortFilter\*。
+<span id="_______Object______"></span><span id="_______object______"></span><span id="_______OBJECT______"></span>*对象*   
+指定一个指针，该指针指向要显示其队列的对象。 *对象* 的类型必须是 PKSPIN、PKSFILTER、CKsPin \* 、CKsFilter \* 、CKsQueue \* 、CPortPin \* 或 CPortFilter \* 。
 
-<span id="_______Level______"></span><span id="_______level______"></span><span id="_______LEVEL______"></span> *级别*   
-可选。 指定要显示在 0 到 7 的详细信息级别越来越多的信息显示为较高的值的小数位数。 若要显示所有可用的详细信息，请提供值为 7。
+<span id="_______Level______"></span><span id="_______level______"></span><span id="_______LEVEL______"></span>*级别*   
+可选。 指定要在0-7 刻度上显示的详细信息的级别，并为较高的值显示更多的信息。 若要显示所有可用的详细信息，请提供值7。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 <table>
 <colgroup>
@@ -58,18 +57,18 @@ ms.locfileid: "63336302"
 
  
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-有关详细信息，请参阅[流式处理的内核调试](kernel-streaming-debugging.md)。
+有关详细信息，请参阅 [内核流调试](kernel-streaming-debugging.md)。
 
 <a name="remarks"></a>备注
 -------
 
-*对象*必须是一个筛选器或 pin。 Pin，对于显示单个队列。 筛选器，显示了多个队列。
+*对象* 必须是筛选器或 pin。 对于 pin，将显示单个队列。 对于筛选器，会显示多个队列。
 
-此命令可能需要一些时间执行。
+执行此命令可能需要一段时间。
 
-下面是举例 **！ ks.dumpqueue**显示：
+下面是一个 **dumpqueue** 显示示例：
 
 ```dbgcmd
 kd> !dumpqueue 829493c4

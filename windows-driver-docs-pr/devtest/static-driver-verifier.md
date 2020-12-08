@@ -1,7 +1,6 @@
 ---
 title: 静态驱动程序验证程序
 description: 静态驱动程序验证程序
-ms.assetid: 74feeb16-387c-4796-987a-aff3fb79b556
 keywords:
 - 验证驱动程序 WDK，静态驱动程序验证程序
 - 驱动程序验证 WDK，静态驱动程序验证程序
@@ -12,12 +11,12 @@ keywords:
 - 编译时静态验证工具 WDK
 ms.date: 06/14/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 09a4c0b0199670fc7720e274ff9b22865b2d313a
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: d891e6455cf6c792407a7a675a28229285dd7142
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89383875"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96819677"
 ---
 # <a name="static-driver-verifier"></a>静态驱动程序验证程序
 

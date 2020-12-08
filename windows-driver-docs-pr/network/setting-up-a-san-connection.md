@@ -1,21 +1,20 @@
 ---
 title: 设置 SAN 连接
 description: 设置 SAN 连接
-ms.assetid: f5d5e759-d77c-4db8-9b63-fb4c79344dff
 keywords:
 - Windows 套接字直接 WDK，连接设置
 - 连接 WDK San
-- SAN 连接安装 WDK
-- 有关设置 SAN 连接的 SAN 连接安装 WDK，
+- SAN 连接设置 WDK
+- SAN 连接设置 WDK，关于 SAN 连接设置
 - SAN 服务提供商 WDK，连接设置
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0fc5330f637ae8d672220e1dcc59fc55dba08c30
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b775ffa2b966d4971e184693859be43508b6561b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63362022"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96819999"
 ---
 # <a name="setting-up-a-san-connection"></a>设置 SAN 连接
 
@@ -23,21 +22,21 @@ ms.locfileid: "63362022"
 
 
 
-连接在安装期间，Windows 套接字交换机确定哪个服务提供商将 TCP 套接字的服务。 此提供程序将处理大多数套接字上的后续操作。 无论是否开关选择 SAN 服务提供商，TCP/IP 提供程序以独占方式处理几个类型的安装程序操作。
+在建立连接的过程中，Windows 套接字交换机决定哪个服务提供商将为 TCP 套接字提供服务。 此提供程序将处理套接字上的大多数后续操作。 无论交换机是否选择 SAN 服务提供程序，TCP/IP 提供程序都将独占处理几种类型的设置操作。
 
-本部分介绍 SAN 服务提供程序执行连接安装程序操作和 TCP/IP 访问接口处理连接安装程序操作。 以下主题中提供此信息：
+本部分介绍了 SAN 服务提供商执行的连接设置操作以及 TCP/IP 提供程序处理的连接设置操作。 以下主题提供了此信息：
 
-[创建并绑定 SAN 套接字](creating-and-binding-san-sockets.md)
+[创建和绑定 SAN 套接字](creating-and-binding-san-sockets.md)
 
-[启动的连接](initiating-a-connection.md)
+[发起连接](initiating-a-connection.md)
 
-[侦听在 SAN 上的连接](listening-for-connections-on-a-san.md)
+[侦听 SAN 上的连接](listening-for-connections-on-a-san.md)
 
 [接受连接请求](accepting-connection-requests.md)
 
-[注册在 SAN 上的操作内存](registering-memory-for-operations-on-a-san.md)
+[为 SAN 上的操作注册内存](registering-memory-for-operations-on-a-san.md)
 
-[缓存的已注册的内存](caching-registered-memory.md)
+[缓存已注册的内存](caching-registered-memory.md)
 
  
 

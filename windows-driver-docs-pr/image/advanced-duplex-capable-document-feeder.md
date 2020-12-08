@@ -1,15 +1,14 @@
 ---
 title: 支持高级双工的文档送纸器
 description: 支持高级双工的文档送纸器
-ms.assetid: 05b91864-7573-4d99-8a03-701d6cdd650b
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 55292a0cc5c3cc0225db31412bfba058ff949c95
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: b5990ba735750486161a5ded3dd71cfe61a32616
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89188681"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96819563"
 ---
 # <a name="advanced-duplex-capable-document-feeder"></a>支持高级双工的文档送纸器
 
@@ -25,7 +24,7 @@ ms.locfileid: "89188681"
 
 请注意，所扫描页面的正面和背面由项树中的单独子项表示。 这种区别包括 [**wia \_ IPA \_ ITEM \_ category**](./wia-ipa-item-category.md) 属性中的单独类别： wia \_ 类别 \_ 前部和 wia \_ 类别 \_ 。 在执行高级双工扫描的扫描程序中，会单独设置前和后项;它们可能会设置为不同的值。 但是，即使是在能够进行高级双工扫描的扫描仪上，也不能只有前一项或后一项;如果有前一项或后一项，则另一项也必须存在。
 
-该驱动程序指示前面和后面各项都有独立的设置 (也就是说) ，将通过 \_ 在送纸器的 "WIA" " [**WIA \_ \_ \_ \_ **](./wia-dps-document-handling-capabilities.md) " "
+该驱动程序指示前面和后面各项都有独立的设置 (也就是说) ，将通过 \_ 在送纸器的 "WIA" " [**WIA \_ \_ \_ \_**](./wia-dps-document-handling-capabilities.md) " "
 
 ### <a name="scanning"></a>扫描
 

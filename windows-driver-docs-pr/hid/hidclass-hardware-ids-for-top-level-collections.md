@@ -1,7 +1,6 @@
 ---
 title: 顶级集合的 HIDClass 硬件 ID
 description: 此部分指定 HID 类驱动程序为顶级集合生成的硬件 Id。
-ms.assetid: a90eea17-0a63-4786-a31f-740bcc670c2a
 keywords:
 - 人体学接口设备 WDK，硬件 Id
 - HID WDK，硬件 Id
@@ -18,12 +17,12 @@ keywords:
 - 顶级集合 WDK HID
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f2fe857a78469975102187f355272f02da0943c1
-ms.sourcegitcommit: 95e5f984c417902ece768db51838c2dacdb01681
+ms.openlocfilehash: 9c4ddedb5dcfe8e7f5e1680aa0981595796d6ff3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/12/2020
-ms.locfileid: "91957685"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96820755"
 ---
 # <a name="hidclass-hardware-ids-for-top-level-collections"></a>顶级集合的 HIDClass 硬件 ID
 
@@ -117,7 +116,7 @@ HID 类驱动程序为 devnode 生成的硬件 Id 取决于以下各项：
 | 鼠标                  | 0x01       | 0x02  | HID \_ 设备 \_ 系统 \_ 鼠标    |
 | 操纵杆               | 0x01       | 0x04  | HID \_ 设备 \_ 系统 \_ 游戏     |
 | 游戏板               | 0x01       | 0x05  | HID \_ 设备 \_ 系统 \_ 游戏     |
-| 键盘               | 0x01       | 0x06  | HID \_ 设备 \_ 系统 \_ 键盘 |
+| Keyboard               | 0x01       | 0x06  | HID \_ 设备 \_ 系统 \_ 键盘 |
 | 键盘                 | 0x01       | 0x07  | HID \_ 设备 \_ 系统 \_ 键盘 |
 | 系统控件         | 0x01       | 0x80  | HID \_ 设备 \_ 系统 \_ 控件  |
 | 消费者音频控制 | 0x0C       | 0x01  | HID \_ 设备 \_ 系统 \_ 使用者 |

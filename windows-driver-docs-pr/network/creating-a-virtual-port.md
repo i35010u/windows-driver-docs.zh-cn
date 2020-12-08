@@ -1,15 +1,14 @@
 ---
 title: 创建虚拟端口
 description: 创建虚拟端口
-ms.assetid: 6102576D-3236-4FDD-8963-83A9E90FF7F0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 61443c4056a5ae06640fa6987b271c87cd157ccc
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: e43630b3880dc35cb8eb8d256a63a52bba1199cb
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89214746"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96820121"
 ---
 # <a name="creating-a-virtual-port"></a>创建虚拟端口
 
@@ -48,21 +47,21 @@ ms.locfileid: "89214746"
 
 过量驱动程序发出对象标识符)  (oid [ \_ NIC \_ 交换机 \_ create \_ VPORT](./oid-nic-switch-create-vport.md) 在指定的 NIC 交换机上创建非默认的 VPORT。 此 OID 请求还会将创建的 VPort 附加到网络适配器的 PF 或之前分配的 VF。
 
-[**Ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的**InformationBuffer**成员包含指向[**NDIS \_ NIC \_ 交换机 \_ VPORT \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_parameters)结构的指针。 成功从[OID \_ nic \_ 交换机 \_ CREATE \_ VPORT](./oid-nic-switch-create-vport.md)请求返回后， **NDIS \_ nic \_ 交换机 \_ VPORT \_ 参数**结构的**VPortId**成员具有一个 VPORT 标识符，该标识符在 NIC 交换机上的 VPorts 中是唯一的。
+[**Ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的 **InformationBuffer** 成员包含指向 [**NDIS \_ NIC \_ 交换机 \_ VPORT \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_parameters)结构的指针。 成功从 [OID \_ nic \_ 交换机 \_ CREATE \_ VPORT](./oid-nic-switch-create-vport.md)请求返回后， **NDIS \_ nic \_ 交换机 \_ VPORT \_ 参数** 结构的 **VPortId** 成员具有一个 VPORT 标识符，该标识符在 NIC 交换机上的 VPorts 中是唯一的。
 
 过量驱动程序将 [**NDIS \_ NIC \_ 交换机 \_ VPORT \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_parameters) 结构初始化为有关要创建的非默认 VPORT 的配置信息。 配置信息包括非默认 VPort 附加到的 PCIe 函数以及非默认 VPort 的队列对数。
 
 当初始化 [**NDIS \_ NIC \_ 交换机 \_ VPORT \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_parameters) 结构时，过量驱动程序必须执行以下操作：
 
--   **SwitchId**成员必须设置为先前通过 oid [ \_ nic \_ 交换机 \_ CREATE \_ switch](./oid-nic-switch-create-switch.md)的 oid 方法请求在网络适配器上创建的 NIC 交换机的标识符。
+-   **SwitchId** 成员必须设置为先前通过 oid [ \_ nic \_ 交换机 \_ CREATE \_ switch](./oid-nic-switch-create-switch.md)的 oid 方法请求在网络适配器上创建的 NIC 交换机的标识符。
 
     **注意**  从 Windows Server 2012 开始，SR-IOV 接口仅支持网络适配器上的一个 NIC 交换机。 此开关称为 " *默认 NIC 交换机*"。 创建非默认的 VPort 时，过量驱动程序必须将 **SwitchId** 成员设置为 NDIS \_ 默认 \_ 交换机 \_ ID 标识符。
 
 
 
--   **VPortId**成员必须设置为 NDIS \_ DEFAULT \_ VPORT \_ ID。
+-   **VPortId** 成员必须设置为 NDIS \_ DEFAULT \_ VPORT \_ ID。
 
--   **AttachedFunctionId**成员必须设置为要附加非默认 VPORT 的 VF 或 PF 的标识符。
+-   **AttachedFunctionId** 成员必须设置为要附加非默认 VPORT 的 VF 或 PF 的标识符。
 
     NDIS \_ PF \_ 函数 ID 的值 \_ 指定 PF。 否则，必须将该值设置为一个 VF 的标识符，此 VF 的资源以前通过 oid [ \_ NIC \_ 开关 \_ 分配 \_ VF](./oid-nic-switch-allocate-vf.md)的 oid 方法请求进行了分配。
 
@@ -76,7 +75,7 @@ ms.locfileid: "89214746"
 
 1.  NDIS 验证 [**ndis \_ NIC \_ 交换机 \_ VPORT \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_parameters) 结构中的参数。 如果参数错误，NDIS 将失败 OID 方法请求，且不会将请求传递到 PF 微型端口驱动程序。
 
-2.  NDIS 为非默认 VPort 分配一个标识符，范围为1到 (**NumVPorts**– 1) ，其中 **NumVPorts** 是在网络适配器上配置了微型端口驱动程序的 VPorts 的数目。 驱动程序在[**NDIS \_ NIC \_ 交换机 \_ 信息**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_info)结构的**NumVPorts**成员中指定此编号。 驱动程序通过 oid [ \_ NIC \_ 交换机 \_ 枚举 \_ 开关](./oid-nic-switch-enum-switches.md)的 oid 查询请求返回此结构。
+2.  NDIS 为非默认 VPort 分配一个标识符，范围为1到 (**NumVPorts**– 1) ，其中 **NumVPorts** 是在网络适配器上配置了微型端口驱动程序的 VPorts 的数目。 驱动程序在 [**NDIS \_ NIC \_ 交换机 \_ 信息**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_info)结构的 **NumVPorts** 成员中指定此编号。 驱动程序通过 oid [ \_ NIC \_ 交换机 \_ 枚举 \_ 开关](./oid-nic-switch-enum-switches.md)的 oid 查询请求返回此结构。
 
     **注意** \_ \_ \_ 对于附加到默认 NIC 交换机上的 PF 的默认 VPort，将保留 NDIS 默认 VPort ID 的 VPort 标识符。
 
@@ -96,7 +95,7 @@ ms.locfileid: "89214746"
 
 -   在发送操作期间，NDIS 指定 **VPortId** 值以标识从中发送数据包的 VPort。 此值在带外 (OOB) [**NDIS \_ 网络 \_ 缓冲区 \_ 列表 \_ 筛选 \_ 信息**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_net_buffer_list_filtering_info) 数据的 [网络 \_ 缓冲区 \_ 列表](net-buffer-list-structure.md) 结构内指定。
 
--   在接收操作期间，PF 微型端口驱动程序指定将数据包转发到的 **VPortId** 值。 此值还在[网络 \_ 缓冲区 \_ 列表](net-buffer-list-structure.md)结构的 OOB [**NDIS \_ 网络 \_ 缓冲区 \_ 列表 \_ 筛选 \_ 信息**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_net_buffer_list_filtering_info)数据中指定。
+-   在接收操作期间，PF 微型端口驱动程序指定将数据包转发到的 **VPortId** 值。 此值还在 [网络 \_ 缓冲区 \_ 列表](net-buffer-list-structure.md)结构的 OOB [**NDIS \_ 网络 \_ 缓冲区 \_ 列表 \_ 筛选 \_ 信息**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_net_buffer_list_filtering_info)数据中指定。
 
 以下几点适用于创建非默认 VPorts：
 
@@ -106,8 +105,8 @@ ms.locfileid: "89214746"
 
     创建时，附加到 PF 的非默认 VPort 处于停用状态。 在成功创建 VPort 后，生成的驱动程序（如 Hyper-v 可扩展交换机模块）会显式激活附加到 PF 的非默认 VPort。 完成此操作的方法是：将 [oid \_ NIC \_ SWITCH \_ VPORT \_ 参数](./oid-nic-switch-vport-parameters.md) 的 oid 方法请求发送到 PF 微型端口驱动程序。
 
-    当过量驱动程序发出此 OID 请求时，它会将[**NDIS \_ NIC \_ 交换机 \_ VPORT \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_parameters)结构传递到**NdisNicSwitchVPortStateActivated**的**VPortState**成员。
+    当过量驱动程序发出此 OID 请求时，它会将 [**NDIS \_ NIC \_ 交换机 \_ VPORT \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_parameters)结构传递到 **NdisNicSwitchVPortStateActivated** 的 **VPortState** 成员。
 
-    在非默认 VPort 处于激活状态后，PF 微型端口驱动程序可以通过调用 [**NdisAllocateSharedMemory**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisallocatesharedmemory)为 VPort 分配共享内存。 驱动程序必须将[**NDIS \_ SHARED \_ MEMORY \_ 参数**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_shared_memory_parameters)结构中的**VPortId**成员设置为 VPort 的标识符值。
+    在非默认 VPort 处于激活状态后，PF 微型端口驱动程序可以通过调用 [**NdisAllocateSharedMemory**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisallocatesharedmemory)为 VPort 分配共享内存。 驱动程序必须将 [**NDIS \_ SHARED \_ MEMORY \_ 参数**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_shared_memory_parameters)结构中的 **VPortId** 成员设置为 VPort 的标识符值。
 
 **注意**  当非默认 VPort 处于激活状态时，仅当通过 oid [ \_ NIC \_ SWITCH \_ DELETE \_ VPort](./oid-nic-switch-delete-vport.md)的 oid 集请求删除时，它才设置为已停用状态。

@@ -1,15 +1,14 @@
 ---
 title: 创建 NIC 交换机
 description: 创建 NIC 交换机
-ms.assetid: 5A184EBD-95F4-4C11-AACD-49DF04578CA0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e45e4851d4a9c54bbec0142141dc49e4b95e55ba
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 4413e4dc5cd6d1f56c4f7a76491e4d051c0da5e3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89213975"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96821397"
 ---
 # <a name="creating-a-nic-switch"></a>创建 NIC 交换机
 
@@ -34,7 +33,7 @@ NIC 交换机通过 oid [ \_ NIC \_ 交换机 \_ CREATE \_ switch](./oid-nic-swi
 
 有关 SR-IOV 网络适配器的 NIC 交换机的详细信息，请参阅 [Nic 交换机](nic-switches.md)。
 
-**注意**   在 SR-IOV 网络适配器上 (VF) 的 PCIe 虚拟功能的微型端口驱动程序不会创建或配置网络适配器的硬件资源，如 NIC 交换机。 有关详细信息，请参阅 [编写 SR-IOV VF 微型端口驱动程序](writing-sr-iov-vf-miniport-drivers.md)。
+**注意**  在 SR-IOV 网络适配器上 (VF) 的 PCIe 虚拟功能的微型端口驱动程序不会创建或配置网络适配器的硬件资源，如 NIC 交换机。 有关详细信息，请参阅 [编写 SR-IOV VF 微型端口驱动程序](writing-sr-iov-vf-miniport-drivers.md)。
 
  
 

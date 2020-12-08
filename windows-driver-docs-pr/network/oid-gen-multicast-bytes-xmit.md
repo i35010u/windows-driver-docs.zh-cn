@@ -1,16 +1,15 @@
 ---
 title: OID_GEN_MULTICAST_BYTES_XMIT
 description: 作为查询，OID_GEN_MULTICAST_BYTES_XMIT OID 指定了在不出错的情况下传输的多播/功能数据包中的字节数。
-ms.assetid: 4e9b5fe7-4ca6-4099-9b99-8d90a591e8ec
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_GEN_MULTICAST_BYTES_XMIT 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 926bd4a4299dbf75c373003beb11b9eaa11008ea
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: a198d065f88043af26e6dbf5ece08f0636d9eebf
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89214587"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96821271"
 ---
 # <a name="oid_gen_multicast_bytes_xmit"></a>OID \_ 生成 \_ 多播 \_ 字节 \_ XMIT
 
@@ -55,7 +54,7 @@ ms.locfileid: "89214587"
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [OID \_ 生成 \_ 统计信息](oid-gen-statistics.md)

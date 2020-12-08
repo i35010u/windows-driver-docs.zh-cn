@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ AUDDECOUT \_ 模式
 description: KSPROPERTY \_ AUDDECOUT \_ 模式属性返回音频解码器的可用输出模式。此属性是只读的。
-ms.assetid: 5ae62fae-7f13-480f-ba36-3fa72ff547bc
 keywords:
 - KSPROPERTY_AUDDECOUT_MODES 流媒体设备
 topic_type:
@@ -14,19 +13,19 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f7a8eed7b74ed6f73aa44eaed4469d802cd7c61d
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 99bc09d01cdf042585ed90dd9fb190ee8a50a2d8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105060"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96819955"
 ---
 # <a name="ksproperty_auddecout_modes"></a>KSPROPERTY \_ AUDDECOUT \_ 模式
 
 
 KSPROPERTY \_ AUDDECOUT \_ 模式属性返回音频解码器的可用输出模式。
 
-此属性为只读。
+此属性是只读的。
 
 ## <span id="ddk_ksproperty_auddecout_modes_ks"></span><span id="DDK_KSPROPERTY_AUDDECOUT_MODES_KS"></span>
 
@@ -65,7 +64,7 @@ KSPROPERTY \_ AUDDECOUT \_ 模式属性返回音频解码器的可用输出模�
 
 ) 操作数据 (的属性值是一个 DWORD 值，它表示音频解码器支持的音频输出模式的位掩码。
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 属性值可以包含在 *Ksmedia* 头文件中定义的以下常量的按位 "或"：

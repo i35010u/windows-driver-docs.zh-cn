@@ -1,7 +1,6 @@
 ---
 title: usbkd.usbdevh
 description: Usbkd. usbdevh 命令显示有关 USB 设备句柄的信息。
-ms.assetid: 463DAA72-F3EB-4C76-BB63-DA2EFA1EE9B1
 keywords:
 - usbkd usbdevh Windows 调试
 ms.date: 05/23/2017
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 8ebdb4069370e30e4902a7466f5db60f58b94a44
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: a3694d7038717a9bebe057f56fcec3c4a094832e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89213564"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96820381"
 ---
 # <a name="usbkdusbdevh"></a>!usbkd.usbdevh
 
 
-**！ Usbkd. usbdevh**命令显示有关 USB 设备句柄的信息。
+**！ Usbkd. usbdevh** 命令显示有关 USB 设备句柄的信息。
 
 ```dbgcmd
 !usbkd.usbdevh StructAddr
@@ -51,7 +50,7 @@ Usbkd.dll
      ...
 ```
 
-在上面的输出中，FDO 的设备扩展的地址显示为 [DML](debugger-markup-language-commands.md) 命令 **！ ehci \_ info ffffe00001ca11a0**的参数。
+在上面的输出中，FDO 的设备扩展的地址显示为 [DML](debugger-markup-language-commands.md) 命令 **！ ehci \_ info ffffe00001ca11a0** 的参数。
 
 单击 DML 命令或将设备扩展的地址传递给 [**！ usbhcdext**](-usbkd-usbhcdext.md) 以获取设备句柄列表。
 
@@ -83,7 +82,7 @@ SSP [IdleReady] (0)
 ...
 ```
 
-在上面的输出中， `ffffe000020f9590` 是** \_ USBD \_ 设备 \_ 句柄**结构的地址。 将此地址传递给 **！ usbdevh**。
+在上面的输出中， `ffffe000020f9590` 是 **\_ USBD \_ 设备 \_ 句柄** 结构的地址。 将此地址传递给 **！ usbdevh**。
 
 ```dbgcmd
 0: kd> !usbkd.usbdevh ffffe000020f9590

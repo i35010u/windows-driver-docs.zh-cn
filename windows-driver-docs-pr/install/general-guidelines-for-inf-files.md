@@ -1,17 +1,16 @@
 ---
 title: INF 文件常规指南
 description: INF 文件常规指南
-ms.assetid: a0394708-46ed-47f8-a629-0c7d3088df3b
 keywords:
 - INF 文件 WDK 设备安装，一般指导原则
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2f070248b1f8d61ef3885f093357aeaa3dc2181b
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 50b5c7b7a012e26000841acf39f1d95daf5c58dd
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106586"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96820149"
 ---
 # <a name="general-guidelines-for-inf-files"></a>INF 文件常规指南
 

@@ -1,7 +1,6 @@
 ---
 title: '旋转锁规则 (kmdf) '
 description: 旋转锁规则指定在严格替换中使用对 KeAcquireSpinLock、KeAcquireSpinLockRaiseToDpc 和 KeReleaseSpinlock 的调用。
-ms.assetid: 911E4350-851F-4AC4-B982-B2B4B974C243
 ms.date: 05/21/2018
 keywords:
 - '旋转锁规则 (kmdf) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 2f9a92f1d771f61f29e53ec9cb5204c4f9af2472
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 032b157d6024fea55574366008ffbbccc0d39169
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105752"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96820885"
 ---
 # <a name="spinlock-rule-kmdf"></a>旋转锁规则 (kmdf) 
 
 
-**旋转锁**规则指定在严格替换中使用对[**KeAcquireSpinLock**](/windows-hardware/drivers/ddi/wdm/nf-wdm-keacquirespinlock) 、 [**KeAcquireSpinLockRaiseToDpc**](/previous-versions/windows/hardware/drivers/ff551928(v=vs.85))和[**KeReleaseSpinlock**](/windows-hardware/drivers/ddi/wdm/nf-wdm-kereleasespinlock)的调用。
+**旋转锁** 规则指定在严格替换中使用对 [**KeAcquireSpinLock**](/windows-hardware/drivers/ddi/wdm/nf-wdm-keacquirespinlock) 、 [**KeAcquireSpinLockRaiseToDpc**](/previous-versions/windows/hardware/drivers/ff551928(v=vs.85))和 [**KeReleaseSpinlock**](/windows-hardware/drivers/ddi/wdm/nf-wdm-kereleasespinlock)的调用。
 
 **驱动程序模型： KMDF**
 

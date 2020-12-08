@@ -1,7 +1,6 @@
 ---
 title: 'PcIrqlIport 规则 (音频) '
 description: PcIrqlIport 规则指定 PortCls 微型端口驱动程序必须在正确的 IRQL 级别调用 PortCls IPort 接口。
-ms.assetid: 59E22F37-3377-4B98-8613-EF5ED0CB63D9
 ms.date: 05/21/2018
 keywords:
 - 'PcIrqlIport 规则 (音频) '
@@ -12,12 +11,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 3df83853681d66f9bd14506efa0fcbbb7e1e21c2
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: e86d4829893ab4fa208d3bd924b53adab3f34e22
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103992"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96820889"
 ---
 # <a name="pcirqliport-rule-audio"></a>PcIrqlIport 规则 (音频) 
 

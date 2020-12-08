@@ -1,15 +1,14 @@
 ---
 title: Hyper-V 可扩展交换机 OID 请求
 description: Hyper-V 可扩展交换机 OID 请求
-ms.assetid: 0B6D1628-DD83-4EA6-B5D5-33D74AD45EFD
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e4e07c06b0bc9c666ea54829c8fd8135d1ecf03e
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: b1741fb6abf95a536b9ae0eac94cb64948154749
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89211055"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96821327"
 ---
 # <a name="hyper-v-extensible-switch-oid-requests"></a>Hyper-V 可扩展交换机 OID 请求
 

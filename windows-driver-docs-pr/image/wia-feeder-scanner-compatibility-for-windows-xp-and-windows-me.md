@@ -1,15 +1,14 @@
 ---
 title: Windows XP 和 Windows Me 的 WIA 送纸器扫描仪兼容性
 description: Windows XP 和 Windows Me 的 WIA 送纸器扫描仪兼容性
-ms.assetid: 7877943e-ee61-455d-b489-db223e1ddbe1
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c1d63abaffc2802d0cdef1f03abf78440a756d6d
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 7d769a19e67fc98d1abee072b8ea3dd0d719da06
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89185025"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96820241"
 ---
 # <a name="wia-feeder-scanner-compatibility-for-windows-xp-and-windows-me"></a>Windows XP 和 Windows Me 的 WIA 送纸器扫描仪兼容性
 
@@ -47,7 +46,7 @@ ms.locfileid: "89185025"
 
 在带有双工和进纸器扫描器项目树的 "扫描仪" 项树中，数据传输始终出现在送送纸器项目之外。 扫描设置同时包含在双面和背面) 项 (。
 
-将前和后项设置为相同设置的扫描称为 *基本双工* 扫描。 如果前面和背面的设置彼此独立，则扫描称为 *高级双工* 扫描。 有关这些扫描类型的详细信息，请参阅支持 [双工功能的文档送纸器](simple-duplex-capable-document-feeder.md) 和 [支持高级双面打印的文档送纸器](advanced-duplex-capable-document-feeder.md)。
+将前和后项设置为相同设置的扫描称为 *基本双工* 扫描。 如果前面和背面的设置彼此独立，则扫描称为 *高级双工* 扫描。 有关这些扫描类型的详细信息，请参阅 [简单 Duplex-Capable 文档送纸器](simple-duplex-capable-document-feeder.md) 和 [高级 Duplex-Capable 文档送纸器](advanced-duplex-capable-document-feeder.md)。
 
 ### <a name="compatibility-support-in-windows-vista"></a>Windows Vista 中的兼容性支持
 

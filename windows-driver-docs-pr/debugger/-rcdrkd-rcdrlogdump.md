@@ -1,7 +1,6 @@
 ---
 title: rcdrkd.rcdrlogdump
 description: Rcdrkd. rcdrlogdump 扩展显示驱动程序或驱动程序集的所有记录器缓冲区中的跟踪消息。
-ms.assetid: 18A25B5A-F22E-4A01-A130-885D5CA34D4D
 keywords:
 - rcdrkd rcdrlogdump Windows 调试
 ms.date: 05/23/2017
@@ -12,41 +11,41 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: e3fd12e2bb49b503f5c9cc3f5d5502b18bad2448
-ms.sourcegitcommit: f6055bcce208f341ec424fa51c6fcb2d9ba06525
+ms.openlocfilehash: 63cb4008deb1a995dec186ed20bfc1d64625f5ec
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71959204"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96821017"
 ---
 # <a name="rcdrkdrcdrlogdump"></a>!rcdrkd.rcdrlogdump
 
 
-**！ Rcdrkd rcdrlogdump**扩展显示驱动程序或驱动程序集的所有记录器缓冲区中的跟踪消息。
+**！ Rcdrkd rcdrlogdump** 扩展显示驱动程序或驱动程序集的所有记录器缓冲区中的跟踪消息。
 
 ```dbgcmd
 !rcdrkd.rcdrlogdump DriverName [DriverName ...]
 !rcdrkd.rcdrlogdump DriverName -a Address
 ```
 
-## <a name="span-idddk__devobj_dbgspanspan-idddk__devobj_dbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>Parameters
+## <a name="span-idddk__devobj_dbgspanspan-idddk__devobj_dbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>参数
 
 
 <span id="_______DriverName______"></span><span id="_______drivername______"></span><span id="_______DRIVERNAME______"></span>*DriverName*   
 驱动程序的名称，不包括 .sys 扩展。
 
-<span id="_______Address______"></span><span id="_______address______"></span><span id="_______ADDRESS______"></span>*Address*   
+<span id="_______Address______"></span><span id="_______address______"></span><span id="_______ADDRESS______"></span>*地址*   
 如果指定 Address，则此命令将显示指定地址处的日志缓冲区中的跟踪消息。
 
 ## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 
-Rcdrkd
+Rcdrkd.dll
 
 <a name="examples"></a>示例
 --------
 
-下面的示例显示 **！ rcdrlogdump**命令的一部分输出。
+下面的示例显示 **！ rcdrlogdump** 命令的一部分输出。
 
 ```dbgcmd
 3: kd> !rcdrlogdump usbxhci.sys
@@ -78,7 +77,7 @@ Trying to extract TMF information from - C:\ProgramData\dbg\sym\usbxhci.pdb\D4C8
 ---- end of log ----
 ```
 
-前面的输出包含来自多个日志缓冲区的消息。 若要查看单个日志缓冲区中的消息，请使用 **-a**参数，并指定日志缓冲区的地址。 下面的示例演示如何在地址 fffffa8005ff2b60 的日志缓冲区中显示消息。
+前面的输出包含来自多个日志缓冲区的消息。 若要查看单个日志缓冲区中的消息，请使用 **-a** 参数，并指定日志缓冲区的地址。 下面的示例演示如何在地址 fffffa8005ff2b60 的日志缓冲区中显示消息。
 
 ```dbgcmd
 3: kd> !rcdrlogdump  usbxhci -a fffffa8005ff2b60

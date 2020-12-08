@@ -1,7 +1,6 @@
 ---
 title: 'WdfIoQueueRetrieveFoundRequest 规则 (kmdf) '
 description: WdfIoQueueRetrieveFoundRequest 规则指定仅在调用 WdfIoQueueFindRequest 后调用 WdfIoQueueRetrieveFoundRequest 方法，并 \_ 在同一请求上不调用 WdfObjectDereference。
-ms.assetid: CF545174-5E6D-429B-AC6D-BA7A84852FC1
 ms.date: 05/21/2018
 keywords:
 - 'WdfIoQueueRetrieveFoundRequest 规则 (kmdf) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 4bf654bfeda9ec5b051a95b769d5388513efd514
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 9c1e3549c2c55ac7e9163f0971bb29d525196d8f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103504"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96820883"
 ---
 # <a name="wdfioqueueretrievefoundrequest-rule-kmdf"></a>WdfIoQueueRetrieveFoundRequest 规则 (kmdf) 
 
 
-**WdfIoQueueRetrieveFoundRequest**规则指定仅在调用[**WdfIoQueueFindRequest**](/windows-hardware/drivers/ddi/wdfio/nf-wdfio-wdfioqueuefindrequest)后调用[**WdfIoQueueRetrieveFoundRequest**](/windows-hardware/drivers/ddi/wdfio/nf-wdfio-wdfioqueueretrievefoundrequest)方法，并 \_ 在同一请求上不调用[**WdfObjectDereference**](../wdf/wdfobjectdereference.md) 。
+**WdfIoQueueRetrieveFoundRequest** 规则指定仅在调用 [**WdfIoQueueFindRequest**](/windows-hardware/drivers/ddi/wdfio/nf-wdfio-wdfioqueuefindrequest)后调用 [**WdfIoQueueRetrieveFoundRequest**](/windows-hardware/drivers/ddi/wdfio/nf-wdfio-wdfioqueueretrievefoundrequest)方法，并 \_ 在同一请求上不调用 [**WdfObjectDereference**](../wdf/wdfobjectdereference.md) 。
 
 如果 [**WdfIoQueueFindRequest**](/windows-hardware/drivers/ddi/wdfio/nf-wdfio-wdfioqueuefindrequest) 返回状态 \_ SUCCESS，它会递增输出请求对象的引用计数，驱动程序必须在使用完此请求句柄后调用 [**WdfObjectDereference**](../wdf/wdfobjectdereference.md) 。
 

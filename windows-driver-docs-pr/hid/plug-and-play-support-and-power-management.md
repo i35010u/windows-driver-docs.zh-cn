@@ -1,15 +1,14 @@
 ---
 title: I2C 的即插即用支持
 description: 本部分介绍支持在 I i2c 上支持 HID 的设备的即插即用支持。
-ms.assetid: 2D51B1B7-345E-4311-81D6-8A14CE2B44FE
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c22c89597d9aefc03b7afb33533d58d128521ea5
-ms.sourcegitcommit: 74a8dc9ef1da03857dec5cab8d304e2869ba54a7
+ms.openlocfilehash: 6369717b83f949fffc7a41b947196f76208cceba
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90759778"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96820367"
 ---
 # <a name="plug-and-play-support-for-i2c"></a>I2C 的即插即用支持
 
@@ -60,7 +59,7 @@ ACPI 5.0 规范包括对 HID 类设备的支持。 HID I ²的 ACPI 定义如下
 
 在上面的示例中，硬件 ID 是使用从 \_ 示例设备的 HID ACPI 方法中提取的值生成的。 可使用从 \_ 示例设备的 CID ACPI 方法中提取的值生成兼容 ID。 适用于 PNP0C50 的 HID 的兼容 ID 必须始终为版本1.0 的。
 
-**注意**   如果提供了一个 INF，则只应使用上表的左栏中的硬件标识符。  (不使用右列中的兼容标识符。 ) 
+**注意**  如果提供了一个 INF，则只应使用上表的左栏中的硬件标识符。  (不使用右列中的兼容标识符。 ) 
 
  
 
@@ -108,7 +107,7 @@ HIDClass.sys 组件生成的 HID 客户端设备节点的硬件 ID 如下所示�
 
 如果主机未能成功完成与设备的任何步骤1-5，则 HIDI ² C 驱动程序可能会加载，错误值为 *代码 10*。 此类命令中没有内置的重试逻辑。
 
-**注意**   步骤4和5可能会并行执行，以优化 I i2c 的时间。 由于报表描述符 () 静态， (b) 非常长，因此 Windows 8 可能会发出5个请求，同时等待来自设备的响应。
+**注意**  步骤4和5可能会并行执行，以优化 I i2c 的时间。 由于报表描述符 () 静态， (b) 非常长，因此 Windows 8 可能会发出5个请求，同时等待来自设备的响应。
 
  
 

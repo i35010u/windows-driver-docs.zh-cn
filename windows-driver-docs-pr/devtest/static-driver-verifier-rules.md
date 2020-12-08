@@ -1,15 +1,14 @@
 ---
 title: DDI 合规性规则
 description: DDI 合规性规则
-ms.assetid: f020fff9-f880-4aa8-b422-5452728d2fdd
 ms.date: 05/21/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 78c1e4ded33de3756c57efda227ba7529097687e
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: e3abf46fad1cc56baee9b50553dd684f08fd1560
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89383881"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96819681"
 ---
 # <a name="ddi-compliance-rules"></a>DDI 合规性规则
 

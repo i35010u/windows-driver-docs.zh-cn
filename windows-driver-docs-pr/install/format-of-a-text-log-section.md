@@ -1,7 +1,6 @@
 ---
 title: 文本日志部分的格式
 description: 文本日志部分的格式
-ms.assetid: e0f7227c-6cd8-4c66-a38b-104f222847bc
 keywords:
 - 节 WDK Setupapi.log 日志记录
 - 格式化 WDK Setupapi.log 日志记录
@@ -9,12 +8,12 @@ keywords:
 - Setupapi.log 日志记录 WDK Windows Vista，文本日志部分
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ef2e40c9dbcf10536a90fe8e9411abe5d8bbaa62
-ms.sourcegitcommit: 9e13d3fbc74bb75335c4d2927c55b0085e46b0ea
+ms.openlocfilehash: 57d18b8b32d0138d2b5f3f422727277db799a14f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/16/2020
-ms.locfileid: "94639017"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96820159"
 ---
 # <a name="format-of-a-text-log-section"></a>文本日志部分的格式
 

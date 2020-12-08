@@ -1,7 +1,6 @@
 ---
 title: 'KSPROPERTY \_ CAMERACONTROL \_ EXTENDED \_ SCENEMODE (驱动程序定义模式) '
 description: 场景模式属性选择驱动程序定义的模式，该模式表示预设控件的集合。
-ms.assetid: 32C350FF-AA54-4F28-8AD2-341A31648B60
 keywords:
 - KSPROPERTY_CAMERACONTROL_EXTENDED_SCENEMODE 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 07/08/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: e5a67f4ad23e592e71ba9a7175d4fef28721a0d7
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: d392e4457cca197aee59826bfdce6be3bbbe4c43
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89189741"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96820453"
 ---
 # <a name="ksproperty_cameracontrol_extended_scenemode-driver-defined-mode"></a>KSPROPERTY \_ CAMERACONTROL \_ EXTENDED \_ SCENEMODE (驱动程序定义模式) 
 
@@ -31,13 +30,13 @@ ms.locfileid: "89189741"
 |--|--|--|--|--|
 | 是 | 是 | 筛选器 | [**KSPROPERTY**](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier) | [**KSCAMERA_EXTENDEDPROP_HEADER**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header) |
 
-属性值 (操作数据) 包含 [**KSCAMERA \_ EXTENDEDPROP \_ 标头**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header) 结构和 [**KSCAMERA \_ EXTENDEDPROP \_ 值**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_value) 结构。 **KSCAMERA \_ EXTENDEDPROP \_ 值**是必需的，但**值**成员被忽略。
+属性值 (操作数据) 包含 [**KSCAMERA \_ EXTENDEDPROP \_ 标头**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header) 结构和 [**KSCAMERA \_ EXTENDEDPROP \_ 值**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_value) 结构。 **KSCAMERA \_ EXTENDEDPROP \_ 值** 是必需的，但 **值** 成员被忽略。
 
-总的属性数据大小为 **sizeof** (KSCAMERA \_ EXTENDEDPROP \_ 标头) + **sizeof** (KSCAMERA \_ EXTENDEDPROP \_ VALUE) 。 [**KSCAMERA \_ EXTENDEDPROP \_ 标头**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)的**Size**成员设置为此总属性数据大小。
+总的属性数据大小为 **sizeof** (KSCAMERA \_ EXTENDEDPROP \_ 标头) + **sizeof** (KSCAMERA \_ EXTENDEDPROP \_ VALUE) 。 [**KSCAMERA \_ EXTENDEDPROP \_ 标头**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)的 **Size** 成员设置为此总属性数据大小。
 
-[**KSCAMERA \_ EXTENDEDPROP \_ 标头**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)的**功能**成员包含驱动程序支持的下列一种或多种场景模式的按位 "或" 组合。
+[**KSCAMERA \_ EXTENDEDPROP \_ 标头**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)的 **功能** 成员包含驱动程序支持的下列一种或多种场景模式的按位 "或" 组合。
 
-| 场景模式 | 说明 |
+| 场景模式 | 描述 |
 |--|--|
 | KSCAMERA \_ EXTENDEDPROP \_ SCENEMODE \_ 自动 | 自动气味模式。 控件处于自动设置状态。 |
 | KSCAMERA \_ EXTENDEDPROP \_ SCENEMODE \_ 宏 | ) 定义了宏场景模式 (驱动程序。 |
@@ -53,17 +52,17 @@ ms.locfileid: "89189741"
 | KSCAMERA \_ EXTENDEDPROP \_ SCENEMODE \_ BACKLIT | Backlit 场景模式 () 定义驱动程序。 |
 | KSCAMERA \_ EXTENDEDPROP \_ SCENEMODE \_ | 控件是手动更改的，未设置预定义的场景模式。 |
 
-[**KSCAMERA \_ EXTENDEDPROP \_ 标头**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)的**Flags**成员包含当前为相机设置的场景模式。 照相机的默认场景模式始终是 KSCAMERA \_ EXTENDEDPROP \_ SCENEMODE \_ AUTO。
+[**KSCAMERA \_ EXTENDEDPROP \_ 标头**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)的 **Flags** 成员包含当前为相机设置的场景模式。 照相机的默认场景模式始终是 KSCAMERA \_ EXTENDEDPROP \_ SCENEMODE \_ AUTO。
 
 此属性控件是异步的，不可取消。
 
-## <a name="remarks"></a>注解
+## <a name="remarks"></a>备注
 
 ### <a name="getting-the-property"></a>获取属性
 
 当响应 KSPROPERTY \_ 类型 \_ GET 请求时，驱动程序会将 [**KSCAMERA \_ EXTENDEDPROP \_ 标头**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header) 的成员设置为以下项。
 
-| 成员 | Value |
+| 成员 | “值” |
 |--|--|
 | 版本 | 1 |
 | PinId | KSCAMERA_EXTENDEDPROP_FILTERSCOPE (0xFFFFFFFF)  |
@@ -76,7 +75,7 @@ ms.locfileid: "89189741"
 
 ### <a name="setting-the-property"></a>设置属性
 
-如果设置了属性，则 KSPROPERTY \_ 类型 \_ 集请求， [**KSCAMERA \_ EXTENDEDPROP \_ 标头**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)的**Flags**成员将包含要启用的场景模式。
+如果设置了属性，则 KSPROPERTY \_ 类型 \_ 集请求， [**KSCAMERA \_ EXTENDEDPROP \_ 标头**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)的 **Flags** 成员将包含要启用的场景模式。
 
 ## <a name="requirements"></a>要求
 

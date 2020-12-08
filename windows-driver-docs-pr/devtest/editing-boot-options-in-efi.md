@@ -1,7 +1,6 @@
 ---
 title: 编辑 EFI 中的启动选项
 description: 编辑 EFI 中的启动选项
-ms.assetid: 0fdd01b3-7475-4959-87d8-5ec8ae65fea0
 keywords:
 - NVRAM 启动选项 WDK，编辑
 - EFI NVRAM 启动选项 WDK，编辑
@@ -15,12 +14,12 @@ keywords:
 - 启动选项 WDK，编辑
 ms.date: 07/02/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 41eba9b951eac9622b528b9892b4f36da982cd5f
-ms.sourcegitcommit: 9e5a99dc75dfee3caa9a242adc0ed22ae4df9f29
+ms.openlocfilehash: 41bd056e31c3f79e03db7d09681f95ea4d0e0c03
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89043103"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96819787"
 ---
 # <a name="editing-boot-options-in-efi"></a>编辑 EFI 中的启动选项
 
@@ -57,7 +56,7 @@ Nvrboot 以用户友好的格式显示启动选项。 例如，它将操作系�
 
 2.  从 " **启动** " 菜单中，选择 " **EFI Shell**"。
 
-3.  在 shell 提示符下，键入系统分区的驱动器号或文件系统号，例如 C：或 **FS**n，其中 n 是系统分区的文件系统号。
+3.  在 shell 提示符下，键入系统分区的驱动器号或文件系统号，例如 C：或 **FS** n，其中 n 是系统分区的文件系统号。
 
 4.  键入 **cd msutil** ，导航到 nvrboot 所在的 msutil 目录。
 

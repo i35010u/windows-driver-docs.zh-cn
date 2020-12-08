@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ BDA \_ 节点 \_ 属性
 description: 客户端使用 KSPROPERTY \_ BDA \_ 节点 \_ 属性检索节点上支持的属性列表。
-ms.assetid: 36d37844-a69b-4f67-bb8f-e5445ba9a2cb
 keywords:
 - KSPROPERTY_BDA_NODE_PROPERTIES 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d62703a9fd6dc6068510c4528050c4799f082367
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: faea04daddfc1135e1877974782e84472c42955b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89186098"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96820465"
 ---
 # <a name="ksproperty_bda_node_properties"></a>KSPROPERTY \_ BDA \_ 节点 \_ 属性
 
@@ -84,7 +83,7 @@ ms.locfileid: "89186098"
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**BdaPropertyNodeProperties**](/windows-hardware/drivers/ddi/bdasup/nf-bdasup-bdapropertynodeproperties)

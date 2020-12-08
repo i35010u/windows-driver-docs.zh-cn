@@ -1,7 +1,6 @@
 ---
 title: 状态转换
 description: 状态转换
-ms.assetid: c71fd395-28aa-4421-9443-b5b0a1f3ac7e
 keywords:
 - 视频捕获 WDK AVStream，流状态
 - 捕获视频 WDK AVStream，流状态
@@ -10,12 +9,12 @@ keywords:
 - 状态转换 WDK 视频捕获
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ba87a385c1575fa93ae371879b7bb675a1975f16
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: de5efa2096c9345832aba79bd1c129c7f5bd09db
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102996"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96820439"
 ---
 # <a name="state-transitions"></a>状态转换
 
@@ -30,7 +29,7 @@ ms.locfileid: "90102996"
 <thead>
 <tr class="header">
 <th>切换</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -55,7 +54,7 @@ ms.locfileid: "90102996"
 
  
 
-**注意**    ：在返回**KSSTATE \_ 停止**状态之前，转换可能会在**KSSTATE \_ PAUSE**和**KSSTATE \_ 运行**状态之间循环多次。 视频捕获微型驱动程序应预期转换，例如：
+**注意**：在返回 **KSSTATE \_ 停止** 状态之前，转换可能会在 **KSSTATE \_ PAUSE** 和 **KSSTATE \_ 运行** 状态之间循环多次。 视频捕获微型驱动程序应预期转换，例如：
 
  
 
@@ -65,5 +64,5 @@ KSSTATE \_ &gt; **KSSTATE \_ 获取**  - &gt; **KSSTATE \_ 暂停**  - &gt; **KS
 
 由于用户模式应用程序在流式传输过程中可能会意外结束，因此所有 Stream 类微型驱动程序都必须随时接受并处理来自 Stream 类接口的 [**SRB \_ 关闭 \_ 流**](./srb-close-stream.md) 请求。 在 Stream 类接口将 SRB \_ CLOSE \_ 流发送到微型驱动程序之前，它会通过微型驱动程序的 **HwCancelPacket** 例程取消所有未完成的缓冲区。 请注意，在应用程序终止之前，不能将流状态设置为 **KSSTATE \_ STOP** 。
 
-请勿更新[**ks \_ 帧 \_ 信息**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagks_frame_info)的**PictureNumber**或**DropCount**成员， [**ks \_ VBI \_ 帧 \_ 信息**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagks_vbi_frame_info)或[**KSPROPERTY \_ DROPPEDFRAMES \_ 当前 \_ **](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_droppedframes_current_s)的从**KSSTATE \_ 暂停**转换到**KSSTATE \_ 运行**，或**KSSTATE \_ 运行**到 KSSTATE \_ 暂停。 有关详细信息，请参阅 [捕获视频](capturing-video.md)。
+请勿更新 [**ks \_ 帧 \_ 信息**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagks_frame_info)的 **PictureNumber** 或 **DropCount** 成员， [**ks \_ VBI \_ 帧 \_ 信息**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagks_vbi_frame_info)或 [**KSPROPERTY \_ DROPPEDFRAMES \_ 当前 \_**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_droppedframes_current_s)的从 **KSSTATE \_ 暂停** 转换到 **KSSTATE \_ 运行**，或 **KSSTATE \_ 运行** 到 KSSTATE \_ 暂停。 有关详细信息，请参阅 [捕获视频](capturing-video.md)。
 

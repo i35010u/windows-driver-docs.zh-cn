@@ -1,7 +1,6 @@
 ---
 title: 'IrqlDispatch 规则 (storport) '
 description: 此规则验证以下例程是否仅在 IRQL 调度 \_ 级别调用。
-ms.assetid: 93ABD54D-4D63-495A-917B-A387C9353969
 ms.date: 05/21/2018
 keywords:
 - 'IrqlDispatch 规则 (storport) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 9aca9be7cdfccb7ff6469c5da51a2a0974743c92
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 2e1b197f4f2a28d4c779c754e715b08a9d55b345
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107072"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96819637"
 ---
 # <a name="irqldispatch-rule-storport"></a>IrqlDispatch 规则 (storport) 
 
 
-此规则验证以下例程是否仅在 **IRQL = 调度 \_ 级别**调用。
+此规则验证以下例程是否仅在 **IRQL = 调度 \_ 级别** 调用。
 
 -   AllocateAdapterChannel
 

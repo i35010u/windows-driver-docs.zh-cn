@@ -1,7 +1,6 @@
 ---
 title: exchain
-description: Exchain 扩展显示当前的异常处理程序链。
-ms.assetid: 6e5c935b-e475-4213-83d8-94510a58fde5
+description: Exchain 扩展显示当前异常处理程序链。
 keywords:
 - exchain Windows 调试
 ms.date: 05/23/2017
@@ -12,38 +11,38 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: a1a820fcfb620faa1773f7aed5eddaf49da1b1aa
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 02de31094a7d14e24d16d6f03fff614ab5de94c1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63334498"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96820417"
 ---
 # <a name="exchain"></a>!exchain
 
 
-**！ Exchain**扩展显示当前的异常处理程序链。
+**！ Exchain** 扩展显示当前异常处理程序链。
 
 ```dbgcmd
 !exchain [Options]
 ```
 
-## <a name="span-idddkexchaindbgspanspan-idddkexchaindbgspanparameters"></a><span id="ddk__exchain_dbg"></span><span id="DDK__EXCHAIN_DBG"></span>参数
+## <a name="span-idddk__exchain_dbgspanspan-idddk__exchain_dbgspanparameters"></a><span id="ddk__exchain_dbg"></span><span id="DDK__EXCHAIN_DBG"></span>参数
 
 
-<span id="_______Options______"></span><span id="_______options______"></span><span id="_______OPTIONS______"></span> *选项*   
+<span id="_______Options______"></span><span id="_______options______"></span><span id="_______OPTIONS______"></span>*选项*   
 以下值之一：
 
 <span id="_c"></span><span id="_C"></span>**/c**  
-显示适用于调试的信息C++**尝试**/**捕获**异常，如果检测到此类异常。
+**try** / 如果检测到此类异常，则显示与调试 c + + try **catch** 异常相关的信息。
 
 <span id="_C"></span><span id="_c"></span>**/C**  
-显示适用于调试的信息C++**尝试**/**捕获**异常，即使此类异常未检测到。
+显示与调试 c + + **try** / **catch** 异常相关的信息，即使未检测到这样的异常也是如此。
 
 <span id="_f"></span><span id="_F"></span>**/f**  
-显示即使 CRT 异常处理程序未检测到 CRT 函数表的每个步骤获取的信息。
+显示通过遍历 CRT 函数表获取的信息，即使未检测到 CRT 异常处理程序也是如此。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 <table>
 <colgroup>
@@ -64,14 +63,14 @@ ms.locfileid: "63334498"
 
  
 
-**！ Exchain**扩展是仅适用于基于 x86 的目标计算机。
+**！ Exchain** 扩展仅适用于基于 x86 的目标计算机。
 
 <a name="remarks"></a>备注
 -------
 
-**！ Exchain**扩展显示的当前线程的异常处理程序的列表。
+**！ Exchain** 扩展显示当前线程的异常处理程序的列表。
 
-列表开头链 （提供的第一个机会处理异常的那个） 上的第一个处理程序，并继续进行到末尾。 下面的示例显示了此扩展。
+此列表以链上第一个处理程序开始， (第一个处理程序处理异常) 并继续到末尾。 下面的示例演示了此扩展。
 
 ```dbgcmd
 0:000> !exchain

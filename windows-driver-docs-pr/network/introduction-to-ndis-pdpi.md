@@ -1,15 +1,14 @@
 ---
 title: NDIS PacketDirect 提供程序接口简介
 description: '本部分介绍了 NDIS PacketDirect 提供程序接口 (PDPI) '
-ms.assetid: E85ED51E-BDE5-43BE-93BA-19F214670B8F
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3c4881cd35a95f1503d4971a180cb78a8b71f7e8
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: c8e98f55af38ba00eeaa203c18a271a55de62182
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89212179"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96820099"
 ---
 # <a name="introduction-to-the-ndis-packetdirect-provider-interface"></a>NDIS PacketDirect 提供程序接口简介
 
@@ -36,7 +35,7 @@ PD 通过允许 PD 客户端使用 (NIC) 从网络适配器显式管理网络流
 
 如果 PD 客户端不了解如何处理数据包或接收其某个队列（如 ARP、LLDP 或其他协议数据包）中的控制数据包，则 PD 客户端可以将数据包重新路由回当前 i/o 路径进行处理。 这允许 PD 继续处理其具有上下文的数据包，而不会浪费控制流量的循环。
 
-**重要提示**   每个网络适配器可以有一个 PD 提供程序和一个 PD 客户端。 因此，一个系统中可以有多个 PD 客户端和 PD 提供程序。
+**重要提示**  每个网络适配器可以有一个 PD 提供程序和一个 PD 客户端。 因此，一个系统中可以有多个 PD 客户端和 PD 提供程序。
 
  
 
@@ -44,11 +43,11 @@ PD 客户端可以控制在系统中分配给 PD 的资源。 在网络流量较
 
 Windows 实现的 PacketDirect 平台将客户端接口映射到提供程序接口。 平台控制缓冲区管理并能够将通过 PD 接收的数据包重新注入到当前的 NDIS 接收路径。 它还处理与 PD 客户端的交互，以满足 NDIS 控制路径要求，如 NIC 禁用、进入低能耗、系统关闭和意外删除，而不会妨碍 PD 数据路径性能。
 
-**PacketDirect 提供程序接口 (PDPI) **
+**PacketDirect 提供程序接口 (PDPI)**
 
 PDPI 允许 NIC 驱动程序向 Windows OS 公开其高性能发送和接收功能。 实现的函数是完整微型端口功能的子集，并且对于实现 PD 的所有 Nic 都是通用的。 有关 PDPI 的参考文档，请参阅 [PacketDirect Provider Interface (PDPI) reference](/windows-hardware/drivers/ddi/_netvista/)。
 
-**PacketDirect Client Interface (PDCI) **
+**PacketDirect Client Interface (PDCI)**
 
 PDCI 允许第一方 Windows 服务/应用程序 (例如，负载平衡器、NAT、VM 交换机等 ) 通过使用 PD 客户端通过使用 PacketDirect i/o 模型来加速其数据路径。 此接口是第2层接口，与当前 NDIS 发送/接收接口相同。 主要功能 PDCI 除了提供 PDPI) access 外，还提供 (，它还提供了 PD 数据包缓冲区分配/管理、用于将数据包注入到常规 NDIS 接收路径的后通道，以及对 NDIS 电源/PnP 事件的处理。
 

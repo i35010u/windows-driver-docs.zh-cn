@@ -1,7 +1,6 @@
 ---
 title: 'ReqIsCancOnCancReq 规则 (kmdf) '
 description: ReqIsCancOnCancReq 规则指定只能对未标记为可取消的请求调用 WdfRequestIsCanceled 方法。
-ms.assetid: d9138a90-4707-485b-a1be-a6b90a410272
 ms.date: 05/21/2018
 keywords:
 - 'ReqIsCancOnCancReq 规则 (kmdf) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: a4134eba7a52cae9f49aed94dbb41ede5cb3c2df
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: e4bff0fd079fede8b50af68f84e426041e355661
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90101508"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96819753"
 ---
 # <a name="reqiscanconcancreq-rule-kmdf"></a>ReqIsCancOnCancReq 规则 (kmdf) 
 
 
-**ReqIsCancOnCancReq**规则指定只能对未标记为可取消的请求调用[**WdfRequestIsCanceled**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestiscanceled)方法。
+**ReqIsCancOnCancReq** 规则指定只能对未标记为可取消的请求调用 [**WdfRequestIsCanceled**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestiscanceled)方法。
 
 **驱动程序模型： KMDF**
 

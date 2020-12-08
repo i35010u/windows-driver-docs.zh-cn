@@ -1,20 +1,19 @@
 ---
 title: REMOTE_NDIS_QUERY_CMPLT
 description: 远程 NDIS 设备将使用 REMOTE_NDIS_QUERY_CMPLT 消息响应 REMOTE_NDIS_QUERY_MSG 消息。
-ms.assetid: 357e2ade-0b67-42c3-b1e1-dcc4b7ec5cda
 ms.date: 07/31/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9b761422a965a98f47af23e2c6bb96e5660f6330
-ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
+ms.openlocfilehash: 319a369814f18cdfd63432d831f1a772fba227ce
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88968638"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96820015"
 ---
 # <a name="remote_ndis_query_cmplt"></a>远程 \_ NDIS \_ 查询 \_ CMPLT
 
 
-远程 ndis 设备将使用远程 ndis 查询消息 CMPLT 消息响应 [**远程 \_ ndis \_ 查询 \_ **](remote-ndis-query-msg.md) 消息 \_ \_ \_ 。 此消息用于将设备参数或统计信息计数器查询的结果中继到主机。 远程 NDIS 设备还会在此消息中将所请求的信息返回给主机。
+远程 ndis 设备将使用远程 ndis 查询消息 CMPLT 消息响应 [**远程 \_ ndis \_ 查询 \_**](remote-ndis-query-msg.md) 消息 \_ \_ \_ 。 此消息用于将设备参数或统计信息计数器查询的结果中继到主机。 远程 NDIS 设备还会在此消息中将所请求的信息返回给主机。
 
 <table>
 <colgroup>
@@ -28,7 +27,7 @@ ms.locfileid: "88968638"
 <th>Offset</th>
 <th>大小</th>
 <th>字段</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -83,7 +82,7 @@ ms.locfileid: "88968638"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Version</p></td>
+<td><p>版本</p></td>
 <td><p>在 Microsoft Windows XP 和更高版本的 Windows 操作系统中可用。 在 Windows 2000 中也可以作为可再发行二进制文件。</p></td>
 </tr>
 <tr class="even">

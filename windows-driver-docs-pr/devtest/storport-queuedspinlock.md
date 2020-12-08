@@ -1,7 +1,6 @@
 ---
 title: 'QueuedSpinLock 规则 (storport) '
 description: QueuedSpinLock 规则验证如何使用 KeReleaseInStackQueuedSpinLock 立即释放使用 KeAcquireInStackQueuedSpinLock 获取的堆栈内排队自旋锁。
-ms.assetid: A5D80CD8-715F-4629-B3B3-E4AC0A201919
 ms.date: 05/21/2018
 keywords:
 - 'QueuedSpinLock 规则 (storport) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 0309fe956e2c2d90141c9d8444597c408f8cc7ad
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 2f541d632f0bd1b96d16773fb57312f47229e158
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107066"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96819625"
 ---
 # <a name="queuedspinlock-rule-storport"></a>QueuedSpinLock 规则 (storport) 
 
 
-**QueuedSpinLock**规则验证如何使用[**KeReleaseInStackQueuedSpinLock**](/windows-hardware/drivers/ddi/wdm/nf-wdm-kereleaseinstackqueuedspinlock)立即释放使用[**KeAcquireInStackQueuedSpinLock**](/previous-versions/windows/hardware/drivers/ff551899(v=vs.85))获取的堆栈内排队自旋锁。 此外，在调度或取消例程结束时，驱动程序不应持有任何锁。
+**QueuedSpinLock** 规则验证如何使用 [**KeReleaseInStackQueuedSpinLock**](/windows-hardware/drivers/ddi/wdm/nf-wdm-kereleaseinstackqueuedspinlock)立即释放使用 [**KeAcquireInStackQueuedSpinLock**](/previous-versions/windows/hardware/drivers/ff551899(v=vs.85))获取的堆栈内排队自旋锁。 此外，在调度或取消例程结束时，驱动程序不应持有任何锁。
 
 **驱动程序模型： Storport**
 

@@ -1,9 +1,8 @@
 ---
 title: rcdrkd.rcdrhelp
-description: Rcdrkd.rcdrhelp 命令显示 RCDRKD 调试器扩展命令的帮助。
-ms.assetid: E4BCAFB5-BC4F-4C7D-B011-67F86E1C9E99
+description: Rcdrkd. rcdrhelp 命令显示 RCDRKD 调试程序扩展命令的帮助。
 keywords:
-- rcdrkd.rcdrhelp Windows 调试
+- rcdrkd rcdrhelp Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,24 +11,24 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 678d245ba0080c913873bdd274bb57fb6af6f8e9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 338fcd00877169372ba331a3d75c682c4e5e28ea
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63335760"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96821025"
 ---
 # <a name="rcdrkdrcdrhelp"></a>!rcdrkd.rcdrhelp
 
 
-**！ Rcdrkd.rcdrhelp**命令显示 RCDRKD 调试器扩展命令的帮助。
+**！ Rcdrkd. rcdrhelp** 命令显示 rcdrkd 调试程序扩展命令的帮助。
 
-## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 
 Rcdrkd.dll
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
 [RCDRKD 扩展](rcdrkd-extensions.md)

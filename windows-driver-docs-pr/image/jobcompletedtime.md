@@ -1,9 +1,8 @@
 ---
 title: JobCompletedTime 元素
-description: 可选 JobCompletedTime 元素指定在其中完成扫描作业的时间。
-ms.assetid: f29449bd-c618-400f-b37c-3df7d955936b
+description: 可选的 JobCompletedTime 元素指定扫描作业的完成时间。
 keywords:
-- JobCompletedTime 元素成像设备
+- JobCompletedTime 元素图像设备
 topic_type:
 - apiref
 api_name:
@@ -12,19 +11,19 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9079cfc72c1736aaa82e0a8ccc5f390cc33f64e1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 644653358505bfc3af7e2f61f5af4cb0895b758d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63363460"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96820257"
 ---
 # <a name="jobcompletedtime-element"></a>JobCompletedTime 元素
 
 
-可选**JobCompletedTime**元素指定在其中完成扫描作业的时间。
+可选的 **JobCompletedTime** 元素指定扫描作业的完成时间。
 
-<a name="usage"></a>用法
+<a name="usage"></a>使用情况
 -----
 
 ```xml
@@ -41,12 +40,12 @@ ms.locfileid: "63363460"
 <a name="text-value"></a>文本值
 ----------
 
-必需。 DateTime 类型的任何有效的值。 有关日期时间的详细信息，请参阅 XML 架构第 2 部分：数据类型第二版。**dateTimedateTime**
+必需。 DateTime 类型的任何有效值。 有关日期时间的详细信息，请参阅 XML 架构第2部分：数据类型第二版。**dateTimedateTime**
 
 ## <a name="child-elements"></a>子元素
 
 
-没有子元素。
+没有任何子元素。
 
 ## <a name="parent-elements"></a>父元素
 
@@ -73,9 +72,9 @@ ms.locfileid: "63363460"
 <a name="remarks"></a>备注
 -------
 
-一个扫描作业*完整*时已完成所有处理，因为扫描和文档传输已成功都完成或遇到致命错误。
+所有处理都完成后，扫描作业就会 *完成* ，因为扫描和文档传输已成功完成或遇到致命错误。
 
-在指定的时间是指扫描设备的内部时钟，并不需要实时时钟。
+指定的时间是指扫描设备的内部时钟，无需是实时时钟。
 
 ## <a name="see-also"></a>请参阅
 

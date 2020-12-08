@@ -1,7 +1,6 @@
 ---
 title: KSCATEGORY_ACOUSTIC_ECHO_CANCEL
 description: KSCATEGORY_ACOUSTIC_ECHO_CANCEL
-ms.assetid: 91440365-be16-4d98-aa91-e186b9ab6359
 keywords:
 - KSCATEGORY_ACOUSTIC_ECHO_CANCEL 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: e27818cdcf5ee2c9638d373a8a73ac97b161f13d
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 6643cf2da5def2f7583862b3a2e4188968c71cc7
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89095497"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96820135"
 ---
 # <a name="kscategory_acoustic_echo_cancel"></a>KSCATEGORY_ACOUSTIC_ECHO_CANCEL
 

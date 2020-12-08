@@ -1,20 +1,19 @@
 ---
 title: 基于 USB 的 HID 设备的选择性挂起
 description: 通用串行总线规范的修订版2.0 指定 USB 选择性挂起功能。
-ms.assetid: A4560D7C-8A32-4A91-95B6-4377E0F0D0C1
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 79d2bb896d7111c05b2cc2580d3b249f60bed5ac
-ms.sourcegitcommit: 9145bffd4cc3b990a9ebff43b588db6ef2001f5d
+ms.openlocfilehash: 917d29b0f8970f2301b9d02ad47e56db007be6d9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/09/2020
-ms.locfileid: "89592353"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96820325"
 ---
 # <a name="selective-suspend-for-hid-over-usb-devices"></a>基于 USB 的 HID 设备的选择性挂起
 
 
-*通用串行总线规范*的修订版2.0 指定 USB 选择性挂起功能。 通过使用此功能，Windows 操作系统可以有选择地挂起空闲 USB 设备。 这允许 Windows 有效地管理整个系统的电源要求。 有关 Windows 如何支持 USB 选择性挂起功能的详细信息，请参阅 [usb 选择性挂起](../usbcon/usb-selective-suspend.md)。  (此资源可能在某些语言和国家/地区不可用。 ) 
+*通用串行总线规范* 的修订版2.0 指定 USB 选择性挂起功能。 通过使用此功能，Windows 操作系统可以有选择地挂起空闲 USB 设备。 这允许 Windows 有效地管理整个系统的电源要求。 有关 Windows 如何支持 USB 选择性挂起功能的详细信息，请参阅 [usb 选择性挂起](../usbcon/usb-selective-suspend.md)。  (此资源可能在某些语言和国家/地区不可用。 ) 
 
 默认情况下，Windows 将禁用 USB 选择性挂起，以便提供一致的用户体验，并避免从选择性挂起恢复延迟。
 
@@ -28,7 +27,7 @@ ms.locfileid: "89592353"
 
 Windows 8 支持两种方法，用于启用 HID USB 设备的选择性挂起。 这些限制如下：
 
-1.  **MICROSOFT OS 描述符 \[首选 \] **： Microsoft OS 描述符的扩展属性描述符可用于写入所需的注册表项 () ，以支持 USB HID 选择性挂起。
+1.  **MICROSOFT OS 描述符 \[首选 \]**： Microsoft OS 描述符的扩展属性描述符可用于写入所需的注册表项 () ，以支持 USB HID 选择性挂起。
 2.  **供应商提供的 inf**：硬件制造商可以提供一个 inf 文件 (与 HID devnode) 的 USB 硬件 ID 相匹配，以安装相应的注册表项。
 
 Microsoft 建议硬件供应商和 PC 制造商使用第一个选项启用 USB HID 选择性挂起。 此选项的优点是：
@@ -98,19 +97,19 @@ VendorXYZ.DeviceDesc = "VendorXYZ Device"
 
 其中：
 
-1.  [**INF 版本部分**](../install/inf-version-section.md)应将**CLASSGUID**和**DriverVer**指令设置如下：
+1.  [**INF 版本部分**](../install/inf-version-section.md)应将 **CLASSGUID** 和 **DriverVer** 指令设置如下：
 
-    -   **CLASSGUID**指令必须为 HID 设备指定 MICROSOFT 类 GUID。 此 GUID 的值为 {745a17a0-74d3-11d0-b6fe-00a0c90f57da}。
+    -   **CLASSGUID** 指令必须为 HID 设备指定 MICROSOFT 类 GUID。 此 GUID 的值为 {745a17a0-74d3-11d0-b6fe-00a0c90f57da}。
 
-    -   **DriverVer**指令的值必须具有比 Input 中的**DriverVer**指令指定的值更新的日期和版本号更高的值。
+    -   **DriverVer** 指令的值必须具有比 Input 中的 **DriverVer** 指令指定的值更新的日期和版本号更高的值。
 
 2.  2. VendorXYZDevice \* 部分指定供应商 HID 设备 (ID) 的硬件标识符。 硬件 ID 由供应商标识符 (VID) 和产品标识符 (PID) 组成。 设备的每个硬件 ID 必须具有对供应商和设备唯一的 VID/PID 值。 这可确保相同的硬件 ID 不与多个名称和设置相对应
 
 3.  3. VendorXYZDevice \_ 和 VendorXYZDevice \_ 部分都是 [**INF DDInstall 部分**](../install/inf-ddinstall-section.md)。 在此示例中，这些部分包含 INF **Include** 和 **需求** 指令。
 
-    **Include**指令引用系统提供的输入 .inf 文件，其中包含为供应商的 HID 设备启用 USB 选择性挂起功能所需的 inf 部分。
+    **Include** 指令引用系统提供的输入 .inf 文件，其中包含为供应商的 HID 设备启用 USB 选择性挂起功能所需的 inf 部分。
 
-    **需求**指令指示应在设备安装过程中处理来自输入的哪些部分。 在这种情况下， \_ 将 \_ 选择 HID SelSus 指令部分，而不是默认的 hid \_ 指令节，这不支持选择性挂起。
+    **需求** 指令指示应在设备安装过程中处理来自输入的哪些部分。 在这种情况下， \_ 将 \_ 选择 HID SelSus 指令部分，而不是默认的 hid \_ 指令节，这不支持选择性挂起。
 
 4.  4. VendorXYZDevice \_ 部分是一个 [**INF DDInstall 部分**](../install/inf-ddinstall-hw-section.md)，。 在此示例中，部分还包含与 INF **Include** 和 **需求** 指令相同的值。
 

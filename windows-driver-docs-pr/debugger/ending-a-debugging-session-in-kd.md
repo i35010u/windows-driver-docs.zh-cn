@@ -1,35 +1,34 @@
 ---
 title: 在 KD 中结束调试会话
 description: 在 KD 中结束调试会话
-ms.assetid: 6CD39971-424D-4F29-9A36-CCD14187DEB0
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9d114286fd8ebfc1e2f2bfe8e8eeba0a255c7586
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 72fd901ea59404c0d200b8d1fdc0a0aa94cf8490
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63340577"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96820921"
 ---
 # <a name="ending-a-debugging-session-in-kd"></a>在 KD 中结束调试会话
 
 
-有两种不同方式退出 KD。
+可以通过两种不同的方式退出 KD。
 
--   问题[ **q (Quit)** ](q--qq--quit-.md) KD 保存日志文件、 结束调试会话并退出调试器命令。 目标计算机保持锁定状态。
+-   发出 [**q (Quit)**](q--qq--quit-.md) KD 中的命令以保存日志文件、结束调试会话并退出调试器。 目标计算机保持锁定状态。
 
--   按[ **CTRL + B** ](ctrl-b--quit-local-debugger-.md)然后按 ENTER 以结束调试程序突然。 如果你想在目标计算机继续运行调试程序结束后，必须使用此方法。 CTRL + B 不会删除断点，因为您应首先使用以下命令。
+-   按 [**CTRL + B**](ctrl-b--quit-local-debugger-.md) ，然后按 enter 键，使调试器突然结束。 如果希望目标计算机在调试器结束后继续运行，则必须使用此方法。 由于 CTRL + B 并不删除断点，因此应该首先使用以下命令。
 
     ```dbgcmd
     kd>  bc *
     kd>  g
     ```
 
-通过使用 CTRL + B 退出调试器并不会清除内核模式断点，但附加新的内核调试程序 does 清除这些断点。
+使用 CTRL + B 退出调试器并不清除内核模式断点，但附加新的内核调试器会清除这些断点。
 
-执行远程调试时[ **q** ](q--qq--quit-.md)结束调试会话。 CTRL + B 退出调试器，但将该会话活动。 这种情况下使另一个调试器能够连接到该会话。
+执行远程调试时， [**q**](q--qq--quit-.md) 会结束调试会话。 CTRL + B 退出调试器，但使会话保持活动状态。 这种情况下，另一个调试器可以连接到该会话。
 
-如果[ **q (Quit)** ](q--qq--quit-.md)命令不起作用，请按[ **CTRL + R** ](ctrl-r--re-synchronize-.md) ，然后主计算机的键盘上按 ENTER，然后重试**q**命令。 如果此过程不会起作用，则必须使用 CTRL + B 退出调试器。
+如果 [**q (Quit)**](q--qq--quit-.md) 命令不起作用，请按 [**CTRL + R**](ctrl-r--re-synchronize-.md) ，然后在主计算机的键盘上按 enter，然后重试 **q** 命令。 如果此过程不起作用，则必须使用 CTRL + B 退出调试器。
 
  
 

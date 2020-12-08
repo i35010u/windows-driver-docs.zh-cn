@@ -1,15 +1,14 @@
 ---
 title: WIA 驱动程序服务库
-ms.assetid: c179483b-74c3-4788-aa04-20cec0e0eb3a
 description: 介绍 WIA 驱动程序服务库，其中包含 WIA 微型驱动程序可以为执行特定任务而调用的帮助
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5d9416395671e76493879c30073a94a97d7177ce
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 7a846b16aaee8458a11e4a52491056879262c8cc
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105596"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96820243"
 ---
 # <a name="wia-driver-services-library"></a>WIA 驱动程序服务库
 
@@ -21,7 +20,7 @@ WIA 驱动程序服务库包含 WIA 微型驱动程序在执行以下任务时�
 -   [读取和存储项的属性](#ddk-reading-and-storing-an-item-s-properties-si)
 -   [更新和传输数据](#ddk-updating-and-transferring-data-si)
 
-WIA 微型驱动程序根据需要从其 [IWiaMiniDrv 接口](/windows-hardware/drivers/ddi/wiamindr_lh/nn-wiamindr_lh-iwiaminidrv) 方法调用大多数这些函数。 但是，每个 WIA 微型驱动程序都必须调用[**IWiaMiniDrv：:D rvinitializewia**](/windows-hardware/drivers/ddi/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvinitializewia)方法中的[**wiasCreateDrvItem**](/windows-hardware/drivers/ddi/wiamdef/nf-wiamdef-wiascreatedrvitem)函数来创建驱动程序项。 对 **wiasCreateDrvItem** 函数的每个成功调用都将创建一个 **IWiaDrvItem** 项对象，该对象在微型驱动程序的项树中使用。 多 [个 IWiaDrvItem 接口](/windows-hardware/drivers/ddi/wiamindr_lh/nn-wiamindr_lh-iwiadrvitem) 方法具有类型为 **IWiaDrvItem**的参数，其中包括 [**IWiaDrvItem：： AddItemToFolder**](/windows-hardware/drivers/ddi/wiamindr_lh/nf-wiamindr_lh-iwiadrvitem-additemtofolder)、 [**IWiaDrvItem：： GetFirstChildItem**](/windows-hardware/drivers/ddi/wiamindr_lh/nf-wiamindr_lh-iwiadrvitem-getfirstchilditem)、 [**IWiaDrvItem：： GetNextSiblingItem**](/windows-hardware/drivers/ddi/wiamindr_lh/nf-wiamindr_lh-iwiadrvitem-getnextsiblingitem)和 [**IWiaDrvItem：： GetParentItem**](/windows-hardware/drivers/ddi/wiamindr_lh/nf-wiamindr_lh-iwiadrvitem-getparentitem)。 此外， [**wiasGetDrvItem**](/windows-hardware/drivers/ddi/wiamdef/nf-wiamdef-wiasgetdrvitem) 函数有一个此类型的参数。
+WIA 微型驱动程序根据需要从其 [IWiaMiniDrv 接口](/windows-hardware/drivers/ddi/wiamindr_lh/nn-wiamindr_lh-iwiaminidrv) 方法调用大多数这些函数。 但是，每个 WIA 微型驱动程序都必须调用 [**IWiaMiniDrv：:D rvinitializewia**](/windows-hardware/drivers/ddi/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvinitializewia)方法中的 [**wiasCreateDrvItem**](/windows-hardware/drivers/ddi/wiamdef/nf-wiamdef-wiascreatedrvitem)函数来创建驱动程序项。 对 **wiasCreateDrvItem** 函数的每个成功调用都将创建一个 **IWiaDrvItem** 项对象，该对象在微型驱动程序的项树中使用。 多 [个 IWiaDrvItem 接口](/windows-hardware/drivers/ddi/wiamindr_lh/nn-wiamindr_lh-iwiadrvitem) 方法具有类型为 **IWiaDrvItem** 的参数，其中包括 [**IWiaDrvItem：： AddItemToFolder**](/windows-hardware/drivers/ddi/wiamindr_lh/nf-wiamindr_lh-iwiadrvitem-additemtofolder)、 [**IWiaDrvItem：： GetFirstChildItem**](/windows-hardware/drivers/ddi/wiamindr_lh/nf-wiamindr_lh-iwiadrvitem-getfirstchilditem)、 [**IWiaDrvItem：： GetNextSiblingItem**](/windows-hardware/drivers/ddi/wiamindr_lh/nf-wiamindr_lh-iwiadrvitem-getnextsiblingitem)和 [**IWiaDrvItem：： GetParentItem**](/windows-hardware/drivers/ddi/wiamindr_lh/nf-wiamindr_lh-iwiadrvitem-getparentitem)。 此外， [**wiasGetDrvItem**](/windows-hardware/drivers/ddi/wiamdef/nf-wiamdef-wiasgetdrvitem) 函数有一个此类型的参数。
 
 驱动程序服务库提供了以下功能。
 
@@ -36,7 +35,7 @@ WIA 微型驱动程序根据需要从其 [IWiaMiniDrv 接口](/windows-hardware/
 <thead>
 <tr class="header">
 <th>函数</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -80,7 +79,7 @@ WIA 微型驱动程序根据需要从其 [IWiaMiniDrv 接口](/windows-hardware/
 <thead>
 <tr class="header">
 <th>函数</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -122,7 +121,7 @@ WIA 微型驱动程序根据需要从其 [IWiaMiniDrv 接口](/windows-hardware/
 <thead>
 <tr class="header">
 <th>函数</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -278,7 +277,7 @@ WIA 微型驱动程序根据需要从其 [IWiaMiniDrv 接口](/windows-hardware/
 <thead>
 <tr class="header">
 <th>函数</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>

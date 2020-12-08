@@ -1,18 +1,17 @@
 ---
 title: 标头数据拆分体系结构
 description: 标头数据拆分体系结构
-ms.assetid: a2594360-cbac-4f77-840a-2572a2381646
 keywords:
 - 标头-数据拆分 WDK，体系结构
 - 标头-数据拆分提供程序 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6901e663d90e7aeac1c37e3af16ff123b6ac7833
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 958cfa772df7e0d45dbdc8808ea4e7f6b81583fc
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89209750"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96821371"
 ---
 # <a name="header-data-split-architecture"></a>标头数据拆分体系结构
 
@@ -40,9 +39,9 @@ ms.locfileid: "89209750"
 
 标头缓冲区应全部位于连续的存储块中。
 
-*上层协议*是 IP 传输协议，例如 TCP、UDP 或 ICMP。
+*上层协议* 是 IP 传输协议，例如 TCP、UDP 或 ICMP。
 
-**注意**   出于定义标头数据拆分要求，IPsec 不被视为上层协议。 有关拆分 IPsec 帧的详细信息，请参阅 [拆分 Ipsec 帧](splitting-ipsec-frames.md)。
+**注意**  出于定义标头数据拆分要求，IPsec 不被视为上层协议。 有关拆分 IPsec 帧的详细信息，请参阅 [拆分 Ipsec 帧](splitting-ipsec-frames.md)。
 
  
 

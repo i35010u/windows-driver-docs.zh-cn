@@ -1,18 +1,17 @@
 ---
 title: 设备和驱动程序安装常规指南
 description: 设备和驱动程序安装常规指南
-ms.assetid: E62906AB-CE32-4b07-B7DB-F523FFE4E6C2
 keywords:
 - 设备安装 WDK，一般指导原则
 - 驱动程序安装 WDK，一般指导原则
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f35e2a2e9e1431a7b87d6485d7c369f10d896960
-ms.sourcegitcommit: 5ff30ddae453c6439177acde0e2d32eaf234a2c0
+ms.openlocfilehash: 27b8e05c84cd0f1b46c9f1218ca0c809e836d7ca
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95030035"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96820151"
 ---
 # <a name="general-guidelines-for-device-and-driver-installation"></a>设备和驱动程序安装常规指南
 

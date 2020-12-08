@@ -1,17 +1,16 @@
 ---
 title: C28637
 description: 警告 C28637 在全局初始值设定项中调用函数是不安全的。
-ms.assetid: 9b392995-9583-4847-aded-f32e1daf28ed
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 f1_keywords:
 - C28637
-ms.openlocfilehash: 3f0181d17db6e6820fd9d9baabb7c6c5659e02ef
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 07d48b7698337f773d46a00742f6ddcb411d6fbd
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89382429"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96819821"
 ---
 # <a name="c28637"></a>C28637
 

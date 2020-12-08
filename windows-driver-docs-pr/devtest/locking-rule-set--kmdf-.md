@@ -1,15 +1,14 @@
 ---
 title: 锁定规则集 (KMDF)
 description: 了解如何使用 (KMDF) 的规则来验证驱动程序是否正确管理共享资源，以及如何选择锁定规则集。
-ms.assetid: B6DD41A5-E7E5-4070-8752-68E26804A5D5
 ms.date: 05/21/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: b0059780fe55bf2a9e1d2f317af84df122ccdc74
-ms.sourcegitcommit: 372464be981a39781c71049126f36891cb5d0cad
+ms.openlocfilehash: 45ae5bb34804a2bbb2e10d1bf566ec31a6624711
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91646111"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96819729"
 ---
 # <a name="locking-rule-set-kmdf"></a>锁定规则集 (KMDF)
 
@@ -27,7 +26,7 @@ ms.locfileid: "91646111"
 <thead>
 <tr class="header">
 <th align="left">主题</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -86,7 +85,7 @@ ms.locfileid: "91646111"
 
 2.  单击 " **规则** " 选项卡。在 " **规则集**" 下，选择 " **锁定**"。
 
-    若要从 Visual Studio 开发人员命令提示符窗口中选择默认规则集，请使用 **/check**选项指定**sdv** 。 例如：
+    若要从 Visual Studio 开发人员命令提示符窗口中选择默认规则集，请使用 **/check** 选项指定 **sdv** 。 例如：
 
     ```
     msbuild /t:sdv /p:Inputs="/check:Locking.sdv" mydriver.VcxProj /p:Configuration="Win8 Release" /p:Platform=Win32

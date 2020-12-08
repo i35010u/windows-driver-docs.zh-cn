@@ -1,7 +1,6 @@
 ---
 title: DriverEntry 的可选责任
 description: DriverEntry 的可选责任
-ms.assetid: 859282f7-6b40-47a8-b845-cdb7c26585dd
 keywords:
 - DriverEntry WDK 内核，可选责任
 - 申报硬件资源
@@ -14,12 +13,12 @@ keywords:
 - 资源申报 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b3ac994d1b573c7e9541402f23df8c4d6e752066
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: a54b792a28d160eeb59516e15fdb80ad000d144b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89186013"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96820673"
 ---
 # <a name="driverentrys-optional-responsibilities"></a>DriverEntry 的可选责任
 
@@ -39,17 +38,17 @@ ms.locfileid: "89186013"
 
 ### <a name="providing-storage-for-system-resources"></a>为系统资源提供存储
 
-应在 [*AddDevice*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_add_device) 例程或处理 PnP [**IRP \_ MN \_ START \_ 设备**](./irp-mn-start-device.md) 请求而不是 **DriverEntry**中的调度例程中分配每设备对象。
+应在 [*AddDevice*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_add_device) 例程或处理 PnP [**IRP \_ MN \_ START \_ 设备**](./irp-mn-start-device.md) 请求而不是 **DriverEntry** 中的调度例程中分配每设备对象。
 
 但是，驱动程序可能需要为其他驱动程序范围的使用分配额外的系统空间内存。 如果是这样， **DriverEntry** 例程可以调用一个或多个以下例程)  (：
 
 -   **IoAllocateDriverObjectExtension**，用于创建与驱动程序对象关联的上下文区域
 
--   分页或非分页的系统空间内存[**ExAllocatePoolWithTag**](/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepoolwithtag)
+-   分页或非分页的系统空间内存 [**ExAllocatePoolWithTag**](/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepoolwithtag)
 
--   用于缓存对齐的非分页系统空间内存的[**MmAllocateNonCachedMemory**](/windows-hardware/drivers/ddi/ntddk/nf-ntddk-mmallocatenoncachedmemory)或[**MmAllocateContiguousMemory**](/windows-hardware/drivers/ddi/wdm/nf-wdm-mmallocatecontiguousmemory) (用于 i/o 缓冲区) 
+-   用于缓存对齐的非分页系统空间内存的 [**MmAllocateNonCachedMemory**](/windows-hardware/drivers/ddi/ntddk/nf-ntddk-mmallocatenoncachedmemory)或 [**MmAllocateContiguousMemory**](/windows-hardware/drivers/ddi/wdm/nf-wdm-mmallocatecontiguousmemory) (用于 i/o 缓冲区) 
 
-每个 **DriverEntry** 例程在系统线程的上下文中运行，以 IRQL = 被动 \_ 级别。 因此，只要该驱动程序不控制包含系统页面文件的设备，则在初始化期间使用 **ExAllocatePoolWithTag** 分配的任何内存都可以来自页面缓冲池。 在**DriverEntry**返回 control 之前，必须用[**ExFreePool**](/windows-hardware/drivers/ddi/ntddk/nf-ntddk-exfreepool)释放已分配的内存。 但是，在调用[**IoRegisterDriverReinitialization**](/windows-hardware/drivers/ddi/ntddk/nf-ntddk-ioregisterdriverreinitialization)时设置重新*初始化*例程的驱动程序可以将指针传递给此内存，从而使驱动程序的*初始化*例程负责释放内存分配。
+每个 **DriverEntry** 例程在系统线程的上下文中运行，以 IRQL = 被动 \_ 级别。 因此，只要该驱动程序不控制包含系统页面文件的设备，则在初始化期间使用 **ExAllocatePoolWithTag** 分配的任何内存都可以来自页面缓冲池。 在 **DriverEntry** 返回 control 之前，必须用 [**ExFreePool**](/windows-hardware/drivers/ddi/ntddk/nf-ntddk-exfreepool)释放已分配的内存。 但是，在调用 [**IoRegisterDriverReinitialization**](/windows-hardware/drivers/ddi/ntddk/nf-ntddk-ioregisterdriverreinitialization)时设置重新 *初始化* 例程的驱动程序可以将指针传递给此内存，从而使驱动程序的 *初始化* 例程负责释放内存分配。
 
 ### <a name="claiming-hardware-resources"></a><a href="" id="claiming-hardware-resources-"></a>申报硬件资源
 
@@ -59,7 +58,7 @@ ms.locfileid: "89186013"
 
 ### <a name="using-the-registry"></a>使用注册表
 
-**DriverEntry**例程可能使用注册表获取初始化驱动程序所需的某些信息，或者可能会在注册表中为其他驱动程序或受保护的子系统设置信息以供使用。 信息的性质取决于设备的类型。 驱动程序可以使用 **Zw * xxx*** 和 **Rtl * xxx*** 例程访问注册表。 **DriverEntry**例程的*RegistryPath*参数指向一个计数的 Unicode 字符串，该字符串指定了指向驱动程序的注册表项 " <strong> \\ 注册表 \\ 项 \\ \\ CurrentControlSet \\ Services \\ * DriverName</strong>" 的路径<em>。例程应保存字符串的副本，而不是保存指针本身，因为在 **DriverEntry</em>返回后指针不再有效*。
+**DriverEntry** 例程可能使用注册表获取初始化驱动程序所需的某些信息，或者可能会在注册表中为其他驱动程序或受保护的子系统设置信息以供使用。 信息的性质取决于设备的类型。 驱动程序可以使用 **Zw * xxx*** 和 **Rtl * xxx*** 例程访问注册表。 **DriverEntry** 例程的 *RegistryPath* 参数指向一个计数的 Unicode 字符串，该字符串指定了指向驱动程序的注册表项 " <strong> \\ 注册表 \\ 项 \\ \\ CurrentControlSet \\ Services \\ * DriverName</strong>" 的路径 <em>。例程应保存字符串的副本，而不是保存指针本身，因为在 **DriverEntry</em>返回后指针不再有效*。
 
  
 

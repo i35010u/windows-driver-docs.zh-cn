@@ -1,17 +1,16 @@
 ---
 title: NDIS 6.1 中的标头数据拆分
 description: NDIS 6.1 中的标头数据拆分
-ms.assetid: f4380956-b18b-46f4-9c2e-d8124cbf5c3f
 keywords:
-- 标头数据拆分 WDK，有关标头数据拆分
+- 标头-数据拆分 WDK，关于标头-数据拆分
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e3fcabef751fc85b7ed56c92bfc0fe79fcd9cede
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 62e06e47e7b7edbcf980d67e5ad056fb42d2ff22
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63325734"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96821359"
 ---
 # <a name="header-data-split-in-ndis-61"></a>NDIS 6.1 中的标头数据拆分
 
@@ -19,11 +18,11 @@ ms.locfileid: "63325734"
 
 
 
-*标头数据拆分*服务通过将标头和接收到的以太网帧中的数据拆分为单独的缓冲区来提高网络性能。 通过将标头和数据，这些服务，要收集在一起分成若干个较小的内存区域的标头。 因此，多个标头放入单个内存页和多个标头放入系统缓存，因此在访问内存的开销减少驱动程序堆栈。
+*标头-数据拆分* 服务通过将接收的以太网帧中的标头和数据拆分为单独的缓冲区来改善网络性能。 通过分隔标头和数据，这些服务可将标头一起收集到更小的内存区域中。 因此，在单个内存页中容纳更多的标头，并且系统缓存中容纳更多的标头，因此降低了驱动程序堆栈中内存访问的开销。
 
-标头数据拆分接口是一项可选服务提供的标头的数据-拆分的网络接口卡 (Nic)。
+标头-数据拆分接口是一种可选服务，为支持标头数据剥离的网络接口卡 (Nic) 提供。
 
-标头数据拆分的详细信息，请参阅[标头数据拆分](header-data-split.md)。
+有关标头-数据拆分的详细信息，请参阅 [标头-数据拆分](header-data-split.md)。
 
  
 

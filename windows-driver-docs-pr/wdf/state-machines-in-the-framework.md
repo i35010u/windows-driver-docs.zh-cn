@@ -1,7 +1,6 @@
 ---
 title: 框架中的状态计算机
 description: 框架中的状态计算机
-ms.assetid: 5ef307c6-0310-4a83-a63f-3a6d96782013
 keywords:
 - PnP WDK KMDF，状态机
 - 即插即用 WDK KMDF，状态机
@@ -15,12 +14,12 @@ keywords:
 - 电源策略 WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 292c88e584a4228366f3b3f4258b503a9b5a85a6
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 8f224d26e2858c987e3a3adf18b0ed355beda6fc
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89190817"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96821127"
 ---
 # <a name="state-machines-in-the-framework"></a>框架中的状态计算机
 

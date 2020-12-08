@@ -1,15 +1,14 @@
 ---
 title: 关于存储管理和 WMI 类
 description: 存储管理和 WMI 类
-ms.assetid: 32cfb51e-b02a-4624-88ea-804d823256a6
 ms.localizationpriority: medium
 ms.date: 12/15/2019
-ms.openlocfilehash: 3fe3db515662718c3d941dfffc94f16bc84055f4
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: d14c645246b325a735043b034e693a47904aaef1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91733704"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96820545"
 ---
 # <a name="about-storage-management-and-wmi-classes"></a>关于存储管理和 WMI 类
 

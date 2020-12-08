@@ -1,9 +1,8 @@
 ---
 title: .expr（选择表达式评估器）
-description: .Expr 命令指定默认表达式计算器。
-ms.assetid: 96d246c2-10fe-4688-a04f-1325ac51e4b3
+description: Expr 命令指定默认表达式计算器。
 keywords:
-- .expr （选择表达式计算器） Windows 调试
+- expr (选择表达式计算器) Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 54e745cb7c255e0503ce62f83f90c5b01e2c8693
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5f8a3e48aa3835bd846d7467cb187eefaa4d210e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63336770"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96820413"
 ---
 # <a name="expr-choose-expression-evaluator"></a>.expr（选择表达式评估器）
 
 
-**.Expr**命令指定默认表达式计算器。
+**Expr** 命令指定默认表达式计算器。
 
 ```dbgcmd
 .expr /s masm 
@@ -31,16 +30,16 @@ ms.locfileid: "63336770"
 .expr 
 ```
 
-## <a name="span-idddkmetachooseexpressionevaluatordbgspanspan-idddkmetachooseexpressionevaluatordbgspanparameters"></a><span id="ddk_meta_choose_expression_evaluator_dbg"></span><span id="DDK_META_CHOOSE_EXPRESSION_EVALUATOR_DBG"></span>参数
+## <a name="span-idddk_meta_choose_expression_evaluator_dbgspanspan-idddk_meta_choose_expression_evaluator_dbgspanparameters"></a><span id="ddk_meta_choose_expression_evaluator_dbg"></span><span id="DDK_META_CHOOSE_EXPRESSION_EVALUATOR_DBG"></span>参数
 
 
-<span id="________s_masm______"></span><span id="________S_MASM______"></span> **/s masm**   
-默认表达式类型更改为 Microsoft 组装器表达式计算器 (MASM)。 启动调试器时，此类型将是默认值。
+<span id="________s_masm______"></span><span id="________S_MASM______"></span>**/s masm**   
+将默认表达式类型更改为 Microsoft 汇编程序 expression 计算器 (MASM) 。 启动调试器时，此类型为默认值。
 
-<span id="________s_c________"></span><span id="________S_C________"></span> **/s c + +**   
-更改默认表达式类型设置为C++表达式计算器。
+<span id="________s_c________"></span><span id="________S_C________"></span>**/s c + +**   
+将默认表达式类型更改为 c + + 表达式计算器。
 
-<span id="________q______"></span><span id="________Q______"></span> **/q**   
+<span id="________q______"></span><span id="________Q______"></span>**/q**   
 显示可能的表达式类型的列表。
 
 ### <a name="span-idenvironmentspanspan-idenvironmentspanspan-idenvironmentspanenvironment"></a><span id="Environment"></span><span id="environment"></span><span id="ENVIRONMENT"></span>环境
@@ -52,12 +51,12 @@ ms.locfileid: "63336770"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>模式</strong></p></td>
-<td align="left"><p>用户模式下，内核模式</p></td>
+<td align="left"><p><strong>交货</strong></p></td>
+<td align="left"><p>用户模式，内核模式</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>目标</strong></p></td>
-<td align="left"><p>实时、 崩溃转储</p></td>
+<td align="left"><p>实时，故障转储</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>平台</strong></p></td>
@@ -71,11 +70,11 @@ ms.locfileid: "63336770"
 <a name="remarks"></a>备注
 -------
 
-当你使用 **.expr**命令不带参数，则调试器会显示当前的默认表达式类型。
+使用不带参数的 **expr** 命令时，调试器将显示当前的默认表达式类型。
 
-[ **??(评估C++表达式)** ](----evaluate-c---expression-.md)命令，监视窗口中，并[局部变量窗口](locals-window.md)始终使用C++表达式语法。 所有其他命令和信息的调试窗口使用默认表达式计算器。
+" [**(" 计算 c + + 表达式)**](----evaluate-c---expression-.md) 命令、监视窗口和 " [局部变量" 窗口](locals-window.md) 始终使用 c + + 表达式语法。 所有其他命令和调试信息 windows 都使用默认表达式计算器。
 
-有关如何控制使用哪种语法的详细信息，请参阅[评估表达式](evaluating-expressions.md)。 有关语法的详细信息，请参阅[数值表达式语法](numerical-expression-syntax.md)。
+有关如何控制所使用的语法的详细信息，请参阅 [计算表达式](evaluating-expressions.md)。 有关语法的详细信息，请参阅 [数值表达式语法](numerical-expression-syntax.md)。
 
  
 

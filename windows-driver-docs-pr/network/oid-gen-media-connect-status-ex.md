@@ -1,16 +1,15 @@
 ---
 title: OID_GEN_MEDIA_CONNECT_STATUS_EX
 description: 作为查询，OID_GEN_MEDIA_CONNECT_STATUS_EX OID 返回接口的连接状态。 Windows Vista 和 laterSupported。 已请求 NDIS 6.0 和更高的微型端口 driversNot。 仅适用于 NDIS 接口提供程序。
-ms.assetid: 8239616c-788a-4073-8bbe-41f493a461de
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_GEN_MEDIA_CONNECT_STATUS_EX 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 189acbcce384c975521189d4c6cf4d7c6bbc94be
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 15b5256377a16624917386d47e48cb682bbdcb9a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89206323"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96820075"
 ---
 # <a name="oid_gen_media_connect_status_ex"></a>OID \_ 生成 \_ 媒体 \_ 连接 \_ 状态， \_ 例如
 
@@ -32,7 +31,7 @@ NDIS 使用此 OID 查询 [NDIS 网络接口](./ndis-network-interfaces2.md) 提
 
 微型端口驱动程序在初始化期间提供媒体连接状态，并提供具有状态指示的更新。
 
-若要在微型端口驱动程序中指定连接状态，请设置该小型端口驱动程序传递给[**NdisMSetMiniportAttributes**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsetminiportattributes)函数的[**NDIS \_ 微型端口 \_ 适配器 \_ 常规 \_ 属性**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_adapter_general_attributes)结构的**MediaConnectState**成员。
+若要在微型端口驱动程序中指定连接状态，请设置该小型端口驱动程序传递给 [**NdisMSetMiniportAttributes**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsetminiportattributes)函数的 [**NDIS \_ 微型端口 \_ 适配器 \_ 常规 \_ 属性**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_adapter_general_attributes)结构的 **MediaConnectState** 成员。
 
 <a name="requirements"></a>要求
 ------------
@@ -50,7 +49,7 @@ NDIS 使用此 OID 查询 [NDIS 网络接口](./ndis-network-interfaces2.md) 提
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**NDIS \_ 微型端口 \_ 适配器 \_ 常规 \_ 属性**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_adapter_general_attributes)

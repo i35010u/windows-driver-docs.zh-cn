@@ -1,7 +1,6 @@
 ---
 title: 'WdfIoQueueRetrieveNextRequest 规则 (kmdf) '
 description: WdfIoQueueRetrieveNextRequest 规则指定在调用 WdfIoQueueFindRequest 后不调用 WdfIoQueueRetrieveNextRequest。
-ms.assetid: D6BB8920-16A1-4E87-A904-137ACAB7418A
 ms.date: 05/21/2018
 keywords:
 - 'WdfIoQueueRetrieveNextRequest 规则 (kmdf) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: aa7e0f0ab5fc98ca95674bf77fc61c37e8705073
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: e2a4f5821164efa29f530abda50821333ec2375f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107232"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96820875"
 ---
 # <a name="wdfioqueueretrievenextrequest-rule-kmdf"></a>WdfIoQueueRetrieveNextRequest 规则 (kmdf) 
 
 
-**WdfIoQueueRetrieveNextRequest**规则指定在调用[**WdfIoQueueFindRequest**](/windows-hardware/drivers/ddi/wdfio/nf-wdfio-wdfioqueuefindrequest)后不调用[**WdfIoQueueRetrieveNextRequest**](/windows-hardware/drivers/ddi/wdfio/nf-wdfio-wdfioqueueretrievenextrequest) 。
+**WdfIoQueueRetrieveNextRequest** 规则指定在调用 [**WdfIoQueueFindRequest**](/windows-hardware/drivers/ddi/wdfio/nf-wdfio-wdfioqueuefindrequest)后不调用 [**WdfIoQueueRetrieveNextRequest**](/windows-hardware/drivers/ddi/wdfio/nf-wdfio-wdfioqueueretrievenextrequest) 。
 
 **驱动程序模型： KMDF**
 

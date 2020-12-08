@@ -1,20 +1,19 @@
 ---
 title: Hyper-V 可扩展交换机实时迁移支持
 description: Hyper-V 可扩展交换机实时迁移支持
-ms.assetid: 4AFC9E3F-C9C5-4693-BA8C-BC7122A4055F
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5c885ba945dd20749da513c03835d381cedc32ce
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: e4b2e496f8c025834f302a2bcf9619351aae8896
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89217830"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96821353"
 ---
 # <a name="hyper-v-extensible-switch-live-migration-support"></a>Hyper-V 可扩展交换机实时迁移支持
 
 
-在 Hyper-v 实时迁移过程中，子分区或 *虚拟机 (VM) *在一台主机上被停止 (*源主机*) 并迁移到另一台主机 (*目标主机*) 。 在实时迁移期间，会发生以下操作：
+在 Hyper-v 实时迁移过程中，子分区或 *虚拟机 (VM)* 在一台主机上被停止 (*源主机*) 并迁移到另一台主机 (*目标主机*) 。 在实时迁移期间，会发生以下操作：
 
 -   当源主机上启动实时迁移时，可扩展交换机接口请求基础扩展来保存每个端口及其关联网络适配器连接的运行时数据。
 
@@ -36,7 +35,7 @@ ms.locfileid: "89217830"
 
     有关验证端口及其用法的详细信息，请参阅 [验证端口](validation-ports.md)。
 
-2.  策略属性验证成功完成后，将通过 oid [ \_ 交换机 \_ 端口 \_ 删除](./oid-switch-port-delete.md)的 oid 集请求在目标主机上删除验证端口。 删除此端口后，会在目标主机上创建一个操作端口，并在其位置创建一个操作端口。 与用于操作端口的[OID \_ 交换机 \_ 端口 \_ 创建](./oid-switch-port-create.md)请求关联的[**NDIS \_ 交换机 \_ 端口 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_port_parameters)结构包含的数据与在源主机上创建端口时使用的数据相同。
+2.  策略属性验证成功完成后，将通过 oid [ \_ 交换机 \_ 端口 \_ 删除](./oid-switch-port-delete.md)的 oid 集请求在目标主机上删除验证端口。 删除此端口后，会在目标主机上创建一个操作端口，并在其位置创建一个操作端口。 与用于操作端口的 [OID \_ 交换机 \_ 端口 \_ 创建](./oid-switch-port-create.md)请求关联的 [**NDIS \_ 交换机 \_ 端口 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_port_parameters)结构包含的数据与在源主机上创建端口时使用的数据相同。
 
     如果成功创建了操作端口，则会将端口策略添加到操作端口。
 

@@ -1,7 +1,6 @@
 ---
 title: 安装筛选器驱动程序
 description: 安装筛选器驱动程序
-ms.assetid: 48ffa6db-3254-4108-b8bb-5884b9168a9d
 keywords:
 - 设备设置 WDK 设备安装，筛选器驱动程序
 - 设备安装 WDK，筛选器驱动程序
@@ -14,12 +13,12 @@ keywords:
 - LowerFilters
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2e1fd1a586e0968dc216f7ba29c516d12bb146c8
-ms.sourcegitcommit: a44ade167cdfb541cf1818e9f9e3726f23f90b66
+ms.openlocfilehash: 6730b77362e0b37029def6199959e4573ed7ef04
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94361313"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96820719"
 ---
 # <a name="installing-a-filter-driver"></a>安装筛选器驱动程序
 
@@ -64,7 +63,7 @@ ServiceBinary  = %12%\cdaudio.sys
 
 ### <a name="installing-a-class-filter-driver"></a><a href="" id="ddk-installing-a-class-filter-driver-dg"></a>安装类筛选器驱动程序
 
-若要为 [设备安装程序类](./overview-of-device-setup-classes.md)安装类级或更低级别的筛选器，可以提供安装所需服务的 *设备安装应用程序* 。 然后，应用程序可以将该服务注册为所需的设备安装程序类的上限筛选器或下限筛选器。 若要复制服务二进制文件，应用程序可以使用 **SetupInstallFilesFromInfSection** 。 若要安装服务，应用程序可以使用 **SetupInstallServicesFromInfSection** 。 若要将服务注册为特定设备安装程序类的上限和/或下限筛选器，应用程序将使用从 [**SetupDiOpenClassRegKey**](/windows/win32/api/setupapi/nf-setupapi-setupdiopenclassregkey)为 *RelativeKeyRoot* 参数检索到的注册表项句柄，为相关的每个设备安装程序类调用 **SetupInstallFromInfSection** 。 例如，请考虑以下 INF 部分：
+若要为 [设备安装程序类](./overview-of-device-setup-classes.md)安装类级或更低级别的筛选器，可以提供安装所需服务的 *设备安装应用程序* 。 然后，应用程序可以将该服务注册为所需的设备安装程序类的上限筛选器或下限筛选器。 若要复制服务二进制文件，应用程序可以使用 **SetupInstallFilesFromInfSection**。 若要安装服务，应用程序可以使用 **SetupInstallServicesFromInfSection**。 若要将服务注册为特定设备安装程序类的上限和/或下限筛选器，应用程序将使用从 [**SetupDiOpenClassRegKey**](/windows/win32/api/setupapi/nf-setupapi-setupdiopenclassregkey)为 *RelativeKeyRoot* 参数检索到的注册表项句柄，为相关的每个设备安装程序类调用 **SetupInstallFromInfSection** 。 例如，请考虑以下 INF 部分：
 
 ```cpp
 :

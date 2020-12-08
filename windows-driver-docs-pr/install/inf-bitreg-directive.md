@@ -1,7 +1,6 @@
 ---
 title: INF BitReg 指令
 description: BitReg 指令引用一个或多个由 INF 编写器定义的部分，这些部分用于在注册表中的现有 [REG_BINARY](/windows/desktop/SysInfo/registry-value-types)类型值项中设置或清除位。 但是，此指令很少用于设备/驱动程序 INF 文件中。
-ms.assetid: d9dc601a-e0bb-488f-8bed-221ad600a88c
 keywords:
 - INF BitReg 指令设备和驱动程序安装
 topic_type:
@@ -12,12 +11,12 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 509503972ca9629685256d353fcfd8afd444ad67
-ms.sourcegitcommit: a44ade167cdfb541cf1818e9f9e3726f23f90b66
+ms.openlocfilehash: b4c10fe83b19268af26ee85b05c4e02296ac0744
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94361395"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96820147"
 ---
 # <a name="inf-bitreg-directive"></a>INF BitReg 指令
 
@@ -47,7 +46,7 @@ BitReg=bit-registry-section[,bit-registry-section]...
 可以在上述正式语法语句中所示的任何节下指定 **BitReg** 指令。 还可以在以下任何一项由 INF 编写器定义的部分中指定此指令：
 
 -   DDInstall 部分中的 [**AddService**](inf-addservice-directive.md)指令引用的 *服务安装部分* 或 *事件日志安装* 部分。
--   [**AddInterface**](inf-addinterface-directive.md)指令在 DDInstall 中引用的 *添加接口部分* [**_DDInstall_ 。接口**](inf-ddinstall-interfaces-section.md)部分。
+-   [**AddInterface**](inf-addinterface-directive.md)指令在 DDInstall 中引用的 *添加接口部分* [**_DDInstall_。接口**](inf-ddinstall-interfaces-section.md)部分。
 -   [**InterfaceInstall32**](inf-interfaceinstall32-section.md)节中引用的 *安装界面部分*
 
 **BitReg** 指令引用的每个命名部分都具有以下形式：
@@ -90,17 +89,17 @@ reg-root, [subkey], value-entry-name, [flags], byte-mask, byte-to-modify
 
  
 
-**请注意** ， **HKR** 不能用于从 INF [ * *_DefaultInstall_* _](inf-defaultinstall-section.md)部分引用的位注册表部分。  
+**请注意**，**HKR** 不能用于从 INF [ * *_DefaultInstall_* _](inf-defaultinstall-section.md)部分引用的位注册表部分。  
 
  
 
-有关存储在 _ *HKEY_LOCAL_MACHINE* * 根下的驱动程序信息的详细信息，请参阅 [设备和驱动程序的注册表树和密钥](registry-trees-and-keys.md)。
+有关存储在 _ *HKEY_LOCAL_MACHINE** 根下的驱动程序信息的详细信息，请参阅 [设备和驱动程序的注册表树和密钥](registry-trees-and-keys.md)。
 
 <a href="" id="subkey"></a>*键值*  
-此可选值可以表示为在 INF 的 [**字符串**](inf-strings-section.md)部分中定义的% *strkey* % 令牌，或在给定 *的* 注册表项下指定的注册表路径 ( *key1 \\ key2 \\ key3*... ) ，指定包含要修改的值项的键。
+此可选值可以表示为在 INF 的 [**字符串**](inf-strings-section.md)部分中定义的%*strkey*% 令牌，或在给定 *的* 注册表项下指定的注册表路径 (*key1 \\ key2 \\ key3*... ) ，指定包含要修改的值项的键。
 
 <a href="" id="value-entry-name"></a>*值-输入名称*  
-指定要修改的 (现有) 子项中现有 [REG_BINARY](/windows/desktop/SysInfo/registry-value-types)类型值条目的名称。 它可以表示为 " *带引号的字符串* " 或作为 INF 的 [**字符串**](inf-strings-section.md)部分中定义的% *strkey* % 令牌。
+指定要修改的 (现有) 子项中现有 [REG_BINARY](/windows/desktop/SysInfo/registry-value-types)类型值条目的名称。 它可以表示为 "*带引号的字符串*" 或作为 INF 的 [**字符串**](inf-strings-section.md)部分中定义的%*strkey*% 令牌。
 
 <a href="" id="flags"></a>*随意*  
 此可选的十六进制值（以系统定义的低词和高位字标志值的运算位掩码表示）指定是否清除或设置给定字节掩码中指定的位。 其默认值为零，这会清除注册表的64位部分中的位。
@@ -164,9 +163,9 @@ HKLM,Software\AppX,ProgramData,1,0x06,1
 
 [**_DDInstall_* _](inf-ddinstall-section.md)
 
-[_ *_DDInstall_ 。CoInstallers**](inf-ddinstall-coinstallers-section.md)
+[_ *_DDInstall_。CoInstallers**](inf-ddinstall-coinstallers-section.md)
 
-[**_DDInstall_ 。HW**](inf-ddinstall-hw-section.md)
+[**_DDInstall_。HW**](inf-ddinstall-hw-section.md)
 
 [**InterfaceInstall32**](inf-interfaceinstall32-section.md)
 

@@ -1,17 +1,16 @@
 ---
 title: 'WDI_TLV_IPV6_LSO_V2 (0xD4) '
 description: WDI_TLV_IPV6_LSO_V2 是一种 TLV，其中包含 IPv6 的大型发送卸载 V2 参数。
-ms.assetid: 898257D1-405A-46A3-AE63-26DFA8C1FAAC
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_IPV6_LSO_V2 (0xD4) 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 5fc9bc2feeb955d81abcef68a62a26a2af36b52a
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 951d9d6258bcf8935fdaad7e42f7c918760921ad
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89214280"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96820572"
 ---
 # <a name="wdi_tlv_ipv6_lso_v2-0xd4"></a>WDI \_ TLV \_ IPV6 \_ LSO \_ V2 (0xD4) 
 
@@ -25,7 +24,7 @@ WDI \_ tlv \_ ipv6 \_ LSO \_ v2 是包含 IPV6 的大型发送卸载 V2 参数�
 
 0xD4
 
-## <a name="length"></a>Length
+## <a name="length"></a>长度
 
 
 Sum (所有包含的元素的大小) 。
@@ -41,7 +40,7 @@ Sum (所有包含的元素的大小) 。
 <thead>
 <tr class="header">
 <th>类型</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -88,7 +87,7 @@ Sum (所有包含的元素的大小) 。
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
-<td><p>Windows Server 2016</p></td>
+<td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
 <td><p>标头</p></td>

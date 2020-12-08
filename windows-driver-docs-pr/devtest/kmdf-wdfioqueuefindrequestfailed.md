@@ -1,7 +1,6 @@
 ---
 title: 'WdfIoQueueFindRequestFailed 规则 (kmdf) '
 description: WdfIoQueueFindRequestFailed 规则指定仅应在 WdfIoQueueFindRequestFailed 返回状态成功后调用 WdfIoQueueRetrieveFoundRequest 或 WdfObjectDereference \_ 。
-ms.assetid: 9D211A0A-36CB-4083-B379-EE1C34A7B50F
 ms.date: 05/21/2018
 keywords:
 - 'WdfIoQueueFindRequestFailed 规则 (kmdf) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 284bd45283371f5c1ddc92fbe39e0ed28ad77294
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 33870f187a2383d478606e7631ec40c8a6d34cd4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107480"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96820881"
 ---
 # <a name="wdfioqueuefindrequestfailed-rule-kmdf"></a>WdfIoQueueFindRequestFailed 规则 (kmdf) 
 
 
-**WdfIoQueueFindRequestFailed**规则指定仅应在**WdfIoQueueFindRequestFailed**返回状态成功后调用[**WdfIoQueueRetrieveFoundRequest**](kmdf-wdfioqueueretrievefoundrequest.md)或[**WdfObjectDereference**](../wdf/wdfobjectdereference.md) \_ 。
+**WdfIoQueueFindRequestFailed** 规则指定仅应在 **WdfIoQueueFindRequestFailed** 返回状态成功后调用 [**WdfIoQueueRetrieveFoundRequest**](kmdf-wdfioqueueretrievefoundrequest.md)或 [**WdfObjectDereference**](../wdf/wdfobjectdereference.md) \_ 。
 
 **驱动程序模型： KMDF**
 

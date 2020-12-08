@@ -1,17 +1,16 @@
 ---
-title: 编辑文件的写入窗口文本
-description: 编辑文件的写入窗口文本
-ms.assetid: 7a86a8e4-7ab8-46ba-9bd5-4aef81cd1f29
+title: 编辑写入窗口文本到文件
+description: 编辑写入窗口文本到文件
 keywords:
-- 编辑文件的写入窗口文本
+- 编辑写入窗口文本到文件
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5860cc45e633f30ac6541dcc43efafd239f06e9a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f7242078bfa8d73c6757afdf1e77d63a0a289869
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331389"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96820935"
 ---
 # <a name="edit--write-window-text-to-file"></a>编辑 | 将窗口中的文本写入文件
 
@@ -19,19 +18,19 @@ ms.locfileid: "63331389"
 ## <span id="ddk_edit_write_window_text_to_file_dbg"></span><span id="DDK_EDIT_WRITE_WINDOW_TEXT_TO_FILE_DBG"></span>
 
 
-单击**向文件写入窗口文本**上**编辑**菜单保存到文件活动的调试信息窗口中的所有文本。
+单击 "**编辑**" 菜单上的 "**将窗口文本写入文件**"，将 "活动调试信息" 窗口中的所有文本保存到文件中。
 
-此命令是活动窗口才可用[调试器命令窗口](debugger-command-window.md)，[调用窗口](calls-window.md)，或从头开始板。
+仅当活动窗口是 [调试器命令窗口](debugger-command-window.md)、 [调用窗口](calls-window.md)或暂存板时，此命令才可用。
 
-### <a name="span-iddialogboxspanspan-iddialogboxspandialog-box"></a><span id="dialog_box"></span><span id="DIALOG_BOX"></span>对话框
+### <a name="span-iddialog_boxspanspan-iddialog_boxspandialog-box"></a><span id="dialog_box"></span><span id="DIALOG_BOX"></span>对话框
 
-当您单击**写入到文件的 Windows 文本**，则**向文件写入窗口文本**对话框随即出现。 在此对话框中，输入你想要将窗口文本保存的文件的名称。 可以在浏览**将保存在**列出的目录，您想应用程序或选择你想要覆盖特定文件。 默认文件扩展名为.txt。
+单击 "将 **Windows 文本写入文件**" 时，将显示 "将 **窗口文本写入文件** " 对话框。 在此对话框中，输入要在其中保存窗口文本的文件的名称。 可以在 " **保存** 到" 列表中浏览到所需的目录，也可以选择要覆盖的特定文件。 默认文件扩展名为 .txt。
 
-单击**保存**以保存该文件，或单击**取消**退出。
+单击 " **保存** " 以保存文件，或单击 " **取消** " 退出。
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-有关如何选择的详细信息，将复制、 剪切和粘贴的文本和有关如何这些操作随窗口窗口，请参阅[剪切和粘贴文本](cutting-and-pasting-text.md)。
+有关如何选择、复制、剪切和粘贴文本的详细信息以及这些操作在窗口和窗口之间的变化，请参阅 [剪切和粘贴文本](cutting-and-pasting-text.md)。
 
  
 

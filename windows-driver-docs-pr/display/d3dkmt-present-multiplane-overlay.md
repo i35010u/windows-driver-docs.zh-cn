@@ -1,7 +1,6 @@
 ---
 title: D3DKMT \_ 存在 \_ MULTIPLANE \_ 覆盖结构
 description: 了解 D3DKMT 存在的 \_ \_ MULTIPLANE \_ 覆盖结构，该结构已保留供系统使用。 请勿在您的驱动程序中使用。
-ms.assetid: 2526ccce-826a-4e8f-ab15-639510b1d5cf
 keywords:
 - D3DKMT_PRESENT_MULTIPLANE_OVERLAY 结构显示设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 01/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: f38b6ce64ab50ad6eb4b5881586d229f083e2f13
-ms.sourcegitcommit: fc94eb0d5a41ef81c1b3ab91ad725386db0be0c2
+ms.openlocfilehash: 1643298f6c6499137362614ccb5bfcb9d83ea658
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91603637"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96819607"
 ---
 # <a name="d3dkmt_present_multiplane_overlay-structure"></a>D3DKMT \_ 存在 \_ MULTIPLANE \_ 覆盖结构
 
@@ -35,15 +34,15 @@ typedef struct D3DKMT_PRESENT_MULTIPLANE_OVERLAY {
     D3DKMT_HANDLE hDevice;
     D3DKMT_HANDLE hContext;
   };
-  ULONG                          BroadcastContextCount;
-  D3DKMT_HANDLE                  BroadcastContext[D3DDDI_MAX_BROADCAST_CONTEXT];
+  ULONG                          BroadcastContextCount;
+  D3DKMT_HANDLE                  BroadcastContext[D3DDDI_MAX_BROADCAST_CONTEXT];
   D3DDDI_VIDEO_PRESENT_SOURCE_ID VidPnSourceId;
-  UINT                           PresentCount;
-  D3DDDI_FLIPINTERVAL_TYPE       FlipInterval;
-  D3DKMT_PRESENTFLAGS            Flags;
-  UINT                           PresentPlaneCount;
-  D3DKMT_MULTIPLANE_OVERLAY      *pPresentPlanes;
-  UINT                           Duration;
+  UINT                           PresentCount;
+  D3DDDI_FLIPINTERVAL_TYPE       FlipInterval;
+  D3DKMT_PRESENTFLAGS            Flags;
+  UINT                           PresentPlaneCount;
+  D3DKMT_MULTIPLANE_OVERLAY      *pPresentPlanes;
+  UINT                           Duration;
 } D3DKMT_PRESENT_MULTIPLANE_OVERLAY;
 ```
 

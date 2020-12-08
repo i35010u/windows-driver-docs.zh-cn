@@ -1,16 +1,15 @@
 ---
 title: OID_GEN_MEDIA_CONNECT_STATUS
 description: 作为查询，OID_GEN_MEDIA_CONNECT_STATUS OID 请求网络上 NIC 的连接状态。
-ms.assetid: 3ed26e62-a285-4b78-91c6-7c3cc0963570
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_GEN_MEDIA_CONNECT_STATUS 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: db3d538db3d53163d8d92ae923e22d4bce168310
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: bf8eab2354f8cfd72368ae183da0ed14a3489c41
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89213853"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96820059"
 ---
 # <a name="oid_gen_media_connect_status"></a>OID \_ 生成 \_ 媒体 \_ 连接 \_ 状态
 
@@ -63,7 +62,7 @@ OID 生成 \_ \_ 媒体 \_ 连接 \_ 状态 OID 将网络上 NIC 的连接状态
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**NdisMCoIndicateStatusEx**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismcoindicatestatusex)

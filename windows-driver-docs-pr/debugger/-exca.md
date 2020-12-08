@@ -1,9 +1,8 @@
 ---
 title: exca
-description: Exca 扩展显示 PC 卡中断控制器 (PCIC) Exchangable 卡体系结构 (ExCA) 寄存器。
-ms.assetid: a395f7f3-0e1d-4f4c-80a1-018ca52a20fd
+description: Exca 扩展显示 PC-Card 中断控制器 (PCIC) Exchangable 卡体系结构 (ExCA) 寄存器。
 keywords:
-- PCIC （PC 卡中断控制器）
+- 'PCIC (PC 卡中断控制器) '
 - ExCA 寄存器
 - exca Windows 调试
 ms.date: 05/23/2017
@@ -14,32 +13,32 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 474a70bed6dda22d453db1b7b4c462d4ecaaaf43
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d5f9876f4291eeac6435d1cbc9363c4e82b0dc52
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63336750"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96820419"
 ---
 # <a name="exca"></a>!exca
 
 
-**！ Exca**扩展显示 PC 卡中断控制器 (PCIC) Exchangable 卡体系结构 (ExCA) 寄存器。
+**！ Exca** 扩展显示 PC-Card 中断控制器 (PCIC) Exchangable 卡体系结构 (exca) 寄存器。
 
 ```dbgcmd
 !exca BasePort.SocketNumber
 ```
 
-## <a name="span-idddkexcadbgspanspan-idddkexcadbgspanparameters"></a><span id="ddk__exca_dbg"></span><span id="DDK__EXCA_DBG"></span>参数
+## <a name="span-idddk__exca_dbgspanspan-idddk__exca_dbgspanparameters"></a><span id="ddk__exca_dbg"></span><span id="DDK__EXCA_DBG"></span>参数
 
 
-<span id="_______BasePort______"></span><span id="_______baseport______"></span><span id="_______BASEPORT______"></span> *BasePort*   
-指定 PCIC 的基本端口。
+<span id="_______BasePort______"></span><span id="_______baseport______"></span><span id="_______BASEPORT______"></span>*BasePort*   
+指定 PCIC 的基端口。
 
-<span id="_______SocketNumber______"></span><span id="_______socketnumber______"></span><span id="_______SOCKETNUMBER______"></span> *SocketNumber*   
-指定 PCIC ExCA 寄存器的套接字数。
+<span id="_______SocketNumber______"></span><span id="_______socketnumber______"></span><span id="_______SOCKETNUMBER______"></span>*SocketNumber*   
+指定 PCIC 上的 ExCA 寄存器的插槽号。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 <table>
 <colgroup>
@@ -61,11 +60,11 @@ Kext.dll Kdextx86.dll</td>
 
  
 
-**！ Exca**扩展功能仅适用于基于 x86 的目标计算机。
+**！ Exca** 扩展仅适用于基于 x86 的目标计算机。
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-[ **！ Cbreg** ](-cbreg.md)扩展可用于显示 CardBus 套接字寄存器和 CardBus ExCA 注册地址。
+[**！ Cbreg**](-cbreg.md)扩展可用于显示 Cardbus 套接字寄存器和 cardbus ExCA 按地址进行注册。
 
  
 

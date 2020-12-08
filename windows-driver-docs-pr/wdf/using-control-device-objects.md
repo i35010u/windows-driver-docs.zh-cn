@@ -1,7 +1,6 @@
 ---
 title: 使用控制设备对象
 description: 使用控制设备对象
-ms.assetid: 6367954f-6916-46df-a5a0-e80f045b69e5
 keywords:
 - 控制设备对象 WDK KMDF
 - 设备对象 WDK KMDF
@@ -15,17 +14,17 @@ keywords:
 - 命名 WDK KMDF，设备对象
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b90f295b375ee2ae7f925a618f827a57fa2ae32d
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 2d602a9155f924ed344dbc5dc67ab701f7ce0da8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90717458"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96821095"
 ---
 # <a name="using-control-device-objects"></a>使用控制设备对象
 
 
-*控制设备对象*是不支持即插即用 (PnP) 或电源管理操作的框架设备对象。 驱动程序可以使用控制设备对象来表示仅限软件的虚拟设备或 *旧式硬件设备* (即，不提供 PnP 或电源管理功能) 设备。
+*控制设备对象* 是不支持即插即用 (PnP) 或电源管理操作的框架设备对象。 驱动程序可以使用控制设备对象来表示仅限软件的虚拟设备或 *旧式硬件设备* (即，不提供 PnP 或电源管理功能) 设备。
 
 创建控制设备对象的驱动程序通常还会为设备对象创建一个符号链接。 应用程序可以通过将符号链接名称传递到 API 元素（例如 Microsoft Win32 [**CreateFile**](/windows/win32/api/fileapi/nf-fileapi-createfilea) 函数），将 i/o 请求发送到控制设备对象。
 
@@ -43,7 +42,7 @@ ms.locfileid: "90717458"
 
 2.  设备的驱动程序，该驱动程序不支持 PnP。
 
-    此类驱动程序必须使用控制设备对象，因为此类设备的设备对象不在设备堆栈中，也不提供 PnP 功能。 有关支持非 PnP 设备的详细信息，请参阅将 [内核模式驱动程序框架与非 Pnp 驱动程序配合使用](using-kernel-mode-driver-framework-with-non-pnp-drivers.md)。
+    此类驱动程序必须使用控制设备对象，因为此类设备的设备对象不在设备堆栈中，也不提供 PnP 功能。 有关支持非 PnP 设备的详细信息，请参阅将 [Kernel-Mode Driver Framework 与非 Pnp 驱动程序配合使用](using-kernel-mode-driver-framework-with-non-pnp-drivers.md)。
 
 ### <a name="creating-a-control-device-object"></a>创建控制设备对象
 
@@ -91,7 +90,7 @@ ms.locfileid: "90717458"
 
 如果你的驱动程序未调用 [**WdfDeviceInitAssignName**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceinitassignname) 来分配设备名称，则框架将自动生成控制设备的名称，但你的驱动程序无法调用 [**WdfDeviceCreateSymbolicLink**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicecreatesymboliclink)。
 
-驱动程序可以调用 [**WdfDeviceInitSetDeviceClass**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceinitsetdeviceclass) 来指定控制设备的 [设备安装程序类](../install/overview-of-device-setup-classes.md) 。 设备安装程序类标识注册表的部分，其中包含有关属于安装程序类的设备的管理员提供的信息。 有关调用 [**WdfDeviceInitSetDeviceClass**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceinitsetdeviceclass)的详细信息，请参阅 [在基于框架的驱动程序中控制设备访问](controlling-device-access-in-kmdf-drivers.md)。
+驱动程序可以调用 [**WdfDeviceInitSetDeviceClass**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceinitsetdeviceclass) 来指定控制设备的 [设备安装程序类](../install/overview-of-device-setup-classes.md) 。 设备安装程序类标识注册表的部分，其中包含有关属于安装程序类的设备的管理员提供的信息。 有关调用 [**WdfDeviceInitSetDeviceClass**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceinitsetdeviceclass)的详细信息，请参阅 [在 Framework-Based 驱动程序中控制设备访问](controlling-device-access-in-kmdf-drivers.md)。
 
 ### <a name="receiving-notification-of-system-shutdown"></a>接收系统关机通知
 

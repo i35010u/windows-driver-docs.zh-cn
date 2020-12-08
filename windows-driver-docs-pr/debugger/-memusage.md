@@ -1,7 +1,6 @@
 ---
 title: memusage
 description: Memusage 扩展显示有关物理内存使用情况的摘要统计信息。
-ms.assetid: 32796ada-53ee-465f-b284-db6ee5481878
 keywords:
 - memusage Windows 调试
 ms.date: 05/23/2017
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 43000e448c5f7a400eeaccfa73a8a6b832276a4f
-ms.sourcegitcommit: ca5045a739eefd6ed14b9dbd9249b335e090c4e9
+ms.openlocfilehash: 56cadf268bce5efe81d6db7a1e5f50043add4049
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/06/2020
-ms.locfileid: "85968302"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96820407"
 ---
 # <a name="memusage"></a>!memusage
 
 
-**！ Memusage**扩展显示有关物理内存使用情况的摘要统计信息。
+**！ Memusage** 扩展显示有关物理内存使用情况的摘要统计信息。
 
 语法
 
@@ -61,11 +60,11 @@ Kdexts.dll
 
 ### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-物理内存统计信息是从内存管理器的页面框架编号（PFN）数据库表中收集的。
+物理内存统计信息从内存管理器的页面框架编号 (PFN) 数据库表收集。
 
-此命令需要较长时间才能运行，特别是当目标计算机在64位模式下运行时，由于要获取的数据量更大，因此更是如此。 在加载 PFN 数据库时，计数器将显示其进度。 若要加快此加载速度，请使用[**CTRL + A （切换波特率）**](ctrl-a--toggle-baud-rate-.md)键增加 COM 端口速度，或使用[**Cache （设置缓存大小）**](-cache--set-cache-size-.md)命令增加缓存大小（可能为大约 10 MB）。
+此命令需要较长时间才能运行，特别是当目标计算机在64位模式下运行时，由于要获取的数据量更大，因此更是如此。 在加载 PFN 数据库时，计数器将显示其进度。 若要加快此加载速度，请使用 [**CTRL + A (切换波特率)**](ctrl-a--toggle-baud-rate-.md) 键，或使用 [**Cache (设置缓存大小)**](-cache--set-cache-size-.md) 命令增加缓存大小， (大约为 10 MB。
 
-执行[本地内核调试](performing-local-kernel-debugging.md)时，还可以使用 **！ memusage**命令。
+执行 [本地内核调试](performing-local-kernel-debugging.md)时，还可以使用 **！ memusage** 命令。
 
 下面是此扩展的输出示例：
 
@@ -132,12 +131,12 @@ Control Valid Standby Dirty Shared Locked PageTables  name
 --------     0      0     0 -----     0 -----  driver ( NonPaged Pool )
 ```
 
-第一列显示描述每个映射结构的控件区域结构的地址。 使用[**！ ca**](-ca.md) extension 命令显示这些控件区域。
+第一列显示描述每个映射结构的控件区域结构的地址。 使用 [**！ ca**](-ca.md) extension 命令显示这些控件区域。
 
 <a name="remarks"></a>备注
 -------
 
-可以使用[**！ vm**](-vm.md)扩展命令分析虚拟内存使用情况。 此扩展通常比 **！ memusage**更有用。 有关内存管理的详细信息，请参阅 Russinovich 和 David 所罗门群岛的*Microsoft Windows 内部机制*。 
+可以使用 [**！ vm**](-vm.md) 扩展命令分析虚拟内存使用情况。 此扩展通常比 **！ memusage** 更有用。 有关内存管理的详细信息，请参阅 Russinovich 和 David 所罗门群岛的 *Microsoft Windows 内部机制*。 
 
 [**！ Pfn**](-pfn.md) extension 命令可用于显示 pfn 数据库中的特定页面帧条目。
 

@@ -1,15 +1,14 @@
 ---
 title: 锁定规则集 (NDIS)
 description: 了解如何使用规则 (NDIS) 验证驱动程序是否正确管理共享资源，以及如何选择锁定规则集。
-ms.assetid: 1123A246-7833-4EAB-B1B8-0C71413CE86B
 ms.date: 05/21/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: d280c4cc78879d538180042071b5ba1a2ea2f30f
-ms.sourcegitcommit: 372464be981a39781c71049126f36891cb5d0cad
+ms.openlocfilehash: 4c366a0c40e6d941bb89f548c252a53b9785394f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91646109"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96819721"
 ---
 # <a name="locking-rule-set-ndis"></a>锁定规则集 (NDIS)
 
@@ -27,12 +26,12 @@ ms.locfileid: "91646109"
 <thead>
 <tr class="header">
 <th align="left">主题</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="ndis-spinlock.md" data-raw-source="[&lt;strong&gt;SpinLock&lt;/strong&gt;](ndis-spinlock.md)"><strong>旋转锁</strong></a></p></td>
+<td align="left"><p><a href="ndis-spinlock.md" data-raw-source="[&lt;strong&gt;SpinLock&lt;/strong&gt;](ndis-spinlock.md)"><strong>SpinLock</strong></a></p></td>
 <td align="left"><p><a href="ndis-spinlock.md" data-raw-source="[&lt;strong&gt;SpinLock&lt;/strong&gt;](ndis-spinlock.md)"><strong>旋转锁</strong></a>规则验证 NDIS 旋转锁定接口的正确使用。 此规则指定仅当旋转锁处于解锁状态时才对 <a href="/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisacquirespinlock" data-raw-source="[&lt;strong&gt;NdisAcquireSpinLock&lt;/strong&gt;](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisacquirespinlock)"><strong>NdisAcquireSpinLock</strong></a> 进行调用。 此规则还将验证旋转锁是否在微型端口处理程序例程退出之前被释放。</p></td>
 </tr>
 <tr class="even">
@@ -63,7 +62,7 @@ ms.locfileid: "91646109"
 
 2.  单击 " **规则** " 选项卡。在 " **规则集**" 下，选择 " **锁定**"。
 
-    若要从 Visual Studio 开发人员命令提示符窗口中选择默认规则集，请使用 **/check**选项指定**sdv** 。 例如：
+    若要从 Visual Studio 开发人员命令提示符窗口中选择默认规则集，请使用 **/check** 选项指定 **sdv** 。 例如：
 
     ```
     msbuild /t:sdv /p:Inputs="/check:Locking.sdv" mydriver.VcxProj /p:Configuration="Win8 Release" /p:Platform=Win32

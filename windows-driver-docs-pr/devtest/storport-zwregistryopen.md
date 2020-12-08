@@ -1,7 +1,6 @@
 ---
 title: 'ZwRegistryOpen 规则 (storport) '
 description: 此规则验证通过 ZwOpenKey 打开的注册表项的句柄以后是否可以由其他 ZwXxx 例程正确使用。
-ms.assetid: E423616B-C990-4D26-ABB4-6061BF3B6A21
 ms.date: 05/21/2018
 keywords:
 - 'ZwRegistryOpen 规则 (storport) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 879610b9523ab85757153bf9da7b7f95dfa775b0
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 26fdf7ed97d969c8918d69554eaf52aaa64a8ee6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102818"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96820852"
 ---
 # <a name="zwregistryopen-rule-storport"></a>ZwRegistryOpen 规则 (storport) 
 
 
-此规则验证通过 **ZwOpenKey** 打开的注册表项的句柄以后是否可以由其他 ZwXxx 例程正确使用。 不能在未打开的句柄上调用例程 **ZwEnumerateKey**、 **ZwEnumerateValueKey**、 **ZwFlushKey**、 **ZwQueryKey**、 **ZwQueryValueKey**、 **ZwSetValueKey**、 **ZwClose**和 **ZwDeleteKey** 。 还必须在返回前关闭句柄。
+此规则验证通过 **ZwOpenKey** 打开的注册表项的句柄以后是否可以由其他 ZwXxx 例程正确使用。 不能在未打开的句柄上调用例程 **ZwEnumerateKey**、 **ZwEnumerateValueKey**、 **ZwFlushKey**、 **ZwQueryKey**、 **ZwQueryValueKey**、 **ZwSetValueKey**、 **ZwClose** 和 **ZwDeleteKey** 。 还必须在返回前关闭句柄。
 
 **驱动程序模型： Storport**
 
