@@ -1,31 +1,30 @@
 ---
 title: 视频端口 VBI 类别
 description: 视频端口 VBI 类别
-ms.assetid: 99a4d204-45af-4b73-8d31-d745387a38ac
 keywords:
-- 流类别 WDK 视频捕获，视频端口 VBI
-- 视频端口 VBI 类别 WDK 视频捕获
+- 流类别 WDK 视频捕获，videoport VBI
+- videoport VBI
 - VBI WDK 视频捕获
-- 消隐 WDK 视频捕获
+- 垂直消隐间隔 WDK 视频捕获
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 087b262ac037b362e7236a954840b42fe23992d1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: bd6059dc1fd607db4c4d56946d8491ee45bcc5f7
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63329955"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96806597"
 ---
 # <a name="videoport-vbi-category"></a>视频端口 VBI 类别
 
 
-以下 GUID 对应的视频端口垂直-消隐功能的时间间隔 (VBI) 类别：
+以下 GUID 对应于视频端口垂直-消隐间隔 (VBI) 类别：
 
--   **PINNAME\_VIDEO\_VIDEOPORT\_VBI**
+-   **PINNAME \_ VIDEO \_ VIDEOPORT \_ VBI**
 
-    视频端口 VBI 类别 pin 将从模拟解码器 VBI 流传输直接到硬件连接 DirectDraw 图面。
+    Videoport VBI 类别 pin 通过硬件连接从模拟解码器直接传输 VBI 流到 DirectDraw 表面。
 
-指定时**PINNAME\_视频\_视频端口\_VBI**插针，使用下表中列出的信息。
+指定 **PINNAME \_ VIDEO \_ VIDEOPORT \_ VBI** 引脚时，请使用下表中列出的信息。
 
 <table>
 <colgroup>
@@ -34,7 +33,7 @@ ms.locfileid: "63329955"
 </colgroup>
 <thead>
 <tr class="header">
-<th>特性</th>
+<th>Attribute</th>
 <th>值</th>
 </tr>
 </thead>
@@ -52,7 +51,7 @@ ms.locfileid: "63329955"
 <td><p>KSDATAFORMAT_TYPE_VIDEO</p></td>
 </tr>
 <tr class="even">
-<td><p><strong>子设置的 GUID 格式</strong></p></td>
+<td><p><strong>子格式 GUID</strong></p></td>
 <td><p>KSDATAFORMAT_SUBTYPE_VPVBIVideo</p></td>
 </tr>
 <tr class="odd">
@@ -60,15 +59,15 @@ ms.locfileid: "63329955"
 <td><p>KSDATAFORMAT_SPECIFIER_NONE</p></td>
 </tr>
 <tr class="even">
-<td><p><strong>扩展标头大小</strong></p></td>
+<td><p><strong>扩展的标头大小</strong></p></td>
 <td><p>0</p></td>
 </tr>
 <tr class="odd">
-<td><p><strong>所需的属性集</strong></p></td>
+<td><p><strong>必需的属性集</strong></p></td>
 <td><p>KSPROPSETID_VPVBIConfig</p></td>
 </tr>
 <tr class="even">
-<td><p><strong>所需的事件集</strong></p></td>
+<td><p><strong>必需的事件集</strong></p></td>
 <td><p>KSEVENTSETID_VPVBINotify</p></td>
 </tr>
 <tr class="odd">

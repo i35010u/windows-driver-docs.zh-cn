@@ -1,7 +1,6 @@
 ---
 title: CM_Merge_Range_List
 description: CM_Merge_Range_List
-ms.assetid: 168d2b63-dff9-4a08-adce-41f9fe739094
 keywords:
 - CM_Merge_Range_List 设备和驱动程序安装
 topic_type:
@@ -12,13 +11,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 9ec3beb19bfabcc3641533fe4d7910a7ef07aca1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 66195b20aaea8ebfc745291beea4f9fafa7355e5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63361912"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96806295"
 ---
-# <a name="cmmergerangelist"></a>CM_Merge_Range_List
+# <a name="cm_merge_range_list"></a>CM_Merge_Range_List
 
 此函数保留供系统使用。

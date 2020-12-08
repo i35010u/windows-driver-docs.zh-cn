@@ -1,19 +1,18 @@
 ---
 title: 基于软件的 DVD 解码
 description: 基于软件的 DVD 解码
-ms.assetid: 23181ace-563b-4920-b4c3-4fc4452a10b3
 keywords:
-- DVD 解码器微型驱动程序 WDK、 基于软件的 DVD 解码
+- DVD 解码器微型驱动程序 WDK，基于软件的 DVD 解码
 - 解码器微型驱动程序 WDK DVD，基于软件的 DVD 解码
 - 基于软件的 DVD 解码 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dd9dc9e598ab1d60c8b8ddee94abb5051514b043
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b00761e000db220e1180c1edc97f4ccff553f393
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327447"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96806619"
 ---
 # <a name="software-based-dvd-decoding"></a>基于软件的 DVD 解码
 
@@ -21,11 +20,11 @@ ms.locfileid: "63327447"
 
 
 
-下图演示了完全基于软件的 DVD 解码和播放解决方案，目前比基于硬件的 DVD 解码和播放更常见的。
+下图演示了一个完全基于软件的 DVD 解码和播放解决方案，该解决方案目前比基于硬件的 DVD 解码和播放更为常见。
 
-白色框表示由 Microsoft 提供的软件和阴影的框表示由软件供应商提供的组件。 椭圆代表由 Ihv 和 Oem 提供的硬件。
+白色方框表示由 Microsoft 提供的软件，灰色框表示软件供应商提供的组件。 这些椭圆代表由 Ihv 和 Oem 提供的硬件。
 
-![说明软件 dvd 解码解决方案的关系图](images/swdvddec.png)
+![阐释软件 dvd 解码解决方案的示意图](images/swdvddec.png)
 
  
 

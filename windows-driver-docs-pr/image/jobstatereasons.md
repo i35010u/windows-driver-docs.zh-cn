@@ -1,9 +1,8 @@
 ---
 title: JobStateReasons 元素
-description: 所需的 JobStateReasons 元素包含有关作业处于其当前状态的所有其他信息。
-ms.assetid: 52d6519e-2392-4fa4-bac0-f1bf60eccc99
+description: 必需的 JobStateReasons 元素包含有关作业处于其当前状态的所有其他信息。
 keywords:
-- JobStateReasons 元素成像设备
+- JobStateReasons 元素图像设备
 topic_type:
 - apiref
 api_name:
@@ -12,19 +11,19 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9b469b2b198fa6cc45a62f7a2a41f1072985a794
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1c6c8015bbdc7d7353f4c28a0dcdd757b0af587d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63363061"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96805585"
 ---
 # <a name="jobstatereasons-element"></a>JobStateReasons 元素
 
 
-所需**JobStateReasons**元素包含有关作业处于其当前状态的所有其他信息。
+必需的 **JobStateReasons** 元素包含有关作业处于其当前状态的所有其他信息。
 
-<a name="usage"></a>用法
+<a name="usage"></a>使用情况
 -----
 
 ```xml
@@ -82,7 +81,7 @@ ms.locfileid: "63363061"
 <a name="remarks"></a>备注
 -------
 
-**JobStateReasons**元素包含一系列[ **JobStateReason** ](jobstatereason.md)元素，其中每个指定作业处于其当前状态的一个原因。
+**JobStateReasons** 元素包含一个 [**JobStateReason**](jobstatereason.md)元素列表，其中每个元素都指定了一个作业处于其当前状态的原因。
 
 ## <a name="see-also"></a>请参阅
 

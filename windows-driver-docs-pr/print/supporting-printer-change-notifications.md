@@ -1,7 +1,6 @@
 ---
 title: 支持打印机更改通知
 description: 支持打印机更改通知
-ms.assetid: e75c6f89-9cef-4900-af89-edf1f7f786c7
 keywords:
 - 打印提供程序 WDK，打印机更改通知
 - 网络打印提供程序 WDK，打印机更改通知
@@ -11,12 +10,12 @@ keywords:
 - 打印队列 WDK，打印机更改通知
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b6488a80a6aac45a3cf241dc57ef1d1546b7394c
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 3068bfbbc548d137096bd7df783e8528043a8808
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89211961"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96806799"
 ---
 # <a name="supporting-printer-change-notifications"></a>支持打印机更改通知
 
@@ -24,7 +23,7 @@ ms.locfileid: "89211961"
 
 
 
-应用程序可以通过调用后台处理程序的 **FindFirstPrinterChangeNotification**、 **FindNextPrinterChangeNotification**和 **FindClosePrinterChangeNotification** 函数来请求出现打印队列事件的通知，Microsoft Windows SDK 文档中介绍了所有这些功能。 如果你认为应用程序编写器将需要为部分打印提供程序支持的打印队列请求事件通知，则必须在提供程序中支持事件通知，如下所示：
+应用程序可以通过调用后台处理程序的 **FindFirstPrinterChangeNotification**、 **FindNextPrinterChangeNotification** 和 **FindClosePrinterChangeNotification** 函数来请求出现打印队列事件的通知，Microsoft Windows SDK 文档中介绍了所有这些功能。 如果你认为应用程序编写器将需要为部分打印提供程序支持的打印队列请求事件通知，则必须在提供程序中支持事件通知，如下所示：
 
 -   提供 [**FindFirstPrinterChangeNotification**](/windows-hardware/drivers/ddi/winspool/nf-winspool-findfirstprinterchangenotification) 函数。
 
@@ -38,11 +37,11 @@ ms.locfileid: "89211961"
 
      (请注意，在提供程序级别，此函数具有与 Win32 级别不同的参数。 ) 
 
--   跟踪应用程序在调用 **FindFirstPrinterChangeNotification**时指定的所有打印队列事件。
+-   跟踪应用程序在调用 **FindFirstPrinterChangeNotification** 时指定的所有打印队列事件。
 
      (，以获取应用程序可以请求的通知类型的列表，以及有关可用于描述事件的信息类型的列表，请参阅 Win32 **FindFirstPrinterChangeNotification** 函数的 Windows SDK 文档说明。 应用程序可能请求通知的事件类型，包括添加或删除打印作业或窗体。 应用程序可能请求的信息类型包括作业或窗体参数。 ) 
 
-    在发生更改时，不轮询的打印提供程序必须调用 [**PartialReplyPrinterChangeNotification**](/windows-hardware/drivers/ddi/winsplp/nf-winsplp-partialreplyprinterchangenotification) 或 [**ReplyPrinterChangeNotification**](/windows-hardware/drivers/ddi/winsplp/nf-winsplp-replyprinterchangenotification) ，以便为后台处理程序提供描述更改的信息。 必须在某个时间点调用 **ReplyPrinterChangeNotification** 函数，因为它会导致后台处理程序对应用程序发出信号，而 **PartialReplyPrinterChangeNotification** 函数则不会。 当应用程序从 **ReplyPrinterChangeNotification**收到信号时，应调用 **FindNextPrinterChangeNotification**。 后一种函数为应用程序提供了以前从打印提供程序收到的事件信息。
+    在发生更改时，不轮询的打印提供程序必须调用 [**PartialReplyPrinterChangeNotification**](/windows-hardware/drivers/ddi/winsplp/nf-winsplp-partialreplyprinterchangenotification) 或 [**ReplyPrinterChangeNotification**](/windows-hardware/drivers/ddi/winsplp/nf-winsplp-replyprinterchangenotification) ，以便为后台处理程序提供描述更改的信息。 必须在某个时间点调用 **ReplyPrinterChangeNotification** 函数，因为它会导致后台处理程序对应用程序发出信号，而 **PartialReplyPrinterChangeNotification** 函数则不会。 当应用程序从 **ReplyPrinterChangeNotification** 收到信号时，应调用 **FindNextPrinterChangeNotification**。 后一种函数为应用程序提供了以前从打印提供程序收到的事件信息。
 
     轮询的打印提供程序只应跟踪更改。 后台处理程序会定期通知应用程序。 当应用程序收到信号时，应调用后台处理程序的 **FindNextPrinterChangeNotification** 函数。 对于轮询式提供程序，此函数将调用提供程序的 **RefreshPrinterChangeNotification** 函数。
 

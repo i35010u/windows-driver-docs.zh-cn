@@ -1,7 +1,6 @@
 ---
 title: 替换驱动程序提供的属性表页
 description: 替换驱动程序提供的属性表页
-ms.assetid: b7f79841-f82c-4a60-9c2f-58772a65a5eb
 keywords:
 - 用户界面插件 WDK 打印，属性表页面
 - UI 插件 WDK 打印，属性表单页面
@@ -14,12 +13,12 @@ keywords:
 - 粘滞属性 WDK 打印
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f4fd544886c53ed2b3c0426536acbb271bd0d066
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 67ae267ab79c403f0d6cd7f498ae1a799239bf4e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89215728"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96807039"
 ---
 # <a name="replacing-driver-supplied-property-sheet-pages"></a>替换驱动程序提供的属性表页
 
@@ -43,7 +42,7 @@ ms.locfileid: "89215728"
 
 核心驱动程序会记住它处理 (的属性表类型，因此，模式--文档粘滞或打印机粘滞) 。 核心驱动程序将该状态信息保存在结构 () 为 UI 实例创建的 [**OEMUIOBJ**](/windows-hardware/drivers/ddi/printoem/ns-printoem-_oemuiobj) 结构。 当核心驱动程序调用插件的接口方法时，它会传递一个指向 OEMUIOBJ 结构的指针，以便当插件从 [**IPrintCoreUI2：： EnumConstrainedOptions**](/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintcoreui2-enumconstrainedoptions)、 [**IPrintCoreUI2：： GetOptions**](/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintcoreui2-getoptions)、 [**IPrintCoreUI2：： SetOptions**](/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintcoreui2-setoptions)或 [**IPrintCoreUI2：： WhyConstrained**](/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintcoreui2-whyconstrained)返回到核心驱动程序时，这些方法会将指针传递回核心驱动程序，然后它便能够确定模式。
 
-对于 **IPrintCoreUI2：： EnumConstrainedOptions**、 **IPrintCoreUI2：： SetOptions**和 **IPrintCoreUI2：： WhyConstrained**，在执行 **IPrintOemUI：:D ocumentpropertysheets** 或其属性表回调例程期间仅支持文档粘滞功能，并且在执行 **IPrintOemUI：:D evicepropertysheets** 或其属性表回调例程期间仅支持打印机粘滞功能。 对于 **IPrintCoreUI2：： SetOptions**，应忽略与当前粘滞模式不匹配的任何功能。 当对其粘性与当前粘滞模式不匹配的功能调用 **IPrintCoreUI2：： EnumConstrainedOptions** 或 **IPrintCoreUI2：： WhyConstrained** 时，该方法应返回 E \_ INVALIDARG。
+对于 **IPrintCoreUI2：： EnumConstrainedOptions**、 **IPrintCoreUI2：： SetOptions** 和 **IPrintCoreUI2：： WhyConstrained**，在执行 **IPrintOemUI：:D ocumentpropertysheets** 或其属性表回调例程期间仅支持文档粘滞功能，并且在执行 **IPrintOemUI：:D evicepropertysheets** 或其属性表回调例程期间仅支持打印机粘滞功能。 对于 **IPrintCoreUI2：： SetOptions**，应忽略与当前粘滞模式不匹配的任何功能。 当对其粘性与当前粘滞模式不匹配的功能调用 **IPrintCoreUI2：： EnumConstrainedOptions** 或 **IPrintCoreUI2：： WhyConstrained** 时，该方法应返回 E \_ INVALIDARG。
 
 对于 [**IPrintCoreUI2：： GetOptions**](/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintcoreui2-getoptions)，文档粘滞模式支持文档粘滞和打印机粘滞功能 (即，当 [**IPrintOemUI：:D ocumentpropertysheets**](/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintoemui-documentpropertysheets) 或其属性表回调例程正在) 运行时，仅当 [**IPrintOemUI：:D evicepropertysheets**](/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintoemui-devicepropertysheets) 或其属性表回调例程正在运行时，才支持打印机粘滞模式 (。
 

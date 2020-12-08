@@ -1,15 +1,14 @@
 ---
 title: JSConstraintsDebug
 description: 'JSConstraintsDebug ( # A0) 是一个命令行工具，用于在开发 V4 打印机驱动程序时为 JavaScript 约束提供调试支持。'
-ms.assetid: 48C39A2C-7EA6-4BAA-B5E8-3B426C9697B3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8580de1fc8b86a89856d69cb6477ca09c0b33be9
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 0c6522607190b598583ca82854b08e4079afe19a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90715216"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96806483"
 ---
 # <a name="jsconstraintsdebug"></a>JSConstraintsDebug
 
@@ -67,7 +66,7 @@ JSConstraintsDebug ( # A0) 是一个命令行工具，用于在开发[V4 打印�
 <tbody>
 <tr class="odd">
 <td align="left"><p>项名称</p></td>
-<td align="left"><p>HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Control\Print</p></td>
+<td align="left"><p>HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Print</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>值名称</p></td>
@@ -78,7 +77,7 @@ JSConstraintsDebug ( # A0) 是一个命令行工具，用于在开发[V4 打印�
 <td align="left"><p>DWORD</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>值</p></td>
+<td align="left"><p>“值”</p></td>
 <td align="left"><p>1</p></td>
 </tr>
 </tbody>
@@ -145,7 +144,7 @@ JSConstraintsDebug <PrinterName> <PrintTicket> [MergePrintTicket] [Constraints]
 
  
 
-**注意**   使用约束参数指定约束文件将覆盖目标驱动程序中的现有源代码。
+**注意**  使用约束参数指定约束文件将覆盖目标驱动程序中的现有源代码。
 
  
 

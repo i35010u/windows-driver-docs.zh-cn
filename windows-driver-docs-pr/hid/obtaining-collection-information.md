@@ -1,18 +1,17 @@
 ---
 title: 获取集合信息
 description: 获取集合信息
-ms.assetid: 0568993b-ff50-48ac-a875-95ab643d6c28
 keywords:
-- WDK HID，收集的信息的集合
-- HID 的集合 WDK，收集的信息
+- 集合 WDK HID，信息收集
+- HID 集合 WDK，信息收集
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 871aa3a668e7554dbb7002a313d2963c67067b60
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d60dc7e4aa47e53cc6e5f5f4a15d0aef922ac349
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63346190"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96805603"
 ---
 # <a name="obtaining-collection-information"></a>获取集合信息
 
@@ -20,19 +19,19 @@ ms.locfileid: "63346190"
 
 
 
-本部分讲述获取用户模式应用程序和内核模式驱动程序使用来操作的信息[HID 集合](hid-collections.md)。
+本部分介绍用户模式的应用程序和内核模式驱动程序用来操作 [HID 集合](hid-collections.md)的信息。
 
-将应用程序或驱动程序已连接到 HID 集合后，它可以获取以下信息：
+在应用程序或驱动程序连接到 HID 集合后，它可以获取以下信息：
 
 -   [集合的功能](collection-capability.md)。
 
--   [按钮功能数组](button-capability-arrays.md)并[值功能数组](value-capability-arrays.md)，其中描述的按钮和值集合支持的功能。
+-   [按钮功能数组](button-capability-arrays.md) 和 [值功能数组](value-capability-arrays.md)，用于描述集合支持的按钮和值的功能。
 
--   说明如何组织内部的链接集合数组及其[将集合链接](link-collections.md)。
+-   链接集合数组，描述其 [链接集合](link-collections.md)的内部组织。
 
-此信息包括[HID 用法](hid-usages.md)的集合和集合支持的所有控件。 如果应用程序或驱动程序不使用这些控件，它应立即关闭其连接到的集合。
+此信息包括集合和集合支持的所有控件的 [HID 使用情况](hid-usages.md) 。 如果应用程序或驱动程序不使用这些控件，它应立即关闭与集合的连接。
 
-获取此信息后, 的应用程序或驱动程序具有所需访问 HID 报表中的控件数据的信息。
+获取此信息后，应用程序或驱动程序具有访问 HID 报表中的控件数据所需的信息。
 
  
 

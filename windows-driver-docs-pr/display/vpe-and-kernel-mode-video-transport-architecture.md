@@ -1,7 +1,6 @@
 ---
 title: VPE 和内核模式视频传输体系结构
 description: VPE 和内核模式视频传输体系结构
-ms.assetid: 7264932a-7fe9-4ffe-bd25-b5cd605739fa
 keywords:
 - 绘制内核模式视频传输 WDK DirectDraw、体系结构
 - DirectDraw 内核模式视频传输 WDK Windows 2000 显示，体系结构
@@ -10,12 +9,12 @@ keywords:
 - 视频捕获 WDK 视频传输内核模式
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 366b695032ab601d3014a1493f6e40f95acd895a
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 18331a9d069698da38e0efa2e4ae2e654debd060
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89066306"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96806337"
 ---
 # <a name="vpe-and-kernel-mode-video-transport-architecture"></a>VPE 和内核模式视频传输体系结构
 
@@ -35,7 +34,7 @@ ms.locfileid: "89066306"
 
 上图显示了与其他内核模式和用户模式组件相关的内核模式视频传输体系结构， (虚线表示内核转换) 。 在此体系结构中，DirectShow (或其他用户模式客户端) 调用 [IDirectDrawKernel](/windows-hardware/drivers/ddi/index) 和 [IDirectDrawSurfaceKernel](/windows-hardware/drivers/ddi/index) DirectDraw COM 接口，以获取 DirectDraw 对象和 surface 对象的句柄。
 
-**注意**   此体系结构还支持在 MPEG 设备和 VGA 设备之间使用 PCI 总线进行数据流。
+**注意**   此体系结构还支持在 MPEG 设备和 VGA 设备之间使用 PCI 总线进行数据流。
 
  
 

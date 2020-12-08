@@ -1,7 +1,6 @@
 ---
 title: ndiskd.nblpool
 description: Ndiskd. nblpool 扩展显示 NET_BUFFER_LIST (NBL) 池的相关信息。 如果运行不带任何参数的此扩展，则 ndiskd 会在系统中显示所有已分配的 NBL 池的列表。
-ms.assetid: 78F8E45C-D13D-4628-A387-529291B4C50C
 keywords:
 - ndiskd nblpool Windows 调试
 ms.date: 05/23/2017
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: d454e1d0f17445af2284831807d5704f89a33b77
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 67588a58bcbb69c4437ddbfba9d8a4012159a3f1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89216758"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96805841"
 ---
 # <a name="ndiskdnblpool"></a>!ndiskd.nblpool
 
 
-**！ Ndiskd nblpool** (NBL) 池显示有关[**网络 \_ 缓冲区 \_ 列表**](../network/net-buffer-list-structure.md)的信息。 如果运行不带参数的此扩展，！ ndiskd 将显示系统中已分配的所有 NBL 池的列表。
+**！ Ndiskd nblpool** (NBL) 池显示有关 [**网络 \_ 缓冲区 \_ 列表**](../network/net-buffer-list-structure.md)的信息。 如果运行不带参数的此扩展，！ ndiskd 将显示系统中已分配的所有 NBL 池的列表。
 
 ```console
 !ndiskd.nblpool [-handle <x>] [-basic] [-allocations] [-find <str>] [-findnb <str>] 
@@ -167,7 +166,7 @@ ALL ALLOCATED NBLs
 
 [调试网络堆栈](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-175-Debugging-the-Network-Stack)
 
-[**NDIS 扩展 ( # A0) **](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 扩展 ( # A0)**](ndis-extensions--ndiskd-dll-.md)
 
 [**!ndiskd.help**](-ndiskd-help.md)
 

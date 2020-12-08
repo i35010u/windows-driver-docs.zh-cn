@@ -4,15 +4,14 @@ description: 描述 V4 打印驱动程序的打印机双向 (双向) 通信接�
 MSHAttr:
 - PreferredSiteName:MSDN
 - PreferredLib:/library/windows/hardware
-ms.assetid: AFFBA568-7756-4D33-9E14-83A3373A4DC6
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9c1e16bd54395251267a049a6c99dc6974395dfb
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 8f9d1226411ffe9b7fba76e6d22edecd19de60a5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89214202"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96807369"
 ---
 # <a name="printer-bidi-interfaces"></a>打印机双向接口
 

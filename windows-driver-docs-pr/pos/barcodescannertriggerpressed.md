@@ -1,21 +1,20 @@
 ---
 title: BarcodeScannerTriggerPressed
-description: 条形码扫描程序触发器按下时，将发生 BarcodeScannerTriggerPressed 事件。
-ms.assetid: 6f0a373f-bf3f-4201-9430-3474f84b9037
+description: 按下条形码扫描器触发器时，将发生 BarcodeScannerTriggerPressed 事件。
 ms.date: 09/07/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 9f43c8a74e6aebfc6fe81e8cca92677889f740d8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4a1f6e5f173a1c239c0c894b40f48a95ec05822a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63358667"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96806019"
 ---
 # <a name="barcodescannertriggerpressed"></a>BarcodeScannerTriggerPressed
 
-条形码扫描程序触发器按下时，将发生此事件。
+按下条形码扫描器触发器时发生此事件。
 
-此事件的数据缓冲区是按如下所示。
+此事件的数据缓冲区如下所示。
 
 ## <a name="syntax"></a>语法
 
@@ -30,13 +29,13 @@ typedef struct _PosEventDataHeader
 } PosEventDataHeader;
 ```
 
-下表显示了此事件的数据缓冲区的内存布局。
+下表显示此事件的数据缓冲区的内存布局。
 
 | 内存值          | 描述                                                               |
 |-----------------------|---------------------------------------------------------------------------|
-| 0x00000003 | **EventType** = **PosEventType::BarcodeScannerTriggerPressed** |
-| 0x00000008 | sizeof(**PosEventDataHeader**)                                 |
+| 0x00000003 | **事件**  = **PosEventType：： BarcodeScannerTriggerPressed** |
+| 0x00000008 | sizeof (**PosEventDataHeader**)                                  |
 
 ## <a name="requirements"></a>要求
 
-**标头：** pointofservicedriverinterface.h
+**标头：** pointofservicedriverinterface

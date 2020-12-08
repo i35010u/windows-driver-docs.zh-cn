@@ -1,19 +1,18 @@
 ---
 title: 伪矢量图形支持
 description: 伪矢量图形支持
-ms.assetid: 8eeba51b-00fa-4bf3-a78c-ac1d1adc9696
 keywords:
 - 矢量图形 WDK Unidrv，pseudovector 图形
 - pseudovector 图形 WDK Unidrv
 - nonvector 图形设备 WDK Unidrv
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b6968e96485fdfcd3ed092c532c15c6f5f83569c
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 5863841e662a16c2e8aebdad84372cb76b9cf2bf
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89216324"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96807117"
 ---
 # <a name="pseudo-vector-graphics-support"></a>伪矢量图形支持
 

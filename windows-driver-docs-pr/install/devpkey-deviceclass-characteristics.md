@@ -1,7 +1,6 @@
 ---
 title: DEVPKEY_DeviceClass_Characteristics
 description: DEVPKEY_DeviceClass_Characteristics
-ms.assetid: dd50a97b-7230-46a5-b6d2-0f741d7ae5d4
 keywords:
 - DEVPKEY_DeviceClass_Characteristics 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 33498f42d3f85283d17cc1a6ded2c57abdb183cd
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: aae340bb87a2dfc70486224cc644ef8c76532a3d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90715588"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96805523"
 ---
 # <a name="devpkey_deviceclass_characteristics"></a>DEVPKEY_DeviceClass_Characteristics
 
@@ -66,7 +65,7 @@ DEVPKEY_DeviceClass_Characteristics 设备属性表示 [设备安装程序类](.
 <a name="remarks"></a>备注
 -------
 
-仅当安装了设备安装程序类而不是稍后进行修改时，才应设置 DEVPKEY_DeviceClass_Characteristics。 有关如何安装设备安装程序类和设置此属性的信息，请参阅[**Inf ClassInstall32 部分**](./inf-classinstall32-section.md)和有关注册表项值**DeviceCharacteristics**的信息，请参阅[**Inf AddReg 指令**](./inf-addreg-directive.md)的 "特殊的*值-名称*关键字" 部分。
+仅当安装了设备安装程序类而不是稍后进行修改时，才应设置 DEVPKEY_DeviceClass_Characteristics。 有关如何安装设备安装程序类和设置此属性的信息，请参阅 [**Inf ClassInstall32 部分**](./inf-classinstall32-section.md)和有关注册表项值 **DeviceCharacteristics** 的信息，请参阅 [**Inf AddReg 指令**](./inf-addreg-directive.md)的 "特殊的 *值-名称* 关键字" 部分。
 
 可以调用 [**SetupDiGetClassProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdigetclasspropertyw) 或 [**SetupDiGetClassPropertyEx**](/windows/win32/api/setupapi/nf-setupapi-setupdigetclasspropertyexw) 来检索 DEVPKEY_DeviceClass_Characteristics 的值。
 

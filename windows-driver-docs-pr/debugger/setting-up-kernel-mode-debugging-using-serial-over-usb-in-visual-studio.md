@@ -1,15 +1,14 @@
 ---
-title: 在 Visual Studio 中使用带 Cove 开发板设置内核模式调试
-description: 本主题介绍如何在 Visual Studio 中使用带 Cove 开发板设置内核模式调试 USB。
-ms.assetid: D909CA2C-3870-4521-8F23-FBF93738F338
+title: 在 Visual Studio 中使用带 Cove 开发板设置 Kernel-Mode 调试
+description: 本主题介绍如何在 Visual Studio 中使用带 Cove 开发板设置 Kernel-Mode 调试 USB。
 ms.date: 04/10/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: d996682706f4168e198c128225513df856a0873c
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 27b05815a7ad1e49d45a093854562c69e627156c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89212223"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96805749"
 ---
 # <a name="span-iddebuggersetting_up_kernel-mode_debugging_using_serial_over_usb_in_visual_studiospansetting-up-kernel-mode-debugging-using-serial-over-usb-in-visual-studio"></a><span id="debugger.setting_up_kernel-mode_debugging_using_serial_over_usb_in_visual_studio"></span>在 Visual Studio 中设置使用串行端口通过 USB 进行的内核模式调试
 
@@ -68,26 +67,26 @@ ms.locfileid: "89212223"
 
 ### <a name="span-idspecify_correct_com_port_on_both_host_and_targetspanspan-idspecify_correct_com_port_on_both_host_and_targetspanspan-idspecify_correct_com_port_on_both_host_and_targetspanspecify-correct-com-port-on-both-host-and-target"></a><span id="Specify_correct_COM_port_on_both_host_and_target"></span><span id="specify_correct_com_port_on_both_host_and_target"></span><span id="SPECIFY_CORRECT_COM_PORT_ON_BOTH_HOST_AND_TARGET"></span>指定主机和目标上的正确 COM 端口
 
-在目标计算机上 (带 Cove 板) 上，验证是否正在使用 COM1 进行调试。 以管理员身份打开命令提示符窗口，然后输入 **bcdedit/dbgsettings**。 **Bcdedit**的输出应显示 `debugport 1` 。
+在目标计算机上 (带 Cove 板) 上，验证是否正在使用 COM1 进行调试。 以管理员身份打开命令提示符窗口，然后输入 **bcdedit/dbgsettings**。 **Bcdedit** 的输出应显示 `debugport 1` 。
 
 在主计算机上，验证你是否正在使用之前在设备管理器中记下的 COM 端口。
 
 1.  在主计算机上，在 Visual Studio 的“驱动程序”  菜单中，选择“测试”&gt;“配置计算机”  。
 2.  选择测试计算机的名称，然后单击 " **下一步**"。
-3.  选择 " **设置计算机" 并选择 "调试器设置**"。 单击“配置目录分区”  。
+3.  选择 " **设置计算机" 并选择 "调试器设置**"。 单击 **“下一步”** 。
 4.  验证是否为 " **端口**" 列出了正确的 COM 端口号。
 
 ### <a name="span-idbaud_rate_must_be_the_same_on_host_and_targetspanspan-idbaud_rate_must_be_the_same_on_host_and_targetspanspan-idbaud_rate_must_be_the_same_on_host_and_targetspanbaud-rate-must-be-the-same-on-host-and-target"></a><span id="Baud_rate_must_be_the_same_on_host_and_target"></span><span id="baud_rate_must_be_the_same_on_host_and_target"></span><span id="BAUD_RATE_MUST_BE_THE_SAME_ON_HOST_AND_TARGET"></span>主机和目标上的波特率必须相同
 
 主机和目标计算机上的波特率必须为115200。
 
-在目标计算机上 (带 Cove 板 ") 上，以管理员身份打开命令提示符窗口，然后输入 **bcdedit/dbgsettings**。 **Bcdedit**的输出应显示 `baudrate 115200` 。
+在目标计算机上 (带 Cove 板 ") 上，以管理员身份打开命令提示符窗口，然后输入 **bcdedit/dbgsettings**。 **Bcdedit** 的输出应显示 `baudrate 115200` 。
 
 在主计算机上，验证是否使用的波特率为115200。
 
 1.  在主计算机上，在 Visual Studio 的“驱动程序”  菜单中，选择“测试”&gt;“配置计算机”  。
 2.  选择测试计算机的名称，然后单击 " **下一步**"。
-3.  选择 " **设置计算机" 并选择 "调试器设置**"。 单击“配置目录分区”  。
+3.  选择 " **设置计算机" 并选择 "调试器设置**"。 单击 **“下一步”** 。
 4.  验证 **波特率** 是否为115200。
 
 ## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题

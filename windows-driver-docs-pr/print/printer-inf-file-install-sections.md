@@ -1,19 +1,18 @@
 ---
 title: 打印机 INF 文件的 Install 节
 description: 打印机 INF 文件的 Install 节
-ms.assetid: fb544271-1f0f-4bbd-b0a7-88dc89cc8186
 keywords:
 - INF 文件 WDK 打印，安装部分
 - 安装部分 WDK 打印机
 - 部分 WDK 打印机
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 93e6795e9df48962ad07350abc08b345dff67d0e
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: b4d6e80c6b27a6f95bc37540dac4bdd54da5c57b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89216327"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96807263"
 ---
 # <a name="printer-inf-file-install-sections"></a>打印机 INF 文件的 Install 节
 
@@ -25,7 +24,7 @@ ms.locfileid: "89216327"
 
 通常，对于 Windows 2000 及更高版本，供应商不会将 Microsoft 的打印机驱动程序与微型驱动程序一起分发。 相反，每个供应商提供一个 INF 文件来安装供应商的文件，然后调用 Microsoft 的打印机 INF 文件 Ntprint.inf，该文件又会安装相应的打印机驱动程序组件。
 
-**注意**   Microsoft 会定期发布其打印机驱动程序的更新版本。只需要在更新版本中使用的功能的微型驱动程序可能需要额外的步骤。 有关详细信息，请参阅 [使用更新的核心打印驱动程序](using-updated-core-print-drivers.md)。
+**注意**   Microsoft 会定期发布其打印机驱动程序的更新版本。只需要在更新版本中使用的功能的微型驱动程序可能需要额外的步骤。 有关详细信息，请参阅 [使用更新的核心打印驱动程序](using-updated-core-print-drivers.md)。
 
  
 

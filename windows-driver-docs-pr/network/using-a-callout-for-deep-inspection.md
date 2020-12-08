@@ -1,18 +1,17 @@
 ---
 title: 使用标注进行深度检测
 description: 使用标注进行深度检测
-ms.assetid: 464c74ae-5e37-41f1-b305-ef57039b28ba
 keywords:
 - 分类标注 WDK Windows 筛选平台，深度检测
 - 深度检查 WDK Windows 筛选平台
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 97581579161f66ac4a87b8b212448f7ac6157129
-ms.sourcegitcommit: f8619f20a0903dd64f8641a5266ecad6df5f1d57
+ms.openlocfilehash: eba086e52114d5d42ad8fc41522e76d012673160
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91423588"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96806143"
 ---
 # <a name="using-a-callout-for-deep-inspection"></a>使用标注进行深度检测
 
@@ -112,11 +111,11 @@ VOID NTAPI
 }
 ```
 
-*Filter- &gt; action*中的值可确定标注的[classifyFn](/windows-hardware/drivers/ddi/_netvista/) callout 函数应在*ClassifyOut*参数指向的结构的**actionType**成员中返回的操作。 有关这些操作的详细信息，请参阅 [**FWPS \_ ACTION0**](/windows/win32/api/fwpstypes/ns-fwpstypes-fwps_action0) 结构。
+*Filter- &gt; action* 中的值可确定标注的 [classifyFn](/windows-hardware/drivers/ddi/_netvista/) callout 函数应在 *ClassifyOut* 参数指向的结构的 **actionType** 成员中返回的操作。 有关这些操作的详细信息，请参阅 [**FWPS \_ ACTION0**](/windows/win32/api/fwpstypes/ns-fwpstypes-fwps_action0) 结构。
 
 如果标注必须先对其 [classifyFn](/windows-hardware/drivers/ddi/_netvista/) callout 函数之外的数据包数据执行额外的处理，才能确定是应该允许还是阻止数据，则必须在完成数据处理之前挂起数据包数据。 有关如何挂起数据包数据的信息，请参阅 [标注类型](types-of-callouts.md) 和 [**FwpsPendOperation0**](/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpspendoperation0)。
 
-在某些筛选层上，筛选器引擎传递给标注的[classifyFn](/windows-hardware/drivers/ddi/_netvista/)标注函数的*LayerData*参数为**NULL**。
+在某些筛选层上，筛选器引擎传递给标注的 [classifyFn](/windows-hardware/drivers/ddi/_netvista/)标注函数的 *LayerData* 参数为 **NULL**。
 
 有关如何对流数据执行深度检查的信息，请参阅 [使用标注对流数据进行深度检测](using-a-callout-for-deep-inspection-of-stream-data.md)。
 

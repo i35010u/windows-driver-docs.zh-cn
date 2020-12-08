@@ -1,15 +1,14 @@
 ---
 title: 驱动程序签名工具
 description: 驱动程序签名工具
-ms.assetid: 2654388d-b39e-4009-bcba-56b318fd5119
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 00edf700b0fb45b6648386f0afc5d5d4bc0a059b
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 360a74f41672c9f42100863b9445dfb8a93cdea6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89384153"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96805645"
 ---
 # <a name="tools-for-signing-drivers"></a>驱动程序签名工具
 
@@ -34,7 +33,7 @@ Microsoft Windows 驱动程序工具包 (WDK) 包含以下工具，可用于创�
 
 -   其他工具位于32位 Windows 平台 (% WindowsSdkDir% \\ bin \\ x86) 和64位 windows 平台 (% WindowsSdkDir% \\ bin \\ x64) 的目录中。
 
-**注意**   Visual Studio 环境变量% WindowsSdkDir% 表示安装了此 WDK 版本的 Windows 工具包目录的路径，例如，C： \\ Program Files (x86) \\ Windows 工具包 \\ 10。
+**注意**  Visual Studio 环境变量% WindowsSdkDir% 表示安装了此 WDK 版本的 Windows 工具包目录的路径，例如，C： \\ Program Files (x86) \\ Windows 工具包 \\ 10。
 
  
 

@@ -1,19 +1,18 @@
 ---
 title: 打印机功能属性
 description: 打印机功能属性
-ms.assetid: 3ee98eee-8f46-4bf0-ac2c-f47f8402fa86
 keywords:
 - 打印机功能属性 WDK Unidrv
 - 常规打印机属性 WDK Unidrv，打印机功能
 - 功能属性 WDK Unidrv
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a68fc3c13315ba0c06cccec01e8b8cedbd78caf9
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 90b3cb40fda51fbec43bfcd9d4878bf52f55c475
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105336"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96807359"
 ---
 # <a name="printer-capability-attributes"></a>打印机功能属性
 
@@ -103,13 +102,13 @@ AFTER_FF CmdFF 命令后。</td>
 
 自动双工功能的副作用是，刚刚打印的页面的下边缘将回送到打印机，以成为下一页的上边缘。 若要保持第二页相对于第一个页面的方向，必须以相反顺序向打印机发送第二页的光栅图像。 换而言之，如果打印机首先发送顶部扫描行来打印正面，则必须先打印后侧下扫描行。
 
-当 \* **ReverseBandOrderForEvenPages**为**TRUE**且双工处于开启时，Unidrv 将按偶数 (页的反向顺序枚举每个带区，以使偶数页) 的背面。 OEM 呈现插件需要在将数据发送到打印机之前仅缓存一个数据带区。 不会反转每个带区内的扫描行的顺序，因此插件仍必须处理该任务，并且还必须反转每个扫描行中的位的顺序。 虽然这是插件额外的工作，但优点在于插件不需要缓存任何光栅数据，并且可以立即开始将数据发送到打印机。
+当 \* **ReverseBandOrderForEvenPages** 为 **TRUE** 且双工处于开启时，Unidrv 将按偶数 (页的反向顺序枚举每个带区，以使偶数页) 的背面。 OEM 呈现插件需要在将数据发送到打印机之前仅缓存一个数据带区。 不会反转每个带区内的扫描行的顺序，因此插件仍必须处理该任务，并且还必须反转每个扫描行中的位的顺序。 虽然这是插件额外的工作，但优点在于插件不需要缓存任何光栅数据，并且可以立即开始将数据发送到打印机。
 
-**注意**   \*仅当 "双面打印" 设置为 "长边翻转" 时才计算**ReverseBandOrderForEvenPages？** 属性。 当双工设置为 "短边翻转" 时，将忽略此属性。
+**注意** \*仅当 "双面打印" 设置为 "长边翻转" 时才计算 *_ReverseBandOrderForEvenPages？_* 属性。 当双工设置为 "短边翻转" 时，将忽略此属性。
 
  
 
-" \* **ReverseBandOrderForEvenPages"** 属性的值和驱动程序模拟的旋转都将影响对带区的枚举方式，如下表所示。 如果 "ReverseBandOrderForEvenPages" 为 True，并且选择了 "双工"，则在列中**指定的带**区枚举顺序适用 \* **ReverseBandOrderForEvenPages?** ，并且要打印的页面为第二个 (或 "后) 端"。 **TRUE** 否则，将应用带有 " **FALSE** " 的列。
+" \* *_ReverseBandOrderForEvenPages"_* 属性的值和驱动程序模拟的旋转都将影响对带区的枚举方式，如下表所示。 如果 "ReverseBandOrderForEvenPages" 为 True，并且选择了 "双工"，则在列中 **指定的带** 区枚举顺序适用 \* *_ReverseBandOrderForEvenPages?_* ，并且要打印的页面为第二个 (或 "后) 端"。 **TRUE** 否则，将应用带有 " **FALSE** " 的列。
 
 <table>
 <colgroup>
@@ -119,7 +118,7 @@ AFTER_FF CmdFF 命令后。</td>
 </colgroup>
 <thead>
 <tr class="header">
-<th>驱动程序模拟旋转</th>
+<th>Driver-Simulated 旋转</th>
 <th><strong>TRUE</strong> 和偶数页</th>
 <th><strong>FALSE</strong> 或奇数页</th>
 </tr>
@@ -147,9 +146,9 @@ AFTER_FF CmdFF 命令后。</td>
 
 图例： SW \_ LTOR = 从左到右，软件 \_ RTOL = 从右到左，软件 \_ 启动 = 从下到上，软件关闭 = 从 \_ 上到下。
 
-OEM 呈现插件可以支持自动双面打印，而无需使用 \* **ReverseBandOrderForEvenPages？** 属性。 此插件只需缓存整个页面的所有数据并将其发送到打印机（从底部扫描行开始）即可。 此扫描行以及该页上的所有其他行都必须按相反的顺序发送。
+OEM 呈现插件可以支持自动双面打印，而无需使用 \* *_ReverseBandOrderForEvenPages？_* 属性。 此插件只需缓存整个页面的所有数据并将其发送到打印机（从底部扫描行开始）即可。 此扫描行以及该页上的所有其他行都必须按相反的顺序发送。
 
-**注意**   在将数据发送到打印机时，OEM 呈现插件负责为每个扫描行反转位的顺序，以及每个带区的扫描行的顺序。 若要确定何时必须完成此操作，可以通过使用索引 SVI PageNumber 调用 [**IPrintOemDriverUni：:D rvgetstandardvariable**](/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintoemdriveruni-drvgetstandardvariable)来获取 PageNumber 标准变量的值 \_ 。 如果页码为奇数，则无需反转。 如果数字为偶数并且选择了双工，则需要进行反向。
+**注意**   在将数据发送到打印机时，OEM 呈现插件负责为每个扫描行反转位的顺序，以及每个带区的扫描行的顺序。 若要确定何时必须完成此操作，可以通过使用索引 SVI PageNumber 调用 [**IPrintOemDriverUni：:D rvgetstandardvariable**](/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintoemdriveruni-drvgetstandardvariable)来获取 PageNumber 标准变量的值 \_ 。 如果页码为奇数，则无需反转。 如果数字为偶数并且选择了双工，则需要进行反向。
 
  
 

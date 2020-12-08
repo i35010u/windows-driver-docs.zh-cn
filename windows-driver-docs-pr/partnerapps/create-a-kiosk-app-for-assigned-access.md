@@ -1,15 +1,14 @@
 ---
 title: 已分配访问最佳实践的展台应用
 description: 已分配访问最佳实践的展台应用
-ms.assetid: 2405B5BB-2214-4B40-B3A1-C47073390B21
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ce0606551debb9ffa3fdadb5c7f0d5ff890f3b94
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: ded10274b1dfccb9622a614eb6c9131dad650351
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89383563"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96806069"
 ---
 # <a name="kiosk-apps-for-assigned-access-best-practices"></a>分配有访问权限的展台应用：最佳实践
 
@@ -28,7 +27,7 @@ ms.locfileid: "89383563"
 
 ## <a name="terms"></a>术语
 
-|术语|说明|
+|术语|描述|
 |----|----|
 |分配的访问权限|一项功能，该功能允许系统管理员通过限制公开给设备用户的应用程序入口点来管理用户的体验。 例如，你可以限制企业中的客户使用一个应用程序，使你的电脑充当展台。 当有人使用指定的帐户登录时，他们只能使用一个应用。 它们无法切换应用或使用触摸手势、鼠标、键盘或硬件按钮关闭应用。 它们也看不到任何应用通知。|
 |锁定屏幕应用 (或锁定应用) |利用功能设置动态墙纸或利用新的锁定扩展性框架的应用程序。|
@@ -47,7 +46,7 @@ Windows 10 中分配的访问权限利用了锁框架。 当分配的访问权�
 
 * 通过创建单独的页面来显示仅限展台的内容，[保护展台体验](#secure-your-information)。
 
-* 从应用程序中调用 **LockApplicationHost. RequestUnlock ( # B1 ** 方法，以 [添加超出分配的访问模式的方式](#add-a-way-out-of-assigned-access) 并返回到登录屏幕。
+* 从应用程序中调用 **LockApplicationHost. RequestUnlock ( # B1** 方法，以 [添加超出分配的访问模式的方式](#add-a-way-out-of-assigned-access) 并返回到登录屏幕。
 
 * [将事件处理程序添加](#add-a-way-out-of-assigned-access) 到在用户按下 Ctrl + Alt + Del 退出展台体验时触发的 **LockApplicationHost* 事件中。 处理程序还可用于在退出前保存任何数据。
 
@@ -102,7 +101,7 @@ if (rootFrame.Content == null)
 
 ### <a name="multiple-views-windows-and-threads"></a>多个视图、窗口和线程
 
-从 Windows 10 1803 版开始，在没有**aboveLockScreen**扩展的应用程序的展台体验中支持[多个视图](/windows/uwp/design/layout/show-multiple-views)。 若要使用多个视图，请确保将展台设备的 " **多个显示** " 选项设置为 **扩展这些显示**。
+从 Windows 10 1803 版开始，在没有 **aboveLockScreen** 扩展的应用程序的展台体验中支持 [多个视图](/windows/uwp/design/layout/show-multiple-views)。 若要使用多个视图，请确保将展台设备的 " **多个显示** " 选项设置为 **扩展这些显示**。
 
 如果有多个视图的应用程序 (，而没有 **aboveLockScreen**) 在展台体验期间启动，则会在第一台监视器上呈现应用程序的主视图。 如果使用 CreateNewView 的应用创建了新视图 [ ( # B1 ](/uwp/api/windows.applicationmodel.core.coreapplication)，则将在第二个监视器上呈现。 如果应用创建另一个视图，它将会跳到第三个监视器，依此类推。
 
@@ -124,7 +123,7 @@ CoreApplication.Views.Count //2
 
 ### <a name="dispatcher"></a>调度程序
 
-每个视图或窗口都有自己的调度程序。 由于主视图对用户是隐藏的，因此请使用 **GetCurrentView ( # B1 ** 来访问在锁定之前运行的应用的辅助视图，而不是 MainView ( # A3。
+每个视图或窗口都有自己的调度程序。 由于主视图对用户是隐藏的，因此请使用 **GetCurrentView ( # B1** 来访问在锁定之前运行的应用的辅助视图，而不是 MainView ( # A3。
 
 ```cpp
 using Windows.ApplicationModel.Core;
@@ -214,7 +213,7 @@ Windows.ApplicationModel.Core.CoreApplication.CreateNewView(); //causes exceptio
 
 ## <a name="appendix-1-uwp-extension"></a>附录1： UWP 扩展
 
-下面的示例应用程序清单使用 **aboveLockScreen**UWP 扩展。
+下面的示例应用程序清单使用 **aboveLockScreen** UWP 扩展。
 
 > [!NOTE]
 > 从 Windows 10 版本1607开始，对通用 Windows 平台 (UWP) 扩展不再有限制，因此，当用户配置分配的访问权限时，大多数应用程序都可以在 " **设置** " 中显示。
@@ -258,13 +257,13 @@ Windows.ApplicationModel.Core.CoreApplication.CreateNewView(); //causes exceptio
 通常，如果展台应用无法在锁屏界面应用上方激活，可以在锁定屏幕中找到激活错误代码。 使用错误代码通过查找 Windows [系统错误代码](/windows/desktop/Debug/system-error-codes)来发现问题。 此外事件查看器包含有关激活失败的详细信息。 为此，请执行以下操作：
 
 1. 打开“**事件查看器**”。 查找激活错误有两个可能的位置。
-2. 在 " **事件查看器 (本地) ** " 窗格中，展开 " **Windows 日志**"，然后选择 " **应用程序**"。
-3. 此外，在 **事件查看器 (本地) **，展开 " **应用程序和服务日志**"，展开 " **Windows**"，展开 " **应用**"，然后选择 " **TWinUI/操作**"。
+2. 在 " **事件查看器 (本地)** " 窗格中，展开 " **Windows 日志**"，然后选择 " **应用程序**"。
+3. 此外，在 **事件查看器 (本地)**，展开 " **应用程序和服务日志**"，展开 " **Windows**"，展开 " **应用**"，然后选择 " **TWinUI/操作**"。
 
 请注意，由于具有分配的访问权限的展台应用不会在全屏模式下运行，因此 **w. GetForCurrentView ( # A1。IsFullScreenMode** 将返回 false。
 
 ## <a name="related-topics"></a>相关主题
 
-[分配的访问权限](/windows-hardware/customize/enterprise/assigned-access)
+[已分配的访问权限](/windows-hardware/customize/enterprise/assigned-access)
 
 [显示应用的多个视图](/windows/uwp/design/layout/show-multiple-views)

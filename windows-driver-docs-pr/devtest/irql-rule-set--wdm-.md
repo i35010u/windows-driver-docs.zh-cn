@@ -1,15 +1,14 @@
 ---
 title: Irql rule set (WDM)
 description: 了解如何使用 (WDM) 的规则来验证驱动程序是否在所需的 IRQL 上进行 DDI 调用。 此外，还将了解如何选择 IRQL 规则集。
-ms.assetid: 40C17906-58D5-4023-A549-0164C3A92A06
 ms.date: 05/21/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 9f34c11de44e4f74898ee9df429d5a7c31aa9615
-ms.sourcegitcommit: 372464be981a39781c71049126f36891cb5d0cad
+ms.openlocfilehash: 427695e703a30726196ce28f4fc756ed498f37cb
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91645959"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96806487"
 ---
 # <a name="irql-rule-set-wdm"></a>Irql rule set (WDM)
 
@@ -29,7 +28,7 @@ ms.locfileid: "91645959"
 <thead>
 <tr class="header">
 <th align="left">主题</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>

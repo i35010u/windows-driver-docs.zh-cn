@@ -1,17 +1,16 @@
 ---
 title: OID_GEN_CO_MEDIA_CONNECT_STATUS
 description: 本主题介绍) OID_GEN_CO_MEDIA_CONNECT_STATUS 对象标识符 (OID。
-ms.assetid: d49ebdfb-1c41-40dc-86bf-01db50a73607
 keywords:
 - OID_GEN_CO_MEDIA_CONNECT_STATUS
 ms.date: 11/02/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d9fcc4301036a2297ac450dca2acd447509a0557
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 5055789109fe2b51bb83f4562572115064049152
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89206357"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96806161"
 ---
 # <a name="oid_gen_co_media_connect_status"></a>OID_GEN_CO_MEDIA_CONNECT_STATUS
 

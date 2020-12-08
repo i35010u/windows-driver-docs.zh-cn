@@ -1,19 +1,18 @@
 ---
 title: 供应商提供的并行驱动程序
 description: 供应商提供的并行驱动程序
-ms.assetid: 2f706dd2-4032-4f4d-8146-2f3a81e28b62
 keywords:
 - 并行驱动程序 WDK
 - 并行端口 WDK、供应商提供的驱动程序
 - 供应商提供的并行驱动程序 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bbc06a57e8dd972e19f9bce21fec9d25bd4c8764
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 49b373ffc9806abb11bbb601ae09146d309898e9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89382147"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96806073"
 ---
 # <a name="vendor-supplied-parallel-drivers"></a>供应商提供的并行驱动程序
 
@@ -37,7 +36,7 @@ ms.locfileid: "89382147"
 
 [系统提供的并行驱动程序](system-supplied-parallel-drivers.md)
 
-[系统提供的并行驱动程序的客户端接口](/windows-hardware/drivers/ddi/index)
+[System-Supplied 并行驱动程序的客户端接口](/windows-hardware/drivers/ddi/index)
 
  
 

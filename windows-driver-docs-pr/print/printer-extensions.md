@@ -1,15 +1,14 @@
 ---
 title: 打印机扩展
 description: 当用户在 Windows 桌面上运行现有应用程序时，打印机扩展应用程序支持打印首选项和打印机通知。
-ms.assetid: D617A897-D93E-4006-B42D-923CA7F29D7E
 ms.date: 06/12/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: cacbd0cb76a98977a0d158dbf871652844c40f54
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 6e3a731b3911288419d63d9cbb66d5ac42915543
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89216342"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96807289"
 ---
 # <a name="printer-extensions"></a>打印机扩展
 
@@ -27,7 +26,7 @@ IT 管理员有几个选项可用于管理打印机扩展的分发。 如果将�
 
 GitHub 上的 [打印机扩展示例](/samples/microsoft/windows-driver-samples/printer-extension-sample/) 演示如何使用 c # 生成打印机扩展。 为了允许在 UWP 设备应用和打印机扩展之间共享代码，此示例使用两个项目： PrinterExtensionLibrary (C) 和 ExtensionSample (依赖于 PrinterExtensionLibrary) 的打印机扩展。
 
-本主题中所示的代码片段都取自 PrinterExtensionSample 解决方案。 如果要使用 C、c + + 或其他基于 COM 的语言生成打印机扩展，这些概念是类似的，但 Api 必须与在 Windows 驱动程序工具包中包含的 *PrinterExtension*中指定的相同。 示例文档 PrinterExtensionLibrary 中的代码注释还包括指示特定对象所对应的基础 COM 接口的代码注释。
+本主题中所示的代码片段都取自 PrinterExtensionSample 解决方案。 如果要使用 C、c + + 或其他基于 COM 的语言生成打印机扩展，这些概念是类似的，但 Api 必须与在 Windows 驱动程序工具包中包含的 *PrinterExtension* 中指定的相同。 示例文档 PrinterExtensionLibrary 中的代码注释还包括指示特定对象所对应的基础 COM 接口的代码注释。
 
 开发打印机扩展时，有六个主要方面需要注意。 以下列表显示了这些重点区域。
 
@@ -61,7 +60,7 @@ PrintNotify 服务启动后，它将检查 OfflineRoot 路径下的注册表项 
 仅在首次安装时才需要进行此注册。 以下示例显示了用于注册打印机扩展的正确注册表项格式。
 
 > [!NOTE]
-> ** \[ OFFLINEROOT \] **用作 HKEY \_ 本地 \_ 计算机 \\ 软件 \\ Microsoft \\ Windows NT \\ CurrentVersion \\ Print \\ OfflinePrinterExtensions 的简写形式。
+> **\[ OFFLINEROOT \]** 用作 HKEY \_ 本地 \_ 计算机 \\ 软件 \\ Microsoft \\ Windows NT \\ CurrentVersion \\ Print \\ OfflinePrinterExtensions 的简写形式。
 
 ```Registry
 [OfflineRoot]
@@ -121,7 +120,7 @@ PrintNotify 服务启动后，它将检查 OfflineRoot 路径下的注册表项 
 
 由于打印机扩展可以同时在用户启动的上下文和事件启动的上下文中运行，因此，能够确定打印机扩展运行的上下文非常有用。 例如，如果为通知或打印首选项启动了某个应用程序，则该应用程序可允许应用程序在所有队列中枚举状态。 Microsoft 建议从驱动程序 (（例如，使用 MSI 或) setup.exe）单独安装的打印机扩展应使用 "开始" 菜单快捷方式中的命令行开关，或在注册期间在注册表中填充的应用项中的命令行开关。 由于随驱动程序一起安装的打印机扩展已安装到 DriverStore，因此不会在打印首选项或打印机通知事件之外启动这些扩展。 因此，在这种情况下不支持指定命令行开关。
 
-当打印机扩展插件为当前 PrinterDriverID 注册时，它必须包含应用中的 PrinterDriverID。 例如，对于名称为 *printerextension.exe*的打印机扩展应用程序，PrinterDriverID 值为 *{GUID}*，PrinterExtensionAppPath 将如下所 \[ \] 示：
+当打印机扩展插件为当前 PrinterDriverID 注册时，它必须包含应用中的 PrinterDriverID。 例如，对于名称为 *printerextension.exe* 的打印机扩展应用程序，PrinterDriverID 值为 *{GUID}*，PrinterExtensionAppPath 将如下所 \[ \] 示：
 
 ```console
 "C:\program files\fabrikam\printerextension.exe {GUID}"
@@ -315,8 +314,8 @@ OnDriverEvent 调用后，打印机扩展应尽可能快地初始化其 UI，并
 
 打印机扩展始终从调用它们的进程中执行。 因此，在开发打印机扩展时，必须记住窗口行为：
 
-- [**IPrinterExtensionEventArgs**](/windows-hardware/drivers/ddi/printerextension/nn-printerextension-iprinterextensioneventargs)的**WindowParent**属性指定调用应用的窗口的句柄。
-- [**IPrinterExtensionEventArgs**](/windows-hardware/drivers/ddi/printerextension/nn-printerextension-iprinterextensioneventargs)的**WindowModal**属性指定是否应以模式方式运行) 打印首选项模式下的打印机扩展 (。
+- [**IPrinterExtensionEventArgs**](/windows-hardware/drivers/ddi/printerextension/nn-printerextension-iprinterextensioneventargs)的 **WindowParent** 属性指定调用应用的窗口的句柄。
+- [**IPrinterExtensionEventArgs**](/windows-hardware/drivers/ddi/printerextension/nn-printerextension-iprinterextensioneventargs)的 **WindowModal** 属性指定是否应以模式方式运行) 打印首选项模式下的打印机扩展 (。
 
 打印机扩展示例演示如何创建通常作为最顶层窗口启动的 UI。 但在某些情况下，将不会在前台显示 UI，例如当导致调用 UI 的进程在不同的完整性级别运行时，或在为不同的处理器体系结构编译该过程时。 在这种情况下，打印机扩展应调用 FlashWindowEx 来请求用户使用任务栏中的图标来进入前台。
 

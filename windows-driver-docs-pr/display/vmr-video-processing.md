@@ -1,7 +1,6 @@
 ---
 title: VMR 视频处理
 description: VMR 视频处理
-ms.assetid: 149f881d-1a6e-46b7-9a37-971c7bb7b79d
 keywords:
 - ProcAmp WDK DirectX VA，VMR
 - VMR WDK DirectX VA
@@ -15,12 +14,12 @@ keywords:
 - 转换颜色空间
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0ea851894038417c9fe2cc441b0386733d314dca
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 5d5093924f248acc4fee112f2035c077ebb5093e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89064532"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96806347"
 ---
 # <a name="vmr-video-processing"></a>VMR 视频处理
 
@@ -58,11 +57,11 @@ VMR 的处理管道的输出图面总是 Direct3D 呈现器目标。 应用程�
 
 通常，视频播放应用程序不会请求 VMR 在显示时执行 alpha 混合或视频的垂直/水平镜像。 然后，VMR 可以将所有视频处理合并到一个阶段。 在这种情况下，将使用第一个管道。 如果应用程序请求 VMR 在显示前对视频图像执行 alpha 混合或垂直/水平镜像，则 VMR 会将额外的阶段插入管道。 在这种情况下，将使用第二个管道。
 
-下图显示了当 ProcAmp 控制硬件无法执行颜色空间转换时 VMR 用于处理*渐进*视频的视频管道，并且无法在 ProcAmp 调整操作期间水平调整视频图像大小， (如 \_ \_ VideoProcess YUV2RGB) 中的 DXVA DXVA VideoProcess 和 StretchX \_ DXVA VideoProcessCaps 枚举器所示 \_ ，但却支持 YUV 纹理。 [** \_ **](/windows-hardware/drivers/ddi/dxva/ne-dxva-_dxva_videoprocesscaps)
+下图显示了当 ProcAmp 控制硬件无法执行颜色空间转换时 VMR 用于处理 *渐进* 视频的视频管道，并且无法在 ProcAmp 调整操作期间水平调整视频图像大小， (如 \_ \_ VideoProcess YUV2RGB) 中的 DXVA DXVA VideoProcess 和 StretchX \_ DXVA VideoProcessCaps 枚举器所示 \_ ，但却支持 YUV 纹理。 [**\_**](/windows-hardware/drivers/ddi/dxva/ne-dxva-_dxva_videoprocesscaps)
 
 ![说明无法执行颜色空间转换且无法水平调整大小但可支持 yuv 纹理的硬件的关系图](images/procamp2.png)
 
-下图显示了当 ProcAmp 控制硬件无法执行颜色空间转换时，VMR 用于处理*渐进式*视频的视频管道，无法在 ProcAmp 调整操作期间水平调整视频图像大小， (如 \_ \_ VideoProcess YUV2RGB) 中的 DXVA DXVA VideoProcess 和 StretchX \_ DXVA VideoProcessCaps 枚举器所示 \_ ，并且不支持 YUV 纹理。 [** \_ **](/windows-hardware/drivers/ddi/dxva/ne-dxva-_dxva_videoprocesscaps)
+下图显示了当 ProcAmp 控制硬件无法执行颜色空间转换时，VMR 用于处理 *渐进式* 视频的视频管道，无法在 ProcAmp 调整操作期间水平调整视频图像大小， (如 \_ \_ VideoProcess YUV2RGB) 中的 DXVA DXVA VideoProcess 和 StretchX \_ DXVA VideoProcessCaps 枚举器所示 \_ ，并且不支持 YUV 纹理。 [**\_**](/windows-hardware/drivers/ddi/dxva/ne-dxva-_dxva_videoprocesscaps)
 
 ![说明无法执行颜色空间转换、无法水平调整大小以及不支持 yuv 纹理的关系图](images/procamp3.png)
 

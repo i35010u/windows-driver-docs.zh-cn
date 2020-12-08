@@ -1,15 +1,14 @@
 ---
 title: 必需平板项属性
 description: 必需平板项属性
-ms.assetid: 5af295de-b5ad-47c7-b1db-9d5685ed8d19
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0db2213f2b14923de72868fb76f958d5cbfed011
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: a8a896793c62e01f2059ef1447db0b4f56fb4f14
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89192952"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96805563"
 ---
 # <a name="required-flatbed-item-properties"></a>必需平板项属性
 
@@ -91,7 +90,7 @@ ms.locfileid: "89192952"
 
 [**WIA \_ IP \_ YRES**](./wia-ips-yres.md)
 
-**注意**   如果支持 WiaImgFmt raw 格式，则需要 " [**WIA \_ IPA \_ raw \_ BITS \_ PER \_ 通道**](./wia-ipa-raw-bits-per-channel.md)" 属性 \_ 。 [**WIA \_ IPA \_ format**](./wia-ipa-format.md)属性必须支持 WiaImgFmt \_ BMP 格式。 如果[**wia \_ IPA \_ DEPTH**](./wia-ipa-depth.md)属性设置为1位/像素 (BPP) 或[**wia \_ IPA \_ DATATYPE**](./wia-ipa-datatype.md)属性设置为 wia 数据阈值，则需要[**wia \_ ip \_ 阈值**](./wia-ips-threshold.md)属性 \_ \_ 。
+**注意**   如果支持 WiaImgFmt raw 格式，则需要 " [**WIA \_ IPA \_ raw \_ BITS \_ PER \_ 通道**](./wia-ipa-raw-bits-per-channel.md) " 属性 \_ 。 [**WIA \_ IPA \_ format**](./wia-ipa-format.md)属性必须支持 WiaImgFmt \_ BMP 格式。 如果 [**wia \_ IPA \_ DEPTH**](./wia-ipa-depth.md)属性设置为1位/像素 (BPP) 或 [**wia \_ IPA \_ DATATYPE**](./wia-ipa-datatype.md)属性设置为 wia 数据阈值，则需要 [**wia \_ ip \_ 阈值**](./wia-ips-threshold.md)属性 \_ \_ 。
 
  
 

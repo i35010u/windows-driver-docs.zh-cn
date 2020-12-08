@@ -1,9 +1,8 @@
 ---
-title: ndiskd.ndis
-description: Ndiskd.ndis 扩展显示有关 ndis.sys 生成信息。
-ms.assetid: d852d6cc-7eba-4dad-aba5-3a2c9eac2f46
+title: ndiskd
+description: Ndiskd 扩展显示有关 ndis.sys 的生成信息。
 keywords:
-- ndiskd.ndis Windows 调试
+- ndiskd Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,35 +11,35 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 0364ec6b4fe3a21de81a88baa405885f2df69ba1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c2bde52e0393277ce7770a69b3b96bd39e520e7b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63336029"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96805831"
 ---
 # <a name="ndiskdndis"></a>!ndiskd.ndis
 
 
-**！ Ndiskd.ndis**扩展显示有关 ndis.sys 的生成信息。
+**！ Ndiskd** 扩展显示有关 ndis.sys 的生成信息。
 
 ```console
 !ndiskd.ndis 
 ```
 
-## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>参数
+## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>Parameters
 
 
-此扩展没有任何参数。
+此扩展没有参数。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 Ndiskd.dll
 
 <a name="examples"></a>示例
 --------
 
-下面的示例演示调试对象机有检查 Ndis 生成。
+下面的示例演示调试对象计算机具有已选中的 Ndis 生成。
 
 ```console
 0: kd> !ndiskd.ndis

@@ -1,7 +1,6 @@
 ---
 title: 发布接口
 description: 发布接口
-ms.assetid: 3beefaa0-58b9-459a-89e5-1d9d81e80519
 keywords:
 - IPrintCoreHelperPS
 - IPrintCoreHelperUni
@@ -10,12 +9,12 @@ keywords:
 - 发布 WDK 打印机接口 DLL
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 49e3dd30d0ca981e442a0fe2f88bb7294d9351f7
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 0c1d6226fc71836eda78f33d355552dfcaf99871
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89207081"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96807111"
 ---
 # <a name="publishing-the-interfaces"></a>发布接口
 
@@ -32,7 +31,7 @@ ms.locfileid: "89207081"
 
 ### <a name="unidrv-ui-module-publishing-order"></a><a href="" id="unidrv-ui-module-publishing-order"></a> Unidrv UI 模块发布顺序
 
-1.  **IUnknown**和 \* **IPrintCoreHelper**和**IPrintCoreHelperUni**
+1.  **IUnknown** 和 \* *_IPrintCoreHelper_* 和 **IPrintCoreHelperUni**
 
 2.  **IUnknown** 和 **IPrintOemDriverUI**
 
@@ -44,7 +43,7 @@ ms.locfileid: "89207081"
 
 ### <a name="pscript5-ui-module-publishing-order"></a><a href="" id="pscript5-ui-module-publishing-order"></a> Pscript5 UI 模块发布顺序
 
-1.  **IUnknown**和 \* **IPrintCoreHelper**和**IPrintCoreHelperPS**
+1.  **IUnknown** 和 \* *_IPrintCoreHelper_* 和 **IPrintCoreHelperPS**
 
 2.  **IUnknown** 和 **IPrintCoreUI2**
 

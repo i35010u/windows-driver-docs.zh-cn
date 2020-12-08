@@ -1,18 +1,17 @@
 ---
 title: 打印机图形 DLL 示例
 description: 打印机图形 DLL 示例
-ms.assetid: d113159a-766e-44c3-a1b1-2975e803d7e2
 keywords:
 - 打印机图形 DLL WDK，示例
 - 图形 DLL WDK 打印机，示例
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1d5730d2c63c1ec934ffe3e717964ab6aa1c1794
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 976d9e7f1e7de1ea7f974e005389a0b208874278
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63354805"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96806957"
 ---
 # <a name="sample-printer-graphics-dll"></a>打印机图形 DLL 示例
 
@@ -20,7 +19,7 @@ ms.locfileid: "63354805"
 
 
 
-源代码 Plotter.dll，打印机图形 DLL 用于[Microsoft 绘图器驱动程序](microsoft-plotter-driver.md)，提供与 Windows Driver Kit (WDK)。 代码位于\\src\\打印\\msplot 子目录包含 WDK 的目录树。
+Windows 驱动程序工具包 (WDK) 提供 Plotter.dll 的源代码，适用于 [Microsoft 绘图仪驱动程序](microsoft-plotter-driver.md)的打印机图形 DLL。 该代码位于 \\ \\ \\ 包含 WDK 的目录树的 src print msplot 子目录中。
 
  
 

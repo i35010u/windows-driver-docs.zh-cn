@@ -1,18 +1,17 @@
 ---
 title: 在并行设备上设置属性
 description: 在并行设备上设置属性
-ms.assetid: 10df9a1b-99ec-46b1-b515-10fb20fe2aed
 keywords:
 - 并行设备 WDK，特性
 - 属性 WDK 并行设备
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b6025c9482df60d800aef24bb7ef5484ea4453e3
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 27d7034ee6e32327a3b4468cd167b6fd65737c64
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89384727"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96806083"
 ---
 # <a name="setting-attributes-on-a-parallel-device"></a>在并行设备上设置属性
 

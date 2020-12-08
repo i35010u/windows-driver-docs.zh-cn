@@ -1,7 +1,6 @@
 ---
 title: usbkd
 description: Usbkd 命令显示了包含 USB 2.0 计划信息的 USB 终结点的列表。
-ms.assetid: 48DC685A-3624-4DAD-8077-FB7C4BE4BE93
 keywords:
 - usbkd Windows 调试
 ms.date: 05/23/2017
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 684de3fc1174288616b38cf976e0668c952c5fcc
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: eeef8b05b069cce9d0135c586ae7bc4f116f55a4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89216742"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96806573"
 ---
 # <a name="usbkdusb2"></a>!usbkd.usb2
 
 
-**！ Usbkd**命令显示了包含 usb 2.0 计划信息的 usb 终结点的列表。
+**！ Usbkd** 命令显示了包含 usb 2.0 计划信息的 usb 终结点的列表。
 
 ```dbgcmd
 !usbkd.usb2 DeviceExtension
@@ -53,7 +52,7 @@ EHCI MINIPORT(s) dt usbport!_USBPORT_MINIPORT_DRIVER ffffe00001f48bd0
 ...
 ```
 
-在上面的输出中，FDO 的设备扩展的地址显示为 [DML](debugger-markup-language-commands.md) 命令 **！ ehci \_ info ffffe00001ca11a0**的参数。 将设备扩展的地址传递给 **！ usb2** 命令。
+在上面的输出中，FDO 的设备扩展的地址显示为 [DML](debugger-markup-language-commands.md) 命令 **！ ehci \_ info ffffe00001ca11a0** 的参数。 将设备扩展的地址传递给 **！ usb2** 命令。
 
 ```dbgcmd
 0: kd> !usbkd.usb2 ffffe00001ca11a0

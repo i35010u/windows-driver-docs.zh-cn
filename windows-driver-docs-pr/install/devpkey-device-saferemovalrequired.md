@@ -1,7 +1,6 @@
 ---
 title: DEVPKEY_Device_SafeRemovalRequired
 description: DEVPKEY_Device_SafeRemovalRequired
-ms.assetid: a162e259-21aa-40d9-a65a-af175a59df6a
 keywords:
 - DEVPKEY_Device_SafeRemovalRequired 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 7baf20d8ceb9d54c307ce918faf934af069e2fe3
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 6adcf104725161a607c97ecbe32ebb68d314a325
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90715780"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96805559"
 ---
 # <a name="devpkey_device_saferemovalrequired"></a>DEVPKEY_Device_SafeRemovalRequired
 
@@ -64,7 +63,7 @@ DEVPKEY_Device_SafeRemovalRequired 设备属性表示一个布尔值，该值指
 
 如果热插拔设备实例的此属性的值为 DEVPROP_TRUE，则设备实例需要从计算机中安全地删除。 在这种情况下，Windows 会在任务栏右侧的通知区域中显示 " **安全删除硬件** " 图标。 当用户单击此图标时，系统将启动 **安全删除硬件** 程序。 使用此程序，用户可以指示系统准备要删除的设备实例，然后将其从计算机中删除。
 
-**注意**   如果设备实例是可移动媒体设备（如光驱），则设备实例必须已插入介质，并且 DEVPKEY_Device_SafeRemovalRequired 属性值必须为 DEVPROP_TRUE。 如果两者都为 true，则会在 " **安全删除硬件** " 程序中显示设备实例。
+**注意**   如果设备实例是可移动媒体设备（如光驱），则设备实例必须已插入介质，并且 DEVPKEY_Device_SafeRemovalRequired 属性值必须为 DEVPROP_TRUE。 如果两者都为 true，则会在 " **安全删除硬件** " 程序中显示设备实例。
 
  
 
@@ -78,7 +77,7 @@ DEVPKEY_Device_SafeRemovalRequired 设备属性表示一个布尔值，该值指
 
 -   设备实例未将 [**DEVPKEY_Device_SafeRemovalRequiredOverride**](devpkey-device-saferemovalrequiredoverride.md) 设备属性设置为 DEVPROP_FALSE。
 
-    **注意**   PnP 无条件确定，如果 DEVPKEY_Device_SafeRemovalRequiredOverride 设备属性设置为 DEVPROP_TRUE，热插拔设备需要安全删除。
+    **注意**   PnP 无条件确定，如果 DEVPKEY_Device_SafeRemovalRequiredOverride 设备属性设置为 DEVPROP_TRUE，热插拔设备需要安全删除。
 
      
 

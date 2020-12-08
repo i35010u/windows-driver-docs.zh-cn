@@ -1,22 +1,21 @@
 ---
 title: 实时本地调试
 description: 实时本地调试
-ms.assetid: ec76a71e-f173-4b66-beaf-d57a1c991acd
 keywords:
-- 内核调试，流式传输实时本地调试
+- 内核流调试，实时本地调试
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8d57332b86f9aef90fa20abf6ad82ab94baa132e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: cd27efb2bd964a1889c6f8f5efc086291ddf2730
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383462"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96806505"
 ---
 # <a name="live-local-debugging"></a>实时本地调试
 
 
-在 Microsoft Windows XP 和更高版本操作系统中，则可以执行本地内核调试通过启动内核调试程序 (KD) 或的 WinDbg **-kl**命令行选项：
+在 Microsoft Windows XP 和更高版本的操作系统中，可以通过使用 **-kl** 命令行选项启动内核调试器 (KD) 或 WinDbg 来执行本地内核调试：
 
 ```console
 kd [-y SymbolPath] -kl 
@@ -28,33 +27,33 @@ kd [-y SymbolPath] -kl
 windbg [-y SymbolPath] -kl 
 ```
 
-在 Windows Vista 及更高版本，本地内核调试要求计算机与启动 **/debug**选项。 打开命令提示符窗口，以管理员身份，并输入**bcdedit /debug 上的**。 重新启动计算机。
+在 Windows Vista 和更高版本中，本地内核调试需要计算机通过 **/debug** 选项来启动。 以管理员身份打开命令提示符窗口，然后 **在上输入 bcdedit/debug**。 重新启动计算机。
 
 > [!IMPORTANT]
-> 使用 BCDEdit 以更改启动信息之前可能需要暂时挂起如 BitLocker 和安全引导测试 PC 上的 Windows 安全功能。
-> 测试完成后重新启用这些安全功能和安全功能将被禁用时适当地管理测试 PC。
+> 使用 BCDEdit 更改启动信息之前，您可能需要在测试电脑上暂时挂起 Windows 安全功能，例如 BitLocker 和安全启动。
+> 当安全功能处于禁用状态时，在测试完成后重新启用这些安全功能，并对测试 PC 进行适当的管理。
 
-在 Windows Vista 及更高版本，本地内核调试需要以管理员身份运行调试器。
+在 Windows Vista 和更高版本中，本地内核调试需要以管理员身份运行调试器。
 
-实时本地调试是非常有用的调试难以重现时将调试器附加; 的问题但是，任何需要的时间敏感信息，包括数据包、 IRP 和 SRB 知识数据，并不能解决问题除非挂起或停滞。
+实时本地调试非常适合用于调试在附加调试器时难以重现的问题;但是，除非问题是挂起或延迟，否则需要知道时间敏感信息的任何内容（包括数据包、IRP 和 SRB 数据）都不可能工作。
 
-在执行本地调试时，请考虑以下变量：
+执行本地调试时，请考虑以下变量：
 
--   **总体状态。** 例如，运行该流？ 已暂停流？
+-   **总体状态。** 例如，流是否正在运行？ 流是否已暂停？
 
--   **对数据包进行计数。** 例如，是否有 Irp 排队发送至流？
+-   **数据包计数。** 例如，是否有作业排队等候流？
 
--   **数据包计数方面的更改。** 移动流？
+-   **数据包计数的变化。** 流是否正在移动？
 
 -   **数据包列表中的更改。**
 
--   **挂起的内核的线程。**
+-   **挂起内核线程。**
 
-请考虑的最后一项。
+请考虑其中的最后一个。
 
-### <a name="span-idexaminingahungthreadinlkdspanspan-idexaminingahungthreadinlkdspanexamining-a-hung-thread-in-lkd"></a><span id="examining_a_hung_thread_in_lkd"></span><span id="EXAMINING_A_HUNG_THREAD_IN_LKD"></span>检查 LKD 中的挂起线程
+### <a name="span-idexamining_a_hung_thread_in_lkdspanspan-idexamining_a_hung_thread_in_lkdspanexamining-a-hung-thread-in-lkd"></a><span id="examining_a_hung_thread_in_lkd"></span><span id="EXAMINING_A_HUNG_THREAD_IN_LKD"></span>检查 LKD 中的挂起线程
 
-首先，使用[ **！ process 0 0** ](-process.md)扩展来识别包含挂起的线程的进程。 然后，发出 **！ 过程**再次为有关该线程的详细信息：
+首先，使用 [**！ process 0 0**](-process.md) 扩展来标识包含挂起线程的进程。 然后，再次出现！有关该线程的详细信息，请再次 **处理** 此问题：
 
 ```dbgcmd
 lkd> !process 816a550 7
@@ -67,7 +66,7 @@ lkd> !process 816a550 7
         Priority 10 BasePriority 8 PriorityDecrement 0
 ```
 
-线程不会显示，但堆栈地址。 使用[ **dds** ](dds--dps--dqs--display-words-and-symbols-.md) (或**ddq**) 命令在堆栈的当前地址会产生进一步调查的起点，因为它指定哪个进程正在调用。
+线程未显示，但堆栈地址为。 在堆栈上的当前地址上使用 [**dds**](dds--dps--dqs--display-words-and-symbols-.md) (或 **ddq**) 命令将产生一个开始点，以便进一步调查，因为它指定了正在调用哪个进程。
 
 ```dbgcmd
 lkd> dds f50bea74

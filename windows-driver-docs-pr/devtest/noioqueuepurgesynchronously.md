@@ -1,6 +1,5 @@
 ---
 title: 'NoIoQueuePurgeSynchronously 规则 (kmdf) '
-ms.assetid: 9255C644-1141-4D9A-8B84-BF98FB9E262A
 ms.date: 05/21/2018
 description: '了解详细信息： NoIoQueuePurgeSynchronously 规则 (kmdf) '
 keywords:
@@ -12,12 +11,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 9cd0076265a25afee50b12382fb28952698beb1c
-ms.sourcegitcommit: f47c072e88dce59daba1231027b60eb56bd2cde9
+ms.openlocfilehash: ceb716193cf0b8670d5bcd8f87fa32dc6fe78b64
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92689380"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96806435"
 ---
 # <a name="noioqueuepurgesynchronously-rule-kmdf"></a>NoIoQueuePurgeSynchronously 规则 (kmdf) 
 

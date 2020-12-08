@@ -1,19 +1,18 @@
 ---
 title: 在 NDIS 接口提供程序中处理 OID 查询和设置请求
 description: 在 NDIS 接口提供程序中处理 OID 查询和设置请求
-ms.assetid: 9ce51fc8-426f-4d36-8ee7-0a93b7b8439c
 keywords:
 - NDIS 网络接口 WDK，接口提供程序
 - 网络接口 WDK，接口提供程序
 - 接口提供程序 WDk 网络接口
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 90228236868abb8cd00cfad5d35609b73eeb2800
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 62ac33a3da2e0aeb64a34de727d06e7d5c837050
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89211093"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96806205"
 ---
 # <a name="handling-oid-query-and-set-requests-in-an-ndis-interface-provider"></a>在 NDIS 接口提供程序中处理 OID 查询和设置请求
 

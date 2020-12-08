@@ -1,19 +1,18 @@
 ---
 title: 后台处理程序通知
 description: 后台处理程序通知
-ms.assetid: b5d9b909-f2e4-4773-903e-1dd73b0ca567
 keywords:
 - 后台处理程序通知 WDK 打印
 - 打印后台处理程序通知 WDK
 - 通知 WDK 打印后台处理程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dff2ef727fc72e50abc1cb76d0b9d08e29b13457
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 32bf747280336d5ee142121f717754fa994ead23
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89213635"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96806885"
 ---
 # <a name="spooler-notification"></a>后台处理程序通知
 

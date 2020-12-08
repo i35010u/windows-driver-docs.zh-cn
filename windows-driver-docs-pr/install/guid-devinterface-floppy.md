@@ -1,7 +1,6 @@
 ---
 title: GUID_DEVINTERFACE_FLOPPY
 description: GUID_DEVINTERFACE_FLOPPY
-ms.assetid: 07d47168-a179-40ef-843b-c1efa6acb395
 keywords:
 - GUID_DEVINTERFACE_FLOPPY 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 75ed116ea9840383f214a4efa5d3c4f5edc4fe17
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: e9572304c32e4eefd4815f946ccc6361105226c1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91732849"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96805521"
 ---
 # <a name="guid_devinterface_floppy"></a>GUID_DEVINTERFACE_FLOPPY
 
@@ -33,7 +32,7 @@ ms.locfileid: "91732849"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">属性</th>
+<th align="left">Attribute</th>
 <th align="left">设置</th>
 </tr>
 </thead>
@@ -56,7 +55,7 @@ ms.locfileid: "91732849"
 
 适用于软盘存储设备的系统提供的存储类驱动程序为软盘存储设备注册 GUID_DEVINTERFACE_FLOPPY 的实例。
 
-WDK 中的存储[示例](https://go.microsoft.com/fwlink/p/?LinkId=618052)包括使用过时的标识符[**FloppyClassGuid**](floppyclassguid.md)注册 GUID_DEVINTERFACE_FLOPPY 设备接口类的实例的[软盘驱动程序](/samples/browse/)示例。
+WDK 中的存储 [示例](https://go.microsoft.com/fwlink/p/?LinkId=618052)包括使用过时的标识符 [**FloppyClassGuid**](floppyclassguid.md)注册 GUID_DEVINTERFACE_FLOPPY 设备接口类的实例的 [软盘驱动程序](/samples/browse/)示例。
 
 有关存储驱动程序的信息，请参阅 [存储驱动程序](../storage/storage-drivers.md)。
 
@@ -76,7 +75,7 @@ WDK 中的存储[示例](https://go.microsoft.com/fwlink/p/?LinkId=618052)包括
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**FloppyClassGuid**](floppyclassguid.md)

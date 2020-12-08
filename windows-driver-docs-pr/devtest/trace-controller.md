@@ -1,25 +1,24 @@
 ---
 title: 跟踪控制器
 description: 跟踪控制器
-ms.assetid: 4c2e88ba-c07e-4079-a401-20040f558971
 keywords:
 - 跟踪控制器 WDK
 - 控制器 WDK 软件跟踪
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9cee11911920a0a22b076c62441d0cc48aa26d4c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 268cd9d705ecf93a6c329e9c709611e98771b950
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339709"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96805641"
 ---
 # <a name="trace-controller"></a>跟踪控制器
 
 
-*跟踪控制器*是应用程序和管理跟踪会话的工具。 跟踪控制器启用[跟踪提供程序](trace-provider.md); 配置、 启动和停止[跟踪会话](trace-session.md); 和查询和更新跟踪会话的属性。
+*跟踪控制器* 是用于管理跟踪会话的应用程序和工具。 跟踪控制器启用 [跟踪提供程序](trace-provider.md);配置、启动和停止 [跟踪会话](trace-session.md);并查询和更新跟踪会话的属性。
 
-[Tracelog](tracelog.md)是跟踪控制器。 [TraceView](traceview.md)是这两个跟踪控制器和一个[跟踪使用者](trace-consumer.md)。
+[Tracelog](tracelog.md) 是跟踪控制器。 [TraceView](traceview.md) 既是跟踪控制器又是 [跟踪使用者](trace-consumer.md)。
 
  
 

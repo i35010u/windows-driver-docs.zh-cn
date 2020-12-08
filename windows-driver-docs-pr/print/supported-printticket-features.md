@@ -1,21 +1,20 @@
 ---
 title: 支持的 PrintTicket 功能
 description: 本部分提供有关标准 XPS 筛选器支持的 PrintTicket 功能的信息。
-ms.assetid: 6D1AD770-D4BA-4BDC-886A-C5C36A09BB0E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 20ef6c4698a744ad8efe77655fac2c05854f04e1
-ms.sourcegitcommit: 3ee05aabaf9c5e14af56ce5f1dde588c2c7eb4ec
+ms.openlocfilehash: ca84e44ae7595a70e659e70867625eb79d9df381
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74881902"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96806821"
 ---
 # <a name="supported-printticket-features"></a>支持的 PrintTicket 功能
 
 本部分提供有关标准 XPS 筛选器支持的 PrintTicket 功能的信息。
 
-所有这些功能都可以使 XPS 筛选器改变生成的 PDL 命令。 无论 PDL 命令是由筛选器本身生成还是由设备 GPD/PPD 指定，这些功能仍会导致 XPS 筛选器改变 PDL 命令。 以下各节中引用的所有元素（功能、选项、ScoredProperties、参数）都可在打印架构关键字（psk）命名空间中找到。
+所有这些功能都可以使 XPS 筛选器改变生成的 PDL 命令。 无论 PDL 命令是由筛选器本身生成还是由设备 GPD/PPD 指定，这些功能仍会导致 XPS 筛选器改变 PDL 命令。 以下各节中引用的所有元素 (功能、选项、ScoredProperties、参数) 可在打印架构关键字 (psk) 命名空间中找到。
 
 ## <a name="pagemediasize"></a>PageMediaSize
 
@@ -27,7 +26,7 @@ ms.locfileid: "74881902"
 
 1. 如果指定了 PrintSchemaKeywordMap 并且与 PageMediaSize 选项的 name 属性匹配，则为。
 
-1. 使用以下[默认 PageMediaSize 映射](default-pagemediasize-mappings.md)。
+1. 使用以下 [默认 PageMediaSize 映射](default-pagemediasize-mappings.md) 。
 
 1. PageSize 选项的 name 属性与 GPD 中选项的名称相匹配。
 
@@ -69,7 +68,7 @@ ms.locfileid: "74881902"
 
 此功能描述介质工作表的颜色。 支持的选项有对应的 GPD/PPD 条目。
 
-为所选媒体颜色生成的 PCL6 是由包含 \*PrintSchemaKeywordMap： "PageMediaColor" 的 GPD 功能指定的。 将按以下顺序选择要使用的 GPD 中的选项：
+为所选媒体颜色生成的 PCL6 由包含 \* PrintSchemaKeywordMap： "PageMediaColor" 的 GPD 功能指定。 将按以下顺序选择要使用的 GPD 中的选项：
 
 1. 如果指定了 PrintSchemaKeywordMap 并且与 PageMediaColor 选项的 name 属性匹配，则为。
 
@@ -120,8 +119,8 @@ ms.locfileid: "74881902"
     | PageOrientation 值        | GPD/PPD 文件输入   |
     |------------------------------|----------------------|
     | PrintTicket 纵向         | GPD 纵向         |
-    | PrintTicket 横向        | GPD 横向\_CC90  |
-    | PrintTicket ReverseLandscape | GPD 横向\_CC 1。0 |
+    | PrintTicket 横向        | GPD 横向 \_ CC90  |
+    | PrintTicket ReverseLandscape | GPD 横向 \_ cc 1。0 |
 
 1. PageOrientation 选项的 name 属性与 GPD 中选项的名称相匹配。
 
@@ -129,7 +128,7 @@ ms.locfileid: "74881902"
 
 ## <a name="pageoutputcolor"></a>PageOutputColor
 
-此功能控制目标文档页的打印输出的颜色特征（颜色、单色）。 支持的选项为彩色、灰度和单色。
+此功能控制 "目标文档" 页打印输出 (颜色、单色) 的颜色特征。 支持的选项为彩色、灰度和单色。
 
 为所选输出颜色生成的 PCL6 由 GPD ColorMode 特性指定。 将按以下顺序选择要使用的 GPD 中的选项：
 
@@ -141,7 +140,7 @@ ms.locfileid: "74881902"
 
 ## <a name="pageresolution"></a>PageResolution
 
-此功能定义设备可用于生成输出的可用分辨率（以每英寸点数为单位）。 打印架构未为此功能的选项指定任何标准名称;但是，无论选项名称是什么，我们都支持两个 ScoredProperties： ResolutionX 和 ResolutionY。 支持的选项有对应的 GPD/PPD 条目。
+此功能定义了可用的分辨率 (以每英寸点数为单位的) ，设备可以生成输出。 打印架构未为此功能的选项指定任何标准名称;但是，无论选项名称是什么，我们都支持两个 ScoredProperties： ResolutionX 和 ResolutionY。 支持的选项有对应的 GPD/PPD 条目。
 
 为所选解析生成的 PCL6 由 GPD 分辨率功能指定。 将按以下顺序选择要使用的 GPD 中的选项：
 
@@ -216,7 +215,7 @@ ms.locfileid: "74881902"
 1. DocumentCollate 选项的 name 属性与 GPD 中选项的名称相匹配。
 
 > [!NOTE]
-> 如果将 DocumentCollate 设置为逐份打印并且 GPD Collate 选项包含一个命令，则假定设备可以生成逐份打印的副本。 *PCL6*筛选器将仅生成作业的1个副本，并使用 GPD 命令指示设备生成逐份打印副本。 然后，筛选器会将 GPD 命令中的 NumOfCopies 替换为 JobCopiesAllDocuments 指定的副本数。
+> 如果将 DocumentCollate 设置为逐份打印并且 GPD Collate 选项包含一个命令，则假定设备可以生成逐份打印的副本。 *PCL6* 筛选器将仅生成作业的1个副本，并使用 GPD 命令指示设备生成逐份打印副本。 然后，筛选器会将 GPD 命令中的 NumOfCopies 替换为 JobCopiesAllDocuments 指定的副本数。
 
 为所选排序规则生成的 PostScript 由 PPD 逐份打印功能指定。 将按以下顺序选择使用 PPD 中的选项：
 
@@ -312,15 +311,15 @@ ms.locfileid: "74881902"
 
 为所选的输出 bin 生成的 PCL6 由 GPD OutputBin 功能指定。 将按以下顺序选择要使用的 GPD 中的选项：
 
-1. 如果指定了 PrintSchemaKeywordMap 并且与 \[作业的 name 属性匹配 |文档 |页\]OutputBin 选项。
+1. 如果指定了 PrintSchemaKeywordMap 并与作业的 name 属性匹配，则为 \[ |文档 |Page \] OutputBin 选项。
 
-1. \[作业的名称属性 |文档 |Page\]OutputBin 选项与 GPD 中选项的名称相匹配。
+1. 作业的名称属性 \[ |文档 |Page \] OutputBin 选项与 GPD 中选项的名称匹配。
 
 为选定的双工生成的 PostScript 由 PPD OutputBin 功能指定。 将按以下顺序选择使用 PPD 中的选项：
 
-1. 如果指定了 MSPrintSchemaKeywordMap 并且与 \[作业的 name 属性匹配 |文档 |页\]OutputBin 选项。
+1. 如果指定了 MSPrintSchemaKeywordMap 并与作业的 name 属性匹配，则为 \[ |文档 |Page \] OutputBin 选项。
 
-1. \[作业的名称属性 |文档 |Page\]OutputBin 选项与 PPD 中的选项名称匹配。
+1. 作业的名称属性 \[ |文档 |Page \] OutputBin 选项与 PPD 中的选项名称匹配。
 
 ## <a name="jobbindalldocuments"></a>JobBindAllDocuments
 
@@ -328,7 +327,7 @@ ms.locfileid: "74881902"
 
 选择 "手册" 时，筛选器输出的格式设置为 "2"，页面将重新排序，以便在将作业的工作表的一半折叠为同一书籍的正确顺序。
 
-如果为手册指定了 BindingGutter ScoredProperty，则筛选器会强制将中心边距（从纸张的中心到缩放的可打印区域的边缘），其中至少与 JobBindAllDocumentsGutter 参数指定的大小相同。
+如果为手册指定了 BindingGutter ScoredProperty，则筛选器将 (从纸张中心到缩放可打印区域的边缘) ，至少与 JobBindAllDocumentsGutter 参数指定的大小相同。
 
 如果为 BindLeft 指定了 BindingGutter ScoredProperty，或 EdgeStitchLeft 筛选器将工作表的正面向右移动 JobBindAllDocumentsGutter 参数指定的位置。 现在，位于可打印区域外的内容会被剪切。 工作表背面的内容将在右边缘上按 JobBindAllDocumentsGutter 参数指定的方式进行裁剪。
 
@@ -351,7 +350,7 @@ ms.locfileid: "74881902"
 
 选择 "手册" 时，筛选器输出的格式将设置为 "2"，页面将重新排序，以便在文档的工作表的一半以书籍的正确顺序折叠。
 
-如果为手册指定了 BindingGutter ScoredProperty，则筛选器会强制将中心边距（从纸张的中心到缩放的可打印区域的边缘），其中至少与 DocumentBindingGutter 参数指定的大小相同。
+如果为手册指定了 BindingGutter ScoredProperty，则筛选器将 (从纸张中心到缩放可打印区域的边缘) ，至少与 DocumentBindingGutter 参数指定的大小相同。
 
 如果为 BindLeft 或 EdgeStitchLeft 指定了 BindingGutter ScoredProperty，则筛选器会将工作表的正面向右移动 DocumentBindingGutter 参数指定的位置。 现在，位于可打印区域外的内容会被剪切。 工作表背面的内容将在右边缘上按 DocumentBindingGutter 参数指定的方式进行裁剪。
 

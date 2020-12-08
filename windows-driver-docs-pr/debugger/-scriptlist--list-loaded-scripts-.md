@@ -1,9 +1,8 @@
 ---
 title: .scriptlist（列出已加载的脚本）
-description: .Scriptlist 命令将列出已加载的脚本。
-ms.assetid: 98F24BE6-3F34-44E7-9546-3D5AB6D521DD
+description: Scriptlist 命令列出加载的脚本。
 keywords:
-- .scriptlist （列出已加载的脚本） Windows 调试
+- scriptlist (列出) Windows 调试的已加载脚本
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,23 +11,23 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 85dba9f144d77400de63d6ba9b15f414d4c6ffb3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8e30392ef0c2209040b8b0e7427e561fa6b72c13
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63338856"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96805783"
 ---
 # <a name="scriptlist-list-loaded-scripts"></a>.scriptlist（列出已加载的脚本）
 
 
-**.Scriptlist**命令将列出已加载的脚本。
+**Scriptlist** 命令列出加载的脚本。
 
 ```dbgcmd
 .scriptlist 
 ```
 
-## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>参数
+## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>Parameters
 
 
 <span id="_______________"></span>    
@@ -43,27 +42,27 @@ ms.locfileid: "63338856"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>模式</strong></p></td>
-<td align="left"><p>用户模式下，内核模式</p></td>
+<td align="left"><p><strong>交货</strong></p></td>
+<td align="left"><p>用户模式，内核模式</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>目标</strong></p></td>
-<td align="left"><p>实时、 崩溃转储</p></td>
+<td align="left"><p>实时，故障转储</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>平台</strong></p></td>
-<td align="left"><p>全部</p></td>
+<td align="left"><p>all</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-.Scriptlist 命令将列出已加载通过.scriptload 命令的任何脚本。
+Scriptlist 命令将列出已通过. scriptload 命令加载的任何脚本。
 
-如果 TestScript 已成功加载使用.scriptload，.scriptlist 命令将显示加载的脚本的名称。
+如果使用 scriptload 成功加载了 TestScript，则 scriptlist 命令会显示加载的脚本的名称。
 
 ```dbgcmd
 0:000> .scriptlist
@@ -71,20 +70,20 @@ Command Loaded Scripts:
     JavaScript script from 'C:\WinDbg\Scripts\TestScript.js'
 ```
 
-**要求**
+**惠?**
 
-在使用之前的任何.script 命令，脚本编写提供程序需要加载。 使用[ **.load (加载扩展 DLL)** ](-load---loadby--load-extension-dll-.md)命令，可以加载 JavaScript 提供程序。
+使用任何脚本命令之前，需要加载脚本提供程序。 使用 [**load (负载扩展 DLL)**](-load---loadby--load-extension-dll-.md) 命令加载 JavaScript 提供程序。
 
 ```dbgcmd
 0:000> .load jsprovider.dll
 ```
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
 [JavaScript 调试器脚本](javascript-debugger-scripting.md)
 
-[**.scriptload （负载脚本）**](-scriptload--load-script-.md)
+[**.scriptload（加载脚本）**](-scriptload--load-script-.md)
 
  
 

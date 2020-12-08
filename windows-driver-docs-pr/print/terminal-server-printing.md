@@ -1,18 +1,17 @@
 ---
 title: 终端服务器打印
 description: 终端服务器打印
-ms.assetid: 627d05f6-1499-4645-ad9a-b1a09f41b0c9
 keywords:
 - 打印机驱动程序 WDK，终端服务器
 - 终端服务器打印 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3ac86fdcedec00a98eb077c6802a8ed89adf22f1
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: dd9d38e84aee04acbb49f82a7c401b8f4b05e196
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89213633"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96806723"
 ---
 # <a name="terminal-server-printing"></a>终端服务器打印
 
@@ -36,7 +35,7 @@ Microsoft Windows 2000 和更高版本支持终端服务，这是允许多个用
 
 -   在 Windows Vista 中，必须设计要在用户模式下执行的打印机图形 DLL。 请参阅 [选择用户模式或内核模式](choosing-user-mode-or-kernel-mode.md)。
 
--   如果自定义驱动程序必须支持您的设备，则您的驱动程序必须完全符合 Microsoft 的 [打印机驱动程序体系结构](printer-driver-architecture.md)。 具体来说：
+-   如果自定义驱动程序必须支持您的设备，则您的驱动程序必须完全符合 Microsoft 的 [打印机驱动程序体系结构](printer-driver-architecture.md)。 具体而言：
     1.  您必须创建一个 [打印机接口 DLL](printer-interface-dll.md)。
     2.  必须创建 [打印机图形 DLL](printer-graphics-dll.md)。 此 DLL 可以在用户模式或内核模式下执行，但首选用户模式。
     3.  如果创建内核模式代码，则必须使用 [驱动程序验证程序](../devtest/driver-verifier.md)来测试代码。
@@ -61,7 +60,7 @@ Microsoft Windows 2000 和更高版本支持终端服务，这是允许多个用
 
 有关共同安装程序和类安装程序的详细信息，请参阅 [编写类安装程序和共同安装程序](../install/writing-class-installers-and-co-installers.md)。
 
-**注意**   编写自定义安装代码之前，请务必阅读 Windows SDK 文档中提供的终端服务编程准则。
+**注意**   编写自定义安装代码之前，请务必阅读 Windows SDK 文档中提供的终端服务编程准则。
 
  
 
@@ -71,7 +70,7 @@ Microsoft Windows 2000 和更高版本支持终端服务，这是允许多个用
 
 几乎所有打印机驱动程序代码都在后台处理程序的执行上下文中运行，因此无法显示用户界面。 用户界面只能由打印机接口 Dll 显示，并且只能在以下函数内显示：
 
--   [**DrvDevicePropertySheets**](/windows-hardware/drivers/ddi/winddiui/nf-winddiui-drvdevicepropertysheets)和[**DrvDocumentPropertySheets**](/windows-hardware/drivers/ddi/winddiui/nf-winddiui-drvdocumentpropertysheets)函数，用于创建属性页。
+-   [**DrvDevicePropertySheets**](/windows-hardware/drivers/ddi/winddiui/nf-winddiui-drvdevicepropertysheets)和 [**DrvDocumentPropertySheets**](/windows-hardware/drivers/ddi/winddiui/nf-winddiui-drvdocumentpropertysheets)函数，用于创建属性页。
 
 -   [**DrvPrinterEvent**](/windows-hardware/drivers/ddi/winddiui/nf-winddiui-drvprinterevent)函数，用于接收标识打印机事件的事件代码。 请注意，函数只能显示打印机 \_ 事件 " \_ 添加连接" 和 "打印机事件" " \_ \_ \_ 删除连接" \_ 事件代码的用户界面。
 

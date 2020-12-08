@@ -1,17 +1,16 @@
 ---
 title: 存储类驱动程序的调度例程
 description: 存储类驱动程序的调度例程
-ms.assetid: 99713661-5e99-4110-b369-afc084a2aaef
 keywords:
 - 调度例程 WDK 存储
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 94aa348e89b8d6b88d1d49e81bbc281e42e4e935
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: a347c5cb3832a22354f70fec9d8b93bf0f11419d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89190943"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96806677"
 ---
 # <a name="storage-class-drivers-dispatch-routines"></a>存储类驱动程序的调度例程
 

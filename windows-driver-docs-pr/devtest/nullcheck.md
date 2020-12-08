@@ -1,7 +1,6 @@
 ---
 title: 'NullCheck 规则 (kmdf) '
 description: 了解 NullCheck 规则 (kmdf) 。 此规则验证驱动程序代码中的 NULL 值是否在稍后的驱动程序中未被引用。
-ms.assetid: 1928828F-F427-4921-A4E1-1BFC51A01C58
 ms.date: 05/21/2018
 keywords:
 - 'NullCheck 规则 (kmdf) '
@@ -12,12 +11,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 4af71cad076fb28c02a7d59bde2d12c99e2b267b
-ms.sourcegitcommit: cccf9ba62af357aad1016addbbf6c42c7f564412
+ms.openlocfilehash: c35dfe0d554217f826f1d0850d3351e126a2ad7a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/01/2020
-ms.locfileid: "91606471"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96806429"
 ---
 # <a name="nullcheck-rule-kmdf"></a>NullCheck 规则 (kmdf) 
 

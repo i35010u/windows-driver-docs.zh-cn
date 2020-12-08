@@ -1,7 +1,6 @@
 ---
 title: DEVPKEY_Device_UpperFilters
 description: DEVPKEY_Device_UpperFilters
-ms.assetid: 5e6cba65-13ca-44b2-bb5f-ca61b3f23c5c
 keywords:
 - DEVPKEY_Device_UpperFilters 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 7514c1bf1f855e8cbd264d6757b9798552670f28
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 2609d8886d16a93f2ab61e2c74706c0f76a860f8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90716400"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96805525"
 ---
 # <a name="devpkey_device_upperfilters"></a>DEVPKEY_Device_UpperFilters
 

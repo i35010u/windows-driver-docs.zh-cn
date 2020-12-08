@@ -1,7 +1,6 @@
 ---
 title: DIF_FIRSTTIMESETUP
 description: DIF_FIRSTTIMESETUP
-ms.assetid: 6ac4da58-3f4f-4fcd-96e2-c480975159e0
 keywords:
 - DIF_FIRSTTIMESETUP 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: c1082e7a8b53d6af64c15759dce078d845c957e9
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 3efc1bb56a590439036130ce354447376ae6c477
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90717544"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96806243"
 ---
 # <a name="dif_firsttimesetup"></a>DIF_FIRSTTIMESETUP
 
@@ -60,13 +59,13 @@ GUI 模式安装过程中。
 ### <a name="installer-input"></a>安装程序输入
 
 <a href="" id="deviceinfoset"></a>*DeviceInfoSet*  
-提供设备信息集的句柄。 存在与*DeviceInfoSet*关联的[设备安装程序类](./overview-of-device-setup-classes.md)。
+提供设备信息集的句柄。 存在与 *DeviceInfoSet* 关联的 [设备安装程序类](./overview-of-device-setup-classes.md)。
 
 <a href="" id="deviceinfodata"></a>*DeviceInfoData*  
 无
 
 <a href="" id="device-installation-parameters-"></a>设备安装参数   
-与*DeviceInfoSet*关联的设备安装参数 ([**SP_DEVINSTALL_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-sp_devinstall_params_a)) 。
+与 *DeviceInfoSet* 关联的设备安装参数 ([**SP_DEVINSTALL_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-sp_devinstall_params_a)) 。
 
 <a href="" id="class-installation-parameters"></a>类安装参数  
 无
@@ -93,7 +92,7 @@ GUI 模式安装过程中。
 
 若要在 GUI 模式安装过程中检测非 PnP 设备，安装程序必须处理 DIF_FIRSTTIMESETUP 请求。 GUI 模式安装程序不会向安装程序发送 [**DIF_DETECT**](dif-detect.md) 请求。
 
-GUI 模式安装程序发送一个 DIF_FIRSTTIMESETUP 请求，其中包含空的 *DeviceInfoSet*。 安装程序可以对非 PnP 设备执行旧式检测，并将其添加到 *DeviceInfoSet*中。 系统提供的安装程序还可以在将旧式设备安装从 Windows 9x/Me 或 Windows NT 迁移到 Microsoft Windows 2000 及更高版本的 Windows 时处理此 DIF 请求。
+GUI 模式安装程序发送一个 DIF_FIRSTTIMESETUP 请求，其中包含空的 *DeviceInfoSet*。 安装程序可以对非 PnP 设备执行旧式检测，并将其添加到 *DeviceInfoSet* 中。 系统提供的安装程序还可以在将旧式设备安装从 Windows 9x/Me 或 Windows NT 迁移到 Microsoft Windows 2000 及更高版本的 Windows 时处理此 DIF 请求。
 
 安装程序会根据注册表信息、通过调用内核模式检测组件来检测其安装程序类的新设备，或通过咨询 *unattend.txt* 在操作系统升级过程中运行迁移 DLL 时存储的信息。
 

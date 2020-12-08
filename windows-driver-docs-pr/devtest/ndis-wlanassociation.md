@@ -1,7 +1,6 @@
 ---
 title: 'WlanAssociation 规则 (ndis) '
 description: WlanAssociation 规则验证微型端口驱动程序是否正确地遵从了本机802.11 无线局域网 (WLAN) 关联序列。
-ms.assetid: 3F457C06-29F1-4730-92D5-5B98CD459FD1
 ms.date: 05/21/2018
 keywords:
 - 'WlanAssociation 规则 (ndis) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: d7cad18f4a0afc68757e665fdae8f50f094458b1
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: b11d5e9a7132ac566b3a4536cb3c1245abdbdd02
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107450"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96805731"
 ---
 # <a name="wlanassociation-rule-ndis"></a>WlanAssociation 规则 (ndis) 
 
 
-**WlanAssociation**规则验证微型端口驱动程序是否正确地遵从了本机802.11 无线局域网 (WLAN) 关联序列。
+**WlanAssociation** 规则验证微型端口驱动程序是否正确地遵从了本机802.11 无线局域网 (WLAN) 关联序列。
 
 **驱动程序模型： NDIS**
 

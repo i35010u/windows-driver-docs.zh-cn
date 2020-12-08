@@ -1,18 +1,17 @@
 ---
 title: 读取和写入属性内存
 description: 读取和写入属性内存
-ms.assetid: 8e430057-b68a-4edc-8755-1d7255412269
 keywords:
 - PCMCIA WDK 总线，属性内存
 - 属性内存 WDK PCMCIA 总线，读取和写入
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 403e6c0f3736ed75297b08159f5094bc2210e5c1
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: a1c3184dea14dcd95edc77c9263cf6a12ca5c831
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89383515"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96806049"
 ---
 # <a name="read-and-write-attribute-memory"></a>读取和写入属性内存
 
@@ -35,10 +34,10 @@ PCMCIA 内存卡驱动程序执行以下操作：
 -   获取下一个堆栈位置。
 
 -   设置新堆栈位置的以下成员：
-    -   **ReadWriteConfig. WhichSpace**成员指定值 PCCARD \_ 属性 \_ 内存。
-    -   **缓冲区**成员指向用于读取或写入操作的驱动程序分配的非分页缓冲区。 对于写入操作，缓冲区包含要写入配置空间的数据。 对于读取操作，该缓冲区是一个填充了零的缓冲区。 完成 IRP 后，此缓冲区设置为从设备读取的属性内存副本。
-    -   **Offset**成员指定从属性内存基开始读取或写入操作的字节偏移量。
-    -   **Length**成员指定**缓冲区**中指定的缓冲区的大小（以字节为单位）。
+    -   **ReadWriteConfig. WhichSpace** 成员指定值 PCCARD \_ 属性 \_ 内存。
+    -   **缓冲区** 成员指向用于读取或写入操作的驱动程序分配的非分页缓冲区。 对于写入操作，缓冲区包含要写入配置空间的数据。 对于读取操作，该缓冲区是一个填充了零的缓冲区。 完成 IRP 后，此缓冲区设置为从设备读取的属性内存副本。
+    -   **Offset** 成员指定从属性内存基开始读取或写入操作的字节偏移量。
+    -   **Length** 成员指定 **缓冲区** 中指定的缓冲区的大小（以字节为单位）。
 -   设置完成例程。
 
 -   沿驱动器堆栈向下发送请求。

@@ -1,7 +1,6 @@
 ---
 title: 用于验证驱动程序的工具
 description: 用于验证驱动程序的工具
-ms.assetid: 1d878be6-8730-4452-a35a-0635ebed9091
 keywords:
 - 工具 WDK，验证驱动程序
 - 驱动程序开发工具 WDK，验证驱动程序
@@ -9,12 +8,12 @@ keywords:
 - 驱动程序验证 WDK
 ms.date: 06/04/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: acd7e4785ca30732a268ad2924bede2ad2782341
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: ba062b8208092d9975fbdb433033389621bc7d72
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89384147"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96805663"
 ---
 # <a name="tools-for-verifying-drivers"></a>用于验证驱动程序的工具
 

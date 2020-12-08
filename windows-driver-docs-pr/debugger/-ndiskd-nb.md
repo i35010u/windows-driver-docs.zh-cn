@@ -1,7 +1,6 @@
 ---
 title: ndiskd
 description: Ndiskd 扩展显示 NET_BUFFER (NB) 结构的相关信息。
-ms.assetid: 7351264c-4adc-43ac-9eca-41deb3d35983
 keywords:
 - ndiskd Windows 调试
 ms.date: 06/15/2020
@@ -12,16 +11,16 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: b663a2392abafcde237ccfd6a339bbc4f3c5e018
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 0b7d09bde4002d037ca42e27e5db40816fcbb6d7
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89216766"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96805855"
 ---
 # <a name="ndiskdnb"></a>!ndiskd.nb
 
-**！ Ndiskd**扩展显示 (nb) 结构的[**网络 \_ 缓冲区**](../network/net-buffer-structure.md)的相关信息。
+**！ Ndiskd** 扩展显示 (nb) 结构的 [**网络 \_ 缓冲区**](../network/net-buffer-structure.md)的相关信息。
 
 ```console
 !ndiskd.nb [-handle <x>] [-verbosity <x>] [-basic] [-chain] [-data]
@@ -30,7 +29,7 @@ ms.locfileid: "89216766"
 ## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>Parameters
 
 <span id="_______-handle______"></span><span id="_______-HANDLE______"></span>*-handle*   
-必需。 **网络 \_ 缓冲区**的地址。
+必需。 **网络 \_ 缓冲区** 的地址。
 
 <span id="_______-verbosity______"></span><span id="_______-VERBOSITY______"></span>*-详细级别*   
 要显示的详细信息的级别。
@@ -50,14 +49,14 @@ Ndiskd.dll
 
 ### <a name="examples"></a>示例
 
-以下示例中的**网络 \_ 缓冲区**是从[**！ ndiskd，Nbl**](-ndiskd-nbl.md)主题的 "示例" 部分的[**net \_ buffer \_ 列表**](../network/net-buffer-list-structure.md)中获取的。 NB 的句柄为 ffffdf8014952610。
+以下示例中的 **网络 \_ 缓冲区** 是从 [**！ ndiskd，Nbl**](-ndiskd-nbl.md)主题的 "示例" 部分的 [**net \_ buffer \_ 列表**](../network/net-buffer-list-structure.md)中获取的。 NB 的句柄为 ffffdf8014952610。
 
 ```console
 2: kd> !ndiskd.nbl ffffdf80149524a0 -data
 NET_BUFFER ffffdf8014952610
 ```
 
-可以单击 **网络 \_ 缓冲区**的句柄，或运行 **！ ndiskd** 命令来查看其详细信息。
+可以单击 **网络 \_ 缓冲区** 的句柄，或运行 **！ ndiskd** 命令来查看其详细信息。
 
 ```console
 2: kd> !ndiskd.nb ffffdf8014952610
@@ -69,7 +68,7 @@ NET_BUFFER ffffdf8014952610
     View associated NBL
 ```
 
-使用 **！ ndiskd** 命令查看此 **网络 \_ 缓冲区**的 MDL 链以及其基本详细信息。 在下面的示例中，只有一个 MDL。 它的句柄为 ffffdf8014a37930。
+使用 **！ ndiskd** 命令查看此 **网络 \_ 缓冲区** 的 MDL 链以及其基本详细信息。 在下面的示例中，只有一个 MDL。 它的句柄为 ffffdf8014a37930。
 
 ```console
 2: kd> !ndiskd.nb ffffdf8014952610 -chain
@@ -82,7 +81,7 @@ NET_BUFFER ffffdf8014952610
         Process            [System process]    ByteOffset         0n36  
 ```
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [网络驱动程序设计指南](../network/index.md)
 
@@ -90,7 +89,7 @@ NET_BUFFER ffffdf8014952610
 
 [调试网络堆栈](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-175-Debugging-the-Network-Stack)
 
-[**NDIS 扩展 ( # A0) **](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 扩展 ( # A0)**](ndis-extensions--ndiskd-dll-.md)
 
 [**!ndiskd.help**](-ndiskd-help.md)
 

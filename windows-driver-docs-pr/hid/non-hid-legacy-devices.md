@@ -1,27 +1,26 @@
 ---
 title: 非 HID 旧设备
 description: 本部分介绍了非 HID 键盘和鼠标的驱动程序、传输方式和筛选器驱动程序。 这些设备主要以 PS/2 传输方式运行。
-ms.assetid: 4726DD47-C22E-4B92-A7BD-EB37BA53496F
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4b8733769a44e5fbda86c942c86cf5931bc6561e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 70c9f9be0c9888da0b24f2a2237e3ee4445ab209
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63346214"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96805613"
 ---
 # <a name="non-hid-legacy-devices"></a>非 HID 旧设备
 
 
 本部分介绍了非 HID 键盘和鼠标的驱动程序、传输方式和筛选器驱动程序。 这些设备主要以 PS/2 传输方式运行。
 
-本部分不包含有关 Sermouse，Windows 系统功能驱动程序了串行老鼠的信息。 请注意，将应用于 I8042prt 操作约束不适用 Sermouse。 此外，较高级别设备筛选器驱动程序不用于与 Sermouse 自定义了串行老鼠的操作。 相反，供应商需要安装设备驱动程序特定于设备的函数。 特定于设备的功能驱动程序和 Sermouse 可以运行在同一时间，相互独立。
+本部分不包含有关 Sermouse 的信息，这是用于串行鼠标的 Windows 系统函数驱动程序。 请注意，适用于 I8042prt 的操作约束不适用于 Sermouse。 此外，上层设备筛选器驱动程序不能与 Sermouse 一起用于自定义串行鼠标的操作。 相反，供应商需要安装设备特定的设备驱动程序。 设备特定的函数驱动程序和 Sermouse 可以同时相互操作。
 
 ## <a name="non-hid-driver-stack"></a>非 HID 驱动程序堆栈
 
 
-Windows 8 的非 HID 键盘、 鼠标和触摸板硬件使用以下驱动程序堆栈。 仅非-HID 传输协议在 Windows 8 上支持是 PS2。
+Windows 8 为非 HID 键盘、鼠标和触摸板硬件使用以下驱动程序堆栈。 Windows 8 上支持的唯一非 HID 传输是 PS2。
 
 ![非 hid 驱动程序堆栈](images/non-hid-driver-stack.png)
 

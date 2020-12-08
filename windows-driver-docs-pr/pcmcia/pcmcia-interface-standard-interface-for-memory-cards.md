@@ -1,20 +1,19 @@
 ---
 title: 内存卡的 PCMCIA_INTERFACE_STANDARD 接口
 description: 内存卡的 PCMCIA_INTERFACE_STANDARD 接口
-ms.assetid: 3bb48ba8-388d-46c9-96a7-4cd0829e6f78
 keywords:
 - PCMCIA WDK 总线，PCMCIA_INTERFACE_STANDARD 接口
 - PCMCIA_INTERFACE_STANDARD
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 29acbc4a612824870bceaa2668e86efe39a4cd26
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: d86731470586dea226b2a7d58a809e0a1fc64e8d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89384427"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96806051"
 ---
-# <a name="pcmcia_interface_standard-interface-for-memory-cards"></a>\_ \_ 内存卡的 PCMCIA 接口标准接口
+# <a name="pcmcia_interface_standard-interface-for-memory-cards"></a>内存卡的 PCMCIA\_INTERFACE\_STANDARD 接口
 
 
 

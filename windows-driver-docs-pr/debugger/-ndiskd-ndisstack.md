@@ -1,7 +1,6 @@
 ---
 title: ndiskd.ndisstack
 description: ！ Ndiskd ndisstack 扩展显示调试堆栈跟踪。
-ms.assetid: 939DEC34-3D20-41FE-B5A8-DDF810195B07
 keywords:
 - ndiskd ndisstack Windows 调试
 ms.date: 05/23/2017
@@ -12,21 +11,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: c148f843151dd049b012c613934045d829322204
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: fe3eeaddf0849253e7f43ff49cf52fa9e0bcfe46
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89211297"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96805813"
 ---
 # <a name="ndiskdndisstack"></a>!ndiskd.ndisstack
 
 
-**注意**   第三方网络驱动程序开发人员不需要手动使用此扩展命令。 您可以运行它来查看它所显示的信息，但不能重复使用它在您的驱动程序中提供的详细信息。
+**注意**  第三方网络驱动程序开发人员不需要手动使用此扩展命令。 您可以运行它来查看它所显示的信息，但不能重复使用它在您的驱动程序中提供的详细信息。
 
  
 
-**！ Ndiskd ndisstack**扩展显示调试堆栈跟踪。
+**！ Ndiskd ndisstack** 扩展显示调试堆栈跟踪。
 
 ```console
 !ndiskd.ndisstack -handle <x> [-statistics]
@@ -54,7 +53,7 @@ Ndiskd.dll
 
 [调试网络堆栈](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-175-Debugging-the-Network-Stack)
 
-[**NDIS 扩展 ( # A0) **](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 扩展 ( # A0)**](ndis-extensions--ndiskd-dll-.md)
 
 [**!ndiskd.help**](-ndiskd-help.md)
 

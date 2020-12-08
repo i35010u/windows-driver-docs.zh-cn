@@ -1,7 +1,6 @@
 ---
 title: 协议绑定状态和操作
 description: 协议绑定状态和操作
-ms.assetid: 669b3de1-7f6b-4e63-8943-c8eaadfa80fc
 keywords:
 - 协议驱动程序 WDK 网络，绑定操作状态
 - NDIS 协议驱动程序 WDK，绑定操作状态
@@ -11,12 +10,12 @@ keywords:
 - 事件 WDK 网络
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 927de5057e51130625140fc6a651ee3e816c7126
-ms.sourcegitcommit: 366a15d68eb58d01a8ca6de7b982f62ac8b7deaf
+ms.openlocfilehash: 811abb6788f3ef7d438a22a6120806223ad5b7ed
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/19/2020
-ms.locfileid: "90812002"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96806151"
 ---
 # <a name="protocol-binding-states-and-operations"></a>协议绑定状态和操作
 
@@ -32,7 +31,7 @@ ms.locfileid: "90812002"
 <a href="" id="opening"></a>打开  
 在打开状态中，协议驱动程序为绑定分配资源并尝试打开适配器。
 
-<a href="" id="running"></a>运行  
+<a href="" id="running"></a>正在运行  
 在 "正在运行" 状态下，协议驱动程序为绑定执行发送和接收处理。
 
 <a href="" id="closing"></a>关闭  
@@ -44,7 +43,7 @@ ms.locfileid: "90812002"
 <a href="" id="paused"></a>悬停  
 在暂停状态下，协议驱动程序不会对绑定执行发送或接收操作。
 
-<a href="" id="restarting"></a>重新启动  
+<a href="" id="restarting"></a>重新  
 在重新启动状态下，协议驱动程序将完成为绑定重新启动发送和接收操作所需的任何操作。
 
 在下表中，标题表示绑定状态，事件列在第一列中。 表中的其余条目指定事件发生在状态中后的下一个状态。 空白条目表示无效的事件/状态组合。
@@ -68,7 +67,7 @@ ms.locfileid: "90812002"
 <th align="left">关闭</th>
 <th align="left">已暂停</th>
 <th align="left">重新启动</th>
-<th align="left">运行</th>
+<th align="left">正在运行</th>
 <th align="left">正在暂停</th>
 </tr>
 </thead>
@@ -159,7 +158,7 @@ ms.locfileid: "90812002"
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left"><p>运行</p></td>
+<td align="left"><p>正在运行</p></td>
 <td align="left"></td>
 <td align="left"></td>
 </tr>
@@ -180,7 +179,7 @@ ms.locfileid: "90812002"
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left"><p>运行</p></td>
+<td align="left"><p>正在运行</p></td>
 <td align="left"><p>正在暂停</p></td>
 </tr>
 <tr class="even">
@@ -190,7 +189,7 @@ ms.locfileid: "90812002"
 <td align="left"><p>关闭</p></td>
 <td align="left"><p>已暂停</p></td>
 <td align="left"><p>重新启动</p></td>
-<td align="left"><p>运行</p></td>
+<td align="left"><p>正在运行</p></td>
 <td align="left"><p>正在暂停</p></td>
 </tr>
 </tbody>
@@ -198,7 +197,7 @@ ms.locfileid: "90812002"
 
  
 
-**注意**   上表中列出的事件是 NDIS 协议绑定的主要事件。 当信息可用时，附加事件将添加到此表中。
+**注意**  上表中列出的事件是 NDIS 协议绑定的主要事件。 当信息可用时，附加事件将添加到此表中。
 
  
 
@@ -225,7 +224,7 @@ ms.locfileid: "90812002"
 <a href="" id="pause-is-complete"></a>暂停完成  
 当驱动程序完成停止发送和接收操作所需的所有操作后，暂停操作完成并且绑定处于暂停状态。
 
-**注意**   驱动程序必须等待所有未完成的发送请求完成，然后暂停操作才能完成。
+**注意**  驱动程序必须等待所有未完成的发送请求完成，然后暂停操作才能完成。
 
  
 

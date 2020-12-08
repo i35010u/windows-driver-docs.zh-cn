@@ -1,7 +1,6 @@
 ---
 title: DEVPKEY_Device_Security
 description: DEVPKEY_Device_Security
-ms.assetid: ecfebaeb-f418-4f4a-b280-bd0c06cbc3a6
 keywords:
 - DEVPKEY_Device_Security 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: e22f01e8c6370b4744ecfcdf0719b7fa6a957976
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 8459aa63016f7f5eb10b17c23233756f23818542
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90717416"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96805547"
 ---
 # <a name="devpkey_device_security"></a>DEVPKEY_Device_Security
 
@@ -66,7 +65,7 @@ DEVPKEY_Device_Security 设备属性表示设备实例的安全描述符结构�
 <a name="remarks"></a>备注
 -------
 
-您可以使用 Inf DDInstall 中包含的[**AddReg 指令**](./inf-addreg-directive.md)设置 DEVPKEY_Device_Security 的值[**。 *DDInstall***](./inf-ddinstall-hw-section.md)安装设备的 INF 文件的硬件部分。
+您可以使用 Inf DDInstall 中包含的 [**AddReg 指令**](./inf-addreg-directive.md)设置 DEVPKEY_Device_Security 的值 [**。 *DDInstall***](./inf-ddinstall-hw-section.md)安装设备的 INF 文件的硬件部分。
 
 可以通过调用 [**SetupDiGetDeviceProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdigetdevicepropertyw) 来检索 DEVPKEY_Device_Security 的值，也可以通过调用 [**SetupDiSetDeviceProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdisetdevicepropertyw)来设置此属性。
 

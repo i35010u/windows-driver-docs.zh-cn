@@ -1,18 +1,17 @@
 ---
 title: 打印票证接口和打印驱动程序插件
 description: 打印票证接口和打印驱动程序插件
-ms.assetid: 5c5237a1-f4ff-42f9-8992-753743fd5e15
 keywords:
 - IPrintTicketProvider
 - IPrintOemPrintTicketProvider
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f107e984cf1e660011f6b6adced30458edac64ac
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 3c2c2ec019291c97e10cc9eece0e9a9e8b3b451b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89207103"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96807415"
 ---
 # <a name="print-ticket-interfaces-and-print-driver-plug-ins"></a>打印票证接口和打印驱动程序插件
 

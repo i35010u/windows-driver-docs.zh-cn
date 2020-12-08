@@ -1,15 +1,14 @@
 ---
 title: RunAs
 description: RunAs
-ms.assetid: 47183A50-513C-4bc5-8DC4-33065323F584
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 52a8be4e9412f4c06df88ed2133d9425fed43f56
-ms.sourcegitcommit: f63852446e614c985a65f599cdfe788bdb0c6089
+ms.openlocfilehash: ad2ae0e4305fecefce255b264943a3f4d2b9c5b8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87425731"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96806593"
 ---
 # <a name="runas"></a>RunAs
 
@@ -17,7 +16,7 @@ TAEF 提供了一种机制，用于以本地系统或在低完整性过程中执
 
 ## <a name="prerequisites"></a>先决条件
 
-- [Te](te-service.md)必须在计算机上安装并运行服务，以便从非提升的进程运行提升的测试，从提升的进程运行未提升的测试，或者将测试作为本地系统运行。
+- [Te](te-service.md) 必须在计算机上安装并运行服务，以便从非提升的进程运行提升的测试，从提升的进程运行未提升的测试，或者将测试作为本地系统运行。
 
 ## <a name="runas-types"></a>RunAs 类型
 

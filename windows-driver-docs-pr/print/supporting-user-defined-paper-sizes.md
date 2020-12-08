@@ -1,20 +1,19 @@
 ---
 title: 支持用户定义的纸张大小
 description: 支持用户定义的纸张大小
-ms.assetid: f9c0b759-687e-4d92-80ce-330e30cbc41c
 keywords:
 - 用户定义的纸张大小 WDK Unidrv
-- 自定义的纸张大小 WDK Unidrv
+- 自定义纸张大小 WDK Unidrv
 - 最大纸张大小 WDK Unidrv
-- 边距 WDK 纸张大小
+- 页边距 WDK 纸张大小
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1dfbd1d19ac42c46391f0a36aadb5a2bd93fd0ac
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: abe105369f11b71dd28863e4ec543014f06e1fad
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63365329"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96806783"
 ---
 # <a name="supporting-user-defined-paper-sizes"></a>支持用户定义的纸张大小
 
@@ -22,88 +21,88 @@ ms.locfileid: "63365329"
 
 
 
-用户定义的纸张大小可能是特定于一台打印服务器，通常为特定的应用程序自定义。 因此它们通常称为自定义的纸张大小。 系统管理员使用打印文件夹来定义自定义的纸张大小。 如果打印机可以处理自定义的纸张大小，供应商必须使用打印机的 GPD 文件以指定大小的可接受范围。
+用户定义的纸张大小可以特定于单个打印服务器，并且通常是针对特定应用程序自定义的。 因此它们通常称为自定义纸张大小。 系统管理员使用 "打印" 文件夹来定义自定义纸张大小。 如果打印机能够处理自定义纸张大小，则供应商必须使用打印机的 GPD 文件来指定大小可接受的范围。
 
-用于描述自定义纸张的可接受的大小范围提供了两种方法：
+提供了两种方法来描述自定义纸张的可接受大小范围：
 
 -   可以显式指定大小范围。
 
--   您可以指定相对于打印机的最大的纸张大小的大小范围。
+-   可以指定相对于打印机最大纸张大小的大小范围。
 
 ### <a name="specifying-paper-size-ranges-explicitly"></a>显式指定纸张大小范围
 
-若要使用此方法，GPD 文件的 PaperSize 功能都必须包括\*选项使用 CUSTOMSIZE 自变量的条目。 此条目必须包含以下选项属性：
+若要使用此方法，GPD 文件的 PaperSize 功能必须包含 \* 带有 CUSTOMSIZE 参数的选项项。 此条目必须包含以下选项属性：
 
-\*MinSize \*MaxSize \*MaxPrintableWidth \*MinLeftMargin \*TopMargin \*BottomMargin \*CenterPrintable？
-\*CursorOrigin\*命令可用于这些 GPD 条目创建自定义的纸张大小说明仅针对打印机具有下列特征：
+\*MinSize \* MaxSize \* MaxPrintableWidth \* MinLeftMargin \* TopMargin \* BottomMargin \* CenterPrintable？
+\*CursorOrigin \* 命令您可以使用这些 GPD 条目为具有以下特征的打印机创建自定义纸张大小说明：
 
--   打印机支持命令 （通常通过移动光标原点） 显式选择自定义的纸张大小。
+-   打印机支持通过命令显式选择自定义纸张大小 (通常是通过将光标原点移) 来进行的。
 
--   游标源保持固定，相对于纸时，适用于所有自定义的纸张大小的左上角。 （这通常不是为横向模式下打印或中心馈送或右侧 hand 送入的打印机，则返回 true。）
+-   对于所有自定义纸张大小，光标原点保持固定，相对于纸张的左上角。  (对于横向模式打印，或对于中心送进或右送纸的打印机，这通常不是这样。 ) 
 
--   顶部和底部边距是独立的纸张大小。
+-   上边距和下边距独立于纸张大小。
 
--   纸张宽度是否为指定的值之和小于\* **MinLeftMargin**并\* **MaxPrintableWidth**，没有任何右边距。 也就是说，打印机可以打印到纸张的右边缘。
+-   如果纸张宽度小于为 MinLeftMargin 和 MaxPrintableWidth 指定的值的总和 \* **MinLeftMargin** \* *_MaxPrintableWidth_*，则没有右边距。 也就是说，打印机可以打印到纸张的右边缘。
 
-命令参数 (在指定\***命令**条目) 如果，则可以在打印时计算[标准变量表达式](standard-variable-expressions.md)使用，通常包括 PhysPaperLength 和PhysPaperWidth 变量。 这些变量表示打印作业，由应用程序指定所请求的实际的纸张大小。
+\*如果使用 [标准变量表达式](standard-variable-expressions.md)（通常包括 PhysPaperLength 和 PhysPaperWidth 变量），则在 *_命令_*) 项中指定的命令参数 (可以在打印时计算。 这些变量表示应用程序指定的打印作业的实际纸张大小。
 
-### <a name="specifying-paper-size-ranges-relative-to-the-printers-largest-paper-size"></a>指定纸张大小范围相对于打印机的最大的纸张大小
+### <a name="specifying-paper-size-ranges-relative-to-the-printers-largest-paper-size"></a>指定纸张大小范围（相对于打印机的最大纸张大小）
 
-对于不支持显式指定自定义的纸张大小范围所需的特征的打印机，另一种方法提供，它指定相对于打印机的最大的纸张大小的纸张大小。
+对于不支持明确指定自定义纸张大小范围所需要的特性的打印机，提供了另一种方法，该方法指定纸张大小（相对于打印机的最大纸张大小）。
 
-若要使用此方法，GPD 文件的 PaperSize 功能都必须包括\*选项使用 CUSTOMSIZE 自变量的条目。 此条目必须包含以下选项属性：
+若要使用此方法，GPD 文件的 PaperSize 功能必须包含 \* 带有 CUSTOMSIZE 参数的选项项。 此条目必须包含以下选项属性：
 
-\*MinSize \*MaxSize \*MaxPrintableWidth \*CustCursorOriginX \*CustCursorOriginX \*CustPrintableOriginX \*CustPrintableOriginY \*CustPrintableSizeX \*CustPrintableSizeY\*命令时指定的大小范围相对于打印机的最大的纸张大小，使用下列对齐规则：
+\*MinSize \* MaxSize \* MaxPrintableWidth \* CustCursorOriginX \* CustCursorOriginX \* CustPrintableOriginX \* CustPrintableOriginY CustPrintableSizeX CustPrintableSizeY \* \* \* Command 指定相对于打印机最大纸张大小的大小范围时，请使用以下对齐规则：
 
--   对于左侧源打印机，必须对齐所有纸张大小上的边距和左边距。
+-   对于左打印机，所有纸张大小的上边距和左边距必须对齐。
 
--   右送纸打印机必须对齐所有纸张大小上的边距和右边距。
+-   对于右送纸打印机，所有纸张大小的上边距和右边距必须对齐。
 
--   对于中心源打印机，必须对齐的上边距和所有纸张大小的顶部中心点。
+-   对于中心源打印机，必须对齐所有纸张大小的上边距和顶部中心点。
 
-包括以下步骤：
+涉及以下步骤：
 
-1.  确定打印机的最大的纸张大小的以下信息：
-    -   选择最大的纸张大小所需的命令。
-    -   将使用的最大的纸张大小的值\*PageDimensions， \*CursorOrigin， \*PrintableOrigin，和\*PrintableArea GPD 条目，如同将包括在 GPD 文件中。 但是，将不实际置于这些项在文件中。
+1.  确定打印机最大纸张大小的下列信息：
+    -   选择最大纸张大小所需的命令。
+    -   适用于最大纸张大小的 \* PageDimensions、 \* CursorOrigin、 \* PRINTABLEORIGIN 和 \* PrintableArea GPD 条目的值，就像它们将包含在 GPD 文件中一样。 但是，实际上不会将这些项放在文件中。
 
-2.  创建指定或计算以下信息为每个自定义的纸张大小，相对于打印机的最大的纸张大小的公式。
-    -   源和每个纸张的可打印区域的大小。
-    -   每个纸张的的游标原点。
+2.  创建指定或计算每个自定义纸张大小的下列信息的公式，相对于打印机的最大纸张大小。
+    -   每个纸的可打印区域的原点和大小。
+    -   每个纸的光标原点。
 
-步骤 2 的公式必须是[CUSTOMSIZE 参数表达式](option-attributes-for-the-papersize-feature.md#ddk-customsize-parameter-expressions-gg)，这被指定为以下 GPD 条目的值：
+步骤2的公式必须是 [CUSTOMSIZE 参数表达式](option-attributes-for-the-papersize-feature.md#ddk-customsize-parameter-expressions-gg)，这些表达式指定为以下 GPD 条目的值：
 
-\*CustCursorOriginX \*CustCursorOriginX \*CustPrintableOriginX \*CustPrintableOriginY \*CustPrintableSizeX \*CustPrintableSizeY CUSTOMSIZE 选项还必须包括\*指定选择的最大的打印机大小的命令的命令项。 此命令将发送的所有自定义纸张大小和指定的可打印区域和游标源控件的公式，其中打印机上打印实际纸张，无论其大小。
+\*CustCursorOriginX \* CustCursorOriginX \* CustPrintableOriginX \* CustPrintableOriginY \* CustPrintableSizeX \* CustPrintableSizeY CUSTOMSIZE 选项还必须包含 \* 命令项，该命令项指定了用于选择最大打印机大小的命令。 对于所有自定义纸张大小，将发送此命令，为可打印区域和光标源控件指定的公式将在实际纸张上打印的位置（无论大小如何）。
 
 ### <a name="sample-calculations"></a>示例计算
 
-举一个简单的例子，假设您的打印机支持为最大纸张大小的边距的边距大小相同的自定义的纸张大小。 所涉及的步骤如下：
+作为一个简单的示例，假设您的打印机支持的自定义纸张大小的边距与最大纸张大小的边距相同。 涉及的步骤包括：
 
-确定最大的纸张大小的值\* **PageDimensions**， \* **CursorOrigin**， \* **PrintableOrigin**，和\* **PrintableArea**条目。 （不要将这些条目 GPD 文件中。）
+确定最大纸张大小的 \* **PageDimensions**、 \* *_CursorOrigin_*、 \* *_PrintableOrigin_* 和 \* *_PrintableArea_* 条目的值。  (不要将这些项放在 GPD 文件中。 ) 
 
-确定每个根据这些值的最大纸张大小的边距的宽度，如以下 pseudoexpressions 中所示：
+根据这些值，确定最大纸张大小的每个边距的宽度，如以下 pseudoexpressions 中所示：
 
-LeftMarginWidth=\***PrintableOrigin**.x
+LeftMarginWidth = \* *_PrintableOrigin_*
 
-RightMarginWidth =\***PageDimensions**.x-\***PrintableArea**.x LeftMarginWidthTopMarginWidth =\***PrintableOrigin**.y BottomMarginWidth =\***PageDimensions**.y-\***PrintableArea**.y-**TopMarginWidth**
+RightMarginWidth = \* *_PageDimensions_*- \* *_PrintableArea_*-LeftMarginWidthTopMarginWidth = \* *_PrintableOrigin_* BottomMarginWidth = \* *_PageDimensions_* \* *_PrintableArea_***TopMarginWidth** PageDimensions-PrintableArea-TopMarginWidth-
 
-在这些 pseudoexpressions.x 和.y 表示每个条目的水平和垂直组件[对](pairs.md)值。 对于横向打印，使用环境值\* **PrintableArea**并\* **PrintableOrigin**。
+在这些 pseudoexpressions 中，a.x 和. y 表示每个项的 [对](pairs.md) 值的水平和垂直分量。 对于横向打印，请使用 \* *_PrintableArea_* 和 PrintableOrigin 的横向值 \* *_PrintableOrigin_*。
 
-现在创建 pseudoexpressions 的指定或计算的非标准纸张大小的可打印区域。
+现在，创建 pseudoexpressions 来指定或计算非标准纸张大小的可打印区域。
 
-\*CustPrintableOriginX: %d{LeftMarginWidth}
+\*CustPrintableOriginX：% d {LeftMarginWidth}
 
-\*CustPrintableOriginY: %d {TopMarginWidth}
+\*CustPrintableOriginY：% d {TopMarginWidth}
 
-\*CustPrintableSizeX: %d{PhysPaperWidth-LeftMarginWidth-RightMarginWidth}
+\*CustPrintableSizeX：% d {PhysPaperWidth-LeftMarginWidth-RightMarginWidth}
 
-\*CustPrintableSizeY: %d {PhysPaperLength TopMarginWidth BottomMarginWidth}
+\*CustPrintableSizeY：% d {PhysPaperLength-TopMarginWidth-BottomMarginWidth}
 
-请注意，使用 PhysPaperWidth 和 PhysPaperLength 两个标准变量。 在运行时，这些变量包含的长度和应用程序已请求的实际的纸张大小的宽度。
+请注意，使用 PhysPaperWidth 和 PhysPaperLength 这两个标准变量。 在运行时，这些变量包含应用程序请求的实际纸张大小的长度和宽度。
 
-请注意，这些 pseudoexpressions 有效纸张是左填充、 右送纸或中心馈送。
+请注意，无论是送纸、进纸还是送入纸，这些 pseudoexpressions 都是有效的。
 
-插入到两个表达式来创建 GPD 条目在步骤 1 中确定的实际值。 例如，可能是：
+将步骤1中确定的实际值插入到这些表达式中，以创建 GPD 条目。 示例可能为：
 ```cpp
 *CustPrintableOriginX:  %d{300}
 *CustPrintableOriginY:  %d{300}
@@ -111,25 +110,25 @@ RightMarginWidth =\***PageDimensions**.x-\***PrintableArea**.x LeftMarginWidthTo
 *CustPrintableSizeY:  %d{PhysPaperLength-600}
 ```
 
-创建 pseudoexpressions 计算游标源索引。 在以下 pseudoexpressions， \*CursorOrigin.x 并\*CursorOrigin.y 是占位符的水平和垂直组件[对](pairs.md)最大纸张大小的游标来源的值。
+创建用于计算游标源索引的 pseudoexpressions。 在下面的 pseudoexpressions 中， \* CursorOrigin 和 \* CursorOrigin 是针对最大纸张大小光标原点的 [对](pairs.md) 值的水平和垂直分量的占位符。
 
-对于左侧送入打印机：
+对于左送打印机：
 
-\*CustCursorOriginX: %d {\*CursorOrigin.x} \*CustCursorOriginY: %d {\*CursorOrigin.y} 右送入打印机：
+\*CustCursorOriginX：% d { \* CursorOrigin} \* CustCursorOriginY：% d { \* CursorOrigin} 对于右送打印机：
 
-\*CustCursorOriginX: %d {\*CursorOrigin.x+PhysPaperWidth-\*PageDimensions.x} \*CustCursorOriginY: %d {\*CursorOrigin.y} center 送入打印机：
+\*CustCursorOriginX：% d { \* CursorOrigin + PhysPaperWidth- \* PageDimensions \* CustCursorOriginY：% d { \* CursorOrigin} 对于中心送纸打印机：
 
-\*CustCursorOriginX: %d {\*CursorOrigin.x+(PhysPaperWidth-PageDimensions.x)/2} \*CustCursorOriginY: %d {\*CursorOrigin.y} 插入到两个表达式来创建 GPD 条目在步骤 1 中确定的实际值. 示例可能是 （对于 center 送入的纸张）：
+\*CustCursorOriginX：% d { \* CursorOrigin + (PhysPaperWidth-PageDimensions) /2} \* CustCursorOriginY：% d { \* CursorOrigin} 将在步骤1中确定的实际值插入到这些表达式中以创建 GPD 项。 对于中心送纸) ，可能 (的示例：
 ```cpp
 *CustCursorOriginX:  %d{((PhysPaperWidth-14040)/2)+300}
 *CustCursorOriginY:   %d{180}
 ```
 
-指定剩余的三个 GPD 项-值\*MinSize， \*MaxSize 和\*MaxPrintableWidth。 为指定的值\*MaxPrintableWidth 实际上不使用此方法，但分析程序需要的项存在，因此其值可以设置为 1。
+为其余三个 GPD 条目指定值-- \* MinSize、 \* MaxSize 和 \* MaxPrintableWidth。 为 MaxPrintableWidth 指定的值 \* 实际上并不用于此方法，但分析器要求该项存在，因此它的值可以设置为1。
 
 ### <a name="a-real-example"></a>真实示例
 
-以下示例 GPD 文件段落介绍 center 送入打印机的可接受的自定义的纸张大小。 对于纵向模式下，所有自定义纸张大小的所有边距都是 300 主单位 （1/4 英寸） 的大小。 为横向模式下，顶部和底部边距是 240 主单元时左侧和右边距是 200 个单位的 master。
+下面的示例 GPD 文件段描述了可接受的、用于中心纸打印机的自定义纸张大小。 对于纵向模式，所有自定义纸张大小的所有边距均为300主单位 (1/4 英寸) 大小。 对于横向模式，上边距和下边距均为240主单元，而左右边距为200主单位。
 
 ```cpp
 *Option: CUSTOMSIZE

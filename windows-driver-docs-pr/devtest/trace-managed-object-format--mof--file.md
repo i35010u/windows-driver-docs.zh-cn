@@ -1,15 +1,14 @@
 ---
 title: 跟踪托管对象格式 (MOF) 文件
 description: 跟踪托管对象格式 (MOF) 文件
-ms.assetid: e0ef452b-042d-42d0-be0f-b36e7bf47285
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 340e3ff2ff64de4021847bdf67547e7362785b41
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 944daaab4dd46884435a6c8f6bbfe146bcd53e24
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89383321"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96805637"
 ---
 # <a name="trace-managed-object-format-mof-file"></a>跟踪托管对象格式 (MOF) 文件
 

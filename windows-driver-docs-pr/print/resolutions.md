@@ -1,46 +1,45 @@
 ---
 title: 解决方法
 description: 解决方法
-ms.assetid: 1106cd77-1085-4487-a81a-268f619824e5
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0fce9d923144608b90a564f8e5ed0dd99de62305
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 38b64f406b5d678bec5cf9f68ad5e8b64ae2198e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63382570"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96807023"
 ---
 # <a name="resolutions"></a>解决方法
 
 
-架构路径：*\\Printer.Layout.Resolutions*
+架构路径：*\\ Printer. 分辨率*
 
-节点类型： 属性
+节点类型：属性
 
-说明： 此属性包含值的所有条目都适用于打印设备支持的分辨率。 所有解决方法是以每英寸点数 (dpi)。
+说明：此属性包含与设备支持的打印分辨率相关的所有值条目。 所有分辨率均为每英寸点数 (dpi) 。
 
-解决方法属性包含两个对子值：*CurrentValue*并*支持*。
+解析属性包含两个子值： *CurrentValue* 和 *受支持*。
 
 ### <a name="span-idcurrentvaluespanspan-idcurrentvaluespancurrentvalue"></a><span id="currentvalue"></span><span id="CURRENTVALUE"></span>*CurrentValue*
 
-架构路径：*\\Printer.Layout.Resolutions:CurrentValue*
+架构路径：*\\ Printer .. 分辨率： CurrentValue*
 
-节点类型： 值
+节点类型：值
 
-数据类型： BIDI\_INT
+数据类型：双向 \_ INT
 
-说明： 打印设备的分辨率，以每英寸点数 (dpi) 的当前 （默认值） 值。
+说明：当前 (设备打印分辨率的默认) 值（以每英寸点数为单位） (dpi) 。
 
-### <a name="span-idsupportedspanspan-idsupportedspansupported"></a><span id="supported"></span><span id="SUPPORTED"></span>*支持*
+### <a name="span-idsupportedspanspan-idsupportedspansupported"></a><span id="supported"></span><span id="SUPPORTED"></span>*受*
 
-架构路径：*\\Printer.Layout.Resolutions:Supported*
+架构路径：*\\ Printer .. 分辨率：受支持*
 
-节点类型： 值
+节点类型：值
 
-数据类型： BIDI\_字符串
+数据类型：双向 \_ 字符串
 
-说明： 一个以逗号分隔的列表的解决方法，以每英寸点数 (dpi) 支持的所有值。
+说明：以逗号分隔的列表，其中列出了解决方案支持的所有值（以每英寸点数为单位） (dpi) 。
 
  
 

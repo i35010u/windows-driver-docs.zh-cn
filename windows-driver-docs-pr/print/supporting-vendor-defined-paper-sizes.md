@@ -1,18 +1,17 @@
 ---
 title: 支持供应商定义的纸张大小
 description: 支持供应商定义的纸张大小
-ms.assetid: 5c356857-ef43-41e4-a4ed-fae6655bd9ce
 keywords:
 - 供应商提供的纸张大小 WDK Unidrv
-- 使用了非标准纸张大小 WDK Unidrv
+- 非标准纸张大小 WDK Unidrv
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d3962d8c19760145cceb7d4e818d8d2cea6213d8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9b6747344d4d4b12297a6981361bd05358088846
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63365319"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96806817"
 ---
 # <a name="supporting-vendor-defined-paper-sizes"></a>支持供应商定义的纸张大小
 
@@ -20,13 +19,13 @@ ms.locfileid: "63365319"
 
 
 
-供应商定义的纸张大小是特定于供应商和每个打印机的 GPD 文件必须完全描述。 这些大小也称为非标准的纸张大小，原因是它们不包括在[标准选项](standard-options.md)PaperSize 功能。
+供应商定义的纸张大小是特定于供应商的，必须由每个打印机的 GPD 文件全面描述。 这些大小也称为非标准纸张大小，因为它们不包含在 PaperSize 功能的 [标准选项](standard-options.md) 中。
 
-有关打印机支持的每个供应商定义的纸张大小，GPD 文件 PaperSize 功能都必须包括\*选项其参数不是一个标准的选项名称的条目。 在此条目中，以下选项属性都是必需的：
+对于打印机支持的每个供应商定义的纸张大小，GPD 文件的 PaperSize 功能必须包括一个 \* 选项条目，其参数不是标准选项名称之一。 在此条目中，需要以下选项属性：
 
-\*PageDimensions \*PrintableArea \*PrintableOrigin \*rcNameID 或\*名称\*以下选项属性可用，但不是必需的命令：
+\*PageDimensions \* PrintableArea \* PrintableOrigin \* rcNameID 或 \* Name \* 命令可以使用以下选项属性，但这不是必需的：
 
-\*CursorOrigin \*RotateSize？
+\*CursorOrigin \* RotateSize？
 \*PageProtectMem
  
 

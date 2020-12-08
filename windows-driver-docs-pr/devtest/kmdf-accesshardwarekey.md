@@ -1,7 +1,6 @@
 ---
 title: 'AccessHardwareKey 规则 (kmdf) '
 description: AccessHardwareKey 规则指定总线驱动程序不应尝试从 EvtChildListCreateDevice 访问子设备的硬件密钥。
-ms.assetid: D5A03DC2-65C9-42A2-A718-CFDE1ED040E7
 ms.date: 05/21/2018
 keywords:
 - 'AccessHardwareKey 规则 (kmdf) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: f406d76b88f7299adea743be8302e9b7a67f8960
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 092b878a7f949dcd63b0292c0272321713421c15
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107220"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96806467"
 ---
 # <a name="accesshardwarekey-rule-kmdf"></a>AccessHardwareKey 规则 (kmdf) 
 
 
-**AccessHardwareKey**规则指定总线驱动程序不应尝试从[*EvtChildListCreateDevice*](/windows-hardware/drivers/ddi/wdfchildlist/nc-wdfchildlist-evt_wdf_child_list_create_device)访问子设备的硬件密钥。
+**AccessHardwareKey** 规则指定总线驱动程序不应尝试从 [*EvtChildListCreateDevice*](/windows-hardware/drivers/ddi/wdfchildlist/nc-wdfchildlist-evt_wdf_child_list_create_device)访问子设备的硬件密钥。
 
 **驱动程序模型： KMDF**
 

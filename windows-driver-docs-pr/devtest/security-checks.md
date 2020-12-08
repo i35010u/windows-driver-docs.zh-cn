@@ -1,15 +1,14 @@
 ---
 title: 驱动程序验证程序安全检查
 description: 驱动程序验证程序的 "安全检查" 选项监视驱动程序是否存在可能导致安全漏洞的常见错误。
-ms.assetid: fca92bad-7bb8-4a30-b303-48fd54c20c42
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b6bd28ee26f61f85e2f3273d395a0ff2d2d7686e
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 6c99cfaeb1a43c43910249a138c91ecedadb59d4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89384593"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96805701"
 ---
 # <a name="driver-verifier-security-checks"></a>驱动程序验证程序安全检查
 
@@ -24,7 +23,7 @@ ms.locfileid: "89384593"
   -   **长度或 MaximumLength 参数不正确。** 例如， *MaximumLength* &lt; *长度*。 或者这两个值中的一个或两个都是奇数。 这两个值必须始终为偶数，因为它们表示用于表示 Unicode 字符串的字节数。
 - **使用不正确的对象 \_ 属性结构作为参数调用内核 ZwXxx 例程。** 当驱动程序调用任何 **Zw * Xxx*** 例程时，驱动程序验证器将检查作为对象属性结构的所有参数 \_ 。 每个对象 \_ 属性结构参数的成员对用户模式地址和上述 UNICODE 字符串值进行相同的检查 \_ 。
 
-- **Irp- &gt; irp->requestormode 和 I/o 请求参数不一致。** 每当将 **Irp &gt; irp->requestormode** 设置为 **KernelMode**时，驱动程序验证器将检查没有 i/o 请求参数、 **irp &gt;AssociatedIrp.SystemBuffer** 或 **irp- &gt; UserBuffer**是用户模式的地址。
+- **Irp- &gt; irp->requestormode 和 I/o 请求参数不一致。** 每当将 **Irp &gt; irp->requestormode** 设置为 **KernelMode** 时，驱动程序验证器将检查没有 i/o 请求参数、 **irp &gt;AssociatedIrp.SystemBuffer** 或 **irp- &gt; UserBuffer** 是用户模式的地址。
 
 从 Windows 7 开始，当你启用任何驱动程序验证程序选项时，驱动程序验证程序将检查以下驱动程序行为：
 
@@ -39,7 +38,7 @@ ms.locfileid: "89384593"
 
 -   **使用命令行**
 
-    在命令行中，安全检查选项由 **第8个 (0x100) **表示。 若要激活安全检查，请使用0x100 的标志值或将0x100 添加到标志值。 例如：
+    在命令行中，安全检查选项由 **第8个 (0x100)** 表示。 若要激活安全检查，请使用0x100 的标志值或将0x100 添加到标志值。 例如：
 
     ```
     verifier /flags 0x100 /driver MyDriver.sys
@@ -64,7 +63,7 @@ ms.locfileid: "89384593"
 -   **使用驱动程序验证器管理器**
 
     1.  启动驱动程序验证器管理器。 在命令提示符窗口中键入 **Verifier** 。
-    2.  选择 " **为代码开发人员 (创建自定义设置") **，然后单击 " **下一步**"。
+    2.  选择 " **为代码开发人员 (创建自定义设置")**，然后单击 " **下一步**"。
     3.  选择 " **从完整列表中选择单个设置**"。
     4.  选择 " **安全检查**"。
 

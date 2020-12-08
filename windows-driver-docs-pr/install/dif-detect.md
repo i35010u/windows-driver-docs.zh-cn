@@ -1,7 +1,6 @@
 ---
 title: DIF_DETECT
 description: DIF_DETECT
-ms.assetid: 866a99fc-f48e-447d-b5eb-6339dc98d3f2
 keywords:
 - DIF_DETECT 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 2d686acdf010606651480fd3e493753d2bb250d1
-ms.sourcegitcommit: 06581a21ca066ddfedab7f9bb7f2159cfac452fd
+ms.openlocfilehash: 626d8dfb0325bc9a33ec3c76aedfac6adb6df023
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91145493"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96806261"
 ---
 # <a name="dif_detect"></a>DIF_DETECT
 
@@ -58,16 +57,16 @@ DIF_DETECT 请求指示安装程序检测特定类的非 PnP 设备，并将设�
 ### <a name="installer-input"></a>安装程序输入
 
 <a href="" id="deviceinfoset"></a>*DeviceInfoSet*  
-提供 [设备信息集](./device-information-sets.md)的句柄。 存在与*DeviceInfoSet*关联的[设备安装程序类](./overview-of-device-setup-classes.md)。
+提供 [设备信息集](./device-information-sets.md)的句柄。 存在与 *DeviceInfoSet* 关联的 [设备安装程序类](./overview-of-device-setup-classes.md)。
 
 <a href="" id="deviceinfodata"></a>*DeviceInfoData*  
 无
 
 <a href="" id="device-installation-parameters-"></a>设备安装参数   
-有与 *DeviceInfoSet*关联的设备安装参数。
+有与 *DeviceInfoSet* 关联的设备安装参数。
 
 <a href="" id="class-installation-parameters"></a>类安装参数  
-[**SP_DETECTDEVICE_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-sp_detectdevice_params)结构与*DeviceInfoSet*关联。 参数包含一个回调例程，该类安装程序将调用它来指示检测操作的进度。
+[**SP_DETECTDEVICE_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-sp_detectdevice_params)结构与 *DeviceInfoSet* 关联。 参数包含一个回调例程，该类安装程序将调用它来指示检测操作的进度。
 
 ### <a name="installer-output"></a>安装程序输出
 
@@ -93,13 +92,13 @@ DIF_DETECT 请求指示安装程序检测特定类的非 PnP 设备，并将设�
 
 如果安装程序检测到设备，则至少应执行以下操作：
 
--   如果检测可能会花费很长的时间，请调用[**SP_DETECTDEVICE_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-sp_detectdevice_params)类安装参数中的**DetectProgressNotify**回调例程。
+-   如果检测可能会花费很长的时间，请调用 [**SP_DETECTDEVICE_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-sp_detectdevice_params)类安装参数中的 **DetectProgressNotify** 回调例程。
 
 -   对于安装程序检测到的每个设备，应执行以下操作：
     -    ([**SetupDiCreateDeviceInfo**](/windows/win32/api/setupapi/nf-setupapi-setupdicreatedeviceinfoa)) 创建设备信息元素。
     -   为驱动程序选择提供信息。
 
-        安装程序可以手动选择设备的驱动程序，或者安装程序可以设置设备的硬件 ID，Windows 将使用该 ID 来查找设备的 INF。 安装程序通过调用*属性*值为 SPDRP_HARDWAREID 的[**SETUPDISETDEVICEREGISTRYPROPERTY**](/windows/win32/api/setupapi/nf-setupapi-setupdisetdeviceregistrypropertya)设置硬件 ID。
+        安装程序可以手动选择设备的驱动程序，或者安装程序可以设置设备的硬件 ID，Windows 将使用该 ID 来查找设备的 INF。 安装程序通过调用 *属性* 值为 SPDRP_HARDWAREID 的 [**SETUPDISETDEVICEREGISTRYPROPERTY**](/windows/win32/api/setupapi/nf-setupapi-setupdisetdeviceregistrypropertya)设置硬件 ID。
 
     -   可能设置了一些设备安装参数。
 
@@ -131,7 +130,7 @@ DIF_DETECT 请求指示安装程序检测特定类的非 PnP 设备，并将设�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**DIF_DETECT**](dif-detect.md)

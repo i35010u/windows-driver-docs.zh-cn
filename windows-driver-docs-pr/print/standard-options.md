@@ -1,18 +1,17 @@
 ---
 title: 标准选项
 description: 标准选项与标准功能关联，并由 GPD 语言识别的预定义名称标识。
-ms.assetid: db4578c1-0954-4c51-a11a-923ab7df2b5b
 keywords:
 - 打印机选项 WDK Unidrv，standard
 - 标准选项 WDK Unidrv
 ms.date: 01/30/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 05ae8fa331c18ea9f7d9ac90ec05ec1684c28975
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 2b86919b58d94dd1f84901592a434c4d4cb07890
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106574"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96806875"
 ---
 # <a name="standard-options"></a>标准选项
 
@@ -22,7 +21,7 @@ ms.locfileid: "90106574"
 > [!IMPORTANT]
 > 此资源可能在某些语言和国家/地区不可用。
 
-下表列出了每个标准功能允许使用的标准选项名称。 使用这些名称作为** \* 选项**条目的参数。 包含打印架构选项关键字的功能是自动映射到打印架构选项关键字的选项名称。 还可以使用 **PrintSchemaKeywordMap** 属性将 GPD 选项映射为手动打印架构关键字。 打印架构记录在 Microsoft Windows SDK。
+下表列出了每个标准功能允许使用的标准选项名称。 使用这些名称作为 **\* 选项** 条目的参数。 包含打印架构选项关键字的功能是自动映射到打印架构选项关键字的选项名称。 还可以使用 **PrintSchemaKeywordMap** 属性将 GPD 选项映射为手动打印架构关键字。 打印架构记录在 Microsoft Windows SDK。
 
 <table>
     <tbody>
@@ -88,7 +87,7 @@ ms.locfileid: "90106574"
             <td>是</td>
         </tr>
         <tr>
-            <td><b>打印</b></td>
+            <td><b>方向</b></td>
             <td>沿<br>LANDSCAPE_CC90<br>LANDSCAPE_CC270<br><br>有关后两个选项的详细信息，请参阅 <a href="/windows-hardware/drivers/print/specifying-paper-orientation">指定纸张方向</a>。</td>
             <td>纵向<br>横向<br>ReverseLandscape</td>
             <td>否</td>

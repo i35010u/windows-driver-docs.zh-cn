@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ VIDEOCONTROL \_ CAP
 description: KSPROPERTY \_ VIDEOCONTROL \_ cap 属性标识设备的视频控制功能。 必须实现此属性。
-ms.assetid: 5861ae38-3253-4546-bd9f-975f98e9e3f4
 keywords:
 - KSPROPERTY_VIDEOCONTROL_CAPS 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b8ac818dbb876d78fe12fbc692a461b80c740f8d
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: f241f5cb4c9b39c1e4dfb35d80f57817230076e7
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107250"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96805957"
 ---
 # <a name="ksproperty_videocontrol_caps"></a>KSPROPERTY \_ VIDEOCONTROL \_ CAP
 

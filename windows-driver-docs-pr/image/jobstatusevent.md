@@ -1,7 +1,6 @@
 ---
 title: JobStatusEvent 元素
 description: 必需的 JobStatusEvent 元素通知客户端作业的状态已更改。
-ms.assetid: 8cb510ef-9622-48d0-859d-e52c9b5b8190
 keywords:
 - JobStatusEvent 元素图像设备
 topic_type:
@@ -12,19 +11,19 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 33ffd91141af72f57158b1a6181706369d28299e
-ms.sourcegitcommit: ab64169b631da4db3f0b895600f1c38a22cb7e2e
+ms.openlocfilehash: 1bdcf8ac67acac6ec54cbd5c74f7d70a4c8ef29e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75652981"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96805550"
 ---
 # <a name="jobstatusevent-element"></a>JobStatusEvent 元素
 
 
-必需的**JobStatusEvent**元素通知客户端作业的状态已更改。
+必需的 **JobStatusEvent** 元素通知客户端作业的状态已更改。
 
-<a name="usage"></a>Usage
+<a name="usage"></a>使用情况
 -----
 
 ```xml
@@ -33,7 +32,7 @@ ms.locfileid: "75652981"
 </wscn:JobStatusEvent>
 ```
 
-<a name="attributes"></a>属性
+<a name="attributes"></a>特性
 ----------
 
 没有特性。
@@ -65,7 +64,7 @@ ms.locfileid: "75652981"
 <a name="remarks"></a>备注
 -------
 
-当作业的状态发生更改时，WSD 扫描服务会向客户端发送一个**JobStatusEvent**元素。 **JobStatusEvent**包含一个[**JobStatus**](jobstatus.md)元素，该元素定义有关作业当前状态的所有信息。 第一条**JobStatusEvent**消息通常包含[**JobId**](jobid.md)元素， [**JobState**](jobstate.md)为 "**已启动**"。
+当作业的状态发生更改时，WSD 扫描服务会向客户端发送一个 **JobStatusEvent** 元素。 **JobStatusEvent** 包含一个 [**JobStatus**](jobstatus.md) 元素，该元素定义有关作业当前状态的所有信息。 第一条 **JobStatusEvent** 消息通常包含 [**JobId**](jobid.md) 元素， [**JobState**](jobstate.md) 为 " **已启动**"。
 
 <a name="examples"></a>示例
 --------
@@ -104,7 +103,7 @@ ms.locfileid: "75652981"
 </soap:Envelope>
 ```
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**JobId**](jobid.md)

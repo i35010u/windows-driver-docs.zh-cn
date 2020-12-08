@@ -1,7 +1,6 @@
 ---
 title: 测试本地打印机连接
 description: 测试本地打印机连接
-ms.assetid: 08a16c04-fc64-4e19-b7f2-7a078bc151a2
 keywords:
 - 测试驱动程序 WDK 打印机
 - 打印机驱动程序 WDK，测试
@@ -9,19 +8,19 @@ keywords:
 - 连接 WDK 打印机
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f9ed70d8414d1a37c5486595d2c9139f0e71c50
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 7debfb6b42f6e58e7cb956e8f38b6516160cf2a9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89213083"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96806717"
 ---
 # <a name="testing-local-printer-connectivity"></a>测试本地打印机连接
 
 
 本部分提供有关如何测试本地连接的打印机连接的一般准则。 你可以将这些原则应用到连接打印设备的任何总线或端口，但由于你的总线或端口的固有性质，某些原则可能不适用。
 
-**注意**   以下信息介绍了如何在 Microsoft Windows XP 上进行测试。 其他操作系统版本（如 "控制面板应用程序" 和 "菜单选项"）的功能可能略有不同。
+**注意**   以下信息介绍了如何在 Microsoft Windows XP 上进行测试。 其他操作系统版本（如 "控制面板应用程序" 和 "菜单选项"）的功能可能略有不同。
 
  
 

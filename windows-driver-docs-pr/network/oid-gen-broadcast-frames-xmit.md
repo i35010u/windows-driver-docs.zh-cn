@@ -1,16 +1,15 @@
 ---
 title: OID_GEN_BROADCAST_FRAMES_XMIT
 description: 作为查询，OID_GEN_BROADCAST_FRAMES_XMIT OID 指定传输的广播数据包的数量，而不会发生错误。
-ms.assetid: e86602ce-18b7-48ef-8962-75f6984d7bdb
 ms.date: 11/01/2019
 keywords: -从 Windows Vista 开始 OID_GEN_BROADCAST_FRAMES_XMIT 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: e9744e5d786781b771461ef5cac537317ffcc67c
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 1cd327935398953042960f3a881430b628cac86e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89206353"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96806183"
 ---
 # <a name="oid_gen_broadcast_frames_xmit"></a>OID \_ 生成 \_ 广播 \_ 帧 \_ XMIT
 
@@ -57,7 +56,7 @@ ms.locfileid: "89206353"
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [OID \_ 生成 \_ 统计信息](oid-gen-statistics.md)

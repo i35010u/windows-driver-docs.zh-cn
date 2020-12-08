@@ -1,18 +1,17 @@
 ---
 title: 线程和同步第一级别
 description: 线程和同步第一级别
-ms.assetid: 9fce6a18-2a66-4518-b05b-e85bdaa3951f
 keywords:
 - 线程 WDK 显示，第一级
 - 同步 WDK 显示，第一级
 ms.date: 08/05/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: f91e14dde99a63fb7a0c5167ab4dba1a528ea5eb
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 13be640b24c49a1ab69d85e5ee6f792605866e2b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89063768"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96805625"
 ---
 # <a name="threading-and-synchronization-first-level"></a>线程和同步第一级别
 

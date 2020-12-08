@@ -1,7 +1,6 @@
 ---
 title: KS \_ AM \_ 速率 \_ ExactRateChange
 description: KS \_ AM \_ RATE \_ ExactRateChange 属性尚未实现。
-ms.assetid: c96fe88c-04c5-47d9-a9dd-18d06388300e
 keywords:
 - KS_AM_RATE_ExactRateChange 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6b7ab7b35067c6baa788944db5ac4b53f111c57c
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 59f9f594f03116dc12efa26372f8fa20f29a400f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103566"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96805983"
 ---
 # <a name="ks_am_rate_exactratechange"></a>KS \_ AM \_ 速率 \_ ExactRateChange
 
@@ -84,7 +83,7 @@ KS \_ AM \_ RATE \_ ExactRateChange 属性尚未实现。
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KS \_ AM \_ ExactRateChange**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ks_am_exactratechange)

@@ -1,7 +1,6 @@
 ---
 title: 打印票证和打印功能提供程序接口
 description: 打印机驱动程序实现的打印票证和打印功能提供程序接口
-ms.assetid: a14c1173-0419-44c7-bc8f-7197590083b3
 keywords:
 - 打印机接口 DLL WDK，打印票证支持
 - 打印机接口 DLL WDK，打印功能支持
@@ -9,12 +8,12 @@ keywords:
 - 打印票证 WDK，打印机接口 DLL
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f2ce3fde22abc5d5aa286edb27b89a931e61e234
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 99035c7dd13c45d07c60d41b71b9f4800d8dc60f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89207113"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96807441"
 ---
 # <a name="print-ticket-and-print-capabilities-provider-interface-implemented-by-printer-drivers"></a>打印机驱动程序实现的打印票证和打印功能提供程序接口
 

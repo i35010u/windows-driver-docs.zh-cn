@@ -1,15 +1,14 @@
 ---
 title: 平板电脑的微型驱动程序要求
 description: 介绍供应商提供的用于笔设备和按钮设备的 HID 微型驱动程序的一般要求。
-ms.assetid: 89BE7E13-4D46-4265-9522-D5A51999F633
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b561ea83ff352272f9578d434a46700a1f819e12
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: c73d6925684705dd780c66728cfab3c7439aa42c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91734399"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96805607"
 ---
 # <a name="minidriver-requirements-for-tablet-pcs-running-on-earlier-versions-of-windows"></a>在早期版本的 Windows 上运行的 tablet Pc 的微型驱动程序要求
 

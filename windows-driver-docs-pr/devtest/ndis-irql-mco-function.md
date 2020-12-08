@@ -1,7 +1,6 @@
 ---
 title: 'Irql \_ MCO \_ 函数规则 (ndis) '
 description: Irql \_ MCO \_ 函数规则指定必须在正确的 Irql 级别调用微型端口驱动程序的 NDIS MCO DDIs。
-ms.assetid: 4a6643a2-d831-4b60-a9d6-decf494a2ffc
 ms.date: 05/21/2018
 keywords:
 - 'Irql_MCO_Function 规则 (ndis) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: e59ea90d6d2647ebf29af38e114b8604038973e3
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 64eb36654e5ade55eeb0400e4b2a86c0f9912261
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104346"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96806445"
 ---
 # <a name="irql_mco_function-rule-ndis"></a>Irql \_ MCO \_ 函数规则 (ndis) 
 
 
-**Irql \_ MCO \_ 函数**规则指定必须在正确的 Irql 级别调用微型端口驱动程序的 NDIS MCO DDIs。
+**Irql \_ MCO \_ 函数** 规则指定必须在正确的 Irql 级别调用微型端口驱动程序的 NDIS MCO DDIs。
 
 **驱动程序模型： NDIS**
 

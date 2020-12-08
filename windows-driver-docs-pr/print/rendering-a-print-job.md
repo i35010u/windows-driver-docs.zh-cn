@@ -1,7 +1,6 @@
 ---
 title: 渲染打印作业
 description: 渲染打印作业
-ms.assetid: 78967839-b518-41c0-8825-b00f8b8560e6
 keywords:
 - 打印机图形 DLL WDK，呈现打印作业
 - 图形 DLL WDK 打印机，呈现打印作业
@@ -11,12 +10,12 @@ keywords:
 - 分级 WDK 打印
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2518219fe30a25f251bf068dfa3e9bb351af4496
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 556d8689f0bab7d2469c3c4b51bb986ecf7c81c7
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89215738"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96807059"
 ---
 # <a name="rendering-a-print-job"></a>渲染打印作业
 
@@ -34,7 +33,7 @@ ms.locfileid: "89215738"
 
 2.  接下来，GDI 将调用打印机图形 DLL 的 [**DrvEnablePDEV**](/windows/win32/api/winddi/nf-winddi-drvenablepdev) 函数，以便驱动程序可以创建物理设备实例并返回设备特征。 GDI 使用返回的信息创建设备实例的内部说明。
 
-3.  然后，GDI 将调用图形 DLL 的 [**DrvCompletePDEV**](/windows/win32/api/winddi/nf-winddi-drvcompletepdev) 函数，以向设备实例提供 GDI 句柄。 图形 DLL 必须使用此句柄来输入 GDI 绘图引擎提供的一些以 **Eng**为前缀的回调 (请参阅 [gdi 支持服务](../display/gdi-support-services.md)) 。
+3.  然后，GDI 将调用图形 DLL 的 [**DrvCompletePDEV**](/windows/win32/api/winddi/nf-winddi-drvcompletepdev) 函数，以向设备实例提供 GDI 句柄。 图形 DLL 必须使用此句柄来输入 GDI 绘图引擎提供的一些以 **Eng** 为前缀的回调 (请参阅 [gdi 支持服务](../display/gdi-support-services.md)) 。
 
 4.  在 GDI 接收到设备实例句柄之后，它将调用图形 DLL 的 [**DrvEnableSurface**](/windows/win32/api/winddi/nf-winddi-drvenablesurface) 函数，该函数会为绘图设置图面，并将其与物理设备实例相关联。
 
@@ -50,8 +49,8 @@ ms.locfileid: "89215738"
 
 对于在使用条带时要呈现的每个文档，GDI 将调用打印机图形 DLL 中的以下函数：
 
-[**DrvStartDoc**](/windows/win32/api/winddi/nf-winddi-drvstartdoc)对于每个物理页[**{DrvStartPage**](/windows/win32/api/winddi/nf-winddi-drvstartpage) 
- [**DrvStartBanding**](/windows/win32/api/winddi/nf-winddi-drvstartbanding) for a for a for a [*DrvQueryPerBandInfo*](/windows/win32/api/winddi/nf-winddi-drvqueryperbandinfo)呈示操作[**DrvNextBand**](/windows/win32/api/winddi/nf-winddi-drvnextband) //发送此波段的光栅数据，然后清除 "要重新使用下一带区的图面}" [**DrvEndDoc**](/windows/win32/api/winddi/nf-winddi-drvenddoc)
+[**DrvStartDoc**](/windows/win32/api/winddi/nf-winddi-drvstartdoc)对于每个物理页 [**{DrvStartPage**](/windows/win32/api/winddi/nf-winddi-drvstartpage) 
+ [**DrvStartBanding**](/windows/win32/api/winddi/nf-winddi-drvstartbanding) for a for a for a [*DrvQueryPerBandInfo*](/windows/win32/api/winddi/nf-winddi-drvqueryperbandinfo)呈示操作 [**DrvNextBand**](/windows/win32/api/winddi/nf-winddi-drvnextband) //发送此波段的光栅数据，然后清除 "要重新使用下一带区的图面}" [**DrvEndDoc**](/windows/win32/api/winddi/nf-winddi-drvenddoc)
 ### <a name="banding-not-in-use"></a><a href="" id="banding-not-in-use"></a> 未使用分级
 
 对于在未使用条带时要呈现的每个文档，GDI 将调用打印机图形 DLL 中的以下函数：
@@ -72,7 +71,7 @@ ms.locfileid: "89215738"
 
 在调用 [**DrvEndDoc**](/windows/win32/api/winddi/nf-winddi-drvenddoc) 以指示文档完全呈现后，它将调用 [**DrvDisableSurface**](/windows/win32/api/winddi/nf-winddi-drvdisablesurface)。 如果 [**DrvEnableSurface**](/windows/win32/api/winddi/nf-winddi-drvenablesurface) 名为 [**EngCreateBitmap**](/windows/win32/api/winddi/nf-winddi-engcreatebitmap)，则 **DrvDisableSurface** 必须调用 [**EngDeleteSurface**](/windows/win32/api/winddi/nf-winddi-engdeletesurface)。
 
-当应用程序调用**DeleteDC**时，GDI 将调用打印机图形 DLL 的[**DrvDisablePDEV**](/windows/win32/api/winddi/nf-winddi-drvdisablepdev)函数。
+当应用程序调用 **DeleteDC** 时，GDI 将调用打印机图形 DLL 的 [**DrvDisablePDEV**](/windows/win32/api/winddi/nf-winddi-drvdisablepdev)函数。
 
 如果应用程序在打印文档的过程中调用 **ResetDC** 函数，则 GDI 会创建一个新的设备上下文，并为新上下文调用打印机图形 DLL 的 [**DrvEnablePDEV**](/windows/win32/api/winddi/nf-winddi-drvenablepdev) 函数。 GDI 将调用 [**DrvResetPDEV**](/windows/win32/api/winddi/nf-winddi-drvresetpdev) 函数，因此，图形 DLL 可以用旧的信息更新新的上下文。 接下来，为旧上下文调用 [**DrvDisableSurface**](/windows/win32/api/winddi/nf-winddi-drvdisablesurface) 和 [**DrvDisablePDEV**](/windows/win32/api/winddi/nf-winddi-drvdisablepdev) ，后跟新上下文的 [**DrvEnableSurface**](/windows/win32/api/winddi/nf-winddi-drvenablesurface) 。 最后，在新页上，GDI 将调用 [**DrvStartDoc**](/windows/win32/api/winddi/nf-winddi-drvstartdoc) 并呈现恢复。
 
@@ -80,9 +79,9 @@ ms.locfileid: "89215738"
 
 如果打印机硬件支持 GDI 绘图函数不支持的绘图操作，则打印机图形 DLL 可提供 [**DrvDrawEscape**](/windows/win32/api/winddi/nf-winddi-drvdrawescape) 函数。
 
-如果需要支持无法通过 GDI 函数使用的绘图或 nondrawing 操作，打印机图形 DLL 可以提供 [**DrvEscape**](/windows/win32/api/winddi/nf-winddi-drvescape) 函数。 例如， [Microsoft PostScript 打印机驱动程序](microsoft-postscript-printer-driver.md) 使用转义以支持 PostScript 注入点。 或者，应用程序可能需要获取传真计算机的电话号码。 **DrvEscape**函数还用于指示**DrvDrawEscape**函数支持的操作。
+如果需要支持无法通过 GDI 函数使用的绘图或 nondrawing 操作，打印机图形 DLL 可以提供 [**DrvEscape**](/windows/win32/api/winddi/nf-winddi-drvescape) 函数。 例如， [Microsoft PostScript 打印机驱动程序](microsoft-postscript-printer-driver.md) 使用转义以支持 PostScript 注入点。 或者，应用程序可能需要获取传真计算机的电话号码。 **DrvEscape** 函数还用于指示 **DrvDrawEscape** 函数支持的操作。
 
-Microsoft Windows SDK 文档中介绍了**CreateDC**、 **ResetDC**和**DeleteDC** 。
+Microsoft Windows SDK 文档中介绍了 **CreateDC**、 **ResetDC** 和 **DeleteDC** 。
 
  
 

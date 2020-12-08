@@ -1,7 +1,6 @@
 ---
 title: 引用的区域设置
 description: 引用的区域设置
-ms.assetid: 63ea5534-b2e1-43aa-b45b-e4fe8bb69f49
 keywords:
 - Unidrv，引用区域设置
 - GPD 文件 WDK Unidrv，引用区域设置
@@ -10,12 +9,12 @@ keywords:
 - Unidrv WDK 打印
 ms.date: 06/12/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 00b9eadc2649fe142971190f97107c651ddfd82f
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 4f282b33bb3f13ab89d36a645f8166d439747be9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89216326"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96807057"
 ---
 # <a name="referencing-locales"></a>引用区域设置
 

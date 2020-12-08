@@ -1,19 +1,18 @@
 ---
 title: 扫描到可调谐信号
 description: 扫描到可调谐信号
-ms.assetid: cc934079-5d00-42e0-a024-1b7548bb88e4
 keywords:
 - 扫描 WDK 视频捕获信号
 - 扫描可调式信号音频捕获
 - 可调式信号音频捕获
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d4b06cba49ebd5df0d116c8410d5915d471f64ca
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 0ec529264323bd1b8d532f37fc44f9e043ec3b6e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89186311"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96806624"
 ---
 # <a name="scanning-to-tunable-signals"></a>扫描到可调谐信号
 

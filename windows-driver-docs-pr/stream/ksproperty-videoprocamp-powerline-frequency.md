@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ VIDEOPROCAMP \_ POWERLINE \_ FREQUENCY
 description: KSPROPERTY \_ VIDEOPROCAMP \_ POWERLINE \_ frequency 属性指定本地电源线频率。 如果设备支持荧光灯环境的抗闪烁处理，则可能需要此频率。
-ms.assetid: 560bb16d-2a95-408f-b32c-fa2db1c94902
 keywords:
 - KSPROPERTY_VIDEOPROCAMP_POWERLINE_FREQUENCY 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 16533e90b1d980b9a5faf618e6240d976156b304
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: eba91bf2bdf688a1fc7b35a864ae3489cac0aaeb
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107362"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96806649"
 ---
 # <a name="ksproperty_videoprocamp_powerline_frequency"></a>KSPROPERTY \_ VIDEOPROCAMP \_ POWERLINE \_ FREQUENCY
 
@@ -70,8 +69,8 @@ KSPROPERTY \_ VIDEOPROCAMP \_ POWERLINE \_ frequency 属性指定本地电源线
 </colgroup>
 <thead>
 <tr class="header">
-<th>值</th>
-<th>说明</th>
+<th>“值”</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -91,7 +90,7 @@ KSPROPERTY \_ VIDEOPROCAMP \_ POWERLINE \_ frequency 属性指定本地电源线
 <td><p>3</p></td>
 <td><p>电源线频率由系统自动确定。</p>
 <div class="alert">
-<strong>注意</strong>   自动属性值 (3) 在 (UVC) 1.1 的所有相机上都不可用。
+<strong>注意</strong>  自动属性值 (3) 在 (UVC) 1.1 的所有相机上都不可用。
 </div>
 <div>
  
@@ -102,7 +101,7 @@ KSPROPERTY \_ VIDEOPROCAMP \_ POWERLINE \_ frequency 属性指定本地电源线
 
  
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 发出集请求时，客户端应提供 KSPROPERTY VIDEOPROCAMP 节点的 **值** 成员的上一个表中的值之一 \_ \_ \_ 。
@@ -125,7 +124,7 @@ KSPROPERTY \_ VIDEOPROCAMP \_ POWERLINE \_ frequency 属性指定本地电源线
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSPROPERTY**](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)

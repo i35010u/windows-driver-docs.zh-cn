@@ -1,7 +1,6 @@
 ---
 title: DEVPKEY_Device_UINumberDescFormat
 description: DEVPKEY_Device_UINumberDescFormat
-ms.assetid: 6720b35e-a65b-4935-8010-aef53e3951e9
 keywords:
 - DEVPKEY_Device_UINumberDescFormat 设备和驱动程序安装
 topic_type:
@@ -14,17 +13,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: f5d634d0f0f9d9675549ee1c31e930c137cd0532
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 265e33b3d2d55a11e3f5462e7d29cdabfae95b4d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90717490"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96805527"
 ---
 # <a name="devpkey_device_uinumberdescformat"></a>DEVPKEY_Device_UINumberDescFormat
 
 
-DEVPKEY_Device_UINumberDescFormat 设备属性表示一个 **printf**兼容的格式字符串，该字符串应用于显示设备实例的 "DEVPKEY_DEVICE_UINumber 设备" 属性的值。
+DEVPKEY_Device_UINumberDescFormat 设备属性表示一个 **printf** 兼容的格式字符串，该字符串应用于显示设备实例的 "DEVPKEY_DEVICE_UINumber 设备" 属性的值。
 
 <table>
 <colgroup>

@@ -1,7 +1,6 @@
 ---
 title: 'IoBuildDeviceControlNoFree 规则 (wdm) '
 description: IoBuildDeviceControlNoFree 规则指定调用 IoBuildDeviceIoControlRequest 的驱动程序不得调用 IoFreeIrp。
-ms.assetid: 36DAB9A8-2B6F-43EE-86CC-97B66FE0AEB8
 ms.date: 05/21/2018
 keywords:
 - 'IoBuildDeviceControlNoFree 规则 (wdm) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: a025bbf567238ac91bdf2c7e163d436b88f19964
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 81825af3cff72a293bdd7b50ba1645875b788d8b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105206"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96806403"
 ---
 # <a name="iobuilddevicecontrolnofree-rule-wdm"></a>IoBuildDeviceControlNoFree 规则 (wdm) 
 
 
-**IoBuildDeviceControlNoFree**规则指定调用[**IoBuildDeviceIoControlRequest**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iobuilddeviceiocontrolrequest)的驱动程序不得调用[**IoFreeIrp**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iofreeirp)。
+**IoBuildDeviceControlNoFree** 规则指定调用 [**IoBuildDeviceIoControlRequest**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iobuilddeviceiocontrolrequest)的驱动程序不得调用 [**IoFreeIrp**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iofreeirp)。
 
 调用 [**IoBuildDeviceIoControlRequest**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iobuilddeviceiocontrolrequest) 的驱动程序不得调用 [**IoFreeIrp**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iofreeirp) ，因为 i/o 管理器在调用 [**IoCompleteRequest**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocompleterequest) 后释放这些同步 irp。
 

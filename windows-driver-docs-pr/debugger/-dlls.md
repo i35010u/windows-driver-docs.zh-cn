@@ -1,10 +1,9 @@
 ---
 title: dll
-description: Dll 扩展显示所有已加载的模块或指定的线程或进程正在使用的所有模块的表项。
-ms.assetid: a47ec828-ba5a-4f0d-be85-18633c4e4185
+description: Dll 扩展显示指定的线程或进程所使用的所有已加载模块或所有模块的表项。
 keywords:
 - DLL 表项
-- Windows 调试 dll
+- dll Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -13,60 +12,60 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: ecc7403b805161a95118a64dc92e015c06cccd00
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4be8c158920944e4280611149153e6322b1d12b6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63336795"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96805891"
 ---
 # <a name="dlls"></a>!dlls
 
 
-**！ Dll**扩展插件都会显示所有已加载的模块或指定的线程或进程正在使用的所有模块的表项。
+**！ Dll** 扩展显示指定线程或进程所使用的所有已加载模块或所有模块的表项。
 
 ```dbgcmd
 !dlls [Options] [LoaderEntryAddress] 
 !dlls -h
 ```
 
-## <a name="span-idddkdllsdbgspanspan-idddkdllsdbgspanparameters"></a><span id="ddk__dlls_dbg"></span><span id="DDK__DLLS_DBG"></span>参数
+## <a name="span-idddk__dlls_dbgspanspan-idddk__dlls_dbgspanparameters"></a><span id="ddk__dlls_dbg"></span><span id="DDK__DLLS_DBG"></span>参数
 
 
-<span id="_______Options______"></span><span id="_______options______"></span><span id="_______OPTIONS______"></span> *选项*   
-指定输出的级别。 此参数可以是下列值中的任意组合：
+<span id="_______Options______"></span><span id="_______options______"></span><span id="_______OPTIONS______"></span>*选项*   
+指定输出级别。 此参数可以是下列值的任意组合：
 
 <span id="-f"></span><span id="-F"></span>**-f**  
-显示文件标头。
+显示文件头。
 
 <span id="-s"></span><span id="-S"></span>**-s**  
-显示部分标头。
+显示节标头。
 
 <span id="-a"></span><span id="-A"></span>**-a**  
-显示完成模块信息。 （此选项相当于-f-s。）
+显示完整的模块信息。  (此选项等效于-f-s。 ) 
 
-<span id="-c_ModuleAddress"></span><span id="-c_moduleaddress"></span><span id="-C_MODULEADDRESS"></span>**-c** **** *ModuleAddress*  
-显示包含的模块*ModuleAddress*。
+<span id="-c_ModuleAddress"></span><span id="-c_moduleaddress"></span><span id="-C_MODULEADDRESS"></span>**-c**  **** *ModuleAddress*  
+显示包含 *ModuleAddress* 的模块。
 
 <span id="-i"></span><span id="-I"></span>**-i**  
-对显示的初始化顺序进行排序。
+按初始化顺序对显示进行排序。
 
 <span id="-l"></span><span id="-L"></span>**-l**  
-对显示按加载顺序进行排序。 默认值为这种情况。
+按加载顺序对显示进行排序。 这是默认情况。
 
 <span id="-m"></span><span id="-M"></span>**-m**  
-对显示的内存顺序进行排序。
+按内存顺序对显示进行排序。
 
 <span id="-v"></span><span id="-V"></span>**-v**  
-显示版本信息。 此信息将由每个模块的资源部分。
+显示版本信息。 此信息取自每个模块的资源部分。
 
-<span id="_______LoaderEntryAddress______"></span><span id="_______loaderentryaddress______"></span><span id="_______LOADERENTRYADDRESS______"></span> *LoaderEntryAddress*   
-指定模块的加载程序条目的地址。 如果包括此参数时，调试器将显示仅此特定模块。
+<span id="_______LoaderEntryAddress______"></span><span id="_______loaderentryaddress______"></span><span id="_______LOADERENTRYADDRESS______"></span>*LoaderEntryAddress*   
+指定模块的加载程序项的地址。 如果包含此参数，则调试器只显示此特定模块。
 
-<span id="_______-h______"></span><span id="_______-H______"></span> **-h**   
-显示此扩展中的一些帮助文本[调试器命令窗口](debugger-command-window.md)。
+<span id="_______-h______"></span><span id="_______-H______"></span>**-h**   
+在 [调试器命令窗口](debugger-command-window.md)中显示此扩展的一些帮助文本。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 <table>
 <colgroup>
@@ -91,13 +90,13 @@ Kdextx86.dll Ntsdexts.dll</td>
 <a name="remarks"></a>备注
 -------
 
-模块列表包括所有入口点到每个模块。
+模块列表包括每个模块中的所有入口点。
 
-**.Dll**扩展仅适用于 （不带故障转储分析） 实时调试。
+**.Dll** 扩展名仅适用于实时调试 (与故障转储分析) 无关。
 
-在内核模式下，此扩展显示为当前模块[进程上下文](changing-contexts.md#process-context)。 不能使用 **！ dll**与系统进程或空闲进程。
+在内核模式下，此扩展显示当前 [进程上下文](changing-contexts.md#process-context)的模块。 不能将 **！ dll** 与系统进程或空闲进程一起使用。
 
-下面的示例演示如何使用 **！ dll**扩展。
+下面的示例演示如何使用 **！ dll** 扩展。
 
 ```dbgcmd
 kd> !dlls -c 77f60000

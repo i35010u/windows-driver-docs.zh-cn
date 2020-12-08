@@ -1,7 +1,6 @@
 ---
 title: 使用 NMR 注册和取消注册 WSK
 description: 使用 NMR 注册和取消注册 WSK
-ms.assetid: 942fb4e6-ec2e-47ab-9b40-2bd0b7c72ec0
 keywords:
 - Winsock 内核 WDK 网络，注册
 - 注册 Winsock 内核应用程序
@@ -9,12 +8,12 @@ keywords:
 - 注销 Winsock 内核应用程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5cbcf8ac80c621b7606cfc0bb4b9b25869dd3484
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 581162ff83196ab4ae43617212247db463a9d58f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89211559"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96806137"
 ---
 # <a name="using-nmr-for-wsk-registration-and-unregistration"></a>使用 NMR 注册和取消注册 WSK
 

@@ -1,7 +1,6 @@
 ---
 title: GUID_DEVINTERFACE_MODEM
 description: GUID_DEVINTERFACE_MODEM
-ms.assetid: 80f5c063-8b22-422f-8102-4ac1e62241c8
 keywords:
 - GUID_DEVINTERFACE_MODEM 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 0d033952e134bac9b907349a80b6eaf81290b08e
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 908649289ed0d6d71179f81ec464614f7171ba10
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91732851"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96805513"
 ---
 # <a name="guid_devinterface_modem"></a>GUID_DEVINTERFACE_MODEM
 
@@ -33,7 +32,7 @@ ms.locfileid: "91732851"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">属性</th>
+<th align="left">Attribute</th>
 <th align="left">设置</th>
 </tr>
 </thead>
@@ -56,7 +55,7 @@ ms.locfileid: "91732851"
 
 调制解调器设备的驱动程序注册此设备接口类的实例，通知操作系统和应用程序是否存在调制解调器设备。
 
-仅当 INITGUID.H 和 DEFINE_GUID 宏的正确版本在包含*Ntddmodm*之前定义时，才会正确定义*Ntddmodm*中的 GUID_DEVINTERFACE_MODEM。 DEFINE_GUID 宏是在 *Guiddef*中定义的。 若要确保正确定义 INITGUID.H、DEFINE_GUID 和 GUID_DEVINTERFACE_MODEM，请在头文件中包含以下代码：
+仅当 INITGUID.H 和 DEFINE_GUID 宏的正确版本在包含 *Ntddmodm* 之前定义时，才会正确定义 *Ntddmodm* 中的 GUID_DEVINTERFACE_MODEM。 DEFINE_GUID 宏是在 *Guiddef* 中定义的。 若要确保正确定义 INITGUID.H、DEFINE_GUID 和 GUID_DEVINTERFACE_MODEM，请在头文件中包含以下代码：
 
 ```cpp
 #ifndef INITGUID
@@ -97,7 +96,7 @@ ms.locfileid: "91732851"
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**GUID_CLASS_MODEM**](guid-class-modem.md)

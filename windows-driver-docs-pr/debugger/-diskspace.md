@@ -1,9 +1,8 @@
 ---
-title: 磁盘空间
+title: 磁盘
 description: 磁盘空间扩展显示目标计算机的硬盘上的可用空间量。
-ms.assetid: 9153cdc0-addf-4804-a898-1e4280ac60ea
 keywords:
-- Windows 调试的磁盘空间
+- 磁盘空间 Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,29 +11,29 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: e79917aa3e0109e4c78b7c33c827c08ce2c8f64a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5661da75cfd00762f65d002766a1c7d8c5add82a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63334572"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96805895"
 ---
 # <a name="diskspace"></a>!diskspace
 
 
-**！ 磁盘空间**扩展插件都会显示在目标计算机的硬盘上的可用空间量。
+**！磁盘** 空间扩展显示目标计算机的硬盘上的可用空间量。
 
 ```dbgcmd
 !diskspace Drive[:]
 ```
 
-## <a name="span-idddkdiskspacedbgspanspan-idddkdiskspacedbgspanparameters"></a><span id="ddk__diskspace_dbg"></span><span id="DDK__DISKSPACE_DBG"></span>参数
+## <a name="span-idddk__diskspace_dbgspanspan-idddk__diskspace_dbgspanparameters"></a><span id="ddk__diskspace_dbg"></span><span id="DDK__DISKSPACE_DBG"></span>参数
 
 
-<span id="_______Drive______"></span><span id="_______drive______"></span><span id="_______DRIVE______"></span> *Drive*   
-指定磁盘的驱动器号。 冒号 （:）后*驱动器*是可选的。
+<span id="_______Drive______"></span><span id="_______drive______"></span><span id="_______DRIVE______"></span>*驱动器*   
+指定磁盘的驱动器号。 冒号 (： *驱动器* 后 ) 是可选的。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 <table>
 <colgroup>
@@ -58,7 +57,7 @@ ms.locfileid: "63334572"
 <a name="remarks"></a>备注
 -------
 
-下面是一个示例：
+以下是示例：
 
 ```dbgcmd
 kd> !diskspace c:

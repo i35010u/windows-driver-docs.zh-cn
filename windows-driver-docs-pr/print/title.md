@@ -1,7 +1,6 @@
 ---
 title: title 元素
 description: Required title 元素提供在事件通知消息标题中显示的文本。
-ms.assetid: 60583593-9fe9-4c3c-ab86-3e7c37a8e199
 keywords:
 - 标题元素打印设备
 topic_type:
@@ -12,18 +11,18 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 21792a64dab3db8f41f709fb2c5ac966a495e680
-ms.sourcegitcommit: b3e38d06762246c77cedd8e82d740ebea104c538
+ms.openlocfilehash: fc2535924f0f0bb3d912e07c653582e2837a4af7
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91662326"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96806699"
 ---
 # <a name="title-element"></a>title 元素
 
 Required **title** 元素提供在事件通知消息标题中显示的文本。
 
-**Title**元素在*asyncui*命名空间中的此 URI 上定义：
+**Title** 元素在 *asyncui* 命名空间中的此 URI 上定义：
 
 ```xml
 https://schemas.microsoft.com/2003/print/asyncui/v1/request
@@ -52,8 +51,8 @@ https://schemas.microsoft.com/2003/print/asyncui/v1/request
 <tr class="header">
 <th>属性</th>
 <th>类型</th>
-<th>必需</th>
-<th>说明</th>
+<th>必须</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -88,7 +87,7 @@ https://schemas.microsoft.com/2003/print/asyncui/v1/request
 <thead>
 <tr class="header">
 <th>元素</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>

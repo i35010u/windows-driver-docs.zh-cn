@@ -1,17 +1,16 @@
 ---
 title: Pscript 打印机微型驱动程序版本控制
 description: Pscript 打印机微型驱动程序版本控制
-ms.assetid: bdc203ee-b256-492b-bb8c-c695a8b4686d
 keywords:
-- 微型驱动程序 WDK Pscript、 版本控制
+- 微型驱动程序 WDK Pscript，版本控制
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f30912052c1d4a5dc39368a3fc0bd096f3109a8a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: bf6524935b7c175de95ca6cb03b67018387c0d02
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63376534"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96807155"
 ---
 # <a name="pscript-printer-minidriver-versioning"></a>Pscript 打印机微型驱动程序版本控制
 
@@ -19,7 +18,7 @@ ms.locfileid: "63376534"
 
 
 
-请参阅[指定打印机驱动程序版本号](print-driver-versioning.md)。
+请参阅 [指定打印机驱动程序版本号](print-driver-versioning.md)。
 
  
 

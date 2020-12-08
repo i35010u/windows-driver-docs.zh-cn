@@ -1,17 +1,16 @@
 ---
 title: OID_CO_DELETE_PVC
 description: 本主题介绍) OID_CO_DELETE_PVC 对象标识符 (OID。
-ms.assetid: 02da08d0-9d08-4a91-b851-50e3c3b065d6
 keywords:
 - OID_CO_DELETE_PVC
 ms.date: 11/03/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0e634bc2b442ef57c9946a74dd581ccc723020d3
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 70ac5f859e04c605097be87d9fae7043afc8cba9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89214648"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96806197"
 ---
 # <a name="oid_co_delete_pvc"></a>OID_CO_DELETE_PVC
 

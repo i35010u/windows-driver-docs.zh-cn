@@ -1,17 +1,16 @@
 ---
 title: OID_GEN_CO_MEDIA_IN_USE
 description: 本主题介绍) OID_GEN_CO_MEDIA_IN_USE 对象标识符 (OID。
-ms.assetid: 59a2c981-87a5-4df9-af26-3c5a5eadc17a
 keywords:
 - OID_GEN_CO_MEDIA_IN_USE
 ms.date: 11/02/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 147fe2cac96302e71ed7c151f0c6c54059e716c7
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 94f7f9562954ae13a14debf642a6f0a8d64a9498
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89206328"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96806163"
 ---
 # <a name="oid_gen_co_media_in_use"></a>OID_GEN_CO_MEDIA_IN_USE
 

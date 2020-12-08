@@ -1,7 +1,6 @@
 ---
 title: 打印打印作业
 description: 打印打印作业
-ms.assetid: 2e881f99-9dbe-4e89-8628-feb05137c9b0
 keywords:
 - 打印监视器 WDK，打印打印作业
 - 打印作业 WDK，打印
@@ -14,12 +13,12 @@ keywords:
 - 打印打印作业 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e21e9f579408fe1a775ba6e733b9d4073cc81d03
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 680cbfb345ca9d85cef5173affe9d3d25d0ead59
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89214190"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96807209"
 ---
 # <a name="printing-a-print-job"></a>打印打印作业
 
@@ -35,7 +34,7 @@ ms.locfileid: "89214190"
 
 当后台处理程序调用语言监视器的 **WritePort** 函数以将数据流发送到端口时，该函数通常会将特定语言的信息（如 *PJL* 命令）添加到接收的数据流中，然后再将其传递给关联的端口监视器的 **WritePort** 函数。
 
-**ReadPort**函数用于从双向打印机硬件获取状态信息，语言监视器可以通过调用**SetPort**将其发送到后台处理程序，如 Windows SDK 文档中所述。 后台处理程序不会调用 **ReadPort** 函数。
+**ReadPort** 函数用于从双向打印机硬件获取状态信息，语言监视器可以通过调用 **SetPort** 将其发送到后台处理程序，如 Windows SDK 文档中所述。 后台处理程序不会调用 **ReadPort** 函数。
 
 如果打印硬件是双向的，则其语言监视器及其端口监视器都应支持 **GetPrinterDataFromPort** 函数。 语言监视器的 **GetPrinterDataFromPort** 函数应接受注册表值名称作为输入，并 (通常通过调用关联的端口监视器的 **WritePort** 和 **ReadPort** 函数) ，获取该名称的值，并将值返回给调用方。 端口监视器的 **GetPrinterDataFromPort** 函数应接受 i/o 控制代码作为输入，调用 Windows SDK 文档中所述的 [**DeviceIoControl**](/windows/win32/api/ioapiset/nf-ioapiset-deviceiocontrol) () ，将控制代码传递到端口驱动程序并返回结果。
 

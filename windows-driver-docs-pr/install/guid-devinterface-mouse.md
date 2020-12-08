@@ -1,7 +1,6 @@
 ---
 title: GUID_DEVINTERFACE_MOUSE
 description: GUID_DEVINTERFACE_MOUSE
-ms.assetid: c5aff960-a78d-4429-ba3f-f2f91d9a56fa
 keywords:
 - GUID_DEVINTERFACE_MOUSE 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 6e6511b0d4533d07cd66eca9f0820900d0462dd9
-ms.sourcegitcommit: 735fea11056fe943c4368ee54573790e0602de66
+ms.openlocfilehash: 93de8b4aa19a56bcdeff6c973394e63e9e94dc4a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91979986"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96805507"
 ---
 # <a name="guid_devinterface_mouse"></a>GUID_DEVINTERFACE_MOUSE
 
@@ -51,7 +50,7 @@ ms.locfileid: "91979986"
 
  
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 鼠标设备的驱动程序注册此设备接口类的实例，通知操作系统和应用程序是否存在鼠标设备。
@@ -78,13 +77,13 @@ WDK 包含系统提供的鼠标类驱动程序的示例代码。 鼠标类驱动
 <td align="left"><p>在 Microsoft Windows 2000 和更高版本的 Windows 中可用。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>标题</p></td>
+<td align="left"><p>标头</p></td>
 <td align="left">Ntddmou (包含 Ntddmou) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**GUID_CLASS_MOUSE**](guid-class-mouse.md)

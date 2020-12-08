@@ -1,7 +1,6 @@
 ---
 title: 提供 DEVMODE 结构补充
 description: 提供 DEVMODE 结构补充
-ms.assetid: 7ce698f5-14c7-484d-be3d-b41c690b9576
 keywords:
 - 用户界面插件 WDK 打印，DEVMODEW 结构添加
 - UI 插件 WDK 打印，DEVMODEW 结构添加件
@@ -10,12 +9,12 @@ keywords:
 - 公共 DEVMODE WDK 打印
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0c5444d95e3454afd766d88637171c7c631083ac
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 67ffee2d79ce84781c009f754929710a88591a6f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89207079"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96807191"
 ---
 # <a name="providing-devmode-structure-additions"></a>提供 DEVMODE 结构补充
 

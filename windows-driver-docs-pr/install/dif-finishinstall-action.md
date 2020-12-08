@@ -1,7 +1,6 @@
 ---
 title: DIF_FINISHINSTALL_ACTION
 description: DIF_FINISHINSTALL_ACTION
-ms.assetid: 76eba79b-7a8a-478e-aaea-8b36eee51846
 keywords:
 - DIF_FINISHINSTALL_ACTION 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: e02bfec1d096df8beba1a25769260c9bf133ef20
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 694676282599b396ce39d9ed1f2618b1e6c6afe2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104286"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96806245"
 ---
 # <a name="dif_finishinstall_action"></a>DIF_FINISHINSTALL_ACTION
 
@@ -30,7 +29,7 @@ ms.locfileid: "90104286"
 
 在 Windows 8 及更高版本中，"完成-安装" 操作不会在设备安装过程中自动运行。 若要完成设备完成安装操作，用户必须在操作中心单击 "完成安装设备软件" 以完成安装。
 
-有关详细信息，请参阅 [运行完成-安装操作](./running-finish-install-actions.md)。
+有关详细信息，请参阅 [运行 Finish-Install 操作](./running-finish-install-actions.md)。
 
 在 Windows 7 中，仅在以下时间之一使用管理员凭据在用户的上下文中运行完成安装过程：
 
@@ -74,7 +73,7 @@ ms.locfileid: "90104286"
 指向表示正在安装的设备的 [**SP_DEVINFO_DATA**](/windows/win32/api/setupapi/ns-setupapi-sp_devinfo_data) 结构的指针。
 
 <a href="" id="device-installation-parameters-"></a>设备安装参数   
-与*DeviceInfoData*关联的[**SP_DEVINSTALL_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-sp_devinstall_params_a)结构)  (有设备安装参数。
+与 *DeviceInfoData* 关联的 [**SP_DEVINSTALL_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-sp_devinstall_params_a)结构)  (有设备安装参数。
 
 <a href="" id="class-installation-parameters"></a>类安装参数  
 无
@@ -129,7 +128,7 @@ Windows 8 及更高版本中没有默认的 DIF 代码处理程序，并且 [**S
 
 由于设备安装无法从 ERROR_DI_DO_DEFAULT 返回代码或 NO_ERROR 返回代码确定完成-安装操作是否确实成功，因此安装程序应通知用户完成安装程序操作的状态。
 
-有关完成安装操作的详细信息，请参阅 [设备安装如何处理完成-安装操作](./how-finish-install-actions-are-processed.md) 和 [实现完成-安装操作](./implementing-finish-install-actions.md)。
+有关完成安装操作的详细信息，请参阅 [设备安装如何处理 Finish-Install 操作](./how-finish-install-actions-are-processed.md) 和 [实现 Finish-Install 操作](./implementing-finish-install-actions.md)。
 
 有关 DIF 代码的常规信息，请参阅 [处理 Dif 代码](./handling-dif-codes.md) 和 [调用默认的 Dif 代码处理程序](./calling-the-default-dif-code-handlers.md)。
 

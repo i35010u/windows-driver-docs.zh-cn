@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ PIN \_ MODEDATAFORMATS
 description: 客户端使用 KSPROPERTY_PIN_MODEDATAFORMATS 属性为 pin 工厂实例化的每个受支持的端口检索支持的格式列表。
-ms.assetid: AD028946-2E6C-4385-B336-657FA1743EA8
 keywords:
 - KSPROPERTY_PIN_MODEDATAFORMATS 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 07/01/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 3ad1518115c7a8847eaa6f18969767f46feee9d0
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 81da40b9cf0d439c22711217c2f03c7cb159ed1d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103646"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96805977"
 ---
 # <a name="ksproperty_pin_modedataformats"></a>KSPROPERTY \_ PIN \_ MODEDATAFORMATS
 
@@ -87,7 +86,7 @@ ms.locfileid: "90103646"
 }
 ```
 
-有关详细信息，请参阅 [可扩展波形格式说明符](../audio/extensible-wave-format-descriptors.md)。
+有关详细信息，请参阅 [可扩展 Wave-Format 描述符](../audio/extensible-wave-format-descriptors.md)。
 
 ## <a name="supported-mode-format-and-buffer-recommendations"></a>支持的模式格式和缓冲区建议
 
@@ -112,7 +111,7 @@ ms.locfileid: "90103646"
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [**KSP \_ PIN**](/windows-hardware/drivers/ddi/ks/ns-ks-ksp_pin)
 

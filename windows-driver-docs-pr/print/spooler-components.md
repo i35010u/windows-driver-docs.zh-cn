@@ -1,15 +1,14 @@
 ---
 title: 后台处理程序组件
 description: 后台处理程序组件
-ms.assetid: c2f70a23-6539-4736-b806-ec48d4f772a6
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bc9e3597ebe06a27038bebe492037e818fb3a1d7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d9a48ce56d7592251a2c90f25cd9656a5c8eaff1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63382126"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96806887"
 ---
 # <a name="spooler-components"></a>后台处理程序组件
 
@@ -17,11 +16,11 @@ ms.locfileid: "63382126"
 
 
 
-本部分提供了以下主题：
+本部分提供下列主题：
 
 [后台处理程序组件简介](introduction-to-spooler-components.md)
 
-[打印提供商](print-providers.md)
+[打印提供程序](print-providers.md)
 
  
 

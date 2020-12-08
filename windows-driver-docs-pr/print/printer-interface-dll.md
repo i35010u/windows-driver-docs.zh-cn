@@ -1,7 +1,6 @@
 ---
 title: 打印机接口 DLL
 description: 打印机接口 DLL
-ms.assetid: 2a8cf38f-8e27-4e08-9c0f-5d1a4cd854ac
 keywords:
 - GDI 打印机驱动程序 WDK，打印机接口 DLL
 - 打印机接口 DLL WDK
@@ -10,12 +9,12 @@ keywords:
 - 配置选项用户界面 WDK 打印
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 76f2ced20f54135f5ee32377b2aa3317cacf941a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7cbce7777e3e205ca103744687c223d1deb52d43
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63384605"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96807241"
 ---
 # <a name="printer-interface-dll"></a>打印机接口 DLL
 
@@ -23,23 +22,23 @@ ms.locfileid: "63384605"
 
 
 
-本部分提供了以下主题：
+本部分提供下列主题：
 
-[打印机接口 dll 函数简介](introduction-to-printer-interface-dlls.md)
+[打印机接口 DLL 简介](introduction-to-printer-interface-dlls.md)
 
-[通过打印机接口 dll 函数定义的函数](functions-defined-by-printer-interface-dlls.md)
+[按打印机接口 DLL 定义的函数](functions-defined-by-printer-interface-dlls.md)
 
-[示例打印机接口 DLL](sample-printer-interface-dll.md)
+[打印机接口 DLL 示例](sample-printer-interface-dll.md)
 
 [为打印机创建属性表页](creating-property-sheet-pages-for-printers.md)
 
-[用于标识打印机的颜色功能](identifying-a-printer-s-color-capability.md)
+[识别打印机的颜色功能](identifying-a-printer-s-color-capability.md)
 
 [打印票证和打印功能支持](print-ticket-and-print-capabilities-support.md)
 
-[添加对整体化打印驱动程序的打印票证支持](adding-print-ticket-support-to-monolithic-print-drivers.md)
+[将打印票证支持添加到一体式打印驱动程序](adding-print-ticket-support-to-monolithic-print-drivers.md)
 
-[打印机驱动程序和插件的帮助程序接口](printer-driver-and-plug-in-helper-interfaces.md)
+[打印机驱动程序和插件帮助程序接口](printer-driver-and-plug-in-helper-interfaces.md)
 
 [关键字映射](keyword-mapping.md)
 

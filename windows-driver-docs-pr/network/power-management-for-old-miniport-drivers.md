@@ -1,17 +1,16 @@
 ---
 title: 旧式微型端口驱动程序的电源管理
 description: 旧式微型端口驱动程序的电源管理
-ms.assetid: 676c8c4c-3fd7-4063-a704-2bbfdd03a94e
 keywords:
 - 电源管理 WDK NDIS 微型端口，旧微型端口驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a2aec84daaa7fb4bf076830c7e6a1604a5359bdf
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 7e3f9c8444cd3a7214462d6671638f88c5743f57
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89210091"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96806155"
 ---
 # <a name="power-management-for-old-miniport-drivers"></a>旧式微型端口驱动程序的电源管理
 
@@ -29,7 +28,7 @@ NDIS 将微型端口驱动程序视为不能识别电源的旧微型端口驱动
 
 对于不支持 power manegement 的旧微型端口驱动程序，NDIS 仅支持两种设备电源状态：最高功率 (D0) 状态和 D3 状态。
 
-在初始化期间，旧的微型端口驱动程序可以指示在系统转换为睡眠 (D3) 状态之前，NDIS 不应将其暂停。 微型端口驱动程序通过在 \_ \_ \_ \_ \_ 小型端口驱动程序传递给[**NdisMSetMiniportAttributes**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsetminiportattributes)函数的*AttributeFlags*参数中设置 NDIS 属性 "不暂停暂停" 标志来进行此类指示。 旧微型端口驱动程序应仅在以下情况下才设置此标志：
+在初始化期间，旧的微型端口驱动程序可以指示在系统转换为睡眠 (D3) 状态之前，NDIS 不应将其暂停。 微型端口驱动程序通过在 \_ \_ \_ \_ \_ 小型端口驱动程序传递给 [**NdisMSetMiniportAttributes**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsetminiportattributes)函数的 *AttributeFlags* 参数中设置 NDIS 属性 "不暂停暂停" 标志来进行此类指示。 旧微型端口驱动程序应仅在以下情况下才设置此标志：
 
 -   保存可能需要的所有硬件上下文。
 
@@ -41,7 +40,7 @@ NDIS 将微型端口驱动程序视为不能识别电源的旧微型端口驱动
 
 NDIS 为旧微型端口驱动程序提供以下电源管理支持：
 
--   NDIS 成功将系统电源管理器发送到表示 NIC 的设备对象的所有 [**IRP \_ MN \_ 查询 \_ **](../kernel/irp-mn-query-power.md) 请求。 也就是说，NDIS 保证微型端口驱动程序的 NIC 会转换为 D3 状态，以响应系统中的任何 IRP \_ MN \_ 查询 \_ 电源请求。
+-   NDIS 成功将系统电源管理器发送到表示 NIC 的设备对象的所有 [**IRP \_ MN \_ 查询 \_**](../kernel/irp-mn-query-power.md) 请求。 也就是说，NDIS 保证微型端口驱动程序的 NIC 会转换为 D3 状态，以响应系统中的任何 IRP \_ MN \_ 查询 \_ 电源请求。
 
 -   如果微型端口驱动程序未在初始化期间将 NDIS 属性设置为 "暂停时暂停标志"，则在 \_ \_ \_ \_ \_ 微型端口驱动程序的 NIC 转换到状态 D3 之前，NDIS 会调用微型端口驱动程序的 [*MiniportHaltEx*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_halt) 函数。 微型端口驱动程序的 NIC 丢失了所有硬件上下文信息。
 

@@ -1,18 +1,17 @@
 ---
 title: Pscript 特定的自定义渲染
 description: Pscript 特定的自定义渲染
-ms.assetid: e984f0f0-1435-4cfd-9a99-297f6a9521f5
 keywords:
 - 呈现插件 WDK 打印，Pscript5
 - Pscript WDK 打印，自定义呈现
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 83c5a2f37e04ae60e2804daa7488e1c6d322a96b
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: f68e3ff8c606ba2205d434190576c67f5b15673d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89217108"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96807145"
 ---
 # <a name="pscript-specific-customized-rendering"></a>Pscript 特定的自定义渲染
 

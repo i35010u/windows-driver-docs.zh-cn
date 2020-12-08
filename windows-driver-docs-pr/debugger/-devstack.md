@@ -1,7 +1,6 @@
 ---
 title: devstack
-description: Devstack 扩展显示设备堆栈与设备对象相关联的格式化的视图。
-ms.assetid: 2215f166-2053-4525-80cd-be3817510dbd
+description: Devstack 扩展显示与设备对象相关联的设备堆栈的格式化视图。
 keywords:
 - devstack Windows 调试
 ms.date: 05/23/2017
@@ -12,29 +11,29 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 2c00bc4286dfcecf80f497e8ec6c8fa7ef9f28da
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3c7dfc95800ce990e3770f8453ba3dedf8c6410b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63334582"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96805903"
 ---
 # <a name="devstack"></a>!devstack
 
 
-**！ Devstack**扩展显示设备堆栈与设备对象相关联的格式化的视图。
+**！ Devstack** 扩展显示与设备对象相关联的设备堆栈的格式化视图。
 
 ```dbgcmd
 !devstack DeviceObject 
 ```
 
-## <a name="span-idddkdevstackdbgspanspan-idddkdevstackdbgspanparameters"></a><span id="ddk__devstack_dbg"></span><span id="DDK__DEVSTACK_DBG"></span>参数
+## <a name="span-idddk__devstack_dbgspanspan-idddk__devstack_dbgspanparameters"></a><span id="ddk__devstack_dbg"></span><span id="DDK__DEVSTACK_DBG"></span>参数
 
 
-<span id="_______DeviceObject______"></span><span id="_______deviceobject______"></span><span id="_______DEVICEOBJECT______"></span> *DeviceObject*   
-指定的设备对象。 这可以是设备的十六进制地址\_对象结构或设备的名称。
+<span id="_______DeviceObject______"></span><span id="_______deviceobject______"></span><span id="_______DEVICEOBJECT______"></span>*DeviceObject*   
+指定设备对象。 这可以是设备对象结构的十六进制地址 \_ 或设备的名称。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 <table>
 <colgroup>
@@ -55,16 +54,16 @@ ms.locfileid: "63334582"
 
  
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-有关设备堆栈的信息，请参阅 Windows Driver Kit (WDK) 文档。
+有关设备堆栈的信息，请参阅 Windows 驱动程序工具包 (WDK) 文档。
 
 <a name="remarks"></a>备注
 -------
 
-如果*DeviceObject*指定的设备的名称，但提供没有前缀，前缀"\\设备\\"假定。 请注意，此命令将检查以查看是否*DeviceObject*表达式计算器在使用之前为有效的地址或设备名称。
+如果 *DeviceObject* 指定设备的名称，但未提供前缀， \\ \\ 则假定为前缀 "device"。 请注意，在使用表达式计算器之前，此命令将检查 *DeviceObject* 是否为有效的地址或设备名称。
 
-下面是一个示例：
+以下是示例：
 
 ```dbgcmd
 kd> !devstack e000000085007b50

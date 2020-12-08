@@ -1,7 +1,6 @@
 ---
 title: IEEE 1394 设备的常时等量 I/O
 description: IEEE 1394 设备的常时等量 I/O
-ms.assetid: fc544776-af45-40e2-9699-7dcc50275d1e
 keywords:
 - IEEE 1394 WDK 总线，同步 i/o
 - 1394 WDK 总线，同步 i/o
@@ -15,12 +14,12 @@ keywords:
 - 传输数据 WDK IEEE 1394 总线
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 536b01d621a0f3c437955250f3090725b25e3acd
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 17e3753e0384c3166bc4a75fb82a9349d79009e0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89382213"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96805601"
 ---
 # <a name="isochronous-io-for-ieee-1394-devices"></a>IEEE 1394 设备的常时等量 I/O
 

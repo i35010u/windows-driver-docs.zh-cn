@@ -1,15 +1,14 @@
 ---
 title: 设置 WIA 生成环境
 description: 设置 WIA 生成环境
-ms.assetid: 0e961aca-1b0c-483c-9269-e656daee3e5e
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a7383b9b21024c7c69b4086f33eb1c879130d16d
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 93706de2a15b928a40383de4b4cb4a972feb556b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89192947"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96805557"
 ---
 # <a name="setting-up-the-wia-build-environment"></a>设置 WIA 生成环境
 

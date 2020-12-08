@@ -1,7 +1,6 @@
 ---
 title: 打印机 Dirids
 description: 打印机 Dirids
-ms.assetid: 104af180-c739-4733-b21b-448cfe15ab71
 keywords:
 - INF 文件 WDK 打印，dirids
 - dirids WDK
@@ -10,12 +9,12 @@ keywords:
 - 标识符 WDK 打印机
 ms.date: 06/12/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: af51adf89bb6748f60b0b7451d4f8f22a6893851
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: c34e14128d0fcc5f038b44dd5ccac3fb577acbf6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89216360"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96807327"
 ---
 # <a name="printer-dirids"></a>打印机 Dirids
 
@@ -23,7 +22,7 @@ ms.locfileid: "89216360"
 
 下表列出了打印机特定 `dirids` 的和每个的用途。
 
-| Dirid | 目标 | 目录内容 |
+| Dirid | 目的 | 目录内容 |
 |--|--|--|
 | 66000 | 表示 **GetPrinterDriverDirectory** 函数返回的目录路径。 | 驱动程序文件和依赖文件相关文件 |
 | 66001 | 表示 **GetPrintProcessorDirectory** 函数返回的目录路径。 | 打印处理器文件 |

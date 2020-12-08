@@ -1,15 +1,14 @@
 ---
 title: WexLogger
 description: WexLogger
-ms.assetid: D9F4AD08-19EA-4a6c-AD25-886FBEA334B8
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7287a1e985b89e1b880954e3b8ef1143011739a0
-ms.sourcegitcommit: 9b4760aae390b36dbdf9e0dd729a4a643c3f7831
+ms.openlocfilehash: aeee1e7d2bb46e77cf192a4b9359a763b910c91a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90565287"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96806585"
 ---
 # <a name="wexlogger"></a>WexLogger
 
@@ -58,7 +57,7 @@ log.Comment("Render succeeded");
 ## <a name="logging-outside-taef"></a>在 TAEF 外部登录
 
 
-大多数情况下，日志记录初始化和完成将由 TAEF 执行，因此，WexLogger 将随时可用于测试用例的持续时间，如前文所述，并将正确完成。 但是，如果客户端想要在 TAEF 外部使用 WexLogger，则他们将负责手动调用 **LogController：： InitializeLogging ( # B1 ** 和 **LogController：： FinalizeLogging ( # B3 **。 此要求仅适用于本机和托管代码;脚本没有此附加要求。 有关 LogController API 的详细信息，请参阅下面的静态 LogController 方法表。
+大多数情况下，日志记录初始化和完成将由 TAEF 执行，因此，WexLogger 将随时可用于测试用例的持续时间，如前文所述，并将正确完成。 但是，如果客户端想要在 TAEF 外部使用 WexLogger，则他们将负责手动调用 **LogController：： InitializeLogging ( # B1** 和 **LogController：： FinalizeLogging ( # B3**。 此要求仅适用于本机和托管代码;脚本没有此附加要求。 有关 LogController API 的详细信息，请参阅下面的静态 LogController 方法表。
 
 有关如何在 TAEF 之外生成 WTT 日志的信息，请参阅 [生成 WTT 日志](#generating-wtt-logs) 部分。
 
@@ -116,7 +115,7 @@ log.Comment("Render succeeded");
 | NotRun                                     | 测试未运行 |
 | 已跳过                                    | 已跳过测试 |
 | 已阻止                                    | 已阻止测试 |
-| Failed                                     | 测试失败      |
+| 失败                                     | 测试失败      |
 
 
 
@@ -243,7 +242,7 @@ WexLogger 提供一个或多个子进程登录到单个父进程的功能，导�
 
 **父进程**
 
-1.  调用 **RemoteLogController：： GenerateConnectionData ( # B1 ** 生成连接数据，这两个进程都必须使用这些数据来启动日志记录连接。
+1.  调用 **RemoteLogController：： GenerateConnectionData ( # B1** 生成连接数据，这两个进程都必须使用这些数据来启动日志记录连接。
 
     **注意：** 务必检查此调用的返回值。
 
@@ -256,26 +255,26 @@ WexLogger 提供一个或多个子进程登录到单个父进程的功能，导�
 2.  通过在其环境块中设置连接数据，或通过在命令提示符下将其作为参数传递，来与子进程通信。 例如：
 
     **在 WexLogger 理解的命令提示符下传递作为命名参数：**  
-    /wexlogger \_ connectiondata =* \[ 连接数据 \] *
+    /wexlogger \_ connectiondata =*\[ 连接数据 \]*
 
-    **注意：** 如果使用此选项，则**不**需要以下**子进程**部分中的步骤1。
+    **注意：** 如果使用此选项，则 **不** 需要以下 **子进程** 部分中的步骤1。
 
     **作为 WexLogger 理解的命名环境变量传递：**  
-    \[YourAppName \_ cmd \] =/wexlogger \_ connectiondata =* \[ 连接数据 \] *
+    \[YourAppName \_ cmd \] =/wexlogger \_ connectiondata =*\[ 连接数据 \]*
 
-    **注意：** 如果使用此选项，则**不**需要以下**子进程**部分中的步骤1。
+    **注意：** 如果使用此选项，则 **不** 需要以下 **子进程** 部分中的步骤1。
 
-    **以任意格式传递到进程 (某个其他命令参数、环境变量等 ) **  
+    **以任意格式传递到进程 (某个其他命令参数、环境变量等 )**  
     **注意：** 如果使用此选项，则必须使用以下 **子进程** 部分 **中的步骤** 1。
 
     **注意：** 为方便起见，"/wexlogger \_ connectiondata =" 值在本机和托管 RemoteLogControllers 中都定义为常量：
 
     -   **WEX：：日志记录：： c \_ szWexLoggerRemoteConnectionData**，在 LogController 中
 
-    -   **RemoteLogController. WexLoggerRemoteConnectionData**Wex.Logger.Interop.dll
+    -   **RemoteLogController. WexLoggerRemoteConnectionData** Wex.Logger.Interop.dll
 
 3.  用连接数据启动子进程
-4.  调用**RemoteLogController：： InitalizeLogging (* \[ 在步骤 1 \]) 中创建的连接数据* **。 启动子进程后必须进行此调用，因为如果子进程无法及时调用 **LogController：： InitializeLogging ( # B1 ** ，则会超时。
+4.  调用 **RemoteLogController：： InitalizeLogging (*\[ 在步骤 1 \]) 中创建的连接数据***。 启动子进程后必须进行此调用，因为如果子进程无法及时调用 **LogController：： InitializeLogging ( # B1** ，则会超时。
 
     **注意：** 务必检查此调用的返回值。
 
@@ -290,7 +289,7 @@ WexLogger 提供一个或多个子进程登录到单个父进程的功能，导�
 
 1.  如果在 WexLogger 了解的命令提示符下，连接数据 **未** 作为命名自变量传递给子进程 (请参阅) 上方的步骤2，则必须设置环境变量，如下所示：
 
-    \[YourAppName \_ cmd \] =/wexlogger \_ connectiondata =* \[ 连接数据 \] *
+    \[YourAppName \_ cmd \] =/wexlogger \_ connectiondata =*\[ 连接数据 \]*
 
     例如：
 
@@ -299,27 +298,27 @@ WexLogger 提供一个或多个子进程登录到单个父进程的功能，导�
     ::SetEnvironmentVariable(L"mytestapp_cmd", String(c_szWexLoggerRemoteConnectionData).Append(connectionData));
     ```
 
-2.  调用 **LogController：： InitializeLogging ( # B1 ** 为此进程初始化日志记录。 在内部，这将利用上述步骤1中的环境变量集 (或 **父进程** 部分的步骤 2) 来启动返回到父进程的日志记录连接。
+2.  调用 **LogController：： InitializeLogging ( # B1** 为此进程初始化日志记录。 在内部，这将利用上述步骤1中的环境变量集 (或 **父进程** 部分的步骤 2) 来启动返回到父进程的日志记录连接。
 3.  日志，等等;所有跟踪都将发送回父进程。
-4.  调用 **LogController：： FinalizeLogging ( # B1 ** 来完成此进程的日志记录。
+4.  调用 **LogController：： FinalizeLogging ( # B1** 来完成此进程的日志记录。
 
 ## <a name="determining-test-outcome"></a>确定测试结果
 
 
-尽管提供了一个方法来显式陈述测试用例的预期结果 (**Log：： Result ( # B2 **) ，但在大多数情况下不 **需要** 使用此方法。
+尽管提供了一个方法来显式陈述测试用例的预期结果 (**Log：： Result ( # B2**) ，但在大多数情况下不 **需要** 使用此方法。
 
-例如，如果测试用例未显式调用 **log：： Result ( # B1 ** **，并且不** 记录错误 (通过 **日志：： error ( # B4 **) ，则默认情况下，它被视为传递测试用例;如果它 **确实** 记录了错误，则测试用例失败。
+例如，如果测试用例未显式调用 **log：： Result ( # B1** **，并且不** 记录错误 (通过 **日志：： error ( # B4**) ，则默认情况下，它被视为传递测试用例;如果它 **确实** 记录了错误，则测试用例失败。
 
-但是，如果测试用例 **显式调用** **Log：： Result (TestResults：： TestPassed) **，但也 **会** 在测试用例中记录错误，则测试仍将计为失败，因为测试中发生了错误。
+但是，如果测试用例 **显式调用** **Log：： Result (TestResults：： TestPassed)**，但也 **会** 在测试用例中记录错误，则测试仍将计为失败，因为测试中发生了错误。
 
 在 TAEF 框架中，可以通过使用不同的默认测试结果标记测试来重写此行为。 有关此功能的详细信息可在 "创作 TAEF 测试" 文档中找到。
 
-此行为还可通过以下方式重写：对自己的测试组/测试用例显式调用 **Log：： StartGroup ( # B1 ** ，并使用所选的默认测试结果。
+此行为还可通过以下方式重写：对自己的测试组/测试用例显式调用 **Log：： StartGroup ( # B1** ，并使用所选的默认测试结果。
 
 ## <a name="generating-wtt-logs"></a>生成 WTT 日志
 
 
-有三种方法可通过 **WexLogger**生成 WTT 日志。 所有这些都要求 **WttLog.dll** 显示在运行目录或路径中。
+有三种方法可通过 **WexLogger** 生成 WTT 日志。 所有这些都要求 **WttLog.dll** 显示在运行目录或路径中。
 
 -   如果在实验室中运行，安装了 wtt 客户端，将自动为你生成 wtt 日志。 这是因为，WexLogger 会查找两个环境变量是否存在，这些变量仅应存在于实验室环境中： "WttTaskGuid" 和 "WTTRunWorkingDir"。 如果两者都存在，则会自动启用 wtt 日志记录。
 -   如果在实验室环境外部的 TAEF 中运行，请在命令提示符下将/enablewttlogging 传递给测试用例。 示例：
@@ -328,7 +327,7 @@ WexLogger 提供一个或多个子进程登录到单个父进程的功能，导�
     te my.test.dll /enablewttlogging
     ```
 
--   如果要在 TAEF 框架之外使用 WexLogger，但没有在实验室环境中运行，则必须在调用**LogController：： InitializeLogging ( # B1**之前，将** &lt; \_ 进程 \_ 名称 &gt; \_ CMD**环境变量设置为包含此选项。 示例：
+-   如果要在 TAEF 框架之外使用 WexLogger，但没有在实验室环境中运行，则必须在调用 **LogController：： InitializeLogging ( # B1** 之前，将 **&lt; \_ 进程 \_ 名称 &gt; \_ CMD** 环境变量设置为包含此选项。 示例：
     ```cs
     Environment.SetEnvironmentVariable("<YOUR_PROCESS_NAME>_CMD", "/enablewttlogging");
     LogController.InitializeLogging();
@@ -371,7 +370,7 @@ WexLogger 提供一个或多个子进程登录到单个父进程的功能，导�
 | NotRun    | 已 \_ 阻止 WTT TESTCASE \_ 结果 \_ |
 | 已跳过   | 已 \_ \_ \_ 跳过 WTT TESTCASE 结果 |
 | 已阻止   | 已 \_ 阻止 WTT TESTCASE \_ 结果 \_ |
-| Failed    | WTT \_ TESTCASE \_ 结果 \_ 失败    |
+| 失败    | WTT \_ TESTCASE \_ 结果 \_ 失败    |
 
 
 
@@ -403,7 +402,7 @@ te my.test.dll /screencaptureonerror /stacktraceonerror
 
 启用其中一个或多个选项后，每次调用 Log：： Error ( # A1 时都将收到额外的输出。
 
-注意：如果在 TAEF framework 外使用 WexLogger，则必须在调用**LogController：： InitializeLogging ( # B1**之前，将** &lt; \_ 进程 \_ 名称 &gt; \_ CMD**环境变量设置为包含这些选项。 示例：
+注意：如果在 TAEF framework 外使用 WexLogger，则必须在调用 **LogController：： InitializeLogging ( # B1** 之前，将 **&lt; \_ 进程 \_ 名称 &gt; \_ CMD** 环境变量设置为包含这些选项。 示例：
 
 ```cs
 Environment.SetEnvironmentVariable("<YOUR_PROCESS_NAME>_CMD", "/screencaptureonerror /minidumponerror /stacktraceonerror");
@@ -418,13 +417,13 @@ LogController.InitializeLogging();
 ## <a name="c-error-handling"></a>C + + 错误处理
 
 
-为了使测试用例作者免于检查每个日志 API 调用的返回值，WexLogger 通过使用可选的回调机制报告意外错误条件; **WexLoggerErrorCallback** 函数。 当 **WexLogger** (通过 **LogController：： InitializeLogging ( # B2 **) 的 initializaiton 时，客户端可以选择指定 **WexLoggerErrorCallback** 函数，以便在 **WexLogger**内发生意外错误情况时调用。 **WexLoggerErrorCallback**函数必须使用以下签名：
+为了使测试用例作者免于检查每个日志 API 调用的返回值，WexLogger 通过使用可选的回调机制报告意外错误条件; **WexLoggerErrorCallback** 函数。 当 **WexLogger** (通过 **LogController：： InitializeLogging ( # B2**) 的 initializaiton 时，客户端可以选择指定 **WexLoggerErrorCallback** 函数，以便在 **WexLogger** 内发生意外错误情况时调用。 **WexLoggerErrorCallback** 函数必须使用以下签名：
 
 ```cpp
 void __stdcall MyLoggerErrorCallback(const unsigned short* pszMessage, HRESULT hr);
 ```
 
-WexLoggerErrorCallback 函数的常见用途是将错误消息写出到控制台 (如果你的测试工具是) 的控制台应用程序。 例如，TAEF 框架是 **WexLogger**的客户端，并实现 **WexLoggerErrorCallback** ，这会在出现 WexLogger 错误时将红色文本写入控制台。
+WexLoggerErrorCallback 函数的常见用途是将错误消息写出到控制台 (如果你的测试工具是) 的控制台应用程序。 例如，TAEF 框架是 **WexLogger** 的客户端，并实现 **WexLoggerErrorCallback** ，这会在出现 WexLogger 错误时将红色文本写入控制台。
 
 ## <a name="net-40-compatibility"></a>.NET 4.0 兼容性
 
@@ -460,4 +459,4 @@ static void LogController_WexLoggerError(object sender, WexLoggerErrorEventArgs 
 }
 ```
 
-此外，当发生故障时， **LogController：： InitializeLogging ( # B1 ** 和 **LogController：： FinalizeLogging ( # B3 ** 方法本身引发 WexLoggerException。 这提供了有关错误的详细信息，并且还允许您在测试运行开始之前将其中止。 测试用例作者永远无需担心这些例外，只应在 WexLogger initializaiton/完成期间进行预期/处理。
+此外，当发生故障时， **LogController：： InitializeLogging ( # B1** 和 **LogController：： FinalizeLogging ( # B3** 方法本身引发 WexLoggerException。 这提供了有关错误的详细信息，并且还允许您在测试运行开始之前将其中止。 测试用例作者永远无需担心这些例外，只应在 WexLogger initializaiton/完成期间进行预期/处理。

@@ -1,18 +1,17 @@
 ---
 title: 打印驱动程序插件支持
 description: 打印驱动程序插件支持
-ms.assetid: fa072fc9-66da-46c2-a270-6f604860aaff
 keywords:
 - 打印功能 WDK，插件
 - IPrintOemPrintTicketProvider
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 349917e6168397579ea14f7dfcd17c0a8ea3a060
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 2373c5730ed199ab67186b7f380c4131dc471d0e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89214206"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96807481"
 ---
 # <a name="print-driver-plug-in-support"></a>打印驱动程序插件支持
 

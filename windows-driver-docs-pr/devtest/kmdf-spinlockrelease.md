@@ -1,7 +1,6 @@
 ---
 title: 'SpinlockRelease 规则 (kmdf) '
 description: SpinlockRelease 规则指定对 KeAcquireSpinLock、KeAcquireSpinLockRaiseToDpc 和 KeReleaseSpinLock 的调用在 KMDF 回调内以均衡方式使用。 在任何 KMDF 回调例程结束时，驱动程序不应持有自旋锁。
-ms.assetid: 23BEB857-309D-4C11-A361-D72F87C84154
 ms.date: 05/21/2018
 keywords:
 - 'SpinlockRelease 规则 (kmdf) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: ad1d7c8b91de72c001ad2a726559dcd2013540c3
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 0540abe05253af5a425bd70fd7a3e3c1b1f2b441
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103338"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96806447"
 ---
 # <a name="spinlockrelease-rule-kmdf"></a>SpinlockRelease 规则 (kmdf) 
 
 
-**SpinlockRelease**规则指定对[**KeAcquireSpinLock**](/windows-hardware/drivers/ddi/wdm/nf-wdm-keacquirespinlock)、 [**KeAcquireSpinLockRaiseToDpc**](/previous-versions/windows/hardware/drivers/ff551928(v=vs.85))和[**KeReleaseSpinLock**](/windows-hardware/drivers/ddi/wdm/nf-wdm-kereleasespinlock)的调用在 KMDF 回调内以均衡方式使用。 在任何 KMDF 回调例程结束时，驱动程序不应持有自旋锁。
+**SpinlockRelease** 规则指定对 [**KeAcquireSpinLock**](/windows-hardware/drivers/ddi/wdm/nf-wdm-keacquirespinlock)、 [**KeAcquireSpinLockRaiseToDpc**](/previous-versions/windows/hardware/drivers/ff551928(v=vs.85))和 [**KeReleaseSpinLock**](/windows-hardware/drivers/ddi/wdm/nf-wdm-kereleasespinlock)的调用在 KMDF 回调内以均衡方式使用。 在任何 KMDF 回调例程结束时，驱动程序不应持有自旋锁。
 
 **驱动程序模型： KMDF**
 

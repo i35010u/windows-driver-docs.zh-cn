@@ -1,7 +1,6 @@
 ---
 title: KSEVENT \_ 调谐器 \_ 已更改
 description: KSEVENT \_ 调谐器 \_ CHANGED 事件会在用户模式下传播从内核模式视频捕获微型驱动程序到 DirectShow 的操作，例如通道更改。
-ms.assetid: 7286e36c-a433-40a0-9281-7eac4ab64cbf
 keywords:
 - KSEVENT_TUNER_CHANGED 流媒体设备
 topic_type:
@@ -12,12 +11,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8238f9965c2301fb8f9436d0ca828a42d691e209
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 2601e22dbec67f5c445ab6caf195f7c4a7e93b60
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103772"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96805973"
 ---
 # <a name="ksevent_tuner_changed"></a>KSEVENT \_ 调谐器 \_ 已更改
 

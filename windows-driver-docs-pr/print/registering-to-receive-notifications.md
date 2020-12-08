@@ -1,7 +1,6 @@
 ---
 title: 注册以接收通知
 description: 注册以接收通知
-ms.assetid: 2442c204-c9d8-49fa-93ae-02623d08119c
 keywords:
 - 后台处理程序通知 WDK 打印，注册接收
 - 打印后台处理程序通知 WDK，注册以接收
@@ -12,12 +11,12 @@ keywords:
 - 取消注册后台处理程序通知
 ms.date: 06/12/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: db76a13cc12baaa44e392cf481c6c3a6fb9d50a1
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 0b9bdb266ecd9f392ce9b7047df493407f98e68b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89216344"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96807053"
 ---
 # <a name="registering-to-receive-notifications"></a>注册以接收通知
 

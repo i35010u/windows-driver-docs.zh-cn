@@ -1,26 +1,25 @@
 ---
 title: 状态
 description: 状态
-ms.assetid: a4c39069-4324-4af3-a331-31b684275a57
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0598419e3ae4f84e88aafdccd1be7b78f6a5502a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: cb7f322175ca04be02b7c1a65a59a179ca64b9ed
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63375198"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96806851"
 ---
 # <a name="status"></a>状态
 
 
-架构路径：\\Printer.Status
+架构路径： \\ 打印机的状态
 
-节点类型： 属性
+节点类型：属性
 
-Status 属性包含有关打印设备的当前状态信息。
+Status 属性包含有关打印设备当前状态的信息。
 
-Status 属性是父[摘要](summary.md)并[Detailed](detailed.md)属性。
+Status 属性是 [摘要](summary.md) 和 [详细](detailed.md) 属性的父项。
 
  
 

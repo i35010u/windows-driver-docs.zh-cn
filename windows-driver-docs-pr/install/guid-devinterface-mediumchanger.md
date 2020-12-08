@@ -1,7 +1,6 @@
 ---
 title: GUID_DEVINTERFACE_MEDIUMCHANGER
 description: GUID_DEVINTERFACE_MEDIUMCHANGER
-ms.assetid: d7c41c5c-b03b-459e-81b0-b363b4c174b0
 keywords:
 - GUID_DEVINTERFACE_MEDIUMCHANGER 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 695e6e51483814a2a98faa8243a46abcbcb5e0d2
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: ed4bc09cf83ba82f7d7dd5ecf58c5901f7418d5a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89096949"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96805515"
 ---
 # <a name="guid_devinterface_mediumchanger"></a>GUID_DEVINTERFACE_MEDIUMCHANGER
 
@@ -74,7 +73,7 @@ ms.locfileid: "89096949"
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**MediumChangerClassGuid**](mediumchangerclassguid.md)

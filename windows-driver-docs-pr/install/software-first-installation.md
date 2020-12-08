@@ -1,7 +1,6 @@
 ---
 title: 软件优先安装
 description: 软件优先安装
-ms.assetid: 2199316d-17d5-463a-8c97-f89c87473f20
 keywords:
 - 安装应用程序 WDK，软件优先安装
 - 设备安装应用程序 WDK，软件优先安装
@@ -11,12 +10,12 @@ keywords:
 - 设备安装 WDK，类型
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3dd33e215e67f1091cc3637b0ba02e3173d07635
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 8046b1ce3b3d4e3c0f11434e541ab6317c63f749
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90715080"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96806227"
 ---
 # <a name="software-first-installation"></a>软件优先安装
 

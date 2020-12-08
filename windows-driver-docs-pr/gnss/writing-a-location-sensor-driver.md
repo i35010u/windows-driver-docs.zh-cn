@@ -1,15 +1,14 @@
 ---
 title: 为 Windows 8.1 编写位置传感器驱动程序
 description: 为 Windows 8.1 编写位置传感器驱动程序
-ms.assetid: 18852282-6529-4934-a448-b699e01987de
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 94267e561fe03e45263b35db63cd4ff5dd0c84d3
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: c1cf54b3f3fdef8051006289fb05d7a9631b348d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89189895"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96806313"
 ---
 # <a name="writing-a-location-sensor-driver-for-windows-81"></a>为 Windows 8.1 编写位置传感器驱动程序
 
@@ -77,9 +76,9 @@ Location API 定义两种类型的位置报告。 这些是组织位置数据的
 
 - 传感器 \_ 数据 \_ 类型 \_ 国家/ \_ 地区
 
-若要查看完整的平台定义位置数据字段集，请参阅[Windows 传感器参考](/windows-hardware/drivers/ddi/index)部分中的[**传感器 \_ 类别 \_ 位置**](../sensors/sensor-category-loc.md)。
+若要查看完整的平台定义位置数据字段集，请参阅 [Windows 传感器参考](/windows-hardware/drivers/ddi/index)部分中的 [**传感器 \_ 类别 \_ 位置**](../sensors/sensor-category-loc.md)。
 
-通过[**ISensorDriver：： OnGetSupportedDataFields**](/windows-hardware/drivers/ddi/sensorsclassextension/nf-sensorsclassextension-isensordriver-ongetsupporteddatafields)调用它们时，将支持的数据字段属性键常量添加到通过*ppSupportedDataFields*参数返回的[IPortableDeviceKeyCollection](/windows-hardware/drivers/ddi/portabledevicetypes/nn-portabledevicetypes-iportabledevicekeycollection) 。 下面的代码示例演示如何通过名为 pKeyCollection 的变量向 [IPortableDeviceKeyCollection](/windows-hardware/drivers/ddi/portabledevicetypes/nn-portabledevicetypes-iportabledevicekeycollection) 添加邮政编码数据字段。
+通过 [**ISensorDriver：： OnGetSupportedDataFields**](/windows-hardware/drivers/ddi/sensorsclassextension/nf-sensorsclassextension-isensordriver-ongetsupporteddatafields)调用它们时，将支持的数据字段属性键常量添加到通过 *ppSupportedDataFields* 参数返回的 [IPortableDeviceKeyCollection](/windows-hardware/drivers/ddi/portabledevicetypes/nn-portabledevicetypes-iportabledevicekeycollection) 。 下面的代码示例演示如何通过名为 pKeyCollection 的变量向 [IPortableDeviceKeyCollection](/windows-hardware/drivers/ddi/portabledevicetypes/nn-portabledevicetypes-iportabledevicekeycollection) 添加邮政编码数据字段。
 
 ```cpp
 pKeyCollection->Add(SENSOR_DATA_TYPE_POSTALCODE);
@@ -163,11 +162,11 @@ pKeyCollection->Add(SENSOR_DATA_TYPE_POSTALCODE);
 
 下表介绍了位置传感器驱动程序的各种传感器状态。
 
-| 值 | 描述 | 位置 API 状态 |
+| “值” | 描述 | 位置 API 状态 |
 | --- | --- | --- |
-| SENSOR_STATE_READY | 传感器驱动程序可以提供具有完整且准确的数据的新位置报告。<br><br>例如，Wi-fi 或移动电话提供商已连接并且正常工作，或者 GPS 传感器有修补程序。<br><br>已使用三边转换传感器数据确定位置的 GPS 驱动程序处于此状态。 | REPORT_RUNNING |  
-| SENSOR_STATE_INITIALIZING | 传感器驱动程序正在尝试获取修补程序。 传感器驱动程序应在修补程序被锁定并跟踪后将此状态转换为 SENSOR_STATE_READY。<br><br>例如，Wi-fi 提供商正在寻找 Internet 连接，移动电话提供商正在寻找无线电，或 GPS 传感器正在获取修补程序。<br><br>当 GPS 传感器尝试重新获取修复时，应重新进入此状态。 | REPORT_INITIALIZING |  
-| SENSOR_STATE_NO_DATA | 位置提供程序可用，但无法提供位置数据。<br><br>例如，Wi-fi 提供程序有权访问 Internet，但该数据库没有位置数据。 | REPORT_ERROR |  
+| SENSOR_STATE_READY | 传感器驱动程序可以提供具有完整且准确的数据的新位置报告。<br><br>例如，Wi-Fi 或手机网络提供商已连接并且正常工作，或者 GPS 传感器有修补程序。<br><br>已使用三边转换传感器数据确定位置的 GPS 驱动程序处于此状态。 | REPORT_RUNNING |  
+| SENSOR_STATE_INITIALIZING | 传感器驱动程序正在尝试获取修补程序。 传感器驱动程序应在修补程序被锁定并跟踪后将此状态转换为 SENSOR_STATE_READY。<br><br>例如，Wi-Fi 提供商正在寻找 Internet 连接，蜂窝提供商正在寻找无线收发器，或是 GPS 传感器正在获取修补程序。<br><br>当 GPS 传感器尝试重新获取修复时，应重新进入此状态。 | REPORT_INITIALIZING |  
+| SENSOR_STATE_NO_DATA | 位置提供程序可用，但无法提供位置数据。<br><br>例如，Wi-Fi 提供程序有权访问 Internet，但数据库没有位置数据。 | REPORT_ERROR |  
 | SENSOR_STATE_NOT_AVAILABLE | 位置提供程序用于获取数据的功能被禁用。<br><br>如果无线电设备处于关闭状态，GPS 传感器会处于此状态。 | REPORT_ERROR |  
 | SENSOR_STATE_ERROR | 传感器出现严重错误。 传感器可以从此状态恢复，但恢复的时间范围未知。 | REPORT_ERROR |  
 

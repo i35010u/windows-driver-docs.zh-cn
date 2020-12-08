@@ -1,17 +1,16 @@
 ---
 title: 对供应商提供的并行驱动程序的要求
 description: 对供应商提供的并行驱动程序的要求
-ms.assetid: 2194ad1a-3548-4b67-9268-4245389cf264
 keywords:
-- 供应商提供并行的驱动程序 WDK，有关供应商提供并行的驱动程序
+- 供应商提供的并行驱动程序 WDK，关于供应商提供的并行驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b67da7d07a26993d6abedab3777478bef20e2340
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c26be7d8be88cf30981e793960be8ac0f4006892
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63377216"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96806089"
 ---
 # <a name="requirements-for-vendor-supplied-parallel-drivers"></a>对供应商提供的并行驱动程序的要求
 
@@ -19,19 +18,19 @@ ms.locfileid: "63377216"
 
 
 
-本部分介绍 Microsoft Windows 要求的供应商提供的并行端口和并行端口连接的设备的驱动程序。
+本部分介绍针对供应商提供的用于并行端口和设备连接到并行端口的驱动程序的 Microsoft Windows 要求。
 
-供应商提供的函数驱动程序和并行端口的总线驱动程序不需要，因为[系统提供并行的驱动程序](system-supplied-parallel-drivers.md)提供这些函数。 系统提供的并行驱动程序提供对操作系统的并行端口和并行端口连接的设备的广泛支持。
+不需要供应商提供的并行端口的函数驱动程序和总线驱动程序，因为 [系统提供的并行驱动](system-supplied-parallel-drivers.md) 程序提供了这些功能。 系统提供的并行驱动程序为附加到并行端口的操作并行端口和设备提供了广泛的支持。
 
-供应商提供的函数的并行连接到并行端口的设备的驱动程序是可选的。 系统提供的并行驱动程序提供广泛支持用于直接控制为原始的设备，并行设备和操作系统的设备的父并行端口。
+供应商为连接到并行端口的并行设备提供的函数驱动程序是可选的。 系统提供的并行驱动程序为直接控制作为原始设备的并行设备以及操作设备的父并行端口提供了广泛的支持。
 
-如果供应商为并行设备提供了功能驱动程序，该驱动程序必须支持插和电源管理。 Microsoft 建议使用该驱动程序是 WDM 驱动程序。
+如果供应商为并行设备提供函数驱动程序，则该驱动程序必须支持即插即用和电源管理。 Microsoft 建议驱动程序为 WDM 驱动程序。
 
-以下主题介绍了在设备和设备的父并行端口并行设备的供应商提供的函数驱动程序的运行方式：
+以下主题介绍供应商为并行设备提供的函数驱动程序如何操作设备和设备的父并行端口：
 
-[运行并行端口](operating-a-parallel-port.md)
+[打开并行端口](operating-a-parallel-port.md)
 
-[运行并行设备附加到并行端口](operating-a-parallel-device-attached-to-a-parallel-port.md)
+[打开连接到并行端口的并行设备](operating-a-parallel-device-attached-to-a-parallel-port.md)
 
  
 

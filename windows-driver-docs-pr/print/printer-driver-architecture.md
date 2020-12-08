@@ -1,7 +1,6 @@
 ---
 title: 打印机驱动程序体系结构
 description: 打印机驱动程序体系结构
-ms.assetid: 68a61007-8f0d-4fd4-b4a7-c8acbc101236
 keywords:
 - 打印作业 WDK，打印机驱动程序
 - 作业 WDK 打印，打印机驱动程序
@@ -10,12 +9,12 @@ keywords:
 - 打印机驱动程序 WDK，体系结构
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5671af843fc9b54883584b223d70f259b155f8ef
-ms.sourcegitcommit: a44ade167cdfb541cf1818e9f9e3726f23f90b66
+ms.openlocfilehash: a9b45d82ffe733e3ca1b8a7e6b2ec5a6870f98e2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94361281"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96807315"
 ---
 # <a name="printer-driver-architecture"></a>打印机驱动程序体系结构
 

@@ -1,7 +1,6 @@
 ---
 title: 'AddPdotoStaticChildlist 规则 (kmdf) '
 description: AddPdotoStaticChildlist 规则指定对于 PDO 设备，必须在驱动程序成功调用 WdfPdoInitAllocate 和 WdfDeviceCreate 后调用 framework 函数 WdfFdoAddStaticChild。
-ms.assetid: 31ECB3D2-1EAC-484A-8C3A-DF94AC473334
 ms.date: 05/21/2018
 keywords:
 - 'AddPdotoStaticChildlist 规则 (kmdf) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 6d65ababeab060838c395bcb2a4476b1199f16f5
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: a96e7cc270acd0b4c392944395795caa21361913
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107218"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96806463"
 ---
 # <a name="addpdotostaticchildlist-rule-kmdf"></a>AddPdotoStaticChildlist 规则 (kmdf) 
 
 
-AddPdotoStaticChildlist 规则指定对于 PDO 设备，必须在驱动程序成功调用[**WdfPdoInitAllocate**](/windows-hardware/drivers/ddi/wdfpdo/nf-wdfpdo-wdfpdoinitallocate)和[**WdfDeviceCreate**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicecreate)后调用 framework 函数[**WdfFdoAddStaticChild**](/windows-hardware/drivers/ddi/wdffdo/nf-wdffdo-wdffdoaddstaticchild) 。
+AddPdotoStaticChildlist 规则指定对于 PDO 设备，必须在驱动程序成功调用 [**WdfPdoInitAllocate**](/windows-hardware/drivers/ddi/wdfpdo/nf-wdfpdo-wdfpdoinitallocate)和 [**WdfDeviceCreate**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicecreate)后调用 framework 函数 [**WdfFdoAddStaticChild**](/windows-hardware/drivers/ddi/wdffdo/nf-wdffdo-wdffdoaddstaticchild) 。
 
 **驱动程序模型： KMDF**
 

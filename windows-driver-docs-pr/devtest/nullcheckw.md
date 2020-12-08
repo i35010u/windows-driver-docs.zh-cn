@@ -1,7 +1,6 @@
 ---
 title: 'NullCheck 规则 (wdm) '
 description: NullCheck 规则验证驱动程序代码中的 NULL 值是否在稍后的驱动程序中未被引用。
-ms.assetid: 840906B2-E6D4-4BC8-AC38-461824B70BFA
 ms.date: 05/21/2018
 keywords:
 - 'NullCheck 规则 (wdm) '
@@ -12,12 +11,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 04e7c35524488073a3fd3d22c36218b175a62c37
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 32f8123f3165725fde89d1fc2b099472091cce0f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103496"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96806413"
 ---
 # <a name="nullcheck-rule-wdm"></a>NullCheck 规则 (wdm) 
 

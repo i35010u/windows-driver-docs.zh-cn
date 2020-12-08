@@ -1,19 +1,18 @@
 ---
 title: Pscript 支持的转义符
 description: Pscript 支持的转义符
-ms.assetid: c0133355-fa3b-4117-bd38-b6a8b3898f94
 keywords:
 - PostScript 打印机驱动程序 WDK 打印，转义
 - Pscript WDK 打印，转义
 - 转义 WDK Pscript
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b16cd52a921dfe303abeeb52375ec85d2b41eca5
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 5f4653622dcaad5a0dacb87708daad8c6198c5a9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102230"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96807141"
 ---
 # <a name="pscript-supported-escapes"></a>Pscript 支持的转义符
 

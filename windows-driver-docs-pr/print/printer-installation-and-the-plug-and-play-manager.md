@@ -1,19 +1,18 @@
 ---
 title: 打印机安装和即插即用管理器
 description: 打印机安装和即插即用管理器
-ms.assetid: 1edc92f1-fcd9-4af0-957d-cd7ff2e40125
 keywords:
 - 即插即用管理器 WDK 打印
 - 重复安装检测 WDK 打印
 - 检测重复的打印机安装
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: df35f2d1d18718dd515302f68a4ddccb0bf752b8
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: f068f79bf1d387d3cab928d632b93bce0946c95f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89209487"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96807247"
 ---
 # <a name="printer-installation-and-the-plug-and-play-manager"></a>打印机安装和即插即用管理器
 

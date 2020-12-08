@@ -1,7 +1,6 @@
 ---
 title: SRB \_ 关闭 \_ 设备 \_ 实例
 description: SRB \_ 关闭 \_ 设备 \_ 实例
-ms.assetid: 55a72f4f-45b3-427d-80b7-620aac870a8a
 keywords:
 - SRB_CLOSE_DEVICE_INSTANCE 流媒体设备
 topic_type:
@@ -12,12 +11,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 684590bb980657e19ff34ef8f13a4870a0405dbf
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 8891b5ef623836d811fc9e0f595fed38d008b9fa
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89190359"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96806607"
 ---
 # <a name="srb_close_device_instance"></a>SRB \_ 关闭 \_ 设备 \_ 实例
 
@@ -40,9 +39,9 @@ ms.locfileid: "89190359"
 <span id="STATUS_IO_DEVICE_ERROR"></span><span id="status_io_device_error"></span>状态 \_ IO \_ 设备 \_ 错误  
 指示出现硬件故障。
 
-### <a name="comments"></a>说明
+### <a name="comments"></a>注释
 
-大多数适配器不支持多个实例，因此在这种情况下， [**HW \_ 初始化 \_ 数据**](/windows-hardware/drivers/ddi/strmini/ns-strmini-_hw_initialization_data)结构中的**FilterInstanceExtensionSize**字段应设置为零，且永远不会收到此命令。
+大多数适配器不支持多个实例，因此在这种情况下， [**HW \_ 初始化 \_ 数据**](/windows-hardware/drivers/ddi/strmini/ns-strmini-_hw_initialization_data)结构中的 **FilterInstanceExtensionSize** 字段应设置为零，且永远不会收到此命令。
 
  
 

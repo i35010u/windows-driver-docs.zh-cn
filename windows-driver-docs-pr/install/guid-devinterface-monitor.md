@@ -1,7 +1,6 @@
 ---
 title: GUID_DEVINTERFACE_MONITOR
 description: GUID_DEVINTERFACE_MONITOR
-ms.assetid: b75de360-44f3-4e8b-860c-57355757b6dd
 keywords:
 - GUID_DEVINTERFACE_MONITOR 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 4cb8b71e06ed04df6b7d0da119348cf9a39b8c32
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 79916c3fa5b48834fa1fda903e94046febb65439
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89096945"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96805509"
 ---
 # <a name="guid_devinterface_monitor"></a>GUID_DEVINTERFACE_MONITOR
 

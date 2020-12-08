@@ -1,18 +1,17 @@
 ---
 title: 实时内核模式目标
 description: 实时内核模式目标
-ms.assetid: 88820097-4a47-428d-88dd-d0a08e5debdc
 keywords:
 - 目标，实时内核模式
 - 内核模式目标
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2853e1b5975258e28da7725d9ed26d71a55d068b
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 1b582f1a4b6fe5597af23f77fecce54b03233771
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89218191"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96806509"
 ---
 # <a name="live-kernel-mode-targets"></a>实时内核模式目标
 
@@ -22,7 +21,7 @@ ms.locfileid: "89218191"
 
 若要将 [调试器引擎](introduction.md#debugger-engine) 附加到目标计算机进行内核模式调试，请使用方法 [**AttachKernel**](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugclient5-attachkernel)。
 
-**注意**   在调用[**WaitForEvent**](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugcontrol3-waitforevent)方法之前，引擎不会完全附加到内核。 仅在内核生成事件（例如， [初始断点](initial-breakpoint.md) ）后，它才会在调试器会话中可用。 有关更多详细信息，请参阅 [调试会话和执行模型](debugging-session-and-execution-model.md) 。
+**注意**   在调用 [**WaitForEvent**](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugcontrol3-waitforevent) 方法之前，引擎不会完全附加到内核。 仅在内核生成事件（例如， [初始断点](initial-breakpoint.md) ）后，它才会在调试器会话中可用。 有关更多详细信息，请参阅 [调试会话和执行模型](debugging-session-and-execution-model.md) 。
 
  
 

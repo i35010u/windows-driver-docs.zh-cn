@@ -1,7 +1,6 @@
 ---
 title: ndiskd.nbllog
 description: Ndiskd. nbllog 扩展显示系统上所有 NBL (NET_BUFFER_LIST) 活动的日志。
-ms.assetid: 59CB6B60-E0B3-435E-A6F6-82A715E87C69
 keywords:
 - ndiskd nbllog Windows 调试
 ms.date: 05/23/2017
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: b9d984024176fa5fc634d4d7f4bfd9797bb07acf
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 885872db54b6e8cbb0760bc0f18412dcb83286f7
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89216762"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96805845"
 ---
 # <a name="ndiskdnbllog"></a>!ndiskd.nbllog
 
 
-**！ Ndiskd nbllog**扩展显示系统上所有 NBL ([**NET \_ BUFFER \_ LIST**](../network/net-buffer-list-structure.md)) 活动的日志。
+**！ Ndiskd nbllog** 扩展显示系统上所有 NBL ([**NET \_ BUFFER \_ LIST**](../network/net-buffer-list-structure.md)) 活动的日志。
 
 ```console
 !ndiskd.nbllog [-stacks] 
@@ -41,8 +40,8 @@ Ndiskd.dll
 <a name="remarks"></a>备注
 -------
 
-**重要提示**   
- **！ ndiskd。 nbllog**需要在调试对象目标计算机上启用 NBL 跟踪。 默认情况下，不会在 Windows 的所有配置中启用 NBL 跟踪。 如果未启用 NBL 跟踪，！ ndiskd 将为你提供有关如何启用它的说明，如以下代码片段所示。
+**重要说明**  
+**！ ndiskd。 nbllog** 需要在调试对象目标计算机上启用 NBL 跟踪。 默认情况下，不会在 Windows 的所有配置中启用 NBL 跟踪。 如果未启用 NBL 跟踪，！ ndiskd 将为你提供有关如何启用它的说明，如以下代码片段所示。
 
 ```console
 0: kd> !ndiskd.nbllog
@@ -102,7 +101,7 @@ NBL 日志显示系统上的网络流量。 [**！ ndiskd netreport**](-ndiskd-n
     Rerun with the '-force' option to bypass this limit.
 ```
 
-有关如何解释 **！ ndiskd. nbllog**的结果的更详细说明，请参阅 "NDIS 博客上的[！ ndiskd。](/archive/blogs/ndis/ndiskd-nbl-log)
+有关如何解释 **！ ndiskd. nbllog** 的结果的更详细说明，请参阅 "NDIS 博客上的 [！ ndiskd。](/archive/blogs/ndis/ndiskd-nbl-log)
 
 ## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
@@ -112,7 +111,7 @@ NBL 日志显示系统上的网络流量。 [**！ ndiskd netreport**](-ndiskd-n
 
 [调试网络堆栈](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-175-Debugging-the-Network-Stack)
 
-[**NDIS 扩展 ( # A0) **](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 扩展 ( # A0)**](ndis-extensions--ndiskd-dll-.md)
 
 [**!ndiskd.help**](-ndiskd-help.md)
 

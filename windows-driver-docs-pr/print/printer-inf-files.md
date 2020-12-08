@@ -1,19 +1,18 @@
 ---
 title: 打印机 INF 文件
 description: 打印机 INF 文件
-ms.assetid: 33f1c836-0846-49d5-8ab5-baadf9e0678c
 keywords:
 - 安装驱动程序 WDK 打印机、INF 文件
 - 打印机驱动程序安装 WDK、INF 文件
 - INF 文件 WDK 打印
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3ed6a2d0d6aa6c239d16c7a2a2374a6279cf568a
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 21b850fd4c4093491aa4d6ab48d652663028eed3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89211491"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96807253"
 ---
 # <a name="printer-inf-files"></a>打印机 INF 文件
 

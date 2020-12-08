@@ -1,34 +1,33 @@
 ---
 title: 驱动程序特定查询的 TCP/IP 架构扩展
 description: 驱动程序特定查询的 TCP/IP 架构扩展
-ms.assetid: c6f85f99-852a-418f-98da-41fe4c36e9ba
 keywords:
 - TCP/IP 架构扩展 WDK 打印机
 - 架构扩展 WDK TCP/IP
-- 特定于驱动程序查询 WDK 打印机
+- 特定于驱动程序的查询 WDK 打印机
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e3cd7fd6c4eaab33582de07c24b065c5e7b2a44f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c5968d7833633290f11599e2e629ab7a9902c304
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63388069"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96806749"
 ---
 # <a name="tcpip-schema-extensions-for-driver-specific-queries"></a>驱动程序特定查询的 TCP/IP 架构扩展
 
 
-按前面所述，标准 TCP/IP 端口监视器支持标准的打印架构的子集，以便每个驱动程序可以发送查询并了解响应。 但是，特定的驱动程序可能需要存储在打印机的 MIB 中的其他信息。
+如前所述，标准 TCP/IP 端口监视器支持标准打印架构的一部分，因此每个驱动程序都可以发送查询并了解响应。 但是，特定的驱动程序可能需要存储在打印机 MIB 中的其他信息。
 
-对于查询有关典型打印机属性，必须创建包含定义的属性的查询。 以下主题介绍三种构造 Tcpbidi.xsd 文件中定义的并提供一种方法来检索此类信息。
+对于涉及典型打印机属性的查询，您必须创建包含您定义的属性的查询。 以下主题介绍 Tcpbidi 文件中定义的三个构造，并提供一种方法来检索此类信息。
 
 [Const](const.md)
 
 [Converter](converter.md)
 
-[安装](installed2.md)
+[已安装](installed2.md)
 
-[值](value.md)
+值
 
  
 

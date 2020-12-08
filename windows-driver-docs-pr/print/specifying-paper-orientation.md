@@ -1,7 +1,6 @@
 ---
 title: 指定纸张方向
 description: 指定纸张方向
-ms.assetid: 2d62e1ff-965b-4fd7-922c-319ec1bc39a5
 keywords:
 - Unidrv，纸张方向
 - 纸张方向 WDK Unidrv
@@ -13,12 +12,12 @@ keywords:
 - Unidrv WDK 打印
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3c0a84b026e16bb5de83cb784578a62c863e7155
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: e69d8995f42e1d539566eba6769c720e31c6acdc
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89213639"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96806891"
 ---
 # <a name="specifying-paper-orientation"></a>指定纸张方向
 
@@ -66,7 +65,7 @@ ms.locfileid: "89213639"
 }
 ```
 
-**注意**   对于 Windows 7， **MxdcGetPDEVAdjustment**函数具有用于横向旋转的新参数。 有关详细信息，请参阅 [**MxdcXDCGetPDEVAdjustment**](/windows-hardware/drivers/ddi/mxdc/nf-mxdc-mxdcgetpdevadjustment)。
+**注意**   对于 Windows 7， **MxdcGetPDEVAdjustment** 函数具有用于横向旋转的新参数。 有关详细信息，请参阅 [**MxdcXDCGetPDEVAdjustment**](/windows-hardware/drivers/ddi/mxdc/nf-mxdc-mxdcgetpdevadjustment)。
 
  
 

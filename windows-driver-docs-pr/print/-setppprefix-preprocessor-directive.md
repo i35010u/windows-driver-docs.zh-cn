@@ -1,20 +1,19 @@
 ---
 title: '#SetPPPrefix 预处理器指令'
 description: '#SetPPPrefix 预处理器指令'
-ms.assetid: 3520aa66-1090-40db-9c9f-cfba0e6e2bee
 keywords:
 - 预处理器指令 WDK GDL，关键字
 - 关键字 WDK GDL
-- 保留的关键字 WDK
+- 保留关键字 WDK
 - SetPPPrefix 指令 WDK GDL
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c33caffc8f45a09f26373590c2be8c0cf9510409
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d34ce7f5b0b85ae1e9418ad9a69e58a9ee7f1115
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63372881"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96806011"
 ---
 # <a name="setppprefix-preprocessor-directive"></a>\#SetPPPrefix 预处理器指令
 
@@ -23,9 +22,9 @@ ms.locfileid: "63372881"
 #SetPPPrefix: prefix
 ```
 
-\#SetPPPrefix 指令使*前缀*值当前预处理器的前缀。 *前缀*可以是任何令牌的值并且是必需的。
+\#SetPPPrefix 指令将 *前缀* 值作为当前预处理器前缀。 *前缀* 可以是任何标记值，并且是必需的。
 
-可以多次定义相同的前缀。 前缀是用户可选择，因为它允许指令明确区分从处理 not 任何现有数据。 下面的代码示例演示如何更改前缀，如果正常 GDL 条目包含一个值，可能与实际指令相混淆。
+可以多次定义同一前缀。 前缀是用户可选的，因为它允许指令明确地有别于任何现有的不处理数据。 下面的代码示例演示如何在正常 GDL 项包含可能与实际指令混淆的值时更改前缀。
 
 ```GDL
 *%  assume current prefix is #

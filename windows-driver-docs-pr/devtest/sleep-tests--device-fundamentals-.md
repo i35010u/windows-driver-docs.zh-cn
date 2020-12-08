@@ -1,15 +1,14 @@
 ---
 title: 睡眠测试（设备基础功能）
 description: 设备基础睡眠测试在指定的设备上、之前和之后或在系统睡眠状态转换期间运行 i/o 和 PnP 操作。
-ms.assetid: 38B65078-B436-4C24-B973-032702DB9CBE
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9636b603269ea029a1de25e9023ac0b02c7c5289
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 2b025baa5cc53e7fb89f6295a80bf11d215fa518
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107536"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96805695"
 ---
 # <a name="sleep-tests-device-fundamentals"></a>睡眠测试（设备基础功能）
 

@@ -1,28 +1,27 @@
 ---
 title: XR_BIAS 到浮点数转换规则
 description: XR_BIAS 到浮点数转换规则
-ms.assetid: fef4a1cb-6567-4d8f-aa8a-ceed00eefec8
 keywords:
-- 转换 XR_BIAS 浮动的 Direct3D 版本 10.1 WDK Windows 7 显示
-- 扩展的格式 WDK Windows 7 显示，转换 XR_BIAS 浮动
-- 将 XR_BIAS 转换为 float WDK Windows 7 显示
+- Direct3D 版本 10.1 WDK Windows 7 显示，将 XR_BIAS 转换为 float
+- 扩展格式 WDK Windows 7 显示，将 XR_BIAS 转换为 float
+- 将 XR_BIAS 转换为浮动 WDK Windows 7 显示
 - XR_BIAS WDK Windows 7 显示
-- XR_BIAS WDK Windows 7 显示、 转换为浮点型
+- XR_BIAS WDK Windows 7 显示，转换为 float
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ebaf3c24d26207973755fe44d1d5d512d118203b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0dc5b17018e6a493ff5df48f56f24b86e5acf8c7
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63340083"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96805611"
 ---
-# <a name="xrbias-to-float-conversion-rules"></a>XR\_偏置浮动的转换规则
+# <a name="xr_bias-to-float-conversion-rules"></a>XR \_ 偏移转换规则
 
 
-本部分仅适用于 Windows 7 和更高版本的操作系统。
+本部分仅适用于 Windows 7 及更高版本的操作系统。
 
-下面的代码演示如何将转换 XR\_为浮点型偏差：
+下面的代码演示如何将 XR \_ 偏移转换为 float：
 
 ```cpp
 float XRtoFloat( UINT XRComponent ) {

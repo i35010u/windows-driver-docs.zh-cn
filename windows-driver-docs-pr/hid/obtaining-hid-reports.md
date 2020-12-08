@@ -1,7 +1,6 @@
 ---
 title: 获取 HID 报告
 description: 获取 HID 报告
-ms.assetid: b6312dce-39af-4fff-b17d-4a50b9ab823b
 keywords:
 - 报告 WDK HID，获取
 - ReadFile WDK HID
@@ -10,12 +9,12 @@ keywords:
 - HID 报告 WDK，获取
 ms.date: 09/10/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 3a9342959afe1ba89a801f0fd36716e56435aa2f
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 25205ed66eacf342849d5c6c9665e17b57e7c39b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91734375"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96805605"
 ---
 # <a name="obtaining-hid-reports"></a>获取 HID 报告
 
@@ -23,13 +22,13 @@ ms.locfileid: "91734375"
 
 ## <a name="obtaining-hid-reports-by-user-mode-applications"></a>通过用户模式应用程序获取 HID 报表
 
-本主题介绍如何通过使用 [ReadFile](/windows/win32/api/fileapi/nf-fileapi-readfile) 或 **HidD_Get**Xxx 例程的用户模式应用程序获取 HID 输入报告或 hid 功能报告。
+本主题介绍如何通过使用 [ReadFile](/windows/win32/api/fileapi/nf-fileapi-readfile) 或 **HidD_Get** Xxx 例程的用户模式应用程序获取 HID 输入报告或 hid 功能报告。
 
-但是，应用程序应该只使用 **HidD_Get**Xxx 例程来获取设备的当前状态。 如果应用程序尝试使用 [HidD_GetInputReport](/windows-hardware/drivers/ddi/hidsdi/nf-hidsdi-hidd_getinputreport) 连续获取输入报告，则报告可能会丢失。 此外，某些设备可能不支持 **HidD_GetInputReport**，如果使用此例程，则不会响应。
+但是，应用程序应该只使用 **HidD_Get** Xxx 例程来获取设备的当前状态。 如果应用程序尝试使用 [HidD_GetInputReport](/windows-hardware/drivers/ddi/hidsdi/nf-hidsdi-hidd_getinputreport) 连续获取输入报告，则报告可能会丢失。 此外，某些设备可能不支持 **HidD_GetInputReport**，如果使用此例程，则不会响应。
 
 ### <a name="using-readfile"></a>使用 ReadFile
 
-应用程序使用 **CreateFile** 获取的打开文件句柄，以打开集合中的文件。 当应用程序调用 **ReadFile**时，无需指定重叠 i/o，因为 [HID 客户端驱动程序](keyboard-and-mouse-hid-client-drivers.md) 会将报告缓冲到环形缓冲区中。 但是，应用程序可以使用重叠 i/o 来具有多个未完成的读取请求。
+应用程序使用 **CreateFile** 获取的打开文件句柄，以打开集合中的文件。 当应用程序调用 **ReadFile** 时，无需指定重叠 i/o，因为 [HID 客户端驱动程序](keyboard-and-mouse-hid-client-drivers.md) 会将报告缓冲到环形缓冲区中。 但是，应用程序可以使用重叠 i/o 来具有多个未完成的读取请求。
 
 ### <a name="using-hidd_getxxx-routines"></a>使用 HidD_GetXxx 例程
 
@@ -55,7 +54,7 @@ ms.locfileid: "91734375"
 
 如果驱动程序只对一个读取请求使用 IRP，IRP 的 **IoCompletion** 例程应完成并释放 irp，并返回 **STATUS_SUCCESS**。
 
-在驱动程序可以请求输入报告之前，必须先从非分页内存池分配一个0初始化的输入报告缓冲区。 缓冲区的大小（以字节为单位）由 HID 集合的[HIDP_CAPS](/windows-hardware/drivers/ddi/hidpi/ns-hidpi-_hidp_caps)结构的**InputReportByteLength**成员指定。 然后，驱动程序必须使用 MDL 来映射读取请求的输入报告缓冲区。 驱动程序调用 [IoAllocateMdl](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioallocatemdl) 为输入报告缓冲区分配 MDL，并将 read Irp 的 **irp >MdlAddress** 成员设置为输入报告缓冲区的 mdl 地址。 当不再需要报表缓冲区和 MDL 时，驱动程序应释放它。
+在驱动程序可以请求输入报告之前，必须先从非分页内存池分配一个0初始化的输入报告缓冲区。 缓冲区的大小（以字节为单位）由 HID 集合的 [HIDP_CAPS](/windows-hardware/drivers/ddi/hidpi/ns-hidpi-_hidp_caps)结构的 **InputReportByteLength** 成员指定。 然后，驱动程序必须使用 MDL 来映射读取请求的输入报告缓冲区。 驱动程序调用 [IoAllocateMdl](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioallocatemdl) 为输入报告缓冲区分配 MDL，并将 read Irp 的 **irp >MdlAddress** 成员设置为输入报告缓冲区的 mdl 地址。 当不再需要报表缓冲区和 MDL 时，驱动程序应释放它。
 
 除了设置读取 IRP 的 MDL 地址外，驱动程序还必须设置下一个较低级别驱动程序的 i/o 堆栈位置。 驱动程序通过调用 [IoGetNextIrpStackLocation](/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetnextirpstacklocation)获取对下一个较低级别驱动程序的 i/o 堆栈位置的访问。 驱动程序设置 i/o 堆栈位置的以下成员：
 

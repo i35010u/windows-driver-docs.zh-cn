@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ VPCONFIG \_ VPDATAINFO
 description: KSPROPERTY \_ VPCONFIG \_ VPDATAINFO 属性指示视频端口的初始配置状态。
-ms.assetid: 66419d5a-c701-45f4-9ac6-322997e2f000
 keywords:
 - KSPROPERTY_VPCONFIG_VPDATAINFO 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 50a33fa0304f0bf86310c5a23ba038dd53990f2c
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 4828a7cef9103843c4afaebbb18cf6824d57176d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103628"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96805949"
 ---
 # <a name="ksproperty_vpconfig_vpdatainfo"></a>KSPROPERTY \_ VPCONFIG \_ VPDATAINFO
 
@@ -79,7 +78,7 @@ KSPROPERTY \_ VPCONFIG \_ VPDATAINFO 属性指示视频端口的初始配置状�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSPROPERTY**](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)

@@ -1,15 +1,14 @@
 ---
 title: 从命令行运行 InfVerif
 description: 本主题列出了从命令行运行 InfVerif.exe 时可用的选项。
-ms.assetid: CC2DB624-FFEE-4049-ACE7-4A24B330BADB
 ms.date: 04/28/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: b223843dc872c805dbce5553e77a0d2e883c7138
-ms.sourcegitcommit: f86e44d595be2c9e4efe3c196f6c0a9c71f4231e
+ms.openlocfilehash: 2319a8b1c1c0ea8222e74c0aa124012f23554482
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96470520"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96805711"
 ---
 # <a name="running-infverif-from-the-command-line"></a>从命令行运行 InfVerif
 

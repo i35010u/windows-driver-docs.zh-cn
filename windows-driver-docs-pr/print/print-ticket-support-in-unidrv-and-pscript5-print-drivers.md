@@ -1,23 +1,22 @@
 ---
 title: Unidrv 和 PScript5 打印驱动程序中的打印票证支持
 description: Unidrv 和 PScript5 打印驱动程序中的打印票证支持
-ms.assetid: 8c3d22e8-5bf3-4e4d-aae4-88716b59682a
 keywords:
-- 打印票证 WDK，Unidrv
-- 打印票证 WDK，PScript5
+- 打印入场券 WDK，Unidrv
+- 打印入场券 WDK，PScript5
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e0a4830e7081f9c6ba0f87d8f08debebeeced8c3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ce787aec2a6441e84293026c999deb181395e630
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63351857"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96807391"
 ---
 # <a name="print-ticket-support-in-unidrv-and-pscript5-print-drivers"></a>Unidrv 和 PScript5 打印驱动程序中的打印票证支持
 
 
-在 Windows Vista 中，您 Unidrv 和 PScript5 到微型驱动程序添加了支持的打印票证打印驱动程序。 您可以添加、 配置或删除某些功能删除 Unidrv 打印驱动程序的 GPD 文件或 PScript5 打印驱动程序的 PPD 文件中。 此外可以添加打印驱动程序插件来支持默认微型驱动程序中未提供的自定义功能。 此外，可以添加打印驱动程序的管理单元删除或禁用功能，但该打印机无法执行默认情况下定义。
+在 Windows Vista 中，已向微型驱动程序中添加了针对 Unidrv 和 PScript5 打印驱动程序的打印票证支持。 可以在 GPD 文件中添加、配置或删除 Unidrv 打印驱动程序的某些功能，或在 PScript5 打印驱动程序的 PPD 文件中添加或删除某些功能。 你还可以添加打印驱动程序插件以支持默认微型驱动程序中未提供的自定义功能。 此外，还可以添加 "打印驱动程序" 插件来删除或禁用默认情况下定义的功能，但打印机无法执行的功能。
 
  
 

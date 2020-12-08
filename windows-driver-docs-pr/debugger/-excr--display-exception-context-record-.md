@@ -1,9 +1,8 @@
 ---
 title: .excr（显示异常上下文记录）
-description: .Excr 命令将显示与当前异常相关联的上下文记录。
-ms.assetid: 18FD32B9-93DE-4E23-A73C-18CC3665417A
+description: Excr 命令显示与当前异常关联的上下文记录。
 keywords:
-- .excr （显示异常上下文记录） Windows 调试
+- excr (显示) Windows 调试的异常上下文记录
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: fe946b014e9e28735868082b7318246d9aaa92b4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7f68248bb4647007f4d48d3fd09876cc608b5748
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63336752"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96805861"
 ---
 # <a name="excr-display-exception-context-record"></a>.excr（显示异常上下文记录）
 
 
-**.Excr**命令将显示与当前异常相关联的上下文记录。
+**Excr** 命令显示与当前异常关联的上下文记录。
 
 ```dbgcmd
 .excr
@@ -40,12 +39,12 @@ ms.locfileid: "63336752"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>模式</strong></p></td>
-<td align="left"><p>仅限用户模式</p></td>
+<td align="left"><p><strong>交货</strong></p></td>
+<td align="left"><p>仅用户模式</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>目标</strong></p></td>
-<td align="left"><p>仅用于故障转储 （仅适用于小型转储）</p></td>
+<td align="left"><p>故障转储仅 (小型转储仅) </p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>平台</strong></p></td>
@@ -56,20 +55,20 @@ ms.locfileid: "63336752"
 
  
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-有关寄存器上下文和其他上下文设置的详细信息，请参阅[更改上下文](changing-contexts.md)。
+有关注册上下文和其他上下文设置的详细信息，请参阅 [更改上下文](changing-contexts.md)。
 
 <a name="remarks"></a>备注
 -------
 
-**.Excr**命令查找当前异常的上下文信息，并显示指定的上下文记录的重要寄存器。
+**Excr** 命令查找当前异常的上下文信息，并显示指定上下文记录的重要寄存器。
 
-此命令也指示调试器使用与当前寄存器上下文作为异常相关联的上下文记录。 运行后 **.excr**，调试器可以访问最重要的寄存器和堆栈跟踪此线程。 启用目标以执行、 更改当前进程或线程，或使用另一个寄存器上下文命令之前将一直保留此寄存器上下文 ([**.cxr** ](-cxr--display-context-record-.md)或 **.excr**). 有关注册上下文的详细信息，请参阅[注册上下文](changing-contexts.md#register-context)。
+此命令还指示调试器使用与当前异常关联的上下文记录作为注册上下文。 运行 **excr** 后，调试器可以访问此线程最重要的寄存器和堆栈跟踪。 此注册上下文会一直保留，直到你启用目标执行、更改当前进程或线程，或使用另一个注册上下文命令 ([**.cxr**](-cxr--display-context-record-.md) 或 **excr**) 。 有关注册上下文的详细信息，请参阅 [注册上下文](changing-contexts.md#register-context)。
 
-[ **.Ecxr** ](-ecxr--display-exception-context-record-.md)命令是同义词命令，并具有相同的功能。
+[**Ecxr**](-ecxr--display-exception-context-record-.md)命令是一个同义词命令，它具有相同的功能。
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
 [**.ecxr**](-ecxr--display-exception-context-record-.md)

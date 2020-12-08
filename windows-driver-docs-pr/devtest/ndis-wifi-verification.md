@@ -1,21 +1,20 @@
 ---
 title: NDIS/WIFI 验证
 description: NDIS/WIFI 验证选项确定 NDIS 或 WIFI 驱动程序是否正确与 Windows 操作系统内核交互。
-ms.assetid: EB553449-9460-403D-8ED2-343048C4B38C
 ms.date: 04/10/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 6b6b0ed2566c9383d7e747584bc4dda9a7dc657d
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: a95e3e590f7e9675c96ddcf6489c5ebd37c257d9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89381595"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96805733"
 ---
 # <a name="ndiswifi-verification"></a>NDIS/WIFI 验证
 
 NDIS/WIFI 验证选项确定 NDIS 或 WIFI 驱动程序是否正确与 Windows 操作系统内核交互。
 
-**注意**   此选项可从 Windows 8.1 开始使用。
+**注意**  此选项可从 Windows 8.1 开始使用。
 
 NDIS/WIFI 验证选项应用规则，以验证您的驱动程序是否正确处理各种环境中的 Oid，并遵循 Microsoft 推荐的最佳做法。
 
@@ -71,7 +70,7 @@ NDIS/WIFI 验证选项应用规则，以验证您的驱动程序是否正确处�
 -   **使用驱动程序验证器管理器**
 
     1.  启动驱动程序验证器管理器。 在命令提示符窗口中键入 **Verifier** 。
-    2.  选择 " **为代码开发人员 (创建自定义设置") ** ，然后单击 " **下一步**"。
+    2.  选择 " **为代码开发人员 (创建自定义设置")** ，然后单击 " **下一步**"。
     3.  选择 " **从完整列表中选择单个设置**"。
     4.  选择 (检查) **NDIS/WIFI 验证**。
     5.  重新启动计算机。

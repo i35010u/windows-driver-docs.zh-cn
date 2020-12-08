@@ -1,7 +1,6 @@
 ---
 title: SignTool
 description: 'SignTool ( # A0) 是一个命令行 CryptoAPI 工具，用于对文件进行数字签名，验证文件中的签名和时间戳文件。'
-ms.assetid: c1006c07-f204-4fc0-8f99-36e69cbee96d
 keywords:
 - SignTool 驱动程序开发工具
 topic_type:
@@ -12,12 +11,12 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5aa4d58369226c97bc03e58f4feadcd667918d17
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: b608f90279adb97384bf2e432814adb67c75e638
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90716060"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96805699"
 ---
 # <a name="signtool"></a>SignTool
 
@@ -29,7 +28,7 @@ SignTool ( # A0) 是一个命令行 [CryptoAPI](/windows/win32/seccrypto/cryptog
 
 ## <a name="partial-list-of-operations-options-and-arguments"></a>操作、选项和参数的部分列表
 
-### <a name="operations"></a>Operations
+### <a name="operations"></a>操作
 
 **catdb**  
 配置 SignTool 以更新目录数据库。 SignTool 可以将目录文件添加到数据库中，也可以从数据库中删除目录。 默认情况下， **catdb** 命令会将文件（其名称由 *FileName* 参数指定）添加到系统组件 (驱动程序) 数据库。
@@ -65,7 +64,7 @@ SignTool ( # A0) 是一个命令行 [CryptoAPI](/windows/win32/seccrypto/cryptog
 **/a** 将 SignTool 配置为自动选择最佳签名证书。 如果此选项不存在，则 SignTool 会仅查找一个签名证书。
 
 **/Ac** *CrossCertFileName*  
-指定与软件发行者证书（ (SPC) 名为 " *CertificateName* " 并安装在证书存储 *StoreName*中的交叉证书文件的名称。 仅当签名证书为 SPC 时，才应使用此选项。
+指定与软件发行者证书（ (SPC) 名为 " *CertificateName* " 并安装在证书存储 *StoreName* 中的交叉证书文件的名称。 仅当签名证书为 SPC 时，才应使用此选项。
 
 **/c** *CertTemplateName*  
 指定用于对证书进行签名的证书模板名（一个 Microsoft 扩展）。
@@ -196,7 +195,7 @@ SignTool ( # A0) 是一个命令行 [CryptoAPI](/windows/win32/seccrypto/cryptog
 使用多个验证语义。 这是 Windows 8 及更高版本上的 [**WinVerifyTrust 函数**](/windows/win32/api/wintrust/nf-wintrust-winverifytrust) 调用的默认行为。
 
 **/O** *版本*  
-按操作系统版本验证文件。 *版本*参数的格式为*PlatformID： VerMajor. VerMinor. BuildNumber*
+按操作系统版本验证文件。 *版本* 参数的格式为 *PlatformID： VerMajor. VerMinor. BuildNumber*
 
 建议使用 **/o** 选项。 如果未指定 **/o** ，SignTool 可能会返回意外的结果。 例如，如果不包含 **/o** 选项，则在较早的操作系统上正确验证的系统目录可能无法在较新的操作系统上正确验证。
 
@@ -237,7 +236,7 @@ SignTool ( # A0) 是一个命令行 [CryptoAPI](/windows/win32/seccrypto/cryptog
 *FileName .。。*  
 指定一个或多个文件名的列表。 根据命令，SignTool 将对指定的文件进行签名、时间戳或验证。 如果使用 **catdb** 命令，SignTool 将在目录数据库中添加或删除指定的文件。
 
-对于 **sign**、 **timestamp**和 **verify** 命令，文件可以是 [驱动程序包](../install/driver-packages.md) 或驱动程序文件的目录文件。
+对于 **sign**、 **timestamp** 和 **verify** 命令，文件可以是 [驱动程序包](../install/driver-packages.md) 或驱动程序文件的目录文件。
 
 对于 **catdb** 命令，文件必须是 [驱动程序包](../install/driver-packages.md)的编录文件。
 
@@ -303,7 +302,7 @@ SignTool verify /pa CatalogFileName.cat
 
 ### <a name="example-of-adding-a-catalog-file-to-the-system-component-driver-database"></a>将目录文件添加到系统组件的示例 (驱动程序) 数据库
 
-下面的示例演示如何使用 SignTool 将目录文件 CatalogFileName.cat 添加到系统组件 (驱动程序) 数据库。 **/V**选项将 SignTool 配置为在详细模式下操作，而 **/U**选项将 SignTool 配置为为所添加的目录文件生成唯一名称（如有必要），以防止替换现有的同名目录文件，该文件与 CatalogFileName.cat 相同。
+下面的示例演示如何使用 SignTool 将目录文件 CatalogFileName.cat 添加到系统组件 (驱动程序) 数据库。 **/V** 选项将 SignTool 配置为在详细模式下操作，而 **/U** 选项将 SignTool 配置为为所添加的目录文件生成唯一名称（如有必要），以防止替换现有的同名目录文件，该文件与 CatalogFileName.cat 相同。
 
 ```command
 SignTool catdb /v /u CatalogFileName.cat

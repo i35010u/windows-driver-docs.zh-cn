@@ -1,15 +1,14 @@
 ---
 title: PIN 打印的示例 PrintTicket 文件
 description: 下面是一个示例 PrintTicket 文件，用于说明如何指定 PIN 打印。
-ms.assetid: FC1BE797-7097-4BEF-A530-3846CED3E400
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 27fcf3eaad6fc7935a952a7994972c7c50f0b50e
-ms.sourcegitcommit: ab64169b631da4db3f0b895600f1c38a22cb7e2e
+ms.openlocfilehash: 5ddd6c44fe234a2a99a29e6b0ffb789aa5ccb22b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75652963"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96806947"
 ---
 # <a name="sample-printticket-file-for-pin-printing"></a>PIN 打印的示例 PrintTicket 文件
 
@@ -32,7 +31,7 @@ ms.locfileid: "75652963"
    </psf:PrintTicket>
 ```
 
-有关受保护打印的详细信息，请参阅[受保护打印的驱动程序支持](driver-support-for-protected-printing.md)。
+有关受保护打印的详细信息，请参阅 [受保护打印的驱动程序支持](driver-support-for-protected-printing.md)。
 
  
 

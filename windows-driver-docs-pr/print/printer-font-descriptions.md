@@ -1,21 +1,20 @@
 ---
 title: 打印机字体说明
 description: 打印机字体说明
-ms.assetid: 1165d880-a729-4225-bd8f-2a0a74fff328
 keywords:
-- Unidrv 字体
+- Unidrv，字体
 - GPD 文件 WDK Unidrv，打印机字体说明
 - 打印机字体说明 WDK Unidrv
-- 字体描述 WDK Unidrv
-- 关于打印机字体描述打印机字体说明 WDK Unidrv
+- 字体说明 WDK Unidrv
+- 打印机字体说明 WDK Unidrv，关于打印机字体说明
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cdd277c69d85fa86d7fca9c743003a3e3baa2582
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8dd4c066c7bf598e423634007aaabf3b47fe3553
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339888"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96807279"
 ---
 # <a name="printer-font-descriptions"></a>打印机字体说明
 
@@ -23,9 +22,9 @@ ms.locfileid: "63339888"
 
 
 
-GPD 语言提供了用于描述的条目[驻留在硬件中的字体](hardware-resident-fonts.md)，[字体盒](font-cartridges.md)，并[字体替换](font-substitution.md)为 TrueType 字体的类似驻留在硬件中的或盒字体。
+GPD 语言提供一些条目，用于为类似的硬件驻留或墨盒字体描述用于描述 TrueType 字体的 [硬件驻留字体](hardware-resident-fonts.md)、 [字体盒](font-cartridges.md)和 [字体替换](font-substitution.md) 。
 
-用于处理软字体，可以选择提供自定义的代码。 有关此自定义代码的信息，请参阅[自定义字体管理](customized-font-management.md)。
+你可以选择提供自定义代码来处理软字体。 有关此自定义代码的信息，请参阅 [自定义字体管理](customized-font-management.md)。
 
  
 

@@ -1,19 +1,18 @@
 ---
 title: 初始化 BDA 筛选器
 description: 初始化 BDA 筛选器
-ms.assetid: 716978f5-4bdd-4673-8c4a-14dc76947fba
 keywords:
 - BDA 微型驱动程序 WDK AVStream，筛选器初始化
 - 正在初始化 BDA 筛选器
 - 初始筛选器实例 WDK BDA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 269918a394990d101d8ba185fcffa58bbc1c9a9d
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: cbb5de276b08c3cd0af4cc257c8bd22c86c8036e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89186631"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96806667"
 ---
 # <a name="initializing-a-bda-filter"></a>初始化 BDA 筛选器
 

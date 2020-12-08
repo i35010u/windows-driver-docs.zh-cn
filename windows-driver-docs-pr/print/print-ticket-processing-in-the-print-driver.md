@@ -1,19 +1,18 @@
 ---
 title: 打印驱动程序中的打印票证处理
 description: 打印驱动程序中的打印票证处理
-ms.assetid: a7295632-0133-4133-b62e-5526dcc12c7d
 keywords:
 - 打印入场券 WDK，打印驱动程序处理
 - 打印票证 WDK，XPSDrv
 - 打印入场券 WDK，基于 GDI 的打印驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3f47460006219e8fda9b40570289793fe8054706
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: ce688855243b33c69e9fa86e73387d4e2001876f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89207076"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96807405"
 ---
 # <a name="print-ticket-processing-in-the-print-driver"></a>打印驱动程序中的打印票证处理
 

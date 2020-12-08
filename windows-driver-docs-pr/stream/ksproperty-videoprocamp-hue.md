@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ VIDEOPROCAMP \_ 色调
 description: KSPROPERTY \_ VIDEOPROCAMP \_ 色调属性控制照相机的色调设置。 此属性是可选的。
-ms.assetid: 2e347a6b-c04f-41e2-841f-0d77213035e5
 keywords:
 - KSPROPERTY_VIDEOPROCAMP_HUE 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d891e58a3aa277a13663cad5baa9eca114a70021
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 887862a987a25d51e0fad4c8d06eb160824444dd
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103124"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96806661"
 ---
 # <a name="ksproperty_videoprocamp_hue"></a>KSPROPERTY \_ VIDEOPROCAMP \_ 色调
 
@@ -63,7 +62,7 @@ KSPROPERTY \_ VIDEOPROCAMP \_ 色调属性控制照相机的色调设置。 此�
 
  (操作数据) 的属性值是指定相机的色调设置的 LONG 值。 色调设置的值以度乘以100表示。
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 KSPROPERTY **Value** \_ VIDEOPROCAMP S 结构的 Value 成员 \_ 指定色相设置。

@@ -1,15 +1,14 @@
 ---
 title: PwrTest 连接待机方案
 description: PwrTest 连接备用方案 (/cs) 有助于自动测试连接的备用转换。
-ms.assetid: 2601603D-F9AF-4DEB-9A1B-F5A091A51B2B
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8b9261890c8e42a2f7b345f20b05a2ab0bafc120
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 631d59807ab95da2ff0ca4d3fb128993438289aa
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89382967"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96805717"
 ---
 # <a name="pwrtest-connected-standby-scenario"></a>PwrTest 连接待机方案
 
@@ -18,7 +17,7 @@ PwrTest 连接备用方案 (**/cs**) 有助于自动测试连接的备用转换�
 
 PwrTest 记录 PDC 阶段的进度，并尝试记录平台空闲转换计数（如果系统支持它们）。 这对于诊断系统是否进入深层平台空闲状态以及任何软件组件是否正在阻止转换很有用。
 
-此方案要求测试系统 *支持 (AoAc*) 电源功能 (大多数 SOC 和 ARM 系统支持此) 。 此方案还要求 (WDTF) 的 Windows 驱动程序测试框架中包含的电源按钮驱动程序。 使用 Visual Studio 和 WDK 预配系统进行测试时，会自动安装 WDTF (和随附的电源按钮驱动程序) 。 有关详细信息，请参阅[设置计算机以进行驱动程序部署和测试 (wdk 8.1) ](../gettingstarted/provision-a-target-computer-wdk-8-1.md)，或 [预配用于驱动程序部署和测试 (WDK 8) ](/previous-versions/hh698272(v=vs.85))的计算机。 有关 WDTF 的信息，请参阅 [**Windows 设备测试框架 (WDTF)  (Windows 驱动程序) **](../wdtf/index.md)。
+此方案要求测试系统 *支持 (AoAc*) 电源功能 (大多数 SOC 和 ARM 系统支持此) 。 此方案还要求 (WDTF) 的 Windows 驱动程序测试框架中包含的电源按钮驱动程序。 使用 Visual Studio 和 WDK 预配系统进行测试时，会自动安装 WDTF (和随附的电源按钮驱动程序) 。 有关详细信息，请参阅[设置计算机以进行驱动程序部署和测试 (wdk 8.1) ](../gettingstarted/provision-a-target-computer-wdk-8-1.md)，或 [预配用于驱动程序部署和测试 (WDK 8) ](/previous-versions/hh698272(v=vs.85))的计算机。 有关 WDTF 的信息，请参阅 [**Windows 设备测试框架 (WDTF)  (Windows 驱动程序)**](../wdtf/index.md)。
 
 ## <a name="span-idsyntaxspanspan-idsyntaxspanspan-idsyntaxspansyntax"></a><span id="Syntax"></span><span id="syntax"></span><span id="SYNTAX"></span>语法
 
@@ -83,7 +82,7 @@ pwrtest /cs /c:4 /p:120 /d:150
 <thead>
 <tr class="header">
 <th align="left">元素</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -92,7 +91,7 @@ pwrtest /cs /c:4 /p:120 /d:150
 <td align="left"><p>包含所有不同的连接备用事件。 PwrTest 日志文件中只能有一个<strong> &lt; CSTransitions &gt; </strong>元素。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><strong>&lt;时间戳&gt;</strong></td>
+<td align="left"><strong>&lt;标志&gt;</strong></td>
 <td align="left"><p>任何给定事件的时间戳。</p></td>
 </tr>
 <tr class="odd">

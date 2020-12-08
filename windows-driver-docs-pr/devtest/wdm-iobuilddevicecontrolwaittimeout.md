@@ -1,7 +1,6 @@
 ---
 title: 'IoBuildDeviceControlWaitTimeout 规则 (wdm) '
 description: 如果 IoBuildDeviceControlWaitTimeout 规则检测到此驱动程序将无限期等待，直到降低驱动程序返回，因为 IRP 的事件需要在完成例程中发出信号。
-ms.assetid: 0E6CD3E6-3FDF-4436-AEFB-685586192FED
 ms.date: 05/21/2018
 keywords:
 - 'IoBuildDeviceControlWaitTimeout 规则 (wdm) '
@@ -12,12 +11,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 515113b8d7c5165f36279d0494eacc5be2014f70
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: c91e98681c33a68ab6c50bc625af3f2c91b40288
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106156"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96806399"
 ---
 # <a name="iobuilddevicecontrolwaittimeout-rule-wdm"></a>IoBuildDeviceControlWaitTimeout 规则 (wdm) 
 

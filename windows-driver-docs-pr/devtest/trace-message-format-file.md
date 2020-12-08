@@ -1,7 +1,6 @@
 ---
 title: 跟踪消息格式文件
 description: 跟踪消息格式文件
-ms.assetid: ac45475e-bf2d-4fa6-82fc-37ef8f4c0f6c
 keywords:
 - 跟踪消息格式化文件 WDK
 - TMF 文件 WDK
@@ -9,12 +8,12 @@ keywords:
 - 文件 WDK 软件跟踪
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 58e4c2d39f4a598f3c3fbc5137b83e8135b0892a
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 05f70fa5ea8b048ed0a09d5062dfdd6302d23162
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89381949"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96805633"
 ---
 # <a name="trace-message-format-file"></a>跟踪消息格式文件
 
@@ -22,7 +21,7 @@ ms.locfileid: "89381949"
 ## <span id="ddk_trace_message_format_file_tools"></span><span id="DDK_TRACE_MESSAGE_FORMAT_FILE_TOOLS"></span>
 
 
-*跟踪消息格式* (TMF) 文件是结构化文本文件，其中包含用于分析和格式化[跟踪提供程序](trace-provider.md)生成的二进制跟踪消息的说明。 格式设置指令包含在跟踪提供程序的源代码中，并由 [WPP 预处理器](wpp-preprocessor.md)添加到跟踪提供程序的 PDB 符号文件中。
+*跟踪消息格式* (TMF) 文件是结构化文本文件，其中包含用于分析和格式化 [跟踪提供程序](trace-provider.md)生成的二进制跟踪消息的说明。 格式设置指令包含在跟踪提供程序的源代码中，并由 [WPP 预处理器](wpp-preprocessor.md)添加到跟踪提供程序的 PDB 符号文件中。
 
 某些用于记录和显示格式化跟踪消息的工具需要 TMF 文件。 [Tracefmt](tracefmt.md) 和 [TraceView](traceview.md)是格式化和显示跟踪消息的 WDK 工具，可以使用 TMF 文件，也可以直接从 PDB 符号文件中提取格式设置信息。
 
@@ -42,7 +41,7 @@ TMF 文件包含以下数据：
 
 -   其值出现在跟踪消息及其关联的内部类型名称中的变量的列表。 变量由消息定义字符串中的%*n* 表示法表示。
 
-**注意**   TMF 文件保留供内部使用，其格式在不同的 Windows 版本之间可能会更改。
+**注意**  TMF 文件保留供内部使用，其格式在不同的 Windows 版本之间可能会更改。
 
  
 

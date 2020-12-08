@@ -1,7 +1,6 @@
 ---
 title: KS 数据格式和数据范围
 description: KS 数据格式和数据范围
-ms.assetid: 44b55a5a-ec58-4c1e-b780-e20829fe3edf
 keywords:
 - 数据格式 WDK 内核流式处理
 - 格式化 WDK 内核流式处理
@@ -17,12 +16,12 @@ keywords:
 - KS WDK，数据格式
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 69279c70dfc75e47a071677b2395a2e37f95cf7b
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 8c0d4e22721276e349de8d0d1717b3805c29f657
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89186629"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96806671"
 ---
 # <a name="ks-data-formats-and-data-ranges"></a>KS 数据格式和数据范围
 
@@ -32,7 +31,7 @@ ms.locfileid: "89186629"
 
 KS 引脚使用 [**KSDATAFORMAT**](/windows-hardware/drivers/ddi/ks/ns-ks-ksdataformat) 和 [**KSDATARANGE**](/previous-versions/ff561658(v=vs.85)) 结构指定数据格式和范围。 数据格式指定数据流的单个属性，例如16位的音频采样大小。 数据范围指定多种格式，例如，16-24 位的音频采样范围。
 
-微型驱动程序在它提供的每个 [**KSPIN \_ 说明符**](/windows-hardware/drivers/ddi/ks/ns-ks-kspin_descriptor) 结构中包含一组 KSDATARANGE 结构。 在 *ksmedia*中枚举 Microsoft 提供的格式。
+微型驱动程序在它提供的每个 [**KSPIN \_ 说明符**](/windows-hardware/drivers/ddi/ks/ns-ks-kspin_descriptor) 结构中包含一组 KSDATARANGE 结构。 在 *ksmedia* 中枚举 Microsoft 提供的格式。
 
 KSDATARANGE 结构具有与 KSDATAFORMAT 结构相同的成员;但是，微型驱动程序可以为 KSDATARANGE 的主要格式、subformat 和说明符成员指定通配符值。
 

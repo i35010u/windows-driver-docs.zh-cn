@@ -1,18 +1,17 @@
 ---
 title: 连接到 USB 端口的打印机
 description: 连接到 USB 端口的打印机
-ms.assetid: 85e238e1-4dc1-4720-b383-d6aaed72e560
 keywords:
 - USB 打印机 WDK
 - 总线类型打印机驱动程序 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1cdd38bba0da276b066b076579e94e56f965c735
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 84da99531eae8337725046f814aecf71361fe72d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89216370"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96807351"
 ---
 # <a name="printer-connected-to-a-usb-port"></a>连接到 USB 端口的打印机
 

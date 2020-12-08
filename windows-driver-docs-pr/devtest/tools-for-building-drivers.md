@@ -1,24 +1,23 @@
 ---
 title: 用于生成驱动程序的工具
 description: 用于生成驱动程序的工具
-ms.assetid: 4e7dce6a-4ac2-4d09-89d8-1394a8e61ea8
 keywords:
 - 工具 WDK，构建驱动程序
 - 驱动程序开发工具 WDK，构建驱动程序
 - 构建驱动程序 WDK，工具
-- 构建 WDK、 工具驱动程序
+- 驱动程序构建 WDK，工具
 - 生成示例 WDK
-- 构建 WDK 示例
+- 示例生成 WDK
 - 构建软件组件 WDK
-- 构建 WDK 的软件组件
+- 软件组件构建 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fc3a12cb75e38579de8d29f8d5e38d115566b0af
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0153eb0f2199167b11353284928cab318e9736bf
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339745"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96805675"
 ---
 # <a name="tools-for-building-drivers"></a>用于生成驱动程序的工具
 
@@ -26,7 +25,7 @@ ms.locfileid: "63339745"
 ## <span id="ddk_tools_for_building_drivers_tools"></span><span id="DDK_TOOLS_FOR_BUILDING_DRIVERS_TOOLS"></span>
 
 
-## <a name="span-idinthissectionspanin-this-section"></a><span id="in_this_section"></span>本部分中的内容
+## <a name="span-idin_this_sectionspanin-this-section"></a><span id="in_this_section"></span>本部分中的内容
 
 
 -   [WDK 和 Visual Studio 生成环境](wdk-and-visual-studio-build-environment.md)

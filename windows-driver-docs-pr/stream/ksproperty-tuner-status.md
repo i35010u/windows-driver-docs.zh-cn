@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ 调谐器 \_ 状态
 description: KSPROPERTY \_ 调谐器 \_ STATUS 属性检索有关优化过程的信息，包括当前频率、相位锁定循环 (PLL) 偏移量和信号强度。 必须实现此属性。
-ms.assetid: 8613cda2-f39b-4363-a1c7-ac91162b9fca
 keywords:
 - KSPROPERTY_TUNER_STATUS 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 864395b89f8953805e7650328c9a468ae4210051
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 67f27a78824325fccb3bcebbe002070e17a8bb3f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105972"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96805969"
 ---
 # <a name="ksproperty_tuner_status"></a>KSPROPERTY \_ 调谐器 \_ 状态
 
@@ -82,7 +81,7 @@ KSPROPERTY \_ 调谐器 \_ STATUS 属性检索有关优化过程的信息，包�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSPROPERTY**](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)

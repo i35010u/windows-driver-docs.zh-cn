@@ -1,7 +1,6 @@
 ---
 title: 媒体 GUID
 description: 媒体 GUID
-ms.assetid: 4209952c-0ba5-4359-b612-91529a0a46f1
 keywords:
 - 视频捕获 WDK AVStream，媒体
 - 捕获视频 WDK AVStream，媒体
@@ -10,12 +9,12 @@ keywords:
 - Guid WDK 视频捕获
 ms.date: 06/18/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 1196a19940888893a28cb89af8eae1aa35f7a23f
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 674175dc56d816a56f726467f5fef3b3e5c7ba0d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89192005"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96805939"
 ---
 # <a name="medium-guids"></a>媒体 GUID
 
@@ -27,9 +26,9 @@ ms.locfileid: "89192005"
 
 - 微型驱动程序必须将 **Id** 成员设置为设备实例的唯一值。
 
-- **Flags**成员保留供系统使用，应设置为零。
+- **Flags** 成员保留供系统使用，应设置为零。
 
-若要确保在系统中正确构造具有多个设备的筛选器图形，KSPIN 中型结构的 **集** 成员 \_ 对于每个设备实例保持不变。 但是，微型驱动程序必须将唯一值分配给**Id** \_ 每个设备实例的 KSPIN MEDIUM 结构的 Id 成员。 如果系统中存在多个设备，则无法将 **Id** 成员设置为唯一值会导致问题。 如果系统中安装了两个设备，则微型驱动程序必须将每个设备实例的 **Id** 成员设置为不同的值。 请注意，位于同一硬件（例如调谐器和 crossbars）上的设备筛选器的 **Id** 成员必须相同。 若要确保 **id** 成员在设备实例之间不同，则在将 **id** 设置为其值之前，微型驱动程序中的全局计数器会在设备即插即用开始时间内递增计数器的值。
+若要确保在系统中正确构造具有多个设备的筛选器图形，KSPIN 中型结构的 **集** 成员 \_ 对于每个设备实例保持不变。 但是，微型驱动程序必须将唯一值分配给 **Id** \_ 每个设备实例的 KSPIN MEDIUM 结构的 Id 成员。 如果系统中存在多个设备，则无法将 **Id** 成员设置为唯一值会导致问题。 如果系统中安装了两个设备，则微型驱动程序必须将每个设备实例的 **Id** 成员设置为不同的值。 请注意，位于同一硬件（例如调谐器和 crossbars）上的设备筛选器的 **Id** 成员必须相同。 若要确保 **id** 成员在设备实例之间不同，则在将 **id** 设置为其值之前，微型驱动程序中的全局计数器会在设备即插即用开始时间内递增计数器的值。
 
 根据微型驱动程序遵循的内核流式处理接口 (AVStream 或 Stream 类) ，微型驱动程序必须以不同的方式指定 **Id** 成员的值：
 
@@ -37,7 +36,7 @@ ms.locfileid: "89192005"
 
 - AVStream 微型驱动程序在 [**KSPIN \_ 描述符 \_ EX**](/windows-hardware/drivers/ddi/ks/ns-ks-_kspin_descriptor_ex) 结构中指定值。 AVStream 微型驱动程序可通过两种不同的方式在 KSPIN \_ 描述符 EX 结构中指定值 \_ ：
 
-    1. 提供具有全局**Id**计数器的静态描述符，并在*Add*或*Start*调度处理程序中调用[** \_ KsEdit**](/windows-hardware/drivers/ddi/ks/nf-ks-_ksedit) ，以将**Id**成员更改为唯一值。
+    1. 提供具有全局 **Id** 计数器的静态描述符，并在 *Add* 或 *Start* 调度处理程序中调用 [**\_ KsEdit**](/windows-hardware/drivers/ddi/ks/nf-ks-_ksedit) ，以将 **Id** 成员更改为唯一值。
 
     1. 调用 [**KsCreateFilterFactory**](/windows-hardware/drivers/ddi/ks/nf-ks-kscreatefilterfactory) ，以便在 *添加* 或 *启动* 调度处理程序的过程中动态生成筛选器/pin 说明符。
 
@@ -49,15 +48,15 @@ ms.locfileid: "89192005"
 
 - AVStream 微型驱动程序调用 [**KsRegisterFilterWithNoKSPins**](/windows-hardware/drivers/ddi/ks/nf-ks-ksregisterfilterwithnokspins) 函数来向 DirectShow 注册筛选器。
 
-- 或者，如果微型驱动程序跟随的是 BDA 模式，并且特定[**KSDEVICE**](/windows-hardware/drivers/ddi/ks/ns-ks-_ksdevice)结构下的特定[**KSFILTER \_ 描述符**](/windows-hardware/drivers/ddi/ks/ns-ks-_ksfilter_descriptor)结构的多个实例已在同一内核流式处理类别中注册，则调用[**KsFilterFactoryUpdateCacheData**](/windows-hardware/drivers/ddi/ks/nf-ks-ksfilterfactoryupdatecachedata) (或[**BdaFilterFactoryUpdateCacheData**](/windows-hardware/drivers/ddi/bdasup/nf-bdasup-bdafilterfactoryupdatecachedata)) 函数向 DirectShow 注册筛选器。
+- 或者，如果微型驱动程序跟随的是 BDA 模式，并且特定 [**KSDEVICE**](/windows-hardware/drivers/ddi/ks/ns-ks-_ksdevice)结构下的特定 [**KSFILTER \_ 描述符**](/windows-hardware/drivers/ddi/ks/ns-ks-_ksfilter_descriptor)结构的多个实例已在同一内核流式处理类别中注册，则调用 [**KsFilterFactoryUpdateCacheData**](/windows-hardware/drivers/ddi/ks/nf-ks-ksfilterfactoryupdatecachedata) (或 [**BdaFilterFactoryUpdateCacheData**](/windows-hardware/drivers/ddi/bdasup/nf-bdasup-bdafilterfactoryupdatecachedata)) 函数向 DirectShow 注册筛选器。
 
 \_ \_ \_ 对于 STREAM 类微型驱动程序) ，从 SRB 获取流信息 (返回的 KSPIN 中型结构 \_ ，或 \_ AVStream 微型驱动程序的 KSPIN 描述符 \_ EX () 必须与 \_ 以下属性中返回的 KSPIN MEDIUM 成员匹配：
 
-- [**KSPROPERTY \_ 纵横 \_ **](./ksproperty-crossbar-pininfo.md) [**KSPROPERTY 的 \_ \_ PININFO \_ S**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_crossbar_pininfo_s)结构的**中**成员。 如果媒体不匹配，则在微型驱动程序的筛选器与关系图中的相邻筛选器之间，图形生成可能会失败。
+- [**KSPROPERTY \_ 纵横 \_**](./ksproperty-crossbar-pininfo.md) [**KSPROPERTY 的 \_ \_ PININFO \_ S**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_crossbar_pininfo_s)结构的 **中** 成员。 如果媒体不匹配，则在微型驱动程序的筛选器与关系图中的相邻筛选器之间，图形生成可能会失败。
 
-- [**KSPROPERTY \_ 调谐器 \_ cap**](./ksproperty-tuner-caps.md)的[**KSPROPERTY \_ 调谐器 \_ cap \_ S**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_tuner_caps_s)结构的**VideoMedium**和**AudioMedium**成员。
+- [**KSPROPERTY \_ 调谐器 \_ cap**](./ksproperty-tuner-caps.md)的 [**KSPROPERTY \_ 调谐器 \_ cap \_ S**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_tuner_caps_s)结构的 **VideoMedium** 和 **AudioMedium** 成员。
 
-- [**KSPROPERTY \_ TVAUDIO \_ cap**](./ksproperty-tvaudio-caps.md)的[**KSPROPERTY \_ TVAUDIO \_ cap \_ S**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_tvaudio_caps_s)结构的**InputMedium**和**OutputMedium**成员。
+- [**KSPROPERTY \_ TVAUDIO \_ cap**](./ksproperty-tvaudio-caps.md)的 [**KSPROPERTY \_ TVAUDIO \_ cap \_ S**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_tvaudio_caps_s)结构的 **InputMedium** 和 **OutputMedium** 成员。
 
 除了正确实现媒体和中型 Guid 外，还需要遵循其他准则，以确保进程可以使用多个筛选器关系图。 在筛选器图形转换为 KSSTATE 的 **KSSTATE \_ 获取** 值之前，微型驱动程序不得锁定任何硬件资源。 这有助于确保两个生成但未运行的筛选器图形可以共存，而不会相互干扰。
 

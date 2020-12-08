@@ -1,7 +1,6 @@
 ---
 title: 打印票证
 description: 打印票证
-ms.assetid: dd18d0ef-c1f7-4a35-a420-2da102fb07f4
 keywords:
 - PrintTicket 文档 WDK
 - 打印票证 WDK，PrintTicket 文档
@@ -10,12 +9,12 @@ keywords:
 - 作业 WDK 打印，打印票证
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6913aa8e69514e1c095dc3f8721899d4a4ec2a5c
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 5c8eaa3a380738834449dd6cfb7105222d93127d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89207717"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96807385"
 ---
 # <a name="print-ticket"></a>打印票证
 

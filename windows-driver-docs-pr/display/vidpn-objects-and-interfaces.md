@@ -1,7 +1,6 @@
 ---
 title: VidPN 对象和接口
 description: VidPN 对象和接口
-ms.assetid: 5dedac8c-9a99-4b3a-81be-39819135cd97
 keywords:
 - 视频显示网络 WDK 显示，对象
 - VidPN WDK 显示，对象
@@ -12,12 +11,12 @@ keywords:
 - 子对象 WDK 视频呈现网络
 ms.date: 10/30/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: b5abcec089cfc533be5b5456459613aff60c1317
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 5c477b33089efbfebbfc8486e04a32152f18d2f4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106520"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96806349"
 ---
 # <a name="vidpn-objects-and-interfaces"></a>VidPN 对象和接口
 
@@ -108,7 +107,7 @@ VidPN 对象包含以下子对象。
 <p><a href="/windows-hardware/drivers/ddi/d3dkmdt/ns-d3dkmdt-_d3dkmdt_vidpn_present_path" data-raw-source="[&lt;strong&gt;D3DKMDT_VIDPN_PRESENT_PATH&lt;/strong&gt;](/windows-hardware/drivers/ddi/d3dkmdt/ns-d3dkmdt-_d3dkmdt_vidpn_present_path)"><strong>D3DKMDT_VIDPN_PRESENT_PATH</strong></a></p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>源</p></td>
+<td align="left"><p>Source</p></td>
 <td align="left"><p>通过结构指针访问。</p>
 <p><a href="/windows-hardware/drivers/ddi/d3dkmdt/ns-d3dkmdt-_d3dkmdt_video_present_source" data-raw-source="[&lt;strong&gt;D3DKMDT_VIDEO_PRESENT_SOURCE&lt;/strong&gt;](/windows-hardware/drivers/ddi/d3dkmdt/ns-d3dkmdt-_d3dkmdt_video_present_source)"><strong>D3DKMDT_VIDEO_PRESENT_SOURCE</strong></a></p></td>
 </tr>
@@ -192,11 +191,11 @@ VidPN 管理器是 DirectX 图形内核子系统的组件之一，会带有用�
 
 请注意， [**DXGK \_ VIDPNSOURCEMODESET \_ 接口**](/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgk_vidpnsourcemodeset_interface) 接口没有用于从源模式集中删除模式的函数。 当显示微型端口驱动程序需要更新源模式集时，它不会通过添加和删除模式改变现有模式集。 相反，它会创建新的模式集来替换旧模式集。 必须更新模式集的函数的一个示例是显示微型端口驱动程序的 [*DxgkDdiEnumVidPnCofuncModality*](/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_enumvidpncofuncmodality) 函数。 更新源模式集所涉及的步骤如下所示：
 
-1.  调用[**DXGK \_ VIDPNSOURCEMODESET \_ 接口**](/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgk_vidpnsourcemodeset_interface)接口的[*pfnCreateNewModeInfo*](/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_vidpnsourcemodeset_createnewmodeinfo) ，以获取指向由 vidpn 管理器) 分配 (的[**D3DKMDT \_ VIDPN \_ 源 \_ 模式**](/windows-hardware/drivers/ddi/d3dkmdt/ns-d3dkmdt-_d3dkmdt_vidpn_source_mode)结构的指针。
+1.  调用 [**DXGK \_ VIDPNSOURCEMODESET \_ 接口**](/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgk_vidpnsourcemodeset_interface)接口的 [*pfnCreateNewModeInfo*](/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_vidpnsourcemodeset_createnewmodeinfo) ，以获取指向由 vidpn 管理器) 分配 (的 [**D3DKMDT \_ VIDPN \_ 源 \_ 模式**](/windows-hardware/drivers/ddi/d3dkmdt/ns-d3dkmdt-_d3dkmdt_vidpn_source_mode)结构的指针。
 
     重复调用 [*pfnAddMode*](/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_vidpnsourcemodeset_addmode) ，将模式添加到源模式集。
 
-2.  调用[**DXGK \_ VIDPN \_ 接口**](/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgk_vidpn_interface)的[*pfnAssignSourceModeSet*](/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_vidpn_assignsourcemodeset)函数，以将新模式集分配给特定视频现有源。 新源模式集会替换当前分配给该源的源模式集。
+2.  调用 [**DXGK \_ VIDPN \_ 接口**](/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgk_vidpn_interface)的 [*pfnAssignSourceModeSet*](/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_vidpn_assignsourcemodeset)函数，以将新模式集分配给特定视频现有源。 新源模式集会替换当前分配给该源的源模式集。
 
 更新目标模式集类似于更新源模式集。 [**DXGK \_ VIDPNTARGETMODESET \_ 接口**](/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgk_vidpntargetmodeset_interface)接口具有以下功能：
 
@@ -204,9 +203,9 @@ VidPN 管理器是 DirectX 图形内核子系统的组件之一，会带有用�
 
     用于创建新的目标模式集的 [*pfnCreateNewModeInfo*](/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_vidpntargetmodeset_createnewmodeinfo) 函数，以及用于将模式添加到该集的 [*pfnAddMode*](/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_vidpntargetmodeset_addmode) 函数。
 
-没有用于获取属于特定路径的源和目标的函数 (集) 。 显示微型端口驱动程序可以通过检查代表路径的[**D3DKMDT \_ VIDPN \_ 显示 \_ 路径**](/windows-hardware/drivers/ddi/d3dkmdt/ns-d3dkmdt-_d3dkmdt_vidpn_present_path)结构的**VidPnSourceId**和**VidPnTargetId**成员来确定哪些源和目标属于特定路径。
+没有用于获取属于特定路径的源和目标的函数 (集) 。 显示微型端口驱动程序可以通过检查代表路径的 [**D3DKMDT \_ VIDPN \_ 显示 \_ 路径**](/windows-hardware/drivers/ddi/d3dkmdt/ns-d3dkmdt-_d3dkmdt_vidpn_present_path)结构的 **VidPnSourceId** 和 **VidPnTargetId** 成员来确定哪些源和目标属于特定路径。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [确定显示适配器是否支持 VidPN](determining-whether-a-vidpn-is-supported-on-a-display-adapter.md)
 

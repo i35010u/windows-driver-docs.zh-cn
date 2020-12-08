@@ -1,7 +1,6 @@
 ---
 title: 打开连接到并行端口的并行设备
 description: 打开连接到并行端口的并行设备
-ms.assetid: 5ad36162-efbe-4be8-954c-964ef12c539a
 keywords:
 - 并行端口 WDK，并行设备操作
 - 并行设备 WDK
@@ -9,12 +8,12 @@ keywords:
 - 并行设备 WDK，客户端操作
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3a36e1566045bbb7b3712520c02cf7e839429bcb
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: af364ac1217937d8799adb3d8305b364e4f7f7a8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89382703"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96806103"
 ---
 # <a name="operating-a-parallel-device-attached-to-a-parallel-port"></a>打开连接到并行端口的并行设备
 
@@ -46,7 +45,7 @@ ms.locfileid: "89382703"
 
 [系统提供的并行驱动程序](system-supplied-parallel-drivers.md)
 
-[系统提供的并行驱动程序的客户端接口](/windows-hardware/drivers/ddi/index)
+[System-Supplied 并行驱动程序的客户端接口](/windows-hardware/drivers/ddi/index)
 
  
 

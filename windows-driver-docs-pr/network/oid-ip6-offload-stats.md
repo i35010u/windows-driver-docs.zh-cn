@@ -1,17 +1,16 @@
 ---
 title: OID_IP6_OFFLOAD_STATS
 description: 本主题介绍) OID_IP6_OFFLOAD_STATS 对象标识符 (OID。
-ms.assetid: 94bfc254-bc83-481f-a2d7-46c1e31e23a7
 keywords:
 - OID_IP6_OFFLOAD_STATS
 ms.date: 11/06/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4acee89311ab8c28a4ccfc9c2630003894979ea0
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 0a99daf9b1e15b5794285f179488f6aa4469c0f9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89209663"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96806157"
 ---
 # <a name="oid_ip6_offload_stats"></a>OID_IP6_OFFLOAD_STATS
 

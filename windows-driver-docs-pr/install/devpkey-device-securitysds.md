@@ -1,7 +1,6 @@
 ---
 title: DEVPKEY_Device_SecuritySDS
 description: DEVPKEY_Device_SecuritySDS
-ms.assetid: 8ac8c683-da8e-4425-8a2a-c4182e5cef93
 keywords:
 - DEVPKEY_Device_SecuritySDS 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 72364780087dff31d4d4f9483074d6b077526989
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: f7e27db7e3275d145631e4fdc2c03640142bf98c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90716752"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96805551"
 ---
 # <a name="devpkey_device_securitysds"></a>DEVPKEY_Device_SecuritySDS
 

@@ -1,7 +1,6 @@
 ---
 title: '\_ \_ \_ 每个 \_ 关键帧的 KSPROPERTY VIDEOCOMPRESSION PFRAMES'
 description: KSPROPERTY \_ VIDEOCOMPRESSION \_ PFRAMES \_ PER \_ 关键帧属性控制预测帧 (P 帧) 时间间隔。 必须实现此属性。
-ms.assetid: feb839b4-32fc-4fe9-b015-019d9d683c66
 keywords:
 - KSPROPERTY_VIDEOCOMPRESSION_PFRAMES_PER_KEYFRAME 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 06ea49282189f0dc26e5ff5bdde978b1b480b391
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: ffafc26bba52611ff4886e0be0aed5fb266404b4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106094"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96805967"
 ---
 # <a name="ksproperty_videocompression_pframes_per_keyframe"></a>\_ \_ \_ 每个 \_ 关键帧的 KSPROPERTY VIDEOCOMPRESSION PFRAMES
 
@@ -66,9 +65,9 @@ KSPROPERTY \_ VIDEOCOMPRESSION \_ PFRAMES \_ PER \_ 关键帧属性控制预测�
 <a name="remarks"></a>备注
 -------
 
-KSPROPERTY **Value** \_ VIDEOCOMPRESSION S 结构的 Value 成员 \_ 指定每个关键帧的 P 帧数。 如果 set 请求提供 **负值，则**微型驱动程序应将 "P 帧速率" 设置为默认值。
+KSPROPERTY **Value** \_ VIDEOCOMPRESSION S 结构的 Value 成员 \_ 指定每个关键帧的 P 帧数。 如果 set 请求提供 **负值，则** 微型驱动程序应将 "P 帧速率" 设置为默认值。
 
-支持此属性的微型驱动程序应 \_ \_ 在用于检索 VIDEOCOMPRESSION 视频压缩功能的[**KSPROPERTY \_ GETINFO \_ 微型驱动程序 \_ S**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_videocompression_getinfo_s)结构的 "**功能**" 成员中设置 KS VideoCompressionCaps CanBFrame 标志。
+支持此属性的微型驱动程序应 \_ \_ 在用于检索 VIDEOCOMPRESSION 视频压缩功能的 [**KSPROPERTY \_ GETINFO \_ 微型驱动程序 \_ S**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_videocompression_getinfo_s)结构的 "**功能**" 成员中设置 KS VideoCompressionCaps CanBFrame 标志。
 
 <a name="requirements"></a>要求
 ------------
@@ -86,7 +85,7 @@ KSPROPERTY **Value** \_ VIDEOCOMPRESSION S 结构的 Value 成员 \_ 指定每�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSPROPERTY**](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)

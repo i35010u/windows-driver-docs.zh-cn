@@ -1,7 +1,6 @@
 ---
 title: 'IoBuildDeviceControlWait 规则 (wdm) '
 description: IoBuildDeviceControlWait 规则指定如果 IoCallDriver 或 PoCallDriver 返回状态 "挂起"，则应调用 KeWaitForSingleObject 例程 \_ 。
-ms.assetid: F1AC3698-EA1F-400D-B2B2-3FD9B8E0FE75
 ms.date: 05/21/2018
 keywords:
 - 'IoBuildDeviceControlWait 规则 (wdm) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 4c1ec55c2ca1f09af298c87d1b4a044e341cdd37
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 1c8c1851dfda03a8244e56d2206feb704b9abc62
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106158"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96806397"
 ---
 # <a name="iobuilddevicecontrolwait-rule-wdm"></a>IoBuildDeviceControlWait 规则 (wdm) 
 
 
-**IoBuildDeviceControlWait**规则指定如果[**IoCallDriver**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver)或[**PoCallDriver**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-pocalldriver)返回状态 "挂起"，则应调用[**KeWaitForSingleObject**](/windows-hardware/drivers/ddi/wdm/nf-wdm-kewaitforsingleobject)例程 \_ 。
+**IoBuildDeviceControlWait** 规则指定如果 [**IoCallDriver**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver)或 [**PoCallDriver**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-pocalldriver)返回状态 "挂起"，则应调用 [**KeWaitForSingleObject**](/windows-hardware/drivers/ddi/wdm/nf-wdm-kewaitforsingleobject)例程 \_ 。
 
 **驱动程序模型： WDM**
 

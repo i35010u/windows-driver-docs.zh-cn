@@ -1,7 +1,6 @@
 ---
 title: 'WlanAssert 规则 (ndis) '
 description: WlanAssert 规则包括在 WDIWIFI 驱动程序中验证的一组检查。
-ms.assetid: CCA68C4D-618A-4DE4-9DEB-2A03DCD38667
 ms.date: 04/08/2020
 keywords:
 - 'WlanAssert 规则 (ndis) '
@@ -12,22 +11,22 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: b1c1f74a66180890e670649ba1774d19e95cc62e
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 3f36180fa302cc9f494dd6913654288d86f82c3b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107452"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96805735"
 ---
 # <a name="wlanassert-rule-ndis"></a>WlanAssert 规则 (ndis) 
 
-**WlanAssert**规则包括在 WDIWIFI 驱动程序中验证的一组检查。
+**WlanAssert** 规则包括在 WDIWIFI 驱动程序中验证的一组检查。
 
 可能存在以下冲突：
 
-- *TxPeerBacklogStub：在数据路径 deinitialization 后，IHV WDI 微型端口称为数据路径* -此规则仅适用于对等-排队模式。 当微型端口已停止或重置时，WDI 将调用 IHV 驱动程序的 [CloseAdapterHandler](/windows-hardware/drivers/ddi/dot11wdi/nc-dot11wdi-miniport_wdi_close_adapter) 函数，该函数要求驱动程序清理其状态，而不会在之后调用任何数据回调。 如果驱动程序在关闭后调用 [TxTransferCompleteIndication](/windows-hardware/drivers/ddi/dot11wdi/nc-dot11wdi-ndis_wdi_tx_transfer_complete_ind)、 [TxSendPauseIndication](/windows-hardware/drivers/ddi/dot11wdi/nc-dot11wdi-ndis_wdi_tx_send_pause_ind)或 [TxReleaseFrameIndication](/windows-hardware/drivers/ddi/dot11wdi/nc-dot11wdi-ndis_wdi_tx_release_frames_ind) 等任何数据处理程序，或者关闭后仍有任何未完成的 Tx 帧，则会调用这些断言。
+- *TxPeerBacklogStub：在数据路径 deinitialization 后，IHV WDI 微型端口称为数据路径* -此规则仅适用于 Peer-Queuing 模式。 当微型端口已停止或重置时，WDI 将调用 IHV 驱动程序的 [CloseAdapterHandler](/windows-hardware/drivers/ddi/dot11wdi/nc-dot11wdi-miniport_wdi_close_adapter) 函数，该函数要求驱动程序清理其状态，而不会在之后调用任何数据回调。 如果驱动程序在关闭后调用 [TxTransferCompleteIndication](/windows-hardware/drivers/ddi/dot11wdi/nc-dot11wdi-ndis_wdi_tx_transfer_complete_ind)、 [TxSendPauseIndication](/windows-hardware/drivers/ddi/dot11wdi/nc-dot11wdi-ndis_wdi_tx_send_pause_ind)或 [TxReleaseFrameIndication](/windows-hardware/drivers/ddi/dot11wdi/nc-dot11wdi-ndis_wdi_tx_release_frames_ind) 等任何数据处理程序，或者关闭后仍有任何未完成的 Tx 帧，则会调用这些断言。
 
-- *TxAbortStub：在数据路径 deinitialization 后，IHV WDI 微型端口称为数据路径* -此规则仅适用于对等-排队模式。 当微型端口已停止或重置时，WDI 将调用 IHV 驱动程序的 [CloseAdapterHandler](/windows-hardware/drivers/ddi/dot11wdi/nc-dot11wdi-miniport_wdi_close_adapter) 函数，该函数要求驱动程序清理其状态，而不会在之后调用任何数据回调。 如果驱动程序在关闭后调用 [TxTransferCompleteIndication](/windows-hardware/drivers/ddi/dot11wdi/nc-dot11wdi-ndis_wdi_tx_transfer_complete_ind)、 [TxSendPauseIndication](/windows-hardware/drivers/ddi/dot11wdi/nc-dot11wdi-ndis_wdi_tx_send_pause_ind)或 [TxReleaseFrameIndication](/windows-hardware/drivers/ddi/dot11wdi/nc-dot11wdi-ndis_wdi_tx_release_frames_ind) 等任何数据处理程序，或者关闭后仍有任何未完成的 Tx 帧，则会调用这些断言。
+- *TxAbortStub：在数据路径 deinitialization 后，IHV WDI 微型端口称为数据路径* -此规则仅适用于 Peer-Queuing 模式。 当微型端口已停止或重置时，WDI 将调用 IHV 驱动程序的 [CloseAdapterHandler](/windows-hardware/drivers/ddi/dot11wdi/nc-dot11wdi-miniport_wdi_close_adapter) 函数，该函数要求驱动程序清理其状态，而不会在之后调用任何数据回调。 如果驱动程序在关闭后调用 [TxTransferCompleteIndication](/windows-hardware/drivers/ddi/dot11wdi/nc-dot11wdi-ndis_wdi_tx_transfer_complete_ind)、 [TxSendPauseIndication](/windows-hardware/drivers/ddi/dot11wdi/nc-dot11wdi-ndis_wdi_tx_send_pause_ind)或 [TxReleaseFrameIndication](/windows-hardware/drivers/ddi/dot11wdi/nc-dot11wdi-ndis_wdi_tx_release_frames_ind) 等任何数据处理程序，或者关闭后仍有任何未完成的 Tx 帧，则会调用这些断言。
 
 - *卸载 WDIWIFI 驱动程序时，对 NdisMDeregisterWdiMiniportDriver 和 NdisMRegisterWdiMiniportDriver 的调用不匹配* -如果 ihv 驱动程序对 [NdisMRegisterWdiMiniportDriver](/windows-hardware/drivers/ddi/dot11wdi/nf-dot11wdi-ndismregisterwdiminiportdriver) 的调用失败，则会调用此断言，但 ihv 驱动程序仍调用 [NdisMDeregisterWdiMiniportDriver](/windows-hardware/drivers/ddi/dot11wdi/nf-dot11wdi-ndismderegisterwdiminiportdriver) 处理程序。
 

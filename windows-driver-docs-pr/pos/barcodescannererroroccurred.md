@@ -1,21 +1,20 @@
 ---
 title: BarcodeScannerErrorOccurred
-description: BarcodeScannerErrorOccurred 事件发生时出现错误，例如扫描错误。
-ms.assetid: 38cfbd87-0526-49d1-8580-96f4e1adf7bb
+description: 出现错误（例如扫描错误）时，将发生 BarcodeScannerErrorOccurred 事件。
 ms.date: 09/07/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 0060519110f16262ca643b8bb4c2805ab640a534
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 827528fe6005557fb259abba72cb5a1a9f3cb82d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63358775"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96806027"
 ---
 # <a name="barcodescannererroroccurred"></a>BarcodeScannerErrorOccurred
 
-出现错误，例如扫描错误时发生此事件。
+出现错误（例如扫描错误）时，将发生此事件。
 
-此事件的数据缓冲区是按如下所示。
+此事件的数据缓冲区如下所示。
 
 ## <a name="syntax"></a>语法
 
@@ -39,34 +38,34 @@ typedef struct _PosBarcodeScannerErrorOccurredEventData
 } PosBarcodeScannerErrorOccurredEventData;
 ```
 
-下表显示了此事件的数据缓冲区的内存布局。
+下表显示此事件的数据缓冲区的内存布局。
 
 | 内存值                                      | 描述                                                                                                                                        |
 |---------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------|
-| 0x00000006                             | **事件类型 = PosEventType::BarcodeScannerTriggerPressed**                                                                             |
-| UINT32                                 | **DataLength** = sizeof(**PosBarcodeScannerErrorOccurredData**) + **MessageLength** + **ScanDataLength** + **ScanDataLabelLength**)     |
+| 0x00000006                             | **事件 = PosEventType：： BarcodeScannerTriggerPressed**                                                                             |
+| UINT32                                 | **DataLength** = sizeof (**PosBarcodeScannerErrorOccurredData**) + **MessageLength**  +  **ScanDataLength**  +  **ScanDataLabelLength**)      |
 | BOOL                                   | **IsRetriable**                                                                                                                         |
-| 32 位 UnifiedPosErrorSeverity         | **Severity**                                                                                                                            |
+| 32位 UnifiedPosErrorSeverity         | **严重性**                                                                                                                            |
 | UINT32                                 | **VendorErrorCode**                                                                                                                     |
-| 32 位 UnifiedPosErrorReason           | **Reason**                                                                                                                              |
+| 32位 UnifiedPosErrorReason           | **原因**                                                                                                                              |
 | UINT32                                 | **ExtendedReason**                                                                                                                      |
 | UINT32                                 | **MessageLength**                                                                                                                       |
 | PosBarcodeScannerDataReceivedEventData | **PartialData**                                                                                                                         |
-| UINT32                                 | **EventType**未指定                                                                                                             |
-| UINT32                                 | **DataLength** = sizeof(**PosBarcodeScannerDataRecievedEventData**) + **MessageLength** + **ScanDataLength** + **ScanDataLabelLength**) |
-| UINT32                                 | **数据类型**未指定                                                                                                              |
+| UINT32                                 | 未指定 **事件** 的                                                                                                             |
+| UINT32                                 | **DataLength** = sizeof (**PosBarcodeScannerDataRecievedEventData**) + **MessageLength**  +  **ScanDataLength**  +  **ScanDataLabelLength**)  |
+| UINT32                                 | 未指定 **数据类型**                                                                                                              |
 | UINT32                                 | **ScanDataLength**                                                                                                                      |
 | UINT32                                 | **ScanDataLabelLength**                                                                                                                 |
-| byte \[\]                              | **MessageLength**消息的字节                                                                                                      |
-| byte \[\]                              | **ScanDataLength**标签数据的字节                                                                                                  |
-| byte \[\]                              | **ScanDataLabelLength**扫描数据的字节                                                                                              |
+| 位 \[\]                              | **MessageLength** 字节的消息                                                                                                      |
+| 位 \[\]                              | **ScanDataLength** 字节的标签数据                                                                                                  |
+| 位 \[\]                              | 扫描数据的 **ScanDataLabelLength** 字节数                                                                                              |
 
 
 
 ## <a name="remarks"></a>备注
 
-如果扫描出错，并获取一些扫描数据，事件数据包含部分扫描数据。
+如果发生扫描错误，并且获取了某些扫描数据，则事件数据将包含部分扫描数据。
 
 ## <a name="requirements"></a>要求
 
-**标头：** pointofservicedriverinterface.h
+**标头：** pointofservicedriverinterface

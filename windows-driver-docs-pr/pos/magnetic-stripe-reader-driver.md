@@ -1,19 +1,18 @@
 ---
 title: 磁条读取器驱动程序示例
 description: 此示例演示如何为磁条纹读取器创建通用驱动程序，并将其用作创建新驱动程序的模板。
-ms.assetid: 92A8C116-F71F-4A74-A453-44C14297BCDD
 ms.date: 09/07/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: ff77c0e4b73657e7415db37ef1f44b96f7cbc9f5
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: db1c587391924bae0a01446796ec024fa472985d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89185777"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96806013"
 ---
 # <a name="magnetic-stripe-reader-driver-sample"></a>磁条读取器驱动程序示例
 
-磁条读取器驱动程序示例演示如何为磁条纹读取器创建通用驱动程序，并将其用作创建新驱动程序的模板。 该示例使用用户模式驱动程序框架 (UMDF) 2.0，并演示了基本功能，如声明设备以进行独占访问。 示例驱动程序可以在 x86、amd64 和 ARM 平台上编译和部署。
+磁条读取器驱动程序示例演示如何为磁条纹读取器创建通用驱动程序，并将其用作创建新驱动程序的模板。 该示例使用 User-Mode Driver Framework (UMDF) 2.0，并演示了一些基本功能，如声明设备以进行独占访问。 示例驱动程序可以在 x86、amd64 和 ARM 平台上编译和部署。
 
 ## <a name="requirements"></a>要求
 
@@ -44,7 +43,7 @@ GitHub 上提供了 [Windows 驱动程序示例](https://github.com/Microsoft/Wi
 
 1. 已从 Internet 下载项目 zip 文件，因此打开解决方案时可能会看到安全警告。 如果执行此操作，请单击 **"确定"** 完成项目加载。
 
-1. 在 Visual Studio 中，找到 **解决方案资源管理器**。 如果尚未打开，则从 "**视图**" 菜单中选择 "**解决方案资源管理器**"。 在 **解决方案资源管理器**中，可以看到项目及其包含的源文件。
+1. 在 Visual Studio 中，找到 **解决方案资源管理器**。 如果尚未打开，则从 "**视图**" 菜单中选择 "**解决方案资源管理器**"。 在 **解决方案资源管理器** 中，可以看到项目及其包含的源文件。
 
 ## <a name="build-the-sample-using-visual-studio"></a>使用 Visual Studio 生成示例
 
@@ -70,7 +69,7 @@ GitHub 上提供了 [Windows 驱动程序示例](https://github.com/Microsoft/Wi
 
     在该文件夹中，你将看到以下文件：
 
-    | 文件                              | 说明                                                                  |
+    | 文件                              | 描述                                                                  |
     |-----------------------------------|------------------------------------------------------------------------------|
     | SampleMagneticStripeReaderDrv.dll | 驱动程序文件。                                                             |
     | SampleMagneticStripeReaderDrv .inf | 一个 INF 文件，其中包含安装驱动程序所需的信息。          |

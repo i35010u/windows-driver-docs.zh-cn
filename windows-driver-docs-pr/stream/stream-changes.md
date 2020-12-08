@@ -1,7 +1,6 @@
 ---
 title: 流更改
 description: 流更改
-ms.assetid: 3bd6a511-c602-4159-87b4-7e1e55c03b2e
 keywords:
 - 流更改 WDK DVD 解码器
 - 格式化 WDK DVD 解码器
@@ -9,12 +8,12 @@ keywords:
 - 流格式化 WDK DVD 解码器
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 969aae44d2644820358c44e24cadd9c63515e663
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: a63e5c469341b97aee38209dc824c145201b8b70
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89185534"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96805927"
 ---
 # <a name="stream-changes"></a>流更改
 
@@ -51,7 +50,7 @@ KSSTREAM \_ 标头 \_ OPTIONSF \_ TYPECHANGED 位表示与标头连接的示例�
 
 视频格式更改还必须向视频端口连接发送 KSSTREAM 事件，以指示视频格式已更改。 微型驱动程序应使用 [**StreamClassStreamNotification**](/windows-hardware/drivers/ddi/strmini/nf-strmini-streamclassstreamnotification) (SignalMultipleStreamEvents、pMyHwDevExt- &gt; pMyStreamObject &我 \_ \_ 的 KSEVENTSETID VPNOTIFY，KSEVENT \_ VPNOTIFY \_ FORMATCHANGE) 实现此目的。
 
-当视频格式的某些参数发生变化时，如像素纵横比，解码器将接收格式块。 解码器应指示视频端口重新协商视频端口连接。 解码器用参数*SignalMultipleStreamEvents*调用[**StreamClassStreamNotification**](/windows-hardware/drivers/ddi/strmini/nf-strmini-streamclassstreamnotification) 。
+当视频格式的某些参数发生变化时，如像素纵横比，解码器将接收格式块。 解码器应指示视频端口重新协商视频端口连接。 解码器用参数 *SignalMultipleStreamEvents* 调用 [**StreamClassStreamNotification**](/windows-hardware/drivers/ddi/strmini/nf-strmini-streamclassstreamnotification) 。
 
 DVD 解码器微型驱动程序必须指明为 VideoPort 流的 [**HW \_ 流 \_ 信息**](/windows-hardware/drivers/ddi/strmini/ns-strmini-_hw_stream_information) 条目中的此事件提供支持。 视频端口事件的事件集 ID 为 [KSEVENTSETID \_ VPNotify](./kseventsetid-vpnotify.md) ，事件 id 为 [**KSEVENT \_ VPNotify \_ FORMATCHANGE**](./ksevent-vpnotify-formatchange.md)。
 

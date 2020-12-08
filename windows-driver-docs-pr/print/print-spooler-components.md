@@ -1,19 +1,18 @@
 ---
 title: 打印后台处理程序组件
 description: 打印后台处理程序组件
-ms.assetid: 42b5e6cf-b434-4734-86f3-b3b9d15ea468
 keywords:
 - 打印后台处理程序自定义 WDK
 - 后台处理程序自定义 WDK 打印
 - 自定义打印后台处理程序组件 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ecc39e3f466b5e9d654e0abd988ae7242d549a49
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 66c3960e1126ac15f19f3b191d268b7d7b6eccac
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63372075"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96807447"
 ---
 # <a name="print-spooler-components"></a>打印后台处理程序组件
 
@@ -31,7 +30,7 @@ ms.locfileid: "63372075"
 
 [添加双向通信](adding-bidirectional-communication.md)
 
-[在 Windows Vista 之前的操作系统中显示用户界面](displaying-a-ui-in-operating-systems-prior-to-windows-vista.md)
+[在 Windows Vista 之前的操作系统中显示 UI](displaying-a-ui-in-operating-systems-prior-to-windows-vista.md)
 
  
 

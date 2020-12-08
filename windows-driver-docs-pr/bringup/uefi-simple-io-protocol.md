@@ -1,33 +1,32 @@
 ---
 title: UEFI 简单 I/O 协议
 description: UEFI 简单 I/O 协议
-ms.assetid: 0cb55bf5-71e9-4b59-aef1-7d74eb331a18
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 833dd66b6dcf8c302842bf6bcf542c0f1634b867
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1a37e2588902435e3bcc90ccadf4bcffbf8affa8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63337376"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96806575"
 ---
 # <a name="uefi-simple-io-protocol"></a>UEFI 简单 I/O 协议
 
 
-**请注意**  本部分中的某些信息可能仅适用于 Windows 10 移动版和某些处理器体系结构。
+**注意**  本节中的某些信息可能仅适用于 Windows 10 移动版和某些处理器体系结构。
 
  
 
-闪烁的工具使用简单的 I/O 协议以允许设备与预启动环境中的主机计算机之间进行通信。
+使用简单的 i/o 协议，可以通过闪烁的工具在预启动环境中的设备和主机之间进行通信。
 
-**请注意**  将此文档的未来版本中提供有关闪烁的工具的信息。
+**注意**  此文档的未来版本中将提供有关闪烁工具的信息。
 
  
 
-## <a name="efisimplewinphoneioprotocol"></a>EFI\_简单\_WINPHONE\_IO\_协议
+## <a name="efi_simple_winphone_io_protocol"></a>EFI \_ 简单 \_ WINPHONE \_ IO \_ 协议
 
 
-本部分提供的详细的说明**EFI\_简单\_WINPHONE\_IO\_协议**。 此协议使主机和预启动环境中的设备之间的简单通信。
+本部分提供 **EFI \_ 简单 \_ WINPHONE \_ IO \_ 协议** 的详细说明。 此协议在预启动环境中启用主机和设备之间的简单通信。
 
 **GUID**
 
@@ -44,7 +43,7 @@ ms.locfileid: "63337376"
 #define EFI_SIMPLE_WINPHONE_IO_PROTOCOL_REVISION   0x00010001
 ```
 
-**协议的接口结构**
+**协议接口结构**
 
 ```cpp
 typedef struct _EFI_SIMPLE_WINPHONE_IO_PROTOCOL {
@@ -59,21 +58,21 @@ typedef struct _EFI_SIMPLE_WINPHONE_IO_PROTOCOL {
 
 ### <a name="members"></a>成员
 
-<a href="" id="revision"></a>**修订版本**  
-修订**EFI\_简单\_WINPHONE\_IO\_协议**遵循。 所有未来的版本必须是向后兼容。 如果将来的版本不是向后兼容，必须使用不同的 GUID。
+<a href="" id="revision"></a>**A01**  
+**EFI \_ 简单 \_ WINPHONE \_ IO \_ 协议** 遵循的修订版本。 所有将来的修订版都必须是向后兼容。 如果未来版本不是向后兼容的，则必须使用不同的 GUID。
 
 <a href="" id="initialize"></a>**初始化**  
-此函数将等待来自主机计算机的连接。 请参阅[EFI\_简单\_WINPHONE\_IO\_协议。初始化](efi-simple-winphone-io-protocolinitialize.md)。
+此函数等待主计算机的连接。 请参阅 [EFI \_ SIMPLE \_ WINPHONE \_ IO \_PROTOCOL.Initialize](efi-simple-winphone-io-protocolinitialize.md)。
 
 <a href="" id="read"></a>**读取**  
-从主计算机中接收的字节的缓冲区。 请参阅[EFI\_简单\_WINPHONE\_IO\_协议。读取](efi-simple-winphone-io-protocolread.md)。
+从主计算机接收字节缓冲区。 请参阅 [EFI \_ SIMPLE \_ WINPHONE \_ IO \_ 协议。阅读](efi-simple-winphone-io-protocolread.md)。
 
-<a href="" id="reserved-"></a>**保留**   
-保留供将来使用。
+<a href="" id="reserved-"></a>**保护**   
+留待将来使用。
 
-<a href="" id="write"></a>**编写**  
-向主机发送的字节的缓冲区。 请参阅[EFI\_简单\_WINPHONE\_IO\_协议。编写](efi-simple-winphone-io-protocolwrite.md)。
+<a href="" id="write"></a>**写入**  
+将字节缓冲区发送到主机计算机。 请参阅 [EFI \_ SIMPLE \_ WINPHONE \_ IO \_ 协议。写](efi-simple-winphone-io-protocolwrite.md)。
 
 <a href="" id="getmaxpacketsize"></a>**GetMaxPacketSize**  
-返回此协议支持的最大数据包大小。 请参阅[EFI\_简单\_WINPHONE\_IO\_协议。GetMaxPacketSize](efi-simple-winphone-io-protocolgetmaxpacketsize.md)。
+返回此协议支持的最大数据包大小。 请参阅 [EFI \_ SIMPLE \_ WINPHONE \_ IO \_ 协议。GetMaxPacketSize](efi-simple-winphone-io-protocolgetmaxpacketsize.md)。
 

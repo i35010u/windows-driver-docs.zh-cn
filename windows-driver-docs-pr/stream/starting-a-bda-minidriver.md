@@ -1,18 +1,17 @@
 ---
 title: 启动 BDA 微型驱动程序
 description: 启动 BDA 微型驱动程序
-ms.assetid: c71e1483-756c-4e98-a413-64ff02ee4a9b
 keywords:
 - BDA 微型驱动程序 WDK AVStream，正在启动
 - 启动 BDA 微型驱动程序 WDK AVStream
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ed73558a567795736edf4667a11cb9aca8e0e32b
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 82060b78507c61d24a63c2f2daf2a67bf1cf6ae1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89185569"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96805932"
 ---
 # <a name="starting-a-bda-minidriver"></a>启动 BDA 微型驱动程序
 

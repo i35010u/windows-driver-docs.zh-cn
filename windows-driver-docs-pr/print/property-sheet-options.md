@@ -1,7 +1,6 @@
 ---
 title: 属性表选项
 description: 属性表选项
-ms.assetid: 572330d6-1a1b-46fd-bfb4-be2b0990bca4
 keywords:
 - 公共属性表用户界面 WDK 打印，属性表选项
 - CPSUI WDK 打印，属性表选项
@@ -10,12 +9,12 @@ keywords:
 - 可选属性表单页面项 WDK 打印
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dcba3044edcbc629f8b7c470ed48be4b57e63fef
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 0d92e63a3f83186e22854b1d91acfc42de0ea662
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89207697"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96807183"
 ---
 # <a name="property-sheet-options"></a>属性表选项
 

@@ -1,19 +1,18 @@
 ---
 title: 打开并行端口
 description: 打开并行端口
-ms.assetid: c9015a01-a7cb-41f4-9710-a868ef19f6d7
 keywords:
 - 供应商提供的并行驱动程序 WDK，并行端口操作
 - 系统提供的函数驱动程序 WDK 并行端口
 - 函数驱动程序 WDK 并行端口
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f069ce37784f71055cc75a74bf89461327cb093a
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 68727729e1d092a6e1d252d9a37e12217cecb418
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89384747"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96806097"
 ---
 # <a name="operating-a-parallel-port"></a>打开并行端口
 
@@ -47,7 +46,7 @@ ms.locfileid: "89384747"
 
 [系统提供的并行驱动程序](system-supplied-parallel-drivers.md)
 
-[系统提供的并行驱动程序的客户端接口](/windows-hardware/drivers/ddi/index)
+[System-Supplied 并行驱动程序的客户端接口](/windows-hardware/drivers/ddi/index)
 
  
 

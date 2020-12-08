@@ -1,18 +1,17 @@
 ---
 title: 存储类驱动程序的常规功能
 description: 存储类驱动程序的常规功能
-ms.assetid: 4fc92d20-5570-4680-bc7b-f6e84524a672
 keywords:
 - 存储类驱动程序 WDK，功能
-- 类驱动程序 WDK 存储功能
+- 类驱动程序 WDK 存储，功能
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8669a4124f033dad43947321fc7d17ad62b2a533
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: eac83fe4169d034f51c96fe578ba5f4e323f17f0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339014"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96806673"
 ---
 # <a name="storage-class-drivers-general-functionality"></a>存储类驱动程序的常规功能
 
@@ -20,23 +19,23 @@ ms.locfileid: "63339014"
 ## <span id="ddk_storage_class_drivers_general_functionality_kg"></span><span id="DDK_STORAGE_CLASS_DRIVERS_GENERAL_FUNCTIONALITY_KG"></span>
 
 
-存储端口驱动程序存储类驱动程序是具有内置的设备类型特定功能的更高级别的驱动程序。 一般情况下，每个存储类驱动程序是负责执行以下：
+对于存储端口驱动程序，存储类驱动程序是具有内置的设备类型特定功能的较高级别的驱动程序。 通常，每个存储类驱动程序都负责以下各项：
 
--   声明由物理设备对象 (PDO) 表示每个设备传递给其*AddDevice*例程 PnP 管理器
+-   通过 PnP 管理器将 () PDO 传递到其 *AddDevice* 例程的物理设备对象表示的每个设备声明
 
--   对每个此类 PDO，创建功能的设备对象 (FDO) 并将其附加到设备堆栈
+-   对于每个此类 PDO， (FDO 创建功能设备对象) 并将其附加到设备堆栈
 
--   如果该驱动程序控制可分区的设备，创建物理设备对象 (PDOs) 来表示每个分区和响应的枚举请求
+-   如果驱动程序控制分区设备，则创建 (PDOs) 的物理设备对象，以表示每个分区并响应枚举请求
 
--   解释系统 I/O 请求 (Irp)
+-    (Irp 解释系统 i/o 请求) 
 
--   将 Irp 映射到 SCSI 类/端口接口请求 (使用 SCSI Cdb Srb)
+-   将 Irp 映射到 SCSI 类/端口接口请求 (SRBs 与 SCSI CDBs) 
 
--   建立超时值的请求
+-   为请求建立超时值
 
--   数据传输，以满足基础 HBA 的限制的大小限制
+-   限制数据传输的大小以适应基础 HBA 的限制
 
--   处理错误条件，不能处理的存储端口驱动程序，例如检查条件状态或总线重置
+-   处理存储端口驱动程序尚未处理的错误条件，如检查条件状态或总线重置
 
  
 

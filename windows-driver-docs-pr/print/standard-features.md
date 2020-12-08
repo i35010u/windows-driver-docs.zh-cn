@@ -1,18 +1,17 @@
 ---
 title: 标准功能
 description: 标准功能
-ms.assetid: 5cd90992-5ab8-4cb3-89b0-19e58e55b652
 keywords:
 - 打印机功能 WDK Unidrv，standard
 - 标准功能 WDK Unidrv
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 194b1d675683415ea73c35d5fa03471a0033a038
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 2d8371cd9fc2a7f18faed15bca16f5221c04a500
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106578"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96806883"
 ---
 # <a name="standard-features"></a>标准功能
 
@@ -36,7 +35,7 @@ ms.locfileid: "90106578"
 <tr class="header">
 <th>功能名称</th>
 <th>默认打印架构功能关键字</th>
-<th>说明</th>
+<th>描述</th>
 <th>标准选项</th>
 <th>注释</th>
 </tr>
@@ -102,7 +101,7 @@ ms.locfileid: "90106578"
 <p>默认值为 PRINTER_PROPERTY。</p></td>
 </tr>
 <tr class="even">
-<td><p><strong>打印</strong></p></td>
+<td><p><strong>方向</strong></p></td>
 <td><p><strong>PageOrientation</strong></p></td>
 <td><p>纸张方向</p></td>
 <td><p>请参阅 <a href="standard-options.md" data-raw-source="[Standard Options](standard-options.md)">标准选项</a>。</p>

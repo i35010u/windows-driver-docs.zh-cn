@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ 流 \_ FRAMETIME
 description: KSPROPERTY \_ STREAM \_ FRAMETIME 属性允许客户端根据特定的媒体流确定下一个帧的持续时间，并使用该信息来逐步处理序列。
-ms.assetid: 0cc218eb-1f21-4b45-ac48-b3e308bddfaf
 keywords:
 - KSPROPERTY_STREAM_FRAMETIME 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cd83e94f8049fbb05e1214a482bb22722d6f2ad4
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 441feac87d2fc2cee0354cde77cc560da532fc5c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103028"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96805971"
 ---
 # <a name="ksproperty_stream_frametime"></a>KSPROPERTY \_ 流 \_ FRAMETIME
 
@@ -61,7 +60,7 @@ KSPROPERTY \_ STREAM \_ FRAMETIME 属性允许客户端根据特定的媒体流�
 
  
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 KSPROPERTY \_ STREAM \_ FRAMETIME 是一个可选属性，如果 pin 识别出正在传输的媒体类型的细节，则应该实现该属性。

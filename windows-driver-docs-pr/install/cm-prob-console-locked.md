@@ -1,17 +1,16 @@
 ---
 title: CM_PROB_CONSOLE_LOCKED
 description: CM_PROB_CONSOLE_LOCKED
-ms.assetid: b2086640-0103-41ee-8d60-db1126e482de
 keywords:
 - CM_PROB_CONSOLE_LOCKED
 ms.date: 02/28/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 8c9826fed8f8a1c01f483003870bf6f9f3755946
-ms.sourcegitcommit: cfd4d8ee889c6a3feed79ae112662f6c095b6a36
+ms.openlocfilehash: 259ae62954f3d2820c07fe51e594e1bb67c15b8a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94417437"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96806279"
 ---
 # <a name="code-55---cm_prob_console_locked"></a>代码 55 - CM_PROB_CONSOLE_LOCKED
 

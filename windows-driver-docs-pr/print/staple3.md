@@ -1,36 +1,35 @@
 ---
 title: 装订
 description: 装订
-ms.assetid: 71e5bd28-cbf8-4346-884a-88d9f310c378
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2047824a664cf610b89c4909dd0605a18d66ec4e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0e30f2aa0daac54a2dbf63eda388a36f0001d6c7
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63375197"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96806847"
 ---
 # <a name="staple"></a>装订
 
 
-架构路径：\\Printer.Finishing.Staple
+架构路径： \\ Printer .. 装订
 
-节点类型： 属性
+节点类型：属性
 
-说明： 此属性包含所有描述的装订设备的信息。
+说明：此属性包含描述装订设备的所有信息。
 
-书钉属性包含一个子值，**已安装**，，是指的父[位置](location3.md)并[角度](angle2.md)属性。
+"装订" 属性包含 **已安装** 的子值，并且是 " [位置](location3.md) " 和 " [角度](angle2.md) " 属性的父项。
 
-### <a name="span-idinstalledspanspan-idinstalledspaninstalled"></a><span id="installed"></span><span id="INSTALLED"></span>安装
+### <a name="span-idinstalledspanspan-idinstalledspaninstalled"></a><span id="installed"></span><span id="INSTALLED"></span>随
 
-架构路径：\\Printer.Finishing.Staple:Installed
+架构路径： \\ Printer .. 装订：已安装
 
-节点类型： 值
+节点类型：值
 
-数据类型： BIDI\_BOOL
+数据类型：双向 \_ BOOL
 
-说明： 确定打印设备是否已安装该功能。 如果 **，则返回 TRUE**，安装该功能; 如果**FALSE**，未安装该功能。
+描述：确定打印设备是否安装了装订功能。 如果 **为 TRUE**，则安装装订功能;如果 **为 FALSE**，则不安装装订功能。
 
  
 

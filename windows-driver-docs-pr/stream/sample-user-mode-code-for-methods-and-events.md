@@ -1,7 +1,6 @@
 ---
 title: 方法和事件的示例用户模式代码
 description: 方法和事件的示例用户模式代码
-ms.assetid: 0d564eb7-8e81-43bd-b539-f1240b3a21de
 keywords:
 - 事件 WDK AVStream
 - AVStream 事件 WDK
@@ -12,12 +11,12 @@ keywords:
 - KsProxy 插件示例 WDK AVStream
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 13be118ace502872a3eb983f296a140d2e61bb1a
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: b02ad7ecb58740993085df636db71faf475b44dd
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89186317"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96806629"
 ---
 # <a name="sample-user-mode-code-for-methods-and-events"></a>方法和事件的示例用户模式代码
 
@@ -48,7 +47,7 @@ pIKsControl -> KsMethod (
     &BytesReturned);
 ```
 
-在内核模式下提供的自动化表中，可以使用[**KSMETHOD \_ 项**](/windows-hardware/drivers/ddi/ks/ns-ks-ksmethod_item)的**Flags**成员来指定该缓冲区是否为可读/写的，以及是否应进行映射或复制。
+在内核模式下提供的自动化表中，可以使用 [**KSMETHOD \_ 项**](/windows-hardware/drivers/ddi/ks/ns-ks-ksmethod_item)的 **Flags** 成员来指定该缓冲区是否为可读/写的，以及是否应进行映射或复制。
 
 若要注册你在微型驱动程序中支持的事件，请使用以下用户模式代码示例。
 
@@ -78,7 +77,7 @@ pIKsControl -> KsEvent (
     &BytesReturned);
 ```
 
-在上面的示例中，通知将继续，直到微型驱动程序禁用该事件。 禁用事件。 调用 [**IKsControl：： KsEvent**](/windows-hardware/drivers/ddi/ksproxy/nf-ksproxy-ikscontrol-ksevent)。 如果希望仅在第一次发生此事件时收到通知，请 \_ 在 KSEVENT \_ 中设置**Event.Flags**ONESHOT 类型。
+在上面的示例中，通知将继续，直到微型驱动程序禁用该事件。 禁用事件。 调用 [**IKsControl：： KsEvent**](/windows-hardware/drivers/ddi/ksproxy/nf-ksproxy-ikscontrol-ksevent)。 如果希望仅在第一次发生此事件时收到通知，请 \_ 在 KSEVENT \_ 中设置 **Event.Flags** ONESHOT 类型。
 
 如果你正在支持带有 USB 视频类扩展单元的事件，请参阅 [支持带扩展单元的自动更新事件](supporting-autoupdate-events-with-extension-units.md)。
 

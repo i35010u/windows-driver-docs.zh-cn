@@ -1,9 +1,8 @@
 ---
-title: KSEVENT\_连接\_POSITIONUPDATE
-description: KSEVENT\_连接\_POSITIONUPDATE 事件允许客户端在当前的位置收到更改通知。 更改的位置，流和相关筛选器。
-ms.assetid: 989b46aa-f88f-4e30-877d-1a8515e54a91
+title: KSEVENT \_ 连接 \_ POSITIONUPDATE
+description: KSEVENT \_ CONNECTION \_ POSITIONUPDATE 事件使客户端能够接收当前位置更改的通知。 更改的边距是流和筛选器相关的。
 keywords:
-- KSEVENT_CONNECTION_POSITIONUPDATE 流式处理媒体设备
+- KSEVENT_CONNECTION_POSITIONUPDATE 流媒体设备
 topic_type:
 - apiref
 api_name:
@@ -12,17 +11,17 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c814b289ad43481c1e16a68803d0da7e86090d4d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3c6ca819d086691d11fd84fce61f79f5973210da
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63323595"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96806665"
 ---
-# <a name="kseventconnectionpositionupdate"></a>KSEVENT\_连接\_POSITIONUPDATE
+# <a name="ksevent_connection_positionupdate"></a>KSEVENT \_ 连接 \_ POSITIONUPDATE
 
 
-**KSEVENT\_连接\_POSITIONUPDATE**事件允许客户端在当前的位置收到更改通知。 更改的位置，流和相关筛选器。
+**KSEVENT \_ CONNECTION \_ POSITIONUPDATE** 事件使客户端能够接收当前位置更改的通知。 更改的边距是流和筛选器相关的。
 
  
 

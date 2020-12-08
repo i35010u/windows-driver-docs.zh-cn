@@ -1,7 +1,6 @@
 ---
 title: SimpleService WSDL
 description: SimpleService WSDL
-ms.assetid: 4fb5fcb7-9821-47c8-ae0d-3e73f8ee30c5
 keywords:
 - WSDBIT 工具 WDK，WSDL
 - WSDAPI 基本互操作性工具 WDK、WSDL
@@ -10,12 +9,12 @@ keywords:
 - WSDAPI 基本互操作性工具 WDK，服务
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cc468a2552826d99a317e9940c5a826a3c840add
-ms.sourcegitcommit: 17c1bbc5ea0bef3bbc87794b030a073f905dc942
+ms.openlocfilehash: 71186553b659046906fb3c429962e31da18e5d78
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88802629"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96805697"
 ---
 # <a name="simpleservice-wsdl"></a>SimpleService WSDL
 

@@ -1,15 +1,14 @@
 ---
 title: 动态配置 MSI-X
 description: 动态配置 MSI-X
-ms.assetid: 53051239-e00f-41e8-b95d-9618693e696d
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: ec25b844e9097b1c8c7286a8b5f6298ae3a84e0f
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 131af17f49d83802ce0bfd7485add1e117bd47c4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89190713"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96806217"
 ---
 # <a name="dynamically-configuring-msi-x"></a>动态配置 MSI-X
 
@@ -24,7 +23,7 @@ Windows Vista Service Pack 1 (SP1) 、Windows Server 2008 和更高版本的操�
 
 -   [*UnmaskTableEntry*](/previous-versions/windows/hardware/drivers/gg604859(v=vs.85)) 解除对应于硬件表条目的中断。
 
-默认情况下，会对中断表进行配置，以便第一个条目的消息 ID 为0，第二个条目的消息 ID 为1，依此类推。 如果表项的数目超过消息数，则为每个附加表项分配消息 ID 零。  (消息 ID 是用于描述驱动程序的消息终止中断的[**IO \_ 中断 \_ 消息 \_ 信息**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_interrupt_message_info)结构的**MessageInfo**成员中的中断条目的索引。 [**IoConnectInterruptEx**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioconnectinterruptex)例程提供指向此结构的指针。 ) 
+默认情况下，会对中断表进行配置，以便第一个条目的消息 ID 为0，第二个条目的消息 ID 为1，依此类推。 如果表项的数目超过消息数，则为每个附加表项分配消息 ID 零。  (消息 ID 是用于描述驱动程序的消息终止中断的 [**IO \_ 中断 \_ 消息 \_ 信息**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_interrupt_message_info)结构的 **MessageInfo** 成员中的中断条目的索引。 [**IoConnectInterruptEx**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioconnectinterruptex)例程提供指向此结构的指针。 ) 
 
  
 

@@ -1,7 +1,6 @@
 ---
 title: FltAcquireResourceShared 例程
 description: FltAcquireResourceShared 例程通过调用线程获取用于共享访问的给定资源。
-ms.assetid: 5232cdba-1050-46b6-8c21-177d4cd1721d
 keywords:
 - FltAcquireResourceShared 例程可安装文件系统驱动程序
 topic_type:
@@ -15,28 +14,28 @@ api_type:
 - LibDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 303ae5cda35de94d8ed8251e418cae5f95bc5c46
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 934bf430ad0ff9c31908455ec91b198baa872cb4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89063612"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96806303"
 ---
 # <a name="fltacquireresourceshared-routine"></a>FltAcquireResourceShared 例程
 
 
-**FltAcquireResourceShared**例程通过调用线程获取用于共享访问的给定资源。
+**FltAcquireResourceShared** 例程通过调用线程获取用于共享访问的给定资源。
 
 <a name="syntax"></a>语法
 ------
 
 ```ManagedCPlusPlus
 VOID FltAcquireResourceShared(
-  _Inout_ PERESOURCE Resource
+  _Inout_ PERESOURCE Resource
 );
 ```
 
-<a name="parameters"></a>parameters
+<a name="parameters"></a>参数
 ----------
 
 *资源* \[in、out\]  
@@ -52,7 +51,7 @@ VOID FltAcquireResourceShared(
 
 此例程在 Microsoft Windows XP SP2、Microsoft Windows Server 2003 SP1 及更高版本上可用。
 
-**FltAcquireResourceShared**例程通过调用线程获取用于共享访问的给定资源。
+**FltAcquireResourceShared** 例程通过调用线程获取用于共享访问的给定资源。
 
 是否向调用方授予对给定资源的共享访问权限取决于以下各项：
 
@@ -66,9 +65,9 @@ VOID FltAcquireResourceShared(
 
 **FltAcquireResourceShared** 是用于禁用正常内核 APC 传递的 [**ExAcquireResourceSharedLite**](/previous-versions/ff544363(v=vs.85)) 的包装。
 
-因为**FltAcquireResourceShared**禁用正常内核 APC 传递，所以在调用**FltAcquireResourceShared**之前无需调用[**KeEnterCriticalRegion**](/windows-hardware/drivers/ddi/ntddk/nf-ntddk-keentercriticalregion)或[**FsRtlEnterFileSystem**](fsrtlenterfilesystem.md) 。
+因为 **FltAcquireResourceShared** 禁用正常内核 APC 传递，所以在调用 **FltAcquireResourceShared** 之前无需调用 [**KeEnterCriticalRegion**](/windows-hardware/drivers/ddi/ntddk/nf-ntddk-keentercriticalregion)或 [**FsRtlEnterFileSystem**](fsrtlenterfilesystem.md) 。
 
-若要在获取资源后释放资源，请调用 [**FltReleaseResource**](fltreleaseresource.md)。 必须通过对**FltReleaseResource**的后续调用来匹配每个对**FltAcquireResourceShared**的成功调用。
+若要在获取资源后释放资源，请调用 [**FltReleaseResource**](fltreleaseresource.md)。 必须通过对 **FltReleaseResource** 的后续调用来匹配每个对 **FltAcquireResourceShared** 的成功调用。
 
 若要获取独占访问的资源，请调用 [**FltAcquireResourceExclusive**](fltacquireresourceexclusive.md)。
 
@@ -106,7 +105,7 @@ VOID FltAcquireResourceShared(
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**ExAcquireResourceSharedLite**](/previous-versions/ff544363(v=vs.85))

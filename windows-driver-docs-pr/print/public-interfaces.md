@@ -1,20 +1,19 @@
 ---
 title: 公共接口
 description: 公共接口
-ms.assetid: 3913c921-dda2-404c-b608-add9d74df21d
 keywords:
-- 后台处理程序通知 WDK 打印的公共接口
+- 后台处理程序通知 WDK 打印，公共接口
 - 打印后台处理程序通知 WDK，公共接口
 - 公共接口 WDK 后台处理程序通知
 - 接口 WDK 后台处理程序通知
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f5c5ab8155238038a67da5ab026eef388d052e72
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1e85d3dbca78af58518842972e2679b95b58e0c2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63372453"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96807115"
 ---
 # <a name="public-interfaces"></a>公共接口
 
@@ -22,11 +21,11 @@ ms.locfileid: "63372453"
 
 
 
-本部分介绍构成了后台处理程序通知的公共 COM 接口。 讨论了以下主题。
+本部分介绍构成后台处理程序通知的公共 COM 接口。 讨论了以下主题。
 
 [通知筛选和通信样式](notification-filtering-and-communication-styles.md)
 
-[这两个点的通知通道实现的接口](interfaces-implemented-at-both-ends-of-the-notification-channel.md)
+[在通知通道两端实现的接口](interfaces-implemented-at-both-ends-of-the-notification-channel.md)
 
 [通知数据对象](notification-data-object.md)
 

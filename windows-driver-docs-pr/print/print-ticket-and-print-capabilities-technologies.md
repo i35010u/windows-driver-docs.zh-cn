@@ -1,7 +1,6 @@
 ---
 title: 打印票证和打印功能技术
 description: 打印票证和打印功能技术
-ms.assetid: 12b1881f-1a45-4e7e-a876-b2ca4c9458f9
 keywords:
 - 打印机驱动程序 WDK，打印票证
 - 打印机驱动程序 WDK，打印功能
@@ -10,12 +9,12 @@ keywords:
 - 打印入场券 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4164515db24be6f60fcc2ea567a2ab8212f333f4
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: a8546f5553906bf937d748b0efaf899e711bd075
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89207107"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96807429"
 ---
 # <a name="print-ticket-and-print-capabilities-technologies"></a>打印票证和打印功能技术
 

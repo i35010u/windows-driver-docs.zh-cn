@@ -1,19 +1,18 @@
 ---
 title: 标准变量
 description: 标准变量
-ms.assetid: d3f85c0f-7387-4301-8b1e-904471aed4b0
 keywords:
 - GPD 文件条目 WDK Unidrv，标准变量
 - 变量 WDK GPD 文件
 - 标准变量 WDK GPD 文件
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2a2edf4de348d66f0e522b1024fb0ddc02b58767
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 0deb492838254788d4500104ca0e54a08c5091ae
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102770"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96806855"
 ---
 # <a name="standard-variables"></a>标准变量
 

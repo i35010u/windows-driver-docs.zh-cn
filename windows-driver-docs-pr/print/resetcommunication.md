@@ -1,20 +1,19 @@
 ---
 title: ResetCommunication
 description: ResetCommunication
-ms.assetid: d99bf222-274a-4ab4-b45b-a466d8fc11cd
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 984e7ba6bc5e566e52850a0c0e748bf4c5ad1e7d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d9fe8b473ccfcf21cdc5669b0b40fe0ffb674693
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63382571"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96807025"
 ---
 # <a name="resetcommunication"></a>ResetCommunication
 
 
-`ResetCommunication`命令尝试确保打印机与操作系统之间的通信是否正常工作。
+该 `ResetCommunication` 命令尝试确保打印机和操作系统之间的通信正常工作。
 
  
 

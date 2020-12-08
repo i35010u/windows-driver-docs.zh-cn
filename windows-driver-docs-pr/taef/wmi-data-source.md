@@ -1,15 +1,14 @@
 ---
 title: WMI 数据源
 description: WMI 数据源
-ms.assetid: 1C9D0EEC-6542-4249-B7E0-CA3ED63FB120
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cfe2f28e487a0dd48106225c101996af591bf197
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: 8a3689a8cdc570a2178985748a20694ea0389c7a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89403264"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96806579"
 ---
 # <a name="wmi-data-source"></a>WMI 数据源
 

@@ -1,36 +1,35 @@
 ---
 title: 条形码扫描仪蓝牙服务 UUID
-description: 本主题介绍使用蓝牙服务发现协议 (SDP) 与条码扫描器的 Uuid。
-ms.assetid: 354654EC-95C8-4BE9-83D3-0926A1E71221
+description: 本主题介绍与用于条形码扫描器 (SDP) 的蓝牙服务发现协议一起使用的 Uuid。
 ms.date: 02/14/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 6b6a272f76e803de67fe2d7cd3567e7e07fbddee
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5b68942ba8eba34a6927705aa4804f71b746fe6c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63358682"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96806043"
 ---
 # <a name="barcode-scanner-bluetooth-service-uuids"></a>条形码扫描仪蓝牙服务 UUID
 
-本主题介绍使用蓝牙服务发现协议 (SDP) 与条码扫描器的 Uuid。
+本主题介绍与用于条形码扫描器 (SDP) 的蓝牙服务发现协议一起使用的 Uuid。
 
-## <a name="bluetooth-barcode-scanner-uuids"></a>蓝牙条码扫描器的 Uuid
+## <a name="bluetooth-barcode-scanner-uuids"></a>蓝牙条形码扫描仪 UUID
 
-以下 Uuid 用于标识在发现期间提供的蓝牙条形码扫描程序服务。
+以下 Uuid 用于标识蓝牙条形码扫描器在发现过程中提供的服务。
 
 ### <a name="ssi-service-uuid"></a>SSI 服务 UUID
 
-以下 UUID 标识蓝牙条码扫描器的 SSI 服务。 蓝牙在发现期间公开此 UUID 的设备将被识别为现成驱动程序支持的条形码扫描程序。
+以下 UUID 标识蓝牙条形码扫描器的 SSI 服务。 在蓝牙发现期间公开此 UUID 的设备将被识别为内置驱动程序支持的条形码扫描仪。
 
 ```cpp
 DEFINE_GUID(BarcodeScannerSimpleSerialInterfaceServiceClass_UUID, 
 0xA1220169, 0xE854, 0x473E, 0x9C, 0xB5, 0x87, 0x3A, 0xCB, 0xDF, 0x1F, 0x13)
 ```
 
-### <a name="reserved-for-future-use"></a>保留供将来使用
+### <a name="reserved-for-future-use"></a>保留以供将来使用
 
-以下 UUID 不支持在 Windows 10，版本 1703，但已保留供将来使用 ISCP。
+Windows 10 版本1703不支持以下 UUID，但保留该 UUID 供将来用于 ISCP。
 
 ```cpp
 DEFINE_GUID(BarcodeScannerIntermecScannerCommunicationProtocolServiceClass_UUID, 

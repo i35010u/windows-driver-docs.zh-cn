@@ -1,15 +1,14 @@
 ---
 title: 微型驱动程序和 HID 类驱动程序
 description: HID 类驱动程序的操作
-ms.assetid: 3A8F5545-F8EB-47E2-989D-7DE83E32110E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0a26ac4120b59a7e42de7e5cf7514c10b5daa04e
-ms.sourcegitcommit: a44ade167cdfb541cf1818e9f9e3726f23f90b66
+ms.openlocfilehash: 9910c1d77549b1182594432f9e29437a884590f7
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94361399"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96805609"
 ---
 # <a name="minidrivers-and-the-hid-class-driver"></a>微型驱动程序和 HID 类驱动程序
 
@@ -34,13 +33,13 @@ HID 类驱动程序执行以下操作：
 
 -   通过调用微型驱动程序的标准驱动程序例程与 HID 微型驱动程序通信。
 
--   为较低级别的总线或端口驱动程序枚举的 HIDClass 输入设备 ( *FDO* ) 创建一个功能设备对象。
+-   为较低级别的总线或端口驱动程序枚举的 HIDClass 输入设备 (*FDO*) 创建一个功能设备对象。
 
     例如，HID 类驱动程序创建并管理 FDO 的操作，该设备表示由系统提供的 USB 驱动程序堆栈枚举的 USB HID 设备。
 
 -   提供基础设备的总线驱动程序功能，这些设备 (的 HID 集合) 基础输入设备支持。
 
-    HID 类驱动程序为输入设备支持的每个 HID 集合创建一个物理设备对象 ( *PDO* ) ，并管理集合的操作。
+    HID 类驱动程序为输入设备支持的每个 HID 集合创建一个物理设备对象 (*PDO*) ，并管理集合的操作。
 
 ### <a name="binding-a-minidriver-to-hidclass"></a>将微型驱动程序绑定到 HIDClass
 
@@ -78,7 +77,7 @@ HID 类驱动程序通过调用 HID 微型驱动程序的 [*AddDevice*](/windows
 
 ### <a name="calling-the-adddevice-routine"></a>调用 AddDevice 例程
 
-当调用 HID 类驱动程序的 **AddDevice** 例程来创建)  ( *FDO* 的功能设备对象时，HID 类驱动程序将创建 FDO，对其进行初始化，并调用 HID 微型驱动程序 **AddDevice** 例程。 HID 微型驱动程序 **AddDevice** 例程执行特定于设备的内部初始化，如果成功，则返回状态 " \_ 成功"。 如果 HID 微型驱动程序 **AddDevice** 例程不成功，则 hid 类驱动程序将删除 FDO 并返回 HID 微型驱动程序 **AddDevice** 例程返回的状态。
+当调用 HID 类驱动程序的 **AddDevice** 例程来创建)  (*FDO* 的功能设备对象时，HID 类驱动程序将创建 FDO，对其进行初始化，并调用 HID 微型驱动程序 **AddDevice** 例程。 HID 微型驱动程序 **AddDevice** 例程执行特定于设备的内部初始化，如果成功，则返回状态 " \_ 成功"。 如果 HID 微型驱动程序 **AddDevice** 例程不成功，则 hid 类驱动程序将删除 FDO 并返回 HID 微型驱动程序 **AddDevice** 例程返回的状态。
 
 ### <a name="calling-the-unload-routine"></a>调用 Unload 例程
 
@@ -126,7 +125,7 @@ Microsoft 建议仅在 Windows 8 上使用基于框架的解决方案 (KMDF 或 
 
 ### <a name="hid-minidriver-extension"></a>HID 微型驱动程序扩展
 
-HID 微型驱动程序设备扩展是特定于设备的，仅供 HID 微型驱动程序使用。 类驱动程序为功能设备对象创建其设备扩展 ( *FDO* ) 时，HID 类驱动程序为微型驱动程序设备扩展分配内存。 在将微型驱动程序注册到 HID 类驱动程序时，HID 微型驱动程序指定其设备扩展的大小。 该大小由 [**HID \_ 微型驱动程序 \_ 注册**](/windows-hardware/drivers/ddi/hidport/ns-hidport-_hid_minidriver_registration)结构的 **DeviceExtensionSize** 成员指定。
+HID 微型驱动程序设备扩展是特定于设备的，仅供 HID 微型驱动程序使用。 类驱动程序为功能设备对象创建其设备扩展 (*FDO*) 时，HID 类驱动程序为微型驱动程序设备扩展分配内存。 在将微型驱动程序注册到 HID 类驱动程序时，HID 微型驱动程序指定其设备扩展的大小。 该大小由 [**HID \_ 微型驱动程序 \_ 注册**](/windows-hardware/drivers/ddi/hidport/ns-hidport-_hid_minidriver_registration)结构的 **DeviceExtensionSize** 成员指定。
 
 ### <a name="using-the-hid_device_extension-structure"></a><a href="" id="using-the-hid-device-extension-structure"></a>使用 HID \_ 设备 \_ 扩展结构
 
@@ -176,7 +175,7 @@ HID 微型驱动程序中的 [**DriverEntry**](/windows-hardware/drivers/ddi/wdm
 
 ### <a name="adddevice-routine"></a>AddDevice 例程
 
-HID 类驱动程序处理为基础输入设备 ( *FDO* ) 创建和初始化功能设备对象。 HID 类驱动程序还会将 FDO 从顶级接口的角度操作到基础设备，并将其子设备 (HID 集合) 。
+HID 类驱动程序处理为基础输入设备 (*FDO*) 创建和初始化功能设备对象。 HID 类驱动程序还会将 FDO 从顶级接口的角度操作到基础设备，并将其子设备 (HID 集合) 。
 
 HID 类 driver [*AddDevice*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_add_device) 例程调用 Hid 微型驱动程序 *AddDevice* 例程，使微型驱动程序可以执行特定于设备的初始化。
 
@@ -196,7 +195,7 @@ HID 类驱动程序的卸载例程调用 HID 微型驱动程序 Unload 例程。
 
 ### <a name="dispatch-routines"></a>调度例程
 
-HID 微型驱动程序必须提供以下调度例程：创建、关闭、内部设备控制、系统控制、即插即用和电源管理。 除了内部设备控制请求以外，其中的大多数调度例程均提供最小功能。 当 HID 类驱动程序调用这些调度例程时，它会将微型驱动程序驱动程序对象和功能设备对象传递 ( *FDO* ) 。
+HID 微型驱动程序必须提供以下调度例程：创建、关闭、内部设备控制、系统控制、即插即用和电源管理。 除了内部设备控制请求以外，其中的大多数调度例程均提供最小功能。 当 HID 类驱动程序调用这些调度例程时，它会将微型驱动程序驱动程序对象和功能设备对象传递 (*FDO*) 。
 
 ### <a name="irp_mj_create"></a><a href="" id="irp-mj-create"></a>IRP \_ MJ \_ 创建
 

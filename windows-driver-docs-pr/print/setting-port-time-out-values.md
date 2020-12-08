@@ -1,7 +1,6 @@
 ---
 title: 设置端口超时值
 description: 设置端口超时值
-ms.assetid: bf39670b-440d-46f9-9110-790d36eb3b49
 keywords:
 - 端口管理 WDK 打印，超时值
 - 超时 WDK 打印
@@ -9,12 +8,12 @@ keywords:
 - SetPortTimeOuts
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a1b49d4ed7b244a2af388416097eb5b0d1ef87e4
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 209e30f5742693decb6429c6a933d48f13c9e300
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89216338"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96806915"
 ---
 # <a name="setting-port-time-out-values"></a>设置端口超时值
 

@@ -1,7 +1,6 @@
 ---
 title: ndiskd.ndisevent
 description: ！ Ndiskd ndisevent 扩展显示 NDIS 调试事件日志。
-ms.assetid: E042CA22-6521-4DD4-9396-39EC587706D6
 keywords:
 - ndiskd ndisevent Windows 调试
 ms.date: 05/23/2017
@@ -12,18 +11,18 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: c8a78a65eb32f1bfbc866166d970c95fd3843c51
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 86fb6b2279ec4523d31118fa42dfcb36cd1bd715
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89206871"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96805829"
 ---
 # <a name="ndiskdndisevent"></a>!ndiskd.ndisevent
 
-**注意**   第三方网络驱动程序开发人员不需要手动使用此扩展命令。 您可以运行它来查看它所显示的信息，但不能重复使用它在您的驱动程序中提供的详细信息。
+**注意**  第三方网络驱动程序开发人员不需要手动使用此扩展命令。 您可以运行它来查看它所显示的信息，但不能重复使用它在您的驱动程序中提供的详细信息。
 
-**！ Ndiskd ndisevent**扩展显示 NDIS 调试事件日志。
+**！ Ndiskd ndisevent** 扩展显示 NDIS 调试事件日志。
 
 ```console
 !ndiskd.ndisevent -handle <x> [-tagtype <str>]
@@ -154,7 +153,7 @@ MINIPORT PM & PNP EVENTS
     Set a breakpoint on the next event
 ```
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [网络驱动程序设计指南](../network/index.md)
 
@@ -162,7 +161,7 @@ MINIPORT PM & PNP EVENTS
 
 [调试网络堆栈](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-175-Debugging-the-Network-Stack)
 
-[**NDIS 扩展 ( # A0) **](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 扩展 ( # A0)**](ndis-extensions--ndiskd-dll-.md)
 
 [**!ndiskd.help**](-ndiskd-help.md)
 

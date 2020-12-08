@@ -1,15 +1,14 @@
 ---
 title: 调用 PCMCIA_INTERFACE_STANDARD 接口例程
 description: 调用 PCMCIA_INTERFACE_STANDARD 接口例程
-ms.assetid: 468d2037-a7d5-4851-9f41-d1e6c9006750
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4b47075432cf94570ae8ad3e8bea2bfbb6582a6c
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: a2c0bb23e241fb27d32bf13708ff23beb6521434
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89384811"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96806055"
 ---
 # <a name="calling-a-pcmcia_interface_standard-interface-routine"></a>调用 PCMCIA \_ 接口 \_ 标准接口例程
 

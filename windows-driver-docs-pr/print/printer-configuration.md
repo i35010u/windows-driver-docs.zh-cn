@@ -1,7 +1,6 @@
 ---
 title: 打印机配置
 description: 打印机配置
-ms.assetid: bbde600b-3ac1-4d37-bcc6-037a9527fb27
 keywords:
 - 安装驱动程序 WDK 打印机，configurng 打印机
 - 打印机驱动程序安装 WDK，配置打印机
@@ -9,17 +8,17 @@ keywords:
 - 打印机驱动程序 WDK，配置
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ec3219c21d6d0d2a531a422dc68d6b6e38b09feb
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e8fcfccfa9bb0cae18c188da7d73d34e10df26f0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63370927"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96807347"
 ---
 # <a name="printer-configuration"></a>打印机配置
 
 
-本部分包括以下主题：
+本节包括下列主题：
 
 [通用描述语言](generic-description-language.md)
 

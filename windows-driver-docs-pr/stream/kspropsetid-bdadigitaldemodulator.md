@@ -1,60 +1,59 @@
 ---
-title: KSPROPSETID\_BdaDigitalDemodulator
-description: KSPROPSETID\_BdaDigitalDemodulator
-ms.assetid: 536c247d-049b-4d48-96b7-f2aa01f1fa91
+title: KSPROPSETID \_ BdaDigitalDemodulator
+description: KSPROPSETID \_ BdaDigitalDemodulator
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ab3c5945c68444e0134f383640a330368b52276f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 86e35dcc04dac121306cf06448a1067de83852ae
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63389228"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96806639"
 ---
-# <a name="kspropsetidbdadigitaldemodulator"></a>KSPROPSETID\_BdaDigitalDemodulator
+# <a name="kspropsetid_bdadigitaldemodulator"></a>KSPROPSETID \_ BdaDigitalDemodulator
 
 
 ## <span id="ddk_kspropsetid_bdadigitaldemodulator_ks"></span><span id="DDK_KSPROPSETID_BDADIGITALDEMODULATOR_KS"></span>
 
 
-KSPROPSETID\_BdaDigitalDemodulator 是 BDA 数字解调器属性集。 它用于控制需要要设置特定值的信号解调器节点。
+KSPROPSETID \_ BdaDigitalDemodulator 是 BDA 数字解调器属性集。 它用于控制需要设置特定值的信号解调器节点。
 
-可用属性如下：
+以下属性可用：
 
-<span id="KSPROPERTY_BDA_MODULATION_TYPE"></span><span id="ksproperty_bda_modulation_type"></span>[**KSPROPERTY\_BDA\_MODULATION\_TYPE**](ksproperty-bda-modulation-type.md)  
-设置或检索解调器类型，例如 QPSK 或 8VSB。
+<span id="KSPROPERTY_BDA_MODULATION_TYPE"></span><span id="ksproperty_bda_modulation_type"></span>[**KSPROPERTY \_ BDA \_ 调制 \_ 类型**](ksproperty-bda-modulation-type.md)  
+设置或检索解调器类型，如 QPSK 或8VSB。
 
-<span id="KSPROPERTY_BDA_INNER_FEC_TYPE"></span><span id="ksproperty_bda_inner_fec_type"></span>[**KSPROPERTY\_BDA\_内部\_FEC\_类型**](ksproperty-bda-inner-fec-type.md)  
-设置或检索内部转发错误纠错 (FEC) 类型。
+<span id="KSPROPERTY_BDA_INNER_FEC_TYPE"></span><span id="ksproperty_bda_inner_fec_type"></span>[**KSPROPERTY \_ BDA \_ 内 \_ FEC \_ 类型**](ksproperty-bda-inner-fec-type.md)  
+设置或检索 FEC) 类型的内部正向错误 (更正。
 
-<span id="KSPROPERTY_BDA_INNER_FEC_RATE"></span><span id="ksproperty_bda_inner_fec_rate"></span>[**KSPROPERTY\_BDA\_内部\_FEC\_速率**](ksproperty-bda-inner-fec-rate.md)  
-设置或检索用于内部 FEC.的二进制卷积方案
+<span id="KSPROPERTY_BDA_INNER_FEC_RATE"></span><span id="ksproperty_bda_inner_fec_rate"></span>[**KSPROPERTY \_ BDA \_ 内 \_ FEC \_ 速率**](ksproperty-bda-inner-fec-rate.md)  
+设置或检索用于内部 FEC 的二进制卷积方案。
 
-<span id="KSPROPERTY_BDA_OUTER_FEC_TYPE"></span><span id="ksproperty_bda_outer_fec_type"></span>[**KSPROPERTY\_BDA\_OUTER\_FEC\_类型**](ksproperty-bda-outer-fec-type.md)  
+<span id="KSPROPERTY_BDA_OUTER_FEC_TYPE"></span><span id="ksproperty_bda_outer_fec_type"></span>[**KSPROPERTY \_ BDA \_ OUTER \_ FEC \_ 类型**](ksproperty-bda-outer-fec-type.md)  
 设置或检索外部 FEC 类型。
 
-<span id="KSPROPERTY_BDA_OUTER_FEC_RATE"></span><span id="ksproperty_bda_outer_fec_rate"></span>[**KSPROPERTY\_BDA\_OUTER\_FEC\_速率**](ksproperty-bda-outer-fec-rate.md)  
-设置或检索二进制卷积编码用于外部 FEC.方案
+<span id="KSPROPERTY_BDA_OUTER_FEC_RATE"></span><span id="ksproperty_bda_outer_fec_rate"></span>[**KSPROPERTY \_ BDA \_ OUTER \_ FEC \_ RATE**](ksproperty-bda-outer-fec-rate.md)  
+设置或检索用于外部 FEC 的二进制卷积编码方案。
 
-<span id="KSPROPERTY_BDA_SYMBOL_RATE"></span><span id="ksproperty_bda_symbol_rate"></span>[**KSPROPERTY\_BDA\_SYMBOL\_RATE**](ksproperty-bda-symbol-rate.md)  
-设置或检索的符号速率。
+<span id="KSPROPERTY_BDA_SYMBOL_RATE"></span><span id="ksproperty_bda_symbol_rate"></span>[**KSPROPERTY \_ BDA \_ 符号 \_ 速率**](ksproperty-bda-symbol-rate.md)  
+设置或检索符号速率。
 
-<span id="KSPROPERTY_BDA_SPECTRAL_INVERSION"></span><span id="ksproperty_bda_spectral_inversion"></span>[**KSPROPERTY\_BDA\_SPECTRAL\_INVERSION**](ksproperty-bda-spectral-inversion.md)  
-设置或检索光谱反转的设置。
+<span id="KSPROPERTY_BDA_SPECTRAL_INVERSION"></span><span id="ksproperty_bda_spectral_inversion"></span>[**KSPROPERTY \_ BDA \_ SPECTRAL \_ 反转**](ksproperty-bda-spectral-inversion.md)  
+设置或检索 spectral 反转的设置。
 
-<span id="KSPROPERTY_BDA_GUARD_INTERVAL"></span><span id="ksproperty_bda_guard_interval"></span>[**KSPROPERTY\_BDA\_GUARD\_INTERVAL**](ksproperty-bda-guard-interval.md)  
-设置或检索防护间隔的设置。
+<span id="KSPROPERTY_BDA_GUARD_INTERVAL"></span><span id="ksproperty_bda_guard_interval"></span>[**KSPROPERTY \_ BDA \_ GUARD \_ 间隔**](ksproperty-bda-guard-interval.md)  
+设置或检索临界间隔的设置。
 
-<span id="KSPROPERTY_BDA_TRANSMISSION_MODE"></span><span id="ksproperty_bda_transmission_mode"></span>[**KSPROPERTY\_BDA\_传输\_模式**](ksproperty-bda-transmission-mode.md)  
-设置或检索有关如何广播信号进行传输的设置。
+<span id="KSPROPERTY_BDA_TRANSMISSION_MODE"></span><span id="ksproperty_bda_transmission_mode"></span>[**KSPROPERTY \_ BDA \_ 传输 \_ 模式**](ksproperty-bda-transmission-mode.md)  
+设置或检索如何传输广播信号的设置。
 
-### <a name="comments"></a>备注
+### <a name="comments"></a>注释
 
-KSPROPSETID\_BdaDigitalDemodulator 属性集介绍 DVB 解调器节点的属性。 使用此属性集，而不是 KSPROPSETID\_BdaAutodemodulate 如果解调器要求要设置特定值。
+KSPROPSETID \_ BdaDigitalDemodulator 属性集描述了 DVB 解调器节点的属性。 如果需要设置特定值，请使用此属性集而不是 KSPROPSETID \_ BdaAutodemodulate。
 
-### <a name="see-also"></a>请参阅
+### <a name="see-also"></a>另请参阅
 
-[KSPROPSETID\_BdaAutodemodulate](kspropsetid-bdaautodemodulate.md)
+[KSPROPSETID \_ BdaAutodemodulate](kspropsetid-bdaautodemodulate.md)
 
  
 

@@ -1,7 +1,6 @@
 ---
 title: 选择流格式
 description: 选择流格式
-ms.assetid: 876eca52-4d5e-45bd-90df-ff4b6405078d
 keywords:
 - 视频捕获 WDK AVStream，流格式
 - 捕获视频 WDK AVStream，流格式
@@ -12,12 +11,12 @@ keywords:
 - 与 WDK 视频捕获交集
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3aff211fc27a393debd5550032d66d3f3168f1dd
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 89d073ec656849e9ebcb73368b19cb0751db52bc
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89186315"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96806613"
 ---
 # <a name="selecting-a-stream-format"></a>选择流格式
 

@@ -1,18 +1,17 @@
 ---
 title: Pscript 组件
 description: Pscript 组件
-ms.assetid: 9f3bd004-e62c-42b6-99da-045c12e088a3
 keywords:
 - PostScript 打印机驱动程序 WDK 打印，组件
 - Pscript WDK 打印，组件
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5534b3539d97a8bcc06e977ff80a61265f28ceaa
-ms.sourcegitcommit: a44ade167cdfb541cf1818e9f9e3726f23f90b66
+ms.openlocfilehash: b3eb85b35733b35915496d62eb55a9da905ba188
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94361379"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96807167"
 ---
 # <a name="pscript-components"></a>Pscript 组件
 

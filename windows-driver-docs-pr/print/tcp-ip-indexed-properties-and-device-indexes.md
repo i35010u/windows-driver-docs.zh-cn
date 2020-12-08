@@ -1,36 +1,35 @@
 ---
 title: TCP/IP 带索引属性和设备索引
 description: TCP/IP 带索引属性和设备索引
-ms.assetid: b26b0c18-1787-43e0-8461-acfbd9fb38f9
 keywords:
 - TCP/IP 索引属性 WDK 打印机
-- 索引的属性 WDK 打印机
+- 索引属性 WDK 打印机
 - 设备索引 WDK 打印机
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: debaae0b9b7525edd897c6cb364263f98ea209e9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3690352687d134481ccdf07cbe3718bcb9024475
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63388066"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96806765"
 ---
 # <a name="tcpip-indexed-properties-and-device-indexes"></a>TCP/IP 带索引属性和设备索引
 
 
-索引的属性启用要追加到架构属性名称，从而支持多个相关的属性，以共享相同的名称，但每个都有一个数字索引来标识的单个属性的数字索引。 索引值必须是正整数，但其大小上没有上限。 架构查询确定与特定元素相关联的索引值。 此机制允许您访问 MIB 表中的数据。
+利用索引属性，可以将数字索引追加到架构属性名称，从而使多个相关属性共享同一名称，但每个属性都有一个数字索引来识别单个属性。 索引值必须是正整数，但大小没有上限。 架构查询确定应该与特定元素关联的索引值。 此机制允许您访问 MIB 表中的数据。
 
-IndexedProperty 构造定义的索引的属性。 以下限制适用于此构造。
+IndexedProperty 构造定义索引属性。 以下限制适用于此构造。
 
--   IndexedProperty 构造不能为父属性构造。 NonIndexedProperty 构造是指定义不包含下一个 IndexedProperty 构造索引的属性。
+-   IndexedProperty 构造不能是属性构造的父级。 NonIndexedProperty 构造是指在 IndexedProperty 构造下定义不含索引的属性。
 
--   IndexedProperty 构造和 NonIndexedProperty 构造都不可以是已安装构造的父级。
+-   IndexedProperty 构造和 NonIndexedProperty 构造都不能是已安装的构造的父级。
 
-查询还可能涉及到另一个索引： 设备索引。 支持 SNMP 的网络设备可以是各种子设备，包括打印机的主机。 网络打印机中的 MIB 表中具有根据设备类型 （设备索引） 编制索引的条目。 为了使 MIB 表中检索数据的查询，查询必须具有正确的设备索引。 标准 TCP/IP 端口监视器允许设备索引配置的端口配置 UI。 在其中一个 bidi 扩展**deviceIndex**设置为**TRUE** (请参阅[值](value.md)并[已安装](installed2.md)构造) 会导致生成的 OID具有设备索引连接到原始的 OID。 如果使用，索引属性的索引被连接到设备索引后，该 OID。
+查询还可以涉及到另一索引：设备索引。 支持 SNMP 的网络设备可以是各种 subdevices （包括打印机）的主机。 网络打印机中的 MIB 表中的条目按设备索引)  (设备类型进行索引。 为了让查询从 MIB 表中检索数据，该查询必须具有正确的设备索引。 标准 TCP/IP 端口监视器允许端口配置 UI 配置设备索引。 一个双向扩展，其中 **deviceIndex** 设置为 **TRUE** (查看 [值](value.md) 和 [已安装](installed2.md) 的构造) 导致生成 oid，同时将设备索引连接到原始 OID。 如果使用索引属性，则会将其索引连接到设备索引后的 OID。
 
 ### <a name="code-example"></a>代码示例
 
-下面的代码示例通过添加扩展 TCP/IP bidi 通信架构**Display**属性设置为**打印机**属性。 此外，**显示**属性的索引的属性**行**，并且具有**deviceIndex**设置为**TRUE**。 如下所示的架构将生成从打印机的显示中的特定行中检索文本的查询。
+下面的代码示例通过向 **Printer** 属性添加 **显示** 属性来扩展 tcp/ip 双向通信架构。 此外， **显示** 属性具有索引属性 **行**，并将 **deviceIndex** 设置为 **TRUE**。 此处所示的架构将生成一个查询，该查询将检索打印机显示的特定行中的文本。
 
 ```cpp
 <Property name="Printer">
@@ -43,13 +42,13 @@ IndexedProperty 构造定义的索引的属性。 以下限制适用于此构造
 </Property>
 ```
 
-前面的示例生成以下查询：
+前面的示例将生成以下查询：
 
 ```cpp
 \Printer.Display.Row1:Text
 ```
 
-此示例中生成的 OID 启动相同**oid**属性中**值**属性，但具有两个附加到它的索引。 在示例中的追加的索引源于**deviceIndex**属性设置为**TRUE**和**行**被索引的属性。 假定端口配置 UI 定义设备索引为 111，和感兴趣的打印机的显示的第 1 行中的文本，生成的 OID 将 1.3.6.1.2.1.43.16.5.1.2.111.1。 此 OID 等同于原始设备索引 (111) 和结束属性索引 (1) 除外。 如果**deviceIndex**设置为**FALSE**或省略，则生成的 OID 是 1.3.6.1.2.1.43.16.5.1.2.1。 若要显示行中的文本*n*的显示中，使用的属性索引*n*。
+从此示例生成的 OID 开始与 **Value** 属性中的 **oid** 属性完全相同，但后面追加了两个索引。 该示例中追加的索引是从 **deviceIndex** 属性设置为 **TRUE** 且 **行** 为索引属性引发的。 假设端口配置 UI 将设备索引定义为111，并且打印机显示的第1行中的文本有兴趣，则生成的 OID 将为1.3.6.1.2.1.43.16.5.1.2.111.1。 除了 (111) 和属性索引 (1) 结尾的设备索引外，此 OID 与原始属性相同。 如果 **deviceIndex** 已设置为 **FALSE** 或省略，则生成的 OID 将为1.3.6.1.2.1.43.16.5.1.2.1。 若要显示显示的第 *n* 行中的文本，请使用的属性索引 *n*。
 
  
 

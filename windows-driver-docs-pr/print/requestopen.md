@@ -1,7 +1,6 @@
 ---
 title: requestOpen 元素
 description: RequestOpen 元素用于在客户端计算机上打开事件通知消息。
-ms.assetid: c1797295-9aca-4986-bd9d-482bb7049942
 keywords:
 - requestOpen 元素打印设备
 topic_type:
@@ -12,18 +11,18 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 741c4c311ef9bf1ce3432ae6c17566ab98b6c90d
-ms.sourcegitcommit: b3e38d06762246c77cedd8e82d740ebea104c538
+ms.openlocfilehash: 304eaff79622d6010ac6be3b03be63cd6cda44ad
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91662433"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96807029"
 ---
 # <a name="requestopen-element"></a>requestOpen 元素
 
-**RequestOpen**元素用于在客户端计算机上打开事件通知消息。
+**RequestOpen** 元素用于在客户端计算机上打开事件通知消息。
 
-**RequestOpen**元素在*asyncui*命名空间中的此 URI 处定义：
+**RequestOpen** 元素在 *asyncui* 命名空间中的此 URI 处定义：
 
 ```xml
 https://schemas.microsoft.com/2003/print/asyncui/v1/request
@@ -53,7 +52,7 @@ https://schemas.microsoft.com/2003/print/asyncui/v1/request
 <thead>
 <tr class="header">
 <th>元素</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -85,7 +84,7 @@ https://schemas.microsoft.com/2003/print/asyncui/v1/request
 <thead>
 <tr class="header">
 <th>元素</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>

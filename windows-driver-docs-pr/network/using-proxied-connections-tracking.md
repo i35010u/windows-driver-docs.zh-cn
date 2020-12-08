@@ -1,15 +1,14 @@
 ---
 title: 使用代理连接跟踪
 description: 使用代理连接跟踪
-ms.assetid: 20A737D7-043D-4D05-A15D-85595E48521B
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 85ae86c9b01c4fbfd635f320145364cef12d9e28
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 5a436ebb834788c7a18f252627b76540c9554790
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104768"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96806121"
 ---
 # <a name="using-proxied-connections-tracking"></a>使用代理连接跟踪
 
@@ -54,7 +53,7 @@ FWPS \_ CONNECT \_ REQUEST0 结构包含以下重定向成员：
 <thead>
 <tr class="header">
 <th align="left">术语</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -79,7 +78,7 @@ FWPS \_ CONNECT \_ REQUEST0 结构包含以下重定向成员：
 
 ### <a name="querying-the-redirect-state"></a>查询重定向状态
 
-标注驱动程序调用 [**FwpsQueryConnectionRedirectState0**](/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpsqueryconnectionredirectstate0) 函数以获取连接的重定向状态。 [**FWPS \_ 连接 \_ 重定向 \_ 状态**](/windows-hardware/drivers/ddi/fwpsk/ne-fwpsk-fwps_connection_redirect_state_)枚举是对**FwpsQueryConnectionRedirectState0**函数的调用的返回类型。
+标注驱动程序调用 [**FwpsQueryConnectionRedirectState0**](/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpsqueryconnectionredirectstate0) 函数以获取连接的重定向状态。 [**FWPS \_ 连接 \_ 重定向 \_ 状态**](/windows-hardware/drivers/ddi/fwpsk/ne-fwpsk-fwps_connection_redirect_state_)枚举是对 **FwpsQueryConnectionRedirectState0** 函数的调用的返回类型。
 
 如果重定向状态为 "FWPS \_ 连接 \_ 未 \_ 重定向"，则 ALE \_ 连接 \_ 重定向标注可以继续代理连接。
 

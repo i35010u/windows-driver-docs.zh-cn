@@ -1,19 +1,18 @@
 ---
 title: 支持 CMYK 色彩空间
 description: 支持 CMYK 色彩空间
-ms.assetid: b8ac5f1a-c903-4313-b7de-0335f4c44367
 keywords:
 - CMYK 色彩空间 WDK 打印
 - BR_CMYKCOLOR
 - XO_FROM_CMYK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0dbfe674acbeab7acdc3067acb9e73d13592b8f8
-ms.sourcegitcommit: a44ade167cdfb541cf1818e9f9e3726f23f90b66
+ms.openlocfilehash: 60832489189c1e67e311ebe69c866a43c195b5b4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94361553"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96806813"
 ---
 # <a name="supporting-cmyk-color-space"></a>支持 CMYK 色彩空间
 

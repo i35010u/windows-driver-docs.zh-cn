@@ -1,7 +1,6 @@
 ---
 title: CM_Open_DevNode_Key_Ex
 description: CM_Open_DevNode_Key_Ex
-ms.assetid: ae611dbf-5882-4881-90df-7011a5bf5e9e
 keywords:
 - CM_Open_DevNode_Key_Ex 设备和驱动程序安装
 topic_type:
@@ -12,13 +11,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 6b86ae3aea79d0407410a7685f9cdabbdf238644
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 260ab159444ffdecfe41172a1cc53547e9532038
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63353009"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96806285"
 ---
-# <a name="cmopendevnodekeyex"></a>CM_Open_DevNode_Key_Ex
+# <a name="cm_open_devnode_key_ex"></a>CM_Open_DevNode_Key_Ex
 
 此函数保留供系统使用。

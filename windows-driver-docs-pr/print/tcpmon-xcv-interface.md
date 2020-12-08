@@ -1,7 +1,6 @@
 ---
 title: TCPMON Xcv 接口
 description: TCPMON Xcv 接口
-ms.assetid: 7b2b1cff-ab8f-44e0-9327-dc60a0072bf5
 keywords:
 - 打印监视器 WDK，TCPMON Xcv
 - transceive (Xcv) 接口 WDK 打印
@@ -9,12 +8,12 @@ keywords:
 - TCPMON Xcv 接口 WDK 打印
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 20538640ab27169aff7c9085c597cc81d7df6886
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 9723c834ae7f96c7ca7a87acde871d9dd3c96a70
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89213111"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96806743"
 ---
 # <a name="tcpmon-xcv-interface"></a>TCPMON Xcv 接口
 

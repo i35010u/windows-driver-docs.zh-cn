@@ -1,15 +1,14 @@
 ---
 title: UEFI 序列图
 description: UEFI 序列图
-ms.assetid: 2bf1fbe4-1d05-4edd-bc64-0d270862a4e4
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 46889b3141429a21f19b12ba8356b40e356b5734
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e9cea442b2e38f0edf30aa1756fefc7b74c6e4a0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63337427"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96805925"
 ---
 # <a name="uefi-sequence-diagram"></a>UEFI 序列图
 

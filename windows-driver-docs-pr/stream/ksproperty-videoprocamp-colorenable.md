@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ VIDEOPROCAMP \_ COLORENABLE
 description: KSPROPERTY \_ VIDEOPROCAMP \_ COLORENABLE 属性控制 color enable 设置。 此属性是可选的。
-ms.assetid: 9e484135-8388-4498-a3bb-99fb3b6dd84e
 keywords:
 - KSPROPERTY_VIDEOPROCAMP_COLORENABLE 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5608ccab05081682db070b356ec554c761972021
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 858ab7015bf42aeec78b9d5f1ab907f85ab4a422
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103014"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96805953"
 ---
 # <a name="ksproperty_videoprocamp_colorenable"></a>KSPROPERTY \_ VIDEOPROCAMP \_ COLORENABLE
 
@@ -84,7 +83,7 @@ KSPROPERTY **Value** \_ VIDEOPROCAMP S 结构的 Value 成员 \_ 指定 color en
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSPROPERTY**](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)

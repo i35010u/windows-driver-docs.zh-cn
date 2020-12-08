@@ -2,14 +2,13 @@
 description: 本部分提供有关为选择性挂起功能选择正确机制的信息。
 title: USB 选择性挂起
 ms.date: 04/20/2017
-ms.assetid: 828ee95a-7cfa-4905-acb8-5ae12acb0034
 ms.localizationpriority: medium
-ms.openlocfilehash: 689f61ecf56ea48e4b4b2c2ddf62d1b2de66d4af
-ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
+ms.openlocfilehash: c73c668b5def594e8c79ac3e2d79b68a712d2a93
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90010627"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96806589"
 ---
 # <a name="usb-selective-suspend"></a>USB 选择性挂起
 
@@ -128,7 +127,7 @@ Windows 操作系统的版本确定非复合设备的驱动程序启用选择性
 </colgroup>
 <thead>
 <tr class="header">
-<th>场景</th>
+<th>方案</th>
 <th>空闲请求取消机制</th>
 </tr>
 </thead>
@@ -154,7 +153,7 @@ Windows 操作系统的版本确定非复合设备的驱动程序启用选择性
 
 ## <a name="usb-idle-request-irp-completion-routine"></a>USB 空闲请求 IRP 完成例程
 
-在许多情况下，总线驱动程序可能会调用驱动程序的 "空闲请求 IRP 完成" 例程。 如果出现这种情况，客户端驱动程序必须检测到总线驱动程序完成 IRP 的原因。 返回的状态代码可以提供此信息。 如果状态代码不是状态 \_ "电源 \_ 状态 \_ 无效"，则驱动程序应将设备置于 **d0** 状态（如果设备尚未处于 **d0**状态）。 如果设备仍处于空闲状态，则驱动程序可以提交另一个空闲请求 IRP。
+在许多情况下，总线驱动程序可能会调用驱动程序的 "空闲请求 IRP 完成" 例程。 如果出现这种情况，客户端驱动程序必须检测到总线驱动程序完成 IRP 的原因。 返回的状态代码可以提供此信息。 如果状态代码不是状态 \_ "电源 \_ 状态 \_ 无效"，则驱动程序应将设备置于 **d0** 状态（如果设备尚未处于 **d0** 状态）。 如果设备仍处于空闲状态，则驱动程序可以提交另一个空闲请求 IRP。
 
 **注意**  空闲请求 IRP 完成例程不应阻止等待 **D0** 电源请求完成。 可以通过集线器驱动程序在 power IRP 的上下文中调用完成例程，并且在完成例程中的另一个电源 IRP 上阻塞可能会导致死锁。
 
@@ -330,13 +329,13 @@ typedef VOID (*USB_IDLE_CALLBACK)(__in PVOID Context);
 
 - 如果设备需要提供远程唤醒，请为设备请求 [**IRP \_ MN \_ 等待 \_ 唤醒**](../kernel/irp-mn-wait-wake.md) IRP。
 - 取消所有 i/o，并准备设备以降低电源状态。
-- 通过调用[**PoRequestPowerIrp**](/windows-hardware/drivers/ddi/wdm/nf-wdm-porequestpowerirp) ，并将 PowerState 参数设置为枚举器值 PowerDeviceD2 (在*PowerState*中定义，使设备处于 WDM 睡眠状态;ntddk) 。 在 Windows XP 中，驱动程序不能将其设备放在 PowerDeviceD3 中，即使设备没有配备远程唤醒也是如此。
+- 通过调用 [**PoRequestPowerIrp**](/windows-hardware/drivers/ddi/wdm/nf-wdm-porequestpowerirp) ，并将 PowerState 参数设置为枚举器值 PowerDeviceD2 (在 *PowerState* 中定义，使设备处于 WDM 睡眠状态;ntddk) 。 在 Windows XP 中，驱动程序不能将其设备放在 PowerDeviceD3 中，即使设备没有配备远程唤醒也是如此。
 
 在 Windows XP 中，驱动程序必须依赖空闲通知回调例程来有选择地挂起设备。 如果在 Windows XP 中运行的驱动程序不使用空闲通知回调例程直接将设备置于低功耗状态，这可能会阻止 USB 设备树中的其他设备暂停。 有关更多详细信息，请参阅 "USB 全局挂起"。
 
 集线器驱动程序和 [USB 泛型父驱动程序 ( # A0) ](usb-common-class-generic-parent-driver.md) 调用空闲通知回调例程，以 IRQL = 被动 \_ 级别。 这允许回调例程在等待电源状态更改请求完成时进行阻止。
 
-仅当系统处于 **S0** 并且设备处于 **D0**中时，才调用回调例程。
+仅当系统处于 **S0** 并且设备处于 **D0** 中时，才调用回调例程。
 
 以下限制适用于空闲请求通知回调例程：
 
@@ -358,13 +357,13 @@ USB 2.0 规范通过中止总线上的所有 USB 流量（包括框架起始数�
 
 ### <a name="conditions-for-global-suspend-in-windows-7"></a>Windows 7 中全局挂起的条件
 
-Windows 7 更积极地与 Windows Vista 一起暂停 USB 集线器。 Windows 7 USB 集线器驱动程序将有选择地挂起所有其附加设备处于 **D1**、 **D2**或 **D3** 设备电源状态的任何集线器。 所有 USB 集线器都处于选择性挂起状态后，整个总线将进入全局挂起。 每当设备处于 **D1**、 **D2**或 **D3**的 WDM 设备状态时，Windows 7 USB 驱动程序堆栈会将设备视为空闲。
+Windows 7 更积极地与 Windows Vista 一起暂停 USB 集线器。 Windows 7 USB 集线器驱动程序将有选择地挂起所有其附加设备处于 **D1**、 **D2** 或 **D3** 设备电源状态的任何集线器。 所有 USB 集线器都处于选择性挂起状态后，整个总线将进入全局挂起。 每当设备处于 **D1**、 **D2** 或 **D3** 的 WDM 设备状态时，Windows 7 USB 驱动程序堆栈会将设备视为空闲。
 
 ### <a name="conditions-for-global-suspend-in-windows-vista"></a>Windows Vista 中全局挂起的条件
 
 与 Windows XP 相比，在 Windows Vista 中执行全局挂起的要求更灵活。
 
-特别是，每当设备处于 **D1**、 **D2**或 **D3**的 WDM 设备状态时，USB 堆栈会将设备视为处于空闲状态。
+特别是，每当设备处于 **D1**、 **D2** 或 **D3** 的 WDM 设备状态时，USB 堆栈会将设备视为处于空闲状态。
 
 下图说明了 Windows Vista 中可能出现的情况。
 
@@ -372,7 +371,7 @@ Windows 7 更积极地与 Windows Vista 一起暂停 USB 集线器。 Windows 7 
 
 此图说明了与 "在 Windows XP 中全局挂起的条件" 一节中描述的情况非常相似的情况。 但是，在这种情况下，设备3会限定为空闲设备。 由于所有设备都处于空闲状态，因此总线驱动程序能够调用与挂起的空闲请求 Irp 关联的空闲通知回调例程。 每个驱动程序会挂起其设备，并且总线驱动程序会在不安全的情况尽快暂停 USB 主机控制器。
 
-在 Windows Vista 上，所有非集线器 USB 设备都必须位于 **D1**、 **D2**或 **D3** 中，然后才能启动全局挂起，此时所有 USB 集线器（包括根集线器）都将被挂起。 这意味着，任何不支持选择性挂起的 USB 客户端驱动程序都将阻止总线进入全局挂起状态。
+在 Windows Vista 上，所有非集线器 USB 设备都必须位于 **D1**、 **D2** 或 **D3** 中，然后才能启动全局挂起，此时所有 USB 集线器（包括根集线器）都将被挂起。 这意味着，任何不支持选择性挂起的 USB 客户端驱动程序都将阻止总线进入全局挂起状态。
 
 ### <a name="conditions-for-global-suspend-in-windows-xp"></a>Windows XP 中全局挂起的条件
 
@@ -388,7 +387,7 @@ Windows 7 更积极地与 Windows Vista 一起暂停 USB 集线器。 Windows 7 
 
 为 Microsoft Windows XP 升级版本禁用了选择性挂起。 它用于 Windows XP、Windows Vista 和更高版本的 Windows 的全新安装。
 
-若要为给定的根集线器及其子设备启用选择性挂起支持，请在**设备管理器**中选择 "USB 根集线器" 的 "**电源管理**" 选项卡上的复选框。
+若要为给定的根集线器及其子设备启用选择性挂起支持，请在 **设备管理器** 中选择 "USB 根集线器" 的 "**电源管理**" 选项卡上的复选框。
 
 或者，你可以通过在 USB 端口驱动程序的软件密钥下设置 **HcDisableSelectiveSuspend** 的值来启用或禁用选择性挂起。 如果值为1，则禁用选择性挂起。 如果值为0，则启用选择性挂起。
 

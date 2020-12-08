@@ -1,9 +1,8 @@
 ---
 title: JobStatus 元素
-description: 所需的 JobStatus 元素包含有关状态的当前扫描作业的所有信息。
-ms.assetid: e3eb2cc7-70a4-4ae0-8569-4a91f2b42228
+description: 必需的 JobStatus 元素包含当前扫描作业状态的所有相关信息。
 keywords:
-- JobStatus 元素成像设备
+- JobStatus 元素图像设备
 topic_type:
 - apiref
 api_name:
@@ -12,19 +11,19 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f35d316dce2ee7103f6cb74432ce6acaa772c6b1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 261f472f23a2a10aa81dd45b115ac9ab095d65a6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63348766"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96805560"
 ---
 # <a name="jobstatus-element"></a>JobStatus 元素
 
 
-所需**JobStatus**元素包含有关状态的当前扫描作业的所有信息。
+必需的 **JobStatus** 元素包含当前扫描作业状态的所有相关信息。
 
-<a name="usage"></a>用法
+<a name="usage"></a>使用情况
 -----
 
 ```xml
@@ -86,7 +85,7 @@ ms.locfileid: "63348766"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><a href="job.md" data-raw-source="[&lt;strong&gt;Job&lt;/strong&gt;](job.md)"><strong>Job</strong></a></p></td>
+<td><p><a href="job.md" data-raw-source="[&lt;strong&gt;Job&lt;/strong&gt;](job.md)"><strong>作业</strong></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -94,11 +93,11 @@ ms.locfileid: "63348766"
 <a name="remarks"></a>备注
 -------
 
-**JobStatus**通过自动机时进行维护，子元素。 WSD 扫描服务应更新**JobStatus**元素，相应地处理作业。 客户端操作，如[ **CancelJobRequest**](canceljobrequest.md)，可以间接影响作业状态。
+**JobStatus** 子元素通过自动机时出错维护。 WSD 扫描服务应在处理作业时相应地更新 **JobStatus** 元素。 诸如 [**CancelJobRequest**](canceljobrequest.md)之类的客户端操作可以间接影响作业状态。
 
-WSD 扫描服务通知客户端有关通过作业的状态将变为[ **JobStatusEvent** ](jobstatusevent.md)事件元素。 WSD 扫描服务应生成**JobStatusEvent**为每个更改对所有元素**JobStatus**子元素。
+WSD 扫描服务通过 [**JobStatusEvent**](jobstatusevent.md) 事件元素向客户端通知作业状态的更改。 对于所有 **JobStatus** 子元素的每个更改，WSD 扫描服务应生成一个 **JobStatusEvent** 元素。
 
-客户端可以查询通过作业状态[ **GetJobElementsRequest** ](getjobelementsrequest.md)操作。
+客户端可以通过 [**GetJobElementsRequest**](getjobelementsrequest.md) 操作查询作业状态。
 
 ## <a name="see-also"></a>请参阅
 
@@ -107,7 +106,7 @@ WSD 扫描服务通知客户端有关通过作业的状态将变为[ **JobStatus
 
 [**GetJobElementsRequest**](getjobelementsrequest.md)
 
-[**Job**](job.md)
+[**作业**](job.md)
 
 [**JobCompletedTime**](jobcompletedtime.md)
 

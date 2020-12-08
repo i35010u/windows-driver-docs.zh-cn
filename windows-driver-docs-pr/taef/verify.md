@@ -1,65 +1,64 @@
 ---
 title: 验证框架
 description: 验证框架
-ms.assetid: A954B5E2-E3C7-4021-BE53-AE1257139607
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2a9aaf7a41b6a6d0f1c137c2c456cf0283d22a98
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 52d3a3a05d9e690e26024f3cb130c76e355c0728
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383033"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96806595"
 ---
 # <a name="verify-framework"></a>验证框架
 
 
-若要使编写测试更容易，TAEF，提供了"验证"框架，利用[WexLogger](wexlogger.md)来报告使用极少量的代码的详细的日志。 验证框架可帮助测试，以提供结构化的日志输出-它将输出登录成功，如果给定的验证成功，并且它将输出的详细的信息，如果验证失败。
+为了更轻松地编写测试，TAEF 提供了 "验证" 框架，该框架利用 [WexLogger](wexlogger.md) 只需少量的代码即可报告详细日志。 验证框架可帮助测试提供结构化日志输出，如果给定验证成功，它将输出成功的日志，如果验证失败，它将输出详细信息。
 
-## <a name="span-idcplusplusspanspan-idcplusplusspanusing-verify-from-c"></a><span id="cplusplus"></span><span id="CPLUSPLUS"></span>从使用验证C++
+## <a name="span-idcplusplusspanspan-idcplusplusspanusing-verify-from-c"></a><span id="cplusplus"></span><span id="CPLUSPLUS"></span>使用 c + + 验证
 
 
-验证 API 显示在C++为一系列"Verify.h"标头文件中定义的宏 (注意：不需要显式包括 Verify.h，应包括包含全部所需标记的"WexTestClass.h"C++测试和与验证和 WexLogger API 进行交互)。
+验证 API 在 c + + 中显示为一组宏，这些宏在 "Verify .h" 标头文件中定义 (注意：不需要显式包含 Verify .h，而应包括 "WexTestClass"，其中包含标记 c + + 测试以及与验证和 WexLogger API 的) 交互所需的所有内容。
 
-以下验证宏是可用于本机C++测试：
+以下验证宏适用于本机 c + + 测试：
 
 | 宏                                                                                     | 功能                                                                                                                                                                                                         |
 |-------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 验证\_都\_相等 (expected，实际\[可选消息\])                                | 验证两个指定的对象相等。 如果提供，还记录自定义消息。                                                                                                                                |
-| 验证\_都\_不\_相等 (expected，实际\[可选消息\])                           | 验证两个指定的对象不相等。 如果提供，还记录自定义消息。                                                                                                                            |
-| 验证是否\_IS\_GREATER\_个 (expectedGreater，expectedLess，\[可选消息\])            | 验证第一个参数大于第二个参数。 如果提供，还记录自定义消息。                                                                                                       |
-| 验证是否\_IS\_GREATER\_个\_或者\_相等 (expectedGreater，expectedLess，\[可选消息\]) | 验证第一个参数大于或等于第二个参数。 如果提供，还记录自定义消息。                                                                                           |
-| 验证是否\_IS\_较少\_个 (expectedLess，expectedGreater，\[可选消息\])               | 验证第一个参数小于第二个参数。 如果提供，还记录自定义消息。                                                                                                          |
-| 验证是否\_IS\_较少\_个\_或者\_相等 (expectedLess，expectedGreater，\[可选消息\])    | 验证第一个参数小于或等于第二个参数。 如果提供，还记录自定义消息。                                                                                              |
-| 验证\_都\_SAME (expected，实际\[可选消息\])                                 | 验证指定的两个参数引用同一个对象。 如果提供，还记录自定义消息。                                                                                                          |
-| 验证\_都\_不\_SAME (expected，实际\[可选消息\])                            | 验证指定的两个参数执行引用同一对象。 如果提供，还记录自定义消息。                                                                                                   |
-| 验证是否\_失败 (\[可选消息\])                                                       | 失败且不检查任何条件。 如果提供，还记录自定义消息。                                                                                                                                        |
-| 验证是否\_IS\_，则返回 TRUE (条件\[可选消息\])                                         | 验证指定的布尔值为 true。 调用验证\_IS\_TRUE （!!\_\_条件)，或验证\_WIN32\_BOOL\_SUCCEEDED (\_\_条件) 来测试 Win32 BOOL。 如果提供，还记录自定义消息。                      |
-| 验证是否\_IS\_FALSE (条件\[可选消息\])                                        | 验证指定的布尔值为 false。 调用验证\_IS\_FALSE （!!\_\_条件)，或验证\_WIN32\_BOOL\_失败 (\_\_条件) 来测试 Win32 BOOL。 如果提供，还记录自定义消息。                       |
-| 验证是否\_IS\_NULL (对象\[可选消息\])                                            | 验证指定的参数为 NULL。 如果提供，还记录自定义消息。                                                                                                                                |
-| 验证是否\_IS\_不\_NULL (对象\[可选消息\])                                       | 验证指定的参数不为 NULL。 如果提供，还记录自定义消息。                                                                                                                            |
-| 验证是否\_SUCCEEDED (hresult，\[可选消息\])                                          | 验证指定的 HRESULT 成功。 如果提供，还记录自定义消息。                                                                                                                            |
-| 验证是否\_SUCCEEDED\_返回 (hresult，\[可选消息\])                                  | 验证指定的 HRESULT 成功并返回 HRESULT，它已传递到宏。 如果提供，还记录自定义消息。                                                                     |
-| 验证是否\_失败 (hresult，\[可选消息\])                                             | 验证指定的 HRESULT 不成功。 如果提供，还记录自定义消息。                                                                                                                        |
-| 验证是否\_失败\_返回 (hresult，\[可选消息\])                                     | 验证指定的 HRESULT 未成功并返回 HRESULT，它已传递到宏。 如果提供，还记录自定义消息。                                                                 |
-| 验证是否\_将引发 (操作、 异常\[可选消息\])                                | 验证指定的操作将引发给定的异常类型。 如果提供，还记录自定义消息。                                                                                                        |
-| 验证是否\_否\_引发 (操作\[可选消息\])                                        | 验证指定的操作不会引发异常。 如果提供，还记录自定义消息。                                                                                                            |
-| 验证是否\_WIN32\_SUCCEEDED (win32Result，\[可选消息\])                               | 验证指定的 Win32 结果已成功。 如果提供，还记录自定义消息。                                                                                                                           |
-| 验证是否\_WIN32\_SUCCEEDED\_返回 (win32Result，\[可选消息\])                       | 验证指定的 Win32 结果成功并返回 long 类型的值已传递到宏。 如果提供，还记录自定义消息。                                                                       |
-| 验证是否\_WIN32\_失败 (win32Result，\[可选消息\])                                  | 验证指定的 Win32 结果失败。 如果提供，还记录自定义消息。                                                                                                                              |
-| 验证是否\_WIN32\_FAILED\_返回 (win32Result，\[可选消息\])                          | 验证指定的 Win32 结果失败并返回 long 类型的值已传递到宏。 如果提供，还记录自定义消息。                                                                          |
-| 验证是否\_WIN32\_BOOL\_SUCCEEDED (win32Bool，\[可选消息\])                           | 验证指定的 Win32 BOOL 成功 (！ = FALSE)。 如果验证失败，将记录 getlasterror （） 的结果。 如果提供，还记录自定义消息。                                                     |
-| 验证是否\_WIN32\_BOOL\_SUCCEEDED\_返回 (win32Bool，\[可选消息\])                   | 验证指定的 Win32 BOOL 成功 (！ = FALSE)，并返回已传递到宏的布尔值。 如果验证失败，将记录 getlasterror （） 的结果。 如果提供，还记录自定义消息。 |
-| 验证是否\_WIN32\_BOOL\_失败 (win32Bool，\[可选消息\])                              | 验证指定的 Win32 BOOL 失败 （= = FALSE）。 不会记录 getlasterror （） 的结果。 如果提供，还记录自定义消息。                                                                          |
-| 验证是否\_WIN32\_BOOL\_FAILED\_返回 (win32Bool，\[可选消息\])                      | 验证指定的 Win32 BOOL 失败 （= = FALSE），并返回已传递到宏的布尔值。 不会记录 getlasterror （） 的结果。 如果提供，还记录自定义消息。                      |
+| 验证 \_ \_ (预期、实际的 \[ 可选消息是否相等 \])                                 | 验证两个指定的对象是否相等。 如果提供，还会记录自定义消息。                                                                                                                                |
+| 验证 \_ \_ 不 \_ 等于 (应为，实际为 \[ 可选消息 \])                            | 验证两个指定的对象是否不相等。 如果提供，还会记录自定义消息。                                                                                                                            |
+| VERIFY \_ \_ 大于 \_ (expectedGreater，expectedLess， \[ 可选消息 \])             | 验证第一个参数是否大于第二个参数。 如果提供，还会记录自定义消息。                                                                                                       |
+| VERIFY \_ \_ 大于 \_ \_ \_ 等于 (expectedGreater，expectedLess， \[ 可选消息 \])  | 验证第一个参数是否大于或等于第二个参数。 如果提供，还会记录自定义消息。                                                                                           |
+| 验证 \_ \_ 小于 \_ (expectedLess，expectedGreater， \[ 可选消息 \])                | 验证第一个参数是否小于第二个参数。 如果提供，还会记录自定义消息。                                                                                                          |
+| VERIFY \_ \_ 小于 \_ \_ \_ 等于 (expectedLess，expectedGreater， \[ 可选消息 \])     | 验证第一个参数是否小于或等于第二个参数。 如果提供，还会记录自定义消息。                                                                                              |
+| 验证 \_ \_ (需要、实际的 \[ 可选消息 \])                                  | 验证指定的两个参数是否引用同一对象。 如果提供，还会记录自定义消息。                                                                                                          |
+| 验证 \_ \_ \_ (应为，但实际为 \[ 可选消息 \])                             | 验证指定的两个参数是否不引用相同的对象。 如果提供，还会记录自定义消息。                                                                                                   |
+| 验证 \_ 失败 (\[ 可选消息 \])                                                        | 失败，不检查任何情况。 如果提供，还会记录自定义消息。                                                                                                                                        |
+| 确认 \_ 为 \_ TRUE (条件， \[ 可选消息 \])                                          | 验证指定的布尔值是否为 true。 Call VERIFY \_ 为 \_ TRUE (！！ \_ \_条件) ，或验证 \_ win32 \_ bool 是否 \_ 成功 (\_ \_ 条件) 来测试 WIN32 bool。 如果提供，还会记录自定义消息。                      |
+| 验证 \_ 为 \_ FALSE (条件， \[ 可选消息 \])                                         | 验证指定的 bool 是否为 false。 Call VERIFY \_ 为 \_ FALSE (！！ \_ \_条件) 或验证 \_ win32 \_ bool \_ 失败 (\_ \_ 条件) 来测试 WIN32 bool。 如果提供，还会记录自定义消息。                       |
+| VERIFY \_ 为 \_ NULL (对象， \[ 可选消息 \])                                             | 验证指定的参数是否为 NULL。 如果提供，还会记录自定义消息。                                                                                                                                |
+| 验证不为 \_ \_ \_ NULL (对象， \[ 可选消息 \])                                        | 验证指定的参数是否不为 NULL。 如果提供，还会记录自定义消息。                                                                                                                            |
+| 验证 \_ 成功 (hresult， \[ 可选消息 \])                                           | 验证指定的 HRESULT 是否成功。 如果提供，还会记录自定义消息。                                                                                                                            |
+| 验证 \_ 成功 \_ 返回 (hresult， \[ 可选消息 \])                                   | 验证指定的 HRESULT 是否成功，并返回传入宏的 HRESULT。 如果提供，还会记录自定义消息。                                                                     |
+| 验证 \_ 失败 (hresult， \[ 可选消息 \])                                              | 验证指定的 HRESULT 是否未成功。 如果提供，还会记录自定义消息。                                                                                                                        |
+| 验证 \_ 失败 \_ 返回 (hresult， \[ 可选消息 \])                                      | 验证指定的 HRESULT 是否不成功，并返回传入宏的 HRESULT。 如果提供，还会记录自定义消息。                                                                 |
+| 验证 \_ 引发 (操作、异常、 \[ 可选消息 \])                                 | 验证指定的操作是否引发给定的异常类型。 如果提供，还会记录自定义消息。                                                                                                        |
+| 验证 \_ 不 \_ (操作、 \[ 可选消息 \]) 的引发                                        | 验证指定的操作是否不引发异常。 如果提供，还会记录自定义消息。                                                                                                            |
+| 验证 \_ WIN32 \_ SUCCEEDED (win32Result， \[ 可选消息 \])                                | 验证指定的 Win32 结果是否成功。 如果提供，还会记录自定义消息。                                                                                                                           |
+| 验证 \_ WIN32 \_ 成功 \_ 返回 (win32Result， \[ 可选消息 \])                        | 验证指定的 Win32 结果是否成功并返回传入宏的 LONG。 如果提供，还会记录自定义消息。                                                                       |
+| 验证 \_ WIN32 \_ 失败 (win32Result， \[ 可选消息 \])                                   | 验证指定的 Win32 结果是否失败。 如果提供，还会记录自定义消息。                                                                                                                              |
+| 验证 \_ WIN32 \_ 失败 \_ 返回 (win32Result， \[ 可选消息 \])                           | 验证指定的 Win32 结果是否失败并返回传入宏的 LONG。 如果提供，还会记录自定义消息。                                                                          |
+| 验证 \_ WIN32 \_ BOOL \_ SUCCEEDED (win32Bool， \[ 可选消息 \])                            | 验证指定的 Win32 BOOL 是否成功 (！ = FALSE) 。 如果验证失败，将记录 GetLastError ( # A1 的结果。 如果提供，还会记录自定义消息。                                                     |
+| 验证 \_ WIN32 \_ BOOL \_ SUCCEEDED \_ RETURN (win32Bool， \[ 可选消息 \])                    | 验证指定的 Win32 BOOL 是否成功 (！ = FALSE) 并返回传入宏的布尔值。 如果验证失败，将记录 GetLastError ( # A1 的结果。 如果提供，还会记录自定义消息。 |
+| 验证 \_ WIN32 \_ BOOL \_ 失败 (win32Bool， \[ 可选消息 \])                               | 验证指定的 Win32 BOOL (= = FALSE) 失败。 不记录 GetLastError ( # A1 的结果。 如果提供，还会记录自定义消息。                                                                          |
+| 验证 \_ WIN32 \_ BOOL \_ 失败 \_ 返回 (win32Bool， \[ 可选消息 \])                       | 验证指定的 Win32 BOOL 是否失败 (= = FALSE) 并返回传入宏的布尔值。 不记录 GetLastError ( # A1 的结果。 如果提供，还会记录自定义消息。                      |
 
 
 
-### <a name="span-idexceptioncplusplusspanspan-idexceptioncplusplusspanexception-based-verify-usage"></a><span id="exception_cplusplus"></span><span id="EXCEPTION_CPLUSPLUS"></span>基于异常验证使用情况
+### <a name="span-idexception_cplusplusspanspan-idexception_cplusplusspanexception-based-verify-usage"></a><span id="exception_cplusplus"></span><span id="EXCEPTION_CPLUSPLUS"></span>基于异常的验证使用情况
 
-如果你的源代码编译使用C++启用的异常 (通过指定"/ EHsc"命令行开关或"使用\_本机\_EH = 1" 宏源文件中的)，验证宏将默认为日志记录失败，错误遵循通过引发一个本机C++异常。 引发的异常**WEX::TestExecution::VerifyFailureException**。 不需要捕获此异常-TAEF 框架将为你捕获并转到下一步的测试用例。
+如果已使用启用了 c + + 异常的源代码进行编译 (通过指定 "/EHsc" 命令行开关，或) 中的 "使用 \_ 本机 \_ EH = 1" 宏，则验证宏将默认为失败时记录错误，然后引发本机 c + + 异常。 引发的异常是 **WEX：： testexecution.completed：： VerifyFailureException**。 不需要捕获此异常-TAEF 框架将为您捕获此异常，并转到下一个测试用例。
 
-（可选） 如果你想要执行一系列验证中的行，而不是无需在测试时中止第一次的验证失败，则可以使用**DisableVerifyExceptions**类。 对象的生存期控制异常处于禁用状态的时间量。
+（可选）如果想要在行中执行一系列验证，而不是在第一次验证失败时中止测试，可以使用 **DisableVerifyExceptions** 类。 对象的生存期控制禁用异常的时间量。
 
 ```cpp
 if (NULL != m_key)
@@ -70,15 +69,15 @@ if (NULL != m_key)
 }
 ```
 
-异常仅在禁用在上面的示例中，"如果 (NULL ！ = m\_密钥)"块中，并且如果第一个验证调用失败，仍进行第二次验证调用。
+在上面的示例中，仅在 "if (NULL！ = m \_ key) " 块中禁用异常; 如果第一个验证调用失败，则仍会进行第二次验证调用。
 
-**DisableVerifyExceptions**类是引用计数，并且还在每个线程进行函数。
+**DisableVerifyExceptions** 类具有引用计数，并且还在每个线程的基础上起作用。
 
-### <a name="span-idnonexceptioncplusplusspanspan-idnonexceptioncplusplusspannon-exception-based-verify-usage"></a><span id="nonexception_cplusplus"></span><span id="NONEXCEPTION_CPLUSPLUS"></span>非基于异常验证使用情况
+### <a name="span-idnonexception_cplusplusspanspan-idnonexception_cplusplusspannon-exception-based-verify-usage"></a><span id="nonexception_cplusplus"></span><span id="NONEXCEPTION_CPLUSPLUS"></span>基于非异常验证使用情况
 
-如果你的源代码***不***编译的C++启用的异常，验证宏将不会引发一个本机C++当验证失败。 此外，如果你的源代码编译使用C++启用的例外，但想要禁用验证例外情况，只需\#定义无\_验证\_之前包括"WexTestClass.h"的异常。
+如果你的源代码是 **_not_* _，并且已在 c + + 异常的情况下进行编译，则在验证失败时，验证宏不会引发本机 c + +。 此外，如果您的源代码是在已启用 c + + 异常的情况下编译的，但您想要禁用验证异常，则 \# \_ \_ 在包括 "WexTestClass" 之前，只需定义无验证异常。
 
-在此模型中，您必须执行一系列嵌套如果语句以便控制流的测试用例中，而是依赖于比C++异常。
+在此模型中，您必须执行一系列嵌套的 if 语句，以便控制您的测试用例的流动，而不是依赖 c + + 异常。
 
 ```cpp
 if (VERIFY_WIN32_SUCCEEDED(::RegDeleteKey(HKEY_CURRENT_USER, zTempName)))
@@ -87,9 +86,9 @@ if (VERIFY_WIN32_SUCCEEDED(::RegDeleteKey(HKEY_CURRENT_USER, zTempName)))
 }
 ```
 
-### <a name="span-idoutsettingscplusplusspanspan-idoutsettingscplusplusspanverify-output-settings"></a><span id="outsettings_cplusplus"></span><span id="OUTSETTINGS_CPLUSPLUS"></span>验证输出设置
+### <a name="span-idoutsettings_cplusplusspanspan-idoutsettings_cplusplusspanverify-output-settings"></a><span id="outsettings_cplusplus"></span><span id="OUTSETTINGS_CPLUSPLUS"></span>验证输出设置
 
-如果你想要自定义验证 Api 生成的输出，则可以使用**SetVerifyOutput**类。 对象的生存期控制的输出设置的时间量。 **SetVerifyOutput**类是引用计数，并在每个线程进行函数。
+如果要自定义验证 Api 生成的输出，可以使用 _ *SetVerifyOutput** 类。 对象的生存期控制设置输出设置的时间。 **SetVerifyOutput** 类对每个线程进行引用计数和函数。
 
 ```cpp
 if (NULL != m_key)
@@ -101,33 +100,33 @@ if (NULL != m_key)
 VERIFY_IS_TRUE(true, L"Should log a comment");
 ```
 
-在上面的示例中，指定的设置仅适用于在所做的调用"如果 (NULL ！ = m\_密钥)"块，并*仅*将记录失败的验证调用。 但是，即使它成功，则将记录第三个验证调用。 这是由于 SetVerifyOutput 类已超出范围。
+在上面的示例中，指定的设置仅适用于在 "if (NULL！ = m \_ key) " 块内进行的调用，并且 *仅* 会记录失败的验证调用。 但会记录第三个验证调用，即使成功。 这是因为 SetVerifyOutput 类超出了范围。
 
-用于设置验证输出存在以下选项：
+以下选项用于设置验证输出：
 
 <span id="VerifyOutputSettings__LogOnlyFailures_"></span><span id="verifyoutputsettings__logonlyfailures_"></span><span id="VERIFYOUTPUTSETTINGS__LOGONLYFAILURES_"></span>VerifyOutputSettings::LogOnlyFailures   
-仅失败的验证的调用将记入日志;所有成功的调用将被忽略。
+仅记录失败的验证调用;所有成功的调用都将被忽略。
 
 <span id="VerifyOutputSettings__LogFailuresAsBlocked_"></span><span id="verifyoutputsettings__logfailuresasblocked_"></span><span id="VERIFYOUTPUTSETTINGS__LOGFAILURESASBLOCKED_"></span>VerifyOutputSettings::LogFailuresAsBlocked   
-为受阻而不是日志记录错误记录所有失败。
+将所有失败记录为已阻止，而不是记录错误。
 
 <span id="VerifyOutputSettings__LogFailuresAsWarnings_"></span><span id="verifyoutputsettings__logfailuresaswarnings_"></span><span id="VERIFYOUTPUTSETTINGS__LOGFAILURESASWARNINGS_"></span>VerifyOutputSettings::LogFailuresAsWarnings   
-记录为警告而不是日志记录错误的所有失败。
+将所有失败记录为警告，而不是记录错误。
 
 <span id="VerifyOutputSettings__LogValuesOnSuccess_"></span><span id="verifyoutputsettings__logvaluesonsuccess_"></span><span id="VERIFYOUTPUTSETTINGS__LOGVALUESONSUCCESS_"></span>VerifyOutputSettings::LogValuesOnSuccess   
-记录验证调用成功，即使在中，传递的参数值。
+记录传入参数的值，即使在验证调用成功时也是如此。
 
-验证是否可以输出设置或必须一起启用多个设置：
+验证输出设置可以是，也可以组合在一起启用多个设置：
 
 ```cpp
 SetVerifyOutput verifySettings(VerifyOutputSettings::LogOnlyFailures | VerifyOutputSettings::LogFailuresAsBlocked);
 ```
 
-### <a name="span-idoutcustomcplusplusspanspan-idoutcustomcplusplusspanproviding-value-output-for-custom-types"></a><span id="outcustom_cplusplus"></span><span id="OUTCUSTOM_CPLUSPLUS"></span>提供为自定义类型的值输出
+### <a name="span-idoutcustom_cplusplusspanspan-idoutcustom_cplusplusspanproviding-value-output-for-custom-types"></a><span id="outcustom_cplusplus"></span><span id="OUTCUSTOM_CPLUSPLUS"></span>为自定义类型提供值输出
 
-C++验证框架提供的功能，以生成的任何自定义类型的详细的输出。 要执行此操作，其中一个必须实现的专用化**WEX::TestExecution::VerifyOutputTraits**类模板。
+C + + 验证框架提供了生成任何自定义类型的详细输出的功能。 为此，必须实现 **WEX：： testexecution.completed：： VerifyOutputTraits** 类模板的专用化。
 
-**WEX::TestExecution::VerifyOutputTraits**类模板专用化必须存在于**WEX::TestExecution**命名空间。 它还应提供名为的公共静态方法**ToString**，它将引用您的类，并返回**WEX::Common::NoThrowString**包含其值的字符串表示形式.
+**WEX：： testexecution.completed** 命名空间中必须存在 **WEX：： Testexecution.completed：： VerifyOutputTraits** 类模板特殊化。 它还应提供名为 **ToString** 的公共静态方法，该方法采用对类的引用，并返回 **WEX：： Common：： NoThrowString** ，其中包含其值的字符串表示形式。
 
 ```cpp
     class MyClass
@@ -161,11 +160,11 @@ C++验证框架提供的功能，以生成的任何自定义类型的详细的�
     }}
 ```
 
-### <a name="span-idcomparatorscplusplusspanspan-idcomparatorscplusplusspanproviding-comparators-for-custom-types"></a><span id="comparators_cplusplus"></span><span id="COMPARATORS_CPLUSPLUS"></span>为自定义类型提供比较运算符
+### <a name="span-idcomparators_cplusplusspanspan-idcomparators_cplusplusspanproviding-comparators-for-custom-types"></a><span id="comparators_cplusplus"></span><span id="COMPARATORS_CPLUSPLUS"></span>为自定义类型提供比较运算符
 
-C++验证框架提供的功能来定义未实现相应的运算符重载的自定义类型的比较运算符 (运算符 =、 运算符&lt;等)。 要执行此操作，其中一个必须实现的专用化**WEX::TestExecution::VerifyCompareTraits**类模板。
+C + + Verify framework 提供了为未实现相应运算符重载 (运算符 =、运算符等) 的自定义类型定义比较运算符的能力 &lt; 。 为此，必须实现 **WEX：： testexecution.completed：： VerifyCompareTraits** 类模板的专用化。
 
-**WEX::TestExecution::VerifyCompareTraits**类模板专用化必须存在于**WEX::TestExecution**命名空间。 它还应提供一种公共静态方法调用**AreEqual**， **AreSame**， **IsLessThan**， **IsGreaterThan**，和**IsNull**。
+**WEX：： testexecution.completed** 命名空间中必须存在 **WEX：： Testexecution.completed：： VerifyCompareTraits** 类模板特殊化。 还应提供名为 **assert.areequal**、 **AreSame**、 **IsLessThan**、 **IsGreaterThan** 和 **IsNull** 的公共静态方法。
 
 ```cpp
     class MyClass
@@ -219,56 +218,56 @@ C++验证框架提供的功能来定义未实现相应的运算符重载的自�
     }}
 ```
 
-## <a name="span-idcsharpspanspan-idcsharpspanusing-verify-from-c"></a><span id="csharp"></span><span id="CSHARP"></span>从使用验证C#
+## <a name="span-idcsharpspanspan-idcsharpspanusing-verify-from-c"></a><span id="csharp"></span><span id="CSHARP"></span>使用 C 验证#
 
 
-C#验证使用情况是类似于C++。 但是，通过提供**WEX。TestExecution.Verify**类，该类是位于**Te.Managed.dll**。
+C # 验证用法类似于 c + +。 不过，它是通过 WEX 提供的 **。Testexecution.completed** ，它位于 **Te.Managed.dll** 中。
 
-下面的验证方法是可用于C#测试：
+以下验证方法可用于 c # 测试：
 
 | 宏                                                                                       | 功能                                                                                                                                                                       |
 |---------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| AreEqual(object expected, object actual)                                                    | 验证两个指定的对象相等。                                                                                                                                      |
-| AreEqual （应为对象，对象实际，字符串消息）                                    | 验证两个指定的对象相等，则记录上验证成功或失败的自定义消息。                                                                            |
-| AreEqual&lt;T&gt;(T expected，实际的 T)                                                     | 验证两个指定的对象相等。                                                                                                                                      |
-| AreEqual&lt;T&gt;（应为 T，T 实际，字符串消息）                                     | 验证两个指定的对象相等，则记录上验证成功或失败的自定义消息。                                                                            |
-| AreNotEqual(object expected, object actual)                                                 | 验证两个指定的对象不相等。                                                                                                                                  |
-| AreNotEqual(object expected, object actual, string message)                                 | 验证两个指定的对象不相等;记录上验证成功或失败的自定义消息。                                                                        |
-| AreNotEqual&lt;T&gt;(T expected，实际的 T)                                                  | 验证两个指定的对象不相等。                                                                                                                                  |
-| AreNotEqual&lt;T&gt;（应为 T，T 实际，字符串消息）                                  | 验证两个指定的对象不相等;记录上验证成功或失败的自定义消息。                                                                        |
-| AreSame （应为对象、 对象实际）                                                     | 验证指定的两个参数引用同一个对象。                                                                                                                |
-| AreSame （应为对象，对象实际，字符串消息）                                     | 验证指定的两个参数引用同一个对象;记录上验证成功或失败的自定义消息。                                                      |
-| AreNotSame(object expected, object actual)                                                  | 验证指定的两个参数执行引用同一对象。                                                                                                         |
-| AreNotSame （应为对象，对象实际，字符串消息）                                  | 验证指定的两个参数不会对同一对象; 请参阅记录上验证成功或失败的自定义消息。                                               |
-| IsGreaterThan （IComparable expectedGreater、 IComparable expectedLess）                        | 验证第一个参数大于第二个参数。                                                                                                             |
-| IsGreaterThan （IComparable expectedGreater，IComparable expectedLess，字符串消息）        | 验证第一个参数大于第二个参数;记录上验证成功或失败的自定义消息。                                                   |
-| IsGreaterThanOrEqual （IComparable expectedGreater、 IComparable expectedLess）                 | 验证第一个参数大于或等于第二个参数。                                                                                                 |
-| IsGreaterThanOrEqual （IComparable expectedGreater，IComparable expectedLess，字符串消息） | 验证第一个参数大于或等于第二个参数;记录上验证成功或失败的自定义消息。                                       |
-| IsLessThan （IComparable expectedLess、 IComparable expectedGreater）                           | 验证第一个参数小于第二个参数。                                                                                                                |
-| IsLessThan （IComparable expectedLess，IComparable expectedGreater，字符串消息）           | 验证第一个参数小于第二个参数;记录上验证成功或失败的自定义消息。                                                      |
-| IsLessThanOrEqual （IComparable expectedLess、 IComparable expectedGreater）                    | 验证第一个参数小于或等于第二个参数。                                                                                                    |
-| IsLessThanOrEqual （IComparable expectedLess，IComparable expectedGreater，字符串消息）    | 验证第一个参数小于或等于第二个参数;记录上验证成功或失败的自定义消息。                                          |
-| 失败 （字符串消息）                                                                        | 失败且不检查任何条件。                                                                                                                                              |
-| IsTrue （布尔值条件）                                                                      | 验证指定的条件为 true。                                                                                                                                      |
-| IsTrue （布尔值条件，字符串消息）                                                      | 验证指定的条件为 true;记录上验证成功或失败的自定义消息。                                                                            |
-| IsFalse （布尔值条件）                                                                     | 验证指定的条件为 false。                                                                                                                                     |
-| IsFalse （布尔值条件，字符串消息）                                                     | 验证指定的条件为 false;记录上验证成功或失败的自定义消息。                                                                           |
-| IsNull(object obj)                                                                          | 验证指定的参数为 NULL。                                                                                                                                      |
-| IsNull （对象 obj、 字符串消息）                                                          | 验证指定的参数为 NULL。记录上验证成功或失败的自定义消息。                                                                            |
-| IsNotNull(object obj)                                                                       | 验证指定的参数不为 NULL。                                                                                                                                  |
-| IsNotNull(object obj, string message)                                                       | 验证指定的参数不为 NULL;记录上验证成功或失败的自定义消息。                                                                        |
-| 将引发&lt;T&gt;（VerifyOperation 操作）                                                  | 验证指定的操作将引发给定的异常类型。 此外会返回用于进一步调查的异常。                                                           |
-| 将引发&lt;T&gt;（VerifyOperation 操作，字符串消息）                                  | 验证指定的操作将引发给定的异常类型;记录上验证成功或失败的自定义消息。 此外会返回用于进一步调查的异常。 |
-| NoThrow(VerifyOperation operation)                                                          | 验证指定的操作不会引发异常。                                                                                                                  |
-| NoThrow(VerifyOperation operation, string message)                                          | 验证指定的操作不会引发异常;记录上验证成功或失败的自定义消息。                                                        |
+| 需要 Assert.areequal (对象，对象实际)                                                     | 验证两个指定的对象是否相等。                                                                                                                                      |
+| Assert.areequal (对象、对象实际值、字符串消息)                                     | 验证两个指定的对象是否相等;在验证成功或失败时记录自定义消息。                                                                            |
+| Assert.areequal &lt; t &gt; (应为 T，t 实际)                                                      | 验证两个指定的对象是否相等。                                                                                                                                      |
+| Assert.areequal &lt; t &gt; (应为 t，而不是实际的字符串消息)                                      | 验证两个指定的对象是否相等;在验证成功或失败时记录自定义消息。                                                                            |
+| 需要 AreNotEqual (对象，对象实际)                                                  | 验证两个指定的对象是否不相等。                                                                                                                                  |
+| AreNotEqual (对象、对象实际值、字符串消息)                                  | 验证两个指定的对象是否不相等;在验证成功或失败时记录自定义消息。                                                                        |
+| AreNotEqual &lt; t &gt; (应为 T，t 实际)                                                   | 验证两个指定的对象是否不相等。                                                                                                                                  |
+| AreNotEqual &lt; t &gt; (应为 t，而不是实际的字符串消息)                                   | 验证两个指定的对象是否不相等;在验证成功或失败时记录自定义消息。                                                                        |
+| 需要 AreSame (对象，对象实际)                                                      | 验证指定的两个参数是否引用同一对象。                                                                                                                |
+| AreSame (对象、对象实际值、字符串消息)                                      | 验证指定的两个参数是否引用同一对象;在验证成功或失败时记录自定义消息。                                                      |
+| 需要 AreNotSame (对象，对象实际)                                                   | 验证指定的两个参数是否不引用相同的对象。                                                                                                         |
+| AreNotSame (对象、对象实际值、字符串消息)                                   | 验证指定的两个参数是否不引用相同的对象;在验证成功或失败时记录自定义消息。                                               |
+| IsGreaterThan (IComparable expectedGreater，IComparable expectedLess)                         | 验证第一个参数是否大于第二个参数。                                                                                                             |
+| IsGreaterThan (IComparable expectedGreater，IComparable expectedLess，string message)         | 验证第一个参数是否大于第二个参数;在验证成功或失败时记录自定义消息。                                                   |
+| IsGreaterThanOrEqual (IComparable expectedGreater，IComparable expectedLess)                  | 验证第一个参数是否大于或等于第二个参数。                                                                                                 |
+| IsGreaterThanOrEqual (IComparable expectedGreater，IComparable expectedLess，string message)  | 验证第一个参数是否大于或等于第二个参数;在验证成功或失败时记录自定义消息。                                       |
+| IsLessThan (IComparable expectedLess，IComparable expectedGreater)                            | 验证第一个参数是否小于第二个参数。                                                                                                                |
+| IsLessThan (IComparable expectedLess，IComparable expectedGreater，string message)            | 验证第一个参数是否小于第二个参数;在验证成功或失败时记录自定义消息。                                                      |
+| IsLessThanOrEqual (IComparable expectedLess，IComparable expectedGreater)                     | 验证第一个参数是否小于或等于第二个参数。                                                                                                    |
+| IsLessThanOrEqual (IComparable expectedLess，IComparable expectedGreater，string message)     | 验证第一个参数是否小于或等于第二个参数;在验证成功或失败时记录自定义消息。                                          |
+|  (字符串消息失败)                                                                         | 失败，不检查任何情况。                                                                                                                                              |
+| IsTrue (bool 条件)                                                                       | 验证指定的条件是否为 true。                                                                                                                                      |
+| IsTrue (布尔条件，字符串消息)                                                       | 验证指定的条件是否为 true;在验证成功或失败时记录自定义消息。                                                                            |
+| IsFalse (bool 条件)                                                                      | 验证指定的条件是否为 false。                                                                                                                                     |
+| IsFalse (布尔条件，字符串消息)                                                      | 验证指定的条件是否为 false;在验证成功或失败时记录自定义消息。                                                                           |
+| IsNull (对象 obj)                                                                           | 验证指定的参数是否为 NULL。                                                                                                                                      |
+| IsNull (对象 obj，字符串消息)                                                           | 验证指定的参数是否为 NULL;在验证成功或失败时记录自定义消息。                                                                            |
+| IsNotNull (对象 obj)                                                                        | 验证指定的参数是否不为 NULL。                                                                                                                                  |
+| IsNotNull (对象 obj，字符串消息)                                                        | 验证指定的参数是否不为 NULL;在验证成功或失败时记录自定义消息。                                                                        |
+| &lt; &gt; (VerifyOperation 操作引发 T)                                                   | 验证指定的操作是否引发给定的异常类型。 还返回异常以进行进一步检查。                                                           |
+| 引发 &lt; T &gt; (VerifyOperation 操作，字符串消息)                                   | 验证指定的操作是否引发给定的异常类型;在验证成功或失败时记录自定义消息。 还返回异常以进行进一步检查。 |
+| NoThrow (VerifyOperation 操作)                                                           | 验证指定的操作是否不引发异常。                                                                                                                  |
+| NoThrow (VerifyOperation 操作，字符串消息)                                           | 验证指定的操作是否不引发异常;在验证成功或失败时记录自定义消息。                                                        |
 
 
 
-### <a name="span-idexceptioncsharpspanspan-idexceptioncsharpspanexception-based-verify-usage"></a><span id="exception_csharp"></span><span id="EXCEPTION_CSHARP"></span>基于异常验证使用情况
+### <a name="span-idexception_csharpspanspan-idexception_csharpspanexception-based-verify-usage"></a><span id="exception_csharp"></span><span id="EXCEPTION_CSHARP"></span>基于异常的验证使用情况
 
-验证失败时出现在C#的测试用例，将错误写入到记录器，和一个**WEX。TestExecution.VerifyFailureException**引发。 就像本机一样C++模型中，您不需要担心如何捕获这些异常。 TAEF 框架将为您捕获，并转到下一步的测试用例。
+当 c # 测试用例中出现验证失败时，会将错误写入记录器和 **WEX。Testexecution.completed VerifyFailureException** 。 与在本机 c + + 模型中一样，无需担心捕获这些异常。 TAEF 框架将为您捕获它，并转到下一个测试用例。
 
-（可选） 如果你想要执行一系列验证中的行，而不是无需在测试时中止第一次的验证失败，则可以使用**DisableVerifyExceptions**类。 对象的生存期控制异常处于禁用状态的时间量。 **DisableVerifyExceptions**类是引用计数，并在每个线程进行函数。
+（可选）如果想要在行中执行一系列验证，而不是在第一次验证失败时中止测试，可以使用 **DisableVerifyExceptions** 类。 对象的生存期控制禁用异常的时间量。 **DisableVerifyExceptions** 类对每个线程进行引用计数和函数。
 
 ```cpp
 using (new DisableVerifyExceptions())
@@ -278,9 +277,9 @@ using (new DisableVerifyExceptions())
 }
 ```
 
-在上面的示例中，如果第一个验证调用失败，第二个验证仍进行调用。
+在上述示例中，如果第一个验证调用失败，则仍进行第二次验证调用。
 
-或者，设置可以实现相同的结果**Verify.DisableVerifyExceptions = true**之前的验证操作，例如如下所示的示例。
+或者，您可以在验证操作（如下面所示的示例）前设置 **DisableVerifyExceptions = true** ，以获得相同的结果。
 
 ```cpp
 Verify.DisableVerifyExceptions = true;
@@ -295,13 +294,13 @@ finally
 }
 ```
 
-请注意，即使此类选项可用，将 DisableVerifyExeptions 声明中使用的对象为块仍是建议的选项。
+请注意，尽管此类选项可用，但仍建议在 using 块中将 DisableVerifyExeptions 声明为对象。
 
-如果你想要打开异常对话框 (Ctrl + Alt + E) 发生验证错误时停止调试器中，单击添加，从下拉列表中选择"公共语言运行时异常"放"WEX。TestExecution.VerifyFailureException"在名称字段中。
+如果要在发生验证错误时在调试器中停止，请按 Ctrl + Alt + E)  (打开 "异常" 对话框，单击 "添加"，在下拉列表中选择 "公共语言运行时异常"，并将 "WEX" 放入其中。Testexecution.completed. VerifyFailureException "。
 
-### <a name="span-idoutsettingscsharpspanspan-idoutsettingscsharpspanverify-output-settings"></a><span id="outsettings_csharp"></span><span id="OUTSETTINGS_CSHARP"></span>验证输出设置
+### <a name="span-idoutsettings_csharpspanspan-idoutsettings_csharpspanverify-output-settings"></a><span id="outsettings_csharp"></span><span id="OUTSETTINGS_CSHARP"></span>验证输出设置
 
-如果你想要自定义验证 Api 生成的输出，则可以使用**SetVerifyOutput**类。 对象的生存期控制的输出设置的时间量。 **SetVerifyOutput**类是引用计数，并在每个线程进行函数。
+如果要自定义验证 Api 生成的输出，可以使用 **SetVerifyOutput** 类。 对象的生存期控制设置输出设置的时间。 **SetVerifyOutput** 类对每个线程进行引用计数和函数。
 
 ```cpp
 using (new SetVerifyOutput(VerifyOutputSettings.LogOnlyFailures))
@@ -313,9 +312,9 @@ using (new SetVerifyOutput(VerifyOutputSettings.LogOnlyFailures))
 Verify.IsTrue(true, "Should log a comment");
 ```
 
-由于它是在使用的唯一调用，则应记录在上面的示例中，只有第二个验证对调用块。 但是，第三个验证调用*将*即使它成功记录。 这是由于 SetVerifyOutput 类已超出范围。
+在上面的示例中，只应记录第二个验证调用，因为它是在 using 块中唯一失败的调用。 但 *会* 记录第三个验证调用，即使成功。 这是因为 SetVerifyOutput 类超出了范围。
 
-或者，设置可以实现相同的结果**Verify.OutputSettings = VerifyOutputSettings.LogOnlyFailures**之前的验证操作，例如如下所示的示例。
+或者，通过在验证操作之前设置 **OutputSettings = VerifyOutputSettings** （如下面所示的示例），可以获得相同的结果。
 
 ```cpp
 Verify.OutputSettings = VerifyOutputSettings.LogFailuresAsWarnings
@@ -330,20 +329,20 @@ finally
 }
 ```
 
-请注意，即使此类选项可用，将 SetVerifyOutput 声明中使用的对象为块仍是建议的选项。
+请注意，尽管此类选项可用，但仍建议在 using 块中将 SetVerifyOutput 声明为对象。
 
-用于设置验证输出存在以下选项：
+以下选项用于设置验证输出：
 
 <span id="verifyoutputsettings.logonlyfailures_"></span><span id="VERIFYOUTPUTSETTINGS.LOGONLYFAILURES_"></span>VerifyOutputSettings.LogOnlyFailures   
-仅失败的验证的调用将记入日志;所有成功的调用将被忽略。
+仅记录失败的验证调用;所有成功的调用都将被忽略。
 
 <span id="verifyoutputsettings.logfailuresasblocked_"></span><span id="VERIFYOUTPUTSETTINGS.LOGFAILURESASBLOCKED_"></span>VerifyOutputSettings.LogFailuresAsBlocked   
-为受阻而不是日志记录错误记录所有失败。
+将所有失败记录为已阻止，而不是记录错误。
 
 <span id="verifyoutputsettings.logfailuresaswarnings_"></span><span id="VERIFYOUTPUTSETTINGS.LOGFAILURESASWARNINGS_"></span>VerifyOutputSettings.LogFailuresAsWarnings   
-记录为警告而不是日志记录错误的所有失败。
+将所有失败记录为警告，而不是记录错误。
 
-验证是否可以输出设置或必须一起启用多个设置：
+验证输出设置可以是，也可以组合在一起启用多个设置：
 
 ```cpp
 using (new SetVerifyOutput(VerifyOutputSettings.LogFailuresAsBlocked | VerifyOutputSettings.LogOnlyFailures))
@@ -355,21 +354,21 @@ using (new SetVerifyOutput(VerifyOutputSettings.LogFailuresAsBlocked | VerifyOut
 ## <a name="span-idscriptspanspan-idscriptspanusing-verify-from-script"></a><span id="script"></span><span id="SCRIPT"></span>使用脚本验证
 
 
-验证 API 还可以找出脚本语言，遵循相同的使用情况模式为C++和C#。
+还为脚本语言显示了验证 API，遵循与 c + + 和 c # 相同的使用模式。
 
 ### <a name="span-idinstallationspanspan-idinstallationspanspan-idinstallationspaninstallation"></a><span id="Installation"></span><span id="installation"></span><span id="INSTALLATION"></span>安装
 
-使用可编写脚本验证 API 的时从 TAEF 测试方法中没有安装必要-使用免注册 COM 注册所需的 API。 若要使用外部 TAEF 测试中的可编写脚本 API 方法 （外部 TAEF，或在子进程中） 只需注册 Te.Common.dll 二进制文件使用 regsvr32 从提升的命令提示符;例如：
+在 TAEF 测试方法中使用可编写脚本的验证 API 时，无需安装-所需 API 是使用 "注册免费 COM" 注册的。 若要从 TAEF 测试方法外部使用可编写脚本的 API (外部 TAEF 或子) 进程中，只需在提升的命令提示符下使用 regsvr32 注册 Te.Common.dll 二进制值;例如：
 
 ``` syntax
 regsvr32 Te.Common.dll
 ```
 
-在部署 TAEF 实验室执行使用部署文件时，会自动注册 Te.Common.dll。
+使用部署文件部署 TAEF 时，将自动注册 Te.Common.dll。
 
-### <a name="span-idusagescriptspanspan-idusagescriptspanusage"></a><span id="usage_script"></span><span id="USAGE_SCRIPT"></span>使用情况
+### <a name="span-idusage_scriptspanspan-idusage_scriptspanusage"></a><span id="usage_script"></span><span id="USAGE_SCRIPT"></span>用法
 
-可编写脚本验证 API 的显示通过 TE.Common.Verify COM 类-只需实例化，它的类和调用方法验证类将自动使用 WEXLogger 编写通过和失败验证到日志。
+可编写脚本的验证 API 通过 "TE. Verify" COM 类进行呈现-只需实例化该类并对其调用方法，Verify 类就会自动与 WEXLogger 一起使用，将传递和失败验证写入日志。
 
 ```cpp
 1   <?xml version="1.0" ?>
@@ -395,7 +394,7 @@ regsvr32 Te.Common.dll
 21  </package>
 ```
 
-此示例使用一个 hello World 的方法定义 TAEF 脚本测试类。 第 6 行中使用 object 元素来在全局范围中定义验证变量。 第 8 行使用引用元素到脚本; 全局作用域包括从指定的类型库 （在此情况下，Te.Common.dll 的类型库） 的所有常量在这种情况下，它将添加 VerifySettings 常量。 第 16 和 17 行显示只需使用了验证 API。 执行时，该示例将生成以下输出：
+此示例定义了一个 TAEF 脚本测试类，其中包含一个 "HelloWorld" 方法。 第6行使用 "object" 元素来定义全局范围内的验证变量。 第8行使用 "reference" 元素包括指定类型库中的所有常量 (在本例中，Te.Common.dll 的类型库) 到脚本的全局范围内;在这种情况下，它将添加 "VerifySettings" 常数。 第16行和第17行只显示验证 API 的用法。 执行时，此示例将生成以下输出：
 
 ``` syntax
 Test Authoring and Execution Framework v2.7 Build 6.2.7922.0 (fbl_esc_end_dev(mschofie).110202-1000) For x86
@@ -408,74 +407,74 @@ EndGroup: Example::HelloWorld [Passed]
 Summary: Total=1, Passed=1, Failed=0, Blocked=0, Not Run=0, Skipped=0
 ```
 
-### <a name="span-idapiscriptspanspan-idapiscriptspanscriptable-verify-api"></a><span id="api_script"></span><span id="API_SCRIPT"></span>可编写脚本验证 API
+### <a name="span-idapi_scriptspanspan-idapi_scriptspanscriptable-verify-api"></a><span id="api_script"></span><span id="API_SCRIPT"></span>可脚本验证 API
 
-可编写脚本的验证 API 上的验证的方法如下所示：
+可编写脚本的验证 API 上的验证方法如下所示：
 
 | 方法                                                                                | 功能                                                                                                                                                                                                                                                                                                                  |
 |---------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| bool Verify.AreEqual (expected，实际\[可选消息\])                          | 验证两个值相等。 如果 VerifySettings\_CoerceTypes' 设置为启用，此方法使用 JScript 定义的相等性，如果 VerifySettings\_CoerceTypes' 设置不启用，该方法使用标识的 JScript 定义。 **VerifySettings\_CoerceTypes' 处于打开状态。**     |
-| bool Verify.AreNotEqual (expected，实际\[可选消息\])                       | 验证两个值不相等。 如果 VerifySettings\_CoerceTypes' 设置为启用，此方法使用 JScript 定义的相等性，如果 VerifySettings\_CoerceTypes' 设置不启用，该方法使用标识的 JScript 定义。 **VerifySettings\_CoerceTypes' 处于打开状态。** |
-| bool Verify.IsGreaterThan (expectedGreater，expectedLess，\[可选消息\])        | 验证的第一个值大于第二个。                                                                                                                                                                                                                                                                      |
-| bool Verify.IsGreaterThanOrEqual (expectedGreater，expectedLess，\[可选消息\]) | 验证的第一个值大于或等于第二个。                                                                                                                                                                                                                                                          |
-| bool Verify.IsLessThan (expectedLess，expectedGreater，\[可选消息\])           | 验证第一个值小于第二个。                                                                                                                                                                                                                                                                         |
-| bool Verify.IsLessThanOrEqual (expectedLess，expectedGreater，\[可选消息\])    | 验证的第一个值小于或等于第二个。                                                                                                                                                                                                                                                             |
-| bool Verify.AreSame (expected，实际\[可选消息\])                           | 验证值相同。                                                                                                                                                                                                                                                                                         |
-| bool Verify.AreNotSame (expected，实际\[可选消息\])                        | 验证的值不是相同。                                                                                                                                                                                                                                                                                     |
-| bool Verify.Fail (\[可选消息\])                                                | 失败且不检查条件。                                                                                                                                                                                                                                                                                             |
-| bool Verify.IsTrue (表达式中，\[可选消息\])                                  | 验证给定的表达式计算结果为 true。                                                                                                                                                                                                                                                                          |
-| bool Verify.IsFalse (表达式中，\[可选消息\])                                 | 验证给定的表达式计算结果为 false。                                                                                                                                                                                                                                                                         |
-| bool Verify.IsNull (预期\[可选消息\])                                    | 验证给定的值是 null。                                                                                                                                                                                                                                                                                       |
-| bool Verify.IsNotNull (预期\[可选消息\])                                 | 验证给定的值不是 null。                                                                                                                                                                                                                                                                                   |
-| bool Verify.Throws (函数\[可选消息\])                                    | 验证给定的函数将引发和异常。                                                                                                                                                                                                                                                                         |
-| bool Verify.NoThrow (函数\[可选消息\])                                   | 验证给定的函数不会引发和异常。                                                                                                                                                                                                                                                                 |
+| bool Assert.areequal (应为，实际为 \[ 可选消息 \])                           | 验证两个值是否相等。 如果 "VerifySettings \_ CoerceTypes" 设置已启用，则此方法使用相等性的 JScript 定义，如果 \_ 未启用 "VerifySettings CoerceTypes" 设置，则该方法将使用标识的 JScript 定义。 **\_默认情况下，"VerifySettings CoerceTypes" 处于打开状态。**     |
+| bool AreNotEqual (应为，实际为 \[ 可选消息 \])                        | 验证两个值是否不相等。 如果 "VerifySettings \_ CoerceTypes" 设置已启用，则此方法使用相等性的 JScript 定义，如果 \_ 未启用 "VerifySettings CoerceTypes" 设置，则该方法将使用标识的 JScript 定义。 **\_默认情况下，"VerifySettings CoerceTypes" 处于打开状态。** |
+| bool IsGreaterThan (expectedGreater，expectedLess， \[ 可选消息 \])         | 验证第一个值是否大于第二个值。                                                                                                                                                                                                                                                                      |
+| bool IsGreaterThanOrEqual (expectedGreater，expectedLess， \[ 可选消息 \])  | 验证第一个值是否大于或等于第二个值。                                                                                                                                                                                                                                                          |
+| bool IsLessThan (expectedLess，expectedGreater， \[ 可选消息 \])            | 验证第一个值是否小于第二个值。                                                                                                                                                                                                                                                                         |
+| bool IsLessThanOrEqual (expectedLess，expectedGreater， \[ 可选消息 \])     | 验证第一个值是否小于或等于第二个值。                                                                                                                                                                                                                                                             |
+| bool AreSame (应为，实际为 \[ 可选消息 \])                            | 验证值是否相同。                                                                                                                                                                                                                                                                                         |
+| bool AreNotSame (应为，实际为 \[ 可选消息 \])                         | 验证这些值是否相同。                                                                                                                                                                                                                                                                                     |
+| bool 验证。 (\[ 可选消息失败 \])                                                 | 在未检查条件的情况下失败。                                                                                                                                                                                                                                                                                             |
+| bool IsTrue (表达式， \[ 可选消息 \])                                   | 验证给定的表达式的计算结果是否为 true。                                                                                                                                                                                                                                                                          |
+| bool IsFalse (表达式， \[ 可选消息 \])                                  | 验证给定的表达式的计算结果是否为 false。                                                                                                                                                                                                                                                                         |
+| 布尔验证 (应为 \[ 可选消息 \])                                     | 验证给定的值是否为 "null"。                                                                                                                                                                                                                                                                                       |
+| 需要 (布尔值， \[ 可选消息 \])                                  | 验证给定的值是否不是 "null"。                                                                                                                                                                                                                                                                                   |
+| bool 验证。引发 (函数、 \[ 可选消息 \])                                     | 验证给定函数是否引发了异常。                                                                                                                                                                                                                                                                         |
+| bool NoThrow (函数， \[ 可选消息 \])                                    | 验证给定函数不引发异常。                                                                                                                                                                                                                                                                 |
 
 
 
-控制设置的验证类中有两种方法：
+Verify 类上有两种方法可用于控制设置：
 
 | 方法                                  | 功能                                         |
 |-----------------------------------------|-------------------------------------------------------|
-| 对象 Verify.EnableSettings(settings)  | 指定将启用设置标志。  |
-| 对象 Verify.DisableSettings(settings) | 指定设置标志将被禁用。 |
+| 对象 EnableSettings (设置)   | 将启用指定的设置标志或标志。  |
+| 对象 DisableSettings (设置)  | 将禁用指定的设置标志或标志。 |
 
 
 
-传递给 Verify.EnableSettings 或 Verify.DisableSettings 方法的设置值可以是以下值之一：
+传递给 EnableSettings 或 DisableSettings 方法的设置值可以是以下值之一：
 
-<span id="VerifySettings_LogOnlyFailures___0x01"></span><span id="verifysettings_logonlyfailures___0x01"></span><span id="VERIFYSETTINGS_LOGONLYFAILURES___0X01"></span>VerifySettings\_LogOnlyFailures = 0x01  
-只有失败日志记录，没有任何输出上成功验证调用。
+<span id="VerifySettings_LogOnlyFailures___0x01"></span><span id="verifysettings_logonlyfailures___0x01"></span><span id="VERIFYSETTINGS_LOGONLYFAILURES___0X01"></span>VerifySettings \_ LogOnlyFailures = 0x01  
+仅记录失败-成功的验证调用无输出。
 
-<span id="VerifySettings_LogFailuresAsBlocked___0x02"></span><span id="verifysettings_logfailuresasblocked___0x02"></span><span id="VERIFYSETTINGS_LOGFAILURESASBLOCKED___0X02"></span>VerifySettings\_LogFailuresAsBlocked = 0x02  
-故障记录为已阻止，而不是默认值 Error。
+<span id="VerifySettings_LogFailuresAsBlocked___0x02"></span><span id="verifysettings_logfailuresasblocked___0x02"></span><span id="VERIFYSETTINGS_LOGFAILURESASBLOCKED___0X02"></span>VerifySettings \_ LogFailuresAsBlocked = 0x02  
+失败记录为 "已阻止"，而不是默认的 "错误"。
 
-<span id="VerifySettings_LogFailuresAsWarnings___0x04"></span><span id="verifysettings_logfailuresaswarnings___0x04"></span><span id="VERIFYSETTINGS_LOGFAILURESASWARNINGS___0X04"></span>VerifySettings\_LogFailuresAsWarnings = 0x04  
-故障记录为警告，而不是默认值 Error。
+<span id="VerifySettings_LogFailuresAsWarnings___0x04"></span><span id="verifysettings_logfailuresaswarnings___0x04"></span><span id="VERIFYSETTINGS_LOGFAILURESASWARNINGS___0X04"></span>VerifySettings \_ LogFailuresAsWarnings = 0x04  
+失败记录为 "警告"，而不是默认的 "错误"。
 
-<span id="VerifySettings_LogValuesOnSuccess___0x08"></span><span id="verifysettings_logvaluesonsuccess___0x08"></span><span id="VERIFYSETTINGS_LOGVALUESONSUCCESS___0X08"></span>VerifySettings\_LogValuesOnSuccess = 0x08  
-要验证的参数值编写为验证日志消息的一部分。 **这是在默认情况下。**
+<span id="VerifySettings_LogValuesOnSuccess___0x08"></span><span id="verifysettings_logvaluesonsuccess___0x08"></span><span id="VERIFYSETTINGS_LOGVALUESONSUCCESS___0X08"></span>VerifySettings \_ LogValuesOnSuccess = 0x08  
+要验证的参数的值作为验证日志消息的一部分写入。 **默认情况下，这是打开的。**
 
-<span id="VerifySettings_CoerceTypes___0x1000"></span><span id="verifysettings_coercetypes___0x1000"></span><span id="VERIFYSETTINGS_COERCETYPES___0X1000"></span>VerifySettings\_CoerceTypes = 0x1000  
-将以下 JScript 强制转换规则强制转换的值传递给验证方法。 **这是在默认情况下。**
+<span id="VerifySettings_CoerceTypes___0x1000"></span><span id="verifysettings_coercetypes___0x1000"></span><span id="VERIFYSETTINGS_COERCETYPES___0X1000"></span>VerifySettings \_ CoerceTypes = 0x1000  
+传递给验证方法的值将按照 JScript 强制规则强制转换。 **默认情况下，这是打开的。**
 
-<span id="VerifySettings_DisableExceptions___0x2000"></span><span id="verifysettings_disableexceptions___0x2000"></span><span id="VERIFYSETTINGS_DISABLEEXCEPTIONS___0X2000"></span>VerifySettings\_DisableExceptions = 0x2000  
-在验证失败时，将不会引发异常。
+<span id="VerifySettings_DisableExceptions___0x2000"></span><span id="verifysettings_disableexceptions___0x2000"></span><span id="VERIFYSETTINGS_DISABLEEXCEPTIONS___0X2000"></span>VerifySettings \_ DisableExceptions = 0x2000  
+当验证失败时，将不会引发异常。
 
-### <a name="span-idsettingsscriptspanspan-idsettingsscriptspanverify-settings"></a><span id="settings_script"></span><span id="SETTINGS_SCRIPT"></span>验证设置
+### <a name="span-idsettings_scriptspanspan-idsettings_scriptspanverify-settings"></a><span id="settings_script"></span><span id="SETTINGS_SCRIPT"></span>验证设置
 
-验证 API 提供了设置来配置它的行为。 EnableSettings 和 DisableSettings 方法可用于启用或禁用特定的验证类维护的设置。 这些方法采用一个或多个要启用或禁用的设置。
+验证 API 提供设置来配置其行为。 "EnableSettings" 和 "DisableSettings" 方法可用于启用或禁用 Verify 类维护的特定设置。 方法采用一个或多个设置来启用或禁用。
 
 ```cpp
     Verify.EnableSettings(VerifySettings_LogOnlyFailures);
 ```
 
-若要启用或禁用在一个调用中的多个设置，可以包括多个 VerifySettings 标志：
+若要在一个调用中启用或禁用多个设置，可以包含多个 "VerifySettings" 标志：
 
 ```cpp
     Verify.EnableSettings(VerifySettings_LogOnlyFailures | VerifySettings_DisableExceptions);
 ```
 
-EnableSettings 和 DisableSettings 方法返回可用于还原原始设置，给定作用域; 从而使得设置来启用或禁用的对象
+EnableSettings 和 DisableSettings 方法返回一个对象，该对象可用于还原原始设置，允许在给定范围内启用或禁用设置;
 
 ```cpp
 1    var guard = Verify.EnableSettings(VerifySettings_LogOnlyFailures);
@@ -489,11 +488,11 @@ EnableSettings 和 DisableSettings 方法返回可用于还原原始设置，给
 9    }
 ```
 
-在此示例中，传递 Verify.EnableSettings 方法 VerifySettings\_LogOnlyFailures'，这将使用已验证对象上存在的设置合并。 Try finally 块中进行验证调用，以便在 finally 块中，可以使用保护对象来还原原始设置。
+在此示例中，将 EnableSettings 方法传递到 "VerifySettings \_ LogOnlyFailures"，该方法将与验证对象上已存在的设置合并。 验证调用是在 try finally 块内进行的，因此，在 finally 块中，可以使用 "guard" 对象来还原原始设置。
 
-### <a name="span-idexceptionscriptspanspan-idexceptionscriptspanexception-based-verify-usage"></a><span id="exception_script"></span><span id="EXCEPTION_SCRIPT"></span>基于异常验证使用情况
+### <a name="span-idexception_scriptspanspan-idexception_scriptspanexception-based-verify-usage"></a><span id="exception_script"></span><span id="EXCEPTION_SCRIPT"></span>基于异常的验证使用情况
 
-默认情况下验证方法将引发异常时验证失败。 在运行下 TAEF 如果测试方法引发异常时，测试将会失败。 例如：
+默认情况下，验证方法会在验证失败时引发异常。 如果在测试方法中引发异常时在 TAEF 下运行，则测试将失败。 例如：
 
 ```cpp
 1    var guard = Verify.EnableSettings(VerifySettings_CoerceTypes);
@@ -508,7 +507,7 @@ EnableSettings 和 DisableSettings 方法返回可用于还原原始设置，给
 10   }
 ```
 
-在此示例中，第二次验证调用将永远不会进行，因为第一个将引发异常，并使测试失败。 可以使用验证 API 上的设置支持要更改此行为，以便失败的验证不会引发，这将允许进行的后续验证调用。 这是特别有用，若要验证的一组参数，并确保所有验证后被写出。
+在此示例中，不会进行第二次验证调用，因为第一次验证调用将引发异常并使测试失败。 验证 API 上的设置支持可用于更改此行为，因此失败的验证不会引发，这允许进行后续验证调用。 这对于验证一组参数特别有用，请确保所有验证都已写出。
 
 ```cpp
 1    var guard = Verify.EnableSettings(VerifySettings_CoerceTypes | VerifySettings_DisableExceptions);
@@ -523,11 +522,11 @@ EnableSettings 和 DisableSettings 方法返回可用于还原原始设置，给
 10   }
 ```
 
-异常已禁用，因为这两个验证将写入到日志中。
+由于异常已禁用，这两种验证都将写入日志。
 
-### <a name="span-idoutsideapiscriptspanspan-idoutsideapiscriptspanusing-the-scriptable-verify-api-outside-taef"></a><span id="outsideapi_script"></span><span id="OUTSIDEAPI_SCRIPT"></span>使用可编写脚本来验证 API 外部 TAEF
+### <a name="span-idoutsideapi_scriptspanspan-idoutsideapi_scriptspanusing-the-scriptable-verify-api-outside-taef"></a><span id="outsideapi_script"></span><span id="OUTSIDEAPI_SCRIPT"></span>在 TAEF 外使用可编写脚本的验证 API
 
-外部 TAEF，可以使用可编写脚本的验证 API。 请确保注册时 Te.Common.dll 中, 所述[安装部分](#installation)，以及创建"TE.Common.Verify"类的简单。
+可脚本验证 API 可在 TAEF 之外使用。 请确保注册了 Te.Common.dll，如 [安装部分](#installation)中所述，简单地创建 "TE" 类。
 
 ```cpp
 var VerifySettings_DisableExceptions = 0x2000;
@@ -546,7 +545,7 @@ Verify.AreEqual(2, 2);
 Log.EndGroup("Group B");
 ```
 
-前面的代码将生成以下控制台输出通过 cscript 执行时：
+前面的代码在通过 cscript 执行时，将生成以下控制台输出：
 
 ``` syntax
 StartGroup: Group A
@@ -564,7 +563,7 @@ Non-passing Tests:
 Summary: Total=2, Passed=1, Failed=1, Blocked=0, Not Run=0, Skipped=0
 ```
 
-[WEX。Logger.Log API](wexlogger.md)可用于配置 WEX 记录器根据需要 （例如，作为子进程），并可编写脚本的验证 API 将充分利用该配置。
+["WEX"。记录器 .Log API](wexlogger.md)可用于根据需要配置 WEX 记录器 (例如，) 子进程，并且可编写脚本的验证 API 将利用该配置。
 
 
 

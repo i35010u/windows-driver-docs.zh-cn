@@ -1,7 +1,6 @@
 ---
 title: DEVPKEY_Device_SessionId
 description: DEVPKEY_Device_SessionId
-ms.assetid: 0e5815b3-0427-4f07-9ec1-a21976d5d933
 keywords:
 - DEVPKEY_Device_SessionId 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 951846d33f4593111d8f11f71a81b446cedd138c
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 97f2e36375f7b7651819f638f3465d64192909de
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90715272"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96805545"
 ---
 # <a name="devpkey_device_sessionid"></a>DEVPKEY_Device_SessionId
 

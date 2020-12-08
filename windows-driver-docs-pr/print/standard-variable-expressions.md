@@ -1,7 +1,6 @@
 ---
 title: 标准变量表达式
 description: 标准变量表达式
-ms.assetid: b77c6b88-9ef2-4485-b77c-50acb21e13b9
 keywords:
 - 打印机命令 WDK Unidrv，字符串
 - 命令字符串 WDK Unidrv
@@ -10,12 +9,12 @@ keywords:
 - max_repeat
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7117dd8b674d5877b75d6c5ee677b2f522813910
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: cdea39834ef9672246b4c53f160ba522ea06ccd2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63375192"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96806865"
 ---
 # <a name="standard-variable-expressions"></a>标准变量表达式
 
@@ -23,19 +22,19 @@ ms.locfileid: "63375192"
 
 
 
-当在命令字符串中指定参数时，可以作为表达式来指定参数值。 此表达式可以使用执行操作的当前值[标准变量](standard-variables.md)。 由大括号 （{，}） 分隔命令字符串中的每个标准变量表达式。
+在命令字符串中指定参数时，可以将参数值指定为表达式。 此表达式可以使用 [标准变量](standard-variables.md)的当前值执行操作。 命令字符串内的每个标准变量表达式由大括号分隔 ( {，} ) 。
 
 标准变量表达式可以包含以下组件的组合：
 
--   零、 一个或多个[标准变量](standard-variables.md)
+-   零个、一个或多个 [标准变量](standard-variables.md)
 
--   整数[数字值](numeric-values.md)
+-   整数 [数值](numeric-values.md)
 
 -   表达式运算符
 
-标准变量表达式不能包含嵌入的宏的引用。
+标准变量表达式不能包含嵌入的宏引用。
 
-下表中包含的表达式运算符。
+表达式运算符包括在下表中。
 
 <table>
 <colgroup>
@@ -50,57 +49,57 @@ ms.locfileid: "63375192"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><em>Val1</em><strong>+</strong><em>Val2</em></p></td>
-<td><p>添加。</p></td>
+<td><p><em>Val1</em> <strong>+</strong><em>Val2</em></p></td>
+<td><p>加。</p></td>
 </tr>
 <tr class="even">
-<td><p><em>Val1</em><strong>-</strong><em>Val2</em></p></td>
-<td><p>减法。</p></td>
+<td><p><em>Val1</em> <strong>-</strong><em>Val2</em></p></td>
+<td><p>减。</p></td>
 </tr>
 <tr class="odd">
-<td><p><em>Val1</em><strong>/</strong><em>Val2</em></p></td>
+<td><p><em>Val1</em> <strong>/</strong><em>Val2</em></p></td>
 <td><p>除。</p></td>
 </tr>
 <tr class="even">
-<td><p><em>Val1</em><strong>*</strong><em>Val2</em></p></td>
-<td><p>乘法。</p></td>
+<td><p><em>Val1</em> <strong>*</strong><em>Val2</em></p></td>
+<td><p>乘。</p></td>
 </tr>
 <tr class="odd">
 <td><p><em>Val1</em><strong>MOD</strong><em>Val2</em></p></td>
-<td><p>取模。 值是后所得的余数<em>Val1</em>通过<em>Val2</em>。</p></td>
+<td><p>取模。 值是除以<em>Val2</em> <em>Val1</em>的余数。</p></td>
 </tr>
 <tr class="even">
-<td><p><strong>max</strong> ( <em>Val1</em> , <em>Val2</em> )</p></td>
-<td><p>最大值。 值为的最大<em>Val1</em>并<em>Val2</em>。</p></td>
+<td><p><strong>max</strong> ( <em>Val1</em> ， <em>Val2</em> ) </p></td>
+<td><p>最大值。 值是 <em>Val1</em> 和 <em>Val2</em>的最大值。</p></td>
 </tr>
 <tr class="odd">
-<td><p><strong>max_repeat</strong> ( <em>Val1</em> )</p></td>
-<td><p>请参阅<strong>使用 max_repeat</strong>部分。</p></td>
+<td><p><strong>max_repeat</strong> ( <em>Val1</em> ) </p></td>
+<td><p>请参阅 <strong>Using max_repeat</strong> 部分。</p></td>
 </tr>
 <tr class="even">
-<td><p><strong>min</strong> ( <em>Val1</em> , <em>Val2</em> )</p></td>
-<td><p>最小值。 值为的最小<em>Val1</em>并<em>Val2</em>。</p></td>
+<td><p><strong>min</strong> ( <em>Val1</em> ， <em>Val2</em> ) </p></td>
+<td><p>最小值。 值是 <em>Val1</em> 和 <em>Val2</em>的最小值。</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>( )</strong></p></td>
-<td><p>优先运算符。 如果未使用，则使用 C 语言的优先级。</p></td>
+<td><p>优先运算符。 如果未使用，则使用 C 语言优先顺序。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-标准变量表达式不要修改分配给标准变量的值。 计算的值将放入使用指定的格式的转义序列[命令字符串自变量类型](command-string-argument-types.md)说明符。
+标准变量表达式不会修改赋给标准变量的值。 使用 [命令字符串参数类型](command-string-argument-types.md) 说明符指定的格式将计算的值置于转义序列中。
 
-### <a href="" id="ddk-using-max-repeat-gg"></a>使用最大\_重复
+### <a name="using-max_repeat"></a><a href="" id="ddk-using-max-repeat-gg"></a>使用 max \_ repeat
 
-利用**最大\_重复**很好地解释通过一个示例。 假设 GPD 文件包含以下条目：
+使用 **最大 \_ 重复** 效果的最佳方式是使用一个示例。 假设 GPD 文件包含以下条目：
 
 ```cpp
 *Command:CmdXMoveRelRight{*Cmd:"<1B>["%d[0,9600]{max_repeat((DestXRel/4))}"a"}
 ```
 
-此命令包含类型的单个参数 **%d**。 它还包含参数范围规范。 每当 Unidrv 将此命令发送到打印机，它首先计算 DestXRel/4 并确定它是否在指定范围内。 如果计算的值是否大于 9600，Unidrv 发送该命令重复 9600，直到指定的值已发送的最大值。 因此如果 DestXRel/4 等于 20,000，Unidrv 发送以下命令：
+此命令包含一个类型为 **% d** 的参数。 它还包含参数范围规范。 每当 Unidrv 将此命令发送到打印机时，它首先计算 DestXRel/4 并确定它是否在指定的范围内。 如果计算出的值大于9600，Unidrv 将重复发送命令，最大值为9600，直到发送指定的值。 因此，如果 DestXRel/4 等于20000，则 Unidrv 将发送以下命令：
 
 ```cpp
 <1B>[9600
@@ -108,11 +107,11 @@ ms.locfileid: "63375192"
 <1B>[800
 ```
 
-**最大\_重复**仅当满足以下条件时，可以使用运算符：
+仅当满足以下条件时，才能使用 **max \_ repeat** 运算符：
 
--   命令字符串包含一个自变量。
+-   命令字符串只包含一个参数。
 
--   参数将包含范围规范。
+-   参数包括范围规范。
 
  
 

@@ -1,20 +1,19 @@
 ---
 title: Pscript5 关键字
 description: Pscript5 关键字
-ms.assetid: a5f4384a-8d78-4dc6-969b-f7a1fa6cb5e7
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8fd774f55e7be16049a4aa48cebda6a4e0699978
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: c918a0b0ec997ea1d2669ff230c197ce01077593
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107522"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96807129"
 ---
 # <a name="pscript5-keywords"></a>Pscript5 关键字
 
 
-从 Pscript5 插件传递到帮助器接口的功能和选项名称是这些功能和选项的字符串名称，如 PPD 文件中所定义的那样。 此外，某些保留字符串是为在 Pscript5 core 驱动程序中实现的功能定义的，这些功能未在 PPD 文件中表示。 请注意，可以通过调用 **EnumOptions**在运行时确定下表中列出的所有选项。 但是，对于需要范围内的数值设置的功能， **EnumOptions**方法将在其*pOptionList*参数中返回**NULL**值，并在 pdwNumOptions 中返回零个选项的计数 \* *pdwNumOptions*。
+从 Pscript5 插件传递到帮助器接口的功能和选项名称是这些功能和选项的字符串名称，如 PPD 文件中所定义的那样。 此外，某些保留字符串是为在 Pscript5 core 驱动程序中实现的功能定义的，这些功能未在 PPD 文件中表示。 请注意，可以通过调用 **EnumOptions** 在运行时确定下表中列出的所有选项。 但是，对于需要范围内的数值设置的功能， **EnumOptions** 方法将在其 *pOptionList* 参数中返回 **NULL** 值，并在 pdwNumOptions 中返回零个选项的计数 \* *pdwNumOptions*。
 
 <table>
 <colgroup>
@@ -26,7 +25,7 @@ ms.locfileid: "90107522"
 <tr class="header">
 <th>功能名称</th>
 <th>选项</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -192,15 +191,15 @@ ms.locfileid: "90107522"
 
  
 
-**注意**   1如果某个功能未满足规定的要求，则该功能将不会在**EnumFeatures**中列出，尝试获取或设置该功能将导致无法返回 E \_ 。 本说明适用于% AddEuro、% 负值和% OutputPSLevel。
+**注意**   1 如果某个功能未满足规定的要求，则该功能将不会在 **EnumFeatures** 中列出，尝试获取或设置该功能将导致无法返回 E \_ 。 本说明适用于% AddEuro、% 负值和% OutputPSLevel。
 
  
 
-**注意**   2 (% CustomPageSize) 自定义页面大小格式与**IPrintCoreUI2**中所述的格式相同。 **EnumOptions** 返回空的选项列表。
+**注意**   2 (% CustomPageSize) 自定义页面大小格式与 **IPrintCoreUI2** 中所述的格式相同。 **EnumOptions** 返回空的选项列表。
 
  
 
-**注意**   3个数值表示为只包含数字字符的 ANSI 字符串。 不允许使用符号符号。 例如，"300" 有效，但 "-20"、"20.5" 和 "+ 300" 均无效。 本说明适用于% JobTimeout、% MaxFontSizeAsBitmap、% MinFontAsOutline、% PSMemory 和% WaitTimeout。
+**注意**   3 数值表示为只包含数字字符的 ANSI 字符串。 不允许使用符号符号。 例如，"300" 有效，但 "-20"、"20.5" 和 "+ 300" 均无效。 本说明适用于% JobTimeout、% MaxFontSizeAsBitmap、% MinFontAsOutline、% PSMemory 和% WaitTimeout。
 
  
 

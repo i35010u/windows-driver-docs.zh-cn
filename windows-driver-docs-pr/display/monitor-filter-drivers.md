@@ -1,17 +1,16 @@
 ---
 title: 监视筛选器驱动程序
 description: 监视筛选器驱动程序
-ms.assetid: cf2bd4c5-d586-4202-ad79-4e7ff9ad6061
 keywords:
 - 筛选器驱动程序 WDK 监视器
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 90fa623cda5ab86e461cc7b771073e1213e6c51d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1584298988e114fe7bc4921c732438db95aecf97
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63353870"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96806369"
 ---
 # <a name="monitor-filter-drivers"></a>监视筛选器驱动程序
 
@@ -19,13 +18,13 @@ ms.locfileid: "63353870"
 ## <span id="ddk_monitor_filter_drivers_gg"></span><span id="DDK_MONITOR_FILTER_DRIVERS_GG"></span>
 
 
-Microsoft 提供了常规用途监视器类功能驱动程序，Monitor.sys，用于处理大多数监视器相关的任务。 供应商想要提供所提供的监视器类功能驱动程序以外的服务才供应商提供的监视器驱动程序不需要。
+Microsoft 提供了一个常规用途的监视器类函数驱动程序，Monitor.sys，用于处理与监视器相关的大部分任务。 不需要供应商提供的监视驱动程序，除非供应商希望提供的服务超出了 monitor 类函数驱动程序提供的服务。
 
-如果监视器供应商选择提供筛选器驱动程序，该驱动程序由位于监视器的设备堆栈中的功能的设备对象上方的筛选器设备对象表示。 筛选器驱动程序处理来自用户模式应用程序，还提供监视供应商的请求。 筛选器驱动程序和用户模式应用程序之间的接口是私有的仅监视器供应商。
+如果监视器供应商选择提供筛选器驱动程序，则该驱动程序由一个筛选器设备对象表示，该对象位于监视器的设备堆栈中的功能设备对象之上。 筛选器驱动程序处理来自用户模式应用程序的请求，这些请求也由监视器供应商提供。 筛选器驱动程序和用户模式应用程序之间的接口是专用的，仅适用于监视供应商。
 
-请注意使监视器供应商不应实现此目的编写筛选器驱动程序，通过显示数据通道命令接口 (DDC/CI) 的监视器的编程控件不处理由监视器设备堆栈。
+请注意，通过显示数据通道命令界面 (DDC/CI) 的编程控制监视器不会由监视设备堆栈处理，因此，监视器供应商不应为此目的编写筛选器驱动程序。
 
-有关监视设备堆栈的表示形式，请参阅[监视器类功能驱动程序](monitor-class-function-driver.md)。
+有关监视设备堆栈的表示形式，请参阅 [监视类函数驱动程序](monitor-class-function-driver.md)。
 
  
 

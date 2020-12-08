@@ -1,7 +1,6 @@
 ---
 title: DEVPKEY_Device_UINumber
 description: DEVPKEY_Device_UINumber
-ms.assetid: 81bd0b71-909d-49c3-8d6c-258c57f80644
 keywords:
 - DEVPKEY_Device_UINumber 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 0b767e0a87250db5deabbe22d9d4218f4144fd56
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 8277e6206671bc2bbc229352b20ed6aad19736c4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90715926"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96805539"
 ---
 # <a name="devpkey_device_uinumber"></a>DEVPKEY_Device_UINumber
 

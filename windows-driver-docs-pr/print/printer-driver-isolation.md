@@ -1,15 +1,14 @@
 ---
 title: 打印机驱动程序隔离
 description: 打印机驱动程序隔离通过使打印机驱动程序可以在与打印后台处理程序运行的进程分离的进程中运行，从而提高了 Windows 打印服务的可靠性。
-ms.assetid: b0f11b3f-92f7-41f6-8edb-63b5651f5499
 ms.date: 06/12/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: a3fce026fb340f203f26c58cb146409193e9ffe4
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 04f5f578b17014feeccb76dda756eaaf0487210d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89214200"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96807317"
 ---
 # <a name="printer-driver-isolation"></a>打印机驱动程序隔离
 
@@ -68,7 +67,7 @@ ms.locfileid: "89214200"
 | 驱动程序隔离模式 | 含义 |
 |--|--|
 | 共享 | 在与其他打印机驱动程序共享但独立于后台处理程序进程的进程中运行该驱动程序。 |
-| 隔离 | 在独立于后台处理程序进程的进程中运行该驱动程序，并且不与其他打印机驱动程序共享。 |
+| 独立 | 在独立于后台处理程序进程的进程中运行该驱动程序，并且不与其他打印机驱动程序共享。 |
 | 无 | 在后台处理程序进程中运行该驱动程序。 |
 
 理想情况下，打印机驱动程序可以在共享模式下运行。 也就是说，它在与其他打印机驱动程序共享的独立进程中运行，但独立于后台处理程序进程。 如果某个驱动程序可以在独立于后台处理程序进程的进程中运行，则它可能需要在隔离模式下运行，但难以与其他驱动程序共享该进程。 例如，设计良好的驱动程序可能具有与相关驱动程序或同一驱动程序的不同版本冲突的文件名，或驱动程序可能经常出现故障，或者存在与在同一进程中运行的其他驱动程序操作冲突的内存泄漏。

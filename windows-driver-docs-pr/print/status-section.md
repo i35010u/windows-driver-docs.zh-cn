@@ -1,20 +1,19 @@
 ---
 title: Status 节
 description: Status 节
-ms.assetid: 3cb36ca5-37dc-4f2b-947f-acc6f2da1103
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f4111a3b8e085391f5412af144d2e2d79a79fa8b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f72a454f5faf83ac516fa1c773cd45cd4e138f5c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63375205"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96806845"
 ---
 # <a name="status-section"></a>Status 节
 
 
-状态部分组成[状态](status.md)属性和一些子属性和提供的打印设备的状态信息的值。
+"状态" 部分包含 [status](status.md) 属性，以及提供有关打印设备状态的信息的多个子属性和值。
 
 ```cpp
 Printer

@@ -1,7 +1,6 @@
 ---
 title: ndiskd. nbl
 description: Ndiskd. nbl 扩展显示 NET_BUFFER_LIST (NBL) 结构的相关信息。
-ms.assetid: 1806ac7c-b438-4c28-bab0-1b65dba651ea
 keywords:
 - ndiskd nbl Windows 调试
 ms.date: 05/23/2017
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: c5e1bd940f2a7889ed2af6501f44400ac82302a1
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 884001eb97bda7ea97f3a24cdee4247b556378f5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89216760"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96805853"
 ---
 # <a name="ndiskdnbl"></a>!ndiskd.nbl
 
 
-**！ Ndiskd。 nbl**扩展显示 (nbl) 结构的[**网络 \_ 缓冲区 \_ 列表**](../network/net-buffer-list-structure.md)的相关信息。
+**！ Ndiskd。 nbl** 扩展显示 (nbl) 结构的 [**网络 \_ 缓冲区 \_ 列表**](../network/net-buffer-list-structure.md)的相关信息。
 
 ```console
     !ndiskd.nbl [-handle <x>] [-basic] [-chain] [-info] [-data] 
@@ -34,7 +33,7 @@ ms.locfileid: "89216760"
 
 
 <span id="_______-handle______"></span><span id="_______-HANDLE______"></span>*-handle*   
-必需。 **网络 \_ 缓冲区 \_ 列表**结构的地址。
+必需。 **网络 \_ 缓冲区 \_ 列表** 结构的地址。
 
 <span id="_______-basic______"></span><span id="_______-BASIC______"></span>*-基本*   
 显示有关 NBL 的基本信息。
@@ -108,7 +107,7 @@ NET_BUFFER ffffdf8014952610
 
 [调试网络堆栈](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-175-Debugging-the-Network-Stack)
 
-[**NDIS 扩展 ( # A0) **](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 扩展 ( # A0)**](ndis-extensions--ndiskd-dll-.md)
 
 [**!ndiskd.help**](-ndiskd-help.md)
 

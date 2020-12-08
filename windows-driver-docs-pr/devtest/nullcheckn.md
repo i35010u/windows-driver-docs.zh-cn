@@ -1,7 +1,6 @@
 ---
 title: 'NullCheck 规则 (ndis) '
 description: 了解 (ndis) 的 NullCheck 规则。 此规则验证驱动程序代码中的 NULL 值是否在稍后的驱动程序中未被引用。
-ms.assetid: E892C9C3-854B-49EF-B69E-E2ED6438128F
 ms.date: 05/21/2018
 keywords:
 - 'NullCheck 规则 (ndis) '
@@ -12,12 +11,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: dd61f6e77e85b9bbcbbd0627f1205fcd9a47fa0c
-ms.sourcegitcommit: cccf9ba62af357aad1016addbbf6c42c7f564412
+ms.openlocfilehash: 206f6cfe300e4d9b82d00b1092aa73084536ec54
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/01/2020
-ms.locfileid: "91606467"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96806425"
 ---
 # <a name="nullcheck-rule-ndis"></a>NullCheck 规则 (ndis) 
 

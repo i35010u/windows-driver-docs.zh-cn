@@ -1,15 +1,14 @@
 ---
 title: LaunchDeviceStageFromExplorer
 description: LaunchDeviceStageFromExplorer
-ms.assetid: 8c1d16e5-e183-4658-8379-09bfed9fe975
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 81fc061e1f88f69fbfbe8a2127771080a24e86ba
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: 92eb66bd45aa19adbc66f8030527dbe151a28b83
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89403362"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96806219"
 ---
 # <a name="launchdevicestagefromexplorer"></a>LaunchDeviceStageFromExplorer
 
@@ -52,7 +51,7 @@ ms.locfileid: "89403362"
 <thead>
 <tr class="header">
 <th>元素</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>

@@ -1,30 +1,29 @@
 ---
-title: '\ TrayName\ (OutputBins)'
-description: '\ TrayName\ (OutputBins)'
-ms.assetid: efdb5ecb-3abc-4dfd-8087-7f4f3a938cf2
+title: '\ TrayName \ (OutputBins) '
+description: '\ TrayName \ (OutputBins) '
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d6343d495b0ed5f5b2803f6a81c61ed1c2b5240d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: aa7d3302b4cc68b9f1e5c541eefff4226d81690b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63372887"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96806005"
 ---
-# <a name="trayname-outputbins"></a>\[TrayName\] (OutputBins)
+# <a name="trayname-outputbins"></a>\[TrayName \] (OutputBins) 
 
 
-架构路径：\\Printer.Finishing.OutputBins。\[TrayName\]
+架构路径： \\ OutputBins \[ 。TrayName\]
 
-节点类型： 属性
+节点类型：属性
 
-说明： 出纸器 IHV 映射属性名称。 IHV 可以映射为输出 bin IHV 特定送纸器名称和从以下列表名称：
+说明：输出栏的 IHV 映射属性名称。 IHV 可以使用以下列表中的名称映射特定于 IHV 的托盘名称：
 
 OutputBin1
 
 OutputBin2
 
-OutputBin*xx* (*xx*是一个正整数值)
+OutputBin *xx* (*xx* 是正整数) 
 
 TopBin
 
@@ -40,37 +39,37 @@ FaceDownBin
 
 MailboxBin
 
-\[TrayName\]属性包含三个对子值：已安装、 容量和级别。
+\[TrayName \] 属性包含三个子值：已安装、容量和级别。
 
-### <a name="span-idinstalledspanspan-idinstalledspan-installed"></a><span id="installed"></span><span id="INSTALLED"></span> 安装
+### <a name="span-idinstalledspanspan-idinstalledspan-installed"></a><span id="installed"></span><span id="INSTALLED"></span> 随
 
-架构路径：\\Printer.Finishing.OutputBins。\[TrayName\]： 安装
+架构路径： \\ OutputBins \[ 。TrayName \] ：已安装
 
-节点类型： 值
+节点类型：值
 
-数据类型： BIDI\_BOOL
+数据类型：双向 \_ BOOL
 
-说明： 确定引用 bin \[TrayName\]设备上安装。 如果 **，则返回 TRUE**，该 bin 设备上安装了; 如果**FALSE**，在设备上未安装该 bin。
+说明：确定 \[ 设备上是否已安装 TrayName 引用的 bin \] 。 如果 **为 TRUE**，则将在设备上安装 bin;如果 **为 FALSE**，则不会在设备上安装该 bin。
 
-### <a name="span-idcapacityspanspan-idcapacityspan-capacity"></a><span id="capacity"></span><span id="CAPACITY"></span> 容量
+### <a name="span-idcapacityspanspan-idcapacityspan-capacity"></a><span id="capacity"></span><span id="CAPACITY"></span> 功能
 
-架构路径：\\Printer.Finishing.OutputBins。\[TrayName\]： 容量
+架构路径： \\ OutputBins \[ 。TrayName \] ：容量
 
-节点类型： 值
+节点类型：值
 
-数据类型： BIDI\_INT
+数据类型：双向 \_ INT
 
-说明： 中表的当前引用的输出 bin 的容量。
+说明：当前所引用的输出箱的容量（以工作表为限）。
 
-### <a name="span-idlevelspanspan-idlevelspan-level"></a><span id="level"></span><span id="LEVEL"></span> 级别
+### <a name="span-idlevelspanspan-idlevelspan-level"></a><span id="level"></span><span id="LEVEL"></span> 调配
 
-架构路径：\\Printer.Finishing.OutputBins。\[TrayName\]： 级别
+架构路径： \\ OutputBins \[ 。TrayName \] ：级别
 
-节点类型： 值
+节点类型：值
 
-数据类型： BIDI\_INT
+数据类型：双向 \_ INT
 
-说明： 的以百分比表示的当前引用的输出纸盒中剩余的容量。 完整的送纸器具有的值为 100，而空的送纸器具有值为 0。 如果级别不是可衡量的则返回值为-1 （表示未知的级别）。
+说明：当前引用的输出箱中剩余的容量量，以百分比表示。 完全纸盒的值为100，而空的托盘的值为0。 如果级别不可度量，则值为-1 (指示应返回未知级别) 。
 
  
 

@@ -1,19 +1,18 @@
 ---
 title: 示例 GPD 文件
 description: 示例 GPD 文件
-ms.assetid: 68b4ffa1-8c94-4cda-bc96-887e196cf534
 keywords:
 - Unidrv，GPD 文件
 - GPD 文件 WDK Unidrv，示例
 - Unidrv WDK 打印
 ms.date: 06/12/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: e1092f2a9b390e620ecb218a7d6be5580534450c
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 5ee2748b4971552264b8a24d777f3333f61e34af
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89214188"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96806991"
 ---
 # <a name="sample-gpd-files"></a>示例 GPD 文件
 

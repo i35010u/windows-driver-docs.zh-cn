@@ -1,9 +1,8 @@
 ---
 title: JobStateReason 元素
-description: 可选 JobStateReason 元素指定一个作业处于其当前状态的原因。
-ms.assetid: daaa288b-fa56-4d29-92f6-0283fbbd2fe8
+description: 可选的 JobStateReason 元素指定作业处于其当前状态的原因之一。
 keywords:
-- JobStateReason 元素成像设备
+- JobStateReason 元素图像设备
 topic_type:
 - apiref
 api_name:
@@ -12,19 +11,19 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ab2809441e4a488a115205a63a56c6f0c92b070a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 401e445e30ebb10455794b56f2847c391a92b8e4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63348778"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96805587"
 ---
 # <a name="jobstatereason-element"></a>JobStateReason 元素
 
 
-可选**JobStateReason**元素指定一个作业处于其当前状态的原因。
+可选的 **JobStateReason** 元素指定作业处于其当前状态的原因之一。
 
-<a name="usage"></a>用法
+<a name="usage"></a>使用情况
 -----
 
 ```xml
@@ -65,43 +64,43 @@ ms.locfileid: "63348778"
 </tr>
 <tr class="odd">
 <td><p><span id="ImageTransferError"></span><span id="imagetransfererror"></span><span id="IMAGETRANSFERERROR"></span>ImageTransferError</p></td>
-<td><p>在作业中的图像的数据传输失败。 如果发生此错误，WSD 扫描服务必须中止作业。</p></td>
+<td><p>作业中映像的数据传输失败。 如果发生此错误，则 WSD 扫描服务必须中止该作业。</p></td>
 </tr>
 <tr class="even">
 <td><p><span id="JobCanceledAtDevice"></span><span id="jobcanceledatdevice"></span><span id="JOBCANCELEDATDEVICE"></span>JobCanceledAtDevice</p></td>
-<td><p>当前扫描作业已取消在扫描设备的前面板。</p></td>
+<td><p>在扫描设备的前面板上取消了当前扫描作业。</p></td>
 </tr>
 <tr class="odd">
 <td><p><span id="JobCompletedWithErrors"></span><span id="jobcompletedwitherrors"></span><span id="JOBCOMPLETEDWITHERRORS"></span>JobCompletedWithErrors</p></td>
-<td><p>作业已完成，但至少一个错误。</p></td>
+<td><p>作业已完成，但至少有一个错误。</p></td>
 </tr>
 <tr class="even">
 <td><p><span id="JobCompletedWithWarnings"></span><span id="jobcompletedwithwarnings"></span><span id="JOBCOMPLETEDWITHWARNINGS"></span>JobCompletedWithWarnings</p></td>
-<td><p>作业已完成，但至少一个警告。 该作业的数据应已成功传输。 此警告可能表示 WSD 扫描服务所做更改到要处理作业的扫描票证。</p></td>
+<td><p>作业已完成，但至少出现一个警告。 应成功传输作业数据。 此警告可能表明 WSD 扫描服务已更改扫描票证来处理作业。</p></td>
 </tr>
 <tr class="odd">
 <td><p><span id="JobScanning"></span><span id="jobscanning"></span><span id="JOBSCANNING"></span>JobScanning</p></td>
-<td><p>扫描程序正在将该作业的数据。</p></td>
+<td><p>扫描仪将作业数据数字化。</p></td>
 </tr>
 <tr class="even">
 <td><p><span id="JobScanningAndTransferring"></span><span id="jobscanningandtransferring"></span><span id="JOBSCANNINGANDTRANSFERRING"></span>JobScanningAndTransferring</p></td>
-<td><p>扫描程序正在将该作业的数据，以及数据传输到客户端。</p></td>
+<td><p>扫描仪将作业数据数字化，并将数据传输到客户端。</p></td>
 </tr>
 <tr class="odd">
 <td><p><span id="JobTimedOut"></span><span id="jobtimedout"></span><span id="JOBTIMEDOUT"></span>JobTimedOut</p></td>
-<td><p>在没有 RetrieveImageRequest 操作及时 CreateScanJobRequest 操作后，WSD 扫描服务已结束该作业。</p></td>
+<td><p>在 RetrieveImageRequest 操作后，WSD 扫描服务将结束该作业，并及时执行 CreateScanJobRequest 操作。</p></td>
 </tr>
 <tr class="even">
 <td><p><span id="JobTransferring"></span><span id="jobtransferring"></span><span id="JOBTRANSFERRING"></span>JobTransferring</p></td>
-<td><p>正在将该作业的数据传输到客户端。</p></td>
+<td><p>正在将作业数据传输到客户端。</p></td>
 </tr>
 <tr class="odd">
-<td><p><span id="None"></span><span id="none"></span><span id="NONE"></span>无</p></td>
-<td><p>作业有任何其他作业的状态信息。</p></td>
+<td><p><span id="None"></span><span id="none"></span><span id="NONE"></span>内容</p></td>
+<td><p>该作业没有与作业状态有关的其他信息。</p></td>
 </tr>
 <tr class="even">
 <td><p><span id="ScannerStopped"></span><span id="scannerstopped"></span><span id="SCANNERSTOPPED"></span>ScannerStopped</p></td>
-<td><p>扫描设备停止由于存在活动的条件，该作业无法继续，直到条件得到解决。</p></td>
+<td><p>扫描设备因活动状态而停止，作业无法继续，直到解决该问题。</p></td>
 </tr>
 </tbody>
 </table>
@@ -111,7 +110,7 @@ ms.locfileid: "63348778"
 ## <a name="child-elements"></a>子元素
 
 
-没有子元素。
+没有任何子元素。
 
 ## <a name="parent-elements"></a>父元素
 
@@ -138,9 +137,9 @@ ms.locfileid: "63348778"
 <a name="remarks"></a>备注
 -------
 
-必须支持代表可以检测 WSD 扫描服务实现的条件的值。 因此，如果特定支持允许的值的一个子集**JobStateReason**原因是无法检测到在实现中。
+必须支持表示 WSD 扫描服务实现可以检测的条件的值。 因此，如果在实现中无法检测到特定的 **JobStateReason** 原因，则只能支持一个允许值的子集。
 
-您可以扩展允许的值，但扩展此列表对客户端有影响。 客户端通常本地化**JobStateReason**到用户的语言值 （与其他字符串变量的值）。 但是，客户端将无法识别的供应商扩展的值。 客户端可以显示的值，它是接收到"按原样"，但此值将以英文显示，因此某些用户可能无法理解的值。
+您可以扩展允许的值，但扩展此列表会影响客户端。 通常情况下，客户端将 **JobStateReason** 值本地化 (与其他) 到用户语言的字符串变量值相同。 但是，客户端将无法识别供应商扩展的值。 客户端可以显示 "按原样" 接收的值，但此值将以英文显示，因此某些用户可能无法理解该值。
 
 ## <a name="see-also"></a>请参阅
 

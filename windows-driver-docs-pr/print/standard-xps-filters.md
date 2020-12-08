@@ -1,15 +1,14 @@
 ---
 title: 标准 XPS 筛选器
 description: Windows 提供了两个 (标准) XPS 筛选器，用于支持从 XPS 到 PCL6 和 PostScript level 3 的内置转换。
-ms.assetid: 6404D215-8154-4604-A67B-19B20D1CF229
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8a166cdbe34bb37e2bd0a870a541c398ce02ac63
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: a343166379700500211b198b7d1c08d8311a92ed
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89212659"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96806853"
 ---
 # <a name="standard-xps-filters"></a>标准 XPS 筛选器
 
@@ -62,9 +61,9 @@ Windows 提供的筛选器可用于打印类驱动程序和特定于模型的 v4
 ## <a name="supported-features"></a>支持的功能
 
 
-标准 XPS 筛选器支持许多常见功能。 所有功能定义使用驱动程序的 GPD 或 PPD 文件。 *MSxpsPCL6.dll*筛选器需要使用 GPD 文件进行配置，并且*MSxpsPS.dll*筛选器需要使用 PPD 文件进行配置。 除非另有说明，否则，如果为功能指定了自定义 PDL 命令，则将使用该命令。
+标准 XPS 筛选器支持许多常见功能。 所有功能定义使用驱动程序的 GPD 或 PPD 文件。 *MSxpsPCL6.dll* 筛选器需要使用 GPD 文件进行配置，并且 *MSxpsPS.dll* 筛选器需要使用 PPD 文件进行配置。 除非另有说明，否则，如果为功能指定了自定义 PDL 命令，则将使用该命令。
 
-如果在任何特定的节下存在注入字符串 (使用** \* Order**命令) 指定，则在 GPD 文件的情况下，筛选器将对这些字符串的内容进行一些假设，并避免发送默认命令。 这是因为在这种情况下，发送默认命令可能会导致命令冲突。 因此，GPD 文件的创建者必须遵循以下准则：
+如果在任何特定的节下存在注入字符串 (使用 **\* Order** 命令) 指定，则在 GPD 文件的情况下，筛选器将对这些字符串的内容进行一些假设，并避免发送默认命令。 这是因为在这种情况下，发送默认命令可能会导致命令冲突。 因此，GPD 文件的创建者必须遵循以下准则：
 
 -   作业 \_ 设置。 \# o PCL6 Binary Stream 标头 (例如： ") &lt; SP &gt; HP-PCL XL; 1; &lt;CR &gt; &lt; LF &gt; ") 必须存在。
     o BeginSession 运算符必须存在，包括所有必需的属性。
@@ -90,7 +89,7 @@ XPS 标准筛选器生成相应的 PDL 数据，以根据 \* PrintableArea、 \*
 #define XPS_FP_JOB_LEVEL_PRINTTICKET    "JobPrintTicket"
 ```
 
-在 InitializeFilter 期间，MTI 筛选器会将 [IPrintReadStreamFactory](/windows-hardware/drivers/ddi/filterpipeline/nn-filterpipeline-iprintreadstreamfactory) 的实现添加到属性包中。 此接口的一种方法 **system.resources.resourcemanager.getstream**会一直阻止，直到 PrintTicket 流可用。 这提供了一种方法来同步对属性的访问。
+在 InitializeFilter 期间，MTI 筛选器会将 [IPrintReadStreamFactory](/windows-hardware/drivers/ddi/filterpipeline/nn-filterpipeline-iprintreadstreamfactory) 的实现添加到属性包中。 此接口的一种方法 **system.resources.resourcemanager.getstream** 会一直阻止，直到 PrintTicket 流可用。 这提供了一种方法来同步对属性的访问。
 
 **重要提示**  ：如果从 InitializeFilter 调用 **system.resources.resourcemanager.getstream** ，则会导致死锁。
 
@@ -107,11 +106,11 @@ GPD 功能按以下顺序映射：
 
 2. 指定了 PrintSchemaPrivateNamespaceURI 特性，并且 GPD 功能名称与 PrintTicket 功能名称匹配。 匹配功能名称并不是很简单，并遵循若干规则：
 
-a. 如果第一个选项的 " ** \* 顺序**" 部分为 \_ "页面设置" 或 \_ "页面完成"，并且 "GPD" 功能不以 "page" 开头，则在尝试匹配之前，将 "page" 预置到 GPD 功能名称之前。
+a. 如果第一个选项的 " **\* 顺序**" 部分为 \_ "页面设置" 或 \_ "页面完成"，并且 "GPD" 功能不以 "page" 开头，则在尝试匹配之前，将 "page" 预置到 GPD 功能名称之前。
 
-b. 如果第一个选项的 " ** \* 顺序**" 部分为 \_ "doc 安装" 或 \_ "doc 完成"，并且 "GPD" 功能不以 "document" 开头，则在尝试匹配之前，"文档" 会预置到 GPD 功能名称之前。
+b. 如果第一个选项的 " **\* 顺序**" 部分为 \_ "doc 安装" 或 \_ "doc 完成"，并且 "GPD" 功能不以 "document" 开头，则在尝试匹配之前，"文档" 会预置到 GPD 功能名称之前。
 
-c. 如果第一个选项的 " ** \* 顺序**" 部分为 \_ "作业设置" 或 \_ "作业完成"，并且 "GPD" 功能不以 "job" 开头，则在尝试匹配之前，"作业" 会预置到 GPD 功能名称之前。
+c. 如果第一个选项的 " **\* 顺序**" 部分为 \_ "作业设置" 或 \_ "作业完成"，并且 "GPD" 功能不以 "job" 开头，则在尝试匹配之前，"作业" 会预置到 GPD 功能名称之前。
 
 d. 在 \[ \] 尝试匹配之前，不为 a-z、a-z \[ \] 、 \[ 0-9 或 "" 的任何字符 \] \_ 都将替换为 " \_ " 字符。 但是，如果 " \* NoPunctuationCharSubstitute" 属性设置为 "TRUE"，则筛选器不会替换 "." 或 "-" \_ 字符。
 
@@ -177,7 +176,7 @@ XPS 到 PCL6 和 XPS 到 PS 的筛选器支持窗体到托盘的映射表。 如
 
 使用驱动程序与 MSxpsPS.dll 的 PostScript 设备的默认行为是：为每个页面发出 SetPageDevice 命令，此命令声明为页面指定的一组完整的选项。 请注意，某些设备在此方法中可能无法正常运行。
 
-但是，如果设备使用 MSxpsPS.dll，而附带的 PPD 文件指定** \* MSOptimizeSetPageDevice： True**，则以下是 PostScript 设备行为：-对于自上一页面后 SetPageDevice 命令的任何部分发生了更改的每个页面，将发出新的 SetPageDevice 命令，以指示为页面指定的选项集。 但是，如果自上一页面起，SetPageDevice 命令的任何部分没有任何更改，则不会为该页发出 SetPageDevice 命令。
+但是，如果设备使用 MSxpsPS.dll，而附带的 PPD 文件指定 **\* MSOptimizeSetPageDevice： True**，则以下是 PostScript 设备行为：-对于自上一页面后 SetPageDevice 命令的任何部分发生了更改的每个页面，将发出新的 SetPageDevice 命令，以指示为页面指定的选项集。 但是，如果自上一页面起，SetPageDevice 命令的任何部分没有任何更改，则不会为该页发出 SetPageDevice 命令。
 
 ## <a name="related-topics"></a>相关主题
 [支持的 PrintTicket 功能](supported-printticket-features.md)  

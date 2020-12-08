@@ -1,23 +1,22 @@
 ---
 title: 打印机选项
 description: 打印机选项
-ms.assetid: 48033d01-e701-4bc5-aac9-9ac2f0fd4de9
 keywords:
 - Unidrv，打印机选项
 - GPD 文件 WDK Unidrv，打印机选项
 - 打印机选项 WDK Unidrv
 - 选项 WDK 打印机
 - 打印机功能 WDK Unidrv，打印机选项
-- 打印机选项 WDK Unidrv 有关打印机选项
+- 打印机选项 WDK Unidrv，关于打印机选项
 - Unidrv WDK 打印
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6ff90a3fac0b52c5f26ae306c7e5bda6cb47c2df
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 67470b6f6bd28d1e9f0dab0b784e89d3f547d14a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63384601"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96807235"
 ---
 # <a name="printer-options"></a>打印机选项
 
@@ -25,11 +24,11 @@ ms.locfileid: "63384601"
 
 
 
-打印机选项表示可分配给状态[打印机功能](printer-features.md)。 例如，如果打印机可使用同时信纸尺寸和法律尺寸的纸张，然后字母和法律都指定为其 PaperSize 功能选项。
+打印机选项表示可分配给 [打印机功能](printer-features.md)的状态。 例如，如果打印机可以同时使用 letter 大小大小和合法纸张，则会将字母和法律指定为其 PaperSize 功能的选项。
 
-本部分讨论 GPD 语言支持[标准选项](standard-options.md)并[自定义选项](customized-options.md)。
+本部分讨论 [标准选项](standard-options.md) 和 [自定义选项](customized-options.md)的 GPD 语言支持。
 
-在本部分中的其他主题包括[选项条目格式](option-entry-format.md)，[选项属性](option-attributes.md)，并[选项约束](option-constraints.md)。
+本节中的其他主题包括 [选项输入格式](option-entry-format.md)、 [选项属性](option-attributes.md)和 [选项约束](option-constraints.md)。
 
  
 

@@ -1,7 +1,6 @@
 ---
 title: VPE 回调函数
 description: VPE 回调函数
-ms.assetid: c36e99a5-0657-4945-b5e8-21d875e9d1ec
 keywords:
 - DirectX VPE 支持 WDK DirectDraw，初始化
 - 绘制 VPEs WDK DirectDraw，初始化
@@ -12,12 +11,12 @@ keywords:
 - 回调函数 WDK 视频端口扩展
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9161500ba3a12dc082c3bea338156f58d74ffd2e
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: c4061ac4dd8b626333cb50a060e3b5c73324cce1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90717448"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96806329"
 ---
 # <a name="vpe-callback-functions"></a>VPE 回调函数
 
@@ -35,7 +34,7 @@ ms.locfileid: "90717448"
 <thead>
 <tr class="header">
 <th align="left">VPE 回调函数</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>

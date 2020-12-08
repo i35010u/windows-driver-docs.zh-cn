@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ VIDEOCONTROL \_ 实际 \_ 帧 \_ 速率
 description: "\"KSPROPERTY \\_ VIDEOCONTROL \\_ 实际 \\_ 帧 \\_ 速率\" 属性检索指定 pin 的设备流式传输的帧速率。 此属性是可选的。"
-ms.assetid: 1681bb54-bdd8-499d-b544-c0e8b14deaa5
 keywords:
 - KSPROPERTY_VIDEOCONTROL_ACTUAL_FRAME_RATE 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: caa3ad52b272236d89d70be99af7ec4761131517
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: b6e706ad1dc549d4768087903135189ee133c143
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102378"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96805963"
 ---
 # <a name="ksproperty_videocontrol_actual_frame_rate"></a>KSPROPERTY \_ VIDEOCONTROL \_ 实际 \_ 帧 \_ 速率
 

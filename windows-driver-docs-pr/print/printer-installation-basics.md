@@ -1,20 +1,19 @@
 ---
 title: 打印机安装基础知识
 description: 打印机安装基础知识
-ms.assetid: e4f51bcd-302b-450b-a5d0-ae3ddae4e1b3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 84d1fe5c95d42d4a0ef2637a3b795d4389525665
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 210aed32d82bd554569f5c51d6c54f6a41dae1c2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63384609"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96807243"
 ---
 # <a name="printer-installation-basics"></a>打印机安装基础知识
 
 
-本部分包括以下主题：
+本节包括下列主题：
 
 [打印机 INF 文件](printer-inf-files.md)
 
@@ -22,7 +21,7 @@ ms.locfileid: "63384609"
 
 [打印驱动程序版本控制](print-driver-versioning.md)
 
-[打印驱动程序的包](print-driver-packages.md)
+[打印驱动程序包](print-driver-packages.md)
 
  
 

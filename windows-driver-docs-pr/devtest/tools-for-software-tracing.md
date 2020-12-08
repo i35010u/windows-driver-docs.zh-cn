@@ -1,7 +1,6 @@
 ---
 title: 用于软件跟踪的工具
 description: WDK 包含的工具旨在支持 Windows (ETW) 的事件跟踪，并补充了 Windows 中包含的跟踪工具。
-ms.assetid: 31056b02-378f-4756-b5a0-3d4cbbc6d3da
 keywords:
 - 工具 WDK，软件跟踪
 - 驱动程序开发工具 WDK、软件跟踪
@@ -12,12 +11,12 @@ keywords:
 - 跟踪工具 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 25203ff5296e72b86123644cde9d04498690022a
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 8a7576dc8b152b5df090ef8d49f1e58c43dbf06c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89384149"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96805647"
 ---
 # <a name="tools-for-software-tracing"></a>用于软件跟踪的工具
 
@@ -79,7 +78,7 @@ Microsoft Windows 驱动程序工具包 (WDK) 包含一组用于软件跟踪的�
 <td align="left">提供程序可以应用 Acl 来限制可以从中收集事件的用户。</td>
 </tr>
 </tbody>
-</table> 
+</table> 
 
 有关使用 Windows 软件跟踪预处理器 (WPP) 宏将软件跟踪添加到驱动程序或应用程序的信息，请参阅 [WPP 软件跟踪](wpp-software-tracing.md)。
 
@@ -87,7 +86,7 @@ Microsoft Windows 驱动程序工具包 (WDK) 包含一组用于软件跟踪的�
 
 有关使用 Windows Management Instrumentation (WMI) 扩展添加到 Windows 驱动模型 (WDM) 以将软件跟踪添加到任何驱动程序的信息，请参阅 [Wmi 事件跟踪](../kernel/wmi-event-tracing.md)。
 
-**注意**   ETW 和 WPP 支持大多数类型的内核模式驱动程序和用户模式应用程序。 但 ETW 和 WPP 使用某些类型的驱动程序（如微型端口驱动程序）不可用的类型。 若要确定是否支持某个特定的驱动程序类型，请将基本的 WPP 宏添加到该驱动程序，如 [WPP \_ INIT \_ 跟踪](/previous-versions/windows/hardware/previsioning-framework/ff556191(v=vs.85)) 和 [wpp \_ 清除](/previous-versions/windows/hardware/previsioning-framework/ff556179(v=vs.85))。 如果代码由于未定义所使用的类型而不编译，则 ETW 和 WPP 不能支持驱动程序类型。 
+**注意**   ETW 和 WPP 支持大多数类型的内核模式驱动程序和用户模式应用程序。 但 ETW 和 WPP 使用某些类型的驱动程序（如微型端口驱动程序）不可用的类型。 若要确定是否支持某个特定的驱动程序类型，请将基本的 WPP 宏添加到该驱动程序，如 [WPP \_ INIT \_ 跟踪](/previous-versions/windows/hardware/previsioning-framework/ff556191(v=vs.85)) 和 [wpp \_ 清除](/previous-versions/windows/hardware/previsioning-framework/ff556179(v=vs.85))。 如果代码由于未定义所使用的类型而不编译，则 ETW 和 WPP 不能支持驱动程序类型。 
 
 ## <a name="whats-in-this-section"></a>本节内容
 
@@ -117,4 +116,4 @@ Microsoft Windows 驱动程序工具包 (WDK) 包含一组用于软件跟踪的�
 
 [内核模式性能监视](kernel-mode-performance-monitoring.md)
 
-有关 [事件跟踪](/windows/desktop/ETW/about-event-tracing)的概念信息，请参阅 Microsoft Windows SDK 文档。 
+有关 [事件跟踪](/windows/desktop/ETW/about-event-tracing)的概念信息，请参阅 Microsoft Windows SDK 文档。 

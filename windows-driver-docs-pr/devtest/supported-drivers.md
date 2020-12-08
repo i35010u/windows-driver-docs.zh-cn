@@ -1,7 +1,6 @@
 ---
 title: 支持的驱动程序
 description: 支持的驱动程序
-ms.assetid: 1d41a9a9-415a-4dba-8b52-138c47ad63fd
 keywords:
 - 静态驱动程序验证程序 WDK，要求
 - StaticDV WDK，要求
@@ -9,12 +8,12 @@ keywords:
 - 函数原型 WDK 静态驱动程序验证程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0058a56201d21ce3269c160a0ffdc8a3c3d278f5
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: fc23bbabf54b75398a756ce47f84c61c53622bdd
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91732629"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96806411"
 ---
 # <a name="supported-drivers"></a>支持的驱动程序
 
@@ -38,7 +37,7 @@ SDV 只能验证具有以下特征的驱动程序：
 
 - SDV 可以验证 NDIS 驱动程序，前提是使用 SDV 回调函数类型通过函数声明为每个回调函数添加注释。 有关详细信息，请参阅 [使用 NDIS 驱动程序的函数角色类型声明函数](static-driver-verifier-ndis-function-declarations.md)。
 
-- SDV 可以验证 Storport 驱动程序，前提是你为每个回调函数添加了函数声明。 可以使用 SDV-Storport 回调函数类型执行此操作。 有关详细信息，请参阅 [使用 Storport 驱动程序的函数角色类型声明函数](declaring-functions-by-using-function-role-types-for-storport-drivers.md)。
+- SDV 可以验证 Storport 驱动程序，前提是你为每个回调函数添加了函数声明。 可以通过使用 SDV-Storport 回调函数类型来实现此目的。 有关详细信息，请参阅 [使用 Storport 驱动程序的函数角色类型声明函数](declaring-functions-by-using-function-role-types-for-storport-drivers.md)。
 
 ### <a name="basic-driver-requirements"></a>基本驱动程序要求
 
@@ -50,7 +49,7 @@ SDV 只能验证具有以下特征的驱动程序：
 
 - 有一个在 [编写卸载例程](../kernel/writing-an-unload-routine.md)时按建议编写的 unload 例程。
 
-- 使用函数角色类型声明声明每个调度函数，如 [使用函数角色类型声明](using-function-role-type-declarations.md)中所述。 有关 WDM 角色类型和** \_ 调度 \_ 类型 \_ (*类型*) **注释的信息，请参阅[使用 WDM 驱动程序的函数角色类型声明函数](declaring-functions-using-function-role-types-for-wdm-drivers.md)。
+- 使用函数角色类型声明声明每个调度函数，如 [使用函数角色类型声明](using-function-role-type-declarations.md)中所述。 有关 WDM 角色类型和 **\_ 调度 \_ 类型 \_ (*类型*)** 注释的信息，请参阅 [使用 WDM 驱动程序的函数角色类型声明函数](declaring-functions-using-function-role-types-for-wdm-drivers.md)。
 
 对于 SDV 验证 KMDF 驱动程序的驱动程序，该驱动程序必须：
 
@@ -88,4 +87,4 @@ SDV 只能验证具有以下特征的驱动程序：
 
 - 库使用 .def 文件来重命名已导出的函数，外部名称与库中其他静态函数的名称相同。
 
-如果驱动程序代码或库代码包含这些元素，则 SDV 会尝试验证驱动程序或处理库，但 **不支持 (NSF) **的结果。 有关 SDV 结果的详细信息，请参阅 [解释静态驱动程序验证程序结果](interpreting-static-driver-verifier-results.md)。
+如果驱动程序代码或库代码包含这些元素，则 SDV 会尝试验证驱动程序或处理库，但 **不支持 (NSF)** 的结果。 有关 SDV 结果的详细信息，请参阅 [解释静态驱动程序验证程序结果](interpreting-static-driver-verifier-results.md)。

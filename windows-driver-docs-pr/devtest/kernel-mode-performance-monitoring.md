@@ -1,15 +1,14 @@
 ---
 title: 内核模式性能监视
 description: 内核模式性能监视
-ms.assetid: 317d2f9d-db50-4513-8bbd-28f429236877
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b1ba55fd7065e6e506f311b615c7f5b58925a4b6
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 6b62773beef4813e17118c61d9d329303dc768cd
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89385081"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96806481"
 ---
 # <a name="kernel-mode-performance-monitoring"></a>内核模式性能监视
 

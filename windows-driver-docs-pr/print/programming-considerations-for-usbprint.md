@@ -1,7 +1,6 @@
 ---
 title: USBPRINT 编程注意事项
 description: USBPRINT 编程注意事项
-ms.assetid: 351b3124-d584-4817-a5ce-09e16b54d41b
 keywords:
 - 打印机驱动程序 WDK，USB
 - USBPRINT
@@ -9,12 +8,12 @@ keywords:
 - USB 打印机 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0055acf24f05490db166ff0fefe4a2046603ae32
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: b6bc3b18f3f66efdacf54b4a7d18ffc39de47eeb
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89207701"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96807195"
 ---
 # <a name="programming-considerations-for-usbprint"></a>USBPRINT 编程注意事项
 
@@ -48,7 +47,7 @@ USB 打印堆栈与并行打印堆栈共享以下 Api 和 IOCTL：
 
 [**IOCTL \_ USBPRINT \_ 供应商 \_ SET \_ 命令**](/windows-hardware/drivers/ddi/usbprint/ni-usbprint-ioctl_usbprint_vendor_set_command)
 
-**注意**   Usbprint.sys 不提供从设备中获取描述符的机制，也不提供直接操作 USB 管道的机制。
+**请注意**   Usbprint.sys 不提供从设备中获取描述符的机制，也不提供直接操作 USB 管道的机制。
 
  
 

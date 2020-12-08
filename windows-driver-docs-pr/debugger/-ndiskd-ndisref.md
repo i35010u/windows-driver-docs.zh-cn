@@ -1,7 +1,6 @@
 ---
 title: ndiskd.ndisref
 description: Ndiskd. ndisref 扩展显示跟踪的引用计数的调试日志。
-ms.assetid: 6860A567-1017-4184-B8DF-157467360FB9
 keywords:
 - ndiskd ndisref Windows 调试
 ms.date: 06/18/2020
@@ -12,16 +11,16 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: f6ccd36329ce091284fb26c4675ebea2cb4db8e8
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: d985b49ba08fd59be5905a8eabf3c22d39b0a0e4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89206859"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96805823"
 ---
 # <a name="ndiskdndisref"></a>!ndiskd.ndisref
 
-**！ Ndiskd ndisref**扩展显示跟踪的引用计数的调试日志。
+**！ Ndiskd ndisref** 扩展显示跟踪的引用计数的调试日志。
 
 ```console
 !ndiskd.ndisref -handle <x> [-tagtype <str>] [-stacks] [-tag <str>] [-refdebug] 
@@ -94,7 +93,7 @@ REFCOUNT BLOCK
     Include inactive tags
 ```
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [网络驱动程序设计指南](../network/index.md)
 
@@ -102,7 +101,7 @@ REFCOUNT BLOCK
 
 [调试网络堆栈](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-175-Debugging-the-Network-Stack)
 
-[**NDIS 扩展 ( # A0) **](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 扩展 ( # A0)**](ndis-extensions--ndiskd-dll-.md)
 
 [**!ndiskd.help**](-ndiskd-help.md)
 

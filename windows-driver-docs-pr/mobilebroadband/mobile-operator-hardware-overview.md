@@ -1,15 +1,14 @@
 ---
 title: 移动运营商硬件概述
 description: 移动运营商硬件概述
-ms.assetid: b2322972-16be-443f-b46a-7834b4d7ead0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 033fe5bee2fb6c3d212cba6c9399cd7ad79d28cf
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 4d6c513685681bb65ee04e00e8ef61936cc09406
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91733260"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96806211"
 ---
 # <a name="mobile-operator-hardware-overview"></a>移动运营商硬件概述
 
@@ -72,7 +71,7 @@ ms.locfileid: "91733260"
 ## <a name="span-idcomponentsspanspan-idcomponentsspanspan-idcomponentsspancomponents"></a><span id="Components"></span><span id="components"></span><span id="COMPONENTS"></span>组分
 
 
-### <a name="span-idwindows_8__windows_81__or_windows_10_certified_mobile_broadband_devicesspanspan-idwindows_8__windows_81__or_windows_10_certified_mobile_broadband_devicesspanspan-idwindows_8__windows_81__or_windows_10_certified_mobile_broadband_devicesspanwindows8-windows81-or-windows10-certified-mobile-broadband-devices"></a><span id="Windows_8__Windows_8.1__or_Windows_10_certified_mobile_broadband_devices"></span><span id="windows_8__windows_8.1__or_windows_10_certified_mobile_broadband_devices"></span><span id="WINDOWS_8__WINDOWS_8.1__OR_WINDOWS_10_CERTIFIED_MOBILE_BROADBAND_DEVICES"></span>Windows 8、Windows 8.1 或已认证的 Windows 10 移动宽带设备
+### <a name="span-idwindows_8__windows_81__or_windows_10_certified_mobile_broadband_devicesspanspan-idwindows_8__windows_81__or_windows_10_certified_mobile_broadband_devicesspanspan-idwindows_8__windows_81__or_windows_10_certified_mobile_broadband_devicesspanwindows-8-windows-81-or-windows-10-certified-mobile-broadband-devices"></a><span id="Windows_8__Windows_8.1__or_Windows_10_certified_mobile_broadband_devices"></span><span id="windows_8__windows_8.1__or_windows_10_certified_mobile_broadband_devices"></span><span id="WINDOWS_8__WINDOWS_8.1__OR_WINDOWS_10_CERTIFIED_MOBILE_BROADBAND_DEVICES"></span>Windows 8、Windows 8.1 或已认证的 Windows 10 移动宽带设备
 
 若要充分利用 Windows mobile 宽带平台，你的移动宽带设备必须满足 Windows 8、Windows 8.1 或 Windows 10 硬件认证要求。 有关硬件认证要求的全面说明，请参阅 [Windows 硬件认证要求](/previous-versions/windows/hardware/cert-program/)。
 
@@ -82,7 +81,8 @@ ms.locfileid: "91733260"
 
 移动宽带类驱动程序降低了设备制造商为其特定移动宽带设备提供自定义驱动程序的负担。 移动宽带类驱动程序管理任何符合 Windows 8、Windows 8.1 或 Windows 10 设备认证的 USB MBIM 兼容移动宽带接口。 当已认证的设备连接时，无需其他驱动程序，Windows 可以立即使用该设备连接到网络。 移动宽带类驱动程序符合 Windows mobile 宽带驱动程序模型，并向 Windows Mobile 宽带服务提供完整功能。 它支持 GSM 网络，包括 HSPA + 和 LTE;CDMA 网络;和双模式网络，提供 3G CDMA 和 4G LTE。 它还支持操作员消息，如 SMS 和 USSD，以及基于 EAP SIM 的身份验证。
 
-**注意**   尽管移动宽带类驱动程序支持 USSD、EAP-TLS 和多个 PDP 上下文，但它们是 Windows 8、Windows 8.1 或适用于桌面版的 Windows 10 () 硬件认证要求的可选组件。 但是，Windows 10 移动版需要多个 PDP 上下文进行硬件认证。
+**注意**  
+尽管移动宽带类驱动程序支持 USSD、EAP-TLS 和多个 PDP 上下文，但它们是 Windows 8、Windows 8.1 或适用于桌面版的 Windows 10 () 硬件认证要求的可选组件。 但是，Windows 10 移动版需要多个 PDP 上下文进行硬件认证。
 
  
 
@@ -102,7 +102,8 @@ Windows 认证的移动宽带设备将每个受支持的扩展点声明为 "设�
 
 每个设备服务都有相应的 GUID。 在移动宽带类驱动程序与设备之间交换的所有控制消息和非 IP 数据包将携带 GUID 来标识与请求关联的服务。 命令标识符 (Cid) 并且状态指示代码在服务的 GUID 命名空间下定义。 例如，电话簿和 STK 都可以共享相同的 CID 代码，但会被在请求中交换的设备服务 GUID 区分开来。
 
-**注意**   任何桌面应用程序或服务都可以访问基于 COM 的设备服务 API。 WinRT 投影设备服务 API 仅适用于由移动宽带操作员授权的特权 UWP 设备应用。 当以这种方式传达信息时，开发人员应认真考虑隐私和安全性。
+**注意**  
+任何桌面应用程序或服务都可以访问基于 COM 的设备服务 API。 WinRT 投影设备服务 API 仅适用于由移动宽带操作员授权的特权 UWP 设备应用。 当以这种方式传达信息时，开发人员应认真考虑隐私和安全性。
 
  
 
@@ -136,7 +137,8 @@ Windows 8、Windows 8.1 和 Windows 10 支持为 Windows 7 设计的移动宽带
 
 -   Windows RT 和 Windows RT 8.1 认证设备–这些设备通过 Windows RT 或 Windows RT 8.1 Windows 硬件认证工具包支持的移动宽带体验测试。 对于这些设备，Windows RT 和 Windows RT 8.1 提供移动宽带类驱动程序和高级电源管理。
 
-    **注意**   Windows RT 和 Windows RT 8.1 系统不支持为 Windows 7 和更早版本设计的移动宽带设备。
+    **注意**  
+    Windows RT 和 Windows RT 8.1 系统不支持为 Windows 7 和更早版本设计的移动宽带设备。
 
      
 
@@ -188,7 +190,8 @@ Windows 将移动网络运营商配置的 OMA 支持与企业 BYOD 的支持分�
 
 -   如果已使用 SIM 建立了到使用该系统上的备用 APN 成功连接到网络，则将 ContextType 设置为 "Internet" 将不起作用。 强制窗口使用新接入点建立连接的唯一方法是删除创建的特定配置文件。 可以通过在提升的命令提示符下运行以下命令来删除该配置文件： **netsh mbn delete profile interface = "Mobile 宽带 Connection" name = "myProfileName"**
 
-**注意**   由于这是一项可选的 Windows 功能，可用于支持设备，因此没有 HCK 测试或自动测试用例来验证系统上的这种情况。 我们期望操作员认证将处理验证，以确认设备符合操作员要求。
+**注意**  
+由于这是一项可选的 Windows 功能，可用于支持设备，因此没有 HCK 测试或自动测试用例来验证系统上的这种情况。 我们期望操作员认证将处理验证，以确认设备符合操作员要求。
 
  
 
@@ -198,9 +201,10 @@ Windows 将移动网络运营商配置的 OMA 支持与企业 BYOD 的支持分�
 
 某些操作员要求启用移动宽带的系统锁定到其网络，或要求解锁锁定的设备以允许服务可移植性。 若要启用此方案，需要 OEM 和设备供应商 \_ \_ 在 Subsidy 锁的 MBIM 规范中使用 MBIM PIN 类型指南。
 
-设备必须在此锁定状态下报告[**WWAN \_ READY \_ INFO**](/windows-hardware/drivers/ddi/wwan/ns-wwan-_wwan_ready_info)：： [**ReadyState**](/windows-hardware/drivers/ddi/wwan/ne-wwan-_wwan_ready_state) = **WwanReadyStateInitialized** ，并且不应报告**WwanReadyStateDeviceLocked**。
+设备必须在此锁定状态下报告 [**WWAN \_ READY \_ INFO**](/windows-hardware/drivers/ddi/wwan/ns-wwan-_wwan_ready_info)：： [**ReadyState**](/windows-hardware/drivers/ddi/wwan/ne-wwan-_wwan_ready_state) = **WwanReadyStateInitialized** ，并且不应报告 **WwanReadyStateDeviceLocked**。
 
-**注意**   没有 HCK 测试用例来验证设备或系统上实现的此功能是否适用于 Windows。 我们期待 OEM 和运营商在 MBOT 中使用特定筛选器，以确保可对最终产品进行测试。
+**注意**  
+没有 HCK 测试用例来验证设备或系统上实现的此功能是否适用于 Windows。 我们期待 OEM 和运营商在 MBOT 中使用特定筛选器，以确保可对最终产品进行测试。
 
  
 

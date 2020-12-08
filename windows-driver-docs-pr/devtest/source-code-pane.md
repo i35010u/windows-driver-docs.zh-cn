@@ -1,32 +1,31 @@
 ---
 title: 源代码窗格
 description: 源代码窗格
-ms.assetid: 2d4ee4da-1340-473b-83dc-018e1d6910eb
 keywords:
-- 窗格 WDK Static Driver Verifier
+- 面板静态驱动程序验证程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ee6d4829abe776ef17e33f425af0c82ba24d4fff
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b82862989c56ca4c4850fc18e6baa6bc0ad41d30
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63378019"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96805689"
 ---
 # <a name="source-code-pane"></a>源代码窗格
 
 
-**源代码**窗格中显示所有涉及的源代码文件中检测规则冲突。 本部分包括：
+" **源代码** " 窗格显示检测规则冲突所涉及的所有源代码文件。 本节包括：
 
 [了解源代码窗格](understanding-the-source-code-pane.md)
 
 [使用源代码窗格](using-the-source-code-pane.md)
 
-[源代码窗格操作](source-code-pane-actions.md)
+[源代码窗格中的操作](source-code-pane-actions.md)
 
-[源的代码窗格中的文件](files-in-the-source-code-pane.md)
+[源代码窗格中的文件](files-in-the-source-code-pane.md)
 
-[在源代码窗格中的颜色编码](color-coding-in-the-source-code-pane.md)
+[源代码窗格中的颜色编码](color-coding-in-the-source-code-pane.md)
 
  
 

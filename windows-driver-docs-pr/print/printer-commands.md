@@ -1,7 +1,6 @@
 ---
 title: 打印机命令
 description: 打印机命令
-ms.assetid: 4f47ae57-cfca-4670-823e-526e2f40de82
 keywords:
 - Unidrv，命令
 - GPD 文件 WDK Unidrv，打印机命令
@@ -11,12 +10,12 @@ keywords:
 - Unidrv WDK 打印
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 58e31fa782ab3edce608d27f293e126234338b9f
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 7627fda0e2d8081420e1d239b34881fd512bbd33
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89212665"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96807355"
 ---
 # <a name="printer-commands"></a>打印机命令
 

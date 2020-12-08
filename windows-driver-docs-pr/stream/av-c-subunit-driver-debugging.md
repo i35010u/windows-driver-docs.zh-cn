@@ -1,27 +1,26 @@
 ---
 title: AV/C 子单元驱动程序调试
 description: AV/C 子单元驱动程序调试
-ms.assetid: d669157c-60fa-4b7a-8f33-58923a3f2230
 keywords:
-- Avc.sys 功能驱动程序 WDK，调试
+- Avc.sys 函数驱动程序 WDK，调试
 - 跟踪消息 WDK AV/C
 - 消息 WDK AV/C
 - 调试驱动程序 WDK AV/C
 - 一般消息 WDK AV/C
-- Plug and Play WDK AV/C
 - 即插即用 WDK AV/C
+- PnP WDK AV/C
 - 电源管理 WDK AV/C
 - I/O WDK AV/C
 - 连接消息 WDK AV/C
-- AV/C WDK 调试
+- AV/C WDK，调试
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 35ef78fbb475fc80fff515b32170c17ae84535d1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 887bbe6730887409f42d24898ca4152b41b1369b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63323510"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96805995"
 ---
 # <a name="avc-subunit-driver-debugging"></a>AV/C 子单元驱动程序调试
 
@@ -29,13 +28,13 @@ ms.locfileid: "63323510"
 
 
 
-在 Windows Vista 的调试版本之前*Avc.sys*允许跟踪消息输出到调试窗口。 Windows Vista 版本的*Avc.sys*使用事件跟踪 Windows (ETW)。
+在 Windows Vista 之前， *Avc.sys* 的调试版本允许将跟踪消息输出到调试窗口。 *Avc.sys* 的 windows Vista 版本使用 WINDOWS (ETW) 的事件跟踪。
 
-*AvcDebugLevel* ULONG 类型是可能的跟踪级别的位图。 每个半字节表示的跟踪输出的类别。 默认值为 0x00CCCCCC，它将所有消息类别都设置为错误和警告输出级别。 监视 AV/C 命令活动的最佳设置是的 0x000ECCCC （将消息的 TRACE 类添加到输出的 AV/C 类别）。 若要关闭所有调试输出，请将所有位都设置为 0。 下面描述了每个类别的位图。
+*AvcDebugLevel* ULONG 类型是可能的跟踪级别的位图。 每个半字节表示一个跟踪输出类别。 默认值为0x00CCCCCC，它将所有消息类别设置为 "错误" 和 "警告" 输出级别。 监视 AV/C 命令活动的最佳设置是 0x000ECCCC (将消息的跟踪类添加到输出) 的 AV/C 类别。 若要关闭所有调试输出，请将所有位设置为0。 下面描述了每个类别的位图。
 
 **一般消息类别**
 
-泛型类别会应用于所有的泛型输出。 输出的最有趣类流，当启用时，记录每个函数的入口和出口点的一条消息。 在运行 Windows Millennium Edition (Windows Me)、 Windows 98 或 Windows 95 中，所有 TL\_流 (和大多数 TL\_跟踪消息) 转到.ntkern 循环缓冲区池。 若要查看这些日志条目，请使用类型 **.ntkern**调试器，然后选择 D 选项。 按 D 继续转储的缓冲区，一次一页后按空格键。 按任意键取消转储。 若要启用关闭.ntkern 日志记录并将消息发送到标准调试输出，请使用**e ulind**调试器命令，以设置**ulind**变量为 1 （默认设置为 0）。
+泛型类别适用于所有泛型输出。 最感兴趣的输出类是 FLOW，启用后，会在每个函数的入口和出口点记录一条消息。 在运行 Windows Millennium Edition 的计算机上 (Windows Me) 、Windows 98 或 Windows 95，所有 TL \_ FLOW (和大多数 tl \_ 跟踪消息) 转到 ntkern 循环缓冲池。 若要查看这些日志条目，请在调试器中使用 **ntkern** ，然后选择 D 选项。 按 D 后按空格键继续转储缓冲区，一次一页。 按任意键以取消转储。 若要关闭 ntkern 日志记录并将消息发送到标准调试输出，请使用 **e ulind** 调试器命令将 **ulind** 变量设置为 1 (默认设置为 0) 。
 
 <table>
 <colgroup>
@@ -45,7 +44,7 @@ ms.locfileid: "63323510"
 <thead>
 <tr class="header">
 <th>含义</th>
-<th>ReplTest1</th>
+<th>“值”</th>
 </tr>
 </thead>
 <tbody>
@@ -74,9 +73,9 @@ ms.locfileid: "63323510"
 
  
 
-**Plug and Play 消息类别**
+**即插即用消息类别**
 
-插即用 (PnP) 类别会应用于与即插即用相关的所有输出。
+即插即用 (PnP) 类别适用于与 PnP 相关的所有输出。
 
 <table>
 <colgroup>
@@ -86,7 +85,7 @@ ms.locfileid: "63323510"
 <thead>
 <tr class="header">
 <th>含义</th>
-<th>ReplTest1</th>
+<th>“值”</th>
 </tr>
 </thead>
 <tbody>
@@ -113,7 +112,7 @@ ms.locfileid: "63323510"
 
 **电源管理消息类别**
 
-电源管理类别会应用到与电源管理，包括休眠状态相关的所有输出。
+"电源管理" 类别适用于所有与电源管理相关的输出，包括休眠。
 
 <table>
 <colgroup>
@@ -123,7 +122,7 @@ ms.locfileid: "63323510"
 <thead>
 <tr class="header">
 <th>含义</th>
-<th>ReplTest1</th>
+<th>“值”</th>
 </tr>
 </thead>
 <tbody>
@@ -148,9 +147,9 @@ ms.locfileid: "63323510"
 
  
 
-**I/O 消息类别**
+**I/o 消息类别**
 
-I/O 类别会应用于与 interdriver 通信，包括 IRP 处理相关的所有输出。
+I/o 类别适用于与 interdriver 通信相关的所有输出，包括 IRP 处理。
 
 <table>
 <colgroup>
@@ -160,7 +159,7 @@ I/O 类别会应用于与 interdriver 通信，包括 IRP 处理相关的所有�
 <thead>
 <tr class="header">
 <th>含义</th>
-<th>值</th>
+<th>“值”</th>
 </tr>
 </thead>
 <tbody>
@@ -191,7 +190,7 @@ I/O 类别会应用于与 interdriver 通信，包括 IRP 处理相关的所有�
 
 **AV/C 消息类别**
 
-AV/C 类别会应用于与 AV/C 命令相关的所有输出以及潜在的相关性对象列表和旋转锁某些内部驱动程序消息 (TL\_IO\_干扰 I/O 消息类别)。 包含在 TL\_IO\_跟踪类别的消息是命令执行时间。
+AV/C 类别适用于与 AV/C 命令相关的所有输出，以及一些可能与对象列表和旋转锁 (TL \_ IO \_ 干扰 I/o 消息类别) 相关的内部驱动程序消息。 在消息的 TL \_ IO \_ 跟踪类别中包含的是命令执行时间。
 
 <table>
 <colgroup>
@@ -201,7 +200,7 @@ AV/C 类别会应用于与 AV/C 命令相关的所有输出以及潜在的相关
 <thead>
 <tr class="header">
 <th>含义</th>
-<th>值</th>
+<th>“值”</th>
 </tr>
 </thead>
 <tbody>
@@ -232,7 +231,7 @@ AV/C 类别会应用于与 AV/C 命令相关的所有输出以及潜在的相关
 
 **连接消息类别**
 
-连接类别处理的所有即插即用连接相关的输出。
+连接类别处理与连接相关的所有输出。
 
 <table>
 <colgroup>
@@ -242,7 +241,7 @@ AV/C 类别会应用于与 AV/C 命令相关的所有输出以及潜在的相关
 <thead>
 <tr class="header">
 <th>含义</th>
-<th>ReplTest1</th>
+<th>“值”</th>
 </tr>
 </thead>
 <tbody>

@@ -1,7 +1,6 @@
 ---
 title: devobj
-description: Devobj 扩展显示有关 DEVICE_OBJECT 结构的详细的信息。
-ms.assetid: cf722d95-fbd3-4d80-8679-f8fb348ab4b0
+description: Devobj 扩展显示 DEVICE_OBJECT 结构的详细信息。
 keywords:
 - devobj Windows 调试
 ms.date: 05/23/2017
@@ -12,29 +11,29 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 58357319ee5561ae646e9cb55c95b7064a0ba4b7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ee950d4811ae551a81a02b044ce40ecedc17f66b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63336809"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96805913"
 ---
 # <a name="devobj"></a>!devobj
 
 
-**！ Devobj**扩展插件都会显示有关设备的详细的信息\_对象结构。
+**！ Devobj** 扩展显示有关设备对象结构的详细信息 \_ 。
 
 ```dbgcmd
 !devobj DeviceObject 
 ```
 
-## <a name="span-idddkdevobjdbgspanspan-idddkdevobjdbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>参数
+## <a name="span-idddk__devobj_dbgspanspan-idddk__devobj_dbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>参数
 
 
-<span id="_______DeviceObject______"></span><span id="_______deviceobject______"></span><span id="_______DEVICEOBJECT______"></span> *DeviceObject*   
-指定的设备对象。 这可以是十六进制此结构的地址或设备的名称。
+<span id="_______DeviceObject______"></span><span id="_______deviceobject______"></span><span id="_______DEVICEOBJECT______"></span>*DeviceObject*   
+指定设备对象。 这可以是此结构的十六进制地址或设备的名称。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 <table>
 <colgroup>
@@ -55,20 +54,20 @@ ms.locfileid: "63336809"
 
  
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-请参阅[插调试](plug-and-play-debugging.md)有关示例和应用程序的此扩展命令。 有关设备对象的信息，请参阅 Windows Driver Kit (WDK) 文档和*Microsoft Windows Internals*由 Mark Russinovich 和 David solomon 合著。
+请参阅 [即插即用调试](plug-and-play-debugging.md) ，了解此扩展命令的示例和应用程序。 有关设备对象的信息，请参阅 Windows 驱动程序工具包 (WDK) 文档和 *Microsoft Windows 内部机制* ，Mark Russinovich 和 David 所罗门群岛。
 
 <a name="remarks"></a>备注
 -------
 
-如果*DeviceObject*指定的设备的名称，但提供没有前缀，前缀"\\设备\\"假定。 请注意，此命令将检查以查看是否*DeviceObject*表达式计算器在使用之前为有效的地址或设备名称。
+如果 *DeviceObject* 指定设备的名称，但未提供前缀， \\ \\ 则假定为前缀 "device"。 请注意，在使用表达式计算器之前，此命令将检查 *DeviceObject* 是否为有效的地址或设备名称。
 
-显示的信息包括设备的队列中的对象、 有关设备的当前 IRP，设备名称和任何挂起的 Irp 的地址的列表。 它还包括有关设备对象之上 （列为"AttachedDevice"） 此对象和那些在此对象 （列为"附到"） 下分层信息。
+显示的信息包括对象的设备名称、有关设备的当前 IRP 的信息以及设备队列中任何挂起的 Irp 的地址列表。 它还包括有关在此对象顶层分层的设备对象 (列出为 "AttachedDevice" ) 的信息，以及此对象下的分层的信息 (列为 "AttachedTo" ) 。
 
-可以使用获取的设备对象的地址[ **！ drvobj** ](-drvobj.md)或[ **！ devnode** ](-devnode.md)扩展。
+可以使用 [**！ drvobj**](-drvobj.md) 或 [**！ devnode**](-devnode.md) 扩展来获取设备对象的地址。
 
-下面是一个示例：
+其中一个示例如下：
 
 ```dbgcmd
 kd> !devnode

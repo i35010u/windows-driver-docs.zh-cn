@@ -1,7 +1,6 @@
 ---
 title: 打印票证分析
 description: 打印票证分析
-ms.assetid: 8328110a-abb4-47aa-ab1d-730e4a2ce7bd
 keywords:
 - XPSDrv 打印机驱动程序 WDK，呈现模块
 - 渲染模块 WDK XPSDrv，打印票证
@@ -9,12 +8,12 @@ keywords:
 - 分析打印票证对象
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2bc35e57f18b7f80190afe9c28cba56ae78eaf5f
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: fb41a3ca9a6b1b93d0e055bb5cea95f289b32b49
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89207087"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96807403"
 ---
 # <a name="print-ticket-parsing"></a>打印票证分析
 

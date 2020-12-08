@@ -1,7 +1,6 @@
 ---
 title: 提供亚洲语言布局支持
 description: 提供亚洲语言布局支持
-ms.assetid: 38c7dfca-ce30-4967-84a4-e2f40bba8c57
 keywords:
 - 打印处理器 WDK，亚洲语言
 - 亚洲语言 WDK 打印
@@ -17,12 +16,12 @@ keywords:
 - 从右到左阅读语言 WDk 打印
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9b50b7e3e39ed4fc037d57ac886a99feb07602d0
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 81c5c07a56889c0af43509ba0029cd47bd6c31ed
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89209489"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96807185"
 ---
 # <a name="providing-support-for-asian-layout"></a>提供亚洲语言布局支持
 

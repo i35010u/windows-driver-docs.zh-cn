@@ -1,7 +1,6 @@
 ---
 title: ndiskd.ndisrwlock
 description: Ndiskd. ndisrwlock 扩展显示 NDIS_RW_LOCK_EX 锁结构的相关信息。
-ms.assetid: 853CBAFE-3899-4983-BFC7-933D3BC7ADA1
 keywords:
 - ndiskd ndisrwlock Windows 调试
 ms.date: 06/18/2020
@@ -12,16 +11,16 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 06af5b715d3edbf4c1f254e7f2ae9661f99bbecc
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: c4dbbaea87f5dfc77aaeb0bf1b3056d3118ffaaf
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89206857"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96805819"
 ---
 # <a name="ndiskdndisrwlock"></a>!ndiskd.ndisrwlock
 
-**！ Ndiskd ndisrwlock**扩展显示有关[**NDIS \_ RW \_ 锁 \_ EX**](/previous-versions/windows/hardware/drivers/ff567279(v=vs.85))锁结构的信息。
+**！ Ndiskd ndisrwlock** 扩展显示有关 [**NDIS \_ RW \_ 锁 \_ EX**](/previous-versions/windows/hardware/drivers/ff567279(v=vs.85))锁结构的信息。
 
 ```console
 !ndiskd.ndisrwlock -handle <x>
@@ -78,7 +77,7 @@ NDIS READ-WRITE LOCK
     Set a breakpoint on acquire/release
 ```
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [网络驱动程序设计指南](../network/index.md)
 
@@ -86,7 +85,7 @@ NDIS READ-WRITE LOCK
 
 [调试网络堆栈](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-175-Debugging-the-Network-Stack)
 
-[**NDIS 扩展 ( # A0) **](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 扩展 ( # A0)**](ndis-extensions--ndiskd-dll-.md)
 
 [**!ndiskd.help**](-ndiskd-help.md)
 

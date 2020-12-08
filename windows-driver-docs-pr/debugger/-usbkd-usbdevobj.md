@@ -1,7 +1,6 @@
 ---
 title: usbkd.usbdevobj
 description: Usbkd. usbdevobj 命令显示 USB 设备对象的信息。
-ms.assetid: 81A284DB-4830-4F7E-876A-31E7DC2F2819
 keywords:
 - usbkd usbdevobj Windows 调试
 ms.date: 05/23/2017
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 8eee40fb82cbdab45cf27b81389b90c2105b846a
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 7231ccddf48bf35a908933dcf5bf0682db595d5c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89213548"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96805775"
 ---
 # <a name="usbkdusbdevobj"></a>!usbkd.usbdevobj
 
 
-**！ Usbkd. usbdevobj**命令显示 USB 设备对象的信息。
+**！ Usbkd. usbdevobj** 命令显示 USB 设备对象的信息。
 
 ```dbgcmd
 !usbkd.usbdevobj DeviceObject
@@ -32,7 +31,7 @@ ms.locfileid: "89213548"
 
 
 <span id="_______DeviceObject______"></span><span id="_______deviceobject______"></span><span id="_______DEVICEOBJECT______"></span>*DeviceObject*   
-** \_ 设备 \_ 对象**结构的地址。
+**\_ 设备 \_ 对象** 结构的地址。
 
 ## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
