@@ -1,16 +1,15 @@
 ---
 title: OID_WWAN_SMS_CONFIGURATION
 description: OID_WWAN_SMS_CONFIGURATION 设置或返回一个 MB 设备的 SMS 文本消息配置。
-ms.assetid: 3292a91d-4aa8-4c57-9223-d7d984dc5d69
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_WWAN_SMS_CONFIGURATION 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 4acb1d2979d8f077b3242e2f613047517ed3637c
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: cba18f4c0c428906998563c06a440fafcef5d51f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89212327"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812909"
 ---
 # <a name="oid_wwan_sms_configuration"></a>OID \_ WWAN \_ SMS \_ 配置
 
@@ -58,7 +57,7 @@ OID \_ WWAN \_ sms \_ 配置设置或返回一个 MB 设备的 sms 文本消息�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**NDIS \_ WWAN \_ 设置 \_ SMS \_ 配置**](/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_set_sms_configuration)

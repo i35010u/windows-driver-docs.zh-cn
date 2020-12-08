@@ -1,7 +1,6 @@
 ---
 title: 传感器 \_ 类别 \_ 电气
 description: 传感器 \_ 类别 " \_ 电气" 类别包含提供有关电气系统的信息的传感器。
-ms.assetid: b14cf399-7b95-4b32-8371-21f45175ed2b
 keywords:
 - SENSOR_CATEGORY_ELECTRICAL 传感器设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 01/04/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: bfaf48432eb5da91bd72976a3f098546ed311a63
-ms.sourcegitcommit: ca5045a739eefd6ed14b9dbd9249b335e090c4e9
+ms.openlocfilehash: 5bdd95fa3c594d01e8d5aa04c8f62b830013a1ad
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/06/2020
-ms.locfileid: "85968458"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812223"
 ---
 # <a name="sensor_category_electrical"></a>传感器 \_ 类别 \_ 电气
 

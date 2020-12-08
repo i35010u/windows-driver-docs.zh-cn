@@ -1,15 +1,14 @@
 ---
 title: 启用对设备安装调试的支持
 description: 启用对设备安装调试的支持
-ms.assetid: cc47b4c9-fd1d-47c2-9af9-0b7f4a7a918a
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d23bacd8c5bdbfe490b216bba8f589c0e98bb01c
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 515bf77979658dbb5463c21136795fa5f8403281
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89095383"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96813175"
 ---
 # <a name="enabling-support-for-debugging-device-installations"></a>启用对设备安装调试的支持
 
@@ -53,7 +52,7 @@ ms.locfileid: "89095383"
 
 设置 **DebugInstall** 注册表值后，你无需重新启动你要调试的目标系统。 但是，必须在下一设备安装开始之前设置 **DebugInstall** 注册表值，并对每个后续设备安装保持有效，直到将该值设置为零。
 
-**注意**   如果不再需要在目标系统上调试设备安装，请务必将**DebugInstall**注册表值重置为零 (或删除该值) 。
+**注意**  如果不再需要在目标系统上调试设备安装，请务必将 **DebugInstall** 注册表值重置为零 (或删除该值) 。
 
  
 

@@ -1,15 +1,14 @@
 ---
 title: 测试自动亮度
 description: 本主题介绍如何使用 MALT (Microsoft 环境光线工具) 工具测试自动亮度。
-ms.assetid: 0ca1a07e-ab4d-47d1-b6ab-a1aa02ee3ee6
 ms.date: 12/13/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 2576f6d6611f67ba9c38e02cc274a15a575f360e
-ms.sourcegitcommit: e6247811ff9a07070547af3d89705dae33a2f465
+ms.openlocfilehash: 4527136c4328769c71323289689b2bcb39b2e3a5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/23/2020
-ms.locfileid: "91026426"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812145"
 ---
 # <a name="testing-auto-brightness"></a>测试自动亮度
 
@@ -24,8 +23,8 @@ ms.locfileid: "91026426"
 我们强烈建议你使用 **MALT_SUT_Setup.bat** 来设置 MALT，以及 (SUT) 测试的系统。 以下有关手动设置 MALT 和 SUT 的说明仅用于透明度和传统用途。
 
 1. 确保 SUT 的环境光线传感器 (ALS) 。 若要确定你的电脑是否有 ALS，请在 " **显示** 设置" 中的 " **亮度" 和 "颜色**" 下，查找 **"光线变化时自动更改亮度"** 复选框，然后选择它以使用此功能。
-2. 请确保在测试过程中屏幕不会关闭。 若要在 Windows 10 中调整睡眠设置，请单击 "**开始**"，然后选择 "**设置**" "   >  **系统**  >  **电源 & 睡眠**"。 在 "**屏幕**" 下，更改**电池电源，在接通电源后**关闭，**并在****接通**电源后关闭 **。**
-3. 确保在测试过程中设备不会进入睡眠状态。 若要在 Windows 10 中调整睡眠设置，请单击 "**开始**"，然后选择 "**设置**" "   >  **系统**  >  **电源 & 睡眠**"。 在**睡眠状态**下 **，使用电池电量改变，pc 进入睡眠状态后进入睡眠状态** **，pc 进入睡眠状态后进入睡眠状态** **。** **Never**
+2. 请确保在测试过程中屏幕不会关闭。 若要在 Windows 10 中调整睡眠设置，请单击 "**开始**"，然后选择 "**设置**" "   >  **系统**  >  **电源 & 睡眠**"。 在 "**屏幕**" 下，更改 **电池电源，在接通电源后** 关闭，**并在****接通** 电源后关闭 **。**
+3. 确保在测试过程中设备不会进入睡眠状态。 若要在 Windows 10 中调整睡眠设置，请单击 "**开始**"，然后选择 "**设置**" "   >  **系统**  >  **电源 & 睡眠**"。 在 **睡眠状态** 下 **，使用电池电量改变，pc 进入睡眠状态后进入睡眠状态** **，pc 进入睡眠状态后进入睡眠状态** **。** **Never**
 4. 若要减少测试可变性，请在测试之前将 SUT 的屏幕背景设置为纯白。 选择 " **设置" > 个性化 > "背景**"，然后将 "背景" 下拉列表更改为 **"纯色"**。 单击 " **自定义颜色 > 更多** "，并将 "十六进制值" 更改为 `FFFFFF` 。 这会将桌面背景更改为纯白。
 5. 请确保在 SUT 上已打开该卷。 当长时间运行的测试完成时，应用程序将发出声音，通知您已完成。
 
@@ -33,7 +32,7 @@ ms.locfileid: "91026426"
 
 ### <a name="get-ambient-light-response-curve"></a>获取环境光线响应曲线
 
-** (推荐使用 [SensorExplorer](https://aka.ms/sensorexplorer) 应用) **
+**(推荐使用 [SensorExplorer](https://aka.ms/sensorexplorer) 应用)**
 
 1. 打开 SensorExplorer，并单击左侧菜单栏中的 " **MALT** "。
 
@@ -69,7 +68,7 @@ ms.locfileid: "91026426"
 如果你使用的程序不是 Microsoft Excel 2016，这些步骤可能会有所不同。
 
 1. 在 Microsoft Excel .xlsx 文件中，选择包含数据的两个列： "环境 Lux" 和 "Screen Lux"。
-2. 单击 "**插入**  >  ** (X、Y) 的插入散点图或气泡图**  >  **散点（带直线**） 
+2. 单击 "**插入**  >  **(X、Y) 的插入散点图或气泡图**  >  **散点（带直线**） 
 
 ![插入散点图](images/insertScatter1.png)
 

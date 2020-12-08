@@ -1,19 +1,18 @@
 ---
 title: 智能卡回调参数
 description: 智能卡回调参数
-ms.assetid: 6fd1590b-0600-4065-b1cc-71d8aed3f98a
 keywords:
 - IOCTLs WDK 智能卡
 - 回拨参数 WDK 智能卡
 - 供应商提供的驱动程序 WDK 智能卡，IOCTL 请求管理
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b9c41fd38010f76fb242e3715c3f6c5287a307cd
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 43f208e2021f37e280f24034de363eeacad2fafd
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106240"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96811893"
 ---
 # <a name="smart-card-callback-parameters"></a>智能卡回调参数
 
@@ -21,7 +20,7 @@ ms.locfileid: "90106240"
 ## <span id="_ntovr_smart_card_callback_parameters"></span><span id="_NTOVR_SMART_CARD_CALLBACK_PARAMETERS"></span>
 
 
-对于除[** \_ \_ \_ 缺少 ioctl 智能卡**](/previous-versions/windows/hardware/drivers/ff548905(v=vs.85))之外的所有 ioctl 请求和[**IOCTL \_ 智能卡 \_ \_ **](/previous-versions/windows/hardware/drivers/ff548906(v=vs.85))， [**SmartcardDeviceControl (WDM) **](/previous-versions/ff548939(v=vs.85))在调用回调例程之前初始化[**智能卡 \_ 扩展**](/windows-hardware/drivers/ddi/smclib/ns-smclib-_smartcard_extension)结构的**IoRequest**成员。 下表指明了 **SmartcardDeviceControl** 执行的初始化的种类。
+对于除 [**\_ \_ \_ 缺少 ioctl 智能卡**](/previous-versions/windows/hardware/drivers/ff548905(v=vs.85))之外的所有 ioctl 请求和 [**IOCTL \_ 智能卡 \_ \_**](/previous-versions/windows/hardware/drivers/ff548906(v=vs.85))， [**SmartcardDeviceControl (WDM)**](/previous-versions/ff548939(v=vs.85))在调用回调例程之前初始化 [**智能卡 \_ 扩展**](/windows-hardware/drivers/ddi/smclib/ns-smclib-_smartcard_extension)结构的 **IoRequest** 成员。 下表指明了 **SmartcardDeviceControl** 执行的初始化的种类。
 
 <table>
 <colgroup>
@@ -78,7 +77,7 @@ ms.locfileid: "90106240"
 <thead>
 <tr class="header">
 <th align="left">成员</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>

@@ -1,25 +1,24 @@
 ---
 title: OID_SRIOV_VF_SERIAL_NUMBER
 description: 过量驱动程序发出对象标识符 (OID) 查询请求 OID_SRIOV_VF_SERIAL_NUMBER，以确定 PCI Express (PCIe) 虚拟函数 (虚拟) 网络适配器的序列号。
-ms.assetid: C4D04C96-94FA-4E01-839C-A9C5026D7AE5
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_SRIOV_VF_SERIAL_NUMBER 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: e16e93d2714dfabd0a89ae2cef0e8356d9e77f52
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 9e2c3e583694b1dc3faf082d2bcddd377cf5e5a6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104974"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812963"
 ---
 # <a name="oid_sriov_vf_serial_number"></a>OID \_ SRIOV \_ VF \_ 序列 \_ 号
 
 
 过量驱动程序) OID SRIOV VF 序列号请求 (OID 发出对象 \_ 标识符 \_ \_ \_ ，以确定 PCI Express (PCIe) 虚函数的序列号 (网络适配器) VF。 此虚拟网络适配器显示在 VF 附加到的 Hyper-v 子分区的来宾操作系统中。
 
-[**Ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的**InformationBuffer**成员包含指向[**ndis \_ SRIOV \_ VF \_ 序列 \_ 号 \_ 信息**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_vf_serial_number_info)结构的指针。
+[**Ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的 **InformationBuffer** 成员包含指向 [**ndis \_ SRIOV \_ VF \_ 序列 \_ 号 \_ 信息**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_vf_serial_number_info)结构的指针。
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 过量驱动程序使用序列号将 VF 网络适配器映射到物理网络适配器上的 VF 的实例。 序列号是由虚拟化堆栈生成的，在通过 oid [ \_ NIC \_ 交换机 \_ 分配 \_ vf](oid-nic-switch-allocate-vf.md)的 oid 集请求分配 vf 的资源之前。
@@ -83,7 +82,7 @@ NDIS \_ \_ \_ \_ 为微型端口驱动程序处理 oid SRIOV VF 序列号请求�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 ****

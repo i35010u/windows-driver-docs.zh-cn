@@ -1,21 +1,20 @@
 ---
 title: MITT 入门
 description: 若要运行 MITT 测试，必须在新的 MITT 板上安装 MITT 固件。 以下步骤介绍了如何更新 MITT 固件并准备好主机以运行 MITT 测试。
-ms.assetid: 4467B82F-7B06-430B-A0CB-A6825045E5F4
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8e50db1d9dddaba15c1c84901b88073e4f4f5ec4
-ms.sourcegitcommit: 0c3cab853b0b75149b7604eef03275f997792a84
+ms.openlocfilehash: 0729e0a6dfdd29a401ceaaa3d1d8da398750364e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96157331"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96811857"
 ---
 # <a name="get-started-with-mitt"></a>MITT 入门
 
 若要运行 MITT 测试，必须在新的 MITT 板上安装 MITT 固件。 以下步骤介绍了如何更新 MITT 固件并准备好主机以运行 MITT 测试。
 
-## <a name="before-you-begin"></a>开始之前
+## <a name="before-you-begin"></a>在开始之前
 
 - [下载 MITT](/previous-versions/dn919810(v=vs.85))软件包。
 - [使用 MITT 购买硬件](./multi-interface-test-tool--mitt--.md)

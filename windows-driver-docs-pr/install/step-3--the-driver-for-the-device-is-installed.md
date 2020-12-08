@@ -1,15 +1,14 @@
 ---
 title: 步骤3设备的驱动程序已安装
 description: 步骤3设备的驱动程序已安装
-ms.assetid: 292c5ffe-fbdf-42b8-9642-024c78709843
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e105b648edf6f213210e60a29d435d20b227b0b5
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: a00683b8f75129064c7cebbe92de4851d023ed89
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89096215"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96813065"
 ---
 # <a name="step-3-the-driver-for-the-device-is-installed"></a>步骤 3:安装设备的驱动程序
 
@@ -20,17 +19,17 @@ ms.locfileid: "89096215"
 
     Windows 将每个设备实例表示为唯一的设备节点 (*devnode*) 。 Devnode 包含设备的相关信息，例如设备是否已启动以及哪些驱动程序已在设备上注册了通知。
 
--   Windows 将设备的驱动程序表示为 *驱动程序节点*。 驱动程序节点基于[驱动程序包](driver-packages.md) [inf 文件](overview-of-inf-files.md)的 " [**INF*模型*" 部分**](inf-models-section.md)中匹配设备项的信息。 驱动程序节点包括设备的所有软件支持，如任何服务、设备特定的共同安装程序和注册表项。
+-   Windows 将设备的驱动程序表示为 *驱动程序节点*。 驱动程序节点基于 [驱动程序包](driver-packages.md) [inf 文件](overview-of-inf-files.md)的 " [**INF *模型*" 部分**](inf-models-section.md)中匹配设备项的信息。 驱动程序节点包括设备的所有软件支持，如任何服务、设备特定的共同安装程序和注册表项。
 
 一旦设备和驱动程序实例化，Windows 就会按以下步骤安装驱动程序：
 
-1.  根据 [驱动程序包](driver-packages.md) [INF 文件](overview-of-inf-files.md)中的指令，Windows 执行以下操作：
+1.  根据 [驱动程序包](driver-packages.md) [INF 文件](overview-of-inf-files.md)中的指令，Windows 执行以下操作：
 
     -   将驱动程序二进制文件和其他关联文件复制到由 [**INF CopyFiles 指令**](inf-copyfiles-directive.md)指定的硬盘上的位置。
 
     -   执行任何与设备实例相关的配置，例如注册表项写入。
 
-2.  Windows 从[驱动程序包的](driver-packages.md) [inf 文件](overview-of-inf-files.md)的 " [**INF 版本" 部分**](inf-version-section.md)中的**类**和**ClassGuid**项确定[设备安装程序类](./overview-of-device-setup-classes.md)。 若要优化设备安装，以相同方式设置和配置的设备将分为相同的设备安装程序类。
+2.  Windows 从 [驱动程序包的](driver-packages.md) [inf 文件](overview-of-inf-files.md)的 " [**INF 版本" 部分**](inf-version-section.md)中的 **类** 和 **ClassGuid** 项确定 [设备安装程序类](./overview-of-device-setup-classes.md)。 若要优化设备安装，以相同方式设置和配置的设备将分为相同的设备安装程序类。
 
 3.  复制驱动程序文件后，Windows 会立即将控制转移到 [即插即用 (PnP) manager](pnp-manager.md)。 PnP 管理器加载驱动程序并启动设备。
 

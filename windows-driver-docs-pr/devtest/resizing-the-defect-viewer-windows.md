@@ -1,25 +1,24 @@
 ---
 title: 调整缺陷查看器窗口的大小
 description: 调整缺陷查看器窗口的大小
-ms.assetid: 1f0e752f-9800-4b57-8ba5-708be451a269
 keywords:
-- Static Driver Verifier 报表 WDK、 缺陷查看器
-- 缺陷的查看器 WDK Static Driver Verifier
-- 重设大小缺陷查看器
+- 静态驱动程序验证程序报表 WDK，缺陷查看器
+- 缺陷查看器 WDK 静态驱动程序验证程序
+- 调整缺陷查看器的大小
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6a96342b693fde7fea4b138831018c2fbe91bca0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7a04b421793ff4a680fd7c75ff45307867300264
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63340283"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96813241"
 ---
 # <a name="resizing-the-defect-viewer-windows"></a>调整缺陷查看器窗口的大小
 
-要调整大小的缺陷查看器窗口，直到该图标将更改，将光标置于窗口边框上方，然后将边框拖动到所需的位置，如以下屏幕截图中所示。
+若要调整缺陷查看器窗口的大小，请将光标置于窗口边框上，直到图标更改，然后将边框拖至所需的位置，如以下屏幕截图所示。
 
-![显示如何调整大小缺陷查看器窗口的屏幕截图](images/sdvresize.png)
+![显示如何调整缺陷查看器窗口大小的屏幕截图](images/sdvresize.png)
 
  
 

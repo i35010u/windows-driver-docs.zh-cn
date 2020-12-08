@@ -1,7 +1,6 @@
 ---
 title: 请勿依赖 SCSI 微型端口初始化顺序
 description: 请勿依赖 SCSI 微型端口初始化顺序
-ms.assetid: 762fa062-4eaa-40f2-acdb-99fc6cafe680
 keywords:
 - SCSI 微型端口驱动程序 WDK 存储，PnP
 - PnP WDK SCSI
@@ -12,12 +11,12 @@ keywords:
 - 与顺序相关的代码 WDK SCSI
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 72106e011abf5108ae55de2d4d6e85ff984525fa
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: dd7a0b2a79314db8116eb39205a4cc340051d182
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89187547"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96811731"
 ---
 # <a name="do-not-depend-on-order-of-scsi-miniport-initialization"></a>请勿依赖 SCSI 微型端口初始化顺序
 

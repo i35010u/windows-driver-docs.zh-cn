@@ -1,16 +1,15 @@
 ---
 title: OID_WWAN_SMS_DELETE
 description: OID_WWAN_SMS_DELETE 将删除存储在 MB 设备或订阅服务器标识模块 (SIM 卡) 或任何其他辅助非易失性内存或内存的短信。
-ms.assetid: b80fae94-35cc-4709-8346-d5a500d3fd49
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_WWAN_SMS_DELETE 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: af178c5f0ed9b0a233cad1dd70cd2a2e3ad01a2e
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: d5651e8b5afde3b88de23e978d8ed62a5c0020de
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89207427"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812907"
 ---
 # <a name="oid_wwan_sms_delete"></a>OID \_ WWAN \_ SMS \_ 删除
 
@@ -54,7 +53,7 @@ Set 请求使用 [**NDIS \_ WWAN \_ SMS \_ DELETE**](/windows-hardware/drivers/d
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**NDIS \_ WWAN \_ SMS \_ 删除**](/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_sms_delete)

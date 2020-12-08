@@ -1,25 +1,24 @@
 ---
 title: 设备方法
-description: 传感器固件支持执行任务，例如支持事件和管理电源的几个帮助器方法。
-ms.assetid: 4F1463B0-A307-4C70-A660-18AD876B3363
+description: 传感器固件支持多个帮助器方法，这些方法执行支持事件和管理电源等任务。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 01d505461c005775b77f2055ff4aafd994245ad8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a5b1d3ebdccb6224df278a23da52f8fced9f754e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63377829"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812349"
 ---
 # <a name="device-methods"></a>设备方法
 
 
-传感器固件支持执行任务，例如支持事件和管理电源的几个帮助器方法。
+传感器固件支持多个帮助器方法，这些方法执行支持事件和管理电源等任务。
 
 ## <a name="device-methods-for-intelligent-sensors"></a>智能传感器的设备方法
 
 
-对于智能传感器 （如 HID) 固件包括支持处理事件和管理能力的方法。 伪代码演示如何使用这些任务**HIDSensorDeviceEvent**并**HIDDeviceManagePower**方法。
+对于智能传感器 (例如 HID) ，固件包括对处理事件和管理电源的方法的支持。 伪代码演示了使用 **HIDSensorDeviceEvent** 和 **HIDDeviceManagePower** 方法的这些任务。
 
 ```cpp
 HIDSensorDeviceEvent(sensorID) // Driver issues USB/HID “SEND_INPUT” command to the sensor
@@ -83,10 +82,10 @@ HIDDeviceManagePower(powerState)
 }
 ```
 
-## <a name="device-methods-for-simple-sensors"></a>简单的传感器的设备方法
+## <a name="device-methods-for-simple-sensors"></a>用于简单传感器的设备方法
 
 
-对于简单传感器 （如存储） 固件包括处理事件的方法的支持。 伪代码演示了如何在此任务使用**SpbSensorDeviceEvent**。
+对于简单的传感器 (例如 SPB) ，固件包含对处理事件的方法的支持。 伪代码使用 **SpbSensorDeviceEvent** 演示此任务。
 
 ```cpp
 SpbSensorDeviceEvent(sensorID)

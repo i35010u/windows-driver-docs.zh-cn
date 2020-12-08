@@ -1,15 +1,14 @@
 ---
 title: PCMCIA_INTERFACE_STANDARD 接口的功能
 description: PCMCIA_INTERFACE_STANDARD 接口的功能
-ms.assetid: 301b4165-4753-4d55-9760-17628174c043
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 689cc25b053bcc9e9c4adc5c2445a86e8b7570d8
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 626ef0016840c53da89af27f81eb83d30d002975
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89384809"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812505"
 ---
 # <a name="functionality-of-the-pcmcia_interface_standard-interface"></a>PCMCIA \_ 接口 \_ 标准接口的功能
 

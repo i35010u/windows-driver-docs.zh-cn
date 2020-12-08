@@ -1,22 +1,21 @@
 ---
 title: COM 端口的外部命名
 description: COM 端口的外部命名
-ms.assetid: d517bc73-9687-45f8-a5f8-837ffe868fae
 keywords:
-- 串行驱动程序 WDK、 COM 端口
+- 串行驱动程序 WDK，COM 端口
 - COM 端口 WDK 串行设备
-- 串行设备 WDK、 COM 端口
-- 名称 WDL 串行设备
-- 外部命名 WDK 设备
+- 串行设备 WDK，COM 端口
+- 为串行设备命名 WDL
+- 外部命名 WDK 串行设备
 - 符号链接 WDK 串行设备
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e55032761d413e3d12eb4d5ab5c0cb4c99023189
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fa6150168cb7713691a929ec1434568ce2884de8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380007"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812033"
 ---
 # <a name="external-naming-of-com-ports"></a>COM 端口的外部命名
 
@@ -24,25 +23,25 @@ ms.locfileid: "63380007"
 
 
 
-默认情况下，串行函数驱动程序创建串行端口的符号链接名称，并注册一个 GUID\_DEVINTERFACE\_COMPORT*设备接口*端口。 根据定义，是串行端口[COM 端口](configuration-of-com-ports.md)仅当它具有与之关联的 COM 端口设备接口。
+默认情况下，串行函数驱动程序会为串行端口创建符号链接名称，并 \_ \_ 为该端口注册 GUID DEVINTERFACE COMPORT *设备接口* 。 按照定义，串行端口只有在具有与其关联的 COM 端口设备接口的情况下才是 [com 端口](configuration-of-com-ports.md) 。
 
-对于插串行设备，在由控制外部命名**SerialSkipExternalNaming**条目下设备的硬件密钥的值。 如果**SerialSkipExternalNaming**条目值不存在，或其值为 0，序列会创建一个 COM 端口设备接口; 否则为序列不会创建一个 COM 端口接口。 序列不支持此项值的传统的 COM 端口，并始终创建传统的 COM 端口的 COM 端口设备接口。
+对于即插即用串行设备，外部命名由设备硬件密钥下的 **SerialSkipExternalNaming** 条目值控制。 如果 **SerialSkipExternalNaming** 条目值不存在，或其值为零，则串行创建一个 COM 端口设备接口;否则，串行不会创建 COM 端口接口。 串行不支持旧 COM 端口的此项值，并且始终为旧 COM 端口创建 COM 端口设备接口。
 
-序列将执行以下任务来创建一个 COM 端口设备接口：
+串行执行以下任务来创建 COM 端口设备接口：
 
-- 创建符号链接之间 **\\DosDevices\\**&lt;*PortName* &gt;和 COM 端口的内部设备对象名称。
+- 在 **\\ DosDevices \\** &lt; *portvalue* &gt; 与 COM 端口的内部设备对象名称之间创建符号链接。
 
-  &lt;*PortName* &gt;的值**PortName** (或**标识符**) 的 COM 端口的项值。 端口类安装程序集**PortName**向 COM<em>&lt;n&gt;</em>，其中&lt; *n&gt;* 为 COM 端口号安装程序包含来自[COM 端口数据库](com-port-database.md)。 序列使用此名称来创建到该端口的符号链接。 Windows 支持的 COM 端口数没有限制。 用户模式下客户端使用的符号链接名称以打开 COM 端口。
+  &lt;*Portvalue* &gt;COM 端口的 **portvalue** (值或 **标识符**) 条目值。 端口类安装程序将 **portvalue** 设置为 com <em> &lt; n &gt;</em>，其中 &lt; *&gt; n* 是安装程序从 [com 端口数据库](com-port-database.md)获取的 com 端口号。 串行使用此名称创建端口的符号链接。 对 Windows 支持的 COM 端口数量没有限制。 用户模式客户端使用符号链接名称打开 COM 端口。
 
-- 写入下一个条目的值**\\注册表\\机\\硬件\\DeviceMap\\SERIALCOMM**密钥。
+- 在 **\\ 注册表 \\ 计算机 \\ 硬件 \\ DeviceMap \\ SERIALCOMM** 项下写入一个条目值。
 
-  将项值名称是**\\设备\\串行**&lt;*m&gt;，* 其中*&lt;m&gt;* 是分配到设备序列号。 请注意，串行设备数*&lt;m&gt;* 是不相同 COM 端口号 *&lt;n&gt;*。 值**\\设备\\串行**&lt;*m* &gt;设置的值为**PortName**。
+  条目值的名称是 **\\ 设备 \\ 序列** &lt; *m &gt; ，* 其中 *&lt; m &gt;* 是通过串行分配给设备的数字。 请注意，串行设备号 *&lt; m &gt;* 不同于 COM 端口号 *&lt; n &gt;*。 **\\ 设备 \\ 序列** m 的值 &lt; *m* &gt; 设置为 **portvalue** 的值。
 
-- 注册类型的 GUID 的设备接口\_DEVINTERFACE\_COMPORT COM 端口。
+- \_为 COM 端口注册类型为 GUID DEVINTERFACE COMPORT 的设备接口 \_ 。
 
-  客户端可以注册的 COM 端口接口，抵达的通知，或可以获取所有已注册的 COM 端口接口的符号链接名称。
+  客户端可以注册 COM 端口接口到达的通知，或者可以获取所有已注册 COM 端口接口的符号链接名称。
 
-有关序列如何使用注册表条目值的详细信息，请参阅[序列的注册表设置](registry-settings-for-serial.md)。
+有关串行如何使用注册表项值的详细信息，请参阅 [serial 的注册表设置](registry-settings-for-serial.md)。
 
  
 

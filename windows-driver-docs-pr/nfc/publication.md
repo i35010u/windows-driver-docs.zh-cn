@@ -1,7 +1,6 @@
 ---
 title: 发布 NFP 消息
 description: 发布 NFP 消息
-ms.assetid: 45BE3620-ADF4-413D-90B3-586FCEB5F606
 keywords:
 - NFC
 - 近场通信
@@ -10,12 +9,12 @@ keywords:
 - NFP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 175a09f8f9de4cdc67bc575f59f9dee614bd06dd
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: d9b6afdc8255d2269db55d3d60d228ea3fde6836
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89381683"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812739"
 ---
 # <a name="publishing-nfp-messages"></a>发布 NFP 消息
 
@@ -102,7 +101,7 @@ ms.locfileid: "89381683"
 ### <a name="required-actions"></a>必需的措施
 
 
-如果客户端尚未发送替换 IOCTL 10-20 NFP，则驱动程序必须删除所有消息 (并从 "接收" 队列中收回这些资源) 。 [** \_ \_ \_ \_ \_ **](/windows-hardware/drivers/ddi/nfpdev/ni-nfpdev-ioctl_nfp_get_next_subscribed_message)
+如果客户端尚未发送替换 IOCTL 10-20 NFP，则驱动程序必须删除所有消息 (并从 "接收" 队列中收回这些资源) 。 [**\_ \_ \_ \_ \_**](/windows-hardware/drivers/ddi/nfpdev/ni-nfpdev-ioctl_nfp_get_next_subscribed_message)
 
 ## <a name="unresponsive-or-misbehaving-clients"></a>客户端无响应或异常
 
@@ -111,7 +110,7 @@ ms.locfileid: "89381683"
 
 ### <a name="required-actions"></a>必需的措施
 
-如果客户端尚未发送替换 IOCTL 10-20 NFP，则驱动程序必须将 "CompleteEventImmediately" 计数器设置为零，且不能递增计数器。 [** \_ \_ \_ \_ \_ **](/windows-hardware/drivers/ddi/nfpdev/ni-nfpdev-ioctl_nfp_get_next_transmitted_message)
+如果客户端尚未发送替换 IOCTL 10-20 NFP，则驱动程序必须将 "CompleteEventImmediately" 计数器设置为零，且不能递增计数器。 [**\_ \_ \_ \_ \_**](/windows-hardware/drivers/ddi/nfpdev/ni-nfpdev-ioctl_nfp_get_next_transmitted_message)
 
  
 

@@ -1,15 +1,14 @@
 ---
 title: 线性加速计数据字段
 description: 本主题提供有关特定于线性加速度的数据字段的信息。
-ms.assetid: FD869359-C1C2-4B2F-95F3-01234331DC54
 ms.date: 07/20/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 067a93564a17349f9e7c3682f8def86fdc9f5d05
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: c4fda495c425db6fac72231b63909f261bfff972
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91732785"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812301"
 ---
 #  <a name="linear-accelerometer-data-fields"></a>线性加速计数据字段
 

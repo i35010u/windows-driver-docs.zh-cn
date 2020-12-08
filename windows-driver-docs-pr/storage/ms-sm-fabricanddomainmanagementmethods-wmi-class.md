@@ -1,48 +1,47 @@
 ---
-title: MS\_SM\_FabricAndDomainManagementMethods WMI 类
-description: MS\_SM\_FabricAndDomainManagementMethods WMI 类
-ms.assetid: dfd6afd3-0a0c-4620-b961-2235a91d8b17
+title: MS \_ SM \_ FabricAndDomainManagementMethods WMI 类
+description: MS \_ SM \_ FabricAndDomainManagementMethods WMI 类
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: b107d42bcf379c6d01f952ecd4105877d0ae19ca
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d926d05f0746818fd9969d50b57177306815853b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63355196"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96811531"
 ---
-# <a name="mssmfabricanddomainmanagementmethods-wmi-class"></a>MS\_SM\_FabricAndDomainManagementMethods WMI 类
+# <a name="ms_sm_fabricanddomainmanagementmethods-wmi-class"></a>MS \_ SM \_ FabricAndDomainManagementMethods WMI 类
 
 
-支持存储管理 API 的 HBA 微型端口驱动程序使用 MS\_SM\_FabricAndDomainManagementMethods WMI 类向 WMI 客户端中提供光纤通道服务。 光纤通道服务定义 T11 委员会*光纤通道 HBA API*规范。 此 WMI 类都有无数据块。 因此，WMI 工具套件生成保存属于类的方法的参数数据结构，但它不会生成对应于类本身的结构。
+支持存储管理 API 的 HBA 微型端口驱动程序使用 MS \_ SM \_ FabricAndDomainManagementMethods wmi 类向 wmi 客户端提供光纤通道服务。 光纤通道服务由 T11 委员会 *光纤通道 HBA API* 规范定义。 此 WMI 类没有数据块。 因此，WMI 工具套件会生成包含属于类的方法的参数数据的结构，但不会生成对应于类本身的结构。
 
-每个方法都属于此类的 MOF 语法所述的方法的参考页。 以下主题介绍了这些方法和其随附的结构：
+此类的每个方法的 MOF 语法在方法的参考页中进行了介绍。 以下主题介绍了这些方法及其随附的结构：
 
-SM\_SendTEST
+SM \_ SendTEST
 
-SM\_SendECHO
+SM \_ SendECHO
 
-SM\_SendSMPPassThru
+SM \_ SendSMPPassThru
 
-[**SM\_SendCTPassThru**](sm-sendctpassthru.md)
+[**SM \_ SendCTPassThru**](sm-sendctpassthru.md)
 
-[**SM\_GetRNIDMgmtInfo**](sm-getrnidmgmtinfo.md)
+[**SM \_ GetRNIDMgmtInfo**](sm-getrnidmgmtinfo.md)
 
-[**SM\_SetRNIDMgmtInfo**](sm-setrnidmgmtinfo.md)
+[**SM \_ SetRNIDMgmtInfo**](sm-setrnidmgmtinfo.md)
 
-[**SM\_SendRNID**](sm-sendrnid.md)
+[**SM \_ SendRNID**](sm-sendrnid.md)
 
-[**SM\_SendRPL**](sm-sendrpl.md)
+[**SM \_ SendRPL**](sm-sendrpl.md)
 
-[**SM\_SendRPS**](sm-sendrps.md)
+[**SM \_ SendRPS**](sm-sendrps.md)
 
-[**SM\_SendSRL**](sm-sendsrl.md)
+[**SM \_ SendSRL**](sm-sendsrl.md)
 
-[**SM\_SendLIRR**](sm-sendlirr.md)
+[**SM \_ SendLIRR**](sm-sendlirr.md)
 
-[**SM\_SendRLS**](sm-sendrls.md)
+[**SM \_ SendRLS**](sm-sendrls.md)
 
-MS\_SM\_FabricAndDomainManagementMethods 类定义，如下所示在*Hbaapi.mof*:
+MS \_ SM \_ FabricAndDomainManagementMethods 类在 *Hbaapi* 中定义如下：
 
 ```cpp
 class MS_SM_FabricAndDomainManagementMethods

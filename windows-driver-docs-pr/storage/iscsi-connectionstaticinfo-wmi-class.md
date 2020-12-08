@@ -1,15 +1,14 @@
 ---
 title: ISCSI \_ CONNECTIONSTATICINFO WMI 类
 description: ISCSI \_ CONNECTIONSTATICINFO WMI 类
-ms.assetid: 63af8432-3e38-451a-a26d-57b5ad1f29dd
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: e7bf8246ef80bf990984fa1f278827e529fb0c7f
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 09f0bfd000a0e8b678c437f23247b9b4b7d6c129
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89188817"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96811685"
 ---
 # <a name="iscsi_connectionstaticinfo-wmi-class"></a>ISCSI \_ CONNECTIONSTATICINFO WMI 类
 
@@ -17,7 +16,7 @@ ms.locfileid: "89188817"
 ## <span id="ddk_iscsi_connectionstaticinfo_wmi_class_kr"></span><span id="DDK_ISCSI_CONNECTIONSTATICINFO_WMI_CLASS_KR"></span>
 
 
-ISCSI \_ ConnectionStaticInfo 类用于存储连接的静态特性。 此类在 *管理 mof*中定义为：
+ISCSI \_ ConnectionStaticInfo 类用于存储连接的静态特性。 此类在 *管理 mof* 中定义为：
 
 ```cpp
 class ISCSI_ConnectionStaticInfo {

@@ -1,21 +1,20 @@
 ---
 title: MITT 中的 I2C 控制器测试
 description: MITT 软件包中包含的 i2c 测试模块可用于测试 i2c 控制器及其驱动程序的数据传输。 MITT 板充当连接到 I i2c 总线的客户端设备。
-ms.assetid: E40B9ABB-B119-4EC1-A383-EB96CC350A25
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fa0baf876092c9536734d2bdef28533f5a54889d
-ms.sourcegitcommit: 0c3cab853b0b75149b7604eef03275f997792a84
+ms.openlocfilehash: 332cc16c2da56a999215296d0015b9824ab07a5d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96157335"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96811849"
 ---
 # <a name="i2c-controller-tests-in-mitt"></a>MITT 中的 I2C 控制器测试
 
 MITT 软件包中包含的 i2c 测试模块可用于测试 i2c 控制器及其驱动程序的数据传输。 MITT 板充当连接到 I i2c 总线的客户端设备。
 
-## <a name="before-you-begin"></a>开始之前
+## <a name="before-you-begin"></a>在开始之前
 
 - 获取 MITT 板和 i2c 适配器板。 请参阅 [购买使用 MITT 的硬件](./multi-interface-test-tool--mitt--.md)。
 - [下载 MITT](/previous-versions/dn919810(v=vs.85))软件包。 在受测系统上安装它。

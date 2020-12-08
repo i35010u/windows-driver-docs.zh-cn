@@ -1,18 +1,17 @@
 ---
 title: 安装并行端口和设备
 description: 安装并行端口和设备
-ms.assetid: 24bf2718-d369-48f1-9013-c8ca89269ca7
 keywords:
 - 并行设备 WDK，安装
 - 并行端口 WDK，安装
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e8a26ed453fd11e430519caa8e5afc3ca5db7e56
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 2dcd4d6d5ccefd90ac48dff7466d1782d5768710
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89384995"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812615"
 ---
 # <a name="installing-parallel-ports-and-devices"></a>安装并行端口和设备
 
@@ -36,7 +35,7 @@ ms.locfileid: "89384995"
 
 [系统提供的并行驱动程序](system-supplied-parallel-drivers.md)
 
-[系统提供的并行驱动程序的客户端接口](/windows-hardware/drivers/ddi/index)
+[System-Supplied 并行驱动程序的客户端接口](/windows-hardware/drivers/ddi/index)
 
  
 

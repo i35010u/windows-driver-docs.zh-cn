@@ -1,15 +1,14 @@
 ---
 title: 活动传感器属性
 description: 活动传感器的属性键。
-ms.assetid: 9C5DCE23-2690-4A22-8E38-D0571F997646
 ms.date: 07/20/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 3c2a38f63f3e8c729f3fa72b68a5e6344bf20123
-ms.sourcegitcommit: fc94eb0d5a41ef81c1b3ab91ad725386db0be0c2
+ms.openlocfilehash: e4628204ad2aa641e0a578a0f9d564d50806d64b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91603685"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812391"
 ---
 # <a name="activity-sensor-properties"></a>活动传感器属性
 

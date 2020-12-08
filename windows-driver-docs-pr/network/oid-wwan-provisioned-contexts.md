@@ -1,23 +1,22 @@
 ---
 title: OID_WWAN_PROVISIONED_CONTEXTS
 description: OID_WWAN_PROVISIONED_CONTEXTS 读取或更新存储在 MB 设备或订阅服务器标识模块 (SIM) 上的预配上下文条目。
-ms.assetid: 7634fc32-9059-4f89-a591-7aa663b0c188
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_WWAN_PROVISIONED_CONTEXTS 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: b49f6c304617d117ba69566df9c9b32b81536c4f
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 3a72649a6c042ec2b8697993b4d5ad04653a3cb4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89216086"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812949"
 ---
 # <a name="oid_wwan_provisioned_contexts"></a>OID \_ WWAN \_ 预配 \_ 上下文
 
 
 OID \_ WWAN \_ 预配 \_ 上下文读取或更新存储在 MB 设备或订阅服务器标识模块 (SIM) 上的预配上下文条目。
 
-微型端口驱动程序必须异步处理 set 和 query 请求，最初 \_ 返回 \_ \_ 原始请求所需的 ndis 状态指示，稍后发送 [**ndis \_ 状态 \_ wwan \_ 预 \_ 配**](ndis-status-wwan-provisioned-contexts.md) 上下文状态通知，其中包含 [**ndis \_ WWAN \_ 预 \_ **](/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_provisioned_contexts) 配的上下文状态通知，其中包含存储在 MB 设备或订阅服务器标识模块 (SIM) 的预配上下文条目的相关信息，而不考虑完成集或查询请求。
+微型端口驱动程序必须异步处理 set 和 query 请求，最初 \_ 返回 \_ \_ 原始请求所需的 ndis 状态指示，稍后发送 [**ndis \_ 状态 \_ wwan \_ 预 \_ 配**](ndis-status-wwan-provisioned-contexts.md) 上下文状态通知，其中包含 [**ndis \_ WWAN \_ 预 \_**](/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_provisioned_contexts) 配的上下文状态通知，其中包含存储在 MB 设备或订阅服务器标识模块 (SIM) 的预配上下文条目的相关信息，而不考虑完成集或查询请求。
 
 <a name="remarks"></a>备注
 -------
@@ -38,7 +37,7 @@ OID \_ WWAN \_ 预配 \_ 上下文读取或更新存储在 MB 设备或订阅服
 
 此请求的处理不需要网络访问，但需要在 MB 设备上访问 SIM 或辅助内存。
 
-微型端口驱动程序将 NDIS \_ 状态 \_ WWAN \_ 预配 \_ 上下文通知发送到操作系统。 **ContextListHeader**成员应设置为*WwanStructContext*。 当发送通知以响应某个设置请求时，微型端口驱动程序应将 **elementcount 多于** 成员设置为0。
+微型端口驱动程序将 NDIS \_ 状态 \_ WWAN \_ 预配 \_ 上下文通知发送到操作系统。 **ContextListHeader** 成员应设置为 *WwanStructContext*。 当发送通知以响应某个设置请求时，微型端口驱动程序应将 **elementcount 多于** 成员设置为0。
 
 在执行任何单个上下文激活或停用之前，MB 服务应从设备检索预配的上下文列表。 预配上下文的列表必须仅限制为主提供商网络，即使设备可能能够存储多个网络提供程序上下文。 上下文列表必须始终是特定于家乡提供商网络的，即使是漫游也是如此。
 
@@ -46,7 +45,7 @@ OID \_ WWAN \_ 预配 \_ 上下文读取或更新存储在 MB 设备或订阅服
 
 所有空上下文都需要在查询上报告，并与适用于 home 提供商网络的预配上下文一起报告。
 
-CDMA 配置为 SimpleIP 的设备，在 \_ WwanControlCaps 中的 "WWAN" CTRL + a \_ \_ CDMA SIMPLE IP 中进行报告， \_ \_ 可以选择性地返回至少一个预配的上下文，其中填充了来自 MB 服务的查询请求的正确 **AccessString**、 **用户名**和 **密码** 成员。
+CDMA 配置为 SimpleIP 的设备，在 \_ WwanControlCaps 中的 "WWAN" CTRL + a \_ \_ CDMA SIMPLE IP 中进行报告， \_ \_ 可以选择性地返回至少一个预配的上下文，其中填充了来自 MB 服务的查询请求的正确 **AccessString**、 **用户名** 和 **密码** 成员。
 
 预配的上下文列表应在设备中预配，通过设置 OID \_ WWAN \_ 预配 \_ 上下文操作进行更新，或通过使用 SMS 或 OTA 通过设备/操作员进行更新。 不能基于 OID \_ WWAN \_ CONNECT Operation MB 服务中提供的上下文信息进行动态更新。
 
@@ -72,7 +71,7 @@ CDMA 配置为 SimpleIP 的设备，在 \_ WwanControlCaps 中的 "WWAN" CTRL + 
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [WWAN 数据包上下文管理](./mb-packet-context-management.md)

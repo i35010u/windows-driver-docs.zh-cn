@@ -1,15 +1,14 @@
 ---
 title: 方向传感器阈值
 description: 本主题提供有关定向传感器阈值的信息。
-ms.assetid: BC7B76C3-F6D3-48FC-AA22-A91519A0A0D8
 ms.date: 07/20/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: a2890ddf1822634cbd0a855a834b37a724fd6f7e
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 37e6724bba5457b04c4fe55c82783a805962b534
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91732781"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812277"
 ---
 # <a name="orientation-sensor-thresholds"></a>方向传感器阈值
 

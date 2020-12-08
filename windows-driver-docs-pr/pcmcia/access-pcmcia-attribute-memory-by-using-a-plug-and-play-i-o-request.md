@@ -1,19 +1,18 @@
 ---
 title: 使用 PnP i/o 请求访问内存
 description: 使用即插即用 I/O 请求访问 PCMCIA 属性内存
-ms.assetid: ee2f9d9f-9e2b-4ecf-ba6d-4baad3653301
 keywords:
 - 属性内存 WDK PCMCIA 总线，即插即用 i/o 请求
 - 即插即用 WDK PCMCIA 总线
 - PnP WDK PCMCIA 总线
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4c9601a37d8918e2e51d04301b83df6d1f24440a
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 77409df372524b0b2e9c8408977e9c28fb2b633c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89384815"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812519"
 ---
 # <a name="access-pcmcia-attribute-memory-by-using-a-plug-and-play-io-request"></a>使用即插即用 I/O 请求访问 PCMCIA 属性内存
 

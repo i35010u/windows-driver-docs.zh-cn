@@ -1,7 +1,6 @@
 ---
 title: '#Elseifdef 条件预处理器指令'
 description: '#Elseifdef 条件预处理器指令'
-ms.assetid: 0239696a-ea6a-4fd4-b4ca-870a87022c81
 keywords:
 - 预处理器指令 WDK GDL，条件指令
 - 指令 WDK GDL，条件指令
@@ -9,12 +8,12 @@ keywords:
 - Elseifdef 指令 WDK GDL
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2f3e30c20e9dc1b300cdc46f0ffd8f94ad152abc
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 163b7cc5eb824b7d64160b99b4446240843b60fb
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63338362"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812453"
 ---
 # <a name="elseifdef-conditional-preprocessor-directive"></a>\#Elseifdef 条件预处理器指令
 
@@ -23,4 +22,4 @@ ms.locfileid: "63338362"
 #Elseifdef: symbol
 ```
 
-\#Elseifdef 指令定义了上一节的末尾和新的条件部分开始。 如果预处理器符号字典中找到符号和前一节中构造已被预留，则会保留部分。 如果找不到符号，则构造将被删除。 *符号*值是必需的。
+\#Elseifdef 指令定义上一节的末尾和新条件节的开头。 如果在预处理器符号字典中找到该符号并且未保留构造中的上一部分，则会保留该部分。 如果未找到符号，则将删除该构造。 *符号* 值是必需的。

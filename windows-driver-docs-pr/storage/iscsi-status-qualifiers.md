@@ -1,15 +1,14 @@
 ---
 title: ISCSI \_ 状态 \_ 限定符
 description: ISCSI \_ 状态 \_ 限定符
-ms.assetid: d39ed448-5608-4f19-b49c-bbd6727e9491
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: ba478feeea2109d57a803ed16ff372fe03a6e3f1
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 43548abac183ba76312533eb34650371415caf16
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102950"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96811633"
 ---
 # <a name="iscsi_status_qualifiers"></a>ISCSI \_ 状态 \_ 限定符
 
@@ -17,7 +16,7 @@ ms.locfileid: "90102950"
 ## <span id="ddk_iscsi_status_qualifiers_kr"></span><span id="DDK_ISCSI_STATUS_QUALIFIERS_KR"></span>
 
 
-ISCSI \_ 状态 \_ 限定符 WMI 属性限定符对应于管理 ISCSI HBA 发起程序的微型端口驱动程序报告的状态值。 这些值通过将严重性代码与设备代码和在 *Ntstatus*中描述的设施状态代码结合起来来构造。
+ISCSI \_ 状态 \_ 限定符 WMI 属性限定符对应于管理 ISCSI HBA 发起程序的微型端口驱动程序报告的状态值。 这些值通过将严重性代码与设备代码和在 *Ntstatus* 中描述的设施状态代码结合起来来构造。
 
 下表描述了 ISCSI \_ 状态 \_ 限定符值。
 

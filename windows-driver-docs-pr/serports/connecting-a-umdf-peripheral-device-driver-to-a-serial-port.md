@@ -1,15 +1,14 @@
 ---
 title: 将 UMDF 外设驱动程序连接到串行端口
 description: 适用于 SerCx2 管理的串行端口上的外围设备的 UMDF 驱动程序需要某些硬件资源才能运行设备。 这些资源包含驱动程序打开串行端口逻辑连接所需的信息。
-ms.assetid: 75FC5E79-59E9-4C07-9119-A4FE81CC318E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c43ae9626c6d5e96e1303c0496c8bc1449b782f4
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 044f770460d3756b421767f106651ee86e821285
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89187011"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812049"
 ---
 # <a name="connecting-a-umdf-peripheral-driver-to-a-serial-port"></a>将 UMDF 外设驱动程序连接到串行端口
 
@@ -17,7 +16,7 @@ ms.locfileid: "89187011"
 
 此驱动程序实现了 [**IPnpCallbackHardware2**](/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-ipnpcallbackhardware2) 接口，并在调用驱动程序的 [**IDriverEntry：： OnDeviceAdd**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-idriverentry-ondeviceadd) 方法的过程中向 Windows 驱动程序框架注册此接口。 框架调用 **IPnpCallbackHardware2** 接口中的方法，以通知驱动程序设备电源状态发生的更改。
 
-在串行连接的外围设备进入未初始化的 D0 设备电源状态之后，驱动程序框架将调用驱动程序的 [**IPnpCallbackHardware2：： OnPrepareHardware**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-ipnpcallbackhardware2-onpreparehardware) 方法来告知驱动程序准备此设备以供使用。 在此调用期间，驱动程序收到两个硬件资源列表作为输入参数。 *PWdfResourcesRaw*参数指向原始资源列表， *pWdfResourcesTranslated*参数指向已转换资源的列表。 这两个参数都是指向 [**IWDFCmResourceList**](/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iwdfcmresourcelist) 对象的指针。 翻译的资源包括连接 ID，外围设备驱动程序需要建立与串行连接的外围设备的逻辑连接。
+在串行连接的外围设备进入未初始化的 D0 设备电源状态之后，驱动程序框架将调用驱动程序的 [**IPnpCallbackHardware2：： OnPrepareHardware**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-ipnpcallbackhardware2-onpreparehardware) 方法来告知驱动程序准备此设备以供使用。 在此调用期间，驱动程序收到两个硬件资源列表作为输入参数。 *PWdfResourcesRaw* 参数指向原始资源列表， *pWdfResourcesTranslated* 参数指向已转换资源的列表。 这两个参数都是指向 [**IWDFCmResourceList**](/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iwdfcmresourcelist) 对象的指针。 翻译的资源包括连接 ID，外围设备驱动程序需要建立与串行连接的外围设备的逻辑连接。
 
 要使 UMDF 外设驱动程序能够在其资源列表中接收连接 Id，安装驱动程序的 INF 文件必须在其特定于 WDF 的 **DDInstall** 节中包含以下指令：
 
@@ -219,9 +218,9 @@ if (fSynchronous || FAILED(hres))
 
 前面的代码示例执行以下操作：
 
-1.  `pWdfDevice`变量是指向框架设备对象的[**IWDFDevice**](/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iwdfdevice)接口的指针，该接口表示串行连接的外围设备。 [**IWDFDevice：： CreateRequest**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdevice-createrequest)方法创建 i/o 请求，并在参数指向的[**IWDFIoRequest**](/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iwdfiorequest)接口实例中封装此请求 `pWdfIoRequest` 。 稍后会删除 i/o 请求 (参见步骤 6) 。 此实现在某种程度上有些低效，因为它会创建并删除每个发送的 i/o 请求的 request 对象。 一种更有效的方法是对一系列 i/o 请求重复使用相同的请求对象。 有关详细信息，请参阅 [重复使用框架请求对象](../wdf/reusing-framework-request-objects.md)。
-2.  `pWdfDriver`变量是指向框架驱动程序对象的[**IWDFDriver**](/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iwdfdriver)接口的指针，该接口表示外围设备驱动程序。 `pInBuffer`和 `inBufferSize` 变量指定 i/o 控制请求的输入缓冲区的地址和大小。 [**IWDFDriver：： CreatePreallocatedWdfMemory**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdriver-createpreallocatedwdfmemory)方法为输入缓冲区创建框架内存对象，并将指向的**IWDFIoRequest**对象指定 `pWdfIoRequest` 为内存对象的父对象。
-3.  `pWdfRemoteTarget`变量是在前面的代码示例中从**OpenFileByName**调用获取的远程目标指针。 [**IWDFRemoteTarget：： FormatRequestForIoctl**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiotarget-formatrequestforioctl)方法格式化 i/o 控制操作的请求。 此 `ioctlCode` 变量设置为 [串行 I/o 请求接口](serial-i-o-request-interface.md)的表中列出的 i/o 控制代码之一。
-4.  `fSynchronous`如果 i/o 控制请求是同步发送的，则该变量为**TRUE** ; 如果要以异步方式发送，则为**FALSE** 。 `pCallback`变量是指向之前创建的[**IRequestCallbackRequestCompletion**](/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-irequestcallbackrequestcompletion)接口的指针。 如果请求是异步发送的，则对 [**IWDFIoRequest：： SetCompletionCallback**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest-setcompletioncallback) 方法的调用将注册此接口。 稍后，将调用 [**IRequestCallbackRequestCompletion：： OnCompletion**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-irequestcallbackrequestcompletion-oncompletion) 方法，以便在请求异步完成时通知驱动程序。
-5.  **Send**方法将格式化写入请求发送到串行连接的外围设备。 `Flags`变量指示是以同步方式还是以异步方式发送写入请求。
-6.  如果以同步方式发送请求， [**IWDFIoRequest：:D eletewdfobject**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfobject-deletewdfobject) 方法会同时删除指向的 i/o 请求对象和指向的 `pWdfIoRequest` 子对象 `pInputMemory` 。 **IWDFIoRequest**接口从[**IWDFObject**](/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iwdfobject)接口继承此方法。 如果请求是异步发送的，则应在驱动程序的**OnCompletion**方法中，稍后对**DeleteWdfObject**方法的调用。
+1.  `pWdfDevice`变量是指向框架设备对象的 [**IWDFDevice**](/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iwdfdevice)接口的指针，该接口表示串行连接的外围设备。 [**IWDFDevice：： CreateRequest**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdevice-createrequest)方法创建 i/o 请求，并在参数指向的 [**IWDFIoRequest**](/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iwdfiorequest)接口实例中封装此请求 `pWdfIoRequest` 。 稍后会删除 i/o 请求 (参见步骤 6) 。 此实现在某种程度上有些低效，因为它会创建并删除每个发送的 i/o 请求的 request 对象。 一种更有效的方法是对一系列 i/o 请求重复使用相同的请求对象。 有关详细信息，请参阅 [重复使用框架请求对象](../wdf/reusing-framework-request-objects.md)。
+2.  `pWdfDriver`变量是指向框架驱动程序对象的 [**IWDFDriver**](/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iwdfdriver)接口的指针，该接口表示外围设备驱动程序。 `pInBuffer`和 `inBufferSize` 变量指定 i/o 控制请求的输入缓冲区的地址和大小。 [**IWDFDriver：： CreatePreallocatedWdfMemory**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdriver-createpreallocatedwdfmemory)方法为输入缓冲区创建框架内存对象，并将指向的 **IWDFIoRequest** 对象指定 `pWdfIoRequest` 为内存对象的父对象。
+3.  `pWdfRemoteTarget`变量是在前面的代码示例中从 **OpenFileByName** 调用获取的远程目标指针。 [**IWDFRemoteTarget：： FormatRequestForIoctl**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiotarget-formatrequestforioctl)方法格式化 i/o 控制操作的请求。 此 `ioctlCode` 变量设置为 [串行 I/o 请求接口](serial-i-o-request-interface.md)的表中列出的 i/o 控制代码之一。
+4.  `fSynchronous`如果 i/o 控制请求是同步发送的，则该变量为 **TRUE** ; 如果要以异步方式发送，则为 **FALSE** 。 `pCallback`变量是指向之前创建的 [**IRequestCallbackRequestCompletion**](/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-irequestcallbackrequestcompletion)接口的指针。 如果请求是异步发送的，则对 [**IWDFIoRequest：： SetCompletionCallback**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest-setcompletioncallback) 方法的调用将注册此接口。 稍后，将调用 [**IRequestCallbackRequestCompletion：： OnCompletion**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-irequestcallbackrequestcompletion-oncompletion) 方法，以便在请求异步完成时通知驱动程序。
+5.  **Send** 方法将格式化写入请求发送到串行连接的外围设备。 `Flags`变量指示是以同步方式还是以异步方式发送写入请求。
+6.  如果以同步方式发送请求， [**IWDFIoRequest：:D eletewdfobject**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfobject-deletewdfobject) 方法会同时删除指向的 i/o 请求对象和指向的 `pWdfIoRequest` 子对象 `pInputMemory` 。 **IWDFIoRequest** 接口从 [**IWDFObject**](/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iwdfobject)接口继承此方法。 如果请求是异步发送的，则应在驱动程序的 **OnCompletion** 方法中，稍后对 **DeleteWdfObject** 方法的调用。

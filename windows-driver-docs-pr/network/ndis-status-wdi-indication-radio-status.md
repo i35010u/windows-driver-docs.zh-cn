@@ -1,17 +1,16 @@
 ---
 title: NDIS_STATUS_WDI_INDICATION_RADIO_STATUS
 description: 微型端口驱动程序使用 NDIS_STATUS_WDI_INDICATION_RADIO_STATUS 来指示适配器无线电状态发生的更改。
-ms.assetid: c2f90a52-ce55-4819-a66a-cfcc591cb3e9
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 NDIS_STATUS_WDI_INDICATION_RADIO_STATUS 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: e1e73f40d2ba2a3d70a16b091901e0ac6eb2af29
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 580d04059a95fcf3b5e3f8931b61f7968c243912
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89209699"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812999"
 ---
 # <a name="ndis_status_wdi_indication_radio_status"></a>NDIS \_ 状态 \_ WDI \_ 指示 \_ 无线电 \_ 状态
 
@@ -48,7 +47,7 @@ ms.locfileid: "89209699"
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
-<td><p>Windows Server 2016</p></td>
+<td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
 <td><p>标头</p></td>
@@ -57,7 +56,7 @@ ms.locfileid: "89209699"
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [WDI \_ 任务 \_ 集 \_ 无线电 \_ 状态](oid-wdi-task-set-radio-state.md)

@@ -1,15 +1,14 @@
 ---
 title: 气压计数据字段
 description: 本主题提供有关特定于 barometer 的传感器数据字段的信息。
-ms.assetid: 4AF51C94-AD96-4D09-AF8D-3D3D0BC32B3D
 ms.date: 07/20/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 01ab6adc24017263531b57cbd7879de66f1c6e5c
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 6e8a37d7ea5271b25bae12c88744c55d23c491d6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91734512"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812377"
 ---
 # <a name="barometer-data-fields"></a>气压计数据字段
 

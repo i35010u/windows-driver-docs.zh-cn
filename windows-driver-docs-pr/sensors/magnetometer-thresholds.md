@@ -1,15 +1,14 @@
 ---
 title: 磁力计阈值
 description: 本主题提供有关磁力仪阈值的信息。
-ms.assetid: F245AD4C-F63C-48A7-9AEB-7414047E0627
 ms.date: 07/20/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 2e96f9edb0617d178bd735b8f69e9d072ba33074
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 716385948158650928def4aaacd6d21569f22388
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91732777"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812293"
 ---
 # <a name="magnetometer-thresholds"></a>磁力计阈值
 

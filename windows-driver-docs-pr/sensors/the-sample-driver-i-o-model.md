@@ -1,15 +1,14 @@
 ---
 title: 示例驱动程序 i/o 模型
 description: SPB 驱动程序通过简单的外围总线、系统 GPIO pin 和资源中心进行通信。 可在此处了解如何在用户模式、内核模式和实际硬件中组织组件。
-ms.assetid: 86DA1BDE-DD97-45CA-884D-12BD279BD12E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e2d956460a09d22d722b124a365ebf6ef1ab8486
-ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
+ms.openlocfilehash: 6adc986693e95a80cdca13150961edd815b2b0f1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90009865"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812107"
 ---
 # <a name="sample-driver-io-model"></a>示例驱动程序 i/o 模型
 
@@ -57,7 +56,7 @@ Windows 8.1 支持与内核模式 SPB 组件位于同一级别的 GPIO 类扩展
 
 | 模块               | 类/接口 |
 |----------------------|-----------------|
-| SpbAccelerometer. asl | 不可用             |
+| SpbAccelerometer. asl | 空值             |
 
  
 
@@ -94,7 +93,7 @@ GpioInt(Level, ActiveHigh, Exclusive, PullDown, 0, "\\_SB.GPIO") {1} })
 
  
 
-如果 GPIO 行由 ADXL345 断言，则会调用示例驱动程序的被动 ISR 例程 (**CAccelerometerDevice：： OnInterruptIsr**) 。 Helper 函数 **CAccelerometerDevice：： OnInterruptWorkItem**可处理：：**OnInterruptIsr** 存储的中断数据。
+如果 GPIO 行由 ADXL345 断言，则会调用示例驱动程序的被动 ISR 例程 (**CAccelerometerDevice：： OnInterruptIsr**) 。 Helper 函数 **CAccelerometerDevice：： OnInterruptWorkItem** 可处理：：**OnInterruptIsr** 存储的中断数据。
 
 如果由：：**OnInterruptIsr** 处理的中断对应于 \_ \_ 在文件 Adxl345) 中注册 0x30 (ADXL 345 INT \_ 源，则驱动程序将调用 register 读取操作，以获取寄存器0x32 到0x37 的内容。 这些寄存器包含 X 轴、Y 轴和 Z 轴的最新加速数据。 读取操作在 **CAcclerometerDevice：： RequestData** 方法中调用， (通过 **CAccelerometerDevice：： OnInterruptWorkItem**) 调用。
 
@@ -130,7 +129,7 @@ Windows 8.1 支持一个资源中心，该中心管理所有设备和总线控�
 
 | 模块               | 类/接口 |
 |----------------------|-----------------|
-| SpbAccelerometer. asl | 不可用             |
+| SpbAccelerometer. asl | 空值             |
 
  
 

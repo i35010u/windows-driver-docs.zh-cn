@@ -1,15 +1,14 @@
 ---
 title: I/O 传输序列
 description: SPB 框架扩展 (SpbCx) 支持 i/o 传输顺序。
-ms.assetid: 7415DB28-5E93-4F47-B169-7C652969D4C7
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5514bbd4497bb1a6e180f6b28d0b7ea97af2da3b
-ms.sourcegitcommit: 0c3cab853b0b75149b7604eef03275f997792a84
+ms.openlocfilehash: bcbed9ebed3974ff1298c732d5483859038ec7d2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96157341"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96811835"
 ---
 # <a name="io-transfer-sequences"></a>I/O 传输序列
 

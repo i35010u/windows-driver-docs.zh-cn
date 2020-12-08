@@ -1,15 +1,14 @@
 ---
 title: ISCSI \_ LOGINOPTIONS WMI 类
 description: ISCSI \_ LOGINOPTIONS WMI 类
-ms.assetid: dc05f8e9-599d-4963-98a8-64e1d23c37a1
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: dd5010d6910aad08792adc7a68ae6dbe7bd4f20b
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: e72285761eb297afc14797d42623365199e87a1d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89188523"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96811649"
 ---
 # <a name="iscsi_loginoptions-wmi-class"></a>ISCSI \_ LOGINOPTIONS WMI 类
 
@@ -17,7 +16,7 @@ ms.locfileid: "89188523"
 ## <span id="ddk_iscsi_loginoptions_wmi_class_kr"></span><span id="DDK_ISCSI_LOGINOPTIONS_WMI_CLASS_KR"></span>
 
 
-ISCSI \_ LoginOptions 类描述目标登录会话的特征。 此类在 *Common mof*中定义为：
+ISCSI \_ LoginOptions 类描述目标登录会话的特征。 此类在 *Common mof* 中定义为：
 
 ```cpp
 class ISCSI_LoginOptions {

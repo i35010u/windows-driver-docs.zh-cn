@@ -1,7 +1,6 @@
 ---
 title: 电源状态
 description: NFC 类扩展驱动程序用作设备的电源策略所有者，因此它在其设备初始化例程期间调用 WdfDeviceInitSetPowerPolicyOwnership (TRUE) 。
-ms.assetid: 12433344-9C33-415B-BA14-4BD4C7E838CC
 keywords:
 - NFC
 - 近场通信
@@ -10,12 +9,12 @@ keywords:
 - NFP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 17b46ebcaf71905c0dfb92d84335b6f9ec03643a
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 79703611b7afcbb31dd3272775bd3f22f7fcf191
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89384760"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812757"
 ---
 # <a name="power-states"></a>电源状态
 
@@ -38,9 +37,9 @@ WdfDeviceAssignS0IdleSettings(
 );
 ```
 
-IdleTimeout 默认值为1秒。 此设置可通过[**NFC \_ CX \_ 客户端 \_ 配置**](/windows-hardware/drivers/ddi/nfccx/ns-nfccx-_nfc_cx_client_config)中的*PowerIdleTimeout*参数进行配置。 下图显示了使用 WDF 空闲检测方法时隐含的各种电源转换。
+IdleTimeout 默认值为1秒。 此设置可通过 [**NFC \_ CX \_ 客户端 \_ 配置**](/windows-hardware/drivers/ddi/nfccx/ns-nfccx-_nfc_cx_client_config)中的 *PowerIdleTimeout* 参数进行配置。 下图显示了使用 WDF 空闲检测方法时隐含的各种电源转换。
 
-客户端驱动程序可以选择将其作为堆栈的电源策略所有者，通过[**NFC \_ CX \_ 客户端 \_ 配置**](/windows-hardware/drivers/ddi/nfccx/ns-nfccx-_nfc_cx_client_config)结构的**IsPowerPolicyOwner**成员。 这对于需要配置附加设备电源状态的传输（例如 USB）可能会很有用。
+客户端驱动程序可以选择将其作为堆栈的电源策略所有者，通过 [**NFC \_ CX \_ 客户端 \_ 配置**](/windows-hardware/drivers/ddi/nfccx/ns-nfccx-_nfc_cx_client_config)结构的 **IsPowerPolicyOwner** 成员。 这对于需要配置附加设备电源状态的传输（例如 USB）可能会很有用。
 
 ![电源管理操作](images/powermanagementoperations.png)
 

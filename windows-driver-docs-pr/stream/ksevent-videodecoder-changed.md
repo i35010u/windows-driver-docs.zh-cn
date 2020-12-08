@@ -1,7 +1,6 @@
 ---
 title: KSEVENT \_ VIDEODECODER \_ 已更改
 description: KSEVENT \_ VIDEODECODER \_ CHANGED 事件会在用户模式下传播从内核模式视频捕获微型驱动程序到 DirectShow 的操作，如选择新的物理输入连接器。
-ms.assetid: cb197233-fce3-4580-95d3-94605fd1f3e4
 keywords:
 - KSEVENT_VIDEODECODER_CHANGED 流媒体设备
 topic_type:
@@ -12,12 +11,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: af755d3db78151c27acfde853c9d87bb95f95fb1
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 7ab0041af3e2b822fa14a224fab5583fac4f8897
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103126"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96813415"
 ---
 # <a name="ksevent_videodecoder_changed"></a>KSEVENT \_ VIDEODECODER \_ 已更改
 

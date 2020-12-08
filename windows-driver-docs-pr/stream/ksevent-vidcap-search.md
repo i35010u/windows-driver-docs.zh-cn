@@ -1,7 +1,6 @@
 ---
 title: KSEVENT \_ VIDCAP \_ 搜索
 description: 完成搜索后，将 \_ 触发 KSEVENT VIDCAP \_ 自动 \_ 更新事件。
-ms.assetid: 07c7ef26-4f88-40cf-84f2-14cc702f37d5
 keywords:
 - KSEVENT_VIDCAP_SEARCH 流媒体设备
 topic_type:
@@ -12,12 +11,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 880eadb5349f82eca7e6b98831659ac2bf08f3ee
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: a1062483f064948e08b1c9acf0ad22ac19741c20
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90101442"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96813421"
 ---
 # <a name="ksevent_vidcap_search"></a>KSEVENT \_ VIDCAP \_ 搜索
 

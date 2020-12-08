@@ -1,7 +1,6 @@
 ---
 title: COM 端口数据库
 description: COM 端口数据库
-ms.assetid: c9baf147-6e33-4ed2-b682-c141938eb0da
 keywords:
 - COM 端口 WDK 串行设备
 - 串行设备 WDK，COM 端口
@@ -15,12 +14,12 @@ keywords:
 - 数据库 WDK COM 端口数据库
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 76ac4e29bce16f019d1a8f22b167b200770373e6
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 190a2e3f84565fc0878bebf05b0f8f9a98f8d745
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90716670"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812079"
 ---
 # <a name="com-port-database"></a>COM 端口数据库
 
@@ -46,7 +45,7 @@ ms.locfileid: "90716670"
 
 [SerialDisplayAdvancedSettings](/windows/win32/api/msports/nf-msports-serialdisplayadvancedsettings)，它是系统提供的例程，用于安装 COM 端口的高级属性页
 
-[PPORT_ADVANCED_DIALOG](/previous-versions/windows/hardware/drivers/ff546956(v=vs.85))类型的例程，该例程提供由**SerialDisplayAdvancedSettings**调用的可选供应商提供的对话框
+[PPORT_ADVANCED_DIALOG](/previous-versions/windows/hardware/drivers/ff546956(v=vs.85))类型的例程，该例程提供由 **SerialDisplayAdvancedSettings** 调用的可选供应商提供的对话框
 
 若要在安装程序中调用这些例程，请将安装程序链接到 *msports*，后者随 Windows 驱动程序工具包一起提供 (WDK) 。
 
@@ -78,7 +77,7 @@ COM 端口数据库由元素数组组成，每个元素指示 COM 端口号是�
 
 - [**ComDBClaimPort**](/windows/win32/api/msports/nf-msports-comdbclaimport)，它尝试声明特定的端口号。
 
-在 COM 端口数据库中*声明*一个 com 端口号会将端口号记录为 "正在使用"。
+在 COM 端口数据库中 *声明* 一个 com 端口号会将端口号记录为 "正在使用"。
 
 客户端通过调用 [**ComDBReleasePort**](/windows/win32/api/msports/nf-msports-comdbreleaseport) 例程来释放端口号。
 

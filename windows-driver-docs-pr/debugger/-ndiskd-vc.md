@@ -1,7 +1,6 @@
 ---
 title: ndiskd.vc
-description: Ndiskd.vc 扩展在 (VC) ) 虚拟连接中显示面向连接的 (。
-ms.assetid: 8F172026-3FBC-4686-A3A4-F54F1A0D08E5
+description: Ndiskd.vc 扩展显示) 虚拟连接 (VC) 的 Connection-Oriented (CoNDIS。
 keywords:
 - ndiskd.vc Windows 调试
 ms.date: 06/26/2020
@@ -12,16 +11,16 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: cfa81ae1b519bf2d27aeb15c6b3fe82861579380
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: f6bbd63ce5a494f73406eb95b280b3910cf78713
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89211257"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96813331"
 ---
 # <a name="ndiskdvc"></a>!ndiskd.vc
 
-**！ Ndiskd.vc** extension 显示了面向连接的 (CoNDIS) 虚拟连接 (vc) 。
+**！ Ndiskd.vc** 扩展显示) 虚拟连接 (vc) 的 Connection-Oriented (CoNDIS。
 
 ```console
 !ndiskd.vc -handle <x>
@@ -91,7 +90,7 @@ VIRTUAL CALL
     Client Context     00003206
 ```
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [网络驱动程序设计指南](../network/index.md)
 
@@ -99,7 +98,7 @@ VIRTUAL CALL
 
 [调试网络堆栈](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-175-Debugging-the-Network-Stack)
 
-[**NDIS 扩展 ( # A0) **](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 扩展 ( # A0)**](ndis-extensions--ndiskd-dll-.md)
 
 [**!ndiskd.help**](-ndiskd-help.md)
 

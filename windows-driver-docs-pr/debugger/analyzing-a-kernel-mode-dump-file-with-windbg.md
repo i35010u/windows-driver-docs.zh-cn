@@ -1,18 +1,17 @@
 ---
 title: 使用 WinDbg 分析内核模式转储文件
 description: 使用 WinDbg 分析内核模式转储文件
-ms.assetid: a1493740-5bb5-4335-b177-ee94b93f716b
 keywords:
 - WinDbg，分析内核模式转储文件
 - 包含转储文件的 CAB 文件，使用 WinDbg 分析内核模式转储文件
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bd29aa20269aff113ae0a079614576e0cb2d6aff
-ms.sourcegitcommit: f610410e1500f0b0a4ca008b52679688ab51033d
+ms.openlocfilehash: a0b6a09d34aa02d2502fa730e09edfb547c29ebe
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/15/2020
-ms.locfileid: "88252899"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96813317"
 ---
 # <a name="analyzing-a-kernel-mode-dump-file-with-windbg"></a>使用 WinDbg 分析内核模式转储文件
 
@@ -28,11 +27,11 @@ WinDbg 可以分析内核模式内存转储文件。 创建转储文件的处理
 
 **windbg-y** *SymbolPath* **-i** *ImagePath* **-z** *DumpFileName*
 
-**-V**选项 (详细模式) 也很有用。 有关选项的完整列表，请参阅 [**WinDbg 命令行选项**](windbg-command-line-options.md)。
+**-V** 选项 (详细模式) 也很有用。 有关选项的完整列表，请参阅 [**WinDbg Command-Line 选项**](windbg-command-line-options.md)。
 
 如果 WinDbg 已经在运行且处于休眠模式，则可以通过选择文件来打开故障转储 **打开故障转储** 菜单命令或按 CTRL + D 快捷键。 出现 " **打开故障转储** " 对话框时，请在 " **文件名** " 文本框中输入故障转储文件的完整路径和名称，或使用对话框选择正确的路径和文件名。 选择了正确的文件后，选择 " **打开**"。
 
-你还可以在运行调试器后使用 [**. opendump (打开转储文件) **](-opendump--open-dump-file-.md) 命令打开转储文件，并在 [**g (中转) **](g--go-.md)。
+你还可以在运行调试器后使用 [**. opendump (打开转储文件)**](-opendump--open-dump-file-.md) 命令打开转储文件，并在 [**g (中转)**](g--go-.md)。
 
 可以同时调试多个转储文件。 为此，可以在命令行中包含多个 **z** 开关 (每个开关后面跟有不同的文件名) ，或使用 [**opendump**](-opendump--open-dump-file-.md) 将其他转储文件添加为调试器目标。 有关如何控制多目标会话的信息，请参阅 [调试多个目标](debugging-multiple-targets.md)。
 
@@ -48,7 +47,7 @@ WinDbg 可以分析内核模式内存转储文件。 创建转储文件的处理
 
 在大多数情况下，应该首先使用 [**！分析**](-analyze.md)。 此扩展命令执行转储文件的自动分析，并可能会导致许多有用的信息。
 
-[**错误检查 (显示 Bug 检查数据) **](-bugcheck--display-bug-check-data-.md)显示 bug 检查代码及其参数。 有关特定错误的信息，请查看 [Bug 检查代码参考](bug-check-code-reference2.md) 中的此 bug 检查。
+[**错误检查 (显示 Bug 检查数据)**](-bugcheck--display-bug-check-data-.md)显示 bug 检查代码及其参数。 有关特定错误的信息，请查看 [Bug 检查代码参考](bug-check-code-reference2.md) 中的此 bug 检查。
 
 以下调试器扩展对于分析内核模式故障转储特别有用：
 
@@ -58,7 +57,7 @@ WinDbg 可以分析内核模式内存转储文件。 创建转储文件的处理
 
 [**!memusage**](-memusage.md)
 
-[**!vm**](-vm.md)
+[**！ vm**](-vm.md)
 
 [**!errlog**](-errlog.md)
 

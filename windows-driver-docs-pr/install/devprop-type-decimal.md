@@ -1,7 +1,6 @@
 ---
 title: DEVPROP_TYPE_DECIMAL
-description: 在 Windows Vista 和更高版本的 Windows，DEVPROP_TYPE_INT64 标识符表示指示数据类型为 DECIMAL 类型值的基本数据类型标识符。
-ms.assetid: 3aacffd6-3259-489b-992d-e2771858c1e6
+description: 在 Windows Vista 和更高版本的 Windows 中，DEVPROP_TYPE_INT64 标识符表示数据类型为十进制类型的值的基本数据类型标识符。
 keywords:
 - DEVPROP_TYPE_DECIMAL 设备和驱动程序安装
 topic_type:
@@ -14,30 +13,30 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: fac40baf3506a84ed1c7a5ca212a67f86eb0e70a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4879c1cce35d799b6afe78885504a3373a9195e9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383681"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96813191"
 ---
-# <a name="devproptypedecimal"></a>DEVPROP_TYPE_DECIMAL
+# <a name="devprop_type_decimal"></a>DEVPROP_TYPE_DECIMAL
 
 
-在 Windows Vista 和更高版本的 Windows，DEVPROP_TYPE_INT64 标识符表示指示数据类型为 DECIMAL 类型值的基本数据类型标识符。
+在 Windows Vista 和更高版本的 Windows 中，DEVPROP_TYPE_INT64 标识符表示数据类型为十进制类型的值的基本数据类型标识符。
 
 <a name="remarks"></a>备注
 -------
 
-可以仅与组合 DEVPROP_TYPE_DECIMAL [ **DEVPROP_TYPEMOD_ARRAY** ](devprop-typemod-array.md)属性数据类型修饰符。
+DEVPROP_TYPE_DECIMAL 只能与 [**DEVPROP_TYPEMOD_ARRAY**](devprop-typemod-array.md) 的属性数据类型修饰符组合。
 
-### <a name="setting-a-property-of-this-type"></a>设置此属性类型
+### <a name="setting-a-property-of-this-type"></a>设置此类型的属性
 
-若要设置其数据类型为 DEVPROP_TYPE_DECIMAL 的属性，调用相应 SetupDiSet*Xxx*属性函数和集函数的输入参数，如下所示：
+若要设置其数据类型为 DEVPROP_TYPE_DECIMAL 的属性，请调用相应的 SetupDiSet *Xxx* 属性函数并按如下所示设置函数输入参数：
 
--   设置*PropertyType* DEVPROP_TYPE_DECIMAL，参数设置*PropertyBuffer*参数指向的缓冲区，可包含至少一个十进制值和设置*PropertyBufferSize*参数`sizeof(DECIMAL)`。
+-   将 *PropertyType* 参数设置为 DEVPROP_TYPE_DECIMAL，将 *PropertyBuffer* 参数设置为指向一个缓冲区的指针，该缓冲区可包含至少一个十进制值，并将 *PropertyBufferSize* 参数设置为 `sizeof(DECIMAL)` 。
 
--   根据需要设置其他函数输入的参数设置的属性。
+-   根据需要设置其他函数输入参数来设置属性。
 
 <a name="requirements"></a>要求
 ------------
@@ -49,8 +48,8 @@ ms.locfileid: "63383681"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>Header</p></td>
-<td align="left">Devpropdef.h （包括 Devpropdef.h）</td>
+<td align="left"><p>标头</p></td>
+<td align="left">Devpropdef (包含 Devpropdef) </td>
 </tr>
 </tbody>
 </table>

@@ -1,17 +1,16 @@
 ---
 title: 启用页堆
 description: 启用页堆
-ms.assetid: b889b7b7-721c-4ecf-bf59-c1ccc0bc735d
 keywords:
-- 启用页堆（全局标志）
+- " (全局标志启用页堆) "
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b1ffe23db6ad6ab653ddab9a9d2b2c12e998dd18
-ms.sourcegitcommit: 0610366df5de756bf8aa6bfc631eba5e3cd84578
+ms.openlocfilehash: 82d0f85a31830aa3fb81e03faae49d3302351164
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "63363551"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96813281"
 ---
 # <a name="enable-page-heap"></a>启用页堆
 
@@ -19,7 +18,7 @@ ms.locfileid: "63363551"
 ## <span id="ddk_enable_page_heap_dtools"></span><span id="DDK_ENABLE_PAGE_HEAP_DTOOLS"></span>
 
 
-**启用页堆标志启用**页堆验证，这会监视动态堆内存操作（包括分配和免费操作），并在验证程序检测到堆错误时导致调试器中断。
+**启用页堆标志启用** 页堆验证，这会监视动态堆内存操作（包括分配和免费操作），并在验证程序检测到堆错误时导致调试器中断。
 
 <table>
 <colgroup>
@@ -52,11 +51,11 @@ ms.locfileid: "63363551"
 
 当设置为映像文件时，此选项将启用完整的页堆验证，并在系统注册表中或作为内核标志时启用标准页堆验证。
 
--   *整页堆验证*（适用于 **/i**）在每次分配结束时放置保留虚拟内存的区域。
+-   对于 **/i**) ，*整页堆验证* (在每次分配结束时放置保留虚拟内存的区域。
 
--   *标准页堆验证*（对于 **/r**或 **/k**）在分配末尾放置随机模式，并在释放堆块时检查模式。
+-   **/R** 或 **/k** 的 *标准页堆验证* () 在分配末尾放置随机模式，并在释放堆块时检查模式。
 
-为映像文件设置此标志与在命令行中为映像文件键入**gflags/p/Enable** *ImageFile* **/full**相同。
+为映像文件设置此标志与在命令行中为映像文件键入 **gflags/p/Enable** *ImageFile* **/full** 相同。
 
  
 

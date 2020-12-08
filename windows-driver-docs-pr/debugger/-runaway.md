@@ -1,7 +1,6 @@
 ---
 title: 失控
-description: 失控扩展显示有关每个线程使用的时间信息。
-ms.assetid: ea318d5b-60c6-4d1c-80c7-6bc418ad01ab
+description: 失控扩展显示每个线程占用的时间的相关信息。
 keywords:
 - 超越 Windows 调试
 ms.date: 05/23/2017
@@ -12,38 +11,38 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: db1da6ce2bf3c95e0ea15f50dcb51ea38a7e9afa
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d4098b601f122f728cb7b1e927e1cac5b94f273c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63335704"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96813329"
 ---
 # <a name="runaway"></a>!runaway
 
 
-**！ 失控**扩展显示有关每个线程使用的时间的信息。
+**！失控** 扩展显示每个线程占用的时间的相关信息。
 
 ```dbgcmd
 !runaway [Flags]
 ```
 
-## <a name="span-idddkrunawaydbgspanspan-idddkrunawaydbgspanparameters"></a><span id="ddk__runaway_dbg"></span><span id="DDK__RUNAWAY_DBG"></span>参数
+## <a name="span-idddk__runaway_dbgspanspan-idddk__runaway_dbgspanparameters"></a><span id="ddk__runaway_dbg"></span><span id="DDK__RUNAWAY_DBG"></span>参数
 
 
-<span id="_______Flags______"></span><span id="_______flags______"></span><span id="_______FLAGS______"></span> *标志*   
-指定要显示的信息类型。 *标志*可以是以下位的任意组合。 默认值为 0x1。
+<span id="_______Flags______"></span><span id="_______flags______"></span><span id="_______FLAGS______"></span>*标志*   
+指定要显示的信息的类型。 *标志* 可以是以下位的任意组合。 默认值为0x1。
 
-<span id="Bit_0__0x1_"></span><span id="bit_0__0x1_"></span><span id="BIT_0__0X1_"></span>位 0 (0x1)  
-使调试器以显示每个线程使用的用户数量。
+<span id="Bit_0__0x1_"></span><span id="bit_0__0x1_"></span><span id="BIT_0__0X1_"></span>位 0 (0x1)   
+使调试器显示每个线程所使用的用户时间量。
 
-<span id="Bit_1__0x2_"></span><span id="bit_1__0x2_"></span><span id="BIT_1__0X2_"></span>位 1 (0x2)  
-使调试器以显示每个线程使用的内核时间量。
+<span id="Bit_1__0x2_"></span><span id="bit_1__0x2_"></span><span id="BIT_1__0X2_"></span>位 1 (0x2)   
+使调试器显示每个线程占用的内核时间量。
 
-<span id="Bit_2__0x4_"></span><span id="bit_2__0x4_"></span><span id="BIT_2__0X4_"></span>位 2 (0x4)  
-使调试器以显示每个线程创建以来已经过去的时间量。
+<span id="Bit_2__0x4_"></span><span id="bit_2__0x4_"></span><span id="BIT_2__0X4_"></span>位 2 (0x4)   
+使调试器显示自创建每个线程以来经过的时间量。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 <table>
 <colgroup>
@@ -66,20 +65,20 @@ Uext.dll Ntsdexts.dll</td>
 
  
 
-**！ 失控**期间实时调试或调试由创建的故障转储文件时，可以仅使用扩展[ **.dump /mt** ](-dump--create-dump-file-.md)或 **.dump /ma**.
+**！失控** 扩展只能在实时调试过程中使用 **，也不** 能在调试 [**创建的故障**](-dump--create-dump-file-.md)转储文件时使用。
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-有关在用户模式下的线程的信息，请参阅[控制进程和线程](controlling-processes-and-threads.md)。 有关分析进程和线程的详细信息，请参阅*Microsoft Windows Internals*由 Mark Russinovich 和 David solomon 合著。 
+有关用户模式下的线程的信息，请参阅 [控制进程和线程](controlling-processes-and-threads.md)。 有关分析进程和线程的详细信息，请参阅 Russinovich 和 David 所罗门群岛的 *Microsoft Windows 内部机制* 。 
 
 <a name="remarks"></a>备注
 -------
 
-此扩展是找出哪些线程都不受控制旋转或占用太多 CPU 时间的快速方法。
+此扩展可以快速找出哪些线程正在控制或消耗过多的 CPU 时间。
 
-显示标识每个线程由调试器的内部线程编号和线程 ID 以十六进制格式。 调试器 Id 也会显示。
+显示由调试器的内部线程编号和十六进制中的线程 ID 标识每个线程。 还显示了调试器 Id。
 
-下面是一个示例：
+以下是示例：
 
 ```dbgcmd
 0:001> !runaway 7

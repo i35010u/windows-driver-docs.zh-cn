@@ -1,7 +1,6 @@
 ---
 title: NCI 数据包处理
 description: 在某些情况下，nfc CX 定义的序列可能不足以使 NFC 客户端驱动程序添加其自定义逻辑。
-ms.assetid: 48BD5100-A1D4-4844-B53A-DAC73FDBB089
 keywords:
 - NFC
 - 近场通信
@@ -10,12 +9,12 @@ keywords:
 - NFP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fa4c4fdb430eca23783368486f5801dcae007d76
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 557d46b5cf6bfdf77f21ca466b4c769fcc830cd2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89382455"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812779"
 ---
 # <a name="nci-packet-handling"></a>NCI 数据包处理
 

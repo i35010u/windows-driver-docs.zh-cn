@@ -1,7 +1,6 @@
 ---
 title: Bug 检查 0x93 INVALID_KERNEL_HANDLE
 description: INVALID_KERNEL_HANDLE bug 检查的值为0x00000093。 此 bug 检查表明传递到 NtClose 的句柄无效或受保护。
-ms.assetid: c8564da7-cdbf-40f5-94f4-b1fac23b8b42
 keywords:
 - Bug 检查 0x93 INVALID_KERNEL_HANDLE
 - INVALID_KERNEL_HANDLE
@@ -13,21 +12,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 09fef2b03617e44de3f335d158b955a667f3d088
-ms.sourcegitcommit: c2a96138fe8d619c2d2591cd849ae2dd4bb6c37b
+ms.openlocfilehash: 2380cb20a3bf1bc4ed088fbdcbcd085a83e6e51f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/15/2020
-ms.locfileid: "77260504"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96813309"
 ---
-# <a name="bug-check-0x93-invalid_kernel_handle"></a>Bug 检查0x93：内核\_句柄\_无效
+# <a name="bug-check-0x93-invalid_kernel_handle"></a>Bug 检查0x93： \_ 内核 \_ 句柄无效
 
-无效的\_内核\_句柄 bug 检查的值为0x00000093。 此 bug 检查表明传递到**NtClose**的句柄无效或受保护。
+无效 \_ 内核 \_ 句柄 bug 检查的值为0x00000093。 此 bug 检查表明传递到 **NtClose** 的句柄无效或受保护。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你是在使用计算机时收到蓝屏错误代码的客户，请参阅[排查蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题面向程序员。 如果您是在使用计算机时收到蓝屏错误代码的客户，请参阅[蓝屏错误疑难解答](https://www.windows.com/stopcode)。
 
-## <a name="invalid_kernel_handle-parameters"></a>\_处理参数\_内核无效
+## <a name="invalid_kernel_handle-parameters"></a>\_内核 \_ 句柄参数无效
 
 |参数 1|参数2|参数3|参数4|错误的原因|
 |--- |--- |--- |--- |--- |
@@ -37,7 +36,7 @@ ms.locfileid: "77260504"
 
 ## <a name="cause"></a>原因
 
-INVALID_KERNEL_HANDLE bug 检查指示某些内核代码（例如，服务器、重定向程序或另一驱动程序）尝试关闭无效的句柄或受保护的句柄。
+INVALID_KERNEL_HANDLE bug 检查指示某些内核代码 (例如，服务器、重定向程序或另一驱动程序) 尝试关闭无效句柄或受保护的句柄。
 
 如果参数4的值为1，则表示发生了引用无效内核句柄的错误，并且启用了错误的句柄检测。
 

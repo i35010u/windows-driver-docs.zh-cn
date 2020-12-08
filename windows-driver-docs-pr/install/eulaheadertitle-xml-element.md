@@ -1,7 +1,6 @@
 ---
 title: eulaHeaderTitle XML 元素
 description: eulaHeaderTitle XML 元素
-ms.assetid: 65b8e793-ed7b-4d2c-8a55-9860e6188b77
 keywords:
 - eulaHeaderTitle XML 元素设备和驱动程序安装
 topic_type:
@@ -12,12 +11,12 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 65b1bf3a9f48f417d84df6ba79427b29cd503eed
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 517fd4e31f62e17a06a94e661fa401ebcfd541df
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89095369"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96813153"
 ---
 # <a name="eulaheadertitle-xml-element"></a>eulaHeaderTitle XML 元素
 
@@ -83,7 +82,7 @@ ms.locfileid: "89095369"
 
 如果未指定 **eulaHeaderTitle** 元素，则 DPInst 将显示默认 DPInst eula 页面上显示的默认 EULA 标题标题。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**语言**](language-xml-element.md)

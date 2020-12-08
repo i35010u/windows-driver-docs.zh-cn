@@ -1,38 +1,37 @@
 ---
 title: '#包含预处理器指令'
 description: '#包含预处理器指令'
-ms.assetid: 6c3e4de7-2007-4a1a-bdb0-fd5b2b64f489
 keywords:
 - 预处理器指令 WDK GDL，关键字
 - 关键字 WDK GDL
-- 保留的关键字 WDK
+- 保留关键字 WDK
 - Include 指令 WDK GDL
-- GDL WDK 源文件
+- GDL WDK，源文件
 - 源文件 WDK GDL
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 18d374b689ea256bc5636daffbcc3fc3c0337488
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c9be56fab65e28fac9b1a05128a82afdbf558055
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63372897"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812449"
 ---
-# <a name="include-preprocessor-directive"></a>\#包括预处理器指令
+# <a name="include-preprocessor-directive"></a>\#包含预处理器指令
 
 
 ```GDL
 #Include: Quoted String
 ```
 
-\#Include 指令将导致通过名为 GDL 源文件*带引号的字符串*要加载和处理。 当前 GDL 文件预处理已暂停，直到处理完所包含的文件。 所包含的文件可能会影响通过定义或 undefining 符号预处理主机 GDL 文件的其余部分。
+\#Include 指令导致加载和处理用 *引用的字符串* 命名的 GDL 源文件。 当前 GDL 文件的预处理暂停，直到处理完包含的文件。 包含的文件可通过定义或 undefining 符号，影响主机 GDL 文件的其余部分的预处理。
 
-带引号的字符串的语法由 GDL 定义。 带引号的字符串值，不同的值的其他指令，可以扩展到多个行。 *带引号的字符串*是必需的。
+带引号的字符串的语法由 GDL 定义。 与其他指令的值不同，带引号的字符串值可以跨多行扩展。 需要 *带引号的字符串*。
 
-\#包括和换行而不是大括号 （}） 必须终止所有指令。
+\#Include 和 all 指令必须以换行符结尾，而不是用大括号 (} ) 。
 
-如果您使用 **\*Include**，这是一个旧 GPD 关键字，在主机文件后将预处理包含文件。 如果主机文件需要包含的文件，首先进行预处理，这种处理可能会导致问题。 若要避免此类潜在问题，请始终前缀\#Include 指令与当前的预处理器前缀。
+如果使用 **\* include**，这是一个旧的 GPD 关键字，则会在主机文件后对包含文件进行预处理。 如果主机文件要求首先预处理包含的文件，此处理可能会导致问题。 若要避免此类潜在问题，请始终在 \# Include 指令前面添加当前预处理器前缀。
 
-分析器的当前实现允许三种形式的命名文件： 文件的名称，完全限定的路径和部分限定的路径。 如果使用部分限定的路径，路径的起始点建立的当前执行环境。 如果仅使用文件名，将尝试两个起点： 根源文件使用的路径，然后建立的当前执行环境的路径。
+分析器的当前实现允许三种形式的文件命名：仅文件名、完全限定路径和部分限定路径。 如果使用部分限定的路径，则该路径的起始点由当前执行环境建立。 如果仅使用文件名，则将尝试两个起始点：根源文件使用的路径，以及当前执行环境所建立的路径。
 
-请注意，如果预编译的文件包含另一个文件，预编译的文件被视为相对于其包含的文件的根源文件有这样担心。 安装和设置代码可能有附加限制。
+请注意，如果预编译文件包含其他文件，则会将预编译文件视为相对于其所包含文件的根源文件。 安装代码和安装代码可能会施加其他限制。

@@ -1,6 +1,5 @@
 ---
 title: 保留的 IOCTL 代码
-ms.assetid: A2A67F8E-0A29-429E-935C-39368EFD9772
 keywords:
 - NFC
 - 近场通信
@@ -10,12 +9,12 @@ keywords:
 description: 有关 NFC 驱动程序的保留 ioctl 代码的信息，必须返回 STATUS_INVALID_DEVICE_STATE。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 35b529f5b98e170abad35583a6fcf152cd130bf2
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 9f0dcc88c054b49988314d11c8609c3a333eed50
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89381671"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812717"
 ---
 # <a name="reserved-ioctl-codes"></a>保留的 IOCTL 代码
 

@@ -1,15 +1,14 @@
 ---
 title: MPIO \_ 控制器 \_ 配置 WMI 类
 description: MPIO \_ 控制器 \_ 配置 WMI 类
-ms.assetid: c11429d6-b016-464e-a7b4-03b6cdc8ddb7
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 3a78d551e33d10f6b16ff0f0d3332be4b3a49c43
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 3fbd6dd37055ffdc913a1745c802147e2020e239
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89191289"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96811591"
 ---
 # <a name="mpio_controller_configuration-wmi-class"></a>MPIO \_ 控制器 \_ 配置 WMI 类
 

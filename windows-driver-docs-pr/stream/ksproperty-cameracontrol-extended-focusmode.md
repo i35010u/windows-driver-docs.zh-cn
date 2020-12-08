@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ CAMERACONTROL \_ 扩展 \_ FOCUSMODE
 description: 焦点模式属性控制照相机的 "自动"、"手动" 和 "预设" 焦点模式。
-ms.assetid: FA014A4B-0CD3-4288-B721-4A73CDD28551
 keywords:
 - KSPROPERTY_CAMERACONTROL_EXTENDED_FOCUSMODE 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 09/10/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 46857609e2dbd67015d77af1ce0bda95c064275a
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 4afc77be23eb91e6c5ccdfdf5d7aa3a2ccb08d1a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90101548"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96813405"
 ---
 # <a name="ksproperty_cameracontrol_extended_focusmode"></a>KSPROPERTY \_ CAMERACONTROL \_ 扩展 \_ FOCUSMODE
 
@@ -57,11 +56,11 @@ ms.locfileid: "90101548"
 
 属性值 (操作数据) 包含 [**KSCAMERA \_ EXTENDEDPROP \_ 标头**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header) 结构和 [**KSCAMERA \_ EXTENDEDPROP \_ VIDEOPROCSETTING**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_videoprocsetting) 结构。
 
-总属性数据大小为 **sizeof** (KSCAMERA \_ EXTENDEDPROP \_ 标头) + **sizeof** (KSCAMERA \_ EXTENDEDPROP \_ VIDEOPROCSETTING) 。 [**KSCAMERA \_ EXTENDEDPROP \_ 标头**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)的**Size**成员设置为此总属性数据大小。
+总属性数据大小为 **sizeof** (KSCAMERA \_ EXTENDEDPROP \_ 标头) + **sizeof** (KSCAMERA \_ EXTENDEDPROP \_ VIDEOPROCSETTING) 。 [**KSCAMERA \_ EXTENDEDPROP \_ 标头**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)的 **Size** 成员设置为此总属性数据大小。
 
-[**KSCAMERA \_ EXTENDEDPROP \_ 标头**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)的**功能**成员包含以下一个或多个视频处理选项的按位 "或" 组合。
+[**KSCAMERA \_ EXTENDEDPROP \_ 标头**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)的 **功能** 成员包含以下一个或多个视频处理选项的按位 "或" 组合。
 
-| 处理和焦点模式                        | 说明                                                                  |
+| 处理和焦点模式                        | 描述                                                                  |
 |--------------------------------------------------|------------------------------------------------------------------------------|
 | KSCAMERA \_ EXTENDEDPROP \_ VIDEOPROCFLAG \_ 自动      | 照相机驱动程序使用其自己的视频处理逻辑。                       |
 | KSCAMERA \_ EXTENDEDPROP \_ VIDEOPROCFLAG \_    | 照相机驱动程序使用预设处理方法或基于温度的方法。 |
@@ -73,7 +72,7 @@ ms.locfileid: "90101548"
 | KSCAMERA \_ EXTENDEDPROP \_ 焦点 \_ 范围 \_ 无限大   | 无限范围焦点焦点。                                            |
 | KSCAMERA \_ EXTENDEDPROP \_ 焦点 \_ 范围 \_ HYPERFOCAL | Hyperfocal 范围。                                                            |
 
-[**KSCAMERA \_ EXTENDEDPROP \_ 标头**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)的**Flags**成员包含当前为相机设置的视频处理标志。 如果 KSCAMERA \_ EXTENDEDPROP \_ VIDEOPROCFLAG \_ AUTO 设置可以与 KSCAMERA \_ EXTENDEDPROP VIDEOPROCFLAG LOCK 组合在一起 \_ \_ 。
+[**KSCAMERA \_ EXTENDEDPROP \_ 标头**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)的 **Flags** 成员包含当前为相机设置的视频处理标志。 如果 KSCAMERA \_ EXTENDEDPROP \_ VIDEOPROCFLAG \_ AUTO 设置可以与 KSCAMERA \_ EXTENDEDPROP VIDEOPROCFLAG LOCK 组合在一起 \_ \_ 。
 
 此属性控件是异步的，可取消。
 
@@ -143,7 +142,7 @@ ms.locfileid: "90101548"
 <thead>
 <tr class="header">
 <th>成员</th>
-<th>Value</th>
+<th>“值”</th>
 </tr>
 </thead>
 <tbody>
@@ -176,13 +175,13 @@ ms.locfileid: "90101548"
 </table>
 
 
-如果以前未设置焦点范围标志，则驱动程序会将 **标志** 设置为 KSCAMERA \_ EXTENDEDPROP \_ focus \_ RANGE FULLRANGE，并将 \_ KSCAMERA \_ EXTENDEDPROP \_ VIDEOPROCFLAG \_ AUTO (默认) 。 按照焦点模式的要求设置[**KSCAMERA \_ EXTENDEDPROP \_ 标头**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)后面的[**KSCAMERA \_ EXTENDEDPROP \_ VIDEOPROCSETTING**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_videoprocsetting)结构的成员。
+如果以前未设置焦点范围标志，则驱动程序会将 **标志** 设置为 KSCAMERA \_ EXTENDEDPROP \_ focus \_ RANGE FULLRANGE，并将 \_ KSCAMERA \_ EXTENDEDPROP \_ VIDEOPROCFLAG \_ AUTO (默认) 。 按照焦点模式的要求设置 [**KSCAMERA \_ EXTENDEDPROP \_ 标头**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)后面的 [**KSCAMERA \_ EXTENDEDPROP \_ VIDEOPROCSETTING**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_videoprocsetting)结构的成员。
 
-当**VideoProp.Value.ull** MODE 为 KSCAMERA \_ EXTENDEDPROP \_ VIDEOPROCFLAG \_ AUTO 时，VideoProp. u) 值必须包含当前的曝光设置。
+当 **VideoProp.Value.ull** MODE 为 KSCAMERA \_ EXTENDEDPROP \_ VIDEOPROCFLAG \_ AUTO 时，VideoProp. u) 值必须包含当前的曝光设置。
 
 ### <a name="setting-the-property"></a>设置属性
 
-如果设置了属性，则 KSPROPERTY \_ 类型 \_ 集请求， [**KSCAMERA \_ EXTENDEDPROP \_ 标头**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)的**Flags**成员将包含要设置的焦点模式。 当**Flags**包含 KSCAMERA EXTENDEDPROP VIDEOPROCFLAG **VideoProc.Value** [** \_ \_ **](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_videoprocsetting) \_ \_ \_ AUTO，KSCAMERA \_ EXTENDEDPROP \_ VIDEOPROCFLAG KSCAMERA \_ ，EXTENDEDPROP \_ \_ 聚焦 \_ 连续标志时，必须忽略 KSCAMERA EXTENDEDPROP VIDEOPROCSETTING 的 VideoProc 成员。
+如果设置了属性，则 KSPROPERTY \_ 类型 \_ 集请求， [**KSCAMERA \_ EXTENDEDPROP \_ 标头**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)的 **Flags** 成员将包含要设置的焦点模式。 当 **Flags** 包含 KSCAMERA EXTENDEDPROP VIDEOPROCFLAG **VideoProc.Value** [**\_ \_**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_videoprocsetting) \_ \_ \_ AUTO，KSCAMERA \_ EXTENDEDPROP \_ VIDEOPROCFLAG KSCAMERA \_ ，EXTENDEDPROP \_ \_ 聚焦 \_ 连续标志时，必须忽略 KSCAMERA EXTENDEDPROP VIDEOPROCSETTING 的 VideoProc 成员。
 
 ## <a name="requirements"></a>要求
 
@@ -203,7 +202,7 @@ ms.locfileid: "90101548"
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [**KSCAMERA \_ EXTENDEDPROP \_ 标头**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)
 

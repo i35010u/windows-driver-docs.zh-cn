@@ -1,20 +1,19 @@
 ---
 title: 时间戳帮助程序
-description: 时间戳 helper 函数由 v2 传感器驱动程序使用，并用于传感器设备驱动程序软件接口（DDSI）。
-ms.assetid: AE02CEBE-C5CB-4F54-BCB0-439D360DF6A1
+description: 时间戳 helper 函数由 v2 传感器驱动程序使用，并用于传感器设备驱动程序软件接口 (DDSI) 。
 ms.date: 07/20/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: c0ffa699a3dc2309dd5af02737ecc0676965867e
-ms.sourcegitcommit: ca5045a739eefd6ed14b9dbd9249b335e090c4e9
+ms.openlocfilehash: 773e05405b757087d42ccfe2437b8e61c5f50095
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/06/2020
-ms.locfileid: "85968104"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812105"
 ---
 # <a name="time-stamp-helper"></a>时间戳帮助程序
 
 
-时间戳 helper 函数由 v2 传感器驱动程序使用，并用于传感器设备驱动程序软件接口（DDSI）。
+时间戳 helper 函数由 v2 传感器驱动程序使用，并用于传感器设备驱动程序软件接口 (DDSI) 。
 
 **GetPerformanceTime**
 

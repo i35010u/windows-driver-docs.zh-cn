@@ -1,7 +1,6 @@
 ---
 title: KSEVENT \_ BDA \_ CA \_ 智能 \_ 卡 \_ 状态 \_ 已更改
 description: '\_ \_ \_ \_ \_ \_ 当与 ECM 映射节点关联的智能卡读取器上的状态发生更改时，客户端使用 KSEVENT BDA CA 智能卡状态更改为请求通知。'
-ms.assetid: 67684ce9-038a-41fc-a272-f0fd3d5bfbbf
 keywords:
 - KSEVENT_BDA_CA_SMART_CARD_STATUS_CHANGED 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dfaeb470bef6c82dcb29142f072b16286a9bdccf
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: b53aac27b1e6393b11e02a03708c9b887569b4c3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89191595"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96813453"
 ---
 # <a name="ksevent_bda_ca_smart_card_status_changed"></a>KSEVENT \_ BDA \_ CA \_ 智能 \_ 卡 \_ 状态 \_ 已更改
 
@@ -53,7 +52,7 @@ KSEVENT
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSEVENT**](/previous-versions/ff561744(v=vs.85))

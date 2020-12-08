@@ -1,7 +1,6 @@
 ---
 title: 序列
 description: 本主题介绍 NFC CX 驱动程序序列。
-ms.assetid: 92FDF18F-B42B-43F2-914A-CA7E986EE0DF
 keywords:
 - NFC
 - 近场通信
@@ -10,19 +9,19 @@ keywords:
 - NFP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 718e1187b601056b626d6be87020432a4c7525d3
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: cf112d53119da715b8b703413143f87c30470e09
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89385019"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812703"
 ---
 # <a name="sequences"></a>序列
 
 
 本主题介绍 NFC CX 驱动程序序列。
 
-| 序列                    | 说明                                                                                                                                                                                                                                                                                                                                                                                               |
+| 序列                    | 描述                                                                                                                                                                                                                                                                                                                                                                                               |
 |-----------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | SequencePreInit             | 由 CX 在空闲到 init 状态转换期间进行调用 (即，NFC CX) 之前开始初始化。 \_NFC CX 未向 nfc 控制器发送包括核心重置 CMD 的 NCI 命令 \_ 。 在此序列中，客户端可以调用任何非 NCI 命令。 不应将 NCI 命令发送到控制器，因为核心 \_ 重置 \_ CMD 或核心 \_ INIT cmd 都未 \_ 发送到控制器。 |
 | SequenceInitComplete        | 由 CX 在完成 NFC CX 初始化之后立即调用，其中包括 NCI reset、NCI 初始化和配置 NFC 控制器。                                                                                                                                                                                                                                          |

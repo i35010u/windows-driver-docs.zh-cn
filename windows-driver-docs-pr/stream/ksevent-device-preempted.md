@@ -1,7 +1,6 @@
 ---
 title: KSEVENT \_ 设备已被 \_ 抢占
 description: '\_ \_ 设备被抢占后，将触发 KSEVENT 设备被抢占事件。'
-ms.assetid: A51B7109-AFBE-4849-9655-F913FB7851F1
 keywords:
 - KSEVENT_DEVICE_PREEMPTED 流媒体设备
 topic_type:
@@ -12,12 +11,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1964d597fc03cbd04e01f1dbd163a9a30244c570
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 9a30b69c3f18dc670f32d4d5cb74e1bbf3687ff6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104910"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96813449"
 ---
 # <a name="ksevent_device_preempted"></a>KSEVENT \_ 设备已被 \_ 抢占
 
@@ -68,7 +67,7 @@ ms.locfileid: "90104910"
 2.  第二个 Windows 应用请求捕获堆栈从第一个应用中抢占设备并为第二个应用授予控制权。
 3.  发出此请求时，驱动程序会将 **KSEVENT \_ 设备 \_ 抢先** 事件发送到两个 Windows 应用。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSEVENT \_ 设备**](/windows-hardware/drivers/ddi/ks/ne-ks-ksevent_device)

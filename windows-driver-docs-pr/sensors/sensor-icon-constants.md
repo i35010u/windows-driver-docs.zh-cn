@@ -1,7 +1,6 @@
 ---
 title: 传感器图标常量
 description: 传感器驱动程序可以指定一组平台定义的图标或自定义图标，以表示控制面板中的设备。 下表列出了平台定义的图标资源 Id。
-ms.assetid: 1cfe925c-f291-48b0-a002-0916118a93b2
 keywords:
 - 传感器图标常量传感器设备
 topic_type:
@@ -12,12 +11,12 @@ api_type:
 - NA
 ms.date: 01/04/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: e42d5833d9c185f310a2896483220b4c2d25772d
-ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
+ms.openlocfilehash: 749129e1a787b55eecc4940e60aef4152a5047fb
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90010517"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812185"
 ---
 # <a name="sensor-icon-constants"></a>传感器图标常量
 
@@ -53,7 +52,7 @@ ms.locfileid: "90010517"
 <td><p>1003</p></td>
 </tr>
 <tr class="odd">
-<td><p>保护</p></td>
+<td><p>环境</p></td>
 <td><p>1004</p></td>
 </tr>
 <tr class="even">
@@ -131,7 +130,7 @@ ms.locfileid: "90010517"
 <td><p>无受支持的版本</p></td>
 </tr>
 <tr class="odd">
-<td><p>Version</p></td>
+<td><p>版本</p></td>
 <td><p>在 Windows 7 中提供</p></td>
 </tr>
 </tbody>

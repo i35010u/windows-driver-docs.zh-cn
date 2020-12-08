@@ -1,24 +1,23 @@
 ---
 title: OID_WWAN_SIGNAL_STATE
 description: OID_WWAN_SIGNAL_STATE 返回或设置当前信号状态。
-ms.assetid: 6f5d8fd6-b4cf-4058-a27e-d4f7cea19f47
 ms.date: 04/05/2019
 keywords: -从 Windows Vista 开始 OID_WWAN_SIGNAL_STATE 的网络驱动程序
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: b21b3146c893563f84d87212907f04c00b576595
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: c7dd52c86328548edc9f1a0b49ca341e96b6010f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89218341"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812913"
 ---
 # <a name="oid_wwan_signal_state"></a>OID \_ WWAN \_ 信号 \_ 状态
 
 
 OID \_ WWAN \_ 信号 \_ 状态返回或设置当前信号状态。
 
-微型端口驱动程序必须异步处理集和查询请求，最初 \_ 返回 \_ \_ 原始请求所需的 ndis 状态指示，稍后发送 [**ndis \_ 状态 \_ WWAN \_ 信号 \_ **](ndis-status-wwan-signal-state.md) 状态通知，其中包含 [**ndis \_ WWAN \_ 信号 \_ 状态**](/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_signal_state) 的信息，以提供与最终用户显示的当前信号状态指示有关的信息，而不考虑完成的集或查询请求。
+微型端口驱动程序必须异步处理集和查询请求，最初 \_ 返回 \_ \_ 原始请求所需的 ndis 状态指示，稍后发送 [**ndis \_ 状态 \_ WWAN \_ 信号 \_**](ndis-status-wwan-signal-state.md) 状态通知，其中包含 [**ndis \_ WWAN \_ 信号 \_ 状态**](/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_signal_state) 的信息，以提供与最终用户显示的当前信号状态指示有关的信息，而不考虑完成的集或查询请求。
 
 如果调用方请求将当前信号状态指示设置为最终用户，则将使用适当的信息为微型端口驱动程序提供 [**NDIS \_ WWAN \_ 集 \_ 信号 \_ 指示**](/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_set_signal_indication) 结构。
 
@@ -35,7 +34,7 @@ OID \_ WWAN \_ 信号 \_ 状态返回或设置当前信号状态。
 
 在来自 MB 服务的集请求上，微型端口驱动程序应：
 
--   **Rssi** **ErrorRate** \_ \_ \_ 除了报告在微型端口驱动程序中设置的**RssiInterval**和**RssiThreshold**的绝对值外，还会返回 NDIS WWAN 信号状态结构中的 Rssi 和 ErrorRate 的当前值。
+-   **Rssi** **ErrorRate** \_ \_ \_ 除了报告在微型端口驱动程序中设置的 **RssiInterval** 和 **RssiThreshold** 的绝对值外，还会返回 NDIS WWAN 信号状态结构中的 Rssi 和 ErrorRate 的当前值。
 
 -   即使设备当前未向任何操作员注册，并且设备在设置参数中施加的任何限制只能是注册后状态，在内部缓存 **RssiInterval** 和/或 **RssiThreshold** 值。 小型端口驱动程序应尝试在下一个即时可用情况下应用这些设置。
 
@@ -45,7 +44,7 @@ OID \_ WWAN \_ 信号 \_ 状态返回或设置当前信号状态。
 
 当处理来自 MB 服务的查询请求时，微型端口驱动程序可以执行以下操作：
 
--   **Rssi** **ErrorRate** \_ \_ \_ 除了报告在微型端口驱动程序中设置的**RssiInterval**和**RssiThreshold**的绝对值外，还会返回 NDIS WWAN 信号状态结构中的 Rssi 和 ErrorRate 的当前值。
+-   **Rssi** **ErrorRate** \_ \_ \_ 除了报告在微型端口驱动程序中设置的 **RssiInterval** 和 **RssiThreshold** 的绝对值外，还会返回 NDIS WWAN 信号状态结构中的 Rssi 和 ErrorRate 的当前值。
 
 -   此请求失败，并出现相应的 **uStatus** 错误代码集。
 
@@ -100,7 +99,7 @@ OID \_ WWAN \_ 信号 \_ 状态返回或设置当前信号状态。
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**NDIS \_ WWAN \_ 设置 \_ 信号 \_ 指示**](/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_set_signal_indication)

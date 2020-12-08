@@ -1,16 +1,15 @@
 ---
 title: OID_WWAN_SERVICE_ACTIVATION
 description: OID_WWAN_SERVICE_ACTIVATION 指示微型端口驱动程序启动服务激活，以便获得访问提供商网络的权限。
-ms.assetid: a70c087d-0650-4aab-b78e-0d5a7aa49eb6
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_WWAN_SERVICE_ACTIVATION 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: de6b1825701fc4080895679a2deae1e8b304847e
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: fb0f16c8673c298561729526800d191bc9c41b6c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89218343"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812923"
 ---
 # <a name="oid_wwan_service_activation"></a>OID \_ WWAN \_ 服务 \_ 激活
 
@@ -54,7 +53,7 @@ OID \_ WWAN \_ 服务 \_ 激活指示微型端口驱动程序启动服务激活�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [OID \_ WWAN \_ 就绪 \_ 信息](oid-wwan-ready-info.md)

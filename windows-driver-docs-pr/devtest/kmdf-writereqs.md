@@ -1,7 +1,6 @@
 ---
 title: 'WriteReqs 规则 (kmdf) '
 description: WriteReqs 规则指定不将写入请求传递到不适当的 KMDF 方法。
-ms.assetid: 8f5718ec-ab3a-4e4f-8401-9113bf0d9552
 ms.date: 05/21/2018
 keywords:
 - 'WriteReqs 规则 (kmdf) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: a6257f02ebca02e3ca7c74297de8facd01a6320e
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 7667f218699fc8f60f781c8c2a525b8b732bce17
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105502"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96813236"
 ---
 # <a name="writereqs-rule-kmdf"></a>WriteReqs 规则 (kmdf) 
 
 
-**WriteReqs**规则指定不将写入请求传递到不适当的 KMDF 方法。
+**WriteReqs** 规则指定不将写入请求传递到不适当的 KMDF 方法。
 
 在 [*EvtIoWrite*](/windows-hardware/drivers/ddi/wdfio/nc-wdfio-evt_wdf_io_queue_io_write) 事件回调函数回调中提供给驱动程序的所有请求都保证为写入请求。 不能使用专门用于发送读取或 IOCTL 请求的 KMDF 方法发送这些请求。
 

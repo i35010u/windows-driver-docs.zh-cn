@@ -1,15 +1,14 @@
 ---
 title: Windows 收件箱智能卡微型驱动程序
 description: Windows 收件箱智能卡微型驱动程序
-ms.assetid: 4B61607E-090A-4935-B944-110ACE9A4D83
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 18e6a4cc42bc754d52ad504de3bb70c1abdc056e
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 9fad5d26b2dee8752cad51b3ddd25d479d6646c6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89382295"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96811859"
 ---
 # <a name="windows-inbox-smart-card-minidriver"></a>Windows 收件箱智能卡微型驱动程序
 
@@ -39,23 +38,23 @@ ms.locfileid: "89382295"
 
 ### <a name="file-control-information-df-fci"></a> (DF FCI) 的文件控制信息
 
-|标记|Len|值|
+|标记|Len|“值”|
 |----|----|----|
-|64|差.|应用程序模板数据对象</br></br>标记</br>4F</br>Len</br>差.</br>值</br>应用程序辅导 =</br></br>A0 00 00 03 97 42 54 46 59 xx yy</br><ul><li>**XX** = gid 规范修订号，即01或02。</li><li>**YY** = 为卡应用程序保留。</li></ul>|
+|64|差.|应用程序模板数据对象</br></br>标记</br>4F</br>Len</br>差.</br>“值”</br>应用程序辅导 =</br></br>A0 00 00 03 97 42 54 46 59 xx yy</br><ul><li>**XX** = gid 规范修订号，即01或02。</li><li>**YY** = 为卡应用程序保留。</li></ul>|
 
 ### <a name="file-management-data-df-fmd"></a>文件管理数据 (DF FMD) 
 
-|标记|Len|值|
+|标记|Len|“值”|
 |----|----|----|
-|64|差.|FMD 模板</br></br>标记</br>5F2F</br>Len</br>差.</br>值</br>PIN 使用策略 (参阅 "PIN 使用策略" ) =</br></br>40或60<ul><li>**40** –应用程序 PIN 存在，可用于满足 CHV。</li><li>**60** -应用程序和全局 pin 均存在，可用于满足 CHV。</li></ul>|
+|64|差.|FMD 模板</br></br>标记</br>5F2F</br>Len</br>差.</br>“值”</br>PIN 使用策略 (参阅 "PIN 使用策略" ) =</br></br>40或60<ul><li>**40** –应用程序 PIN 存在，可用于满足 CHV。</li><li>**60** -应用程序和全局 pin 均存在，可用于满足 CHV。</li></ul>|
 
 ### <a name="file-control-parameters-df-fcp"></a>文件控制参数 (DF FCP) 
 
-|标记|Len|值|
+|标记|Len|“值”|
 |----|----|----|
-|62|差.|FCP 模板</br></br>标记</br>82</br>Len</br>01</br>值</br>文件描述符字节： 38 ( "不能共享的 DF" ) </br></br>标记</br>8C</br>Len</br>03</br>值</br>精简格式的安全属性 =</br></br>03 30 30</br><ul><li>**40** -以下字节指定为 EFS 创建文件的要求，并按顺序)  (的删除文件。</li><li>**60** –用户身份验证或外部身份验证满足创建 EFs 的要求。</li><li>**60** –用户身份验证或外部身份验证满足删除 EFs 的要求。</li></ul>
+|62|差.|FCP 模板</br></br>标记</br>82</br>Len</br>01</br>“值”</br>文件描述符字节： 38 ( "不能共享的 DF" ) </br></br>标记</br>8C</br>Len</br>03</br>“值”</br>精简格式的安全属性 =</br></br>03 30 30</br><ul><li>**40** -以下字节指定为 EFS 创建文件的要求，并按顺序)  (的删除文件。</li><li>**60** –用户身份验证或外部身份验证满足创建 EFs 的要求。</li><li>**60** –用户身份验证或外部身份验证满足删除 EFs 的要求。</li></ul>
 <div class="alert">
-<strong>注意</strong>   安全属性不必与此完全匹配，但允许用户身份验证或外部身份验证创建和删除 EFs。
+<strong>注意</strong>  安全属性不必与此完全匹配，但允许用户身份验证或外部身份验证创建和删除 EFs。
 </div>|
 
 创建 DF FCP 后，该卡会转换为 "初始化" 状态，这是创建以下部分中所列的对象所需的状态。
@@ -463,10 +462,10 @@ SmartCardCardModule="msclmd.dll"
 对于这种类型的 INF 文件，需要满足以下要求：
 
 - % FabrikamCardDeviceName% 字符串指定的硬件 ID 必须是设备的 ATR 历史字节或设备的智能卡框架标识符的已解码值。 有关此标识符的详细信息，请参阅 [发现过程](discovery-process.md)中的 "Windows 智能卡框架标识符" 部分。
-- **DefaultInstall**节是适用于智能卡微型驱动程序包的 INF 文件中的必需部分。
+- **DefaultInstall** 节是适用于智能卡微型驱动程序包的 INF 文件中的必需部分。
 - INF 文件中的 **DriverVer** 指令的值必须大于收件箱驱动程序的 INF 文件中的版本和时间戳值。 否则，系统不会使用供应商的 INF 文件来安装设备。
 
-    **DriverVer**指令具有以下语法。
+    **DriverVer** 指令具有以下语法。
 
     ``` syntax
     DriverVer=mm/dd/yyyy[,w.x.y.z]

@@ -1,15 +1,14 @@
 ---
 title: 从 VF 微型端口驱动程序进行反向通道通信
 description: 从 VF 微型端口驱动程序进行反向通道通信
-ms.assetid: B7208199-1308-4EF1-A03B-237A283563C4
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 34a941ad9df63ec4242dd1ea209712219afb02a5
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: cd4a85ed5a2a135015b2931ded2b25204dfebba8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89215962"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96813029"
 ---
 # <a name="backchannel-communication-from-a-vf-miniport-driver"></a>从 VF 微型端口驱动程序进行反向通道通信
 
@@ -18,7 +17,7 @@ PCI Express (PCIe) 虚函数 (VF 的微型端口驱动程序) 与 PCIe 物理功
 
 VF 配置块用于 backchannel 和 VF 微型端口驱动程序之间的通信。 独立硬件供应商 (IHV) 可以定义设备的一个或多个 VF 配置块。 每个 VF 配置块都有一个 IHV 定义的格式、长度和块 ID。 例如，IHV 可以定义一个 VF 配置块，该配置块可用于媒体访问控制 (MAC) 地址的 VF 微型端口驱动程序。 其他 VF 配置块可用于当前 VF 和虚拟端口 (VPort) 配置。
 
-**注意**   每个 VF 配置块中的数据仅用于 PF 和 VF 微型端口驱动程序。 此数据的格式和内容对于 Windows 操作系统的组件是不透明的。
+**注意**  每个 VF 配置块中的数据仅用于 PF 和 VF 微型端口驱动程序。 此数据的格式和内容对于 Windows 操作系统的组件是不透明的。
 
  
 
@@ -32,7 +31,7 @@ VF 微型端口驱动程序通过以下功能，在指定的 VF 配置块上启�
 
 PF 微型端口驱动程序通过以下方式管理对指定的 VF 配置块的访问：
 
--   当 VF 微型端口驱动程序调用 [**NdisMReadConfigBlock**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismreadconfigblock)时，NDIS)  (oid 发出对象标识符，将 [oid \_ SRIOV \_ \_ \_ \_ ](./oid-sriov-read-vf-config-block.md) 的方法请求发送到 PF 微型端口驱动程序。 此 OID 请求包含函数调用中由 VF 微型端口驱动程序传递的参数数据。
+-   当 VF 微型端口驱动程序调用 [**NdisMReadConfigBlock**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismreadconfigblock)时，NDIS)  (oid 发出对象标识符，将 [oid \_ SRIOV \_ \_ \_ \_](./oid-sriov-read-vf-config-block.md) 的方法请求发送到 PF 微型端口驱动程序。 此 OID 请求包含函数调用中由 VF 微型端口驱动程序传递的参数数据。
 
     当驱动程序完成 OID 请求时，PF 微型端口驱动程序将执行读取操作并返回所请求的数据。 完成 OID 请求后，NDIS 将从对 [**NdisMReadConfigBlock**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismreadconfigblock)的调用返回。
 

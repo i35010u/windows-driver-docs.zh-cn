@@ -1,7 +1,6 @@
 ---
 title: 事件常量
 description: 传感器平台为驱动程序事件定义以下常量。
-ms.assetid: d9bcfda4-d731-462f-802d-99c85911a6ca
 keywords:
 - 事件常量
 - 传感器设备
@@ -15,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 07/20/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: fe0890d15b416c5756d6af5a2730989f998b2e3f
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: a1b925b3cb26d3f3f3a37efe2ddfe12b0349cf9c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91733047"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812323"
 ---
 # <a name="event-constants"></a>事件常量
 
@@ -31,7 +30,7 @@ ms.locfileid: "91733047"
 
 传感器平台定义以下传感器事件类型标识符。
 
-|名称|说明|
+|“属性”|描述|
 |--|--|
 |SENSOR_EVENT_DATA_UPDATED|指示新数据可用。|
 |SENSOR_EVENT_PROPERTY_CHANGED|指示属性值已更改。|
@@ -43,7 +42,7 @@ ms.locfileid: "91733047"
 
 传感器平台定义以下 **PROPERTYKEY**，用于标识传感器事件的参数。
 
-|名称|说明|
+|“属性”|描述|
 |--|--|
 |SENSOR_EVENT_PARAMETER_EVENT_ID|指示[IPortableDeviceValues](/windows-hardware/drivers/ddi/portabledevicetypes/nn-portabledevicetypes-iportabledevicevalues)中的<strong>GUID</strong>值是事件类型 ID，如 SENSOR_EVENT_DATA_UPDATED。|
 |SENSOR_EVENT_PARAMETER_STATE|指示 [IPortableDeviceValues](/windows-hardware/drivers/ddi/portabledevicetypes/nn-portabledevicetypes-iportabledevicevalues) 中的无符号整数值为传感器状态，如 SENSOR_STATE_READY。 若要引发状态更改事件，请调用 [<strong>ISensorClassExtension：:P oststatechange</strong>](/windows-hardware/drivers/ddi/sensorsclassextension/nf-sensorsclassextension-isensorclassextension-poststatechange)。 无需显式指定 SENSOR_EVENT_PARAMETER_STATE 引发事件。|
@@ -64,7 +63,7 @@ ms.locfileid: "91733047"
 
 
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [关于传感器驱动程序事件](about-sensor-driver-events.md)

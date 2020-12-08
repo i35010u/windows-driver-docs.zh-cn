@@ -1,7 +1,6 @@
 ---
 title: CreateVirtualPort 方法
 description: CreateVirtualPort 方法将创建具有特定全球通用端口名称 (WWPN) 的虚拟端口。
-ms.assetid: B4274FB7-2850-4E17-ACDE-5592B0390E8B
 keywords:
 - CreateVirtualPort 方法存储设备
 topic_type:
@@ -12,27 +11,27 @@ api_type:
 - COM
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 863a78c27a84e47817c061c299513c0fbc437ac7
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 7fbe1ca89c01d0d8fbca063108154a58d7dc1b9d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89184715"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96811745"
 ---
 # <a name="createvirtualport-method"></a>CreateVirtualPort 方法
 
 
-**CreateVirtualPort**方法将创建具有特定全球通用端口名称 (WWPN) 的虚拟端口。
+**CreateVirtualPort** 方法将创建具有特定全球通用端口名称 (WWPN) 的虚拟端口。
 
 <a name="syntax"></a>语法
 ------
 
 ```ManagedCPlusPlus
 void CreateVirtualPort(
-   [in] uint8   WWPN[8],
-   [in] uint8   WWNN[8],
-   [in] uint8   Tag[16],
-   [in] uint16  VirtualName[64],
+   [in] uint8   WWPN[8],
+   [in] uint8   WWNN[8],
+   [in] uint8   Tag[16],
+   [in] uint16  VirtualName[64],
    [out] uint16 Status
 );
 ```
@@ -52,7 +51,7 @@ void CreateVirtualPort(
 *VirtualName \[ 64\]*   
 虚拟端口的符号名称。
 
-*状态值*   
+*状态*   
 返回时，包含操作的状态。
 
 <a name="return-value"></a>返回值

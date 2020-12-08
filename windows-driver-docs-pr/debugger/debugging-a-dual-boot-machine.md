@@ -1,17 +1,16 @@
 ---
 title: 调试双重引导计算机
 description: 调试双重引导计算机
-ms.assetid: 46ed532e-5ef3-4893-b2eb-da8eb52121f0
 keywords:
 - 双引导计算机
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e9a503eb04f9af739fb0f53fedfa826820787745
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1e28546fcc123a414874e2dc0aba21e454f57d0e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63324593"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96813283"
 ---
 # <a name="debugging-a-dual-boot-machine"></a>调试双重引导计算机
 
@@ -19,11 +18,11 @@ ms.locfileid: "63324593"
 ## <span id="ddk_debugging_dual_boot_machines_dbg"></span><span id="DDK_DEBUGGING_DUAL_BOOT_MACHINES_DBG"></span>
 
 
-您应该如何响应时备用操作系统不会启动双引导计算机上？
+当备用操作系统未在双重引导计算机上启动时，应如何响应？
 
-首先，检查启动选项指向其他操作系统的正确路径。 请参阅[获取设置以便进行调试](getting-set-up-for-debugging.md)有关详细信息。
+首先，检查启动选项是否指向其他操作系统的正确路径。 有关详细信息，请参阅 [获取调试设置](getting-set-up-for-debugging.md) 。
 
-在 x86 计算机，您还应该验证该 boosect.ini 存在。 此文件包含其他操作系统的启动记录。 若要取消隐藏此文件，请使用**attrib-r-s-h boosect.ini**命令。
+在 x86 计算机上，还应验证 boosect.ini 是否存在。 此文件包含其他操作系统的启动记录。 若要取消隐藏此文件，请使用 **attrib-r-s-h boosect.ini** 命令。
 
  
 

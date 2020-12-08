@@ -1,17 +1,16 @@
 ---
 title: 数据包修改示例
 description: 数据包修改示例
-ms.assetid: dec76575-041b-4cbd-8042-184b15354f61
 keywords:
 - 数据包修改 WDK Windows 筛选平台
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4d5c752ba0093f59e3e9348e3a3de43eca0d7609
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: eee2a4c41a961577d93fe041206c6287513b3379
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89206281"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812855"
 ---
 # <a name="packet-modification-examples"></a>数据包修改示例
 

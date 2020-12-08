@@ -1,7 +1,6 @@
 ---
 title: 配对蓝牙协议
 description: 配对蓝牙协议
-ms.assetid: 6C95CA57-A226-4252-91E2-FAD8F1A0432B
 keywords:
 - NFC
 - 近场通信
@@ -10,23 +9,23 @@ keywords:
 - NFP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d9a4c014b01d24b0007e2897b729bd13a063fec3
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: d9f7b26310251aa82bad4dcbf5b1917eda5b9d9a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89382453"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812777"
 ---
 # <a name="pairingbluetooth-protocol"></a>配对：蓝牙协议
 
 
 "配对：蓝牙" 协议是一种抽象方式，用于为蓝牙 OOB 配对结构抽象订阅。 Windows 订阅此类型是为了向提供商注册 Windows 对接收蓝牙 OOB 配对结构感兴趣的访问接口，以便完成邻近触发的蓝牙简单 OOB 配对。
 
-**注意**   配对发布的行为：蓝牙未定义
+**注意**  配对发布的行为：蓝牙未定义
 
  
 
-**注意**   对于启用了 NFC 的 NFP 提供程序，静态连接 (静态连接切换单一蓝牙运营商和简化标记格式) 必须受支持。 不得支持协商连接切换。
+**注意**  对于启用了 NFC 的 NFP 提供程序，静态连接 (静态连接切换单一蓝牙运营商和简化标记格式) 必须受支持。 不得支持协商连接切换。
 
  
 

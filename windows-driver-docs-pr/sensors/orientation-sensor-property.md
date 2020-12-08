@@ -1,15 +1,14 @@
 ---
 title: 方向传感器属性
 description: 方向传感器的属性键。
-ms.assetid: E13DB3F1-B99F-4F86-8309-186E63D96D2B
 ms.date: 07/20/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 86f06634a4c7c30a7aba575ed343266f9008014d
-ms.sourcegitcommit: fc94eb0d5a41ef81c1b3ab91ad725386db0be0c2
+ms.openlocfilehash: 00ac4be29a20e1c681dfcd4d33127e5b49eb6275
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91603682"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812297"
 ---
 # <a name="orientation-sensor-property"></a>方向传感器属性
 

@@ -1,19 +1,18 @@
 ---
 title: 常见数据字段
 description: 本主题显示了所有特定于传感器的数据字段中包含的常见数据字段。
-ms.assetid: 5F9F7987-E898-404A-96F9-F5CF88F01393
 ms.date: 07/20/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: b8a5628c29936a695f759656222d4890fa350ef6
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 2da157238258a9e2b562563c0a537b32759cf69d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91733149"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812369"
 ---
 # <a name="sensor-data-fields"></a>传感器数据字段
 
-*传感器数据字段* 表示传感器可以提供的特定类型的信息。 报告数据时，值被视为包含在 *数据字段*中。 相关数据字段的集合构成了 *数据报表*。 数据报表在 SENSOR_COLLECTION_LIST 结构中打包在一起。 每个数据报表必须包含至少一个有效的数据字段和一个标识数据报表创建时间的时间戳。 时间戳由 PKEY_SensorData_Timestamp 属性键表示。 数据字段的示例是加速感应的 x、y、z 加速度值。 每个数据字段由 **PROPERTYKEY** 常量标识。
+*传感器数据字段* 表示传感器可以提供的特定类型的信息。 报告数据时，值被视为包含在 *数据字段* 中。 相关数据字段的集合构成了 *数据报表*。 数据报表在 SENSOR_COLLECTION_LIST 结构中打包在一起。 每个数据报表必须包含至少一个有效的数据字段和一个标识数据报表创建时间的时间戳。 时间戳由 PKEY_SensorData_Timestamp 属性键表示。 数据字段的示例是加速感应的 x、y、z 加速度值。 每个数据字段由 **PROPERTYKEY** 常量标识。
 
 ## <a name="common-data-fields"></a>常见数据字段
 

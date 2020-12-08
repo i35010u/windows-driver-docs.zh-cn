@@ -1,7 +1,6 @@
 ---
 title: KSEVENT \_ TVAUDIO \_ 已更改
 description: KSEVENT \_ TVAUDIO \_ CHANGED 事件传播一项操作，例如，在用户模式下，新优化到的通道支持立体声音频，从内核模式视频捕获微型驱动程序到 DirectShow。
-ms.assetid: 98d77001-9844-4893-9a23-9c06f7d75841
 keywords:
 - KSEVENT_TVAUDIO_CHANGED 流媒体设备
 topic_type:
@@ -12,12 +11,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3f04ed1a7827dbbf1a9baa105df6dc10595348b7
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 2dc4ca81016ed9f29cb9bc74437924300ce0c06c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90101432"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96813433"
 ---
 # <a name="ksevent_tvaudio_changed"></a>KSEVENT \_ TVAUDIO \_ 已更改
 

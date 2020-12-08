@@ -1,15 +1,14 @@
 ---
 title: SerCx2 对读取和写入请求的处理
 description: 外设驱动程序将写入 (发送 IRP_MJ_WRITE) ，并 (IRP_MJ_READ) 请求发送到串行控制器上的端口，以将数据传输到连接到该端口的外围设备并将其传输到该端口。
-ms.assetid: 98100680-7D27-42B7-A445-C539B2DF95AD
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c77219667faf6ccf2ad7eff7321d096ef5f4c403
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: dfbf31f563b6ae840459f12581671da2cd01f5d1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89186921"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96811961"
 ---
 # <a name="sercx2-handling-of-read-and-write-requests"></a>SerCx2 对读取和写入请求的处理
 

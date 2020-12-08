@@ -1,15 +1,14 @@
 ---
 title: 文件系统要求
 description: 文件系统要求
-ms.assetid: 2C363978-3C98-4838-8C55-F804D2C75BEC
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: eb3870bc9f36581e43ebbf9ff2f434d12569d308
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 7cf26672609ea1a4f4137e99c30b31c24a7f6a32
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104016"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96811923"
 ---
 # <a name="file-system-requirements"></a>文件系统要求
 
@@ -157,7 +156,7 @@ typedef struct _CONTAINER_MAP_RECORD
 } CONTAINER_MAP_RECORD, *PCONTAINER_MAP_RECORD;
 ```
 
-**WszGuid**成员包含 CAPI 分配给容器的标识符的 UNICODE 字符串表示形式。 这通常（但不总是） GUID 字符串。 标识符名称不能包含特殊字符 " \\ "。 预配只读卡后，预配过程必须遵循相同的标识符名称准则。
+**WszGuid** 成员包含 CAPI 分配给容器的标识符的 UNICODE 字符串表示形式。 这通常（但不总是） GUID 字符串。 标识符名称不能包含特殊字符 " \\ "。 预配只读卡后，预配过程必须遵循相同的标识符名称准则。
 
 容器名称必须以 null 结尾，且不得大于 (最大 \_ 容器名称长度 \_ 为 \_ + 1) 个字符，包括 null 终止符。
 
@@ -264,7 +263,7 @@ typedef struct _CONTAINER_MAP_RECORD
 
  
 
-**注意**   与 msroots： mscp \\ msroots 文件的互操作性是 PKCS \# 7 格式的证书存储区。
+**注意**  与 msroots： mscp \\ msroots 文件的互操作性是 PKCS \# 7 格式的证书存储区。
 
  
 
@@ -275,10 +274,10 @@ typedef struct _CONTAINER_MAP_RECORD
 
 已知主体是各种类型的用户的标识符，可尝试以某种方式访问卡数据。 下表显示了有效的主体，其中包含一个字母缩写，可与数据访问操作标识符一起用于定义访问条件。 尽管可能存在更多可识别主体，但列表限制为对基本 CSP/KSP 和卡微型驱动程序之间的通信有意义的。
 
-| 名称          | 说明                                                                                                                                                                                                                                                                                 | 助记符 | PIN \_ ID 映射    |
+| “属性”          | 描述                                                                                                                                                                                                                                                                                 | 助记符 | PIN \_ ID 映射    |
 |---------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------|--------------------|
 | 所有人      | 任何请求者，包括未经身份验证的 (或匿名) 用户。                                                                                                                                                                                                                              | E        | 角色 \_ 每个人 (0)  |
-| 用户          | 智能卡的用户客户端，通过使用 PIN 向卡证明其身份。                                                                                                                                                                                                             | U        | 角色 \_ 用户 (1)      |
+| User          | 智能卡的用户客户端，通过使用 PIN 向卡证明其身份。                                                                                                                                                                                                             | U        | 角色 \_ 用户 (1)      |
 | 管理员 | 卡颁发者或与卡上的数据具有管理关系的其他参与方。 使用特定的 PIN 或密钥 (，这些密钥或可能对卡或用户不唯一) 执行用户无法执行的管理任务，而无需使用此类数据，如 PIN 取消阻止。 | A        | 角色 \_ 管理员 (2)     |
 
  
@@ -315,7 +314,7 @@ typedef struct _CONTAINER_MAP_RECORD
 <p>管理员可以使用 <a href="/previous-versions/dn468716(v=vs.85)" data-raw-source="[&lt;strong&gt;CardDeleteDirectory&lt;/strong&gt;](/previous-versions/dn468716(v=vs.85))"><strong>CardDeleteDirectory</strong></a>删除该目录。</p>
 <p>所有人都可以使用 <a href="/previous-versions/dn468721(v=vs.85)" data-raw-source="[&lt;strong&gt;CardEnumFiles&lt;/strong&gt;](/previous-versions/dn468721(v=vs.85))"><strong>CardEnumFiles</strong></a>列出目录的内容。</p>
 <div class="alert">
-<strong>注意</strong>   此 ACL 是可选的。 它可能会从智能卡微型驱动程序规范的将来版本中删除。
+<strong>注意</strong>  此 ACL 是可选的。 它可能会从智能卡微型驱动程序规范的将来版本中删除。
 </div>
 <div>
  
@@ -326,7 +325,7 @@ typedef struct _CONTAINER_MAP_RECORD
 
  
 
-**注意**   创建目录时，每个人都有权列出目录中的文件。 目录没有单独的 "列表" 权限。
+**注意**  创建目录时，每个人都有权列出目录中的文件。 目录没有单独的 "列表" 权限。
 
  
 
@@ -343,7 +342,7 @@ typedef struct _CONTAINER_MAP_RECORD
 <thead>
 <tr class="header">
 <th align="left">操作/特权</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 <th align="left">助记符</th>
 </tr>
 </thead>
@@ -441,7 +440,7 @@ typedef struct _CONTAINER_MAP_RECORD
 <thead>
 <tr class="header">
 <th align="left">访问条件</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>

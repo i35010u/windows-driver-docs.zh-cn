@@ -1,15 +1,14 @@
 ---
 title: 驱动程序初始化
 description: 驱动程序初始化
-ms.assetid: 9886BBBC-7EE5-45AF-AEDD-75C0885C622B
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cdde029776cb127adc8336d4d884b3ee454311dd
-ms.sourcegitcommit: 9102e34c3322d8697dbb6f9a1d78879147a73373
+ms.openlocfilehash: ea2443a389761a6955080b1712e7dfb81b8efe2b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87264448"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812337"
 ---
 # <a name="driver-initialization"></a>驱动程序初始化
 
@@ -24,13 +23,13 @@ ms.locfileid: "87264448"
 
  
 
-示例驱动程序的设计使传感器永久连接到 I2C 总线。 它不支持即插即用，而是支持高级配置和电源接口（ACPI）。
+示例驱动程序的设计使传感器永久连接到 I2C 总线。 它不支持即插即用，而是支持 (ACPI) 的高级配置和电源接口。
 
-ACPI 允许 Windows 控制设备的配置和电源管理。 ACPI 规范包含链接您的 Windows 设备和连接到系统板的外围设备的表的定义。 差分系统描述表（DSDT）描述连接到系统（包括传感器）的外围设备。 它以二进制格式存储，称为 ACPI 机器语言（AML）。 有关 DSDT 表的详细信息，请参阅 ACPI 系统说明表主题。 （请注意，某些系统还使用辅助系统描述表（SSDT）来描述外围设备。）
+ACPI 允许 Windows 控制设备的配置和电源管理。 ACPI 规范包含链接您的 Windows 设备和连接到系统板的外围设备的表的定义。 "区分系统说明" 表 (DSDT) 描述连接到系统的外围设备（包括传感器）。 它以二进制格式存储，该格式称为 ACPI 计算机语言 (AML) 。 有关 DSDT 表的详细信息，请参阅 ACPI 系统说明表主题。  (请注意，某些系统还使用辅助系统说明表 (SSDT) 来描述外围设备。 ) 
 
 若要在 Windows SoC 设备上安装传感器设备和驱动程序，需要使用相应的节点更新 DSDT 表。 此节点包含有关示例设备的控制器和连接器的信息。 下面是 Windows 和驱动程序使用节点中数据的方式：
 
-1.  即插即用（PnP）管理器从 ACPI 驱动程序获取设备连接信息。
+1.  即插即用 (PnP) 管理器从 ACPI 驱动程序获取设备连接信息。
 2.  然后，PnP 管理器创建一个连接 ID 以表示总线连接。
 3.  PnP 管理器会将连接 ID 作为硬件资源传递给示例驱动程序。
 4.  示例驱动程序使用连接 ID 打开到传感器设备的逻辑连接，并获取连接的句柄。
@@ -38,7 +37,7 @@ ACPI 允许 Windows 控制设备的配置和电源管理。 ACPI 规范包含链
 
 ### <a name="updating-the-dsdt-table"></a>更新 DSDT 表
 
-有关说明如何更新 DSDT 表的说明，请参阅在[带 Cove 上安装示例设备和驱动程序](installing-the-sample-device-and-driver-on-your-sharks-cove-board.md)。
+有关说明如何更新 DSDT 表的说明，请参阅在 [带 Cove 上安装示例设备和驱动程序](installing-the-sample-device-and-driver-on-your-sharks-cove-board.md) 。
 
 ### <a name="modifying-the-sample-asl-file"></a>修改示例 ASL 文件
 
@@ -56,7 +55,7 @@ ACPI 允许 Windows 控制设备的配置和电源管理。 ACPI 规范包含链
 
  
 
-除了更新 DSDT 表，你还需要更新 Windows 安装程序信息文件（INF）以指定你的设备支持 ACPI。 由于始终使用 ACPI 枚举传感器，因此 INF 文件中的硬件标识符必须包含 "ACPI" 字符串。
+除了更新 DSDT 表之外，还需要 (INF) 更新 Windows 安装程序信息文件，以指定设备支持 ACPI。 由于始终使用 ACPI 枚举传感器，因此 INF 文件中的硬件标识符必须包含 "ACPI" 字符串。
 
 ```cpp
 ; =================== Manufacturer/Models sections =======================
@@ -83,12 +82,12 @@ ACPI 允许 Windows 控制设备的配置和电源管理。 ACPI 规范包含链
 
 |  步骤   | 方法                        | 调用者                                                         | 目的                                                                                                       |
 |-----|-------------------------------|--------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------|
-| 1   | **DllGetClassObject**         | WUDFHost.exe                                                       | 获取驱动程序的类对象。 （对于任何 COM DLL 都是必需的。）                                                   |
-| 2   | **CMyDevice::OnQueryRemove**  | WUDFx.dll （Windows 用户模式驱动程序框架的组件）。 |                                                                                                               |
-| 3   | **CMyDriver::OnDeviceAdd**    | WUDFx.dll （Windows 用户模式驱动程序框架的组件）。 | 通知驱动程序已添加设备。                                                             |
+| 1   | **DllGetClassObject**         | WUDFHost.exe                                                       | 获取驱动程序的类对象。 任何 COM DLL 都需要 (。 )                                                    |
+| 2   | **CMyDevice::OnQueryRemove**  | WUDFx.dll (Windows 用户模式驱动程序框架) 组件。 |                                                                                                               |
+| 3   | **CMyDriver::OnDeviceAdd**    | WUDFx.dll (Windows 用户模式驱动程序框架) 组件。 | 通知驱动程序已添加设备。                                                             |
 | 4   | **CMyDevice：： Configure**      | **CMyDriver::OnDeviceAdd**                                         | 配置设备的队列和相应的回调对象。                                        |
 | 5   | **CMyQueue： CreateInstance**   | **CMyDevice：： Configure**                                           | 创建设备队列回调的实例                                                            |
-| 6   | **CMyDevice：： CreateInstance** | **CMyDevice::OnDeviceAdd**                                         | 创建设备对象的一个实例，该实例对应于给定的设备（在本例中为加速计）。 |
+| 6   | **CMyDevice：： CreateInstance** | **CMyDevice::OnDeviceAdd**                                         | 创建设备对象的实例，该实例对应于给定的设备 (在此情况下，加速感应) 。 |
 | 7   | **CMyDevice：： Initialize**     | **CMyDevice：： CreateInstance**                                      | 初始化设备回调对象。                                                                       |
 
  
@@ -109,13 +108,13 @@ ACPI 允许 Windows 控制设备的配置和电源管理。 ACPI 规范包含链
 
 | 步骤    | 方法                                                 | 调用者                                                         | 目的                                                                                                                |
 |-----|--------------------------------------------------------|--------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------|
-| 1   | **CMyDevice::OnPrepareHardware**                       | WUDFx.dll （Windows 用户模式驱动程序框架的组件）。 | 开始使给定设备可由驱动程序访问所需的操作。                                       |
+| 1   | **CMyDevice::OnPrepareHardware**                       | WUDFx.dll (Windows 用户模式驱动程序框架) 组件。 | 开始使给定设备可由驱动程序访问所需的操作。                                       |
 | 2   | **CSensorDdi：： Initialize**                             | **CMyDevice::OnPrepareHardware**                                   | 创建并初始化传感器设备对象。                                                                        |
 | 3   | **CSensorDevice：： Initialize**                          | **CSensorDdi：： Initialize**                                         | 初始化传感器驱动程序接口、客户端管理器和报表管理器。                                   |
 | 4   | **CAccelerometerDevice::InitializeDevice**             | **CSensorDevice：： Initialize**                                      | 初始化加速感应设备对象。                                                                           |
 | 5   | **CAccelerometerDevice::GetConfigurationData**         | **CAccelerometerDevice::InitializeDevice**                         | 启动从 ACPI 进行配置数据的检索。                                                               |
-| 6   | **CAccelerometerDevice：:P repareInputParametersForDsm** | **CAccelerometerDevice::GetConfigurationData**                     | \_ \_ \_ 在调用设备特定方法（DSM）函数之前准备 acpi 输入缓冲区（acpi EVAL 输入缓冲区）。 |
-| 7   | **CAccelerometerDevice：:P arseAcpiOutputBuffer**        | **CAccelerometerDevice::GetConfigurationData**                     | 分析在 ACPI 输出缓冲区（ACPI \_ EVAL \_ 输出缓冲区）中返回的配置数据 \_ 。                |
+| 6   | **CAccelerometerDevice：:P repareInputParametersForDsm** | **CAccelerometerDevice::GetConfigurationData**                     | \_ \_ \_ (DSM) 函数) 调用特定于设备的方法之前，准备 acpi 输入缓冲区 (acpi EVAL 输入缓冲区。 |
+| 7   | **CAccelerometerDevice：:P arseAcpiOutputBuffer**        | **CAccelerometerDevice::GetConfigurationData**                     | 分析在 ACPI 输出缓冲区 (ACPI \_ EVAL \_ 输出缓冲区) 中返回的配置数据 \_ 。                |
 | 8   | **CAccelerometerDevice：:P arseResources**               | **CAccelerometerDevice::InitializeDevice**                         | 分析设备资源，以确保它们支持串行 I2C 连接。                                        |
 | 9   | **CAccelerometerDevice::ConnectInterrupt**             | **CAccelerometerDevice：:P arseResources**                           | 创建数据连接中断。                                                                                 |
 
@@ -132,15 +131,15 @@ ACPI 允许 Windows 控制设备的配置和电源管理。 ACPI 规范包含链
 
  
 
-下面的方法由驱动程序在初始化期间调用，以打开基础 SPB 控制器的文件句柄。 （请注意，此序列的前四个方法与数据连接序列中的前四个方法相同。）
+下面的方法由驱动程序在初始化期间调用，以打开基础 SPB 控制器的文件句柄。  (请注意，此序列的前四个方法与数据连接序列中的前四个方法相同。 ) 
 
 | 步骤   | 方法                                      | 调用者                                                         | 目的                                                                                                                                          |
 |-----|---------------------------------------------|--------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------|
-| 1   | **CMyDevice::OnPrepareHardware**            | WUDFx.dll （Windows 用户模式驱动程序框架的组件）。 | 开始使给定设备可由驱动程序访问所需的操作。                                                                |
+| 1   | **CMyDevice::OnPrepareHardware**            | WUDFx.dll (Windows 用户模式驱动程序框架) 组件。 | 开始使给定设备可由驱动程序访问所需的操作。                                                                |
 | 2   | **CSensorDdi：： Initialize**                  | **CMyDevice::OnPrepareHardware**                                   | 创建并初始化传感器设备对象。                                                                                                |
 | 3   | **CSensorDevice：： Initialize**               | **CSensorDdi：： Initialize**                                         | 初始化传感器驱动程序接口、客户端管理器和报表管理器。                                                             |
 | 4   | **CAccelerometerDevice::InitializeDevice**  | **CSensorDevice：： Initialize**                                      | 初始化加速感应设备对象。                                                                                                     |
-| 5   | **CAccelerometerDevice::InitializeRequest** | **CAccelerometerDevice::InitializeDevice**                         | 为 SPB 请求对象启动初始化过程（使用先前检索到的驱动程序的资源中心路径和连接 ID）。 |
+| 5   | **CAccelerometerDevice::InitializeRequest** | **CAccelerometerDevice::InitializeDevice**                         | 使用资源中心路径和驱动程序先前检索到的连接 ID) ，开始 (SPB 请求对象的初始化过程。 |
 | 6   | **CSpbRequest：： Initialize**                 | **CAccelerometerDevice::InitializeRequest**                        | 打开基础 SPB 的文件句柄                                                                                                        |
 
  
@@ -156,18 +155,18 @@ ACPI 允许 Windows 控制设备的配置和电源管理。 ACPI 规范包含链
 
  
 
-下面的方法由驱动程序在初始化期间调用，以获取该传感器支持的属性和数据字段。 对于 Windows 传感器平台，加速感应器属性对应于读取或读/写数据，如传感器的报告间隔或支持的最小报告时间间隔。 数据字段对应于实际加速感应读数沿 X 轴、Y 轴和 Z 轴。 （请注意，此序列的前三种方法与以前的数据连接中的前三个方法和 SPB 请求对象的序列相同。）
+下面的方法由驱动程序在初始化期间调用，以获取该传感器支持的属性和数据字段。 对于 Windows 传感器平台，加速感应器属性对应于读取或读/写数据，如传感器的报告间隔或支持的最小报告时间间隔。 数据字段对应于实际加速感应读数沿 X 轴、Y 轴和 Z 轴。  (请注意，此序列的前三种方法与以前的数据连接和 SPB 请求-对象、序列中的前三种方法相同。 ) 
 
 | 步骤  | 方法                                             | 调用者                                                         | 目的                                                                                                               |
 |-----|----------------------------------------------------|--------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------|
-| 1   | **CMyDevice::OnPrepareHardware**                   | WUDFx.dll （Windows 用户模式驱动程序框架的组件）。 | 开始使给定设备可由驱动程序访问所需的操作。                                     |
+| 1   | **CMyDevice::OnPrepareHardware**                   | WUDFx.dll (Windows 用户模式驱动程序框架) 组件。 | 开始使给定设备可由驱动程序访问所需的操作。                                     |
 | 2   | **CSensorDdi：： Initialize**                         | **CMyDevice::OnPrepareHardware**                                   | 创建并初始化传感器设备对象。                                                                      |
 | 3   | **CSensorDevice：： Initialize**                      | **CSensorDdi：： Initialize**                                         | 初始化传感器驱动程序接口、客户端管理器和报表管理器。                                  |
-| 4   | **CSensorDevice::InitializeSensorDriverInterface** | **CSensorDevice：： Initialize**                                      | 启动存储属性键和 datafield 值的**IPortableDeviceValues**对象的初始化。 |
-| 5   | **CSensorDevice::AddPropertyKeys**                 | **CSensorDevice::InitializeSensorDriverInterface**                 | 循环访问受支持的属性，并为每个属性添加**PROPERTYKEY** 。                                        |
-| 6   | **CAccelerometerDevice::GetSupportedProperties**   | **CSensorDevice::AddPropertyKeys**                                 | 获取给定设备的属性的**PROPERTYKEY**结构。                                                |
-| 7   | **CSensorDevice::AddDataFieldKeys**                | **CSensorDevice::InitializeSensorDriverInterface**                 | 循环访问受支持的数据字段，并为每个字段添加**PROPERTYKEY** 。                                       |
-| 8   | **CSensorDevice::GetSupportedDataFields**          | **CSensorDevice::AddDataFieldKeys**                                | 获取给定设备的数据字段的**PROPERTYKEY**。                                                         |
+| 4   | **CSensorDevice::InitializeSensorDriverInterface** | **CSensorDevice：： Initialize**                                      | 启动存储属性键和 datafield 值的 **IPortableDeviceValues** 对象的初始化。 |
+| 5   | **CSensorDevice::AddPropertyKeys**                 | **CSensorDevice::InitializeSensorDriverInterface**                 | 循环访问受支持的属性，并为每个属性添加 **PROPERTYKEY** 。                                        |
+| 6   | **CAccelerometerDevice::GetSupportedProperties**   | **CSensorDevice::AddPropertyKeys**                                 | 获取给定设备的属性的 **PROPERTYKEY** 结构。                                                |
+| 7   | **CSensorDevice::AddDataFieldKeys**                | **CSensorDevice::InitializeSensorDriverInterface**                 | 循环访问受支持的数据字段，并为每个字段添加 **PROPERTYKEY** 。                                       |
+| 8   | **CSensorDevice::GetSupportedDataFields**          | **CSensorDevice::AddDataFieldKeys**                                | 获取给定设备的数据字段的 **PROPERTYKEY**。                                                         |
 
  
 
@@ -182,16 +181,16 @@ ACPI 允许 Windows 控制设备的配置和电源管理。 ACPI 规范包含链
 
  
 
-下面的方法由驱动程序在初始化期间调用，用于初始化传感器的持久唯一标识符（PUID）。 Windows 使用**PUID**跨设备会话保存数据。 （请注意，此序列的前四个方法与前一个属性和数据字段序列中的前四个方法相同。）
+下面的方法由驱动程序在初始化期间调用，用于初始化传感器 (PUID) 的永久唯一标识符。 Windows 使用 **PUID** 跨设备会话保存数据。  (请注意，此序列的前四个方法与前一个属性和数据字段序列中的前四个方法相同。 ) 
 
 | 步骤  | 方法                                             | 调用者                                                         | 目的                                                                                                   |
 |-----|----------------------------------------------------|--------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------|
-| 1   | **CMyDevice::OnPrepareHardware**                   | WUDFx.dll （Windows 用户模式驱动程序框架的组件）。 | 开始使给定设备可由驱动程序访问所需的操作。                         |
+| 1   | **CMyDevice::OnPrepareHardware**                   | WUDFx.dll (Windows 用户模式驱动程序框架) 组件。 | 开始使给定设备可由驱动程序访问所需的操作。                         |
 | 2   | **CSensorDdi：： Initialize**                         | **CMyDevice::OnPrepareHardware**                                   | 创建并初始化传感器设备对象。                                                          |
 | 3   | **CSensorDevice：： Initialize**                      | **CSensorDdi：： Initialize**                                         | 初始化传感器驱动程序接口、客户端管理器和报表管理器。                      |
 | 4   | **CSensorDevice::InitializeSensorDriverInterface** | **CSensorDevice：： Initialize**                                      | 开始初始化存储属性键和 datafield 值的对象。               |
-| 5   | **CSensorDevice::SetUniqueID**                     | **CSensorDevice::InitializeSensorDriverInterface**                 | 调用一个方法，该方法获取驱动程序可跨会话使用的永久唯一标识符（PUID）。 |
-| 6   | **CAcclerometerDevice::GetSensorObjectID**         | **CSensorDevice::SetUniqueID**                                     | 获取加速度的永久性标识符（"ADXL345"）。                                               |
+| 5   | **CSensorDevice::SetUniqueID**                     | **CSensorDevice::InitializeSensorDriverInterface**                 | 调用一个方法，该方法可获取 (PUID) 的持久唯一标识符，驱动程序可跨会话使用该标识符。 |
+| 6   | **CAcclerometerDevice::GetSensorObjectID**         | **CSensorDevice::SetUniqueID**                                     | 获取加速感应程序的持久性标识符 ( "ADXL345" ) 。                                               |
 
  
 
@@ -206,15 +205,15 @@ ACPI 允许 Windows 控制设备的配置和电源管理。 ACPI 规范包含链
 
  
 
-Windows 传感器平台支持传感器类型、制造商名称、传感器型号和序列号的默认属性值。 SpbAccelerometer 示例中的代码将这些属性设置为驱动程序和设备初始化阶段的一部分。 下面的方法由驱动程序在初始化期间调用，以设置加速感应的默认值。 （请注意，此序列的前四个方法与之前的属性设置序列中的前四个方法相同。）
+Windows 传感器平台支持传感器类型、制造商名称、传感器型号和序列号的默认属性值。 SpbAccelerometer 示例中的代码将这些属性设置为驱动程序和设备初始化阶段的一部分。 下面的方法由驱动程序在初始化期间调用，以设置加速感应的默认值。  (请注意，此序列的前四个方法与之前的属性设置序列中的前四个方法相同。 ) 
 
 | 步骤   | 方法                                             | 调用者                                                         | 目的                                                                                           |
 |-----|----------------------------------------------------|--------------------------------------------------------------------|---------------------------------------------------------------------------------------------------|
-| 1   | **CMyDevice::OnPrepareHardware**                   | WUDFx.dll （Windows 用户模式驱动程序框架的组件）。 | 开始使给定设备可由驱动程序访问所需的操作。                 |
+| 1   | **CMyDevice::OnPrepareHardware**                   | WUDFx.dll (Windows 用户模式驱动程序框架) 组件。 | 开始使给定设备可由驱动程序访问所需的操作。                 |
 | 2   | **CSensorDdi：： Initialize**                         | **CMyDevice::OnPrepareHardware**                                   | 创建并初始化传感器设备对象。                                                   |
 | 3   | **CSensorDevice：： Initialize**                      | **CSensorDdi：： Initialize**                                         | 初始化传感器驱动程序接口、客户端管理器和报表管理器。              |
 | 4   | **CSensorDevice::InitializeSensorDriverInterface** | **CSensorDevice：： Initialize**                                      | 开始初始化存储属性键和 datafield 值的对象。       |
-| 5   | **CAccelerometerDevice::SetDefaultPropertyValues** | **CSensorDevice::InitializeSensorDriverInterface**                 | 设置加速感应的默认属性值（制造商、型号、序列号等） |
+| 5   | **CAccelerometerDevice::SetDefaultPropertyValues** | **CSensorDevice::InitializeSensorDriverInterface**                 | 设置加速感应 (制造商、型号、序列号等 ) 的默认属性值 |
 
  
 
@@ -229,15 +228,15 @@ Windows 传感器平台支持传感器类型、制造商名称、传感器型号
 
  
 
-Windows 传感器平台支持传感器的只读和读写属性，这也适用于默认属性。 SpbAccelerometer 示例中的代码获取作为驱动程序和设备初始化阶段的一部分的可写入（或可设置）默认属性的列表。 下面的方法由驱动程序在初始化期间调用，以获取加速感应的这些属性。 （请注意，此序列的前四个方法与之前的属性设置序列中的前四个方法相同。）
+Windows 传感器平台支持传感器的只读和读写属性，这也适用于默认属性。 SpbAccelerometer 示例中的代码获取可写入 (列表，或) 默认属性设置为驱动程序和设备初始化阶段的可设置列表。 下面的方法由驱动程序在初始化期间调用，以获取加速感应的这些属性。  (请注意，此序列的前四个方法与之前的属性设置序列中的前四个方法相同。 ) 
 
 | 步骤   | 方法                                             | 调用者                                                         | 目的                                                                                           |
 |-----|----------------------------------------------------|--------------------------------------------------------------------|---------------------------------------------------------------------------------------------------|
-| 1   | **CMyDevice::OnPrepareHardware**                   | WUDFx.dll （Windows 用户模式驱动程序框架的组件）。 | 开始使给定设备可由驱动程序访问所需的操作。                  |
+| 1   | **CMyDevice::OnPrepareHardware**                   | WUDFx.dll (Windows 用户模式驱动程序框架) 组件。 | 开始使给定设备可由驱动程序访问所需的操作。                  |
 | 2   | **CSensorDdi：： Initialize**                         | **CMyDevice::OnPrepareHardware**                                   | 创建并初始化传感器设备对象。                                                  |
 | 3   | **CSensorDevice：： Initialize**                      | **CSensorDdi：： Initialize**                                         | 初始化传感器驱动程序接口、客户端管理器和报表管理器。              |
 | 4   | **CSensorDevice::InitializeSensorDriverInterface** | **CSensorDevice：： Initialize**                                      | 开始初始化存储属性键和 datafield 值的对象。       |
-| 5   | **CAccelerometerDevice::SetDefaultPropertyValues** | **CSensorDevice::InitializeSensorDriverInterface**                 | 设置加速感应的默认属性值（制造商、型号、序列号等） |
+| 5   | **CAccelerometerDevice::SetDefaultPropertyValues** | **CSensorDevice::InitializeSensorDriverInterface**                 | 设置加速感应 (制造商、型号、序列号等 ) 的默认属性值 |
 
  
 
@@ -252,13 +251,13 @@ Windows 传感器平台支持传感器的只读和读写属性，这也适用于
 
  
 
-Windows 传感器平台支持事件。 应用程序注册事件处理程序以从驱动程序获取通知。 对于加速感应程序，当超过特定的更改敏感度（以 G force 度量）或当前报表间隔过期时，将触发这些通知。
+Windows 传感器平台支持事件。 应用程序注册事件处理程序以从驱动程序获取通知。 对于加速感应程序，当超过 G force)  (度量或当前报表间隔过期时，将触发这些通知。
 
-若要支持传感器平台中的事件模型，驱动程序必须激活线程才能处理事件通知。 下面的方法由驱动程序在初始化期间调用以执行此激活。 （请注意，此序列的前三种方法与前面的多个序列中的前三个方法相同。）
+若要支持传感器平台中的事件模型，驱动程序必须激活线程才能处理事件通知。 下面的方法由驱动程序在初始化期间调用以执行此激活。  (请注意，此序列的前三种方法与前面的几个序列中的前三个方法相同。 ) 
 
 | 步骤   | 方法                                         | 调用者                                                         | 目的                                                                              |
 |-----|------------------------------------------------|--------------------------------------------------------------------|--------------------------------------------------------------------------------------|
-| 1   | **CMyDevice::OnPrepareHardware**               | WUDFx.dll （Windows 用户模式驱动程序框架的组件）。 | 开始使给定设备可由驱动程序访问所需的操作。    |
+| 1   | **CMyDevice::OnPrepareHardware**               | WUDFx.dll (Windows 用户模式驱动程序框架) 组件。 | 开始使给定设备可由驱动程序访问所需的操作。    |
 | 2   | **CSensorDdi：： Initialize**                     | **CMyDevice::OnPrepareHardware**                                   | 创建并初始化传感器设备对象。                                    |
 | 3   | **CSensorDevice：： Initialize**                  | **CSensorDdi：： Initialize**                                         | 初始化传感器驱动程序接口、客户端管理器和报表管理器。 |
 | 4   | **CReportManager：： Initialize**                 | **CSensorDevice：： Initialize**                                      | 创建用于处理事件的线程。                                            |
@@ -274,7 +273,7 @@ Windows 传感器平台支持事件。 应用程序注册事件处理程序以�
 
  
 
-Windows 传感器平台具有传感器 API 的类扩展，它提供了一种用于获取传感器数据和引发事件通知的标准机制。 示例驱动程序调用**ISensorClassExtension：： initialize**方法，以便在它收到对**CMyDevice：： OnPrepareHardware**的调用后初始化该类扩展。
+Windows 传感器平台具有传感器 API 的类扩展，它提供了一种用于获取传感器数据和引发事件通知的标准机制。 示例驱动程序调用 **ISensorClassExtension：： initialize** 方法，以便在它收到对 **CMyDevice：： OnPrepareHardware** 的调用后初始化该类扩展。
 
 ### <a name="configuring-the-device-and-placing-it-in-standby-mode"></a>配置设备并将其置于备用模式
 
@@ -287,11 +286,11 @@ Windows 传感器平台具有传感器 API 的类扩展，它提供了一种用�
 
  
 
-设备和驱动程序初始化中的最后一个方法序列配置 ADXL345，并将其置于备用模式。 （此写入和读取操作的顺序重复多次，直到配置了设备。）
+设备和驱动程序初始化中的最后一个方法序列配置 ADXL345，并将其置于备用模式。  (这一序列的写入和读取操作重复多次，直到配置了设备。 ) 
 
 | 步骤  | 方法                                          | 调用者                                                         | 目的                                                                               |
 |-----|-------------------------------------------------|--------------------------------------------------------------------|---------------------------------------------------------------------------------------|
-| 1   | **CMyDevice::OnD0Entry**                        | WUDFx.dll （Windows 用户模式驱动程序框架的组件）。 | 当系统上出现新设备时进行调用。                                      |
+| 1   | **CMyDevice::OnD0Entry**                        | WUDFx.dll (Windows 用户模式驱动程序框架) 组件。 | 当系统上出现新设备时进行调用。                                      |
 | 2   | **CSensorDdi：： Start**                           | **CMyDevice::OnD0Entry**                                           | 调用 CSensorDevice：： Start 的传递方法。                                |
 | 3   | **CSensorDevice：： Start**                        | **CSensorDdi：： Start**                                              | 启动设备配置过程。                                           |
 | 4   | **CAccelerometerDevice::ConfigureHardware**     | **CSensorDevice：： Start**                                           | 启动向 ADXL345 的指定寄存器写入值的操作。 |
@@ -303,24 +302,24 @@ Windows 传感器平台具有传感器 API 的类扩展，它提供了一种用�
 
  
 
-大多数设备配置工作都是通过一系列的**CAccelerometerDevice：： WriteRegister**和**CAccelerometerDevice：： ReadRegister**方法调用来进行的。 驱动程序使用：：**WriteRegister**方法将值写入其中一个 ADXL345 寄存器;然后，它会检查相应的：：**ReadRegister**方法中返回的值以验证写入操作是否成功。 下面是完整的写入和读取操作序列。
+大多数设备配置工作都是通过一系列的 **CAccelerometerDevice：： WriteRegister** 和 **CAccelerometerDevice：： ReadRegister** 方法调用来进行的。 驱动程序使用：：**WriteRegister** 方法将值写入其中一个 ADXL345 寄存器;然后，它会检查相应的：：**ReadRegister** 方法中返回的值以验证写入操作是否成功。 下面是完整的写入和读取操作序列。
 
 | 步骤 | 方法                                  | 注册 | 数据                | 目的                                                                                                            |
 |-----|-----------------------------------------|----------|---------------------|--------------------------------------------------------------------------------------------------------------------|
-| 1   | **CAccelerometerDevice::WriteRegister** | **0x2d** | **" \\ 0" （0x00）**    | 重置传感器的电源控制寄存器，并将设备置于备用模式。                                   |
-| 2   | **CAccelerometerDevice::ReadRegister**  | **0x2d** | **" \\ 0" （0x00）**    | 返回的寄存器值指示写操作成功。                                          |
-| 3   | **CAccelerometerDevice::WriteRegister** | **0x31** | **" \\ v" （0x0b）**    | 将设备设置为完全分辨率模式，每个轴上的 +/-16G 范围。                                   |
-| 4   | **CAccelerometerDevice::ReadRegister**  | **0x31** | **" \\ v" （0x0b**     | 返回的寄存器值指示写操作成功。                                          |
-| 5   | **CAccelerometerDevice::WriteRegister** | **0x38** | **" \\ 0" （0x00）**    | 将传感器的 FIFO 控制寄存器重置为绕过模式。                                                      |
-| 6   | **CAccelerometerDevice::ReadRegister**  | **0x38** | **" \\ 0" （0x00）**    | 返回的寄存器值指示写操作成功。                                          |
-| 7   | **CAccelerometerDevice::WriteRegister** | **0x2C** | **" \\ a" （0x07）**    | 设置 BW \_ 速率寄存器以启动低功耗模式。                                                             |
-| 8   | **CAccelerometerDevice::ReadRegister**  | **0x2C** | **" \\ a" （0x07）**    | 返回的寄存器值指示写操作成功。                                          |
-| 9   | **CAccelerometerDevice::WriteRegister** | **0x24** | **" \\ x1" （0x01）**   | 将 TRESH \_ ACT （活动阈值）寄存器设置为1。                                                            |
-| 10  | **CAccelerometerDevice::ReadRegister**  | **0x24** | **" \\ x1" （0x01）**   |                                                                                                                    |
-| 11  | **CAccelerometerDevice::WriteRegister** | **0x27** | **0xf0**          | 将 ACT \_ INACT \_ CTL （活动/非活动）寄存器设置为0xf0。                                                       |
-| 12  | **CAccelerometerDevice::ReadRegister**  | **0x27** | **0xf0**          | 返回的 register 值指示写操作成功。                                              |
-| 13  | **CAccelerometerDevice::WriteRegister** | **0x2f** | **" \\ 0x10" （0x10）** | 设置 INT \_ 映射（中断映射）注册。 0x10 的值请求将水印映射到 INT2 pin。 |
-| 14  | **CAccelerometerDevice::ReadRegister**  | **0x2f** | **" \\ 0x10" （0x10）** | 返回的 register 值指示写操作成功。                                          |
+| 1   | **CAccelerometerDevice::WriteRegister** | **0x2d** | **" \\ 0" (0x00)**    | 重置传感器的电源控制寄存器，并将设备置于备用模式。                                   |
+| 2   | **CAccelerometerDevice::ReadRegister**  | **0x2d** | **" \\ 0" (0x00)**    | 返回的寄存器值指示写操作成功。                                          |
+| 3   | **CAccelerometerDevice::WriteRegister** | **0x31** | **" \\ v" (0x0b)**    | 将设备设置为完全分辨率模式，每个轴上的 +/-16G 范围。                                   |
+| 4   | **CAccelerometerDevice::ReadRegister**  | **0x31** | **" \\ v" (0x0b**     | 返回的寄存器值指示写操作成功。                                          |
+| 5   | **CAccelerometerDevice::WriteRegister** | **0x38** | **" \\ 0" (0x00)**    | 将传感器的 FIFO 控制寄存器重置为绕过模式。                                                      |
+| 6   | **CAccelerometerDevice::ReadRegister**  | **0x38** | **" \\ 0" (0x00)**    | 返回的寄存器值指示写操作成功。                                          |
+| 7   | **CAccelerometerDevice::WriteRegister** | **0x2C** | **\\ (0x07 的 "a")**    | 设置 BW \_ 速率寄存器以启动低功耗模式。                                                             |
+| 8   | **CAccelerometerDevice::ReadRegister**  | **0x2C** | **\\ (0x07 的 "a")**    | 返回的寄存器值指示写操作成功。                                          |
+| 9   | **CAccelerometerDevice::WriteRegister** | **0x24** | **" \\ x1" (0x01)**   | 将 \_) register (活动阈值的 TRESH 操作设置为1。                                                            |
+| 10  | **CAccelerometerDevice::ReadRegister**  | **0x24** | **" \\ x1" (0x01)**   |                                                                                                                    |
+| 11  | **CAccelerometerDevice::WriteRegister** | **0x27** | **(0xf0)**          | 将 ACT \_ INACT \_ CTL (active/非活动) register 注册到0xf0。                                                       |
+| 12  | **CAccelerometerDevice::ReadRegister**  | **0x27** | **(0xf0)**          | 返回的 register 值指示写操作成功。                                              |
+| 13  | **CAccelerometerDevice::WriteRegister** | **0x2f** | **" \\ 0x10" (0x10)** | \_) register (中断映射设置 INT 映射。 0x10 的值请求将水印映射到 INT2 pin。 |
+| 14  | **CAccelerometerDevice::ReadRegister**  | **0x2f** | **" \\ 0x10" (0x10)** | 返回的 register 值指示写操作成功。                                          |
 
 
 在配置了驱动程序和设备之后，初始化序列完成，应用程序可以开始接收传感器数据。

@@ -1,18 +1,17 @@
 ---
 title: SCSI 微型端口驱动程序中的错误处理
 description: SCSI 微型端口驱动程序中的错误处理
-ms.assetid: 0d9a2d60-c8e5-48f6-9c1f-d593e59095c8
 keywords:
 - SCSI 微型端口驱动程序 WDK 存储，错误
 - 错误 WDK SCSI
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a3d25ec84e9400fb10d3530b5e7d67d42d6ffc00
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 1301418cbf472ae0e1a203737a859588a3dcc1d1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89186429"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96811719"
 ---
 # <a name="error-handling-in-scsi-miniport-drivers"></a>SCSI 微型端口驱动程序中的错误处理
 

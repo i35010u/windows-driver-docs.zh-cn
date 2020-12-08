@@ -1,23 +1,22 @@
 ---
 title: 存储类驱动程序简介
 description: 存储类驱动程序简介
-ms.assetid: 0ea462a9-5e6f-419f-af36-50f50901143d
 keywords:
 - 存储类驱动程序 WDK，关于存储类驱动程序
 - 类驱动程序 WDK 存储，关于存储类驱动程序
 - HBA WDK 存储
 ms.date: 12/15/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 18726c577942380ead16190ea2d3b0af006bf373
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 8e74a2f8745edbd5315893ac59b6ac1eef6d8d6d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89193201"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96811693"
 ---
 # <a name="introduction-to-storage-class-drivers"></a>存储类驱动程序简介
 
-*存储类驱动程序*使用已建立良好的 SCSI 类/端口接口控制其类型的大容量存储设备，该设备在系统提供存储端口驱动程序 (当前 SCSI、IDE、USB 和 IEEE 1394) 的任何总线上。 存储设备连接到的特定总线对于存储类驱动程序是透明的。
+*存储类驱动程序* 使用已建立良好的 SCSI 类/端口接口控制其类型的大容量存储设备，该设备在系统提供存储端口驱动程序 (当前 SCSI、IDE、USB 和 IEEE 1394) 的任何总线上。 存储设备连接到的特定总线对于存储类驱动程序是透明的。
 
 任何存储类驱动程序都通过构建 *SCSI 请求块* 来处理来自用户应用程序或更高级别的驱动程序的 i/o 请求， (SRBs) 包含 *命令描述符块* (CDBs) ，并通过任何干预筛选器驱动程序将这些块发送到基础存储端口驱动程序。
 

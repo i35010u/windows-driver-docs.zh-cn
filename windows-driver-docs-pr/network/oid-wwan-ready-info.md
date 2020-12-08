@@ -1,16 +1,15 @@
 ---
 title: OID_WWAN_READY_INFO
 description: OID_WWAN_READY_INFO 返回设备就绪状态，其中包括其订户标识模块 (SIM 卡) 。
-ms.assetid: 3e6f6cb7-14fc-4eee-b5d6-d5e0cad46ea2
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_WWAN_READY_INFO 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 7152f509bef4d98b596cf9f91ffb4feaadbe8b8b
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 9712068f46e27b48429738dc3f8021e85abbd931
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89209287"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812943"
 ---
 # <a name="oid_wwan_ready_info"></a>OID \_ WWAN \_ 就绪 \_ 信息
 
@@ -38,11 +37,11 @@ OID \_ WWAN \_ 就绪 \_ 信息返回设备就绪状态，其中包括其订户�
 
 -   如果 PIN1 已锁定，微型端口驱动程序必须首先将 **ReadyInfo** 设置为 *WwanReadyStateDeviceLocked*。 然后，MB 服务将为 OID WWAN PIN 的 OID 集请求发送微型端口驱动程序 \_ \_ 。 设备解锁后，微型端口驱动程序必须发送另一个就绪状态事件通知，并将 **ReadyState** 设置为 *WwanReadyStateInitialized*。 在成功解锁 PIN1 之前，微型端口驱动程序不得将设备就绪状态更改为 *WwanReadyStateInitialized*。
 
--   当 MB 服务加载微型端口驱动程序时，微型端口驱动程序必须首先发送事件通知，并将 **ReadyState** 设置为 *WwanReadyStateSimNotInserted* 。如果未提供 sim 卡，则可能会出现这样的情况：允许插入或删除 sim 卡的设备。 如果设备能够检测到热插入 SIM 卡，则当用户插入 SIM 时，微型端口驱动程序必须将**ReadyState**设置为 WwanReadyStateInitialized 的其他事件通知发送到*WwanReadyStateInitialized* 。
+-   当 MB 服务加载微型端口驱动程序时，微型端口驱动程序必须首先发送事件通知，并将 **ReadyState** 设置为 *WwanReadyStateSimNotInserted* 。如果未提供 sim 卡，则可能会出现这样的情况：允许插入或删除 sim 卡的设备。 如果设备能够检测到热插入 SIM 卡，则当用户插入 SIM 时，微型端口驱动程序必须将 **ReadyState** 设置为 WwanReadyStateInitialized 的其他事件通知发送到 *WwanReadyStateInitialized* 。
 
--   能够检测服务激活状态的设备必须将 ReadyState 设置为*WwanReadyStateNotActivated*。 **ReadyInfo** 此外，如果微型端口驱动程序支持服务激活，微型端口驱动程序将收到 oid \_ WWAN 服务激活的 oid 设置请求 \_ \_ 。 成功完成服务激活后，微型端口驱动程序必须发送另一个事件通知，并将 **ReadyInfo ReadyState** 设置为 *WwanReadyStateInitialized*。
+-   能够检测服务激活状态的设备必须将 ReadyState 设置为 *WwanReadyStateNotActivated*。 **ReadyInfo** 此外，如果微型端口驱动程序支持服务激活，微型端口驱动程序将收到 oid \_ WWAN 服务激活的 oid 设置请求 \_ \_ 。 成功完成服务激活后，微型端口驱动程序必须发送另一个事件通知，并将 **ReadyInfo ReadyState** 设置为 *WwanReadyStateInitialized*。
 
--   需要具体固件修订版本的微型端口驱动程序必须确保正确的固件版本可用。 如果固件版本不可用，微型端口驱动程序应通过将 **ReadyInfo** 设置为 *WwanReadyStateFailure*来完成事件通知事务。
+-   需要具体固件修订版本的微型端口驱动程序必须确保正确的固件版本可用。 如果固件版本不可用，微型端口驱动程序应通过将 **ReadyInfo** 设置为 *WwanReadyStateFailure* 来完成事件通知事务。
 
 <a name="requirements"></a>要求
 ------------
@@ -64,7 +63,7 @@ OID \_ WWAN \_ 就绪 \_ 信息返回设备就绪状态，其中包括其订户�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**NDIS \_ WWAN \_ 就绪 \_ 信息**](/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_ready_info)

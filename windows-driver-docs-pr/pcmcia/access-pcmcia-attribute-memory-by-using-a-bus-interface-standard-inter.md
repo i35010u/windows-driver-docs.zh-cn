@@ -1,18 +1,17 @@
 ---
 title: 使用 BUS_INTERFACE_STANDARD 访问内存
 description: 使用 BUS_INTERFACE_STANDARD 界面访问 PCMCIA 属性内存
-ms.assetid: 2696a9ca-38b5-47f2-9639-029bba1173b5
 keywords:
 - 属性内存 WDK PCMCIA 总线，BUS_INTERFACE_STANDARD 接口
 - BUS_INTERFACE_STANDARD
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 68ee12e234577a47088b98d78944fe2d37738ad3
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 2285bc228abe63656096af4659d50dc7de2dbbf8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89385105"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812525"
 ---
 # <a name="access-pcmcia-attribute-memory-by-using-a-bus_interface_standard-interface"></a>使用总线 \_ 接口标准界面访问 PCMCIA 属性内存 \_
 

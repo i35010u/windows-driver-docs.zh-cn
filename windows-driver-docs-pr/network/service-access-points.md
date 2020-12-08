@@ -1,21 +1,20 @@
 ---
 title: 服务接入点
 description: 服务接入点
-ms.assetid: a6fab686-6adb-4d77-8f0d-2b48e2e49f1f
 keywords:
-- 传入呼叫 WDK 的 CoNDIS
-- 面向连接的 NDIS WDK、 服务访问点
-- CoNDIS WDK 网络、 服务访问点
-- 服务访问点 WDK 的 CoNDIS
-- SAPs WDK CoNDIS
+- 传入呼叫 WDK CoNDIS
+- 面向连接的 NDIS WDK，服务访问点
+- CoNDIS WDK 网络，服务接入点
+- 服务访问点 WDK CoNDIS
+- Sap WDK CoNDIS
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b23a35d0aa405d4ba2b413e76b854e8f9e60827c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 496d4a7cb5ca3b17e75771ec0049567376f35664
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63346771"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812815"
 ---
 # <a name="service-access-points"></a>服务接入点
 
@@ -23,11 +22,11 @@ ms.locfileid: "63346771"
 
 
 
-一个*服务访问点*(SAP) 标识的感兴趣的面向连接的客户端的传入呼叫的特征。 通过注册 SAP 呼叫管理器或 MCM 驱动程序，客户端指示呼叫管理器或 MCM 驱动程序应通知发送到 SAP 的所有传入调用的客户端。
+*服务访问点* (SAP) 标识面向连接的客户端的相关传入调用的特征。 通过向呼叫管理器或 MCM 驱动程序注册 SAP，客户端会指示调用管理器或 MCM 驱动程序应通知客户端发送到该 SAP 的所有传入呼叫。
 
-客户端不会始终注册 SAP 的例如，如果它无法处理传入的呼叫。 客户端可以注册多个 SAPs 呼叫管理器或 MCM 驱动程序。
+例如，如果客户端不处理传入的调用，则不会始终注册 SAP。 客户端可以向呼叫管理器或 MCM 驱动程序注册多个 Sap。
 
-有关 Sap 的详细信息，请参阅[注册 SAP](registering-a-sap.md)并[取消 SAP](deregistering-a-sap.md)。
+有关 Sap 的详细信息，请参阅 [注册 sap](registering-a-sap.md) 和 [注销 sap](deregistering-a-sap.md)。
 
  
 

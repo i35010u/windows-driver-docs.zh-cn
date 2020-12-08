@@ -1,15 +1,14 @@
 ---
 title: 查看 INX 文件
 description: 本主题说明如何修改示例传感器驱动程序的 INF 文件，使其适合在目标设备上安装传感器驱动程序。
-ms.assetid: 1D326C5F-5B69-4C5C-AE52-14153DF964E9
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4b48fad055516700d2ede33d9c90f728c0c22863
-ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
+ms.openlocfilehash: d40762e4d671cf63bce2aab31ec1480e2b38b62d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90010137"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812245"
 ---
 # <a name="review-the-inx-file"></a>查看 INX 文件
 
@@ -53,7 +52,7 @@ Windows 使用安装程序信息文件 (也称为 INF 文件) 作为安装设备
 
 1. 在 *ADXL345Acc* 文件中，找到 " \[ ADXL345Acc 指令" \_ \] 部分，注意它是空的。
 
-**重要提示**   如果未更新要在移动设备上使用的 INF 文件，则必须将 \[ ADXL345Acc \_ 指令 \] 部分留空。 在这种情况下，请跳过本部分中的任务，然后转到 [生成传感器驱动程序](build-the-sensor-driver.md) 主题。
+**重要提示**  如果未更新要在移动设备上使用的 INF 文件，则必须将 \[ ADXL345Acc \_ 指令 \] 部分留空。 在这种情况下，请跳过本部分中的任务，然后转到 [生成传感器驱动程序](build-the-sensor-driver.md) 主题。
 
  
 
@@ -67,7 +66,7 @@ AddReg=Sensor_Inst_SecurityAddReg
 HKR,,Security,,"D:P(A;;GA;;;BA)(A;;GA;;;SY)(A;;GA;;;S-1-5-84-0-0-0-0-0)"    ; Allow all UMDF drivers to access this driver
 ```
 
-**重要提示**   记下 "AddReg" 字段的值，因为它必须与你添加到将在下一步中更新的文件的一个值完全匹配。 在前面的代码片段示例中，可以记下 *传感器 \_ 指令 \_ SecurityAddReg*。
+**重要提示**  记下 "AddReg" 字段的值，因为它必须与你添加到将在下一步中更新的文件的一个值完全匹配。 在前面的代码片段示例中，可以记下 *传感器 \_ 指令 \_ SecurityAddReg*。
 
  
 

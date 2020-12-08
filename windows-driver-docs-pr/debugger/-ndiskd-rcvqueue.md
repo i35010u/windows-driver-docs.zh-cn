@@ -1,7 +1,6 @@
 ---
 title: ndiskd.rcvqueue
 description: Ndiskd. rcvqueue 命令显示有关接收队列的信息。
-ms.assetid: 776A459F-A698-4BF6-8DAD-BEB15858AD7F
 keywords:
 - ndiskd rcvqueue Windows 调试
 ms.date: 06/26/2020
@@ -12,16 +11,16 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: a11a7ba3b0e3b86dff847d322026c6c6dcf85cc1
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 68809acfc32b912ca053442da40400a0ac8aceeb
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89209883"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96813333"
 ---
 # <a name="ndiskdrcvqueue"></a>!ndiskd.rcvqueue
 
-**！ Ndiskd. rcvqueue**命令显示有关接收队列的信息。
+**！ Ndiskd. rcvqueue** 命令显示有关接收队列的信息。
 
 ```console
 !ndiskd.rcvqueue -handle <x> [-filters] [-mem] [-verbose] [-rcvqueueverbosity <x>] 
@@ -105,7 +104,7 @@ RECEIVE QUEUE
     Shared memory allocations
 ```
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [网络驱动程序设计指南](../network/index.md)
 
@@ -113,7 +112,7 @@ RECEIVE QUEUE
 
 [调试网络堆栈](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-175-Debugging-the-Network-Stack)
 
-[**NDIS 扩展 ( # A0) **](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 扩展 ( # A0)**](ndis-extensions--ndiskd-dll-.md)
 
 [**!ndiskd.help**](-ndiskd-help.md)
 

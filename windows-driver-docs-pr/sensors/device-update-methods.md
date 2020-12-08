@@ -1,15 +1,14 @@
 ---
 title: 设备更新方法
-ms.assetid: EB5158D7-6ACA-42BB-89E2-0937EAB94BA2
 description: 传感器驱动程序支持的用于更新传感器设备的方法。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d406384021ec4ca210da1965ace74ee013bee4e8
-ms.sourcegitcommit: ec7bebe3f94536455e62b372c2a28fe69d1717f7
+ms.openlocfilehash: b0d1a22251a17921f72492e4b2203b0597342435
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93349715"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812339"
 ---
 # <a name="device-update-methods"></a>设备更新方法
 
@@ -23,7 +22,7 @@ ms.locfileid: "93349715"
 
 ## <a name="device-reporting-reporting-updates"></a>设备报表报表更新
 
-**DriverUpdateDeviceCRI** 、 **DriverUpdateDeviceCS** 和 **DriverUpdateDeviceLDA** 方法演示了驱动程序如何更新设备上的当前报表间隔、更改敏感度和位置数据准确性字段。
+**DriverUpdateDeviceCRI**、 **DriverUpdateDeviceCS** 和 **DriverUpdateDeviceLDA** 方法演示了驱动程序如何更新设备上的当前报表间隔、更改敏感度和位置数据准确性字段。
 
 ```cpp
 effectiveCRI DriverUpdateDeviceCRI(sensorID, requestedCRI)

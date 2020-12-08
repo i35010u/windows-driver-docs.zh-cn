@@ -1,26 +1,25 @@
 ---
 title: 取消 IStream 数据传输
 description: 取消 IStream 数据传输
-ms.assetid: cefe8ef3-f0f8-4260-b666-c61f9902de5c
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 08ce748565049b4aa05bc68d49856aa73e7dc7d2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 59469b706392a1700990e023e37aa6165fc2324a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63373372"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96813195"
 ---
 # <a name="cancellation-of-istream-data-transfers"></a>取消 IStream 数据传输
 
 
-本部分讨论驱动程序和应用程序应如何处理在 Windows Vista 中的数据传输取消和的方式处理在 Windows XP 和 Windows me 一起提供。 本部分不介绍实现的详细信息，也不讨论兼容性层的传输部分中所需的更改。
+本部分讨论驱动程序和应用程序应如何处理 Windows Vista 中的数据传输取消以及如何在 Windows XP 和 Windows Me 中处理它们。 本部分未介绍实现细节，或讨论兼容层传输部分所需的更改。
 
-本部分包括：
+本节包括：
 
-[在 Windows XP 中的数据传输的取消](cancellation-of-data-transfers-in-windows-xp.md)
+[取消 Windows XP 中的数据传输](cancellation-of-data-transfers-in-windows-xp.md)
 
-[Windows Vista 中的数据传输的取消](cancellation-of-data-transfers-in-windows-vista.md)
+[取消 Windows Vista 中的数据传输](cancellation-of-data-transfers-in-windows-vista.md)
 
  
 

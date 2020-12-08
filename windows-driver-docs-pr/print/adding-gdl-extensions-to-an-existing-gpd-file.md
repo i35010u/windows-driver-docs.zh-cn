@@ -1,38 +1,37 @@
 ---
 title: 将 GDL 扩展添加到现有的 GPD 文件
 description: 将 GDL 扩展添加到现有的 GPD 文件
-ms.assetid: 5ba2a447-e133-47bb-aa1e-93abe75c6eef
 keywords:
-- 框中自动配置支持 WDK 打印机，GDL 扩展
+- 内置自动配置支持 WDK 打印机，GDL 扩展
 - GDL 文件 WDK 打印机
 - 扩展 WDK GDL 文件
 - GPD 文件 WDK GDL 扩展
-- GPD 文件 WDK GDL 扩展添加
+- GPD 文件 WDK GDL 扩展，添加
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0203fdc2e83181272e8ebf43e658df2a224a43c2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: de592f7d4bf360e87a78c9bac4fd8ea37bc6a2f5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63341331"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812413"
 ---
 # <a name="adding-gdl-extensions-to-an-existing-gpd-file"></a>将 GDL 扩展添加到现有的 GPD 文件
 
 
-如果你想要将自动配置的支持添加到现有现成 GPD 文件，您应该：
+如果要将自动配置的支持添加到现有的 GPD 文件，应执行以下操作：
 
-1.  创建 GDL 文件。 GDL 文件应具有 **\*BidiQuery**并 **\*BidiResponse**对应的元素 **\*功能**/ **\*选项**构造 PPD 文件中指定。 请注意，必须添加这些元素仅对需要 bidi 信息的功能。
+1.  创建 GDL 文件。 GDL 文件应具有与 **\* 功能** 选项构造对应的 **\* BidiQuery** 和 **\* BidiResponse** 元素 / **\*** ，如 PPD 文件中所指定。 请注意，必须仅为需要双向信息的功能添加这些元素。
 
-2.  包括 GDL 文件依赖于驱动程序的文件列表的一部分。
+2.  将 GDL 文件包含在与驱动程序相关的文件列表中。
 
-本部分包括：
+本节包括：
 
-[新关键字 GPD 架构](new-keyword-for-gpd-schema.md)
+[GPD 架构的新关键字](new-keyword-for-gpd-schema.md)
 
-[Windows Vista 中的 GPD 的自动配置流](autoconfiguration-flow-for-gpd-in-windows-vista.md)
+[Windows Vista 中 GPD 的自动配置流](autoconfiguration-flow-for-gpd-in-windows-vista.md)
 
-[添加构造 GPD GDL 文件](adding-constructs-to-your-gdl-file-for-gpd.md)
+[将构造添加到 GPD 的 GDL 文件](adding-constructs-to-your-gdl-file-for-gpd.md)
 
  
 

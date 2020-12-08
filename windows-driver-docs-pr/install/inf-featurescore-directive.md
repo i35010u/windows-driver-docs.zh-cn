@@ -1,7 +1,6 @@
 ---
 title: INF FeatureScore 指令
 description: FeatureScore 指令基于驱动程序支持的功能为驱动程序提供附加排名标准。
-ms.assetid: 78e1c2cf-b3e9-43ea-b435-979360cc3e28
 keywords:
 - INF FeatureScore 指令设备和驱动程序安装
 topic_type:
@@ -12,17 +11,17 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8048ac6a732f8d6bb781b85e7c78e3d88ecd0769
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 7b776f4b757d2a8b153706d7261b66d25b33768d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89095063"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96813107"
 ---
 # <a name="inf-featurescore-directive"></a>INF FeatureScore 指令
 
 
-**FeatureScore**指令基于驱动程序支持的功能为驱动程序提供附加排名标准。 例如，可能会为 [设备安装程序类](./overview-of-device-setup-classes.md) 定义功能分数，以区分基于类特定条件的驱动程序。
+**FeatureScore** 指令基于驱动程序支持的功能为驱动程序提供附加排名标准。 例如，可能会为 [设备安装程序类](./overview-of-device-setup-classes.md) 定义功能分数，以区分基于类特定条件的驱动程序。
 
 ```inf
 [DDInstall]
@@ -32,7 +31,7 @@ FeatureScore=featurescore
 
 Windows Vista 和更高版本的 Windows 支持 **FeatureScore** 指令。
 
-**警告**   仅当直接在** \[ \] DDInstall**节中指定时才处理**FeatureScore**指令。
+**警告** 仅当直接在 **\[ \] DDInstall** 节中指定时才处理 **FeatureScore** 指令。
 
  
 
@@ -51,7 +50,7 @@ Windows Vista 和更高版本的 Windows 支持 **FeatureScore** 指令。
 
 -   根据驱动程序是否已签名，驱动程序签名分数 () 的 [*签名分数*](signature-score--windows-vista-and-later-.md) 。
 -   驱动程序功能分数 ([*功能分数*](feature-score--windows-vista-and-later-.md)) ，具体取决于驱动程序的功能排名与设备的另一驱动程序相比。
--   硬件标识符分数 ([*标识符分数*](identifier-score--windows-vista-and-later-.md)) ，具体取决于即插即用 (PnP) 设备的总线驱动程序报告的设备标识字符串与 inf 文件的 "inf[***模型***](inf-models-section.md)" 部分中的[设备标识字符串](device-identification-strings.md)匹配。
+-   硬件标识符分数 ([*标识符分数*](identifier-score--windows-vista-and-later-.md)) ，具体取决于即插即用 (PnP) 设备的总线驱动程序报告的设备标识字符串与 inf 文件的 inf [ * **模型** _](inf-models-section.md)部分中的 [设备标识字符串](device-identification-strings.md)匹配。
 
 功能分数提供了一种基于驱动程序支持的功能对驱动程序进行排序的方法。 例如，可能会为 [设备安装程序类](./overview-of-device-setup-classes.md) 定义功能分数，以便根据特定于类的条件来区分驱动程序。
 
@@ -59,14 +58,14 @@ Windows Vista 和更高版本的 Windows 支持 **FeatureScore** 指令。
 
 有关如何对驱动程序进行排序的详细信息，请参阅 [windows (Windows Vista 和更高版本) 的驱动程序的方式 ](how-setup-ranks-drivers--windows-vista-and-later-.md)。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [功能分数](feature-score--windows-vista-and-later-.md)
 
 [标识符分数](identifier-score--windows-vista-and-later-.md)
 
-[***模型***](inf-models-section.md)
+[_ *_模型_**](inf-models-section.md)
 
 [签名分数](signature-score--windows-vista-and-later-.md)
 

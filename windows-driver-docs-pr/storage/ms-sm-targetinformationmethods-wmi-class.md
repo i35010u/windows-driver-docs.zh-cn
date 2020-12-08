@@ -1,40 +1,39 @@
 ---
-title: MS\_SM\_TargetInformationMethods WMI 类
-description: MS\_SM\_TargetInformationMethods WMI 类
-ms.assetid: faedf8cf-d69f-4a4c-bc32-fd6df102d027
+title: MS \_ SM \_ TargetInformationMethods WMI 类
+description: MS \_ SM \_ TargetInformationMethods WMI 类
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: bd96c34c5371473a99e4630594ff4cbdc27647a2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: bd3b7c3a9e36b21d14bc6032f8466cf950cba815
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63361971"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96811511"
 ---
-# <a name="mssmtargetinformationmethods-wmi-class"></a>MS\_SM\_TargetInformationMethods WMI 类
+# <a name="ms_sm_targetinformationmethods-wmi-class"></a>MS \_ SM \_ TargetInformationMethods WMI 类
 
 
-WMI 客户端使用 MS\_SM\_TargetInformationMethods WMI 类，查询光纤通道协议 (FCP) 信息的 HBA 微型端口驱动程序。 FCP HBA 微型端口驱动程序定义有关 FCP 信息函数的部分中的 T11 委员会*光纤通道 HBA API*规范。 此 WMI 类都有无数据块。 因此，WMI 工具套件生成保存属于类的方法的参数数据结构，但它不会生成对应于类本身的结构。
+WMI 客户端使用 MS \_ SM \_ TargetInformationMethods WMI 类来查询适用于光纤通道协议的 HBA 微型端口驱动程序 (FCP) 信息。 适用于 FCP 的 HBA 微型端口驱动程序在 T11 委员会 *光纤通道 HBA API* 规范中有关 Fcp 信息函数的部分中定义。 此 WMI 类没有数据块。 因此，WMI 工具套件会生成包含属于类的方法的参数数据的结构，但不会生成对应于类本身的结构。
 
-每个方法都属于此类的 MOF 语法所述的方法的参考页。 以下主题介绍了这些方法和其随附的结构：
+此类的每个方法的 MOF 语法在方法的参考页中进行了介绍。 以下主题介绍了这些方法及其随附的结构：
 
-[**SM\_GetTargetMapping**](sm-gettargetmapping.md)
+[**SM \_ GetTargetMapping**](sm-gettargetmapping.md)
 
-[**SM\_GetBindingCapability**](sm-getbindingcapability.md)
+[**SM \_ GetBindingCapability**](sm-getbindingcapability.md)
 
-[**SM\_GetBindingSupport**](sm-getbindingsupport.md)
+[**SM \_ GetBindingSupport**](sm-getbindingsupport.md)
 
-[**SM\_SetBindingSupport**](sm-setbindingsupport.md)
+[**SM \_ SetBindingSupport**](sm-setbindingsupport.md)
 
-[**SM\_GetPersistentBinding**](sm-getpersistentbinding.md)
+[**SM \_ GetPersistentBinding**](sm-getpersistentbinding.md)
 
-[**SM\_SetPersistentBinding**](sm-setpersistentbinding.md)
+[**SM \_ SetPersistentBinding**](sm-setpersistentbinding.md)
 
-[**SM\_RemovePersistentBinding**](sm-removepersistentbinding.md)
+[**SM \_ RemovePersistentBinding**](sm-removepersistentbinding.md)
 
-[**SM\_GetLUNStatistics**](sm-getlunstatistics.md)
+[**SM \_ GetLUNStatistics**](sm-getlunstatistics.md)
 
-MS\_SM\_TargetInformationMethods 类定义，如下所示在*Hbaapi.mof*:
+MS \_ SM \_ TargetInformationMethods 类在 *Hbaapi* 中定义如下：
 
 ```cpp
 class MS_SM_TargetInformationMethods

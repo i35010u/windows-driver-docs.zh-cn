@@ -1,15 +1,14 @@
 ---
 title: 设置开发环境
 description: 本主题说明如何设置开发环境，以便使用带 Cove 板和 Microsoft 提供的软件开发工具构建传感器的通用传感器驱动程序。
-ms.assetid: 0CB6F5C9-4AA8-4745-A5FE-28440ADB0F11
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0e94585281b768e7f71783f15a2c37d3513d98bc
-ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
+ms.openlocfilehash: 7ed5934bb81c860eda8688032fe2f3b29f84e2c8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90010195"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812165"
 ---
 # <a name="set-up-your-development-environment"></a>设置开发环境
 

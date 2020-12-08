@@ -1,22 +1,21 @@
 ---
 title: WDI_TLV_FT_MDE
-description: WDI_TLV_FT_MDE 是包含的 BSS 条目 MDIE TLV。
-ms.assetid: 2D075487-9B1E-4DEE-B3C3-3208C1CBAB64
+description: WDI_TLV_FT_MDE 是包含 BSS 条目 MDIE 的 TLV。
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_FT_MDE 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 5ad29a8f82b24f87822ef529fa3cea473b2f0122
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f6f79353716f88b15177e7eaa5e8042d9543a7d2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63329875"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812799"
 ---
-# <a name="wditlvftmde"></a>WDI\_TLV\_FT\_MDE
+# <a name="wdi_tlv_ft_mde"></a>WDI \_ TLV \_ FT \_ MDE
 
 
-WDI\_TLV\_FT\_MDE 是包含的 BSS 条目 MDIE TLV。
+WDI \_ tlv \_ FT \_ MDE 是一个 tlv，其中包含 BSS 项的 MDIE。
 
 ## <a name="tlv-type"></a>TLV 类型
 
@@ -26,14 +25,14 @@ WDI\_TLV\_FT\_MDE 是包含的 BSS 条目 MDIE TLV。
 ## <a name="length"></a>长度
 
 
-UINT8 元素的数组大小 （以字节为单位）。 该数组必须包含一个或多个元素。
+UINT8 元素数组的大小 (以字节为单位) 。 数组必须包含1个或多个元素。
 
 ## <a name="values"></a>值
 
 
-| 在任务栏的搜索框中键入      | 描述              |
+| 类型      | 描述              |
 |-----------|--------------------------|
-| UINT8\[\] | BSS 条目的 MDIE。 |
+| UINT8\[\] | BSS 项的 MDIE。 |
 
  
 
@@ -52,10 +51,10 @@ UINT8 元素的数组大小 （以字节为单位）。 该数组必须包含一
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
-<td><p>Windows Server 2016</p></td>
+<td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Wditypes.hpp</td>
 </tr>
 </tbody>

@@ -1,9 +1,8 @@
 ---
 title: bthkd.sdpinterface
-description: Bthkd.sdpinterface 命令显示有关 SDP 接口的信息。
-ms.assetid: 931A7785-2E0C-426B-A8CC-84F507438B0D
+description: Bthkd. sdpinterface 命令显示有关 SDP 接口的信息。
 keywords:
-- bthkd.sdpinterface Windows 调试
+- bthkd sdpinterface Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,28 +11,28 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 6eb5d7a3a462949739a60c430e2a20d006104cde
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ec7af85b53034f18f7162c423f9ae4870c9ce356
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63334653"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96813371"
 ---
 # <a name="bthkdsdpinterface"></a>!bthkd.sdpinterface
 
 
-**！ Bthkd.sdpinterface**命令显示有关 SDP 接口的信息。
+**！ Bthkd. sdpinterface** 命令显示有关 SDP 接口的信息。
 
 ```dbgsyntax
 !bthkd.sdpinterface
 ```
 
-## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 
 Bthkd.dll
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
 [蓝牙扩展 (Bthkd.dll)](bluetooh-extensions--bthkd-dll-.md)

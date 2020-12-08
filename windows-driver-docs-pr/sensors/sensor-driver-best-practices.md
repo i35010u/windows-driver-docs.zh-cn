@@ -1,15 +1,14 @@
 ---
 title: 传感器驱动程序最佳做法
 description: 传感器驱动程序最佳做法
-ms.assetid: adb20558-aa94-41a9-9d26-9d757bdb0999
 ms.date: 07/20/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 6e646adc64c82ec607327e9fe7fb9d2fadd0ecf7
-ms.sourcegitcommit: a866b3470025d85b25a48857a81f893179698e7e
+ms.openlocfilehash: 94ec6c6378757c801f2e9c4f17964129fb3bd62b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92356041"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812189"
 ---
 # <a name="sensor-driver-best-practices"></a>传感器驱动程序最佳做法
 

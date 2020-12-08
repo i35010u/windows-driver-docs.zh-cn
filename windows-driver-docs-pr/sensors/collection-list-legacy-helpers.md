@@ -1,15 +1,14 @@
 ---
 title: 集合列表旧版帮助程序
 description: V2 传感器驱动程序使用集合列表旧版 helper 函数与传感器 \_ 集合列表结构进行交互 \_ 。
-ms.assetid: AD5AB3EE-5AD7-4576-8E8E-3FEA08930DD7
 ms.date: 07/20/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: ceff9d732a55faebd3300390c42969d14e321044
-ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
+ms.openlocfilehash: cac36fd97b7b18484164eccd9f61934fb2654420
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90010583"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812373"
 ---
 # <a name="collection-list-legacy-helpers"></a>集合列表旧版帮助程序
 
@@ -26,15 +25,15 @@ Helper 函数与传感器设备驱动程序软件接口一起使用 (DDSI) 。
 
 -   设置 PKEY \_ 传感器 \_ MaximumDataFieldSize Bytes 属性的值 \_ 。
 
--   返回[EvtSensorGetProperties](/windows-hardware/drivers/ddi/sensorscx/ns-sensorscx-_sensor_controller_config)中的*pSize*值。
+-   返回 [EvtSensorGetProperties](/windows-hardware/drivers/ddi/sensorscx/ns-sensorscx-_sensor_controller_config)中的 *pSize* 值。
 
--   返回[*EvtSensorGetDataFieldProperties*](/windows-hardware/drivers/ddi/sensorscx/ns-sensorscx-_sensor_controller_config)中的*pSize*值。
+-   返回 [*EvtSensorGetDataFieldProperties*](/windows-hardware/drivers/ddi/sensorscx/ns-sensorscx-_sensor_controller_config)中的 *pSize* 值。
 
--   返回[*EvtSensorGetDataThresholds*](/windows-hardware/drivers/ddi/sensorscx/ns-sensorscx-_sensor_controller_config)中的*pSize*值。
+-   返回 [*EvtSensorGetDataThresholds*](/windows-hardware/drivers/ddi/sensorscx/ns-sensorscx-_sensor_controller_config)中的 *pSize* 值。
 
 注释
 
--   有关*pSize*成员的详细信息，请参阅[**传感器 \_ 收集 \_ 列表**](/windows-hardware/drivers/ddi/sensorsdef/ns-sensorsdef-sensor_collection_list)。
+-   有关 *pSize* 成员的详细信息，请参阅 [**传感器 \_ 收集 \_ 列表**](/windows-hardware/drivers/ddi/sensorsdef/ns-sensorsdef-sensor_collection_list)。
 
 -   另请参阅 [常见传感器属性](common-sensor-properties.md) 以了解详细信息。
 
@@ -42,11 +41,11 @@ Helper 函数与传感器设备驱动程序软件接口一起使用 (DDSI) 。
 
 传感器 DDSI 的使用情况
 
--   填充 EvtSensorGetProperties 中的集合[ *EvtSensorGetProperties*列表](/windows-hardware/drivers/ddi/sensorscx/ns-sensorscx-_sensor_controller_config)
+-   填充 EvtSensorGetProperties 中的集合 [ *EvtSensorGetProperties* 列表](/windows-hardware/drivers/ddi/sensorscx/ns-sensorscx-_sensor_controller_config)
 
--   填充 EvtSensorGetDataFieldProperties 中的集合[ *EvtSensorGetDataFieldProperties*列表](/windows-hardware/drivers/ddi/sensorscx/ns-sensorscx-_sensor_controller_config)
+-   填充 EvtSensorGetDataFieldProperties 中的集合 [ *EvtSensorGetDataFieldProperties* 列表](/windows-hardware/drivers/ddi/sensorscx/ns-sensorscx-_sensor_controller_config)
 
--   填充 EvtSensorGetDataThresholds 中的集合[ *EvtSensorGetDataThresholds*列表](/windows-hardware/drivers/ddi/sensorscx/ns-sensorscx-_sensor_controller_config)
+-   填充 EvtSensorGetDataThresholds 中的集合 [ *EvtSensorGetDataThresholds* 列表](/windows-hardware/drivers/ddi/sensorscx/ns-sensorscx-_sensor_controller_config)
 
 注释
 

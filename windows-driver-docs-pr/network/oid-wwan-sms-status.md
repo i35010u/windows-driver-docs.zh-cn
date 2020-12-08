@@ -1,16 +1,15 @@
 ---
 title: OID_WWAN_SMS_STATUS
 description: OID_WWAN_SMS_STATUS 报告 MB 设备的消息存储的状态。
-ms.assetid: a43451e6-f589-4963-acc7-855555655d37
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_WWAN_SMS_STATUS 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: ce75a14777e221a573d8c20ee040ecb95199b855
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: a923cc5c8d86c2adab3ea30a6893c9afbfa2766f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89211653"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812893"
 ---
 # <a name="oid_wwan_sms_status"></a>OID \_ WWAN \_ SMS \_ 状态
 
@@ -52,7 +51,7 @@ OID \_ WWAN \_ SMS \_ 状态报告 MB 设备的消息存储的状态。
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [WWAN SMS 操作](./mb-sms-operations.md)

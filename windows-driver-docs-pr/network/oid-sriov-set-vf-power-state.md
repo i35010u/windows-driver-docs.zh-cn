@@ -1,30 +1,29 @@
 ---
 title: OID_SRIOV_SET_VF_POWER_STATE
 description: 过量驱动程序会 (OID 发出对象标识符) 设置 OID_SRIOV_SET_VF_POWER_STATE 的请求，以更改网络适配器上指定 PCI Express (PCIe) 虚拟函数 (虚拟功能) 的电源状态。
-ms.assetid: 9723518E-2312-48F9-820A-19F5567A33DB
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_SRIOV_SET_VF_POWER_STATE 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: bd9dede272b231498ab0a9fef162c7af7b51e12c
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: fe14260aaba7bc8c5a5d0c00b16c025a3e57a68a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105508"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812977"
 ---
 # <a name="oid_sriov_set_vf_power_state"></a>OID \_ SRIOV \_ SET \_ VF \_ 电源 \_ 状态
 
 
 过量驱动程序发出 (OID 的对象标识符) 设置 OID 的请求 \_ ， \_ \_ \_ \_ 以更改网络适配器上指定 PCI Express (PCIE) 虚函数 (VF 的电源状态。 由于更改电源状态是特权操作，因此过量驱动程序会在网络适配器上向 PCIe 物理功能 (PF) 的微型端口驱动程序发出此 OID 设置请求。 然后，PF 微型端口驱动程序将设置 VF 上指定的电源状态。
 
-[**Ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的**InformationBuffer**成员包含指向[**ndis \_ SRIOV \_ SET \_ VF \_ 电源 \_ 状态 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_set_vf_power_state_parameters)结构的指针。
+[**Ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的 **InformationBuffer** 成员包含指向 [**ndis \_ SRIOV \_ SET \_ VF \_ 电源 \_ 状态 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_set_vf_power_state_parameters)结构的指针。
 
 <a name="remarks"></a>备注
 -------
 
 当向此 OID 集请求颁发了 PF 微型端口驱动程序时，必须遵循以下准则：
 
--   PF 微型端口驱动程序必须验证由[**NDIS \_ SRIOV \_ SET \_ vf \_ 电源 \_ 状态 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_set_vf_power_state_parameters)结构的**VFId**成员指定的 VF 是否具有以前分配的资源。 在 oid [ \_ NIC \_ 交换机 \_ 分配 \_ vf](oid-nic-switch-allocate-vf.md)的 oid 方法请求期间，PF 微型端口驱动程序为 VF 分配资源。 如果指定的 VF 未处于已分配状态，则驱动程序必须使 OID 请求失败。
+-   PF 微型端口驱动程序必须验证由 [**NDIS \_ SRIOV \_ SET \_ vf \_ 电源 \_ 状态 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_set_vf_power_state_parameters)结构的 **VFId** 成员指定的 VF 是否具有以前分配的资源。 在 oid [ \_ NIC \_ 交换机 \_ 分配 \_ vf](oid-nic-switch-allocate-vf.md)的 oid 方法请求期间，PF 微型端口驱动程序为 VF 分配资源。 如果指定的 VF 未处于已分配状态，则驱动程序必须使 OID 请求失败。
 
 -   电源状态操作只能影响指定的 VF。 此操作不能影响同一网络适配器上的其他 VFs 或 PF。
 

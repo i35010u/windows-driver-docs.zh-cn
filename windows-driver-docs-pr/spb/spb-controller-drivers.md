@@ -1,15 +1,14 @@
 ---
 title: SPB 控制器驱动程序概述
 description: SPB 控制器是一个设备，该设备控制简单外设总线 (SPB) 并可向连接到 SPB 的外围设备传输数据以及从其传输数据。
-ms.assetid: 046353F9-315F-4328-8ECA-1C23AF87B4B4
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9083f0e8d26ee12646ca81bff6352885e3cf2398
-ms.sourcegitcommit: 0c3cab853b0b75149b7604eef03275f997792a84
+ms.openlocfilehash: 5c8f9726efe38a3b42dc74cbb8d0c3fb0801c867
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96157327"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96811823"
 ---
 # <a name="overview-of-spb-controller-drivers"></a>SPB 控制器驱动程序概述
 

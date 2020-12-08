@@ -1,18 +1,17 @@
 ---
 title: 打开和使用并行设备
 description: 打开和使用并行设备
-ms.assetid: ca58b1c3-9ecf-4ebe-8f08-a2f78ae17921
 keywords:
 - 并行设备 WDK，打开
 - 并行设备 WDK，共享
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5ff4cad4e129f39620ff3c5648e0e4a1dfd87c6c
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: b229b7a0057fbaf9e05a7dac3f0f26a1f44336fc
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89381523"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812629"
 ---
 # <a name="opening-and-using-a-parallel-device"></a>打开和使用并行设备
 

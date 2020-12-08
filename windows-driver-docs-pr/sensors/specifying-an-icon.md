@@ -1,15 +1,14 @@
 ---
 title: 指定传感器图标
 description: 指定传感器图标
-ms.assetid: fe4a204f-befb-45d4-ad95-03b9e788e375
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8f67601c94a34edd928fdf8b1ab395e5029502dc
-ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
+ms.openlocfilehash: e346fee9913266fb466061b63117278080663771
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90010467"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812155"
 ---
 # <a name="specifying-a-sensor-icon"></a>指定传感器图标
 

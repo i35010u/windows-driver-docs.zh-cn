@@ -1,15 +1,14 @@
 ---
 title: MPIO \_ 路径 \_ 运行状况 \_ 类 WMI 类
 description: MPIO \_ 路径 \_ 运行状况 \_ 类 WMI 类
-ms.assetid: fcbc86a4-9035-489e-a406-9901c5af0a32
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 0d60a3091866628137770cdce1244a7211c9345a
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 524e243f4d6b0b2037d275f01217d69111c0d217
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89187531"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96811559"
 ---
 # <a name="mpio_path_health_class-wmi-class"></a>MPIO \_ 路径 \_ 运行状况 \_ 类 WMI 类
 

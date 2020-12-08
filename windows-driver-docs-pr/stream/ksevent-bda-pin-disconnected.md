@@ -1,7 +1,6 @@
 ---
 title: KSEVENT \_ BDA \_ PIN 已 \_ 断开连接
 description: '\_ \_ \_ 当 PIN 断开连接时，客户端使用 KSEVENT BDA PIN 来请求通知。'
-ms.assetid: b3209e9d-21e3-4ade-a6da-9d17ecf31c74
 keywords:
 - KSEVENT_BDA_PIN_DISCONNECTED 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f55773550c1bdd65cedea203e8ebbc4708bf6e79
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 35bd0879149158e1da419cc6064fe6878c684675
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89186173"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96813451"
 ---
 # <a name="ksevent_bda_pin_disconnected"></a>KSEVENT \_ BDA \_ PIN 已 \_ 断开连接
 
@@ -47,7 +46,7 @@ KSEVENT
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Bdamedia (包含 Bdamedia) </td>
 </tr>
 </tbody>

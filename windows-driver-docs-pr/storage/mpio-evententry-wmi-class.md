@@ -1,20 +1,19 @@
 ---
-title: MPIO\_EventEntry WMI 类
-description: MPIO\_EventEntry WMI 类
-ms.assetid: 37160002-fe65-4d02-80f5-375f169b7d11
+title: MPIO \_ EVENTENTRY WMI 类
+description: MPIO \_ EVENTENTRY WMI 类
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 961006ce44568ff76e40bb2eb9940030a5c4d753
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e403ba34f2da9ab79c8e2b40540ddc944966510f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331103"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96811561"
 ---
-# <a name="mpioevententry-wmi-class"></a>MPIO\_EventEntry WMI 类
+# <a name="mpio_evententry-wmi-class"></a>MPIO \_ EVENTENTRY WMI 类
 
 
-MPIO 驱动程序使用 MPIO\_EventEntry WMI 类可以报告任何与 MPIO 相关的事件。 当前未实现此类。
+MPIO 驱动程序使用 MPIO \_ EVENTENTRY WMI 类来报告与 MPIO 相关的任何事件。 当前未实现此类。
 
 ```cpp
 class MPIO_EventEntry : WMIEvent

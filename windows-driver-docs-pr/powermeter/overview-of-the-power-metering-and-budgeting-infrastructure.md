@@ -1,17 +1,16 @@
 ---
 title: 功率计量和预算基础结构概述
 description: 功率计量和预算基础结构概述
-ms.assetid: eda1c829-eb5e-404b-bf6b-1b0807ee02c7
 keywords:
 - 能源测定和预算 WDK，概述
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5365b3cb0abe4f8abaca077ab4b0e6c00c9d513c
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 928ce92a3722a5a25e2d8f928bf9e6d273bc6941
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89183959"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812475"
 ---
 # <a name="overview-of-the-power-metering-and-budgeting-infrastructure"></a>功率计量和预算基础结构概述
 

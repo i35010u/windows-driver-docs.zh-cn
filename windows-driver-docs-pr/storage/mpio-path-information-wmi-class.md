@@ -1,15 +1,14 @@
 ---
 title: MPIO \_ 路径 \_ 信息 WMI 类
 description: MPIO \_ 路径 \_ 信息 WMI 类
-ms.assetid: fd6311c5-2d98-4a3a-beb9-54f3a84be8eb
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 15d356fab1ffcf322d27c9162893d854ba50d4ae
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 19fda9a93d23d965a790d85310dbeeaa3f954e4c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89184205"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96811557"
 ---
 # <a name="mpio_path_information-wmi-class"></a>MPIO \_ 路径 \_ 信息 WMI 类
 

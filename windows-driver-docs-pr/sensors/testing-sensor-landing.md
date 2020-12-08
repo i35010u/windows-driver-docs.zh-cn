@@ -1,15 +1,14 @@
 ---
 title: 传感器测试源
 description: 本部分提供了指向传感器测试材料的有用链接。
-ms.assetid: d045b771-b536-457c-897b-ecb6517bf0a9
 ms.date: 12/13/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: cdb89a64489a135d119f3977a1524688521a1b6a
-ms.sourcegitcommit: e6247811ff9a07070547af3d89705dae33a2f465
+ms.openlocfilehash: 7c3323145625c846a44f8d86e8b02b596c557520
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/23/2020
-ms.locfileid: "91026436"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812121"
 ---
 # <a name="sensor-testing-sources"></a>传感器测试源
 

@@ -1,15 +1,14 @@
 ---
 title: 传感器驱动程序逻辑
 description: 本部分将关键驱动程序逻辑或任务描述为伪代码。
-ms.assetid: 4B14C515-1B79-4B67-BA9A-365B2D6C0F07
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ddbca4c99880ace5fa348b33bee4400170a9ed0a
-ms.sourcegitcommit: ec7bebe3f94536455e62b372c2a28fe69d1717f7
+ms.openlocfilehash: f6fa77933d186cd6b25090915895984fa573d5ac
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93349685"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812329"
 ---
 # <a name="sensor-driver-logic"></a>传感器驱动程序逻辑
 

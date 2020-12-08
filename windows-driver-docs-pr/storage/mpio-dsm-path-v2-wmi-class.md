@@ -1,15 +1,14 @@
 ---
 title: MPIO \_ DSM \_ 路径 \_ V2 WMI 类
 description: MPIO \_ DSM \_ 路径 \_ V2 WMI 类
-ms.assetid: ec7d75a0-cb40-46e8-ab1d-137a9331193e
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 23d2c572091412b20d498dc7feff368a625f1c76
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 498fb38ff618d436ae7e1b37fa98424dbe84fd6b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89188025"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96811563"
 ---
 # <a name="mpio_dsm_path_v2-wmi-class"></a>MPIO \_ DSM \_ 路径 \_ V2 WMI 类
 

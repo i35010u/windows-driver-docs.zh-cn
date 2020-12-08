@@ -1,7 +1,6 @@
 ---
 title: eula XML 元素
 description: eula XML 元素
-ms.assetid: ab647583-b0e1-4f40-86af-9b7923f5535c
 keywords:
 - eula XML 元素设备和驱动程序安装
 topic_type:
@@ -12,12 +11,12 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 3902e3a715731b7c7facae4236d4f5e4003e84be
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 3f1a5d1ee50ad91ffc650ed1f004c403b2b89be3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89095373"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96813147"
 ---
 # <a name="eula-xml-element"></a>eula XML 元素
 
@@ -84,7 +83,7 @@ ms.locfileid: "89095373"
 
 ### <a name="remarks"></a><a href="" id="comments"></a>注释
 
-下面的代码示例演示一个 **eula** 元素，该元素 *指定 \\Eula409.txt* 包含自定义 eula 文本的数据。 *Eula409.txt*文件位于*Data*目录中，后者必须是 DPInst 根目录下的子目录。 下面显示了使用 EULA 标记指定自定义 EULA 文件的文本 &lt; &gt; 。
+下面的代码示例演示一个 **eula** 元素，该元素 *指定 \\Eula409.txt* 包含自定义 eula 文本的数据。 *Eula409.txt* 文件位于 *Data* 目录中，后者必须是 DPInst 根目录下的子目录。 下面显示了使用 EULA 标记指定自定义 EULA 文件的文本 &lt; &gt; 。
 
 ```cpp
 <dpinst>
@@ -98,7 +97,7 @@ ms.locfileid: "89095373"
 </dpinst>
 ```
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**语言**](language-xml-element.md)

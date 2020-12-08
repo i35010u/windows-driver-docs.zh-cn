@@ -1,7 +1,6 @@
 ---
 title: 点击和执行方案
 description: 点击和执行方案
-ms.assetid: EBBDBC58-236A-4020-92C9-69406362097F
 keywords:
 - NFC
 - 近场通信
@@ -10,12 +9,12 @@ keywords:
 - NFP
 ms.date: 06/08/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: f1ba465a9e565fd22bacd8fc3fe673b4e0a95cea
-ms.sourcegitcommit: 0c3cab853b0b75149b7604eef03275f997792a84
+ms.openlocfilehash: e725eac5e350de832bc37a0671463abc34850447
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96157321"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812674"
 ---
 # <a name="tap-and-do-scenarios"></a>点击和执行方案
 

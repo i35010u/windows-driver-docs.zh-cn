@@ -1,15 +1,14 @@
 ---
 title: 使用传感器诊断工具测试驱动程序和设备
 description: 使用传感器诊断工具测试驱动程序和设备
-ms.assetid: 68E0BB6C-7777-4EC5-B084-DA623074BBB2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 851e0e77fc8d3899b0b766162ead368ccd6ea5cc
-ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
+ms.openlocfilehash: fd349cb311d3b22e04cb4b1ae98f52d57fc1f3bf
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90010529"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812097"
 ---
 # <a name="use-the-sensors-diagnostic-tool-to-test-your-driver-and-device"></a>使用传感器诊断工具测试驱动程序和设备
 

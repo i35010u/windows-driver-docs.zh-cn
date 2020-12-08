@@ -1,10 +1,9 @@
 ---
 title: 用于配置电脑卡中断的 INF 替代
 description: 用于配置电脑卡中断的 INF 替代
-ms.assetid: 90c951c4-0106-426a-b650-aeb93b893206
 keywords:
 - IRQ 路由 WDK PCMCIA 总线
-- PCMCIA WDK 总线上，IRQ 路由
+- PCMCIA WDK 总线，IRQ 路由
 - PC 卡 WDK PCMCIA 总线
 - 中断 WDK PCMCIA 总线
 - PCI 中断 WDK PCMCIA 总线
@@ -13,12 +12,12 @@ keywords:
 - PcmciaExclusiveIrq
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 920d44b4cde6e909d55bddc55a9af7d0dbd0bbd0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e638b62e546c6497d1447dcdabdb15deeaa01e61
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63378208"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812501"
 ---
 # <a name="inf-override-for-configuring-pc-card-interrupts"></a>用于配置电脑卡中断的 INF 替代
 
@@ -26,13 +25,13 @@ ms.locfileid: "63378208"
 
 
 
-如果操作系统将路由从 16 位 PC 卡不支持可共享 PCI 中断的中断，系统可能会停止工作。 若要避免这种情况发生，应指示卡不支持通过将 PcmciaExclusiveIrq 指令放置在卡的 INF 文件可共享的中断。
+如果操作系统从不支持可共享 PCI 中断的16位 PC 卡路由中断，则系统可能会停止工作。 若要防止此情况发生，你应该通过在卡的 INF 文件中放置一个 PcmciaExclusiveIrq 指令来指示该卡不支持可共享的中断。
 
-例如，假设您有调制解调器的驱动程序包含并未设计为支持中断共享中断服务例程 (ISR)。 你可以指示要分配固定的 ISA 中断到调制解调器通过将以下行添加到 AddReg 部分中的调制解调器 INF 文件中的操作系统：
+例如，假设你有一个调制解调器，其驱动程序包含 (ISR) 的中断服务例程，而该服务不支持中断共享。 可以通过将以下行添加到调制解调器的 INF 文件中的 AddReg 部分，指导操作系统将固定的 ISA 中断分配到调制解调器：
 
 `HKR,,PcmciaExclusiveIrq,0x00010001,1`
 
-但请注意，一旦设备的 INF 文件中输入 PcmciaExclusiveIrq 指令，设备将无法与任何控制器或不具有访问为 ISA 中断的桥。
+但请注意，一旦将 PcmciaExclusiveIrq 指令放入设备的 INF 文件中，该设备将无法与任何无法访问 ISA 中断的控制器或桥一起工作。
 
  
 

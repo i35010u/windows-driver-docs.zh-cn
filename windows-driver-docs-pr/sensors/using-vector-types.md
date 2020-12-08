@@ -1,15 +1,14 @@
 ---
 title: 使用带有传感器的矢量类型
 description: 使用带有传感器的矢量类型
-ms.assetid: cadc2cd3-10aa-4a4a-926f-edc01b046f27
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d739a4992ad5b3e26d55b528babc82311a32f1f1
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: fe16f5c69a5e12c879c03a51aca26353aba0c430
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91734499"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812093"
 ---
 # <a name="using-vector-types-with-sensors"></a>使用带有传感器的矢量类型
 

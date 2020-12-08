@@ -1,15 +1,14 @@
 ---
 title: 规范和资源
 description: 若要使用 Microsoft Windows 操作系统中的智能卡支持，智能卡读卡器和卡应当符合 ICC 和个人电脑系统的互操作性规范。
-ms.assetid: 2987B55B-0A2E-405D-B497-2EB7FB0E458D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8815d033daf83c1662c9eaee1e25b0a032bf5261
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: f001747a23dd5f575671edd5019a574cd454d2de
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89382679"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96811875"
 ---
 # <a name="specifications-and-resources"></a>规范和资源
 

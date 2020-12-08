@@ -1,7 +1,6 @@
 ---
 title: 打印网页的 ActiveX 对象
 description: 打印网页的 ActiveX 对象
-ms.assetid: 85c37895-542f-4399-bf87-517eaab99a09
 keywords:
 - 打印网页 WDK，ActiveX 对象
 - 网页 WDK 打印机，ActiveX 对象
@@ -9,12 +8,12 @@ keywords:
 - ActiveX 对象 WDK 打印机
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9cd38d1f58b41ca5bd4b8e6a9326f343efb25439
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 8d642b83e31b4b859fd43736a33e3dc7ba78807b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89218284"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812429"
 ---
 # <a name="activex-objects-for-print-web-pages"></a>打印网页的 ActiveX 对象
 

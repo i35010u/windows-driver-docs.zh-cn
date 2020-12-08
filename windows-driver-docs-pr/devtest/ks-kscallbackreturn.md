@@ -1,7 +1,6 @@
 ---
 title: 'KsCallbackReturn 规则 ( # A1'
 description: KsCallbackReturn 规则指定内核流式处理 (KS) 微型端口驱动程序回调函数只返回允许的状态值。
-ms.assetid: 1779301C-5C2C-471F-88D8-3E5F2C90357D
 ms.date: 05/21/2018
 keywords:
 - 'KsCallbackReturn 规则 ( # A1'
@@ -12,12 +11,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 353b57c6a998c1566df21709a2cc3f5d626de5fd
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 76cf2f54131090c67c61c32a4cbe4f28038e6b2a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105500"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96813233"
 ---
 # <a name="kscallbackreturn-rule-"></a>KsCallbackReturn 规则 ( # A1
 

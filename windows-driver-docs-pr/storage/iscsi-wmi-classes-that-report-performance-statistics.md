@@ -1,15 +1,14 @@
 ---
 title: 可报告性能统计信息的 iSCSI WMI 类
 description: 可报告性能统计信息的 iSCSI WMI 类
-ms.assetid: c4d52902-9165-4351-96d6-77dc17bdb64f
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 3faa9f99bd3d767647de7d644c55bb61302c1d6c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 12dffcf0a0f41ce620987f2c4f854306beab14f1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63360887"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96811615"
 ---
 # <a name="iscsi-wmi-classes-that-report-performance-statistics"></a>可报告性能统计信息的 iSCSI WMI 类
 
@@ -17,27 +16,27 @@ ms.locfileid: "63360887"
 ## <span id="ddk_iscsi_wmi_classes_used_to_report_performance_statistics_kr"></span><span id="DDK_ISCSI_WMI_CLASSES_USED_TO_REPORT_PERFORMANCE_STATISTICS_KR"></span>
 
 
-iSCSI 发起程序，例如存储微型端口驱动程序管理 iSCSI 主机总线适配器，可以使用 iSCSI 的 WMI 类中定义的*Iscsiprf.mof*报表出现在 sysmon Microsoft 管理的存储性能统计信息控制台 (MMC) 管理单元中。
+iSCSI 发起程序（例如管理 iSCSI Hba 的存储微型端口驱动程序）可以使用 *Iscsiprf* 中定义的 iscsi WMI 类来报告 Sysmon Microsoft 管理控制台 (MMC) 管理单元中显示的存储性能统计信息。
 
-WMI 工具套件的编译时*Iscsiprf.mof*，它将生成*Iscsiprf.h*。
+当 WMI 工具套件编译 *Iscsiprf* 时，它将生成 *Iscsiprf*。
 
-本部分包括：
+本节包括：
 
-[MSiSCSI\_ConnectionStatistics WMI 类](msiscsi-connectionstatistics-wmi-class.md)
+[MSiSCSI \_ CONNECTIONSTATISTICS WMI 类](msiscsi-connectionstatistics-wmi-class.md)
 
-[MSiSCSI\_InitiatorInstanceStatistics WMI 类](msiscsi-initiatorinstancestatistics-wmi-class.md)
+[MSiSCSI \_ INITIATORINSTANCESTATISTICS WMI 类](msiscsi-initiatorinstancestatistics-wmi-class.md)
 
-[MSiSCSI\_InitiatorLoginStatistics WMI 类](msiscsi-initiatorloginstatistics-wmi-class.md)
+[MSiSCSI \_ INITIATORLOGINSTATISTICS WMI 类](msiscsi-initiatorloginstatistics-wmi-class.md)
 
-[MSiSCSI\_MMIPSECStats WMI 类](msiscsi-mmipsecstats-wmi-class.md)
+[MSiSCSI \_ MMIPSECSTATS WMI 类](msiscsi-mmipsecstats-wmi-class.md)
 
-[MSiSCSI\_NICPerformance WMI 类](msiscsi-nicperformance-wmi-class.md)
+[MSiSCSI \_ NICPERFORMANCE WMI 类](msiscsi-nicperformance-wmi-class.md)
 
-[MSiSCSI\_QMIPSECStats WMI 类](msiscsi-qmipsecstats-wmi-class.md)
+[MSiSCSI \_ QMIPSECSTATS WMI 类](msiscsi-qmipsecstats-wmi-class.md)
 
-[MSiSCSI\_RequestTimeStatistics WMI 类](msiscsi-requesttimestatistics-wmi-class.md)
+[MSiSCSI \_ REQUESTTIMESTATISTICS WMI 类](msiscsi-requesttimestatistics-wmi-class.md)
 
-[MSiSCSI\_SessionStatistics WMI 类](msiscsi-sessionstatistics-wmi-class.md)
+[MSiSCSI \_ SESSIONSTATISTICS WMI 类](msiscsi-sessionstatistics-wmi-class.md)
 
  
 

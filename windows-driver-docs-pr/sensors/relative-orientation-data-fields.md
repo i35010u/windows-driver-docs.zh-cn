@@ -1,15 +1,14 @@
 ---
 title: 相对方向传感器数据字段
 description: 本主题提供有关特定于相对方向传感器的数据字段的信息。
-ms.assetid: A48B75DD-5424-48CC-AC8B-251874414FCE
 ms.date: 07/20/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: d4929435b09512c445140d60ea496dc811f1ab57
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: e57e20fe5c898afac5b0d37f4eab750c8d418611
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91733135"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812249"
 ---
 # <a name="relative-orientation-sensor-data-fields"></a>相对方向传感器数据字段
 

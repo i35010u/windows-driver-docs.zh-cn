@@ -1,16 +1,15 @@
 ---
 title: OID_WWAN_SAR_CONFIG
 description: OID_WWAN_SAR_CONFIG 获取或设置有关移动宽带 (MB 的信息) 设备特定的吸收速率 (SAR) 后退模式和级别。
-ms.assetid: 78B049E0-A80E-42AA-9D81-D45BBCF84FCB
 ms.date: 08/17/2018
 keywords: -从 Windows Vista 开始 OID_WWAN_SAR_CONFIG 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: c3b75c85179ac9f3f6a64254778f5c6096480b58
-ms.sourcegitcommit: 366a15d68eb58d01a8ca6de7b982f62ac8b7deaf
+ms.openlocfilehash: 5bba7b5a01c748b04a70ac17d5de55918a05df58
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/19/2020
-ms.locfileid: "90811983"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812935"
 ---
 # <a name="oid_wwan_sar_config"></a>OID_WWAN_SAR_CONFIG
 
@@ -30,7 +29,7 @@ OID_WWAN_SAR_CONFIG 获取或设置有关移动宽带 (MB 的信息) 设备特�
 
 **版本**： Windows 10，版本 1703 **头**： Ntddndis (包括 Ndis .h) 
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [MB SAR 平台支持](./mb-sar-platform-support.md)
 

@@ -1,7 +1,6 @@
 ---
 title: 发布消息
 description: 发布消息
-ms.assetid: 44F8FB0B-6709-4A1C-886D-3788CA39A4D2
 keywords:
 - NFC
 - 近场通信
@@ -10,12 +9,12 @@ keywords:
 - NFP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3ef0f6df6271b63aaa43018f77990cf50f142b80
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 1118da437f9b05272a4f090f8bd0eea46d64bb51
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89381681"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812727"
 ---
 # <a name="publishing-messages"></a>发布消息
 

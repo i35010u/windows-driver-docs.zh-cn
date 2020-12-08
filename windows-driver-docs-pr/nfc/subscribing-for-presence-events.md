@@ -1,7 +1,6 @@
 ---
 title: 订阅存在事件
 description: 订阅存在事件
-ms.assetid: 4AA6C7DA-5301-4356-8AF9-5567322FAB46
 keywords:
 - NFC
 - 近场通信
@@ -10,19 +9,19 @@ keywords:
 - NFP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bc331cde9faf6573d2e63706cba4befb0fa8acf4
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: d9c403f5aeb6b23680b249ee12b81e461e54d63c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89384405"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812807"
 ---
 # <a name="subscribing-for-presence-events"></a>订阅存在事件
 
 
 出席订阅表示为驱动程序中唯一的开放句柄。 每次 NFP 提供程序从非近程转换为近程或近程转换为非近程时，驱动程序都会从驱动程序中引发一次事件。
 
-**注意**   此接口当前不提供判断哪些近程设备已被删除的功能，或者两个设备均为近程的近程设备。
+**注意**  此接口当前不提供判断哪些近程设备已被删除的功能，或者两个设备均为近程的近程设备。
 
  
 
@@ -44,7 +43,7 @@ ms.locfileid: "89384405"
 -   在该客户端处理所有其他消息之前，不能将 "DeviceDeparted" 消息传递给客户端。
 -   DeviceArrived 消息的有效负载必须是最高31位设置为零的单个 DWORD 值和最小有效位集（仅当第一个要变为近程的设备能够持续双向通信时）。
 
-    **注意**   对于 NFC，这等同于 LLCP 支持。
+    **注意**  对于 NFC，这等同于 LLCP 支持。
 
      
 

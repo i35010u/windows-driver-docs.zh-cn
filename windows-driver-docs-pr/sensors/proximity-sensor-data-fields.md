@@ -1,15 +1,14 @@
 ---
 title: 邻近感应传感器数据字段
 description: 本主题提供有关特定于邻近感应传感器的数据字段的信息。
-ms.assetid: 03B561DB-FAF2-4404-AA49-6A0DA139AA11
 ms.date: 07/20/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 84d0b4fa21dc0b911c47ed74c6c5c25a27eab41a
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 6542f889929bd28f596f159dbf2f5b11c7360b8f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91733737"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812259"
 ---
 # <a name="proximity-sensor-data-fields"></a>邻近感应传感器数据字段
 

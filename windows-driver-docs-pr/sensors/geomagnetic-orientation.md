@@ -1,15 +1,14 @@
 ---
 title: 磁场方向
 description: 本主题提供有关特定于磁场方向传感器的数据字段的信息。
-ms.assetid: C164E5A9-A664-4EE5-91CE-918233DFFB6D
 ms.date: 07/20/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 3cf192ab1070a3816fb97cb2374dc9886c82c63f
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: a6ee68545cde799549c8c6674d1b4b01b815894e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91733043"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812321"
 ---
 # <a name="geomagnetic-orientation"></a>地磁方向
 

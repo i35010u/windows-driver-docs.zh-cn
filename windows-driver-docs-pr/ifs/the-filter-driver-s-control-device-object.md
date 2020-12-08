@@ -1,18 +1,17 @@
 ---
 title: 筛选器驱动程序的控制设备对象
 description: 筛选器驱动程序的控制设备对象
-ms.assetid: ac49b5d0-110d-4e47-814b-05f59791de41
 keywords:
 - 控制设备对象 WDK 文件系统
 - CDOs WDK 文件系统
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9237190c2856d03379cf60e63ef4ae3c983343bb
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 76ec7454dd4a8fa7fabc0cd548a81b564928a1db
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90716798"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96813207"
 ---
 # <a name="the-filter-drivers-control-device-object"></a>筛选器驱动程序的控制设备对象
 

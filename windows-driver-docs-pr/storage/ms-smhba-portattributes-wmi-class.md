@@ -1,22 +1,21 @@
 ---
 title: MS \_ SMHBA \_ PORTATTRIBUTES WMI 类
 description: MS \_ SMHBA \_ PORTATTRIBUTES WMI 类
-ms.assetid: 26f17443-cb89-4c93-9b67-35acb75b6d03
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 601b9a3d808ec789e2924875ecfe8e49b333b5c1
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 6bad739823ce595812d17e38d69d61a13891650d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89188811"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96811505"
 ---
 # <a name="ms_smhba_portattributes-wmi-class"></a>MS \_ SMHBA \_ PORTATTRIBUTES WMI 类
 
 
 支持存储管理 API 的 HBA 微型端口驱动程序使用 MS \_ SMHBA \_ PORTATTRIBUTES 类公开端口属性。 每个端口都应有此类的一个实例。
 
-MS \_ SMHBA \_ PORTATTRIBUTES 类在 *Hbaapi*中定义如下：
+MS \_ SMHBA \_ PORTATTRIBUTES 类在 *Hbaapi* 中定义如下：
 
 ```cpp
 class MS_SMHBA_PORTATTRIBUTES 

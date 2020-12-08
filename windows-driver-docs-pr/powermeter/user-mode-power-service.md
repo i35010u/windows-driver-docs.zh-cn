@@ -1,34 +1,33 @@
 ---
 title: 用户模式功率服务
 description: 用户模式功率服务
-ms.assetid: 57f3affd-18cc-440c-ba18-9ba89fd3c84f
 keywords:
-- 电源计量和预算 WDK，用户模式下 Power 服务
-- 用户模式服务 WDK Power 电表
-- UMPS WDK 电源表
+- 电源计量和预算 WDK，User-Mode 电源服务
+- User-Mode 电源服务 WDK 电源指示器
+- UMPS WDK 电源计量器
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 30d03f1e10a009d8c169b71457287a6fce2deb83
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: cf672c6b09e1ed0436e6c5df4e0b42dc487baade
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331805"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812467"
 ---
 # <a name="user-mode-power-service"></a>用户模式功率服务
 
 
-从 Windows 7 和 Windows Server 2008 R2 开始，用户模式下 Power 服务 (UMPS) 提供用于对用户模式服务和应用程序的电源管理的所有方面的接口。 此接口包含对能源计量和预算 (PMB) 基础结构与电源相关信息的支持。 应用程序，如 Windows 性能监视器 (PerfMon)，使用此信息有关电源管理和报告。
+从 Windows 7 和 Windows Server 2008 R2 开始，User-Mode 电源服务 (UMPS) 为用户模式服务和应用程序的电源管理的所有方面提供了一个接口。 此接口包含对电源相关信息的电源计量和预算 (PMB) 基础结构的支持。 此信息由应用程序使用，例如 Windows 性能监视器 (PerfMon) ，用于电源管理和报告。
 
-UMPS 通过使用一组 PMB WMI 类提供对 PMB 信息的访问。 这些 WMI 类符合版本 1.1.0 的分布式管理任务组 (DMTF) 电源提供配置文件。 有关详细信息，请参阅[DMTF 电源提供配置文件](https://go.microsoft.com/fwlink/p/?linkid=145048)。
+通过使用一组 PMB WMI 类，UMPS 提供对 PMB 信息的访问。 这些 WMI 类符合分布式管理任务组 (DMTF) 电源配置文件的版本1.1.0。 有关详细信息，请参阅 [DMTF 电源配置文件](https://go.microsoft.com/fwlink/p/?linkid=145048)。
 
-PMB WMI 类提供以下支持：
+PMB WMI 类提供对以下各项的支持：
 
--   当前的能源计量和预算 power 测定仪设备信息的查询。
+-   查询电源计量设备的当前电源计量和预算信息。
 
--   当超过测定仪的功率阈值或预算时注册的回调通知。
+-   当指示器的电量阈值或预算超出时，注册回调通知。
 
-当 UPMS PMB WMI 请求提供服务时，它将调用通过 I/O 请求数据包 (Irp) 支持的 PMI 到电源计量接口 (PMI)。 有关 PMI 详细信息，请参阅[电源计量接口](power-meter-interface.md)。
+当 UPMS services PMB WMI 请求时，它会调入 (PMI) ，通过使用 PMI 支持的 (Irp) 中的 i/o 请求数据包来。 有关 PMI 的详细信息，请参阅 [电源指示器界面](power-meter-interface.md)。
 
 有关 PMB WMI 类的详细信息，请参阅 Windows SDK 文档。
 

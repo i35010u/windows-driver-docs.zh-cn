@@ -1,7 +1,6 @@
 ---
 title: GUID_DEVINTERFACE_BRIGHTNESS
 description: GUID_DEVINTERFACE_BRIGHTNESS
-ms.assetid: a31b4e12-3702-4a24-98c0-cf8ae7d86a75
 keywords:
 - GUID_DEVINTERFACE_BRIGHTNESS 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: aabfca0b987ea090964e8dbf549b83c331997887
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 689426986fca4e38b8c08fc4c709ac5b34011c1b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89097315"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96813135"
 ---
 # <a name="guid_devinterface_brightness"></a>GUID_DEVINTERFACE_BRIGHTNESS
 
@@ -58,7 +57,7 @@ ms.locfileid: "89097315"
 
 如果显示微型端口驱动程序支持此 [设备安装程序类](./overview-of-device-setup-classes.md)的直接调用亮度控制接口，则内核模式组件可以通过调用微型端口驱动程序的 [**DxgkDdiQueryInterface**](/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgkddi_query_interface) 函数并提供 GUID_DEVINTERFACE_BRIGHTNESS 来指定接口类型，从而检索直接调用接口。
 
-有关亮度设备的信息，请参阅在集成显示面板和[亮度控制界面](/windows-hardware/drivers/ddi/index)[上支持亮度控件](../display/supporting-brightness-controls-on-integrated-display-panels.md)。
+有关亮度设备的信息，请参阅在集成显示面板和[亮度控制界面]()[上支持亮度控件](../display/supporting-brightness-controls-on-integrated-display-panels.md)。
 
 <a name="requirements"></a>要求
 ------------

@@ -1,15 +1,14 @@
 ---
 title: MPIO \_ 磁盘 \_ 信息 WMI 类
 description: MPIO \_ 磁盘 \_ 信息 WMI 类
-ms.assetid: 75c66c84-d815-43a5-a70d-1952bf0e8d44
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 0fde48281632780d538c63b91ffa1b58bfff67ea
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 6fb7579e745abe658c1eee69b9a47f08034db011
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89191283"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96811571"
 ---
 # <a name="mpio_disk_info-wmi-class"></a>MPIO \_ 磁盘 \_ 信息 WMI 类
 

@@ -1,15 +1,14 @@
 ---
 title: Windows 8.1 的新传感器功能和改进
 description: 本主题概述了 WindowsWindows 8.1 中传感器的新增功能和改进。
-ms.assetid: F52BC6D1-DF67-4DE7-BEEC-D18C2A90B4CF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 52373d248e0587ef94577d0a6abf65ca565becf3
-ms.sourcegitcommit: ec7bebe3f94536455e62b372c2a28fe69d1717f7
+ms.openlocfilehash: 555476a5527dbeeca5cf03a132100316cc4f59fe
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93349677"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812291"
 ---
 # <a name="new-sensor-features-and-improvements-for-windows-81"></a>Windows 8.1 的新传感器功能和改进
 

@@ -1,7 +1,6 @@
 ---
 title: 传感器 \_ 类别 \_ 位置
 description: "\"传感器 \\_ 类别 \\_ 位置\" 类别包含的传感器提供地理位置信息。"
-ms.assetid: 19B76F17-0575-42F2-ADEF-15932DCE7E06
 topic_type:
 - apiref
 api_name:
@@ -55,12 +54,12 @@ api_type:
 - NA
 ms.date: 01/04/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 8c30e7989021deeeae78f98db36bfc426ccea389
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 1cd70e572637158f12f0ecedebe3dbb493fd854b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102830"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812209"
 ---
 # <a name="sensor_category_location"></a>传感器 \_ 类别 \_ 位置
 
@@ -79,7 +78,7 @@ ms.locfileid: "90102830"
 <thead>
 <tr class="header">
 <th>传感器类型</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -137,7 +136,7 @@ ms.locfileid: "90102830"
 <thead>
 <tr class="header">
 <th>数据字段名称和 PID</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>

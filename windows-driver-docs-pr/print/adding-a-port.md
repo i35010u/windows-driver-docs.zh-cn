@@ -1,19 +1,18 @@
 ---
 title: 添加端口
 description: 添加端口
-ms.assetid: ec908ddd-761b-4a82-8fc3-ac45c39a0571
 keywords:
 - 端口管理 WDK 打印，添加端口
 - 添加端口
 - AddPort
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 79c040b47f64b1a2b21e6a7343994a60dee94b40
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 4c3db05dd0dff10bb3b57caba01a011f4b6bc66e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89218280"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812417"
 ---
 # <a name="adding-a-port"></a>添加端口
 
@@ -29,7 +28,7 @@ ms.locfileid: "89218280"
 
 1.  调用打印后台处理程序的 OpenPrinter 函数 (Windows SDK 文档) 中所述，这将导致调用端口监视器服务器 DLL 中的 [**XcvOpenPort**](/windows-hardware/drivers/ddi/winsplp/nf-winsplp-xcvopenport) 函数。
 
-2.  多次调用打印后台处理程序的 [**XcvData**](/previous-versions/ff564255(v=vs.85)) 函数，以请求端口监视器服务器 DLL 添加端口并在 UI dll 和服务器 dll 之间传输配置信息。 **XcvData**函数调用服务器 DLL 的[**XcvDataPort**](/windows-hardware/drivers/ddi/winsplp/nf-winsplp-xcvdataport)函数。 [**AddPortUI**](/windows-hardware/drivers/ddi/winsplp/nf-winsplp-addportui)函数通常通过显示对话框从用户那里获取配置信息。
+2.  多次调用打印后台处理程序的 [**XcvData**](/previous-versions/ff564255(v=vs.85)) 函数，以请求端口监视器服务器 DLL 添加端口并在 UI dll 和服务器 dll 之间传输配置信息。 **XcvData** 函数调用服务器 DLL 的 [**XcvDataPort**](/windows-hardware/drivers/ddi/winsplp/nf-winsplp-xcvdataport)函数。 [**AddPortUI**](/windows-hardware/drivers/ddi/winsplp/nf-winsplp-addportui)函数通常通过显示对话框从用户那里获取配置信息。
 
 3.  调用打印后台处理程序的 ClosePrinter 函数 (Windows SDK 文档) 中所述，这将导致调用端口监视器服务器 DLL 中的 [**XcvClosePort**](/windows-hardware/drivers/ddi/winsplp/nf-winsplp-xcvcloseport) 函数。
 

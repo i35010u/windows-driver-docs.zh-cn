@@ -1,19 +1,18 @@
 ---
 title: ATA 端口驱动程序的重置机制
 description: ATA 端口驱动程序的重置机制
-ms.assetid: adc27819-d1ae-4b97-8109-5d742c0595d3
 keywords:
 - ATA 端口驱动程序 WDK，重置机制
 - 重置机制 WDK ATA 端口驱动程序
 - LUN 重置 WDK ATA 端口驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c1134737ad35fb90e917de807d5592f4a791cbb7
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 1e95e22e496658755a0f03a3e6374272603231d1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91733037"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96811791"
 ---
 # <a name="ata-port-drivers-reset-mechanism"></a>ATA 端口驱动程序的重置机制
 

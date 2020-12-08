@@ -1,7 +1,6 @@
 ---
 title: ndiskd.pendingnbls
 description: Pendingnbls 扩展显示正在传输 (NET_BUFFER_LISTs) 挂起的 Nbl。
-ms.assetid: 9137B995-FCCA-4E25-85D3-FCB5B717EBDF
 keywords:
 - ndiskd pendingnbls Windows 调试
 ms.date: 05/23/2017
@@ -12,16 +11,16 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: b5e79b3a9f4f0772de83a179fd4a76fe2618b079
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 60a8161c626330fab801630436585ca5dcf607ff
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89217949"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96813337"
 ---
 # <a name="ndiskdpendingnbls"></a>!ndiskd.pendingnbls
 
-**！ Ndiskd pendingnbls**将显示正在传输中的挂起 Nbl ([**NET \_ BUFFER \_ 列表**](../network/net-buffer-list-structure.md)) 。
+**！ Ndiskd pendingnbls** 将显示正在传输中的挂起 Nbl ([**NET \_ BUFFER \_ 列表**](../network/net-buffer-list-structure.md)) 。
 
 ```console
 !ndiskd.pendingnbls [-handle <x>] [-fullstack] [-verbosity <x>] 
@@ -44,7 +43,7 @@ Ndiskd.dll
 
 ### <a name="examples"></a>示例
 
-**！ ndiskd。 pendingnbls** 可以传递 NDIS 微型端口、筛选器或打开的句柄。 以下一系列示例使用微型端口句柄。 若要查看所有微型端口及其关联微型驱动程序的列表，请运行不带参数的[**！ ndiskd。**](-ndiskd-netadapter.md) 在下面的示例输出中，查找 "Microsoft 内核调试" 网络适配器，其句柄为 ffffe00bc3f701a0。 其微型驱动程序句柄为 ffffe00bc51b9ae0。
+**！ ndiskd。 pendingnbls** 可以传递 NDIS 微型端口、筛选器或打开的句柄。 以下一系列示例使用微型端口句柄。 若要查看所有微型端口及其关联微型驱动程序的列表，请运行不带参数的 [**！ ndiskd。**](-ndiskd-netadapter.md) 在下面的示例输出中，查找 "Microsoft 内核调试" 网络适配器，其句柄为 ffffe00bc3f701a0。 其微型驱动程序句柄为 ffffe00bc51b9ae0。
 
 ```console
 0: kd> !ndiskd.netadapter
@@ -95,7 +94,8 @@ fffff80a`e9611870 4053            push    rbx
 
 现在，在命中微型驱动程序的 SendNetBufferListsHandler 断点之后，可以通过使用微型端口的句柄输入 **！ ndiskd** 命令，查看微型端口的任何挂起的 nbl。
 
-**注意**   在此示例中，调试对象目标计算机已在遇到断点时加载网页，因此流量已通过微型端口的数据路径流动。 因此，它有一个要发送的挂起 NBL。 即使在对微型驱动程序的一个或多个 NBL 处理程序设置断点之后，在数据路径中没有活动的情况下，也可能看不到任何挂起的 Nbl。
+**注意**  
+在此示例中，调试对象目标计算机已在遇到断点时加载网页，因此流量已通过微型端口的数据路径流动。 因此，它有一个要发送的挂起 NBL。 即使在对微型驱动程序的一个或多个 NBL 处理程序设置断点之后，在数据路径中没有活动的情况下，也可能看不到任何挂起的 Nbl。
 
 
 ```console
@@ -112,7 +112,7 @@ PHASE 3/3: Found 1 pending NBL(s) of 4817 total NBL(s).
 Search complete.
 ```
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [网络驱动程序设计指南](../network/index.md)
@@ -121,7 +121,7 @@ Search complete.
 
 [调试网络堆栈](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-175-Debugging-the-Network-Stack)
 
-[**NDIS 扩展 ( # A0) **](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 扩展 ( # A0)**](ndis-extensions--ndiskd-dll-.md)
 
 [**!ndiskd.help**](-ndiskd-help.md)
 

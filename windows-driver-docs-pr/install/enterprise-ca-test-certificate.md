@@ -1,17 +1,16 @@
 ---
 title: 企业 CA 测试证书
 description: 企业 CA 测试证书
-ms.assetid: c2b075c9-cb85-446d-ac07-65aad5507e62
 keywords:
 - 企业 CA 测试证书 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 55306c566f851d87a6d033b8f357590ef68009c4
-ms.sourcegitcommit: f1cdadbcaacbbc075c48adb61448220bf825690d
+ms.openlocfilehash: 3d655ae4f5ff9d5aa08efd4558c45a81d301dd5a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92906432"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96813169"
 ---
 # <a name="enterprise-ca-test-certificate"></a>企业 CA 测试证书
 
@@ -36,7 +35,7 @@ ms.locfileid: "92906432"
 
 有关如何配置企业 CA 的详细信息超出了本文档的讨论范围。 有关如何设计公钥基础结构和安装企业 CA 的完整信息，请参阅 "[代码签名最佳做法](/windows-hardware/test/hlk/)" 网站、windows Server 2003 部署工具包、windows Server 2003 帮助和支持中心，以及[Microsoft TechNet](https://go.microsoft.com/fwlink/p/?linkid=62647)网站的 "[公钥基础结构](/previous-versions/windows/it-pro/windows-server-2003/cc757327(v=ws.10))" 网页。 TechNet 网站包含有关证书、证书服务和证书模板的信息。
 
-有关将企业 CA 配置为对 [驱动程序包](driver-packages.md) 进行测试签名的信息，请参阅自述文件 *Selfsign_readme.htm* ，该文件位于 WDK *的 \\ src general \\ build \\ driversigning* 目录中。
+有关将企业 CA 配置为对 [驱动程序包](driver-packages.md) 进行测试签名的信息，请参阅自述文件 *Selfsign_readme.htm*，该文件位于 WDK *的 \\ src general \\ build \\ driversigning* 目录中。
 
  
 

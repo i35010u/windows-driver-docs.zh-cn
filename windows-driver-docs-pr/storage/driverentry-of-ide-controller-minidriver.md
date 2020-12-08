@@ -1,7 +1,6 @@
 ---
 title: IDE 控制器微型驱动程序函数的 DriverEntry
 description: DriverEntry 初始化微型驱动程序。
-ms.assetid: 124f6273-ab15-426b-abce-a4d8e68e09c7
 keywords:
 - DriverEntry 函数存储设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - DllExport
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 07a5e1c9b5323b6155d38f2f06d3a9fd0818dc88
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 7edc6620e93a4632ab9dab852f84be2ab6806921
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89188535"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96811727"
 ---
 # <a name="driverentry-of-ide-controller-minidriver-function"></a>IDE 控制器微型驱动程序函数的 DriverEntry
 
@@ -31,8 +30,8 @@ ms.locfileid: "89188535"
 
 ```ManagedCPlusPlus
 NTSTATUS DriverEntry(
-  _In_ PDRIVER_OBJECT  DriverObject,
-  _In_ PUNICODE_STRING RegistryPath
+  _In_ PDRIVER_OBJECT  DriverObject,
+  _In_ PUNICODE_STRING RegistryPath
 );
 ```
 
@@ -48,14 +47,14 @@ NTSTATUS DriverEntry(
 <a name="return-value"></a>返回值
 ------------
 
-**DriverEntry** \_ 如果成功，DRIVERENTRY 将返回状态 SUCCESS; 否则，将返回[**PciIdeXInitialize**](/previous-versions/windows/hardware/drivers/ff563788(v=vs.85))库例程收到的错误代码。
+**DriverEntry** \_ 如果成功，DRIVERENTRY 将返回状态 SUCCESS; 否则，将返回 [**PciIdeXInitialize**](/previous-versions/windows/hardware/drivers/ff563788(v=vs.85))库例程收到的错误代码。
 
 <a name="remarks"></a>备注
 -------
 
 每个控制器微型驱动程序必须具有名为 **DriverEntry** 的例程才能加载。
 
-IDE 控制器微型驱动程序的 **DriverEntry** 例程必须调用 [**PciIdeXInitialize**](/previous-versions/windows/hardware/drivers/ff563788(v=vs.85)) 库例程。 **PciIdeXInitialize** 初始化控制器微型驱动程序的调度表，为 *DriverObject*分配扩展，并在驱动程序对象的扩展中存储各种值。 必须存储在驱动程序对象扩展中的值包括驱动程序扩展的大小和一个指针，该指针指向用于检索有关 IDE 控制器的信息的控制器微型驱动程序 [**HwIdeXGetControllerProperties**](/previous-versions/windows/hardware/drivers/ff557254(v=vs.85)) 例程。
+IDE 控制器微型驱动程序的 **DriverEntry** 例程必须调用 [**PciIdeXInitialize**](/previous-versions/windows/hardware/drivers/ff563788(v=vs.85)) 库例程。 **PciIdeXInitialize** 初始化控制器微型驱动程序的调度表，为 *DriverObject* 分配扩展，并在驱动程序对象的扩展中存储各种值。 必须存储在驱动程序对象扩展中的值包括驱动程序扩展的大小和一个指针，该指针指向用于检索有关 IDE 控制器的信息的控制器微型驱动程序 [**HwIdeXGetControllerProperties**](/previous-versions/windows/hardware/drivers/ff557254(v=vs.85)) 例程。
 
 <a name="requirements"></a>要求
 ------------
@@ -68,7 +67,7 @@ IDE 控制器微型驱动程序的 **DriverEntry** 例程必须调用 [**PciIdeX
 <tbody>
 <tr class="odd">
 <td align="left"><p>目标平台</p></td>
-<td align="left">“桌面”</td>
+<td align="left">台式机</td>
 </tr>
 <tr class="even">
 <td align="left"><p>标头</p></td>

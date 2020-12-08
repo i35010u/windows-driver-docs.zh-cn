@@ -1,15 +1,14 @@
 ---
 title: 创建合作伙伴设置应用
 description: 创建合作伙伴设置应用
-ms.assetid: 3b549c11-f8b2-46e8-9d22-4edc787743ee
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 85f95cab56ef9f640dee7df5ce8ccde9b4ed3e53
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 001e21ec0af5e6cba27aa8263a7f5152a5e5d746
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89383559"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812569"
 ---
 # <a name="create-a-partner-settings-app"></a>创建合作伙伴设置应用
 

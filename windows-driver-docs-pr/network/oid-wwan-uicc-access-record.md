@@ -1,17 +1,16 @@
 ---
 title: OID_WWAN_UICC_ACCESS_RECORD
 description: OID_WWAN_UICC_ACCESS_RECORD 访问 UICC 线性固定或循环文件，其结构类型为 WwanUiccFileStructureCyclic 或 WwanUiccFileStructureLinear。
-ms.assetid: 450F397E-AC91-4239-BF60-B0DEB2F065DA
 ms.date: 04/10/2019
 keywords: -从 Windows Vista 开始 OID_WWAN_UICC_ACCESS_RECORD 的网络驱动程序
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 3cef3f2317f4cff7138246bbdcc94432a34adb3c
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 16bfa2876c8e1e8f4a95d98f8df583f602725331
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89210101"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812873"
 ---
 # <a name="oid_wwan_uicc_access_record"></a>OID_WWAN_UICC_ACCESS_RECORD
 
@@ -27,7 +26,7 @@ OID_WWAN_UICC_ACCESS_RECORD 访问 UICC 线性固定或循环文件，其结构�
 
 **版本**： Windows 10，版本 1903 **头**： Ntddndis (包括 Ndis .h) 
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [MB UICC 应用程序和文件系统访问权限](mb-uicc-application-and-file-system-access.md)
 

@@ -1,17 +1,16 @@
 ---
 title: 获取有关并行端口的信息
 description: 获取有关并行端口的信息
-ms.assetid: d8ae2296-05b6-419a-93cc-00fcb12d41fe
 keywords:
 - 并行端口 WDK，获取信息
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fa6cb286e4d53f12de553475e7e35f54e3659bf4
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 9541e81c6dc506d1c8acb0d0ab8017c6d5612807
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89385013"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812607"
 ---
 # <a name="obtaining-information-about-a-parallel-port"></a>获取有关并行端口的信息
 
@@ -35,7 +34,7 @@ ms.locfileid: "89385013"
 
 [**IOCTL \_ 内部 \_ 获取 \_ 并行 \_ PNP \_ 信息**](/windows-hardware/drivers/ddi/parallel/ni-parallel-ioctl_internal_get_parallel_pnp_info)
 
-客户端通过使用 [**IOCTL \_ 内部 \_ 发布 \_ 并行 \_ 端口 \_ **](/windows-hardware/drivers/ddi/parallel/ni-parallel-ioctl_internal_release_parallel_port_info) 信息请求来释放并行端口信息。
+客户端通过使用 [**IOCTL \_ 内部 \_ 发布 \_ 并行 \_ 端口 \_**](/windows-hardware/drivers/ddi/parallel/ni-parallel-ioctl_internal_release_parallel_port_info) 信息请求来释放并行端口信息。
 
  
 

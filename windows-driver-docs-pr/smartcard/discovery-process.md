@@ -1,15 +1,14 @@
 ---
 title: 发现过程
 description: 发现过程
-ms.assetid: 6B94CAF1-D998-4EAF-8ABB-80A21193B50F
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 387156e207d49778358e332ecfccc29551dab5ff
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 2e124a60f4b8bd07dd81435bb91c896c11fd33cc
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90716856"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96811925"
 ---
 # <a name="discovery-process"></a>发现过程
 
@@ -42,7 +41,7 @@ ms.locfileid: "90716856"
 <tr class="header">
 <th align="left">帮助名称</th>
 <th align="left">帮助值</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -73,7 +72,7 @@ ms.locfileid: "90716856"
 
 下表列出了发现过程使用的文件。
 
-| Command | 指令 () 值 |
+| 命令 | 指令 () 值 |
 |---------|-------------------------|
 | MF      | 0x3F00                  |
 | EF.ATR  | 0x2F01                  |
@@ -82,7 +81,7 @@ ms.locfileid: "90716856"
 
 下表列出了不同的发现进程使用的命令。
 
-| Command      | 指令 () 值 |
+| 命令      | 指令 () 值 |
 |--------------|-------------------------|
 | SELECT       | 0xA4                    |
 | 获取数据     | 0xCA                    |
@@ -137,7 +136,7 @@ Winscard ( # A0) 发现进程用于将系统中的卡片与安装的微型驱动
 5.  如果步骤4失败，Winscard 将发出 PIV 辅助工具的选择命令。 如果此命令成功，请跳到步骤6。
 6.  Winscard 返回卡的名称，该名称对应于与卡匹配的微型驱动程序注册表项。
 
-**注意**   下表描述了 Winscard 发现进程使用的各种注册表项。
+**注意**  下表描述了 Winscard 发现进程使用的各种注册表项。
 
  
 
@@ -154,7 +153,7 @@ Winscard ( # A0) 发现进程用于将系统中的卡片与安装的微型驱动
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">HKEY_LOCAL_MACHINE \SOFTWARE\Microsoft \Cryptography\Calais\SmartCards</td>
+<td align="left">HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft \Cryptography\Calais\SmartCards</td>
 <td align="left">Winscard 在步骤1中使用此密钥作为 Calais\SmartCards 键。</td>
 </tr>
 <tr class="even">
@@ -180,7 +179,7 @@ Winscard ( # A0) 发现进程用于将系统中的卡片与安装的微型驱动
 1.  微型驱动程序发出 PIV 辅助工具的选择命令。 如果此命令成功，则该卡会被标记为 PIV 兼容，发现过程将停止。
 2.  否则，微型驱动程序会发出 MS GID 辅助工具的选择命令。 如果命令成功或找不到帮助，则微型驱动程序会将卡标记为 MS GID。
 
-**注意**  
+**注意**  
 -   如果以前通过微型驱动程序类的 Winscard 发现过程发现了智能卡，则它可能无法响应 PIV 或 GID 辅助工具的 SELECT 命令。 在这种情况下，它必须是供应商提供的卡，它使用自定义辅助工具实现 GID 卡边缘。 此类卡可以通过其他数据对象来扩展 Microsoft 智能卡数据模型。
 -   PIV 和 GID 智能卡供应商可以使用 Windows 智能卡类微型驱动程序，并通过提供仅 INF 安装包来添加品牌。 有关对兼容卡使用类微型驱动程序的详细信息，请参阅 [智能卡即插即用](smart-card-plug-and-play.md)中的 INF 示例。 只有历史字节用于 INF 中的即插即用匹配。
 
@@ -252,7 +251,7 @@ GUIDS ::= SEQUENCE OF GUID
 
 GUID 成员是一个16字节的 GUID，用于唯一标识智能卡/应用程序组合。 此值用于检测和加载适当的智能卡微型驱动程序。
 
-**注意**   颁发应用程序的 IHV 或 ISV 必须为其卡/应用程序组合创建唯一的 GUID。
+**注意**  颁发应用程序的 IHV 或 ISV 必须为其卡/应用程序组合创建唯一的 GUID。
 
  
 

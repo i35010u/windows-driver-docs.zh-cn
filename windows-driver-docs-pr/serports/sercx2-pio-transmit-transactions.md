@@ -1,15 +1,14 @@
 ---
 title: SerCx2 PIO-Transmit 事务
 description: SerCx2 要求所有串行控制器驱动程序实现对使用程控 i/o (PIO) 的传输事务的支持。
-ms.assetid: 3BEF9A3D-1FEF-4626-B07F-1670359062AF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ecd1142a9549d6931c19ffe5dda6115b60774012
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 07a111cd362bad844c431d40979ff5048f80729b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89186913"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96811965"
 ---
 # <a name="sercx2-pio-transmit-transactions"></a>SerCx2 PIO-Transmit 事务
 
@@ -19,7 +18,7 @@ SerCx2 要求所有串行控制器驱动程序实现对使用程控 i/o (PIO) �
 
 ## <a name="creating-the-pio-transmit-object"></a>创建 PIO 传输对象
 
-在 SerCx2 可以调用任何串行控制器驱动程序的 *EvtSerCx2PioTransmit*Xxx * * 函数之前，驱动程序必须调用 [**SerCx2PioTransmitCreate**](/windows-hardware/drivers/ddi/sercx/nf-sercx-sercx2piotransmitcreate) 方法将这些函数注册到 SerCx2。 此方法接受作为输入参数的指针，该指针指向 [**SERCX2 \_ PIO \_ 传输 \_ 配置**](/windows-hardware/drivers/ddi/sercx/ns-sercx-_sercx2_pio_transmit_config) 结构，该结构包含指向驱动程序的 *EvtSerCx2PioTransmit*Xxx * * 函数的指针。
+在 SerCx2 可以调用任何串行控制器驱动程序的 *EvtSerCx2PioTransmit* Xxx * * 函数之前，驱动程序必须调用 [**SerCx2PioTransmitCreate**](/windows-hardware/drivers/ddi/sercx/nf-sercx-sercx2piotransmitcreate) 方法将这些函数注册到 SerCx2。 此方法接受作为输入参数的指针，该指针指向 [**SERCX2 \_ PIO \_ 传输 \_ 配置**](/windows-hardware/drivers/ddi/sercx/ns-sercx-_sercx2_pio_transmit_config) 结构，该结构包含指向驱动程序的 *EvtSerCx2PioTransmit* Xxx * * 函数的指针。
 
 需要驱动程序才能实现以下三个函数：
 
@@ -40,7 +39,7 @@ SerCx2 要求所有串行控制器驱动程序实现对使用程控 i/o (PIO) �
 
 如果驱动程序实现前面列表中的任何函数，则它必须实现所有三个。
 
-**SerCx2PioTransmitCreate**方法创建一个 PIO 传输对象，并向该对象的[**SERCX2PIOTRANSMIT**](./sercx2-object-handles.md)句柄提供调用驱动程序。 驱动程序的 *EvtSerCx2PioTransmit*Xxx * * 函数全部使用此句柄作为其第一个参数。 以下 SerCx2 方法使用此句柄作为其第一个参数：
+**SerCx2PioTransmitCreate** 方法创建一个 PIO 传输对象，并向该对象的 [**SERCX2PIOTRANSMIT**](./sercx2-object-handles.md)句柄提供调用驱动程序。 驱动程序的 *EvtSerCx2PioTransmit* Xxx * * 函数全部使用此句柄作为其第一个参数。 以下 SerCx2 方法使用此句柄作为其第一个参数：
 
 - [**SerCx2PioTransmitReady**](/windows-hardware/drivers/ddi/sercx/nf-sercx-sercx2piotransmitready)
 - [**SerCx2PioTransmitInitializeTransactionComplete**](/windows-hardware/drivers/ddi/sercx/nf-sercx-sercx2piotransmitinitializetransactioncomplete)
@@ -64,7 +63,7 @@ SerCx2 要求所有串行控制器驱动程序实现对使用程控 i/o (PIO) �
 
 实现 *EvtSerCx2PioTransmitDrainFifo* 函数的驱动程序还必须实现 [*EvtSerCx2PioTransmitCancelDrainFifo*](/windows-hardware/drivers/ddi/sercx/nc-sercx-evt_sercx2_pio_transmit_cancel_drain_fifo) 和 [*EvtSerCx2PioTransmitPurgeFifo*](/windows-hardware/drivers/ddi/sercx/nc-sercx-evt_sercx2_pio_transmit_drain_fifo) 事件回调函数。
 
-*EvtSerCx2PioTransmitCancelDrainFifo*函数使 SerCx2 可以在完成前取消正在进行的 FIFO 排出操作。 如果写入请求超时或已取消，SerCx2 可能会取消此操作。 如果 *EvtSerCx2PioTransmitCancelDrainFifo* 函数成功取消了 FIFO 排出操作，此函数将返回 **TRUE**。 如果返回值 **为 TRUE** ，则保证串行控制器驱动程序未调用，并且不会调用 **SerCx2PioTransmitDrainFifoComplete**。 如果返回值为 **FALSE** ，则表示 *EvtSerCx2PioTransmitDrainFifo* 函数已调用或将很快调用 **SerCx2PioTransmitDrainFifoComplete**。
+*EvtSerCx2PioTransmitCancelDrainFifo* 函数使 SerCx2 可以在完成前取消正在进行的 FIFO 排出操作。 如果写入请求超时或已取消，SerCx2 可能会取消此操作。 如果 *EvtSerCx2PioTransmitCancelDrainFifo* 函数成功取消了 FIFO 排出操作，此函数将返回 **TRUE**。 如果返回值 **为 TRUE** ，则保证串行控制器驱动程序未调用，并且不会调用 **SerCx2PioTransmitDrainFifoComplete**。 如果返回值为 **FALSE** ，则表示 *EvtSerCx2PioTransmitDrainFifo* 函数已调用或将很快调用 **SerCx2PioTransmitDrainFifoComplete**。
 
 如果与 PIO 传输事务关联的写入请求在完成前被取消或超时，则 SerCx2 会调用 *EvtSerCx2PioTransmitPurgeFifo* 函数（如果已实现），以丢弃可能仍在传输 FIFO 的所有未发送数据。 SerCx2 使用它从此函数获取的信息，告诉外设驱动程序已通过写入请求将多少字节的数据成功传输到外围设备。
 

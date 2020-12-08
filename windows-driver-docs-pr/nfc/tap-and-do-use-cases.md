@@ -1,7 +1,6 @@
 ---
 title: 点击和执行用例
 description: 点击和执行用例
-ms.assetid: DCA97F86-3D27-46CD-9D25-A3D156B18B85
 keywords:
 - NFC
 - 近场通信
@@ -10,12 +9,12 @@ keywords:
 - NFP
 ms.date: 06/08/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 6e5c6d727a9eef54d7c9b787138182464b096ac5
-ms.sourcegitcommit: f8619f20a0903dd64f8641a5266ecad6df5f1d57
+ms.openlocfilehash: 235aac7225cb4947d230dccb7c9f5c48f20c887e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91424058"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812678"
 ---
 # <a name="tap-and-do-use-cases"></a>点击和执行用例
 
@@ -35,7 +34,7 @@ Windows 提供了几个用例来支持 *点击和待办* 手势。 每个用例�
 
 NFP 用例通常属于两个类别之一。
 
-- 个人
+- *个人*
 
     这种类型的用例仅涉及系统的用户。
 
@@ -52,7 +51,7 @@ NFP 用例通常属于两个类别之一。
 
 ## <a name="tap-and-setup"></a>点击和设置
 
-*点击和安装* 是适用于外围设备的无线设备安装体验。 此类别包括键盘、鼠标、耳机和打印机。 点击和安装程序支持三种不同类型的设备安装：蓝牙单向配对、网络打印机安装和 Wi-fi 直接打印机配对。 Windows 将仅安装设备，这些设备支持通过 NFC 进行的单向通信。 不支持智能设备需要通过 NFC 进行双向通信。 利用这种体验，用户可以点击 "兼容设备到 Windows" 以启动设备安装体验。
+*点击和安装* 是适用于外围设备的无线设备安装体验。 此类别包括键盘、鼠标、耳机和打印机。 点击和安装程序支持三种不同类型的设备安装：蓝牙单向配对、网络打印机安装和 Wi-Fi 直接打印机配对。 Windows 将仅安装设备，这些设备支持通过 NFC 进行的单向通信。 不支持智能设备需要通过 NFC 进行双向通信。 利用这种体验，用户可以点击 "兼容设备到 Windows" 以启动设备安装体验。
 
 使用类别：个人或企业 (人际) 。
 

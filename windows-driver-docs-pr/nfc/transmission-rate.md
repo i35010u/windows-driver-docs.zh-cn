@@ -1,7 +1,6 @@
 ---
 title: NFP 传输速率
 description: 每个提供程序实现都可以指定大致的传输速率。
-ms.assetid: 85E85DBA-8A88-4738-8B4E-A04F4A82808F
 keywords:
 - NFC
 - 近场通信
@@ -10,12 +9,12 @@ keywords:
 - NFP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1c430eef372fe2058afe570a17eba8b22ab4b00a
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: bd634673966dbf742fc5e0ce61a20901b22bf9d0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89382309"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812681"
 ---
 # <a name="nfp-transmission-rate"></a>NFP 传输速率
 

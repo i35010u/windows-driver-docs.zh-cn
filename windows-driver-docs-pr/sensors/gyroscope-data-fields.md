@@ -1,15 +1,14 @@
 ---
 title: 陀螺仪数据字段
 description: 本主题提供有关特定于陀螺仪的数据字段的信息。
-ms.assetid: A8F8EC33-B6B4-4CA3-8A45-5760F18116D3
 ms.date: 01/04/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 259e30589adfc8d0aea8ad7c4c68b15adfa7bb26
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: e3dd42e8aa762d45381d8a7d99f63e4677ddac99
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91734145"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812335"
 ---
 # <a name="gyroscope-data-fields"></a>陀螺仪数据字段
 

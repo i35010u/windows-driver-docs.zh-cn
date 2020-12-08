@@ -1,19 +1,18 @@
 ---
 title: 打开和关闭并行端口
 description: 打开和关闭并行端口
-ms.assetid: 2183ffd9-8265-4848-b5d1-703643e0d0e6
 keywords:
 - 并行端口 WDK，打开
 - 并行端口 WDK，关闭
 - 并行端口 WDK，共享
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2dab09c90b2be3272b2dea6773425d8c2183612f
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 8f543b6dc6e2b30307e1e8afcf2fc8be5ae1f27b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89385089"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812599"
 ---
 # <a name="opening-and-closing-a-parallel-port"></a>打开和关闭并行端口
 

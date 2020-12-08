@@ -1,16 +1,15 @@
 ---
 title: NDIS_STATUS_WWAN_VENDOR_SPECIFIC
 description: 微型端口驱动程序使用 NDIS_STATUS_WWAN_VENDOR_SPECIFIC 通知为特定于供应商的操作或供应商特定的更改通知实现事务完成响应。
-ms.assetid: 2032ed5e-8a4a-4c1c-9dbe-05e7cec1b683
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 NDIS_STATUS_WWAN_VENDOR_SPECIFIC 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: d50fbfc3fd15dde563292ace363c669cc0d9ef74
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 5292a350b07a8cc39607e791627844310bab1cdf
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89211669"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96813001"
 ---
 # <a name="ndis_status_wwan_vendor_specific"></a>NDIS \_ 状态 \_ WWAN \_ 供应商 \_ 特定
 
@@ -44,7 +43,7 @@ ms.locfileid: "89211669"
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**NDIS \_ WWAN \_ 供应商 \_ 特定**](/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_vendor_specific)

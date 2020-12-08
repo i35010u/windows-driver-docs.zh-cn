@@ -1,20 +1,19 @@
 ---
 title: 为基于通用驱动程序的传感器创建持久的唯一标识符
 description: 为基于通用驱动程序的驱动程序创建持久的唯一标识符
-ms.assetid: B0131BC5-F76F-46B0-8BDE-4220D971AA29
 ms.date: 07/20/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 86ad391c3c6801fc45f98781270927e976861618
-ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
+ms.openlocfilehash: 6b13b94bac2cd442018311798b9b05b73c4152a2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90010113"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812355"
 ---
 # <a name="creating-a-persistent-unique-identifier-for-a-sensor"></a>为传感器创建持久的唯一标识符
 
 
-驱动程序必须为每个传感器 (PUID) 创建 *永久唯一标识符* 。 PUID 是跨会话存储并在设备上唯一标识该对象的 GUID 值。 查询名为 **DEVPKEY_Sensor_PersistentUniqueId**的属性时，驱动程序必须返回 PUID 值。 如果设备包含多个传感器，则必须为每个传感器分配其自己的 PUID。 应用程序可以使用 [Windows.](/uwp/api/Windows.Devices.Enumeration) Can WinRT api 检索此 ID。
+驱动程序必须为每个传感器 (PUID) 创建 *永久唯一标识符* 。 PUID 是跨会话存储并在设备上唯一标识该对象的 GUID 值。 查询名为 **DEVPKEY_Sensor_PersistentUniqueId** 的属性时，驱动程序必须返回 PUID 值。 如果设备包含多个传感器，则必须为每个传感器分配其自己的 PUID。 应用程序可以使用 [Windows.](/uwp/api/Windows.Devices.Enumeration) Can WinRT api 检索此 ID。
 
 当传感器第一次连接到计算机时，应该为每个传感器创建新的 PUID，并存储此值供以后使用。
 

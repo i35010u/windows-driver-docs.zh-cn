@@ -1,15 +1,14 @@
 ---
 title: 卡要求
 description: 卡要求
-ms.assetid: 3BE887F9-4B35-4A83-9E98-DD7555DF2953
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0cb15ae4101fa83517e87ec640eba1835e96e48c
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: d16dd3e67d64020b802583ca6e7d6cddf51107cc
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89385097"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96811929"
 ---
 # <a name="card-requirements"></a>卡要求
 

@@ -1,18 +1,17 @@
 ---
 title: 智能卡驱动程序库
 description: 智能卡驱动程序库
-ms.assetid: 12f67a8d-9281-4f79-88c0-e1c9dff5a05d
 keywords:
 - 智能卡驱动程序 WDK，库
 - 库 WDK 智能卡
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8ecaef7188dde8f9cbad7bfe64fcf07324684887
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 52610047cb3d102601247c59b065aefa97bf5037
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89381441"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96811889"
 ---
 # <a name="smart-card-driver-library"></a>智能卡驱动程序库
 
@@ -50,7 +49,7 @@ Microsoft 提供了一个驱动程序库，其中包含一组用于标准化智�
 <thead>
 <tr class="header">
 <th align="left">文件</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>

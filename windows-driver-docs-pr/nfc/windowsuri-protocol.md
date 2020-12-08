@@ -1,7 +1,6 @@
 ---
 title: WindowsUri 协议
 description: WindowsUri 协议
-ms.assetid: 79589ECE-9DF9-40C8-897D-95B432C4C9C8
 keywords:
 - NFC
 - 近场通信
@@ -10,12 +9,12 @@ keywords:
 - NFP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 43469381e433670826035d2e0f1502fc933de2b3
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 05e72f75d3260ffcd3195c2391b0c85533397502
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89385007"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812677"
 ---
 # <a name="windowsuri-protocol"></a>WindowsUri 协议
 

@@ -1,7 +1,6 @@
 ---
 title: 设置串行设备的读取和写入超时
 description: 设置串行设备的读取和写入超时
-ms.assetid: ed5b80a9-93cb-4e3f-9038-e715be35f206
 keywords:
 - 串行驱动程序 WDK，超时
 - 超时 WDK 串行设备
@@ -10,12 +9,12 @@ keywords:
 - 写入超时的 WDK 串行设备
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0383684d01d63d56367a4f60f49c6af24c7f220f
-ms.sourcegitcommit: f8619f20a0903dd64f8641a5266ecad6df5f1d57
+ms.openlocfilehash: dc2d067dfdbee8edf54a31139df15da28419077d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91423828"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96811949"
 ---
 # <a name="setting-read-and-write-timeouts-for-a-serial-device"></a>设置串行设备的读取和写入超时
 

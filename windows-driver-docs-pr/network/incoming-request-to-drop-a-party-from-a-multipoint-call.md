@@ -1,7 +1,6 @@
 ---
 title: 传入的从多点呼叫中删除参与方请求
 description: 传入的从多点呼叫中删除参与方请求
-ms.assetid: 3345f6f6-339f-4349-97fd-9ca9d5b2d241
 keywords:
 - 参与方 WDK CoNDIS
 - multipoint 调用 WDK CoNDIS
@@ -10,12 +9,12 @@ keywords:
 - 传入的丢弃方请求 WDK CoNDIS
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5c6ed80c22a81708de0002059990677170f6e486
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 6e02103ceaa9ed08dd699049599a6b0c15e1eb3b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89206447"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96813015"
 ---
 # <a name="incoming-request-to-drop-a-party-from-a-multipoint-call"></a>传入的从多点呼叫中删除参与方请求
 

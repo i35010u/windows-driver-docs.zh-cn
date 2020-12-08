@@ -1,7 +1,6 @@
 ---
 title: 打开并初始化 16550 UART 兼容接口
 description: 打开并初始化 16550 UART 兼容接口
-ms.assetid: 341cc1cb-bbcf-4514-8f5d-8970e49923c2
 keywords:
 - 串行驱动程序 WDK，16550 UART 兼容接口
 - 通用异步接收器-发射器 WDK 串行设备
@@ -10,12 +9,12 @@ keywords:
 - 正在初始化 16550 UART 兼容的接口
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4e7c6e8b179e14e748b69a2c1f3603ad7b1ab760
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: cb4077c3ed5559ad46ea7203220ce3a98f94f348
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89186961"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812003"
 ---
 # <a name="opening-and-initializing-a-16550-uart-compatible-interface"></a>打开并初始化 16550 UART 兼容接口
 

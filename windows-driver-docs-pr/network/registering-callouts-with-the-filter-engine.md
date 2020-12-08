@@ -1,7 +1,6 @@
 ---
 title: 将标注注册到筛选器引擎
 description: 将标注注册到筛选器引擎
-ms.assetid: a5bade33-e3d1-4e1d-8503-51485097046e
 keywords:
 - Windows 筛选平台标注驱动程序 WDK，初始化
 - 标注驱动程序 WDK Windows 筛选平台，初始化
@@ -9,12 +8,12 @@ keywords:
 - 注册标注 WDK Windows 筛选平台
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bc64928542df427f8b26a4762db913c01f7e1717
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 63ab434fad39a05491d16e3c2cd894e54100a3d4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89212011"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812825"
 ---
 # <a name="registering-callouts-with-the-filter-engine"></a>将标注注册到筛选器引擎
 

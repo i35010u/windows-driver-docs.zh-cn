@@ -1,7 +1,6 @@
 ---
 title: INF DDInstall.LogConfigOverride 节
 description: DDInstall. LogConfigOverride 部分用于创建替代配置来替代硬件资源要求。
-ms.assetid: 7ee8d221-7cdb-4373-aa8b-2d5164f6a636
 keywords:
 - INF DDInstall. LogConfigOverride 部分设备和驱动程序安装
 topic_type:
@@ -12,17 +11,17 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 875376b3c81d1e7784e027d76f5a9820fa2439ab
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 62cd4016a6a76ac56bf9db0da5a6ea23c3763b02
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89095117"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96813131"
 ---
 # <a name="inf-ddinstalllogconfigoverride-section"></a>INF DDInstall.LogConfigOverride 节
 
 
-**注意**   如果要构建通用或移动驱动程序包，此部分无效。 请参阅 [使用通用 INF 文件](using-a-universal-inf-file.md)。
+**注意**  如果要构建通用或移动驱动程序包，此部分无效。 请参阅 [使用通用 INF 文件](using-a-universal-inf-file.md)。
 
  
 
@@ -43,7 +42,7 @@ LogConfig=log-config-section[,log-config-section]...]
 ## <a name="entries"></a>项
 
 
-用于<em>DDInstall</em>的条目项和值 **。LogConfigOverride**节在由[**INF LogConfig 指令**](inf-logconfig-directive.md)引用的*日志配置部分*中指定。
+用于 <em>DDInstall</em>的条目项和值 **。LogConfigOverride** 节在由 [**INF LogConfig 指令**](inf-logconfig-directive.md)引用的 *日志配置部分* 中指定。
 
 <a name="remarks"></a>备注
 -------
@@ -67,12 +66,12 @@ MemConfig=4000@0-FFFFFFFF%FFFFC000
 PcCardConfig=41:100000(W)
 ```
 
-有关在 *日志配置部分*中指定的硬件资源配置数据值的详细信息，请参阅 [**INF LogConfig 指令**](inf-logconfig-directive.md)。
+有关在 *日志配置部分* 中指定的硬件资源配置数据值的详细信息，请参阅 [**INF LogConfig 指令**](inf-logconfig-directive.md)。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
-[***DDInstall***](inf-ddinstall-section.md)
+[**_DDInstall_**](inf-ddinstall-section.md)
 
  
 

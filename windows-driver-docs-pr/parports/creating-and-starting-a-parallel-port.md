@@ -1,18 +1,17 @@
 ---
 title: 创建和启动并行端口
 description: 创建和启动并行端口
-ms.assetid: 75c82353-6490-47e9-9278-ec0981af9ae9
 keywords:
 - 并行端口 WDK，创建
 - 并行端口 WDK，开始
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2da462f42b2df0d2702b8acb30ca0e70b13e0b18
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 49e34991c20b377a5930fba6139768ee0d3d42d1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89385005"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812631"
 ---
 # <a name="creating-and-starting-a-parallel-port"></a>创建和启动并行端口
 

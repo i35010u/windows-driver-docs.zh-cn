@@ -1,22 +1,21 @@
 ---
-title: MS\_SM\_PortInformationMethods WMI 类
-description: MS\_SM\_PortInformationMethods WMI 类
-ms.assetid: 5bf44288-7e1f-48e6-aa02-1e706b73f046
+title: MS \_ SM \_ PortInformationMethods WMI 类
+description: MS \_ SM \_ PortInformationMethods WMI 类
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 60bc3f8955c4891639459b1a15698956850d64d3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4392a1caecf792187e0d85e911ef6ff43191a93f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63329827"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96811515"
 ---
-# <a name="mssmportinformationmethods-wmi-class"></a>MS\_SM\_PortInformationMethods WMI 类
+# <a name="ms_sm_portinformationmethods-wmi-class"></a>MS \_ SM \_ PortInformationMethods WMI 类
 
 
-支持存储管理 API 的 HBA 微型端口驱动程序使用 MS\_SM\_PortInformationMethods 类查询端口属性。
+支持存储管理 API 的 HBA 微型端口驱动程序使用 MS \_ SM \_ PortInformationMethods 类来查询端口属性。
 
-MS\_SM\_PortInformationMethods 类定义，如下所示在*Hbaapi.mof*:
+MS \_ SM \_ PortInformationMethods 类在 *Hbaapi* 中定义如下：
 
 ```cpp
 class MS_SM_PortInformationMethods
@@ -126,9 +125,9 @@ class MS_SM_PortInformationMethods
 };
 ```
 
-通过 WMI 工具套件在编译时此类定义将生成以下数据结构：
+由 WMI 工具套件编译时，此类定义生成以下数据结构：
 
-MS\_SM\_PortInformationMethods
+MS \_ SM \_ PortInformationMethods
 
 没有与此 WMI 类相关联的方法。
 

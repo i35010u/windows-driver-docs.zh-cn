@@ -1,7 +1,6 @@
 ---
 title: KSEVENT \_ 动态 \_ 格式 \_ 更改
 description: 客户端启用 KSEVENT \_ 动态 \_ 格式 \_ 更改事件，以指示发生了动态格式更改。
-ms.assetid: 7f8cf67b-274b-4342-a9f7-7fab5345bbc9
 keywords:
 - KSEVENT_DYNAMIC_FORMAT_CHANGE 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fb828ecf833758999a0c6a925a99c51a7ae3cd01
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 02fae3b5777d9242d4fe1ad2d16fa45b9e211725
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89186151"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96813447"
 ---
 # <a name="ksevent_dynamic_format_change"></a>KSEVENT \_ 动态 \_ 格式 \_ 更改
 

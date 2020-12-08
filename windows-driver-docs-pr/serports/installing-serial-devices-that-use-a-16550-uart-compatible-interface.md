@@ -1,7 +1,6 @@
 ---
-title: 使用 16550 UART 兼容的接口安装串行设备
+title: 使用 16550 UART-Compatible 接口安装串行设备
 description: 安装使用 16550 UART 兼容接口的串行设备
-ms.assetid: d80db651-b890-44dc-98ad-32e72e244d8c
 keywords:
 - 串行驱动程序 WDK，16550 UART 兼容接口
 - 通用异步接收器-发射器 WDK 串行设备
@@ -9,12 +8,12 @@ keywords:
 - 16550 UART 兼容的接口 WDK 串行设备
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 290a4765a5d05a0d70cd1831237b41dbbbb5d095
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: d473598b727e3a2931918954151d949dc112a508
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89186971"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812007"
 ---
 # <a name="installing-serial-devices-that-use-a-16550-uart-compatible-interface"></a>安装使用 16550 UART 兼容接口的串行设备
 

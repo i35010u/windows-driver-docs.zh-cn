@@ -1,7 +1,6 @@
 ---
 title: 邻近感应设备存在事件
 description: 邻近感应设备存在事件
-ms.assetid: 8E0E44D5-E6DD-4385-988E-EFDAA75C6D59
 keywords:
 - NFC
 - 近场通信
@@ -10,12 +9,12 @@ keywords:
 - NFP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1778e72ad4d8a062d269d6dada9ff6ecff351ef8
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 5a5ad08c891a9229723e29a44ac8b783da538166
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89382009"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812743"
 ---
 # <a name="proximity-device-presence-events"></a>邻近感应设备存在事件
 

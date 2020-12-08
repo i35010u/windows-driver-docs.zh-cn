@@ -1,7 +1,6 @@
 ---
 title: 访问 PCI 设备配置空间
 description: 访问 PCI 设备配置空间
-ms.assetid: 05e0ada9-d465-4787-abc5-469a75352ee0
 keywords:
 - PCI 配置空间 WDK 总线
 - 配置空间 WDK 总线
@@ -9,12 +8,12 @@ keywords:
 - IRP_MN_WRITE_CONFIG
 ms.date: 08/31/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 8455ac55f0b49ac87c2ca1b3fc3fed69b1bc2ca5
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: 9ef90d3fb6230acdc0e1f716f1df10900ceb65ed
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89402778"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812561"
 ---
 # <a name="accessing-pci-device-configuration-space"></a>访问 PCI 设备配置空间
 

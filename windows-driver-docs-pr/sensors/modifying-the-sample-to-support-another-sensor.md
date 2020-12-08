@@ -1,28 +1,27 @@
 ---
-title: 修改示例以支持另一台传感器
-description: 修改示例以支持另一台传感器
-ms.assetid: E759E022-C1E6-4403-B3DC-82A269E04B93
+title: 修改示例以支持另一个传感器
+description: 修改示例以支持另一个传感器
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b0a93c6920e41868a0bfacb2c0a549faf6ab634a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 89ebf7856d0ec6b109ff77d0e70fec51fa4b722e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63375189"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812295"
 ---
-# <a name="modify-the-sample-to-support-another-sensor"></a>修改示例以支持另一台传感器
+# <a name="modify-the-sample-to-support-another-sensor"></a>修改示例以支持另一个传感器
 
 
-SpbAccelerometer 示例演示如何编写用于 ADXL345 加速感应器的驱动程序。 如果您的驱动程序支持一个传感器 （这是不加速感应器），您将修改，或替换，以下文件和功能：
+SpbAccelerometer 示例演示如何为 ADXL345 加速感应程序编写驱动程序。 如果你的驱动程序支持单个传感器 (这不是加速感应器) ，你将修改或替换以下文件和功能：
 
-| 文件                    | 修订版本                                                                                                                                                                                                                                                                                                                                                                             |
+| 文件                    | 修订                                                                                                                                                                                                                                                                                                                                                                             |
 |-------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| SpbAccelerometer.inx    | 重命名该文件。 更新设备名称字符串，以反映你的设备的名称。 （搜索和替换"存储加速感应器"和"SpbAccelerometer"的实例）。请确保该硬件标识符 INF 文件中的包含"ACPI"字符串。                                                                                                                                      |
-| SpbAccelerometer.asl    | 重命名该文件。 更新\_CRS 部分，以便指定所需的设备的 I2C 和 GPIO 资源。                                                                                                                                                                                                                                                                    |
-| Adxl345.h               | 重命名该文件。 如果你的设备是类似于 ADXL345，支持的寄存器组和相应的读取和写入操作，请修改此文件，以便它映射到寄存器中和操作，支持你的设备。 如果你的设备不支持寄存器或读/写操作，删除此文件。                                                             |
-| AccelerometerDevice.h   | 重命名该文件。 将为使用对应于你的设备上的功能的方法对应于特定 ADXL345 功能的私有方法。 例如，如果你的设备不使用寄存器和中断，替换 ReadRegister、 WriterRegister 和 ConnectInterrupt 方法。 将不再反映您的设备功能的私有成员。 |
-| AccelerometerDevice.cpp | 重命名该文件。 删除已从标头文件中提取的方法和插入到你的设备的功能对应的新方法的定义。                                                                                                                                                                                                                  |
+| SpbAccelerometer.inx    | 重命名文件。 更新设备名称字符串以反映设备的名称。  (搜索和替换 "SPB 加速感应" 和 "SpbAccelerometer" 的实例。 ) 确保 INF 文件中的硬件标识符包含 "ACPI" 字符串。                                                                                                                                      |
+| SpbAccelerometer. asl    | 重命名文件。 更新 \_ CRS 部分，使其指定设备所需的 I2C 和 GPIO 资源。                                                                                                                                                                                                                                                                    |
+| Adxl345               | 重命名文件。 如果设备类似于 ADXL345，并且支持一组注册和相应的读取和写入操作，请修改此文件，使其映射到设备支持的寄存器和操作。 如果设备不支持寄存器或读/写操作，请删除此文件。                                                             |
+| AccelerometerDevice   | 重命名文件。 将对应于特定 ADXL345 功能的私有方法替换为与设备上的功能相对应的方法。 例如，如果你的设备未使用寄存器和中断，请替换 ReadRegister、WriterRegister 和 ConnectInterrupt 方法。 替换不再反映设备功能的私有成员。 |
+| AccelerometerDevice .cpp | 重命名文件。 从头文件中删除要提取的方法，并为与设备功能对应的新方法插入定义。                                                                                                                                                                                                                  |
 
  
 

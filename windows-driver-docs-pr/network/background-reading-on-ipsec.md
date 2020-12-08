@@ -1,18 +1,17 @@
 ---
 title: 对 IPsec 进行后台读取
 description: 对 IPsec 进行后台读取
-ms.assetid: b7316027-a66c-4630-88d4-fa3c66f735f8
 keywords:
-- ESP 受保护的数据包，WDK IPsec 卸载，后台读取
-- AH 受保护的数据包，WDK IPsec 卸载，后台读取
+- 受 ESP 保护的数据包 WDK IPsec 卸载，后台读取
+- 受 AH 保护的数据包 WDK IPsec 卸载，后台读取
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 25704a096c6a96693e7a238045a8c8b06050e1a3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b5d5757c9cc8853c6294d6e3f36acc6bddc6508a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63367689"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96813017"
 ---
 # <a name="background-reading-on-ipsec"></a>对 IPsec 进行后台读取
 
@@ -21,29 +20,29 @@ ms.locfileid: "63367689"
 
 
 
-若要理解本部分中，必须了解以下 Rfc 和 IP 安全 Working Group Internet 工程任务组 (IETF) 的发布的草稿中指定的 Internet 协议安全性 (IPsec):
+若要理解此部分，必须了解 internet 工程任务组 (IETF) 的 IP 安全工作组发布的以下 Rfc 和草稿中指定的 Internet 协议安全 (IPsec) ：
 
--   [Internet 协议 (RFC 2401) 的安全体系结构](https://go.microsoft.com/fwlink/p/?linkid=9845)
+-   [Internet 协议的安全体系结构 (RFC 2401) ](https://go.microsoft.com/fwlink/p/?linkid=9845)
 
-身份验证标头 (AH):
+AH) 的身份验证标头 (：
 
--   [IP 身份验证标头 (RFC 2402)](https://go.microsoft.com/fwlink/p/?linkid=9847)
+-   [IP Authentication 标头 (RFC 2402) ](https://go.microsoft.com/fwlink/p/?linkid=9847)
 
--   [HMAC-MD5-96 ESP 和 AH (RFC 2403) 内的使用](https://go.microsoft.com/fwlink/p/?linkid=9849)
+-   [在 ESP 和 AH 内使用 HMAC-MD5-96 (RFC 2403) ](https://go.microsoft.com/fwlink/p/?linkid=9849)
 
--   [HMAC-SHA-1-96 ESP 和 AH (RFC 2404) 内的使用](https://go.microsoft.com/fwlink/p/?linkid=9998)
+-   [在 ESP 和 AH 内使用 HMAC-SHA-1-96 (RFC 2404) ](https://go.microsoft.com/fwlink/p/?linkid=9998)
 
--   [HMAC-MD5 IP 与重播保护 (RFC 2085) 的身份验证](https://go.microsoft.com/fwlink/p/?linkid=9850)
+-   [HMAC-具有重播防护 (RFC 2085) 的 MD5 IP 身份验证 ](https://go.microsoft.com/fwlink/p/?linkid=9850)
 
-封装安全有效负载 (ESP):
+封装安全有效负载 (ESP) ：
 
--   [IP 封装安全负载 (ESP) (RFC 2406)](https://go.microsoft.com/fwlink/p/?linkid=9851)
+-   [IP 封装安全有效负载 (ESP)  (RFC 2406) ](https://go.microsoft.com/fwlink/p/?linkid=9851)
 
--   [ESP CBC 模式加密算法 (RFC 2451)](https://go.microsoft.com/fwlink/p/?linkid=9853)
+-   [ESP CBC-Mode 密码算法 (RFC 2451) ](https://go.microsoft.com/fwlink/p/?linkid=9853)
 
--   [ESP DES CBC 密码算法与显式 IV (RFC 2405)](https://go.microsoft.com/fwlink/p/?linkid=9854)
+-   [带有显式 IV (RFC 2405) 的 ESP DES CBC 密码算法 ](https://go.microsoft.com/fwlink/p/?linkid=9854)
 
--   [NULL 加密算法和使用 IPsec (RFC 2410)](https://go.microsoft.com/fwlink/p/?linkid=9855)
+-   [NULL 加密算法及其用于 IPsec (RFC 2410) ](https://go.microsoft.com/fwlink/p/?linkid=9855)
 
  
 

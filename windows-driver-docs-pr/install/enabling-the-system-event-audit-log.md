@@ -1,19 +1,18 @@
 ---
 title: 启用系统事件审核日志
 description: 启用系统事件审核日志
-ms.assetid: a4206f06-0c81-407e-80aa-4f6b08cb2a70
 keywords:
 - 详细日志记录 WDK 驱动程序签名
 - 安全审核策略 WDK 驱动程序签名
 - 系统审核策略 WDK 驱动程序签名
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 26d0831e98d24401f37c1bf896dc35662045f5fd
-ms.sourcegitcommit: 72535665bb80c28ee09331844cd0e15da8084e19
+ms.openlocfilehash: 0fc8305e4d244e71f5d311c2e516dee8dc118242
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88623500"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96813183"
 ---
 # <a name="enabling-the-system-event-audit-log"></a>启用系统事件审核日志
 
@@ -28,7 +27,7 @@ ms.locfileid: "88623500"
 
 若要启用安全审核策略来捕获审核日志中的加载失败，请执行以下步骤：
 
-1.  打开提升的命令提示符窗口。 若要打开提升的命令提示符窗口，请创建 *Cmd.exe*的桌面快捷方式，选择并按住 (或右键单击 *Cmd.exe* 快捷方式) ，然后选择 " **以管理员身份运行**"。
+1.  打开提升的命令提示符窗口。 若要打开提升的命令提示符窗口，请创建 *Cmd.exe* 的桌面快捷方式，选择并按住 (或右键单击 *Cmd.exe* 快捷方式) ，然后选择 " **以管理员身份运行**"。
 
 2.  在提升的命令提示符窗口中运行以下命令：
 

@@ -1,17 +1,16 @@
 ---
 title: 连接到并行设备
 description: 连接到并行设备
-ms.assetid: c05a1a1e-308a-4b9f-af43-761c4c14d6af
 keywords:
 - 并行设备 WDK，连接
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1a1e3a403a209381d095088180d164cb9cf9f3ea
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 6ae895b32f86a3fd9c455271d3638d58c8701367
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89385003"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812647"
 ---
 # <a name="connecting-to-a-parallel-device"></a>连接到并行设备
 

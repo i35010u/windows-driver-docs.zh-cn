@@ -1,7 +1,6 @@
 ---
 title: 存储设备的设备唯一标识符 (DUID)
 description: 存储设备的设备唯一标识符 (DUID)
-ms.assetid: 3846961c-5b75-4a1b-bced-601fc25bf071
 keywords:
 - 存储驱动程序 WDK，Duid
 - Duid WDK 存储
@@ -13,12 +12,12 @@ keywords:
 - 签名 WDK，存储
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 32f92ef0eba34d636b8091d09c1ace805a57db2a
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: ca7b87a3b45dae13b93bdce9ca8a0d37208e8882
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89190649"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96811737"
 ---
 # <a name="device-unique-identifiers-duids-for-storage-devices"></a>存储设备的设备唯一标识符 (DUID)
 
@@ -49,14 +48,14 @@ DUID 由 [**存储 \_ 设备 \_ 唯一 \_ 标识符**](/windows-hardware/drivers
 存储 \_ 设备 \_ ID \_ 描述符结构包含 (VPD) 的设备重要产品数据的页0x83 中提取的标识符。 通常，只有 SCSI 和光纤通道设备支持此页。 集成驱动器电子 (IDE) 和通用串行总线 (USB) 设备、IEEE 1394 驱动器和 RAID 控制器不提供页面0x83。
 
 <span id="STORAGE_DEVICE_DESCRIPTOR"></span><span id="storage_device_descriptor"></span>[**存储 \_ 设备 \_ 描述符**](/windows-hardware/drivers/ddi/ntddstor/ns-ntddstor-_storage_device_descriptor)  
-存储 \_ 设备 \_ 描述符结构包含其他查询数据，其中包括 **SerialNumberOffset** 成员中的 unit 序列号偏移量。 序列号的格式为长度可变、以 **NULL**结尾的字符串。 如果存储设备符合 SCSI 标准，则端口驱动程序将尝试从 VPD 的 "可选单元序列号" 页中提取序列号， (第 0x80) 。 如果存储设备是 IDE 设备，则端口驱动程序将从设备的标识数据生成序列号。
+存储 \_ 设备 \_ 描述符结构包含其他查询数据，其中包括 **SerialNumberOffset** 成员中的 unit 序列号偏移量。 序列号的格式为长度可变、以 **NULL** 结尾的字符串。 如果存储设备符合 SCSI 标准，则端口驱动程序将尝试从 VPD 的 "可选单元序列号" 页中提取序列号， (第 0x80) 。 如果存储设备是 IDE 设备，则端口驱动程序将从设备的标识数据生成序列号。
 
 <span id="STORAGE_DEVICE_LAYOUT_SIGNATURE"></span><span id="storage_device_layout_signature"></span>[**存储 \_ 设备 \_ 布局 \_ 签名**](/windows-hardware/drivers/ddi/storduid/ns-storduid-_storage_device_layout_signature)  
 存储 \_ 设备 \_ 布局 \_ 签名包含设备布局签名。
 
 未来版本中将向 Duid 添加更多数据。
 
-Duid 不具有固定大小，因此使用 Duid (称为 DUID 使用者) 的软件必须从存储**Size** \_ 设备 \_ 唯一标识符结构的大小成员那里获取 DUID 大小 \_ 。 可以在此同一结构的所有可用的中，使用该版本的 DUID。
+Duid 不具有固定大小，因此使用 Duid (称为 DUID 使用者) 的软件必须从存储 **Size** \_ 设备 \_ 唯一标识符结构的大小成员那里获取 DUID 大小 \_ 。 可以在此同一结构的所有可用的中，使用该版本的 DUID。
 
 某些设备并不为系统提供足够的信息来保证设备的 DUID 对于所有使用情况和所有 DUID 使用者而言都是足够唯一的。 如果操作系统可以从设备的 VPD 中检索唯一 Id，则可以为所有 DUID 使用者创建足够唯一的 DUID。 但是，如果系统必须单独从设备布局签名创建 DUID，则对于某些 DUID 使用者（而不是其他），DUID 将非常独特。
 
@@ -74,13 +73,13 @@ Duid 具有以下限制：
 
 -   Duid 通常包含无法显示的二进制内容。
 
--   Duid 并非始终以 **null**结尾。 DUID 使用者必须检查[**存储 \_ 设备 \_ 布局 \_ 签名**](/windows-hardware/drivers/ddi/storduid/ns-storduid-_storage_device_layout_signature)结构的**大小**成员，才能确定 DUID 的长度。
+-   Duid 并非始终以 **null** 结尾。 DUID 使用者必须检查 [**存储 \_ 设备 \_ 布局 \_ 签名**](/windows-hardware/drivers/ddi/storduid/ns-storduid-_storage_device_layout_signature)结构的 **大小** 成员，才能确定 DUID 的长度。
 
 -   DUID 使用者必须使用 [**CompareStorageDuids**](/windows-hardware/drivers/ddi/storduid/nf-storduid-comparestorageduids) 来比较 duid，而不是按字节对它们进行比较。
 
 -   *枚举* 器不能尝试使用 duid 来识别即插即用 (PnP) 用途的设备对象。 多路径系统可以有多个共享同一 DUID 的设备。 但对于 PnP，设备 Id 必须是唯一的。
 
-发起程序可以使用属性 ID 为**StorageDeviceUniqueIdProperty**的[**IOCTL \_ 存储 \_ 查询 \_ 属性**](/windows-hardware/drivers/ddi/ntddstor/ni-ntddstor-ioctl_storage_query_property)请求来查询 DUID 信息数据。
+发起程序可以使用属性 ID 为 **StorageDeviceUniqueIdProperty** 的 [**IOCTL \_ 存储 \_ 查询 \_ 属性**](/windows-hardware/drivers/ddi/ntddstor/ni-ntddstor-ioctl_storage_query_property)请求来查询 DUID 信息数据。
 
 ### <a name="span-idhow_to_compare_duidsspanspan-idhow_to_compare_duidsspanhow-to-compare-duids"></a><span id="how_to_compare_duids"></span><span id="HOW_TO_COMPARE_DUIDS"></span>如何比较 Duid
 
@@ -105,7 +104,7 @@ DUID 由若干子 Id 组成。 至少一个子 Id 匹配，而两个 Duid 可能
 
 3.  检查 unit 序列号。 如果供应商 ID、产品 ID 和序列号相同，则 Duid match 和 [**CompareStorageDuids**](/windows-hardware/drivers/ddi/storduid/nf-storduid-comparestorageduids) 将返回 **DuidSubIdMatch**。 如果这些值都不匹配或设备未提供这些值，则继续下一次检查。
 
-4.  检查驱动器布局签名。 如果两个 Duid 匹配的驱动器布局签名，则 Duid match 和[**CompareStorageDuids**](/windows-hardware/drivers/ddi/storduid/nf-storduid-comparestorageduids) 将返回 **DuidSubIdMatch**。 如果驱动器签名不匹配，或者系统无法读取设备的驱动器布局签名，则 Duid 不匹配，并且 **CompareStorageDuids** 将返回 **DuidNoMatch**。
+4.  检查驱动器布局签名。 如果两个 Duid 匹配的驱动器布局签名，则 Duid match 和 [**CompareStorageDuids**](/windows-hardware/drivers/ddi/storduid/nf-storduid-comparestorageduids) 将返回 **DuidSubIdMatch**。 如果驱动器签名不匹配，或者系统无法读取设备的驱动器布局签名，则 Duid 不匹配，并且 **CompareStorageDuids** 将返回 **DuidNoMatch**。
 
  
 

@@ -1,15 +1,14 @@
 ---
 title: 加速计数据字段
 description: 本主题提供有关特定于加速度的数据字段的信息。
-ms.assetid: 88333B6A-E262-4937-9349-156B00BA8CC4
 ms.date: 07/20/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 2604a3c8fdc9ef810f13eadd1d6140619c5d7cfb
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 833115b8da6d14deaa277858fbe9fe1a0a0db58e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91734516"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812395"
 ---
 # <a name="accelerometer-data-fields"></a>加速计数据字段
 

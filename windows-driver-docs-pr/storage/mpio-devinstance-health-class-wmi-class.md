@@ -1,15 +1,14 @@
 ---
 title: MPIO \_ DEVINSTANCE \_ HEALTH \_ 类 WMI 类
 description: MPIO \_ DEVINSTANCE \_ HEALTH \_ 类 WMI 类
-ms.assetid: d2c77461-d89c-4c1b-86dc-3373de0f11e4
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: e31c2911f6401514cee9f94f4fe0191690428d06
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 8db2da8dad25b4ff21c471e8bc579fe3c8363c98
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89190019"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96811581"
 ---
 # <a name="mpio_devinstance_health_class-wmi-class"></a>MPIO \_ DEVINSTANCE \_ HEALTH \_ 类 WMI 类
 

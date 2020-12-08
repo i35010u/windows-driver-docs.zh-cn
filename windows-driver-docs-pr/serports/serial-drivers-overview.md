@@ -1,15 +1,14 @@
 ---
 title: 串行控制器驱动程序概述
 description: 所有版本的 Windows 都为串行控制器设备提供驱动程序支持。
-ms.assetid: 1EA0221E-0F68-429B-9DA5-4AE2D3394A09
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 962b1a3b4a25cd06531cc3dc29488f399efc8818
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 3895271105d87a23e1e19672c9ecd98b79860b94
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89189447"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96811943"
 ---
 # <a name="serial-controller-drivers-overview"></a>串行控制器驱动程序概述
 
@@ -23,7 +22,7 @@ GitHub 上的 Windows 驱动程序示例存储库包含 [序列](https://github.
 
 ## <a name="sercx-and-sercx2"></a>SerCx 和 SerCx2
 
-从 Windows 8 开始，SerCx 是系统提供的组件，它支持印刷电路板上集成电路间的串行通信。 SerCx 是内核模式驱动程序框架的扩展 (KMDF) 。 此扩展简化了串行控制器的自定义驱动程序的开发。 SerCx 通过处理串行控制器常见的很多处理任务来协助基于扩展的串行控制器驱动程序。 此驱动程序通过 [SerCx 设备驱动程序接口](/windows-hardware/drivers/ddi/index)与 SerCx 通信。
+从 Windows 8 开始，SerCx 是系统提供的组件，它支持印刷电路板上集成电路间的串行通信。 SerCx 是 Kernel-Mode Driver Framework (KMDF) 的扩展。 此扩展简化了串行控制器的自定义驱动程序的开发。 SerCx 通过处理串行控制器常见的很多处理任务来协助基于扩展的串行控制器驱动程序。 此驱动程序通过 [SerCx 设备驱动程序接口](/windows-hardware/drivers/ddi/index)与 SerCx 通信。
 
 从 Windows 8.1 开始，SerCx 由 SerCx2 取代。 SerCx2 对 SerCx 进行了很多改进，以降低串行控制器驱动程序的大小和复杂性。 特别是，SerCx2 免除了管理超时所需的处理工作的串行控制器驱动程序，并协调了需要访问串行控制器的 i/o 事务。 因此，串行控制器驱动程序更小且更简单。 串行控制器的硬件供应商提供基于扩展的串行控制器驱动程序，该驱动程序管理串行控制器中特定于硬件的功能，并依赖于 SerCx2 执行一般的串行控制器任务。 此驱动程序通过 [SerCx2 设备驱动程序接口](/windows-hardware/drivers/ddi/index)与 SerCx2 通信。
 
@@ -41,7 +40,7 @@ GitHub 上的 Windows 驱动程序示例存储库包含 [序列](https://github.
 <thead>
 <tr class="header">
 <th>主题</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>

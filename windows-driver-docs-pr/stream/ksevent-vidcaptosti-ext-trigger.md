@@ -1,7 +1,6 @@
 ---
 title: KSEVENT \_ VIDCAPTOSTI \_ EXT \_ 触发器
 description: KSEVENT \_ VIDCAPTOSTI \_ EXT \_ 触发器事件传播一项操作，例如，在视频捕获设备上按下触发器按钮的时间，从内核模式视频捕获微型驱动程序到 DirectShow in user 模式。
-ms.assetid: 97f67d22-20c4-460c-9022-04e55e74f6f9
 keywords:
 - KSEVENT_VIDCAPTOSTI_EXT_TRIGGER 流媒体设备
 topic_type:
@@ -12,12 +11,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 14ba9b8d3f5e1f78da6ff8b34c8f8bcff0aa8b54
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: d3afdcac79acf8abf8827ad05359d25b9fb431a9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105422"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96813419"
 ---
 # <a name="ksevent_vidcaptosti_ext_trigger"></a>KSEVENT \_ VIDCAPTOSTI \_ EXT \_ 触发器
 

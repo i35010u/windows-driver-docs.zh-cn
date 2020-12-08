@@ -1,22 +1,21 @@
 ---
 title: 一般分段卸载
 description: NetAdapterCx 中的一般分段卸载使用情况、规则和示例
-ms.assetid: ''
 keywords:
 - WDF 网络适配器类扩展卸载，NetAdapterCx 硬件卸载，NetAdapterCx 卸载，Get-netadapter 卸载，一般分段卸载，GSO，大型分段卸载，LSO，UDP 分段卸载，USO
 ms.date: 10/08/2020
 ms.custom: Fe
-ms.openlocfilehash: 96a3090bf18641d4d54519291136127acf8f4624
-ms.sourcegitcommit: 5587af31b12cf96c1a31d42f7b40e8f72e3d739c
+ms.openlocfilehash: 69654badd633c216e3ee418b417c4adcafdae82c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94572485"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96813041"
 ---
 # <a name="generic-segmentation-offload"></a>一般分段卸载
 
 > [!WARNING]
-> 本主题中的一些信息与预发布的产品相关，该产品在商业发布之前可能会进行重大修改。 Microsoft 对此处提供的信息不提供任何明示或暗示的保证。
+> 本主题中的一些信息与预发布的产品相关，该产品在商业发布之前可能会进行重大修改。 Microsoft 不对此处提供的信息作任何明示或默示的担保。
 >
 > NetAdapterCx 仅在 Windows 10 版本2004中处于预览阶段。
 >
@@ -52,7 +51,7 @@ NetAdapterCx 检查注册表关键字，并在启用活动卸载功能时遵循�
 
 以下规则适用于 [**NET_ADAPTER_OFFLOAD_GSO_CAPABILITIES**](/windows-hardware/drivers/ddi/netadapteroffload/ns-netadapteroffload-_net_adapter_offload_gso_capabilities) 结构：
 
-1. 驱动程序必须设置 **Layer3Flags** 和 **Layer4Flags** 。
+1. 驱动程序必须设置 **Layer3Flags** 和 **Layer4Flags**。
 
 1. 如果 NIC 支持 LSO，则驱动程序必须在 **Layer4Flags** 字段中填充 `NetAdapterOffloadLayer4FlagTcpWithoutOptions` TCP 标志。
 

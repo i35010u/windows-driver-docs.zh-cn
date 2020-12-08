@@ -1,18 +1,17 @@
 ---
 title: 安装 IDE 控制器微型驱动程序
 description: 安装 IDE 控制器微型驱动程序
-ms.assetid: c1b41f89-150d-47e9-9bed-04f5796f69bd
 keywords:
 - IDE 控制器微型驱动程序 WDK 存储，安装
 - 存储 IDE 控制器微型驱动程序 WDK，安装
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3ddbb4bc95a6ab90b2045199f57d824351bb61ba
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: ccf7f33686e6399d48f9e1e36f31aa09ad47f251
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89192663"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96811695"
 ---
 # <a name="installing-ide-controller-minidrivers"></a>安装 IDE 控制器微型驱动程序
 

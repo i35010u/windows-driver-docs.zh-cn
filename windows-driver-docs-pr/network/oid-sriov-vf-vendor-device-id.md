@@ -1,16 +1,15 @@
 ---
 title: OID_SRIOV_VF_VENDOR_DEVICE_ID
 description: 过量驱动程序发出对象标识符 (OID) 方法请求 OID_SRIOV_VF_VENDOR_DEVICE_ID，以查询 pci express) PCIe (的的 (PCIe) 的设备标识符 (VendorID)  ()  此虚拟网络适配器在附加到 VF 的 Hyper-v 子分区中公开。过量驱动程序将此 OID 方法请求发送到 PCI Express (PCIe 的微型端口驱动程序) 物理功能 (PF) 网络适配器。 对于支持单个根 i/o 虚拟化 (SR-IOV) 接口的 PF 小型端口驱动程序，需要此 OID 方法请求。
-ms.assetid: 19D98264-325B-4EA4-83BF-BBFECD185E55
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_SRIOV_VF_VENDOR_DEVICE_ID 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 38d3f7b6bf5308a413ead41ac88de98857ef8fa8
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 97e6388aefdea2a652358eb5e23b443a6685e1de
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106852"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812957"
 ---
 # <a name="oid_sriov_vf_vendor_device_id"></a>OID \_ SRIOV \_ VF \_ 供应商 \_ 设备 \_ ID
 
@@ -19,7 +18,7 @@ ms.locfileid: "90106852"
 
 过量驱动程序将此 OID 方法请求发送到 PCI Express (PCIe 的微型端口驱动程序) 物理功能 (PF) 网络适配器。 对于支持单个根 i/o 虚拟化 (SR-IOV) 接口的 PF 小型端口驱动程序，需要此 OID 方法请求。
 
-[**Ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的**InformationBuffer**成员包含指向[**NDIS \_ SRIOV \_ VF \_ 供应商 \_ 设备 \_ ID \_ 信息**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_vf_vendor_device_id_info)结构的指针。
+[**Ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的 **InformationBuffer** 成员包含指向 [**NDIS \_ SRIOV \_ VF \_ 供应商 \_ 设备 \_ ID \_ 信息**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_vf_vendor_device_id_info)结构的指针。
 
 <a name="remarks"></a>备注
 -------

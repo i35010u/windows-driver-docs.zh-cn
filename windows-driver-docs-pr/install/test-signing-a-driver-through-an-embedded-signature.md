@@ -1,15 +1,14 @@
 ---
 title: 通过嵌入式签名对驱动程序进行测试签名
 description: 通过嵌入式签名对驱动程序进行测试签名
-ms.assetid: 862e89e0-f84a-4058-a32f-09ae3043b884
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d87e9efdc235cbaed6c4a8ecf200811c6ff7ca20
-ms.sourcegitcommit: a44ade167cdfb541cf1818e9f9e3726f23f90b66
+ms.openlocfilehash: a877808b1801eb89326ae945d3d5e7f3d4ddff68
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94361383"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96813063"
 ---
 # <a name="test-signing-a-driver-through-an-embedded-signature"></a>通过嵌入式签名对驱动程序进行测试签名
 
@@ -43,9 +42,9 @@ Signtool sign /v /fd sha256 /s PrivateCertStore /n Contoso.com(Test) /t http://t
 
 - **/Fd** 选项指定用于创建文件签名的文件摘要算法。 默认值为 SHA1。
 
-- **/S** 选项指定包含测试证书的证书存储 ( *PrivateCertStore)* 的名称。
+- **/S** 选项指定包含测试证书的证书存储 (*PrivateCertStore)* 的名称。
 
-- **/N** 选项指定在指定的证书存储中安装的 ( *Contoso.com (测试) # B3* 的证书的名称。
+- **/N** 选项指定在指定的证书存储中安装的 (*Contoso.com (测试) # B3* 的证书的名称。
 
 - **/T** 选项指定了 `http://timestamp.digicert.com` 用于对数字签名进行时间戳的 TSA () 的 URL。
 

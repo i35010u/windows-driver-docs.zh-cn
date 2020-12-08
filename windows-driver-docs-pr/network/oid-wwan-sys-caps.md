@@ -1,23 +1,22 @@
 ---
 title: OID_WWAN_SYS_CAPS_INFO
 description: OID_WWAN_SYS_CAPS_INFO 检索有关调制解调器的信息。 可以将其发送到调制解调器公开的任何 NDIS 实例上。
-ms.assetid: D158432A-A715-4ABB-969C-F8F80D2DB845
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_WWAN_SYS_CAPS_INFO 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: b5b80577b7fb3fd614699cd4a6050d95ebaec696
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 59d64b6d78ce277e9291a124548ba20961bd7442
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89211649"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812885"
 ---
 # <a name="oid_wwan_sys_caps_info"></a>OID \_ WWAN \_ SYS \_ CAP \_ 信息
 
 
 OID \_ WWAN \_ SYS \_ cap \_ 信息检索有关调制解调器的信息。 可以将其发送到调制解调器公开的任何 NDIS 实例上。
 
-微型端口驱动程序必须异步处理查询请求，最初 \_ 返回 \_ \_ 原始请求所需的 ndis 状态指示，然后再发送 [**ndis \_ 状态 \_ wwan \_ sys \_ \_ **](./ndis-status-wwan-sys-caps.md) cap 信息状态通知，其中包含 [**ndis \_ wwan \_ sys \_ \_ **](/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_sys_caps_info) cap 信息结构，该信息又包含一个 [**wwan \_ sys \_ cap \_ **](/windows-hardware/drivers/ddi/wwan/ns-wwan-_wwan_sys_caps_info) 信息结构，用于提供有关调制解调器总体系统功能的信息。
+微型端口驱动程序必须异步处理查询请求，最初 \_ 返回 \_ \_ 原始请求所需的 ndis 状态指示，然后再发送 [**ndis \_ 状态 \_ wwan \_ sys \_ \_**](./ndis-status-wwan-sys-caps.md) cap 信息状态通知，其中包含 [**ndis \_ wwan \_ sys \_ \_**](/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_sys_caps_info) cap 信息结构，该信息又包含一个 [**wwan \_ sys \_ cap \_**](/windows-hardware/drivers/ddi/wwan/ns-wwan-_wwan_sys_caps_info) 信息结构，用于提供有关调制解调器总体系统功能的信息。
 
 下图演示了一个查询请求。
 
@@ -45,7 +44,7 @@ OID \_ WWAN \_ SYS \_ cap \_ 信息检索有关调制解调器的信息。 可�
 <tbody>
 <tr class="odd">
 <td><p>版本</p></td>
-<td><p>Windows 10 版本1703</p></td>
+<td><p>Windows 10 版本 1703</p></td>
 </tr>
 <tr class="even">
 <td><p>标头</p></td>
@@ -54,7 +53,7 @@ OID \_ WWAN \_ SYS \_ cap \_ 信息检索有关调制解调器的信息。 可�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**NDIS \_ 状态 \_ WWAN \_ SYS \_ CAP \_ 信息**](./ndis-status-wwan-sys-caps.md)

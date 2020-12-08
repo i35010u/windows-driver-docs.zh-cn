@@ -1,25 +1,24 @@
 ---
 title: OID_WWAN_SLOT_INFO
 description: OID_WWAN_SLOT_INFO 检索指定 UICC 槽的高级聚合状态和其中的卡 (如果任何) ，则为。 当某个槽的状态发生更改时，也可以使用它来传递未经请求的通知。
-ms.assetid: 6267D480-5055-4A7A-B2A0-F4DF9154DCD7
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_WWAN_SLOT_INFO 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: ed84d4bdf43927c56b3be419bca9d8cb73bb8b0d
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 1dac31e5ecc51d6d2f250098bec03b9f3ea7c3b4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89217983"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812915"
 ---
 # <a name="oid_wwan_slot_info"></a>OID \_ WWAN \_ 槽 \_ 信息
 
 
 OID \_ WWAN \_ 槽 \_ 信息检索指定 UICC 槽的高级汇总状态，其中的卡 (如果任何) ，则为。 当某个槽的状态发生更改时，也可以使用它来传递未经请求的通知。
 
-微型端口驱动程序必须异步处理查询请求，最初 \_ 返回 \_ \_ 原始请求所需的 ndis 状态指示，然后再发送一个包含[**ndis \_ wwan \_ \_ **](/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_slot_info)槽信息状态通知的 ndis [** \_ 状态 \_ wwan \_ 槽 \_ **](./ndis-status-wwan-slot-info-status.md)信息状态通知，后者又包含一个[**wwan \_ 槽 \_ **](/windows-hardware/drivers/ddi/wwan/ns-wwan-_wwan_slot_info)信息结构，用于提供有关调制解调器总体系统功能的信息。
+微型端口驱动程序必须异步处理查询请求，最初 \_ 返回 \_ \_ 原始请求所需的 ndis 状态指示，然后再发送一个包含 [**ndis \_ wwan \_ \_**](/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_slot_info)槽信息状态通知的 ndis [**\_ 状态 \_ wwan \_ 槽 \_**](./ndis-status-wwan-slot-info-status.md)信息状态通知，后者又包含一个 [**wwan \_ 槽 \_**](/windows-hardware/drivers/ddi/wwan/ns-wwan-_wwan_slot_info)信息结构，用于提供有关调制解调器总体系统功能的信息。
 
-查询请求将 [**NDIS \_ WWAN \_ 获取 \_ 槽 \_ 信息**](/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_get_slot_info) 结构指定为输入。 微型端口驱动程序应根据[**WWAN \_ 获取 \_ 槽 \_ 信息**](/windows-hardware/drivers/ddi/wwan/ns-wwan-_wwan_get_slot_info)结构的**SLOTINDEX**成员中指定的槽 ID 返回槽状态。
+查询请求将 [**NDIS \_ WWAN \_ 获取 \_ 槽 \_ 信息**](/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_get_slot_info) 结构指定为输入。 微型端口驱动程序应根据 [**WWAN \_ 获取 \_ 槽 \_ 信息**](/windows-hardware/drivers/ddi/wwan/ns-wwan-_wwan_get_slot_info)结构的 **SLOTINDEX** 成员中指定的槽 ID 返回槽状态。
 
 下图演示了一个查询请求。
 
@@ -27,7 +26,7 @@ OID \_ WWAN \_ 槽 \_ 信息检索指定 UICC 槽的高级汇总状态，其中�
 
 设置请求不适用。
 
-当槽/插卡状态发生变化时，会将 [**ndis \_ 状态 \_ wwan \_ 槽 \_ 信息**](./ndis-status-wwan-slot-info-status.md) 通知发送到 [**ndis \_ WWAN \_ 槽 \_ **](/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_slot_info) 信息结构。
+当槽/插卡状态发生变化时，会将 [**ndis \_ 状态 \_ wwan \_ 槽 \_ 信息**](./ndis-status-wwan-slot-info-status.md) 通知发送到 [**ndis \_ WWAN \_ 槽 \_**](/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_slot_info) 信息结构。
 
 <a name="remarks"></a>备注
 -------
@@ -49,7 +48,7 @@ OID \_ WWAN \_ 槽 \_ 信息检索指定 UICC 槽的高级汇总状态，其中�
 <tbody>
 <tr class="odd">
 <td><p>版本</p></td>
-<td><p>Windows 10 版本1703</p></td>
+<td><p>Windows 10 版本 1703</p></td>
 </tr>
 <tr class="even">
 <td><p>标头</p></td>
@@ -58,7 +57,7 @@ OID \_ WWAN \_ 槽 \_ 信息检索指定 UICC 槽的高级汇总状态，其中�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**NDIS \_ 状态 \_ WWAN \_ 槽 \_ 信息**](./ndis-status-wwan-slot-info-status.md)

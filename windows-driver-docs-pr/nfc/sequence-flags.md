@@ -1,7 +1,6 @@
 ---
 title: 序列标志
 description: NFC CX 为序列事件定义以下常量。
-ms.assetid: AC6CE286-52F7-4FC9-9F38-CD10C1413A90
 keywords:
 - NFC
 - 近场通信
@@ -20,12 +19,12 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f464457e841a160db9959c8740a727087303dbd7
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 9b87eae993ce3347aaf49a21ceef82bcef7bd50c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89381665"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812729"
 ---
 # <a name="sequence-flags"></a>序列标志
 

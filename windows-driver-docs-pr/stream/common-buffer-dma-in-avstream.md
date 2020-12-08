@@ -1,7 +1,6 @@
 ---
 title: AVStream 中的常见缓冲区 DMA
 description: AVStream 中的常见缓冲区 DMA
-ms.assetid: 8cbadb5a-f879-4fe0-a698-cde3b9f6df83
 keywords:
 - 常见缓冲区 DMA WDK AVStream
 - 缓冲区 WDK AVStream
@@ -11,12 +10,12 @@ keywords:
 - 直接内存访问 WDK AVStream
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dab1d9067d6d5ec191be1d520cff3eb61ba31e4f
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 8e5ccc481869012d71fd82048ea357b093a17907
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89191827"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96813455"
 ---
 # <a name="common-buffer-dma-in-avstream"></a>AVStream 中的常见缓冲区 DMA
 
@@ -28,11 +27,11 @@ ms.locfileid: "89191827"
 
 在 AVStream 微型驱动程序中使用通用缓冲区 DMA：
 
-1.  调用 [**IoGetDmaAdapter**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetdmaadapter)来获取 DMA 适配器，就像在基于数据包的 DMA 中一样。 不要指定 KSPIN \_ 标志 \_ \_ 在[**KSPIN \_ 描述符 \_ EX**](/windows-hardware/drivers/ddi/ks/ns-ks-_kspin_descriptor_ex)结构的**Flags**成员中生成映射，并且不要将 DMA 适配器注册到 AVStream。 可能需要实现自己的专用缓冲区/复制方案。
+1.  调用 [**IoGetDmaAdapter**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetdmaadapter)来获取 DMA 适配器，就像在基于数据包的 DMA 中一样。 不要指定 KSPIN \_ 标志 \_ \_ 在 [**KSPIN \_ 描述符 \_ EX**](/windows-hardware/drivers/ddi/ks/ns-ks-_kspin_descriptor_ex)结构的 **Flags** 成员中生成映射，并且不要将 DMA 适配器注册到 AVStream。 可能需要实现自己的专用缓冲区/复制方案。
 
 2.   (ISR 注册中断服务例程) 如[编写硬件的 AVStream 微型驱动程序](writing-avstream-minidrivers-for-hardware.md)中所述
 
-如果 KSPIN **Flags** \_ 说明符 \_ EX Sets KSPIN 标志的 Flags 成员 \_ \_ \_ 未 \_ 启动 \_ 处理，则在 AVStream 调用[*AVStrMiniPinProcess*](/windows-hardware/drivers/ddi/ks/nc-ks-pfnkspin)之前执行以下步骤：
+如果 KSPIN **Flags** \_ 说明符 \_ EX Sets KSPIN 标志的 Flags 成员 \_ \_ \_ 未 \_ 启动 \_ 处理，则在 AVStream 调用 [*AVStrMiniPinProcess*](/windows-hardware/drivers/ddi/ks/nc-ks-pfnkspin)之前执行以下步骤：
 
 1.  微型驱动程序设置其常见的缓冲区传输。
 
@@ -40,7 +39,7 @@ ms.locfileid: "89191827"
 
 3.  当公用缓冲区已满时，微型驱动程序从 DPC 调用 [**KsPinAttemptProcessing**](/windows-hardware/drivers/ddi/ks/nf-ks-kspinattemptprocessing) 。
 
-4.  如果满足[**KSPIN \_ 描述符的 \_ **](/windows-hardware/drivers/ddi/ks/ns-ks-_kspin_descriptor_ex) **Flags**成员指定的条件，AVStream 将调用进程调度。
+4.  如果满足 [**KSPIN \_ 描述符的 \_**](/windows-hardware/drivers/ddi/ks/ns-ks-_kspin_descriptor_ex) **Flags** 成员指定的条件，AVStream 将调用进程调度。
 
 在供应商提供的 [*AVStrMiniPinProcess*](/windows-hardware/drivers/ddi/ks/nc-ks-pfnkspin) 回调例程中，一种可能的操作过程如下所示：
 

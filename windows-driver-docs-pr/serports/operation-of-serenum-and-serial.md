@@ -1,7 +1,6 @@
 ---
 title: Serenum 和串行的操作
 description: Serenum 和串行的操作
-ms.assetid: d14b6655-c031-42dd-921e-b6a09afde86d
 keywords:
 - 串行驱动程序 WDK，操作
 - Serenum 驱动程序 WDK，操作
@@ -12,12 +11,12 @@ keywords:
 - 串行设备 WDK，Serenum 驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a4a4886b8b9ea44a8b24bd0c3ae28db7f5af4b95
-ms.sourcegitcommit: 20eac54e419a594f7cea766ee28f158559dfd79c
+ms.openlocfilehash: 226839a4095bee03d9b41ed6e40587b3b79e1230
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91754844"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96811999"
 ---
 # <a name="operation-of-serenum-and-serial"></a>Serenum 和串行的操作
 

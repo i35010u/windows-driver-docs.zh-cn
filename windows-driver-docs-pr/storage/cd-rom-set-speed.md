@@ -1,7 +1,6 @@
 ---
 title: CD-ROM 设置速度
 description: CD-ROM 设置速度
-ms.assetid: 25a46b23-f823-4fc7-a370-cab1c9418a94
 keywords:
 - CD-ROM 驱动程序 WDK 存储
 - 存储 cd-rom 驱动程序 WDK
@@ -14,12 +13,12 @@ keywords:
 - 设置流式处理
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a8856a9510f95dbe772f1335846223c8dd193134
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 7883fbe1ebd626cc9691b36143a209e60b90cbb3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89185225"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96811783"
 ---
 # <a name="cd-rom-set-speed"></a>CD-ROM 设置速度
 
@@ -30,11 +29,11 @@ ms.locfileid: "89185225"
 
  (MMC) 规范的第2版 *Scsi-3 多媒体命令* 定义了两个用于设置 cd-rom 速度的命令：设置 cd 速度和设置流式处理。 在 Windows Vista 中，应用程序可以通过向类驱动程序发送 [**IOCTL \_ CDROM \_ \_ 速度**](/windows-hardware/drivers/ddi/ntddcdrm/ni-ntddcdrm-ioctl_cdrom_set_speed) 请求，指示 cd-rom 类驱动程序发出这两个命令之一。
 
-若要将 SET CD 速度命令发送到 CD-ROM 设备，调用方在对 IOCTL **CdromSetSpeed** cdrom **RequestType**集速度的输入上指定了[**CDROM \_ 集 \_ 速度**](/windows-hardware/drivers/ddi/ntddcdrm/ns-ntddcdrm-_cdrom_set_speed)的 RequestType 成员中的 CdromSetSpeed 请求类型 \_ \_ \_ 。
+若要将 SET CD 速度命令发送到 CD-ROM 设备，调用方在对 IOCTL **CdromSetSpeed** cdrom **RequestType** 集速度的输入上指定了 [**CDROM \_ 集 \_ 速度**](/windows-hardware/drivers/ddi/ntddcdrm/ns-ntddcdrm-_cdrom_set_speed)的 RequestType 成员中的 CdromSetSpeed 请求类型 \_ \_ \_ 。
 
-若要将设置流命令发送到设备，调用方在对 IOCTL **CdromSetStreaming** cdrom **RequestType**集速度的输入上指定了[**CDROM \_ 集 \_ 流式处理**](/windows-hardware/drivers/ddi/ntddcdrm/ns-ntddcdrm-_cdrom_set_streaming)的 RequestType 成员中的 CdromSetStreaming 请求类型 \_ \_ \_ 。
+若要将设置流命令发送到设备，调用方在对 IOCTL **CdromSetStreaming** cdrom **RequestType** 集速度的输入上指定了 [**CDROM \_ 集 \_ 流式处理**](/windows-hardware/drivers/ddi/ntddcdrm/ns-ntddcdrm-_cdrom_set_streaming)的 RequestType 成员中的 CdromSetStreaming 请求类型 \_ \_ \_ 。
 
-如果应用程序使用 "设置 CD 速度" 命令更改了主轴速度，则当媒体更改时，设备将自动恢复为其默认速度。 如果应用程序使用设置流命令更改了主轴速度，则介质的更改不会影响速度，除非调用方在 CDROM **FALSE**集**Persistent** \_ \_ 流式处理结构的永久成员中指定值 FALSE。
+如果应用程序使用 "设置 CD 速度" 命令更改了主轴速度，则当媒体更改时，设备将自动恢复为其默认速度。 如果应用程序使用设置流命令更改了主轴速度，则介质的更改不会影响速度，除非调用方在 CDROM **FALSE** 集 **Persistent** \_ \_ 流式处理结构的永久成员中指定值 FALSE。
 
 设置流式处理请求仅在符合 MMC 的设备上运行。 如果应用程序将此请求发送到与 MMC 不兼容的设备，则 cd-rom 类驱动程序将无法请求。
 

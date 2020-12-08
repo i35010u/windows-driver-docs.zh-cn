@@ -1,7 +1,6 @@
 ---
 title: NFC 轮询
 description: NFC 轮询
-ms.assetid: C6C531EC-59AA-4AF5-903E-A726C0E79E47
 keywords:
 - NFC
 - 近场通信
@@ -10,12 +9,12 @@ keywords:
 - NFP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b67e9295421caaf671b57a2edeec931edfd30512
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 63da1e0c78629434a100e8e188acdb08a3683fe6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89382443"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812749"
 ---
 # <a name="nfc-polling"></a>NFC 轮询
 

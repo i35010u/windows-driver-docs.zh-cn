@@ -1,18 +1,17 @@
 ---
 title: 安装智能卡读卡器驱动程序
 description: 安装智能卡读卡器驱动程序
-ms.assetid: 6e641718-d6d0-4f09-8935-6b381ad0c085
 keywords:
 - 智能卡驱动程序 WDK，安装
 - 供应商提供的驱动程序 WDK 智能卡，安装
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 02d45cd4015ba98bd00498866279fa8630c2acb0
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: b9f2780e4ff47f179e6cd903463275e7ec34d064
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89384001"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96811919"
 ---
 # <a name="installing-smart-card-reader-drivers"></a>安装智能卡读卡器驱动程序
 
@@ -22,7 +21,7 @@ ms.locfileid: "89384001"
 
 本部分提供特定于 Microsoft Windows 的智能卡读卡器驱动程序的安装信息。
 
-提供自己的读取器驱动程序的供应商应该使每个驱动程序成为驱动程序 INF 文件的 " [**Inf 版本" 部分**](../install/inf-version-section.md)中的**SmartCardReader**安装程序类的成员。 供应商还必须添加一个部分来正确配置智能卡服务。 例如：
+提供自己的读取器驱动程序的供应商应该使每个驱动程序成为驱动程序 INF 文件的 " [**Inf 版本" 部分**](../install/inf-version-section.md)中的 **SmartCardReader** 安装程序类的成员。 供应商还必须添加一个部分来正确配置智能卡服务。 例如：
 
 ```cpp
 [Version]

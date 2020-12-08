@@ -1,15 +1,14 @@
 ---
 title: 有关图形的 PCI Express 常见问题解答
 description: 本文提供了有关适用于 Microsoft Windows 操作系统的 PCI Express 图形的信息，并回答了常见问题。
-ms.assetid: 30FC1CF9-B642-4E00-869C-63009BA3F128
 ms.date: 06/30/2004
 ms.localizationpriority: medium
-ms.openlocfilehash: 0f800460783903a8e012b78731b668dd049c8e62
-ms.sourcegitcommit: 67efcd26f7be8f50c92b141ccd14c9c68f4412d8
+ms.openlocfilehash: 9c5570b8f89407e55a0cc92186c5cb84aac391c5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88902632"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812543"
 ---
 # <a name="pci-express-faq-for-graphics"></a>有关图形的 PCI Express 常见问题解答
 
@@ -62,9 +61,9 @@ Windows Vista 显示器驱动程序模型 (WDDM) 对于 PCIe 图形适配器有�
 
 AGP 专用于图形适配器，没有其他设备类使用它。 PCIe 旨在供以前使用过 PCI 的所有设备类使用。 使用 AGP 时，许多视频驱动程序直接对芯片进行编程，这会导致严重的不良效果，如图形堆栈崩溃和内存损坏。 由于 PCIe 将用于系统中的所有设备，因此更重要的是，视频驱动程序不会直接对芯片组进行编程。
 
-## <a name="frequently-asked-questions"></a>常见问题
+## <a name="frequently-asked-questions"></a>常见问题解答
 
-**PCIe 视频卡是否适用于 Windows XP？** 是。 PCIe 与 PCI 软件兼容。 PCIe 硬件在支持 PCI 的操作系统上工作。
+**PCIe 视频卡是否适用于 Windows XP？** 是的。 PCIe 与 PCI 软件兼容。 PCIe 硬件在支持 PCI 的操作系统上工作。
 
 **PCIe 图形是否与 AGP 共存？** 某些芯片集支持 AGP 和 X16 PCIe。 某些主板有使用此类芯片组的 AGP 和 X16 PCIe 槽。
 

@@ -1,21 +1,20 @@
 ---
 title: 删除即插即用 RS-232 端口
 description: 删除即插即用 RS-232 端口
-ms.assetid: b439dc51-09f2-4149-a562-2e376bb504c5
 keywords:
 - RS-232 端口 WDK 串行设备
-- Serenum 驱动程序 WDK，插设备
+- Serenum driver WDK，即插即用设备
 - 即插即用串行设备 WDK
-- 串行设备 WDK，插
+- 串行设备 WDK，即插即用
 - 删除 RS-232 端口
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2ea89439b59d7b1f35b1f7d3194e3e0ed5403af2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6dc66d4a9375b583b4f5abced0d8ffa1f15d5fef
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63388041"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96811977"
 ---
 # <a name="removing-a-plug-and-play-rs-232-port"></a>删除即插即用 RS-232 端口
 
@@ -23,7 +22,7 @@ ms.locfileid: "63388041"
 
 
 
-插管理器中的删除请求发送到 RS-232 端口堆栈的顶部移除 RS-232 端口。 Serenum 传递设备堆栈的下层请求、 在端口堆栈中移除筛选器执行操作和删除关联的 PDO，如果存在一个。 删除 RS-232 端口还会删除串行设备连接到端口。
+即插即用 manager 通过向 RS-232 端口堆栈顶部发送删除请求来删除 RS-232 端口。 Serenum 向下传递请求，删除端口堆栈中的筛选器，并删除关联的 PDO （如果存在）。 删除 RS-232 端口还会删除连接到该端口的串行设备。
 
  
 

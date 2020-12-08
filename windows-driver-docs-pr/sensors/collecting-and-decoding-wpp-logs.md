@@ -1,15 +1,14 @@
 ---
 title: 收集和解码 WPP 日志
 description: 本主题提供有关为传感器类扩展 (CX) 跟踪提供程序收集和解码 Windows 软件跟踪预处理器 (WPP) 日志的信息。
-ms.assetid: 174CDE37-D0D1-44BF-AD50-5A90C989FDE2
 ms.date: 07/20/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 318e6a1c358be9c0aca247af915a6b4300ab2e13
-ms.sourcegitcommit: ea3215e9d5afe073ed6d01fb6dddf31d95ef3b63
+ms.openlocfilehash: 024eb35bb9e2d10c56f0e427fc110e3fb7c9fecd
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94673769"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812375"
 ---
 # <a name="collecting-and-decoding-wpp-logs"></a>收集和解码 WPP 日志
 
@@ -78,7 +77,7 @@ TRACE_LEVEL_PERF            6
 <thead>
 <tr class="header">
 <th>宏</th>
-<th>级别</th>
+<th>Level</th>
 <th>标志</th>
 <th>参数</th>
 </tr>
@@ -136,7 +135,7 @@ TRACE_LEVEL_PERF            6
 <td><p>CLX_FunctionEnter</p></td>
 <td><p>TRACE_LEVEL_VERBOSE</p></td>
 <td><p>EntryExit</p></td>
-<td><p>不适用</p></td>
+<td><p>空值</p></td>
 </tr>
 <tr class="even">
 <td><p>CLX_FunctionExit</p></td>
@@ -148,7 +147,7 @@ TRACE_LEVEL_PERF            6
 <td><p>SENSOR_FunctionEnter</p></td>
 <td><p>TRACE_LEVEL_VERBOSE</p></td>
 <td><p>EntryExit</p></td>
-<td><p>不适用</p></td>
+<td><p>空值</p></td>
 </tr>
 <tr class="even">
 <td><p>SENSOR_FunctionExit</p></td>

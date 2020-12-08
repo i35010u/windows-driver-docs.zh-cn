@@ -1,15 +1,14 @@
 ---
 title: 邻近感应传感器阈值
 description: 本主题提供有关邻近感应传感器阈值的信息。
-ms.assetid: AD93421B-4787-4E56-B01D-58027EFEAC2D
 ms.date: 07/20/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: e73ebbf96361c0e9f40e09c02074a35017ce9b2a
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: f0be3437c7e4a7e47a2b362810f2e3c51b42920b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91733133"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812265"
 ---
 # <a name="proximity-sensor-thresholds"></a>邻近感应传感器阈值
 

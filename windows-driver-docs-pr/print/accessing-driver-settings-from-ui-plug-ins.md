@@ -1,19 +1,18 @@
 ---
 title: 从 UI 插件访问驱动程序设置
 description: 从 UI 插件访问驱动程序设置
-ms.assetid: 898e1cfb-851b-403e-a88b-d38c505c1390
 keywords:
 - 用户界面插件 WDK 打印，访问驱动程序设置
 - UI 插件 WDK 打印，访问驱动程序设置
 - 状态信息 WDK 打印插件
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 54a1533eca498863263f7164fc904913e81ceae5
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 44fee1e2d201bcca5e15257e5b3aa1417bffab27
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89216504"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812437"
 ---
 # <a name="accessing-driver-settings-from-ui-plug-ins"></a>从 UI 插件访问驱动程序设置
 

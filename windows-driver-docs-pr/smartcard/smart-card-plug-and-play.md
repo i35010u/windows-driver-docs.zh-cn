@@ -1,52 +1,51 @@
 ---
 title: 智能卡即插即用
 description: 智能卡即插即用
-ms.assetid: AE65A450-62A4-4774-A935-B7CB4301CCF4
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 30f2e345399fd9a7b0e885b2bb3bf7979198543d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d8d04979f7e845bb87ce99530d5dddc7f7394074
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63382544"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96811881"
 ---
 # <a name="smart-card-plug-and-play"></a>智能卡即插即用
 
 
-## <a name="span-idpairingprocessspanspan-idpairingprocessspanspan-idpairingprocessspan-pairing-process"></a><span id="_Pairing_Process"></span><span id="_pairing_process"></span><span id="_PAIRING_PROCESS"></span> 配对过程
+## <a name="span-id_pairing_processspanspan-id_pairing_processspanspan-id_pairing_processspan-pairing-process"></a><span id="_Pairing_Process"></span><span id="_pairing_process"></span><span id="_PAIRING_PROCESS"></span> 配对过程
 
 
-操作系统执行下列步骤以对智能卡与已安装的微型驱动程序：
+操作系统遵循以下步骤，将智能卡与已安装的微型驱动程序配对：
 
--   从智能卡获取的 ATR。
--   循环访问项中 HKEY\_本地\_机\\软件\\Microsoft\\加密\\Calais\\智能卡注册表键，执行以下操作：
+-   从智能卡中获取 ATR。
+-   循环访问 HKEY \_ 本地 \_ 计算机 \\ 软件 \\ Microsoft \\ 加密 \\ Calais \\ 智能卡注册表项中的条目，然后执行以下操作：
 
-    -   应用到从智能卡已获取的 ATR 注册表中存储的 ATRMask 子密钥值。
-    -   为存储在注册表的 ATR 子项值已掩码的 ATR 值进行比较。
-    -   如果两个 ATR 值匹配，停止处理，并对相应与智能卡微型驱动程序。
+    -   将注册表中存储的 ATRMask 子项值应用到从智能卡获取的 ATR。
+    -   将屏蔽的 ATR 值与注册表中存储的 ATR 子项值进行比较。
+    -   如果两个 ATR 值匹配，则停止处理并将相应的微型驱动程序与智能卡配对。
 
-智能卡 ATR 和 ATRMask 值必须是精心挑选，用于避免错误配对使用智能卡微型驱动程序。 存储在注册表中的智能卡 ATR 值后 ATRMask 已应用于从智能卡中读取的 ATR 应预期值。 否则为从卡和注册表已掩码的 ATR 值不匹配，配对失败。
+必须仔细选择智能卡 ATR 和 ATRMask 值，以避免与智能卡的微型驱动程序错误配对。 将 ATRMask 应用于从智能卡中读取的 ATR 后，存储在注册表中的智能卡 ATR 值应是预期值。 否则，卡和注册表中的屏蔽 ATR 值不匹配，并且配对会失败。
 
-开始使用 Windows 7 中，第一次智能卡插入到搜索 Windows Update 站点上相应微型驱动程序会导致卡读取器触发插事件。 若要在 Windows Update 上找到的驱动程序将 Windows 生成的设备 ID 取决于以下因素：
+从 Windows 7 开始，首次将智能卡插入读卡器时，将触发即插即用事件，这些事件会导致在 Windows 更新站点上搜索相应的微型驱动程序。 Windows 生成的用于在 Windows 更新上查找驱动程序的设备 ID 取决于以下因素：
 
--   ATR 历史字节。 有关 ATR 历史字节的详细信息，请参阅标准 ISO/IEC 7816-4:2005(E) 的第 8 节。
--   中有一个列表的 GUID 标记 0x7F68 Microsoft Plug and Play 帮助应用程序状态。
--   这将与收件箱驱动程序配对的卡上的 PIV 应用程序存在。
--   GID （通用标识设备规范） 上的应用程序与 Microsoft 的泛型配置文件将与收件箱驱动程序配对卡存在。
+-   ATR 中的历史字节数。 有关 ATR 历史字节的详细信息，请参阅 ISO/IEC 7816-4:2005 (E) 标准的第8部分。
+-   Microsoft 即插即用辅助应用程序存在，其中包含标记0x7F68 中的 GUID 列表。
+-   卡上存在 PIV 应用程序，该应用程序将与收件箱驱动程序配对。
+-   存在一个 GID (通用标识设备规范) 使用 Microsoft 通用配置文件的应用程序，该卡将与收件箱驱动程序配对。
 
-有关更多详细信息插和 Winscard 的智能卡发现过程，请参阅[智能卡发现过程](discovery-process.md)。 这些进程导致的智能卡的唯一设备 ID 生成。
+有关即插即用和 Winscard 的智能卡发现过程的更多详细信息，请参阅 [智能卡发现进程](discovery-process.md)。 这些过程会为智能卡生成唯一的设备 ID。
 
-**请注意**  ，确定 Windows 生成的智能卡的设备 ID，建议的方法是在附加到正在运行 Windows 7 或更高版本的 Windows 的计算机的智能卡读卡器中插入智能卡。 然后可以通过查看智能卡设备在设备管理器的"硬件 Id"属性找到设备 ID。
+**注意**  若要确定 Windows 为智能卡生成的设备 ID，推荐的方法是将智能卡插入到连接到运行 Windows 7 或更高版本 Windows 的计算机的智能卡读卡器中。 然后，可以通过查看设备管理器中智能卡设备的 "硬件 Id" 属性来找到设备 ID。
 
  
 
-## <a name="span-idsampleinfforx86andamd64spanspan-idsampleinfforx86andamd64spanspan-idsampleinfforx86andamd64spansample-inf-for-x86-and-amd64"></a><span id="Sample_INF_for_x86_and_amd64"></span><span id="sample_inf_for_x86_and_amd64"></span><span id="SAMPLE_INF_FOR_X86_AND_AMD64"></span>用于 x86 和 amd64 示例 INF
+## <a name="span-idsample_inf_for_x86_and_amd64spanspan-idsample_inf_for_x86_and_amd64spanspan-idsample_inf_for_x86_and_amd64spansample-inf-for-x86-and-amd64"></a><span id="Sample_INF_for_x86_and_amd64"></span><span id="sample_inf_for_x86_and_amd64"></span><span id="SAMPLE_INF_FOR_X86_AND_AMD64"></span>适用于 x86 和 amd64 的示例 INF
 
 
-下面是智能卡安装在 Windows 8 和 Windows 的早期版本中的示例 INF 文件。 此 INF 文件安装在 X86 和 AMD64 CPU 平台进行了修饰。
+下面是 Windows 8 和早期版本的 Windows 中用于智能卡安装的示例 INF 文件。 此 INF 文件在 X86 和 AMD64 CPU 平台中进行了修饰。
 
-**请注意**  若要避免部署问题，我们强烈建议对测试在全新安装之前提交 Winqual 的驱动程序包中所有目标的操作系统的驱动程序包。
+**注意**  若要避免部署问题，强烈建议在将驱动程序包提交到 Winqual 之前，在所有目标操作系统的全新安装上测试驱动程序包。
 
  
 
@@ -200,10 +199,10 @@ SmartCardNameWOW64="SOFTWARE\Wow6432Node\Microsoft\Cryptography\Calais\SmartCard
 SmartCardCardModule="Fabrikamcm.dll"
 ```
 
-此类型的 INF 文件需要以下项：
+对于这种类型的 INF 文件，需要满足以下要求：
 
--   由 %fabrikamcarddevicename%字符串必须 ATR 历史字节的设备或设备的智能卡框架标识符的已解码的值指定硬件 ID。 有关此标识符的详细信息，请参阅智能卡发现过程中的"Windows 智能卡框架卡标识符"部分。
--   DefaultInstall 部分针对智能卡微型驱动程序的包的 INF 文件中是必需的。
+-   % FabrikamCardDeviceName% 字符串指定的硬件 ID 必须是设备的 ATR 历史字节或设备的智能卡框架标识符的已解码值。 有关此标识符的详细信息，请参阅智能卡发现过程中的 "Windows 智能卡框架标识符" 部分。
+-   DefaultInstall 节是适用于智能卡微型驱动程序包的 INF 文件中的必需部分。
 
  
 

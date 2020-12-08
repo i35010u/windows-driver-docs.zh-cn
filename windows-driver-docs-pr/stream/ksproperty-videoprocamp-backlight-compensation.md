@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ VIDEOPROCAMP \_ 背光 \_ 补偿
 description: KSPROPERTY \_ VIDEOPROCAMP \_ 背光 \_ 补偿属性控制相机上的轻型补偿设置。 此属性是可选的。
-ms.assetid: d893fc01-048a-4f2e-8587-d71be0796dcc
 keywords:
 - KSPROPERTY_VIDEOPROCAMP_BACKLIGHT_COMPENSATION 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ac9786670c2f1a9ecfa1ba42190d29fd99fc0cf2
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 745649cf6c8e0199008973401ff2d0cca055f638
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103210"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96813403"
 ---
 # <a name="ksproperty_videoprocamp_backlight_compensation"></a>KSPROPERTY \_ VIDEOPROCAMP \_ 背光 \_ 补偿
 
@@ -84,7 +83,7 @@ KSPROPERTY **Value** \_ VIDEOPROCAMP S 结构的值成员 \_ 指定是否启用�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSPROPERTY**](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)

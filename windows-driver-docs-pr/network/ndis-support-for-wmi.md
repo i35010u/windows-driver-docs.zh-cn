@@ -1,7 +1,6 @@
 ---
 title: WMI 的 NDIS 支持
 description: WMI 的 NDIS 支持
-ms.assetid: ce35ddb4-bf18-4ba1-bc6f-dbe659f5d781
 keywords:
 - Windows Management Instrumentation WDK 网络
 - 微型端口驱动程序 WDK 网络，WMI 支持
@@ -12,12 +11,12 @@ keywords:
 - i
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1a97f2c57db418cea43386a53eb12b8dbb336469
-ms.sourcegitcommit: 62c81d88b03bd311d1cdfef5b138d579faceb304
+ms.openlocfilehash: 3d9b5f24651adc5297da75e753e0f28137b27af9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92113544"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812995"
 ---
 # <a name="ndis-support-for-wmi"></a>WMI 的 NDIS 支持
 

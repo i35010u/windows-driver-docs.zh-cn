@@ -1,7 +1,6 @@
 ---
 title: 标记写入
 description: 标记写入
-ms.assetid: 916150D9-9A98-4463-81BE-7F46DF2694F4
 keywords:
 - NFC
 - 近场通信
@@ -10,12 +9,12 @@ keywords:
 - NFP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bbebcc573b3013b62d6626be80d36f84ae83be08
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 40edbd7bd6cb0cf16591a17d50645fa835fca73d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89382751"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812671"
 ---
 # <a name="tag-writing"></a>标记写入
 
@@ -47,7 +46,7 @@ ms.locfileid: "89382751"
 
 严格的 NDEF 编码规则按照 NFC 论坛规范使用。 例如，即使在有效的 NDEF 消息) 的情况下，也不能将 NDEF 消息片段写入 (。
 
-**注意**   对于 NFC 标记，如果未对标记进行 NDEF 格式设置，则为发布消息 \* 。WriteTag，提供程序必须将标记格式化为 NDEF，然后写入负载。
+**注意**  对于 NFC 标记，如果未对标记进行 NDEF 格式设置，则为发布消息 \* 。WriteTag，提供程序必须将标记格式化为 NDEF，然后写入负载。
 
  
 

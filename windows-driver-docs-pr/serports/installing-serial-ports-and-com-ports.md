@@ -1,19 +1,18 @@
 ---
 title: 安装串行端口和 COM 端口
 description: 安装串行端口和 COM 端口
-ms.assetid: 9c755dfa-65e5-4ecb-8544-dd63c6b69c8e
 keywords:
 - 串行端口 WDK
 - COM 端口 WDK 串行设备
 - 串行驱动程序 WDK，COM 端口
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 072a80114316347240718d8d9c690c6f201ddd83
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: daa45effec837db212a312813b9bc4beba489dee
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89186963"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812005"
 ---
 # <a name="installing-serial-ports-and-com-ports"></a>安装串行端口和 COM 端口
 

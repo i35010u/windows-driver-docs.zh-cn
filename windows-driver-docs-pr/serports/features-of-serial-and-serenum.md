@@ -1,7 +1,6 @@
 ---
 title: 串行和 Serenum 的功能
 description: 串行和 Serenum 的功能
-ms.assetid: 47202203-935a-4e1a-9b05-5555f7cbcfa8
 keywords:
 - 串行设备 WDK，串行驱动程序
 - 串行设备 WDK，Serenum 驱动程序
@@ -11,12 +10,12 @@ keywords:
 - 串行驱动程序 WDK
 ms.date: 04/17/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: b8ef6670f818971c2e992f23c94cd6abd92bb5b8
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 4fa284e82065618e77ef34896dcc65c083122ebd
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89187003"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812031"
 ---
 # <a name="features-of-serial-and-serenum"></a>串行和 Serenum 的功能
 

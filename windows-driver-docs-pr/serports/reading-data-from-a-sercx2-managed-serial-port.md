@@ -1,15 +1,14 @@
 ---
 title: 从 SerCx2 托管串行端口读取数据
 description: 串行控制器 (或 UART) 通常包含接收 FIFO。
-ms.assetid: 36522E60-3616-4431-8C8C-3EAC4A6E4422
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: de527219ee227dbee0c316290ee5fc0590f03299
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: a509a01471a356bf7abfe161f16901ade6a904d0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89186955"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96811995"
 ---
 # <a name="reading-data-from-a-sercx2-managed-serial-port"></a>从 SerCx2 托管串行端口读取数据
 
@@ -38,7 +37,7 @@ ms.locfileid: "89186955"
 ## <a name="interval-time-out-details"></a>间隔超时详细信息
 
 
-若要设置读和写请求的超时参数，外设驱动程序可以向串行端口发送 [**IOCTL \_ 串行 \_ 集 \_ 超时**](/windows-hardware/drivers/ddi/ntddser/ni-ntddser-ioctl_serial_set_timeouts) 请求。 读取的超时值由此请求中的 **ReadIntervalTimeout**、 **ReadTotalTimeoutMultiplier**和 **ReadTotalTimeoutConstant** 参数值控制。 **ReadIntervalTimeout** 指定接收事务中两个连续字节之间允许的最大时间间隔。 如果 **ReadTotalTimeoutMultiplier** 和 **ReadTotalTimeoutConstant** 均为零，且在将读取请求发送到串行端口时串行控制器的 receive FIFO 为空，则此请求不会超时 (，因此，在该端口收到至少一个字节的新数据之前，将在 SerCx2 i/o 队列) 中保持挂起状态。 有关详细信息，请参阅 [**串行 \_ 超时**](/windows-hardware/drivers/ddi/ntddser/ns-ntddser-_serial_timeouts)。
+若要设置读和写请求的超时参数，外设驱动程序可以向串行端口发送 [**IOCTL \_ 串行 \_ 集 \_ 超时**](/windows-hardware/drivers/ddi/ntddser/ni-ntddser-ioctl_serial_set_timeouts) 请求。 读取的超时值由此请求中的 **ReadIntervalTimeout**、 **ReadTotalTimeoutMultiplier** 和 **ReadTotalTimeoutConstant** 参数值控制。 **ReadIntervalTimeout** 指定接收事务中两个连续字节之间允许的最大时间间隔。 如果 **ReadTotalTimeoutMultiplier** 和 **ReadTotalTimeoutConstant** 均为零，且在将读取请求发送到串行端口时串行控制器的 receive FIFO 为空，则此请求不会超时 (，因此，在该端口收到至少一个字节的新数据之前，将在 SerCx2 i/o 队列) 中保持挂起状态。 有关详细信息，请参阅 [**串行 \_ 超时**](/windows-hardware/drivers/ddi/ntddser/ns-ntddser-_serial_timeouts)。
 
 芯片上系统上的串行端口 (SoC) 集成线路可以从外围设备接收数据，其高峰速率为每秒多兆位或更大。 此设备的外围设备驱动程序的开发人员可能会将 **ReadIntervalTimeout** 参数指定的时间间隔超时值设置 () 设置为毫秒或更小，但此值不可能具有所需的效果。 这是因为用于检测间隔超时的计时器的准确性受系统时钟的粒度限制。
 
@@ -51,9 +50,9 @@ ms.locfileid: "89186955"
 
 最佳做法是，使用 SerCx2 托管串行端口的外围设备驱动程序应将这些端口配置为使用硬件流控制来防止从溢出接收 FIFO。 如果没有挂起的读取请求，则 SerCx2 不提供超过接收 FIFO 容量的接收数据的软件缓冲。 如果允许此 FIFO 溢出，则数据将丢失。
 
-若要启用硬件流控制，外设驱动程序可以发送 [**IOCTL \_ 串行 \_ SET \_ HANDFLOW**](/windows-hardware/drivers/ddi/ntddser/ni-ntddser-ioctl_serial_set_handflow) 请求来设置串行端口的握手和流控制设置。 或者，驱动程序可能会发送 [**IOCTL \_ 串行 \_ 应用 \_ 默认 \_ 配置**](/windows-hardware/drivers/ddi/ntddser/ni-ntddser-ioctl_serial_apply_default_configuration) 请求，将串行端口配置为使用一组包括硬件流控制的默认硬件设置。 **IOCTL \_ 串行 \_ 集 \_ HANDFLOW**请求使用[**串行 \_ HANDFLOW**](/windows-hardware/drivers/ddi/ntddser/ns-ntddser-_serial_handflow)结构来描述流控制设置。 **IOCTL \_ 串行 \_ 应用 \_ 默认 \_ 配置**请求可能包含与供应商指定的数据格式类似的信息。
+若要启用硬件流控制，外设驱动程序可以发送 [**IOCTL \_ 串行 \_ SET \_ HANDFLOW**](/windows-hardware/drivers/ddi/ntddser/ni-ntddser-ioctl_serial_set_handflow) 请求来设置串行端口的握手和流控制设置。 或者，驱动程序可能会发送 [**IOCTL \_ 串行 \_ 应用 \_ 默认 \_ 配置**](/windows-hardware/drivers/ddi/ntddser/ni-ntddser-ioctl_serial_apply_default_configuration) 请求，将串行端口配置为使用一组包括硬件流控制的默认硬件设置。 **IOCTL \_ 串行 \_ 集 \_ HANDFLOW** 请求使用 [**串行 \_ HANDFLOW**](/windows-hardware/drivers/ddi/ntddser/ns-ntddser-_serial_handflow)结构来描述流控制设置。 **IOCTL \_ 串行 \_ 应用 \_ 默认 \_ 配置** 请求可能包含与供应商指定的数据格式类似的信息。
 
 如果外围设备驱动程序使用 **IOCTL \_ 串行 \_ SET \_ HANDFLOW** 请求来启用硬件流控制，则驱动程序应在此请求的 **串行 \_ HANDFLOW** 结构中设置以下标志：
 
 - 结构的 \_ \_ **ControlHandShake** 成员中的串行 CTS 握手标志。 此标志允许串行端口对接收操作使用流控制。
-- \_ \_ FlowReplace 成员中的串行 rts 控制和串行 \_ rts \_ 握手**FlowReplace**标志。 这些标志使串行端口可以使用传输操作的流控制。
+- \_ \_ FlowReplace 成员中的串行 rts 控制和串行 \_ rts \_ 握手 **FlowReplace** 标志。 这些标志使串行端口可以使用传输操作的流控制。

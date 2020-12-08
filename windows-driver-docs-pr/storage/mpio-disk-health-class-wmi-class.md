@@ -1,15 +1,14 @@
 ---
 title: MPIO \_ 磁盘 \_ 运行状况 \_ 类 WMI 类
 description: MPIO \_ 磁盘 \_ 运行状况 \_ 类 WMI 类
-ms.assetid: 4595f74e-586d-4411-acfd-e93e00778b67
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 036eb356e90259f8bb9cd449312a6abb119b94af
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: d6218d6949df96a53a868fafb0f6ab18e3181277
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89184677"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96811573"
 ---
 # <a name="mpio_disk_health_class-wmi-class"></a>MPIO \_ 磁盘 \_ 运行状况 \_ 类 WMI 类
 

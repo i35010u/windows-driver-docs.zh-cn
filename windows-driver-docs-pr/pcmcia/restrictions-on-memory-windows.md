@@ -1,18 +1,17 @@
 ---
 title: Windows 上的内存限制
 description: Windows 上的内存限制
-ms.assetid: 664320e6-b155-470b-9b86-8b463663961f
 keywords:
 - PCMCIA WDK 总线，内存窗口
 - 内存 Windows WDK PCMCIA 总线
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d1eeffb857525177cb495e4712c73c8d6ae11dc6
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 7988910661dd444d6735ce589aae943f6fbf09a0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89384703"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812485"
 ---
 # <a name="restrictions-on-memory-windows"></a>Windows 上的内存限制
 

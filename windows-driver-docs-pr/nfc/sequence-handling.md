@@ -1,7 +1,6 @@
 ---
 title: NFC CX 序列处理
 description: 有关通过注册 NFC CX 公开的特定驱动程序序列来支持非标准 NCI 扩展的信息。
-ms.assetid: D0BE9827-2A15-4AA5-ADB9-80071ED37583
 keywords:
 - NFC
 - 近场通信
@@ -10,12 +9,12 @@ keywords:
 - NFP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0d847db6c0f1eeda03e805106c52575f407c440a
-ms.sourcegitcommit: 0c3cab853b0b75149b7604eef03275f997792a84
+ms.openlocfilehash: 21ed8e10608b4058c0a986a5f12479543285578b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96157319"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812709"
 ---
 # <a name="nfc-cx-sequence-handling"></a>NFC CX 序列处理
 

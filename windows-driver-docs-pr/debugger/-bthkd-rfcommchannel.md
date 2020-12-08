@@ -1,9 +1,8 @@
 ---
 title: bthkd.rfcommchannel
-description: Bthkd.rfcommchannel 命令显示有关给定 RFCOMM 通道 CB 的信息。
-ms.assetid: FAA0BABB-E479-47CD-85AC-5A710FFCDE89
+description: Bthkd. rfcommchannel 命令显示有关给定 RFCOMM 通道 CB 的信息。
 keywords:
-- bthkd.rfcommchannel Windows 调试
+- bthkd rfcommchannel Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,34 +11,34 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 431a9bdab05c625d362b51939e8cbaf7c5bbc252
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6a260cfafc23ececfe0df06a260baf4e2185bde1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63336938"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96813373"
 ---
 # <a name="bthkdrfcommchannel"></a>!bthkd.rfcommchannel
 
 
-**！ Bthkd.rfcommchannel**命令显示有关给定 RFCOMM 通道 CB 的信息。
+**！ Bthkd. rfcommchannel** 命令显示有关给定 RFCOMM 通道 CB 的信息。
 
 ```dbgsyntax
 !bthkd.rfcommchannel addr 
 ```
 
-## <a name="span-idddkdevobjdbgspanspan-idddkdevobjdbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>参数
+## <a name="span-idddk__devobj_dbgspanspan-idddk__devobj_dbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>参数
 
 
-<span id="_______addr______"></span><span id="_______ADDR______"></span> *addr*   
-Rfcomm 地址 ！\_通道\_CB 结构。
+<span id="_______addr______"></span><span id="_______ADDR______"></span>*地址*   
+Rfcomm 的地址！ \_通道 \_ CB 结构。
 
-## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 
 Bthkd.dll
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
 [蓝牙扩展 (Bthkd.dll)](bluetooh-extensions--bthkd-dll-.md)

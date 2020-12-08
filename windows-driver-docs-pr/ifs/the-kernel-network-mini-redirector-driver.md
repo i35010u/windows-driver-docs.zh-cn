@@ -1,7 +1,6 @@
 ---
 title: 内核网络微型重定向程序驱动程序
 description: 内核网络微型重定向程序驱动程序
-ms.assetid: 13236e5f-1261-4cf1-9c3d-3f1a5ccb3323
 keywords:
 - 网络重定向程序 WDK，最小重定向器驱动程序
 - 重定向程序驱动程序 WDK，微型重定向程序驱动程序
@@ -10,12 +9,12 @@ keywords:
 - 小型重定向程序 WDK，关于内核网络小型重定向器驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7959d1f701c7ece79d48b41bffa91e88c3bd7ef0
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 43415def2d2e2b28807deeb12a900a11c03df1a4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89065512"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96813203"
 ---
 # <a name="the-kernel-network-mini-redirector-driver"></a>内核网络微型重定向程序驱动程序
 
@@ -27,7 +26,7 @@ ms.locfileid: "89065512"
 
 当网络微型重定向程序驱动程序首次开始 (在其 **DriverEntry** 例程) 中时，驱动程序将调用 RDBSS [**RxRegisterMinirdr**](/windows-hardware/drivers/ddi/mrx/nf-mrx-rxregisterminirdr) 例程来向 RDBSS 注册网络小型重定向器驱动程序。 网络小型重定向器驱动程序传入 MINIRDR \_ 调度结构，其中包括配置数据和指向网络微型重定向程序驱动程序实现的例程的指针)  (调度表。
 
-网络小型重定向程序可以选择仅实现其中一些例程。 不是由网络小型重定向程序实现的任何例程都应在传递到 RxRegisterMinirdr 的 MINIRDR 调度结构中设置为**NULL**指针 \_ 。 **RxRegisterMinirdr** RDBSS 将仅调用由网络小型重定向程序实现的例程。
+网络小型重定向程序可以选择仅实现其中一些例程。 不是由网络小型重定向程序实现的任何例程都应在传递到 RxRegisterMinirdr 的 MINIRDR 调度结构中设置为 **NULL** 指针 \_ 。 **RxRegisterMinirdr** RDBSS 将仅调用由网络小型重定向程序实现的例程。
 
 由网络小型重定向程序实现的一种特殊类型的例程是低 i/o 操作，表示用于读取、写入和其他文件操作的传统文件 i/o 调用。 所有低 i/o 例程均可通过 RDBSS 异步调用。 网络小型重定向器的内核驱动程序必须确保可以安全地以异步方式调用任何实现的低 i/o 例程。 低 i/o 例程作为例程指针的数组传入，作为 \_ 来自 [**DriverEntry**](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_initialize) 例程的 MINIRDR 调度结构的一部分。 数组项的值是要执行的低 i/o 操作。 所有低 i/o 例程都需要一个指向 RX \_ 上下文结构的指针作为参数传入。 RX \_ 上下文数据结构具有 **LowIoContext** 成员，该成员还指定要执行的低 i/o 操作。 由于可以使用此 **LowIoContext** 成员来指定请求的低 i/o 操作，因此几个低 i/o 例程可能会指向网络小型重定向程序驱动程序中的同一例程。 例如，所有与文件锁相关的低 i/o 调用都可以在网络小型重定向程序中调用相同的低 i/o 例程，此例程可以使用 **LowIoContext** 成员来指定所请求的锁定或解除锁定操作。
 
@@ -96,7 +95,7 @@ I/o 请求适用于已删除的网络名称。
 
 [文件系统对象查询和设置例程](file-system-object-query-and-set-routines.md)
 
-[其他网络小型重定向程序例程](miscellaneous-network-mini-redirector-routines.md)
+[其他网络 Mini-Redirector 例程](miscellaneous-network-mini-redirector-routines.md)
 
  
 

@@ -1,15 +1,14 @@
 ---
 title: 帮助程序函数的封送处理
 description: 本主题提供有关 sensorsutils 标头文件中的封送处理 helper 函数的信息。
-ms.assetid: AE5C70E4-1971-4BAF-AE7D-315A15F030DD
 ms.date: 07/20/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 9461b91afec189dd362f38e2ab483b5cc0685d64
-ms.sourcegitcommit: b75e9940d49410e2b952e96f325df67a039cd571
+ms.openlocfilehash: e27930ec95e245e84be49b094ba0be404946942b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92336980"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812319"
 ---
 # <a name="marshalling-helper-functions"></a>帮助程序函数的封送处理
 
@@ -21,7 +20,7 @@ ms.locfileid: "92336980"
 
 ## <a name="in-this-section"></a>在本节中
 
-|主题|说明|
+|主题|描述|
 |--|--|
 |[时间戳帮助程序](timestamp-helper.md)|时间戳 helper 函数由 v2 传感器驱动程序使用，并用于传感器设备驱动程序软件接口 (DDSI) 。|
 |[PropVariant 帮助程序](propvariant-helpers.md)|V2 传感器驱动程序使用 PropVariant helper 函数操作与传感器关联的 [PropVariant](/windows/win32/api/propidl/ns-propidl-propvariant) 结构。|

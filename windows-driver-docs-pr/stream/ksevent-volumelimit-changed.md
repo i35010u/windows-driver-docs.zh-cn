@@ -1,7 +1,6 @@
 ---
 title: 'KSEVENT \_ VOLUMELIMIT \_ 更改 (流) '
 description: KSEVENT \_ VOLUMELIMIT \_ CHANGED 事件将卷更改操作从内核模式驱动程序传播到用户模式。
-ms.assetid: C4CB9E8A-A0B6-48E1-B020-EA6A0768AE05
 keywords:
 - KSEVENT_VOLUMELIMIT_CHANGED 流媒体设备
 topic_type:
@@ -12,16 +11,16 @@ api_type:
 - NA
 ms.date: 07/07/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: de809cad31483fdf970592eb62790db9de5ee765
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: d921960dda224581f03c169845b10ea4e3cef0a2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89192181"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96813413"
 ---
 # <a name="ksevent_volumelimit_changed-stream"></a>KSEVENT \_ VOLUMELIMIT \_ 更改 (流) 
 
-**KSEVENT \_ VOLUMELIMIT \_ CHANGED**事件将卷更改操作从内核模式驱动程序传播到用户模式。
+**KSEVENT \_ VOLUMELIMIT \_ CHANGED** 事件将卷更改操作从内核模式驱动程序传播到用户模式。
 
 ## <a name="usage-summary-table"></a>使用情况摘要表
 

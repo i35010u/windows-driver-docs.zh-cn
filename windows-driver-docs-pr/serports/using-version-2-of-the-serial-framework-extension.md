@@ -1,25 +1,24 @@
 ---
 title: 使用串行框架扩展版本 2 (SerCx2)
-description: 您可以编写一起使用版本 2 的串行框架扩展 (SerCx2) 来管理串行控制器的串行控制器驱动程序。
-ms.assetid: 192C25B2-936B-40D3-A0EA-5D02A234506E
+description: 你可以编写一个串行控制器驱动程序，该驱动程序与串行框架扩展的版本2一起使用 (SerCx2) 来管理串行控制器。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: abcb0d14bc56a4e617fb91eab30ce92f0c0d3502
-ms.sourcegitcommit: 6a0636c33e28ce2a9a742bae20610f0f3435262c
+ms.openlocfilehash: 59034fe1b32d921b2397361e3c050b0d46b9be55
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65836238"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96811941"
 ---
 # <a name="using-version-2-of-the-serial-framework-extension-sercx2"></a>使用串行框架扩展版本 2 (SerCx2)
 
-您可以编写一起使用版本 2 的串行框架扩展 (SerCx2) 来管理串行控制器的串行控制器驱动程序。 此外可以编写用于连接到由 SerCx2 联合管理的串行控制器上的端口的外围设备的外围设备驱动程序和串行控制器驱动程序。 此外围设备的驱动程序将使用[串行 I/O 请求接口](serial-i-o-request-interface.md)传输设备数据。 扩展基于串行控制器驱动程序处理串行控制器的所有特定于硬件的任务，但使用 SerCx2 来执行许多常见到所有的串行控制器的系统任务。 SerCx2 是从 Windows 8.1 的系统提供的组件。
+你可以编写一个串行控制器驱动程序，该驱动程序与串行框架扩展的版本2一起使用 (SerCx2) 来管理串行控制器。 你还可以为连接到串行控制器（由 SerCx2 和串行控制器驱动程序）管理的端口的外围设备编写外围设备驱动程序。 此外设驱动程序使用 [串行 i/o 请求接口](serial-i-o-request-interface.md) 将数据传入和传出设备。 基于扩展的串行控制器驱动程序处理串行控制器的所有特定于硬件的任务，但使用 SerCx2 来执行许多所有串行控制器都通用的系统任务。 SerCx2 是系统提供的组件，从 Windows 8.1 开始。
 
-**请注意**  SerCx2 替换第 1 版 Windows 8 中引入了串行 framework 扩展 (SerCx)。 旨在仅在 Windows 8.1 和更高版本的 Windows 中运行的新串行控制器驱动程序应编写为使用而不是 SerCx DDIs SerCx2 DDIs。 但是，Windows 8.1 和更高版本的 Windows 支持使用 SerCx DDI 的现有串行控制器驱动程序。
+**注意**  SerCx2 替换了 Windows 8 中引入的 (SerCx) 的串行 framework 扩展的版本1。 仅适用于在 Windows Windows 8.1 和更高版本中运行的新串行控制器驱动程序应编写为使用 SerCx2 DDIs 而不是 SerCx DDIs。 但是，Windows 8.1 和更高版本的 Windows 支持使用 SerCx DDI 的现有串行控制器驱动程序。
 
-串行控制器是 16550 通用异步接收器/转换器 (UART) 或兼容的设备。 有关详细信息，请参阅[串行控制器驱动程序概述](serial-drivers-overview.md)。
+串行控制器是16550的通用异步接收器/发送器 (UART) 或兼容的设备。 有关详细信息，请参阅 [串行控制器驱动程序概述](serial-drivers-overview.md)。
 
-## <a name="in-this-section"></a>本节内容
+## <a name="in-this-section"></a>在本节中
 
 <table>
 <colgroup>
@@ -35,15 +34,15 @@ ms.locfileid: "65836238"
 <tbody>
 <tr class="odd">
 <td><p><a href="sercx2-architectural-overview.md" data-raw-source="[SerCx2 Architectural Overview](sercx2-architectural-overview.md)">SerCx2 体系结构概述</a></p></td>
-<td><p>SerCx2 一起使用的串行控制器驱动程序，以允许外围设备的驱动程序和串行连接的外围设备之间进行通信。 通常情况下，串行控制器已集成到芯片 (SoC) 芯片上的系统与外部 SoC 芯片但焊接到相同的印刷电路板的外围设备提供低 pin 计数通信。</p></td>
+<td><p>SerCx2 与串行控制器驱动程序一起工作，可在外围设备驱动程序与串行连接外围设备之间进行通信。 通常情况下，串行控制器集成到芯片 (SoC) 芯片上的系统中，以提供与 SoC 芯片外部设备不同但焊接到相同印刷电路板的外部设备的低 pin 计数通信。</p></td>
 </tr>
 <tr class="even">
 <td><p><a href="serial-controller-driver-design-for-sercx2.md" data-raw-source="[Serial Controller Driver Design for SerCx2](serial-controller-driver-design-for-sercx2.md)">SerCx2 串行控制器驱动程序设计</a></p></td>
-<td><p>若要管理串行控制器，你编写执行特定于硬件的任务，并与 SerCx2 进行通信的串行控制器驱动程序。 从 Windows 8.1 开始，SerCx2 是系统提供的组件，它处理许多通用串行控制器的这些处理任务。</p></td>
+<td><p>若要管理串行控制器，请编写一个串行控制器驱动程序，用于执行特定于硬件的任务并与 SerCx2 通信。 从 Windows 8.1 开始，SerCx2 是系统提供的组件，用于处理串行控制器常见的许多处理任务。</p></td>
 </tr>
 <tr class="odd">
 <td><p><a href="accessing-a-device-on-a-sercx2-managed-serial-port.md" data-raw-source="[Accessing a Device on a SerCx2-Managed Serial Port](accessing-a-device-on-a-sercx2-managed-serial-port.md)">访问 SerCx2 托管串行端口上的设备</a></p></td>
-<td><p>SerCx2 和串行控制器驱动程序合作共同管理永久连接到外围设备的串行端口。 若要访问 SerCx2 托管的串行端口上的外围设备，您外围设备的驱动程序打开串行端口的逻辑连接，并获取文件句柄来表示此连接。 然后驱动程序使用此句柄将 I/O 请求发送到端口。</p></td>
+<td><p>SerCx2 和串行控制器驱动程序共同管理将设备永久连接到的串行端口。 若要访问 SerCx2 管理的串行端口上的外围设备，外围设备驱动程序会打开与串行端口的逻辑连接，并获得表示此连接的文件句柄。 然后，驱动程序使用此句柄将 i/o 请求发送到端口。</p></td>
 </tr>
 </tbody>
 </table>

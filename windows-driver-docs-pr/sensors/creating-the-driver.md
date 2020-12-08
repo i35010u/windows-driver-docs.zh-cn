@@ -1,15 +1,14 @@
 ---
 title: 创建传感器驱动程序
 description: 创建传感器驱动程序
-ms.assetid: 7a1cea3c-d542-47e9-90f9-18bae4969b9f
 ms.date: 07/20/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 9a277bbc7db58efecf9f1d26658fcaaef747bb27
-ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
+ms.openlocfilehash: 169d28b579cebc302ca2e4c773c41808298381d2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90010659"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812379"
 ---
 # <a name="creating-a-sensor-driver"></a>创建传感器驱动程序
 
@@ -18,7 +17,7 @@ ms.locfileid: "90010659"
 
 这些示例为传感器驱动程序所需的类和 COM 接口提供基本的工作实现。 以下过程显示了从示例创建驱动程序时应遵循的步骤：
 
-1.  按照 [创建永久唯一标识符](creating-a-persistent-unique-identifier.md) 主题中提供的说明进行操作，以确保你的驱动程序是唯一的。 使用示例驱动程序源时，应始终提供新的 **GUID**和其他标识符。
+1.  按照 [创建永久唯一标识符](creating-a-persistent-unique-identifier.md) 主题中提供的说明进行操作，以确保你的驱动程序是唯一的。 使用示例驱动程序源时，应始终提供新的 **GUID** 和其他标识符。
 
 2.  添加一个类，用于处理与设备硬件的通信，如果你的传感器是逻辑传感器，则使用软件数据提供程序。
 
@@ -43,13 +42,13 @@ ms.locfileid: "90010659"
 
 2.  将驱动程序的 DLL 和 INF 文件复制到一个单独的文件夹中。
 
-3.  从安装了 WDK 的 "可再发行/wdf/*处理器 \_ 类型* " 文件夹 (选中或免费) 查找两个共同安装程序 DLL 文件。 将这些文件复制到你在步骤3中创建的文件夹。 例如，如果在驱动器 C 上安装了 WDK，则可以复制 WUDFUpdate \_01009.dll 从 C： \\ WinDDK \\ * \# build* \\ \\ \\
+3.  从安装了 WDK 的 "可再发行/wdf/*处理器 \_ 类型* " 文件夹 (选中或免费) 查找两个共同安装程序 DLL 文件。 将这些文件复制到你在步骤3中创建的文件夹。 例如，如果在驱动器 C 上安装了 WDK，则可以复制 WUDFUpdate \_01009.dll 从 C： \\ WinDDK \\ *\# build* \\ \\ \\
 
 4.  运行 Devcon.exe。 可以在安装了 WDK 的 tools devcon 文件夹中找到此程序 \\ 。 例如，对于名为 WDKExample 的传感器，你可以键入：
 
     **devcon.exe 安装 WDKExample "传感器 \\ WDKExample"**
 
-    **注意**   不要使用 Devcon.exe 来安装已发布的驱动程序。 此建议仅用于测试。
+    **注意**  不要使用 Devcon.exe 来安装已发布的驱动程序。 此建议仅用于测试。
 
      
 
@@ -75,7 +74,7 @@ ms.locfileid: "90010659"
 
 4.  选择 **"删除此设备的驱动程序软件"**。
 
-5.  单击“确定”。 
+5.  单击 **“确定”** 。
 
 ## <a name="related-topics"></a>相关主题
 [传感器地理位置驱动程序示例](../gnss/sensors-geolocation-driver-sample.md)

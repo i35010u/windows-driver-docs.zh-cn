@@ -1,9 +1,8 @@
 ---
-title: bthkd.rfcommconnection
-description: Bthkd.rfcommconnection 命令显示有关给定 RFCOMM 连接对象的信息。
-ms.assetid: 0F56B937-BE56-4B45-B30F-F6D1BAB8FCCB
+title: bthkd. rfcommconnection
+description: Bthkd. rfcommconnection 命令显示有关给定 RFCOMM 连接对象的信息。
 keywords:
-- bthkd.rfcommconnection Windows 调试
+- bthkd rfcommconnection Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,34 +11,34 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 0054d145f17743402aca821d7a9072575b9c8e93
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 97a2043be001ea12aa3be829f5237cf4ad5a6f2a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63336931"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96813375"
 ---
 # <a name="bthkdrfcommconnection"></a>!bthkd.rfcommconnection
 
 
-**！ Bthkd.rfcommconnection**命令显示有关给定 RFCOMM 连接对象的信息。
+**！ Bthkd. rfcommconnection** 命令显示有关给定 RFCOMM 连接对象的信息。
 
 ```dbgsyntax
 !bthkd.rfcommconnection addr 
 ```
 
-## <a name="span-idddkdevobjdbgspanspan-idddkdevobjdbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>参数
+## <a name="span-idddk__devobj_dbgspanspan-idddk__devobj_dbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>参数
 
 
-<span id="_______addr______"></span><span id="_______ADDR______"></span> *addr*   
-Rfcomm 地址 ！\_RFCOMM\_CONN\_OBJ 结构。
+<span id="_______addr______"></span><span id="_______ADDR______"></span>*地址*   
+Rfcomm 的地址！ \_RFCOMM \_ CONN \_ OBJ 结构。
 
-## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 
 Bthkd.dll
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
 [蓝牙扩展 (Bthkd.dll)](bluetooh-extensions--bthkd-dll-.md)

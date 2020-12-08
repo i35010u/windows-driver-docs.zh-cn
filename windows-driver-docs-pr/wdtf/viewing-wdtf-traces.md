@@ -1,19 +1,18 @@
 ---
 title: 启用和查看 WDTF 跟踪
 description: 启用和查看 WDTF 跟踪
-ms.assetid: 9bed6042-3691-4a5e-a143-51acf746b1ae
 keywords:
 - Windows 设备测试框架 WDK，跟踪事件
 - WDTF WDK，跟踪事件
 - 跟踪 WDK WDTF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 524e924c519c7e5787ae0ee97050ab1fccaea525
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: f96fb133d3d8852f9ca7f04142849d79d81e965b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91733702"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96813391"
 ---
 # <a name="enabling-and-viewing-wdtf-traces"></a>启用和查看 WDTF 跟踪
 
@@ -78,15 +77,15 @@ WDTF 提供了一组可配置的 [**TTraceLevel**](/windows-hardware/drivers/ddi
 
 有关如何为接口设置默认 [**TTraceLevel**](/windows-hardware/drivers/ddi/index) 的信息，请参阅 [Windows 设备测试框架参考](/windows-hardware/drivers/ddi/index)。
 
-有关每个 [**TTraceLevel**](/windows-hardware/drivers/ddi/index)中包含的跟踪类型的详细说明，请参阅 [**ITracer**](/windows-hardware/drivers/ddi/index) 接口。 你可以使用 **ITracer**的注册表 TraceLevel 路径自行配置这些级别。
+有关每个 [**TTraceLevel**](/windows-hardware/drivers/ddi/index)中包含的跟踪类型的详细说明，请参阅 [**ITracer**](/windows-hardware/drivers/ddi/index) 接口。 你可以使用 **ITracer** 的注册表 TraceLevel 路径自行配置这些级别。
 
 下表描述了可以设置的跟踪级别。
 
-|Level|说明|
+|Level|描述|
 |----|----|
 |0|关闭。 未提供任何跟踪。|
 |1|低|
-|2|中。 此级别为默认跟踪级别。|
+|2|中等。 此级别为默认跟踪级别。|
 |3|高|
 |4|已满。 报告所有跟踪信息。|
 |5-8|自定义级别。|

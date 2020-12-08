@@ -1,17 +1,16 @@
 ---
 title: 访问 PCMCIA 设备的属性内存的要求
 description: 访问 PCMCIA 设备的属性内存的要求
-ms.assetid: 8af41eb0-c057-43c9-a50f-b7d88e1bed6a
 keywords:
 - 属性内存 WDK PCMCIA 总线，要求
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ec611db498d4f110c53a152b72cd862b1593a507
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 76955cf2df6f5d7e2eda8b588ea1ce40475605a5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89383235"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812489"
 ---
 # <a name="requirements-for-accessing-attribute-memory-of-a-pcmcia-device"></a>访问 PCMCIA 设备的属性内存的要求
 

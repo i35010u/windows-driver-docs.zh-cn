@@ -1,18 +1,17 @@
 ---
 title: 从插件访问打印机驱动程序接口
 description: 从插件访问打印机驱动程序接口
-ms.assetid: 021ba789-99bd-4ab5-98fb-0d24ffd0ce25
 keywords:
 - COM 接口 WDK 打印，访问打印机驱动程序接口
 - 插件 WDK 打印，访问接口
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7c5b41b82d5a94712996f5cdf74ac88e49b3d3df
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 4d0f8aa3f9099b88bea4d68815c47ccd80883205
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89217959"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812430"
 ---
 # <a name="accessing-printer-driver-interfaces-from-plug-ins"></a>从插件访问打印机驱动程序接口
 
@@ -32,7 +31,7 @@ ms.locfileid: "89217959"
 
 5.  当不再需要 [IPrintOemDriverUI](iprintoemdriverui-com-interface.md)、 [IPrintCoreUI2](iprintcoreui2-com-interface.md)、 [IPrintOemDriverUni](iprintoemdriveruni-com-interface.md)、 [IPrintOemDriverPS](iprintoemdriverps-com-interface.md)或 [IPrintCorePS2](iprintcoreps2-com-interface.md) 接口指针时，该插件必须调用接口的 Release 方法， () Windows SDK 文档中所述。
 
-为了使插件能够使用新的 Windows Vista [IPrintCoreHelperPS](/windows-hardware/drivers/ddi/prcomoem/nn-prcomoem-iprintcorehelperps)或[IPrintCoreHelperUni](/windows-hardware/drivers/ddi/prcomoem/nn-prcomoem-iprintcorehelperuni)接口，插件需要在其[**IPrintOemUI：： GetInfo**](/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintoemui-getinfo)、 [**IPrintOemPS：： GetInfo**](/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintoemps-getinfo)或[**IPrintOemUni：： GetInfo**](/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintoemuni-getinfo)方法中添加对**OEMGI \_ GETREQUESTEDHELPERINTERFACES**的支持。
+为了使插件能够使用新的 Windows Vista [IPrintCoreHelperPS](/windows-hardware/drivers/ddi/prcomoem/nn-prcomoem-iprintcorehelperps)或 [IPrintCoreHelperUni](/windows-hardware/drivers/ddi/prcomoem/nn-prcomoem-iprintcorehelperuni)接口，插件需要在其 [**IPrintOemUI：： GetInfo**](/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintoemui-getinfo)、 [**IPrintOemPS：： GetInfo**](/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintoemps-getinfo)或 [**IPrintOemUni：： GetInfo**](/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintoemuni-getinfo)方法中添加对 **OEMGI \_ GETREQUESTEDHELPERINTERFACES** 的支持。
 
  
 

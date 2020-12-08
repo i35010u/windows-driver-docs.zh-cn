@@ -1,19 +1,18 @@
 ---
 title: 调试设备安装包中的辅助安装程序
 description: 调试设备安装包中的辅助安装程序
-ms.assetid: a5cf3cec-bd61-49a6-b836-6759cd8c7d82
 keywords:
 - 设备安装共同安装程序调试
 - 安装共同安装程序调试
 - 共同安装程序调试
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6ac6c7760455938c5934d79ec85b4c8fa168ddb7
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: b36a3d5932a206b01787b141306e4b36e90f916d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89211181"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96813291"
 ---
 # <a name="debugging-a-device-installation-co-installer"></a>调试设备安装包中的辅助安装程序
 
@@ -21,7 +20,7 @@ ms.locfileid: "89211181"
 ## <span id="ddk_debugging_dual_boot_machines_dbg"></span><span id="DDK_DEBUGGING_DUAL_BOOT_MACHINES_DBG"></span>
 
 
-某些硬件设备安装包包括称为 *共同安装程序*的 DLL 文件，这有助于安装设备。
+某些硬件设备安装包包括称为 *共同安装程序* 的 DLL 文件，这有助于安装设备。
 
 不能以与其他模块相同的方式调试共同安装程序。 这是因为加载共同安装程序的方法是独特的，因为许多安装方案会自动发生，而不会让开发人员中断正在运行的进程。
 
@@ -53,14 +52,14 @@ ms.locfileid: "89211181"
 6.  调试过程将开始，并且在 DevCon 安装您的驱动程序之前，WinDbg 会中断 DevCon 进程。
 
 7.  将调试器配置为在加载时中断共同安装程序进程。 可以通过以下方法之一来执行此操作：
-    -   在调试器命令窗口中，使用 [**sxe (Set 异常) **](sx--sxd--sxe--sxi--sxn--sxr--sx---set-exceptions-.md) 命令后跟 **ld：** ，然后使用共同安装程序的文件名（不包括文件扩展名）。 冒号后面应没有空格。例如，如果 mycoinst.dll 的共同安装程序的名称，则可以使用以下命令：
+    -   在调试器命令窗口中，使用 [**sxe (Set 异常)**](sx--sxd--sxe--sxi--sxn--sxr--sx---set-exceptions-.md) 命令后跟 **ld：** ，然后使用共同安装程序的文件名（不包括文件扩展名）。 冒号后面应没有空格。例如，如果 mycoinst.dll 的共同安装程序的名称，则可以使用以下命令：
         ```dbgcmd
         sxe ld:mycoinst 
         ```
 
     -   从 WinDbg 的 "**调试**" 菜单中选择 "**事件筛选器**"。 在 " **事件筛选器** " 对话框中，选择 " **加载模块**"。 在 " **执行**" 下，选择 " **已启用"。** 在 " **继续**" 下，选择 " **未处理"。** 单击 " **参数** " 按钮，然后在文本框中输入共同安装程序的文件名（不包括文件扩展名） (例如，输入 "mycoinst" 作为 mycoinst.dll) 。 单击 **"确定"** ，然后单击 " **关闭**"。
 
-8.  按 F5 或在调试器命令窗口中输入 **g (中转) ** 命令，继续执行。
+8.  按 F5 或在调试器命令窗口中输入 **g (中转)** 命令，继续执行。
 
 9.  加载共同安装程序后，执行将会重新进入调试器。 此时，你可以设置所需的任何其他断点。
 

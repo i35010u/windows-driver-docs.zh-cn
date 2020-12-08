@@ -1,7 +1,6 @@
 ---
 title: Wi-Fi direct 配对实现
 description: 本部分提供外围设备的设计准则和要求，以便加入点击和设置并点击和重新连接用例。
-ms.assetid: 1B729E9F-DF9F-4263-9F0B-5EDCF817D2C3
 keywords:
 - NFC
 - 近场通信
@@ -10,12 +9,12 @@ keywords:
 - NFP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f2f0816ab8e0416195ace4855e3afc0cd7a9024c
-ms.sourcegitcommit: 0c3cab853b0b75149b7604eef03275f997792a84
+ms.openlocfilehash: b7bc2847c052a4eb8faf0c690d83433964b078f8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96157313"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812669"
 ---
 # <a name="wi-fi-direct-pairing-implementation"></a>Wi-Fi direct 配对实现
 
@@ -57,7 +56,7 @@ Wi-Fi 直接配对是使用 NFC 论坛标准化连接切换选择消息类型来
 
 在接下来的示例用例中，NFC 类型2标记用作演示示例。 如果需要使用不同的 NFC 标记类型，则必须根据标记定义正确地封装 NDEF 消息。
 
-| 字段                 | 值                                            | 说明                                                               |
+| 字段                 | 值                                            | 描述                                                               |
 |-----------------------|--------------------------------------------------|---------------------------------------------------------------------------|
 | TNF                   | 0x02                                             | 后面的类型字段的格式。 在 RFC 2046 中定义的媒体类型。 |
 | 类型                  | "application/vnd.apple.mpegurl"             | 我们为此方案定义的新类型字符串。                              |
@@ -77,7 +76,7 @@ Wi-Fi 直接配对是使用 NFC 论坛标准化连接切换选择消息类型来
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">属性</th>
+<th align="left">特性</th>
 <th align="left">属性 ID</th>
 <th align="left">必需/可选</th>
 <th align="left">备注</th>
@@ -102,14 +101,14 @@ Wi-Fi 直接配对是使用 NFC 论坛标准化连接切换选择消息类型来
 <td align="left"><p>OOB 设置信息</p>
 <p></p></td>
 <td align="left">2</td>
-<td align="left">必选</td>
+<td align="left">必须</td>
 <td align="left">此特性必须存在。 它提供此 P2P 设备预期使用的设置信息。</td>
 </tr>
 <tr class="even">
 <td align="left"><p>OOB 配置超时</p>
 <p></p></td>
 <td align="left">5</td>
-<td align="left">必选</td>
+<td align="left">必须</td>
 <td align="left">此特性必须存在。 它提供有关此 P2P 设备等待响应 Wi-Fi 直接的时间的信息。</td>
 </tr>
 </tbody>
@@ -117,7 +116,7 @@ Wi-Fi 直接配对是使用 NFC 论坛标准化连接切换选择消息类型来
 
 ### <a name="oob-header-attribute-format"></a>OOB 标头特性格式
 
-| 字段名称        | 大小 (八进制)  | 值    | 说明                                                                                                    |
+| 字段名称        | 大小 (八进制)  | “值”    | 描述                                                                                                    |
 |-------------------|---------------|----------|----------------------------------------------------------------------------------------------------------------|
 | 总数据长度 | 2             | 变量 | 整个 OOB 数据 Blob 的长度 (包括标题) 。                                                             |
 | Length            | 2             | 变量 | OOB 标头中的以下字段的长度。                                                                  |
@@ -128,15 +127,15 @@ Wi-Fi 直接配对是使用 NFC 论坛标准化连接切换选择消息类型来
 
 ### <a name="oob-transaction-types"></a>OOB 事务类型
 
-| OOB 类型 (Hex)  | 说明                          |
+| OOB 类型 (Hex)  | 描述                          |
 |----------------|--------------------------------------|
 | 0x00           | OOB 单向预配数据 |
 | 0x01           | OOB 预配侦听器数据       |
 | 0x02           | OOB 预配连接器数据      |
 | 0x03           | OOB Reinvoke 数据                    |
-| 0x04-0xDC      | 保留                             |
+| 0x04-0xDC      | 预留                             |
 | 0xDD           | 特定于供应商                      |
-| 0xDE-0xFF      | 保留                             |
+| 0xDE-0xFF      | 预留                             |
 
 ### <a name="oob-device-info-attribute-format"></a>OOB 设备信息特性格式
 
@@ -151,8 +150,8 @@ Wi-Fi 直接配对是使用 NFC 论坛标准化连接切换选择消息类型来
 <tr class="header">
 <th align="left">字段名称</th>
 <th align="left">大小 (八进制) </th>
-<th align="left">值</th>
-<th align="left">说明</th>
+<th align="left">“值”</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -218,7 +217,7 @@ Wi-Fi 直接配对是使用 NFC 论坛标准化连接切换选择消息类型来
 
 ### <a name="p2p-oob-attributes"></a>P2P OOB 属性
 
-| OOB 类型 (Hex)  | 说明               |
+| OOB 类型 (Hex)  | 描述               |
 |----------------|---------------------------|
 | 0x00           | OOB 状态                |
 | 0x01           | OOB 设备信息           |
@@ -226,20 +225,20 @@ Wi-Fi 直接配对是使用 NFC 论坛标准化连接切换选择消息类型来
 | 0x03           | OOB 组 ID              |
 | 0x04           | OOB 侦听通道        |
 | 0x05           | OOB 配置超时 |
-| 0x06-0xDC      | 保留                  |
+| 0x06-0xDC      | 预留                  |
 | 0xDD           | 供应商特定属性 |
-| 0xDE-0xFF      | 保留                  |
+| 0xDE-0xFF      | 预留                  |
 
 ### <a name="oob-provisioning-info-attribute-format"></a>OOB 设置信息属性格式
 
-| 字段名称                   | 大小 (八进制)  | 值                   | 说明                                                                                                                                                             |
+| 字段名称                   | 大小 (八进制)  | “值”                   | 描述                                                                                                                                                             |
 |------------------------------|---------------|-------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 属性 ID                 | 1             | 1                       | 标识 P2P OOB 特性的类型。 特定值在 *P2P OOB 属性* 表中定义。                                                                 |
 | Length                       | 2             | 变量                | 属性中以下字段的长度。                                                                                                                        |
 | 预配设置位图 | 1             | 变量                | 一组预配设置选项，定义为 *预配设置* 表。                                                                                   |
 | 选择的配置方法       | 2             | 如 P2P 规范中所定义。 | 此 P2P 设备选择的用于预配的 WSC 方法。                                                                                                   |
 | Pin 长度                   | 1             | 0 - 8                   | 以下 "PIN 数据" 字段中的字节数。 此字段设置为0表示没有额外的 PIN 数据。                                                                  |
-| 固定数据                     | 变量      | n                       | 此字段可选。 仅当 PIN 长度字段不为0，并且包含表示要用于预配的 PIN 的八进制数组时，此字段才存在。 |
+| 固定数据                     | 变量      | n                       | 此字段是可选的。 仅当 PIN 长度字段不为0，并且包含表示要用于预配的 PIN 的八进制数组时，此字段才存在。 |
 
 ### <a name="provisioning-settings"></a>设置设置
 
@@ -274,7 +273,7 @@ Wi-Fi 直接配对是使用 NFC 论坛标准化连接切换选择消息类型来
 </tr>
 <tr class="even">
 <td align="left">3 - 7</td>
-<td align="left">保留</td>
+<td align="left">预留</td>
 <td align="left"></td>
 </tr>
 </tbody>
@@ -282,7 +281,7 @@ Wi-Fi 直接配对是使用 NFC 论坛标准化连接切换选择消息类型来
 
 ### <a name="oob-configuration-timeout-attribute-format"></a>OOB 配置超时属性格式
 
-| 字段名称                     | 大小 (八进制)  | 值   | 说明                                                                                                                                                        |
+| 字段名称                     | 大小 (八进制)  | “值”   | 描述                                                                                                                                                        |
 |--------------------------------|---------------|---------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 属性 ID                   | 1             | 5       | 标识 P2P OOB 特性的类型。 特定值在 *P2P OOB 属性* 表中定义。                                                            |
 | Length                         | 2             | 1       | 属性中以下字段的长度。                                                                                                                   |
@@ -302,9 +301,9 @@ Windows 设备配对记录遵循 NDEF 规范。 它向 Windows 提供有关如�
 <thead>
 <tr class="header">
 <th align="left">字段名称</th>
-<th align="left">值</th>
+<th align="left">“值”</th>
 <th align="left">长度值</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>

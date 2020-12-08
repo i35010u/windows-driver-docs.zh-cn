@@ -1,15 +1,14 @@
 ---
 title: DSM \_ 负载 \_ 均衡 \_ 策略 WMI 类
 description: DSM \_ 负载 \_ 均衡 \_ 策略 WMI 类
-ms.assetid: 7de58fe6-7c95-412a-9135-3894c07137a7
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 30fc5cea68310b5ed4a1f11c4809f3026701bc64
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 86c7844a94af41418c1a6c451d492b9ed6b2e0ac
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89186909"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96811743"
 ---
 # <a name="dsm_load_balance_policy-wmi-class"></a>DSM \_ 负载 \_ 均衡 \_ 策略 WMI 类
 

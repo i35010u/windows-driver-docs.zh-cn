@@ -1,40 +1,39 @@
 ---
-title: 加速感应器对象
-description: 示例驱动程序将加速感应器视为由 CAccelerometerDevice 类表示的对象。
-ms.assetid: D8E227E1-FFB5-4F4B-A981-6BD05C8FFAF2
+title: 加速感应对象
+description: 示例驱动程序将加速感应程序视为由 CAccelerometerDevice 类表示的对象。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 256cca34dfa02bad762ebd45b930ceb8e0653a7b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b2827998b16f78174bb5ae273bd7433cc35b345a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63365294"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812123"
 ---
-# <a name="accelerometer-object"></a>加速感应器对象
+# <a name="accelerometer-object"></a>加速感应对象
 
 
 | 模块                  | 类/接口      |
 |-------------------------|----------------------|
-| AccelerometerDevice.cpp | CAccelerometerDevice |
-| SensorDdi.cpp           | CSensorDdi           |
+| AccelerometerDevice .cpp | CAccelerometerDevice |
+| SensorDdi .cpp           | CSensorDdi           |
 
  
 
-示例驱动程序将加速感应器视为由 CAccelerometerDevice 类表示的对象。 在标头文件 AccelerometerDevice.h; 中声明此对象和 AccelerometerDevice.cpp 中定义。 如果您打算扩展以支持其他传感器，除了 ADXL345，此驱动程序将到新设备 （例如，CompassDevice.h 和 CompassDevice.cpp） 创建类似名称的标头和源代码文件对应的。 如果您的驱动程序支持单个传感器，替换现有标头和源文件。
+示例驱动程序将加速感应程序视为由 CAccelerometerDevice 类表示的对象。 此对象在标头文件 AccelerometerDevice 中声明。和在 AccelerometerDevice 中定义。 如果你要扩展此驱动程序以支持另一个传感器，则除了 ADXL345，你还将创建一个名为的标头和源文件，对应到你的新设备 (例如，CompassDevice 和 CompassDevice) 。 如果驱动程序支持单个传感器，请替换现有的头文件和源文件。
 
-加速感应器对象支持的方法的：
+加速感应对象支持以下方法：
 
--   初始化加速计
+-   初始化加速感应
     -   配置硬件
-    -   将数据通知中断连接
-    -   将数据写入到设备的注册接口
-    -   从设备的注册接口读取数据
-    -   支持用户模式下中断
-    -   检索支持的数据字段
-    -   检索支持的事件
+    -   连接数据通知中断
+    -   将数据写入设备的注册接口
+    -   从设备的注册界面读取数据
+    -   支持用户模式中断
+    -   检索受支持的数据字段
+    -   检索受支持的事件
     -   检索支持的属性
-    -   设置报表时间间隔内
+    -   设置报表间隔
     -   设置设备状态
     -   设置默认属性值
 
@@ -42,7 +41,7 @@ ms.locfileid: "63365294"
 
 | 模块                  | 类/接口      |
 |-------------------------|----------------------|
-| AccelerometerDevice.cpp | CAccelerometerDevice |
+| AccelerometerDevice .cpp | CAccelerometerDevice |
 
  
 
@@ -50,46 +49,46 @@ ms.locfileid: "63365294"
 
 | 方法                                      | 描述                                                                                                                                                                                                                                                                           |
 |---------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **CAccelerometerDevice::InitializeDevice**  | 从 ACPI，检索设备配置设置，然后，检索资源中心连接 Id。 通过调用此方法**CSensorDdi::Initialize**后传感器驱动程序接口、 客户端管理器和报表管理器已初始化后一种方法。 |
-| **CAccelerometerDevice::ConfigureHardware** | 分配读取和写入缓冲区，并设置读取和编写器寄存器。                                                                                                                                                                                                          |
-| **CAccelerometerDevice::ConnectInterrupt**  | Sreates WUDF 设备中断。 这是通过配置 WUDF\_中断\_配置数据结构，然后调用**IWDFDevice3::CreateInterrupt**方法。                                                                                                                  |
+| **CAccelerometerDevice::InitializeDevice**  | 从 ACPI 检索设备配置设置，然后检索资源中心连接 Id。 此方法由 **CSensorDdi：： Initialize** 方法在后者初始化传感器驱动程序接口、客户端管理器和报表管理器后调用。 |
+| **CAccelerometerDevice::ConfigureHardware** | 分配读取和写入缓冲区，并设置读取和写入器寄存器。                                                                                                                                                                                                          |
+| **CAccelerometerDevice::ConnectInterrupt**  | Sreates WUDF 设备中断。 它通过配置 WUDF \_ 中断 \_ 配置数据结构，然后调用 **IWDFDevice3：： CreateInterrupt** 方法来实现此操作。                                                                                                                  |
 
  
 
-有关完整的初始化方法序列，请参阅[驱动程序初始化](driver-initialization.md)本指南中的部分。
+有关完整的初始化方法序列，请参阅本指南中的 [驱动程序初始化](driver-initialization.md) 部分。
 
-## <a name="device-register-read--and-write-operations"></a>设备注册读取和写入操作
+## <a name="device-register-read--and-write-operations"></a>设备-注册读和写操作
 
 | 模块                  | 类/接口      |
 |-------------------------|----------------------|
-| AccelerometerDevice.cpp | CAccelerometerDevice |
+| AccelerometerDevice .cpp | CAccelerometerDevice |
 
  
 
-加速感应器对象支持读取-和写入操作。 这些操作让驱动程序获取的给定的注册，或者，若要将新值写入到寄存器中的当前值。 **CAccelerometerDevice::ReadRegister**对应于读取操作和**CAccelerometerDevice::WriteRegister**对应于写入操作。 调用这些操作：
+加速感应对象同时支持读写操作。 这些操作允许驱动程序获取给定寄存器的当前值，或将新值写入寄存器。 **CAccelerometerDevice：： ReadRegister** 对应于读取操作，而 **CAccelerometerDevice：： WriteRegister** 对应于写入操作。 调用以下操作：
 
--   在驱动程序初始化时间**CAccelereometerDevice::ConfigureHardware**会调用方法来配置设备，并将其放在备用服务器模式。
--   当连接的客户端的计数变为零并且**CAccelerometerDevice::SetDeviceStateStandby**调用方法。
--   GPIO 行由 ADXL345 的断言时， **CAccelerometerDevice::OnInterruptIsr**调用方法。
+-   在调用 **CAccelereometerDevice：： ConfigureHardware** 方法以配置设备并将其置于备用模式时，在驱动程序初始化时。
+-   当已连接的客户端的计数为零时，将调用 **CAccelerometerDevice：： SetDeviceStateStandby** 方法。
+-   当 ADXL345 断言 GPIO 行并调用 **CAccelerometerDevice：： OnInterruptIsr** 方法时。
 
-## <a name="supporting-user-mode-interrupts"></a>支持用户模式下中断
+## <a name="supporting-user-mode-interrupts"></a>支持用户模式中断
 
-本部分介绍的示例驱动程序如何获取 ADXL345 的数据。
+本部分介绍了示例驱动程序如何获取 ADXL345 的数据。
 
-加速感应器对象支持使用用户模式下的中断**CAccelerometerDevice::OnInterruptWorkItem**方法。 当用户模式框架调用此方法时，反过来，调用**CAccelerometerDevice::RequestData**。 此方法，反过来，调用**CAccelerometerDevice::ReadRegister**读取寄存器的内容通过 0x32 注册 0x37 ADXL345 上的。 这些六个寄存器包含当前的读数，G 破解，沿 X、 Y 和 z 轴中。
+加速感应对象通过 **CAccelerometerDevice：： OnInterruptWorkItem** 方法支持用户模式中断。 当用户模式框架调用此方法时，它将调用 **CAccelerometerDevice：： RequestData**。 此方法反过来会调用 **CAccelerometerDevice：： ReadRegister** ，以便在 ADXL345 上通过 register 0x37 读取 register 0x32 的内容。 这六个寄存器包含当前读数，其中 G-force 沿 X 轴、Y 轴和 Z 轴。
 
 | 注册 | 目录                              |
 |----------|---------------------------------------|
 | 0x32     | X 轴读取的低序位字节  |
-| 0x33     | 高序位字节的 x 轴读取 |
+| 0x33     | X 轴读取的高序位字节 |
 | 0x34     | Y 轴读取的低序位字节  |
-| 0x35     | 高序位字节的 y 轴读取 |
+| 0x35     | Y 轴读取的高序位字节 |
 | 0x36     | Z 轴读取的低序位字节  |
-| 0x37     | 高序位字节的 z 轴读取 |
+| 0x37     | Z 轴读取的高序位字节 |
 
  
 
-中的代码**CAccelerometerDevice::RequestData**方法打包到一个短 （xRaw、 yRaw 和 zRaw） 类型的变量的每个轴是寄存器内容，然后应用.00390625 的比例因子。 (缩放比例在的结果除以加速的范围值，32 这种情况下 （因为 + /-16 G 受支持），通过数可以表示以 13 位为单位 (2 ^13)-这是所选的解决方法。
+**CAccelerometerDevice：： RequestData** 方法中的代码将每个轴的寄存器内容打包为一个类型为 SHORT (XRaw、YRaw 和 zRaw 的变量) ，然后应用比例系数00390625。  (缩放系数是指在这种情况下分割加速度值的范围，32在这种情况下 (，因为支持 +/-16G，) 按13位表示的数字 (2 ^ 13) ，这是所选的分辨率。
 
 ```cpp
 // Get the data values as doubles
@@ -106,9 +105,9 @@ yAccel = (DOUBLE)yRaw * scaleFactor;
 zAccel = (DOUBLE)zRaw * scaleFactor;
 ```
 
-该驱动程序，计算的值后，它将打包到每个**PROPVARIANT**结构，并调用**CAccelerometerDevice::AddDataField**方法来更新每个轴的值。
+驱动程序计算值后，会将每个值打包到 **PROPVARIANT** 结构中，并调用 **CAccelerometerDevice：： AddDataField** 方法来更新每个轴的值。
 
-请注意，支持的加速范围 （+ /-16 G) 和解决方法使用寄存器 0x31 ADXL345 中的设置的也是。 此错误出现在*g\_ConfigurationSettings* AccelerometerDevice.cpp 开始部分找到的数组：
+请注意，支持的加速范围 (+/-16G) ，并且使用 ADXL345 中的 register 0x31 设置分辨率。 这出现在 AccelerometerDevice 开头的 *g \_ ConfigurationSettings* 数组中：
 
 ```cpp
 // +-16g, 13-bit resolution
@@ -118,28 +117,28 @@ zAccel = (DOUBLE)zRaw * scaleFactor;
    ADXL345_DATA_FORMAT_RANGE_16G },
 ```
 
-## <a name="supporting-the-report-interval"></a>支持报表时间间隔内
+## <a name="supporting-the-report-interval"></a>支持报表间隔
 
 | 模块                  | 类/接口      |
 |-------------------------|----------------------|
-| AccelerometerDevice.cpp | CAccelerometerDevice |
+| AccelerometerDevice .cpp | CAccelerometerDevice |
 
  
 
-传感器平台支持报表时间间隔，并能让应用程序将其设置为定义的范围内的值。 文件 Adxl345.h 中定义的示例驱动程序的最小值和默认报表间隔。
+传感器平台支持报表间隔，并允许应用程序将其设置为定义范围内的值。 示例驱动程序的最小和默认报表间隔在文件 Adxl345 中定义。
 
 ```cpp
 const ULONG ACCELEROMETER_MIN_REPORT_INTERVAL              = 10;
 const ULONG DEFAULT_ACCELEROMETER_CURRENT_REPORT_INTERVAL  = 100;
 ```
 
-示例驱动程序限制为 10 毫秒的最小报表间隔以及为 100 毫秒的默认间隔。
+示例驱动程序将最小报表间隔限制为10毫秒，默认间隔限制为100毫秒。
 
-传感器驱动程序使用的报表时间间隔来确定何时引发事件通知。 如果尚未超过变化敏感度，驱动程序等待当前的时间间隔，然后引发为连接的应用程序提供当前的数据读取的数据事件。 （如果尚未超出变化敏感度，则此设置将替代报表时间间隔内和驱动程序将立即引发数据事件。）
+传感器驱动程序使用报表间隔来确定何时引发事件通知。 如果尚未超出更改敏感度，驱动程序将等待当前间隔，然后引发一个数据事件，使连接的应用程序当前读取数据。  (如果已超出更改敏感度，这将覆盖报表间隔，驱动程序将立即引发数据事件。 ) 
 
-Windows 应用程序可以通过调用设置加速感应器的时间间隔**Accelerometer.ReportInterval**属性。 当应用程序调用此属性，该驱动程序的**CAccelerometerDevice::SetReportInterval**调用方法将传递给设备的固件的请求的时间间隔。
+Windows 应用可以通过调用 **ReportInterval** 属性设置加速感应的间隔。 当应用调用此属性时，将调用驱动程序的 **CAccelerometerDevice：： SetReportInterval** 方法将请求的间隔传递到设备的固件。
 
-设置报表时间间隔内转换到 ADXL 寄存器的三个连续的写入操作。 第一个写操作禁用中断时，我们修改设备上的数据速率：
+将报表间隔设置为三个 ADXL 寄存器的连续写入操作。 在修改设备上的数据速率时，第一次写入操作将禁用中断：
 
 ```cpp
 // Disable interrupts while data rate is modified
@@ -158,29 +157,29 @@ pWriteBuffer[0] = ADXL345_INT_ACTIVITY;
 hr = WriteRegister(ADXL345_INT_ENABLE, pWriteBuffer, 1);
 ```
 
-## <a name="supporting-the-device-mode"></a>支持的设备模式
+## <a name="supporting-the-device-mode"></a>支持设备模式
 
 | 模块                  | 类/接口      |
 |-------------------------|----------------------|
-| AccelerometerDevice.cpp | CAccelerometerDevice |
+| AccelerometerDevice .cpp | CAccelerometerDevice |
 
  
 
 示例设备支持三种设备模式：
 
--   与事件处理度量模式
+-   事件的度量模式
 -   不带事件的度量模式
--   备用服务器模式
+-   备用模式
 
-度量模式会导致数据收集;备用服务器模式会不导致设备返回任何数据。 当设置度量模式与事件一起使用时，该驱动程序可以让应用注册以接收通知，当数据到达时从设备。 当设置度量模式下没有事件时，应用必须轮询最新数据的设备。
+度量模式导致数据收集;备用模式导致设备没有返回任何数据。 如果设置了带事件的度量模式，则驱动程序允许应用注册，以便在数据到达设备时接收通知。 如果设置了没有事件的度量模式，应用程序必须轮询设备以获取最新数据。
 
-源文件中的三个方法对应于每个三种模式：**SetDeviceStateEventing、 SetDeviceStatePolling**，并**SetDeviceStateStandby**。 在调用它们**SetDataUpdateMode**。
+源文件中的三个方法对应于三种模式中的每一种： **SetDeviceStateEventing、SetDeviceStatePolling** 和 **SetDeviceStateStandby**。 它们是从 **SetDataUpdateMode** 内调用的。
 
 ## <a name="measurement-mode-without-eventing"></a>不带事件的度量模式
 
-Windows 应用程序而无需 eventing 度量模式设置时，获取最新的传感器读数通过调用**Accelerometer.GetCurrentReading**。
+如果设置了没有事件的度量模式，Windows 应用会通过调用 **GetCurrentReading** 来获取最新的传感器读数。
 
-驱动程序设置此模式下在初始化过程中，从待机模式返回时。 它使用两个写操作。 第一个操作禁用中断：
+驱动程序在初始化期间和从备用模式返回时设置此模式。 它使用两个写入操作。 第一个操作将禁用中断：
 
 ```cpp
 pBuffer[0] = 0;
@@ -194,40 +193,40 @@ pBuffer[0] = ADXL345_POWER_CTL_MEASURE;
 hr = WriteRegister(ADXL345_POWER_CTL, pBuffer, 1);
 ```
 
-## <a name="measurement-mode-with-eventing"></a>与事件处理度量模式
+## <a name="measurement-mode-with-eventing"></a>事件的度量模式
 
-Windows 应用时设置了度量模式使用事件处理，可以通过注册的事件处理程序从驱动程序接收数据更新**Accelerometer.ReadingChanged**事件。
+设置带有事件的度量模式后，Windows 应用可以通过注册 **ReadingChanged** 事件的事件处理程序从驱动程序接收数据更新。
 
-驱动程序设置此模式下，在初始化期间 （和，它返回从待机模式时）。 该驱动程序设置此模式使用两个写操作。 第一个操作可确保设备处于度量模式：
+驱动程序在初始化期间设置此模式 (和从备用模式返回时，) 。 驱动程序将此模式设置为两个写入操作。 第一个操作确保将设备置于度量模式：
 
 ```cpp
 pBuffer[0] = ADXL345_POWER_CTL_MEASURE;
 hr = WriteRegister(ADXL345_POWER_CTL, pBuffer, 1);
 ```
 
-而且，第二个操作使活动检测中断：
+第二个操作启用活动检测中断：
 
 ```cpp
  pBuffer[0] = ADXL345_INT_ACTIVITY;
  hr = WriteRegister(ADXL345_INT_ENABLE, pBuffer, 1);
 ```
 
-## <a name="supporting-standby-mode"></a>支持备用服务器模式
+## <a name="supporting-standby-mode"></a>支持备用模式
 
-在客户端订阅计数变为 0，则驱动程序设置此模式。 它使用两个写操作和读取的操作。 第一个写入操作可确保中断处于禁用状态：
+当客户端订阅计数为0时，驱动程序将设置此模式。 它使用两个写入操作和一个读取操作。 第一次写入操作可确保中断被禁用：
 
 ```cpp
 pBuffer[0] = 0;
 hr = WriteRegister(ADXL345_INT_ENABLE, pBuffer, 1);
 ```
 
-下一步，以清除未完成的任何中断的读取操作：
+接下来，将清除所有未完成中断的读取操作：
 
 ```cpp
 hr = ReadRegister(ADXL345_INT_SOURCE, pBuffer, 1, 0);
 ```
 
-然后，第二个写操作位置设备处于备用模式：
+然后，第二个写入操作将设备置于备用模式：
 
 ```cpp
 pBuffer[0] = ADXL345_POWER_CTL_STANDBY;

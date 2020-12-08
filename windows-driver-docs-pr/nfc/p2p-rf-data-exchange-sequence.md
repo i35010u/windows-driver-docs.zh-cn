@@ -1,7 +1,6 @@
 ---
 title: P2P RF 数据交换序列
 description: 下图说明了 StateRfDiscovered 和 StateRfDataXchg 的状态顺序。
-ms.assetid: FF77D322-47AE-412C-9924-110FB9E8F9F5
 keywords:
 - NFC
 - 近场通信
@@ -10,12 +9,12 @@ keywords:
 - NFP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: da11acd48a44a712e670516827c16687a01ecdf6
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 8002c66214632538d9693f2b3c1f4cb2915f4186
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89382459"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812785"
 ---
 # <a name="p2p-rf-data-exchange-sequence"></a>P2P RF 数据交换序列
 

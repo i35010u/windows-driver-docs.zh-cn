@@ -1,7 +1,6 @@
 ---
 title: WindowsMime 协议
 description: WindowsMime 协议
-ms.assetid: 03C5A31F-269A-45B3-9359-B6FFF4823190
 keywords:
 - NFC
 - 近场通信
@@ -10,12 +9,12 @@ keywords:
 - NFP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ca09ed1b733996de14a9bd4bb4694c2750f9e85f
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 973f230a5a542816f414c3dc333203fdb09227d0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89385009"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812673"
 ---
 # <a name="windowsmime-protocol"></a>WindowsMime 协议
 

@@ -1,7 +1,6 @@
 ---
 title: Windows 10 中的 NFC 设备驱动程序
 description: 本主题概述了 Windows 10 中 NFC 设备驱动程序的新增功能和改进。
-ms.assetid: 07E0E7F4-9D2B-423F-925C-D6923D8D9A4A
 keywords:
 - NFC
 - 近场通信
@@ -10,12 +9,12 @@ keywords:
 - NFP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 07b842943cacabdd11d28e394d6a0b681cf0173f
-ms.sourcegitcommit: 0c3cab853b0b75149b7604eef03275f997792a84
+ms.openlocfilehash: 1481a5e0789bad2efb722e3d2da86cea01067698
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96157307"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812683"
 ---
 # <a name="nfc-device-drivers-in-windows-10"></a>Windows 10 中的 NFC 设备驱动程序
 

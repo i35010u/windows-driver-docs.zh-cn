@@ -1,15 +1,14 @@
 ---
 title: 编写传感器驱动程序的注意事项
 description: 编写传感器驱动程序的注意事项
-ms.assetid: fec3cfe8-43ad-481a-833a-6f38d04bfdef
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7defe8620b00396abd7ccdb584e553e33c3f639f
-ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
+ms.openlocfilehash: a2aae536a12be0a17b1f813dc7828c11d02e8c10
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90009991"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812359"
 ---
 # <a name="considerations-for-writing-a-sensor-driver"></a>编写传感器驱动程序的注意事项
 

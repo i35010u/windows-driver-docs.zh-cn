@@ -1,15 +1,14 @@
 ---
 title: PCI 示例
 description: PCI 示例
-ms.assetid: E8C4C98C-502F-4CE6-8443-DDFEA1CD1743
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0b0386c303dd108adb2ec1cf22324b3ea409f6f4
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 5e8328db35a43c111ca0117c2d48c17c1a72bfbc
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91734345"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812539"
 ---
 # <a name="pci-sample"></a>PCI 示例
 

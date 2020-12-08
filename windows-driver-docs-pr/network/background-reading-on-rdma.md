@@ -1,15 +1,14 @@
 ---
 title: 对 RDMA 进行后台读取
 description: RDMA 是一种网络技术，可提供高吞吐量、低延迟的通信，可最大程度地降低 CPU 使用率。
-ms.assetid: 583A806D-B7E8-40F5-9CEB-406FAEE8B6C6
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d0fff9115241be452db6ba9b935ebc3dde3ea328
-ms.sourcegitcommit: e2de6b9ffb5c7356deb864f9da879533f49b25bf
+ms.openlocfilehash: c0f7c75fe9c48826cbc44373666d810f9d7e87c9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/03/2020
-ms.locfileid: "91702666"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96813007"
 ---
 # <a name="background-reading-on-rdma"></a>对 RDMA 进行后台读取
 

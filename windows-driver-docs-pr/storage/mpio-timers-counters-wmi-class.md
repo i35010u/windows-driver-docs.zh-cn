@@ -1,15 +1,14 @@
 ---
 title: MPIO \_ 计时器 \_ 计数器 WMI 类
 description: MPIO \_ 计时器 \_ 计数器 WMI 类
-ms.assetid: 386110f8-504c-4617-b8ae-557ea504d41d
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: fb51c05046166a240d313b4811de7a10226a9b47
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: fbd8d87c37f8817cdde6e10d317cc303c8079334
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89184209"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96811553"
 ---
 # <a name="mpio_timers_counters-wmi-class"></a>MPIO \_ 计时器 \_ 计数器 WMI 类
 

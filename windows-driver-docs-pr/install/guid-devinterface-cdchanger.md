@@ -1,7 +1,6 @@
 ---
 title: GUID_DEVINTERFACE_CDCHANGER
 description: GUID_DEVINTERFACE_CDCHANGER
-ms.assetid: 9bcbe3d5-2057-44cb-a495-6edee14a9cbb
 keywords:
 - GUID_DEVINTERFACE_CDCHANGER 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 2cf1f004fcc76ddbae5aa87951c899b1ccafd6cc
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: dcc51cb2dde6fe9be6667591595f6a6ce8840928
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89097313"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96813133"
 ---
 # <a name="guid_devinterface_cdchanger"></a>GUID_DEVINTERFACE_CDCHANGER
 
@@ -82,7 +81,7 @@ ms.locfileid: "89097313"
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**CdChangerClassGuid**](cdchangerclassguid.md)

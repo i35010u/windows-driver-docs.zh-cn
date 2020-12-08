@@ -1,15 +1,14 @@
 ---
 title: 后台任务和自定义触发器
 description: 后台任务和自定义触发器
-ms.assetid: 672d3501-da84-495b-b70e-f07de32aff53
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c541e3774ec59362add2bcba769a4c6c57244b00
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: b19725770b743dea30c7d317c72c0e8869e53943
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89382139"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812565"
 ---
 # <a name="background-tasks-and-custom-triggers"></a>后台任务和自定义触发器
 
@@ -47,7 +46,7 @@ NTSTATUS status = RtlRaiseCustomSystemEventTrigger(&triggerConfig);
 
 1.  首先创建一个 UWP 应用。
 
-2.  在应用程序清单文件中定义后台任务，如下面的示例中所示。 请注意， **Task**元素的**Type**属性设置为`“systemEvent”`
+2.  在应用程序清单文件中定义后台任务，如下面的示例中所示。 请注意， **Task** 元素的 **Type** 属性设置为`“systemEvent”`
 
     ``` syntax
     <Applications>

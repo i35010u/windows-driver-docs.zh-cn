@@ -1,28 +1,27 @@
 ---
 title: 无法加载的模块的图形分析
 description: 无法加载的模块的图形分析
-ms.assetid: 12441fa1-3d19-4485-815c-546367f31567
 keywords:
-- 流式处理调试，无法加载模块的内核
+- 内核流调试，无法加载模块
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 22993d158783a7661bb55bf0c24dc275b2a390c2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5ceb75497501c4001f52954d3928926065ec99a5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63342075"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96813261"
 ---
 # <a name="graph-analysis-with-unloadable-modules"></a>无法加载的模块的图形分析
 
 
-本部分介绍可能影响您，如果你正在使用如 KMixer 无法加载模块的方案。
+本部分介绍了在使用无法加载的模块（如 KMixer）时可能会影响你的方案。
 
-在加载后，扩展模块初始化在第一个命令的用法。 在初始化时，扩展模块检查每个模块是否已加载并且具有正确的符号。 如果任何单个模块卸载或错误的符号加载，该扩展将禁用库扩展插件用于处理标识、 转储，等等。 对于该模块。 在这种情况下，需要手动重新启用已禁用的模块。
+加载后，扩展模块在第一次使用命令时进行初始化。 在初始化时，扩展模块会检查是否每个模块都已加载并且具有正确的符号。 如果卸载了任何单个模块或加载了错误的符号，则扩展会禁用用于处理该模块的标识、转储等的库扩展。 在这种情况下，你需要手动重新启用已禁用的模块。
 
-如果在启动时加载扩展插件，则可能会出现上述情况。 如果加载 Ks.dll，然后发出具体而言，可能会遇到这种情况下[ **.reboot** ](-reboot--reboot-target-computer-.md)命令。 或者，如果在启动期间进入调试器此时加载 Ks.dll 可能发生。
+如果在启动时加载扩展，则可能发生上述情况。 具体而言，如果你加载 Ks.dll 然后发出一个，则可能会遇到这种情况 [**。**](-reboot--reboot-target-computer-.md) 或者，如果在 Ks.dll 启动期间中断到调试器，则会发生这种情况。
 
-在以下示例中，我们捕获来自电报 USB 麦克风的两个流 (sndrec32)。 中断**拆分器 ！FilterProcess**并运行[ **！ ks.graph** ](-ks-graph.md)拆分器的筛选器将生成：
+在下面的示例中，我们将从电传 u 麦克风捕获 (sndrec32) 的两个流。 中断 **拆分器！** 拆分器的筛选器上的 FilterProcess 和运行 [**！ ks**](-ks-graph.md) 生成：
 
 ```dbgcmd
 kd> !graph ffa0c6d4 7
@@ -39,7 +38,7 @@ Graph With Starting Point ffa0c6d4:
         Pin ffa8b008 (File ffb26d68, <- "usbaudio" ffb1caf0) Irps(q/p) = 1, 7
 ```
 
-在此示例中，KMixer 已加载并连接到拆分器，但 Kmixer 不会出现在关系图。 有 Irp 排队到拆分器的输出插针，但在 **！ ks.graph**命令无法反向跟踪，并发现 KMixer。 问题[ **！ ks.libexts 详细信息**](-ks-libexts.md)命令以进行进一步的调查：
+在此示例中，KMixer 已加载并连接到拆分器，但 Kmixer 不显示在图形中。 已将 Irp 排队到拆分器的输出插针，但 **！ ks. graph** 命令无法 backtrace 和发现 KMixer。 发出 [**libexts 详细信息**](-ks-libexts.md) 命令以进行进一步调查：
 
 ```dbgcmd
 kd> !libexts details
@@ -65,9 +64,9 @@ LibExt "kmixer!" :
     Hooks : dump graph
 ```
 
-根据上面的输出，该扩展的 KMixer 部分当前已禁用 (状态：非活动）。 由于扩展模块首先 KMixer 未在其中加载的上下文中使用 Ks.dll 已禁用的扩展，以防止对已卸载的模块的耗时引用 KMixer 部分。
+根据上面的输出，扩展的 KMixer 部分当前被禁用 (状态：非活动) 。 由于扩展模块第一次用于未加载 KMixer 的上下文中，因此 Ks.dll 禁用了扩展的 KMixer 部分，以防止对已卸载模块进行耗时的引用。
 
-若要显式启用 KMixer，可以使用[ **！ ks.libexts** ](-ks-libexts.md)与**启用**参数，按如下所示：
+若要显式启用 KMixer，可以将 [**！ libexts**](-ks-libexts.md) 与 **enable** 参数一起使用，如下所示：
 
 ```dbgcmd
 kd> !libexts enable kmixer
@@ -97,7 +96,7 @@ Graph With Starting Point ffa0c6d4:
         Pin ffa1e9c0 (File 81253468) Irps(q/p) = 10, 0
 ```
 
-KMixer 现在显示按预期方式捕获图形中。
+KMixer 现在会按预期显示在捕获关系图中。
 
  
 

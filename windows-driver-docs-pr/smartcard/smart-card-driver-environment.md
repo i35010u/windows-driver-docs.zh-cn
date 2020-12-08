@@ -1,17 +1,16 @@
 ---
 title: 智能卡驱动程序环境
 description: 智能卡驱动程序环境
-ms.assetid: f1b369c6-84a0-4a0a-9e70-40dd3009c59e
 keywords:
 - 智能卡驱动程序 WDK，环境
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0898c215d855e341a3d5c3d3219c2ea465ded272
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 9dace8ac4e6dff965a0851f560a4d76401197bdf
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91734141"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96811905"
 ---
 # <a name="smart-card-driver-environment"></a>智能卡驱动程序环境
 

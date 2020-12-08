@@ -1,17 +1,16 @@
 ---
 title: 获取有关并行设备的信息
 description: 获取有关并行设备的信息
-ms.assetid: a891718a-9e2c-4823-a0b9-5cbe770c3f85
 keywords:
 - 并行设备 WDK，获取信息
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 265be06689c3350d97d82424ccba5a76cdad469b
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 20cf5c405bf3cfda850a9b45755c7412832c4555
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89385015"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812605"
 ---
 # <a name="obtaining-information-about-a-parallel-device"></a>获取有关并行设备的信息
 

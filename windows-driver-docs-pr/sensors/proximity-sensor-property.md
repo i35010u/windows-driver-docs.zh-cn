@@ -1,15 +1,14 @@
 ---
 title: 邻近感应传感器属性
 description: 此属性是一个可选的枚举属性。
-ms.assetid: 574955CC-F8BF-4E8C-9A9A-E06802C5DB0C
 ms.date: 07/20/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 35a7657ca359a9a7ada79f922b3fd789bee3e391
-ms.sourcegitcommit: fc94eb0d5a41ef81c1b3ab91ad725386db0be0c2
+ms.openlocfilehash: 0f6fc488e47fa53fff66fd995e817456d5d7db5e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91603550"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812271"
 ---
 # <a name="proximity-sensor-property"></a>邻近感应传感器属性
 

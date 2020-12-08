@@ -2,16 +2,15 @@
 title: IRP_MJ_QUERY_INFORMATION
 description: 驱动程序可以选择处理 IRP_MJ_QUERY_INFORMATION 请求。
 ms.date: 08/12/2017
-ms.assetid: 317f82b1-88d3-4618-9282-140eca2178b5
 keywords:
-- IRP_MJ_QUERY_INFORMATION 内核模式驱动程序体系结构
+- IRP_MJ_QUERY_INFORMATION Kernel-Mode 驱动程序体系结构
 ms.localizationpriority: medium
-ms.openlocfilehash: 355a2cae547148ef84935ff0f663676e30bed7cf
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: e33200124377670eaefd239af8ad95228ab08230
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89188261"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96813047"
 ---
 # <a name="irp_mj_query_information"></a>IRP\_MJ\_QUERY\_INFORMATION
 
@@ -26,14 +25,14 @@ ms.locfileid: "89188261"
 ## <a name="input-parameters"></a>输入参数
 
 
-**QueryFile. FileInformationClass**成员是一个**文件 \_ 信息 \_ 类**常量，用于指定要提供的元数据的类型。 有关元数据类型的详细信息，请参阅[**ZwQueryInformationFile**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntqueryinformationfile)例程的*FileInformationClass*参数。
+**QueryFile. FileInformationClass** 成员是一个 **文件 \_ 信息 \_ 类** 常量，用于指定要提供的元数据的类型。 有关元数据类型的详细信息，请参阅 [**ZwQueryInformationFile**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntqueryinformationfile)例程的 *FileInformationClass* 参数。
 
-**QueryFile**成员指定**AssociatedIrp.SystemBuffer**成员所指向的缓冲区的长度。
+**QueryFile** 成员指定 **AssociatedIrp.SystemBuffer** 成员所指向的缓冲区的长度。
 
 ## <a name="output-parameters"></a>输出参数
 
 
-**AssociatedIrp.SystemBuffer**成员指向驱动程序提供所请求信息的缓冲区。 **QueryFile. FileInformationClass**的值确定) 要返回的** \_ *XXX* \_ 文件**的元数据 (格式。 有关元数据格式的详细信息，请参阅 [**文件 \_ 信息 \_ 类**](/windows-hardware/drivers/ddi/wdm/ne-wdm-_file_information_class) 枚举。
+**AssociatedIrp.SystemBuffer** 成员指向驱动程序提供所请求信息的缓冲区。 **QueryFile. FileInformationClass** 的值确定) 要返回的 **\_ *XXX* \_ 文件** 的元数据 (格式。 有关元数据格式的详细信息，请参阅 [**文件 \_ 信息 \_ 类**](/windows-hardware/drivers/ddi/wdm/ne-wdm-_file_information_class) 枚举。
 
 <a name="operation"></a>操作
 ---------
@@ -58,7 +57,7 @@ ms.locfileid: "89188261"
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**ZwQueryInformationFile**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntqueryinformationfile)

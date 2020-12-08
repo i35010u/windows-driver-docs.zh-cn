@@ -1,35 +1,34 @@
 ---
-title: 配置为 RS-232 端口即插即用串行设备
-description: Plug and Play 串行设备连接到 RS-232 端口的配置
-ms.assetid: b6a851e2-0fcf-4d64-80ac-51928b823077
+title: 将 PnP 串行设备配置为 RS-232 端口
+description: 即插即用串行设备连接到 RS-232 端口的配置
 keywords:
 - 即插即用串行设备 WDK
-- 串行设备 WDK，插
+- 串行设备 WDK，即插即用
 - RS-232 端口 WDK 串行设备
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8572921ee88246fd0d9a050336803b379e41eef1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 397c4a433ec266172266902c7c2292ba006b5940
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63345019"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812071"
 ---
-# <a name="configuration-of-plug-and-play-serial-device-connected-to-an-rs-232-port"></a>Plug and Play 串行设备连接到 RS-232 端口的配置
+# <a name="configuration-of-plug-and-play-serial-device-connected-to-an-rs-232-port"></a>即插即用串行设备连接到 RS-232 端口的配置
 
 
 
 
 
-本部分介绍典型的硬件、 驱动程序和设备堆栈的插串行设备和旧指针设备连接到 RS-232 端口的配置。 可以使用此配置为支持串行设备，如鼠标设备、 指点设备、 图形平板电脑、 调制解调器和数字照相机。
+本部分介绍即插即用串行设备的硬件、驱动程序和设备堆栈的典型配置，以及连接到 RS-232 端口的旧指针设备。 此配置可用于支持串行设备，例如鼠标设备、指针设备、绘图板、调制解调器和数字照相机。
 
-下图显示了插 Toaster 设备的典型配置。
+下图显示了即插即用 Toaster 设备的典型配置。
 
-![关系图插 toaster 设备的演示硬件和驱动程序和设备堆栈配置](images/ser2.png)
+![说明即插即用 toaster 设备的硬件和驱动程序和设备堆栈配置的示意图](images/ser2.png)
 
-串行和 Serenum 在以前的配置中使用。 序列创建，并将函数设备对象 (FDO) 附加到 RS-232 端口堆栈和 Serenum 创建，并将较高级别筛选器设备对象 （执行） 附加到 RS-232 端口堆栈。 Serenum 枚举后插 manager 发送 IRP 到 RS-232 端口连接的设备\_MN\_查询\_类型的关系请求**BusRelations**到 RS-232 设备堆栈。
+串行和 Serenum 用于前面的配置。 串行创建 (FDO) 的函数设备对象并将其附加到 RS-232 端口堆栈，Serenum 创建并附加上层筛选器设备对象， (将) 到 RS-232 端口堆栈。 Serenum 在即插即用 manager 将 \_ BusRelations 类型的 IRP MN \_ 查询 \_ 关系请求发送到 rs-232 设备堆栈 **BusRelations** 后，枚举附加到 rs-232 端口的设备。
 
-Serenum 检测到受支持的设备后，它创建一个物理设备对象 (PDO)，并报告给插管理器的设备。 Configuration manager 使用此 INF 文件，并为 Toaster 设备安装程序以完成 Toaster 设备安装。 Toaster 驱动程序创建 FDO，并将其附加到 Toaster 设备堆栈。 筛选器 DOs 还可以添加到 Toaster 设备堆栈。
+Serenum 检测到受支持的设备后，它将创建 (PDO) 的物理设备对象，并将设备报告给即插即用 manager。 配置管理器使用 INF 文件和 Toaster 设备的安装程序来完成 Toaster 设备安装。 Toaster 驱动程序创建 FDO 并将其附加到 Toaster 设备堆栈。 还可以将筛选器 DOs 添加到 Toaster 设备堆栈中。
 
  
 

@@ -1,7 +1,6 @@
 ---
 title: 引发传感器事件
 description: 引发传感器事件
-ms.assetid: a6e428f8-1613-4e8d-813d-5a54824dab82
 keywords:
 - 传感器事件
 - 事件处理程序 (event handler)
@@ -11,12 +10,12 @@ keywords:
 - 传感器状态更改事件
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e95a9ab134581b310e48552a76c07511281cdb5e
-ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
+ms.openlocfilehash: e295bbc415715a4ccd768cb1a1e46658a04037e7
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90010139"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812247"
 ---
 # <a name="raising-sensor-events"></a>引发传感器事件
 

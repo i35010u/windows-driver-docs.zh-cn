@@ -1,19 +1,18 @@
 ---
 title: 启用文本日志的事件类别
 description: 启用文本日志的事件类别
-ms.assetid: 555f698b-69e2-469b-b958-185cb35eeb5a
 keywords:
 - 事件类别 WDK Setupapi.log 日志记录
 - 文本日志 WDK Setupapi.log，事件类别
 - LogMask
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9b4a3f6997b684b368298a5cf12e2a12e119ac22
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 63d273bdd9498261f2ebb9e131f56ebe667e05f0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89097169"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96813173"
 ---
 # <a name="enabling-event-categories-for-a-text-log"></a>启用文本日志的事件类别
 
@@ -114,11 +113,11 @@ ms.locfileid: "89097169"
 <a href="" id="to-enable-event-categories-for-the-setupapi-logs--create--or-modify--the-following-reg-dword-registry-value-"></a>若要为 Setupapi.log 日志启用事件类别，请创建 (或修改) 以下 [REG_DWORD](/windows/desktop/SysInfo/registry-value-types) 注册表值：  
 **HKEY_LOCAL_MACHINE \\ Software \\ Microsoft \\ Windows \\ CurrentVersion \\ 安装程序 \\ LogMask**
 
-**LogMask**注册表值适用于设备安装文本日志和应用程序安装文本日志。
+**LogMask** 注册表值适用于设备安装文本日志和应用程序安装文本日志。
 
 如果 **LogMask** 注册表值不存在，则 setupapi.log 将启用文本日志的所有事件类别。 如果 **LogMask** 注册表值为零，则 setupapi.log 将禁用文本日志的所有事件类别。
 
-**LogMask**注册表值的格式为 0x*VVVVVVVV，其中 VVVVVVVV*为32位域。 若要启用所有类别，请将 **LogMask** 设置为0xffffffff。 若要仅启用特定类别，请对相应的事件类别常量执行按位 "或" 运算。 例如：
+**LogMask** 注册表值的格式为 0x *VVVVVVVV，其中 VVVVVVVV* 为32位域。 若要启用所有类别，请将 **LogMask** 设置为0xffffffff。 若要仅启用特定类别，请对相应的事件类别常量执行按位 "或" 运算。 例如：
 
 -   若要仅启用由设备安装操作写入的日志条目，请将 **LogMask** 设置为 TXTLOG_DEVINST (0x00000001 的值) 
 

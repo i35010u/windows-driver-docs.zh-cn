@@ -1,7 +1,6 @@
 ---
 title: 持久保留的数据
 description: 数据持久化为。
-ms.assetid: 61C3C55C-00DC-4A8C-B235-7C0391FB5119
 keywords:
 - NFC
 - 近场通信
@@ -10,12 +9,12 @@ keywords:
 - NFP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 523c623570e6f11a6f2d9585199cd3c00f7eff1a
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 0b81506d43f4ae901b47e28d6b9b884690309aa1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89382447"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812755"
 ---
 # <a name="persisted-data"></a>持久保留的数据
 

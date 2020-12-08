@@ -1,7 +1,6 @@
 ---
 title: 将打印票证支持添加到打印驱动程序
 description: 将打印票证支持添加到打印驱动程序
-ms.assetid: ef4db930-2b4c-40b9-b1f4-85767b7f6855
 keywords:
 - 打印机驱动程序自定义 WDK，打印票证
 - 自定义打印机驱动程序 WDK，打印票证
@@ -9,12 +8,12 @@ keywords:
 - IPrintTicketProvider
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0b871227c3e90f49470a2b37f7e660f5e773f8e9
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 2b0f28c38174fded5cb0bbc8dfa9bab65e6b62be
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89218272"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812401"
 ---
 # <a name="adding-print-ticket-support-to-print-drivers"></a>将打印票证支持添加到打印驱动程序
 
@@ -29,7 +28,7 @@ ms.locfileid: "89218272"
 
 支持 IPrintTicketProvider 接口的打印驱动程序将完成前面的列表中的前两项，但不会对最后一项进行寻址。 打印驱动程序必须读取并处理 XPS 文档中打印票证的设置，以便这些设置影响打印的文档。 有关实现此支持的详细信息，请参阅 [XPSDrv Render 模块中的打印票证支持](print-ticket-support-in-the-xpsdrv-render-module.md)。
 
-**注意**   基于 GDI 的版本3打印驱动程序不需要将打印票证支持添加到驱动程序，因为打印子系统将 PrintTicket 对象转换为打印驱动程序的等效[**DEVMODEW**](/windows/win32/api/wingdi/ns-wingdi-devmodew)结构。
+**注意**   基于 GDI 的版本3打印驱动程序不需要将打印票证支持添加到驱动程序，因为打印子系统将 PrintTicket 对象转换为打印驱动程序的等效 [**DEVMODEW**](/windows/win32/api/wingdi/ns-wingdi-devmodew) 结构。
 
  
 

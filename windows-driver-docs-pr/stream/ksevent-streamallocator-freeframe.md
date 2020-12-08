@@ -1,9 +1,8 @@
 ---
-title: KSEVENT\_STREAMALLOCATOR\_FREEFRAME
-description: KSEVENT\_STREAMALLOCATOR\_FREEFRAME 事件可用于免费的框架是可用于分配时接收通知。
-ms.assetid: 0b3ec3d5-a6fa-4738-a049-3f5dd6686ee6
+title: KSEVENT \_ STREAMALLOCATOR \_ FREEFRAME
+description: KSEVENT \_ STREAMALLOCATOR \_ FREEFRAME 事件可用于在可用帧可供分配时接收通知。
 keywords:
-- KSEVENT_STREAMALLOCATOR_FREEFRAME 流式处理媒体设备
+- KSEVENT_STREAMALLOCATOR_FREEFRAME 流媒体设备
 topic_type:
 - apiref
 api_name:
@@ -12,17 +11,17 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 73e48aca4ac3a9bf316ec0efd4117ae7c6e70832
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c27ecd9746cbc10ea77f934233abfed770a9039c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63323610"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96813439"
 ---
-# <a name="kseventstreamallocatorfreeframe"></a>KSEVENT\_STREAMALLOCATOR\_FREEFRAME
+# <a name="ksevent_streamallocator_freeframe"></a>KSEVENT \_ STREAMALLOCATOR \_ FREEFRAME
 
 
-**KSEVENT\_STREAMALLOCATOR\_FREEFRAME**事件可用于免费的框架是可用于分配时接收通知。 可以通过使用直接调用接口，而不 IRP 接口，它通常排队待处理的请求无法完成客户端使用此事件。
+**KSEVENT \_ STREAMALLOCATOR \_ FREEFRAME** 事件可用于在可用帧可供分配时接收通知。 此事件可以由使用直接调用接口的客户端使用，而不是使用 IRP 接口，后者通常会将无法完成的挂起的请求排队。
 
  
 

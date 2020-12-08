@@ -1,17 +1,16 @@
 ---
 title: 故障转储和休眠支持
 description: 故障转储和休眠支持
-ms.assetid: 6f5e6f4e-b734-45fe-80d5-fd7b81c9b329
 keywords:
 - 故障转储 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1f27ea665f9427ea98d711719260ead7017b0c40
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 1c8859d4ea12f060196d69d0c797a15f08ccdf51
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89185115"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96811771"
 ---
 # <a name="crash-dump-and-hibernation-support"></a>故障转储和休眠支持
 

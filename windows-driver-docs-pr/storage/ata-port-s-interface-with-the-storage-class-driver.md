@@ -1,18 +1,17 @@
 ---
 title: ATA 端口的可以与存储类驱动程序交互的接口
 description: ATA 端口的可以与存储类驱动程序交互的接口
-ms.assetid: 6b22bbb1-f14e-48d9-a00c-c7eae79a078f
 keywords:
 - ATA 端口驱动程序 WDK，存储类驱动程序
 - 存储类驱动程序 WDK，ATA 端口驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bcb2c3853aafac54efcb473cb82e86c1c93501ca
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 1b47ca1b28070f6f4e247928a766daba9f409797
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89185899"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96811785"
 ---
 # <a name="ata-ports-interface-with-the-storage-class-driver"></a>ATA 端口的可以与存储类驱动程序交互的接口
 

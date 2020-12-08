@@ -1,15 +1,14 @@
 ---
 title: 测试系统亮度响应
 description: 本主题提供有关如何使用 MALT (Microsoft 环境光线工具) 作为轻测试解决方案的说明。
-ms.assetid: f0ba2628-8752-467d-abf6-6447668ac244
 ms.date: 12/13/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: b6c9d6035e2d60f9038348ab2f2e5d46b1dad199
-ms.sourcegitcommit: b3e38d06762246c77cedd8e82d740ebea104c538
+ms.openlocfilehash: 85700952647c44e7407c3146f7e1aca16f2636b4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91662369"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812137"
 ---
 # <a name="testing-system-brightness-response"></a>测试系统亮度响应
 
@@ -27,7 +26,7 @@ ms.locfileid: "91662369"
 
 ![在 "视图" 模式下显示 "传感器资源管理器" 的屏幕截图，并选中 "LightSensor1"。](images/sensorexplorer.png)
 
-1. **将 MALT 插入到 SUT 上的 USB 端口，并将 Arduino 程序上传到微控制器。** 适用于 MALT 的 Arduino 程序可在 [GitHub](https://github.com/Microsoft/busiotools/tree/master/sensors/Tools/MALT) 上找到 (也可在 HLK) 中找到。 将其上传到微控制器。 可以打开**Arduino**  >  **工具**  >  **串行监视器**，并验证[微控制器命令](testing-MALT-auto-brightness.md)是否按预期方式工作。 然后，关闭串行监视器，使其无法保持 COM 端口繁忙。
+1. **将 MALT 插入到 SUT 上的 USB 端口，并将 Arduino 程序上传到微控制器。** 适用于 MALT 的 Arduino 程序可在 [GitHub](https://github.com/Microsoft/busiotools/tree/master/sensors/Tools/MALT) 上找到 (也可在 HLK) 中找到。 将其上传到微控制器。 可以打开 **Arduino**  >  **工具**  >  **串行监视器**，并验证 [微控制器命令](testing-MALT-auto-brightness.md)是否按预期方式工作。 然后，关闭串行监视器，使其无法保持 COM 端口繁忙。
 
 2. **在 SUT 上安装 SensorExplorer。** 可从 [Microsoft 应用商店](https://aka.ms/sensorexplorer)下载 SensorExplorer。 
    

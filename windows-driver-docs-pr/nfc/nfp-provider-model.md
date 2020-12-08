@@ -1,7 +1,6 @@
 ---
 title: NFP 提供程序模型
 description: " (NFP) 提供程序驱动程序模型的 Near 字段邻近性为 Windows 提供了一个用于使用 NFP 功能并启用 NFP 方案和用例的通用表面。"
-ms.assetid: AD8DC80F-5CE2-4547-B951-A82A280F18ED
 keywords:
 - NFC
 - 近场通信
@@ -10,12 +9,12 @@ keywords:
 - NFP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ccc8282c0fc94572c62b62dee79f351ad1ca81eb
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 27ab6a03e2c98659fcc84b7092334c357f49964a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89382461"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812783"
 ---
 # <a name="nfp-provider-model"></a>NFP 提供程序模型
 
@@ -23,7 +22,7 @@ ms.locfileid: "89382461"
 
 若要将这些功能公开给 Windows，兼容设备的实施者必须提供实现 **GUID \_ DEVINTERFACE \_ NFP** 设备接口的设备驱动程序。 此驱动程序适用于在软件和/或设备硬件上实现的底层 NFP 技术，以形成 NFP 提供程序。
 
-**GUID \_ DEVINTERFACE \_ NFP**设备接口允许 Windows 使用各种 NFP 技术。 此设备接口的实施者公开的最常见功能是通用的，不特定于任何底层的 NFP 技术。 对此常见功能进行编程以与其他 Windows 应用进行通信时，应能够使用任何 NFP 提供程序，而无需修改应用程序代码。 由于 NFC 是 NFP 空间中的一个前导标准，因此设备接口通过使 NFP 提供程序能够处理本机 NDEF 数据包来支持特定 NFC 行为。 应用可能会依赖于此 NFC 特定功能并仅将其自己的功能限制为启用了 NFC 的 NFP 提供程序。
+**GUID \_ DEVINTERFACE \_ NFP** 设备接口允许 Windows 使用各种 NFP 技术。 此设备接口的实施者公开的最常见功能是通用的，不特定于任何底层的 NFP 技术。 对此常见功能进行编程以与其他 Windows 应用进行通信时，应能够使用任何 NFP 提供程序，而无需修改应用程序代码。 由于 NFC 是 NFP 空间中的一个前导标准，因此设备接口通过使 NFP 提供程序能够处理本机 NDEF 数据包来支持特定 NFC 行为。 应用可能会依赖于此 NFC 特定功能并仅将其自己的功能限制为启用了 NFC 的 NFP 提供程序。
 
 具有不兼容的 NFP 提供程序的两台电脑无法通过其 NFP 提供程序进行通信。 此规范提供的指导原则足以支持两个经过认证的 Windows 系统的互操作性，因为至少支持一个启用了 NFC 的访问接口。
 

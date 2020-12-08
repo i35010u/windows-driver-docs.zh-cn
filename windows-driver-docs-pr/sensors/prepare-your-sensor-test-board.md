@@ -1,15 +1,14 @@
 ---
 title: 准备传感器测试板
 description: 本主题说明如何准备传感器测试板以连接到带 Cove 板。
-ms.assetid: 121A6B05-9D5D-447C-B7C6-B2B86C24114B
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1d2a4dcee437d97ec516a5813e2758c5b447fa36
-ms.sourcegitcommit: 9e5ade5d1a311383016385ae3bc3f0a22da1dfc5
+ms.openlocfilehash: 07d3a189c6422fd220f080dd211f7a1203a376c5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95518414"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812279"
 ---
 # <a name="prepare-your-sensor-test-board"></a>准备传感器测试板
 

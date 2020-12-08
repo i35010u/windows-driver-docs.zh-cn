@@ -1,16 +1,15 @@
 ---
 title: OID_WWAN_SUBSCRIBE_DEVICE_SERVICE_EVENTS
 description: OID_WWAN_SUBSCRIBE_DEVICE_SERVICE_EVENTS 设置有关设备服务列表的信息，MB 设备必须将其发送 NDIS_STATUS_WWAN_DEVICE_SERVICE_EVENT 通知。
-ms.assetid: 34D38A28-0E81-47B0-9232-F89927DA4B2B
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_WWAN_SUBSCRIBE_DEVICE_SERVICE_EVENTS 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 99dc40288f5cd3cd652a31fde7881376180fd654
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 9db898268b8bc09d64c4dc7ff7943c802194b3a5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89211647"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812891"
 ---
 # <a name="oid_wwan_subscribe_device_service_events"></a>OID \_ WWAN \_ 订阅 \_ 设备 \_ 服务 \_ 事件
 
@@ -41,7 +40,7 @@ OID \_ WWAN \_ 订阅 \_ 设备 \_ 服务 \_ 事件设置设备服务列表的�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**NDIS \_ 状态 \_ WWAN \_ 设备 \_ 服务 \_ 事件**](./ndis-status-wwan-device-service-event.md)

@@ -1,16 +1,15 @@
 ---
 title: OID_WWAN_RADIO_STATE
 description: OID_WWAN_RADIO_STATE 设置或返回有关 MB 设备无线电电源状态的信息。
-ms.assetid: e6d09ae8-65c8-4544-9581-8937f61f0747
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_WWAN_RADIO_STATE 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 9a1255d1e8123c565f9ace28db685113aea8018e
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 0d03ff3937f432c6a48948ab46035d9e3add7c54
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89216084"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812947"
 ---
 # <a name="oid_wwan_radio_state"></a>OID \_ WWAN \_ 无线电 \_ 状态
 
@@ -30,7 +29,7 @@ OID \_ WWAN \_ 无线电 \_ 状态设置或返回有关 MB 设备无线电电源
 
 微型端口驱动程序必须在系统重新启动或设备删除和重新插入时保留软件无线电电源状态。 微型端口驱动程序应存储设备的软件无线信息，并在每次重新启动或设备重新插入时，使用它来设置设备软件无线电电源状态。 根据 [**WWAN \_ 无线电 \_ 状态**](/windows-hardware/drivers/ddi/wwan/ns-wwan-_wwan_radio_state)中的表，设备的有效无线电电源状态根据软件和硬件无线电电源状态的组合决定。
 
-如果值为 *WwanRadioOn*，微型端口驱动程序必须打开无线电功能，并将 WWAN 无线电状态结构的 **RadioState SwRadioState** 成员 \_ 设置 \_ 为 *WwanRadioOn*。 如果 HwRadioState 成员*WwanRadioOff*，微型端口驱动程序应缓存此电源状态信息，并确保在**RadioState HwRadioState**更改为*WwanRadioOn*时，以物理方式打开无线电电源状态**RadioState** 。
+如果值为 *WwanRadioOn*，微型端口驱动程序必须打开无线电功能，并将 WWAN 无线电状态结构的 **RadioState SwRadioState** 成员 \_ 设置 \_ 为 *WwanRadioOn*。 如果 HwRadioState 成员 *WwanRadioOff*，微型端口驱动程序应缓存此电源状态信息，并确保在 **RadioState HwRadioState** 更改为 *WwanRadioOn* 时，以物理方式打开无线电电源状态 **RadioState** 。
 
 如果值为 *WwanRadioOff*，微型端口驱动程序必须关闭无线电电源状态，并将 **SwRadioState** 成员设置为 *WwanRadioOff*。
 
@@ -105,7 +104,7 @@ OID \_ WWAN \_ 无线电 \_ 状态设置或返回有关 MB 设备无线电电源
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**NDIS \_ WWAN \_ 无线电 \_ 状态**](/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_radio_state)

@@ -1,7 +1,6 @@
 ---
 title: NDIS 支持的 WMI 操作
 description: NDIS 支持的 WMI 操作
-ms.assetid: 78dfe8a6-25aa-40d4-bc32-19bd1d4a41b1
 keywords:
 - Windows Management Instrumentation WDK 网络，NDIS 操作
 - WMI WDK 网络，NDIS 操作
@@ -12,12 +11,12 @@ keywords:
 - 阳
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e47e99ecdb0f30444009530debff2e76f2804d91
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: b7c3e2cb9802c3158dc002ec0c695c3b37aae2a2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89210161"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812985"
 ---
 # <a name="ndis-supported-wmi-operations"></a>NDIS 支持的 WMI 操作
 

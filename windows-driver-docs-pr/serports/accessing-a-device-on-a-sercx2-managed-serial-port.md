@@ -1,15 +1,14 @@
 ---
 title: 访问 SerCx2 托管串行端口上的设备
 description: SerCx2 和串行控制器驱动程序共同管理将设备永久连接到的串行端口。
-ms.assetid: EF7F42D3-21A5-42F8-86AB-897281DF4F18
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 427e45e9148c08a855966743697093d0b1c884db
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 6ae0c5f37ebf7ca44bec4544c345c3e0a7cb7834
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106850"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812087"
 ---
 # <a name="accessing-a-device-on-a-sercx2-managed-serial-port"></a>访问 SerCx2 托管串行端口上的设备
 
@@ -27,7 +26,7 @@ SerCx2 和串行控制器驱动程序共同管理将设备永久连接到的串�
 <thead>
 <tr class="header">
 <th>主题</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>

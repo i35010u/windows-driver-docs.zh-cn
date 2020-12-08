@@ -1,7 +1,6 @@
 ---
 title: NFP 推动的外设无线设备配对
 description: NFP 推动的外设无线设备配对
-ms.assetid: 7B57019F-C80A-4E74-BBC2-A26BEDEB20DD
 keywords:
 - NFC
 - 近场通信
@@ -10,12 +9,12 @@ keywords:
 - NFP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b62288a6a8842f2507f563634d30e0c1ece052b5
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: c30fa7d9d8d4323b9331133a40411597935294f0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89382473"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812787"
 ---
 # <a name="nfp-facilitated-peripheral-wireless-device-pairing"></a>NFP 推动的外设无线设备配对
 

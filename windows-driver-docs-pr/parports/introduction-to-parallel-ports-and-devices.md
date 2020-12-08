@@ -1,7 +1,6 @@
 ---
 title: 并行端口和设备简介
 description: 并行端口和设备简介
-ms.assetid: b0aaf63d-cc2d-4273-9760-6446cbb28938
 keywords:
 - 并行端口 WDK
 - 端口 WDK，并行
@@ -9,12 +8,12 @@ keywords:
 - 并行设备 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6246ce5e6d7d197190784d756abe8aa7adf60325
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: d88a539ad6f1ad5991064c72712b4a76b3d1affb
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89382897"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812617"
 ---
 # <a name="introduction-to-parallel-ports-and-devices"></a>并行端口和设备简介
 
@@ -50,7 +49,7 @@ ms.locfileid: "89382897"
 
 [供应商提供的并行驱动程序](vendor-supplied-parallel-drivers.md)
 
-[系统提供的并行驱动程序的客户端接口](/windows-hardware/drivers/ddi/index)
+[System-Supplied 并行驱动程序的客户端接口](/windows-hardware/drivers/ddi/index)
 
  
 

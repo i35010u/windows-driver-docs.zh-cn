@@ -1,15 +1,14 @@
 ---
 title: 编写和部署通用传感器驱动程序
 description: 本主题提供有关如何使用用户模式驱动程序框架编写和部署通用传感器驱动程序的指南， (UMDF) 版本2。
-ms.assetid: FA888CB3-5B43-47CB-907D-76C6E6B6DE5D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6d44842e6315c7bacfaba0483e8cec347c66153e
-ms.sourcegitcommit: ec7bebe3f94536455e62b372c2a28fe69d1717f7
+ms.openlocfilehash: c5b69ee9b0d4db65cc31d987e34d89f1e125cee0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93349687"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812091"
 ---
 # <a name="write-and-deploy-your-universal-sensor-driver"></a>编写和部署通用传感器驱动程序
 

@@ -1,37 +1,36 @@
 ---
-title: 支持的设备属性
-description: 支持的设备属性
-ms.assetid: ED9A67C4-DFD6-4CF1-B911-29570B3409A5
+title: 设备属性支持
+description: 设备属性支持
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 07792c72589abd9cc292b4c9d777a34ff4ce449b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7987add84da9106db98f4b02f63a8e47d69813e5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63324811"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812139"
 ---
-# <a name="support-for-device-properties"></a>支持的设备属性
+# <a name="support-for-device-properties"></a>设备属性支持
 
 
 | 模块                  | 类/接口      |
 |-------------------------|----------------------|
-| AccelerometerDevice.cpp | CAccelerometerDevice |
-| SensorDdi.cpp           | CSensorDdi           |
-| SensorDevice.cpp        | CSensorDevice        |
+| AccelerometerDevice .cpp | CAccelerometerDevice |
+| SensorDdi .cpp           | CSensorDdi           |
+| SensorDevice .cpp        | CSensorDevice        |
 
  
 
 Windows 传感器平台支持三种类别的传感器属性：
 
-类别说明常规设备属性包括设备型号、 制造商名称和序列号等字符串的数目。 此外包括当前的传感器状态或最小报表间隔值等的设备数据。 此类别中的属性是只读的。
-每个数据字段的属性应用于传感器的数据字段的属性。 对于加速感应器，这些是最小值、 最大值，并为每个轴的解决方法。 此类别中的属性是只读的。
-可设置设备属性的应用程序可以设置属性。 对于加速感应器，这些是更改敏感度和报表时间间隔。
+类别描述常规设备属性包括多个字符串，例如设备型号、制造商名称和序列号。 还包括设备数据，如当前传感器状态或最小报表间隔值。 此类别中的属性是只读的。
+每个数据字段属性，适用于传感器的数据字段。 对于加速感应，这些是每个轴的最小值、最大值和分辨率。 此类别中的属性是只读的。
+应用程序可以设置的可设置设备属性属性。 对于加速感应，这些是更改敏感度和报告间隔。
  
 
-源文件 SensorDdi.cpp，已有三个数组**PROPERTYKEY**对应于上表中的三个类别的结构。
+源文件 SensorDdi 具有三个 **PROPERTYKEY** 结构数组，它们对应于上表中的三个类别。
 
-第一个数组具有常规传感器属性-例如制造商的名称、 设备型号、 序列号的字符串。 此外，有值，如最小和最大范围、 传感器解析，以及受支持的最小报表时间间隔。
+第一个阵列具有常规传感器属性-如制造商名称、设备型号和序列号等字符串。 此外，还存在类似于最小和最大范围的值、传感器分辨率和支持的最小报告时间间隔。
 
 ```cpp
 const PROPERTYKEY g_SupportedAccelerometerProperties[] =
@@ -54,7 +53,7 @@ const PROPERTYKEY g_SupportedAccelerometerProperties[] =
 };
 ```
 
-第二个数组具有三个每个数据字段属性的最小值和最大范围，以及传感器解析。
+第二个数组包含三个每个数据字段属性-最小和最大范围以及传感器分辨率。
 
 ```cpp
 const PROPERTYKEY g_SupportedPerDataFieldProperties[] =
@@ -65,7 +64,7 @@ const PROPERTYKEY g_SupportedPerDataFieldProperties[] =
 };
 ```
 
-第三个数组包含加速感应器的变化敏感度和当前报告间隔。
+第三个数组包含加速度的更改敏感度和当前报表间隔。
 
 ```cpp
 const PROPERTYKEY g_SettableAccelerometerProperties[] =
@@ -75,19 +74,19 @@ const PROPERTYKEY g_SettableAccelerometerProperties[] =
 };
 ```
 
-## <a name="setting-the-general-and-per-data-field-properties"></a>设置一般和每个数据字段属性
+## <a name="setting-the-general-and-per-data-field-properties"></a>设置常规和每个数据字段属性
 
-示例驱动程序设置常规和每个数据字段属性在初始化阶段。 处理这项工作的代码中找到**CAccelerometerDevice::SetDefaultProperties**方法。 有关设置这些属性的调用的序列的信息，请参阅[驱动程序初始化](driver-initialization.md)。
+示例驱动程序在初始化阶段设置一般和每个数据字段的属性。 处理此工作的代码可在 **CAccelerometerDevice：： SetDefaultProperties** 方法中找到。 有关设置这些属性的调用序列的信息，请参阅 [驱动程序初始化](driver-initialization.md)。
 
 ## <a name="setting-the-writeable-properties"></a>设置可写属性
 
-时桌面或 WinRT，应用程序设置当前报表的时间间隔内，或更改敏感度属性，传感器类扩展使用这一序列的方法来进行更新。
+当桌面或 WinRT 应用程序设置当前报表间隔，或更改敏感度属性时，传感器类扩展使用此方法序列进行更新。
 
 | 方法                                    | 调用对象或方法         | 描述                                                                          |
 |-------------------------------------------|----------------------------------|--------------------------------------------------------------------------------------|
-| **CSensorDdi::OnSetProperties**           | SensorsClassExtension.dll        | 类扩展调用此方法来启动属性更新。                |
-| **CSensorDevice::SetProperties**          | **CSensorDdi::OnSetProperties**  | 应用使用的属性键和值由应用程序提供的新属性。       |
-| **CSensorDevice::ApplyUpdatedProperties** | **CSensorDevice::SetProperties** | 重新应用新值，因为它可能已更改驱动程序存储的最小值。 |
+| **CSensorDdi::OnSetProperties**           | SensorsClassExtension.dll        | 类扩展调用此方法以启动属性更新。                |
+| **CSensorDevice：： SetProperties**          | **CSensorDdi::OnSetProperties**  | 使用应用提供的属性键和值应用新的属性。       |
+| **CSensorDevice::ApplyUpdatedProperties** | **CSensorDevice：： SetProperties** | 重新应用新值，因为它可能会改变驱动程序存储的最小值。 |
 
  
 

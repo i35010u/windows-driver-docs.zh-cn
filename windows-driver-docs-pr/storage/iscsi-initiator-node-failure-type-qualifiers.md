@@ -1,25 +1,24 @@
 ---
-title: ISCSI\_发起方\_节点\_失败\_类型\_限定符
-description: ISCSI\_发起方\_节点\_失败\_类型\_限定符
-ms.assetid: 77be126e-73c0-4471-8d3c-506107cc3d3d
+title: ISCSI \_ 发起程序 \_ 节点 \_ 故障 \_ 类型 \_ 限定符
+description: ISCSI \_ 发起程序 \_ 节点 \_ 故障 \_ 类型 \_ 限定符
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: c2770d6005a31edc76e6bac75fca21c01293536b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: cb1bb2f4d43c36bcf4d2f88c72926da25789f01a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63358525"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96811653"
 ---
-# <a name="iscsiinitiatornodefailuretypequalifiers"></a>ISCSI\_发起方\_节点\_失败\_类型\_限定符
+# <a name="iscsi_initiator_node_failure_type_qualifiers"></a>ISCSI \_ 发起程序 \_ 节点 \_ 故障 \_ 类型 \_ 限定符
 
 
 ## <span id="ddk_iscsi_initiator_node_failure_type_qualifiers_kr"></span><span id="DDK_ISCSI_INITIATOR_NODE_FAILURE_TYPE_QUALIFIERS_KR"></span>
 
 
-ISCSI\_发起方\_节点\_失败\_类型\_限定符 WMI 属性限定符对应于一组表示不同类型的节点故障，在会话中的值。
+ISCSI \_ 发起程序 \_ 节点 \_ 故障 \_ 类型 \_ 限定符 WMI 属性限定符对应于一组值，这些值表示会话内的不同类型的节点故障。
 
-下表描述了 ISCSI\_发起方\_节点\_失败\_类型\_限定符值。
+下表描述了 ISCSI \_ 发起程序 \_ 节点 \_ 故障 \_ 类型 \_ 限定符值。
 
 <table>
 <colgroup>
@@ -28,7 +27,7 @@ ISCSI\_发起方\_节点\_失败\_类型\_限定符 WMI 属性限定符对应于
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">节点失败值</th>
+<th align="left">节点故障值</th>
 <th align="left">含义</th>
 </tr>
 </thead>

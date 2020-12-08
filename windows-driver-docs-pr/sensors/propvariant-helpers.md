@@ -1,15 +1,14 @@
 ---
 title: PropVariant 帮助程序
 description: V2 传感器驱动程序使用 PropVariant helper 函数操作与传感器关联的 PROPVARIANT 结构。
-ms.assetid: 5A5A008A-399F-4464-ADD0-7F2DDACB6D4B
 ms.date: 07/20/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 51f2c7dd951e4eccdb32b752f154f96cc2af3bc4
-ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
+ms.openlocfilehash: 6574314b8d664a74ae2f11dd42000869daca9f72
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90009827"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812263"
 ---
 # <a name="sensor-propvariant-helpers"></a>传感器 PropVariant 帮助器
 
@@ -22,8 +21,8 @@ Helper 函数与传感器设备驱动程序软件接口一起使用 (DDSI) 。
 | InitPropVariantFromFloat | 初始化 [PROPVARIANT](/windows/win32/api/propidlbase/ns-propidlbase-propvariant) 结构。 | 此函数接收 FLOAT，然后基于该变量创建并初始化 [PROPVARIANT](/windows/win32/api/propidlbase/ns-propidlbase-propvariant) 结构。 |
 | PropKeyFindKeyGetPropVariant | 检索 [PROPVARIANT](/windows/win32/api/propidlbase/ns-propidlbase-propvariant) 结构。 | |
 | PropKeyFindKeySetPropVariant | 设置 [PROPVARIANT](/windows/win32/api/propidlbase/ns-propidlbase-propvariant) 结构。 | |
-| PropKeyFindKeyGetFileTime | 检索与数据文件关联的时间戳。 |这是与提供的属性键匹配的[PROPVARIANT](/windows/win32/api/propidlbase/ns-propidlbase-propvariant)结构的*filetime*成员。 |
-| PropKeyFindKeyGetGuid | 检索传感器的 GUID。 | 这是与提供的属性键匹配的[PROPVARIANT](/windows/win32/api/propidlbase/ns-propidlbase-propvariant)结构的*puuid*成员。 |
+| PropKeyFindKeyGetFileTime | 检索与数据文件关联的时间戳。 |这是与提供的属性键匹配的 [PROPVARIANT](/windows/win32/api/propidlbase/ns-propidlbase-propvariant)结构的 *filetime* 成员。 |
+| PropKeyFindKeyGetGuid | 检索传感器的 GUID。 | 这是与提供的属性键匹配的 [PROPVARIANT](/windows/win32/api/propidlbase/ns-propidlbase-propvariant)结构的 *puuid* 成员。 |
 | PropKeyFindKeyGetBool | 从与传感器关联的 [PROPVARIANT](/windows/win32/api/propidlbase/ns-propidlbase-propvariant) 结构检索一个 BOOL 值。 | |
 | PropKeyFindKeyGetUlong | 从与传感器关联的 [PROPVARIANT](/windows/win32/api/propidlbase/ns-propidlbase-propvariant) 结构检索 ULONG 值。 | |
 | PropKeyFindKeyGetUshort | 从与传感器关联的 [PROPVARIANT](/windows/win32/api/propidlbase/ns-propidlbase-propvariant) 结构检索 USHORT 值。 | |

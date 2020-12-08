@@ -1,7 +1,6 @@
 ---
 title: 物理传感器模型
 description: 物理传感器模型
-ms.assetid: D3887E09-E0A4-4FBC-9D26-344016047235
 keywords:
 - NFC
 - 近场通信
@@ -10,12 +9,12 @@ keywords:
 - NFP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1a3b18fdd9fbbc59345724c9648db2221a281a53
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: f07db70013efe39056bc4d1f824521eb8d609741
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89382445"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812745"
 ---
 # <a name="physical-sensor-model"></a>物理传感器模型
 

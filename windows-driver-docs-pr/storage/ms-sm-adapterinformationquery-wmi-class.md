@@ -1,22 +1,21 @@
 ---
 title: MS \_ SM \_ AdapterInformationQuery WMI 类
 description: MS \_ SM \_ AdapterInformationQuery WMI 类
-ms.assetid: 3a396a73-6ade-455a-ac3f-fd0175cc704e
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 875e0b4b467ea69dc1dc465e2b99f27affc96417
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: f9fe1c6feeb9a2dc5a4538f65e36706e569a9c23
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89188517"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96811543"
 ---
 # <a name="ms_sm_adapterinformationquery-wmi-class"></a>MS \_ SM \_ AdapterInformationQuery WMI 类
 
 
 支持存储管理 API 的 HBA 微型端口驱动程序使用 MS \_ SM \_ AdapterInformationQuery 类公开与 SAS 适配器关联的属性信息。
 
-MS \_ SM \_ AdapterInformationQuery 类在 *Hbaapi*中定义如下：
+MS \_ SM \_ AdapterInformationQuery 类在 *Hbaapi* 中定义如下：
 
 ```cpp
 class MS_SM_AdapterInformationQuery

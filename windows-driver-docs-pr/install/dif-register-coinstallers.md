@@ -1,7 +1,6 @@
 ---
 title: DIF_REGISTER_COINSTALLERS
 description: DIF_REGISTER_COINSTALLERS
-ms.assetid: 9b75470b-9f65-47ec-b738-9664f3e766d1
 keywords:
 - DIF_REGISTER_COINSTALLERS 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: b4d4c7b2078fc349a9846f51b935da0f48591b39
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: eb84c22f62cc7e55207a5ce8f2243bf316438344
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90716204"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96813189"
 ---
 # <a name="dif_register_coinstallers"></a>DIF_REGISTER_COINSTALLERS
 
@@ -64,14 +63,14 @@ DIF_REGISTER_COINSTALLERS 请求允许安装程序参与设备共同安装程序
 提供一个指向 [**SP_DEVINFO_DATA**](/windows/win32/api/setupapi/ns-setupapi-sp_devinfo_data) 结构的指针，该结构在设备信息集中标识设备。
 
 <a href="" id="device-installation-parameters-"></a>设备安装参数   
-与*DeviceInfoData*关联的设备安装参数 ([**SP_DEVINSTALL_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-sp_devinstall_params_a)) 。
+与 *DeviceInfoData* 关联的设备安装参数 ([**SP_DEVINSTALL_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-sp_devinstall_params_a)) 。
 
 <a href="" id="class-installation-parameters"></a>类安装参数  
 无
 
 ### <a name="installer-output"></a>安装程序输出
 
-<a href="" id="none"></a>无  
+<a href="" id="none"></a>内容  
 
 ### <a name="installer-return-value"></a>安装程序返回值
 
@@ -81,7 +80,7 @@ DIF_REGISTER_COINSTALLERS 请求允许安装程序参与设备共同安装程序
 
 如果类安装程序成功处理此请求（包括直接调用默认处理程序），则类安装程序应返回 NO_ERROR 并且 **SetupDiCallClassInstaller** 将不会再次调用默认处理程序。
 
-**注意**   类安装程序可以直接调用默认处理程序，但类安装程序永远不会尝试取代默认处理程序的操作。
+**注意**   类安装程序可以直接调用默认处理程序，但类安装程序永远不会尝试取代默认处理程序的操作。
 
  
 

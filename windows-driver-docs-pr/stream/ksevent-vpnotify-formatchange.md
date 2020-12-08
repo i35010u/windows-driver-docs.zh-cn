@@ -1,7 +1,6 @@
 ---
 title: KSEVENT \_ VPNOTIFY \_ FORMATCHANGE
 description: KSEVENT \_ VPNOTIFY \_ FORMATCHANGE 事件用于在用户模式下将事件（如视频格式更改）从内核模式 DVD 解码器微型驱动程序传播到 DirectShow。
-ms.assetid: 4c1757ec-1453-4aaa-b246-7c255e29310d
 keywords:
 - KSEVENT_VPNOTIFY_FORMATCHANGE 流媒体设备
 topic_type:
@@ -12,12 +11,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f17d69bf1dfccf5282014ed1c21636028588b042
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: e2022d84c22c9ad9904089b65be4d7659660fb89
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103306"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96813411"
 ---
 # <a name="ksevent_vpnotify_formatchange"></a>KSEVENT \_ VPNOTIFY \_ FORMATCHANGE
 

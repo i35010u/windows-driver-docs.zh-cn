@@ -1,15 +1,14 @@
 ---
 title: SerCx2 串行控制器驱动程序设计
 description: 若要管理串行控制器，请编写一个串行控制器驱动程序，用于执行特定于硬件的任务并与 SerCx2 通信。
-ms.assetid: 67045E19-4EE1-4C31-A842-858E9A90233E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 31edb40128c008dea50f16048a352802508e4385
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 51b17f756b4af6e197ef5d004b848ad5d4d9e3e4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103128"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96811955"
 ---
 # <a name="serial-controller-driver-design-for-sercx2"></a>SerCx2 串行控制器驱动程序设计
 
@@ -25,7 +24,7 @@ ms.locfileid: "90103128"
 <thead>
 <tr class="header">
 <th>主题</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>

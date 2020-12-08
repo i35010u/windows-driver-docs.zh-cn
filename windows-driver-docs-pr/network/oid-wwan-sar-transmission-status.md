@@ -1,16 +1,15 @@
 ---
 title: OID_WWAN_SAR_TRANSMISSION_STATUS
 description: OID_WWAN_SAR_TRANSMISSION_STATUS 根据特定的吸收速率 (SAR) 传输状态，启用或禁用从移动宽带 (MB) 调制解调器发出的通知。
-ms.assetid: 83DFEECD-468A-4A76-B881-DA22FBB3F3A6
 ms.date: 08/20/2018
 keywords: -从 Windows Vista 开始 OID_WWAN_SAR_TRANSMISSION_STATUS 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 4d0a10f0a8ff352f0a017b41933a7f2661549888
-ms.sourcegitcommit: 366a15d68eb58d01a8ca6de7b982f62ac8b7deaf
+ms.openlocfilehash: 50c52a760a681e27708076982541ecfd070162fd
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/19/2020
-ms.locfileid: "90812014"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812931"
 ---
 # <a name="oid_wwan_sar_transmission_status"></a>OID_WWAN_SAR_TRANSMISSION_STATUS
 
@@ -30,7 +29,7 @@ OID_WWAN_SAR_TRANSMISSION_STATUS 根据特定的吸收速率 (SAR) 传输状态�
 
 **版本**： Windows 10，版本 1703 **头**： Ntddndis (包括 Ndis .h) 
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [MB SAR 平台支持](./mb-sar-platform-support.md)
 

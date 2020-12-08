@@ -1,7 +1,6 @@
 ---
 title: 传感器属性
 description: 传感器和位置平台定义标识传感器属性的常量。 传感器制造商还可以定义自己的属性。
-ms.assetid: a9f88dad-a81d-45dc-b607-e7b4c5036774
 topic_type:
 - apiref
 api_name:
@@ -32,12 +31,12 @@ api_type:
 - HeaderDef
 ms.date: 01/04/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: aed2f17e388cd4fe51d6b7d32785eb5098332fd2
-ms.sourcegitcommit: b75e9940d49410e2b952e96f325df67a039cd571
+ms.openlocfilehash: d6b1c70a0c8fa298630a9536d6916978ab9c8b18
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92337010"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812173"
 ---
 # <a name="sensor-properties"></a>传感器属性
 
@@ -45,7 +44,7 @@ ms.locfileid: "92337010"
 
 平台为传感器属性定义以下 **PROPERTYKEY** 值。 除非另有说明，否则这些属性是只读的。
 
-每个平台定义的传感器属性**PROPERTYKEY**基于一个名为 "传感器**GUID** \_ 属性 \_ 公用 guid \_ " 的通用 guid：
+每个平台定义的传感器属性 **PROPERTYKEY** 基于一个名为 "传感器 **GUID** \_ 属性 \_ 公用 guid \_ " 的通用 guid：
 
 {7F8383EC-D3EC-495C-A8CF-B8BBE85C2920}.
 
@@ -62,7 +61,7 @@ ms.locfileid: "92337010"
 <thead>
 <tr class="header">
 <th>属性键名称和 PID</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -218,7 +217,7 @@ ms.locfileid: "92337010"
 <thead>
 <tr class="header">
 <th>属性键</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -248,13 +247,13 @@ ms.locfileid: "92337010"
 <td><p>无受支持的版本</p></td>
 </tr>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>传感器。h</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [**GetProperties**](/windows/desktop/api/sensorsapi/nf-sensorsapi-isensor-getproperties)
 

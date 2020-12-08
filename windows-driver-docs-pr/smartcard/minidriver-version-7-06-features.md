@@ -1,15 +1,14 @@
 ---
 title: 微型驱动程序版本 7.06 功能
 description: 微型驱动程序版本 7.06 功能
-ms.assetid: 6066C6F9-DF03-4886-A5AE-FFE50B2B34D8
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 723a1324cd9993f41159b52309fdf5ab85779b21
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: d5221b63414f54169a0bb561fe9a594492f93eaf
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89381373"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96811899"
 ---
 # <a name="minidriver-version-706-features"></a>微型驱动程序版本 7.06 功能
 
@@ -96,7 +95,7 @@ ms.locfileid: "89381373"
 ## <a name="span-idnew_card_container_property_for_ecdsa_ecdh_key_associationspanspan-idnew_card_container_property_for_ecdsa_ecdh_key_associationspanspan-idnew_card_container_property_for_ecdsa_ecdh_key_associationspannew-card-container-property-for-ecdsaecdh-key-association"></a><span id="New_Card_Container_Property_for_ECDSA_ECDH_Key_Association"></span><span id="new_card_container_property_for_ecdsa_ecdh_key_association"></span><span id="NEW_CARD_CONTAINER_PROPERTY_FOR_ECDSA_ECDH_KEY_ASSOCIATION"></span>用于 ECDSA/ECDH 密钥关联的新卡容器属性
 
 
-这个新的容器属性将椭圆曲线数字签名算法 (ECDSA) 键与椭圆曲线 Diffie-hellman (ECDH) 密钥相关联。 每个 ECDSA 密钥与用于数据加密和解密的 ECDH 密钥成对出现。 使用 ECDSA 密钥时，此关联支持要求加密的方案。
+这个新的容器属性将椭圆曲线数字签名算法 (ECDSA) 键与椭圆曲线一起使用 Diffie-Hellman (ECDH) 键。 每个 ECDSA 密钥与用于数据加密和解密的 ECDH 密钥成对出现。 使用 ECDSA 密钥时，此关联支持要求加密的方案。
 
 如果登录证书是 ECDSA 证书，则使用关联的 ECDH 密钥对缓存的登录凭据进行加密。 在缓存的登录操作期间，将使用与用于用户登录的 ECDSA 密钥关联的 ECDH 密钥来解密域控制器中的数据。 在这种情况下，当计算机脱机或无法访问域控制器时，可以使用智能卡登录操作。
 

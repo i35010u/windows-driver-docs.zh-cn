@@ -1,15 +1,14 @@
 ---
 title: 计步器数据字段
 description: 本主题提供有关特定于 pedometer 的数据字段的信息。
-ms.assetid: 35E52085-9727-465D-B6EF-D95974423CD5
 ms.date: 07/20/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 1a32a75e46f8bbbfdc821111aea411c375c80488
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 733f053d78f1725869f3c1af55f6165e76038dc4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91732779"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812273"
 ---
 # <a name="pedometer-data-fields"></a>计步器数据字段
 

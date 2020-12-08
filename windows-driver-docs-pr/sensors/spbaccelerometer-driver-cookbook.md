@@ -1,37 +1,36 @@
 ---
 title: SpbAccelerometer 驱动程序指南
 description: SpbAccelerometer 驱动程序指南
-ms.assetid: 3E7875E1-0810-4698-A5E1-7A4C6C366967
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2f8535839075b5a044505ed95fab17cde7ae94fe
-ms.sourcegitcommit: 19ba939a139e8ad62b0086c30b2fe772a2320663
+ms.openlocfilehash: 07d3c6b901da09aca40d90a15a0d0c915723a0f4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72681933"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812161"
 ---
 # <a name="spbaccelerometer-driver-cookbook"></a>SpbAccelerometer 驱动程序指南
 
 
-## <a name="get-started"></a>“开始”
+## <a name="get-started"></a>入门
 
 
-本指南演示如何开始使用为 Windows 8.1 及更早版本的操作系统（SpbAccelerometer 示例驱动程序）开发的示例驱动程序。
+本指南演示如何开始使用为 (示例驱动程序) Windows 8.1 和早期版本的操作系统开发的示例驱动程序。
 
 >[!NOTE]
-> 若要评估适用于 Windows 10 及更高版本操作系统的传感器驱动程序示例，请参阅[传感器示例驱动程序](https://github.com/Microsoft/Windows-driver-samples/tree/master/sensors)。 有关如何开发和生成适用于 Windows 10 及更高版本操作系统的传感器驱动程序的信息，请参阅[编写和部署通用传感器驱动程序](write-and-deploy-your-universal-sensor-driver.md)。
+> 若要评估适用于 Windows 10 及更高版本操作系统的传感器驱动程序示例，请参阅 [传感器示例驱动程序](https://github.com/Microsoft/Windows-driver-samples/tree/master/sensors)。 有关如何开发和生成适用于 Windows 10 及更高版本操作系统的传感器驱动程序的信息，请参阅 [编写和部署通用传感器驱动程序](write-and-deploy-your-universal-sensor-driver.md)。
 
  
 
-首先，将 Windows 安装在带 Cove 板上。 你将配置加速感应，并将其附加到带 Cove 板。 接下来，你将安装 Microsoft Visual Studio Express 和 Windows 驱动程序工具包（WDK）。 然后，将安装示例驱动程序。 完成这些任务后，便可以开始探索示例驱动程序了。
+首先，将 Windows 安装在带 Cove 板上。 你将配置加速感应，并将其附加到带 Cove 板。 接下来，你将 Microsoft Visual Studio Express 和 Windows 驱动程序工具包 (WDK) 安装。 然后，将安装示例驱动程序。 完成这些任务后，便可以开始探索示例驱动程序了。
 
-### <a name="required-hardware"></a>必需的硬件
+### <a name="required-hardware"></a>所需硬件
 
 在开始之前，请确保你具有以下硬件：
 
 -   附带电源线和适配器的 Sharks Cove 板。
--   [ADXL345](https://go.microsoft.com/fwlink/p/?linkid=401463)加速度/专题讨论板
+-   [ADXL345](https://go.microsoft.com/fwlink/p/?linkid=401463) 加速度/专题讨论板
 -   USB 集线器
 -   USB 键盘
 -   USB 鼠标

@@ -1,16 +1,15 @@
 ---
 title: OID_WWAN_SMS_SEND
 description: OID_WWAN_SMS_SEND 将短信发送给另一个 MB 设备。
-ms.assetid: 557d2bdc-8414-4fcb-903c-23bb68955d07
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_WWAN_SMS_SEND 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: aa60f4496f7d9533820ae4f94532141c59104e88
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 490b42846121c44d2dcb1ce012f8dfded8adccb9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89212311"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812897"
 ---
 # <a name="oid_wwan_sms_send"></a>OID \_ WWAN \_ SMS \_ 发送
 
@@ -56,7 +55,7 @@ OID \_ WWAN \_ sms \_ SEND 支持发送 PDU 模式和 CDMA 模式短信，具体
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**NDIS \_ WWAN \_ SMS \_ 发送**](/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_sms_send)

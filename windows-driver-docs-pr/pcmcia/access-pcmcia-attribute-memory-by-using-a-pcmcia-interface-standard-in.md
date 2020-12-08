@@ -1,18 +1,17 @@
 ---
 title: 使用 PCMCIA_INTERFACE_STANDARD 访问内存
 description: 使用 PCMCIA_INTERFACE_STANDARD 界面访问 PCMCIA 属性内存
-ms.assetid: cd73a8da-1441-4e95-a955-97235ad091ce
 keywords:
 - PCMCIA_INTERFACE_STANDARD
 - 属性内存 WDK PCMCIA 总线，PCMCIA_INTERFACE_STANDARD 接口
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cc0dc06d5857e3718830de83c74b6be1784ff725
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 4d8296d778ffa2c7d27616024c7156f1cec6c8b4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89384817"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812523"
 ---
 # <a name="access-pcmcia-attribute-memory-by-using-a-pcmcia_interface_standard-interface"></a>使用 PCMCIA \_ 接口标准界面访问 Pcmcia 属性内存 \_
 

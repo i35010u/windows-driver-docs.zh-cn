@@ -1,15 +1,14 @@
 ---
 title: 磁力计数据字段
 description: 本主题提供有关特定于磁力仪的数据字段的信息。
-ms.assetid: 5DA5566A-FECA-47ED-8338-686A548687CC
 ms.date: 07/20/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 300be4094e05afa70dc3546fcbea48c38ac8e8bb
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 57ac4d41ce695d58125710c9a964677aed74cdb5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91733633"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812327"
 ---
 # <a name="magnetometer-data-fields"></a>磁力计数据字段
 

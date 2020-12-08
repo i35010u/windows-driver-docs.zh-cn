@@ -1,15 +1,14 @@
 ---
 title: SPB 连接的外围设备的连接 ID
 description: 驱动程序可以将 i/o 请求发送到简单外围总线上的外围设备 (SPB) 中，驱动程序必须打开与设备的逻辑连接。
-ms.assetid: 234B5858-5930-40AD-BE4C-4A774A809D10
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5e0547a8a0487e6a95963258013162b412f1a2db
-ms.sourcegitcommit: c766ab74e32eb44795cbbd1a4f352d3a6a9adc14
+ms.openlocfilehash: 8cc65ccaec188b7d4e8d88d218c7b24ed69c6a1a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89389519"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96811851"
 ---
 # <a name="connection-ids-for-spb-connected-peripheral-devices"></a>SPB 连接的外围设备的连接 ID
 
@@ -21,7 +20,7 @@ ms.locfileid: "89389519"
 
 系统启动时，即插即用 (PnP) manager 将同时枚举 PnP 设备和非 PnP 设备。 对于具有与 SPB 的固定连接的非 PnP 外围设备，PnP 管理器会查询硬件平台的 ACPI 固件，以获取描述如何访问设备的一组连接参数。 这些连接参数标识设备连接到的总线的 SPB 控制器，并包含控制器与设备通信所需的其他信息（如总线地址和总线时钟频率）。
 
-PnP 管理器将标识符（称为 *连接 ID*）分配给连接到 SPB 的外围设备的连接参数。 PnP 管理器将此 ID 和连接参数一起存储在名为 *资源中心*的系统数据存储中。  (资源中心是一种内部数据存储，其中 PnP 管理器存储与 SPB 连接的外围设备有关的配置信息。 ) 连接 ID 封装这些参数，以便驱动程序无需显式提供这些参数。
+PnP 管理器将标识符（称为 *连接 ID*）分配给连接到 SPB 的外围设备的连接参数。 PnP 管理器将此 ID 和连接参数一起存储在名为 *资源中心* 的系统数据存储中。  (资源中心是一种内部数据存储，其中 PnP 管理器存储与 SPB 连接的外围设备有关的配置信息。 ) 连接 ID 封装这些参数，以便驱动程序无需显式提供这些参数。
 
 与 SPB 连接的外围设备的驱动程序将接收设备的连接 ID 作为驱动程序的已分配硬件资源的一部分。 当外围设备的驱动程序调用系统函数以打开与设备的连接时，驱动程序会提供连接 ID，该 ID 用于从资源中心检索设备的连接参数。
 
@@ -37,8 +36,8 @@ PnP 管理器将标识符（称为 *连接 ID*）分配给连接到 SPB 的外�
 
 有关使用连接 Id 打开与 SPB 连接的外围设备的逻辑连接的 UMDF 和 KMDF 代码示例，请参阅以下主题：
 
-[用户模式 SPB 外设驱动程序](./hardware-resources-for-user-mode-spb-peripheral-drivers.md) 
- 的硬件资源[内核模式 SPB 外设驱动程序的硬件资源](./hardware-resources-for-kernel-mode-spb-peripheral-drivers.md)用户模式应用程序无法打开到 SPB 连接的外围设备的逻辑连接，并且无法将 i/o 请求直接发送到这些设备。
+[User-Mode SPB 外设驱动程序](./hardware-resources-for-user-mode-spb-peripheral-drivers.md) 
+ 的硬件资源[Kernel-Mode SPB 外设驱动程序的硬件资源](./hardware-resources-for-kernel-mode-spb-peripheral-drivers.md)用户模式应用程序无法打开到 SPB 连接的外围设备的逻辑连接，并且无法将 i/o 请求直接发送到这些设备。
 
 一次只能有一个驱动程序可以对连接到 SPB 的外围设备保持开放的逻辑连接。 另一个驱动程序尝试打开与同一设备的第二个连接失败。
 

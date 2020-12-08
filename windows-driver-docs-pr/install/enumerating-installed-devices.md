@@ -1,18 +1,17 @@
 ---
 title: 枚举已安装的设备
 description: 枚举已安装的设备
-ms.assetid: 98EF9A16-6415-4778-BB5D-C0B7160C1509
 keywords:
 - 枚举安装的设备 WDK
 - 已安装的设备 WDK，枚举
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3ac3f98fc4a995439ef81d1fc233838b7e5da2c3
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: e3daffe9f2e5d4fe070c414cb52ce672968e0001
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90717398"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96813155"
 ---
 # <a name="enumerating-installed-devices"></a>枚举已安装的设备
 
@@ -25,7 +24,7 @@ ms.locfileid: "90717398"
 
 2.  使用 [**SetupDiEnumDeviceInfo**](/windows/win32/api/setupapi/nf-setupapi-setupdienumdeviceinfo) 枚举集中的设备。
 
-3.  使用 [**SetupDiGetDeviceInstanceId**](/windows/win32/api/setupapi/nf-setupapi-setupdigetdeviceinstanceida) 检索 [)  (id 的唯一设备实例标识符 ](device-instance-ids.md)。
+3.  使用 [**SetupDiGetDeviceInstanceId**](/windows/win32/api/setupapi/nf-setupapi-setupdigetdeviceinstanceida) 检索 [)  (id 的唯一设备实例标识符](device-instance-ids.md)。
 
  
 

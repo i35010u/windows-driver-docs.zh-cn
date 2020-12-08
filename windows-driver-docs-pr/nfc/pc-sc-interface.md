@@ -1,38 +1,37 @@
 ---
-title: 智能卡的 PC/SC 接口
-description: 本主题介绍不同的 NFC 卡类型的 ATR 格式。
-ms.assetid: ''
+title: 适用于智能卡的 PC/SC 接口
+description: 本主题介绍不同 NFC 卡类型的 ATR 格式。
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: bb96aa0d8dd80f0a478a9512b1eaef9e9a9b3ebf
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d253b1e85706cfcc5bddc9f31245741c9b75a922
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63373725"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812773"
 ---
-# <a name="pcsc-interface-for-smart-cards"></a>智能卡的 PC/SC 接口
+# <a name="pcsc-interface-for-smart-cards"></a>适用于智能卡的 PC/SC 接口
 
-下面列出了不同的 NFC 卡类型的 ATR 格式。 请参阅有关 ATR 格式的更多详细信息的 PC/SC 规范 [3.a]。
+下面列出了不同 NFC 卡类型的 ATR 格式。 有关 ATR 格式的更多详细信息，请参阅 PC/SC spec [3. a]。
 
-## <a name="atr-format-for-iso14443-4-cards"></a>ISO14443 4 卡的 ATR 格式
+## <a name="atr-format-for-iso14443-4-cards"></a>ISO14443 的 ATR 格式-4 卡
 
-| 字节偏移量 | ReplTest1 | 指定内容      | 描述                                                                                                                 |
+| 字节偏移量 | “值” | 职务      | 描述                                                                                                                 |
 |-------------|-------|------------------|-----------------------------------------------------------------------------------------------------------------------------|
 | 0           | 3B    | 初始标头   |                                                                                                                             |
-| 1           | 8n    | T0               | 更高版本的四位指示仅存在 TD1。 较低的位元组表示历史字节的大小                       |
+| 1           | 1uk-8n-qpp    | T0               | 较大的半字节表明仅存在 TD1。 下半半部分指示历史字节的大小                       |
 | 2           | 80    | TD1              | 存在 TD2                                                                                                             |
 | 3           | 01    | TD2              |                                                                                                                             |
-| 4 到 3 + N    | XX    | 历史的字节数 | 有关 ISO14443A:历史的字节数是从 ATS 响应 <br> 有关 ISO14443B:历史的字节数是从 ATTRIB (ATQB) |
-| 4+N         | XX    | TCK              | 校验和                                                                                                                    |
+| 4到 3 + N    | XX    | 历史字节数 | 对于 ISO14443A：历史字节来自 ATS 响应 <br> 对于 ISO14443B：历史字节来自 ATTRIB (ATQB)  |
+| 4 + N         | XX    | TCK              | 校验和                                                                                                                    |
 
 ## <a name="atr-format-for-storage-cards"></a>存储卡的 ATR 格式
 <table>
     <tbody>
         <tr>
             <th>字节偏移量</th>
-            <th>ReplTest1</th>
-            <th>指定内容</th>
+            <th>“值”</th>
+            <th>职务</th>
             <th>描述</th>
         </tr>
         <tr>
@@ -42,9 +41,9 @@ ms.locfileid: "63373725"
         </tr>
         <tr>
             <td>1</td>
-            <td>8n</td>
+            <td>1uk-8n-qpp</td>
             <td>T0</td>
-            <td>更高版本的四位指示仅存在 TD1。 较低的位元组表示历史字节的大小。</td>
+            <td>较大的半字节表明仅存在 TD1。 下半半部分指示历史字节的大小。</td>
         </tr>
         <tr>
             <td>2</td>
@@ -58,52 +57,52 @@ ms.locfileid: "63373725"
             <td>TD2</td>
         </tr>
         <tr>
-            <td>4 到 3 + N</td>
+            <td>4到 3 + N</td>
             <td>80</td>
             <td>T1</td>
             <td>类别指示器字节。</td>
         </tr>
         <tr>
-            <td>4 到 3 + N</td>
+            <td>4到 3 + N</td>
             <td>4F</td>
             <td>TK</td>
             <td>应用程序标识符存在。</td>
         </tr>
         <tr>
-            <td>4 到 3 + N</td>
+            <td>4到 3 + N</td>
             <td>0C</td>
             <td>TK</td>
             <td>长度</td>
         </tr>
         <tr>
-            <td>4 到 3 + N</td>
+            <td>4到 3 + N</td>
             <td>A0 00 00 03 06</td>
             <td>TK</td>
-            <td>指定在第 3 部分补充文档从 PC/SC 中 RID</td>
+            <td>从 PC/SC 的第3部分补充文档中指定的 RID</td>
         </tr>
         <tr>
-            <td>4 到 3 + N</td>
+            <td>4到 3 + N</td>
             <td>SS</td>
             <td>TK</td>
-            <td>对于标准的字节。 值应对应于表 2 的补充文档。</td>
+            <td>标准字节。 值应对应于补充文档的表2。</td>
         </tr>
         <tr>
-            <td>4 到 3 + N</td>
+            <td>4到 3 + N</td>
             <td>NN</td>
             <td>TK</td>
-            <td>卡名称的字节数。 值应对应于表 3 的补充文档。</td>
+            <td>卡名称的字节数。 值应对应于补充文档的表3。</td>
         </tr>
         <tr>
-            <td>4 到 3 + N</td>
+            <td>4到 3 + N</td>
             <td>00 00 00 00</td>
             <td>RFU</td>
             <td></td>
         </tr>
         <tr>
-            <td>4+N</td>
+            <td>4 + N</td>
             <td>XX</td>
             <td>TCK<td>
-            <td>校验和</td>
+            <td>检查-sum</td>
         </tr>
     </tbody>
 </table>

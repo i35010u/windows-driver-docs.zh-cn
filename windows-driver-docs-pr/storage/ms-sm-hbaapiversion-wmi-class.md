@@ -1,22 +1,21 @@
 ---
 title: MS \_ SM \_ HbaApiVersion WMI 类
 description: MS \_ SM \_ HbaApiVersion WMI 类
-ms.assetid: 3d0591e5-ed95-4509-bd27-e122ac9186d2
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: d9ac92c0af7f2fcc0ae1d96ef044489301cb1582
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: dfe90fbaf6216bb31a7d22c7cb6c83d8dc5c1749
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89190625"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96811529"
 ---
 # <a name="ms_sm_hbaapiversion-wmi-class"></a>MS \_ SM \_ HbaApiVersion WMI 类
 
 
 支持存储管理 API 的 HBA 微型端口驱动程序使用 MS \_ SM \_ HbaApiVersion 类报告当前 HBA API 版本。
 
-MS \_ SM \_ HbaApiVersion 类在 *Hbaapi*中定义如下：
+MS \_ SM \_ HbaApiVersion 类在 *Hbaapi* 中定义如下：
 
 ```cpp
 class MS_SM_HbaApiVersion

@@ -1,7 +1,6 @@
 ---
 title: RF 发现序列
 description: 下图说明了 NFC CX 用于启动发现的 NCI 操作的顺序。
-ms.assetid: 392F8A06-262D-4CF9-B510-C3FE86291026
 keywords:
 - NFC
 - 近场通信
@@ -10,12 +9,12 @@ keywords:
 - NFP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4d758a69b57f2d13c498c0420c14b8238dd6fdc0
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 1116a0d40173b263fc1e92e46fc4ce50b3ea6bd6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89381675"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812721"
 ---
 # <a name="rf-discovery-sequence"></a>RF 发现序列
 

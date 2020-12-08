@@ -1,7 +1,6 @@
 ---
 title: 向并行设备进行读取和写入
 description: 向并行设备进行读取和写入
-ms.assetid: f28506b1-fa87-4119-a57a-2b49573197d8
 keywords:
 - 并行设备 WDK，读取
 - 并行设备 WDK，写入
@@ -9,12 +8,12 @@ keywords:
 - 编写并行设备
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 99269ba715b430b099d5e1a8f556ed9c5fdcd668
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 03353b08058b703001e4ae87912400b0cf6f573e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89384739"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812583"
 ---
 # <a name="reading-and-writing-a-parallel-device"></a>向并行设备进行读取和写入
 

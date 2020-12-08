@@ -1,7 +1,6 @@
 ---
 title: 对并行端口和设备的 IOCTL 和回调支持
 description: 对并行端口和设备的 IOCTL 和回调支持
-ms.assetid: 72a31f50-2f59-4a4d-aac7-571f83a94259
 keywords:
 - 系统提供的并行驱动程序 WDK，IOCTLs
 - IOCTLs WDK 并行驱动程序
@@ -11,12 +10,12 @@ keywords:
 - 并行设备 WDK，IOCTLs
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e2c94cf76801735de87cdf5b998b0ba29361cbba
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 9ab266d02d040004d792655610e11015a1fd0460
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89385091"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812611"
 ---
 # <a name="ioctl-and-callback-support-for-parallel-ports-and-devices"></a>对并行端口和设备的 IOCTL 和回调支持
 
@@ -62,7 +61,7 @@ ms.locfileid: "89385091"
 
 [打开连接到并行端口的并行设备](operating-a-parallel-device-attached-to-a-parallel-port.md)
 
-[系统提供的并行驱动程序的客户端接口](/windows-hardware/drivers/ddi/index)
+[System-Supplied 并行驱动程序的客户端接口](/windows-hardware/drivers/ddi/index)
 
  
 

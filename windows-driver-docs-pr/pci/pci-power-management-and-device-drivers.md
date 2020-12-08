@@ -1,15 +1,14 @@
 ---
 title: PCI 电源管理和设备驱动程序
 description: 阐明了遵循 PCI 电源管理 (的硬件如何) 与设备驱动程序交互。
-ms.assetid: BA6792EE-CAD8-4C9E-AAA6-D1D8799F50C3
 ms.date: 12/04/2001
 ms.localizationpriority: medium
-ms.openlocfilehash: 06661787a21c0724d88fd9fff2637f7eee7a370f
-ms.sourcegitcommit: 67efcd26f7be8f50c92b141ccd14c9c68f4412d8
+ms.openlocfilehash: d08f3f359ad937407f0e56eb5829a2d417ebea01
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88902631"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812537"
 ---
 # <a name="pci-power-management-and-device-drivers"></a>PCI 电源管理和设备驱动程序
 

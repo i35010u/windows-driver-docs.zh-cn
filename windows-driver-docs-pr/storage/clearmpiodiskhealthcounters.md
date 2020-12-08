@@ -1,7 +1,6 @@
 ---
 title: ClearMpioDiskHealthCounters 函数
-description: ClearMpioDiskHealthCounters 方法用于清除的 MPIO 磁盘收集到的 MPIO 统计信息。
-ms.assetid: 1ac415b2-87d4-430d-8713-a871c6af1006
+description: ClearMpioDiskHealthCounters 方法用于清除 MPIO 磁盘的已收集 MPIO 统计信息。
 keywords:
 - ClearMpioDiskHealthCounters 函数存储设备
 topic_type:
@@ -14,17 +13,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: a44ed8a1d28bd03383d46b11421daedc737ccd1e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 294869b007a19c9b0cb100586f6be267523b716e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379997"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96811755"
 ---
 # <a name="clearmpiodiskhealthcounters-function"></a>ClearMpioDiskHealthCounters 函数
 
 
-ClearMpioDiskHealthCounters 方法用于清除的 MPIO 磁盘收集到的 MPIO 统计信息。
+ClearMpioDiskHealthCounters 方法用于清除 MPIO 磁盘的已收集 MPIO 统计信息。
 
 <a name="syntax"></a>语法
 ------
@@ -35,11 +34,11 @@ void ClearMpioDiskHealthCounters(
 );
 ```
 
-<a name="parameters"></a>Parameters
+<a name="parameters"></a>参数
 ----------
 
 *DiskOrdinal*   
-表示 MPIO 32-位域的磁盘的序号值。
+表示 MPIO 磁盘序号值的32位域。
 
 <a name="return-value"></a>返回值
 ------------
@@ -49,7 +48,7 @@ void ClearMpioDiskHealthCounters(
 <a name="remarks"></a>备注
 -------
 
-此 WMI 方法属于 MPIO\_WMI\_方法 WMI 类。
+此 WMI 方法属于 MPIO \_ wmi \_ 方法 wmi 类。
 
 <a name="requirements"></a>要求
 ------------
@@ -62,11 +61,11 @@ void ClearMpioDiskHealthCounters(
 <tbody>
 <tr class="odd">
 <td align="left"><p>目标平台</p></td>
-<td align="left">桌面设备</td>
+<td align="left">台式机</td>
 </tr>
 <tr class="even">
-<td align="left"><p>Header</p></td>
-<td align="left">MPIOwmi.h （包括 MPIOwmi.h）</td>
+<td align="left"><p>标头</p></td>
+<td align="left">MPIOwmi (包含 MPIOwmi) </td>
 </tr>
 </tbody>
 </table>

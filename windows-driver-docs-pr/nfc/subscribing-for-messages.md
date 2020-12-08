@@ -1,7 +1,6 @@
 ---
 title: 订阅消息
 description: 订阅消息
-ms.assetid: CF0D5CE0-A0E0-47D4-88E6-FBE186F78626
 keywords:
 - NFC
 - 近场通信
@@ -10,12 +9,12 @@ keywords:
 - NFP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0dc0baa70598095e32de9e76bdc4359b92ca2d66
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 437a99a64ca45bf71e973b4579730822a27e31fa
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89384017"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812707"
 ---
 # <a name="subscribing-for-messages"></a>订阅消息
 

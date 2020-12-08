@@ -1,15 +1,14 @@
 ---
 title: 光传感器阈值
 description: 本主题提供有关光线传感器阈值的信息。
-ms.assetid: A120601A-A5CE-4778-94A9-97E71B721E9B
 ms.date: 07/20/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 442700be4d1eb23d107b02d32426aeea927d9b20
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 72f5e6336e3a2440d3b44ece7509dfb6756d9610
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91732783"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812309"
 ---
 # <a name="light-sensor-thresholds"></a>光传感器阈值
 
@@ -26,7 +25,7 @@ ms.locfileid: "91732783"
 |PKEY_SensorData_LightChromaticityY|VT_R4|如果支持颜色，则为必需。 可选，否则|0.01 f|达到阈值时所需的 CIE 1931 y 颜色坐标的最小更改量，以绝对差值表示。|
 |PKEY_SensorData_LightTemperature_Kelvins|VT_R4|如果支持颜色，则为必需。 可选，否则|50.0 f|达到阈值时所需的光线温度的最小更改量，以开氏度量。|
 
-光源传感器必须 *仅在 LUX 值更改时*报告新数据示例。 此建议的报表模型可确保光线传感器不会重复报告新的数据样本，因为它处于完全暗、零 (0) LUX 环境中。
+光源传感器必须 *仅在 LUX 值更改时* 报告新数据示例。 此建议的报表模型可确保光线传感器不会重复报告新的数据样本，因为它处于完全暗、零 (0) LUX 环境中。
 
 如果未提供 PKEY_SensorData_LightLevel_Lux_Threshold_AbsoluteDifference，环境光线传感器驱动程序必须在满足 PKEY_SensorData_LightLevel_Lux 阈值时，通过调用 [SensorsCxSensorDataReady](/windows-hardware/drivers/ddi/sensorscx/nf-sensorscx-sensorscxsensordataready) 来报告对传感器类扩展的示例读取。 PKEY_SensorData_LightLevel_Lux 阈值表示为 Lux 中的差异百分比。 例如，如果将此阈值设置为 0.25 f，并且向传感器类扩展报告的最后一个样本为 40 lux，则报告的下一个示例应低于 30 lux 或大于 50 lux (+/-25% 的 40) 。
 如果除了 PKEY_SensorData_LightLevel_Lux 之外还提供了 PKEY_SensorData_LightLevel_Lux_Threshold_AbsoluteDifference，环境光线传感器必须报告对传感器类扩展的示例读取（如果 __同时满足这两个__ 阈值）。 例如，如果将 PKEY_SensorData_LightLevel_Lux_Threshold_AbsoluteDifference 设置为 4.0 Lux，并将 PKEY_SensorData_LightLevel_Lux 设置为 0.25 (即 25% ) 并且向传感器类扩展报告的最后一个样本读数的值为 4 Lux，则最严格的阈值为 PKEY_SensorData_LightLevel_Lux_Threshold_AbsoluteDifference。 因此，要报告的下一个样本读数应为 0 lux 或 8 lux。
@@ -38,7 +37,7 @@ ms.locfileid: "91732783"
 
 环境光线传感器驱动程序必须始终在传感器类扩展调用 [EvtSensorStart](/windows-hardware/drivers/ddi/sensorscx/ns-sensorscx-_sensor_controller_config) 回调之后报告一个示例读取，而不考虑阈值。 此示例称为初始示例读取。
 
->**注意**   当 IsValid 数据字段发生更改时，环境光线传感器驱动程序还必须报告对传感器类扩展的示例读取，而不考虑所设置的阈值。
+>**注意**   当 IsValid 数据字段发生更改时，环境光线传感器驱动程序还必须报告对传感器类扩展的示例读取，而不考虑所设置的阈值。
 
 当 PKEY_SensorData_LightLevel_Lux_Threshold_AbsoluteDifference 和 PKEY_SensorData_LightLevel_Lux 设置为 0.0 f 时，驱动程序必须在每个间隔中向传感器类扩展报告样本读数。
 如果 PKEY_SensorData_LightChromaticityX __或__ PKEY_SensorData_LightChromaticityY __或__ PKEY_SensorData_LightTemperature_Kelvins 设置为 0.0 f，则驱动程序必须在每个间隔将示例读取报告给传感器类扩展。

@@ -1,16 +1,15 @@
 ---
 title: OID_WWAN_SMS_READ
 description: OID_WWAN_SMS_READ 读取存储在 MB 设备或订阅服务器标识模块 (SIM 卡) 或任何其他辅助非易失性内存或内存中的短信文本消息。
-ms.assetid: f4dbb7e8-1348-4fa8-abac-f644a443df48
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_WWAN_SMS_READ 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: fa1fec6673e78add87f0b68ec46de6064e43517f
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: c4b2994d1dc792b387bc6e9d4e0ce1c2c1f39fe0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89211659"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812905"
 ---
 # <a name="oid_wwan_sms_read"></a>OID \_ WWAN \_ SMS \_ 读取
 
@@ -34,7 +33,7 @@ OID \_ WWAN \_ SMS \_ 读取支持读取 PDU 模式和 CDMA 模式短信，这�
 
 微型端口驱动程序可能会收到根据索引读取 SMS 文本消息的请求，或读取所有 SMS 文本消息的请求。 读取请求可能包含任何一种基本筛选器，例如 new (未读) 消息、旧 (读取) 消息、草稿消息或发送消息。
 
-实现 SMS 文本消息功能的微型端口驱动程序必须支持使用 *WwanSmsFlagNew*的基本筛选器读取新消息。 所有其他筛选器类型都是可选的以支持。
+实现 SMS 文本消息功能的微型端口驱动程序必须支持使用 *WwanSmsFlagNew* 的基本筛选器读取新消息。 所有其他筛选器类型都是可选的以支持。
 
 微型端口驱动程序必须在逻辑上跨所有可用的物理不同 SMS 文本消息存储投影单个短信文本消息存储。
 
@@ -60,7 +59,7 @@ OID \_ WWAN \_ SMS \_ 读取支持读取 PDU 模式和 CDMA 模式短信，这�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**NDIS \_ WWAN \_ SMS \_ 读取**](/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_sms_read)

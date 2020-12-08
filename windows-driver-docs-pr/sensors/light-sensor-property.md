@@ -1,15 +1,14 @@
 ---
 title: 光传感器属性
 description: 光源传感器的属性键。
-ms.assetid: 87C58F14-E23D-4567-BBD5-AA42DF9371B0
 ms.date: 01/04/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: f9b9b7ee229c6f3d35f50dc2ea83e9afcc9b2217
-ms.sourcegitcommit: fc94eb0d5a41ef81c1b3ab91ad725386db0be0c2
+ms.openlocfilehash: 227b751a84c2c7eb39a06ba22f9cec0d9743d981
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91603683"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812317"
 ---
 # <a name="light-sensor-property"></a>光传感器属性
 
@@ -44,6 +43,6 @@ ms.locfileid: "91603683"
     }
 ```
 
-有关使用其相关的属性键设置传感器属性的完整示例，请参阅 ADXL345Acc 示例驱动程序中的 [客户端 .cpp 文件](https://github.com/Microsoft/Windows-driver-samples/blob/master/sensors/ADXL345Acc/client.cpp) ，并向下滚动到 **NTSTATUS ADXL345AccDevice：： Initialize ( ... ) ** 例程。
+有关使用其相关的属性键设置传感器属性的完整示例，请参阅 ADXL345Acc 示例驱动程序中的 [客户端 .cpp 文件](https://github.com/Microsoft/Windows-driver-samples/blob/master/sensors/ADXL345Acc/client.cpp) ，并向下滚动到 **NTSTATUS ADXL345AccDevice：： Initialize ( ... )** 例程。
 
 **标头：** Sensorsdef

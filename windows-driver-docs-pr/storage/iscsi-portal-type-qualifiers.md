@@ -1,25 +1,24 @@
 ---
-title: ISCSI\_门户\_类型\_限定符
-description: ISCSI\_门户\_类型\_限定符
-ms.assetid: 58865d45-2932-4168-8ca7-db7a101f5850
+title: ISCSI \_ 门户 \_ 类型 \_ 限定符
+description: ISCSI \_ 门户 \_ 类型 \_ 限定符
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: c417ac093129ec2a14d62d3f5e8208948d965689
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 672b2d105482d5b3ba2792bc7cb639e8b2d6a2f0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380509"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96811647"
 ---
-# <a name="iscsiportaltypequalifiers"></a>ISCSI\_门户\_类型\_限定符
+# <a name="iscsi_portal_type_qualifiers"></a>ISCSI \_ 门户 \_ 类型 \_ 限定符
 
 
 ## <span id="ddk_iscsi_portal_type_qualifiers_kr"></span><span id="DDK_ISCSI_PORTAL_TYPE_QUALIFIERS_KR"></span>
 
 
-ISCSI\_门户\_类型\_限定符 WMI 属性限定符对应于一组指示门户的类型的值。
+ISCSI \_ 门户 \_ 类型 \_ 限定符 WMI 属性限定符对应于一组指示门户类型的值。
 
-下表描述了 ISCSI\_门户\_类型\_限定符值。
+下表描述了 ISCSI \_ 门户 \_ 类型 \_ 限定符值。
 
 <table>
 <colgroup>
@@ -35,7 +34,7 @@ ISCSI\_门户\_类型\_限定符 WMI 属性限定符对应于一组指示门户�
 <tbody>
 <tr class="odd">
 <td align="left"><p>0</p></td>
-<td align="left"><p>在门户的发起程序用于访问网络。</p></td>
+<td align="left"><p>发起程序使用该门户来访问网络。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>1</p></td>

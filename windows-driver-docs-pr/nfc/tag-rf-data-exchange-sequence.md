@@ -1,7 +1,6 @@
 ---
 title: 标记 RF 数据交换序列
 description: 下图说明了各种读取器-编写器协议（如 T1T、T2T、T3T 和 ISO-DEP）的 StateRfDiscovered 和 StateRfDataXchg 的状态顺序。
-ms.assetid: F5911609-4531-44B3-9629-CD0A27D40324
 keywords:
 - NFC
 - 近场通信
@@ -10,12 +9,12 @@ keywords:
 - NFP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 517e76676fc84b6478a83f3de32be36a1f60ee54
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 23347d6f4dd61964427296e555b9a919d6ecff4d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89384089"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812695"
 ---
 # <a name="tag-rf-data-exchange-sequence"></a>标记 RF 数据交换序列
 

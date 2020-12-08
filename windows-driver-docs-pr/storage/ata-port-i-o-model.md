@@ -1,18 +1,17 @@
 ---
 title: ATA 端口 i/o 模型概述
 description: ATA 端口 i/o 模型概述
-ms.assetid: 6feaf2c4-63b2-4ab2-9d4d-7259406be652
 keywords:
 - ATA 端口驱动程序 WDK，i/o
 - I/o WDK ATA 端口驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8f57ed88e64748a8b919d07b7526a4d97d49e55a
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: c678711e886260e0daf6f0b9f9b0970663fbd357
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91734493"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96811787"
 ---
 # <a name="ata-port-io-model-overview"></a>ATA 端口 i/o 模型概述
 

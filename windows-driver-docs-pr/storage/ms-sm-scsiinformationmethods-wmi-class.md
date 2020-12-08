@@ -1,30 +1,29 @@
 ---
-title: MS\_SM\_ScsiInformationMethods WMI 类
-description: MS\_SM\_ScsiInformationMethods WMI 类
-ms.assetid: 13e70e48-5364-4a63-8a83-d5ac02c8d17f
+title: MS \_ SM \_ ScsiInformationMethods WMI 类
+description: MS \_ SM \_ ScsiInformationMethods WMI 类
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: eb0b83b622bdd965adb9e0cecd72ee72dae959f5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 617d0e4f99209401d75b16bf459c9e2980c83b35
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63367477"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96811513"
 ---
-# <a name="mssmscsiinformationmethods-wmi-class"></a>MS\_SM\_ScsiInformationMethods WMI 类
+# <a name="ms_sm_scsiinformationmethods-wmi-class"></a>MS \_ SM \_ ScsiInformationMethods WMI 类
 
 
-支持存储管理 API 的 HBA 微型端口驱动程序使用 MS\_SM\_ScsiInformationMethods WMI 类发送 SCSI 命令。 此 WMI 类都有无数据块。 因此，WMI 工具套件生成保存属于类的方法的参数数据结构，但它不会生成对应于类本身的结构。
+支持存储管理 API 的 HBA 微型端口驱动程序使用 MS \_ SM \_ ScsiInformationMethods WMI 类发送 SCSI 命令。 此 WMI 类没有数据块。 因此，WMI 工具套件会生成包含属于类的方法的参数数据的结构，但不会生成对应于类本身的结构。
 
-每个方法都属于此类的 MOF 语法所述的方法的参考页。 以下主题介绍了这些方法和其随附的结构：
+此类的每个方法的 MOF 语法在方法的参考页中进行了介绍。 以下主题介绍了这些方法及其随附的结构：
 
-[**SM\_ScsiInquiry**](sm-scsiinquiry.md)
+[**SM \_ ScsiInquiry**](sm-scsiinquiry.md)
 
-[**SM\_ScsiReportLuns**](sm-scsireportluns.md)
+[**SM \_ ScsiReportLuns**](sm-scsireportluns.md)
 
-[**SM\_ScsiReadCapacity**](sm-scsireadcapacity.md)
+[**SM \_ ScsiReadCapacity**](sm-scsireadcapacity.md)
 
-MS\_SM\_ScsiInformationMethods 类定义，如下所示在*Hbaapi.mof*:
+MS \_ SM \_ ScsiInformationMethods 类在 *Hbaapi* 中定义如下：
 
 ```cpp
 class MS_SM_ScsiInformationMethods

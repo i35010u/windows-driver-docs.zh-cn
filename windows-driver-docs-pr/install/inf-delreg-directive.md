@@ -1,7 +1,6 @@
 ---
 title: INF DelReg 指令
 description: DelReg 指令将引用一个或多个由 INF 编写器定义的部分，这些部分描述要从注册表中删除的项和/或值项。
-ms.assetid: a456327f-9b2c-42e6-a575-47ad788aa8b1
 keywords:
 - INF DelReg 指令设备和驱动程序安装
 topic_type:
@@ -12,12 +11,12 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3542485883a8b815c84d92317f92d58b6851c65e
-ms.sourcegitcommit: a44ade167cdfb541cf1818e9f9e3726f23f90b66
+ms.openlocfilehash: bc664d74613ad820c899cfc307b623d8c7284733
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94361561"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96813141"
 ---
 # <a name="inf-delreg-directive"></a>INF DelReg 指令
 
@@ -82,14 +81,14 @@ reg-root-string,subkey[,value-entry-name][,flags][,value]
 
  
 
-**请注意** ，不能在从 [**INF DefaultInstall 部分**](inf-defaultinstall-section.md)引用的 **HKR** *部分* 中使用。  
+**请注意**，不能在从 [**INF DefaultInstall 部分**](inf-defaultinstall-section.md)引用的 **HKR** *部分* 中使用。  
 
  
 
 有关存储在 **HKEY_LOCAL_MACHINE** 根下的驱动程序信息的详细信息，请参阅 [设备和驱动程序的注册表树和密钥](registry-trees-and-keys.md)。
 
 <a href="" id="subkey"></a>*键值*  
-此可选值可以是在 INF 的 [**字符串**](inf-strings-section.md)部分中定义的% *strkey* % 令牌，或在给定 *的* 注册表项下作为注册表路径 ( <em>key1</em> **\\** <em>key2</em> **\\** <em>key3</em>... ) ，指定以下项之一：
+此可选值可以是在 INF 的 [**字符串**](inf-strings-section.md)部分中定义的%*strkey*% 令牌，或在给定 *的* 注册表项下作为注册表路径 (<em>key1</em> **\\** <em>key2</em> **\\** <em>key3</em>... ) ，指定以下项之一：
 
 -   要从注册表的给定注册表路径末尾删除的子项
 -   要从中删除给定的值项名称的现有子项
@@ -98,7 +97,7 @@ reg-root-string,subkey[,value-entry-name][,flags][,value]
 此值标识要从给定子项中移除的命名值项。 如果要从注册表中删除子项本身，则应该省略此值及其前面的逗号。
 
 <a href="" id="flags"></a>*随意*  
- (Windows XP 和更高版本的 Windows。 ) 此可选的十六进制值，表示为系统定义的低词和高位字标志值的运算位掩码，用于定义值项的数据类型，或控制删除注册表操作。 如果未指定 *flags* ，则 (将删除指定) 或 *子项* 时的 *值输入名称* 。
+ (Windows XP 和更高版本的 Windows。 ) 此可选的十六进制值，表示为系统定义的低词和高位字标志值的运算位掩码，用于定义值项的数据类型，或控制删除注册表操作。 如果未指定 *flags* ，则 (将删除指定) 或 *子项* 时的 *值输入名称*。
 
 其中每个标志的位掩码值如下所示：
 
@@ -120,8 +119,8 @@ reg-root-string,subkey[,value-entry-name][,flags][,value]
 可以在上述正式语法语句中所示的任何节下指定 **DelReg** 指令。 还可以在以下任何一项由 INF 编写器定义的部分中指定此指令：
 
 -   INF DDInstall 中的 [**AddService**](inf-addservice-directive.md)指令引用的 *服务安装部分* 或 *事件日志安装* 部分 [**。 *DDInstall* 服务部分**](inf-ddinstall-services-section.md)。
--   由 INF DDInstall 中的 [**AddInterface**](inf-addinterface-directive.md)指令引用的 *添加接口部分* [***DDInstall* 。接口部分**](inf-ddinstall-interfaces-section.md)。
--   [**INF InterfaceInstall32 部分**](inf-interfaceinstall32-section.md)中引用的 *安装接口部分* 。
+-   由 INF DDInstall 中的 [**AddInterface**](inf-addinterface-directive.md)指令引用的 *添加接口部分* [***DDInstall*。接口部分**](inf-ddinstall-interfaces-section.md)。
+-   [**INF InterfaceInstall32 部分**](inf-interfaceinstall32-section.md)中引用的 *安装接口部分*。
 
 通常，INF 决不会尝试删除由系统组件或 INF 文件为其他设备设置的子项或现有子项内的值项。 *删除注册表部分* 的目的是使用同一个提供程序提供的新 INF 文件，从以前的安装中清除过时的注册表信息。
 
@@ -179,11 +178,11 @@ HKR,,UpperFilters
 
 [**_DDInstall_* _](inf-ddinstall-section.md)
 
-[_ *_DDInstall_ 。CoInstallers**](inf-ddinstall-coinstallers-section.md)
+[_ *_DDInstall_。CoInstallers**](inf-ddinstall-coinstallers-section.md)
 
-[**_DDInstall_ 。HW**](inf-ddinstall-hw-section.md)
+[**_DDInstall_。HW**](inf-ddinstall-hw-section.md)
 
-[**_DDInstall_ 。服务器**](inf-ddinstall-services-section.md)
+[**_DDInstall_。服务器**](inf-ddinstall-services-section.md)
 
 [**InterfaceInstall32**](inf-interfaceinstall32-section.md)
 

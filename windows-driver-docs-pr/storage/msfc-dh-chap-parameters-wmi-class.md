@@ -1,22 +1,21 @@
 ---
-title: MSFC\_DH\_Chap\_参数 WMI 类
-description: MSFC\_DH\_Chap\_参数 WMI 类
-ms.assetid: 259E3935-0F37-4DBE-BED3-C55A6715A810
+title: MSFC \_ DH \_ CHAP \_ 参数 WMI 类
+description: MSFC \_ DH \_ CHAP \_ 参数 WMI 类
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 9cbe71379f0364f7521fe2752164d4a9d1a46b14
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b37d77a931b9105d9926150bea3f1c1cb83320fb
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63325295"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96811489"
 ---
-# <a name="msfcdhchapparameters-wmi-class"></a>MSFC\_DH\_Chap\_参数 WMI 类
+# <a name="msfc_dh_chap_parameters-wmi-class"></a>MSFC \_ DH \_ CHAP \_ 参数 WMI 类
 
 
-WMI 客户端使用**MSFC\_DH\_Chap\_参数**类上的虚拟端口设置 CHAP 质询响应参数。
+WMI 客户端使用 **MSFC \_ DH \_ Chap \_ Parameters** 类为虚拟端口上的 Chap 质询设置响应参数。
 
-**MSFC\_DH\_Chap\_参数**，如下所示在定义类*Npivwmi.mof*:
+**MSFC \_ DH \_ Chap \_ 参数** 类在 *Npivwmi* 中定义如下：
 
 ```mof
 class MSFC_DH_Chap_Parameters
@@ -38,9 +37,9 @@ class MSFC_DH_Chap_Parameters
 };
 ```
 
-编译时通过 WMI 工具套件，此类定义将生成以下数据结构：
+由 WMI 工具套件编译时，此类定义生成以下数据结构：
 
-**MSFC\_DH\_Chap\_参数**
+**MSFC \_ DH \_ Chap \_ 参数**
 
 没有与此 WMI 类相关联的方法。
 

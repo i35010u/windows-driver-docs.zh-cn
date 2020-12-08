@@ -1,7 +1,6 @@
 ---
 title: 'WdfWaitlockRelease 规则 (kmdf) '
 description: WdfWaitlockRelease 规则指定对 WdfWaitLockAcquire 和 WdfWaitLockRelease 的调用在 KMDF 事件回调函数内按平衡方式使用。
-ms.assetid: 4ac60469-b9a3-4777-865b-f03d5a4da8ed
 ms.date: 05/21/2018
 keywords:
 - 'WdfWaitlockRelease 规则 (kmdf) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: ba15edd832239425b53bd2010c3ce8e8af0b0b8e
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 6662aee0f3228b575b9eaed359286c6047bcf034
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107148"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96813247"
 ---
 # <a name="wdfwaitlockrelease-rule-kmdf"></a>WdfWaitlockRelease 规则 (kmdf) 
 
 
-**WdfWaitlockRelease**规则指定对[**WdfWaitLockAcquire**](/previous-versions/ff551168(v=vs.85))和[**WdfWaitlockRelease**](/windows-hardware/drivers/ddi/wdfsync/nf-wdfsync-wdfwaitlockrelease)的调用在 KMDF 事件回调函数内按平衡方式使用。 当 KMDF 事件回调函数返回时，驱动程序不应持有通过先前对 **WdfWaitLockAcquire**的调用获取的框架旋转锁对象。
+**WdfWaitlockRelease** 规则指定对 [**WdfWaitLockAcquire**](/previous-versions/ff551168(v=vs.85))和 [**WdfWaitlockRelease**](/windows-hardware/drivers/ddi/wdfsync/nf-wdfsync-wdfwaitlockrelease)的调用在 KMDF 事件回调函数内按平衡方式使用。 当 KMDF 事件回调函数返回时，驱动程序不应持有通过先前对 **WdfWaitLockAcquire** 的调用获取的框架旋转锁对象。
 
 **驱动程序模型： KMDF**
 

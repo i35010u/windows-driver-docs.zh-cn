@@ -1,7 +1,6 @@
 ---
 title: KSEVENT \_ VIDCAP \_ 自动 \_ 更新
 description: '\_ \_ \_ 当属性值发生更改时，将触发 KSEVENT VIDCAP 自动更新事件。'
-ms.assetid: dd7e665f-104d-4276-94aa-62d64faba69d
 keywords:
 - KSEVENT_VIDCAP_AUTO_UPDATE 流媒体设备
 topic_type:
@@ -12,12 +11,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: eda2e2cddbc5d6d328cfcbfab99f3f8eca5caa81
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: f43ef0c9ca21baef2561ef784450c8dc7503eba8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107372"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96813427"
 ---
 # <a name="ksevent_vidcap_auto_update"></a>KSEVENT \_ VIDCAP \_ 自动 \_ 更新
 

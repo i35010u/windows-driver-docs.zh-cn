@@ -1,7 +1,6 @@
 ---
 title: 注册 SAN NIC 通知
 description: 注册 SAN NIC 通知
-ms.assetid: 6a630e7c-3b1a-4f4a-b808-f6b4e2315a42
 keywords:
 - NIC 通知 WDK San
 - 代理驱动程序 WDK San，NIC 通知
@@ -9,12 +8,12 @@ keywords:
 - 注册 NIC 通知
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a91ae5f413dac64614d17c13fa3ff853f5f14823
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 704439f4f901cfc433dff979c6ffe82661550977
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89212007"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812817"
 ---
 # <a name="registering-for-san-nic-notifications"></a>注册 SAN NIC 通知
 
@@ -36,11 +35,11 @@ ms.locfileid: "89212007"
 
 前面的结构定义在 tdi .h 头文件中定义。 前面的注册和回调函数在 tdikrnl 头文件中定义。 这些头文件在 Microsoft Windows 驱动程序开发工具包 (DDK) 和 Windows 驱动程序工具包 (WDK) 中提供。 有关 TDI 即插即用 (PnP) 通知的详细信息，请参阅 [Tdi 客户端回调](/previous-versions/windows/hardware/network/ff565081(v=vs.85)) 和 [Tdi 客户端事件和 PnP 通知处理程序](/previous-versions/windows/hardware/network/ff565082(v=vs.85))。
 
-系统启动时，TDI 会调用代理驱动程序的地址添加回拨，以指示所有当前活动的 IP 地址。 当 TCP/IP 传输协议向 TDI 注册新的 IP 地址时，TDI 还会调用此回调。 代理驱动程序的 IP 地址列表中只包含分配给代理驱动程序的 Nic 的地址。 如果驱动程序无法在 *DeviceName*识别 NIC，则驱动程序的地址添加回调应立即返回控制权。
+系统启动时，TDI 会调用代理驱动程序的地址添加回拨，以指示所有当前活动的 IP 地址。 当 TCP/IP 传输协议向 TDI 注册新的 IP 地址时，TDI 还会调用此回调。 代理驱动程序的 IP 地址列表中只包含分配给代理驱动程序的 Nic 的地址。 如果驱动程序无法在 *DeviceName* 识别 NIC，则驱动程序的地址添加回调应立即返回控制权。
 
 当 TCP/IP 传输协议向 TDI 表明已删除 NIC 时，TDI 会调用代理驱动程序的地址删除回调。 如果 NIC 的 IP 地址属于某个代理驱动程序的 Nic，则代理驱动程序将从该列表中删除该 IP 地址。
 
-**注意**   Windows Vista 之后的 Microsoft Windows 版本不支持 TDI。 请改用 [Windows 筛选平台](/windows-hardware/drivers/ddi/_netvista/) 或 [Winsock 内核](/windows-hardware/drivers/ddi/_netvista/) 。
+**注意**  Windows Vista 之后的 Microsoft Windows 版本不支持 TDI。 请改用 [Windows 筛选平台](/windows-hardware/drivers/ddi/_netvista/) 或 [Winsock 内核](/windows-hardware/drivers/ddi/_netvista/) 。
 
  
 

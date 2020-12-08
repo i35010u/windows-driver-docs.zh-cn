@@ -1,21 +1,20 @@
 ---
 title: MITT 中的音频播放保真度测试
 description: MITT 板上的音频模块用于检测在音频设备传输级别发生的错误，方法是检测正弦波频率准确性 (零交叉) 并统计频率或偏移量不正确的实例。
-ms.assetid: 1EAAF6F7-17B6-452F-9273-D7CD1DC33154
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dad24270290fc81aa1cc03e43e93ec160118683e
-ms.sourcegitcommit: 0c3cab853b0b75149b7604eef03275f997792a84
+ms.openlocfilehash: c3f8772d55c6f08669325b12f2fc1144dfb0a8e0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96157333"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96811855"
 ---
 # <a name="audio-playback-fidelity-tests-in-mitt"></a>MITT 中的音频播放保真度测试
 
 MITT 板上的音频模块用于检测在音频设备传输级别发生的错误，方法是检测正弦波频率准确性 (零交叉) 并统计频率或偏移量不正确的实例。 缺少信号或丢失的数据包将导致移动波形，这种波形可通过此机制自动听到和检测。
 
-## <a name="before-you-begin"></a>开始之前
+## <a name="before-you-begin"></a>在开始之前
 
 - 获取 MITT 板和音频适配器。 请参阅 [购买使用 MITT 的硬件](./multi-interface-test-tool--mitt--.md)。
 - [下载 MITT](/previous-versions/dn919810(v=vs.85))软件包。 在受测系统上安装它。
@@ -44,7 +43,7 @@ MITT 板上的音频模块用于检测在音频设备传输级别发生的错误
 数据类型  
 REG \_ DWORD
 
-说明  
+描述  
 设置为0。
 
 这将从500hz 到18khz 播放一系列测试音，并报告检测到的故障数。 如果检测到大量故障（如 10000 +），请确认电缆已正确连接，并且音量未静音。 检测到任何中断的信号，并且每个预期交叉都有故障，因此数字可能非常高。

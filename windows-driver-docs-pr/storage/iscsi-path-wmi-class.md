@@ -1,20 +1,19 @@
 ---
 title: ISCSI \_ 路径 WMI 类
 description: ISCSI \_ 路径 WMI 类
-ms.assetid: d4067869-2c67-42d3-988e-af825549853d
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 9666bef365d3f97718f4dff1706c5f7bcf8d7b49
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 11eb877a4e316cdf1ef63f057d2c5ead02b7412f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89186888"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96811643"
 ---
 # <a name="iscsi_path-wmi-class"></a>ISCSI \_ 路径 WMI 类
 
 
-ISCSI \_ 路径 WMI 类包含有关 ISCSI 门户连接的信息。 此类在*管理 mof*中定义为：
+ISCSI \_ 路径 WMI 类包含有关 ISCSI 门户连接的信息。 此类在 *管理 mof* 中定义为：
 
 ```cpp
 class ISCSI_Path

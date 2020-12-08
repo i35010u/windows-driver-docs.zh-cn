@@ -1,15 +1,14 @@
 ---
 title: 从 PF 微型端口驱动程序进行反向通道通信
 description: 从 PF 微型端口驱动程序进行反向通道通信
-ms.assetid: 819FC32C-D50C-480F-AE6E-078E4ECD3400
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c429d952b51e10bf391992328d071cc485759e8b
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 5e4f42e557bed2ea6a512a30069b545b896ecba0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89215956"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96813021"
 ---
 # <a name="backchannel-communication-from-the-pf-miniport-driver"></a>从 PF 微型端口驱动程序进行反向通道通信
 
@@ -18,7 +17,7 @@ PCI Express (PCIe) 物理功能 (PF 的微型端口驱动程序) 与 PCIe 虚拟
 
 VF 配置块用于 backchannel 和 VF 微型端口驱动程序之间的通信。 IHV 可以为设备定义一个或多个 VF 配置块。 每个 VF 配置块都有一个 IHV 定义的格式、长度和块 ID。
 
-**注意**   每个 VF 配置块中的数据仅用于 PF 和 VF 微型端口驱动程序。 此数据的格式和内容对于 Windows 操作系统的组件是不透明的。
+**注意**  每个 VF 配置块中的数据仅用于 PF 和 VF 微型端口驱动程序。 此数据的格式和内容对于 Windows 操作系统的组件是不透明的。
 
  
 
@@ -31,7 +30,7 @@ VF 配置块用于 backchannel 和 VF 微型端口驱动程序之间的通信。
     1.  PF 微型端口驱动程序调用 [**NdisMInvalidateConfigBlock**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisminvalidateconfigblock) 函数，以通知 NDIS VF 配置数据已更改，并且不再有效。 驱动程序将 *BlockMask* 参数设置为 ULONGLONG 位掩码，该位掩码指定哪些 VF 配置块发生了更改。 位掩码中的每个位对应于一个 VF 配置块。 如果将位设置为1，则相应的 VF 配置块中的数据已更改。
     2.  NDIS 向虚拟化堆栈发出信号，该堆栈在管理操作系统中运行，关于 VF 配置块数据的更改。 虚拟化堆栈缓存 *BlockMask* 参数数据。
 
-        **注意**   每次 PF 微型端口驱动程序调用[**NdisMInvalidateConfigBlock**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisminvalidateconfigblock)时，虚拟化堆栈会将*BlockMask*参数数据与缓存中的当前值 or。
+        **注意**  每次 PF 微型端口驱动程序调用 [**NdisMInvalidateConfigBlock**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisminvalidateconfigblock)时，虚拟化堆栈会将 *BlockMask* 参数数据与缓存中的当前值 or。
 
          
 
@@ -39,7 +38,7 @@ VF 配置块用于 backchannel 和 VF 微型端口驱动程序之间的通信。
 
 3.  在 Hyper-v 子分区中运行的来宾操作系统中，将执行以下步骤：
 
-    1.  VPCI 驱动程序将缓存的*BlockMask*参数数据保存在与[**IOCTL \_ VPCI 无效 \_ \_ Block**](/windows-hardware/drivers/ddi/vpci/ni-vpci-ioctl_vpci_invalidate_block)请求关联的[**VPCI \_ \_ \_ **](/windows-hardware/drivers/ddi/vpci/ns-vpci-_vpci_invalidate_block_output)的**BlockMask**成员中。
+    1.  VPCI 驱动程序将缓存的 *BlockMask* 参数数据保存在与 [**IOCTL \_ VPCI 无效 \_ \_ Block**](/windows-hardware/drivers/ddi/vpci/ni-vpci-ioctl_vpci_invalidate_block)请求关联的 [**VPCI \_ \_ \_**](/windows-hardware/drivers/ddi/vpci/ns-vpci-_vpci_invalidate_block_output)的 **BlockMask** 成员中。
 
     2.  VPCI 驱动程序已成功完成 [**IOCTL \_ VPCI \_ 无效 \_ 块**](/windows-hardware/drivers/ddi/vpci/ni-vpci-ioctl_vpci_invalidate_block) 请求。 发生这种情况时，NDIS) 方法请求 (oid 发出对象标识符，而 oid [ \_ SRIOV \_ VF 会 \_ 使 \_ 配置 \_ 块无效](./oid-sriov-vf-invalidate-config-block.md) 到 VF 微型端口驱动程序。 在 OID 请求中， [**NDIS \_ SRIOV \_ VF 会 \_ 使 \_ 配置 \_ 块 \_ 信息**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_vf_invalidate_config_block_info) 无效。 此结构包含缓存的 *BlockMask* 参数数据。
 
