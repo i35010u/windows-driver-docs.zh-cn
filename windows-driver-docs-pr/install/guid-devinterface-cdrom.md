@@ -1,7 +1,6 @@
 ---
 title: GUID_DEVINTERFACE_CDROM
 description: GUID_DEVINTERFACE_CDROM
-ms.assetid: ecc31c09-27f5-4a80-8aa6-adc70d8a76c3
 keywords:
 - GUID_DEVINTERFACE_CDROM 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: f7def053ea10cc9dd32cf844412213ad1de95d00
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 0bb702b8858aeca7907d2ddd50271077c815acf5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91732633"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96789837"
 ---
 # <a name="guid_devinterface_cdrom"></a>GUID_DEVINTERFACE_CDROM
 
@@ -33,7 +32,7 @@ ms.locfileid: "91732633"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">属性</th>
+<th align="left">Attribute</th>
 <th align="left">设置</th>
 </tr>
 </thead>
@@ -78,7 +77,7 @@ WDK 中的存储 [示例](https://go.microsoft.com/fwlink/p/?LinkId=618052) 包�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**CdRomClassGuid**](cdromclassguid.md)

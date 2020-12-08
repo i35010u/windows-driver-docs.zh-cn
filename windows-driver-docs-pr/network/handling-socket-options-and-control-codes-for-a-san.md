@@ -1,7 +1,6 @@
 ---
 title: 处理 SAN 的套接字选项和控制代码
 description: 处理 SAN 的套接字选项和控制代码
-ms.assetid: 5c07d0e3-b6d7-4daf-8b3f-80aafd7c7a37
 keywords:
 - Windows 套接字直接 WDK，SAN 套接字选项
 - SAN 套接字 WDK，选项
@@ -9,12 +8,12 @@ keywords:
 - SAN 服务提供商 WDK，状态信息
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8fca4648874dbe84b01cc384d606bbbeaa9e6afe
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 378699369f84842f0efa400a8666934ad5bd926f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104272"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96789775"
 ---
 # <a name="handling-socket-options-and-control-codes-for-a-san"></a>处理 SAN 的套接字选项和控制代码
 
@@ -22,7 +21,7 @@ ms.locfileid: "90104272"
 
 
 
-Windows 套接字交换机与 TCP/IP 提供程序一起处理由应用程序启动的大多数 **WSPGetSockOpt**、 **WSPSetSockOpt**和 **WSPIoctl** 调用。 这些请求通常用于设置和检索与应用程序的套接字关联的选项和操作参数。 通常，此开关不会将这些调用转发到 SAN 服务提供程序，如以下部分中所述。
+Windows 套接字交换机与 TCP/IP 提供程序一起处理由应用程序启动的大多数 **WSPGetSockOpt**、 **WSPSetSockOpt** 和 **WSPIoctl** 调用。 这些请求通常用于设置和检索与应用程序的套接字关联的选项和操作参数。 通常，此开关不会将这些调用转发到 SAN 服务提供程序，如以下部分中所述。
 
 ### <a name="retrieving-san-socket-options"></a>检索 SAN 套接字选项
 
@@ -58,7 +57,7 @@ SAN 服务提供程序支持此选项，以便在对 SAN 服务提供程序的 *
 如果 SAN 服务提供程序支持该控制代码，Windows 套接字交换机会调用 SAN 服务提供程序的 [**WSPIoctl**](/previous-versions/windows/hardware/network/ff566296(v=vs.85)) 函数，并传递以下控制代码之一来设置或检索该 san 服务提供程序的信息：
 
 <a href="" id="sio-get-extension-function-pointer"></a>SIO \_ GET \_ EXTENSION \_ 函数 \_ 指针  
-检索指向 SAN 服务提供程序必须支持的扩展函数的指针。 有关扩展函数的详细信息，请参阅 [适用于 san 的 Windows 套接字 SPI 扩展](windows-sockets-spi-extensions-for-sans.md)。 **WSPIoctl**调用的输入缓冲区包含其值标识指定扩展函数的 GUID。 SAN 服务提供程序将指针返回到 **WSPIoctl**的输出缓冲区中请求的函数。 下表包含 SAN 服务提供商可以支持的扩展函数的 Guid：
+检索指向 SAN 服务提供程序必须支持的扩展函数的指针。 有关扩展函数的详细信息，请参阅 [适用于 san 的 Windows 套接字 SPI 扩展](windows-sockets-spi-extensions-for-sans.md)。 **WSPIoctl** 调用的输入缓冲区包含其值标识指定扩展函数的 GUID。 SAN 服务提供程序将指针返回到 **WSPIoctl** 的输出缓冲区中请求的函数。 下表包含 SAN 服务提供商可以支持的扩展函数的 Guid：
 
 <table>
 <colgroup>
@@ -109,7 +108,7 @@ SAN 服务提供程序支持此选项，以便在对 SAN 服务提供程序的 *
 如果 SAN 服务提供程序支持 QoS，则该提供程序必须支持这些控制代码。 否则，开关会将这些选项转发到 TCP/IP 提供程序，后者维护默认值。 提供程序指示它通过 \_ \_ 在 WSAPROTOCOL INFO 结构的 **dwServiceFlags** 成员中设置 XP1 qos 支持的位来支持 QoS \_ 。
 
 <a href="" id="sio-address-list-query"></a>SIO \_ 地址 \_ 列表 \_ 查询  
-检索分配给网络接口卡的本地 IP 地址列表，这些地址 (Nic 服务提供程序控制的 Nic) 。 SAN 服务提供程序使用 \_ 如下所示的套接字地址 \_ 列表结构来返回 **WSPIoctl**的输出缓冲区中的列表：
+检索分配给网络接口卡的本地 IP 地址列表，这些地址 (Nic 服务提供程序控制的 Nic) 。 SAN 服务提供程序使用 \_ 如下所示的套接字地址 \_ 列表结构来返回 **WSPIoctl** 的输出缓冲区中的列表：
 
 ```C++
 typedef struct _SOCKET_ADDRESS_LIST {

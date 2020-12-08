@@ -1,15 +1,14 @@
 ---
 title: KSINTERFACESETID \_ 标准
 description: KSINTERFACESETID \_ 标准
-ms.assetid: f921ffba-04dd-4900-8825-5b3486009bca
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5064dfaba940257581c644d83c67f40377fc0952
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 6c3b98a1cffa91bc70d7ea45273cd415425d76e3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89192561"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96790209"
 ---
 # <a name="ksinterfacesetid_standard"></a>KSINTERFACESETID \_ 标准
 

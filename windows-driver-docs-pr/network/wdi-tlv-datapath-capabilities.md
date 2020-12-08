@@ -1,17 +1,16 @@
 ---
 title: WDI_TLV_DATAPATH_CAPABILITIES
 description: WDI_TLV_DATAPATH_CAPABILITIES 是包含数据路径功能的 TLV。
-ms.assetid: 7B545858-56A2-4655-91D5-37CA4EB61E1E
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_DATAPATH_CAPABILITIES 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 2e8b90cd546d4eb4ba11677b6734fbd9dbf1fd0d
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: dd9eccd4ba6b606c6c075be1d4a1d368dec6ca86
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105274"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96790377"
 ---
 # <a name="wdi_tlv_datapath_capabilities"></a>WDI \_ TLV \_ 数据路径 \_ 功能
 
@@ -39,7 +38,7 @@ Sum (所有包含的元素的大小) 。
 <thead>
 <tr class="header">
 <th>类型</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -106,7 +105,7 @@ Sum (所有包含的元素的大小) 。
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
-<td><p>Windows Server 2016</p></td>
+<td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
 <td><p>标头</p></td>

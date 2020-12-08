@@ -1,15 +1,14 @@
 ---
 title: 驱动程序实现详细信息
 description: 本主题介绍为能够处理硬件卸载音频流的音频适配器开发的音频驱动程序的实现细节。
-ms.assetid: FB17FADD-D683-4ECC-95F9-86DF7A289C63
 ms.date: 04/17/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 943dea5387ddb20b7981eb867f6575c3bdabac39
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 1357fe4ad38fd4352b263379090a7412632c8695
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89208073"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96789255"
 ---
 # <a name="driver-implementation-details"></a>驱动程序实现详细信息
 
@@ -35,7 +34,7 @@ typedef struct _KSNODE_DESCRIPTOR {
 
 如果名称 GUID 设置为 **KSNODETYPE \_ 音频 \_ 引擎**，则必须为此节点创建默认名称字符串。 然后，将该字符串添加到 *ks*，以便在安装驱动程序的过程中，该字符串可用于填充 HKEY \_ 本地 \_ 计算机 \\ 系统 \\ CurrentControlSet \\ Control \\ MediaCategories 注册表项。
 
-新节点类型 **KSNODETYPE \_ 音频 \_ 引擎**的 GUID 定义如下所示：
+新节点类型 **KSNODETYPE \_ 音频 \_ 引擎** 的 GUID 定义如下所示：
 
 ```ManagedCPlusPlus
 Code style
@@ -67,7 +66,7 @@ PCNODE_DESCRIPTOR MiniportNodes[] =
 
 从 Windows 8 开始，引入了 [KSPROPSETID \_ AudioEngine](./kspropsetid-audioengine.md) 属性集，以支持硬件音频引擎和硬件卸载音频处理。 因此，可以处理卸载的音频流的适配器的驱动程序必须支持此新属性集中的属性。
 
-新属性集 **KSPROPSETID \_ AudioEngine**定义如下：
+新属性集 **KSPROPSETID \_ AudioEngine** 定义如下：
 
 ```ManagedCPlusPlus
 #define STATIC_KSPROPSETID_AudioEngine\

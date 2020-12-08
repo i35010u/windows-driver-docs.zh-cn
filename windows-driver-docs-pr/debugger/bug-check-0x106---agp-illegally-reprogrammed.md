@@ -1,7 +1,6 @@
 ---
 title: Bug 检查 0x106 AGP_ILLEGALLY_REPROGRAMMED
-description: AGP_ILLEGALLY_REPROGRAMMED bug 检查具有 0x00000106 值。 这表示加速图形端口 (AGP) 硬件，已囿通过未经授权的代理。
-ms.assetid: 7acccf9b-bc4f-4842-a332-1023ab26f03d
+description: AGP_ILLEGALLY_REPROGRAMMED bug 检查的值为0x00000106。 这表明 (AGP) 硬件的加速图形端口已被未经授权的代理 reprogrammed。
 keywords:
 - Bug 检查 0x106 AGP_ILLEGALLY_REPROGRAMMED
 - AGP_ILLEGALLY_REPROGRAMMED
@@ -13,23 +12,23 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 667336a210af49d5385e5ee8e1af47b32e0135ff
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: befae4d1ab334bfd828406562bf97c4ca215172c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67521583"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96790077"
 ---
-# <a name="bug-check-0x106-agpillegallyreprogrammed"></a>Bug 检查 0x106：AGP\_非法\_REPROGRAMMED
+# <a name="bug-check-0x106-agp_illegally_reprogrammed"></a>Bug 检查0x106： AGP \_ 非法 \_ REPROGRAMMED
 
 
-AGP\_非法\_REPROGRAMMED bug 检查的值为 0x00000106。 这表示加速图形端口 (AGP) 硬件，已囿通过未经授权的代理。
+AGP \_ 非法 \_ REPROGRAMMED bug 检查的值为0x00000106。 这表明 (AGP) 硬件的加速图形端口已被未经授权的代理 reprogrammed。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题面向程序员。 如果您是在使用计算机时收到蓝屏错误代码的客户，请参阅[蓝屏错误疑难解答](https://www.windows.com/stopcode)。
 
 
-## <a name="agpillegallyreprogrammed-parameters"></a>AGP\_非法\_REPROGRAMMED 参数
+## <a name="agp_illegally_reprogrammed-parameters"></a>AGP \_ 非法 \_ REPROGRAMMED 参数
 
 
 <table>
@@ -46,7 +45,7 @@ AGP\_非法\_REPROGRAMMED bug 检查的值为 0x00000106。 这表示加速图�
 <tbody>
 <tr class="odd">
 <td align="left"><p>1</p></td>
-<td align="left"><p>最初通过编程方式设置的 AGP 命令注册值</p></td>
+<td align="left"><p>最初编程的 AGP 命令寄存器值</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>2</p></td>
@@ -68,12 +67,12 @@ AGP\_非法\_REPROGRAMMED bug 检查的值为 0x00000106。 这表示加速图�
 <a name="cause"></a>原因
 -----
 
-无符号整数，或未正确测试视频，通常会出现此 bug 检查驱动程序。
+此 bug 检查通常是由未签名的或未正确测试的视频驱动程序引起的。
 
-<a name="resolution"></a>分辨率
+<a name="resolution"></a>解决方法
 ----------
 
-查看更新后的显示驱动程序的视频制造商的网站或使用 VGA 模式。
+查看视频制造商的网站中是否有更新的显示驱动程序或使用 VGA 模式。
 
  
 

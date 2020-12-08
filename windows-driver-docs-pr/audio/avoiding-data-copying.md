@@ -1,18 +1,17 @@
 ---
 title: 避免数据复制
 description: 避免数据复制
-ms.assetid: bf4dab5e-5800-4888-af96-68a152ac5e39
 keywords:
 - 数据复制 WDK 音频
 - 复制音频数据
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0df62075929112477dbdfee7bc6697282af3ef25
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 25a57d1b0b3be59eae2b612b5d602cb85b971b1c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89208251"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96789373"
 ---
 # <a name="avoiding-data-copying"></a>避免数据复制
 

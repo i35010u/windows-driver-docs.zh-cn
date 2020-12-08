@@ -1,7 +1,6 @@
 ---
 title: 实现 WMI
 description: 实现 WMI
-ms.assetid: 5c2ed322-0fc9-4004-9a5f-f4d3c6a59fe9
 keywords:
 - WMI WDK 内核
 - Windows Management Instrumentation WDK 内核
@@ -14,12 +13,12 @@ keywords:
 - 内核模式驱动程序 WDK、WMI
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8a42ca4a5bbdb27690ab7d7a68398f2ba847de60
-ms.sourcegitcommit: 6c42efc074ab939e7737d6c2b016d3f3a75954e1
+ms.openlocfilehash: 1d77b01259f7f6ce2dbe55b1721b6d22ee0a9f02
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90741030"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96788663"
 ---
 # <a name="implementing-wmi"></a>实现 WMI
 
@@ -31,7 +30,7 @@ ms.locfileid: "90741030"
 
 有关用户模式 WMI API 的详细信息，请参阅 Windows SDK 中的 [Windows Management Instrumentation](/windows/desktop/WmiSdk/wmi-start-page) 。
 
-如果要实现基于 KMDF 的驱动程序，请参阅 [基于框架的驱动程序中的支持 WMI](../wdf/introduction-to-wmi-for-kmdf-drivers.md)。
+如果要实现基于 KMDF 的驱动程序，请参阅 [Framework-Based 驱动程序中的支持 WMI](../wdf/introduction-to-wmi-for-kmdf-drivers.md)。
 
 本部分包括有关内核模式 WMI 的下列信息：
 

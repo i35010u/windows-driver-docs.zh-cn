@@ -1,7 +1,6 @@
 ---
 title: debugbaseeventcallbackswide
 description: DebugBaseEventCallbacksWide 类提供 IDebugEventCallbacksWide 接口的基实现。
-ms.assetid: 38AD8472-1BA3-42EA-99CE-E91098A5B334
 keywords:
 - DebugBaseEventCallbacksWide
 ms.date: 01/10/2018
@@ -12,12 +11,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: bf9a8783d2b274951c1e4a9c752f619433261c4f
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: d09b03352b29e2be7c9acda6dae20353de76bb3a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89211199"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96788815"
 ---
 # <a name="debugbaseeventcallbackswide-class"></a>DebugBaseEventCallbacksWide 类 
 

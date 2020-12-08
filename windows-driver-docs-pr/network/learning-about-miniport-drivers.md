@@ -1,7 +1,6 @@
 ---
 title: 了解微型端口驱动程序
 description: 了解微型端口驱动程序
-ms.assetid: faaeee13-7d21-4e06-a33c-da249716d925
 keywords:
 - 无连接驱动程序 WDK 网络
 - 面向连接的驱动程序 WDK 网络
@@ -19,12 +18,12 @@ keywords:
 - 网络驱动程序 WDK，类型
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e1972946352fc71de78863dcbdbde0a3b29099ce
-ms.sourcegitcommit: 29c2e6dd8a3de3c11822d990adf1edd774f8a136
+ms.openlocfilehash: 2f7ccf090f577d45160fd522cb67299c837ad1ad
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91230009"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96789705"
 ---
 # <a name="learning-about-miniport-drivers"></a>了解微型端口驱动程序
 

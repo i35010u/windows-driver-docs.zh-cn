@@ -1,7 +1,6 @@
 ---
 title: 音频终结点、属性和事件
 description: 音频终结点、属性和事件
-ms.assetid: ffc5834f-30c8-40b5-b57b-fe784331690c
 keywords:
 - 音频事件 WDK
 - 音频属性 WDK
@@ -20,12 +19,12 @@ keywords:
 - 锁定 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 369475358455bab13f7b18962495425ae5108e05
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: a435caec94d28838d7f2ce90de75405ecfbe3cd6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89208327"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96789409"
 ---
 # <a name="audio-endpoints-properties-and-events"></a>音频终结点、属性和事件
 

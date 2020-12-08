@@ -2,15 +2,14 @@
 title: 视频调试带 WDF 源代码的驱动程序
 description: 本主题包含视频教程，该教程演示如何使用对 WDF 源代码的完全访问权限， (WDF) 驱动程序调试 Windows 驱动程序框架。
 Search.SourceType: Video
-ms.assetid: 735D71FC-0B35-4C79-8C0A-F3C762095C06
 ms.date: 05/07/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: d83491034e41d8ca3450fa8244f7f3a0e4618e6d
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: b62362451ff793c245a3f04ef0932d5835131fa2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89186055"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96790127"
 ---
 # <a name="video-debugging-your-driver-with-wdf-source-code"></a>视频：使用 WDF 源代码调试驱动程序
 

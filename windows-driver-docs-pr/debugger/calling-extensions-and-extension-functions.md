@@ -1,17 +1,16 @@
 ---
 title: 调用扩展和扩展函数
 description: 调用扩展和扩展函数
-ms.assetid: 0582cdc2-7059-42db-878b-28767a6fe850
 keywords:
 - 调试器引擎 API，调用扩展
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bf65df42851b65e180bb501244555c9e82ae77bf
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 8d60b1a041692b1b6c91d05dc26044fefa4774ab
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89206113"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96788853"
 ---
 # <a name="calling-extensions-and-extension-functions"></a>调用扩展和扩展函数
 

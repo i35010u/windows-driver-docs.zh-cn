@@ -1,15 +1,14 @@
 ---
 title: 蓝牙 HFP DDI IOCTL
 description: Windows 8 引入了一组 i/o 控制代码 (IOCTLs) 作为 DDI 的一部分，它允许音频驱动程序与免提配置文件 (HFP) 类驱动程序一起使用，以操作蓝牙音频旁路连接。
-ms.assetid: 94B6F113-5130-4772-B8A0-5C9992501824
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7e055b9d81870de02f547084e14d296a836c346d
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: c12e2cb4ac9274f2384bf068dbc3413fa6caf7dc
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89208233"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96789343"
 ---
 # <a name="bluetooth-hfp-ddi-ioctls"></a>蓝牙 HFP DDI IOCTL
 

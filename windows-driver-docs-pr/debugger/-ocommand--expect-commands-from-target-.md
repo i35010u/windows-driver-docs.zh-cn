@@ -1,7 +1,6 @@
 ---
 title: .ocommand（需要目标提供命令）
 description: Ocommand 命令使目标应用程序能够将命令发送到调试器。
-ms.assetid: a4363395-111f-48eb-b1da-c17c0ad9f067
 keywords:
 - 需要来自目标 ( 的命令。 ocommand) 命令
 - ocommand (需要来自目标) Windows 调试的命令
@@ -13,17 +12,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 541eb67fc0856e0fe60b24f91d7875aa7762962b
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 157453d8109c180cef9d1da32c86b17b8a6d6967
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90715722"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96788933"
 ---
 # <a name="ocommand-expect-commands-from-target"></a>.ocommand（需要目标提供命令）
 
 
-**Ocommand**命令使目标应用程序能够将命令发送到调试器。
+**Ocommand** 命令使目标应用程序能够将命令发送到调试器。
 
 ```dbgcmd
 .ocommand  String 
@@ -35,7 +34,7 @@ ms.locfileid: "90715722"
 
 
 <span id="_______String______"></span><span id="_______string______"></span><span id="_______STRING______"></span>*字符串*   
-指定命令前缀字符串。 *字符串*可以包括空格，但不能使用 C 样式控制字符，例如 "和** \\ n** ** \\ "** 。 还可以将 *字符串* 用引号引起来。 但是，如果 *字符串* 包含分号、前导空格或尾随空格，则必须用引号将 *字符串* 引起来。
+指定命令前缀字符串。 *字符串* 可以包括空格，但不能使用 C 样式控制字符，例如 "和 **\\ n** **\\ "** 。 还可以将 *字符串* 用引号引起来。 但是，如果 *字符串* 包含分号、前导空格或尾随空格，则必须用引号将 *字符串* 引起来。
 
 <span id="_______-d______"></span><span id="_______-D______"></span>**-d**   
 删除命令前缀字符串。
@@ -76,9 +75,9 @@ ms.locfileid: "90715722"
 
 设置命令前缀字符串后，将扫描任何目标输出 (如 [**OutputDebugString**](/windows/win32/api/debugapi/nf-debugapi-outputdebugstringw) 命令) 的内容。 如果此输出以命令前缀字符串开头，则前缀字符串后跟的输出文本将被视为调试器命令字符串并运行。 在执行此文本时，不会显示命令字符串。
 
-如果需要其他消息，目标可以在输出字符串中包含一个 [**回显 (Echo 注释) **](-echo--echo-comment-.md) 命令。 以典型方式显示不以前缀字符串开头的目标输出。
+如果需要其他消息，目标可以在输出字符串中包含一个 [**回显 (Echo 注释)**](-echo--echo-comment-.md) 命令。 以典型方式显示不以前缀字符串开头的目标输出。
 
-在命令字符串中执行命令后，目标仍会被分解到调试器中，除非最后一个命令为 [**g (转) **](g--go-.md)。
+在命令字符串中执行命令后，目标仍会被分解到调试器中，除非最后一个命令为 [**g (转)**](g--go-.md)。
 
 命令前缀字符串与目标输出之间的比较不区分大小写。  (但是，在后续使用的情况下， **将显示你** 在) 保留的情况下输入的字符串。
 
@@ -104,7 +103,7 @@ OutputDebugString("Command on next line.\nmagiccommand kb;g");
 
 没有从前面的示例中执行命令，因为命令字符串前缀不在输出的开头，即使它确实开始换行。
 
-**注意**   应选择一个命令字符串前缀，该前缀不可能出现在除您自己的命令之外的任何目标输出中。
+**注意**   应选择一个命令字符串前缀，该前缀不可能出现在除您自己的命令之外的任何目标输出中。
 
  
 

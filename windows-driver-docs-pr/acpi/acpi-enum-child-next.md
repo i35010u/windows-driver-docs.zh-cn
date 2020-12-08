@@ -1,17 +1,16 @@
 ---
 title: ACPI_ENUM_CHILD_NEXT 宏
 description: ACPI_ENUM_CHILD_NEXT 宏将计算指向 ACPI_ENUM_CHILD 结构的可变长度数组中的下一个 ACPI_ENUM_CHILD 结构的指针。
-ms.assetid: 1ff37770-b0ea-4275-9568-611ec125a0b6
 keywords:
 - ACPI_ENUM_CHILD_NEXT 宏 ACPI 设备
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 85ad56ed0062747e0a8545ff268c2dda3d172582
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: cbac74f72e7a563f772f8ac29890b19ef9725485
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89184502"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96789530"
 ---
 # <a name="acpi_enum_child_next-macro"></a>ACPI \_ 枚举 \_ 子 \_ 下一个宏
 
@@ -54,7 +53,7 @@ void ACPI_ENUM_CHILD_NEXT(
 <tbody>
 <tr>
 <td><p>目标平台</p></td>
-<td>“桌面”</td>
+<td>台式机</td>
 </tr>
 <tr>
 <td><p>标头</p></td>
@@ -63,7 +62,7 @@ void ACPI_ENUM_CHILD_NEXT(
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**ACPI \_ 枚举 \_ 子级**](/windows-hardware/drivers/ddi/acpiioct/ns-acpiioct-_acpi_enum_child)

@@ -1,7 +1,6 @@
 ---
 title: 驱动程序验证程序
 description: 驱动程序验证程序监视 Windows 内核模式驱动程序和图形驱动程序，目的是检测可能损坏系统的非法函数调用或操作。
-ms.assetid: a8a78dde-930f-4d0b-be46-f7d07b0bf21b
 keywords:
 - 验证驱动程序 WDK，驱动程序验证程序
 - 驱动程序验证 WDK，驱动程序验证程序
@@ -11,12 +10,12 @@ keywords:
 - 压力测试 WDK 驱动程序验证程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 42b6ac5a9fc0b196a1086f59446f1e038bbc192a
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: eeefd25b09a4142b34731d3653cbcf16fe27cba0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89382783"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96788737"
 ---
 # <a name="driver-verifier"></a>驱动程序验证程序
 
@@ -51,7 +50,7 @@ ms.locfileid: "89382783"
 
 只应在测试计算机或要测试和调试的计算机上运行驱动程序验证程序。 若要充分利用驱动程序验证程序，你应该使用内核调试器并连接到测试计算机。 有关调试工具的详细信息，请参阅 [适用于 Windows 的调试工具 (WinDbg，KD，CDB，NTSD) ](../debugger/index.md)。
 
-1. 通过选择 "以**管理员身份运行**" 启动**命令提示符**窗口，然后键入**Verifier**以打开**驱动程序验证器管理器**。
+1. 通过选择 "以 **管理员身份运行**" 启动 **命令提示符** 窗口，然后键入 **Verifier** 以打开 **驱动程序验证器管理器**。
 
 2. 选择 " (默认任务) **创建标准设置** ，然后选择" **下一步**"。
 
@@ -101,7 +100,7 @@ ms.locfileid: "89382783"
 
 
 >[!Note]
-> 你还可以在命令提示符窗口中运行驱动程序验证程序，而无需启动驱动程序验证程序管理器。 例如，若要在名为 *myDriver.sys*的驱动程序上运行带有标准设置的驱动程序验证程序，可以使用以下命令：
+> 你还可以在命令提示符窗口中运行驱动程序验证程序，而无需启动驱动程序验证程序管理器。 例如，若要在名为 *myDriver.sys* 的驱动程序上运行带有标准设置的驱动程序验证程序，可以使用以下命令：
 > ```console
 > verifier /standard /driver myDriver.sys
 > ```
@@ -119,7 +118,7 @@ ms.locfileid: "89382783"
 
 **停止或重置驱动程序验证程序**
 
-1. 在 **驱动程序验证器管理器**中，选择 " **删除现有设置**"，然后选择 " **完成**"。
+1. 在 **驱动程序验证器管理器** 中，选择 " **删除现有设置**"，然后选择 " **完成**"。
 
     或
 
@@ -147,7 +146,7 @@ ms.locfileid: "89382783"
 
 **查看驱动程序验证程序设置**
 
-- 在 **驱动程序验证器管理器**中，选择 " **显示现有设置**"，然后选择 " **下一步**"
+- 在 **驱动程序验证器管理器** 中，选择 " **显示现有设置**"，然后选择 " **下一步**"
 
   或
 
@@ -175,13 +174,13 @@ ms.locfileid: "89382783"
 
 有关详细信息，请参阅 [在启用驱动程序验证程序时处理 Bug 检查](../debugger/handling-a-bug-check-when-driver-verifier-is-enabled.md)。 有关调试 Bug 检查0xC4 的提示，请参阅 [调试 Bug 检查0xC4：驱动程序 \_ 验证程序 \_ 检测到 \_ 冲突](debugging-bug-check-0xc4--driver-verifier-detected-violation.md)。
 
-当你启动新的调试会话时，请使用调试器扩展命令 " [**！分析**](../debugger/-analyze.md)"。 在内核模式下，" **！分析** " 命令显示有关最新 bug 检查的信息。 若要显示*其他*信息，以帮助识别出错的驱动程序，请在**kd>** 提示符下向命令添加选项**v** ：
+当你启动新的调试会话时，请使用调试器扩展命令 " [**！分析**](../debugger/-analyze.md)"。 在内核模式下，" **！分析** " 命令显示有关最新 bug 检查的信息。 若要显示 *其他* 信息，以帮助识别出错的驱动程序，请在 **kd>** 提示符下向命令添加选项 **v** ：
 
 ```dbgcmd
 kd> !analyze -v
 ```
 
-除了 **！分析**以外，还可以在 **kd>** 提示符下输入以下调试器扩展，以查看特定于驱动程序验证程序的信息：
+除了 **！分析** 以外，还可以在 **kd>** 提示符下输入以下调试器扩展，以查看特定于驱动程序验证程序的信息：
 
 -   [**！ verifier**](../debugger/-verifier.md) 转储捕获的驱动程序验证程序统计信息。 使用 **！ verifier-？** 显示所有可用选项。
 
@@ -201,7 +200,7 @@ kd> !analyze -v
     kd> !iovirp 947cef68
     ```
 
--   [**！ ruleinfo**](../debugger/-ruleinfo.md) \[*RuleID* \]显示与违反的[DDI 相容性检查](ddi-compliance-checking.md)规则相关的信息。  (*RuleID* 始终是 bug 检查的第一个参数。 ) DDI 相容性检查中的所有规则 id 的形式为 0x200*nn*。 例如：
+-   [**！ ruleinfo**](../debugger/-ruleinfo.md) \[*RuleID* \]显示与违反的 [DDI 相容性检查](ddi-compliance-checking.md)规则相关的信息。  (*RuleID* 始终是 bug 检查的第一个参数。 ) DDI 相容性检查中的所有规则 id 的形式为 0x200 *nn*。 例如：
 
     ```dbgcmd
     kd> !ruleinfo 0x20005

@@ -1,7 +1,6 @@
 ---
 title: RxAssert 例程
 description: 如果安装了 RxAssert，则在已安装的 RDBSS 版本上，会将断言字符串发送到内核调试器。 对于 RDBSS 的零售版本，对此例程的调用将进行 bug 检查。
-ms.assetid: 3ef01569-74ef-4f35-acaf-9c01f2b9d9a7
 keywords:
 - RxAssert 例程可安装文件系统驱动程序
 topic_type:
@@ -14,31 +13,31 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f98cf5cd500a1ff15409f6911feb9f5b4627d8d4
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: f523ca660b2e169629190e9673581ce2c2a16cff
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89063232"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96789921"
 ---
 # <a name="rxassert-routine"></a>RxAssert 例程
 
 
-如果安装了 RxAssert，则在已安装的 RDBSS 版本上， **RxAssert**会将断言字符串发送到内核调试器。 对于 RDBSS 的零售版本，对此例程的调用将进行 bug 检查。
+如果安装了 RxAssert，则在已安装的 RDBSS 版本上， **RxAssert** 会将断言字符串发送到内核调试器。 对于 RDBSS 的零售版本，对此例程的调用将进行 bug 检查。
 
 <a name="syntax"></a>语法
 ------
 
 ```ManagedCPlusPlus
 VOID RxAssert(
-  _In_     PVOID FailedAssertion,
-  _In_     PVOID FileName,
-  _In_     ULONG LineNumber,
-  _In_opt_ PCHAR Message
+  _In_     PVOID FailedAssertion,
+  _In_     PVOID FileName,
+  _In_     ULONG LineNumber,
+  _In_opt_ PCHAR Message
 );
 ```
 
-<a name="parameters"></a>parameters
+<a name="parameters"></a>参数
 ----------
 
 *FailedAssertion* \[中\]  
@@ -76,7 +75,7 @@ VOID RxAssert(
 <tbody>
 <tr class="odd">
 <td align="left"><p>目标平台</p></td>
-<td align="left">桌面型</td>
+<td align="left">台式机</td>
 </tr>
 <tr class="even">
 <td align="left"><p>标头</p></td>
@@ -89,7 +88,7 @@ VOID RxAssert(
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**断言**](/previous-versions/windows/hardware/previsioning-framework/ff542107(v=vs.85))

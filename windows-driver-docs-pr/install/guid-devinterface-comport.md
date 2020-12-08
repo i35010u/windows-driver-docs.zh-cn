@@ -1,7 +1,6 @@
 ---
 title: GUID_DEVINTERFACE_COMPORT
 description: GUID_DEVINTERFACE_COMPORT
-ms.assetid: ce7fbe64-1445-4702-898e-2fc92f96ebf9
 keywords:
 - GUID_DEVINTERFACE_COMPORT 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 32823d0db31ddb05550e04e60b87a2eb0b4b1bc4
-ms.sourcegitcommit: ec7bebe3f94536455e62b372c2a28fe69d1717f7
+ms.openlocfilehash: 42600275b681e37268d3490054a2cf837a310ac0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93349609"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96789835"
 ---
 # <a name="guid_devinterface_comport"></a>GUID_DEVINTERFACE_COMPORT
 
@@ -33,7 +32,7 @@ ms.locfileid: "93349609"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">属性</th>
+<th align="left">Attribute</th>
 <th align="left">设置</th>
 </tr>
 </thead>
@@ -86,7 +85,7 @@ ms.locfileid: "93349609"
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**GUID_CLASS_COMPORT**](guid-class-comport.md)

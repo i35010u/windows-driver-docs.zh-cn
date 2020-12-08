@@ -1,19 +1,18 @@
 ---
 title: 访问 PCI 配置空间
 description: 访问 PCI 配置空间
-ms.assetid: 4ec520db-7976-40e8-8336-f9056dc024b1
 keywords:
 - PCI 配置空间 WDK 音频
 - 音频适配器驱动程序 WDK，PCI 配置空间
 - 适配器驱动程序 WDK 音频，PCI 配置空间
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fe9c12271e1912c9238eea841aa2081ede59ccb8
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 70d8e82eddf3d0e42d2ef94a3ac5a2c63850075f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89208389"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96789463"
 ---
 # <a name="accessing-pci-configuration-space"></a>访问 PCI 配置空间
 

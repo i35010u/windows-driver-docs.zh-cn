@@ -1,15 +1,14 @@
 ---
 title: 音频电源管理界面
 description: 音频电源管理界面
-ms.assetid: 7b123d3f-4f11-448e-8b20-92578fda7e69
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 98962eb26df438e537634759a9d22e8b2a10af24
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 2d14e5d4b3f819f01b76b62012e1691ed8303787
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89208291"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96789379"
 ---
 # <a name="audio-power-management-interfaces"></a>音频电源管理界面
 

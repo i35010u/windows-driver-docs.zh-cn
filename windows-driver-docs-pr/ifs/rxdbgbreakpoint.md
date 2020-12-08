@@ -1,7 +1,6 @@
 ---
 title: RxDbgBreakPoint 函数
 description: 如果安装了一个，RxDbgBreakPoint 将中断内核调试器。
-ms.assetid: 981256a4-2faf-4f9e-acfc-7488230bb62e
 keywords:
 - RxDbgBreakPoint 函数可安装的文件系统驱动程序
 topic_type:
@@ -14,17 +13,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 28169d0b0b7a19741dfb4b19f0bcab4f8607c780
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 114ec581a7d586db459bcbd8abe3f2c3ffd8d01d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89067364"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96789917"
 ---
 # <a name="rxdbgbreakpoint-function"></a>RxDbgBreakPoint 函数
 
 
-如果安装了一个， **RxDbgBreakPoint**将中断内核调试器。
+如果安装了一个， **RxDbgBreakPoint** 将中断内核调试器。
 
 <a name="syntax"></a>语法
 ------
@@ -35,7 +34,7 @@ VOID RxDbgBreakPoint(
 );
 ```
 
-<a name="parameters"></a>parameters
+<a name="parameters"></a>参数
 ----------
 
 *LineNumber*   
@@ -66,7 +65,7 @@ VOID RxDbgBreakPoint(
 <tbody>
 <tr class="odd">
 <td align="left"><p>目标平台</p></td>
-<td align="left">桌面型</td>
+<td align="left">台式机</td>
 </tr>
 <tr class="even">
 <td align="left"><p>标头</p></td>
@@ -79,7 +78,7 @@ VOID RxDbgBreakPoint(
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**RxAssert**](rxassert.md)

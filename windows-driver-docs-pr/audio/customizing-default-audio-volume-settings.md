@@ -1,7 +1,6 @@
 ---
 title: 自定义 HD 音频驱动程序音量设置
 description: 能够自定义 box 高清音频默认音频音量和麦克风提升级别以适应特定 PC，为 Oem 提供其音频适配器安装参数的灵活性。
-ms.assetid: 0C86C869-447E-4A77-A723-5D9A17D95C7C
 keywords:
 - 音频音量设置
 - 音频适配器 WDK，音量设置
@@ -10,19 +9,19 @@ keywords:
 - 端口类音频适配器 WDK，音量设置
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5535abef394efb05cebfdb4e468cc1dfac7f059b
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 055f8465e93d54d1cf71b99175ff84ab4a107ea5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89208183"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96789325"
 ---
 # <a name="customizing-hd-audio-driver-volume-settings"></a>自定义 HD 音频驱动程序音量设置
 
 
 能够自定义 box 高清音频默认音频音量和麦克风提升级别以适应特定 PC，为 Oem 提供其音频适配器安装参数的灵活性。
 
-**注意**   此处所述的过程仅当使用默认的 Microsoft HD 音频驱动程序时才可使用。
+**注意**  此处所述的过程仅当使用默认的 Microsoft HD 音频驱动程序时才可使用。
 
  
 
@@ -149,7 +148,7 @@ HKR,DefaultVolumeLevels\18,Boost,1,00,00,0A,00 ; Set to 0x000A0000 to set to 10d
 HdAudModel_DefaultVolume_DeviceDesc = "High Definition Audio Device"
 ```
 
-由于指定了 HKR 相对路径，因此将根据使用的特定 INF 文件部分确定确切的驱动程序注册表路径。 有关 HKR 相对路径的详细信息，请参阅 [**INF AddReg 指令 (Windows 驱动程序) **](../install/inf-addreg-directive.md)。 以下两个注册表路径为示例，你的注册表路径可能会有所不同。
+由于指定了 HKR 相对路径，因此将根据使用的特定 INF 文件部分确定确切的驱动程序注册表路径。 有关 HKR 相对路径的详细信息，请参阅 [**INF AddReg 指令 (Windows 驱动程序)**](../install/inf-addreg-directive.md)。 以下两个注册表路径为示例，你的注册表路径可能会有所不同。
 
 HKEY \_ 本地 \_ 计算机 \\ 系统 \\ CurrentControlSet \\ 控件 \\ 类 \\ {4d36e96c-e325-11ce-bfc1-08002be10318} \\ 0002
 

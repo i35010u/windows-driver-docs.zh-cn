@@ -1,7 +1,6 @@
 ---
 title: 输入流
 description: 输入流
-ms.assetid: 0aa378d8-e7e2-4555-b541-dd1ed77b4a12
 keywords:
 - 输入流 WDK DVD 解码器
 - DVD 包 WDK DVD 解码器
@@ -13,12 +12,12 @@ keywords:
 - MPEG2 视频输入流 WDK DVD 解码器
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0b8c6eab2e29b2bac36b4a58dd127eb6971d298e
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 0831d8e0651abc0976f9f5b53d27c2cf386be4a5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89189755"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96790265"
 ---
 # <a name="input-streams"></a>输入流
 

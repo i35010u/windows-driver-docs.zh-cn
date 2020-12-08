@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ 调谐器 \_ 输入
 description: KSPROPERTY \_ 调谐器 \_ 输入属性描述当前调谐模式下的调谐器输入，例如，在电缆和天线调谐器输入之间进行选择。 必须实现此属性。
-ms.assetid: b2c92531-ad1f-4152-a98d-7cae9c2c940c
 keywords:
 - KSPROPERTY_TUNER_INPUT 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ff784bf437c69f9befd05c50f4053d3e568c43d5
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 3d8888c427023dcb610e7e2bad72f58b8f6ab49e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107252"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96790181"
 ---
 # <a name="ksproperty_tuner_input"></a>KSPROPERTY \_ 调谐器 \_ 输入
 
@@ -84,7 +83,7 @@ KSPROPERTY 调谐器输入的结构的 **InputIndex** 成员 \_ \_ \_ 指定当�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSPROPERTY**](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)

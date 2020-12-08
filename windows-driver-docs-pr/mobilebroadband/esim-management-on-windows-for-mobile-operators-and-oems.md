@@ -1,15 +1,14 @@
 ---
 title: 用于移动运营商和 OEM 的 Windows 上的 eSIM 卡管理
 description: 用于移动运营商和 OEM 的 Windows 上的 eSIM 卡管理
-ms.assetid: 7D37D297-76FD-46DA-ACC3-73E4BF970524
 ms.date: 05/23/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: e476bcc8b93c6313027f6232d962b6a6c775f6c4
-ms.sourcegitcommit: c589753b18e418cf7e86cbdbc1135e07f6f50d0d
+ms.openlocfilehash: 56c0bd6c353e9c4926d0a4dea3aa8b8e603f1025
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92079616"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96788539"
 ---
 # <a name="esim-management-on-windows-for-mobile-operators-and-oems"></a>用于移动运营商和 OEM 的 Windows 上的 eSIM 卡管理
 

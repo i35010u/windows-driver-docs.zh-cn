@@ -1,7 +1,6 @@
 ---
 title: 实现自定义 WMI 块
 description: 实现自定义 WMI 块
-ms.assetid: c596924f-9f82-4ca7-b0f0-afc596d7bf99
 keywords:
 - WMI WDK 内核，事件块
 - 事件块 WDK WMI
@@ -11,12 +10,12 @@ keywords:
 - 自定义块 WDK WMI
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dbaa604f5e02af5b4197c5113074157321ecb39d
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: bd3b322d6c188a1e420c737b3ef4edb7f8ebc1ee
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89187171"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96788667"
 ---
 # <a name="implementing-custom-wmi-blocks"></a>实现自定义 WMI 块
 
@@ -32,7 +31,7 @@ ms.locfileid: "89187171"
 
 -   在 [注册为 Wmi 数据提供程序](registering-as-a-wmi-data-provider.md)中所述，将块和驱动程序支持的其他标准和自定义块一起注册到 wmi。
 
--   处理所有 WMI 请求，这些请求在**参数.** 数据路径中指定驱动程序的设备对象指针，并处理**参数. wmi**[中的](handling-wmi-requests.md)标准块的 GUID。
+-   处理所有 WMI 请求，这些请求在 **参数.** 数据路径中指定驱动程序的设备对象指针，并处理 **参数. wmi**[中的](handling-wmi-requests.md)标准块的 GUID。
 
 驱动程序无法控制二进制 MOF 文件的加载顺序。 唯一的保证是在任何特定于驱动程序的 MOF 文件之前加载 wmicore。 因此，自定义 WMI 类只能从同一 MOF 文件或 wmicore 中的任何一个类继承。
 

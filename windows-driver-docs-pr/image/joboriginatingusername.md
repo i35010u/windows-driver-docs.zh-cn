@@ -1,9 +1,8 @@
 ---
 title: JobOriginatingUserName 元素
-description: 所需的 JobOriginatingUserName 元素指定提交扫描作业的用户的名称。
-ms.assetid: ba2dd472-1ac0-40bd-816c-02abc093b6ed
+description: 必需的 JobOriginatingUserName 元素指定提交扫描作业的用户的名称。
 keywords:
-- JobOriginatingUserName 元素成像设备
+- JobOriginatingUserName 元素图像设备
 topic_type:
 - apiref
 api_name:
@@ -12,19 +11,19 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a0158fdb766871484a1d408d28460340b71c8a1a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: abad3c27248e74dc440d64c0cc1a7af48747bdce
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63348793"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96789869"
 ---
 # <a name="joboriginatingusername-element"></a>JobOriginatingUserName 元素
 
 
-所需**JobOriginatingUserName**元素指定提交扫描作业的用户的名称。
+必需的 **JobOriginatingUserName** 元素指定提交扫描作业的用户的名称。
 
-<a name="usage"></a>用法
+<a name="usage"></a>使用情况
 -----
 
 ```xml
@@ -41,12 +40,12 @@ ms.locfileid: "63348793"
 <a name="text-value"></a>文本值
 ----------
 
-必需。 任何有效字符的字符串。
+必需。 任何有效的字符串。
 
 ## <a name="child-elements"></a>子元素
 
 
-没有子元素。
+没有任何子元素。
 
 ## <a name="parent-elements"></a>父元素
 
@@ -76,11 +75,11 @@ ms.locfileid: "63348793"
 <a name="remarks"></a>备注
 -------
 
-如果有的话，客户端或安全基础结构，提供**JobOriginatingUserName**元素。 客户端应提供一个值，以帮助用户轻松区分他们已提交的作业和其他用户提交的作业。
+客户端或安全基础结构（如果有）提供了 **JobOriginatingUserName** 元素。 客户端应提供一个值，以帮助用户轻松区分其所提交的作业和其他用户提交的作业。
 
-WSD 扫描服务可以提供默认值**JobOriginatingUserName**名称在其[ **DefaultScanTicket** ](defaultscanticket.md)元素。 您可以以特定于实现的方式设置此名称。
+WSD 扫描服务可以在其 [**DefaultScanTicket**](defaultscanticket.md)元素中提供默认的 **JobOriginatingUserName** 名称。 可以采用特定于实现的方式来设置此名称。
 
-中指定的作业名称[ **JobName** ](jobname.md)元素。
+在 [**JobName**](jobname.md) 元素中指定作业的名称。
 
 ## <a name="see-also"></a>请参阅
 

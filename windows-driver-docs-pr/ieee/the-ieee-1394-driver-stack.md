@@ -1,7 +1,6 @@
 ---
 title: IEEE 1394 驱动程序堆栈
 description: IEEE 1394 驱动程序堆栈
-ms.assetid: 3c8c218e-d814-451c-9a39-fe7fe5fb7aaf
 keywords:
 - IEEE 1394 WDK 总线，驱动程序堆栈
 - 1394 WDK 总线，驱动程序堆栈
@@ -10,12 +9,12 @@ keywords:
 - 设备堆栈 WDK IEEE 1394 总线
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 20954396924c209389faa93f4f9d85d461f7ad41
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: c1bc35d4cb74a0455dd5d88bddfda4f0a073039e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89383013"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96789969"
 ---
 # <a name="the-ieee-1394-driver-stack"></a>IEEE 1394 驱动程序堆栈
 

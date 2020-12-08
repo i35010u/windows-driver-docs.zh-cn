@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ 调谐器 \_ 模式
 description: 用户模式客户端使用 KSPROPERTY \_ 调谐器 \_ 模式属性来获取或设置设备的优化模式，如模拟电视、数字电视、FM、AM 或 DSS。 必须实现此属性。
-ms.assetid: 84df4030-3836-48de-be83-ecd749839081
 keywords:
 - KSPROPERTY_TUNER_MODE 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 75cd2c02b97aa45df57d070cb1ffbbe66cee47be
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 9eec89e7dc17974ad779c5b670b1cdf58e6c16bc
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106542"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96790175"
 ---
 # <a name="ksproperty_tuner_mode"></a>KSPROPERTY \_ 调谐器 \_ 模式
 
@@ -84,7 +83,7 @@ KSPROPERTY **Mode** \_ 调谐器 \_ 模式 S 结构的 Mode 成员 \_ 指定当�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSPROPERTY**](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)

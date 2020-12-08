@@ -1,7 +1,6 @@
 ---
 title: 未同步的 IdeHwBuildIo 例程
 description: 未同步的 IdeHwBuildIo 例程
-ms.assetid: 47e32f05-5c89-4423-b515-c774b94a9b84
 keywords:
 - ATA 端口驱动程序 WDK，同步
 - 同步 WDK ATA 端口驱动程序
@@ -9,12 +8,12 @@ keywords:
 - 处理 WDK ATA 端口驱动程序未同步
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 907e4cd840ef4f1fd263e0c165f007272a6d9043
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 5adc2e69a02367631dc9f46ce63406a0bfd96475
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91732757"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96790351"
 ---
 # <a name="unsynchronized-idehwbuildio-routine"></a>未同步的 IdeHwBuildIo 例程
 

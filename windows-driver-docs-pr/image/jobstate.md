@@ -1,9 +1,8 @@
 ---
 title: JobState 元素
-description: 所需的 JobState 元素指定作业的当前状态。
-ms.assetid: 7198feea-ce6c-4827-a3b4-c248c6f62e37
+description: 必需的 JobState 元素指定作业的当前状态。
 keywords:
-- JobState 元素成像设备
+- JobState 元素图像设备
 topic_type:
 - apiref
 api_name:
@@ -12,19 +11,19 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0e3b0ffa831de96553bfd3067c1edb65a71f5b1f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 91b2d3da28e50eb22341430b94055e0d529f1c7d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63348779"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96789857"
 ---
 # <a name="jobstate-element"></a>JobState 元素
 
 
-所需**JobState**元素指定作业的当前状态。
+必需的 **JobState** 元素指定作业的当前状态。
 
-<a name="usage"></a>用法
+<a name="usage"></a>使用情况
 -----
 
 ```xml
@@ -56,40 +55,40 @@ ms.locfileid: "63348779"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><span id="Aborted"></span><span id="aborted"></span><span id="ABORTED"></span>已中止</p></td>
-<td><p>系统中止作业。</p></td>
+<td><p><span id="Aborted"></span><span id="aborted"></span><span id="ABORTED"></span>被</p></td>
+<td><p>系统中止了该作业。</p></td>
 </tr>
 <tr class="even">
-<td><p><span id="Canceled"></span><span id="canceled"></span><span id="CANCELED"></span>已取消</p></td>
-<td><p>通过使用 CancelJobRequest 操作的客户端或 WSD 扫描服务的作用域之外的方式，该作业已取消。</p></td>
+<td><p><span id="Canceled"></span><span id="canceled"></span><span id="CANCELED"></span>放弃</p></td>
+<td><p>作业已被使用 CancelJobRequest 操作的客户端取消，或在 WSD 扫描服务的范围之外。</p></td>
 </tr>
 <tr class="odd">
-<td><p><span id="Completed"></span><span id="completed"></span><span id="COMPLETED"></span>已完成</p></td>
-<td><p>作业是映像的已完成的处理及其所有数据已发送到客户端。</p></td>
+<td><p><span id="Completed"></span><span id="completed"></span><span id="COMPLETED"></span>完成</p></td>
+<td><p>作业已完成处理，所有图像数据都已发送到客户端。</p></td>
 </tr>
 <tr class="even">
-<td><p><span id="Creating"></span><span id="creating"></span><span id="CREATING"></span>创建</p></td>
+<td><p><span id="Creating"></span><span id="creating"></span><span id="CREATING"></span>制定</p></td>
 <td><p>正在初始化作业。</p></td>
 </tr>
 <tr class="odd">
-<td><p><span id="Held"></span><span id="held"></span><span id="HELD"></span>保存</p></td>
-<td><p>作业正在等待处理，但无法对计划。 仅通过 WSD 扫描服务的作用域之外的方法，该作业可以达到此状态。</p></td>
+<td><p><span id="Held"></span><span id="held"></span><span id="HELD"></span>暂停</p></td>
+<td><p>作业正在等待处理，但不适用于计划。 作业只能通过 WSD 扫描服务范围以外的方法达到此状态。</p></td>
 </tr>
 <tr class="even">
-<td><p><span id="Pending"></span><span id="pending"></span><span id="PENDING"></span>挂起</p></td>
-<td><p>作业已初始化，并且正在等待处理。</p></td>
+<td><p><span id="Pending"></span><span id="pending"></span><span id="PENDING"></span>未</p></td>
+<td><p>该作业已初始化并等待处理。</p></td>
 </tr>
 <tr class="odd">
-<td><p><span id="Processing"></span><span id="processing"></span><span id="PROCESSING"></span>处理</p></td>
-<td><p>该作业的数据是被数字化，转换后，或传输。</p></td>
+<td><p><span id="Processing"></span><span id="processing"></span><span id="PROCESSING"></span>字处理</p></td>
+<td><p>正在对作业数据进行数字化、转换或传输。</p></td>
 </tr>
 <tr class="even">
-<td><p><span id="Started"></span><span id="started"></span><span id="STARTED"></span>已启动</p></td>
-<td><p>扫描设备已开始处理该作业。 此状态是一个暂时性状态，并通常会看到仅与 JobStatusEvent 事件。</p></td>
+<td><p><span id="Started"></span><span id="started"></span><span id="STARTED"></span>首先</p></td>
+<td><p>扫描设备已开始处理作业。 此状态为暂时性状态，通常只会在 JobStatusEvent 事件中出现。</p></td>
 </tr>
 <tr class="odd">
-<td><p><span id="Terminating"></span><span id="terminating"></span><span id="TERMINATING"></span>终止</p></td>
-<td><p>作业是由任一客户端启动 CancelJobRequest 操作已取消或中止的 WSD 扫描服务的作用域之外的方法。</p></td>
+<td><p><span id="Terminating"></span><span id="terminating"></span><span id="TERMINATING"></span>因</p></td>
+<td><p>作业已被客户端启动的 CancelJobRequest 操作取消，或在 WSD 扫描服务范围以外的时间中止。</p></td>
 </tr>
 </tbody>
 </table>
@@ -99,7 +98,7 @@ ms.locfileid: "63348779"
 ## <a name="child-elements"></a>子元素
 
 
-没有子元素。
+没有任何子元素。
 
 ## <a name="parent-elements"></a>父元素
 
@@ -126,9 +125,9 @@ ms.locfileid: "63348779"
 <a name="remarks"></a>备注
 -------
 
-当**JobState**元素包含在[ **JobEndStateEvent** ](jobendstateevent.md)事件或[ **JobHistory** ](jobhistory2.md)元素， **JobState**表示已完成的作业的状态。 否则为**JobState**指定作业的当前状态。
+当 **JobState** 元素包含在 [**JobEndStateEvent**](jobendstateevent.md) 事件或 [**JobHistory**](jobhistory2.md) 元素中时， **JobState** 表示作业的已完成状态。 否则， **JobState** 指定作业的当前状态。
 
-您都可以扩展和子集的允许的值为此元素。
+可以扩展和子集化此元素的允许值。
 
 ## <a name="see-also"></a>请参阅
 

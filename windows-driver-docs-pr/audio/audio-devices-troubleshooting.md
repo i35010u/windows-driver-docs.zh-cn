@@ -1,15 +1,14 @@
 ---
 title: 音频设备故障排除
 description: 音频设备故障排除
-ms.assetid: 9e800f71-9c90-4084-b879-32300e6706fd
 ms.date: 12/19/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 115fbeb02b5aeb3700f43a404e8d28c3808673f7
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: eadc85da60e3781cf6f4365b721fd6968b78f0c9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89208351"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96789419"
 ---
 # <a name="audio-devices-troubleshooting"></a>音频设备故障排除
 

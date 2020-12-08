@@ -1,9 +1,8 @@
 ---
 title: rpcexts.eeinfo
-description: Rpcexts.eeinfo 扩展显示的扩展的错误的信息链。
-ms.assetid: dc842236-bdbf-42aa-911d-6eb5eb1798ee
+description: Rpcexts. eeinfo 扩展显示扩展的错误消息链。
 keywords:
-- rpcexts.eeinfo Windows 调试
+- rpcexts eeinfo Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,29 +11,29 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: b407313efbc22b1c1cc60249a9856443679384f7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 421a58838c598d0101ab1e4224c4077aee7a143f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63338896"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96790087"
 ---
 # <a name="rpcextseeinfo"></a>!rpcexts.eeinfo
 
 
-**！ Rpcexts.eeinfo**扩展显示的扩展的错误的信息链。
+**！ Rpcexts eeinfo** 扩展显示扩展的错误消息链。
 
 ```dbgcmd
 !rpcexts.eeinfo EEInfoAddress
 ```
 
-## <a name="span-idddkrpcextseeinfodbgspanspan-idddkrpcextseeinfodbgspanparameters"></a><span id="ddk__rpcexts_eeinfo_dbg"></span><span id="DDK__RPCEXTS_EEINFO_DBG"></span>参数
+## <a name="span-idddk__rpcexts_eeinfo_dbgspanspan-idddk__rpcexts_eeinfo_dbgspanparameters"></a><span id="ddk__rpcexts_eeinfo_dbg"></span><span id="DDK__RPCEXTS_EEINFO_DBG"></span>参数
 
 
-<span id="_______EEInfoAddress______"></span><span id="_______eeinfoaddress______"></span><span id="_______EEINFOADDRESS______"></span> *EEInfoAddress*   
-指定的扩展的错误消息的地址。
+<span id="_______EEInfoAddress______"></span><span id="_______eeinfoaddress______"></span><span id="_______EEINFOADDRESS______"></span>*EEInfoAddress*   
+指定扩展错误信息的地址。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 <table>
 <colgroup>
@@ -55,18 +54,18 @@ ms.locfileid: "63338896"
 
  
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-有关调试 Microsoft 远程过程调用 (RPC) 的详细信息，请参阅[RPC 调试](rpc-debugging.md)。
+有关调试 Microsoft 远程过程调用 (RPC) 的详细信息，请参阅 [Rpc 调试](rpc-debugging.md)。
 
 <a name="remarks"></a>备注
 -------
 
-此扩展显示扩展的错误的信息链中的所有记录的内容。
+此扩展显示扩展错误消息链中所有记录的内容。
 
-首先按顺序，使用最新的记录显示记录。 记录由一系列短划线分隔。
+记录按顺序显示，最新记录首先显示。 记录由虚线分隔。
 
-下面是的示例 （在其中不存在只有一条记录）：
+下面是一个示例 (，其中只有一条记录) ：
 
 ```dbgcmd
 0:001> !rpcexts.eeinfo 0xb015f0
@@ -81,7 +80,7 @@ Parameter 0:(Long value) : -30976 (0xFFFF8700)
 Parameter 1:(Long value) : 16777343 (0x100007F)
 ```
 
-如果链是很长，并且你想要看到只有一个记录，使用[ **！ rpcexts.eerecord** ](-rpcexts-eerecord.md)相反。
+如果链非常长并且只希望看到一条记录，请改用 [**！ rpcexts. eerecord**](-rpcexts-eerecord.md) 。
 
  
 

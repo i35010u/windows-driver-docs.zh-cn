@@ -1,17 +1,16 @@
 ---
 title: 使用标记进行对象引用跟踪
 description: 使用标记进行对象引用跟踪
-ms.assetid: f6c3d7b2-09b1-4055-b066-cce8831efab2
 keywords:
 - 用标记 WDK 引用对象
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9fc4314047d832f4e4890db31e1d1c3c15070cc9
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 9d40186a47518d722c62d6253735e4a24459a7b0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91734369"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96788629"
 ---
 # <a name="object-reference-tracing-with-tags"></a>使用标记进行对象引用跟踪
 
@@ -38,9 +37,9 @@ ms.locfileid: "91734369"
 
 [**ObReferenceObjectWithTag**](/windows-hardware/drivers/ddi/wdm/nf-wdm-obreferenceobjectwithtag)
 
-例如，在 windows 7 和更高版本的 Windows 中可用的 **ObReferenceObjectWithTag** 和 **ObDereferenceObjectWithTag**是 [**ObReferenceObject**](/windows-hardware/drivers/ddi/wdm/nf-wdm-obfreferenceobject) 和 [**ObDereferenceObject**](/windows-hardware/drivers/ddi/wdm/nf-wdm-obdereferenceobject) 例程的增强版本，这些版本在 windows 2000 和更高版本的 windows 中可用。 利用这些增强的例程，你可以提供一个四字节的自定义标记值作为输入参数。 每个调用的标记值都将添加到可由[Windows 调试工具](https://go.microsoft.com/fwlink/p/?linkid=153599)访问的[对象引用跟踪](../debugger/object-reference-tracing.md)。 **ObReferenceObject** 和 **ObDereferenceObject** 不允许调用方指定自定义标记，但是，在 windows 7 和更高版本的 windows 中，这些例程将 (带有标记值 "Dflt" ) 添加到跟踪的默认标记。 因此，对 **ObReferenceObject** 或 **ObDereferenceObject** 的调用与指定标记值 "Dflt" 的 **ObReferenceObjectWithTag** 或 **ObDereferenceObjectWithTag** 的调用具有相同的效果。 在您的程序中 (，此标记值表示为0x746c6644 或 ' tlfD '。 ) 
+例如，在 windows 7 和更高版本的 Windows 中可用的 **ObReferenceObjectWithTag** 和 **ObDereferenceObjectWithTag** 是 [**ObReferenceObject**](/windows-hardware/drivers/ddi/wdm/nf-wdm-obfreferenceobject) 和 [**ObDereferenceObject**](/windows-hardware/drivers/ddi/wdm/nf-wdm-obdereferenceobject) 例程的增强版本，这些版本在 windows 2000 和更高版本的 windows 中可用。 利用这些增强的例程，你可以提供一个四字节的自定义标记值作为输入参数。 每个调用的标记值都将添加到可由[Windows 调试工具](https://go.microsoft.com/fwlink/p/?linkid=153599)访问的[对象引用跟踪](../debugger/object-reference-tracing.md)。 **ObReferenceObject** 和 **ObDereferenceObject** 不允许调用方指定自定义标记，但是，在 windows 7 和更高版本的 windows 中，这些例程将 (带有标记值 "Dflt" ) 添加到跟踪的默认标记。 因此，对 **ObReferenceObject** 或 **ObDereferenceObject** 的调用与指定标记值 "Dflt" 的 **ObReferenceObjectWithTag** 或 **ObDereferenceObjectWithTag** 的调用具有相同的效果。 在您的程序中 (，此标记值表示为0x746c6644 或 ' tlfD '。 ) 
 
-若要跟踪潜在的对象泄漏或非引用请求，请在驱动程序中标识一组关联的 **ObReferenceObject*Xxx*WithTag** 和 **ObDereferenceObject*Xxx*WithTag** 调用，以便递增和递减特定对象的引用计数。 选择一个公共标记值 (例如 "Lky8" ) ，用于此集中的所有调用。 完成使用对象的驱动程序后，减量的数量应与完全匹配的增量数。 如果这些数字不匹配，则驱动程序将具有对象引用错误。 调试器可以比较每个标记值的递增量和减量，并告诉您它们是否不匹配。 利用此功能，你可以快速查明引用计数不匹配的源。
+若要跟踪潜在的对象泄漏或非引用请求，请在驱动程序中标识一组关联的 **ObReferenceObject *Xxx* WithTag** 和 **ObDereferenceObject *Xxx* WithTag** 调用，以便递增和递减特定对象的引用计数。 选择一个公共标记值 (例如 "Lky8" ) ，用于此集中的所有调用。 完成使用对象的驱动程序后，减量的数量应与完全匹配的增量数。 如果这些数字不匹配，则驱动程序将具有对象引用错误。 调试器可以比较每个标记值的递增量和减量，并告诉您它们是否不匹配。 利用此功能，你可以快速查明引用计数不匹配的源。
 
 若要在 Windows 调试工具中查看对象引用跟踪，请使用 [！ obtrace](../debugger/-obtrace.md) 内核模式调试程序扩展。 在 windows 7 和更高版本的 Windows 中，如果启用了对象引用跟踪，则 [！ obtrace](../debugger/-obtrace.md) 扩展可以显示对象引用标记。 默认情况下，对象引用跟踪处于禁用状态。 使用 [全局标志编辑器](https://go.microsoft.com/fwlink/p/?linkid=153601) (Gflags) 启用对象引用跟踪。 有关 Gflags 的详细信息，请参阅 [配置对象引用跟踪](https://go.microsoft.com/fwlink/p/?linkid=153602)。
 

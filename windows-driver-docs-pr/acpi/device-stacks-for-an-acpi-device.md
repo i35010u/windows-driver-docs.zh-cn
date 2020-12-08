@@ -1,7 +1,6 @@
 ---
 title: ACPI 设备的设备堆栈
 description: ACPI 设备的设备堆栈
-ms.assetid: f177d29f-eaf9-4126-8cb3-9355d977bfb0
 keywords:
 - ACPI 设备 WDK，设备堆栈
 - 设备堆栈 WDK ACPI
@@ -13,12 +12,12 @@ keywords:
 - WDM 函数驱动程序 WDK ACPI，设备堆栈
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fcf26d867a353a04a967e0e98da078d725849330
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: c6deb5af2e25177efc49d559f150f0684ca3f7ab
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89184875"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96789499"
 ---
 # <a name="device-stacks-for-an-acpi-device"></a>ACPI 设备的设备堆栈
 
@@ -36,7 +35,7 @@ ms.locfileid: "89184875"
 
 如果设备不是集成到系统板的硬件设备，则 ACPI 驱动程序会枚举设备并创建 PDO。 在任一情况下，供应商可以提供一个可选的 FDO。
 
-### <a name="system-supplied-root-bus-driver-and-acpi-driver"></a>系统提供的根总线驱动程序和 ACPI 驱动程序
+### <a name="system-supplied-root-bus-driver-and-acpi-driver"></a>System-Supplied 根总线驱动程序和 ACPI 驱动程序
 
 Microsoft 提供根总线驱动程序和 [ACPI 驱动程序](../kernel/acpi-driver.md)。 在具有 ACPI BIOS 的系统上，HAL 会使 ACPI 驱动程序在系统启动期间在设备树的基础上加载，在此过程中，它充当操作系统和 BIOS 之间的接口。 ACPI 驱动程序对其他驱动程序是透明的。
 

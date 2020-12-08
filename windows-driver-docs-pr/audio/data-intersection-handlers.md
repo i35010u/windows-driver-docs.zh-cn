@@ -1,7 +1,6 @@
 ---
 title: 数据交集处理程序
 description: 数据交集处理程序
-ms.assetid: 7206afdb-8a34-4b5a-8cea-87119f426161
 keywords:
 - WDM 音频驱动程序 WDK，数据交集处理程序
 - 音频驱动程序 WDK，数据交集处理程序
@@ -20,12 +19,12 @@ keywords:
 - 端口驱动程序 WDK 音频，数据交集处理程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a4280d2511e5c8f339757964de471def679c7647
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 1d4129ce83ecaee07f9bd8362a36b4f9f616d340
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89208177"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96789321"
 ---
 # <a name="data-intersection-handlers"></a>数据交集处理程序
 

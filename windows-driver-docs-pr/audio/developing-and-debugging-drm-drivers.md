@@ -1,7 +1,6 @@
 ---
 title: 开发和调试 DRM 驱动程序
 description: 开发和调试 DRM 驱动程序
-ms.assetid: 3450717a-fd27-4bea-8740-9d47b420ed32
 keywords:
 - 数字 Rights Management WDK 音频，建议
 - DRM WDK 音频，建议
@@ -10,12 +9,12 @@ keywords:
 - 调试驱动程序 WDK DRM
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d923f7559e548be615f3f949abbf0bffdfb20f72
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 74e508071368ada96544971226d6273ab5c6e8ef
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89208142"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96789295"
 ---
 # <a name="developing-and-debugging-drm-drivers"></a>开发和调试 DRM 驱动程序
 

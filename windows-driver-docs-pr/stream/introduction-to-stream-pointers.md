@@ -1,7 +1,6 @@
 ---
 title: 流指针简介
 description: 流指针简介
-ms.assetid: 2682b145-5148-4301-b382-9811bb5e8fa6
 keywords:
 - 流指针 WDK AVStream，关于流指针
 - 前移流指针 WDK AVStream
@@ -11,12 +10,12 @@ keywords:
 - 计数引用 WDK 流指针
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3e1f53e831cbaae66730fb7b1336cf115bdc0490
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 17e0678f9aa80a70466da3501bf958c1c398d1c9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89190911"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96790285"
 ---
 # <a name="introduction-to-stream-pointers"></a>流指针简介
 

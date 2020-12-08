@@ -1,16 +1,15 @@
 ---
 title: OID_GEN_BROADCAST_BYTES_RCV
 description: 作为查询，OID_GEN_BROADCAST_BYTES_RCV OID 指定了在没有错误的情况下接收的广播数据包中的字节数。
-ms.assetid: 1047f3a9-be4a-4836-ac48-a9029c6f748f
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_GEN_BROADCAST_BYTES_RCV 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: ac658c5e61f3bcb1e224940fa3f6e564f2439ef4
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 4ee87ebc36f79597c0a5f4de023e3117c3daecce
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89206359"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96789667"
 ---
 # <a name="oid_gen_broadcast_bytes_rcv"></a>OID \_ 生成 \_ 广播 \_ 字节 \_ RCV
 
@@ -55,7 +54,7 @@ ms.locfileid: "89206359"
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [OID \_ 生成 \_ 统计信息](oid-gen-statistics.md)

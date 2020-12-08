@@ -1,18 +1,17 @@
 ---
 title: 使用 IoIs32bitProcess 的方法2
 description: 使用 IoIs32bitProcess 的方法2
-ms.assetid: 41e9c0e6-59dd-4e01-9c82-5aba40d8b97f
 keywords:
 - 32位 i/o 支持 WDK 64 位，IoIs32bitProcess
 - IoIs32bitProcess
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 593a0c93f0fd75cf5a4877c7e1dc5bbe24b66c69
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: d05657290a63d3dc38aae1865787827364776acc
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89190435"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96788581"
 ---
 # <a name="technique-2-using-iois32bitprocess"></a>方法 2：使用 IoIs32bitProcess
 
@@ -29,7 +28,7 @@ BOOLEAN
     );
 ```
 
-如果当前 i/o 请求的发起方为32位用户模式应用程序，则**IoIs32bitProcess**返回**TRUE** 。
+如果当前 i/o 请求的发起方为32位用户模式应用程序，则 **IoIs32bitProcess** 返回 **TRUE** 。
 
 下面的代码示例演示如何使用 **IoIs32bitProcess**：
 

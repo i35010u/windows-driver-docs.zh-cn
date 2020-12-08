@@ -1,20 +1,19 @@
 ---
 title: EFI_DISPLAY_POWER_PROTOCOL.GetDisplayPowerState
 description: EFI_DISPLAY_POWER_PROTOCOL.GetDisplayPowerState
-ms.assetid: 8c5fe55f-903e-4ef0-b3cf-8b764af767cf
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 46d6f29f8c91834a95b7cdeb9a1aa1bf6c391e94
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 24125342c99e122d490297a6b4552c2fc9bbc496
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328013"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96789109"
 ---
-# <a name="efidisplaypowerprotocolgetdisplaypowerstate"></a>EFI\_DISPLAY\_POWER\_PROTOCOL.GetDisplayPowerState
+# <a name="efi_display_power_protocolgetdisplaypowerstate"></a>EFI \_ 显示 \_ 电源 \_ 协议。GetDisplayPowerState
 
 
-返回当前的显示和背景光电源状态。
+返回显示器和背景光的当前电源状态。
 
 ## <a name="syntax"></a>语法
 
@@ -26,19 +25,19 @@ typedef EFI_STATUS (EFIAPI * EFI_DISPLAY_POWER_GETDISPLAYPOWERSTATE) (
     );
 ```
 
-## <a name="parameters"></a>Parameters
+## <a name="parameters"></a>参数
 
 
 <a href="" id="this"></a>*此*  
-\[在中\]指向的指针[EFI\_显示\_POWER\_协议](efi-display-power-protocol.md)实例。
+\[位于 \] [EFI \_ 显示 \_ 电源 \_ 协议](efi-display-power-protocol.md) 实例的指针中。
 
 <a href="" id="powerstate"></a>*PowerState*  
-\[out\]指向的指针[EFI\_显示\_POWER\_状态](efi-display-power-state.md)接收的当前电源状态的值。
+\[out \] 一个指针，指向用于接收当前电源状态的 [EFI \_ 显示 \_ 电源 \_ 状态](efi-display-power-state.md) 值。
 
 ## <a name="return-value"></a>返回值
 
 
-返回一个下面的状态代码。
+返回以下状态代码之一。
 
 <table>
 <colgroup>
@@ -48,13 +47,13 @@ typedef EFI_STATUS (EFIAPI * EFI_DISPLAY_POWER_GETDISPLAYPOWERSTATE) (
 <thead>
 <tr class="header">
 <th>状态代码</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><p>EFI_SUCCESS</p></td>
-<td><p>该函数返回成功。</p></td>
+<td><p>函数已成功返回。</p></td>
 </tr>
 <tr class="even">
 <td><p>EFI_INVALID_PARAMETER</p></td>
@@ -62,7 +61,7 @@ typedef EFI_STATUS (EFIAPI * EFI_DISPLAY_POWER_GETDISPLAYPOWERSTATE) (
 </tr>
 <tr class="odd">
 <td><p>EFI_DEVICE_ERROR</p></td>
-<td><p>物理设备报告了错误。</p></td>
+<td><p>物理设备报告了一个错误。</p></td>
 </tr>
 </tbody>
 </table>
@@ -75,7 +74,7 @@ typedef EFI_STATUS (EFIAPI * EFI_DISPLAY_POWER_GETDISPLAYPOWERSTATE) (
 **标头：** 用户生成
 
 ## <a name="related-topics"></a>相关主题
-[EFI\_DISPLAY\_电源\_协议](efi-display-power-protocol.md)  
+[EFI \_ 显示 \_ 电源 \_ 协议](efi-display-power-protocol.md)  
 
 
 

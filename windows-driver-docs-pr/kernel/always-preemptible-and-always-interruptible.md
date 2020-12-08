@@ -1,7 +1,6 @@
 ---
 title: 始终可抢占且始终可中断
 description: 始终可抢占且始终可中断
-ms.assetid: 3da667b4-50f3-4536-9049-65719fa003ce
 keywords:
 - preemptible 设计 WDK 内核
 - 中断设计 WDK 内核
@@ -23,12 +22,12 @@ keywords:
 - 线程优先级 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9ec77ea18b349efce4b65ab5265cdfae38cd36d1
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: fe5d0643a96604a4ed3cbd4ef28520614dc6f5a9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89189555"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96789811"
 ---
 # <a name="always-preemptible-and-always-interruptible"></a>始终可抢占且始终可中断
 
@@ -68,7 +67,7 @@ Preemptible、可中断的操作系统设计的目标是最大程度地提高系
 
 一般情况下，只会在请求驱动程序的当前 i/o 操作的线程的上下文中调用一个最高级别的驱动程序。 中间级别或最低级别的驱动程序永远不会假定它在请求其当前 i/o 操作的线程的上下文中执行。
 
-因此，在调用标准驱动程序例程时，驱动程序例程通常会在 *任意线程上下文*中执行，即任何线程的上下文都是最新的。 出于性能方面的考虑， (避免上下文切换) ，很少有驱动程序设置自己的线程。
+因此，在调用标准驱动程序例程时，驱动程序例程通常会在 *任意线程上下文* 中执行，即任何线程的上下文都是最新的。 出于性能方面的考虑， (避免上下文切换) ，很少有驱动程序设置自己的线程。
 
  
 

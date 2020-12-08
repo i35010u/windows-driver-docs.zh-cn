@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ 流 \_ 分配器
 description: KSPROPERTY \_ 流 \_ 分配器属性是一个可选属性，如果 pin 分配流缓冲区或可提供分配器，则应实现此属性
-ms.assetid: 9a13efe6-4ad4-49bc-b9f1-10c22b47d9d0
 keywords:
 - KSPROPERTY_STREAM_ALLOCATOR 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ade2f8a3d9ffe48b2ea7a8736e7096cf410b6d44
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 617ae19f0f475a60a190928a1da4a091570e5642
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103036"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96790185"
 ---
 # <a name="ksproperty_stream_allocator"></a>KSPROPERTY \_ 流 \_ 分配器
 
@@ -61,7 +60,7 @@ KSPROPERTY \_ 流 \_ 分配器属性是一个可选属性，如果 pin 分配流
 
  
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 返回的值始终为 **NULL** 句柄。 但是，支持由调用是否成功返回决定。

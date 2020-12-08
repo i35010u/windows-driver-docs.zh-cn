@@ -1,15 +1,14 @@
 ---
 title: 高清音频 DDI 参考
 description: 高清音频 DDI 参考
-ms.assetid: 82d8698b-20fd-40ba-b7f5-56006ffb518f
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 711b5ce96ca2ccdb25e4f49162d679c88fc2f8e3
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: b37c092b473855f7edbf65a94093a5e758e5c3e9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89209161"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96789189"
 ---
 # <a name="high-definition-audio-ddi-reference"></a>高清音频 DDI 参考
 

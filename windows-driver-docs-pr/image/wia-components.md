@@ -1,15 +1,14 @@
 ---
 title: WIA 组件
 description: WIA 组件
-ms.assetid: e75b8929-c16a-4c7a-9064-4fcb104bfa41
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1b507592ad0dccb4d10c61a1c4bd254c81093072
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: e49c7bfd8616280a86ae9c6342e99c23bfdedf50
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90714730"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96788707"
 ---
 # <a name="wia-components"></a>WIA 组件
 
@@ -37,7 +36,7 @@ WIA 服务是系统提供的组件，可与图像处理应用程序和 WIA 微�
 <thead>
 <tr class="header">
 <th>WIA API</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -100,13 +99,13 @@ WIA 服务是系统提供的组件，可与图像处理应用程序和 WIA 微�
 
 ### <a name="wia-utility-library"></a>WIA 实用程序库
 
-[WIA 实用工具库](wia-utility-library.md)包含调试函数的集合 ( **wiauDbg * * * Xxx*) 、常规实用工具 helper 函数的集合和三个类： **CWiauDbgFn**类、 **CWiauFormatConverter**类和**CWiauPropertyList**类。
+[WIA 实用工具库](wia-utility-library.md)包含调试函数的集合 (**wiauDbg**_Xxx_) 、常规实用工具 helper 函数的集合和三个类： **CWiauDbgFn** 类、 **CWiauFormatConverter** 类和 **CWiauPropertyList** 类。
 
 ### <a name="wia-minidrivers"></a>WIA 微型驱动程序
 
 [Wia 微型驱动程序](/windows-hardware/drivers/ddi/wiamindr_lh/nn-wiamindr_lh-iwiaminidrv) 是由供应商提供的用户模式组件，可将 WIA 属性更改和命令定向到图像设备。 微型驱动程序实现 WIA DDI，WIA 服务调用它来与微型驱动程序进行通信。
 
-WIA 微型驱动程序向内核模式静止映像驱动程序提供特定于设备的用户模式接口，该驱动程序通过驱动程序（如 USB 驱动程序）驱动图像设备。 微型驱动程序通过调用 [**CreateFile**](/windows/win32/api/fileapi/nf-fileapi-createfilea)、 **ReadFile**、 **WriteFile**和 [**DeviceIoControl**](/windows/win32/api/ioapiset/nf-ioapiset-deviceiocontrol) Microsoft Win32 (函数（Microsoft Windows SDK 文档) 中所述）来与内核模式驱动程序通信。
+WIA 微型驱动程序向内核模式静止映像驱动程序提供特定于设备的用户模式接口，该驱动程序通过驱动程序（如 USB 驱动程序）驱动图像设备。 微型驱动程序通过调用 [**CreateFile**](/windows/win32/api/fileapi/nf-fileapi-createfilea)、 **ReadFile**、 **WriteFile** 和 [**DeviceIoControl**](/windows/win32/api/ioapiset/nf-ioapiset-deviceiocontrol) Microsoft Win32 (函数（Microsoft Windows SDK 文档) 中所述）来与内核模式驱动程序通信。
 
 图像应用程序不能直接调用 WIA 微型驱动程序。 只有 WIA 服务可以直接调用该驱动程序。
 
@@ -114,11 +113,11 @@ WIA 微型驱动程序向内核模式静止映像驱动程序提供特定于设�
 
 内核模式静止映像驱动程序是系统提供的或由 IHV 提供的组件，这些组件打包用于传递到仍图像设备并从静止图像设备传输的数据。 内核模式的静止映像驱动程序是特定于总线的。
 
-Microsoft 为 USB、SCSI、串行和 IEEE 1394 总线提供 Microsoft Windows 驱动模型 (WDM) 的内核模式静止映像驱动程序。 有关这些驱动程序的详细信息，请参阅 [访问静止图像设备的内核模式驱动程序](accessing-kernel-mode-drivers-for-still-image-devices.md)。
+Microsoft 为 USB、SCSI、串行和 IEEE 1394 总线提供 Microsoft Windows 驱动模型 (WDM) 的内核模式静止映像驱动程序。 有关这些驱动程序的详细信息，请参阅为 [静止图像设备访问 Kernel-Mode 驱动程序](accessing-kernel-mode-drivers-for-still-image-devices.md)。
 
 仅当供应商的图像处理设备与 Microsoft 提供的内核模式 i/o 驱动程序不兼容时，供应商才必须提供该驱动程序的内核模式。
 
-**注意**   在 Windows XP 和更高版本中，可以从驱动程序中检索版本信息。 [**Wia \_ dip \_ WIA \_ 版本**](./wia-dip-wia-version.md)属性包含 WIA 版本， [**wia \_ dip \_ 驱动程序 \_ 版本**](./wia-dip-driver-version.md)属性包含驱动程序 DLL 版本。 WIA 服务创建并维护这些属性;加载驱动程序时，WIA 服务会自动添加它们。 Windows Me 不包含这些属性。
+**注意**   在 Windows XP 和更高版本中，可以从驱动程序中检索版本信息。 [**Wia \_ dip \_ WIA \_ 版本**](./wia-dip-wia-version.md)属性包含 WIA 版本， [**wia \_ dip \_ 驱动程序 \_ 版本**](./wia-dip-driver-version.md)属性包含驱动程序 DLL 版本。 WIA 服务创建并维护这些属性;加载驱动程序时，WIA 服务会自动添加它们。 Windows Me 不包含这些属性。
 
  
 

@@ -1,7 +1,6 @@
 ---
 title: 标头数据拆分简介
 description: 标头数据拆分简介
-ms.assetid: ecbf4b08-8be4-42ca-8a65-1cb8124bee33
 keywords:
 - 标头-数据拆分 WDK
 - 将标头和数据拆分为单独的缓冲区
@@ -13,12 +12,12 @@ keywords:
 - space 管理
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: eba8d6ed7e25ed24e10edc4447df19723053caa7
-ms.sourcegitcommit: 366a15d68eb58d01a8ca6de7b982f62ac8b7deaf
+ms.openlocfilehash: 0f4c89f166666a3b4c373598b70e1eb175f5dac8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/19/2020
-ms.locfileid: "90811974"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96790483"
 ---
 # <a name="introduction-to-header-data-split"></a>标头数据拆分简介
 

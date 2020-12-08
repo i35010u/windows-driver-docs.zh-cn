@@ -1,7 +1,6 @@
 ---
 title: RX_CONTEXT 和 IRP 管理
 description: RX_CONTEXT 和 IRP 管理
-ms.assetid: 74ca681d-2599-442c-aebe-3556d6354f7f
 keywords:
 - RDBSS WDK 文件系统，Irp
 - 重定向驱动器缓冲子系统 WDK 文件系统、Irp
@@ -18,12 +17,12 @@ keywords:
 - 上下文 WDK RDBSS
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0a554377a3a653156663d6690fd7c043ab4edec1
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: a39472744a655dc7a29cda303242c9467fa5323b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106560"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96789923"
 ---
 # <a name="rx_context-and-irp-management"></a>RX \_ 上下文和 IRP 管理
 
@@ -59,7 +58,7 @@ RDBSS 提供了许多用于处理 RX \_ 上下文结构和关联的 IRP 的例�
 <thead>
 <tr class="header">
 <th align="left">例程所返回的值</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>

@@ -1,18 +1,17 @@
 ---
 title: 设备和适配器初始化
 description: 设备和适配器初始化
-ms.assetid: EBBEF0FB-6CDB-4899-AAE9-71812EE20AFB
 keywords:
 - NetAdapterCx 设备初始化，NetCx 设备初始化，NetAdapterCx 适配器初始化，NetCx 适配器初始化
 ms.date: 01/07/2019
 ms.localizationpriority: medium
 ms.custom: Vib
-ms.openlocfilehash: 86f54886cfaf245db3d89fc9e2a48507ed18e5bf
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 926edc448cfc912cf05ff3fb67226cba7342abba
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91733258"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96790505"
 ---
 # <a name="device-and-adapter-initialization"></a>设备和适配器初始化
 
@@ -20,7 +19,7 @@ ms.locfileid: "91733258"
 
 ## <a name="evt_wdf_driver_device_add"></a>EVT_WDF_DRIVER_DEVICE_ADD
 
-NetAdapterCx 客户端驱动程序在从其[*DriverEntry*](../wdf/driverentry-for-kmdf-drivers.md)例程调用[**WdfDriverCreate**](/windows-hardware/drivers/ddi/wdfdriver/nf-wdfdriver-wdfdrivercreate)时，会注册其[*EVT_WDF_DRIVER_DEVICE_ADD*](/windows-hardware/drivers/ddi/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)回调函数。
+NetAdapterCx 客户端驱动程序在从其 [*DriverEntry*](../wdf/driverentry-for-kmdf-drivers.md)例程调用 [**WdfDriverCreate**](/windows-hardware/drivers/ddi/wdfdriver/nf-wdfdriver-wdfdrivercreate)时，会注册其 [*EVT_WDF_DRIVER_DEVICE_ADD*](/windows-hardware/drivers/ddi/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)回调函数。
 
 在 [*EVT_WDF_DRIVER_DEVICE_ADD*](/windows-hardware/drivers/ddi/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)中，NetAdapterCx 客户端驱动程序应按顺序执行以下操作：
 

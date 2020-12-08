@@ -1,18 +1,17 @@
 ---
 title: 使用 SCSI 端口 WMI 库
 description: 使用 SCSI 端口 WMI 库
-ms.assetid: cb55bbb3-39bb-491f-a6d2-50dceace4a86
 keywords:
 - WMI SRBs WDK 存储，SCSI 端口 WMI 库
 - SCSI 端口 WMI 库 WDK 存储
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1d12fcbe3886c5e0d97cc55c7a776227bb3327b8
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 08c0ef566675faef405ba95626c24ff668f3eef7
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89191631"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96790341"
 ---
 # <a name="using-the-scsi-port-wmi-library"></a>使用 SCSI 端口 WMI 库
 
@@ -38,7 +37,7 @@ ms.locfileid: "89191631"
 
 初始化微型端口驱动程序时，它必须使用指向所需微型端口驱动程序回调例程的指针填充 [**SCSI \_ WMILIB \_ 上下文**](/windows-hardware/drivers/ddi/scsiwmi/ns-scsiwmi-_scsiwmilib_context) 结构，然后将该结构存储在微型端口驱动程序特定的存储区域中，如驱动程序扩展。 每个微型端口驱动程序回调例程对应次要 IRP 号，如 [端口驱动程序处理 WMI 请求的方式中所](how-the-port-driver-processes-wmi-requests.md)述。 有关如何设计微型端口驱动程序回调例程的信息，请参阅 [设计 WMI 微型端口驱动程序回调例程](designing-wmi-miniport-driver-callback-routines.md)
 
-SCSI **GuidList** \_ WMILIB 上下文结构的 GuidList 成员 \_ 必须指向[**SCSIWMIGUIDREGINFO**](/windows-hardware/drivers/ddi/scsiwmi/ns-scsiwmi-scsiwmiguidreginfo)类型的元素数组，其中包含有关 guid 的信息，这些 guid 用于唯一标识 MOF 文件中定义的受支持 WMI 类。 下面的代码段演示了此类元素数组的定义：
+SCSI **GuidList** \_ WMILIB 上下文结构的 GuidList 成员 \_ 必须指向 [**SCSIWMIGUIDREGINFO**](/windows-hardware/drivers/ddi/scsiwmi/ns-scsiwmi-scsiwmiguidreginfo)类型的元素数组，其中包含有关 guid 的信息，这些 guid 用于唯一标识 MOF 文件中定义的受支持 WMI 类。 下面的代码段演示了此类元素数组的定义：
 
 ```cpp
 SCSIWMIGUIDREGINFO GuidList[] = 

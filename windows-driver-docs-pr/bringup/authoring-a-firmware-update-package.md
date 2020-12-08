@@ -1,15 +1,14 @@
 ---
 title: 创作固件更新包
 description: 每个固件更新包都包含单个二进制文件，其中包含完整的固件负载 (例如，) 以及 Windows 用于验证固件的安全目录。
-ms.assetid: 672F5E45-C0AB-4C19-BB0A-C8B5A66D8EED
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0b078906dbd61936a1e860da9d0fddbedd0097fd
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 368c0eb96a0026f2bb4a3660b29746aab26e71c8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89186231"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96789143"
 ---
 # <a name="authoring-a-firmware-update-package"></a>创作固件更新包
 
@@ -23,7 +22,7 @@ ms.locfileid: "89186231"
 
 建议每个固件更新包都以单一固件资源为 (UEFI 系统固件或单个设备) 为目标，但是在某些情况下，具有更新系统固件和一个或多个设备的单个固件更新包非常有利。
 
-**注意**   一个设备不能作为多个固件更新包的目标。 如果设备被包含系统固件的固件更新包作为目标，则它不能以仅面向设备的第二个固件更新包为目标。
+**注意**  一个设备不能作为多个固件更新包的目标。 如果设备被包含系统固件的固件更新包作为目标，则它不能以仅面向设备的第二个固件更新包为目标。
 
  
 

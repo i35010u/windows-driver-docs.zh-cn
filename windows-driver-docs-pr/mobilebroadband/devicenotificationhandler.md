@@ -1,15 +1,14 @@
 ---
 title: DeviceNotificationHandler
 description: DeviceNotificationHandler
-ms.assetid: 04c4edb5-6dd1-4810-b23a-4f7ddc8af338
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 842e008991f131b94af3df8f03403f274190ce7b
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: bde41065f035e6fda81d6fac513ace225258c852
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91733145"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96788553"
 ---
 # <a name="devicenotificationhandler"></a>DeviceNotificationHandler
 
@@ -36,10 +35,10 @@ DeviceNotificationHandler 元素指定设备通知处理程序。 设备通知�
 </colgroup>
 <thead>
 <tr class="header">
-<th>属性</th>
+<th>Attribute</th>
 <th>类型</th>
 <th>必须</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -76,7 +75,7 @@ DeviceNotificationHandler 元素指定设备通知处理程序。 设备通知�
 <thead>
 <tr class="header">
 <th>元素</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -106,9 +105,9 @@ DeviceNotificationHandler 元素指定设备通知处理程序。 设备通知�
 
 -   在 [应用程序](application-softwareinfo-schema.md) 元素中指定 DeviceNotificationHandler 时，系统会调用事件处理程序，并在设备更改为状态时调用事件。
 
--   **EventID**特性是 SMS 设备用例的 SMSEventHandler。
+-   **EventID** 特性是 SMS 设备用例的 SMSEventHandler。
 
--   **EventAsset**属性的值与你在应用程序清单中指定为 BackgroundTasks 的扩展的值相同。
+-   **EventAsset** 属性的值与你在应用程序清单中指定为 BackgroundTasks 的扩展的值相同。
 
 DeviceNotificationHandler 元素是可选的。
 

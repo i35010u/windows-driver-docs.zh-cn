@@ -1,7 +1,6 @@
 ---
 title: debugbaseeventcallbacks
 description: DebugBaseEventCallbacks 类提供 IDebugEventCallbacks 接口的基实现。
-ms.assetid: B0422248-2F5F-4AE6-93C9-D96B5E4A1B5A
 keywords:
 - DebugBaseEventCallbacks
 ms.date: 01/10/2018
@@ -12,12 +11,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 17a95a0b5dc1dbcabccb4070d2675370a73f836e
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: e577507044d082bc410fed3c1e89dff775d725e8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89211201"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96788823"
 ---
 # <a name="debugbaseeventcallbacks-class"></a>DebugBaseEventCallbacks 类 
 

@@ -1,27 +1,26 @@
 ---
 title: 视频调试 UMDF 驱动程序
-description: 本主题包含一系列视频，通过 Abhishek Ram 演示如何调试用户模式驱动程序框架 (UMDF) 驱动程序。
+description: 本主题包含一系列视频，通过 Abhishek Ram 演示如何 (UMDF) 驱动程序调试 User-Mode Driver Framework。
 Search.SourceType: Video
-ms.assetid: 969FD292-5D92-4257-8E15-F2129B832E22
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 17835194219d93e56579058d2fad6576a3d97200
-ms.sourcegitcommit: 057b72e8a44ba8f4282e072edc7be0b7e9341d2a
+ms.openlocfilehash: 94ff8ed91c67a8ae156e256eb03531246f26373b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "89412492"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96790129"
 ---
 # <a name="videos-debugging-umdf-drivers"></a>视频：调试 UMDF 驱动程序
 
 
-本主题包含一系列视频，通过 Abhishek Ram 演示如何调试用户模式驱动程序框架 (UMDF) 驱动程序。
+本主题包含一系列视频，通过 Abhishek Ram 演示如何 (UMDF) 驱动程序调试 User-Mode Driver Framework。
 
 观看视频后，你将熟悉 UMDF 调试器扩展，并了解如何在基本调试方案中使用它们。
 
 尽管视频演示了在较早版本的 Windows 上调试 UMDF 版本1驱动程序，但仍可使用与当前版本的 Windows 上运行的 UMDF 版本2驱动程序相同的技术。
 
-**注意**   此视频介绍 Wudfext.dll 中的调试程序扩展命令，你可以使用这些命令仅调试 UMDF 版本1驱动程序。 若要调试在 UMDF 版本2.0 中启动的 UMDF 驱动程序，你必须改用 Wdfkd.dll 调试程序扩展库。 在 Wdfkd.dll 中，Wudfext.dll 中的所有扩展都有等效项。 有关详细信息，请参阅 [中的调试器扩展摘要 Wudfext.dll](using-umdf-debugger-extensions.md) 和 [Wdfkd.dll中调试器扩展的摘要 ](debugger-extensions-for-kmdf-drivers.md)。
+**注意**  此视频介绍 Wudfext.dll 中的调试程序扩展命令，你可以使用这些命令仅调试 UMDF 版本1驱动程序。 若要调试在 UMDF 版本2.0 中启动的 UMDF 驱动程序，你必须改用 Wdfkd.dll 调试程序扩展库。 在 Wdfkd.dll 中，Wudfext.dll 中的所有扩展都有等效项。 有关详细信息，请参阅 [中的调试器扩展摘要 Wudfext.dll](using-umdf-debugger-extensions.md) 和 [Wdfkd.dll中调试器扩展的摘要 ](debugger-extensions-for-kmdf-drivers.md)。
 
  
 
@@ -52,7 +51,7 @@ ms.locfileid: "89412492"
 -   [**!wudfext.wudfdevice**](../debugger/-wudfext-wudfdevice.md)
 -   [**!wudfext.wudfdevicequeues**](../debugger/-wudfext-wudfdevicequeues.md)
 
-有关 UMDF 2 的详细概述，请参阅 [Wdfkd.dll中的调试器扩展的摘要 ](debugger-extensions-for-kmdf-drivers.md)，例如 [**！ wdfkd. wdfumdevstacks**](../debugger/-wdfkd-wdfumdevstacks.md)。
+有关 UMDF 2 的详细概述，请参阅 [Wdfkd.dll中的调试器扩展的摘要](debugger-extensions-for-kmdf-drivers.md)，例如 [**！ wdfkd. wdfumdevstacks**](../debugger/-wdfkd-wdfumdevstacks.md)。
 
 ## <a name="accessing-framework-usb-objects"></a>访问框架 USB 对象
 

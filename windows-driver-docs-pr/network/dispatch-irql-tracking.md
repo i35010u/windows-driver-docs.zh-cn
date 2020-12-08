@@ -1,7 +1,6 @@
 ---
 title: 调度 IRQL 跟踪
 description: 调度 IRQL 跟踪
-ms.assetid: ac559f4f-0138-4b9a-8f1b-44a2973fd6a1
 keywords:
 - 调度级别标志 WDK 网络
 - IRQLs WDK 网络
@@ -10,12 +9,12 @@ keywords:
 - 调度 IRQL 跟踪 WDK 网络
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c3c106f902c9f5018a0e97d559a5a37e64a3ea57
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 48f4933e3aa4a57c245fe5542d2227458255c092
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89218426"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96789781"
 ---
 # <a name="dispatch-irql-tracking"></a>调度 IRQL 跟踪
 

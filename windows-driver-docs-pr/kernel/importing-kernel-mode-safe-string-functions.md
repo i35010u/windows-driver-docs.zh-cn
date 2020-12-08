@@ -1,7 +1,6 @@
 ---
 title: 导入内核模式安全字符串函数
 description: 导入内核模式安全字符串函数
-ms.assetid: f1cee7e0-151b-4e03-bf4d-400f328083fa
 keywords:
 - 导入安全字符串函数
 - 内联安全字符串函数版本 WDK 内核
@@ -11,12 +10,12 @@ keywords:
 - 安全字符串函数 WDK
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f98c72f45a6b16d1bc8eab1d984d471aaf79cfcb
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: a015748fb39100819c36ed7d53dd8e5cb4161853
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91732983"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96788659"
 ---
 # <a name="importing-kernel-mode-safe-string-functions"></a>导入内核模式安全字符串函数
 
@@ -64,7 +63,7 @@ ms.locfileid: "91732983"
 #define NTSTRSAFE_NO_UNICODE_STRING_FUNCTIONS
 ```
 
-任何 ANSI 或 Unicode 字符串可包含的最大字符数为 NTSTRSAFE.H 而 \_ MAX \_ CCH。 **Unicode \_ 字符串**结构可包含的最大字符数为 Ntstrsafe.h 而 \_ unicode \_ string \_ MAX \_ CCH。 这些常量在 Ntstrsafe.h 而中定义。
+任何 ANSI 或 Unicode 字符串可包含的最大字符数为 NTSTRSAFE.H 而 \_ MAX \_ CCH。 **Unicode \_ 字符串** 结构可包含的最大字符数为 Ntstrsafe.h 而 \_ unicode \_ string \_ MAX \_ CCH。 这些常量在 Ntstrsafe.h 而中定义。
 
 通过在代码中包含以下行，你的驱动程序可以 \_ \_ \_ \_ \_ \_ 通过在代码中包含以下行，将较小的值分配给 Ntstrsafe.h 而 max CCH 和 ntstrsafe.h 而 UNICODE STRING MAX CCH。
 

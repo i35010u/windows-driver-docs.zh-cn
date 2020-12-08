@@ -1,7 +1,6 @@
 ---
 title: 对象句柄
 description: 对象句柄
-ms.assetid: deeeb3c0-54e4-4727-ac43-6da79be515d7
 keywords:
 - 对象处理 WDK 用户模式
 - 对象处理 WDK 内核
@@ -11,12 +10,12 @@ keywords:
 - 共享对象处理 WDK
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3ff25a0639238dd66553571af0d7393dcbb35148
-ms.sourcegitcommit: f8619f20a0903dd64f8641a5266ecad6df5f1d57
+ms.openlocfilehash: ce498be005e14b8f1e66477730fca2dc2cdbc66a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91423636"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96788631"
 ---
 # <a name="object-handles"></a>对象句柄
 
@@ -24,7 +23,7 @@ ms.locfileid: "91423636"
 
 
 
-驱动程序和用户模式组件通过 *句柄*访问大多数系统定义的对象。 句柄由 "句柄不透明" 数据类型表示。  (请注意，句柄不用于访问设备对象或驱动程序对象。 ) 
+驱动程序和用户模式组件通过 *句柄* 访问大多数系统定义的对象。 句柄由 "句柄不透明" 数据类型表示。  (请注意，句柄不用于访问设备对象或驱动程序对象。 ) 
 
 对于大多数对象类型，创建或打开对象的内核模式例程提供调用方的句柄。 然后，调用方在对象的后续操作中使用该句柄。
 
@@ -51,7 +50,7 @@ ms.locfileid: "91423636"
 <td><p><a href="/windows-hardware/drivers/ddi/wdm/nf-wdm-ioopendeviceinterfaceregistrykey" data-raw-source="[&lt;strong&gt;IoOpenDeviceInterfaceRegistryKey&lt;/strong&gt;](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioopendeviceinterfaceregistrykey)"><strong>IoOpenDeviceInterfaceRegistryKey</strong></a>、 <a href="/windows-hardware/drivers/ddi/wdm/nf-wdm-ioopendeviceregistrykey" data-raw-source="[&lt;strong&gt;IoOpenDeviceRegistryKey&lt;/strong&gt;](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioopendeviceregistrykey)"><strong>IoOpenDeviceRegistryKey</strong></a>、 <a href="/windows-hardware/drivers/ddi/wdm/nf-wdm-zwcreatekey" data-raw-source="[&lt;strong&gt;ZwCreateKey&lt;/strong&gt;](/windows-hardware/drivers/ddi/wdm/nf-wdm-zwcreatekey)"><strong>ZwCreateKey</strong></a>、 <a href="/windows-hardware/drivers/ddi/wdm/nf-wdm-zwopenkey" data-raw-source="[&lt;strong&gt;ZwOpenKey&lt;/strong&gt;](/windows-hardware/drivers/ddi/wdm/nf-wdm-zwopenkey)"><strong>ZwOpenKey</strong></a></p></td>
 </tr>
 <tr class="odd">
-<td><p>线程数</p></td>
+<td><p>线程</p></td>
 <td><p><a href="/windows-hardware/drivers/ddi/wdm/nf-wdm-pscreatesystemthread" data-raw-source="[&lt;strong&gt;PsCreateSystemThread&lt;/strong&gt;](/windows-hardware/drivers/ddi/wdm/nf-wdm-pscreatesystemthread)"><strong>PsCreateSystemThread</strong></a></p></td>
 </tr>
 <tr class="even">
@@ -77,7 +76,7 @@ ms.locfileid: "91423636"
 
 当驱动程序不再需要访问该对象时，它将调用 [**ZwClose**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntclose) 例程来关闭该句柄。 这适用于上表中列出的所有对象类型。
 
-提供句柄的大多数例程将 [**对象 \_ 属性**](/windows/win32/api/ntdef/ns-ntdef-object_attributes) 结构作为参数。 此结构可用于为句柄指定属性。
+提供句柄的大多数例程将 [**对象 \_ 属性**](/windows/win32/api/ntdef/ns-ntdef-_object_attributes) 结构作为参数。 此结构可用于为句柄指定属性。
 
 驱动程序可以指定下列句柄属性：
 

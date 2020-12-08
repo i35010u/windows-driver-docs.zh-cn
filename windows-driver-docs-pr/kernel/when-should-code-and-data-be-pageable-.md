@@ -1,7 +1,6 @@
 ---
 title: 何时应对代码和数据进行分页
 description: 何时应对代码和数据进行分页
-ms.assetid: 2804f558-8c8c-43f4-b14e-8deaac9da286
 keywords:
 - 内存管理 WDK 内核，可分页驱动程序
 - 可分页驱动程序 WDK 内核，何时应进行分页
@@ -10,12 +9,12 @@ keywords:
 - 居民代码 WDK 可分页驱动程序
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b35f5ec8787ca05062965a59b10e7b89400bd445
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 3ee13088c9c7e38703720ddb9ccf70e13c04780b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89188213"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96789789"
 ---
 # <a name="when-should-code-and-data-be-pageable"></a>代码和数据何时应可分页？
 

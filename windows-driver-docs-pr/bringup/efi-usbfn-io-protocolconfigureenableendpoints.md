@@ -1,20 +1,19 @@
 ---
 title: EFI_USBFN_IO_PROTOCOL.ConfigureEnableEndpoints
 description: EFI_USBFN_IO_PROTOCOL.ConfigureEnableEndpoints
-ms.assetid: 31bc58a0-ec2b-4b5e-ad1b-e6107cc083b1
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 09a3678c88ad507b5e9fbd03533e923beb3f38fe
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c17f697c9aa5648286a15b5e5d521846dd5d2238
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63337716"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96789035"
 ---
-# <a name="efiusbfnioprotocolconfigureenableendpoints"></a>EFI\_USBFN\_IO\_PROTOCOL.ConfigureEnableEndpoints
+# <a name="efi_usbfn_io_protocolconfigureenableendpoints"></a>EFI \_ USBFN \_ IO \_PROTOCOL.ConfigureEnableEndpoints
 
 
-**ConfigureEnableEndpoints**函数初始化的终结点提供的设备和配置描述符。
+**ConfigureEnableEndpoints** 函数基于提供的设备和配置描述符初始化终结点。
 
 ## <a name="syntax"></a>语法
 
@@ -28,14 +27,14 @@ EFI_STATUS
   );
 ```
 
-## <a name="parameters"></a>Parameters
+## <a name="parameters"></a>参数
 
 
 <a href="" id="this"></a>*此*  
-指向 EFI\_USBFN\_IO\_协议实例。
+指向 EFI \_ USBFN \_ IO \_ 协议实例的指针。
 
 <a href="" id="deviceinfo"></a>*DeviceInfo*  
-一个指向[EFI\_USB\_设备\_信息](efi-usb-device-info.md)结构。
+指向 [EFI \_ USB \_ 设备 \_ 信息](efi-usb-device-info.md) 结构的指针。
 
 ## <a name="return-values"></a>返回值
 
@@ -56,7 +55,7 @@ EFI_STATUS
 <tbody>
 <tr class="odd">
 <td><p><strong>EFI_SUCCESS</strong></p></td>
-<td><p>成功返回的函数</p></td>
+<td><p>函数已成功返回</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>EFI_INVALID_PARAMETER</strong></p></td>
@@ -64,15 +63,15 @@ EFI_STATUS
 </tr>
 <tr class="odd">
 <td><p><strong>EFI_DEVICE_ERROR</strong></p></td>
-<td><p>物理设备报告了错误。</p></td>
+<td><p>物理设备报告了一个错误。</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>EFI_NOT_READY</strong></p></td>
-<td><p>物理设备是正忙还是未准备好处理此请求</p></td>
+<td><p>物理设备处于繁忙状态或尚未准备好处理此请求</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>EFI_OUT_OF_RESOURCES</strong></p></td>
-<td><p>缺少资源，无法完成由于请求。</p></td>
+<td><p>由于缺少资源，无法完成请求。</p></td>
 </tr>
 </tbody>
 </table>
@@ -82,9 +81,9 @@ EFI_STATUS
 ## <a name="remarks"></a>备注
 
 
-此函数假定硬件已初始化，将使用所提供的终结点配置*DeviceInfo* 、 激活端口，并开始接收 USB 事件。
+假设硬件已初始化，则此函数将使用提供的 *DeviceInfo* 配置终结点，激活端口并开始接收 USB 事件。
 
-此函数必须忽略*bMaxPacketSize0*标准设备描述符字段和*wMaxPacketSize*提供通过提供的标准终结点描述符字段*DeviceInfo*。
+此函数必须忽略标准终结点描述符的 *bMaxPacketSize0* *字段，该* 字段通过提供的 *DeviceInfo* 提供。
 
 ## <a name="requirements"></a>要求
 

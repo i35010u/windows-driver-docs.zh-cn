@@ -1,17 +1,16 @@
 ---
 title: 缓冲区 DbgPrint 输出
 description: 缓冲区 DbgPrint 输出
-ms.assetid: af97c484-3a37-4c86-8828-12a0ea1c8c0e
 keywords:
-- 缓冲区 DbgPrint 输出 （全局标志）
+- '全局标志 (的缓冲区 DbgPrint 输出) '
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: db5634202fcb99544309cf2304aebdc3ddad9aa9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2f51ddade9dc07bdecb356953765bd395daca359
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63347847"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96788865"
 ---
 # <a name="buffer-dbgprint-output"></a>缓冲区 DbgPrint 输出
 
@@ -19,7 +18,7 @@ ms.locfileid: "63347847"
 ## <span id="ddk_buffer_dbgprint_output_dtools"></span><span id="DDK_BUFFER_DBGPRINT_OUTPUT_DTOOLS"></span>
 
 
-**缓冲区 DbgPrint 输出**标志将取消调试器输出**DbgPrint**， **DbgPrintEx**， **KdPrint**，和**KdPrintEx**调用。
+**Buffer DbgPrint output** 标志禁止调试程序从 **DbgPrint**、 **DbgPrintEx**、 **KdPrint** 和 **KdPrintEx** 调用输出。
 
 <table>
 <colgroup>
@@ -41,18 +40,18 @@ ms.locfileid: "63347847"
 </tr>
 <tr class="even">
 <td align="left"><p><strong>目标</strong></p></td>
-<td align="left"><p>整个系统的注册表项，内核标志</p></td>
+<td align="left"><p>系统范围内的注册表项，内核标志</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-### <a name="span-idcommentsspanspan-idcommentsspancomments"></a><span id="comments"></span><span id="COMMENTS"></span>注释
+### <a name="span-idcommentsspanspan-idcommentsspancomments"></a><span id="comments"></span><span id="COMMENTS"></span>提出
 
-当调试器输出被禁止显示，它不会自动出现在内核调试程序。 但是，该消息总是发送到 DbgPrint 缓冲区，然后它可以通过访问[ **！ dbgprint** ](-dbgprint.md)调试器扩展。
+当取消调试器输出时，它不会自动出现在内核调试器中。 但是，消息始终发送到 DbgPrint 缓冲区，可在其中使用 [**！ DbgPrint**](-dbgprint.md) 调试程序扩展访问该消息。
 
-与调试器有关的函数进行通信的信息，请参阅[将输出发送到调试器](sending-output-to-the-debugger.md)。
+有关与调试器通信的函数的信息，请参阅将 [输出发送到调试器](sending-output-to-the-debugger.md)。
 
  
 

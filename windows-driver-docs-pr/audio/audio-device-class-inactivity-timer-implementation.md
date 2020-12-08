@@ -1,7 +1,6 @@
 ---
 title: 音频设备类不活动计时器实现
 description: 音频设备类不活动计时器实现
-ms.assetid: e7e431ec-626d-4fdb-8705-fc5420c43f17
 keywords:
 - 不活动计时器音频
 - 计时器音频
@@ -14,12 +13,12 @@ keywords:
 - 性能电源模式 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 86c3f7e8e28f0822cff23ff1a73355d6f1547047
-ms.sourcegitcommit: 5ff30ddae453c6439177acde0e2d32eaf234a2c0
+ms.openlocfilehash: 744913b927108a3e119dccd63ef974ec68cb7304
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95030028"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96789431"
 ---
 # <a name="audio-device-class-inactivity-timer-implementation"></a>音频设备类不活动计时器实现
 

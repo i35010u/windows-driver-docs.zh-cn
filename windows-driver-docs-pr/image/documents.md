@@ -1,9 +1,8 @@
 ---
-title: 文档元素
-description: 所需的文档元素包含在图像采集和扫描作业包含的所有文档元素的一组过程中使用的实际扫描特征。
-ms.assetid: b547ed17-b533-4dde-8194-dee1b0f9f85f
+title: Documents 元素
+description: 必需的 Documents 元素包含图像采集期间使用的实际扫描特征，以及扫描作业包含的所有文档元素的集合。
 keywords:
-- 文档元素成像设备
+- 文档元素图像处理设备
 topic_type:
 - apiref
 api_name:
@@ -12,19 +11,19 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8a8f722aaf9746f0c2a5c02471eacd48cc7e3469
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b5cd51765c1b55e944c6f6280b878fd10ce93f06
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63364517"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96789887"
 ---
-# <a name="documents-element"></a>文档元素
+# <a name="documents-element"></a>Documents 元素
 
 
-所需**文档**元素包含在图像采集，加上所有的集合过程中使用的实际扫描特征**文档**扫描作业包含的元素。
+必需的 **Documents** 元素包含图像采集期间使用的实际扫描特征，以及扫描作业包含的所有 **文档** 元素的集合。
 
-<a name="usage"></a>用法
+<a name="usage"></a>使用情况
 -----
 
 ```xml
@@ -74,7 +73,7 @@ ms.locfileid: "63364517"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><a href="job.md" data-raw-source="[&lt;strong&gt;Job&lt;/strong&gt;](job.md)"><strong>Job</strong></a></p></td>
+<td><p><a href="job.md" data-raw-source="[&lt;strong&gt;Job&lt;/strong&gt;](job.md)"><strong>作业</strong></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -86,7 +85,7 @@ ms.locfileid: "63364517"
 
 [**DocumentFinalParameters**](documentfinalparameters.md)
 
-[**Job**](job.md)
+[**作业**](job.md)
 
  
 

@@ -1,37 +1,36 @@
 ---
 title: C28753
-description: 警告 C28753 信赖未定义参数的计算顺序。
-ms.assetid: D8879714-63A2-4F36-B08A-1E487ACB5BC1
+description: 警告 C28753 依赖未定义的参数计算顺序。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 f1_keywords:
 - C28753
-ms.openlocfilehash: f95dcececc7071227dec9f761f0f5af9f2873100
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2dcdd7d9023fcadb81170cce502386af5ae7504e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63330979"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96788757"
 ---
 # <a name="c28753"></a>C28753
 
 
-警告 C28753:依赖于未定义参数的计算顺序
+警告 C28753：依赖于未定义的参数计算顺序
 
-C /C++允许编译器生成代码以计算实际参数按任意顺序和 x86 和 ARM 编译器倾向于选择不同的顺序。 在不同平台上，依赖于特定的顺序的代码的行为可能有所不同。
+C/c + + 允许编译器生成代码以按任意顺序计算实际参数，而 x86 和 ARM 编译器倾向于选择不同的顺序。 依赖于特定顺序的代码在不同平台上的行为可能不同。
 
-一个常见错误是通过使用智能指针其中 address-of 运算符**&** 中调用此类还具有负面影响：
+常见的错误是，使用智能指针，其中的地址运算符 **&** 有副作用，如以下所示：
 
 ```ManagedCPlusPlus
 sp->Foo(&sp);
 ```
 
-对成员访问运算符的调用**- &gt;** and 运算符**&** 按任意顺序可能会发生。 从运算符因此副作用**&** 之前或之后运算符可能会发生这种情况**- &gt;** 调用。 此警告查找这些错误的调用，以防止不同平台之间的行为。
+对成员访问运算符 **-&gt;** 和运算符的调用 **&** 可能会按顺序发生。 因此，可能会在 **&** 调用 operator 之前或之后发生副作用 **-&gt;** 。 此警告会发现这些错误调用，以防平台之间出现不同的行为。
 
-## <a name="span-idexamplespanspan-idexamplespanspan-idexamplespanexample"></a><span id="Example"></span><span id="example"></span><span id="EXAMPLE"></span>示例
+## <a name="span-idexamplespanspan-idexamplespanspan-idexamplespanexample"></a><span id="Example"></span><span id="example"></span><span id="EXAMPLE"></span>实例
 
 
-下面的示例代码将生成此警告。
+下面的代码示例将生成此警告。
 
 ```ManagedCPlusPlus
 sp->Foo(&sp)

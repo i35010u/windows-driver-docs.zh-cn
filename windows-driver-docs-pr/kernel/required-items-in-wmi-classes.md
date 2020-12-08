@@ -1,18 +1,17 @@
 ---
 title: WMI 类中的必需项
 description: WMI 类中的必需项
-ms.assetid: c978d8d0-5281-481a-b1e5-fd9a57d583d5
 keywords:
-- WDK WMI 类
-- WMI WDK 内核类
+- 类 WDK WMI
+- WMI WDK 内核，类
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 794cb1bfec53078ab31832c2af6adfa4ecd484b6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7427d3d3f737957318c3f21234037c12c4b36e9f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63324547"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96790507"
 ---
 # <a name="required-items-in-wmi-classes"></a>WMI 类中的必需项
 
@@ -20,7 +19,7 @@ ms.locfileid: "63324547"
 
 
 
-所有类定义，但嵌入的类中必须包含项**InstanceName**和**Active**，它必须显示确切所示：
+除嵌入类之外的所有类定义都必须包含项 **InstanceName** 和 **Active**，它们必须完全按所示显示：
 
 ```cpp
 //WMI class definition
@@ -38,7 +37,7 @@ ClassName : BaseClassName
 }
 ```
 
-**InstanceName**并**Active**项是必需的并由 WMI 在内部使用。 驱动程序的数据和事件块的 MOF 类定义必须包含这些项，但该驱动程序必须响应查询的数据块或发送事件，因为它们不是驱动程序的数据块的一部分时未设置这些项。
+**实例** 名称和 **活动** 项是必需的，并在内部由 WMI 使用。 驱动程序的数据和事件块的 MOF 类定义必须包含这些项，但驱动程序在响应数据块或发送事件的查询时不得设置这些项，因为它们不是驱动程序的数据块的一部分。
 
  
 

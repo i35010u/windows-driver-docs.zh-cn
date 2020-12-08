@@ -1,17 +1,16 @@
 ---
 title: SO_WSK_EVENT_CALLBACK
 description: SO_WSK_EVENT_CALLBACK
-ms.assetid: cb697103-20ef-4667-8823-060a68d904c8
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 SO_WSK_EVENT_CALLBACK 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 522e002f83371657fac9c8fd0f159361f74d943f
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: d9a250f829706d0c16c2184e4b0360a4831fcfd1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105880"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96790467"
 ---
 # <a name="so_wsk_event_callback"></a>因此 \_ WSK \_ 事件 \_ 回调
 
@@ -84,7 +83,7 @@ SO \_ WSK \_ 事件 \_ 回调套接字选项允许 WSK 应用程序启用和禁�
 
 -   如果在 WSK 应用程序调用 **WskControlSocket** 函数但 WSK 应用程序未指定 IRP 时要禁用事件回调函数的正在进行的调用， **WskControlSocket** 函数将返回状态事件 " \_ 挂起" \_ 。 在对事件回调函数进行的所有调用都返回后，WSK 子系统将禁用事件回调函数。
 
-当启用或禁用任何标准 WSK 事件回调函数时，WSK 应用程序会将[**WSK \_ 事件 \_ 回调 \_ 控制**](/windows-hardware/drivers/ddi/wsk/ns-wsk-_wsk_event_callback_control)结构的**NpiId**成员设置为指向 WSK[网络编程接口的指针 (NPI) ](./network-programming-interface.md) identifier，NPI \_ WSK \_ 接口 \_ ID。
+当启用或禁用任何标准 WSK 事件回调函数时，WSK 应用程序会将 [**WSK \_ 事件 \_ 回调 \_ 控制**](/windows-hardware/drivers/ddi/wsk/ns-wsk-_wsk_event_callback_control)结构的 **NpiId** 成员设置为指向 WSK [网络编程接口的指针 (NPI)](./network-programming-interface.md) identifier，NPI \_ WSK \_ 接口 \_ ID。
 
 启用或禁用扩展接口的任何回调函数时，WSK 应用程序会将 WSK 事件回调控制结构的 **NpiId** 成员设置为指向 \_ \_ \_ 该扩展接口的 NPI 标识符的指针。
 

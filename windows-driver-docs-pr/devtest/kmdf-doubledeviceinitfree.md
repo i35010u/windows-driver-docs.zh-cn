@@ -1,7 +1,6 @@
 ---
 title: 'DoubleDeviceInitFree 规则 (kmdf) '
 description: DoubleDeviceInitFree 规则指定驱动程序不应释放设备初始化结构两次。
-ms.assetid: C48FB426-C958-4F4A-A1F0-C91A603DC1FD
 ms.date: 05/21/2018
 keywords:
 - 'DoubleDeviceInitFree 规则 (kmdf) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: f075211593ed3b63eb48e2e88ae4d88e07fbf103
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 3dbcc8cea58ee6e8d95d698fc717ba9bc22122a2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107414"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96790037"
 ---
 # <a name="doubledeviceinitfree-rule-kmdf"></a>DoubleDeviceInitFree 规则 (kmdf) 
 
 
-**DoubleDeviceInitFree**规则指定驱动程序不应释放设备初始化结构两次。
+**DoubleDeviceInitFree** 规则指定驱动程序不应释放设备初始化结构两次。
 
 对于同一设备初始化结构，不应调用两次 [**WdfDeviceInitFree**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceinitfree) 方法。
 

@@ -1,15 +1,14 @@
 ---
 title: 音频驱动程序事件集
 description: 了解音频驱动程序事件集，例如 "KSEVENTSETID \_ AudioControlChange" 和 "KSEVENTSETID \_ LoopedStreaming"。
-ms.assetid: 9e800f71-9c90-4084-b879-32300e6706fc
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 829116ee237366400430b83eb0d099a22583d682
-ms.sourcegitcommit: 2aedb606f9f14e74687f0d3da60e14fc6ffffa7e
+ms.openlocfilehash: 7e5395657d4833402042f869d0d6ccedf130dbe6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91544334"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96789413"
 ---
 # <a name="audio-drivers-event-sets"></a>音频驱动程序事件集
 

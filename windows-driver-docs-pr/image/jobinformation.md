@@ -1,9 +1,8 @@
 ---
 title: JobInformation 元素
-description: 可选 JobInformation 元素描述作业的预期的用途。
-ms.assetid: 0e5d41a0-49df-43db-a2e6-3639e60d2378
+description: 可选的 JobInformation 元素描述作业的预期用途。
 keywords:
-- JobInformation 元素成像设备
+- JobInformation 元素图像设备
 topic_type:
 - apiref
 api_name:
@@ -12,19 +11,19 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 698fd1680e7b21b69f4a952b6178565c1a837bf6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d6530b26b82e75d467f28dad8bad588ab813339c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63348810"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96789873"
 ---
 # <a name="jobinformation-element"></a>JobInformation 元素
 
 
-可选**JobInformation**元素描述作业的预期的用途。
+可选的 **JobInformation** 元素描述作业的预期用途。
 
-<a name="usage"></a>用法
+<a name="usage"></a>使用情况
 -----
 
 ```xml
@@ -41,12 +40,12 @@ ms.locfileid: "63348810"
 <a name="text-value"></a>文本值
 ----------
 
-必需。 任何有效字符的字符串。
+必需。 任何有效的字符串。
 
 ## <a name="child-elements"></a>子元素
 
 
-没有子元素。
+没有任何子元素。
 
 ## <a name="parent-elements"></a>父元素
 
@@ -70,7 +69,7 @@ ms.locfileid: "63348810"
 <a name="remarks"></a>备注
 -------
 
-**JobInformation**值时，可以在客户端将重复使用用于创建作业的扫描票证。
+当客户端将重新使用用于创建作业的扫描票证时， **JobInformation** 值非常有用。
 
 ## <a name="see-also"></a>请参阅
 

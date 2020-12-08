@@ -1,20 +1,19 @@
 ---
 title: EFI_USBFN_IO_PROTOCOL.StartController
 description: EFI_USBFN_IO_PROTOCOL.StartController
-ms.assetid: 431406c3-6b96-4815-a8a0-01100e8a5a5f
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6053e93a7d9e47b20ec716513a4e50a7d596e991
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ef8cce7f5b0eee872a1ce0706cef0abb4fb5b5b4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63337684"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96789029"
 ---
-# <a name="efiusbfnioprotocolstartcontroller"></a>EFI\_USBFN\_IO\_PROTOCOL.StartController
+# <a name="efi_usbfn_io_protocolstartcontroller"></a>EFI \_ USBFN \_ IO \_ 协议。StartController
 
 
-**StartController**函数提供必要的 USB 控制器的电源和初始化硬件和内部数据结构。 此函数，必须激活该端口。
+如果需要， **StartController** 函数提供 USB 控制器的电源，并初始化硬件和内部数据结构。 此函数不得激活该端口。
 
 ## <a name="syntax"></a>语法
 
@@ -27,11 +26,11 @@ EFI_STATUS
   );
 ```
 
-## <a name="parameters"></a>Parameters
+## <a name="parameters"></a>参数
 
 
 <a href="" id="this"></a>*此*  
-指向 EFI\_USBFN\_IO\_协议实例。
+指向 EFI \_ USBFN \_ IO \_ 协议实例的指针。
 
 ## <a name="return-values"></a>返回值
 
@@ -50,7 +49,7 @@ EFI_STATUS
 <tbody>
 <tr class="odd">
 <td><p><strong>EFI_SUCCESS</strong></p></td>
-<td><p>该函数返回成功。</p></td>
+<td><p>函数已成功返回。</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>EFI_INVALID_PARAMETER</strong></p></td>
@@ -58,7 +57,7 @@ EFI_STATUS
 </tr>
 <tr class="odd">
 <td><p><strong>EFI_DEVICE_ERROR</strong></p></td>
-<td><p>物理设备报告了错误。</p></td>
+<td><p>物理设备报告了一个错误。</p></td>
 </tr>
 </tbody>
 </table>
@@ -68,7 +67,7 @@ EFI_STATUS
 ## <a name="remarks"></a>备注
 
 
-此函数是可以开始于的修订 0x00010001 **EFI\_USBFN\_IO\_协议**。
+此函数可从 **EFI \_ USBFN \_ IO \_ 协议** 的修订版0x00010001 开始。
 
 ## <a name="requirements"></a>要求
 

@@ -1,7 +1,6 @@
 ---
 title: ioctldecode
 description: Ioctldecode 扩展显示给定 IOCTL 代码指定的设备类型、所需访问权限、函数代码和传输类型。
-ms.assetid: 50B12034-E5C7-43F2-A31E-AAC824A05D46
 keywords:
 - ioctldecode Windows 调试
 ms.date: 05/23/2017
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: adac744f780505e513c2ae00b479a4cde4503c11
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 2f8eb789df070072c6fe2f6acb624c05a13dc817
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89217106"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96788945"
 ---
 # <a name="ioctldecode"></a>!ioctldecode
 
 
-**！ Ioctldecode** extension 显示给定 IOCTL 代码指定的*设备类型*、*所需访问权限*、*函数代码*和*传输类型*。 有关 IOCTL 控制代码的详细信息，请参阅 [定义 I/o 控制代码](../kernel/defining-i-o-control-codes.md)。
+**！ Ioctldecode** extension 显示给定 IOCTL 代码指定的 *设备类型*、*所需访问权限*、*函数代码* 和 *传输类型*。 有关 IOCTL 控制代码的详细信息，请参阅 [定义 I/o 控制代码](../kernel/defining-i-o-control-codes.md)。
 
 ```dbgcmd
 !ioctldecode IoctlCode 

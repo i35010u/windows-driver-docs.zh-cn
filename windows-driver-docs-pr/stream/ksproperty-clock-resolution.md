@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ 时钟 \_ 解析
 description: 客户端使用 KSPROPERTY \_ 时钟 \_ 解析属性来确定时钟的精度。
-ms.assetid: 3e92a4fb-207f-449a-bc70-aa8028b4f8f1
 keywords:
 - KSPROPERTY_CLOCK_RESOLUTION 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1e7ed332a451643d0791c94c001b1ca93af8b2b9
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 6441a101f6206805dc8f94336f116ffd51972dc5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103299"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96789553"
 ---
 # <a name="ksproperty_clock_resolution"></a>KSPROPERTY \_ 时钟 \_ 解析
 
@@ -64,7 +63,7 @@ ms.locfileid: "90103299"
 <a name="remarks"></a>备注
 -------
 
-**错误**成员中引入的延迟以及**粒度**成员中的延迟。 例如， **精度** 为1到2的 **错误** 的时钟将能够每300毫微秒发出时钟事件通知。
+**错误** 成员中引入的延迟以及 **粒度** 成员中的延迟。 例如， **精度** 为1到2的 **错误** 的时钟将能够每300毫微秒发出时钟事件通知。
 
 <a name="requirements"></a>要求
 ------------
@@ -82,7 +81,7 @@ ms.locfileid: "90103299"
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSCLOCK \_ 调度**](/windows-hardware/drivers/ddi/ks/ns-ks-_ksclock_dispatch)

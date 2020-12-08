@@ -1,19 +1,18 @@
 ---
 title: 同步评估 ACPI 控制方法
 description: 同步评估 ACPI 控制方法
-ms.assetid: 3fd8f7bd-bfae-4846-8051-3a0023d565e4
 keywords:
 - ACPI 控制方法 WDK，同步评估
 - ACPI 控制方法 WDK，输入缓冲区结构
 - ACPI 控制方法 WDK，SendDownStreamIrp 代码示例
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 830d73788b804eb54e19dbd2e9756f6787a6058e
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 1c6b97a48f2c7fb49805c99c930088795dab53b0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89184871"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96789483"
 ---
 # <a name="evaluating-acpi-control-methods-synchronously"></a>同步评估 ACPI 控制方法
 
@@ -48,15 +47,15 @@ ms.locfileid: "89184871"
 
 若要生成请求，驱动程序将调用 **IoBuildDeviceIoControlRequest** 并提供以下参数：
 
--   *IoControlCode*设置为**ioctl \_ Acpi \_ eval \_ 方法**或**ioctl \_ acpi \_ eval 方法， \_ \_ 例如**
+-   *IoControlCode* 设置为 **ioctl \_ Acpi \_ eval \_ 方法** 或 **ioctl \_ acpi \_ eval 方法， \_ \_ 例如**
 
 -   *DeviceObject* 设置为指向设备 (PDO) 的物理设备对象的指针。
 
 -   *InputBuffer* 设置为一个指向输入缓冲区结构的指针，该结构依赖于要传递给控件方法的输入参数的类型。 ACPI 驱动程序支持不采用输入参数的方法，这些方法采用单个整数、采用 ASCII 字符串或采用自定义的输入参数数组。 有关支持的输入缓冲区结构的详细信息，请参阅 [控制方法输入缓冲区结构](control-method-input-buffer-structures.md)。
 
--   *InputBufferLength* 设置为 *InputBuffer*提供的输入缓冲区的大小（以字节为单位）。
+-   *InputBufferLength* 设置为 *InputBuffer* 提供的输入缓冲区的大小（以字节为单位）。
 
--   *OutputBufferLength* 提供 *OutputBuffer*提供的输出缓冲区的大小（以字节为单位）。
+-   *OutputBufferLength* 提供 *OutputBuffer* 提供的输出缓冲区的大小（以字节为单位）。
 
 -   *InternalDeviceIoControl* 设置为 **FALSE**。
 

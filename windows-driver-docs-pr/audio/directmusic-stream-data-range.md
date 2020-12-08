@@ -1,17 +1,16 @@
 ---
 title: DirectMusic 流数据范围
 description: DirectMusic 流数据范围
-ms.assetid: e3423901-330e-4a86-a921-6678e1c45a97
 keywords:
 - DirectMusic WDK 音频，流数据范围
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 350a51c35361a5ccb42563c7acd39a71a4afe430
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 3df07a4a9ed8d5756d2e77ad78a58adeb6a01717
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89208117"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96789283"
 ---
 # <a name="directmusic-stream-data-range"></a>DirectMusic 流数据范围
 

@@ -1,7 +1,6 @@
 ---
 title: 'KsMarkPendingIrp 规则 ( # A1'
 description: KsMarkPendingIrp 规则指定内核流 (KS) 微型端口驱动程序应将 Irp 标记为 "挂起"，同时返回 \_ 以下回调函数 AVStrMiniFilterCloseAVStrMiniPinCloseAVStrMiniPinCreate 中的状态 "挂起"。
-ms.assetid: 88612656-0068-41B8-9A0D-4DDC98AD2435
 ms.date: 05/21/2018
 keywords:
 - 'KsMarkPendingIrp 规则 ( # A1'
@@ -12,12 +11,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 89a94cc702e5a91519666beff2c3e1a542208fda
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 4f01c19a23fa82837455cf24001b90cc3fe0341c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103414"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96788731"
 ---
 # <a name="ksmarkpendingirp-rule-"></a>KsMarkPendingIrp 规则 ( # A1
 
@@ -82,7 +81,7 @@ KsMarkPendingIrp 规则指定内核流 (KS) 微型端口驱动程序应将 Irp �
 
  
 
-<a name="see-also"></a>另请参阅
+<a name="see-also"></a>请参阅
 --------
 
 [*AVStrMiniFilterClose*](/previous-versions/ff556307(v=vs.85)) 

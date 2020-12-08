@@ -1,15 +1,14 @@
 ---
 title: LE 挂起检测
 description: 本部分介绍 WDI 中的 LE 挂起检测
-ms.assetid: 9C0BB4B8-184A-4C1A-8B47-C30C8318AEEB
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6ba9c1869ed577ec7be205e152ed90726a86a703
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 3219e7d5fa28c83eb70985f39ec91ddc3008579a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89211541"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96790395"
 ---
 # <a name="le-hang-detection"></a>LE 挂起检测
 

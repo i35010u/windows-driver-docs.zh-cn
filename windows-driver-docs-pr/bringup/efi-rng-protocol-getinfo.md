@@ -1,20 +1,19 @@
 ---
 title: EFI_RNG_PROTOCOL.GetInfo
 description: EFI_RNG_PROTOCOL.GetInfo
-ms.assetid: 11E9927B-8BC6-4B01-A12D-C75B636E3988
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c5a73e42b9de694807312a0e018185969bfd512a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: bfde081297668eecb94a0ba1e0daeda4fe3df99d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328003"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96789093"
 ---
-# <a name="efirngprotocolgetinfo"></a>EFI\_RNG\_PROTOCOL.GetInfo
+# <a name="efi_rng_protocolgetinfo"></a>EFI \_ RNG \_ 协议。GetInfo
 
 
-返回有关 RNG 算法实现 EFI 驱动程序支持的信息\_RNG\_协议。
+返回有关实现 EFI RNG 协议的驱动程序所支持的 RNG 算法的信息 \_ \_ 。
 
 ## <a name="syntax"></a>语法
 
@@ -29,31 +28,31 @@ EFI_STATUS
     );
 ```
 
-## <a name="parameters"></a>Parameters
+## <a name="parameters"></a>参数
 
 
 <a href="" id="this"></a>*此*  
-\[在中\]指向的指针[EFI\_RNG\_协议](efi-rng-protocol.md)实例。
+\[位于 \] [EFI \_ RNG \_ 协议](efi-rng-protocol.md) 实例的指针中。
 
 <a href="" id="rngalgorithmlistsize"></a>*RNGAlgorithmListSize*  
-\[in、 out\]中的算法数量*RNGAlgorithmList*。
+\[在中，为 \] *RNGAlgorithmList* 中的算法数。
 
 <a href="" id="rngalgorithmlist"></a>*RNGAlgorithmList*  
-\[out\]指向的列表的指针[EFI\_RNG\_算法](efi-display-power-state.md)表示 RNG 算法的值。 每种算法是`sizeof(EFI_GUID)`字节长。
+\[\]指向表示 RNG 算法的[EFI \_ RNG \_ 算法](efi-display-power-state.md)值列表的指针。 每个算法的 `sizeof(EFI_GUID)` 长度为个字节。
 
 ## <a name="remarks"></a>备注
 
 
-驱动程序实现 EFI\_RNG\_协议可以支持一个或多个 RNG 算法。
+实现 EFI RNG 协议的驱动程序 \_ \_ 可以支持一个或多个 RNG 算法。
 
-返回的值*RNGAlgorithmList*参数必须在相同的驱动程序对多个调用之间更改。 在列表中的第一个算法是驱动程序的默认算法。
+*RNGAlgorithmList* 参数返回的值不能在对同一驱动程序的多个调用之间发生更改。 列表中的第一个算法是驱动程序的默认算法。
 
-通过使用 EFI 此函数分配算法的列表\_引导\_服务-&gt;AllocatePool()，并且它是调用方负责释放此列表通过使用 EFI\_启动\_服务&gt;FreePool()。
+此函数使用 EFI \_ boot \_ services- &gt; AllocatePool ( # A1 分配算法的列表，调用方负责通过使用 efi \_ 启动 \_ 服务 &gt; FreePool ( # A3 来释放此列表。
 
 ## <a name="return-value"></a>返回值
 
 
-返回一个下面的状态代码。
+返回以下状态代码之一。
 
 <table>
 <colgroup>
@@ -63,17 +62,17 @@ EFI_STATUS
 <thead>
 <tr class="header">
 <th>状态代码</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><p>EFI_SUCCESS</p></td>
-<td><p>该函数已成功检索 RNG 算法的列表。</p></td>
+<td><p>函数已成功检索 RNG 算法的列表。</p></td>
 </tr>
 <tr class="even">
 <td><p>EFI_UNSUPPORTED</p></td>
-<td><p>此驱动程序不支持服务。</p></td>
+<td><p>此驱动程序不支持该服务。</p></td>
 </tr>
 <tr class="odd">
 <td><p>EFI_DEVICE_ERROR</p></td>
@@ -81,7 +80,7 @@ EFI_STATUS
 </tr>
 <tr class="even">
 <td><p>EFI_OUT_OF_RESOURCES</p></td>
-<td><p>该驱动程序将无法分配内存<em>RNGAlgorithmList</em>参数。</p></td>
+<td><p>驱动程序无法为 <em>RNGAlgorithmList</em> 参数分配内存。</p></td>
 </tr>
 </tbody>
 </table>

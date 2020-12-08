@@ -1,19 +1,18 @@
 ---
 title: Microsoft 定义的蓝牙 HCI 命令和事件
-description: 蓝牙主机控制器接口 (HCI) 指定主机和蓝牙无线电控制器之间的所有交互。
-ms.assetid: 68E34B92-155B-401E-8D90-5BD1AF036B4D
+description: 蓝牙 Host-Controller 接口 (HCI) 指定主机和蓝牙无线电控制器之间的所有交互。
 ms.date: 02/07/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: b3b649c44e9acd44470933a94502f1c7095c1368
-ms.sourcegitcommit: 68d0aec4c282c9c1e1ab54509c8f4575dd273d56
+ms.openlocfilehash: a39b832109f700dbea7d5fd65b1d15fccaca11f4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91221947"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96789195"
 ---
 # <a name="microsoft-defined-bluetooth-hci-extensions"></a>Microsoft 定义的蓝牙 HCI 扩展
 
-蓝牙主机控制器接口 (HCI) 指定主机和蓝牙无线电控制器之间的所有交互。 Bluetooth 规范允许供应商定义的 HCI 命令和事件启用主机和控制器之间的非标准化交互。 Microsoft 定义了特定于供应商的 HCI 命令和 Windows 使用的事件。 蓝牙控制器实现者可以使用这些扩展来实现特殊功能。
+蓝牙 Host-Controller 接口 (HCI) 指定主机和蓝牙无线电控制器之间的所有交互。 Bluetooth 规范允许供应商定义的 HCI 命令和事件启用主机和控制器之间的非标准化交互。 Microsoft 定义了特定于供应商的 HCI 命令和 Windows 使用的事件。 蓝牙控制器实现者可以使用这些扩展来实现特殊功能。
 
 ## <a name="requirements"></a>要求
 
@@ -45,7 +44,7 @@ VsMsftOpCode 注册表项具有一种类型的 REG_DWORD，密钥数据是特定
 
 VsMsftOpCode 项的注册表路径为：
 
-HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Enum \<Device instance path> \Device Parameters\VsMsftOpCode
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Enum\<Device instance path> \Device Parameters\VsMsftOpCode
 
 此示例命令从命令行添加注册表值。
 
@@ -107,7 +106,7 @@ HCI_VS_MSFT_Read_Supported_Features 提供了一个位图，用于描述控制�
 
 **Subcommand_opcode** (1 八进制) ：
 
-| 值  |   参数说明 |
+| “值”  |  参数说明 |
 |---|---|
 |0x00   |  HCI_VS_MSFT_Read_Supported_Features 的子命令操作码。|
 
@@ -115,20 +114,20 @@ HCI_VS_MSFT_Read_Supported_Features 提供了一个位图，用于描述控制�
 
 **状态** (1 个八进制) ：
 
-| 值  |   参数说明 |
+| “值”  |  参数说明 |
 |---|---|
 |  0x00 |  命令已成功。 |
 | 0x01&#160;-&#160;0xFF  |  命令失败。 有关详细信息，请参阅蓝牙核心规范中的 _错误代码_ 。 |
 
 **Subcommand_opcode** (1 八进制) ：
 
-| 值  |   参数说明 |
+| “值”  |  参数说明 |
 |---|---|
 |0x00   |  [HCI_VS_MSFT_Read_Supported_Features](#hci_vs_msft_read_supported_features)的子命令操作码。|
 
 **Supported_features** (8 个八进制) ：
 
-| 值  |   参数说明 |
+| “值”  |  参数说明 |
 |---|---|
 |0x00000000&#160;00000001  |控制器支持 BR/EDR 连接的 RSSI 监视功能。 此外，控制器还支持 [HCI_VS_MSFT_Read_Absolute_RSSI](#hci_vs_msft_read_absolute_rssi) 读取 BR/EDR 连接的绝对 RSSI 指标。 |
 |0x00000000&#160;00000002  |控制器支持 LE 连接的 RSSI 监视功能。 |
@@ -143,13 +142,13 @@ HCI_VS_MSFT_Read_Supported_Features 提供了一个位图，用于描述控制�
 
 **Microsoft_event_prefix_length** (1 八进制) ：
 
-| 值  |   参数说明 |
+| “值”  |  参数说明 |
 |---|---|
-|0x00&#160; &#160;0x20|在返回的 _Microsoft_event_prefix_中指定的 Microsoft 事件前缀字段中的字节数。 这是每个 Microsoft 指定的 HCI 事件开始时的常量信息的字节数。|
+|0x00&#160; &#160;0x20|在返回的 _Microsoft_event_prefix_ 中指定的 Microsoft 事件前缀字段中的字节数。 这是每个 Microsoft 指定的 HCI 事件开始时的常量信息的字节数。|
 
 **Microsoft_event_prefix** (可变长度) ：
 
-| 值  |   参数说明 |
+| “值”  |  参数说明 |
 |---|---|
 |事件&#160;前缀&#160;值| 要在每个 Microsoft 定义事件开始时预期的常量信息。 此信息用于将 Microsoft 定义的事件与其他自定义事件区分开来。|
 
@@ -167,49 +166,49 @@ HCI_VS_MSFT_Monitor_Rssi 请求控制器开始监视指定连接的已测量链�
 
 #### <a name="state_diagram"></a>State_diagram
 
-此状态图显示了监视连接的 RSSI 时控制器上的转换状态。 ![](images/HCI_VS_MSFT_Monitor_Rssi_State_Diagram.png)当收到的 Rssi 大于或等于指定的_RSSI_threshold_high_时，控制器应生成[HCI_VS_MSFT_Rssi_Event](#hci_vs_msft_rssi_event) HCI_VS_MSFT_Monitor_Rssi 的状态图。 生成此事件后，控制器不会生成新的 HCI_VS_MSFT_Rssi_Event 来指定已超出 _RSSI_threshold_high_ ，直到它生成指定 Rssi 低于 _RSSI_threshold_low_的 HCI_VS_MSFT_Rssi_Event。
+此状态图显示了监视连接的 RSSI 时控制器上的转换状态。 ![](images/HCI_VS_MSFT_Monitor_Rssi_State_Diagram.png)当收到的 Rssi 大于或等于指定的 _RSSI_threshold_high_ 时，控制器应生成 [HCI_VS_MSFT_Rssi_Event](#hci_vs_msft_rssi_event) HCI_VS_MSFT_Monitor_Rssi 的状态图。 生成此事件后，控制器不会生成新的 HCI_VS_MSFT_Rssi_Event 来指定已超出 _RSSI_threshold_high_ ，直到它生成指定 Rssi 低于 _RSSI_threshold_low_ 的 HCI_VS_MSFT_Rssi_Event。
 
-当收到的 RSSI 等于或低于指定 _RSSI_threshold_low_ 的 _RSSI_threshold_low_time_interval_时，控制器应生成 HCI_VS_MSFT_Rssi_Event。 生成此事件后，控制器不会生成新的 HCI_VS_MSFT_Rssi_Event 来指定 RSSI 在 _RSSI_threshold_low_ 之下，直到生成 HCI_VS_MSFT_Rssi_Event 事件以指定已达到或超过该 _RSSI_threshold_high_ 。
+当收到的 RSSI 等于或低于指定 _RSSI_threshold_low_ 的 _RSSI_threshold_low_time_interval_ 时，控制器应生成 HCI_VS_MSFT_Rssi_Event。 生成此事件后，控制器不会生成新的 HCI_VS_MSFT_Rssi_Event 来指定 RSSI 在 _RSSI_threshold_low_ 之下，直到生成 HCI_VS_MSFT_Rssi_Event 事件以指定已达到或超过该 _RSSI_threshold_high_ 。
 
-如果 _RSSI_sampling_period_ 在0X01 和0xFE 之间，则控制器应定期生成每个 _RSSI_sampling_period_的 HCI_VS_MSFT_Rssi_Event。 此事件应包含通过 _RSSI_sampling_period_计算的 RSSI 的平均值。
+如果 _RSSI_sampling_period_ 在0X01 和0xFE 之间，则控制器应定期生成每个 _RSSI_sampling_period_ 的 HCI_VS_MSFT_Rssi_Event。 此事件应包含通过 _RSSI_sampling_period_ 计算的 RSSI 的平均值。
 如果 _RSSI_sampling_period_ 为0X00 或0xff，控制器不应定期通知主机 **是否** HCI_VS_MSFT_Rssi_Event。
 
 #### <a name="command_parameters"></a>Command_parameters
 
 Subcommand_opcode (1 八进制) ：
 
-| 值  |   参数说明 |
+| “值”  |  参数说明 |
 |---|---|
 |0x01   |  HCI_VS_MSFT_Monitor_Rssi 的子命令操作码。|
 
 Connection_handle (2 个八进制) ：
 
-| 值  |   参数说明 |
+| “值”  |  参数说明 |
 |---|---|
 |0x_XXXX   |  必须监视其 RSSI 的连接的句柄。|
 
 RSSI_threshold_high (1 八进制) ：
 
-| 值  |   参数说明 |
+| “值”  |  参数说明 |
 |---|---|
 |N_ = _High&#160;RSSI 阈值&#160;值 |  预期的最大 RSSI 值。 如果观察到的 RSSI 将大于或等于此值，则控制器将生成一个事件。 对于 BR/EDR： <ul><li>范围：-128 &lt; =  _N_ &lt; = 127 (有符号整数) </li><li>Unit： dBm</li></ul>对于 LE：<ul><li>范围：-127 到 20 (带符号整数) </li><li>Unit： dBm</li></ul>|
 
 RSSI_threshold_low (1 八进制) ：
 
-| 值  |   参数说明 |
+| “值”  |  参数说明 |
 |---|---|
 |N_ = _Low&#160;RSSI 阈值&#160;值|预期的最小 RSSI 值。 如果观察到的 RSSI 小于或等于此值，则控制器将生成一个事件。 对于 BR/EDR：<ul><li>范围：-128 &lt; =  _N_ &lt; = 127 (有符号整数) </li><li>Unit： dBm</li></ul>对于 LE：<ul><li>范围：-127 到 20 (带符号整数) </li><li>Unit： dBm</li></ul>|
 
 RSSI_threshold_low_time_interval (1 八进制) ：
 
-| 值  |   参数说明 |
+| “值”  |  参数说明 |
 |---|---|
 |0x00|保留值。|
 |N_&#160;=&#160;0x01&#160;-&#160;0x3C|时间段 = _N_ * 1 secondThe 时间（秒），超过此时间后，RSSI 值应 _RSSI_threshold_low_ 低于 [HCI_VS_MSFT_Rssi_Event](#hci_vs_msft_rssi_event) 才能生成。
 
 RSSI_sampling_period (1 八进制) ：
 
-| 值  |   参数说明 |
+| “值”  |  参数说明 |
 |---|---|
 |0x00|保留值。|
 |_N_&#160;=&#160;0x01&#160;-&#160;0xFE|时间段 = _N_ * 100 millisecondsThe 采样间隔（毫秒）。|
@@ -219,7 +218,7 @@ RSSI_sampling_period (1 八进制) ：
 
 状态 (1 个八进制) ：
 
-| 值  |   参数说明 |
+| “值”  |  参数说明 |
 |---|---|
 |  0x00 |  命令已成功。 |
 | 0x01&#160;-&#160;0xFF  |  命令失败。 有关详细信息，请参阅蓝牙核心规范中的 _错误代码_ 。 |
@@ -228,7 +227,7 @@ RSSI_sampling_period (1 八进制) ：
 
 Subcommand_opcod (1 八进制) ：
 
-| 值  |   参数说明 |
+| “值”  |  参数说明 |
 |---|---|
 |0x01|HCI_VS_MSFT_Monitor_Rssi 的子命令操作码。|
 
@@ -240,7 +239,7 @@ Subcommand_opcod (1 八进制) ：
 
 - 设备观察到的 RSSI 将大于或等于指定的 _RSSI_threshold_high_ 值。
 
-- _RSSI_sampling_period_是有效的，采样期限已过期。
+- _RSSI_sampling_period_ 是有效的，采样期限已过期。
 
 如果与指定设备的连接丢失，控制器应执行所有必要的清理。 在这种情况下，不会将 [HCI_VS_MSFT_Cancel_Monitor_Rssi](#hci_vs_msft_cancel_monitor_rssi) 命令发送到控制器。
 
@@ -257,13 +256,13 @@ HCI_VS_MSFT_Cancel_Monitor_Rssi 取消以前颁发的 [HCI_VS_MSFT_Monitor_Rssi]
 
 Subcommand_opcode (1 八进制) ：
 
-| 值  |   参数说明 |
+| “值”  |  参数说明 |
 |---|---|
 |0x02   |  HCI_VS_MSFT_Cancel_Monitor_Rssi 的子命令操作码。|
 
 Connection_handle (1 个八进制) ：
 
-| 值  |   参数说明 |
+| “值”  |  参数说明 |
 |---|---|
 |0x_XXXX   |  必须取消其 RSSI 的连接的句柄。|
 
@@ -271,14 +270,14 @@ Connection_handle (1 个八进制) ：
 
 状态 (1 个八进制) ：
 
-| 值  |   参数说明 |
+| “值”  |  参数说明 |
 |---|---|
 |  0x00 |  命令已成功。 |
 | 0x01&#160;-&#160;0xFF  |  命令失败。 有关详细信息，请参阅蓝牙核心规范中的 _错误代码_ 。 |
 
 Subcommand_opcode (1 八进制) ：
 
-| 值  |   参数说明 |
+| “值”  |  参数说明 |
 |---|---|
 |0x02|HCI_VS_MSFT_Cancel_Monitor_Rssi 的子命令操作码。|
 
@@ -300,38 +299,38 @@ HCI_VS_MSFT_LE_Monitor_Advertisement 请求控制器开始监视属于指定 RSS
 |HCI_VS_MSFT_LE_Monitor_Advertisement|选择的基本代码 |<ul><li>Subcommand_opcode</li><li>Connection_handle</li>|<ul><li>状态</li><li>Subcommand_opcode<li>Monitor_handle</li></ul>|
 
 控制器应生成命令完成事件以响应此命令。 如果控制器可以开始监视，则 status 值应设置为零; 否则为非零状态。
-如果控制器不支持 RSSI 监视 LE 播发，则它应忽略 _RSSI_threshold_high_、 _RSSI_threshold_low_、 _RSSI_threshold_low_time_interval_和 _RSSI_sampling_period_ 参数值。
+如果控制器不支持 RSSI 监视 LE 播发，则它应忽略 _RSSI_threshold_high_、 _RSSI_threshold_low_、 _RSSI_threshold_low_time_interval_ 和 _RSSI_sampling_period_ 参数值。
 
 此状态图显示了在监视播发的 RSSI 时控制器上的转换状态。
 
 ![HCI_VS_MSFT_LE_Monitor_Advertisement 的状态关系图](images/HCI_VS_MSFT_LE_Monitor_Advertisement_State_Diagram.png)
 
-仅当收到的 RSSI 大于或等于特定设备的 _RSSI_threshold_high_ 时，控制器才会将第一个播发数据包传播到主机。 控制器应生成 [HCI_VS_MSFT_LE_Monitor_Device_Event](#hci_vs_msft_le_monitor_device_event) ，并将 _Monitor_state_ 设置为1， _Monitor_handle_ 设置为此 _条件_的句柄，以通知主机控制器监视此特定设备的 _条件_。
-如果收到的播发的 RSSI 等于或低于特定设备的_RSSI_threshold_low_interval_ _RSSI_threshold_low_ ，控制器应停止监视_条件_。 控制器应生成 [HCI_VS_MSFT_LE_Monitor_Device_Event](#hci_vs_msft_le_monitor_device_event) ，并将 _Monitor_state_ 设置为0，以通知主机控制器已停止监视特定设备的 _条件_。 当控制器指定 HCI_VS_MSFT_LE_Monitor_Device_Event 并将_Monitor_state_设置为0时，控制器将不允许进一步的播发包流向该设备的主机，直到控制器通知主机，特定设备的 RSSI 已对特定设备的需要或更高版本_RSSI_threshold_high_ 。 _Condition_
+仅当收到的 RSSI 大于或等于特定设备的 _RSSI_threshold_high_ 时，控制器才会将第一个播发数据包传播到主机。 控制器应生成 [HCI_VS_MSFT_LE_Monitor_Device_Event](#hci_vs_msft_le_monitor_device_event) ，并将 _Monitor_state_ 设置为1， _Monitor_handle_ 设置为此 _条件_ 的句柄，以通知主机控制器监视此特定设备的 _条件_。
+如果收到的播发的 RSSI 等于或低于特定设备的 _RSSI_threshold_low_interval_ _RSSI_threshold_low_ ，控制器应停止监视 _条件_。 控制器应生成 [HCI_VS_MSFT_LE_Monitor_Device_Event](#hci_vs_msft_le_monitor_device_event) ，并将 _Monitor_state_ 设置为0，以通知主机控制器已停止监视特定设备的 _条件_。 当控制器指定 HCI_VS_MSFT_LE_Monitor_Device_Event 并将 _Monitor_state_ 设置为0时，控制器将不允许进一步的播发包流向该设备的主机，直到控制器通知主机，特定设备的 RSSI 已对特定设备的需要或更高版本 _RSSI_threshold_high_ 。 _Condition_
 此外，控制器应生成 [HCI_VS_MSFT_LE_Monitor_Device_Event](#hci_vs_msft_le_monitor_device_event) ，并将 _Monitor_state_ 设置为0，以通知主机控制器已停止监视设备的 _条件_ （如果指定的 _RSSI_threshold_low_time_interval_ 过期，而不接收来自设备的任何广告数据包）。 如果控制器监视某个设备的特定条件，则以下语句为 true。
 
-如果控制器支持不进行采样的 LE 扩展广告的 RSSI 监视，则当数据包的 RSSI 值大于或等于 _RSSI_threshold_high_时，控制器应将匿名播发数据包传播到主机。 不应跟踪匿名广告，并且不应生成 [HCI_VS_MSFT_LE_Monitor_Device_Event](#hci_vs_msft_le_monitor_device_event) 事件。
+如果控制器支持不进行采样的 LE 扩展广告的 RSSI 监视，则当数据包的 RSSI 值大于或等于 _RSSI_threshold_high_ 时，控制器应将匿名播发数据包传播到主机。 不应跟踪匿名广告，并且不应生成 [HCI_VS_MSFT_LE_Monitor_Device_Event](#hci_vs_msft_le_monitor_device_event) 事件。
 
 | _RSSI_sampling_period_ | 旧播发 |  (非匿名) 的扩展播发 | 匿名)  (的扩展播发|
 |---|---|---|---|
-|0xFF|在此_情况_下，控制器将不允许进一步的播发包流向设备的主机以查找_条件_，直到控制器通知宿主特定设备的 RSSI 已低于特定设备的 RSSI_threshold_low_time_interval _RSSI_threshold_low_ 。 _RSSI_threshold_low_time_interval_ 此通知是通过生成 [HCI_VS_MSFT_LE_Monitor_Device_Event](#hci_vs_msft_le_monitor_device_event) 并将 _Monitor_state_ 设置为0来完成的。|如果控制器支持不进行采样的 LE 扩展广告的 RSSI 监视，则与 _旧播发_ 列相同。|  如果控制器支持不进行采样的 RSSI 监视 LE 扩展广告，则控制器的行为应如同 _RSSI_sampling_period_ 为0x00。 |
-|0x00|控制器应将接收到的所有播发数据包传播到设备的主机以实现此_条件_，除非控制器之前接收到_启用_设置为0x00 的[HCI_VS_MSFT_LE_Set_Advertisement_Filter_Enable](#hci_vs_msft_le_set_advertisement_filter_enable)命令。 即使所收到的 RSSI 小于或等于 _RSSI_threshold_low_ ，只要特定设备的 _RSSI_threshold_low_time_interval_ 对于此 _情况_没有过期，控制器就会将广告数据包传播到主机。 此播发数据包的 RSSI 值应为收到的播发的 RSSI 值。 | 如果控制器支持不进行采样的 LE 扩展广告的 RSSI 监视，则与 _旧播发_ 列相同的行为，只不过播发数据包定义为广告链中的所有 pdu。 | 如果控制器支持不进行采样的 RSSI 监视 LE 扩展广告，则控制器应将接收到的所有播发数据包传播到该设备的主机中 _，除非控制器_之前接收到_启用_设置为0x00 的[HCI_VS_MSFT_LE_Set_Advertisement_Filter_Enable](#hci_vs_msft_le_set_advertisement_filter_enable)命令。 |
-|0x01-0xFE| 除非控制器先前接收到的[HCI_VS_MSFT_LE_Set_Advertisement_Filter_Enable](#hci_vs_msft_le_set_advertisement_filter_enable)命令的 " _Enable_ " 设置为0x00，否则控制器应_RSSI_sampling_period_指定的每个数据包传播到主机。 为播发指定的 RSSI 值应为在此采样间隔期间接收到的 RSSI 值的平均值。 如果控制器未在采样期间接收到播发数据包，则不应将播发传播到主机。 可能 _RSSI_sampling_period_ 小于 _RSSI_threshold_low_time_interval_ 并且 _RSSI_sampling_period_ 期间收到的所有广告在下面 _RSSI_threshold_low_RSSI。 控制器仍应传播此播发，并将此 RSSI 值的平均值作为此采样间隔期间接收的值的平均值。 | 如果控制器支持不进行采样的 RSSI 监视 LE 扩展广告，则控制器的行为应如同 _RSSI_sampling_period_ 为0x00。 |  如果控制器支持不进行采样的 RSSI 监视 LE 扩展广告，则控制器的行为应如同 _RSSI_sampling_period_ 为0x00。 |
+|0xFF|在此 _情况_ 下，控制器将不允许进一步的播发包流向设备的主机以查找 _条件_，直到控制器通知宿主特定设备的 RSSI 已低于特定设备的 RSSI_threshold_low_time_interval _RSSI_threshold_low_ 。 _RSSI_threshold_low_time_interval_ 此通知是通过生成 [HCI_VS_MSFT_LE_Monitor_Device_Event](#hci_vs_msft_le_monitor_device_event) 并将 _Monitor_state_ 设置为0来完成的。|如果控制器支持不进行采样的 LE 扩展广告的 RSSI 监视，则与 _旧播发_ 列相同。|  如果控制器支持不进行采样的 RSSI 监视 LE 扩展广告，则控制器的行为应如同 _RSSI_sampling_period_ 为0x00。 |
+|0x00|控制器应将接收到的所有播发数据包传播到设备的主机以实现此 _条件_，除非控制器之前接收到 _启用_ 设置为0x00 的 [HCI_VS_MSFT_LE_Set_Advertisement_Filter_Enable](#hci_vs_msft_le_set_advertisement_filter_enable)命令。 即使所收到的 RSSI 小于或等于 _RSSI_threshold_low_ ，只要特定设备的 _RSSI_threshold_low_time_interval_ 对于此 _情况_ 没有过期，控制器就会将广告数据包传播到主机。 此播发数据包的 RSSI 值应为收到的播发的 RSSI 值。 | 如果控制器支持不进行采样的 LE 扩展广告的 RSSI 监视，则与 _旧播发_ 列相同的行为，只不过播发数据包定义为广告链中的所有 pdu。 | 如果控制器支持不进行采样的 RSSI 监视 LE 扩展广告，则控制器应将接收到的所有播发数据包传播到该设备的主机中 _，除非控制器_ 之前接收到 _启用_ 设置为0x00 的 [HCI_VS_MSFT_LE_Set_Advertisement_Filter_Enable](#hci_vs_msft_le_set_advertisement_filter_enable)命令。 |
+|0x01-0xFE| 除非控制器先前接收到的 [HCI_VS_MSFT_LE_Set_Advertisement_Filter_Enable](#hci_vs_msft_le_set_advertisement_filter_enable)命令的 " _Enable_ " 设置为0x00，否则控制器应 _RSSI_sampling_period_ 指定的每个数据包传播到主机。 为播发指定的 RSSI 值应为在此采样间隔期间接收到的 RSSI 值的平均值。 如果控制器未在采样期间接收到播发数据包，则不应将播发传播到主机。 可能 _RSSI_sampling_period_ 小于 _RSSI_threshold_low_time_interval_ 并且 _RSSI_sampling_period_ 期间收到的所有广告在下面 _RSSI_threshold_low_ RSSI。 控制器仍应传播此播发，并将此 RSSI 值的平均值作为此采样间隔期间接收的值的平均值。 | 如果控制器支持不进行采样的 RSSI 监视 LE 扩展广告，则控制器的行为应如同 _RSSI_sampling_period_ 为0x00。 |  如果控制器支持不进行采样的 RSSI 监视 LE 扩展广告，则控制器的行为应如同 _RSSI_sampling_period_ 为0x00。 |
 
 如果控制器以前收到的 [HCI_VS_MSFT_LE_Set_Advertisement_Filter_Enable](#hci_vs_msft_le_set_advertisement_filter_enable) 命令的 _Enable_ 设置为0x00，则不应停止采样期间计时器。 有关详细信息，请参阅示例：有关采样期间的筛选器 HCI_VS_MSFT_LE_Set_Advertisement_Filter_Enable。
 如果控制器从同一设备接收到不重复的播发数据包，则它应将每个播发数据包与控制器上存储的条件匹配。
 
-如果控制器从与多个条件匹配的设备接收播发数据包，则控制器应为每个匹配的_条件_生成[HCI_VS_MSFT_LE_Monitor_Device_Event](#hci_vs_msft_le_monitor_device_event) ，并将_Monitor_handle_设置为匹配的_条件_。
+如果控制器从与多个条件匹配的设备接收播发数据包，则控制器应为每个匹配的 _条件_ 生成 [HCI_VS_MSFT_LE_Monitor_Device_Event](#hci_vs_msft_le_monitor_device_event) ，并将 _Monitor_handle_ 设置为匹配的 _条件_。
 
-如果控制器无法监视范围内与 _条件_相匹配的所有设备的 RSSI 值，则它将保持监视尽可能多的设备。 应该监视的设备的决定取决于收到的播发的 RSSI 值。 控制器应监视收到的信号强度较高的设备。
+如果控制器无法监视范围内与 _条件_ 相匹配的所有设备的 RSSI 值，则它将保持监视尽可能多的设备。 应该监视的设备的决定取决于收到的播发的 RSSI 值。 控制器应监视收到的信号强度较高的设备。
 
-如果控制器已向主机通知了有关特定设备_的 () _ ，并且它在最大硬件容量上监视设备，并且如果另一个设备 (_B_) 出现在 RSSI 值较高的范围内，则控制器将通过生成_ (设置为0的_ [) ](#hci_vs_msft_le_monitor_device_event) ，通知主机它已停止监视_设备 HCI_VS_MSFT_LE_Monitor_Device_Event Monitor_state_ 。 控制器还应生成 HCI_VS_MSFT_LE_Monitor_Device_Event，并将 _Monitor_state_ 设置为1，通知主机设备 (_B_) 现在正在被监视。
+如果控制器已向主机通知了有关特定设备 _的 ()_ ，并且它在最大硬件容量上监视设备，并且如果另一个设备 (_B_) 出现在 RSSI 值较高的范围内，则控制器将通过生成 _(设置为0的_ [)](#hci_vs_msft_le_monitor_device_event) ，通知主机它已停止监视 _设备 HCI_VS_MSFT_LE_Monitor_Device_Event Monitor_state_ 。 控制器还应生成 HCI_VS_MSFT_LE_Monitor_Device_Event，并将 _Monitor_state_ 设置为1，通知主机设备 (_B_) 现在正在被监视。
 
 #### <a name="condition_type_and_condition_parameters"></a>Condition_type_and_Condition_parameters
 
-_Condition_type_参数指定_Condition_参数是指定模式、UUID、IRK 还是 BD_ADDR。
+_Condition_type_ 参数指定 _Condition_ 参数是指定模式、UUID、IRK 还是 BD_ADDR。
 
-如果 _Condition_type_ 参数指定了一个模式，则该 _条件_ 包含2个部分，其中包含 _条件_中存在的模式数和模式数据。 ![模式条件数据布局](images/HCI_VS_MSFT_LE_Monitor_Advertisement_Conditions.png)
+如果 _Condition_type_ 参数指定了一个模式，则该 _条件_ 包含2个部分，其中包含 _条件_ 中存在的模式数和模式数据。 ![模式条件数据布局](images/HCI_VS_MSFT_LE_Monitor_Advertisement_Conditions.png)
 
 _模式数_ 指定需要匹配的模式数。
 
@@ -368,32 +367,32 @@ _模式数据_ 具有以下格式：
 
 Subcommand_opcode (1 八进制) ：
 
-| 值  |   参数说明 |
+| “值”  |  参数说明 |
 |---|---|
 |0x03   |  HCI_VS_MSFT_LE_Monitor_Advertisement 的子命令操作码。|
 
 RSSI_threshold_high (1 八进制) ：
 
-| 值  |   参数说明 |
+| “值”  |  参数说明 |
 |---|---|
 |高 RSSI 阈值|  预期的最大 RSSI 值。 如果观察到的 RSSI 将大于或等于此值，则控制器将生成一个事件。 对于 LE：<ul><li>范围：-127 到 20 (带符号整数) </li><li>Unit： dBm</li></ul>|
 
 RSSI_threshold_low (1 八进制) ：
 
-| 值  |   参数说明 |
+| “值”  |  参数说明 |
 |---|---|
 |低 RSSI 阈值|预期的最小 RSSI 值。 如果观察到的 RSSI 小于或等于此值，则控制器将生成一个事件。 对于 LE：<ul><li>范围：-127 到 20 (带符号整数) </li><li>Unit： dBm</li></ul>|
 
 RSSI_threshold_low_time_interval (1 八进制) ：
 
-| 值  |   参数说明 |
+| “值”  |  参数说明 |
 |---|---|
 |0x00|保留值。|
-|N_&#160;=&#160;0x01&#160;-&#160;0x3C|时间段 = _N_ * 1 秒。 RSSI 值在生成[HCI_VS_MSFT_Rssi_Event](#hci_vs_msft_rssi_event)之前_RSSI_threshold_low_的时间（以秒为单位）。
+|N_&#160;=&#160;0x01&#160;-&#160;0x3C|时间段 = _N_ * 1 秒。 RSSI 值在生成 [HCI_VS_MSFT_Rssi_Event](#hci_vs_msft_rssi_event)之前 _RSSI_threshold_low_ 的时间（以秒为单位）。
 
 RSSI_sampling_period (1 八进制) ：
 
-| 值  |   参数说明 |
+| “值”  |  参数说明 |
 |---|---|
 |0x00|控制器应将接收的所有播发传播到主机。|
 |_N_&#160;=&#160;0x01&#160;-&#160;0xFE|时间段 = _N_ * 100 毫秒。 采样间隔（毫秒）。|
@@ -401,7 +400,7 @@ RSSI_sampling_period (1 八进制) ：
 
 Condition_type (1 八进制) ：
 
-| 值  |   参数说明 |
+| “值”  |  参数说明 |
 |---|---|
 |0x01|条件是必须在播发上进行匹配的模式。|
 |0x02|条件为 UUID 类型和 UUID。|
@@ -412,13 +411,13 @@ Condition_type (1 八进制) ：
 
 Number_of_patterns (1 八进制) ：
 
-|值 |  参数说明|
+|“值” | 参数说明|
 |---|---|
 |0xXX| 在 Pattern_data 参数中指定的模式数。|
 
 Pattern_data ( # B0 3 八进制) ：
 
-|值 |  参数说明|
+|“值” | 参数说明|
 |---|---|
 |长度|此模式的长度。|
 |数据类型| 播发部分的数据类型。 这些值列在 "蓝牙分配的数字" 文档中。|
@@ -427,7 +426,7 @@ Pattern_data ( # B0 3 八进制) ：
 
 UUID_type (1 八进制) ：
 
-|值 |  参数说明|
+|“值” | 参数说明|
 |---|---|
 |0x01| UUID 是16位服务。|
 |0x02| UUID 为32位服务。|
@@ -435,19 +434,19 @@ UUID_type (1 八进制) ：
 
 UUID (2、4或16个八进制) ：
 
-|值 |  参数说明|
+|“值” | 参数说明|
 |---|---|
 |0xXXXX| <p>如果 UUID_type 为0x01，则为2个字节。<p><p>如果 UUID_type 为0x02，则为4个字节。</p><p>如果 UUID_type 为0x03，则为16字节。</p>|
 
 IRK (16 个八进制) ：
 
-| 值  |   参数说明 |
+| “值”  |  参数说明 |
 |---|---|
 |<p>0xXXXXXXXX XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX</p><p>XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX</p>|用于解析专用地址的 IRK。|
 
 Address_type (1 八进制) ：
 
-| 值  |   参数说明 |
+| “值”  |  参数说明 |
 |---|---|
 |0x00| 公用设备地址。|
 |0x01| 随机设备地址。|
@@ -455,7 +454,7 @@ Address_type (1 八进制) ：
 
 Address_type (1 八进制) ：
 
-| 值  |   参数说明 |
+| “值”  |  参数说明 |
 |---|---|
 |0xXXXXXXXXXXXX|要监视的设备的蓝牙地址。|
 
@@ -463,7 +462,7 @@ Address_type (1 八进制) ：
 
 状态 (1 个八进制) ：
 
-| 值  |   参数说明 |
+| “值”  |  参数说明 |
 |---|---|
 |  0x00 |  命令已成功。 |
 |0x07|如果控制器没有足够的内存来处理该命令，则控制器应返回内存容量。|
@@ -471,13 +470,13 @@ Address_type (1 八进制) ：
 
 Subcommand_opcode (1 八进制) ：
 
-| 值  |   参数说明 |
+| “值”  |  参数说明 |
 |---|---|
 |0x03| HCI_VS_MSFT_LE_Monitor_Advertisement 的子命令操作码。 |
 
 Monitor_handle (1 八进制) ：
 
-| 值  |   参数说明 |
+| “值”  |  参数说明 |
 |---|---|
 |0x00-0xFF|此规则的句柄。 此句柄用作 HCI_VS_MSFT_LE_Cancel_Monitor_Advertisement 取消监视播发的参数。 仅当状态为0x00 时，此参数才有效。|
 
@@ -499,13 +498,13 @@ HCI_VS_MSFT_LE_Cancel_Monitor_Advertisement 取消以前颁发的 [HCI_VS_MSFT_L
 
 Subcommand_opcode (1 八进制) ：
 
-| 值  |   参数说明 |
+| “值”  |  参数说明 |
 |---|---|
 |0x04   |  HCI_VS_MSFT_LE_Cancel_Monitor_Advertisement 的子命令操作码。|
 
 Connection_handle (1 八进制) ：
 
-| 值  |   参数说明 |
+| “值”  |  参数说明 |
 |---|---|
 |0xXX| 要取消的筛选器的句柄。|
 
@@ -513,7 +512,7 @@ Connection_handle (1 八进制) ：
 
 状态 (1 个八进制) ：
 
-| 值  |   参数说明 |
+| “值”  |  参数说明 |
 |---|---|
 |  0x00 |  命令已成功。 |
 |0x07|如果控制器没有足够的内存来处理该命令，则控制器应返回内存容量。|
@@ -521,7 +520,7 @@ Connection_handle (1 八进制) ：
 
 Subcommand_opcode (1 八进制) ：
 
-| 值  |   参数说明 |
+| “值”  |  参数说明 |
 |---|---|
 |0x04| HCI_VS_MSFT_LE_Cancel_Monitor_Adver 的子命令操作码。 |
 
@@ -542,7 +541,7 @@ HCI_VS_MSFT_LE_Set_Advertisement_Filter_Enable 设置播发筛选器的状态。
 如果 _Enable_ 设置为0x01，则此命令将启用使用以前发出的 [HCI_VS_MSFT_LE_Monitor_Advertisement](#hci_vs_msft_le_monitor_advertisement) 命令设置的所有筛选器。 如果控制器不切换筛选器状态，则控制器应拒绝 HCI_VS_MSFT_LE_Set_Advertisement_Filter_Enable 命令：
 
 - 如果控制器之前接收到 "_启用_" 设置为0x01 的 HCI_VS_MSFT_LE_Set_Advertisement_Filter_Enable 命令，则该控制器应拒绝 " _enable_ " 设置为0x01 的 HCI_VS_MSFT_LE_Set_Advertisement_Filter_Enable 命令。
-- 如果以前收到的 _"启用" 设置为_0x00 的 HCI_VS_MSFT_LE_Set_Advertisement_Filter_Enable 命令，则控制器应拒绝 HCI_VS_MSFT_LE_Set_Advertisement_Filter_Enable 命令，并将 "_启用_" 设置为0x00。
+- 如果以前收到的 _"启用" 设置为_ 0x00 的 HCI_VS_MSFT_LE_Set_Advertisement_Filter_Enable 命令，则控制器应拒绝 HCI_VS_MSFT_LE_Set_Advertisement_Filter_Enable 命令，并将 "_启用_" 设置为0x00。
 
 播发筛选器的默认状态应为 "关闭"。 此状态等效于先前接收到 " _启用_ " 设置为0x00 的 HCI_VS_MSFT_LE_Set_Advertisement_Filter_Enable 命令的控制器。
 控制器应立即生成命令完成事件以响应此命令。
@@ -551,13 +550,13 @@ HCI_VS_MSFT_LE_Set_Advertisement_Filter_Enable 设置播发筛选器的状态。
 
 Subcommand_opcode (1 八进制) ：
 
-| 值  |   参数说明 |
+| “值”  |  参数说明 |
 |---|---|
 |0x05|  HCI_VS_MSFT_LE_Set_Advertisement_Filter_Enable 的子命令操作码。|
 
 启用 (1 八进制) ：
 
-| 值  |   参数说明 |
+| “值”  |  参数说明 |
 |---|---|
 |0x00| 恢复为当前允许列表行为，但根据  [HCI_VS_MSFT_LE_Monitor_Advertisement](#hci_vs_msft_le_monitor_advertisement) 命令中的 _Condition_s 继续监视设备。|
 |0x01|在控制器上启用所有发出的 HCI_VS_MSFT_LE_Monitor_Advertisement 命令。|
@@ -566,7 +565,7 @@ Subcommand_opcode (1 八进制) ：
 
 状态 (1 个八进制) ：
 
-|值| 参数说明|
+|“值”|参数说明|
 |---|---|
 |0x00|命令已成功。|
 |0x0C|控制器拒绝命令时，控制器应返回 _命令_ ，因为它以前看到了一个 HCI_VS_MSFT_LE_Set_Advertisement_Filter_Enable 命令，并将 " _启用_ " 设置为与此命令相同的值。|
@@ -574,7 +573,7 @@ Subcommand_opcode (1 八进制) ：
 
 Subcommand_opcode (1 八进制) ：
 
-|值| 参数说明|
+|“值”|参数说明|
 |---|---|
 |0x05|HCI_VS_MSFT_LE_Set_Advertisement_Filter_Enable 的子命令操作码。|
 
@@ -597,13 +596,13 @@ HCI_VS_MSFT_Read_Absolute_RSSI 从控制器读取 BR/EDR 连接 (RSSI) 值的 **
 
 Subcommand_opcode (1 八进制) ：
 
-| 值  |   参数说明 |
+| “值”  |  参数说明 |
 |---|---|
 |0x06|  HCI_VS_MSFT_Read_Absolute_RSSI 的子命令操作码。|
 
 处理 (2 个八进制) ：
 
-| 值  |   参数说明 |
+| “值”  |  参数说明 |
 |---|---|
 |0x_XXXX_|必须读取其 RSSI 的 BR/EDR 连接的句柄。|
 
@@ -611,26 +610,26 @@ Subcommand_opcode (1 八进制) ：
 
 状态 (1 个八进制) ：
 
-|值| 参数说明|
+|“值”|参数说明|
 |---|---|
 |0x00|命令已成功。|
 |0x01-0xFF|命令失败。 有关详细信息，请参阅蓝牙核心规范中的 _错误代码_ 。|
 
 Subcommand_opcode (1 八进制) ：
 
-|值| 参数说明|
+|“值”|参数说明|
 |---|---|
 |0x06|HCI_VS_MSFT_Read_Absolute_RSSI 的子命令操作码。|
 
 处理 (2 个八进制) ：
 
-|值| 参数说明|
+|“值”|参数说明|
 |---|---|
 |0xXXXX| 读取其 RSSI 的 BR/EDR 连接的句柄。|
 
 RSSI (1 八进制) ：
 
-|     值      |                                                   参数说明                                                   |
+|     “值”      |                                                  参数说明                                                   |
 |----------------|--------------------------------------------------------------------------------------------------------------------------|
 | N = RSSI 值 | BR/EDR 连接的 RSSI 值。<ul><li>范围：-128 &lt; =  *N* &lt; = 127 (有符号整数) </li><li>Unit： dBm</li> |
 
@@ -660,32 +659,32 @@ HCI_VS_MSFT_RSSI_Event 指示 [HCI_VS_MSFT_Monitor_Rssi](#hci_vs_msft_monitor_rs
 
 ) Event_prefix (变量大小：
 
-|值| 参数说明|
+|“值”|参数说明|
 |---|---|
 |事件前缀|将此事件标记为 Microsoft 定义的事件前缀。 [HCI_VS_MSFT_Read_Supported_Features](#hci_vs_msft_read_supported_features)命令返回的大小和值。|
 
 Microsoft_event_code (1 八进制) ：
 
-|值| 参数说明|
+|“值”|参数说明|
 |---|---|
 |0x01|HCI_VS_MSFT_RSSI_Event 的事件代码。|
 
 状态 (1 个八进制) ：
 
-|值| 参数说明|
+|“值”|参数说明|
 |---|---|
-|0x00|成功。 连接的 RSSI 值满足以下条件之一。<ul><li>RSSI 已达到或超过 _RSSI_threshold_high_。</li><li>RSSI 已达到或下降 _RSSI_threshold_low_ 超过 _RSSI_threshold_low_time_interval_ 秒。</li><li>_RSSI_sampling_period_已过期，并且生成了此事件以通知主机 RSSI 值。</li></ul>|
+|0x00|成功。 连接的 RSSI 值满足以下条件之一。<ul><li>RSSI 已达到或超过 _RSSI_threshold_high_。</li><li>RSSI 已达到或下降 _RSSI_threshold_low_ 超过 _RSSI_threshold_low_time_interval_ 秒。</li><li>_RSSI_sampling_period_ 已过期，并且生成了此事件以通知主机 RSSI 值。</li></ul>|
 |0x01&#160;-&#160;0xFF|失败。 无法再监视连接的 RSSI 值。 错误代码通常是描述基础 ACL 连接丢失原因的代码之一。|
 
 Connection_handle (2 个八进制) ：
 
-|值| 参数说明|
+|“值”|参数说明|
 |---|---|
 |0x_XXXX_|要监视其 RSSI 的连接的句柄。|
 
 RSSI (1 八进制) ：
 
-|值| 参数说明|
+|“值”|参数说明|
 |---|---|
 |_N_  = _RSSI&#160;值_|用于连接的已测量链接 RSSI 值。 对于 BR/EDR：<ul><li>范围：-128 &lt; =  _N_ &lt; = 127 (有符号整数) </li><li>Unit： dBm</li></ul>对于 LE：<ul><li>范围：-127 到 20 (带符号整数) </li><li>Unit： dBm</li></ul>|
 
@@ -705,19 +704,19 @@ HCI_VS_MSFT_LE_Monitor_Device_Event 指示控制器已启动或停止监视蓝�
 
 ) Event_prefix (变量大小：
 
-|值| 参数说明|
+|“值”|参数说明|
 |---|---|
 |事件前缀|将此事件标记为 Microsoft 定义的事件前缀。 [HCI_VS_MSFT_Read_Supported_Features](#hci_vs_msft_read_supported_features)命令返回的大小和值。
 
 Microsoft_event_code (1 八进制) ：
 
-|值| 参数说明|
+|“值”|参数说明|
 |---|---|
 |0x02|HCI_VS_MSFT_LE_Monitor_Device_Event 的事件代码。|
 
 Address_type (1 八进制) ：
 
-|值| 参数说明|
+|“值”|参数说明|
 |---|---|
 |0x00|公用设备地址。|
 |0x01|随机设备地址。|
@@ -725,19 +724,19 @@ Address_type (1 八进制) ：
 
  (6 个 BD_ADDR) ：
 
-|值| 参数说明|
+|“值”|参数说明|
 |---|---|
 |0x_XXXXXXXXXXXX_|设备的蓝牙地址。|
 
 Monitor_handle (1 八进制) ：
 
-|值| 参数说明|
+|“值”|参数说明|
 |---|---|
 |0x_XX_|为 [HCI_VS_MSFT_LE_Monitor_Advertisement](#hci_vs_msft_le_monitor_advertisement) 命令指定的筛选器的句柄。|
 
 Monitor_state (1 八进制) ：
 
-|值| 参数说明|
+|“值”|参数说明|
 |---|---|
-|0x00|控制器停止监视 _BD_ADDR_ 和 _Monitor_handle_指定的设备。|
-|0x01|控制器已开始监视 _BD_ADDR_ 和 _Monitor_handle_指定的设备。|
+|0x00|控制器停止监视 _BD_ADDR_ 和 _Monitor_handle_ 指定的设备。|
+|0x01|控制器已开始监视 _BD_ADDR_ 和 _Monitor_handle_ 指定的设备。|

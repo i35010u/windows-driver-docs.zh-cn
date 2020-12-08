@@ -1,21 +1,20 @@
 ---
 title: 设计 WMI 数据和事件块
 description: 设计 WMI 数据和事件块
-ms.assetid: 3235accd-2bec-430e-ab00-1c5d0ef46045
 keywords:
 - WMI WDK 内核，事件块
-- 事件阻止 WDK WMI
-- 数据将阻止 WDK WMI
+- 事件块 WDK WMI
+- 数据块 WDK WMI
 - WMI WDK 内核，数据块
-- 块 WDK WMI
+- 阻止 WDK WMI
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9562f66b1302add7a4c29fdd37367156110a343b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fb1d12d5e8fbb73388362513ea174c298d951679
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63388183"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96789799"
 ---
 # <a name="designing-wmi-data-and-event-blocks"></a>设计 WMI 数据和事件块
 
@@ -23,7 +22,7 @@ ms.locfileid: "63388183"
 
 
 
-为获得最佳性能和易用性的 WMI 客户端使用，驱动程序应支持标准的数据块和驱动程序编写人员应遵循特定的准则设计自定义 WMI 数据和事件块。 具体而言，驱动程序编写人员应注意的性能的权衡取舍选择静态与动态实例数据块的名称。 在本部分中的主题讨论问题和设计 WMI 数据和事件块的准则。
+为了获得更好的性能和 WMI 客户端的易用性，驱动程序应支持标准数据块，驱动程序编写者应遵循设计自定义 WMI 数据和事件块中的某些准则。 具体而言，在为数据块选择静态和动态实例名称时，驱动程序编写人员应该知道性能的折衷。 本节中的主题介绍了有关设计 WMI 数据和事件块的问题和指导原则。
 
  
 

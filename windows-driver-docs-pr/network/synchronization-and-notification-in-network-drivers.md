@@ -1,7 +1,6 @@
 ---
 title: 网络驱动程序中的同步和通知
 description: 网络驱动程序中的同步和通知
-ms.assetid: 9fd9306f-5431-485f-9d6b-f7d6f25ea1ce
 keywords:
 - 同步访问资源 WDK 网络
 - 同步 WDK 网络
@@ -15,12 +14,12 @@ keywords:
 - 事件 WDK 网络
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cfc84fd72ac9a12982397aaef54d63135394f6b5
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 1c6317161d39466698ed7cbe554873e1c44de5a4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89207159"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96790415"
 ---
 # <a name="synchronization-and-notification-in-network-drivers"></a>网络驱动程序中的同步和通知
 
@@ -45,7 +44,7 @@ NDIS 提供了自旋锁，可用于同步对在相同 IRQL 上运行的线程之
 
 ### <a name="spin-locks"></a>自旋锁
 
-*旋转锁*提供一种同步机制，用于保护在 &gt; 单处理器 \_ 计算机或多处理器计算机上运行的内核模式线程所共享的资源。 自旋锁处理在 SMP 计算机上并发运行的各种执行线程之间的同步。 在访问受保护的资源之前，线程将获取自旋锁。 旋转锁定会保留任何线程，但包含自旋锁的线程使用资源。 在 SMP 计算机上，等待旋转锁定的线程会循环尝试获取旋转锁，直到持有锁的线程释放它。
+*旋转锁* 提供一种同步机制，用于保护在 &gt; 单处理器 \_ 计算机或多处理器计算机上运行的内核模式线程所共享的资源。 自旋锁处理在 SMP 计算机上并发运行的各种执行线程之间的同步。 在访问受保护的资源之前，线程将获取自旋锁。 旋转锁定会保留任何线程，但包含自旋锁的线程使用资源。 在 SMP 计算机上，等待旋转锁定的线程会循环尝试获取旋转锁，直到持有锁的线程释放它。
 
 自旋锁的另一特性是关联的 IRQL。 尝试获取旋转锁将暂时引发请求线程的 IRQL 与自旋锁关联的 IRQL。 这可以防止同一处理器上的所有较低 IRQL 线程抢占执行线程。 在同一处理器上，以更高的 IRQL 运行的线程可以抢占正在执行的线程，但这些线程无法获取自旋锁，因为它的 IRQL 较低。 因此，在线程获取旋转锁后，任何其他线程都无法获取旋转锁定，直到它被释放。 编写良好的网络驱动程序可最大程度地缩短旋转锁的保留时间。
 
@@ -55,7 +54,7 @@ NDIS 提供了自旋锁，可用于同步对在相同 IRQL 上运行的线程之
 
 ### <a name="avoiding-spin-lock-problems"></a>避免旋转锁定问题
 
-若要避免可能出现的死锁，NDIS 驱动程序应在调用 ndis ***Xxx*旋转锁**函数之外的其他 ndis 函数之前释放所有 NDIS 自旋锁。 如果 NDIS 驱动程序不符合此要求，则会发生死锁，如下所示：
+若要避免可能出现的死锁，NDIS 驱动程序应在调用 ndis ***Xxx* 旋转锁** 函数之外的其他 ndis 函数之前释放所有 NDIS 自旋锁。 如果 NDIS 驱动程序不符合此要求，则会发生死锁，如下所示：
 
 1. 线程1（其中包含 NDIS 自旋锁 A）调用 **ndis * Xxx*** 函数，该函数尝试通过调用 [**NDISACQUIRESPINLOCK**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisacquirespinlock) 函数获取 ndis 自旋锁 B。
 
@@ -86,13 +85,13 @@ NdisReleaseSpinLock(B);
 
 计时器用于轮询或超时操作。 驱动程序将创建一个计时器，并将函数与计时器相关联。 当计时器中指定的时间段过期时，将调用关联的函数。 计时器可以是一步，也可以是周期性的。 一旦设置了定期计时器，它将在每个时间段的过期时间继续触发，直到显式清除。 每次激发时，必须重置一个单步计时器。
 
-计时器是通过调用 [**NdisAllocateTimerObject**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisallocatetimerobject) 来创建和初始化的，并通过调用 [**NdisSetTimerObject**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndissettimerobject)进行设置。 如果使用非周期性计时器，则必须通过调用 **NdisSetTimerObject**进行重置。 通过调用 [**NdisCancelTimerObject**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscanceltimerobject)清除计时器。
+计时器是通过调用 [**NdisAllocateTimerObject**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisallocatetimerobject) 来创建和初始化的，并通过调用 [**NdisSetTimerObject**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndissettimerobject)进行设置。 如果使用非周期性计时器，则必须通过调用 **NdisSetTimerObject** 进行重置。 通过调用 [**NdisCancelTimerObject**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscanceltimerobject)清除计时器。
 
 ### <a name="events"></a>事件
 
 事件用于在两个执行线程之间同步操作。 事件由驱动程序分配，并通过调用 [**NdisInitializeEvent**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisinitializeevent)进行初始化。 以 IRQL = 被动级别运行的线程 \_ 将调用 [**NdisWaitEvent**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiswaitevent) ，以将其本身置于等待状态。 当驱动程序线程等待某个事件时，它将指定等待的最长时间以及要等待的事件。 调用 [**NdisSetEvent**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndissetevent) 时，如果调用了导致事件发出信号的事件或指定的最长等待时间间隔到期（以先发生者为准），则满足线程的等待。
 
-通常情况下，事件由调用 **NdisSetEvent**的协作线程设置。 在创建事件时信号事件，必须将其设置为等待线程的信号。 在调用 [**NdisResetEvent**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisresetevent) 之前，事件会一直保持终止状态。
+通常情况下，事件由调用 **NdisSetEvent** 的协作线程设置。 在创建事件时信号事件，必须将其设置为等待线程的信号。 在调用 [**NdisResetEvent**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisresetevent) 之前，事件会一直保持终止状态。
 
 ## <a name="related-topics"></a>相关主题
 

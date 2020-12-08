@@ -1,17 +1,16 @@
 ---
 title: WDI_TLV_DELETE_PORT_PARAMETERS
 description: WDI_TLV_DELETE_PORT_PARAMETERS 是包含 OID_WDI_TASK_DELETE_PORT 的参数的 TLV。
-ms.assetid: F3DDECDC-1A92-4022-9E2C-780ED480172C
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_DELETE_PORT_PARAMETERS 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 646fc3a6139319155d520cd9db0803d48e81acd4
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: d75f8c2601e63ce79d6e6deee3eb0a3278850acb
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89214286"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96790375"
 ---
 # <a name="wdi_tlv_delete_port_parameters"></a>WDI \_ TLV \_ 删除 \_ 端口 \_ 参数
 
@@ -23,7 +22,7 @@ WDI \_ tlv \_ 删除 \_ 端口 \_ 参数是一个 TLV，其中包含 [OID \_ WDI
 
 0x2A
 
-## <a name="length"></a>Length
+## <a name="length"></a>长度
 
 
 Sum (所有包含的元素的大小) 。
@@ -31,7 +30,7 @@ Sum (所有包含的元素的大小) 。
 ## <a name="values"></a>值
 
 
-| 类型   | 说明                          |
+| 类型   | 描述                          |
 |--------|--------------------------------------|
 | UINT16 | 指定要删除的端口号。 |
 
@@ -52,7 +51,7 @@ Sum (所有包含的元素的大小) 。
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
-<td><p>Windows Server 2016</p></td>
+<td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
 <td><p>标头</p></td>

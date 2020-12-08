@@ -1,20 +1,19 @@
 ---
 title: 链接到 NDIS 库
 description: 链接到 NDIS 库
-ms.assetid: eac33c9e-ff70-4a6c-b391-833a81faa079
 keywords:
 - NDIS.sys WDK 网络
 - NDIS 库 WDK 网络
-- 将 NDIS 库 WDK 网络链接
+- 链接 NDIS 库 WDK 网络
 - 库 WDK NDIS
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0e0f8c87319aa9bb25b8428d3fe3349e63740b5a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b4425ee626a64461431dfb51038d650e71e78a65
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63365369"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96789697"
 ---
 # <a name="linking-to-the-ndis-library"></a>链接到 NDIS 库
 
@@ -22,9 +21,9 @@ ms.locfileid: "63365369"
 
 
 
-NDIS 库中 Ndis.sys，内核模式导出库打包为一组函数，注重最大性能的宏。 （导出库是一个.sys 文件，其功能类似的动态链接库。）所有的 NDIS 驱动程序自己链接到 NDIS 库。 Microsoft Windows Driver Kit (WDK) 文档中的网络参考各节所述的 NDIS 库函数。
+NDIS 库打包为 Ndis.sys，一种内核模式导出库，作为一组函数，重点介绍宏以获得最大性能。  (导出库是一个 .sys 文件，其工作方式类似于动态链接库。 ) 所有 NDIS 驱动程序将自身链接到 NDIS 库。 Microsoft Windows 驱动程序工具包 (WDK) 文档的网络参考部分介绍了 NDIS 库函数。
 
-WDK 提供 Ndis.h 作为主标头文件的微型端口驱动程序。 此文件定义微型端口驱动程序、 NDIS 库函数和通用数据结构的入口的点。 网络参考部分介绍的微型端口驱动程序、 协议驱动程序，并**Ndis * Xxx*** 函数的通用数据结构和 Oid。
+WDK 提供 Ndis .h 作为微型端口驱动程序的主头文件。 此文件定义微型端口驱动程序、NDIS 库函数和通用数据结构的入口点。 网络参考部分介绍了微型端口驱动程序、协议驱动程序和 **Ndis * Xxx*** 函数以及通用数据结构和 oid。
 
  
 

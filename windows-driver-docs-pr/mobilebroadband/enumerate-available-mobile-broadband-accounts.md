@@ -1,15 +1,14 @@
 ---
 title: 枚举可用的移动宽带帐户
 description: 枚举可用的移动宽带帐户
-ms.assetid: 6dcf4789-09e8-43d2-9617-a026cbe0dfbb
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 47b55c85868ac2757fb8323bf768309a459ee258
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 5ea5707a6dc6a79e86d12b356f8a6f1a3533eaf1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89216622"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96788541"
 ---
 # <a name="enumerate-available-mobile-broadband-accounts"></a>枚举可用的移动宽带帐户
 
@@ -30,7 +29,8 @@ ms.locfileid: "89216622"
 
     当)  (删除移动宽带硬件或 SIM 时，其他 [**AccountAdded**](/uwp/api/Windows.Networking.NetworkOperators.MobileBroadbandAccountWatcher#Windows_Networking_NetworkOperators_MobileBroadbandAccountWatcher_AccountAdded) 和 [**AccountRemoved**](/uwp/api/Windows.Networking.NetworkOperators.MobileBroadbandAccountWatcher#Windows_Networking_NetworkOperators_MobileBroadbandAccountWatcher_AccountRemoved) 事件会引发。
 
-**重要提示**   当 Windows 挂起应用程序并在恢复应用程序时重新启动时，帐户观察程序对象会自动停止。 这样做是为了保留电池寿命，因为恢复已挂起的应用程序来处理事件，然后将其重新置于挂起状态，这会导致大量的磁盘活动。 当观察程序停止时，将发生停止事件 (这是在应用程序获取其挂起事件) 之前或之后发生的。 当应用程序恢复时，在该应用程序挂起之前运行的所有观察程序会自动重新启动，从而触发一系列 [**AccountAdded**](/uwp/api/Windows.Networking.NetworkOperators.MobileBroadbandAccountWatcher#Windows_Networking_NetworkOperators_MobileBroadbandAccountWatcher_AccountAdded) 事件，这些事件后跟 [**EnumerationCompleted**](/uwp/api/Windows.Networking.NetworkOperators.MobileBroadbandAccountWatcher#Windows_Networking_NetworkOperators_MobileBroadbandAccountWatcher_EnumerationCompleted) 事件 (与) [**启动**](/uwp/api/Windows.Networking.NetworkOperators.MobileBroadbandAccountWatcher#Windows_Networking_NetworkOperators_MobileBroadbandAccountWatcher_Start) 方法相同的方式。 这使应用程序能够最大程度地获取在挂起期间发生的任何重要内容。
+**重要说明**  
+当 Windows 挂起应用程序并在恢复应用程序时重新启动时，帐户观察程序对象会自动停止。 这样做是为了保留电池寿命，因为恢复已挂起的应用程序来处理事件，然后将其重新置于挂起状态，这会导致大量的磁盘活动。 当观察程序停止时，将发生停止事件 (这是在应用程序获取其挂起事件) 之前或之后发生的。 当应用程序恢复时，在该应用程序挂起之前运行的所有观察程序会自动重新启动，从而触发一系列 [**AccountAdded**](/uwp/api/Windows.Networking.NetworkOperators.MobileBroadbandAccountWatcher#Windows_Networking_NetworkOperators_MobileBroadbandAccountWatcher_AccountAdded) 事件，这些事件后跟 [**EnumerationCompleted**](/uwp/api/Windows.Networking.NetworkOperators.MobileBroadbandAccountWatcher#Windows_Networking_NetworkOperators_MobileBroadbandAccountWatcher_EnumerationCompleted) 事件 (与) [**启动**](/uwp/api/Windows.Networking.NetworkOperators.MobileBroadbandAccountWatcher#Windows_Networking_NetworkOperators_MobileBroadbandAccountWatcher_Start) 方法相同的方式。 这使应用程序能够最大程度地获取在挂起期间发生的任何重要内容。
 
 [**MobileBroadbandAccountWatcher**](/uwp/api/Windows.Networking.NetworkOperators.MobileBroadbandAccountWatcher) 对象相互独立。 这意味着，不能依赖于报告同一组事件的所有观察程序–作为一个组，它们将报告所有事件。 但是，任何给定的观察程序可能都不会报告任何给定的事件，因为该事件已被其他观察程序使用。 除非有充分的理由，否则每个应用只应使用一个帐户观察程序对象。
 

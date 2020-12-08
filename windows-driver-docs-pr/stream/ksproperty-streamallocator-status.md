@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ STREAMALLOCATOR \_ 状态
 description: KSPROPERTY \_ STREAMALLOCATOR \_ STATUS 属性检索指定分配器的当前状态。
-ms.assetid: af88253b-e72d-4ea9-855d-0a91e6e35d0f
 keywords:
 - KSPROPERTY_STREAMALLOCATOR_STATUS 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6a6d6fd4ec6008163d03157bb62be5542a27fd80
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: ad92a6dc8ad3a86a901decda403690d98842886a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106974"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96790179"
 ---
 # <a name="ksproperty_streamallocator_status"></a>KSPROPERTY \_ STREAMALLOCATOR \_ 状态
 
@@ -82,7 +81,7 @@ KSPROPERTY \_ STREAMALLOCATOR \_ STATUS 属性检索指定分配器的当前状�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSSTREAMALLOCATOR \_ 状态**](/windows-hardware/drivers/ddi/ks/ns-ks-ksstreamallocator_status)

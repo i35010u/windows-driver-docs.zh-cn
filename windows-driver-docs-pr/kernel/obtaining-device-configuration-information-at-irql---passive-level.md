@@ -1,7 +1,6 @@
 ---
 title: 以 IRQL PASSIVE_LEVEL 获取设备配置信息
 description: 以 IRQL PASSIVE_LEVEL 获取设备配置信息
-ms.assetid: 672fb3d8-6e64-425b-a035-8f8ecfd624f1
 keywords:
 - I/o WDK 内核，设备配置空间
 - 设备配置空间 WDK i/o
@@ -11,12 +10,12 @@ keywords:
 - 驱动程序堆栈 WDK 配置信息
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8d46cfb281398bff271814a48b8047e2f11414b4
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 5c902f9e59d2dd7b7fcec1e77dede04206b73eb5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89191167"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96788623"
 ---
 # <a name="obtaining-device-configuration-information-at-irql--passive_level"></a>获取 IRQL = 被动级别的设备配置信息 \_
 

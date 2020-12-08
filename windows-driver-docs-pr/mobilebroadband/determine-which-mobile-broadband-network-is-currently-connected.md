@@ -1,15 +1,14 @@
 ---
 title: 确定当前连接的移动宽带网络
 description: 确定当前连接的移动宽带网络
-ms.assetid: 65a47e79-3976-4f72-b810-982e7222fee3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 323b182aa9c211f79b438be20727e510f44d7a1f
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: cf7cc7c0954280258959590cfce069a2dc29d0ae
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89215298"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96788579"
 ---
 # <a name="determine-which-mobile-broadband-network-is-currently-connected"></a>确定当前连接的移动宽带网络
 

@@ -1,15 +1,14 @@
 ---
 title: Microsoft 蓝牙测试平台支持的硬件
 description: 蓝牙测试平台 (BTP) 支持的硬件。
-ms.assetid: a6beeecb-5967-4e08-bfe2-b8aae26861ad
 ms.date: 2/14/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: d37f5ca8e0c6b715cf9d30f5bd61908fcfb475fe
-ms.sourcegitcommit: 6e6189e3b7f2b376607b507220bd538a296f5b4e
+ms.openlocfilehash: df33c92f3f9821f006837cb41eb4b32ac4d32ba4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/18/2020
-ms.locfileid: "90799790"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96789187"
 ---
 # <a name="bluetooth-testing-platform-supported-hardware"></a>支持蓝牙测试平台的硬件
 
@@ -40,4 +39,4 @@ Traduci 板由[MCCI](https://mcci.com/usb/dev-tools/model-2411/)提供
 
 - [支持 HID 的外设无线收发器](testing-BTP-hw-hid.md)
 - [支持音频的外设无线收发器](testing-BTP-hw-audio.md)
-- [BM.EXE-64-EVB](testing-BTP-hw-bm64.md)
+- [BM-64-EVB 开发板](testing-BTP-hw-bm64.md)

@@ -1,7 +1,6 @@
 ---
 title: GUID_DEVICE_THERMAL_ZONE
 description: GUID_DEVICE_THERMAL_ZONE
-ms.assetid: bbb9abb8-aaff-4f1c-ba8d-96fc5b69676a
 keywords:
 - GUID_DEVICE_THERMAL_ZONE 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: d9229662243afaf0fcee48845e27fae65a825824
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 893bc1aec000505752890bb985843680d3f4dec3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89096369"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96789841"
 ---
 # <a name="guid_device_thermal_zone"></a>GUID_DEVICE_THERMAL_ZONE
 

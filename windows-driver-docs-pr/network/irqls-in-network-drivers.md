@@ -1,18 +1,17 @@
 ---
 title: 网络驱动程序中的 IRQL
 description: 网络驱动程序中的 IRQL
-ms.assetid: d8720084-460e-4b62-90de-abfd96cd6364
 keywords:
 - 网络驱动程序 WDK，IRQLs
 - IRQLs WDK 网络
 ms.date: 11/26/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 09701fa2659a4197c763a197f170656b0faa2357
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: c9f4490c0a2a0c6f99cf5a598512ee1d3893a36f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89215232"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96789761"
 ---
 # <a name="irqls-in-network-drivers"></a>网络驱动程序中的 IRQL
 

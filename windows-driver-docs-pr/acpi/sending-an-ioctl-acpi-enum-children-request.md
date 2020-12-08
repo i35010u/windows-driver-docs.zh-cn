@@ -1,15 +1,14 @@
 ---
 title: 发送 IOCTL_ACPI_ENUM_CHILDREN 请求
 description: 发送 IOCTL_ACPI_ENUM_CHILDREN 请求
-ms.assetid: cbad53dd-4320-4920-9d16-231d0aaae839
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8dfc2deece4da10cb8ad29b202e9e505498e57a2
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: a4026c9fab1cc389ae64db86e7b23dbd99063f6f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89184817"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96789469"
 ---
 # <a name="sending-an-ioctl_acpi_enum_children-request"></a>发送 IOCTL \_ ACPI \_ 枚举 \_ 子请求
 
@@ -34,7 +33,7 @@ ms.locfileid: "89184817"
 
 2.  调用驱动程序提供的 **SendDownStreamIrp** 函数，以同步方式向父设备发送第二个请求。
 
-3.  检查 ACPI 驱动程序是否将**签名**成员设置为 ACPI \_ 枚举 \_ 子 \_ 输出 \_ 缓冲区 \_ 签名，将**NumberOfChildren**设置为一个或多个 (，以指示已) 至少返回一个对象的路径和名称，并将[**IO \_ 状态 \_ 块**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_status_block)的**信息**成员设置为输出缓冲区的已分配大小。
+3.  检查 ACPI 驱动程序是否将 **签名** 成员设置为 ACPI \_ 枚举 \_ 子 \_ 输出 \_ 缓冲区 \_ 签名，将 **NumberOfChildren** 设置为一个或多个 (，以指示已) 至少返回一个对象的路径和名称，并将 [**IO \_ 状态 \_ 块**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_status_block)的 **信息** 成员设置为输出缓冲区的已分配大小。
 
 4.  在输出缓冲区中处理子对象名称的数组。
 

@@ -1,7 +1,6 @@
 ---
 title: DMus 微型端口驱动程序
 description: DMus 微型端口驱动程序
-ms.assetid: a0ce6545-2050-49fb-88b5-a75dcd4c7ebc
 keywords:
 - 音频微型端口驱动程序 WDK，Dmu
 - 微型端口驱动程序 WDK 音频，Dmu
@@ -9,12 +8,12 @@ keywords:
 - Dmu 微型端口驱动程序 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c1dabbeeb1c6ef1abf4b3f898a3f34197bd64b1c
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 6d0b683388491e77241fb0363f7d9a33c73a6a27
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89208081"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96789251"
 ---
 # <a name="dmus-miniport-driver"></a>DMus 微型端口驱动程序
 
@@ -62,7 +61,7 @@ MIDI 硬件设备的 Dmu 微型端口驱动程序应支持两个接口：
 
 设置流的状态。
 
-此外，Dmu 微型端口驱动程序的 [ISynthSinkDMus](/windows-hardware/drivers/ddi/dmusicks/nn-dmusicks-isynthsinkdmus) 接口提供软件合成程序的 DLS 功能。 **ISynthSinkDMus** 继承基接口 **IMXF**中的方法。 **ISynthSinkDMus** 提供了以下附加方法：
+此外，Dmu 微型端口驱动程序的 [ISynthSinkDMus](/windows-hardware/drivers/ddi/dmusicks/nn-dmusicks-isynthsinkdmus) 接口提供软件合成程序的 DLS 功能。 **ISynthSinkDMus** 继承基接口 **IMXF** 中的方法。 **ISynthSinkDMus** 提供了以下附加方法：
 
 [**ISynthSinkDMus::RefTimeToSample**](/windows-hardware/drivers/ddi/dmusicks/nf-dmusicks-isynthsinkdmus-reftimetosample)
 
@@ -80,7 +79,7 @@ MIDI 硬件设备的 Dmu 微型端口驱动程序应支持两个接口：
 
 将示例时钟同步到主时钟。
 
-端口驱动程序的波形接收器调用 **ISynthSinkDMus：： Render** 来读取合成器从其 MIDI 输入流生成的波形 PCM 数据。 有关波形接收器的详细信息，请参阅 [内核模式软件合成程序的波形接收器](a-wave-sink-for-kernel-mode-software-synthesizers.md)。
+端口驱动程序的波形接收器调用 **ISynthSinkDMus：： Render** 来读取合成器从其 MIDI 输入流生成的波形 PCM 数据。 有关波形接收器的详细信息，请参阅 [Kernel-Mode 软件合成程序的波形接收器](a-wave-sink-for-kernel-mode-software-synthesizers.md)。
 
 微型端口驱动程序在 Dmu 端口驱动程序上调用以下接口：
 

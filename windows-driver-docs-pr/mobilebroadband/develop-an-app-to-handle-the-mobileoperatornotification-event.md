@@ -1,15 +1,14 @@
 ---
 title: 开发用于处理 MobileOperatorNotification 事件的应用
 description: 开发用于处理 MobileOperatorNotification 事件的应用
-ms.assetid: 3c483888-8ec4-4270-af3e-ef1efc995171
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ee194fd015736131c5a131e3630af724f7c714dc
-ms.sourcegitcommit: 20eac54e419a594f7cea766ee28f158559dfd79c
+ms.openlocfilehash: 305c91c4af4aa9305ff233c6af2847d757aaadec
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91755030"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96788559"
 ---
 # <a name="develop-an-app-to-handle-the-mobileoperatornotification-event"></a>开发用于处理 MobileOperatorNotification 事件的应用
 
@@ -52,13 +51,13 @@ ms.locfileid: "91755030"
 
 **声明后台任务协定**
 
-1.  在 **解决方案资源管理器**中，双击项目的 appxmanifest.xml 文件。
+1.  在 **解决方案资源管理器** 中，双击项目的 appxmanifest.xml 文件。
 
 2.  在 " **声明** " 选项卡上的 " **可用声明**" 中，选择 " **后台任务** "，然后单击 " **添加**"。
 
 3.  在 " **属性** " 标题下，输入以下应用信息：
 
-    -   在 "**应用设置**" 下的 "**起始页**" 框中，对于使用 JavaScript 和 HTML 的移动宽带应用，请输入用于处理应用中的后台任务的文件名 (例如**backgroundtask.js**) 。
+    -   在 "**应用设置**" 下的 "**起始页**" 框中，对于使用 JavaScript 和 HTML 的移动宽带应用，请输入用于处理应用中的后台任务的文件名 (例如 **backgroundtask.js**) 。
 
     -   在 " **支持的任务类型** " 标题下，单击 " **系统事件** " 复选框。
 
@@ -209,7 +208,7 @@ close();
 
 **启用 toast 通知**
 
-1.  在 **解决方案资源管理器**中，双击项目的 appxmanifest.xml 文件。
+1.  在 **解决方案资源管理器** 中，双击项目的 appxmanifest.xml 文件。
 
 2.  在 " **应用程序 UI** " 选项卡的 " **通知** " 标题下，将 " **支持 Toast** " 设置为 **"是"**。
 
@@ -308,9 +307,9 @@ var settings = Windows.Storage.ApplicationData.current.localSettings;
 ## <a name="span-idstepthreespanspan-idstepthreespanstep-3-handle-the-activation-event"></a><span id="stepthree"></span><span id="STEPTHREE"></span>步骤3：处理激活事件
 
 
-如果 toast 设置了参数，它将通过 **详细信息**传递给应用。
+如果 toast 设置了参数，它将通过 **详细信息** 传递给应用。
 
-在 JavaScript 或 c # 中，可以处理 [**onactivated**](/previous-versions/windows/apps/br212679(v=win.10)) 事件，然后检查传递到事件处理程序的事件参数。 从 toast 激活会传递类型为 [**WebUI. WebUILaunchActivatedEventArgs**](/uwp/api/Windows.UI.WebUI.WebUILaunchActivatedEventArgs)的事件参数。 如果事件参数的 **详细信息** 为 [**windows.applicationmodel.resources.core. ctivationKind**](/uwp/api/Windows.ApplicationModel.Activation.ActivationKind)。**启动**时，应用程序提供启动体验或通知体验，具体取决于事件参数的 **详细信息。 argument** 属性是否设置为 **null**。
+在 JavaScript 或 c # 中，可以处理 [**onactivated**](/previous-versions/windows/apps/br212679(v=win.10)) 事件，然后检查传递到事件处理程序的事件参数。 从 toast 激活会传递类型为 [**WebUI. WebUILaunchActivatedEventArgs**](/uwp/api/Windows.UI.WebUI.WebUILaunchActivatedEventArgs)的事件参数。 如果事件参数的 **详细信息** 为 [**windows.applicationmodel.resources.core. ctivationKind**](/uwp/api/Windows.ApplicationModel.Activation.ActivationKind)。**启动** 时，应用程序提供启动体验或通知体验，具体取决于事件参数的 **详细信息。 argument** 属性是否设置为 **null**。
 
 **JavaScript**
 
@@ -338,7 +337,8 @@ function activated(eventArgs)
 
 前台应用还可以注册在后台任务完成时通知完成处理程序。 完成状态或在后台任务的 **Run** 方法中发生的任何异常将传递到前台应用程序中的完成处理程序。 如果在任务完成时该应用程序被挂起，则它会在下次恢复应用程序时收到完成通知。 如果应用处于 **终止** 状态，则不会接收到完成通知。 如果后台任务需要保留已成功运行的信息，则它必须通过使用状态管理器或其他方法（例如，应用程序在返回到 **运行** 状态时可以读取的文件）来保存信息。
 
-**重要提示**   尽管移动运营商背景事件由系统自动注册到应用程序，但应用程序仍需要至少运行一次，才能注册到后台完成或进度处理程序。
+**重要说明**  
+尽管移动运营商背景事件由系统自动注册到应用程序，但应用程序仍需要至少运行一次，才能注册到后台完成或进度处理程序。
 
  
 
@@ -428,11 +428,11 @@ function CompleteHandler(task) {
 
 对于用户，如果连接了移动宽带设备，Windows 8、Windows 8.1 和 Windows 10 会自动安装移动宽带应用和关联的服务元数据，并注册在服务元数据中定义的后台任务。 但是，在 Windows 8.1 中，应用程序不会自动固定到 "开始" 屏幕。
 
-开发人员可以通过按**F5**键 (或右键单击并在桌面上的 "**设备和打印机**" 窗口中选择 "**刷新**) ，手动触发 windows 8、Windows 8.1 和 windows 10 来分析服务元数据并注册后台任务。 仅当部署了应用时，通过服务元数据分析的后台任务注册才会成功。
+开发人员可以通过按 **F5** 键 (或右键单击并在桌面上的 "**设备和打印机**" 窗口中选择 "**刷新**) ，手动触发 windows 8、Windows 8.1 和 windows 10 来分析服务元数据并注册后台任务。 仅当部署了应用时，通过服务元数据分析的后台任务注册才会成功。
 
 ### <a name="span-idverify_that_background_tasks_are_correctly_registered_spanspan-idverify_that_background_tasks_are_correctly_registered_spanspan-idverify_that_background_tasks_are_correctly_registered_spanverify-that-background-tasks-are-correctly-registered"></a><span id="Verify_that_background_tasks_are_correctly_registered_"></span><span id="verify_that_background_tasks_are_correctly_registered_"></span><span id="VERIFY_THAT_BACKGROUND_TASKS_ARE_CORRECTLY_REGISTERED_"></span>验证是否正确注册了后台任务
 
-开发人员可以通过查看 **应用程序和服务日志 \\ Microsoft \\ Windows \\ DeviceSetupManager**下的事件日志来验证 (DSM) 是否已正确分析了服务元数据。
+开发人员可以通过查看 **应用程序和服务日志 \\ Microsoft \\ Windows \\ DeviceSetupManager** 下的事件日志来验证 (DSM) 是否已正确分析了服务元数据。
 
 1.  打开事件查看器。
 
@@ -462,7 +462,7 @@ function CompleteHandler(task) {
 
 4.  右键单击 " **诊断日志** "，然后选择 " **启用日志**"。
 
-启用日志后，成功执行后台任务会导致事件**ID = 1**的事件，该事件具有以下描述： "具有入口点 &lt; 后台 \_ 任务 \_ 命名空间 \_ 名称的 &gt; 后台任务实例。 &lt;\_ \_ \_ &gt; 已在会话1中创建了后台任务类名称和名称 MobileOperatorNotificationHandler，并给定了 ID {11111111-1111-1111-1111-111111111111} "。
+启用日志后，成功执行后台任务会导致事件 **ID = 1** 的事件，该事件具有以下描述： "具有入口点 &lt; 后台 \_ 任务 \_ 命名空间 \_ 名称的 &gt; 后台任务实例。 &lt;\_ \_ \_ &gt; 已在会话1中创建了后台任务类名称和名称 MobileOperatorNotificationHandler，并给定了 ID {11111111-1111-1111-1111-111111111111} "。
 
 如果未运行后台任务，请首先验证服务元数据中指定的后台任务的名称是否与包的 AppXManifest.xml 文件中的名称匹配。 验证在部署应用程序后，将触发分析服务元数据并插入移动宽带设备。
 

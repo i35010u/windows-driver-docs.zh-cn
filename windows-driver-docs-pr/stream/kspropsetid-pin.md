@@ -1,15 +1,14 @@
 ---
 title: KSPROPSETID \_ Pin
 description: KSPROPSETID \_ Pin
-ms.assetid: a74a9cb2-2809-4e03-95da-71eeb5f079e9
 ms.date: 06/26/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 18f8c643ed003556f0d76f69a3d72b9a7ff748bf
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 5dbbea6116e9bd7e12ea4c79ed259177621bc059
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89185317"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96789539"
 ---
 # <a name="kspropsetid_pin"></a>KSPROPSETID \_ Pin
 

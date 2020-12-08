@@ -1,7 +1,6 @@
 ---
 title: 标头文件更改
 description: 标头文件更改
-ms.assetid: 9212aa8d-bb11-4ade-a70c-274a7ffe83ef
 keywords:
 - 数据格式化 WDK 音频
 - 格式化 WDK 音频、数据
@@ -26,19 +25,19 @@ keywords:
 - 数据格式化 WDK 音频，头文件
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b69796f4c6dcf613dedd74d574bfd465fddf28c5
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 1c0c49cd3c21901582b295bfa42eef1ea496f8bd
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89209169"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96790103"
 ---
 # <a name="header-file-changes"></a>标头文件更改
 
 
 Windows 驱动程序工具包 (WDK) 包含两个标头文件，用于定义 Windows 多媒体控制面板支持的扬声器配置：
 
--   Ksmedia 定义[**KSPROPERTY \_ 音频 \_ 通道 \_ config**](./ksproperty-audio-channel-config.md)属性请求所使用的[**KSAUDIO \_ 通道 \_ 配置**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksaudio_channel_config)结构的通道掩码。
+-   Ksmedia 定义 [**KSPROPERTY \_ 音频 \_ 通道 \_ config**](./ksproperty-audio-channel-config.md)属性请求所使用的 [**KSAUDIO \_ 通道 \_ 配置**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksaudio_channel_config)结构的通道掩码。
 
 -   Dsound 定义可提交到 **IDirectSound：： SetSpeakerConfig** 方法的发言人配置标识符的列表。 有关此方法的详细信息，请参阅 Windows SDK 文档。
 
@@ -117,7 +116,7 @@ Windows 驱动程序工具包 (WDK) 包含两个标头文件，用于定义 Wind
 
 -   支持值为0x63F 的新通道掩码。 此通道掩码代表7.1 家庭影院扬声器配置。
 
--   **注意**   在 Windows Vista 和更高版本的 Windows 中， \_ \_ 不再支持 KSAUDIO 扬声器7POINT1 扬声器配置。 因此，它不是控制面板中的可用选项。
+-   **注意**   在 Windows Vista 和更高版本的 Windows 中， \_ \_ 不再支持 KSAUDIO 扬声器7POINT1 扬声器配置。 因此，它不是控制面板中的可用选项。
 
      
 
@@ -132,7 +131,7 @@ Windows 驱动程序工具包 (WDK) 包含两个标头文件，用于定义 Wind
 
 DSSPEAKER \_ 7POINT1 \_ 环绕在 "控制面板 7.1" 中， DSSPEAKER \_ 7POINT1 和 DSSPEAKER \_ 7POINT1 \_ 都是同一7.1 范围配置发言人配置的名称。
 
-有关 DirectSound 的扬声器配置的详细信息，请参阅 [DirectSound 发言人-配置设置](directsound-speaker-configuration-settings.md)。
+有关 DirectSound 的扬声器配置的详细信息，请参阅 [DirectSound Speaker-Configuration 设置](directsound-speaker-configuration-settings.md)。
 
  
 

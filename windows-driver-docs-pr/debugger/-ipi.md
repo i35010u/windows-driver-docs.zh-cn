@@ -1,9 +1,8 @@
 ---
 title: ipi
-description: Ipi 扩展显示指定的处理器的 interprocessor 中断 (IPI) 状态。
-ms.assetid: 2727d429-82f5-44a6-943b-0a3f2d3385a3
+description: Ipi 扩展显示指定处理器 (IPI) 状态的 interprocessor 中断。
 keywords:
-- IPI （interprocessor 中断）
+- 'IPI (interprocessor 中断) '
 - ipi Windows 调试
 ms.date: 05/23/2017
 topic_type:
@@ -13,29 +12,29 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 44ebc77341bacc9f3a67a9fe968686c835d1a6b0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7f171b58474a1c77e763d1c9992c41d253dbf966
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63336401"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96788935"
 ---
 # <a name="ipi"></a>!ipi
 
 
-**！ Ipi**扩展显示指定处理器 interprocessor 中断 (IPI) 的状态。
+**！ Ipi** 扩展显示指定处理器 (ipi) 状态的 interprocessor 中断。
 
 ```dbgcmd
 !ipi [Processor]
 ```
 
-## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>参数
+## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>Parameters
 
 
-<span id="_______Processor______"></span><span id="_______processor______"></span><span id="_______PROCESSOR______"></span> *Processor*   
-指定一个处理器。 如果*处理器*是省略，将显示每个处理器的 IPI 状态。
+<span id="_______Processor______"></span><span id="_______processor______"></span><span id="_______PROCESSOR______"></span>*处理器*   
+指定处理器。 如果省略了 *processor* ，则显示每个处理器的 IPI 状态。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 <table>
 <colgroup>
@@ -56,16 +55,16 @@ ms.locfileid: "63336401"
 
  
 
-此扩展命令仅用于基于 x86 的目标计算机。
+此扩展命令只能与基于 x86 的目标计算机一起使用。
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-Ipi 有关的信息，请参阅*Microsoft Windows Internals*由 Mark Russinovich 和 David solomon 合著。
+有关 Ipi 的信息，请参阅 Russinovich 和 David 的 *Microsoft Windows 内部机制* 。
 
 <a name="remarks"></a>备注
 -------
 
-下面是输出的来自此扩展插件示例：
+下面是此扩展的输出示例：
 
 ```dbgcmd
 0: kd> !ipi

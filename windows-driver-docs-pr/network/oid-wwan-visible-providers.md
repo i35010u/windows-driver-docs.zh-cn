@@ -1,16 +1,15 @@
 ---
 title: OID_WWAN_VISIBLE_PROVIDERS
 description: OID_WWAN_VISIBLE_PROVIDERS 返回当前在 MB 设备范围内可见的网络提供程序列表。
-ms.assetid: 4dfd4477-6332-4163-8b3e-a1604b11d175
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_WWAN_VISIBLE_PROVIDERS 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: f308d3a5a6acd184b5971320119a704eff0c379d
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 21b11a2cc123b8b97b099cc4ea3d98e833151881
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89206295"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96789657"
 ---
 # <a name="oid_wwan_visible_providers"></a>OID \_ WWAN \_ 可见 \_ 提供程序
 
@@ -21,7 +20,7 @@ OID \_ WWAN \_ 可见 \_ 提供程序返回当前在 MB 设备范围内可见的
 
 微型端口驱动程序必须异步处理查询请求，最初 \_ 返回 \_ \_ 原始请求所需的 ndis 状态指示，稍后发送 [**ndis \_ 状态 " \_ wwan 可见提供 \_ \_ 程序**](ndis-status-wwan-visible-providers.md) 状态通知"，其中包含 [**ndis \_ WWAN \_ 可见 \_ 提供**](/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_visible_providers) 程序的状态通知，以提供有关完成查询请求时可见网络提供程序的信息。
 
-*查询* 请求将 NDIS \_ WWAN \_ GET \_ VISIBLE \_ PROVIDERS 结构指定为输入。 如果将**Action** wwan \_ 获取可见提供程序中的操作成员 \_ \_ 设置为 wwan \_ 获取 \_ 可见提供程序，则 \_ \_ 所有微型端口都应返回所有可见的提供程序。 如果将**Action** wwan \_ 获取可见提供程序中的操作成员 \_ \_ 设置为 wwan \_ 获取 \_ 可见提供程序多， \_ \_ 微型端口应只返回可以设置为 home 提供程序的可见多运营商提供程序。
+*查询* 请求将 NDIS \_ WWAN \_ GET \_ VISIBLE \_ PROVIDERS 结构指定为输入。 如果将 **Action** wwan \_ 获取可见提供程序中的操作成员 \_ \_ 设置为 wwan \_ 获取 \_ 可见提供程序，则 \_ \_ 所有微型端口都应返回所有可见的提供程序。 如果将 **Action** wwan \_ 获取可见提供程序中的操作成员 \_ \_ 设置为 wwan \_ 获取 \_ 可见提供程序多， \_ \_ 微型端口应只返回可以设置为 home 提供程序的可见多运营商提供程序。
 
 设备返回的可见提供程序列表应为每个提供程序正确设置提供程序状态。 例如，应将多首选提供程序标记为 WWAN \_ 提供程序 \_ 状态 \_ 首选 \_ 多，当前的 home 提供程序（如果有任何标记为 wwan \_ 提供程序 \_ 状态 \_ home），当前的已注册提供程序（如果有）应标记为 wwan \_ 提供程序 \_ 状态 \_ 。
 
@@ -62,7 +61,7 @@ WWAN PROVIDER2 结构的 **Rssi** 和 **ErrorRate** 成员 \_ 应设置为（如
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**NDIS \_ WWAN \_ 可见 \_ 提供程序**](/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_visible_providers)

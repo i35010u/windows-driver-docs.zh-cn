@@ -1,9 +1,8 @@
 ---
-title: Time 元素
-description: 所需的时间元素指定一个条件发生的时间。
-ms.assetid: 1a10f6b4-1fcd-4697-9eb4-d58cca9c4a23
+title: 时间元素
+description: 所需时间元素指定条件发生的时间。
 keywords:
-- Time 元素成像设备
+- 时间元素图像处理设备
 topic_type:
 - apiref
 api_name:
@@ -12,19 +11,19 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: faa632366a8f5496e896493d6866f450dd93fa94
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0e233c8f459ad7e362189c72c8d165211f02fab9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63325395"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96789855"
 ---
-# <a name="time-element"></a>Time 元素
+# <a name="time-element"></a>时间元素
 
 
-所需**时间**元素指定一个条件发生的时间。
+所需 **时间** 元素指定条件发生的时间。
 
-<a name="usage"></a>用法
+<a name="usage"></a>使用情况
 -----
 
 ```xml
@@ -41,12 +40,12 @@ ms.locfileid: "63325395"
 <a name="text-value"></a>文本值
 ----------
 
-必需。 DateTime 类型的任何有效的值。 有关日期时间的详细信息，请参阅 XML 架构第 2 部分：数据类型第二版。**dateTimedateTime**
+必需。 DateTime 类型的任何有效值。 有关日期时间的详细信息，请参阅 XML 架构第2部分：数据类型第二版。**dateTimedateTime**
 
 ## <a name="child-elements"></a>子元素
 
 
-没有子元素。
+没有任何子元素。
 
 ## <a name="parent-elements"></a>父元素
 
@@ -73,7 +72,7 @@ ms.locfileid: "63325395"
 <a name="remarks"></a>备注
 -------
 
-指定**时间**取决于扫描程序的内部时钟。
+指定的 **时间** 取决于扫描仪的内部时钟。
 
 ## <a name="see-also"></a>请参阅
 

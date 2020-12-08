@@ -1,7 +1,6 @@
 ---
 title: imgreloc
-description: Imgreloc 扩展显示的每个已加载模块的地址，并指示其以前的地址，它们已重新定位前。
-ms.assetid: 79b729bd-7e4f-4167-b049-8a5c23cb8787
+description: Imgreloc 扩展显示每个已加载模块的地址，并在重定位之前指示其以前的地址。
 keywords:
 - imgreloc Windows 调试
 ms.date: 05/23/2017
@@ -12,29 +11,29 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: e3ab5678381a6cca0945f76a46dc13bc1c184445
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f22202a3c274354c34c31db36c377b08bea6f9ff
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63336424"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96788971"
 ---
 # <a name="imgreloc"></a>!imgreloc
 
 
-**！ Imgreloc**扩展显示的每个已加载模块的地址，并指示其以前的地址，它们已重新定位前。
+**！ Imgreloc** extension 显示每个已加载模块的地址，并在重定位之前指示其以前的地址。
 
 ```dbgcmd
 !imgreloc Address 
 ```
 
-## <a name="span-idddkimgrelocdbgspanspan-idddkimgrelocdbgspanparameters"></a><span id="ddk__imgreloc_dbg"></span><span id="DDK__IMGRELOC_DBG"></span>参数
+## <a name="span-idddk__imgreloc_dbgspanspan-idddk__imgreloc_dbgspanparameters"></a><span id="ddk__imgreloc_dbg"></span><span id="DDK__IMGRELOC_DBG"></span>参数
 
 
-<span id="_______Address______"></span><span id="_______address______"></span><span id="_______ADDRESS______"></span> *Address*   
+<span id="_______Address______"></span><span id="_______address______"></span><span id="_______ADDRESS______"></span>*地址*   
 指定映像的基址。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 <table>
 <colgroup>
@@ -58,7 +57,7 @@ ms.locfileid: "63336424"
 <a name="remarks"></a>备注
 -------
 
-下面是一个示例：
+以下是示例：
 
 ```dbgcmd
 0:000> !imgreloc 00400000

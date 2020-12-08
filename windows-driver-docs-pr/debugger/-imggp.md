@@ -1,10 +1,9 @@
 ---
 title: imggp
-description: Imggp 扩展显示全局指针 (GP) 目录条目值的 64 位映像。
-ms.assetid: fa566b11-ac41-442a-b843-decd64bd596e
+description: Imggp 扩展显示64位映像 (GP 的全局指针) 目录条目值。
 keywords:
-- 全局指针 (GP)
-- GP （全局指针）
+- '全局指针 (GP) '
+- 'GP (全局指针) '
 - imggp Windows 调试
 ms.date: 05/23/2017
 topic_type:
@@ -14,29 +13,29 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 0232df49df5c7036ca3bd715738ad0ef30d83dc8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ff2c85ce02ecb660b99b17444add0931bab3b850
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63336439"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96788969"
 ---
 # <a name="imggp"></a>!imggp
 
 
-**！ Imggp**扩展显示全局指针 (GP) 目录条目值的 64 位映像。
+**！ Imggp** extension 显示64位映像 (GP 的全局指针) 目录条目值。
 
 ```dbgcmd
 !imggp Address 
 ```
 
-## <a name="span-idddkimggpdbgspanspan-idddkimggpdbgspanparameters"></a><span id="ddk__imggp_dbg"></span><span id="DDK__IMGGP_DBG"></span>参数
+## <a name="span-idddk__imggp_dbgspanspan-idddk__imggp_dbgspanparameters"></a><span id="ddk__imggp_dbg"></span><span id="DDK__IMGGP_DBG"></span>参数
 
 
-<span id="_______Address______"></span><span id="_______address______"></span><span id="_______ADDRESS______"></span> *Address*   
+<span id="_______Address______"></span><span id="_______address______"></span><span id="_______ADDRESS______"></span>*地址*   
 指定映像的基址。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 <table>
 <colgroup>

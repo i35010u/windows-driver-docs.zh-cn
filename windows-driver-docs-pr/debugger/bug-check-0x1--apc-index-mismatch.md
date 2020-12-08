@@ -1,7 +1,6 @@
 ---
 title: Bug 检查 0x1 APC_INDEX_MISMATCH
 description: 0x00000001.
-ms.assetid: 01e64516-809c-49ce-9aaa-b4e439ac575b
 keywords:
 - Bug 检查 0x1 APC_INDEX_MISMATCH
 - APC_INDEX_MISMATCH
@@ -13,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: aedf1457ce4c157eb6341daae3a5f1cbe3204737
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: cce3f3f5660358770a9c0714ce6c64893b1979e0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89209420"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96788861"
 ---
 # <a name="bug-check-0x1-apc_index_mismatch"></a>Bug 检查0x1： APC \_ 索引 \_ 不匹配
 
@@ -38,7 +37,7 @@ APC \_ 索引 \_ 不匹配 bug 检查的值为0x00000001。 这表示异步过�
 <thead>
 <tr class="header">
 <th align="left">参数</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -65,7 +64,7 @@ APC \_ 索引 \_ 不匹配 bug 检查的值为0x00000001。 这表示异步过�
 <a name="cause"></a>原因
 -----
 
-此错误检查的最常见原因是文件系统或驱动程序的调用序列不匹配，无法禁用和重新启用 Apc。 Key data 项是*Thread* &gt; **CombinedApcDisable**字段。 **CombinedApcDisable**字段包含两个单独的16位字段： **SpecialApcDisable**和**KernelApcDisable**。 任何一个字段的负值都表明驱动程序已分别禁用特殊的或普通的 Apc () 而不重新启用它们。 正值表示驱动程序已启用特殊或普通 Apc 的次数过多。
+此错误检查的最常见原因是文件系统或驱动程序的调用序列不匹配，无法禁用和重新启用 Apc。 Key data 项是 *Thread* &gt; **CombinedApcDisable** 字段。 **CombinedApcDisable** 字段包含两个单独的16位字段： **SpecialApcDisable** 和 **KernelApcDisable**。 任何一个字段的负值都表明驱动程序已分别禁用特殊的或普通的 Apc () 而不重新启用它们。 正值表示驱动程序已启用特殊或普通 Apc 的次数过多。
 
 
 <a name="resolution"></a>解决方法

@@ -1,15 +1,14 @@
 ---
 title: 音频信号处理模式
 description: 驱动程序声明每个设备支持的音频信号处理模式。
-ms.assetid: 104275F8-2302-484B-B673-7448CAA1F793
 ms.date: 05/14/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: e851b3c4f40658862b29463e488c84fec8b33859
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 9e695f4a8b7789dd250c2a63e6420987613178b5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89208249"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96789377"
 ---
 # <a name="audio-signal-processing-modes"></a>音频信号处理模式
 
@@ -19,14 +18,14 @@ ms.locfileid: "89208249"
 
 应用程序)  (选定的音频类别映射到 (驱动程序) 定义的音频模式。 Windows 定义了七种音频信号处理模式。 Oem 和 Ihv 可以确定要实现的模式。 建议 Ihv/Oem 利用新模式来添加音频效果，以优化音频信号以提供最佳用户体验。 下表汇总了这些模式。
 
-|“模式”|呈现/捕获|说明|
+|“模式”|呈现/捕获|描述|
 |----|----|----|
-|原始|两者|Raw 模式指定不应对流应用任何信号处理。 应用程序可以请求完全不动并执行其自己的信号处理的原始流。|
-|默认|两者|此模式定义默认音频处理。|
+|原始|推送、请求和匿名|Raw 模式指定不应对流应用任何信号处理。 应用程序可以请求完全不动并执行其自己的信号处理的原始流。|
+|默认|推送、请求和匿名|此模式定义默认音频处理。|
 |部|呈现|电影音频播放|
-|许可证|两者|音乐音频播放 (大多数媒体流的默认值) |
+|许可证|推送、请求和匿名|音乐音频播放 (大多数媒体流的默认值) |
 |语速|捕获|人为语音捕获 (例如，Cortana 的输入) |
-|联系|两者|VOIP 渲染和捕获 (例如 Skype、Lync) |
+|联系|推送、请求和匿名|VOIP 渲染和捕获 (例如 Skype、Lync) |
 |提醒|呈现|铃声、警报、警报等。|
 
 \* Windows 10 中的新增项。
@@ -45,7 +44,7 @@ ms.locfileid: "89208249"
 
 为了通知系统有关音频流的使用情况，应用程序可以选择使用特定的音频流类别标记流。 应用程序可以在创建音频流后使用任意音频 Api 设置音频类别。 在 Windows 10 中，有九个音频流类别。
 
-|类别|说明|
+|Category|描述|
 |----|----|
 | 电影          | 带有对话框 (的电影、视频替换 ForegroundOnlyMedia)                                               |
 | 媒体          | Media 播放 (的默认类别替换 BackgroundCapableMedia)                                  |
@@ -143,13 +142,13 @@ DEFINE_GUIDSTRUCT("E1F89EB5-5F46-419B-967B-FF6770B98401", KSATTRIBUTEID_AUDIOSIG
 #define KSATTRIBUTEID_AUDIOSIGNALPROCESSING_MODE DEFINE_GUIDNAMED(KSATTRIBUTEID_AUDIOSIGNALPROCESSING_MODE)
 ```
 
-KSATTRIBUTEID \_ AUDIOSIGNALPROCESSING \_ 模式用于模式感知驱动程序和包含[**KSATTRIBUTE \_ 列表**](/windows-hardware/drivers/ddi/ks/ns-ks-ksattribute_list)的[**KSDATARANGE**](/previous-versions/ff561658(v=vs.85))结构。 此列表中的单个元素为 [**KSATTRIBUTE**](/windows-hardware/drivers/ddi/ks/ns-ks-ksattribute)。 **KSATTRIBUTE**结构的属性成员设置为 KSATTRIBUTEID \_ AUDIOSIGNALPROCESSING \_ 模式。
+KSATTRIBUTEID \_ AUDIOSIGNALPROCESSING \_ 模式用于模式感知驱动程序和包含 [**KSATTRIBUTE \_ 列表**](/windows-hardware/drivers/ddi/ks/ns-ks-ksattribute_list)的 [**KSDATARANGE**](/previous-versions/ff561658(v=vs.85))结构。 此列表中的单个元素为 [**KSATTRIBUTE**](/windows-hardware/drivers/ddi/ks/ns-ks-ksattribute)。 **KSATTRIBUTE** 结构的属性成员设置为 KSATTRIBUTEID \_ AUDIOSIGNALPROCESSING \_ 模式。
 
 ## <a name="audio-effects"></a>音频效果
 
 以下音频效果可用于 Windows 10。
 
-|音频效果|说明|
+|音频效果|描述|
 |----|----|
 |) 的声音回声取消 (|声音回声取消 (AEC) 在音频流中已经存在后，通过删除回声来改善音频质量。|
 |NS)  (噪音抑制|噪音抑制 (NS) 会在音频流中出现干扰，如 humming 和蜂鸣。|

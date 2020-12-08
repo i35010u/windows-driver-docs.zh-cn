@@ -1,17 +1,16 @@
 ---
 title: 支持动态资源
 description: 支持动态资源
-ms.assetid: d0da60d4-fce6-45b7-bf4f-3cf049dd5f29
 keywords:
-- 动态资源 WDK DirectX 9.0
+- 动态资源 WDK DirectX 9。0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6c086837fbc8fa2f2fcf8babf5f988a2d84ac5ec
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f78c3b41a1e49583d621abe2fc47b14fb7e7de26
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63372740"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96789961"
 ---
 # <a name="supporting-dynamic-resources"></a>支持动态资源
 

@@ -1,7 +1,6 @@
 ---
 title: 音频筛选器、引脚和节点
 description: 音频筛选器、引脚和节点
-ms.assetid: 5f30703c-bf33-49bb-bce2-990ad5b54a9c
 keywords:
 - WDM 音频驱动程序 WDK，筛选器
 - 音频驱动程序 WDK，筛选器
@@ -12,12 +11,12 @@ keywords:
 - 筛选 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e6a098199e3f39cbf2e819e85af38d8d055fa113
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 712597b85686b6b8336ff20c89db05def0759548
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89208341"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96789407"
 ---
 # <a name="audio-filters-pins-and-nodes"></a>音频筛选器、引脚和节点
 

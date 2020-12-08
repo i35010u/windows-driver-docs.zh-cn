@@ -1,20 +1,19 @@
 ---
 title: EFI_USB_BOS_DESCRIPTOR
 description: EFI_USB_BOS_DESCRIPTOR
-ms.assetid: A12E3678-E5B6-4AB0-8F28-FCDA57C9D397
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: deb849b3b17e57852134e697e4a50d798bea5b11
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: bbad448adc9d1f395f6c3e4967d70eae1b60658c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63337756"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96789077"
 ---
-# <a name="efiusbbosdescriptor"></a>EFI\_USB\_BOS\_描述符
+# <a name="efi_usb_bos_descriptor"></a>EFI \_ USB \_ BOS \_ 描述符
 
 
-**EFI\_USB\_BOS\_描述符**结构提供了有关 USB 函数驱动程序的对象二进制存储区 (BOS) 的信息。
+**EFI \_ usb \_ BOS \_ 描述符** 结构提供有关二进制对象存储 (BOS) 到 USB 函数驱动程序的信息。
 
 ## <a name="syntax"></a>语法
 
@@ -32,17 +31,17 @@ typedef struct
 ## <a name="members"></a>成员
 
 
-<a href="" id="length"></a>**长度**  
+<a href="" id="length"></a>**长短**  
 描述符的大小。
 
 <a href="" id="descriptortype"></a>**DescriptorType**  
 BOS 描述符类型。
 
 <a href="" id="totallength"></a>**TotalLength**  
-此说明符和的所有子描述符的长度。
+此描述符及其所有子说明符的长度。
 
 <a href="" id="numdevicecaps"></a>**NumDeviceCaps**  
-BOS 中的单独的设备功能说明符的数目。
+BOS 中的单独设备功能描述符的数目。
 
 ## <a name="requirements"></a>要求
 

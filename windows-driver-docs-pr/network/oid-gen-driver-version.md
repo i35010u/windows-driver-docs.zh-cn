@@ -1,21 +1,20 @@
 ---
 title: OID_GEN_DRIVER_VERSION
-description: 为查询，OID_GEN_DRIVER_VERSION OID 指定 NDIS 版本的微型端口驱动程序在使用中。
-ms.assetid: 8c3ac2ab-a83a-44d2-88bc-bd1468a0a59b
+description: 作为查询，OID_GEN_DRIVER_VERSION OID 指定微型端口驱动程序使用的 NDIS 版本。
 ms.date: 08/08/2017
-keywords: -从 Windows Vista 开始 OID_GEN_DRIVER_VERSION 网络驱动程序
+keywords: -从 Windows Vista 开始 OID_GEN_DRIVER_VERSION 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 6ec8884119840a4f8af74f42663abb5368f54ff9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fd2f6ef9192106dc67c2ab01290b2cc1e11dd803
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63381355"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96789661"
 ---
-# <a name="oidgendriverversion"></a>OID\_GEN\_驱动程序\_版本
+# <a name="oid_gen_driver_version"></a>OID \_ 生成 \_ 驱动程序 \_ 版本
 
 
-为查询，OID\_GEN\_驱动程序\_版本 OID 指定 NDIS 版本中使用的微型端口驱动程序。
+作为查询，OID 生成 \_ \_ 驱动程序 \_ 版本 oid 指定微型端口驱动程序使用的 NDIS 版本。
 
 **版本信息**
 
@@ -37,9 +36,9 @@ ms.locfileid: "63381355"
 <a name="remarks"></a>备注
 -------
 
-NDIS NDIS 6.0 和更高版本的微型端口驱动程序处理此 OID。
+NDIS 处理 NDIS 6.0 和更高版本的小型小型驱动程序的此 OID。
 
-高字节是主版本号;低位字节是次版本号。
+高字节是主版本号;低字节是次版本号。
 
 <a name="requirements"></a>要求
 ------------
@@ -51,8 +50,8 @@ NDIS NDIS 6.0 和更高版本的微型端口驱动程序处理此 OID。
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Ntddndis.h （包括 Ndis.h）</td>
+<td><p>标头</p></td>
+<td>Ntddndis (包含 Ndis .h) </td>
 </tr>
 </tbody>
 </table>

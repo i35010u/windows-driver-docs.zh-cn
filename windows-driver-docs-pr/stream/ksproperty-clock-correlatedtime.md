@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ 时钟 \_ CORRELATEDTIME
 description: 客户端使用 KSPROPERTY \_ 时钟 \_ CORRELATEDTIME 属性将时钟上的当前演示时间与当前系统时间进行比较。
-ms.assetid: 12c377ec-b000-4256-8765-4da46208088d
 keywords:
 - KSPROPERTY_CLOCK_CORRELATEDTIME 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b55264a77c36466ce52828edaca308cfd76866c6
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 710416741030c088318dfebea6cf7dc4be6baf75
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106324"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96789559"
 ---
 # <a name="ksproperty_clock_correlatedtime"></a>KSPROPERTY \_ 时钟 \_ CORRELATEDTIME
 
@@ -84,7 +83,7 @@ KSCORRELATED \_ 时间结构包含 **时间** 成员中的当前时钟时间和 
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSPROPERTY \_ 时钟 \_ PHYSICALTIME**](ksproperty-clock-physicaltime.md)

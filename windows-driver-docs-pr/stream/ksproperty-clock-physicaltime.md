@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ 时钟 \_ PHYSICALTIME
 description: 客户端使用 KSPROPERTY \_ 时钟的 " \_ 物理 \_ 时间" 属性来确定时钟的当前物理时间。
-ms.assetid: cc747fd4-1df0-4d44-b43e-b43532c1228b
 keywords:
 - KSPROPERTY_CLOCK_PHYSICALTIME 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f8d92c0ad249ee49b547b17411fc962430b89404
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 6b4fc446d28cff6427d56ef90f2e68fe67cfcfca
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103296"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96789555"
 ---
 # <a name="ksproperty_clock_physicaltime"></a>KSPROPERTY \_ 时钟 \_ PHYSICALTIME
 
@@ -86,7 +85,7 @@ ms.locfileid: "90103296"
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSPROPERTY \_ 时钟 \_ CORRELATEDPHYSICALTIME**](ksproperty-clock-correlatedphysicaltime.md)

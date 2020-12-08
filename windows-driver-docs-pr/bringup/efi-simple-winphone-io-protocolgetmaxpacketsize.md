@@ -1,20 +1,19 @@
 ---
 title: EFI_SIMPLE_WINPHONE_IO_PROTOCOL.GetMaxPacketSize
 description: EFI_SIMPLE_WINPHONE_IO_PROTOCOL.GetMaxPacketSize
-ms.assetid: 8808bb5d-e00d-4b19-87ad-4a071a896e22
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 473395ba84360980f2a279e56a2a1b420fb3e21e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 39efaa721c83f4cfd3ade3dd6a89093e97d43038
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63337793"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96789079"
 ---
-# <a name="efisimplewinphoneioprotocolgetmaxpacketsize"></a>EFI\_SIMPLE\_WINPHONE\_IO\_PROTOCOL.GetMaxPacketSize
+# <a name="efi_simple_winphone_io_protocolgetmaxpacketsize"></a>EFI \_ 简单 \_ WINPHONE \_ IO \_ 协议。GetMaxPacketSize
 
 
-**GetMaxPacketSize**函数返回的最大可以容纳在单个的字节数读取或写入操作。
+**GetMaxPacketSize** 函数返回一个读取或写入操作中可容纳的最大字节数。
 
 ## <a name="syntax"></a>语法
 
@@ -28,14 +27,14 @@ EFI_STATUS
   );
 ```
 
-## <a name="parameters"></a>Parameters
+## <a name="parameters"></a>参数
 
 
 <a href="" id="this"></a>*此*  
-指向 EFI\_简单\_WINPHONE\_IO\_协议实例。
+指向 EFI \_ 简单 \_ WINPHONE \_ IO \_ 协议实例的指针。
 
 <a href="" id="maxpacketsize"></a>*MaxPacketSize*  
-支持的最大数据包大小，以字节为单位。
+支持的最大数据包大小（以字节为单位）。
 
 ## <a name="return-values"></a>返回值
 
@@ -54,7 +53,7 @@ EFI_STATUS
 <tbody>
 <tr class="odd">
 <td><p><strong>EFI_SUCCESS</strong></p></td>
-<td><p>成功返回的函数</p></td>
+<td><p>函数已成功返回</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>EFI_INVALID_PARAMETER</strong></p></td>
@@ -62,11 +61,11 @@ EFI_STATUS
 </tr>
 <tr class="odd">
 <td><p><strong>EFI_DEVICE_ERROR</strong></p></td>
-<td><p>物理设备报告了错误。</p></td>
+<td><p>物理设备报告了一个错误。</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>EFI_NOT_READY</strong></p></td>
-<td><p>物理设备是正忙还是未准备好处理此请求</p></td>
+<td><p>物理设备处于繁忙状态或尚未准备好处理此请求</p></td>
 </tr>
 </tbody>
 </table>

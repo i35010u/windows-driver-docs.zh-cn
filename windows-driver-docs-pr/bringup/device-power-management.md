@@ -1,15 +1,14 @@
 ---
 title: 设备电源管理
 description: ACPI 6.3 规范定义一组命名空间对象，以指定设备的设备电源信息。
-ms.assetid: F57AD5A0-F459-4A20-BDBE-87C30CF957B3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a7601b07b924cd1ab89de8fa1a762489ca376a73
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 2c8ce50afb4e3c02512bffbc035e016468cf4212
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89187657"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96789117"
 ---
 # <a name="device-power-management"></a>设备电源管理
 

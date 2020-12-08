@@ -1,19 +1,18 @@
 ---
 title: 文件系统中的安全检查
 description: 安全检查
-ms.assetid: 2883910a-72f3-4be9-b1dd-6fb02abffe73
 keywords:
 - 安全 WDK 文件系统，安全检查
 - 安全检查 WDK 文件系统
 - 安全检查 WDK 文件系统，有关安全检查
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 238642745f1d2d5c4251f824c0fc36ff6f4bdfeb
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 22d3ade64426b0a7807451aacd8f7e6e6a48e4b7
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89067360"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96789945"
 ---
 # <a name="security-checks-in-file-systems"></a>文件系统中的安全检查
 

@@ -1,15 +1,14 @@
 ---
 title: DesktopAutoplayHandler
 description: DesktopAutoplayHandler
-ms.assetid: e1a07580-36dd-4618-b522-3f7605c9b87b
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9147bccfb1de370fe6a3b9929c2048be76ea01b3
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: c255058b3e3bb4a7439a61af7b88b4ff41c645f3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89403418"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96788585"
 ---
 # <a name="desktopautoplayhandler"></a>DesktopAutoplayHandler
 
@@ -52,7 +51,7 @@ ms.locfileid: "89403418"
 <thead>
 <tr class="header">
 <th>元素</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>

@@ -1,15 +1,14 @@
 ---
 title: 自定义音频驱动程序类型决策树
 description: 自定义音频驱动程序类型决策树
-ms.assetid: 7b055baa-1843-4e31-a98e-48b05de94e70
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 64afd65a0d0d6175a09f5bc87cd321b0496fa8cc
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 2c8ac59bf2b59b69ad40fd9da885f02634bfedee
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89208213"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96789331"
 ---
 # <a name="custom-audio-driver-type-decision-tree"></a>自定义音频驱动程序类型决策树
 

@@ -1,31 +1,30 @@
 ---
 title: C30029
-description: 警告 C30029 调用的分配函数的内存请求可执行文件的内存。
-ms.assetid: E32E6EDB-010A-4E7F-8505-1E7557BB3FDF
+description: 警告 C30029 调用请求可执行内存的内存分配函数。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 f1_keywords:
 - C30029
-ms.openlocfilehash: 0b1b9772cffc84738135cc75701ddab148492b26
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 35e369ecaea0b1e5aa5a78ef3450fff057e68752
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63347055"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96788747"
 ---
 # <a name="c30029"></a>C30029
 
 
-警告 C30029:调用的内存分配请求可执行文件的内存的函数
+警告 C30029：调用请求可执行内存的内存分配函数
 
-已禁止\_内存优化\_分配\_NOTYPE
+禁止的 \_ 内存 \_ 分配 \_ NOTYPE
 
-某些 Api 仅可执行文件的非分页缓冲的池分配。 不没有可以提供任何参数，它将改变此行为。 若要解决此问题的唯一方法是使用一种替代方法进行的非可执行文件的非分页缓冲的池内存分配的 API。
+某些 Api 仅分配可执行的非分页池。 没有可提供的参数将更改此行为。 解决此问题的唯一方法是使用备用 API，该 API 允许分配不可执行的非分页池内存。
 
-## <a name="span-idexamplespanspan-idexamplespanspan-idexamplespanexample"></a><span id="Example"></span><span id="example"></span><span id="EXAMPLE"></span>示例
+## <a name="span-idexamplespanspan-idexamplespanspan-idexamplespanexample"></a><span id="Example"></span><span id="example"></span><span id="EXAMPLE"></span>实例
 
 
-下面的代码生成警告 C30029:
+下面的代码生成警告 C30029：
 
 ```
 MmMapIoSpace(  PhysicalAddress,

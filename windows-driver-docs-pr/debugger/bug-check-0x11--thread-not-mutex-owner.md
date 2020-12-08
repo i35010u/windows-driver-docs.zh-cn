@@ -1,7 +1,6 @@
 ---
 title: Bug 检查 0x11 THREAD_NOT_MUTEX_OWNER
-description: THREAD_NOT_MUTEX_OWNER bug 检查已得到 0x00000011 的值。检查此错误极少出现。
-ms.assetid: 9f6fe1db-535f-4983-866a-8a5ea035ac80
+description: THREAD_NOT_MUTEX_OWNER bug 检查的值为0x00000011。此 bug 检查很少出现。
 keywords:
 - Bug 检查 0x11 THREAD_NOT_MUTEX_OWNER
 - THREAD_NOT_MUTEX_OWNER
@@ -13,22 +12,22 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 24bdb61e9abe75f2c544c5bf91b7ba7b27f9cb93
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: f56d22e7a471c52306321eb1b167a07329aefdb4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67521330"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96790057"
 ---
-# <a name="bug-check-0x11-threadnotmutexowner"></a>Bug 检查 0x11：线程\_不\_互斥体\_所有者
+# <a name="bug-check-0x11-thread_not_mutex_owner"></a>Bug 检查0x11：线程 \_ 非 \_ 互斥体 \_ 所有者
 
 
-在线程\_不\_互斥体\_所有者 bug 检查的值为得到 0x00000011。
+线程 \_ 非 \_ 互斥体 \_ 所有者 bug 检查的值为0x00000011。
 
-检查此错误极少出现。
+此 bug 检查很少出现。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题面向程序员。 如果您是在使用计算机时收到蓝屏错误代码的客户，请参阅[蓝屏错误疑难解答](https://www.windows.com/stopcode)。
 
 
  

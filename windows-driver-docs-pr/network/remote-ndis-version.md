@@ -1,15 +1,14 @@
 ---
 title: 远程 NDIS 版本
 description: 远程 NDIS 版本
-ms.assetid: d7f1b3b7-fdfc-45d6-bb62-19b475d466c6
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f10d1637f526618209ebabfefc974b77bc47ac81
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 82cbacd99a4f8d649387bf7cbbfb757ce34ad74f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63367524"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96789641"
 ---
 # <a name="remote-ndis-version"></a>远程 NDIS 版本
 
@@ -17,7 +16,7 @@ ms.locfileid: "63367524"
 
 
 
-下表定义主机和设备之间交换的远程 NDIS 协议版本标识符。
+下表定义了在主机和设备之间交换的远程 NDIS 协议版本标识符。
 
 <table>
 <colgroup>
@@ -28,7 +27,7 @@ ms.locfileid: "63367524"
 <thead>
 <tr class="header">
 <th align="left">版本标识符</th>
-<th align="left">ReplTest1</th>
+<th align="left">“值”</th>
 <th align="left">描述</th>
 </tr>
 </thead>
@@ -36,7 +35,7 @@ ms.locfileid: "63367524"
 <tr class="odd">
 <td align="left"><p>RNDIS_MAJOR_VERSION</p></td>
 <td align="left"><p>1</p></td>
-<td align="left"><p>远程 NDIS 主要版本</p></td>
+<td align="left"><p>远程 NDIS 主版本</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>RNDIS_MINOR_VERSION</p></td>

@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ CAMERACONTROL \_ 横滚
 description: 用户模式客户端使用 KSPROPERTY \_ CAMERACONTROL \_ 卷筒属性来获取或设置相机的滚动设置。 此属性是可选的。
-ms.assetid: 58b09e8d-7c0c-4e32-b124-5722bd09f011
 keywords:
 - KSPROPERTY_CAMERACONTROL_ROLL 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e69ead285bb96ee62164e0861460bb0dd32707ff
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 7f47d50375361013fd1bdfc47b6ca4f5fa6ed6b6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103892"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96789591"
 ---
 # <a name="ksproperty_cameracontrol_roll"></a>KSPROPERTY \_ CAMERACONTROL \_ 横滚
 
@@ -90,7 +89,7 @@ KSPROPERTY **Value** \_ CAMERACONTROL S 结构的 Value 成员 \_ 指定了滚�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSPROPERTY**](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)

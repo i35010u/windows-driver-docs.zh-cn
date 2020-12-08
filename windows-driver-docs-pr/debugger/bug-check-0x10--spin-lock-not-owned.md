@@ -1,7 +1,6 @@
 ---
 title: Bug 检查 0x10 SPIN_LOCK_NOT_OWNED
-description: SPIN_LOCK_NOT_OWNED bug 检查具有 0x00000010 值。检查此错误极少出现。
-ms.assetid: ffef2d3d-43e9-48aa-a905-8656207da6a8
+description: SPIN_LOCK_NOT_OWNED bug 检查的值为0x00000010。此 bug 检查很少出现。
 keywords:
 - Bug 检查 0x10 SPIN_LOCK_NOT_OWNED
 - SPIN_LOCK_NOT_OWNED
@@ -13,22 +12,22 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: b05a63c9696b21f779b9afd239921dd335ea6857
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: 13e07d1d9274a060ecf169a96bd32ab96e2a925a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67521912"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96788863"
 ---
-# <a name="bug-check-0x10-spinlocknotowned"></a>Bug 检查 0x10：旋转\_锁\_不\_拥有的
+# <a name="bug-check-0x10-spin_lock_not_owned"></a>Bug 检查0x10： \_ \_ 未拥有自旋 \_ 锁
 
 
-数值调节钮\_锁\_不\_拥有的 bug 检查的值为 0x00000010。
+"自旋 \_ 锁 \_ 未 \_ 拥有" bug 检查的值为0x00000010。
 
-检查此错误极少出现。
+此 bug 检查很少出现。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题面向程序员。 如果您是在使用计算机时收到蓝屏错误代码的客户，请参阅[蓝屏错误疑难解答](https://www.windows.com/stopcode)。
 
 
  

@@ -1,18 +1,17 @@
 ---
 title: DirectSound 硬件加速和 SRC 滑块
 description: DirectSound 硬件加速和 SRC 滑块
-ms.assetid: 40329177-b8d5-49a2-a1d3-6730a26b6e78
 keywords:
 - 硬件加速 WDK DirectSound，源滑块
 - 滑杆音频
 ms.date: 10/27/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0c9019ffaba75367df33eb9a69d623c5b35a9698
-ms.sourcegitcommit: f610410e1500f0b0a4ca008b52679688ab51033d
+ms.openlocfilehash: e565ecf235e6fc7baf448550ac82df82ce67f99e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/15/2020
-ms.locfileid: "88252927"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96789273"
 ---
 # <a name="directsound-hardware-acceleration-and-src-sliders"></a>DirectSound 硬件加速和 SRC 滑块
 
@@ -36,7 +35,7 @@ Windows 提供了全局滑块控件，用于在整个系统范围内更改 Direc
 
 4.  选择“性能”选项卡。
 
-此时，应会看到两个标记为 **硬件加速** 和 **采样速率转换质量**的滑块。
+此时，应会看到两个标记为 **硬件加速** 和 **采样速率转换质量** 的滑块。
 
 "硬件加速" 滑块有四个设置，范围是从 " **无** " (级别 0) 左侧到 " **完整** (第三级) "。 下表显示了这些设置的含义。
 
@@ -61,17 +60,17 @@ Windows 提供了全局滑块控件，用于在整个系统范围内更改 Direc
 </tr>
 <tr class="even">
 <td align="left"><p>1</p></td>
-<td align="left"><p>基本版</p></td>
+<td align="left"><p>基本</p></td>
 <td align="left"><p>禁用 DirectSound 辅助缓冲区的硬件加速。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>2</p></td>
-<td align="left"><p>标准</p></td>
+<td align="left"><p>Standard</p></td>
 <td align="left"><p>启用 DirectSound 辅助缓冲区的硬件加速，但禁用特定于供应商的属性集扩展。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>3</p></td>
-<td align="left"><p>完全</p></td>
+<td align="left"><p>完整</p></td>
 <td align="left"><p>启用 DirectSound 辅助缓冲区的硬件加速，并启用特定于供应商的属性集扩展。</p></td>
 </tr>
 </tbody>
@@ -86,10 +85,10 @@ Windows 提供了全局滑块控件，用于在整个系统范围内更改 Direc
 " **基本** " 设置禁用 DirectSound 辅助缓冲区的硬件加速。 在此设置下，无论使用哪种声卡功能，所有 DirectSound 应用程序都将运行，但没有硬件加速可用。 在测试过程中，可以使用此设置来模拟无 DirectSound 加速功能的声卡。 对于适配器（如 OPL），如果没有加速 DirectSound 辅助缓冲区，此设置的效果与 **标准** 设置相同。 在 Windows Server 2003 中， **Basic** 是默认设置。
 
 <span id="Standard_Setting"></span><span id="standard_setting"></span><span id="STANDARD_SETTING"></span>**标准设置**  
-**标准**设置启用 DirectSound 辅助缓冲区的硬件加速，但会禁用特定于供应商的扩展，如 EAX (创造性技术的环境音频扩展) ，这些扩展通过**IKsPropertySet**接口公开为属性集 (请参阅[公开自定义音频属性集](exposing-custom-audio-property-sets.md)) 。 在 Windows 2000 中，默认情况下将选择 " **标准** " 设置。
+**标准** 设置启用 DirectSound 辅助缓冲区的硬件加速，但会禁用特定于供应商的扩展，如 EAX (创造性技术的环境音频扩展) ，这些扩展通过 **IKsPropertySet** 接口公开为属性集 (请参阅 [公开自定义音频属性集](exposing-custom-audio-property-sets.md)) 。 在 Windows 2000 中，默认情况下将选择 " **标准** " 设置。
 
 <span id="Full_Setting"></span><span id="full_setting"></span><span id="FULL_SETTING"></span>**完全设置**  
-**Full**设置启用 DirectSound 辅助缓冲区的完全加速。 此设置还为通过 **IKsPropertySet** 接口公开的供应商特定的扩展启用了属性集 (请参阅 [公开自定义音频属性集](exposing-custom-audio-property-sets.md)) 。 **IKsPropertySet** 扩展包括特定于供应商的硬件增强功能，如 EAX。 
+**Full** 设置启用 DirectSound 辅助缓冲区的完全加速。 此设置还为通过 **IKsPropertySet** 接口公开的供应商特定的扩展启用了属性集 (请参阅 [公开自定义音频属性集](exposing-custom-audio-property-sets.md)) 。 **IKsPropertySet** 扩展包括特定于供应商的硬件增强功能，如 EAX。 
 
 
 如果用户将硬件加速或 SRC 设置调整为默认值以外的值，则 DirectSound 将使用新设置而不是默认值。

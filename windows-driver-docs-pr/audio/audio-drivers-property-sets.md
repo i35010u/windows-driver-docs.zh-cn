@@ -1,15 +1,14 @@
 ---
 title: 音频驱动程序属性集
 description: 音频驱动程序属性集
-ms.assetid: bac74ad5-3a9b-40b1-ae49-c86558c34e94
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a50ae09c1c40ee1ad3cad458020823bb97e9a55d
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: cb15fadb6f12b5525db43da196fdf67b88209e2c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89208333"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96789411"
 ---
 # <a name="audio-drivers-property-sets"></a>音频驱动程序属性集
 

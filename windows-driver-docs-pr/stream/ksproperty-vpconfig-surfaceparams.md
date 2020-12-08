@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ VPCONFIG \_ SURFACEPARAMS
 description: KSPROPERTY \_ VPCONFIG \_ SURFACEPARAMS 属性指定视频端口图面设置。
-ms.assetid: cb8ebaea-4667-43c6-964f-89d55d4ff9be
 keywords:
 - KSPROPERTY_VPCONFIG_SURFACEPARAMS 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a4f59a2cb60fe76f9ac29f9872d92d1ab52d7aab
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 80c192cb5297a5393e10cd3a2e4d791f7918bf9d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104460"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96789545"
 ---
 # <a name="ksproperty_vpconfig_surfaceparams"></a>KSPROPERTY \_ VPCONFIG \_ SURFACEPARAMS
 
@@ -79,7 +78,7 @@ KSPROPERTY \_ VPCONFIG \_ SURFACEPARAMS 属性指定视频端口图面设置。
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSPROPERTY**](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)

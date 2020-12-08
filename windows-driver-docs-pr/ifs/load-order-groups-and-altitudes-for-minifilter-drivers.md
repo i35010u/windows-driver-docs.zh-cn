@@ -1,7 +1,6 @@
 ---
 title: 筛选器驱动程序的加载顺序组和高度
 description: 介绍筛选器驱动程序的加载顺序组和高度
-ms.assetid: be8f18fe-c80b-44a3-b0c3-f2f630142180
 keywords:
 - 海拔 WDK 文件系统微筛选器
 - 海拔 WDK 文件系统筛选器驱动程序
@@ -10,12 +9,12 @@ keywords:
 - 驱动程序启动类型 WDK 文件系统
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e15a144f6089b78aef1f78e9497aa8dbbfb0263a
-ms.sourcegitcommit: 9e13d3fbc74bb75335c4d2927c55b0085e46b0ea
+ms.openlocfilehash: 0aff5cd8d0498b54a5f3764718168908e6ef0947
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/16/2020
-ms.locfileid: "94639033"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96788719"
 ---
 # <a name="load-order-groups-and-altitudes-for-filter-drivers"></a>筛选器驱动程序的加载顺序组和高度
 
@@ -23,7 +22,7 @@ ms.locfileid: "94639033"
 
 Windows 对文件系统筛选器驱动程序和在系统启动时加载的旧筛选器驱动程序使用一组专用的 *加载顺序组* 。
 
-每个加载顺序组都有一组已定义的 *高度* 。 每个筛选器驱动程序都必须具有唯一的海拔标识符。 在加载筛选器时，筛选器的高度定义其相对于其他筛选器驱动程序的位置。 海拔高度是被解释为十进制数的无限精度字符串。 如果筛选器驱动程序的数字高度较低，则会将该筛选器驱动程序加载到值较高的筛选器驱动程序的下面。
+每个加载顺序组都有一组已定义的 *高度*。 每个筛选器驱动程序都必须具有唯一的海拔标识符。 在加载筛选器时，筛选器的高度定义其相对于其他筛选器驱动程序的位置。 海拔高度是被解释为十进制数的无限精度字符串。 如果筛选器驱动程序的数字高度较低，则会将该筛选器驱动程序加载到值较高的筛选器驱动程序的下面。
 
 海拔分配由 Microsoft 管理。 若要请求筛选器驱动程序的海拔高度，请参阅 [筛选器高度请求](minifilter-altitude-request.md)。
 

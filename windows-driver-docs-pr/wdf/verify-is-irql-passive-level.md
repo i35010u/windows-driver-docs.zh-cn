@@ -1,17 +1,16 @@
 ---
 title: VERIFY_IS_IRQL_PASSIVE_LEVEL 宏
 description: 如果驱动程序未以 IRQL PASSIVE_LEVEL 执行，VERIFY_IS_IRQL_PASSIVE_LEVEL 宏将进入内核调试器。
-ms.assetid: 7f1e25af-df66-46a2-8d27-7924677e4d5d
 keywords:
 - VERIFY_IS_IRQL_PASSIVE_LEVEL 宏
 ms.date: 08/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 89ed6217f0470b318c64c35e455e5068f6bf02e7
-ms.sourcegitcommit: a5f76805387760730faed5674d87201ec85b7dd3
+ms.openlocfilehash: 84aec2d866d82e456ebd173a3c4bc3b01a6c16fd
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90112116"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96790137"
 ---
 # <a name="verify_is_irql_passive_level-macro"></a>VERIFY_IS_IRQL_PASSIVE_LEVEL 宏
 
@@ -44,11 +43,11 @@ VOID VERIFY_IS_IRQL_PASSIVE_LEVEL(void);
 
 如果满足以下条件之一，则 **VERIFY_IS_IRQL_PASSIVE_LEVEL** 代码将进入内核调试器：
 
--   在注册表中， **DbgBreakOnError**设置为非零值。
+-   在注册表中， **DbgBreakOnError** 设置为非零值。
 -   **VerifierOn** 设置为一个非零值，并且未设置 **DbgBreakOnError** 。
 -   驱动程序验证程序已启用，驱动程序是用 framework 1.9 或更高版本生成的，并且不设置 **VerifierOn** 和 **DbgBreakOnError** 。
 
-有关可用于调试驱动程序的注册表项的详细信息，请参阅 [用于调试基于框架的驱动程序的注册表项](./registry-values-for-debugging-kmdf-drivers.md)。
+有关可用于调试驱动程序的注册表项的详细信息，请参阅 [用于调试 Framework-Based 驱动程序的注册表项](./registry-values-for-debugging-kmdf-drivers.md)。
 
 有关调试驱动程序的详细信息，请参阅 [调试 KMDF 驱动程序](../debugger/debug-universal-drivers---step-by-step-lab--echo-kernel-mode-.md)。
 
@@ -85,7 +84,7 @@ VERIFY_IS_IRQL_PASSIVE_LEVEL();
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**WDFVERIFY**](wdfverify.md)

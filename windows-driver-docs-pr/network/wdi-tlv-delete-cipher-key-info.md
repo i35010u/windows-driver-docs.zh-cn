@@ -1,17 +1,16 @@
 ---
 title: WDI_TLV_DELETE_CIPHER_KEY_INFO
 description: WDI_TLV_DELETE_CIPHER_KEY_INFO 是一种 TLV，其中包含用于标识要在 OID_WDI_SET_DELETE_CIPHER_KEYS 中删除的单个密码密钥的信息。
-ms.assetid: 5AD84E05-9A25-4FE8-BDF4-CCBA89D09A3F
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_DELETE_CIPHER_KEY_INFO 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 5cb504c6c1b39235112f3c8ea210b4ed46db4de9
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: f144349ff2a04a54b620c850c2918fd5159f986f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89214296"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96790381"
 ---
 # <a name="wdi_tlv_delete_cipher_key_info"></a>WDI \_ TLV \_ 删除 \_ 密码 \_ 密钥 \_ 信息
 
@@ -23,7 +22,7 @@ WDI \_ tlv \_ 删除 \_ 密码 \_ 密钥 \_ 信息是一个 TLV，其中包含�
 
 0x53
 
-## <a name="length"></a>Length
+## <a name="length"></a>长度
 
 
 Sum (包含所有 TLVs 的大小的) 字节。
@@ -54,7 +53,7 @@ Sum (包含所有 TLVs 的大小的) 字节。
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
-<td><p>Windows Server 2016</p></td>
+<td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
 <td><p>标头</p></td>

@@ -1,17 +1,16 @@
 ---
 title: SO_WSK_SECURITY
 description: SO_WSK_SECURITY
-ms.assetid: 169680ba-6486-48fe-89d7-dcd4e5930605
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 SO_WSK_SECURITY 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 0bf392dba097426a000d600bab6d9a1c28db0292
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 4e9e2f7661a491275fc78058b78f1fc63e4ddf3a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105876"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96790465"
 ---
 # <a name="so_wsk_security"></a>\_WSK \_ 安全性
 
@@ -77,7 +76,7 @@ SO \_ WSK \_ SECURITY socket 选项允许 WSK 应用程序将安全描述符应�
 
 在完成 IRP 后，WSK 应用程序不能释放安全描述符的缓存副本。
 
-当套接字最初创建时，WSK 应用程序还可以通过在调用[**WskSocket**](/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_socket)或[**WskSocketConnect**](/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_socket_connect)函数时指定指向*SecurityDescriptor*参数中的安全描述符缓存副本的指针，来将该说明符应用于套接字。
+当套接字最初创建时，WSK 应用程序还可以通过在调用 [**WskSocket**](/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_socket)或 [**WskSocketConnect**](/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_socket_connect)函数时指定指向 *SecurityDescriptor* 参数中的安全描述符缓存副本的指针，来将该说明符应用于套接字。
 
 如果 WSK 应用程序不会将安全描述符应用于套接字，则 WSK 子系统将使用不允许共享本地传输地址的默认安全描述符。
 
@@ -132,7 +131,7 @@ SO \_ WSK \_ SECURITY socket 选项允许 WSK 应用程序将安全描述符应�
 
 在调用 **WskControlSocket** 函数从套接字检索套接字安全描述符的缓存副本时，WSK 应用程序必须指定一个指向 IRP 的指针。
 
-WSK 应用程序必须使用[**WSK \_ RELEASE \_ SD**](wsk-release-sd.md)控制代码调用[**WskControlClient**](/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_control_client)函数，以便在不再需要安全描述符的缓存副本时，释放该副本。
+WSK 应用程序必须使用 [**WSK \_ RELEASE \_ SD**](wsk-release-sd.md)控制代码调用 [**WskControlClient**](/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_control_client)函数，以便在不再需要安全描述符的缓存副本时，释放该副本。
 
 有关安全描述符结构的详细信息 \_ ，请参阅 \_ Microsoft Windows SDK 文档中的安全描述符的参考页。
 

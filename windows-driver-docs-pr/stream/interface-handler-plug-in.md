@@ -1,18 +1,17 @@
 ---
 title: 接口处理程序插件
 description: 接口处理程序插件
-ms.assetid: cd81f622-d11c-4b40-ac78-9324716e0a2c
 keywords:
 - 内核流式处理代理 WDK AVStream，接口处理程序
 - 接口处理程序 WDK AVStream
 ms.date: 06/18/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 1b592a96005809188078f5121ac3746030df374e
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: bdb4b8eb535ddb3d95f3db4cdeb75491520fba43
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89186627"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96790261"
 ---
 # <a name="interface-handler-plug-in"></a>接口处理程序插件
 
@@ -44,7 +43,7 @@ hResult = piOuterUnknown->QueryInterface(
                  &piKsPropertySet );
 ```
 
-然后，从 **CreateInstance**调用接口的构造函数，以创建接口处理程序对象的实例。
+然后，从 **CreateInstance** 调用接口的构造函数，以创建接口处理程序对象的实例。
 
 提供指向 **IKsPropertySet** 的指针，作为构造函数调用中的参数。 然后，构造函数将指针作为 \_ 前面声明中的 m piKsPropertySet 成员保留到 iKsPropertySet。
 

@@ -1,26 +1,25 @@
 ---
 title: 了解筛选器驱动程序
 description: 了解筛选器驱动程序
-ms.assetid: 029bbf2b-7286-494c-96e4-f6f99a97436d
 keywords:
 - 无连接驱动程序 WDK 网络
 - 网络驱动程序 WDK，类型
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fea59073809fd42f7bfc63ef618d62c8419d70ec
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 20ee671a7264f821200f4dd46484a3d6bf8919e6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63340022"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96789711"
 ---
 # <a name="learning-about-filter-drivers"></a>了解筛选器驱动程序
 
 
-您可以编写无连接的接口的筛选器驱动程序。 以下列表描述了 WDK 文档中的哪些部分，应，具体取决于你正在编写的筛选器驱动程序的类型：
+可以编写包含无连接接口的筛选器驱动程序。 以下列表说明了应阅读哪些 WDK 文档部分，具体取决于要编写的筛选器驱动程序的类型：
 
 <a href="" id="filter-drivers-------"></a>**筛选器驱动程序**   
-如果你正在编写的下边缘提供无连接的微型端口驱动程序的接口的筛选器驱动程序，请阅读：
+如果要编写的筛选器驱动程序的下边缘提供连接到无连接微型端口驱动程序的接口，请阅读：
 
 -   [NDIS 筛选器驱动程序](ndis-filter-drivers.md)
 

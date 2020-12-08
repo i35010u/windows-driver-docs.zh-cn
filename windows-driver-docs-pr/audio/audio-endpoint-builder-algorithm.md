@@ -1,15 +1,14 @@
 ---
 title: 音频终结点生成器算法
 description: 音频终结点生成器算法
-ms.assetid: 2338bca7-5743-42c3-9baf-ac4a54cf0393
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 83ba5d2abfb21a9209f939a595668c9e5f53ac63
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 185ebe2b58350b160b21d5e2eceb6e78896b44bf
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89208337"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96789425"
 ---
 # <a name="audio-endpoint-builder-algorithm"></a>音频终结点生成器算法
 
@@ -90,7 +89,7 @@ AudioEndpointBuilder 服务会监视 [**KSCATEGORY \_ 音频**](../install/kscat
 
 -   默认设备。 在安装时，将使用 INF 文件中的信息选择设置为默认设备的终结点。 安装完成后，必须使用 "控制面板" 或第三方应用程序选择另一个终结点作为默认终结点。
 
-**注意**   如果 INF 文件未选择在安装过程中将终结点设置为默认值，则客户端应用程序可以使用 MMDevice API 来选择终结点。 该 API 根据窗体因数排名以及终结点是呈现器还是捕获终结点来选择它。 下表显示了选择顺序。
+**注意**   如果 INF 文件未选择在安装过程中将终结点设置为默认值，则客户端应用程序可以使用 MMDevice API 来选择终结点。 该 API 根据窗体因数排名以及终结点是呈现器还是捕获终结点来选择它。 下表显示了选择顺序。
 <table>
 <colgroup>
 <col width="50%" />

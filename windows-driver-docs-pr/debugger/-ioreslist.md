@@ -1,7 +1,6 @@
 ---
 title: ioreslist
 description: Ioreslist 扩展显示 IO_RESOURCE_REQUIREMENTS_LIST 结构。
-ms.assetid: cb599656-2e0a-41ec-8358-a42047974dea
 keywords:
 - ioreslist Windows 调试
 ms.date: 05/23/2017
@@ -12,29 +11,29 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 69a92e005ad4b3adcbbe4b347857ced1232e79cc
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e8202145b2485a1b9e10b96dce438914b912f71e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63336412"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96788943"
 ---
 # <a name="ioreslist"></a>!ioreslist
 
 
-**！ Ioreslist**扩展插件都会显示 IO\_资源\_要求\_列表结构。
+**！ Ioreslist** 扩展显示 IO \_ 资源 \_ 需求 \_ 列表结构。
 
 ```dbgcmd
 !ioreslist Address 
 ```
 
-## <a name="span-idddkioreslistdbgspanspan-idddkioreslistdbgspanparameters"></a><span id="ddk__ioreslist_dbg"></span><span id="DDK__IORESLIST_DBG"></span>参数
+## <a name="span-idddk__ioreslist_dbgspanspan-idddk__ioreslist_dbgspanparameters"></a><span id="ddk__ioreslist_dbg"></span><span id="DDK__IORESLIST_DBG"></span>参数
 
 
-<span id="_______Address______"></span><span id="_______address______"></span><span id="_______ADDRESS______"></span> *Address*   
-指定的十六进制地址的 IO\_资源\_要求\_列表结构。
+<span id="_______Address______"></span><span id="_______address______"></span><span id="_______ADDRESS______"></span>*地址*   
+指定 IO \_ 资源 \_ 需求列表结构的十六进制地址 \_ 。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 <table>
 <colgroup>
@@ -55,14 +54,14 @@ ms.locfileid: "63336412"
 
  
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-请参阅[插调试](plug-and-play-debugging.md)对于此扩展命令的应用程序。 有关 IO\_资源\_要求\_列表结构中，请参阅 Windows Driver Kit (WDK) 文档。
+请参阅 [即插即用调试](plug-and-play-debugging.md) 此扩展命令的应用程序。 有关 IO \_ 资源 \_ 需求 \_ 列表结构的信息，请参阅 Windows 驱动程序工具包 (WDK) 文档。
 
 <a name="remarks"></a>备注
 -------
 
-下面是输出的来自此扩展插件示例：
+下面是此扩展的输出示例：
 
 ```dbgcmd
 kd> !ioreslist 0xe122b768
@@ -96,31 +95,31 @@ IoResList at 0xe122b768 : Interface 0x5  Bus 0  Slot 0xe
       0xb - 0xb
 ```
 
-IO\_资源\_要求\_列表包含有关的信息：
+IO \_ 资源 \_ 需求 \_ 列表包含以下信息：
 
 -   资源类型
 
-    有四种类型的资源：I/O, Memory, IRQ, DMA.
+    有四种类型的资源： i/o、内存、IRQ、DMA。
 
 -   描述符
 
-    每个首选的设置有"首选"描述符和"替代"说明符的数目。
+    每个首选设置都有 "首选" 描述符和多个 "备用" 描述符。
 
-此资源的列表包含以下请求：
+此资源列表包含以下请求：
 
--   I/O 范围
+-   I/o 范围
 
-    倾向于一系列 0x1000 到 0x10FF 包含在内，但可以使用任何 0x100 介于 0 和 0xFFFFFFFF，前提是该 0x100 对齐。 （例如，0x1100 到 0x11FF 是可接受。）
+    首选范围为0x10FF，但可以使用0到0xFFFFFFFF 之间的任何0x100 范围，前提是它是0x100 对齐的。  (例如，可接受0x1100 到0x11FF。 ) 
 
 -   内存
 
-    倾向于一系列 0x40080000 到 0x40080FFF，但可以使用大小 0x1000 的是，是 0x1000 对齐，介于 0 和 0xFFFFFFFF 所在的任何范围。
+    首选0x40080000 到0x40080FFF 的范围，但可以使用大小为0x1000 的任何范围，大小为0x1000，并位于0到0xFFFFFFFF 之间。
 
 -   IRQ
 
     必须使用 IRQ 0xB。
 
-中断和 DMA 通道表示为具有相同的开始和结束范围。
+中断和 DMA 通道表示为具有相同开始和结束的范围。
 
  
 

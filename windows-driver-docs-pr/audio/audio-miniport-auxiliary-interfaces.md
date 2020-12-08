@@ -1,15 +1,14 @@
 ---
 title: 音频微型端口辅助接口
 description: 音频微型端口辅助接口
-ms.assetid: cda22e86-f3f7-430c-856d-a2c868caa975
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 35add35b41214cca1f0699c2413f11fdae400d91
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 6b7d111de30c1f238da33ce2a4698182c99cc9dd
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89208301"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96789395"
 ---
 # <a name="audio-miniport-auxiliary-interfaces"></a>音频微型端口辅助接口
 

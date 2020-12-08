@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ CAMERACONTROL \_ 倾斜
 description: 用户模式客户端使用 KSPROPERTY \_ CAMERACONTROL \_ 倾斜属性来获取或设置相机的倾斜设置。 此属性是可选的。
-ms.assetid: 265315ce-6f35-4f5a-907f-b5595e7fb5af
 keywords:
 - KSPROPERTY_CAMERACONTROL_TILT 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 741a82530e642a4c9a4eb5ade7b9ea340fabfbc2
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 90856c44be4f434f2c85461500dada00c8a086ce
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103876"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96789609"
 ---
 # <a name="ksproperty_cameracontrol_tilt"></a>KSPROPERTY \_ CAMERACONTROL \_ 倾斜
 
@@ -69,7 +68,7 @@ ms.locfileid: "90103876"
 
 支持此属性的每个视频捕获微型驱动程序都必须为此属性定义一个范围和默认值。 设备的范围必须为-180 到 + 180。 默认值必须为0。
 
-**警告**   编写或测试应用程序时，应注意，在实际情况下，某些驱动程序定义了自定义范围的倾斜值和自定义步骤值，这些值可能不基于典型单位。 驱动程序可能会以物理方式或数字方式实现倾斜控件。
+**警告**  编写或测试应用程序时，应注意，在实际情况下，某些驱动程序定义了自定义范围的倾斜值和自定义步骤值，这些值可能不基于典型单位。 驱动程序可能会以物理方式或数字方式实现倾斜控件。
 
  
 
@@ -94,7 +93,7 @@ KSPROPERTY **Value** \_ CAMERACONTROL S 结构的 Value 成员 \_ 指定倾斜�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSPROPERTY**](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)

@@ -1,9 +1,8 @@
 ---
 title: JobName 元素
-description: 所需的 JobName 元素指定扫描作业的客户端提供的、 用户友好名称。
-ms.assetid: b6d2baba-6a2e-4971-880b-9a4df66dc1ae
+description: 必需的 JobName 元素指定扫描作业的客户端提供的用户友好名称。
 keywords:
-- JobName 元素成像设备
+- JobName 元素图像设备
 topic_type:
 - apiref
 api_name:
@@ -12,19 +11,19 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0160e44812155cac4ac16a1ef4f3c2b97f8775a3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: cb89c329df1c5400b5668fb6e0d528d0b1509d2a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63348805"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96789871"
 ---
 # <a name="jobname-element"></a>JobName 元素
 
 
-所需**JobName**元素指定扫描作业的客户端提供的、 用户友好名称。
+必需的 **JobName** 元素指定扫描作业的客户端提供的用户友好名称。
 
-<a name="usage"></a>用法
+<a name="usage"></a>使用情况
 -----
 
 ```xml
@@ -41,12 +40,12 @@ ms.locfileid: "63348805"
 <a name="text-value"></a>文本值
 ----------
 
-必需。 任何有效字符的字符串。
+必需。 任何有效的字符串。
 
 ## <a name="child-elements"></a>子元素
 
 
-没有子元素。
+没有任何子元素。
 
 ## <a name="parent-elements"></a>父元素
 
@@ -76,11 +75,11 @@ ms.locfileid: "63348805"
 <a name="remarks"></a>备注
 -------
 
-客户端应提供一个值，以帮助用户轻松区分他们已提交的作业。
+客户端应提供一个值以帮助用户轻松区分他们所提交的作业。
 
-WSD 扫描服务可以提供默认值**JobName**名称在其[ **DefaultScanTicket** ](defaultscanticket.md)元素。 您可以以特定于实现的方式设置此名称。
+WSD 扫描服务可以在其 [**DefaultScanTicket**](defaultscanticket.md)元素中提供默认的 **JobName** 名称。 可以采用特定于实现的方式来设置此名称。
 
-中指定的提交该作业的用户名称[ **JobOriginatingUserName** ](joboriginatingusername.md)元素。
+提交作业的用户的名称是在 [**JobOriginatingUserName**](joboriginatingusername.md) 元素中指定的。
 
 ## <a name="see-also"></a>请参阅
 

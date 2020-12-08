@@ -1,15 +1,14 @@
 ---
 title: 使用 Winsock 内核的网络驱动程序开发路线图
 description: 使用 Winsock 内核的网络驱动程序开发路线图
-ms.assetid: f94952c3-02b1-4bd2-bd73-e6d6d42a06fb
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2b7501dc410c9f61e895919937ee661a21bd4ebd
-ms.sourcegitcommit: 20eac54e419a594f7cea766ee28f158559dfd79c
+ms.openlocfilehash: 479d3f53005e4f02865b9bf41b497c026b5456e6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91754988"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96789629"
 ---
 # <a name="roadmap-for-developing-network-drivers-with-winsock-kernel"></a>使用 Winsock 内核的网络驱动程序开发路线图
 
@@ -52,13 +51,13 @@ ms.locfileid: "91754988"
 
 -   **步骤5：** 确定其他 Windows 驱动程序设计决策。
 
-    有关如何进行其他 Windows 设计决策的信息，请参阅 [创建可靠的内核模式驱动程序](../kernel/creating-reliable-kernel-mode-drivers.md)、 [64 位驱动程序的编程问题](../kernel/porting-your-driver-to-64-bit-windows.md)以及 [创建国际 INF 文件](../install/creating-international-inf-files.md)。
+    有关如何进行其他 Windows 设计决策的信息，请参阅 [创建可靠 Kernel-Mode 驱动程序](../kernel/creating-reliable-kernel-mode-drivers.md)、 [64 位驱动程序的编程问题](../kernel/porting-your-driver-to-64-bit-windows.md)以及 [创建国际 INF 文件](../install/creating-international-inf-files.md)。
 
 -   **步骤6：** 了解 Windows 驱动程序的生成、测试和调试过程和工具。
 
     构建驱动程序不同于构建用户模式应用程序。 有关 Windows 驱动程序生成、调试和测试过程、驱动程序签名和 [Windows 硬件认证工具包 (HCK) ](https://go.microsoft.com/fwlink/p/?LinkId=733613) 测试的信息，请参阅 [生成、调试和测试驱动程序](/windows-hardware/drivers)。 有关用于生成、测试、验证和调试的工具的信息，请参阅 [驱动程序开发工具](../devtest/index.md)。
 
--   **步骤7：** 查看 GitHub 上的[Windows 驱动程序示例](https://go.microsoft.com/fwlink/p/?LinkId=616507)存储库中的[WINSOCK 内核 (WSK TCP Echo Server) 驱动程序示例](https://go.microsoft.com/fwlink/p/?LinkId=617935)。
+-   **步骤7：** 查看 GitHub 上的 [Windows 驱动程序示例](https://go.microsoft.com/fwlink/p/?LinkId=616507)存储库中的 [WINSOCK 内核 (WSK TCP Echo Server) 驱动程序示例](https://go.microsoft.com/fwlink/p/?LinkId=617935)。
 
 -   **步骤8：** 开发、构建、测试和调试驱动程序。
 

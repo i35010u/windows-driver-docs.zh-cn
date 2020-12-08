@@ -1,16 +1,15 @@
 ---
 title: 在 WinDbg 中输入调试器命令
 description: 使用调试器在 WinDbg 中输入调试器命令命令窗口
-ms.assetid: 4d839170-efaf-43d5-a81c-ac3b9c33586c
 keywords: 调试信息窗口，命令窗口，WinDbg
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fea9cee6247ab18d6816a834238b53325db5d924
-ms.sourcegitcommit: f610410e1500f0b0a4ca008b52679688ab51033d
+ms.openlocfilehash: 155778ef86e0e5671c37cd072c883930504c9063
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/15/2020
-ms.locfileid: "88253061"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96788805"
 ---
 # <a name="entering-debugger-commands-in-windbg"></a>在 WinDbg 中输入调试器命令
 
@@ -20,13 +19,13 @@ ms.locfileid: "88253061"
 
 调试器命令窗口是 WinDbg 的主调试信息窗口。 您可以在此窗口中输入调试器命令并查看命令输出。
 
-**注意**   此窗口在标题栏中显示 "命令"。 然而，本文档始终将此窗口称为 "调试器命令窗口"，以避免将其与用于发出 Microsoft MS-DOS 命令的命令提示符窗口混淆。
+**注意**   此窗口在标题栏中显示 "命令"。 然而，本文档始终将此窗口称为 "调试器命令窗口"，以避免将其与用于发出 Microsoft MS-DOS 命令的命令提示符窗口混淆。
 
  
 
 ### <a name="span-idopening_the_debugger_command_windowspanspan-idopening_the_debugger_command_windowspanopening-the-debugger-command-window"></a><span id="opening_the_debugger_command_window"></span><span id="OPENING_THE_DEBUGGER_COMMAND_WINDOW"></span>打开调试器命令窗口
 
-若要打开调试器命令窗口，请从 "**视图**" 菜单中选择 "**命令**"。  (您还可以按 ALT + 1，或在**Command** ![ ](images/tbcmd.png) 工具栏上) 调试器命令窗口按钮 (屏幕截图中选择命令按钮。 ALT + SHIFT + 1 关闭调试器命令窗口。 ) 
+若要打开调试器命令窗口，请从 "**视图**" 菜单中选择 "**命令**"。  (您还可以按 ALT + 1，或在 **Command** ![ ](images/tbcmd.png) 工具栏上) 调试器命令窗口按钮 (屏幕截图中选择命令按钮。 ALT + SHIFT + 1 关闭调试器命令窗口。 ) 
 
 下面的屏幕截图显示了一个命令窗口调试器的示例。
 

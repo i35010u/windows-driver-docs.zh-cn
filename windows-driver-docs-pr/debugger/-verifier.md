@@ -1,7 +1,6 @@
 ---
 title: verifier
 description: 验证程序扩展显示驱动程序验证程序及其操作的状态。
-ms.assetid: e84993e1-da10-4041-8fc7-7f40806ee454
 keywords:
 - 驱动程序验证程序
 - 验证程序 Windows 调试
@@ -13,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: e4d27c04249aead17cc7c1b1b5f35e40288efc12
-ms.sourcegitcommit: 2244845d5c74f5d260de1e1a994ae3cdcfaaa90a
+ms.openlocfilehash: 63cb3ff9f636f379f9e32a5b5e57e194bfc63c5f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/09/2020
-ms.locfileid: "94386078"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96788909"
 ---
 # <a name="verifier"></a>!verifier
 
@@ -119,7 +118,7 @@ Kdexts.dll
 有关 [驱动程序验证程序](../devtest/driver-verifier.md)的信息，请参阅 Windows 驱动程序工具包 (WDK) 文档。
 
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 下面的示例演示在64位版本的 Windows 上，IRQL 转换日志并非始终完成。 显示的两个条目是处理器2的日志中的连续条目。 第一项显示从2到0的 IRQL。 第二项显示从2到2的 IRQL。 缺少 IRQL 从0到2的情况的信息。
@@ -154,7 +153,7 @@ Time stamp:         0000000000000857
 
 如果使用 *标志* 的任何其他值，即使设置了其中的一个或多个位，也只允许使用 *flags* 和 *Image* 参数。 在这种情况下，除了显示的所有其他信息外， **！ verifier** 还会显示处于活动状态的驱动程序验证程序选项，以及有关池分配、IRQL 引发、旋转锁和剪裁的统计信息。
 
-如果 *Flags* 等于0x20，则驱动程序验证程序的驱动程序挂起验证选项将使用为 *CompletionTime* 、 *CancelTime* 和 *ForceCancellation* 指定的值。 这些新值会立即生效，最后一次启动。 重新启动时，它们会恢复为默认值。
+如果 *Flags* 等于0x20，则驱动程序验证程序的驱动程序挂起验证选项将使用为 *CompletionTime*、 *CancelTime* 和 *ForceCancellation* 指定的值。 这些新值会立即生效，最后一次启动。 重新启动时，它们会恢复为默认值。
 
 此外，如果 *标志* 等于 0x20 (有或不包含附加参数) ，则将打印驱动程序挂起验证日志。 有关解释该日志的信息，请参阅 Windows 驱动程序工具包 (WDK) 文档中的驱动程序验证程序文档的驱动程序挂起验证部分。
 

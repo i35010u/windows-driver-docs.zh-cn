@@ -1,24 +1,23 @@
 ---
 title: 评估采用输入参数的控制方法
 description: 评估采用输入参数的控制方法
-ms.assetid: 3a4be8a8-0906-4d38-bf6d-f245e6ae236a
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 457a0bcf01bf1a364b1177b7da07cd87206864fc
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 863d30a31893d4bbacd2d33af3cc70ac0aafcdcc
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89184873"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96789485"
 ---
 # <a name="evaluating-a-control-method-that-takes-input-arguments"></a>评估采用输入参数的控制方法
 
 
 为了同步计算采用输入参数的控制方法，设备的驱动程序将向设备发送 [**ioctl \_ acpi \_ eval \_ 方法**](/windows-hardware/drivers/ddi/acpiioct/ni-acpiioct-ioctl_acpi_eval_method) 请求或 [**ioctl \_ acpi \_ eval 方法（ \_ \_ 例如**](/windows-hardware/drivers/ddi/acpiioct/ni-acpiioct-ioctl_acpi_eval_method_ex) 请求）。 [同步评估 ACPI 控制方法](evaluating-acpi-control-methods-synchronously.md)中介绍了这两个请求的一般过程。 使用这两个请求的具体区别如下：
 
--   如果该控件方法是设备的直接子对象，则驱动程序将发送 IOCTL \_ ACPI \_ EVAL \_ 方法请求并提供下列输入结构之一： [**acpi \_ eval \_ 输入 \_ 缓冲区 \_ 简单 \_ 整数**](/windows-hardware/drivers/ddi/acpiioct/ns-acpiioct-_acpi_eval_input_buffer_simple_integer_v1)、 [**acpi \_ eval \_ 输入 \_ 缓冲区 \_ 简单 \_ 字符串**](/windows-hardware/drivers/ddi/acpiioct/ns-acpiioct-_acpi_eval_input_buffer_simple_string_v1)或 [**acpi \_ eval \_ 输入 \_ 缓冲区 \_ **](/windows-hardware/drivers/ddi/acpiioct/ns-acpiioct-_acpi_eval_input_buffer_complex_v1)。
+-   如果该控件方法是设备的直接子对象，则驱动程序将发送 IOCTL \_ ACPI \_ EVAL \_ 方法请求并提供下列输入结构之一： [**acpi \_ eval \_ 输入 \_ 缓冲区 \_ 简单 \_ 整数**](/windows-hardware/drivers/ddi/acpiioct/ns-acpiioct-_acpi_eval_input_buffer_simple_integer_v1)、 [**acpi \_ eval \_ 输入 \_ 缓冲区 \_ 简单 \_ 字符串**](/windows-hardware/drivers/ddi/acpiioct/ns-acpiioct-_acpi_eval_input_buffer_simple_string_v1)或 [**acpi \_ eval \_ 输入 \_ 缓冲区 \_**](/windows-hardware/drivers/ddi/acpiioct/ns-acpiioct-_acpi_eval_input_buffer_complex_v1)。
 
--   如果控制方法是设备 ACPI 命名空间中的子对象，但不是设备的直接子对象，则驱动程序将发送 IOCTL \_ ACPI \_ eval \_ 方法 \_ ex 请求，并提供以下输入结构之一： [**acpi eval 输入缓冲区 \_ \_ \_ \_ 简单 \_ 整数 \_ ex**](/windows-hardware/drivers/ddi/acpiioct/ns-acpiioct-_acpi_eval_input_buffer_simple_integer_v1_ex)、 [**acpi \_ eval \_ 输入 \_ 缓冲区 \_ 简单 \_ 字符串 \_ **](/windows-hardware/drivers/ddi/acpiioct/ns-acpiioct-_acpi_eval_input_buffer_simple_string_v1_ex)（例如）或[**acpi \_ eval \_ 输入 \_ 缓冲区 \_ COMPLEX \_ ex**](/windows-hardware/drivers/ddi/acpiioct/ns-acpiioct-_acpi_eval_input_buffer_complex_v1_ex)
+-   如果控制方法是设备 ACPI 命名空间中的子对象，但不是设备的直接子对象，则驱动程序将发送 IOCTL \_ ACPI \_ eval \_ 方法 \_ ex 请求，并提供以下输入结构之一： [**acpi eval 输入缓冲区 \_ \_ \_ \_ 简单 \_ 整数 \_ ex**](/windows-hardware/drivers/ddi/acpiioct/ns-acpiioct-_acpi_eval_input_buffer_simple_integer_v1_ex)、 [**acpi \_ eval \_ 输入 \_ 缓冲区 \_ 简单 \_ 字符串 \_**](/windows-hardware/drivers/ddi/acpiioct/ns-acpiioct-_acpi_eval_input_buffer_simple_string_v1_ex)（例如）或 [**acpi \_ eval \_ 输入 \_ 缓冲区 \_ COMPLEX \_ ex**](/windows-hardware/drivers/ddi/acpiioct/ns-acpiioct-_acpi_eval_input_buffer_complex_v1_ex)
 
 本主题中提供的示例 *EvaluateABCDWithInputArgument* 函数说明了驱动程序如何使用 IOCTL \_ ACPI \_ EVAL \_ 方法请求来评估名为 "ABCD" 的控制方法，该方法采用单个整数输入参数。
 
@@ -39,9 +38,9 @@ ms.locfileid: "89184873"
     inputBuffer.Signature = ACPI_EVAL_INPUT_BUFFER_SIMPLE_INTEGER_SIGNATURE;
 ```
 
-*EvaluateABCDWithInputArgument* 还会分配一个 [**ACPI \_ EVAL \_ 输出 \_ 缓冲区**](/windows-hardware/drivers/ddi/acpiioct/ns-acpiioct-_acpi_eval_output_buffer_v1) 结构 *outputBuffer*，但不会设置 *outputBuffer*的任何成员。
+*EvaluateABCDWithInputArgument* 还会分配一个 [**ACPI \_ EVAL \_ 输出 \_ 缓冲区**](/windows-hardware/drivers/ddi/acpiioct/ns-acpiioct-_acpi_eval_output_buffer_v1) 结构 *outputBuffer*，但不会设置 *outputBuffer* 的任何成员。
 
-然后， *EvaluateABCDWithInputArgument*调用驱动程序提供的名为[SendDownStreamIrp](senddownstreamirp-function.md)的函数来执行以下操作：
+然后， *EvaluateABCDWithInputArgument* 调用驱动程序提供的名为 [SendDownStreamIrp](senddownstreamirp-function.md)的函数来执行以下操作：
 
 1.  调用 [**IoBuildDeviceIoControlRequest**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iobuilddeviceiocontrolrequest) 以生成请求。
 
@@ -49,9 +48,9 @@ ms.locfileid: "89184873"
 
 3.  等待 i/o 管理器通知驱动程序低级驱动程序已完成该请求。
 
-在 i/o 管理器发出请求后， **SendDownStreamIrp**将返回该请求的信号。
+在 i/o 管理器发出请求后， **SendDownStreamIrp** 将返回该请求的信号。
 
-尽管 *EvaluateABCDWithInputArgument*中未包括，但驱动程序还应在 **SendDownStreamIrp** 返回后执行以下其他操作：
+尽管 *EvaluateABCDWithInputArgument* 中未包括，但驱动程序还应在 **SendDownStreamIrp** 返回后执行以下其他操作：
 
 1.  检查 **SendDownStreamIrp** 返回的状态。 如果 **SendDownStreamIrp** 未返回状态 \_ SUCCESS，则驱动程序将返回，而不进行其他处理。
 
@@ -61,7 +60,7 @@ ms.locfileid: "89184873"
 
 4.  调用 [**IoCompleteRequest**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocompleterequest) 以完成 IOCTL \_ ACPI \_ EVAL \_ 方法请求。
 
-以下示例中使用的 ACPI 数据结构和常量是在 *Acpiioct*中定义的。
+以下示例中使用的 ACPI 数据结构和常量是在 *Acpiioct* 中定义的。
 
 ```cpp
 NTSTATUS

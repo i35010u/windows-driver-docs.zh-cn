@@ -1,39 +1,38 @@
 ---
 title: 支持 DualView（Windows 2000 模型）
 description: 支持 DualView（Windows 2000 模型）
-ms.assetid: 08da97c9-1d31-40f5-99df-5f16eaa47c79
 keywords:
-- 微型端口驱动程序 WDK Windows 2000 中，双视图
-- 双视图 WDK 微型端口
+- 视频微型端口驱动程序 WDK Windows 2000、双屏
+- 双屏显示 WDK 视频微型端口
 - 多个显示设备同时 WDK 视频微型端口
-- SingleView WDK 微型端口
+- SingleView WDK 视频微型端口
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2d90d09e2e0ed83cd554c1c932e21767d4da2c29
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7e533daaa33cf985b4f5fefa6a9dd965633a783c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63372745"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96789971"
 ---
 # <a name="supporting-dualview-windows-2000-model"></a>支持 DualView（Windows 2000 模型）
 
 
-许多现代显示适配器都能够同时驱动器两个或多个不同的显示设备。 双视图，一项功能的 Microsoft Windows XP 及更高版本，提供系统级别的支持功能的多显示器，类似，但要求只有单个显示屏适配器。 图形设备接口 (GDIs) 和最终用户体验是相同的双视图和多显示器。
+许多新式显示适配器能够同时驱动两个或更多不同的显示设备。 Windows XP 和更高版本的一项功能，它为类似于 Multimonitor 的功能提供系统级支持，但只需要一个显示适配器。 对于双屏和 Multimonitor，图形设备接口 (GDIs) 和最终用户体验相同。
 
 SingleView 模式
 
-在 SingleView 模式下，显示适配器驱动的单个显示屏设备，而不考虑监视器的数目。 这是 Windows 2000 和更高版本的操作系统版本当前支持的显示适配器的大部分的常用模式。
+在 SingleView 模式下，显示适配器驱动单个显示设备，而不考虑监视器数量。 对于 Windows 2000 和更高版本的操作系统版本当前支持的大多数显示适配器，这是正常模式。
 
-双视图模式
+双屏模式
 
-双视图模式中的计算机可以使用 （具有多个视频端口） 的单个显示屏适配器来驱动不同监视器上的多个映像，与饰演桌面的不同部分的每个显示设备。 主图像将显示*主视图*; 其他映像显示*辅助视图*。
+处于双屏模式的计算机可以使用包含多个视频端口的单个显示适配器 () 在不同监视器上驱动多个图像，每个显示设备描绘桌面的不同部分。 主映像显示 *主视图*;其他图像显示 *辅助视图*。
 
-以下各小节提供有关双视图的详细信息：
+以下子节提供了有关双屏的详细信息：
 
-[启用双视图](enabling-dualview.md)
+[启用 DualView](enabling-dualview.md)
 
-[双视图高级实现详细信息](dualview-advanced-implementation-details.md)
+[DualView 高级实施详细信息](dualview-advanced-implementation-details.md)
 
  
 

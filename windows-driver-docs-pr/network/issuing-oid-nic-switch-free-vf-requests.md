@@ -1,15 +1,14 @@
 ---
 title: 发出 OID_NIC_SWITCH_FREE_VF 请求
 description: 发出 OID_NIC_SWITCH_FREE_VF 请求
-ms.assetid: D9A8548C-02D8-4537-9053-6B262004CBC4
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 99e2ad89b0fd119ec7290a98caeaa9aca65537c0
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: bb8b345e422a238af5e8056ecb5e710a7742cc6a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89215614"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96789737"
 ---
 # <a name="issuing-oid_nic_switch_free_vf-requests"></a>发出 OID \_ NIC \_ 交换机 \_ 免费 \_ VF 请求
 
@@ -30,7 +29,7 @@ ms.locfileid: "89215614"
 
 在过量驱动程序为 VF 请求分配资源后，该驱动程序是唯一可请求为同一 VF 释放资源的组件。 过量驱动程序必须发出 oid [ \_ NIC \_ 交换机 \_ 自由 \_ vf](./oid-nic-switch-free-vf.md) 的 OID 设置请求，以释放 vf 资源。 在停止过量驱动程序之前，必须释放由驱动程序的 [OID \_ NIC \_ 交换机 \_ 分配 \_ vf](./oid-nic-switch-allocate-vf.md) 请求分配的每个 VF 的资源。
 
-**注意**   如果过量驱动程序发出 Oid NIC 交换机的 OID 方法请求，则[ \_ \_ \_ 分配 \_ vf](./oid-nic-switch-allocate-vf.md)来分配用于 vf 的资源，该驱动程序是可以请求为同一 vf 释放资源的唯一组件。 过量驱动程序必须发出 oid [ \_ NIC \_ 交换机 \_ 自由 \_ vf](./oid-nic-switch-free-vf.md) 的 OID 设置请求，以释放 vf 资源。 在停止过量驱动程序之前，必须释放由驱动程序的 OID \_ NIC \_ 交换机 \_ 分配 \_ vf 请求分配的每个 VF 的资源。
+**注意**   如果过量驱动程序发出 Oid NIC 交换机的 OID 方法请求，则 [ \_ \_ \_ 分配 \_ vf](./oid-nic-switch-allocate-vf.md) 来分配用于 vf 的资源，该驱动程序是可以请求为同一 vf 释放资源的唯一组件。 过量驱动程序必须发出 oid [ \_ NIC \_ 交换机 \_ 自由 \_ vf](./oid-nic-switch-free-vf.md) 的 OID 设置请求，以释放 vf 资源。 在停止过量驱动程序之前，必须释放由驱动程序的 OID \_ NIC \_ 交换机 \_ 分配 \_ vf 请求分配的每个 VF 的资源。
 
  
 

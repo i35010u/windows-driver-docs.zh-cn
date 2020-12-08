@@ -1,20 +1,19 @@
 ---
 title: EFI_USBFN_IO_PROTOCOL.SetEndpointPolicy
 description: EFI_USBFN_IO_PROTOCOL.SetEndpointPolicy
-ms.assetid: d7ab0529-1925-47b5-9706-2e6288a6a5cf
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1365e0454195d6476a69e430325e4212770abc56
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 467e9115c47cee1a051084ae874a2baeda5d884a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63337686"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96789025"
 ---
-# <a name="efiusbfnioprotocolsetendpointpolicy"></a>EFI\_USBFN\_IO\_PROTOCOL.SetEndpointPolicy
+# <a name="efi_usbfn_io_protocolsetendpointpolicy"></a>EFI \_ USBFN \_ IO \_ 协议。SetEndpointPolicy
 
 
-**SetEndpointPolicy**函数设置指定非控制终结点的配置策略。
+**SetEndpointPolicy** 函数为指定的非控制终结点设置配置策略。
 
 ## <a name="syntax"></a>语法
 
@@ -32,26 +31,26 @@ EFI_STATUS
   );
 ```
 
-## <a name="parameters"></a>Parameters
+## <a name="parameters"></a>参数
 
 
 <a href="" id="this"></a>*此*  
-指向 EFI\_USBFN\_IO\_协议实例。
+指向 EFI \_ USBFN \_ IO \_ 协议实例的指针。
 
 <a href="" id="endpointindex"></a>*EndpointIndex*  
-指示策略需要设置非控制终结点。
+指示需要为其设置策略的非控制终结点。
 
-<a href="" id="direction"></a>*方向*  
-终结点的方向。 有关详细信息，请参阅[EFI\_USBFN\_终结点\_方向](efi-usbfn-endpoint-direction.md)。
+<a href="" id="direction"></a>*方向键*  
+终结点的方向。 有关详细信息，请参阅 [EFI \_ USBFN \_ 终结点 \_ 方向](efi-usbfn-endpoint-direction.md)。
 
 <a href="" id="policytype"></a>*PolicyType*  
-策略类型用户尝试设置指定非控制终结点。 有关详细信息，请参阅[EFI\_USBFN\_策略\_类型](efi-usbfn-policy-type.md)。
+用户试图为指定的非控制终结点设置的策略类型。 有关详细信息，请参阅 [EFI \_ USBFN \_ 策略 \_ 类型](efi-usbfn-policy-type.md)。
 
 <a href="" id="buffersize"></a>*BufferSize*  
-大小*缓冲区*以字节为单位。
+*缓冲区* 的大小（以字节为单位）。
 
-<a href="" id="buffer"></a>*缓冲区*  
-指向包含新的终结点策略值的缓冲区的指针。 策略类型的大小要求的详细信息，请参阅[EFI\_USBFN\_策略\_类型](efi-usbfn-policy-type.md)。
+<a href="" id="buffer"></a>*宽限*  
+指向包含新终结点策略值的缓冲区的指针。 有关策略类型的大小要求的详细信息，请参阅 [EFI \_ USBFN \_ 策略 \_ 类型](efi-usbfn-policy-type.md)。
 
 ## <a name="return-values"></a>返回值
 
@@ -70,7 +69,7 @@ EFI_STATUS
 <tbody>
 <tr class="odd">
 <td><p><strong>EFI_SUCCESS</strong></p></td>
-<td><p>该函数返回成功。</p></td>
+<td><p>函数已成功返回。</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>EFI_INVALID_PARAMETER</strong></p></td>
@@ -78,7 +77,7 @@ EFI_STATUS
 </tr>
 <tr class="odd">
 <td><p><strong>EFI_DEVICE_ERROR</strong></p></td>
-<td><p>物理设备报告了错误。</p></td>
+<td><p>物理设备报告了一个错误。</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>EFI_UNSUPPORTED</strong></p></td>
@@ -92,7 +91,7 @@ EFI_STATUS
 ## <a name="remarks"></a>备注
 
 
-仅之前调用此函数[EFI\_USBFN\_IO\_协议。StartController](efi-usbfn-io-protocolstartcontroller.md)或之后[EFI\_USBFN\_IO\_协议。StopController](efi-usbfn-io-protocolstopcontroller.md)已调用。 此函数是可以开始于的修订 0x00010001 **EFI\_USBFN\_IO\_协议**。
+只能在 [EFI \_ USBFN \_ IO 协议之前调用此函数 \_ 。StartController](efi-usbfn-io-protocolstartcontroller.md) 或 [EFI \_ USBFN \_ IO 协议后 \_ 。](efi-usbfn-io-protocolstopcontroller.md) 已调用 StopController。 此函数可从 **EFI \_ USBFN \_ IO \_ 协议** 的修订版0x00010001 开始。
 
 ## <a name="requirements"></a>要求
 

@@ -1,7 +1,6 @@
 ---
 title: ih
-description: Ih 扩展将显示在指定的处理器的中断历史记录。
-ms.assetid: 4c81bde4-da8b-4c44-8013-6c586c08e22b
+description: Ih 扩展显示指定处理器的中断历史记录。
 keywords:
 - 中断历史记录
 - ih Windows 调试
@@ -13,33 +12,33 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: e2c6da77278c0c1b39062dba06c4983d31ed5a09
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 73bb3baeadc21afcdff4299a7dd572d94d428088
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63336441"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96788977"
 ---
 # <a name="ih"></a>!ih
 
 
-**！ Ih**扩展插件都会显示在指定的处理器的中断历史记录。
+**！ Ih** extension 显示指定处理器的中断历史记录。
 
 ```dbgcmd
 !ih Processor
 ```
 
-**重要**  此命令已被 Windows 调试器版本 10.0.14257 中不推荐使用和更高版本，并不再可用。
+**重要提示**  此命令在 Windows 调试器版本10.0.14257 和更高版本中已弃用，不再可用。
 
  
 
-## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>参数
+## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>Parameters
 
 
-<span id="_______Processor______"></span><span id="_______processor______"></span><span id="_______PROCESSOR______"></span> *Processor*   
-指定一个处理器。 如果*处理器*是省略，使用当前的处理器。
+<span id="_______Processor______"></span><span id="_______processor______"></span><span id="_______PROCESSOR______"></span>*处理器*   
+指定处理器。 如果省略了 *processor* ，则使用当前处理器。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 <table>
 <colgroup>
@@ -60,14 +59,14 @@ ms.locfileid: "63336441"
 
  
 
-此扩展命令仅用于基于 Itanium 的目标计算机。
+此扩展命令只能与基于 Itanium 的目标计算机一起使用。
 
 <a name="remarks"></a>备注
 -------
 
-此扩展显示不带引用的程序计数器符号中断历史记录。 若要显示使用的程序计数器符号的中断历史记录，请使用[ **！ 他**](-ihs.md)扩展。 若要启用的中断历史记录，请添加 **/configflag = 32**为启动项选项。
+此扩展显示中断历史记录，而不引用程序计数器符号。 若要使用程序计数器符号显示中断历史记录，请使用 [**！他**](-ihs.md) 的扩展。 若要启用中断历史记录，请将 **/configflag = 32** 添加到启动条目选项。
 
-下面是输出的来自此扩展插件示例：
+下面是此扩展的输出示例：
 
 ```dbgcmd
 kd> !ih

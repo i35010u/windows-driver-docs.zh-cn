@@ -1,7 +1,6 @@
 ---
 title: IEEE EtherType 处理
 description: IEEE EtherType 处理
-ms.assetid: ddd7244b-05a0-4ee8-b9aa-300015fbe3bd
 keywords:
 - 发送操作 WDK Native 802.11 IHV 扩展 DLL
 - 接收操作 WDK 本机 802.11 IHV 扩展 DLL
@@ -11,19 +10,19 @@ keywords:
 - 解密 WDK 本机 802.11 IHV 扩展 DLL
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 842bc87684eba837e9ff3839fcad2d2cc92d0da6
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: dc620bfb51df6e17509a7d657f8d8e3da61a02ff
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89213965"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96790481"
 ---
 # <a name="ieee-ethertype-handling"></a>IEEE EtherType 处理
 
 
 
 
- 
+ 
 
 IHV 扩展 DLL 可指定 IEEE EtherTypes 的列表，用于特殊处理无线 LAN (WLAN) 适配器接收的数据包。 可以指定以下类型的 EtherType 处理。
 
@@ -38,9 +37,9 @@ IHV 扩展 DLL 通过调用 [**Dot11ExtSetEtherTypeHandling**](/windows-hardware
 -   在完成预关联操作之前，IHV 扩展 DLL 只能调用 [**Dot11ExtSetEtherTypeHandling**](/windows-hardware/drivers/ddi/wlanihv/nc-wlanihv-dot11ext_set_ethertype_handling) 。 有关此操作的详细信息，请参阅 [预关联操作](pre-association-operations.md)。
 
 -   IHV 扩展 DLL 通过零个或多个 [**DOT11 \_ 隐私 \_ 例外**](/windows-hardware/drivers/ddi/windot11/ns-windot11-dot11_privacy_exemption) 结构数组指定其隐私免除列表。 如果 IHV 扩展 DLL 未调用 [**Dot11ExtSetEtherTypeHandling**](/windows-hardware/drivers/ddi/wlanihv/nc-wlanihv-dot11ext_set_ethertype_handling)，则操作系统将默认为与访问点 (AP) 的任何802.11 关联的空隐私列表。
-    **注意**   对于 Windows Vista，IHV 扩展 DLL 仅支持基础结构基本服务集 (BSS) 网络。
+    **注意**  对于 Windows Vista，IHV 扩展 DLL 仅支持基础结构基本服务集 (BSS) 网络。
 
-     
+     
 
 -   IHV 扩展 DLL 注册一个列表，其中列出了它将接收的零个或多个 EtherTypes。 通常，DLL 会在后期关联操作过程中为它处理的安全数据包注册 EtherTypes。 有关此操作的详细信息，请参阅 [关联后操作](post-association-operations.md)。
 
@@ -50,6 +49,6 @@ IHV 扩展 DLL 通过调用 [**Dot11ExtSetEtherTypeHandling**](/windows-hardware
 
 -   在调用 [*Dot11ExtIhvAdapterReset*](/windows-hardware/drivers/ddi/wlanihv/nc-wlanihv-dot11extihv_adapter_reset)之前，操作系统会清除隐私例外和 EtherType 注册列表。
 
- 
+ 
 
- 
+ 

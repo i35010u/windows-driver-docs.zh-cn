@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ 时钟 \_ 时间
 description: 客户端使用 KSPROPERTY \_ 时钟 \_ 时间属性来确定时钟上当前的呈现时间。
-ms.assetid: 42bae8fa-bff0-4411-bf32-5aa4da3e4f02
 keywords:
 - KSPROPERTY_CLOCK_TIME 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 80a4ec0a5f5d0fd5f8242791126242ff134d87dd
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 12d3b85458fd18e44111f93e7dcde5d714e2a99e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103286"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96789549"
 ---
 # <a name="ksproperty_clock_time"></a>KSPROPERTY \_ 时钟 \_ 时间
 
@@ -86,7 +85,7 @@ ms.locfileid: "90103286"
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [KSPROPSETID \_ 时钟](kspropsetid-clock.md)

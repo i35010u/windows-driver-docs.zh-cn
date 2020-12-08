@@ -1,15 +1,14 @@
 ---
 title: 来自 UEFI 环境的设备 I/O
 description: 当 Windows 操作系统加载程序调用 UpdateCapsule 函数时，将执行 CapsuleHeaderArray 中包含的每个胶囊。
-ms.assetid: 843B177F-CD1F-47E6-8F35-0A0FFA8FA192
 ms.date: 05/21/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 87f54e308f84c6b96fb7b6564ab0197e7da577ba
-ms.sourcegitcommit: cbcb712a9f1f62c7d67e1b98097a0d8d24bd0c71
+ms.openlocfilehash: 68e093cdab741458cda92b8c08c337896c0c785f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83769383"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96789123"
 ---
 # <a name="device-io-from-the-uefi-environment"></a>来自 UEFI 环境的设备 I/O
 
@@ -19,7 +18,7 @@ ms.locfileid: "83769383"
 
 建立通信后，更新管理代码会将固件映像写入目标设备。 完成更新后，相应的返回状态代码将写入到 ESRT 中设备的固件资源条目。 然后，更新管理代码将控制权返回给 UpdateCapsule 函数。
 
-有关 UpdateCapsule 函数、胶囊结构和 UEFI 引导服务驱动程序和协议的详细信息，请参阅[uefi 规范](https://uefi.org/specifications)。
+有关 UpdateCapsule 函数、胶囊结构和 UEFI 引导服务驱动程序和协议的详细信息，请参阅 [uefi 规范](https://uefi.org/specifications)。
 
 ## <a name="related-topics"></a>相关主题
 

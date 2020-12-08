@@ -1,20 +1,19 @@
 ---
 title: EFI_SIMPLE_WINPHONE_IO_PROTOCOL.Read
 description: EFI_SIMPLE_WINPHONE_IO_PROTOCOL.Read
-ms.assetid: 9b5525a4-d98c-4328-8ebe-55ede53befca
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b71ff27f2e13acb8a3c6076382658f75e9bcd4b4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 253ab518d600c70f213874ab7d5d731aac292478
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63337789"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96789081"
 ---
-# <a name="efisimplewinphoneioprotocolread"></a>EFI\_SIMPLE\_WINPHONE\_IO\_PROTOCOL.Read
+# <a name="efi_simple_winphone_io_protocolread"></a>EFI \_ 简单 \_ WINPHONE \_ IO \_ 协议。读取
 
 
-**读取**函数从设备中读取数据。
+**Read** 函数从设备读取数据。
 
 ## <a name="syntax"></a>语法
 
@@ -30,20 +29,20 @@ EFI_STATUS
   );
 ```
 
-## <a name="parameters"></a>Parameters
+## <a name="parameters"></a>参数
 
 
 <a href="" id="this"></a>*此*  
-指向 EFI\_简单\_WINPHONE\_IO\_协议实例。
+指向 EFI \_ 简单 \_ WINPHONE \_ IO \_ 协议实例的指针。
 
 <a href="" id="numberofbytestoread"></a>*NumberOfBytesToRead*  
-要读取的字节数目上限。
+要读取的最多字节数。
 
 <a href="" id="numberofbytesread"></a>*NumberOfBytesRead*  
-返回以字节为单位的缓冲区中的数据量
+缓冲区中返回的数据量（以字节为单位）
 
-<a href="" id="buffer"></a>*缓冲区*  
-要返回到的数据的缓冲区。
+<a href="" id="buffer"></a>*宽限*  
+要将数据返回到的缓冲区。
 
 ## <a name="return-values"></a>返回值
 
@@ -64,7 +63,7 @@ EFI_STATUS
 <tbody>
 <tr class="odd">
 <td><p><strong>EFI_SUCCESS</strong></p></td>
-<td><p>成功返回的函数</p></td>
+<td><p>函数已成功返回</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>EFI_INVALID_PARAMETER</strong></p></td>
@@ -72,19 +71,19 @@ EFI_STATUS
 </tr>
 <tr class="odd">
 <td><p><strong>EFI_DEVICE_ERROR</strong></p></td>
-<td><p>物理设备报告了错误。</p></td>
+<td><p>物理设备报告了一个错误。</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>EFI_NOT_READY</strong></p></td>
-<td><p>物理设备是正忙还是未准备好处理此请求</p></td>
+<td><p>物理设备处于繁忙状态或尚未准备好处理此请求</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>EFI_TIMEOUT</strong></p></td>
-<td><p>建立连接之前发生超时。</p></td>
+<td><p>建立连接之前出现超时。</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>EFI_NO_RESPONSE</strong></p></td>
-<td><p>与主机的连接不存在或已终止。</p></td>
+<td><p>与主机的连接不存在或已被终止。</p></td>
 </tr>
 </tbody>
 </table>
@@ -94,9 +93,9 @@ EFI_STATUS
 ## <a name="remarks"></a>备注
 
 
-所需的数据是可用或在超时之前，将阻止此函数。
+此函数将被阻止，直到所请求的数据量可用或超时。
 
-如果出错，将读取任何字节，并将返回相应的状态代码。 在所有情况下，在返回实际读取的字节数**NumberOfBytesRead**。
+如果出现错误，将不再读取任何字节，并将返回相应的状态代码。 在所有情况下，都将在 **NumberOfBytesRead** 中返回实际读取的字节数。
 
 ## <a name="requirements"></a>要求
 

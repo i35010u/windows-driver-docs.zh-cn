@@ -1,39 +1,38 @@
 ---
-title: 选择区域设置和移动宽带元数据创建向导中的包类型
+title: 在移动宽带元数据创作向导中选择区域设置和包类型
 description: 在移动宽带元数据创作向导中选择区域设置和包类型
-ms.assetid: B2C9AEE8-6278-4870-A977-15FE1B59C9FD
 keywords:
 - 在移动宽带元数据创作向导中选择区域设置和包类型
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 25102051cb2eba5ac8fdf4e8a9c40f7b6a2ec048
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a831b546724797364bf027443b483bada883265b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63340103"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96790003"
 ---
 # <a name="select-locales-and-package-type-in-the-mobile-broadband-metadata-authoring-wizard"></a>在移动宽带元数据创作向导中选择区域设置和包类型
 
 
-选择适当的区域设置的区域设置的元数据包，以及你的包类型 （Windows 7 或 Windows 8）。
+选择相应的元数据包的区域设置或区域设置，以及包类型 (Windows 7 或 Windows 8) 。
 
-要实现这一点，请执行下列操作：
+为此，请执行以下步骤：
 
-1.  单击**包定义**选项卡。
-2.  下**可用的区域设置**，选择你想要将关联到元数据包。
-    **请注意**此步骤是必需的元数据的所有包。
-
-
-
-3.  下**区域设置默认**，执行下列操作之一：
-    -   如果你想要显示特定的语言包不可用的区域设置时的包，，选择所需的语言。
-        **请注意**只有一个元数据包可以指定为本地默认包。
+1.  单击 " **包定义** " 选项卡。
+2.  在 " **可用区域设置**" 下，选择要与元数据包关联的区域设置。
+    **注意**  所有元包都需要此步骤。
 
 
 
+3.  在 " **区域设置默认值**" 下，执行以下操作之一：
+    -   如果希望包在无法用于区域设置时以特定语言显示，请选择所需的语言。
+        **注意**  只能将一个元数据包指定为本地默认包。
 
--   如果不希望将显示在特定语言中可用，请选中，并不特定于区域设置的包的包**无默认值**。
+
+
+
+-   如果你不希望包在特定于区域设置的包不可用时以特定语言显示，请选择 " **无默认值**"。
 
 
 

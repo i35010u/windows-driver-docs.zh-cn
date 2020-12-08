@@ -1,7 +1,6 @@
 ---
 title: 适配器驱动程序构造
 description: 适配器驱动程序构造
-ms.assetid: e4a151b9-57aa-402f-8a0d-70547eb67917
 keywords:
 - 音频微型端口驱动程序 WDK，适配器驱动程序
 - 微型端口驱动程序 WDK 音频，适配器驱动程序
@@ -14,12 +13,12 @@ keywords:
 - 适配器驱动程序 WDK 音频，构造
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c18841072ff37689cd923784685fa01553f8097c
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: ecabbe01f617b4d08badb46733264f59e8391c43
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89208385"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96789455"
 ---
 # <a name="adapter-driver-construction"></a>适配器驱动程序构造
 

@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ 时钟 \_ FUNCTIONTABLE
 description: 客户端使用 KSPROPERTY \_ 时钟 \_ FUNCTIONTABLE 属性来检索在调度级别查询时间的入口点 \_ ，这使筛选器能够执行精确速率匹配。
-ms.assetid: 6dac5688-fd69-416c-a4e4-da9ccc45c32a
 keywords:
 - KSPROPERTY_CLOCK_FUNCTIONTABLE 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b8e5b82f2982ad544a48c86cd6cb7e1e1d2b1025
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 4b9e68dce2bcf51d444011a1c3556958b3e7846e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107122"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96789557"
 ---
 # <a name="ksproperty_clock_functiontable"></a>KSPROPERTY \_ 时钟 \_ FUNCTIONTABLE
 
@@ -66,7 +65,7 @@ ms.locfileid: "90107122"
 
 当客户端调用这些入口点时，客户端提供的 *FileObject* 参数指定创建时钟实例时返回的文件句柄基础的文件对象。
 
-*SystemTime*参数指向用于存储关联系统时间的位置。 使用函数 **KeQueryInterruptTime**获取系统时间。
+*SystemTime* 参数指向用于存储关联系统时间的位置。 使用函数 **KeQueryInterruptTime** 获取系统时间。
 
 另请参阅 [KS 时钟](./ks-clocks.md)。
 
@@ -86,7 +85,7 @@ ms.locfileid: "90107122"
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSCLOCK \_ FUNCTIONTABLE**](/windows-hardware/drivers/ddi/ks/ns-ks-ksclock_functiontable)

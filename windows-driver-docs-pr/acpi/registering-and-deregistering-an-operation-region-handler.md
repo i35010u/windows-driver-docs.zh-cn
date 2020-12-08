@@ -1,7 +1,6 @@
 ---
 title: 注册和注销操作区域处理程序
 description: 注册和注销操作区域处理程序
-ms.assetid: de40488d-7935-431c-b1f4-87f8aff1125b
 keywords:
 - ACPI 设备 WDK，操作区域
 - 操作区域 WDK ACPI
@@ -11,12 +10,12 @@ keywords:
 - 取消注册操作区域处理程序
 ms.date: 01/24/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 963c8f7a5c6308bd509bbebe4ae14fbdb8b77db6
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 285aa6877f7239b457b512ef23c8800ac55924dc
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89184497"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96789479"
 ---
 # <a name="registering-and-deregistering-an-operation-region-handler"></a>注册和注销操作区域处理程序
 
@@ -37,7 +36,7 @@ ACPI 设备函数驱动程序通过调用 [**RegisterOpRegionHandler**](/windows
 
     ACPI 驱动程序通过调用驱动程序的操作区域处理程序来访问操作区域。
 
--   指向 *操作区域上下文*的指针。
+-   指向 *操作区域上下文* 的指针。
 
     操作区域上下文是特定于设备的，仅供函数驱动程序使用。 当 ACPI 驱动程序调用操作区域处理程序时，它会将操作区域上下文传递回处理程序。 通常，它是功能设备对象的设备扩展 (FDO) 。
 

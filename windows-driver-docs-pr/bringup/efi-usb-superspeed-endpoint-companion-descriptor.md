@@ -1,19 +1,18 @@
 ---
 title: EFI_USB_SUPERSPEED_ENDPOINT_COMPANION_DESCRIPTOR
 description: EFI_USB_SUPERSPEED_ENDPOINT_COMPANION_DESCRIPTOR
-ms.assetid: 5449A10A-17BC-40CB-A8FC-19F867CFC9D0
 ms.date: 05/21/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: e7e6e3d081ecb3a815a965d5773cf9a99330d281
-ms.sourcegitcommit: 34a06eda78c8d935f3900b86fa0f620027bc6577
+ms.openlocfilehash: 77c9ccc8b30d0552b6b1c836e663a8437be6e848
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83778333"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96789065"
 ---
 # <a name="efi_usb_superspeed_endpoint_companion_descriptor"></a>EFI \_ USB \_ SUPERSPEED \_ 终结点 \_ 伴随 \_ 描述符
 
-**EFI \_ usb \_ SUPERSPEED \_ 终结点 \_ 伴随 \_ 描述符**结构提供 USB 函数驱动程序的 SUPERSPEED 终结点伴随描述符。
+**EFI \_ usb \_ SUPERSPEED \_ 终结点 \_ 伴随 \_ 描述符** 结构提供 USB 函数驱动程序的 SUPERSPEED 终结点伴随描述符。
 
 ## <a name="syntax"></a>语法
 
@@ -64,7 +63,7 @@ typedef struct
 
 ### <a name="bytesperinterval"></a>BytesPerInterval
 
-此终结点将每个服务间隔（SI）传输的总字节数。
+此终结点将每个服务间隔传输 (SI) 的总字节数。
 
 ## <a name="requirements"></a>要求
 

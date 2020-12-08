@@ -1,7 +1,6 @@
 ---
 title: AEC 系统筛选器
 description: AEC 系统筛选器
-ms.assetid: 45865e8c-7080-428f-b436-6004a8d5c011
 keywords:
 - 回声抵消乐曲音频
 - AEC WDK 音频
@@ -18,12 +17,12 @@ keywords:
 - 音频筛选器曲线图 WDK
 ms.date: 11/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: d98d122597f5758c56bba60eace51a995394257b
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: c8b93163c1fac2d4d76e180abebc7d842e2833b1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89208387"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96789453"
 ---
 # <a name="aec-system-filter"></a>AEC 系统筛选器
 
@@ -47,7 +46,7 @@ AEC 系统筛选器 ( # A0) 在软件中 (AEC) 和干扰阻止 (NS) 算法实现
 
 ![阐释 aec 系统筛选器的 pin 和连接的关系图](images/aecfilt.png)
 
--   AEC 和 NS 节点 (参见显示 [硬件加速捕获效果](exposing-hardware-accelerated-capture-effects.md) 的图) 只能处理 monophonic 流。 如果捕获流是多通道 (例如两通道立体声) ，则将忽略第一个通道以外的所有通道 (并丢弃) 。 呈现端只能处理 monophonic 流。
+-   AEC 和 NS 节点 (参阅 [Hardware-Accelerated 捕获效果](exposing-hardware-accelerated-capture-effects.md) ，) 只能处理 monophonic 流。 如果捕获流是多通道 (例如两通道立体声) ，则将忽略第一个通道以外的所有通道 (并丢弃) 。 呈现端只能处理 monophonic 流。
 
 -   在 Windows XP SP1、Windows Server 2003 及更高版本中，此限制不存在。 AEC 系统筛选器会正确地处理捕获和呈现流的时钟之间的不匹配，并且可以使用单独的设备来捕获和呈现。
 
@@ -75,7 +74,7 @@ AEC 系统筛选器 ( # A0) 在软件中 (AEC) 和干扰阻止 (NS) 算法实现
 
 问： AEC 系统筛选器是否会与我的旧声霸卡16卡一起使用？
 
-答：是的。 虽然 Sound Blaster16 卡无法同时管理16位呈现和捕获流，但它可以同时管理8位呈现流和16位捕获流，这是一个与 AEC 系统筛选器的输出和捕获支持的组合。 新的音频卡应该设计为至少支持16位的位深度，同时呈现和捕获。
+A:是的。 虽然 Sound Blaster16 卡无法同时管理16位呈现和捕获流，但它可以同时管理8位呈现流和16位捕获流，这是一个与 AEC 系统筛选器的输出和捕获支持的组合。 新的音频卡应该设计为至少支持16位的位深度，同时呈现和捕获。
 
 ### <a name="span-idsummary_of_data_formats_for_aec_pinsspanspan-idsummary_of_data_formats_for_aec_pinsspanspan-idsummary_of_data_formats_for_aec_pinsspansummary-of-data-formats-for-aec-pins"></a><span id="Summary_of_Data_Formats_for_AEC_Pins"></span><span id="summary_of_data_formats_for_aec_pins"></span><span id="SUMMARY_OF_DATA_FORMATS_FOR_AEC_PINS"></span>AEC Pin 的数据格式摘要
 
@@ -154,7 +153,7 @@ AEC 呈现器输出可处理以下任意格式：
 
  
 
-有关 **MajorFormat**、 **SubFormat**和 **说明符** 成员的详细信息，请参阅 [**KSDATARANGE**](/previous-versions/ff561658(v=vs.85))。 有关使用这三个参数值的 [**KSDATARANGE \_ 音频**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksdatarange_audio) 数据范围描述符的示例，请参阅 [PCM Stream data range](pcm-stream-data-range.md)。
+有关 **MajorFormat**、 **SubFormat** 和 **说明符** 成员的详细信息，请参阅 [**KSDATARANGE**](/previous-versions/ff561658(v=vs.85))。 有关使用这三个参数值的 [**KSDATARANGE \_ 音频**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksdatarange_audio) 数据范围描述符的示例，请参阅 [PCM Stream data range](pcm-stream-data-range.md)。
 
  
 

@@ -1,17 +1,16 @@
 ---
 title: 调试 WinLogon
 description: 调试 WinLogon
-ms.assetid: c30e6b83-685a-4e4e-88bf-1e05776ac87a
 keywords:
-- 调试 WinLogon （全局标志）
+- '调试 WinLogon (全局标志) '
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ef49034e95e55e3f1a8aa55c69a8172759eb7a47
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 23e230681971c1b4904553c4930365b428ff2f10
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63368157"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96788829"
 ---
 # <a name="debug-winlogon"></a>调试 WinLogon
 
@@ -19,7 +18,7 @@ ms.locfileid: "63368157"
 ## <span id="ddk_debug_winlogon_dtools"></span><span id="DDK_DEBUG_WINLOGON_DTOOLS"></span>
 
 
-**调试 WinLogon**标志调试 WinLogon 服务。
+**调试 winlogon 标志调试** winlogon 服务。
 
 <table>
 <colgroup>
@@ -41,22 +40,22 @@ ms.locfileid: "63368157"
 </tr>
 <tr class="even">
 <td align="left"><p><strong>目标</strong></p></td>
-<td align="left"><p>整个系统的注册表项</p></td>
+<td align="left"><p>系统范围内的注册表项</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-### <a name="span-idcommentsspanspan-idcommentsspancomments"></a><span id="comments"></span><span id="COMMENTS"></span>注释
+### <a name="span-idcommentsspanspan-idcommentsspancomments"></a><span id="comments"></span><span id="COMMENTS"></span>提出
 
-NTSD 调试 Winlogon (通过使用命令**ntsd-d-g-x**)，但控件将重定向到内核调试程序。
+NTSD 使用命令 **ntsd-d-g-x**) 调试 Winlogon (，但会将控件重定向到内核调试器。
 
-NTSD 的详细信息，请参阅[调试使用 CDB 和 NTSD](debugging-using-cdb-and-ntsd.md)。
+有关 NTSD 的详细信息，请参阅 [使用 CDB 和 NTSD 进行调试](debugging-using-cdb-and-ntsd.md)。
 
-### <a name="span-idseealsospanspan-idseealsospansee-also"></a><span id="see_also"></span><span id="SEE_ALSO"></span>另请参阅
+### <a name="span-idsee_alsospanspan-idsee_alsospansee-also"></a><span id="see_also"></span><span id="SEE_ALSO"></span>另请参阅
 
-[调试初始命令](debug-initial-command.md)，[启用调试的 Win32 子系统](enable-debugging-of-win32-subsystem.md)
+[调试初始命令](debug-initial-command.md)， [启用 Win32 子系统调试](enable-debugging-of-win32-subsystem.md)
 
  
 

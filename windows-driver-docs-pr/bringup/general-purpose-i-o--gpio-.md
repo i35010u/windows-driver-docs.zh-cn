@@ -1,15 +1,14 @@
 ---
 title: 常规用途 I/O (GPIO)
 description: 芯片上的系统 (SoC) 集成线路广泛使用了常规用途 i/o (GPIO) pin。
-ms.assetid: 9EB4EFC3-B94E-42C9-9FC7-12DF4AD01622
 ms.date: 07/09/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 771556734ea4318f8ba9828b3bbc4fff0543bd67
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 1e2ae07e0c49f09fcb6e02ce78aa501355d97ac6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89185801"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96788989"
 ---
 # <a name="general-purpose-io-gpio"></a>常规用途 I/O (GPIO)
 
@@ -35,14 +34,14 @@ Windows 支持 GPIO 控制器。 GPIO 控制器为外围设备提供各种功能
 
 1.  支持 ActiveBoth 中断的 GPIO 控制器必须支持级别模式中断，并且必须支持在运行时动态地重新对中断的极性进行编程。
 2.  为了最大限度地降低 i/o 错误的风险，Windows 首选使用内存映射的 GPIO 控制器，而不是使用 SPB 连接的 GPIO 控制器。 事实上，对于 Windows 按钮阵列设备 (PNP0C40) ，需要将此设备的 ActiveBoth GPIO 中断连接到内存映射的 GPIO 控制器，而不是连接到 SPB 连接的控制器。 若要确定哪些按钮中断必须 ActiveBoth，请参阅 " **设备** SECTIONIN [其他 ACPI 命名空间对象](other-acpi-namespace-objects.md) " 主题。
-3.  若要为 ActiveBoth 中断信号建立确定的初始状态，Windows GPIO 设备堆栈可保证驱动程序中断连接后生成的第一个中断始终为信号的断言状态。 堆栈进一步假定所有 ActiveBoth 中断线路的断言状态在默认情况下为 ActiveLow 边缘 (逻辑级别低) 。 如果在平台上不是这样，则可以通过 \_ 在控制器的命名空间中包含特定于 DSM 控制器设备的方法 (DSM) 来覆盖默认值。 有关此方法的详细信息，请参阅 [GPIO 控制器设备特定方法 (\_ DSM) ](gpio-controller-device-specific-method---dsm-.md)。
+3.  若要为 ActiveBoth 中断信号建立确定的初始状态，Windows GPIO 设备堆栈可保证驱动程序中断连接后生成的第一个中断始终为信号的断言状态。 堆栈进一步假定所有 ActiveBoth 中断线路的断言状态在默认情况下为 ActiveLow 边缘 (逻辑级别低) 。 如果在平台上不是这样，则可以通过 \_ 在控制器的命名空间中包含 GPIO 控制器 Device-Specific 方法 (DSM) 来覆盖默认值。 有关此方法的详细信息，请参阅 [DSM 控制器 Device-Specific 方法 (\_ DSM) ](gpio-controller-device-specific-method---dsm-.md)。
 
 > [!NOTE]
 > 上述列表中的第三项要求表明，使用 ActiveBoth 的设备的驱动程序在初始化 (连接到) 中断后，可能会立即收到中断，前提是 GPIO pin 上的信号在该时间处于已断言状态。 这是可能的，甚至可能是某些设备 (例如，耳机) ，必须在驱动程序中受支持。
 
  
 
-若要支持模拟的 ActiveBoth，GPIO 控制器驱动程序必须启用 ( "选择加入" ) ActiveBoth 模拟，方法是实现一个[*客户端 \_ ReconfigureInterrupt*](/windows-hardware/drivers/ddi/gpioclx/nc-gpioclx-gpio_client_reconfigure_interrupt)回调函数，并将在该驱动程序的[*客户端 \_ QueryControllerBasicInformation*](/windows-hardware/drivers/ddi/gpioclx/nc-gpioclx-gpio_client_query_controller_basic_information)回调函数提供给**GpioClx**的基本信息结构中设置**EmulateActiveBoth**标志。 有关详细信息，请参阅 [常规用途 i/o (GPIO) 驱动程序](../gpio/index.md)。
+若要支持模拟的 ActiveBoth，GPIO 控制器驱动程序必须启用 ( "选择加入" ) ActiveBoth 模拟，方法是实现一个 [*客户端 \_ ReconfigureInterrupt*](/windows-hardware/drivers/ddi/gpioclx/nc-gpioclx-gpio_client_reconfigure_interrupt)回调函数，并将在该驱动程序的 [*客户端 \_ QueryControllerBasicInformation*](/windows-hardware/drivers/ddi/gpioclx/nc-gpioclx-gpio_client_query_controller_basic_information)回调函数提供给 **GpioClx** 的基本信息结构中设置 **EmulateActiveBoth** 标志。 有关详细信息，请参阅 [常规用途 i/o (GPIO) 驱动程序](../gpio/index.md)。
 
 ## <a name="gpio-namespace-objects"></a>GPIO 命名空间对象
 
@@ -80,7 +79,7 @@ ACPI 驱动程序处理列出的 GPIO 中断，并为其计算边缘、级别或
 
 如前文所述，GPIO 控制器的命名空间必须包含 \_ AEI 对象才能支持 ACPI 事件。 \_AEI 对象 (参阅 ACPI 5.0 规范中的部分 5.6.5.2) 返回一个资源模板缓冲区，该缓冲区只包含通过此 GPIO 控制器发出 ACPI 事件信号的 GpioInt 描述符。 每个描述符对应于一个 ACPI 事件源设备，并专用于该设备， (不在设备) 之间共享。
 
-**GeneralPurposeIO 操作区域 (OpRegions) **
+**GeneralPurposeIO 操作区域 (OpRegions)**
 
 平台固件通常使用 GPIO 控制器来支持任意数量的平台硬件功能，如控制电源和时钟，或在设备上设置模式。 若要支持从 ASL 控制方法使用 GPIO i/o，ACPI 5.0 定义了新的 OpRegion 类型 "GeneralPurposeIO"。
 
@@ -89,5 +88,5 @@ GeneralPurposeIO OpRegions (参阅 ACPI 5.0 规范部分5.5.2.4.4，) 在 GPIO �
 OpRegion 中的字段可以在命名空间中的任何位置进行声明，并可从命名空间中的任何方法进行访问。 GeneralPurposeIO OpRegion 的访问方向由第一次访问 (读取或写入) 确定，并且不能更改。
 
 > [!NOTE]
-> 由于 OpRegion access 由 GPIO 控制器设备驱动程序 ("OpRegion 处理程序" ) 提供，因此在该驱动程序可用之前，方法必须注意不访问 OpRegion。 ASL 代码可以通过在 GPIO 控制器设备下包含区域 (REG) 方法来跟踪 OpRegion 处理程序的状态 \_ (参阅 ACPI 5.0 规范) 部分6.5.4。 此外，OpRegion 依赖关系 (\_ DEP) 对象 (参阅 ACPI 5.0) 规范的 "6.5.8" 部分中，如果需要，可以在具有访问 GPIO OpRegion 字段的方法的任何设备下使用。 有关何时使用 DEP 的讨论，请参阅[设备管理命名空间对象](device-management-namespace-objects.md)主题中的**设备依赖项**部分 \_ 。 不会为驱动程序分配 GPIO i/o 资源（这些资源也分配给 GeneralPurposeIO OpRegions），这一点很重要。 Opregions 用于独占使用 ASL 控制方法。
+> 由于 OpRegion access 由 GPIO 控制器设备驱动程序 ("OpRegion 处理程序" ) 提供，因此在该驱动程序可用之前，方法必须注意不访问 OpRegion。 ASL 代码可以通过在 GPIO 控制器设备下包含区域 (REG) 方法来跟踪 OpRegion 处理程序的状态 \_ (参阅 ACPI 5.0 规范) 部分6.5.4。 此外，OpRegion 依赖关系 (\_ DEP) 对象 (参阅 ACPI 5.0) 规范的 "6.5.8" 部分中，如果需要，可以在具有访问 GPIO OpRegion 字段的方法的任何设备下使用。 有关何时使用 DEP 的讨论，请参阅 [设备管理命名空间对象](device-management-namespace-objects.md)主题中的 **设备依赖项** 部分 \_ 。 不会为驱动程序分配 GPIO i/o 资源（这些资源也分配给 GeneralPurposeIO OpRegions），这一点很重要。 Opregions 用于独占使用 ASL 控制方法。
 

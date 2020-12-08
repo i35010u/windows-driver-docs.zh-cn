@@ -1,15 +1,14 @@
 ---
 title: 音频硬件资源管理
 description: Windows 10 包括使用和 XML 文件表达并发约束的能力。
-ms.assetid: 6E94529E-F3F0-4DC5-AF8B-F896A4F991E3
 ms.date: 10/29/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b9c31a33c9779767237e11b44a0347f24abc9a7d
-ms.sourcegitcommit: 7a69c2e0abf91a57407b13a30faf24925f677970
+ms.openlocfilehash: b959fc714b545e0960da32423576ad513dd8ea00
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85829030"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96789405"
 ---
 # <a name="audio-hardware-resource-management"></a>音频硬件资源管理
 
@@ -24,8 +23,8 @@ Windows 10 包含一种机制，用于表达并发约束，以确保高优先级
 
 若要指定约束，请完成以下两个步骤。
 
-- 如[指定并发](#specify-concurrency-resource-constraints)约束中所述，创建一个并发约束 XML 文件。
-- 如[注册表 \_ 项 \_ 配置](#registry-key-configuration)中所述，将注册表项配置为使用自定义并发约束 XML 文件。
+- 如 [指定并发](#specify-concurrency-resource-constraints)约束中所述，创建一个并发约束 XML 文件。
+- 如 [注册表 \_ 项 \_ 配置](#registry-key-configuration)中所述，将注册表项配置为使用自定义并发约束 XML 文件。
 
 ## <a name="specify-concurrency-resource-constraints"></a>指定并发资源约束
 
@@ -105,13 +104,13 @@ XML 文件的最后一个必需部分定义了各种资源使用者。 此部分
 - &lt;电话呼叫 &gt; -" &lt; 电话呼叫" &gt; 节点包含具有 "活动" 或 "保留" 的 "CallState" 子节点。
 - &lt;流 &gt; -音频流。 " &lt; 流" &gt; 节点包含下列子节点。
 
-    &lt;HWID-在驱动程序的 INF 文件中指定的资源使用者的硬件 ID （硬件 id）。
+    &lt;HWID-硬件 ID (在驱动程序的 INF 文件中指定的资源使用者) 。
 
     &lt;TopologyName &gt; -资源使用者的拓扑筛选器引用字符串。
 
     &lt;PinId &gt; -资源使用者的 PIN ID。
 
-    &lt;Mode &gt; -关联模式的 GUID。 有关详细信息，请参阅[音频信号处理模式](audio-signal-processing-modes.md)。
+    &lt;Mode &gt; -关联模式的 GUID。 有关详细信息，请参阅 [音频信号处理模式](audio-signal-processing-modes.md)。
 
     &lt;ConnectorType &gt; -资源使用者的连接器类型。 有效值为： "主机"、"环回" 或 "卸载"。
 

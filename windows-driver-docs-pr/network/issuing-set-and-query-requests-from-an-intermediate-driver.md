@@ -1,18 +1,17 @@
 ---
 title: 从中间驱动程序发出设置和查询请求
 description: 从中间驱动程序发出设置和查询请求
-ms.assetid: bd049639-970c-43c8-8ef9-c5e75cc2d75f
 keywords:
 - 查询操作 WDK NDIS 中间
 - 设置操作 WDK NDIS 中间
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1de6bc79d4a57fcbe84dfbe80f41fe3b61d42dc2
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 53788cadc4d7eff440e393a8577e94f6c15de17b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89213465"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96789735"
 ---
 # <a name="issuing-set-and-query-requests-from-an-intermediate-driver"></a>从中间驱动程序发出设置和查询请求
 

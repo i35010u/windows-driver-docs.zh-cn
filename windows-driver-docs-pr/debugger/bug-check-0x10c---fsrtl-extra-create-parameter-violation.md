@@ -1,7 +1,6 @@
 ---
 title: Bug 检查 0x10C FSRTL_EXTRA_CREATE_PARAMETER_VIOLATION
-description: FSRTL_EXTRA_CREATE_PARAMETER_VIOLATION bug 检查具有值，该值指示 FsRtl ECP 包中检测到违反 0x0000010C。
-ms.assetid: b702b182-696a-4233-8bd0-23a52ab2ddc4
+description: FSRTL_EXTRA_CREATE_PARAMETER_VIOLATION bug 检查的值为0x0000010C，指示在 FsRtl ECP 包中检测到冲突。
 keywords:
 - Bug 检查 0x10C FSRTL_EXTRA_CREATE_PARAMETER_VIOLATION
 - FSRTL_EXTRA_CREATE_PARAMETER_VIOLATION
@@ -13,23 +12,23 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: c2100206135c058015ee1e95e2018f95869db059
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: 63493a4be42d018d5fbd927593263c45ac4a00c8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67521422"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96790071"
 ---
-# <a name="bug-check-0x10c-fsrtlextracreateparameterviolation"></a>Bug 检查 0x10C：FSRTL\_EXTRA\_CREATE\_PARAMETER\_VIOLATION
+# <a name="bug-check-0x10c-fsrtl_extra_create_parameter_violation"></a>Bug 检查0x10C： FSRTL \_ 额外的 \_ CREATE \_ 参数 \_ 冲突
 
 
-FSRTL\_额外\_创建\_参数\_冲突错误检查的值为 0x0000010C。 这表示在文件系统运行时库 (FsRtl) 额外创建参数 (ECP) 包中检测到冲突。
+FSRTL \_ 额外的 \_ CREATE \_ PARAMETER \_ 违例 bug 检查的值为0x0000010C。 这表明在文件系统运行时库中检测到冲突 (FsRtl) 额外的 Create 参数 (ECP) 包。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题面向程序员。 如果您是在使用计算机时收到蓝屏错误代码的客户，请参阅[蓝屏错误疑难解答](https://www.windows.com/stopcode)。
 
 
-## <a name="fsrtlextracreateparameterviolation-parameters"></a>FSRTL\_额外\_创建\_参数\_冲突参数
+## <a name="fsrtl_extra_create_parameter_violation-parameters"></a>FSRTL \_ 额外的 \_ CREATE \_ PARAMETER \_ 违例参数
 
 
 <table>
@@ -46,7 +45,7 @@ FSRTL\_额外\_创建\_参数\_冲突错误检查的值为 0x0000010C。 这表�
 <tbody>
 <tr class="odd">
 <td align="left"><p>1</p></td>
-<td align="left"><p>冲突的类型。 （请参阅下表更高版本在此页以进行更多详细信息）。</p></td>
+<td align="left"><p>冲突类型。  (查看下表以了解更多详细信息) 。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>2</p></td>
@@ -54,7 +53,7 @@ FSRTL\_额外\_创建\_参数\_冲突错误检查的值为 0x0000010C。 这表�
 </tr>
 <tr class="odd">
 <td align="left"><p>3</p></td>
-<td align="left"><p>在 ECP 的地址。</p></td>
+<td align="left"><p>ECP 的地址。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>4</p></td>
@@ -65,7 +64,7 @@ FSRTL\_额外\_创建\_参数\_冲突错误检查的值为 0x0000010C。 这表�
 
  
 
-值为参数 1 指示冲突的类型。
+参数1的值指示冲突类型。
 
 <table>
 <colgroup>
@@ -75,53 +74,53 @@ FSRTL\_额外\_创建\_参数\_冲突错误检查的值为 0x0000010C。 这表�
 <thead>
 <tr class="header">
 <th align="left">参数 1</th>
-<th align="left">类型的冲突</th>
+<th align="left">冲突类型</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p>0x1</p></td>
-<td align="left"><p>ECP 签名无效，由于无效的指针或内存损坏。</p></td>
+<td align="left"><p>由于错误的指针或内存损坏，ECP 签名无效。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x2</p></td>
-<td align="left"><p>在 ECP 有未定义的标志集。</p></td>
+<td align="left"><p>ECP 包含未定义的标志集。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x3</p></td>
-<td align="left"><p>在 ECP 未通过 FsRtl 进行分配。</p></td>
+<td align="left"><p>FsRtl 未分配 ECP。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x4</p></td>
-<td align="left"><p>在 ECP 具有中是非法的用于创建调用方传递的参数的标志集。</p></td>
+<td align="left"><p>ECP 具有对 create 调用方传递的参数非法的标志集。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x5</p></td>
-<td align="left"><p>在 ECP 已损坏;其大小小于标头大小。</p></td>
+<td align="left"><p>ECP 已损坏;其大小小于标头大小。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x6</p></td>
-<td align="left"><p>正在释放在 ECP 具有非空列表的指针;它仍然可能 ECP 列表的一部分。</p></td>
+<td align="left"><p>正在释放的 ECP 具有非空的列表指针;它仍可能是 ECP 列表的一部分。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x11</p></td>
-<td align="left"><p>ECP 列表签名无效，由于无效的指针或内存损坏。</p></td>
+<td align="left"><p>由于错误的指针或内存损坏，ECP 列表签名无效。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x12</p></td>
-<td align="left"><p>ECP 列表有未定义的标志集。</p></td>
+<td align="left"><p>ECP 列表具有未定义的标志集。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x13</p></td>
-<td align="left"><p>通过 FsRtl 未分配 ECP 列表。</p></td>
+<td align="left"><p>FsRtl 未分配 ECP 列表。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x14</p></td>
-<td align="left"><p>ECP 列表有设置标志，是非法的有关通过创建调用方传递的参数列表。</p></td>
+<td align="left"><p>ECP 列表具有对 create 调用方传递的参数列表非法的标志集。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x15</p></td>
-<td align="left"><p>通过创建调用方传递 ECP 列表为空。</p></td>
+<td align="left"><p>Create 调用方传递的 ECP 列表为空。</p></td>
 </tr>
 </tbody>
 </table>

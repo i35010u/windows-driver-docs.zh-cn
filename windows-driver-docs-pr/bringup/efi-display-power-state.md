@@ -1,20 +1,19 @@
 ---
 title: EFI_DISPLAY_POWER_STATE
 description: EFI_DISPLAY_POWER_STATE
-ms.assetid: b4b0980b-db87-44e8-842c-afce0c8df0a0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f2a9230c4286efe8a39a2a3f7fdbee8c2a8cf327
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f57552cd23006d04b4d06b518851ce35b470ca9b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328008"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96789097"
 ---
-# <a name="efidisplaypowerstate"></a>EFI\_DISPLAY\_POWER\_STATE
+# <a name="efi_display_power_state"></a>EFI \_ 显示 \_ 电源 \_ 状态
 
 
-此枚举表示显示和背景光的充电的状态。 此枚举是一个参数的[EFI\_显示\_POWER\_协议。GetDisplayPowerState](efi-display-power-protocolgetdisplaypowerstate.md)并[EFI\_显示\_POWER\_协议。SetDisplayPowerState](efi-display-power-protocolsetdisplaypowerstate.md)函数。
+此枚举表示显示器和背光的充电状态。 此枚举是 [EFI \_ 显示 \_ 电源协议的参数 \_ 。GetDisplayPowerState](efi-display-power-protocolgetdisplaypowerstate.md) 和 [EFI \_ 显示 \_ 电源 \_ 协议。SetDisplayPowerState](efi-display-power-protocolsetdisplaypowerstate.md) 函数。
 
 ## <a name="syntax"></a>语法
 
@@ -31,13 +30,13 @@ typedef enum _EFI_DISPLAY_POWER_STATE {
 
 
 <a href="" id="efidisplaypowerstateunknown"></a>EfiDisplayPowerStateUnknown  
-未初始化的电源状态。 此值仅可用于变量初始化;无法传递给或任何返回的[EFI\_显示\_POWER\_协议](efi-display-power-protocol.md)函数。
+电源状态未初始化。 此值仅可用于变量初始化;不能将其传递到任何 [EFI \_ 显示 \_ 电源 \_ 协议](efi-display-power-protocol.md) 功能或由其返回。
 
 <a href="" id="efidisplaypowerstateoff"></a>EfiDisplayPowerStateOff  
-与一起使用时[EFI\_显示\_POWER\_协议。GetDisplayPowerState](efi-display-power-protocolgetdisplaypowerstate.md)，指示来显示和背景光电源已关闭。 与一起使用时[EFI\_显示\_POWER\_协议。SetDisplayPowerState](efi-display-power-protocolsetdisplaypowerstate.md)、 显示和背景光电源关闭。
+与 [EFI \_ 显示 \_ 电源协议一起使用时 \_ 。GetDisplayPowerState](efi-display-power-protocolgetdisplaypowerstate.md)，表示显示和背景光的电源关闭。 与 [EFI \_ 显示 \_ 电源协议一起使用时 \_ 。SetDisplayPowerState](efi-display-power-protocolsetdisplaypowerstate.md)，关闭显示屏和背光的电源。
 
 <a href="" id="efidisplaypowerstatemaximum"></a>EfiDisplayPowerStateMaximum  
-与一起使用时[EFI\_显示\_POWER\_协议。GetDisplayPowerState](efi-display-power-protocolgetdisplaypowerstate.md)，指示的显示和背景光具有完整功能。 与一起使用时[EFI\_显示\_POWER\_协议。SetDisplayPowerState](efi-display-power-protocolsetdisplaypowerstate.md)、 打开来显示和背景光的全部功能。
+与 [EFI \_ 显示 \_ 电源协议一起使用时 \_ 。GetDisplayPowerState](efi-display-power-protocolgetdisplaypowerstate.md)，表示显示和背景光具有完全功能。 与 [EFI \_ 显示 \_ 电源协议一起使用时 \_ 。SetDisplayPowerState](efi-display-power-protocolsetdisplaypowerstate.md)，打开显示屏和背光的全部功能。
 
 ## <a name="requirements"></a>要求
 
@@ -45,7 +44,7 @@ typedef enum _EFI_DISPLAY_POWER_STATE {
 **标头：** 用户生成
 
 ## <a name="related-topics"></a>相关主题
-[EFI\_DISPLAY\_电源\_协议](efi-display-power-protocol.md)  
+[EFI \_ 显示 \_ 电源 \_ 协议](efi-display-power-protocol.md)  
 
 
 

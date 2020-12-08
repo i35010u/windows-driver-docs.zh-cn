@@ -1,7 +1,6 @@
 ---
 title: 了解协议驱动程序
 description: 了解协议驱动程序
-ms.assetid: a908f91e-7529-42b5-9a3d-82d2a519d969
 keywords:
 - 协议驱动程序 WDK 网络，无连接的下边缘
 - NDIS 协议驱动程序 WDK，无连接的下边缘
@@ -13,12 +12,12 @@ keywords:
 - 网络驱动程序 WDK，类型
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f4b17f3340bf13a884a0d8c66043ef43bd8bd8dc
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 302a3018c9767938943cf6d37dbc339b60fb3346
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89212873"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96789703"
 ---
 # <a name="learning-about-protocol-drivers"></a>了解协议驱动程序
 

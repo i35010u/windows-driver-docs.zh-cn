@@ -1,17 +1,16 @@
 ---
 title: ACPI_METHOD_SET_ARGUMENT_BUFFER 宏
 description: ACPI_METHOD_SET_ARGUMENT_BUFFER 宏为数据缓冲区中提供的自定义数据设置 ACPI_METHOD_ARGUMENT 结构的成员。
-ms.assetid: 1f335814-fa9f-45c6-b970-10884e971ec1
 keywords:
 - ACPI_METHOD_SET_ARGUMENT_BUFFER 宏 ACPI 设备
 ms.date: 10/12/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 9daa7774936c5f06099ac5b376684b51288c84c8
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 96e0374f3cbcf5da9ca9d425bcdd24b7f57d7169
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89184867"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96789515"
 ---
 # <a name="acpi_method_set_argument_buffer-macro"></a>ACPI \_ 方法 \_ 集 \_ 参数 \_ 缓冲区宏
 
@@ -62,7 +61,7 @@ void ACPI_METHOD_SET_ARGUMENT_BUFFER(
 <tbody>
 <tr>
 <td><p>目标平台</p></td>
-<td>“桌面”</td>
+<td>台式机</td>
 </tr>
 <tr>
 <td><p>标头</p></td>
@@ -71,7 +70,7 @@ void ACPI_METHOD_SET_ARGUMENT_BUFFER(
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**ACPI \_ 方法 \_ 参数**](/windows-hardware/drivers/ddi/acpiioct/ns-acpiioct-_acpi_method_argument_v1)

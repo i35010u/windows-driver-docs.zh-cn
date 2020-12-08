@@ -1,7 +1,6 @@
 ---
 title: KSEVENT \_ BDA \_ 程序 \_ 流 \_ 状态 \_ 已更改
 description: '\_ \_ \_ \_ \_ 当程序信息的状态发生更改时，客户端使用 KSEVENT BDA PROGRAM FLOW 状态更改为请求通知。'
-ms.assetid: 4d4041ba-2330-4dc5-aa8b-3ea8cb1b27e7
 keywords:
 - KSEVENT_BDA_PROGRAM_FLOW_STATUS_CHANGED 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ddd57388d39a66b6c6eae72290f7fad47de3526e
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: ec3e5313a7be12464d8c7424fa0b151f66b0e487
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89187769"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96789600"
 ---
 # <a name="ksevent_bda_program_flow_status_changed"></a>KSEVENT \_ BDA \_ 程序 \_ 流 \_ 状态 \_ 已更改
 
@@ -47,7 +46,7 @@ KSEVENT
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Bdamedia (包含 Bdamedia) </td>
 </tr>
 </tbody>

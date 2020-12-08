@@ -1,15 +1,14 @@
 ---
 title: 将谓词与 HD 音频编解码器通信
 description: 将谓词与 HD 音频编解码器通信
-ms.assetid: d93013fa-5b09-4616-bc71-5d3838337717
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 92d870d75a5aaa1400b8b3c7ac75781abe79d4c0
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: ff6c5dde1072754f2d0c3fb50d05775d6b6cc55a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90714816"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96789333"
 ---
 # <a name="communicating-verbs-with-the-hd-audio-codec"></a>将谓词与 HD 音频编解码器通信
 

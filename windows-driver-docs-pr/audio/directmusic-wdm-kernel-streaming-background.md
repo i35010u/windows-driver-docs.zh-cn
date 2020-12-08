@@ -1,7 +1,6 @@
 ---
 title: DirectMusic WDM 内核流式处理后台
 description: DirectMusic WDM 内核流式处理后台
-ms.assetid: 851fa156-590a-43fb-9c49-df528f0ea608
 keywords:
 - DirectMusic 内核模式 WDK 音频，WDM 内核流式处理
 - 内核模式 synths WDK 音频，WDM 内核流式处理
@@ -13,12 +12,12 @@ keywords:
 - 合成 WDK 音频，内核模式硬件加速
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 38f63ec8b8b106b26a75543596437c45424a71a0
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 101ae6d6807e4221617060de28d7a2d682f09aa8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89208113"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96789281"
 ---
 # <a name="directmusic-wdm-kernel-streaming-background"></a>DirectMusic WDM 内核流式处理后台
 

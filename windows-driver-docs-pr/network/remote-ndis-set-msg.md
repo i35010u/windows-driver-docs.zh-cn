@@ -1,15 +1,14 @@
 ---
 title: REMOTE_NDIS_SET_MSG
 description: 当需要在设备上设置某些操作参数的值时，会将此消息从主机发送到远程 NDIS 设备。
-ms.assetid: d39032e2-e3a5-415f-8bd6-b60b9049ce33
 ms.date: 07/31/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 251a486515dae67996e589588318789e0da69fc3
-ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
+ms.openlocfilehash: 173173b626042fd87b943d240e432e14b04efc0e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88968726"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96789643"
 ---
 # <a name="remote_ndis_set_msg"></a>远程 \_ NDIS \_ 设置 \_ 消息
 
@@ -28,7 +27,7 @@ ms.locfileid: "88968726"
 <th>Offset</th>
 <th>大小</th>
 <th>字段</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -89,7 +88,7 @@ ms.locfileid: "88968726"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Version</p></td>
+<td><p>版本</p></td>
 <td><p>在 Microsoft Windows XP 和更高版本的 Windows 操作系统中可用。 在 Windows 2000 中也可以作为可再发行二进制文件。</p></td>
 </tr>
 <tr class="even">

@@ -1,7 +1,6 @@
 ---
 title: KSMETHOD \_ BDA \_ 提交 \_ 更改
 description: 客户端使用 KSMETHOD \_ BDA \_ 提交 \_ 更改来提交请求的更改列表。
-ms.assetid: f6572a4e-2328-4157-80f7-110e0fe58a4f
 keywords:
 - KSMETHOD_BDA_COMMIT_CHANGES 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0615525c204a7f561f1a40f36f7d4c661cc1e6ad
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: d8e7f0479ee5a332c290d59d1eb5f6552ebc5fcf
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89188177"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96789593"
 ---
 # <a name="ksmethod_bda_commit_changes"></a>KSMETHOD \_ BDA \_ 提交 \_ 更改
 
@@ -31,7 +30,7 @@ ms.locfileid: "89188177"
 
 ### <a name="span-idspecifying_this_methodspanspan-idspecifying_this_methodspanspan-idspecifying_this_methodspanspecifying-this-method"></a><span id="Specifying_This_Method"></span><span id="specifying_this_method"></span><span id="SPECIFYING_THIS_METHOD"></span>指定此方法
 
-**标记**成员设置为 KSMETHOD 的 KSMETHOD \_ \_ 。
+**标记** 成员设置为 KSMETHOD 的 KSMETHOD \_ \_ 。
 
 ### <a name="span-idmethod_dataspanspan-idmethod_dataspanspan-idmethod_dataspanmethod-data"></a><span id="Method_Data"></span><span id="method_data"></span><span id="METHOD_DATA"></span>方法数据
 
@@ -58,7 +57,7 @@ ms.locfileid: "89188177"
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**BdaCommitChanges**](/windows-hardware/drivers/ddi/bdasup/nf-bdasup-bdacommitchanges)

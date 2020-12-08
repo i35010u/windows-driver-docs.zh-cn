@@ -1,7 +1,6 @@
 ---
 title: 音频属性处理程序
 description: 音频属性处理程序
-ms.assetid: 4bf176ae-b3fd-47e6-9802-a92ef5e9904f
 keywords:
 - 音频属性 WDK，处理程序
 - WDM 音频属性 WDK，处理程序
@@ -16,12 +15,12 @@ keywords:
 - 节点 WDK 音频，属性处理程序
 ms.date: 08/07/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 5d1be69787fc40b7615fba903129610c8df62d75
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: faaba8b346cb9107f2c0bdeaf0e33a8d70257dc8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90714825"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96789375"
 ---
 # <a name="audio-property-handlers"></a>音频属性处理程序
 
@@ -49,9 +48,9 @@ PCPROPERTY 请求的 **MajorTarget** 成员 \_ 指向音频设备的主要微型
 
 对于发送到筛选器句柄的 KS 属性请求，PCPROPERTY 请求的 **MinorTarget** 成员 \_ 为 **NULL**。 如果请求发送到 pin 句柄， **MinorTarget** 将指向该 pin 的流接口。 例如，对于 WavePci 设备，这是指向流对象的 [IMiniportWavePciStream](/windows-hardware/drivers/ddi/portcls/nn-portcls-iminiportwavepcistream) 接口的指针。
 
-PCPROPERTY 请求点的 **实例** 和 **值** 成员 \_ 分别为 KS 属性请求的输入和输出缓冲区。  (缓冲区由[**DeviceIoControl**](/windows/win32/api/ioapiset/nf-ioapiset-deviceiocontrol)函数的*lpInBuffer*和*LpOutBuffer*参数指定。 ) 这些缓冲区分别包含 (实例数据) 和属性值 (操作数据) ，如[音频驱动程序属性集中](./audio-drivers-property-sets.md)所述。 **值**成员指向输出缓冲区的开头，但**实例**指针与输入缓冲区的开头偏移。
+PCPROPERTY 请求点的 **实例** 和 **值** 成员 \_ 分别为 KS 属性请求的输入和输出缓冲区。  (缓冲区由 [**DeviceIoControl**](/windows/win32/api/ioapiset/nf-ioapiset-deviceiocontrol)函数的 *lpInBuffer* 和 *LpOutBuffer* 参数指定。 ) 这些缓冲区分别包含 (实例数据) 和属性值 (操作数据) ，如 [音频驱动程序属性集中](./audio-drivers-property-sets.md)所述。 **值** 成员指向输出缓冲区的开头，但 **实例** 指针与输入缓冲区的开头偏移。
 
-输入缓冲区以 [**KSPROPERTY**](/previous-versions/ff564262(v=vs.85)) 或 [**KSNODEPROPERTY**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty) 结构开头。 端口驱动程序将此结构中的信息复制到 PCPROPERTY \_ 请求结构的 **Node**、 **PropertyItem**和 **Verb** 成员中。 如果任何数据遵循缓冲区中的 KSPROPERTY 或 KSNODEPROPERTY 结构，则端口驱动程序将使用指向此数据的指针加载 **实例** 成员。 否则，它会将 **实例** 设置为 **NULL**。
+输入缓冲区以 [**KSPROPERTY**](/previous-versions/ff564262(v=vs.85)) 或 [**KSNODEPROPERTY**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty) 结构开头。 端口驱动程序将此结构中的信息复制到 PCPROPERTY \_ 请求结构的 **Node**、 **PropertyItem** 和 **Verb** 成员中。 如果任何数据遵循缓冲区中的 KSPROPERTY 或 KSNODEPROPERTY 结构，则端口驱动程序将使用指向此数据的指针加载 **实例** 成员。 否则，它会将 **实例** 设置为 **NULL**。
 
 如果输入缓冲区以 KSPROPERTY 结构（不包含任何节点信息）开头，则端口驱动程序会将 PCPROPERTY \_ 请求结构的 **节点** 成员设置为 ULONG (-1) 。 在这种情况下，端口驱动程序会根据筛选器句柄或固定句柄是否指定属性请求的目标，从微型端口驱动程序的自动化表中调用相应的处理程序。  (如果表未指定属性的处理程序，则端口驱动程序将改为处理该请求。 ) 
 
@@ -67,7 +66,7 @@ PCPROPERTY 请求点的 **实例** 和 **值** 成员 \_ 分别为 KS 属性请�
 
 PCPROPERTY \_ 请求结构的 **InstanceSize** 和 **ValueSize** 成员指定由 **实例** 和 **值** 成员指向的缓冲区的大小。 **ValueSize** 等于属性请求的输出缓冲区的大小，但 **InstanceSize** 是输入缓冲区中 KSPROPERTY 或 KSNODEPROPERTY 结构之后的数据的大小。 也就是说， **InstanceSize** 是输入缓冲区的大小减去 KSPROPERTY 或 KSNODEPROPERTY 结构的大小。 如果没有其他数据遵循此结构，则端口驱动程序会将 **InstanceSize** 设置为零 (并将 **实例** 设置为 **NULL**) 。
 
-例如，如果客户端将 KSNODEPROPERTY 的 [** \_ 音频 \_ 通道**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty_audio_channel) 结构指定为输入缓冲区中的实例数据，则端口驱动程序会将该处理程序的 PCPROPERTY \_ 请求结构（其 **实例** 成员指向 KSNODEPROPERTY \_ 音频 \_ 通道结构的 **通道** 成员）传递给该请求结构，并将其 **InstanceSize** 成员包含值。
+例如，如果客户端将 KSNODEPROPERTY 的 [**\_ 音频 \_ 通道**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty_audio_channel) 结构指定为输入缓冲区中的实例数据，则端口驱动程序会将该处理程序的 PCPROPERTY \_ 请求结构（其 **实例** 成员指向 KSNODEPROPERTY \_ 音频 \_ 通道结构的 **通道** 成员）传递给该请求结构，并将其 **InstanceSize** 成员包含值。
 
 **sizeof** (KSNODEPROPERTY \_ 音频 \_ 通道) - **sizeof** (KSNODEPROPERTY) 
 

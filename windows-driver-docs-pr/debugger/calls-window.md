@@ -1,19 +1,18 @@
 ---
 title: 在 WinDbg 中查看调用堆栈
 description: 在 WinDbg 中，可以通过输入命令或使用 "调用" 窗口来查看调用堆栈。
-ms.assetid: 0e5b5611-d43c-40ba-8340-ea49fe18cc3f
 keywords:
 - 调试信息窗口，调用窗口
 - 调用窗口
 - 调用堆栈，调用窗口
 ms.date: 05/13/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 642ac02f1287e13c9f468c6693f40f7b223c7045
-ms.sourcegitcommit: f610410e1500f0b0a4ca008b52679688ab51033d
+ms.openlocfilehash: bb96a918a56b7d1c58d4427be5d0357dacba2af9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/15/2020
-ms.locfileid: "88252845"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96788857"
 ---
 # <a name="viewing-the-call-stack-in-windbg"></a>在 WinDbg 中查看调用堆栈
 
@@ -25,7 +24,7 @@ ms.locfileid: "88252845"
 ## <a name="span-iddebugger_command_windowspanspan-iddebugger_command_windowspanspan-iddebugger_command_windowspandebugger-command-window"></a><span id="Debugger_Command_Window"></span><span id="debugger_command_window"></span><span id="DEBUGGER_COMMAND_WINDOW"></span>调试器命令窗口
 
 
-您可以通过在调试器命令窗口中输入其中一个 [**k (显示堆栈 Backtrace) **](k--kb--kc--kd--kp--kp--kv--display-stack-backtrace-.md) 命令来查看调用堆栈。
+您可以通过在调试器命令窗口中输入其中一个 [**k (显示堆栈 Backtrace)**](k--kb--kc--kd--kp--kp--kv--display-stack-backtrace-.md) 命令来查看调用堆栈。
 
 ## <a name="span-idcalls_windowspanspan-idcalls_windowspanspan-idcalls_windowspancalls-window"></a><span id="Calls_Window"></span><span id="calls_window"></span><span id="CALLS_WINDOW"></span>调用窗口
 

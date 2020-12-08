@@ -1,20 +1,19 @@
 ---
 title: EFI_USB_ENDPOINT_TYPE
 description: EFI_USB_ENDPOINT_TYPE
-ms.assetid: 5cdb0efc-2355-42e2-929b-df19257e35c1
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b2b3a6ea6199962da8716c62d271676f999aa3b6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 24d87613d8d7d138acf4a821e99cc9299a3d1902
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63337767"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96789073"
 ---
-# <a name="efiusbendpointtype"></a>EFI\_USB\_ENDPOINT\_TYPE
+# <a name="efi_usb_endpoint_type"></a>EFI \_ USB \_ 终结点 \_ 类型
 
 
-**EFI\_USB\_终结点\_类型**枚举包含用来指示终结点的类型的值。
+**EFI \_ USB \_ 终结点 \_ 类型** 枚举包含用来指示终结点类型的值。
 
 ## <a name="syntax"></a>语法
 
@@ -35,13 +34,13 @@ typedef enum _EFI_USB_ENDPOINT_TYPE{
 控制传输-命令和状态操作。
 
 <a href="" id="usbendpointisochronous"></a>**UsbEndpointIsochronous**  
-等时 transfe-连续有保证的带宽和界定的延迟的时间敏感数据的流。
+同步 transfe-具有有保证带宽和有限延迟的时间敏感数据的连续流。
 
 <a href="" id="usbendpointbulk"></a>**UsbEndpointBulk**  
-大容量传输-突发并且不能保证的带宽或最小延迟中的大量数据。
+大容量传输-突发的大量数据，不保证带宽或最小滞后时间。
 
 <a href="" id="usbendpointinterrupt"></a>**UsbEndpointInterrupt**  
-中断传输-非定期通信的最大延迟保证。
+中断传输-不定期通信，保证最大延迟。
 
 ## <a name="requirements"></a>要求
 

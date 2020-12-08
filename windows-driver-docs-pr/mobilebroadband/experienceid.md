@@ -1,15 +1,14 @@
 ---
 title: ExperienceID
 description: ExperienceID
-ms.assetid: 550527ae-fef9-46c6-816b-d842fe472b68
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b859a06202ad97e08c9f1d6c0e4d36d207acef63
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 8879bb71fb769890485814a1b66d3c4b9145619b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91734437"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96788549"
 ---
 # <a name="experienceid"></a>ExperienceID
 
@@ -54,7 +53,7 @@ ExperienceID 元素指定表示设备体验的 GUID。 此 GUID 用于为与包�
 <thead>
 <tr class="header">
 <th>元素</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>

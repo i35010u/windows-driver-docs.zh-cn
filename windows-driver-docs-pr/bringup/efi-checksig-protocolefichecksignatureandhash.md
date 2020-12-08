@@ -1,20 +1,19 @@
 ---
 title: EFI_CHECKSIG_PROTOCOL.EfiCheckSignatureAndHash
 description: EFI_CHECKSIG_PROTOCOL.EfiCheckSignatureAndHash
-ms.assetid: 7c6d1756-a3db-4754-9edb-af6ba1ecf65b
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1957ac140db9ba79a90297385a8523e074fbbeec
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 42077f7b3f586d2f7759d3c3c55498f5bccc1f29
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328490"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96789111"
 ---
-# <a name="efichecksigprotocolefichecksignatureandhash"></a>EFI\_CHECKSIG\_PROTOCOL.EfiCheckSignatureAndHash
+# <a name="efi_checksig_protocolefichecksignatureandhash"></a>EFI \_ CHECKSIG \_ 协议。EfiCheckSignatureAndHash
 
 
-此函数验证针对目录文件中针对 PK FFU 在设备上的签名。 它还验证的哈希表的哈希匹配目录文件中指定的哈希。
+此函数根据设备上的 PK 验证 FFU 中的目录文件上的签名。 它还验证哈希表的哈希是否与目录文件中指定的哈希匹配。
 
 ## <a name="syntax"></a>语法
 
@@ -30,28 +29,28 @@ typedef EFI_STATUS
 );
 ```
 
-## <a name="parameters"></a>Parameters
+## <a name="parameters"></a>参数
 
 
 <a href="" id="this"></a>*此*  
-\[在中\]指向的指针**EFI\_CHECKSIG\_协议**实例。
+\[位于 \] **EFI \_ CHECKSIG \_ 协议** 实例的指针中。
 
 <a href="" id="pbcatalogdata"></a>*pbCatalogData*  
-\[在\]指向目录数据的指针。
+\[在 \] 指向目录数据的指针中。
 
 <a href="" id="cbcatalogdata"></a>*cbCatalogData*  
-\[在\]目录数据，以字节为单位的大小。
+\[\]大小（以字节为单位）。
 
 <a href="" id="pbhashtabledata"></a>*pbHashTableData*  
-\[在\]指向哈希表数据的指针。
+\[在 \] 指向哈希表数据的指针中。
 
 <a href="" id="cbhashtabledata"></a>*cbHashTableData*  
-\[在\]哈希表数据，以字节为单位的大小。
+\[在 \] 哈希表数据的大小（以字节为单位）。
 
 ## <a name="return-value"></a>返回值
 
 
-返回一个下面的状态代码。
+返回以下状态代码之一。
 
 <table>
 <colgroup>
@@ -67,11 +66,11 @@ typedef EFI_STATUS
 <tbody>
 <tr class="odd">
 <td><p>EFI_SUCCESS</p></td>
-<td><p>成功返回该函数和哈希表的目录签名有效。</p></td>
+<td><p>函数已成功返回，且哈希表的目录签名有效。</p></td>
 </tr>
 <tr class="even">
 <td><p>EFI_SECURITY_VIOLATION</p></td>
-<td><p>目录签名或哈希表不是有效的。</p></td>
+<td><p>目录签名或哈希表无效。</p></td>
 </tr>
 <tr class="odd">
 <td><p>EFI_INVALID_PARAMETER</p></td>
@@ -79,7 +78,7 @@ typedef EFI_STATUS
 </tr>
 <tr class="even">
 <td><p>EFI_NO_MAPPING</p></td>
-<td><p>出现内部错误则例如，PK 未正确设置。</p></td>
+<td><p>发生了内部错误;例如，未正确预配 PK。</p></td>
 </tr>
 </tbody>
 </table>
@@ -89,7 +88,7 @@ typedef EFI_STATUS
 ## <a name="remarks"></a>备注
 
 
-对此函数调用是同步的。
+对此函数的调用是同步的。
 
 ## <a name="requirements"></a>要求
 

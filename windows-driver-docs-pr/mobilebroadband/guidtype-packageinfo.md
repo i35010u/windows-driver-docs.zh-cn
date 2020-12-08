@@ -1,15 +1,14 @@
 ---
 title: 'GUIDType (PackageInfo) '
 description: 'GUIDType (PackageInfo) '
-ms.assetid: 3f88df5a-2a17-4006-ad3b-aab9a12cbcb9
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d42545a4d2611e72b6b7960392ec88852b4460e3
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: f5267ed67264f2a578480c6e757cf764690d5762
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89402884"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96788519"
 ---
 # <a name="guidtype-packageinfo"></a>GUIDType (PackageInfo) 
 

@@ -1,15 +1,14 @@
 ---
 title: 将移动宽带应用与其他 Windows 组件集成
 description: 将移动宽带应用与其他 Windows 组件集成
-ms.assetid: 70469f6b-70a8-4ebc-b315-08ddeffbdc0f
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9679b08a86f242b7fdbfe93151c4f38cd5106ac9
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 391245bd0ed386a2f258b6542ae7bc1f40e8f0cc
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89215296"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96788515"
 ---
 # <a name="integrate-a-mobile-broadband-app-with-other-windows-components"></a>将移动宽带应用与其他 Windows 组件集成
 
@@ -99,7 +98,8 @@ ms.locfileid: "89215296"
 
 -   向上键盘
 
-    **注意**   触摸键盘启动时，请确保元素（如窗体字段）正确滚动。
+    **注意**  
+    触摸键盘启动时，请确保元素（如窗体字段）正确滚动。
 
      
 

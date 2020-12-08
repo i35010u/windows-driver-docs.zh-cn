@@ -1,15 +1,14 @@
 ---
 title: OidProcessing 规则集 (NDIS)
 description: 使用这些规则验证驱动程序是否正确地处理了 OID 请求。
-ms.assetid: 0E12778B-BB86-4387-9B8A-19E3876D6F8C
 ms.date: 05/21/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: cdd27b93d2d62a6097cea6bb84ca43e043b1ef43
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: d5230a51e0f65a836756dd050b8d7ec10d534339
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105916"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96790007"
 ---
 # <a name="oidprocessing-rule-set-ndis"></a>OidProcessing 规则集 (NDIS)
 
@@ -27,7 +26,7 @@ ms.locfileid: "90105916"
 <thead>
 <tr class="header">
 <th align="left">主题</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -54,7 +53,7 @@ ms.locfileid: "90105916"
 
 2.  单击 " **规则** " 选项卡。在 " **规则集**" 下，选择 **OidProcessing**。
 
-    若要从 Visual Studio 开发人员命令提示符窗口中选择默认规则集，请使用 **/check**选项指定**OidProcessing。 sdv** 。 例如：
+    若要从 Visual Studio 开发人员命令提示符窗口中选择默认规则集，请使用 **/check** 选项指定 **OidProcessing。 sdv** 。 例如：
 
     ```
     msbuild /t:sdv /p:Inputs="/check:OidProcessing.sdv" mydriver.VcxProj /p:Configuration="Win8 Release" /p:Platform=Win32

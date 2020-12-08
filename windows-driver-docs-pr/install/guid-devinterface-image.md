@@ -1,7 +1,6 @@
 ---
 title: GUID_DEVINTERFACE_IMAGE
 description: GUID_DEVINTERFACE_IMAGE
-ms.assetid: 2768f0ef-3765-4a66-b480-0f75a7c49c3c
 keywords:
 - GUID_DEVINTERFACE_IMAGE 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 4412a2b1c44cb8552954439758841a61f78ac275
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: e38f96552d187acfd9132122e4e1ac0f04147054
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89095201"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96789821"
 ---
 # <a name="guid_devinterface_image"></a>GUID_DEVINTERFACE_IMAGE
 

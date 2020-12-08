@@ -1,7 +1,6 @@
 ---
 title: 确定设备是否可以唤醒系统
 description: 确定设备是否可以唤醒系统
-ms.assetid: 59f23035-4169-4dd4-ac60-882c32efda2c
 keywords:
 - 等待/唤醒 Irp WDK 电源管理，具有唤醒功能的设备
 - 电源管理 WDK 内核，唤醒功能
@@ -11,12 +10,12 @@ keywords:
 - 设备唤醒 ups WDK 电源管理
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b1545c428dac981405d2409508abfa9ddcae09ca
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: bda36b965d11602817d7eb293529ae4f8f830381
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89191928"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96788677"
 ---
 # <a name="determining-whether-a-device-can-wake-the-system"></a>确定设备是否可以唤醒系统
 
@@ -40,7 +39,7 @@ ms.locfileid: "89191928"
 <thead>
 <tr class="header">
 <th>成员</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -85,7 +84,7 @@ ms.locfileid: "89191928"
 
  
 
-**DeviceWake**条目列出了设备可用于响应唤醒信号的最小设备电源状态。 值 PowerDeviceUnspecified 指示设备无法唤醒系统。 **SystemWake**条目列出了可从中唤醒系统的最低系统电源状态。 这些值基于父 devnode 的功能，驱动程序不应更改这些值。 有关详细信息，请参阅 [报表设备功能](reporting-device-power-capabilities.md)。
+**DeviceWake** 条目列出了设备可用于响应唤醒信号的最小设备电源状态。 值 PowerDeviceUnspecified 指示设备无法唤醒系统。 **SystemWake** 条目列出了可从中唤醒系统的最低系统电源状态。 这些值基于父 devnode 的功能，驱动程序不应更改这些值。 有关详细信息，请参阅 [报表设备功能](reporting-device-power-capabilities.md)。
 
 通常，如果满足以下条件，设备可以唤醒系统：
 

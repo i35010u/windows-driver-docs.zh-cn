@@ -1,17 +1,16 @@
 ---
 title: C28728
 description: 警告 C28728 禁止使用的 API。
-ms.assetid: 9ece142b-9177-4f19-a9f2-c28f1674a43d
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 f1_keywords:
 - C28728
-ms.openlocfilehash: 7e4bca5438daa29aa9f762a6a0ef9f671f636da2
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 1e0ff267e77e7d681e733a72c8f62ac610c4eb90
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89384857"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96790053"
 ---
 # <a name="c28728"></a>C28728
 

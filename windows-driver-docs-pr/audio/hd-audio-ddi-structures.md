@@ -1,15 +1,14 @@
 ---
 title: HD 音频 DDI 结构
 description: HD 音频 DDI 结构
-ms.assetid: 2aa6d4be-5ebb-4f9f-956a-2491ce483bfa
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 04d51a78224243eb3730ae10c3530a132257a2a4
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 1be054ba7f366cc25d5ef0f34d75fc5d00c27315
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89209181"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96789193"
 ---
 # <a name="hd-audio-ddi-structures"></a>HD 音频 DDI 结构
 

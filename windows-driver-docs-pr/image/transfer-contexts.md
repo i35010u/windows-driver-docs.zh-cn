@@ -1,15 +1,14 @@
 ---
 title: 传输上下文
 description: 传输上下文
-ms.assetid: b4eadccd-afb6-4cb5-bf52-704f64d45e40
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e31c35433eb25a074578ee481beea1fa3241d828
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 7897817a640e5158f042c9eb9e475dfee91fc387
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89192913"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96789851"
 ---
 # <a name="transfer-contexts"></a>传输上下文
 

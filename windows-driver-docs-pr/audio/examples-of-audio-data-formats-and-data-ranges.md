@@ -1,7 +1,6 @@
 ---
 title: 音频数据格式和数据范围的示例
 description: 音频数据格式和数据范围的示例
-ms.assetid: f3f5d658-63a5-4420-97fa-e448e3aaea50
 keywords:
 - 数据格式化 WDK 音频
 - 格式化 WDK 音频、数据
@@ -21,12 +20,12 @@ keywords:
 - 数据格式化 WDK 音频，示例
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7e14aa5d6c708ab6e76aca45d9edd5b23d4bfbbb
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 5358d1b6f46309b8f03c1211a7ebc22b8af9267b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89208025"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96789221"
 ---
 # <a name="examples-of-audio-data-formats-and-data-ranges"></a>音频数据格式和数据范围的示例
 

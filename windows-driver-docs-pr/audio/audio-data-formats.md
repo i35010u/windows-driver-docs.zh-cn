@@ -1,7 +1,6 @@
 ---
 title: 音频数据格式
 description: 音频数据格式
-ms.assetid: e16c10ea-0193-4cf4-91a3-4f8d4a0d5cf6
 keywords:
 - 数据格式化 WDK 音频
 - 格式化 WDK 音频、数据
@@ -16,12 +15,12 @@ keywords:
 - 数据格式化 WDK 音频，关于音频数据格式
 ms.date: 02/15/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 660b8058f8c59250850293fedd810dfe45ff4308
-ms.sourcegitcommit: 20eac54e419a594f7cea766ee28f158559dfd79c
+ms.openlocfilehash: 9f4130526c11f9eab1afcc103fd376702b6dfcbe
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91754906"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96789433"
 ---
 # <a name="audio-data-formats"></a>音频数据格式
 
@@ -41,7 +40,7 @@ ms.locfileid: "91754906"
 
 [**KSDATAFORMAT \_ WAVEFORMATEX**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksdataformat_waveformatex)结构封装 KSDATAFORMAT 结构和它后面的 WAVEFORMATEX 结构。 同样， [**KSDATAFORMAT \_ DSOUND**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksdataformat_dsound) 结构会封装 KSDATAFORMAT 结构和其后的 DSOUND \_ BUFFERDESC 结构。
 
-对于 KSDATAFORMAT \_ WAVEFORMATEX 或 KSDATAFORMAT \_ DSOUND，结构中的最后一项是嵌入的 WAVEFORMATEX 结构; 对于 KSDATAFORMAT \_ DSOUND，WAVEFORMATEX 结构包含在嵌入的 DSOUND \_ BUFFERDESC 结构中。 在这两种情况下，WAVEFORMATEX 结构可能是 [**WAVEFORMATEXTENSIBLE**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-waveformatextensible) 结构的开头，在这种情况下，WAVEFORMATEX 的 **wFormatTag** 成员设置为可扩展的值波形 \_ 格式 \_ 。 有关详细信息，请参阅 [可扩展波形格式说明符](extensible-wave-format-descriptors.md)。
+对于 KSDATAFORMAT \_ WAVEFORMATEX 或 KSDATAFORMAT \_ DSOUND，结构中的最后一项是嵌入的 WAVEFORMATEX 结构; 对于 KSDATAFORMAT \_ DSOUND，WAVEFORMATEX 结构包含在嵌入的 DSOUND \_ BUFFERDESC 结构中。 在这两种情况下，WAVEFORMATEX 结构可能是 [**WAVEFORMATEXTENSIBLE**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-waveformatextensible) 结构的开头，在这种情况下，WAVEFORMATEX 的 **wFormatTag** 成员设置为可扩展的值波形 \_ 格式 \_ 。 有关详细信息，请参阅 [可扩展 Wave-Format 描述符](extensible-wave-format-descriptors.md)。
 
 若要为 MIDI 流或 DirectMusic 流指定数据格式，KSDATAFORMAT 结构就足够了;它后面没有任何其他信息。
 

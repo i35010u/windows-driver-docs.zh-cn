@@ -1,15 +1,14 @@
 ---
 title: 联锁操作数的驱动程序注释
 description: 联锁操作数的驱动程序注释
-ms.assetid: 33C85016-765B-42BF-9F38-BB682951B20C
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1627979e9e575c25b3d950dfbec137c575f18e1c
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 6816549bdf6ab0e7380a111477530e2e83bed942
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89381993"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96790051"
 ---
 # <a name="driver-annotations-for-interlocked-operands"></a>联锁操作数的驱动程序注释
 
@@ -26,7 +25,7 @@ ms.locfileid: "89381993"
 <thead>
 <tr class="header">
 <th align="left">联锁操作数批注</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>

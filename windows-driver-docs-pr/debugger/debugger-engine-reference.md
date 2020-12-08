@@ -1,17 +1,16 @@
 ---
 title: 调试器引擎参考
 description: 调试器引擎参考
-ms.assetid: 6614dfeb-77ca-41ce-8108-f078e1bd73d9
 keywords:
 - 调试器引擎参考
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 14753bcb2c346e89138c57ca457cbe1ec32dec16
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 0c2cf3a306c6363f85e9de1fb0312f09cef943df
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89211191"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96788773"
 ---
 # <a name="debugger-engine-reference"></a>调试器引擎参考
 

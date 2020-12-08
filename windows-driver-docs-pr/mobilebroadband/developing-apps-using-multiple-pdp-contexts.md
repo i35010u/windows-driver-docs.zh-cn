@@ -1,15 +1,14 @@
 ---
 title: 使用多个 PDP 上下文开发应用
 description: 使用多个 PDP 上下文开发应用
-ms.assetid: 6a977a69-397d-4922-890d-1810dd54dff4
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6bc5826ba204754c4442f6ead82a51d81a32cc0e
-ms.sourcegitcommit: 0c3cab853b0b75149b7604eef03275f997792a84
+ms.openlocfilehash: 747c3c60d1a972c064c83e5c3fe3950ee6334159
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96157337"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96788563"
 ---
 # <a name="developing-apps-using-multiple-pdp-contexts"></a>使用多个 PDP 上下文开发应用
 

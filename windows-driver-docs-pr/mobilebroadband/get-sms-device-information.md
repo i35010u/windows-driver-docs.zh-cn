@@ -1,20 +1,19 @@
 ---
 title: 获取短信设备信息
 description: 获取短信设备信息
-ms.assetid: 906b3b12-466a-418e-84fd-e0cfad00445a
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d42d3f5855f888988716cd0a2995f904f3189dcc
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: f45f9d9b0899402dea267c2b66ffd8fca4746edd
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56561909"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96788517"
 ---
 # <a name="get-sms-device-information"></a>获取短信设备信息
 
 
-移动宽带短信平台提供了有关移动宽带设备，包括帐户电话号码、 状态和移动电话网络类的信息。
+移动宽带 SMS 平台提供有关移动宽带设备的信息，包括帐户电话号码、状态和蜂窝电话号码。
 
 **用于获取 SMS 设备移动电话号码的 JavaScript 代码示例**
 
@@ -22,10 +21,10 @@ ms.locfileid: "56561909"
 var mobileNumber = smsDevice.accountPhoneNumber;
 ```
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
-[开发 SMS 应用程序](developing-sms-apps.md)
+[开发短信应用](developing-sms-apps.md)
 
  
 

@@ -1,15 +1,14 @@
 ---
 title: NDIS 协议驱动程序的开发路线图
 description: NDIS 协议驱动程序的开发路线图
-ms.assetid: b9b8d790-7755-4c52-8a76-70257aa78212
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 375ffa9f05b6136a16a72b0ca06bf563124fd1d8
-ms.sourcegitcommit: db9d058a9e592d4c47c67fc14f04f0ddc3aa92af
+ms.openlocfilehash: 15f0dad63b2fdd68651e1048a5a08251ba2a8efb
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91989835"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96789635"
 ---
 # <a name="roadmap-for-developing-ndis-protocol-drivers"></a>NDIS 协议驱动程序的开发路线图
 

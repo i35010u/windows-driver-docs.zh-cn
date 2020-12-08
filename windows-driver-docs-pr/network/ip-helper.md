@@ -1,19 +1,18 @@
 ---
 title: IP 帮助程序概述
 description: IP 帮助程序概述
-ms.assetid: c7cf1f47-ee0d-4c89-883b-717b719fcc2a
 keywords:
 - IP 帮助程序 WDK 网络
 - IP 帮助程序 WDK 网络，关于
 - 网络驱动程序 WDK，IP 帮助程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 34b13150ed18539caf3be52858396e7e8f732dcd
-ms.sourcegitcommit: f8619f20a0903dd64f8641a5266ecad6df5f1d57
+ms.openlocfilehash: cbf5e61fa7a6378498951c46a2ecdd3b9f4356cd
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91423818"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96789773"
 ---
 # <a name="ip-helper-overview"></a>IP 帮助程序概述
 
@@ -21,13 +20,13 @@ Internet 协议帮助程序 (IP Helper) 使驱动程序可以检索有关本地�
 
 许多 IP Helper 函数传递结构参数，这些参数表示与管理信息基础 (MIB) 技术关联的数据类型。 IP Helper 函数使用这些 MIB 结构来表示不同的网络信息。
 
-IP 帮助程序文档广泛使用术语 "适配器" 和 "接口"。 *适配器*是一种传统的术语，它是*网络适配器*的缩写形式，最初称为某种形式的网络硬件。 适配器是一个数据链接级别抽象。
+IP 帮助程序文档广泛使用术语 "适配器" 和 "接口"。 *适配器* 是一种传统的术语，它是 *网络适配器* 的缩写形式，最初称为某种形式的网络硬件。 适配器是一个数据链接级别抽象。
 
 作为抽象概念，在 IETF RFC 文档中描述了一个 *接口* ，表示某个节点与链接的连接。 接口是 IP 级抽象。
 
 你的驱动程序可以使用以下内核模式函数、MIB 结构和 MIB 和网络层 (NL) 枚举来检索和修改本地计算机上 (TCP/IP) 传输的传输控制协议/Internet 协议的配置设置。
 
-**注意**   开发驱动程序代码时，请按照[包含头文件](including-header-files-for-ip-helper.md)的说明进行操作。
+**注意** 开发驱动程序代码时，请按照 [包含头文件](including-header-files-for-ip-helper.md)的说明进行操作。
 
  
 
@@ -38,7 +37,7 @@ IP 帮助程序文档广泛使用术语 "适配器" 和 "接口"。 *适配器*�
 <thead>  
 <tr class="header">  
 <th align="left">函数</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -105,7 +104,7 @@ IP 帮助程序文档广泛使用术语 "适配器" 和 "接口"。 *适配器*�
 <thead>
 <tr class="header">
 <th align="left">函数</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -160,7 +159,7 @@ IP 帮助程序文档广泛使用术语 "适配器" 和 "接口"。 *适配器*�
 <thead>
 <tr class="header">
 <th align="left">函数</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -235,7 +234,7 @@ IP 帮助程序文档广泛使用术语 "适配器" 和 "接口"。 *适配器*�
 <thead>
 <tr class="header">
 <th align="left">函数</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -282,7 +281,7 @@ IP 帮助程序文档广泛使用术语 "适配器" 和 "接口"。 *适配器*�
 <thead>
 <tr class="header">
 <th align="left">函数</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -313,7 +312,7 @@ IP 帮助程序文档广泛使用术语 "适配器" 和 "接口"。 *适配器*�
 <thead>
 <tr class="header">
 <th align="left">函数</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -360,7 +359,7 @@ IP 帮助程序文档广泛使用术语 "适配器" 和 "接口"。 *适配器*�
 <thead>
 <tr class="header">
 <th align="left">函数</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -383,7 +382,7 @@ IP 帮助程序文档广泛使用术语 "适配器" 和 "接口"。 *适配器*�
 <thead>
 <tr class="header">
 <th align="left">函数</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -418,7 +417,7 @@ IP 帮助程序文档广泛使用术语 "适配器" 和 "接口"。 *适配器*�
 <thead>
 <tr class="header">
 <th align="left">函数</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -449,7 +448,7 @@ IP 帮助程序文档广泛使用术语 "适配器" 和 "接口"。 *适配器*�
 <thead>
 <tr class="header">
 <th align="left">结构</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>

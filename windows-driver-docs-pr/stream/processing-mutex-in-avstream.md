@@ -1,19 +1,18 @@
 ---
 title: 在 AVStream 中处理互斥
 description: 在 AVStream 中处理互斥
-ms.assetid: dd84fe3f-352e-4641-99d7-792ccecb0b40
 keywords:
 - AVStream mutex WDK
 - mutex WDK AVStream
 - 处理 mutex WDK AVStream
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f564ebe04c43a745e34abc061945c70120d71abf
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 542ca1486ff0785777d2f50acc489712bd671423
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89186761"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96790145"
 ---
 # <a name="processing-mutex-in-avstream"></a>在 AVStream 中处理互斥
 

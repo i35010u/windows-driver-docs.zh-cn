@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ VIDEOPROCAMP \_ WHITEBALANCE \_ 组件
 description: KSPROPERTY \_ VIDEOPROCAMP \_ WHITEBALANCE \_ COMPONENT 属性指定视频格式的蓝和红值中的白平衡设置。
-ms.assetid: ed5faffa-7e31-47ac-bf11-2201d616c6aa
 keywords:
 - KSPROPERTY_VIDEOPROCAMP_WHITEBALANCE_COMPONENT 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ac8aecd79b77a07271ca0ed4051546feedc09d2f
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 315f33122e55b7e9e4777d96c6fe0fe1a26f29c6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107244"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96790170"
 ---
 # <a name="ksproperty_videoprocamp_whitebalance_component"></a>KSPROPERTY \_ VIDEOPROCAMP \_ WHITEBALANCE \_ 组件
 
@@ -68,11 +67,11 @@ KSPROPERTY \_ VIDEOPROCAMP \_ WHITEBALANCE \_ COMPONENT 属性指定视频格式
 
 白平衡组件支持的范围和默认值是依赖于实现的。
 
-发出集请求时，客户端应提供**Value1**成员的红色分量值和 KSPROPERTY **Value2** \_ VIDEOPROCAMP \_ 节点 S2 结构的 Value2 成员中的蓝色分量值 \_ 。
+发出集请求时，客户端应提供 **Value1** 成员的红色分量值和 KSPROPERTY **Value2** \_ VIDEOPROCAMP \_ 节点 S2 结构的 Value2 成员中的蓝色分量值 \_ 。
 
-若要确定设备支持的白平衡值的范围，应用程序可以发出 KSPROPERTY \_ 类型 \_ BASICSUPPORT 请求。 可以 \_ \_ 在[**KSPROPERTY \_ 项**](/windows-hardware/drivers/ddi/ks/ns-ks-ksproperty_item)结构的**Flags**成员中指定 KSPROPERTY 类型 BASICSUPPORT。
+若要确定设备支持的白平衡值的范围，应用程序可以发出 KSPROPERTY \_ 类型 \_ BASICSUPPORT 请求。 可以 \_ \_ 在 [**KSPROPERTY \_ 项**](/windows-hardware/drivers/ddi/ks/ns-ks-ksproperty_item)结构的 **Flags** 成员中指定 KSPROPERTY 类型 BASICSUPPORT。
 
-发出 get 请求时，客户端将接收**Value1**成员的红色值和 KSPROPERTY **Value2** \_ VIDEOPROCAMP \_ 节点 S2 结构的 Value2 成员中的蓝色分量值 \_ 。
+发出 get 请求时，客户端将接收 **Value1** 成员的红色值和 KSPROPERTY **Value2** \_ VIDEOPROCAMP \_ 节点 S2 结构的 Value2 成员中的蓝色分量值 \_ 。
 
 <a name="requirements"></a>要求
 ------------

@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ DVDCOPY \_ 区域
 description: KSPROPERTY \_ DVDCOPY \_ region 属性根据语言限制指定 DVD 复制保护区域。
-ms.assetid: b0ad355b-607f-43c5-9959-a309c6c63259
 keywords:
 - KSPROPERTY_DVDCOPY_REGION 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f248bdf33d7d0d46984a99f6fabfe80f40075bd8
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 4c1e5c91b512134b5b3a23d03e328ddb1275cce0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103122"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96790187"
 ---
 # <a name="ksproperty_dvdcopy_region"></a>KSPROPERTY \_ DVDCOPY \_ 区域
 
@@ -84,7 +83,7 @@ KSPROPERTY \_ DVDCOPY \_ region 属性根据语言限制指定 DVD 复制保护�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KS \_ DVDCOPY \_ 区域**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-_ks_dvdcopy_region)

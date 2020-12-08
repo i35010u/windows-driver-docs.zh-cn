@@ -1,18 +1,17 @@
 ---
 title: 指定捆绑成员身份
 description: 指定捆绑成员身份
-ms.assetid: aa73c7fd-a5c8-4ef5-99fd-229fbcc6b4df
 keywords:
 - 添加-注册表-每节 WDK 网络，捆绑成员身份
 - 捆绑包成员 WDK 网络
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bdc5913d81588cd5d23f75a0a7a917f23616a88d
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 3eb4b2c4f4c605ed9676f3c31a2056bc2d0f6874
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89207777"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96790437"
 ---
 # <a name="specifying-bundle-membership"></a>指定捆绑成员身份
 
@@ -27,7 +26,7 @@ ms.locfileid: "89207777"
 
 若要指定适配器属于特定的适配器捆绑，则安装适配器的驱动程序的 INF 文件必须包含 **BundleId** 关键字和不区分大小写的字符串值 (REG \_ SZ) 。 此字符串值标识驱动程序的适配器捆绑包。 注册表使用捆绑标识符信息进行配置。
 
-下面是驱动程序的 INF 文件中的 "*添加注册表" 部分*的示例，该文件将**BundleId**子项添加到**Ndi \\ 参数**键，并为**BundleId**的字符串值 "Bundle1" 提供**ParamDesc** (参数说明) 。
+下面是驱动程序的 INF 文件中的 "*添加注册表" 部分* 的示例，该文件将 **BundleId** 子项添加到 **Ndi \\ 参数** 键，并为 **BundleId** 的字符串值 "Bundle1" 提供 **ParamDesc** (参数说明) 。
 
 ```INF
 [a1.params.reg]

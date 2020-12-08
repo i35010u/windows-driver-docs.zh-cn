@@ -2,15 +2,14 @@
 title: 不使用调试器访问驱动程序 IFR 日志的视频
 description: 本主题包含视频教程，该教程演示了驱动程序如何在未附加调试器的情况下访问 IFR 日志。
 Search.SourceType: Video
-ms.assetid: 1cda1d84-e3e3-42ab-9e45-ae5a465e5bf7
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 728b41431074e900d48776b6916313bcc1950595
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: e3c971d7360327b4a83606724bf66ada014b2c65
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89186057"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96790135"
 ---
 # <a name="video-accessing-driver-ifr-logs-without-a-debugger"></a>视频：在没有调试程序的情况下访问驱动程序 IFR 日志
 

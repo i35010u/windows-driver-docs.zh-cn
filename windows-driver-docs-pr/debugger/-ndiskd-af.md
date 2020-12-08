@@ -1,7 +1,6 @@
 ---
 title: ndiskd.af
-description: Ndiskd.af 扩展显示面向连接的 NDIS (CoNDIS) 地址系列 (AF) 。
-ms.assetid: 737AB46E-DFAA-42D6-A9BD-B7223167D0DD
+description: Ndiskd.af 扩展显示 Connection-Oriented NDIS (CoNDIS) 地址系列 (AF) 。
 keywords:
 - ndiskd.af Windows 调试
 ms.date: 06/15/2020
@@ -12,16 +11,16 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 278f40f0808928562cca008987f1734f59ed26c1
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 95077a1b235d3972bb2ac836da45ef6612603759
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89209431"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96790095"
 ---
 # <a name="ndiskdaf"></a>!ndiskd.af
 
-**！ Ndiskd.af** extension 显示了面向连接的 NDIS (CoNDIS) 地址系列 (af) 。
+**！ Ndiskd.af** 扩展显示 Connection-Oriented NDIS (CoNDIS) 地址系列 (af) 。
 
 ```console
 !ndiskd.af -handle <x>
@@ -110,7 +109,7 @@ CLIENT HANDLERS
     ClIncomingCallQoSChangeHandler         fffff80965ffa610   wdiwifi!MPWrapperOidRequest
 ```
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [网络驱动程序设计指南](../network/index.md)
 
@@ -118,7 +117,7 @@ CLIENT HANDLERS
 
 [调试网络堆栈](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-175-Debugging-the-Network-Stack)
 
-[**NDIS 扩展 ( # A0) **](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 扩展 ( # A0)**](ndis-extensions--ndiskd-dll-.md)
 
 [**!ndiskd.help**](-ndiskd-help.md)
 

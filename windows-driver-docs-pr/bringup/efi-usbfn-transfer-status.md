@@ -1,17 +1,16 @@
 ---
 title: EFI_USBFN_TRANSFER_STATUS
 description: EFI_USBFN_TRANSFER_STATUS
-ms.assetid: 60631dad-a617-4ed4-a975-5e480cf324e3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a4aa9b795c851f1bc958bf05a5eef0bdae43a9c0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a699e702d3b5c03e5065dd710408bf4444fefe30
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63337669"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96789003"
 ---
-# <a name="efiusbfntransferstatus"></a>EFI\_USBFN\_传输\_状态
+# <a name="efi_usbfn_transfer_status"></a>EFI \_ USBFN \_ 传输 \_ 状态
 
 
 此枚举指示 USB 传输状态。
@@ -34,19 +33,19 @@ typedef enum _EFI_USBFN_TRANSFER_STATUS
 
 
 <a href="" id="usbtransferstatusunknown"></a>**UsbTransferStatusUnknown**  
-传输状态是未知的。
+传输状态未知。
 
 <a href="" id="usbtransferstatuscomplete"></a>**UsbTransferStatusComplete**  
-传输已完成。
+传输完成。
 
 <a href="" id="usbtransferstatusaborted"></a>**UsbTransferStatusAborted**  
-传输已中止。
+已中止传输。
 
 <a href="" id="usbtransferstatusactive"></a>**UsbTransferStatusActive**  
 传输处于活动状态。
 
 <a href="" id="usbtransferstatusnone"></a>**UsbTransferStatusNone**  
-传输具有无状态。
+传输没有状态。
 
 ## <a name="requirements"></a>要求
 

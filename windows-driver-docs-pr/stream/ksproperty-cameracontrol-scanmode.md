@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ CAMERACONTROL \_ SCANMODE
 description: KSPROPERTY \_ CAMERACONTROL \_ SCANMODE 属性指定相机传感器的扫描模式。
-ms.assetid: ab5659b9-a94b-4127-a26e-49aac8de6fa8
 keywords:
 - KSPROPERTY_CAMERACONTROL_SCANMODE 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 01a82928f59042023724259b64e185e2d746f230
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: c097b777b35e26cf71a66486f39868360c99cd6a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103872"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96789587"
 ---
 # <a name="ksproperty_cameracontrol_scanmode"></a>KSPROPERTY \_ CAMERACONTROL \_ SCANMODE
 
@@ -88,7 +87,7 @@ KSPROPERTY **Value** \_ CAMERACONTROL 节点结构的值成员 \_ \_ 指定是�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSPROPERTY \_ CAMERACONTROL \_ 节点 \_ S**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_cameracontrol_node_s)

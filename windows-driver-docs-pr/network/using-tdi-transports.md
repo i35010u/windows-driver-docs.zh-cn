@@ -1,17 +1,16 @@
 ---
 title: 使用 TDI 传输
 description: 使用 TDI 传输
-ms.assetid: 58fb5e62-e15d-4f15-8eb3-3e302ea08c4f
 keywords:
 - TDI 传输 WDK Winsock 内核
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c7aea86c48ef59b0164d016b3983e5e41b4a1c75
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: e02b5672d28d3e17841133cf43f31baff5b21393
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89205925"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96789619"
 ---
 # <a name="using-tdi-transports"></a>使用 TDI 传输
 
@@ -68,7 +67,7 @@ NTSTATUS
 
 WSK 应用程序必须先将地址族、套接字类型和协议的组合映射到 TDI 传输的设备名称，然后再创建任何套接字。 在 WSK 应用程序成功将地址族、套接字类型和协议的组合映射到 TDI 传输的设备名称后，应用程序就可以创建使用映射的 TDI 传输的新套接字。
 
-**注意**   Windows Vista 之后的 Microsoft Windows 版本不支持 TDI。 请改用 [Windows 筛选平台](/windows-hardware/drivers/ddi/_netvista/) 或 [Winsock 内核](/windows-hardware/drivers/ddi/_netvista/) 。
+**注意**  Windows Vista 之后的 Microsoft Windows 版本不支持 TDI。 请改用 [Windows 筛选平台](/windows-hardware/drivers/ddi/_netvista/) 或 [Winsock 内核](/windows-hardware/drivers/ddi/_netvista/) 。
 
  
 

@@ -1,9 +1,8 @@
 ---
 title: iovirp
-description: Iovirp 扩展显示有关指定的 I/O 验证工具 IRP 的详细的信息。
-ms.assetid: 9b05061c-2a57-4e01-bbe0-2e2f5f676947
+description: Iovirp 扩展显示指定 i/o 验证程序 IRP 的详细信息。
 keywords:
-- I/O 验证程序
+- I/o 验证程序
 - iovirp Windows 调试
 ms.date: 05/23/2017
 topic_type:
@@ -13,29 +12,29 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 27248b4fa1cee453f8bf9c7d33092688d5aec5ad
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 26582133e454113a0bcb8ee68b61d68b8773326f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63336409"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96788939"
 ---
 # <a name="iovirp"></a>!iovirp
 
 
-**！ Iovirp**扩展显示指定的 I/O 验证工具 IRP 的详细的信息。
+**！ Iovirp** extension 显示指定 i/o 验证程序 IRP 的详细信息。
 
 ```dbgcmd
 !iovirp [IRP]
 ```
 
-## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>参数
+## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>Parameters
 
 
-<span id="_______IRP______"></span><span id="_______irp______"></span> *IRP*   
-指定跟踪的 Driver Verifier IRP 的地址。 如果*IRP*为 0 或省略，将显示每个未完成的 IRP 的摘要信息。
+<span id="_______IRP______"></span><span id="_______irp______"></span>*IRP*   
+指定由驱动程序验证程序跟踪的 IRP 的地址。 如果 *IRP* 为0或被省略，则显示每个未完成 IRP 的摘要信息。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 <table>
 <colgroup>
@@ -59,7 +58,7 @@ ms.locfileid: "63336409"
 <a name="remarks"></a>备注
 -------
 
-下面是输出的来自此扩展插件示例：
+下面是此扩展的输出示例：
 
 ```dbgcmd
 kd> !iovirp 947cef68
@@ -98,7 +97,7 @@ Allocation Stack:
   nt!EtwpLogger+213  (8176036f)
 ```
 
-可以通过按 CTRL + BREAK （在 WinDbg) 或 CTRL + C （中 KD) 来停止执行任何时候。
+您可以通过在 WinDbg) 中按 CTRL + BREAK (或在 KD) 中按 CTRL + C (，随时停止执行。
 
  
 

@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ CAMERACONTROL \_ 扩展 \_ FOCUSPRIORITY
 description: '\_ \_ \_ KSPROPERTY CAMERACONTROL 扩展属性枚举中定义的 KSPROPERTY CAMERACONTROL 扩展 FOCUSPRIORITY 属性 ID \_ \_ \_ 用于配置焦点优先级。'
-ms.assetid: 7E3558A1-0D0D-4470-B9C9-61EA359E92C5
 keywords:
 - KSPROPERTY_CAMERACONTROL_EXTENDED_FOCUSPRIORITY 流媒体设备
 topic_type:
@@ -14,17 +13,17 @@ api_type:
 - HeaderDef
 ms.date: 09/10/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 8d3e392878101e364fda0003dbbaa5a9edd5d11a
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 46375c7da266577ca8f425b8d50645bec14aff6a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102916"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96790195"
 ---
 # <a name="ksproperty_cameracontrol_extended_focuspriority"></a>KSPROPERTY \_ CAMERACONTROL \_ 扩展 \_ FOCUSPRIORITY
 
 
-[**KSPROPERTY \_ CAMERACONTROL \_ 扩展 \_ 属性**](/windows-hardware/drivers/ddi/ksmedia/ne-ksmedia-ksproperty_cameracontrol_extended_property)枚举中定义的**KSPROPERTY \_ CAMERACONTROL \_ 扩展 \_ FOCUSPRIORITY**属性 ID 用于配置焦点优先级。 设置焦点优先级后，焦点将优先于拍摄的图片，以确保所拍摄的图片始终处于焦点。 否则，无论图片是否处于焦点上，都将立即执行图片。 处理失败焦点以及是否需要超时的行为是驱动程序的内部和最高的。
+[**KSPROPERTY \_ CAMERACONTROL \_ 扩展 \_ 属性**](/windows-hardware/drivers/ddi/ksmedia/ne-ksmedia-ksproperty_cameracontrol_extended_property)枚举中定义的 **KSPROPERTY \_ CAMERACONTROL \_ 扩展 \_ FOCUSPRIORITY** 属性 ID 用于配置焦点优先级。 设置焦点优先级后，焦点将优先于拍摄的图片，以确保所拍摄的图片始终处于焦点。 否则，无论图片是否处于焦点上，都将立即执行图片。 处理失败焦点以及是否需要超时的行为是驱动程序的内部和最高的。
 
 ## <a name="usage-summary-table"></a>使用情况摘要表
 
@@ -46,7 +45,7 @@ ms.locfileid: "90102916"
 <tr class="odd">
 <td><p>版本 1</p></td>
 <td><p>筛选器</p></td>
-<td><p>同步</p></td>
+<td><p>Synchronous</p></td>
 </tr>
 </tbody>
 </table>
@@ -62,7 +61,8 @@ ms.locfileid: "90102916"
 #define KSCAMERA_EXTENDEDPROP_FOCUSPRIORITY_ON      0x0000000000000001
 ```
 
-**注意**   这是一个同步控件，没有为此控件定义任何功能。
+**注意**  
+这是一个同步控件，没有为此控件定义任何功能。
 
  
 

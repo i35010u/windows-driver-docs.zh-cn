@@ -1,15 +1,14 @@
 ---
 title: 音频拓扑节点
 description: 音频拓扑节点
-ms.assetid: d999955b-d620-41c9-b42d-6870ce1d4b93
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dcd760c6f4ccd62e400cf8d5d5a8c7fe77d31ae4
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 024e01c807f457cae6223ee7fb8f12e3fe3691a8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89208246"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96789371"
 ---
 # <a name="audio-topology-nodes"></a>音频拓扑节点
 

@@ -1,23 +1,22 @@
 ---
 title: 调试器引擎概述
 description: 调试器引擎概述
-ms.assetid: e3cd8a1d-dd07-480b-bc3b-4f6acc647167
 keywords:
 - 调试器引擎
 - 调试器引擎，概述
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 91652788469d68b3745b53fa8de00e752eb500eb
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: fd53a3efe0d2bb56cb34fad0c4d4b8903c6ef54b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89211193"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96788789"
 ---
 # <a name="debugger-engine-overview"></a>调试器引擎概述
 
 
-*调试器引擎* ( # A0) （通常称为*引擎*）提供了一个接口，用于在*用户模式下*检查调试目标并在 Microsoft Windows 上的*内核模式下*操作。
+*调试器引擎* ( # A0) （通常称为 *引擎*）提供了一个接口，用于在 *用户模式下* 检查调试目标并在 Microsoft Windows 上的 *内核模式下* 操作。
 
 调试器引擎可以获取目标、设置 [断点](multiprocessor-syntax.md#breakpoints)、监视 [事件](events.md#events)、查询 [符号](symbols.md#symbols)、读取和写入内存，以及控制目标中的 [线程](controlling-threads-and-processes.md#threads) 和 [进程](controlling-threads-and-processes.md#processes) 。
 

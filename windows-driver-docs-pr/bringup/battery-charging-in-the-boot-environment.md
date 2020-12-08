@@ -1,15 +1,14 @@
 ---
 title: 启动环境中 Windows 10 移动版的电池充电
 description: 启动环境中 Windows 10 移动版的电池充电
-ms.assetid: 5aa1ef68-6939-4896-aabd-d499ba23f89f
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1bcc60b29854a3e52b18ec9abcc0c28fe583db97
-ms.sourcegitcommit: b3e38d06762246c77cedd8e82d740ebea104c538
+ms.openlocfilehash: 9b15e4556ea706954426476166a1a3ab790a71ba
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91662477"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96789163"
 ---
 # <a name="battery-charging-in-the-boot-environment-for-windows-10-mobile"></a>启动环境中 Windows 10 移动版的电池充电
 
@@ -19,7 +18,7 @@ ms.locfileid: "91662477"
 
 另外，Oem 还可以选择实现自己使用的、而不是 Microsoft 应用程序的 UEFI 电池充电应用程序。 在此方案中，UEFI 电池充电驱动程序不得实现 [UEFI 电池充电协议](uefi-battery-charging-protocol.md)。 如果驱动程序实现此协议，Windows 启动管理器将加载 Microsoft UEFI 电池充电应用程序。
 
-**注意**   本主题中的大部分信息适用于使用 Microsoft 提供的 UEFI 电池充电应用程序的设备。 本主题中的 " *uefi 电池充电应用程序* " 一词是指由 mobilestartup 加载的 uefi 电池充电库。 有关 mobilestartup 的详细信息，请参阅 [Boot AND UEFI](boot-and-uefi.md)。
+**注意**  本主题中的大部分信息适用于使用 Microsoft 提供的 UEFI 电池充电应用程序的设备。 本主题中的 " *uefi 电池充电应用程序* " 一词是指由 mobilestartup 加载的 uefi 电池充电库。 有关 mobilestartup 的详细信息，请参阅 [Boot AND UEFI](boot-and-uefi.md)。
 
 ## <a name="understanding-the-boot-battery-charging-process-provided-by-microsoft"></a>了解由 Microsoft 提供的启动电池充电过程
 
@@ -128,7 +127,7 @@ Microsoft 定义了几个电池充电阈值，以确保正确的电池充电用�
 <thead>
 <tr class="header">
 <th>阈值</th>
-<th>说明</th>
+<th>描述</th>
 <th>配置指南</th>
 </tr>
 </thead>

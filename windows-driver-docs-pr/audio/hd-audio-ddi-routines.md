@@ -1,15 +1,14 @@
 ---
 title: HD 音频 DDI 例程
 description: HD 音频 DDI 例程
-ms.assetid: 2f360031-39bd-457e-8b64-04b37e21a7fe
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b4102b3f69468e739b2b0fdbcc34265aa3c96b17
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 89238b138d4180425e06d6df8e16ae7f51eece26
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89209189"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96790107"
 ---
 # <a name="hd-audio-ddi-routines"></a>HD 音频 DDI 例程
 
@@ -172,7 +171,7 @@ HDAUDIO \_ BUS \_ INTERFACE \_ BDL 结构定义了包含以下例程的 DDI：
 
 [**SetDmaEngineState**](/windows-hardware/drivers/ddi/hdaudio/nc-hdaudio-pset_dma_engine_state)
 
-[**SetupDmaEngineWithBdl**](/windows-hardware/drivers/ddi/hdaudio/nc-hdaudio-psetup_dma_engine_with_bdl)与[ **PHDAUDIO \_ BDL \_ ISR**一起工作的 SetupDmaEngineWithBdl](/windows-hardware/drivers/ddi/hdaudio/nc-hdaudio-phdaudio_bdl_isr)
+[**SetupDmaEngineWithBdl**](/windows-hardware/drivers/ddi/hdaudio/nc-hdaudio-psetup_dma_engine_with_bdl)与 [ **PHDAUDIO \_ BDL \_ ISR** 一起工作的 SetupDmaEngineWithBdl](/windows-hardware/drivers/ddi/hdaudio/nc-hdaudio-phdaudio_bdl_isr)
 
 [**TransferCodecVerbs**](/windows-hardware/drivers/ddi/hdaudio/nc-hdaudio-ptransfer_codec_verbs)
 

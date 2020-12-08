@@ -1,17 +1,16 @@
 ---
 title: 网络驱动程序的内核模式 SDK 主题
 description: 网络驱动程序的内核模式 SDK 主题
-ms.assetid: E621615F-5A6A-4FB6-88D6-2DD11E2537B2
 keywords:
 - 用于网络驱动程序的内核模式 sdk 主题、内核模式 SDK 网络驱动程序、内核模式 Windows SDK 网络驱动程序、内核模式 Microsoft Windows SDK 网络驱动程序
 ms.date: 05/08/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: baa22b4a70a8b73b156d0127b574f4d054e4aa05
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: e36fe621b3d63748648340db8bf6d76ddb97d437
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91732805"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96789729"
 ---
 # <a name="kernel-mode-sdk-topics-for-network-drivers"></a>网络驱动程序的内核模式 SDK 主题
 

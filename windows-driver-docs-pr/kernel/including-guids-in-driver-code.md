@@ -1,19 +1,18 @@
 ---
 title: 在驱动程序代码中包含 GUID
 description: 在驱动程序代码中包含 GUID
-ms.assetid: 9235f9e6-9c40-4c4b-a98b-99e6b46a11ce
 keywords:
 - 全局唯一标识符 WDK 内核
 - Guid WDK 内核
 - 标识符 WDK Guid
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0e083ae2ec3a89eb47292dafe80ca5705a0765a7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a1ba5d68448f2a0d99b554b856ca3db1f1242edc
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63341086"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96788639"
 ---
 # <a name="including-guids-in-driver-code"></a>在驱动程序代码中包含 GUID
 
@@ -21,17 +20,17 @@ ms.locfileid: "63341086"
 
 
 
-若要在内核模式驱动程序中使用 Guid，必须执行两项操作：
+若要在内核模式驱动程序中使用 Guid，必须执行以下两项操作：
 
-1.  包含 Initguid.h 头文件，可重新定义**定义\_GUID**宏。
+1.  包括重新 **定义定义 \_ GUID** 宏的 initguid.h 头文件。
 
-    Initguid.h 标头文件重新定义**定义\_GUID**宏来实例化 （而不只声明的外部引用） 的 Guid。 应实例化 Guid 在驱动程序源文件中包括此标头文件。 （用户模式应用程序包括 Objbase.h 包括标头文件包含 GUID 定义之前。）
+    Initguid.h 头文件重新定义了 **定义 \_ guid** 宏来实例化 guid (而不是声明外部引用) 。 将此标头文件包含在应实例化 Guid 的驱动程序源文件中。  (用户模式应用程序包括 Objbase，然后才能包含包含 GUID 定义的标头文件。 ) 
 
-2.  包含定义 Guid 的标头文件。
+2.  包括定义 Guid)  (的标头文件。
 
-    语句后将 initguid.h 放，包括包含 GUID 定义这些标头文件。 驱动程序可能包括多个包含 GUID 定义，包括系统提供的标头文件和第三方头文件的标头文件。
+    在要包含 Initguid.h 的语句后，包括包含 GUID 定义的标头文件。 驱动程序可能包含多个包含 GUID 定义的标头文件，包括系统提供的标头文件和第三方标头文件。
 
-下面的代码摘录显示了包括的 Guid 的语句的序列：
+以下代码摘录显示了包含 Guid 的语句的顺序：
 
 ```cpp
 :
@@ -45,7 +44,7 @@ ms.locfileid: "63341086"
 ...
 ```
 
-将上述语句放在一个模块中的驱动程序;通常主模块。 当存在上述语句时，该驱动程序是指使用其符号名称的 GUID。
+将以上语句放入驱动程序的一个模块中;通常是主模块。 如果出现上述语句，驱动程序将使用其符号名称引用 GUID。
 
 
 

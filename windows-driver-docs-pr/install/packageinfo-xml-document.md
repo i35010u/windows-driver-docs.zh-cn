@@ -1,15 +1,14 @@
 ---
 title: PackageInfo XML 文档
 description: PackageInfo XML 文档
-ms.assetid: 1fa9b8a5-d6ab-4952-8e2d-7cb7ccc88804
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 62630e5cb6ac195fb7e0a2cb479e71c1233acd6f
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: d32f54d72d1ac5f7942063ba8f93e32ec6b8f1e0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89095885"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96789823"
 ---
 # <a name="packageinfo-xml-document"></a>PackageInfo XML 文档
 

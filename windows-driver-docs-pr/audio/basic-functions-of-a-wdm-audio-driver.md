@@ -1,18 +1,17 @@
 ---
 title: WDM 音频驱动程序的基本功能
 description: WDM 音频驱动程序的基本功能
-ms.assetid: 88013d17-c28c-4c99-9c43-17532f03bfdd
 keywords:
 - WDM 音频驱动程序 WDK，关于 WDM 音频驱动程序
 - 音频驱动程序 WDK，关于音频驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8e237c20daa62e33ecf054bd7621afb84648ce3c
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 9337cc70c865029068a5ff98c22ae2feaf870a4f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89208245"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96789367"
 ---
 # <a name="basic-functions-of-a-wdm-audio-driver"></a>WDM 音频驱动程序的基本功能
 

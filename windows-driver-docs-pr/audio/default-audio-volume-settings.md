@@ -1,7 +1,6 @@
 ---
 title: 默认的音频音量设置
 description: 默认的音频音量设置
-ms.assetid: 5d694aa2-5a47-44c5-92d5-ec8c4885820f
 keywords:
 - 音频适配器 WDK，音量设置
 - 适配器驱动程序 WDK 音频，音量设置
@@ -16,12 +15,12 @@ keywords:
 - 全卷滑块 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 55ac616ed50d588f6df18a7042041c9a0ad0aa90
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 659531730de01de539e2fedf37a8ed581853ff63
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89208153"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96789303"
 ---
 # <a name="default-audio-volume-settings"></a>默认的音频音量设置
 
@@ -35,14 +34,14 @@ SndVol 程序 (参阅 " [托盘和 SndVol32](systray-and-sndvol32.md) ") 显示�
 
 如果音频适配器没有硬件放大器，请参阅 [软件音量控制支持](software-volume-control-support.md) ，了解有关提供的软件支持的信息。
 
-**注意**   如果有硬件放大器，则驱动程序将通过[**KSPROPERTY \_ 音频 \_ VOLUMELEVEL**](./ksproperty-audio-volumelevel.md)内核流式处理属性设置范围和默认级别。 如果没有硬件放大器，Windows 将创建软件音量控制 APO。
+**注意**  如果有硬件放大器，则驱动程序将通过 [**KSPROPERTY \_ 音频 \_ VOLUMELEVEL**](./ksproperty-audio-volumelevel.md) 内核流式处理属性设置范围和默认级别。 如果没有硬件放大器，Windows 将创建软件音量控制 APO。
 如果活动的扬声器集上有一个物理卷旋钮，则它应作为 HID 控件出现在 Windows 中。 此功能类似于键盘上的 "音量调出" 和 "音量减小" 按钮;Windows 将看到卷旋钮轮变成，并将相应地对音量控制进行编程 (不管是硬件还是软件卷。 ) 
 
  
 
 理想情况下，如果一组活动扬声器随附在音频适配器卡的同一个框中，则工厂应将扬声器的音量旋钮调整到最适合使用适配器的默认音量设置的位置。 如果音频适配器没有物理音量控制旋钮，请参阅 [软件音量控制支持](./software-volume-control-support.md) 主题，了解有关 Windows 提供的软件支持的信息。
 
-**注意**   如果音频硬件 (如卷旋钮) 中显示硬件卷控制，则驱动程序将通过[**KSPROPERTY \_ audio \_ VOLUMELEVEL**](./ksproperty-audio-volumelevel.md)内核流式处理属性设置范围和默认级别。
+**注意**  如果音频硬件 (如卷旋钮) 中显示硬件卷控制，则驱动程序将通过 [**KSPROPERTY \_ audio \_ VOLUMELEVEL**](./ksproperty-audio-volumelevel.md) 内核流式处理属性设置范围和默认级别。
 
  
 

@@ -1,15 +1,14 @@
 ---
 title: 筛选针对应用程序配置单元执行的注册表操作
 description: Windows Vista 中引入了对应用程序配置单元的初始支持。
-ms.assetid: A8D06E25-7CC6-476A-AB55-DAFE19954347
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 44e66041b11eff287e69e6d23cdf175bbea8345d
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: b1f98ed7f80de129b3ca4d0a841bb785c493fa85
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90715896"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96788671"
 ---
 # <a name="filtering-registry-operations-on-application-hives"></a>筛选针对应用程序配置单元执行的注册表操作
 
@@ -24,7 +23,7 @@ Windows Vista 中引入了对应用程序配置单元的初始支持。 从 Wind
 
 应用程序配置单元不支持在 hive 中的密钥上设置安全描述符。 相反，整个 hive 都有一个安全描述符。 尝试在应用程序配置单元中的某个密钥上设置安全描述符将失败，并出现错误状态 " \_ 拒绝访问" \_ 。 与其他类型的注册表配置单元不同，每个密钥都使用其自己的安全描述符来保护，而应用程序配置单元的安全性则基于 hive 文件的安全描述符。 因此，加载 hive 成功的实体可以修改整个 hive。
 
-注册表筛选器驱动程序接收对应用程序配置单元上的注册表操作的 [*RegistryCallback*](/windows-hardware/drivers/ddi/wdm/nc-wdm-ex_callback_function) 例程的调用。 这些调用不区分应用程序配置单元上的注册表操作和其他类型的注册表配置单元上的操作。 用于处理 RegNtPreOpenKey、RegNtPreOpenKeyEx、RegNtPreCreateKey 和 RegNtPreCreateKeyEx 通知值所指示的**RegNtPreOpenKey**、 **RegNtPreOpenKeyEx**、 **RegNtPreCreateKey**和**RegNtPreCreateKeyEx**通知值 (的注册表筛选器驱动程序) 必须正确处理以下特殊情况。 加载应用程序配置单元时，加载过程的最后一步是由注册表管理器打开 hive 的根密钥。 注册表管理器会发出此带有密钥绝对路径的打开键操作，这意味着[**注册 \_ 创建密钥 \_ \_ 信息**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_reg_create_key_information)的**CompleteName**成员中的路径名字符串、 [**reg \_ create \_ key \_ information \_ v1**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_reg_create_key_information_v1)、 [**reg \_ open \_ key \_ 信息**](https://msdn.microsoft.com/library/windows/hardware/ff560957)或[**reg \_ open \_ key \_ information \_ v1**](https://msdn.microsoft.com/library/windows/hardware/ff560959)结构将以 " \\ registry \\ A" 开头 \\ 。 只有注册表管理器可以使用绝对路径来打开应用程序配置单元。 如果注册表筛选器驱动程序尝试以这种方式打开应用程序配置单元 (例如，通过调用 [**ZwOpenKey**](/windows-hardware/drivers/ddi/wdm/nf-wdm-zwopenkey) 例程) ，操作将失败，并出现错误状态 " \_ 拒绝访问" 状态 \_ 。
+注册表筛选器驱动程序接收对应用程序配置单元上的注册表操作的 [*RegistryCallback*](/windows-hardware/drivers/ddi/wdm/nc-wdm-ex_callback_function) 例程的调用。 这些调用不区分应用程序配置单元上的注册表操作和其他类型的注册表配置单元上的操作。 用于处理 RegNtPreOpenKey、RegNtPreOpenKeyEx、RegNtPreCreateKey 和 RegNtPreCreateKeyEx 通知值所指示的 **RegNtPreOpenKey**、 **RegNtPreOpenKeyEx**、 **RegNtPreCreateKey** 和 **RegNtPreCreateKeyEx** 通知值 (的注册表筛选器驱动程序) 必须正确处理以下特殊情况。 加载应用程序配置单元时，加载过程的最后一步是由注册表管理器打开 hive 的根密钥。 注册表管理器会发出此带有密钥绝对路径的打开键操作，这意味着 [**注册 \_ 创建密钥 \_ \_ 信息**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_reg_create_key_information)的 **CompleteName** 成员中的路径名字符串、 [**reg \_ create \_ key \_ information \_ v1**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_reg_create_key_information_v1)、 [**reg \_ open \_ key \_ 信息**](https://msdn.microsoft.com/library/windows/hardware/ff560957)或 [**reg \_ open \_ key \_ information \_ v1**](https://msdn.microsoft.com/library/windows/hardware/ff560959)结构将以 " \\ registry \\ A" 开头 \\ 。 只有注册表管理器可以使用绝对路径来打开应用程序配置单元。 如果注册表筛选器驱动程序尝试以这种方式打开应用程序配置单元 (例如，通过调用 [**ZwOpenKey**](/windows-hardware/drivers/ddi/wdm/nf-wdm-zwopenkey) 例程) ，操作将失败，并出现错误状态 " \_ 拒绝访问" 状态 \_ 。
 
  
 

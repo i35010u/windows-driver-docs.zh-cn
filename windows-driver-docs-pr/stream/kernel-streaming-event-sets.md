@@ -1,15 +1,14 @@
 ---
 title: 内核流式处理事件集
 description: 内核流式处理事件集
-ms.assetid: 424b3262-2e38-4748-8a6c-35dea25935a4
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f234e957622d711911f4d2e35cc7930ddd1bb397
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3b0ffa6871ff10650af4af40506f87754eb85886
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63334056"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96790241"
 ---
 # <a name="kernel-streaming-event-sets"></a>内核流式处理事件集
 
@@ -19,15 +18,15 @@ ms.locfileid: "63334056"
 
 本部分包含有关以下主题的信息：
 
-[**KSEVENTSETID\_时钟**](kseventsetid-clock.md)
+[**KSEVENTSETID \_ 时钟**](kseventsetid-clock.md)
 
-[**KSEVENTSETID\_连接**](kseventsetid-connection.md)
+[**KSEVENTSETID \_ 连接**](kseventsetid-connection.md)
 
-[**KSEVENTSETID\_设备**](kseventsetid-device.md)
+[**KSEVENTSETID \_ 设备**](kseventsetid-device.md)
 
-[**KSEVENTSETID\_DynamicFormatChange**](kseventsetid-dynamicformatchange.md)
+[**KSEVENTSETID \_ DynamicFormatChange**](kseventsetid-dynamicformatchange.md)
 
-[**KSEVENTSETID\_StreamAllocator**](kseventsetid-streamallocator.md)
+[**KSEVENTSETID \_ StreamAllocator**](kseventsetid-streamallocator.md)
 
  
 

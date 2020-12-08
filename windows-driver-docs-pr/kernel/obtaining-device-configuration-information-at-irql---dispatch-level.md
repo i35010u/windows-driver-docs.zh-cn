@@ -1,7 +1,6 @@
 ---
 title: 以 IRQL DISPATCH_LEVEL 获取设备配置信息
 description: 以 IRQL DISPATCH_LEVEL 获取设备配置信息
-ms.assetid: e168a12b-f32e-4b8d-8768-dc622b37b421
 keywords:
 - I/o WDK 内核，设备配置空间
 - 设备配置空间 WDK i/o
@@ -12,12 +11,12 @@ keywords:
 - 驱动程序堆栈 WDK 配置信息
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2c43de5b4188fc05141060abf308625a8a435805
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 9d5b233f1e519c68ba0b0c61d348e5035d92686b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89191169"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96788621"
 ---
 # <a name="obtaining-device-configuration-information-at-irql--dispatch_level"></a>获取 IRQL 的设备配置信息 = 调度 \_ 级别
 
@@ -36,7 +35,7 @@ ms.locfileid: "89191169"
 若要使用此接口，请使用 InterfaceType = GUID_BUS_INTERFACE_STANDARD 将 IRP_MN_QUERY_INTERFACE IRP 发送到总线驱动程序。 总线驱动程序提供一个指向 BUS_INTERFACE_STANDARD 结构的指针，该结构包含指向接口的各个例程的指针。
 
 
-最好尽可能使用 **总线 \_ 接口 \_ 标准** ，因为在使用 **总线 \_ 接口 \_ 标准版**时，无需使用总线号来检索配置信息，而驱动程序必须经常在检索特定于总线的接口时标识总线号。 某些总线的总线号，如 PCI，可以动态更改。 因此，驱动程序不应依赖于总线号直接访问 PCI 端口。 这样做可能会导致系统故障。
+最好尽可能使用 **总线 \_ 接口 \_ 标准** ，因为在使用 **总线 \_ 接口 \_ 标准版** 时，无需使用总线号来检索配置信息，而驱动程序必须经常在检索特定于总线的接口时标识总线号。 某些总线的总线号，如 PCI，可以动态更改。 因此，驱动程序不应依赖于总线号直接访问 PCI 端口。 这样做可能会导致系统故障。
 
 访问 PCI 设备的配置空间时，需要执行三个步骤，如下所 \_ 示：
 

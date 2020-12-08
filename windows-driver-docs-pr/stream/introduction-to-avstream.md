@@ -1,17 +1,16 @@
 ---
 title: AVStream 简介
 description: AVStream 简介
-ms.assetid: 626556b5-cdfe-4d02-a5a9-881062d4e5b2
 keywords:
 - AVStream WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7d98afa86e636822cd512b60729535740172f70d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7fd99b623c7c97165fddeb1118e7f9b4270dbba2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63360454"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96790253"
 ---
 # <a name="introduction-to-avstream"></a>AVStream 简介
 
@@ -19,7 +18,7 @@ ms.locfileid: "63360454"
 
 
 
-本部分包括以下主题：
+本节包括下列主题：
 
 [AVStream 概述](avstream-overview.md)
 
@@ -33,17 +32,17 @@ ms.locfileid: "63360454"
 
 [初始化 AVStream 微型驱动程序](initializing-an-avstream-minidriver.md)
 
-[Pin 为中心的处理](pin-centric-processing.md)
+[以引脚为中心的处理](pin-centric-processing.md)
 
-[筛选器为中心的处理](filter-centric-processing.md)
+[以筛选器为中心的处理](filter-centric-processing.md)
 
 [AVStream 中的事件处理](event-handling-in-avstream.md)
 
-[示例用户模式代码的方法和事件](sample-user-mode-code-for-methods-and-events.md)
+[方法和事件的示例用户模式代码](sample-user-mode-code-for-methods-and-events.md)
 
 [AVStream 子设备](avstream-child-devices.md)
 
-[在 AVStream 中重新启动处理](restarting-processing-in-avstream.md)
+[在 AVStream 中重启处理](restarting-processing-in-avstream.md)
 
 [AVStream 测试和调试](avstream-testing-and-debugging.md)
 

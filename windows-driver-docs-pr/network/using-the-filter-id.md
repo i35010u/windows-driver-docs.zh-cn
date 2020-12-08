@@ -1,15 +1,14 @@
 ---
 title: 使用筛选器 ID
 description: 使用筛选器 ID
-ms.assetid: 005AD1CF-37EB-44E8-BFA0-676ACCF69D47
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: eb4f7e7ea9ab5f00e451f105d81092b73862e061
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 7e235867edcd653d5eeff70797c36a1611b5a4a8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89205921"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96790391"
 ---
 # <a name="using-the-filter-id"></a>使用筛选器 ID
 

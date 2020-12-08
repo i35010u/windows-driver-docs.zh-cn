@@ -1,17 +1,16 @@
 ---
-title: KSINTERFACESETID\_媒体
-description: KSINTERFACESETID\_媒体
-ms.assetid: 5154068a-adeb-45dd-9abd-5bcf07931ef2
+title: KSINTERFACESETID \_ 媒体
+description: KSINTERFACESETID \_ 媒体
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d079a0b97d4d88153b64436a347cb2e4d5af8e21
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3c32f55f588499ce754ba296632e5322f39d9e35
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63368703"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96790213"
 ---
-# <a name="ksinterfacesetidmedia"></a>KSINTERFACESETID\_媒体
+# <a name="ksinterfacesetid_media"></a>KSINTERFACESETID \_ 媒体
 
 
 ## <span id="ddk_ksinterfacesetid_media_ks"></span><span id="DDK_KSINTERFACESETID_MEDIA_KS"></span>
@@ -19,13 +18,13 @@ ms.locfileid: "63368703"
 
 此接口集包括特定于媒体的接口类型。
 
-以下接口类型中 KSINTERFACESETID\_介质集枚举中 KSINTERFACE\_媒体：
+KSINTERFACESETID 介质集中的以下接口类型在 \_ KSINTERFACE media 中枚举 \_ ：
 
-[**KSINTERFACE\_MEDIA\_MUSIC**](ksinterface-media-music.md)
+[**KSINTERFACE \_ MEDIA \_ 音乐**](ksinterface-media-music.md)
 
-[**KSINTERFACE\_媒体\_批\_缓冲**](ksinterface-media-wave-buffered.md)
+[**KSINTERFACE \_ 媒体 \_ 波形 \_**](ksinterface-media-wave-buffered.md)
 
-[**KSINTERFACE\_媒体\_批\_已排队**](ksinterface-media-wave-queued.md)
+[**KSINTERFACE \_ MEDIA \_ 波纹 \_ 排队**](ksinterface-media-wave-queued.md)
 
  
 

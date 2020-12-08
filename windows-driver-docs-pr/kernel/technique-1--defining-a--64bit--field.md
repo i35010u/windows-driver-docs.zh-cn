@@ -1,35 +1,34 @@
 ---
-title: 方法 1 定义"64 位"字段
-description: 为驱动程序定义"64 位"字段
-ms.assetid: 6498e66c-145e-4f7e-a065-cbd781e142cc
+title: 定义 "64 位" 字段的方法1
+description: 为驱动程序定义 "64 位" 字段
 keywords:
-- 32 位 I/O 支持 WDK 64 位、 64 位字段定义
-- 64 位域定义 WDK 内核
+- 32位 i/o 支持 WDK 64 位，已定义64位字段
+- 64位字段定义的 WDK 内核
 - 位域 WDK 64 位
-- 单独的控件代码 WDK 64 位
+- 分离控制代码 WDK 64 位
 - 控制代码 WDK 64 位
 - 文件系统控制代码 WDK 64 位
 - FSCTL WDK 64 位
-- I/O 控制代码 WDK 内核，在 64 位驱动程序中的 32 位 I/O
-- Ioctl WDK 内核，在 64 位驱动程序中的 32 位 I/O
+- I/o 控制代码 WDK 内核，64位驱动程序中的32位 i/o
+- IOCTLs WDK 内核，64位驱动程序中的32位 i/o
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6cd78bd2a9304cd6cfe3732189fc00828d43b17f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 130345f03591e5934c7430d9e7833d6495d09c47
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63345537"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96788583"
 ---
-# <a name="technique-1-defining-a-64bit-field"></a>方法 1：定义一个"64 位"字段
+# <a name="technique-1-defining-a-64bit-field"></a>方法1：定义 "64 位" 字段
 
 
 
 
 
-IOCTL 或 FSCTL 控件代码中定义了"64 位"字段。 此字段包含的位标志始终设置为 64 位的调用方，但始终清除对 32 位。 选择哪一段中的控制代码，因为"64 位"字段是特定于驱动程序，但它必须是为 32 位的调用方永远不会设置的位。 适合于大多数驱动程序是函数字段中的最高有效位 (MSB)。
+"64 位" 字段是在 IOCTL 或 FSCTL 控件代码中定义的。 此字段包含一个位标志，该标志始终设置为64位调用方，但对于32位，始终为 clear。 将控制代码中的哪个位选为 "64 位" 字段是特定于驱动程序的，但它必须是从未为32位调用方设置的位。 大多数驱动程序的一个不错的选择是函数字段中 (MSB) 最有效的位。
 
-例如，在 32 位驱动程序中使用的 IOCTL (FSCTL) 控制代码包含四个位域：
+例如，32位驱动程序中使用的 IOCTL (FSCTL) 控制代码包含四个位域：
 
 <table>
 <colgroup>
@@ -49,18 +48,18 @@ IOCTL 或 FSCTL 控件代码中定义了"64 位"字段。 此字段包含的位�
 <tbody>
 <tr class="odd">
 <td><p>16 位</p></td>
-<td><p>2 位</p></td>
-<td><p>12 位</p></td>
-<td><p>2 位</p></td>
+<td><p>2位</p></td>
+<td><p>12位</p></td>
+<td><p>2位</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-只要没有任何现有的驱动程序定义的控制代码设置 MSB 函数字段中，这些控制代码可以继续使用 32 位用户模式应用程序。
+只要没有现有的驱动程序定义的控制代码在函数字段中设置 MSB，这些控制代码就可以继续由32位用户模式应用程序使用。
 
-为了适应 64 位的调用方，驱动程序定义一个函数字段，是一位较短。 此位将重新定义为"64 位"字段：
+为了容纳64位调用方，驱动程序将定义一个长度较短的函数字段。 此位重定义为 "64 位" 字段：
 
 <table>
 <colgroup>
@@ -74,7 +73,7 @@ IOCTL 或 FSCTL 控件代码中定义了"64 位"字段。 此字段包含的位�
 <tr class="header">
 <th>设备类型</th>
 <th>访问</th>
-<th>64Bit</th>
+<th>64</th>
 <th>函数</th>
 <th>方法</th>
 </tr>
@@ -82,17 +81,17 @@ IOCTL 或 FSCTL 控件代码中定义了"64 位"字段。 此字段包含的位�
 <tbody>
 <tr class="odd">
 <td><p>16 位</p></td>
-<td><p>2 位</p></td>
-<td><p>1 的位</p></td>
+<td><p>2位</p></td>
+<td><p>1位</p></td>
 <td><p>11 位</p></td>
-<td><p>2 位</p></td>
+<td><p>2位</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-下面的代码示例演示如何在驱动程序标头文件中定义的"64 位"字段：
+下面的代码示例演示如何在驱动程序头文件中定义 "64 位" 字段：
 
 ```cpp
 #define REGISTER_FUNCTION 0     // Define the IOCTL function code

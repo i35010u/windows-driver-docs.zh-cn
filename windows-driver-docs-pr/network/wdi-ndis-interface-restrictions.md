@@ -1,15 +1,14 @@
 ---
 title: WDI NDIS 接口限制
 description: WDI IHV 微型端口驱动程序可以访问 NDIS 和 KMDF 提供的所有功能。
-ms.assetid: 08996045-674B-465D-8880-088320770D2C
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 26a4f133287844398b49eccfb3a36ce6ddc6b3ca
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: cd6561033adddfc179c90600bbfc974ee3205b84
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89216898"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96790385"
 ---
 # <a name="wdi-ndis-interface-restrictions"></a>WDI NDIS 接口限制
 

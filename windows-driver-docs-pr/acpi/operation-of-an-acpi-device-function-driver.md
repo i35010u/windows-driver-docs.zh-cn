@@ -1,7 +1,6 @@
 ---
 title: ACPI 设备函数驱动程序的操作
 description: ACPI 设备函数驱动程序的操作
-ms.assetid: 56c63373-5094-4ae5-a7b0-56d61e3fa9b1
 keywords:
 - ACPI 设备 WDK，函数驱动程序操作
 - 供应商提供的函数驱动程序 WDK ACPI
@@ -9,12 +8,12 @@ keywords:
 - WDM 函数驱动程序 WDK ACPI，操作
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 870da8715b3120ac4485247ebe0e8a627a691b25
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 2fe071b33f3d06828b824a6f29e4f554e72bcad3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89184495"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96789481"
 ---
 # <a name="operation-of-an-acpi-device-function-driver"></a>ACPI 设备函数驱动程序的操作
 

@@ -1,7 +1,6 @@
 ---
 title: DirectMusic 微型端口驱动程序接口
 description: DirectMusic 微型端口驱动程序接口
-ms.assetid: a3532993-732a-4a7e-82bc-fc4199ec23dd
 keywords:
 - 微型端口驱动程序 WDK 音频，合成程序
 - 合成 WDK 音频，微型端口驱动程序
@@ -14,12 +13,12 @@ keywords:
 - 合成 WDK 音频，内核模式硬件加速
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f19927272e263ab7087419f35c5599a076969c27
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: cdfa04a40eb02b93ef39eea8e81305c83fa6efe1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89208131"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96789289"
 ---
 # <a name="directmusic-miniport-driver-interface"></a>DirectMusic 微型端口驱动程序接口
 
@@ -47,13 +46,13 @@ Dmu 微型端口驱动程序应允许创建多个 pin 实例。 每个 pin 实�
 
 创建两个对象时，必须将其传递到微型端口驱动程序：
 
--   Clock
+-   时钟
 
 -   分配器对象
 
 时钟对于呈现和捕获操作非常重要。 微型端口驱动程序需要在指定的时间呈现说明;当微型端口驱动程序读取 MIDI 数据时，它需要知道时间，以便对内核事件进行时间戳。 有关详细信息，请参阅 [延迟时钟](latency-clocks.md)。
 
-具有**IAllocatorMXF**接口的[分配](allocator.md)器对象将用作用于回收内存的内存池。 系统中的所有 MIDI 消息都从此公共池分配。 分配器对象应用于创建或销毁单个消息。
+具有 **IAllocatorMXF** 接口的 [分配](allocator.md)器对象将用作用于回收内存的内存池。 系统中的所有 MIDI 消息都从此公共池分配。 分配器对象应用于创建或销毁单个消息。
 
 本节包括：
 

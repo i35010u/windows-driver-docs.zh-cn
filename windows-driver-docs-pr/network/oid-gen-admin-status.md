@@ -1,16 +1,15 @@
 ---
 title: OID_GEN_ADMIN_STATUS
 description: 作为查询，使用 OID_GEN_ADMIN_STATUS OID 确定 (ifAdminStatus 从 RFC 2863) 的管理状态。
-ms.assetid: e8f45521-7419-4c11-b84b-36d4d3306fc2
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_GEN_ADMIN_STATUS 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 36dc9afb06d7f1f4c9615b82905746c121bcee3b
-ms.sourcegitcommit: f8619f20a0903dd64f8641a5266ecad6df5f1d57
+ms.openlocfilehash: 6c6942b2b330548f197c072915f79affed145fd4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91423666"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96789669"
 ---
 # <a name="oid_gen_admin_status"></a>OID \_ 生成 \_ 管理员 \_ 状态
 
@@ -20,7 +19,7 @@ ms.locfileid: "91423666"
 **版本信息**
 
 <a href="" id="windows-vista-and-later"></a>Windows Vista 和更高版本  
-。
+支持。
 
 <a href="" id="ndis-6-0-and-later-miniport-drivers"></a>NDIS 6.0 和更高版本的微型端口驱动程序  
 未请求。 仅适用于 NDIS 接口提供程序。
@@ -50,7 +49,7 @@ ms.locfileid: "91423666"
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**NET \_ IF \_ 管理员 \_ 状态**](/windows/win32/api/ifdef/ne-ifdef-net_if_admin_status)

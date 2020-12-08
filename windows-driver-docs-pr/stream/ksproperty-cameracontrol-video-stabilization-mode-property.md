@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ CAMERACONTROL \_ 视频 \_ 稳定 \_ 模式 \_ 属性
 description: 用户模式客户端使用此属性来获取或设置照相机的视频抖动特征。 此属性是可选的。
-ms.assetid: DB0CAC1A-502E-4072-903F-CFD0FAEFE928
 keywords:
 - KSPROPERTY_CAMERACONTROL_VIDEO_STABILIZATION_MODE_PROPERTY 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6ce59a1c7d859f7e2fdbf6e6203dd11b912765c6
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: da6d88341b3c8aafeb903361d04475a8298dd349
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103866"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96789575"
 ---
 # <a name="ksproperty_cameracontrol_video_stabilization_mode_property"></a>KSPROPERTY \_ CAMERACONTROL \_ 视频 \_ 稳定 \_ 模式 \_ 属性
 
@@ -82,7 +81,7 @@ ms.locfileid: "90103866"
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSPROPERTY**](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)

@@ -1,15 +1,14 @@
 ---
 title: 蓝牙驱动程序测试资源
 description: 蓝牙驱动程序测试资源概述。
-ms.assetid: d045b771-b536-457c-8b7b-ecb6517bf0a9
 ms.date: 2/14/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 0ccff63867220199f1b425ee3b05fac5034bf7ee
-ms.sourcegitcommit: e6247811ff9a07070547af3d89705dae33a2f465
+ms.openlocfilehash: 310526e6ed9e4e96b9c7a5e4ec63d98baf1ae567
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/23/2020
-ms.locfileid: "91026390"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96789159"
 ---
 # <a name="bluetooth-driver-testing-resources"></a>蓝牙驱动程序测试资源
 

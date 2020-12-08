@@ -1,20 +1,19 @@
 ---
 title: EFI_USBFN_IO_PROTOCOL.AbortTransfer
 description: EFI_USBFN_IO_PROTOCOL.AbortTransfer
-ms.assetid: 204998d6-7d8d-482b-8d9c-b96d2e2729bf
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fb5e2fe98d7070a4ebba1a56f9690d8437634aa9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e439ebd042ce82853a8ccd445d0d58bab8344be4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63337728"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96789045"
 ---
-# <a name="efiusbfnioprotocolaborttransfer"></a>EFI\_USBFN\_IO\_PROTOCOL.AbortTransfer
+# <a name="efi_usbfn_io_protocolaborttransfer"></a>EFI \_ USBFN \_ IO \_ 协议。AbortTransfer
 
 
-**AbortTransfer**函数中止在指定的终结点上的传输。
+**AbortTransfer** 函数在指定的终结点上中止传输。
 
 ## <a name="syntax"></a>语法
 
@@ -29,17 +28,17 @@ EFI_STATUS
   );
 ```
 
-## <a name="parameters"></a>Parameters
+## <a name="parameters"></a>参数
 
 
 <a href="" id="this"></a>*此*  
-指向 EFI\_USBFN\_IO\_协议实例
+指向 EFI \_ USBFN \_ IO \_ 协议实例的指针
 
 <a href="" id="endpointindex"></a>*EndpointIndex*  
-指示需要取消正在进行传输的终结点。
+指示需要在其上取消正在进行的传输的终结点。
 
-<a href="" id="direction"></a>*方向*  
-终结点的方向。 有关详细信息请参阅[EFI\_USBFN\_终结点\_方向](efi-usbfn-endpoint-direction.md)。
+<a href="" id="direction"></a>*方向键*  
+终结点的方向。 有关详细信息，请参阅 [EFI \_ USBFN \_ 终结点 \_ 方向](efi-usbfn-endpoint-direction.md)。
 
 ## <a name="return-values"></a>返回值
 
@@ -58,7 +57,7 @@ EFI_STATUS
 <tbody>
 <tr class="odd">
 <td><p><strong>EFI_SUCCESS</strong></p></td>
-<td><p>成功返回的函数</p></td>
+<td><p>函数已成功返回</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>EFI_INVALID_PARAMETER</strong></p></td>
@@ -66,11 +65,11 @@ EFI_STATUS
 </tr>
 <tr class="odd">
 <td><p><strong>EFI_DEVICE_ERROR</strong></p></td>
-<td><p>物理设备报告了错误。</p></td>
+<td><p>物理设备报告了一个错误。</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>EFI_NOT_READY</strong></p></td>
-<td><p>物理设备是正忙还是未准备好处理此请求</p></td>
+<td><p>物理设备处于繁忙状态或尚未准备好处理此请求</p></td>
 </tr>
 </tbody>
 </table>
@@ -80,7 +79,7 @@ EFI_STATUS
 ## <a name="remarks"></a>备注
 
 
-此函数失败，出现**EFI\_无效\_参数**如果指定的方向不正确的终结点。
+如果指定的方向对于终结点不正确，则此函数将失败，并且 **EFI \_ 无效 \_ 参数** 。
 
 ## <a name="requirements"></a>要求
 

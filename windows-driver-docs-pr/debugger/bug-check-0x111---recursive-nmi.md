@@ -1,7 +1,6 @@
 ---
 title: Bug 检查 0x111 RECURSIVE_NMI
-description: RECURSIVE_NMI bug 检查具有 0x00000111 值。 此 bug 检查指示正在进行以前 NMI 时发生非屏蔽的中断 (NMI)。
-ms.assetid: 1f275db1-ac79-4bd2-85c5-cb64342911d1
+description: RECURSIVE_NMI bug 检查的值为0x00000111。 此 bug 检查表明在上一个 NMI 正在进行时， (NMI) 出现不可屏蔽中断。
 keywords:
 - Bug 检查 0x111 RECURSIVE_NMI
 - RECURSIVE_NMI
@@ -13,26 +12,26 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: eb606d9ecc12428a3601fe5dc48907222b7f8e24
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: ff03f554aae51c6d01bbc5d99aea6b6667b7d514
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67521246"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96790055"
 ---
-# <a name="bug-check-0x111-recursivenmi"></a>Bug 检查 0x111：递归\_NMI
+# <a name="bug-check-0x111-recursive_nmi"></a>Bug 检查0x111：递归 \_ NMI
 
 
-递归\_NMI bug 检查的值为 0x00000111。 此 bug 检查指示正在进行以前 NMI 时发生非屏蔽的中断 (NMI)。
+递归 \_ NMI bug 检查的值为0x00000111。 此 bug 检查表明在上一个 NMI 正在进行时， (NMI) 出现不可屏蔽中断。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题面向程序员。 如果您是在使用计算机时收到蓝屏错误代码的客户，请参阅[蓝屏错误疑难解答](https://www.windows.com/stopcode)。
 
 
 <a name="remarks"></a>备注
 -------
 
-此 bug 检查发生在系统管理中断 (SMI) 代码中，没有错误并且 SMI 中断 NMI 并启用中断。 然后执行将继续与 NMIs 启用，而另一个 NMI 中断正在进行中的 NMI。
+如果系统管理中断 (SMI-S) 代码中存在错误，并且 SMI 中断 NMI 并启用中断，则会发生此 bug 检查。 然后，执行将继续，启用 NMIs，另一个 NMI 会中断正在进行的 NMI。
 
  
 

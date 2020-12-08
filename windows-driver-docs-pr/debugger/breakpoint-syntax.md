@@ -1,16 +1,15 @@
 ---
 title: 断点语法
 description: 本主题介绍断点语法
-ms.assetid: 86228b87-9ca3-4d0c-be9e-63446ac6ce31
-keywords: 调试器，断点在方法、 断点、 命令、 b （断点标识符）、 文字 MASM 标识符和模板化函数的语法规则
+keywords: 调试器，方法上的断点，断点，命令的语法规则，b (断点标识符) ，文本 MASM 标识符，模板化函数
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8003785706f0f3e2b552f9e03fd09b3d8ddf255c
-ms.sourcegitcommit: fee68bc5f92292281ecf1ee88155de45dfd841f5
+ms.openlocfilehash: 10f0dd0d52f5059d9a8b0ba76372b8a1de8f2a30
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67716853"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96788895"
 ---
 # <a name="breakpoint-syntax"></a>断点语法
 
@@ -18,11 +17,11 @@ ms.locfileid: "67716853"
 ## <span id="ddk_debugging_bios_code_dbg"></span><span id="DDK_DEBUGGING_BIOS_CODE_DBG"></span>
 
 
-创建时，可使用以下语法元素[断点](using-breakpoints.md)，通过调试器命令窗口或 WinDbg 图形界面。
+在通过调试器命令窗口或通过 WinDbg 图形界面创建 [断点](using-breakpoints.md)时，可以使用以下语法元素。
 
-### <a name="span-idaddressesinbreakpointsspanspan-idaddressesinbreakpointsspanaddresses-in-breakpoints"></a><span id="addresses_in_breakpoints"></span><span id="ADDRESSES_IN_BREAKPOINTS"></span>中的断点的地址
+### <a name="span-idaddresses_in_breakpointsspanspan-idaddresses_in_breakpointsspanaddresses-in-breakpoints"></a><span id="addresses_in_breakpoints"></span><span id="ADDRESSES_IN_BREAKPOINTS"></span>断点中的地址
 
-断点支持许多类型的地址语法，包括虚拟地址、 函数偏移量和源行号。 例如，您可以使用任一以下命令以设置断点：
+断点支持多种类型的地址语法，包括虚拟地址、函数偏移量和源行号。 例如，你可以使用以下任一命令来设置断点：
 
 ```dbgcmd
 0:000> bp 0040108c
@@ -30,62 +29,62 @@ ms.locfileid: "67716853"
 0:000> bp `source.c:31`
 ```
 
-有关此语法的详细信息，请参阅[数值表达式语法](numerical-expression-syntax.md)，[源行语法](source-line-syntax.md)，以及单个命令的主题。
+有关此语法的详细信息，请参阅 [数值表达式语法](numerical-expression-syntax.md)、 [源行语法](source-line-syntax.md)和各个命令主题。
 
-### <a name="span-idbreakpointsonmethodsspanspan-idbreakpointsonmethodsspanbreakpoints-on-methods"></a><span id="breakpoints_on_methods"></span><span id="BREAKPOINTS_ON_METHODS"></span>在方法上的断点
+### <a name="span-idbreakpoints_on_methodsspanspan-idbreakpoints_on_methodsspanbreakpoints-on-methods"></a><span id="breakpoints_on_methods"></span><span id="BREAKPOINTS_ON_METHODS"></span>方法上的断点
 
-如果你想要放置一个断点*MyMethod*中的方法*MyClass*类，可以使用两个不同的语法：
+如果要在 *MyClass* 类中的 *MyMethod* 方法上放置断点，可以使用两种不同的语法：
 
--   在 MASM 表达式语法中，可以通过使用两个冒号或双下划线指示一种方法。
+-   在 MASM 表达式语法中，可以通过双冒号或双下划线来指示方法。
 
     ```dbgcmd
     0:000> bp MyClass::MyMethod 
     0:000> bp MyClass__MyMethod 
     ```
 
--   在C++表达式语法，必须通过使用两个冒号指示一种方法。
+-   在 c + + 表达式语法中，必须使用双冒号指示方法。
 
     ```dbgcmd
     0:000> bp @@( MyClass::MyMethod ) 
     ```
 
-如果你想要使用更复杂的断点命令，应使用 MASM 表达式语法。 有关表达式语法的详细信息，请参阅[评估表达式](evaluating-expressions.md)。
+如果要使用更复杂的断点命令，应使用 MASM 表达式语法。 有关表达式语法的详细信息，请参阅 [计算表达式](evaluating-expressions.md)。
 
-### <a name="span-idbreakpointsusingcomplicatedtextspanspan-idbreakpointsusingcomplicatedtextspanbreakpoints-using-complicated-text"></a><span id="breakpoints_using_complicated_text"></span><span id="BREAKPOINTS_USING_COMPLICATED_TEXT"></span>使用复杂的文本的断点
+### <a name="span-idbreakpoints_using_complicated_textspanspan-idbreakpoints_using_complicated_textspanbreakpoints-using-complicated-text"></a><span id="breakpoints_using_complicated_text"></span><span id="BREAKPOINTS_USING_COMPLICATED_TEXT"></span>使用复杂文本的断点
 
-若要在复杂的函数，包括包含空格，和的成员函数上设置断点C++公共类中，将表达式括在括号中。 例如，使用**最佳实践 （??MyPublic)** 或**最佳实践 （new 运算符）** 。
+若要在复杂函数上设置断点（包括包含空格的函数以及 c + + 公共类的成员），请将该表达式括在括号中。 例如，使用 **bp (？MyPublic)** 或 **bp (new) 运算符**。
 
-更灵活方法是使用 @ ！"字符"语法。 这是使你可以提供的符号解析的任意文本 MASM 计算器中是一种特殊转义。 必须以开头的三个符号 @ ！" 引号 （"） 开头和结尾。 而无需此语法中，您不能使用空格，尖括号 (&lt;， &gt;)，或在 MASM 计算器中的符号名称中的其他特殊字符。 此语法是以独占方式的名称，并不是参数。 模板和重载都需要此引号表示法的符号的主要来源。 您还可以设置**bu**命令通过使用 @ ！"字符"语法，如以下代码示例所示。
+更通用的方法是使用 @！chars "语法。 这是 MASM 计算器中的特殊转义，可用于为符号解析提供任意文本。 必须以 @！开头的三个符号 并以引号 ( ") 结束。 如果没有此语法，则不能在 MASM 计算器的符号名称中使用空格、尖括号 (&lt; 、 &gt;) 或其他特殊字符。 此语法专用于名称，而不是参数。 模板和重载是需要此引号表示法的符号的主要来源。 还可以通过使用 @ **bu** ！chars "语法，如以下代码示例所示。
 
 ```dbgcmd
 0:000> bu @!"ExecutableName!std::pair<unsigned int,std::basic_string<unsigned short,std::char_traits<unsigned short>,std::allocator<unsigned short> > >::operator="
 ```
 
-在此示例中， *ExecutableName*是可执行文件的名称。
+在此示例中， *ExecutableName* 是可执行文件的名称。
 
-此转义语法是更适用于C++（例如，重载运算符） 而不是 C 因为没有在 C 中的任何空格 （或特殊字符） 函数名称。 但是，此语法也很重要的托管代码大量由于大量使用.NET Framework 中的重载。
+此转义语法更适用于 c + + (例如，重载运算符) 而不是 C，因为 C 函数名称中不) 空格 (或特殊字符。 不过，对于许多托管代码而言，此语法也很重要，因为在 .NET Framework 中使用了重载。
 
-中的任意文本上设置断点C++语法，使用<strong>bu @@c+ + (</strong><em>文本</em> **)** 为C++-兼容的符号。
+若要在 c + + 语法中使用任意文本设置断点，请使用 <strong>bu @ @c + + (</strong><em>文本</em>**)** 用于 c + + 兼容的符号。
 
-### <a name="span-idbreakpointsinscriptsspanspan-idbreakpointsinscriptsspanbreakpoints-in-scripts"></a><span id="breakpoints_in_scripts"></span><span id="BREAKPOINTS_IN_SCRIPTS"></span>在脚本中的断点
+### <a name="span-idbreakpoints_in_scriptsspanspan-idbreakpoints_in_scriptsspanbreakpoints-in-scripts"></a><span id="breakpoints_in_scripts"></span><span id="BREAKPOINTS_IN_SCRIPTS"></span>脚本中的断点
 
-断点 Id 不需要显式引用。 相反，可以使用数值表达式解析为一个整数，对应于断点 id。 若要指示应将表达式解释为一个断点，请使用以下语法。
+无需显式引用断点 Id。 相反，您可以使用解析为对应于断点 ID 的整数的数值表达式。 若要指示表达式应解释为断点，请使用以下语法。
 
 ```dbgcmd
 b?[Expression]
 ```
 
-在此语法中，方括号是必需的并且*表达式*代表的任何数值表达式，将解析为一个整数，对应于断点 id。
+在此语法中，方括号是必需的，并且 *表达式* 表示解析为对应于断点 ID 的整数的任何数值表达式。
 
-此语法允许调试器脚本以编程方式选择一个断点。 在以下示例中，具体取决于用户定义的伪寄存器的值发生更改断点。
+此语法允许调试器脚本以编程方式选择断点。 在下面的示例中，断点会根据用户定义的伪寄存器的值发生变化。
 
 ```dbgcmd
 b?[@$t0]
 ```
 
-### <a name="span-idbreakpointpseudoregistersspanspan-idbreakpointpseudoregistersspanbreakpoint-pseudo-registers"></a><span id="breakpoint_pseudo_registers"></span><span id="BREAKPOINT_PSEUDO_REGISTERS"></span>断点伪寄存器
+### <a name="span-idbreakpoint_pseudo_registersspanspan-idbreakpoint_pseudo_registersspanbreakpoint-pseudo-registers"></a><span id="breakpoint_pseudo_registers"></span><span id="BREAKPOINT_PSEUDO_REGISTERS"></span>断点 Pseudo-Registers
 
-如果你想要在表达式中的断点地址是指，则可以使用[伪寄存器](pseudo-register-syntax.md)与 **$bp**_数_语法，其中*数*断点 id。 有关此语法的详细信息，请参阅伪寄存器语法。
+如果要在表达式中引用断点地址，可以将 [伪寄存器](pseudo-register-syntax.md) 与 **$bp**_Number_ 语法结合使用，其中 *number* 是断点 ID。 有关此语法的详细信息，请参阅 Pseudo-Register 语法。
 
  
 

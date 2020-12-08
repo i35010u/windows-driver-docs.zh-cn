@@ -1,15 +1,14 @@
 ---
 title: 基于 SoC 的平台的硬件要求
 description: ACPI 5.0 规范引入了一组新的硬件要求，以支持运行 Windows 的基于 SoC 的平台。
-ms.assetid: C8AA4EE1-D9A6-438E-801B-8EDDF8AA0560
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f92be409690ea569d1f9dd5097b540a0bec56620
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 3998d362fc62357ef68cc7e3c9932aa2b88daad5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89189002"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96788985"
 ---
 # <a name="hardware-requirements-for-soc-based-platforms"></a>基于 SoC 的平台的硬件要求
 
@@ -30,7 +29,7 @@ ms.locfileid: "89189002"
 
 未实现 ACPI 固定硬件接口的平台称为 *硬件精简* acpi 平台。 若要指示某个平台硬件已降低，请 \_ \_ 在 "固定 ACPI 说明" 表中设置 "HW 缩减 acpi" 标志 (FADT) "。
 
-在硬件上，降低了 ACPI 平台，固定硬件功能（如 *电源按钮*、 *盖子状态*等）在 acpi 定义的硬件中一直被实现，由其 acpi 定义的软件等效项替换。 例如，使用控制方法的 "电源" 按钮而不是固定硬件等效项。
+在硬件上，降低了 ACPI 平台，固定硬件功能（如 *电源按钮*、 *盖子状态* 等）在 acpi 定义的硬件中一直被实现，由其 acpi 定义的软件等效项替换。 例如，使用控制方法的 "电源" 按钮而不是固定硬件等效项。
 
 ## <a name="connected-standby"></a>连接待机
 

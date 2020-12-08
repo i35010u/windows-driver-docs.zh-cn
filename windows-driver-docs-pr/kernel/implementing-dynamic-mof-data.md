@@ -1,7 +1,6 @@
 ---
 title: 实现动态 MOF 数据
 description: 实现动态 MOF 数据
-ms.assetid: 408c0f64-6257-4ece-bb4d-b1850f8ae3c6
 keywords:
 - WMI WDK 内核，发布架构
 - 发布 WMI 架构 WDK
@@ -10,12 +9,12 @@ keywords:
 - 动态 MOF 数据 WDK WMI
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 64d69d120b6575127f1cea1e6ffbbbf0f1e0d4d8
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: f0f3655f0f517b42ab3f42a249d792c2eedb0959
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89192479"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96788665"
 ---
 # <a name="implementing-dynamic-mof-data"></a>实现动态 MOF 数据
 
@@ -29,11 +28,11 @@ ms.locfileid: "89192479"
 
 2.  使用 wmimofck.exe 来创建一个文件，该文件将包含 MOF 编译器创建的 bmf 文件的十六进制转储。
 
-3.  使用 " ** \# 包括**" 包括在步骤2中使用驱动程序的源创建的十六进制数据。
+3.  使用 " **\# 包括**" 包括在步骤2中使用驱动程序的源创建的十六进制数据。
 
 4.  注册为支持 MSWmi \_ MofData \_ guid，它是在 wmidata 中定义的 guid。
 
-5.  向 WMI 返回所选的二进制数据，以响应 [**IRP \_ MN \_ query \_ ALL \_ data**](./irp-mn-query-all-data.md) Or [**IRP \_ MN \_ query \_ \_ **](./irp-mn-query-single-instance.md) requests for MSWmi \_ MofData \_ GUID。
+5.  向 WMI 返回所选的二进制数据，以响应 [**IRP \_ MN \_ query \_ ALL \_ data**](./irp-mn-query-all-data.md) Or [**IRP \_ MN \_ query \_ \_**](./irp-mn-query-single-instance.md) requests for MSWmi \_ MofData \_ GUID。
 
 有关 wmimofck 实用工具的详细信息，请参阅 [使用 wmimofck.exe](using-wmimofck-exe.md)。
 

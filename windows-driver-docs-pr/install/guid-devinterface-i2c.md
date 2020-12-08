@@ -1,7 +1,6 @@
 ---
 title: GUID_DEVINTERFACE_I2C
 description: GUID_DEVINTERFACE_I2C
-ms.assetid: 765cecb7-b8ea-48ef-bdab-742da722e169
 keywords:
 - GUID_DEVINTERFACE_I2C 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 991c895c291f61a215cabb5e0839d8580be179e8
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 76595792b6663dd3c33a4f90de4b2b2951e04944
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89095205"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96789827"
 ---
 # <a name="guid_devinterface_i2c"></a>GUID_DEVINTERFACE_I2C
 

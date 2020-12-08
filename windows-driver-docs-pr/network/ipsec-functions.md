@@ -1,17 +1,16 @@
 ---
 title: IPsec 函数
 description: 本部分介绍适用于 Windows 筛选平台标注驱动程序的 IPsec 功能。
-ms.assetid: c457f036-84be-47fd-8cfe-9ac867111ca5
 keywords:
 - IPsec 函数网络驱动程序
 ms.date: 11/07/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2c3da12de2c7a6c07e8f8d3f1e0e906870c3235d
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 415800c5c7fa3ba24601b492ac73e4281e8a084e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91734433"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96789771"
 ---
 # <a name="ipsec-functions"></a>IPsec 函数
 

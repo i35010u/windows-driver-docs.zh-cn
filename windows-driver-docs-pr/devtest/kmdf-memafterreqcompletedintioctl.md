@@ -1,7 +1,6 @@
 ---
 title: 'MemAfterReqCompletedIntIoctl 规则 (kmdf) '
 description: MemAfterReqCompletedIntIoctl 规则指定在 EvtIoInternalDeviceControl 回调函数中，在 i/o 请求完成后，不能访问 framework 内存对象。
-ms.assetid: 60095782-fa4c-43cc-b9b6-5101fd7d418a
 ms.date: 05/21/2018
 keywords:
 - 'MemAfterReqCompletedIntIoctl 规则 (kmdf) '
@@ -12,19 +11,19 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 27f3e02bb48d815418c5c26f17b5383b3ed38855
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 40eab2d86dfc091c5c11b990bc24f34a9e3ebb92
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106086"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96790035"
 ---
 # <a name="memafterreqcompletedintioctl-rule-kmdf"></a>MemAfterReqCompletedIntIoctl 规则 (kmdf) 
 
 
-**MemAfterReqCompletedIntIoctl**规则指定在[*EvtIoInternalDeviceControl*](/windows-hardware/drivers/ddi/wdfio/nc-wdfio-evt_wdf_io_queue_io_internal_device_control)回调函数中，在 i/o 请求完成后，不能访问 framework 内存对象。
+**MemAfterReqCompletedIntIoctl** 规则指定在 [*EvtIoInternalDeviceControl*](/windows-hardware/drivers/ddi/wdfio/nc-wdfio-evt_wdf_io_queue_io_internal_device_control)回调函数中，在 i/o 请求完成后，不能访问 framework 内存对象。
 
-在驱动程序的[*EvtIoInternalDeviceControl*](/windows-hardware/drivers/ddi/wdfio/nc-wdfio-evt_wdf_io_queue_io_internal_device_control)回调函数中，在 i/o 请求上调用[**WdfRequestComplete**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcomplete)、 [**WdfRequestCompleteWithInformation**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcompletewithinformation)或[**WdfRequestCompleteWithPriorityBoost**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcompletewithpriorityboost)后，无法访问 retrievedby 调用[**WdfRequestRetrieveInputMemory**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestretrieveinputmemory)或[**WdfRequestRetrieveOutputMemory**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestretrieveoutputmemory)方法的 framework 内存对象。
+在驱动程序的 [*EvtIoInternalDeviceControl*](/windows-hardware/drivers/ddi/wdfio/nc-wdfio-evt_wdf_io_queue_io_internal_device_control)回调函数中，在 i/o 请求上调用 [**WdfRequestComplete**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcomplete)、 [**WdfRequestCompleteWithInformation**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcompletewithinformation)或 [**WdfRequestCompleteWithPriorityBoost**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcompletewithpriorityboost)后，无法访问 retrievedby 调用 [**WdfRequestRetrieveInputMemory**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestretrieveinputmemory)或 [**WdfRequestRetrieveOutputMemory**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestretrieveoutputmemory)方法的 framework 内存对象。
 
 此规则考虑以下两种内存访问方法：
 

@@ -1,15 +1,14 @@
 ---
 title: 照片序列模式
 description: 照片序列模式允许捕获一系列照片，以响应照相机的一次单击。
-ms.assetid: 15F19FE1-6D09-4406-B096-E96D12BAF030
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ec46531285afb7955057094202fb2c486d604684
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 80d763ce33407e3b57d4b1a8c6a96cf2b9dd0cef
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89186101"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96790169"
 ---
 # <a name="photo-sequence-mode"></a>照片序列模式
 
@@ -36,7 +35,7 @@ ms.locfileid: "89186101"
 
     1.  从应用程序为驱动程序提供请求的历史记录帧计数。 驱动程序必须返回历史记录帧计数它能够支持以及保存历史记录帧所需的缓冲区数。
 
-    2.  驱动程序必须使用 **KsEdit**通过照片序列模式转换调用来更新 pin 的分配器要求结构和缓冲区数。
+    2.  驱动程序必须使用 **KsEdit** 通过照片序列模式转换调用来更新 pin 的分配器要求结构和缓冲区数。
 
     3.  该驱动程序会将其内部状态更改为照片序列模式。
 

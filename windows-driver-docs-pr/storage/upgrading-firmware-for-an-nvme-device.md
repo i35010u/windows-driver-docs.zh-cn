@@ -1,15 +1,14 @@
 ---
 title: 升级为 NVMe 设备的固件
 description: 对 NVMe 存储设备上的固件的更新会颁发给该设备的微型端口驱动程序。
-ms.assetid: A912715A-F82A-41E5-BE14-5B17930C29B7
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1607770326207d9f0f1f291c394dedd8744d28a4
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: fbd8a0a204742918b2b3422dc45e8bfb9e03b0c2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89187497"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96790345"
 ---
 # <a name="upgrading-firmware-for-an-nvme-device"></a>升级为 NVMe 设备的固件
 
@@ -29,13 +28,13 @@ ms.locfileid: "89187497"
 
     若要更新设备，请选择一个可写且当前未处于活动状态的槽。 更新完成后，所选槽中的所有现有图像数据都将被覆盖。
 
-2.  下载所选槽的新固件映像。 根据映像的大小，此操作将在单个传输操作中或在映像的多个部分的后续传输中发生。 图像的一部分受*最大 (控制器最大传输大小*512 KB **) 的限制**。
+2.  下载所选槽的新固件映像。 根据映像的大小，此操作将在单个传输操作中或在映像的多个部分的后续传输中发生。 图像的一部分受 *最大 (控制器最大传输大小* 512 KB **) 的限制**。
 3.  为了使下载的映像成为活动固件映像，将其分配给槽。 然后，将活动固件槽从当前使用的槽切换到分配给已下载映像的槽。 根据下载的类型和固件映像中的更改，可能需要重新启动系统。 这由 NVMe 控制器确定。
 
 ## <a name="span-idminiport_firmware_control_requestsspanspan-idminiport_firmware_control_requestsspanspan-idminiport_firmware_control_requestsspanminiport-firmware-control-requests"></a><span id="Miniport_firmware_control_requests"></span><span id="miniport_firmware_control_requests"></span><span id="MINIPORT_FIRMWARE_CONTROL_REQUESTS"></span>微型端口固件控制请求
 
 
-每个函数命令都在**固件 \_ 请求 \_ 块**结构中设置，该结构包含在[**IOCTL \_ SCSI \_ 微型端口**](/windows-hardware/drivers/ddi/ntddscsi/ni-ntddscsi-ioctl_scsi_miniport)请求的缓冲区中的[**SRB \_ IO \_ 控件**](/windows-hardware/drivers/ddi/ntddscsi/ns-ntddscsi-_srb_io_control)中。 **SRB \_ IO \_ 控件**的**ControlCode**成员设置为**IOCTL \_ SCSI \_ 微型端口 \_ 固件**以指示微型端口固件操作。 每个函数命令都具有位于 **固件 \_ 请求 \_ 块**后面的相关信息结构。 下表列出了每个函数命令以及用于 **IOCTL \_ SCSI \_ 微型端口**的系统缓冲区中包含的结构。
+每个函数命令都在 **固件 \_ 请求 \_ 块** 结构中设置，该结构包含在 [**IOCTL \_ SCSI \_ 微型端口**](/windows-hardware/drivers/ddi/ntddscsi/ni-ntddscsi-ioctl_scsi_miniport)请求的缓冲区中的 [**SRB \_ IO \_ 控件**](/windows-hardware/drivers/ddi/ntddscsi/ns-ntddscsi-_srb_io_control)中。 **SRB \_ IO \_ 控件** 的 **ControlCode** 成员设置为 **IOCTL \_ SCSI \_ 微型端口 \_ 固件** 以指示微型端口固件操作。 每个函数命令都具有位于 **固件 \_ 请求 \_ 块** 后面的相关信息结构。 下表列出了每个函数命令以及用于 **IOCTL \_ SCSI \_ 微型端口** 的系统缓冲区中包含的结构。
 
 <table>
 <colgroup>
@@ -78,7 +77,7 @@ ms.locfileid: "89187497"
 
  
 
-固件功能和关联的结构在 *ntddscsi*中定义。
+固件功能和关联的结构在 *ntddscsi* 中定义。
 
 ## <a name="span-idfirmware_slot_informationspanspan-idfirmware_slot_informationspanspan-idfirmware_slot_informationspanfirmware-slot-information"></a><span id="Firmware_slot_information"></span><span id="firmware_slot_information"></span><span id="FIRMWARE_SLOT_INFORMATION"></span>固件槽信息
 
@@ -213,17 +212,17 @@ Return Value:
 
 槽信息以 **存储 \_ 固件 \_ 槽 \_ 信息** 结构的数组返回。 每个结构都指示固件槽的激活状态和可用性。 可用性条件如下：
 
--   **ReadOnly**成员设置为0。
--   槽不是在**存储 \_ 固件 \_ 信息**的**ActiveSlot**成员中由槽编号指示的活动槽。
--   **存储固件 \_ \_ 信息**的**PendingActiveSlot**成员设置为存储 \_ 固件 \_ 信息 \_ 无效 \_ 槽。
--   **存储 \_ 固件 \_ 信息**的**PendingActiveSlot**成员未设置为所需的槽。
+-   **ReadOnly** 成员设置为0。
+-   槽不是在 **存储 \_ 固件 \_ 信息** 的 **ActiveSlot** 成员中由槽编号指示的活动槽。
+-   **存储固件 \_ \_ 信息** 的 **PendingActiveSlot** 成员设置为存储 \_ 固件 \_ 信息 \_ 无效 \_ 槽。
+-   **存储 \_ 固件 \_ 信息** 的 **PendingActiveSlot** 成员未设置为所需的槽。
 
-此外，如果槽状态满足可用性条件，但 **信息** 字符串包含有效的修订数据，即非零字节，则该槽包含有效的固件映像，但可能会被替换。 **信息**字符串中的所有零都表示空槽。
+此外，如果槽状态满足可用性条件，但 **信息** 字符串包含有效的修订数据，即非零字节，则该槽包含有效的固件映像，但可能会被替换。 **信息** 字符串中的所有零都表示空槽。
 
 ## <a name="span-idexample__firmware_upgrade_-_slot_selection__download__and_activationspanspan-idexample__firmware_upgrade_-_slot_selection__download__and_activationspanspan-idexample__firmware_upgrade_-_slot_selection__download__and_activationspanexample-firmware-upgrade---slot-selection-download-and-activation"></a><span id="Example__Firmware_upgrade_-_slot_selection__download__and_activation"></span><span id="example__firmware_upgrade_-_slot_selection__download__and_activation"></span><span id="EXAMPLE__FIRMWARE_UPGRADE_-_SLOT_SELECTION__DOWNLOAD__AND_ACTIVATION"></span>示例：固件升级-槽选择、下载和激活
 
 
-升级实用工具将执行前面提到的三个步骤来更新控制器中的固件。 例如，以下升级例程包含过程中每个步骤的代码。 *DeviceGetFirmwareInfo*示例中所示的槽发现步骤由升级例程调用，以选择可用槽。 映像下载和激活步骤直接演示了下面的槽选项。 在每个步骤中，将显示相应的函数命令的用法。
+升级实用工具将执行前面提到的三个步骤来更新控制器中的固件。 例如，以下升级例程包含过程中每个步骤的代码。 *DeviceGetFirmwareInfo* 示例中所示的槽发现步骤由升级例程调用，以选择可用槽。 映像下载和激活步骤直接演示了下面的槽选项。 在每个步骤中，将显示相应的函数命令的用法。
 
 在下载步骤中，固件映像文件会读入分配的缓冲区，缓冲区内容将传输到控制器。 如果固件映像文件大于缓冲区的大小，则会多次读取映像文件，并传输固件映像的部分，直到读取整个文件为止。
 
@@ -579,7 +578,7 @@ Exit:
 }
 ```
 
-**注意**   不支持同时下载多个固件映像。 单个固件下载总是后跟单一固件激活。
+**注意**  不支持同时下载多个固件映像。 单个固件下载总是后跟单一固件激活。
 
  
 

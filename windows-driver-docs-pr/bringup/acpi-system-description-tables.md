@@ -1,15 +1,14 @@
 ---
 title: ACPI 系统说明表
 description: " (ACPI) 硬件规范的高级配置和电源接口的实现在基于 SoC 的平台上不是必需的，但很多 ACPI 软件规范都是 (或) 必需的。"
-ms.assetid: 6EFCD288-031D-46BB-ABF3-8ADB53E7B4B1
 ms.date: 10/02/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: e7d73b0ca4dc0dd24baee1f35e49113e0a672a0c
-ms.sourcegitcommit: 29fee075ccc0a4eb1bf304cca4c04a6e57449d9d
+ms.openlocfilehash: 6332c966eede19635aa449dfb8ee7baa475d687d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91671229"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96789147"
 ---
 # <a name="acpi-system-description-tables"></a>ACPI 系统说明表
 
@@ -54,7 +53,7 @@ RSDT (或 XSDT) 包含指向平台上提供的任何其他系统说明表的指�
     低 \_ 功耗 \_ S0 \_ 空闲 \_ 支持位偏移量21。 指示该平台支持 ACPI S0 系统电源状态内的低功耗空闲状态，比任何 Sx 睡眠状态更节能。 如果设置了此标志，则 Windows 将不会尝试睡眠和恢复，但会改用平台空闲状态和连接备用。
 
 - FADT 首选 \_ PM \_ 配置文件字段 (字节偏移量 45) 具有新的角色条目 "绘图板"。 此角色会影响显示和输入的电源管理策略，并影响屏幕键盘的显示。
-- "IA-PC 启动体系结构标志" 字段 (offset 109) 有一个新的 "CMOS RTC 不存在" 标志 (位偏移量 5) 以指示未实现电脑的 CMOS RTC，或在旧地址中不存在。 如果设置了此标志，则平台必须实现 ACPI 时间和警报控制方法设备。 有关详细信息，请参阅[ACPI 定义的设备](acpi-defined-devices.md)主题中的**控制方法时间和警报设备**部分。
+- "IA-PC 启动体系结构标志" 字段 (offset 109) 有一个新的 "CMOS RTC 不存在" 标志 (位偏移量 5) 以指示未实现电脑的 CMOS RTC，或在旧地址中不存在。 如果设置了此标志，则平台必须实现 ACPI 时间和警报控制方法设备。 有关详细信息，请参阅 [ACPI 定义的设备](acpi-defined-devices.md)主题中的 **控制方法时间和警报设备** 部分。
 - 添加了新的字段，以支持在硬件上减少了 ACPI 平台上的传统 PC 睡眠/恢复。 这些字段将被 Windows 忽略，但在表中必须存在才能遵从符合性。
 - 如果设置了硬件 \_ 缩减了 \_ acpi 标志，操作系统将忽略与 ACPI 硬件规范相关的所有字段。
 
@@ -78,7 +77,7 @@ Windows 支持 HAL 扩展的概念以解决此问题。 HAL 扩展是以 Dll 形
 
 CSRT 描述 Csr 的资源组，其中每个资源组标识特定类型的硬件。 Windows 使用为资源组提供的标识符来查找并加载此组所需的 HAL 扩展。 CSRT 中的资源组还可能包含单个资源描述符，具体取决于 CSR 类型和 HAL 扩展的需要。 这些资源描述符的格式和使用由 HAL 扩展写入器定义，用户可以通过更改 CSRT 中包含的资源描述符，使扩展更易于移植，从而支持各种不同的 SoC 平台。
 
-为了支持维护 HAL 扩展，并管理这些扩展使用的系统资源，CSRT 中描述的每个资源组也必须在平台的 ACPI 命名空间中表示为一个设备。 有关详细信息，请参阅以下 "区分系统说明表 (DSDT) " 部分。 资源组标头中使用的设备标识符必须与设备的命名空间节点中使用的标识符匹配。 有关详细信息，请参阅[设备管理命名空间对象](device-management-namespace-objects.md)主题中的 " **ACPI 中的设备标识**" 部分。 存在这些资源组命名空间设备后，可通过 Windows 更新服务提供 HAL 扩展。
+为了支持维护 HAL 扩展，并管理这些扩展使用的系统资源，CSRT 中描述的每个资源组也必须在平台的 ACPI 命名空间中表示为一个设备。 有关详细信息，请参阅以下 "区分系统说明表 (DSDT) " 部分。 资源组标头中使用的设备标识符必须与设备的命名空间节点中使用的标识符匹配。 有关详细信息，请参阅 [设备管理命名空间对象](device-management-namespace-objects.md)主题中的 " **ACPI 中的设备标识**" 部分。 存在这些资源组命名空间设备后，可通过 Windows 更新服务提供 HAL 扩展。
 
 有关详细信息，请参阅 [核心系统资源表 (CSRT) 规范](https://acpica.org/related-documents)。
 
@@ -94,7 +93,7 @@ Windows 使用 DBG2 表中的端口类型值来标识和加载内核调试器 (K
 
 在 ACPI 中，平台上的外围设备和系统硬件功能在 "区分系统说明" 表中进行了介绍 (DSDT) ，它是在启动时加载的，或者是在启动时加载或在运行时动态加载的辅助系统说明表 (Ssdt) 。 对于 Soc，平台配置通常是静态的，因此 DSDT 可能已足够，尽管 Ssdt 还可用于改进平台说明的模块化。
 
-ACPI 以与 OS 无关的方式 (ACPI 源语言或 ASL) 和执行环境 (ACPI 虚拟机) 来描述系统设备和功能，以及其平台特定的控件。 ASL 用于定义 ACPI 命名空间中的命名对象， [MICROSOFT ASL 编译器](microsoft-asl-compiler.md) 用于生成 acpi 计算机语言 (AML) 字节代码用于传输到 DSDT 中的操作系统。 收件箱 [WINDOWS ACPI 驱动程序](../kernel/acpi-driver.md)（Acpi.sys）实现了 ACPI 虚拟机，并解释了 AML 字节代码。 AML 对象可能只返回说明信息。 或者，AML 对象可能是执行计算或执行 i/o 操作的方法。 *控制方法*是一个可执行的 AML 对象，它使用操作系统的设备驱动程序在平台硬件上执行 i/o 操作。 ASL 使用 OpRegions 来抽象操作系统中可访问的各种地址空间。 控制方法执行 i/o 操作，作为与 OpRegions 中声明的命名字段进行的一系列传输。
+ACPI 以与 OS 无关的方式 (ACPI 源语言或 ASL) 和执行环境 (ACPI 虚拟机) 来描述系统设备和功能，以及其平台特定的控件。 ASL 用于定义 ACPI 命名空间中的命名对象， [MICROSOFT ASL 编译器](microsoft-asl-compiler.md) 用于生成 acpi 计算机语言 (AML) 字节代码用于传输到 DSDT 中的操作系统。 收件箱 [WINDOWS ACPI 驱动程序](../kernel/acpi-driver.md)（Acpi.sys）实现了 ACPI 虚拟机，并解释了 AML 字节代码。 AML 对象可能只返回说明信息。 或者，AML 对象可能是执行计算或执行 i/o 操作的方法。 *控制方法* 是一个可执行的 AML 对象，它使用操作系统的设备驱动程序在平台硬件上执行 i/o 操作。 ASL 使用 OpRegions 来抽象操作系统中可访问的各种地址空间。 控制方法执行 i/o 操作，作为与 OpRegions 中声明的命名字段进行的一系列传输。
 
 有关 OpRegions 的详细信息，请参阅 [ACPI 5.0 规范](https://uefi.org/specifications)中的 "访问操作区域" 部分。 有关 ASL 和控制方法的详细信息，请参阅 ACPI 5.0 规范中的第5.5 节 "ACPI 命名空间"。
 
@@ -106,7 +105,7 @@ Windows SMM 安全缓解表 (WSMT) 规范包含高级配置和电源接口 (ACPI
 
 此信息适用于以下操作系统：
 
-Windows Server 2016
+Windows Server 2016
 
 Windows 10 版本 1607
 

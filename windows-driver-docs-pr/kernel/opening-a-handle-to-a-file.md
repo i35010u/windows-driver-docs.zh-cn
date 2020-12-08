@@ -1,7 +1,6 @@
 ---
 title: 打开文件的句柄
 description: 打开文件的句柄
-ms.assetid: 9378282a-ee29-44b6-b206-602eee94ec3b
 keywords:
 - 文件 WDK 内核
 - 文件对象 WDK 内核
@@ -11,12 +10,12 @@ keywords:
 - 正在打开文件的句柄
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fb7fd2bf9fde2013e03f1c380d3fbdd6d11c4fbd
-ms.sourcegitcommit: f8619f20a0903dd64f8641a5266ecad6df5f1d57
+ms.openlocfilehash: 84b5f57e05d5e2b3975c74c6d5302bb515572538
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91423534"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96788617"
 ---
 # <a name="opening-a-handle-to-a-file"></a>打开文件的句柄
 
@@ -26,7 +25,7 @@ ms.locfileid: "91423534"
 
 若要打开文件的句柄，请执行以下步骤：
 
-1.  创建 [**对象 \_ 属性**](/windows/win32/api/ntdef/ns-ntdef-object_attributes) 结构，并调用 [**InitializeObjectAttributes**](/windows/win32/api/ntdef/nf-ntdef-initializeobjectattributes) 宏来初始化该结构。 将文件的对象名称指定为**InitializeObjectAttributes**的*ObjectName*参数。
+1.  创建 [**对象 \_ 属性**](/windows/win32/api/ntdef/ns-ntdef-_object_attributes) 结构，并调用 [**InitializeObjectAttributes**](/windows/win32/api/ntdef/nf-ntdef-initializeobjectattributes) 宏来初始化该结构。 将文件的对象名称指定为 **InitializeObjectAttributes** 的 *ObjectName* 参数。
 
 2.  通过将 **对象 \_ 特性** 结构传递到 [**IoCreateFile**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocreatefile)、 [**ZwCreateFile**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntcreatefile)或 [**ZwOpenFile**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntopenfile)，打开文件的句柄。
 
@@ -34,7 +33,7 @@ ms.locfileid: "91423534"
 
 请注意，驱动程序几乎始终使用 **ZwCreateFile** 或 **ZwOpenFile** ，而不是 **IoCreateFile**。
 
-调用 **IoCreateFile**、 **ZwCreateFile**或 **ZwOpenFile**时，Windows executive 会创建一个新的文件对象来表示文件，并为对象提供一个打开的句柄。 此文件对象会一直保留，直到关闭所有打开的句柄。
+调用 **IoCreateFile**、 **ZwCreateFile** 或 **ZwOpenFile** 时，Windows executive 会创建一个新的文件对象来表示文件，并为对象提供一个打开的句柄。 此文件对象会一直保留，直到关闭所有打开的句柄。
 
 无论你调用哪个例程，你都必须将所需的访问权限作为 *DesiredAccess* 参数进行传递。 这些权限必须涵盖驱动程序将执行的所有操作。 下表列出了这些操作以及要请求的相应访问权限。
 
@@ -45,7 +44,7 @@ ms.locfileid: "91423534"
 </colgroup>
 <thead>
 <tr class="header">
-<th>Operation</th>
+<th>操作</th>
 <th>必需的访问权限</th>
 </tr>
 </thead>
@@ -75,7 +74,7 @@ ms.locfileid: "91423534"
 
  
 
-有关 *DesiredAccess*的可用值的详细信息，请参阅 [**ZwCreateFile**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntcreatefile)。
+有关 *DesiredAccess* 的可用值的详细信息，请参阅 [**ZwCreateFile**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntcreatefile)。
 
  
 

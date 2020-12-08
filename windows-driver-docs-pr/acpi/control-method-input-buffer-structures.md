@@ -1,15 +1,14 @@
 ---
 title: 控制方法输入缓冲区结构
 description: 控制方法输入缓冲区结构
-ms.assetid: 41d4c53f-9dc7-4723-9707-ae48ff07f5f4
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fdfbac9f6bfff5277afd95845fe5c2acc311c62f
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: ca50ad1c39038149f58d3c853dd36342a050bc22
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89184863"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96789501"
 ---
 # <a name="control-method-input-buffer-structures"></a>控制方法输入缓冲区结构
 

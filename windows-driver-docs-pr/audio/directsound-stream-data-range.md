@@ -1,17 +1,16 @@
 ---
 title: DirectSound 流数据范围
 description: DirectSound 流数据范围
-ms.assetid: cc31eb2d-7421-4748-b14c-f4d3d15f9884
 keywords:
 - DirectSound WDK 音频，流数据范围
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1a17feaef04c36ef91650f20ec8fb41bbc1c59f3
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: b18273970f7641fc3cb2f04a3a96a8977ced4b7f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89208095"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96789265"
 ---
 # <a name="directsound-stream-data-range"></a>DirectSound 流数据范围
 

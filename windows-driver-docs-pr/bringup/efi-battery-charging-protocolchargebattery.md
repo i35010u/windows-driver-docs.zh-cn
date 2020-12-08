@@ -1,20 +1,19 @@
 ---
 title: EFI_BATTERY_CHARGING_PROTOCOL.ChargeBattery
 description: EFI_BATTERY_CHARGING_PROTOCOL.ChargeBattery
-ms.assetid: 362b812f-b64b-4b6c-84a6-61c09a60f8a3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a21f3ab95d77e144a3b4d5808e70f4e9185f7d34
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0e19655cdbe61be20a36f2a313ac0efb962a7d65
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328046"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96789113"
 ---
-# <a name="efibatterychargingprotocolchargebattery"></a>EFI\_BATTERY\_CHARGING\_PROTOCOL.ChargeBattery
+# <a name="efi_battery_charging_protocolchargebattery"></a>EFI \_ 电池 \_ 充电 \_ 协议。ChargeBattery
 
 
-与最大费用当前可为指定的目标级别为主电池充电。
+使用最大收费为指定目标级别的主电池充电。
 
 ## <a name="syntax"></a>语法
 
@@ -27,25 +26,25 @@ typedef EFI_STATUS (EFIAPI * EFI_BATTERY_CHARGING_CHARGE_BATTERY) (
     IN EFI_BATTERY_CHARGING_COMPLETION_TOKEN *CompletionToken );
 ```
 
-## <a name="parameters"></a>Parameters
+## <a name="parameters"></a>参数
 
 
 <a href="" id="this"></a>*此*  
-\[在中\]指向 EFI\_电池\_正在充电\_协议实例。
+\[位于 \] EFI \_ 电池 \_ 充电协议实例的指针中 \_ 。
 
 <a href="" id="maximumcurrent"></a>*MaximumCurrent*  
-\[在\]可选。 可用于主电池充电的 mA 中的最大当前。 NULL 值会提示驱动程序实现此协议来处理此类本身的详细信息。
+\[以 \] 可选。 可用于对主电池进行计费的最大电流。 如果为 NULL 值，则会提示实现此协议的驱动程序自行处理此类详细信息。
 
 <a href="" id="targetstateofcharge"></a>*TargetStateOfCharge*  
-\[在中\]之后，如果该函数将返回主电池的目标的费用 (SOC) 的状态*CompletionToken*为 NULL。 SOC 表示为百分比，指示完全充电的 100%。
+\[在 " \] 目标状态" 中，在 *COMPLETIONTOKEN* 为 NULL 时，该函数将返回的主电池) 的 (SOC。 SOC 以百分比表示，100% 表示完全充电。
 
 <a href="" id="completiontoken"></a>*CompletionToken*  
-\[在中\]指针，指向[EFI\_电池\_正在充电\_完成\_令牌](efi-battery-charging-completion-token.md)请求的费用操作与该键相关联。
+\[指向 \] 与请求的费用操作相关联的 [EFI \_ 电池 \_ 充电 \_ 完成 \_ 标记](efi-battery-charging-completion-token.md) 。
 
 ## <a name="return-value"></a>返回值
 
 
-返回一个下面的状态代码。
+返回以下状态代码之一。
 
 <table>
 <colgroup>
@@ -55,13 +54,13 @@ typedef EFI_STATUS (EFIAPI * EFI_BATTERY_CHARGING_CHARGE_BATTERY) (
 <thead>
 <tr class="header">
 <th>状态代码</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><p>EFI_SUCCESS</p></td>
-<td><p>该函数返回成功。</p></td>
+<td><p>函数已成功返回。</p></td>
 </tr>
 <tr class="even">
 <td><p>EFI_INVALID_PARAMETER</p></td>
@@ -69,11 +68,11 @@ typedef EFI_STATUS (EFIAPI * EFI_BATTERY_CHARGING_CHARGE_BATTERY) (
 </tr>
 <tr class="odd">
 <td><p>EFI_DEVICE_ERROR</p></td>
-<td><p>物理设备报告了错误。</p></td>
+<td><p>物理设备报告了一个错误。</p></td>
 </tr>
 <tr class="even">
 <td><p>EFI_NOT_READY</p></td>
-<td><p>物理设备是正忙还是未准备好处理此请求。</p></td>
+<td><p>物理设备处于繁忙状态或尚未准备好处理此请求。</p></td>
 </tr>
 </tbody>
 </table>
@@ -83,9 +82,9 @@ typedef EFI_STATUS (EFIAPI * EFI_BATTERY_CHARGING_CHARGE_BATTERY) (
 ## <a name="remarks"></a>备注
 
 
-此非阻止函数为指定的目标级别为主电池充电与最大费用当前。
+此非阻塞函数使用最大收费为指定目标级别的主电池充电。
 
-若要检测错误，事件中包含的类型*CompletionToken*必须为 EVT\_通知\_信号，使用创建**CreateEventEx** ，并必须将关联**NotifyFunction**与*CompletionToken*作为**NotifyContext**。 状态错误代码将是可通过**状态**的成员*CompletionToken*。
+若要检测错误， *CompletionToken* 中包含的事件类型必须是 \_ \_ 使用 **CreateEventEx** 创建的 .evt 通知信号，并且必须将 **NotifyFunction** 与 *CompletionToken* 关联为 **NotifyContext**。 状态错误代码将通过 *CompletionToken* 的 **status** 成员提供。
 
 ## <a name="requirements"></a>要求
 
@@ -93,6 +92,6 @@ typedef EFI_STATUS (EFIAPI * EFI_BATTERY_CHARGING_CHARGE_BATTERY) (
 
 ## <a name="related-topics"></a>相关主题
 
-[EFI\_电池\_正在充电\_协议](efi-battery-charging-protocol.md)  
+[EFI \_ 电池 \_ 充电 \_ 协议](efi-battery-charging-protocol.md)  
 
-[EFI\_电池\_正在充电\_完成\_令牌](efi-battery-charging-completion-token.md)  
+[EFI \_ 电池 \_ 充电 \_ 完成 \_ 令牌](efi-battery-charging-completion-token.md)  

@@ -1,18 +1,17 @@
 ---
 title: 指定绑定接口
 description: 指定绑定接口
-ms.assetid: 49ef3eae-88e6-4424-8c3b-19e8c3bb734f
 keywords:
-- 添加注册表部分 WDK 网络绑定接口
+- 添加-注册表-WDK 网络，绑定接口
 - 绑定接口 WDK 网络
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4b91c63325aaa4d929b277ef2871fa4f6c9d2085
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7aa08e4324d8f3c186eedc9c7a33356aaea36322
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63342582"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96790443"
 ---
 # <a name="specifying-binding-interfaces"></a>指定绑定接口
 
@@ -20,21 +19,21 @@ ms.locfileid: "63342582"
 
 
 
-对于每个网络组件的安装，网络 INF 文件必须通过添加指定组件的上限和下限绑定接口**接口**关键**Ndi**密钥。
+对于它安装的每个网络组件，网络 INF 文件都必须通过将 **接口** 键添加到 **Ndi** 项来指定组件的上限和下限接口。
 
-**接口**键具有至少两个值：
+**接口** 键至少有两个值：
 
 <a href="" id="upperrange"></a>**UpperRange**  
-REG\_SZ 值，用于定义该组件可以将绑定到在其上边缘的接口。
+一个 REG \_ SZ 值，它定义组件可在其上边缘绑定到的接口。
 
 <a href="" id="lowerrange"></a>**LowerRange**  
-REG\_SZ 值，用于定义该组件可以将绑定到在其下边缘的接口。 对于物理适配器，此接口应始终为网络媒体，如以太网适配器连接。
+一个 REG \_ SZ 值，它定义组件可在其下边缘绑定到的接口。 对于物理适配器，此接口应始终是适配器连接到的网络媒体（如以太网）。
 
-**请注意**   **DefUpper**并**DefLower**值在 Windows 95/98/我网络 INF 文件，但是，不支持将 Windows 2000 及更高版本使用的 INF 文件操作系统的版本。
+**注意**  但是，在 windows 2000 和更高版本的操作系统上将使用 Windows 95/98/Me 网络 INF 文件中的 **DefUpper** 和 **DefLower** 值。
 
  
 
-下表列出了 Microsoft 提供**UpperRange**值：
+下表列出了 Microsoft 提供的 **UpperRange** 值：
 
 <table>
 <colgroup>
@@ -43,7 +42,7 @@ REG\_SZ 值，用于定义该组件可以将绑定到在其下边缘的接口。
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">ReplTest1</th>
+<th align="left">“值”</th>
 <th align="left">描述</th>
 </tr>
 </thead>
@@ -53,60 +52,60 @@ REG\_SZ 值，用于定义该组件可以将绑定到在其下边缘的接口。
 <td align="left"><p>NetBIOS</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>ipx</p></td>
-<td align="left"><p>IPX</p></td>
+<td align="left"><p>路由器</p></td>
+<td align="left"><p>路由器</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>tdi</p></td>
-<td align="left"><p>为 TCP/IP TDI 接口</p></td>
+<td align="left"><p>TCP/IP 的 TDI 接口</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>ndis5</p></td>
-<td align="left"><p>NDIS 5.x （应不再使用 ndis2、 ndis3 和 ndis4）。 应为任何非 ATM 网络组件，请使用 NDIS 接口在其上边缘的非 ATM 适配器，如指定此值。</p></td>
+<td align="left"><p>不应再) 使用 NDIS 1.x (ndis2、ndis3 和 ndis4。 应为任何非 atm 网络组件（例如非 ATM 适配器）指定此值，其上边缘都具有 NDIS 接口。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>Ndisatm</p></td>
-<td align="left"><p>NDIS 5.x ATM 支持。 任何 ATM 网络组件，如 ATM 适配器，使用 NDIS 其上边缘接口的指定的值</p></td>
+<td align="left"><p>支持 ATM 的 NDIS 1.x。 为任意 ATM 网络组件指定的值（例如 ATM 适配器），其上边缘接口与 NDIS</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>ndiswan</p></td>
-<td align="left"><p>WAN 适配器的上边缘。 如果指定，此值会导致操作系统来自动启用与 RAS 一起使用的 WAN 适配器</p></td>
+<td align="left"><p>WAN 适配器的上边缘。 如果指定此值，则会导致操作系统自动启用 WAN 适配器以便与 RAS 一起使用</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>Ndiscowan</p></td>
-<td align="left"><p>对于面向连接的 NDIS 运行通过 WAN 适配器的上边缘</p></td>
+<td align="left"><p>面向连接的 NDIS 在其上运行的 WAN 适配器的上部边缘</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>noupper</p></td>
-<td align="left"><p>对于任何组件都不会公开绑定; 的上边缘的上边缘此类组件通常具有在其上边缘的专用接口</p></td>
+<td align="left"><p>没有公开用于绑定的上部边缘的任何组件的上边缘;此类组件的上部边缘通常有一个专用接口</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>Winsock</p></td>
+<td align="left"><p>winsock</p></td>
 <td align="left"><p>Windows 套接字接口</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>ndis5_atalk</p></td>
-<td align="left"><p>上边缘为 NDIS 5.x Net 组件 （适配器），它将仅向在其上边缘 AppleTalk 接口绑定</p></td>
+<td align="left"><p>NDIS 1.x 网络组件的上部边缘 (仅绑定到其上边缘的 AppleTalk 接口的适配器) </p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>ndis5_dlc</p></td>
-<td align="left"><p>为 NDIS 5.x Net 组件 （适配器） 将绑定到在其上边缘的 DLC 接口仅的上边缘</p></td>
+<td align="left"><p>NDIS 1.x 网络组件的上部边缘 (适配器) 仅绑定到其上边缘的 DLC 接口</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>ndis5_ip</p></td>
-<td align="left"><p>为 NDIS 5.x Net 组件 （适配器） 将绑定到在其上边缘的 TCP/IP 接口仅的上边缘</p></td>
+<td align="left"><p>NDIS 1.x 网络组件的上部边缘 (仅绑定到其上边缘 TCP/IP 接口的适配器) </p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>ndis5_ipx</p></td>
-<td align="left"><p>为 NDIS 5.x Net 组件 （适配器） 将绑定到在其上边缘的 IPX 接口仅的上边缘</p></td>
+<td align="left"><p>NDIS 1.x 网络组件的上部边缘 (适配器) 仅绑定到其上边缘的 IPX 接口</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>ndis5_nbf</p></td>
-<td align="left"><p>为 NDIS 5.x Net 组件 （适配器） 将绑定到在其上边缘的 NetBEUI 接口仅的上边缘</p></td>
+<td align="left"><p>NDIS 1.x 网络组件的上部边缘 (适配器) 仅绑定到其上边缘的 NetBEUI 接口</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>ndis5_streams</p></td>
-<td align="left"><p>为 NDIS 5.x Net 组件 （适配器） 将绑定到在其上边缘的流接口仅的上边缘。 此值是适用于 Windows XP 和更高版本的操作系统已过时。</p></td>
+<td align="left"><p>NDIS 1.x 网络组件的上部边缘 (适配器) 仅绑定到其上边缘的流接口。 对于 Windows XP 和更高版本的操作系统，此值已过时。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>flpp4</p></td>
@@ -121,7 +120,7 @@ REG\_SZ 值，用于定义该组件可以将绑定到在其下边缘的接口。
 
  
 
-下表列出了 Microsoft 提供**LowerRange**值：
+下表列出了 Microsoft 提供的 **LowerRange** 值：
 
 <table>
 <colgroup>
@@ -130,25 +129,25 @@ REG\_SZ 值，用于定义该组件可以将绑定到在其下边缘的接口。
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">ReplTest1</th>
+<th align="left">“值”</th>
 <th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>以太网</p></td>
-<td align="left"><p>下边缘的以太网适配器</p></td>
+<td align="left"><p>网</p></td>
+<td align="left"><p>以太网适配器的下边缘</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>atm</p></td>
-<td align="left"><p>下边缘的 ATM 适配器</p></td>
+<td align="left"><p>ATM 适配器的下边缘</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>令牌环</p></td>
+<td align="left"><p>tokenring</p></td>
 <td align="left"><p>令牌环适配器的下边缘</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>串行</p></td>
+<td align="left"><p>serial</p></td>
 <td align="left"><p>串行适配器的下边缘</p></td>
 </tr>
 <tr class="odd">
@@ -156,7 +155,7 @@ REG\_SZ 值，用于定义该组件可以将绑定到在其下边缘的接口。
 <td align="left"><p>FDDI 适配器的下边缘</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>基带</p></td>
+<td align="left"><p>局域网</p></td>
 <td align="left"><p>基带适配器的下边缘</p></td>
 </tr>
 <tr class="odd">
@@ -165,14 +164,14 @@ REG\_SZ 值，用于定义该组件可以将绑定到在其下边缘的接口。
 </tr>
 <tr class="even">
 <td align="left"><p>蓝牙</p></td>
-<td align="left"><p>Bluetooth 适配器的下边缘</p></td>
+<td align="left"><p>蓝牙适配器的下边缘</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>arcnet</p></td>
-<td align="left"><p>下边缘的 Arcnet 适配器</p></td>
+<td align="left"><p>Arcnet 适配器的下边缘</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>isdn</p></td>
+<td align="left"><p>专线</p></td>
 <td align="left"><p>ISDN 适配器的下边缘</p></td>
 </tr>
 <tr class="odd">
@@ -181,23 +180,23 @@ REG\_SZ 值，用于定义该组件可以将绑定到在其下边缘的接口。
 </tr>
 <tr class="even">
 <td align="left"><p>wan</p></td>
-<td align="left"><p>下边缘的 WAN 适配器</p></td>
+<td align="left"><p>WAN 适配器的下边缘</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>nolower</p></td>
-<td align="left"><p>对于任何组件都不会公开绑定下边缘的下边缘</p></td>
+<td align="left"><p>未公开绑定的下边缘的任何组件的下边缘</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>ndis5</p></td>
-<td align="left"><p>NDIS 5.x。 （ndis2、 ndis3 和 ndis4 应不再使用。）对于其下边缘与非 ATM 组件接口 NDIS 通过任何网络组件</p></td>
+<td align="left"><p>NDIS 1.x。 不应再使用 (ndis2、ndis3 和 ndis4。对于其下边缘接口通过使用非 ATM 组件的 NDIS 的任何网络组件 ) </p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>Ndisatm</p></td>
-<td align="left"><p>Ndis 5.x ATM 支持。 对于其下边缘与 ATM 组件接口 NDIS 通过任何网络组件</p></td>
+<td align="left"><p>支持 ATM 的 Ndis 1.x。 对于其下边缘接口通过具有 ATM 组件的 NDIS 的任何网络组件</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>wlan</p></td>
-<td align="left"><p>本机 802.11 无线 LAN 适配器的下边缘。</p></td>
+<td align="left"><p>局域网</p></td>
+<td align="left"><p>本机802.11 无线 LAN 适配器的下边缘。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>ppip</p></td>
@@ -205,20 +204,20 @@ REG\_SZ 值，用于定义该组件可以将绑定到在其下边缘的接口。
 </tr>
 <tr class="even">
 <td align="left"><p>vwifi</p></td>
-<td align="left"><p>虚拟 wifi 接口的的下边缘</p></td>
+<td align="left"><p>虚拟 wifi 接口的下边缘</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-**UpperRange**并**LowerRange**值组件可以绑定到指定类型的接口-不包含实际组件。 绑定引擎将网络组件绑定到提供适当的 （上限或下限） 边缘处的指定的接口的所有组件。 例如，一个协议**LowerRange** ndis5 的将绑定到具有的所有组件**UpperRange**的 ndis5，例如物理或虚拟适配器。
+**UpperRange** 和 **LowerRange** 值指定组件的类型（而不是组件可以绑定到的实际组件）。 绑定引擎将网络组件绑定到所有组件，这些组件在适当的 (大写或小写) 边缘提供指定接口。 例如， **LowerRange** 为 ndis5 的协议将绑定到具有 **UpperRange** of ndis5 的所有组件，如物理或虚拟适配器。
 
-如果一个 NDIS 5.x Net 组件 （适配器） 仅适用于一个或多个特定的协议，则其**UpperRange**应分配一个或多个特定于协议的值，如 ndis5\_atalk，ndis5\_dlc，ndis5\_ip，ndis5\_ipx，ndis5\_nbf、 或 ndis5\_流。 此类 net 类组件不应将分配**UpperRange**值的 ndis5，因为这将导致该组件将绑定到所有的协议提供 ndis5 降低边缘。
+如果 (适配器) 的 NDIS 1.x 网络组件仅适用于一个或多个特定协议，则应为其 **UpperRange** 分配一个或多个特定于协议的值，例如 ndis5 \_ atalk、ndis5 \_ dlc、ndis5 \_ ip、ndis5 \_ ipx、ndis5 \_ nbf 或 ndis5 \_ 流。 不应为这种 net class 组件分配 **UpperRange** 值 ndis5，因为这会导致该组件绑定到提供 ndis5 下边缘的所有协议。
 
-有 INF 文件作者可以定义并使用特定于供应商**UpperRange**并**LowerRange**专用绑定接口的值。 例如，如果供应商想要其适配器只能绑定到其自己的专有协议驱动程序，可以指定 INF 文件 writer **XXX**有关**UpperRange**的适配器和**XXX**有关**LowerRange**的专有协议。 Windows 2000 绑定引擎会将绑定具有的所有组件**UpperRange**的**XXX** （在此情况下，适配器） 具有的所有组件**LowerRange**的**XXX** （在本例中为专有协议）。
+INF-文件编写器可以为专用绑定接口定义和使用特定于供应商的 **UpperRange** 和 **LowerRange** 值。 例如，如果某个供应商想要将其适配器仅绑定到其自己的专用协议驱动程序，则 INF-文件编写器可以为该适配器的 **UpperRange** 指定 **xxx** ，并为专用协议的 **LowerRange** 指定 **xxx** 。 Windows 2000 绑定引擎将绑定 **UpperRange** 为 **xxx** (的所有组件，在这种情况下，适配器) 包含 **LowerRange** 为 **xxx** (的所有组件（在这种情况下为专有协议) ）。
 
-以下是一种*添加注册表部分*，它将**UpperRange**并**LowerRange** ATM 适配器的值：
+以下是添加 **UpperRange** 和 **LowerRange** 值的 "*添加注册表" 部分* 的示例：
 
 ```INF
 [addreg-section]

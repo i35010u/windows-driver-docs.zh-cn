@@ -1,17 +1,16 @@
 ---
 title: 调试器引擎 API 概述
 description: 调试器引擎 API 概述
-ms.assetid: ea8beca6-93b7-4537-af89-78d599b8b982
 keywords:
 - 调试器引擎 API，概述
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 411fd2a59420cefd26c85e9d5598a2e19d2b1d73
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: efed73846f11ff5a68f390946e22b7449de75dd9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89211195"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96788811"
 ---
 # <a name="debugger-engine-api-overview"></a>调试器引擎 API 概述
 
@@ -49,7 +48,7 @@ ms.locfileid: "89211195"
 
 [汇编和反汇编指令](assembling-and-disassembling-instructions.md)
 
-**重要提示**   IDebug \* 接口（如 COM like）不是正确的 Com api，如[**IDebugEventCallbacks**](/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebugeventcallbacks)接口。 从托管代码调用这些接口是不受支持的方案。 当通过托管代码调用这些接口时，会导致系统不稳定的问题，例如垃圾回收和线程所有权。
+**重要提示**  IDebug \* 接口（如 COM like）不是正确的 Com api，如 [**IDebugEventCallbacks**](/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebugeventcallbacks) 接口。 从托管代码调用这些接口是不受支持的方案。 当通过托管代码调用这些接口时，会导致系统不稳定的问题，例如垃圾回收和线程所有权。
 
  
 

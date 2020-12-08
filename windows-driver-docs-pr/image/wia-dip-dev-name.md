@@ -1,9 +1,8 @@
 ---
-title: WIA\_DIP\_DEV\_NAME
-description: WIA\_DIP\_开发人员\_NAME 属性包含设备的名称。 WIA 服务创建并维护此属性。
-ms.assetid: 9e1bdc00-b46f-4c20-bcc4-f3caa4820983
+title: WIA \_ DIP \_ 开发 \_ 名称
+description: WIA \_ DIP \_ DEV \_ name 属性包含设备的名称。 WIA 服务创建并维护此属性。
 keywords:
-- WIA_DIP_DEV_NAME 成像设备
+- WIA_DIP_DEV_NAME 图像设备
 topic_type:
 - apiref
 api_name:
@@ -14,31 +13,31 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 209c46de89254fe0c83d27d162374ee52016db64
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0b98e4aeda2ace5498f93ea3d3a7f49248d826e9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63365920"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96788689"
 ---
-# <a name="wiadipdevname"></a>WIA\_DIP\_DEV\_NAME
+# <a name="wia_dip_dev_name"></a>WIA \_ DIP \_ 开发 \_ 名称
 
 
-WIA\_DIP\_开发人员\_NAME 属性包含设备的名称。 WIA 服务创建并维护此属性。
+WIA \_ DIP \_ DEV \_ name 属性包含设备的名称。 WIA 服务创建并维护此属性。
 
 ## <span id="ddk_wia_dip_dev_name_si"></span><span id="DDK_WIA_DIP_DEV_NAME_SI"></span>
 
 
-属性类型：VT\_BSTR
+属性类型： VT \_ BSTR
 
-有效值：WIA\_PROP\_NONE
+有效值： WIA " \_ \_ 无"
 
 访问权限：只读
 
 <a name="remarks"></a>备注
 -------
 
-包含在 WIA 的设备名称\_DIP\_开发人员\_从驱动程序的 INF 文件中获取 NAME 属性。 应用程序读取此属性获取的设备的名称。
+WIA DIP DEV name 属性中包含的设备 \_ 名称 \_ \_ 是从驱动程序的 INF 文件中获取的。 应用程序读取此属性以获取设备的名称。
 
 <a name="requirements"></a>要求
 ------------
@@ -50,8 +49,8 @@ WIA\_DIP\_开发人员\_NAME 属性包含设备的名称。 WIA 服务创建并�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Wiadef.h （包括 Wiadef.h）</td>
+<td><p>标头</p></td>
+<td>Wiadef (包含 Wiadef) </td>
 </tr>
 </tbody>
 </table>

@@ -1,7 +1,6 @@
 ---
 title: 筛选注册表调用
 description: 筛选注册表调用
-ms.assetid: 6b35c3a0-4ece-4101-b348-e71f5cccf0c8
 keywords:
 - 筛选注册表调用 WDK 内核
 - 注册表筛选驱动程序 WDK 内核
@@ -10,19 +9,19 @@ keywords:
 - 注册表筛选驱动程序 WDK 内核，关于筛选注册表调用
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1189b7464a930b427e608c9bd998b48a1d361d14
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 5ce49a697d5bf5567e0e4f13e3f481d7ba45aed5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89191671"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96788679"
 ---
 # <a name="filtering-registry-calls"></a>筛选注册表调用
 
 
-*注册表筛选驱动程序*是任何筛选注册表调用的内核模式驱动程序，如防病毒软件包的驱动程序组件。 用于实现注册表的配置管理器允许注册表筛选驱动程序筛选任何线程对注册表功能的调用。 Microsoft Windows XP 中首次支持对注册表调用进行筛选。
+*注册表筛选驱动程序* 是任何筛选注册表调用的内核模式驱动程序，如防病毒软件包的驱动程序组件。 用于实现注册表的配置管理器允许注册表筛选驱动程序筛选任何线程对注册表功能的调用。 Microsoft Windows XP 中首次支持对注册表调用进行筛选。
 
-在 Windows XP 中，注册表筛选驱动程序可以调用 [**CmRegisterCallback**](/windows-hardware/drivers/ddi/wdm/nf-wdm-cmregistercallback) 来注册 [*RegistryCallback*](/windows-hardware/drivers/ddi/wdm/nc-wdm-ex_callback_function) 例程，并使用 [**CmUnRegisterCallback**](/windows-hardware/drivers/ddi/wdm/nf-wdm-cmunregistercallback) 注册回调例程。 在 configuration manager 处理操作之前， *RegistryCallback* 例程会接收每个注册表操作的通知。 一组**REG \_ *XXX* \_ 密钥 \_ 信息**数据结构包含有关每个注册表操作的信息。 *RegistryCallback*例程会阻止注册表操作。 当配置管理器已完成创建或打开注册表项时，回调例程还会收到通知。
+在 Windows XP 中，注册表筛选驱动程序可以调用 [**CmRegisterCallback**](/windows-hardware/drivers/ddi/wdm/nf-wdm-cmregistercallback) 来注册 [*RegistryCallback*](/windows-hardware/drivers/ddi/wdm/nc-wdm-ex_callback_function) 例程，并使用 [**CmUnRegisterCallback**](/windows-hardware/drivers/ddi/wdm/nf-wdm-cmunregistercallback) 注册回调例程。 在 configuration manager 处理操作之前， *RegistryCallback* 例程会接收每个注册表操作的通知。 一组 **REG \_ *XXX* \_ 密钥 \_ 信息** 数据结构包含有关每个注册表操作的信息。 *RegistryCallback* 例程会阻止注册表操作。 当配置管理器已完成创建或打开注册表项时，回调例程还会收到通知。
 
 Windows Server 2003 提供了额外的完成通知。
 
@@ -30,7 +29,7 @@ Windows Vista 提供了以下附加注册表筛选功能：
 
 -   注册表筛选驱动程序可以在驱动程序堆栈中分层，堆栈中的每个驱动程序都可以筛选注册表操作。
 
--   **CmRegisterCallback**例程由[**CmRegisterCallbackEx**](/windows-hardware/drivers/ddi/wdm/nf-wdm-cmregistercallbackex)例程替换。
+-   **CmRegisterCallback** 例程由 [**CmRegisterCallbackEx**](/windows-hardware/drivers/ddi/wdm/nf-wdm-cmregistercallbackex)例程替换。
 
 -   驱动程序可以 (处理注册表操作，或将请求的操作重定向到其他操作) ，并阻止 configuration manager 处理该操作。
 
@@ -38,7 +37,7 @@ Windows Vista 提供了以下附加注册表筛选功能：
 
 -   驱动程序可以修改注册表操作的输出参数和返回值。
 
--   其他成员已添加到所有**REG \_ *XXX* \_ 密钥 \_ 信息**数据结构中。
+-   其他成员已添加到所有 **REG \_ *XXX* \_ 密钥 \_ 信息** 数据结构中。
 
 -   驱动程序接收其他注册表操作的通知。
 

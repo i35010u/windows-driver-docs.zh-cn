@@ -1,19 +1,18 @@
 ---
 title: EFI_USB_SUPERSPEED_INTERFACE_INFO
 description: EFI_USB_SUPERSPEED_INTERFACE_INFO
-ms.assetid: 1B0C04D0-5254-4B9A-A94D-4FF1CEAD4627
 ms.date: 05/21/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 5b25187ba0193cd30e58316f6caa7780faa6f83e
-ms.sourcegitcommit: 34a06eda78c8d935f3900b86fa0f620027bc6577
+ms.openlocfilehash: 7be44d73ddf7778a2f4dd0c9ec5aebf6f4a17c1c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83778325"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96789049"
 ---
 # <a name="efi_usb_superspeed_interface_info"></a>EFI \_ USB \_ SUPERSPEED \_ 接口 \_ 信息
 
-**EFI \_ USB \_ SUPERSPEED \_ 接口 \_ 信息**结构用于定义 usb 函数驱动程序所支持的 usb SUPERSPEED 接口。
+**EFI \_ USB \_ SUPERSPEED \_ 接口 \_ 信息** 结构用于定义 usb 函数驱动程序所支持的 usb SUPERSPEED 接口。
 
 ## <a name="syntax"></a>语法
 
@@ -33,11 +32,11 @@ typedef struct
 
 ### <a name="endpointdescriptortable"></a>EndpointDescriptorTable
 
-描述 USB SuperSpeed 终结点的[EFI \_ USB \_ SUPERSPEED \_ 终结点 \_ 描述符](efi-usb-superspeed-endpoint-descriptor.md)结构。
+描述 USB SuperSpeed 终结点的 [EFI \_ USB \_ SUPERSPEED \_ 终结点 \_ 描述符](efi-usb-superspeed-endpoint-descriptor.md) 结构。
 
-## <a name="remarks"></a>注解
+## <a name="remarks"></a>备注
 
-**EFI \_ USB \_ 接口 \_ 描述符**结构在 UEFI 规范版本2.3 及更高版本中定义。 有关详细信息，请访问[UEFI.org](https://uefi.org/specifications)网站。
+**EFI \_ USB \_ 接口 \_ 描述符** 结构在 UEFI 规范版本2.3 及更高版本中定义。 有关详细信息，请访问 [UEFI.org](https://uefi.org/specifications) 网站。
 
 ## <a name="requirements"></a>要求
 

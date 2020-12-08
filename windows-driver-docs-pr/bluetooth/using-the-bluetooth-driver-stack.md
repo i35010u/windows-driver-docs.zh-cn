@@ -1,7 +1,6 @@
 ---
 title: 如何使用蓝牙驱动程序堆栈
 description: 如何使用蓝牙驱动程序堆栈
-ms.assetid: c8a68c30-4cd6-4ee2-a653-7e0c1a28f4cf
 keywords:
 - 蓝牙 WDK，驱动程序堆栈
 - 驱动程序堆栈 WDK 蓝牙
@@ -22,12 +21,12 @@ keywords:
 - 连接 WDK 蓝牙
 ms.date: 07/01/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8a9fa74a66a2fda3299790ae15c017c951b18bd6
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 32eb70176494802a70eb047be422c46ae1b5523d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90101536"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96789155"
 ---
 # <a name="how-to-use-the-bluetooth-driver-stack"></a>如何使用蓝牙驱动程序堆栈
 
@@ -36,7 +35,7 @@ Windows 加载并初始化蓝牙驱动程序堆栈后，驱动程序堆栈会发
 
 配置文件驱动程序通过标准 i/o 请求数据包与蓝牙驱动程序堆栈进行通信， (IRP 基于 WDM 体系结构的所有驱动程序所采用的基于) 的机制。 配置文件驱动程序通过在蓝牙驱动程序堆栈之间分配并将 Irp 发送到蓝牙端口驱动程序来与其设备通信， *Bthport.sys*。
 
-配置文件驱动程序分配并初始化要由 *Bthport.sys*处理的 irp。 然后，配置文件驱动程序使用通过 [**IRP \_ mj \_ 内部 \_ 设备 \_ 控制**](../kernel/irp-mj-internal-device-control.md) 或 [**irp \_ MJ \_ 设备 \_ 控制**](../kernel/irp-mj-device-control.md) irp 传递到设备的 IOCTL 请求来与其设备通信。 配置文件驱动程序指定 IRP 中以下列表中的一个 i/o 控制代码。
+配置文件驱动程序分配并初始化要由 *Bthport.sys* 处理的 irp。 然后，配置文件驱动程序使用通过 [**IRP \_ mj \_ 内部 \_ 设备 \_ 控制**](../kernel/irp-mj-internal-device-control.md) 或 [**irp \_ MJ \_ 设备 \_ 控制**](../kernel/irp-mj-device-control.md) irp 传递到设备的 IOCTL 请求来与其设备通信。 配置文件驱动程序指定 IRP 中以下列表中的一个 i/o 控制代码。
 
 蓝牙驱动程序堆栈通过 [**IRP \_ MJ \_ 设备 \_ 控制**](../kernel/irp-mj-device-control.md)支持以下 IOCTLs 的内核模式调用方：
 
@@ -122,7 +121,7 @@ Windows 加载并初始化蓝牙驱动程序堆栈后，驱动程序堆栈会发
 
 配置文件驱动程序主要使用 IOCTL \_ 内部 \_ BTH \_ SUBMIT \_ BRB 来与蓝牙驱动程序堆栈中提供的功能进行通信和交互。 配置文件驱动程序使用 IOCTL \_ INTERNAL \_ BTH \_ SUBMIT \_ BRB 将长度可变的数据结构（称为蓝牙请求块）传递给它所管理的设备 ( [**BRB**](/windows-hardware/drivers/ddi/bthddi/ns-bthddi-_brb)) 。 配置文件驱动程序使用 BRBs 打开和关闭与远程设备的连接，并执行大部分输入和输出任务。 IOCTL \_ INTERNAL \_ BTH \_ SUBMIT \_ BRB 包含一个 BRB，它进一步说明了要执行的蓝牙操作。 若要详细了解如何在蓝牙驱动程序堆栈上构建和发送 BRBs，请参阅 [生成和发送 BRB](building-and-sending-a-brb.md)。
 
-每个 BRB 都以 [**BRB \_ 标头**](/windows-hardware/drivers/ddi/bthddi/ns-bthddi-_brb_header) 结构定义的标准标头开始，该标头结构指定 BRB 的类型，它确定了 BRB 的其余部分的结构。 **类型**成员（必须等于在[**BRB \_ 类型**](/windows-hardware/drivers/ddi/bthddi/ne-bthddi-_brb_type)枚举中找到的值之一）确定配置文件驱动程序请求的蓝牙操作的类型。 BRB 结构和大小因 BRB 类型的不同而异。 BRB **Length** \_ 标头结构的 LENGTH 成员指定 BRB 的大小（以字节为单位）。 [**BthAllocateBrb**](/windows-hardware/drivers/ddi/bthddi/nc-bthddi-pfnbth_allocate_brb)、 [**BthInitializeBrb**](/windows-hardware/drivers/ddi/bthddi/nc-bthddi-pfnbth_initialize_brb)和[**BthReuseBrb**](/windows-hardware/drivers/ddi/bthddi/nc-bthddi-pfnbth_reuse_brb)函数自动设置**类型**和**长度**成员。
+每个 BRB 都以 [**BRB \_ 标头**](/windows-hardware/drivers/ddi/bthddi/ns-bthddi-_brb_header) 结构定义的标准标头开始，该标头结构指定 BRB 的类型，它确定了 BRB 的其余部分的结构。 **类型** 成员（必须等于在 [**BRB \_ 类型**](/windows-hardware/drivers/ddi/bthddi/ne-bthddi-_brb_type)枚举中找到的值之一）确定配置文件驱动程序请求的蓝牙操作的类型。 BRB 结构和大小因 BRB 类型的不同而异。 BRB **Length** \_ 标头结构的 LENGTH 成员指定 BRB 的大小（以字节为单位）。 [**BthAllocateBrb**](/windows-hardware/drivers/ddi/bthddi/nc-bthddi-pfnbth_allocate_brb)、 [**BthInitializeBrb**](/windows-hardware/drivers/ddi/bthddi/nc-bthddi-pfnbth_initialize_brb)和 [**BthReuseBrb**](/windows-hardware/drivers/ddi/bthddi/nc-bthddi-pfnbth_reuse_brb)函数自动设置 **类型** 和 **长度** 成员。
 
 例如，若要打开与远程设备的连接，请指定一个函数代码（ **BRB \_ L2CA \_ OPEN \_ 通道** 或 BRB \_ SCO \_ 开放式 \_ 通道），以指示配置文件驱动程序正在尝试打开到远程设备的 L2CAP 或 SCO 连接通道。 蓝牙驱动程序堆栈使用 BRB 结构的 **Status** 成员返回特定于蓝牙的状态代码。
 

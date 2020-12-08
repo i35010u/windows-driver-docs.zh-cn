@@ -1,15 +1,14 @@
 ---
 title: 内核流式处理方法集
 description: 内核流式处理方法集
-ms.assetid: 570a2db3-72a9-49ca-8cdf-c421cd9e908f
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e42c295e788c157d8e81aa2028405a58a36f5a4c
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 5a738aeb1413ca11f1ec712fd9966b16698d510a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89191107"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96790227"
 ---
 # <a name="kernel-streaming-method-sets"></a>内核流式处理方法集
 

@@ -1,20 +1,19 @@
 ---
 title: EFI_USBFN_IO_PROTOCOL.EventHandler
 description: EFI_USBFN_IO_PROTOCOL.EventHandler
-ms.assetid: d493de90-cb8c-44d1-8999-f1ceb26e5c15
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ff785fedb41a40e0425fbb75465aec14a94368c8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3f84a6bfc9c551b028b2f93fc54ce096f5609b6c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63337704"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96789031"
 ---
-# <a name="efiusbfnioprotocoleventhandler"></a>EFI\_USBFN\_IO\_PROTOCOL.EventHandler
+# <a name="efi_usbfn_io_protocoleventhandler"></a>EFI \_ USBFN \_ IO \_ 协议。EventHandler
 
 
-**EventHandler**函数重复调用，以接收有关 USB 总线状态更新、 接收和传输上的终结点的状态更改并设置终结点 0 上的数据包。
+重复调用 **EventHandler** 函数，接收有关 USB 总线状态的更新，接收和传输终结点上的状态更改，并在终结点0上设置数据包。
 
 ## <a name="syntax"></a>语法
 
@@ -30,20 +29,20 @@ EFI_STATUS
   );
 ```
 
-## <a name="parameters"></a>Parameters
+## <a name="parameters"></a>参数
 
 
 <a href="" id="this"></a>*此*  
-指向 EFI\_USBFN\_IO\_协议实例。
+指向 EFI \_ USBFN \_ IO \_ 协议实例的指针。
 
 <a href="" id="message"></a>*消息*  
-一个[EFI\_USBFN\_消息](efi-usbfn-message.md)值，该值指示启动此通知的事件。
+一个 [EFI \_ USBFN \_ 消息](efi-usbfn-message.md) 值，该值指示启动此通知的事件。
 
 <a href="" id="payloadsize"></a>*PayloadSize*  
-在输入时，内存的大小指向的有效负载。 在输出时，负载中返回数据量。
+输入时，负载所指向的内存的大小。 输出时，负载中返回的数据量。
 
-<a href="" id="payload"></a>*有效负载*  
-一个指向[EFI\_USBFN\_消息\_负载](efi-usbfn-message-payload.md)实例中要返回当前消息的额外负载。
+<a href="" id="payload"></a>*负载*  
+一个指针，指向 [EFI \_ USBFN \_ 消息 \_ 负载](efi-usbfn-message-payload.md) 实例以返回当前消息的其他有效负载。
 
 ## <a name="return-values"></a>返回值
 
@@ -62,7 +61,7 @@ EFI_STATUS
 <tbody>
 <tr class="odd">
 <td><p><strong>EFI_SUCCESS</strong></p></td>
-<td><p>成功返回的函数</p></td>
+<td><p>函数已成功返回</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>EFI_INVALID_PARAMETER</strong></p></td>
@@ -70,15 +69,15 @@ EFI_STATUS
 </tr>
 <tr class="odd">
 <td><p><strong>EFI_DEVICE_ERROR</strong></p></td>
-<td><p>物理设备报告了错误。</p></td>
+<td><p>物理设备报告了一个错误。</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>EFI_NOT_READY</strong></p></td>
-<td><p>物理设备是正忙还是未准备好处理此请求</p></td>
+<td><p>物理设备处于繁忙状态或尚未准备好处理此请求</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>EFI_BUFFER_TOO_SMALL</strong></p></td>
-<td><p>提供的缓冲区不足够大以保存消息负载。</p></td>
+<td><p>提供的缓冲区不够大，无法容纳消息有效负载。</p></td>
 </tr>
 </tbody>
 </table>
@@ -88,9 +87,9 @@ EFI_STATUS
 ## <a name="remarks"></a>备注
 
 
-类驱动程序必须调用事件处理程序重复以接收更新的传输状态和不同的终结点上传输的字节数。 请参阅[UEFI 序列图](uefi-sequence-diagram.md)有关进一步信息。
+类驱动程序必须重复调用 EventHandler，以接收有关传输状态的更新和在各种终结点上传输的字节数。 有关详细信息，请参阅 [UEFI 序列图](uefi-sequence-diagram.md) 。
 
-一些消息具有关联有效负载中提供的缓冲区返回的。 下表介绍各种消息和及其有效负载。
+一些消息具有在提供的缓冲区中返回的关联负载。 下表描述了各种消息及其有效负载。
 
 <table>
 <colgroup>
@@ -109,47 +108,47 @@ EFI_STATUS
 <tr class="odd">
 <td><p>EfiUsbMsgSetupPacket</p></td>
 <td><p>EFI_USB_DEVICE_REQUEST</p></td>
-<td><p>接收安装数据包</p></td>
+<td><p>已收到安装数据包</p></td>
 </tr>
 <tr class="even">
 <td><p>EfiUsbMsgEndpointStatusChangedRx</p></td>
 <td><p><a href="efi-usbfn-transfer-result.md" data-raw-source="[EFI_USBFN_TRANSFER_RESULT](efi-usbfn-transfer-result.md)">EFI_USBFN_TRANSFER_RESULT</a></p></td>
-<td><p>某些请求的数据已传输到主机。 它负责的类驱动程序来确定是否需要重新发送任何剩余数据。 缓冲区提供给<a href="efi-usbfn-io-protocoltransfer.md" data-raw-source="[EFI_USBFN_IO_PROTOCOL.Transfer](efi-usbfn-io-protocoltransfer.md)">EFI_USBFN_IO_PROTOCOL。传输</a>r 必须与有效负载的缓冲区字段相同。</p></td>
+<td><p>某些请求的数据已传输到主机。 类驱动程序负责确定是否需要重新发送剩余的数据。 提供给 EFI_USBFN_IO_PROTOCOL 的缓冲区 <a href="efi-usbfn-io-protocoltransfer.md" data-raw-source="[EFI_USBFN_IO_PROTOCOL.Transfer](efi-usbfn-io-protocoltransfer.md)">。传输</a>r 必须与有效负载的 "缓冲区" 字段相同。</p></td>
 </tr>
 <tr class="odd">
 <td><p>EfiUsbMsgEndpointStatusChangedTx</p></td>
 <td><p><a href="efi-usbfn-transfer-result.md" data-raw-source="[EFI_USBFN_TRANSFER_RESULT](efi-usbfn-transfer-result.md)">EFI_USBFN_TRANSFER_RESULT</a></p></td>
-<td><p>已从主机收到一些请求的数据。 它负责的类驱动程序来确定是否需要等待任何剩余数据。 缓冲区提供给<a href="efi-usbfn-io-protocoltransfer.md" data-raw-source="[EFI_USBFN_IO_PROTOCOL.Transfer](efi-usbfn-io-protocoltransfer.md)">EFI_USBFN_IO_PROTOCOL。传输</a>必须与有效负载的缓冲区字段相同。</p></td>
+<td><p>已从主机接收到一些请求的数据。 类驱动程序负责确定是否需要等待剩余的数据。 提供给 EFI_USBFN_IO_PROTOCOL 的缓冲区 <a href="efi-usbfn-io-protocoltransfer.md" data-raw-source="[EFI_USBFN_IO_PROTOCOL.Transfer](efi-usbfn-io-protocoltransfer.md)">。传输</a> 必须与有效负载的缓冲区字段相同。</p></td>
 </tr>
 <tr class="even">
 <td><p>EfiUsbMsgBusEventReset</p></td>
 <td><p>无</p></td>
-<td><p>重置总线事件收到信号。</p></td>
+<td><p>重置总线事件已发出信号。</p></td>
 </tr>
 <tr class="odd">
 <td><p>EfiUsbMsgBusEventDetach</p></td>
 <td><p>无</p></td>
-<td><p>分离总线事件收到信号。</p></td>
+<td><p>已向分离总线事件发出信号。</p></td>
 </tr>
 <tr class="even">
 <td><p>EfiUsbMsgBusEventAttach</p></td>
 <td><p>无</p></td>
-<td><p>附加总线事件发出信号。</p></td>
+<td><p>附加总线事件信号。</p></td>
 </tr>
 <tr class="odd">
 <td><p>EfiUsbMsgBusEventSuspend</p></td>
 <td><p>无</p></td>
-<td><p>挂起总线事件收到信号。</p></td>
+<td><p>暂停总线事件已发出信号。</p></td>
 </tr>
 <tr class="even">
 <td><p>EfiUsbMsgBusEventResume</p></td>
 <td><p>无</p></td>
-<td><p>恢复总线事件发出信号。</p></td>
+<td><p>继续向总线事件发出信号。</p></td>
 </tr>
 <tr class="odd">
 <td><p>EfiUsbMsgBusEventSpeed</p></td>
 <td><p><a href="efi-usb-bus-speed.md" data-raw-source="[EFI_USB_BUS_SPEED](efi-usb-bus-speed.md)">EFI_USB_BUS_SPEED</a></p></td>
-<td><p>总线速度更新用信号通知。</p></td>
+<td><p>总线速度更新已终止。</p></td>
 </tr>
 </tbody>
 </table>

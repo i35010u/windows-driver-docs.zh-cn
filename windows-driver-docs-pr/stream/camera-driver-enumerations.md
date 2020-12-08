@@ -1,15 +1,14 @@
 ---
 title: 适用于 Windows 10 的全新相机驱动程序枚举
 description: 以下照相机驱动程序枚举是适用于 Windows 10 的新枚举。
-ms.assetid: 86C050F2-52CE-432E-B9F2-DDD61C47D9B2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 46f7f7ae90823687727d6ee00d710eed945177e7
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 1c58b16aab82db8b7ca32face8bc19eec68bbcf1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89184173"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96790301"
 ---
 # <a name="new-camera-driver-enumerations-for-windows-10"></a>适用于 Windows 10 的全新相机驱动程序枚举
 

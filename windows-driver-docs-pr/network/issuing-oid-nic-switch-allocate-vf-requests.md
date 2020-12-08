@@ -1,40 +1,39 @@
 ---
 title: 发出 OID_NIC_SWITCH_ALLOCATE_VF 请求
 description: 发出 OID_NIC_SWITCH_ALLOCATE_VF 请求
-ms.assetid: 72285E72-DEC7-4578-9B6C-E616FECD6F41
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 00232dadfcb9e243025d724769a3a236b9f4a947
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 30d570ac53bcecffe48c20c2091b683cc3a26ef6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89213467"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96789739"
 ---
 # <a name="issuing-oid_nic_switch_allocate_vf-requests"></a>颁发 OID \_ NIC \_ 交换机 \_ 分配 \_ VF 请求
 
 
 在 (OID 发出对象标识符之前，oid NIC 交换机的 ") 方法请求" 将 [ \_ \_ \_ \_ VF 分配](./oid-nic-switch-allocate-vf.md) 到 PCI Express (PCIe 的微型端口驱动程序) 物理函数 (PF) ，过量驱动程序将 [**NDIS \_ NIC \_ 交换机 \_ VF \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vf_parameters) 结构格式化。 此结构包含要为网络适配器上的 (VF) 分配给 PCIe 虚拟函数的资源的配置参数。 过量驱动程序必须按以下方式设置此结构的成员：
 
--   **SwitchId**成员必须设置为先前在网络适配器上创建的 NIC 交换机的标识符。 NIC 交换机是通过 oid [ \_ nic \_ 交换机 \_ CREATE \_ switch](./oid-nic-switch-create-switch.md)的 oid 方法请求创建的。
+-   **SwitchId** 成员必须设置为先前在网络适配器上创建的 NIC 交换机的标识符。 NIC 交换机是通过 oid [ \_ nic \_ 交换机 \_ CREATE \_ switch](./oid-nic-switch-create-switch.md)的 oid 方法请求创建的。
 
     当它处理 [oid \_ NIC \_ 交换机 \_ 分配 \_ VF](./oid-nic-switch-allocate-vf.md)的 Oid 方法请求时，PCIe 物理函数的微型端口驱动程序 (PF) 为 VF 分配资源。 如果成功分配资源，PF 微型端口驱动程序会将 VF 分配给指定的 NIC 交换机。
 
-    **注意**  从 Windows Server 2012 中的 NDIS 6.30 开始，SR-IOV 接口仅支持网络适配器上的默认 NIC 交换机。 **SwitchId**成员的值必须设置为 NDIS \_ 默认 \_ 交换机 \_ ID。
+    **注意**  从 Windows Server 2012 中的 NDIS 6.30 开始，SR-IOV 接口仅支持网络适配器上的默认 NIC 交换机。 **SwitchId** 成员的值必须设置为 NDIS \_ 默认 \_ 交换机 \_ ID。
 
     有关 NIC 交换机的详细信息，请参阅 [Nic 交换机](nic-switches.md)。
 
--   **VFId**成员必须设置为 NDIS 无效的 \_ \_ VF \_ 函数 \_ ID。
+-   **VFId** 成员必须设置为 NDIS 无效的 \_ \_ VF \_ 函数 \_ ID。
 
--   **RequestorId**成员必须设置为 NDIS \_ 无效 \_ RID。
+-   **RequestorId** 成员必须设置为 NDIS \_ 无效 \_ RID。
 
 -   必须将 **VMFriendlyName** 和 **VMName** 成员设置为 hyper-v 子分区的参数。 PF 小型端口驱动程序仅出于信息目的使用这些成员。
 
-    **注意**  Hyper-v 子分区也称为 *虚拟机 (VM) *。
+    **注意**  Hyper-v 子分区也称为 *虚拟机 (VM)*。
 
     VF 与指定的 VM 相关联，而过量驱动程序发出 [OID \_ NIC \_ SWITCH \_ CREATE \_ SWITCH](./oid-nic-switch-create-switch.md) 请求。
 
--   **NicName**成员必须设置为虚拟机 (VM) 网络适配器的标识符。 在 VM 中运行的来宾操作系统中公开了此虚拟适配器。 PF 小型端口驱动程序仅出于信息目的使用此成员。
+-   **NicName** 成员必须设置为虚拟机 (VM) 网络适配器的标识符。 在 VM 中运行的来宾操作系统中公开了此虚拟适配器。 PF 小型端口驱动程序仅出于信息目的使用此成员。
 
     为 VF 分配资源并将其附加到子分区后，会在来宾操作系统中公开一个 VF 网络适配器。 VM 网络适配器组，其中包含用于通过基于硬件的 VF 数据路径进行数据包传输的 VF 网络适配器。
 

@@ -1,7 +1,6 @@
 ---
 title: CoNDIS TAPI 注册
 description: CoNDIS TAPI 注册
-ms.assetid: 656be990-9392-4e8b-ac4a-73e38b75c109
 keywords:
 - CoNDIS WAN 驱动程序 WDK 网络，TAPI 服务
 - telephonic services WDK WAN，注册
@@ -9,12 +8,12 @@ keywords:
 - 注册 CoNDIS TAPI
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 110894c3013f9c2bb81ea01fe77ac75c91c81c2f
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 971b442b4bd709bd08f9f41e5af3af497eb73787
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89209797"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96789785"
 ---
 # <a name="condis-tapi-registration"></a>CoNDIS TAPI 注册
 
@@ -26,7 +25,7 @@ ms.locfileid: "89209797"
 
 CoNDIS WAN 微型端口驱动程序为一个或多个 Nic 注册了其微型端口驱动程序入口点后，以下操作将导致 NDISWAN 和 NDPROXY 驱动程序以特定于 TAPI 的方式与这些 Nic 关联。
 
--   CoNDIS WAN 微型端口驱动程序从其[*MiniportInitializeEx*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_initialize)函数内调用[**NdisMCmRegisterAddressFamilyEx**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismcmregisteraddressfamilyex)函数，以注册其调用管理器入口点和地址族类型的 CO \_ 址 \_ 系列 \_ TAPI \_ 代理。 这样，微型端口驱动程序就会公布它提供 TAPI 服务。
+-   CoNDIS WAN 微型端口驱动程序从其 [*MiniportInitializeEx*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_initialize)函数内调用 [**NdisMCmRegisterAddressFamilyEx**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismcmregisteraddressfamilyex)函数，以注册其调用管理器入口点和地址族类型的 CO \_ 址 \_ 系列 \_ TAPI \_ 代理。 这样，微型端口驱动程序就会公布它提供 TAPI 服务。
 
 -   NDIS 调用 NDPROXY 的 [**ProtocolCoAfRegisterNotify**](/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_co_af_register_notify) 函数来通知 NDPROXY 新注册的地址族。 NDPROXY 的 *ProtocolCoAfRegisterNotify* 检查地址系列数据，并确定它可以使用集成到 CoNDIS WAN 微型端口驱动程序中的呼叫管理器提供的 TAPI 服务。 支持 TAPI 的 CoNDIS WAN 微型端口驱动程序是集成的微型端口调用管理器 (MCM) 驱动程序。
 

@@ -1,7 +1,6 @@
 ---
 title: 文件系统中的安全描述符
 description: 描述安全描述符的文件系统支持
-ms.assetid: 4c3200a8-63f4-4398-aed1-b90150027829
 keywords:
 - 安全 WDK 文件系统、描述符
 - 安全描述符 WDK 文件系统
@@ -12,12 +11,12 @@ keywords:
 - 脱机安全描述符存储 WDK 文件系统
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b667db4fb22f71c36ce7972d76e63c6e1d168fc5
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: cb80262ee0b4aa4949bc6b335c350400ce735596
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89067362"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96789915"
 ---
 # <a name="security-descriptors-in-file-systems"></a>文件系统中的安全描述符
 

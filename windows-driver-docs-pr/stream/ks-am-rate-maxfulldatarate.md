@@ -1,7 +1,6 @@
 ---
 title: KS \_ AM \_ 速率 \_ MaxFullDataRate
 description: KS \_ AM \_ rate \_ MaxFullDataRate 属性检索最大值、完整数据速率和 10000 (decimal) 。
-ms.assetid: 2a331ecd-0b40-4dd9-90f0-7585cd36c41e
 keywords:
 - KS_AM_RATE_MaxFullDataRate 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 95dde9b3f957664644a2d10b7d00c5bd641f0172
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: fd052676c78ec1b568f73837030ae79b68c63df1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103562"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96790219"
 ---
 # <a name="ks_am_rate_maxfulldatarate"></a>KS \_ AM \_ 速率 \_ MaxFullDataRate
 

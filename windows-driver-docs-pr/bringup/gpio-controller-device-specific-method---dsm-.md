@@ -1,46 +1,45 @@
 ---
 title: GPIO 控制器的特定于设备的方法 (_DSM)
-description: 若要支持各种特定于设备的类的 Windows 中的通用 I/O (GPIO) 驱动程序堆栈和平台固件之间的通信，Microsoft 定义了特定于设备的方法 (_DSM) 可以包含在 ACPI 中的 GPIO 控制器命名空间。
-ms.assetid: 2891A78C-8C4F-4FE4-AB69-402F04DFA885
+description: 为了支持 Windows 和平台固件中的常规用途 i/o (GPIO) 驱动程序堆栈之间的各种特定于设备的通信，Microsoft 定义了可在 ACPI 命名空间中的 GPIO 控制器下包含的 Device-Specific 方法 (_DSM) 。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6dc839797f3927ebfb9092f8e50554cf96a7f2bd
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 7b9dfcfc19c856e6a5ae6239bc8c7847b43f3904
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67364547"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96788995"
 ---
-# <a name="gpio-controller-device-specific-method-dsm"></a>GPIO 控制器特定于设备的方法 (\_DSM)
+# <a name="gpio-controller-device-specific-method-_dsm"></a>GPIO 控制器 Device-Specific 方法 (\_ DSM) 
 
 
-若要支持各种特定于设备的类的 Windows 中的通用 I/O (GPIO) 驱动程序堆栈和平台固件之间的通信，Microsoft 定义了特定于设备的方法 (\_DSM)，可以包括在 GPIO 控制器在 ACPI 名称空间。
+为了支持 Windows 和平台固件中的常规用途 i/o (GPIO) 驱动程序堆栈之间的各种特定于设备的通信，Microsoft 定义了 \_ 可在 ACPI 命名空间中的 GPIO 控制器下包含的 Device-Specific 方法 (DSM) 。
 
-目前，此方法定义两个函数：
+目前，此方法定义了两个函数：
 
--   **函数索引 0**:标准查询函数的所有\_DSM 方法将要求提供。
--   **函数索引 1**:ActiveBoth 极性函数，它会通知不是在控制器上任何 ActiveBoth 引脚 GPIO 堆栈添加逻辑低。 GPIO 堆栈假定，ActiveBoth pin 添加逻辑低，所以此函数允许重写该默认值为特定球瓶的平台。
+-   **函数索引 0**：所有 \_ DSM 方法都需要提供的标准查询函数。
+-   **函数索引 1**： ActiveBoth 极性函数，该函数通知控制器上不断言逻辑低的任何 ActiveBoth PIN 的 GPIO 堆栈。 GPIO 堆栈假设 ActiveBoth 的 pin 断言逻辑较低，因此此函数允许平台替代特定 pin 的默认值。
 
 ## <a name="guid-definition"></a>GUID 定义
 
 
-GPIO 控制器 GUID \_DSM 方法被定义为：
+GPIO 控制器 DSM 方法的 GUID \_ 定义为：
 
 `{4F248F40-D5E2-499F-834C-27758EA1CD3F}`
 
-## <a name="function-0"></a>函数 0
+## <a name="function-0"></a>函数0
 
 
-函数的每个\_DSM 是返回集支持的函数的索引，并始终是必需的查询函数。 有关函数 0 的定义，请参阅部分 9.14.1，"\_DSM （设备特定的方法）"，在[ACPI 5.0 规范](https://uefi.org/specifications)。
+每个 DSM 的函数 0 \_ 是一个查询函数，它返回支持的函数索引集，并且始终是必需的。 有关函数0的定义，请参阅 \_ [ACPI 5.0 规范](https://uefi.org/specifications)中的 9.14.1 "DSM (设备特定的方法) " 部分。
 
-## <a name="function-1"></a>函数 1
+## <a name="function-1"></a>函数1
 
 
-函数的 GPIO 控制器 1 的参数\_DSM 方法定义，如下所示：
+GPIO 控制器 DSM 方法的函数1的参数 \_ 定义如下：
 
-### <a name="arguments"></a>参数
+### <a name="arguments"></a>自变量
 
--   **Arg0:** GPIO 控制器 UUID \_DSM
+-   **Arg0：** GPIO 控制器 DSM 的 UUID \_
 
     `// GUID: {4F248F40-D5E2-499F-834C-27758EA1CD3F}`
 
@@ -48,29 +47,29 @@ GPIO 控制器 GUID \_DSM 方法被定义为：
 
     `0x4f248f40, 0xd5e2, 0x499f, 0x83, 0x4c, 0x27, 0x75, 0x8e, 0xa1, 0xcd. 0x3f);`
 
--   **Arg1:** 修订 ID
+-   **Arg1：** 修订 ID
 
     `#define GPIO_CONTROLLER _DSM_REVISION_ID     0`
 
--   **Arg2:** ActiveBoth 函数索引添加极性：
+-   **Arg2：** ActiveBoth 断言极性的函数索引：
 
     `#define GPIO_CONTROLLER_DSM_ACTIVE_BOTH_POLARITY_FUNCTION_INDEX  1`
 
--   **Arg3:** 包为空 （未使用）
+-   **Arg3：** 包空 (未使用) 
 
 ### <a name="return"></a>返回
 
-整数，其中每个是 GPIO 控制器，该域控制器上的 pin 的控制器相对 pin 号码包：
+一个整数包，其中每个整数都是 GPIO 控制器上的 pin 的控制器相对 pin 号，即：
 
--   定义为 ActiveBoth 中断，并
--   其断言状态*不*逻辑低 (即*是*逻辑高)。
+-   定义为 ActiveBoth 中断，
+-   断言状态 *不* 是逻辑低 (换言之， *是* 逻辑高) 。
 
-例如，如果一个模拟的 ActiveBoth 插针连接到按钮设备时，pin 将进入*断言*状态 （在 pin 逻辑高输入级别） 当用户按下按钮、 文本框和时用户按住停留在断言状态向下按钮。 当用户释放左键时，pin 状态将变为*unasserted* （输入的逻辑低级别）。
+例如，如果某个模拟的 ActiveBoth pin 连接到一个按钮设备，则当用户按下该按钮时，该 pin 将进入 "已 *断言* " 状态 (逻辑高的输入级别，) ，当用户按下该按钮时保持已断言状态。 当用户释放按钮时，pin 状态将更改为 " *unasserted* (逻辑-低输入级别) 。
 
 ## <a name="asl-code-example"></a>ASL 代码示例
 
 
-下面的代码示例 ASL 标识一组具有的 ActiveHigh 初始极性的 GPIO 插针。
+以下 ASL 代码示例标识了一组具有 ActiveHigh 初始极性的 GPIO pin。
 
 ```asl
 //

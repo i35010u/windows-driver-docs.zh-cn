@@ -1,15 +1,14 @@
 ---
 title: WFP 标注驱动程序开发路线图
 description: WFP 标注驱动程序开发路线图
-ms.assetid: 98c857d9-e4a6-4a7f-8427-642763864f3e
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 95edfcfb769d73c352d74805f523d2b682523699
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: f392e00f986c4b11f416992a3822a65070520189
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91734228"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96789627"
 ---
 # <a name="roadmap-for-developing-wfp-callout-drivers"></a>WFP 标注驱动程序开发路线图
 
@@ -30,7 +29,7 @@ ms.locfileid: "91734228"
 
 -   步骤4：确定其他 Windows 驱动程序设计决策。
 
-    有关如何进行其他 Windows 设计决策的信息，请参阅 [创建可靠的内核模式驱动程序](../kernel/creating-reliable-kernel-mode-drivers.md)、 [64 位驱动程序的编程问题](../kernel/porting-your-driver-to-64-bit-windows.md)以及 [创建国际 INF 文件](../install/creating-international-inf-files.md)。
+    有关如何进行其他 Windows 设计决策的信息，请参阅 [创建可靠 Kernel-Mode 驱动程序](../kernel/creating-reliable-kernel-mode-drivers.md)、 [64 位驱动程序的编程问题](../kernel/porting-your-driver-to-64-bit-windows.md)以及 [创建国际 INF 文件](../install/creating-international-inf-files.md)。
 
 -   步骤5：了解 Windows 驱动程序的生成、测试和调试过程和工具。
 

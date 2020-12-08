@@ -1,15 +1,14 @@
 ---
 title: 照相机驱动程序结构
 description: 以下照相机驱动程序结构是适用于 Windows 10 的新结构。
-ms.assetid: E1C2695B-F3E3-4B16-9552-C79B957A5470
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e686caa2e7e1183ffa79b74f86388ba6e577585e
-ms.sourcegitcommit: 51cba71be022c726c04c29ba5c0360860b65d7a4
+ms.openlocfilehash: 87ceb1a6f8531922ecf32b5ed231272fa63b5b4c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/09/2020
-ms.locfileid: "89562203"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96790279"
 ---
 # <a name="camera-driver-structures"></a>照相机驱动程序结构
 

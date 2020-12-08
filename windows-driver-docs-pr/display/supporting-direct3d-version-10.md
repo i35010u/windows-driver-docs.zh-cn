@@ -1,15 +1,14 @@
 ---
 title: 支持 Direct3D 版本 10
 description: 支持 Direct3D 版本 10
-ms.assetid: 2f7ff2a4-25ac-4e82-9b44-f64a8b814601
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0ee4f36bf7dbabd46764292940f6f89de567f869
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 694015d15c6a14057d7e4abc533bbc59a4fb7ef9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89063984"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96789983"
 ---
 # <a name="supporting-direct3d-version-10"></a>支持 Direct3D 版本 10
 

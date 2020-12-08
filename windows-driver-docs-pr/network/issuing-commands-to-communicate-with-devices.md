@@ -1,19 +1,18 @@
 ---
 title: 发出命令以便与设备通信
 description: 发出命令以便与设备通信
-ms.assetid: 8bea8be8-998d-4f90-92ab-4f0f8be1d01f
 keywords:
 - NDIS-WDM 微型端口驱动程序 WDK 网络，设备通信
 - NDIS 微型端口驱动程序的下边缘 WDK 网络，设备通信
 - WDM 低边缘 WDK 网络，设备通信
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b396340000ae75a4c1ef5d23ecab59705c76f050
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 2f42fd8898c9af8a4b1667a37aed88fbae95862a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89207913"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96789743"
 ---
 # <a name="issuing-commands-to-communicate-with-devices"></a>发出命令以便与设备通信
 

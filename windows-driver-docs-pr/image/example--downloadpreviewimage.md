@@ -1,15 +1,14 @@
 ---
 title: 示例 DownloadPreviewImage
 description: 示例 DownloadPreviewImage
-ms.assetid: 9b27492e-0725-4c8b-9101-3aaf5c9291d9
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 45cca254c5f64a723225c5fc5112f43a824803a1
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: d53d41311174fb5fe4d0a7b55f29069a6f6c9894
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89192949"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96788703"
 ---
 # <a name="example-downloadpreviewimage"></a>示例： DownloadPreviewImage
 
@@ -17,9 +16,9 @@ ms.locfileid: "89192949"
 
 
 
-**DownloadPreviewImage**函数通过调用预览组件的**IWiaPreview：： GetNewPreview**方法从扫描程序下载图像数据。 然后，如果应用程序用户想要调用分段筛选器，它将调用 **DetectSubregions** 函数，该功能会在其检测到的每个区域下的 *pWiaItem2* 下创建子项目。 有关此示例中使用的 **DetectSubregions**的信息，请参阅 [**IWiaSegmentationFilter：:D etectregions**](/windows-hardware/drivers/ddi/wia_lh/nf-wia_lh-iwiasegmentationfilter-detectregions) 方法。
+**DownloadPreviewImage** 函数通过调用预览组件的 **IWiaPreview：： GetNewPreview** 方法从扫描程序下载图像数据。 然后，如果应用程序用户想要调用分段筛选器，它将调用 **DetectSubregions** 函数，该功能会在其检测到的每个区域下的 *pWiaItem2* 下创建子项目。 有关此示例中使用的 **DetectSubregions** 的信息，请参阅 [**IWiaSegmentationFilter：:D etectregions**](/windows-hardware/drivers/ddi/wia_lh/nf-wia_lh-iwiasegmentationfilter-detectregions) 方法。
 
-在此示例中，应用程序用户通过单击复选框设置 *m \_ bUseSegmentationFilter* 参数。 如果应用程序支持此操作，它应该首先通过调用 **IWiaItem2：： CheckExtension**来检查驱动程序是否具有分段筛选器。 有关此示例中使用的 **CheckImgFilter**的信息，请参阅 Microsoft Windows SDK 文档中的 **IWiaPreview：： GetNewPreview** 方法。
+在此示例中，应用程序用户通过单击复选框设置 *m \_ bUseSegmentationFilter* 参数。 如果应用程序支持此操作，它应该首先通过调用 **IWiaItem2：： CheckExtension** 来检查驱动程序是否具有分段筛选器。 有关此示例中使用的 **CheckImgFilter** 的信息，请参阅 Microsoft Windows SDK 文档中的 **IWiaPreview：： GetNewPreview** 方法。
 
 ```cpp
 HRESULT
