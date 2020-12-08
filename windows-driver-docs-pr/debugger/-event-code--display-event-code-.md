@@ -1,9 +1,8 @@
 ---
 title: .event_code（显示事件代码）
-description: .Event_code 命令显示当前事件说明进行操作。
-ms.assetid: f2ab0f4d-493c-4b8b-a7a0-82c10586d485
+description: .Event_code 命令显示当前的事件说明。
 keywords:
-- .event_code （显示事件代码） Windows 调试
+- .event_code (在 Windows 调试) 显示事件代码
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: f0badc8a5a9b9befb7fce0e58f054291b755da5e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 829d97c2855a2539470c777a12a04cb265664a9c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63336764"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96819435"
 ---
-# <a name="eventcode-display-event-code"></a>后面\_代码 （显示事件的代码）
+# <a name="event_code-display-event-code"></a>。事件 \_ 代码 (显示事件代码) 
 
 
-**后面\_代码**命令显示当前事件说明进行操作。
+**事件 \_ 代码** 命令显示当前的事件说明。
 
 ```dbgcmd
 .event_code 
@@ -37,12 +36,12 @@ ms.locfileid: "63336764"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>模式</strong></p></td>
-<td align="left"><p>用户模式下，内核模式</p></td>
+<td align="left"><p><strong>交货</strong></p></td>
+<td align="left"><p>用户模式，内核模式</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>目标</strong></p></td>
-<td align="left"><p>仅实时调试</p></td>
+<td align="left"><p>仅限实时调试</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>平台</strong></p></td>
@@ -56,7 +55,7 @@ ms.locfileid: "63336764"
 <a name="remarks"></a>备注
 -------
 
-**后面\_代码**命令将显示在当前事件的指令指针的十六进制的说明进行操作。 如果有，显示包括最多 64 个字节的说明。
+**事件 \_ 代码** 命令在当前事件的指令指针处显示十六进制指令。 如果可用，则显示的指令最多可包含64个字节。
 
  
 

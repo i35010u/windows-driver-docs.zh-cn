@@ -1,7 +1,6 @@
 ---
 title: 升级网络组件
 description: 升级网络组件
-ms.assetid: c183cd0a-53a7-4172-9cf8-70a93877c8a8
 keywords:
 - 通知对象 WDK 网络，升级网络组件
 - 网络通知对象 WDK，升级网络组件
@@ -11,12 +10,12 @@ keywords:
 - 升级网络组件 WDK，步骤
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 01dbca9c4a024af952c29bb6bb9611ca79693a10
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 4972b0118eb5a95965ac5c82c26ddf5c409687ab
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89215781"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96818317"
 ---
 # <a name="upgrading-network-components"></a>升级网络组件
 

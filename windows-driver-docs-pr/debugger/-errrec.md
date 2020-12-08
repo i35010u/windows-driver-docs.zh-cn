@@ -1,7 +1,6 @@
 ---
 title: errrec
 description: Errrec 扩展显示 Windows 硬件错误体系结构 (WHEA) 错误记录的内容。
-ms.assetid: 372e4700-0cd7-468d-98e8-b0ead4ebc92f
 keywords:
 - errrec Windows 调试
 ms.date: 05/23/2017
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 03ca88fda94ba2dcb707ef987339dfd757e58fde
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 16fea1be6fb6ba8d670a5c00fe3f093fd2d84be9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89211849"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96819443"
 ---
 # <a name="errrec"></a>!errrec
 
 
-**！ Errrec**扩展显示 Windows 硬件错误体系结构 (WHEA) 错误记录的内容。
+**！ Errrec** 扩展显示 Windows 硬件错误体系结构 (WHEA) 错误记录的内容。
 
 ```dbgcmd
 !errrec Address 
@@ -44,15 +43,15 @@ ms.locfileid: "89211849"
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>Windows 2000</strong></p></td>
-<td align="left"><p>Unavailable</p></td>
+<td align="left"><p>不可用</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>Windows XP</strong></p></td>
-<td align="left"><p>Unavailable</p></td>
+<td align="left"><p>不可用</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>Windows Server 2003</strong></p></td>
-<td align="left"><p>Unavailable</p></td>
+<td align="left"><p>不可用</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>Windows Vista 及更高版本</strong></p></td>
@@ -67,7 +66,7 @@ ms.locfileid: "89211849"
 
 ### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-[**！ Whea**](-whea.md)和[**！ errpkt**](-errpkt.md)扩展可用于显示其他 whea 信息。 有关 WHEA 的常规信息，请参阅 Windows 驱动程序工具包中的 [Windows 硬件错误体系结构 (WHEA) ](../whea/index.md) (WDK) 文档。
+[**！ Whea**](-whea.md)和 [**！ errpkt**](-errpkt.md)扩展可用于显示其他 whea 信息。 有关 WHEA 的常规信息，请参阅 Windows 驱动程序工具包中的 [Windows 硬件错误体系结构 (WHEA) ](../whea/index.md) (WDK) 文档。
 
 <a name="remarks"></a>备注
 -------
@@ -123,7 +122,7 @@ Length        : 658
 Flags         : 0x00000000
 Severity      : Fatal
 
-*** Unknown section format ***
+**_ Unknown section format _**
 # 
 ===============================================================================
 ## Section 2     : Error Packet

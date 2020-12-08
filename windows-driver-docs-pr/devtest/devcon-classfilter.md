@@ -1,7 +1,6 @@
 ---
 title: DevCon ClassFilter
 description: 添加、删除、显示和更改设备安装程序类的筛选器驱动程序的顺序。 仅在本地计算机上有效。
-ms.assetid: c04200c7-2897-46bd-ac5f-f838efef79d9
 keywords:
 - DevCon ClassFilter 驱动程序开发工具
 topic_type:
@@ -12,12 +11,12 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a66ef07713799450a0fea530c2972ffd4bffe9bb
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 7de42464e207f6305844ca6c50eb01b1729cb66e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89382921"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96817805"
 ---
 # <a name="devcon-classfilter"></a>DevCon ClassFilter
 
@@ -46,7 +45,7 @@ ms.locfileid: "89382921"
 <span id="________driver______"></span><span id="________DRIVER______"></span>**@**<em>驱动程序</em>   
 将光标定位在指定驱动程序的下一个实例上。
 
-<span id="-driver"></span><span id="-DRIVER"></span>**-* * * 驱动程序*  
+<span id="-driver"></span><span id="-DRIVER"></span>**-**_驱动器_  
 添加之前。 在游标所定位到的驱动程序之前插入指定的驱动程序。
 
 如果游标未定位在驱动程序上，则 DevCon 会将指定的驱动程序插入到列表的开头。 子命令完成时，光标将定位在新添加的驱动程序上。
@@ -63,15 +62,15 @@ ms.locfileid: "89382921"
 
 ### <a name="span-idcommentsspanspan-idcommentsspancomments"></a><span id="comments"></span><span id="COMMENTS"></span>提出
 
-**DevCon ClassFilter**命令可以包含一个或多个子命令，其中包含一个运算符 (**=** 、 **@** 、 **-** 、 **+** 、 **！**) 和一个筛选器驱动程序名称。 DevCon 按它们出现在命令中的顺序执行子命令。
+**DevCon ClassFilter** 命令可以包含一个或多个子命令，其中包含一个运算符 (**=** 、 **@** 、 **-** 、 **+** 、 **！**) 和一个筛选器驱动程序名称。 DevCon 按它们出现在命令中的顺序执行子命令。
 
 在不使用子命令的情况下， **DevCon ClassFilter** 命令显示指定类中的筛选器驱动程序的上限或下限。 例如， **devcon classfilter net lower** 显示 net setup 类中的筛选器驱动程序。
 
-**DevCon ClassFilter**操作使用虚拟游标来浏览类的筛选器驱动程序列表。 游标从筛选器驱动程序列表的开头开始，在列表中的第一个驱动程序之前。 除非返回到起始位置，否则光标始终在筛选器驱动程序列表中向前移动，因为 DevCon 会执行子命令。
+**DevCon ClassFilter** 操作使用虚拟游标来浏览类的筛选器驱动程序列表。 游标从筛选器驱动程序列表的开头开始，在列表中的第一个驱动程序之前。 除非返回到起始位置，否则光标始终在筛选器驱动程序列表中向前移动，因为 DevCon 会执行子命令。
 
 DevCon 不向类添加筛选器驱动程序，除非该驱动程序安装为服务，即 [HKLM \\ SYSTEM \\ CurrentControlSet \\ Services](../install/hklm-system-currentcontrolset-services-registry-tree.md) 注册表项中必须存在该驱动程序的注册表子项。 此安全措施可防止意外添加不存在的筛选器驱动程序，从而导致系统无法启动。
 
-由于筛选器驱动程序更改需要重启设备，因此请使用[**Devcon Restart**](devcon-restart.md)命令，或在**devcon ClassFilter**命令中包含 **/r** (条件重启) 参数。
+由于筛选器驱动程序更改需要重启设备，因此请使用 [**Devcon Restart**](devcon-restart.md)命令，或在 **devcon ClassFilter** 命令中包含 **/r** (条件重启) 参数。
 
 ### <a name="span-idsample_usagespanspan-idsample_usagespansample-usage"></a><span id="sample_usage"></span><span id="SAMPLE_USAGE"></span>示例用法
 

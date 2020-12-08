@@ -1,7 +1,6 @@
 ---
 title: 在 IEEE 1394 总线上发送异步 I/O 请求数据包
 description: 在 IEEE 1394 总线上发送异步 I/O 请求数据包
-ms.assetid: 93ad0cdf-5ac2-4916-b90e-1e64ca4494b6
 keywords:
 - 发送异步 i/o 请求
 - raw 模式寻址 WDK IEEE 1394 总线
@@ -17,12 +16,12 @@ keywords:
 - 锁定 WDK IEEE 1394 总线
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c2264d0166e87099c5722a9ae2c0aa9f61ce6c7d
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: afce00fc4bbd44da783432888806fb0efe4f002b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89383023"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96817773"
 ---
 # <a name="sending-asynchronous-io-request-packets-on-the-ieee-1394-bus"></a>在 IEEE 1394 总线上发送异步 I/O 请求数据包
 
@@ -34,9 +33,9 @@ ms.locfileid: "89383023"
 
 ### <a name="types-of-addressing"></a>寻址类型
 
-发出异步 i/o 请求的驱动程序必须在 IRB 的**DestinationAddress**成员中指定类型为[**IO \_ address**](/windows-hardware/drivers/ddi/1394/ns-1394-_io_address)的目标地址。 目标地址包括两个值：节点地址和地址偏移量。 总线驱动程序为这两个值提供的解释取决于启动请求的驱动程序所使用的寻址模式。
+发出异步 i/o 请求的驱动程序必须在 IRB 的 **DestinationAddress** 成员中指定类型为 [**IO \_ address**](/windows-hardware/drivers/ddi/1394/ns-1394-_io_address)的目标地址。 目标地址包括两个值：节点地址和地址偏移量。 总线驱动程序为这两个值提供的解释取决于启动请求的驱动程序所使用的寻址模式。
 
-有三种寻址模式可用于发送异步1394包： *普通*、 *原始*和 *虚拟*。
+有三种寻址模式可用于发送异步1394包： *普通*、 *原始* 和 *虚拟*。
 
 在正常模式下，寻址启动请求的驱动程序提供了地址偏移，但未指定目标设备的节点地址。 总线驱动程序使用它在枚举设备时存储在设备的 PDO 中的信息来填充节点地址。
 
@@ -50,7 +49,7 @@ ms.locfileid: "89383023"
 
 启动异步 i/o 请求的驱动程序必须提供指向指定 i/o 缓冲区的 MDL 的指针。 它将此指针放在 IRB 的 **Mdl** 成员中。 总线驱动程序使用此缓冲区从设备中复制其读取的数据，或将其写入设备的数据源复制到设备。
 
-驱动程序在**AsyncXXX**的**nNumberOfBytesToRead**或**nNumberOfBytesToWrite**成员中指定数据缓冲区的大小，在**nBlockSize**成员中指定块大小。 事务实际发生时，总线驱动程序会将数据分解为在 **nBlockSize**中指定的大小的数据包。 默认情况下，总线驱动程序会连续读取或写入数据：从设备的地址空间中的后续位置读取或写入数据块。
+驱动程序在 **AsyncXXX** 的 **nNumberOfBytesToRead** 或 **nNumberOfBytesToWrite** 成员中指定数据缓冲区的大小，在 **nBlockSize** 成员中指定块大小。 事务实际发生时，总线驱动程序会将数据分解为在 **nBlockSize** 中指定的大小的数据包。 默认情况下，总线驱动程序会连续读取或写入数据：从设备的地址空间中的后续位置读取或写入数据块。
 
 下图说明了连续的数据块。
 
@@ -62,7 +61,7 @@ ms.locfileid: "89383023"
 
 ![阐释异步非递增数据块的关系图](images/1394blkf.png)
 
-**警告**   总线驱动程序为设备与计算机之间的当前连接速度强制执行最大异步数据包大小，并为设备在其配置 ROM 的 "最大记录" 字段中报告的最大速度 \_ 。 如果 **nBlockSize** 的值大于上述任一值，则总线驱动程序将为块大小使用强制值。 如果驱动程序设置 ASYNC \_ FLAGS \_ NONINCREMENTING 标志，这不太可能给出所需的行为。 如果驱动程序设置此标志，则在提交请求之前，它们应检查块大小是否小于强制限制。
+**警告**  总线驱动程序为设备与计算机之间的当前连接速度强制执行最大异步数据包大小，并为设备在其配置 ROM 的 "最大记录" 字段中报告的最大速度 \_ 。 如果 **nBlockSize** 的值大于上述任一值，则总线驱动程序将为块大小使用强制值。 如果驱动程序设置 ASYNC \_ FLAGS \_ NONINCREMENTING 标志，这不太可能给出所需的行为。 如果驱动程序设置此标志，则在提交请求之前，它们应检查块大小是否小于强制限制。
 
  
 

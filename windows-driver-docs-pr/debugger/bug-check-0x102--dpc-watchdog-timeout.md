@@ -1,7 +1,6 @@
 ---
 title: Bug 检查 0x102 DPC_WATCHDOG_TIMEOUT
-description: DPC_WATCHDOG_TIMEOUT bug 检查具有 0x00000102 值。 这表示在分配的时间间隔内未执行 DPC 监视程序例程。
-ms.assetid: 1BEC2701-3127-4FB9-AD0F-DD54A9F2C2C3
+description: DPC_WATCHDOG_TIMEOUT bug 检查的值为0x00000102。 这表示未在分配的时间间隔内执行 DPC 监视程序例程。
 keywords:
 - Bug 检查 0x102 DPC_WATCHDOG_TIMEOUT
 - DPC_WATCHDOG_TIMEOUT
@@ -13,45 +12,45 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 225817e6331dbc423c24b4c4b72b34ef68ed4b0e
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: 0d79dabb66c75658f287c146d645b9c66a6b4785
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67521643"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96817571"
 ---
-# <a name="bug-check-0x102-dpcwatchdogtimeout"></a>Bug 检查 0x102：DPC\_监视器\_超时
+# <a name="bug-check-0x102-dpc_watchdog_timeout"></a>Bug 检查0x102： DPC \_ 监视程序 \_ 超时
 
 
-DPC\_监视器\_超时错误检查的值为 0x00000102。 这表示在分配的时间间隔内未执行 DPC 监视程序例程。
+DPC \_ 监视程序 \_ 超时 bug 检查的值为0x00000102。 这表示未在分配的时间间隔内执行 DPC 监视程序例程。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题面向程序员。 如果您是在使用计算机时收到蓝屏错误代码的客户，请参阅[蓝屏错误疑难解答](https://www.windows.com/stopcode)。
 
 
-## <a name="dpcwatchdogtimeout-parameters"></a>DPC\_监视器\_超时参数
+## <a name="dpc_watchdog_timeout-parameters"></a>DPC \_ 监视程序 \_ 超时参数
 
 
 | 参数 | 描述                                            |
 |-----------|--------------------------------------------------------|
-| 1         | 在名义上的时钟计时周期中的 DPC 监视器超时时间间隔。 |
-| 2         | 挂起处理器 PRCB 地址。                |
-| 3         | 保留                                               |
-| 4         | 保留                                               |
+| 1         | DPC 监视程序的时间间隔（以标称时钟计时周期）。 |
+| 2         | 挂起的处理器的 PRCB 地址。                |
+| 3         | 预留                                               |
+| 4         | 预留                                               |
 
  
 
 <a name="cause"></a>原因
 -----
 
-检查此错误通常意味着，在时钟级别及调度级别以上的 IRQL 挂起 ISR 或 DPC 例程挂起指定的处理器上。
+此 bug 检查通常表示 ISR 挂起于低于时钟级别和高于调度级别的 IRQL，或在指定的处理器上挂起了 DPC 例程。
 
-例如有关 StorPort 微型端口驱动程序，StorPort.sys 处理 I/O 完成例程在调度运行中的\_级别，按顺序调用刚刚完成的所有 Irp 的 I/O 完成例程。 如果 I/O 完成例程单独或一起需要很长时间，键盘和/或鼠标可能会停止响应。 还有可能 Windows DPC 监视器计时器例程将决定 StorPort 例程已过多的时间才能完成。
+例如，对于 StorPort 微型端口驱动程序，StorPort.sys 处理在调度级别运行的例程中的 i/o 完成， \_ 并按顺序调用刚刚完成的所有 irp 的 i/o 完成例程。 如果单个或多个 i/o 完成例程需要很长时间，则键盘和/或鼠标可能会停止响应。 此外，Windows DPC 监视程序计时器例程还可能会确定 StorPort 例程已花了很多时间才能完成。
 
-<a name="resolution"></a>分辨率
+<a name="resolution"></a>解决方法
 ----------
 
-存储堆栈中的内核驱动程序通过高效编码的驱动程序的 I/O 完成例程可以减少问题的可能性。 如果仍不可以执行所有必要的处理，在完成例程中有足够的时间，例程可以创建多个 I/O 工作的工作元素、 排队到工作队列的元素和状态\_详细\_处理\_必选项;工作线程的驱动程序应找到工作元素、 执行工作和执行操作以确保 IRP 的更多的 I/O 处理 IRP 的 IoCallerDriver。
+存储堆栈中的内核驱动程序可以通过高效地编码驱动程序的 i/o 完成例程来减少问题的可能性。 如果在完成例程中仍无法完成所有必要的处理，则为。例程可以为 i/o 工作创建一个工作元素，将元素排队到工作队列，并返回 \_ 所需的状态更多 \_ \_ ; 然后，驱动程序的工作线程应找到工作元素，为 irp 执行工作并执行 IoCallerDriver，以确保 irp 的后续 i/o 处理。
 
  
 

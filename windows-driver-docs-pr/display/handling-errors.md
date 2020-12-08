@@ -1,24 +1,23 @@
 ---
 title: 处理错误
 description: 处理错误
-ms.assetid: ac4e056e-3304-4934-887a-5cc2b87989bd
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9cf731ab4a502aedb11972336080a65f00c46ef1
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 947faff057a160d849136e781cd0ddb7a93ccd4d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104490"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96819113"
 ---
 # <a name="handling-errors"></a>处理错误
 
 
-用户模式显示驱动程序实现的 [Direct3D 版本10函数](/windows-hardware/drivers/ddi/index) 对于返回参数类型通常具有 VOID。 此规则的主要例外是 *CalcPrivate***ObjType***Size*-type 函数 (例如， [**CalcPrivateResourceSize**](/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_calcprivateresourcesize) 函数) 。 这种类型的函数返回一个大小 \_ T 参数类型，该类型指示驱动程序通过 * Create ***ObjType**函数创建特定对象类型所需的内存区域的大小， (例如， [**CreateResource (D3D10) **](/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_createresource)) 。
+用户模式显示驱动程序实现的 [Direct3D 版本10函数](/windows-hardware/drivers/ddi/index) 对于返回参数类型通常具有 VOID。 此规则的主要例外情况是 * CalcPrivate ***ObjType**_Size_-type 函数 (例如， [**CalcPrivateResourceSize**](/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_calcprivateresourcesize) 函数) 。 这种类型的函数返回一个大小 \_ T 参数类型，该类型指示驱动程序通过 * Create ***ObjType** 函数创建特定对象类型所需的内存区域的大小， (例如， [**CreateResource (D3D10)**](/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_createresource)) 。
 
-返回 VOID 可防止用户模式显示驱动程序通过用户模式显示驱动程序的函数返回参数) 以传统 (方式通知 Direct3D 运行时错误。 相反，用户模式显示驱动程序必须使用 Direct3D 运行时的 [**pfnSetErrorCb**](/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_seterror_cb) 回调函数将此类信息传递回运行时。 运行时提供指向其在[**D3D10DDI \_ CORELAYER \_ DEVICECALLBACKS**](/windows-hardware/drivers/ddi/d3d10umddi/ns-d3d10umddi-d3d10ddi_corelayer_devicecallbacks)结构中的**pfnSetErrorCb**的指针，pUMCallbacks [** \_ D3D10DDIARG**](/windows-hardware/drivers/ddi/d3d10umddi/ns-d3d10umddi-d3d10ddiarg_createdevice)结构的**CREATEDEVICE**成员在调用[**CREATEDEVICE (D3D10) **](/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_createdevice)函数时指向该结构。
+返回 VOID 可防止用户模式显示驱动程序通过用户模式显示驱动程序的函数返回参数) 以传统 (方式通知 Direct3D 运行时错误。 相反，用户模式显示驱动程序必须使用 Direct3D 运行时的 [**pfnSetErrorCb**](/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_seterror_cb) 回调函数将此类信息传递回运行时。 运行时提供指向其在 [**D3D10DDI \_ CORELAYER \_ DEVICECALLBACKS**](/windows-hardware/drivers/ddi/d3d10umddi/ns-d3d10umddi-d3d10ddi_corelayer_devicecallbacks)结构中的 **pfnSetErrorCb** 的指针，pUMCallbacks [**\_ D3D10DDIARG**](/windows-hardware/drivers/ddi/d3d10umddi/ns-d3d10umddi-d3d10ddiarg_createdevice)结构的 **CREATEDEVICE** 成员在调用 [**CREATEDEVICE (D3D10)**](/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_createdevice)函数时指向该结构。
 
-每个用户模式显示驱动程序函数的 "引用" 页指定函数可以通过调用 **pfnSetErrorCb**传递的错误。 这意味着，如果用户模式显示驱动程序使用当前用户模式显示驱动程序函数不允许的错误代码调用 **pfnSetErrorCb** ，则运行时将确定错误条件是关键的并正确操作。 由于运行时将在**pfnSetErrorCb**过程中适当地操作，因此您不应希望**pfnSetErrorCb** \_ 通过调用**pfnSetErrorCb** ( S OK ) 等操作来撤消调用 pfnSetErrorCb ( E ) 的影响 \_ 。 事实上，运行时确定 S OK 与 \_ E FAIL 相同或严重 \_ 。 S \_ OK 返回代码的概念等效于用户模式显示驱动程序函数根本不会调用 **pfnSetErrorCb** 。
+每个用户模式显示驱动程序函数的 "引用" 页指定函数可以通过调用 **pfnSetErrorCb** 传递的错误。 这意味着，如果用户模式显示驱动程序使用当前用户模式显示驱动程序函数不允许的错误代码调用 **pfnSetErrorCb** ，则运行时将确定错误条件是关键的并正确操作。 由于运行时将在 **pfnSetErrorCb** 过程中适当地操作，因此您不应希望 **pfnSetErrorCb** \_ 通过调用 **pfnSetErrorCb** ( S OK ) 等操作来撤消调用 pfnSetErrorCb ( E ) 的影响 \_ 。 事实上，运行时确定 S OK 与 \_ E FAIL 相同或严重 \_ 。 S \_ OK 返回代码的概念等效于用户模式显示驱动程序函数根本不会调用 **pfnSetErrorCb** 。
 
 如果 Direct3D 运行时确定错误情况非常重要，它将首先通过使用 Dr. Watson 记录错误来采取措施，即默认的事后 (实时) 调试器。 然后，运行时将失去设备的用途，从而模拟接收 D3DDDIERR \_ DEVICEREMOVED 错误代码的方案。 通过要求驱动程序调用 [**pfnSetErrorCb**](/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_seterror_cb) 回调函数，可能会有很大的几率，因为驱动程序的每个错误都将有一个与之关联的有用调用堆栈。 如果调用堆栈与错误关联，则会启用快速诊断和准确的 Dr. Watson 日志。
 

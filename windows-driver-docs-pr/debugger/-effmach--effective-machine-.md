@@ -1,10 +1,9 @@
 ---
 title: .effmach（有效计算机）
-description: .Effmach 命令显示或更改调试器使用的处理器模式。
-ms.assetid: bf4dfdc0-2f0b-416a-8bf2-0e7d81339905
+description: Effmach 命令显示或更改调试器使用的处理器模式。
 keywords:
-- 有效的计算机 (.effmach) 命令
-- .effmach （有效的机器） Windows 调试
+- 有效的计算机 (. effmach) 命令
+- effmach () Windows 调试的有效计算机
 ms.date: 01/24/2018
 topic_type:
 - apiref
@@ -13,27 +12,27 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 65bf2b32e2b783f49eb841f9068a1a58ff48236b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c8cb5a7d31664dbb2eb80147d52ce5f823770fb9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63334544"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96817897"
 ---
 # <a name="effmach-effective-machine"></a>.effmach（有效计算机）
 
 
-**.Effmach**命令显示或更改调试器使用的处理器模式。
+**Effmach** 命令显示或更改调试器使用的处理器模式。
 
 ```dbgcmd
 .effmach [MachineType]
 ```
 
-## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>参数
+## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>Parameters
 
 
-<span id="_______MachineType______"></span><span id="_______machinetype______"></span><span id="_______MACHINETYPE______"></span> *MachineType*   
-指定调试器使用此会话的处理器类型。 如果省略此参数时，调试器会显示当前的计算机类型。
+<span id="_______MachineType______"></span><span id="_______machinetype______"></span><span id="_______MACHINETYPE______"></span>*MachineType*   
+指定调试器用于此会话的处理器类型。 如果省略此参数，则调试器将显示当前计算机类型。
 
 您可以输入以下计算机类型之一。
 
@@ -49,11 +48,11 @@ ms.locfileid: "63334544"
 </tr>
 <tr class="even">
 <td align="left"><p><strong>.</strong></p></td>
-<td align="left"><p>使用目标计算机的本机处理器模式下的处理器模式。</p></td>
+<td align="left"><p>使用目标计算机的本机处理器模式的处理器模式。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>#</strong></p></td>
-<td align="left"><p>使用正在执行的代码处理器模式下进行的最新事件。</p></td>
+<td align="left"><p>对最新事件使用正在执行的代码的处理器模式。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>x86</strong></p></td>
@@ -69,7 +68,7 @@ ms.locfileid: "63334544"
 </tr>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>arm</strong></p></td>
+<td align="left"><p><strong>单臂</strong></p></td>
 <td align="left"><p>使用 ARM64 处理器模式。</p></td>
 </tr>
 </tr>
@@ -91,12 +90,12 @@ ms.locfileid: "63334544"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>模式</strong></p></td>
-<td align="left"><p>用户模式下，内核模式</p></td>
+<td align="left"><p><strong>交货</strong></p></td>
+<td align="left"><p>用户模式，内核模式</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>目标</strong></p></td>
-<td align="left"><p>实时、 崩溃转储</p></td>
+<td align="left"><p>实时，故障转储</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>平台</strong></p></td>
@@ -110,13 +109,13 @@ ms.locfileid: "63334544"
 <a name="remarks"></a>备注
 -------
 
-处理器模式下会影响许多调试器功能：
+处理器模式影响多种调试器功能：
 
--   哪些处理器用于堆栈跟踪。
+-   哪个处理器用于堆栈跟踪。
 
--   是否在过程使用 32 位或 64 位指针。
+-   进程是使用32位指针还是64位指针。
 
--   哪些处理器的注册组处于活动状态。
+-   哪个处理器的注册集处于活动状态。
 
  
 

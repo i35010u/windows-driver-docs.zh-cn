@@ -1,7 +1,6 @@
 ---
 title: 在设备管理器中隐藏设备
 description: 在设备管理器中隐藏设备
-ms.assetid: dd362ae1-ab14-44ee-982e-f972454c2623
 keywords:
 - 设备管理器 WDK，隐藏设备
 - 设备 WDK，隐藏设备管理器
@@ -10,12 +9,12 @@ keywords:
 - NoDisplayClass 值 WDK 设备安装
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7308789bfa98be9f59f4960e7cc67240dc6b6e85
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: edcf24be39f7f261801c242e507bbc4674bfd366
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89193237"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96817715"
 ---
 # <a name="hiding-devices-from-device-manager"></a>在设备管理器中隐藏设备
 
@@ -30,7 +29,7 @@ ms.locfileid: "89193237"
 
 驱动程序有两种方法可以将驱动程序标记为隐藏：
 
--   函数驱动程序或函数筛选器驱动程序可以通过响应 [**IRP \_ MN \_ 查询 \_ PNP \_ 设备 \_ 状态**](./irp-mn-query-pnp-device-state.md) IRP 来要求操作系统隐藏已成功启动的设备。 当 IRP 到达时，驱动程序必须将 PNP 设备设置为不会将 IoStatus 中的 \_ \_ \_ \_ UI 位显示在驱动程序的调度例程**中** **。**
+-   函数驱动程序或函数筛选器驱动程序可以通过响应 [**IRP \_ MN \_ 查询 \_ PNP \_ 设备 \_ 状态**](./irp-mn-query-pnp-device-state.md) IRP 来要求操作系统隐藏已成功启动的设备。 当 IRP 到达时，驱动程序必须将 PNP 设备设置为不会将 IoStatus 中的 \_ \_ \_ \_ UI 位显示在驱动程序的调度例程 **中** **。**
 
 -   在 Windows XP 和更高版本的 Windows 操作系统上，总线驱动程序或总线筛选器驱动程序可以通过响应 [**irp \_ MN \_ 查询 \_ 功能**](./irp-mn-query-capabilities.md) irp，隐藏任何设备、启动或其他设备。 IRP 到达时，驱动程序必须将 **DeviceCapabilities. NoDisplayInUI** 成员设置为驱动程序的调度例程中的 **TRUE** 。 在某些情况下，总线筛选器驱动程序可能必须在完成例程中设置此位。 当基础总线驱动程序的调度例程错误地清除了其他驱动程序设置的所有功能字段时，需要执行此额外步骤。
 
@@ -60,7 +59,7 @@ _HID *PNP0A03
     _STA 0x3 // Present, but broken and not shown 
 ```
 
-**注意**   "解码" 位 (0x2) 与通过 ADR 方法描述的设备没有任何关联 \_ 。 前面的代码示例也可以在未设置解码位的情况下运行。 BIOS 编写器必须只跟踪通过 HID 方法描述的设备的解码状态 \_ 。
+**注意**   "解码" 位 (0x2) 与通过 ADR 方法描述的设备没有任何关联 \_ 。 前面的代码示例也可以在未设置解码位的情况下运行。 BIOS 编写器必须只跟踪通过 HID 方法描述的设备的解码状态 \_ 。
 
  
 

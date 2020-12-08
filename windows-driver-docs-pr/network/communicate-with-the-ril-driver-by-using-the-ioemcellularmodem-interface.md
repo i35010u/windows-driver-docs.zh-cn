@@ -1,17 +1,16 @@
 ---
 title: 使用 IOemCellularModem 接口与 RIL 驱动程序通信
 description: 本主题提供有关如何使用 IOemCellularModem 接口与 RIL 驱动程序通信的信息。
-ms.assetid: 612a7f98-053f-4447-bb0e-c6f34969df5d
 keywords:
 - 使用 IOemCellularModem 接口网络驱动程序与 RIL 驱动程序通信
 ms.date: 11/07/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 04ac6759437a8ca58d4d08e36194a60e964e6043
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 0091baea3df5978f0174e99f0389424ae647f10c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89208719"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96817625"
 ---
 # <a name="communicate-with-the-ril-driver-by-using-the-ioemcellularmodem-interface"></a>使用 IOemCellularModem 接口与 RIL 驱动程序通信
 
@@ -24,11 +23,11 @@ ms.locfileid: "89208719"
 
 ## <a name="using-cellular-com-apis"></a>使用蜂窝 COM Api
 
-若要使用蜂窝 COM Api，请通过调用**CoCreateInstanceFromApp**获取指向[IOemCellular](/previous-versions/windows/hardware/cellular/dn946677(v=vs.85))实例的指针。 调用应用程序需要指向 IOemCellular 接口的指针，才能使用 [IOemCellularModem](/previous-versions/windows/hardware/cellular/dn946687(v=vs.85)) 接口。 
+若要使用蜂窝 COM Api，请通过调用 **CoCreateInstanceFromApp** 获取指向 [IOemCellular](/previous-versions/windows/hardware/cellular/dn946677(v=vs.85))实例的指针。 调用应用程序需要指向 IOemCellular 接口的指针，才能使用 [IOemCellularModem](/previous-versions/windows/hardware/cellular/dn946687(v=vs.85)) 接口。 
 
 可以使用 [IOemCellular：： RegisterForOemModemExistenceChanges](/previous-versions/windows/hardware/cellular/dn931023(v=vs.85)) 方法列出调制解调器。 调用方法后，将调用 [IOemCellularModemExistenceChange：： OnOemModemAdded](/previous-versions/windows/hardware/cellular/dn946689(v=vs.85)) 和 [IOemCellularModem](/previous-versions/windows/hardware/cellular/dn946687(v=vs.85)) 指针。
 
-此代码演示如何使用**CoCreateInstanceFromApp**检索[IOemCellular](/previous-versions/windows/hardware/cellular/dn946677(v=vs.85))指针。 CoCreateInstanceFromApp 可以返回一个或多个指向特定接口的指针。 所需的接口为 IOemCellular，由 query [0]. pIID 指定。 OemCellular 是对支持的 COM 类的引用;它确定激活类的工厂。 
+此代码演示如何使用 **CoCreateInstanceFromApp** 检索 [IOemCellular](/previous-versions/windows/hardware/cellular/dn946677(v=vs.85))指针。 CoCreateInstanceFromApp 可以返回一个或多个指向特定接口的指针。 所需的接口为 IOemCellular，由 query [0]. pIID 指定。 OemCellular 是对支持的 COM 类的引用;它确定激活类的工厂。 
 
 ```c++
     MULTI_QI query[1];
@@ -75,7 +74,7 @@ IFACEMETHODIMP CModems::OnOemModemAdded(IOemCellularModem *pModem)
 
 ## <a name="sending-opaque-data-to-ril"></a>将不透明数据发送到 RIL
 
-通过调用**OnOemModemAdded**接收到**IOemCellularModem**指针后，可以使用[IOemCellularModem：： SendModemOpaqueCommand](/previous-versions/windows/hardware/cellular/dn931017(v=vs.85)) 。 在幕后，cellcore 调用 **RIL_DevSpecific** 函数和传递的参数。 RIL 驱动程序处理此请求，并将响应发送回上层。 在传递响应后，将使用**SendModemOpaqueCommand**调用的结果调用[IModemOpaqueCommandCompletion：： OnModemOpaqueCommandCompletion](/previous-versions/windows/hardware/cellular/dn946648(v=vs.85))的回调。
+通过调用 **OnOemModemAdded** 接收到 **IOemCellularModem** 指针后，可以使用 [IOemCellularModem：： SendModemOpaqueCommand](/previous-versions/windows/hardware/cellular/dn931017(v=vs.85)) 。 在幕后，cellcore 调用 **RIL_DevSpecific** 函数和传递的参数。 RIL 驱动程序处理此请求，并将响应发送回上层。 在传递响应后，将使用 **SendModemOpaqueCommand** 调用的结果调用 [IModemOpaqueCommandCompletion：： OnModemOpaqueCommandCompletion](/previous-versions/windows/hardware/cellular/dn946648(v=vs.85))的回调。
 
 此代码显示了如何通过 [IOemCellularModem：： SendModemOpaqueCommand](/previous-versions/windows/hardware/cellular/dn931017(v=vs.85))发送不透明数据。
 
@@ -120,7 +119,7 @@ IFACEMETHODIMP CCellcoreComponent::CAgent::OnModemOpaqueCommandCompletion (
 
 ## <a name="receiving-a-notification-from-ril"></a>接收来自 RIL 的通知
 
-蜂窝接口提供了许多 RIL 通知，它们以 **RIL_NOTIFY**开头，如 **RIL_NOTIFY_SIGNALQUALITY**。 但 **IOemCellularModem** 不提供接收这些 RIL 通知的默认方法。 一种选择是将 [IOemCellularModem：： RegisterForOpaqueModemNotifications](/previous-versions/windows/hardware/cellular/dn931015(v=vs.85)) 用于这些 OEM RIL 通知。 为此，请首先定义你自己的 RIL 通知消息，该消息小于在 RilAPITypes 中定义的 **RIL_NOTIFY_OEM_MAX**。 只要 RIL 发送 OEM RIL 通知，就会在 IOemCellularModem：： RegisterForOpaqueModemNotifications 注册回调指针后调用 [IOpaqueModemNotifications：： OnOpaqueModemNotifications](/previous-versions/windows/hardware/cellular/dn931072(v=vs.85)) 。 
+蜂窝接口提供了许多 RIL 通知，它们以 **RIL_NOTIFY** 开头，如 **RIL_NOTIFY_SIGNALQUALITY**。 但 **IOemCellularModem** 不提供接收这些 RIL 通知的默认方法。 一种选择是将 [IOemCellularModem：： RegisterForOpaqueModemNotifications](/previous-versions/windows/hardware/cellular/dn931015(v=vs.85)) 用于这些 OEM RIL 通知。 为此，请首先定义你自己的 RIL 通知消息，该消息小于在 RilAPITypes 中定义的 **RIL_NOTIFY_OEM_MAX**。 只要 RIL 发送 OEM RIL 通知，就会在 IOemCellularModem：： RegisterForOpaqueModemNotifications 注册回调指针后调用 [IOpaqueModemNotifications：： OnOpaqueModemNotifications](/previous-versions/windows/hardware/cellular/dn931072(v=vs.85)) 。 
 
 此代码演示如何调用 [IOemCellularModem：： RegisterForOpaqueModemNotifications](/previous-versions/windows/hardware/cellular/dn931015(v=vs.85))。
 

@@ -1,19 +1,18 @@
 ---
 title: “关闭地址系列”概述
 description: “关闭地址系列”概述
-ms.assetid: 0533bc31-dd4c-42c4-8170-8201e32e1026
 keywords:
 - 地址系列 WDK 网络
 - AFs WDK 网络
 - 关闭地址系列
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: de4c8ac10f9eb3a651b9d819fff2fd567110ad53
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 63fd71c3c77342965b40190dd16d8e5db19d7b7a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89218119"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96817631"
 ---
 # <a name="closing-an-address-family-overview"></a>“关闭地址系列”概述
 

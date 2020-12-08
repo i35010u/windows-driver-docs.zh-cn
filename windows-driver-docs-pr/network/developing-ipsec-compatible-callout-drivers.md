@@ -1,18 +1,17 @@
 ---
 title: 开发 IPsec 兼容的标注驱动程序
 description: 开发 IPsec 兼容的标注驱动程序
-ms.assetid: 5e4fad4e-a790-4294-b3ac-a796f76265ad
 keywords:
 - IPsec WDK Windows 筛选平台，与 WFP 标注驱动程序的兼容性
 - Windows 筛选平台标注驱动程序 WDK，IPsec 兼容性
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ff1880b79299f1515e041a2c85c532ca77b2b7cf
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 228a8a90a8620b6dcc79fbf327b7d6bc44fbfd86
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91733235"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96818387"
 ---
 # <a name="developing-ipsec-compatible-callout-drivers"></a>开发 IPsec 兼容的标注驱动程序
 
@@ -29,7 +28,7 @@ ms.locfileid: "91733235"
 -   FWPS \_ 层 \_ 流 \_ V6
 
 <a href="" id="non-tcp-and-non-error-icmp-packet-filtering"></a>非 TCP 和非错误 ICMP 数据包筛选  
-数据报-数据层：
+Datagram-Data 层：
 
 -   FWPS \_ 层 \_ \_ 数据报数据 \_ V4
 
@@ -67,11 +66,11 @@ FWPS \_ 层 \_ 出站 \_ IPPACKET \_ V6 \_ 丢弃
 
 若要使使用传输层注册的标注驱动程序 (FWPS \_ 层 \_ *XXX* \_ 传输 \_ V4 或 \_ V6) 与 IPsec 兼容，请遵循以下准则：
 
-1.  在 ALE 授权接收/接受层上注册标注 (**FWPS \_ 层 \_ ale \_ 身份验证接收 \_ \_ accept \_ V4**或**FWPS \_ 层 \_ ale \_ 身份验证 \_ \_ \_ **接收 accept V6) 除传输层以外，还 (FWPS \_ 层 \_ *XXX* \_ 传输 \_ V4 或 \_ V6) 。
+1.  在 ALE 授权接收/接受层上注册标注 (**FWPS \_ 层 \_ ale \_ 身份验证接收 \_ \_ accept \_ V4** 或 **FWPS \_ 层 \_ ale \_ 身份验证 \_ \_ \_** 接收 accept V6) 除传输层以外，还 (FWPS \_ 层 \_ *XXX* \_ 传输 \_ V4 或 \_ V6) 。
 
-2.  若要防止内部 Windows IPsec 处理出现干扰，请将标注注册到权重低于 **FWPM \_ 子层 \_ 通用**的子子层。 使用 [**FwpmSubLayerEnum0**](/windows/win32/api/fwpmu/nf-fwpmu-fwpmsublayerenum0) 函数可查找子层的权重。 有关此功能的信息，请参阅 Microsoft Windows SDK 中的 [Windows 筛选平台](/windows/win32/fwp/windows-filtering-platform-start-page) 文档。
+2.  若要防止内部 Windows IPsec 处理出现干扰，请将标注注册到权重低于 **FWPM \_ 子层 \_ 通用** 的子子层。 使用 [**FwpmSubLayerEnum0**](/windows/win32/api/fwpmu/nf-fwpmu-fwpmsublayerenum0) 函数可查找子层的权重。 有关此功能的信息，请参阅 Microsoft Windows SDK 中的 [Windows 筛选平台](/windows/win32/fwp/windows-filtering-platform-start-page) 文档。
 
-3.  需要 ALE 分类的传入传输数据包必须在 ALE 授权接收/接受层上检查 (**FWPS \_ 层 \_ ale \_ 身份验证接收 \_ \_ accept \_ V4** 或 **FWPS \_ 层 \_ ale \_ 身份验证 \_ 接收 \_ accept \_ V6**) 。 必须从传入传输层允许这样的数据包。 从带有 Service Pack 1 的 Windows Vista (SP1) 和 Windows Server 2008 开始，使用 **FWPS \_ METADATA \_ 字段 \_ ALE \_ 分类 \_ 所需** 的元数据标志来确定传入数据包是否将指示 **FWPM \_ 层 \_ ale \_ 身份验证 \_ 接收 \_ accept \_ V4** 和 **FWPM \_ 层 \_ ale \_ 验证 \_ 接收 \_ 接受 \_ V6** 筛选层。 此元数据标志取代了 Windows Vista 中使用的 "已使用的 ** \_ \_ \_ \_ ALE \_ 分类** 条件" 标志。
+3.  需要 ALE 分类的传入传输数据包必须在 ALE 授权接收/接受层上检查 (**FWPS \_ 层 \_ ale \_ 身份验证接收 \_ \_ accept \_ V4** 或 **FWPS \_ 层 \_ ale \_ 身份验证 \_ 接收 \_ accept \_ V6**) 。 必须从传入传输层允许这样的数据包。 从带有 Service Pack 1 的 Windows Vista (SP1) 和 Windows Server 2008 开始，使用 **FWPS \_ METADATA \_ 字段 \_ ALE \_ 分类 \_ 所需** 的元数据标志来确定传入数据包是否将指示 **FWPM \_ 层 \_ ale \_ 身份验证 \_ 接收 \_ accept \_ V4** 和 **FWPM \_ 层 \_ ale \_ 验证 \_ 接收 \_ 接受 \_ V6** 筛选层。 此元数据标志取代了 Windows Vista 中使用的 "已使用的 **\_ \_ \_ \_ ALE \_ 分类** 条件" 标志。
 
 4.  若要防止内部 Windows IPsec 处理发生干扰，如果 IPsec 流量尚未 detunneled，则不要在传输层上拦截 IPsec 隧道模式的流量。 下面的代码示例演示如何绕过此类数据包。
     ```C++
@@ -93,7 +92,7 @@ FWPS \_ 层 \_ 出站 \_ IPPACKET \_ V6 \_ 丢弃
 
 5.  在传输层解密并验证受 IPsec 保护的数据包后，AH/ESP 标头将保留在 IP 标头中。 如果必须将此类数据包重新插入文本回 TCP/IP 堆栈，则必须重新生成 IP 标头以删除 AH/ESP 标头。 从 Windows Vista SP1 和 Windows Server 2008 开始，你可以通过克隆数据包并调用 [**FwpsConstructIpHeaderForTransportPacket0**](/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpsconstructipheaderfortransportpacket0) 函数来执行此操作，该函数将 *headerIncludeHeaderSize* 参数设置为克隆数据包的 IP 标头大小。
 
-6.  在 ALE 接收/接受层中，标注可以通过检查是否设置了 " **.Fwp \_ 条件 \_ 标志是否 \_ 为 \_ ipsec \_ 安全** 标志" 来检测受 ipsec 保护的流量。 在传输层上，标注可以通过调用[**FwpsGetPacketListSecurityInformation0**](/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpsgetpacketlistsecurityinformation0)函数并检查是否在*queryFlags*参数中设置了**FWPS \_ 数据包 \_ 列表 \_ INFORMATION0**标志来检测受 IPsec 保护的流量。
+6.  在 ALE 接收/接受层中，标注可以通过检查是否设置了 " **.Fwp \_ 条件 \_ 标志是否 \_ 为 \_ ipsec \_ 安全** 标志" 来检测受 ipsec 保护的流量。 在传输层上，标注可以通过调用 [**FwpsGetPacketListSecurityInformation0**](/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpsgetpacketlistsecurityinformation0)函数并检查是否在 *queryFlags* 参数中设置了 **FWPS \_ 数据包 \_ 列表 \_ INFORMATION0** 标志来检测受 IPsec 保护的流量。
 
 ### <a name="working-with-ipsec-esp-packets"></a>使用 IPsec ESP 数据包
 

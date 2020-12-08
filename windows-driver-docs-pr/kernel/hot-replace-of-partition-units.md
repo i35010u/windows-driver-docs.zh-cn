@@ -1,7 +1,6 @@
 ---
 title: 分区单元的热更换
 description: 分区单元的热更换
-ms.assetid: 6d50dc7d-6c3b-41e5-b6eb-aead9833dd1e
 keywords:
 - 动态硬件分区 WDK，热替换
 - 硬件分区 WDK 动态、热替换
@@ -9,12 +8,12 @@ keywords:
 - 热替换 WDK 动态硬件分区
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 08f6e6aa61712675aac3d0e9dddc7dc627152cad
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 803823ee3877d1c10bda51d294c702de4d368ad3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89193229"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96817701"
 ---
 # <a name="hot-replace-of-partition-units"></a>分区单元的热更换
 

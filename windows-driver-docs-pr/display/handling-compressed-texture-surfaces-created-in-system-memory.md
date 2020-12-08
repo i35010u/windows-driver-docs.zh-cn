@@ -1,7 +1,6 @@
 ---
 title: 处理在 SysMem 中创建的压缩纹理图面
 description: 处理在系统内存中创建的压缩纹理图面
-ms.assetid: 773962ce-f459-4dc5-8311-c43ae33cfb7c
 keywords:
 - 绘制压缩纹理 WDK DirectDraw，系统内存注意事项
 - DirectDraw 压缩纹理 WDK Windows 2000 显示，系统内存注意事项
@@ -17,12 +16,12 @@ keywords:
 ms.date: 12/06/2018
 ms.localizationpriority: medium
 ms.custom: seodec18
-ms.openlocfilehash: e87b0a44d9a129e030fbbd0105c1871be344411a
-ms.sourcegitcommit: f8619f20a0903dd64f8641a5266ecad6df5f1d57
+ms.openlocfilehash: 518530ae4a63e4173634f5c8fc72193ada892762
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91423856"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96819129"
 ---
 # <a name="handling-compressed-texture-surfaces-created-in-system-memory"></a>处理在系统内存中创建的压缩纹理图面
 

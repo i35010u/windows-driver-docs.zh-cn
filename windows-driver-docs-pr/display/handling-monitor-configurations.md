@@ -1,24 +1,23 @@
 ---
 title: 处理监视器配置
 description: 处理监视器配置
-ms.assetid: 648570eb-d01e-4034-9566-c5f9fa1990e5
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7cc1305e9f21962e2f5d05fb54c0b004a3746877
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 14b16bd0c5e2fe82e648544b03f95eb4ee391652
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63323798"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96819099"
 ---
 # <a name="handling-monitor-configurations"></a>处理监视器配置
 
 
-本部分提供如何 TMM 配置监视器的以下两个示例：
+本部分提供了以下两个示例，演示了 TMM 如何配置监视器：
 
-[处理两个监视器配置](handling-two-monitor-configurations.md)
+[处理双监视器配置](handling-two-monitor-configurations.md)
 
-[处理现有监视器配置](handling-existing-monitor-configurations.md)
+[处理现有的监视器配置](handling-existing-monitor-configurations.md)
 
  
 

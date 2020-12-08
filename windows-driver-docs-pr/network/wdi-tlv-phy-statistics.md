@@ -1,17 +1,16 @@
 ---
 title: WDI_TLV_PHY_STATISTICS
 description: WDI_TLV_PHY_STATISTICS 是包含 OID_WDI_GET_STATISTICS 的每 PHY 统计信息的 TLV。
-ms.assetid: 2F27FF4E-54AC-4518-AEB0-3518FBC8BE0F
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_PHY_STATISTICS 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: ff218e42a592c95f2ae37a82dae1dead42b22a3e
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 7db28dcbb548a65c41ac4fbc10ffc8d9a60d3573
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107374"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96818077"
 ---
 # <a name="wdi_tlv_phy_statistics"></a>WDI \_ TLV \_ PHY \_ 统计信息
 
@@ -39,7 +38,7 @@ Sum (所有包含的元素的大小) 。
 <thead>
 <tr class="header">
 <th>类型</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -142,7 +141,7 @@ Sum (所有包含的元素的大小) 。
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
-<td><p>Windows Server 2016</p></td>
+<td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
 <td><p>标头</p></td>

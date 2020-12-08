@@ -1,15 +1,14 @@
 ---
 title: 启用到 D3cold 的转换
 description: 所有版本的 Windows 都允许设备处于 D3cold 状态，而计算机 (进入系统低功耗状态，即 S1 到 S4) 。
-ms.assetid: C2C6166D-8269-4FCE-81A8-B350626052D4
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 11114cb05b8d0bd11e487431430757641031a4ef
-ms.sourcegitcommit: 4f08f5686c0bbc27d58930b993cbab1a98e3afb0
+ms.openlocfilehash: c6a126346cb6918379aaba63921ae9f8b4c788a5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "89443795"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96819453"
 ---
 # <a name="enabling-transitions-to-d3cold"></a>启用到 D3cold 的转换
 
@@ -33,7 +32,7 @@ ms.locfileid: "89443795"
 
 在 D3cold 中放置设备并不一定意味着已删除设备的所有电源源;这意味着，仅允许通过总线与设备进行通信的电源源丢失。 设备仍可以通过足够的功率来向处理器发出唤醒事件信号。 例如，以太网网络接口卡 (NIC) ，其主电源被删除可能会消耗以太网电缆的电源。
 
-由于 D3cold 是一个不能用于与设备进行通信的状态，因此驱动程序无法直接将其设备置于 D3cold 中。 相反，驱动程序首先调用 [**PoRequestPowerIrp**](/windows-hardware/drivers/ddi/wdm/nf-wdm-porequestpowerirp) 例程来请求一个 D3 power IRP ([**irp \_ MN \_ 设置 \_ **](./irp-mn-set-power.md) 具有 target state = **PowerDeviceD3**) 的 Power 请求，将设备从 D0 移到 D3hot。 输入 D3hot 后，设备可能会也可能不会从 D3hot 移动到 D3cold。 仅当删除总线时，设备才会进入 D3cold，如果父总线驱动程序关闭总线或系统固件关闭了硬件平台的某个部分，则会发生这种情况。
+由于 D3cold 是一个不能用于与设备进行通信的状态，因此驱动程序无法直接将其设备置于 D3cold 中。 相反，驱动程序首先调用 [**PoRequestPowerIrp**](/windows-hardware/drivers/ddi/wdm/nf-wdm-porequestpowerirp) 例程来请求一个 D3 power IRP ([**irp \_ MN \_ 设置 \_**](./irp-mn-set-power.md) 具有 target state = **PowerDeviceD3**) 的 Power 请求，将设备从 D0 移到 D3hot。 输入 D3hot 后，设备可能会也可能不会从 D3hot 移动到 D3cold。 仅当删除总线时，设备才会进入 D3cold，如果父总线驱动程序关闭总线或系统固件关闭了硬件平台的某个部分，则会发生这种情况。
 
  
 

@@ -1,7 +1,6 @@
 ---
 title: ruleinfo
 description: Ruleinfo 命令显示有关驱动程序验证程序规则的信息。
-ms.assetid: 025FAAFA-7A5C-462C-9CC2-AA55530CD371
 keywords:
 - ruleinfo Windows 调试
 ms.date: 05/23/2017
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 04c852ebeca9cf09f0303a60cb957c76d8137391
-ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
+ms.openlocfilehash: 234a6759ccb13ca7d3414aed4096ef8f2ba9676e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84534708"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96817579"
 ---
 # <a name="ruleinfo"></a>!ruleinfo
 
 
-**！ Ruleinfo**命令显示有关驱动程序验证程序规则的信息。
+**！ Ruleinfo** 命令显示有关驱动程序验证程序规则的信息。
 
 ```dbgcmd
 !ruleinfo RuleId [RuleState [SubState]]
@@ -32,24 +31,24 @@ ms.locfileid: "84534708"
 
 
 <span id="_______RuleId______"></span><span id="_______ruleid______"></span><span id="_______RULEID______"></span>*RuleId*   
-验证程序规则的 ID。 这是[**驱动程序 \_ 验证程序 \_ 检测到 \_ 违反**](bug-check-0xc4--driver-verifier-detected-violation.md)bug 检查的第一个参数。
+验证程序规则的 ID。 这是 [**驱动程序 \_ 验证程序 \_ 检测到 \_ 违反**](bug-check-0xc4--driver-verifier-detected-violation.md) bug 检查的第一个参数。
 
 <span id="_______RuleState______"></span><span id="_______rulestate______"></span><span id="_______RULESTATE______"></span>*RuleState*   
-有关冲突的其他状态信息。 这是**驱动程序 \_ 验证程序 \_ 检测到 \_ 违反**bug 检查的第三个参数。
+有关冲突的其他状态信息。 这是 **驱动程序 \_ 验证程序 \_ 检测到 \_ 违反** bug 检查的第三个参数。
 
-<span id="_______SubState______"></span><span id="_______substate______"></span><span id="_______SUBSTATE______"></span>*SubState*子情况   
-有关冲突的子状态信息。 这是**驱动程序 \_ 验证程序 \_ 检测到的 \_ 冲突**bug 检查的第四个参数。
+<span id="_______SubState______"></span><span id="_______substate______"></span><span id="_______SUBSTATE______"></span>*SubState* 子情况   
+有关冲突的子状态信息。 这是 **驱动程序 \_ 验证程序 \_ 检测到的 \_ 冲突** bug 检查的第四个参数。
 
 ### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
-ext .dll
+ext.dll
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 此命令仅适用于驱动程序验证程序扩展中的规则;也就是说，ID 大于或等于0x10000 的规则。
 
-以下示例显示了[**驱动程序 \_ 验证程序 \_ 检测到 \_ 违反**](bug-check-0xc4--driver-verifier-detected-violation.md)bug 检查的四个参数。
+以下示例显示了 [**驱动程序 \_ 验证程序 \_ 检测到 \_ 违反**](bug-check-0xc4--driver-verifier-detected-violation.md) bug 检查的四个参数。
 
 ```dbgcmd
 DRIVER_VERIFIER_DETECTED_VIOLATION (c4)
@@ -84,7 +83,7 @@ FAILURE_BUCKET_ID:  Xxxx
 ...
 ```
 
-在上面的输出中，规则 ID （0x91001）显示为 Arg1。 Arg3 和 Arg4 是规则状态和子状态信息的地址。 您可以将规则 ID、规则状态和子状态传递到 **！ ruleinfo** ，以获取规则的说明以及指向规则的详细文档的链接。
+在上面的输出中， (0x91001) 的规则 ID 显示为 Arg1。 Arg3 和 Arg4 是规则状态和子状态信息的地址。 您可以将规则 ID、规则状态和子状态传递到 **！ ruleinfo** ，以获取规则的说明以及指向规则的详细文档的链接。
 
 ```dbgcmd
 3: kd> !ruleinfo 0x91001 0xffffe000027b8370 0xffffe000027b83f8

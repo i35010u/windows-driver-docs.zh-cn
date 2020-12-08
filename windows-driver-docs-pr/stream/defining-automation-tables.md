@@ -1,18 +1,17 @@
 ---
 title: 定义自动化表
 description: 定义自动化表
-ms.assetid: 1c0dace6-b618-4705-bf5d-65457d14c072
 keywords:
 - BDA 微型驱动程序 WDK AVStream，自动化表
 - 自动化表 WDK AVStream
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7f9944d2f233d8c8e478a629399ed8d4e2d5cbf6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f2d686430eb9373817c1a9dbe70dc26d1bceee98
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63374089"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96817947"
 ---
 # <a name="defining-automation-tables"></a>定义自动化表
 
@@ -20,11 +19,11 @@ ms.locfileid: "63374089"
 
 
 
-用于筛选器、 pin 或节点的自动化表是什么描述的属性和方法支持的筛选器、 pin 或节点。 如果 BDA 微型驱动程序提供的属性或方法的处理程序已由 AVStream，BDA 微型驱动程序的实现取代 AVStream 的。
+筛选器、pin 或节点的自动化表描述了筛选器、pin 或节点支持的属性和方法。 如果 BDA 微型驱动程序提供已由 AVStream 实现的属性或方法处理程序，则 BDA 微型驱动程序的实现将取代 AVStream。
 
-BDA 微型驱动程序应定义的属性和方法集的数组，然后定义自动化表，这些设置数组以便微型驱动程序可以自动处理请求。 请参阅[确定 BDA 设备拓扑](determining-bda-device-topology.md)部分，了解如何微型驱动程序还定义的属性设置为本部分中所引用的示例。
+BDA 微型驱动程序应定义属性和方法集的数组，然后为这些集数组定义自动化表，以便微型驱动程序可以自动处理请求。 请参阅 [确定 BDA 设备拓扑](determining-bda-device-topology.md) 部分，了解微型驱动程序如何定义此部分所引用的属性集。
 
-下面的代码段显示了筛选器自动化表的示例，以及属性和方法集的数组：
+下面的代码片段演示了筛选器自动化表以及属性和方法集的数组的示例：
 
 ```cpp
 //
@@ -82,7 +81,7 @@ DEFINE_KSAUTOMATION_TABLE(FilterAutomation) {
 };
 ```
 
-下面的代码段显示了节点自动化表的示例和数组的属性集的：
+下面的代码片段显示了一个节点自动化表和一组属性集的示例：
 
 ```cpp
 //

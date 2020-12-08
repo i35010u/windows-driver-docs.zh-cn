@@ -1,7 +1,6 @@
 ---
 title: Bug 检查 0xFD DIRTY_NOWRITE_PAGES_CONGESTION
-description: DIRTY_NOWRITE_PAGES_CONGESTION bug 检查具有 0x000000FD 值。 这指示没有可用的空闲页继续基本系统操作。
-ms.assetid: b657fffe-8331-4b4f-9d29-fea8ee1e1682
+description: DIRTY_NOWRITE_PAGES_CONGESTION bug 检查的值为0x000000FD。 这表明没有可用的页面来继续基本系统操作。
 keywords:
 - Bug 检查 0xFD DIRTY_NOWRITE_PAGES_CONGESTION
 - DIRTY_NOWRITE_PAGES_CONGESTION
@@ -13,23 +12,23 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 6075b9ecb9cb949b3bd6d22f2ed9c995843ede08
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: c06db1ce40e3cde970157cabefdfcce832270415
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67518712"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96819245"
 ---
-# <a name="bug-check-0xfd-dirtynowritepagescongestion"></a>Bug 检查 0xFD：脏\_非写入\_页面\_拥塞
+# <a name="bug-check-0xfd-dirty_nowrite_pages_congestion"></a>Bug 检查0xFD：脏 \_ NOWRITE \_ PAGES \_ 拥塞
 
 
-DIRTY\_非写入\_页面\_拥塞 bug 检查的值为 0x000000FD。 这指示没有可用的空闲页继续基本系统操作。
+脏 \_ NOWRITE \_ PAGES \_ 拥塞 bug 检查的值为0x000000FD。 这表明没有可用的页面来继续基本系统操作。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题面向程序员。 如果您是在使用计算机时收到蓝屏错误代码的客户，请参阅[蓝屏错误疑难解答](https://www.windows.com/stopcode)。
 
 
-## <a name="dirtynowritepagescongestion-parameters"></a>脏\_非写入\_页面\_拥塞参数
+## <a name="dirty_nowrite_pages_congestion-parameters"></a>脏 \_ NOWRITE \_ PAGES \_ 拥塞参数
 
 
 <table>
@@ -46,19 +45,19 @@ DIRTY\_非写入\_页面\_拥塞 bug 检查的值为 0x000000FD。 这指示没�
 <tbody>
 <tr class="odd">
 <td align="left"><p>1</p></td>
-<td align="left"><p>脏页的总数</p></td>
+<td align="left"><p>脏页总数</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>2</p></td>
-<td align="left"><p>非可写的脏页的数量</p></td>
+<td align="left"><p>不可写入脏页的数目</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>3</p></td>
-<td align="left"><p>保留</p></td>
+<td align="left"><p>预留</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>4</p></td>
-<td align="left"><p>最最近修改过的写入错误状态</p></td>
+<td align="left"><p>最近修改的写入错误状态</p></td>
 </tr>
 </tbody>
 </table>
@@ -68,12 +67,12 @@ DIRTY\_非写入\_页面\_拥塞 bug 检查的值为 0x000000FD。 这指示没�
 <a name="cause"></a>原因
 -----
 
-由于拥有已修改非可写页组件无法写出这些页面进行内存管理标记为"不写入"相关的文件后，通常会出现此 bug 检查。 这指示驱动程序 bug。
+通常会发生此错误检查，因为在将相关文件标记为 "不写入" 内存管理后，拥有已修改的非可写页面的组件未能写出这些页面。 这表明驱动程序 bug。
 
-<a name="resolution"></a>分辨率
+<a name="resolution"></a>解决方法
 ----------
 
-有关详细信息有关的驱动程序导致了问题，使用[ **！ vm 3** ](-vm.md)扩展后, 跟[ **！ memusage 1** ](-memusage.md) 。
+有关哪个驱动程序导致了该问题的详细信息，请使用 [**！ vm 3**](-vm.md) 扩展，后跟 [**！ memusage 1**](-memusage.md) 。
 
  
 

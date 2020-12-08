@@ -1,17 +1,16 @@
 ---
 title: 调试初始命令
 description: 调试初始命令
-ms.assetid: 0af0b53d-455f-4cdb-b956-9d7e49601733
 keywords:
-- 调试初始命令 （全局标志）
+- " (全局标志调试初始命令) "
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: db307765b1432f3d435951c59b0f444c018a6e26
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4d24e61d98a88a3d7b4e6fa6ed78f39611795eec
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63351191"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96817883"
 ---
 # <a name="debug-initial-command"></a>调试初始命令
 
@@ -19,7 +18,7 @@ ms.locfileid: "63351191"
 ## <span id="ddk_debug_initial_command_dtools"></span><span id="DDK_DEBUG_INITIAL_COMMAND_DTOOLS"></span>
 
 
-**调试初始命令**标志调试客户端服务器运行时子系统 (CSRSS) 和 WinLogon 进程。
+**Debug 初始命令** 标志用于调试客户端服务器运行时子系统 (CSRSS) 和 WinLogon 进程。
 
 <table>
 <colgroup>
@@ -29,7 +28,7 @@ ms.locfileid: "63351191"
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>缩写</strong></p></td>
-<td align="left"><p>dic</p></td>
+<td align="left"><p>.dic</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>十六进制值</strong></p></td>
@@ -41,22 +40,22 @@ ms.locfileid: "63351191"
 </tr>
 <tr class="even">
 <td align="left"><p><strong>目标</strong></p></td>
-<td align="left"><p>整个系统的注册表项，内核标志</p></td>
+<td align="left"><p>系统范围内的注册表项，内核标志</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-### <a name="span-idcommentsspanspan-idcommentsspancomments"></a><span id="comments"></span><span id="COMMENTS"></span>注释
+### <a name="span-idcommentsspanspan-idcommentsspancomments"></a><span id="comments"></span><span id="COMMENTS"></span>提出
 
-NTSD 对进程进行调试 (使用命令**ntsd-d**)，但控件将重定向到内核调试程序。
+NTSD 使用命令 **ntsd**)  (调试进程，但会将控件重定向到内核调试器。
 
-NTSD 的详细信息，请参阅[调试使用 CDB 和 NTSD](debugging-using-cdb-and-ntsd.md)。
+有关 NTSD 的详细信息，请参阅 [使用 CDB 和 NTSD 进行调试](debugging-using-cdb-and-ntsd.md)。
 
-### <a name="span-idseealsospanspan-idseealsospansee-also"></a><span id="see_also"></span><span id="SEE_ALSO"></span>另请参阅
+### <a name="span-idsee_alsospanspan-idsee_alsospansee-also"></a><span id="see_also"></span><span id="SEE_ALSO"></span>另请参阅
 
-[启用调试的 Win32 子系统](enable-debugging-of-win32-subsystem.md)
+[启用 Win32 子系统调试](enable-debugging-of-win32-subsystem.md)
 
  
 

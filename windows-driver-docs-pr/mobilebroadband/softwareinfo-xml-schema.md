@@ -1,15 +1,14 @@
 ---
 title: SoftwareInfo XML 架构概述
 description: SoftwareInfo XML 架构概述
-ms.assetid: 6e2e2b5a-c04e-4dfd-adbd-158b391aea3e
 ms.date: 07/05/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: c846040b1196d95b3212ca295919ea169e7d5a06
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: d8129ca9508b3f3fac694c76127f43e9d67033b1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89403158"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96818887"
 ---
 # <a name="softwareinfo-xml-schema-overview"></a>SoftwareInfo XML 架构概述
 
@@ -19,7 +18,8 @@ ms.locfileid: "89403158"
 
 Softwareinfo.xml 文档中的数据是根据此部分中所述的 SoftwareInfo XML 架构格式化的。
 
-**注意**  该 XML 文档必须使用 UTF-8 编码进行保存。
+**注意**  
+该 XML 文档必须使用 UTF-8 编码进行保存。
 
  
 

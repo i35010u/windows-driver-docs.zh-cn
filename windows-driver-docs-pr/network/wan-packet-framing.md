@@ -1,7 +1,6 @@
 ---
 title: WAN 数据包分帧概述
 description: WAN 数据包分帧概述
-ms.assetid: 11a6fbf5-c7a9-474b-811e-c77a36e834f3
 keywords:
 - WAN 微型端口驱动程序 WDK 网络，数据包
 - CoNDIS WAN 驱动程序 WDK 网络，数据包
@@ -12,12 +11,12 @@ keywords:
 - Wan packet 组帧 WDK 网络，关于 WAN 数据包组帧
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1949975820e3b076f50ec26930bd4771e764c3b6
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 8302ffe0a00e6c866251f76435cc916d99126940
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89209623"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96818319"
 ---
 # <a name="wan-packet-framing-overview"></a>WAN 数据包分帧概述
 

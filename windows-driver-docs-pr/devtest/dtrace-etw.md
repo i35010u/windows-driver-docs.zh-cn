@@ -1,7 +1,6 @@
 ---
 title: DTrace ETW
 description: DTrace 使用 D 编程语言支持 Windows (ETW) 的事件跟踪。
-ms.assetid: abf23d76-423d-4d1e-afde-83739015bbf1
 keywords:
 - DTrace WDK
 - 软件跟踪 WDK，DTrace
@@ -13,12 +12,12 @@ keywords:
 - 跟踪消息格式化文件 WDK
 ms.date: 11/04/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 8c70b0f7f433ff9e9bfe779f5d57293825f1bf1f
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 4ca7766e59ccd7bb0aa031da27c6ff8042e0d413
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89384779"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96817799"
 ---
 # <a name="dtrace-etw"></a>DTrace ETW
 
@@ -328,7 +327,7 @@ m_nodeinfo {
 
 ## <a name="supported-etw-data-types"></a>支持的 ETW 数据类型
 
-| **ETW 类型**           | **D 语言数据类型** | **备注**                                                                                 |
+| **ETW 类型**           | **D 语言数据类型** | 备注                                                                                 |
 | ---------------------- | ------------------------ | ----------------------------------------------------------------------------------------- |
 | etw \_ 结构            | Integer                  | 此类型的负载值表示新结构将具有的成员的计数。  |
 | etw \_ 字符串            | string                   | 空值                                                                                       |

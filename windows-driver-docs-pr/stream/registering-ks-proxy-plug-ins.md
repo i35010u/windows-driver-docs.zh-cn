@@ -1,18 +1,17 @@
 ---
 title: 注册 KS 代理插件
 description: 注册 KS 代理插件
-ms.assetid: 1f8691cb-5371-4039-a081-7c422dcac5a8
 keywords:
 - 内核流式处理代理 WDK AVStream，注册插件
 - 注册内核流式处理代理插件 WDK AVStream
 ms.date: 06/18/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 4e418f766a2d071143f443e767ed3c623ec5f36f
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 084dfadf9933ebec259a540996eccc9561773c3d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89186337"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96818743"
 ---
 # <a name="registering-ks-proxy-plug-ins"></a>注册 KS 代理插件
 
@@ -22,9 +21,9 @@ ms.locfileid: "89186337"
 
 您可以重复使用属性集的 GUID 作为组件的 CLSID 和该组件支持的接口的 IID。
 
-**DllRegisterServer**的实现应执行以下操作：
+**DllRegisterServer** 的实现应执行以下操作：
 
-1. 调用值为**TRUE**的[AMovieDllRegisterServer2](/previous-versions//ms778973(v=vs.85))以注册筛选器。
+1. 调用值为 **TRUE** 的 [AMovieDllRegisterServer2](/previous-versions//ms778973(v=vs.85))以注册筛选器。
 
 1. 调用 [RegCreateKeyEx](/windows/win32/api/winreg/nf-winreg-regcreatekeyexa) 创建并接收 HKLM \\ 系统 \\ CurrentControlSet \\ Control \\ MediaInterfaces 项的句柄。
 
@@ -38,7 +37,7 @@ ms.locfileid: "89186337"
 
 1. 因为该密钥不是预定义的注册表项之一，所以调用 **RegCloseKey** 关闭该密钥的句柄。
 
-**DllUnregisterServer**的实现应执行以下操作：
+**DllUnregisterServer** 的实现应执行以下操作：
 
 1. 调用 **AMovieDllRegisterServer2** ，将值设置为 **FALSE** 以取消注册筛选器。
 

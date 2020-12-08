@@ -1,15 +1,14 @@
 ---
 title: 使用 Direct3D 版本 10 句柄
 description: 使用 Direct3D 版本 10 句柄
-ms.assetid: 98cde374-0267-44bc-b285-acf4a6d17ff4
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 27eed96e950ed91dbe14487659ace627a4a9ca9b
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 4e79a4f69704eb1f2b330b7b8a9eb6b1f8c9bad9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89067124"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96818557"
 ---
 # <a name="using-direct3d-version-10-handles"></a>使用 Direct3D 版本 10 句柄
 

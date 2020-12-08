@@ -1,28 +1,27 @@
 ---
 title: 软件跟踪的调试支持
 description: 软件跟踪的调试支持
-ms.assetid: cfa272ba-e117-4ba1-9e3a-5d380ac299c0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 68705aea7d76c27b8644f34896e911027562b1ef
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0d9e7f1eee739d32a46381da6dc6efc5c5fe7f65
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63344844"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96817835"
 ---
 # <a name="debugging-support-for-software-tracing"></a>软件跟踪的调试支持
 
 
-本部分包括以下主题：
+本节包括下列主题：
 
-[如何将跟踪消息发送到内核调试程序？](how-do-i-send-trace-messages-to-a-kernel-debugger-.md)
+[如何将跟踪消息发送到内核调试器？](how-do-i-send-trace-messages-to-a-kernel-debugger-.md)
 
-[如何将跟踪消息发送给用户模式下调试程序？](how-do-i-send-trace-messages-to-a-user-mode-debugger-.md)
+[如何将跟踪消息发送到用户模式调试器？](how-do-i-send-trace-messages-to-a-user-mode-debugger-.md)
 
-[如何调试跟踪故障？](how-do-i-debug-tracing-failures-.md)
+[如何调试跟踪错误？](how-do-i-debug-tracing-failures-.md)
 
-[如何启用调试而无需启动 ETW 跟踪会话？](how-do-i-enable-debugging-without-starting-an-etw-trace-session-.md)
+[如何在不启动 ETW 跟踪会话的情况下启用调试？](how-do-i-enable-debugging-without-starting-an-etw-trace-session-.md)
 
  
 

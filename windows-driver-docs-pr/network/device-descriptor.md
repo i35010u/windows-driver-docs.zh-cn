@@ -1,15 +1,14 @@
 ---
 title: 设备描述符
 description: 设备描述符
-ms.assetid: 5c533053-6a4e-4c28-a87d-562791298d5c
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3720bfadfd468f2e2a040f5dbfaabbf54b168d62
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b66695ecaeb0fca83397db2caaf9481e159ee74a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63364197"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96817589"
 ---
 # <a name="device-descriptor"></a>设备描述符
 
@@ -27,11 +26,11 @@ ms.locfileid: "63364197"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">偏移量</th>
+<th align="left">Offset</th>
 <th align="left">字段</th>
 <th align="left">大小</th>
-<th align="left">ReplTest1</th>
-<th align="left">Description</th>
+<th align="left">值</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -40,7 +39,7 @@ ms.locfileid: "63364197"
 <td align="left"><p>bLength</p></td>
 <td align="left"><p>1</p></td>
 <td align="left"><p>0x12</p></td>
-<td align="left"><p>此说明符，以字节为单位的大小</p></td>
+<td align="left"><p>此描述符的大小（以字节为单位）</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>1</p></td>
@@ -54,7 +53,7 @@ ms.locfileid: "63364197"
 <td align="left"><p>bcdUSB</p></td>
 <td align="left"><p>2</p></td>
 <td align="left"><p>0x0110</p></td>
-<td align="left"><p>1.1-USB 规范的当前修订版本</p></td>
+<td align="left"><p>1.1-当前版本的 USB 规范</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>4</p></td>
@@ -103,7 +102,7 @@ ms.locfileid: "63364197"
 <td align="left"><p>bcdDevice</p></td>
 <td align="left"><p>2</p></td>
 <td align="left"><p>0xXXXX</p></td>
-<td align="left"><p>设备版本代码</p></td>
+<td align="left"><p>设备发行代码</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>14</p></td>
@@ -117,14 +116,14 @@ ms.locfileid: "63364197"
 <td align="left"><p>iProduct</p></td>
 <td align="left"><p>1</p></td>
 <td align="left"><p>0x02</p></td>
-<td align="left"><p>产品字符串的索引</p></td>
+<td align="left"><p>产品字符串索引</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>16</p></td>
 <td align="left"><p>iSerialNumber</p></td>
 <td align="left"><p>1</p></td>
 <td align="left"><p>0x03</p></td>
-<td align="left"><p>设备序列号的字符串的索引</p></td>
+<td align="left"><p>设备序列号字符串的索引</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>17</p></td>

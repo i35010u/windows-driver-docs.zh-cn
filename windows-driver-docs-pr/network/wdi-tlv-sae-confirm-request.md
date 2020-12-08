@@ -1,24 +1,23 @@
 ---
 title: WDI_TLV_SAE_COMMIT_REQUEST
-description: WDI_TLV_SAE_CONFIRM_REQUEST 是一种 TLV，其中包含对 Equals （SAE）确认请求同时进行的身份验证的参数。
-ms.assetid: 9E46D8BA-D359-45B3-8074-FA54F4618E71
+description: WDI_TLV_SAE_CONFIRM_REQUEST 是一种 TLV，其中包含对等 (SAE) 确认请求的同时身份验证的参数。
 ms.date: 02/15/2019
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_SAE_CONFIRM_REQUEST 网络驱动程序
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 027ab43c85f4118fde80599b10f5fffa8601fd07
-ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
+ms.openlocfilehash: ccedc54537afe5a8e15a839a841cadbe21fa140e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85918191"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96817995"
 ---
 # <a name="wdi_tlv_sae_confirm_request"></a>WDI_TLV_SAE_COMMIT_REQUEST
 
-**WDI_TLV_SAE_CONFIRM_REQUEST**是一种 TLV，其中包含对 EQUALS （SAE）确认请求同时进行的身份验证的参数。 
+**WDI_TLV_SAE_CONFIRM_REQUEST** 是一种 TLV，其中包含对等 (SAE) 确认请求的同时身份验证的参数。 
 
-此 TLV 用于[OID_WDI_SET_SAE_AUTH_PARAMS](oid-wdi-set-sae-auth-params.md)的命令参数中。
+此 TLV 用于 [OID_WDI_SET_SAE_AUTH_PARAMS](oid-wdi-set-sae-auth-params.md)的命令参数中。
 
 ## <a name="tlv-type"></a>TLV 类型
 
@@ -26,7 +25,7 @@ ms.locfileid: "85918191"
 
 ## <a name="length"></a>长度
 
-所有包含的 TLVs 的大小的总和（以字节为单位）。
+Sum (包含所有 TLVs 的大小的) 字节。
 
 ## <a name="values"></a>值
 
@@ -37,4 +36,4 @@ ms.locfileid: "85918191"
 
 ## <a name="requirements"></a>要求
 
-**支持的最低客户端**： windows 10 版本 1903**支持的最低服务器**： Windows server 2016**标头**： Wditypes. hpp
+**支持的最低客户端**： windows 10 版本 1903 **支持的最低服务器**： Windows server 2016 **标头**： Wditypes. hpp

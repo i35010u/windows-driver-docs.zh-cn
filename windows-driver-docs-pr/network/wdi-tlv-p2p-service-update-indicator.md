@@ -1,22 +1,21 @@
 ---
 title: WDI_TLV_P2P_SERVICE_UPDATE_INDICATOR
-description: WDI_TLV_P2P_SERVICE_UPDATE_INDICATOR 是包含 Wi-Fi Direct 服务 TLV 更新指示器。
-ms.assetid: C90579C9-55DD-4E32-BEA3-EB156F4A422C
+description: WDI_TLV_P2P_SERVICE_UPDATE_INDICATOR 是包含 Wi-Fi 直接服务更新指示器的 TLV。
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_P2P_SERVICE_UPDATE_INDICATOR 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 92ef75f7cf9906580a275229b12f60be30f7113d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 49a613d4c7c13a39b33029d4b22dc2d9e6089af0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63375611"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96818121"
 ---
-# <a name="wditlvp2pserviceupdateindicator"></a>WDI\_TLV\_P2P\_SERVICE\_UPDATE\_INDICATOR
+# <a name="wdi_tlv_p2p_service_update_indicator"></a>WDI \_ TLV \_ P2P \_ 服务 \_ 更新 \_ 指示器
 
 
-WDI\_TLV\_P2P\_服务\_更新\_指标是包含 Wi-Fi Direct 的服务更新指示器 TLV。
+WDI \_ tlv \_ P2P \_ 服务 \_ 更新 \_ 指示器是包含 Wi-Fi 直接服务更新指示器的 tlv。
 
 ## <a name="tlv-type"></a>TLV 类型
 
@@ -26,14 +25,14 @@ WDI\_TLV\_P2P\_服务\_更新\_指标是包含 Wi-Fi Direct 的服务更新指�
 ## <a name="length"></a>长度
 
 
-所有包含的元素的大小的总和 （以字节为单位）。
+Sum (所有包含的元素的大小) 。
 
 ## <a name="values"></a>值
 
 
-| 在任务栏的搜索框中键入   | 描述                                                                                                                                 |
+| 类型   | 描述                                                                                                                                 |
 |--------|---------------------------------------------------------------------------------------------------------------------------------------------|
-| UINT16 | 要包括在 ANQP 响应中，如果该驱动程序支持对服务的信息发现 ANQP 请求的响应的服务更新指示器。 |
+| UINT16 | 如果驱动程序支持响应服务信息发现 ANQP 请求，则包含在 ANQP 响应中的服务更新指示器。 |
 
  
 
@@ -52,10 +51,10 @@ WDI\_TLV\_P2P\_服务\_更新\_指标是包含 Wi-Fi Direct 的服务更新指�
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
-<td><p>Windows Server 2016</p></td>
+<td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Wditypes.hpp</td>
 </tr>
 </tbody>

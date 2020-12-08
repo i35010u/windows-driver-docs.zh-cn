@@ -1,15 +1,14 @@
 ---
 title: 克隆数据包流量
 description: 克隆数据包流量
-ms.assetid: 6BAE348D-B5BA-4B74-8D9B-79B146427D8C
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f4e4b3e556a318ff6c0259391fe18b9079faa320
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 9f160165b07171624a3951f4c29d3cfd590ad163
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89218173"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96817651"
 ---
 # <a name="cloning-packet-traffic"></a>克隆数据包流量
 
@@ -56,15 +55,15 @@ ms.locfileid: "89218173"
 
     此 OOB 数据的格式取决于源可扩展交换机端口，数据包从该端口传入可扩展交换机。 如果源端口已连接到外部网络适配器，则非可扩展交换机 OOB 数据将采用接收格式。 对于其他端口，此 OOB 数据将为发送格式。
 
-    源端口信息存储在包的[**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)结构的 OOB 数据中[**NDIS \_ 交换机 \_ 转发 \_ 详细 \_ \_ \_ \_ **](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_switch_forwarding_detail_net_buffer_list_info)信息联合。 扩展通过使用 [**网络 \_ 缓冲区 \_ 列表 \_ 开关 \_ 转发 \_ 详细信息**](/windows-hardware/drivers/ddi/ndis/nf-ndis-net_buffer_list_switch_forwarding_detail) 宏获取数据。
+    源端口信息存储在包的 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)结构的 OOB 数据中 [**NDIS \_ 交换机 \_ 转发 \_ 详细 \_ \_ \_ \_**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_switch_forwarding_detail_net_buffer_list_info)信息联合。 扩展通过使用 [**网络 \_ 缓冲区 \_ 列表 \_ 开关 \_ 转发 \_ 详细信息**](/windows-hardware/drivers/ddi/ndis/nf-ndis-net_buffer_list_switch_forwarding_detail) 宏获取数据。
 
     **注意**  如果扩展克隆了数据包的 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list) 结构，则在添加或修改 oob 数据时，必须考虑不可扩展的 oob 数据。 此扩展可以调用 [*CopyNetBufferListInfo*](/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_copy_net_buffer_list_info) 将所有 OOB 数据从源数据包复制到克隆的数据包。 将数据复制到数据包时，此函数将维护 OOB 发送或接收格式。
 
 
 
--   当扩展克隆数据包时，克隆的数据包数据位于 Hyper-v 父分区的父操作系统中的 "本地" 或 " *受信任*的内存" 中。 子分区无法访问此内存。 因此，在该分区中运行的来宾操作系统不同步更新将其视为 "安全"。
+-   当扩展克隆数据包时，克隆的数据包数据位于 Hyper-v 父分区的父操作系统中的 "本地" 或 " *受信任* 的内存" 中。 子分区无法访问此内存。 因此，在该分区中运行的来宾操作系统不同步更新将其视为 "安全"。
 
-    克隆原始数据包后，扩展必须使用[**网络 \_ 缓冲区 \_ 列表 \_ 开关 \_ 转发 \_ 详细信息**](/windows-hardware/drivers/ddi/ndis/nf-ndis-net_buffer_list_switch_forwarding_detail)宏获取克隆的数据包中的[**NDIS \_ 交换机 \_ 转发 \_ 详细信息 \_ \_ \_ \_ **](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_switch_forwarding_detail_net_buffer_list_info)联合。 扩展必须将 **IsPacketDataSafe** 成员设置为 TRUE。 这指定所有数据包数据都位于受信任的内存中。
+    克隆原始数据包后，扩展必须使用 [**网络 \_ 缓冲区 \_ 列表 \_ 开关 \_ 转发 \_ 详细信息**](/windows-hardware/drivers/ddi/ndis/nf-ndis-net_buffer_list_switch_forwarding_detail)宏获取克隆的数据包中的 [**NDIS \_ 交换机 \_ 转发 \_ 详细信息 \_ \_ \_ \_**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_switch_forwarding_detail_net_buffer_list_info)联合。 扩展必须将 **IsPacketDataSafe** 成员设置为 TRUE。 这指定所有数据包数据都位于受信任的内存中。
 
 筛选和转发扩展必须遵循以下准则，将克隆的数据包注入入入口或传出数据路径：
 
@@ -84,7 +83,7 @@ ms.locfileid: "89218173"
 
 
 
--   如果扩展克隆了数据包的 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list_context) 结构，则在克隆的发送或接收请求完成之前，必须保留原始数据包的 **网络 \_ 缓冲区 \_ 列表** 结构的所有权。 扩展必须使用克隆数据包的**网络 \_ 缓冲区 \_ 列表**结构的**ParentNetBufferList**成员链接到原始数据包的**网络 \_ 缓冲区 \_ 列表**结构。
+-   如果扩展克隆了数据包的 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list_context) 结构，则在克隆的发送或接收请求完成之前，必须保留原始数据包的 **网络 \_ 缓冲区 \_ 列表** 结构的所有权。 扩展必须使用克隆数据包的 **网络 \_ 缓冲区 \_ 列表** 结构的 **ParentNetBufferList** 成员链接到原始数据包的 **网络 \_ 缓冲区 \_ 列表** 结构。
 
     **注意**  在 NDIS 6.30 (Windows Server 2012) 中，扩展可以使用 **ParentNetBufferList** 成员链接到原始数据包，但这不是必需的。 在 NDIS 6.40 (Windows Server 2012 R2) 及更高版本中，需要使用 **ParentNetBufferList** 成员链接到原始数据包。
 
@@ -100,7 +99,7 @@ ms.locfileid: "89218173"
 
 例如，假设有多个目标端口的数据包是在可扩展交换机出口数据路径中获得的。 如果一个目标端口需要特殊处理（如数据封装），则转发或筛选扩展会按照以下步骤处理此操作：
 
-1.  将数据包传递到需要特殊处理的端口。 此扩展通过将目标端口的[**NDIS \_ 交换机 \_ 端口 \_ 目标**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_switch_port_destination)结构的**IsExcluded**成员设置为1的值来实现此目的。 有关此过程的详细信息，请参阅 [排除数据包传递到可扩展交换机目标端口](excluding-packet-delivery-to-extensible-switch-destination-ports.md)。
+1.  将数据包传递到需要特殊处理的端口。 此扩展通过将目标端口的 [**NDIS \_ 交换机 \_ 端口 \_ 目标**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_switch_port_destination)结构的 **IsExcluded** 成员设置为1的值来实现此目的。 有关此过程的详细信息，请参阅 [排除数据包传递到可扩展交换机目标端口](excluding-packet-delivery-to-extensible-switch-destination-ports.md)。
 
 2.  克隆原始数据包，并执行所需的数据包数据处理。
 

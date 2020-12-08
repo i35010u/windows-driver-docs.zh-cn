@@ -1,9 +1,8 @@
 ---
 title: .echotime（显示当前时间）
-description: .Echotime 命令显示当前时间。
-ms.assetid: 08da8914-0882-4525-8e15-e23176484915
+description: Echotime 命令显示当前时间。
 keywords:
-- .echotime （显示当前时间） Windows 调试
+- echotime (显示当前时间) Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: bd7e11674bcd05c23559dac068660e1b9124df96
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b900ea179f3f17ec39b467ef5aa3cb0bce168b46
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63334535"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96817909"
 ---
 # <a name="echotime-show-current-time"></a>.echotime（显示当前时间）
 
 
-**.Echotime**命令显示当前时间。
+**Echotime** 命令显示当前时间。
 
 ```dbgcmd
 .echotime 
@@ -40,12 +39,12 @@ ms.locfileid: "63334535"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>模式</strong></p></td>
-<td align="left"><p>用户模式下，内核模式</p></td>
+<td align="left"><p><strong>交货</strong></p></td>
+<td align="left"><p>用户模式，内核模式</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>目标</strong></p></td>
-<td align="left"><p>实时、 崩溃转储</p></td>
+<td align="left"><p>实时，故障转储</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>平台</strong></p></td>
@@ -59,7 +58,7 @@ ms.locfileid: "63334535"
 <a name="remarks"></a>备注
 -------
 
-**.Echotime**命令的计算机上运行调试器的显示的时间。
+**Echotime** 命令显示运行调试器的计算机的时间。
 
  
 

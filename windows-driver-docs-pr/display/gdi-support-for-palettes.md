@@ -1,7 +1,6 @@
 ---
 title: 调色板的 GDI 支持
 description: 调色板的 GDI 支持
-ms.assetid: 8c6ebf1e-6c83-45d9-bf83-f0684d28fc32
 keywords:
 - DrvEnablePDEV
 - GDI WDK Windows 2000 显示，颜色
@@ -13,12 +12,12 @@ keywords:
 - 颜色索引 WDK GDI
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: db844df6b0bb3cf25a4056056dd2eea675c3b9a4
-ms.sourcegitcommit: abe7fe9f3fbee8d12641433eeab623a4148ffed3
+ms.openlocfilehash: 37168bfe108ead2e46656b81a371e5831c3b7a3c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92185234"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96819147"
 ---
 # <a name="gdi-support-for-palettes"></a>调色板的 GDI 支持
 
@@ -32,14 +31,14 @@ GDI 可以完成与调色板管理有关的大部分工作。 当 GDI 调用 [**
 
 可以使用下表中列出的两种不同格式之一为 GDI 定义调色板。
 
-| 调色板格式 | 说明 |
+| 调色板格式 | 描述 |
 | -------------- | ----------- |
 | 已编制索引        | 颜色索引是 RGB 值数组的索引。 数组可以很小，例如16色索引或大，其中包含4096颜色索引或更多。 |
 | 位域     | 颜色索引中的位域在每种颜色的 R、G 和 B 的数量方面指定颜色。 例如，5位可用于每个，并为每种颜色提供一个介于0到31之间的值。 转换为 RGB 时，5位值会向上扩展，以涵盖每个组件的范围为0到255。  (通常由位域定义的 RGB 表示形式本身。 )  |
 
 GDI 通常会反向使用调色板映射。 也就是说，应用程序为绘图和 GDI 指定 RGB 颜色必须找到导致设备显示该颜色的颜色索引。 正如下表中所示，GDI 提供了两个主要的调色板服务函数用于创建和删除调色板，还提供了一些与 [**PALOBJ**](/windows/win32/api/winddi/ns-winddi-palobj) 和 [**XLATEOBJ**](/windows/win32/api/winddi/ns-winddi-xlateobj) 相关的服务功能，用于在两个调色板之间转换颜色索引。
 
-| 函数 | 说明 |
+| 函数 | 描述 |
 | -------- | ----------- |
 | [**EngCreatePalette**](/windows/win32/api/winddi/nf-winddi-engcreatepalette) | 创建调色板。 驱动程序通过在 [**lnk-devinfo**](/windows/win32/api/winddi/ns-winddi-devinfo) 结构中返回调色板的句柄，将调色板与设备相关联。 |
 | [**EngDeletePalette**](/windows/win32/api/winddi/nf-winddi-engdeletepalette) | 删除给定的调色板。 |

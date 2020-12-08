@@ -1,7 +1,6 @@
 ---
 title: DIF_ADDPROPERTYPAGE_BASIC
 description: DIF_ADDPROPERTYPAGE_BASIC
-ms.assetid: e6c2c6c6-10e6-45a9-8b50-294bca18c18b
 keywords:
 - DIF_ADDPROPERTYPAGE_BASIC 设备和驱动程序安装
 topic_type:
@@ -12,12 +11,12 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 45b67e238ba31c2ddafaebcbe1cf552113ee25d4
-ms.sourcegitcommit: dff3834724bd5204c4a47204540fe8125dd37b20
+ms.openlocfilehash: fb37070b3871ce4a6dcc4a8ef1a3b8e51b1028fd
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70749995"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96817763"
 ---
 # <a name="dif_addpropertypage_basic"></a>DIF_ADDPROPERTYPAGE_BASIC
 

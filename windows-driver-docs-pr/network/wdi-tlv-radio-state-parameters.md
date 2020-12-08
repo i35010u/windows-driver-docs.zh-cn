@@ -1,17 +1,16 @@
 ---
 title: WDI_TLV_RADIO_STATE_PARAMETERS
 description: WDI_TLV_RADIO_STATE_PARAMETERS 是包含 OID_WDI_TASK_SET_RADIO_STATE 的无线电状态参数的 TLV。
-ms.assetid: D977DF8A-146C-4921-AE7C-5FBEC7FBA4C8
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_RADIO_STATE_PARAMETERS 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: c0363353408e191f3b7a0b467e5c447d6bf177c9
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 13e96d9f88843d2387a80825720a67b2cdb6c750
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89214252"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96818037"
 ---
 # <a name="wdi_tlv_radio_state_parameters"></a>WDI \_ TLV \_ 无线电 \_ 状态 \_ 参数
 
@@ -23,7 +22,7 @@ WDI \_ tlv \_ 无线电 \_ 状态 \_ 参数是一个 TLV，其中包含 [OID \_ 
 
 0xA0
 
-## <a name="length"></a>Length
+## <a name="length"></a>长度
 
 
 UINT8 的大小 (以字节为单位) 。
@@ -39,7 +38,7 @@ UINT8 的大小 (以字节为单位) 。
 <thead>
 <tr class="header">
 <th>类型</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -68,7 +67,7 @@ UINT8 的大小 (以字节为单位) 。
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
-<td><p>Windows Server 2016</p></td>
+<td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
 <td><p>标头</p></td>

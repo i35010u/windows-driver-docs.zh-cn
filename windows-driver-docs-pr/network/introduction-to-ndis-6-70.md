@@ -1,15 +1,14 @@
 ---
 title: NDIS 6.70 简介
 description: 本部分介绍了 NDIS 6.70，并介绍了 NDIS 6.60 中的更改。 NDIS 6.70 包含在 Windows 10 版本1703中。
-ms.assetid: D846EE68-2C84-40E0-91DE-2034F75D576F
 ms.date: 06/01/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 97d75f2f2c8f382d880a186a0aab3be54eca52ac
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 6746e372eba7a82bda021664e3fe0cacb7b42063
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89206417"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96818373"
 ---
 # <a name="introduction-to-ndis-670"></a>NDIS 6.70 简介
 

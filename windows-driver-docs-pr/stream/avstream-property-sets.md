@@ -1,15 +1,14 @@
 ---
 title: AVStream 属性集
 description: AVStream 属性集
-ms.assetid: 23c020e8-b778-4784-9dc0-21920557e1c1
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 52ad19b5cbfaebbc593e7aecc31d8420bb3b7175
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e3667ba99f205eb6e2653acdd4ffaf7923be87da
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63384748"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96817973"
 ---
 # <a name="avstream-property-sets"></a>AVStream 属性集
 
@@ -19,31 +18,31 @@ ms.locfileid: "63384748"
 
 本部分介绍以下 AVStream 属性集：
 
-[KSPROPSETID\_时钟](kspropsetid-clock.md)
+[KSPROPSETID \_ 时钟](kspropsetid-clock.md)
 
-[KSPROPSETID\_连接](kspropsetid-connection.md)
+[KSPROPSETID \_ 连接](kspropsetid-connection.md)
 
-[KSPROPSETID\_General](kspropsetid-general.md)
+[KSPROPSETID \_ 常规](kspropsetid-general.md)
 
-[KSPROPSETID\_GM](kspropsetid-gm.md)
+[KSPROPSETID \_ GM](kspropsetid-gm.md)
 
-[KSPROPSETID\_MediaSeeking](kspropsetid-mediaseeking.md)
+[KSPROPSETID \_ MediaSeeking](kspropsetid-mediaseeking.md)
 
-[KSPROPSETID\_Pin](kspropsetid-pin.md)
+[KSPROPSETID \_ Pin](kspropsetid-pin.md)
 
-[KSPROPSETID\_质量](kspropsetid-quality.md)
+[KSPROPSETID \_ 质量](kspropsetid-quality.md)
 
-[KSPROPSETID\_Stream](kspropsetid-stream.md)
+[KSPROPSETID \_ 流](kspropsetid-stream.md)
 
-[KSPROPSETID\_StreamAllocator](kspropsetid-streamallocator.md)
+[KSPROPSETID \_ StreamAllocator](kspropsetid-streamallocator.md)
 
-[KSPROPSETID\_StreamInterface](kspropsetid-streaminterface.md)
+[KSPROPSETID \_ StreamInterface](kspropsetid-streaminterface.md)
 
-[KSPROPSETID\_拓扑](kspropsetid-topology.md)
+[KSPROPSETID \_ 拓扑](kspropsetid-topology.md)
 
-[KSPROPSETID\_VramCapture](kspropsetid-vramcapture.md)
+[KSPROPSETID \_ VramCapture](kspropsetid-vramcapture.md)
 
-可以特定于设备类型介绍如何编写该类型的驱动程序上的文档中的属性集。
+关于如何编写该类型的驱动程序的文档中介绍了特定于设备类型的属性集。
 
  
 

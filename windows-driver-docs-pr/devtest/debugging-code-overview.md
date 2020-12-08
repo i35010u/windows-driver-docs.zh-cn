@@ -1,19 +1,18 @@
 ---
 title: 调试代码概述
 description: 调试代码概述
-ms.assetid: 2c76e569-61cd-44b0-b8e5-032ab2c48fdb
 keywords:
 - 调试驱动程序 WDK，调试代码
 - 调试代码 WDK
 - 调试代码 WDK，关于调试代码
 ms.date: 07/20/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: f866194ba98dd08b40cde834a1b21fa00f62b9c4
-ms.sourcegitcommit: 3ec971f54122b77408433f7f1e59c467099fb4de
+ms.openlocfilehash: 19bd08b8f6afd5669798473827cdacc02468cb35
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86873834"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96817841"
 ---
 # <a name="debugging-code-overview"></a>调试代码概述
 

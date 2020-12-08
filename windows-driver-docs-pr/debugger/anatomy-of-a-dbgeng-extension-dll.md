@@ -1,17 +1,16 @@
 ---
 title: DbgEng 扩展 DLL 剖析
 description: DbgEng 扩展 DLL 剖析
-ms.assetid: 5131115b-b9a0-479b-9391-7ab384633d92
 keywords:
 - DbgEng 扩展，DLL 解析
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 655e8848bbd9ad1a6269145552a455f008e37700
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 65f618df9c132025c4f3bfbb0a5bcd126159ceae
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89212601"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96819329"
 ---
 # <a name="anatomy-of-a-dbgeng-extension-dll"></a>DbgEng 扩展 DLL 剖析
 
@@ -49,7 +48,7 @@ DbgEng 扩展 DLL 必须导出 [*DebugExtensionInitialize*](/windows-hardware/dr
 
 加载扩展 DLL 时，引擎将按以下顺序调用回调函数：
 
-1.  调用**DebugExtensionInitialize**可初始化扩展 DLL。
+1.  调用 **DebugExtensionInitialize** 可初始化扩展 DLL。
 
 2.  如果已导出，则如果引擎具有活动会话，则会调用 **DebugExtensionNotify** ，如果该会话已挂起并且可访问，则调用。
 

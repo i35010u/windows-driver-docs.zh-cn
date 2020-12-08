@@ -1,15 +1,14 @@
 ---
 title: PROPSETID \_ VIDCAP \_ VIDEOPROCAMP
 description: PROPSETID \_ VIDCAP \_ VIDEOPROCAMP
-ms.assetid: ea1d9c96-b1a5-4849-b607-4c508a526512
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d02f55c7e404b9b678fac821c902b755c7611ebd
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 8af75c70b527d86eaa76f25205c8853b1962d74a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89189937"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96818755"
 ---
 # <a name="propsetid_vidcap_videoprocamp"></a>PROPSETID \_ VIDCAP \_ VIDEOPROCAMP
 
@@ -19,7 +18,7 @@ ms.locfileid: "89189937"
 
 PROPSETID \_ VIDCAP \_ VIDEOPROCAMP 属性集控制可调整模拟或数字信号的图像颜色属性的设备。
 
-\_Ksmedia 中的 KSPROPERTY VIDCAP \_ VIDEOPROCAMP *ksmedia.h*枚举指定此集的属性。
+\_Ksmedia 中的 KSPROPERTY VIDCAP \_ VIDEOPROCAMP *ksmedia.h* 枚举指定此集的属性。
 
 对此属性集的支持是可选的，只应由允许调整亮度、对比度、色相和其他图像质量设置的设备来实现。
 
@@ -59,7 +58,7 @@ PROPSETID VIDEOPROCAMP 属性集中的每个属性都 \_ 包括一个范围和�
 
 例如，亮度的总体理论范围定义为-100 到 100 PROTOKOL 单元。 PROTOKOL 是视频级别的 NTSC 定义度量值，其中0对应于消隐或全黑级别，100表示纯白色。 如果 VideoProcAmp 能够转移纯黑色输入信号 (可能会通过完全覆盖相机镜头而生成) 并使其显示为纯白色，则其范围将为0到 100 PROTOKOL。
 
-大多数 VideoProcAmps 实际上提供有限范围的亮度控制。 测量范围的一种方法是覆盖相机镜头并确定调整范围内的输出信号，然后将其规范化为 PROTOKOL 单元。 计算该范围后，可以通过获取最大值和最小值并除以调整步骤数 ** (max + min) /n 调整步骤**来派生步进值。
+大多数 VideoProcAmps 实际上提供有限范围的亮度控制。 测量范围的一种方法是覆盖相机镜头并确定调整范围内的输出信号，然后将其规范化为 PROTOKOL 单元。 计算该范围后，可以通过获取最大值和最小值并除以调整步骤数 **(max + min) /n 调整步骤** 来派生步进值。
 
 请注意，在属性集中使用的值乘以100以提高粒度。
 

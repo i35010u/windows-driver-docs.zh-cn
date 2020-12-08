@@ -1,17 +1,16 @@
 ---
 title: 生成 EngExtCpp 扩展
 description: 生成 EngExtCpp 扩展
-ms.assetid: 63d73c4e-03b8-4bbe-9c2e-96cda3ad544c
 keywords:
 - EngExtCpp 扩展，生成
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d85cda770a77f6231de5a5d0c8bf080d3bec769e
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 5a553013b6712a34f4342a528af739f622bf6191
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89206115"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96817569"
 ---
 # <a name="building-engextcpp-extensions"></a>生成 EngExtCpp 扩展
 
@@ -35,13 +34,13 @@ EngExtCpp 扩展库的构建方式与 DbgEng 扩展库的构建方式几乎相�
 
 -   **KnownStructOutputEx** --使引擎可以调用 [*ExtKnownStructMethod*](/previous-versions/windows/hardware/previsioning-framework/ff543989(v=vs.85)) 方法来设置已知结构的输出格式。
 
--   **DebugExtensionNotify** --使引擎可以调用 [**OnSessionActive**](/previous-versions/windows/hardware/previsioning-framework/ff552312(v=vs.85))、 **OnSessionInactive**、 **OnSessionAccessible**和 **OnSessionInaccessible** 方法，以通知扩展库调试会话的状态更改。
+-   **DebugExtensionNotify** --使引擎可以调用 [**OnSessionActive**](/previous-versions/windows/hardware/previsioning-framework/ff552312(v=vs.85))、 **OnSessionInactive**、 **OnSessionAccessible** 和 **OnSessionInaccessible** 方法，以通知扩展库调试会话的状态更改。
 
 -   **帮助** --使 EngExtCpp 扩展框架可以自动提供 **！帮助** 扩展。
 
 即使不需要提供的功能，也可以导出这些函数。 此外，如果未导出这些功能，则它们提供的功能将丢失。
 
-要使调试器引擎能够将 DLL 识别为有效的 DbgEng 扩展 DLL，必须导出**DebugExtensionInitialize** 。
+要使调试器引擎能够将 DLL 识别为有效的 DbgEng 扩展 DLL，必须导出 **DebugExtensionInitialize** 。
 
  
 

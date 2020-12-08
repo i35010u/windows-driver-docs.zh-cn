@@ -1,21 +1,20 @@
 ---
 title: OID_GEN_RECEIVE_BUFFER_SPACE
-description: 为查询，OID_GEN_RECEIVE_BUFFER_SPACE OID 为缓冲接收数据是可用的 NIC 上指定内存的量。
-ms.assetid: 6eec18fa-22cd-4f65-acf4-0dd438dea2ff
+description: 作为查询，OID_GEN_RECEIVE_BUFFER_SPACE OID 指定可用于缓冲接收数据的 NIC 上的内存量。
 ms.date: 08/08/2017
-keywords: -从 Windows Vista 开始 OID_GEN_RECEIVE_BUFFER_SPACE 网络驱动程序
+keywords: -从 Windows Vista 开始 OID_GEN_RECEIVE_BUFFER_SPACE 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 2ea0f96e6949e58a17333e6cf0f6e742d6533acb
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b822b1d2e52af3223c2cf71899871787cdf3b1c8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391031"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96818841"
 ---
-# <a name="oidgenreceivebufferspace"></a>OID\_GEN\_RECEIVE\_BUFFER\_SPACE
+# <a name="oid_gen_receive_buffer_space"></a>OID \_ 生成 \_ 接收 \_ 缓冲区 \_ 空间
 
 
-为查询，OID\_GEN\_接收\_缓冲区\_空间 OID 为缓冲接收数据是可用的 NIC 上指定的内存量。
+作为查询，OID 生成 \_ \_ 接收 \_ 缓冲区 \_ 空间 oid 指定可用于缓冲接收数据的 NIC 上的内存量。
 
 **版本信息**
 
@@ -37,7 +36,7 @@ ms.locfileid: "63391031"
 <a name="remarks"></a>备注
 -------
 
-协议驱动程序可以使用此 OID 作为指南用于广告宣传其接收窗口后它在建立与远程节点的会话。
+在使用远程节点建立会话之后，协议驱动程序可以使用此 OID 作为接收窗口的播发。
 
 <a name="requirements"></a>要求
 ------------
@@ -49,8 +48,8 @@ ms.locfileid: "63391031"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Ntddndis.h （包括 Ndis.h）</td>
+<td><p>标头</p></td>
+<td>Ntddndis (包含 Ndis .h) </td>
 </tr>
 </tbody>
 </table>

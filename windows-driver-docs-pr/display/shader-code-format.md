@@ -1,15 +1,14 @@
 ---
 title: 着色器代码格式
 description: 着色器代码格式
-ms.assetid: 62377d19-8e45-4d0c-b974-0c0417d1a948
 ms.date: 01/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 24d35371d99149fd84c1987c5d4dcb177306a2f8
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: bbbe4bc0849131d0d8bcb7654c05b7f2971d4f50
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89063810"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96817781"
 ---
 # <a name="shader-code-format"></a>着色器代码格式
 

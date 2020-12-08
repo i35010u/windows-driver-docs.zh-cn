@@ -1,16 +1,15 @@
 ---
 title: OID_GEN_RCV_OK
 description: 作为查询，OID_GEN_RCV_OK OID 指定 NIC 接收的不出错的帧数，并指示绑定的协议。
-ms.assetid: 737ac1a5-9f7a-422b-9ccf-42a3176639bc
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_GEN_RCV_OK 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: cea0896dea5918272dbb662bae79a6f25ef6b699
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 3a7a932015260bf800b83cd0ef4ceace18801e38
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89206745"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96818849"
 ---
 # <a name="oid_gen_rcv_ok"></a>OID \_ 生成 \_ RCV \_ 正常
 
@@ -57,7 +56,7 @@ OID \_ GEN \_ RCV \_ OK 指定接收的没有错误的帧数。 但是， [OID �
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [OID \_ 生成 \_ 统计信息](oid-gen-statistics.md)

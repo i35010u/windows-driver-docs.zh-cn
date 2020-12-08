@@ -1,20 +1,19 @@
 ---
 title: 处理内存段
 description: 处理内存段
-ms.assetid: 5f3ae7cf-f3e7-4b41-880c-22660e261b18
 keywords:
 - GPU 地址空间 WDK 显示
-- 段 WDK 显示
+- 显示 WDK 显示的段
 - 内存段 WDK 显示
 - 地址空间 WDK 显示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 756dbd59090aec203e5e4d0851c0b93783058ef8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9602187e0ff7443f2d1c88bf4c8ea6dced168940
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63323714"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96819103"
 ---
 # <a name="handling-memory-segments"></a>处理内存段
 
@@ -22,17 +21,17 @@ ms.locfileid: "63323714"
 ## <span id="ddk_handling_memory_segments_gg"></span><span id="DDK_HANDLING_MEMORY_SEGMENTS_GG"></span>
 
 
-以下主题介绍内存段，并描述如何在中使用显示器驱动程序模型为 Windows Vista:
+以下主题介绍内存段，并说明如何在 Windows Vista 的显示驱动程序模型中使用它们：
 
-[使用内存段描述的 GPU 地址空间](using-memory-segments-to-describe-the-gpu-address-space.md)
+[使用内存段描述 GPU 地址空间](using-memory-segments-to-describe-the-gpu-address-space.md)
 
 [配置内存段类型](configuring-memory-segment-types.md)
 
-[将内存空间段划分为银行](dividing-a-memory-space-segment-into-banks.md)
+[将内存空间段分割成内存库](dividing-a-memory-space-segment-into-banks.md)
 
-[虚拟地址映射到一个内存段](mapping-virtual-addresses-to-a-memory-segment.md)
+[将虚拟地址映射到内存段](mapping-virtual-addresses-to-a-memory-segment.md)
 
-[DMA 缓冲区的指定段](specifying-segments-for-dma-buffers.md)
+[指定 DMA 缓冲区的段](specifying-segments-for-dma-buffers.md)
 
 [创建分配时指定段](specifying-segments-when-creating-allocations.md)
 

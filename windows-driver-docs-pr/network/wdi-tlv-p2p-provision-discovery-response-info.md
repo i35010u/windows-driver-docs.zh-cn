@@ -1,22 +1,21 @@
 ---
 title: WDI_TLV_P2P_PROVISION_DISCOVERY_RESPONSE_INFO
-description: WDI_TLV_P2P_PROVISION_DISCOVERY_RESPONSE_INFO 是 TLV 包含 Wi-Fi Direct 预配发现响应信息。
-ms.assetid: EB7C4A5C-27D8-4A84-BC91-0DED51FB74C2
+description: WDI_TLV_P2P_PROVISION_DISCOVERY_RESPONSE_INFO 是包含 Wi-Fi 直接预配发现响应信息的 TLV。
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_P2P_PROVISION_DISCOVERY_RESPONSE_INFO 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: b050269fe829f12a5db03f6576015983316ea334
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c783103b6b09e28430a17fc000d8cc27d93f260c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63362811"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96818195"
 ---
-# <a name="wditlvp2pprovisiondiscoveryresponseinfo"></a>WDI\_TLV\_P2P\_预配\_发现\_响应\_信息
+# <a name="wdi_tlv_p2p_provision_discovery_response_info"></a>WDI \_ TLV \_ P2P \_ 预配 \_ 发现 \_ 响应 \_ 信息
 
 
-WDI\_TLV\_P2P\_预配\_发现\_响应\_信息是包含 Wi-Fi Direct 配置发现响应信息 TLV。
+WDI \_ tlv \_ P2P \_ 预配 \_ 发现 \_ 响应信息 \_ 是一个 Tlv，其中包含 Wi-Fi 直接预配发现响应信息。
 
 ## <a name="tlv-type"></a>TLV 类型
 
@@ -26,18 +25,18 @@ WDI\_TLV\_P2P\_预配\_发现\_响应\_信息是包含 Wi-Fi Direct 配置发现
 ## <a name="length"></a>长度
 
 
-所有的大小 （以字节为单位） 总和包含 TLVs。
+Sum (包含所有 TLVs 的大小的) 字节。
 
 ## <a name="values"></a>值
 
 
-| 在任务栏的搜索框中键入                                                                                                                     | 允许多个 TLV 实例 | 可选 | 描述                                                                                                                                                                                                                             |
+| 类型                                                                                                                     | 允许多个 TLV 实例 | 可选 | 说明                                                                                                                                                                                                                             |
 |--------------------------------------------------------------------------------------------------------------------------|--------------------------------|----------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [**WDI\_TLV\_P2P\_预配\_发现\_响应\_参数**](wdi-tlv-p2p-provision-discovery-response-parameters.md) |                                |          | 预配发现响应参数。                                                                                                                                                                                            |
-| [**WDI\_TLV\_P2P\_PROVISION\_SERVICE\_ATTRIBUTES**](wdi-tlv-p2p-provision-service-attributes.md)                        |                                | X        | 预配服务属性中。                                                                                                                                                                                                       |
-| [**WDI\_TLV\_P2P\_GROUP\_ID**](wdi-tlv-p2p-group-id.md)                                                                 |                                | X        | 如果支持 Wi-Fi Direct 服务组的 ID。                                                                                                                                                                                      |
-| [**WDI\_TLV\_P2P\_PERSISTENT\_GROUP\_ID**](wdi-tlv-p2p-persistent-group-id.md)                                          |                                | X        | 要用于连接的永久组组 IP。 此字段是有效的永久组标志中[ **WDI\_TLV\_P2P\_预配\_服务\_属性**](wdi-tlv-p2p-provision-service-attributes.md)设置为 1。 |
-| [**WDI\_TLV\_P2P\_SERVICE\_SESSION\_INFO**](wdi-tlv-p2p-service-session-info.md)                                        |                                | X        | 服务会话的信息。                                                                                                                                                                                                        |
+| [**WDI \_ TLV \_ P2P \_ 预配 \_ 发现 \_ 响应 \_ 参数**](wdi-tlv-p2p-provision-discovery-response-parameters.md) |                                |          | 预配发现响应参数。                                                                                                                                                                                            |
+| [**WDI \_ TLV \_ P2P \_ 预配 \_ 服务 \_ 属性**](wdi-tlv-p2p-provision-service-attributes.md)                        |                                | X        | 设置服务属性。                                                                                                                                                                                                       |
+| [**WDI \_ TLV \_ P2P \_ 组 \_ ID**](wdi-tlv-p2p-group-id.md)                                                                 |                                | X        | 如果支持 Wi-Fi Direct 服务，则为组 ID。                                                                                                                                                                                      |
+| [**WDI \_ TLV \_ P2P \_ 永久性 \_ 组 \_ ID**](wdi-tlv-p2p-persistent-group-id.md)                                          |                                | X        | 用于连接的永久组的 IP 组。 如果 [**WDI \_ TLV \_ P2P \_ 预配 \_ 服务 \_ 属性**](wdi-tlv-p2p-provision-service-attributes.md) 中的永久组标志设置为1，则此字段有效。 |
+| [**WDI \_ TLV \_ P2P \_ 服务 \_ 会话 \_ 信息**](wdi-tlv-p2p-service-session-info.md)                                        |                                | X        | 服务会话信息。                                                                                                                                                                                                        |
 
  
 
@@ -56,10 +55,10 @@ WDI\_TLV\_P2P\_预配\_发现\_响应\_信息是包含 Wi-Fi Direct 配置发现
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
-<td><p>Windows Server 2016</p></td>
+<td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Wditypes.hpp</td>
 </tr>
 </tbody>

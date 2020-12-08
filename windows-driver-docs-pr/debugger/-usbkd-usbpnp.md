@@ -1,7 +1,6 @@
 ---
 title: usbkd.usbpnp
 description: Usbkd. usbpnp 命令显示有关 USB 集线器的状态上下文信息。
-ms.assetid: 2FF7F6A5-E9E5-4E4F-8323-3328ED00BCB9
 keywords:
 - usbkd usbpnp Windows 调试
 ms.date: 05/23/2017
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 5c626b886882de85b9f8236f739835da73756c7f
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: cfcda9486e5203714b18abd1dcb16922bbfcbad9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89217935"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96819383"
 ---
 # <a name="usbkdusbpnp"></a>!usbkd.usbpnp
 
 
-**！ Usbkd. usbpnp**命令显示有关 USB 集线器的状态上下文信息。
+**！ Usbkd. usbpnp** 命令显示有关 USB 集线器的状态上下文信息。
 
 ```dbgcmd
 !usbkd.usbpnp DeviceExtension

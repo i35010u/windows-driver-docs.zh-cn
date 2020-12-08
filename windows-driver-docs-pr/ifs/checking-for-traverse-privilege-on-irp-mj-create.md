@@ -1,7 +1,6 @@
 ---
 title: 检查 IRP_MJ_CREATE 上的遍历特权
 description: 检查 IRP_MJ_CREATE 上的遍历特权
-ms.assetid: 9ba743d6-8e78-4f9a-9cb8-cb98f734c290
 keywords:
 - IRP_MJ_CREATE
 - 遍历特权 WDK 文件系统
@@ -12,12 +11,12 @@ keywords:
 - SeChangeNotifyPrivilege
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 749715617d9f2a75ed04f72e6c095ed8873f8304
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 64eff4756dba661e401403c04330fd0e6b113827
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89065344"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96818451"
 ---
 # <a name="checking-for-traverse-privilege-on-irp_mj_create"></a>检查 IRP \_ MJ CREATE 的遍历特权 \_
 

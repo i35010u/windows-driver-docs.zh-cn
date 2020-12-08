@@ -1,22 +1,21 @@
 ---
 title: 调试 Bug 检查 0xC4 DRIVER_VERIFIER_DETECTED_VIOLATION
 description: 如果驱动程序验证程序检测到冲突，则会生成 bug 检查来停止计算机。
-ms.assetid: 4B957C57-9095-4C81-9EBC-C92C620C5824
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 45043442951ef1f1278a17e90acdccfb5ba183a9
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: cca91f9dff31e5b1dd07f92b69025703a0de8464
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89382371"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96817847"
 ---
 # <a name="debugging-bug-check-0xc4-driver_verifier_detected_violation"></a>调试 Bug 检查0xC4：驱动程序 \_ 验证程序 \_ 检测到 \_ 冲突
 
 
 如果 [驱动程序验证程序](driver-verifier.md) 检测到冲突，则会生成 bug 检查来停止计算机。 这是为了提供用于调试问题的最大信息。 Bug 检查中的一个更常见的 bug 检查会生成 [**Bug 检查0xC4：驱动程序 \_ 验证程序 \_ 检测到 \_ 冲突**](../debugger/bug-check-0xc4--driver-verifier-detected-violation.md)。 本部分介绍用于调试这些冲突的一些示例策略。
 
-当 [驱动程序验证](driver-verifier.md) 器发出 [**Bug 检查0XC4：驱动程序 \_ 验证程序 \_ 检测到 \_ 冲突**](../debugger/bug-check-0xc4--driver-verifier-detected-violation.md)时，它将使用参数1值 (或子代码) 来指定冲突的特定原因。 **Bug 检查0xC4：驱动程序 \_\_检测到 \_ 的验证器冲突**检测超过200违规。
+当 [驱动程序验证](driver-verifier.md) 器发出 [**Bug 检查0XC4：驱动程序 \_ 验证程序 \_ 检测到 \_ 冲突**](../debugger/bug-check-0xc4--driver-verifier-detected-violation.md)时，它将使用参数1值 (或子代码) 来指定冲突的特定原因。 **Bug 检查0xC4：驱动程序 \_\_检测到 \_ 的验证器冲突** 检测超过200违规。
 
 ## <a name="span-idin_this_sectionspanin-this-section"></a><span id="in_this_section"></span>本部分中的内容
 

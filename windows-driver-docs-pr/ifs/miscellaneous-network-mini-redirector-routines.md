@@ -1,19 +1,18 @@
 ---
 title: 杂项网络微型重定向程序例程
 description: 杂项网络微型重定向程序例程
-ms.assetid: bad5847c-8ac5-4e63-a0a5-3bbf13424928
 keywords:
 - 小型重定向程序 WDK，其他例程
 - 连接 Id WDK 网络重定向器
 - 缓冲状态 WDK 网络重定向器
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b50e565fe7325397caa4e4b034e11cbb866a04c9
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: d982adb81adc1dc7931c7242fb19427292f15b60
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106496"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96819051"
 ---
 # <a name="miscellaneous-network-mini-redirector-routines"></a>杂项网络微型重定向程序例程
 
@@ -32,7 +31,7 @@ ms.locfileid: "90106496"
 <thead>
 <tr class="header">
 <th align="left">例程所返回的值</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>

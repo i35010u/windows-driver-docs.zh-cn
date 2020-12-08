@@ -1,7 +1,6 @@
 ---
 title: Windows 显示驱动程序模型 (WDDM) 体系结构
 description: Windows 显示驱动程序模型 (WDDM) 体系结构
-ms.assetid: 1ae66fd3-8497-4098-9899-c2363671c2b0
 keywords:
 - 显示驱动程序模型 WDK Windows Vista，体系结构
 - Windows Vista 显示器驱动程序模型 WDK、体系结构
@@ -9,12 +8,12 @@ keywords:
 - 用户模式显示驱动程序 WDK Windows Vista，体系结构
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 546e53fcb23843d76e407afa4408b9f18d5bdfe2
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 340898eb9f8e0ea3fa58fee200c6c62f32800ef4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89066294"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96818529"
 ---
 # <a name="windows-display-driver-model-wddm-architecture"></a>Windows 显示驱动程序模型 (WDDM) 体系结构
 

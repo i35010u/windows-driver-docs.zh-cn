@@ -1,7 +1,6 @@
 ---
 title: ppmstate
 description: Ppmstate 命令
-ms.assetid: 45181F34-6753-4C5D-B573-A46B7E64870B
 keywords:
 - ppmstate Windows 调试
 ms.date: 05/23/2017
@@ -12,32 +11,32 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 7eabc965ae6e93f11980dbedbb39d77c3072c67c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 141ebdaf66b31efc561b1c3eadec179db40b7d67
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63335753"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96819409"
 ---
 # <a name="ppmstate"></a>!ppmstate
 
-**！ Ppmstate**命令显示电源状态信息。
+**！ Ppmstate** 命令显示电源状态信息。
 
 ```dbgcmd
 !ppmstate
 ```
 
-## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>参数
+## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>Parameters
 
 无
 
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 Kdexts.dll 
 
 
-**注意：** 此命令不支持在所有版本的 Windows，如 Windows 10，版本 1703年。
+**注意：** 所有版本的 Windows （如 Windows 10，版本1703）均不支持此命令。
  
 
 

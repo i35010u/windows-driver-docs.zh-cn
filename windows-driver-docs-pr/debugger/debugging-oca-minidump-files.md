@@ -1,15 +1,14 @@
 ---
 title: 调试 OCA 小型转储文件
 description: 联机崩溃分析 (OCA) 是适用于 Windows 错误报告 (WER) 信息的报告机构。 贵公司可以使用 OCA 崩溃转储来分析客户问题。
-ms.assetid: 56F4202D-6A5F-4177-BBFD-70DA717FF24A
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f495725448e1631bf794d9b6635384f97e080014
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 04ef2d360b0a445937ae5a189025b3f099cfb72e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89213469"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96817517"
 ---
 # <a name="debugging-oca-minidump-files"></a>调试 OCA 小型转储文件
 

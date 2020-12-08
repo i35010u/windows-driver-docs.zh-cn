@@ -1,7 +1,6 @@
 ---
 title: usbkd.usbhcdext
 description: Usbkd. usbhcdext 命令显示 USB 主机控制器的设备扩展或 USB 根集线器的信息。
-ms.assetid: 83811F9F-5899-4EC8-83D7-39EE884C0A01
 keywords:
 - usbkd usbhcdext Windows 调试
 ms.date: 05/23/2017
@@ -12,12 +11,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: e406d1159a80f30a0d4caaa0159f4167ceff39fb
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 0f392a69e662b6d53fa79590200f26b5d7714577
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89216038"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96818707"
 ---
 # <a name="usbkdusbhcdext"></a>!usbkd.usbhcdext
 
@@ -56,7 +55,7 @@ EHCI MINIPORT(s) dt usbport!_USBPORT_MINIPORT_DRIVER ffffe00001f48bd0
  ...
 ```
 
-在上面的输出中，FDO 的设备扩展的地址显示为 [DML](debugger-markup-language-commands.md) 命令 **！ ehci \_ info ffffe00001ca11a0**的参数。
+在上面的输出中，FDO 的设备扩展的地址显示为 [DML](debugger-markup-language-commands.md) 命令 **！ ehci \_ info ffffe00001ca11a0** 的参数。
 
 现在，将设备扩展的地址传递给 [**！ usbhcdext**](-usbkd-usbhcdext.md) 命令。
 
@@ -102,7 +101,7 @@ EHCI MINIPORT(s) dt usbport!_USBPORT_MINIPORT_DRIVER ffffe00001f48bd0
  ...
 ```
 
-在上面的输出中，可以看到根集线器的 FDO 地址，该地址显示为命令 **！ devstack ffffe00002320050**的参数。 使用 [**！ devstack**](-devstack.md) 命令查找 pdo 的地址和 pdo 设备扩展。
+在上面的输出中，可以看到根集线器的 FDO 地址，该地址显示为命令 **！ devstack ffffe00002320050** 的参数。 使用 [**！ devstack**](-devstack.md) 命令查找 pdo 的地址和 pdo 设备扩展。
 
 ```dbgcmd
 0: kd> !kdexts.devstack ffffe00002320050

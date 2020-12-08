@@ -1,7 +1,6 @@
 ---
 title: 质量管理
 description: 质量管理
-ms.assetid: 359e6e12-903f-4037-8f35-b090ce41f770
 keywords:
 - 质量管理 WDK 内核流式处理
 - KSPROPERTY_STREAM_QUALITY
@@ -12,12 +11,12 @@ keywords:
 - KS WDK，质量管理
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d70757621730b3f53ebc0cd854ab3894fc7295f7
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 4da977d407261632f1c8662242919daf495d7270
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89188000"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96818745"
 ---
 # <a name="quality-management"></a>质量管理
 

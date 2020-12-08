@@ -1,44 +1,43 @@
 ---
 title: 调试优化的代码和内联函数
-description: 对于 Windows 8，调试程序和 Windows 编译器得到了增强，以便你可以调试优化的代码并调试内联函数。
-ms.assetid: C7BE6B8E-9CF2-471C-A4F9-931C71CCC0FE
+description: 对于 Windows 8，调试器和 Windows 编译器已经过增强，因此可以调试优化的代码和调试内联函数。
 keywords:
 - 调试优化的代码
 - 调试内联函数
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: eca6217b597f3e3419377c903b48fc7e0c6d9b84
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 98ac17fe531908e46e2e80ffd3fc44292a205377
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63350595"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96817490"
 ---
 # <a name="debugging-optimized-code-and-inline-functions"></a>调试优化的代码和内联函数
 
 
-对于 Windows 8，调试程序和 Windows 编译器得到了增强，以便你可以调试优化的代码并调试内联函数。 调试器将显示参数和局部变量，而不管它们存储在寄存器或堆栈上。 调试器还显示调用堆栈中的内联函数。 对于内联函数，则调试器会显示本地变量，但不是参数。
+对于 Windows 8，调试器和 Windows 编译器已经过增强，因此可以调试优化的代码和调试内联函数。 调试器将显示参数和局部变量，而不管它们是存储在寄存器中还是存储在堆栈上。 调试器还会在调用堆栈中显示内联函数。 对于内联函数，调试器将显示局部变量而不是参数。
 
-当代码获取经过优化时，它进行转换，以更快地运行，并使用较少的内存。 有时函数将删除死代码删除、 代码合并或放置内联的函数的结果。 此外可以删除本地变量和参数。 很多代码优化中删除不需要或不使用; 的本地变量其他优化删除归纳变量在循环中。 公共子表达式消除合并在一起的局部变量。
+当代码得到优化时，它将转换为运行速度更快，使用的内存更少。 有时会由于删除死代码、合并代码或内联放置函数而删除函数。 还可以删除局部变量和参数。 许多代码优化删除了不需要或使用的局部变量;其他优化将在循环中删除感应变量。 常见的子表达式排除将局部变量合并在一起。
 
-零售版本的 Windows 进行了优化。 因此如果运行 Windows 的零售版本，是特别有用，调试程序，旨在很好地配合优化的代码。 若要使调试优化代码的有效，两个主要功能是必需的：1） 准确显示本地变量和 2） 显示的调用堆栈上的内联函数。
+优化了 Windows 的零售版本。 因此，如果您运行的是 Windows 的零售版本，使调试器非常适合与优化代码一起使用非常有用。 为了使优化代码的调试生效，需要两个主要功能： 1) 精确显示本地变量，2) 在调用堆栈上显示内联函数。
 
-## <a name="span-idaccuratedisplayoflocalvariablesandparametersspanspan-idaccuratedisplayoflocalvariablesandparametersspanspan-idaccuratedisplayoflocalvariablesandparametersspanaccurate-display-of-local-variables-and-parameters"></a><span id="Accurate_display_of_local_variables_and_parameters"></span><span id="accurate_display_of_local_variables_and_parameters"></span><span id="ACCURATE_DISPLAY_OF_LOCAL_VARIABLES_AND_PARAMETERS"></span>本地变量和参数的准确显示
+## <a name="span-idaccurate_display_of_local_variables_and_parametersspanspan-idaccurate_display_of_local_variables_and_parametersspanspan-idaccurate_display_of_local_variables_and_parametersspanaccurate-display-of-local-variables-and-parameters"></a><span id="Accurate_display_of_local_variables_and_parameters"></span><span id="accurate_display_of_local_variables_and_parameters"></span><span id="ACCURATE_DISPLAY_OF_LOCAL_VARIABLES_AND_PARAMETERS"></span>精确显示局部变量和参数
 
 
-若要简化的本地变量和参数，编译器准确显示将本地变量和参数的有关的位置信息记录在符号 (PDB) 文件。 这些位置记录跟踪变量的存储位置和这些位置是有效的特定代码范围。 这些记录不仅可以帮助跟踪的变量，但还变量的移动的位置 （在寄存器或堆栈槽中）。 例如，参数可能首先在 RCX 寄存器但是移到堆栈槽以释放 RCX，然后移动到在循环中，很大程度使用时的寄存器 R8，然后移到不同的堆栈槽跳出循环的代码时。 Windows 调试器使用 PDB 文件中的大量位置记录，并使用当前指令指针来选择为本地变量和参数的适当位置记录。
+为了便于精确显示局部变量和参数，编译器会在 (PDB) 文件中记录有关局部变量和参数位置的信息。 这些位置记录跟踪变量的存储位置和这些位置有效的特定代码范围。 这些记录不仅有助于跟踪寄存器或堆栈槽中 (的位置) 变量，还有助于移动变量。 例如，参数可能首先位于 register RCX 中，但移动到堆栈槽以释放 RCX，然后在循环中频繁使用该参数时将其移动到注册 R8，然后在代码超出循环时移到不同的堆栈槽。 Windows 调试器使用 PDB 文件中的丰富位置记录，并使用当前指令指针为本地变量和参数选择适当的位置记录。
 
-此屏幕截图： Visual Studio 中的局部变量窗口显示中优化的 64 位应用程序的参数和函数的局部变量。 参数和局部变量，我们看到，该函数不是以内联方式。
+Visual Studio 中的 "局部变量" 窗口的此屏幕截图显示优化的64位应用程序中某个函数的参数和局部变量。 函数不是内联函数，因此，我们会看到参数和局部变量。
 
-![局部变量窗口的屏幕截图](images/optimizedcode01.png)
+!["局部变量" 窗口的屏幕截图](images/optimizedcode01.png)
 
-可以使用[ **dv-v** ](dv--display-local-variables-.md)命令来查看参数和本地变量的位置。
+可以使用 [**dv-v**](dv--display-local-variables-.md) 命令查看参数和局部变量的位置。
 
-![屏幕截图，显示的参数和本地变量的位置](images/optimizedcode02.png)
+![显示参数和局部变量位置的屏幕截图](images/optimizedcode02.png)
 
-请注意，局部变量窗口显示的参数正确即使它们存储在寄存器中。
+请注意，"局部变量" 窗口会正确显示参数，即使它们存储在寄存器中也是如此。
 
-除了使用基元类型跟踪变量，位置记录跟踪数据的本地结构和类的成员。 下面的调试器输出会显示本地结构。
+除了跟踪具有基元类型的变量外，location 记录还记录本地结构和类的数据成员。 以下调试器输出显示本地结构。
 
 ```dbgcmd
 0:000> dt My1
@@ -58,18 +57,18 @@ Local var @ 0xefa60 Type _IntSum
    +0x00c sum4             : 0n0
 ```
 
-以下是有关上述调试器输出某些观测值。
+下面是有关上述调试器输出的一些观察值。
 
--   本地结构**My1**说明了编译器可以分配给寄存器和非连续堆栈槽本地结构数据成员。
--   命令的输出**dt My2**将不同于命令的输出**dt \_IntSum 0xefa60**。 不能假定本地结构将占用连续内存块的堆栈。 情况下**My2**，则只`sum4`保留在原始堆栈阻止; 其他三个数据成员移动到寄存器。
--   某些数据成员可以具有多个位置。 例如， **My2.sum2**有两个位置： 一个是注册 ECX （这将选择 Windows 调试器），另一个是 0xefa60 + 0x4 （原始堆栈槽）。 此外，这可能对基元类型本地变量和 Windows 调试器施加前置试探法来确定要使用哪个位置。 例如，注册位置始终也能带来堆栈位置。
+-   本地结构 **My1** 说明了编译器可将本地结构数据成员分散到寄存器和非连续堆栈槽。
+-   命令 **Dt My2** 的输出将不同于命令 **dt \_ IntSum 0xefa60** 的输出。 不能假设本地结构将占用一个连续的堆栈内存块。 对于 **My2**，仅 `sum4` 保留在原始堆栈块中; 其他三个数据成员移到寄存器。
+-   某些数据成员可以有多个位置。 例如， **My2. sum2** 有两个位置：一个是注册 ECX (Windows 调试器选择) ，另一个是 0xefa60 + 0x4 (原始堆栈槽) 。 对于基元类型的局部变量也可能发生这种情况，并且 Windows 调试器会强加引用试探法来确定要使用的位置。 例如，寄存器位置始终为每个堆栈位置。
 
-## <a name="span-iddisplayofinlinefunctionsonthecallstackspanspan-iddisplayofinlinefunctionsonthecallstackspanspan-iddisplayofinlinefunctionsonthecallstackspandisplay-of-inline-functions-on-the-call-stack"></a><span id="Display_of_inline_functions_on_the_call_stack"></span><span id="display_of_inline_functions_on_the_call_stack"></span><span id="DISPLAY_OF_INLINE_FUNCTIONS_ON_THE_CALL_STACK"></span>显示的调用堆栈上的内联函数
+## <a name="span-iddisplay_of_inline_functions_on_the_call_stackspanspan-iddisplay_of_inline_functions_on_the_call_stackspanspan-iddisplay_of_inline_functions_on_the_call_stackspandisplay-of-inline-functions-on-the-call-stack"></a><span id="Display_of_inline_functions_on_the_call_stack"></span><span id="display_of_inline_functions_on_the_call_stack"></span><span id="DISPLAY_OF_INLINE_FUNCTIONS_ON_THE_CALL_STACK"></span>内联函数在调用堆栈上的显示
 
 
-在代码优化过程的某些功能放置在行中。 也就是说，函数的正文被直接放置在类似的宏扩展代码。 没有任何函数调用并没有返回给调用方。 为便于显示的内联函数，编译器将数据存储在 PDB 文件，可帮助对内联函数 （即，在属于要串联在一起的被调用方函数的调用方函数中的代码块的序列） 代码块进行解码以及本地变量 （这些代码块中指定了作用域本地变量）。 此数据可帮助调试程序堆栈展开中包含内联函数。
+在代码优化期间，某些函数会置于行中。 也就是说，函数的主体直接放置在代码中，如宏展开。 没有函数调用，也没有返回调用方。 为了便于显示内联函数，编译器将数据存储在 PDB 文件中，这些文件可帮助对内联函数的代码块进行解码， (也就是说，调用方函数中的代码块序列，这些代码块属于内联) 的被调用方函数，以及这些代码块)  (范围内的局部变量。 此数据可帮助调试器在堆栈展开过程中包括内联函数。
 
-假设编译的应用程序和强制执行一个名为函数`func1`为内联。
+假设你编译一个应用程序，并强制将一个名为的函数 `func1` 内联。
 
 ```cpp
 __forceinline int func1(int p1, int p2, int p3)
@@ -81,7 +80,7 @@ __forceinline int func1(int p1, int p2, int p3)
 }
 ```
 
-可以使用[ **bm** ](bp--bu--bm--set-breakpoint-.md)命令以处设置断点`func1`。
+可以使用 [**bm.exe**](bp--bu--bm--set-breakpoint-.md) 命令在处设置断点 `func1` 。
 
 ```dbgcmd
 0:000> bm MyApp!func1
@@ -93,7 +92,7 @@ MyApp!main+0x88:
 000007f6`8d621088 488d0d21110000  lea     rcx,[MyApp!`string' (000007f6`8d6221b0)]
 ```
 
-你创建一个单步执行之后`func1`，可以使用[ **k** ](k--kb--kc--kd--kp--kp--kv--display-stack-backtrace-.md)命令来查看`func1`调用堆栈上。 可以使用[ **dv** ](dv--display-local-variables-.md)命令来查看有关局部变量`func1`。 请注意，本地变量`num3`显示为不可用。 本地变量可在优化代码的原因有多中不可用。 它可能是该变量不会在优化代码中存在。 它可能是，该变量具有尚未初始化或不再使用该变量。
+执行一步后 `func1` ，可以使用 [**k**](k--kb--kc--kd--kp--kp--kv--display-stack-backtrace-.md) 命令 `func1` 在调用堆栈上查看。 您可以使用 [**dv**](dv--display-local-variables-.md) 命令查看的局部变量 `func1` 。 请注意，本地变量 `num3` 显示为 "不可用"。 出于多种原因，本地变量在优化的代码中可能不可用。 这可能是优化代码中不存在该变量。 这可能是因为尚未初始化该变量，或者不再使用该变量。
 
 ```dbgcmd
 0:000> p
@@ -114,7 +113,7 @@ MyApp!func1+0x7:
 <unavailable>                num3 = <value unavailable>
 ```
 
-如果您看一下第 1 帧的堆栈跟踪中，您所见的局部变量`main`函数。 请注意两个变量存储在寄存器中。
+如果在堆栈跟踪中查看第1帧，可以查看函数的局部变量 `main` 。 请注意，两个变量存储在寄存器中。
 
 ```dbgcmd
 0:000> .frame 1
@@ -126,7 +125,7 @@ MyApp!func1+0x7:
 @esi                            a = 0n6
 ```
 
-Windows 调试器从 PDB 文件，以查找特定函数放置在其中内联的所有位置的聚合数据。 可以使用[ **x** ](x--examine-symbols-.md)命令以列出的所有调用方站点的内联函数。
+Windows 调试器聚合 PDB 文件中的数据，以查找内联放置特定函数的所有位置。 您可以使用 [**x**](x--examine-symbols-.md) 命令列出内联函数的所有调用方站点。
 
 ```dbgcmd
 0:000> x simple!MoreCalculate
@@ -137,9 +136,9 @@ Windows 调试器从 PDB 文件，以查找特定函数放置在其中内联的�
 00000000`ff6e141b simple!Calculate =  (inline caller) simple!wmain+53
 ```
 
-由于 Windows 调试器可以枚举内联函数的所有调用方站点，它可以通过计算的偏移量，从调用方站点设置在内联函数断点。 可以使用[ **bm** ](bp--bu--bm--set-breakpoint-.md)命令 （这用于设置与正则表达式模式匹配的断点） 若要设置断点的内联函数。
+由于 Windows 调试器可以枚举内联函数的所有调用方站点，因此它可以通过计算调用方站点的偏移量来设置内联函数内的断点。 可以使用 [**bm.exe**](bp--bu--bm--set-breakpoint-.md) 命令 (用于设置与正则表达式模式匹配的断点) 为内联函数设置断点。
 
-Windows 调试器分组到断点容器设置为特定的内联函数的所有断点。 您可以通过使用类似的命令断点容器操作作为一个整体[**进行**](be--breakpoint-enable-.md)， [ **bd**](bd--breakpoint-disable-.md)， [ **bc**](bc--breakpoint-clear-.md)。 请参阅以下**bd 3**并**bc 3**命令示例。 此外可以处理单个断点。 请参阅以下**为 2**命令示例。
+Windows 调试器将为特定内联函数设置的所有断点组分组到一个断点容器。 你可以 [**使用类似于**](be--breakpoint-enable-.md)、 [**bd**](bd--breakpoint-disable-.md)、 [**bc**](bc--breakpoint-clear-.md)这样的命令来整体处理断点容器。 请参阅以下 **bd 3** 和 **bc 3** 命令示例。 还可以操作各个断点。 请参阅下面的 **2** 个命令示例。
 
 ```dbgcmd
 0:000> bm simple!MoreCalculate
@@ -167,19 +166,19 @@ Windows 调试器分组到断点容器设置为特定的内联函数的所有断
  0 e 00000000`ff6e13c8 [n:\win7\simple\simple.cpp @ 52]    0001 (0001)  0:**** simple!wmain
 ```
 
-因为没有任何显式调用或返回说明内联函数，是特别具有挑战性。 调试器单步执行源代码级别。 例如，你可能无意中步骤对内联函数 （如果下一个指令是一个内联函数的一部分），或无法参与并多次跳出相同的内联函数 (因为已拆分的内联函数的代码块和移动由编译器）。 若要保留单步执行的熟悉体验，Windows 调试器维护每个代码指令地址小概念的调用堆栈，并生成的内部状态机执行步进、 逐过程和单步跳出操作。 这样，单步执行体验相当准确的近似的非内联函数。
+由于内联函数没有显式调用或返回说明，因此对于调试器而言，源级别单步尤其有挑战性。 例如，如果下一条指令是内联函数) 的一部分，或者可以单步执行和单步跳出同一内联函数，则可能会无意中单步执行内联函数 ( (因为内联函数的代码块已由编译器) 拆分并移动。 为了保持熟悉的单步执行体验，Windows 调试器将为每个代码指令地址维护一个小型概念调用堆栈，并生成一个内部状态计算机来执行单步执行、逐过程执行和跳出操作。 这为非内联函数的单步执行体验提供了合理的近似值。
 
-## <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+## <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
 
-**请注意**  可以使用 **.inline 0**命令，以禁用调试内联函数。 **.Inline 1**命令启用调试内联函数。 [标准调试技术](standard-debugging-techniques.md)
+**注意**  可以使用 **inline 0** 命令禁用内联函数调试。 **Inline 1** 命令启用内联函数调试。 [标准调试方法](standard-debugging-techniques.md)
 
  
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
-[标准调试技术](standard-debugging-techniques.md)
+[标准调试方法](standard-debugging-techniques.md)
 
  
 

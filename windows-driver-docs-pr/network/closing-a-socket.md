@@ -1,7 +1,6 @@
 ---
 title: 关闭套接字
 description: 关闭套接字
-ms.assetid: 3fa2d5c3-7b52-4bbe-b99d-ef3be19c7c7e
 keywords:
 - Winsock 内核 WDK 网络，插座关闭
 - WSK WDK 网络，插座关闭
@@ -9,12 +8,12 @@ keywords:
 - WskCloseSocket
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 22898d1481737672ffc787ae5fa09a17edf6e182
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: c3e5a2e5ae3afcee802fbf6f1519a76ad971bd28
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89218144"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96817643"
 ---
 # <a name="closing-a-socket"></a>关闭套接字
 

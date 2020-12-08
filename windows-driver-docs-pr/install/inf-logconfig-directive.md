@@ -1,7 +1,6 @@
 ---
 title: INF LogConfig 指令
 description: LogConfig 指令将引用一个或多个由 INF 编写器定义的部分，每个部分都指定硬件资源的逻辑配置。
-ms.assetid: 6b60c3eb-bf70-42f7-bed7-a856fd626d8c
 keywords:
 - INF LogConfig 指令设备和驱动程序安装
 topic_type:
@@ -12,21 +11,21 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fa22eee7364ba2263994e2daebce1cc92f70ba2e
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 79b2662646c82765975fa144de2a80c33e80360e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89097303"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96818425"
 ---
 # <a name="inf-logconfig-directive"></a>INF LogConfig 指令
 
 
-**注意**   如果要构建通用或移动驱动程序包，则此指令无效。 请参阅 [使用通用 INF 文件](using-a-universal-inf-file.md)。
+**注意**  如果要构建通用或移动驱动程序包，则此指令无效。 请参阅 [使用通用 INF 文件](using-a-universal-inf-file.md)。
 
  
 
-**LogConfig**指令将引用一个或多个由 INF 编写器定义的部分，其中每个部分都指定了硬件资源的逻辑配置−中断请求线路、内存范围、i/o 端口和可供设备使用的 DMA 通道。 每个 *日志配置节* 指定一组可由设备使用的其他总线相关硬件资源。
+**LogConfig** 指令将引用一个或多个由 INF 编写器定义的部分，其中每个部分都指定了硬件资源的逻辑配置−中断请求线路、内存范围、i/o 端口和可供设备使用的 DMA 通道。 每个 *日志配置节* 指定一组可由设备使用的其他总线相关硬件资源。
 
 ```inf
 [DDInstall] | 
@@ -39,7 +38,7 @@ LogConfig=log-config-section[,log-config-section]...
 
 PnP 设备的 INF 文件仅使用此指令创建替代配置。
 
-**LogConfig**指令引用的每个命名部分都具有以下形式：
+**LogConfig** 指令引用的每个命名部分都具有以下形式：
 
 ```inf
 [log-config-section]
@@ -66,7 +65,7 @@ ConfigPriority=priority-value[,config-type]
 <a href="" id="normal"></a>一般  
 软配置，比所需的优化更少。 这是典型的设置。
 
-如果在 DDInstall * 中定义了*日志配置节*，则应指定 NORMAL [ * **。LogConfigOverride** ](inf-ddinstall-logconfigoverride-section.md)部分，并且不能指定任何*配置类型*值。
+如果在 DDInstall * 中定义了 *日志配置节*，则应指定 NORMAL [ * **。LogConfigOverride**](inf-ddinstall-logconfigoverride-section.md)部分，并且不能指定任何 *配置类型* 值。
 
 <a href="" id="suboptimal"></a>最佳  
 软配置，不如平时更好。
@@ -90,24 +89,24 @@ ConfigPriority=priority-value[,config-type]
 硬件/设备处于禁用状态。
 
 <a href="" id="dmaconfig--dmaattrs--dmanum--dmanum-----"></a>**DMAConfig =** \[*DMAattrs：* \]*DMANum* \[<strong>,</strong>DMANum \] .。。\]  
-如果设备连接在仅具有8位 DMA 通道的总线上，并且设备使用标准系统 DMA，则*DMAattrs*是可选的。 否则，它可以是下列字母之一：
+如果设备连接在仅具有8位 DMA 通道的总线上，并且设备使用标准系统 DMA，则 *DMAattrs* 是可选的。 否则，它可以是下列字母之一：
 
-| 字母 | 含义    |
+| Letter | 含义    |
 |--------|------------|
 | **D**  | 32位 DMA |
 | **W**  | 16位 DMA |
-| N****  | 8位 DMA  |
+| N  | 8位 DMA  |
 
  
 
-如果**设备使用的**是 BUS 主机 DMA，则必须使用以下 (互斥的) 字母之一，指示所使用的 DMA 通道类型： **A**、 **B**或**F**。如果两者**都未指定，** 则**F**假定为标准 DMA 通道。 **B**
+如果 **设备使用的** 是 BUS 主机 DMA，则必须使用以下 (互斥的) 字母之一，指示所使用的 DMA 通道类型： **A**、 **B** 或 **F**。如果两者 **都未指定，** 则 **F** 假定为标准 DMA 通道。 **B**
 
 *DMANum* 指定一个或多个以十进制数字表示的总线相关 DMA 通道，每个通道与下一个由逗号分隔 (，) 。
 
 <a href="" id="ioconfig-io-range--io-range----"></a>**IOConfig =**<em>io 范围</em> \[ **io**<em>范围</em> \] .。。  
 采用以下任一形式指定设备的一个或多个 i/o 端口范围：
 
-<a href="" id="start-end---decode-mask---alias-offset---attr------type-1-i-o-range-"></a>*开始-结束* \[** (** \[*解码掩码* \] \[*：别名偏移* \] \[*： attr* \]**) ** \]  (类型 1 i/o 范围)   
+<a href="" id="start-end---decode-mask---alias-offset---attr------type-1-i-o-range-"></a>*开始-结束* \[**(** \[*解码掩码* \] \[*：别名偏移* \] \[*： attr* \]**)** \] (类型 1 i/o 范围)   
 
 <a href="" id="start"></a>*start*  
 指定 i/o 端口范围的起始地址作为64位十六进制地址。
@@ -133,7 +132,7 @@ ConfigPriority=priority-value[,config-type]
 <a href="" id="attr"></a>*attr*  
 指定给定范围在系统内存中时的字母 **M** 。 如果省略，则给定范围为 i/o 端口空间。
 
-<a href="" id="size-min-max--align-mask----decode-mask---alias-offset---attr------type-2-i-o-range-"></a><em>大小</em> **@**<em>最小值-最大值</em> \[ **%**<em>对齐掩码</em> \] \[** (** \[*解码掩码* \] \[**：**<em>alias offset</em> \] \[ **：**<em>attr</em> \]) \] (类型 2 i/o 范围)   
+<a href="" id="size-min-max--align-mask----decode-mask---alias-offset---attr------type-2-i-o-range-"></a><em>大小</em> **@**<em>最小值-最大值</em> \[ **%**<em>对齐掩码</em> \] \[**(** \[*解码掩码* \] \[**：**<em>alias offset</em> \] \[ **：**<em>attr</em> \]) \] (类型 2 i/o 范围)   
 
 <a href="" id="size"></a>*规格*  
 指定将 i/o 端口范围作为32位十六进制值所需的字节数。
@@ -181,14 +180,14 @@ start-end[(attr)] | size@min-max[%align-mask][(attr)]
 <a href="" id="attr"></a>*attr*  
 将内存范围的特性指定为以下一个或多个字母：
 
-| 字母 | 含义                                             |
+| Letter | 含义                                             |
 |--------|-----------------------------------------------------|
 | **R**  | 只读                                           |
 | **W**  | 只写                                          |
 | **CD-RW** | 读取/写入                                          |
 | **C**  | 允许合并写入                              |
 | **H**  | 可缓存                                           |
-| **果**  | Prefetchable                                        |
+| **F**  | Prefetchable                                        |
 | **D**  | 卡解码寻址为32位，而不是24位 |
 
  
@@ -210,14 +209,14 @@ start-end[(attr)] | size@min-max[%align-mask][(attr)]
 如果省略对齐掩码，则默认内存对齐方式为4K 边界 (FFFFF000) 。
 
 <a href="" id="irqconfig--irqattrs--irqnum--irqnum----"></a>**IRQConfig =** \[*IRQattrs：* \]*IRQNum* \[**，**<em>IRQNum</em> \] .。。  
-如果设备使用与总线相关的、边缘触发的 IRQ，则省略*IRQattrs* 。 否则，指定 **L** 以指示级别触发的 irq，如果设备可以共享此条目中列出的 irq 线路，则指定 **LS** 。
+如果设备使用与总线相关的、边缘触发的 IRQ，则省略 *IRQattrs* 。 否则，指定 **L** 以指示级别触发的 irq，如果设备可以共享此条目中列出的 irq 线路，则指定 **LS** 。
 
 *IRQNum* 指定一个或多个与总线相对的 irq，设备可将其用作十进制数字，每个 irq 彼此之间用逗号分隔 (，) 。
 
-<a href="" id="pccardconfig-configindex---memorycardbase1---memorycardbase2----attrs--"></a>**PcCardConfig =**<em>ConfigIndex</em> \[ **：** \[ *MemoryCardBase1* \] \[ **：**<em>MemoryCardBase2</em> \] \] \[ ** (** <em>attrs</em> **) **\]  
+<a href="" id="pccardconfig-configindex---memorycardbase1---memorycardbase2----attrs--"></a>**PcCardConfig =**<em>ConfigIndex</em> \[ **：** \[ *MemoryCardBase1* \] \[ **：**<em>MemoryCardBase2</em> \] \] \[ **(** <em>attrs</em> **)**\]  
 配置 CardBus 注册和/或创建最多两个映射到设备属性空间的永久内存窗口。 驱动程序可以使用内存窗口从 ISR 访问属性空间。 指定以十六进制格式表示的所有数字值。
 
-**PcCardConfig**项的元素如下所示：
+**PcCardConfig** 项的元素如下所示：
 
 <a href="" id="configindex"></a>*ConfigIndex*  
 指定 PCMCIA 总线上设备的8位 PCMCIA 配置索引。
@@ -243,7 +242,7 @@ start-end[(attr)] | size@min-max[%align-mask][(attr)]
 <thead>
 <tr class="header">
 <th align="left">Attribute</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -309,7 +308,7 @@ start-end[(attr)] | size@min-max[%align-mask][(attr)]
 
 I/o 窗口上的零等待状态
 
-<a href="" id="mfcardconfig-configregbase-configoptions--ioresourceindex---attrs-----"></a>**MfCardConfig =**<em>ConfigRegBase</em>**：**<em>ConfigOptions</em> \[ **：**<em>IoResourceIndex</em> \] \[ ** (** <em>attrs</em> **) ** \] .。。指定多功能设备的一个功能的配置寄存器集的属性内存位置，如下所示：
+<a href="" id="mfcardconfig-configregbase-configoptions--ioresourceindex---attrs-----"></a>**MfCardConfig =**<em>ConfigRegBase</em>**：**<em>ConfigOptions</em> \[ **：**<em>IoResourceIndex</em> \] \[ **(** <em>attrs</em> **)** \] .。。指定多功能设备的一个功能的配置寄存器集的属性内存位置，如下所示：
 
 <a href="" id="configregbase"></a>*ConfigRegBase*  
 指定此多功能设备的此功能的配置寄存器属性偏移量。
@@ -318,43 +317,43 @@ I/o 窗口上的零等待状态
 指定8位 PCMCIA 配置选项 "注册"。
 
 <a href="" id="ioresourceindex-"></a>*IoResourceIndex*   
-指定总线驱动程序的 **IOConfig** 条目的索引，该索引用于在配置 i/o 基和限制寄存器编程时使用。 此索引从零开始，即零指定此*日志-config 节*中的初始**IOConfig**条目。
+指定总线驱动程序的 **IOConfig** 条目的索引，该索引用于在配置 i/o 基和限制寄存器编程时使用。 此索引从零开始，即零指定此 *日志-config 节* 中的初始 **IOConfig** 条目。
 
 <a href="" id="attrs-"></a>*attrs*   
 如果设置为字母 **A**，则指示 PCMCIA 总线驱动程序在配置和状态寄存器中启用音频启用。
 
-每个 **MfCardConfig** 条目都提供有关多功能设备的单个功能的信息。 如果一组**LogConfig**指令每个都引用 INF 的 DDInstall * 中的离散*日志配置节*， [ * **LogConfigOverride** ](inf-ddinstall-logconfigoverride-section.md)节中，每个*日志配置节*必须包含以相同顺序列出的**MfCardConfig**条目。
+每个 **MfCardConfig** 条目都提供有关多功能设备的单个功能的信息。 如果一组 **LogConfig** 指令每个都引用 INF 的 DDInstall * 中的离散 *日志配置节*， [ * **LogConfigOverride**](inf-ddinstall-logconfigoverride-section.md)节中，每个 *日志配置节* 必须包含以相同顺序列出的 **MfCardConfig** 条目。
 
 <a name="remarks"></a>备注
 -------
 
-可以在任何每个制造商、每个型号的[**Inf *DDInstall*部分**](inf-ddinstall-section.md)或 Inf DDInstall 下指定**LogConfig**指令[** *DDInstall*。LogConfigOverride 部分**](inf-ddinstall-logconfigoverride-section.md)。
+可以在任何每个制造商、每个型号的 [**Inf *DDInstall* 部分**](inf-ddinstall-section.md)或 Inf DDInstall 下指定 **LogConfig** 指令 [***DDInstall*。LogConfigOverride 部分**](inf-ddinstall-logconfigoverride-section.md)。
 
-对于支持多种备用逻辑配置的非 PnP 设备，通常会在*DDInstall*节下定义一组*日志-config 节*。 每个 *日志配置节* 指定一组离散的逻辑配置资源。 它还包括一个 **ConfigPriority** 条目，该条目根据每个逻辑配置对设备和驱动程序性能的影响、简化初始化等对每个逻辑配置进行排名。
+对于支持多种备用逻辑配置的非 PnP 设备，通常会在 *DDInstall* 节下定义一组 *日志-config 节*。 每个 *日志配置节* 指定一组离散的逻辑配置资源。 它还包括一个 **ConfigPriority** 条目，该条目根据每个逻辑配置对设备和驱动程序性能的影响、简化初始化等对每个逻辑配置进行排名。
 
 对于 PnP 设备，PnP 管理器会为每个 PnP 设备分配一组逻辑硬件资源。 也就是说，PnP 管理器查询系统总线驱动程序，接收正在使用的每个设备 i/o 总线配置资源的报告，并分配每个设备的逻辑硬件资源集，以在使用所有此类资源时获得最佳系统范围平衡。
 
-因此，对于 PnP 设备，将忽略*DDInstall*部分下的**LogConfig**指令。 若要替代用于 PnP 设备的总线报告的资源，请在**LogConfig** [ * **DDInstall * 下包含 LogConfig 指令。LogConfigOverride** ](inf-ddinstall-logconfigoverride-section.md)部分。 在这种情况下，将使用 *日志-config-部分* 中指定的资源，而不是总线报告的资源。
+因此，对于 PnP 设备，将忽略 *DDInstall* 部分下的 **LogConfig** 指令。 若要替代用于 PnP 设备的总线报告的资源，请在 DDInstall 下包含 **LogConfig** 指令 [**_DDInstall_。LogConfigOverride**](inf-ddinstall-logconfigoverride-section.md)部分。 在这种情况下，将使用 *日志-config-部分* 中指定的资源，而不是总线报告的资源。
 
-可以将平台扩展添加到*DDInstall*节，其中包含**LogConfig**指令或[ * **DDInstall *。LogConfigOverride** ](inf-ddinstall-logconfigoverride-section.md)节，用于指定特定于平台或特定于 OS 的逻辑配置。 有关详细信息，请参阅 [创建 INF 文件](overview-of-inf-files.md)。
+可以将平台扩展添加到 *DDInstall* 节，其中包含 **LogConfig** 指令或 [**_DDInstall_。LogConfigOverride**](inf-ddinstall-logconfigoverride-section.md)节，用于指定特定于平台或特定于 OS 的逻辑配置。 有关详细信息，请参阅 [创建 INF 文件](overview-of-inf-files.md)。
 
-给定的*日志配置节*名称对于 inf 文件必须是唯一的，但它可以在相同设备的其他 INF *DDInstall*部分中的**LogConfig**指令中引用。 在 INF 文件中，每个 INF 编写器创建的节名称必须唯一，并且必须遵循用于定义节名称的常规规则。 有关这些规则的详细信息，请参阅 [INF 文件的一般语法规则](general-syntax-rules-for-inf-files.md)。
+给定的 *日志配置节* 名称对于 inf 文件必须是唯一的，但它可以在相同设备的其他 INF *DDInstall* 部分中的 **LogConfig** 指令中引用。 在 INF 文件中，每个 INF 编写器创建的节名称必须唯一，并且必须遵循用于定义节名称的常规规则。 有关这些规则的详细信息，请参阅 [INF 文件的一般语法规则](general-syntax-rules-for-inf-files.md)。
 
-每个*日志配置节*中只能使用一个**ConfigPriority**条目。 每个其他条目中可以有多个条目，具体取决于设备的硬件资源需求。
+每个 *日志配置节* 中只能使用一个 **ConfigPriority** 条目。 每个其他条目中可以有多个条目，具体取决于设备的硬件资源需求。
 
-一个或多个**MfCardConfig =** 条目只能出现在<em>DDInstall</em>的**LogConfig**指令所引用的*日志配置节*中 **。** 多功能设备 INF 的 LogConfigOverride 部分。 有关多功能设备的 INF 文件的详细信息，请参阅 [支持多功能设备](../multifunction/index.md)。
+一个或多个 **MfCardConfig =** 条目只能出现在 <em>DDInstall</em>的 **LogConfig** 指令所引用的 *日志配置节* 中 **。** 多功能设备 INF 的 LogConfigOverride 部分。 有关多功能设备的 INF 文件的详细信息，请参阅 [支持多功能设备](../multifunction/index.md)。
 
-### <a name="logconfig-referenced-section-entries-and-values"></a>LogConfig 引用的节条目和值
+### <a name="logconfig-referenced-section-entries-and-values"></a>LogConfig-Referenced 节项和值
 
-在 *日志配置部分*中，系统安装程序将生成二进制逻辑配置记录并将其存储在注册表中。
+在 *日志配置部分* 中，系统安装程序将生成二进制逻辑配置记录并将其存储在注册表中。
 
 INF 文件可以包含任意数量的每个设备的 *日志配置节*。 但是，每个此类部分必须包含用于安装一个设备的完整信息。 通常，INF 应以相同顺序指定其每个 *日志配置节* 中的条目。 INF 应按最适合于驱动程序如何初始化其设备的顺序指定每组条目。
 
-如果给定设备有多个 *日志配置节* ，则在安装过程中仅使用其中一个 INF 部分。 此类 INF 文件部分控制将此类节与它在每个**ConfigPriority**中提供的值一起*使用。* 也就是说，系统安装程序会尝试服从 INF 文件中的任何配置优先级，但如果找到与已安装的设备的冲突，则可能会选择较低的逻辑配置。
+如果给定设备有多个 *日志配置节* ，则在安装过程中仅使用其中一个 INF 部分。 此类 INF 文件部分控制将此类节与它在每个 **ConfigPriority** 中提供的值一起 *使用。* 也就是说，系统安装程序会尝试服从 INF 文件中的任何配置优先级，但如果找到与已安装的设备的冲突，则可能会选择较低的逻辑配置。
 
-在安装过程中，将从给定的 *日志配置部分* 中的每个条目中只选择一个资源，并将其分配给特定设备。 如果特定设备需要多个相同类型的资源，则必须在其 *日志配置节*中使用该类型的一组条目。
+在安装过程中，将从给定的 *日志配置部分* 中的每个条目中只选择一个资源，并将其分配给特定设备。 如果特定设备需要多个相同类型的资源，则必须在其 *日志配置节* 中使用该类型的一组条目。
 
-例如，若要确保特定设备的两个 i/o 端口范围，必须在该设备的*日志-config-节*中指定两个**IOConfig =** 条目。 另一方面，如果设备不需要 IRQ，则其 INF 可以省略*日志-config 节*中的**IRQConfig**条目。
+例如，若要确保特定设备的两个 i/o 端口范围，必须在该设备的 *日志-config-节* 中指定两个 **IOConfig =** 条目。 另一方面，如果设备不需要 IRQ，则其 INF 可以省略 *日志-config 节* 中的 **IRQConfig** 条目。
 
 <a name="examples"></a>示例
 --------
@@ -403,7 +402,7 @@ MemConfig=C0000-C7FFF, D0000-D7FFF
 MemConfig=8000@C0000-D7FFF%F0000
 ```
 
-此示例演示系统 HDC 类 INF 文件如何为通用 ESDI 硬盘控制器设置几个*日志配置节*，并使用[ * **DDInstall *。**](inf-ddinstall-logconfigoverride-section.md)特定 IDE 控制器的 LogConfigOverride 部分。
+此示例演示系统 HDC 类 INF 文件如何为通用 ESDI 硬盘控制器设置几个 *日志配置节*，并使用 [ * **DDInstall *。**](inf-ddinstall-logconfigoverride-section.md)特定 IDE 控制器的 LogConfigOverride 部分。
 
 ```inf
 [MS_HDC] ; per-manufacturer Models section
@@ -453,12 +452,12 @@ PcCardConfig=1:0:0(W)
 
 有关如何使用 **MfCardConfig** 条目的一些示例，请参阅 [支持不完整的配置注册地址的 PC 卡](../multifunction/supporting-pc-cards-that-have-incomplete-configuration-register-addres.md)。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
-[***DDInstall***](inf-ddinstall-section.md)
+[**_DDInstall_* _](inf-ddinstall-section.md)
 
-[***DDInstall*.FactDef**](inf-ddinstall-factdef-section.md)
+[_ *_DDInstall_。FactDef**](inf-ddinstall-factdef-section.md)
 
  
 

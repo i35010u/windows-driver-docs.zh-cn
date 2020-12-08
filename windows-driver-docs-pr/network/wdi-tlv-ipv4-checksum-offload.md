@@ -1,22 +1,21 @@
 ---
 title: WDI_TLV_IPV4_CHECKSUM_OFFLOAD
-description: WDI_TLV_IPV4_CHECKSUM_OFFLOAD 是包含校验和卸载功能的 IPv4 TLV。
-ms.assetid: FCC5880E-4323-4A24-98C6-CE7C84D03C16
+description: WDI_TLV_IPV4_CHECKSUM_OFFLOAD 是包含 IPv4 校验和卸载功能的 TLV。
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_IPV4_CHECKSUM_OFFLOAD 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 856197e294922427b34d1e28f4795aa575c82453
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1c88b32b212d89e5501b06f3f749a09e0b50d7fd
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327599"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96818275"
 ---
-# <a name="wditlvipv4checksumoffload"></a>WDI\_TLV\_IPV4\_CHECKSUM\_OFFLOAD
+# <a name="wdi_tlv_ipv4_checksum_offload"></a>WDI \_ TLV \_ IPV4 \_ 校验和 \_ 卸载
 
 
-WDI\_TLV\_IPV4\_校验和\_卸载是包含校验和卸载功能的 IPv4 TLV。
+WDI \_ tlv \_ ipv4 \_ 校验和 \_ 卸载是包含 ipv4 校验和卸载功能的 tlv。
 
 ## <a name="tlv-type"></a>TLV 类型
 
@@ -26,15 +25,15 @@ WDI\_TLV\_IPV4\_校验和\_卸载是包含校验和卸载功能的 IPv4 TLV。
 ## <a name="length"></a>长度
 
 
-所有的大小 （以字节为单位） 总和包含 TLVs。
+Sum (包含所有 TLVs 的大小的) 字节。
 
 ## <a name="values"></a>值
 
 
-| 在任务栏的搜索框中键入                                                                                                 | 允许多个 TLV 实例 | 可选 | 描述                                  |
+| 类型                                                                                                 | 允许多个 TLV 实例 | 可选 | 说明                                  |
 |------------------------------------------------------------------------------------------------------|--------------------------------|----------|----------------------------------------------|
-| [**WDI\_TLV\_CHECKSUM\_OFFLOAD\_V4\_TX\_PARAMETERS**](wdi-tlv-checksum-offload-v4-tx-parameters.md) |                                |          | 参数的 Tx 校验和卸载的 IPv4。 |
-| [**WDI\_TLV\_CHECKSUM\_OFFLOAD\_V4\_RX\_PARAMETERS**](wdi-tlv-checksum-offload-v4-rx-parameters.md) |                                |          | 参数的 Rx 校验和卸载的 IPv4。 |
+| [**WDI \_ TLV \_ 校验和 \_ 卸载 \_ V4 \_ TX \_ 参数**](wdi-tlv-checksum-offload-v4-tx-parameters.md) |                                |          | 适用于 IPv4 的 Tx 校验和卸载的参数。 |
+| [**WDI \_ TLV \_ 校验和 \_ 卸载 \_ V4 \_ RX \_ 参数**](wdi-tlv-checksum-offload-v4-rx-parameters.md) |                                |          | 适用于 IPv4 的 Rx 校验和卸载的参数。 |
 
  
 
@@ -53,10 +52,10 @@ WDI\_TLV\_IPV4\_校验和\_卸载是包含校验和卸载功能的 IPv4 TLV。
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
-<td><p>Windows Server 2016</p></td>
+<td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Wditypes.hpp</td>
 </tr>
 </tbody>

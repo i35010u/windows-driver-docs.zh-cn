@@ -1,22 +1,21 @@
 ---
 title: WDI_TLV_CHANNEL_WIDTH_LIST
-description: WDI_TLV_CHANNEL_WIDTH_LIST 是包含一系列通道宽度 TLV。
-ms.assetid: 9869157D-2E71-4F08-92D0-A4FFA085ACE7
+description: WDI_TLV_CHANNEL_WIDTH_LIST 是包含通道宽度列表的 TLV。
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_CHANNEL_WIDTH_LIST 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: ce0aed396336af11a382a2673fbe7fb80d6389e5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e009bbe19d143e1b5c7c06ac84cc722fdd750167
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63357658"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96818295"
 ---
-# <a name="wditlvchannelwidthlist"></a>WDI\_TLV\_通道\_宽度\_列表
+# <a name="wdi_tlv_channel_width_list"></a>WDI \_ TLV \_ 通道 \_ 宽度 \_ 列表
 
 
-WDI\_TLV\_通道\_宽度\_列表是包含一系列通道宽度 TLV。
+WDI \_ tlv \_ 通道 \_ 宽度 \_ 列表是包含通道宽度列表的 tlv。
 
 ## <a name="tlv-type"></a>TLV 类型
 
@@ -26,14 +25,14 @@ WDI\_TLV\_通道\_宽度\_列表是包含一系列通道宽度 TLV。
 ## <a name="length"></a>长度
 
 
-UINT32 元素的数组大小 （以字节为单位）。 该数组必须包含一个或多个元素。
+UINT32 元素数组的大小 (以字节为单位) 。 数组必须包含1个或多个元素。
 
 ## <a name="values"></a>值
 
 
-| 在任务栏的搜索框中键入       | 描述                                 |
+| 类型       | 描述                                 |
 |------------|---------------------------------------------|
-| UINT32\[\] | 通道宽度，以 mhz 为单位指定的列表。 |
+| UINT32\[\] | 以 MHz 为单位指定的通道宽度列表。 |
 
  
 
@@ -52,10 +51,10 @@ UINT32 元素的数组大小 （以字节为单位）。 该数组必须包含�
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
-<td><p>Windows Server 2016</p></td>
+<td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Wditypes.hpp</td>
 </tr>
 </tbody>

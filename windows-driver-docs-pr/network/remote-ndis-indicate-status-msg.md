@@ -1,15 +1,14 @@
 ---
 title: REMOTE_NDIS_INDICATE_STATUS_MSG
 description: 此消息将从远程 NDIS 设备发送到主机，以指示设备的状态发生更改。
-ms.assetid: 768aad13-3da6-436c-a7ba-d420af34643e
 ms.date: 07/31/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9074e785e15d668d3e75a63126d70eb4a72f29b5
-ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
+ms.openlocfilehash: 4369f64ce976bf245aff600a5669e320d1001a5b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88968890"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96818341"
 ---
 # <a name="remote_ndis_indicate_status_msg"></a>远程 \_ NDIS \_ 指示 \_ 状态 \_ 消息
 
@@ -28,7 +27,7 @@ ms.locfileid: "88968890"
 <th>Offset</th>
 <th>大小</th>
 <th>字段</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -67,7 +66,7 @@ ms.locfileid: "88968890"
 
  
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 远程 NDIS 最常见的用途 \_ \_ 是指示 \_ 状态 \_ 消息，指示802.3 设备的链接的状态。 Status 值 RNDIS \_ status \_ MEDIA \_ CONNECT 指示从断开连接 (（例如，无 802.3 link 脉冲) 连接状态） (802.3 link 脉冲检测到) 。 "RNDIS \_ 状态 \_ 媒体断开连接" 状态值 \_ 指示从连接到断开状态的转换。 \_ \_ \_ \_ 每次802.3 链接状态发生更改时，设备必须发送远程 NDIS 指示状态消息，并显示其中一个值。 不需要状态缓冲区即可返回这两个常见的指示。
@@ -86,7 +85,7 @@ ms.locfileid: "88968890"
 <th>Offset</th>
 <th>大小</th>
 <th>字段</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -125,7 +124,7 @@ ms.locfileid: "88968890"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Version</p></td>
+<td><p>版本</p></td>
 <td><p>在 Microsoft Windows XP 和更高版本的 Windows 操作系统中可用。 在 Windows 2000 中也可以作为可再发行二进制文件。</p></td>
 </tr>
 <tr class="even">

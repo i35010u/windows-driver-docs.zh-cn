@@ -1,7 +1,6 @@
 ---
 title: 检测调谐器标准
 description: 检测调谐器标准
-ms.assetid: 02923d8f-d8a2-427d-8957-2ffb0273b84a
 keywords:
 - 格式化 WDK 视频捕获
 - 电视信号格式 WDK 视频捕获
@@ -9,12 +8,12 @@ keywords:
 - 检测调谐器标准 WDK 视频捕获
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bfdd8671acc1be57eeec190505163739b3f83481
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: a583f6a5227cfbc1f89809751019d75e53b544e4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89184167"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96817943"
 ---
 # <a name="detecting-tuner-standards"></a>检测调谐器标准
 

@@ -1,15 +1,14 @@
 ---
 title: DDI 用法规则集 (Storport)
 description: 使用这些规则验证驱动程序正确使用 Storport DDIs。
-ms.assetid: 858BBD97-4E3D-464A-B85F-358809431347
 ms.date: 05/21/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 977026ce829ea59a5a58fbe2017f932e9103ef4e
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 1c0e1ea57412dc3bc692e058ecc1cafa2adab6ea
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103108"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96817857"
 ---
 # <a name="ddi-usage-rule-set-storport"></a>DDI 用法规则集 (Storport)
 
@@ -27,7 +26,7 @@ ms.locfileid: "90103108"
 <thead>
 <tr class="header">
 <th align="left">主题</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -64,7 +63,7 @@ ms.locfileid: "90103108"
 
 2.  单击 " **规则** " 选项卡。在 " **规则集**" 下，选择 **DDIUsage**。
 
-    若要从 Visual Studio 开发人员命令提示符窗口中选择默认规则集，请使用 **/check**选项指定**DDIUsage。 sdv** 。 例如：
+    若要从 Visual Studio 开发人员命令提示符窗口中选择默认规则集，请使用 **/check** 选项指定 **DDIUsage。 sdv** 。 例如：
 
     ```
     msbuild /t:sdv /p:Inputs="/check:DDIUsage.sdv" mydriver.VcxProj /p:Configuration="Win8 Release" /p:Platform=Win32

@@ -1,19 +1,18 @@
 ---
 title: 带批注的 x86 反汇编
 description: 带批注的 x86 反汇编
-ms.assetid: ea1e67c8-d752-42d8-92db-a0c105ceddd6
 keywords:
 - x86 处理器，带批注的反汇编
 - x86 处理器，程序集代码
 - x86 处理器，源代码
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a6ffc922683f13ddbb2c4de0523439e3b9cb8a95
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ea8486df640d533c0e215e1c7c262fdfc86f8a98
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63346349"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96819321"
 ---
 # <a name="annotated-x86-disassembly"></a>带批注的 x86 反汇编
 
@@ -21,11 +20,11 @@ ms.locfileid: "63346349"
 ## <span id="ddk_annotated_x86_disassembly_dbg"></span><span id="DDK_ANNOTATED_X86_DISASSEMBLY_DBG"></span>
 
 
-以下部分将引导您完成反汇编示例。
+以下部分将指导你完成反汇编示例。
 
-### <a name="span-idsourcecodespanspan-idsourcecodespanspan-idsourcecodespansource-code"></a><span id="Source_Code"></span><span id="source_code"></span><span id="SOURCE_CODE"></span>源代码
+### <a name="span-idsource_codespanspan-idsource_codespanspan-idsource_codespansource-code"></a><span id="Source_Code"></span><span id="source_code"></span><span id="SOURCE_CODE"></span>源代码
 
-下面是该函数将对其进行分析的代码。
+下面是要分析的函数的代码。
 
 ```cpp
 HRESULT CUserView::CloseView(void)
@@ -104,11 +103,11 @@ HRESULT CUserView::CloseView(void)
 }
 ```
 
-### <a name="span-idassemblycodespanspan-idassemblycodespanspan-idassemblycodespanassembly-code"></a><span id="Assembly_Code"></span><span id="assembly_code"></span><span id="ASSEMBLY_CODE"></span>程序集代码
+### <a name="span-idassembly_codespanspan-idassembly_codespanspan-idassembly_codespanassembly-code"></a><span id="Assembly_Code"></span><span id="assembly_code"></span><span id="ASSEMBLY_CODE"></span>程序集代码
 
 本部分包含带批注的反汇编示例。
 
-函数使用该**ebp**注册，因为帧指针首先按如下所示：
+使用 **ebp** 寄存器作为帧指针的函数如下所示：
 
 ```dbgcmd
 HRESULT CUserView::CloseView(void)
@@ -117,16 +116,16 @@ SAMPLE!CUserView__CloseView:
 71517135 8bec             mov     ebp,esp
 ```
 
-这会设置框架以便函数可以访问其参数为正的偏移量，从**ebp**，和负偏移量为本地变量。
+这将设置框架，以便函数可以将其参数作为来自 **ebp** 的正偏移，并将局部变量作为负偏移量来访问。
 
-这是一个专用的 COM 接口上的方法，因此调用约定是 **\_ \_stdcall**。 这意味着从左到右推送参数 （在这种情况下，没有任何表），已推送"this"指针，且然后调用该函数。 因此，在进入该函数，在堆栈外观如下所示：
+这是私有 COM 接口上的方法，因此调用约定为 **\_ \_ stdcall**。 这意味着，在这种情况下，参数将向左推送 (在这种情况下，没有任何) ，推送 "this" 指针，然后调用函数。 因此，在进入函数后，堆栈如下所示：
 
 ```dbgcmd
 [esp+0] = return address
 [esp+4] = this
 ```
 
-后两个前面的说明的参数包括的可访问性：
+在上述两个说明之后，可以通过以下方式访问参数：
 
 ```dbgcmd
 [ebp+0] = previous ebp pushed on stack
@@ -134,45 +133,45 @@ SAMPLE!CUserView__CloseView:
 [ebp+8] = this
 ```
 
-有关使用的函数**ebp**帧指针作为第一个推送的参数是在可访问\[ **ebp**+ 8\]; 后续参数是在连续访问更高版本DWORD 地址。
+对于使用 **ebp** 作为帧指针的函数，第一个推送的参数在 ebp + 8 上是可访问的 \[ **ebp** \] ; 后续参数可以在连续的更高 DWORD 地址上访问。
 
 ```dbgcmd
 71517137 51               push    ecx
 71517138 51               push    ecx
 ```
 
-此函数需要只有两个局部堆栈变量，因此**sub esp**、 8 指令。 然后推送的值都可用作\[ **ebp**-4\]并\[ **ebp**-8\]。
+此函数只需要两个本地堆栈变量，因此，一个 **子 esp**，8个指令。 然后，可将推送的值用作 \[ **ebp**-4 \] 和 \[ **ebp**-8 \] 。
 
-有关使用的函数**ebp**堆栈本地变量作为帧指针，是访问从负偏移**ebp**注册。
+对于使用 **ebp** 作为帧指针的函数，可以从 **ebp** 寄存器的负偏移量访问 stack 局部变量。
 
 ```dbgcmd
 71517139 56               push    esi
 ```
 
-现在，编译器将保存在函数调用中保留所需的寄存器。 实际上，它将其保存在位和片段，交织在一起的实际代码的第一行。
+现在，编译器会保存需要跨函数调用保留的寄存器。 实际上，它将它们保存在位和部分，并与实际代码的第一行交叉。
 
 ```dbgcmd
 7151713a 8b7508           mov     esi,[ebp+0x8]     ; esi = this
 7151713d 57               push    edi               ; save another registers
 ```
 
-它碰巧 CloseView 是一种方法是 12 基础对象中的偏移量处的视图状态上。 因此，**这**是类的视图状态的指针，但后可能另一个基类和混淆，它会在更加仔细地指定为 (ViewState\*)**这**。
+因此，CloseView 是 ViewState 上的一种方法，该方法在基础对象的偏移量为12。 因此， **这** 是指向 ViewState 类的指针，不过，当可能与其他基类混淆时，将更仔细地将其指定为 (ViewState \*) **此** 类。
 
 ```dbgcmd
     if (m_fDestroyed)
 7151713e 33ff             xor     edi,edi           ; edi = 0
 ```
 
-XORing 与其自身注册为零位调整它的标准方法。
+XORing 的寄存器是其自身的一种标准方式。
 
 ```dbgcmd
 71517140 39beac000000     cmp     [esi+0xac],edi    ; this->m_fDestroyed == 0?
 71517146 7407             jz      NotDestroyed (7151714f)  ; jump if equal
 ```
 
-**Cmp**指令比较两个值 （通过减去它们）。 **Jz**指令检查结果为零，这两个比较值，该值指示是否相等。
+**Cmp** 指令比较两个值 (通过将它们) 减去它们。 **Jz** 指令检查结果是否为零，表示两个比较的值相等。
 
-Cmp 指令比较两个值;后续 j 指令，跳转基于比较的结果。
+Cmp 指令比较两个值;后续 j 指令根据比较结果跳转。
 
 ```dbgcmd
     return S_OK;
@@ -180,35 +179,35 @@ Cmp 指令比较两个值;后续 j 指令，跳转基于比较的结果。
 7151714a e972010000       jmp     ReturnNoEBX (715172c1) ; return, do not pop EBX
 ```
 
-延迟保存更高版本在函数中，直到 EBX 注册编译器因此如果程序在此测试，然后退出路径上转到"早期 out"必须是一个不会还原 EBX。
+编译器会将 EBX 注册延迟保存到函数的后面，因此，如果该程序要在此测试上 "提前"，则退出路径需要是不还原 EBX 的路径。
 
 ```dbgcmd
     BOOL fViewObjectChanged = FALSE;
     ReleaseAndNull(&m_pdtgt);
 ```
 
-交错执行的以下两行代码，因此应注意。
+这两行代码是交错执行的，因此需要注意。
 
 ```dbgcmd
 NotDestroyed:
 7151714f 8d86c0000000     lea     eax,[esi+0xc0]    ; eax = &m_pdtgt
 ```
 
-**逆转**指令计算内存访问的效果地址并将其存储在目标中。 不取消引用的实际内存地址。
+**逆转** 指令计算内存访问的效果地址，并将其存储在目标中。 不取消引用实际的内存地址。
 
-逆转指令所采用的变量的地址。
+逆转指令采用变量的地址。
 
 ```dbgcmd
 71517155 53               push    ebx
 ```
 
-之前已损坏，则应保存该 EBX 寄存器。
+应在 EBX 注册损坏之前保存。
 
 ```dbgcmd
 71517156 8b1d10195071     mov ebx,[_imp__ReleaseAndNull]
 ```
 
-因为您将调用**ReleaseAndNull**通常情况下，它是缓存在 EBX 其地址的一个好办法。
+由于你将频繁地调用 **ReleaseAndNull** ，因此最好在 EBX 中缓存其地址。
 
 ```dbgcmd
 7151715c 50               push    eax               ; parameter to ReleaseAndNull
@@ -219,7 +218,7 @@ NotDestroyed:
 71517165 0f8411010000     je      No_Psv (7151727c) ; jump if zero
 ```
 
-请记住不久清 EDI 寄存器 EDI 是在函数调用中保留寄存器 (因此调用**ReleaseAndNull**未更改)。 因此，它仍包含值为零，而且可用来快速测试为零。
+请记住，在回拨后已将 EDI 注册 a，并且该 EDI 是跨函数调用保留的寄存器 (因此对 **ReleaseAndNull** 的调用不会将其更改) 。 因此，它仍保留零值，你可以使用它来快速测试零。
 
 ```dbgcmd
         m_psb->EnableModelessSB(FALSE);
@@ -230,9 +229,9 @@ NotDestroyed:
 71517172 ff5124           call    [ecx+0x24]        ; __stdcall EnableModelessSB
 ```
 
-上面的模式是比较的 COM 方法调用。
+以上模式是 COM 方法调用的 telltale 符号。
 
-COM 方法调用是相当受欢迎，因此它是一个好办法了解可以识别它们。 具体而言，您应能够识别三种 IUnknown 方法直接从其 Vtable 偏移量：QueryInterface = 0，AddRef = 4，和发布 = 8。
+COM 方法调用非常受欢迎，因此最好知道识别它们。 具体而言，你应该能够直接从其 Vtable 偏移量中识别三个 IUnknown 方法： QueryInterface = 0、AddRef = 4 和 Release = 8。
 
 ```dbgcmd
         if(m_pws) m_pws->ViewReleased();
@@ -247,7 +246,7 @@ NoWS:
 71517185 ff15e01a5071    call [_imp__GetCapture]    ; call GetCapture
 ```
 
-间接调用通过全局函数是函数导入 Microsoft Win32 中的实现方式。 加载程序修复全局变量以指向目标的实际地址。 这是方便地帮留在那里您在调查崩溃的计算机。 查找导入的函数和在目标中的调用。 通常将具有一些导入的函数，可用于确定您的源代码中的位置的名称。
+通过 globals 进行的间接调用是指在 Microsoft Win32 中如何实现函数导入。 加载器将修复全局，以指向目标的实际地址。 当调查崩溃的计算机时，可以使用此方法轻松获取 bearings。 查找对导入函数和目标中的的调用。 你通常会获得一些导入函数的名称，你可以使用该名称来确定你在源代码中所处的位置。
 
 ```dbgcmd
         if (hwndCapture && hwndCapture == m_hwnd) {
@@ -257,7 +256,7 @@ NoWS:
 7151718d 7412             jz      No_Capture (715171a1) ; jump if zero
 ```
 
-该函数返回值放在 EAX 中注册。
+函数返回值放置在 EAX 寄存器中。
 
 ```dbgcmd
 7151718f 8b4e44           mov     ecx,[esi+0x44]    ; ecx = this->m_hwnd
@@ -283,7 +282,7 @@ No_Capture:
 715171b6 ff510c           call    [ecx+0xc]         ; __stdcall NotifyClients
 ```
 
-请注意，您必须从你自己的不同基类上调用方法时，更改"this"指针。
+请注意，在您自己的其他基类上调用方法时，如何更改 "this" 指针。
 
 ```dbgcmd
         m_fRecursing = FALSE;
@@ -301,7 +300,7 @@ No_Capture:
 715171d0 8945f8           mov     [ebp-0x8],eax     ; psv = eax
 ```
 
-第一个本地变量是**psv**。
+第一个本地变量为 **psv**。
 
 ```dbgcmd
         ReleaseAndNull(&_pctView);
@@ -315,7 +314,7 @@ No_Capture:
 715171e7 7448             jz      No_Pvo (71517231) ; jump if zero
 ```
 
-请注意，编译器推测性地准备好的地址**m\_pvo**成员，因为要使用它经常一段时间。 因此，具有方便的地址将导致较小的代码。
+请注意，编译器推测性准备了 **m \_ pvo** 成员的地址，因为你将频繁地使用它。 这样，地址越方便，代码就越小。
 
 ```dbgcmd
             if (SUCCEEDED(m_pvo->GetAdvise(NULL, NULL, &pSink)) && pSink) {
@@ -333,17 +332,17 @@ No_Capture:
 71517200 7425             jz      No_Advise (71517227)
 ```
 
-请注意，编译器得出的结论是，传入"this"参数不是必需的 （因为它很久以前存储的到 ESI 寄存器）。 因此，它作为本地变量 pSink 需要重复使用的内存。
+请注意，编译器会发现传入的 "this" 参数 (不是必需的，因为它很久之前储藏更改到 ESI 注册) 。 因此，它重复使用内存作为本地变量 pSink。
 
-如果该函数使用 EBP 帧，然后传入的参数从 EBP 到达正偏移量和本地变量放在负偏移量。 但是，在此情况下，编译器可以自由地重用该内存用于任何目的。
+如果该函数使用了 EBP 帧，则传入的参数将以正偏移量从 EBP 开始，并将局部变量置于负偏移位置。 但在这种情况下，编译器可以出于任何目的自由重用该内存。
 
-如果您要付密切注意，您将看到，编译器无法具有优化此代码更好地。 可能有延迟**逆转 edi \[esi + 0xa8\]** 直到后两个指令**推送 0x0**说明，将它们替换为**推送 edi**. 这会节省 2 个字节。
+如果你要密切关注，你会发现编译器可以更好地优化此代码。 它可能会延迟 **逆转 edi， \[ esi + 0xa8 \]** 指令直到两个 **push 0x0** 指令后，将它们替换为 **推送 edi**。 这会节省2个字节。
 
 ```dbgcmd
                 if (pSink == (IAdviseSink *)this)
 ```
 
-这些下一步的多个行是为了弥补这一事实，在C++，(IAdviseSink \*)**NULL**仍必须**NULL**。 因此，如果将"this"真正"(ViewState\*) NULL"，然后强制转换的结果应**NULL**和不 IAdviseSink IBrowserService 之间的距离。
+接下来的几行是为了弥补这一事实：在 c + + 中， (IAdviseSink \*) **NULL** 仍必须为 **null**。 因此，如果 "this" 确实 " (ViewState \*) null"，则强制转换的结果应为 **null** ，而不是 IAdviseSink 和 IBrowserService 之间的距离。
 
 ```dbgcmd
 71517202 8d46ec           lea     eax,[esi-0x14]    ; eax = -(IAdviseSink*)this
@@ -353,9 +352,9 @@ No_Capture:
 7151720c 23c2             and     eax,edx           ; eax = NULL or edx
 ```
 
-尽管 Pentium 具有条件移动指令，但基本 i386 体系结构不是，执行，因此编译器使用特定技术来模拟条件移动指令，而无需使任何跳转。
+尽管 Pentium 有一个条件移动指令，但基本 i386 体系结构没有，因此，编译器将使用特定的技术来模拟条件移动指令，而无需执行任何跳转。
 
-以下是条件计算的常规模式：
+条件计算的常规模式如下：
 
 ```dbgcmd
         neg     r
@@ -364,28 +363,28 @@ No_Capture:
         add     r, val2
 ```
 
-**Neg r**设置携带标志，如果**r**为非零值，因为**neg**值减去零求反。 并且，减去从零开始时将生成借用 （设置执行进位） 减去一个非零值。 其还破坏了中的值**r**寄存器，但这是可接受因为您正准备是否仍要覆盖它。
+如果 **r** 为非零， **neg r** 将设置携带标志，因为 **neg** 将通过从零中减去来对值求反。 如果减去非零值，则与零相减会生成一个借用 () 集。 它还会损坏 **r** 寄存器中的值，但这是可接受的，因为你将始终覆盖它。
 
-下一步， **sbb r、 r**指令减去从其自身，这会始终导致零的值。 但是，它还减去携带 （借用） 位，因此最终结果是设置**r**为 0 或-1，具体取决于是否执行清除或分别设置。
+接下来， **sbb r，r** 指令从自身中减去一个值，该值始终为零。 不过，它还会将 (借用) 位，因此，最终结果是将 **r** 设置为0或-1，具体取决于是否已清除或设置该操作。
 
-因此， **sbb r、 r**设置**r**为零的原始值**r**是零，或为-1 时的原始值为非零值。
+因此，如果 **r** 的原始值为零，则 **sbb r** 将 **r** 设置为零; 如果原始值为非零，则为-1。
 
-第三个指令执行一个掩码。 因为**r**注册为零则为-1，"this"提供任何一个以保留**r**零或更改**r**从-1 到 **(val1-val1)**，运算替换为-1 的任何值留出的原始值。
+第三个指令执行掩码。 由于 **r** 寄存器为零或-1，因此 "this" 可保留 **r** 零或将 **r** 从-1 更改为 **(Val1-val1)**，在该 ANDing 中，-1 的任何值都将保留原始值。
 
-因此，结果的"和 r，(val1-val1)"是 r 如果设置为零的 r 的原始值为零，或"(val1-val2)"对 r 的原始值为非零值。
+因此，如果 r 的原始值为零，则 "and r， (val1-val1) " 的结果是将 r 设置为零; 如果 r 的原始值为非零，则设置为 " (val1-val2) "。
 
-最后，添加**val2**到**r**，从而导致**val2**或者 **(val1-val2) + val2 = val1**。
+最后，将 **val2** 添加到 **r**，导致 **val2** 或 **(val1-val2) + val2 = val1**。
 
-因此，这一系列的说明进行操作的最终结果是设置**r**到**val2**如果最初是零，或者向**val1**如果是非零值。 这是程序集等效项**r = r？ val1: val2**。
+因此，这一系列的说明的最终结果是将 **r** 设置为 **val2** （如果它最初为零，则设置为 **val1** ）。 这是 **r = r？ val1： val2** 的程序集等效项。
 
-在此特定情况下，可以看到**val2 = 0**并**val1 = (IAdviseSink\*) 这**。 (请注意，编译器省略最终**添加 eax，0**指令因为它不起作用。)
+在此特定示例中，可以看到 **val2 = 0** ， **Val1 = (IAdviseSink \*) 此**。  (请注意，编译器省略了最终 **添加 eax，0指令，** 因为它不起作用。 ) 
 
 ```dbgcmd
 7151720e 394508           cmp     [ebp+0x8],eax ; pSink == (IAdviseSink*)this?
 71517211 750b             jnz     No_SetAdvise (7151721e) ; jump if not equal
 ```
 
-前面在本部分中，您将设置 EDI 为的地址**m\_pvo**成员。 要立即使用它。 您还之前清除 ECX 寄存器。
+在本部分前面部分，将 EDI 设置为 **m \_ pvo** 成员的地址。 你现在将使用它。 你还可以提前将 ECX 注册归零。
 
 ```dbgcmd
                     m_pvo->SetAdvise(0, 0, NULL);
@@ -405,9 +404,9 @@ No_SetAdvise:
 No_Advise:
 ```
 
-所有这些 COM 方法调用应该很熟悉。
+所有这些 COM 方法调用都应该非常熟悉。
 
-接下来两个语句的评估被交错进行。 不要忘记 EBX 包含的地址**ReleaseAndNull**。
+接下来的两个语句的计算是交错的。 请不要忘记，EBX 包含 **ReleaseAndNull** 的地址。
 
 ```dbgcmd
             fViewObjectChanged = TRUE;
@@ -426,7 +425,7 @@ No_Pvo:
 7151723b ff5034           call    [eax+0x34]        ; __stdcall SaveViewState
 ```
 
-以下是更多的 COM 方法调用。
+下面是更多 COM 方法调用。
 
 ```dbgcmd
             psv->DestroyViewWindow();
@@ -442,7 +441,7 @@ No_Psv2:
 7151724a 83667c00         and     dword ptr [esi+0x7c],0x0 ; m_hwndView = 0
 ```
 
-运算带零的内存位置等同于将其设置为零，因为任何零值为零。 因为，即使它会慢些，它是比等效的短得多，编译器将使用此窗体**mov**指令。 （此代码进行了优化的大小，不速度。）
+使用零的内存位置 ANDing 与将其设置为零相同，因为任何内容和零均为零。 编译器使用此窗体，因为虽然速度较慢，但它比等效的 **mov** 指令要短得多。  (此代码已针对大小进行优化，而不是加速。 ) 
 
 ```dbgcmd
         m_fHandsOff = FALSE;
@@ -466,7 +465,7 @@ No_Cache:
         CancelPendingActions();
 ```
 
-若要调用**CancelPendingActions**，，必须从移动 (ViewState\*) 到 (CUserView\*) 这。 另请注意**CancelPendingActions**使用\_ \_thiscall 调用约定而不是\_ \_stdcall。 根据\_ \_thiscall，传递"this"指针在 ECX 寄存器，而不是在堆栈上传递。
+若要调用 **CancelPendingActions**，必须从 (ViewState 转变 \*) 此 (\*) 此。 另请注意， **CancelPendingActions** 使用 \_ \_ thiscall 调用约定而不是 \_ \_ stdcall。 根据 \_ \_ thiscall，"this" 指针传入 ECX 寄存器，而不是传递到堆栈上。
 
 ```dbgcmd
 71517272 8d4eec           lea     ecx,[esi-0x14]    ; ecx = (CUserView*)this
@@ -498,7 +497,7 @@ NoNotifyViewClients:
         m_pszTitle = NULL;
 ```
 
-请记住，EDI 仍为零并且 EBX 是仍 （& m）\_pszTitle，因为这些寄存器将保留通过函数调用。
+请记住，EDI 仍为零，EBX 仍 &m \_ pszTitle，因为这些寄存器由函数调用保留。
 
 ```dbgcmd
 715172ab 893b             mov     [ebx],edi         ; m_pszTitle = 0
@@ -513,14 +512,14 @@ No_Title:
 715172b8 ff15e41a5071     call   [_imp__SetRect]
 ```
 
-请注意，您无需"this"的值再，因此编译器将用**添加**指令而不是使用了另一个寄存器保存的址就地修改。 这是实际一个由于 Pentium u/v 借助管道传输，因为 v 管道可以进行算术运算，但无法解决计算的性能优势。
+请注意，你不需要 "这" 的值，因此编译器将使用 **add** 指令就地修改它，而不是使用另一个寄存器来保存该地址。 这实际上是由于采用了 Pentium u/v 流水线操作而导致的性能入选，因为 v 管道可以进行算术运算，而不是地址计算。
 
 ```dbgcmd
     return S_OK;
 715172be 33c0             xor     eax,eax           ; eax = S_OK
 ```
 
-最后，您还原系统要求保留、 清理堆栈，并返回到调用方，删除传入参数的寄存器。
+最后，您将还原所需的寄存器、清理堆栈并返回到调用方，并删除传入参数。
 
 ```dbgcmd
 715172c0 5b               pop     ebx               ; restore

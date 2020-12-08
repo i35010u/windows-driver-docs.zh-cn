@@ -1,7 +1,6 @@
 ---
 title: ubc
-description: Ubc 扩展清除用户空间断点。
-ms.assetid: 4BF2C589-A1C4-4714-B712-DD52D04704D1
+description: Ubc 扩展会清除用户空间断点。
 keywords:
 - ubc Windows 调试
 ms.date: 05/23/2017
@@ -12,29 +11,29 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: fa5cae2e4a05d2af80d6b88f7e4dca7841ea8bfd
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: dbd00d9199f5c3d07ba824346c587a69df47692a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63334158"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96817573"
 ---
 # <a name="ubc"></a>!ubc
 
 
-**！ Ubc**扩展清除用户空间断点。
+**！ Ubc** 扩展会清除用户空间断点。
 
 ```dbgcmd
 !ubc BreakpointNumber 
 ```
 
-## <a name="span-idddkubcdbgspanspan-idddkubcdbgspanparameters"></a><span id="ddk__ubc_dbg"></span><span id="DDK__UBC_DBG"></span>参数
+## <a name="span-idddk__ubc_dbgspanspan-idddk__ubc_dbgspanparameters"></a><span id="ddk__ubc_dbg"></span><span id="DDK__UBC_DBG"></span>参数
 
 
-<span id="_______BreakpointNumber______"></span><span id="_______breakpointnumber______"></span><span id="_______BREAKPOINTNUMBER______"></span> *BreakpointNumber*   
-指定要清除的断点的数目。 一个星号 (\*) 指示所有断点。
+<span id="_______BreakpointNumber______"></span><span id="_______breakpointnumber______"></span><span id="_______BREAKPOINTNUMBER______"></span>*BreakpointNumber*   
+指定要清除的断点号。 星号 (\*) 指示所有断点。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 <table>
 <colgroup>
@@ -58,9 +57,9 @@ ms.locfileid: "63334158"
 <a name="remarks"></a>备注
 -------
 
-这将永久删除与设置的断点[ **！ ubp**](-ubp.md)。
+这将永久删除用 [**！ ubp**](-ubp.md)设置的断点。
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
 [**!ubd**](-ubd.md)

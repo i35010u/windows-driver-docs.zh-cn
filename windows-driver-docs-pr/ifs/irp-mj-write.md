@@ -1,7 +1,6 @@
 ---
 title: 'IRP_MJ_WRITE (IFS) '
 description: IRP_MJ_WRITE
-ms.assetid: 8f16a579-1598-4f70-8d88-dfe877daec31
 keywords:
 - IRP_MJ_WRITE 可安装的文件系统驱动程序
 topic_type:
@@ -12,12 +11,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cda45e885fc6570079471c4fcee0fef2e40f056f
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 1ef81362f255cb15cb1b70fe0c415e3ff86f839c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91733287"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96819059"
 ---
 # <a name="irp_mj_write-ifs"></a>IRP \_ MJ \_ 写入 (IFS) 
 
@@ -60,7 +59,7 @@ IRP \_ MJ \_ 写入请求由 I/o 管理器或文件系统驱动程序发送。 �
 ## <a name="parameters"></a>参数
 
 
-文件系统或筛选器驱动程序与给定的 IRP 一起调用[**IoGetCurrentIrpStackLocation**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetcurrentirpstacklocation) ，以获取指向其自己的*IrpSp*[**堆栈位置**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_stack_location)的指针，如以下列表所示。  (IRP 显示为 *irp*。 ) 驱动程序可以使用在进程创建请求中的以下 irp 成员和 irp 堆栈位置设置的信息：
+文件系统或筛选器驱动程序与给定的 IRP 一起调用 [**IoGetCurrentIrpStackLocation**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetcurrentirpstacklocation) ，以获取指向其自己的 *IrpSp*[**堆栈位置**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_stack_location)的指针，如以下列表所示。  (IRP 显示为 *irp*。 ) 驱动程序可以使用在进程创建请求中的以下 irp 成员和 irp 堆栈位置设置的信息：
 
 <a href="" id="deviceobject"></a>*DeviceObject*  
 
@@ -68,11 +67,11 @@ IRP \_ MJ \_ 写入请求由 I/o 管理器或文件系统驱动程序发送。 �
 
 <a href="" id="irp--associatedirp-systembuffer"></a>*Irp- &gt;AssociatedIrp.SystemBuffer*  
 
-一个指针，指向系统提供的用于中间系统缓冲区的缓冲区（如果 \_ \_ 在 *DeviceObject &gt; 标志*中设置了 "执行缓冲 IO" 标记）。 否则，此成员设置为 **NULL**。
+一个指针，指向系统提供的用于中间系统缓冲区的缓冲区（如果 \_ \_ 在 *DeviceObject &gt; 标志* 中设置了 "执行缓冲 IO" 标记）。 否则，此成员设置为 **NULL**。
 
 <a href="" id="irp--iostatus"></a>*Irp- &gt; IoStatus*  
 
-指向 [**IO \_ 状态 \_ 块**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_status_block) 结构的指针，该结构接收最终完成状态和有关请求的操作的信息。 如果 IRP \_ MJ \_ 写入请求失败，则文件系统的写入调度例程将返回错误 NTSTATUS 值，并且 * &gt; IoStatus* 的值是不确定的，因此不应使用。
+指向 [**IO \_ 状态 \_ 块**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_status_block) 结构的指针，该结构接收最终完成状态和有关请求的操作的信息。 如果 IRP \_ MJ \_ 写入请求失败，则文件系统的写入调度例程将返回错误 NTSTATUS 值，并且 *&gt; IoStatus* 的值是不确定的，因此不应使用。
 
 <a href="" id="irp--mdladdress"></a>*Irp- &gt; MdlAddress*  
 
@@ -80,9 +79,9 @@ IRP \_ MJ \_ 写入请求由 I/o 管理器或文件系统驱动程序发送。 �
 
 <a href="" id="irpsp--fileobject"></a>*IrpSp- &gt; FileObject*
 
-指向与 *DeviceObject*关联的文件对象的指针。 如果 \_ \_ 在 *IrpSp- &gt; &gt; FLAGS 标记*中设置了 FO 同步 IO 标志，则会为同步 i/o 打开文件对象。
+指向与 *DeviceObject* 关联的文件对象的指针。 如果 \_ \_ 在 *IrpSp- &gt; &gt; FLAGS 标记* 中设置了 FO 同步 IO 标志，则会为同步 i/o 打开文件对象。
 
-*IrpSp- &gt; FileObject*参数包含指向**RelatedFileObject**字段的指针，该字段也是文件 \_ 对象结构。 文件对象结构的 **RelatedFileObject** 字段在 \_ 处理 IRP \_ MJ 写入期间无效 \_ ，不应使用。
+*IrpSp- &gt; FileObject* 参数包含指向 **RelatedFileObject** 字段的指针，该字段也是文件 \_ 对象结构。 文件对象结构的 **RelatedFileObject** 字段在 \_ 处理 IRP \_ MJ 写入期间无效 \_ ，不应使用。
 
 <a href="" id="irpsp--flags"></a>*IrpSp- &gt; 标志*  
 
@@ -128,14 +127,14 @@ IRP \_ MJ \_ 写入请求由 I/o 管理器或文件系统驱动程序发送。 �
 
 <a href="" id="irpsp--parameters-write-length"></a>*IrpSp- &gt; Length*  
 
-要写入的数据的长度（以字节为单位）。 如果写入操作成功，则会在**Information** \_ \_ * &gt; IoStatus*所指向的 IO 状态块结构的信息成员中返回写入的字节数。
+要写入的数据的长度（以字节为单位）。 如果写入操作成功，则会在 **Information** \_ \_ *&gt; IoStatus* 所指向的 IO 状态块结构的信息成员中返回写入的字节数。
 
 <a name="remarks"></a>备注
 -------
 
 文件系统在文件末尾将写入和读取操作舍入到基础文件存储设备的多个扇区大小。 处理预读或预写入操作时，分配和交换缓冲区的筛选器需要将已分配缓冲区的大小舍入到关联设备的扇区大小的倍数。 否则，从基础文件系统传输的数据的长度将超过缓冲区的分配长度。 有关交换缓冲区的详细信息，请参阅 [SwapBuffers 微筛选器示例](/samples/browse/)。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**CcMdlWriteComplete**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ccmdlwritecomplete)
@@ -154,7 +153,7 @@ IRP \_ MJ \_ 写入请求由 I/o 管理器或文件系统驱动程序发送。 �
 
 [**IRP \_ MJ \_ 读取**](irp-mj-read.md)
 
-[**IRP \_ MJ \_ 写入 (WDK 内核引用) **](../kernel/irp-mj-write.md)
+[**IRP \_ MJ \_ 写入 (WDK 内核引用)**](../kernel/irp-mj-write.md)
 
 [**ZwWriteFile**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntwritefile)
 

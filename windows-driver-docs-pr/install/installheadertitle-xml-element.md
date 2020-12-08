@@ -1,7 +1,6 @@
 ---
 title: installHeaderTitle XML 元素
 description: installHeaderTitle XML 元素
-ms.assetid: 43f8611c-9504-46ab-a8f2-06141bf74f1f
 keywords:
 - installHeaderTitle XML 元素设备和驱动程序安装
 topic_type:
@@ -12,12 +11,12 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: dd03be147f0435ef81280adf851abd3cb0951076
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: ada1186326d17745857c52941829f7357308f9c7
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89097297"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96817729"
 ---
 # <a name="installheadertitle-xml-element"></a>installHeaderTitle XML 元素
 
@@ -83,7 +82,7 @@ ms.locfileid: "89097297"
 
 如果未指定 **installHeaderTitle** 元素，则 DPInst 将显示默认的安装页上显示的默认标题文本。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**语言**](language-xml-element.md)

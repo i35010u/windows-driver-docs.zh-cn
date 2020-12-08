@@ -1,7 +1,6 @@
 ---
 title: DTrace 编程
 description: DTrace 支持 D 编程语言。 本主题提供了 D 代码示例。
-ms.assetid: abf23d76-423d-4d1e-afde-83739015bbff
 keywords:
 - DTrace WDK
 - 软件跟踪 WDK，DTrace
@@ -13,20 +12,20 @@ keywords:
 - 跟踪消息格式化文件 WDK
 ms.date: 11/04/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 8a7be2b6213155587c166a1b96d950b7c20c4fcf
-ms.sourcegitcommit: 5081de283b09b4fe847912fc1dc0e7f057e0a0cd
+ms.openlocfilehash: 1e1887a12766f7bf2816d9c59f1c10ceda28fb47
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73592434"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96817797"
 ---
 # <a name="dtrace-programming"></a>DTrace 编程
 
 DTrace 支持 D 编程语言。 本主题介绍如何开始编写和使用 DTrace 脚本。
 
-有关 Windows 上的 DTrace 的一般信息，请参阅[dtrace](dtrace.md)。
+有关 Windows 上的 DTrace 的一般信息，请参阅 [dtrace](dtrace.md)。
 
-有关 DTrace 的详细信息，请参阅剑桥大学的[OpenDTrace 规范1.0 版](https://www.cl.cam.ac.uk/techreports/UCAM-CL-TR-924.pdf)。
+有关 DTrace 的详细信息，请参阅剑桥大学的 [OpenDTrace 规范1.0 版](https://www.cl.cam.ac.uk/techreports/UCAM-CL-TR-924.pdf) 。
 
 > [!NOTE]
 > 版本18980和 Windows Server 有问必答 Preview 版本18975后，Windows 内部版本支持 DTrace。
@@ -37,7 +36,7 @@ DTrace 源代码的示例目录中提供了适用于 Windows 方案的其他 D �
 
 [https://github.com/microsoft/DTrace-on-Windows/tree/master/samples/windows](https://github.com/microsoft/DTrace-on-Windows/tree/master/samples/windows)
 
-[https://github.com/opendtrace/toolkit](https://github.com/opendtrace/toolkit)提供了一组 opentrace 工具包脚本。
+中提供了一组 opentrace 工具包脚本 [https://github.com/opendtrace/toolkit](https://github.com/opendtrace/toolkit) 。
 
 
 ## <a name="hello-world"></a>Hello World
@@ -98,7 +97,7 @@ CPU     ID                    FUNCTION:NAME
 
 ## <a name="file-delete-tracker"></a>文件删除跟踪器
 
-此示例脚本使用 syscall 提供程序来检测 NtOpenFile，并检查传递的标记（参数 #5）以跟踪整个系统中的删除。
+此示例脚本使用 syscall 提供程序来检测 NtOpenFile，并检查传递 (参数 #5) ，以跟踪整个系统中的删除。
 
 将以下脚本复制到 filedeletetracker 中。
 
@@ -145,7 +144,7 @@ CPU     ID                    FUNCTION:NAME
 
 此程序旨在继续监视文件删除。 按 CTRL + C 退出。
 
-有关更大的代码示例，请参阅下一主题[DTrace Windows 代码示例](dtrace-code-samples.md)。
+有关更大的代码示例，请参阅下一主题 [DTrace Windows 代码示例](dtrace-code-samples.md)。
 
 ## <a name="see-also"></a>另请参阅
 

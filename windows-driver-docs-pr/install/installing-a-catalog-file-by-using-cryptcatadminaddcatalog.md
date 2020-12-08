@@ -1,15 +1,14 @@
 ---
 title: 使用 CryptCATAdminAddCatalog 安装目录文件
 description: 使用 CryptCATAdminAddCatalog 安装目录文件
-ms.assetid: 2ab71f74-5a94-4f07-bd08-d3f5f6b6a785
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 58e78ff2dda19f6cd22a3e6e7557b2adec3f317e
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 81868dbc1ca168c0305e00ea32e1168b02e3f74b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91732857"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96817727"
 ---
 # <a name="installing-a-catalog-file-by-using-cryptcatadminaddcatalog"></a>使用 CryptCATAdminAddCatalog 安装目录文件
 
@@ -26,7 +25,7 @@ ms.locfileid: "91732857"
 
 若要使用这些 **CryptCATAdmin * Xxx*** 密码功能，安装程序将执行以下操作：
 
-1.  调用 [CryptCATAdminAcquireContext](/windows/win32/api/mscat/nf-mscat-cryptcatadminacquirecontext) 以获取目录管理员上下文的句柄。 应用程序通过将 *pgSubsystem* 输入参数设置为指向 GUID DRIVER_ACTION_VERIFY 的指针来标识子系统。 此 GUID 是在 *Softpub*中定义的。
+1.  调用 [CryptCATAdminAcquireContext](/windows/win32/api/mscat/nf-mscat-cryptcatadminacquirecontext) 以获取目录管理员上下文的句柄。 应用程序通过将 *pgSubsystem* 输入参数设置为指向 GUID DRIVER_ACTION_VERIFY 的指针来标识子系统。 此 GUID 是在 *Softpub* 中定义的。
 
 2.  调用 [CryptCATAdminAddCatalog](/windows/win32/api/mscat/nf-mscat-cryptcatadminaddcatalog) 将 [目录文件](catalog-files.md) 添加到系统组件和驱动程序数据库。 安装程序提供了在步骤1中获得的目录管理员上下文的句柄、指向目录文件的完全限定路径的指针，以及指向该函数用于在数据库中安装目录文件副本的目录文件名称的指针。 函数为已添加到数据库的目录文件返回目录信息上下文的句柄。
 

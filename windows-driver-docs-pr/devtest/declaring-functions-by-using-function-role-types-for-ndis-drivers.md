@@ -1,15 +1,14 @@
 ---
 title: 使用 NDIS 驱动程序的函数角色类型来声明函数
 description: 使用 NDIS 驱动程序的函数角色类型来声明函数
-ms.assetid: 232c4272-0bf0-4a4e-9560-3bceeca8a3e3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 384f629da3855b02bd7ea2257d64ccce63400f8e
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: b52df051f65211bd01a70362d779d8526915615a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89383961"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96817833"
 ---
 # <a name="declaring-functions-by-using-function-role-types-for-ndis-drivers"></a>使用 NDIS 驱动程序的函数角色类型来声明函数
 
@@ -75,13 +74,13 @@ NDIS_IO_WORKITEM MPQueuedWorkItem;
 
 根据 C 编程语言的要求，在函数定义中使用的参数类型必须与函数原型的参数类型匹配，在本例中为函数角色类型。 SDV 依赖于用于分析的函数签名，并忽略其签名不匹配的函数。
 
-例如，你应该使用微型端口[*MiniportInterrupt*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_isr) \_ ISR 函数角色类型声明一个 MiniportInterrupt 函数：
+例如，你应该使用微型端口 [*MiniportInterrupt*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_isr) \_ ISR 函数角色类型声明一个 MiniportInterrupt 函数：
 
 ```
 MINIPORT_ISR myMPIsr;
 ```
 
-实现中断例程 *myMPIsr*时，参数类型必须与微型端口 ISR 使用的参数类型 \_ （即 NDIS \_ 句柄、PBOOLEAN 和 PULONG） (参阅) 语法的 [*MiniportInterrupt*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_isr) 函数。
+实现中断例程 *myMPIsr* 时，参数类型必须与微型端口 ISR 使用的参数类型 \_ （即 NDIS \_ 句柄、PBOOLEAN 和 PULONG） (参阅) 语法的 [*MiniportInterrupt*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_isr) 函数。
 
 ```
 BOOLEAN 

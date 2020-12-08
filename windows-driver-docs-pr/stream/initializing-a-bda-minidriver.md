@@ -1,18 +1,17 @@
 ---
 title: 初始化 BDA 微型驱动程序
 description: 初始化 BDA 微型驱动程序
-ms.assetid: 4df2efc6-e666-48d5-9a7b-cbf724c027f0
 keywords:
 - BDA 微型驱动程序 WDK AVStream，初始化
 - 初始化 BDA 微型驱动程序 WDK AVStream
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c627da85def685144d8d0b55fa360815e9637381
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 1c088c81af87bca0fd7ebe1ba3e2c9b4593ef95b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89190179"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96818771"
 ---
 # <a name="initializing-a-bda-minidriver"></a>初始化 BDA 微型驱动程序
 

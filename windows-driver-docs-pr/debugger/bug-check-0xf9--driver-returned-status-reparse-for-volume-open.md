@@ -1,7 +1,6 @@
 ---
 title: Bug 检查 0xF9 DRIVER_RETURNED_STATUS_REPARSE_FOR_VOLUME_OPEN
 description: DRIVER_RETURNED_STATUS_REPARSE_FOR_VOLUME_OPEN bug 检查，它指示驱动程序返回的 STATUS_REPARSE 到 IRP_MJ_CREATE 请求，但没有尾随名称。
-ms.assetid: 60eeb24a-accf-4db8-ba5b-1738a9aa4b46
 keywords:
 - Bug 检查 0xF9 DRIVER_RETURNED_STATUS_REPARSE_FOR_VOLUME_OPEN
 - DRIVER_RETURNED_STATUS_REPARSE_FOR_VOLUME_OPEN
@@ -13,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 7d36e6480dc98538b24fac86ccbe1b0a350d4809
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: f62f4f7386b7055e09f7406a2a6fd707c91b1501
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89210233"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96819239"
 ---
 # <a name="bug-check-0xf9-driver_returned_status_reparse_for_volume_open"></a>Bug 检查0xF9：驱动 \_ 程序 \_ 返回 \_ \_ 的 \_ 卷 \_ 打开状态重新分析
 
@@ -38,7 +37,7 @@ ms.locfileid: "89210233"
 <thead>
 <tr class="header">
 <th align="left">参数</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>

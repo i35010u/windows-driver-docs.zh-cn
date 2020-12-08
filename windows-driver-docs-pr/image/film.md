@@ -1,9 +1,8 @@
 ---
-title: 电影元素
-description: 可选的电影胶片元素描述电影扫描附加到扫描程序的选项的功能。
-ms.assetid: 132690c4-71c2-4379-bdb2-dc9944d9c5ea
+title: 胶卷元素
+description: 可选的 "胶卷" 元素描述附加到扫描仪的 "胶片扫描" 选项的功能。
 keywords:
-- 电影元素成像设备
+- 胶片元素图像处理设备
 topic_type:
 - apiref
 api_name:
@@ -12,19 +11,19 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fa615ff6232da56f841edc045f34a39189a3a434
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a09efd9409455ba8d63b6e3826f52424a9db79f5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63323370"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96818951"
 ---
-# <a name="film-element"></a>电影元素
+# <a name="film-element"></a>胶卷元素
 
 
-可选**电影**元素描述电影扫描附加到扫描程序的选项的功能。
+可选的 " **胶卷** " 元素描述附加到扫描仪的 "胶片扫描" 选项的功能。
 
-<a name="usage"></a>用法
+<a name="usage"></a>使用情况
 -----
 
 ```xml

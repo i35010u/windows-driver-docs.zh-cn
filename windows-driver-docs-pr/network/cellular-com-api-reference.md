@@ -1,17 +1,16 @@
 ---
 title: 手机网络 COM API 参考
 description: 手机网络 COM API 参考
-ms.assetid: B0EA1353-A57C-4F93-9A1B-7F018E0AA7B7
 keywords:
 - 移动电话 COM API 参考 WDK，蜂窝 COM API Windows Phone 8。1
 ms.date: 12/07/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 73d4312463777412f1b35da1b40b7e4fdf0563f4
-ms.sourcegitcommit: 366a15d68eb58d01a8ca6de7b982f62ac8b7deaf
+ms.openlocfilehash: a717dd1b15063ee82b4060d6520ac6ed6856eb1c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/19/2020
-ms.locfileid: "90811966"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96818401"
 ---
 # <a name="cellular-com-api-reference"></a>手机网络 COM API 参考
 

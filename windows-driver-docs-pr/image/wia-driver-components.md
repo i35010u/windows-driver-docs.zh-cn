@@ -1,15 +1,14 @@
 ---
 title: WIA 驱动程序组件
 description: WIA 驱动程序组件
-ms.assetid: 2c854945-2eda-4f4c-9cf6-5525e6e237ed
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0259378d1374fce9e2763c7975095b02eaccc5b0
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 96d4fb62df35beb90c1a6c3c198414a4ff863ea8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89185023"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96818939"
 ---
 # <a name="wia-driver-components"></a>WIA 驱动程序组件
 

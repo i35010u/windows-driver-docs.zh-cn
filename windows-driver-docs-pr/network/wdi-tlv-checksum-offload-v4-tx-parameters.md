@@ -1,17 +1,16 @@
 ---
 title: 'WDI_TLV_CHECKSUM_OFFLOAD_V4_TX_PARAMETERS (0xD1) '
 description: WDI_TLV_CHECKSUM_OFFLOAD_V4_TX_PARAMETERS 是一个 TLV，其中包含适用于 IPv4 的 Tx 校验和卸载的参数。
-ms.assetid: EA862CDA-5FF4-4C5F-A522-224714640F34
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_CHECKSUM_OFFLOAD_V4_TX_PARAMETERS (0xD1) 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 64c87dd67a01204496011995242928b5fa076d2c
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 57f09e707634e8ee4322b27f5c068da5b79a17a9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89218300"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96818283"
 ---
 # <a name="wdi_tlv_checksum_offload_v4_tx_parameters-0xd1"></a>WDI \_ TLV \_ 校验和 \_ 卸载 \_ V4 \_ TX \_ 参数 (0xD1) 
 
@@ -25,7 +24,7 @@ WDI \_ tlv \_ 校验和 \_ 卸载 \_ V4 \_ TX \_ 参数是一个 TLV，其中包
 
 0xD1
 
-## <a name="length"></a>Length
+## <a name="length"></a>长度
 
 
 Sum (所有包含的元素的大小) 。
@@ -41,7 +40,7 @@ Sum (所有包含的元素的大小) 。
 <thead>
 <tr class="header">
 <th>类型</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -92,7 +91,7 @@ Sum (所有包含的元素的大小) 。
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
-<td><p>Windows Server 2016</p></td>
+<td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
 <td><p>标头</p></td>

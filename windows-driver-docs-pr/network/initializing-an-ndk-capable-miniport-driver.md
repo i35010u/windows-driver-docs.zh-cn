@@ -1,15 +1,14 @@
 ---
 title: 初始化支持 NDK 的微型端口驱动程序
 description: 支持网络直接内核 (NDK) 的微型端口驱动程序的初始化方式与其他微型端口驱动程序相同。 但是，它还必须注册其他 NDKPI 入口点。
-ms.assetid: 9C9799AB-75A8-4E9A-8702-D389B73522DC
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f4759dbe7ad151d257550d08f0f8537d2a45fd77
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 4fc62576bd727976fd49208845a9d7af10241720
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89207908"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96818381"
 ---
 # <a name="initializing-an-ndk-capable-miniport-driver"></a>初始化支持 NDK 的微型端口驱动程序
 
@@ -36,7 +35,7 @@ ms.locfileid: "89207908"
 
     -   通常为 NDIS 微型端口驱动程序所必需的任何 Oid。
 
-        **注意**   有关这些必需 Oid 的列表，请参阅[小型端口驱动程序的必需 oid](./mandatory-oids-for-miniport-drivers.md)。
+        **注意**  有关这些必需 Oid 的列表，请参阅 [小型端口驱动程序的必需 oid](./mandatory-oids-for-miniport-drivers.md)。
 
          
 
@@ -45,7 +44,7 @@ ms.locfileid: "89207908"
 ## <a name="miniportsetoptions-function"></a>MiniportSetOptions 函数
 
 
-在微型端口驱动程序的[**DriverEntry**](./initializing-a-miniport-driver.md)函数返回后，NDIS 会立即调用[*MiniportSetOptions*](/windows-hardware/drivers/ddi/ndis/nc-ndis-set_options)函数。 在微型端口驱动程序对[**NdisMRegisterMiniportDriver**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismregisterminiportdriver)的调用的上下文中调用*MiniportSetOptions*函数。
+在微型端口驱动程序的 [**DriverEntry**](./initializing-a-miniport-driver.md)函数返回后，NDIS 会立即调用 [*MiniportSetOptions*](/windows-hardware/drivers/ddi/ndis/nc-ndis-set_options)函数。 在微型端口驱动程序对 [**NdisMRegisterMiniportDriver**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismregisterminiportdriver)的调用的上下文中调用 *MiniportSetOptions* 函数。
 
 在 [*MiniportSetOptions*](/windows-hardware/drivers/ddi/ndis/nc-ndis-set_options) 函数中，支持 ndk 的微型端口驱动程序将注册其 NDK 功能并注册以下必需的 NDKPI 函数入口点，如 [配置可选微型端口驱动程序服务](configuring-optional-miniport-driver-services.md)中所述：
 
@@ -57,7 +56,7 @@ ms.locfileid: "89207908"
 
 1.  初始化 [**NDIS \_ NDK \_ 提供程序 \_ 特征**](/windows-hardware/drivers/ddi/ndisndk/ns-ndisndk-_ndis_ndk_provider_characteristics) 结构。
 
-    **注意**   请特别注意**标头**成员说明。 微型端口驱动程序必须正确设置此成员，以将自身标识为支持 NDK 的微型端口驱动程序。
+    **注意**  请特别注意 **标头** 成员说明。 微型端口驱动程序必须正确设置此成员，以将自身标识为支持 NDK 的微型端口驱动程序。
 
      
 

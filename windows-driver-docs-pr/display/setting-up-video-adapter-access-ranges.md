@@ -1,7 +1,6 @@
 ---
 title: 设置视频适配器访问范围
 description: 设置视频适配器访问范围
-ms.assetid: 250c5611-c6f5-49b5-94bc-93a1b43312e6
 keywords:
 - 视频适配器访问范围 WDK 视频微型端口
 - 范围 WDK 视频微型端口
@@ -9,12 +8,12 @@ keywords:
 - 适配器访问范围 WDK 视频微型端口
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8cc264cd8a9c094a57e5bce6f15f3487077ab89c
-ms.sourcegitcommit: a44ade167cdfb541cf1818e9f9e3726f23f90b66
+ms.openlocfilehash: f2e1fb836c0fded3044e54f1ecffd1a52c50dc61
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94361551"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96817791"
 ---
 # <a name="setting-up-video-adapter-access-ranges"></a>设置视频适配器访问范围
 
@@ -42,13 +41,13 @@ ms.locfileid: "94361551"
 
 使用映射的逻辑范围地址，驱动程序可以调用 **VideoPortRead**_xxx_ 和 **VideoPortWrite**_Xxx_ 函数来读取或写入适配器。 这些内核模式地址也可以传递到 [**VideoPortCompareMemory**](/windows-hardware/drivers/ddi/video/nf-video-videoportcomparememory)、 [**VideoPortMoveMemory**](/windows-hardware/drivers/ddi/video/nf-video-videoportmovememory)、 [**VideoPortZeroDeviceMemory**](/windows-hardware/drivers/ddi/video/nf-video-videoportzerodevicememory)和/或 [**VideoPortZeroMemory**](/windows-hardware/drivers/ddi/video/nf-video-videoportzeromemory)。 对于 i/o 空间中的映射范围，微型端口驱动程序调用 **VideoPortReadPort**_xxx_ 和 **VideoPortWritePort**_xxx_ 函数。 对于内存中的映射范围，微型端口驱动程序调用 **VideoPortReadRegister**_xxx_ 和 **VideoPortWriteRegister**_xxx_ 函数。
 
-[*HwVidFindAdapter*](/windows-hardware/drivers/ddi/video/nc-video-pvideo_hw_find_adapter)函数 *必须始终* 成功调用 [**VideoPortVerifyAccessRanges**](/windows-hardware/drivers/ddi/video/nf-video-videoportverifyaccessranges)或 [**VideoPortGetAccessRanges**](/windows-hardware/drivers/ddi/video/nf-video-videoportgetaccessranges) ， *才能* 调用 [**VideoPortGetDeviceBase**](/windows-hardware/drivers/ddi/video/nf-video-videoportgetdevicebase)。
+[*HwVidFindAdapter*](/windows-hardware/drivers/ddi/video/nc-video-pvideo_hw_find_adapter)函数 *必须始终* 成功调用 [**VideoPortVerifyAccessRanges**](/windows-hardware/drivers/ddi/video/nf-video-videoportverifyaccessranges)或 [**VideoPortGetAccessRanges**](/windows-hardware/drivers/ddi/video/nf-video-videoportgetaccessranges) ，*才能* 调用 [**VideoPortGetDeviceBase**](/windows-hardware/drivers/ddi/video/nf-video-videoportgetdevicebase)。
 
 -   对 **VideoPortVerifyAccessRanges** 或 **VideoPortGetAccessRanges** 的任何成功调用都将在特定于总线的视频内存上建立微型端口驱动程序的声明，并在注册表中为其适配器注册地址或 i/o 端口。 但需要注意的是，对 **VideoPortVerifyAccessRanges** 或 **VideoPortGetAccessRanges** 的任何后续调用都将导致该驱动程序以前声明的资源被擦除并替换为传递到最近调用函数的范围。 因此，如果驱动程序声明通过单独调用这些函数来声明范围，则它必须传入所有范围数组，包括已声明的数组。
 
--   *HwVidFindAdapter* 可以声明适配器的一小部分访问范围，使用此设置来确定该适配器是否为微型端口驱动程序支持的适配器，并为支持的适配器声明一组完整的访问范围，同时调用 **VideoPortGetAccessRanges** 或 **VideoPortVerifyAccessRanges** 。 同样，每次成功调用这些 **VideoPort。** 特定适配器的 AccessRanges 例程会在注册表中覆盖调用方的以前的声明。
+-   *HwVidFindAdapter* 可以声明适配器的一小部分访问范围，使用此设置来确定该适配器是否为微型端口驱动程序支持的适配器，并为支持的适配器声明一组完整的访问范围，同时调用 **VideoPortGetAccessRanges** 或 **VideoPortVerifyAccessRanges**。 同样，每次成功调用这些 **VideoPort。** 特定适配器的 AccessRanges 例程会在注册表中覆盖调用方的以前的声明。
 
--   若要声明其他类型的硬件资源（例如中断矢量），微型端口驱动程序应在视频端口配置信息中设置相应的值 \_ \_ \_ 并调用 **VideoPortVerifyAccessRanges** ，或者应调用 **VideoPortGetAccessRanges** 。
+-   若要声明其他类型的硬件资源（例如中断矢量），微型端口驱动程序应在视频端口配置信息中设置相应的值 \_ \_ \_ 并调用 **VideoPortVerifyAccessRanges**，或者应调用 **VideoPortGetAccessRanges**。
 
 -   若要成功调用 **VideoPortGetAccessRanges** 或 **VideoPortVerifyAccessRanges** ，请确保微型端口驱动程序不会尝试使用已由其他驱动程序使用的寄存器或设备内存地址。
 

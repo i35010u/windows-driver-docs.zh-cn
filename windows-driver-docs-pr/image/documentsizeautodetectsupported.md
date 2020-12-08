@@ -1,9 +1,8 @@
 ---
 title: DocumentSizeAutoDetectSupported 元素
-description: 所需的 DocumentSizeAutoDetectSupported 元素指示扫描设备是否可以检测到的原始媒体的大小。
-ms.assetid: 38baea3d-85bf-44e1-86bf-349d17981efa
+description: 必需的 DocumentSizeAutoDetectSupported 元素指示扫描设备是否可以检测到原始媒体的大小。
 keywords:
-- DocumentSizeAutoDetectSupported 元素成像设备
+- DocumentSizeAutoDetectSupported 元素图像设备
 topic_type:
 - apiref
 api_name:
@@ -12,19 +11,19 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ec59f6f1847f0ce3653cc129d36956aeb1492070
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ee0b18e60b81848a65fbf3a9bf7db12ad9eb5215
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63364509"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96818975"
 ---
 # <a name="documentsizeautodetectsupported-element"></a>DocumentSizeAutoDetectSupported 元素
 
 
-所需**DocumentSizeAutoDetectSupported**元素指示扫描设备是否可以检测到的原始媒体的大小。
+必需的 **DocumentSizeAutoDetectSupported** 元素指示扫描设备是否可以检测到原始媒体的大小。
 
-<a name="usage"></a>用法
+<a name="usage"></a>使用情况
 -----
 
 ```xml
@@ -41,12 +40,12 @@ ms.locfileid: "63364509"
 <a name="text-value"></a>文本值
 ----------
 
-必需。 一个布尔值，必须为 0，1，为 false，或，则返回 true。**falsetrue**
+必需。 必须为0、1、false 或 true 的布尔值。**falsetrue**
 
 ## <a name="child-elements"></a>子元素
 
 
-没有子元素。
+没有任何子元素。
 
 ## <a name="parent-elements"></a>父元素
 
@@ -70,9 +69,9 @@ ms.locfileid: "63364509"
 <a name="remarks"></a>备注
 -------
 
-如果扫描设备可以检测到的原始媒体的大小，WSD 扫描服务应返回 1 (**，则返回 true**); 否则为它应返回 0 (**false**)。
+如果扫描设备可以检测到原始媒体的大小，则 WSD 扫描服务应返回 1 (**true**) ;否则，它应返回 0 (**false**) 。
 
-不能扩展此元素允许的值。
+不能扩展此元素的允许值。
 
 ## <a name="see-also"></a>请参阅
 

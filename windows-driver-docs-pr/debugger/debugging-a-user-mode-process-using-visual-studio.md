@@ -1,15 +1,14 @@
 ---
 title: 使用 Visual Studio 调试用户模式进程
 description: 在 Microsoft Visual Studio 中，可以使用 Windows 用户模式调试器附加到正在运行的进程，或者生成并附加到新进程。
-ms.assetid: C19D1B6F-B97B-4C1B-AD84-AC974C5F5C8C
 ms.date: 05/11/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 91dfd451157660807f4fc876755f018f9eb1b364
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 7429826e5ed0cd3375a4948d4fa7e626b72687d4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89213029"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96819197"
 ---
 # <a name="span-iddebuggerdebugging_a_user-mode_process_using_visual_studiospandebugging-a-user-mode-process-using-visual-studio"></a><span id="debugger.debugging_a_user-mode_process_using_visual_studio"></span>使用 Visual Studio 调试用户模式进程
 
@@ -58,7 +57,8 @@ ms.locfileid: "89213029"
 3.  在 " **可用进程** " 列表中，选择要附加到的进程。
 4.  单击 **“附加”** 。
 
-**注意**   如果你使用的是单独的主机和目标计算机，请不要在目标计算机上安装 Visual Studio 和 WDK。 如果在目标计算机上安装了 Visual Studio 和 WDK，则不支持调试。
+**注意**  
+如果你使用的是单独的主机和目标计算机，请不要在目标计算机上安装 Visual Studio 和 WDK。 如果在目标计算机上安装了 Visual Studio 和 WDK，则不支持调试。
 
  
 

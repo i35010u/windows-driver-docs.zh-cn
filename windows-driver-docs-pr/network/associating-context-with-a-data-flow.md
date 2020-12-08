@@ -1,7 +1,6 @@
 ---
 title: 将上下文与数据流相关联
 description: 将上下文与数据流相关联
-ms.assetid: 75f5838e-626d-4a59-810e-fec9a40640ed
 keywords:
 - 分类标注 WDK Windows 筛选平台，与数据流相关联的上下文
 - 上下文 WDK Windows 筛选平台
@@ -9,12 +8,12 @@ keywords:
 - 将上下文与数据流 WDK Windows 筛选平台相关联
 ms.date: 01/14/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 4e381f400f4e1a4f90313dff1b1e0a894c7ff215
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 8fb68d1b52bc8f61797424920e7a028bfdf37798
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89206505"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96817677"
 ---
 # <a name="associating-context-with-a-data-flow"></a>将上下文与数据流相关联
 

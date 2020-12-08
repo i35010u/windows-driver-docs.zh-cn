@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ CAMERACONTROL \_ 扩展 \_ VIDEOHDR
 description: KSPROPERTY \_ CAMERACONTROL \_ EXTENDED \_ VIDEOHDR 用于启用或禁用驱动程序上 (HDR) 视频的高动态范围。 这是仅用于视频 pin 的 pin 级别控制。
-ms.assetid: AC798BF1-4E1A-48D8-8F56-986F89D9C153
 keywords:
 - KSPROPERTY_CAMERACONTROL_EXTENDED_VIDEOHDR 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 09/11/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: ff1f29f941ae58a172e7de028588a8ce1eedac03
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 768e066c752353f22d7aa153afa291b090bf0811
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89188755"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96817927"
 ---
 # <a name="ksproperty_cameracontrol_extended_videohdr"></a>KSPROPERTY \_ CAMERACONTROL \_ 扩展 \_ VIDEOHDR
 
@@ -44,7 +43,7 @@ KSPROPERTY \_ CAMERACONTROL \_ EXTENDED \_ VIDEOHDR 用于启用或禁用驱动�
 <tr class="odd">
 <td><p>版本 1</p></td>
 <td><p>Pin</p></td>
-<td><p>同步</p></td>
+<td><p>Synchronous</p></td>
 </tr>
 </tbody>
 </table>
@@ -144,7 +143,7 @@ KSPROPERTY \_ CAMERACONTROL \_ EXTENDED \_ VIDEOHDR 用于启用或禁用驱动�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Ksmedia.h</td>
 </tr>
 </tbody>

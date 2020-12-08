@@ -1,7 +1,6 @@
 ---
 title: MRxSetEaInfo 例程
 description: TheMRxSetEaInfo 例程由 RDBSS 调用，请求网络小型重定向程序设置文件系统对象的扩展属性信息。
-ms.assetid: 6882ab3c-a679-491b-a35f-71cfbf77bb39
 keywords:
 - MRxSetEaInfo 例程可安装文件系统驱动程序
 - PMRX_CALLDOWN
@@ -15,17 +14,17 @@ api_type:
 - UserDefined
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ad0ec44fed4d746ae4f036fd9085399aea1a89a2
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: b9752130f69483fe22607c56a664b42d391e18a0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89066882"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96818979"
 ---
 # <a name="mrxseteainfo-routine"></a>MRxSetEaInfo 例程
 
 
-[RDBSS](./the-rdbss-driver-and-library.md)调用*MRxSetEaInfo*例程来请求网络小型重定向程序设置文件系统对象上的扩展属性信息。
+[RDBSS](./the-rdbss-driver-and-library.md)调用 *MRxSetEaInfo* 例程来请求网络小型重定向程序设置文件系统对象上的扩展属性信息。
 
 <a name="syntax"></a>语法
 ------
@@ -34,12 +33,12 @@ ms.locfileid: "89066882"
 PMRX_CALLDOWN MRxSetEaInfo;
 
 NTSTATUS MRxSetEaInfo(
-  _Inout_ PRX_CONTEXT RxContext
+  _Inout_ PRX_CONTEXT RxContext
 )
 { ... }
 ```
 
-<a name="parameters"></a>parameters
+<a name="parameters"></a>参数
 ----------
 
 *RxContext* \[in、out\]  
@@ -120,11 +119,11 @@ NTSTATUS MRxSetEaInfo(
 
 RDBSS 发出对 *MRxSetEaInfo* 的调用，以响应接收 [**IRP \_ MJ \_ 集 \_ EA**](irp-mj-set-ea.md) 请求。
 
-在调用 *MRxSetEaInfo*之前，RDBSS 会修改 \_ *RXCONTEXT* 参数指向的 RX 上下文结构中的以下成员：
+在调用 *MRxSetEaInfo* 之前，RDBSS 会修改 \_ *RXCONTEXT* 参数指向的 RX 上下文结构中的以下成员：
 
-**信息. buffer**成员设置为 i/o 请求数据包中的用户缓冲区。 如果需要，此缓冲区已被 RDBSS 锁定。
+**信息. buffer** 成员设置为 i/o 请求数据包中的用户缓冲区。 如果需要，此缓冲区已被 RDBSS 锁定。
 
-**LengthRemaining**成员设置为**IrpSp &gt; 参数. QueryEa**。
+**LengthRemaining** 成员设置为 **IrpSp &gt; 参数. QueryEa**。
 
 <a name="requirements"></a>要求
 ------------
@@ -137,7 +136,7 @@ RDBSS 发出对 *MRxSetEaInfo* 的调用，以响应接收 [**IRP \_ MJ \_ 集 \
 <tbody>
 <tr class="odd">
 <td align="left"><p>目标平台</p></td>
-<td align="left">桌面型</td>
+<td align="left">台式机</td>
 </tr>
 <tr class="even">
 <td align="left"><p>标头</p></td>
@@ -146,7 +145,7 @@ RDBSS 发出对 *MRxSetEaInfo* 的调用，以响应接收 [**IRP \_ MJ \_ 集 \
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**MRxIsValidDirectory**](/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_chkdir_calldown)

@@ -1,18 +1,17 @@
 ---
 title: 不使用标头数据拆分的情况
 description: 不使用标头数据拆分的情况
-ms.assetid: e5d3071e-a0d1-4a66-b8aa-6823e737f242
 keywords:
 - 标头-在未使用时数据拆分 WDK
 - 如果未使用，则使用以太网帧拆分 WDK 网络
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4a86bf4e75bc255cb0a39edeb298d26fbbe0a6cd
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: b6dc95f690ce5e490dcd52578c025bce9951ad56
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89213987"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96818403"
 ---
 # <a name="cases-where-header-data-split-is-not-used"></a>不使用标头数据拆分的情况
 
@@ -20,9 +19,9 @@ ms.locfileid: "89213987"
 
 
 
-本主题概述了标头-数据拆分提供程序不得拆分以太网帧的情况。 若要查看提供程序为支持标头数据拆分而必须满足的最低要求的列表，请参阅 [支持标头数据拆分的最低要求](minimum-requirements-for-supporting-header-data-split.md)。
+本主题概述了标头-数据拆分提供程序不得拆分以太网帧的情况。 若要查看提供程序为支持标头数据拆分而必须满足的最低要求的列表，请参阅 [支持 Header-Data 拆分的最低要求](minimum-requirements-for-supporting-header-data-split.md)。
 
-**注意**   在某些情况下，接收的帧可以在标头数据拆分提供程序要求之外拆分。 即标头-数据拆分要求仅适用于标头-数据拆分提供程序。 在这种情况下，除非第一个 MDL 至少包含与为预测先行大小指定的 NDIS 相同的字节，否则不会将以太网帧拆分为 IP 标头、IPv4 选项、IPsec 标头、IPv6 扩展标头或上层协议标头。
+**注意**  在某些情况下，接收的帧可以在标头数据拆分提供程序要求之外拆分。 即标头-数据拆分要求仅适用于标头-数据拆分提供程序。 在这种情况下，除非第一个 MDL 至少包含与为预测先行大小指定的 NDIS 相同的字节，否则不会将以太网帧拆分为 IP 标头、IPv4 选项、IPsec 标头、IPv6 扩展标头或上层协议标头。
 
  
 

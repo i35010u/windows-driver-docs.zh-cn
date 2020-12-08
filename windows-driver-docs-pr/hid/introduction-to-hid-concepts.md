@@ -1,7 +1,6 @@
 ---
 title: HID 应用程序编程接口 (API)
 description: 人体学接口设备简介 (HID) API。
-ms.assetid: 477FF911-5A17-4EA5-9403-1D7B4E8B3BA5
 keywords:
 - “人机接口设备”
 - HID
@@ -12,12 +11,12 @@ keywords:
 - 陀螺仪
 ms.date: 02/28/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: d35b60eaf4fa27c8e77f5974d5319d9e3c2807f6
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: ef0e9b60445eca195bf7dae19aeffb34d96623ac
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90716812"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96818455"
 ---
 # <a name="hid-application-programming-interface-api"></a>HID 应用程序编程接口 (API)
 

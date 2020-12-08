@@ -1,16 +1,15 @@
 ---
 title: NDIS_STATUS_WWAN_SAR_TRANSMISSION_STATUS
 description: 微型端口驱动程序使用 NDIS_STATUS_WWAN_SAR_TRANSMISSION_STATUS 通知来通知移动宽带 (MB) 服务与先前 OID_WWAN_SAR_TRANSMISSION_STATUS 查询或设置请求的完成有关。
-ms.assetid: 0F04AC31-A16F-4E6A-A5FF-A69574A300A1
 ms.date: 08/20/2018
 keywords: -从 Windows Vista 开始 NDIS_STATUS_WWAN_SAR_TRANSMISSION_STATUS 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 8829c738a9f89255f4c5e31ba4d45024ae1d7717
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: cde302f5742ef28dc806df9ac0fcdea7b04ad1f5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89211697"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96818865"
 ---
 # <a name="ndis_status_wwan_sar_transmission_status"></a>NDIS_STATUS_WWAN_SAR_TRANSMISSION_STATUS
 
@@ -24,7 +23,7 @@ ms.locfileid: "89211697"
 
 **版本**： Windows 10，版本 1703 **头**： Ntddndis (包括 Ndis .h) 
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [MB SAR 平台支持](./mb-sar-platform-support.md)
 

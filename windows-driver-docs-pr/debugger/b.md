@@ -1,15 +1,14 @@
 ---
-title: B （Windows 调试器术语表）
+title: 'B (Windows 调试器词汇表) '
 description: 词汇表页-B
-ms.assetid: 5ba110fc-1a12-4cbd-adc9-ef9441e257cb
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1e8af541a1cb72c072cb139f6fd45e3b8fd82e10
-ms.sourcegitcommit: 48c4b6d3a504583d2f588ed892a4a281d4b58301
+ms.openlocfilehash: e94a586576cbab04d4bcb1c42bd53904b1900904
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70387060"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96819287"
 ---
 # <a name="b"></a>B
 
@@ -20,12 +19,12 @@ ms.locfileid: "70387060"
 <span id="breakpoint"></span><span id="BREAKPOINT"></span>**逐**  
 目标或目标操作中的一个位置，该位置将在触发时引发事件。
 
-有关详细信息，请参阅[使用断点](using-breakpoints.md)。
+有关详细信息，请参阅 [使用断点](using-breakpoints.md)。
 
 <span id="breakpoint_id"></span><span id="BREAKPOINT_ID"></span>**断点 ID**  
 断点的唯一标识符。
 
-有关详细信息，请参阅[使用断点](using-breakpoints.md)。
+有关详细信息，请参阅 [使用断点](using-breakpoints.md)。
 
 <span id="breakpoint_type"></span><span id="BREAKPOINT_TYPE"></span>**断点类型**  
 用于实现断点的方法。 有两种类型的断点：处理器断点和软件断点。
@@ -33,9 +32,9 @@ ms.locfileid: "70387060"
 <span id="break_status"></span><span id="BREAK_STATUS"></span>**中断状态**  
 影响调试器引擎在事件完成后如何继续的设置。 中断状态指示事件是应中断到调试器、将通知打印到调试器控制台还是被忽略。 中断状态是事件筛选器的一部分。
 
-另请参阅[*处理状态*](h.md#handling-status)。
+另请参阅 [*处理状态*](h.md#handling-status)。
 
-有关详细信息，请参阅[控制异常和事件](controlling-exceptions-and-events.md)和[事件筛选器](event-filters.md)的主题。
+有关详细信息，请参阅 [控制异常和事件](controlling-exceptions-and-events.md) 和 [事件筛选器](event-filters.md)的主题。
 
 <span id="bug_check"></span><span id="BUG_CHECK"></span>**bug 检查**  
 当 Windows 遇到硬件问题、其操作所需的数据不一致或其他严重错误时，它会关闭并在蓝色字符模式屏幕上显示错误信息。

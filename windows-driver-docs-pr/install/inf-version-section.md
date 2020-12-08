@@ -1,7 +1,6 @@
 ---
 title: INF Version 节
 description: 按照约定，版本部分首先出现在 INF 文件中。 每个 INF 文件都必须包含此部分。
-ms.assetid: 53e30950-28a3-4ae3-a351-a917b02c84a5
 keywords:
 - INF 版本部分设备和驱动程序安装
 topic_type:
@@ -12,12 +11,12 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 95dfc2bd2ce1cbb6e3f2df7abe0d0153a1d31131
-ms.sourcegitcommit: 5ff30ddae453c6439177acde0e2d32eaf234a2c0
+ms.openlocfilehash: 8c6c28bdd16568cdbd907195179f30f431e8e546
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95030026"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96817737"
 ---
 # <a name="inf-version-section"></a>INF Version 节
 
@@ -212,7 +211,7 @@ Floppy_Description = "Adaptec Drivers Disk"
 ; ...
 ```
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**_DDInstall_* _](inf-ddinstall-section.md)

@@ -1,7 +1,6 @@
 ---
 title: usbkd.usbhcdpnp
 description: Usbkd. usbhcdpnp 命令显示 USB 主机控制器或根集线器的即插即用 (PnP) 状态历史记录。
-ms.assetid: 1153F3C2-5878-4223-AA18-5AE6FA056851
 keywords:
 - usbkd usbhcdpnp Windows 调试
 ms.date: 05/23/2017
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: bc681df76d463b56d60852295d08670e14373e73
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 6a049a84a23c354aaca8ba9b376983c4630e9ff8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89209423"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96818677"
 ---
 # <a name="usbkdusbhcdpnp"></a>!usbkd.usbhcdpnp
 
 
-**！ Usbkd. usbhcdpnp**命令显示 USB 主机控制器或根集线器的即插即用 (PnP) 状态历史记录。
+**！ Usbkd. usbhcdpnp** 命令显示 USB 主机控制器或根集线器的即插即用 (PnP) 状态历史记录。
 
 ```dbgcmd
 !usbkd.usbhcdpnp DeviceExtension
@@ -56,7 +55,7 @@ UHCI MINIPORT(s) dt usbport!_USBPORT_MINIPORT_DRIVER ffffe0000090c3d0
 ...
 ```
 
-在上面的输出中，FDO 的设备扩展的地址显示为 [DML](debugger-markup-language-commands.md) command **！ uhci \_ info ffffe00001c8f1a0**的参数。
+在上面的输出中，FDO 的设备扩展的地址显示为 [DML](debugger-markup-language-commands.md) command **！ uhci \_ info ffffe00001c8f1a0** 的参数。
 
 现在，将设备扩展的地址传递给 **！ usbhcdpnp** 命令。
 
@@ -78,7 +77,7 @@ UHCI MINIPORT(s) dt usbport!_USBPORT_MINIPORT_DRIVER ffffe0000090c3d0
     RootHub !hub2_info ffffe00000d941a0 !devstack ffffe00000d94050
 ```
 
-在上面的输出中，可以看到根集线器的 FDO 地址，该地址显示为命令 **！ devstack ffffe00000d94050**的参数。 使用 [**！ devstack**](-devstack.md) 命令查找 pdo 的地址和 pdo 设备扩展。
+在上面的输出中，可以看到根集线器的 FDO 地址，该地址显示为命令 **！ devstack ffffe00000d94050** 的参数。 使用 [**！ devstack**](-devstack.md) 命令查找 pdo 的地址和 pdo 设备扩展。
 
 ```dbgcmd
 0: kd> !kdexts.devstack ffffe00000d94050

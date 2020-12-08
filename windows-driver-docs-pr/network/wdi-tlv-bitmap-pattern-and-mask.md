@@ -1,22 +1,21 @@
 ---
 title: WDI_TLV_BITMAP_PATTERN_AND_MASK
 description: WDI_TLV_BITMAP_PATTERN_AND_MASK 是未使用的 TLV。
-ms.assetid: 665529FA-7BAF-4700-86EF-ADA7D8781423
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_BITMAP_PATTERN_AND_MASK 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f0cf80ee6bdc0d204a79fbcce83c2af55242cde
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 9fbda23ea2ed56d16a94a5cacf03d3b013580187
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524795"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96818811"
 ---
-# <a name="wditlvbitmappatternandmask"></a>WDI\_TLV\_BITMAP\_PATTERN\_AND\_MASK
+# <a name="wdi_tlv_bitmap_pattern_and_mask"></a>WDI \_ TLV \_ 位图 \_ 模式 \_ 和 \_ 掩码
 
 
-WDI\_TLV\_位图\_模式\_AND\_掩码是未使用的 TLV。
+WDI \_ tlv \_ 位图 \_ 模式 \_ 和 \_ 掩码是未使用的 tlv。
 
 <a name="requirements"></a>要求
 ------------
@@ -33,7 +32,7 @@ WDI\_TLV\_位图\_模式\_AND\_掩码是未使用的 TLV。
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
-<td><p>Windows Server 2016</p></td>
+<td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
 <td><p>标头</p></td>

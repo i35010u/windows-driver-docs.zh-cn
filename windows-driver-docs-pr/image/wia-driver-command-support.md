@@ -1,15 +1,14 @@
 ---
 title: WIA 驱动程序命令支持
 description: WIA 驱动程序命令支持
-ms.assetid: 9c552316-7dd6-4102-88d3-fab9732d1e5d
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 712e142641d90c7ff239c6deaaec2f9dc8921bd3
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 2b3ee23c23b245622aaad9861354cbfa9a6003ad
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89185051"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96818934"
 ---
 # <a name="wia-driver-command-support"></a>WIA 驱动程序命令支持
 
@@ -70,7 +69,7 @@ WIA 设备命令是由 WIA 服务 (代表) 到 WIA 微型驱动程序的图像�
 
 ### <a name="implementing-the-iwiaminidrvdrvdevicecommand-method"></a>实现 IWiaMiniDrv：:d rvDeviceCommand 方法
 
-WIA 服务调用 [**IWiaMiniDrv：:D rvdevicecommand**](/windows-hardware/drivers/ddi/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvdevicecommand) 方法来响应应用程序对 **IWiaItem：:D evicecommand** 方法的调用， (Microsoft Windows SDK 文档) 中所述。 **IWiaMiniDrv：:D rvdevicecommand**方法应执行以下任务：
+WIA 服务调用 [**IWiaMiniDrv：:D rvdevicecommand**](/windows-hardware/drivers/ddi/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvdevicecommand) 方法来响应应用程序对 **IWiaItem：:D evicecommand** 方法的调用， (Microsoft Windows SDK 文档) 中所述。 **IWiaMiniDrv：:D rvdevicecommand** 方法应执行以下任务：
 
 1.  确定发送的命令是否是受支持的命令。
 

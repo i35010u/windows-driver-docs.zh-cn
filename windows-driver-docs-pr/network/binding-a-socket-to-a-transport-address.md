@@ -1,7 +1,6 @@
 ---
 title: 将套接字绑定到传输地址
 description: 将套接字绑定到传输地址
-ms.assetid: b76bb601-536f-43de-b91c-932f4f08c274
 keywords:
 - Winsock 内核 WDK 网络，本地传输地址
 - WSK WDK 网络，本地传输地址
@@ -10,23 +9,23 @@ keywords:
 - 传输地址 WDK Winsock 内核
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2bd3f66c4046b5aa94cc28fccfb127869ac3295a
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: ece2f5436a6afc96e9fb730527becbb7fbbdf335
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89206487"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96817647"
 ---
 # <a name="binding-a-socket-to-a-transport-address"></a>将套接字绑定到传输地址
 
 
 Winsock 内核 (WSK) 应用程序成功创建套接字后，它可以将该套接字绑定到本地传输地址。 侦听套接字必须绑定到本地传输地址，然后才能接受传入连接。 数据报套接字必须绑定到本地传输地址，然后才能发送或接收数据报。 面向连接的套接字必须绑定到本地传输地址，然后才能连接到远程传输地址。
 
-**注意**   基本套接字不支持发送或接收网络数据。 因此，WSK 应用程序无法将基本套接字绑定到本地传输地址。
+**注意**  基本套接字不支持发送或接收网络数据。 因此，WSK 应用程序无法将基本套接字绑定到本地传输地址。
 
  
 
-WSK 应用程序通过调用 [**WskBind**](/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_bind) 函数将套接字绑定到本地传输地址。 **WskBind**函数由套接字提供程序调度结构的**WskBind**成员指向。 套接字的提供程序调度结构由套接字对象结构的 **调度** 成员指向， ( [**WSK \_ 套**](/windows-hardware/drivers/ddi/wsk/ns-wsk-_wsk_socket) 接字) 在创建套接字期间由 WSK 子系统返回。
+WSK 应用程序通过调用 [**WskBind**](/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_bind) 函数将套接字绑定到本地传输地址。 **WskBind** 函数由套接字提供程序调度结构的 **WskBind** 成员指向。 套接字的提供程序调度结构由套接字对象结构的 **调度** 成员指向， ( [**WSK \_ 套**](/windows-hardware/drivers/ddi/wsk/ns-wsk-_wsk_socket) 接字) 在创建套接字期间由 WSK 子系统返回。
 
 套接字可绑定到本地通配符地址。 有关已绑定到本地通配符地址的套接字行为的详细信息，请参阅 **WskBind**。
 

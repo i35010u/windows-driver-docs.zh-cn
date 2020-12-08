@@ -1,18 +1,17 @@
 ---
 title: 设置内核模式调试
 description: 本部分介绍如何设置内核模式调试。
-ms.assetid: 268DF246-46AA-4F4E-BCBB-FCA37A3C0353
 keywords:
 - 内核模式调试
 - 设置内核模式调试
 ms.date: 02/20/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 55bac2a48529676f5844b90c93cf76bccbcd4e72
-ms.sourcegitcommit: a1b2e27c3487a099180fb928f64e7ce3d94f21a8
+ms.openlocfilehash: 616bf6e16c74b915907be09ea1d63e0c16625233
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90846530"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96818625"
 ---
 # <a name="span-iddebuggersetting_up_kernel-mode_debugging_in_windbg__cdb__or_ntsdspansetting-up-kernel-mode-debugging"></a><span id="debugger.setting_up_kernel-mode_debugging_in_windbg__cdb__or_ntsd"></span>设置内核模式调试
 
@@ -30,7 +29,7 @@ ms.locfileid: "90846530"
 
 ### <a name="virtual-machines"></a>虚拟机
 
-- [设置虚拟机主机的内核模式调试-KDNET](setting-up-network-debugging-of-a-virtual-machine-host.md)
+- [设置 Kernel-Mode 调试虚拟机主机-KDNET](setting-up-network-debugging-of-a-virtual-machine-host.md)
 - [手动设置使用 COM 端口进行的虚拟机内核模式调试](attaching-to-a-virtual-machine--kernel-mode-.md)
 
 ### <a name="single-pc"></a>单台 PC

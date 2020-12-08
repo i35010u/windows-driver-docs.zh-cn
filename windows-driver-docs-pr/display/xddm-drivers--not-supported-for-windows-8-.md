@@ -1,48 +1,48 @@
 ---
-title: 不支持针对 Windows 8 的 XDDM 驱动程序
-description: XDDM 驱动程序不支持针对 Windows 8，并将安装或 Windows 8 上运行。
-ms.assetid: 2D527787-55AF-4D44-BBA2-8052FB594902
+title: Windows 8 不支持 XDDM 驱动程序
+description: Windows 8 不支持 XDDM 驱动程序，并且不会在 Windows 8 上安装或运行。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8439c0f8c8b47824e386bb263c4e0f7fb3c5ccaa
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 22736172b9a65de8bcc6bd02b31d787eb47de836
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63388973"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96818505"
 ---
-# <a name="xddm-drivers-not-supported-for-windows-8"></a>不支持针对 Windows 8 的 XDDM 驱动程序
+# <a name="xddm-drivers-not-supported-for-windows-8"></a>Windows 8 不支持 XDDM 驱动程序
 
 
-XDDM 驱动程序不支持针对 Windows 8，并将安装或 Windows 8 上运行。
+Windows 8 不支持 XDDM 驱动程序，并且不会在 Windows 8 上安装或运行。
 
-如果将 Windows 8 中框图形驱动程序，Windows 8 将兼容的驱动程序安装 Windows 更新或 OEM/IHV 站点从 Windows 8 之前运行 MSBDD 不支持图形硬件。
+如果 Windows 8 内置图形驱动程序不支持图形硬件，Windows 8 将运行 MSBDD，直到从 Windows 更新或 OEM/IHV 站点安装 Windows 8 兼容的驱动程序。
 
-**请注意**  供应商可以开发 Windows 8 兼容仅显示硬件驱动程序，如果它是一种服务器产品。
+**注意**  
+如果设备是服务器产品，则供应商可以为硬件开发仅适用于 Windows 8 的显示驱动程序。
 
  
 
-T*能 1 Windows 8 中的驱动程序升级体验*汇总图形驱动程序迁移行为了 Windows 8 升级过程并清理安装。 在此表中， *ITB* = 中框和*OTB* =-现成的; 这是 OEM 或 IHV 零售驱动程序包或 Windows 更新包。
+*Windows 8 中的第1个驱动程序升级体验在* windows 8 升级和全新安装期间汇总了图形驱动程序迁移行为。 在此表中， *ITB* = 内置和 *OTB* = 开箱即用;这是一个 OEM 或 IHV 零售驱动程序包，或 Windows 更新包。
 
 **表 1 Windows 8 中的驱动程序升级体验**
 
-| 在 Windows 7 中使用的驱动程序                                       | 应用场景 | Windows 8 中框覆盖率 | 在 Windows 8 中的生成初始驱动程序 |
+| Windows 7 中使用的驱动程序                                       | 方案 | Windows 8 机箱内覆盖面 | Windows 8 中生成的初始驱动程序 |
 |----------------------------------------------------------------|----------|---------------------------|---------------------------------------|
-| Win7 OTB 驱动程序 / Win7 ITB 驱动程序 / 没有驱动程序 / XDDM 驱动程序    | 升级  | ITB 驱动程序支持        | Win8 ITB 驱动程序                       |
-| Win7 OTB 驱动程序                                                | 升级  | 没有 ITB 驱动程序支持     | Win7 OTB 驱动程序                       |
-| Win7 ITB 驱动程序 / 没有驱动程序阻塞 OTB 驱动程序 / XDDM 驱动程序 | 升级  | 没有 ITB 驱动程序支持     | Win8 MSBDD                            |
-| 不可用                                                            | clean    | ITB 驱动程序支持        | Win8 ITB 驱动程序                       |
-| 不可用                                                            | clean    | 没有 ITB 驱动程序支持     | Win8 MSBDD                            |
+| Win7 OTB 驱动程序/Win7 ITB 驱动程序/无驱动程序/XDDM 驱动程序    | 升级  | ITB 驱动程序支持        | Win8 ITB 驱动程序                       |
+| Win7 OTB 驱动程序                                                | 升级  | 无 ITB 驱动程序支持     | Win7 OTB 驱动程序                       |
+| Win7 ITB 驱动程序/No 驱动程序/阻止的 OTB 驱动程序/XDDM 驱动程序 | 升级  | 无 ITB 驱动程序支持     | Win8 MSBDD                            |
+| 空值                                                            | clean    | ITB 驱动程序支持        | Win8 ITB 驱动程序                       |
+| 空值                                                            | clean    | 无 ITB 驱动程序支持     | Win8 MSBDD                            |
 
  
 
-在 Windows 7 图形驱动程序本身不迁移到哪里的情况下，任何 IHV 或 OEM 值-将添加 Windows 8 升级安装后可以保留从 Windows 7 图形的驱动程序包，例如控制面板和 OpenGL 支持库的组件。 这是因为 Windows 8 安装程序无法知道这些值的添加组件将与 Windows 7 零售或 OEM 驱动程序包相关联。 这些值-添加组件可能无法正常工作中不存在其驱动程序包的其余部分。
+在 Windows 7 图形驱动程序本身未迁移的情况下，windows 7 图形驱动程序包中的任何 IHV 或 OEM 值添加组件（例如，控制面板和 OpenGL 支持库）都可以在安装 Windows 8 后保存。 出现这种情况的原因是 Windows 8 安装程序无法知道这些值添加组件与 Windows 7 零售版或 OEM 驱动程序包相关联。 如果缺少驱动程序包的其余部分，则这些值添加组件可能无法正常工作。
 
-Ihv 应强化这些值添加组件只需在这种情况下退出。 在其中增值会导致问题的少数情况下，特定于值-添加组件可以阻止迁移通过 Microsoft 兼容性团队。 在某些情况下，IHV 的 Windows 8 中现成驱动程序中删除值添加升级的组件。 这是最 IHV 多。
+在这种情况下，Ihv 应强制实施这些值添加组件。 在出现值添加导致问题的罕见情况下，Microsoft 兼容性团队可能会阻止特定的值添加组件迁移。 在某些情况下，IHV 的 Windows 8 内置驱动程序将删除升级时的值添加组件。 这取决于 IHV。
 
-有意将一些零售和 OEM Windows 7 图形驱动程序结构以防止其在 Windows 8 上的安装。 Windows 8 可能会尝试将迁移此类驱动程序根据上述规则，但它将无法在 Windows 8，导致使用 MSBDD 上安装。
+某些零售和 OEM Windows 7 图形驱动程序是特意构建的，以防止在 Windows 8 上安装。 Windows 8 可能会尝试根据上述规则迁移此类驱动程序，但它将无法在 Windows 8 上安装，从而导致使用 MSBDD。
 
-IHV 可以创建为 WDDM 1.2 驱动程序在 Windows 8 中，但这看上去像 WDDM 1.1 或 1.0 驱动程序上以前 Windows 版本的统一的驱动程序包。
+IHV 可以在 Windows 8 上创建作为 WDDM 1.2 驱动程序的统一驱动程序包，但在以前的 Windows 版本中，该驱动程序似乎类似于 WDDM 1.1 或1.0 驱动程序。
 
  
 

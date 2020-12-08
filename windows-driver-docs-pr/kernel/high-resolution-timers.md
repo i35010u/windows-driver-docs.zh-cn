@@ -1,7 +1,6 @@
 ---
 title: 高解析度计时器
 description: 从 Windows 8.1 开始，驱动程序可以使用 ExXxxTimer 例程来管理高分辨率计时器。
-ms.assetid: B8F2B28C-A02B-4015-B392-3D30BC0229B8
 keywords:
 - 高分辨率计时器
 - 计时器准确性
@@ -13,28 +12,28 @@ keywords:
 - ExSetTimerResolution
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b55d7f5e1043308702d7cecaf9446bb7104ef9cf
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: ed7b352d1beeecadc35b66b534a2e935ab45814a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89193235"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96817711"
 ---
 # <a name="high-resolution-timers"></a>高解析度计时器
 
 
-从 Windows 8.1 开始，驱动程序可以使用 [**Ex*Xxx*计时器**](exxxxtimer-routines-and-ex-timer-objects.md) 例程来管理高分辨率计时器。 高分辨率计时器的准确性仅受系统时钟支持的最大分辨率。 与此相反，限制为默认系统时钟解析的计时器会显著降低。
+从 Windows 8.1 开始，驱动程序可以使用 [**Ex *Xxx* 计时器**](exxxxtimer-routines-and-ex-timer-objects.md) 例程来管理高分辨率计时器。 高分辨率计时器的准确性仅受系统时钟支持的最大分辨率。 与此相反，限制为默认系统时钟解析的计时器会显著降低。
 
 但是，高分辨率计时器需要系统时钟中断（至少是暂时的）以更高的速率发生，这往往会增加功率消耗。 因此，只有在计时器准确性非常重要时，驱动程序才应使用高分辨率计时器，并在所有其他情况下使用默认分辨率计时器。
 
 若要创建高分辨率计时器，WDM 驱动程序将调用 [**ExAllocateTimer**](/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatetimer) 例程，并 \_ \_ \_ 在 *Attributes* 参数中设置 EX 计时器高分辨率标志。 当驱动程序调用 [**ExSetTimer**](/windows-hardware/drivers/ddi/wdm/nf-wdm-exsettimer) 例程来设置高分辨率计时器时，操作系统会根据需要增加系统时钟的分辨率，使计时器的过期时间更精确地与 *DueTime* 和 *Period* 参数中指定的名义过期时间相对应。
 
- (KMDF) 驱动程序的内核模式驱动程序框架可以调用 [**WdfTimerCreate**](/windows-hardware/drivers/ddi/wdftimer/nf-wdftimer-wdftimercreate) 方法来创建高分辨率计时器。 在此调用中，驱动程序将一个指针作为参数传递给 [**WDF \_ 计时器 \_ 配置**](/windows-hardware/drivers/ddi/wdftimer/ns-wdftimer-_wdf_timer_config) 结构。 若要创建高分辨率计时器，驱动程序将此结构的 **UseHighResolutionTimer** 成员设置为 **TRUE**。 此成员是从 Windows 8.1 和 KMDF 版本1.13 开始的结构的一部分。
+Kernel-Mode Driver Framework (KMDF) 驱动程序可以调用 [**WdfTimerCreate**](/windows-hardware/drivers/ddi/wdftimer/nf-wdftimer-wdftimercreate) 方法来创建高分辨率计时器。 在此调用中，驱动程序将一个指针作为参数传递给 [**WDF \_ 计时器 \_ 配置**](/windows-hardware/drivers/ddi/wdftimer/ns-wdftimer-_wdf_timer_config) 结构。 若要创建高分辨率计时器，驱动程序将此结构的 **UseHighResolutionTimer** 成员设置为 **TRUE**。 此成员是从 Windows 8.1 和 KMDF 版本1.13 开始的结构的一部分。
 
 ## <a name="controlling-timer-accuracy"></a>控制计时器准确性
 
 
-例如，对于 x86 处理器上运行的 Windows，系统时钟周期的默认时间间隔通常约为15毫秒，系统时钟计时周期之间的最小时间间隔约为1毫秒。 因此，默认解析计时器的过期时间 (如果**ExAllocateTimer** \_ 未设置 EX 计时器 \_ 高分辨率标志，则会在 \_ 大约15毫秒内控制) ，但高分辨率计时器的过期时间可以在毫秒内进行控制。
+例如，对于 x86 处理器上运行的 Windows，系统时钟周期的默认时间间隔通常约为15毫秒，系统时钟计时周期之间的最小时间间隔约为1毫秒。 因此，默认解析计时器的过期时间 (如果 **ExAllocateTimer** \_ 未设置 EX 计时器 \_ 高分辨率标志，则会在 \_ 大约15毫秒内控制) ，但高分辨率计时器的过期时间可以在毫秒内进行控制。
 
 如果驱动程序为默认解析计时器指定了相对过期时间，则计时器最多可以过期约15毫秒或更晚于指定的过期时间。 如果驱动程序为高分辨率计时器指定了相对过期时间，则计时器会在指定的过期时间之后的大约一毫秒后过期，但不会提前过期。 有关系统时钟解析与计时器准确性之间关系的详细信息，请参阅 [计时器准确性](timer-accuracy.md)。
 
@@ -49,7 +48,7 @@ ms.locfileid: "89193235"
 ## <a name="comparison-to-exsettimerresolution"></a>与 ExSetTimerResolution 的比较
 
 
-从 Windows 2000 开始，驱动程序可以调用 [**ExSetTimerResolution**](calling-exsettimerresolution-while-processing-a-power-irp.md) 例程来更改连续系统时钟中断之间的时间间隔。 例如，驱动程序可以调用此例程，将系统时钟从其默认速率更改为其最大速率以提高计时器准确性。 但是，与使用**ExAllocateTimer**创建的高分辨率计时器相比，使用**ExSetTimerResolution**有几个缺点。
+从 Windows 2000 开始，驱动程序可以调用 [**ExSetTimerResolution**](calling-exsettimerresolution-while-processing-a-power-irp.md) 例程来更改连续系统时钟中断之间的时间间隔。 例如，驱动程序可以调用此例程，将系统时钟从其默认速率更改为其最大速率以提高计时器准确性。 但是，与使用 **ExAllocateTimer** 创建的高分辨率计时器相比，使用 **ExSetTimerResolution** 有几个缺点。
 
 首先，在调用 **ExSetTimerResolution** 以暂时增加系统时钟速率之后，驱动程序必须第二次调用 **ExSetTimerResolution** ，以将系统时钟还原为其默认速率。 否则，系统时钟计时器会持续以最大速率生成中断，这可能会导致过多的功率消耗。
 

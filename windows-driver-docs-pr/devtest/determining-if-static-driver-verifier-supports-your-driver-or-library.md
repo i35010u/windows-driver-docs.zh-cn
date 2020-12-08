@@ -1,15 +1,14 @@
 ---
 title: 确定静态驱动程序验证程序是否支持你的驱动程序或库
 description: 静态驱动程序验证器 (SDV) 可以支持 WDM、KMDF、NDIS 和 Storport 驱动程序和库。 若要确定是否支持并正确配置了驱动程序或库，请阅读本部分中所述的超出要求。
-ms.assetid: 29E93E9E-7F87-4706-97AD-DB9A32EDD388
 ms.date: 10/08/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 2da10cec649fdcc20d35d1df89be91d578e996e0
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 04bfc8f5c286d2ea80fb44e83e0539c26461d9f7
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89382929"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96817821"
 ---
 # <a name="determining-if-static-driver-verifier-supports-your-driver-or-library"></a>确定静态驱动程序验证程序是否支持你的驱动程序或库
 

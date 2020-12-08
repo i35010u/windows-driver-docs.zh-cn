@@ -1,15 +1,14 @@
 ---
 title: GPIO 按钮和指示器实现测试
 description: 本主题介绍适用于硬件按钮和指示器的 Windows 8.1 测试方案，目的是确保在使用不同外形规格时获得理想的用户体验。
-ms.assetid: 47E24D50-6007-4CD7-91C5-2D72788106B8
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 2811eb581174833abd36cdd92d6e70a343a59b8d
-ms.sourcegitcommit: 68c99026bf38b864867ee3751d05459743ea8e11
+ms.openlocfilehash: 9c66d9e715ffe110e336cefd145cacdfdab7466d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92434681"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96818469"
 ---
 # <a name="gpio-buttons-and-indicators-supplemental-testing"></a>GPIO 按钮和指示器实现测试
 
@@ -27,7 +26,7 @@ ms.locfileid: "92434681"
 <thead>
 <tr class="header">
 <th align="left">主题</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>

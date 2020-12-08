@@ -1,7 +1,6 @@
 ---
 title: MRxCreate 例程
 description: TheMRxCreate 例程由 RDBSS 调用，请求网络小型重定向程序创建文件系统对象。
-ms.assetid: d1b664cf-37b6-4c65-8634-21695af2db21
 keywords:
 - MRxCreate 例程可安装文件系统驱动程序
 - PMRX_CALLDOWN
@@ -15,17 +14,17 @@ api_type:
 - UserDefined
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2ec80a346238bb6c177dfd3f4a1e353651bbab32
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: b5d29cd3929da06650293f379fd8e8646e3106a1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89063042"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96819027"
 ---
 # <a name="mrxcreate-routine"></a>MRxCreate 例程
 
 
-[RDBSS](./the-rdbss-driver-and-library.md)调用*MRxCreate*例程来请求网络小型重定向程序创建文件系统对象。
+[RDBSS](./the-rdbss-driver-and-library.md)调用 *MRxCreate* 例程来请求网络小型重定向程序创建文件系统对象。
 
 <a name="syntax"></a>语法
 ------
@@ -34,12 +33,12 @@ ms.locfileid: "89063042"
 PMRX_CALLDOWN MRxCreate;
 
 NTSTATUS MRxCreate(
-  _Inout_ PRX_CONTEXT RxContext
+  _Inout_ PRX_CONTEXT RxContext
 )
 { ... }
 ```
 
-<a name="parameters"></a>parameters
+<a name="parameters"></a>参数
 ----------
 
 *RxContext* \[in、out\]  
@@ -106,9 +105,9 @@ NTSTATUS MRxCreate(
 <a name="remarks"></a>备注
 -------
 
-RDBSS 调用*MRxCreate*来请求网络小型重定向程序通过网络打开文件系统对象。 此调用由 RDBSS 发出，以响应接收 [**IRP \_ MJ \_ 创建**](irp-mj-create.md) 请求。
+RDBSS 调用 *MRxCreate* 来请求网络小型重定向程序通过网络打开文件系统对象。 此调用由 RDBSS 发出，以响应接收 [**IRP \_ MJ \_ 创建**](irp-mj-create.md) 请求。
 
-在调用 *MRxCreate*之前，RDBSS 会修改 \_ *RXCONTEXT* 参数指向的 RX 上下文结构中的以下成员：
+在调用 *MRxCreate* 之前，RDBSS 会修改 \_ *RXCONTEXT* 参数指向的 RX 上下文结构中的以下成员：
 
 **pRelevantSrvOpen** 设置为 SRV \_ 开放式结构。
 
@@ -120,7 +119,7 @@ RDBSS 调用*MRxCreate*来请求网络小型重定向程序通过网络打开文
 
 如果 *MRxCreate* 请求用于文件覆盖，并且 *MRxCreate* 返回状态 \_ SUCCESS，则 RDBSS 将获取分页 i/o 资源并截断文件。 如果缓存管理器正在缓存该文件，RDBSS 将使用刚刚从服务器接收的大小更新缓存管理器的大小。
 
-在返回之前， *MRxCreate*必须设置 RxContext 参数所指向的 RX 上下文结构的**CurrentIrp- &gt; IoStatus**成员 \_ *RxContext* 。
+在返回之前， *MRxCreate* 必须设置 RxContext 参数所指向的 RX 上下文结构的 **CurrentIrp- &gt; IoStatus** 成员 \_ *RxContext* 。
 
 <a name="requirements"></a>要求
 ------------
@@ -133,7 +132,7 @@ RDBSS 调用*MRxCreate*来请求网络小型重定向程序通过网络打开文
 <tbody>
 <tr class="odd">
 <td align="left"><p>目标平台</p></td>
-<td align="left">桌面型</td>
+<td align="left">台式机</td>
 </tr>
 <tr class="even">
 <td align="left"><p>标头</p></td>
@@ -142,7 +141,7 @@ RDBSS 调用*MRxCreate*来请求网络小型重定向程序通过网络打开文
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**MRxAreFilesAliased**](/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_chkfcb_calldown)

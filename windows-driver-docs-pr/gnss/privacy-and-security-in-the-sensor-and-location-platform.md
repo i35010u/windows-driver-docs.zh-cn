@@ -1,15 +1,14 @@
 ---
 title: 传感器和位置平台中的隐私和安全
 description: 传感器和位置平台中的隐私和安全
-ms.assetid: 9defb163-4de6-46cc-b817-d3e6291137be
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 44242f65df6ea664168bcc66053f55bbb4e7f1b4
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 76616e17eed35a871cf52b858d8f8acdac81b595
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90717558"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96819087"
 ---
 # <a name="privacy-and-security-in-the-sensor-and-location-platform"></a>传感器和位置平台中的隐私和安全
 

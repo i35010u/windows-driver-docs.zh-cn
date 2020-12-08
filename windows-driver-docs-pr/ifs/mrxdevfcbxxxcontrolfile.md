@@ -1,7 +1,6 @@
 ---
 title: MRxDevFcbXXXControlFile 例程
 description: RDBSS 调用 MRxDevFcbXXXControlFile 例程，以将 (IOCTL 或 FSCTL 请求) 的设备 FCB 控制请求传递到网络小型重定向程序。
-ms.assetid: d60449d0-17d0-4303-8d0d-cba091de2b07
 keywords:
 - MRxDevFcbXXXControlFile 例程可安装文件系统驱动程序
 - PMRX_CALLDOWN
@@ -15,17 +14,17 @@ api_type:
 - UserDefined
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a36340a1d25bee142674dd3ab897a6dbf81bfd45
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 7f04607ef486e54ccdd7e6f8f049cdbcb5ed5bfc
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89063028"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96819025"
 ---
 # <a name="mrxdevfcbxxxcontrolfile-routine"></a>MRxDevFcbXXXControlFile 例程
 
 
-[RDBSS](./the-rdbss-driver-and-library.md)调用*MRxDevFcbXXXControlFile*例程，以将 (IOCTL 或 FSCTL 请求) 的设备 FCB 控制请求传递到网络小型重定向程序。
+[RDBSS](./the-rdbss-driver-and-library.md)调用 *MRxDevFcbXXXControlFile* 例程，以将 (IOCTL 或 FSCTL 请求) 的设备 FCB 控制请求传递到网络小型重定向程序。
 
 <a name="syntax"></a>语法
 ------
@@ -34,12 +33,12 @@ ms.locfileid: "89063028"
 PMRX_CALLDOWN MRxDevFcbXXXControlFile;
 
 NTSTATUS MRxDevFcbXXXControlFile(
-  _Inout_ PRX_CONTEXT RxContext
+  _Inout_ PRX_CONTEXT RxContext
 )
 { ... }
 ```
 
-<a name="parameters"></a>parameters
+<a name="parameters"></a>参数
 ----------
 
 *RxContext* \[in、out\]  
@@ -92,7 +91,7 @@ NTSTATUS MRxDevFcbXXXControlFile(
 
 *MRxDevFcbXXXControlFile* 处理与发送到网络小型重定向程序的设备 FCB 相关的 IOCTL 和 FSCTL 请求。
 
-在调用 *MRxDevFcbXXXControlFile*之前，RDBSS 会修改 \_ *RXCONTEXT* 参数指向的 RX 上下文结构中的以下成员：
+在调用 *MRxDevFcbXXXControlFile* 之前，RDBSS 会修改 \_ *RXCONTEXT* 参数指向的 RX 上下文结构中的以下成员：
 
 **MajorFunction** 设置为 IRP 的主要功能
 
@@ -119,7 +118,7 @@ NTSTATUS MRxDevFcbXXXControlFile(
 <tbody>
 <tr class="odd">
 <td align="left"><p>目标平台</p></td>
-<td align="left">桌面型</td>
+<td align="left">台式机</td>
 </tr>
 <tr class="even">
 <td align="left"><p>标头</p></td>
@@ -128,7 +127,7 @@ NTSTATUS MRxDevFcbXXXControlFile(
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**MRxStart**](/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_calldown_ctx)

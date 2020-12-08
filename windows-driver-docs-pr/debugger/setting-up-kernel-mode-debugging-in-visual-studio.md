@@ -1,18 +1,17 @@
 ---
 title: 在 Visual Studio 中设置内核模式调试
 description: 您可以使用 Microsoft Visual Studio 设置和执行 Windows 的内核模式调试。
-ms.assetid: 38E57F45-71D9-4467-BECF-42769563751E
 keywords:
 - 内核模式调试，Visual Studio
 - 设置内核模式调试，Visual Studio
 ms.date: 04/10/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 205321c0957b89983fc63a53be876d6d44482982
-ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
+ms.openlocfilehash: 2d33a16a1c06c5ab8164f3185e6f7df0dfa570a7
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84534760"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96818629"
 ---
 # <a name="span-iddebuggersetting_up_kernel-mode_debugging_in_visual_studiospansetting-up-kernel-mode-debugging-in-visual-studio"></a><span id="debugger.setting_up_kernel-mode_debugging_in_visual_studio"></span>在 Visual Studio 中设置内核模式调试
 
@@ -21,12 +20,12 @@ ms.locfileid: "84534760"
 >
 
 
-您可以使用 Microsoft Visual Studio 设置和执行 Windows 的内核模式调试。 若要将 Visual Studio 用于内核模式调试，必须将 Windows 驱动程序工具包（WDK）与 Visual Studio 集成。 有关如何安装集成环境的信息，请参阅[使用 Visual Studio 进行调试](debugging-using-visual-studio.md)。
+您可以使用 Microsoft Visual Studio 设置和执行 Windows 的内核模式调试。 若要将 Visual Studio 用于内核模式调试，你必须将 Windows 驱动程序工具包 (WDK) 与 Visual Studio 集成。 有关如何安装集成环境的信息，请参阅 [使用 Visual Studio 进行调试](debugging-using-visual-studio.md)。
  
 
-作为使用 Visual Studio 设置内核模式调试的替代方法，你还可以手动完成设置。 有关详细信息，请参阅[手动设置内核模式调试](setting-up-kernel-mode-debugging-in-windbg--cdb--or-ntsd.md)。
+作为使用 Visual Studio 设置内核模式调试的替代方法，你还可以手动完成设置。 有关详细信息，请参阅 [手动设置 Kernel-Mode 调试](setting-up-kernel-mode-debugging-in-windbg--cdb--or-ntsd.md)。
 
-内核模式调试通常需要两台计算机。 调试器在*主计算机*上运行，要调试的代码在*目标计算机*上运行。
+内核模式调试通常需要两台计算机。 调试器在 *主计算机* 上运行，要调试的代码在 *目标计算机* 上运行。
 
 ## <a name="span-idin_this_sectionspanin-this-section"></a><span id="in_this_section"></span>本部分中的内容
 

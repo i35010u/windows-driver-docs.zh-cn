@@ -1,22 +1,21 @@
 ---
 title: 调试死锁-DRIVER_VERIFIER_DETECTED_VIOLATION (C4) 0x1001
 description: 当驱动程序验证器检测到旋转锁层次结构冲突时，驱动程序 Verifiergenerates Bug 检查 0xC4 DRIVER_VERIFIER_DETECTED_VIOLATION 的参数1值为0x1001。
-ms.assetid: 4C3ED1DB-5EDC-4386-B91C-CF86973EE1F6
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2107bbd3cf914df1f3ce772ac18440111094debf
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 80694963438695ac52c6a5ebe1393e2f2656b0ac
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89383977"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96817839"
 ---
 # <a name="span-iddevtestdebugging_deadlocks_-_driver_verifier_detected_violation__c4___0x1001spandebugging-deadlocks---driver_verifier_detected_violation-c4-0x1001"></a><span id="devtest.debugging_deadlocks_-_driver_verifier_detected_violation__c4___0x1001"></span>调试死锁-驱动程序 \_ 验证器 \_ 检测到 \_ 违反 (C4) ：0x1001
 
 
-当 [驱动程序验证](driver-verifier.md) 器检测到旋转锁层次结构冲突时，驱动程序 Verifiergenerates [**Bug 检查0XC4：驱动程序 \_ 验证器 \_ 检测到 \_ **](../debugger/bug-check-0xc4--driver-verifier-detected-violation.md) 与0x1001 的参数1值冲突。
+当 [驱动程序验证](driver-verifier.md) 器检测到旋转锁层次结构冲突时，驱动程序 Verifiergenerates [**Bug 检查0XC4：驱动程序 \_ 验证器 \_ 检测到 \_**](../debugger/bug-check-0xc4--driver-verifier-detected-violation.md) 与0x1001 的参数1值冲突。
 
-如果死锁检测选项处于活动状态 (死锁检测是驱动程序验证器标准选项的一部分) ，则 [驱动程序验证](driver-verifier.md) 器会跟踪分配的每个自旋锁以及获取和释放该锁的顺序。 锁层次结构冲突是指驱动程序验证器检测到，其中至少有一种情况下， *LockA*在获取*LockB*之前获得并保存，而另一种情况是在需要*LockA*之前获得并保存*LockB* 。
+如果死锁检测选项处于活动状态 (死锁检测是驱动程序验证器标准选项的一部分) ，则 [驱动程序验证](driver-verifier.md) 器会跟踪分配的每个自旋锁以及获取和释放该锁的顺序。 锁层次结构冲突是指驱动程序验证器检测到，其中至少有一种情况下， *LockA* 在获取 *LockB* 之前获得并保存，而另一种情况是在需要 *LockA* 之前获得并保存 *LockB* 。
 
 **重要提示**  当 [驱动程序验证程序](driver-verifier.md) 检测到层次结构冲突，而不是发生实际的死锁情况时，将发生此 bug 检查。 此冲突强制执行强烈强制要求：应始终获取和释放在驱动程序的各个组件之间共享的任何锁，使两个线程的死锁不可能。
 
@@ -31,11 +30,11 @@ ms.locfileid: "89383977"
 **
 *****************************************************************
 
-*** Verifier assertion failed ***
+**_ Verifier assertion failed _*_
 (B)reak, (I)gnore, (W)arn only, (R)emove assert?
 ```
 
-若要在运行 Windows 8.1 的计算机上调试此冲突，请选择 " **B** (中断) "，然后输入建议的调试程序命令 ([**！死锁**](../debugger/-deadlock.md)) ：
+若要在运行 Windows 8.1 的计算机上调试此冲突，请选择 _ *B** (中断) ，然后输入建议的调试器命令 ([**！死锁**](../debugger/-deadlock.md)) ：
 
 ```
 kd> !deadlock
@@ -55,7 +54,7 @@ Lock A =   97dd800c (MyTestDriver!AlphaLock+0x00000000) - Type 'Spinlock'.
 Lock B =   97dd8008 (MyTestDriver!BravoLock+0x00000000) - Type 'Spinlock'.
 ```
 
-[**！死锁**](../debugger/-deadlock.md) **3**命令也可用于显示详细信息，包括上次获取时的堆栈：
+[**！死锁**](../debugger/-deadlock.md) **3** 命令也可用于显示详细信息，包括上次获取时的堆栈：
 
 ```
 kd> !deadlock 3
@@ -113,7 +112,7 @@ Lock A =     97dd800c (MyTestDriver!AlphaLock+0x00000000) - Type 'Spinlock'.
     Stack:   << Current stack trace - use kb to display it >>
 ```
 
-调试器建议使用 [**kb (显示 Stack Backtrace) **](../debugger/k--kb--kc--kd--kp--kp--kv--display-stack-backtrace-.md) 命令显示当前堆栈跟踪。
+调试器建议使用 [**kb (显示 Stack Backtrace)**](../debugger/k--kb--kc--kd--kp--kp--kv--display-stack-backtrace-.md) 命令显示当前堆栈跟踪。
 
 ```
 kd> kb
@@ -131,7 +130,7 @@ ChildEBP RetAddr  Args to Child
 
 调试器输出显示有问题的驱动程序违反了该规则，方法是获取并保存锁 A，然后在一个线程上获取锁 B，现在已获取锁 B 并尝试在另一个线程上获取锁定。 请注意，第一个线程 (线程 0) 终止，因此，在加载驱动程序映像后，在某个时间点会发生这两种锁的获取和后续版本。
 
-加载测试驱动程序的适当符号时，调试器将显示在此时间获取锁的函数。 在此示例中，这种情况的发生是在同一函数中获取锁定 A 和锁定 B。 在线程0中，它们都是在 *SystemControlIrpWorker*中获取的。 在线程1中，它们都是在 *DeviceControlIrpWorker* 中获取的， (从 **！死锁 3** 的锁 B 输出和当前堆栈输出 (**kb**) 中所示。
+加载测试驱动程序的适当符号时，调试器将显示在此时间获取锁的函数。 在此示例中，这种情况的发生是在同一函数中获取锁定 A 和锁定 B。 在线程0中，它们都是在 *SystemControlIrpWorker* 中获取的。 在线程1中，它们都是在 *DeviceControlIrpWorker* 中获取的， (从 **！死锁 3** 的锁 B 输出和当前堆栈输出 (**kb**) 中所示。
 
 此时，查看每个函数的源代码应会显示代码路径存在，在此情况下，可以按此顺序获取锁。
 
@@ -145,7 +144,7 @@ extern KSPIN_LOCK AlphaLock;
 extern KSPIN_LOCK BravoLock;
 ```
 
-在函数 *SystemControlIrpWorker*中，存在一个路径，在该路径中，AlphaLock (**在) ** (锁定 B 获取时获取并保存) 。 还值得注意的是，锁按其获取顺序正确地释放。  (对以下代码进行了大量编辑，以便仅显示生成此方案) 所需的元素。
+在函数 *SystemControlIrpWorker* 中，存在一个路径，在该路径中，AlphaLock (**在)** (锁定 B 获取时获取并保存) 。 还值得注意的是，锁按其获取顺序正确地释放。  (对以下代码进行了大量编辑，以便仅显示生成此方案) 所需的元素。
 
 ```ManagedCPlusPlus
 NTSTATUS SystemControlIrpWorker(_In_ PIRP Irp)

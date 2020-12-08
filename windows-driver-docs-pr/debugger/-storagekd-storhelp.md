@@ -1,9 +1,8 @@
 ---
 title: storagekd.storhelp
-description: Storagekd.storhelp 扩展显示 Storagekd.dll 扩展命令的帮助文本。
-ms.assetid: 17FFB5CC-1FA3-4D13-AA30-6D48D2435CDC
+description: Storagekd. storhelp 扩展显示 Storagekd.dll 扩展命令的帮助文本。
 keywords:
-- storagekd.storhelp Windows 调试
+- storagekd storhelp Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,23 +11,23 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 2a80107f063e87031221d5364418831cd668e940
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8232284122741acdca96aa8afc541e69981cc35e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63338800"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96819403"
 ---
 # <a name="storagekdstorhelp"></a>!storagekd.storhelp
 
 
-**！ Storagekd.storhelp**扩展显示 Storagekd.dll 扩展命令的帮助文本。
+**！ Storagekd storhelp** 扩展显示 Storagekd.dll 扩展命令的帮助文本。
 
 ```dbgcmd
 !storagekd.storhelp 
 ```
 
-## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 
 <table>
@@ -38,7 +37,7 @@ ms.locfileid: "63338800"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>Windows 8 及更高版本</strong></p></td>
+<td align="left"><p><strong>Windows 8 及更高版本</strong></p></td>
 <td align="left"><p>Storagekd.dll</p></td>
 </tr>
 </tbody>
@@ -49,9 +48,9 @@ ms.locfileid: "63338800"
 <a name="remarks"></a>备注
 -------
 
-下面是举例 **！ storagekd.storhelp**显示：
+下面是 **！ storhelp** 显示的示例 storagekd：
 
-**0: kd&gt; !storagekd.storhelp**
+**0： kd &gt; ！ storagekd. storhelp**
 
 ```dbgcmd
 # Storage Debugger Extension

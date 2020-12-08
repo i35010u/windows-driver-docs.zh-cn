@@ -1,15 +1,14 @@
 ---
 title: SubjectName
 description: SubjectName
-ms.assetid: 1aa9c826-c95a-4e89-931f-4e296122edc3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2e1aecc9a321222ecf614d404a4360a542557a88
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: efe3539308b2533e51b0968298754650f2c266bd
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89403144"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96818885"
 ---
 # <a name="subjectname"></a>SubjectName
 
@@ -52,7 +51,7 @@ SubjectName 元素指定可信证书的使用者名称。
 <thead>
 <tr class="header">
 <th>元素</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>

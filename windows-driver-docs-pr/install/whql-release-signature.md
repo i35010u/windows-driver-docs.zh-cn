@@ -1,7 +1,6 @@
 ---
 title: WHQL 发布签名
 description: WHQL 发布签名
-ms.assetid: edc815d4-596c-4f50-9bff-029b8ea19a0a
 keywords:
 - 驱动程序签名 WDK，WHQL 数字签名
 - 对驱动程序进行签名 WDK，WHQL 数字签名
@@ -12,12 +11,12 @@ keywords:
 - release 签名 WDK，WHQL
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a80c281883d7c5d6ad4c64bc0dbcf7a08681bd2c
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 22b26a10492c571c2cbad51efa065069904fc6b0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91732527"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96819461"
 ---
 # <a name="whql-release-signature"></a>WHQL 发布签名
 
@@ -34,7 +33,7 @@ ms.locfileid: "91732527"
 
 有关 WHQL 的详细信息，请参阅 [Windows 硬件质量实验室](/previous-versions/windows/hardware/hck/jj124227(v=vs.85)) 网站。
 
-**注意**   WHQL 不会将签名嵌入驱动程序文件。 你可以使用第三方商业 [版证书](release-certificates.md)将签名嵌入驱动程序文件。 在将驱动程序包提交给 WHQL 之前，将签名嵌入驱动程序文件。
+**注意**  WHQL 不会将签名嵌入驱动程序文件。 你可以使用第三方商业 [版证书](release-certificates.md)将签名嵌入驱动程序文件。 在将驱动程序包提交给 WHQL 之前，将签名嵌入驱动程序文件。
 
  
 

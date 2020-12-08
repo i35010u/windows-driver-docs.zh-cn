@@ -1,17 +1,16 @@
 ---
 title: 创建可变资源映射
 description: 创建可变资源映射
-ms.assetid: bfe3a760-d8fe-4213-9bbe-2bad6927d8e2
 keywords:
-- 不同的资源映射 WDK 多功能设备
+- 不同资源映射 WDK 多功能设备
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a02047076db951b88d87b4af4f4404c66ee2bcc6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: dc4a7f058634a65bf1253317acd0c6f44decb65a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63323619"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96818409"
 ---
 # <a name="creating-varying-resource-maps"></a>创建可变资源映射
 
@@ -19,13 +18,13 @@ ms.locfileid: "63323619"
 
 
 
-尽管标准版资源映射只能将整个父资源分配一个子级的多功能设备，不同的资源映射使您细分之间 mf.sys 枚举的子级的父资源。 在 Windows XP 和更高版本的基于 NT 的操作系统上支持不同的资源映射。
+尽管标准资源映射只能将整个父资源分配给多功能设备的子节点，但不同的资源映射允许您在 mf.sys 枚举的子级之间细分父资源。 Windows XP 和更高版本的基于 NT 的操作系统支持不同的资源映射。
 
-例如，考虑 PCI 总线上的多端口串行卡。 假定每个卡的 16550 UART 函数需要一组 8 个 I/O 端口和共享的中断。 另外，假设卡作为单个 PCI 函数。 在此方案中，通常会请求一个独立的 I/O 端口块，然后将此块拆分为八个段，一个用于每个 16550 UART 函数。
+例如，请考虑 PCI 总线上的多端口串行卡。 假设每个卡的 16550 UART 函数需要一组八个 i/o 端口和一个共享中断。 还假定该卡实现为单个 PCI 函数。 在这种情况下，通常需要请求单个 i/o 端口块，然后将此块拆分为八个段（每个 16550 UART 函数一个）。
 
-除了此卡的 16550 UART 功能所需的 I/O 端口和中断资源，假定该设备还要求设备专用资源和内存范围。
+除了卡的 16550 UART 函数所需的 i/o 端口和中断资源以外，还假定设备还需要内存范围和设备专用资源。
 
-根据这些假设，mf.sys 将返回此设备，按以下方式构造资源要求列表：
+根据这些假设，mf.sys 将返回此设备的资源要求列表，如下所示：
 
 <table>
 <colgroup>
@@ -41,7 +40,7 @@ ms.locfileid: "63323619"
 <tbody>
 <tr class="odd">
 <td><p>00</p></td>
-<td><p><em>内存范围</em>基寄存器地址 （栏） 0</p></td>
+<td><p><em>内存范围</em> 基本寄存器地址 (BAR) 0</p></td>
 </tr>
 <tr class="even">
 <td><p>01</p></td>
@@ -49,7 +48,7 @@ ms.locfileid: "63323619"
 </tr>
 <tr class="odd">
 <td><p>02</p></td>
-<td><p><em>内存范围</em>条形图 1</p></td>
+<td><p><em>内存范围</em> 条形1</p></td>
 </tr>
 <tr class="even">
 <td><p>03</p></td>
@@ -57,7 +56,7 @@ ms.locfileid: "63323619"
 </tr>
 <tr class="odd">
 <td><p>04</p></td>
-<td><p><em>I/O 端口范围</em>条形图 2</p></td>
+<td><p><em>I/o 端口范围</em> 条形2</p></td>
 </tr>
 <tr class="even">
 <td><p>05</p></td>
@@ -72,7 +71,7 @@ ms.locfileid: "63323619"
 
  
 
-供应商使用 INF 文件指令来指定这些资源在卡的 16550 UART 函数之间共享。 对于每个函数都需要一个段的设备的资源，必须使用**VaryingResourceMap** INF 创建注册表项中的条目。 下面是此设备 INF 文件的摘录：
+供应商使用 INF 文件指令来指定卡的 16550 UART 函数之间共享这些资源。 对于需要设备资源段的每个函数，必须使用 INF 中的 **VaryingResourceMap** 条目来创建注册表项。 下面是此设备的 INF 文件的摘录：
 
 ```cpp
 [DDInstall.RegHW] 
@@ -83,19 +82,19 @@ HKR,Child0002,VaryingResourceMap,1,04, 10,00,00,00, 08,00,00,00
 HKR,Child0002,ResourceMap,1,06
 ```
 
-行包含**VaryingResourceMap**解释，如下所示：
+包含 **VaryingResourceMap** 的行解释如下：
 
--   "1"的以下**VaryingResourceMap**参数指定的注册表项的数据类型是 REG\_二进制。
+-   **VaryingResourceMap** 参数后的 "1" 指定注册表项的数据类型为 REG \_ BINARY。
 
--   后面"1"的数字是不同的资源映射值。 "04"指示父资源中，我们将分配到此子段。 在这种情况下，我们正在将资源 04 的段 (条形图 2) 分配给子 （即，一种表示每个串行端口的八个 I/O 端口范围的资源）。
+-   "1" 后面的数字是不同的资源映射值。 "04" 表示父资源，即我们要将其分配到此子级的段。 在这种情况下，我们将向子 (分配资源 04 (BAR 2) ，这是表示每个串行端口) 八个 i/o 端口范围的资源块。
 
--   接下来两个 dword 值指示，首先中的资源，第二个，应分配给此子范围的长度的偏移量。 在这种情况下，8 个 I/O 端口分配到此子到父资源的偏移量 0x10 开始。
+-   接下来的两个 Dword 指示资源的偏移量，以及应分配给此子级的范围的长度（秒）。 在这种情况下，将向此子端口分配8个 i/o 端口，从偏移0x10 开始到父资源。
 
--   如果此子需要另一个父资源，资源的数量、 长度和偏移量将包含 INF 中，在同一行后的第一个资源。
+-   如果此子级需要另一个父资源，则资源的数字、长度和偏移量将包含在第一个资源之后的 INF 的同一行中。
 
-**ResourceMap**参数描述[创建标准资源映射](creating-standard-resource-maps.md)，并指示此子级，应获取的共享资源 06，在这种情况下即 PCI 设备的中断。
+**Windows.applicationmodel.resources.core.resourcemap** 参数在 [创建标准资源映射](creating-standard-resource-maps.md)中进行了介绍，并指示此子资源应该获取资源06的共享，在这种情况下，它是 PCI 设备的中断。
 
-下面是此设备，指定四个子函数的更完整示例：
+下面是此设备的更完整示例，指定了四个子函数：
 
 ```cpp
 [Version]

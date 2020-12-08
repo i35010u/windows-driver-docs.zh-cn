@@ -1,9 +1,8 @@
 ---
 title: .lastevent（显示最后一个事件）
-description: .Lastevent 命令显示的最新的异常或发生的事件。
-ms.assetid: 6f722c22-cb0f-4a10-b719-a168f7ba0943
+description: Lastevent 命令显示最近发生的异常或事件。
 keywords:
-- .lastevent （显示最后一个事件） Windows 调试
+- lastevent (显示上一事件) Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: fc4137f1aa7b2ed47a26aedaabd990995d15a0eb
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f0bb68ef1526b4fdb5b048149afcea671ce40d85
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63336196"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96818715"
 ---
 # <a name="lastevent-display-last-event"></a>.lastevent（显示最后一个事件）
 
 
-**.Lastevent**命令显示的最新的异常或发生的事件。
+**Lastevent** 命令显示最近发生的异常或事件。
 
 ```dbgcmd
 .lastevent 
@@ -40,12 +39,12 @@ ms.locfileid: "63336196"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>模式</strong></p></td>
-<td align="left"><p>用户模式下，内核模式</p></td>
+<td align="left"><p><strong>交货</strong></p></td>
+<td align="left"><p>用户模式，内核模式</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>目标</strong></p></td>
-<td align="left"><p>实时、 崩溃转储</p></td>
+<td align="left"><p>实时，故障转储</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>平台</strong></p></td>
@@ -56,14 +55,14 @@ ms.locfileid: "63336196"
 
  
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-有关异常和事件的详细信息，请参阅[控制异常和事件](controlling-exceptions-and-events.md)。
+有关异常和事件的详细信息，请参阅 [控制异常和事件](controlling-exceptions-and-events.md)。
 
 <a name="remarks"></a>备注
 -------
 
-始终中断到调试器创建一个例外情况。 始终*最后一个事件*调试器接受命令输入的时间。 如果使用进入调试器[ **CTRL + C**](ctrl-c--break-.md)， [CTRL + BREAK](debug---break.md)，或调试 |创建 break，0x80000003 异常代码。
+中断到调试器始终会创建异常。 调试器接受命令输入时始终存在 *最后一个事件* 。 如果使用 [**ctrl + C**](ctrl-c--break-.md)、 [ctrl + break](debug---break.md)或 Debug 中断到调试器 |中断，将创建0x80000003 的异常代码。
 
  
 

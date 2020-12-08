@@ -1,19 +1,18 @@
 ---
 title: 在程序集模式下调试
 description: 在程序集模式下调试
-ms.assetid: 048c43ff-7f9e-4a20-a524-44f66d92eefe
 keywords:
 - 程序集调试
 - 程序集模式
 - 程序集调试，概述
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3f9ad6312b13abc5f7bdd59906eabc811499a9cc
-ms.sourcegitcommit: f610410e1500f0b0a4ca008b52679688ab51033d
+ms.openlocfilehash: da0b47c6940254dd298520ffaa61b638ae85c4b7
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/15/2020
-ms.locfileid: "88253075"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96817545"
 ---
 # <a name="debugging-in-assembly-mode"></a>在程序集模式下调试
 
@@ -33,17 +32,17 @@ ms.locfileid: "88253075"
 
 可以通过几种不同的方式将生成的代码 (称为 *反汇编代码*) ：
 
--   [**U (Unassemble) **](u--unassemble-.md)命令反汇编并显示计算机语言的指定部分。
+-   [**U (Unassemble)**](u--unassemble-.md)命令反汇编并显示计算机语言的指定部分。
 
--   [**Uf (Unassemble 函数) **](uf--unassemble-function-.md)命令反汇编并显示函数。
+-   [**Uf (Unassemble 函数)**](uf--unassemble-function-.md)命令反汇编并显示函数。
 
--   [**向上 (Unassemble 的物理内存) **](up--unassemble-from-physical-memory-.md)命令反汇编，并显示已存储在物理内存中的计算机语言指定部分。
+-   [**向上 (Unassemble 的物理内存)**](up--unassemble-from-physical-memory-.md)命令反汇编，并显示已存储在物理内存中的计算机语言指定部分。
 
--   [** (Unassemble 实模式 BIOS) **](ur--unassemble-real-mode-bios-.md)命令反汇编并显示指定的16位实模式代码。
+-   [**(Unassemble 实模式 BIOS)**](ur--unassemble-real-mode-bios-.md)命令反汇编并显示指定的16位实模式代码。
 
--   [**Ux (Unassemble X86 BIOS) **](ux--unassemble-x86-bios-.md)命令反汇编并显示指定地址处基于 X86 的 bios 代码指令集。
+-   [**Ux (Unassemble X86 BIOS)**](ux--unassemble-x86-bios-.md)命令反汇编并显示指定地址处基于 X86 的 bios 代码指令集。
 
--    (WinDbg 仅) " [反汇编" 窗口](view---disassembly.md) 反汇编并显示计算机语言的指定部分。 如果您在 "**窗口**" 菜单中选择 "**自动打开反汇编**" 命令，此窗口将自动处于活动状态。 还可以通过在 "**视图**" 菜单上选择 "**反汇编**"，按 alt + 7，或按 "**反汇编" (alt + 7) ** "按钮， (在 ![ WinDbg 工具栏上的" 反汇编 "按钮) 屏幕截图 ](images/tbdisasm2.png) 。
+-    (WinDbg 仅) " [反汇编" 窗口](view---disassembly.md) 反汇编并显示计算机语言的指定部分。 如果您在 "**窗口**" 菜单中选择 "**自动打开反汇编**" 命令，此窗口将自动处于活动状态。 还可以通过在 "**视图**" 菜单上选择 "**反汇编**"，按 alt + 7，或按 "**反汇编" (alt + 7)** "按钮， (在 ![ WinDbg 工具栏上的" 反汇编 "按钮) 屏幕截图 ](images/tbdisasm2.png) 。
 
 反汇编显示在四列中：地址偏移量、二进制代码、程序集语言助记键和程序集语言详细信息。 下面的示例演示了这种显示。
 
@@ -53,17 +52,17 @@ ms.locfileid: "88253075"
 0040116d    8945b0      mov         eax,[ebp-0x1c] 
 ```
 
-在表示当前程序计数器的行的右侧，显示的将显示正在访问的任何内存位置或寄存器的值。 如果此行包含分支指令，则显示表示法 " ** \[ br = \] 1** " 或 " ** \[ br = 0 \] ** "。 此表示法表示每个分支都是或。
+在表示当前程序计数器的行的右侧，显示的将显示正在访问的任何内存位置或寄存器的值。 如果此行包含分支指令，则显示表示法 " **\[ br = \] 1** " 或 " **\[ br = 0 \]** "。 此表示法表示每个分支都是或。
 
-您可以使用 [**.asm (更改反汇编选项) **](-asm--change-disassembly-options-.md) 命令更改反汇编说明的显示方式。
+您可以使用 [**.asm (更改反汇编选项)**](-asm--change-disassembly-options-.md) 命令更改反汇编说明的显示方式。
 
 在 WinDbg 的 "反汇编" 窗口中，将突出显示表示当前程序计数器的行。 还将突出显示断点所在的行。
 
 你还可以使用以下命令来操作程序集代码：
 
--   [** \# (搜索反汇编模式) **](---search-for-disassembly-pattern-.md)命令在内存区域中搜索特定模式。 此命令等效于搜索显示的四列反汇编。
+-   [**\# (搜索反汇编模式)**](---search-for-disassembly-pattern-.md)命令在内存区域中搜索特定模式。 此命令等效于搜索显示的四列反汇编。
 
--   [** (汇编) **](a--assemble-.md)命令可以获取程序集指令并将它们转换为二进制计算机代码。
+-   [**(汇编)**](a--assemble-.md)命令可以获取程序集指令并将它们转换为二进制计算机代码。
 
 ### <a name="span-idassembly_mode_and_source_modespanspan-idassembly_mode_and_source_modespanassembly-mode-and-source-mode"></a><span id="assembly_mode_and_source_mode"></span><span id="ASSEMBLY_MODE_AND_SOURCE_MODE"></span>程序集模式和源模式
 
@@ -77,7 +76,7 @@ ms.locfileid: "88253075"
 
 若要设置模式，可以执行以下操作之一：
 
--   使用 [**l +，l- (Set Source Options) **](l---l---set-source-options-.md) 命令来控制模式。 **L t**命令激活程序集模式。
+-   使用 [**l +，l- (Set Source Options)**](l---l---set-source-options-.md) 命令来控制模式。 **L t** 命令激活程序集模式。
 
 -    (WinDbg 仅) 清除 "**调试**" 菜单上的 "**源模式**" 命令，使调试器进入程序集模式。你还可以在工具栏上的 "源模式关闭") 按钮 (屏幕截图中，选择 "**关闭源模式**" 按钮 ![ ](images/tbasm.png) 。
 
@@ -87,7 +86,7 @@ WinDbg 的 "反汇编" 窗口中的快捷菜单包括 " **当前源代码行" �
 
 ### <a name="span-idassembly_language_source_filesspanspan-idassembly_language_source_filesspanassembly-language-source-files"></a><span id="assembly_language_source_files"></span><span id="ASSEMBLY_LANGUAGE_SOURCE_FILES"></span>汇编语言源文件
 
-如果你的应用程序是以汇编语言编写的，则调试器生成的反汇编可能与原始代码不完全匹配。 具体而言，不会出现任何-OPs 和注释。
+如果你的应用程序是以汇编语言编写的，则调试器生成的反汇编可能与原始代码不完全匹配。 具体而言，NO-OPs 和注释不会出现。
 
 如果要通过引用原始 .asm 文件来调试代码，则必须使用源模式调试。 可以加载程序集文件，如 C 或 c + + 源文件。 有关此类调试的详细信息，请参阅 [源模式下的调试](debugging-in-source-mode.md)。
 

@@ -1,18 +1,17 @@
 ---
 title: 驱动程序验证程序选项
 description: 驱动程序验证程序选项和规则类
-ms.assetid: f251fe07-e68e-4d93-9aa5-9a0bc818756d
 keywords:
 - 驱动程序验证程序 WDK，列出的选项
 - 错误 WDK 驱动程序验证程序
 ms.date: 11/02/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 8e01b305610b319cf2fa92e5e40094bf84d6572e
-ms.sourcegitcommit: 3464f10ffa0727e38fbe225cfab52bb8c2bb1747
+ms.openlocfilehash: e809c05549401e70a0f031aa1c2af44d3b66c9c3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93352964"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96819143"
 ---
 # <a name="driver-verifier-options-and-rule-classes"></a>驱动程序验证程序选项和规则类
 
@@ -79,7 +78,7 @@ ms.locfileid: "93352964"
 
 如果启用此选项，则驱动程序验证器会通过使可分页代码无效来对驱动程序施加极大的内存压力。 如果驱动程序尝试访问错误 IRQL 处的分页内存或持有旋转锁，则驱动程序验证程序将会检测到此行为。
 
-[低资源模拟](low-resources-simulation.md) (称为 Windows 8.1 中的 *随机低资源模拟* ) 
+[低资源模拟](low-resources-simulation.md) (称为 Windows 8.1 中的 *随机低资源模拟*) 
 
 当启用此选项时，驱动程序验证程序会随机失败池分配请求和其他资源请求。 通过将这些分配故障注入到系统中，驱动程序验证程序可以测试驱动程序处理资源不足情况的能力。
 
@@ -165,7 +164,7 @@ Windows Server 2003 中引入的 (。 在 Windows 7 和更高版本中不可用�
 
 [VM 交换机验证](vm-switch-verification.md)
 
-从 Windows 8.1 开始 () 此选项监视在 [Hyper-v 可扩展交换机](../network/hyper-v-extensible-switch.md)内运行 ( *可扩展交换机) 扩展* 的筛选器驱动程序。
+从 Windows 8.1 开始 () 此选项监视在 [Hyper-v 可扩展交换机](../network/hyper-v-extensible-switch.md)内运行 (*可扩展交换机) 扩展* 的筛选器驱动程序。
 
 [端口/微型端口接口检查](port-miniport-interface-checking.md)
 

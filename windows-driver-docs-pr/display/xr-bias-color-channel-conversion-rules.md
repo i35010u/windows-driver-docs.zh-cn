@@ -1,15 +1,14 @@
 ---
 title: XR_BIAS 颜色通道转换规则
 description: 介绍 XR_BIAS 颜色通道转换规则
-ms.assetid: B3014241-A86A-4B6E-BC9D-50057B924D98
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 3367e56b2943b39278bcda7433517271a35cb2df
-ms.sourcegitcommit: 89b8a43480246dd726e3632aab2db9cf2eb7505d
+ms.openlocfilehash: 6f7eeaf1cfeb39815e32675b882c7019afe952ca
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92254024"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96818491"
 ---
 # <a name="xr_bias-color-channel-conversion-rules"></a>XR_BIAS 颜色通道转换规则
 

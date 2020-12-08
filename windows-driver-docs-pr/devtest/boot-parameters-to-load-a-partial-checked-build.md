@@ -1,7 +1,6 @@
 ---
 title: 用于加载部分已检验版本的启动参数
 description: 用于加载部分已检验版本的启动参数
-ms.assetid: 701a3258-d659-49a7-8e0d-52adc556a289
 keywords:
 - 部分检查的生成启动选项 WDK
 - 启动参数 WDK
@@ -9,18 +8,18 @@ keywords:
 - 加载部分检查的生成 WDK 启动选项
 ms.date: 05/08/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 6e2f142d3fe54b14880b48e9ba43412cd6b656f0
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 95a830728607bbe7021d3bcdfc1c1c5d1e7eee5d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89384359"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96818671"
 ---
 #  <a name="boot-parameters-to-load-a-partial-checked-build"></a>用于加载部分已检验版本的启动参数
 
 ## <span id="ddk_boot_parameters_to_load_a_partial_checked_build_tools"></span><span id="DDK_BOOT_PARAMETERS_TO_LOAD_A_PARTIAL_CHECKED_BUILD_TOOLS"></span>
 
-*部分检查的生成*包含内核和 HAL 的已检查内部版本以及操作系统剩余部分的免费版本。 有关详细信息，请参阅 [仅安装适用于 Windows Vista 和更高版本的已检查操作系统和 HAL () ](installing-just-the-checked-operating-system-and-hal--for-windows-vist.md)。
+*部分检查的生成* 包含内核和 HAL 的已检查内部版本以及操作系统剩余部分的免费版本。 有关详细信息，请参阅 [仅安装适用于 Windows Vista 和更高版本的已检查操作系统和 HAL () ](installing-just-the-checked-operating-system-and-hal--for-windows-vist.md)。
 
 > [!NOTE]
 > 在 Windows 10 版本1803之前，已检查的生成在较早版本的 Windows 上可用。
@@ -41,7 +40,7 @@ bcdedit /set {18b123cd-2bf6-11db-bfae-00e018e2b8db} kernel ntoskrnl.chk
 bcdedit /set {18b123cd-2bf6-11db-bfae-00e018e2b8db} hal halacpi.chk
 ```
 
-若要查看命令的结果，请键入 **bcdedit/enum**。 **/Enum**选项列出所有启动项。 已修改为使用所选内核和 HAL 版本的启动条目也已配置为通过串行连接进行内核调试。
+若要查看命令的结果，请键入 **bcdedit/enum**。 **/Enum** 选项列出所有启动项。 已修改为使用所选内核和 HAL 版本的启动条目也已配置为通过串行连接进行内核调试。
 
 ```console
 ## Windows Boot Loader

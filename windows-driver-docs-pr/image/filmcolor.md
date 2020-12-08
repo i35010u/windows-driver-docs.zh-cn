@@ -1,9 +1,8 @@
 ---
 title: FilmColor 元素
-description: 所需的 FilmColor 元素包含处理电影扫描输入的源支持的功能的颜色的列表。
-ms.assetid: daea2cb8-a29f-4be8-bc58-8ed45d64870c
+description: 必需的 FilmColor 元素包含胶片扫描输入源支持的颜色处理功能的列表。
 keywords:
-- FilmColor 元素成像设备
+- FilmColor 元素图像设备
 topic_type:
 - apiref
 api_name:
@@ -12,19 +11,19 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3b4eda96116c285245e6884ae7dbeab9c4e9aee1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 551ef8e7e6cbcb0541c92cdd0970abcd48134204
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63323257"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96818941"
 ---
 # <a name="filmcolor-element"></a>FilmColor 元素
 
 
-所需**FilmColor**元素包含处理电影扫描输入的源支持的功能的颜色的列表。
+必需的 **FilmColor** 元素包含胶片扫描输入源支持的颜色处理功能的列表。
 
-<a name="usage"></a>用法
+<a name="usage"></a>使用情况
 -----
 
 ```xml
@@ -71,7 +70,7 @@ ms.locfileid: "63323257"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><a href="film.md" data-raw-source="[&lt;strong&gt;Film&lt;/strong&gt;](film.md)"><strong>Film</strong></a></p></td>
+<td><p><a href="film.md" data-raw-source="[&lt;strong&gt;Film&lt;/strong&gt;](film.md)"><strong>胶片</strong></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -79,18 +78,18 @@ ms.locfileid: "63323257"
 <a name="remarks"></a>备注
 -------
 
-**FilmColor**元素包含确定色处理和获取扫描程序的电影胶片扫描输入的源支持的类型所需的信息。
+**FilmColor** 元素包含确定扫描仪的电影扫描输入源支持的颜色处理和获取类型所需的信息。
 
-描述每个像素所需的信息的量取决于特定于[ **ColorEntry** ](colorentry.md)关键字。 黑色和白色映像需要仅有一位每像素 (bpp)，而灰度和彩色图像需要更多的信息。 通过颜色空间并扫描设备的技术功能确定确切的信息量。
+描述每个像素所需的信息量取决于特定的 [**ColorEntry**](colorentry.md) 关键字。 黑白图像需要每个像素 (bpp) ，而灰度和彩色图像需要更多的信息。 确切的信息量由扫描设备的颜色空间和技术功能决定。
 
-返回的扫描数据的另一个重要方面是测光获得的数据的解释。 需要为黑白色，其中 0 表示黑色和白色表示按 1 扫描设备返回的所有图像数据都。
+返回的扫描数据的另一个重要方面是获取的数据的 photometric 解释。 扫描设备返回的所有图像数据都需要在白色显示黑色，其中黑色表示为0，白色表示为1。
 
 ## <a name="see-also"></a>请参阅
 
 
 [**ColorEntry**](colorentry.md)
 
-[**Film**](film.md)
+[**胶片**](film.md)
 
  
 

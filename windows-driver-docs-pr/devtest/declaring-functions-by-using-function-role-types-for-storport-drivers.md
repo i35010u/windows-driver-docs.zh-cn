@@ -1,15 +1,14 @@
 ---
 title: 使用 Storport 驱动程序的函数角色类型来声明函数
 description: 若要使 SDV 能够分析 Storport 驱动程序，必须使用为 Storport 定义的函数角色类型声明来声明函数。 函数角色类型在 Storport. h 中定义。
-ms.assetid: 40BD11CD-A559-4F90-BF39-4ED2FB800392
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d34b3250e7159f9447d9950c68ac3e9521a427d0
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: b8f146618c925585a1a935f75d2c41702a7661e7
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89383957"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96817827"
 ---
 # <a name="declaring-functions-by-using-function-role-types-for-storport-drivers"></a>使用 Storport 驱动程序的函数角色类型来声明函数
 

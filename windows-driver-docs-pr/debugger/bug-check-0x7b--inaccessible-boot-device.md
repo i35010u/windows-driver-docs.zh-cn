@@ -1,7 +1,6 @@
 ---
 title: Bug 检查 0x7B INACCESSIBLE_BOOT_DEVICE
 description: INACCESSIBLE_BOOT_DEVICE bug 检查的值为0x0000007B。 此错误检查表示在启动过程中，Microsoft Windows 操作系统已失去对系统分区的访问权限。
-ms.assetid: 0dfcb519-4ea3-4419-a1c3-60fdff96404d
 keywords:
 - Bug 检查 0x7B INACCESSIBLE_BOOT_DEVICE
 - INACCESSIBLE_BOOT_DEVICE
@@ -13,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 3c2234c236cb7319bbb00942cc0ee279a70561cb
-ms.sourcegitcommit: f610410e1500f0b0a4ca008b52679688ab51033d
+ms.openlocfilehash: b00036189d8e91fa838814df868a9a93ffe3682d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/15/2020
-ms.locfileid: "88252965"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96819264"
 ---
 # <a name="bug-check-0x7b-inaccessible_boot_device"></a>Bug 检查0x7B：无法访问的 \_ 启动 \_ 设备
 
@@ -26,7 +25,7 @@ ms.locfileid: "88252965"
 不可访问的 \_ 启动 \_ 设备错误检查的值为0x0000007b。 此错误检查表示在启动过程中，Microsoft Windows 操作系统已失去对系统分区的访问权限。
 
 > [!IMPORTANT]
-> 本主题适用于程序员。 如果你是在使用计算机时收到蓝屏错误代码的客户，请参阅 [排查蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题面向程序员。 如果您是在使用计算机时收到蓝屏错误代码的客户，请参阅[蓝屏错误疑难解答](https://www.windows.com/stopcode)。
 
 
 ## <a name="inaccessible_boot_device-parameters"></a>无法访问的 \_ 启动 \_ 设备参数
@@ -77,7 +76,7 @@ ms.locfileid: "88252965"
     PWSTR Buffer;
     ```
 
-    " **长度** " 字段提供字符串的实际长度。 **缓冲区**字段指向字符串的开头 (**缓冲区**始终至少是0x80000000。 ) 
+    " **长度** " 字段提供字符串的实际长度。 **缓冲区** 字段指向字符串的开头 (**缓冲区** 始终至少是0x80000000。 ) 
 
     实际字符串包含从尝试启动的设备的高级 RISC 计算 (ARC) 规范名称。 ARC 名称是在弧形环境中标识设备的一种通用方法。
 
@@ -107,7 +106,7 @@ ms.locfileid: "88252965"
 
 删除最近添加的任何硬件（特别是硬盘驱动器或控制器），以查看是否已解决错误。 如果有问题的硬件是硬盘驱动器，则磁盘固件版本可能与你的 Windows 操作系统版本不兼容。 请联系制造商以获取更新。 如果删除了另一块硬件并且错误已解决，则可能存在 IRQ 或 i/o 端口冲突。 根据制造商的说明重新配置新设备。
 
-如果最近更改了 BIOS 设置，例如在 BIOS 中将控制器模式从旧版本更改为 AHCI，请还原这些更改。 有关详细信息，请参阅 <https://en.wikipedia.org/wiki/Advanced_Host_Controller_Interface>
+如果最近更改了 BIOS 设置，例如在 BIOS 中将控制器模式从旧版本更改为 AHCI，请还原这些更改。 有关详细信息，请参阅<https://en.wikipedia.org/wiki/Advanced_Host_Controller_Interface>。
 
 **检查存储设备的兼容性**
 
@@ -158,7 +157,7 @@ ESC DEL F2 **\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\\***
 
 -   查看 **设备管理器** 查看是否有任何设备标记为惊叹号 (！ ) 。 查看在驱动程序属性中显示的任何错误驱动程序的事件日志。 请尝试更新相关驱动程序。
 
--   检查中的系统日志事件查看器是否有其他错误消息，这些错误消息可能有助于找出导致错误的设备或驱动程序。 有关详细信息，请参阅 [Open 事件查看器](https://support.microsoft.com/hub/4338813/windows-help#1TC=windows-7)。 在与蓝色屏幕相同的时间范围内查找系统日志中的严重错误。
+-   检查中的系统日志事件查看器是否有其他错误消息，这些错误消息可能有助于找出导致错误的设备或驱动程序。 有关详细信息，请参阅[打开事件查看器](https://support.microsoft.com/hub/4338813/windows-help#1TC=windows-7)。 在系统日志中查找与蓝屏同时出现的严重错误。
 
 -   你可以尝试运行系统制造商提供的硬件诊断。
 
@@ -170,7 +169,7 @@ ESC DEL F2 **\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\\***
 
     有关详细信息，请参阅 [使用系统文件检查器工具修复丢失或损坏的系统文件](https://support.microsoft.com/help/929833/use-the-system-file-checker-tool-to-repair-missing-or-corrupted-system)。
 
--   自动修复后，在 "选择选项" 屏幕上，选择 " ** &gt; 高级选项" " &gt; 系统还原疑难解答**"。 此选项会将你的电脑恢复到以前的时间点，称为系统还原点。 当你安装新的应用程序、驱动程序、更新或手动创建还原点时，将生成还原点。 出现错误之前，请选择一个还原点。
+-   自动修复后，在 "选择选项" 屏幕上，选择 " **&gt; 高级选项" " &gt; 系统还原疑难解答**"。 此选项会将你的电脑恢复到以前的时间点，称为系统还原点。 当你安装新的应用程序、驱动程序、更新或手动创建还原点时，将生成还原点。 出现错误之前，请选择一个还原点。
 
 -   使用内核调试器附加到系统，并进一步分析故障，如 "备注" 中所述。
 
@@ -187,7 +186,7 @@ ESC DEL F2 **\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\\***
 
 -   记下在驱动器上使用的文件系统，通常为 NTFS。
 
-**若要使用内核调试器分析此错误：** 在调试程序中运行 [**lm (List) **](lm--list-loaded-modules-.md) 命令，以查看加载哪些模块来尝试隔离特定驱动程序。 验证是否已加载以下驱动程序。
+**若要使用内核调试器分析此错误：** 在调试程序中运行 [**lm (List)**](lm--list-loaded-modules-.md) 命令，以查看加载哪些模块来尝试隔离特定驱动程序。 验证是否已加载以下驱动程序。
 
 *磁盘*
 

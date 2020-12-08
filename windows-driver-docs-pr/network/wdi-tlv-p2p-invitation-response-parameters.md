@@ -1,22 +1,21 @@
 ---
 title: WDI_TLV_P2P_INVITATION_RESPONSE_PARAMETERS
-description: WDI_TLV_P2P_INVITATION_RESPONSE_PARAMETERS 是 TLV 包含 Wi-Fi Direct 邀请响应参数。
-ms.assetid: A242F40C-D062-4A62-8F47-E42E74EAEFE8
+description: WDI_TLV_P2P_INVITATION_RESPONSE_PARAMETERS 是包含 Wi-Fi 直接邀请响应参数的 TLV。
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_P2P_INVITATION_RESPONSE_PARAMETERS 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: f49c1abdd25504eaedd2eee10dec81f3d19dfffc
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5a28d89bc58fe374c0ca5bac66cfb9eb4a81fe3d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63347240"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96818229"
 ---
-# <a name="wditlvp2pinvitationresponseparameters"></a>WDI\_TLV\_P2P\_邀请\_响应\_参数
+# <a name="wdi_tlv_p2p_invitation_response_parameters"></a>WDI \_ TLV \_ P2P \_ 邀请 \_ 响应 \_ 参数
 
 
-WDI\_TLV\_P2P\_邀请\_响应\_参数是包含 Wi-Fi Direct 邀请响应参数 TLV。
+WDI \_ tlv \_ P2P \_ 邀请 \_ 响应 \_ 参数是包含 Wi-Fi 直接邀请响应参数的 tlv。
 
 ## <a name="tlv-type"></a>TLV 类型
 
@@ -26,16 +25,16 @@ WDI\_TLV\_P2P\_邀请\_响应\_参数是包含 Wi-Fi Direct 邀请响应参数 T
 ## <a name="length"></a>长度
 
 
-所有包含的元素的大小的总和 （以字节为单位）。
+Sum (所有包含的元素的大小) 。
 
 ## <a name="values"></a>值
 
 
-| 在任务栏的搜索框中键入   | 描述                                                                    |
+| 类型   | 描述                                                                    |
 |--------|--------------------------------------------------------------------------------|
-| UINT8  | Wi-Fi Direct 状态代码，指定 Wi-Fi Direct 规范的... |
-| UINT16 | 转到配置超时，以毫秒为单位。                                 |
-| UINT16 | 客户端配置超时，以毫秒为单位。                             |
+| UINT8  | Wi-Fi 直接状态代码，如 Wi-Fi 直接规范指定的一样。 |
+| UINT16 | 中转配置超时（以毫秒为单位）。                                 |
+| UINT16 | 客户端配置超时（以毫秒为单位）。                             |
 
  
 
@@ -54,10 +53,10 @@ WDI\_TLV\_P2P\_邀请\_响应\_参数是包含 Wi-Fi Direct 邀请响应参数 T
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
-<td><p>Windows Server 2016</p></td>
+<td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Wditypes.hpp</td>
 </tr>
 </tbody>

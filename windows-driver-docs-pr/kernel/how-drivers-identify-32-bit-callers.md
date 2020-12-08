@@ -1,7 +1,6 @@
 ---
 title: 驱动程序如何识别 32 位调用方
 description: 驱动程序如何识别 32 位调用方
-ms.assetid: 9bfe9024-60f1-41ad-a034-160caaaa7801
 keywords:
 - 32位 i/o 支持 WDK 64 位，可识别32位调用方
 - 标识32位调用方
@@ -14,12 +13,12 @@ keywords:
 - 调用方标识 WDK 64 位
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d39fd2acd5c5a8441766ae541e4ccff46c2b667f
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 399f6cd40cb696d7ff85d382e77f99256a9a6c94
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89187175"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96817691"
 ---
 # <a name="how-drivers-identify-32-bit-callers"></a>驱动程序如何识别 32 位调用方
 

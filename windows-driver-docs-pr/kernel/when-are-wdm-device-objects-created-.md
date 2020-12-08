@@ -1,7 +1,6 @@
 ---
 title: 何时创建 WDM 设备对象
 description: 何时创建 WDM 设备对象
-ms.assetid: aeb8039d-2e5d-4700-a9e5-e5ee97c6b0b1
 keywords:
 - 设备对象在创建时的 WDK 内核
 - 分层设备对象 WDK 内核
@@ -14,12 +13,12 @@ keywords:
 - 附加设备对象
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c9f74cd5c7bd23998fede8cdb05b92136a449bcc
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: a92fe6294a63a98afabe146c4cabf559d90ac20b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89189253"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96817695"
 ---
 # <a name="when-are-wdm-device-objects-created"></a>何时创建 WDM 设备对象？
 
@@ -37,7 +36,7 @@ ms.locfileid: "89189253"
 
 -   总线驱动程序为它在其总线上枚举的每个设备创建一个 PDO。
 
-    总线驱动程序在枚举设备时为其子设备创建 PDO。 总线驱动程序会枚举设备，以响应对 PnP 管理器中**BusRelations**的[**IRP \_ MN \_ 查询 \_ 设备 \_ 关系**](./irp-mn-query-device-relations.md)请求。 如果自上一次总线驱动程序对 (**BusRelations** 的查询关系请求进行了响应，则总线驱动程序会为子设备创建一个 PDO，如果这是自计算机启动以来第一个查询关系请求) ，则为。
+    总线驱动程序在枚举设备时为其子设备创建 PDO。 总线驱动程序会枚举设备，以响应对 PnP 管理器中 **BusRelations** 的 [**IRP \_ MN \_ 查询 \_ 设备 \_ 关系**](./irp-mn-query-device-relations.md)请求。 如果自上一次总线驱动程序对 (**BusRelations** 的查询关系请求进行了响应，则总线驱动程序会为子设备创建一个 PDO，如果这是自计算机启动以来第一个查询关系请求) ，则为。
 
     PDO 表示设备到总线驱动程序以及其他内核模式系统组件（例如，电源管理器、PnP 管理器和 i/o 管理器）。
 

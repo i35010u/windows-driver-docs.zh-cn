@@ -1,22 +1,21 @@
 ---
 title: WDI_TLV_P2P_SEND_RESPONSE_ACTION_FRAME_RESULT
 description: WDI_TLV_P2P_SEND_RESPONSE_ACTION_FRAME_RESULT 是未使用的 TLV。
-ms.assetid: E1014E02-C17B-4161-82EF-47C880411A57
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_P2P_SEND_RESPONSE_ACTION_FRAME_RESULT 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 4d595a3a2a6e8795b19119b84dddff144053e3c4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6b8fc26cef6b1f342a5185b2b88ae7b815e6bd01
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380863"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96818146"
 ---
-# <a name="wditlvp2psendresponseactionframeresult"></a>WDI\_TLV\_P2P\_发送\_响应\_操作\_帧\_结果
+# <a name="wdi_tlv_p2p_send_response_action_frame_result"></a>WDI \_ TLV \_ P2P \_ 发送 \_ 响应 \_ 操作 \_ 帧 \_ 结果
 
 
-WDI\_TLV\_P2P\_发送\_响应\_操作\_帧\_结果是未使用的 TLV。
+WDI \_ tlv \_ P2P \_ 发送 \_ 响应 \_ 操作 \_ 帧 \_ 结果是未使用的 TLV。
 
 <a name="requirements"></a>要求
 ------------
@@ -33,10 +32,10 @@ WDI\_TLV\_P2P\_发送\_响应\_操作\_帧\_结果是未使用的 TLV。
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
-<td><p>Windows Server 2016</p></td>
+<td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Wditypes.hpp</td>
 </tr>
 </tbody>

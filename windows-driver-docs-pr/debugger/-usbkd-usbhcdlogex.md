@@ -1,7 +1,6 @@
 ---
 title: usbkd.usbhcdlogex
 description: Usbkd. usbhcdlogex 命令显示 USB 主机控制器的带批注调试日志。
-ms.assetid: 47274AEE-0BDB-4C25-9158-6213366434E0
 keywords:
 - usbkd usbhcdlogex Windows 调试
 ms.date: 05/23/2017
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 2cada8349b616a7c3bbca9d5b96fcdc8b7e5f27f
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 8946ccd16976f1d8ea5c5d3c474a5d46755082d2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89209419"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96818681"
 ---
 # <a name="usbkdusbhcdlogex"></a>!usbkd.usbhcdlogex
 
 
-**！ Usbkd. usbhcdlogex**命令显示 USB 主机控制器的带批注调试日志。
+**！ Usbkd. usbhcdlogex** 命令显示 USB 主机控制器的带批注调试日志。
 
 ```dbgcmd
 !usbkd.usbhcdlogex DeviceExtension[, NumberOfEntries]
@@ -57,7 +56,7 @@ EHCI MINIPORT(s) dt usbport!_USBPORT_MINIPORT_DRIVER ffffe00001f48bd0
 ...
 ```
 
-在上面的输出中，FDO 的设备扩展的地址显示为 [DML](debugger-markup-language-commands.md) 命令 **！ ehci \_ info ffffe00001ca11a0**的参数。
+在上面的输出中，FDO 的设备扩展的地址显示为 [DML](debugger-markup-language-commands.md) 命令 **！ ehci \_ info ffffe00001ca11a0** 的参数。
 
 现在，将设备扩展的地址传递给 **！ usbhcdlogex** 命令。 在此示例中，第二个参数将显示范围限制为20个日志条目。
 

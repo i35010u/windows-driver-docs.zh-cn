@@ -1,15 +1,14 @@
 ---
 title: USB 级初始化
 description: USB 级初始化
-ms.assetid: e8a2236d-f60b-456e-9d92-ab8e3e3f651d
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f3b715c4c22fe0a39a60e947ab7a54d70244e89b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3bf6a23fe1afd591a1a71f829ccd602cd29250a7
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63362518"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96818321"
 ---
 # <a name="usb-level-initialization"></a>USB 级初始化
 
@@ -17,7 +16,7 @@ ms.locfileid: "63362518"
 
 
 
-主机发出标准 USB 请求以获取一系列标准 USB 描述符的设备。 下面给出了这些描述符的相关部分。 请参阅泛型 USB 设备初始化 USB 规范。
+主机发出标准 USB 请求以获取设备的一组标准 USB 描述符。 下面给出了这些描述符的相关部分。 请参阅用于通用 USB 设备初始化的 USB 规范。
 
  
 

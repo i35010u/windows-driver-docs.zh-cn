@@ -1,7 +1,6 @@
 ---
 title: usbkd.usbhelp
 description: Usbkd. usbhelp 命令显示 USB 2.0 调试程序扩展命令的帮助。
-ms.assetid: 3551CAC5-EFC4-4CD8-B4C9-07CB5818B507
 keywords:
 - usbkd usbhelp Windows 调试
 ms.date: 05/23/2017
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 268801bc9b402d9d9ffe07cfa4ff0fedd1f4207f
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: f73b3a5c15edfa6b3036a4750c3cbdbd73b9fccd
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89215361"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96818669"
 ---
 # <a name="usbkdusbhelp"></a>!usbkd.usbhelp
 
 
-**！ Usbkd. usbhelp**命令显示 USB 2.0 调试程序扩展命令的帮助。
+**！ Usbkd. usbhelp** 命令显示 USB 2.0 调试程序扩展命令的帮助。
 
 ## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 

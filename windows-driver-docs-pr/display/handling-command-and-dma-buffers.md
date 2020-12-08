@@ -1,19 +1,18 @@
 ---
 title: 处理命令和 DMA 缓冲区
 description: 处理命令和 DMA 缓冲区
-ms.assetid: 21564bcb-ba93-446f-bc08-282759263847
 keywords:
 - 缓冲 WDK 显示
 - 命令缓冲区 WDK 显示
 - DMA 缓冲区 WDK 显示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: db78bd2061d2d74263de321c9ac41717fd20e629
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 396eb2e492620724b5df72088a0f9dbf51c2dd67
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63323735"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96819141"
 ---
 # <a name="handling-command-and-dma-buffers"></a>处理命令和 DMA 缓冲区
 
@@ -21,7 +20,7 @@ ms.locfileid: "63323735"
 ## <span id="ddk_handling_command_and_dma_buffers_gg"></span><span id="DDK_HANDLING_COMMAND_AND_DMA_BUFFERS_GG"></span>
 
 
-下面的主题介绍如何命令 DMA 缓冲区处理和显示驱动程序模型中为 Windows Vista:
+以下主题介绍如何在 Windows Vista 的显示驱动程序模型中处理命令和 DMA 缓冲区：
 
 [命令和 DMA 缓冲区简介](introduction-to-command-and-dma-buffers.md)
 
@@ -33,7 +32,7 @@ ms.locfileid: "63323735"
 
 [拆分 DMA 缓冲区](splitting-a-dma-buffer.md)
 
-[若要重命名一个分配的请求](requesting-to-rename-an-allocation.md)
+[请求重命名分配](requesting-to-rename-an-allocation.md)
 
 [修补 DMA 缓冲区](patching-a-dma-buffer.md)
 

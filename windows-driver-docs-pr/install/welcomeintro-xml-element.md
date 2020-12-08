@@ -1,7 +1,6 @@
 ---
 title: welcomeIntro XML 元素
 description: welcomeIntro XML 元素
-ms.assetid: d0325d14-c31a-453d-b28e-4bdb646d0711
 keywords:
 - welcomeIntro XML 元素设备和驱动程序安装
 topic_type:
@@ -12,12 +11,12 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 7aa3ef3d3e64ee92e1977410dfa79161668123f9
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 53b7d67e51d1067621e17f8f31d8477d04d8c456
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89094811"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96819469"
 ---
 # <a name="welcomeintro-xml-element"></a>welcomeIntro XML 元素
 
@@ -83,7 +82,7 @@ ms.locfileid: "89094811"
 
 如果未指定 **welcomeIntro** 元素，则 DPInst 将显示默认的 "欢迎使用" 页上显示的默认主文本。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**语言**](language-xml-element.md)

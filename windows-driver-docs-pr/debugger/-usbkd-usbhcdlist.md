@@ -1,7 +1,6 @@
 ---
 title: usbkd.usbhcdlist
 description: 'Usbkd. usbhcdlist 命令显示有关 USB 端口驱动程序所表示的所有 USB 主机控制器 ( # A0) 的信息。'
-ms.assetid: 877A6361-0DB9-4089-AF85-BABFBED8C440
 keywords:
 - usbkd usbhcdlist Windows 调试
 ms.date: 05/23/2017
@@ -12,12 +11,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 1834739465243254b144e936c82c4b984f93b07a
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 17adcb22c64232fc2a34a9e9c553633f9fb59cb2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89207999"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96818701"
 ---
 # <a name="usbkdusbhcdlist"></a>!usbkd.usbhcdlist
 

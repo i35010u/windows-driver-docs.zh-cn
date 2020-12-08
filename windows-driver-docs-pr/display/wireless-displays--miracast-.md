@@ -1,7 +1,6 @@
 ---
 title: 无线显示 (Miracast)
 description: Windows 显示驱动程序模型 (WDDM) 1.3 和更高版本的驱动程序可以选择支持无线 (Miracast) 显示。 此功能是从 Windows 8.1 开始的新功能。
-ms.assetid: 1645E14A-EC4A-4EB8-9AFA-6DF0466D2B1A
 keywords:
 - 无线显示
 - Miracast
@@ -11,12 +10,12 @@ keywords:
 - 由 Miracast 用户模式驱动程序实现的无线显示功能
 ms.date: 10/12/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 2ae9913db5dec43da068aa825988ec885f65d6ef
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 926591136dc86cadde98d55fc2ae05b2c2435eb1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90715800"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96818517"
 ---
 # <a name="wireless-displays-miracast"></a>无线显示 (Miracast)
 
@@ -50,7 +49,7 @@ Windows 显示驱动程序模型 (WDDM) 1.3 和更高版本的驱动程序可以
 
 指向 Miracast 显示回调函数的指针将在 [MIRACAST_CALLBACKS](/windows-hardware/drivers/ddi/netdispumdddi/ns-netdispumdddi-_miracast_callbacks) 结构中返回。
 
-|主题| 说明 |
+|主题| 描述 |
 |:--|:--|
 |[PFN_GET_NEXT_CHUNK_DATA](/windows-hardware/drivers/ddi/netdispumdddi/nc-netdispumdddi-pfn_get_next_chunk_data)| 提供有关 DXGK_INTERRUPT_MIRACAST_CHUNK_PROCESSING_COMPLETE [DXGK_INTERRUPT_TYPE](/windows-hardware/drivers/ddi/d3dkmddi/ne-d3dkmddi-_dxgk_interrupt_type) 中断类型时报告给 Microsoft DirectX 图形内核子系统的下一个 Miracast 编码区块的信息。| 
 |[PFN_MIRACAST_IO_CONTROL](/windows-hardware/drivers/ddi/netdispumdddi/nc-netdispumdddi-pfn_miracast_io_control)| 由用户模式显示驱动程序调用，以向同步 i/o 控制请求发送内核模式显示微型端口驱动程序。|
@@ -66,7 +65,7 @@ Windows 显示驱动程序模型 (WDDM) 1.3 和更高版本的驱动程序可以
 
 为了响应对 [QueryMiracastDriverInterface](/windows-hardware/drivers/ddi/netdispumdddi/nc-netdispumdddi-query_miracast_driver_interface) 函数的操作系统调用，Miracast 用户模式驱动程序必须在 [MIRACAST_DRIVER_INTERFACE](/windows-hardware/drivers/ddi/netdispumdddi/ns-netdispumdddi-_miracast_driver_interface) 结构中提供指向这些函数的指针，但 [PfnDataRateNotify](/windows-hardware/drivers/ddi/netdispumdddi/nc-netdispumdddi-pfn_datarate_notification)除外，其中包含 [RegisterForDataRateNotifications](/windows-hardware/drivers/ddi/netdispumdddi/nc-netdispumdddi-pfn_register_datarate_notifications)中声明的指针。
 
-|主题| 说明 |
+|主题| 描述 |
 |:--|:--|
 |[PFN_CREATE_MIRACAST_CONTEXT](/windows-hardware/drivers/ddi/netdispumdddi/nc-netdispumdddi-pfn_create_miracast_context)| 由操作系统调用以创建用户模式 Miracast 上下文。|
 |[PFN_DESTROY_MIRACAST_CONTEXT](/windows-hardware/drivers/ddi/netdispumdddi/nc-netdispumdddi-pfn_destroy_miracast_context)| 由操作系统调用以销毁用户模式的 Miracast 上下文。|
@@ -77,43 +76,43 @@ Windows 显示驱动程序模型 (WDDM) 1.3 和更高版本的驱动程序可以
 |[PFN_STOP_MIRACAST_SESSION](/windows-hardware/drivers/ddi/netdispumdddi/nc-netdispumdddi-pfn_stop_miracast_session)| 由操作系统调用，以启动已通过调用 **StartMiracastSession** 函数启动的 Miracast 连接会话。|
  
 
-** (Miracast) 结构和枚举的无线显示**
+**(Miracast) 结构和枚举的无线显示**
 
 与 Miracast 显示设备驱动程序接口一起使用的所有用户模式结构和枚举 (DDIs) 。
 
-|主题 |说明 |
+|主题 |描述 |
 |:--|:--|
 |[MIRACAST_CALLBACKS](/windows-hardware/drivers/ddi/netdispumdddi/ns-netdispumdddi-_miracast_callbacks)| 包含一个指向 (Miracast 的无线显示的指针) Miracast 用户模式驱动程序可调用的运行时回调函数。|
 |[MIRACAST_CHUNK_DATA](/windows-hardware/drivers/ddi/netdispumdddi/ns-netdispumdddi-miracast_chunk_data)| 包含编码区块数据，当用户模式驱动程序调用 (Miracast) [GetNextChunkData](/windows-hardware/drivers/ddi/netdispumdddi/nc-netdispumdddi-pfn_get_next_chunk_data) 函数的无线显示时使用。|
 |[MIRACAST_CHUNK_ID](/windows-hardware/drivers/ddi/netdispumdddi/ns-netdispumdddi-miracast_chunk_id)| 存储用于标识 (Miracast) 编码区块的无线显示的信息。|
 |[MIRACAST_CHUNK_INFO](/windows-hardware/drivers/ddi/netdispumdddi/ns-netdispumdddi-miracast_chunk_info)| 包含有关 (Miracast) 编码区块的指定无线显示的信息。|
 |[MIRACAST_CHUNK_TYPE](/windows-hardware/drivers/ddi/netdispumdddi/ne-netdispumdddi-miracast_chunk_type)| 指定要处理 (Miracast) 区块信息的无线显示类型。|
-|[MIRACAST_DATARATE_STATS](/windows-hardware/drivers/ddi/netdispumdddi/ns-netdispumdddi-miracast_datarate_stats)| 包含无线显示中使用的信息 (Miracast) pfnDataRateNotify 函数有关音频/视频编码器比特率以及失败或重试 Wi-fi 帧的信息。|
+|[MIRACAST_DATARATE_STATS](/windows-hardware/drivers/ddi/netdispumdddi/ns-netdispumdddi-miracast_datarate_stats)| 包含无线显示中使用的信息 (Miracast) pfnDataRateNotify 函数有关音频/视频编码器比特率，Wi-Fi 帧失败或重试。|
 |[MIRACAST_DRIVER_INTERFACE](/windows-hardware/drivers/ddi/netdispumdddi/ns-netdispumdddi-_miracast_driver_interface)| 包含指向由 Miracast 用户模式驱动程序实现 (Miracast) 函数的无线显示的指针。|
 |[MIRACAST_PROTOCOL_EVENT](/windows-hardware/drivers/ddi/netdispumdddi/ne-netdispumdddi-miracast_protocol_event)| 指定用户模式显示驱动程序应报告的 (Miracast) 协议事件的无线显示类型。|
 |[MIRACAST_SESSION_INFO](/windows-hardware/drivers/ddi/netdispumdddi/ns-netdispumdddi-miracast_session_info)| 包含有关无线显示器 (Miracast) 连接会话的信息。|
 |[MIRACAST_STATISTIC_DATA](/windows-hardware/drivers/ddi/netdispumdddi/ns-netdispumdddi-miracast_statistic_data)| 包含用户模式显示驱动程序向操作系统报告的 Miracast 统计信息数据。|
 |[MIRACAST_STATISTIC_TYPE](/windows-hardware/drivers/ddi/netdispumdddi/ne-netdispumdddi-miracast_statistic_type)| 指定用户模式显示驱动程序生成的 Miracast 统计数据的类型。|
 |[MIRACAST_STATUS](/windows-hardware/drivers/ddi/netdispumdddi/ne-netdispumdddi-miracast_status)| 指定用户模式显示驱动程序用来报告 Miracast 连接状态的状态类型。|
-|[MIRACAST_WFD_CONNECTION_STATS](/windows-hardware/drivers/ddi/netdispumdddi/ns-netdispumdddi-miracast_wfd_connection_stats)| 包含 Wi-fi Direct 连接上的比特率信息。|
+|[MIRACAST_WFD_CONNECTION_STATS](/windows-hardware/drivers/ddi/netdispumdddi/ns-netdispumdddi-miracast_wfd_connection_stats)| Wi-Fi 直接连接上包含比特率信息。|
 
 这些附加的用户模式结构和枚举支持 Miracast 显示，并是新的或更新的 Windows 8.1 的：
 
 -   [**DISPLAYCONFIG \_目标 \_ 基 \_ 类型**](/windows/win32/api/wingdi/ns-wingdi-displayconfig_target_base_type) (new) 
--   [**DISPLAYCONFIG \_添加 \_ \_ **](/windows/win32/api/wingdi/ns-wingdi-displayconfig_video_signal_info) 了 **ADDITIONALSIGNALINFO** 子结构 (视频信号信息) 
+-   [**DISPLAYCONFIG \_添加 \_ \_**](/windows/win32/api/wingdi/ns-wingdi-displayconfig_video_signal_info) 了 **ADDITIONALSIGNALINFO** 子结构 (视频信号信息) 
 -   [**DISPLAYCONFIG \_添加了设备 \_ 信息 \_ 类型**](/windows/win32/api/wingdi/ne-wingdi-displayconfig_device_info_type) (**DISPLAYCONFIG \_ 设备 \_ 信息 \_ 获取 \_ 目标 \_ 基本 \_ 类型** 常量) 
--   [**D3DKMDT \_添加 \_ \_ **](/windows-hardware/drivers/ddi/d3dkmdt/ns-d3dkmdt-_d3dkmdt_video_signal_info) 了 **ADDITIONALSIGNALINFO** 子结构 (视频信号信息) 
+-   [**D3DKMDT \_添加 \_ \_**](/windows-hardware/drivers/ddi/d3dkmdt/ns-d3dkmdt-_d3dkmdt_video_signal_info) 了 **ADDITIONALSIGNALINFO** 子结构 (视频信号信息) 
 -   [**DISPLAYCONFIG \_添加了设备 \_ 信息 \_ 类型**](/windows/win32/api/wingdi/ne-wingdi-displayconfig_device_info_type) (**DISPLAYCONFIG \_ 设备 \_ 信息 \_ 获取 \_ 目标 \_ 基本 \_ 类型** 常量) 
 
 ### <a name="kernel-mode-ddis"></a>内核模式 DDIs
 
-** (Miracast) 显示回调接口的无线显示**
+**(Miracast) 显示回调接口的无线显示**
 
 Miracast 显示回调接口包含由 Microsoft DirectX 图形内核子系统实现的函数，以支持无线 (Miracast) 显示。 从 Windows 8.1 开始支持此接口。
 
 本部分包含这些内核模式功能的参考页面，Windows 显示驱动程序模型 (WDDM) 1.3 和更高版本的显示微型端口驱动程序调用这些功能：
 
-|主题 |说明 |
+|主题 |描述 |
 |:--|:--|
 |[DXGKCB_MIRACAST_SEND_MESSAGE](/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgkcb_miracast_send_message)|将异步消息发送到用户模式显示驱动程序。|
 |[DXGKCB_MIRACAST_SEND_MESSAGE_CALLBACK](/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgkcb_miracast_send_message_callback)|当通过调用 **DxgkCbMiracastSendMessage** 函数发送到用户模式驱动程序的消息完成或已取消时，在内核模式下调用。|
@@ -121,13 +120,13 @@ Miracast 显示回调接口包含由 Microsoft DirectX 图形内核子系统实�
 
 显示微型端口驱动程序必须填写指向 [DXGK_MIRACAST_DISPLAY_CALLBACKS](/windows-hardware/drivers/ddi/dispmprt/ns-dispmprt-_dxgk_miracast_display_callbacks) 结构中这些函数的指针。
 
-** (Miracast) 接口的无线显示**
+**(Miracast) 接口的无线显示**
 
 本部分包含的内核模式功能由支持无线 (Miracast) 显示的显示微型端口驱动程序实现。 从 Windows 8.1 开始支持此接口。
 
 在 [DXGK_MIRACAST_INTERFACE](/windows-hardware/drivers/ddi/dispmprt/ns-dispmprt-_dxgk_miracast_interface) 结构中返回 Miracast 接口函数的指针。
 
-|主题 |说明 |
+|主题 |描述 |
 |:--|:--|
 |[DXGKCB_MIRACAST_SEND_MESSAGE_CALLBACK](/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgkcb_miracast_send_message_callback)|当通过调用 DxgkCbMiracastSendMessage 函数发送到用户模式驱动程序的消息完成或已取消时，在内核模式下调用。|
 |[DXGKDDI_MIRACAST_CREATE_CONTEXT](/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgkddi_miracast_create_context)|为 Miracast 设备创建内核模式上下文。|
@@ -139,11 +138,11 @@ Miracast 显示回调接口包含由 Microsoft DirectX 图形内核子系统实�
 这些附加的内核模式结构和枚举支持 Miracast 显示，并是新的或更新的 Windows 8.1 的：
 
 -   [**DXGK \_ MIRACAST \_ CAP**](/windows-hardware/drivers/ddi/dispmprt/ns-dispmprt-_dxgk_miracast_caps)
--   [**D3DKMDT \_添加 \_ \_ **](/windows-hardware/drivers/ddi/d3dkmdt/ne-d3dkmdt-_d3dkmdt_video_output_technology) 了 **D3DKMDT \_ VOT \_ MIRACAST** 常量 (视频输出技术) 
--   [**D3DKMDT \_添加 \_ \_ **](/windows-hardware/drivers/ddi/d3dkmdt/ns-d3dkmdt-_d3dkmdt_video_signal_info) 了 **ADDITIONALSIGNALINFO** 子结构 (视频信号信息) 
+-   [**D3DKMDT \_添加 \_ \_**](/windows-hardware/drivers/ddi/d3dkmdt/ne-d3dkmdt-_d3dkmdt_video_output_technology) 了 **D3DKMDT \_ VOT \_ MIRACAST** 常量 (视频输出技术) 
+-   [**D3DKMDT \_添加 \_ \_**](/windows-hardware/drivers/ddi/d3dkmdt/ns-d3dkmdt-_d3dkmdt_video_signal_info) 了 **ADDITIONALSIGNALINFO** 子结构 (视频信号信息) 
 -   [**DXGK \_添加 \_ 的子**](/windows-hardware/drivers/ddi/dispmprt/ns-dispmprt-_dxgk_child_status) (**Miracast** 子结构的子状态) 
 -   [**DXGK \_添加的子 \_ 状态 \_ 类型**](/windows-hardware/drivers/ddi/dispmprt/ne-dispmprt-_dxgk_child_status_type) (**StatusMiracast** 常量) 
--   [**DXGKARGCB \_向 \_ \_ **](/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgkargcb_notify_interrupt_data) **添加 (子** 结构) 通知中断数据
+-   [**DXGKARGCB \_向 \_ \_**](/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgkargcb_notify_interrupt_data) **添加 (子** 结构) 通知中断数据
 
  
 

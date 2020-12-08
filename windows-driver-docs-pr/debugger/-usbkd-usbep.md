@@ -1,7 +1,6 @@
 ---
 title: usbkd.usbep
 description: Usbkd. usbep 命令显示有关 USB 终结点的信息。
-ms.assetid: FEF66394-0502-4F3F-ACBE-57AA1945CC74
 keywords:
 - usbkd usbep Windows 调试
 ms.date: 05/23/2017
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: e310f1f165c7f8e6983d521e3ccf24230e44a3b4
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 8c2af64f33c171142fac15f5bb725c36d3b000b2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89213519"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96818717"
 ---
 # <a name="usbkdusbep"></a>!usbkd.usbep
 
 
-**！ Usbkd. usbep**命令显示有关 USB 终结点的信息。
+**！ Usbkd. usbep** 命令显示有关 USB 终结点的信息。
 
 ```dbgcmd
 !usbkd.usbep StructAddr
@@ -51,7 +50,7 @@ Usbkd.dll
      ...
 ```
 
-在上面的输出中，FDO 的设备扩展的地址显示为 [DML](debugger-markup-language-commands.md) 命令 **！ ehci \_ info ffffe00001ca11a0**的参数。
+在上面的输出中，FDO 的设备扩展的地址显示为 [DML](debugger-markup-language-commands.md) 命令 **！ ehci \_ info ffffe00001ca11a0** 的参数。
 
 单击 DML 命令或将设备扩展的地址传递给 [**！ usbhcdext**](-usbkd-usbhcdext.md) 以获取全局终结点列表。
 
@@ -64,7 +63,7 @@ GlobalEndpointList: !usblist ffffe00001ca2388, EP
 ...
 ```
 
-现在使用[**！ usbkd. usblist**](-usbkd-usblist.md)命令获取** \_ HCD \_ 终结点**结构的地址。
+现在使用 [**！ usbkd. usblist**](-usbkd-usblist.md)命令获取 **\_ HCD \_ 终结点** 结构的地址。
 
 ```dbgcmd
 0: kd> !usblist ffffe00001ca2388, EP
@@ -77,7 +76,7 @@ dt usbport!_ENDPOINT_PARAMETERS ffffe000020f6b18    RootHub Endpoint
 ...
 ```
 
-在上面的输出中， `ffffe000020f6970 ` 是** \_ HCD \_ 终结点**结构的地址。 将此地址传递给 **！ usbkd. usbep**。
+在上面的输出中， `ffffe000020f6970 ` 是 **\_ HCD \_ 终结点** 结构的地址。 将此地址传递给 **！ usbkd. usbep**。
 
 ```dbgcmd
 0: kd> !usbep ffffe000020f6970

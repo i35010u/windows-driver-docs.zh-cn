@@ -1,7 +1,6 @@
 ---
 title: Windows 8.1 的地理位置驱动程序示例
 description: Windows 8.1 的地理位置示例驱动程序演示了全球定位系统 (GPS) 设备的传感器驱动程序。
-ms.assetid: 2675DB47-B973-419C-930D-1F1B9D65E42D
 keywords:
 - GPS
 - 地理位置驱动程序
@@ -12,12 +11,12 @@ keywords:
 - UMDF 传感器驱动程序
 ms.date: 08/25/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 33f59402618c0a6b578ea98266cd44e8bdb9ba39
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: e90d6c54dd2aca1362b55d3ea12cae179625ce4e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89190723"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96819081"
 ---
 # <a name="geolocation-driver-sample-for-windows-81"></a>Windows 8.1 的地理位置驱动程序示例
 

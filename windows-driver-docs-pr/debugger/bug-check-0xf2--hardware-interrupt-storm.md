@@ -1,7 +1,6 @@
 ---
 title: Bug 检查 0xF2 HARDWARE_INTERRUPT_STORM
-description: HARDWARE_INTERRUPT_STORM bug 检查具有 0x000000F2 值。 这表示在内核检测到中断 storm。
-ms.assetid: 04751AB2-E9B3-40AD-A872-8DDA9B96C6CA
+description: HARDWARE_INTERRUPT_STORM bug 检查的值为0x000000F2。 这表示内核检测到中断风暴。
 keywords:
 - Bug 检查 0xF2 HARDWARE_INTERRUPT_STORM
 - HARDWARE_INTERRUPT_STORM
@@ -13,50 +12,50 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 4b0b810cecb88c29640f70ad7869e0cbf232c2a7
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: 84f0532d8aa6f276247f47563c184657ce303d0a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67518752"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96819237"
 ---
-# <a name="bug-check-0xf2-hardwareinterruptstorm"></a>Bug 检查 0xF2：硬件\_中断\_STORM
+# <a name="bug-check-0xf2-hardware_interrupt_storm"></a>Bug 检查0xF2：硬件 \_ 中断 \_ 风暴
 
 
-硬件\_中断\_STORM bug 检查的值为 0x000000F2。 这表示在内核检测到中断 storm。
+硬件 \_ 中断 \_ 风暴 bug 检查的值为0x000000F2。 这表示内核检测到中断风暴。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题面向程序员。 如果您是在使用计算机时收到蓝屏错误代码的客户，请参阅[蓝屏错误疑难解答](https://www.windows.com/stopcode)。
 
 
-## <a name="hardwareinterruptstorm-parameters"></a>硬件\_中断\_STORM 参数
+## <a name="hardware_interrupt_storm-parameters"></a>硬件 \_ 中断 \_ 风暴参数
 
 
 | 参数 | 描述                                                                               |
 |-----------|-------------------------------------------------------------------------------------------|
-| 1         | 连接到风暴中断矢量地址 ISR （或链中的第一个 ISR） |
+| 1         | ISR 中 (或第一个 ISR) 连接到 storming 中断向量的地址 |
 | 2         | ISR 上下文值                                                                         |
-| 3         | 风暴中断矢量的中断对象的地址                         |
-| 4         | 如果不是 ISR 0x1 链接在一起，0x2 ISR 链接                                  |
+| 3         | Storming 中断向量中断对象的地址                         |
+| 4         | 如果 ISR 未链接，则为 0x1; 如果 ISR 链接，则0x2                                  |
 
  
 
 <a name="cause"></a>原因
 -----
 
-此检测错误指示在内核检测到中断 storm。 中断 storm 被指在断言状态保持级别触发的中断信号。 这是致命的系统将硬方式系统挂起或"总线 lock"。
+此错误检测表明内核检测到中断风暴。 中断风暴定义为处于断言状态的触发中断信号级别。 这对于系统来说是致命的，系统将硬挂起，或者 "总线锁定"。
 
-这可能是由于以下：
+这可能是由以下原因导致的：
 
--   硬件不会告知为此，设备驱动程序后将释放其中断信号。
--   设备驱动程序不会指示发布中断信号，因为它不认为中断启动其硬件从其硬件。
--   设备驱动程序声明中断，即使不从其硬件初始化的中断也是如此。 请注意，这仅可出现多个设备都共享相同的 IRQ 时。
--   ELCR （edge 级别控制寄存器） 设置不正确。
--   边缘和级别中断触发设备共享 IRQ。
+-   设备驱动程序在被告知后，一段硬件不会释放其中断信号。
+-   设备驱动程序不会指示其硬件释放中断信号，因为它不相信中断是从其硬件发起的。
+-   即使中断并非从其硬件启动，设备驱动程序也会声明该中断。 请注意，仅当多个设备共享同一 IRQ 时才会发生这种情况。
+-   ELCR (edge 级别控制寄存器) 设置不正确。
+-   边缘和级别中断触发的设备共享 IRQ。
 
-所有这些情况下将立即硬挂起你的系统。 而不是硬挂起系统，此 bug 检查已启动，因为在许多情况下，它可以确定问题所在。
+所有这些情况都会使你的系统立即挂起。 此错误检查不是硬挂起系统，因为在许多情况下，它可以识别错误。
 
-检测的错误时，屏幕上显示包含风暴 IRQ ISR （中断服务例程） 的模块。 这是你将看到的一个示例：
+发生错误检测时，将在屏幕上显示包含 ISR (中断服务例程) 的模块。 下面是你将看到的内容的示例：
 
 ```console
 *** STOP: 0x000000F2 (0xFCA7C55C, 0x817B9B28, 0x817D2AA0, 0x00000002)
@@ -64,14 +63,14 @@ An interrupt storm has caused the system to hang.
 *** Address FCA7C55C base at FCA72000, Datestamp 3A72BDEF - ACPI.sys
 ```
 
-事件的第四个参数是 0x00000001，指向模块很可能是问题所在。 该驱动程序已损坏，或者硬件工作不正常。
+如果第四个参数是0x00000001，则指向的模块很可能是发生的原因。 驱动程序已损坏，或者硬件出现故障。
 
-事件的第四个参数是 0x00000002，指向链中的第一个 ISR 并模块永远不会保证是罪魁祸首。
+如果第四个参数是0x00000002，则指向的模块是链中的第一个 ISR，并且永远不能保证成为原因。
 
-<a name="resolution"></a>分辨率
+<a name="resolution"></a>解决方法
 ----------
 
-反复遇到此错误检查，用户应尝试通过查找与为其模块是用于 （在此情况下，使用 ACPI 的 IRQ） 的驱动程序相同的 IRQ 设备来隔离问题。
+重复发生此错误检查的用户应尝试隔离此问题，方法是在此示例中查找该模块是其驱动 (程序所用的同一 IRQ 上的设备，这是 ACPI 使用) 的同一个 IRQ。
 
  
 

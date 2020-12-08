@@ -1,15 +1,14 @@
 ---
 title: 创建硬件通知客户端驱动程序
 description: 本部分提供了有关如何开发使用 Microsoft 提供的 KMDF 类扩展的硬件通知客户端驱动程序的一般指南。
-ms.assetid: 348950d3-fb80-4800-a606-290d473aa412
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 1a2a736f74b7511108311f24e63cfb92362b6dbd
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 83de5d04d36ac781745811a432bd444d851a23d1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89382899"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96818489"
 ---
 # <a name="create-a-hardware-notification-client-driver"></a>创建硬件通知客户端驱动程序
 

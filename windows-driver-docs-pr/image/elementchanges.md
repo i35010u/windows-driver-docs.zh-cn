@@ -1,9 +1,8 @@
 ---
 title: ElementChanges 元素
-description: 所需的 ElementChanges 元素包含对 ScannerDescription、 ScannerConfiguration、 DefaultScanTicket 和供应商扩展元素的更改。
-ms.assetid: d6f1d188-beb6-4ea3-a362-de64d8d8dacb
+description: 必需的 ElementChanges 元素包含对 ScannerDescription、ScannerConfiguration、DefaultScanTicket 和供应商扩展元素的更改。
 keywords:
-- ElementChanges 元素成像设备
+- ElementChanges 元素图像设备
 topic_type:
 - apiref
 api_name:
@@ -12,19 +11,19 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 67a3307002c9315605924a70c2837265ad0af3a6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6ec5a483a91e7cea711a43df5d2ea4031af5c668
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63364461"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96818971"
 ---
 # <a name="elementchanges-element"></a>ElementChanges 元素
 
 
-所需**ElementChanges**元素包含的更改[ **ScannerDescription**](scannerdescription.md)， [ **ScannerConfiguration**](scannerconfiguration.md)， [ **DefaultScanTicket**](defaultscanticket.md)，和供应商扩展元素。
+必需的 **ElementChanges** 元素包含对 [**ScannerDescription**](scannerdescription.md)、 [**ScannerConfiguration**](scannerconfiguration.md)、 [**DefaultScanTicket**](defaultscanticket.md)和供应商扩展元素的更改。
 
-<a name="usage"></a>用法
+<a name="usage"></a>使用情况
 -----
 
 ```xml
@@ -85,7 +84,7 @@ ms.locfileid: "63364461"
 <a name="remarks"></a>备注
 -------
 
-WSD 扫描服务必须包括**ElementChanges**元素时它将生成[ **ScannerElementsChangeEvent** ](scannerelementschangeevent.md)元素。 每个子元素**ElementChanges**必须包含所有必需的子元素。 如果返回的 XML 中缺少可选元素，WSD 扫描服务表示向客户端中，该服务不再支持该元素。
+当 WSD 扫描服务生成 [**ScannerElementsChangeEvent**](scannerelementschangeevent.md)元素时，它必须包含 **ElementChanges** 元素。 **ElementChanges** 的每个子元素都必须包含其所有必需的子元素。 如果返回的 XML 中缺少一个可选元素，则 WSD 扫描服务将向客户端指示该服务不再支持该元素。
 
 ## <a name="see-also"></a>请参阅
 

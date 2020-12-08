@@ -1,22 +1,21 @@
 ---
 title: WDI_TLV_P2P_LISTEN_CHANNEL
-description: WDI_TLV_P2P_LISTEN_CHANNEL 是 TLV 包含 Wi-Fi Direct 通道信息。
-ms.assetid: 45D1B507-C02B-432B-A552-78F2539ECE68
+description: WDI_TLV_P2P_LISTEN_CHANNEL 是包含 Wi-Fi 直接通道信息的 TLV。
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_P2P_LISTEN_CHANNEL 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: c341847563c60271e10069bc971dccf9039d1dde
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: bd140f670a084f1d4cad20c3b701cbc523c32a88
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63347215"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96818211"
 ---
-# <a name="wditlvp2plistenchannel"></a>WDI\_TLV\_P2P\_侦听\_通道
+# <a name="wdi_tlv_p2p_listen_channel"></a>WDI \_ TLV \_ P2P \_ 侦听 \_ 通道
 
 
-WDI\_TLV\_P2P\_侦听\_通道是 TLV 包含 Wi-Fi Direct 通道信息。
+WDI \_ tlv \_ P2P \_ 侦听 \_ 通道是包含 Wi-Fi 直接通道信息的 tlv。
 
 ## <a name="tlv-type"></a>TLV 类型
 
@@ -26,16 +25,16 @@ WDI\_TLV\_P2P\_侦听\_通道是 TLV 包含 Wi-Fi Direct 通道信息。
 ## <a name="length"></a>长度
 
 
-所有包含的元素的大小的总和 （以字节为单位）。
+Sum (所有包含的元素的大小) 。
 
 ## <a name="values"></a>值
 
 
-| 在任务栏的搜索框中键入                          | 描述                                                                        |
+| 类型                          | 描述                                                                        |
 |-------------------------------|------------------------------------------------------------------------------------|
-| UINT8\[3\]                    | 国家 / 地区代码的操作的类和频道号都有效。 |
-| UINT8                         | 表示频道号的运行频率类/带区。                         |
-| WDI\_通道\_数 (UINT32) | 为 Wi-Fi Direct 设备或组频道号。                           |
+| UINT8 \[ 3\]                    | 操作类和频道号有效的国家或地区代码。 |
+| UINT8                         | 频道号的操作类/频带。                         |
+| WDI \_ 信道 \_ 号 (UINT32)  | Wi-Fi 直接设备或组的频道号。                           |
 
  
 
@@ -54,10 +53,10 @@ WDI\_TLV\_P2P\_侦听\_通道是 TLV 包含 Wi-Fi Direct 通道信息。
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
-<td><p>Windows Server 2016</p></td>
+<td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Wditypes.hpp</td>
 </tr>
 </tbody>

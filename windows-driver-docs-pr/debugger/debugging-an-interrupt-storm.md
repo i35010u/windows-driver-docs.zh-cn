@@ -1,24 +1,23 @@
 ---
 title: 调试中断风暴
 description: 调试中断风暴
-ms.assetid: b863cb9c-dce0-4572-b0ed-6f7d3a6ba472
 keywords:
 - 挂起的 Irp
-- I/o 请求数据包（IRP），挂起
+- I/o 请求数据包 (IRP) ，挂起
 ms.date: 05/15/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 131c2ab6bb126e8459a74bf3c77c3e720bcd4987
-ms.sourcegitcommit: 4d1ed685d198629f792d287619621a87ca42c26f
+ms.openlocfilehash: 9fdccb9677953c2cec6584f25b87d4f550b5e774
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83435375"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96817539"
 ---
 # <a name="debugging-an-interrupt-storm"></a>调试中断风暴
 
 ## <span id="ddk_debugging_pending_irps_dbg"></span><span id="DDK_DEBUGGING_PENDING_IRPS_DBG"></span>
 
-停止系统的一个最常见的示例是中断风暴。 *中断风暴*是处于断言状态的级别触发的中断信号。
+停止系统的一个最常见的示例是中断风暴。 *中断风暴* 是处于断言状态的级别触发的中断信号。
 
 以下事件可能会导致中断风暴：
 
@@ -28,13 +27,13 @@ ms.locfileid: "83435375"
 
 - 即使中断并非从其硬件启动，设备驱动程序也会声明该中断。 仅当多个设备共享同一 IRQ 时才会发生这种情况。
 
-- 未正确设置边缘级别控制寄存器（ELCR）。
+- 未正确设置边缘级别控制注册 (ELCR) 。
 
-- 边缘和级别中断触发的设备共享 IRQ （例如，COM 端口和 PCI SCSI 控制器）。
+- 边缘和级别中断触发的设备共享 IRQ (例如，COM 端口和 PCI SCSI 控制器) 。
 
 此示例演示检测和调试中断风暴的一种方法。
 
-计算机挂起时，使用内核调试器中断。 使用 **！ irpfind** extension 命令查找挂起的 irp。 然后，使用 **！ irp**扩展获取有关任何挂起的 irp 的详细信息。 例如：
+计算机挂起时，使用内核调试器中断。 使用 **！ irpfind** extension 命令查找挂起的 irp。 然后，使用 **！ irp** 扩展获取有关任何挂起的 irp 的详细信息。 例如：
 
 ```dbgcmd
 kd> !irp 81183468
@@ -51,7 +50,7 @@ Irp is active with 2 stacks 2 is current (= 0x811834fc)
 
 此示例显示 \\ 驱动程序 \\ e100b 尚未返回 NTOSKRNL.EXE 的 IRP **！PopCompleteSystemPowerIrp**。 这似乎是停滞的，并且可能会遇到中断风暴。
 
-若要进行调查，请使用**kb**命令请求堆栈跟踪。 例如：
+若要进行调查，请使用 **kb** 命令请求堆栈跟踪。 例如：
 
 ```dbgcmd
 kd> kb
@@ -64,7 +63,7 @@ f714ef78 80067cc2 00000000 00000240 8000017c ntoskrnl!KiDispatchInterrupt
 f714ef78 80501cb5 00000000 00000240 8000017c halacpi!HalpDispatchInterrupt2ndEnt  
 ```
 
-请注意，从开始的部分 `halacpi!HalBeginSystemInterrupt` 为中断调度。 如果使用**g**命令并再次中断，则很可能会看到不同的堆栈跟踪，但仍会看到中断调度。 若要确定哪些中断负责系统延迟，请查看传递到**HalBeginSystemInterrupt**的第二个参数（在本例中为0x3B）。 标准规则是显示的中断向量（0x3B）是 IRQ 行加0x30，因此中断是数字0xB。 运行另一个堆栈跟踪可能会提供有关哪个设备发出中断服务请求（ISR）的详细信息。 在这种情况下，第二个堆栈跟踪具有以下结果：
+请注意，从开始的部分 `halacpi!HalBeginSystemInterrupt` 为中断调度。 如果使用 **g** 命令并再次中断，则很可能会看到不同的堆栈跟踪，但仍会看到中断调度。 若要确定哪些中断负责系统延迟，请查看传入 (**HalBeginSystemInterrupt** 的第二个参数，在本例中为 0x3B) 。 标准规则是 (0x3B) 显示的中断向量是 IRQ 行加0x30，因此中断是数字0xB。 运行另一个堆栈跟踪可能会提供有关哪个设备发出中断服务请求 (ISR) 的详细信息。 在这种情况下，第二个堆栈跟踪具有以下结果：
 
 ```dbgcmd
 kd> kb
@@ -93,7 +92,7 @@ f714f2d4 8044cb89 811a279c 811a2708 811a27c0 ntoskrnl!PopPresentIrp+0x62
 
 系统当前正在运行视频卡的 ISR。 系统将为共享 IRQ 0xB 的每个设备运行 ISR。 如果没有进程声称中断，操作系统将无限期等待，请求驱动程序 Isr 来处理中断。 还可能是进程处理中断并停止该中断，但如果硬件中断，中断可能只需重新断言。
 
-使用 **！仲裁 4**扩展来确定哪些设备在 IRQ 0xB 上。 如果 IRQ 0xB 上只有一个设备，则可能会出现问题的原因。 如果有多个设备共享中断（99% 的事例），则需要通过手动对 .LNK 节点（系统状态的破坏性）或通过删除或禁用硬件来隔离设备。
+使用 **！仲裁 4** 扩展来确定哪些设备在 IRQ 0xB 上。 如果 IRQ 0xB 上只有一个设备，则可能会出现问题的原因。 如果有多个设备共享中断 (99% 的事例) ，则需要通过手动对 .LNK 节点进行编程， (这对于系统状态) 具有破坏性，或者通过删除或禁用硬件进行隔离。
 
 ```dbgcmd
 kd> !arbiter 4
@@ -176,9 +175,9 @@ DEVNODE 8149a008 (HTREE\ROOT\0)
           < none >
 ```
 
-在这种情况下，音频、通用串行总线（USB）、网络接口卡（NIC）和视频均使用同一 IRQ。
+在这种情况下，音频、通用串行总线 (USB) 、网络接口卡 (NIC) 和视频均使用同一 IRQ。
 
-若要找出哪些 ISR 声称了中断的所有权，请检查 ISR 的返回值。 只需使用带 " **！仲裁**器" 显示中给定地址的**U**命令来反汇编 ISR，并在 ISR 的最后一个指令上设置断点（这将是 "ret" 指令）。 请注意，使用命令**g &lt; address &gt; **等效于在该地址上设置断点：
+若要找出哪些 ISR 声称了中断的所有权，请检查 ISR 的返回值。 只需使用 **U** 命令和 **！仲裁** 器显示中给定的地址来拆装 ISR，并在 ISR (的最后一个指令上设置断点，) 。 请注意，使用命令 **g &lt; address &gt;** 等效于在该地址上设置断点：
 
 ```dbgcmd
 kd> g bfe33e7b
@@ -186,7 +185,7 @@ ds1wdm!AdapterIsr+ad:
 bfe33e7b c20800           ret     0x8 
 ```
 
-使用**r**命令检查寄存器。 具体而言，请查看 EAX 寄存器。 如果下面的代码示例中所示的 EAX 注册内容为其他任何值，则此 ISR 会要求中断。 否则，中断不会被声明，操作系统将调用下一个 ISR。 此示例演示视频卡没有声称中断：
+使用 **r** 命令检查寄存器。 具体而言，请查看 EAX 寄存器。 如果下面的代码示例中所示的 EAX 注册内容为其他任何值，则此 ISR 会要求中断。 否则，中断不会被声明，操作系统将调用下一个 ISR。 此示例演示视频卡没有声称中断：
 
 ```dbgcmd
 kd> r
@@ -197,7 +196,7 @@ ds1wdm!AdapterIsr+ad:
 bfe33e7b c20800           ret     0x8 
 ```
 
-事实上，在这种情况下，IRQ 0xb 上的任何设备不会声明该中断。 遇到此问题时，还应检查是否确实启用了与中断关联的每个硬件。 对于 PCI，这非常简单--查看由 **！ PCI**扩展输出显示的 CMD 寄存器：
+事实上，在这种情况下，IRQ 0xb 上的任何设备不会声明该中断。 遇到此问题时，还应检查是否确实启用了与中断关联的每个硬件。 对于 PCI，这非常简单--查看由 **！ PCI** 扩展输出显示的 CMD 寄存器：
 
 ```dbgcmd
 kd> !pci 0 0
@@ -212,6 +211,6 @@ PCI Bus 0
 07:3  8086:7113.02  Cmd[0003:im....]  Sts[0280:.....]  Device  Class:6:80:0
 ```
 
-请注意，音频芯片（标记为 "音频设备"） CMD 寄存器为零。 这意味着此时会有效禁用音频芯片。 这也意味着音频芯片将不能响应由驱动程序的访问。
+请注意，标记为 "音频设备" ) CMD register 的音频芯片 (为零。 这意味着此时会有效禁用音频芯片。 这也意味着音频芯片将不能响应由驱动程序的访问。
 
 在这种情况下，需要手动重新启用音频芯片。

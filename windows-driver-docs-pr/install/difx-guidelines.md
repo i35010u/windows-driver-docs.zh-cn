@@ -1,15 +1,14 @@
 ---
 title: DIFx 指南
 description: DIFx 指南
-ms.assetid: de34f810-0e90-4626-b84d-160ac61541ad
 ms.date: 05/24/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 28cc7cc8270b2ab21341e1034fd67c0d4626efdb
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 6deddf0c4abede63242ee1754b582b83b48a263a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90717280"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96817749"
 ---
 # <a name="difx-guidelines"></a>DIFx 指南
 
@@ -21,7 +20,7 @@ ms.locfileid: "90717280"
 
 * 如果驱动程序包仅指定 Windows 8.1 或更高版本的 **TargetOSVersion** 值，则不能使用 DIFxApp MSI 自定义操作，原因是 DIFxApp 依赖于 [**GetVersionEx**](/windows/win32/api/sysinfoapi/nf-sysinfoapi-getversionexa)，这是从 WINDOWS 8.1 开始更改的 API。  **TargetOSVersion** 在 [INF 制造商部分](inf-manufacturer-section.md)中指定。 DIFxApp 公开 MSI 自定义操作，例如 MsiProcessDrivers、MsiInstallDrivers 和 MsiUninstallDrivers。  如果驱动程序包指定 Windows 8.1 或更高版本的 **TargetOSVersion** 值，则不能在 MSI 中使用这些自定义操作。
 * 从 Windows 8.1 开始，链接到的应用程序 `Difxapi.dll` 必须包含面向应用程序要在其上运行的操作系统版本的应用程序清单。  这是因为 DIFxAPI 依赖于 [**GetVersionEx**](/windows/win32/api/sysinfoapi/nf-sysinfoapi-getversionexa)，这是一个从 Windows 8.1 开始更改的 API。  有关 Windows 8.1 中的 **GetVersionEx** 更改的详细信息，请参阅 [面向适用于 Windows 的应用程序](/windows/desktop/SysInfo/targeting-your-application-at-windows-8-1)。
-* 如果驱动程序包使用 Windows 10 中引入的**TargetOSVersion** (的***BuildNumber***部分，版本 1607 (版本14310和更高版本) # A3，则不能将 DIFx 工具用于该驱动程序包。  DIFx 工具不支持 BuildNumber 目标。
+* 如果驱动程序包使用 Windows 10 中引入的 _ *TargetOSVersion** (的 ***BuildNumber** _ 部分，版本 1607 (版本14310和更高版本) # A3，则不能将 DIFx 工具用于该驱动程序包。  DIFx 工具不支持 BuildNumber 目标。
 * 使用 DIFx 版本2.1，该版本在 Windows 7 中通过 Windows 10 1511 版 WDK 提供。  尽管 DIFx 的早期版本中提供了2.1 版，但它与 Windows 7 和更高版本的 Windows 不兼容。
 
 尽管不再进行更新，但你可以在 [Difxapi](/previous-versions/windows/hardware/difxapi/)中找到 DIFX 的 API 参考文档。

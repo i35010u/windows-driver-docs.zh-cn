@@ -1,7 +1,6 @@
 ---
 title: VolumeClassGuid
 description: VolumeClassGuid
-ms.assetid: 30d0db03-fbea-4245-b8d7-ca3a06a54861
 keywords:
 - VolumeClassGuid 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 4fb75c1ca3900b5eeb87573614fbd34e6bf67e25
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 799c1614848aeb2c6ad99b99382b9bbb35128b8a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91732513"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96819479"
 ---
 # <a name="volumeclassguid"></a>VolumeClassGuid
 
@@ -51,7 +50,7 @@ WDK 中的存储 [示例](https://go.microsoft.com/fwlink/p/?LinkId=618052) 包�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**GUID_DEVINTERFACE_VOLUME**](guid-devinterface-volume.md)

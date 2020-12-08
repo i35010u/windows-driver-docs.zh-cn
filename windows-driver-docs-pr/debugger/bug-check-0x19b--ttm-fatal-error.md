@@ -1,7 +1,6 @@
 ---
 title: Bug 检查 0x19B TTM_FATAL_ERROR
-description: TTM_FATAL_ERROR bug 检查具有 0x0000019B 值。 这指示终端拓扑管理器遇到致命错误。
-ms.assetid: 993A3A57-A303-4FEB-98F4-68802F4151D4
+description: TTM_FATAL_ERROR bug 检查的值为0x0000019B。 这表明终端拓扑管理器遇到错误。
 keywords:
 - Bug 检查 0x19B TTM_FATAL_ERROR
 - TTM_FATAL_ERROR
@@ -13,23 +12,23 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: c037067f08aa4ae1d7762c57326beadf5a76eb2f
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: dcb44e0d28fa190ac6cb6bf8364bed1679bdad02
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67519786"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96819285"
 ---
-# <a name="bug-check-0x19b-ttmfatalerror"></a>Bug 检查 0x19B：TTM\_FATAL\_ERROR
+# <a name="bug-check-0x19b-ttm_fatal_error"></a>Bug 检查0x19B： TTM \_ 严重 \_ 错误
 
 
-TTM\_致命错误\_错误 bug 检查的值为 0x0000019B。 这指示终端拓扑管理器遇到致命错误。
+TTM \_ \_ 错误 bug 检查的值为0x0000019B。 这表明终端拓扑管理器遇到错误。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题面向程序员。 如果您是在使用计算机时收到蓝屏错误代码的客户，请参阅[蓝屏错误疑难解答](https://www.windows.com/stopcode)。
 
 
-## <a name="ttmfatalerror-parameters"></a>TTM\_致命错误\_错误参数
+## <a name="ttm_fatal_error-parameters"></a>TTM \_ \_ 错误参数
 
 
 <table>
@@ -47,20 +46,20 @@ TTM\_致命错误\_错误 bug 检查的值为 0x0000019B。 这指示终端拓�
 <tr class="odd">
 <td align="left">1</td>
 <td align="left"><p>失败类型</p>
-<p>0x1:无法生成终端对象。</p>
-2-NT 状态代码的故障 3-保留 4-保留</td>
+<p>0x1：无法生成终端对象。</p>
+2-失败3的 NT 状态代码-保留 4-保留</td>
 </tr>
 <tr class="even">
 <td align="left">2</td>
-<td align="left">请参阅参数 1</td>
+<td align="left">请参阅参数1</td>
 </tr>
 <tr class="odd">
 <td align="left">3</td>
-<td align="left">请参阅参数 1</td>
+<td align="left">请参阅参数1</td>
 </tr>
 <tr class="even">
 <td align="left">4</td>
-<td align="left">请参阅参数 1</td>
+<td align="left">请参阅参数1</td>
 </tr>
 </tbody>
 </table>

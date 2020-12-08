@@ -1,17 +1,16 @@
 ---
-title: 使用 KDNET 设置 ARM 设备上的 USB EEM 上的 Kernel-Mode 调试
+title: 使用 KDNET 在 ARM 设备上通过 USB EEM 设置内核模式调试
 description: 适用于 Windows 的调试工具支持使用 ARM 设备上的 EEM 通过 USB 电缆进行内核调试。 本主题介绍如何使用 kdnet.exe 实用程序在 ARM 设备上设置 USB EEM。
-ms.assetid: 78D49BDA-BC49-4FF3-B66B-2F6C1C7C2D98
 ms.date: 11/23/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 23498364d280d43157b2ebc2271b49ce80ccf3e9
-ms.sourcegitcommit: 9e5ade5d1a311383016385ae3bc3f0a22da1dfc5
+ms.openlocfilehash: c8235d1ccc8f7d59252677b6dfa517e8fb9471ee
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95553288"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96818633"
 ---
-# <a name="setting-up-kernel-mode-debugging-over-usb-eem-on-an-arm-device-using-kdnet"></a>使用 KDNET 设置 ARM 设备上的 USB EEM 上的 Kernel-Mode 调试
+# <a name="setting-up-kernel-mode-debugging-over-usb-eem-on-an-arm-device-using-kdnet"></a>使用 KDNET 在 ARM 设备上通过 USB EEM 设置内核模式调试
 
 适用于 Windows 的调试工具支持使用 ARM 设备上的 EEM 通过 USB 电缆进行内核调试。 本主题介绍如何使用 kdnet.exe 实用程序在 ARM 设备上设置 USB EEM。
 
@@ -128,7 +127,7 @@ ARM 设备使用 ACPI DBG2 表配置调试器，其中 busparams 指向 DBG2 表
 
 ## <a name="connecting-windbg-to-the-target-for-kernel-debugging"></a>将 WinDbg 连接到用于内核调试的目标
 
-在主计算机上，打开 WinDbg。 在 " **文件** " 菜单上，选择 " **内核调试**"。 在 "内核调试" 对话框中，打开 " **网络** " 选项卡。将之前保存的端口号和密钥粘贴到前面的 notepad.exe 文件中。 选择“确定”  。
+在主计算机上，打开 WinDbg。 在 " **文件** " 菜单上，选择 " **内核调试**"。 在 "内核调试" 对话框中，打开 " **网络** " 选项卡。将之前保存的端口号和密钥粘贴到前面的 notepad.exe 文件中。 选择“确定”。
 
 你还可以通过打开命令提示符窗口并输入以下命令（其中是上面选择的端口）来启动 WinDbg 会话，它是上面 kdnet.exe 返回的键。 将上保存的项粘贴到前面的 notepad.exe 文件中。
 

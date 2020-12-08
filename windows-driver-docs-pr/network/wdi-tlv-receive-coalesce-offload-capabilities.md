@@ -1,22 +1,21 @@
 ---
 title: WDI_TLV_RECEIVE_COALESCE_OFFLOAD_CAPABILITIES
-description: WDI_TLV_RECEIVE_COALESCE_OFFLOAD_CAPABILITIES 是包含 Rx TLV coalesce 卸载功能。
-ms.assetid: AF13B304-3E94-42EE-8BBB-107F5F238758
+description: WDI_TLV_RECEIVE_COALESCE_OFFLOAD_CAPABILITIES 是包含 Rx 合并卸载功能的 TLV。
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_RECEIVE_COALESCE_OFFLOAD_CAPABILITIES 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 7c58c4a917784767462bf5c60d7dc960463532fb
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 17c008b6aa75b88f91ef66a0a3de239f7ca2b0b0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63359724"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96818027"
 ---
-# <a name="wditlvreceivecoalesceoffloadcapabilities"></a>WDI\_TLV\_接收\_COALESCE\_卸载\_功能
+# <a name="wdi_tlv_receive_coalesce_offload_capabilities"></a>WDI \_ TLV \_ 接收 \_ 联合 \_ 卸载 \_ 功能
 
 
-WDI\_TLV\_接收\_COALESCE\_卸载\_功能是包含 Rx TLV coalesce 卸载功能。
+WDI \_ tlv \_ 接收 \_ 合并 \_ 卸载 \_ 功能是包含 RX 合并卸载功能的 tlv。
 
 ## <a name="tlv-type"></a>TLV 类型
 
@@ -26,7 +25,7 @@ WDI\_TLV\_接收\_COALESCE\_卸载\_功能是包含 Rx TLV coalesce 卸载功能
 ## <a name="length"></a>长度
 
 
-大小 （以字节为单位） 的以下值。
+以下值的大小 (以字节为单位) 。
 
 ## <a name="values"></a>值
 
@@ -38,20 +37,20 @@ WDI\_TLV\_接收\_COALESCE\_卸载\_功能是包含 Rx TLV coalesce 卸载功能
 </colgroup>
 <thead>
 <tr class="header">
-<th>在任务栏的搜索框中键入</th>
+<th>类型</th>
 <th>描述</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td>UINT8</td>
-<td>指定是否 Rx coalesce IPv4 为启用。
-<p>有效值为 0 （未启用） 和 1 （启用）。</p></td>
+<td>指定是否为 IPv4 启用 Rx 联合。
+<p>有效值为 0 (未启用)  (启用 1) 。</p></td>
 </tr>
 <tr class="even">
 <td>UINT8</td>
-<td>指定是否 Rx coalesce 对 IPv6 的启用。
-<p>有效值为 0 （未启用） 和 1 （启用）。</p></td>
+<td>指定是否为 IPv6 启用 Rx 联合。
+<p>有效值为 0 (未启用)  (启用 1) 。</p></td>
 </tr>
 </tbody>
 </table>
@@ -73,10 +72,10 @@ WDI\_TLV\_接收\_COALESCE\_卸载\_功能是包含 Rx TLV coalesce 卸载功能
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
-<td><p>Windows Server 2016</p></td>
+<td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Wditypes.hpp</td>
 </tr>
 </tbody>

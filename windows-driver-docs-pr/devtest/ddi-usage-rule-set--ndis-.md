@@ -1,15 +1,14 @@
 ---
 title: DDI 用法规则集 (NDIS)
 description: 使用这些规则验证驱动程序正确使用 NDIS DDIs。
-ms.assetid: A109A452-D3A7-4204-B267-1F0F98652597
 ms.date: 05/21/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 8dae3069597a66f50bf67dd16e9771c314436bfd
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 3e25e9378776cd29ebd15c3da53017274d643ebd
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103112"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96817863"
 ---
 # <a name="ddi-usage-rule-set-ndis"></a>DDI 用法规则集 (NDIS)
 
@@ -27,7 +26,7 @@ ms.locfileid: "90103112"
 <thead>
 <tr class="header">
 <th align="left">主题</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -82,7 +81,7 @@ ms.locfileid: "90103112"
 
 2.  单击 " **规则** " 选项卡。在 " **规则集**" 下，选择 **DDIUsage**。
 
-    若要从 Visual Studio 开发人员命令提示符窗口中选择默认规则集，请使用 **/check**选项指定**DDIUsage。 sdv** 。 例如：
+    若要从 Visual Studio 开发人员命令提示符窗口中选择默认规则集，请使用 **/check** 选项指定 **DDIUsage。 sdv** 。 例如：
 
     ```
     msbuild /t:sdv /p:Inputs="/check:DDIUsage.sdv" mydriver.VcxProj /p:Configuration="Win8 Release" /p:Platform=Win32

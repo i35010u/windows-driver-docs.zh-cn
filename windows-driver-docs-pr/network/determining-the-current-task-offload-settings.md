@@ -1,18 +1,17 @@
 ---
 title: 确定当前任务卸载设置
 description: 本部分介绍如何确定协议驱动程序的当前任务卸载设置
-ms.assetid: cd2f9b9f-f455-405d-8775-9a437e628476
 keywords:
 - 任务卸载 WDK TCP/IP 传输，当前设置
 - 当前任务加载设置 WDK TCP/IP 卸载
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ea2beeea5bb2b7cfee5e1e7052b342fa7dd12642
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 8eae9487e9cf84c8c605b39d4fc44ae39432fa7f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89212525"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96817593"
 ---
 # <a name="determining-the-current-task-offload-settings"></a>确定当前的任务卸载设置
 

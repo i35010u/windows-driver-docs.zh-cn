@@ -1,15 +1,14 @@
 ---
 title: WIA 驱动程序错误处理和恢复
 description: WIA 驱动程序错误处理和恢复
-ms.assetid: 6b7772d9-cc54-492a-b849-27cfe8f043f5
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d305f2dff0875ea9f067fe8f713f6e3bb2ae3989
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 92799ed33994944dac7521174dbae9eb1792773b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63366959"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96818921"
 ---
 # <a name="wia-driver-error-handling-and-recovery"></a>WIA 驱动程序错误处理和恢复
 
@@ -17,13 +16,13 @@ ms.locfileid: "63366959"
 
 
 
-可以出现错误或延迟 WIA 映像采购流程中有多个点。 在 Microsoft Windows Millennium Edition 和 Windows XP 中，就可以获取有关错误的其他信息。 在 Windows Vista 和更高版本操作系统中，则可以使用一种机制，允许应用程序和用户正常处理，并从这些错误或延迟可能恢复。 Windows Vista 机制依赖于[IStream 数据传输](istream-data-transfers.md)，Windows Me 和 Windows XP 不支持。
+WIA 图像获取过程中存在很多点，其中可能出现错误或延迟。 在 Microsoft Windows Millennium Edition 和 Windows XP 中，可以获取有关错误的其他信息。 在 Windows Vista 和更高版本的操作系统中，可以使用一种机制，使应用程序和用户能够正常处理并可能从这些错误或延迟中恢复。 Windows Vista 机制依赖于 [IStream 数据传输](istream-data-transfers.md)，windows Me 和 windows XP 不支持这种传输。
 
-本部分包括：
+本节包括：
 
-[WIA 驱动程序错误报告 Windows Me 和 Windows XP](wia-driver-error-reporting-for-windows-me-and-windows-xp.md)
+[Windows Me 和 Windows XP 的 WIA 驱动程序错误报告](wia-driver-error-reporting-for-windows-me-and-windows-xp.md)
 
-[适用于 Windows Vista 的 WIA 驱动程序错误恢复](wia-driver-error-recovery-for-windows-vista.md)
+[Windows Vista 的 WIA 驱动程序错误恢复](wia-driver-error-recovery-for-windows-vista.md)
 
  
 

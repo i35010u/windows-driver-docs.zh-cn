@@ -1,15 +1,14 @@
 ---
 title: 在 GPU 上进行 XPS 光栅化
 description: 用于 GPU 的 XML 纸张规范 (XPS) 光栅化不需要任何独立的硬件供应商 (IHV) 代码或驱动程序中的行为更改。
-ms.assetid: 3C43552A-7D2B-4C10-9AD3-66755171D997
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: abd3b8e1f19737d1f2d9cf31bdc8132f1b4db369
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 260610971ef2b2dd5ce2ca4254556b5a74f33e0d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89064520"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96818499"
 ---
 # <a name="xps-rasterization-on-the-gpu"></a>在 GPU 上进行 XPS 光栅化
 
@@ -22,7 +21,7 @@ ms.locfileid: "89064520"
 
 **驱动程序实现-完整图形和显示**：必需
 
-** [WHCK](/windows-hardware/test/hlk/windows-hardware-lab-kit)要求和测试**： **Device. Graphics ¦ XPSRasterizationConformance**
+**[WHCK](/windows-hardware/test/hlk/windows-hardware-lab-kit)要求和测试**： **Device. Graphics ¦ XPSRasterizationConformance**
 
 
  

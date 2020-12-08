@@ -1,17 +1,16 @@
 ---
 title: 对 UDP 封装的 ESP 数据包进行后台读取
 description: 对 UDP 封装的 ESP 数据包进行后台读取
-ms.assetid: 29709601-8ae3-43af-8f4e-5ac46efb7340
 keywords:
 - UDP 封装的 ESP 数据包 WDK IPsec 卸载，后台读取
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b1ca3a8b1b6343aad1cdab0544d207cd8793e353
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1a48fc1589ad62959ef7fe512a9332bc764da63d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63345319"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96817663"
 ---
 # <a name="background-reading-on-udp-encapsulation-of-esp-packets"></a>对 UDP 封装的 ESP 数据包进行后台读取
 
@@ -20,11 +19,11 @@ ms.locfileid: "63345319"
 
 
 
-若要理解本部分中，必须了解 Internet 密钥交换 (IKE) 和 ESP 数据包，发布的 IP 安全 Working Group Internet 工程任务组 (IETF) 的以下草稿中指定的 UDP 封装：
+若要理解此部分，必须了解 Internet 密钥交换 (IKE) 和 ESP 数据包的 UDP 封装，如 Internet 工程任务组 (IETF) 的 "IP 安全" 工作组所述。
 
--   [IPsec 通过 NAT 理由的 UDP 封装](https://go.microsoft.com/fwlink/p/?linkid=9856)
+-   [IPsec over UDP 封装的 NAT 对齐](https://go.microsoft.com/fwlink/p/?linkid=9856)
 
--   [协商的 IKE 中的 NAT 遍历](https://go.microsoft.com/fwlink/p/?linkid=9857)
+-   [IKE 中 NAT-Traversal 的协商](https://go.microsoft.com/fwlink/p/?linkid=9857)
 
  
 

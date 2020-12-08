@@ -1,17 +1,16 @@
 ---
 title: 调度例程的约束
 description: 调度例程的约束
-ms.assetid: 5b2acaea-1f66-4285-9a36-5ab0f440f6b4
 keywords:
 - IRP 调度例程 WDK 文件系统，约束
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 95c87a7aedd53b1d09282e3618d11cd69b7027a3
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 17c9943cfca26008b9cd8edf33c2d4d5171b84ed
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91734541"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96817765"
 ---
 # <a name="constraints-on-dispatch-routines"></a>调度例程的约束
 
@@ -25,13 +24,13 @@ ms.locfileid: "91734541"
 
 注意：有关在分页 i/o 中使用哪些类型的 Irp 的信息，请参阅 [调度例程 IRQL 和线程上下文](dispatch-routine-irql-and-thread-context.md)。
 
--   分页 i/o 路径中的调度例程绝不应在 APC 级别以上的任何 IRQL 上调用 [**IoCallDriver**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver) \_ 。 如果调度例程引发 IRQL，则必须在调用 **IoCallDriver**之前将其降低。
+-   分页 i/o 路径中的调度例程绝不应在 APC 级别以上的任何 IRQL 上调用 [**IoCallDriver**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver) \_ 。 如果调度例程引发 IRQL，则必须在调用 **IoCallDriver** 之前将其降低。
 
 -   分页路径中的调度例程（如读取和写入）无法安全调用任何需要调用方在 IRQL 被动级别运行的内核模式例程 \_ 。
 
 -   页面文件 i/o 路径中的调度例程不能安全地调用任何要求调用方在 IRQL 调度级别运行的内核模式例程 &lt; \_ 。
 
--   不在分页 i/o 路径中的调度例程绝不应在被动级别以上[**IoCallDriver**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver)的任何 IRQL 上调用 IoCallDriver \_ 。 如果调度例程引发 IRQL，则必须在调用 **IoCallDriver**之前将其降低。
+-   不在分页 i/o 路径中的调度例程绝不应在被动级别以上 [**IoCallDriver**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver)的任何 IRQL 上调用 IoCallDriver \_ 。 如果调度例程引发 IRQL，则必须在调用 **IoCallDriver** 之前将其降低。
 
 ### <a name="span-idconstraints_on_processing_irpsspanspan-idconstraints_on_processing_irpsspanspan-idconstraints_on_processing_irpsspanconstraints-on-processing-irps"></a><span id="Constraints_on_Processing_IRPs"></span><span id="constraints_on_processing_irps"></span><span id="CONSTRAINTS_ON_PROCESSING_IRPS"></span>处理 Irp 的约束
 
@@ -67,7 +66,7 @@ ms.locfileid: "91734541"
 
 ### <a name="span-idconstraints_on_returning_statusspanspan-idconstraints_on_returning_statusspanspan-idconstraints_on_returning_statusspanconstraints-on-returning-status"></a><span id="Constraints_on_Returning_Status"></span><span id="constraints_on_returning_status"></span><span id="CONSTRAINTS_ON_RETURNING_STATUS"></span>返回状态的约束
 
--   除非在完成 IRP 时，未设置完成例程的调度例程应始终返回 [**IoCallDriver**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver)返回的 NTSTATUS 值。 除非此值处于 \_ "挂起" 状态，否则它必须与完成 irp 的驱动程序设置的 IoStatus 的值匹配** &gt; 。**
+-   除非在完成 IRP 时，未设置完成例程的调度例程应始终返回 [**IoCallDriver**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver)返回的 NTSTATUS 值。 除非此值处于 \_ "挂起" 状态，否则它必须与完成 irp 的驱动程序设置的 IoStatus 的值匹配 **&gt; 。**
 
 -   当 [**IoCallDriver**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver) 返回状态 \_ "挂起" 时，调度例程还应返回 \_ "挂起" 状态，除非它等待完成例程向事件发出信号。
 

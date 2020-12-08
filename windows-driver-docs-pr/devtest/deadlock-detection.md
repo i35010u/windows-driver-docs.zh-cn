@@ -1,7 +1,6 @@
 ---
 title: 死锁检测
 description: 死锁检测
-ms.assetid: ecda3e19-218d-484a-973d-8406bed8d820
 keywords:
 - 死锁检测功能 WDK 驱动程序验证程序
 - 死锁 WDK 驱动程序验证程序
@@ -9,12 +8,12 @@ keywords:
 - 线程锁定 WDK 驱动程序验证程序
 ms.date: 06/04/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: d62160bd0de84fce5fd9d61c304b450e1b29a0e1
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 5919ab56f281d887e8af6539e09570ed6a3c2782
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89382377"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96817855"
 ---
 # <a name="deadlock-detection"></a>死锁检测
 
@@ -99,7 +98,7 @@ ms.locfileid: "89382377"
 
 - **在命令行中**
 
-    在命令行中，死锁检测选项由 **第5个 (0x20) **表示。 若要激活死锁检测，请使用值为0x20 的标志值或将0x20 添加到标志值。 例如：
+    在命令行中，死锁检测选项由 **第5个 (0x20)** 表示。 若要激活死锁检测，请使用值为0x20 的标志值或将0x20 添加到标志值。 例如：
 
     ```console
     verifier /flags 0x20 /driver MyDriver.sys
@@ -123,10 +122,10 @@ ms.locfileid: "89382377"
 
 - **使用驱动程序验证器管理器**
 
-    1. 选择 " **为代码开发人员 (创建自定义设置") ** ，然后选择 " **下一步**"。
+    1. 选择 " **为代码开发人员 (创建自定义设置")** ，然后选择 " **下一步**"。
 
     1. 选择 " **从完整列表中选择单个设置**"。
 
     1. 选择 (检查) **死锁检测**。
 
-"死锁检测" 功能也包含在标准设置中。 若要使用此功能，请在 **驱动程序验证器管理器**中选择 " **创建标准设置**"。
+"死锁检测" 功能也包含在标准设置中。 若要使用此功能，请在 **驱动程序验证器管理器** 中选择 " **创建标准设置**"。

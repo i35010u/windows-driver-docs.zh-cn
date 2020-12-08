@@ -1,24 +1,23 @@
 ---
 title: 汇编和反汇编指令
 description: 汇编和反汇编指令
-ms.assetid: 7681bea1-4d4e-4260-950d-69cb8feb3807
 keywords:
 - 调试器引擎 API、组装和拆装
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e4bf983be0d271a73f36688bb9346b3d1abd56aa
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 02d752c009562f28e0e73ca8ee727139fe91d232
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89213515"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96819293"
 ---
 # <a name="assembling-and-disassembling-instructions"></a>汇编和反汇编指令
 
 
 调试器引擎支持使用汇编语言来显示和更改目标中的代码。 有关如何在调试器中使用汇编语言的概述，请参阅 [在程序集模式下进行调试](debugging-in-assembly-mode.md)。
 
-**注意**   并非所有体系结构都支持汇编语言。 在某些体系结构上，并非所有说明都受支持。
+**注意**   并非所有体系结构都支持汇编语言。 在某些体系结构上，并非所有说明都受支持。
 
  
 

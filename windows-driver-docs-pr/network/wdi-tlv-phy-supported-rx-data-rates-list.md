@@ -1,22 +1,21 @@
 ---
 title: WDI_TLV_PHY_SUPPORTED_RX_DATA_RATES_LIST
 description: WDI_TLV_PHY_SUPPORTED_RX_DATA_RATES_LIST 是未使用的 TLV。
-ms.assetid: B034CBE0-EAC2-4EBE-BF7D-A5D05E792AD0
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_PHY_SUPPORTED_RX_DATA_RATES_LIST 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 09549b3b0acc14cea95d6c90749ee770d9f40e97
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a93f43e1b1182bebeaec99d0f43c3465a0821589
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63363635"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96818079"
 ---
-# <a name="wditlvphysupportedrxdatarateslist"></a>WDI\_TLV\_PHY\_支持\_RX\_数据\_费率\_列表
+# <a name="wdi_tlv_phy_supported_rx_data_rates_list"></a>WDI \_ TLV \_ PHY \_ 支持的 \_ RX \_ 数据 \_ 费率 \_ 列表
 
 
-WDI\_TLV\_PHY\_支持\_RX\_数据\_费率\_列表是未使用的 TLV。
+WDI \_ tlv \_ PHY \_ 支持 \_ \_ 的 RX 数据 \_ 费率 \_ 列表是未使用的 tlv。
 
 <a name="requirements"></a>要求
 ------------
@@ -33,10 +32,10 @@ WDI\_TLV\_PHY\_支持\_RX\_数据\_费率\_列表是未使用的 TLV。
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
-<td><p>Windows Server 2016</p></td>
+<td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Wditypes.hpp</td>
 </tr>
 </tbody>

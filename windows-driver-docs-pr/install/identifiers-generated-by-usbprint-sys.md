@@ -1,20 +1,19 @@
 ---
 title: USBPRINT.SYS 生成的标识符
 description: USBPRINT.SYS 生成的标识符
-ms.assetid: 23f71429-7318-4442-81b8-3818298cfd16
 keywords:
-- USBPRINT。SYS WDK 设备安装
+- USBPRINT.SYS WDK 设备安装
 - 兼容 Id WDK 设备安装
 - USB 打印驱动程序 WDK 设备安装
 - 打印驱动程序 WDK 设备安装
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 51e3c0a7530bdc6f60e4ca9f23c6e579d1efda09
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 798862aedfea2a0eb13eba6c2d3a299d7da7db79
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327839"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96817745"
 ---
 # <a name="identifiers-generated-by-usbprintsys"></a>USBPRINT.SYS 生成的标识符
 
@@ -22,34 +21,34 @@ ms.locfileid: "63327839"
 
 
 
-从 Windows 2000 开始，操作系统提供内核模式 USB 打印驱动程序， *usbprint.sys*打印机子系统连接到 USB 堆栈。 本机 USB 打印机驱动程序释放供应商开发他们自己内核模式 USB 打印机驱动程序的需要。 这允许开发高级用户模式打印机驱动程序供应商采用了 USB 和并行打印机。
+从 Windows 2000 开始，操作系统提供了一个内核模式 USB 打印驱动程序， *usbprint.sys* 将打印机子系统连接到 USB 堆栈。 本机 USB 打印机驱动程序使供应商不必开发自己的内核模式 USB 打印机驱动程序。 这允许供应商开发高级用户模式打印机驱动程序，使用 USB 和并行打印机。
 
-*Usbprint.inf*安装文件包含兼容 ID 相匹配的所有 USB 类 7 打印机设备。 如果 USB 集线器驱动程序枚举这些设备之一，操作系统将查找中心驱动程序中生成的 ID 的匹配项*usbprint.inf*并且将加载 USB 打印机驱动程序*usbprint.sys*。 在中找到兼容 ID *usbprint.inf*具有以下形式：
+*Usbprint* 安装文件包含与所有 USB class 7 打印机设备匹配的兼容 ID。 如果 USB 集线器驱动程序枚举其中的一个设备，则操作系统将发现该集线器驱动程序在 *usbprint* 中生成的 ID 匹配，并将加载 USB 打印机驱动程序， *usbprint.sys*。 在 *usbprint* 中找到的兼容 ID 的格式如下：
 
-USB\\CLASS_07
-
-其中：
-
--   类 07 h = 属于 USB 打印机类的设备
-
-只要将加载它，USB 打印机驱动程序会创建一个新的 PDO 打印机设备的。 USB 打印机驱动程序当插即用 (PnP) 管理器查询的新创建的 PDO 的设备标识字符串时，创建一个新的硬件 ID，派生自与生成的字符串标识符兼容的设备的 IEEE 1284 字符串并行总线枚举器。 此硬件 ID 的格式如下：
-
-USBPRINT\\NameModel(20)Checksum(4)
+USB \\ CLASS_07
 
 其中：
 
--   *NameModel(20)* 是制造商名称的串联和设备，并截断为最多 20 个字符的模型。
+-   类 07h = 属于 USB printer 类的设备
 
--   *Checksum(4)* 4 个字符的循环冗余校验 (CRC) 代码计算从制造商名称和模型名称。
+加载后，USB 打印机驱动程序将为打印机设备创建一个新的 PDO。 当即插即用 (PnP) 管理器查询新创建的 PDO 的设备标识字符串时，USB 打印机驱动程序将创建一个新的硬件 ID，该 ID 派生自设备的 IEEE 1284 字符串，该 ID 与并行总线枚举器生成的字符串标识符兼容。 此硬件 ID 的格式如下：
 
-字符串中的空格替换为下划线。 例如，如果制造商的名称为"Hewlett-Packard"，模型名称为"HP 颜色 LaserJet 550"和校验和 3115，则硬件 ID 将按如下所示：
+USBPRINT \\ NameModel (20) 校验和 (4) 
 
-USBPRINT\\Hewlett-PackardHP_Co3115
+其中：
 
-在上一示例中，"HP"和"Color"之间的空间中的模型名称已替换为下划线以生成截断的制造商/型号字符串"Hewlett-PackardHP_Co。"
+-   *NameModel (20)* 是制造商名称和设备型号的串联，最多可被截断为20个字符。
 
-**请注意**  由操作系统生成的 CRC 可能与所述的前面部分中，或任何其他 CRC 算法计算的 CRC 不匹配。 因此，您的打印机驱动程序可能不能计算正确的硬件 Id 将用于打印机驱动程序 INF 文件。
-若要检索的硬件 Id，它是更好地与正在安装的 USB 打印机关联 setupapi.dev.log 文件进行搜索。
+-   *校验和 (4)* 为4个字符的循环冗余检查 (CRC) 从制造商名称和型号名称计算的代码。
+
+字符串中的空格将替换为下划线。 例如，如果制造商的名称为 "Hewlett-Packard"，则模型名称为 "HP Color LaserJet 550"，校验和为3115，则硬件 ID 如下所示：
+
+USBPRINT \\ Hewlett-PackardHP_Co3115
+
+在前面的示例中，模型名称中 "HP" 和 "Color" 之间的空间被替换为下划线，以生成截断的 make/model 字符串 "Hewlett-PackardHP_Co"。
+
+**注意**  操作系统生成的 CRC 可能与上一节中所述的 CRC 或任何其他 CRC 算法都不匹配。 因此，打印机驱动程序可能无法计算正确的 hardwareID，无法与打印机驱动程序的 INF 文件一起使用。
+若要检索 hardwareID，更好的做法是，搜索与正在安装的 USB 打印机关联的 setupapi.log 文件。
 
  
 

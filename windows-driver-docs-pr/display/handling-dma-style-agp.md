@@ -1,23 +1,22 @@
 ---
 title: 处理 DMA 样式 AGP
 description: 处理 DMA 样式 AGP
-ms.assetid: f43f662f-0036-4725-ad6b-5b836b23a734
 keywords:
 - DMA 样式 AGP WDK DirectDraw
-- 显示内存 WDK DirectDraw DMA 样式 AGP
-- 非本地显示内存 WDK DirectDraw DMA 样式 AGP
+- 显示内存 WDK DirectDraw，DMA 样式 AGP
+- 非本地显示内存 WDK DirectDraw，DMA 样式 AGP
 - AGP WDK DirectDraw，DMA 样式 AGP
-- 绘制 AGP 支持 WDK DirectDraw DMA 样式 AGP
+- 绘制 AGP 支持 WDK DirectDraw，DMA 样式 AGP
 - DirectDraw AGP 支持 WDK Windows 2000 显示，DMA 样式 AGP
-- 内存 WDK DirectDraw AGP DMA 样式 AGP
+- 内存 WDK DirectDraw AGP、DMA 样式 AGP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ce2829665656167a0fcd2cd84f32eeb7e7ad67d9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 38329600ae5e06bf72befe22de48f61a736119db
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63323727"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96819121"
 ---
 # <a name="handling-dma-style-agp"></a>处理 DMA 样式 AGP
 
@@ -25,23 +24,23 @@ ms.locfileid: "63323727"
 ## <span id="ddk_handling_dma_style_agp_gg"></span><span id="DDK_HANDLING_DMA_STYLE_AGP_GG"></span>
 
 
-AGP 兼容显示卡可以在两种方式之一使用 AGP 内存： 使用执行模型或直接内存访问 (DMA) 模型。
+AGP 兼容的显示卡可以通过以下两种方式之一使用 AGP 内存：使用执行模型或直接内存访问 (DMA) 模型。
 
--   在执行模型中，如果在非本地视频内存中，纹理卡 AGP 内存直接访问。 即，数据卡设置从 AGP 内存它直接从后备面 （系统内存复制的图面） 读取纹素数据。
+-   在执行模型中，如果非本地视频内存中有纹理，则该卡会直接访问 AGP 内存。 也就是说，如果卡是 AGP 内存中的纹理，它会直接从后备表面读取纹素数据， (系统内存副本) 的图面。
 
--   在 DMA 模型中，应用层协议内容必须显式移动到本地显示内存卡上才可以执行纹理绘制操作。
+-   在 DMA 模型中，可以在执行纹理操作之前，将表面的内容显式移动到卡片上的本地显示内存。
 
-请务必注意，该模型是指如何显示卡的客户端看到传输。 例如，显示卡可能会自动将纹素数据从后备面到小型本地显示内存缓存纹理时。 这可能看起来好像 DMA 模型。 但是，由于客户端应用程序没有有关发生此传输的信息，显示卡，事实上，公开了一个执行模型。 仅当客户端应用程序必须获得明确的操作将备份图面的内容移动到本地显示内存时，才显示卡视为公开 DMA 模型。
+需要特别注意的是，模型是指显示卡的客户端如何看到传输。 例如，当纹理时，显示卡可能会自动将纹素的数据从后备面移到小型本地显示内存缓存。 这似乎与 DMA 模型类似。 但是，由于客户端应用程序没有有关发生此传输的信息，因此显示卡实际上是公开执行模型。 仅当客户端应用程序必须采取明确的操作将后备图面的内容移到本地显示内存时，显示卡才被视为公开 DMA 模型。
 
-处理的 AGP 内存前面几节介绍了如何启用和公开 AGP 使用情况的执行模型驱动程序。 本部分介绍驱动程序来公开 DMA 模型 AGP 到应用程序的使用而必须执行其他步骤。 请注意，驱动程序编写器必须决定是否公开 execute 模型或 DMA 模型编写驱动程序时。 *该驱动程序应公开一个模型或另一个，但不可同时使用两者。*
+前面几节介绍了 AGP 内存，其中介绍了驱动程序如何启用和公开 AGP 使用的执行模型。 本部分介绍了驱动程序必须执行的其他步骤才能向应用程序公开使用 DMA 模型 AGP。 请注意，驱动程序编写器必须决定是否在写入驱动程序时公开执行模型或 DMA 模型。 *驱动程序应公开一个模型，而不是同时公开两者。*
 
-在之前公开某个驱动程序的 DMA 模型，务必要考虑到应用程序编写器的 DMA 模型的含义。 如果驱动程序将公开执行模型 AGP 支持、 DirectDraw 假定 AGP （非本地显示内存） 和本地显示内存中的图面是功能上相同。 因此显示卡可以纹理由应用程序从非本地或本地的显示内存而无需任何其他操作。 在设置时的呈现状态，应用程序可以指定的句柄纹理图面直接，而不管在图面是在非本地或本地的显示内存中。
+在从驱动程序公开 DMA 模型之前，请务必考虑将 DMA 模型对应用程序编写器的影响。 如果驱动程序公开执行模型 AGP 支持，则 DirectDraw 假定 AGP 中的表面 (非本地显示内存) ，本地显示内存在功能上相同。 因此，显示卡可以通过非本地或本地显示内存进行纹理操作，应用程序不需要执行任何其他操作。 设置呈现状态时，应用程序可以直接指定纹理图面的控点，而不管表面是在非本地还是在本地显示内存中。
 
-但是，如果驱动程序公开 DMA 模型，在非本地显示内存中的图面可能具有不同的功能，与在本地显示内存中。 因此，再尝试纹理从非本地显示内存图面，该应用程序必须检查硬件是否能够从非本地显示内存的纹理。 这被实现通过检查由驱动程序公开的功能。 同样适用于平面闪。
+但是，如果驱动程序公开 DMA 模型，则非本地显示内存中的表面可能与本地显示内存中的不同。 因此，在尝试从非本地显示内存图面的纹理之前，应用程序必须检查硬件是否能够从非本地显示内存中纹理。 这是通过检查驱动程序所公开的功能来实现的。 对于 blitting，情况也是如此。
 
-应用程序显式请求 AGP 内存通过指定 DDSCAPS\_与 DDSCAPS 的 VIDEOMEMORY 或运算\_NONLOCALVIDMEM。 如果应用程序未指定内存类型或仅指定 DDSCAPS\_VIDEOMEMORY，不考虑非本地显示内存。 此外，如果调用未指定本地或非本地显示内存，在图面是一种纹理，并在设备设置 D3DDEVCAPS\_可以在 AGP 内存中分配 TEXTURENONLOCALVIDEOMEMORY 标志，然后在图面。
+应用程序通过 \_ 使用 DDSCAPS NONLOCALVIDMEM 指定 DDSCAPS VIDEOMEMORY 运算，显式请求 AGP 内存 \_ 。 如果应用程序未指定内存类型或仅指定 DDSCAPS \_ VIDEOMEMORY，则不考虑非本地显示内存。 此外，如果调用未指定本地或非本地显示内存，则图面为纹理，设备设置 D3DDEVCAPS \_ TEXTURENONLOCALVIDEOMEMORY 标志，然后可以在 AGP 内存中分配图面。
 
-这意味着，如果驱动程序公开 DMA 模型，表面不分配给从 AGP 内存。 这与驱动程序公开执行的模型，即使应用程序不会显式请求它的 AGP 中分配内存。 因此，公开执行模型的驱动程序是要简单得多的应用程序使用。 此外，执行模型驱动程序允许旧应用程序能够受益于 AGP，而 DMA 模型驱动程序仅加速为 AGP 显式编写的新应用程序。 在决定是否要公开 execute 或 DMA 模型时应将此视为。
+这意味着，如果驱动程序公开 DMA 模型，则不会从 AGP 内存中分配表面。 这与公开执行模型的驱动程序相反，其中，即使应用程序未显式请求 AGP 内存，也会分配 AGP 内存。 因此，公开执行模型的驱动程序更简单，使应用程序能够使用。 而且，执行模型驱动程序允许旧应用程序获得 AGP 的优势，而 DMA 模型驱动程序只会加速为 AGP 显式编写的新应用程序。 确定是要公开 execute 模型还是 DMA 模型时，应考虑此情况。
 
  
 

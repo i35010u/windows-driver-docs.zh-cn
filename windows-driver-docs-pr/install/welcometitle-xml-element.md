@@ -1,7 +1,6 @@
 ---
 title: welcomeTitle XML 元素
 description: welcomeTitle XML 元素
-ms.assetid: 480b6d02-b8b1-4e3f-9a00-869cc2b93279
 keywords:
 - welcomeTitle XML 元素设备和驱动程序安装
 topic_type:
@@ -12,12 +11,12 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: f4a81b62182850c86cba9d932efa12037f898a2f
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 4131a6f9fac9d70140faa7df83f4401ce5d2e87c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89097213"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96819467"
 ---
 # <a name="welcometitle-xml-element"></a>welcomeTitle XML 元素
 
@@ -83,7 +82,7 @@ ms.locfileid: "89097213"
 
 如果未指定 **welcomeTitle** 元素，则 DPInst 将显示默认 "欢迎使用" 页上显示的默认 "欢迎使用" 标题。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**语言**](language-xml-element.md)

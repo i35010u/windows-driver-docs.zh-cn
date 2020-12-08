@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY 时间 \_ 码 \_ 读取器
 description: KSPROPERTY 时间 \_ 码 \_ 读取器属性检索当前磁带位置的时间码。
-ms.assetid: 16029ac8-5de0-4d8c-9a48-549dbea29ae7
 keywords:
 - KSPROPERTY_TIMECODE_READER 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c41a8179e53a87a1d2c514a8cc3d8446402c067c
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: d04eb3fdc7c85a2a8120af5f0a5c2e0aadb29d0b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104820"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96817929"
 ---
 # <a name="ksproperty_timecode_reader"></a>KSPROPERTY 时间 \_ 码 \_ 读取器
 
@@ -66,7 +65,7 @@ KSPROPERTY 时间 \_ 码 \_ 读取器属性检索当前磁带位置的时间码�
 <a name="remarks"></a>备注
 -------
 
-KSPROPERTY **TimecodeSamp**时间 \_ 码 S 结构的 TimecodeSamp 成员描述了 \_ 当前磁带位置的时间码。
+KSPROPERTY **TimecodeSamp** 时间 \_ 码 S 结构的 TimecodeSamp 成员描述了 \_ 当前磁带位置的时间码。
 
 <a name="requirements"></a>要求
 ------------
@@ -84,7 +83,7 @@ KSPROPERTY **TimecodeSamp**时间 \_ 码 S 结构的 TimecodeSamp 成员描述�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSPROPERTY**](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)

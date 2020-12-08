@@ -1,7 +1,6 @@
 ---
 title: BCDEdit /deletevalue
 description: BCDEdit/deletevalue 命令从 Windows 启动配置数据存储 (BCD) 中删除或删除启动项选项 (及其值) 。
-ms.assetid: 70833A12-B1F7-4AF6-952F-02A70718E870
 ms.date: 05/21/2018
 keywords:
 - BCDEdit/deletevalue 驱动程序开发工具
@@ -12,16 +11,16 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: c284de98c0811ad183228da1512bb81e48b57a6e
-ms.sourcegitcommit: f2fbb6e54e085e9329288cee49860fe380be9c4c
+ms.openlocfilehash: 6f660e814c909446ea1be3154aa5e64b7c4214f5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91778774"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96817494"
 ---
 # <a name="bcdedit-deletevalue"></a>BCDEdit /deletevalue
 
-**BCDEdit/deletevalue**命令从 Windows 启动配置数据存储 (BCD) 中删除或删除启动项选项 (及其值) 。 使用 **bcdedit/deletevalue** 命令删除使用 [**bcdedit/set**](bcdedit--set.md) 命令添加的选项。
+**BCDEdit/deletevalue** 命令从 Windows 启动配置数据存储 (BCD) 中删除或删除启动项选项 (及其值) 。 使用 **bcdedit/deletevalue** 命令删除使用 [**bcdedit/set**](bcdedit--set.md) 命令添加的选项。
 
 ``` syntax
 bcdedit  /deletevalue [{ID}] datatype  
@@ -49,7 +48,7 @@ bcdedit /deletevalue groupsize
 <tbody>
 <tr class="odd">
 <td align="left"><p>最低受支持的客户端</p></td>
-<td align="left"><p>Windows Vista</p></td>
+<td align="left"><p>Windows Vista</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>最低受支持的服务器</p></td>

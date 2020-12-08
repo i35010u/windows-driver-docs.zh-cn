@@ -1,19 +1,18 @@
 ---
 title: 用于处理 IP 数据的控制节点
 description: 用于处理 IP 数据的控制节点
-ms.assetid: 6195ffe9-d20c-4687-8d45-abbfc17ba2fa
 keywords:
 - 控制节点 WDK BDA
 - 节点 WDK BDA
 - IP 数据处理 WDK BDA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 74dbc450a7c83e74839cc5b35a50b66b18b246b5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: debbe55e494dac19f14586de13915b6bd8828ad1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63374199"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96817977"
 ---
 # <a name="control-nodes-for-processing-ip-data"></a>用于处理 IP 数据的控制节点
 
@@ -21,25 +20,25 @@ ms.locfileid: "63374199"
 
 
 
-以下序列和图描述中接收到的数字信号 IP 数据的数据流。
+以下顺序和图描述了收到的数字信号中的 IP 数据的数据流。
 
-1.  接收方设备接收 IP 数据并将 IP 数据通过 PC 总线传递作为传输流的一部分。
+1.  接收方设备接收 IP 数据，并在传输流中通过 PC 总线传递 IP 数据。
 
-2.  信号分离器接收传输流，并将传递包含 IP 数据的私有部分。
+2.  信号分离器接收传输流并传递包含 IP 数据的专用部分。
 
-3.  多协议封装 (MPE) 分析器，这将移除多协议封装并输出 IP 数据由接收的私有部分。 MPE 分析器将 IP 数据传递给 IPSink 筛选器。
+3.  专用部分由多协议封装 (MPE) 分析器接收，这将删除多协议封装并输出 IP 数据。 MPE 分析器将 IP 数据传递到 IPSink 筛选器。
 
-4.  IPSink 筛选器将 IP 数据通过专用接口传递给广播 NDISIP 微型端口驱动程序。
+4.  IPSink 筛选器通过专用接口将 IP 数据传递到广播 NDISIP 微型端口驱动程序。
 
-5.  作为虚拟的 NDIS 微型端口安装 NDISIP 微型端口驱动程序。 NDISIP 微型端口驱动程序将 IP 数据发送到 NDIS。
+5.  NDISIP 微型端口驱动程序作为虚拟 NDIS 小型端口安装。 NDISIP 微型端口驱动程序将 IP 数据发送到 NDIS。
 
-6.  NDIS 传播通过 TCP/IP 和 Windows 套接字 (WinSock) 的 IP 数据，像任何其他 NDIS 适配器。
+6.  NDIS 通过 TCP/IP 和 Windows 套接字 (WinSock) 传播 IP 数据，就像对任何其他 NDIS 适配器一样。
 
-**请注意**  从 Windows Vista 开始，不支持 IPSink 筛选器。
+**注意**   从 Windows Vista 开始，不支持 IPSink 筛选器。
 
  
 
-![说明 ip 数据流关系图](images/ipdata.png)
+![说明 ip 数据流的图示](images/ipdata.png)
 
  
 

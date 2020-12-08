@@ -1,7 +1,6 @@
 ---
 title: GUID_DEVINTERFACE_STORAGEPORT
 description: GUID_DEVINTERFACE_STORAGEPORT
-ms.assetid: 58146169-102b-4355-82d0-ea60979bf901
 keywords:
 - GUID_DEVINTERFACE_STORAGEPORT 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 61587b614d7afba979594f7cdcada69d34b03bd3
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 38e0163d285dd8cc5f118b7703599f7241b765a5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89096907"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96818899"
 ---
 # <a name="guid_devinterface_storageport"></a>GUID_DEVINTERFACE_STORAGEPORT
 
@@ -80,7 +79,7 @@ ms.locfileid: "89096907"
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**StoragePortClassGuid**](storageportclassguid.md)

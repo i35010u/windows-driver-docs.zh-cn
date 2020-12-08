@@ -1,17 +1,16 @@
 ---
 title: 关闭 CoNDIS 客户端中的地址系列
 description: 关闭 CoNDIS 客户端中的地址系列
-ms.assetid: 06e8128a-f3da-48f2-a045-6c4be5f85889
 keywords:
 - 客户端关闭的 AFs WDK CoNDIS
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6cacb566ea2ba7651cbeb34f0399f2c6803be004
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 27c86ae4b3831a9993d98b9cc0ff043cc95d0687
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89218142"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96817627"
 ---
 # <a name="closing-an-address-family-in-a-condis-client"></a>关闭 CoNDIS 客户端中的地址系列
 
@@ -19,9 +18,9 @@ ms.locfileid: "89218142"
 
 
 
-若要关闭 AFs，CoNDIS 客户端必须提供 [**ProtocolClNotifyCloseAf**](/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_cl_notify_close_af) 函数。 独立调用管理器或 MCM 分别调用[**NdisCmNotifyCloseAddressFamily**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscmnotifycloseaddressfamily)函数或[**NdisMCmNotifyCloseAddressFamily**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismcmnotifycloseaddressfamily)函数时，NDIS 调用*ProtocolClNotifyCloseAf* 。
+若要关闭 AFs，CoNDIS 客户端必须提供 [**ProtocolClNotifyCloseAf**](/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_cl_notify_close_af) 函数。 独立调用管理器或 MCM 分别调用 [**NdisCmNotifyCloseAddressFamily**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscmnotifycloseaddressfamily)函数或 [**NdisMCmNotifyCloseAddressFamily**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismcmnotifycloseaddressfamily)函数时，NDIS 调用 *ProtocolClNotifyCloseAf* 。
 
-在 *ProtocolClNotifyCloseAf*中，客户端完成关闭指定的 AF，或返回 NDIS \_ 状态 \_ "挂起" 并调用 [**NdisClNotifyCloseAddressFamilyComplete**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisclnotifycloseaddressfamilycomplete) 函数以完成操作。 客户端调用 **NdisClNotifyCloseAddressFamilyComplete**后，NDIS 会调用 [**ProtocolCmNotifyCloseAfComplete**](/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_cm_notify_close_af_complete) 函数来通知调用管理器客户端关闭了 AF。
+在 *ProtocolClNotifyCloseAf* 中，客户端完成关闭指定的 AF，或返回 NDIS \_ 状态 \_ "挂起" 并调用 [**NdisClNotifyCloseAddressFamilyComplete**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisclnotifycloseaddressfamilycomplete) 函数以完成操作。 客户端调用 **NdisClNotifyCloseAddressFamilyComplete** 后，NDIS 会调用 [**ProtocolCmNotifyCloseAfComplete**](/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_cm_notify_close_af_complete) 函数来通知调用管理器客户端关闭了 AF。
 
 若要关闭 AF，客户端应：
 

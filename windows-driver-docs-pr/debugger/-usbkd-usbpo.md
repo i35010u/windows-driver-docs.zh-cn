@@ -1,7 +1,6 @@
 ---
 title: usbkd.usbpo
 description: Usbkd. usbpo 命令显示未完成的 USB 电源请求的内部列表。
-ms.assetid: DB8AD37B-EB60-47E5-BBA5-C17DB0B9ADF5
 keywords:
 - usbkd usbpo Windows 调试
 ms.date: 05/23/2017
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: da586dc03318052262f8f4b2685a9895f0c083ce
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 15fe772ac43f82395fddf9c630b9f50d27b9d3a3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89217933"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96819377"
 ---
 # <a name="usbkdusbpo"></a>!usbkd.usbpo
 
 
-**！ Usbkd. usbpo**命令显示未完成的 USB 电源请求的内部列表。
+**！ Usbkd. usbpo** 命令显示未完成的 USB 电源请求的内部列表。
 
 ```dbgcmd
 !usbkd.usbpo

@@ -1,19 +1,18 @@
 ---
 title: 网络驱动程序中的异步 I/O 和 Completion 函数
 description: 网络驱动程序中的异步 I/O 和 Completion 函数
-ms.assetid: fbb940d8-41ad-4f66-998b-f5dc829b54cc
 keywords:
 - 网络驱动程序 WDK，异步操作
 - 异步 i/o WDK 网络
 - 完成函数 WDK 网络
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 66c291cb42fc7ce8a04d068214fb0dd1209f6d81
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: a66e41a720268d38ec5f496f49c6ffcc79646822
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89215998"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96817665"
 ---
 # <a name="asynchronous-io-and-completion-functions-in-network-drivers"></a>网络驱动程序中的异步 I/O 和 Completion 函数
 
@@ -29,7 +28,7 @@ ms.locfileid: "89215998"
 
 但发送操作可能需要一些时间才能完成，而微型端口驱动程序 (或 NDIS) 会将数据包排队，并等待 NIC 指示发送操作的结果。 微型端口驱动程序 *MiniportSendNetBufferLists* 函数可以通过返回 NDIS 状态为 "挂起" 的状态值来异步处理此操作 \_ \_ 。 当微型端口驱动程序完成发送操作时，它将调用完成函数 [**NdisMSendNetBufferListsComplete**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsendnetbufferlistscomplete)，并将一个指针传递到已发送的数据包说明符。 此信息将传递给协议驱动程序，即信号完成。
 
-大多数需要延长时间才能完成的驱动程序操作都支持带有类似完成函数的异步操作。 此类函数的名称**NdisM*Xxx***。
+大多数需要延长时间才能完成的驱动程序操作都支持带有类似完成函数的异步操作。 此类函数的名称 **NdisM *Xxx***。
 
 还提供了完成函数来执行以下操作：
 

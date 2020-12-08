@@ -1,22 +1,21 @@
 ---
 title: WDI_TLV_P2P_SEND_ACTION_FRAME_RESULT
-description: WDI_TLV_P2P_SEND_ACTION_FRAME_RESULT 是 TLV，其中包含有关对等方发送操作帧的信息。
-ms.assetid: DA469DF2-4C59-495C-A4B5-DC7B3B157566
+description: WDI_TLV_P2P_SEND_ACTION_FRAME_RESULT 是一种 TLV，其中包含有关发送到对等方的操作帧的信息。
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_P2P_SEND_ACTION_FRAME_RESULT 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: d73c9f22df88fee3ea81ac7d4c4b6abd0eaf68b5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2cf90bd78673ec9bb22ea904ab9b432b520c2045
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63370947"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96818141"
 ---
-# <a name="wditlvp2psendactionframeresult"></a>WDI\_TLV\_P2P\_发送\_操作\_帧\_结果
+# <a name="wdi_tlv_p2p_send_action_frame_result"></a>WDI \_ TLV \_ P2P \_ 发送 \_ 操作 \_ 帧 \_ 结果
 
 
-WDI\_TLV\_P2P\_发送\_操作\_帧\_结果是 TLV，其中包含有关对等方发送操作帧的信息。
+WDI \_ tlv \_ P2P \_ 发送 \_ 操作 \_ 帧 \_ 结果是一个 TLV，其中包含有关发送到对等方的操作帧的信息。
 
 ## <a name="tlv-type"></a>TLV 类型
 
@@ -26,15 +25,15 @@ WDI\_TLV\_P2P\_发送\_操作\_帧\_结果是 TLV，其中包含有关对等方�
 ## <a name="length"></a>长度
 
 
-所有的大小 （以字节为单位） 总和包含 TLVs。
+Sum (包含所有 TLVs 的大小的) 字节。
 
 ## <a name="values"></a>值
 
 
-| 在任务栏的搜索框中键入                                                                                                              | 允许多个 TLV 实例 | 可选 | 描述                                           |
+| 类型                                                                                                              | 允许多个 TLV 实例 | 可选 | 说明                                           |
 |-------------------------------------------------------------------------------------------------------------------|--------------------------------|----------|-------------------------------------------------------|
-| [**WDI\_TLV\_P2P\_发送\_操作\_帧\_结果\_参数**](wdi-tlv-p2p-send-action-frame-result-parameters.md) |                                |          | Wi-Fi Direct 发送操作帧结果参数。 |
-| [**WDI\_TLV\_P2P\_ACTION\_FRAME\_IES**](wdi-tlv-p2p-action-frame-ies.md)                                         |                                |          | 导致浏览器发送到远程设备的组。             |
+| [**WDI \_ TLV \_ P2P \_ 发送 \_ 操作 \_ 帧 \_ 结果 \_ 参数**](wdi-tlv-p2p-send-action-frame-result-parameters.md) |                                |          | Wi-Fi 直接发送操作帧结果参数。 |
+| [**WDI \_ TLV \_ P2P \_ 操作 \_ 帧 \_**](wdi-tlv-p2p-action-frame-ies.md)                                         |                                |          | 发送到远程设备的一组。             |
 
  
 
@@ -53,10 +52,10 @@ WDI\_TLV\_P2P\_发送\_操作\_帧\_结果是 TLV，其中包含有关对等方�
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
-<td><p>Windows Server 2016</p></td>
+<td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Wditypes.hpp</td>
 </tr>
 </tbody>

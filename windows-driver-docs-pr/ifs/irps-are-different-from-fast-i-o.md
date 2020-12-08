@@ -1,18 +1,17 @@
 ---
 title: IRP 不同于快速 I/O
 description: IRP 不同于快速 I/O
-ms.assetid: 22b08da2-043e-4724-b8f1-90b337fa222c
 keywords:
 - Irp WDK 文件系统
-- 快速 I/O vs。Irp WDK 文件系统
+- fast i/o 与 Irp WDK 文件系统
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fdadd91334ed4dd2f75a1e1aa90c978b85787bf2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f65b43ed22c62b29fb7e51f41774b630dea77297
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63324258"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96819055"
 ---
 # <a name="irps-are-different-from-fast-io"></a>IRP 不同于快速 I/O
 
@@ -20,13 +19,13 @@ ms.locfileid: "63324258"
 ## <span id="ddk_irps_are_different_from_fast_io_if"></span><span id="DDK_IRPS_ARE_DIFFERENT_FROM_FAST_IO_IF"></span>
 
 
-Irp 是请求 I/O 操作的默认机制。 可以使用 Irp，以便执行同步或异步 I/O，并针对缓存或非缓存的 I/O。 Irp 还用于分页 I/O。 内存管理器进程通过将相应的 Irp 发送到文件系统的页错误。
+Irp 是用于请求 i/o 操作的默认机制。 Irp 可用于同步或异步 i/o，适用于缓存或非缓存 i/o。 Irp 还用于分页 i/o。 内存管理器通过将相应的 Irp 发送到文件系统来处理页错误。
 
-快速 I/O 专为快速同步 I/O 上缓存的文件。 在快速 I/O 操作中，数据传输之间用户缓冲区和系统缓存中，直接跳过文件系统和存储驱动程序堆栈。 （存储驱动程序不使用快速 I/O。）如果要从文件读取的数据都驻留在系统缓存中时快速 I/O 读取或写入收到请求时，立即满足请求。 否则，会发生页面错误，导致一个或多个 Irp 生成。 当发生这种情况，快速 I/O 例程返回**FALSE**，或使调用方进入等待状态，直到处理页面错误。 如果快速 I/O 例程将返回**FALSE**、 请求的操作失败和调用方必须创建 IRP。
+Fast i/o 专门设计用于缓存文件中的快速同步 i/o。 在快速 i/o 操作中，数据直接在用户缓冲区和系统缓存之间传输，绕过文件系统和存储驱动程序堆栈。  (存储驱动程序不使用 fast i/o。 ) 如果在收到快速 i/o 读取或写入请求时，从文件中读取的所有数据都在系统缓存中，则会立即满足请求。 否则，可能会出现页错误，导致生成一个或多个 Irp。 发生这种情况时，快速 i/o 例程要么返回 **FALSE**，要么将调用方置于等待状态，直到处理页错误。 如果快速 i/o 例程返回 **FALSE**，则请求的操作失败，并且调用方必须创建 IRP。
 
-支持 Irp，所需的文件系统和文件系统筛选器，但不是需要它们以支持快速 I/O。 但是，文件系统和文件系统筛选器必须实现快速 I/O 例程。 即使文件系统和文件系统筛选器不支持快速 I/O，它们必须定义返回的快速 I/O 例程**FALSE** （即，快速 I/O 例程不实现任何功能）。 当 I/O 管理器收到的 （而不是分页 I/O) 的同步文件 I/O 请求时，它首先调用快速 I/O 例程。 如果快速 I/O 例程将返回 **，则返回 TRUE**，该操作已由快速 I/O 例程提供服务。 如果快速 I/O 例程将返回**FALSE**，I/O 管理器创建并改为发送 IRP。
+支持 Irp 需要文件系统和文件系统筛选器，但不需要支持快速 i/o。 但是，文件系统和文件系统筛选器必须实现快速 i/o 例程。 即使文件系统和文件系统筛选器不支持快速 i/o，它们也必须定义一个返回 **FALSE** (的快速 i/o 例程，即快速 i/o 例程不会实现任何功能) 。 当 i/o 管理器接收到 (对分页 i/o) 以外的同步文件 i/o 的请求时，将首先调用 fast i/o 例程。 如果快速 i/o 例程返回 **TRUE**，则该操作由快速 i/o 例程提供服务。 如果快速 i/o 例程返回 **FALSE**，则 I/o 管理器将改为创建并发送 IRP。
 
-文件系统筛选器驱动程序不支持所需 I/O 上控制设备对象。 但是，筛选设备对象附加到文件系统或卷所需将所有无法识别或不需要的 Irp 传递给下一步低驱动程序，驱动程序堆栈上。 此外，附加到卷的筛选设备对象必须实现 FastIoDetachDevice。
+文件系统筛选器驱动程序不需要支持控制设备对象上的 i/o。 但是，需要对附加到文件系统或卷的筛选设备对象将所有无法识别或不需要的 Irp 传递到驱动程序堆栈上的下一个较低版本的驱动程序。 此外，附加到卷的筛选设备对象必须实现 FastIoDetachDevice。
 
  
 

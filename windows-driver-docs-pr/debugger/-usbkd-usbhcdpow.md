@@ -1,7 +1,6 @@
 ---
 title: usbkd.usbhcdpow
 description: Usbkd. usbhcdpow 命令显示 USB 主机控制器或根集线器的电源状态历史记录。
-ms.assetid: 49D803E3-0D65-48D4-98C5-BFE4DB2C2985
 keywords:
 - usbkd usbhcdpow Windows 调试
 ms.date: 05/23/2017
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 827409f4096c89b6db12d7a8253e505e144d5399
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 04c88818ac94154b80e3217b5747e00d6d3a779d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89212259"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96818673"
 ---
 # <a name="usbkdusbhcdpow"></a>!usbkd.usbhcdpow
 
 
-**！ Usbkd. usbhcdpow**命令显示 USB 主机控制器或根集线器的电源状态历史记录。
+**！ Usbkd. usbhcdpow** 命令显示 USB 主机控制器或根集线器的电源状态历史记录。
 
 ```dbgcmd
 !usbkd.usbhcdpow DeviceExtension
@@ -55,7 +54,7 @@ Usbkd.dll
      ...
 ```
 
-在上面的输出中，FDO 的设备扩展的地址显示为 [DML](debugger-markup-language-commands.md) 命令 **！ ehci \_ info ffffe00001ca11a0**的参数。
+在上面的输出中，FDO 的设备扩展的地址显示为 [DML](debugger-markup-language-commands.md) 命令 **！ ehci \_ info ffffe00001ca11a0** 的参数。
 
 现在，将设备扩展的地址传递给 **！ usbhcdpow** 命令。
 
@@ -89,7 +88,7 @@ dt USBPORT!_FDO_EXTENSION ffffe00001ca15a0
         ...
 ```
 
-在上面的输出中，可以看到根集线器的 FDO 地址，该地址显示为命令 **！ devstack ffffe00002320050**的参数。 使用 [**！ devstack**](-devstack.md) 命令查找 pdo 的地址和 pdo 设备扩展。
+在上面的输出中，可以看到根集线器的 FDO 地址，该地址显示为命令 **！ devstack ffffe00002320050** 的参数。 使用 [**！ devstack**](-devstack.md) 命令查找 pdo 的地址和 pdo 设备扩展。
 
 ```dbgcmd
 0: kd> !kdexts.devstack ffffe00002320050

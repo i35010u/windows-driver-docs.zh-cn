@@ -1,7 +1,6 @@
 ---
 title: usbkd.usbhcdlog
 description: Usbkd. usbhcdlog 命令显示 USB 主机控制器的部分调试日志。
-ms.assetid: 78FDC557-7791-422A-AB7B-5C9B6A1DF481
 keywords:
 - usbkd usbhcdlog Windows 调试
 ms.date: 05/23/2017
@@ -12,12 +11,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: bf06fada94394aa6b210f14b973d617a622cb48f
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 0faeefc501fbe669bb2b16f4f2d0b7bb41ce374c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89207677"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96818685"
 ---
 # <a name="usbkdusbhcdlog"></a>!usbkd.usbhcdlog
 
@@ -57,7 +56,7 @@ EHCI MINIPORT(s) dt usbport!_USBPORT_MINIPORT_DRIVER ffffe00001f48bd0
 ...
 ```
 
-在上面的输出中，FDO 的设备扩展的地址显示为 [DML](debugger-markup-language-commands.md) 命令 **！ ehci \_ info ffffe00001ca11a0**的参数。
+在上面的输出中，FDO 的设备扩展的地址显示为 [DML](debugger-markup-language-commands.md) 命令 **！ ehci \_ info ffffe00001ca11a0** 的参数。
 
 现在，将设备扩展的地址传递给 **！ usbhcdlog** 命令。 在此示例中，第二个参数将显示范围限制为四个日志条目。
 

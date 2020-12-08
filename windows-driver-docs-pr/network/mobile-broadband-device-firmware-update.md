@@ -1,20 +1,19 @@
 ---
 title: 移动宽带设备固件更新
-description: 本主题为想要支持设备固件升级通过 Windows Update (WU) 的移动宽带 (MB) 模块制造商提供指南。
-ms.assetid: EBB95A11-14EF-4BF5-BE90-DB99624554CD
+description: 本主题通过 Windows 更新 (WU) ，为移动宽带 (MB) 模块制造商提供支持固件升级设备的指南。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 82939a3021ab3d670e8365b8f99f5533e2f39ced
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 45008fe38b0d505a87bc21efc702e368be345d92
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63386245"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96818877"
 ---
 # <a name="mobile-broadband-device-firmware-update"></a>移动宽带设备固件更新
 
 
-本主题为想要支持设备固件升级通过 Windows Update (WU) 的移动宽带 (MB) 模块制造商提供指南。 设备必须符合[USB NCM 移动宽带接口模型 (MBIM) V1.0 规范](https://go.microsoft.com/fwlink/p/?linkid=320791)USB 发布-如果设备使用组。
+本主题通过 Windows 更新 (WU) ，为移动宽带 (MB) 模块制造商提供支持固件升级设备的指南。 设备必须符合 usb [NCM Mobile 宽带接口模型， (MBIM) v2.0 1.0 规范](https://go.microsoft.com/fwlink/p/?linkid=320791) 由 Usb 设备工作组发布。
 
 本主题中的信息适用于：
 
@@ -23,40 +22,40 @@ ms.locfileid: "63386245"
 ## <a name="device-requirements"></a>设备要求
 
 
-若要在移动宽带使用 Windows Update 上支持固件更新，模块或设备制造商需要符合以下要求：
+若要使用 Windows 更新支持移动宽带上的固件更新，模块或设备制造商需要满足以下要求：
 
--   UMDF （用户模式驱动程序框架） 基于由模块开发的驱动程序或设备制造商，与 INF 文件和固件有效负载一起打包。 本文档的稍后部分中提供了示例 INF 文件和详细信息
--   设备固件，以实现以下功能：
-    -   固件 ID 设备服务 (FID)。 有关详细信息，请参阅**FID 设备服务**。
-    -   固件，以支持固件更新设备服务。 这是一种设备制造商特定的设备服务，提供了 UMDF 驱动程序来调用和执行/下载固件有效负载并启动固件更新过程的功能。
+-   与 INF 文件和固件有效负载一起打包的、由模块或设备制造商开发) 基于用户模式驱动程序框架的 UMDF (。 本文档的后面部分提供了示例 INF 文件和详细信息
+-   用于实现以下功能的设备固件：
+    -   固件 ID 设备服务 (FID) 。 有关详细信息，请参阅 **FID 设备服务**。
+    -   支持固件更新设备服务的固件。 这是设备制造商特定的设备服务，提供 UMDF 驱动程序调入和执行/下载固件负载并启动固件更新过程的能力。
 
 **操作概述**
 
-下图显示的高级别设计和所涉及的三个组件之间的交互：MBIM 设备，Windows 8 操作系统和 IHV 提供固件升级驱动程序。
+下图显示了所涉及的三个组件之间的高级设计和交互： MBIM 设备、Windows 8 操作系统和 IHV 提供的固件升级驱动程序。
 
-![显示组件如何交互的图像。 下一段所述。](images/mbdevicefirmwareupdate.png)
+![显示组件如何交互的图像。 下一段将对此进行介绍。](images/mbdevicefirmwareupdate.png)
 
--   当 WWAN 服务检测到新的 MB 设备的到达时，它将检查如果设备支持固件 ID (FID) 设备服务。 如果存在，它会检索 FID，后者被定义为 GUID。 IHV 需要在设备上支持的固件设备服务规范所述**如下**。
--   WWAN 服务 (Windows OS) 将生成"软设备节点"使用上面获取的设备硬件 id。 作为 FID这称为"软开发节点"上图中。 创建适用于开发人员的节点将开始启动即插即用的子系统 (Windows OS) 若要查找最匹配的驱动程序。 在 Windows 8 中，即插即用系统将首先尝试从本地存储区安装驱动程序，如果可用，并在并行操作系统将尝试从 WU 获取更好地匹配的驱动程序。 收件箱 NULL 驱动程序将使用用作默认值，如果更好地匹配驱动程序不是可用于消除"找不到驱动程序"的问题。
--   IHV WU 包，基于 FID 匹配项，将向下拉取到计算机并安装。 应 FID 表示唯一固件 SKU （此处唯一性由组合设备 VID/PID/REV m n O）。 WU 包将包含 IHV 创作 UMDF 驱动程序，以及固件有效负载。
--   一旦 IHV UMDF 软开发节点上加载它负责控制固件更新流。 应注意软开发节点的生存时间与实际 MBIM 设备状态。 UMDF 驱动程序应执行以下步骤执行固件更新
-    -   它是可以接受的设备在固件更新过程中，重新启动多次，但会导致 UMDF 驱动程序，才能卸载/重新加载
-    -   整个固件升级过程，包括重新启动，应不超过 60 秒后发生。
-    -   固件更新已完成并且设备已恢复为 MBIM 模式后，Windows 应收到通知。 这是通过清除以前设置 DEVPKEY\_设备\_PostInstallInProgress 属性。 **https://msdn.microsoft.com/library/windows/hardware/hh451399(v=vs.85).aspx** 介绍如何开发节点上设置属性。 以前的设置属性时可以使用 DEVPROP 清除\_类型\_为空。
-    -   OnPrepareHardware UMDF 回调期间 UMDF 驱动程序应检查在设备上的固件是否需要更新。 这是通过比较针对传入后通过 Windows Update 设备上的固件版本。 更高版本中对放置位置的固件二进制文档提供了更多指导。 如果需要固件更新，则应 UMDF 驱动程序：
-        -   计划工作项，如中所述**https://msdn.microsoft.com/library/windows/hardware/hh463997(v=VS.85).aspx**。 在工作项的上下文中进行实际固件升级。
-        -   已成功计划工作项，完成后通知固件更新的启动 Windows。 可以通过设置 DEVPKEY\_设备\_PostInstallInProgress OnPrepareHardware UMDF 回调的上下文中的软开发节点的属性。
-        -   不进行固件更新正在进行时阻止 OnPrepareHardware 回调至关重要。 应最完成在第二个或两个 OnPrepareHardware 回调。
+-   当 WWAN 服务检测到新的 MB 设备的到达时，它将检查设备是否支持固件 ID (FID) 设备服务。 如果存在，它将检索定义为 GUID 的 FID。 **下面** 描述了 IHV 需要设备上的支持的固件设备服务规范。
+-   WWAN 服务 (Windows OS) 将使用上面获得的 FID 作为设备硬件 Id 生成 "软设备节点"。这在上图中称为 "软开发节点"。 创建开发节点将启动 PnP 子系统 (Windows OS) 以查找最匹配的驱动程序。 在 Windows 8 中，PnP 系统将首先尝试从本地存储安装驱动程序（如果有），并且并行操作系统将尝试从 WU 获取更匹配的驱动程序。 如果无法使用更好的匹配驱动程序来消除 "找不到驱动程序" 问题，则将使用收件箱 NULL 驱动程序作为默认值。
+-   根据 FID 匹配，将 IHV WU 包拉出到计算机并安装。 此 FID 应表示唯一的固件 SKU (唯一，此处是通过组合设备 VID/PID/REV 和 o) 来定义的。 WU 包包含 IHV 创作的 UMDF 驱动程序和固件负载。
+-   在软开发节点上加载 IHV UMDF 后，它负责控制固件更新流。 应注意的是，软开发节点的生命时间与 MBIM 设备的物理状态相关。 UMDF 驱动程序应执行以下步骤来执行固件更新
+    -   在固件更新过程中，设备可以多次重新启动，但会导致 UMDF 驱动程序被卸载/重装
+    -   整个固件升级过程（包括重新启动）的发生时间不应超过60秒。
+    -   固件更新完成并且设备已还原到 MBIM 模式后，应通知 Windows。 这是通过清除前面设置的 DEVPKEY \_ 设备 PostInstallInProgress 属性来完成的 \_ 。 **https://msdn.microsoft.com/library/windows/hardware/hh451399(v=vs.85).aspx** 介绍如何在 dev 节点上设置属性。 可以使用 DEVPROP 类型 EMPTY 清除先前设置的 \_ 属性 \_ 。
+    -   在 OnPrepareHardware UMDF 回调过程中，UMDF 驱动程序应检查设备上的固件是否需要更新。 为此，可将设备上的固件版本与通过 Windows 更新中的固件版本进行比较。 稍后将在有关固件二进制放置位置的文档中提供其他指导。 如果需要固件更新，UMDF 驱动程序应：
+        -   按中所述计划工作项 **https://msdn.microsoft.com/library/windows/hardware/hh463997(v=VS.85).aspx** 。 实际固件升级发生在工作项的上下文中。
+        -   成功计划工作项后，请通知 Windows 有关开始固件更新的信息。 这是通过 \_ \_ 在 OnPrepareHardware UMDF 回调的上下文中设置软开发节点上的 DEVPKEY Device PostInstallInProgress 属性来完成的。
+        -   固件更新过程中不会阻止 OnPrepareHardware 回调。 OnPrepareHardware 回调应最多在一秒钟或两秒钟内完成。
 
 **WU 包的示例 INF 文件**
 
-本部分提供了属于 WU 包示例 INF。 请注意 INF 文件中的关键点是：
+本部分提供属于 WU 包的示例 INF。 INF 文件中需要注意的要点如下：
 
--   固件二进制文件是独立的 UMDF 驱动程序。
--   固件二进制文件的已知预定义的位置，如下所示文件名冲突。 二进制文件不能是为包含 PE/COFF 标头的可执行文件。
+-   固件二进制文件与 UMDF 驱动程序无关。
+-   固件二进制文件位于众所周知的预定义位置，如下所示，文件名发生冲突。 二进制文件不能是包含 PE/COFF 标头的可执行文件。
 -   `%windir%\Firmware\<IHVCompanyName>\<UniqueBinaryName>.bin`
--   UMDF 驱动程序已知道此预定义的已知位置。
--   以下示例 INF 模板已突出显示需要由 IHV 填充的项。
+-   UMDF 驱动程序知道此预定义的已知位置。
+-   下面的示例 INF 模板包含需要由 IHV 填充的突出显示项。
 
 ```cpp
 [Version]
@@ -130,47 +129,47 @@ DeviceDesc      = "MBIHV Mobile Broadband Firmware Device"
 DiskName        = "Firmware Driver Installation Media"
 ```
 
-**固件标识设备服务 （FID 设备服务）**
+**固件标识设备服务 (FID 设备服务)**
 
-MBIM 兼容设备会实现并报告以下设备服务 CID 进行查询时\_MBIM\_设备\_服务。 在部分 10.1 NCM MBIM 规范中定义现有的已知服务。 Microsoft Corporation 扩展，以便定义以下服务。
+当由 CID \_ MBIM 设备服务进行查询时，符合 MBIM 的设备将实现并报告以下设备服务 \_ \_ 。 现有的已知服务在第10.1 节的 NCM MBIM 规范中定义。 Microsoft Corporation 扩展此项以定义以下服务。
 
 服务名称 = **Microsoft 固件 ID**
 
-UUID = **UUID\_MSFWID UUID**
+UUID = **UUID \_ MSFWID UUID**
 
-Value = **e9f7dea2-feaf-4009-93ce-90a3694103b6**
+值 = **e9f7dea2-feaf-4009-93ce-90a3694103b6**
 
-具体而言，以下 CID 定义的 UUID\_MSFWID 设备服务：
+具体而言，为 UUID MSFWID 设备服务定义了以下 CID \_ ：
 
-CID = **CID\_MBIM\_MSFWID\_FIRMWAREID**
+CID = **CID \_ MBIM \_ MSFWID \_ FIRMWAREID**
 
 命令代码 = **1**
 
-查询 =**是**
+Query = **Yes**
 
-设置 =**否**
+Set = **否**
 
-事件 =**否**
+事件 = **否**
 
-设置 InformationBuffer 负载 = **n/A**
+设置 InformationBuffer 负载 = **N/A**
 
-查询 InformationBuffer 负载 = **n/A**
+查询 InformationBuffer 负载 = **暂缺**
 
 完成 InformationBuffer 负载 = **UUID**
 
-**CID\_MBIM\_MSFWID\_FIRMWAREID**
+**CID \_ MBIM \_ MSFWID \_ FIRMWAREID**
 
-该命令返回的 MNO 或 IHV 分配设备的固件 ID。 UUID 被编码的基于 MBIM 规范中的准则。
+此命令返回设备的 o 或 IHV 分配的固件 ID。 UUID 根据 MBIM 规范中的准则进行编码。
 
-查询 = **InformationBuffer 上 MBIM\_命令\_未使用的消息。UUID 返回 InformationBuffer MBIM\_命令\_完成。**
+查询 = **\_ 未使用 MBIM 命令消息上的 InformationBuffer \_ 。在 InformationBuffer MBIM \_ 命令 \_ 完成后返回了 UUID。**
 
-设置 =**不受支持**
+Set = **不受支持**
 
-未经请求的事件 =**不受支持**
+主动事件 = **不受支持**
 
-**UMDF 驱动程序的行为的代码片段**
+**用于 UMDF 驱动程序的行为的代码段**
 
-如先前所述，它开始和完成固件升级时，应该向 Windows 指明 UMDF 驱动程序。 本部分提供的代码片段的显示驱动程序应如何通知这些事件的 Windows。
+如前文所述，UMDF 驱动程序应在启动时向 Windows 指明 Windows 并完成固件升级。 本部分提供的代码段显示了驱动程序应如何通知 Windows 这些事件。
 
 ```cpp
 /**

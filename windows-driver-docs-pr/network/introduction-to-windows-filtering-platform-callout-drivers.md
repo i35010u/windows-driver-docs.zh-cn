@@ -1,19 +1,18 @@
 ---
 title: Windows 筛选平台标注驱动程序简介
 description: Windows 筛选平台标注驱动程序简介
-ms.assetid: d075da82-8dbc-41a5-a081-dd0e2b292371
 keywords:
 - Windows 筛选平台标注驱动程序 WDK，关于标注驱动程序
 - 标注驱动程序 WDK Windows 筛选平台，关于标注驱动程序
 - 标注 WDK Windows 筛选平台
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 03103a361d7059263119e07e9e406e881e8dd9bd
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: fbcacf7b4ad9fb95d99cb9916506e265ab87b40d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91732817"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96818361"
 ---
 # <a name="introduction-to-windows-filtering-platform-callout-drivers"></a>Windows 筛选平台标注驱动程序简介
 

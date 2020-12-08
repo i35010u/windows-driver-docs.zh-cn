@@ -1,22 +1,21 @@
 ---
 title: WDI_TLV_PM_PROTOCOL_OFFLOAD_80211RSN_REKEY
-description: WDI_TLV_PM_PROTOCOL_OFFLOAD_80211RSN_REKEY 是 TLV 包含 RSN 重新生成密钥协议卸载参数。
-ms.assetid: 4FDB56EA-444B-4EA2-B8D1-5E740734EEED
+description: WDI_TLV_PM_PROTOCOL_OFFLOAD_80211RSN_REKEY 是包含 RSN Rekey 协议卸载参数的 TLV。
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_PM_PROTOCOL_OFFLOAD_80211RSN_REKEY 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 72033a9acd362cc10e77814e659e3b8ef8a92d8c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4e00561cf253819c808833fe35b3d8b80e7fd791
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63362895"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96818059"
 ---
-# <a name="wditlvpmprotocoloffload80211rsnrekey"></a>WDI\_TLV\_PM\_PROTOCOL\_OFFLOAD\_80211RSN\_REKEY
+# <a name="wdi_tlv_pm_protocol_offload_80211rsn_rekey"></a>WDI \_ TLV \_ PM \_ 协议 \_ 卸载 \_ 80211RSN \_ REKEY
 
 
-WDI\_TLV\_PM\_协议\_卸载\_80211RSN\_重新生成密钥是包含 RSN 重新生成密钥协议卸载参数 TLV。 如果配置 TCK/iGTK 在密钥信息，驱动程序必须返回它在查询时[OID_WDI_GET_PM_PROTOCOL_OFFLOAD](oid-wdi-get-pm-protocol-offload.md)此 TLV 通过。
+WDI \_ tlv \_ PM \_ 协议 \_ 卸载 \_ 80211RSN \_ rekey 是包含 RSN REKEY 协议卸载参数的 tlv。 如果配置了 TCK/iGTK 密钥信息，则驱动程序必须在通过此 TLV 在 [OID_WDI_GET_PM_PROTOCOL_OFFLOAD](oid-wdi-get-pm-protocol-offload.md) 中查询时将其返回。
 
 ## <a name="tlv-type"></a>TLV 类型
 
@@ -26,15 +25,15 @@ WDI\_TLV\_PM\_协议\_卸载\_80211RSN\_重新生成密钥是包含 RSN 重新�
 ## <a name="length"></a>长度
 
 
-所有包含的元素的大小的总和 （以字节为单位）。
+Sum (所有包含的元素的大小) 。
 
 ## <a name="values"></a>值
 
 
-| 在任务栏的搜索框中键入 | 描述  |
+| 类型 | 描述  |
 | --- | --- |
-| [WDI_TLV_RSN_KEY_INFO](wdi-tlv-rsn-key-info.md) | Rsn Eapol 键参数。 |
-| LIST<[WDI_TLV_CONFIGURED_CIPHER_KEY](wdi-tlv-configured-cipher-key.md)> | 配置密码中设置的列表[OID_WDI_GET_PM_PROTOCOL_OFFLOAD](oid-wdi-get-pm-protocol-offload.md)。 驱动程序必须返回当前配置的任何 GTK 或 iGTK 键。 |
+| [WDI_TLV_RSN_KEY_INFO](wdi-tlv-rsn-key-info.md) | Rsn Eapol 密钥参数。 |
+| 列出<[WDI_TLV_CONFIGURED_CIPHER_KEY](wdi-tlv-configured-cipher-key.md)> | 要在 [OID_WDI_GET_PM_PROTOCOL_OFFLOAD](oid-wdi-get-pm-protocol-offload.md)中设置的已配置密码的列表。 驱动程序必须返回当前配置的任何 GTK 或 iGTK 键。 |
 
 <a name="requirements"></a>要求
 ------------
@@ -51,10 +50,10 @@ WDI\_TLV\_PM\_协议\_卸载\_80211RSN\_重新生成密钥是包含 RSN 重新�
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
-<td><p>Windows Server 2016</p></td>
+<td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Wditypes.hpp</td>
 </tr>
 </tbody>

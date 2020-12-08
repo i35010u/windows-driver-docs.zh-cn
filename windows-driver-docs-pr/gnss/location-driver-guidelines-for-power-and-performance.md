@@ -1,15 +1,14 @@
 ---
 title: 位置驱动程序功率和性能指南
 description: 以下各节介绍了一些准则，以确保你的位置驱动程序节省电源并有效地提供数据。
-ms.assetid: 81B9A3A1-D273-48C8-A808-CDB1533A1B6A
 ms.date: 07/06/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 03a20875d4274d5a7af73c3dd6d13cedd5b36bd1
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 79f27dc4beea09a766b6dbfd747dbdc6dde7d3ef
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90716818"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96819091"
 ---
 # <a name="location-driver-guidelines-for-power-and-performance"></a>位置驱动程序功率和性能指南
 
@@ -31,12 +30,12 @@ ms.locfileid: "90716818"
 
 | 客户端存在 (输入)  | 无线电状态 (输入)  | CRI (输入)  |  (输入报告的位置)  | ASIC 状态 (输出)  | 传感器状态 (输出)  | 电源状态 (输出)  |
 |--|--|--|--|--|--|--|
-| 否 | 任意 | 任意 | 任意 | 关闭 | 不可用 | D3 |
-| 是 | 启用 | <= 120 秒 | 否 | 启用 | 正在初始化 | D0 |
-| 是 | 启用 | <= 120 秒 | 是 | 启用 | 就绪 | D0 |
-| 是 | 关闭 | 任意 | 任意 | 关闭 | 不可用 | D3 |
-| 是 | 启用 | >120 秒 | 任意 | 关闭 | 就绪 | D3 |
-| 是 | 启用 | >120 秒 | 任意 | 启用 | 就绪 | D0 |
+| 否 | 任意 | 任意 | 任意 | 关 | 空值 | D3 |
+| 是 | 开 | <= 120 秒 | 否 | 开 | 正在初始化 | D0 |
+| 是 | 开 | <= 120 秒 | 是 | 开 | 就绪 | D0 |
+| 是 | 关 | 任意 | 任意 | 关 | 不可用 | D3 |
+| 是 | 开 | >120 秒 | 任意 | 关 | 就绪 | D3 |
+| 是 | 开 | >120 秒 | 任意 | 开 | 就绪 | D0 |
 
 WDK 中的 [传感器地理位置驱动程序示例](sensors-geolocation-driver-sample.md) 提供了一个驱动程序示例，该驱动程序跟踪连接的客户端数和无线电状态。
 
@@ -60,7 +59,7 @@ WDK 中的 [传感器地理位置驱动程序示例](sensors-geolocation-driver-
 
 ## <a name="detecting-idle-states"></a>检测空闲状态
 
-你的驱动程序应检测到空闲状态并进入低功耗状态。 例如，如果 GPS 设备的位置未更改、没有挂起的 i/o 请求或者数据不可用，则可能会发生空闲状态。 如果 GPS 或全局导航卫星系统 (GNSS) 设备是通过 USB 实现的，则它必须支持选择性挂起。 有关详细信息，请参阅 [在基于 UMDF 的驱动程序中支持空闲电源关闭](../wdf/supporting-idle-power-down-in-umdf-drivers.md) 。
+你的驱动程序应检测到空闲状态并进入低功耗状态。 例如，如果 GPS 设备的位置未更改、没有挂起的 i/o 请求或者数据不可用，则可能会发生空闲状态。 如果 GPS 或全局导航卫星系统 (GNSS) 设备是通过 USB 实现的，则它必须支持选择性挂起。 有关详细信息，请参阅 [基于 UMDF 的驱动程序中的支持空闲 Power-Down](../wdf/supporting-idle-power-down-in-umdf-drivers.md) 。
 
 ## <a name="position-injection-for-gps-and-global-navigation-satellite-system-gnss"></a>GPS 和全局导航卫星系统 (GNSS) 的位置注入
 
@@ -79,7 +78,7 @@ GPS 或全局导航卫星系统 (GNSS) 传感器可以使用系统上的三角�
 > [!NOTE]
 > 传感器不应从同一类型的位置传感器获取数据。 例如，三角化传感器不应使用其他三角传感器的数据。
 
-若要访问三角化传感器，请使用类型为 "传感器类型位置三角化" 的 [**ISensorManager：： GetSensorByType**](/windows/win32/api/sensorsapi/nf-sensorsapi-isensormanager-getsensorsbytype) 调用 \_ \_ \_ 。 这将返回所有三角化传感器，包括 Windows 8 中内置的 Windows 位置提供程序。 你的 GPS 驱动程序需要能够处理从零传感器返回到多个传感器的任何位置。 有关使用**GetSensorsByType**的详细信息，请参阅[检索传感器对象](/windows/desktop/SensorsAPI/retrieving-a-sensor)。
+若要访问三角化传感器，请使用类型为 "传感器类型位置三角化" 的 [**ISensorManager：： GetSensorByType**](/windows/win32/api/sensorsapi/nf-sensorsapi-isensormanager-getsensorsbytype) 调用 \_ \_ \_ 。 这将返回所有三角化传感器，包括 Windows 8 中内置的 Windows 位置提供程序。 你的 GPS 驱动程序需要能够处理从零传感器返回到多个传感器的任何位置。 有关使用 **GetSensorsByType** 的详细信息，请参阅 [检索传感器对象](/windows/desktop/SensorsAPI/retrieving-a-sensor)。
 
 > [!NOTE]
 > Windows 位置提供程序不提供准确性或可用性的任何保证。

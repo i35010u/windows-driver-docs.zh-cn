@@ -1,7 +1,6 @@
 ---
 title: Windows 显示驱动程序模型 (WDDM) 操作流
 description: Windows 显示驱动程序模型 (WDDM) 操作流
-ms.assetid: 8d2af92c-392a-457d-af9f-796e1050031d
 keywords:
 - 显示驱动程序模型 WDK Windows Vista，操作流
 - Windows Vista 显示器驱动程序模型 WDK，操作流
@@ -11,12 +10,12 @@ keywords:
 - 缓冲 WDK 显示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4054dd50241995a3ff08fc65a026f562f1edc031
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 74fdc661d3e6bc3060bbd09af129958f8a34d999
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105368"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96818527"
 ---
 # <a name="windows-display-driver-model-wddm-operation-flow"></a>Windows 显示驱动程序模型 (WDDM) 操作流
 

@@ -1,7 +1,6 @@
 ---
 title: 使用系统提供的多功能总线驱动程序
 description: 使用系统提供的多功能总线驱动程序
-ms.assetid: 75fe659d-5311-4bc6-adfb-fd608e10c718
 keywords:
 - 多功能设备 WDK，系统提供的总线驱动程序
 - 系统提供的多功能总线驱动程序 WDK
@@ -12,12 +11,12 @@ keywords:
 - PDOs WDK 多功能设备
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 596dd9c690d5d55050f776436d91def9d03799a9
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: bb372fb6ff2d70382b3d25a7c48b58619a388780
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89190023"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96818881"
 ---
 # <a name="using-the-system-supplied-multifunction-bus-driver"></a>使用系统提供的多功能总线驱动程序
 

@@ -1,17 +1,16 @@
 ---
 title: WDI_TLV_PHY_CAPABILITIES
 description: WDI_TLV_PHY_CAPABILITIES 是包含 PHY 功能的 TLV。
-ms.assetid: 8F482ED6-6594-4DB5-B53B-4424DAD32D36
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_PHY_CAPABILITIES 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: d3a58cbc1b60e7c0f125150d8ebdd00ffdc10318
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: c723dc085a8b3d8a671089ec8d9c01f8a32933ba
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89213728"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96818101"
 ---
 # <a name="wdi_tlv_phy_capabilities"></a>WDI \_ TLV \_ PHY \_ 功能
 
@@ -23,7 +22,7 @@ WDI \_ tlv \_ PHY \_ 功能是包含 PHY 功能的 tlv。
 
 0x1B
 
-## <a name="length"></a>Length
+## <a name="length"></a>长度
 
 
 Sum (所有包含的元素的大小) 。
@@ -31,7 +30,7 @@ Sum (所有包含的元素的大小) 。
 ## <a name="values"></a>值
 
 
-| 类型                                        | 说明                                        |
+| 类型                                        | 描述                                        |
 |---------------------------------------------|----------------------------------------------------|
 | [**WDI \_ PHY \_ 类型**](/windows-hardware/drivers/ddi/wditypes/ne-wditypes-_wdi_phy_type) | 指定 PHY 类型。                           |
 | UINT8                                       | 指定 PHY 是否支持 CF 轮询。 |
@@ -56,7 +55,7 @@ Sum (所有包含的元素的大小) 。
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
-<td><p>Windows Server 2016</p></td>
+<td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
 <td><p>标头</p></td>

@@ -1,18 +1,17 @@
 ---
 title: 处理轻量 MIP 贴图纹理
 description: 处理轻量 MIP 贴图纹理
-ms.assetid: f541b046-2937-428c-ab98-eb1020728e04
 keywords:
 - MIP map 纹理 WDK DirectX 9.0，轻型
 - 轻型 MIP map 纹理 WDK DirectX 9。0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fd535a7d80a710ba2faded3747075d1a49bc62bc
-ms.sourcegitcommit: f8619f20a0903dd64f8641a5266ecad6df5f1d57
+ms.openlocfilehash: 3769910fa910bc831c7b02113b13ca0c2bded60b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91423858"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96819101"
 ---
 # <a name="handling-lightweight-mip-map-textures"></a>处理轻量 MIP 贴图纹理
 
@@ -20,7 +19,7 @@ ms.locfileid: "91423858"
 ## <span id="ddk_handling_lightweight_mip_map_textures_gg"></span><span id="DDK_HANDLING_LIGHTWEIGHT_MIP_MAP_TEXTURES_GG"></span>
 
 
-由于轻型 MIP 映射纹理的 MIP 子级别是隐式的，并且没有 ([**DD surface \_ \_ LOCAL**](/windows/win32/api/ddrawint/ns-ddrawint-dd_surface_local)、 [**dd \_ surface \_ GLOBAL**](/windows/win32/api/ddrawint/ns-ddrawint-dd_surface_global) 和 [**dd \_ Surface \_ **](/windows/win32/api/ddrawint/ns-ddrawint-dd_surface_more)) 的相应 DirectDraw 面结构，因此，DirectX 9.0 版本驱动程序可以确定 MIP 地图的纹理是否是轻型的，从而避免创建不必要的驱动程序 surface 结构来节省内存。 若要确定 MIP 地图纹理是否为轻型纹理，驱动程序将验证是否 \_ 设置了纹理图面的 DDSCAPSEX ([**DDSCAPS2**](/previous-versions/windows/hardware/drivers/ff550292(v=vs.85))) 结构的**DWCAPS3**成员中的 DDSCAPS3 LIGHTWEIGHTMIPMAP 位。
+由于轻型 MIP 映射纹理的 MIP 子级别是隐式的，并且没有 ([**DD surface \_ \_ LOCAL**](/windows/win32/api/ddrawint/ns-ddrawint-dd_surface_local)、 [**dd \_ surface \_ GLOBAL**](/windows/win32/api/ddrawint/ns-ddrawint-dd_surface_global) 和 [**dd \_ Surface \_**](/windows/win32/api/ddrawint/ns-ddrawint-dd_surface_more)) 的相应 DirectDraw 面结构，因此，DirectX 9.0 版本驱动程序可以确定 MIP 地图的纹理是否是轻型的，从而避免创建不必要的驱动程序 surface 结构来节省内存。 若要确定 MIP 地图纹理是否为轻型纹理，驱动程序将验证是否 \_ 设置了纹理图面的 DDSCAPSEX ([**DDSCAPS2**](/previous-versions/windows/hardware/drivers/ff550292(v=vs.85))) 结构的 **DWCAPS3** 成员中的 DDSCAPS3 LIGHTWEIGHTMIPMAP 位。
 
 请注意，DirectX 9.0 中的所有 MIP map 纹理默认情况下均为轻型。
 
@@ -33,7 +32,7 @@ ms.locfileid: "91423858"
 -   下面的 MIP 映射纹理必须为重型，因为与此类纹理相对应的对视频或 [AGP](agp-support.md) 内存的锁定和直接写入可能如下：
 
     -   呈现器目标
-    -   深度模具
+    -   深度模板
     -   动态
     -   供应商格式
 

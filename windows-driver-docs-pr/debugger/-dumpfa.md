@@ -1,10 +1,9 @@
 ---
 title: dumpfa
-description: Dumpfa 扩展显示失败分析项的内容。
-ms.assetid: 4516252d-b6c9-4bf4-b435-6c0b3cb0fbc3
+description: Dumpfa 扩展显示失败分析条目的内容。
 keywords:
-- 失败分析条目，显示
-- 故障分析项
+- 故障分析条目，显示
+- 失败分析条目
 - dumpfa Windows 调试
 ms.date: 05/23/2017
 topic_type:
@@ -14,29 +13,29 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: d911ea3688c737d3ddcf6698eaeb3460e725954b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6554803d3419fa2efe95bbb3b12d406eabf9653c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63334558"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96817585"
 ---
 # <a name="dumpfa"></a>!dumpfa
 
 
-**！ Dumpfa**扩展显示的失败分析项内容。
+**！ Dumpfa** 扩展显示失败分析条目的内容。
 
 ```dbgcmd
 !dumpfa Address
 ```
 
-## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>参数
+## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>Parameters
 
 
-<span id="_______Address______"></span><span id="_______address______"></span><span id="_______ADDRESS______"></span> *Address*   
+<span id="_______Address______"></span><span id="_______address______"></span><span id="_______ADDRESS______"></span>*地址*   
 指定显示的失败分析条目的地址。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 <table>
 <colgroup>
@@ -60,7 +59,7 @@ ms.locfileid: "63334558"
 <a name="remarks"></a>备注
 -------
 
-**.Dumpfa**扩展插件可仅用于调试[ **！ 分析**](-analyze.md)扩展，如以下示例所示。
+**Dumpfa** 扩展仅用于调试 [**！分析**](-analyze.md)扩展插件，如下面的示例所示。
 
 ```dbgcmd
 0:000> !dumpfa 0x00a34140
@@ -86,7 +85,7 @@ Type =           DEBUG_FLR_IMAGE_NAME 00010001 - Size = c
 Type =      DEBUG_FLR_IMAGE_TIMESTAMP 80000002 - Size = 8
 ```
 
-此外可以使用[ **！ asd** ](-asd.md)扩展来调试[ **！ 分析**](-analyze.md)扩展。
+你还可以使用 [**！ .asd**](-asd.md) 扩展来调试 [**！分析**](-analyze.md) 扩展。
 
  
 

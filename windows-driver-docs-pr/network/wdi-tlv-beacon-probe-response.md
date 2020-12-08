@@ -1,22 +1,21 @@
 ---
 title: WDI_TLV_BEACON_PROBE_RESPONSE
-description: WDI_TLV_BEACON_PROBE_RESPONSE 是包含最新信息或接收端口的探测响应帧 TLV。
-ms.assetid: D1148F9B-D25F-4AF0-8C55-43453441C667
+description: WDI_TLV_BEACON_PROBE_RESPONSE 是一种 TLV，其中包含端口接收到的最新信标或探测响应帧。
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_BEACON_PROBE_RESPONSE 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 6b1d741c6833a2f8453fac159bd6c952fcee80e5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ac0aadfb81a6cc71ef1bf546c5e54f47c0743c57
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63361987"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96818817"
 ---
-# <a name="wditlvbeaconproberesponse"></a>WDI\_TLV\_信号\_探测\_响应
+# <a name="wdi_tlv_beacon_probe_response"></a>WDI \_ TLV \_ 信标 \_ 探测 \_ 响应
 
 
-WDI\_TLV\_信号\_探测\_响应是包含最新信息或接收端口的探测响应帧 TLV。
+WDI \_ tlv \_ 信标 \_ 探测 \_ 响应是一个 tlv，其中包含端口接收到的最新信标或探测响应帧。
 
 ## <a name="tlv-type"></a>TLV 类型
 
@@ -26,14 +25,14 @@ WDI\_TLV\_信号\_探测\_响应是包含最新信息或接收端口的探测响
 ## <a name="length"></a>长度
 
 
-UINT8 元素的数组大小 （以字节为单位）。 该数组必须包含一个或多个元素。
+UINT8 元素数组的大小 (以字节为单位) 。 数组必须包含1个或多个元素。
 
 ## <a name="values"></a>值
 
 
-| 在任务栏的搜索框中键入      | 描述                                                                                                                                            |
+| 类型      | 描述                                                                                                                                            |
 |-----------|--------------------------------------------------------------------------------------------------------------------------------------------------------|
-| UINT8\[\] | 指定的最新信息或由端口收到探测响应框架 UINT8 元素的数组。 这不包括 802.11 MAC 报头。 |
+| UINT8\[\] | 一个 UINT8 元素的数组，这些元素指定端口接收的最新信号或探测响应帧。 这不包括 802.11 MAC 标头。 |
 
  
 
@@ -52,10 +51,10 @@ UINT8 元素的数组大小 （以字节为单位）。 该数组必须包含一
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
-<td><p>Windows Server 2016</p></td>
+<td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Wditypes.hpp</td>
 </tr>
 </tbody>

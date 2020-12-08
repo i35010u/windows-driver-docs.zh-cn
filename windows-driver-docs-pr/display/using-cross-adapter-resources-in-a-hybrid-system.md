@@ -1,22 +1,21 @@
 ---
 title: 在混合系统中使用跨适配器资源
 description: Windows 显示驱动程序模型 (WDDM) 驱动程序可以支持混合系统，其中跨适配器资源在集成的 GPU 和离散 GPU 之间共享。
-ms.assetid: ECBB0AA7-50C2-41C8-9DC6-6EEFC5CEEB15
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 52968d6f78789bd426809ca861b14bf1c76bf3b2
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 6fd71974d05a191ee9b86bc43e5d9d08eb3c831e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89067128"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96818573"
 ---
 # <a name="span-iddisplayusing_cross-adapter_resources_in_a_hybrid_systemspanusing-cross-adapter-resources-in-a-hybrid-system"></a><span id="display.using_cross-adapter_resources_in_a_hybrid_system"></span>在混合系统中使用跨适配器资源
 
 
 从 Windows 8.1 开始，Windows 显示驱动程序模型 (WDDM) 驱动程序可以支持 *混合系统*，在该系统中， *跨适配器资源* 在集成的 gpu 和离散 gpu 之间共享，并且应用程序可在任一 gpu 上运行，具体取决于应用程序的需求。 操作系统和驱动程序共同确定应用程序应运行的 GPU。
 
-显示微型端口驱动程序应通过设置[**DXGK \_ VIDMMCAPS**](/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgk_vidmmcaps)结构的**CrossAdapterResource**成员来为跨适配器资源提供支持。
+显示微型端口驱动程序应通过设置 [**DXGK \_ VIDMMCAPS**](/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgk_vidmmcaps)结构的 **CrossAdapterResource** 成员来为跨适配器资源提供支持。
 
 驱动程序以不同的方式获取信息，具体取决于分配的类型。 如果分配是传统的全屏幕主副本，则用户模式显示驱动程序将获取创建主副本时通常提供的信息，例如主标志、视频显示网络 (VidPN) 源 ID、刷新率和旋转信息。 但是，如果分配是直接翻转的主副本，则可以将跨适配器分配用作主要副本，但用户模式显示驱动程序将不会获得创建主副本时所提供的常用信息。 此外，在这种情况下，离散用户模式显示驱动程序接收有关主副本的信息，但不应验证它。 集成驱动程序不会接收表明它是主要副本的信息。
 
@@ -30,7 +29,7 @@ ms.locfileid: "89067128"
 
 
 -   系统包含单个集成的 GPU 和单个离散 GPU： *集成的 gpu* 集成到 CPU 芯片中，并输出到集成显示面板，如液晶屏面板。
-    *离散 GPU*通常是一张可移动卡，它通过总线（如 PCI）连接到主板芯片的 "上桥"。
+    *离散 GPU* 通常是一张可移动卡，它通过总线（如 PCI）连接到主板芯片的 "上桥"。
 -   与集成 GPU 相比，离散 GPU 具有明显更高的性能。
 -   离散 GPU 是一种仅呈现设备，无显示输出连接到该设备。
 -   这两个 Gpu 都以物理方式包含在同一机架中，在计算机运行时，不能连接或断开离散 GPU。

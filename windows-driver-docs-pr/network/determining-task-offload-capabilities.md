@@ -1,17 +1,16 @@
 ---
 title: 确定任务卸载功能
 description: 确定任务卸载功能
-ms.assetid: 9348a595-7bc0-467e-aeaf-e23100c99524
 keywords:
 - 任务卸载 WDK TCP/IP 传输，功能
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 50f4892a0d3413c25c9b9bb8d965de4829851e50
-ms.sourcegitcommit: e2de6b9ffb5c7356deb864f9da879533f49b25bf
+ms.openlocfilehash: be69d965e34c2722c1a7b31b39b6c202ab73e58a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/03/2020
-ms.locfileid: "91702608"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96817595"
 ---
 # <a name="determining-task-offload-capabilities"></a>确定任务卸载功能
 
@@ -27,7 +26,7 @@ NDIS 为 [**ndis \_ 绑定 \_ 参数**](/windows-hardware/drivers/ddi/ndis/ns-nd
 
  (或过量驱动程序) 的管理应用程序可以通过查询 [oid \_ TCP \_ 卸载 \_ 当前 \_ 配置](./oid-tcp-offload-current-config.md) OID 来确定网络接口卡的当前任务卸载配置 (NIC) 。
 
-与[OID \_ TCP \_ 卸载 \_ 当前 \_ 配置](./oid-tcp-offload-current-config.md)关联的[**NDIS \_ 卸载**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_offload)结构指定以下各项：
+与 [OID \_ TCP \_ 卸载 \_ 当前 \_ 配置](./oid-tcp-offload-current-config.md)关联的 [**NDIS \_ 卸载**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_offload)结构指定以下各项：
 
 -   标头信息，包括 TCP/IP 传输支持的任务卸载版本。
 
@@ -39,7 +38,7 @@ NDIS 为 [**ndis \_ 绑定 \_ 参数**](/windows-hardware/drivers/ddi/ndis/ns-nd
 
 -   大型发送卸载版本 2 (LSOV2) 信息，在 [**NDIS \_ TCP \_ 大规模 \_ 发送 \_ 卸载 \_ V2**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_tcp_large_send_offload_v2) 结构中。
 
--   Internet 协议安全 ([**IPsecvOV 的) \_ \_ \_ **](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_ipsec_offload_v2) 信息。
+-   Internet 协议安全 ([**IPsecvOV 的) \_ \_ \_**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_ipsec_offload_v2) 信息。
 
 以下主题包含每种类型的卸载服务的特定信息：
 

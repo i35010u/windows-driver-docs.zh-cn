@@ -1,15 +1,14 @@
 ---
 title: '调试 DRIVER_VERIFIER_DETECTED_VIOLATION (C4) '
 description: 驱动程序验证程序检测到驱动程序违反了 NDIS/WiFi 超时规则之一。
-ms.assetid: 73D4B6DF-E667-4C71-B985-FCDC05837908
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 97f502bf5e718eb57f98d0cdaf3d482ec77837df
-ms.sourcegitcommit: cfd4d8ee889c6a3feed79ae112662f6c095b6a36
+ms.openlocfilehash: 699dfb39d5c261b275719472bc9eb8670b50e0a0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94417425"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96817837"
 ---
 # <a name="debugging-ndiswifi-time-out-errors---driver_verifier_detected_violation-c4"></a>调试 NDIS/WiFi 超时错误-驱动程序 \_ 验证器 \_ 检测到 \_ 违反 (C4) 
 
@@ -102,7 +101,7 @@ STACK_TEXT:
 
 ### <a name="use-the-ruleinfo-extension-command"></a>使用！ ruleinfo extension 命令
 
-" **！分析** " 输出的 _ " *DV \_ 规则 \_ 信息：* *" 字段显示了指向命令的链接，你可以使用该命令查找有关此规则冲突的详细信息。 在此示例中，如果单击该链接，它将运行 [**!ruleinfo**](../debugger/-ruleinfo.md)带规则 \_ ID (0x92003) Arg3 和 Arg 4 bug 检查值的！ ruleinfo 命令。
+" **！分析**" 输出的 _ "*DV \_ 规则 \_ 信息：**" 字段显示了指向命令的链接，你可以使用该命令查找有关此规则冲突的详细信息。 在此示例中，如果单击该链接，它将运行 [**!ruleinfo**](../debugger/-ruleinfo.md)带规则 \_ ID (0x92003) Arg3 和 Arg 4 bug 检查值的！ ruleinfo 命令。
 
 ```
 kd> !ruleinfo 0x92003 0xffffffff9c17b860 0xffffffff9c1f3480

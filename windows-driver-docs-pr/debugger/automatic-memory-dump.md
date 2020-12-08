@@ -1,15 +1,14 @@
 ---
 title: 自动内存转储
 description: 自动内存转储
-ms.assetid: A2C71497-7865-4DC8-B760-6121B224737A
 ms.date: 05/08/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: d34cbad11a770496890a73e0722bea9fae518f38
-ms.sourcegitcommit: f610410e1500f0b0a4ca008b52679688ab51033d
+ms.openlocfilehash: 19586e2d0dbfea297b7be5edc2f5e1565c3ff2fc
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/15/2020
-ms.locfileid: "88252903"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96819295"
 ---
 # <a name="automatic-memory-dump"></a>自动内存转储
 
@@ -17,7 +16,7 @@ ms.locfileid: "88252903"
 ## <span id="ddk_kernel_memory_dump_dbg"></span><span id="DDK_KERNEL_MEMORY_DUMP_DBG"></span>
 
 
-*自动内存转储*包含与[内核内存转储](kernel-memory-dump.md)相同的信息。 这两者之间的差异不是转储文件本身，而是 Windows 设置系统分页文件大小的方式。
+*自动内存转储* 包含与 [内核内存转储](kernel-memory-dump.md)相同的信息。 这两者之间的差异不是转储文件本身，而是 Windows 设置系统分页文件大小的方式。
 
 如果系统分页文件大小设置为 **系统管理的大小**，并且内核模式故障转储设置为 **自动内存转储**，则 Windows 可以将页面文件的大小设置为小于 RAM 大小。 在这种情况下，Windows 会设置足够大的页面文件大小，以确保大多数时间都可以捕获内核内存转储。
 
@@ -35,7 +34,7 @@ ms.locfileid: "88252903"
 
 Windows 8 及更高版本中提供自动内存转储。
 
-**注意**   若要在调试自动内存转储时取消丢失页错误消息，请使用 "[**忽略 \_ 缺少的 \_ 页**](-ignore-missing-pages--suppress-missing-page-errors-.md)" 命令。
+**注意**  若要在调试自动内存转储时取消丢失页错误消息，请使用 " [**忽略 \_ 缺少的 \_ 页**](-ignore-missing-pages--suppress-missing-page-errors-.md) " 命令。
 
  
 

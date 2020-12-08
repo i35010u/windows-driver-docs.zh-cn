@@ -1,7 +1,6 @@
 ---
 title: WHQL 测试签名计划
 description: WHQL 测试签名计划
-ms.assetid: 241a8cfe-c7c4-4c88-9d61-831f18f4eb21
 keywords:
 - 驱动程序签名 WDK，WHQL 数字签名
 - 对驱动程序进行签名 WDK，WHQL 数字签名
@@ -11,12 +10,12 @@ keywords:
 - WHQL 数字签名 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 766ae88edeca7fcc91aed128ea14a84d87e128f2
-ms.sourcegitcommit: a16fd2876383265b4ad336dea624e4b13fc13a1b
+ms.openlocfilehash: 871a17d3a7a5b104f4d391f88991dce45a7b6893
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88644025"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96819459"
 ---
 # <a name="whql-test-signature-program"></a>WHQL 测试签名计划
 
@@ -35,7 +34,7 @@ Windows 硬件质量实验室 (WHQL) 测试签名程序支持随后将提交以�
 
 ### <a name="disabling-uac"></a>禁用 UAC
 
-**注意**   若要在测试计算机上禁用 UAC，你必须能够使用登录或提供本地**管理员**组的成员的凭据。
+**注意**  若要在测试计算机上禁用 UAC，你必须能够使用登录或提供本地 **管理员** 组的成员的凭据。
 
  
 
@@ -64,7 +63,7 @@ Windows 硬件质量实验室 (WHQL) 测试签名程序支持随后将提交以�
 
 4.  选择本地计算机文件夹，然后选择 **"确定"**。
 
-    **注意**   如果以前在测试计算机上未禁用 UAC，则不会显示 "本地计算机" 文件夹。
+    **注意**  如果以前在测试计算机上未禁用 UAC，则不会显示 "本地计算机" 文件夹。
 
      
 

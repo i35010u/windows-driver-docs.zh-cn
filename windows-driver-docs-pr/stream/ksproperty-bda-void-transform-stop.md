@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ BDA \_ VOID \_ 转换 \_ 停止
 description: 客户端使用 KSPROPERTY \_ BDA \_ VOID \_ 转换 \_ 停止来停止节点的操作。
-ms.assetid: fa9a7cb3-b802-4417-a2cc-9061f95cce67
 keywords:
 - KSPROPERTY_BDA_VOID_TRANSFORM_STOP 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8a25eb1255296ce95b49ced954c1282643ae070d
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 708c2af8e15eeb945b6c4a4c8520032657cc5b61
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89190557"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96817931"
 ---
 # <a name="ksproperty_bda_void_transform_stop"></a>KSPROPERTY \_ BDA \_ VOID \_ 转换 \_ 停止
 
@@ -71,7 +70,7 @@ ms.locfileid: "89190557"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Bdamedia (包含 Bdamedia) </td>
 </tr>
 </tbody>

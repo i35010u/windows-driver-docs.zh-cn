@@ -1,17 +1,16 @@
 ---
 title: 带批注的 x64 反汇编
 description: 带批注的 x64 反汇编
-ms.assetid: 67930062-8a3a-460f-ae56-248d2a8e131e
 keywords:
 - x64 处理器，带批注的反汇编
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 62993cca9e37a60ae1a6b674e15bc219f10404c0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ccc39659059a640bf9122e6d2a3bf84cc88fdcb6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63355390"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96819323"
 ---
 # <a name="annotated-x64-disassembly"></a>带批注的 x64 反汇编
 
@@ -19,7 +18,7 @@ ms.locfileid: "63355390"
 ## <span id="ddk_annotated_x64_disassembly_dbg"></span><span id="DDK_ANNOTATED_X64_DISASSEMBLY_DBG"></span>
 
 
-下面的简单函数演示了 x64 调用约定。
+下面非常简单的函数说明了 x64 调用约定。
 
 ```cpp
 int Simple(int i, int j)
@@ -28,7 +27,7 @@ int Simple(int i, int j)
 }
 ```
 
-这将编译为类似如下的代码：
+这将编译为类似于下面的代码：
 
 ```dbgcmd
 01001080 lea     eax,[rdx+rcx*4]        ; eax = rdx+rcx*4
@@ -36,19 +35,19 @@ int Simple(int i, int j)
 01001087 ret
 ```
 
-*我*并*j*中传递参数时**ecx**并**edx**注册，分别。 由于只有两个参数，该例程不完全使用堆栈。
+*I* 和 *j* 参数分别在 **ecx** 和 **edx** 寄存器中传递。 由于只有两个参数，例程根本不使用堆栈。
 
-生成的特定代码利用三个技巧，其中之一是特定于 x64:
+生成的特定代码利用三个技巧，其中一种是特定于 x64 的：
 
-1.  **逆转**操作可用于执行一系列简单的算术运算作为单个操作。 第一个指令存储*j + 我*\*中的第 4 **eax**，并将添加第二个说明*我*+ 3 表明汽车到结果中，总共*j* +*我*\*5 + 3。
+1.  **逆转** 操作可用于将一系列简单的算术运算作为单个操作执行。 第一条指令在 eax 中存储 *j + i* \* 4，第二个指令将 *i*+ 3 添加到结果，总共 **eax** *j* + *i* \* 5 + 3。
 
-2.  许多操作，例如加法和乘法，可以通过额外精度，然后截断为正确的精度。 在此情况下，代码使用 64 位加法和乘法。 我们可以安全地截断到 32 位的结果。
+2.  许多运算（如加法和乘法）可以通过额外的精度来完成，然后截断为正确的精度。 在此实例中，代码使用64位加法和乘法。 可以安全地将结果截断为32位。
 
-3.  在 x64 上的任何操作都自动输出到 32 位寄存器补零结果。 在这种情况下，输出到**eax**起的截断到 32 位的结果。
+3.  在 x64 上，任何输出到32位寄存器的操作都将自动零扩展结果。 在这种情况下，输出到 **eax** 的效果是将结果截断为32位。
 
-返回值，请传入**rax**注册。 在这种情况下，结果中已**rax**注册，因此该函数返回。
+返回值是在 **rax** 寄存器中传递的。 在这种情况下，结果已在 **rax** 注册中，因此该函数返回。
 
-接下来我们考虑更复杂的函数，从而演示典型 x64 反汇编：
+接下来，我们考虑使用更复杂的函数来演示典型的 x64 反汇编：
 
 ```cpp
 HRESULT Meaningless(IDispatch *pdisp, DISPID dispid, BOOL fUnique, LPCWSTR pszExe)
@@ -88,21 +87,21 @@ HRESULT Meaningless(IDispatch *pdisp, DISPID dispid, BOOL fUnique, LPCWSTR pszEx
 }
 ```
 
-我们将通过此函数和等效的程序集行的行。
+我们将通过行来完成此函数和等效的程序集。
 
-输入时，该函数的参数存储，如下所示：
+输入时，函数的参数按如下方式存储：
 
--   **rcx** = *pdisp*。
+-   **rcx**  = *pdisp*。
 
--   **rdx** = *dispid*。
+-   **rdx**  = *dispid*。
 
--   **r8** = *fUnique*。
+-   **r8**  = *fUnique*。
 
--   **r9** = *pszExe*.
+-   **r9**  = *pszExe*。
 
-回想一下，在寄存器中传递的前四个参数。 由于此函数只需四个寄存器，都是在堆栈上传递。
+请记住，在寄存器中传递了前四个参数。 由于此函数只有四个寄存器，因此不会在堆栈上传递任何。
 
-程序集开始，如下所示：
+程序集的开头如下所示：
 
 ```dbgcmd
 Meaningless:
@@ -120,14 +119,14 @@ Meaningless:
 010010fb mov     rsi,rcx                ; rsi = pdisp
 ```
 
-此函数首先保存非易失寄存器，然后保留堆栈空间的本地变量。 然后将参数保存在非易失性寄存器中。 请注意，中间两个目标**mov**说明是 32 位寄存器，因此它们是隐式为 64 位扩展为零。
+函数首先保存非易失寄存器，然后保留用于本地变量的堆栈空间。 然后，它将在非易失寄存器中保存参数。 请注意，中间两个 **mov** 指令的目标是32位寄存器，因此它们隐式扩展到64位。
 
 ```dbgcmd
     IQueryAssociations *pqa;
     HRESULT hr = AssocCreate(CLSID_QueryAssociations, IID_IQueryAssociations, (void**)&pqa);
 ```
 
-第一个参数**AssocCreate**是 128 位 CLSID 按值传递。 由于这不适合在 64 位寄存器，CLSID 复制到堆栈，并改为传递到堆栈位置的指针。
+**AssocCreate** 的第一个参数是通过值传递的128位 CLSID。 由于它不适合64位寄存器，因此会将 CLSID 复制到堆栈，并改为传递指向堆栈位置的指针。
 
 ```dbgcmd
 010010fe movdqu  xmm0,oword ptr [CLSID_QueryAssociations (01001060)]
@@ -138,7 +137,7 @@ Meaningless:
 0100111d call qword ptr [_imp_AssocCreate (01001028)] ; call
 ```
 
-**Movdqu**指令将转移 128 位值，与 **xmm * * * n*注册。 在此情况下，程序集代码使用它来复制到堆栈的 CLSID。 对 CLSID 的指针传入**r8**。 其他两个参数中传递**rcx**并**rdx**。
+**Movdqu** 指令将128位值与 **xmm**_n_ 寄存器之间传输。 在此实例中，程序集代码使用它将 CLSID 复制到堆栈。 指向 CLSID 的指针传递在 **r8** 中。 另外两个参数传递在 **rcx** 和 **rdx** 中。
 
 ```dbgcmd
     if (SUCCEEDED(hr)) {
@@ -147,7 +146,7 @@ Meaningless:
 01001125 jl      ReturnEAX (01001281)
 ```
 
-代码检查以查看返回的值是否成功完成。
+代码将检查返回值是否成功。
 
 ```dbgcmd
         hr = pqa->Init(ASSOCF_INIT_BYEXENAME, pszExe, NULL, NULL);
@@ -163,7 +162,7 @@ Meaningless:
 0100114a call    qword ptr [rax+0x18]   ; call Init method
 ```
 
-这是一个间接函数调用使用C++vtable。 **这**指针传入**rcx**作为第一个参数。 前三个参数将传入寄存器，而在堆栈上传递的最后一个参数。 该函数会保留在寄存器中传递，因此在开始第五个参数的参数的 16 个字节**rsp**+ 0x20。
+这是使用 c + + vtable 的间接函数调用。 **This** 指针在 **rcx** 中作为第一个参数传递。 前三个参数在寄存器中传递，而最后一个参数传递到堆栈上。 此函数为寄存器中传递的参数保留16个字节，因此第五个参数从 **rsp**+ 0x20 开始。
 
 ```dbgcmd
         if (SUCCEEDED(hr)) {
@@ -173,7 +172,7 @@ Meaningless:
 01001151 jl      ReleasePQA (01001274)  ; jump if so
 ```
 
-此程序集语言代码将保存在结果**ebx**，并检查它是否成功代码。
+汇编语言代码将结果保存在 **ebx** 中，并检查是否为成功代码。
 
 ```dbgcmd
             WCHAR wszName[MAX_PATH];
@@ -197,7 +196,7 @@ Meaningless:
 01001190 jl      ReleasePQA (01001274)  ; jump if so
 ```
 
-再次重申，我们设置的参数和调用函数，然后测试成功的返回值。
+接下来，我们设置参数并调用一个函数，然后测试返回值是否成功。
 
 ```dbgcmd
                 VARIANTARG rgvarg[2] = { 0 };
@@ -208,7 +207,7 @@ Meaningless:
 010011a5 rep     stosb                  ; Zero it out
 ```
 
-在 x64 上的缓冲区清零的惯用方法是 x86 相同。
+用于对 x64 上的缓冲区进行清零的惯用方法与 x86 相同。
 
 ```dbgcmd
                 V_VT(&rgvarg[0]) = VT_BSTR;
@@ -231,7 +230,7 @@ Meaningless:
 010011e0 add     ecx,0x1
 ```
 
-**InterlockedIncrement**直接为机器代码编译。 **锁定 xadd**指令执行原子交换，并添加。 最终结果存储在**ecx**。
+**InterlockedIncrement** 直接编译到计算机代码。 **Lock xadd** 指令执行原子交换并添加。 最终的结果存储在 **ecx** 中。
 
 ```dbgcmd
                     V_VT(&rgvarg[1]) = VT_I4;
@@ -244,7 +243,7 @@ Meaningless:
 010011f6 mov     [rsp+0xa0],eax             ; V_I4(&rgvarg[1]) = ...
 ```
 
-由于支持 x64 **cmov**指令 **？:** 构造可编译而无需使用跳转。
+由于 x64 支持 **cmov** 指令，因此无需使用跳转即可编译 **？：** 构造。
 
 ```dbgcmd
                     dp.rgvarg = rgvarg;
@@ -259,7 +258,7 @@ Meaningless:
 01001214 mov     [rsp+0x74],r14d            ; dp.cNamedArgs = 0
 ```
 
-此代码将初始化 DISPPARAMS 的成员的其余部分。 请注意，编译器将重用以前使用 CLSID 的堆栈上的空间。
+此代码初始化 DISPPARAMS 的其余成员。 请注意，编译器将重用以前由 CLSID 使用的堆栈上的空间。
 
 ```dbgcmd
                     hr = pdisp->Invoke(dispid, IID_NULL, 0, DISPATCH_METHOD, &dp, NULL, NULL, NULL);
@@ -279,7 +278,7 @@ Meaningless:
 0100124f mov     ebx,eax                    ; hr = result
 ```
 
-代码随后设置参数和调用**Invoke**方法。
+然后，该代码设置参数并调用 **Invoke** 方法。
 
 ```dbgcmd
                     VariantClear(&rgvarg[0]);
@@ -292,7 +291,7 @@ Meaningless:
 0100126d jmp     ReleasePQA (01001274)
 ```
 
-代码完成的当前分支的条件，并跳过**其他**分支。
+代码完成条件的当前分支，并跳过 **else** 分支。
 
 ```dbgcmd
                 } else {
@@ -309,7 +308,7 @@ ReleasePQA:
 0100127c call    qword ptr [rax+0x10]       ; release
 ```
 
-**其他**分支。
+**Else** 分支。
 
 ```dbgcmd
     return hr;
@@ -328,7 +327,7 @@ ReturnEAX:
 01001293 ret                                ; return (do not pop arguments)
 ```
 
-返回值存储在**rax**，且返回前还原非易失寄存器是。
+返回值存储在 **rax** 中，然后在返回前还原非易失性寄存器。
 
  
 

@@ -1,7 +1,6 @@
 ---
 title: 控制断点标志和参数
 description: 控制断点标志和参数
-ms.assetid: ed702f01-2a30-4ffb-a804-167cf3b19936
 keywords:
 - 断点、标志和参数
 - DEBUG_BREAK_READ
@@ -10,12 +9,12 @@ keywords:
 - DEBUG_BREAK_IO
 ms.date: 05/13/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: f3ea6e6c2caa8f0949040aa4418df9a725d49f27
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 0803933220e5a5ef8e9f4c5c83d42286ba121b9d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89207343"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96819190"
 ---
 # <a name="controlling-breakpoint-flags-and-parameters"></a>控制断点标志和参数
 
@@ -67,7 +66,7 @@ ms.locfileid: "89207343"
 断点参数还包括：
 
 <span id="Pass_count"></span><span id="pass_count"></span><span id="PASS_COUNT"></span>*传递计数*  
-如果断点有一个与之关联的传递计数，则在目标已将断点传递到指定次数之前，将不会激活该断点。 最初设置的传递计数可通过使用 [**GetPassCount**](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugbreakpoint2-getpasscount)来查找。 在激活之前，引擎将在断点之前传递断点的[**次数。**](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugbreakpoint2-getcurrentpasscount) 通过使用 [**SetPassCount**](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugbreakpoint2-setpasscount)，可以将传递计数重置为新值。
+如果断点有一个与之关联的传递计数，则在目标已将断点传递到指定次数之前，将不会激活该断点。 最初设置的传递计数可通过使用 [**GetPassCount**](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugbreakpoint2-getpasscount)来查找。 在激活之前，引擎将在断点之前传递断点的 [**次数。**](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugbreakpoint2-getcurrentpasscount) 通过使用 [**SetPassCount**](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugbreakpoint2-setpasscount)，可以将传递计数重置为新值。
 
 <span id="Match_thread"></span><span id="match_thread"></span><span id="MATCH_THREAD"></span>*匹配线程*  
 如果该断点有一个关联的线程，则在任何其他线程遇到该断点时，它将被其忽略。 可以通过使用 [**GetMatchThreadId**](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugbreakpoint2-getmatchthreadid)找到该线程，并且可以使用 [**SetMatchThreadId**](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugbreakpoint2-setmatchthreadid)更改该线程。
@@ -92,8 +91,8 @@ ms.locfileid: "89207343"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">值</th>
-<th align="left">说明</th>
+<th align="left">“值”</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>

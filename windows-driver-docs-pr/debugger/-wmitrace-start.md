@@ -1,7 +1,6 @@
 ---
 title: wmitrace
 description: Wmitrace 扩展在目标计算机上启动 Windows (ETW) 记录器的事件跟踪。
-ms.assetid: 52ed0c5a-6ca9-4890-bae5-54394bc43d51
 keywords:
 - wmitrace Windows 调试
 ms.date: 05/23/2017
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 40163c87bed97186bd7e8eb77d64ae6741fc3426
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: a3fbaa93cc32b9f40724eb02ab1e941d12c01dec
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89207675"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96819367"
 ---
 # <a name="wmitracestart"></a>!wmitrace.start
 
 
-**！ Wmitrace**扩展将在目标计算机上启动 WINDOWS (ETW) 记录器的事件跟踪。
+**！ Wmitrace** 扩展将在目标计算机上启动 WINDOWS (ETW) 记录器的事件跟踪。
 
 ```dbgcmd
 !wmitrace.start LoggerName [-cir Size | -seq Size] [-f File] [-b Size] [-max Num] [-min Num] [-kd] [-ft Time] 
@@ -58,7 +57,7 @@ ms.locfileid: "89207675"
 <span id="_______-ft_______Time______"></span><span id="_______-ft_______time______"></span><span id="_______-FT_______TIME______"></span>**-ft** *时间*   
 指定刷新计时器的持续时间（以秒为单位）。 从 Windows 8 开始，可以通过将 **ms** 追加到 *时间* 值来指定刷新计时器的持续时间（以毫秒为单位）。 例如， **-ft 100ms**。
 
-**注意**   如果在 KD filter 模式下启动跟踪会话 (**-KD**) ，则目标计算机上的跟踪缓冲区将发送到主计算机上的调试程序以供显示。 此参数指定将目标计算机上的缓冲区刷新并发送到主计算机的频率。
+**注意**  如果在 KD filter 模式下启动跟踪会话 (**-KD**) ，则目标计算机上的跟踪缓冲区将发送到主计算机上的调试程序以供显示。 此参数指定将目标计算机上的缓冲区刷新并发送到主计算机的频率。
 
  
 
@@ -75,7 +74,7 @@ Windows 7 和更高版本的 Windows 中提供了此扩展。
 <a name="remarks"></a>备注
 -------
 
-使用此扩展后，你必须继续执行程序 (例如，通过使用 [**g (转) **](g--go-.md) 命令) ，使其生效。 经过一段时间后，目标计算机会自动中断到调试器。
+使用此扩展后，你必须继续执行程序 (例如，通过使用 [**g (转)**](g--go-.md) 命令) ，使其生效。 经过一段时间后，目标计算机会自动中断到调试器。
 
 启动跟踪会话时，系统会为其分配一个序号 (*记录器 ID*) 。 然后，可以通过记录器名称或记录器 ID 引用会话。
 

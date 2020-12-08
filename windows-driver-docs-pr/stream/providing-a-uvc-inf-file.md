@@ -1,7 +1,6 @@
 ---
 title: 提供 UVC INF 文件
 description: 提供 UVC INF 文件
-ms.assetid: 44311eb8-1035-466c-878b-a5d964b34490
 keywords:
 - INF 文件 WDK USB 视频类
 - UVC INF 文件 WDK USB 视频类
@@ -9,12 +8,12 @@ keywords:
 - 示例代码 WDK USB 视频类，UVC INF 文件
 ms.date: 09/12/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 06d5d7efdc4a8a0f13ccb5c0564027aee8b71492
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: ef6f5a1bc8ea8c96b6e479526c5920af079454fe
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89188002"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96818753"
 ---
 # <a name="providing-a-uvc-inf-file"></a>提供 UVC INF 文件
 
@@ -72,7 +71,7 @@ INF 还需要 CopyFiles 部分，将插件复制到系统文件夹。
 MyPlugin.ax
 ```
 
-以下 INF AddReg 部分的第一部分将注册该插件。  此部分的剩余部分显示基于节点的扩展单元插件的注册表项。 有关类似示例，请参阅*Usbvideo。*
+以下 INF AddReg 部分的第一部分将注册该插件。  此部分的剩余部分显示基于节点的扩展单元插件的注册表项。 有关类似示例，请参阅 *Usbvideo。*
 
 ```INF
 [MyDevice.PlugIns]
@@ -114,7 +113,7 @@ HKR,,RTCFlags,0x00010001,0x00000010
 HKR,,EnableDependentStillPinCapture,0x00010001,1
 ```
 
-还可以定义一个名为 **UvcFlags**的可选注册表值。 **UvcFlags** 应为 DWORD 值。 设备接通电源时，UVC 驱动程序将接收即插即用 (PnP) 启动请求。 然后，驱动程序会在设备注册表项中搜索 **UvcFlags** 。 DWORD 值是一个位掩码，可以包含下表中的值。
+还可以定义一个名为 **UvcFlags** 的可选注册表值。 **UvcFlags** 应为 DWORD 值。 设备接通电源时，UVC 驱动程序将接收即插即用 (PnP) 启动请求。 然后，驱动程序会在设备注册表项中搜索 **UvcFlags** 。 DWORD 值是一个位掩码，可以包含下表中的值。
 
 <table>
 <colgroup>

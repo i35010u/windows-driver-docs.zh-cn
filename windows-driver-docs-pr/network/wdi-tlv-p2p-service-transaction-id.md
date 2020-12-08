@@ -1,22 +1,21 @@
 ---
 title: WDI_TLV_P2P_SERVICE_TRANSACTION_ID
-description: WDI_TLV_P2P_SERVICE_TRANSACTION_ID 是包含要用于 ANQP 查询请求的服务事务 ID TLV。
-ms.assetid: 93CBE158-4595-40FC-A574-B818B2324DBF
+description: WDI_TLV_P2P_SERVICE_TRANSACTION_ID 是一个 TLV，其中包含要用于 ANQP 查询请求的服务事务 ID。
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_P2P_SERVICE_TRANSACTION_ID 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 8be04495b3fa32b2447fb26f965ec6874cd0c5d8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 81ec8ac50c1d7aa35a4c084938b44d63161f6e79
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63375639"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96818131"
 ---
-# <a name="wditlvp2pservicetransactionid"></a>WDI\_TLV\_P2P\_SERVICE\_TRANSACTION\_ID
+# <a name="wdi_tlv_p2p_service_transaction_id"></a>WDI \_ TLV \_ P2P \_ 服务 \_ 事务 \_ ID
 
 
-WDI\_TLV\_P2P\_服务\_事务\_ID 是包含要用于 ANQP 查询请求的服务事务 ID TLV。
+WDI \_ tlv \_ P2P \_ SERVICE \_ TRANSACTION \_ id 是一个 tlv，其中包含要用于 ANQP 查询请求的服务事务 ID。
 
 ## <a name="tlv-type"></a>TLV 类型
 
@@ -26,12 +25,12 @@ WDI\_TLV\_P2P\_服务\_事务\_ID 是包含要用于 ANQP 查询请求的服务�
 ## <a name="length"></a>长度
 
 
-超出 UINT8 的大小 （以字节为单位）。
+UINT8 的大小 (以字节为单位) 。
 
 ## <a name="values"></a>值
 
 
-| 在任务栏的搜索框中键入  | 描述                                                       |
+| 类型  | 描述                                                       |
 |-------|-------------------------------------------------------------------|
 | UINT8 | 要用于 ANQP 查询请求的服务事务 ID。 |
 
@@ -52,10 +51,10 @@ WDI\_TLV\_P2P\_服务\_事务\_ID 是包含要用于 ANQP 查询请求的服务�
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
-<td><p>Windows Server 2016</p></td>
+<td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Wditypes.hpp</td>
 </tr>
 </tbody>

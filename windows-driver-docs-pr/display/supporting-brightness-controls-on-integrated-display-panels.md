@@ -1,7 +1,6 @@
 ---
 title: 在集成显示面板上支持亮度控件
 description: 在集成显示面板上支持亮度控件
-ms.assetid: d32ee274-569e-4adc-a723-28dc756fb177
 keywords:
 - 亮度 WDK 显示
 - 基于 ACPI 的亮度热键显示屏
@@ -10,21 +9,21 @@ keywords:
 - 自动显示亮度 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: aecd4b361126724ee4f46701c43b333bca96c03f
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: b89ee89b189b583cdd4512cafff0e58b7b7af6e6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89066328"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96818587"
 ---
 # <a name="supporting-brightness-controls-on-integrated-display-panels"></a>在集成显示面板上支持亮度控件
 
 
 亮度控制在操作系统提供的监视驱动程序 Monitor.sys 中实现。 监视驱动程序实现 Windows Management Instrumentation (WMI) 接口，以允许应用程序 (例如操作系统的亮度滑块) 以与亮度级别交互。 监视驱动程序将向设备电源策略引擎注册 (DPPE) ，以便亮度级别对电源策略中的更改做出响应。 监视驱动程序将向高级配置和电源接口注册 (ACPI) 来处理基于 ACPI 的亮度快捷键。 为了与 [Windows 2000 显示器驱动程序模型](windows-2000-display-driver-model-design-guide.md)兼容，监视驱动程序实现了基于 IOCTL 的亮度控件。
 
-系统基本输入/输出系统公开的显示微型端口驱动程序或 ACPI 方法 (BIOS) 可以支持更改集成显示面板的亮度。 对于标记为具有在计算机内部连接的输出技术的第一个视频目标 ([**D3DKMDT \_ VOT \_ INTERNAL**](/windows-hardware/drivers/ddi/d3dkmdt/ne-d3dkmdt-_d3dkmdt_video_output_technology)) ，监视驱动程序调用显示微型端口驱动程序的[**DXGKDDIQUERYINTERFACE**](/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgkddi_query_interface)函数来查询由 guid DEVINTERFACE [Brightness Control Interface](/windows-hardware/drivers/ddi/index) \_ \_ 亮度 \_ 2 和 DXGK 亮度接口版本1标识的亮度控制接口 \_ \_ \_ \_ ，并使用[亮度控制接口 (自适应和平滑亮度控制) ](/windows-hardware/drivers/ddi/index)由 GUID \_ DEVINTERFACE \_ 亮度和 DXGK \_ 亮度 \_ 接口 \_ 版本 \_ 2 标识。 如果显示微型端口驱动程序不支持至少亮度控制接口，则监视驱动程序将使用 ACPI \_ \_ 在子设备上查询 BCL、BCM 和 \_ BQC 方法。 有关这些方法的详细信息，请参阅 [acpi 网站](https://go.microsoft.com/fwlink/p/?linkid=57185)上的 acpi 规范。
+系统基本输入/输出系统公开的显示微型端口驱动程序或 ACPI 方法 (BIOS) 可以支持更改集成显示面板的亮度。 对于标记为具有在计算机内部连接的输出技术的第一个视频目标 ([**D3DKMDT \_ VOT \_ INTERNAL**](/windows-hardware/drivers/ddi/d3dkmdt/ne-d3dkmdt-_d3dkmdt_video_output_technology)) ，监视驱动程序调用显示微型端口驱动程序的 [**DXGKDDIQUERYINTERFACE**](/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgkddi_query_interface)函数来查询由 guid DEVINTERFACE [Brightness Control Interface](/windows-hardware/drivers/ddi/index) \_ \_ 亮度 \_ 2 和 DXGK 亮度接口版本1标识的亮度控制接口 \_ \_ \_ \_ ，并使用 [亮度控制接口 (自适应和平滑亮度控制)](/windows-hardware/drivers/ddi/index)由 GUID \_ DEVINTERFACE \_ 亮度和 DXGK \_ 亮度 \_ 接口 \_ 版本 \_ 2 标识。 如果显示微型端口驱动程序不支持至少亮度控制接口，则监视驱动程序将使用 ACPI \_ \_ 在子设备上查询 BCL、BCM 和 \_ BQC 方法。 有关这些方法的详细信息，请参阅 [acpi 网站](https://go.microsoft.com/fwlink/p/?linkid=57185)上的 acpi 规范。
 
-**注意**   在 Windows 显示器驱动程序模型 (WDDM) 中，不使用 ACPI 标识符标识集成的显示面板。 这不同于 [Windows 2000 显示器驱动程序模型](windows-2000-display-driver-model-design-guide.md)，后者仅支持标识符为0x0110 的显示面板。
+**注意**   在 Windows 显示器驱动程序模型 (WDDM) 中，不使用 ACPI 标识符标识集成的显示面板。 这不同于 [Windows 2000 显示器驱动程序模型](windows-2000-display-driver-model-design-guide.md)，后者仅支持标识符为0x0110 的显示面板。
 
  
 
@@ -92,7 +91,7 @@ ms.locfileid: "89066328"
 
     在后一个示例中，1是最后一个可用值，因此驱动程序将亮度级别设置为1，即使它小于之前值5的5% 单位不同。
 
-    通过更改 DWORD 的值，可以重写此默认的监视器驱动程序行为。 以下注册表项中的**MinimumStepPercentage** ：
+    通过更改 DWORD 的值，可以重写此默认的监视器驱动程序行为。 以下注册表项中的 **MinimumStepPercentage** ：
 
     `HKEY_LOCAL_MACHINE\ SYSTEM\ CurrentControlSet\ Services\`*监视器*`\ Parameters\`
 

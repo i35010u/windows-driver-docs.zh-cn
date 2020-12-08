@@ -1,24 +1,23 @@
 ---
 title: WDI_TLV_P2P_INSTANCE_NAME
-description: WDI_TLV_P2P_INSTANCE_NAME 是包含该服务的实例名称 TLV。
-ms.assetid: 36CB51E2-D8CB-4C71-B2DB-77F4FDBB8B90
+description: WDI_TLV_P2P_INSTANCE_NAME 为 TLV，其中包含服务的实例名称。
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_P2P_INSTANCE_NAME 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 4d26711f00edc3d1cf677d0a2c3b5b765295d29f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7547cddeb19f4ce7f270f3461025795cc25adb77
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63347257"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96818241"
 ---
-# <a name="wditlvp2pinstancename"></a>WDI\_TLV\_P2P\_INSTANCE\_NAME
+# <a name="wdi_tlv_p2p_instance_name"></a>WDI \_ TLV \_ P2P \_ 实例 \_ 名称
 
 
-WDI\_TLV\_P2P\_实例\_名称是包含该服务的实例名称 TLV。
+WDI \_ tlv \_ P2P \_ INSTANCE \_ name 是包含服务的实例名称的 tlv。
 
-**请注意**  此 TLV 添加 Windows 10，版本 1607，WDI 版本 1.0.21 中。
+**注意**  此 TLV 已添加到 Windows 10 版本1607，WDI 版本1.0.21 中。
 
  
 
@@ -30,14 +29,14 @@ WDI\_TLV\_P2P\_实例\_名称是包含该服务的实例名称 TLV。
 ## <a name="length"></a>长度
 
 
-UINT8 元素的数组大小 （以字节为单位）。 该数组必须包含一个或多个元素。
+UINT8 元素数组的大小 (以字节为单位) 。 数组必须包含1个或多个元素。
 
 ## <a name="values"></a>值
 
 
-| 在任务栏的搜索框中键入      | 描述                                                     |
+| 类型      | 描述                                                     |
 |-----------|-----------------------------------------------------------------|
-| UINT8\[\] | 中-8，最多 63 个字节长的服务实例名称。 |
+| UINT8\[\] | UTF-8 中服务的实例名称，长度最大为63个字节。 |
 
  
 
@@ -56,10 +55,10 @@ UINT8 元素的数组大小 （以字节为单位）。 该数组必须包含一
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
-<td><p>Windows Server 2016</p></td>
+<td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Wditypes.hpp</td>
 </tr>
 </tbody>

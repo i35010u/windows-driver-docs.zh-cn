@@ -1,16 +1,15 @@
 ---
 title: 使用 Windows 调试器调试托管代码
 description: 可以使用 windows 调试器 (WinDbg、CDB 和 NTSD) 调试包含托管代码的目标应用程序。
-ms.assetid: eb4cc883-71ac-4a57-8654-07c3120310c0
 keywords: 调试，调试，Windbg，托管代码调试，.NET 公共语言运行时，公共语言运行时，CLR，JIT 编译器，实时编译代码
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 022e2daa59166a43ad78a4786ba4d8dd6c20b4ce
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 545dba2a40a7258fb0b7ecf81098a269a71b7d6f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89213481"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96817521"
 ---
 # <a name="debugging-managed-code-using-the-windows-debugger"></a>使用 Windows 调试器调试托管代码
 
@@ -22,7 +21,7 @@ Windows 调试器独立于 Visual Studio 调试器。 有关 Windows 调试器�
 
 托管代码与 Microsoft .NET 公共语言运行时 (CLR) 一起执行。 在托管代码应用程序中，编译器生成的二进制代码为 Microsoft 中间语言 (MSIL) ，后者独立于平台。
 
-运行托管代码时，运行时将生成特定于平台的本机代码。 从 MSIL 生成本机代码的过程称为 "实时 * (JIT) 编译*"。 JIT 编译器编译了特定方法的 MSIL 后，该方法的本机代码将保留在内存中。 以后调用此方法时，本地代码执行，并且 JIT 编译器不必涉及。
+运行托管代码时，运行时将生成特定于平台的本机代码。 从 MSIL 生成本机代码的过程称为 "实时 *(JIT) 编译*"。 JIT 编译器编译了特定方法的 MSIL 后，该方法的本机代码将保留在内存中。 以后调用此方法时，本地代码执行，并且 JIT 编译器不必涉及。
 
 您可以使用多个软件创建者制造的多个编译器生成托管代码。 具体而言，Microsoft Visual Studio 可以从多种不同的语言（包括 c #、Visual Basic、JScript 和 c + + 以及托管扩展）生成托管代码。
 
@@ -44,7 +43,7 @@ Windows 调试器独立于 Visual Studio 调试器。 有关 Windows 调试器�
 - 数据访问组件 (DAC)  ( # A0) 
 - [SOS 调试扩展 ( # A0) ](/dotnet/framework/tools/sos-dll-sos-debugging-extension)
 
-**注意**   对于所有版本的 .NET Framework，将 mscordacwks.dll DAC 的文件名，并 sos.dll SOS 调试扩展的文件名。
+**注意**  对于所有版本的 .NET Framework，将 mscordacwks.dll DAC 的文件名，并 sos.dll SOS 调试扩展的文件名。
 
 ### <a name="getting-the-sos-debugging-extension-sosdll"></a>正在获取 SOS 调试扩展 ( # A0) 
 
@@ -52,7 +51,7 @@ Windows 调试器独立于 Visual Studio 调试器。 有关 Windows 调试器�
 
 对于 .NET Framework 版本2.0 及更高版本，.NET Framework 安装中包含 sos.dll。
 
-用于版本1。.NET Framework 的*x* ，.NET Framework 安装中未包含 sos.dll。 获取 .NET Framework 1 sos.dll。*x*下载适用于 Windows 的 Windows 7 调试工具的32位版本。
+用于版本1。.NET Framework 的 *x* ，.NET Framework 安装中未包含 sos.dll。 获取 .NET Framework 1 sos.dll。*x* 下载适用于 Windows 的 Windows 7 调试工具的32位版本。
 
 适用于 windows 7 的 windows 7 调试工具包含在 Windows 7 的 Windows SDK 中，这两个位置可用：
 
@@ -78,9 +77,9 @@ CLR DLL status: Loaded DLL C:\Windows\Microsoft.NET\Framework64\v4.0.30319\mscor
 
 若要验证 mscordacwks.dll 的版本是否与应用程序所使用的 CLR 的版本相匹配，请输入以下命令之一以显示有关加载的 CLR 模块的信息。
 
-适用于版本4.0 的 CLR) 的**lmv mclr** (
+适用于版本4.0 的 CLR) 的 **lmv mclr** (
 
-CLR) 版本1.0 或2.0 的**lmv mscorwks.dll** (
+CLR) 版本1.0 或2.0 的 **lmv mscorwks.dll** (
 
 输出应类似于此。
 
@@ -95,11 +94,11 @@ start             end                 module name
 
 使用 [**cordll**](-cordll--control-clr-debugging-.md) 加载 DAC 时，SOS 调试扩展 ( # A0) 可能会自动加载。 如果 sos.dll 不会自动加载，则可以使用其中一个命令将其加载。
 
-loadby) 的 CLR 版本4.0 的**sos clr** (
+loadby) 的 CLR 版本4.0 的 **sos clr** (
 
 **loadby sos mscorwks.dll** (，适用于 CLR) 的版本1.0 或2。0
 
-作为使用[**loadby**](-load---loadby--load-extension-dll-.md)的替代方法，可以使用 **。** 例如，若要加载64位 CLR 版本4.0，你可以输入类似于下面的命令。
+作为使用 [**loadby**](-load---loadby--load-extension-dll-.md)的替代方法，可以使用 **。** 例如，若要加载64位 CLR 版本4.0，你可以输入类似于下面的命令。
 
 **。 load C： \\ Windows \\ Microsoft.NET \\ Framework64 \\ v 4.0.30319 \\sos.dll**
 
@@ -121,9 +120,9 @@ DAC ( # A0) 附带了 .NET Framework，但假设你没有在运行调试器的�
 
 输入这些命令。
 
-**. sympath + srv \\ *** (将符号服务器添加到符号路径。 ) 
+**. sympath + srv \\** _ (将符号服务器添加到符号路径。 ) 
 
-**！符号干扰**
+_ *！符号干扰**
 
 **。 cordll-i-u-l**
 

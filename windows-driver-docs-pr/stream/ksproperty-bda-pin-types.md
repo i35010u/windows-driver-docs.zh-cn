@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ BDA \_ 引脚 \_ 类型
 description: 客户端使用 KSPROPERTY \_ BDA \_ pin \_ 类型来检索 PIN 类型的列表。
-ms.assetid: de11ab3c-a787-4831-aad4-e97f46432032
 keywords:
 - KSPROPERTY_BDA_PIN_TYPES 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cb3208d967b9a5df393ec582e9780b4f2509118c
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: c13415b016a4499acd0f76a4b552ab9b5e601726
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89192403"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96818761"
 ---
 # <a name="ksproperty_bda_pin_types"></a>KSPROPERTY \_ BDA \_ 引脚 \_ 类型
 
@@ -82,7 +81,7 @@ ms.locfileid: "89192403"
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**BdaPropertyPinTypes**](/windows-hardware/drivers/ddi/bdasup/nf-bdasup-bdapropertypintypes)

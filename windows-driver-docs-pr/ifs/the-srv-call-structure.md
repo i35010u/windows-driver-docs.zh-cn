@@ -1,58 +1,57 @@
 ---
 title: SRV_CALL 结构
 description: SRV_CALL 结构
-ms.assetid: 9a3bb194-0289-47f4-a5c8-848d8d82cdd7
 keywords:
 - SRV_CALL 结构
 - 服务器调用上下文结构 WDK RDBSS
 - 网络服务器连接数据 WDK RDBSS
 - 数据结构 WDK 文件系统
-- RDBSS WDK 的文件系统、 连接和文件结构
-- 重定向驱动器缓冲子系统 WDK 的文件系统、 连接和文件结构
+- RDBSS WDK 文件系统、连接和文件结构
+- 重定向的驱动器缓冲子系统 WDK 文件系统、连接和文件结构
 - 连接结构 WDK RDBSS
 - 文件结构 WDK RDBSS
 - 结构 WDK RDBSS
-- WDK RDBSS 的连接信息
+- 连接信息 WDK RDBSS
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: aeb31919d7303758c702e98993d0a233ba115631
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1b9a12a3ccc716bfcf9d1fbe1939f60c9f6815ce
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63348369"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96818431"
 ---
-# <a name="the-srvcall-structure"></a>SRV\_调用结构
+# <a name="the-srv_call-structure"></a>SRV \_ 调用结构
 
 
 ## <span id="ddk_the_srv_call_structure_if"></span><span id="DDK_THE_SRV_CALL_STRUCTURE_IF"></span>
 
 
-服务器调用的上下文结构 SRV\_调用时，会维护有关维护网络微型重定向的每个特定的网络服务器连接信息。
+服务器调用上下文结构 SRV 调用将 \_ 维护有关网络小型重定向程序所维护的每个特定网络服务器连接的信息。
 
-全局列表的 SRV\_调用结构由 RDBSS 维护在全局数据中。 每个 SRV\_结构具有其他 RDBSS 结构，和元素，是唯一的 SRV 与常见的几个元素调用\_调用结构。 管理 SRV RDBSS 例程\_调用结构只能修改以下元素：
+\_RDBSS 在全局数据中维护 SRV 调用结构的全局列表。 每个 SRV \_ 调用结构都有几个与其他 RDBSS 结构共有的元素，以及对 SRV 调用结构唯一的元素 \_ 。 管理 SRV 调用结构的 RDBSS 例程 \_ 仅修改以下元素：
 
 -   签名和引用计数
 
 -   名称和关联的表信息
 
--   一组相关联的 NET\_根项
+-   关联的网络 \_ 根项的列表
 
--   一组控制网络微型重定向是何种频率想要在不同情况下由 RDBSS 调用的计时参数 （例如空闲超时，）
+-   一组计时参数，用于控制在不同情况下 RDBSS 调用网络小型重定向程序的频率 (空闲超时，例如) 
 
 -   关联的网络微型重定向程序驱动程序 ID
 
--   任何额外的存储是通过网络微型重定向的请求 (或创建者的 SRV\_调用数据结构)
+-   任何其他存储由网络小型重定向程序请求 (或 SRV \_ 调用数据结构的创建者) 
 
-SRV Unicode 名称\_调用结构执行结束时的结构本身中。 额外的空间保留用于已知 SRV 结束时开始使用网络微型重定向\_呼叫数据结构，使网络微型重定向可以只是指从包含文件中使用上下文字段此额外空间。
+SRV 调用结构的 Unicode 名称 \_ 是在结构本身的末尾处携带的。 保留以供网络小型重定向器使用的额外空间从已知的 SRV \_ 调用数据结构结束，因此，网络小型重定向程序只需使用包含文件中的上下文字段来引用此额外空间即可。
 
-SRV 进行收尾工作\_调用结构由两部分组成：
+SRV 调用结构的终止 \_ 由两部分组成：
 
-1.  销毁与所有网络相关联的\_根
+1.  正在销毁与所有网络根的关联 \_
 
 2.  释放内存
 
-可能会有这两个操作和 SRV 中的字段之间延迟\_结构可防止第一步重复出现的调用。
+这两个操作之间可能存在延迟，并且 SRV 调用结构中的字段会 \_ 阻止重复第一步。
 
  
 

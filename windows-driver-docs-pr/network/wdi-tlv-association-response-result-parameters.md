@@ -1,17 +1,16 @@
 ---
 title: WDI_TLV_ASSOCIATION_RESPONSE_RESULT_PARAMETERS
 description: WDI_TLV_ASSOCIATION_RESPONSE_RESULT_PARAMETERS 是包含关联响应结果参数的 TLV。
-ms.assetid: 8BF2C8B4-207E-479A-9903-3FCDEED5BA2C
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_ASSOCIATION_RESPONSE_RESULT_PARAMETERS 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 6f895d441a9ab1413a15e0f118fc4f72571bff92
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 2ea0abf9793643f01124981d583ae05394d46e8b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107270"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96818313"
 ---
 # <a name="wdi_tlv_association_response_result_parameters"></a>WDI \_ TLV \_ 关联 \_ 响应 \_ 结果 \_ 参数
 
@@ -39,7 +38,7 @@ Sum (所有包含的元素的大小) 。
 <thead>
 <tr class="header">
 <th>类型</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -89,7 +88,7 @@ Sum (所有包含的元素的大小) 。
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
-<td><p>Windows Server 2016</p></td>
+<td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
 <td><p>标头</p></td>

@@ -1,15 +1,14 @@
 ---
 title: GPIO 按钮和指示器实现指南
 description: Windows 8 通过 HID 微型端口类驱动程序引入了对常规 I/O (GPIO) 按钮和指示器的支持。
-ms.assetid: E073E15A-7068-43D0-9DBA-7DD2E7FE2993
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 60602118f2672e873db92d59335bf67e1972a303
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: dd4e1d90cf01fd773e59dc2a98f60886baf295b9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91733292"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96818475"
 ---
 # <a name="gpio-buttons-and-indicators-implementation-guide"></a>GPIO 按钮和指示器实现指南
 
@@ -27,7 +26,7 @@ Windows 8 通过 HID 微型端口类驱动程序引入了对常规 I/O (GPIO) �
 <thead>
 <tr class="header">
 <th align="left">主题</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>

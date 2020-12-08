@@ -1,11 +1,10 @@
 ---
 title: .enable_unicode（启用 Unicode 显示）
-description: .Enable_unicode 命令指定调试器为 Unicode 字符串是否显示 USHORT 指针和数组。
-ms.assetid: bb029ff4-1802-4d91-ba4b-9db10fa7c055
+description: .Enable_unicode 命令指定调试器是否将 USHORT 指针和数组显示为 Unicode 字符串。
 keywords:
-- 启用 Unicode 显示 (.enable_unicode) 命令
+- " ( .enable_unicode) 命令启用 Unicode 显示"
 - UNICODE_STRING 结构
-- .enable_unicode （启用 Unicode 显示器） Windows 调试
+- .enable_unicode (在 Windows 调试) 启用 Unicode 显示
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -14,31 +13,31 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: bbab1c0d18f3d1adeba498da7f58ed2f9ec2d790
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4e8ca2187a2b672af5b5c0c412db6008b9e44fbe
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63334526"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96818723"
 ---
-# <a name="enableunicode-enable-unicode-display"></a>.enable\_unicode （启用 Unicode 显示屏）
+# <a name="enable_unicode-enable-unicode-display"></a>。启用 \_ unicode (启用 Unicode 显示) 
 
 
-**.Enable\_unicode**命令指定调试器为 Unicode 字符串是否显示 USHORT 指针和数组。
+**. Enable \_ unicode** 命令指定调试器是否将 USHORT 指针和数组显示为 unicode 字符串。
 
 ```dbgcmd
 .enable_unicode 0 
 .enable_unicode 1
 ```
 
-## <a name="span-idddkmetaenableunicodedisplaydbgspanspan-idddkmetaenableunicodedisplaydbgspanparameters"></a><span id="ddk_meta_enable_unicode_display_dbg"></span><span id="DDK_META_ENABLE_UNICODE_DISPLAY_DBG"></span>参数
+## <a name="span-idddk_meta_enable_unicode_display_dbgspanspan-idddk_meta_enable_unicode_display_dbgspanparameters"></a><span id="ddk_meta_enable_unicode_display_dbg"></span><span id="DDK_META_ENABLE_UNICODE_DISPLAY_DBG"></span>参数
 
 
-<span id="_______0______"></span> **0**   
-将所有的 16 位 (USHORT) 数组和指针显示为短整数。 这是在调试器的默认行为。
+<span id="_______0______"></span>**0**   
+以短整数的形式显示所有16位 (USHORT) 数组和指针。 这是调试器的默认行为。
 
-<span id="_______1______"></span> **1**   
-将所有的 16 位 (USHORT) 数组和指针显示为 Unicode 字符串。
+<span id="_______1______"></span>**1**   
+显示所有16位 (USHORT) 数组和指针作为 Unicode 字符串。
 
 ### <a name="span-idenvironmentspanspan-idenvironmentspanspan-idenvironmentspanenvironment"></a><span id="Environment"></span><span id="environment"></span><span id="ENVIRONMENT"></span>环境
 
@@ -49,12 +48,12 @@ ms.locfileid: "63334526"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>模式</strong></p></td>
-<td align="left"><p>用户模式下，内核模式</p></td>
+<td align="left"><p><strong>交货</strong></p></td>
+<td align="left"><p>用户模式，内核模式</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>目标</strong></p></td>
-<td align="left"><p>实时、 崩溃转储</p></td>
+<td align="left"><p>实时，故障转储</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>平台</strong></p></td>
@@ -68,16 +67,16 @@ ms.locfileid: "63334526"
 <a name="remarks"></a>备注
 -------
 
-**.Enable\_unicode**命令影响的输出[ **dt （显示类型）** ](dt--display-type-.md)命令。
+**Enable \_ unicode** 命令会影响 [**dt (显示类型)**](dt--display-type-.md)命令的输出。
 
-在 WinDbg 中， **.enable\_unicode**命令还会影响在显示[局部变量窗口](locals-window.md)和监视窗口。 这些窗口会自动更新后发出 **.enable\_unicode**。
+在 WinDbg 中， **enable \_ unicode** 命令还会影响在 "局部变量" [窗口](locals-window.md) 和 "监视窗口" 中的显示。 发出后，这些窗口会自动更新 **。启用 \_ unicode**。
 
-您还可以选择或清除**显示 16 位值**为局部变量或监视的快捷菜单上的 Unicode 窗口指定 USHORT 数组和指针的显示。
+你还可以选择或清除 "在局部变量或监视窗口的快捷菜单上以 Unicode 的形式 **显示16位值** ，以便为 USHORT 数组和指针指定显示。
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[**ds，dS （显示字符串）**](ds--ds--display-string-.md)
+[**ds、dS（显示字符串）**](ds--ds--display-string-.md)
 
  
 

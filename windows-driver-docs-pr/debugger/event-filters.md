@@ -1,24 +1,23 @@
 ---
 title: 事件筛选器
 description: 事件筛选器
-ms.assetid: 91f2a483-8971-42de-a6c5-cc25409279a5
 keywords:
 - 调试器引擎 API，事件筛选器
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d6a3d129db21d7bcde1bdc53f3099f66963c9a57
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 478ec20c3b944c247a995fc54239d6fee5c62dc4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89216662"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96817482"
 ---
 # <a name="event-filters"></a>事件筛选器
 
 
 *事件筛选器* 提供简单的事件筛选;它们影响调试器引擎在目标中发生事件后如何继续。 事件发生时，引擎会确定该事件是否与事件筛选器匹配。 如果是这样，则事件筛选器的中断状态将影响调试器是否会中断到目标。 如果事件是异常事件，则处理状态确定是否应将异常视为已在目标中处理或未处理。
 
-**注意**   如果需要更复杂的事件筛选，则可以使用事件回调。
+**注意**   如果需要更复杂的事件筛选，则可以使用事件回调。
 
  
 
@@ -26,7 +25,7 @@ ms.locfileid: "89216662"
 
 1.  *特定的事件筛选器*。 这些是所有非异常事件的筛选器。 有关这些事件的列表，请参阅 [**调试 \_ 筛选器 \_ XXX**](./debug-filter-xxx.md) 。
 
-2.  *特定异常筛选器*。 第一个特定的异常筛选器是 *默认的异常筛选*器。 其余的筛选器是针对其内置筛选器的异常的筛选器。 有关特定异常筛选器的列表，请参阅 [**特定异常**](./specific-exceptions.md) 。
+2.  *特定异常筛选器*。 第一个特定的异常筛选器是 *默认的异常筛选* 器。 其余的筛选器是针对其内置筛选器的异常的筛选器。 有关特定异常筛选器的列表，请参阅 [**特定异常**](./specific-exceptions.md) 。
 
 3.  *任意异常筛选器*。 这些是手动添加的异常事件的筛选器。
 
@@ -40,7 +39,7 @@ ms.locfileid: "89216662"
 
 事件筛选器可以有与之关联的调试器命令。 当与筛选器匹配的事件发生时，引擎将执行此命令。 [**GetEventFilterCommand**](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugcontrol3-geteventfiltercommand) 和 [**SetEventFilterCommand**](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugcontrol3-seteventfiltercommand) 可用于获取和设置此命令。 对于异常筛选器，此命令在第一次出现异常时执行。 可以在第二次异常事件时执行单独的第二次机会命令。 若要获取和设置第二个命令，请使用 [**GetExceptionFilterSecondCommand**](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugcontrol3-getexceptionfiltersecondcommand) 和 [**SetExceptionSecondChanceCommand**](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugcontrol3-setexceptionfiltersecondcommand)。
 
-特定事件筛选器和异常筛选器的参数由 [**GetSpecificFilterParameters**](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugcontrol3-getspecificfilterparameters) 和 [**GetExceptionFilterParameters**](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugcontrol3-setexceptionfilterparameters)返回。 可以使用 [**SetSpecificFilterParameters**](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugcontrol3-setspecificfilterparameters) 和 **SetExceptionFilterParameters**设置事件筛选器的中断状态和处理状态。
+特定事件筛选器和异常筛选器的参数由 [**GetSpecificFilterParameters**](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugcontrol3-getspecificfilterparameters) 和 [**GetExceptionFilterParameters**](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugcontrol3-setexceptionfilterparameters)返回。 可以使用 [**SetSpecificFilterParameters**](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugcontrol3-setspecificfilterparameters) 和 **SetExceptionFilterParameters** 设置事件筛选器的中断状态和处理状态。
 
 **SetExceptionFilterParameters** 也可用于添加和删除任意异常筛选器。
 
@@ -85,7 +84,7 @@ ms.locfileid: "89216662"
 
  
 
-**注意**  
+**注意**  
 1.  参数使用 [字符串通配符语法](string-wildcard-syntax.md) ，并与图像名称进行比较 (在发生事件时忽略路径) 。 如果模块或进程的名称不可用，则将其视为匹配项。
 
 2.  参数是一个表达式，在设置参数时，引擎将计算该表达式。
@@ -96,7 +95,7 @@ ms.locfileid: "89216662"
 
 ### <a name="span-idindex_and_exception_codespanspan-idindex_and_exception_codespanindex-and-exception-code"></a><span id="index_and_exception_code"></span><span id="INDEX_AND_EXCEPTION_CODE"></span>索引和异常代码
 
-每个事件筛选器都有一个索引。 索引是一个介于0和1之间的数字，该数字小于筛选器总数 (包含) 。 可以从[**GetNumberEventFilters**](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugcontrol3-getnumbereventfilters)返回的*SpecificEvents*、 *SpecificExceptions*和*ArbitraryExceptions*值中找到每个筛选器类别的索引范围，如下表所述：
+每个事件筛选器都有一个索引。 索引是一个介于0和1之间的数字，该数字小于筛选器总数 (包含) 。 可以从 [**GetNumberEventFilters**](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugcontrol3-getnumbereventfilters)返回的 *SpecificEvents*、 *SpecificExceptions* 和 *ArbitraryExceptions* 值中找到每个筛选器类别的索引范围，如下表所述：
 
 <table>
 <colgroup>

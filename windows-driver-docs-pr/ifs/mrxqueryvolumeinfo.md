@@ -1,7 +1,6 @@
 ---
 title: MRxQueryVolumeInfo 例程
 description: MRxQueryVolumeInfo 例程由 RDBSS 调用，请求网络最小化重定向器查询卷信息。
-ms.assetid: 28e36992-2b6b-4484-9e7e-2cea7a2953e9
 keywords:
 - MRxQueryVolumeInfo 例程可安装文件系统驱动程序
 - PMRX_CALLDOWN
@@ -15,17 +14,17 @@ api_type:
 - UserDefined
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bf9b40902f2569bfcfd1c22aaf172cb9ad176883
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: bcd8695a88a3baaed666734e5a8376a6378fb62b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89066888"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96818981"
 ---
 # <a name="mrxqueryvolumeinfo-routine"></a>MRxQueryVolumeInfo 例程
 
 
-*MRxQueryVolumeInfo*例程由[RDBSS](./the-rdbss-driver-and-library.md)调用，请求网络最小化重定向器查询卷信息。
+*MRxQueryVolumeInfo* 例程由 [RDBSS](./the-rdbss-driver-and-library.md)调用，请求网络最小化重定向器查询卷信息。
 
 <a name="syntax"></a>语法
 ------
@@ -34,12 +33,12 @@ ms.locfileid: "89066888"
 PMRX_CALLDOWN MRxQueryVolumeInfo;
 
 NTSTATUS MRxQueryVolumeInfo(
-  _Inout_ PRX_CONTEXT RxContext
+  _Inout_ PRX_CONTEXT RxContext
 )
 { ... }
 ```
 
-<a name="parameters"></a>parameters
+<a name="parameters"></a>参数
 ----------
 
 *RxContext* \[in、out\]  
@@ -112,45 +111,45 @@ NTSTATUS MRxQueryVolumeInfo(
 
 在 IRP MJ 查询卷信息请求的情况下调用 *MRxQueryVolumeInfo* 之前 \_ \_ \_ \_ ，RDBSS 会修改 \_ *RxContext* 参数指向的 RX 上下文结构中的以下成员：
 
-**FsInformationClass**成员设置为**IrpSp- &gt; QueryVolume. FsInformationClass**。
+**FsInformationClass** 成员设置为 **IrpSp- &gt; QueryVolume. FsInformationClass**。
 
-**Info. Buffer**成员设置为**Irp- &gt;AssociatedIrp.SystemBuffer**。
+**Info. Buffer** 成员设置为 **Irp- &gt;AssociatedIrp.SystemBuffer**。
 
-**LengthRemaining**成员设置为**IrpSp &gt; 参数. QueryVolume**。
+**LengthRemaining** 成员设置为 **IrpSp &gt; 参数. QueryVolume**。
 
-对于 IRP \_ MJ \_ 查询 \_ 卷 \_ 信息请求，如果在从 MRxQueryVolumeInfo 返回时 RX 上下文结构的**PostRequest**成员 \_ 为**TRUE** ， *MRxQueryVolumeInfo*则 RDBSS 将调用[**RxFsdPostRequest**](/windows-hardware/drivers/ddi/rxprocs/nf-rxprocs-rxfsdpostrequest)以发送请求。 在这种情况下，IRP \_ MJ \_ 查询 \_ 卷 \_ 信息请求将传递 rx 上下文 \_ 结构以将 rx 上下文传递给辅助队列，以 \_ 供文件系统进程在 FSP)  (处理。
+对于 IRP \_ MJ \_ 查询 \_ 卷 \_ 信息请求，如果在从 MRxQueryVolumeInfo 返回时 RX 上下文结构的 **PostRequest** 成员 \_ 为 **TRUE** ， *MRxQueryVolumeInfo* 则 RDBSS 将调用 [**RxFsdPostRequest**](/windows-hardware/drivers/ddi/rxprocs/nf-rxprocs-rxfsdpostrequest)以发送请求。 在这种情况下，IRP \_ MJ \_ 查询 \_ 卷 \_ 信息请求将传递 rx 上下文 \_ 结构以将 rx 上下文传递给辅助队列，以 \_ 供文件系统进程在 FSP)  (处理。
 
-如果从 MRxQueryVolumeInfo 返回时 RX 上下文结构的**PostRequest**成员 \_ 为**FALSE** ， *MRxQueryVolumeInfo*则网络小型重定向程序必须将 RX 上下文结构的**LengthRemaining**成员设置 \_ 为返回的卷信息的长度。 RDBSS 将 IRP 的**IoStatus**成员设置为**IrpSp- &gt; QueryVolume**减去 RX 上下文结构的**信息. LengthRemaining**成员。 \_
+如果从 MRxQueryVolumeInfo 返回时 RX 上下文结构的 **PostRequest** 成员 \_ 为 **FALSE** ， *MRxQueryVolumeInfo* 则网络小型重定向程序必须将 RX 上下文结构的 **LengthRemaining** 成员设置 \_ 为返回的卷信息的长度。 RDBSS 将 IRP 的 **IoStatus** 成员设置为 **IrpSp- &gt; QueryVolume** 减去 RX 上下文结构的 **信息. LengthRemaining** 成员。 \_
 
-如果对 *MRxQueryVolumeInfo* 的调用成功，则网络小型重定向程序应将 RX 上下文结构的 **LengthRemaining** 成员设置 \_ 为 **info。 length** 成员减去返回的卷信息的长度。 如果对*MRxQueryVolumeInfo*的调用成功，则 RDBSS 会将 IRP 的**IoStatus**成员设置为 IrpSp，而不是 RX 上下文结构的**QueryVolume**成员。 ** &gt; ** \_
+如果对 *MRxQueryVolumeInfo* 的调用成功，则网络小型重定向程序应将 RX 上下文结构的 **LengthRemaining** 成员设置 \_ 为 **info。 length** 成员减去返回的卷信息的长度。 如果对 *MRxQueryVolumeInfo* 的调用成功，则 RDBSS 会将 IRP 的 **IoStatus** 成员设置为 IrpSp，而不是 RX 上下文结构的 **QueryVolume** 成员。 **&gt;** \_
 
 对于 IRP \_ MJ \_ 查询 \_ 卷 \_ 信息请求，并将 **FsInformationClass** 成员设置为 **FileFsDeviceInformation**，网络微重定向器会返回 \_ *RxContext* 参数指向的 RX 上下文结构中的以下信息：
 
-**Info. Buffer**成员包含文件 \_ FS \_ 设备 \_ 信息结构
+**Info. Buffer** 成员包含文件 \_ FS \_ 设备 \_ 信息结构
 
-**信息. Buffer**成员设置为卷的特征，其中必须包含文件 \_ 远程 \_ 设备作为选项之一。
+**信息. Buffer** 成员设置为卷的特征，其中必须包含文件 \_ 远程 \_ 设备作为选项之一。
 
-**DeviceType**成员设置为关联的网络根结构的**DeviceType**成员 \_ 。 如果关联网络根的 **类型** 成员 \_ 为网络 \_ 根 \_ 管道，则 **DeviceType** 成员设置为文件 \_ 设备 \_ 命名 \_ 管道。
+**DeviceType** 成员设置为关联的网络根结构的 **DeviceType** 成员 \_ 。 如果关联网络根的 **类型** 成员 \_ 为网络 \_ 根 \_ 管道，则 **DeviceType** 成员设置为文件 \_ 设备 \_ 命名 \_ 管道。
 
 对于 IRP \_ MJ \_ 查询 \_ 卷 \_ 信息请求，并将 **FsInformationClass** 成员设置为 **FileFsVolumeInformation**，网络微重定向器会返回 \_ *RxContext* 参数指向的 RX 上下文结构中的以下信息：
 
-**Info. Buffer**成员包含文件 \_ FS \_ 卷 \_ 信息结构。
+**Info. Buffer** 成员包含文件 \_ FS \_ 卷 \_ 信息结构。
 
-**Info. Buffer**成员设置为关联的网络根结构的**VolumeInfo**成员 \_ 。
+**Info. Buffer** 成员设置为关联的网络根结构的 **VolumeInfo** 成员 \_ 。
 
-**LengthRemaining**成员设置为关联的网络根结构的**VolumeInfoLength**成员 \_ 。
+**LengthRemaining** 成员设置为关联的网络根结构的 **VolumeInfoLength** 成员 \_ 。
 
-用于[**IRP \_ MJ \_ 文件 \_ 系统 \_ 控件**](irp-mj-file-system-control.md)的 RDBSS 的*MRxQueryVolumeInfo*调用是对链接跟踪信息的请求。 在为*MRxQueryVolumeInfo* IRP \_ MJ \_ 文件系统控件调用 MRxQueryVolumeInfo 之前 \_ \_ ，RDBSS 会修改 \_ *RxContext*参数指向的 RX 上下文结构中的以下成员：
+用于 [**IRP \_ MJ \_ 文件 \_ 系统 \_ 控件**](irp-mj-file-system-control.md)的 RDBSS 的 *MRxQueryVolumeInfo* 调用是对链接跟踪信息的请求。 在为 *MRxQueryVolumeInfo* IRP \_ MJ \_ 文件系统控件调用 MRxQueryVolumeInfo 之前 \_ \_ ，RDBSS 会修改 \_ *RxContext* 参数指向的 RX 上下文结构中的以下成员：
 
-**FsInformationClass**成员设置为**FileFsObjectIdInformation**。
+**FsInformationClass** 成员设置为 **FileFsObjectIdInformation**。
 
-**Info. Buffer**成员设置为文件 \_ FS \_ OBJECTID \_ 信息结构。
+**Info. Buffer** 成员设置为文件 \_ FS \_ OBJECTID \_ 信息结构。
 
-**LengthRemaining**成员设置为**sizeof** (文件 \_ FS \_ OBJECTID \_ 信息) 。
+**LengthRemaining** 成员设置为 **sizeof** (文件 \_ FS \_ OBJECTID \_ 信息) 。
 
 对于 IRP \_ MJ \_ 文件 \_ 系统 \_ 控制请求，irp 的 **AssociatedIrp.SystemBuffer** 成员指向链接 \_ 跟踪 \_ 信息结构。
 
-如果请求是作为 IRP \_ MJ \_ 文件系统控件启动的， \_ \_ 并且*MRxQueryVolumeInfo*返回值为状态 \_ 成功或状态 \_ 缓冲区 \_ 溢出，则 RDBSS 将传递给 MRxQueryVolumeInfo **ObjectId** \_ 结构的信息中的文件 FS \_ objectid objectid 信息结构的 objectid 成员复制 \_ **Info.Buffer** \_ 到 FCB 结构的**NetRoot- &gt; DiskParameters**成员和 IRP 的**AssociatedIrp.SystemBuffer**成员。 如果对 *MRxQueryVolumeInfo* 的调用成功，则 RDBSS 将设置链接跟踪信息结构的 **类型** 成员 \_ \_ 。 如果 FCB 结构的 **NetRoot &gt; ** 成员具有 NetRoot \_ 标记 \_ DFS \_ 感知 \_ NetRoot 位集，则 **类型** 成员由 RDBSS 设置为 **DfsLinkTrackingInformation**。 如果 FCB 结构的 **NetRoot &gt; ** 成员不具有 NetRoot \_ 标记 \_ DFS \_ 感知 \_ NetRoot 位集，则 **类型** 成员由 RDBSS 设置为 **NtfsLinkTrackingInformation**。 成功后，RDBSS 会将 IRP 的 **IoStatus** 成员设置为链接 \_ 跟踪 \_ 信息结构的大小。
+如果请求是作为 IRP \_ MJ \_ 文件系统控件启动的， \_ \_ 并且 *MRxQueryVolumeInfo* 返回值为状态 \_ 成功或状态 \_ 缓冲区 \_ 溢出，则 RDBSS 将传递给 MRxQueryVolumeInfo **ObjectId** \_ 结构的信息中的文件 FS \_ objectid objectid 信息结构的 objectid 成员复制 \_ **Info.Buffer** \_ 到 FCB 结构的 **NetRoot- &gt; DiskParameters** 成员和 IRP 的 **AssociatedIrp.SystemBuffer** 成员。 如果对 *MRxQueryVolumeInfo* 的调用成功，则 RDBSS 将设置链接跟踪信息结构的 **类型** 成员 \_ \_ 。 如果 FCB 结构的 **NetRoot &gt;** 成员具有 NetRoot \_ 标记 \_ DFS \_ 感知 \_ NetRoot 位集，则 **类型** 成员由 RDBSS 设置为 **DfsLinkTrackingInformation**。 如果 FCB 结构的 **NetRoot &gt;** 成员不具有 NetRoot \_ 标记 \_ DFS \_ 感知 \_ NetRoot 位集，则 **类型** 成员由 RDBSS 设置为 **NtfsLinkTrackingInformation**。 成功后，RDBSS 会将 IRP 的 **IoStatus** 成员设置为链接 \_ 跟踪 \_ 信息结构的大小。
 
 <a name="requirements"></a>要求
 ------------
@@ -163,7 +162,7 @@ NTSTATUS MRxQueryVolumeInfo(
 <tbody>
 <tr class="odd">
 <td align="left"><p>目标平台</p></td>
-<td align="left">桌面型</td>
+<td align="left">台式机</td>
 </tr>
 <tr class="even">
 <td align="left"><p>标头</p></td>
@@ -172,7 +171,7 @@ NTSTATUS MRxQueryVolumeInfo(
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**MRxIsValidDirectory**](/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_chkdir_calldown)

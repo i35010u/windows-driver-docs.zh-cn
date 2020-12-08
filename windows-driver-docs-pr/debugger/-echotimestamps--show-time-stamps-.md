@@ -1,12 +1,11 @@
 ---
 title: .echotimestamps（显示时间戳）
 description: Echotimestamps 命令打开或关闭时间戳信息的显示。
-ms.assetid: c70dc71b-83c2-41de-90f3-638e231c0476
 keywords:
-- 显示时间戳（. echotimestamps）命令
+- " () 命令显示时间戳"
 - 时间戳
 - DbgPrint 时间戳
-- . echotimestamps （显示时间戳） Windows 调试
+- echotimestamps (显示时间戳) Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -15,17 +14,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 0d76511842c15cb50b2a2757a23dcb5fc3f769f5
-ms.sourcegitcommit: 3ec971f54122b77408433f7f1e59c467099fb4de
+ms.openlocfilehash: 6a90f950f01114079424cbd80628d8a259396207
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86873826"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96817905"
 ---
 # <a name="echotimestamps-show-time-stamps"></a>.echotimestamps（显示时间戳）
 
 
-**Echotimestamps**命令打开或关闭时间戳信息的显示。
+**Echotimestamps** 命令打开或关闭时间戳信息的显示。
 
 ```dbgcmd
 .echotimestamps 0 
@@ -69,18 +68,18 @@ ms.locfileid: "86873826"
 
 ### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-有关**DbgPrint**、 **KdPrint**、 **DbgPrintEx**和**KdPrintEx**的详细信息，请参阅[读取和筛选调试消息](reading-and-filtering-debugging-messages.md)中的 "DbgPrint Buffer"。
+有关 **DbgPrint**、 **KdPrint**、 **DbgPrintEx** 和 **KdPrintEx** 的详细信息，请参阅 [读取和筛选调试消息](reading-and-filtering-debugging-messages.md)中的 "DbgPrint Buffer"。
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
-使用不带参数的**echotimestamps**命令时，将打开或关闭时间戳的显示，并显示新状态。
+使用不带参数的 **echotimestamps** 命令时，将打开或关闭时间戳的显示，并显示新状态。
 
 如果打开此显示，调试器将显示模块加载、线程创建、异常和其他事件的时间戳。
 
-**DbgPrint**、 **KdPrint**、 **DbgPrintEx**和**KdPrintEx**内核模式例程将格式化字符串发送到主计算机上的缓冲区。 此字符串将显示在[调试器命令窗口](debugger-command-window.md)中（除非已禁用此类打印功能）。 还可以通过使用[**！ dbgprint**](-dbgprint.md) extension 命令显示带格式的字符串。
+**DbgPrint**、 **KdPrint**、 **DbgPrintEx** 和 **KdPrintEx** 内核模式例程将格式化字符串发送到主计算机上的缓冲区。 除非已禁用此打印) ，否则该字符串会显示在 [调试器命令窗口](debugger-command-window.md) (中。 还可以通过使用 [**！ dbgprint**](-dbgprint.md) extension 命令显示带格式的字符串。
 
-当使用**echotimestamps**打开时间戳的显示时，将显示**DbgPrint**缓冲区中每个注释的时间和日期。
+当使用 **echotimestamps** 打开时间戳的显示时，将显示 **DbgPrint** 缓冲区中每个注释的时间和日期。
 
  
 

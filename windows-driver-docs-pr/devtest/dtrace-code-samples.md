@@ -1,7 +1,6 @@
 ---
 title: DTrace 代码示例
 description: 了解支持 D 编程语言的 DTrace。 请参阅代码示例并查看附加的可用支持。
-ms.assetid: abf23d76-423d-4d1e-afde-83739015bbff
 keywords:
 - DTrace WDK
 - 软件跟踪 WDK，DTrace
@@ -13,12 +12,12 @@ keywords:
 - 跟踪消息格式化文件 WDK
 ms.date: 11/04/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 42e85a1373e65bfe7a1a7ab6a143445fd1a2399a
-ms.sourcegitcommit: f1d6c2d0cdbecdc69ba65ed3b530755fc73c8e5e
+ms.openlocfilehash: a1f71d2017da765b5209a67c9ce30e6ae9054ccd
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91590378"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96817801"
 ---
 # <a name="dtrace-code-samples"></a>DTrace 代码示例
 
@@ -113,7 +112,7 @@ tick-2s
             writecount = eprocess_ptr->DiskCounters->WriteOperationCount - writecount;      
             flushcount = eprocess_ptr->DiskCounters->FlushOperationCount - flushcount;
 
-            printf("*** Reports disk read/write every second *** \n");
+            printf("*** Reports disk read/write every second **_ \n");
             printf("Process name: %s\n", eprocess_ptr->ImageFileName);
             printf("Process Id: %d\n", (int) eprocess_ptr->UniqueProcessId);
             printf("Bytes Read %llu \n",  (unsigned long long) bytesread);
@@ -144,7 +143,7 @@ tick-2s
 
 C:\>dtrace -s diskusagebyname.d Notepad.exe
 
-*** Reports disk read/write every second *** 
+_*_ Reports disk read/write every second _*_ 
 Process name: Notepad.exe
 Process Id: 6012
 Bytes Read 0 
@@ -152,7 +151,7 @@ Bytes Written 0
 Read Operation Count 0 
 Write Operation Count 0 
 Flush Operation Count 0 
-*** Reports disk read/write every second *** 
+_*_ Reports disk read/write every second _*_ 
 Process name: cmd.exe
 Process Id: 4428
 Bytes Read 18446744073709480960 
@@ -181,7 +180,7 @@ tick-3s
 {
     system ("cls");
 
-    this->pp = ((struct nt`_MI_PARTITION *) &nt`MiSystemPartition);
+    this->pp = ((struct nt`_MI_PARTITION _) &nt`MiSystemPartition);
 
     printf("***** Printing System wide page information ******* \n");
     printf( "Total Pages Entire Node: %u MB \n", this->pp->Core.NodeInformation->TotalPagesEntireNode*4096/(1024*1024));

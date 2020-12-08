@@ -1,7 +1,6 @@
 ---
 title: Bug 检查 0x19C WIN32K_POWER_WATCHDOG_TIMEOUT
 description: WIN32K_POWER_WATCHDOG_TIMEOUT bug 检查的值为0x0000019C。 这表示 Win32k.sys 未及时打开监视器。
-ms.assetid: 55907359-C282-43F0-92FE-5DC248BF9D02
 keywords:
 - Bug 检查 0x19C WIN32K_POWER_WATCHDOG_TIMEOUT
 - WIN32K_POWER_WATCHDOG_TIMEOUT
@@ -13,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: ae048f4e73c8d518a2471e92e598f377dfac4790
-ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
+ms.openlocfilehash: bcb7e1e4ab549fc5851bb7b4d406cb9da7b95f43
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84534652"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96819281"
 ---
 # <a name="bug-check-0x19c-win32k_power_watchdog_timeout"></a>Bug 检查0x19C： WIN32K.SYS \_ 电源 \_ 监视器 \_ 超时
 
@@ -26,7 +25,7 @@ ms.locfileid: "84534652"
 WIN32K.SYS \_ POWER \_ 监视器 \_ 超时 bug 检查的值为0x0000019C。 这表示 Win32k.sys 未及时打开监视器。
 
 > [!IMPORTANT]
-> 本主题适用于程序员。 如果你是在使用计算机时收到蓝屏错误代码的客户，请参阅[排查蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题面向程序员。 如果您是在使用计算机时收到蓝屏错误代码的客户，请参阅[蓝屏错误疑难解答](https://www.windows.com/stopcode)。
 
 
 ## <a name="win32k_power_watchdog_timeout-parameters"></a>WIN32K.SYS \_ POWER \_ 监视器 \_ 超时参数
@@ -46,7 +45,7 @@ WIN32K.SYS \_ POWER \_ 监视器 \_ 超时 bug 检查的值为0x0000019C。 这�
 <tbody>
 <tr class="odd">
 <td align="left">1</td>
-<td align="left"><p>失败类型（win32kbase！POWER_WATCHDOG_TYPE）</p>
+<td align="left"><p>失败类型 (win32kbase！POWER_WATCHDOG_TYPE) </p>
 <div class="code">
 <code>0x10 : The power request queue is not making progress
               2 - Pointer to the thread processing power requests, if any

@@ -1,7 +1,6 @@
 ---
 title: 确定节点的控制引脚
 description: 确定节点的控制引脚
-ms.assetid: be1236e2-c710-4833-863e-54e826e53f92
 keywords:
 - 方法设置 WDK BDA，节点控制 pin
 - 属性设置 WDK BDA，节点控制 pin
@@ -11,12 +10,12 @@ keywords:
 - 固定控制器 WDK BDA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6ada55fb72853163e8e5fca51fbb6d31503166b5
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: f8eb0f7b451f06c3e7dff027ab83f85f800487f8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89189191"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96817945"
 ---
 # <a name="determining-the-controlling-pin-of-a-node"></a>确定节点的控制引脚
 

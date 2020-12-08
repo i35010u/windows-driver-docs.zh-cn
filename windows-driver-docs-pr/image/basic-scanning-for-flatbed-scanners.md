@@ -1,15 +1,14 @@
 ---
 title: 平板扫描仪的基本扫描
 description: 平板扫描仪的基本扫描
-ms.assetid: a1100a8d-752a-4109-b1dc-cf7c4bf5a100
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8b1d5d7e161239e5be7c3c26623dbfff27f2ac91
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: b841e8faa5070b044cddd44a0cbba09428b25ff5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89188088"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96818423"
 ---
 # <a name="basic-scanning-for-flatbed-scanners"></a>平板扫描仪的基本扫描
 
@@ -27,7 +26,7 @@ Windows Vista 中的 "平板" 项的编程和扫描行为与 Windows XP 和 Wind
 
 -   读取 [**wia \_ IPA \_ TYMED**](./wia-ipa-tymed.md) 和 [**wia \_ IPA \_ 格式**](./wia-ipa-format.md) 属性的有效值。
 
--   通过设置 WIA \_ IPA TYMED 属性，选择内存传输或文件传输类型 \_ 。 有关可用传输类型的详细信息，请参阅 [数据传输](data-transfers.md)。 对于基于 **IStream**的传输， \_ 默认情况下，WIA IPA \_ TYMED 设置为 TYMED \_ 文件，不应更改。
+-   通过设置 WIA \_ IPA TYMED 属性，选择内存传输或文件传输类型 \_ 。 有关可用传输类型的详细信息，请参阅 [数据传输](data-transfers.md)。 对于基于 **IStream** 的传输， \_ 默认情况下，WIA IPA \_ TYMED 设置为 TYMED \_ 文件，不应更改。
 
 -   通过设置 WIA \_ IPA format 属性来选择数据的最终格式 \_ 。
 

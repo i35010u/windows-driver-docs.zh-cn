@@ -1,7 +1,6 @@
 ---
 title: MRxFlush 例程
 description: MRxFlush 例程由 RDBSS 调用，请求网络小型重定向程序将文件系统对象的内容写入存储。 RDBSS 发出此调用以响应接收 IRP \_ MJ \_ 刷新 \_ 缓冲区请求。
-ms.assetid: b133a91f-3f8c-45af-a02c-58d894a2fa2e
 keywords:
 - MRxFlush 例程可安装文件系统驱动程序
 - PMRX_CALLDOWN
@@ -15,17 +14,17 @@ api_type:
 - UserDefined
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d99ce1a2d21877503bbcd9bd06e98e47b6a32558
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 94a295bf2f723fb1767a874f2c8a16dae906adbd
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89066150"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96819019"
 ---
 # <a name="mrxflush-routine"></a>MRxFlush 例程
 
 
-*MRxFlush*例程由[RDBSS](./the-rdbss-driver-and-library.md)调用，请求网络小型重定向程序将文件系统对象的内容写入存储。 RDBSS 发出此调用以响应接收 [**IRP \_ MJ \_ 刷新 \_ 缓冲区**](irp-mj-flush-buffers.md) 请求。
+*MRxFlush* 例程由 [RDBSS](./the-rdbss-driver-and-library.md)调用，请求网络小型重定向程序将文件系统对象的内容写入存储。 RDBSS 发出此调用以响应接收 [**IRP \_ MJ \_ 刷新 \_ 缓冲区**](irp-mj-flush-buffers.md) 请求。
 
 <a name="syntax"></a>语法
 ------
@@ -34,12 +33,12 @@ ms.locfileid: "89066150"
 PMRX_CALLDOWN MRxFlush;
 
 NTSTATUS MRxFlush(
-  _Inout_ PRX_CONTEXT RxContext
+  _Inout_ PRX_CONTEXT RxContext
 )
 { ... }
 ```
 
-<a name="parameters"></a>parameters
+<a name="parameters"></a>参数
 ----------
 
 *RxContext* \[in、out\]  
@@ -87,7 +86,7 @@ NTSTATUS MRxFlush(
 <tbody>
 <tr class="odd">
 <td align="left"><p>目标平台</p></td>
-<td align="left">桌面型</td>
+<td align="left">台式机</td>
 </tr>
 <tr class="even">
 <td align="left"><p>标头</p></td>
@@ -96,7 +95,7 @@ NTSTATUS MRxFlush(
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**MRxAreFilesAliased**](/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_chkfcb_calldown)

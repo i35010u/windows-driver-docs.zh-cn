@@ -1,15 +1,14 @@
 ---
 title: 硬件通知支持
 description: Windows 10 版本 1709 的基础结构可以为 LED 和振动机制等通知组件提供不区分硬件的支持。
-ms.assetid: 48df55c4-aa5e-4157-8b90-65ad127d876b
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 5c4bf722e645a5e3a70556e4e9d17c687a3f8a95
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 13e8d306c1d1cdeb1115ba07e01b147ea6f9c1b4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89382141"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96818473"
 ---
 # <a name="hardware-notifications-support"></a>硬件通知支持
 

@@ -1,17 +1,16 @@
 ---
 title: 通信类接口
 description: 通信类接口
-ms.assetid: b0414d0e-6e1b-4d84-8ca4-40a59fb1b099
 keywords:
-- 通信
+- communication
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: be9190ea105d99730974e2ad6140e5f96bad71a8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 702c81f0e7256259bd2f19ea5039652c9c44e720
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63356919"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96817623"
 ---
 # <a name="communication-class-interface"></a>通信类接口
 
@@ -19,7 +18,7 @@ ms.locfileid: "63356919"
 
 
 
-通过 USB 接口描述符、 三个特定于类的描述符，并通知终结点的终结点描述符详细介绍了通信类接口。 通知终结点说明符是一个标准的 USB 中断类型在终结点说明符其**wMaxPacketSize**字段为 8 个字节。 下表定义通信类接口描述符的重要字段。
+通信类接口由 USB 接口描述符、三个类特定描述符和通知终结点的终结点描述符描述。 通知终结点描述符是终结点描述符中的标准 USB 中断类型，其 **wMaxPacketSize** 字段为8个字节。 下表定义通信类接口描述符的突出字段。
 
 <table>
 <colgroup>
@@ -31,11 +30,11 @@ ms.locfileid: "63356919"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">偏移量 （字节）</th>
+<th align="left">偏移量 (字节) </th>
 <th align="left">字段</th>
-<th align="left">大小 （字节）</th>
-<th align="left">ReplTest1</th>
-<th align="left">描述</th>
+<th align="left">大小（字节）</th>
+<th align="left">“值”</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>
@@ -43,14 +42,14 @@ ms.locfileid: "63356919"
 <td align="left"><p>5</p></td>
 <td align="left"><p>bInterfaceClass</p></td>
 <td align="left"><p>1</p></td>
-<td align="left"><p>02 h</p></td>
+<td align="left"><p>02h</p></td>
 <td align="left"><p>通信接口类代码。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>6</p></td>
 <td align="left"><p>bInterfaceSubClass</p></td>
 <td align="left"><p>1</p></td>
-<td align="left"><p>02 h</p></td>
+<td align="left"><p>02h</p></td>
 <td align="left"><p>抽象控件模型的通信接口类子类代码。</p></td>
 </tr>
 <tr class="odd">

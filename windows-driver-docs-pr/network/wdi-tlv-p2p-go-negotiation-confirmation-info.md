@@ -1,22 +1,21 @@
 ---
 title: WDI_TLV_P2P_GO_NEGOTIATION_CONFIRMATION_INFO
-description: WDI_TLV_P2P_GO_NEGOTIATION_CONFIRMATION_INFO 是包含 Wi-Fi Direct 转协商确认信息 TLV。
-ms.assetid: 1CC470FF-9301-4DF9-BE52-5FB1DCBF5415
+description: WDI_TLV_P2P_GO_NEGOTIATION_CONFIRMATION_INFO 是一种 TLV，其中包含 Wi-Fi 的直接中转协商确认信息。
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_P2P_GO_NEGOTIATION_CONFIRMATION_INFO 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 14acd2c2a81ab3abb1b01f9f0cd287b3b4e269cf
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f687ff69fe6730be1a546aae0409b08aa0efb2b2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63362485"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96818795"
 ---
-# <a name="wditlvp2pgonegotiationconfirmationinfo"></a>WDI\_TLV\_P2P\_转\_协商\_确认\_信息
+# <a name="wdi_tlv_p2p_go_negotiation_confirmation_info"></a>WDI \_ TLV \_ P2P \_ 中转 \_ 协商 \_ 确认 \_ 信息
 
 
-WDI\_TLV\_P2P\_转\_协商\_确认\_信息是包含 Wi-Fi Direct 转协商确认信息 TLV。
+WDI \_ tlv \_ \_ 中转 \_ 协商确认 \_ 信息 \_ 是一个 Tlv，其中包含 Wi-Fi 的直接中转协商确认信息。
 
 ## <a name="tlv-type"></a>TLV 类型
 
@@ -26,16 +25,16 @@ WDI\_TLV\_P2P\_转\_协商\_确认\_信息是包含 Wi-Fi Direct 转协商确认
 ## <a name="length"></a>长度
 
 
-所有的大小 （以字节为单位） 总和包含 TLVs。
+Sum (包含所有 TLVs 的大小的) 字节。
 
 ## <a name="values"></a>值
 
 
-| 在任务栏的搜索框中键入                                                                                                                   | 允许多个 TLV 实例 | 可选 | 描述                                                                                                                             |
+| 类型                                                                                                                   | 允许多个 TLV 实例 | 可选 | 说明                                                                                                                             |
 |------------------------------------------------------------------------------------------------------------------------|--------------------------------|----------|-----------------------------------------------------------------------------------------------------------------------------------------|
-| [**WDI\_TLV\_P2P\_转\_协商\_确认\_参数**](wdi-tlv-p2p-go-negotiation-confirmation-parameters.md) |                                |          | Wi-Fi Direct 转协商确认参数中。                                                                                |
-| [**WDI\_TLV\_P2P\_GROUP\_ID**](wdi-tlv-p2p-group-id.md)                                                               |                                | X        | Wi-Fi Direct 组 id。                                                                                                              |
-| [**WDI\_TLV\_P2P\_CHANNEL\_NUMBER**](wdi-tlv-p2p-channel-number.md)                                                   |                                | X        | 远程设备侦听通道。 只要指定此，必须在此通道上发送 GO 协商确认帧。 |
+| [**WDI \_ TLV \_ P2P \_ 中转 \_ 协商 \_ 确认 \_ 参数**](wdi-tlv-p2p-go-negotiation-confirmation-parameters.md) |                                |          | Wi-Fi Direct 中转协商确认参数。                                                                                |
+| [**WDI \_ TLV \_ P2P \_ 组 \_ ID**](wdi-tlv-p2p-group-id.md)                                                               |                                | X        | Wi-Fi 的直接组 ID。                                                                                                              |
+| [**WDI \_ TLV \_ P2P \_ 信道 \_ 号**](wdi-tlv-p2p-channel-number.md)                                                   |                                | X        | 远程设备的侦听通道。 只要指定了此，就必须在此通道上发送中转协商确认帧。 |
 
  
 
@@ -54,10 +53,10 @@ WDI\_TLV\_P2P\_转\_协商\_确认\_信息是包含 Wi-Fi Direct 转协商确认
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
-<td><p>Windows Server 2016</p></td>
+<td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Wditypes.hpp</td>
 </tr>
 </tbody>

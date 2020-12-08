@@ -1,22 +1,21 @@
 ---
 title: WDI_TLV_P2P_INVITATION_REQUEST_INFO
-description: WDI_TLV_P2P_INVITATION_REQUEST_INFO 是 TLV 包含 Wi-Fi Direct 邀请请求信息。
-ms.assetid: 055B0F6D-2B68-495D-8253-2D213D699383
+description: WDI_TLV_P2P_INVITATION_REQUEST_INFO 是包含 Wi-Fi 直接邀请请求信息的 TLV。
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_P2P_INVITATION_REQUEST_INFO 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: dbd853552a9a8d46c798b735829ed50357058944
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a9b0ec3fcb74f00ebb443d4c4f9ea6eec8ca4270
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63347287"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96818237"
 ---
-# <a name="wditlvp2pinvitationrequestinfo"></a>WDI\_TLV\_P2P\_邀请\_请求\_信息
+# <a name="wdi_tlv_p2p_invitation_request_info"></a>WDI \_ TLV \_ P2P \_ 邀请 \_ 请求 \_ 信息
 
 
-WDI\_TLV\_P2P\_邀请\_请求\_信息是包含 Wi-Fi Direct 邀请请求信息 TLV。
+WDI \_ tlv \_ P2P \_ 邀请 \_ 请求 \_ 信息是一个 Tlv，其中包含 Wi-Fi 直接邀请请求信息。
 
 ## <a name="tlv-type"></a>TLV 类型
 
@@ -26,17 +25,17 @@ WDI\_TLV\_P2P\_邀请\_请求\_信息是包含 Wi-Fi Direct 邀请请求信息 T
 ## <a name="length"></a>长度
 
 
-所有的大小 （以字节为单位） 总和包含 TLVs。
+Sum (包含所有 TLVs 的大小的) 字节。
 
 ## <a name="values"></a>值
 
 
-| 在任务栏的搜索框中键入                                                                                                | 允许多个 TLV 实例 | 可选 | 描述                                     |
+| 类型                                                                                                | 允许多个 TLV 实例 | 可选 | 说明                                     |
 |-----------------------------------------------------------------------------------------------------|--------------------------------|----------|-------------------------------------------------|
-| [**WDI\_TLV\_P2P\_INVITATION\_REQUEST\_PARAMETERS**](wdi-tlv-p2p-invitation-request-parameters.md) |                                |          | Wi-Fi Direct 邀请请求的参数。 |
-| [**WDI\_TLV\_P2P\_GROUP\_BSSID**](wdi-tlv-p2p-group-bssid.md)                                      |                                | X        | BSSID 组。                                |
-| [**WDI\_TLV\_P2P\_CHANNEL\_NUMBER**](wdi-tlv-p2p-channel-number.md)                                |                                | X        | Wi-Fi Direct 转操作通道。      |
-| [**WDI\_TLV\_P2P\_GROUP\_ID**](wdi-tlv-p2p-group-id.md)                                            |                                |          | Wi-Fi Direct 转的目标组 ID。        |
+| [**WDI \_ TLV \_ P2P \_ 邀请 \_ 请求 \_ 参数**](wdi-tlv-p2p-invitation-request-parameters.md) |                                |          | Wi-Fi 直接邀请请求参数。 |
+| [**WDI \_ TLV \_ P2P \_ 组 \_ BSSID**](wdi-tlv-p2p-group-bssid.md)                                      |                                | X        | 组 BSSID。                                |
+| [**WDI \_ TLV \_ P2P \_ 信道 \_ 号**](wdi-tlv-p2p-channel-number.md)                                |                                | X        | Wi-Fi 直接走的操作通道。      |
+| [**WDI \_ TLV \_ P2P \_ 组 \_ ID**](wdi-tlv-p2p-group-id.md)                                            |                                |          | 目标 Wi-Fi Direct 中转的组 ID。        |
 
  
 
@@ -55,10 +54,10 @@ WDI\_TLV\_P2P\_邀请\_请求\_信息是包含 Wi-Fi Direct 邀请请求信息 T
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
-<td><p>Windows Server 2016</p></td>
+<td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Wditypes.hpp</td>
 </tr>
 </tbody>

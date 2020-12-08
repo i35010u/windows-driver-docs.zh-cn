@@ -1,43 +1,42 @@
 ---
 title: 自定义属性集和接口
 description: 自定义属性集和接口
-ms.assetid: ea1337e4-c8e5-4971-b602-c066b5a6fd07
 keywords:
 - 接口 WDK 视频捕获
-- 自定义属性集 WDK 视频捕获
-- 视频捕获 WDK AVStream，属性设置
-- 捕获视频 WDK AVStream，属性设置
+- 自定义属性设置 WDK 视频捕获
+- 视频捕获 WDK AVStream，属性集
+- 捕获视频 WDK AVStream，属性集
 - 属性集 WDK 视频捕获
 - 自定义接口 WDK 视频捕获
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b24114469e8dcf501be497ed9310e838b1c16c01
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d96cc03dd76a6948f9ec5e1c5e20d6d156f8c5b6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63374131"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96817967"
 ---
 # <a name="custom-property-sets-and-interfaces"></a>自定义属性集和接口
 
 
-供应商可以实现自定义属性集来控制特定于设备的或特定于流的参数。 通常情况下，这些内核的属性集公开为 COM 接口的自定义*KsProxy*插件 DLL。 同样，可以实现自定义属性页来提供用户界面来控制自定义属性集。
+供应商可以实现自定义属性集来控制特定于设备或流的参数。 通常，这些内核属性集通过自定义 *KsProxy* 插件 DLL 作为 COM 接口公开。 同样，可以实现自定义属性页，以便提供用户界面来控制自定义属性集。
 
-**若要创建自定义属性集**
+**创建自定义属性集**
 
-1.  创建使用设置该属性的唯一的 GUID *Guidgen.exe*。 （此工具包含在 Microsoft Windows SDK 中）。
+1.  使用 *Guidgen.exe* 为属性集创建唯一的 GUID。  (此工具包含在 Microsoft Windows SDK 中。 ) 
 
-2.  实现你的微型驱动程序中设置的属性。
+2.  实现微型驱动程序中设置的属性。
 
-**若要创建属性组的自定义 COM 接口或属性页面**
+**为属性集创建自定义 COM 接口或属性页**
 
-1.  创建一个自定义的 KsProxy 插件 DLL 实现 COM 接口或属性页。 插件 DLL 类 ID (CLSID) 必须与属性集 GUID 匹配。 链接到*ksproxy.lib*若要获取的实现 **:: KsSynchronousDeviceControl**。
+1.  创建一个实现 COM 接口或属性页的自定义 KsProxy 插件 DLL。 插件 DLL (CLSID) 的类 ID 必须与属性集 GUID 匹配。 链接到 *ksproxy* 以获取 **：： KsSynchronousDeviceControl** 的实现。
 
-2.  添加公开的标准 Microsoft DirectShow 机制*CFactoryTemplateg\_模板*从 DLL 以允许自注册你的接口。
+2.  添加从 DLL 公开 *CFactoryTemplateg \_ 模板* 的标准 Microsoft DirectShow 机制，以允许接口的自我注册。
 
-3.  将行添加到您的硬件设备安装文件 （INF 文件） 来公开 COM 接口和属性页，该示例中所示*MyINF.inf*下面。
+3.  向硬件的设备安装文件添加行 (INF 文件) 以公开 COM 接口和属性页，如下面的示例 *MyINF* 中所示。
 
-下面的代码演示如何实现 IAMCameraControl:
+下面的代码演示 IAMCameraControl 的实现：
 
 **Camera.h**
 
@@ -167,7 +166,7 @@ CCameraControlInterfaceHandler::NonDelegatingQueryInterface(
 }
 ```
 
-**MyINF.inf**
+**MyINF .inf**
 
 ```INF
 ;IAMCameraControl

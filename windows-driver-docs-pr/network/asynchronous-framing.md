@@ -1,19 +1,18 @@
 ---
 title: 异步分帧
 description: 异步分帧
-ms.assetid: 355fb3c7-2f8e-445f-9109-8ae9068dab01
 keywords:
-- 组帧数据包分帧 WDK WAN 日，异步
-- 异步帧 WDK WAN
-- WAN 数据包分帧 WDK 网络、 异步帧
+- 数据包帧 WDK WAN，异步组帧
+- 异步组帧 WDK WAN
+- WAN 数据包组帧 WDK 网络，异步组帧
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: eee945280a014f4b58557a2992152d267e26f1ed
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7a2dfc84b2da6f3610a820d0211ee08c658fb0a5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63367716"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96817683"
 ---
 # <a name="asynchronous-framing"></a>异步分帧
 
@@ -21,9 +20,9 @@ ms.locfileid: "63367716"
 
 
 
-下图演示了异步帧压缩已关闭。
+下图说明了已关闭压缩的异步组帧。
 
-![关系图演示如何使用压缩的异步帧处于关闭状态](images/ng10f1.png)
+![阐释关闭压缩的异步组帧的关系图](images/ng10f1.png)
 
  
 

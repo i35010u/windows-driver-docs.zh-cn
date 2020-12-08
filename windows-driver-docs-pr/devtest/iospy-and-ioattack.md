@@ -1,15 +1,14 @@
 ---
 title: IoSpy 和 IoAttack
 description: IoSpy 和 IoAttack
-ms.assetid: 4cc5bf5c-f9e4-43d4-8532-dd7813b6f2a0
 ms.date: 07/10/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 7daf70d5156a9bc979ea406d8f9dee5fe17f1716
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 71bb6e92a3f001481bf634979072ff06ec56a3b5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89382277"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96817481"
 ---
 # <a name="iospy-and-ioattack"></a>IoSpy 和 IoAttack
 
@@ -35,11 +34,11 @@ IoSpy 和 IoAttack 是在内核模式驱动程序上执行 IOCTL 和 WMI 模糊�
 
 *模糊测试* 提供了一个包含随机数据的驱动程序（称为 *模糊*），以便确定驱动程序中的缺陷。 对 IOCTL 或 WMI 接口的模糊测试不是新的。 但是，大多数测试套件是一般的 *黑色框* 模糊测试，这些测试仅验证对驱动程序的 IOCTL 或 wmi 接口的外部访问，或写入以测试驱动程序中的特定 IOCTL 和 WMI 路径。
 
-IoSpy 和 IoAttack 使用更多的 *白框* 方法来模糊测试。 为设备启用模糊测试时，IoSpy 将捕获发送到设备驱动程序的 IOCTL 和 WMI 请求，并将这些请求的属性记录在数据文件中。 然后，IoAttack 从该数据文件中读取属性，并在将这些属性发送到驱动程序之前，使用这些属性来 *模糊*或随机更改 IOCTL 或 WMI 请求。 这样，便可以进一步进入驱动程序的缓冲区验证代码，而无需编写 IOCTL 或特定于 WMI 的测试。
+IoSpy 和 IoAttack 使用更多的 *白框* 方法来模糊测试。 为设备启用模糊测试时，IoSpy 将捕获发送到设备驱动程序的 IOCTL 和 WMI 请求，并将这些请求的属性记录在数据文件中。 然后，IoAttack 从该数据文件中读取属性，并在将这些属性发送到驱动程序之前，使用这些属性来 *模糊* 或随机更改 IOCTL 或 WMI 请求。 这样，便可以进一步进入驱动程序的缓冲区验证代码，而无需编写 IOCTL 或特定于 WMI 的测试。
 
 运行 Windows Vista 或更高版本的 Windows 操作系统的系统支持 IoSpy 和 IoAttack。 这些工具作为 [设备基础测试](device-fundamentals-tests.md)的一部分包含在 WDK 中，请参阅 [渗透测试 (设备基础) ](coverage-tests--device-fundamentals-.md)。 可以从 " **添加或删除驱动程序测试** " 对话框中的 "基本 \\ 设备基础 \\ 渗透 \\ IoSpy & 攻击文件夹" 下选择这些测试。
 
-**重要提示**   应该在以前为内核模式调试准备的测试系统上运行 IoSpy 和 IoAttack。
+**重要提示**   应该在以前为内核模式调试准备的测试系统上运行 IoSpy 和 IoAttack。
 
  
 

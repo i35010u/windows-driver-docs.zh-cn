@@ -1,15 +1,14 @@
 ---
 title: 编译 NDIS 6.30 驱动程序
 description: 本部分介绍如何编译 NDIS 6.30 驱动程序
-ms.assetid: 6CBAFAA2-7DA3-4184-B82B-AEFF61F7072C
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bac17b229e7c1a6d52050441c8a8bd753ef8a1af
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 49ef40c9a49c6a15775e8f20ec07b6c7f7cc90e9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89208707"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96817607"
 ---
 # <a name="compiling-an-ndis-630-driver"></a>编译 NDIS 6.30 驱动程序
 

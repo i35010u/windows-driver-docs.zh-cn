@@ -1,15 +1,14 @@
 ---
 title: 元数据
 description: 元数据
-ms.assetid: bab7803c-df1f-4282-a9d7-5536d30d00dc
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d8911616d7d9aeb713858c136d82ddafc9c73a70
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: f680c73046cd4545a56aa2a38e42afb747bb0032
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89403352"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96818421"
 ---
 # <a name="metadata"></a>元数据
 
@@ -26,9 +25,9 @@ Metadata 元素指定服务元数据包中所引用的 XML 架构的命名空间
 </Metadata>
 ```
 
-## <a name="attributes"></a>属性
+## <a name="attributes"></a>特性
 
-|属性|类型|必选|说明|
+|属性|类型|必须|描述|
 |----|----|----|----|
 |MetadataID|xs:anyURI|是|指定在服务元数据包内引用的 XML 架构的命名空间。|
 
@@ -42,7 +41,7 @@ Metadata 元素指定服务元数据包中所引用的 XML 架构的命名空间
 
 ## <a name="parent-elements"></a>父元素
 
-|元素|说明|
+|元素|描述|
 |----|----|
 |[PackageStructure](packagestructure.md)|[PackageStructure](packagestructure.md)元素指定服务元数据包引用的 XML 架构。|
 

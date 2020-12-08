@@ -1,29 +1,28 @@
 ---
 title: WDI_TLV_P2P_PROVISION_SERVICE_ATTRIBUTES
-description: WDI_TLV_P2P_PROVISION_SERVICE_ATTRIBUTES 是包含 Wi-fi Direct 预配服务属性的 TLV。
-ms.assetid: CA318E91-660A-4F17-827B-F27E18643CC6
+description: WDI_TLV_P2P_PROVISION_SERVICE_ATTRIBUTES 是包含 Wi-Fi 直接预配服务属性的 TLV。
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_P2P_PROVISION_SERVICE_ATTRIBUTES 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 1a8efcef3497516837eb60fa01ac4cb92eb42523
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 2ec74a4839d4da1f17dda293de67c6af9b9a616e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89211497"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96818199"
 ---
 # <a name="wdi_tlv_p2p_provision_service_attributes"></a>WDI \_ TLV \_ P2P \_ 预配 \_ 服务 \_ 属性
 
 
-WDI \_ tlv \_ P2P \_ 预配 \_ 服务 \_ 属性是包含 wi-fi Direct 预配服务属性的 tlv。
+WDI \_ tlv \_ P2P \_ 预配 \_ 服务 \_ 属性是一个 Tlv，其中包含 Wi-Fi 直接预配服务属性。
 
 ## <a name="tlv-type"></a>TLV 类型
 
 
 0xC6
 
-## <a name="length"></a>Length
+## <a name="length"></a>长度
 
 
 Sum (所有包含的元素的大小) 。
@@ -31,10 +30,10 @@ Sum (所有包含的元素的大小) 。
 ## <a name="values"></a>值
 
 
-| 类型                                              | 说明                                                                                                                                        |
+| 类型                                              | 描述                                                                                                                                        |
 |---------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------|
-| UINT8                                             | Wi-fi Direct 状态代码，由 Wi-fi Direct 规范定义。                                                                            |
-| [**WDI \_ MAC \_ 地址**](/windows-hardware/drivers/ddi/dot11wdi/ns-dot11wdi-_wdi_mac_address) | 用于未来 Wi-fi Direct 连接的本地 MAC 地址。                                                                                              |
+| UINT8                                             | Wi-Fi 直接状态代码，如 Wi-Fi 直接规范所定义。                                                                            |
+| [**WDI \_ MAC \_ 地址**](/windows-hardware/drivers/ddi/dot11wdi/ns-dot11wdi-_wdi_mac_address) | 用于未来 Wi-Fi 直接连接的本地 MAC 地址。                                                                                              |
 | UINT8                                             | 连接功能位掩码。                                                                                                                     |
 | UINT32                                            | 功能功能位掩码。                                                                                                                        |
 | UINT32                                            | 服务实例的播发 ID。                                                                                                         |
@@ -63,7 +62,7 @@ Sum (所有包含的元素的大小) 。
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
-<td><p>Windows Server 2016</p></td>
+<td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
 <td><p>标头</p></td>

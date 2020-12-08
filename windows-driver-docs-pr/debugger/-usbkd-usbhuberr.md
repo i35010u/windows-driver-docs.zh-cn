@@ -1,7 +1,6 @@
 ---
 title: usbkd.usbhuberr
 description: Usbkd. usbhuberr 命令显示 USB 集线器错误记录。
-ms.assetid: 5BB87FA2-0531-400C-95B3-325EE4DDB649
 keywords:
 - usbkd usbhuberr Windows 调试
 ms.date: 05/23/2017
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 6f4dfd68341471f7c9fa1abc6371f55665a43b93
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 614e0891cd0726d34e8de9b0159c854dc99a5468
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89207371"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96818667"
 ---
 # <a name="usbkdusbhuberr"></a>!usbkd.usbhuberr
 
 
-**！ Usbkd. usbhuberr**命令显示 USB 集线器错误记录。
+**！ Usbkd. usbhuberr** 命令显示 USB 集线器错误记录。
 
 ```dbgcmd
 !usbkd.usbhuberr StructAddr
@@ -81,7 +80,7 @@ ExceptionList: !usblist ffffe000011f8498, EL [Empty]
 ...
 ```
 
-在上面的输出中， `ffffe000011f8498` 是异常列表的地址。 如果异常列表不为空，它将包含** \_ 中心 \_ 异常 \_ 记录**结构的地址。
+在上面的输出中， `ffffe000011f8498` 是异常列表的地址。 如果异常列表不为空，它将包含 **\_ 中心 \_ 异常 \_ 记录** 结构的地址。
 
 
 ## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅

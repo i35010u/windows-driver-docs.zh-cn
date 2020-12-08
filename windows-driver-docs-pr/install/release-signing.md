@@ -1,15 +1,14 @@
 ---
 title: 发布签名
 description: 完成测试签名并验证驱动程序是否已准备好进行发布后，必须对驱动程序包进行签名。 可以通过两种方式对驱动程序包进行签名。
-ms.assetid: 71499A0A-95D0-411C-84D1-C4B91FA4E6B1
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 21ff18559326d2677c1fe02757d8c38577f876df
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 2ecfc4c40f89127d628773d0c547bfc738a94ce9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91732539"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96818889"
 ---
 # <a name="release-signing"></a>发布签名
 
@@ -69,7 +68,7 @@ CA 可能会颁发包含所需证书信息的 *.pfx* 文件。 如果是这样�
 
 - 包含公钥信息的 *.spc* 或 *.cer* 文件。
 
-在这种情况下，必须将*pvk*和 *.spc* *) 的* (文件对转换为 .pfx*文件，然后才能*将证书信息添加到个人证书存储 *.pfx*中，以便将证书信息添加到个人证书存储。
+在这种情况下，必须将 *pvk* 和 *.spc* *) 的* (文件对转换为 .pfx *文件，然后才能* 将证书信息添加到个人证书存储 *.pfx* 中，以便将证书信息添加到个人证书存储。
 
 来创建。*pfx* 文件，请按照以下说明进行操作：
 
@@ -87,17 +86,17 @@ CA 可能会颁发包含所需证书信息的 *.pfx* 文件。 如果是这样�
 
 下面介绍了 [**Pvk2Pfx**](../devtest/pvk2pfx.md) 命令中使用的参数：
 
-- **-Pvk**  *mypvkfile. pvk*参数指定*pvk*文件。
+- **-Pvk***mypvkfile. pvk* 参数指定 *pvk* 文件。  
 
-- **-Pi**  *mypvkpassword*选项指定的密码。*pvk*文件。
+- **-Pi***mypvkpassword* 选项指定的密码。*pvk* 文件。  
 
-- **-Spc** *myspcfile*参数指定一个 *.spc*文件或 **-spc**  *mycerfile*参数指定 *.cer*文件。
+- **-Spc** *myspcfile* 参数指定一个 *.spc* 文件或 **-spc***mycerfile* 参数指定 *.cer* 文件。  
 
-- **-Pfx** *mypfxfile*选项指定 *.pfx*文件的名称。
+- **-Pfx** *mypfxfile* 选项指定 *.pfx* 文件的名称。
 
-- **-Po** *pfxpassword*选项指定 *.pfx*文件的密码。
+- **-Po** *pfxpassword* 选项指定 *.pfx* 文件的密码。
 
-- **-F**选项将 Pvk2Pfx 配置为替换现有*的 .pfx*文件（如果存在）。
+- **-F** 选项将 Pvk2Pfx 配置为替换现有 *的 .pfx* 文件（如果存在）。
 
 >[!IMPORTANY] 应该用强密码保护 pvk 和 pfx 文件。
 
@@ -107,13 +106,13 @@ CA 可能会颁发包含所需证书信息的 *.pfx* 文件。 如果是这样�
 
 [软件发行者证书](software-publisher-certificate.md)*中的最终摘录*：
 
-从 CA 获取 *.pfx*文件或从*pvk*创建 *.pfx*文件后，也可以从。*spc*或 *.cer*文件，请将 *.pfx*文件中的信息添加到对驱动程序进行签名的本地计算机的 "个人" 证书存储中。 您可以使用证书导入向导将 *.pfx* 文件中的信息导入到个人证书存储，如下所示：
+从 CA 获取 *.pfx* 文件或从 *pvk* 创建 *.pfx* 文件后，也可以从。*spc* 或 *.cer* 文件，请将 *.pfx* 文件中的信息添加到对驱动程序进行签名的本地计算机的 "个人" 证书存储中。 您可以使用证书导入向导将 *.pfx* 文件中的信息导入到个人证书存储，如下所示：
 
 1. 在 Windows 资源管理器中找到 *.pfx* 文件，然后双击该文件以打开证书导入向导。
 
 2. 按照证书导入向导中的步骤将代码签名证书导入到个人证书存储区中。
 
-*从*将 [SPC 导入到证书存储区](importing-an-spc-into-a-certificate-store.md)摘录：
+*从* 将 [SPC 导入到证书存储区](importing-an-spc-into-a-certificate-store.md)摘录：
 
 从 Windows Vista 开始，将 *.pfx* 文件导入到本地个人证书存储中的另一种方法是使用 [CertUtil](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc732443(v=ws.10)) 命令行实用程序。 以下命令行示例使用 CertUtil 将 *abc* 文件导入到个人证书存储中：
 
@@ -123,11 +122,11 @@ certutil -user -p pfxpassword -importPFX abc.pfx
 
 其中：
 
-- **-User**选项指定 "当前用户" 的个人存储。
+- **-User** 选项指定 "当前用户" 的个人存储。
 
-- **-P**选项指定 *.pfx*文件 (*pfxpassword*) 的密码。
+- **-P** 选项指定 *.pfx* 文件 (*pfxpassword*) 的密码。
 
-- **-ImportPFX**选项指定 *.pfx*文件 (的名称 *) 。*
+- **-ImportPFX** 选项指定 *.pfx* 文件 (的名称 *) 。*
 
 ## <a name="view-spc-properties"></a>查看 SPC 属性
 

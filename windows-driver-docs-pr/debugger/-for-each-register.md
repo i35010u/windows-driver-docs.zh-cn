@@ -1,7 +1,6 @@
 ---
 title: for_each_register
-description: For_each_register 扩展执行的每个注册指定的命令。
-ms.assetid: 496DC161-D082-4C83-A6B6-6BBCE932BE76
+description: For_each_register 扩展对每个注册执行指定的命令。
 keywords:
 - for_each_register Windows 调试
 ms.date: 05/23/2017
@@ -12,33 +11,33 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 3e3d8e42aa26416006e772ae0e1e83486b306d56
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2116c997c430183838248a9629a8f29cc7c59458
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63336638"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96817581"
 ---
-# <a name="foreachregister"></a>!for\_each\_register
+# <a name="for_each_register"></a>！对于 \_ 每个 \_ 寄存器
 
 
-**！ 有关\_每个\_注册**扩展执行的每个注册指定的命令。
+**适用于 \_ 每个 \_ 注册扩展的！为** 每个寄存器执行指定的命令。
 
 ```dbgcmd
 !for_each_register -c:CommandString
 !for_each_register -?
 ```
 
-## <a name="span-idddkforeachmoduledbgspanspan-idddkforeachmoduledbgspanparameters"></a><span id="ddk__for_each_module_dbg"></span><span id="DDK__FOR_EACH_MODULE_DBG"></span>参数
+## <a name="span-idddk__for_each_module_dbgspanspan-idddk__for_each_module_dbgspanparameters"></a><span id="ddk__for_each_module_dbg"></span><span id="DDK__FOR_EACH_MODULE_DBG"></span>参数
 
 
-<span id="_______-c_CommandString______"></span><span id="_______-c_commandstring______"></span><span id="_______-C_COMMANDSTRING______"></span> **-c:**<em>CommandString</em>   
-指定要执行的每个注册的命令。 @ 别名\#寄存器名和 @\#RegisterValue 执行命令期间是否有效。
+<span id="_______-c_CommandString______"></span><span id="_______-c_commandstring______"></span><span id="_______-C_COMMANDSTRING______"></span>**-c：**<em>command.commandstring</em>   
+指定要为每个寄存器执行的命令。 别名 @ \# 寄存器名和 @ \# RegisterValue 在执行命令期间有效。
 
 <span id="_______-_______"></span> **-?**   
-显示的帮助 **！ 有关\_每个\_注册**扩展。
+**为 \_ 每个 \_ 寄存器** 扩展显示！的帮助。
 
-## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 
 Ext.dll
@@ -46,7 +45,7 @@ Ext.dll
 ## <a name="span-idexamplesspanspan-idexamplesspanspan-idexamplesspanexamples"></a><span id="Examples"></span><span id="examples"></span><span id="EXAMPLES"></span>示例
 
 
-此示例列出了每个注册的名称。
+此示例列出了每个寄存器的名称。
 
 ```dbgcmd
 0:000> !for_each_register -c:.echo @#RegisterName
@@ -57,7 +56,7 @@ rbx
 ...
 ```
 
-此示例执行[ **！ 地址**](-address.md)为每个注册值。
+此示例对每个 register 值执行 [**！ address**](-address.md) 。
 
 ```dbgcmd
 0:000> !for_each_register -c:!address ${@#RegisterValue}
@@ -78,9 +77,9 @@ More info:              ~0k
 <a name="remarks"></a>备注
 -------
 
-别名是调试器扩展的自变量时 (例如， [ **！ 地址**](-address.md))，使用别名解释程序[ **${} （别名解释器）**](-------alias-interpreter-.md)令牌，以便正确地解析别名。
+如果别名是调试器扩展的参数 (例如， [**！ address**](-address.md)) ，请使用别名解释器 [**$ {} (别名解释器)**](-------alias-interpreter-.md) 标记，以便正确解析别名。
 
-有关如何定义和别名用作快捷方式的输入字符串的详细信息 (包括使用[ **${}**  ](-------alias-interpreter-.md)令牌)，请参阅[使用别名](using-aliases.md).
+有关如何定义和使用别名作为输入字符串的快捷方式的详细信息 (包括使用 [**{} $**](-------alias-interpreter-.md) token) 的详细信息，请参阅 [使用别名](using-aliases.md)。
 
  
 

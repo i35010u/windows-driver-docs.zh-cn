@@ -1,7 +1,6 @@
 ---
 title: KSEVENT \_ BDA \_ CA \_ 模块 \_ UI 已 \_ 请求
 description: '\_ \_ \_ \_ \_ 当接口数据可用于检索和向用户显示时，客户端使用 KSEVENT BDA CA 模块 UI 请求通知。'
-ms.assetid: c76bbe0d-7cc4-4594-b435-ad738ebbd141
 keywords:
 - KSEVENT_BDA_CA_MODULE_UI_REQUESTED 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1a6df605e3b206383c5846a95e01ceaeccf6757c
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 43e87bda972d92e53f04f1eb19ee85ab0cb5fe62
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89185729"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96818765"
 ---
 # <a name="ksevent_bda_ca_module_ui_requested"></a>KSEVENT \_ BDA \_ CA \_ 模块 \_ UI 已 \_ 请求
 
@@ -53,7 +52,7 @@ KSEVENT
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSEVENT**](/previous-versions/ff561744(v=vs.85))

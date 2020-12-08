@@ -1,15 +1,14 @@
 ---
 title: 网络设备的标准化 INF 关键字
 description: 网络设备的标准化 INF 关键字
-ms.assetid: F79AFB63-D404-4A5C-9515-82FFEB667048
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5311923887ac2e43954e74a3d38f89136f70e38d
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 804141abd5e827a5bdfe895c495ce1301ee98ae2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89216548"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96818837"
 ---
 # <a name="standardized-inf-keywords-for-network-devices"></a>网络设备的标准化 INF 关键字
 
@@ -43,7 +42,7 @@ ms.locfileid: "89216548"
 
 -   设备完全支持指定的属性。
 
-**注意**   标准化关键字是可选的，但建议用于 NDIS 5.1 和更早的 NDIS 微型端口驱动程序。
+**注意**  标准化关键字是可选的，但建议用于 NDIS 5.1 和更早的 NDIS 微型端口驱动程序。
 
  
 
@@ -51,14 +50,14 @@ ms.locfileid: "89216548"
 
 在 INF 文件中，这些关键字的定义与 "高级属性" 页的其他定义放置在一起。 有关高级属性的详细信息，请参阅 [指定高级属性页的配置参数](specifying-configuration-parameters-for-the-advanced-properties-page.md)。
 
-所有标准化关键字名称都以星号开头 (**\***) 。 此命名约定使你可以轻松地将标准化名称与非标准名称区分开来。
+所有标准化关键字名称均以星号 ( * *\** _) 开头。 此命名约定使你可以轻松地将标准化名称与非标准名称区分开来。
 
 用户界面中公开了三种类型的标准化关键字数据：
 
 <a href="" id="enum"></a>枚举  
-可从 " **高级** 属性" 页的下拉菜单中显示的列表中选择的值。
+可从 "_ *高级** 属性" 页的下拉菜单中显示的列表中选择的值。
 
-<a href="" id="int"></a>整形  
+<a href="" id="int"></a>int  
 可以编辑的数值。
 
 <a href="" id="edit"></a>编辑  

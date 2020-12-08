@@ -1,22 +1,21 @@
 ---
 title: WDI_TLV_BAND_CAPABILITIES
-description: WDI_TLV_BAND_CAPABILITIES 是 TLV 包含带区的功能。
-ms.assetid: ABD198FE-8E81-4AF3-BB3D-D78AEB75782F
+description: WDI_TLV_BAND_CAPABILITIES 是包含带区功能的 TLV。
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_BAND_CAPABILITIES 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 695da6614b6b6025d6b9e82883878ad13b3fed60
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: aaa88d1095318306264088bac5b8b77fb4d750b8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526341"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96818311"
 ---
-# <a name="wditlvbandcapabilities"></a>WDI\_TLV\_外\_功能
+# <a name="wdi_tlv_band_capabilities"></a>WDI \_ TLV \_ 波段 \_ 功能
 
 
-WDI\_TLV\_外\_功能是 TLV 包含带区的功能。
+WDI \_ tlv \_ 波段 \_ 功能是包含带区功能的 tlv。
 
 ## <a name="tlv-type"></a>TLV 类型
 
@@ -26,12 +25,12 @@ WDI\_TLV\_外\_功能是 TLV 包含带区的功能。
 ## <a name="length"></a>长度
 
 
-所有包含的元素的大小的总和 （以字节为单位）。
+Sum (所有包含的元素的大小) 。
 
 ## <a name="values"></a>值
 
 
-| 在任务栏的搜索框中键入   | 描述                                   |
+| 类型   | 描述                                   |
 |--------|-----------------------------------------------|
 | UINT32 | 带区的标识符。                  |
 | UINT8  | 指定是否启用带区。 |
@@ -53,7 +52,7 @@ WDI\_TLV\_外\_功能是 TLV 包含带区的功能。
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
-<td><p>Windows Server 2016</p></td>
+<td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
 <td><p>标头</p></td>

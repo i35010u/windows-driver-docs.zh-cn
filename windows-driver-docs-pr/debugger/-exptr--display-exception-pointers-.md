@@ -1,9 +1,8 @@
 ---
 title: .exptr（显示异常指针）
-description: .Exptr 命令显示 EXCEPTION_POINTERS 结构。
-ms.assetid: ef98bf22-10a1-4fd2-80f1-fd7eb75015c1
+description: Exptr 命令显示 EXCEPTION_POINTERS 结构。
 keywords:
-- .exptr （显示异常的指针） Windows 调试
+- exptr (显示) Windows 调试的异常指针
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,27 +11,27 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: a59e282fb32eb5b14a2da5fb7ab4c3095ac5c7df
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b52899847f2863e7321df0ee1a7ae9f38dd67919
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63334496"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96819431"
 ---
 # <a name="exptr-display-exception-pointers"></a>.exptr（显示异常指针）
 
 
-**.Exptr**命令将显示异常\_指针结构。
+**Exptr** 命令显示异常 \_ 指针结构。
 
 ```dbgcmd
 .exptr Address
 ```
 
-## <a name="span-idddkmetadisplayexceptionpointersdbgspanspan-idddkmetadisplayexceptionpointersdbgspanparameters"></a><span id="ddk_meta_display_exception_pointers_dbg"></span><span id="DDK_META_DISPLAY_EXCEPTION_POINTERS_DBG"></span>参数
+## <a name="span-idddk_meta_display_exception_pointers_dbgspanspan-idddk_meta_display_exception_pointers_dbgspanparameters"></a><span id="ddk_meta_display_exception_pointers_dbg"></span><span id="DDK_META_DISPLAY_EXCEPTION_POINTERS_DBG"></span>参数
 
 
-<span id="_______Address______"></span><span id="_______address______"></span><span id="_______ADDRESS______"></span> *Address*   
-指定异常的地址\_指针结构。
+<span id="_______Address______"></span><span id="_______address______"></span><span id="_______ADDRESS______"></span>*地址*   
+指定异常指针结构的地址 \_ 。
 
 ### <a name="span-idenvironmentspanspan-idenvironmentspanspan-idenvironmentspanenvironment"></a><span id="Environment"></span><span id="environment"></span><span id="ENVIRONMENT"></span>环境
 
@@ -43,12 +42,12 @@ ms.locfileid: "63334496"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>模式</strong></p></td>
-<td align="left"><p>用户模式下，内核模式</p></td>
+<td align="left"><p><strong>交货</strong></p></td>
+<td align="left"><p>用户模式，内核模式</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>目标</strong></p></td>
-<td align="left"><p>实时、 崩溃转储</p></td>
+<td align="left"><p>实时，故障转储</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>平台</strong></p></td>

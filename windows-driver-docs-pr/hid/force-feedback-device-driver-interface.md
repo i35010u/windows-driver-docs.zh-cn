@@ -1,7 +1,6 @@
 ---
 title: 强制反馈设备驱动程序接口
 description: 强制反馈设备驱动程序接口
-ms.assetid: 59668521-84b9-4a1a-980b-6de57422a2c5
 keywords:
 - 强制反馈驱动程序 WDK HID
 - 虚拟游戏杆驱动程序 WDK HID，强制反馈
@@ -10,12 +9,12 @@ keywords:
 - 效果驱动程序 WDK 强制反馈
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a808bbef20799d11484052482aa6319d15d8c0c7
-ms.sourcegitcommit: ec7bebe3f94536455e62b372c2a28fe69d1717f7
+ms.openlocfilehash: 00a1be8afb2644074cb11da38df884fd95cefb09
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93349681"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96819073"
 ---
 # <a name="force-feedback-device-driver-interface"></a>强制反馈设备驱动程序接口
 
@@ -74,7 +73,7 @@ ms.locfileid: "93349681"
 
 [*GetForceFeedbackState*](/previous-versions/ff538776(v=vs.85))
 
-[*Esc*](/previous-versions/ff538680(v=vs.85))
+[*Esc 键*](/previous-versions/ff538680(v=vs.85))
 
 [*SendForceFeedbackCommand*](/previous-versions/ff543387(v=vs.85))
 
