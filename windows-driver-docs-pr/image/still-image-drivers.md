@@ -1,15 +1,14 @@
 ---
 title: 静态图像驱动程序
 description: 静态图像驱动程序
-ms.assetid: e207f76e-ff35-4a0d-a4bf-744931055eb8
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0792f031ff8962d849cac0c0d960796db67e2b08
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: babc923334f0261589c448c26a611ff77310eddf
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63364353"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96792861"
 ---
 # <a name="still-image-drivers"></a>静态图像驱动程序
 
@@ -17,15 +16,15 @@ ms.locfileid: "63364353"
 
 
 
-Microsoft Windows Driver Kit (WDK) 包括名为 Windows 图像采集 (WIA) 的体系结构。 Microsoft 仍映像体系结构 (Microsoft STI) 的基础上构建 WIA，因此将驱动程序轻松地基于 STI 迁移到 WIA。
+Microsoft Windows 驱动程序工具包 (WDK) 包含一个名为 "Windows 映像采集 (WIA) " 的体系结构。 WIA 建立在 microsoft STI) 的 Microsoft 静止映像体系 (结构基础之上，因此 STI 上构建的驱动程序可轻松迁移到 WIA。
 
-本部分提供 Microsoft STI 上开发的旧驱动程序。 它描述是由 Microsoft STI 定义和提供的此类静止图像硬件供应商给如平板扫描仪和数字静止图像的相机的 COM 接口。 在本部分中所述的 COM 接口，由调用，或者定义的供应商提供的以下软件：
+本部分针对在 Microsoft STI 上开发的旧驱动程序提供。 它介绍了 Microsoft STI 定义的 COM 接口，并将此类静止图像硬件供应商提供给平板扫描仪和数字静止图像相机。 本部分中描述的 COM 接口由以下供应商提供的软件由或定义。
 
--   图像 API 获取软件，如需要，以使 TWAIN API 可支持特定静止图像设备 TWAIN 数据源的特定于设备的组件。
+-   图像采集 API 软件的设备特定组件（如 TWAIN 数据源，这些组件是必需的，因此 TWAIN API 可以支持特定的静止图像设备）。
 
--   用户模式下仍映像微型驱动程序，它们提供了从图像获取软件到较低级别设备和总线驱动程序的通信路径。
+-   用户模式静止图像微型驱动程序，提供从图像采集软件到低级设备和总线驱动程序的通信路径。
 
-部分包含以下各节：
+部分包含以下部分：
 
 [Microsoft STI 和 Microsoft WIA 概述](overview-of-microsoft-sti-and-microsoft-wia.md)
 
@@ -33,19 +32,19 @@ Microsoft Windows Driver Kit (WDK) 包括名为 Windows 图像采集 (WIA) 的�
 
 [Microsoft STI 组件](microsoft-sti-components.md)
 
-[静止图像的 COM 接口](still-image-com-interfaces.md)
+[静态图像 COM 接口](still-image-com-interfaces.md)
 
-[创建推送模型识别应用程序](creating-push-model-aware-applications.md)
+[创建推送模型感知应用程序](creating-push-model-aware-applications.md)
 
-[为图像采集 Api 创建特定于设备的组件](creating-device-specific-components-for-image-acquisition-apis.md)
+[为图像采集 API 创建特定于设备的组件](creating-device-specific-components-for-image-acquisition-apis.md)
 
-[创建用户模式下仍映像微型驱动程序](creating-a-user-mode-still-image-minidriver.md)
+[创建用户模式静态图像微型驱动程序](creating-a-user-mode-still-image-minidriver.md)
 
-[安装和配置仍映像组件](installing-and-configuring-still-image-components.md)
+[安装和配置静态图像组件](installing-and-configuring-still-image-components.md)
 
-[启动和停止静止图像服务](starting-and-stopping-the-still-image-service.md)
+[启动和停止静态图像服务](starting-and-stopping-the-still-image-service.md)
 
-[调试仍映像组件](debugging-still-image-components.md)
+[调试静态图像组件](debugging-still-image-components.md)
 
  
 

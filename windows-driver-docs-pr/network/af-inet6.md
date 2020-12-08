@@ -1,16 +1,15 @@
 ---
 title: AF_INET6
 description: AF_INET6
-ms.assetid: 58d36a1e-cda2-42aa-9563-96df2f7319b2
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 AF_INET6 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 28f8f525db3663b2bff419685eecf88d1d10c6d9
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: cd25f2b760fc8b46ba39f98c9d873dc0ed917c9d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89212977"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96792189"
 ---
 # <a name="af_inet6"></a>AF \_ INET6
 
@@ -38,7 +37,7 @@ IPv6 支持以下套接字类型：
 
 ### <a name="protocols"></a>协议
 
-IPPROTO 枚举的以下 IPv6 IPPROTO \_ *XXX*协议值在 WSK 标头文件中定义：
+IPPROTO 枚举的以下 IPv6 IPPROTO \_ *XXX* 协议值在 WSK 标头文件中定义：
 
 <a href="" id="ipproto-hopopts"></a>IPPROTO \_ HOPOPTS  
 IPv6 逐跃点选项
@@ -131,15 +130,15 @@ IPv6 目标选项
 
 WSK 应用程序在调用 [**WskSocket**](/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_socket) 函数或 [**WskSocketConnect**](/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_socket_connect) 函数来创建新的套接字时指定协议。
 
-当 WSK 应用程序调用[**WskControlSocket**](/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_control_socket)函数来设置或检索传输协议级别或网络协议级别套接字选项时，它还将协议 (指定为*Level*参数) 。
+当 WSK 应用程序调用 [**WskControlSocket**](/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_control_socket)函数来设置或检索传输协议级别或网络协议级别套接字选项时，它还将协议 (指定为 *Level* 参数) 。
 
 ### <a name="combinations"></a>各种
 
 对于每个 WSK [套接字类别](./winsock-kernel-socket-categories.md)，IPv6 支持以下套接字类型和协议的组合：
 
-基本套接 SOCK \_ STREAM + IPPROTO \_ TCP SOCK \_ DGRAM + IPPROTO \_ UDP SOCK \_ RAW + IPPROTO \_ *XXX*侦听套接字 SOCK \_ STREAM + IPPROTO \_ TCP
+基本套接 SOCK \_ STREAM + IPPROTO \_ TCP SOCK \_ DGRAM + IPPROTO \_ UDP SOCK \_ RAW + IPPROTO \_ *XXX* 侦听套接字 SOCK \_ STREAM + IPPROTO \_ TCP
 
-数据报套接字 SOCK \_ DGRAM + IPPROTO \_ UDP SOCK \_ RAW + IPPROTO \_ *Xxx*面向连接的套接字 SOCK \_ STREAM + IPPROTO \_ TCP
+数据报套接字 SOCK \_ DGRAM + IPPROTO \_ UDP SOCK \_ RAW + IPPROTO \_ *Xxx* Connection-Oriented 套接字 SOCK \_ STREAM + IPPROTO \_ TCP
 
 <a name="requirements"></a>要求
 ------------

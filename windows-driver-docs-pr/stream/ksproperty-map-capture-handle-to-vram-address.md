@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ 映射 \_ \_ \_ 到 \_ VRAM 地址的捕获句柄 \_
 description: '\_ \_ VRAM 地址属性的 KSPROPERTY 映射捕获 \_ 句柄 \_ \_ \_ 返回捕获驱动程序将 VRAM surface 控点映射到 VRAM 物理地址。若要使用 VRAM 传输，捕获微型驱动程序必须支持此属性。'
-ms.assetid: 071c9152-12f9-4ec1-80d7-6b42fce51bbb
 keywords:
 - KSPROPERTY_MAP_CAPTURE_HANDLE_TO_VRAM_ADDRESS 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7d0c8b1ae6a03f36a9c0177cb6446173d4fb87b2
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 9862747bf8160b00e679b111ee19c2e47ebc0b5d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104828"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96792473"
 ---
 # <a name="ksproperty_map_capture_handle_to_vram_address"></a>KSPROPERTY \_ 映射 \_ \_ \_ 到 \_ VRAM 地址的捕获句柄 \_
 
@@ -64,7 +63,7 @@ ms.locfileid: "90104828"
 
 \_VRAM 地址的 KSPROPERTY 映射 \_ 捕获 \_ 句柄 \_ \_ \_ 返回状态 " \_ 成功" 以指示已成功完成。 否则，请求将返回相应的错误代码。
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 捕获驱动程序应在此属性的处理程序中执行映射。
@@ -85,7 +84,7 @@ ms.locfileid: "90104828"
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSPROPERTY**](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)

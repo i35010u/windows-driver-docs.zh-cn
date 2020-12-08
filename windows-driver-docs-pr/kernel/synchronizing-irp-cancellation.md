@@ -1,7 +1,6 @@
 ---
 title: 同步 IRP 取消
 description: 同步 IRP 取消
-ms.assetid: a110c6ad-794d-4b8a-a89d-bceb08ea82b8
 keywords:
 - 取消 Irp，同步
 - 取消例程，同步
@@ -9,12 +8,12 @@ keywords:
 - 可取消的 Irp WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6ac83f3c1a45f27431813321662f85df6e9f9929
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 5af657a7a6a91b77046c2acee6a322c756042754
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89185925"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96792689"
 ---
 # <a name="synchronizing-irp-cancellation"></a>同步 IRP 取消
 

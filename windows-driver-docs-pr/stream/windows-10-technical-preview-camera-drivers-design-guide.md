@@ -1,15 +1,14 @@
 ---
 title: 适用于 Windows 10 的通用相机驱动程序设计指南
 description: 适用于 Windows 10 的相机驱动程序接口已聚合到所有设备，并使用通用照相机驱动程序模型。
-ms.assetid: CB5EEDF2-650D-4CD3-A5DE-DF0D6F10B394
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 33eeae132330cd87e3a35fd28584a10d26e11aa5
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 920f88c1113e3b02d3dc040561b4f6ca1776ee6a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89192783"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96791066"
 ---
 # <a name="universal-camera-driver-design-guide-for-windows-10"></a>适用于 Windows 10 的通用相机驱动程序设计指南
 

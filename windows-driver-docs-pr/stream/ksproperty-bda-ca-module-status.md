@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ BDA \_ CA \_ 模块 \_ 状态
 description: 客户端使用 KSPROPERTY \_ BDA \_ CA \_ 模块 \_ 状态来确定与 ECM 映射节点关联的 CA 模块上的状态。
-ms.assetid: 4bd8a423-7a76-4702-a769-0de88fcc5772
 keywords:
 - KSPROPERTY_BDA_CA_MODULE_STATUS 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 186fb58922957f885caf6178d7c47d45895fa7de
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 310df4e10ab2418de5d9d2ddc6e4b37ef4a51483
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89190173"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96791182"
 ---
 # <a name="ksproperty_bda_ca_module_status"></a>KSPROPERTY \_ BDA \_ CA \_ 模块 \_ 状态
 
@@ -82,7 +81,7 @@ ms.locfileid: "89190173"
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSEVENT \_ BDA \_ CA \_ 模块 \_ 状态 \_ 已更改**](ksevent-bda-ca-module-status-changed.md)

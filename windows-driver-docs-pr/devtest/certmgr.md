@@ -1,7 +1,6 @@
 ---
 title: CertMgr
 description: 'Certmgr.msc ( # A0) 是一个命令行 CryptoAPI 工具，用于管理证书、证书信任列表 (Ctl) 和证书吊销列表 (Crl) 。'
-ms.assetid: 860693f5-de64-4ca9-be64-23e2fbb862c5
 keywords:
 - Certmgr.msc 驱动程序开发工具
 topic_type:
@@ -12,12 +11,12 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2db6eb393de0b4f7b08fca7f34cdf642bd7aadef
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 0245badd6e9c890b0d7e68bcebcca0ccee6a6c23
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89382284"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96791561"
 ---
 # <a name="certmgr"></a>CertMgr
 
@@ -35,33 +34,33 @@ Certmgr.msc 支持大量交换机，但本部分仅介绍与管理证书存储�
 ### <a name="span-idoperationsspanspan-idoperationsspanoperations"></a><span id="operations"></span><span id="OPERATIONS"></span>运算符
 
 <span id="add"></span><span id="ADD"></span>**把**  
-将 Certmgr.msc 配置为将证书、Ctl 或 Crl *指定的文件* 从使用情况指定的文件添加到 *DestinationName*指定的证书存储中。
+将 Certmgr.msc 配置为将证书、Ctl 或 Crl *指定的文件* 从使用情况指定的文件添加到 *DestinationName* 指定的证书存储中。
 
 <span id="del"></span><span id="DEL"></span>**del**  
-将 Certmgr.msc 配置为在证书存储区中删除由*DestinationName*指定的证书存储区*中的证书*、ctl 或 crl。 如果未指定 *DestinationName* ，则会将其作为目标存储 *区，并* 将进行相应修改。
+将 Certmgr.msc 配置为在证书存储区中删除由 *DestinationName* 指定的证书存储区 *中的证书*、ctl 或 crl。 如果未指定 *DestinationName* ，则会将其作为目标存储 *区，并* 将进行相应修改。
 
 <span id="put"></span><span id="PUT"></span>**准备**  
-将 Certmgr.msc 配置为将证书、Ctl 或 Crl 从证书存储区 *指定的证书存储保存到* *DestinationName*指定的文件。
+将 Certmgr.msc 配置为将证书、Ctl 或 Crl 从证书存储区 *指定的证书存储保存到* *DestinationName* 指定的文件。
 
 <span id="none"></span><span id="NONE"></span>内容  
-如果未指定任何命令，则 Certmgr.msc 会在证书存储或证书的指定文件中显示所有证书、Ctl 或*crl。*
+如果未指定任何命令，则 Certmgr.msc 会在证书存储或证书的指定文件中显示所有证书、Ctl 或 *crl。*
 
 ### <a name="span-idswitches_and_argumentsspanspan-idswitches_and_argumentsspanswitches-and-arguments"></a><span id="switches_and_arguments"></span><span id="SWITCHES_AND_ARGUMENTS"></span>开关和参数
 
 <span id="_c"></span><span id="_C"></span>**/c**  
-将 Certmgr.msc 配置为仅处理由证书的*指定的文件的证书。*
+将 Certmgr.msc 配置为仅处理由证书的 *指定的文件的证书。*
 
 <span id="_CTL"></span><span id="_ctl"></span>**/CTL**  
-将 Certmgr.msc 配置为仅处理由 "" 指定 *的文件*中的 ctl。
+将 Certmgr.msc 配置为仅处理由 "" 指定 *的文件* 中的 ctl。
 
 <span id="_CRL"></span><span id="_crl"></span>**/CRL**  
-将 Certmgr.msc 配置为仅 *处理因其*指定的文件中的 crl。
+将 Certmgr.msc 配置为仅 *处理因其* 指定的文件中的 crl。
 
 <span id="_s"></span><span id="_S"></span>**/s**  
-将 Certmgr.msc 配置为访问由或*DestinationName*指定为系统*存储的证书*存储区。
+将 Certmgr.msc 配置为访问由或 *DestinationName* 指定为系统 *存储的证书* 存储区。
 
 <span id="_r_registryLocation"></span><span id="_r_registrylocation"></span><span id="_R_REGISTRYLOCATION"></span>**/R** *registryLocation*  
-指定系统证书存储的注册表位置。 **/R**开关仅在与 **/s**开关一起使用时才有效。 *RegistryLocation*参数必须是：
+指定系统证书存储的注册表位置。 **/R** 开关仅在与 **/s** 开关一起使用时才有效。 *RegistryLocation* 参数必须是：
 
 <span id="currentUser"></span><span id="currentuser"></span><span id="CURRENTUSER"></span>*currentUser*  
 指定 HKEY 当前用户的注册表位置 \_ \_ 。

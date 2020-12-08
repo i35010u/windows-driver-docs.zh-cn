@@ -1,7 +1,6 @@
 ---
 title: 'IrqlKeSetEvent 规则 (wdm) '
 description: IrqlKeSetEvent 规则指定，当 Wait 设置为 FALSE 时，KeSetEvent 例程仅在 IRQL DISPATCH_LEVEL 调用，当 Wait 设置为 TRUE 时 APC_LEVEL。
-ms.assetid: 6274c70c-f61c-4e48-8ee9-a68107158cce
 ms.date: 05/21/2018
 keywords:
 - 'IrqlKeSetEvent 规则 (wdm) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 3a5665d4526ed40461f6a58e161cdb6023f76437
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 82daac91e46c73768a7c4488be528692415ba171
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90101678"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96791825"
 ---
 # <a name="irqlkesetevent-rule-wdm"></a>IrqlKeSetEvent 规则 (wdm) 
 
 
-**IrqlKeSetEvent**规则指定，当 wait 设置为 FALSE 时， [**KeSetEvent**](/windows-hardware/drivers/ddi/wdm/nf-wdm-kesetevent)例程仅在 irql &lt; = 调度 \_ 级别调用， **FALSE** *Wait* &lt; \_ 当*wait*设置为**TRUE**时，它为 irql = APC 级别。
+**IrqlKeSetEvent** 规则指定，当 wait 设置为 FALSE 时， [**KeSetEvent**](/windows-hardware/drivers/ddi/wdm/nf-wdm-kesetevent)例程仅在 irql &lt; = 调度 \_ 级别调用， **FALSE** *Wait* &lt; \_ 当 *wait* 设置为 **TRUE** 时，它为 irql = APC 级别。
 
 **驱动程序模型： WDM**
 

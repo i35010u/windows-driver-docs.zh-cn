@@ -1,7 +1,6 @@
 ---
 title: KSCATEGORY_BDA_RECEIVER_COMPONENT
 description: KSCATEGORY_BDA_RECEIVER_COMPONENT
-ms.assetid: f160662e-651c-444f-aa82-cfc73c19e41d
 keywords:
 - KSCATEGORY_BDA_RECEIVER_COMPONENT 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: d2b22f7b15927046f104498207022a91a8a4874f
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: e94bef3554b9392d0f5e342b7499ee0b6b9a7432
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89097267"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96790561"
 ---
 # <a name="kscategory_bda_receiver_component"></a>KSCATEGORY_BDA_RECEIVER_COMPONENT
 

@@ -2,20 +2,19 @@
 title: 将 Windows 性能工具包 (WPT) 与 WDF 配合使用
 description: 从 Windows 10 开始，你可以使用 Windows 性能工具包 (WPT) 查看 KMDF 或 UMDF 2 驱动程序的性能数据。
 Search.SourceType: Video
-ms.assetid: 0442E4E2-DBC7-4EB0-BEB6-49EFF5132A1D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 339e8f0bccaee0c99e2997e55c5a83c1fa356aa1
-ms.sourcegitcommit: b3e38d06762246c77cedd8e82d740ebea104c538
+ms.openlocfilehash: 0622670980bfb8f04941684b209e99d6a7fc7696
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91662461"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96790821"
 ---
 # <a name="using-the-windows-performance-toolkit-wpt-with-wdf"></a>将 Windows 性能工具包 (WPT) 与 WDF 配合使用
 
 
-从 Windows 10 开始，你可以使用 Windows 性能工具包 (WPT) 查看给定内核模式驱动程序框架的性能数据 (KMDF) 或用户模式驱动程序框架 (UMDF) 2 驱动程序。
+从 Windows 10 开始，你可以使用 Windows 性能工具包 (WPT) 查看给定 Kernel-Mode 驱动程序框架的性能数据 (KMDF) 或 User-Mode Driver Framework (UMDF) 2 驱动程序。
 
 ## <a name="how-can-the-windows-driver-frameworks-wdf-extensions-for-wpt-help"></a>Windows 驱动程序框架如何 (WDF) 扩展 WPT 帮助？
 
@@ -44,7 +43,7 @@ WPT 包含两个单独的工具： Windows 性能记录器和 Windows 性能分�
 
 2.  在提升的命令提示符下，输入以下命令。
 
-    **WdfPerfEnhancedVerifier** * &lt; ServiceName &gt; &lt; UMDF 或 KMDF &gt; *
+    **WdfPerfEnhancedVerifier** *&lt; ServiceName &gt; &lt; UMDF 或 KMDF &gt;*
 
     **注意**  应从安装 WPT 的位置复制 WdfPerfEnhancedVerifier。 如果在开发计算机上安装了 WPT，则需要将脚本从 WPT 安装目录复制到目标计算机。
 
@@ -61,7 +60,7 @@ WPT 包含两个单独的工具： Windows 性能记录器和 Windows 性能分�
 
     此命令为 WDF 启用 ETW 提供程序。 计算机开始记录跟踪。
 
-    **注意**   如步骤2所示，应从 WPT 安装的位置复制 Wpr.exe。 如果在开发计算机上安装了 WPT，请将这些文件从 WPT 安装目录复制到目标计算机。
+    **注意**  如步骤2所示，应从 WPT 安装的位置复制 Wpr.exe。 如果在开发计算机上安装了 WPT，请将这些文件从 WPT 安装目录复制到目标计算机。
 
     在适用于桌面版的 Windows 10 (Home、Pro、Enterprise 和教育) 上，你还可以使用 Wprui.exe 启动跟踪，这将提供用于记录跟踪的 GUI。 在 "更多选项" 下，展开 " **资源分析** "，然后选择 **WDF 驱动程序活动**。
 

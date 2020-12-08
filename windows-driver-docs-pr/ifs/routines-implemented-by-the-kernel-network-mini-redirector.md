@@ -1,17 +1,16 @@
 ---
 title: 由内核网络微型重定向程序实现的例程
 description: 由内核网络微型重定向程序实现的例程
-ms.assetid: bd1a8989-100d-4b7b-9a61-521af6433b00
 keywords:
 - 小型重定向程序 WDK，实现的例程
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8d76162e9c085abe5254bbafe2a7a4f89be83c0d
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 27ffa2f86e119b020ead6b7812e9bde8685ac7f4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102430"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96792253"
 ---
 # <a name="routines-implemented-by-the-kernel-network-mini-redirector"></a>由内核网络微型重定向程序实现的例程
 
@@ -26,7 +25,7 @@ ms.locfileid: "90102430"
 <thead>
 <tr class="header">
 <th align="left">例程所返回的值</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>

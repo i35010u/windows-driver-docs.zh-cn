@@ -1,18 +1,17 @@
 ---
 title: WDI_TLV_FTM_RESPONSE
 description: WDI_TLV_FTM_RESPONSE 是一种 TLV，其中包含来自 BSS 目标 (INTERNAL.H) 响应信息的精细计时度量。
-ms.assetid: 7FD63544-F7FF-4593-A525-A6BEA2A56BB7
 ms.date: 02/13/2019
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_FTM_RESPONSE 网络驱动程序
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 10f0947df75c05135e53a6eac8ff20689e7378b5
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 09a46c7613872ee7e46c505a8d938e6f225416d3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89213722"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96791321"
 ---
 # <a name="wdi_tlv_ftm_response"></a>WDI_TLV_FTM_RESPONSE
 
@@ -24,7 +23,7 @@ ms.locfileid: "89213722"
 
 0x163
 
-## <a name="length"></a>Length
+## <a name="length"></a>长度
 
 Sum (包含所有 TLVs 的大小的) 字节。
 

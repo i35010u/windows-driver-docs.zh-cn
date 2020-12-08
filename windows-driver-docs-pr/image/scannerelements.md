@@ -1,9 +1,8 @@
 ---
 title: ScannerElements 元素
-description: 所需的 ScannerElements 包含所有要返回到客户端的扫描程序信息。
-ms.assetid: 7e1b6e49-34a3-486f-83f2-472b181399d0
+description: 所需的 ScannerElements 包含正在返回给客户端的所有扫描程序信息。
 keywords:
-- ScannerElements 元素成像设备
+- ScannerElements 元素图像设备
 topic_type:
 - apiref
 api_name:
@@ -12,19 +11,19 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1b506983067a3410c9aa86ef0433a193bb2c2e7d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 30ff1ec4ff798ed3f0ba770a0d03a139d8ee357b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63370061"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96791787"
 ---
 # <a name="scannerelements-element"></a>ScannerElements 元素
 
 
-所需**ScannerElements**包含所有要返回到客户端的扫描程序信息。
+所需的 **ScannerElements** 包含正在返回给客户端的所有扫描程序信息。
 
-<a name="usage"></a>用法
+<a name="usage"></a>使用情况
 -----
 
 ```xml
@@ -52,7 +51,7 @@ ms.locfileid: "63370061"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><a href="elementdata-for-scannerelements-element.md" data-raw-source="[&lt;strong&gt;ElementData for ScannerElements Element&lt;/strong&gt;](elementdata-for-scannerelements-element.md)"><strong>ElementData ScannerElements 元素</strong></a></p></td>
+<td><p><a href="elementdata-for-scannerelements-element.md" data-raw-source="[&lt;strong&gt;ElementData for ScannerElements Element&lt;/strong&gt;](elementdata-for-scannerelements-element.md)"><strong>ScannerElements 元素的 ElementData</strong></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -79,12 +78,12 @@ ms.locfileid: "63370061"
 <a name="remarks"></a>备注
 -------
 
-WSD 扫描服务将返回**ScannerElements**中的元素[ **GetScannerElementsResponse** ](getscannerelementsresponse.md)操作。
+WSD 扫描服务返回 [**GetScannerElementsResponse**](getscannerelementsresponse.md)操作中的 **ScannerElements** 元素。
 
 ## <a name="see-also"></a>请参阅
 
 
-[**ElementData ScannerElements 元素**](elementdata-for-scannerelements-element.md)
+[**ScannerElements 元素的 ElementData**](elementdata-for-scannerelements-element.md)
 
 [**GetScannerElementsResponse**](getscannerelementsresponse.md)
 

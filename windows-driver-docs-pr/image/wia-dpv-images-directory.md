@@ -1,9 +1,8 @@
 ---
-title: WIA\_DPV\_映像\_目录
-description: WIA\_DPV\_映像\_目录属性保留供将来使用由 Microsoft 和未实现这一次。
-ms.assetid: 52838f61-86cf-4306-b938-509d9fdf6d6d
+title: WIA \_ DPV \_ IMAGES \_ 目录
+description: WIA \_ DPV \_ IMAGES \_ DIRECTORY 属性由 Microsoft 保留以供将来使用，此时不会实现。
 keywords:
-- WIA_DPV_IMAGES_DIRECTORY 成像设备
+- WIA_DPV_IMAGES_DIRECTORY 图像设备
 topic_type:
 - apiref
 api_name:
@@ -14,24 +13,24 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 66deba9a956b7168ccb68833016bf6689fc719ea
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d2a6824553e430e4cff0f321f335d8e1e05cf408
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63366916"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96791481"
 ---
-# <a name="wiadpvimagesdirectory"></a>WIA\_DPV\_映像\_目录
+# <a name="wia_dpv_images_directory"></a>WIA \_ DPV \_ IMAGES \_ 目录
 
 
-WIA\_DPV\_映像\_目录属性保留供将来使用由 Microsoft 和未实现这一次。
+WIA \_ DPV \_ IMAGES \_ DIRECTORY 属性由 Microsoft 保留以供将来使用，此时不会实现。
 
 ## <span id="ddk_wia_dpv_images_directory_si"></span><span id="DDK_WIA_DPV_IMAGES_DIRECTORY_SI"></span>
 
 
-属性类型：VT\_I4
+属性类型： VT \_ I4
 
-有效值：WIA\_PROP\_NONE
+有效值： WIA " \_ \_ 无"
 
 访问权限：只读
 
@@ -45,12 +44,12 @@ WIA\_DPV\_映像\_目录属性保留供将来使用由 Microsoft 和未实现这
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Version</p></td>
-<td><p>在 Windows Vista 和更高版本操作系统中已过时，并应不再使用。 但是，此属性仍定义 Windows Vista 中与应用程序和用于 Windows Server 2003、 Windows XP 和早期版本的 Windows 设备的兼容性。</p></td>
+<td><p>版本</p></td>
+<td><p>在 Windows Vista 和更高版本的操作系统中已过时，不应再使用。 但是，在 Windows Vista 中仍定义此属性，以与为 Windows Server 2003、Windows XP 和 windows 的早期版本设计的应用程序和设备兼容。</p></td>
 </tr>
 <tr class="even">
-<td><p>Header</p></td>
-<td>Wiadef.h （包括 Wiadef.h）</td>
+<td><p>标头</p></td>
+<td>Wiadef (包含 Wiadef) </td>
 </tr>
 </tbody>
 </table>

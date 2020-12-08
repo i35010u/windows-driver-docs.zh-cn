@@ -1,15 +1,14 @@
 ---
 title: 飞行模式无线管理
 description: 从 Windows 8 开始，Windows 操作系统将通过 HID 为飞行模式无线电管理控制提供支持。
-ms.assetid: 5B0662B0-CBD3-4F31-B98F-6BC8184574DB
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c81233e5d1956273894432b4f1ac0ae520a8e833
-ms.sourcegitcommit: 9145bffd4cc3b990a9ebff43b588db6ef2001f5d
+ms.openlocfilehash: df4d660d91511643b3a294a8351cdd8f78f272f3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/09/2020
-ms.locfileid: "89592377"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96791559"
 ---
 # <a name="airplane-mode-radio-management"></a>飞行模式无线管理
 
@@ -130,7 +129,7 @@ OUTPUT (Cnst,Var,Abs)                           91 03
 END_COLLECTION                                  C0
 ```
 
-*LED 仅 (没有按钮或滑块) *
+*LED 仅 (没有按钮或滑块)*
 
 ``` syntax
 USAGE_PAGE (Generic Desktop)                   05 01 

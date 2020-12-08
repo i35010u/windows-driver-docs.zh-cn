@@ -1,7 +1,6 @@
 ---
 title: 'NdisMIndicateStatusEx 规则 (ndis) '
 description: 驱动程序从 MiniportHaltEx 函数返回后，不能调用 NdisMIndicateStatusEx。
-ms.assetid: 488882DB-F294-40A1-BF35-E65262554E11
 ms.date: 05/21/2018
 keywords:
 - 'NdisMIndicateStatusEx 规则 (ndis) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 7ffe49c443b6b81cdd47376a255c269d1ffa3d72
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: f2879f7a8a1501f637dea487acf27a5da4387cd6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106360"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96790669"
 ---
 # <a name="ndismindicatestatusex-rule-ndis"></a>NdisMIndicateStatusEx 规则 (ndis) 
 
 
-驱动程序从[*MiniportHaltEx*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_halt)函数返回后，不能调用[**NdisMIndicateStatusEx**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismindicatestatusex) 。
+驱动程序从 [*MiniportHaltEx*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_halt)函数返回后，不能调用 [**NdisMIndicateStatusEx**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismindicatestatusex) 。
 
 **驱动程序模型： NDIS**
 

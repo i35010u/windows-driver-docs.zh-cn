@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ BDA \_ 信号 \_ 锁 \_ 帽
 description: 客户端使用 KSPROPERTY \_ BDA \_ 信号 \_ 锁定 \_ cap 来确定驱动程序可以支持的信号的锁定类型。
-ms.assetid: 753f1a3c-5308-49a6-96ee-f7d0090f021a
 keywords:
 - KSPROPERTY_BDA_SIGNAL_LOCK_CAPS 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fd31cfda0322b452a26dc6237a4246fdbce76c7a
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: ec2dc0dcf8aaee064bf0cd85393bcdc4ad547a0a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104478"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96792509"
 ---
 # <a name="ksproperty_bda_signal_lock_caps"></a>KSPROPERTY \_ BDA \_ 信号 \_ 锁 \_ 帽
 
@@ -58,7 +57,7 @@ ms.locfileid: "90104478"
 
  
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 KSP **NodeId** \_ 节点的节点1指定了控制节点的标识符，或设置为−1以指定 pin。
@@ -83,7 +82,7 @@ RF 调谐器节点应提供此指示。
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**BDA \_ LockType**](/windows-hardware/drivers/ddi/bdamedia/ne-bdamedia-_bdalocktype)

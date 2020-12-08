@@ -1,7 +1,6 @@
 ---
 title: 模拟视频类别
 description: 模拟视频类别
-ms.assetid: 64564c81-b1e1-482b-ae70-59b229a5e86f
 keywords:
 - 流类别 WDK 视频捕获、模拟视频
 - 模拟视频类别 WDK 视频捕获
@@ -9,12 +8,12 @@ keywords:
 - 模拟音频 WDK 视频捕获
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dd814776b4157a0b928b47cb114b10de215fd9f6
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 59bae6c40ede2fee9608c5e29271aae6c4b01a53
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105416"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96792549"
 ---
 # <a name="analog-video-category"></a>模拟视频类别
 
@@ -25,7 +24,7 @@ ms.locfileid: "90105416"
 
     分类中的模拟视频表示视频解码器筛选器的模拟视频输入流。
 
-指定 **PINNAME \_ VIDEO \_ ANALOGVIDEOIN**时，请使用下表中列出的信息。
+指定 **PINNAME \_ VIDEO \_ ANALOGVIDEOIN** 时，请使用下表中列出的信息。
 
 <table>
 <colgroup>
@@ -84,7 +83,7 @@ ms.locfileid: "90105416"
 
  
 
-没有为模拟音频定义的特殊类别，如电视或无线电音频。 为带有模拟音频 pin 的设备指定类别时， **MajorFormat** 成员的值应为 KSDATAFORMAT \_ 类型 \_ ANALOGAUDIO。 **说明符**成员的值应为 KSDATAFORMAT \_ 说明符 \_ none，并且**子类型**成员和格式块应设置为 KSDATAFORMAT \_ 子类型 \_ none。 有关收音机音频的详细信息，请参阅 [带有收音机调谐器的视频捕获设备](video-capture-devices-with-radio-tuners.md)。
+没有为模拟音频定义的特殊类别，如电视或无线电音频。 为带有模拟音频 pin 的设备指定类别时， **MajorFormat** 成员的值应为 KSDATAFORMAT \_ 类型 \_ ANALOGAUDIO。 **说明符** 成员的值应为 KSDATAFORMAT \_ 说明符 \_ none，并且 **子类型** 成员和格式块应设置为 KSDATAFORMAT \_ 子类型 \_ none。 有关收音机音频的详细信息，请参阅 [带有收音机调谐器的视频捕获设备](video-capture-devices-with-radio-tuners.md)。
 
 尽管模拟视频流实质上是模拟模拟视频解码器的输入，但它同时充当用于优化信息的数据传输。 在每次优化操作开始和结束时，会通过任何干预的纵横制筛选器来调整来自电视调谐器筛选器的数据包。 数据包是一个 [**KS \_ TVTUNER \_ 更改 \_ 信息**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagks_tvtuner_change_info) 结构，其中包含使用的国家/地区代码、频道、频率和模拟视频标准。
 

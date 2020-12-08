@@ -1,7 +1,6 @@
 ---
 title: 'IrqlKeRaiseLower 规则 (wdm) '
 description: 当驱动程序调用 KeRaiseIrql 时，IrqlKeRaiseLower 规则指定该驱动程序将执行以下各项，当驱动程序调用时，它将在小于或等于 NewIrql 参数值的 IRQL 下执行。驱动程序仅在调用 KeRaiseIrql 或 KeRaiseIrqlToDpcLevel 后调用 KeLowerIrql。
-ms.assetid: 61f7e5bc-ccc5-4ee6-a580-9935a01f96e6
 ms.date: 05/21/2018
 keywords:
 - 'IrqlKeRaiseLower 规则 (wdm) '
@@ -12,21 +11,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: ab2157100d7b3014c75c24c19412dcdac53ee7e9
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 093918bf297d720b58c2b9966a616e2b28059e87
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90101688"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96791837"
 ---
 # <a name="irqlkeraiselower-rule-wdm"></a>IrqlKeRaiseLower 规则 (wdm) 
 
 
-**IrqlKeRaiseLower**规则指定驱动程序在引发和降低 IRQL 时执行以下操作：
+**IrqlKeRaiseLower** 规则指定驱动程序在引发和降低 IRQL 时执行以下操作：
 
 当驱动程序调用 [**KeRaiseIrql**](/windows-hardware/drivers/ddi/wdm/nf-wdm-keraiseirql)时，它将在小于或等于 *NewIrql* 参数值的 IRQL 下执行。
-驱动程序仅在调用**KeRaiseIrql**或[**KeRaiseIrqlToDpcLevel**](/windows-hardware/drivers/ddi/wdm/nf-wdm-keraiseirqltodpclevel)后调用[**KeLowerIrql**](/windows-hardware/drivers/ddi/wdm/nf-wdm-kelowerirql) 。
-此规则允许嵌套调用 **KeRaiseIrql**、 **KeRaiseIrqlToDpcLevel**和 **KeLowerIrql**。
+驱动程序仅在调用 **KeRaiseIrql** 或 [**KeRaiseIrqlToDpcLevel**](/windows-hardware/drivers/ddi/wdm/nf-wdm-keraiseirqltodpclevel)后调用 [**KeLowerIrql**](/windows-hardware/drivers/ddi/wdm/nf-wdm-kelowerirql) 。
+此规则允许嵌套调用 **KeRaiseIrql**、 **KeRaiseIrqlToDpcLevel** 和 **KeLowerIrql**。
 
 **驱动程序模型： WDM**
 

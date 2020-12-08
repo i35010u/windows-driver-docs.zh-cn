@@ -1,7 +1,6 @@
 ---
 title: 'IrqlIoApcLte 规则 (wdm) '
 description: IrqlIoApcLte 规则指定，仅当驱动程序以 IRQL APC_LEVEL 执行时，驱动程序才调用以下 i/o 管理器例程。
-ms.assetid: 1f0b2b9c-f67c-4e34-b079-6a2769f62879
 ms.date: 05/21/2018
 keywords:
 - 'IrqlIoApcLte 规则 (wdm) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 7202ee0b54a7f2abf4fea46f9dd70ce7cc4658a2
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: e30d3894b41903c5564012598c9cd6470ce89a8b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103180"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96791893"
 ---
 # <a name="irqlioapclte-rule-wdm"></a>IrqlIoApcLte 规则 (wdm) 
 
 
-**IrqlIoApcLte**规则指定，仅当驱动程序在 IRQL &lt; = APC 级别执行时，才调用以下 i/o 管理器例程 \_ ：
+**IrqlIoApcLte** 规则指定，仅当驱动程序在 IRQL &lt; = APC 级别执行时，才调用以下 i/o 管理器例程 \_ ：
 
 -   [**IoDeleteDevice**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iodeletedevice)
 

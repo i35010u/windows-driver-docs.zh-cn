@@ -1,24 +1,23 @@
 ---
 title: 符号文件系统
 description: 符号文件系统
-ms.assetid: 06f536e2-13d8-4727-9d34-a29a63eb01bc
 keywords:
 - BinPlace WDK，符号文件系统
 - 符号文件 WDK BinPlace
 - 当前符号文件系统 WDK BinPlace
-- 旧的符号文件系统 WDK
+- 旧符号文件系统 WDK
 - .pdf 文件
-- pdf 符号文件必须 WDK BinPlace
-- dbg 符号文件必须 WDK BinPlace
+- pdf 符号文件 WDK BinPlace
+- dbg 符号文件 WDK BinPlace
 - .dbg 文件
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9e2b789cb4f24ec4c92817348b5dcd591ae5927c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8276c747156b6827e0378d69064c69fc51f32473
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63362177"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96791897"
 ---
 # <a name="symbol-file-systems"></a>符号文件系统
 
@@ -26,27 +25,27 @@ ms.locfileid: "63362177"
 ## <span id="ddk_symbol_file_systems_tools"></span><span id="DDK_SYMBOL_FILE_SYSTEMS_TOOLS"></span>
 
 
-有两个常见的符号文件系统。 在本文档中，这些将称为*当前系统*并*旧系统*。
+共有两个常见符号文件系统。 在本文档中，这些将称为 *当前系统* 和 *旧系统*。
 
-### <a name="span-idcurrentsymbolfilesystemspanspan-idcurrentsymbolfilesystemspancurrent-symbol-file-system"></a><span id="current_symbol_file_system"></span><span id="CURRENT_SYMBOL_FILE_SYSTEM"></span>当前符号文件系统
+### <a name="span-idcurrent_symbol_file_systemspanspan-idcurrent_symbol_file_systemspancurrent-symbol-file-system"></a><span id="current_symbol_file_system"></span><span id="CURRENT_SYMBOL_FILE_SYSTEM"></span>当前符号文件系统
 
-在当前系统中，始终有两个文件： 可执行文件和.pdb 文件。 .Pdb 文件包含所有符号。 可执行文件包含.pdb 文件的指针。
+在当前系统中，始终有两个文件：可执行文件和 .pdb 文件。 .Pdb 文件包含所有符号。 可执行文件包含指向 .pdb 文件的指针。
 
-如果.pdb 符号文件包含私有符号，BinPlace 可以剥离出此信息并生成去除的符号文件。 请参阅[公共符号和私有符号](public-symbols-and-private-symbols.md)有关详细信息。
+如果 .pdb 符号文件包含 private 符号，则 BinPlace 可以将此信息包含在外，并生成一个去除的符号文件。 有关详细信息，请参阅 [公共符号和私有符号](public-symbols-and-private-symbols.md) 。
 
-### <a name="span-idoldsymbolfilesystemspanspan-idoldsymbolfilesystemspanold-symbol-file-system"></a><span id="old_symbol_file_system"></span><span id="OLD_SYMBOL_FILE_SYSTEM"></span>旧的符号文件系统
+### <a name="span-idold_symbol_file_systemspanspan-idold_symbol_file_systemspanold-symbol-file-system"></a><span id="old_symbol_file_system"></span><span id="OLD_SYMBOL_FILE_SYSTEM"></span>旧符号文件系统
 
-在旧系统中，可执行文件和符号文件可以排列两个不同的方式：
+在旧系统中，可执行文件和符号文件可以通过两种不同的方式排列：
 
--   可执行文件和.pdb 文件。 在这种方案，大多数符号信息是.pdb 文件中。 可执行文件中包含的符号信息的其余部分。 可执行文件还包含指向.pdb 文件的指针。
+-   可执行文件和 .pdb 文件。 在这种排列中，大多数符号信息位于 .pdb 文件中。 符号信息的其余部分包括在可执行文件中。 可执行文件还包含指向 .pdb 文件的指针。
 
--   可执行文件、.pdb 文件和.dbg 文件。 .Pdb 文件是两个文件排列方式相同： 它包含的符号的大多数。 符号信息的其余部分是.dbg 文件中。 在可执行文件是没有对应符号信息。 可执行文件包含一个指向.dbg 文件，并且.dbg 文件包含.pdb 文件的指针。
+-   可执行文件、.pdb 文件和一个 dbg 文件。 .Pdb 文件与两个文件的排列方式相同：它包含大部分符号。 符号信息的其余部分在 dbg 文件中。 可执行文件中没有符号信息。 可执行文件包含指向 dbg 文件的指针，并且该文件包含指向 .pdb 文件的指针。
 
-在旧的符号文件系统中，两个文件排列方式和三个文件排列方式都包含相同的可执行代码和相同的符号。 该程序可以运行，并可以在任一种排列方式进行调试。 但是，三个文件排列方式执行速度，因为可执行文件的较小。
+在旧的符号文件系统中，两文件排列和三文件排列都包含相同的可执行代码和相同的符号。 此程序可以运行，并可在两种排列中进行调试。 但是，这三个文件的排列会提高执行速度，因为可执行文件较小。
 
-如果必须使用旧的符号文件系统中两个文件的排列方式放置生成的二进制文件，BinPlace 可以将其转换为三个文件排列方式。 换而言之，BinPlace 可以"拆分"的无符号的可执行文件将可执行文件和包含的符号的可执行文件中的新.dbg 文件。
+如果你的二进制文件是使用 arrangment 中的旧符号文件系统生成的，则 BinPlace 可以将其转换为三文件布局。 换句话说，BinPlace 可以将可执行文件 "拆分" 为一个无符号的可执行文件和一个新的 dbg 文件，其中包含可执行文件中的符号。
 
-BinPlace 可以还去除私有符号信息文件中旧的符号文件系统，但如果它将拆分文件 (即，仅当它从两个文件排列方式更改文件，对三个文件排列)。 BinPlace 不能将旧的符号文件系统中带文件去除私有符号，并将其留在两个文件排列方式。 如果文件已位于三个文件排列，BinPlace 将不执行任何去除; 和实际上，它不会甚至移动的符号文件如果 BinPlace 命令行上名为可执行文件。 请参阅[公共符号和私有符号](public-symbols-and-private-symbols.md)有关详细信息。
+BinPlace 还可以从旧符号文件系统的文件中去除私有符号信息，但仅当它还将 (文件拆分为不同的文件时，才会将这些文件从两文件的排列方式更改为三个文件排列) 。 BinPlace 无法从旧符号文件系统中去除专用符号，并将其保留在两个文件中。 如果文件已处于三文件排列，则 BinPlace 不会执行任何去除;确实，如果可执行文件在 BinPlace 命令行上命名，它甚至不会移动符号文件。 有关详细信息，请参阅 [公共符号和私有符号](public-symbols-and-private-symbols.md) 。
 
  
 

@@ -1,7 +1,6 @@
 ---
 title: INF DDInstall.CoInstallers 节
 description: CoInstallers 节注册一个或多个特定于设备的共同安装程序来补充现有设备类安装程序的操作。
-ms.assetid: 2deb16e1-632a-4169-b718-7e3501e64562
 keywords:
 - INF DDInstall. CoInstallers 部分设备和驱动程序安装
 topic_type:
@@ -12,12 +11,12 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 737932ce4af035439f15898c0a71428e679bae63
-ms.sourcegitcommit: a44ade167cdfb541cf1818e9f9e3726f23f90b66
+ms.openlocfilehash: 71d5d7a42d45b9169c5e31e7038a678785dce54d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94361601"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96790577"
 ---
 # <a name="inf-ddinstallcoinstallers-section"></a>INF DDInstall.CoInstallers 节
 
@@ -55,7 +54,7 @@ CopyFiles=@filename | file-list-section[,file-list-section]...
 
 
 <a href="" id="addreg-add-registry-section--add-registry-section----"></a>**AddReg =**<em>添加注册表-节</em> \[ **，**<em>外</em>接程序 \] .。。  
-引用一个或多个 INF 写入器定义的 *外接程序* ，它存储有关提供的共同安装程序的注册表信息。
+引用一个或多个 INF 写入器定义的 *外接程序*，它存储有关提供的共同安装程序的注册表信息。
 
 在此类 "外接程序" 部分中指定的 **HKR** 指定 **。类 \\**<em>SetupClassGUID</em> **\\** 用户可访问的驱动程序的 <em>设备实例 id</em>注册表路径，也称为。 "软件密钥"。 因此，对于特定于设备的共同安装程序，它写入 (或修改此用户可访问的每设备/驱动程序 "software" 子项) 的 **CoInstallers32** 值条目。
 
@@ -64,7 +63,7 @@ CopyFiles=@filename | file-list-section[,file-list-section]...
 有关详细信息，请参阅 [**INF AddReg 指令**](inf-addreg-directive.md)。
 
 <a href="" id="copyfiles--filename---file-list-section--file-list-section----"></a>**CopyFiles = @**<em>filename</em>  |  *file-list* \[ **-section**<em>file-list-section</em> \] .。。  
-通常通过引用 INF 文件中其他位置的一个或多个 INF 写入器定义的 *文件列表部分* ，将源共同安装程序文件传输到目标计算机上的目标。 此类文件列表部分指定要从源媒体复制到目标目录的共同安装程序文件。
+通常通过引用 INF 文件中其他位置的一个或多个 INF 写入器定义的 *文件列表部分*，将源共同安装程序文件传输到目标计算机上的目标。 此类文件列表部分指定要从源媒体复制到目标目录的共同安装程序文件。
 
 但是，安装共同安装程序的系统 INF 文件决不会在 <em>DDInstall</em>中使用此指令 **。CoInstallers** 部分。
 
@@ -89,7 +88,7 @@ CopyFiles=@filename | file-list-section[,file-list-section]...
 有关详细信息，请参阅 [**INF RenFiles 指令**](inf-renfiles-directive.md)。
 
 <a href="" id="delreg-del-registry-section--del-registry-section----"></a>**DelReg =**<em>del-registry</em>-section \[ **，**<em>del</em> \] .。。  
-引用一个或多个 INF-编写器-定义删除-- *节* 。 此部分指定有关应从注册表中删除的同一设备的以前安装的相关安装程序的过时注册表信息。 在此类 "删除注册表" 部分中指定的 **HKR** 指定了与 **AddReg** 条目所述相同的注册表子项。 <em>DDInstall</em>中非常少使用此指令 **。CoInstallers** 部分。
+引用一个或多个 INF-编写器-定义删除-- *节*。 此部分指定有关应从注册表中删除的同一设备的以前安装的相关安装程序的过时注册表信息。 在此类 "删除注册表" 部分中指定的 **HKR** 指定了与 **AddReg** 条目所述相同的注册表子项。 <em>DDInstall</em>中非常少使用此指令 **。CoInstallers** 部分。
 
 有关详细信息，请参阅 [**INF DelReg 指令**](inf-delreg-directive.md)。
 
@@ -98,7 +97,7 @@ CopyFiles=@filename | file-list-section[,file-list-section]...
 
 有关详细信息，请参阅 [**INF BitReg 指令**](inf-bitreg-directive.md)。
 
-<a href="" id="updateinis-update-ini-section--update-ini-section----"></a>**UpdateInis =** " <em>更新-ini-节</em> \[ **，**<em>更新-ini</em> \] ..."  
+<a href="" id="updateinis-update-ini-section--update-ini-section----"></a>**UpdateInis =**"<em>更新-ini-节</em> \[ **，**<em>更新-ini</em> \] ..."  
 此项在此部分有效，但几乎从未使用过。
 
 有关详细信息，请参阅 [**INF UpdateInis 指令**](inf-updateinis-directive.md)。
@@ -116,9 +115,9 @@ CopyFiles=@filename | file-list-section[,file-list-section]...
 <a name="remarks"></a>备注
 -------
 
-在 INF 文件的 "每制造商" *型号* 部分下，必须在特定于设备/模型的条目中引用指定的 *DDInstall* 部分。
+在 INF 文件的 "每制造商"*型号* 部分下，必须在特定于设备/模型的条目中引用指定的 *DDInstall* 部分。
 
-INF 是否包含 <em>DDInstall</em>**。Coinstallers** 节中，每个平台修饰和未修饰 *DDInstall* 部分必须有一个。 例如，如果某一 INF 包含 **\[** <em>安装节名称</em>**. \] ntx86** 部分和一个 **\[** <em>安装节名称</em> **\]** 部分，并且它注册了特定于设备的共同安装程序，则 inf 必须同时包含 **\[** <em>install-section-name</em>**ntx86。Coinstallers \]** 部分和 **\[** <em>安装节名称</em>**。Coinstallers \]** 部分。 有关如何使用 **系统定义的** **ntx86** 、 **ntia64** 、 **ntamd64** 、 **ntarm** 和 **Ntarm64** 扩展的详细信息，请参阅 [为多个平台和操作系统创建 INF 文件](creating-inf-files-for-multiple-platforms-and-operating-systems.md)。
+INF 是否包含 <em>DDInstall</em>**。Coinstallers** 节中，每个平台修饰和未修饰 *DDInstall* 部分必须有一个。 例如，如果某一 INF 包含 **\[** <em>安装节名称</em>**. \] ntx86** 部分和一个 **\[** <em>安装节名称</em> **\]** 部分，并且它注册了特定于设备的共同安装程序，则 inf 必须同时包含 **\[** <em>install-section-name</em>**ntx86。Coinstallers \]** 部分和 **\[** <em>安装节名称</em>**。Coinstallers \]** 部分。 有关如何使用 **系统定义的** **ntx86**、 **ntia64**、 **ntamd64**、 **ntarm** 和 **Ntarm64** 扩展的详细信息，请参阅 [为多个平台和操作系统创建 INF 文件](creating-inf-files-for-multiple-platforms-and-operating-systems.md)。
 
 <em>DDInstall</em>中的每个指令 **。CoInstallers** 节可以引用多个 INF 写入器定义的部分名称。 但是，必须将每个附加的命名节与下一个逗号 ( ) 。
 
@@ -134,7 +133,7 @@ INF 是否包含 <em>DDInstall</em>**。Coinstallers** 节中，每个平台修�
 
 ### <a name="registering-device-specific-co-installers"></a>注册 Device-Specific 共同安装程序
 
-注册一个或多个特定于设备的共同安装程序需要将 [REG_MULTI_SZ](/windows/desktop/SysInfo/registry-value-types)类型的值项添加到注册表中。 使用以下常规格式指定 [**AddReg**](inf-addreg-directive.md)指令引用的 *添加注册表部分* ：
+注册一个或多个特定于设备的共同安装程序需要将 [REG_MULTI_SZ](/windows/desktop/SysInfo/registry-value-types)类型的值项添加到注册表中。 使用以下常规格式指定 [**AddReg**](inf-addreg-directive.md)指令引用的 *添加注册表部分*：
 
 ```inf
 [DDInstall.CoInstallers_DeviceAddReg]
@@ -176,7 +175,7 @@ HKLM,System\CurrentControlSet\Control
 <a name="examples"></a>示例
 --------
 
-此示例显示了 *DDInstall* 。IrDA 串行网络适配器的 **CoInstallers** 部分。 系统提供的用于这些 IrDA (串行) Nic 的 INF 向 system IrDA 类安装程序提供共同安装程序。
+此示例显示了 *DDInstall*。IrDA 串行网络适配器的 **CoInstallers** 部分。 系统提供的用于这些 IrDA (串行) Nic 的 INF 向 system IrDA 类安装程序提供共同安装程序。
 
 ```inf
 ; DDInstall section

@@ -1,18 +1,17 @@
 ---
 title: 调试 NetAdapterCx 客户端驱动程序
 description: 调试 NetAdapterCx 客户端驱动程序
-ms.assetid: EE8EA3DA-33E7-4EED-B991-38A21CAA699E
 keywords:
 - 调试 NetAdapterCx 客户端驱动程序，调试 NetAdapterCx 客户端驱动程序
 ms.date: 06/17/2020
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 3533e805c79801ac33364cddd0ccebdf59d25745
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 2799e0b1bca4db0d5d93de51f25a43b7fe21f2d6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91733250"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96791425"
 ---
 # <a name="debugging-a-netadaptercx-client-driver"></a>调试 NetAdapterCx 客户端驱动程序
 

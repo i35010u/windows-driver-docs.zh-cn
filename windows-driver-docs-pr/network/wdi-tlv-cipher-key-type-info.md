@@ -1,17 +1,16 @@
 ---
 title: WDI_TLV_CIPHER_KEY_TYPE_INFO
 description: WDI_TLV_CIPHER_KEY_TYPE_INFO 是包含 OID_WDI_SET_ADD_CIPHER_KEYS 和 OID_WDI_SET_DELETE_CIPHER_KEYS 的密码密钥类型信息的 TLV。
-ms.assetid: 1168D53D-A837-4E3F-8E31-FB86CF866BA3
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_CIPHER_KEY_TYPE_INFO 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 006ca5592ef0739812738be71de1d40a0e6863c9
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 23ad9f64964e9b483738551d2dc51ab289fc0e2b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89208511"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96791343"
 ---
 # <a name="wdi_tlv_cipher_key_type_info"></a>WDI \_ TLV \_ 密码 \_ 密钥 \_ 类型 \_ 信息
 
@@ -23,7 +22,7 @@ WDI \_ tlv \_ 密码 \_ 密钥 \_ 类型 \_ 信息是一个 TLV，其中包含 O
 
 0x4E
 
-## <a name="length"></a>Length
+## <a name="length"></a>长度
 
 
 Sum (所有包含的元素的大小) 。
@@ -31,7 +30,7 @@ Sum (所有包含的元素的大小) 。
 ## <a name="values"></a>值
 
 
-| 类型                                                                 | 说明                                                                                                                                                                                                                                                                                     |
+| 类型                                                                 | 描述                                                                                                                                                                                                                                                                                     |
 |----------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | [**WDI \_ 密码 \_ 算法**](/windows-hardware/drivers/ddi/wditypes/ne-wditypes-_wdi_cipher_algorithm)          | 指定使用密钥的密码算法。                                                                                                                                                                                                                                               |
 | [**WDI \_ 密码 \_ 键 \_ 方向**](/windows-hardware/drivers/ddi/wditypes/ne-wditypes-_wdi_cipher_key_direction) | 指定密钥应仅用于传输、仅接收还是用于传输。                                                                                                                                                                                                              |
@@ -55,7 +54,7 @@ Sum (所有包含的元素的大小) 。
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
-<td><p>Windows Server 2016</p></td>
+<td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
 <td><p>标头</p></td>

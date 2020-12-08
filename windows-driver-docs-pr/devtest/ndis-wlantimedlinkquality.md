@@ -1,7 +1,6 @@
 ---
 title: 'WlanTimedLinkQuality 规则 (ndis) '
 description: WlanTimedLinkQuality 规则指定 \_ \_ \_ \_ 在成功 ndis \_ 状态 \_ DOT11 \_ 关联完成后15秒内发生的 NDIS 状态 DOT11 链接质量指示 \_ 。
-ms.assetid: B7055493-C09B-4565-A10F-32A34CCD5621
 ms.date: 05/21/2018
 keywords:
 - 'WlanTimedLinkQuality 规则 (ndis) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: c169cdd3d9244bab72bbfede8cc062953520bfac
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 6a5047c9bedda81c1e1db767a245fee0348f99e9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107438"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96791931"
 ---
 # <a name="wlantimedlinkquality-rule-ndis"></a>WlanTimedLinkQuality 规则 (ndis) 
 
 
-**WlanTimedLinkQuality**规则指定 \_ \_ \_ \_ 在成功 ndis \_ 状态 \_ DOT11 \_ 关联完成后15秒内发生的 NDIS 状态 DOT11 链接质量指示 \_ 。
+**WlanTimedLinkQuality** 规则指定 \_ \_ \_ \_ 在成功 ndis \_ 状态 \_ DOT11 \_ 关联完成后15秒内发生的 NDIS 状态 DOT11 链接质量指示 \_ 。
 
 **驱动程序模型： NDIS**
 

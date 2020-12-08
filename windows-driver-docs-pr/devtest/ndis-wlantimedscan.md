@@ -1,7 +1,6 @@
 ---
 title: 'WlanTimedScan 规则 (ndis) '
 description: WlanTimedScan 规则验证 WLAN 扫描操作是否在15秒内完成。
-ms.assetid: 6BFA0DAD-00A4-43EB-A226-40E1B0892E91
 ms.date: 05/21/2018
 keywords:
 - 'WlanTimedScan 规则 (ndis) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 90ec85cd75546b0faf4322a4ba78101f17c04864
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: e2b5ef99adb43bdc9d25f45d0b265e4f00f1ce9b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107436"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96791923"
 ---
 # <a name="wlantimedscan-rule-ndis"></a>WlanTimedScan 规则 (ndis) 
 
 
-**WlanTimedScan**规则验证 WLAN 扫描操作是否在15秒内完成。
+**WlanTimedScan** 规则验证 WLAN 扫描操作是否在15秒内完成。
 
 **驱动程序模型： NDIS**
 

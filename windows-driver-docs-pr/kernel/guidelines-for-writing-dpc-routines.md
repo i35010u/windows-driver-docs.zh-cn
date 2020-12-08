@@ -1,7 +1,6 @@
 ---
 title: 有关编写 DPC 例程的指导原则
 description: 有关编写 DPC 例程的指导原则
-ms.assetid: 570219be-d152-4826-855a-737bbed67ffd
 keywords:
 - 延迟的过程调用 WDK 内核
 - Dpc WDK 内核
@@ -9,12 +8,12 @@ keywords:
 - CustomDpc
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: faa0711e1cc9a8e4f616c34a880ff036e870b536
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: d4e41619e7d91c23766d425485ce3028d9e06fb1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89191859"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96790517"
 ---
 # <a name="guidelines-for-writing-dpc-routines"></a>有关编写 DPC 例程的指导原则
 
@@ -24,7 +23,7 @@ ms.locfileid: "89191859"
 
 编写 [*DpcForIsr*](/windows-hardware/drivers/ddi/wdm/nc-wdm-io_dpc_routine) 或 [*CustomDpc*](/windows-hardware/drivers/ddi/wdm/nc-wdm-kdeferred_routine) 例程时，请记住以下几点：
 
--   *DpcForIsr*或*CustomDpc*例程必须将其访问权限同步到物理设备、驱动程序维护的任何共享状态信息或资源，以及访问同一设备或内存位置的驱动程序的其他例程。
+-   *DpcForIsr* 或 *CustomDpc* 例程必须将其访问权限同步到物理设备、驱动程序维护的任何共享状态信息或资源，以及访问同一设备或内存位置的驱动程序的其他例程。
 
     如果 *DpcForIsr* 或 *CUSTOMDPC* 例程与 ISR 共享设备或状态，则它必须调用 [**KeSynchronizeExecution**](/windows-hardware/drivers/ddi/wdm/nf-wdm-kesynchronizeexecution)，提供驱动程序提供的、用于计划设备或访问共享状态的 [*SynchCritSection*](/windows-hardware/drivers/ddi/wdm/nc-wdm-ksynchronize_routine) 例程的地址。 有关详细信息，请参阅 [使用关键部分](using-critical-sections.md)。
 
@@ -32,7 +31,7 @@ ms.locfileid: "89191859"
 
 -   *DpcForIsr* 和 *CUSTOMDPC* 例程以 IRQL = 调度 \_ 级别运行，这会限制它们可调用的支持例程集。
 
-    例如， *DpcForIsr* 和 *CustomDpc* 例程既无法访问也不分配可分页内存，并且它们无法等待将 [内核调度程序对象](./introduction-to-kernel-dispatcher-objects.md) 设置为已终止状态。 另一方面，他们可以使用 [**KeAcquireSpinLockAtDpcLevel**](/windows-hardware/drivers/ddi/wdm/nf-wdm-keacquirespinlockatdpclevel) 和 [**KeReleaseSpinLockFromDpcLevel**](/windows-hardware/drivers/ddi/wdm/nf-wdm-kereleasespinlockfromdpclevel)获取和释放驱动程序的 executive 旋转锁，这比 **KeAcquireSpinLock** 和 **KeReleaseSpinLock**运行得更快。
+    例如， *DpcForIsr* 和 *CustomDpc* 例程既无法访问也不分配可分页内存，并且它们无法等待将 [内核调度程序对象](./introduction-to-kernel-dispatcher-objects.md) 设置为已终止状态。 另一方面，他们可以使用 [**KeAcquireSpinLockAtDpcLevel**](/windows-hardware/drivers/ddi/wdm/nf-wdm-keacquirespinlockatdpclevel) 和 [**KeReleaseSpinLockFromDpcLevel**](/windows-hardware/drivers/ddi/wdm/nf-wdm-kereleasespinlockfromdpclevel)获取和释放驱动程序的 executive 旋转锁，这比 **KeAcquireSpinLock** 和 **KeReleaseSpinLock** 运行得更快。
 
     尽管 DPC 例程无法进行阻止调用，但它可以将工作项排队，使其在以 IRQL = 被动级别运行的 [系统工作线程](system-worker-threads.md) 中运行 \_ 。 工作项可以发出等待调度程序对象的阻止调用。 若要将工作项排队， *DpcForIsr* 例程通常会调用例程（如 [**IoQueueWorkItem**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioqueueworkitem)），而 *CustomDpc* 例程通常会调用 [**ExQueueWorkItem**](/windows-hardware/drivers/ddi/wdm/nf-wdm-exqueueworkitem) 例程。
 

@@ -1,7 +1,6 @@
 ---
 title: SM \_ SendLIRR 函数
 description: SM \_ SENDLIRR WMI 方法通过指定的本地端口向指定的远程端口发送链接事件记录注册 (LIRR) 命令。
-ms.assetid: 52564ec3-4a42-4df0-b89f-2a8415404172
 keywords:
 - SM_SendLIRR 函数存储设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 2b3e8998358bf89e20682b09ae51822c0a1e67f8
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 9e630e6808ac832af7ec58c6c6ee3dcb61c9fb0f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89183827"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96792567"
 ---
 # <a name="sm_sendlirr-function"></a>SM \_ SendLIRR 函数
 
@@ -31,14 +30,14 @@ SM \_ SENDLIRR WMI 方法通过指定的本地端口向指定的远程端口发�
 
 ```ManagedCPlusPlus
 void SM_SendLIRR(
-   [in, HBAType("HBA_WWN")]                    SourceWWN[8],
-   [in, HBAType("HBA_WWN")]                    DestWWN[8],
-   [in] uint8                                  Function,
-   [in] uint8                                  Type,
-   [in] uint32                                 InRespBufferMaxSize,
-   [out, HBA_STATUS_QUALIFIERS] HBA_STATUS     HBAStatus,
-   [out] uint32                                TotalRespBufferSize,
-   [out] uint32                                OutRespBufferSize,
+   [in, HBAType("HBA_WWN")]                    SourceWWN[8],
+   [in, HBAType("HBA_WWN")]                    DestWWN[8],
+   [in] uint8                                  Function,
+   [in] uint8                                  Type,
+   [in] uint32                                 InRespBufferMaxSize,
+   [out, HBA_STATUS_QUALIFIERS] HBA_STATUS     HBAStatus,
+   [out] uint32                                TotalRespBufferSize,
+   [out] uint32                                OutRespBufferSize,
    [out, WmiSizeIs("OutRespBufferSize")] uint8 RespBuffer[]
 );
 ```
@@ -94,7 +93,7 @@ LIRR 命令的结果。 微型端口驱动程序在 SM \_ SendLIRR OUT 结构的
 <tbody>
 <tr class="odd">
 <td align="left"><p>目标平台</p></td>
-<td align="left">“桌面”</td>
+<td align="left">台式机</td>
 </tr>
 <tr class="even">
 <td align="left"><p>标头</p></td>

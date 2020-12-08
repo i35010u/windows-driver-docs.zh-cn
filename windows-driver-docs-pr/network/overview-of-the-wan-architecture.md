@@ -1,18 +1,17 @@
 ---
 title: WAN 体系结构概述
 description: WAN 体系结构概述
-ms.assetid: 96dff98f-32fa-4996-bc29-9e6c36deff05
 keywords:
-- WAN 微型端口驱动程序 WDK 网络体系结构
-- WDK WAN 体系结构
+- WAN 微型端口驱动程序 WDK 网络，体系结构
+- 体系结构 WDK WAN
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8d6bec250c5267f782b8539692bd25dc1c50115d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7f87fa65cf02beb79928d0434dcb0bd759a0dbe7
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63372921"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96792131"
 ---
 # <a name="overview-of-the-wan-architecture"></a>WAN 体系结构概述
 
@@ -20,9 +19,9 @@ ms.locfileid: "63372921"
 
 
 
-WAN 体系结构主要组件包含该接口直接到 WAN 的微型端口驱动程序。 但是，WAN 体系结构是最佳方式引入 RAS 体系结构的更广泛的上下文中。 RAS 体系结构包括一些组件对于 WAN 体系结构的高层次了解是必不可少的但否则将超出范围的 Microsoft Windows Driver Kit (WDK) 和 Windows 驱动程序开发工具包 (DDK)。
+WAN 体系结构主要包括直接接口到 WAN 微型端口驱动程序的组件。 但是，在 RAS 体系结构的更广泛的环境中，最适合采用 WAN 体系结构。 RAS 体系结构包含某些组件，这些组件对 WAN 体系结构的高级理解非常重要，但在 Microsoft Windows 驱动程序工具包 (WDK) 和 Windows 驱动程序开发工具包 (了 DDK) 的范围内。
 
-下面的主题介绍 RAS 体系结构、 主要 WAN 系统组件和 CoNDIS WAN 和 NDIS WAN 模型之间的主要实现差异的概述：
+以下主题介绍了 RAS 体系结构、主要的 WAN 系统组件以及 CoNDIS WAN 和 NDIS WAN 模型之间的主要实现差异：
 
 [RAS 体系结构概述](ras-architecture-overview.md)
 

@@ -1,7 +1,6 @@
 ---
 title: VRAM 捕获属性
 description: VRAM 捕获属性
-ms.assetid: e3ab3a10-42af-488f-9b13-d2c6d5aac615
 keywords:
 - VRAM 捕获 WDK AVStream，属性
 - 捕获到系统内存 WDK AVStream
@@ -9,12 +8,12 @@ keywords:
 - VRAM 捕获 WDK AVStream，请求序列
 ms.date: 06/19/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: da91e2f9a36281a5762b4bc83c11d5daf3983e29
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 0bde46be75b8b5a15e25d3d0bfb25107771c60f1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89187326"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96791070"
 ---
 # <a name="vram-capture-properties"></a>VRAM 捕获属性
 
@@ -70,8 +69,8 @@ VRAM 处理请求由两部分组成。 首先，捕获驱动程序接收 [**KSPR
 
 - **cbCaptured** \_ \_ 用复制到 VRAM 图面中的字节数填写 VRAM SURFACE INFO 的 cbCaptured 成员。 不要将 KSSTREAM 标头的 **DataUsed** 成员设置为已 \_ 捕获的字节数。 相反，请将 **DataUsed** 设置为 SIZEOF (VRAM \_ SURFACE \_ INFO) 。
 
-- 如果捕获驱动程序执行了时间戳，请在 KSSTREAM 标头中设置 **PresentationTime**、 **Duration**和（如果相关） **OptionsFlags** \_ 。
+- 如果捕获驱动程序执行了时间戳，请在 KSSTREAM 标头中设置 **PresentationTime**、 **Duration** 和（如果相关） **OptionsFlags** \_ 。
 
 - 调用 [**KsStreamPointerAdvanceOffsets**](/windows-hardware/drivers/ddi/ks/nf-ks-ksstreampointeradvanceoffsets) 以继续处理或删除所有克隆，并通过调用 [**KsStreamPointerDelete**](/windows-hardware/drivers/ddi/ks/nf-ks-ksstreampointerdelete)来完成请求。
 
-Windows 驱动程序工具包 (WDK) 示例*中的 rocessd3dsurface 文件中*的**CCapturePin：:P**方法在 Windows 驱动程序工具包中的[AVStream 模拟硬件示例驱动程序 (AVSHwS) ](/samples/microsoft/windows-driver-samples/avstream-simulated-hardware-sample-driver-avshws)显示了实现此回调以实现 VRAM 支持的一种方法。
+Windows 驱动程序工具包 (WDK) 示例 *中的 rocessd3dsurface 文件中* 的 **CCapturePin：:P** 方法在 Windows 驱动程序工具包中的 [AVStream 模拟硬件示例驱动程序 (AVSHwS)](/samples/microsoft/windows-driver-samples/avstream-simulated-hardware-sample-driver-avshws)显示了实现此回调以实现 VRAM 支持的一种方法。

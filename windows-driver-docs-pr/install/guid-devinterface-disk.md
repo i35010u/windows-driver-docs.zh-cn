@@ -1,7 +1,6 @@
 ---
 title: GUID_DEVINTERFACE_DISK
 description: GUID_DEVINTERFACE_DISK
-ms.assetid: 47782789-4504-4705-8c32-4d2bc508a7e2
 keywords:
 - GUID_DEVINTERFACE_DISK 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 82cd2583c3edd2ddb734c71b04e15daef5764163
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: b11ceb20c015de2182059643670812b5ad87415c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91732847"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96790601"
 ---
 # <a name="guid_devinterface_disk"></a>GUID_DEVINTERFACE_DISK
 
@@ -33,7 +32,7 @@ ms.locfileid: "91732847"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">属性</th>
+<th align="left">Attribute</th>
 <th align="left">设置</th>
 </tr>
 </thead>
@@ -76,7 +75,7 @@ WDK 中的存储 [示例](https://go.microsoft.com/fwlink/p/?LinkId=618052) 包�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**DiskClassGuid**](diskclassguid.md)

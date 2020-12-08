@@ -1,15 +1,14 @@
 ---
 title: ACPI 按钮设备
 description: 通用按钮设备是一个标准设备，用于通过硬件中断报告按钮事件。
-ms.assetid: 8FC78CE5-CBE6-479C-9373-1D8189E263B2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c9a893ff3008d805840f2273adcdb785a2bcb0dd
-ms.sourcegitcommit: 67efcd26f7be8f50c92b141ccd14c9c68f4412d8
+ms.openlocfilehash: 55ff2d4ea0349ed5010e724034ef861ac0327e61
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88902611"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96791551"
 ---
 # <a name="acpi-button-device"></a>ACPI 按钮设备
 

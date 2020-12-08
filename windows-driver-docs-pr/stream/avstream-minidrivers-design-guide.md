@@ -1,7 +1,6 @@
 ---
 title: AVStream 微型驱动程序设计指南
 description: AVStream 微型驱动程序设计指南
-ms.assetid: ad717dca-55fe-428a-8d5c-239324251eda
 keywords:
 - 流媒体 WDK，AVStream 微型驱动程序
 - 媒体流 WDK，AVStream 微型驱动程序
@@ -14,12 +13,12 @@ keywords:
 - 音频 WDK AVStream
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9e2f05c48288ad27f4503257b956dadc1a280f72
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 6fd4ecbea8be2f49b48f0d675be3cbc1c124f203
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89191899"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96791254"
 ---
 # <a name="avstream-minidrivers-design-guide"></a>AVStream 微型驱动程序设计指南
 

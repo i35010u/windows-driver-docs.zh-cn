@@ -1,19 +1,18 @@
 ---
 title: 反序列化的 NDIS 微型端口驱动程序
 description: 反序列化的 NDIS 微型端口驱动程序
-ms.assetid: d133370a-48f4-425b-a2bd-d95ec8b5c369
 keywords:
 - 微型端口驱动程序 WDK 网络，类型
 - NDIS 微型端口驱动程序 WDK，类型
 - 反序列化 NDIS 微型端口驱动程序 WDK 网络
 ms.date: 01/09/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: f78387c3f5847abe36a22fc9a479d81ea8f7f32b
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: e83606f0534d111fd7b769e03b539951020486f8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89218430"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96792183"
 ---
 # <a name="deserialized-ndis-miniport-drivers"></a>反序列化的 NDIS 微型端口驱动程序
 
@@ -23,7 +22,7 @@ ms.locfileid: "89218430"
 
 所有 NDIS 6.0 和更高版本的驱动程序均已 *反序列化*。
 
-*反序列化的 NDIS 微型端口驱动程序*序列化其自己的*MiniportXxx*函数的操作，并在内部发送请求，而不是依赖 NDIS 来执行这些功能。 因此，反序列化的微型端口驱动程序可以比序列化微型端口驱动程序实现明显更好的全双工性能。
+*反序列化的 NDIS 微型端口驱动程序* 序列化其自己的 *MiniportXxx* 函数的操作，并在内部发送请求，而不是依赖 NDIS 来执行这些功能。 因此，反序列化的微型端口驱动程序可以比序列化微型端口驱动程序实现明显更好的全双工性能。
 
 反序列化的驱动程序模型是 NDIS 微型端口驱动程序的默认模型。 面向连接的微型端口驱动程序以及具有 WDM 下边缘的微型端口驱动程序必须是反序列化的驱动程序。 编写新的 NDIS 微型端口驱动程序时，应编写反序列化的驱动程序。 如果可能，还应将旧驱动程序移植到 NDIS 6.0 或更高版本。 有关移植驱动程序的详细信息，请参阅：
 
@@ -37,7 +36,7 @@ ms.locfileid: "89218430"
 
 -   反序列化的微型端口驱动程序必须异步完成所有发送请求。 若要完成发送请求，无连接 NDIS 6.0 和更高版本的微型端口驱动程序将调用 **NdisMSendNetBufferListsComplete** 函数。 面向连接的 NDIS 6.0 和更高的微型端口驱动程序调用 **NdisMCoSendNetBufferListsComplete** 函数。
 
--   支持 NDIS 6.0 或更高版本的反序列化微型**Status**端口驱动程序 \_ \_ 将会传递到**NdisMSendNetBufferListsComplete**的网络缓冲区列表结构的状态成员。
+-   支持 NDIS 6.0 或更高版本的反序列化微型 **Status** 端口驱动程序 \_ \_ 将会传递到 **NdisMSendNetBufferListsComplete** 的网络缓冲区列表结构的状态成员。
 
 -   如果反序列化的微型端口驱动程序无法立即完成发送请求，它无法将对 NDIS 的请求返回到正在重新排队。 相反，微型端口驱动程序必须在内部将发送请求排队，直到有足够的资源可用于传输数据。
 

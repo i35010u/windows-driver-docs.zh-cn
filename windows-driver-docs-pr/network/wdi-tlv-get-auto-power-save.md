@@ -1,17 +1,16 @@
 ---
 title: WDI_TLV_GET_AUTO_POWER_SAVE
 description: WDI_TLV_GET_AUTO_POWER_SAVE 是包含 OID_WDI_GET_AUTO_POWER_SAVE 自动节能信息的 TLV。
-ms.assetid: E57AD1CE-A252-4BB5-B983-11D3E46B7EC1
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_GET_AUTO_POWER_SAVE 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: fe09c91eb8e72586fa47d2833015512190575913
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 058f0b59a90a848a9446bcd648eb05f4921bf1cb
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89213718"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96791315"
 ---
 # <a name="wdi_tlv_get_auto_power_save"></a>WDI \_ TLV \_ 获取 \_ 自动 \_ 节能 \_
 
@@ -23,7 +22,7 @@ WDI \_ tlv \_ " \_ 自动 \_ 节能" \_ 是一种 TLV，其中包含 OID WDI 的
 
 0xB3
 
-## <a name="length"></a>Length
+## <a name="length"></a>长度
 
 
 Sum (所有包含的元素的大小) 。
@@ -31,7 +30,7 @@ Sum (所有包含的元素的大小) 。
 ## <a name="values"></a>值
 
 
-| 类型                                                                               | 说明                                                                                                        |
+| 类型                                                                               | 描述                                                                                                        |
 |------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------|
 | UINT8                                                                              | 固件当前 AutoPSM 状态。                                                                                |
 | UINT8                                                                              | 保留。                                                                                                          |
@@ -66,7 +65,7 @@ Sum (所有包含的元素的大小) 。
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
-<td><p>Windows Server 2016</p></td>
+<td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
 <td><p>标头</p></td>

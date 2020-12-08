@@ -1,30 +1,29 @@
 ---
 title: Wudfext.dll 中的调试程序扩展摘要
-description: 本主题介绍 WudfExt.dll 中的调试程序扩展命令，你可以使用这些命令调试某些用户模式驱动程序框架 (UMDF) 驱动程序。
-ms.assetid: af84ed3a-33a1-4736-9080-c43e87052064
+description: 本主题介绍 WudfExt.dll 中的调试程序扩展命令，你可以使用这些命令调试某些 User-Mode Driver Framework (UMDF) 驱动程序。
 keywords:
 - UMDF 调试器扩展 WDK
 - 调试器扩展 WDK UMDF
 - 扩展 WDK 调试器
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: aba1594ec80d50c7a90ca7638937e6cefd3c2be0
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: d137c430f46a32e3320890eb85817c69f0bd1f80
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89192965"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96790762"
 ---
 # <a name="summary-of-debugger-extensions-in-wudfextdll"></a>Wudfext.dll 中的调试程序扩展摘要
 
 
 [!include[UMDF 1 Deprecation](../includes/umdf-1-deprecation.md)]
 
-Windows 驱动程序工具包 (WDK) 包含一个名为 " *WudfExt.dll*" 的调试器扩展库，该库位于% DDKROOT% \\ bin 子目录中。 本主题介绍 *WudfExt.dll*中的调试程序扩展命令，可用于调试用户模式驱动程序框架 (UMDF) 版本1。*x* 驱动程序。
+Windows 驱动程序工具包 (WDK) 包含一个名为 " *WudfExt.dll*" 的调试器扩展库，该库位于% DDKROOT% \\ bin 子目录中。 本主题介绍 *WudfExt.dll* 中的调试程序扩展命令，你可以使用这些命令调试 User-Mode Driver FRAMEWORK (UMDF) 版本1。*x* 驱动程序。
 
-若要调试在 UMDF 版本2.0 中启动的 UMDF 驱动程序，你必须改用 *Wdfkd.dll* 调试程序扩展库。 有关详细信息，请参阅 [**Windows Driver Framework extension ( # A0) **](../debugger/kernel-mode-driver-framework-extensions--wdfkd-dll-.md)。
+若要调试在 UMDF 版本2.0 中启动的 UMDF 驱动程序，你必须改用 *Wdfkd.dll* 调试程序扩展库。 有关详细信息，请参阅 [**Windows Driver Framework extension ( # A0)**](../debugger/kernel-mode-driver-framework-extensions--wdfkd-dll-.md)。
 
-有关 *WudfExt.dll*中每个命令的完整说明，请参阅 [# A1)  ( 用户模式驱动程序框架扩展 ](../debugger/user-mode-driver-framework-extensions--wudfext-dll-.md)。 有关所有可用调试器扩展库的详细信息，请参阅 [Windows 调试](../debugger/index.md) 包附带的文档。
+有关 *WudfExt.dll* 中每个命令的完整说明，请参阅 [# A1)  ( 用户模式驱动程序框架扩展](../debugger/user-mode-driver-framework-extensions--wudfext-dll-.md)。 有关所有可用调试器扩展库的详细信息，请参阅 [Windows 调试](../debugger/index.md) 包附带的文档。
 
 若要加载 *WudfExt.dll* 调试程序扩展库，请在调试器的命令提示符下输入以下命令：
 

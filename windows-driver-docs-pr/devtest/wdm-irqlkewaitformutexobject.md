@@ -1,6 +1,5 @@
 ---
 title: 'IrqlKeWaitForMutexObject 规则 (wdm) '
-ms.assetid: f2e7b733-1746-4db5-b4a9-becd211e40cf
 ms.date: 05/21/2018
 description: '了解详细信息： IrqlKeWaitForMutexObject 规则 (wdm) '
 keywords:
@@ -12,12 +11,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: f7d2965b072cfd22515a87d7e6beccd7797ee6d5
-ms.sourcegitcommit: f47c072e88dce59daba1231027b60eb56bd2cde9
+ms.openlocfilehash: 6ed9b96a55095447b1c45eab2615c1243da77a3c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92689377"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96791821"
 ---
 # <a name="irqlkewaitformutexobject-rule-wdm"></a>IrqlKeWaitForMutexObject 规则 (wdm) 
 
@@ -26,7 +25,7 @@ ms.locfileid: "92689377"
 
 -   如果 *Timeout* 的值为零，则驱动程序将以 IRQL = 调度 \_ 级别执行。
 
--   如果 *Timeout* 为 **NULL** ，或指向非零的任何值，则驱动程序将以 IRQL &lt; = APC \_ 级别执行。
+-   如果 *Timeout* 为 **NULL**，或指向非零的任何值，则驱动程序将以 IRQL &lt; = APC \_ 级别执行。
 
 **驱动程序模型： WDM**
 

@@ -1,7 +1,6 @@
 ---
 title: 802.11 WLAN 适配器信道
 description: 802.11 WLAN 适配器信道
-ms.assetid: 6a4b07a5-3a0a-41cb-a5cf-74d44fb38192
 keywords:
 - 适配器 WDK 802.11 WLAN，通信通道
 - WLAN 适配器 WDK，通信通道
@@ -13,19 +12,19 @@ keywords:
 - 接收操作 WDK 本机 802.11 IHV 扩展 DLL
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bbc00c9acaf2cad00ef52606b7d5cffc61d23d52
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 182776ad0b0e0a303619daff0ceb5274c140918f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89212553"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96792215"
 ---
 # <a name="80211-wlan-adapter-communication-channel"></a>802.11 WLAN 适配器信道
 
 
 
 
- 
+ 
 
 操作系统在 IHV 扩展 DLL 和本机802.11 微型端口驱动程序之间提供传递通信通道。 IHV 扩展 DLL 访问以下操作的通信通道。
 
@@ -55,6 +54,6 @@ IHV 扩展 DLL 通过对 [*Dot11ExtIhvReceivePacket*](/windows-hardware/drivers/
 
 -   通过此通道接收的所有数据都将按 IHV 扩展 DLL 或本机802.11 微型端口驱动程序发送数据的顺序进行序列化和传递。
 
- 
+ 
 
- 
+ 

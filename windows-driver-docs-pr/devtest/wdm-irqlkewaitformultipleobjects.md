@@ -1,7 +1,6 @@
 ---
 title: 'IrqlKeWaitForMultipleObjects 规则 (wdm) '
 description: IrqlKeWaitForMultipleObjects 规则指定 KeWaitForMultipleObjects 例程的调用方必须基于超时参数在适当的 IRQL 上运行。
-ms.assetid: FC3E3544-95FB-4283-B030-66D74D0F7848
 ms.date: 05/21/2018
 keywords:
 - 'IrqlKeWaitForMultipleObjects 规则 (wdm) '
@@ -12,24 +11,24 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 6e4c92bb376018b08f952a01dbc3593d7c6c8e71
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: cc955c1e2caf19645ddd08c9ea40db92f9bd0eb2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107472"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96791823"
 ---
 # <a name="irqlkewaitformultipleobjects-rule-wdm"></a>IrqlKeWaitForMultipleObjects 规则 (wdm) 
 
 
-**IrqlKeWaitForMultipleObjects**规则指定[**KeWaitForMultipleObjects**](/windows-hardware/drivers/ddi/wdm/nf-wdm-kewaitformultipleobjects)例程的调用方必须基于*超时*参数在适当的 IRQL 上运行。
+**IrqlKeWaitForMultipleObjects** 规则指定 [**KeWaitForMultipleObjects**](/windows-hardware/drivers/ddi/wdm/nf-wdm-kewaitformultipleobjects)例程的调用方必须基于 *超时* 参数在适当的 IRQL 上运行。
 
-**IrqlKeWaitForMultipleObjects**例程的调用方可以在 IRQL &lt; = 调度 \_ 级别运行，但以下情况除外：
+**IrqlKeWaitForMultipleObjects** 例程的调用方可以在 IRQL &lt; = 调度 \_ 级别运行，但以下情况除外：
 
--   如果*超时* &lt; &gt; 0，则必须以 IRQL = APC 级别运行[**KeWaitForMultipleObjects**](/windows-hardware/drivers/ddi/wdm/nf-wdm-kewaitformultipleobjects)例程的调用方 &lt; \_ 。
--   如果*timeout* ！ = NULL 且 \* *timeout* = 0，则[**KeWaitForMultipleObjects**](/windows-hardware/drivers/ddi/wdm/nf-wdm-kewaitformultipleobjects)例程的调用方必须以 IRQL = 调度级别运行 \_ 。
+-   如果 *超时* &lt; &gt; 0，则必须以 IRQL = APC 级别运行 [**KeWaitForMultipleObjects**](/windows-hardware/drivers/ddi/wdm/nf-wdm-kewaitformultipleobjects)例程的调用方 &lt; \_ 。
+-   如果 *timeout* ！ = NULL 且 \* *timeout* = 0，则 [**KeWaitForMultipleObjects**](/windows-hardware/drivers/ddi/wdm/nf-wdm-kewaitformultipleobjects)例程的调用方必须以 IRQL = 调度级别运行 \_ 。
 
--   如果*timeout*  =  **为 NULL**或 \* *timeout* ！ = 0，则[**KeWaitForMultipleObjects**](/windows-hardware/drivers/ddi/wdm/nf-wdm-kewaitformultipleobjects)例程的调用方必须以 IRQL &lt; = APC \_ 级别运行。
+-   如果 *timeout*  =  **为 NULL** 或 \* *timeout* ！ = 0，则 [**KeWaitForMultipleObjects**](/windows-hardware/drivers/ddi/wdm/nf-wdm-kewaitformultipleobjects)例程的调用方必须以 IRQL &lt; = APC \_ 级别运行。
 
 **驱动程序模型： WDM**
 

@@ -1,19 +1,18 @@
 ---
 title: 关于文件系统旧版筛选器驱动程序
 description: 关于文件系统旧版筛选器驱动程序
-ms.assetid: 8de28cd6-40be-48db-a839-335a85e48fc4
 keywords:
 - 旧筛选器驱动程序 WDK 文件系统，关于旧式文件系统筛选器驱动程序
 - 文件系统旧筛选器驱动程序 WDK，关于文件系统旧筛选器驱动程序
 - 什么是文件系统旧筛选器驱动程序
 ms.date: 10/16/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: ed891eeb3c7899c0340711fac6ea410db7a4b6fd
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: f17914be4ef6e96f5ff9eef5b3bb29e19d298a54
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89066258"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96791789"
 ---
 # <a name="about-file-system-legacy-filter-drivers"></a>关于文件系统旧版筛选器驱动程序
 

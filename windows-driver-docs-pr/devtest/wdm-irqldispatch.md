@@ -1,7 +1,6 @@
 ---
 title: 'IrqlDispatch 规则 (wdm) '
 description: IrqlDispatch 规则指定，仅当驱动程序以 IRQL DISPATCH_LEVEL 执行时，才调用以下 DDIs。
-ms.assetid: f72d4f27-b488-4d0a-97b7-9cb40f00e346
 ms.date: 05/21/2018
 keywords:
 - 'IrqlDispatch 规则 (wdm) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: b06da43f13b1722ee66b6372682ab7356ef7b2d7
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 317e3bece7e67679efea7cf75d5a5c5d9e04162d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105576"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96792335"
 ---
 # <a name="irqldispatch-rule-wdm"></a>IrqlDispatch 规则 (wdm) 
 
 
-**IrqlDispatch**规则指定，仅当驱动程序在 IRQL = 调度级别执行时，才调用以下 DDIs \_ 。
+**IrqlDispatch** 规则指定，仅当驱动程序在 IRQL = 调度级别执行时，才调用以下 DDIs \_ 。
 
 -   [**FreeAdapterChannel**](/windows-hardware/drivers/ddi/wdm/nc-wdm-pfree_adapter_channel)
 

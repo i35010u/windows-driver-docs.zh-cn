@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ STREAMALLOCATOR \_ FUNCTIONTABLE
 description: KSPROPERTY \_ STREAMALLOCATOR \_ FUNCTIONTABLE 属性检索给定分配器的函数表。
-ms.assetid: 5a55c808-2960-41c7-b242-69d1e10d0015
 keywords:
 - KSPROPERTY_STREAMALLOCATOR_FUNCTIONTABLE 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2cb5dfba35c3295059714f9491a15f2cec0d1aee
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: d4947f26253a3a69c0e25fa6303395ffe0b36202
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106978"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96792445"
 ---
 # <a name="ksproperty_streamallocator_functiontable"></a>KSPROPERTY \_ STREAMALLOCATOR \_ FUNCTIONTABLE
 
@@ -61,7 +60,7 @@ KSPROPERTY \_ STREAMALLOCATOR \_ FUNCTIONTABLE 属性检索给定分配器的函
 
  
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 KSPROPERTY \_ STREAMALLOCATOR \_ FUNCTIONTABLE 只由支持调度 \_ 级别函数接口的分配器使用。 支持此属性的分配器必须能够为派单 \_ 级别和更低的 IRQL 分配和释放帧。 此属性只能从内核模式进行访问。
@@ -84,7 +83,7 @@ KSPROPERTY \_ STREAMALLOCATOR \_ FUNCTIONTABLE 只由支持调度 \_ 级别函�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSSTREAMALLOCATOR \_ FUNCTIONTABLE**](/windows-hardware/drivers/ddi/ks/ns-ks-ksstreamallocator_functiontable)

@@ -1,17 +1,16 @@
 ---
 title: WDF_DECLARE_CONTEXT_TYPE 宏
 description: WDF_DECLARE_CONTEXT_TYPE 宏为驱动程序的对象特定上下文空间创建一个名称和一个访问器方法。
-ms.assetid: 5fd9950e-943a-4340-b8f1-125343effdf7
 keywords:
 - WDF_DECLARE_CONTEXT_TYPE 宏
 ms.date: 08/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 83ed65ea0585d3489bc42dc27133cce935a8b487
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: c6444b4227b4c059272df78058382ce3bd5259a0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89185703"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96790737"
 ---
 # <a name="wdf_declare_context_type-macro"></a>WDF_DECLARE_CONTEXT_TYPE 宏
 
@@ -40,7 +39,7 @@ void WDF_DECLARE_CONTEXT_TYPE(
 
 此宏不返回值。
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 有关使用此宏的详细信息，请参阅 [框架对象上下文空间](./framework-object-context-space.md)。
@@ -104,7 +103,7 @@ pMyContext = WdfObjectGet_MY_REQUEST_CONTEXT(Request);
 <td><p>2.0</p></td>
 </tr>
 <tr class="even">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Wdfobject (包含 Wdf .h) </td>
 </tr>
 </tbody>

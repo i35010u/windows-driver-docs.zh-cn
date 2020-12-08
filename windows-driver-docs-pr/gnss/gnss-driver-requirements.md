@@ -1,15 +1,14 @@
 ---
 title: 全局导航卫星系统 (GNSS) 驱动程序要求
 description: 描述在开发用于 Windows 10 的全局导航卫星系统 (GNSS) 驱动程序时要考虑的要求、假设和约束。
-ms.assetid: BA117292-4877-4753-8FEB-2DEE6450155D
 ms.date: 10/27/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 0e1b7631cbe82b97d1eb4447de982f1342dfd74f
-ms.sourcegitcommit: 2b7ca7d65f0830b5fd8f80cc1b354eaa99cc781f
+ms.openlocfilehash: eb7da13f2cb067581028534675c09f75f6982db8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93244591"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96792921"
 ---
 # <a name="global-navigation-satellite-system-gnss-driver-requirements"></a>全局导航卫星系统 (GNSS) 驱动程序要求
 
@@ -106,7 +105,7 @@ ms.locfileid: "93244591"
 
 将有大量的全局导航卫星系统 (GNSS) 设备，这些设备可用于 Windows 平台，以满足不同的设备层的需求 (低成本、高端、不同设备) 类型等等。 若要启用此类丰富的生态系统并增加可包含 GNSS 芯片的平板电脑、笔记本电脑和其他设备类型的数量，Microsoft 不需要所有 GNSS 设备支持 [GNSS 驱动程序参考](/windows-hardware/drivers/ddi/gnssdriver)中所述的完整功能集。 下表提供了不同设备类型所需的最小功能的高级视图，以及可选的或推荐的功能。
 
-| 功能 | 所有平台的要求 | 手机的特定要求 | 注释 |
+| 功能 | 所有平台的要求 | 手机的特定要求 | 说明 |
 |--|--|--|--|
 | 准确报告 GNSS_DEVICE_CAPABILITIES | 必需 |  | 最小功能要求 |
 | 对 MultipleFixSessions 的支持 | 可选 |  | 不受 GNSS 适配器支持 |

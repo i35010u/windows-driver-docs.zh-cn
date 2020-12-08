@@ -1,9 +1,8 @@
 ---
-title: WIA\_IPS\_MIN\_水平\_大小
-description: WIA\_IPS\_MIN\_水平\_SIZE 属性包含的扫描程序的文档送纸器可以扫描，以英寸为单位的千分之几秒的最小页物理的水平尺寸 (。 001)。 WIA 微型驱动程序创建并维护此属性。
-ms.assetid: 95489d82-037b-45ac-86e8-e5584c66251c
+title: WIA \_ IPS \_ 最小 \_ 水平 \_ 大小
+description: "\"WIA \\_ IPS \\_ 最小 \\_ 水平 \\_ 大小\" 属性包含扫描仪的文档送纸器可扫描的最小页面的物理水平尺寸，以英寸 ( 001) 为单位。 WIA 微型驱动程序创建并维护此属性。"
 keywords:
-- WIA_IPS_MIN_HORIZONTAL_SIZE 成像设备
+- WIA_IPS_MIN_HORIZONTAL_SIZE 图像设备
 topic_type:
 - apiref
 api_name:
@@ -14,21 +13,21 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 86044eb878583aab518d05b6ddc3b29bed27c67e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: db87fca0d758de1d75e10e7b243617802f0ae6fd
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63348251"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96792227"
 ---
-# <a name="wiaipsminhorizontalsize"></a>WIA\_IPS\_MIN\_水平\_大小
+# <a name="wia_ips_min_horizontal_size"></a>WIA \_ IPS \_ 最小 \_ 水平 \_ 大小
 
 
-WIA\_IPS\_MIN\_水平\_SIZE 属性包含的扫描程序的文档送纸器可以扫描，以英寸为单位的千分之几秒的最小页物理的水平尺寸 (。 001)。 WIA 微型驱动程序创建并维护此属性。
+"WIA \_ IPS \_ 最小 \_ 水平 \_ 大小" 属性包含扫描仪的文档送纸器可扫描的最小页面的物理水平尺寸，以英寸 ( 001) 为单位。 WIA 微型驱动程序创建并维护此属性。
 
-属性类型：VT\_I4
+属性类型： VT \_ I4
 
-有效值：WIA\_PROP\_NONE
+有效值： WIA " \_ \_ 无"
 
 访问权限：只读
 
@@ -42,12 +41,12 @@ WIA\_IPS\_MIN\_水平\_SIZE 属性包含的扫描程序的文档送纸器可以�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Version</p></td>
-<td><p>在 Windows Vista 和更高版本操作系统中可用。</p></td>
+<td><p>版本</p></td>
+<td><p>在 Windows Vista 和更高版本的操作系统中可用。</p></td>
 </tr>
 <tr class="even">
-<td><p>Header</p></td>
-<td>Wiadef.h （包括 Wiadef.h）</td>
+<td><p>标头</p></td>
+<td>Wiadef (包含 Wiadef) </td>
 </tr>
 </tbody>
 </table>
@@ -55,7 +54,7 @@ WIA\_IPS\_MIN\_水平\_SIZE 属性包含的扫描程序的文档送纸器可以�
 ## <a name="see-also"></a>请参阅
 
 
-[**WIA\_IPS\_MIN\_VERTICAL\_SIZE**](wia-ips-min-vertical-size.md)
+[**WIA \_ IPS \_ 最小 \_ 垂直 \_ 大小**](wia-ips-min-vertical-size.md)
 
  
 

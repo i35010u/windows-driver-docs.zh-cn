@@ -1,19 +1,18 @@
 ---
 title: 处理筛选器或函数驱动程序中的系统 Query-Power IRP
 description: 处理筛选器或函数驱动程序中的系统 Query-Power IRP
-ms.assetid: 81d921d5-6db8-4858-b86e-1484781faba5
 keywords:
 - 查询-power Irp WDK 电源管理
 - 筛选器驱动程序 WDK 电源管理
 - 函数驱动程序 WDK 电源管理
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 33d0b8a6370ca8343e8e3b77686e290c1d2cfc85
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 5ddc6f5bfdec225a2873074db710920f4153699a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89191363"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96792735"
 ---
 # <a name="handling-a-system-query-power-irp-in-a-filter-or-function-driver"></a>处理筛选器或函数驱动程序中的系统 Query-Power IRP
 
@@ -27,7 +26,7 @@ ms.locfileid: "89191363"
 
     如果 **IoAcquireRemoveLock** 返回失败状态，驱动程序不应继续处理 IRP。 从 Windows Vista 开始，驱动程序应调用 [**IoCompleteRequest**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocompleterequest) 来完成 IRP 并返回失败状态。 在 Windows Server 2003、Windows XP 和 Windows 2000 中，驱动程序应调用 [**PoStartNextPowerIrp**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-postartnextpowerirp)，并调用 **IOCOMPLETEREQUEST** 来完成 IRP，并返回失败状态。
 
-2.  确定查询是否应失败。 有关指南，请参阅 [在筛选器或函数驱动程序中失败系统查询-POWER IRP](failing-a-system-query-power-irp-in-a-filter-or-function-driver.md) ，并按该部分所述完成处理。
+2.  确定查询是否应失败。 有关指南，请参阅 [在筛选器或函数驱动程序中失败系统 Query-Power IRP](failing-a-system-query-power-irp-in-a-filter-or-function-driver.md) ，并按该部分所述完成处理。
 
 3.  调用 [**PoStartNextPowerIrp**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-postartnextpowerirp)。 仅 (Windows Server 2003、Windows XP 和 Windows 2000) 
 
@@ -37,7 +36,7 @@ ms.locfileid: "89191363"
 
 6.  调用 [**IoReleaseRemoveLock**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioreleaseremovelock)。 但是，如果驱动程序为 IRP 设置 *IoCompletion* 例程，则改为从 *IoCompletion* 例程进行此调用。
 
-7.  \_从其[*DispatchPower*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)例程返回的状态为 "挂起"。
+7.  \_从其 [*DispatchPower*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)例程返回的状态为 "挂起"。
 
  
 

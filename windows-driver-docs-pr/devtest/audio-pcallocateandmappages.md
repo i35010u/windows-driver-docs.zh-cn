@@ -1,7 +1,6 @@
 ---
 title: 'PcAllocateAndMapPages 规则 (音频) '
 description: PcAllocateAndMapPages 规则指定 PortCls 微型端口驱动程序使用正确的参数 IPortWaveRTStream AllocatePagesForMdlIPortWaveRTStream AllocateContiguousPagesForMdl IPortWaveRTStream MapAllocatedPages 调用以下接口。
-ms.assetid: 32A3AA22-F387-460F-806E-82C5A0D52B73
 ms.date: 05/21/2018
 keywords:
 - 'PcAllocateAndMapPages 规则 (音频) '
@@ -12,12 +11,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 73c39c8df6790eb27885be0e6747f0950b6e76e0
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 3ffd181a314ca2ac5399e043b184367e67bd7644
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106664"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96791953"
 ---
 # <a name="pcallocateandmappages-rule-audio"></a>PcAllocateAndMapPages 规则 (音频) 
 

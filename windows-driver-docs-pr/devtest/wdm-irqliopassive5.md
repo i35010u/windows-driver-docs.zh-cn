@@ -1,7 +1,6 @@
 ---
 title: 'IrqlIoPassive5 规则 (wdm) '
 description: IrqlIoPassive5 规则指定，仅当驱动程序在 IRQL PASSIVE_LEVEL 执行时，该驱动程序才调用特定的 i/o 管理器例程。
-ms.assetid: 07037cf2-37eb-4045-9588-ac10e79b9c5c
 ms.date: 05/21/2018
 keywords:
 - 'IrqlIoPassive5 规则 (wdm) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 6c44e6234be353ee7629a9c47e08e20280798179
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: e2575a3024a31541e10927bc194488276dba63c3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104121"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96791863"
 ---
 # <a name="irqliopassive5-rule-wdm"></a>IrqlIoPassive5 规则 (wdm) 
 
 
-**IrqlIoPassive5**规则指定，仅当驱动程序以 IRQL = 被动级别执行时，驱动程序才调用特定的 I/o 管理器例程 \_ 。
+**IrqlIoPassive5** 规则指定，仅当驱动程序以 IRQL = 被动级别执行时，驱动程序才调用特定的 I/o 管理器例程 \_ 。
 
 **驱动程序模型： WDM**
 

@@ -1,19 +1,18 @@
 ---
 title: 访问共享状态信息
 description: 访问共享状态信息
-ms.assetid: f3e5ac07-cab1-4f66-90e4-88b2e28079a5
 keywords:
 - 关键部分例程 WDK 内核
 - 计时器计数器 WDK 内核
 - 共享状态信息 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 105ef762d7e322d2af5d3d92acb64a34bc90a1a7
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 1a4112bcee8c821a012fdd2c954babe887839bde
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89191679"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96790549"
 ---
 # <a name="accessing-shared-state-information"></a>访问共享状态信息
 
@@ -47,7 +46,7 @@ ms.locfileid: "89191679"
 
 -   如果驱动程序的 [*DpcForIsr*](/windows-hardware/drivers/ddi/wdm/nc-wdm-io_dpc_routine) 例程必须重新编程设备才能开始部分传输操作，则它必须重新初始化计时器计数器，因为 [*StartIo*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_startio) 例程已执行。
 
-    [*DpcForIsr*](/windows-hardware/drivers/ddi/wdm/nc-wdm-io_dpc_routine)例程还必须使用[**KeSynchronizeExecution**](/windows-hardware/drivers/ddi/wdm/nf-wdm-kesynchronizeexecution)调用 SynchCritSection \_ 2 例程，或使用 SynchCritSection \_ 3 例程来对设备进行其他传输操作。
+    [*DpcForIsr*](/windows-hardware/drivers/ddi/wdm/nc-wdm-io_dpc_routine)例程还必须使用 [**KeSynchronizeExecution**](/windows-hardware/drivers/ddi/wdm/nf-wdm-kesynchronizeexecution)调用 SynchCritSection \_ 2 例程，或使用 SynchCritSection \_ 3 例程来对设备进行其他传输操作。
 
 在此方案中，驱动程序具有多个 *SynchCritSection* 例程，其中每个例程都具有离散的特定职责;一个用于维护其计时器计数器，另一个或多个用于对设备进行编程。 每个 *SynchCritSection* 例程会快速返回控制权，因为它执行单个离散任务。
 

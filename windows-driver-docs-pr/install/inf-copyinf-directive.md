@@ -1,7 +1,6 @@
 ---
 title: INF CopyINF 指令
 description: CopyINF 指令会使指定的 INF 文件复制到目标系统。 Windows XP 和更高版本的 Windows 支持 CopyINF 指令。
-ms.assetid: 289822a8-69c3-43a3-ab07-ee02a7473db8
 keywords:
 - INF CopyINF 指令设备和驱动程序安装
 topic_type:
@@ -12,17 +11,17 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d8311cc88090c90c9001cd34b79e8db08ffa1e82
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: d45aa75fcb07b39653a2b4bdb6b102e16a94cf06
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91733955"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96790581"
 ---
 # <a name="inf-copyinf-directive"></a>INF CopyINF 指令
 
 
-**CopyINF**指令会使指定的 INF 文件复制到目标系统。 Windows XP 和更高版本的 Windows 支持 **CopyINF** 指令。
+**CopyINF** 指令会使指定的 INF 文件复制到目标系统。 Windows XP 和更高版本的 Windows 支持 **CopyINF** 指令。
 
 ```inf
 [DDInstall]
@@ -49,12 +48,12 @@ Microsoft Windows XP 和更高版本的 Windows 中提供了 **CopyINF** 指令�
 
     Windows 将指定的 INF 文件复制到它将在设备安装过程中搜索的系统目录路径。
 
--   **CopyINF**指令中指定的 inf 文件必须与包含**COPYINF**指令的 inf 文件位于同一目录中。
+-   **CopyINF** 指令中指定的 inf 文件必须与包含 **COPYINF** 指令的 inf 文件位于同一目录中。
 -   你必须在多磁盘安装的每个磁盘上包含所有 INF 文件。
 
 从 Windows Vista 开始，以下点还适用于 **CopyINF** 指令：
 
--   **CopyINF**指令会使指定 INF 文件引用的完整[驱动程序包](driver-packages.md)复制到[驱动程序存储区](driver-store.md)中。 这是为了支持多功能驱动程序包的部署所必需的，因为在实际安装设备时原始源媒体可能不可用。 如果指定 INF 文件引用的驱动程序包已存在于驱动程序存储区中，则将忽略在 **CopyINF** 指令中指定的 inf 文件。
+-   **CopyINF** 指令会使指定 INF 文件引用的完整 [驱动程序包](driver-packages.md)复制到 [驱动程序存储区](driver-store.md)中。 这是为了支持多功能驱动程序包的部署所必需的，因为在实际安装设备时原始源媒体可能不可用。 如果指定 INF 文件引用的驱动程序包已存在于驱动程序存储区中，则将忽略在 **CopyINF** 指令中指定的 inf 文件。
 
 -   在驱动程序存储区导入过程中（而不是在设备安装期间）处理 **CopyINF** 指令。 这意味着，在 Windows Vista 和更高版本的 Windows 上调用 [SetupCopyOEMInf](/windows/win32/api/setupapi/nf-setupapi-setupcopyoeminfa) 会导致在该时间处理指定 INF 文件中的所有 **CopyINF** 指令。 对于包含在指定 INF 文件中的每个 **CopyINF** 指令，将以递归方式发生，直到所有引用的驱动程序包都复制到驱动程序存储区中。
 

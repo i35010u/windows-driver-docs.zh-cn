@@ -1,15 +1,14 @@
 ---
 title: SoC 平台上 Windows 的 UEFI 要求
 description: 本主题介绍适用于适用于 Windows 10 的 UEFI 要求 (家庭、专业版、企业版和教育版) 以及 Windows 10 移动版。
-ms.assetid: 7A0B901E-1252-4F8F-B1CB-BA1AB7B01112
 ms.date: 08/25/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 10986dff002311176afcbe66c6c2135be8a929b3
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 0c2a2fa7781e80977add1ef4dc99a4be53f34dbd
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90101518"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96792073"
 ---
 # <a name="uefi-requirements-for-windows-editions-on-soc-platforms"></a>SoC 平台上 Windows 版本的 UEFI 要求
 
@@ -23,7 +22,7 @@ Microsoft 欢迎您对此组要求的实施人员提供反馈和意见。 对于
 
 有关特定要求的详细信息，请参阅表后面的部分。
 
-| 要求                               | UEFI 规范部分 | 备注                          |
+| 要求                               | UEFI 规范部分 | 说明                          |
 |-------------------------------------------|----------------------------|--------------------------------|
 | **EFI 系统表**                      | 4.3                        | 显式 Windows 要求   |
 | **EFI 启动服务**                     | 6.0                        |                                |
@@ -135,7 +134,7 @@ EFI 系统表必须符合所实现的版本级别中的标准定义。 EFI 系�
 <li><p>延迟 ( # A1</p></li>
 </ul>
 <div class="alert">
-<strong>注意</strong>   需要 ( # A1 实现才能具有确定性 (可重复) 错误，以便可以可靠地纠正错误或取消。
+<strong>注意</strong>  需要 ( # A1 实现才能具有确定性 (可重复) 错误，以便可以可靠地纠正错误或取消。
 </div>
 <div>
  
@@ -167,7 +166,7 @@ EFI 系统表必须符合所实现的版本级别中的标准定义。 EFI 系�
 <li><p>GetTime ( # A1</p></li>
 <li><p>SetTime ( # A1</p>
 <div class="alert">
-<strong>注意</strong>   在 ExitBootServices ( # A2 # A3 用于访问平台时间的硬件之前，将仅在 boot (中调用时间服务。
+<strong>注意</strong>  在 ExitBootServices ( # A2 # A3 用于访问平台时间的硬件之前，将仅在 boot (中调用时间服务。
 </div>
 <div>
  
@@ -184,7 +183,7 @@ EFI 系统表必须符合所实现的版本级别中的标准定义。 EFI 系�
 <ul>
 <li><p>ResetSystem ( # A1</p>
 <div class="alert">
-<strong>注意</strong>   ResetSystem ( # A1 实现必须支持重置和关闭选项。
+<strong>注意</strong>  ResetSystem ( # A1 实现必须支持重置和关闭选项。
 </div>
 <div>
  
@@ -283,7 +282,7 @@ Windows 在安全启动、标准启动、加密和数据保护方面具有安全
 <li><p>要求5：必填。 由 Microsoft 提供的 UEFI KEK 应包括在 UEFI KEK 数据库中。 不应存在其他 Kek。 Microsoft 将以 EFI_CERT_X509 签名的形式提供 KEK。</p></li>
 <li><p>要求6：必填。 PK<em><sub>pub</sub></em> 密钥应存在并存储在固件闪存中。</p>
 <div class="alert">
-<strong>注意</strong>   由于 PK<em><sub>特权</sub></em> (pk<em><sub>pub</sub></em>的私钥对应) 控制使用 pk<em><sub>pub</sub></em>预配的所有设备上的安全启动策略，因此必须严格保护其保护和使用。
+<strong>注意</strong>  由于 PK<em><sub>特权</sub></em> (pk<em><sub>pub</sub></em> 的私钥对应) 控制使用 pk<em><sub>pub</sub></em>预配的所有设备上的安全启动策略，因此必须严格保护其保护和使用。
 </div>
 <div>
  
@@ -322,7 +321,7 @@ Windows 在安全启动、标准启动、加密和数据保护方面具有安全
 </ul></td>
 </tr>
 <tr class="even">
-<td>加密</td>
+<td>密码</td>
 <td><ul>
 <li><p>要求25：强制。 平台应为卸载加密哈希操作提供 EFI_HASH_PROTOCOL (UEFI v1.0) 27.4 部分。 必须支持 SHA-256。</p></li>
 <li><p>要求26：必填。 平台应支持 Microsoft 定义的 <a href="uefi-entropy-gathering-protocol.md" data-raw-source="[EFI_RNG_PROTOCOL](uefi-entropy-gathering-protocol.md)">EFI_RNG_PROTOCOL</a> ，以进行 OS 预操作系统读取。</p></li>

@@ -1,7 +1,6 @@
 ---
 title: IRP_MJ_SET_SECURITY 联合的 FLT_PARAMETERS
 description: 操作的 FLT \_ IO \_ 参数块结构的 MajorFunction 字段 \_ 为 IRP \_ MJ \_ SET \_ SECURITY 时使用的联合组件。
-ms.assetid: 9006ef50-bd2e-4c75-8c6b-8bb777122a75
 keywords:
 - IRP_MJ_SET_SECURITY 联合可安装文件系统驱动程序的 FLT_PARAMETERS
 - FLT_PARAMETERS 联合可安装文件系统驱动程序
@@ -16,29 +15,29 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 26d43c9539d6cfbda9ef7c7ef51976eae52d8d36
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: b7b1f8a36915d4cffb2afac55306ee18cab912f6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89066190"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96791523"
 ---
 # <a name="flt_parameters-for-irp_mj_set_security-union"></a>\_IRP MJ 的 FLT \_ 参数 \_ 设置 \_ 安全联合
 
 
-操作的[**FLT \_ IO \_ 参数 \_ 块**](/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_io_parameter_block)结构的**MajorFunction**字段为[**IRP \_ MJ \_ SET \_ SECURITY**](irp-mj-set-security.md)时使用的联合组件。
+操作的 [**FLT \_ IO \_ 参数 \_ 块**](/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_io_parameter_block)结构的 **MajorFunction** 字段为 [**IRP \_ MJ \_ SET \_ SECURITY**](irp-mj-set-security.md)时使用的联合组件。
 
 <a name="syntax"></a>语法
 ------
 
 ```ManagedCPlusPlus
 typedef union _FLT_PARAMETERS {
-  ...    ;
+  ...    ;
   struct {
     SECURITY_INFORMATION SecurityInformation;
     PSECURITY_DESCRIPTOR SecurityDescriptor;
-  } SetSecurity;
-  ...    ;
+  } SetSecurity;
+  ...    ;
 } FLT_PARAMETERS, *PFLT_PARAMETERS;
 ```
 
@@ -90,7 +89,7 @@ typedef union _FLT_PARAMETERS {
 <a name="remarks"></a>备注
 -------
 
-[**IRP \_ MJ \_ 集 \_ 安全**](irp-mj-set-security.md)操作的[**FLT \_ 参数**](/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_parameters)结构包含由回调数据表示的设置安全信息操作的参数) 结构中 ([**FLT \_ 回调 \_ 数据**](/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_callback_data)。 它包含在 FLT \_ IO \_ 参数 \_ 块结构中。
+[**IRP \_ MJ \_ 集 \_ 安全**](irp-mj-set-security.md)操作的 [**FLT \_ 参数**](/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_parameters)结构包含由回调数据表示的设置安全信息操作的参数) 结构中 ([**FLT \_ 回调 \_ 数据**](/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_callback_data)。 它包含在 FLT \_ IO \_ 参数 \_ 块结构中。
 
 IRP \_ MJ \_ SET \_ SECURITY 是一项基于 IRP 的操作。
 
@@ -110,7 +109,7 @@ IRP \_ MJ \_ SET \_ SECURITY 是一项基于 IRP 的操作。
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**FLT \_ 回调 \_ 数据**](/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_callback_data)

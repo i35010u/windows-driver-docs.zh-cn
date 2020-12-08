@@ -1,9 +1,8 @@
 ---
 title: .dbgdbg（调试当前调试器）
-description: .Dbgdbg 命令启动 CDB; 的新实例此新调试器将当前的调试器作为其目标。
-ms.assetid: a90392b5-d8ae-495d-8074-060e4ec89037
+description: Dbgdbg 命令启动 CDB 的新实例;此新调试器使用当前调试器作为其目标。
 keywords:
-- .dbgdbg （调试当前调试器） Windows 调试
+- dbgdbg (调试当前调试器) Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 20c74ab6390a7a18b07aee3df31d3456691ab24d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: efb5254599120f78c58609088b1751640f4dd833
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63336888"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96792055"
 ---
 # <a name="dbgdbg-debug-current-debugger"></a>.dbgdbg（调试当前调试器）
 
 
-**.Dbgdbg**命令启动 CDB 的新实例; 此新调试器所需的当前调试器作为其目标。
+**Dbgdbg** 命令启动 CDB 的新实例;此新调试器使用当前调试器作为其目标。
 
 ```dbgcmd
 .dbgdbg 
@@ -40,16 +39,16 @@ ms.locfileid: "63336888"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>模式</strong></p></td>
-<td align="left"><p>用户模式下，内核模式</p></td>
+<td align="left"><p><strong>交货</strong></p></td>
+<td align="left"><p>用户模式，内核模式</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>目标</strong></p></td>
-<td align="left"><p>实时、 崩溃转储</p></td>
+<td align="left"><p>实时，故障转储</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>平台</strong></p></td>
-<td align="left"><p>全部</p></td>
+<td align="left"><p>all</p></td>
 </tr>
 </tbody>
 </table>
@@ -59,7 +58,7 @@ ms.locfileid: "63336888"
 <a name="remarks"></a>备注
 -------
 
-**.Dbgdbg**命令是类似于[ **CTRL + P （调试当前调试器）** ](ctrl-p--debug-current-debugger-.md)控制密钥。 但是， **.dbgdbg**是更灵活，因为可以从 WinDbg、 KD 和 CDB，使用它，并且可用于调试在远程计算机上的调试服务器。
+**Dbgdbg** 命令类似于 [**CTRL + P (调试当前调试器)**](ctrl-p--debug-current-debugger-.md)控制键。 不过， **dbgdbg** 更通用，因为它可以从 WINDBG 以及 KD 和 CDB 中使用，并且可用于调试远程计算机上的调试服务器。
 
  
 

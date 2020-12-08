@@ -1,7 +1,6 @@
 ---
 title: powertriage
 description: Powertriage 扩展显示有关系统和设备电源相关组件的摘要信息。
-ms.assetid: A202ED64-B706-42AC-B058-C44321C9171F
 keywords:
 - powertriage Windows 调试
 ms.date: 05/23/2017
@@ -12,12 +11,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: efa4fcf591189d94ba886c3ece06fd0b74363ad0
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: f6ebe76edccc51e378836c46f4703aeb506fc3a3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89215377"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96791695"
 ---
 # <a name="powertriage"></a>!powertriage
 
@@ -58,7 +57,7 @@ ms.locfileid: "89215377"
 ！ Powertriage 扩展显示以下信息。
 
 1. 所有设备对象的设备节点的电源状态以及！ podev。
-2. 如果驱动程序已启用 IFR，则链接到[**！ rcdrkd. rcdrlogdump。**](-rcdrkd-rcdrlogdump.md) 有关 IFR 的详细信息，请参阅 [在 KMDF 和 UMDF 2 驱动程序中使用即时 Trace 录像机 (IFR) ](../wdf/using-wpp-software-tracing-in-kmdf-and-umdf-2-drivers.md)。
+2. 如果驱动程序已启用 IFR，则链接到 [**！ rcdrkd. rcdrlogdump。**](-rcdrkd-rcdrlogdump.md) 有关 IFR 的详细信息，请参阅 [在 KMDF 和 UMDF 2 驱动程序中使用即时 Trace 录像机 (IFR) ](../wdf/using-wpp-software-tracing-in-kmdf-and-umdf-2-drivers.md)。
 3. 指向 WDF 驱动程序的 [**！ wdfkd. wdfdriverinfo**](-wdfkd-wdfdriverinfo.md) 和 [**！ wdfkd**](-wdfkd-wdflogdump.md) 的链接。
 4. 链接到！ fxdevice for PoFx 设备。 有关 PoFX 的详细信息，请参阅 [电源管理框架概述](../kernel/overview-of-the-power-management-framework.md)。
 下面是！ powertriage 命令的示例输出。

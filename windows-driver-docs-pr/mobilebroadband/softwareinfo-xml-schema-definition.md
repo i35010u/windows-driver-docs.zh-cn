@@ -1,15 +1,14 @@
 ---
 title: SoftwareInfo XML 架构定义
 description: SoftwareInfo XML 架构定义
-ms.assetid: 7b09ffc6-0f69-4710-988b-4952823da72e
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b927449e729b12876f80833ae94728aa1f64c6d9
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: 4f11e4b65f01393d82506860cdeb8a73a28d1eed
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89403162"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96792221"
 ---
 # <a name="softwareinfo-xml-schema-definition"></a>SoftwareInfo XML 架构定义
 

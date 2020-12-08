@@ -1,19 +1,18 @@
 ---
 title: 访问用户空间内存
 description: 访问用户空间内存
-ms.assetid: db0b6ba2-4cec-46c1-b13f-aba4c10a2d8c
 keywords:
 - 内存管理 WDK 内核，用户空间内存
 - 用户空间内存 WDK 内核
 - 虚拟用户空间内存 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e17fc2d14ee248a3907cecb8ae9b276db224c45f
-ms.sourcegitcommit: 774cca93409062c813143c8dc4c55f5c883d2b1a
+ms.openlocfilehash: 002df27b1ecace60a7b0a7846d3e62f8d8e7868b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/15/2020
-ms.locfileid: "94634635"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96792831"
 ---
 # <a name="accessing-user-space-memory"></a>访问用户空间内存
 

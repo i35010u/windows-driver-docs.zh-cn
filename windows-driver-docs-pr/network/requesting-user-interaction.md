@@ -1,25 +1,24 @@
 ---
 title: 请求用户交互
 description: 请求用户交互
-ms.assetid: 888faeb0-1984-4b0f-b955-2772a6bd86f7
 keywords:
 - 用户交互 WDK 本机 802.11 IHV 扩展 DLL
 - 请求用户交互 WDK 本机 802.11 IHV 扩展 DLL
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 497251f5d422acca0f3809df22eba6571f1bbcbf
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 98abb846c15d85bbc01859ff341ab6c1b888d23a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89215100"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96791375"
 ---
 # <a name="requesting-user-interaction"></a>请求用户交互
 
 
 
 
- 
+ 
 
 在调用 [*Dot11ExtIhvInitAdapter*](/windows-hardware/drivers/ddi/wlanihv/nc-wlanihv-dot11extihv_init_adapter)之后的任何时候，IHV 扩展 DLL 都可以通过调用 [**Dot11ExtSendUIRequest**](/windows-hardware/drivers/ddi/wlanihv/nc-wlanihv-dot11ext_send_ui_request) 函数请求与用户交互。 操作系统将所有用户交互请求转发到 IHV UI 扩展 DLL，该 DLL 将处理请求，并向用户显示相应的用户界面 (UI) 页面。
 
@@ -49,10 +48,10 @@ ms.locfileid: "89215100"
 
 每当基本服务集上的连接状态发生更改时，操作系统就会启动用户交互， (BSS) 网络。 在这种情况下，操作系统将调用 [*Dot11ExtIhvQueryUIRequest*](/windows-hardware/drivers/ddi/wlanihv/nc-wlanihv-dot11extihv_query_ui_request) 函数。 IHV 扩展 DLL 分配一个缓冲区，并将其格式化为 [**DOT11EXT \_ IHV \_ UI \_ 请求**](/windows-hardware/drivers/ddi/wlanihv/ns-wlanihv-_dot11ext_ihv_ui_request) 结构。 DLL 将 DOT11EXT \_ IHV \_ UI 请求结构的成员设置 \_ 为引用适用于连接状态更改的 UI 页。 操作系统负责显示 UI 页。
 
-**注意**   IHV 扩展必须通过[**Dot11ExtAllocateBuffer**](/windows-hardware/drivers/ddi/wlanihv/nc-wlanihv-dot11ext_allocate_buffer)分配包含[**DOT11EXT \_ IHV \_ UI \_ 请求**](/windows-hardware/drivers/ddi/wlanihv/ns-wlanihv-_dot11ext_ihv_ui_request)结构的缓冲区。 在从 [*Dot11ExtIhvQueryUIRequest*](/windows-hardware/drivers/ddi/wlanihv/nc-wlanihv-dot11extihv_query_ui_request)返回后，DLL 不得释放缓冲区。
+**注意** IHV 扩展必须通过 [**Dot11ExtAllocateBuffer**](/windows-hardware/drivers/ddi/wlanihv/nc-wlanihv-dot11ext_allocate_buffer)分配包含 [**DOT11EXT \_ IHV \_ UI \_ 请求**](/windows-hardware/drivers/ddi/wlanihv/ns-wlanihv-_dot11ext_ihv_ui_request)结构的缓冲区。 在从 [*Dot11ExtIhvQueryUIRequest*](/windows-hardware/drivers/ddi/wlanihv/nc-wlanihv-dot11extihv_query_ui_request)返回后，DLL 不得释放缓冲区。
 
- 
+ 
 
- 
+ 
 
- 
+ 

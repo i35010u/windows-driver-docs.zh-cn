@@ -1,7 +1,6 @@
 ---
 title: headerPath XML 元素
 description: headerPath XML 元素
-ms.assetid: 9764fed5-75bc-4679-bae0-5bfe738268e2
 keywords:
 - headerPath XML 元素设备和驱动程序安装
 topic_type:
@@ -12,12 +11,12 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: d03c899fb274398bfe8ec24c30428de95e609e99
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 47ac105e351fa3a5fa42026f30f54a97830ea72f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89095305"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96791767"
 ---
 # <a name="headerpath-xml-element"></a>headerPath XML 元素
 
@@ -69,7 +68,7 @@ ms.locfileid: "89095305"
 
 如果 **headerPath** 元素是 **dpinst** XML 元素的子元素，则对其进行自定义，但不本地化。 如果 **headerPath** 元素为 **language** XML 元素的子元素，则自定义并本地化该元素。
 
-下面的代码示例演示了一个 **headerPath** 元素，该元素指定 * \\Header.bmp* 为 DPInst 显示在 DPInst EULA 和安装页和安装页右上角的标头位图文件的数据。 指定自定义标头位图文件的文本以粗体显示。
+下面的代码示例演示了一个 **headerPath** 元素，该元素指定 *\\Header.bmp* 为 DPInst 显示在 DPInst EULA 和安装页和安装页右上角的标头位图文件的数据。 指定自定义标头位图文件的文本以粗体显示。
 
 ```cpp
 <dpinst>
@@ -81,7 +80,7 @@ ms.locfileid: "89095305"
 
 如果未指定 **headerPath** 元素，则 DPInst 将使用默认标头位图。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**dpinst**](dpinst-xml-element.md)

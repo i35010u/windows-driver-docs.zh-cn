@@ -1,7 +1,6 @@
 ---
 title: 'PcPropertyRequest 规则 (音频) '
 description: PcPropertyRequest 规则指定 PortCls 微型端口驱动程序绝不应使用处于 "挂起" 状态的 NtStatus 值调用 PcCompletePendingPropertyRequest \_ 。
-ms.assetid: 7D06F924-512F-4D21-98CD-B9E60CC8A6AB
 ms.date: 05/21/2018
 keywords:
 - 'PcPropertyRequest 规则 (音频) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: c388f93d3d2bac86445ca3b6311f42dd4a24b09f
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 1162f299cf655103a341e239e011829d0148e44b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103982"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96790681"
 ---
 # <a name="pcpropertyrequest-rule-audio"></a>PcPropertyRequest 规则 (音频) 
 
 
-PcPropertyRequest 规则指定 PortCls 微型端口驱动程序绝不应使用处于 "挂起" 状态的*NtStatus*值调用[**PcCompletePendingPropertyRequest**](/windows-hardware/drivers/ddi/portcls/nf-portcls-pccompletependingpropertyrequest) \_ 。
+PcPropertyRequest 规则指定 PortCls 微型端口驱动程序绝不应使用处于 "挂起" 状态的 *NtStatus* 值调用 [**PcCompletePendingPropertyRequest**](/windows-hardware/drivers/ddi/portcls/nf-portcls-pccompletependingpropertyrequest) \_ 。
 
 **驱动程序模型：音频**
 

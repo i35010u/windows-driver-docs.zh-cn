@@ -1,15 +1,14 @@
 ---
 title: PDOSCSI \_ 地址 WMI 类
 description: PDOSCSI \_ 地址 WMI 类
-ms.assetid: 8fdcfc5a-308a-457f-a015-e082e96f9df7
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 2d9e1dfd7309b46ccb217c5a0ca3dce9c0b8c6d5
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: b720a869a3ced3188dfad1bf2a2ff20ad6147d1b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89185107"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96792583"
 ---
 # <a name="pdoscsi_addr-wmi-class"></a>PDOSCSI \_ 地址 WMI 类
 

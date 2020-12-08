@@ -1,18 +1,17 @@
 ---
 title: 验证工具调查
 description: 验证工具调查
-ms.assetid: d36e041f-efa5-450f-b4de-c84c4880e44d
 keywords:
 - 动态验证工具 WDK
 - 静态验证工具 WDK
 ms.date: 06/04/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 18d8fc4aac277c24fc77ccabf17156f48a99a1b4
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 6ef5dd5c37a72cbbaa3c35727d207c628be2efdb
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89384487"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96791913"
 ---
 # <a name="survey-of-verification-tools"></a>验证工具调查
 

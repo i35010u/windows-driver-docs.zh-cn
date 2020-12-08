@@ -1,7 +1,6 @@
 ---
 title: 动态硬件分区体系结构
 description: 动态硬件分区体系结构
-ms.assetid: 1b6a1dc5-ec32-4bb9-acaf-14db284b4a0e
 keywords:
 - 动态硬件分区 WDK，体系结构
 - 硬件分区 WDK 动态，体系结构
@@ -11,12 +10,12 @@ keywords:
 - 服务器 WDK 动态硬件分区
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c7154d74696036e0ba4411f0135ca2601337cd79
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: 625ef718a14d115cd32d7e924564130ba8d5d746
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89403274"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96790555"
 ---
 # <a name="dynamic-hardware-partitioning-architecture"></a>动态硬件分区体系结构
 

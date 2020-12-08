@@ -1,7 +1,6 @@
 ---
 title: 派生的 NET_BUFFER_LIST 结构
 description: 派生的 NET_BUFFER_LIST 结构
-ms.assetid: 6660aef5-ba67-4f15-98b6-547fa753bc76
 keywords:
 - NET_BUFFER_LIST
 - 网络数据 WDK，结构
@@ -10,12 +9,12 @@ keywords:
 - 派生结构 WDK 网络
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 831d3110ef3980d5422ba24e4658a25373d78ee5
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 64e57f4b9498eb3beb1e607dd89f62cee1560c7e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89218432"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96792185"
 ---
 # <a name="derived-net_buffer_list-structures"></a>派生的网络 \_ 缓冲区 \_ 列表结构
 

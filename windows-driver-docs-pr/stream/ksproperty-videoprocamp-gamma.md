@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ VIDEOPROCAMP \_ 伽玛
 description: KSPROPERTY \_ VIDEOPROCAMP \_ 伽玛属性控制照相机的 gamma 设置。 此属性是可选的。
-ms.assetid: 880f0895-6619-49ac-9753-e44b7eace83d
 keywords:
 - KSPROPERTY_VIDEOPROCAMP_GAMMA 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 178e27c3f1e28e44a3e8aa6dff2e2906c8a4cbde
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: c43309fc09c515b8e93ef8578c4cfde5e7179294
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104664"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96792441"
 ---
 # <a name="ksproperty_videoprocamp_gamma"></a>KSPROPERTY \_ VIDEOPROCAMP \_ 伽玛
 
@@ -86,7 +85,7 @@ KSPROPERTY **Value** \_ VIDEOPROCAMP S 结构的 Value 成员 \_ 指定伽玛设
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSPROPERTY**](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)

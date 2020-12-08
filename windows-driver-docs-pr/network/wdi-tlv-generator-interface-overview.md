@@ -1,23 +1,22 @@
 ---
 title: WDI TLV 生成器接口概述
-description: 本部分介绍 WDI TLV 生成器接口函数模型的概述
-ms.assetid: 8A344BF7-932E-4404-9B3E-E7D3C33722C3
+description: 本部分介绍 WDI TLV 生成器接口的函数模型的概述
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fe1a49a55ebbb1c918e011a724f64f90a9c48092
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fa2c265e5b39e98bfd63e2611827d34b0567b60c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63382867"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96792111"
 ---
 # <a name="wdi-tlv-generator-interface-overview"></a>WDI TLV 生成器接口概述
 
 
-## <a name="c-overloaded-function-model"></a>C++重载的函数模型
+## <a name="c-overloaded-function-model"></a>C + + 重载函数模型
 
 
-在此模型中，将只有一个函数调用来从您的数据结构生成 TLV 字节数组。
+在此模型中，只有一个函数调用可从数据结构生成一个 TLV 字节数组。
 
 ```c++
 WDI_INDICATION_BSS_ENTRY_LIST_PARAMETERS BssEntryList = ...;
@@ -33,11 +32,11 @@ ndisStatus = Generate(
     &pOutput);
 ```
 
-第二个参数可以是非常有帮助。 有时，TLV 缓冲区打包到更大的数据结构，此参数，可预先保留该标头的缓冲区开始处的空间。 正确的值*cbHeaderLength*通常是`sizeof(WDI_MESSAGE_HEADER)`。
+第二个参数非常有用。 有时，TLV 缓冲区打包到更大的数据结构中，此参数允许您在该标头的缓冲区开头预保留空间。 通常， *cbHeaderLength* 的值是正确的 `sizeof(WDI_MESSAGE_HEADER)` 。
 
-对于不具有关联的数据的消息，有仍重载生成的 Api，但第一个参数是可选的可能只需传递中作为`(EmptyMessageStructureType*)NULL`。
+对于没有关联数据的消息，仍会重载生成 Api，但第一个参数是可选的，并且可能只是作为传入 `(EmptyMessageStructureType*)NULL` 。
 
-中包含的 TLV 数据完成后*pOutput*，您必须重新调入库来释放缓冲区。
+完成 *pOutput* 中包含的 TLV 数据后，必须回调到库以释放缓冲区。
 
 ```c++
     FreeGenerated(pOutput);
@@ -47,7 +46,7 @@ ndisStatus = Generate(
 ## <a name="c-style-function-model"></a>C 样式函数模型
 
 
-在此模型中，每个顶级消息的特定生成例程或结构，因为 C 不支持重载函数。 否则，它的行为相同C++模型。
+在此模型中，每个顶级消息或结构都有一个特定的生成例程，因为 C 不支持重载函数。 否则，其行为与 c + + 模型相同。
 
 ```c
 ndisStatus = GenerateWdiGetAdapterCapabilities(
@@ -58,7 +57,7 @@ ndisStatus = GenerateWdiGetAdapterCapabilities(
     &pOutput);
 ```
 
-当完成 TLV 字节数组时，返回的调用来释放内存的方式相同C++模型。
+完成 TLV 字节数组后，回调以按照与 c + + 模型相同的方式释放内存。
 
 ```c
     FreeGenerated(pOutput);

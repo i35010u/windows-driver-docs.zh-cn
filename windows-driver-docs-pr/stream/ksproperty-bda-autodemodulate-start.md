@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ BDA \_ AUTODEMODULATE \_ START
 description: 客户端使用 KSPROPERTY \_ BDA \_ AUTODEMODULATE \_ START 自动确定解调器节点的调制参数并 demodulate 信号。
-ms.assetid: c41a864d-6ed6-4515-bd34-10314e3fdf88
 keywords:
 - KSPROPERTY_BDA_AUTODEMODULATE_START 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9d49e3e7bb0888ec88f3e3ebfe4e36be26632d33
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: b0827d7d525c34b458a3a06e017590e6ce0d91dd
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89191799"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96791256"
 ---
 # <a name="ksproperty_bda_autodemodulate_start"></a>KSPROPERTY \_ BDA \_ AUTODEMODULATE \_ START
 
@@ -77,7 +76,7 @@ ms.locfileid: "89191799"
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSP \_ 节点**](/windows-hardware/drivers/ddi/ks/ns-ks-ksp_node)

@@ -1,7 +1,6 @@
 ---
 title: DEVPKEY_Device_DHP_Rebalance_Policy
 description: DEVPKEY_Device_DHP_Rebalance_Policy
-ms.assetid: a882a114-9d1b-41ca-ab24-c2cdda952177
 keywords:
 - DEVPKEY_Device_DHP_Rebalance_Policy 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 95eab7cff490158a0b19dae1fc2ba5de4732df92
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: a96f8618a1fbe7f06cfe10992c392d68a27c2249
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90717074"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96791777"
 ---
 # <a name="devpkey_device_dhp_rebalance_policy"></a>DEVPKEY_Device_DHP_Rebalance_Policy
 

@@ -1,7 +1,6 @@
 ---
 title: 'WlanConnectionRoaming 规则 (ndis) '
 description: WlanConnectionRoaming 规则验证微型端口驱动程序是否正确地遵从了本机802.11 无线局域网 (WLAN) 连接和漫游顺序。
-ms.assetid: 7DB1881B-4DD8-4E06-AAF2-C6EAD0EEC5FC
 ms.date: 05/21/2018
 keywords:
 - 'WlanConnectionRoaming 规则 (ndis) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 892db026e9a782b899b9327db9c0f13cc080162a
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 9b8d602d898a377bf04d5f1d5e83d47d0aa12766
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107448"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96791943"
 ---
 # <a name="wlanconnectionroaming-rule-ndis"></a>WlanConnectionRoaming 规则 (ndis) 
 
 
-**WlanConnectionRoaming**规则验证微型端口驱动程序是否正确地遵从了本机802.11 无线局域网 (WLAN) 连接和漫游顺序。
+**WlanConnectionRoaming** 规则验证微型端口驱动程序是否正确地遵从了本机802.11 无线局域网 (WLAN) 连接和漫游顺序。
 
 **驱动程序模型： NDIS**
 

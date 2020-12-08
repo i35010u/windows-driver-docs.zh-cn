@@ -1,18 +1,17 @@
 ---
 title: 支持 Direct3D 版本 11
 description: 支持 Direct3D 版本 11
-ms.assetid: 096974cf-d369-499e-8431-59022d471bb7
 keywords:
 - Direct3D 版本 11 WDK Windows 7 显示
 - Direct3D 版本 11 WDK Windows Server 2008 R2 显示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 12efe43be439ce037c86cf5d1db755829a3f5a40
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: ca145c373e156b571a4a64ebc9e0fd9696a0f503
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89067226"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96792267"
 ---
 # <a name="supporting-direct3d-version-11"></a>支持 Direct3D 版本 11
 

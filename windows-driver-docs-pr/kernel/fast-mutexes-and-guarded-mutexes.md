@@ -1,7 +1,6 @@
 ---
 title: 快速互斥锁和受保护互斥锁
 description: 快速互斥锁和受保护互斥锁
-ms.assetid: 8c8014bf-6b81-4039-ae93-d4cedd6d6fed
 keywords:
 - 同步 WDK 内核，快速 mutex
 - 同步 WDK 内核，受保护的 mutex
@@ -10,12 +9,12 @@ keywords:
 - mutex WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 279b0394776c74e93246878db9cbee0be811f7ec
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: dab43c2fcb92baa0a4cb3cbe0851d7299b1b8691
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89189057"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96790539"
 ---
 # <a name="fast-mutexes-and-guarded-mutexes"></a>快速互斥锁和受保护互斥锁
 
@@ -36,9 +35,9 @@ ms.locfileid: "89189057"
 
 -   调用 [**ExAcquireFastMutex**](/previous-versions/windows/hardware/drivers/ff544337(v=vs.85)) 例程。 如果已由另一个线程获取互斥体，则会挂起调用线程的执行，直到互斥体可用。
 
--   调用 [**ExTryToAcquireFastMutex**](/previous-versions/windows/hardware/drivers/ff545647(v=vs.85)) 例程以尝试获取快速 mutex，而不挂起当前线程。 例程会立即返回，而不管是否已获取互斥体。 如果**ExTryToAcquireFastMutex**成功获取调用方的 mutex，则返回**TRUE** ; 否则返回 false。否则，返回**FALSE**。
+-   调用 [**ExTryToAcquireFastMutex**](/previous-versions/windows/hardware/drivers/ff545647(v=vs.85)) 例程以尝试获取快速 mutex，而不挂起当前线程。 例程会立即返回，而不管是否已获取互斥体。 如果 **ExTryToAcquireFastMutex** 成功获取调用方的 mutex，则返回 **TRUE** ; 否则返回 false。否则，返回 **FALSE**。
 
-线程调用 [**ExReleaseFastMutex**](/previous-versions/windows/hardware/drivers/ff545549(v=vs.85)) 来释放由 **ExAcquireFastMutex** 或 **ExTryToAcquireFastMutex**获取的快速 mutex。
+线程调用 [**ExReleaseFastMutex**](/previous-versions/windows/hardware/drivers/ff545549(v=vs.85)) 来释放由 **ExAcquireFastMutex** 或 **ExTryToAcquireFastMutex** 获取的快速 mutex。
 
 由快速 mutex 保护的代码路径以 IRQL = APC \_ 级别运行。 **ExAcquireFastMutex** 和 **ExTryToAcquireFastMutex** 会将当前的 irql 提高到 APC \_ 级别， **ExReleaseFastMutex** 还原原始的 irql。 因此，当线程包含快速 mutex 时，所有 Apc 都处于禁用状态。
 
@@ -60,9 +59,9 @@ ms.locfileid: "89189057"
 
 -   调用 [**KeAcquireGuardedMutex**](/previous-versions/windows/hardware/drivers/ff551892(v=vs.85))。 如果已由另一个线程获取互斥体，则会挂起调用线程的执行，直到互斥体可用。
 
--   调用 [**KeTryToAcquireGuardedMutex**](/previous-versions/ff553307(v=vs.85)) 以尝试获取受保护的 mutex，而不挂起当前线程。 例程会立即返回，而不管是否已获取互斥体。 如果**KeTryToAcquireGuardedMutex**成功获取调用方的 mutex，则返回**TRUE** ; 否则返回 false。否则，返回**FALSE**。
+-   调用 [**KeTryToAcquireGuardedMutex**](/previous-versions/ff553307(v=vs.85)) 以尝试获取受保护的 mutex，而不挂起当前线程。 例程会立即返回，而不管是否已获取互斥体。 如果 **KeTryToAcquireGuardedMutex** 成功获取调用方的 mutex，则返回 **TRUE** ; 否则返回 false。否则，返回 **FALSE**。
 
-线程调用 [**KeReleaseGuardedMutex**](/windows-hardware/drivers/ddi/wdm/nf-wdm-kereleaseguardedmutex) 来释放由 **KeAcquireGuardedMutex** 或 **KeTryToAcquireGuardedMutex**获取的受保护互斥体。
+线程调用 [**KeReleaseGuardedMutex**](/windows-hardware/drivers/ddi/wdm/nf-wdm-kereleaseguardedmutex) 来释放由 **KeAcquireGuardedMutex** 或 **KeTryToAcquireGuardedMutex** 获取的受保护互斥体。
 
 保存受保护互斥体的线程将在受保护区域内隐式运行。 **KeAcquireGuardedMutex** 和 **KeTryToAcquireGuardedMutex** 输入受保护的区域， **KeReleaseGuardedMutex** 将其退出。 当线程持有受保护的 mutex 时，所有 Apc 都处于禁用状态。
 

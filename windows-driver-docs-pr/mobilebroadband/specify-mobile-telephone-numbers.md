@@ -1,15 +1,14 @@
 ---
 title: 指定移动电话号码
 description: 指定移动电话号码
-ms.assetid: 3b7037c5-4ad6-4285-a9dd-05955621d149
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a64f13ca09cc4adc0e6d4d4e8db11bd8b7e4167f
-ms.sourcegitcommit: 7e4d9508198a30bdc1cb6eda83852dda4e42213e
+ms.openlocfilehash: 9890757c8b34a5588ede3bcbf3b3a1cdbabd870a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89304288"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96792217"
 ---
 # <a name="specify-mobile-telephone-numbers"></a>指定移动电话号码
 

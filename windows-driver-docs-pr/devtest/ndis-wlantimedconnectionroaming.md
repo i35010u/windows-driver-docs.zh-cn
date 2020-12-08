@@ -1,7 +1,6 @@
 ---
 title: 'WlanTimedConnectionRoaming 规则 (ndis) '
 description: WlanTimedConnectionRoaming 规则指定 NDIS 微型端口驱动程序在10秒内完成无线 LAN (WLAN) 连接/漫游操作。
-ms.assetid: 0961C34B-FAD8-49ED-A0FD-5D790E973C4D
 ms.date: 05/21/2018
 keywords:
 - 'WlanTimedConnectionRoaming 规则 (ndis) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 6afcfce8acecadf11bcec7e08c37a0c37fb7cf2e
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 4cf504ea78532d065dafc1a82c7fa299ea725f5e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107442"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96791933"
 ---
 # <a name="wlantimedconnectionroaming-rule-ndis"></a>WlanTimedConnectionRoaming 规则 (ndis) 
 
 
-**WlanTimedConnectionRoaming**规则指定 NDIS 微型端口驱动程序在10秒内完成无线 LAN (WLAN) 连接/漫游操作。
+**WlanTimedConnectionRoaming** 规则指定 NDIS 微型端口驱动程序在10秒内完成无线 LAN (WLAN) 连接/漫游操作。
 
 **驱动程序模型： NDIS**
 

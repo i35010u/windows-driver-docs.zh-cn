@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ 连接 \_ 状态
 description: KSPROPERTY \_ 连接 \_ 状态属性设置 pin 的当前运行状态。
-ms.assetid: f1a9e101-1398-4f16-bae9-f827e7d0c433
 keywords:
 - KSPROPERTY_CONNECTION_STATE 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ccd8c6c531cb7ce000bd2954d31f7bd119ce6473
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 3e77b60b8c2c6c063fd1883f93adea48d4505a4a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102760"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96792491"
 ---
 # <a name="ksproperty_connection_state"></a>KSPROPERTY \_ 连接 \_ 状态
 
@@ -74,7 +73,7 @@ KSPROPERTY \_ 连接 \_ 状态属性设置 pin 的当前运行状态。
 <thead>
 <tr class="header">
 <th>“值”</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -117,7 +116,7 @@ Pin 仅读取或写入 **KSSTATE \_ 运行** 状态的数据。 单个 pin 和 K
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSSTATE**](/windows-hardware/drivers/ddi/ks/ne-ks-ksstate)

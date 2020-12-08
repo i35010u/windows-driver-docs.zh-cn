@@ -1,15 +1,14 @@
 ---
 title: 如何实现 trace 函数进入和退出
 description: 如何实现 trace 函数进入和退出
-ms.assetid: 08b0cf86-0f19-4972-8ae1-44ffdc968c16
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f13de0ae90edbd6ed687a6a126701eaa9c60b6ec
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 333ff30dbf4a98f058ef2f873e69ec03d35a71bf
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89383173"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96792365"
 ---
 # <a name="how-do-i-trace-function-entry-and-exit"></a>如何跟踪函数入口和出口？
 
@@ -42,7 +41,7 @@ ms.locfileid: "89383173"
 #define WPP__LOGGER() WPP_LEVEL_LOGGER(FuncTrace)
 ```
 
-在源文件中，将函数代码与 FuncEntry 括起来 ** ( # B1 ** 和 **FuncExit ( # B3 ** 调用。
+在源文件中，将函数代码与 FuncEntry 括起来 **( # B1** 和 **FuncExit ( # B3** 调用。
 
 ```
 #include "mytrace.h"

@@ -1,7 +1,6 @@
 ---
 title: Bug 检查 0x150 TCPIP_AOAC_NIC_ACTIVE_REFERENCE_LEAK
-description: TCPIP_AOAC_NIC_ACTIVE_REFERENCE_LEAK bug 检查具有 0x00000150 值。 这指示 NIC active 引用应具有已释放时完全耗尽发送队列。
-ms.assetid: D48424B0-DE50-46E5-B63C-76B653C9176B
+description: TCPIP_AOAC_NIC_ACTIVE_REFERENCE_LEAK bug 检查的值为0x00000150。 这表明发送队列完全排出后，应释放 NIC 活动引用。
 keywords:
 - Bug 检查 0x150 TCPIP_AOAC_NIC_ACTIVE_REFERENCE_LEAK
 - TCPIP_AOAC_NIC_ACTIVE_REFERENCE_LEAK
@@ -13,23 +12,23 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 6b080a7110ed193033cffb2f65c801a9d2732a4f
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: df83bd12be4a9233bdbe78623009fc84ece0ab85
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67520069"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96790691"
 ---
-# <a name="bug-check-0x150-tcpipaoacnicactivereferenceleak"></a>Bug 检查 0x150：TCPIP\_AOAC\_NIC\_ACTIVE\_REFERENCE\_LEAK
+# <a name="bug-check-0x150-tcpip_aoac_nic_active_reference_leak"></a>Bug 检查0x150： TCPIP \_ AOAC \_ NIC \_ 活动 \_ 引用 \_ 泄露
 
 
-TCPIP\_AOAC\_NIC\_ACTIVE\_引用\_泄漏 bug 检查的值为 0x00000150。 这指示 NIC active 引用应具有已释放时完全耗尽发送队列。
+TCPIP \_ AOAC \_ NIC \_ 活动 \_ 引用 \_ 泄漏错误检查的值为0x00000150。 这表明发送队列完全排出后，应释放 NIC 活动引用。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题面向程序员。 如果您是在使用计算机时收到蓝屏错误代码的客户，请参阅[蓝屏错误疑难解答](https://www.windows.com/stopcode)。
 
 
-## <a name="tcpipaoacnicactivereferenceleak-parameters"></a>TCPIP\_AOAC\_NIC\_ACTIVE\_引用\_泄漏参数
+## <a name="tcpip_aoac_nic_active_reference_leak-parameters"></a>TCPIP \_ AOAC \_ NIC \_ 活动 \_ 引用 \_ 泄漏参数
 
 
 无

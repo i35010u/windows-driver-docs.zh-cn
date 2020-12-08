@@ -1,7 +1,6 @@
 ---
 title: Bug 检查 0x16E ERESOURCE_INVALID_RELEASE
-description: ERESOURCE_INVALID_RELEASE bug 检查具有 0x0000016E 值。 这表明目标线程指针提供给 ExReleaseResourceForThreadLite 无效。
-ms.assetid: F180D28D-70B7-4E78-9E04-C5DC19A41EB9
+description: ERESOURCE_INVALID_RELEASE bug 检查的值为0x0000016E。 这表示提供给 ExReleaseResourceForThreadLite 的目标线程指针无效。
 keywords:
 - Bug 检查 0x16E ERESOURCE_INVALID_RELEASE
 - ERESOURCE_INVALID_RELEASE
@@ -13,38 +12,38 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 5a38a325f2d312f3166f44558598569052f606f7
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: 8cfd0caec5cf4fdb777bcaabaab2caa7176b11ba
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67519929"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96791651"
 ---
-# <a name="bug-check-0x16e-eresourceinvalidrelease"></a>Bug 检查 0x16E：ERESOURCE\_无效\_版本
+# <a name="bug-check-0x16e-eresource_invalid_release"></a>Bug 检查0x16E： ERESOURCE \_ 无效 \_ 发布
 
 
-ERESOURCE\_无效\_发布 bug 检查的值为 0x0000016E。 这表明目标线程指针提供给 ExReleaseResourceForThreadLite 无效。
+ERESOURCE \_ 无效 \_ 发布 bug 检查的值为0x0000016E。 这表示提供给 ExReleaseResourceForThreadLite 的目标线程指针无效。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题面向程序员。 如果您是在使用计算机时收到蓝屏错误代码的客户，请参阅[蓝屏错误疑难解答](https://www.windows.com/stopcode)。
 
 
-## <a name="eresourceinvalidrelease-parameters"></a>ERESOURCE\_无效\_发布参数
+## <a name="eresource_invalid_release-parameters"></a>ERESOURCE \_ 无效的 \_ 发布参数
 
 
 | 参数 | 描述                                    |
 |-----------|------------------------------------------------|
-| 1         | 正在释放资源                    |
+| 1         | 正在释放的资源                    |
 | 2         | 当前线程                             |
-| 3         | 传入的不正确的目标线程 |
-| 4         | 保留                                       |
+| 3         | 传入的错误目标线程 |
+| 4         | 预留                                       |
 
  
 
 <a name="cause"></a>原因
 -----
 
-如果调用 ExSetOwnerPointerEx 跳过 API 客户端 （如果有意的跨线程版本） 或提供其他的值中意外传递调用方将命中此 bug 检查通过 ExGetCurrentResourceThread。
+如果 API 客户端跳过了对 ExSetOwnerPointerEx 的调用，则会命中此错误检查， (如果) 使用跨线程版本，或者如果调用方意外传入了 ExGetCurrentResourceThread 提供的值，则会发生此错误。
 
  
 

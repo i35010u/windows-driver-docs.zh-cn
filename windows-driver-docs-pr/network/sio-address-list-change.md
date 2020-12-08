@@ -1,16 +1,15 @@
 ---
 title: SIO_ADDRESS_LIST_CHANGE
 description: SIO_ADDRESS_LIST_CHANGE
-ms.assetid: d451208d-c850-4f2f-9ee0-d34139454ed4
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 SIO_ADDRESS_LIST_CHANGE 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 8d742b89369f89017818527b9aa40dfec3c5f742
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 014fd5d79b60e4a024b87f69dea2a71708e8e430
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89212795"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96792621"
 ---
 # <a name="sio_address_list_change"></a>SIO \_ 地址 \_ 列表 \_ 更改
 
@@ -27,7 +26,7 @@ ms.locfileid: "89212795"
 <thead>
 <tr class="header">
 <th>参数</th>
-<th>值</th>
+<th>“值”</th>
 </tr>
 </thead>
 <tbody>

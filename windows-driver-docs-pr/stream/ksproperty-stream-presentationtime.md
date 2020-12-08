@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ 流 \_ PRESENTATIONTIME
 description: KSPROPERTY \_ STREAM \_ PRESENTATIONTIME 属性用于检索和设置筛选器 pin 的当前演示时间。
-ms.assetid: fb7bcd04-e600-4bab-b7e7-2b99e2bc0a6c
 keywords:
 - KSPROPERTY_STREAM_PRESENTATIONTIME 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4957ea140a5a292aa0c5993ac7df6bdcb8977d3a
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: aec44085e5e9899a47a1d10e4da799cd463398f1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105716"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96792471"
 ---
 # <a name="ksproperty_stream_presentationtime"></a>KSPROPERTY \_ 流 \_ PRESENTATIONTIME
 
@@ -61,7 +60,7 @@ KSPROPERTY \_ STREAM \_ PRESENTATIONTIME 属性用于检索和设置筛选器 pi
 
  
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 KSPROPERTY \_ STREAM \_ PRESENTATIONTIME 是一个可选属性，如果 pin 保留位置信息，或在与界定闭合相关的 pin 之间使用不同的时间戳格式，则应该实现该属性。 因此，它需要在出现搜索表示时间时将时间戳转换为。
@@ -88,7 +87,7 @@ KSPROPERTY \_ STREAM \_ PRESENTATIONTIME 是一个可选属性，如果 pin 保�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSTIME**](/windows-hardware/drivers/ddi/ks/ns-ks-kstime)

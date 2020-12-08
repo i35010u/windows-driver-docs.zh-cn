@@ -1,7 +1,6 @@
 ---
 title: 'IrqlApcLte 规则 (wdm) '
 description: IrqlApcLte 规则指定仅当驱动程序以 IRQL APC_LEVEL 执行时，驱动程序才调用 ObGetObjectSecurity 和 ObReleaseObjectSecurity。
-ms.assetid: 83f18eb3-aee1-403e-90a2-c03b81109ebb
 ms.date: 05/21/2018
 keywords:
 - 'IrqlApcLte 规则 (wdm) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: cf5071ed499b342e80426ab16253f2a312ed1ee0
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 31bf4f0c0db44755c3e113327053e1e6b21ec0ba
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103376"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96792343"
 ---
 # <a name="irqlapclte-rule-wdm"></a>IrqlApcLte 规则 (wdm) 
 
 
-**IrqlApcLte**规则指定仅当驱动程序在 IRQL = APC 级别执行时，驱动程序才调用[**ObGetObjectSecurity**](/windows-hardware/drivers/ddi/wdm/nf-wdm-obgetobjectsecurity)和[**ObReleaseObjectSecurity**](/windows-hardware/drivers/ddi/wdm/nf-wdm-obreleaseobjectsecurity) &lt; \_ 。
+**IrqlApcLte** 规则指定仅当驱动程序在 IRQL = APC 级别执行时，驱动程序才调用 [**ObGetObjectSecurity**](/windows-hardware/drivers/ddi/wdm/nf-wdm-obgetobjectsecurity)和 [**ObReleaseObjectSecurity**](/windows-hardware/drivers/ddi/wdm/nf-wdm-obreleaseobjectsecurity) &lt; \_ 。
 
 **驱动程序模型： WDM**
 

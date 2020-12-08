@@ -1,7 +1,6 @@
 ---
 title: AVCSTRM \_ 关闭
 description: AVCSTRM \_ 关闭
-ms.assetid: 2487ba06-3577-409e-ba82-f9a0d3453c5d
 keywords:
 - AVCSTRM_CLOSE 流媒体设备
 topic_type:
@@ -12,12 +11,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6a5c80094e5c4f320d1c81cee2ea34d22289f4d4
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 1131122340e9d8f7fccabbe449ebc3a4f23dc9df
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89187433"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96792531"
 ---
 # <a name="avcstrm_close"></a>AVCSTRM \_ 关闭
 
@@ -25,7 +24,7 @@ ms.locfileid: "89187433"
 ## <span id="ddk_avcstrm_close_ks"></span><span id="DDK_AVCSTRM_CLOSE_KS"></span>
 
 
-**AVCSTRM \_ CLOSE**函数代码关闭指定的流，并释放在 AVCSTRM 中分配的所有资源 \_ 。
+**AVCSTRM \_ CLOSE** 函数代码关闭指定的流，并释放在 AVCSTRM 中分配的所有资源 \_ 。
 
 ### <a name="io-status-block"></a>I/o 状态块
 
@@ -41,7 +40,7 @@ ms.locfileid: "89187433"
 <thead>
 <tr class="header">
 <th>错误状态</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -70,9 +69,9 @@ ms.locfileid: "89187433"
 
  
 
-### <a name="comments"></a>说明
+### <a name="comments"></a>注释
 
-此函数使用 AVC 流请求块结构中的**CommandData**联合的**AVCStreamContext**成员 \_ ，如下 \_ \_ 所示。
+此函数使用 AVC 流请求块结构中的 **CommandData** 联合的 **AVCStreamContext** 成员 \_ ，如下 \_ \_ 所示。
 
 ```cpp
 typedef struct _AVC_STREAM_REQUEST_BLOCK {
@@ -89,7 +88,7 @@ typedef struct _AVC_STREAM_REQUEST_BLOCK {
 
 ### <a name="requirements"></a>要求
 
-**标头：** 在 *avcstrm*中声明。 包括 *avcstrm*。
+**标头：** 在 *avcstrm* 中声明。 包括 *avcstrm*。
 
 ### <a name="span-idavc_stream_request_block_inputspanspan-idavc_stream_request_block_inputspanavc_stream_request_block-input"></a><span id="avc_stream_request_block_input"></span><span id="AVC_STREAM_REQUEST_BLOCK_INPUT"></span>AVC \_ 流 \_ 请求 \_ 块输入
 
@@ -120,7 +119,7 @@ typedef struct _AVC_STREAM_REQUEST_BLOCK {
 
 若要发送此请求，子组会 [**将 \_ irp \_ MJ \_ 内部设备 \_ 控制**](../kernel/irp-mj-internal-device-control.md) irp，并将 irp 集的 **IoControlCode** 成员提交给 [**IOCTL \_ AVCSTRM \_ 类**](/windows-hardware/drivers/ddi/avcstrm/ni-avcstrm-ioctl_avcstrm_class) ，并将 irp 集的 **Argument1** 成员提交给 \_ \_ \_ 描述要发生的关闭操作的 AVC 流请求块结构。
 
-子单位驱动程序可能希望此命令同步完成。 结果会立即返回，而不会在 *avcstrm.sys*中挂起操作。
+子单位驱动程序可能希望此命令同步完成。 结果会立即返回，而不会在 *avcstrm.sys* 中挂起操作。
 
 必须在 IRQL = 被动级别调用此函数代码 \_ 。
 

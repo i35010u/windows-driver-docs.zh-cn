@@ -1,9 +1,8 @@
 ---
-title: ks.objhdr
-description: Ks.objhdr 扩展显示流式处理对象标头与指定的文件对象关联的内核。
-ms.assetid: 105b1c03-fc89-4c0f-91d0-42e88f07c71c
+title: ks. objhdr
+description: Objhdr 扩展显示与指定文件对象关联的内核流式处理对象标头。
 keywords:
-- ks.objhdr Windows 调试
+- objhdr Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,35 +11,35 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 0d1e656dcffb1b3e6ad5f3d4844b6b76274ba051
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7e253fd6fe1e503628c51a20b9899c447316e2cf
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63336228"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96792435"
 ---
 # <a name="ksobjhdr"></a>!ks.objhdr
 
 
-**！ Ks.objhdr**扩展插件都会显示流对象标头与指定的文件对象关联的内核。
+**Objhdr** 扩展显示与指定文件对象关联的内核流式处理对象标头。
 
 ```dbgcmd
 !ks.objhdr FileObject [Level] [Flags]  
 ```
 
-## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>参数
+## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>Parameters
 
 
-<span id="_______FileObject______"></span><span id="_______fileobject______"></span><span id="_______FILEOBJECT______"></span> *FileObject*   
-此参数指定指向 WDM 文件对象的指针。 如果*的文件对象*不是有效的该命令将返回错误。
+<span id="_______FileObject______"></span><span id="_______fileobject______"></span><span id="_______FILEOBJECT______"></span>*FileObject*   
+此参数指定指向 WDM 文件对象的指针。 如果 *FileObject* 无效，则该命令将返回错误。
 
-<span id="_______Level______"></span><span id="_______level______"></span><span id="_______LEVEL______"></span> *级别*   
-可选。 值是与用于相同[ **！ ks.dump**](-ks-dump.md)。
+<span id="_______Level______"></span><span id="_______level______"></span><span id="_______LEVEL______"></span>*级别*   
+可选。 值与 [**！ ks**](-ks-dump.md)的值相同。
 
-<span id="_______Flags______"></span><span id="_______flags______"></span><span id="_______FLAGS______"></span> *标志*   
-可选。 值是与用于相同[ **！ ks.dump**](-ks-dump.md)。
+<span id="_______Flags______"></span><span id="_______flags______"></span><span id="_______FLAGS______"></span>*标志*   
+可选。 值与 [**！ ks**](-ks-dump.md)的值相同。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 <table>
 <colgroup>
@@ -61,16 +60,16 @@ ms.locfileid: "63336228"
 
  
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-有关详细信息，请参阅[流式处理的内核调试](kernel-streaming-debugging.md)。
+有关详细信息，请参阅 [内核流调试](kernel-streaming-debugging.md)。
 
 <a name="remarks"></a>备注
 -------
 
-级别和标志 **！ ks.objhdr**中所述相同[ **！ ks.dump**](-ks-dump.md)。
+**！ Ks** 的级别和标志与 [**！ ks**](-ks-dump.md)中描述的 objhdr 相同。
 
-从输出[ **！ ks.allstreams** ](-ks-allstreams.md)并[ **！ ks.enumdevobj** ](-ks-enumdevobj.md)可用作输入 **！ ks.objhdr**. 若要执行此操作与*avssamp*示例中，例如，发出以下命令：
+从！ ks. [**allstreams**](-ks-allstreams.md) 和 [**！ enumdevobj**](-ks-enumdevobj.md) 的输出可以用作 **！ objhdr** 的输入。 例如，若要通过 *avssamp* 示例执行此操作，请发出以下命令：
 
 ```dbgcmd
 kd> !ks.allstreams
@@ -89,7 +88,7 @@ WDM device object 82424590:
 kd> !ks.objhdr 82837a34 7
 ```
 
-此命令的结果可能耗时较长。 发出停止输出的 ctrl + BREAK (WinDbg) 或 Ctrl + C (NTSD，CDB，KD)。
+此命令的结果可能很长。 发出 Ctrl BREAK (WinDbg) 或 Ctrl-c (NTSD、CDB、KD) 停止输出。
 
 下面是一个单独的示例：
 

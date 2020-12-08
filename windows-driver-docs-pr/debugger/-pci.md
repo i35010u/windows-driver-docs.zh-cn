@@ -1,7 +1,6 @@
 ---
-title: pci
-description: Pci 扩展显示外围组件互连 (PCI) 总线，以及连接到这些总线的任何设备的当前的状态。
-ms.assetid: 37b767db-18c9-4fd3-8910-4be03f41e764
+title: pci-e
+description: Pci 扩展显示外围组件互连 (PCI) 总线以及连接到这些总线的任何设备的当前状态。
 keywords:
 - PCI 总线
 - PCI 设备
@@ -15,80 +14,80 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 1ee88676db2e019d7c96c26d14d800cf646b1e73
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 539bbcd0cce4a0030ef1ae6ecc1a3bff967f543c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63334431"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96792033"
 ---
 # <a name="pci"></a>!pci
 
 
-**！ Pci**扩展显示的外围组件互连 (PCI) 总线，以及连接到这些总线的任何设备的当前状态。
+**！ Pci** 扩展显示外围组件互连 (pci) 总线以及连接到这些总线的任何设备的当前状态。
 
 ```dbgcmd
 !pci [Flags [Segment] [Bus [Device [Function [MinAddress MaxAddress]]]]]
 ```
 
-## <a name="span-idddkpcidbgspanspan-idddkpcidbgspanparameters"></a><span id="ddk__pci_dbg"></span><span id="DDK__PCI_DBG"></span>参数
+## <a name="span-idddk__pci_dbgspanspan-idddk__pci_dbgspanparameters"></a><span id="ddk__pci_dbg"></span><span id="DDK__PCI_DBG"></span>参数
 
 
-<span id="_______Flags______"></span><span id="_______flags______"></span><span id="_______FLAGS______"></span> *标志*   
-指定输出的级别。 可以是以下位的任意组合：
+<span id="_______Flags______"></span><span id="_______flags______"></span><span id="_______FLAGS______"></span>*标志*   
+指定输出级别。 可以是以下位的任意组合：
 
-<span id="Bit_0__0x1_"></span><span id="bit_0__0x1_"></span><span id="BIT_0__0X1_"></span>位 0 (0x1)  
+<span id="Bit_0__0x1_"></span><span id="bit_0__0x1_"></span><span id="BIT_0__0X1_"></span>位 0 (0x1)   
 导致详细显示。
 
-<span id="Bit_1__0x2_"></span><span id="bit_1__0x2_"></span><span id="BIT_1__0X2_"></span>位 1 (0x2)  
-将导致显示要包含在总线 0 （零） 到指定的范围中的所有总线*总线*。
+<span id="Bit_1__0x2_"></span><span id="bit_1__0x2_"></span><span id="BIT_1__0X2_"></span>位 1 (0x2)   
+使显示包括范围从总线 0 (零) 到指定 *总线* 的所有总线。
 
-<span id="Bit_2__0x4_"></span><span id="bit_2__0x4_"></span><span id="BIT_2__0X4_"></span>位 2 (0x4)  
-将导致显示效果以原始字节格式中包括的信息。 如果*MinAddress*， *MaxAddress*，或设置标志位 0x8，也会自动设置此位。
+<span id="Bit_2__0x4_"></span><span id="bit_2__0x4_"></span><span id="BIT_2__0X4_"></span>位 2 (0x4)   
+使显示包含原始字节格式的信息。 如果设置了 *MinAddress*、 *MaxAddress* 或标志位0x8，则也会自动设置此位。
 
-<span id="Bit_3__0x8_"></span><span id="bit_3__0x8_"></span><span id="BIT_3__0X8_"></span>位 3 (0x8)  
-会导致在原始 DWORD 格式中包含信息的显示。
+<span id="Bit_3__0x8_"></span><span id="bit_3__0x8_"></span><span id="BIT_3__0X8_"></span>第 3 (0x8)   
+使显示包含原始 DWORD 格式的信息。
 
-<span id="Bit_4__0x10_"></span><span id="bit_4__0x10_"></span><span id="BIT_4__0X10_"></span>4 位 (0x10)  
-将导致显示以包括无效设备号。 如果*设备*指定，则忽略此标志。
+<span id="Bit_4__0x10_"></span><span id="bit_4__0x10_"></span><span id="BIT_4__0X10_"></span>位 4 (0x10)   
+使显示包含无效的设备号。 如果指定了 *Device* ，则忽略此标志。
 
-<span id="Bit_5__0x20_"></span><span id="bit_5__0x20_"></span><span id="BIT_5__0X20_"></span>5 位 (0x20)  
-将导致显示以包括无效的函数的数字。
+<span id="Bit_5__0x20_"></span><span id="bit_5__0x20_"></span><span id="BIT_5__0X20_"></span>第 5 (0x20)   
+使显示包含无效的功能号。
 
-<span id="Bit_6__0x40_"></span><span id="bit_6__0x40_"></span><span id="BIT_6__0X40_"></span>第 6 位 (0x40)  
-将导致显示以包括功能。
+<span id="Bit_6__0x40_"></span><span id="bit_6__0x40_"></span><span id="BIT_6__0X40_"></span>第 6 (0x40)   
+使显示包含功能。
 
-<span id="Bit_7__0x80_"></span><span id="bit_7__0x80_"></span><span id="BIT_7__0X80_"></span>7 位 (0x80)  
-将导致显示以包括 Intel 8086 特定于设备的信息。
+<span id="Bit_7__0x80_"></span><span id="bit_7__0x80_"></span><span id="BIT_7__0X80_"></span>第7位 (0x80)   
+使显示器包含 Intel 8086 设备特定的信息。
 
-<span id="Bit_8__0x100_"></span><span id="bit_8__0x100_"></span><span id="BIT_8__0X100_"></span>位 8 (0x100)  
-将导致显示以包括 PCI 配置空间。
+<span id="Bit_8__0x100_"></span><span id="bit_8__0x100_"></span><span id="BIT_8__0X100_"></span>位 8 (0x100)   
+使显示包含 PCI 配置空间。
 
-<span id="Bit_9__0x200_"></span><span id="bit_9__0x200_"></span><span id="BIT_9__0X200_"></span>9 (0x200) 位  
-将导致显示以包括段信息。 如果包括，则此位*段*参数必须包含。
+<span id="Bit_9__0x200_"></span><span id="bit_9__0x200_"></span><span id="BIT_9__0X200_"></span>第 9 (0x200)   
+使显示内容包括段信息。 如果包含此位，则必须包含 *Segment* 参数。
 
-<span id="Bit_10__0x400_"></span><span id="bit_10__0x400_"></span><span id="BIT_10__0X400_"></span>位 10 (0x400)  
-将导致显示效果以包括所有有效段在段 0 到指定的段范围内。 如果包括，则此位*段*参数必须包含。
+<span id="Bit_10__0x400_"></span><span id="bit_10__0x400_"></span><span id="BIT_10__0X400_"></span>位 10 (0x400)   
+使显示包括从段0到指定段的范围内的所有有效段。 如果包含此位，则必须包含 *Segment* 参数。
 
-<span id="_______Segment______"></span><span id="_______segment______"></span><span id="_______SEGMENT______"></span> *段*   
-指定要显示的段的数量。 段号范围是从 0 到 0xFFFF。 如果*段*是省略，将显示有关主段 （段 0） 信息。 如果*标志*包括位 10 (0x400)*段*指定要显示的最高有效段。
+<span id="_______Segment______"></span><span id="_______segment______"></span><span id="_______SEGMENT______"></span>*段*   
+指定要显示的段的编号。 段编号的范围为0到0xFFFF。 如果省略 *段* ，则显示有关主要段 (段 0) 的信息。 如果 *标志* 包含位 10 (0x400) ， *段* 指定要显示的最高有效段。
 
-<span id="_______Bus______"></span><span id="_______bus______"></span><span id="_______BUS______"></span> *总线*   
-指定要显示的总线。 *总线*范围可以介于 0 到 0xFF。 如果省略，显示有关主总线 （总线 0） 的信息。 如果*标志*包括位 1 (0x2)*总线*指定要显示的最高总线号。
+<span id="_______Bus______"></span><span id="_______bus______"></span><span id="_______BUS______"></span>*总线*   
+指定要显示的总线。 *总线* 的范围为0到0xff。 如果省略此方法，则显示有关主总线 (总线 0) 的信息。 如果 *标志* 包含第1位 (0x2) ，则 *总线* 指定要显示的最高总线编号。
 
-<span id="_______Device______"></span><span id="_______device______"></span><span id="_______DEVICE______"></span> *设备*   
-指定设备的插槽设备号。 如果省略此属性，将打印有关的所有设备的信息。
+<span id="_______Device______"></span><span id="_______device______"></span><span id="_______DEVICE______"></span>*设备*   
+指定设备的槽设备号。 如果省略此内容，则打印有关所有设备的信息。
 
-<span id="_______Function______"></span><span id="_______function______"></span><span id="_______FUNCTION______"></span> *函数*   
-指定设备的插槽函数号。 如果省略此属性，被打印有关设备的所有函数的所有信息。
+<span id="_______Function______"></span><span id="_______function______"></span><span id="_______FUNCTION______"></span>*函数*   
+指定设备的槽功能号。 如果省略此内容，则打印所有设备功能的所有相关信息。
 
-<span id="_______MinAddress______"></span><span id="_______minaddress______"></span><span id="_______MINADDRESS______"></span> *MinAddress*   
-指定从其原始字节或 dword 值是要显示的第一个地址。 这必须是介于 0 和 0xFF。
+<span id="_______MinAddress______"></span><span id="_______minaddress______"></span><span id="_______MINADDRESS______"></span>*MinAddress*   
+指定要从中显示原始字节或 Dword 的第一个地址。 该值必须介于0和0xFF 之间。
 
-<span id="_______MaxAddress______"></span><span id="_______maxaddress______"></span><span id="_______MAXADDRESS______"></span> *MaxAddress*   
-指定从其原始字节或 dword 值是要显示的最后一个地址。 这必须是介于 0 和 0xff 内，并且不小于*MinAddress*。
+<span id="_______MaxAddress______"></span><span id="_______maxaddress______"></span><span id="_______MAXADDRESS______"></span>*MaxAddress*   
+指定要从中显示原始字节或 Dword 的最后一个地址。 该值必须介于0和0xFF 之间，并且不能小于 *MinAddress*。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 <table>
 <colgroup>
@@ -110,18 +109,18 @@ Kext.dll Kdextx86.dll</td>
 
 
 
-此扩展命令仅用于基于 x86 的目标计算机。
+此扩展命令只能与基于 x86 的目标计算机一起使用。
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-请参阅[插调试](plug-and-play-debugging.md)对于此扩展命令和其他示例的应用程序。 有关 PCI 总线的信息，请参阅 Windows Driver Kit (WDK) 文档。
+请参阅 [即插即用调试](plug-and-play-debugging.md) 此扩展命令的应用程序和其他示例。 有关 PCI 总线的信息，请参阅 Windows 驱动程序工具包 (WDK) 文档。
 
 <a name="remarks"></a>备注
 -------
 
-若要编辑 PCI 配置空间，请使用[ **！ ecb**](-ecb---ecd---ecw.md)， **！ ecd**，或者 **！ ecw**。
+若要编辑 PCI 配置空间，请使用 [**！ ecb**](-ecb---ecd---ecw.md)、 **！ ecd** 或 **！ ecw**。
 
-以下示例显示所有总线和他们的设备的列表。 此命令将需要很长时间才能执行。 调试器扫描到目标系统的 PCI 总线时，你将看到在底部显示一个移动的计数器：
+下面的示例显示了所有总线及其设备的列表。 执行此命令需要较长时间。 调试器扫描 PCI 总线的目标系统时，显示底部会显示一个移动计数器：
 
 ```dbgcmd
 kd> !pci 2 ff
@@ -136,7 +135,7 @@ PCI Bus 1
 09:0  9004:8178.00  Cmd[0117:imb..s]  Sts[0280:.....]  Device  SCSI controller
 ```
 
-此示例显示主总线上的设备的详细信息。 每个行的开头两位数字是设备号;跟在它后面的一位数字是函数数字：
+此示例显示有关主总线上的设备的详细信息。 每行开头的两位数是设备号;后面的一位数字是函数号：
 
 ```dbgcmd
 kd> !pci 1 0
@@ -160,7 +159,7 @@ PCI Bus 0
       MEM[0]:fe800000  MPF[1]:fe000008  
 ```
 
-此示例演示更多详细信息总线 0 （零），设备 0x0D，以及函数 0x1，包括从 0x00 和 0x3F 之间的地址原始 dword 值：
+此示例显示了有关总线 0 (零) 、设备0x0D 和函数0x1 的详细信息，包括来自0x00 和0x3F 之间的地址的原始 DWORD：
 
 ```dbgcmd
 kd> !pci f 0 d 1 0 3f
@@ -174,7 +173,7 @@ PCI Bus 0
       00000030:  00000000 00000000 00000000 00000000
 ```
 
-此示例显示了段 1，总线 0，设备 1 的配置空间：
+此示例显示段1、总线0、设备1的配置空间：
 
 ```dbgcmd
 0: kd> !pci 301 1 0 1
@@ -194,7 +193,7 @@ Common Header:
     64: MsData         9891
 ```
 
-若要显示有效的段的所有设备和总线，发出命令 **！ pci 602 ffff ff**:
+若要显示有效段上的所有设备和总线，请发出命令 **！ pci 602 ffff ff**：
 
 ```dbgcmd
 0: kd> !pci 602 ffff ff

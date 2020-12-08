@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ 流 \_ TIMEFORMAT
 description: KSPROPERTY \_ STREAM \_ TIMEFORMAT 属性用于检索特定 pin 连接上使用的时间格式。
-ms.assetid: bf8c32b2-401f-4f89-bcca-97a07c50cc45
 keywords:
 - KSPROPERTY_STREAM_TIMEFORMAT 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b349565f84e31096803e8a6a590cdb58e0a3cf49
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: e66c3293038a2c235904d61e66651f2e4c7770e8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106976"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96792475"
 ---
 # <a name="ksproperty_stream_timeformat"></a>KSPROPERTY \_ 流 \_ TIMEFORMAT
 
@@ -84,7 +83,7 @@ KSPROPERTY \_ STREAM \_ TIMEFORMAT 是一个可选属性，如果 pin 支持 "�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSPROPERTY**](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)

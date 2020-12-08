@@ -1,7 +1,6 @@
 ---
 title: 'IrqlMmDispatch 规则 (wdm) '
 description: IrqlMmDispatch 规则指定仅当驱动程序以 IRQL 调度级别运行时，驱动程序才调用 MmFreeContiguousMemory \_ 。
-ms.assetid: C8F1CE43-C3E0-4ED3-8AEE-8E5D20FAC6E7
 ms.date: 05/21/2018
 keywords:
 - 'IrqlMmDispatch 规则 (wdm) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 5445ad6ebedcb06295a62570194e5409b6710d26
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 573e679cb2b618e385881ccbb8f34122ec793f44
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107466"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96791811"
 ---
 # <a name="irqlmmdispatch-rule-wdm"></a>IrqlMmDispatch 规则 (wdm) 
 
 
-**IrqlMmDispatch**规则指定仅当驱动程序在**IRQL &lt; = 调度 \_ 级别**执行时才调用[**MmFreeContiguousMemory**](/windows-hardware/drivers/ddi/wdm/nf-wdm-mmfreecontiguousmemory) 。
+**IrqlMmDispatch** 规则指定仅当驱动程序在 **IRQL &lt; = 调度 \_ 级别** 执行时才调用 [**MmFreeContiguousMemory**](/windows-hardware/drivers/ddi/wdm/nf-wdm-mmfreecontiguousmemory) 。
 
 **驱动程序模型： WDM**
 

@@ -1,25 +1,24 @@
 ---
 title: COPPOpenVideoSession 函数
-description: 示例 COPPOpenVideoSession 函数将初始化为当前的视频会话使用的 COPP DirectX VA 设备对象。
-ms.assetid: 4fc318c8-c999-4623-91da-3a3fea83d7b4
+description: 示例 COPPOpenVideoSession 函数初始化用于当前视频会话的 COPP DirectX VA 设备对象。
 keywords:
-- 复制保护 WDK COPP，微型端口驱动程序代码模板
-- 视频复制保护 WDK COPP，微型端口驱动程序代码模板
-- 受保护的视频 WDK COPP，微型端口驱动程序代码模板
-- 微型端口驱动程序 WDK Windows 2000，COPP 代码模板
-- 已认证的输出保护协议
+- 复制保护 WDK COPP，视频微型端口驱动程序代码模板
+- 视频复制保护 WDK COPP，视频微型端口驱动程序代码模板
+- 受保护的视频 WDK COPP，视频微型端口驱动程序代码模板
+- 视频微型端口驱动程序 WDK Windows 2000，COPP 代码模板
+- 认证的输出保护协议
 ms.date: 02/16/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: ebf12e148b6df3cfbd273036dc0c308a41e35237
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2542782b95e16f19a67b6f5fd6d17246b9e346bf
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331305"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96791809"
 ---
 # <a name="coppopenvideosession-function"></a>COPPOpenVideoSession 函数
 
-示例 COPPOpenVideoSession 函数将初始化为当前的视频会话使用的 COPP DirectX VA 设备对象。
+示例 COPPOpenVideoSession 函数初始化用于当前视频会话的 COPP DirectX VA 设备对象。
 
 ### <a name="syntax"></a>语法
 
@@ -30,31 +29,31 @@ HRESULT COPPOpenVideoSession(
 );
 ```
 
-## <a name="parameters"></a>Parameters
+## <a name="parameters"></a>参数
 
 *pThis [in]*
 
-* 指向 COPP DirectX VA 设备对象指针。
+* 指向 COPP DirectX VA 设备对象的指针。
 
-*[In] DevID*
+*DevID [in]*
 
-* 提供 COPP 设备附加到图形设备的标识符。
+* 提供 COPP 设备附加到的图形设备的标识符。
 
 ## <a name="return-value"></a>返回值
 
-返回零 （S_OK 或 DD_OK） 如果成功，则否则，返回错误代码。
+如果成功，则返回零 (S_OK 或 DD_OK) ;否则，将返回错误代码。
 
 ## <a name="remarks"></a>备注
 
-COPP 设备类的任何其他成员函数调用之前，必须通过调用 COPPOpenVideoSession 初始化 COPP 设备。 COPPOpenVideoSession 应初始化 （设置为 0） 的每个受支持的保护类型和相应的全局保护级别计数器递增视频会话的本地的保护级别。 有关详细信息，请参阅处理保护级别。
+在调用 COPP 设备类的任何其他成员函数之前，必须通过对 COPPOpenVideoSession 的调用对 COPP 设备进行初始化。 COPPOpenVideoSession 应将 (设置为 0) 视频会话的每个受支持保护类型的本地保护级别，并递增相应的全局保护级别计数器。 有关详细信息，请参阅处理保护级别。
 
-如果使用非双视图模式的多个图形适配器由 DevID 参数驱动器标识设备，COPPOpenVideoSession 应返回 DDERR_UNSUPPORTEDMODE。 有关详细信息，请参阅 COPP 和多监视器支持。
+如果由 DevID 参数标识的设备驱动多个使用双屏以外模式的图形适配器，COPPOpenVideoSession 应返回 DDERR_UNSUPPORTEDMODE。 有关详细信息，请参阅 COPP 和 Multiple-Monitor 支持。
 
-示例 COPPOpenVideoSession 函数直接映射到 DD_MOTIONCOMPCALLBACKS 结构的 CreateMoComp 成员。 CreateMoComp 成员指向显示驱动程序提供 DdMoCompCreate 回调的函数的引用 DD_CREATEMOCOMPDATA 结构。 DD_CREATEMOCOMPDATA lpGuid 成员指向 COPP DirectX VA 设备 GUID。
+示例 COPPOpenVideoSession 函数直接映射到 DD_MOTIONCOMPCALLBACKS 结构的 CreateMoComp 成员。 CreateMoComp 成员指向显示驱动程序提供的 DdMoCompCreate 回调函数，该函数引用 DD_CREATEMOCOMPDATA 结构。 DD_CREATEMOCOMPDATA 的 lpGuid 成员指向 COPP DirectX VA 设备 GUID。
 
 ## <a name="example-code"></a>示例代码
 
-以下代码举例说明如何实现 COPPOpenVideoSession 函数：
+下面的代码提供了一个示例，说明如何实现 COPPOpenVideoSession 函数：
 
 ```cpp
 HRESULT
@@ -95,8 +94,8 @@ COPPOpenVideoSession(
 }
 ```
 
-**要求**
+**惠?**
 
-| 目标平台 | Version |
+| 目标平台 | 版本 |
 | -- | -- |
-| 桌面设备 | 此函数仅适用于 Windows Server 2003 SP1 和更高版本和 Windows XP SP2 和更高版本。 |
+| 台式机 | 此函数仅适用于 Windows Server 2003 SP1 及更高版本以及 Windows XP SP2 及更高版本。 |

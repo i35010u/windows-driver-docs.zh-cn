@@ -1,7 +1,6 @@
 ---
 title: installAllOrNone XML 元素
 description: installAllOrNone XML 元素
-ms.assetid: f5634def-c9a1-45db-88ce-f652171d19c9
 keywords:
 - installAllOrNone XML 元素设备和驱动程序安装
 topic_type:
@@ -12,19 +11,19 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 8d9f8f43c33da258a35f2831d2a30207b2570ea1
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 8e28be5cb7aa45fa43da5c04839d01ecdd5b89ae
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89095499"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96792837"
 ---
 # <a name="installallornone-xml-element"></a>installAllOrNone XML 元素
 
 
 \[DIFx 已弃用，有关详细信息，请参阅 [DIFx 指导原则](./difx-guidelines.md)。\]
 
-**InstallAllOrNone** XML 元素是一个空元素，该元素将**installAllOrNone**标志设置为 ON，这会将 DPInst 配置为仅当安装包中的所有驱动程序包都可安装时，或者如果驱动程序包组中的所有驱动程序包都可以安装，才将配置为在[驱动程序包](./driver-packages.md)中安装驱动程序。
+**InstallAllOrNone** XML 元素是一个空元素，该元素将 **installAllOrNone** 标志设置为 ON，这会将 DPInst 配置为仅当安装包中的所有驱动程序包都可安装时，或者如果驱动程序包组中的所有驱动程序包都可以安装，才将配置为在 [驱动程序包](./driver-packages.md)中安装驱动程序。
 
 ### <a name="element-tag"></a>**元素标记**
 
@@ -67,9 +66,9 @@ ms.locfileid: "89095499"
 
 ### <a name="remarks"></a><a href="" id="comments"></a>注释
 
-默认情况下， **installAllOrNone** 标志设置为 OFF。 若要为所有驱动程序包（包括驱动程序包组中的[驱动程序包](./driver-packages.md)）将**installAllOrNone**标志设置为 ON，请将**installAllOrNone**元素包含为**dpinst** XML 元素的子元素，或使用 **/a**   命令行开关。 若要将 **installAllOrNone** 标志设置为仅对特定驱动程序包组启用，请将 **installAllOrNone** 元素包含为相应 **组** XML 元素的子元素。
+默认情况下， **installAllOrNone** 标志设置为 OFF。 若要为所有 [驱动程序包](./driver-packages.md)（包括驱动程序包组中的驱动程序包）将 **installAllOrNone** 标志设置为 ON，请将 **installAllOrNone** 元素包含为 **dpinst** XML 元素的子元素，或使用 **/a** 命令行开关。 若要将 **installAllOrNone** 标志设置为仅对特定驱动程序包组启用，请将 **installAllOrNone** 元素包含为相应 **组** XML 元素的子元素。
 
-下面的代码示例演示作为**dpinst**元素的子元素的**installAllOrNone**元素。
+下面的代码示例演示作为 **dpinst** 元素的子元素的 **installAllOrNone** 元素。
 
 ```cpp
 <dpinst>
@@ -79,7 +78,7 @@ ms.locfileid: "89095499"
 </dpinst>
 ```
 
-下面的代码示例演示一个作为**group**元素的子元素的**installAllOrNone**元素。
+下面的代码示例演示一个作为 **group** 元素的子元素的 **installAllOrNone** 元素。
 
 ```cpp
 <dpinst>
@@ -93,12 +92,12 @@ ms.locfileid: "89095499"
 </dpinst>
 ```
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**dpinst**](dpinst-xml-element.md)
 
-[**group**](group-xml-element.md)
+[**组**](group-xml-element.md)
 
  
 

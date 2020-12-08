@@ -1,7 +1,6 @@
 ---
 title: KS 时钟
 description: KS 时钟
-ms.assetid: e3ffc7ca-f3cd-4989-af40-78b6a2438f95
 keywords:
 - 内核流 WDK，时钟
 - KS WDK，时钟
@@ -10,12 +9,12 @@ keywords:
 - 时间戳 WDK 内核流式处理
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 89554b34f9dd21ca80c11f7125f7ee8353829e1b
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: e83949368beda815cb2b182315ae0f347fe4c443
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89190003"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96792521"
 ---
 # <a name="ks-clocks"></a>KS 时钟
 

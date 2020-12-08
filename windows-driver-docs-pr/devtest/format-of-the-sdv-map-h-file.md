@@ -1,25 +1,24 @@
 ---
 title: Sdv-map.h 文件的格式
 description: Sdv-map.h 文件的格式
-ms.assetid: 1b9e2b8d-04b8-4288-9d63-e7d84d75a9c6
 keywords:
-- Sdv map.h WDK Static Driver Verifier 格式
-- 格式 WDK Static Driver Verifier
+- Sdv-map WDK 静态驱动程序验证程序，格式
+- 格式化 WDK 静态驱动程序验证程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0f3bc99f130f1cddf240003f6b26234ba732fa39
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 17ec47bb0aad8118f3a37ab6dc736e0feabd670b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63329684"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96791951"
 ---
 # <a name="format-of-the-sdv-maph-file"></a>Sdv-map.h 文件的格式
 
 
-Sdv map.h 文件列出了所有驱动程序及其相关联的回调函数和驱动程序入口点中声明了函数角色类型。
+Sdv 文件列出了驱动程序中已声明的所有函数角色类型及其关联的回调函数和驱动程序入口点。
 
-下面显示了对于 KMDF 示例驱动程序，已批准的 Sdv map.h 文件失败\_Driver3。
+下面显示了 KMDF 示例驱动程序的已批准 Sdv-map 文件， \_ Driver3 失败。
 
 ```
 //Approved=true
@@ -35,7 +34,7 @@ Sdv map.h 文件列出了所有驱动程序及其相关联的回调函数和驱�
 #define fun_WDF_IO_QUEUE_IO_DEVICE_CONTROL EvtIoDeviceControl
 ```
 
-当 SDV 找到入口点时，它会创建 **\#定义**指令采用以下格式：
+当 SDV 找到入口点时，它将创建以下格式的 **\# define** 指令：
 
 ```
 #define fun_Function_RoleType EntryPoint

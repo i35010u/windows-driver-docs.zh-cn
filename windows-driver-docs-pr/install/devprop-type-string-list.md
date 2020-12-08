@@ -1,7 +1,6 @@
 ---
 title: DEVPROP_TYPE_STRING_LIST
 description: 在 Windows Vista 和更高版本的 Windows 中，DEVPROP_TYPE_STRING_LIST 属性类型表示数据类型为 Unicode 字符串的 [REG_MULTI_SZ](/windows/desktop/SysInfo/registry-value-types)类型的列表。
-ms.assetid: 91cfba02-cdd4-4918-8fc1-7e7793058074
 keywords:
 - DEVPROP_TYPE_STRING_LIST 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 68a6e66f138aa897df5460cc02f752113572217f
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: d17fe56599198da86887aeb7d372ab773d7cd56d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89097173"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96791471"
 ---
 # <a name="devprop_type_string_list"></a>DEVPROP_TYPE_STRING_LIST
 

@@ -1,7 +1,6 @@
 ---
 title: INF ClassInstall32 节
 description: ClassInstall32 节 (安装新的设备安装程序类，并可能为新类中的设备安装类安装程序) 。
-ms.assetid: c1da44ca-3b99-43de-99ef-56fbe67b46c2
 keywords:
 - INF ClassInstall32 部分设备和驱动程序安装
 topic_type:
@@ -12,12 +11,12 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9bedba62d672fd5f7a5154ae41c1efb9661b97bd
-ms.sourcegitcommit: 5ff30ddae453c6439177acde0e2d32eaf234a2c0
+ms.openlocfilehash: 23a781c873aef99f54b397e349749e28d9811c65
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95030034"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96790597"
 ---
 # <a name="inf-classinstall32-section"></a>INF ClassInstall32 节
 
@@ -197,7 +196,7 @@ HKR,,NoInstallClass,,1
 HKR,,Icon,,"101"
 ```
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**AddProperty**](inf-addproperty-directive.md)

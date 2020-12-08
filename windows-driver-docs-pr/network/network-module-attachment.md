@@ -1,7 +1,6 @@
 ---
 title: 网络模块附加
 description: 网络模块附加
-ms.assetid: 4b3602dd-a9cf-4cb6-bfeb-d2d74d2f391d
 keywords:
 - 网络模块 WDK 网络模块注册机构，附件
 - 提供商模块 WDK 网络模块注册机构，附件
@@ -12,12 +11,12 @@ keywords:
 - NMR WDK，附加网络模块
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6905e7d9f81957c9be50e5e1d29cc4f601fd3997
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: d8e63474f84c8cade3bb93f3eaeb56c78364c1f5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89210675"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96792679"
 ---
 # <a name="network-module-attachment"></a>网络模块附加
 

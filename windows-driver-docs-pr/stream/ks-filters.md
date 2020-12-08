@@ -1,7 +1,6 @@
 ---
 title: KS 筛选器
 description: KS 筛选器
-ms.assetid: caf46279-17f3-4bb4-8b8a-a1673f9fa28f
 keywords:
 - 筛选 WDK 内核流式处理
 - KS 筛选 WDK 内核流式处理
@@ -9,12 +8,12 @@ keywords:
 - 内核流 WDK，筛选器
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 212908b59d71d9b33f21d11852a00bf1e919f5fd
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: e040b3648a880bd3d7d66e74107fc16c04a604a3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89184171"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96792533"
 ---
 # <a name="ks-filters"></a>KS 筛选器
 

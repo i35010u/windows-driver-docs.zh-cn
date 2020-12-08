@@ -1,19 +1,18 @@
 ---
 title: NDIS 接口信息
 description: NDIS 接口信息
-ms.assetid: 35187fda-a239-4801-b0be-53fcbee7d24e
 keywords:
 - 管理信息基本 WDK 网络
 - Mib WDK 网络
 - NDIS WDK，接口
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fc2ef6a780972a1dc36d58fb93fa5cc35365a63c
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 8a7d75877db9183d7b4b0d8fdb50f6a53354d18d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90716702"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96791391"
 ---
 # <a name="ndis-interface-information"></a>NDIS 接口信息
 

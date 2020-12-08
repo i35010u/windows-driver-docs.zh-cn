@@ -1,18 +1,17 @@
 ---
 title: 无连接低边缘中间驱动程序数据接收
 description: 在包含无连接下边缘的中间驱动程序中接收数据
-ms.assetid: 73143c2f-4127-41fc-b916-eac87521440a
 keywords:
 - 中间驱动程序 WDK 网络，接收操作
 - NDIS 中间驱动程序 WDK，接收操作
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0c11d625492cfa1466d24eb6cc883a80eea3ef1f
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: d91356c75c4f0a999654fb505102e71e111872bb
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89216958"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96792127"
 ---
 # <a name="receiving-data-in-an-intermediate-driver-with-a-connectionless-lower-edge"></a>在包含无连接下边缘的中间驱动程序中接收数据
 

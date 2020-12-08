@@ -1,7 +1,6 @@
 ---
 title: Bug 检查 0x151 UNSUPPORTED_INSTRUCTION_MODE
-description: UNSUPPORTED_INSTRUCTION_MODE bug 检查具有 0x00000151 值。
-ms.assetid: 2FB679D8-9FA3-423D-BCA1-5EDE88C78FBF
+description: UNSUPPORTED_INSTRUCTION_MODE bug 检查的值为0x00000151。
 keywords:
 - Bug 检查 0x151 UNSUPPORTED_INSTRUCTION_MODE
 - UNSUPPORTED_INSTRUCTION_MODE
@@ -13,31 +12,31 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: ef8bba4b8b865274e08d6bdff53ad972503ccfe7
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: 302a55fd4de0e5c04916475f70b043eef7728beb
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67520060"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96790687"
 ---
-# <a name="bug-check-0x151-unsupportedinstructionmode"></a>Bug 检查 0x151：不支持\_指令\_模式
+# <a name="bug-check-0x151-unsupported_instruction_mode"></a>Bug 检查0x151：不支持的 \_ 指令 \_ 模式
 
 
-不支持\_指令\_模式 bug 检查的值为 0x00000151。 这表示尝试使用不受支持的处理器指令模式下 （例如，正在执行经典 ARM 指令而不是 ThumbV2 指令） 执行代码。 这不是允许。
+不受支持的 \_ 指令 \_ 模式 bug 检查的值为0x00000151。 这表明尝试使用不受支持的处理器指令模式执行代码 (例如，执行经典 ARM 指令而不是 ThumbV2 指令) 。 这是不允许的。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题面向程序员。 如果您是在使用计算机时收到蓝屏错误代码的客户，请参阅[蓝屏错误疑难解答](https://www.windows.com/stopcode)。
 
 
-## <a name="unsupportedinstructionmode-parameters"></a>不支持\_指令\_模式参数
+## <a name="unsupported_instruction_mode-parameters"></a>不支持的 \_ 指令 \_ 模式参数
 
 
 | 参数 | 描述                                    |
 |-----------|------------------------------------------------|
-| 1         | 当检测到问题时的程序计数器。 |
-| 2         | 陷阱帧                                     |
-| 3         | 保留                                       |
-| 4         | 保留                                       |
+| 1         | 检测到问题时的程序计数器。 |
+| 2         | 捕获帧                                     |
+| 3         | 预留                                       |
+| 4         | 预留                                       |
 
  
 

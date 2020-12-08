@@ -1,21 +1,20 @@
 ---
 title: Hello World "安装文件
 description: Hello World "安装文件
-ms.assetid: 826f4f99-16bd-4586-9cc1-0afde2fcee65
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0348471844b894b3e80b3afe67f2ee3175a16b53
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 00c24c7dc394c4d3bdac3e879250a6e0f173969d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89191981"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96790643"
 ---
 # <a name="hello-world-installation-file"></a>"Hello World" 安装文件
 
 微型驱动程序需要安装 (INF) 文件安装信息。 INF 文件是一个文本文件，其中包含安装设备所需的所有信息。 有关 INF 文件的信息，请参阅 [WIA 设备的 Inf 文件](inf-files-for-wia-devices.md) 和 [创建 INF 文件](../install/overview-of-inf-files.md) 部分。
 
-*Hellowld*文件应包含以下内容：
+*Hellowld* 文件应包含以下内容：
 
 ```INF
 ; HELLOWLD.INF  -- Hello World WIA Minidriver setup file

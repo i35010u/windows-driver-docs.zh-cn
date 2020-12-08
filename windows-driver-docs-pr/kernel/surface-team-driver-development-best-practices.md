@@ -1,17 +1,16 @@
 ---
 title: Surface 团队驱动程序开发最佳实践
 description: Surface Team 驱动程序开发最佳方案-驱动程序开发人员导致的常见错误。
-ms.assetid: f4847954-8e29-48bb-b9ae-873fc7c29b2d
 keywords:
 - 驱动程序开发最佳做法
 ms.date: 08/06/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: b9d518d99da31984e5524016f432d5eaaa2d4a44
-ms.sourcegitcommit: 73216293357f08eb00d8b154fa377a090644ca4f
+ms.openlocfilehash: 370690af927c78ea1a04468df8699d1710388b3e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94810121"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96792723"
 ---
 # <a name="surface-team-driver-development-best-practices"></a>Surface 团队驱动程序开发最佳实践
 

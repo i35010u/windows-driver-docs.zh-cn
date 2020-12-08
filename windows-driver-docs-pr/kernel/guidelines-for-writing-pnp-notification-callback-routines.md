@@ -1,18 +1,17 @@
 ---
 title: 有关编写 PnP 通知回调例程的指导原则
 description: 有关编写 PnP 通知回调例程的指导原则
-ms.assetid: 2153b4c2-f60f-4ac9-8eee-66c5f3a9f414
 keywords:
 - 通知 WDK PnP，回调例程
 - 回调例程 WDK PnP
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e446cbb4e02832ff549e3c61ccf92d1f71fac308
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 61bdcb7f03a0a18e2b71bf96d4cda89e068641f3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89183872"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96792763"
 ---
 # <a name="guidelines-for-writing-pnp-notification-callback-routines"></a>有关编写 PnP 通知回调例程的指导原则
 

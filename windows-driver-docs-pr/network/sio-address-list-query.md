@@ -1,16 +1,15 @@
 ---
 title: SIO_ADDRESS_LIST_QUERY
 description: SIO_ADDRESS_LIST_QUERY
-ms.assetid: c50520a3-6ba3-448e-bbb4-bf3425dcbc41
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 SIO_ADDRESS_LIST_QUERY 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 32e60b6db92ff0cdba0c8c9858a7090d5dfd259a
-ms.sourcegitcommit: f8619f20a0903dd64f8641a5266ecad6df5f1d57
+ms.openlocfilehash: b7257af98a0c4a338c7ae0180abc448cae283924
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91423630"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96792117"
 ---
 # <a name="sio_address_list_query"></a>SIO \_ 地址 \_ 列表 \_ 查询
 
@@ -27,7 +26,7 @@ SIO \_ ADDRESS \_ LIST \_ QUERY socket i/o CONTROL 操作允许 WSK 应用程序
 <thead>
 <tr class="header">
 <th>参数</th>
-<th>值</th>
+<th>“值”</th>
 </tr>
 </thead>
 <tbody>

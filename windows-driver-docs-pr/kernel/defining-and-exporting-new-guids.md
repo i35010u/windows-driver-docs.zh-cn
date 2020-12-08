@@ -1,7 +1,6 @@
 ---
 title: 定义和导出新 GUID
 description: 定义和导出新 GUID
-ms.assetid: a7deb283-7cab-4f3c-ad96-f8085222456e
 keywords:
 - 全局唯一标识符 WDK 内核
 - Guid WDK 内核
@@ -9,12 +8,12 @@ keywords:
 - 导出 Guid
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bc4012ba8f0f05733a037cc4bf1f9d6689fff525
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: ab307b0c9b3b96398933a4ce2a76a0301625aaba
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89188585"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96792799"
 ---
 # <a name="defining-and-exporting-new-guids"></a>定义和导出新 GUID
 
@@ -36,7 +35,7 @@ ms.locfileid: "89188585"
 
     使用在 Guiddef 中定义的 " **定义 \_ guid** 宏" () 将 GUID 符号名称与它的值相关联 (参见 Example 1) 。
 
-    **示例1：在仅 GUID 头文件中定义 Guid**
+    **示例1：在 GUID-Only 头文件中定义 Guid**
 
     ```cpp
     :
@@ -49,7 +48,7 @@ ms.locfileid: "89188585"
     :
     ```
 
-    如果 GUID 是在包含 GUID 定义以外的语句的标头文件中定义的，则必须采取额外的步骤来确保 GUID 在包含头文件的驱动程序中实例化。 **DEFINE \_ GUID**语句必须出现在防止多次包含的任何** \# ifdef**语句的外部。 否则，如果标头文件包含在预编译标头中，则不会在使用标头文件的驱动程序中实例化该 GUID。 有关混合标头文件中的 GUID 定义示例，请参见示例2。
+    如果 GUID 是在包含 GUID 定义以外的语句的标头文件中定义的，则必须采取额外的步骤来确保 GUID 在包含头文件的驱动程序中实例化。 **DEFINE \_ GUID** 语句必须出现在防止多次包含的任何 **\# ifdef** 语句的外部。 否则，如果标头文件包含在预编译标头中，则不会在使用标头文件的驱动程序中实例化该 GUID。 有关混合标头文件中的 GUID 定义示例，请参见示例2。
 
     **示例2：在混合头文件中定义 Guid**
 

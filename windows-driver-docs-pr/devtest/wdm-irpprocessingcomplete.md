@@ -1,7 +1,6 @@
 ---
 title: 'IrpProcessingComplete 规则 (wdm) '
 description: IrpProcessingComplete 规则指定如果派单例程返回状态 \_ SUCCESS，则 IRP 必须已由驱动程序本身或较低级别的驱动程序完成。
-ms.assetid: e0dc995e-a5a0-44e3-8cf1-52df8a825598
 ms.date: 05/21/2018
 keywords:
 - 'IrpProcessingComplete 规则 (wdm) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 8f002d04c9b522166c5db4af5b61a06a6dea572c
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: cc8f04b7158fb7b92735ed4dd6170940f3670b84
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103378"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96792349"
 ---
 # <a name="irpprocessingcomplete-rule-wdm"></a>IrpProcessingComplete 规则 (wdm) 
 
 
-**IrpProcessingComplete**规则指定如果派单例程返回状态 \_ SUCCESS，则 IRP 必须已由驱动程序本身或较低级别的驱动程序完成。
+**IrpProcessingComplete** 规则指定如果派单例程返回状态 \_ SUCCESS，则 IRP 必须已由驱动程序本身或较低级别的驱动程序完成。
 
 **驱动程序模型： WDM**
 

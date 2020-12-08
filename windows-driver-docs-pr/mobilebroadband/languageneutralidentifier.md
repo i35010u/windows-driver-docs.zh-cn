@@ -1,15 +1,14 @@
 ---
 title: LanguageNeutralIdentifier
 description: LanguageNeutralIdentifier
-ms.assetid: 38713565-464c-4b12-9076-331ae43e01e8
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 65eaf09dbaa2c0cd78048b43e84acd2b5f7afe2e
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: c5ad1cc428cdddf45cd42aed8987f938f142b2f1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89403384"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96791445"
 ---
 # <a name="languageneutralidentifier"></a>LanguageNeutralIdentifier
 
@@ -47,7 +46,7 @@ LanguageNeutralIdentifier 元素指定一个 GUID，该 GUID 标识服务元数�
 <thead>
 <tr class="header">
 <th>元素</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -74,7 +73,8 @@ LanguageNeutralIdentifier 元素允许在同一设备的设备元数据包的一
 
 例如，如果为三个 (区域设置（例如 EN-US、JA-JP 和 AR-SA) ）发布设备，则可以为每个区域设置的设备创建单独的元数据包。 通过对这些包中的 LanguageNeutralIdentifier 元素使用公共 GUID，可以通过浏览其 PackageInfo XML 文档轻松搜索设备的元数据包。
 
-**重要提示**   操作系统的任何组件都不使用 LanguageNeutralIdentifier 元素。 它保留供 OEM、独立硬件供应商 (IHV) 和独立软件供应商 (ISV) 使用。\]
+**重要说明**  
+操作系统的任何组件都不使用 LanguageNeutralIdentifier 元素。 它保留供 OEM、独立硬件供应商 (IHV) 和独立软件供应商 (ISV) 使用。\]
 
  
 

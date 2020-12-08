@@ -1,7 +1,6 @@
 ---
 title: 'IrpCancelField 规则 (wdm) '
 description: IrpCancelField 规则指定该驱动程序在其挂起的 IRP 上设置取消例程时，检查 Irp-Cancel 成员的值。
-ms.assetid: e9221436-21ca-47f0-9dc4-e8b1a7a44854
 ms.date: 05/21/2018
 keywords:
 - 'IrpCancelField 规则 (wdm) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 12229cd4b6a3cd5668f58649f458e1e15e10c04d
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: a5f71a0a84964470fe5ee34fc22b85a6b3ff91f2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105606"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96792361"
 ---
 # <a name="irpcancelfield-rule-wdm"></a>IrpCancelField 规则 (wdm) 
 
 
-**IrpCancelField**规则指定该驱动程序在其挂起的 Irp 上设置取消例程时，检查**irp- &gt; Cancel**成员的值。
+**IrpCancelField** 规则指定该驱动程序在其挂起的 Irp 上设置取消例程时，检查 **irp- &gt; Cancel** 成员的值。
 
 静态驱动程序验证程序将此规则应用到驱动程序的 [**StartIo**](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_startio) 例程的末尾，并在驱动程序的调度例程结束时应用。
 

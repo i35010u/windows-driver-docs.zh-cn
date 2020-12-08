@@ -1,7 +1,6 @@
 ---
 title: 设备工作状态 D0
 description: 设备工作状态 D0
-ms.assetid: 6b0ec03a-eaf1-4c96-aaae-dfe821583787
 keywords:
 - 设备电源状态 WDK 内核
 - Dx 命名 WDK 电源管理
@@ -11,12 +10,12 @@ keywords:
 - 工作状态 WDK 电源管理
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 733322e4afd140762a1f156285995032f5dab89b
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: af86bfcd1eb3ef88f573439dbf19d332034ffab1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89184765"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96792787"
 ---
 # <a name="device-working-state-d0"></a>设备工作状态 D0
 

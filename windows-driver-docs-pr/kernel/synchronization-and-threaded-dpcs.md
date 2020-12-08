@@ -1,19 +1,18 @@
 ---
 title: 同步和线程 DPC
 description: 同步和线程 DPC
-ms.assetid: b4f2c77b-226c-4229-bcbb-5eebabdc28a4
 keywords:
 - 线程 Dpc WDK 内核
 - 同步 WDK 内核，中断
 - 排队自旋锁 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f6acb9ac21a98f45496da1a048720f7cc869cdb7
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 4a32721cc36aab2ab2fd4ad63b7c88f78b3d67bd
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89185951"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96792713"
 ---
 # <a name="synchronization-and-threaded-dpcs"></a>同步和线程 DPC
 
@@ -25,15 +24,15 @@ ms.locfileid: "89185951"
 
 对于普通旋转锁定，以下规则适用：
 
--   若要获取和释放旋转锁定，驱动程序可以在*CustomThreadedDpc*例程的内部和外部调用[**KeAcquireSpinLock**](/windows-hardware/drivers/ddi/wdm/nf-wdm-keacquirespinlock)和[**KeReleaseSpinLock**](/windows-hardware/drivers/ddi/wdm/nf-wdm-kereleasespinlock) 。
+-   若要获取和释放旋转锁定，驱动程序可以在 *CustomThreadedDpc* 例程的内部和外部调用 [**KeAcquireSpinLock**](/windows-hardware/drivers/ddi/wdm/nf-wdm-keacquirespinlock)和 [**KeReleaseSpinLock**](/windows-hardware/drivers/ddi/wdm/nf-wdm-kereleasespinlock) 。
 
--   驱动程序可以从*CustomThreadedDpc*例程内调用[**KeAcquireSpinLockForDpc**](/previous-versions/windows/hardware/drivers/ff551923(v=vs.85))和[**KeReleaseSpinLockForDpc**](/windows-hardware/drivers/ddi/wdm/nf-wdm-kereleasespinlockfordpc) 。 请注意， *CustomThreadedDpc* 例程不得调用 [**KeAcquireSpinLockAtDpcLevel**](/windows-hardware/drivers/ddi/wdm/nf-wdm-keacquirespinlockatdpclevel) 或 [**KERELEASESPINLOCKFROMDPCLEVEL**](/windows-hardware/drivers/ddi/wdm/nf-wdm-kereleasespinlockfromdpclevel)，因为只能在 IRQL = 调度级别安全地调用这些例程 \_ 。
+-   驱动程序可以从 *CustomThreadedDpc* 例程内调用 [**KeAcquireSpinLockForDpc**](/previous-versions/windows/hardware/drivers/ff551923(v=vs.85))和 [**KeReleaseSpinLockForDpc**](/windows-hardware/drivers/ddi/wdm/nf-wdm-kereleasespinlockfordpc) 。 请注意， *CustomThreadedDpc* 例程不得调用 [**KeAcquireSpinLockAtDpcLevel**](/windows-hardware/drivers/ddi/wdm/nf-wdm-keacquirespinlockatdpclevel) 或 [**KERELEASESPINLOCKFROMDPCLEVEL**](/windows-hardware/drivers/ddi/wdm/nf-wdm-kereleasespinlockfromdpclevel)，因为只能在 IRQL = 调度级别安全地调用这些例程 \_ 。
 
 排队自旋锁的规则如下所示：
 
--   若要获取和释放旋转锁定，驱动程序可以在*CustomThreadedDpc*例程的内部和外部调用[**KeAcquireInStackQueuedSpinLock**](/previous-versions/windows/hardware/drivers/ff551899(v=vs.85))和[**KeReleaseInStackQueuedSpinLock**](/windows-hardware/drivers/ddi/wdm/nf-wdm-kereleaseinstackqueuedspinlock) 。
+-   若要获取和释放旋转锁定，驱动程序可以在 *CustomThreadedDpc* 例程的内部和外部调用 [**KeAcquireInStackQueuedSpinLock**](/previous-versions/windows/hardware/drivers/ff551899(v=vs.85))和 [**KeReleaseInStackQueuedSpinLock**](/windows-hardware/drivers/ddi/wdm/nf-wdm-kereleaseinstackqueuedspinlock) 。
 
--   驱动程序可以从*CustomThreadedDpc*例程内调用[**KeAcquireInStackQueuedSpinLockForDpc**](/previous-versions/windows/hardware/drivers/ff551912(v=vs.85))和[**KeReleaseInStackQueuedSpinLockForDpc**](/windows-hardware/drivers/ddi/wdm/nf-wdm-kereleaseinstackqueuedspinlockfordpc) 。 请注意， *CustomThreadedDpc* 例程不得调用 [**KeAcquireInStackQueuedSpinLockAtDpcLevel**](/previous-versions/windows/hardware/drivers/ff551908(v=vs.85)) 或 [**KERELEASEINSTACKQUEUEDSPINLOCKFROMDPCLEVEL**](/windows-hardware/drivers/ddi/wdm/nf-wdm-kereleaseinstackqueuedspinlockfromdpclevel)，因为只能在 IRQL = 调度级别安全地调用这些例程 \_ 。
+-   驱动程序可以从 *CustomThreadedDpc* 例程内调用 [**KeAcquireInStackQueuedSpinLockForDpc**](/previous-versions/windows/hardware/drivers/ff551912(v=vs.85))和 [**KeReleaseInStackQueuedSpinLockForDpc**](/windows-hardware/drivers/ddi/wdm/nf-wdm-kereleaseinstackqueuedspinlockfordpc) 。 请注意， *CustomThreadedDpc* 例程不得调用 [**KeAcquireInStackQueuedSpinLockAtDpcLevel**](/previous-versions/windows/hardware/drivers/ff551908(v=vs.85)) 或 [**KERELEASEINSTACKQUEUEDSPINLOCKFROMDPCLEVEL**](/windows-hardware/drivers/ddi/wdm/nf-wdm-kereleaseinstackqueuedspinlockfromdpclevel)，因为只能在 IRQL = 调度级别安全地调用这些例程 \_ 。
 
 由于 **KeAcquireSpinLockForDpc** 和 **KeAcquireInStackQueuedSpinLockForDpc** 在调度级别调用时不会重置 IRQL \_ ，因此它们的执行速度高于 **KeAcquireSpinLock** 和 **KeAcquireInStackQueuedSpinLock**。
 

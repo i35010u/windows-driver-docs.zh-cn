@@ -1,17 +1,16 @@
 ---
 title: 内核模式安全字符串函数摘要
 description: 内核模式安全字符串函数摘要
-ms.assetid: 71b67d88-2a9a-4c9d-b64c-5fd7fe7e5cda
 keywords:
 - 安全字符串函数 WDK
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4d4353062896686eea95ff470e0a0aba2666176e
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 6ce192b6a1a260ccecdf63c172b2ece1377bdd15
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91733143"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96791435"
 ---
 # <a name="summary-of-kernel-mode-safe-string-functions"></a>内核模式安全字符串函数摘要
 

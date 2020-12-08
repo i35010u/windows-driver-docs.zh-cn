@@ -1,15 +1,14 @@
 ---
 title: REMOTE_NDIS_SET_CMPLT
 description: 远程 NDIS 设备将使用 REMOTE_NDIS_SET_CMPLT 消息响应 REMOTE_NDIS_SET_MSG 消息。
-ms.assetid: 97436a5f-7516-46cf-b789-a6b1c8c067a2
 ms.date: 07/31/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: aa66422aebd42b05a1334835f4fa28986ed940f0
-ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
+ms.openlocfilehash: 898998cb8a9b8cff96641e265f84fe4f46fcfa42
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88969354"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96792625"
 ---
 # <a name="remote_ndis_set_cmplt"></a>远程 \_ NDIS \_ 设置 \_ CMPLT
 
@@ -28,7 +27,7 @@ ms.locfileid: "88969354"
 <th>Offset</th>
 <th>大小</th>
 <th>字段</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -71,7 +70,7 @@ ms.locfileid: "88969354"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Version</p></td>
+<td><p>版本</p></td>
 <td><p>在 Microsoft Windows XP 和更高版本的 Windows 操作系统中可用。 在 Windows 2000 中也可以作为可再发行二进制文件。</p></td>
 </tr>
 <tr class="even">

@@ -1,7 +1,6 @@
 ---
 title: WDM 版本的差异
 description: WDM 版本的差异
-ms.assetid: 735b01c4-4eff-4c8e-ab60-3813d1830112
 keywords:
 - WDM 驱动程序 WDK 内核，版本
 - 版本 WDK WDM
@@ -12,12 +11,12 @@ keywords:
 - 电源管理 WDK WDM
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c43c282090002cc33d6d6ca2baf00637f2098332
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 74339293fcaa82c4ce57a4beb2eb1154e37438c3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89191863"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96792767"
 ---
 # <a name="differences-in-wdm-versions"></a>WDM 版本的差异
 
@@ -39,7 +38,7 @@ ms.locfileid: "89191863"
 
 此外，在 Windows 98/Me 上，以下 Irp 的工作方式与在基于 NT 的操作系统上的工作方式不同：
 
-[**IRP \_MN \_ 停止 \_ 设备**](./irp-mn-stop-device.md)和[ **IRP \_ MN \_ 删除 \_ 设备**](./irp-mn-remove-device.md)
+[**IRP \_MN \_ 停止 \_ 设备**](./irp-mn-stop-device.md)和 [ **IRP \_ MN \_ 删除 \_ 设备**](./irp-mn-remove-device.md)
 
 [**IRP \_ MN \_ 查询 \_ 删除 \_ 设备**](./irp-mn-query-remove-device.md)
 
@@ -61,7 +60,7 @@ ms.locfileid: "89191863"
 
 与 \_ \_ 基于 NT 的操作系统相比，在 Windows 98/Me 操作系统上， [**设备 \_ 对象**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_device_object) 结构中的 DO POWER PAGABLE 标志的使用方式不同。
 
-### <a name="wdm-differences-in-kernel-mode-driver-operation"></a>内核模式驱动程序操作中的 WDM 差异
+### <a name="wdm-differences-in-kernel-mode-driver-operation"></a>Kernel-Mode 驱动程序操作中的 WDM 差异
 
 适用于 Windows 98/Me 的内核模式 WDM 驱动程序必须遵循有关使用浮点运算、MMX、3DNOW！或 Intel 的 SSE 扩展的某些准则。 有关详细信息，请参阅 [在 WDM 驱动程序中使用浮点或 MMX](using-floating-point-or-mmx-in-a-wdm-driver.md)。
 

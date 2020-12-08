@@ -1,7 +1,6 @@
 ---
 title: Bug 检查 0x14B SOC_SUBSYSTEM_FAILURE
 description: SOC_SUBSYSTEM_FAILURE bug 检查的值为0x0000014B。 这表明芯片 (SoC) 子系统上的系统中发生了不可恢复的错误。
-ms.assetid: CC42D634-90CE-43F1-8552-E5DE711D2117
 keywords:
 - Bug 检查 0x14B SOC_SUBSYSTEM_FAILURE
 - Bug 检查 0x14B SOC_SUBSYSTEM_FAILURE
@@ -13,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 701d09ae26fa008fc36aed518966e8b352628fb0
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 6e231a4e60b9aca92b14d437e5aa244f97ec291b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107192"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96790723"
 ---
 # <a name="bug-check-0x14b-soc_subsystem_failure"></a>Bug 检查0x14B： SOC \_ 子系统 \_ 故障
 
@@ -40,7 +39,7 @@ SOC \_ 子系统 \_ 失败 bug 检查的值为0x0000014B。 这表明芯片 (SoC
 <thead>
 <tr class="header">
 <th align="left">参数</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -100,7 +99,7 @@ Arg4: a126c000, (Optional) address to vendor supplied general purpose data block
 
 使用 SoC 供应商进一步分析数据，包括可选供应商提供的常规用途数据块。
 
-你可能想要使用 [**k、kb、glm-kc-qnw、kd、kp、kp、kv (显示 Stack Backtrace) **](k--kb--kc--kd--kp--kp--kv--display-stack-backtrace-.md) 命令来检查堆栈跟踪。 可以指定处理器编号来检查所有处理器上的堆栈。
+你可能想要使用 [**k、kb、glm-kc-qnw、kd、kp、kp、kv (显示 Stack Backtrace)**](k--kb--kc--kd--kp--kp--kv--display-stack-backtrace-.md) 命令来检查堆栈跟踪。 可以指定处理器编号来检查所有处理器上的堆栈。
 
 你还可以在代码中设置一个断点，使其导致此 stop 代码，并尝试单步执行出错的代码。
 

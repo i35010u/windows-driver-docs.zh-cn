@@ -1,7 +1,6 @@
 ---
 title: SM \_ SendCTPassThru 函数
 description: SM \_ SENDCTPASSTHRU WMI 方法将通用传输 (CT) 传递命令发送到指定的端口。
-ms.assetid: 437f0c79-78f6-406e-8774-79de4425bfe8
 keywords:
 - SM_SendCTPassThru 函数存储设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 1da6eebd5208c6796c52b556ce4e959f15687b03
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: cea559dfee53af20cb8e4db90aa853f057da3adc
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89183823"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96792571"
 ---
 # <a name="sm_sendctpassthru-function"></a>SM \_ SendCTPassThru 函数
 
@@ -31,13 +30,13 @@ SM \_ SENDCTPASSTHRU WMI 方法将通用传输 (CT) 传递命令发送到指定�
 
 ```ManagedCPlusPlus
 void SM_SendCTPassThru(
-   [in, HBAType("HBA_WWN")] uint8              HbaPortWWN[8],
-   [in] uint32                                 InRespBufferMaxSize,
-   [in] uint32                                 RequestBufferSize,
-   [in, WmiSizeIs("RequestBufferSize")] uint8  RequestBuffer,
-   [out, HBA_STATUS_QUALIFIERS] HBA_STATUS     HBAStatus,
-   [out] uint32                                TotalResponseBufferSize,
-   [out] uint32                                ActualResponseBufferSize,
+   [in, HBAType("HBA_WWN")] uint8              HbaPortWWN[8],
+   [in] uint32                                 InRespBufferMaxSize,
+   [in] uint32                                 RequestBufferSize,
+   [in, WmiSizeIs("RequestBufferSize")] uint8  RequestBuffer,
+   [out, HBA_STATUS_QUALIFIERS] HBA_STATUS     HBAStatus,
+   [out] uint32                                TotalResponseBufferSize,
+   [out] uint32                                ActualResponseBufferSize,
    [out, WmiSizeIs("OutRespBufferSize")] uint8 ResponseBuffer[]
 );
 ```
@@ -90,7 +89,7 @@ void SM_SendCTPassThru(
 <tbody>
 <tr class="odd">
 <td align="left"><p>目标平台</p></td>
-<td align="left">“桌面”</td>
+<td align="left">台式机</td>
 </tr>
 <tr class="even">
 <td align="left"><p>标头</p></td>

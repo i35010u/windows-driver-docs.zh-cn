@@ -1,35 +1,34 @@
 ---
-title: 示例 13 列出与全局标志的图像文件
-description: 示例 13 列出与全局标志的图像文件
-ms.assetid: 1b1285d5-ed73-49c4-a123-de9cbdb3090c
+title: 示例13列出带有全局标志的图像文件
+description: 示例13列出带有全局标志的图像文件
 ms.date: 10/12/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 996f85db746fcc628ea6beb3de3b9249ee8e97bb
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: befaa8c7867373445d429c6ba9cd7b83c5072101
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63347768"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96792407"
 ---
-# <a name="example-13-listing-image-files-with-global-flags"></a>示例 13：列出带有全局标志的映像文件
+# <a name="example-13-listing-image-files-with-global-flags"></a>示例13：列出包含全局标志的图像文件
 
 
 ## <span id="ddk_example_13___listing_image_files_with_global_flags_dtools"></span><span id="DDK_EXAMPLE_13___LISTING_IMAGE_FILES_WITH_GLOBAL_FLAGS_DTOOLS"></span>
 
 
-GFlags 显示对于特定的图像文件，设置的标志，但它不会显示已设置的标志的所有图像文件。
+GFlags 显示为特定图像文件设置的标志，但不显示具有标志集的所有图像文件。
 
-Windows 图像文件的存储标志**GlobalFlag**注册表项中的图像文件在以下注册表路径中，名为注册表子项**HKEY\_本地\_机\\软件\\Microsoft\\ Windows NT\\ CurrentVersion\\图像文件执行选项\\*映像文件名*\\GlobalFlag**。
+Windows 在以下注册表路径中为映像文件（ **HKEY \_ 本地 \_ 计算机 \\ 软件 \\ Microsoft \\ Windows NT \\ CurrentVersion \\ 映像文件执行选项 \\ *ImageFileName* \\ GlobalFlag**）中的 **GlobalFlag** 注册表项存储文件的标志。
 
-若要确定哪个映像文件具有标志设置，请使用注册表 (reg.exe)，Windows Server 2003 中包含的工具。
+若要确定哪些映像文件设置了标志，请使用 Reg ( # A0) ，它是 Windows Server 2003 中包含的一种工具。
 
-以下 Reg**查询**命令搜索**GlobalFlag**中指定的注册表路径的注册表项。 **-V**参数指定**GlobalFlag**注册表项。 **/S**参数将使得搜索递归。
+下面的 Reg **查询** 命令搜索指定注册表路径中的 **GlobalFlag** 注册表项。 **-V** 参数指定 **GlobalFlag** 注册表项。 **/S** 参数使得搜索是递归的。
 
 ```console
 reg query "HKLM\Software\Microsoft\Windows NT\CurrentVersion\Image File Execution Options" /v GlobalFlag /s
 ```
 
-响应，显示的所有实例 Reg **GlobalFlag**注册表项中的路径和项的值。
+在响应中，Reg 显示路径中的 **GlobalFlag** 注册表项的所有实例以及该项的值。
 
 ```console
 HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\notepad.exe
@@ -42,7 +41,7 @@ HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\Image File Execu
     GlobalFlag    REG_SZ    0x00200000
 ```
 
-**提示**  类型**Reg**命令到记事本中，然后将文件另存 imageflags.bat。 此后，若要查找已为其设置标志的图像文件，只需键入**ImageFlags**。
+**提示**   在记事本中键入 **Reg** 命令，然后将该文件保存为 imageflags.bat。 此后，若要查找已设置了标志的图像文件，只需键入 " **ImageFlags**"。
 
  
 

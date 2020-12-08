@@ -1,16 +1,15 @@
 ---
 title: 即插即用调试
-description: 本主题介绍插调试
-ms.assetid: 59023a95-5eeb-4a5d-9239-a28459c70f42
-keywords: 插入和播放、 PnP 驱动程序，调试
+description: 本主题介绍即插即用调试
+keywords: 即插即用、PnP、驱动程序、调试
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3fe1bb3b39cc636254d950010000158af4f36ef9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: a2d56fdfe9ef4b2d334bf2b764951b9ce09a9d3d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56576502"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96792391"
 ---
 # <a name="plug-and-play-debugging"></a>即插即用调试
 
@@ -18,9 +17,9 @@ ms.locfileid: "56576502"
 ## <span id="ddk_plug_and_play_debugging_dbg"></span><span id="DDK_PLUG_AND_PLAY_DEBUGGING_DBG"></span>
 
 
-本部分包括：
+本节包括：
 
-[Plug and Play 驱动程序调试扩展](extensions-for-debugging-plug-and-play-drivers.md)
+[用于调试即插即用驱动程序的扩展](extensions-for-debugging-plug-and-play-drivers.md)
 
 [确定设备的状态](determining-the-status-of-a-device.md)
 

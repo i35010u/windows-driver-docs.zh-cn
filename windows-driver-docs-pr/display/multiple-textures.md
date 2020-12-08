@@ -1,19 +1,18 @@
 ---
 title: 多个纹理
 description: 多个纹理
-ms.assetid: 3c7b4ac7-eabc-442d-aede-a65ee3b6e20c
 keywords:
 - 纹理管理 WDK Direct3D，多纹理
 - 多纹理 WDK Direct3D
 - 多纹理 WDK Direct3D，多纹理
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 48d48d75340c86bdd2d9d70e5bb12ae733f6a052
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 87f000f8261ee680e316b9fa0afccc3e4888cfb8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89063866"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96792275"
 ---
 # <a name="multiple-textures"></a>多个纹理
 
@@ -25,7 +24,7 @@ Direct3D 驱动程序可以通过使用 "纹理阶段状态类型 D3DTEXTURESTAG
 
 为 Direct3D 驱动程序添加多个纹理支持需要将正确的功能位设置 (Cap) ，实现纹理混合，并实现 [**D3dValidateTextureStageState**](/windows-hardware/drivers/ddi/d3dhal/nc-d3dhal-lpd3dhal_validatetexturestagestatecb)。
 
-为了符合 DirectX 6.0 和更高版本，驱动程序需要正确分析多达八个纹理坐标集，即使设备只能循环访问并使用[**D3DHAL \_ D3DEXTENDEDCAPS**](/windows-hardware/drivers/ddi/d3dhal/ns-d3dhal-_d3dhal_d3dextendedcaps)结构的**dwFVFCaps**成员中定义的坐标数。 驱动程序使用 D3DTSS \_ TEXCOORDINDEX 获取用于纹理的正确坐标。
+为了符合 DirectX 6.0 和更高版本，驱动程序需要正确分析多达八个纹理坐标集，即使设备只能循环访问并使用 [**D3DHAL \_ D3DEXTENDEDCAPS**](/windows-hardware/drivers/ddi/d3dhal/ns-d3dhal-_d3dhal_d3dextendedcaps)结构的 **dwFVFCaps** 成员中定义的坐标数。 驱动程序使用 D3DTSS \_ TEXCOORDINDEX 获取用于纹理的正确坐标。
 
 灵活的顶点格式 ([FVF](fvf--flexible-vertex-format-.md)) 允许多纹理，因为它们可以在顶点结构中传递多个纹理坐标。 然后，可以将多个纹理组合在一起，并将其应用于一段几何。
 

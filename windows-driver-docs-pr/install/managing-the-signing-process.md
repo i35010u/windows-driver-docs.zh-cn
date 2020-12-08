@@ -1,20 +1,19 @@
 ---
 title: 管理签名过程
 description: 管理签名过程
-ms.assetid: 80a1986f-1508-49c1-aec5-7084edff9485
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0699ad75e4f84375edef52a1d32f63c1d2e6e673
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: a253b91b9ab51bce086d11ccfe9f0df1aad90e45
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106202"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96790557"
 ---
 # <a name="managing-the-signing-process"></a>管理签名过程
 
 
-签署 [驱动程序包的](driver-packages.md) [目录文件](catalog-files.md) 或在驱动程序文件中嵌入签名的过程涉及以下活动。
+签署[驱动程序包的](driver-packages.md)[目录文件](catalog-files.md)或在驱动程序文件中嵌入签名的过程涉及以下活动。
 
 ### <a name="driver-signing-administration"></a>驱动程序签名管理
 

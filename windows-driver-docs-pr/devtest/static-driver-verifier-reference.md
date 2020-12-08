@@ -1,19 +1,18 @@
 ---
 title: 静态驱动程序验证程序参考
 description: 静态驱动程序验证程序参考
-ms.assetid: 94cdf0b8-d3e0-4720-a003-73e63367c38a
 keywords:
 - 静态驱动程序验证程序 WDK，参考
 - StaticDV WDK，参考
 - SDV WDK，参考
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 053cf7c5872489783d87095d380de7393004638f
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: e45dc8e043fbca672d0e282b7a9a3800dd9816dc
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89383891"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96791907"
 ---
 # <a name="static-driver-verifier-reference"></a>静态驱动程序验证程序参考
 

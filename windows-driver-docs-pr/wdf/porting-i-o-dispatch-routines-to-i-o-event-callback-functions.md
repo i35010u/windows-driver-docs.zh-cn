@@ -1,15 +1,14 @@
 ---
 title: 将 I/O 调度例程移植到 I/O 事件回调函数
 description: 将 I/O 调度例程移植到 I/O 事件回调函数
-ms.assetid: 0BD65185-C358-4E28-8E31-255AF8D77F93
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9745609e383cd0e1f800de57f58b0d5f3c8cff44
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 5796b1f7753535779b75d175bbe48db7ddeac3b5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89189165"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96792077"
 ---
 # <a name="porting-io-dispatch-routines-to-io-event-callback-functions"></a>将 I/O 调度例程移植到 I/O 事件回调函数
 
@@ -35,7 +34,7 @@ WDM 驱动程序的 i/o 调度例程的核心映射到 WDF 驱动程序的 i/o �
 
 当框架收到 i/o 请求时，它将创建一个 WDFREQUEST 对象，该对象封装基础 WDM IRP。 然后，它会将 WDFREQUEST 对象排队，并最终按照队列的驱动程序 [调度规范](dispatching-methods-for-i-o-requests.md) 调度该对象。 驱动程序使用 WDF 方法检索 i/o 请求的参数和缓冲区。 驱动程序可以通过调用 [**WdfRequestWdmGetIrp**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestwdmgetirp)随时获取基础 WDM IRP。
 
-与 WDM 驱动程序一样，WDF 驱动程序可以支持 [缓冲、直接或非](./accessing-data-buffers-in-wdf-drivers.md)i/o。 驱动程序在创建设备对象之前，通过在[*EvtDriverDeviceAdd*](/windows-hardware/drivers/ddi/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)回调中调用[**WdfDeviceInitSetIoType**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceinitsetiotype)来设置每个设备对象支持的 i/o 类型。 然而，与 WDM 驱动程序不同的是，KMDF 驱动程序以相同的方式访问缓冲区，无论是执行缓冲还是直接 i/o，并为每个缓冲区使用相同的方法。
+与 WDM 驱动程序一样，WDF 驱动程序可以支持 [缓冲、直接或非](./accessing-data-buffers-in-wdf-drivers.md)i/o。 驱动程序在创建设备对象之前，通过在 [*EvtDriverDeviceAdd*](/windows-hardware/drivers/ddi/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)回调中调用 [**WdfDeviceInitSetIoType**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceinitsetiotype)来设置每个设备对象支持的 i/o 类型。 然而，与 WDM 驱动程序不同的是，KMDF 驱动程序以相同的方式访问缓冲区，无论是执行缓冲还是直接 i/o，并为每个缓冲区使用相同的方法。
 
 尽管 WDF 驱动程序以相同的方式访问缓冲和直接 i/o 的缓冲区，但它使用不同的方法来检索缓冲区，具体取决于 i/o 请求的类型。 以下各节介绍了驱动程序如何处理每种类型的 i/o 请求：
 
@@ -83,7 +82,7 @@ WDF 驱动程序可以通过以下两种方式之一来处理创建请求 ([**IR
 
 内部设备 i/o 控制请求 ([**IRP \_ MJ \_ 内部 \_ 设备 \_ 控制**](../kernel/irp-mj-internal-device-control.md)) 仅由内核模式组件颁发，由某些操作系统组件在内部使用，用于传递请求块 (bet-hx-xrb 协议，如 SCSI 请求块 \[ SRBs \] 或通用请求块 \[ URBs \]) 。 许多不同类型的缓冲区可能伴随此类请求。
 
-检索和解释内部设备 i/o 控制请求的参数可能会有问题。 之所以出现此问题，是因为某些此类请求会传递**DeviceIoControl**结构的**InputBufferLength**和**OutputBufferLength**字段中的长度，但有些则不会。 尽管如此，框架提取 **InputBufferLength** 和 **OutputBufferLength** 字段中的任何值，并将它们作为参数传递给 [*EvtIoInternalDeviceControl*](/windows-hardware/drivers/ddi/wdfio/nc-wdfio-evt_wdf_io_queue_io_internal_device_control) 回调。 它不对这些值执行任何内部验证。
+检索和解释内部设备 i/o 控制请求的参数可能会有问题。 之所以出现此问题，是因为某些此类请求会传递 **DeviceIoControl** 结构的 **InputBufferLength** 和 **OutputBufferLength** 字段中的长度，但有些则不会。 尽管如此，框架提取 **InputBufferLength** 和 **OutputBufferLength** 字段中的任何值，并将它们作为参数传递给 [*EvtIoInternalDeviceControl*](/windows-hardware/drivers/ddi/wdfio/nc-wdfio-evt_wdf_io_queue_io_internal_device_control) 回调。 它不对这些值执行任何内部验证。
 
 若要自行获取缓冲区，驱动程序将调用以下方法之一：
 

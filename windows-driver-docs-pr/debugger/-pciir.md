@@ -1,10 +1,9 @@
 ---
 title: pciir
-description: Pciir 扩展显示硬件路由外围组件互连 (PCI) 设备，以中断控制器输入的内容。
-ms.assetid: 83d1b716-adfe-4712-bdbb-25960c38fff0
+description: Pciir 扩展显示外围组件互连 (PCI) 设备到中断控制器输入的硬件路由的内容。
 keywords:
 - PCI IRQ 路由表
-- 外围组件互连 (PCI)
+- " (PCI) 的外围组件互连"
 - pciir Windows 调试
 ms.date: 05/23/2017
 topic_type:
@@ -14,23 +13,23 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 3fc18822b946a2d64f755ab14888ecb35ccca71d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f1114b111de87be526277e8dd533d2f0e66007c7
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63335805"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96792029"
 ---
 # <a name="pciir"></a>!pciir
 
 
-**！ Pciir**扩展显示硬件路由外围组件互连 (PCI) 设备，以中断控制器输入的内容。
+**！ Pciir** extension 显示外围组件互连 (PCI) 设备到中断控制器输入的硬件路由的内容。
 
 ```dbgcmd
 !pciir
 ```
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 <table>
 <colgroup>
@@ -48,7 +47,7 @@ ms.locfileid: "63335805"
 <td align="left"><p>Kdexts.dll</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>Windows Vista 及更高版本</strong></p></td>
+<td align="left"><p><strong>Windows Vista 及更高版本</strong></p></td>
 <td align="left"><p>不可用</p></td>
 </tr>
 </tbody>
@@ -56,13 +55,13 @@ ms.locfileid: "63335805"
 
  
 
-此扩展命令仅用于不具有高级配置和电源接口 (ACPI) 启用的基于 x86 的目标计算机。
+此扩展命令仅可用于没有启用了高级配置和电源接口 (ACPI) 的基于 x86 的目标计算机。
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-任何已启用 ACPI 的计算机上的类似信息，请使用[ **！ acpiirqarb** ](-acpiirqarb.md)扩展。
+有关任何启用了 ACPI 的计算机上的类似信息，请使用 [**！ acpiirqarb**](-acpiirqarb.md) 扩展。
 
-有关 PCI 总线的信息，请参阅 Windows Driver Kit (WDK) 文档。
+有关 PCI 总线的信息，请参阅 Windows 驱动程序工具包 (WDK) 文档。
 
  
 

@@ -1,23 +1,22 @@
 ---
 title: 将 VRAM 捕获支持添加到现有的 AVStream 驱动程序
 description: 将 VRAM 捕获支持添加到现有的 AVStream 驱动程序
-ms.assetid: 10736533-3873-4f1d-91c5-d2e55163daaa
 keywords:
 - VRAM 捕获 WDK AVStream，现有驱动程序支持
 ms.date: 06/15/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 123e4cc8605b1c56a905155dd1a28ab9dfe3cb09
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 89d602719d42fe951032e8f0ebfb26be3704115f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89186861"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96792563"
 ---
 # <a name="adding-vram-capture-support-to-existing-avstream-drivers"></a>将 VRAM 捕获支持添加到现有的 AVStream 驱动程序
 
 若要将 VRAM 捕获支持添加到使用 DMA 的现有以引脚为中心的 AVStream 驱动程序，请执行以下步骤。
 
-1. 将 VRAM 捕获支持添加到 [*AVStrMiniPinProcess*](/windows-hardware/drivers/ddi/ks/nc-ks-pfnkspin) 回调例程。 [AVStream 模拟硬件示例驱动程序 () AVSHwS](/samples/microsoft/windows-driver-samples/avstream-simulated-hardware-sample-driver-avshws/)中的**CCapturePin：:P r**方法会显示一种执行*此操作的*方法。
+1. 将 VRAM 捕获支持添加到 [*AVStrMiniPinProcess*](/windows-hardware/drivers/ddi/ks/nc-ks-pfnkspin) 回调例程。 [AVStream 模拟硬件示例驱动程序 () AVSHwS](/samples/microsoft/windows-driver-samples/avstream-simulated-hardware-sample-driver-avshws/)中的 **CCapturePin：:P r** 方法会显示一种执行 *此操作的* 方法。
 
 1. 如本部分前面所述，处理 VRAM 捕获属性请求。
 

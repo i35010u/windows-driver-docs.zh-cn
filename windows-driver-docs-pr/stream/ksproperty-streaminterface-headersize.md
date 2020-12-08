@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ STREAMINTERFACE \_ HEADERSIZE
 description: KSPROPERTY \_ STREAMINTERFACE \_ HEADERSIZE 属性在 pin 中查询此 pin 所使用的流标头的大小。
-ms.assetid: 45c2e10a-c223-4d96-9055-cf012dc50e7a
 keywords:
 - KSPROPERTY_STREAMINTERFACE_HEADERSIZE 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5c7134c9d5fb00704c1e5825233758e5eceeebe0
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: f251863e4a2c01f6814bffc7bd207a89ed0252b2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106968"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96792443"
 ---
 # <a name="ksproperty_streaminterface_headersize"></a>KSPROPERTY \_ STREAMINTERFACE \_ HEADERSIZE
 
@@ -61,10 +60,10 @@ KSPROPERTY \_ STREAMINTERFACE \_ HEADERSIZE 属性在 pin 中查询此 pin 所�
 
  
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
-有关详细信息，请参阅[**KSPIN**](/windows-hardware/drivers/ddi/ks/ns-ks-_kspin)的**StreamHeaderSize**成员。
+有关详细信息，请参阅 [**KSPIN**](/windows-hardware/drivers/ddi/ks/ns-ks-_kspin)的 **StreamHeaderSize** 成员。
 
 <a name="requirements"></a>要求
 ------------
@@ -82,7 +81,7 @@ KSPROPERTY \_ STREAMINTERFACE \_ HEADERSIZE 属性在 pin 中查询此 pin 所�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSPROPERTY**](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)

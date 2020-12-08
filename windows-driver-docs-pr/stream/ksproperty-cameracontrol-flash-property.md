@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ CAMERACONTROL \_ FLASH \_ 属性
 description: 用户模式客户端使用此属性来获取或设置照相机的闪光控制特征。 此属性是可选的。
-ms.assetid: 33B4B9DF-D3B4-4990-A625-D632F30284AA
 keywords:
 - KSPROPERTY_CAMERACONTROL_FLASH_PROPERTY 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e242dbced8aa2eb9ae651c9b832652d2b55f572c
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 6c1f1ec12121dedea4d88313d0f21ae79f7c6cde
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107262"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96792507"
 ---
 # <a name="ksproperty_cameracontrol_flash_property"></a>KSPROPERTY \_ CAMERACONTROL \_ FLASH \_ 属性
 
@@ -82,7 +81,7 @@ ms.locfileid: "90107262"
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSPROPERTY**](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)

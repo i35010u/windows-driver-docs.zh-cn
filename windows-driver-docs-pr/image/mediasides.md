@@ -1,9 +1,8 @@
 ---
 title: MediaSides 元素
-description: 可选 MediaSides 元素包含是唯一的每个物理扫描媒体一端的参数。
-ms.assetid: 9bd3de21-4b2c-4cea-add6-51240ad6c19f
+description: 可选的 MediaSides 元素包含扫描媒体的每个物理端的唯一参数。
 keywords:
-- MediaSides 元素成像设备
+- MediaSides 元素图像设备
 topic_type:
 - apiref
 api_name:
@@ -12,19 +11,19 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 270514ab08bfc3d0461919d0814935ac7ea5450c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f06ee31c638e50807a74e0c5a8819266cb8af1b7
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379685"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96792249"
 ---
 # <a name="mediasides-element"></a>MediaSides 元素
 
 
-可选**MediaSides**元素包含是唯一的每个物理扫描媒体一端的参数。
+可选的 **MediaSides** 元素包含扫描媒体的每个物理端的唯一参数。
 
-<a name="usage"></a>用法
+<a name="usage"></a>使用情况
 -----
 
 ```xml
@@ -46,9 +45,9 @@ ms.locfileid: "63379685"
 </colgroup>
 <thead>
 <tr class="header">
-<th>特性</th>
-<th>在任务栏的搜索框中键入</th>
-<th>必需</th>
+<th>属性</th>
+<th>类型</th>
+<th>必须</th>
 <th>描述</th>
 </tr>
 </thead>
@@ -58,7 +57,7 @@ ms.locfileid: "63379685"
 <td><p>xs:string</p></td>
 <td><p>否</p></td>
 <td><p></p>
-<p>可选。 一个布尔值，必须为 0，为 false，1 或 true。<strong>falsetrue</strong></p></td>
+<p>可选。 必须为0、false、1或 true 的布尔值。<strong>falsetrue</strong></p></td>
 </tr>
 </tbody>
 </table>
@@ -110,15 +109,15 @@ ms.locfileid: "63379685"
 <a name="remarks"></a>备注
 -------
 
-许多双工能力的扫描程序允许设置不同的扫描区域、 颜色处理和每个物理扫描媒体一端的解决方法。 **MediaSides**元素包含的媒体的前端和后端边单独的数据。 每个扫描作业可以有媒体前面的参数。
+许多支持双工的扫描程序允许为扫描媒体的每个物理端设置不同的扫描区域、颜色处理和分辨率。 **MediaSides** 元素包含媒体正面和背面的单独数据。 每个扫描作业都可以包含媒体前面的参数。
 
-[ **MediaBack** ](mediaback.md)元素是有效的扫描程序仅从时支持双工扫描和当前[ **InputSource** ](inputsource.md)是**ADFDuplex**。
+仅当扫描程序支持双工扫描且当前 [**InputSource**](inputsource.md)为 **ADFDuplex** 时， [**MediaBack**](mediaback.md)元素才有效。
 
-如果**InputSource**是**ADFDuplex**并**MediaBack**缺少元素，在中指定的所有参数**MediaFront**将适用于扫描以及在后端。
+如果 **InputSource** 为 **ADFDuplex** ，并且缺少 **MediaBack** 元素，则在 **MediaFront** 中指定的所有参数也会应用于后端扫描。
 
-客户端可以指定可选**MustHonor**属性时，才**MediaSides**元素包含在**CreateScanJobRequest**层次结构。 有关详细信息**MustHonor**及其使用情况，请参阅[ **CreateScanJobRequest**](createscanjobrequest.md)。
+仅当 **MediaSides** 元素包含在 **CreateScanJobRequest** 层次结构内时，客户端才能指定可选的 **MustHonor** 属性。 有关 **MustHonor** 及其用法的详细信息，请参阅 [**CreateScanJobRequest**](createscanjobrequest.md)。
 
-WSD 扫描服务可以指定可选**重写**并**UsedDefault**属性时，才**MediaSides**元素包含在**DocumentFinalParameters**层次结构。 有关详细信息**重写**并**UsedDefault**及其使用情况，请参阅[ **DocumentFinalParameters**](documentfinalparameters.md)。
+仅当 **MediaSides** 元素包含在 **DocumentFinalParameters** 层次结构中时，WSD 扫描服务才能指定可选 **Override** 和 **UsedDefault** 属性。 有关 **Override** 和 **UsedDefault** 及其用法的详细信息，请参阅 [**DocumentFinalParameters**](documentfinalparameters.md)。
 
 ## <a name="see-also"></a>请参阅
 

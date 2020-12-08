@@ -1,7 +1,6 @@
 ---
 title: group XML 元素
 description: group XML 元素
-ms.assetid: 8035fd60-065c-4282-a18c-34e6a5201e56
 keywords:
 - 组 XML 元素设备和驱动程序安装
 topic_type:
@@ -12,19 +11,19 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 0faf035cedb58c2264c2f6d1d5f5eefb8ebdecff
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 59af6763d4d756c43bb0cd2d64bd51efb94ddb27
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89095721"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96791465"
 ---
 # <a name="group-xml-element"></a>group XML 元素
 
 
 \[DIFx 已弃用，有关详细信息，请参阅 [DIFx 指导原则](./difx-guidelines.md)。\]
 
-**组**XML 元素指定 DPInst 处理为驱动程序包组的[驱动程序包](./driver-packages.md)的有序集合。
+**组** XML 元素指定 DPInst 处理为驱动程序包组的 [驱动程序包](./driver-packages.md)的有序集合。
 
 ### <a name="element-tag"></a>元素标记
 
@@ -83,7 +82,7 @@ ms.locfileid: "89095721"
 </dpinst>
 ```
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**dpinst**](dpinst-xml-element.md)

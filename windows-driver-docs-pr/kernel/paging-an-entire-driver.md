@@ -1,7 +1,6 @@
 ---
 title: 将整个驱动程序分页
 description: 将整个驱动程序分页
-ms.assetid: d861160f-e429-4ff3-9ca6-4fce4d5d6c1b
 keywords:
 - 可分页驱动程序 WDK 内核，分页整个驱动程序
 - 分页整个驱动程序 WDK
@@ -9,12 +8,12 @@ keywords:
 - 重写可分页或不可分页属性 WDK
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 56cf610d4b57c4ca1b8a4b7a36531c66c9c36a7b
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: f4e7aa3c95ee7ffbdb08bd10f214942484f68286
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89191851"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96791439"
 ---
 # <a name="paging-an-entire-driver"></a>将整个驱动程序分页
 

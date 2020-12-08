@@ -1,7 +1,6 @@
 ---
 title: GUID_DEVINTERFACE_HID
 description: GUID_DEVINTERFACE_HID
-ms.assetid: af2ebdaf-b7e9-4f79-abb6-60f1fb954b55
 keywords:
 - GUID_DEVINTERFACE_HID 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: f462d7a34edfc464d45c58879d094a7538d9f327
-ms.sourcegitcommit: 735fea11056fe943c4368ee54573790e0602de66
+ms.openlocfilehash: 716a2159238632c591dd1e655ed4743b8cc0ffe5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91979990"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96790603"
 ---
 # <a name="guid_devinterface_hid"></a>GUID_DEVINTERFACE_HID
 
@@ -51,7 +50,7 @@ GUID_DEVINTERFACE_HID [设备接口类](./overview-of-device-interface-classes.m
 
  
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 HID 集合的驱动程序注册此设备接口类的实例，通知操作系统和应用程序是否存在 HID 集合。
@@ -76,13 +75,13 @@ HID 集合的驱动程序注册此设备接口类的实例，通知操作系统�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>标题</p></td>
+<td align="left"><p>标头</p></td>
 <td align="left">Hidclass (包含 Hidclass) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**GUID_CLASS_INPUT**](guid-class-input.md)

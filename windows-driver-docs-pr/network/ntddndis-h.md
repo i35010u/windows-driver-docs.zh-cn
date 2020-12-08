@@ -1,18 +1,17 @@
 ---
 title: Ntddndis.h
 description: 本部分包含 Ntddndis 标头的内核模式网络驱动程序主题。
-ms.assetid: EC2CD8C5-A2E9-4CA3-9229-BF0A955E6F53
 keywords:
 - Ntddndis 网络驱动程序
 ms.date: 08/08/2017
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 17b467bff31cee63b8b1cfbef227ed6aa39888b2
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 2fff8ef748eb5465f287ea67654d6ac99ef27eee
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91734187"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96791387"
 ---
 # <a name="ntddndish"></a>Ntddndis.h
 
@@ -30,7 +29,7 @@ Ntddndis 标头包含用于与网络驱动程序进行交互的常量和类型�
 >
 > 有关此标头的 DDI 引用，请参阅 [ntddndis 标头](/windows-hardware/drivers/ddi/ntddndis)。
 
-## <a name="in-this-section"></a>在此部分中
+## <a name="in-this-section"></a>在本节中
 
 * [GUID_NDIS_GEN_PCI_DEVICE_CUSTOM_PROPERTIES](guid-ndis-gen-pci-device-custom-properties.md)
 * [OID_802_3_ADD_MULTICAST_ADDRESS](oid-802-3-add-multicast-address.md)

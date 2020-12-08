@@ -1,15 +1,14 @@
 ---
 title: 静态图像设备事件
 description: 静态图像设备事件
-ms.assetid: 5f9be89c-8442-4894-b2f6-a4d3558464bf
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7a710374a01633d24a552ad4bd0afd3ad5cb7beb
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: d2dc0e726ea8015b42906e64f038ded3a85723a1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89188673"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96792865"
 ---
 # <a name="still-image-device-events"></a>静态图像设备事件
 
@@ -21,7 +20,7 @@ ms.locfileid: "89188673"
 
 典型的静止图像设备事件是检测到按下了 "推送" 按钮。 例如，扫描仪可能会为用户提供单独的按钮来启动扫描文本和照片。 按下按钮时，需要使用上层软件来显示或存储映像。 静态图像事件监视器检测到事件已 (使用 [ISTIDEVICE com 接口](istidevice-com-interface.md)) ，并且可以调用以前使用 [IStillImage COM 接口](istillimage-com-interface.md)) 注册 (的静止图像应用程序。
 
-静止图像设备事件由 Guid 表示。 在 *sti*中，Microsoft 定义了以下静止图像设备事件：
+静止图像设备事件由 Guid 表示。 在 *sti* 中，Microsoft 定义了以下静止图像设备事件：
 
 <table>
 <colgroup>
@@ -31,7 +30,7 @@ ms.locfileid: "89188673"
 <thead>
 <tr class="header">
 <th>事件 GUID</th>
-<th>目标</th>
+<th>目的</th>
 </tr>
 </thead>
 <tbody>

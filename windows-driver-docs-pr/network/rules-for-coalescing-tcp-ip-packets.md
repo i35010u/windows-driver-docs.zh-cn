@@ -1,15 +1,14 @@
 ---
 title: 用于合并 TCP/IP 段的规则
 description: 本部分定义用于合并微型端口驱动程序中的 TCP/IP 段的规则
-ms.assetid: EC3C72EB-20A6-4D48-8E8C-F70EE4483193
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9f4ab768fd42b1e976edb562f21cd39e27ebae6a
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: c378463199ea5ecccddae202b414dffed0f5cf63
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89206255"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96791369"
 ---
 # <a name="rules-for-coalescing-tcpip-segments"></a>合并 TCP/IP 段的规则
 
@@ -23,7 +22,7 @@ ms.locfileid: "89206255"
 
 流程图中使用了以下术语：
 
-|术语|说明|
+|术语|描述|
 |----|----|
 |**SEG.序列**|传入段的序列号。|
 |**H。**|当前跟踪的 SCU 的序列号。|
@@ -34,7 +33,7 @@ ms.locfileid: "89206255"
 |**SEG.长度**|传入段的 TCP 负载长度。|
 |**H。**|当前跟踪的 SCU 的 TCP 负载长度。|
 |**SEG.NXT**|SEG 的总和 **。SEQ** 和 **SEG。LEN**。|
-|**H。**|**H. SEQ**和 **.h**的总和。|
+|**H。**|**H. SEQ** 和 **.h** 的总和。|
 |**DupAckCount**|已合并到 SCU 中的重复 Ack 的数目。 此数字应该为 0。|
 |**SEG.Tsval**|当前接收段中的 **时间戳** 值。 此值的格式在 [RFC 1323](https://www.ietf.org/rfc/rfc1323.txt)中定义。|
 |**Tsval**|当前跟踪的 SCU 中的 **时间戳** 值。|
@@ -104,17 +103,17 @@ TCP 时间戳选项是可以进行合法合并的唯一选项。 使用此选项
 ![描述用于将段与 tcp 时间戳选项合并的规则的流程图](images/rsc-rules3.png)
 
 >[!NOTE]
->检查**SEG。** &gt; =  **H.TSval**必须使用类似于用于 TCP 序列号的232的模数算法来执行 TSval。 请参阅 [RFC 793](https://www.ietf.org/rfc/rfc793.txt)，第3.3 节。
+>检查 **SEG。** &gt; =  **H.TSval** 必须使用类似于用于 TCP 序列号的232的模数算法来执行 TSval。 请参阅 [RFC 793](https://www.ietf.org/rfc/rfc793.txt)，第3.3 节。
 
-当指示合并段时，通过设置用于描述合并段的[**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)结构的**NetBufferListInfo**成员，必须将以下带外信息指示如下：
+当指示合并段时，通过设置用于描述合并段的 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)结构的 **NetBufferListInfo** 成员，必须将以下带外信息指示如下：
 
-- 已合并的段数必须存储到**NetBufferListInfo** \[ **TcpRecvSegCoalesceInfo**中 \] 。**CoalescedSegCount**成员。 此数字仅表示已合并的数据段。 禁止纯确认合并，并且不能将窗口更新段计为此字段的一部分。
+- 已合并的段数必须存储到 **NetBufferListInfo** \[ **TcpRecvSegCoalesceInfo** 中 \] 。**CoalescedSegCount** 成员。 此数字仅表示已合并的数据段。 禁止纯确认合并，并且不能将窗口更新段计为此字段的一部分。
 
-- 重复的确认计数必须存储到**NetBufferListInfo** \[ **TcpRecvSegCoalesceInfo**中 \] 。**DupAckCount**成员。 上面的第一个流程图说明了如何计算此值。
+- 重复的确认计数必须存储到 **NetBufferListInfo** \[ **TcpRecvSegCoalesceInfo** 中 \] 。**DupAckCount** 成员。 上面的第一个流程图说明了如何计算此值。
 
-- 当带有 TCP 时间戳选项的段合并在**NetBufferListInfo**一起时， \[ **RscTcpTimestampDelta** \] 必须用与 SCU 组成的合并段序列中的最早和最晚 TCP 时间戳值之间的绝对增量来填充 NetBufferListInfo RscTcpTimestampDelta。 SCU 本身应包含合并段序列中看到的最新 TCP 时间戳值。
+- 当带有 TCP 时间戳选项的段合并在 **NetBufferListInfo** 一起时， \[ **RscTcpTimestampDelta** \] 必须用与 SCU 组成的合并段序列中的最早和最晚 TCP 时间戳值之间的绝对增量来填充 NetBufferListInfo RscTcpTimestampDelta。 SCU 本身应包含合并段序列中看到的最新 TCP 时间戳值。
 
-当且仅当**CoalescedSegCount**成员大于零时，才会解释**DupAckCount**和**RscTcpTimestampDelta**成员。 如果 **CoalescedSegCount** 为零，则会将段视为未合并的非 RSC 段。
+当且仅当 **CoalescedSegCount** 成员大于零时，才会解释 **DupAckCount** 和 **RscTcpTimestampDelta** 成员。 如果 **CoalescedSegCount** 为零，则会将段视为未合并的非 RSC 段。
 
 有关 **NetBufferListInfo** 成员内容的详细信息，请参阅 " [**ndis \_ 网络 \_ 缓冲区 \_ 列表 \_ 信息**](/windows-hardware/drivers/ddi/ndis/ne-ndis-_ndis_net_buffer_list_info) " 和 " [**ndis \_ RSC \_ NBL \_ info**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_rsc_nbl_info)"。
 

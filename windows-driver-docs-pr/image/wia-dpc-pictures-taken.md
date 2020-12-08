@@ -1,9 +1,8 @@
 ---
-title: WIA\_DPC\_图片\_录
-description: WIA\_DPC\_图片\_录属性包含的照相机已采取的照片的数量。 WIA 微型驱动程序创建并维护此属性。
-ms.assetid: 594ec2e1-460f-4c80-9251-45631e6ff3cf
+title: 已 \_ 拍摄 WIA DPC \_ 图片 \_
+description: "\"WIA \\_ DPC \\_ 图片 \\_ 拍摄量\" 属性包含照相机拍摄的图片数。 WIA 微型驱动程序创建并维护此属性。"
 keywords:
-- WIA_DPC_PICTURES_TAKEN 成像设备
+- WIA_DPC_PICTURES_TAKEN 图像设备
 topic_type:
 - apiref
 api_name:
@@ -14,24 +13,24 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ee85cebe7ba0701a13f9f527cb34ab7a0d37d7ae
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: da2512c7c7f04c2ecc1fb2ecb2b4526eeebb0034
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63392565"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96791489"
 ---
-# <a name="wiadpcpicturestaken"></a>WIA\_DPC\_图片\_录
+# <a name="wia_dpc_pictures_taken"></a>已 \_ 拍摄 WIA DPC \_ 图片 \_
 
 
-WIA\_DPC\_图片\_录属性包含的照相机已采取的照片的数量。 WIA 微型驱动程序创建并维护此属性。
+"WIA \_ DPC \_ 图片 \_ 拍摄量" 属性包含照相机拍摄的图片数。 WIA 微型驱动程序创建并维护此属性。
 
 ## <span id="ddk_wia_dpc_pictures_taken_si"></span><span id="DDK_WIA_DPC_PICTURES_TAKEN_SI"></span>
 
 
-属性类型：VT\_I4
+属性类型： VT \_ I4
 
-有效值：WIA\_PROP\_NONE
+有效值： WIA " \_ \_ 无"
 
 访问权限：只读
 
@@ -45,12 +44,12 @@ WIA\_DPC\_图片\_录属性包含的照相机已采取的照片的数量。 WIA 
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Version</p></td>
-<td><p>在 Windows Vista 和更高版本操作系统中已过时，并应不再使用。 但是，此属性仍定义 Windows Vista 中与应用程序和用于 Windows Server 2003、 Windows XP 和早期版本的 Windows 设备的兼容性。</p></td>
+<td><p>版本</p></td>
+<td><p>在 Windows Vista 和更高版本的操作系统中已过时，不应再使用。 但是，在 Windows Vista 中仍定义此属性，以与为 Windows Server 2003、Windows XP 和 windows 的早期版本设计的应用程序和设备兼容。</p></td>
 </tr>
 <tr class="even">
-<td><p>Header</p></td>
-<td>Wiadef.h （包括 Wiadef.h）</td>
+<td><p>标头</p></td>
+<td>Wiadef (包含 Wiadef) </td>
 </tr>
 </tbody>
 </table>

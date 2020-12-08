@@ -1,19 +1,18 @@
 ---
 title: 编写流微型驱动程序
 description: 编写流微型驱动程序
-ms.assetid: 83540dff-3774-4197-8ba1-d28e12b4e366
 keywords:
 - Stream.sys 类驱动程序 WDK Windows 2000 内核，写入
 - 流式处理微型驱动程序 WDK Windows 2000 内核，写入
 - 微型驱动程序 WDK Windows 2000 内核流式处理，写入
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6f696582236e644cfb99387a239ddf07da707f63
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: d595a12936c96f7480839efd6ef834fab8936d62
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89192771"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96791018"
 ---
 # <a name="writing-a-stream-minidriver"></a>编写流微型驱动程序
 
@@ -59,7 +58,7 @@ Stream 类驱动程序跟踪微型驱动程序上的每个 pin。 在类驱动�
 
 与所有 WDM 驱动程序一样，微型驱动程序也必须提供 **DriverEntry** 例程。 微型驱动程序的 **DriverEntry** 例程的主要任务是向类驱动程序注册微型驱动程序。
 
-类驱动程序代表微型驱动程序接收所有 i/o 请求。 若要获取完成请求所需的信息，类驱动程序会生成一个流请求块 (SRB) ，并将其传递给 **StrMini*XXX*数据包** 例程之一。 类驱动程序会将对设备的 i/o 请求作为一个整体发送到 [*StrMiniReceiveDevicePacket*](/windows-hardware/drivers/ddi/strmini/nc-strmini-phw_receive_device_srb) 例程。 它将请求发送到 [*StrMiniReceiveStreamDataPacket*](/windows-hardware/drivers/ddi/strmini/nc-strmini-phw_receive_device_srb) () 或 [**StrMiniReceiveStreamControlPacket**](/previous-versions/ff568467(v=vs.85)) () 的其他请求的内核流式处理读取和写入请求。
+类驱动程序代表微型驱动程序接收所有 i/o 请求。 若要获取完成请求所需的信息，类驱动程序会生成一个流请求块 (SRB) ，并将其传递给 **StrMini *XXX* 数据包** 例程之一。 类驱动程序会将对设备的 i/o 请求作为一个整体发送到 [*StrMiniReceiveDevicePacket*](/windows-hardware/drivers/ddi/strmini/nc-strmini-phw_receive_device_srb) 例程。 它将请求发送到 [*StrMiniReceiveStreamDataPacket*](/windows-hardware/drivers/ddi/strmini/nc-strmini-phw_receive_device_srb) () 或 [**StrMiniReceiveStreamControlPacket**](/previous-versions/ff568467(v=vs.85)) () 的其他请求的内核流式处理读取和写入请求。
 
 通常情况下，类驱动程序将其请求排队，并一次将一个传递给微型驱动程序。 微型驱动程序可以选择性地执行自己的同步;然后，微型驱动程序负责将它无法立即处理的请求排队。 有关详细信息，请参阅 [微型驱动程序同步](minidriver-synchronization.md) 。
 

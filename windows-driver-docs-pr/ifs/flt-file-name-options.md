@@ -1,15 +1,14 @@
 ---
 title: FLT_FILE_NAME_OPTIONS
 description: FLT \_ 文件名 \_ \_ 选项
-ms.assetid: 6e21c11e-d2c8-4c57-8225-1fbc365cbbac
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fb192c316d4fc29250a599e2fb7a55dae800254f
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 1e26eb50b8e6ffff708fbef1e491fe1230e05a9a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89065304"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96790647"
 ---
 # <a name="flt_file_name_options"></a>FLT \_ 文件名 \_ \_ 选项
 
@@ -34,7 +33,7 @@ typedef ULONG FLT_FILE_NAME_OPTIONS;
 
 位0到7指示文件格式，可以使用 [**FltGetFileNameFormat**](/previous-versions/ff543030(v=vs.85)) 宏对其进行查询。 有关这些格式的说明，请参阅 [**FLT_FILE_NAME_INFORMATION**](/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_file_name_information)。 当前定义了下列值。
 
-| 值 | 含义 |
+| “值” | 含义 |
 | ----- | ------- |
 | FLT_FILE_NAME_NORMALIZED | 文件的规范化名称。 |
 | FLT_FILE_NAME_OPENED | 打开此文件的句柄时使用的名称。 此名称不规范化。 |
@@ -42,7 +41,7 @@ typedef ULONG FLT_FILE_NAME_OPTIONS;
 
 Bits 8 到15指定筛选器管理器要使用的文件名查询方法，可以使用 [**FltGetFileNameQueryMethod**](/previous-versions/ff543040(v=vs.85)) 宏对其进行查询。 有关这些值的说明，请参阅 [**FltGetFileNameInformation**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltgetfilenameinformation)。 当前定义了下列值。
 
-| 值 | 含义 |
+| “值” | 含义 |
 | ----- | ------- |
 | FLT_FILE_NAME_QUERY_DEFAULT | 如果无法在文件系统中查询文件名，则无需执行任何操作。 否则，请在筛选器管理器的名称缓存中查询文件名信息。 如果在缓存中找不到该名称，则查询文件系统并缓存结果。 |
 | FLT_FILE_NAME_QUERY_CACHE_ONLY | 在筛选器管理器的名称缓存中查询文件名信息。 不查询文件系统。 |
@@ -53,7 +52,7 @@ Bits 8 到15指定筛选器管理器要使用的文件名查询方法，可以�
 
 名称提供程序 minifilters 使用 Bits 24 到31来指定文件名标志。 当前定义了下列值。
 
-| 值 | 含义 |
+| “值” | 含义 |
 | ----- | ------- |
 | FLT_FILE_NAME_REQUEST_FROM_CURRENT_PROVIDER | 名称提供程序微筛选器可以使用此标志来指定名称查询请求应重定向到其自身 (名称提供程序微筛选器) ，而不是堆栈中较低名称提供程序满足此要求。 |
 | FLT_FILE_NAME_DO_NOT_CACHE | 此标志表示不应缓存从此查询检索到的名称。 名称提供程序 minifilters 在执行中间查询以生成名称时使用此标志。 |

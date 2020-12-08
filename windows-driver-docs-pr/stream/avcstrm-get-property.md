@@ -1,9 +1,8 @@
 ---
-title: AVCSTRM\_GET\_PROPERTY
-description: AVCSTRM\_GET\_PROPERTY
-ms.assetid: d53422d3-c591-4ba5-ba85-bd20e2519add
+title: AVCSTRM \_ GET \_ 属性
+description: AVCSTRM \_ GET \_ 属性
 keywords:
-- AVCSTRM_GET_PROPERTY 流式处理媒体设备
+- AVCSTRM_GET_PROPERTY 流媒体设备
 topic_type:
 - apiref
 api_name:
@@ -12,20 +11,20 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6b16185260c50719d7bf8aa1f90e6e42d6f5c126
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: cf9ccce4d1aeb0ab829132c8c682ce948d9fd0b4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63323163"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96792529"
 ---
-# <a name="avcstrmgetproperty"></a>AVCSTRM\_GET\_PROPERTY
+# <a name="avcstrm_get_property"></a>AVCSTRM \_ GET \_ 属性
 
 
 ## <span id="ddk_avcstrm_get_property_ks"></span><span id="DDK_AVCSTRM_GET_PROPERTY_KS"></span>
 
 
-**AVCSTRM\_获取\_属性**当前未实现函数代码。
+当前未实现 **AVCSTRM \_ GET \_ 属性** 函数代码。
 
  
 

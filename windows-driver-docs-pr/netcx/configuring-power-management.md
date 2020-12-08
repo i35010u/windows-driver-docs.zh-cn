@@ -1,17 +1,16 @@
 ---
 title: 配置 NetAdapterCx 电源管理
 description: 配置电源管理
-ms.assetid: 0EAE26D0-C191-422F-8A73-28A71C272D4D
 keywords:
 - NetAdapterCx 配置电源管理，NetCx 配置电源管理
 ms.date: 06/12/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: bb1948a88c93e8030e5abb949295f8ccff9cb012
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: cf42f36b2330b23525738a4cbc92d6b8d2092860
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89215284"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96791431"
 ---
 # <a name="configuring-netadaptercx-power-management"></a>配置 NetAdapterCx 电源管理
 
@@ -171,7 +170,7 @@ EvtDeviceArmWakeFromSx(
 }
 ```
 
-[回到高性能](../wdf/power-up-sequence-for-a-function-or-filter-driver.md)，驱动程序通常会在相应的[*EvtDeviceDisarmWakeFromSx*](/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_disarm_wake_from_sx)和[*EvtDeviceDisarmWakeFromS0*](/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_disarm_wake_from_s0)回调中禁用先前编程的协议电源卸载和唤醒模式。
+[回到高性能](../wdf/power-up-sequence-for-a-function-or-filter-driver.md)，驱动程序通常会在相应的 [*EvtDeviceDisarmWakeFromSx*](/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_disarm_wake_from_sx)和 [*EvtDeviceDisarmWakeFromS0*](/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_disarm_wake_from_s0)回调中禁用先前编程的协议电源卸载和唤醒模式。
 
 ## <a name="reporting-wake-reason"></a>报表唤醒原因
 

@@ -1,15 +1,14 @@
 ---
 title: 将微型驱动程序绑定到 HID 类
 description: 本部分介绍系统提供的 HID 类驱动程序和 HID 微型驱动程序的操作，该操作支持 HIDClass 设备安装程序类中的设备。
-ms.assetid: 2B51E205-8EBB-413A-A317-0923FAB77F0E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 596f46cb81ace78a59d0004021394eccaf320a7b
-ms.sourcegitcommit: 9145bffd4cc3b990a9ebff43b588db6ef2001f5d
+ms.openlocfilehash: 97026d721d884113d721857676c26c8f9a9f0dce
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/09/2020
-ms.locfileid: "89592345"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96791529"
 ---
 # <a name="binding-minidrivers-to-the-hid-class"></a>将微型驱动程序绑定到 HID 类
 

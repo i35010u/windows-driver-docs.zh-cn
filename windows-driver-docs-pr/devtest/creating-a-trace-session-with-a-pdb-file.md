@@ -1,19 +1,18 @@
 ---
 title: 使用 PDB 文件创建跟踪会话
 description: 使用 PDB 文件创建跟踪会话
-ms.assetid: dae78674-3563-4fd5-869b-abd4c13aa202
 keywords:
 - 程序数据库符号文件 WDK
-- WDK 的 PDB 符号文件
+- PDB 符号文件 WDK
 - 符号文件 WDK 软件跟踪
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7d08ac7b33e8fcc72ee185f9ff7ad9d96e40d481
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ecc9a764755d31035865140877b888aa1155d1e6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63381012"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96792367"
 ---
 # <a name="creating-a-trace-session-with-a-pdb-file"></a>使用 PDB 文件创建跟踪会话
 
@@ -21,35 +20,35 @@ ms.locfileid: "63381012"
 ## <span id="ddk_create_a_trace_session_with_a_pdb_file_tools"></span><span id="DDK_CREATE_A_TRACE_SESSION_WITH_A_PDB_FILE_TOOLS"></span>
 
 
-指定跟踪提供程序的最简单方法是查找[PDB 符号文件](pdb-symbol-files.md)包括跟踪提供程序的源代码。 TraceView 可以提取所有 PDB 文件中需要用于跟踪会话的信息。
+指定跟踪提供程序的最简单方法是为包含跟踪提供程序的源代码查找 [PDB 符号文件](pdb-symbol-files.md) 。 TraceView 可以从 PDB 文件中提取跟踪会话所需的所有信息。
 
-### <a name="span-idtocreateatracesessionwithapdbfilespanspan-idtocreateatracesessionwithapdbfilespanto-create-a-trace-session-with-a-pdb-file"></a><span id="to_create_a_trace_session_with_a_pdb_file"></span><span id="TO_CREATE_A_TRACE_SESSION_WITH_A_PDB_FILE"></span>若要使用的 PDB 文件创建跟踪会话
+### <a name="span-idto_create_a_trace_session_with_a_pdb_filespanspan-idto_create_a_trace_session_with_a_pdb_filespanto-create-a-trace-session-with-a-pdb-file"></a><span id="to_create_a_trace_session_with_a_pdb_file"></span><span id="TO_CREATE_A_TRACE_SESSION_WITH_A_PDB_FILE"></span>使用 PDB 文件创建跟踪会话
 
 1.  [启动 TraceView](starting-and-exiting-traceview.md)。
 
-2.  上**文件**菜单上，单击**新建日志会话**。
+2.  在 " **文件** " 菜单上，单击 " **创建新的日志会话**"。
 
-3.  单击**添加提供程序**。
+3.  单击 **“添加提供程序”**。
 
-4.  单击**PDB （调试信息） 文件**，然后键入的路径[PDB 符号文件](pdb-symbol-files.md)跟踪提供程序; 或单击省略号按钮 (**...**) 并导航到该文件。
+4.  单击 " **PDB (调试信息") 文件**"，然后键入跟踪提供程序的 [PDB 符号文件](pdb-symbol-files.md) 的路径;或者，单击省略号 **按钮 ()** 并导航到该文件。
 
-5.  若要添加其他提供程序，请单击**添加提供程序**。 此步骤可选。
+5.  若要添加其他提供程序，请单击 " **添加提供程序**"。 此步骤是可选的。
 
-6.  单击“下一步” 。
+6.  单击 **“下一步”** 。
 
-7.  [选择标志和级别](selecting-flags-and-levels.md)，如果所需的。
+7.  如果需要，请[选择 "标志" 和 "级别](selecting-flags-and-levels.md)"。
 
-8.  [设置会话选项的基本跟踪](setting-basic-trace-session-options.md)，如果所需的。
+8.  如果需要，请[设置基本跟踪会话选项](setting-basic-trace-session-options.md)。
 
-9.  [设置高级跟踪会话选项](setting-advanced-trace-session-options.md)，如果所需的。
+9.  如果需要，请[设置高级跟踪会话选项](setting-advanced-trace-session-options.md)。
 
-10. 单击 **“完成”**。
+10. 单击“完成”。
 
-### <a name="span-idcommentsspanspan-idcommentsspancomments"></a><span id="comments"></span><span id="COMMENTS"></span>注释
+### <a name="span-idcommentsspanspan-idcommentsspancomments"></a><span id="comments"></span><span id="COMMENTS"></span>提出
 
-如果您指定的 PDB 文件不包括所需的跟踪元素，TraceView 将显示"找不到 PDB 文件"错误消息。
+如果指定的 PDB 文件不包括所需的跟踪元素，TraceView 将显示 "找不到 PDB 文件" 错误消息。
 
-如果您使用 TraceView 打开 PDB 文件运行 Windows Server 2003 的计算机上，TraceView 将自动退出。
+如果使用 TraceView 在运行 Windows Server 2003 的计算机上打开 PDB 文件，则 TraceView 会自动退出。
 
  
 

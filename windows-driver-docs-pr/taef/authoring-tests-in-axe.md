@@ -1,15 +1,14 @@
 ---
 title: 使用 AXE 创作测试
 description: 使用 AXE 创作测试
-ms.assetid: B042FE1B-98E4-48ae-BE2C-15C71EC6640A
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ff87e70579a89403434cd91aaa8ff1d6e6d3b52a
-ms.sourcegitcommit: 67efcd26f7be8f50c92b141ccd14c9c68f4412d8
+ms.openlocfilehash: f788fb8d0d882ad62b6ee99078d6a7af964b178b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88902394"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96790961"
 ---
 # <a name="authoring-tests-in-axe"></a>使用 AXE 创作测试
 
@@ -118,7 +117,7 @@ Test Authoring and Execution Framework v2.7 Build 6.2.7918.0 (1320) For x64
 
 ```
 
-此评估会将名为 **AssessmentSample.exe**的简单的现有测试 EXE 打包。 **AssessmentSample.exe** 使用常见约定返回一个成功的进程退出代码，并返回一个非零值以指示失败。
+此评估会将名为 **AssessmentSample.exe** 的简单的现有测试 EXE 打包。 **AssessmentSample.exe** 使用常见约定返回一个成功的进程退出代码，并返回一个非零值以指示失败。
 
 **25-27 行** 告诉 AXE 和 TAEF，exit 值为零表示测试成功，任何其他值表示失败。
 
@@ -169,7 +168,7 @@ Test Authoring and Execution Framework v2.7 Build 6.2.7918.0 (1320) For x64
 38</AxeAssessmentManifest>
 ```
 
-第**25-29 行**演示了如何将 TAEF 标准和自定义元数据应用于 AXE 测试。 " **AxeAssessmentManifest** XML" 节点下的 " **属性** " 节点。 " **属性** " 节点下的单个级别 XML 标记被识别为元数据 (属性) 。 " **属性** " 下的所有单级 XML 标记均被解释为属性名称，其文本值被解释为属性值。 在上面的示例中，" **所有者** " 解释为属性名称，而 " **用户** " 作为属性值。 这些元素中没有文本的 XML 标记被解释为其值等于空字符串的元素 (例如** &lt; SimpleTagWithNoText/ &gt; **) 。 忽略 **属性** 下的多级 XML 标记 (例如，多级标记，如
+第 **25-29 行** 演示了如何将 TAEF 标准和自定义元数据应用于 AXE 测试。 " **AxeAssessmentManifest** XML" 节点下的 " **属性** " 节点。 " **属性** " 节点下的单个级别 XML 标记被识别为元数据 (属性) 。 " **属性** " 下的所有单级 XML 标记均被解释为属性名称，其文本值被解释为属性值。 在上面的示例中，" **所有者** " 解释为属性名称，而 " **用户** " 作为属性值。 这些元素中没有文本的 XML 标记被解释为其值等于空字符串的元素 (例如 **&lt; SimpleTagWithNoText/ &gt;**) 。 忽略 **属性** 下的多级 XML 标记 (例如，多级标记，如
 
 ```cpp
 <VerifyOSVersion>
@@ -294,7 +293,7 @@ TAEF AXE 测试还支持运行时参数。 若要将 TAEF 的运行时参数用�
 
 **行 25-62** 是一些参数定义，用于描述 TAEF 和 AXE 用于将数据传递到评估可执行文件的参数。
 
-最简单的参数定义位于 **26-36 行**。 它包含与清单的 "**描述**" 部分完全相同的必需**说明**部分，如上所述。 然后，会看到定义参数数据类型的 **类型** 标记。  (请参阅 AXE 评估文档以了解所有支持的数据类型。 ) 
+最简单的参数定义位于 **26-36 行**。 它包含与清单的 "**描述**" 部分完全相同的必需 **说明** 部分，如上所述。 然后，会看到定义参数数据类型的 **类型** 标记。  (请参阅 AXE 评估文档以了解所有支持的数据类型。 ) 
 
 可选的 **CommandLineFormat** 部分介绍了如何为评估命令行设置评估参数的格式。 此 XML 节点必须包含一个为有效 .NET 格式字符串的非空字符串。 评估参数值将是传递到格式化程序的唯一对象。 这意味着，格式字符串必须包含一个且只能包含一个索引为零的复合格式项。 一些示例包括：-input {0} 、/affinity： 0x {0，X} 或-InputFile = " {0} "。
 
@@ -304,7 +303,7 @@ TAEF AXE 测试还支持运行时参数。 若要将 TAEF 的运行时参数用�
 
 参数按定义的反向顺序传递到可执行文件-在文件中定义的参数将首先传递到可执行文件。
 
-通过使用 **/p**命令行选项) ，你可以将 TAEF AXE[运行时参数](runtime-parameters.md)测试作为任何其他使用运行时 (参数的 TAEF 测试执行：
+通过使用 **/p** 命令行选项) ，你可以将 TAEF AXE [运行时参数](runtime-parameters.md)测试作为任何其他使用运行时 (参数的 TAEF 测试执行：
 
 ``` syntax
 te AXE.ExplicitRuntimeParameters.Examples.manifest /p:SimpleParameter=Test1 /p:RequiredParameterWithoutDefaultValue=10

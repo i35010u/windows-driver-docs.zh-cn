@@ -1,7 +1,6 @@
 ---
 title: poolfind
-description: Poolfind 扩展在任一非分页或分页内存池查找某个特定集标记的所有实例。
-ms.assetid: 01783b6b-0117-49ca-87ca-bbe3c1b0e730
+description: Poolfind 扩展在非分页或分页的内存池中查找特定池标记的所有实例。
 keywords:
 - poolfind Windows 调试
 ms.date: 05/23/2017
@@ -12,48 +11,48 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 7f50bbfd206f9c1426650220ed09c0cb351d675f
-ms.sourcegitcommit: fee68bc5f92292281ecf1ee88155de45dfd841f5
+ms.openlocfilehash: 921098296bc564bb82760479b3fd86efb1f530e7
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67716849"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96791711"
 ---
 # <a name="poolfind"></a>!poolfind
 
 
-**！ Poolfind**扩展在任一非分页或分页内存池查找某个特定集标记的所有实例。
+**！ Poolfind** 扩展在非分页或分页的内存池中查找特定池标记的所有实例。
 
 ```dbgcmd
 !poolfind TagString [PoolType] 
 !poolfind TagValue [PoolType] 
 ```
 
-## <a name="span-idddkpoolfinddbgspanspan-idddkpoolfinddbgspanparameters"></a><span id="ddk__poolfind_dbg"></span><span id="DDK__POOLFIND_DBG"></span>参数
+## <a name="span-idddk__poolfind_dbgspanspan-idddk__poolfind_dbgspanparameters"></a><span id="ddk__poolfind_dbg"></span><span id="DDK__POOLFIND_DBG"></span>参数
 
 
-<span id="_______TagString______"></span><span id="_______tagstring______"></span><span id="_______TAGSTRING______"></span> *TagString*   
-指定的池标记。 *TagString*是区分大小写的 ASCII 字符串。 星号 (\*) 可以用于表示任意数量的字符; 问号 （？） 可以用于表示一个字符。 除非使用一个星号，否则*TagString*必须是长度为四个字符。
+<span id="_______TagString______"></span><span id="_______tagstring______"></span><span id="_______TAGSTRING______"></span>*TagString*   
+指定池标记。 *TagString* 是一个区分大小写的 ASCII 字符串。 星号 (\*) 可用于表示任意数量的字符; 问号 (？ ) 可以用来精确表示一个字符。 除非使用星号，否则 *TagString* 的长度必须正好为四个字符。
 
-<span id="_______TagValue______"></span><span id="_______tagvalue______"></span><span id="_______TAGVALUE______"></span> *TagValue*   
-指定的池标记。 *TagValue*必须以"0x"开头，即使默认基数为 16。 如果此参数以与任何其他值 （包括"0x"），则它将解释为 ASCII 标记字符串。
+<span id="_______TagValue______"></span><span id="_______tagvalue______"></span><span id="_______TAGVALUE______"></span>*TagValue*   
+指定池标记。 即使默认基数为16， *TagValue* 也必须以 "0x" 开头。 如果此参数以任何其他值开头 (包括 "0X" ) 它将被解释为 ASCII 标记字符串。
 
-<span id="_______PoolType______"></span><span id="_______pooltype______"></span><span id="_______POOLTYPE______"></span> *PoolType*   
+<span id="_______PoolType______"></span><span id="_______pooltype______"></span><span id="_______POOLTYPE______"></span>*PoolType*   
 指定要搜索的池的类型。 允许使用以下值：
 
 <span id="0"></span>0  
-指定非分页的内存池。 这是默认设置。
+指定非分页内存池。 这是默认值。
 
 <span id="1"></span>1  
-指定分页的内存池。
+指定分页内存池。
 
 <span id="2"></span>2  
-指定特殊的池。
+指定特殊池。
 
 <span id="4"></span>4  
-指定的会话池。
+指定会话池。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 <table>
 <colgroup>
@@ -74,18 +73,18 @@ ms.locfileid: "67716849"
 
  
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-内存池和池标记有关的信息，请参阅 Windows Driver Kit (WDK) 文档和*Microsoft Windows Internals*、 Mark Russinovich 和 David solomon 合著的。
+有关内存池和池标记的信息，请参阅 Windows 驱动程序工具包 (WDK) 文档和 *Microsoft Windows 内部*，并将 Russinovich 和 David 所罗门群岛标记为。
 
 <a name="remarks"></a>备注
 -------
 
-此命令可能需要大量的时间来执行，具体取决于必须要搜索的池内存大小。 若要加快此执行，增加使用的 COM 端口速度[ **CTRL + A （切换波特率）** ](ctrl-a--toggle-baud-rate-.md)密钥，或使用[ **.cache （设置缓存大小）** ](-cache--set-cache-size-.md)命令来增加缓存大小 （为约为 10 MB)。
+执行此命令可能需要很长时间，具体取决于必须搜索的池内存大小。 若要加快此执行速度，请使用 [**CTRL + A (切换波特率)**](ctrl-a--toggle-baud-rate-.md) 键，或使用 [**Cache (设置缓存大小)**](-cache--set-cache-size-.md) 命令将缓存大小增加 (约 10 MB) 。
 
-池标记是相同的标记传递给**ExAllocate**_Xxx_系列的例程。
+池标记是传递到 **ExAllocate**_Xxx_ 系列例程的同一标记。
 
-下面是一个示例。 搜索整个非分页缓冲的池，然后搜索页面缓冲的池，但命令终止之前完成 （后一小时的操作）：
+示例如下。 搜索整个非分页池，然后搜索页面缓冲池，但在完成后 () 执行一小时后终止该命令：
 
 ```dbgcmd
 kd> !poolfind SeSd 0

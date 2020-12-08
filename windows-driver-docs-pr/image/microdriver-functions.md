@@ -1,15 +1,14 @@
 ---
 title: 微驱动程序函数
 description: 微驱动程序函数
-ms.assetid: 491b954a-8ffa-4899-8c7d-0aee409f4742
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a5ec860e312ffe3be5ec3adecad425ac67f675d6
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: ceedf2a3f4e31f1e6c3fe37fc3536eb5cbc2df84
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105602"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96792235"
 ---
 # <a name="microdriver-functions"></a>微驱动程序函数
 
@@ -27,7 +26,7 @@ WIA 平板驱动程序通过调用 WIA microdriver 函数来响应来自 WIA 服
 <thead>
 <tr class="header">
 <th>函数</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>

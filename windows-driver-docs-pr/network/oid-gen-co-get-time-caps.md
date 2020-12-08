@@ -1,17 +1,16 @@
 ---
 title: OID_GEN_CO_GET_TIME_CAPS
-description: 本主题介绍 OID_GEN_CO_GET_TIME_CAPS 对象标识符（OID）。
-ms.assetid: 6381cfc4-b070-4bd4-90de-6de8a4656cbb
+description: 本主题介绍) OID_GEN_CO_GET_TIME_CAPS 对象标识符 (OID。
 keywords:
 - OID_GEN_CO_GET_TIME_CAPS
 ms.date: 11/02/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 230cad6138b9cc7f29eabac631eb0bcc4299f288
-ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
+ms.openlocfilehash: bb7627bd5f554e9f6c1f11840f0cf012e82245af
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85916618"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96792653"
 ---
 # <a name="oid_gen_co_get_time_caps"></a>OID_GEN_CO_GET_TIME_CAPS
 
@@ -48,7 +47,7 @@ TIMED_SEND_CAPABLE
 如果设置此设置，则表示 NIC 可以根据本地时间来计划要传输的数据包。 协议可以使用 NDIS_SET_PACKET_TIME_TO_SEND 设置数据包描述符的带外数据块中的 TimeToSend 时间戳。 设置时间戳不影响数据包的实际传输时间;相反，时间戳用于记录保留。 协议驱动程序可以使用时间戳来确定完成发送 paket 所用的时间。
 
 TIME_STAMP_CAPABLE  
-如果设置此项，则表示 NIC 可以标记（在传出数据包的相应字段中）传输数据包的第一个字节的时间，以及 NIC 可从入站数据包的同一字段中检索该时间。
+如果设置，则表示 NIC 可以在传出数据包的相应字段中标记 () 发送数据包的第一个字节的时间，NIC 可以从入站数据包的同一个字段中检索此时间。
 
 **ClockPrecision**  
 指定各部分中的时钟精度（以百万为单位）。 若要将此信息视为有效，必须设置 CLOCK_PRECISION 标志。
@@ -62,5 +61,5 @@ TIME_STAMP_CAPABLE
 
 ## <a name="requirements"></a>要求
 
-**版本**： Windows Vista 和更高版本的**标头**： Ntddndis （包括 Ndis .h）
+**版本**： Windows Vista 和更高版本的 **标头**： Ntddndis (包括 Ndis .h) 
 

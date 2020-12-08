@@ -1,15 +1,14 @@
 ---
 title: 跨计算机执行
 description: 跨计算机执行
-ms.assetid: FDDD2320-E853-45a8-9820-12FB16365B9C
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5a668d055641c12ad08c2d65898784c3b2c9242f
-ms.sourcegitcommit: 0c3cab853b0b75149b7604eef03275f997792a84
+ms.openlocfilehash: 7aa0cd6151759b57410daf50137c47e1328df1de
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96157289"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96790863"
 ---
 # <a name="cross-machine-execution"></a>跨计算机执行
 

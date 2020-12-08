@@ -1,7 +1,6 @@
 ---
 title: Windows 2000 内核流式处理模型设计指南
 description: Windows 2000 内核流式处理模型设计指南
-ms.assetid: 7cc080ad-ce4a-4a08-917a-d9e4a002f4fa
 keywords:
 - 流式处理媒体 WDK，Windows 2000 内核流式处理模型
 - 媒体流 WDK，Windows 2000 内核流式处理模型
@@ -10,12 +9,12 @@ keywords:
 - 内核流式处理模型 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9addab5a09e5f758da0a12953712f2eb23c27bff
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 0b3f15bf195a14de536d5867b73d333220be641b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89192781"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96791041"
 ---
 # <a name="windows-2000-kernel-streaming-model-design-guide"></a>Windows 2000 内核流式处理模型设计指南
 

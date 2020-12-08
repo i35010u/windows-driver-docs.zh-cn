@@ -1,7 +1,6 @@
 ---
 title: IRP_MJ_DIRECTORY_CONTROL 上的安全检查
 description: 描述文件系统对 IRP_MJ_DIRECTORY_CONTROL 进行安全检查的方式
-ms.assetid: 27c2de1c-5550-4211-97cc-4c66f18d3b99
 keywords:
 - IRP_MJ_DIRECTORY_CONTROL
 - 安全 WDK 文件系统，添加安全检查
@@ -9,12 +8,12 @@ keywords:
 - 目录控制 WDK 文件系统
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b27ccfafbc49ebcc9b1014bfba663bd6fc77d29d
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: c0ad55c8732fd21fbf9abbe8dfd37f9b37456829
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89065016"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96792255"
 ---
 # <a name="security-checks-on-irp_mj_directory_control"></a>IRP_MJ_DIRECTORY_CONTROL 上的安全检查
 
@@ -22,11 +21,11 @@ ms.locfileid: "89065016"
 
 通过文件系统运行库支持目录更改通知，文件系统允许文件系统指定一个回调函数，以便在返回目录更改通知之前执行遍历检查。 此回调函数使用大量参数。 出于安全考虑，以下三个参数非常重要：
 
-- *NotifyContext* 是更改通知处于活动状态的目录的上下文。 这将是传递给对[**FsRtlNotifyFullChangeDirectory**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtlnotifyfullchangedirectory)的调用的*FsContext*参数。
+- *NotifyContext* 是更改通知处于活动状态的目录的上下文。 这将是传递给对 [**FsRtlNotifyFullChangeDirectory**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtlnotifyfullchangedirectory)的调用的 *FsContext* 参数。
 
-- *TargetContext* 是已更改的文件的上下文。 这将是文件系统在调用[**fsrtlnotifyfilterreportchange 并且**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtlnotifyfilterreportchange)时传递的*TargetContext*参数。
+- *TargetContext* 是已更改的文件的上下文。 这将是文件系统在调用 [**fsrtlnotifyfilterreportchange 并且**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtlnotifyfilterreportchange)时传递的 *TargetContext* 参数。
 
-- *SubjectContext* 是请求目录更改通知的线程的安全上下文。 这是文件系统在对 **FsRtlNotifyFullChangeDirectory**进行目录更改通知调用时捕获的主题安全上下文。
+- *SubjectContext* 是请求目录更改通知的线程的安全上下文。 这是文件系统在对 **FsRtlNotifyFullChangeDirectory** 进行目录更改通知调用时捕获的主题安全上下文。
 
 发生更改时，文件系统会向文件系统运行时库指出这一点。 文件系统运行时库将调用文件系统提供的回调函数，以验证是否可以向调用方提供有关更改的信息。 请注意，如果调用方需要检查，则文件系统只需注册回调函数。 如果调用方未启用 SeChangeNotifyPrivilege （如调用方的安全令牌中的 TOKEN_HAS_TRAVERSE_PRIVILEGE 所示），则会出现这种情况。
 

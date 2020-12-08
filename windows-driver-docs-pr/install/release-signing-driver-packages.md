@@ -1,7 +1,6 @@
 ---
 title: 对驱动程序包进行发布签名
 description: 对驱动程序包进行发布签名
-ms.assetid: 57125c3b-55f0-4b60-b4d9-1408e26faccb
 keywords:
 - 驱动程序签名 WDK，驱动程序包
 - 对驱动程序进行签名 WDK，驱动程序包
@@ -14,17 +13,17 @@ keywords:
 - release 签名 WDK，关于发布签名
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 02145b439fb895ab7c6ef049fb6f6bd964f9b13c
-ms.sourcegitcommit: a44ade167cdfb541cf1818e9f9e3726f23f90b66
+ms.openlocfilehash: da37939cb3150b8092bc9ec19d10140bc7b9b7bc
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94361507"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96791727"
 ---
 # <a name="release-signing-driver-packages"></a>对驱动程序包进行发布签名
 
 
-在本部分中，在 Windows Vista 和更高版本的 Windows 上对发布的驱动程序进行签名的计算机称为 *签名计算机* 。 签名计算机必须运行 Windows XP SP2 或更高版本的 Windows 操作系统。 例如，可在运行 Windows Vista 的计算机上登录用于 Windows 7 上的发布的驱动程序。
+在本部分中，在 Windows Vista 和更高版本的 Windows 上对发布的驱动程序进行签名的计算机称为 *签名计算机*。 签名计算机必须运行 Windows XP SP2 或更高版本的 Windows 操作系统。 例如，可在运行 Windows Vista 的计算机上登录用于 Windows 7 上的发布的驱动程序。
 
 此外，签名计算机必须安装 [驱动程序签名工具](../devtest/tools-for-signing-drivers.md) 。
 
@@ -106,7 +105,7 @@ PnP 设备安装签名要求不适用于非 PnP 驱动程序。
 
 2.  [验证驱动程序文件的签名](verifying-the-signature-of-a-release-signed-driver-file.md)。
 
-若要为非 PnP 内核模式驱动程序（不是 *启动启动驱动程序* ）发布目录文件，请执行以下步骤：
+若要为非 PnP 内核模式驱动程序（不是 *启动启动驱动程序*）发布目录文件，请执行以下步骤：
 
 1.  [为非 PnP 驱动程序创建目录文件](creating-a-catalog-file-for-a-non-pnp-driver-package.md)。
 

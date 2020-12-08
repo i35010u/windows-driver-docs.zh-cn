@@ -1,16 +1,15 @@
 ---
 title: OID_TCP_RSC_STATISTICS
 description: 作为查询，NDIS 和过量驱动程序或用户模式应用程序使用 OID_TCP_RSC_STATISTICS OID 来获取 (RSC) 小型端口适配器统计信息的接收段合并。
-ms.assetid: CD289868-1925-4222-8A4D-359118124325
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_TCP_RSC_STATISTICS 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: f2c86001332f6e751086ea696956383f56fd8c8f
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 0107f8116dd298b729a421a0d4a01cd0cbdfb6a0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89218355"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96791383"
 ---
 # <a name="oid_tcp_rsc_statistics"></a>OID \_ TCP \_ RSC \_ 统计信息
 
@@ -22,7 +21,7 @@ ms.locfileid: "89218355"
 <a name="remarks"></a>备注
 -------
 
-[**Ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的**InformationBuffer**成员包含[**ndis \_ RSC \_ 统计 \_ 信息**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_rsc_statistics_info)结构。
+[**Ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的 **InformationBuffer** 成员包含 [**ndis \_ RSC \_ 统计 \_ 信息**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_rsc_statistics_info)结构。
 
 微型端口驱动程序必须在 [**NDIS \_ RSC \_ 统计 \_ 信息**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_rsc_statistics_info) 结构的成员中维护统计信息，如下所示：
 
@@ -51,7 +50,7 @@ ms.locfileid: "89218355"
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)

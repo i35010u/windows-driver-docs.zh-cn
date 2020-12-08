@@ -1,14 +1,14 @@
 ---
 title: 图像处理设备属性
 description: 图像处理设备属性
-ms.assetid: f41040c5-0eac-450d-b532-9165c543cc1a
 ms.date: 07/06/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 01849860eda10d3a95e9d8a28465bf8540a763f9
-ms.sourcegitcommit: 40d7d538756767d26bbda636589f614f85a6fab3
+ms.openlocfilehash: 40ccba565a3f1d67eebc2b98c95af7ec93abae5e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/06/2020
-ms.locfileid: "86020042"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96792869"
 ---
 # <a name="imaging-device-properties"></a>图像处理设备属性
 
@@ -16,4 +16,4 @@ ms.locfileid: "86020042"
 
 同样，还可以通过特征来描述设备生成的数据或存储的数据。 例如，扫描程序生成的数据可以按行上的像素数和每个像素的位数来进行描述。
 
-在 WIA 中，描述设备和数据的特性称为*属性*。 集中存在属性;WIA 微型驱动程序将它们保留在 WIA 驱动程序项中。
+在 WIA 中，描述设备和数据的特性称为 *属性*。 集中存在属性;WIA 微型驱动程序将它们保留在 WIA 驱动程序项中。

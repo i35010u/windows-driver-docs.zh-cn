@@ -1,9 +1,8 @@
 ---
-title: KSPROPERTY\_GM\_GRAPHMANAGER
-description: KSPROPERTY\_GM\_GRAPHMANAGER 属性当前不支持。
-ms.assetid: cd41da34-f91b-4a68-859f-ca06e8944c63
+title: KSPROPERTY \_ GM \_ GRAPHMANAGER
+description: '\_ \_ 当前不支持 KSPROPERTY GM GRAPHMANAGER 属性。'
 keywords:
-- KSPROPERTY_GM_GRAPHMANAGER 流式处理媒体设备
+- KSPROPERTY_GM_GRAPHMANAGER 流媒体设备
 topic_type:
 - apiref
 api_name:
@@ -12,17 +11,17 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5283b7452ed14249dcc47a675d9f9828d4bb3aa9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 102f993078c9159ee857be09cfc2c252b7adbf64
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63363989"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96792489"
 ---
-# <a name="kspropertygmgraphmanager"></a>KSPROPERTY\_GM\_GRAPHMANAGER
+# <a name="ksproperty_gm_graphmanager"></a>KSPROPERTY \_ GM \_ GRAPHMANAGER
 
 
-KSPROPERTY\_GM\_GRAPHMANAGER 属性当前不支持。
+\_ \_ 当前不支持 KSPROPERTY GM GRAPHMANAGER 属性。
 
 <a name="requirements"></a>要求
 ------------
@@ -34,7 +33,7 @@ KSPROPERTY\_GM\_GRAPHMANAGER 属性当前不支持。
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Version</p></td>
+<td><p>版本</p></td>
 <td><p>不支持。</p></td>
 </tr>
 </tbody>

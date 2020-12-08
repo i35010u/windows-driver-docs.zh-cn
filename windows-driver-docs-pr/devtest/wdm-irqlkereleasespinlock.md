@@ -1,7 +1,6 @@
 ---
 title: 'IrqlKeReleaseSpinLock 规则 (wdm) '
 description: IrqlKeReleaseSpinLock 规则指定仅当驱动程序以 IRQL 调度级别运行时，驱动程序才调用 KeReleaseSpinLock \_ 。
-ms.assetid: 4abc4010-c653-44ab-9eaa-621d0ed2f354
 ms.date: 05/21/2018
 keywords:
 - 'IrqlKeReleaseSpinLock 规则 (wdm) '
@@ -12,19 +11,19 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: d28acd3f9d8959eb27541312228a54235bfd3fb0
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 23138e791b9d8c61a15f3b0b3bbc280abca693a2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90101686"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96791827"
 ---
 # <a name="irqlkereleasespinlock-rule-wdm"></a>IrqlKeReleaseSpinLock 规则 (wdm) 
 
 
-**IrqlKeReleaseSpinLock**规则指定仅当驱动程序在 IRQL = 调度级别执行时才调用[**KeReleaseSpinLock**](/windows-hardware/drivers/ddi/wdm/nf-wdm-kereleasespinlock) \_ 。
+**IrqlKeReleaseSpinLock** 规则指定仅当驱动程序在 IRQL = 调度级别执行时才调用 [**KeReleaseSpinLock**](/windows-hardware/drivers/ddi/wdm/nf-wdm-kereleasespinlock) \_ 。
 
-此规则还指定对**KeReleaseSpinLock**的调用中*NewIrql*参数的值等于在调用[**KeAcquireSpinLock**](/windows-hardware/drivers/ddi/wdm/nf-wdm-keacquirespinlock)之前执行驱动程序的 IRQL。  (此值也是**KeAcquireSpinLock**提供的*OldIrql*参数的值。 ) 
+此规则还指定对 **KeReleaseSpinLock** 的调用中 *NewIrql* 参数的值等于在调用 [**KeAcquireSpinLock**](/windows-hardware/drivers/ddi/wdm/nf-wdm-keacquirespinlock)之前执行驱动程序的 IRQL。  (此值也是 **KeAcquireSpinLock** 提供的 *OldIrql* 参数的值。 ) 
 
 **驱动程序模型： WDM**
 

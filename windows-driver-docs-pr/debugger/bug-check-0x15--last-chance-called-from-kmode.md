@@ -1,7 +1,6 @@
 ---
 title: Bug 检查 0x15 LAST_CHANCE_CALLED_FROM_KMODE
-description: LAST_CHANCE_CALLED_FROM_KMODE bug 检查具有 0x00000015 值。检查此错误极少出现。
-ms.assetid: e0839e78-ba14-484c-9570-012a11896ad0
+description: LAST_CHANCE_CALLED_FROM_KMODE bug 检查的值为0x00000015。此 bug 检查很少出现。
 keywords:
 - Bug 检查 0x15 LAST_CHANCE_CALLED_FROM_KMODE
 - LAST_CHANCE_CALLED_FROM_KMODE
@@ -13,22 +12,22 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: b48cb59a74cd971d6432950b7381e2bb906613b5
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: ed59bfb994240d9168a6e3e6882b63b8393e7d97
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67520070"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96790693"
 ---
-# <a name="bug-check-0x15-lastchancecalledfromkmode"></a>Bug 检查 0x15：最后一个\_机会\_调用\_FROM\_KMODE
+# <a name="bug-check-0x15-last_chance_called_from_kmode"></a>Bug 检查0x15：上一次 \_ \_ 调用 \_ \_ KMODE
 
 
-上次\_机会\_调用\_FROM\_KMODE bug 检查的值为 0x00000015。
+\_ \_ \_ 从 KMODE bug 检查中调用的最后一个机会 \_ 值为0x00000015。
 
-检查此错误极少出现。
+此 bug 检查很少出现。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题面向程序员。 如果您是在使用计算机时收到蓝屏错误代码的客户，请参阅[蓝屏错误疑难解答](https://www.windows.com/stopcode)。
 
 
  

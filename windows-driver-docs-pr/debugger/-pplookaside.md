@@ -1,7 +1,6 @@
 ---
 title: pplookaside
 description: Pplookaside 命令显示目标计算机中的处理器的后备链表列表。
-ms.assetid: AA5DD47A-849F-462E-AFA6-E743E9737E1A
 keywords:
 - pplookaside Windows 调试
 ms.date: 05/23/2017
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 104312a7d0d6966f5fa27394b510e1a547076ca1
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: a96ee13acb383b9aa90e283f326b00b9cefa1209
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89215363"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96791689"
 ---
 # <a name="pplookaside"></a>!pplookaside
 
 
-**！ Pplookaside**命令显示目标计算机中的处理器的[后备链表列表](../kernel/using-lookaside-lists.md)。
+**！ Pplookaside** 命令显示目标计算机中的处理器的 [后备链表列表](../kernel/using-lookaside-lists.md)。
 
 ```dbgcmd
 !pplookaside <address>

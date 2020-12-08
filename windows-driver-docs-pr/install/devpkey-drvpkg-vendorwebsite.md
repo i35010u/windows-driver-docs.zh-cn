@@ -1,7 +1,6 @@
 ---
 title: DEVPKEY_DrvPkg_VendorWebSite
 description: DEVPKEY_DrvPkg_VendorWebSite
-ms.assetid: 5a460073-64ec-4f86-af18-ddd065ed03b1
 keywords:
 - DEVPKEY_DrvPkg_VendorWebSite 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 4d8c0eb8229059377ddf572508c2b967badbce3f
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: d9a615966c9c800d0e51a9e3e45829fd9f898646
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90715764"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96791775"
 ---
 # <a name="devpkey_drvpkg_vendorwebsite"></a>DEVPKEY_DrvPkg_VendorWebSite
 

@@ -1,7 +1,6 @@
 ---
 title: DEVPROP_TYPE_STRING
-description: 在 Windows Vista 和更高版本的 Windows，DEVPROP_TYPE_STRING 属性类型表示，该值指示数据类型为以 NULL 结尾的 Unicode 字符串的基本数据类型标识符。
-ms.assetid: b578fa1f-b55d-4ad2-bdc4-a796b5d7b811
+description: 在 Windows Vista 和更高版本的 Windows 中，DEVPROP_TYPE_STRING 属性类型表示数据类型为 NULL 终止的 Unicode 字符串的基本数据类型标识符。
 keywords:
 - DEVPROP_TYPE_STRING 设备和驱动程序安装
 topic_type:
@@ -14,30 +13,30 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 4c835ce41382e712c5c652d823e0f9f5f3bfb2c2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a81442be25d5b6a9ce4a3c5eae8c500611a44b5d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331277"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96791467"
 ---
-# <a name="devproptypestring"></a>DEVPROP_TYPE_STRING
+# <a name="devprop_type_string"></a>DEVPROP_TYPE_STRING
 
 
-在 Windows Vista 和更高版本的 Windows，DEVPROP_TYPE_STRING 属性类型表示，该值指示数据类型为以 NULL 结尾的 Unicode 字符串的基本数据类型标识符。
+在 Windows Vista 和更高版本的 Windows 中，DEVPROP_TYPE_STRING 属性类型表示数据类型为 NULL 终止的 Unicode 字符串的基本数据类型标识符。
 
 <a name="remarks"></a>备注
 -------
 
-可以仅与组合 DEVPROP_TYPE_STRING [ **DEVPROP_TYPEMOD_LIST** ](devprop-typemod-list.md)属性数据类型修饰符。
+DEVPROP_TYPE_STRING 只能与 [**DEVPROP_TYPEMOD_LIST**](devprop-typemod-list.md) 的属性数据类型修饰符组合。
 
-### <a name="setting-a-property-of-this-type"></a>设置此属性类型
+### <a name="setting-a-property-of-this-type"></a>设置此类型的属性
 
-若要设置其基本数据类型为 DEVPROP_TYPE_STRING 的属性，调用对应**SetupDiSet * Xxx*** 属性函数，设置函数的输入的参数，如下所示：
+若要设置其基本数据类型为 DEVPROP_TYPE_STRING 的属性，请调用相应的 **SetupDiSet * Xxx*** 属性函数，并按如下所示设置函数输入参数：
 
--   设置*PropertyType* DEVPROP_TYPE_STRING，参数设置*PropertyBuffer*参数指向的缓冲区，其中包含以 NULL 结尾的 Unicode 字符串，并设置*PropertyBufferSize*参数大小 （字节） 包括 NULL 终止符的字符串。
+-   将 *PropertyType* 参数设置为 DEVPROP_TYPE_STRING，将 *PropertyBuffer* 参数设置为指向包含以 NULL 结尾的 Unicode 字符串的缓冲区的指针，并将 *PropertyBufferSize* 参数设置为字符串的大小（以字节为单位），包括 null 终止符。
 
--   根据需要设置其他函数输入的参数设置的属性。
+-   根据需要设置其他函数输入参数来设置属性。
 
 <a name="requirements"></a>要求
 ------------
@@ -49,8 +48,8 @@ ms.locfileid: "63331277"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>Header</p></td>
-<td align="left">Devpropdef.h （包括 Devpropdef.h）</td>
+<td align="left"><p>标头</p></td>
+<td align="left">Devpropdef (包含 Devpropdef) </td>
 </tr>
 </tbody>
 </table>

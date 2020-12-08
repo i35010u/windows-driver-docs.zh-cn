@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ BDA \_ 内 \_ FEC \_ 速率
 description: 客户端使用 KSPROPERTY \_ BDA \_ 内层 \_ FEC \_ 速率来控制用于内部前向纠错的二进制卷积方案 (FEC) 类型的解调器节点。
-ms.assetid: d5bf0ce0-d383-431f-85de-3d00f4831619
 keywords:
 - KSPROPERTY_BDA_INNER_FEC_RATE 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e55e232535aa37ff40a5d65c2e8b590af1bc7918
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 9cea0219fa410b76ba436b02ae63125346840099
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89185731"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96792099"
 ---
 # <a name="ksproperty_bda_inner_fec_rate"></a>KSPROPERTY \_ BDA \_ 内 \_ FEC \_ 速率
 
@@ -84,7 +83,7 @@ KSP **NodeId** \_ 节点的节点标识号指定了解调器节点的标识符�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**BinaryConvolutionCodeRate**](/previous-versions/windows/desktop/mstv/binaryconvolutioncoderate)

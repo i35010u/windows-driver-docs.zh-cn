@@ -1,17 +1,16 @@
 ---
 title: 处理显示设备的丢失
 description: 处理显示设备的丢失
-ms.assetid: 7af8d7e6-733d-4976-a516-7b41fa74dd5d
 keywords:
 - OPM WDK 显示，设备丢失
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2982b41a12f40ac495ae6411b47f950ea5e82465
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 6ed0ceecc70f0776d79b222fd666c413d7d438e8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89066702"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96791793"
 ---
 # <a name="handling-the-loss-of-a-display-device"></a>处理显示设备的丢失
 

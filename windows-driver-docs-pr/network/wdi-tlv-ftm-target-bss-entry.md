@@ -1,18 +1,17 @@
 ---
 title: WDI_TLV_FTM_TARGET_BSS_ENTRY
 description: WDI_TLV_FTM_TARGET_BSS_ENTRY 是一种 TLV，其中包含用于精确计时度量的 BSS 目标的信息 (应完成的 INTERNAL.H) 过程。
-ms.assetid: 04C996C7-8207-4363-A990-5CF39B0333F8
 ms.date: 02/13/2019
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_FTM_TARGET_BSS_ENTRY 网络驱动程序
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 6f9a8ed5945ab128cfb981b727352af6e997da2d
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: f70f895aa9624338c92b22cda08e3c58b194ccae
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89213714"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96791313"
 ---
 # <a name="wdi_tlv_ftm_target_bss_entry"></a>WDI_TLV_FTM_TARGET_BSS_ENTRY
 
@@ -24,7 +23,7 @@ ms.locfileid: "89213714"
 
 0x162
 
-## <a name="length"></a>Length
+## <a name="length"></a>长度
 
 Sum (包含所有 TLVs 的大小的) 字节。
 

@@ -1,7 +1,6 @@
 ---
 title: 轴选择
 description: 轴选择
-ms.assetid: 5ba78609-d5e7-44b1-86e8-5a677a19aadd
 keywords:
 - 操纵杆 WDK HID，轴
 - 虚拟游戏杆驱动程序 WDK HID、轴
@@ -9,12 +8,12 @@ keywords:
 - 轴 WDK 操纵杆
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e3901b50184e88e0b759a66a2311e32c5ac9f206
-ms.sourcegitcommit: 8835925c6a88efc301dc5e8bd9bca87082416eb6
+ms.openlocfilehash: 5d370976b98b58672afde10c25815ba413d864ee
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/18/2020
-ms.locfileid: "90777601"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96791533"
 ---
 # <a name="axis-selection"></a>轴选择
 
@@ -168,7 +167,7 @@ SetDataFormat 使用这些 Guid 将请求的数据格式与设备对象匹配。
 
 Winmm.dll 轴通过 DirectX 8.0 接口以不同方式映射，如下所述。
 
-**注意**   尽管 JoyHID 尚未映射用于方向盘、加速和刹车的车辆控制用途，但它确实会检查方向盘的使用情况，如果找到，它会将设备视为 Winmm.dll car 控制器。 而且，JoyHID 的 DirectX 8.0 版本会将任何 IHV 提供的 Winmm.dll 控制器类型标志复制 (游戏工作 \_ 流服务 \_ ISYOKE、游戏工作流服务 \_ \_ ISGAMEPAD、游戏 \_ hws \_ ISCARCTRL 或游戏工作流服务 \_ \_ ISHEADTRACKER) 和按钮计数，因此，这些类型可由 IHV 在 OEMData 注册表值中进行设置。
+**注意**   尽管 JoyHID 尚未映射用于方向盘、加速和刹车的车辆控制用途，但它确实会检查方向盘的使用情况，如果找到，它会将设备视为 Winmm.dll car 控制器。 而且，JoyHID 的 DirectX 8.0 版本会将任何 IHV 提供的 Winmm.dll 控制器类型标志复制 (游戏工作 \_ 流服务 \_ ISYOKE、游戏工作流服务 \_ \_ ISGAMEPAD、游戏 \_ hws \_ ISCARCTRL 或游戏工作流服务 \_ \_ ISHEADTRACKER) 和按钮计数，因此，这些类型可由 IHV 在 OEMData 注册表值中进行设置。
 
 DirectX 8.0 接口所做的映射不同于旧接口所进行的映射。 下表描述了 DirectX 8.0 接口中的映射。
 

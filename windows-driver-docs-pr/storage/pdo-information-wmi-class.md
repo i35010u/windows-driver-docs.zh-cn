@@ -1,15 +1,14 @@
 ---
 title: PDO \_ 信息 WMI 类
 description: PDO \_ 信息 WMI 类
-ms.assetid: 1a972905-42ea-4cb2-b937-5ed0f287d80a
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 22529bb009e689e927a7022457bb817ed1dd3d07
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 01b77adb637478a39b711925dfc8880381d00c92
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89184387"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96792595"
 ---
 # <a name="pdo_information-wmi-class"></a>PDO \_ 信息 WMI 类
 

@@ -1,7 +1,6 @@
 ---
 title: .kdfiles（设置驱动程序替换映射）
 description: Kdfiles 命令读取文件，并使用其内容作为驱动程序替换图。
-ms.assetid: 3b0ac8c1-f0bd-4878-9303-23d6999650ee
 keywords:
 - 设置驱动程序替换映射 ( kdfiles) 命令
 - 驱动程序替换地图，设置驱动程序替换地图 ( kdfiles) 命令
@@ -14,16 +13,16 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 6498d7920ce6eb0875bca0f1f18923a0735dd8ea
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 2336cc245d2008a635428f5e496f0a04b646b4bd
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89217704"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96792037"
 ---
 # <a name="kdfiles-set-driver-replacement-map"></a>.kdfiles（设置驱动程序替换映射）
 
-**Kdfiles**命令读取文件，并使用其内容作为驱动程序替换图。
+**Kdfiles** 命令读取文件，并使用其内容作为驱动程序替换图。
 
 ```dbgcmd
 .kdfiles MapFile
@@ -43,10 +42,10 @@ ms.locfileid: "89217704"
 将驱动程序替换关联添加到当前关联列表。
 
 <span id="_______OldDriver______"></span><span id="_______olddriver______"></span><span id="_______OLDDRIVER______"></span>*OldDriver*   
-指定目标计算机上先前驱动程序的路径和文件名。 *OldDriver*的语法与**映射**到驱动程序替换文件中的第一行后的语法相同。 有关此语法的详细信息，请参阅 [映射驱动程序文件](mapping-driver-files.md)。
+指定目标计算机上先前驱动程序的路径和文件名。 *OldDriver* 的语法与 **映射** 到驱动程序替换文件中的第一行后的语法相同。 有关此语法的详细信息，请参阅 [映射驱动程序文件](mapping-driver-files.md)。
 
 <span id="_______NewDriver______"></span><span id="_______newdriver______"></span><span id="_______NEWDRIVER______"></span>*NewDriver*   
-指定新驱动程序的路径和文件名。 此驱动程序可以位于主计算机上，也可以位于其他某个网络位置。 *NewDriver*的语法与**映射**到驱动程序替换文件中的第二行的语法相同。 有关此语法的详细信息，请参阅 [映射驱动程序文件](mapping-driver-files.md)。
+指定新驱动程序的路径和文件名。 此驱动程序可以位于主计算机上，也可以位于其他某个网络位置。 *NewDriver* 的语法与 **映射** 到驱动程序替换文件中的第二行的语法相同。 有关此语法的详细信息，请参阅 [映射驱动程序文件](mapping-driver-files.md)。
 
 <span id="_______-s______"></span><span id="_______-S______"></span>**-s**   
 创建一个文件，并将当前的驱动程序替换关联写入该文件。
@@ -89,7 +88,7 @@ ms.locfileid: "89217704"
 
 如果使用不带参数的 **kdfiles** 命令，则调试器将显示当前驱动程序替换映射文件的路径和名称以及替换关联的当前集合。
 
-当你运行此命令时，将读取指定的 *映射*文件。 如果找不到该文件或该文件不包含采用正确格式的文本，则调试器会显示一条消息，指出 "无法加载文件关联"。
+当你运行此命令时，将读取指定的 *映射* 文件。 如果找不到该文件或该文件不包含采用正确格式的文本，则调试器会显示一条消息，指出 "无法加载文件关联"。
 
 如果指定的文件采用正确的驱动程序替换映射文件格式，则调试器会加载文件的内容，并将其用作驱动程序替换映射。 此图将一直保留，直到你退出调试器，或在你发出其他 **的 kdfiles** 命令。
 

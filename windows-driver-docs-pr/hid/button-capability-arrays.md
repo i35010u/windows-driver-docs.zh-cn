@@ -1,7 +1,6 @@
 ---
 title: 按钮功能数组
 description: 按钮功能数组
-ms.assetid: 139324e5-4d46-4d00-9f5a-fd0313fc109a
 keywords:
 - button 功能阵列 WDK HID
 - 阵列 WDK HID
@@ -9,12 +8,12 @@ keywords:
 - 按钮用法 WDK HID
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5e4366d1f56a8e8515512a9038ac64682e9c7358
-ms.sourcegitcommit: 9145bffd4cc3b990a9ebff43b588db6ef2001f5d
+ms.openlocfilehash: 82a24cf072c424d991a7f3f81151838b05de54b3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/09/2020
-ms.locfileid: "89592343"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96791520"
 ---
 # <a name="button-capability-arrays"></a>按钮功能数组
 
@@ -22,7 +21,7 @@ ms.locfileid: "89592343"
 
 
 
-*按钮功能数组*包含有关特定类型的 HID 报表的[顶级集合](top-level-collections.md)支持的按钮用法的信息。 有关集合功能的信息包含在其 [**HIDP \_ cap**](/windows-hardware/drivers/ddi/hidpi/ns-hidpi-_hidp_caps) 结构中。
+*按钮功能数组* 包含有关特定类型的 HID 报表的 [顶级集合](top-level-collections.md)支持的按钮用法的信息。 有关集合功能的信息包含在其 [**HIDP \_ cap**](/windows-hardware/drivers/ddi/hidpi/ns-hidpi-_hidp_caps) 结构中。
 
 用户模式应用程序或内核模式驱动程序使用以下 [HIDClass 支持例程](/windows-hardware/drivers/ddi/index) 之一获取按钮功能信息：
 
@@ -70,7 +69,7 @@ ms.locfileid: "89592343"
 
 功能结构的 " **IsAlias** " 成员用于指定一组 *n* 化名的用法，如下所示：
 
--   在添加到功能数组的前*n*个功能结构中， **IsAlias**设置为**TRUE** 。 在第*n*个功能结构中， **IsAlias**设置为**FALSE** 。 首选用法是序列中最后一个别名使用情况。
+-   在添加到功能数组的前 *n* 个功能结构中， **IsAlias** 设置为 **TRUE** 。 在第 *n* 个功能结构中， **IsAlias** 设置为 **FALSE** 。 首选用法是序列中最后一个别名使用情况。
 
 应用程序或驱动程序可以通过扫描此类序列来确定哪些按钮用法具有别名。
 

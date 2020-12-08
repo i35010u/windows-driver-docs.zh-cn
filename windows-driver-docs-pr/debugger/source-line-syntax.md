@@ -1,22 +1,21 @@
 ---
 title: 源文件行语法
 description: 源文件行语法
-ms.assetid: a4622a89-6419-4547-9650-eb10c3803462
 keywords:
-- 表达式中，源行号
-- 源文件和行号语法的路径
+- 表达式，源行号
+- 源文件和路径，行号语法
 - 行号语法
-- 源代码文件和路径、 文件名语法
+- 源文件和路径，文件名语法
 - 文件名语法
-- 源行号的命令的语法规则
+- 命令的语法规则，源行号
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 71f2595e618906116bbe89a05e91082d3051912a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: cec161013490487f6185cb97258f39373c4eb2fb
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63368098"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96791621"
 ---
 # <a name="source-line-syntax"></a>源文件行语法
 
@@ -24,27 +23,27 @@ ms.locfileid: "63368098"
 ## <span id="ddk_source_line_syntax_dbg"></span><span id="DDK_SOURCE_LINE_SYNTAX_DBG"></span>
 
 
-您可以指定为 MASM 表达式的全部或部分的源文件行号。 这些数字的计算结果为与此源行相对应的可执行代码的偏移量。
+可以指定源文件行号作为所有或部分 MASM 表达式。 这些数字的计算结果为对应于此源行的可执行代码的偏移量。
 
-**请注意**  不能作为的一部分使用源行号C++表达式。 有关详细信息，有关何时 MASM 和C++使用表达式语法，请参阅[评估表达式](evaluating-expressions.md)。
+**注意**   不能使用源行号作为 c + + 表达式的一部分。 有关使用 MASM 和 c + + 表达式语法的详细信息，请参阅 [计算表达式](evaluating-expressions.md)。
 
  
 
-必须通过抑音符将源代码文件和行号表达式 ( **\`** )。 下面的示例演示的完整格式为源文件行号。
+您必须通过使用抑音符 ( ) 来将源文件和行号表达式括起来 **\`** 。 下面的示例显示了源文件行号的完整格式。
 
 ```text
 `[[Module!]Filename][:LineNumber]`
 ```
 
-如果有多个文件具有相同的文件名称的*文件名*应包括整个目录路径和文件名。 此目录路径应为在编译时使用的那个。 如果您提供的文件的名称或部分路径，并且有多个匹配项，调试器将使用它找到的第一个匹配项。
+如果有多个文件具有相同的文件名，则 *文件名* 应包括完整目录路径和文件名。 此目录路径应为编译时使用的路径。 如果只提供文件名或仅提供部分路径，并且有多个匹配项，则调试器将使用它找到的第一个匹配项。
 
-如果省略*文件名*，调试器使用的源文件对应于当前的程序计数器。
+如果省略 *Filename*，则调试器将使用与当前程序计数器相对应的源文件。
 
-*LineNumber*除非你在其与之前读取以十进制数**0x**，无论当前的默认基数。 如果省略*LineNumber*，表达式的计算结果与源文件相对应的可执行文件的初始地址。
+*LineNumber* 读取为十进制数字，除非在其前面加上 **0x**，而不考虑当前的默认基数。 如果省略 *LineNumber*，则表达式的计算结果为对应于源文件的可执行文件的初始地址。
 
-除非您发出源行表达式不会评估中 CDB [ **.lines （切换源行支持）** ](-lines--toggle-source-line-support-.md)命令，或包括[ **-行命令行选项**](cdb-command-line-options.md)启动 WinDbg 时...
+不会在 CDB 中计算源行表达式，除非您发出了一个 [**(开关源行支持)**](-lines--toggle-source-line-support-.md) 命令，或者在启动 WinDbg 时包含 [**-line 命令行选项**](cdb-command-line-options.md) 。
 
-有关源调试的详细信息，请参阅[在源模式中进行调试](debugging-in-source-mode.md)。
+有关源调试的详细信息，请参阅 [源模式下的调试](debugging-in-source-mode.md)。
 
  
 

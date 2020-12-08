@@ -1,26 +1,25 @@
 ---
-title: 如何在正在运行的跟踪会话中更新标志
-description: 如何在正在运行的跟踪会话中更新标志
-ms.assetid: 952cc60f-1877-49d5-b87c-493c1b90cfdf
+title: 如何实现更新正在运行的跟踪会话中的标志
+description: 如何实现更新正在运行的跟踪会话中的标志
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 467431b21c66864d5dcf018704c030acdf30473b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 50821c3425e033d7260fe2d95bc5e86baebe68bc
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63347740"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96792363"
 ---
 # <a name="how-do-i-update-the-flags-in-a-running-trace-session"></a>如何更新正在运行的跟踪会话中的标志？
 
 
-若要更改[跟踪标志](trace-flags.md)或[跟踪级别](trace-level.md)在正在运行的跟踪会话，使用**tracelog-启用**未命令**tracelog-更新**命令。 有关详细信息，请参阅[ **Tracelog 命令语法**](tracelog-command-syntax.md)。
+若要在正在运行的跟踪会话中更改 [跟踪标志](trace-flags.md) 或 [跟踪级别](trace-level.md) ，请使用 **tracelog** 命令，而不是 **tracelog** 命令。 有关详细信息，请参阅 [**Tracelog 命令语法**](tracelog-command-syntax.md)。
 
-标志和级别均归[跟踪提供程序](trace-provider.md)，不是[跟踪会话](trace-session.md)。 因此， **tracelog-更新**，命令以更新跟踪会话中，不能用于更改提供程序的属性。 请改用**tracelog-启用**命令以重新启用具有新属性的提供程序。
+标志和级别是 [跟踪提供程序](trace-provider.md)的属性，而不是 [跟踪会话](trace-session.md)的属性。 因此，不能使用 **tracelog 更新** 和更新跟踪会话的命令来更改提供程序的属性。 相反，请使用 **tracelog** 命令，使用新属性重新启用提供程序。
 
-璝惠**tracelog-启用**命令，请参阅[ **Tracelog 命令语法**](tracelog-command-syntax.md)。 有关如何使用此命令的示例，请参阅[示例 5:启用跟踪提供程序](example-5--enabling-trace-providers.md)。
+有关 **tracelog** 命令的信息，请参阅 [**tracelog 命令语法**](tracelog-command-syntax.md)。 有关如何使用此命令的示例，请参阅 [示例5：启用跟踪提供程序](example-5--enabling-trace-providers.md)。
 
-此外可以使用[TraceView](traceview.md)通过使用 TraceView 启动跟踪会话中更改的标志或级别。 图形用户界面使我们可以很容易看到哪些属性可以更改在会话运行的同时，并更改它们。
+还可以使用 [TraceView](traceview.md) 在使用 TraceView 启动的跟踪会话中更改标志或级别。 利用图形用户界面，可以轻松查看在运行会话时可以更改的属性，以及更改这些属性。
 
  
 

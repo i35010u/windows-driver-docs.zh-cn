@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ BDA \_ CA \_ 删除 \_ 程序
 description: 客户端使用 KSPROPERTY \_ BDA \_ CA \_ REMOVE \_ PROGRAM 来阻止对特定程序的访问。
-ms.assetid: 07792113-6d47-4836-8db2-6960fb14ab87
 keywords:
 - KSPROPERTY_BDA_CA_REMOVE_PROGRAM 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1ef02a03bc7929d07a2348c0f9c1c382a28b501a
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: a917c963ca92e245597c7642b5b972232ec0f969
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89188169"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96791157"
 ---
 # <a name="ksproperty_bda_ca_remove_program"></a>KSPROPERTY \_ BDA \_ CA \_ 删除 \_ 程序
 
@@ -82,7 +81,7 @@ ms.locfileid: "89188169"
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSEVENT \_ BDA \_ 程序 \_ 流 \_ 状态 \_ 已更改**](ksevent-bda-program-flow-status-changed.md)

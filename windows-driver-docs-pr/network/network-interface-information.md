@@ -1,18 +1,17 @@
 ---
 title: 网络接口信息
 description: 网络接口信息
-ms.assetid: 4d8cd9c2-6f78-4c70-83bd-f36fffbf1c35
 keywords:
 - NDIS 网络接口 WDK，有关
 - 网络接口 WDK，有关
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ed4f73007809b235361e9b6ccb9ff64dd661c698
-ms.sourcegitcommit: f8619f20a0903dd64f8641a5266ecad6df5f1d57
+ms.openlocfilehash: 7bfb311adb2b1d9849bee10f6d8d3d610d1116b7
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91423600"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96792671"
 ---
 # <a name="network-interface-information"></a>网络接口信息
 

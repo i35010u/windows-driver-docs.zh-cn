@@ -1,15 +1,14 @@
 ---
 title: IrpTracking 规则集 (WDM)
 description: 使用这些规则验证你的驱动程序是否正确跟踪 (IRP) 的 i/o 请求包，以便在完成 Irp 时不删除设备。
-ms.assetid: 9AD62397-6840-42FF-ADEC-6836EDD16647
 ms.date: 05/21/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 6ab88effd89538172894716a730bac8607f03dd4
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: df5a89ab1219be35f8cf39086e7e6c59b3f2b897
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104262"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96791947"
 ---
 # <a name="irptracking-rule-set-wdm"></a>IrpTracking 规则集 (WDM)
 
@@ -27,7 +26,7 @@ ms.locfileid: "90104262"
 <thead>
 <tr class="header">
 <th align="left">主题</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -170,7 +169,7 @@ ms.locfileid: "90104262"
 
 2.  单击 " **规则** " 选项卡。在 " **规则集**" 下，选择 **IrpTracking**。
 
-    若要从 Visual Studio 开发人员命令提示符窗口中选择默认规则集，请使用 **/check**选项指定**IrpTracking。 sdv** 。 例如：
+    若要从 Visual Studio 开发人员命令提示符窗口中选择默认规则集，请使用 **/check** 选项指定 **IrpTracking。 sdv** 。 例如：
 
     ```
     msbuild /t:sdv /p:Inputs="/check:IrpTracking.sdv" mydriver.VcxProj /p:Configuration="Win8 Release" /p:Platform=Win32

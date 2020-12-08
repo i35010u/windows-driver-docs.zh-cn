@@ -1,7 +1,6 @@
 ---
 title: SM \_ ScsiReportLuns 函数
 description: SM \_ SCSIREPORTLUNS WMI 方法可向所指示的设备发送 SCSI 报表 lun 命令。
-ms.assetid: 846efe8a-dc36-4601-882d-aeb9c53d09dc
 keywords:
 - SM_ScsiReportLuns 函数存储设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: f1968b888d2859a22eee8bf975f4dcdf078d0464
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: cdab9861153ac4e69fa3e7e861fcb88461894a79
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89187525"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96792573"
 ---
 # <a name="sm_scsireportluns-function"></a>SM \_ ScsiReportLuns 函数
 
@@ -31,19 +30,19 @@ SM \_ SCSIREPORTLUNS WMI 方法可向所指示的设备发送 SCSI 报表 lun �
 
 ```ManagedCPlusPlus
 void SM_ScsiReportLuns(
-   [in, HBAType("HBA_WWN")] uint8               HbaPortWWN[8],
-   [in, HBAType("HBA_WWN")] uint8               DiscoveredPortWWN[8],
-   [in, HBAType("HBA_WWN")] uint8               DomainPortWWN[8],
-   [in, HBAType("HBA_SCSILUN")] uint64          SmhbaLUN,
-   [in] uint8                                   Cdb[12],
-   [in] uint32                                  InRespBufferMaxSize,
-   [in] uint32                                  InSenseBufferMaxSize,
-   [out, HBA_STATUS_QUALIFIERS] HBA_STATUS      HBAStatus,
-   [out] uint8                                  ScsiStatus,
-   [out] uint32                                 TotalRespBufferSize,
-   [out] uint32                                 OutRespBufferSize,
-   [out] uint32                                 OutSenseBufferSize,
-   [out, WmiSizeIs("OutRespBufferSize")] uint8  RespBuffer[],
+   [in, HBAType("HBA_WWN")] uint8               HbaPortWWN[8],
+   [in, HBAType("HBA_WWN")] uint8               DiscoveredPortWWN[8],
+   [in, HBAType("HBA_WWN")] uint8               DomainPortWWN[8],
+   [in, HBAType("HBA_SCSILUN")] uint64          SmhbaLUN,
+   [in] uint8                                   Cdb[12],
+   [in] uint32                                  InRespBufferMaxSize,
+   [in] uint32                                  InSenseBufferMaxSize,
+   [out, HBA_STATUS_QUALIFIERS] HBA_STATUS      HBAStatus,
+   [out] uint8                                  ScsiStatus,
+   [out] uint32                                 TotalRespBufferSize,
+   [out] uint32                                 OutRespBufferSize,
+   [out] uint32                                 OutSenseBufferSize,
+   [out, WmiSizeIs("OutRespBufferSize")] uint8  RespBuffer[],
    [out, WmiSizeIs("OutSenseBufferSize")] uint8 SenseBuffer[]
 );
 ```
@@ -52,19 +51,19 @@ void SM_ScsiReportLuns(
 ----------
 
 *HbaPortWWN*   
-用于访问目标的 HBA 的全球名称 (WWN) 。 此信息将传送到结构 [** \_ 中 ScsiInquiry**](/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_scsiinquiry_in) 的 HbaPortWWN 成员中的微型端口驱动程序。
+用于访问目标的 HBA 的全球名称 (WWN) 。 此信息将传送到结构 [**\_ 中 ScsiInquiry**](/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_scsiinquiry_in) 的 HbaPortWWN 成员中的微型端口驱动程序。
 
 *DiscoveredPortWWN*   
-用于访问目标设备的端口的全球名称 (WWN) 。 此信息将传送到结构 [** \_ 中 ScsiInquiry**](/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_scsiinquiry_in) 的 DiscoveredPortWWN 成员中的微型端口驱动程序。
+用于访问目标设备的端口的全球名称 (WWN) 。 此信息将传送到结构 [**\_ 中 ScsiInquiry**](/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_scsiinquiry_in) 的 DiscoveredPortWWN 成员中的微型端口驱动程序。
 
 *DomainPortWWN*   
 用于回调的全球名称 (WWN) 。 它是端口 \_ 标识符，它具有 \_ 使用物理端口发现的 SMP 端口的任何端口标识符的最小值。 如果未使用物理端口发现任何 SMP 端口，则它的值为零。
 
 *SmhbaLUN*   
-将接收 SCSI 查询命令的逻辑单元的逻辑单元号。 此信息将传送到结构 [** \_ 中 ScsiInquiry**](/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_scsiinquiry_in) 的 SmhbaLUN 成员中的微型端口驱动程序。
+将接收 SCSI 查询命令的逻辑单元的逻辑单元号。 此信息将传送到结构 [**\_ 中 ScsiInquiry**](/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_scsiinquiry_in) 的 SmhbaLUN 成员中的微型端口驱动程序。
 
 *Cdb*   
-命令描述符块，其中包含要发送到目标设备的 SCSI 查询命令。 此信息将传送到结构中 [**ScsiInquiry \_ **](/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_scsiinquiry_in) 的 Cdb 成员的微型端口驱动程序。
+命令描述符块，其中包含要发送到目标设备的 SCSI 查询命令。 此信息将传送到结构中 [**ScsiInquiry \_**](/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_scsiinquiry_in) 的 Cdb 成员的微型端口驱动程序。
 
 *InRespBufferMaxSize*   
 响应缓冲区的最大大小（以字节为单位）。
@@ -98,7 +97,7 @@ Scsi 查询命令生成的 SCSI 感知数据。 微型端口驱动程序在 [**S
 
 不适用于 WMI 方法。
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 此 WMI 方法属于 MS \_ SM \_ ScsiInformationMethods WMI 类。
@@ -117,7 +116,7 @@ Scsi 查询命令生成的 SCSI 感知数据。 微型端口驱动程序在 [**S
 <td align="left">台式机</td>
 </tr>
 <tr class="even">
-<td align="left"><p>Header</p></td>
+<td align="left"><p>标头</p></td>
 <td align="left">Hbapiwmi</td>
 </tr>
 </tbody>

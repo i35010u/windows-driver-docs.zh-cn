@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ VIDEOCONTROL \_ 模式
 description: KSPROPERTY \_ VIDEOCONTROL \_ mode 属性控制映像生产的模式。 这包括用于水平和垂直图像翻转的设置，以及通过外部触发器启用帧捕获。 此属性是可选的。
-ms.assetid: b101b348-cfd4-46a1-857a-9e7cb3f35ce5
 keywords:
 - KSPROPERTY_VIDEOCONTROL_MODE 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f386805b7345549b163104cdb8b5ed6adf2bb155
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 16c05ead81e7892d888f5a99910072289c900212
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103538"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96792095"
 ---
 # <a name="ksproperty_videocontrol_mode"></a>KSPROPERTY \_ VIDEOCONTROL \_ 模式
 
@@ -84,7 +83,7 @@ KSPROPERTY **Mode** \_ VIDEOCONTROL \_ 模式 S 结构的 mode 成员 \_ 指定�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSPROPERTY**](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)

@@ -1,7 +1,6 @@
 ---
 title: SendSRL 函数
 description: SendSRL WMI 方法通过指定的端口将扫描远程循环 (SRL) 命令发送到指定的域控制器。
-ms.assetid: b191fc8c-2765-4e39-aab7-e950ae1d46b0
 keywords:
 - SendSRL 函数存储设备
 topic_type:
@@ -15,12 +14,12 @@ api_type:
 - LibDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 102860ca17f35932ad5b433f7a579664239d56cb
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: ca9b590266816a346d7381ac91ced3002e71228b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89189689"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96792575"
 ---
 # <a name="sendsrl-function"></a>SendSRL 函数
 
@@ -32,12 +31,12 @@ ms.locfileid: "89189689"
 
 ```ManagedCPlusPlus
 void SendSRL(
-   [out, HBA_STATUS_QUALIFIERS] HBA_STATUS       HBAStatus,
-   [in, HBAType("HBA_WWN")] uint8                PortWWN[8],
-   [in, HBAType("HBA_WWN")] uint8                WWN[8],
-   [in] uint32                                   Domain,
-   [out] uint32                                  TotalRspBufferSize,
-   [out] uint32                                  ActualRspBufferSize,
+   [out, HBA_STATUS_QUALIFIERS] HBA_STATUS       HBAStatus,
+   [in, HBAType("HBA_WWN")] uint8                PortWWN[8],
+   [in, HBAType("HBA_WWN")] uint8                WWN[8],
+   [in] uint32                                   Domain,
+   [out] uint32                                  TotalRspBufferSize,
+   [out] uint32                                  ActualRspBufferSize,
    [out, WmiSizeIs("ActualRspBufferSize")] uint8 RspBuffer[]
 );
 ```
@@ -46,7 +45,7 @@ void SendSRL(
 ----------
 
 *HBAStatus*   
-返回时，包含操作的状态。 有关允许值及其说明的列表，请参阅 [HBA \_ 状态](hba-status.md)。 微型端口驱动程序在[**SendSRL \_ OUT**](/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_sendsrl_out)结构的**HBAStatus**成员中返回此信息。
+返回时，包含操作的状态。 有关允许值及其说明的列表，请参阅 [HBA \_ 状态](hba-status.md)。 微型端口驱动程序在 [**SendSRL \_ OUT**](/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_sendsrl_out)结构的 **HBAStatus** 成员中返回此信息。
 
 *PortWWN*   
 用于发送 SRL 命令的本地端口的全球名称。 此信息将传送到结构中 SendSRL 的 **PortWWN** 成员中的微型端口驱动程序 \_ 。
@@ -58,13 +57,13 @@ void SendSRL(
 要扫描其循环的域的域号。 此信息将传送到结构中 SendSRL 的 **域** 成员的微型端口驱动程序 \_ 。
 
 *TotalRspBufferSize*   
-SRL 命令的结果的大小（以字节为单位）。 微型端口驱动程序在[**SendSRL \_ OUT**](/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_sendsrl_out)结构的**TotalRspBufferSize**成员中返回此信息。
+SRL 命令的结果的大小（以字节为单位）。 微型端口驱动程序在 [**SendSRL \_ OUT**](/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_sendsrl_out)结构的 **TotalRspBufferSize** 成员中返回此信息。
 
 *ActualRspBufferSize*   
-实际检索到的数据的大小（以字节为单位）。 微型端口驱动程序在[**SendSRL \_ OUT**](/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_sendsrl_out)结构的**ActualRspBufferSize**成员中返回此信息。
+实际检索到的数据的大小（以字节为单位）。 微型端口驱动程序在 [**SendSRL \_ OUT**](/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_sendsrl_out)结构的 **ActualRspBufferSize** 成员中返回此信息。
 
 *RspBuffer*   
-SRL 命令的结果。 微型端口驱动程序在[**SendSRL \_ OUT**](/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_sendsrl_out)结构的**RspBuffer**成员中返回此信息。
+SRL 命令的结果。 微型端口驱动程序在 [**SendSRL \_ OUT**](/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_sendsrl_out)结构的 **RspBuffer** 成员中返回此信息。
 
 <a name="return-value"></a>返回值
 ------------
@@ -87,7 +86,7 @@ SRL 命令的结果。 微型端口驱动程序在[**SendSRL \_ OUT**](/windows-
 <tbody>
 <tr class="odd">
 <td align="left"><p>目标平台</p></td>
-<td align="left">“桌面”</td>
+<td align="left">台式机</td>
 </tr>
 <tr class="even">
 <td align="left"><p>标头</p></td>
@@ -105,7 +104,7 @@ SRL 命令的结果。 微型端口驱动程序在[**SendSRL \_ OUT**](/windows-
 
 [HBA \_ 状态](hba-status.md)
 
-\_ [ **SendSRL \_ OUT**中的 SendSRL](/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_sendsrl_out)
+\_ [ **SendSRL \_ OUT** 中的 SendSRL](/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_sendsrl_out)
 
  
 

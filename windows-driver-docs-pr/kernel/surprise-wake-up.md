@@ -1,15 +1,14 @@
 ---
 title: 意外唤醒
 description: 意外唤醒是到 D0 的意外转换。
-ms.assetid: 07D3EC05-A1C9-40C5-90FC-E25B5A66B064
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 51d39bc5fb741d17802a2df86d2ccb7fe80b42b0
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: b2eaa94f06179e4b90cbac3c2e2b6146d17b324d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89185953"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96792717"
 ---
 # <a name="surprise-wake-up"></a>意外唤醒
 
@@ -31,7 +30,7 @@ ms.locfileid: "89185953"
 
 从 Windows 8 开始，设备的函数驱动程序作为电源策略所有者，可以将自身注册为 PoFx 的客户端。 当总线驱动程序通知 PoFx 设备遇到了到 D0 的意外转换时，PoFx 可帮助设备转到已初始化的 D0 状态，然后转到 D3hot。 首先，PoFx 调用驱动程序的 [*DevicePowerRequiredCallback*](/windows-hardware/drivers/ddi/wdm/nc-wdm-po_fx_device_power_required_callback) 例程，以提示设备驱动程序将 D0 电源 IRP 向下发送到设备堆栈。 接下来，PoFx 调用驱动程序的 [*DevicePowerNotRequiredCallback*](/windows-hardware/drivers/ddi/wdm/nc-wdm-po_fx_device_power_not_required_callback) 例程来通知设备驱动程序，设备不需要保持 D0 状态。
 
-从内核模式驱动程序框架开始 (KMDF) 版本1.11，单组件设备的 KMDF 驱动程序可以通过调用 [**WdfDeviceWdmAssignPowerFrameworkSettings**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicewdmassignpowerframeworksettings) 方法，将其自身直接注册到 PoFx。 在此调用中，驱动程序提供指向回调例程的指针，这些回调例程通知驱动程序到 D0 的意外转换。 有关详细信息，请参阅 [支持功能电源状态](../wdf/supporting-functional-power-states.md)。
+从 Kernel-Mode Driver Framework (KMDF) 版本1.11 开始，单组件设备的 KMDF 驱动程序可以通过调用 [**WdfDeviceWdmAssignPowerFrameworkSettings**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicewdmassignpowerframeworksettings) 方法，将其自身直接注册到 PoFx。 在此调用中，驱动程序提供指向回调例程的指针，这些回调例程通知驱动程序到 D0 的意外转换。 有关详细信息，请参阅 [支持功能电源状态](../wdf/supporting-functional-power-states.md)。
 
 如果设备配备为唤醒，则不会向 PoFx 注册其设备的驱动程序仍然会收到意外过渡到 D0 的通知。 当总线驱动程序开启设备电源时，它们会完成驱动程序的 **IRP \_ MN \_ WAIT \_ 唤醒** 请求。 作为响应，驱动程序会将其设备初始化为 D0 操作。 设备可能处于空闲状态，在这种情况下，驱动程序将在一段时间后将此设备移动到 D3hot。
 

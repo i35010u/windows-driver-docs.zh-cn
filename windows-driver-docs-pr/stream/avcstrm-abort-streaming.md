@@ -1,7 +1,6 @@
 ---
 title: AVCSTRM \_ 中止 \_ 流式处理
 description: AVCSTRM \_ 中止 \_ 流式处理
-ms.assetid: 9a136511-c838-456f-87c5-a4639be0c299
 keywords:
 - AVCSTRM_ABORT_STREAMING 流媒体设备
 topic_type:
@@ -12,12 +11,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bd604ad5b5fd87d917f26ea80366d3cf0cccf24f
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 61a6be4de092eba05c57c6a89e414fe68dafeace
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89187437"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96792543"
 ---
 # <a name="avcstrm_abort_streaming"></a>AVCSTRM \_ 中止 \_ 流式处理
 
@@ -25,7 +24,7 @@ ms.locfileid: "89187437"
 ## <span id="ddk_avcstrm_abort_streaming_ks"></span><span id="DDK_AVCSTRM_ABORT_STREAMING_KS"></span>
 
 
-**AVCSTRM \_ 中止 \_ 流式处理**函数代码取消*所有*挂起的数据请求，并释放使用的资源。
+**AVCSTRM \_ 中止 \_ 流式处理** 函数代码取消 *所有* 挂起的数据请求，并释放使用的资源。
 
 ### <a name="io-status-block"></a>I/o 状态块
 
@@ -41,7 +40,7 @@ ms.locfileid: "89187437"
 <thead>
 <tr class="header">
 <th>错误状态</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -70,7 +69,7 @@ ms.locfileid: "89187437"
 
  
 
-### <a name="comments"></a>说明
+### <a name="comments"></a>注释
 
 请注意，此功能将取消 *所有* 流式处理 irp。 若要取消单个 IRP，请使用 [**IoCancelIrp**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocancelirp)。
 
@@ -93,7 +92,7 @@ typedef struct _AVC_STREAM_REQUEST_BLOCK {
 
 ### <a name="requirements"></a>要求
 
-**标头：** 在 *avcstrm*中声明。 包括 *avcstrm*。
+**标头：** 在 *avcstrm* 中声明。 包括 *avcstrm*。
 
 ### <a name="span-idavc_stream_request_block_inputspanspan-idavc_stream_request_block_inputspanavc_stream_request_block-input"></a><span id="avc_stream_request_block_input"></span><span id="AVC_STREAM_REQUEST_BLOCK_INPUT"></span>AVC \_ 流 \_ 请求 \_ 块输入
 

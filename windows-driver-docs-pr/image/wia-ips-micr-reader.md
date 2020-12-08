@@ -1,9 +1,8 @@
 ---
-title: WIA\_IPS\_MICR\_READER
-description: WIA 微型驱动程序使用 WIA\_IPS\_MICR\_读取器属性来报告可用磁性墨迹字符识别 (MICR) 读取器位置。 WIA 客户端应用程序可以选择在其中启用 MICR 检测这些位置之一。
-ms.assetid: 093A5EDF-BFD6-42BD-B532-9CB578EA284C
+title: WIA \_ IP \_ 磁墨 \_ 读取器
+description: WIA 微型驱动程序使用 "WIA \_ ip \_ 磁墨识别 \_ 器" 属性来报告磁墨字符识别 (磁墨) 读卡器可用的位置。 WIA 客户端应用程序可以选择在其中启用磁墨检测的这些位置之一。
 keywords:
-- WIA_IPS_MICR_READER 成像设备
+- WIA_IPS_MICR_READER 图像设备
 topic_type:
 - apiref
 api_name:
@@ -14,31 +13,31 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c84bcf1512604082fecdbfcdd381c0da7553488b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d34f488304bd89c335b64b4d51023a0a873fea9a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63348215"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96792229"
 ---
-# <a name="wiaipsmicrreader"></a>WIA\_IPS\_MICR\_READER
+# <a name="wia_ips_micr_reader"></a>WIA \_ IP \_ 磁墨 \_ 读取器
 
 
-使用 WIA 微型驱动程序**WIA\_IPS\_MICR\_读取器**属性来报告可用磁性墨迹字符识别 (MICR) 读取器位置。 WIA 客户端应用程序可以选择在其中启用 MICR 检测这些位置之一。
+WIA 微型驱动程序使用 " **wia \_ ip \_ 磁墨识别 \_ 器** " 属性来报告磁墨字符识别 (磁墨) 读卡器可用的位置。 WIA 客户端应用程序可以选择在其中启用磁墨检测的这些位置之一。
 
 
 
 
-属性类型：VT\_I4
+属性类型： VT \_ I4
 
-有效值：WIA\_PROP\_列表
+有效值： WIA 内容 \_ \_ 列表
 
 访问权限：读/写
 
 <a name="remarks"></a>备注
 -------
 
-下表描述了所需的值**WIA\_IPS\_MICR\_读取器**属性。
+下表描述了 **WIA \_ ip \_ 磁墨识别 \_ 器** 属性的必需值。
 
 <table>
 <colgroup>
@@ -47,27 +46,27 @@ ms.locfileid: "63348215"
 </colgroup>
 <thead>
 <tr class="header">
-<th>ReplTest1</th>
+<th>值</th>
 <th>定义</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><p>WIA_MICR_READER_DISABLED</p></td>
-<td><p>禁用 MICR 检测。 这是所需的默认值。</p></td>
+<td><p>已禁用磁墨检测。 这是所需的默认值。</p></td>
 </tr>
 <tr class="even">
 <td><p>WIA_MICR_READER_AUTO</p></td>
-<td><p>启用 MICR 检测。 MICR 读取器位置固定的或在运行时根据 active 扫描输入源设备自动选择。</p></td>
+<td><p>已启用磁墨检测。 磁墨字符识别器的位置是固定的，或在运行时设备根据活动扫描输入源自动选择。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-此属性是必需的所有 MICR 读取器项。 WIA\_MICR\_读取器\_DISABLED 和 WIA\_MICR\_读取器\_自动值是必需的。 WIA\_MICR\_读取器\_禁用是所需的默认值。
+所有磁墨磁墨读者项都需要此属性。 禁用了 WIA \_ 磁墨 \_ 读取器 \_ ，并 \_ 需要 wia \_ \_ 记忆器自动值。 WIA \_ 磁墨 \_ 读取器 \_ 禁用是所需的默认值。
 
-下表描述的可选值**WIA\_IPS\_MICR\_读取器**属性。
+下表描述了 " **WIA \_ ip \_ 磁墨识别 \_ 器** " 属性的可选值。
 
 <table>
 <colgroup>
@@ -76,39 +75,39 @@ ms.locfileid: "63348215"
 </colgroup>
 <thead>
 <tr class="header">
-<th>ReplTest1</th>
+<th>值</th>
 <th>定义</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><p>WIA_MICR_READER_FLATBED</p></td>
-<td><p>在平台扫描的文档启用 MICR 检测。</p></td>
+<td><p>磁墨磁墨检测功能已对平板扫描的文档启用。</p></td>
 </tr>
 <tr class="even">
 <td><p>WIA_MICR_READER_FEEDER_FRONT</p></td>
-<td><p>MICR 检测可用于通过送纸器已扫描文档的正面。</p></td>
+<td><p>为通过送纸器扫描的文档的正面启用磁墨检测。</p></td>
 </tr>
 <tr class="odd">
 <td><p>WIA_MICR_READER_FEEDER_BACK</p></td>
-<td><p>MICR 检测可用于通过送纸器已扫描文档的正面。</p></td>
+<td><p>为通过送纸器扫描的文档的正面启用磁墨检测。</p></td>
 </tr>
 <tr class="even">
 <td><p>WIA_MICR_READER_FEEDER_DUPLEX</p></td>
-<td><p>为这两个前端启用 MICR 检测和送纸器通过扫描文档的后端。</p></td>
+<td><p>磁墨磁墨检测已为通过送纸器扫描的文档的正面和背面启用。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-**请注意**  WIA 微型驱动程序可以接受可选值的属性配置，但在扫描时忽略请求，以使 MICR 检测到的非活动状态的扫描输入源。
+**注意**  允许 WIA 微型驱动程序接受可选值的属性配置，但在扫描时忽略请求，以启用磁墨扫描输入源的不活动扫描。
 
  
 
-[ **WIA\_IPA\_格式**](wia-ipa-format.md)属性也是必需的 MICR 读取器的所有项。
+所有磁墨字符识别器项还需要 [**WIA \_ IPA \_ 格式**](wia-ipa-format.md) 属性。
 
-下表描述了所需的值[ **WIA\_IPA\_格式**](wia-ipa-format.md)属性实现 MICR 读取器项上时。
+下表描述了在磁墨磁墨读取器项上实现时， [**WIA \_ IPA \_ FORMAT**](wia-ipa-format.md) 属性所需的值。
 
 <table>
 <colgroup>
@@ -117,18 +116,18 @@ ms.locfileid: "63348215"
 </colgroup>
 <thead>
 <tr class="header">
-<th>ReplTest1</th>
+<th>值</th>
 <th>定义</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><p>WiaImgFmt_XmlMic</p></td>
-<td><p>MICR 元数据将传输的内容是符合 WIA MICR 元数据架构的 XML 文件。</p></td>
+<td><p>磁墨识别元数据将作为其内容符合 WIA 磁墨的元数据架构的 XML 文件传输。</p></td>
 </tr>
 <tr class="even">
 <td><p>WiaImgFmt_RawMic</p></td>
-<td><p>为 WIA MICR 元数据的原始格式的文件传输 MICR 元数据。</p></td>
+<td><p>磁墨识别元数据将作为 WIA 磁墨元数据原始格式文件传输。</p></td>
 </tr>
 </tbody>
 </table>
@@ -145,8 +144,8 @@ ms.locfileid: "63348215"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Wiadef.h （包括 Wiadef.h）</td>
+<td><p>标头</p></td>
+<td>Wiadef (包含 Wiadef) </td>
 </tr>
 </tbody>
 </table>

@@ -1,6 +1,5 @@
 ---
 title: 'IrqlIoPassive4 规则 (wdm) '
-ms.assetid: 2bdfa09d-0777-4eaf-85ff-d5accc0f31de
 ms.date: 05/21/2018
 description: '了解详细信息： IrqlIoPassive4 规则 (wdm) '
 keywords:
@@ -12,12 +11,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: b30d5df1d14316c6047e020bbb195bc274b08176
-ms.sourcegitcommit: f47c072e88dce59daba1231027b60eb56bd2cde9
+ms.openlocfilehash: a8a287495bbcb91562a096f16ab083bc30d8e852
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92689401"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96791861"
 ---
 # <a name="irqliopassive4-rule-wdm"></a>IrqlIoPassive4 规则 (wdm) 
 
@@ -44,7 +43,7 @@ ms.locfileid: "92689401"
 
 **驱动程序模型： WDM**
 
-**Bug 检查 () 发现此规则** ： [**bug 检查0XC4：驱动程序 \_ 验证器 \_ 检测到 \_ 违反**](../debugger/bug-check-0xc4--driver-verifier-detected-violation.md) (0x0002000D) 
+**Bug 检查 () 发现此规则**： [**bug 检查0XC4：驱动程序 \_ 验证器 \_ 检测到 \_ 违反**](../debugger/bug-check-0xc4--driver-verifier-detected-violation.md) (0x0002000D) 
 
 
 <a name="how-to-test"></a>如何测试

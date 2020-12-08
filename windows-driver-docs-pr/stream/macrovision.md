@@ -1,7 +1,6 @@
 ---
 title: Macrovision
 description: Macrovision
-ms.assetid: 62bd8d8a-3e58-4bca-a32d-ff792180afbe
 keywords:
 - DVD 解码器微型驱动程序 WDK，版权保护
 - 解码器微型驱动程序 WDK DVD，版权保护
@@ -9,12 +8,12 @@ keywords:
 - Macrovision WDK DVD 解码器
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ecabb78f3c0d9a199a5a779e7cfff7d5a687d196
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: e90e415c8c5f17739ccb7653774634d281d9d1a9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89192001"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96791159"
 ---
 # <a name="macrovision"></a>Macrovision
 

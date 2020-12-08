@@ -1,15 +1,14 @@
 ---
 title: 能否自定义 DoTraceMessage
 description: 能否自定义 DoTraceMessage
-ms.assetid: 4c5c4990-6095-4ab8-a20b-7597b3169f52
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a34b165bf900e1089e73b8da9f512bb21dd02ab5
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 823dbc5cead56f96bd24489bce76d954374fb15b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89385085"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96791589"
 ---
 # <a name="can-i-customize-dotracemessage"></a>是否可以自定义 DoTraceMessage？
 
@@ -26,7 +25,7 @@ ms.locfileid: "89385085"
 DoTraceMessage(Flag,"Message",MessageVariables...);
 ```
 
-在此默认版本中， *标志* 表示 [跟踪标志](trace-flags.md)，这是生成消息时所依据的条件。 *MessageVariables* 包含一个逗号分隔的变量列表，驱动程序将定义这些变量并将其显示在跟踪消息中。 *MessageVariables*变量使用**printf**元素进行格式设置。 WPP 预处理器从 DoTraceMessage 宏创建编译器指令。 此宏向为 [跟踪提供程序](trace-provider.md)生成的 PDB 文件添加消息定义信息和格式设置信息，例如内核模式驱动程序或用户模式应用程序。
+在此默认版本中， *标志* 表示 [跟踪标志](trace-flags.md)，这是生成消息时所依据的条件。 *MessageVariables* 包含一个逗号分隔的变量列表，驱动程序将定义这些变量并将其显示在跟踪消息中。 *MessageVariables* 变量使用 **printf** 元素进行格式设置。 WPP 预处理器从 DoTraceMessage 宏创建编译器指令。 此宏向为 [跟踪提供程序](trace-provider.md)生成的 PDB 文件添加消息定义信息和格式设置信息，例如内核模式驱动程序或用户模式应用程序。
 
 DoTraceMessage 宏按逻辑展开为以下内容：
 
@@ -44,7 +43,7 @@ POST macro // If defined
 DoTraceMessage(ERROR, "IOCTL = %d", ControlCode);
 ```
 
-启用错误标志后，此调用会生成跟踪消息。 消息为 "IOCTL =% d"， *MessageVariables* 是 *ControlCode*的值。
+启用错误标志后，此调用会生成跟踪消息。 消息为 "IOCTL =% d"， *MessageVariables* 是 *ControlCode* 的值。
 
 如果预日志记录和日志记录后的宏已定义，则它们也将展开。 Microsoft Windows 2000 及更高版本的操作系统支持宏和发布宏。 若要使用宏，必须使用 WDK 构建驱动程序。 如果使用早期版本的 Windows 驱动程序开发工具包生成驱动程序 (的 DDK) ，则 PRE 和 POST 功能不可用，并且宏将不会作为跟踪语句的一部分运行。 使用早期版本的 Windows DDK 构建驱动程序可能不会导致生成中断，但代码不会按预期方式工作。
 
@@ -99,11 +98,11 @@ MyDoTrace(TRACE_LEVEL_ERROR, VERBOSE, Network,"IOCTL = %d", ControlCode);
 
 ### <a name="span-idwrite_custom_macrosspanspan-idwrite_custom_macrosspanwrite-custom-macros"></a><span id="write_custom_macros"></span><span id="WRITE_CUSTOM_MACROS"></span>编写自定义宏
 
-若要创建一个自定义跟踪函数，该函数将 (消息) 之前出现的参数更改跟踪消息的条件，则必须编写支持跟踪函数的其他版本的宏， **启用 wpp \_ 级别 \_ ** 和 **wpp \_ 级别 \_ 记录器**。
+若要创建一个自定义跟踪函数，该函数将 (消息) 之前出现的参数更改跟踪消息的条件，则必须编写支持跟踪函数的其他版本的宏， **启用 wpp \_ 级别 \_** 和 **wpp \_ 级别 \_ 记录器**。
 
--   **WPP \_\_启用了级别 (*标志*) **确定是否已启用具有指定标志值的日志记录。 它返回 **TRUE** 或 **FALSE**。
+-   **WPP \_\_启用了级别 (*标志*)** 确定是否已启用具有指定标志值的日志记录。 它返回 **TRUE** 或 **FALSE**。
 
--   **WPP \_级别 \_ 记录器 (*标志*) ** 查找启用了提供程序的跟踪会话并为跟踪会话返回一个句柄。
+-   **WPP \_级别 \_ 记录器 (*标志*)** 查找启用了提供程序的跟踪会话并为跟踪会话返回一个句柄。
 
 例如，如果你想要包含跟踪级别，则除了标志以外，还需要定义一个包含跟踪级别的新的 \_ 启用 WPP 级别的 \_ 宏。 可以将新宏的定义基于默认宏，如下面的代码示例所示。
 

@@ -1,7 +1,6 @@
 ---
 title: AVC \_ 函数 \_ 命令
 description: AVC \_ 函数 \_ 命令
-ms.assetid: 5e1f7f93-83ef-4015-a952-f7efd93ccee5
 keywords:
 - AVC_FUNCTION_COMMAND 流媒体设备
 topic_type:
@@ -12,16 +11,16 @@ api_type:
 - NA
 ms.date: 06/16/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: ac78eb3ec82b9b66690d2a06f1cc64bddf4587da
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: f97fdc1deaffaa01829c635c3e0b3b0cb9e2538f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89186805"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96792547"
 ---
 # <a name="avc_function_command"></a>AVC \_ 函数 \_ 命令
 
-**AVC \_ 函数 \_ 命令**函数代码用于发送 AV/C 请求，并作为一个操作接收响应。
+**AVC \_ 函数 \_ 命令** 函数代码用于发送 AV/C 请求，并作为一个操作接收响应。
 
 ## <a name="io-status-block"></a>I/o 状态块
 
@@ -29,7 +28,7 @@ ms.locfileid: "89186805"
 
 可能的其他返回值包括：
 
-| 返回值 | 说明 |
+| 返回值 | 描述 |
 |--|--|
 | STATUS_TIMEOUT | 发出了请求，但在所有超时和重试处理完成之前未收到响应。 如果仍在处理以前的请求，则目标设备将忽略请求。 有些 AV/C 设备不相容，并拒绝在 100 ms 超时时间内做出响应，即使在若干次连续尝试之后也是如此。 AVC_COMMAND_IRB 结构允许 (100ms 和 9) 默认的 **超时** 和 **重试** 成员分别进行调整，但这些默认设置已足以满足所有已知的实现要求。 |
 | STATUS_PENDING | 发出了请求，但收到了过渡响应。 完成例程负责处理最终响应并释放 IRP 和 IRB 资源。 |
@@ -65,7 +64,7 @@ typedef struct _AVC_COMMAND_IRB {
 
 ## <a name="requirements"></a>要求
 
-**标头：** 在 *avc*中声明。 包括 *avc*。
+**标头：** 在 *avc* 中声明。 包括 *avc*。
 
 ## <a name="avc_command_irb-input"></a>AVC \_ 命令 \_ IRB 输入
 
@@ -77,7 +76,7 @@ typedef struct _AVC_COMMAND_IRB {
   
 将此项设置为1，以覆盖 *avc.sys* 与子单位驱动程序关联的子地址。 重写的原因包括：子单位驱动程序表示单个实例中的多个子单元连接;必须发送单元命令;或驱动程序已加载，因为 *avc.sys* 无法确定子单位类型或 ID。 如果已设置此设置，则 **SubunitAddr** 成员必须指向包含所需的子地址的非分页内存。
 
-如果调用方直接将请求提交到*avc.sys* FDO，则必须将此项设置为一 (，并提供适当的**SubunitAddr**) 。
+如果调用方直接将请求提交到 *avc.sys* FDO，则必须将此项设置为一 (，并提供适当的 **SubunitAddr**) 。
 
 > [!NOTE]
 > 如果未在请求时设置此标志，则在对成功请求作出响应时，将设置此标志，并且 **SubunitAddr** 成员指向次级的实际地址。 请勿尝试更改内容或释放内存：它是父驱动程序的设备扩展的一部分。 当然，这可能会恢复为零，并且 **SubunitAddr** 指针将被清除，以便重复使用其他子单位的结构。
@@ -118,7 +117,7 @@ typedef struct _AVC_COMMAND_IRB {
 
 将此项设置为所需的次数 *avc.sys* 应在每次超时之后尝试重试请求，而无需响应。 请注意，重试计数为零表示请求尝试一次。 尝试在不获取响应的情况下处理命令所花费的总时间由以下公式计算得出：
 
-***超时*** * \* ( * * *<em>重试</em>* *  *+ 1) *
+***Timeout * * _ _ \* (***<em>重试次数</em> **  *+ 1)*
 
 如果 **RetryFlag** 为零，则忽略此参数。
 
@@ -142,7 +141,7 @@ typedef struct _AVC_COMMAND_IRB {
   
 保留。 此值必须为零。
 
-*avc.sys*的虚拟实例不支持**AVC \_ 函数 \_ 命令**函数代码。 如果调用方想要控制外部设备，则该设备的非虚拟实例可以通过专用机制定位，也可以通过 AVC 函数的某个组合 \_ \_ 查找 \_ 对等方 \_ do， **AVC 函数对等方 \_ \_ \_ do \_ LIST** 和 **AVC \_ 函数 \_ 获取 \_ \_ ** IOCTL \_ AVC \_ 类 i/o 控制代码的子单位信息函数代码。
+*avc.sys* 的虚拟实例不支持 **AVC \_ 函数 \_ 命令** 函数代码。 如果调用方想要控制外部设备，则该设备的非虚拟实例可以通过专用机制定位，也可以通过 AVC 函数的某个组合 \_ \_ 查找 \_ 对等方 \_ do， **AVC 函数对等方 \_ \_ \_ do \_ LIST** 和 **AVC \_ 函数 \_ 获取 \_ \_** IOCTL \_ AVC \_ 类 i/o 控制代码的子单位信息函数代码。
 
 此结构定义 AV/C 命令请求的常用组件。 它保存请求的操作码和操作数，并在完成) 时 (响应的操作码和操作数。 操作数列表的大小固定为指定了单字节子单位地址的操作数的最大允许数目。 如果以任何方式扩展了子单位地址，则会相应地减少允许的最大操作数字节数。
 
@@ -150,7 +149,7 @@ typedef struct _AVC_COMMAND_IRB {
 
 此名称必须以 IRQL = 被动 \_ 级别调用。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [**AVC \_ 函数**](/windows-hardware/drivers/ddi/avc/ne-avc-_tagavc_function)
 

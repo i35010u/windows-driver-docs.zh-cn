@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ DVDCOPY \_ DVD \_ KEY1
 description: KSPROPERTY \_ DVDCOPY \_ dvd \_ KEY1 属性检索作为 DVD 版权保护身份验证过程的一部分提供给解码器的第一个总线密钥。
-ms.assetid: df4fd5a0-d890-4695-b8ec-951dd0e4e1d5
 keywords:
 - KSPROPERTY_DVDCOPY_DVD_KEY1 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 314d2f4e748235963bb681dafcdf55e51a34de27
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 41ed75cf87e338b8841cfdff86119292460d8326
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102394"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96792485"
 ---
 # <a name="ksproperty_dvdcopy_dvd_key1"></a>KSPROPERTY \_ DVDCOPY \_ DVD \_ KEY1
 
@@ -63,7 +62,7 @@ KSPROPERTY \_ DVDCOPY \_ dvd \_ KEY1 属性检索作为 DVD 版权保护身份�
 
 ) 操作数据 (的属性值是用于 \_ \_ 描述 DVD 解码器第一个总线密钥的 KS DVDCOPY BUSKEY 结构。
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 有关第一个总线密钥的详细信息，请参阅 [DVD 版权保护](./dvd-copyright-protection.md)。

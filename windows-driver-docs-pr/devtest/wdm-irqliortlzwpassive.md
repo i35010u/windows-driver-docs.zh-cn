@@ -1,7 +1,6 @@
 ---
 title: 'IrqlIoRtlZwPassive 规则 (wdm) '
 description: IrqlIoRtlZwPassive 规则指定，仅当该驱动程序以 IRQL = PASSIVE_LEVEL 执行时，才调用该规则中列出的 DDIs。
-ms.assetid: 9BAE267F-CA57-4743-8C8D-08716C134E16
 ms.date: 04/03/2020
 keywords:
 - 'IrqlIoRtlZwPassive 规则 (wdm) '
@@ -12,16 +11,16 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 2136f7b5cba04680866c82d8e8f649d986e6fe35
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 1cb3720bd0cb5e20e9684ff28c2947b7782f81a5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104110"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96791859"
 ---
 # <a name="irqliortlzwpassive-rule-wdm"></a>IrqlIoRtlZwPassive 规则 (wdm) 
 
-**IrqlIoRtlZwPassive**规则指定，仅当该驱动程序以 IRQL = PASSIVE_LEVEL 执行时，才调用该规则中列出的 DDIs。
+**IrqlIoRtlZwPassive** 规则指定，仅当该驱动程序以 IRQL = PASSIVE_LEVEL 执行时，才调用该规则中列出的 DDIs。
 
 此规则为 PASSIVE_LEVEL 扩充了 DDI 相容性检查 IRQL 规则。 有关详细信息，请参阅针对 [WDM)  (Irql 规则集 ](./irql-rule-set--wdm-.md)。
 

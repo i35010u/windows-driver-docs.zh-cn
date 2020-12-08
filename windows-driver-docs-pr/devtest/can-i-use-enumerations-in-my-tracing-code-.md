@@ -1,20 +1,19 @@
 ---
-title: 可以在我的跟踪代码中使用枚举
-description: 可以在我的跟踪代码中使用枚举
-ms.assetid: c42ab1ad-6b8f-458f-ba29-e3553095c853
+title: 能否在跟踪代码中使用枚举
+description: 能否在跟踪代码中使用枚举
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 098abf6d7e5374b7e165beb3b82f59bf1ead41b4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3dfbc4d61aedc60c26f5bf76799ba477bbf5bb5d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63375409"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96791567"
 ---
 # <a name="can-i-use-enumerations-in-my-tracing-code"></a>是否可以在跟踪代码中使用枚举？
 
 
-枚举可用于跟踪消息，而不是显示用户必须进行解码的整数值中显示有意义的术语。
+您可以使用枚举在跟踪消息中显示有意义的字词，而不是显示用户必须解码的整数值。
 
 例如，在代码中定义以下枚举：
 
@@ -31,7 +30,7 @@ enum _wday {
 };
 ```
 
-若要在跟踪消息中使用枚举，请将以下配置数据添加到源文件。 此代码将定向 WPP 来提取枚举的符号信息和使用已定义显示在枚举时的名称记录的值。
+若要在跟踪消息中使用枚举，请将以下配置数据添加到源文件中。 此代码指示 WPP 提取枚举的符号信息，并使用在显示枚举记录值时定义的名称。
 
 ```
 // begin_wpp config 
@@ -39,7 +38,7 @@ enum _wday {
 // end_wpp
 ```
 
-然后，可以使用**dayset**的跟踪消息的格式字符串中的自定义类型。 例如：
+然后，可以在跟踪消息的格式字符串中使用 **dayset** 自定义类型。 例如：
 
 ```
  _wday p = wednesday;
@@ -47,7 +46,7 @@ enum _wday {
  DoTraceMessage(NOISE " %!dayset!", p);
 ```
 
-最后，因为配置数据添加到非配置文件 （.ini 文件之外的文件） 中，添加 **-扫描**参数运行\_WPP 宏调用 WPP 预处理器。 这会通知 WPP 查找配置数据中指定的文件。 例如：
+最后，由于你将配置数据添加到非配置文件 (文件) 而不是 .ini 文件，因此，请将 **-scan** 参数添加到 \_ 调用 wpp 预处理器的 RUN WPP 宏。 这会通知 WPP 查找指定文件中的配置数据。 例如：
 
 ```
 RUN_WPP -scan:trace.c

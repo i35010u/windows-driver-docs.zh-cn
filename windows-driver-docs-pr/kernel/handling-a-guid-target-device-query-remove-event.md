@@ -1,7 +1,6 @@
 ---
 title: 处理 GUID_TARGET_DEVICE_QUERY_REMOVE 事件
 description: 处理 GUID_TARGET_DEVICE_QUERY_REMOVE 事件
-ms.assetid: f3e867c5-f7b8-40d2-a6cc-c5cb82e0b59b
 keywords:
 - 通知 WDK PnP，目标设备更改
 - 目标设备更改通知 WDK PnP
@@ -9,12 +8,12 @@ keywords:
 - GUID_TARGET_DEVICE_QUERY_REMOVE
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e2b8a04363cf6dd8e1108e300f4bb130e9428c61
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 52a319a7a289021d265c53bba88cbd5392b0f13d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89183863"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96792761"
 ---
 # <a name="handling-a-guid_target_device_query_remove-event"></a>处理 GUID \_ 目标 \_ 设备 \_ 查询 \_ 删除事件
 
@@ -22,7 +21,7 @@ ms.locfileid: "89183863"
 
 
 
-在 PnP 管理器发送 [**IRP \_ MN 查询 \_ 将 \_ \_ device**](./irp-mn-query-remove-device.md) IRP 发送到设备的驱动程序之前，它会调用为设备上的 **EventCategoryTargetDeviceChange** 注册的任何通知回调例程。 PnP 管理器指定*NotificationStructure*。**Event** GUID \_ 目标 \_ 设备 \_ 查询删除的事件 \_ 。
+在 PnP 管理器发送 [**IRP \_ MN 查询 \_ 将 \_ \_ device**](./irp-mn-query-remove-device.md) IRP 发送到设备的驱动程序之前，它会调用为设备上的 **EventCategoryTargetDeviceChange** 注册的任何通知回调例程。 PnP 管理器指定 *NotificationStructure*。**Event** GUID \_ 目标 \_ 设备 \_ 查询删除的事件 \_ 。
 
 为响应此类通知，回调例程确定是否可以在不中断系统的情况下删除设备。
 

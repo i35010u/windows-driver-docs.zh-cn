@@ -1,7 +1,6 @@
 ---
-title: 调试\_请求\_读取\_CAPTURED\_事件\_代码\_流
-description: 调试\_请求\_读取\_CAPTURED\_事件\_代码\_流
-ms.assetid: 867c6b3e-13d5-46ae-b73c-f90936cb35c5
+title: 调试 \_ 请求 \_ 读取 \_ 捕获的 \_ 事件 \_ 代码 \_ 流
+description: 调试 \_ 请求 \_ 读取 \_ 捕获的 \_ 事件 \_ 代码 \_ 流
 keywords:
 - DEBUG_REQUEST_READ_CAPTURED_EVENT_CODE_STREAM Windows 调试
 topic_type:
@@ -12,39 +11,39 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f5d08c61fe7014d5b3fc04c200f882e795693a78
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 541550ac2746fdecc0cfb01c7019818e2f647de3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63349067"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96791991"
 ---
-# <a name="debugrequestreadcapturedeventcodestream"></a>调试\_请求\_读取\_CAPTURED\_事件\_代码\_流
+# <a name="debug_request_read_captured_event_code_stream"></a>调试 \_ 请求 \_ 读取 \_ 捕获的 \_ 事件 \_ 代码 \_ 流
 
 
-调试\_请求\_读取\_CAPTURED\_事件\_代码\_流[**请求**](request.md)操作将返回最多64 个字节的内存在当前事件的指令指针。
+"调试 \_ 请求 \_ 读取 \_ 捕获 \_ \_ 的事件代码 \_ 流 [**请求**](request.md) " 操作在当前事件的指令指针上最多返回64字节的内存。
 
 **Parameters**
 
 <span id="InBuffer"></span><span id="inbuffer"></span><span id="INBUFFER"></span>*InBuffer*  
-不使用。
+未使用。
 
 <span id="OutBuffer"></span><span id="outbuffer"></span><span id="OUTBUFFER"></span>*OutBuffer*  
-在当前事件的指令指针的内存。 最多 64 个字节的内存可能会返回。
+当前事件的指令指针处的内存。 最多可以返回64字节的内存。
 
 <a name="remarks"></a>备注
 -------
 
-内存的快照会在事件发生时返回的内存。 它不反映可能已推出的目标内存事件的任何更改。
+返回的内存是事件发生时所占用内存的快照。 它不反映自事件以来可能已对目标的内存进行的任何更改。
 
-返回当前事件的指令指针[**请求**](request.md)操作[**调试\_请求\_获取\_捕获\_事件\_代码\_偏移量**](debug-request-get-captured-event-code-offset.md)。
+当前事件的指令指针由 [**请求**](request.md) 操作 [**DEBUG \_ 请求 \_ 获取 \_ 捕获的 \_ 事件 \_ 代码 \_ 偏移量**](debug-request-get-captured-event-code-offset.md)返回。
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[**请求**](request.md)
+[**Request**](request.md)
 
-[**调试\_请求\_获取\_CAPTURED\_事件\_代码\_偏移量**](debug-request-get-captured-event-code-offset.md)
+[**调试 \_ 请求 \_ 获取 \_ 捕获的 \_ 事件 \_ 代码 \_ 偏移量**](debug-request-get-captured-event-code-offset.md)
 
  
 

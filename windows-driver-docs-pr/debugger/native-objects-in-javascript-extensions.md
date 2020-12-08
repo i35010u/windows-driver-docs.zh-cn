@@ -1,20 +1,19 @@
 ---
 title: JavaScript 扩展中的本机调试器对象
-description: 本机调试器对象表示调试器环境的各种构造和行为。 可以将对象传入（或在中获取） JavaScript 扩展。
-ms.assetid: A8E12564-D083-43A7-920E-22C4D627FEE8
+description: 本机调试器对象表示调试器环境的各种构造和行为。 对象可以传递到 (中，也可以在) JavaScript 扩展中获取。
 ms.date: 09/07/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: cf0d7bc68691faba1f245ad597cc9be107004b57
-ms.sourcegitcommit: ca5045a739eefd6ed14b9dbd9249b335e090c4e9
+ms.openlocfilehash: f12f819968c3bdf85d48d75337dbef4b63c0bf5f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/06/2020
-ms.locfileid: "85968424"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96792403"
 ---
 # <a name="native-debugger-objects-in-javascript-extensions"></a>JavaScript 扩展中的本机调试器对象
 
 
-本机调试器对象表示调试器环境的各种构造和行为。 对象可传递到 JavaScript 扩展中（或在中获取）以操作调试器的状态。
+本机调试器对象表示调试器环境的各种构造和行为。 对象可以传递到 (中，也可以在) JavaScript 扩展中获取，以操作调试器的状态。
 
 示例调试器对象包括以下各项。
 
@@ -24,7 +23,7 @@ ms.locfileid: "85968424"
 -   堆栈帧/堆栈帧
 -   局部变量
 -   模块/模块
--   实用程序
+-   实用工具
 -   状态
 -   设置
 
@@ -37,9 +36,9 @@ var outputLines = ctl.ExecuteCommand("u");
 
 本主题介绍如何使用常见对象并提供有关其属性和行为的参考信息。
 
-有关使用 JavaScript 的常规信息，请参阅[Javascript 调试器脚本](javascript-debugger-scripting.md)。 有关使用调试器对象的 JavaScript 示例，请参阅[Javascript 调试器示例脚本](javascript-debugger-example-scripts.md)。 有关使用设置对象的信息，请参阅[**。设置（设置调试设置）**](-settings--set-debug-settings-.md)。
+有关使用 JavaScript 的常规信息，请参阅 [Javascript 调试器脚本](javascript-debugger-scripting.md)。 有关使用调试器对象的 JavaScript 示例，请参阅 [Javascript 调试器示例脚本](javascript-debugger-example-scripts.md)。 有关使用设置对象的信息，请参阅 [**。 "设置" (设置 "调试设置")**](-settings--set-debug-settings-.md)。
 
-若要浏览调试器会话中可用的对象，请使用[**dx （显示 NatVis Expression）**](dx--display-visualizer-variables-.md)命令。 例如，可以通过此 dx 命令显示顶级调试器对象的某些对象。
+若要浏览调试器会话中可用的对象，请使用 [**dx (显示 NatVis Expression)**](dx--display-visualizer-variables-.md) 命令。 例如，可以通过此 dx 命令显示顶级调试器对象的某些对象。
 
 ```dbgcmd
 0: kd> dx -r2 Debugger
@@ -81,7 +80,7 @@ Debugger
 
 除了能够在 JavaScript 中创建可视化工具外，脚本扩展还可以修改调试器的核心概念：会话、进程、线程、堆栈、堆栈帧、局部变量，甚至将自身发布为其他扩展可以使用的扩展点。
 
-本部分介绍如何在调试器中扩展核心概念。 为共享而构建的扩展应符合[JavaScript 扩展中的本机调试器对象中提供的指导原则-设计和测试注意事项](native-objects-in-javascript-extensions-design-considerations.md)。
+本部分介绍如何在调试器中扩展核心概念。 为共享而构建的扩展应符合 [JavaScript 扩展中的本机调试器对象中提供的指导原则-设计和测试注意事项](native-objects-in-javascript-extensions-design-considerations.md)。
 
 **注册扩展**
 
@@ -94,21 +93,21 @@ function initializeScript()
 }
 ```
 
-在返回的数组中存在 namedModelParent 对象向调试器指示给定的原型对象或 ES6 类（在本例中为 comProcessExtension）将要成为在名称调试器中注册的模型的父数据模型。
+在返回的数组中存在 namedModelParent 对象向调试器指出给定的原型对象或 ES6 类 (comProcessExtension，在这种情况下) 会成为在名称调试器中注册的模型的父数据模型。
 
 **调试器对象扩展点**
 
 以下调试器扩展点是调试器所必不可少的，可供脚本提供程序（如 JavaScript）使用。
 
-**调试程序. 模型**：调试器附加到的会话（目标）的列表
+"**调试程序"。会话**：会话的列表 (调试器附加到的目标) 
 
-KD **：调试器**所附加到的单个会话（目标）（实时用户模式、等）
+KD **：将调试器附加** 到 (实时用户模式、等的单个会话 (目标) ) 
 
 **调试程序**：会话内的进程列表
 
 **调试程序. 模型**：进程中的线程列表
 
-**调试程序. 模型**：进程内的单个线程（无论用户模式还是内核模式）
+"**调试器**"：进程中的单个线程 (无论用户模式还是内核模式) 
 
 **调试程序. 模型**：线程的堆栈
 
@@ -129,7 +128,7 @@ KD **：调试器**所附加到的单个会话（目标）（实时用户模式�
 
 此外，还提供了一些由核心数据模型定义的其他数据模型对象。
 
-**DataModel**：内部值（序数、浮点数等）
+**DataModel**：内部数值 (序数、浮点数等 .。。) 
 
 **DataModel**：字符串
 
@@ -148,9 +147,9 @@ KD **：调试器**所附加到的单个会话（目标）（实时用户模式�
 
 **示例 COM 调试器对象扩展概述**
 
-我们分析一个示例。 假设要创建一个调试器扩展来显示特定于 COM 的信息，如全局接口表（GIT）。
+我们分析一个示例。 假设要创建一个调试器扩展来显示特定于 COM 的信息，例如全局接口表 (GIT) 。
 
-过去，可能有一个现有的调试器扩展，其中包含许多命令，这些命令提供了一种方法来访问 COM。 一个命令可能会显示以进程为中心的信息（例如，全局接口表）。 另一个命令可以提供以线程为中心的信息，例如在中执行的单元代码。 你可能需要了解并加载另一个调试器扩展，以探索 COM 的其他方面。
+过去，可能有一个现有的调试器扩展，其中包含许多命令，这些命令提供了一种方法来访问 COM。 一个命令可能会 () 实例的全局接口表中显示以进程为中心的信息。 另一个命令可以提供以线程为中心的信息，例如在中执行的单元代码。 你可能需要了解并加载另一个调试器扩展，以探索 COM 的其他方面。
 
 JavaScript 扩展可以修改进程和线程的概念，而不是使用一组难于发现的命令，而是以一种自然、可探索对象且可组合的方式将此信息添加到其他调试器扩展。
 
@@ -162,7 +161,7 @@ JavaScript 扩展可以修改进程和线程的概念，而不是使用一组难
 
 回到我们的示例，我们可以定义一个 prototype 或 ES6 类， *comProcessExtension* ，其中包含我们要添加到 process 对象的一组对象。
 
-**重要提示**   使用子命名空间的目的是创建逻辑结构化的自然可探索对象范例。 例如，避免将无关项转储到相同的子命名空间中。 在创建子命名空间之前，请仔细查看[JavaScript 扩展中的本机调试器对象中讨论的信息-设计和测试注意事项](native-objects-in-javascript-extensions-design-considerations.md)。
+**重要提示**   使用子命名空间的目的是创建逻辑结构化的自然可探索对象范例。 例如，避免将无关项转储到相同的子命名空间中。 在创建子命名空间之前，请仔细查看 [JavaScript 扩展中的本机调试器对象中讨论的信息-设计和测试注意事项](native-objects-in-javascript-extensions-design-considerations.md) 。
 
 在此代码片段中，我们将在现有的进程调试器对象上创建名为 "COM" 的子命名空间。
 
@@ -188,7 +187,8 @@ var comProcessExtension =
 
 接下来，在进程上创建实现子命名空间 COM 的对象。
 
-**重要提示**   可以有多个进程（无论是附加到用户模式还是 KD 下）。 此扩展无法假定调试器的当前状态为用户预期的状态。 有人可以 &lt; &gt; 在变量中捕获 someProcess 并对其进行修改，这可能会导致显示错误的进程上下文中的信息。 解决方法是在扩展中添加代码，以便每个实例化将跟踪它附加到的进程。 对于此代码示例，通过属性的 "this" 指针传递此信息。
+**重要说明**  
+无论附加到用户模式还是 KD) ，都可以有多个进程 (。 此扩展无法假定调试器的当前状态为用户预期的状态。 有人可以 &lt; &gt; 在变量中捕获 someProcess 并对其进行修改，这可能会导致显示错误的进程上下文中的信息。 解决方法是在扩展中添加代码，以便每个实例化将跟踪它附加到的进程。 对于此代码示例，通过属性的 "this" 指针传递此信息。
 
 `this.__process = process;`
 
@@ -216,7 +216,7 @@ class comNamespace
 
 **COM 全局接口表的实现逻辑**
 
-为了更清晰地分离出 COM 全局接口表的实现逻辑，我们将定义一个 ES6 类， *gipTable* ，它将抽象掉 com GIP 表和另一个*globalObjects*，这是从上面所示的命名空间实现代码段中定义的 globalObjects （） getter 返回的内容。 所有这些详细信息都可以隐藏在 initializeScript 的闭包中，以避免将其中的任何内部详细信息发布到调试器命名空间中。
+为了更清晰地分离出 COM 全局接口表的实现逻辑，我们将定义一个 ES6 类， *gipTable* ，它将抽象掉 com GIP 表和另一个 *globalObjects*，后者将从上面所示的命名空间实现代码段中定义的 globalObjects ( # A1 getter 返回。 所有这些详细信息都可以隐藏在 initializeScript 的闭包中，以避免将其中的任何内部详细信息发布到调试器命名空间中。
 
 ```javascript
 // gipTable:

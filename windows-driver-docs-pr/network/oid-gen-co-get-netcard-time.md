@@ -1,17 +1,16 @@
 ---
 title: OID_GEN_CO_GET_NETCARD_TIME
-description: 本主题介绍 OID_GEN_CO_GET_NETCARD_TIME 对象标识符（OID）。
-ms.assetid: 4dfa0f02-2b37-4b9f-95fe-dd33774dedbc
+description: 本主题介绍) OID_GEN_CO_GET_NETCARD_TIME 对象标识符 (OID。
 keywords:
 - OID_GEN_CO_GET_NETCARD_TIME
 ms.date: 11/02/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 944ba507a1b12bdad15c5d55676d9f8fbdead1ab
-ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
+ms.openlocfilehash: 8aba8fa098dd661e00c8fd686e008d4cd510d065
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85916619"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96792157"
 ---
 # <a name="oid_gen_co_get_netcard_time"></a>OID_GEN_CO_GET_NETCARD_TIME
 
@@ -33,7 +32,7 @@ typedef struct _GEN_GET_NETCARD_TIME{
 
 ## <a name="remarks"></a>备注
 
-微型端口驱动程序在 GEN_GET_TIME_CAPS 结构的**ClockPrecision**元素中指定了其本地时间单位，这是小型端口驱动程序为响应先前 OID_GEN_CO_GET_TIME_CAPS 查询而返回的。
+微型端口驱动程序在 GEN_GET_TIME_CAPS 结构的 **ClockPrecision** 元素中指定了其本地时间单位，这是小型端口驱动程序为响应先前 OID_GEN_CO_GET_TIME_CAPS 查询而返回的。
 
 如果微型端口驱动程序将 READABLE_LOCAL_CLOCK 标志设置为对 OID_GEN_CO_GET_TIME_CAPS 查询的响应，则 NIC 将从板载时钟中派生出其本地时间。 如果微型端口驱动程序将 CLOCK_NETWORK_DERIVED 标志设置为对 OID_GEN_CO_GET_TIME_CAPS 查询的响应，则 NIC 会从网络中派生出其本地时间。
 
@@ -43,5 +42,5 @@ typedef struct _GEN_GET_NETCARD_TIME{
 
 ## <a name="requirements"></a>要求
 
-**版本**： Windows Vista 和更高版本的**标头**： Ntddndis （包括 Ndis .h）
+**版本**： Windows Vista 和更高版本的 **标头**： Ntddndis (包括 Ndis .h) 
 

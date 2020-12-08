@@ -1,9 +1,8 @@
 ---
 title: RotationValue 元素
-description: 所需的 RotationValue 元素指定扫描设备支持的单个旋转值。
-ms.assetid: 89b8527a-309a-4344-bf6e-3155bb056acf
+description: 必需的 RotationValue 元素指定扫描设备支持的单个旋转值。
 keywords:
-- RotationValue 元素成像设备
+- RotationValue 元素图像设备
 topic_type:
 - apiref
 api_name:
@@ -12,19 +11,19 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5b3a4fea4c1227e64da3185174f91789e0642e03
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 919e639230387c55131c6f8108198f703b1abbc0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63381579"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96790613"
 ---
 # <a name="rotationvalue-element"></a>RotationValue 元素
 
 
-所需**RotationValue**元素指定扫描设备支持的单个旋转值。
+必需的 **RotationValue** 元素指定扫描设备支持的单个旋转值。
 
-<a name="usage"></a>用法
+<a name="usage"></a>使用情况
 -----
 
 ```xml
@@ -41,12 +40,12 @@ ms.locfileid: "63381579"
 <a name="text-value"></a>文本值
 ----------
 
-必需。 一个数字值，该值必须是 0、 90、 180 或 270。
+必需。 必须为0、90、180或270的数字值。
 
 ## <a name="child-elements"></a>子元素
 
 
-没有子元素。
+没有任何子元素。
 
 ## <a name="parent-elements"></a>父元素
 
@@ -70,9 +69,9 @@ ms.locfileid: "63381579"
 <a name="remarks"></a>备注
 -------
 
-**RotationValue**元素指定的扫描程序应旋转扫描的文档的每个图像的度数。 按顺时针方向应用所有的旋转。
+**RotationValue** 元素指定扫描程序应为扫描文档的每个图像旋转的度数。 所有旋转都按顺时针方向应用。
 
-所有 WSD 扫描服务必须都支持的值为 0。 您都可以扩展和子集的允许的值为此元素。
+所有 WSD 扫描服务都必须支持值0。 可以扩展和子集化此元素的允许值。
 
 ## <a name="see-also"></a>请参阅
 

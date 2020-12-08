@@ -1,7 +1,6 @@
 ---
 title: KSCATEGORY_BDA_NETWORK_TUNER
 description: KSCATEGORY_BDA_NETWORK_TUNER
-ms.assetid: d3f9d393-c8a1-4280-8796-a1de755f9508
 keywords:
 - KSCATEGORY_BDA_NETWORK_TUNER 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: e3db422bc19f69f76dc1e7b195a3a789bc785237
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 8d0df25f3ccb11cca61874c091bd36d1a82cf560
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89097269"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96790563"
 ---
 # <a name="kscategory_bda_network_tuner"></a>KSCATEGORY_BDA_NETWORK_TUNER
 

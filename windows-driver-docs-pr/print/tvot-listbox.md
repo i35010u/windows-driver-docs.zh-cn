@@ -1,7 +1,6 @@
 ---
 title: TVOT \_ LISTBOX
 description: TVOT \_ LISTBOX
-ms.assetid: 2426ae5a-33e6-4f16-ad49-ff38ea19e392
 keywords:
 - TVOT_LISTBOX 打印设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e1d7110ce16dba75d05fe7b49383be3cd0be5ac8
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: daaa602b60be5fe86b0108e1b17253e8076f0e9e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89212633"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96792593"
 ---
 # <a name="tvot_listbox"></a>TVOT \_ LISTBOX
 
@@ -32,23 +31,23 @@ TVOT \_ LISTBOX 选项类型包括分组框中的列表框。
 <span id="OPTITEM_Structure"></span><span id="optitem_structure"></span><span id="OPTITEM_STRUCTURE"></span>[**OPTITEM**](/windows-hardware/drivers/ddi/compstui/ns-compstui-_optitem) 构造  
 
 <span id="Sel_pSel"></span><span id="sel_psel"></span><span id="SEL_PSEL"></span>**Sel/pSel**  
-[**OPTPARAM**](/windows-hardware/drivers/ddi/compstui/ns-compstui-_optparam)数组中的索引，该数组由该选项的[**OPTTYPE**](/windows-hardware/drivers/ddi/compstui/ns-compstui-_opttype)结构的**pOptParam**成员指向。 这会指定当前选择的选项参数。
+[**OPTPARAM**](/windows-hardware/drivers/ddi/compstui/ns-compstui-_optparam)数组中的索引，该数组由该选项的 [**OPTTYPE**](/windows-hardware/drivers/ddi/compstui/ns-compstui-_opttype)结构的 **pOptParam** 成员指向。 这会指定当前选择的选项参数。
 
-<span id="OPTPARAM_Structure_Array__pOptParam_member_of_OPTTYPE_"></span><span id="optparam_structure_array__poptparam_member_of_opttype_"></span><span id="OPTPARAM_STRUCTURE_ARRAY__POPTPARAM_MEMBER_OF_OPTTYPE_"></span>[**OPTPARAM**](/windows-hardware/drivers/ddi/compstui/ns-compstui-_optparam)结构数组 ([**OPTTYPE**](/windows-hardware/drivers/ddi/compstui/ns-compstui-_opttype)的**pOptParam**成员)   
+<span id="OPTPARAM_Structure_Array__pOptParam_member_of_OPTTYPE_"></span><span id="optparam_structure_array__poptparam_member_of_opttype_"></span><span id="OPTPARAM_STRUCTURE_ARRAY__POPTPARAM_MEMBER_OF_OPTTYPE_"></span>[**OPTPARAM**](/windows-hardware/drivers/ddi/compstui/ns-compstui-_optparam)结构数组 ([**OPTTYPE**](/windows-hardware/drivers/ddi/compstui/ns-compstui-_opttype)的 **pOptParam** 成员)   
 
 <span id="pData"></span><span id="pdata"></span><span id="PDATA"></span>**pData**  
-**pOptParam** \[0 \] - &gt; **pData**指向要在列表框中显示的第一个文本字符串。
+**pOptParam** \[0 \] - &gt; **pData** 指向要在列表框中显示的第一个文本字符串。
 
-**pOptParam** \[1 \] - &gt; **pData**指向要在列表框中显示的第二个文本字符串。
+**pOptParam** \[1 \] - &gt; **pData** 指向要在列表框中显示的第二个文本字符串。
 
-**pOptParam** \[*n* \] - n &gt;**pData**指向要在列表框中显示的第*n*个文本字符串。
+**pOptParam** \[*n* \] - n &gt;**pData** 指向要在列表框中显示的第 *n* 个文本字符串。
 
 <span id="IconID"></span><span id="iconid"></span><span id="ICONID"></span>**IconID**  
-**pOptParam** \[0 \] - &gt; **IconID**标识要与第一个文本字符串关联的图标。
+**pOptParam** \[0 \] - &gt; **IconID** 标识要与第一个文本字符串关联的图标。
 
-**pOptParam** \[1 \] - &gt; **IconID**标识要与第二个文本字符串关联的图标。
+**pOptParam** \[1 \] - &gt; **IconID** 标识要与第二个文本字符串关联的图标。
 
-**pOptParam** \[*n* \] - n &gt;**IconID**标识与第*n*个文本字符串关联的图标。
+**pOptParam** \[*n* \] - n &gt;**IconID** 标识与第 *n* 个文本字符串关联的图标。
 
 <span id="lParam"></span><span id="lparam"></span><span id="LPARAM"></span>**lParam**  
 未使用。
@@ -77,7 +76,7 @@ OPTPARAM 结构的数量;也就是说，将在列表框中显示的文本字符�
 如果设置，CPSUI 按字母顺序显示文本字符串。
 
 <span id="BegCtrlID"></span><span id="begctrlid"></span><span id="BEGCTRLID"></span>**BegCtrlID**  
-如果[**COMPROPSHEETUI**](/windows-hardware/drivers/ddi/compstui/ns-compstui-_compropsheetui)中的**pDlgPage**标识 CPSUI 提供的页面，或[**DLGPAGE**](/windows-hardware/drivers/ddi/compstui/ns-compstui-_dlgpage)中的**DlgTemplateID**标识 CPSUI 提供的模板，则不使用**BegCtrlID** 。
+如果 [**COMPROPSHEETUI**](/windows-hardware/drivers/ddi/compstui/ns-compstui-_compropsheetui)中的 **pDlgPage** 标识 CPSUI 提供的页面，或 [**DLGPAGE**](/windows-hardware/drivers/ddi/compstui/ns-compstui-_dlgpage)中的 **DlgTemplateID** 标识 CPSUI 提供的模板，则不使用 **BegCtrlID** 。
 
 否则， **BegCtrlID** 必须包含按顺序编号的控件标识符集的第一个控件标识符。 控件标识符必须标识以下 Windows 控件：
 
@@ -122,7 +121,7 @@ OPTPARAM 结构的数量;也就是说，将在列表框中显示的文本字符�
 
  
 
-有关其他信息，请参阅 [自定义 CPSUI 支持的窗口控件](./customizing-cpsui-supported-window-controls.md)。
+有关其他信息，请参阅 [自定义 CPSUI-Supported 窗口控件](./customizing-cpsui-supported-window-controls.md)。
 
 <a name="requirements"></a>要求
 ------------

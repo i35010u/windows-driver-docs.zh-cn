@@ -1,6 +1,5 @@
 ---
 title: 'IrqlKeApcLte1 规则 (wdm) '
-ms.assetid: d88e3c0f-574b-41df-97ee-282a9f1eb6f4
 ms.date: 05/21/2018
 description: '了解详细信息： IrqlKeApcLte1 规则 (wdm) '
 keywords:
@@ -12,12 +11,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 3fc7d97e6d20743503d46ad04176057101c5ae71
-ms.sourcegitcommit: f47c072e88dce59daba1231027b60eb56bd2cde9
+ms.openlocfilehash: 5cc98a0390ea7c4a79f205d3f19b295f3e3b873a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92689399"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96791857"
 ---
 # <a name="irqlkeapclte1-rule-wdm"></a>IrqlKeApcLte1 规则 (wdm) 
 
@@ -40,7 +39,7 @@ ms.locfileid: "92689399"
 
 **驱动程序模型： WDM**
 
-**Bug 检查 () 发现此规则** ： [**bug 检查0XC4：驱动程序 \_ 验证器 \_ 检测到 \_ 违反**](../debugger/bug-check-0xc4--driver-verifier-detected-violation.md) (0x0002000F) 
+**Bug 检查 () 发现此规则**： [**bug 检查0XC4：驱动程序 \_ 验证器 \_ 检测到 \_ 违反**](../debugger/bug-check-0xc4--driver-verifier-detected-violation.md) (0x0002000F) 
 
 
 <a name="how-to-test"></a>如何测试

@@ -1,9 +1,8 @@
 ---
-title: ks.devhdr
-description: Ks.devhdr 扩展显示流式处理与给定的 WDM 对象关联的设备标头的内核。
-ms.assetid: 1418ccfe-3842-422c-b2ce-124d0019d7b8
+title: ks. devhdr
+description: Devhdr 扩展显示与给定 WDM 对象关联的内核流式处理设备标头。
 keywords:
-- ks.devhdr Windows 调试
+- devhdr Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,29 +11,29 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 2b2df61a97cf1b12eff226e84377116a7f514ad2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 99c6372638604a3f7610d2ab0674c02b146f7b74
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63336348"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96792035"
 ---
 # <a name="ksdevhdr"></a>!ks.devhdr
 
 
-**！ Ks.devhdr**扩展显示流式处理与给定的 WDM 对象关联的设备标头的内核。
+**Devhdr** 扩展显示与给定 WDM 对象关联的内核流式处理设备标头。
 
 ```dbgcmd
 !ks.devhdr DeviceObject 
 ```
 
-## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>参数
+## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>Parameters
 
 
-<span id="_______DeviceObject______"></span><span id="_______deviceobject______"></span><span id="_______DEVICEOBJECT______"></span> *DeviceObject*   
-此参数指定指向 WDM 设备对象的指针。 如果*DeviceObject*不是有效的该命令将返回错误。
+<span id="_______DeviceObject______"></span><span id="_______deviceobject______"></span><span id="_______DEVICEOBJECT______"></span>*DeviceObject*   
+此参数指定指向 WDM 设备对象的指针。 如果 *DeviceObject* 无效，则该命令将返回一个错误。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 <table>
 <colgroup>
@@ -55,16 +54,16 @@ ms.locfileid: "63336348"
 
  
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-有关详细信息，请参阅[流式处理的内核调试](kernel-streaming-debugging.md)。
+有关详细信息，请参阅 [内核流调试](kernel-streaming-debugging.md)。
 
 <a name="remarks"></a>备注
 -------
 
-从输出[ **！ ks.allstreams** ](-ks-allstreams.md)可用作输入 **！ ks.devhdr**。
+从 [**！ allstreams**](-ks-allstreams.md) 的输出可以用作 **！ devhdr** 的输入。
 
-下面是举例 **！ ks.devhdr**显示：
+下面是一个 **devhdr** 显示示例：
 
 ```dbgcmd
 kd> !devhdr 827aedf0 7

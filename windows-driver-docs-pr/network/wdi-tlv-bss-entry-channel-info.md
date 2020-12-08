@@ -1,22 +1,21 @@
 ---
 title: WDI_TLV_BSS_ENTRY_CHANNEL_INFO
-description: WDI_TLV_BSS_ENTRY_CHANNEL_INFO 是 TLV 包含 BSS 条目通道信息。
-ms.assetid: 01DA2EDA-2BE2-4E4F-AE5D-8E07EEF691FE
+description: WDI_TLV_BSS_ENTRY_CHANNEL_INFO 是包含 BSS 条目通道信息的 TLV。
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_BSS_ENTRY_CHANNEL_INFO 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 1ef1ce103cbc16074fe9aada4beda535cf04b15d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b86b5e4f65e627005839b43f79178a72956e043b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63355207"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96792609"
 ---
-# <a name="wditlvbssentrychannelinfo"></a>WDI\_TLV\_BSS\_条目\_通道\_信息
+# <a name="wdi_tlv_bss_entry_channel_info"></a>WDI \_ TLV \_ BSS \_ 条目 \_ 通道 \_ 信息
 
 
-WDI\_TLV\_BSS\_条目\_通道\_信息是 TLV 包含 BSS 条目通道信息。
+WDI \_ tlv \_ BSS \_ 条目 \_ 通道 \_ 信息是包含 BSS 条目通道信息的 tlv。
 
 ## <a name="tlv-type"></a>TLV 类型
 
@@ -26,15 +25,15 @@ WDI\_TLV\_BSS\_条目\_通道\_信息是 TLV 包含 BSS 条目通道信息。
 ## <a name="length"></a>长度
 
 
-所有包含的元素的大小的总和 （以字节为单位）。
+Sum (所有包含的元素的大小) 。
 
 ## <a name="values"></a>值
 
 
-| 在任务栏的搜索框中键入                          | 描述                                                  |
+| 类型                          | 描述                                                  |
 |-------------------------------|--------------------------------------------------------------|
-| WDI\_通道\_数 (UINT32) | 发现对等逻辑频道号。 |
-| UINT32                        | BSS 条目外 ID。                               |
+| WDI \_ 信道 \_ 号 (UINT32)  | 在其上发现对等方的逻辑通道号。 |
+| UINT32                        | BSS 项的带区 ID。                               |
 
  
 
@@ -53,10 +52,10 @@ WDI\_TLV\_BSS\_条目\_通道\_信息是 TLV 包含 BSS 条目通道信息。
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
-<td><p>Windows Server 2016</p></td>
+<td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Wditypes.hpp</td>
 </tr>
 </tbody>

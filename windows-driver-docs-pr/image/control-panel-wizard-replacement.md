@@ -1,15 +1,14 @@
 ---
 title: 控件面板向导替换
 description: 控件面板向导替换
-ms.assetid: d4a418b6-a9f9-41c4-99a9-20992abe80e9
 ms.date: 06/09/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 8a62856d2f57e94a3f64b82be83a5deb24b24008
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 3ddb6ca58085e55d86d7f9885a53c008cf3abbc0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89187067"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96792903"
 ---
 # <a name="control-panel-wizard-replacement"></a>控件面板向导替换
 

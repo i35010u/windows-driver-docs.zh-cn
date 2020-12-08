@@ -1,7 +1,6 @@
 ---
 title: Bug 检查 0x14E SOC_CRITICAL_DEVICE_REMOVED
-description: SOC_CRITICAL_DEVICE_REMOVED bug 检查具有 0x0000014E 值。 这表示，关键的 SOC 设备具有已意外删除或出现故障。
-ms.assetid: FC0A9CED-F078-4651-BD3E-4246ED36E81A
+description: SOC_CRITICAL_DEVICE_REMOVED bug 检查的值为0x0000014E。 这表明严重的 SOC 设备意外删除或失败。
 keywords:
 - Bug 检查 0x14E SOC_CRITICAL_DEVICE_REMOVED
 - SOC_CRITICAL_DEVICE_REMOVED
@@ -13,31 +12,31 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: d989e9c69804131dc4c2d144ad4337bfbaca32e4
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: c92f6efad303fab9b80d6aa84ae27f11fed3b5f4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67520087"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96790701"
 ---
-# <a name="bug-check-0x14e-soccriticaldeviceremoved"></a>Bug 检查 0x14E：SOC\_严重\_设备\_已删除
+# <a name="bug-check-0x14e-soc_critical_device_removed"></a>Bug 检查0x14E： \_ \_ 已删除 SOC 严重设备 \_
 
 
-SOC\_严重\_设备\_已删除错误检查的值为 0x0000014E。 这表示，关键的 SOC 设备具有已意外删除或出现故障。
+SOC \_ 严重 \_ 设备 \_ 删除 bug 检查的值为0x0000014E。 这表明严重的 SOC 设备意外删除或失败。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题面向程序员。 如果您是在使用计算机时收到蓝屏错误代码的客户，请参阅[蓝屏错误疑难解答](https://www.windows.com/stopcode)。
 
 
-## <a name="soccriticaldeviceremoved-parameters"></a>SOC\_严重\_设备\_已删除参数
+## <a name="soc_critical_device_removed-parameters"></a>SOC \_ 关键 \_ 设备 \_ 删除参数
 
 
 | 参数 | 描述                                                                                |
 |-----------|--------------------------------------------------------------------------------------------|
-| 1         | 如果可用，请指示这是设备的 ID 中删除 （打包代码 4 个字符） |
-| 2         | 保留                                                                                   |
-| 3         | 保留                                                                                   |
-| 4         | 保留                                                                                   |
+| 1         | 如果有，则指示 (4 个字符打包的代码中删除的设备 ID)  |
+| 2         | 预留                                                                                   |
+| 3         | 预留                                                                                   |
+| 4         | 预留                                                                                   |
 
  
 

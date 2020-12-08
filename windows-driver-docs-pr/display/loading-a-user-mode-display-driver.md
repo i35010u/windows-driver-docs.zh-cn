@@ -1,19 +1,18 @@
 ---
 title: 加载用户模式显示驱动程序
 description: 加载用户模式显示驱动程序
-ms.assetid: bfebe590-bcde-40cf-9074-8d0f63e0562d
 keywords:
 - INF 文件，WDK 显示，用户模式驱动程序加载
 - 用户模式显示驱动程序 WDK Windows Vista，加载
 - 正在加载驱动程序 WDK 显示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8fa7efa0a156f127dded1a3e95a1bf9cd1d64f50
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 5e0870d823302a8fa306fe4c73a904cdf8e9534e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89065796"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96792289"
 ---
 # <a name="loading-a-user-mode-display-driver"></a>加载用户模式显示驱动程序
 

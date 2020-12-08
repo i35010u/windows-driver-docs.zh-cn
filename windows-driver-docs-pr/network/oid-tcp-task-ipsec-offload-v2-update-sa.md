@@ -1,16 +1,15 @@
 ---
 title: OID_TCP_TASK_IPSEC_OFFLOAD_V2_UPDATE_SA
 description: 作为集，TCP/IP 传输使用 OID_TCP_TASK_IPSEC_OFFLOAD_V2_UPDATE_SA OID 来请求微型端口驱动程序更新 NIC 上的指定安全关联 (SAs) 。
-ms.assetid: 22849103-9148-4621-b78f-b9f34f2c7ac1
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_TCP_TASK_IPSEC_OFFLOAD_V2_UPDATE_SA 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 2b4b32c3b5695b6a2c7faf6b380a35622a1f8f7b
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 472d5ad22090c3723b78bacb4492c7b05fff026c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89215850"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96792647"
 ---
 # <a name="oid_tcp_task_ipsec_offload_v2_update_sa"></a>OID \_ TCP \_ 任务 \_ IPSEC \_ 卸载 \_ V2 \_ 更新 \_ SA
 
@@ -19,7 +18,7 @@ ms.locfileid: "89215850"
 
 作为一个集，TCP/IP 传输使用 OID \_ TCP \_ 任务 \_ IPSEC \_ 卸载 \_ V2 \_ 更新 \_ SA OID 来请求微型端口驱动程序更新 NIC 上 (SAs) 的指定安全关联。
 
-**注意**   NDIS 支持直接 OID 请求接口的此 OID。 有关直接 OID 请求接口的详细信息，请参阅 [NDIS 6.1 直接 Oid 请求接口](/windows-hardware/drivers/ddi/_netvista/)。
+**注意**  NDIS 支持直接 OID 请求接口的此 OID。 有关直接 OID 请求接口的详细信息，请参阅 [NDIS 6.1 直接 Oid 请求接口](/windows-hardware/drivers/ddi/_netvista/)。
 
  
 
@@ -52,7 +51,7 @@ ms.locfileid: "89215850"
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**IPSEC \_ 卸载 \_ V2 \_ 更新 \_ SA**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ipsec_offload_v2_update_sa)

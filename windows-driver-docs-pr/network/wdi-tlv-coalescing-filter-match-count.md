@@ -1,22 +1,21 @@
 ---
 title: WDI_TLV_COALESCING_FILTER_MATCH_COUNT
-description: WDI_TLV_COALESCING_FILTER_MATCH_COUNT 是包含具有匹配的数据包数 TLV 接收的网络端口的筛选器。
-ms.assetid: 9B9A1ED9-B842-4788-94C9-829876EB5D73
+description: WDI_TLV_COALESCING_FILTER_MATCH_COUNT 是一种 TLV，其中包含与网络端口上的接收筛选器匹配的数据包数。
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_COALESCING_FILTER_MATCH_COUNT 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: ea499ff0229bae2e18017c3468b98d8c47b11322
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 58e380fced9ebc16fbb6be957cfc9656b93c9108
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380555"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96791335"
 ---
-# <a name="wditlvcoalescingfiltermatchcount"></a>WDI\_TLV\_COALESCING\_筛选器\_匹配\_计数
+# <a name="wdi_tlv_coalescing_filter_match_count"></a>WDI \_ TLV \_ 合并 \_ 筛选器 \_ 匹配 \_ 计数
 
 
-WDI\_TLV\_COALESCING\_筛选器\_匹配\_计数是包含具有匹配的数据包数 TLV 接收的网络端口的筛选器。
+WDI \_ tlv \_ 合并 \_ 筛选器 \_ 匹配 \_ 计数是一个 TLV，其中包含与网络端口上的接收筛选器匹配的数据包数。
 
 ## <a name="tlv-type"></a>TLV 类型
 
@@ -26,14 +25,14 @@ WDI\_TLV\_COALESCING\_筛选器\_匹配\_计数是包含具有匹配的数据包
 ## <a name="length"></a>长度
 
 
-大小 （以字节为单位） UINT64。
+UINT64) 的大小 (以字节为单位）。
 
 ## <a name="values"></a>值
 
 
-| 在任务栏的搜索框中键入   | 描述                                                                  |
+| 类型   | 描述                                                                  |
 |--------|------------------------------------------------------------------------------|
-| UINT64 | 接收的网络端口的筛选器的具有匹配的数据包数。 |
+| UINT64 | 与网络端口上的接收筛选器匹配的数据包数。 |
 
  
 
@@ -52,10 +51,10 @@ WDI\_TLV\_COALESCING\_筛选器\_匹配\_计数是包含具有匹配的数据包
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
-<td><p>Windows Server 2016</p></td>
+<td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Wditypes.hpp</td>
 </tr>
 </tbody>

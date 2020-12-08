@@ -1,7 +1,6 @@
 ---
 title: 'WlanTimedConnectRequest 规则 (ndis) '
 description: WlanTimedConnectRequest 规则验证 OID \_ DOT11 \_ CONNECT \_ 请求后跟 NDIS \_ STATUS \_ DOT11 \_ 连接是否 \_ 在10秒内启动。
-ms.assetid: F40D92B1-CA48-4060-B9E2-A965900EAF7B
 ms.date: 05/21/2018
 keywords:
 - 'WlanTimedConnectRequest 规则 (ndis) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: d7f5f0ae970da861af3d97e4a11d119e22688883
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: db3ba0241521d36719cf402707cfc9164430f4d7
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107440"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96791929"
 ---
 # <a name="wlantimedconnectrequest-rule-ndis"></a>WlanTimedConnectRequest 规则 (ndis) 
 
 
-**WlanTimedConnectRequest**规则验证 OID \_ DOT11 \_ CONNECT \_ 请求后跟 NDIS \_ STATUS \_ DOT11 \_ 连接是否 \_ 在10秒内启动。
+**WlanTimedConnectRequest** 规则验证 OID \_ DOT11 \_ CONNECT \_ 请求后跟 NDIS \_ STATUS \_ DOT11 \_ 连接是否 \_ 在10秒内启动。
 
 此外， \_ \_ \_ \_ 仅当 OID \_ DOT11 \_ 连接 \_ 请求在 ndis \_ 状态 \_ 成功完成时，才会指示 ndis 状态 DOT11 连接开始。 此规则仅适用于 (端口 0) 的可扩展工作站端口。
 

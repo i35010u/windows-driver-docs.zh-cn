@@ -1,15 +1,14 @@
 ---
 title: CODECAPI \_ SETALLDEFAULTS
 description: CODECAPI \_ SETALLDEFAULTS
-ms.assetid: 6a50a75f-cbc5-487f-b2cd-34e89eb127a0
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1bc920bdfb167081303881632452b299eaf88b44
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 73fa061b4da3c15c3cacd73a03e951150d86e28f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89186369"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96792523"
 ---
 # <a name="codecapi_setalldefaults"></a>CODECAPI \_ SETALLDEFAULTS
 
@@ -51,13 +50,13 @@ CODECAPI \_ SETALLDEFAULTS 属性用于将微型驱动程序的所有内部设�
 
 设置为此属性集的是一个触发器，设备应将其所有设置重置为默认值。
 
-### <a name="comments"></a>说明
+### <a name="comments"></a>注释
 
 设置此属性时，微型驱动程序应为 [CODECAPI \_ CURRENTCHANGELIST](codecapi-currentchangelist.md) 缓存已更改参数的整个列表。
 
 ### <a name="requirements"></a>要求
 
-**标头：** 在 *ksmedia*中声明。 包括 *ksmedia*。
+**标头：** 在 *ksmedia* 中声明。 包括 *ksmedia*。
 
 ### <a name="see-also"></a>另请参阅
 

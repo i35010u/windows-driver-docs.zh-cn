@@ -1,7 +1,6 @@
 ---
-title: 调试\_请求\_获取\_WIN32\_主要\_次要\_版本
-description: 调试\_请求\_获取\_WIN32\_主要\_次要\_版本
-ms.assetid: 3764add2-a96a-41c8-9747-6a1ef3d8b5af
+title: 调试 \_ 请求 \_ 获取 \_ WIN32 \_ 主要 \_ 次要 \_ 版本
+description: 调试 \_ 请求 \_ 获取 \_ WIN32 \_ 主要 \_ 次要 \_ 版本
 keywords:
 - DEBUG_REQUEST_GET_WIN32_MAJOR_MINOR_VERSIONS Windows 调试
 topic_type:
@@ -12,27 +11,27 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f9a905dac30e8584243a4b60e72887aded34503f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8f466c0897efe83d1f23b38146eb2ceed0a923cc
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63349069"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96791635"
 ---
-# <a name="debugrequestgetwin32majorminorversions"></a>调试\_请求\_获取\_WIN32\_主要\_次要\_版本
+# <a name="debug_request_get_win32_major_minor_versions"></a>调试 \_ 请求 \_ 获取 \_ WIN32 \_ 主要 \_ 次要 \_ 版本
 
 
-调试\_请求\_获取\_WIN32\_主要\_次要\_版本[**请求**](request.md)操作返回在目标系统当前正在运行的 Windows 版本。
+"调试 \_ 请求 \_ 获取 \_ WIN32 \_ 主要 \_ 次要 \_ 版本" [**请求**](request.md) 操作返回目标上当前正在运行的 Windows 的版本。
 
 **Parameters**
 
 <span id="InBuffer"></span><span id="inbuffer"></span><span id="INBUFFER"></span>*InBuffer*  
-不使用。
+未使用。
 
 <span id="OutBuffer"></span><span id="outbuffer"></span><span id="OUTBUFFER"></span>*OutBuffer*  
-主版本号和次版本号在目标系统当前正在运行的 Windows 版本。 版本编号的类型是数组，其中包含两个 ULONG 值;数组中的第一个 ULONG 是主版本号和第二个是次要版本号
+当前在目标上运行的 Windows 版本的主版本号和次版本号。 版本号的类型是一个包含两个 ULONG 值的数组;数组中的第一个 ULONG 是主版本号，第二个是次要版本号
 
-下表按操作系统列出的主版本号和次版本号。
+下表列出了操作系统的主版本号和次版本号。
 
 <table>
 <colgroup>
@@ -42,8 +41,8 @@ ms.locfileid: "63349069"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Windows 版本</th>
-<th align="left">主版本号</th>
+<th align="left">Windows 的版本</th>
+<th align="left">主要版本号</th>
 <th align="left">次版本号</th>
 </tr>
 </thead>
@@ -68,10 +67,10 @@ ms.locfileid: "63349069"
 
  
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[**请求**](request.md)
+[**Request**](request.md)
 
  
 

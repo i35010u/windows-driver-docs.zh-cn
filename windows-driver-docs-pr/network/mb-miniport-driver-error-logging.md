@@ -1,15 +1,14 @@
 ---
 title: MB 微型端口驱动程序错误日志记录
 description: MB 微型端口驱动程序错误日志记录
-ms.assetid: 57f83d03-29e5-4a20-8c0c-2d00954e7ccb
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4664d9759ab39ab647f83b62384dec981f167ebd
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 185ec42452d2e9d1168bcf7de11cb924146e03aa
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89207463"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96791417"
 ---
 # <a name="mb-miniport-driver-error-logging"></a>MB 微型端口驱动程序错误日志记录
 

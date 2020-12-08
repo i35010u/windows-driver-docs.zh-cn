@@ -1,15 +1,14 @@
 ---
 title: 开发 WIA 视频驱动程序
 description: 开发 WIA 视频驱动程序
-ms.assetid: 3cf14fd3-1dfa-480e-a69c-c4d2c196a504
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d70cdd87a61c49c7cdf2cdb04876c48b5c22456b
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 16906dae730bf1acad7634ba26b6efcd99f8b638
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89189619"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96792885"
 ---
 # <a name="developing-a-wia-video-driver"></a>开发 WIA 视频驱动程序
 

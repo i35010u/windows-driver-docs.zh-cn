@@ -1,18 +1,17 @@
 ---
 title: 命令和 DMA 缓冲区简介
 description: 命令和 DMA 缓冲区简介
-ms.assetid: e9fa38a2-3243-4578-83c3-4559ec3480a7
 keywords:
-- 命令缓冲区 WDK 显示有关命令缓冲区
-- DMA 缓冲区 WDK 显示，DMA 缓冲区
+- 命令缓冲区 WDK 显示，关于命令缓冲区
+- DMA 缓冲区 WDK 显示，关于 DMA 缓冲区
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6b6eece19903448d2f59e43222c5fe3ee77359cb
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d9b9d71d10dc70c24beaa0e4b4c7b95cf9b3a8e5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63362147"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96792313"
 ---
 # <a name="introduction-to-command-and-dma-buffers"></a>命令和 DMA 缓冲区简介
 
@@ -20,23 +19,23 @@ ms.locfileid: "63362147"
 ## <span id="ddk_introduction_to_command_and_dma_buffers_gg"></span><span id="DDK_INTRODUCTION_TO_COMMAND_AND_DMA_BUFFERS_GG"></span>
 
 
-命令和 DMA 缓冲区非常类似于彼此。 但是，命令缓冲区可供用户模式显示驱动程序，并且显示微型端口驱动程序使用 DMA 缓冲区。
+命令和 DMA 缓冲区密切类似。 但用户模式显示驱动程序使用命令缓冲区，并且显示微型端口驱动程序使用 DMA 缓冲区。
 
 命令缓冲区具有以下特征：
 
--   通过 GPU 永远不会直接访问它。
+-   GPU 绝不会直接访问它。
 
--   硬件供应商控制的格式。
+-   硬件供应商控制格式。
 
--   它被分配给用户模式显示驱动程序从呈现应用程序的专用地址空间中的正则可分页内存。
+-   它是从呈现应用程序的专用地址空间中的常规可分页内存中为用户模式显示驱动程序分配的。
 
 DMA 缓冲区具有以下特征：
 
--   它基于经过验证的命令缓冲区内容。
+-   它基于命令缓冲区的已验证内容。
 
--   它会显示微型端口驱动程序从内核可分页内存分配。
+-   它由内核可分页内存中的显示微型端口驱动程序分配。
 
--   GPU 可以读取从 DMA 缓冲区之前，显示微型端口驱动程序必须页锁 DMA 缓冲区，并将映射通过 aperture DMA 缓冲区。
+-   在 GPU 可以读取 DMA 缓冲区之前，显示微型端口驱动程序必须对 DMA 缓冲区进行页面锁定，并通过口径映射 DMA 缓冲区。
 
  
 

@@ -1,7 +1,6 @@
 ---
 title: INF ControlFlags 节
 description: ControlFlags 节标识在安装期间 Windows 应执行特定操作的设备。
-ms.assetid: 529060b6-ee4b-49a8-b723-5eda47e9f561
 keywords:
 - INF ControlFlags 部分设备和驱动程序安装
 topic_type:
@@ -12,21 +11,21 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 909d85a6f7bbb94ecbfba2d921cde5d06e64f70a
-ms.sourcegitcommit: a55489992dbf0a7e9d09f237e13514799711647a
+ms.openlocfilehash: 2742c50cba59a67d49836502110684fd5693e73a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82223267"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96790595"
 ---
 # <a name="inf-controlflags-section"></a>INF ControlFlags 节
 
 
-**注意**  如果您要构建通用或移动驱动程序包，此部分无效。 请参阅[使用通用 INF 文件](using-a-universal-inf-file.md)。
+**注意**  如果要构建通用或移动驱动程序包，此部分无效。 请参阅 [使用通用 INF 文件](using-a-universal-inf-file.md)。
 
  
 
-**ControlFlags**节标识在安装期间 Windows 应执行特定操作的设备。
+**ControlFlags** 节标识在安装期间 Windows 应执行特定操作的设备。
 
 ```inf
 [ControlFlags]
@@ -46,18 +45,18 @@ ExcludeFromSelect=device-identification-string[,device-identification-string] ..
 [RequestAdditionalSoftware=device-identification-string[,device-identification-string] ...]  (Windows 7 and later versions of Windows)
 ```
 
-## <a name="entries"></a>条目
+## <a name="entries"></a>项
 
 
 <a href="" id="device-identification-string"></a>*设备标识-字符串*  
-标识在 "每个制造商的[**INF 模型" 部分**](inf-models-section.md)中指定的[硬件 ID](hardware-ids.md)或[兼容 ID](compatible-ids.md) 。 每个字符串必须与下一个逗号（，）分隔。
+标识在 "每个制造商的 [**INF 模型" 部分**](inf-models-section.md)中指定的 [硬件 ID](hardware-ids.md)或 [兼容 ID](compatible-ids.md) 。 每个字符串必须与下一个字符串之间用逗号分隔 (，) 。
 
 <a href="" id="excludefromselect"></a>**ExcludeFromSelect**  
-删除所有（如果\*已指定）或显示特定用户界面中指定的设备列表，用户从该列表中选择要安装的特定设备。
+如果指定了，则删除所有 (\*) 或显示特定用户界面中的指定设备列表，用户可从该列表中选择要安装的特定设备。
 
 对于 Windows 2000 和更高版本的 Windows，"查找新硬件向导" 和 "硬件更新向导" 会显示指定的设备。
 
-若要从该显示中排除一组不兼容的操作系统或平台不兼容设备，一个或多个**ExcludeFromSelect**条目可以附加以下不区分大小写的扩展：
+若要从该显示中排除一组不兼容的操作系统或平台不兼容设备，一个或多个 **ExcludeFromSelect** 条目可以附加以下不区分大小写的扩展：
 
 <a href="" id="-nt"></a>**。 nt**  
 不要在运行 Windows 2000 或更高版本的 Windows 的计算机上显示这些设备。
@@ -79,7 +78,7 @@ ExcludeFromSelect=device-identification-string[,device-identification-string] ..
 
 
 
-有关如何使用**系统定义的** **ntx86**、 **ntia64**、 **ntamd64**、 **ntarm**和**Ntarm64**扩展的详细信息，请参阅[为多个平台和操作系统创建 INF 文件](creating-inf-files-for-multiple-platforms-and-operating-systems.md)。
+有关如何使用 **系统定义的** **ntx86**、 **ntia64**、 **ntamd64**、 **ntarm** 和 **Ntarm64** 扩展的详细信息，请参阅 [为多个平台和操作系统创建 INF 文件](creating-inf-files-for-multiple-platforms-and-operating-systems.md)。
 
 <a href="" id="copyfilesonly"></a>**CopyFilesOnly**  
 仅为给定设备安装 INF 指定的文件，因为设备硬件不可访问或尚未提供。
@@ -92,20 +91,20 @@ ExcludeFromSelect=device-identification-string[,device-identification-string] ..
 此项是可选的。 安装设备的首选方法是省略此项，并允许 Windows 在受信任的系统线程的上下文中安装设备（如果可能）。 但是，如果设备在安装设备时确实要求用户登录，请在设备 INF 中包含此项。
 
 <a href="" id="requestadditionalsoftware"></a>**RequestAdditionalSoftware**  
-指定所有（如果**\*** 指定）或指定的设备列表可能需要比通过设备的[驱动程序包](driver-packages.md)安装的软件更多的软件。 例如， **RequestAdditionalSoftware**项可用于安装驱动程序包中未包含的新的或更新的特定于设备的软件。
+指定所有 (如果 **\* *指定了 _) 或指定的设备列表可能需要比通过设备的 [驱动程序包](driver-packages.md)安装的软件更多的软件。例如，_* RequestAdditionalSoftware** 项可用于安装驱动程序包中未包含的新的或已更新的特定于设备的软件。
 
-**注意** 如果**\*** 未指定，则必须在 " [**INF 模型" 部分**](inf-models-section.md)中定义**RequestAdditionalSoftware**条目指定的每个设备。
+**注意** 如果 **\* *未指定 _，*** 则必须在 " [**INF 模型" 部分**](inf-models-section.md)中定义 _ RequestAdditionalSoftware 条目指定的每个设备。
 
  
 
 此项是可选的，在 windows 7 及更高版本的 Windows 操作系统中受支持。
 
-Windows 安装设备的[驱动程序包](driver-packages.md)后，如果在 INF 文件中指定**RequestAdditionalSoftware**项，即插即用（PnP）管理器将执行以下步骤：
+Windows 安装设备的 [驱动程序包](driver-packages.md) 后，如果在 INF 文件中指定 **RequestAdditionalSoftware** 项，则即插即用 (PnP) 管理器执行以下步骤：
 
-1.  PnP 管理器使用**RequestAddtionalSoftware**类型生成问题报告和解决方案（pr）错误报告。 此报表包含有关设备的特定硬件 ID 和计算机的系统体系结构的信息。
-2.  如果有独立硬件供应商（IHV）提供的用于特定于设备的软件的解决方案，则该解决方案将下载到计算机。
+1.  PnP 管理器使用 **RequestAddtionalSoftware** 类型生成问题报告和解决方案 (pr) 错误报告。 此报表包含有关设备的特定硬件 ID 和计算机的系统体系结构的信息。
+2.  如果独立硬件供应商提供的解决方案 (IHV) 特定于设备的软件，则会将解决方案下载到计算机。
 
-    **请注意**  ，下载解决方案不会安装软件本身。
+    **注意**  下载解决方案不会安装软件本身。
 
      
 
@@ -114,25 +113,25 @@ Windows 安装设备的[驱动程序包](driver-packages.md)后，如果在 INF 
 <a name="remarks"></a>备注
 -------
 
-通常， **ControlFlags**节有一个或多个**ExcludeFromSelect**条目用于标识 "每个制造商的[**INF 模型" 部分**](inf-models-section.md)中列出的设备，但不应在手动安装过程中将其作为选项显示给最终用户。
+通常， **ControlFlags** 节有一个或多个 **ExcludeFromSelect** 条目用于标识 "每个制造商的 [**INF 模型" 部分**](inf-models-section.md)中列出的设备，但不应在手动安装过程中将其作为选项显示给最终用户。
 
-在**ExcludeFromSelect**项中列出设备的[硬件 ID](hardware-ids.md)或[兼容 ID](compatible-ids.md)会将其从显示给最终用户的显示中移除。 如果为 ExcludeFromSelect 值\*指定星号（ **ExcludeFromSelect** ），将从此用户可见列表中删除 INF 文件中定义的所有设备/模型。
+在 **ExcludeFromSelect** 项中列出设备的 [硬件 ID](hardware-ids.md)或 [兼容 ID](compatible-ids.md)会将其从显示给最终用户的显示中移除。 \*为 **ExcludeFromSelect** 值指定星号 () 将从此用户可见列表中删除 INF 文件中定义的所有设备/模型。
 
-INF 编写器应慎用并仅在以下情况下使用**InteractiveInstall**指令：
+INF 编写器应慎用并仅在以下情况下使用 **InteractiveInstall** 指令：
 
 -   为已损坏或错误定义了硬件 Id 的设备安装驱动程序。 例如，当两个或多个不同的设备共享相同的硬件 ID 时。 即插即用标准严格禁止这种情况，但一些硬件供应商在硬件中发生了此错误。
--   为需要其自己的驱动程序的设备安装驱动程序，并且绝对不能使用泛型类驱动程序或操作系统提供的另一个驱动程序。 **InteractiveInstall**项强制设备管理器要求用户确认兼容 ID 匹配。
+-   为需要其自己的驱动程序的设备安装驱动程序，并且绝对不能使用泛型类驱动程序或操作系统提供的另一个驱动程序。 **InteractiveInstall** 项强制设备管理器要求用户确认兼容 ID 匹配。
 
-**请注意**  ，WHQL 可能不会向其 INF 文件包含**InteractiveInstall**条目的设备授予 Windows 徽标。
+**注意**  以后，WHQL 可能不会向其 INF 文件包含 **InteractiveInstall** 条目的设备授予 Windows 徽标。
 
  
 
-仅安装 PnP 设备的 INF 文件可以具有**ControlFlags**部分，除非它们将其各自*SetupClassGUID*注册表项中的**NoInstallClass**值项设置为**TRUE**。 有关这些注册表项的详细信息，请参阅[**INF ClassInstall32 部分**](inf-classinstall32-section.md)。
+仅安装 PnP 设备的 INF 文件可以具有 **ControlFlags** 部分，除非它们将其各自 *SetupClassGUID* 注册表项中的 **NoInstallClass** 值项设置为 **TRUE**。 有关这些注册表项的详细信息，请参阅 [**INF ClassInstall32 部分**](inf-classinstall32-section.md)。
 
 <a name="examples"></a>示例
 --------
 
-System 老鼠类安装程序 INF 中**ControlFlags**部分的此示例将禁止显示无法安装在 x86 平台上的设备/型号。
+System 老鼠类安装程序 INF 中 **ControlFlags** 部分的此示例将禁止显示无法安装在 x86 平台上的设备/型号。
 
 ```inf
 [ControlFlags]
@@ -142,7 +141,7 @@ ExcludeFromSelect.ntx86=*PNP0F0D,*PNP0F11,*PNP0F00,*PNP0F02,*PNP0F15
 ExcludeFromSelect=UNKNOWN_MOUSE
 ```
 
-以下 INF 文件片段显示两个设备：一个完全支持 PnP 且在安装过程中不需要用户干预，另一个需要其自己的驱动程序，也不能使用其他任何驱动程序。 为第二个设备指定**InteractiveInstall**将强制 Windows 在用户的上下文（具有管理权限的用户）中安装该设备。 这包括根据需要提示用户提供驱动程序文件（INF 文件、驱动程序文件等）的位置。
+以下 INF 文件片段显示两个设备：一个完全支持 PnP 且在安装过程中不需要用户干预，另一个需要其自己的驱动程序，也不能使用其他任何驱动程序。 为第二个设备指定 **InteractiveInstall** 将强制 Windows 将此设备安装到用户的上下文中 (具有) 管理权限的用户。 这包括根据需要提示用户提供驱动程序文件 (INF 文件、驱动程序文件等) 的位置。
 
 ```inf
 ; ...
@@ -162,14 +161,14 @@ InteractiveInstall = \
 ; ...
 ```
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**ClassInstall32**](inf-classinstall32-section.md)
 
-[**制造商**](inf-manufacturer-section.md)
+[**提供**](inf-manufacturer-section.md)
 
-[***模型***](inf-models-section.md)
+[**_模型_**](inf-models-section.md)
 
  
 

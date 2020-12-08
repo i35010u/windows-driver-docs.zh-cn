@@ -1,7 +1,6 @@
 ---
 title: VBI 类别
 description: VBI 类别
-ms.assetid: c33c0427-5162-435a-bb96-a230455a1035
 keywords:
 - 流类别 WDK 视频捕获，VBI
 - VBI WDK 视频捕获
@@ -9,12 +8,12 @@ keywords:
 - PINNAME_VIDEO_VBI
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e84d38de110bad5e3ea9e446b4d2f201c1d332b2
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: e71aad8f9954aaed1ed9f1fdfd9078f71d9ffb96
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107116"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96792089"
 ---
 # <a name="vbi-category"></a>VBI 类别
 

@@ -1,19 +1,18 @@
 ---
 title: 视频控件属性
 description: 视频控件属性
-ms.assetid: 3b39295f-b4fa-4d6a-bad8-f759bda284b1
 keywords:
 - 视频控件属性 WDK 视频捕获
 - 控件属性 WDK 视频捕获
 - PROPSETID_VIDCAP_VIDEOCONTROL
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0555c4a26b99ea0f32c08a605233a4e72500641f
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: b203d1b661f7419cae97458f1dbd0f05439a0fa1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103860"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96791118"
 ---
 # <a name="video-control-properties"></a>视频控件属性
 

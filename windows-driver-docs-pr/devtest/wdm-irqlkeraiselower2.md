@@ -1,7 +1,6 @@
 ---
 title: 'IrqlKeRaiseLower2 规则 (wdm) '
 description: IrqlKeRaiseLower2 规则指定驱动程序使用 KeLowerIrql 来还原前面调用 KeRaiseIrql 或 KeRaiseIrqlToDpcLevel 引发的原始 IRQL。
-ms.assetid: 7e256237-e649-45de-bcd9-b06795a5c5c9
 ms.date: 05/21/2018
 keywords:
 - 'IrqlKeRaiseLower2 规则 (wdm) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: f551db38f871a7a8826680f1aa3a80d6d804bc3d
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: e419ed0ded3826cb65f4b3784d0e6d24885a76b6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90101684"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96791831"
 ---
 # <a name="irqlkeraiselower2-rule-wdm"></a>IrqlKeRaiseLower2 规则 (wdm) 
 
 
-**IrqlKeRaiseLower2**规则指定驱动程序使用[**KeLowerIrql**](/windows-hardware/drivers/ddi/wdm/nf-wdm-kelowerirql)来还原前面调用[**KeRaiseIrql**](/windows-hardware/drivers/ddi/wdm/nf-wdm-keraiseirql)或[**KeRaiseIrqlToDpcLevel**](/windows-hardware/drivers/ddi/wdm/nf-wdm-keraiseirqltodpclevel)引发的原始 IRQL。
+**IrqlKeRaiseLower2** 规则指定驱动程序使用 [**KeLowerIrql**](/windows-hardware/drivers/ddi/wdm/nf-wdm-kelowerirql)来还原前面调用 [**KeRaiseIrql**](/windows-hardware/drivers/ddi/wdm/nf-wdm-keraiseirql)或 [**KeRaiseIrqlToDpcLevel**](/windows-hardware/drivers/ddi/wdm/nf-wdm-keraiseirqltodpclevel)引发的原始 IRQL。
 
 此规则允许嵌套调用 **KeRaiseIrql**、 **KeRaiseIrqlToDpcLevel** 和 **KeLowerIrql**。
 

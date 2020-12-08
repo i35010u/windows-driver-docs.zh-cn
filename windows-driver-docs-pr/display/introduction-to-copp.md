@@ -1,7 +1,6 @@
 ---
 title: COPP 简介
 description: COPP 简介
-ms.assetid: a5f77c60-418d-4931-8922-ca2ae080da2e
 keywords:
 - 复制保护 WDK COPP，关于 COPP
 - 视频复制保护 WDK COPP，关于 COPP
@@ -9,12 +8,12 @@ keywords:
 - 受保护的视频 WDK COPP，关于 COPP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f17e06ca5488516f38c92bbf5ac4edee0f8c3449
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: bb1fde668d162a058c042678bbf0c78fc7f4b339
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89066032"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96792301"
 ---
 # <a name="introduction-to-copp"></a>COPP 简介
 

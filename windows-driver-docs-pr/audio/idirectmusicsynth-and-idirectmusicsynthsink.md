@@ -1,7 +1,6 @@
 ---
 title: IDirectMusicSynth 和 IDirectMusicSynthSink
 description: IDirectMusicSynth 和 IDirectMusicSynthSink
-ms.assetid: ce9a353b-9e4b-402b-92bb-948200e3c2ef
 keywords:
 - IDirectMusicSynth 接口
 - IDirectMusicSynthSink 接口
@@ -17,12 +16,12 @@ keywords:
 - DirectMusic 自定义呈现 WDK 音频，合成
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c8cb6182e698e5e2241b2a9ed268dea04107143f
-ms.sourcegitcommit: 20eac54e419a594f7cea766ee28f158559dfd79c
+ms.openlocfilehash: 497d867257f4a0e158d69965fb4c366aa4deec92
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91754941"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96790731"
 ---
 # <a name="idirectmusicsynth-and-idirectmusicsynthsink"></a>IDirectMusicSynth 和 IDirectMusicSynthSink
 
@@ -95,7 +94,7 @@ DirectMusic 通过其 **IDirectMusicSynth** 接口与软件合成器通信。 Di
 
 默认情况下，DirectMusic 使用其内部 **IDirectMusicSynthSink** 实现来处理软件合成器生成的波形数据。 此波形接收器将数据馈送到 DirectSound。
 
-在可以激活合成器之前，必须先通过调用 **IDirectMusicSynth：： SetSynthSink**来创建和连接到合成器。 这应该是创建合成器后的第一次调用，因为许多与计时相关的调用（包括 **IDirectMusicSynth：： GetLatencyClock** 和 **IDirectMusicSynth：： SetMasterClock**）实际上都传递到 **IDirectMusicSynthSink**上的等效调用。
+在可以激活合成器之前，必须先通过调用 **IDirectMusicSynth：： SetSynthSink** 来创建和连接到合成器。 这应该是创建合成器后的第一次调用，因为许多与计时相关的调用（包括 **IDirectMusicSynth：： GetLatencyClock** 和 **IDirectMusicSynth：： SetMasterClock**）实际上都传递到 **IDirectMusicSynthSink** 上的等效调用。
 
 仅 DirectX 6.1 和 DirectX 7 支持通过 **IDirectMusicSynthSink** 接口实现自定义用户模式波形接收器。 **IDirectMusicSynthSink** 支持下表中显示的方法，这些方法将方法组织到功能组中。
 
@@ -130,11 +129,11 @@ DirectMusic 通过其 **IDirectMusicSynth** 接口与软件合成器通信。 Di
 
  
 
-在 DirectX 8 及更高版本中，DirectMusic 始终将其内部波形接收器与用户模式合成器一起使用。 这些更高版本的 DirectMusic 不支持 **IDirectMusicSynthSink**的自定义实现。
+在 DirectX 8 及更高版本中，DirectMusic 始终将其内部波形接收器与用户模式合成器一起使用。 这些更高版本的 DirectMusic 不支持 **IDirectMusicSynthSink** 的自定义实现。
 
 不过，在 DirectX 6.1 和 DirectX 7 中，你可以自由地实现自己的 **IDirectMusicSynthSink** 对象，并使用它来按你喜欢的任何方式管理合成器的音频输出流。 例如，可能会将波形数据送入 DirectShow 或 **waveOut** API。 如果创建波形流对象，则该对象必须具有 **IDirectMusicSynthSink** 接口，才能插入 **IDirectMusicSynth** 对象。
 
-除了管理波形流外，波形接收器还负责控制合成器的计时。 波形接收器通过调用 **IDirectMusicSynth：： SetMasterClock**接收主时钟，后者通过对 **IDirectMusicSynthSink：： SetMasterClock**的相同调用传递上的主时间源。 因为主时钟不是从与波形流相同的 crystal 生成的，所以波形接收器必须通过补偿时钟偏移使它们保持同步。
+除了管理波形流外，波形接收器还负责控制合成器的计时。 波形接收器通过调用 **IDirectMusicSynth：： SetMasterClock** 接收主时钟，后者通过对 **IDirectMusicSynthSink：： SetMasterClock** 的相同调用传递上的主时间源。 因为主时钟不是从与波形流相同的 crystal 生成的，所以波形接收器必须通过补偿时钟偏移使它们保持同步。
 
 另外，为了使合成器可以持续跟踪时间，它提供了两个调用以将主时钟时间转换为采样时间，并返回回来：
 
@@ -142,7 +141,7 @@ DirectMusic 通过其 **IDirectMusicSynth** 接口与软件合成器通信。 Di
 
 -   **IDirectMusicSynthSink::SampleToRefTime**
 
-波形接收器会生成延迟时钟，因为它实际上管理通过调用 **IDirectMusicSynth：： Render**写入样本的时间。 当 DirectMusic 调用 DirectMusic 端口上的 **IDirectMusicSynth：： GetLatencyClock** 时，它只需转到 **IDirectMusicSynthSink：： GetLatencyClock**即可。
+波形接收器会生成延迟时钟，因为它实际上管理通过调用 **IDirectMusicSynth：： Render** 写入样本的时间。 当 DirectMusic 调用 DirectMusic 端口上的 **IDirectMusicSynth：： GetLatencyClock** 时，它只需转到 **IDirectMusicSynthSink：： GetLatencyClock** 即可。
 
 首次打开软件合成器时，DirectMusic 将为合成器提供一个 DMU \_ PORTPARAMS 结构 Microsoft Windows SDK () 指定音频输出流的采样速率和通道数。 然后，合成器将它们转换为标准的 [**WAVEFORMATEX**](/windows/win32/api/mmreg/ns-mmreg-waveformatex) 结构，当波形接收器调用 **IDirectMusicSynth：： iformatprovider.getformat** 方法时，它会传递给波形接收器。
 

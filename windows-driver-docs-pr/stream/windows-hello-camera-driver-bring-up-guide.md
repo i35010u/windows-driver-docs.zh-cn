@@ -1,15 +1,14 @@
 ---
 title: Windows Hello 相机驱动程序启动指南
 description: 本主题讨论如何为红外 (IR) 照相机启用人脸身份验证，并将其用于 (Oem) 和独立硬件供应商 (Ihv) 的原始设备制造商。
-ms.assetid: 5CE619F4-E136-4F8F-8F90-F7F96DE4642E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ea3c7a9465f7ccf552aa7372637d24bcc22b3cf3
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 42c67048bddf7f214d57f30ebac4e3b1fbe6da49
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89186059"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96791043"
 ---
 # <a name="camera-driver-bring-up-guide"></a>相机驱动程序启动指南
 
@@ -75,11 +74,11 @@ Windows 10 版本1607中提供了两个新的面部身份验证 DDI 构造，可
 
 [提供 UVC INF 文件](providing-a-uvc-inf-file.md)
 
-有关示例代码模块如何协同工作的详细信息，请参阅 [扩展单元插件体系结构](extension-unit-plug-in-architecture.md) 主题。
+有关示例代码模块如何协同工作的详细信息，请参阅 [扩展单元 Plug-In 的体系结构](extension-unit-plug-in-architecture.md) 主题。
 
 ## <a name="inf-file-entries"></a>INF 文件条目
 
-若要将 UVC 设备注册到 **KSCATEGORY \_ 传感器 \_ 相机**下，应指定传感器相机促销标志：
+若要将 UVC 设备注册到 **KSCATEGORY \_ 传感器 \_ 相机** 下，应指定传感器相机促销标志：
 
 ```INF
 HKR,,SensorCameraMode,0x00010001,0x00000001
@@ -91,9 +90,9 @@ HKR,,SensorCameraMode,0x00010001,0x00000001
 HKR,,SkipCameraEnumeration,0x00010001,0x00000001
 ```
 
-这将从 **KSCATEGORY \_ 视频**中删除相机，这会阻止定期相机应用对其进行枚举。
+这将从 **KSCATEGORY \_ 视频** 中删除相机，这会阻止定期相机应用对其进行枚举。
 
-**SkipCameraEnumeration**和**SensorCameraMode**条目都应放置在 INF 文件的**DDInstall**节中。
+**SkipCameraEnumeration** 和 **SensorCameraMode** 条目都应放置在 INF 文件的 **DDInstall** 节中。
 
 ## <a name="hlk-tests-for-kscategory_sensor_camera-to-assist-driver-testing"></a>用于 KSCATEGORY 传感器相机的 HLK 测试 \_ \_ ，以协助驱动程序测试
 

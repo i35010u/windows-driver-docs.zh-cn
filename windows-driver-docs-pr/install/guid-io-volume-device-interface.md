@@ -1,7 +1,6 @@
 ---
 title: GUID_IO_VOLUME_DEVICE_INTERFACE
 description: GUID_IO_VOLUME_DEVICE_INTERFACE
-ms.assetid: 8c623d9c-bc55-4dce-a78a-0b23f8e5b4b5
 keywords:
 - GUID_IO_VOLUME_DEVICE_INTERFACE 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 82ed7e1f60e4a2bf3d46486407d38c61f05f2153
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 77056055e72e0dc1bfd25399e2279f09689cffd5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89096853"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96791455"
 ---
 # <a name="guid_io_volume_device_interface"></a>GUID_IO_VOLUME_DEVICE_INTERFACE
 
@@ -72,7 +71,7 @@ ms.locfileid: "89096853"
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**GUID_DEVINTERFACE_VOLUME**](guid-devinterface-volume.md)

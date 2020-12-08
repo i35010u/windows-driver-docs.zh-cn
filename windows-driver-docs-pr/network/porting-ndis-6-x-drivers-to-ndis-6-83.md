@@ -1,21 +1,20 @@
 ---
 title: 将 NDIS 6.x 驱动程序移植到 NDIS 6.83
-description: NDIS 6.83 大体上是 NDIS 6.82 相同。 NDIS 6.83 的新功能的详细信息，请参阅 NDIS 6.83 简介。
-ms.assetid: B9D3E32E-2032-41A7-B686-1C66555E9251
+description: NDIS 6.83 与 NDIS 6.82 完全相同。 有关 NDIS 6.83 的新增功能的详细信息，请参阅 NDIS 6.83 简介。
 ms.date: 05/03/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: c874a43ece758ff7d0d6a5ee01d80a4384a3efa2
-ms.sourcegitcommit: 944535d8e00393531f6b265317a64da3567e4f2c
+ms.openlocfilehash: 23893ce492ae2df8e0573651cf91b0858a39d172
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65135260"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96792643"
 ---
 # <a name="porting-ndis-6x-drivers-to-ndis-683"></a>将 NDIS 6.x 驱动程序移植到 NDIS 6.83
 
-NDIS 6.83 大体上是 NDIS 6.82 相同。 有关 NDIS 6.83 的新功能的详细信息，包括实现和编译的详细信息特定于此版本的 NDIS，请参阅[简介 NDIS 6.83](introduction-to-ndis-6-83.md)。
+NDIS 6.83 与 NDIS 6.82 完全相同。 有关 NDIS 6.83 的新增功能的详细信息，包括特定于此版本的 NDIS 的实现和编译详细信息，请参阅 [NDIS 6.83 简介](introduction-to-ndis-6-83.md)。
 
-如果要移植到 NDIS 6.83 NDIS 6.x 驱动程序，您应熟悉对您的驱动程序版本和 6.83 之间每个版本所做的更改。 有关以前 NDIS 6.x 版本的详细信息，请参阅以下主题：
+如果要将 NDIS 1.x 驱动程序移植到 NDIS 6.83，应熟悉驱动程序版本与6.83 之间对每个版本的更改。 有关以前的 NDIS 1.x 版本的详细信息，请参阅以下主题：
 
 - [NDIS 6.82 简介](introduction-to-ndis-6-82.md)
 - [NDIS 6.81 简介](introduction-to-ndis-6-81.md)

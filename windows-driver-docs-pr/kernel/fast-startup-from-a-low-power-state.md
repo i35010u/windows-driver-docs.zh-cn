@@ -1,20 +1,19 @@
 ---
 title: 从低功耗状态快速启动
 description: 从低功耗状态快速启动
-ms.assetid: 1091571c-2e30-4ad5-b4b9-0f8633e68288
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 8360e3953dd0b858732ba5df02073fa0b161e561
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 248c5e5e1e5a0002d9b54e150377d5c68768e509
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89189055"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96790527"
 ---
 # <a name="fast-startup-from-a-low-power-state"></a>从低功耗状态快速启动
 
 
-若要从低功耗状态快速启动，叶节点设备的驱动程序应处理 S0 电源 IRP (，即 IRP MN 为 S0 系统电源状态的 [** \_ \_ \_ 电源**](./irp-mn-set-power.md) irp) 设置。 设备层次结构中为叶节点的设备没有子设备。 由于叶节点设备在子设备上没有依赖项，因此设备的功能驱动程序可以将设备重新初始化为后台任务，以避免导致操作系统或其他驱动程序的不必要延迟。 与此相反，总线驱动程序有一些依赖项需要额外的同步逻辑来协调开机序列与其子设备。
+若要从低功耗状态快速启动，叶节点设备的驱动程序应处理 S0 电源 IRP (，即 IRP MN 为 S0 系统电源状态的 [**\_ \_ \_ 电源**](./irp-mn-set-power.md) irp) 设置。 设备层次结构中为叶节点的设备没有子设备。 由于叶节点设备在子设备上没有依赖项，因此设备的功能驱动程序可以将设备重新初始化为后台任务，以避免导致操作系统或其他驱动程序的不必要延迟。 与此相反，总线驱动程序有一些依赖项需要额外的同步逻辑来协调开机序列与其子设备。
 
 使用以下步骤可从低功耗状态快速启动叶节点设备：
 
@@ -24,7 +23,7 @@ ms.locfileid: "89189055"
 
 3.  立即完成 S0 电源 IRP，而不是等待 D0 电源 IRP 完成。 当 S0 power IRP 的完成例程运行时，请执行以下操作：
 
-    1.  请求 D0 电源 IRP (即 **IRP \_ MN \_ 设置 \_ ** d0 设备电源状态的电源 IRP) 。
+    1.  请求 D0 电源 IRP (即 **IRP \_ MN \_ 设置 \_** d0 设备电源状态的电源 IRP) 。
 
     2.  将状态 \_ 成功返回到 S0 电源 IRP 的完成例程。
 
@@ -34,7 +33,7 @@ ms.locfileid: "89189055"
 
 6.  完成前面的步骤后，你的驱动程序可以开始处理 i/o 请求，包括可能已排队的任何 i/o 请求。
 
-**注意**   上述步骤不适用于处理 power Irp，使其能够处理除 PowerSystemWorking (S0) 以外的任何电源状态。 这些步骤专门适用于从低功耗状态转换到 (S0) 状态的电源 Irp 的处理。
+**注意**   上述步骤不适用于处理 power Irp，使其能够处理除 PowerSystemWorking (S0) 以外的任何电源状态。 这些步骤专门适用于从低功耗状态转换到 (S0) 状态的电源 Irp 的处理。
 
  
 

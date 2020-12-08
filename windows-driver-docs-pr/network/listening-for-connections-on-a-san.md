@@ -1,7 +1,6 @@
 ---
 title: 侦听 SAN 上的连接
 description: 侦听 SAN 上的连接
-ms.assetid: 7e430bda-74f5-4a1a-90f0-3b2e44fb25a3
 keywords:
 - SAN 连接设置 WDK，侦听连接
 - 侦听操作 WDK San
@@ -12,12 +11,12 @@ keywords:
 - SAN 套接字 WDK，侦听连接
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 13d3ded777553605a5b985dd4e23095c70c36356
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: e5fdd865df0150718d73a469b5f0c64bd3e080bf
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89211051"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96792175"
 ---
 # <a name="listening-for-connections-on-a-san"></a>侦听 SAN 上的连接
 

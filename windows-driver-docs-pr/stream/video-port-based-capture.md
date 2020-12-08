@@ -1,7 +1,6 @@
 ---
 title: 基于视频端口的捕获
 description: 基于视频端口的捕获
-ms.assetid: 84cc1ee3-142c-4dae-9f5c-0dde66cc3df9
 keywords:
 - 筛选器关系图配置 WDK 视频捕获、基于视频端口的捕获
 - 基于视频端口的捕获 WDK 视频捕获
@@ -10,12 +9,12 @@ keywords:
 - 视频端口扩展 WDK 视频捕获
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e6c7ff45b5c66efbcb1896f0a4f190b9ec1dace1
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: f085216f129f084c09d286b5c7bd8cd5f4e4091f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89186091"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96792081"
 ---
 # <a name="video-port-based-capture"></a>基于视频端口的捕获
 
@@ -38,11 +37,11 @@ ms.locfileid: "89186091"
 
 视频捕获微型驱动程序可以使用 [**DxApi**](/windows-hardware/drivers/ddi/dxapi/nf-dxapi-dxapi) 函数与视频微型端口驱动程序通信，以允许捕获流式处理视频，使其在捕获硬件和显示硬件之间通过视频端口总线传输。 流包含 NTSC、PAL 或 SECAM 视频的顺序字段，还可以包括 (VBI) 和时间码 (横向同步和垂直同步) 数据。 视频流特征（包括维度、颜色格式、频率、缩放和裁剪）通过 VPE DirectDraw 接口在用户模式下进行配置。 开始流式处理后，会在内核模式下调用 **DxApi** 以捕获各个帧。 为了支持显示更改，如分辨率更改或切换到或从全屏命令提示符切换，视频捕获微型驱动程序还必须向视频微型端口驱动程序注册，以便它们能够响应此类显示更改事件。
 
-VPEs 和 **DxApi** 函数已引入到带有 DirectX 5.0 的 DirectDraw DDI。 Windows 2000 及更高版本的操作系统中的视频微型端口驱动程序支持**DxApi** 。 虚拟显示微型端口驱动程序 (miniVDD) 在 Windows 98 和 Windows Me 操作系统中支持 **DxApi** 。 若要使用 **DxApi**启用内核模式视频传输，WDM 视频捕获微型驱动程序必须包含 *ddkmapi* (DirectDraw 内核模式 API) 头文件并链接到 *DxApi* 库。 **DxApi**库使用*dxapi.sys*导出的功能。 仅当已加载 DirectDraw 时， *DxApi.sys*才可用，因为**DxApi**是 VPEs 的一部分。
+VPEs 和 **DxApi** 函数已引入到带有 DirectX 5.0 的 DirectDraw DDI。 Windows 2000 及更高版本的操作系统中的视频微型端口驱动程序支持 **DxApi** 。 虚拟显示微型端口驱动程序 (miniVDD) 在 Windows 98 和 Windows Me 操作系统中支持 **DxApi** 。 若要使用 **DxApi** 启用内核模式视频传输，WDM 视频捕获微型驱动程序必须包含 *ddkmapi* (DirectDraw 内核模式 API) 头文件并链接到 *DxApi* 库。 **DxApi** 库使用 *dxapi.sys* 导出的功能。 仅当已加载 DirectDraw 时， *DxApi.sys* 才可用，因为 **DxApi** 是 VPEs 的一部分。
 
-**DxApi** 是 *DxApi.sys*公开的单个内核模式 API。 视频端口扩展是 *DDraw.dll*公开的用户模式 API。 视频捕获微型驱动程序必须对 **DxApi** 进行几个不同的调用，以设置和配置视频端口硬件，使其正确流式传输。
+**DxApi** 是 *DxApi.sys* 公开的单个内核模式 API。 视频端口扩展是 *DDraw.dll* 公开的用户模式 API。 视频捕获微型驱动程序必须对 **DxApi** 进行几个不同的调用，以设置和配置视频端口硬件，使其正确流式传输。
 
-**DxApi** 是封装多个函数标识符的单个函数。 微型驱动程序将第一个参数中所需的函数标识符传递给 **DxApi**。 **DxApi**的其余参数适用于对应于函数标识符和缓冲区长度的结构的微型驱动程序分配缓冲区。 函数的行为以及输入和输出缓冲区的大小和格式取决于指定的函数标识符。 [DxApi 函数和标识符](/windows-hardware/drivers/ddi/index)中介绍了此行为。
+**DxApi** 是封装多个函数标识符的单个函数。 微型驱动程序将第一个参数中所需的函数标识符传递给 **DxApi**。 **DxApi** 的其余参数适用于对应于函数标识符和缓冲区长度的结构的微型驱动程序分配缓冲区。 函数的行为以及输入和输出缓冲区的大小和格式取决于指定的函数标识符。 [DxApi 函数和标识符](/windows-hardware/drivers/ddi/index)中介绍了此行为。
 
 WDK 提供两个示例驱动程序，用于演示如何实现 **DxApi** 功能。 ATIWDM 示例需要特定硬件才能运行。 TestCap 示例不需要硬件，并适用于所有平台。 可以使用 GraphEdt 工具与其中一个示例进行交互。
 

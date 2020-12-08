@@ -1,7 +1,6 @@
 ---
 title: 'IrqlExAllocatePool 规则 (wdm) '
 description: IrqlExAllocatePool 规则指定仅当驱动程序在 IRQL 调度级别执行时，驱动程序才调用 ExAllocatePoolWithTag 和 ExAllocatePoolWithTagPriority \_ 。
-ms.assetid: 0bb179c5-e76b-46bc-b497-8639328d2eb2
 ms.date: 05/21/2018
 keywords:
 - 'IrqlExAllocatePool 规则 (wdm) '
@@ -12,19 +11,19 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: fd319458d04f11f82eede5bc36394e3c2d8761fd
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: c2f9f057a164da656ad605d8bbccfa26f1ceb8f6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105574"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96792331"
 ---
 # <a name="irqlexallocatepool-rule-wdm"></a>IrqlExAllocatePool 规则 (wdm) 
 
 
-**IrqlExAllocatePool**规则指定仅当驱动程序以 IRQL = 调度级别执行时，驱动程序才调用[**ExAllocatePoolWithTag**](/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepoolwithtag)和[**ExAllocatePoolWithTagPriority**](/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepoolwithtagpriority) &lt; \_ 。
+**IrqlExAllocatePool** 规则指定仅当驱动程序以 IRQL = 调度级别执行时，驱动程序才调用 [**ExAllocatePoolWithTag**](/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepoolwithtag)和 [**ExAllocatePoolWithTagPriority**](/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepoolwithtagpriority) &lt; \_ 。
 
-在调度级别执行的调用方 \_ 必须为*PoolType*指定非分页的*Xxx*值。 在 IRQL = APC 级别执行的调用方 &lt; \_ 可以指定任何 [**池 \_ 类型**](/windows-hardware/drivers/ddi/wdm/ne-wdm-_pool_type) 值。
+在调度级别执行的调用方 \_ 必须为 *PoolType* 指定非分页的 *Xxx* 值。 在 IRQL = APC 级别执行的调用方 &lt; \_ 可以指定任何 [**池 \_ 类型**](/windows-hardware/drivers/ddi/wdm/ne-wdm-_pool_type) 值。
 
 **驱动程序模型： WDM**
 
@@ -34,7 +33,7 @@ ms.locfileid: "90105574"
 <a name="example"></a>示例
 -------
 
-在下面的示例中， [**ExAllocatePoolWithTag**](/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepoolwithtag) 例程在 [**KeAcquireSpinLock**](/windows-hardware/drivers/ddi/wdm/nf-wdm-keacquirespinlock) 例程之后调用，后者将 IRQL 设置为调度 \_ 级别。 **ExAllocatePoolWithTag**例程由**PagedPool**调用，后者违反了规则。
+在下面的示例中， [**ExAllocatePoolWithTag**](/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepoolwithtag) 例程在 [**KeAcquireSpinLock**](/windows-hardware/drivers/ddi/wdm/nf-wdm-keacquirespinlock) 例程之后调用，后者将 IRQL 设置为调度 \_ 级别。 **ExAllocatePoolWithTag** 例程由 **PagedPool** 调用，后者违反了规则。
 
 ```ManagedCPlusPlus
 NTSTATUS

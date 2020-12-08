@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ BDA \_ CA \_ 模块 \_ UI
 description: 客户端使用 KSPROPERTY \_ BDA \_ CA \_ 模块 \_ UI 检索 CA 插件可向用户显示的界面数据。
-ms.assetid: 192161fe-8059-454b-8085-5565c940fbbb
 keywords:
 - KSPROPERTY_BDA_CA_MODULE_UI 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 66657e0337b9805bab077e9312d45277d0fe167d
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: f5b9d3bd8071c7241aca577c73805d8f93cb28bc
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89187381"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96791161"
 ---
 # <a name="ksproperty_bda_ca_module_ui"></a>KSPROPERTY \_ BDA \_ CA \_ 模块 \_ UI
 
@@ -82,7 +81,7 @@ BDA \_ CA \_ 模块 \_ ui 结构包含 (UI) 数据的用户界面。
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**BDA \_ CA \_ 模块 \_ UI**](/windows-hardware/drivers/ddi/bdatypes/ns-bdatypes-_bda_ca_module_ui)

@@ -1,7 +1,6 @@
 ---
 title: 'IoSetCompletionRoutineNonPnpDriver 规则 (wdm) '
 description: IoSetCompletionRoutineNonPnpDriver 规则指定非 PnP 驱动程序的驱动程序应使用 IoSetCompletionRoutineEx not IoSetCompletionRoutine。
-ms.assetid: E4C6415B-DCB5-4AE2-9112-BC314D443C73
 ms.date: 05/21/2018
 keywords:
 - 'IoSetCompletionRoutineNonPnpDriver 规则 (wdm) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 69e326abc48e7a4b800377986e1646a40ebec0a1
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: f89d21c44ca22c9b4714f664dce1634c2cd502f5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103084"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96792359"
 ---
 # <a name="iosetcompletionroutinenonpnpdriver-rule-wdm"></a>IoSetCompletionRoutineNonPnpDriver 规则 (wdm) 
 
 
-**IoSetCompletionRoutineNonPnpDriver**规则指定非 PnP 驱动程序的驱动程序应使用[**IoSetCompletionRoutineEx**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iosetcompletionroutineex) not [**IoSetCompletionRoutine**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iosetcompletionroutine)。
+**IoSetCompletionRoutineNonPnpDriver** 规则指定非 PnP 驱动程序的驱动程序应使用 [**IoSetCompletionRoutineEx**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iosetcompletionroutineex) not [**IoSetCompletionRoutine**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iosetcompletionroutine)。
 
 在将驱动程序标记为卸载后， [**IoSetCompletionRoutineEx**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iosetcompletionroutineex) 例程将避免实际的驱动程序映像卸载。 这适用于非 PnP 驱动程序，因为在发生删除或卸载时，PnP 管理器不会向其发送通知。
 

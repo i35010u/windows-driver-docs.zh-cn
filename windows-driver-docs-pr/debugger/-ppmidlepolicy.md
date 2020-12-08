@@ -1,7 +1,6 @@
 ---
 title: ppmidlepolicy
 description: Ppmidlepolicy 命令
-ms.assetid: FA77159F-95B3-42F9-9452-CE4827DD4EC5
 keywords:
 - ppmidlepolicy Windows 调试
 ms.date: 06/08/2017
@@ -12,30 +11,30 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: dd9ea5832b3464a214c03eaa9fba8bd88913ec75
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2b27c9db51d600929674307f0fb15106e20342f8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63330823"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96791681"
 ---
 # <a name="ppmidlepolicy"></a>!ppmidlepolicy
 
-**！ Ppmidlepolicy**命令显示 C 状态的策略。
+**！ Ppmidlepolicy** 命令显示 C 状态策略。
 
 ```dbgcmd
 !ppmidlepolicy
 ```
 
-## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>参数
+## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>Parameters
 
 无
 
-在以下版本的 Windows 上支持此命令：
+以下 Windows 版本支持此命令：
 
 - Windows 7
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 Kdexts.dll 
 

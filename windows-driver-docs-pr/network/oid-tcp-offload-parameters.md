@@ -1,17 +1,16 @@
 ---
 title: OID_TCP_OFFLOAD_PARAMETERS
 description: 本主题介绍) OID_TCP_OFFLOAD_PARAMETERS 对象标识符 (OID。
-ms.assetid: 5D9B5F62-E506-4983-B247-A93B81E70A43
 keywords:
 - OID_TCP_OFFLOAD_PARAMETERS，WDK Oid，WDK 网络对象标识符，WDK 网络 Oid
 ms.date: 11/01/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1281bba2ff33a3eb945f8bdaf376808cf99861c4
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: a6af3470beec36630f5ebd9cc96667c969e50b21
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89218357"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96792141"
 ---
 # <a name="oid_tcp_offload_parameters"></a>OID_TCP_OFFLOAD_PARAMETERS
 
@@ -23,7 +22,7 @@ ms.locfileid: "89218357"
 
 对于支持 TCP 卸载的微型端口驱动程序和其他微型端口驱动程序的可选参数，OID_TCP_OFFLOAD_PARAMETERS 是必需的。 如果微型端口驱动程序不支持此 OID，则驱动程序应返回 NDIS_STATUS_NOT_SUPPORTED。
 
-[NDIS_OID_REQUEST](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的**InformationBuffer**成员包含[NDIS_OFFLOAD_PARAMETERS](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_offload_parameters)结构。 如果 **InformationBuffer** 的内容无效，则微型端口驱动程序应返回响应此 OID NDIS_STATUS_INVALID_DATA。
+[NDIS_OID_REQUEST](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的 **InformationBuffer** 成员包含 [NDIS_OFFLOAD_PARAMETERS](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_offload_parameters)结构。 如果 **InformationBuffer** 的内容无效，则微型端口驱动程序应返回响应此 OID NDIS_STATUS_INVALID_DATA。
 
 当 NDIS 处理此 OID，并在将 OID 传递到微型端口驱动程序之前，NDIS 将用新设置更新微型端口适配器的卸载标准化关键字。
 
@@ -33,7 +32,7 @@ ms.locfileid: "89218357"
 
 设置 OID_TCP_OFFLOAD_PARAMETERS 之前，上层应用程序或驱动程序可以使用 [OID_TCP_OFFLOAD_HARDWARE_CAPABILITIES](oid-tcp-offload-hardware-capabilities.md) OID 来确定微型端口适配器的硬件可以支持哪些功能。 使用 OID_TCP_OFFLOAD_PARAMETERS 可以启用 [OID_TCP_OFFLOAD_CURRENT_CONFIG](oid-tcp-offload-current-config.md) OID 报告为未启用的功能。
 
-### <a name="see-also"></a>另请参阅
+### <a name="see-also"></a>请参阅
 
 [NDIS_OFFLOAD_PARAMETERS](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_offload_parameters)  
 [NDIS_OID_REQUEST](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)  

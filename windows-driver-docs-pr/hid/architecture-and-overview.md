@@ -1,15 +1,14 @@
 ---
 title: 基于 I i2c 传输的 HID 体系结构和概述
 description: 本部分介绍了通过 I i2c 传输支持 HID 的设备的驱动程序堆栈。
-ms.assetid: 99384729-552C-4847-AA35-E0D413018104
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fa552902c4cef5d33dd90a6f5890ac3aa6de9cbe
-ms.sourcegitcommit: 9145bffd4cc3b990a9ebff43b588db6ef2001f5d
+ms.openlocfilehash: 05a585059bedfb926aeae88c58e702f25ed93c99
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/09/2020
-ms.locfileid: "89592373"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96791547"
 ---
 # <a name="architecture-and-overview-for-hid-over-the-ic-transport"></a>基于 I i2c 传输的 HID 体系结构和概述
 
@@ -23,11 +22,11 @@ HID I i2c 驱动程序堆栈由 Microsoft 提供的现有和新组件以及由 I
 
 ![基于 i2c 驱动程序堆栈的 hid](images/hid-i2c-arch.png)
 
-Windows 8 提供了一个接口，用于实现低功率、简单的总线，以便与操作系统有效地通信。 此接口称为简单外围总线 (SPB) ，它支持总线，如集成线路 (I i2c) 和串行外设接口 (SPI) 。 有关 SPB 的其他详细信息，请参阅简单外围总线主题。
+Windows 8 提供了一个接口，用于实现低功率、简单的总线，以便与操作系统有效地通信。 此接口称为简单外围总线 (SPB) ，它支持类似 Inter-Integrated 线路 (I i2c) 和串行外围设备接口 (SPI) 等总线。 有关 SPB 的其他详细信息，请参阅简单外围总线主题。
 
 Windows 8 提供了基于 KMDF 的 HID 微型端口驱动程序，该驱动程序实现了基于 I i2c 的 HID 协议规范的版本1.0。 此驱动程序名为 HIDI2C.sys。 Windows 基于兼容的 ID 匹配（由高级配置和电源接口 (ACPI) 公开）加载此驱动程序。 驱动程序可确保对使用 hid IOCTLs 和 API 集的软件使用 HID IOCTLs 应用程序级别兼容性的应用。 当某个设备需要关注或包含数据时，它将断言该主机。 但是，在断言发生之前，GPIO 连接必须存在。
 
-**注意**   HIDI2C.sys 设备驱动程序仅支持 I i2c 总线。 它不支持在 Windows 8 中提供 SPI、SMBUS 或其他低功率总线。
+**注意**  HIDI2C.sys 设备驱动程序仅支持 I i2c 总线。 它不支持在 Windows 8 中提供 SPI、SMBUS 或其他低功率总线。
 
  
 
@@ -36,7 +35,7 @@ Windows 8 提供了基于 KMDF 的 HID 微型端口驱动程序，该驱动程�
 
 I i2c 控制器驱动程序 (SPB 公开串行外围总线) IOCTL 接口，以执行读取和写入操作。 此驱动程序提供实际的控制器内部函数 (例如，i2c) 。 SPB 类扩展代表控制器驱动程序，可处理与资源中心的所有交互，并实现所需的队列来管理同时目标。
 
-**注意**   在没有与 SPB 平台兼容的 i2c 总线的系统上，HID I i2c 驱动程序将不起作用。 请与系统制造商联系，以确定设备系统上的 i2c 总线是否与 SPB 平台兼容。
+**注意**  在没有与 SPB 平台兼容的 i2c 总线的系统上，HID I i2c 驱动程序将不起作用。 请与系统制造商联系，以确定设备系统上的 i2c 总线是否与 SPB 平台兼容。
 
  
 

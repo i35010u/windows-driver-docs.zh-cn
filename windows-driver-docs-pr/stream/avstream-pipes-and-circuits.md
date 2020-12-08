@@ -1,7 +1,6 @@
 ---
 title: AVStream 管道和线路
 description: AVStream 管道和线路
-ms.assetid: 7e4db0da-7faf-4155-ab9d-f8651db834ec
 keywords:
 - AVStream 分配器 WDK
 - 分配器 WDK AVStream
@@ -18,12 +17,12 @@ keywords:
 - 线路 WDK AVStream
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: db82fd2c9b82cf44c6fb434e83475697b1b11337
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 4fc363bedac12aac9bf8e2b34ea8ee3845363b7c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89184189"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96792115"
 ---
 # <a name="avstream-pipes-and-circuits"></a>AVStream 管道和线路
 
@@ -31,7 +30,7 @@ ms.locfileid: "89184189"
 
 
 
-*管道*是一组共享公共[分配](avstream-allocators.md)器的 AVStream 筛选器。
+*管道* 是一组共享公共 [分配](avstream-allocators.md)器的 AVStream 筛选器。
 
 下图显示了由三个 AVStream 筛选器组成的管道：源筛选器、 *就地* 转换筛选器和呈现器筛选器。
 
@@ -39,7 +38,7 @@ ms.locfileid: "89184189"
 
 在此示例中， [KSProxy](/windows-hardware/drivers/ddi/_stream/index) (未显示) 选择了分配器，由关系图中的 **分配** 块表示。
 
-AVStream 创建与源筛选器相关联的内部请求方对象。 在关系图中，请求者显示为 " **必需**"。微型驱动程序在 KSPIN 描述符的 **AllocatorFraming** 成员（ [** \_ \_ 例如**](/windows-hardware/drivers/ddi/ks/ns-ks-_kspin_descriptor_ex) ，要分配给帧的内存类型和连续内存量）中指定。 相应地，请求者从分配器获取帧，并将其传递到线路中的下一个组件。
+AVStream 创建与源筛选器相关联的内部请求方对象。 在关系图中，请求者显示为 " **必需**"。微型驱动程序在 KSPIN 描述符的 **AllocatorFraming** 成员（ [**\_ \_ 例如**](/windows-hardware/drivers/ddi/ks/ns-ks-_kspin_descriptor_ex) ，要分配给帧的内存类型和连续内存量）中指定。 相应地，请求者从分配器获取帧，并将其传递到线路中的下一个组件。
 
 源筛选器中的数据流入其他 AVStream 驱动程序实现的转换筛选器。
 
@@ -57,7 +56,7 @@ AVStream 创建与源筛选器相关联的内部请求方对象。 在关系图�
 
 如第一个示例中所示，此示例包含三个筛选器： AVStream 源、KS 转换 (这可能是直接使用 KS 的驱动程序，或者是 stream 类) 下的微型驱动程序，以及 AVStream 呈现器。
 
-如第一个插图中所示，pin 是第一次互连的。 但是，当筛选器关系图转换为 **KSSTATE \_ **时，内核流1.0 筛选器不支持 AVStream 传输接口。 因此，AVStream 不会绕过 pin;相反，它必须使用 i/o 在筛选器之间移动数据。
+如第一个插图中所示，pin 是第一次互连的。 但是，当筛选器关系图转换为 **KSSTATE \_** 时，内核流1.0 筛选器不支持 AVStream 传输接口。 因此，AVStream 不会绕过 pin;相反，它必须使用 i/o 在筛选器之间移动数据。
 
 具体而言，当框架离开源筛选器的队列时，AVStream 会调用 [**IoCallDriver**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver)。 在此调用中， *Irp* 参数包含要从源的输出插针传递到转换筛选器的帧。
 
@@ -75,7 +74,7 @@ AVStream 现在调用 [**IoCompleteRequest**](/windows-hardware/drivers/ddi/wdm/
 
 非就地转换筛选器以内核模式分配转换后的帧，然后使用第二个管道作为这些帧的线路。 由于呈现器是一个 AVStream 筛选器，因此 AVStream 将绕过 pin，并使用 AVStream 传输接口将帧直接置于呈现筛选器的队列中。
 
-微型驱动程序可以通过调用[**KsPinSubmitFrame**](/windows-hardware/drivers/ddi/ks/nf-ks-kspinsubmitframe)或[**KsPinSubmitFrameMdl**](/windows-hardware/drivers/ddi/ks/nf-ks-kspinsubmitframemdl)将[帧注入](frame-injection.md)到线路。 如果微型驱动程序使用此方法，则 AVStream 请求方将接收这些调用的结果而不是来自内核模式分配器的帧。
+微型驱动程序可以通过调用 [**KsPinSubmitFrame**](/windows-hardware/drivers/ddi/ks/nf-ks-kspinsubmitframe)或 [**KsPinSubmitFrameMdl**](/windows-hardware/drivers/ddi/ks/nf-ks-kspinsubmitframemdl)将 [帧注入](frame-injection.md)到线路。 如果微型驱动程序使用此方法，则 AVStream 请求方将接收这些调用的结果而不是来自内核模式分配器的帧。
 
  
 

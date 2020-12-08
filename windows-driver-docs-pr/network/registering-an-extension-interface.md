@@ -1,7 +1,6 @@
 ---
 title: 注册扩展接口
 description: 注册扩展接口
-ms.assetid: 33dc32da-9bc1-40b4-8737-ec132ec36708
 keywords:
 - Winsock 内核 WDK 网络，扩展接口
 - WSK WDK 网络，扩展接口
@@ -10,17 +9,17 @@ keywords:
 - SIO_WSK_REGISTER_EXTENSION
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 35249843415608567b0dd97b6da6072db70106f8
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 99bb7fdedc82b55e26d423d7ef4e48a6ac05db74
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89212039"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96792121"
 ---
 # <a name="registering-an-extension-interface"></a>注册扩展接口
 
 
-Winsock 内核 (WSK) 应用程序成功创建套接字后，它可以为 WSK 子系统支持的一个或多个 [扩展接口](winsock-kernel-extension-interfaces.md) 注册该套接字。 WSK 应用程序通过检查在附件中 WSK 子系统返回给应用程序的[**WSK \_ 提供程序 \_ 调度**](/windows-hardware/drivers/ddi/wsk/ns-wsk-_wsk_provider_dispatch)结构的**版本**成员，来确定 WSK 子系统支持哪组扩展接口。
+Winsock 内核 (WSK) 应用程序成功创建套接字后，它可以为 WSK 子系统支持的一个或多个 [扩展接口](winsock-kernel-extension-interfaces.md) 注册该套接字。 WSK 应用程序通过检查在附件中 WSK 子系统返回给应用程序的 [**WSK \_ 提供程序 \_ 调度**](/windows-hardware/drivers/ddi/wsk/ns-wsk-_wsk_provider_dispatch)结构的 **版本** 成员，来确定 WSK 子系统支持哪组扩展接口。
 
 每个扩展接口都由与 WSK NPI 无关的 NPI 定义。 但请注意，扩展接口的 NPIs 不支持 NPI 特定的特征。
 

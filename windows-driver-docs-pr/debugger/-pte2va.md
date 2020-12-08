@@ -1,7 +1,6 @@
 ---
 title: pte2va
-description: Pte2va 扩展到指定的页表项 (PTE) 显示对应的虚拟地址。
-ms.assetid: 9a94ce3a-dbbc-4566-9ef5-3ec76c1505eb
+description: Pte2va 扩展显示与指定页表项相对应 (PTE) 的虚拟地址。
 keywords:
 - pte2va Windows 调试
 ms.date: 05/23/2017
@@ -12,29 +11,29 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 4f92a7d1be4d5375a47ee57e2f550350e8f5555d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: eab939e624b74aab47eff9563dc704f91d0eb52c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63335840"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96792001"
 ---
 # <a name="pte2va"></a>!pte2va
 
 
-**！ Pte2va**扩展到指定的页表项 (PTE) 显示对应的虚拟地址。
+**！ Pte2va** extension 显示与指定页表项相对应 (PTE) 的虚拟地址。
 
 ```dbgcmd
 !pte2va Address
 ```
 
-## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>参数
+## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>Parameters
 
 
-<span id="_______Address______"></span><span id="_______address______"></span><span id="_______ADDRESS______"></span> *Address*   
-指定将 PTE。
+<span id="_______Address______"></span><span id="_______address______"></span><span id="_______ADDRESS______"></span>*地址*   
+指定 PTE。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 <table>
 <colgroup>
@@ -55,16 +54,16 @@ ms.locfileid: "63335840"
 
  
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-页表和 Pte 有关的信息，请参阅*Microsoft Windows Internals*、 Mark Russinovich 和 David solomon 合著的。 
+有关页面表和 Pte 的信息，请参阅 *Microsoft Windows 内部机制*，方法是标记 Russinovich 和 David 所罗门群岛。 
 
 <a name="remarks"></a>备注
 -------
 
-若要检查的特定 PTE 内容，请使用[ **！ pte** ](-pte.md)扩展。
+若要检查特定 PTE 的内容，请使用 [**！ PTE**](-pte.md) 扩展。
 
-下面是输出的示例 **！ pte2va**扩展：
+下面是 **！ pte2va** 扩展的输出示例：
 
 ```dbgcmd
 kd> !pte2va 9230

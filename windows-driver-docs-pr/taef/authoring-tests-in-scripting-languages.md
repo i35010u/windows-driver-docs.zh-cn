@@ -1,15 +1,14 @@
 ---
 title: 使用脚本语言创作测试
 description: 使用脚本语言创作测试
-ms.assetid: 4F5328E4-4817-4391-BF56-EC9E7F469AA7
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 538e9e2b910a80d0c44bf416d303f15d3c77ba3f
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: 1bf8395ed125b037e0e6e987ccb053bd48c9f279
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89403476"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96790892"
 ---
 # <a name="authoring-tests-in-scripting-languages"></a>使用脚本语言创作测试
 
@@ -150,22 +149,22 @@ Windows 只支持 JScript 和 VBScript。
 - 将 " **错误** " 设置为 " *true* " 将显示脚本组件中的语法或运行时错误的详细错误消息。
 - 将 " **调试** " 设置为 " *true* " 以启用调试。 如果未启用调试，则无法启动脚本的脚本调试程序 (例如，使用 JScript 代码) 中的 **debug** 关键字。
 
-** &lt; Package &gt; **元素在**wsc**文件中包含 test 类定义。 在此元素后，可以通过添加 **ModuleProperty** 元素插入模块级元数据：
+**&lt; Package &gt;** 元素在 **wsc** 文件中包含 test 类定义。 在此元素后，可以通过添加 **ModuleProperty** 元素插入模块级元数据：
 
 ```cpp
 <ModuleProperty name = "Owner" value = "Someone"/>
 ```
 
-**ModuleProperty**元素必须包括**name**和**value**属性。
+**ModuleProperty** 元素必须包括 **name** 和 **value** 属性。
 
-**Component**元素启动脚本测试类的声明。 此元素应始终具有设置为类名的 **id** 属性。
+**Component** 元素启动脚本测试类的声明。 此元素应始终具有设置为类名的 **id** 属性。
 
 在 **Component** 元素之后，可以通过使用 **TestClassProperty** 元素插入类级元数据。 与 **ModuleProperty** 元素一样，它必须具有 **name** 和 **value** 属性。
 
-此时，您还可以创建对象并定义对对象的引用。 有关详细信息，请参阅 [其他组件部分](/previous-versions/ye6w00x4(v=vs.85)) 。 XML 示例中的第15、18、49和52行说明了如何引用和初始化**WEX。记录对象。**
+此时，您还可以创建对象并定义对对象的引用。 有关详细信息，请参阅 [其他组件部分](/previous-versions/ye6w00x4(v=vs.85)) 。 XML 示例中的第15、18、49和52行说明了如何引用和初始化 **WEX。记录对象。**
 
-** &lt; 公共 &gt; **元素包含测试脚本模块的测试方法声明。 通过在** &lt; &gt; 方法**元素的**name**特性中指定测试方法名称来声明测试方法。 你还可以在** &lt; 方法 &gt; **元素中添加 "测试方法" 属性。 与其他级别的属性一样，它不是必需的。 但是，如果添加它，则必须包含 **名称** 和 **值** 属性。
+**&lt; 公共 &gt;** 元素包含测试脚本模块的测试方法声明。 通过在 **&lt; &gt; 方法** 元素的 **name** 特性中指定测试方法名称来声明测试方法。 你还可以在 **&lt; 方法 &gt;** 元素中添加 "测试方法" 属性。 与其他级别的属性一样，它不是必需的。 但是，如果添加它，则必须包含 **名称** 和 **值** 属性。
 
-** &lt; Script &gt; **元素标识测试脚本语言，并包含测试方法的实现。
+**&lt; Script &gt;** 元素标识测试脚本语言，并包含测试方法的实现。
 
-** &lt; ！ \[\[CDATA \] 节 \] 包含测试的实际实现-用脚本语言编写的代码。 &gt; ** 在本部分中，你将实现在** &lt; public &gt; &lt; /public &gt; **节中声明的测试方法。
+**&lt; ！ \[\[CDATA \] 节 \] 包含测试的实际实现-用脚本语言编写的代码。 &gt;** 在本部分中，你将实现在 **&lt; public &gt; &lt; /public &gt;** 节中声明的测试方法。

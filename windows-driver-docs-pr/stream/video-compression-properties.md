@@ -1,19 +1,18 @@
 ---
 title: 视频压缩属性
 description: 视频压缩属性
-ms.assetid: 2fd69425-7c36-4766-88e6-7f02d5fa6659
 keywords:
 - 视频压缩属性 WDK 视频捕获
 - 压缩属性 WDK 视频捕获
 - PROPSETID_VIDCAP_VIDEOCOMPRESSION
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2753a2fbbefca3e88418c7d5892a4e1959792b9f
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 92ac6a96798f0c5d1c841a9b94d476e2c258d3b6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105156"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96791139"
 ---
 # <a name="video-compression-properties"></a>视频压缩属性
 

@@ -1,17 +1,16 @@
 ---
 title: WDI_TLV_CONNECTION_SETTINGS
 description: WDI_TLV_CONNECTION_SETTINGS 是包含 OID_WDI_TASK_CONNECT 连接设置的 TLV。
-ms.assetid: E08E895D-BFD6-496E-82FE-881FDDB0B88E
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_CONNECTION_SETTINGS 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: e7b0f4308732563890187598f6a3148f5a6b40d7
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 045834200fb3e6e20fb72bc7886d59dc7f744906
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89212305"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96792607"
 ---
 # <a name="wdi_tlv_connection_settings"></a>WDI \_ TLV \_ 连接 \_ 设置
 
@@ -23,7 +22,7 @@ WDI \_ tlv \_ 连接 \_ 设置是一个 tlv，其中包含 [OID \_ WDI \_ TASK \
 
 0x3F
 
-## <a name="length"></a>Length
+## <a name="length"></a>长度
 
 
 Sum (所有包含的元素的大小) 。
@@ -31,7 +30,7 @@ Sum (所有包含的元素的大小) 。
 ## <a name="values"></a>值
 
 
-| 类型                                                         | 说明                                                                                                                                                                                                               |
+| 类型                                                         | 描述                                                                                                                                                                                                               |
 |--------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | UINT8                                                        | 指定这是第一次连接请求 (值 0) 或 (值为 1) 的漫游连接。                                                                                                                   |
 | UINT8                                                        | 指定这是否是与具有隐藏/非广播 Ssid 的网络的连接。 连接到隐藏网络时，此值为1。                                                                                      |
@@ -59,7 +58,7 @@ Sum (所有包含的元素的大小) 。
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
-<td><p>Windows Server 2016</p></td>
+<td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
 <td><p>标头</p></td>

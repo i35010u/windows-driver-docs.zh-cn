@@ -1,7 +1,6 @@
 ---
 title: INF CopyFiles 指令
 description: CopyFiles 指令可以执行以下任一操作
-ms.assetid: 65756b1c-ea61-4bb4-90ac-4d96ceaf9665
 keywords:
 - INF CopyFiles 指令设备和驱动程序安装
 topic_type:
@@ -12,12 +11,12 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2c356464629ca324cde8076ad48b715843ffd180
-ms.sourcegitcommit: cfd4d8ee889c6a3feed79ae112662f6c095b6a36
+ms.openlocfilehash: a0b7c1822b31654bdd86dfebdc335e2011766927
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94417457"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96790593"
 ---
 # <a name="inf-copyfiles-directive"></a>INF CopyFiles 指令
 
@@ -44,7 +43,7 @@ CopyFiles=@filename | file-list-section[, file-list-section]...
 
 可以在正式语法语句中所示的任何部分中指定 **CopyFiles** 指令。 还可以在以下任何 INF 部分中指定此指令：
 
--   在 DDInstall 中由 INF [**AddInterface**](inf-addinterface-directive.md)指令引用的 *添加接口部分* [**_DDInstall_ 。接口**](inf-ddinstall-interfaces-section.md)部分。
+-   在 DDInstall 中由 INF [**AddInterface**](inf-addinterface-directive.md)指令引用的 *添加接口部分* [**_DDInstall_。接口**](inf-ddinstall-interfaces-section.md)部分。
 -   INF [**InterfaceInstall32**](inf-interfaceinstall32-section.md)部分中引用的 *安装界面部分*
 
 **CopyFiles** 指令引用的每个命名部分都具有以下形式的一个或多个条目：
@@ -57,7 +56,7 @@ destination-file-name[,[source-file-name][,[unused][,flag]]]
 
 由 INF 编写器定义的 *文件列表部分* 可以有任意数量的条目，每个条目都在单独的行中。
 
-每个 *文件列表部分* 都可以有一个可选的、关联的 <em>文件列表节</em>，其中包含以下形式的 " **安全** " 部分：
+每个 *文件列表部分* 都可以有一个可选的、关联的 <em>文件列表节</em>，其中包含以下形式的 "**安全**" 部分：
 
 ```inf
 [file-list-section.security]
@@ -122,7 +121,7 @@ Windows 2000 和更高版本的 Windows 不再支持此项。
 如果由于目标文件正在使用而无法复制源文件，请重命名目标文件，然后将源文件复制到目标文件，并删除重命名的目标文件。 如果无法重命名目标文件，请在下一次系统重新启动期间完成复制操作。 如果重命名的目标文件无法删除，请在下一次系统重新启动过程中删除重命名的目标文件。
 
 <a href="" id="security-descriptor-string"></a>*安全描述符-字符串*  
-指定一个安全描述符，它将应用于通过命名 *文件列表部分* 复制的所有文件。 *安全描述符字符串* 是包含标记的字符串，用于指示 DACL ( **D：** ) 安全组件。
+指定一个安全描述符，它将应用于通过命名 *文件列表部分* 复制的所有文件。 *安全描述符字符串* 是包含标记的字符串，用于指示 DACL (**D：**) 安全组件。
 
 有关安全描述符字符串的信息，请参阅 [安全描述符定义语言 (Windows) ](/windows/desktop/SecAuthZ/security-descriptor-definition-language)。 有关安全描述符字符串的格式的信息，请参阅安全描述符定义语言 (Windows) 。
 
@@ -137,7 +136,7 @@ Windows 2000 和更高版本的 Windows 不再支持此项。
 
 有关如何指定安全描述符的详细信息，请参阅 [创建安全设备安装](creating-secure-device-installations.md)。
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 如果文件具有 INF **CopyFiles** 指令，则 Windows 仅将 [驱动程序包](driver-packages.md)复制到其目标位置作为驱动程序安装的一部分。 当它复制文件时，操作系统会在必要时自动生成临时文件名，并在下次启动操作系统时重命名复制的源文件。
@@ -151,9 +150,9 @@ INF 文件编写器还必须为从源媒体复制的文件提供路径规范，�
 
 以下几点适用于 INF **CopyFiles** 指令：
 
-- 对于 INF 文件，每个 *文件列表节* 名称必须是唯一的，但可以在同一 INF 文件中的其他位置通过 **CopyFiles** 、 [**DelFiles**](inf-delfiles-directive.md)或 [**RenFiles**](inf-renfiles-directive.md) 指令引用它。 节名称必须遵循 [INF 文件一般语法规则](general-syntax-rules-for-inf-files.md)中描述的常规规则。
-- **@**<em>文件名</em>或 *文件列表节* 项中指定的文件名必须是源媒体上文件的确切名称。 不能使用% *strkey* % 令牌来指定文件名。 有关% *strkey* % 令牌的详细信息，请参阅 [**INF 字符串部分**](inf-strings-section.md)。
-- **CopyFiles** 指令不支持修饰带有系统定义的平台扩展 ( **nt** 、 **. ntx86** 、 **ntia64** 或 **ntamd64** ) 的 *文件列表节* 名称。
+- 对于 INF 文件，每个 *文件列表节* 名称必须是唯一的，但可以在同一 INF 文件中的其他位置通过 **CopyFiles**、 [**DelFiles**](inf-delfiles-directive.md)或 [**RenFiles**](inf-renfiles-directive.md) 指令引用它。 节名称必须遵循 [INF 文件一般语法规则](general-syntax-rules-for-inf-files.md)中描述的常规规则。
+- **@**<em>文件名</em>或 *文件列表节* 项中指定的文件名必须是源媒体上文件的确切名称。 不能使用%*strkey*% 令牌来指定文件名。 有关%*strkey*% 令牌的详细信息，请参阅 [**INF 字符串部分**](inf-strings-section.md)。
+- **CopyFiles** 指令不支持修饰带有系统定义的平台扩展 (**nt**、 **. ntx86**、 **ntia64** 或 **ntamd64**) 的 *文件列表节* 名称。
 - 请勿使用 **CopyFiles** 指令复制 INF 文件。 有关详细信息，请参阅 [复制 INF 文件](copying-inf-files.md)。
 
 从 Windows Vista 开始，以下点还适用于 INF **CopyFiles** 指令：
@@ -190,7 +189,7 @@ CopyFiles=@AHA154x.SYS
 ; ...
 ```
 
-此示例演示如何在 DDInstall 中使用 **CopyFiles** 指令 [**_DDInstall_ 。**](inf-ddinstall-coinstallers-section.md)设备驱动程序的 inf 的 CoInstallers 部分，提供两个特定于设备的共同安装程序来补充特定于系统设备类型的类安装程序的 inf 处理。
+此示例演示如何在 DDInstall 中使用 **CopyFiles** 指令 [**_DDInstall_。**](inf-ddinstall-coinstallers-section.md)设备驱动程序的 inf 的 CoInstallers 部分，提供两个特定于设备的共同安装程序来补充特定于系统设备类型的类安装程序的 inf 处理。
 
 ```inf
 [DestinationDirs]
@@ -208,7 +207,7 @@ XxPreInst.dll   ; dev-specific co-installer run before class installer
 XxPostInst.dll  ; run after class installer (post processing)
 ```
 
-如前面的示例所示，可以根据此处所示的提供程序的名称，将新设备特定的共同安装 (程序的名称构造为 *Xx* ) ，每个此类共同安装程序 DLL 的预期用途 ( *PreInst* 和 *PostInst* ) 。
+如前面的示例所示，可以根据此处所示的提供程序的名称，将新设备特定的共同安装 (程序的名称构造为 *Xx*) ，每个此类共同安装程序 DLL 的预期用途 (*PreInst* 和 *PostInst*) 。
 
 有关如何使用 INF **CopyFiles** 指令的其他示例，请参阅 Windows 驱动程序工具包 (WDK) 中 *包含的设备* 驱动程序示例的 INF 文件。
 
@@ -221,9 +220,9 @@ XxPostInst.dll  ; run after class installer (post processing)
 
 [**_DDInstall_* _](inf-ddinstall-section.md)
 
-[_ *_DDInstall_ 。CoInstallers**](inf-ddinstall-coinstallers-section.md)
+[_ *_DDInstall_。CoInstallers**](inf-ddinstall-coinstallers-section.md)
 
-[**_DDInstall_ 。接口**](inf-ddinstall-interfaces-section.md)
+[**_DDInstall_。接口**](inf-ddinstall-interfaces-section.md)
 
 [**DelFiles**](inf-delfiles-directive.md)
 

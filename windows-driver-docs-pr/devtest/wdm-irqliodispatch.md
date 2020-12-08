@@ -1,7 +1,6 @@
 ---
 title: 'IrqlIoDispatch 规则 (wdm) '
 description: IrqlIoDispatch 规则指定，仅当驱动程序在 IRQL 调度 \_ 级别 IoGetDeviceToVerify、IoSetDeviceToVerify 上执行时，驱动程序才调用以下 I/o 管理器例程。
-ms.assetid: 4794123F-EB8E-4B3D-A7DE-8E6B145AE816
 ms.date: 05/21/2018
 keywords:
 - 'IrqlIoDispatch 规则 (wdm) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 1a57abe03ce543c987b79ea286916b938b17e262
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 78d7caee6160782e88551e7d53a463663174aa5b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105958"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96791883"
 ---
 # <a name="irqliodispatch-rule-wdm"></a>IrqlIoDispatch 规则 (wdm) 
 
 
-**IrqlIoDispatch**规则指定，仅当驱动程序在 IRQL &lt; = 调度 \_ 级别： [**IoGetDeviceToVerify**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-iogetdevicetoverify)， [**IoSetDeviceToVerify**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-iosetdevicetoverify)上执行时，才调用以下 i/o 管理器例程。
+**IrqlIoDispatch** 规则指定，仅当驱动程序在 IRQL &lt; = 调度 \_ 级别： [**IoGetDeviceToVerify**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-iogetdevicetoverify)， [**IoSetDeviceToVerify**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-iosetdevicetoverify)上执行时，才调用以下 i/o 管理器例程。
 
 **驱动程序模型： WDM**
 
@@ -55,7 +54,7 @@ ms.locfileid: "90105958"
 </tbody>
 </table>
 
-<a name="see-also"></a>另请参阅
+<a name="see-also"></a>请参阅
 --------
 
 [管理硬件优先级](../kernel/managing-hardware-priorities.md)

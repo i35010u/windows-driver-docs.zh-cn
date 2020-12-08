@@ -1,18 +1,17 @@
 ---
 title: 定义回调对象
 description: 定义回调对象
-ms.assetid: 9717795b-dd62-4f17-b931-5ca2b1237e60
 keywords:
 - 回叫对象 WDK 内核
 - 注册回调通知
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 505223592b0b1ed55e87f3037d0182981bca7a64
-ms.sourcegitcommit: a5f76805387760730faed5674d87201ec85b7dd3
+ms.openlocfilehash: b0d6d0a2ad6da59a6907ae2b9fbf9512964612b7
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90112114"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96792801"
 ---
 # <a name="defining-a-callback-object"></a>定义回调对象
 

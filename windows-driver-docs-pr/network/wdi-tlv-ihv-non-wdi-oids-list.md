@@ -1,22 +1,21 @@
 ---
 title: WDI_TLV_IHV_NON_WDI_OIDS_LIST
-description: WDI_TLV_IHV_NON_WDI_OIDS_LIST 是包含列表的非-WDI Oid 适配器要播发到操作系统 TLV。
-ms.assetid: 84929276-F098-4C24-A499-E252D5FB71A6
+description: WDI_TLV_IHV_NON_WDI_OIDS_LIST 是一种 TLV，其中包含适配器要播发到操作系统的非 WDI Oid 的列表。
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_IHV_NON_WDI_OIDS_LIST 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 3d031a2495a8cedf6195ac4ea9438862a3c8b029
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: aa859f3135041dac0e9bbe2e78ce10357757bad1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63365386"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96791301"
 ---
-# <a name="wditlvihvnonwdioidslist"></a>WDI\_TLV\_IHV\_非\_WDI\_OID\_列表
+# <a name="wdi_tlv_ihv_non_wdi_oids_list"></a>WDI \_ TLV \_ IHV \_ 非 \_ WDI \_ OID \_ LIST
 
 
-WDI\_TLV\_IHV\_非\_WDI\_OID\_列表是包含列表的非-WDI Oid 适配器要播发到操作系统 TLV。
+WDI \_ tlv \_ IHV \_ 非 \_ WDI \_ oid \_ list 是一个 TLV，其中包含适配器要播发到操作系统的非 WDI oid 的列表。
 
 ## <a name="tlv-type"></a>TLV 类型
 
@@ -26,14 +25,14 @@ WDI\_TLV\_IHV\_非\_WDI\_OID\_列表是包含列表的非-WDI Oid 适配器要�
 ## <a name="length"></a>长度
 
 
-UINT32 元素的数组大小 （以字节为单位）。 该数组必须包含一个或多个元素。
+UINT32 元素数组的大小 (以字节为单位) 。 数组必须包含1个或多个元素。
 
 ## <a name="values"></a>值
 
 
-| 在任务栏的搜索框中键入       | 描述                                                                                                                                                                                       |
+| 类型       | 描述                                                                                                                                                                                       |
 |------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| UINT32\[\] | 列表的非-WDI Oid 适配器要播发到操作系统。 适配器不应假定操作系统已筛选非-WDI Oid 以匹配此列表。 |
+| UINT32\[\] | 适配器要播发到操作系统的非 WDI Oid 的列表。 适配器不应假定操作系统已将非 WDI Oid 筛选为与此列表匹配。 |
 
  
 
@@ -52,10 +51,10 @@ UINT32 元素的数组大小 （以字节为单位）。 该数组必须包含�
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
-<td><p>Windows Server 2016</p></td>
+<td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Wditypes.hpp</td>
 </tr>
 </tbody>

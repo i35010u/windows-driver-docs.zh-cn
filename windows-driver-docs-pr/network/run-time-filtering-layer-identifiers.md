@@ -1,17 +1,16 @@
 ---
 title: 运行时筛选层标识符
 description: 本部分介绍运行时筛选层标识符。
-ms.assetid: 21c466a3-cdfc-4e94-83d3-1c2c7a58a2ca
 keywords:
 - 运行时筛选层标识符网络驱动程序
 ms.date: 11/08/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 682b0e92f9a1707de00e7363acdc4d4e709c6785
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 7a7f8d4664313192af9710689456bb1b2e1c2a8b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89217483"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96791357"
 ---
 # <a name="run-time-filtering-layer-identifiers"></a>运行时筛选层标识符
 

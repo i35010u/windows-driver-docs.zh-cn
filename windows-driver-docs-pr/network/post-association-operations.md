@@ -1,27 +1,26 @@
 ---
 title: “关联后的操作”概述
 description: “关联后的操作”概述
-ms.assetid: e4c7ea7a-53ad-41b2-bf3f-03c770e58043
 keywords:
 - IHV 扩展 DLL WDK 本机802.11，后关联操作
 - 后关联操作 WDK 本机 802.11 IHV 扩展 DLL
 - 本机 802.11 IHV 扩展 DLL WDK，后关联操作
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7c5f38dad13b2aab5394a29fd0c47c8b20c7e1c4
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 01f2094b82261beabc9f4af4592a5efe44d05db0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89214494"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96792641"
 ---
 # <a name="post-association-operations-overview"></a>“关联后的操作”概述
 
 当无线 LAN (WLAN) 适配器成功完成与接入点 (AP) 关联操作时，操作系统将为关联创建数据端口。 然后，操作系统通过调用 [*Dot11ExtIhvPerformPostAssociate*](/windows-hardware/drivers/ddi/wlanihv/nc-wlanihv-dot11extihv_perform_post_associate) 函数在数据端口上启动关联后操作。
 
-**注意**   对于 Windows Vista，IHV 扩展 DLL 仅支持基础结构基本服务集 (BSS) 网络。
+**注意**  对于 Windows Vista，IHV 扩展 DLL 仅支持基础结构基本服务集 (BSS) 网络。
 
- 
+ 
 
 执行后关联操作时，IHV 扩展 DLL 可以执行以下操作：
 
@@ -47,6 +46,6 @@ ms.locfileid: "89214494"
 
 有关端口管理中涉及的过程的详细信息，请参阅 [基于端口的网络访问](/previous-versions/windows/hardware/wireless/port-based-network-access)。
 
- 
+ 
 
- 
+ 

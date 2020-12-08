@@ -1,21 +1,20 @@
 ---
 title: OID_GEN_MEDIA_IN_USE
-description: 为查询，OID_GEN_MEDIA_IN_USE OID 指定 NIC 当前使用的媒体类型的完整列表。
-ms.assetid: 3b8db63d-07e0-4a5c-9848-57e594e3dd54
+description: 作为查询，OID_GEN_MEDIA_IN_USE OID 指定了 NIC 当前使用的媒体类型的完整列表。
 ms.date: 08/08/2017
-keywords: -从 Windows Vista 开始 OID_GEN_MEDIA_IN_USE 网络驱动程序
+keywords: -从 Windows Vista 开始 OID_GEN_MEDIA_IN_USE 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 09b3af88cf9cb83c88ba9acd94721ee4bd242c10
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 997836f8f1f4e75d69025f094d78dc5288b2dc2b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63348147"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96792651"
 ---
-# <a name="oidgenmediainuse"></a>OID\_GEN\_MEDIA\_IN\_USE
+# <a name="oid_gen_media_in_use"></a>\_ \_ \_ 正在 \_ 使用 OID 生成媒体
 
 
-为查询，OID\_GEN\_媒体\_IN\_使用 OID 指定 NIC 当前使用的媒体类型的完整列表。
+作为查询，OID \_ 代 \_ 媒体 \_ \_ 使用 oid 指定了 NIC 当前使用的媒体类型的完整列表。
 
 **版本信息**
 
@@ -37,9 +36,9 @@ ms.locfileid: "63348147"
 <a name="remarks"></a>备注
 -------
 
-NDIS 6.0 和更高版本的微型端口驱动程序不会收到此 OID 请求。 NDIS 处理此 OID 微型端口驱动程序在初始化过程中提供的缓存值。
+NDIS 6.0 和更高版本的微型端口驱动程序不会收到此 OID 请求。 NDIS 使用小型端口驱动程序在初始化期间提供的缓存值处理此 OID。
 
-此 OID 提供相同的信息[OID\_代\_媒体\_支持](oid-gen-media-supported.md)OID。
+此 OID 提供与 [oid 生成 \_ \_ 媒体 \_ 支持](oid-gen-media-supported.md) 的 oid 相同的信息。
 
 <a name="requirements"></a>要求
 ------------
@@ -51,8 +50,8 @@ NDIS 6.0 和更高版本的微型端口驱动程序不会收到此 OID 请求。
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Ntddndis.h （包括 Ndis.h）</td>
+<td><p>标头</p></td>
+<td>Ntddndis (包含 Ndis .h) </td>
 </tr>
 </tbody>
 </table>
@@ -60,7 +59,7 @@ NDIS 6.0 和更高版本的微型端口驱动程序不会收到此 OID 请求。
 ## <a name="see-also"></a>请参阅
 
 
-[OID\_GEN\_媒体\_支持](oid-gen-media-supported.md)
+[支持 OID 生成 \_ \_ 媒体 \_](oid-gen-media-supported.md)
 
  
 

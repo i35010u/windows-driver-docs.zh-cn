@@ -1,15 +1,14 @@
 ---
 title: 设备的 D3cold 功能
 description: 在作为电源策略所有者 (PPO) 的驱动程序启用设备后，设备可以输入 D3cold (当计算机停留在 S0) 时，驱动程序必须验证设备是否响应并在设备进入 D3cold 后继续正常运行。
-ms.assetid: 5A6CB076-7D97-48EC-B2BF-3204CD093B3E
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 4b6beb4e70b305dd0dcc628763977f5cd603d6f5
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: cd84b86ee7bd2d9c006064aff69c49bc70711a15
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89188591"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96792811"
 ---
 # <a name="d3cold-capabilities-of-a-device"></a>设备的 D3cold 功能
 
@@ -24,7 +23,7 @@ ms.locfileid: "89188591"
 
 设备的 KMDF 驱动程序将调用 [**WdfDeviceAssignS0IdleSettings**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceassigns0idlesettings) 方法，以使设备能够在设备可用于传输唤醒事件的最小设备电源状态中处于空闲状态。 从 KMDF 版本1.11 开始， **WdfDeviceAssignS0IdleSettings** 在可能的低功耗 Dx 状态范围内包含 D3cold。 仅当设备、父总线驱动程序和 ACPI 系统固件支持 D3cold 发出的唤醒事件时，此方法才允许设备在 D3cold 中空闲。
 
-设备的 WDM 驱动程序必须决定设备处于空闲状态时要将设备移动到哪种低功耗 Dx 状态。  (相反， **WdfDeviceAssignS0IdleSettings** 会自动选择此 Dx 状态，以便驱动程序无需。 ) 如果设备必须能够从其输入的任何低功耗 Dx 状态发出唤醒事件信号，则驱动程序可以调用 [*GetIdleWakeInfo*](/windows-hardware/drivers/ddi/wdm/nc-wdm-get_idle_wake_info) 例程来确定设备可用于向唤醒事件发出信号的设备电源状态。 为获取此信息， *GetIdleWakeInfo* 会查询底层总线驱动程序和 ACPI 系统固件。 根据 *GetIdleWakeInfo*中的信息，驱动程序可以调用 [*SetD3ColdSupport*](/windows-hardware/drivers/ddi/wdm/nc-wdm-set_d3cold_support) 例程来启用或禁用设备到 D3cold 的转换。
+设备的 WDM 驱动程序必须决定设备处于空闲状态时要将设备移动到哪种低功耗 Dx 状态。  (相反， **WdfDeviceAssignS0IdleSettings** 会自动选择此 Dx 状态，以便驱动程序无需。 ) 如果设备必须能够从其输入的任何低功耗 Dx 状态发出唤醒事件信号，则驱动程序可以调用 [*GetIdleWakeInfo*](/windows-hardware/drivers/ddi/wdm/nc-wdm-get_idle_wake_info) 例程来确定设备可用于向唤醒事件发出信号的设备电源状态。 为获取此信息， *GetIdleWakeInfo* 会查询底层总线驱动程序和 ACPI 系统固件。 根据 *GetIdleWakeInfo* 中的信息，驱动程序可以调用 [*SetD3ColdSupport*](/windows-hardware/drivers/ddi/wdm/nc-wdm-set_d3cold_support) 例程来启用或禁用设备到 D3cold 的转换。
 
 设备可能不需要能够从 D3cold 发出唤醒事件。 仅当响应软件启动的操作时，才可以将设备设置为仅允许从 D3cold 到 D0 的转换。 例如，如果驱动程序收到设备的 i/o 请求，驱动程序可能需要唤醒设备。 除了少数例外情况，此类设备的驱动程序可以使设备进入 D3cold。 一个可能的例外是需要很长时间才能将 D3cold 转换为 D0 的设备。 例如，显示设备可能包含大量需要在设备进入 D3cold 之前保存并在设备退出 D3cold 之后进行还原的内存。
 

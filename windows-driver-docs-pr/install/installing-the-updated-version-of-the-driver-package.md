@@ -1,15 +1,14 @@
 ---
 title: 安装驱动程序包的已更新版本
 description: 安装驱动程序包的已更新版本
-ms.assetid: c2138956-a036-410d-b34e-b7b6efbcbace
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ea2b36b222ed1b90edd4b173f72836b5c35cce56
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 81d56d89968bc4bcb2ce7c1e3def1a890426d2df
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89097369"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96791729"
 ---
 # <a name="installing-the-updated-version-of-the-driver-package"></a>安装驱动程序包的已更新版本
 
@@ -30,7 +29,7 @@ ms.locfileid: "89097369"
 
     重新启动系统后重新安装设备后，会自动加载新的驱动程序。 若要让 DevCon 自动重新启动系统，请将 (**/r**) 的条件重新启动参数添加到 "删除" 命令。
 
-    **注意**   在 WDK 中提供了[DevCon](../devtest/devcon.md)工具。 有关其命令的详细信息，请参阅 [DevCon 命令](../devtest/devcon-general-commands.md)。
+    **注意**  在 WDK 中提供了 [DevCon](../devtest/devcon.md) 工具。 有关其命令的详细信息，请参阅 [DevCon 命令](../devtest/devcon-general-commands.md)。
 
      
 

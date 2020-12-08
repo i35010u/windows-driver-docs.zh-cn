@@ -1,7 +1,6 @@
 ---
 title: 'WlanTimedAssociation 规则 (ndis) '
 description: WlanTimedAssociation 规则指定 NDIS 微型端口驱动程序在10秒内完成无线 LAN (WLAN) 关联操作。
-ms.assetid: 6454C7CF-EC89-44E9-B835-3C2FE0FFB595
 ms.date: 05/21/2018
 keywords:
 - 'WlanTimedAssociation 规则 (ndis) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 92b2dd309c25252a05d2b9f29b7acdee513fe6eb
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: e781881726db9efc32ba1d92d61d55a074b5957d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107444"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96791937"
 ---
 # <a name="wlantimedassociation-rule-ndis"></a>WlanTimedAssociation 规则 (ndis) 
 
 
-**WlanTimedAssociation**规则指定 NDIS 微型端口驱动程序在10秒内完成无线 LAN (WLAN) 关联操作。
+**WlanTimedAssociation** 规则指定 NDIS 微型端口驱动程序在10秒内完成无线 LAN (WLAN) 关联操作。
 
 **驱动程序模型： NDIS**
 

@@ -1,60 +1,59 @@
 ---
 title: 触摸屏笔记本电脑系统测试
-description: 本主题介绍针对触摸屏便携式计算机系统测试。
-ms.assetid: 0DD7865F-C31C-48AD-8775-4AC1E469176F
+description: 本主题介绍适用于触摸计算机的测试系统。
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: cf95ec0a0826da32f61aac4cfce28a67a25cc5b7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fcc721626f42e9ca5db4b29ec1f7ce1f55f4d869
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390409"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96791555"
 ---
 # <a name="touchscreen-laptop-system-testing"></a>触摸屏笔记本电脑系统测试
 
 
-本主题介绍针对触摸屏便携式计算机系统测试。
+本主题介绍适用于触摸计算机的测试系统。
 
-**屏幕键盘部署 （仅限触摸屏便携式计算机系统）**
+**屏幕键盘部署 (触摸屏便携式系统仅)**
 
-1.  系统接通电源后，转到**启动**屏幕。
-2.  执行[触摸键盘部署步骤](indicator-testing.md#touchkbd)。
+1.  开启系统并切换到 " **开始** " 屏幕。
+2.  执行 [触控键盘部署步骤](indicator-testing.md#touchkbd)。
 
-    *验证*:不应部署屏幕键盘。
+    *验证*：屏幕键盘不应部署。
 
-3.  旋转系统 （横向与纵向）。
+3.  将系统 (横向旋转到纵向，并向后) 。
 
-    *验证*:不应更改屏幕方向。
+    *验证*：屏幕方向不应更改。
 
-## <a name="span-iddockingstationtestingspanspan-iddockingstationtestingspanspan-iddockingstationtestingspandocking-station-testing"></a><span id="Docking_station_testing"></span><span id="docking_station_testing"></span><span id="DOCKING_STATION_TESTING"></span>停靠工作站测试
-
-
-**停靠盖板模式 （仅限于停靠系统与双用型） 中的系统**
-
-1.  有 GPIO 停靠 （与 USB 键盘附加平板设备是否没有键盘） 可用的系统。 停靠和便携式计算机/盖板转换之间的区别，请参阅[停靠与便携式计算机盖板转换](docking-versus-laptop-slate-conversion.md)。 对于双用型，在平板式模式下配置系统 (请参阅[盖板/便携式计算机模式转换步骤](indicator-testing.md#conv))。
-2.  在静态模式下启动系统并将其附加到停靠的系统。
-3.  执行[触摸键盘部署步骤](indicator-testing.md#touchkbd)。
-
-    *验证*:应该部署屏幕键盘。
-
-4.  旋转系统 （横向与纵向）。
-
-    *验证*:不应更改屏幕方向。
-
-## <a name="span-idphysicalbuttonstestingspanspan-idphysicalbuttonstestingspanspan-idphysicalbuttonstestingspanphysical-buttons-testing"></a><span id="Physical_buttons_testing"></span><span id="physical_buttons_testing"></span><span id="PHYSICAL_BUTTONS_TESTING"></span>测试的物理按钮
+## <a name="span-iddocking_station_testingspanspan-iddocking_station_testingspanspan-iddocking_station_testingspandocking-station-testing"></a><span id="Docking_station_testing"></span><span id="docking_station_testing"></span><span id="DOCKING_STATION_TESTING"></span>扩展坞测试
 
 
-系统可以公开给用户的按钮的以下设置：
+**将系统以石板模式停靠 (仅限接驳系统的改装)**
 
--   电源按钮-所需
--   卷 + /-按钮 – 必需
--   Windows 按钮-将所需
--   旋转锁按钮-可选
+1.  如果盖板设备没有键盘) ，则将 GPIO 插接系统 (与连接的 USB 键盘连接在一起。 若要区分停靠和便携式计算机/石板转换，请参阅 [插接与笔记本电脑石板转换](docking-versus-laptop-slate-conversion.md)。 对于改装，请在石板模式下配置系统 (参阅) 的 [盖板/便携式计算机模式转换步骤](indicator-testing.md#conv) 。
+2.  以石板模式从系统开始，并将其附加到坞系统。
+3.  执行 [触控键盘部署步骤](indicator-testing.md#touchkbd)。
+
+    *验证*：屏幕键盘应部署。
+
+4.  将系统 (横向旋转到纵向，并向后) 。
+
+    *验证*：屏幕方向不应更改。
+
+## <a name="span-idphysical_buttons_testingspanspan-idphysical_buttons_testingspanspan-idphysical_buttons_testingspanphysical-buttons-testing"></a><span id="Physical_buttons_testing"></span><span id="physical_buttons_testing"></span><span id="PHYSICAL_BUTTONS_TESTING"></span>物理按钮测试
+
+
+系统可向用户公开以下按钮集：
+
+-   电源按钮-必需
+-   卷 +/-按钮-必需
+-   Windows 按钮-必需
+-   旋转锁定按钮-可选
 
 **按钮行为**
 
--   对于每个按钮和下表中列出的按钮组合，验证在所有情况下会发生的预期的行为：
+-   对于下表中列出的每个按钮和按钮组合，验证是否在所有情况下都出现预期的行为：
 
     <table>
     <colgroup>
@@ -72,13 +71,13 @@ ms.locfileid: "63390409"
     <tbody>
     <tr class="odd">
     <td align="left">Windows</td>
-    <td align="left">导航到开始屏幕</td>
-    <td align="left">不可用</td>
+    <td align="left">导航到 "开始" 屏幕</td>
+    <td align="left">空值</td>
     </tr>
     <tr class="even">
     <td align="left">调高音量</td>
-    <td align="left">增大音量</td>
-    <td align="left">快速的卷的大小</td>
+    <td align="left">增加音量</td>
+    <td align="left">快速增加音量</td>
     </tr>
     <tr class="odd">
     <td align="left">减小音量</td>
@@ -86,39 +85,39 @@ ms.locfileid: "63390409"
     <td align="left">快速卷减少</td>
     </tr>
     <tr class="even">
-    <td align="left">旋转锁</td>
-    <td align="left">旋转锁切换</td>
-    <td align="left">不可用</td>
+    <td align="left">旋转锁定</td>
+    <td align="left">旋转锁定切换</td>
+    <td align="left">空值</td>
     </tr>
     <tr class="odd">
-    <td align="left">电源</td>
-    <td align="left">打开连接待机电源</td>
-    <td align="left"><p>连接待机系统</p>
+    <td align="left">强力</td>
+    <td align="left">接通电源时待机</td>
+    <td align="left"><p>连接的备用系统</p>
     <ul>
-    <li>HoldTime&lt;2： 输入 CS</li>
-    <li>2&lt;= HoldTime&lt;= 10 秒： 关闭用户体验的幻灯片</li>
-    <li>HoldTime&gt;10 秒： 打开和关闭电源</li>
+    <li>HoldTime 2 &lt; ：输入 CS</li>
+    <li>2 &lt; = HoldTime &lt; = 数十：滑动关闭 UX</li>
+    <li>HoldTime &gt; 数十：关机</li>
     </ul>
-    <p>非连接待机系统</p>
+    <p>非连接备用系统</p>
     <ul>
-    <li>Holdtime&lt; 4 秒： 进入睡眠状态 [可选]</li>
-    <li>Holdtime&gt;= 4 秒： 打开和关闭设备电源</li>
+    <li>Holdtime &lt; 4s： enter 睡眠 [optional]</li>
+    <li>Holdtime &gt; = 4s:p 下限关闭设备</li>
     </ul></td>
     </tr>
     <tr class="even">
-    <td align="left">Windows + 调高音量</td>
+    <td align="left">Windows + 音量向上</td>
     <td align="left">启动或退出讲述人</td>
-    <td align="left">不可用</td>
+    <td align="left">空值</td>
     </tr>
     <tr class="odd">
-    <td align="left">Windows + 向下的卷</td>
+    <td align="left">Windows + 向下音量</td>
     <td align="left">执行屏幕捕获</td>
-    <td align="left">不可用</td>
+    <td align="left">空值</td>
     </tr>
     <tr class="even">
     <td align="left">Windows + 电源</td>
-    <td align="left">安全注意序列 （显示锁定屏幕）</td>
-    <td align="left">不可用</td>
+    <td align="left">安全注意序列 (显示锁定屏幕) </td>
+    <td align="left">空值</td>
     </tr>
     </tbody>
     </table>
