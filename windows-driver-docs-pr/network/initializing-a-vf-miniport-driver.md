@@ -1,15 +1,14 @@
 ---
 title: 初始化 VF 微型端口驱动程序
 description: 初始化 VF 微型端口驱动程序
-ms.assetid: 23EB2086-E882-4CB6-A910-D8E99E0212E5
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0d8a870750062c623f3e4e8dcc62bb01ed43662d
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 7cbb8216aee0b299ef7794f8f473bd0da7545487
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89207919"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96832231"
 ---
 # <a name="initializing-a-vf-miniport-driver"></a>初始化 VF 微型端口驱动程序
 
@@ -17,7 +16,7 @@ ms.locfileid: "89207919"
 本主题介绍了为 PCI Express (PCIe) 虚函数 (VF) 编写小型端口驱动程序的 [*MiniportInitializeEx*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_initialize) 函数的准则。 VF 通过支持单个根 i/o 虚拟化 (SR-IOV) 的网络适配器公开。
 
 > [!NOTE]
-> 这些准则仅适用于 SR-IOV 网络适配器的 VF 微型端口驱动程序。 有关 PCIe 物理功能的微型端口驱动程序 (PF) 适配器的初始化准则，请参阅 [初始化 Pf 微型端口驱动程序](initializing-a-pf-miniport-driver.md)。 
+> 这些准则仅适用于 SR-IOV 网络适配器的 VF 微型端口驱动程序。 有关 PCIe 物理功能的微型端口驱动程序 (PF) 适配器的初始化准则，请参阅 [初始化 Pf 微型端口驱动程序](initializing-a-pf-miniport-driver.md)。 
 
 调用 [*MiniportInitializeEx*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_initialize) 函数时，VF 微型端口驱动程序与任何 NDIS 微型端口驱动程序遵循相同的步骤。 有关这些步骤的详细信息，请参阅 [初始化微型端口驱动程序](initializing-a-miniport-driver.md)。
 
@@ -32,9 +31,9 @@ ms.locfileid: "89207919"
 
 - VF 微型端口驱动程序通过以下方式初始化的 [**NDIS \_ SRIOV \_ 功能**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_capabilities) 结构报告基础虚拟网络适配器的 sr-iov 硬件功能：
 
-  1. 微型端口驱动程序初始化 **标头** 成员。 驱动程序将**标头**的**类型**成员设置为 NDIS \_ 对象 \_ 类型 \_ 默认值。
+  1. 微型端口驱动程序初始化 **标头** 成员。 驱动程序将 **标头** 的 **类型** 成员设置为 NDIS \_ 对象 \_ 类型 \_ 默认值。
 
-     从 NDIS 6.30 开始，微型端口驱动程序会将**标头**的**修订**成员设置为 ndis \_ SRIOV \_ 功能 \_ 修订版本 \_ 1，并将**Size**成员设置为 ndis \_ SIZEOF \_ SRIOV \_ 功能 \_ 修订版本 \_ 1。
+     从 NDIS 6.30 开始，微型端口驱动程序会将 **标头** 的 **修订** 成员设置为 ndis \_ SRIOV \_ 功能 \_ 修订版本 \_ 1，并将 **Size** 成员设置为 ndis \_ SIZEOF \_ SRIOV \_ 功能 \_ 修订版本 \_ 1。
 
   2. 微型端口驱动程序 \_ \_ \_ 在 SriovCapabilities 成员中设置 NDIS SRIOV cap PF \_ 微端口标志，以报告 sr-iov 功能。 **SriovCapabilities**
 

@@ -1,17 +1,16 @@
 ---
 title: WDI_TLV_ASSOCIATION_RESULT_PARAMETERS
 description: WDI_TLV_ASSOCIATION_RESULT_PARAMETERS 是包含关联结果的参数的 TLV。
-ms.assetid: A6F29084-EF36-43C4-B646-E071E755E110
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_ASSOCIATION_RESULT_PARAMETERS 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 793119e088305af1385ebfcd18bbaa0533c9574e
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 9553a0bb33df42f6bc94c0f5288d8686786df1ab
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89211525"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96832097"
 ---
 # <a name="wdi_tlv_association_result_parameters"></a>WDI \_ TLV \_ 关联 \_ 结果 \_ 参数
 
@@ -23,7 +22,7 @@ WDI \_ tlv \_ 关联 \_ 结果 \_ 参数是一个 tlv，其中包含关联结果
 
 0x2D
 
-## <a name="length"></a>Length
+## <a name="length"></a>长度
 
 
 Sum (所有包含的元素的大小) 。
@@ -31,7 +30,7 @@ Sum (所有包含的元素的大小) 。
 ## <a name="values"></a>值
 
 
-| 类型                                                        | 说明                                                                                                                                                                                                                                         |
+| 类型                                                        | 描述                                                                                                                                                                                                                                         |
 |-------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | UINT32                                                      | 指定 [**WDI 关联 \_ \_ 状态**](/windows-hardware/drivers/ddi/wditypes/ne-wditypes-_wdi_assoc_status)中定义的关联尝试的完成状态。                                                                                                                       |
 | UINT32                                                      | 对等方发送的802.11 状态代码，以响应此端口的身份验证或关联请求。                                                                                                                                     |
@@ -65,7 +64,7 @@ Sum (所有包含的元素的大小) 。
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
-<td><p>Windows Server 2016</p></td>
+<td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
 <td><p>标头</p></td>

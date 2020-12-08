@@ -1,15 +1,14 @@
 ---
 title: 检查 IRP_MJ_CLEANUP 操作的 Oplock 状态
 description: 检查 IRP_MJ_CLEANUP 操作的 Oplock 状态
-ms.assetid: 5e078575-cbb8-4460-9986-4c546b8c20be
 ms.date: 11/25/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: dab5ef00af8279d41e7b93980913b780e58f1e96
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: ede96c53bc547f3ccd3ac32ea965c7c2d390411c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89067408"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96830535"
 ---
 # <a name="checking-the-oplock-state-of-an-irp_mj_cleanup-operation"></a>检查 IRP_MJ_CLEANUP 操作的 Oplock 状态
 

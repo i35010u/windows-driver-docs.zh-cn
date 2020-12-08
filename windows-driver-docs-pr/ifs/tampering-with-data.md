@@ -1,7 +1,6 @@
 ---
 title: 篡改数据
 description: 篡改数据
-ms.assetid: 277395b9-b770-45b4-8f4c-cad8b684ca44
 keywords:
 - 威胁模型 WDK 文件系统，数据篡改
 - 安全威胁模型 WDK 文件系统，数据篡改
@@ -11,12 +10,12 @@ keywords:
 - IOCTLs WDK 文件系统
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d697d761875b1ba2f2dc991fe71aaf94942196f0
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 371e8bf080835aef0146cae9921f1fa5fc84473d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89063222"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96831821"
 ---
 # <a name="tampering-with-data"></a>篡改数据
 
@@ -38,7 +37,7 @@ ms.locfileid: "89063222"
 
 开发人员还应注意使用 **FastIoDeviceControl** 调度的 IOCTL 将在原始用户缓冲区中传递数据。 因此，为 IOCTLs 实现快速 i/o 版本的驱动程序应采取适当的措施来防止出现问题。
 
-请注意，单独验证数据是不够的。 例如，对 [**ProbeForWrite**](/windows-hardware/drivers/ddi/wdm/nf-wdm-probeforwrite) 的成功调用可能指示缓冲区有效，但应用程序地址空间中的后续更改可能会导致该状态更改。 例如，应用程序可能会在实际使用缓冲区之前终止。 因此，该驱动程序必须防止应用程序的地址空间中的任何更改。 通常，这是使用结构化异常处理的，使用** \_ \_ try** ** \_ \_ ，而不**是直接访问用户缓冲区地址的任何代码。
+请注意，单独验证数据是不够的。 例如，对 [**ProbeForWrite**](/windows-hardware/drivers/ddi/wdm/nf-wdm-probeforwrite) 的成功调用可能指示缓冲区有效，但应用程序地址空间中的后续更改可能会导致该状态更改。 例如，应用程序可能会在实际使用缓冲区之前终止。 因此，该驱动程序必须防止应用程序的地址空间中的任何更改。 通常，这是使用结构化异常处理的，使用 **\_ \_ try** **\_ \_ ，而不** 是直接访问用户缓冲区地址的任何代码。
 
  
 

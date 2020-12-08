@@ -1,15 +1,14 @@
 ---
 title: 加速计阈值
 description: 本主题提供有关加速度阈值的信息。
-ms.assetid: 7BB8B087-6CE5-4BD2-9286-350AE607B1D7
 ms.date: 07/20/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 2119aa733a154ab0da1468883d30693f9e3603ca
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: b4a6e9519f8f8768ed8bac6748296b9cb4a02429
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91734417"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96831079"
 ---
 # <a name="accelerometer-thresholds"></a>加速计阈值
 

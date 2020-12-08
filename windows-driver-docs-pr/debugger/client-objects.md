@@ -1,18 +1,17 @@
 ---
 title: 客户端对象
 description: 客户端对象
-ms.assetid: 173a67f1-093e-4462-8e2c-41d0f10106d0
 keywords:
 - 调试器引擎，客户端对象
 - 客户端对象
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 313bff25ab3c7321758235f976d321bafc3a2276
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 97c6acb79d4db22eabfe78a7b97973c996e1c16a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89212239"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96831993"
 ---
 # <a name="client-objects"></a>客户端对象
 
@@ -20,11 +19,11 @@ ms.locfileid: "89212239"
 ## <span id="client-objects"></span><span id="CLIENT_OBJECTS"></span>
 
 
-几乎所有与 [调试器引擎](introduction.md#debugger-engine) 的交互都是通过 *客户端对象*进行的，通常只是指 *客户*端。 每个客户端都提供顶层引擎接口的实现。 每个接口都提供一组不同的方法，这些方法可用于与引擎进行交互，以及通过引擎与目标进行交互。 一个引擎实例可以有许多客户端，每个客户端都有自己的状态。
+几乎所有与 [调试器引擎](introduction.md#debugger-engine) 的交互都是通过 *客户端对象* 进行的，通常只是指 *客户* 端。 每个客户端都提供顶层引擎接口的实现。 每个接口都提供一组不同的方法，这些方法可用于与引擎进行交互，以及通过引擎与目标进行交互。 一个引擎实例可以有许多客户端，每个客户端都有自己的状态。
 
 ### <a name="span-idprimary-clientsspanspan-idprimary_clientsspanprimary-clients"></a><span id="primary-clients"></span><span id="PRIMARY_CLIENTS"></span>主客户端
 
-*主客户端*是已联接当前调试会话的客户端。 最初，当创建新的客户端对象时，该对象不是主客户端。 当客户端用于获取目标 (例如，通过调用 [**CreateProcess2**](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugclient5-createprocess2)) 或使用 [**ConnectSession**](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugclient5-connectsession)连接到调试会话时，客户端将成为主客户端。 调试器命令 [**。客户端**](-clients--list-debugging-clients-.md) 仅列出主客户端。
+*主客户端* 是已联接当前调试会话的客户端。 最初，当创建新的客户端对象时，该对象不是主客户端。 当客户端用于获取目标 (例如，通过调用 [**CreateProcess2**](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugclient5-createprocess2)) 或使用 [**ConnectSession**](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugclient5-connectsession)连接到调试会话时，客户端将成为主客户端。 调试器命令 [**。客户端**](-clients--list-debugging-clients-.md) 仅列出主客户端。
 
 ### <a name="span-idcallback-objectsspanspan-idcallback_objectsspancallback-objects"></a><span id="callback-objects"></span><span id="CALLBACK_OBJECTS"></span>回调对象
 

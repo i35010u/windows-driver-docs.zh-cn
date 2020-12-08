@@ -1,15 +1,14 @@
 ---
 title: 自定义交换机属性定义和注册
 description: 自定义交换机属性定义和注册
-ms.assetid: DB80E86D-8553-47B5-8AE1-6D430FDDE206
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 542b393a0486365d48efefaf5b439f3ec80e92ba
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 4534b474b2e37f10db19affe50c9e5cc15e425e5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89217678"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96831683"
 ---
 # <a name="custom-switch-property-definition-and-registration"></a>自定义交换机属性定义和注册
 

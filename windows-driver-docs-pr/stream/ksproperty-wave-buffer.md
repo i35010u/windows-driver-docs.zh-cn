@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ 波形 \_ 缓冲区
 description: KSPROPERTY \_ wave \_ buffer 属性说明波形设备的缓冲区。
-ms.assetid: b2ef458a-a701-4403-875b-1b06164c80a1
 keywords:
 - KSPROPERTY_WAVE_BUFFER 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 86223e559363a22743858d4b9edd04fe760b8125
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: c7f265086c70fa3b0fd2b122d4c02da996e8ea1a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106322"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96830830"
 ---
 # <a name="ksproperty_wave_buffer"></a>KSPROPERTY \_ 波形 \_ 缓冲区
 
@@ -79,7 +78,7 @@ KSPROPERTY \_ wave \_ buffer 属性说明波形设备的缓冲区。
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSPROPERTY**](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)

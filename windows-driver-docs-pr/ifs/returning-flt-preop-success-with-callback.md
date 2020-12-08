@@ -1,17 +1,16 @@
 ---
 title: 返回 FLT_PREOP_SUCCESS_WITH_CALLBACK
 description: 返回 FLT_PREOP_SUCCESS_WITH_CALLBACK
-ms.assetid: 6247b952-3189-4792-a15b-c3a4b3dc80ae
 keywords:
 - FLT_PREOP_SUCCESS_WITH_CALLBACK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1e9c5ed62d7c44474dd41a35f79343fc701fdf66
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 1616d1665cdbde110ac0cf50e92c4794a396c4cf
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89066868"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96831431"
 ---
 # <a name="returning-flt_preop_success_with_callback"></a>\_ \_ \_ 通过回调返回 FLT PREOP \_ SUCCESS
 
@@ -21,7 +20,7 @@ ms.locfileid: "89066868"
 
 如果微筛选器驱动程序的 [**preoperation 回调例程**](/windows-hardware/drivers/ddi/fltkernel/nc-fltkernel-pflt_pre_operation_callback) 返回 FLT \_ PREOP \_ SUCCESS \_ WITH \_ callback，则筛选器管理器将在 i/o 完成期间调用微筛选器驱动程序的 [**postoperation 回调例程**](/windows-hardware/drivers/ddi/fltkernel/nc-fltkernel-pflt_post_operation_callback) 。
 
-**注意**   如果微筛选器驱动程序的 preoperation 回调例程返回 FLT \_ PREOP \_ SUCCESS \_ WITH \_ callback，但微筛选器驱动程序未为操作注册 postoperation 回调例程，则系统会在已检查的内部版本中断言。
+**注意**   如果微筛选器驱动程序的 preoperation 回调例程返回 FLT \_ PREOP \_ SUCCESS \_ WITH \_ callback，但微筛选器驱动程序未为操作注册 postoperation 回调例程，则系统会在已检查的内部版本中断言。
 
  
 

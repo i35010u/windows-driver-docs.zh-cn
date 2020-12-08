@@ -1,9 +1,8 @@
 ---
-title: WIA\_DPS\_页\_高度
-description: WIA\_DPS\_页\_高度属性包含的高度，以英寸为单位的千分之几秒 (。 001)，当前所选页面。 WIA 微型驱动程序创建并维护此属性。
-ms.assetid: 93970d9a-96fe-4cf9-98c6-4ddcfd425214
+title: WIA \_ DPS \_ 页面 \_ 高度
+description: "\"WIA \\_ DPS \\_ 页面 \\_ 高度\" 属性包含当前所选页面的高度（以英寸为单位） ( .001) 。 WIA 微型驱动程序创建并维护此属性。"
 keywords:
-- WIA_DPS_PAGE_HEIGHT 成像设备
+- WIA_DPS_PAGE_HEIGHT 图像设备
 topic_type:
 - apiref
 api_name:
@@ -14,33 +13,33 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3a589ca1199be8449996903ab155a35f5f771cbb
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: dfde55edae176d2b63ebb65592518b425ffb2c93
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63377939"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96831761"
 ---
-# <a name="wiadpspageheight"></a>WIA\_DPS\_页\_高度
+# <a name="wia_dps_page_height"></a>WIA \_ DPS \_ 页面 \_ 高度
 
 
-WIA\_DPS\_页\_高度属性包含的高度，以英寸为单位的千分之几秒 (。 001)，当前所选页面。 WIA 微型驱动程序创建并维护此属性。
+"WIA \_ DPS \_ 页面 \_ 高度" 属性包含当前所选页面的高度（以英寸为单位） ( .001) 。 WIA 微型驱动程序创建并维护此属性。
 
 ## <span id="ddk_wia_dps_page_height_si"></span><span id="DDK_WIA_DPS_PAGE_HEIGHT_SI"></span>
 
 
-属性类型：VT\_I4
+属性类型： VT \_ I4
 
-有效值：WIA\_PROP\_NONE
+有效值： WIA " \_ \_ 无"
 
 访问权限：只读
 
 <a name="remarks"></a>备注
 -------
 
-应用程序读取 WIA\_DPS\_页\_高度，以确定正在扫描的页的物理尺寸。 如果扩展盘区设置不同于已知的页面大小，此属性会将报告页面的高度其[ **WIA\_DPS\_页\_大小**](wia-dps-page-size.md)属性设置为 WIA\_页上\_自定义 (它是一个值 WIA\_DPS\_页\_大小属性)。
+应用程序将读取 WIA \_ DPS \_ 页 \_ 高度，以确定所扫描页面的物理尺寸。 如果范围设置不同于已知页面大小，则此属性将报告 "wia [**\_ dps \_ 页面 \_ 大小**](wia-dps-page-size.md) " 属性设置为 "wia 页面自定义 (" 的页面高度， \_ \_ 这是 "wia \_ dps \_ 页面大小" 属性的值 \_) 。
 
-WIA\_DPS\_页面\_高度必须提供英寸为单位，它等效于报告的像素值的千分之几秒的度量[ **WIA\_IP\_YEXTENT** ](wia-ips-yextent.md)属性，该报告的高度，以像素为单位，要进行扫描的页的属性。
+WIA \_ DPS \_ 页面 \_ 高度必须提供与 [**wia \_ IPS \_ YEXTENT**](wia-ips-yextent.md) 属性报告的像素值（以像素为单位）（报告要扫描的页面的高度（以像素为单位）相同的英寸的单位。
 
 <a name="requirements"></a>要求
 ------------
@@ -52,12 +51,12 @@ WIA\_DPS\_页面\_高度必须提供英寸为单位，它等效于报告的像�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Version</p></td>
-<td><p>适用于 Microsoft Windows XP。 适用于 Windows Vista 及更高版本，使用相同的 WIA_IPS_PAGE_HEIGHT 属性。</p></td>
+<td><p>版本</p></td>
+<td><p>适用于 Microsoft Windows XP。 对于 Windows Vista 和更高版本，请使用相同的 WIA_IPS_PAGE_HEIGHT 属性。</p></td>
 </tr>
 <tr class="even">
-<td><p>Header</p></td>
-<td>Wiadef.h （包括 Wiadef.h）</td>
+<td><p>标头</p></td>
+<td>Wiadef (包含 Wiadef) </td>
 </tr>
 </tbody>
 </table>
@@ -65,13 +64,13 @@ WIA\_DPS\_页面\_高度必须提供英寸为单位，它等效于报告的像�
 ## <a name="see-also"></a>请参阅
 
 
-[**WIA\_DPS\_PAGE\_SIZE**](wia-dps-page-size.md)
+[**WIA \_ DPS \_ 页面 \_ 大小**](wia-dps-page-size.md)
 
-[**WIA\_DPS\_PAGE\_WIDTH**](wia-dps-page-width.md)
+[**WIA \_ DPS \_ 页面 \_ 宽度**](wia-dps-page-width.md)
 
-[**WIA\_IPS\_PAGE\_HEIGHT**](wia-ips-page-height.md)
+[**WIA \_ IP \_ 页面 \_ 高度**](wia-ips-page-height.md)
 
-[**WIA\_IPS\_YEXTENT**](wia-ips-yextent.md)
+[**WIA \_ IP \_ YEXTENT**](wia-ips-yextent.md)
 
  
 

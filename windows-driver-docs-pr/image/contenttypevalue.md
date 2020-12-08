@@ -1,9 +1,8 @@
 ---
 title: ContentTypeValue 元素
-description: 所需的 ContentTypeValue 元素指定扫描设备支持的一种文档内容类型。
-ms.assetid: 04d29626-cc14-4db3-88ec-cfb1cc9cd1cd
+description: 必需的 ContentTypeValue 元素指定扫描设备支持的一个文档内容类型。
 keywords:
-- ContentTypeValue 元素成像设备
+- ContentTypeValue 元素图像设备
 topic_type:
 - apiref
 api_name:
@@ -12,19 +11,19 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 11e8190515e51182546dda1c6013d0b551940fb3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 419c2bd9aa0e8ddf70140069dc69f299ba97f771
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63371239"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96831813"
 ---
 # <a name="contenttypevalue-element"></a>ContentTypeValue 元素
 
 
-所需**ContentTypeValue**元素指定扫描设备支持的一种文档内容类型。
+必需的 **ContentTypeValue** 元素指定扫描设备支持的一个文档内容类型。
 
-<a name="usage"></a>用法
+<a name="usage"></a>使用情况
 -----
 
 ```xml
@@ -56,24 +55,24 @@ ms.locfileid: "63371239"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><span id="Auto_"></span><span id="auto_"></span><span id="AUTO_"></span>Auto</p></td>
-<td><p>设备会自动检测原始文档类型。</p></td>
+<td><p><span id="Auto_"></span><span id="auto_"></span><span id="AUTO_"></span>自动</p></td>
+<td><p>设备将自动检测原始文档类型。</p></td>
 </tr>
 <tr class="even">
-<td><p><span id="Text_"></span><span id="text_"></span><span id="TEXT_"></span>Text</p></td>
-<td><p>原始文档主要组成不同的文本背景的强形成鲜明对比。</p></td>
+<td><p><span id="Text_"></span><span id="text_"></span><span id="TEXT_"></span>全文</p></td>
+<td><p>原始文档主要由不同的文本组成，这与背景对比强烈。</p></td>
 </tr>
 <tr class="odd">
-<td><p><span id="Photo_"></span><span id="photo_"></span><span id="PHOTO_"></span>Photo</p></td>
-<td><p>原始文档主要组成摄影图像，其中灰度梯度逐渐更改和边缘并不是截然不同。</p></td>
+<td><p><span id="Photo_"></span><span id="photo_"></span><span id="PHOTO_"></span>926</p></td>
+<td><p>原始文档主要由照片图像组成，其中的阴影变化逐渐增加，边缘并不明显。</p></td>
 </tr>
 <tr class="even">
-<td><p><span id="Halftone_"></span><span id="halftone_"></span><span id="HALFTONE_"></span>半色调</p></td>
-<td><p>原始主要组成半色调映像。</p></td>
+<td><p><span id="Halftone_"></span><span id="halftone_"></span><span id="HALFTONE_"></span>色</p></td>
+<td><p>原始的主要包括 halftoned 映像。</p></td>
 </tr>
 <tr class="odd">
-<td><p><span id="Mixed_"></span><span id="mixed_"></span><span id="MIXED_"></span>混合</p></td>
-<td><p>原始文档是具有多个特定文档内容类型的特征的多页文档。</p></td>
+<td><p><span id="Mixed_"></span><span id="mixed_"></span><span id="MIXED_"></span>混</p></td>
+<td><p>原始文档是包含多个特定文档内容类型特征的多页文档。</p></td>
 </tr>
 </tbody>
 </table>
@@ -83,7 +82,7 @@ ms.locfileid: "63371239"
 ## <a name="child-elements"></a>子元素
 
 
-没有子元素。
+没有任何子元素。
 
 ## <a name="parent-elements"></a>父元素
 
@@ -107,7 +106,7 @@ ms.locfileid: "63371239"
 <a name="remarks"></a>备注
 -------
 
-您都可以扩展和子集的允许的值为此元素。
+可以扩展和子集化此元素的允许值。
 
 ## <a name="see-also"></a>请参阅
 

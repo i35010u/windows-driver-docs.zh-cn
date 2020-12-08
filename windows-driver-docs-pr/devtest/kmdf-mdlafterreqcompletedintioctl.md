@@ -1,7 +1,6 @@
 ---
 title: 'MdlAfterReqCompletedIntIoctl 规则 (kmdf) '
 description: MdlAfterReqCompletedIntIoctl 规则指定在 EvtIoInternalDeviceControl 回调函数中，内存描述符列表 (MDL) 在 i/o 请求完成后无法访问。
-ms.assetid: 5893c70f-89ff-4670-9493-93e0b77ae2ca
 ms.date: 05/21/2018
 keywords:
 - 'MdlAfterReqCompletedIntIoctl 规则 (kmdf) '
@@ -12,12 +11,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: f291c5bc5a9719913802bc94ab15b150dace783f
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 3c0579cb9a6f427d8f57b3cbfcc42faa24192b48
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102272"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96830711"
 ---
 # <a name="mdlafterreqcompletedintioctl-rule-kmdf"></a>MdlAfterReqCompletedIntIoctl 规则 (kmdf) 
 

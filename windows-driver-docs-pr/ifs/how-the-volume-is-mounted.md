@@ -1,7 +1,6 @@
 ---
 title: 如何装载卷
 description: 如何装载卷
-ms.assetid: e8f39b06-9904-40e8-af52-eae310d11fa7
 keywords:
 - 筛选器驱动程序 WDK 文件系统，卷装入过程
 - 文件系统筛选器驱动程序 WDK，卷装入过程
@@ -9,12 +8,12 @@ keywords:
 - 卷 WDK 文件系统，装载
 ms.date: 10/16/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 7fb90dc5c5b2c0740c1f789af9ea6a146ca499c8
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 81c4b7c7b059e6109ac35971cce27bded0933335
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89063330"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96831485"
 ---
 # <a name="how-the-volume-is-mounted"></a>如何装载卷
 

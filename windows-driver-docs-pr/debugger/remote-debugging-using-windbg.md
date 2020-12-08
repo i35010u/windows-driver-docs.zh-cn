@@ -1,15 +1,14 @@
 ---
 title: 使用 WinDbg 进行远程调试
 description: 远程调试涉及两个在两个不同位置运行的调试器。
-ms.assetid: 3030CEE4-DF10-4F84-A32D-38613D7EE072
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0d198aa1ba343484ed853e66b01932edcc958cab
-ms.sourcegitcommit: f610410e1500f0b0a4ca008b52679688ab51033d
+ms.openlocfilehash: a238c012bdb99cd8aad59d2507cbc06c2e39d6e1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/15/2020
-ms.locfileid: "88253053"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96831937"
 ---
 # <a name="remote-debugging-using-windbg"></a>使用 WinDbg 进行远程调试
 
@@ -24,7 +23,7 @@ ms.locfileid: "88253053"
 
 远程调试连接可以使用几种传输协议： TCP、NPIPE、SPIPE、SSL 和 COM 端口。 假设您已选择使用 TCP 作为协议，并且您已选择使用 WinDbg 作为调试客户端和调试服务器。 你可以使用以下过程建立远程内核模式调试会话：
 
-1. 在主计算机上，打开 WinDbg 并建立与目标计算机的内核模式调试会话。  (参阅 [使用 WinDbg 进行实时内核模式调试](performing-kernel-mode-debugging-using-windbg.md)。 ) 
+1. 在主计算机上，打开 WinDbg 并建立与目标计算机的内核模式调试会话。  (参阅 [使用 WinDbg 进行实时 Kernel-Mode 调试](performing-kernel-mode-debugging-using-windbg.md)。 ) 
 2. 通过选择 "**调试**" 菜单中的 "**中断**" 或按 CTRL + break 来中断。
 3. 在 [调试器命令窗口](debugger-command-window.md)中，输入以下命令。
 
@@ -68,7 +67,7 @@ ms.locfileid: "88253053"
 ## <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
 
-除了本主题中所示的其他方法，还可以通过多种方式建立远程调试。 有关在 WinDbg [调试器命令窗口](debugger-command-window.md)中设置调试服务器的完整信息，请参阅 [**。服务器 (创建调试服务器) **](-server--create-debugging-server-.md)。 有关启动 WinDbg (并在命令行中建立远程调试) 的完整信息，请参阅 [**WinDbg 命令行选项**](windbg-command-line-options.md)。
+除了本主题中所示的其他方法，还可以通过多种方式建立远程调试。 有关在 WinDbg [调试器命令窗口](debugger-command-window.md)中设置调试服务器的完整信息，请参阅 [**。服务器 (创建调试服务器)**](-server--create-debugging-server-.md)。 有关启动 WinDbg (并在命令行中建立远程调试) 的完整信息，请参阅 [**WinDbg Command-Line 选项**](windbg-command-line-options.md)。
 
  
 

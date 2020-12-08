@@ -1,7 +1,6 @@
 ---
 title: 网络重定向程序的基本体系结构
 description: 网络重定向程序的基本体系结构
-ms.assetid: 60a7c79d-b89f-4c8b-9619-bd48c9e1efac
 keywords:
 - 网络重定向 WDK，体系结构
 - 重定向程序驱动程序 WDK、体系结构
@@ -13,12 +12,12 @@ keywords:
 - 用户模式 Dll WDK 文件系统
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4e47cc0d197e65089fb9e9745213c6d22bab0a20
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: b13ccf67539abb3bca7491eac9a1e1e41e31be14
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89065380"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96831845"
 ---
 # <a name="basic-architecture-of-a-network-redirector"></a>网络重定向程序的基本体系结构
 
@@ -48,7 +47,7 @@ ms.locfileid: "89065380"
 
 -   有时需要使用管理工具将用户模式的访问权限提供给内核模式驱动程序，以便进行特殊配置、诊断和管理。 此工具还可用于启用或禁用跟踪和日志记录，以解决问题。 该工具使用各种自定义专用 IOCTLs 与内核驱动程序通信。 此工具还可以提供对服务控制管理器 (SCM) 管理中间服务的访问权限，在该服务中，将对用户模式网络提供程序 DLL 安全地存储全局数据。
 
-**注意**   Windows Vista 之后的 Microsoft Windows 版本不支持 TDI。 请改用 [Windows 筛选平台](../network/windows-filtering-platform-callout-drivers2.md) 或 [Winsock 内核](/windows-hardware/drivers/ddi/_netvista/) 。
+**注意**   Windows Vista 之后的 Microsoft Windows 版本不支持 TDI。 请改用 [Windows 筛选平台](../network/windows-filtering-platform-callout-drivers2.md) 或 [Winsock 内核](/windows-hardware/drivers/ddi/_netvista/) 。
 
  
 

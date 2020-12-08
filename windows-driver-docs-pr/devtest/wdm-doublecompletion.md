@@ -1,7 +1,6 @@
 ---
 title: 'DoubleCompletion 规则 (wdm) '
 description: DoubleCompletion (WDM) 规则指定驱动程序不得为同一 IRP 调用两次 IoCompleteRequest 例程。
-ms.assetid: 68e912f4-08fa-49e3-bc76-b997e6f732c4
 ms.date: 05/21/2018
 keywords:
 - 'DoubleCompletion 规则 (wdm) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: c30b5489548dee2f5acd9015dbf8e7fdf4360da9
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 2568dc0277d5b71239d6f81abc22f47a208c71ff
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103966"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96832469"
 ---
 # <a name="doublecompletion-rule-wdm"></a>DoubleCompletion 规则 (wdm) 
 
 
-**DoubleCompletion (WDM) **规则指定驱动程序不得为同一 IRP 调用两次[**IoCompleteRequest**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocompleterequest)例程。
+**DoubleCompletion (WDM)** 规则指定驱动程序不得为同一 IRP 调用两次 [**IoCompleteRequest**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocompleterequest)例程。
 
 **驱动程序模型： WDM**
 

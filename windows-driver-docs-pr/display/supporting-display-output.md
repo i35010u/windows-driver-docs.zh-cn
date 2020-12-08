@@ -1,7 +1,6 @@
 ---
 title: 支持显示输出和 ACPI 事件
 description: 系统配置和设备电源控制的综合方法基于 ACPI 规范内置于 Windows 中。
-ms.assetid: CD5BC59A-4C15-4111-BF4F-13DC04F6874F
 keywords:
 - ACPI 显示 WDK 显示
 - 基于 ACPI 的显示热键 WDK 显示
@@ -10,12 +9,12 @@ keywords:
 - 自动显示开关 WDK 显示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a51c0c9ecfccf078567412d30569587b137336bf
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: bec48aa17c88d3459f3af3f09724ce4ab8f3a540
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89063980"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96830623"
 ---
 # <a name="supporting-display-output-and-acpi-events"></a>支持显示输出和 ACPI 事件
 
@@ -59,7 +58,7 @@ Dispmprt 中定义了 ACPI 显示输出的以下别名：
 -   DXGK \_ ACPI \_ 更改 \_ 显示 \_ 模式-启动模式的请求更改为新建议的活动视频现有网络 (VidPN) 。
 -   DXGK \_ ACPI \_ 轮询 \_ 显示 \_ 孩子-请求轮询显示适配器的子适配器的连接。
 
-**注意** 前面的请求是[**DxgkDdiNotifyAcpiEvent**](/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgkddi_notify_acpi_event)函数返回的*AcpiFlags*参数的值。
+**注意** 前面的请求是 [**DxgkDdiNotifyAcpiEvent**](/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgkddi_notify_acpi_event)函数返回的 *AcpiFlags* 参数的值。
 
  
 

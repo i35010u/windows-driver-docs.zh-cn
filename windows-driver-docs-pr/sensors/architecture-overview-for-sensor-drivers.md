@@ -1,15 +1,14 @@
 ---
 title: 传感器驱动程序的体系结构概述
 description: '传感器设备驱动程序是通过使用 Windows 用户模式驱动程序框架（ (UMDF）实现的 COM 对象) '
-ms.assetid: 6d1b15ea-ba27-4bde-8000-d31f014ab47d
 ms.date: 07/20/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 485eb6e6c4113ff7877c563b7326e55f08ccd48b
-ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
+ms.openlocfilehash: efe69e7de250527b77df35c45b179344b3112794
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90010657"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96831077"
 ---
 # <a name="architecture-overview-for-sensor-drivers"></a>传感器驱动程序的体系结构概述
 

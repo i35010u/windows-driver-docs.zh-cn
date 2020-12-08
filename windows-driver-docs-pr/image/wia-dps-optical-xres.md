@@ -1,9 +1,8 @@
 ---
-title: WIA\_DPS\_光学\_XRES
-description: WIA\_DPS\_光学\_XRES 属性包含最高支持水平光学设备的分辨率，以每英寸点数 (dpi)。 WIA 微型驱动程序创建并维护此属性。
-ms.assetid: aad3b42c-cb0f-4345-9534-ca1aee5781db
+title: WIA \_ DPS \_ 光纤 \_ XRES
+description: WIA \_ DPS \_ 光学 \_ XRES 属性包含设备支持的最高水平光纤分辨率（以每英寸点数为单位） (dpi) 。 WIA 微型驱动程序创建并维护此属性。
 keywords:
-- WIA_DPS_OPTICAL_XRES 成像设备
+- WIA_DPS_OPTICAL_XRES 图像设备
 topic_type:
 - apiref
 api_name:
@@ -14,24 +13,24 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bbb2e558eea78f4c205efba023cfe70afcb8d1d2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2a377647a58c780b5e9ad4f81d56870868cf13d6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63362691"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96831779"
 ---
-# <a name="wiadpsopticalxres"></a>WIA\_DPS\_光学\_XRES
+# <a name="wia_dps_optical_xres"></a>WIA \_ DPS \_ 光纤 \_ XRES
 
 
-WIA\_DPS\_光学\_XRES 属性包含最高支持水平光学设备的分辨率，以每英寸点数 (dpi)。 WIA 微型驱动程序创建并维护此属性。
+WIA \_ DPS \_ 光学 \_ XRES 属性包含设备支持的最高水平光纤分辨率（以每英寸点数为单位） (dpi) 。 WIA 微型驱动程序创建并维护此属性。
 
 ## <span id="ddk_wia_dps_optical_xres_si"></span><span id="DDK_WIA_DPS_OPTICAL_XRES_SI"></span>
 
 
-属性类型：VT\_I4
+属性类型： VT \_ I4
 
-有效值：WIA\_PROP\_NONE。
+有效值： WIA " \_ \_ 无"。
 
 访问权限：只读
 
@@ -45,12 +44,12 @@ WIA\_DPS\_光学\_XRES 属性包含最高支持水平光学设备的分辨率，
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Version</p></td>
-<td><p>适用于 Microsoft Windows XP。 适用于 Windows Vista 及更高版本，使用相同的 WIA_IPS_OPTICAL_XRES 属性。</p></td>
+<td><p>版本</p></td>
+<td><p>适用于 Microsoft Windows XP。 对于 Windows Vista 和更高版本，请使用相同的 WIA_IPS_OPTICAL_XRES 属性。</p></td>
 </tr>
 <tr class="even">
-<td><p>Header</p></td>
-<td>Wiadef.h （包括 Wiadef.h）</td>
+<td><p>标头</p></td>
+<td>Wiadef (包含 Wiadef) </td>
 </tr>
 </tbody>
 </table>
@@ -58,9 +57,9 @@ WIA\_DPS\_光学\_XRES 属性包含最高支持水平光学设备的分辨率，
 ## <a name="see-also"></a>请参阅
 
 
-[**WIA\_DPS\_光学\_YRES**](wia-dps-optical-yres.md)
+[**WIA \_ DPS \_ 光纤 \_ YRES**](wia-dps-optical-yres.md)
 
-[**WIA\_IPS\_OPTICAL\_XRES**](wia-ips-optical-xres.md)
+[**WIA \_ IP \_ 光纤 \_ XRES**](wia-ips-optical-xres.md)
 
  
 

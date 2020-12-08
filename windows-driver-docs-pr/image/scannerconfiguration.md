@@ -1,9 +1,8 @@
 ---
 title: ScannerConfiguration 元素
-description: 所需的 ScannerConfiguration 元素是元素的集合，用于描述扫描程序的可配置的功能。
-ms.assetid: 79c26d0d-ebee-4baf-8689-f5bae088883d
+description: 必需的 ScannerConfiguration 元素是一个元素集合，这些元素描述了扫描程序的可配置功能。
 keywords:
-- ScannerConfiguration 元素成像设备
+- ScannerConfiguration 元素图像设备
 topic_type:
 - apiref
 api_name:
@@ -12,19 +11,19 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 07333bf777f45b3dcdbddc63587324e50fa80f56
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c9d873bf90d6749a8b46dc6f2019d5683528642c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63370073"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96832363"
 ---
 # <a name="scannerconfiguration-element"></a>ScannerConfiguration 元素
 
 
-所需**ScannerConfiguration**元素是元素的集合，用于描述扫描程序的可配置的功能。
+必需的 **ScannerConfiguration** 元素是一个元素集合，这些元素描述了扫描程序的可配置功能。
 
-<a name="usage"></a>用法
+<a name="usage"></a>使用情况
 -----
 
 ```xml
@@ -58,10 +57,10 @@ ms.locfileid: "63370073"
 <td><p><a href="devicesettings.md" data-raw-source="[&lt;strong&gt;DeviceSettings&lt;/strong&gt;](devicesettings.md)"><strong>DeviceSettings</strong></a></p></td>
 </tr>
 <tr class="odd">
-<td><p><a href="film.md" data-raw-source="[&lt;strong&gt;Film&lt;/strong&gt;](film.md)"><strong>Film</strong></a></p></td>
+<td><p><a href="film.md" data-raw-source="[&lt;strong&gt;Film&lt;/strong&gt;](film.md)"><strong>胶片</strong></a></p></td>
 </tr>
 <tr class="even">
-<td><p><a href="platen.md" data-raw-source="[&lt;strong&gt;Platen&lt;/strong&gt;](platen.md)"><strong>辊</strong></a></p></td>
+<td><p><a href="platen.md" data-raw-source="[&lt;strong&gt;Platen&lt;/strong&gt;](platen.md)"><strong>Platen</strong></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -83,7 +82,7 @@ ms.locfileid: "63370073"
 <td><p><a href="elementchanges.md" data-raw-source="[&lt;strong&gt;ElementChanges&lt;/strong&gt;](elementchanges.md)"><strong>ElementChanges</strong></a></p></td>
 </tr>
 <tr class="even">
-<td><p><a href="elementdata-for-scannerelements-element.md" data-raw-source="[&lt;strong&gt;ElementData for parent ScannerElements&lt;/strong&gt;](elementdata-for-scannerelements-element.md)"><strong>对于父 ScannerElements ElementData</strong></a></p></td>
+<td><p><a href="elementdata-for-scannerelements-element.md" data-raw-source="[&lt;strong&gt;ElementData for parent ScannerElements&lt;/strong&gt;](elementdata-for-scannerelements-element.md)"><strong>ElementData for parent ScannerElements</strong></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -97,11 +96,11 @@ ms.locfileid: "63370073"
 
 [**ElementChanges**](elementchanges.md)
 
-[**对于父 ScannerElements ElementData**](elementdata-for-scannerelements-element.md)
+[**ElementData for parent ScannerElements**](elementdata-for-scannerelements-element.md)
 
-[**Film**](film.md)
+[**胶片**](film.md)
 
-[**辊**](platen.md)
+[**Platen**](platen.md)
 
  
 

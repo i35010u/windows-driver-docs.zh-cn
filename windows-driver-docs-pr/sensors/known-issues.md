@@ -1,30 +1,29 @@
 ---
 title: 已知问题
-description: 本主题介绍工具 outupt 中的已知的问题。
-ms.assetid: 77714A7F-3C7B-43B3-A540-00E0B0E04DE4
+description: 本主题介绍工具 outupt 中的已知问题。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 57d4ec822c4feb2039c026074bc854b4d868fbd4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b408fa06f422f76d85e9cba551c6e788dc04958e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63345195"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96830969"
 ---
 # <a name="known-issues"></a>已知问题
 
 
-本主题介绍工具 outupt 中的已知的问题。
+本主题介绍工具 outupt 中的已知问题。
 
-## <a name="sensorpropertydeviceid"></a>传感器\_属性\_设备\_ID
+## <a name="sensor_property_device_id"></a>传感器 \_ 属性 \_ 设备 \_ ID
 
 
-**传感器\_属性\_设备\_ID**属性，该工具会显示在属性列表中，对应于**传感器\_属性\_设备\_路径**标头文件 sensors.h 中定义的属性。
+工具在 "属性" 列表中显示的 " **传感器 \_ 属性 \_ 设备 \_ ID** " 属性对应于 " **传感器 \_ 属性 \_ 设备 \_ 路径** " 属性，该属性在头文件 "传感器 .h" 中定义。
 
 ## <a name="ambient-light-sensor-alr-curve"></a>环境光线传感器 (ALR) 曲线
 
 
-此工具将返回 ALR 曲线值作为\[偏移量，LUX\]对 (而非\[LUX，偏移量\]对)。
+此工具将 ALR 曲线值返回为 \[ offset、LUX \] 对 (而不是 \[ LUX，偏移 \] 对) 。
 
  
 

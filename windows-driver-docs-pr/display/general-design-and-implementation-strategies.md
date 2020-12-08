@@ -1,20 +1,19 @@
 ---
 title: 常规设计和实施策略
 description: 常规设计和实施策略
-ms.assetid: c631062c-87ec-4bad-9de2-1844d0c81661
 keywords:
-- 显示器驱动程序模型 WDK Windows 2000 中，策略
+- 显示驱动程序模型 WDK Windows 2000，策略
 - Windows 2000 显示器驱动程序模型 WDK，策略
-- 微型端口驱动程序 WDK Windows 2000 中，策略
-- 显示驱动程序 WDK Windows 2000 中，策略
+- 视频微型端口驱动程序 WDK Windows 2000，策略
+- 显示驱动程序 WDK Windows 2000，策略
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0589881083b5c32dbc2ecca9cd5e0e01ec20e6d3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3136b9359dc93b8d22514e561e01511dc45fa327
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63377974"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96832427"
 ---
 # <a name="general-design-and-implementation-strategies"></a>常规设计和实施策略
 
@@ -22,27 +21,27 @@ ms.locfileid: "63377974"
 ## <span id="ddk_general_design_and_implementation_strategies_gg"></span><span id="DDK_GENERAL_DESIGN_AND_IMPLEMENTATION_STRATEGIES_GG"></span>
 
 
-若要设计有效的 Windows 2000 和更高版本显示驱动程序和视频的微型端口驱动程序，请考虑以下策略：
+要设计有效的 Windows 2000 和更高版本的显示驱动程序和视频微型端口驱动程序，请考虑以下策略：
 
--   修改现有的 Windows Driver Kit (WDK) 示例驱动程序的相似类型的图形适配器设计用于减少驱动程序设计时。
+-   修改现有的 Windows 驱动程序工具包 (WDK) 示例驱动程序，该驱动程序是为类似类型的图形适配器设计的，以减少驱动程序的设计时间。
 
--   使用 C 来尽可能以最大化可移植性，使用程序集语言仅在必要也不支持的硬件的严格要求时间的操作时写入尽可能多的驱动程序。 虽然在程序集编码会增加优化的可能性，但是时间和可移植性问题超过它的好处。
+-   使用 C 来编写尽可能多的驱动程序，只在必要时才使用汇编语言来最大限度地利用汇编语言来实现可移植性。 尽管程序集中的编码增加了优化的可能性，但时间和可移植性问题超出了其优势。
 
--   使用的操作管理资源、 执行物理设备内存映射，请确保输出响应的中断或邻近，发生了注册的微型端口驱动程序。 微型端口驱动程序是主要是用于处理硬件系列中的变体和最小化显示驱动程序硬件类型依赖关系。
+-   为管理资源的操作使用视频微型端口驱动程序，执行物理设备内存映射，确保注册输出发生在接近或响应中断的情况下。 微型端口驱动程序用于处理硬件系列中的变体和最大程度地减少显示驱动程序硬件类型依赖项的主要。
 
-以显示驱动程序编写人员感兴趣的其他信息，请参阅[图形 DDI 函数显示驱动程序](graphics-ddi-functions-for-display-drivers.md)。 本主题和其后的子主题讨论了图形 DDI 函数的必需、 有条件地必需和可选的显示驱动程序。 [在 Windows 2000 显示器驱动程序模型中的视频微型端口驱动程序](video-miniport-drivers-in-the-windows-2000-display-driver-model.md)和及其子主题包含针对的微型端口驱动程序编写人员是类似的信息。
+有关显示驱动程序编写器感兴趣的其他信息，请参阅 [用于显示驱动程序的图形 DDI 函数](graphics-ddi-functions-for-display-drivers.md)。 本主题及其后面的副标题讨论了所需的图形 DDI 函数（有条件地需要）和显示驱动程序的可选参数。 [Windows 2000 显示器驱动程序模型及其子主题中的视频微型端口驱动程序](video-miniport-drivers-in-the-windows-2000-display-driver-model.md) 包含类似于视频微型端口驱动程序编写器的信息。
 
-你还应考虑以下事实：
+还应考虑以下事实：
 
--   显示驱动程序和视频的微型端口驱动程序运行在与 NT 高级管理人员的其余部分相同的特权的内核模式地址空间中。 任一驱动程序中的错误将导致错误系统的其余部分。
+-   显示驱动程序和视频微型端口驱动程序在与 NT 高级管理人员的其余部分相同的特权内核模式地址空间中运行。 任一驱动程序中的错误都将导致系统的其余部分出现故障。
 
--   显示驱动程序和视频的微型端口驱动程序可以在任何时候被抢占。
+-   可随时抢占显示驱动程序和视频微型端口驱动程序。
 
--   显示驱动程序的代码和数据部分都完全可分页。
+-   显示驱动程序的 "代码" 和 "数据" 部分均可完全分页。
 
--   导出的函数必须执行标准的基于 NT 的操作系统*prolog*条目并*epilog*退出。 有关详细信息，请参阅 Microsoft Windows SDK 文档。
+-   导出的函数必须在进入时执行基于 NT 的标准操作系统 *prolog* ，并在退出时执行 *epilog* 。 有关详细信息，请参阅 Microsoft Windows SDK 文档。
 
-特定于显示驱动程序的信息，请参阅[图形 DDI 函数显示驱动程序](graphics-ddi-functions-for-display-drivers.md)。 该部分包含有关所需、 按条件必需的且可以选择所需的图形 DDI 函数的信息。
+有关特定于显示驱动程序的信息，请参阅 [用于显示驱动程序的图形 DDI 函数](graphics-ddi-functions-for-display-drivers.md)。 该部分包含有关所需的信息、有条件地需要的信息，以及可选的必需图形 DDI 函数。
 
  
 

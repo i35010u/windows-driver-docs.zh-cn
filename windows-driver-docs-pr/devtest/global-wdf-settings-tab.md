@@ -1,18 +1,17 @@
 ---
 title: 全局 WDF 设置选项卡
 description: 本主题提供有关 WDF 验证器的 "全局 WDF 设置" 页的详细信息。 此页显示全局 (系统范围内) WDF 验证选项，并显示具有托管驱动程序的 UMDF 主机进程。
-ms.assetid: 9b976a59-329f-41a7-9eff-8f18d75cdb42
 keywords:
 - WDF 验证程序 WDK，管理 UMDF 设置
 - UMDF 验证器设置 WDK WDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 575086824ce7098403e67326b1cc3d1128a85b3e
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: cf3ff7018cce426014dde233d9ff575e697d8245
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89381607"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96831575"
 ---
 # <a name="global-wdf-settings-tab"></a>全局 WDF 设置选项卡
 
@@ -31,7 +30,7 @@ ms.locfileid: "89381607"
 
 最后， **全局用户模式验证程序设置** 框包含影响系统上所有 UMDF 驱动程序的调试选项。 有关这些设置的详细信息，请参阅 [使用 UMDF 验证](../wdf/using-umdf-verifier.md)程序。
 
-当你对 UMDF 验证程序设置进行更改时，这些更改会影响后续加载的设备。 如果设备已在运行，则必须禁用然后重新启用它。 如果更改了 UMDF 跟踪级别或选择 " **将日志输出发送到内核调试器** " 选项，则 WDF 验证器会禁用并重新启用设备。 如果在 "[我的首选项](my-preferences-tab.md)" 页上的 "**如果计算机必须重新启动**，则" 下拉列表中选择 "不**执行任何操作**..." 时，此选项将不起作用。
+当你对 UMDF 验证程序设置进行更改时，这些更改会影响后续加载的设备。 如果设备已在运行，则必须禁用然后重新启用它。 如果更改了 UMDF 跟踪级别或选择 " **将日志输出发送到内核调试器** " 选项，则 WDF 验证器会禁用并重新启用设备。 如果在 "[我的首选项](my-preferences-tab.md)" 页上的 "**如果计算机必须重新启动**，则" 下拉列表中选择 "不 **执行任何操作**..." 时，此选项将不起作用。
 
 **设置自动启动用户模式调试器**
 

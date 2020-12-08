@@ -1,7 +1,6 @@
 ---
 title: 用于配置 DEP 和 PAE 的启动参数
 description: 用于配置 DEP 和 PAE 的启动参数
-ms.assetid: cb8b6298-e679-4ca3-8b94-4f0c6af23a3f
 keywords:
 - 启动参数 WDK
 - 启动项参数 WDK
@@ -13,12 +12,12 @@ keywords:
 - 软件强制 DEP 启动参数
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e3c952d5b3649d43322ee3c084379dfe72f4a605
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 1a9a54b9fb5dbe8f2ded83c2b1276b4951d495e3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89384369"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96831913"
 ---
 # <a name="boot-parameters-to-configure-dep-and-pae"></a>用于配置 DEP 和 PAE 的启动参数
 
@@ -27,13 +26,13 @@ ms.locfileid: "89384369"
 
 有关 DEP 和 PAE 的启动参数的信息，请参阅 [**BCDEdit/set**](./bcdedit--set.md) 命令和 **nx** 和 **PAE** 选项。
 
-**重要提示**   DEP 是一种非常有效的安全功能，除非您没有替代方法，否则不应禁用此功能。 DEP 和 PAE 的默认设置对于大多数系统是最佳的。 请勿更改默认设置，除非它们干扰重要处理任务。 本部分包含的内容说明如何配置这些功能，但不应将其解释为更改默认设置的建议。
+**重要提示**  DEP 是一种非常有效的安全功能，除非您没有替代方法，否则不应禁用此功能。 DEP 和 PAE 的默认设置对于大多数系统是最佳的。 请勿更改默认设置，除非它们干扰重要处理任务。 本部分包含的内容说明如何配置这些功能，但不应将其解释为更改默认设置的建议。
 
  
 
 ### <a name="span-iddep_and_pae_boot_parametersspanspan-iddep_and_pae_boot_parametersspandep-and-pae-boot-parameters"></a><span id="dep_and_pae_boot_parameters"></span><span id="DEP_AND_PAE_BOOT_PARAMETERS"></span>DEP 和 PAE 启动参数
 
-在启动时启用 DEP 和 PAE，并通过使用[**BCDEdit/set**](./bcdedit--set.md)命令设置**nx**和**pae**参数的值进行配置。
+在启动时启用 DEP 和 PAE，并通过使用 [**BCDEdit/set**](./bcdedit--set.md)命令设置 **nx** 和 **pae** 参数的值进行配置。
 
 这些启动参数具有冲突的影响。 若要配置 DEP 和 PAE，请仅使用每个参数的文档中描述的参数组合，并在本主题中进行讨论。 不要试验冲突参数，特别是在生产系统中。
 

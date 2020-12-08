@@ -1,9 +1,8 @@
 ---
 title: .symopt（设置符号选项）
-description: .Symopt 命令设置或显示符号选项。
-ms.assetid: 0793baa3-14f7-48df-8773-736b6a5470e6
+description: Symopt 命令设置或显示符号选项。
 keywords:
-- .symopt （设置符号选项） Windows 调试
+- symopt (设置) Windows 调试的符号选项
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 4654c414d39a4c213818d269c08653c03efb85a0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a2ad4a842b4ad38b3d7987a688179e0d9a68106f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63338754"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96832019"
 ---
 # <a name="symopt-set-symbol-options"></a>.symopt（设置符号选项）
 
 
-**.Symopt**命令设置或显示符号选项。
+**Symopt** 命令设置或显示符号选项。
 
 ```dbgcmd
 .symopt+ Flags 
@@ -30,17 +29,17 @@ ms.locfileid: "63338754"
 .symopt 
 ```
 
-## <a name="span-idddkmetasetsymboloptionsdbgspanspan-idddkmetasetsymboloptionsdbgspanparameters"></a><span id="ddk_meta_set_symbol_options_dbg"></span><span id="DDK_META_SET_SYMBOL_OPTIONS_DBG"></span>参数
+## <a name="span-idddk_meta_set_symbol_options_dbgspanspan-idddk_meta_set_symbol_options_dbgspanparameters"></a><span id="ddk_meta_set_symbol_options_dbg"></span><span id="DDK_META_SET_SYMBOL_OPTIONS_DBG"></span>参数
 
 
 <span id="______________"></span> **+**   
-指定的符号选项将导致*标志*设置。 如果 **.symopt**用于*标志*，但任何加号或减号，假定一个加号。
+导致设置由 *标志* 指定的符号选项。 如果将 **. symopt** 与 *标志* 一起使用，但不使用加号或减号，则假定使用了正负号。
 
 <span id="_______-______"></span> **-**   
-指定的符号选项将导致*标志*要清除。
+导致清除 *标志* 指定的符号选项。
 
-<span id="_______Flags______"></span><span id="_______flags______"></span><span id="_______FLAGS______"></span> *标志*   
-指定要更改符号选项。 *标志*必须是这些符号选项的位标志的总和。
+<span id="_______Flags______"></span><span id="_______flags______"></span><span id="_______FLAGS______"></span>*标志*   
+指定要更改的符号选项。 *Flags* 必须是这些符号选项的位标志之和。
 
 ### <a name="span-idenvironmentspanspan-idenvironmentspanspan-idenvironmentspanenvironment"></a><span id="Environment"></span><span id="environment"></span><span id="ENVIRONMENT"></span>环境
 
@@ -51,30 +50,30 @@ ms.locfileid: "63338754"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>模式</strong></p></td>
-<td align="left"><p>用户模式下，内核模式</p></td>
+<td align="left"><p><strong>交货</strong></p></td>
+<td align="left"><p>用户模式，内核模式</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>目标</strong></p></td>
-<td align="left"><p>实时、 崩溃转储</p></td>
+<td align="left"><p>实时，故障转储</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>平台</strong></p></td>
-<td align="left"><p>全部</p></td>
+<td align="left"><p>all</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-列表和每个符号选项、 它的位标志和设置并清除这些选项的其他方法的说明，请参阅[设置符号选项](symbol-options.md)。
+有关每个符号选项的列表和说明、其位标志以及其他设置和清除这些选项的方法，请参阅 [设置符号选项](symbol-options.md)。
 
 <a name="remarks"></a>备注
 -------
 
-不带任何参数， **.symopt**显示当前符号选项。
+如果没有任何参数， **. symopt** 将显示当前的符号选项。
 
  
 

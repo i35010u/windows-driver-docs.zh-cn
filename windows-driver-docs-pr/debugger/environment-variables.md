@@ -1,17 +1,16 @@
 ---
 title: 环境变量
 description: 环境变量
-ms.assetid: 0b1cd89f-e0c1-464e-a6d1-88a93753e570
 keywords:
 - 环境变量
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 985f04bd22b8316c1a1d6d52215db672685468de
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 845cd082dc6e97e27dac78737606d782b46135de
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63347799"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96831953"
 ---
 # <a name="environment-variables"></a>环境变量
 
@@ -25,7 +24,7 @@ ms.locfileid: "63347799"
 
 [内核模式环境变量](kernel-mode-environment-variables.md)
 
-有关使用环境变量以进行调试的信息，请参阅[获取设置以便进行调试](getting-set-up-for-debugging.md)。
+有关使用环境变量进行调试的信息，请参阅 [获取调试设置](getting-set-up-for-debugging.md)。
 
  
 

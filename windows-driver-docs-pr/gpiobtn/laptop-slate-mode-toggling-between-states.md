@@ -1,20 +1,19 @@
 ---
 title: 在各种状态之间切换的笔记本电脑/平板电脑模式
-description: 本主题包含切换的便携式计算机/盖板模式指示器状态的示例代码。
-ms.assetid: C5D9B586-EED7-4DC7-8BFF-3AB3A972307D
+description: 本主题包含用于切换笔记本电脑/石板模式指示器状态的示例代码。
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: deda1d10a6ac80565c5574be07aafc90a3ab64cc
-ms.sourcegitcommit: 6dff49ca5880466c396be5b889c44481dfed44ec
+ms.openlocfilehash: 75bc3edd36a54137ecfd5375827bcf2ae2ba02ef
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67161489"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96830597"
 ---
 # <a name="laptopslate-mode-toggling-between-states"></a>在各种状态之间切换的笔记本电脑/平板电脑模式
 
 
-本主题包含切换的便携式计算机/盖板模式指示器状态的示例代码。
+本主题包含用于切换笔记本电脑/石板模式指示器状态的示例代码。
 
 ```cpp
 int __cdecl ToggleConversionIndicator(

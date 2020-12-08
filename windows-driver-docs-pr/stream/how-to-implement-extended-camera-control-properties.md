@@ -1,22 +1,21 @@
 ---
 title: 如何实现扩展的相机控件属性
-description: 照相机的驱动程序实现扩展的照相机控件属性。
-ms.assetid: BF5B2F1F-AC1D-4ED1-B1FC-64E8FA1218DA
+description: 实现照相机驱动程序的扩展相机控件属性。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: df91e1cef783dc6e70bd43c4505c7aaee426e48b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 86a2874881780ce2e78d4d25878f11dd41126473
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63363501"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96830867"
 ---
 # <a name="how-to-implement-extended-camera-control-properties"></a>如何实现扩展的相机控件属性
 
 
-照相机的驱动程序应实现[扩展相机控件属性](extended-camera-control-properties.md)作为单个属性设置 — 也就是说，每个属性应作为单个属性集。 下面的示例代码可以用于实现这些属性使用作为起始点。
+照相机驱动程序应将 [扩展相机控制属性](extended-camera-control-properties.md) 作为单个属性集实现，也就是说，每个属性都应作为单个属性集来实现。 下面的示例代码可用作实现这些属性的起点。
 
-**请注意**  扩展的属性的数据大小可以是任意长度，因为缓冲区为空表示通过查询数据的大小在用户模式堆栈。 需要一个两步过程： 首先驱动程序将返回所需的长度，如代码示例中所示，然后在用户模式堆栈请求属性数据的正确缓冲区。
+**注意**  由于扩展属性的数据大小可以是任意长度，因此通过传递 null 缓冲区来查询用户模式堆栈的数据大小。 需要两步过程：首先，驱动程序返回所需的长度（如示例代码所示），然后用户模式堆栈为属性数据请求适当的缓冲区。
 
  
 

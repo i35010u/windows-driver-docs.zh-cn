@@ -1,7 +1,6 @@
 ---
 title: Bug 检查 0x30 SET_OF_INVALID_CONTEXT
-description: SET_OF_INVALID_CONTEXT bug 检查具有 0x00000030 值。 这表示在陷阱帧的堆栈指针具有无效值。
-ms.assetid: 77e86390-e387-4ffd-96dd-c32a98939c3a
+description: SET_OF_INVALID_CONTEXT bug 检查的值为0x00000030。 这表示陷阱帧中的堆栈指针具有无效值。
 keywords:
 - Bug 检查 0x30 SET_OF_INVALID_CONTEXT
 - SET_OF_INVALID_CONTEXT
@@ -13,23 +12,23 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 6e89759e48f404134f9bed870c0fdbe46e3223f2
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: 17943bda549d043238937722f592adb2ed44df4b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67519531"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96831671"
 ---
-# <a name="bug-check-0x30-setofinvalidcontext"></a>Bug 检查 0x30：设置\_OF\_无效\_上下文
+# <a name="bug-check-0x30-set_of_invalid_context"></a>Bug 检查0x30：一 \_ 组 \_ 无效的 \_ 上下文
 
 
-在集中\_OF\_无效\_上下文错误检查的值为 0x00000030。 这表示在陷阱帧的堆栈指针具有无效值。
+一组 \_ \_ 无效的 \_ 上下文 bug 检查的值为0x00000030。 这表示陷阱帧中的堆栈指针具有无效值。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题面向程序员。 如果您是在使用计算机时收到蓝屏错误代码的客户，请参阅[蓝屏错误疑难解答](https://www.windows.com/stopcode)。
 
 
-## <a name="setofinvalidcontext-parameters"></a>设置\_OF\_无效\_上下文参数
+## <a name="set_of_invalid_context-parameters"></a>一 \_ 组 \_ 无效的 \_ 上下文参数
 
 
 <table>
@@ -46,11 +45,11 @@ ms.locfileid: "67519531"
 <tbody>
 <tr class="odd">
 <td align="left"><p>1</p></td>
-<td align="left"><p>新的堆栈指针</p></td>
+<td align="left"><p>新堆栈指针</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>2</p></td>
-<td align="left"><p>旧的堆栈指针</p></td>
+<td align="left"><p>旧堆栈指针</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>3</p></td>
@@ -68,9 +67,9 @@ ms.locfileid: "67519531"
 <a name="cause"></a>原因
 -----
 
-一些例程尝试以较低的值与当前的堆栈指针值在陷阱帧中设置的堆栈指针时，将出现此 bug 检查。
+当某个例程尝试将捕获帧中的堆栈指针设置为低于当前堆栈指针值的值时，将发生此 bug 检查。
 
-如果没有已捕获此错误，它会导致内核以运行与指向不再有效的堆栈的堆栈指针。
+如果未捕获到此错误，则会导致内核运行，堆栈指针指向堆栈，该堆栈将不再有效。
 
  
 

@@ -1,7 +1,6 @@
 ---
 title: AV/C 流式处理 INF 示例
 description: AV/C 流式处理 INF 示例
-ms.assetid: c8a2c9cd-c71b-4fd1-80f5-34d13837865e
 keywords:
 - AV/C WDK，流筛选器驱动程序
 - 流筛选器驱动程序 WDK AV/C
@@ -9,12 +8,12 @@ keywords:
 - INF 文件 WDK AV/C 流式处理
 ms.date: 08/25/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 2eab13c5002098ccfd9262e2886275126126c172
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 5cdc40ba0dc49a2a57f94200ae995c2bdea57aa3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89186833"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96832061"
 ---
 # <a name="avc-streaming-inf-example"></a>AV/C 流式处理 INF 示例
 

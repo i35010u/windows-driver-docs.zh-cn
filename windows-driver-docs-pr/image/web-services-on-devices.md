@@ -1,15 +1,14 @@
 ---
 title: 基于设备的 Web 服务
 description: 基于设备的 Web 服务
-ms.assetid: 875abd6d-74f9-47be-860b-efd0bf235b22
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 75d52e049394f69b1944999cefcb2b70383ba4fe
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: e546eb0898ba15ee7579d4e7ac2b24b29b89a1e1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89189133"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96831803"
 ---
 # <a name="web-services-on-devices"></a>基于设备的 Web 服务
 

@@ -1,15 +1,14 @@
 ---
 title: 阻止旧版文件系统筛选器驱动程序
 description: 从 Windows 10 版本1607开始，管理员和驱动程序开发人员可以使用注册表设置来阻止旧式文件系统筛选器驱动程序。
-ms.assetid: 90A562FB-D616-4D38-8D4F-7EFCDF9E617F
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b960813f31a9a4dfdf0a853e4ece71957ecd7545
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: f7cb9fd4404d4120189c331c09b1358165f2c365
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89065386"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96831843"
 ---
 # <a name="blocking-legacy-file-system-filter-drivers"></a>阻止旧版文件系统筛选器驱动程序
 
@@ -28,7 +27,7 @@ ms.locfileid: "89065386"
 HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\I/O System
 ```
 
-**IoBlockLegacyFsFilters**项的有效 DWORD 值如下所示：
+**IoBlockLegacyFsFilters** 项的有效 DWORD 值如下所示：
 
 | **IoBlockLegacyFsFilters** 值 | 说明                                                                                       |
 |----------------------------------|---------------------------------------------------------------------------------------------------|
@@ -43,18 +42,18 @@ HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\I/O System
 
 当阻止加载旧文件系统筛选器驱动程序时，会将一个 **错误** 事件记录到系统事件日志中，如下所示：
 
-| 事件属性 | 说明 |
+| 事件属性 | 描述 |
 | -------------- | ----------- |
-| 日志名称       | System      |
-| 源         | Microsoft-Windows-内核-IO |
+| 日志名称       | 系统      |
+| Source         | Microsoft-Windows-内核-IO |
 | Date           | 12/29/2015 2:55:05 PM |
 | 事件 ID       | 1205         |
 | 任务类别  | 无         |
 | Level          | 错误        |
 | 关键字       |              |
-| 用户           | CONTOSO\user |
+| User           | CONTOSO\user |
 | Computer       | user.domain.corp.contoso.com |
-| 说明    | Windows 配置为阻止旧式文件系统筛选器。 筛选器名称： \Driver\sfilter |
+| 描述    | Windows 配置为阻止旧式文件系统筛选器。 筛选器名称： \Driver\sfilter |
 
 ## <a name="how-to-check-if-legacy-drivers-are-running"></a>如何检查旧驱动程序是否正在运行
 
@@ -62,9 +61,9 @@ HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\I/O System
 
 1. 通过选择并按住 (或右键单击) **cmd.exe** "图标并选择" 以 **管理员身份运行**"来打开提升的命令提示符。
 2. 类型：`fltmc filters`
-3. 查找旧的驱动程序，它们是**帧**值为** &lt; 旧版 &gt; **的驱动程序。
+3. 查找旧的驱动程序，它们是 **帧** 值为 **&lt; 旧版 &gt;** 的驱动程序。
 
-在此示例中，旧的文件系统筛选器驱动程序（名为 AVLegacy 和 EncryptionLegacy）用** &lt; 旧 &gt; **帧值标记。 名为 AVMiniFilter 的文件系统驱动程序没有** &lt; 旧 &gt; **帧值，因为它是微筛选器驱动程序， (它不会直接附加到文件系统堆栈并使用筛选器管理器) 。
+在此示例中，旧的文件系统筛选器驱动程序（名为 AVLegacy 和 EncryptionLegacy）用 **&lt; 旧 &gt;** 帧值标记。 名为 AVMiniFilter 的文件系统驱动程序没有 **&lt; 旧 &gt;** 帧值，因为它是微筛选器驱动程序， (它不会直接附加到文件系统堆栈并使用筛选器管理器) 。
 
 ``` syntax
 C:\Windows\system32>fltmc filters

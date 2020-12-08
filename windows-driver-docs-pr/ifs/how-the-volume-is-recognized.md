@@ -1,7 +1,6 @@
 ---
 title: 如何识别卷
 description: 如何识别卷
-ms.assetid: 0531b023-f35c-4fe9-9c0d-5acafc42f9b4
 keywords:
 - 筛选器驱动程序，WDK 文件系统，卷装入进程，识别卷
 - 文件系统筛选器驱动程序 WDK，卷装入进程，识别卷
@@ -9,12 +8,12 @@ keywords:
 - 装载卷 WDK 文件系统
 ms.date: 10/16/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 7c193b217fc4fc16a4ae84309487df61f3d9d245
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 0e15d872b5dc8b4c47f272a1ac14c6086a1ea056
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89065948"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96831481"
 ---
 # <a name="how-the-volume-is-recognized"></a>如何识别卷
 

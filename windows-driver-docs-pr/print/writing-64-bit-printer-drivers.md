@@ -1,18 +1,17 @@
 ---
 title: 写 64 位打印机驱动程序
 description: 写 64 位打印机驱动程序
-ms.assetid: 41f1a521-980e-4ccd-a395-e1d1bf0114d1
 keywords:
 - 打印机驱动程序 WDK，64位
 - 64位 WDK 打印机
 ms.date: 08/25/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 1b5696bbfaef794d78bdd123b780acf6b276c72d
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 1d32f438855716bd325f212d89e5755f2d887e5c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89211857"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96831185"
 ---
 # <a name="writing-64-bit-printer-drivers"></a>写 64 位打印机驱动程序
 

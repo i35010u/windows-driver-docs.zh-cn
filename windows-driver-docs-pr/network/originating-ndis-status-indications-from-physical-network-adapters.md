@@ -1,15 +1,14 @@
 ---
 title: 从物理网络适配器发起 NDIS 状态指示
 description: 从物理网络适配器发起 NDIS 状态指示
-ms.assetid: D588CD7E-98A3-4BA8-A467-6492DA2186CA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 916cca335dfd24d9770d1de93bc3e623a7091109
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: de1a9b7afcc62cdbb30037f834a8ef650bb5271e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89209647"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96832133"
 ---
 # <a name="originating-ndis-status-indications-from-physical-network-adapters"></a>从物理网络适配器发起 NDIS 状态指示
 
@@ -32,13 +31,13 @@ ms.locfileid: "89209647"
 
 ![用于 ndis 6.30 的物理和 vm 网络适配器的 ndis 状态指示的 vswitch 控制路径](images/vswitch-status-controlpath3.png)
 
-**注意**   在可扩展交换机接口中，NDIS 筛选器驱动程序称为*扩展*，驱动程序堆栈称为*可扩展交换机驱动程序堆栈*。
+**注意**  在可扩展交换机接口中，NDIS 筛选器驱动程序称为 *扩展* ，驱动程序堆栈称为 *可扩展交换机驱动程序堆栈*。
 
  
 
 转发扩展可将封装的硬件卸载状态指示发送到可扩展交换机驱动程序堆栈中的过量驱动程序。 这也允许该扩展插件更改绑定到可扩展交换机外部网络适配器的物理适配器的底层团队的当前卸载功能。 当适配器组绑定到外部网络适配器时，仅将团队的常见功能播发到 NDIS 或过量的协议和筛选器驱动程序。 扩展可以通过将封装的状态指示起源到团队中某些适配器支持的播发功能来扩展播发功能。 例如，扩展可以发出封装的 [**NDIS \_ 状态 \_ 接收 \_ 筛选器 \_ 当前 \_ 功能**](./ndis-status-receive-filter-current-capabilities.md) 指示来更改整个团队的当前启用的接收筛选器功能。
 
-**注意**   只有转发扩展可以产生封装的状态指示。 有关此类型的扩展的详细信息，请参阅 [转发扩展](forwarding-extensions.md)。
+**注意**  只有转发扩展可以产生封装的状态指示。 有关此类型的扩展的详细信息，请参阅 [转发扩展](forwarding-extensions.md)。
 
  
 
@@ -54,28 +53,28 @@ ms.locfileid: "89209647"
 
 如果转发扩展插件为基础物理适配器的硬件卸载资源产生了一个封装的 NDIS 状态指示，则必须按以下方式设置 [**NDIS \_ 交换机 \_ NIC \_ 状态 \_ 指示**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_switch_nic_status_indication) 结构的成员：
 
--   **DestinationPortId**成员必须设置为**NDIS \_ 交换机 \_ 默认 \_ 端口 \_ ID**。
--   **DestinationNicIndex**成员必须设置为**NDIS \_ 交换机 \_ 默认 \_ NIC \_ 索引**
+-   **DestinationPortId** 成员必须设置为 **NDIS \_ 交换机 \_ 默认 \_ 端口 \_ ID**。
+-   **DestinationNicIndex** 成员必须设置为 **NDIS \_ 交换机 \_ 默认 \_ NIC \_ 索引**
 
--   **SourcePortId**成员必须设置为外部网络适配器连接到的可扩展交换机端口的标识符。
+-   **SourcePortId** 成员必须设置为外部网络适配器连接到的可扩展交换机端口的标识符。
 
--   **SourceNicIndex**成员必须设置为**NDIS \_ SWITCH \_ DEFAULT \_ NIC \_ INDEX**。 这允许将状态指示解释为来自绑定到外部网络适配器的整个可扩展交换机团队。
+-   **SourceNicIndex** 成员必须设置为 **NDIS \_ SWITCH \_ DEFAULT \_ NIC \_ INDEX**。 这允许将状态指示解释为来自绑定到外部网络适配器的整个可扩展交换机团队。
 
-    **注意**   如果只有一个物理网络适配器绑定到外部网络适配器，则转发扩展还必须将此成员设置为**NDIS \_ 交换机 \_ 默认 \_ NIC \_ 索引**。
+    **注意**  如果只有一个物理网络适配器绑定到外部网络适配器，则转发扩展还必须将此成员设置为 **NDIS \_ 交换机 \_ 默认 \_ NIC \_ 索引** 。
 
      
 
--   **StatusIndication**成员必须设置为指向[**NDIS \_ 状态 \_ 指示**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_status_indication)结构的指针。 此结构包含封装的 NDIS 状态指示的数据。
+-   **StatusIndication** 成员必须设置为指向 [**NDIS \_ 状态 \_ 指示**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_status_indication)结构的指针。 此结构包含封装的 NDIS 状态指示的数据。
 
 如果转发扩展插件为 Hyper-v 子分区的硬件卸载资源发起了 NDIS 状态指示，则必须按以下方式设置 [**ndis \_ 交换机 \_ NIC \_ 状态 \_ 指示**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_switch_nic_status_indication) 结构的成员：
 
 -   必须将 **DestinationPortId** 和 **DestinationNicIndex** 成员设置为分区所使用的网络连接的端口和网络适配器索引的相应值。
 
--   **SourcePortId**成员必须设置为**NDIS \_ 交换机 \_ 默认 \_ 端口 \_ ID**。
+-   **SourcePortId** 成员必须设置为 **NDIS \_ 交换机 \_ 默认 \_ 端口 \_ ID**。
 
--   **SourceNicIndex**成员必须设置为**NDIS \_ SWITCH \_ DEFAULT \_ NIC \_ INDEX**。
+-   **SourceNicIndex** 成员必须设置为 **NDIS \_ SWITCH \_ DEFAULT \_ NIC \_ INDEX**。
 
--   **StatusIndication**成员必须设置为指向[**NDIS \_ 状态 \_ 指示**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_status_indication)结构的指针。 此结构包含封装的 NDIS 状态指示的数据。
+-   **StatusIndication** 成员必须设置为指向 [**NDIS \_ 状态 \_ 指示**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_status_indication)结构的指针。 此结构包含封装的 NDIS 状态指示的数据。
 
 当扩展发出封装的 NDIS 状态指示时，必须执行以下步骤：
 
@@ -87,17 +86,17 @@ ms.locfileid: "89209647"
 
     -   如果为 Hyper-v 子分区发送了 NDIS 状态指示，则会将 *SwitchPortId* 参数设置为为 **DestinationPortId** 成员指定的值。 扩展还将 *SwitchNicIndex* 参数设置为为 **DestinationNicIndex** 成员指定的值。
 
-    **注意**   如果[*ReferenceSwitchNic*](/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_reference_switch_nic)未返回 NDIS \_ 状态 \_ 成功，则无法发出封装的 NDIS 状态指示。
+    **注意**  如果 [*ReferenceSwitchNic*](/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_reference_switch_nic) 未返回 NDIS \_ 状态 \_ 成功，则无法发出封装的 NDIS 状态指示。
 
      
 
 2.  该扩展调用 [**NdisFIndicateStatus**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfindicatestatus) 来转发封装的状态通知。
 
-    **注意**   如果扩展转发的是已筛选 OID 请求，则必须在调用其[*FilterStatus*](/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_status)函数的上下文中调用[**NdisFIndicateStatus**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfindicatestatus) 。
+    **注意** 如果扩展转发的是已筛选 OID 请求，则必须在调用其 [*FilterStatus*](/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_status)函数的上下文中调用 [**NdisFIndicateStatus**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfindicatestatus) 。
 
      
 
-3.  [**NdisFIndicateStatus**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfindicatestatus)返回后，扩展将调用[*DereferenceSwitchNic*](/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_dereference_switch_nic) ，以清除源或目标网络适配器连接的引用计数器。 该扩展将 *SwitchPortId* 和 *SwitchNicIndex* 参数设置为它在对 [*ReferenceSwitchNic*](/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_reference_switch_nic)的调用中使用的相同值。
+3.  [**NdisFIndicateStatus**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfindicatestatus)返回后，扩展将调用 [*DereferenceSwitchNic*](/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_dereference_switch_nic) ，以清除源或目标网络适配器连接的引用计数器。 该扩展将 *SwitchPortId* 和 *SwitchNicIndex* 参数设置为它在对 [*ReferenceSwitchNic*](/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_reference_switch_nic)的调用中使用的相同值。
 
  
 

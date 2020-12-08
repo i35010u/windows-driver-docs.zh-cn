@@ -1,7 +1,6 @@
 ---
 title: 定义 I/O 控制代码
 description: 定义 I/O 控制代码
-ms.assetid: 967b0199-e9a0-4c8d-9130-c81436c59ca3
 keywords:
 - I/o 控制代码 WDK 内核，定义
 - 控制代码 WDK IOCTLs，定义
@@ -14,12 +13,12 @@ keywords:
 - 布局 WDK IOCTLs
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3fe0d19d292dfd36d2a874182ad5dad090ad95a2
-ms.sourcegitcommit: c9d9f28cc1090cf0205c9c3cdba905b82ab5aeae
+ms.openlocfilehash: 5375fb3cb75d00ee90a6fa645f72fd8f3de45feb
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/14/2020
-ms.locfileid: "94631252"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96831375"
 ---
 # <a name="defining-io-control-codes"></a>定义 I/O 控制代码
 
@@ -39,7 +38,7 @@ I/o 控制代码是由多个字段组成的32位值。 下图说明了 i/o 控�
 #define IOCTL_Device_Function CTL_CODE(DeviceType, Function, Method, Access)
 ```
 
-为 ioctl 选择一个描述性常量名称，其形式为 ioctl \_ *设备* \_ *函数* ，其中 *设备* 指示设备的类型和 *函数* 指示操作。 示例常量名称为 IOCTL \_ 视频 \_ ENABLE \_ CURSOR。
+为 ioctl 选择一个描述性常量名称，其形式为 ioctl \_ *设备* \_ *函数*，其中 *设备* 指示设备的类型和 *函数* 指示操作。 示例常量名称为 IOCTL \_ 视频 \_ ENABLE \_ CURSOR。
 
 向 **CTL \_ 代码** 宏提供以下参数：
 

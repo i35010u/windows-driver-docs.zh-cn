@@ -1,7 +1,6 @@
 ---
 title: Bug 检查 0x19 BAD_POOL_HEADER
 description: BAD_POOL_HEADER bug 检查的值为0x00000019。 这表明池标头已损坏。
-ms.assetid: a3e84703-d778-426b-80e6-e143f5d8f869
 keywords:
 - Bug 检查 0x19 BAD_POOL_HEADER
 - BAD_POOL_HEADER
@@ -13,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 1b9821cc08a74555255af2996ecad0168d172736
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 06b5e9e9721bf6821adf5e990fc88cee2d46fac7
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89210241"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96832003"
 ---
 # <a name="bug-check-0x19-bad_pool_header"></a>Bug 检查0x19：错误的 \_ 池 \_ 标头
 

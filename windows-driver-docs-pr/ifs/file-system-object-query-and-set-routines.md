@@ -1,7 +1,6 @@
 ---
 title: 文件系统对象查询和设置例程
 description: 文件系统对象查询和设置例程
-ms.assetid: 34b97a6e-a155-443c-94dd-4d8f1fc4b430
 keywords:
 - 小型重定向程序 WDK，查询操作
 - 小型重定向程序 WDK，设置操作
@@ -11,12 +10,12 @@ keywords:
 - 对象 WDK 微型重定向器
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fe14a4cbd3a8186b7678fbd0f3ba57233d49f1b6
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: ea23e540dd37775e32072a7e16f514b0ef203789
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104488"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96831503"
 ---
 # <a name="file-system-object-query-and-set-routines"></a>文件系统对象查询和设置例程
 
@@ -33,7 +32,7 @@ ms.locfileid: "90104488"
 <thead>
 <tr class="header">
 <th align="left">例程所返回的值</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>

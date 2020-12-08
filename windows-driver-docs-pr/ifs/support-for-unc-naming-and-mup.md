@@ -1,7 +1,6 @@
 ---
 title: 支持 UNC 命名和 MUP
 description: 支持 UNC 命名和 MUP
-ms.assetid: 07c4a498-10c7-41b2-aaeb-73cab946f392
 keywords:
 - 内核网络重定向 WDK，UNC 命名
 - 内核网络重定向 WDK，MUP
@@ -15,12 +14,12 @@ keywords:
 - 并行前缀解析 WDK 网络重定向器
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: aabf1d8a467a5932d7a004026ca830964bea59dd
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: ae220a7a0138155fd230d771b0e6f9e61b7d2e96
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107378"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96831829"
 ---
 # <a name="support-for-unc-naming-and-mup"></a>支持 UNC 命名和 MUP
 
@@ -90,7 +89,7 @@ MUP 通过向使用 MUP 注册的网络重定向程序发出 [**IOCTL \_ REDIR \
 
 
 
-IOCTL 和数据结构在 *ntifs*中定义。 缓冲区是从非分页池分配的。
+IOCTL 和数据结构在 *ntifs* 中定义。 缓冲区是从非分页池分配的。
 
 网络重定向程序应仅允许此 IOCTL 的内核模式发送方，验证 IRP 结构的 **RequesterMode** 成员是否为 **KernelMode**。
 
@@ -112,7 +111,7 @@ typedef struct _QUERY_PATH_REQUEST {
 <thead>
 <tr class="header">
 <th align="left">结构成员</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -149,7 +148,7 @@ typedef struct _QUERY_PATH_RESPONSE {
 <thead>
 <tr class="header">
 <th align="left">结构成员</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -164,7 +163,7 @@ typedef struct _QUERY_PATH_RESPONSE {
 
 请注意，IOCTL \_ REDIR \_ 查询 \_ 路径是一种不是 ioctl 的方法 \_ 。 这意味着输入缓冲区和输出缓冲区可能不在同一地址。 UNC 提供程序的一个常见错误是假定输入缓冲区和输出缓冲区相同，并使用输入缓冲区指针来提供响应。
 
-当 UNC 提供程序收到 IOCTL \_ REDIR \_ 查询 \_ 路径请求时，必须确定该提供程序是否可以处理查询路径请求结构的 **FilePathName** 成员中指定的 UNC \_ 路径 \_ 。 如果是这样，则必须**LengthAccepted** \_ \_ 用它所声明的前缀的长度（以字节为单位）更新查询路径响应结构的 LengthAccepted 成员，并完成 IRP 状态为 "成功" \_ 的操作。 如果提供程序无法处理指定的 UNC 路径，则它必须使 IOCTL \_ REDIR \_ 查询 \_ 路径请求失败并提供相应的 NTSTATUS 错误代码，并且不得**LengthAccepted**更新查询 \_ 路径响应结构的 LengthAccepted 成员 \_ 。 提供程序不能修改任何其他成员或任何条件下的 **FilePathName** 字符串。
+当 UNC 提供程序收到 IOCTL \_ REDIR \_ 查询 \_ 路径请求时，必须确定该提供程序是否可以处理查询路径请求结构的 **FilePathName** 成员中指定的 UNC \_ 路径 \_ 。 如果是这样，则必须 **LengthAccepted** \_ \_ 用它所声明的前缀的长度（以字节为单位）更新查询路径响应结构的 LengthAccepted 成员，并完成 IRP 状态为 "成功" \_ 的操作。 如果提供程序无法处理指定的 UNC 路径，则它必须使 IOCTL \_ REDIR \_ 查询 \_ 路径请求失败并提供相应的 NTSTATUS 错误代码，并且不得 **LengthAccepted** 更新查询 \_ 路径响应结构的 LengthAccepted 成员 \_ 。 提供程序不能修改任何其他成员或任何条件下的 **FilePathName** 字符串。
 
 如果 \\ \\ \\ 在对 IRP MJ 创建或其他使用 UNC 名称的 irp 的响应中无法识别服务器共享前缀名称 \_ \_ ，则建议返回的 NTSTATUS 代码是以下各项之一：
 
@@ -194,23 +193,23 @@ IOCTL \_ REDIR \_ 查询 \_ 路径请求应仅来自 MUP，而 IRP 的请求者�
 
 任何传统的网络重定向程序 (不基于使用通过 [**FsRtlRegisterUncProvider**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtlregisteruncprovider) 注册为 UNC 提供程序的 RDBSS) 将接收 IOCTL \_ REDIR \_ 查询 \_ 路径请求。
 
-表示支持的网络微型重定向程序将接收此前缀声明，就像它是 IRP \_ MJ \_ CREATE 调用一样。 此创建请求类似于**Createfile** \_ \_ \_ 在上设置了文件创建树连接标志的用户模式 Createfile 调用。 网络小型重定向程序将不会接收前缀声明作为对[**MRxLowIOSubmit \[ LOWIO \_ OP \_ IOCTL \] **](./mrxlowiosubmit-lowio-op-ioctl-.md)的调用。 对于前缀声明，RDBSS 会将 [**MRxCreateSrvCall**](/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_create_srvcall) 请求发送到网络小型重定向程序，然后调用 [**MRxSrvCallWinnerNotify**](/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_srvcall_winner_notify) 和 [**MRxCreateVNetRoot**](/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_create_v_net_root)。 当网络微重定向器注册到 RDBSS 时，网络小型重定向器的驱动程序调度表将由 RDBSS 复制到指向内部 RDBSS 入口点。 然后，RDBSS 将 \_ \_ \_ 为网络小型重定向器在内部接收此 IOCTL REDIR 查询路径，并调用 **MRxCreateSrvCall**、 **MRxSrvCallWinnerNotify**和 **MRxCreateVNetRoot**。 原始 IOCTL \_ REDIR \_ 查询 \_ 路径 IRP 将包含在 \_ 传递到 **MRxCreateSrvCall** 例程的 RX 上下文结构中。 此外， \_ 将修改传递到 **MRXCREATESRVCALL** 的 RX 上下文中的以下成员：
+表示支持的网络微型重定向程序将接收此前缀声明，就像它是 IRP \_ MJ \_ CREATE 调用一样。 此创建请求类似于 **Createfile** \_ \_ \_ 在上设置了文件创建树连接标志的用户模式 Createfile 调用。 网络小型重定向程序将不会接收前缀声明作为对 [**MRxLowIOSubmit \[ LOWIO \_ OP \_ IOCTL \]**](./mrxlowiosubmit-lowio-op-ioctl-.md)的调用。 对于前缀声明，RDBSS 会将 [**MRxCreateSrvCall**](/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_create_srvcall) 请求发送到网络小型重定向程序，然后调用 [**MRxSrvCallWinnerNotify**](/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_srvcall_winner_notify) 和 [**MRxCreateVNetRoot**](/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_create_v_net_root)。 当网络微重定向器注册到 RDBSS 时，网络小型重定向器的驱动程序调度表将由 RDBSS 复制到指向内部 RDBSS 入口点。 然后，RDBSS 将 \_ \_ \_ 为网络小型重定向器在内部接收此 IOCTL REDIR 查询路径，并调用 **MRxCreateSrvCall**、 **MRxSrvCallWinnerNotify** 和 **MRxCreateVNetRoot**。 原始 IOCTL \_ REDIR \_ 查询 \_ 路径 IRP 将包含在 \_ 传递到 **MRxCreateSrvCall** 例程的 RX 上下文结构中。 此外， \_ 将修改传递到 **MRXCREATESRVCALL** 的 RX 上下文中的以下成员：
 
 **MajorFunction** \_ \_ 即使原始 IRP 为 irp \_ mj \_ 设备 \_ 控制，MajorFunction 成员也会设置为 irp mj CREATE。
 
-**PrefixClaim**成员设置为查询**FilePathName** \_ 路径请求结构的 FilePathName 成员 \_ 。
+**PrefixClaim** 成员设置为查询 **FilePathName** \_ 路径请求结构的 FilePathName 成员 \_ 。
 
-**PrefixClaim**成员设置为查询**PathNameLength** \_ 路径请求结构的 PathNameLength 成员 \_ 。
+**PrefixClaim** 成员设置为查询 **PathNameLength** \_ 路径请求结构的 PathNameLength 成员 \_ 。
 
-**NtCreateParameters. SecurityContext**成员设置为查询**SecurityContext** \_ 路径请求结构的 SecurityContext 成员 \_ 。
+**NtCreateParameters. SecurityContext** 成员设置为查询 **SecurityContext** \_ 路径请求结构的 SecurityContext 成员 \_ 。
 
-**ThisIsATreeConnectOpen**成员设置为**TRUE**。
+**ThisIsATreeConnectOpen** 成员设置为 **TRUE**。
 
-**Create Flags**成员具有 RX \_ 上下文 \_ 创建 \_ 标志 \_ UNC \_ 名称位集。
+**Create Flags** 成员具有 RX \_ 上下文 \_ 创建 \_ 标志 \_ UNC \_ 名称位集。
 
-如果网络小型重定向程序想要查看前缀声明的详细信息，则可以读取 \_ 传递给 **MRXCREATESRVCALL**的 RX 上下文中的这些成员。 否则，它只会尝试连接到服务器共享，并 \_ 在 **MRxCreateSrvCall** 调用成功时返回状态 SUCCESS。 RDBSS 将代表网络小型重定向器发出前缀声明。
+如果网络小型重定向程序想要查看前缀声明的详细信息，则可以读取 \_ 传递给 **MRXCREATESRVCALL** 的 RX 上下文中的这些成员。 否则，它只会尝试连接到服务器共享，并 \_ 在 **MRxCreateSrvCall** 调用成功时返回状态 SUCCESS。 RDBSS 将代表网络小型重定向器发出前缀声明。
 
-在这种情况下，网络小型重定向器可以直接接收此 IOCTL。 网络小型重定向程序可以在初始化并注册到 RDBSS 之前保存其驱动程序调度表的副本。 在调用 [**RxRegisterMinirdr**](/windows-hardware/drivers/ddi/mrx/nf-mrx-rxregisterminirdr) 以向 RDBSS 注册后，网络小型重定向程序可以保存由 RDBSS 安装的新驱动程序调度表入口点的副本，并还原其原始驱动程序调度表。 需要对还原的驱动程序调度表进行修改，以便在为网络微型重定向程序所需的目标检查收到的 IRP 后，调用将转发到 RDBSS 驱动程序调度入口点。 当驱动程序初始化 RDBSS 并调用 **RxRegisterMinrdr**时，RDBSS 将复制网络小型重定向程序的驱动程序调度表。 链接到*rdbsslib*的网络微重定向程序必须先保存其原始驱动程序调度表，然后再从其**DriverEntry**例程调用[**RxDriverEntry**](/windows-hardware/drivers/ddi/rxprocs/nf-rxprocs-rxdriverentry) ，以便在调用**RxRegisterMinrdr**后初始化 RDBSS 静态库并还原其驱动程序调度表。 这是因为 RDBSS 会在 **RxDriverEntry** 和 **RxRegisterMinrdr** 例程中通过网络小型重定向器发送表进行复制。
+在这种情况下，网络小型重定向器可以直接接收此 IOCTL。 网络小型重定向程序可以在初始化并注册到 RDBSS 之前保存其驱动程序调度表的副本。 在调用 [**RxRegisterMinirdr**](/windows-hardware/drivers/ddi/mrx/nf-mrx-rxregisterminirdr) 以向 RDBSS 注册后，网络小型重定向程序可以保存由 RDBSS 安装的新驱动程序调度表入口点的副本，并还原其原始驱动程序调度表。 需要对还原的驱动程序调度表进行修改，以便在为网络微型重定向程序所需的目标检查收到的 IRP 后，调用将转发到 RDBSS 驱动程序调度入口点。 当驱动程序初始化 RDBSS 并调用 **RxRegisterMinrdr** 时，RDBSS 将复制网络小型重定向程序的驱动程序调度表。 链接到 *rdbsslib* 的网络微重定向程序必须先保存其原始驱动程序调度表，然后再从其 **DriverEntry** 例程调用 [**RxDriverEntry**](/windows-hardware/drivers/ddi/rxprocs/nf-rxprocs-rxdriverentry) ，以便在调用 **RxRegisterMinrdr** 后初始化 RDBSS 静态库并还原其驱动程序调度表。 这是因为 RDBSS 会在 **RxDriverEntry** 和 **RxRegisterMinrdr** 例程中通过网络小型重定向器发送表进行复制。
 
 在前缀解析过程中查询提供程序的顺序由 \_ 存储在以下注册表项下的注册表值控制：
 

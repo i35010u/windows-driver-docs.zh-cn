@@ -1,15 +1,14 @@
 ---
 title: 集合列表帮助程序
 description: V2 传感器驱动程序使用集合列表帮助程序函数来处理传感器 \_ 集合 \_ 列表结构。
-ms.assetid: 9BE06FA6-A171-4760-9D3E-C0183F3C3EFA
 ms.date: 07/20/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: ea5133ac18862ea7711a68aed6dee2a5edd18820
-ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
+ms.openlocfilehash: f2619efa7de5be93f8e98c2f9acbe42b447ce2b3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90010585"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96831059"
 ---
 # <a name="collection-list-helpers"></a>集合列表帮助程序
 

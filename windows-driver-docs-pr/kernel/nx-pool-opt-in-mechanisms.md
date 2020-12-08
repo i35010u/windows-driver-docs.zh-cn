@@ -1,15 +1,14 @@
 ---
 title: NX 池启用机制
 description: 若要从 Windows 的早期版本将内核模式驱动程序代码移植到 Windows 8，你应使用 NonPagedPoolNx 类型的内存池作为最佳实践。
-ms.assetid: 9C868569-14EC-4915-8553-FD2D94C5A855
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 05b64f3eff9f855a21f7e4900381047ec8d2ae55
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: dedefa6b3006de50bb13c0dca5328b91e41eb7a1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89192469"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96831357"
 ---
 # <a name="nx-pool-opt-in-mechanisms"></a>NX 池启用机制
 

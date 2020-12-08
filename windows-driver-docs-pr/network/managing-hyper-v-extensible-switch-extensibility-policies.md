@@ -1,26 +1,25 @@
 ---
 title: 管理 Hyper-V 可扩展交换机策略
 description: 管理 Hyper-V 可扩展交换机策略
-ms.assetid: F58A4BC0-C5C6-440D-BEA3-2224F7051BA5
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3da98079f6a0965d46339971bb2e8fd140db0ef7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fb373808ec3cbc4c0edf75cf24329992a927f3ef
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63343577"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96832187"
 ---
 # <a name="managing-hyper-v-extensible-switch-policies"></a>管理 Hyper-V 可扩展交换机策略
 
 
-本部分介绍 HYPER-V 可扩展交换机扩展管理端口和交换机策略的方式。 本部分包括以下主题：
+本部分介绍 Hyper-v 可扩展交换机扩展如何管理端口和交换机策略。 本节包括下列主题：
 
-[端口的管理策略](managing-port-policies.md)
+[管理端口策略](managing-port-policies.md)
 
-[交换机的管理策略](managing-switch-policies.md)
+[管理交换机策略](managing-switch-policies.md)
 
-可扩展交换机策略的详细信息，请参阅[概述的 HYPER-V 可扩展交换机策略](overview-of-hyper-v-extensible-switch-policies.md)。
+有关可扩展交换机策略的详细信息，请参阅 [Hyper-v 可扩展交换机策略概述](overview-of-hyper-v-extensible-switch-policies.md)。
 
  
 

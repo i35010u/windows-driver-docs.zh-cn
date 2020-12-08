@@ -1,7 +1,6 @@
 ---
 title: 原始接口
 description: 原始接口
-ms.assetid: 78f1e722-c2bd-4232-96f1-71df7e6ece23
 keywords:
 - 操纵杆 WDK HID，接口
 - 虚拟游戏杆驱动程序 WDK HID，接口
@@ -14,12 +13,12 @@ keywords:
 - 轮询 WDK 操纵杆
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 93570fff7a5fd1b61a3ac80e49c98a08f8ae9797
-ms.sourcegitcommit: ec7bebe3f94536455e62b372c2a28fe69d1717f7
+ms.openlocfilehash: ee5185b8d3d0526c59e5ec5270d446fde9f3781f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93349725"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96831847"
 ---
 # <a name="original-interface"></a>原始接口
 
@@ -110,13 +109,13 @@ API 和系统驱动程序对应用程序发出的请求执行验证，并在完�
 
     如果 " **\_ 其他** 成员" 为非零值，则会在 **DwR** 成员中返回 R 轴。 否则，Z 轴将在 **dwZ** 成员中返回。
 
-- 有趣 \_ \_ 的 OEMPOLL POLL4：分别在 **dwX** 、 **dwY** 、 **dwZ** 和 **dwR** 成员中返回 X、Y、Z 和 R 轴。
+- 有趣 \_ \_ 的 OEMPOLL POLL4：分别在 **dwX**、 **dwY**、 **dwZ** 和 **dwR** 成员中返回 X、Y、Z 和 R 轴。
 
-- 有趣 \_ \_ 的 OEMPOLL POLL5：分别在 **dwX** 、 **dwY** 、 **dwZ** 和 **dwR** 成员中返回 X、Y、Z 和 R 轴。
+- 有趣 \_ \_ 的 OEMPOLL POLL5：分别在 **dwX**、 **dwY**、 **dwZ** 和 **dwR** 成员中返回 X、Y、Z 和 R 轴。
 
     如果 " **\_ 其他** 成员" 为非零值，则会在 **DwR** 成员中返回 V 轴。 否则，在 **dwZ** 成员中返回 U 轴。
 
-- 有趣 \_ \_ 的 OEMPOLL POLL6：分别在 **dwX** 、 **dwY** 、 **dwZ** 、 **dwR** 、 **dwU** 和 **dwV** 成员中返回 X、Y、Z、R 和 V 轴。
+- 有趣 \_ \_ 的 OEMPOLL POLL6：分别在 **dwX**、 **dwY**、 **dwZ**、 **dwR**、 **dwU** 和 **dwV** 成员中返回 X、Y、Z、R 和 V 轴。
 
 DirectX 3.0 添加了 "无轮询" 类型的 " \_ OEMPASSDRIVERDATA"，其中，" **\_ 其他** 成员" 包含应用程序通过的 DWORD。 可以将此 DWORD 用于任何微型驱动程序定义的函数，但它仅用于启用已完全标识微型驱动程序的自定义安装应用程序，以发送设备特定的命令和配置信息。
 

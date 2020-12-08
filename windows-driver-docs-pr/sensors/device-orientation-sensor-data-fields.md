@@ -1,15 +1,14 @@
 ---
 title: 方向传感器数据字段
 description: 本主题提供有关特定于方向传感器的数据字段的信息。
-ms.assetid: 4B1FA56E-6956-4BC9-B929-3D78EF933057
 ms.date: 07/20/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 055e8c966220806319909a875382a73e1ff3acce
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 9075eb7c6d958f606123a379810947610e37eb3e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91733137"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96831027"
 ---
 # <a name="orientation-sensor-data-fields"></a>方向传感器数据字段
 

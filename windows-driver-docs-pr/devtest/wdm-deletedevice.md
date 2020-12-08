@@ -1,7 +1,6 @@
 ---
 title: 'DeleteDevice 规则 (wdm) '
 description: DeleteDevice 规则指定在调用 IoDeleteDevice 后，驱动程序不应依赖于 i/o 管理器或 PnP 管理器来使 DeviceObject 保持活动状态。
-ms.assetid: C7068AD1-C9F4-4BB0-8964-24FFB4658AF6
 ms.date: 05/21/2018
 keywords:
 - 'DeleteDevice 规则 (wdm) '
@@ -12,21 +11,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: f7f30b15eb2a723e4a7e878cd08cf1e45f90f19f
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: e6b40aa24cafc0cc0236e9ccedacd888e76f9e9a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105966"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96832471"
 ---
 # <a name="deletedevice-rule-wdm"></a>DeleteDevice 规则 (wdm) 
 
 
-**DeleteDevice**规则指定在调用[**IoDeleteDevice**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iodeletedevice)后，驱动程序不应依赖于 I/o 管理器或 PnP 管理器来使 DeviceObject 保持活动状态。
+**DeleteDevice** 规则指定在调用 [**IoDeleteDevice**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iodeletedevice)后，驱动程序不应依赖于 I/o 管理器或 PnP 管理器来使 DeviceObject 保持活动状态。
 
 在较低的驱动程序返回之后，驱动程序应调用 [**IoDeleteDevice**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iodeletedevice) 。 这是建议的行为。 此规则适用于 FDO 和 FIDO 驱动程序。
 
-处理[**IRP \_ MN \_ REMOVE \_ 设备**](../kernel/irp-mn-remove-device.md)请求时，驱动程序只应在返回[**IoCallDriver**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver)或[**PoCallDriver**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-pocalldriver)后调用[**IoDeleteDevice**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iodeletedevice) 。
+处理 [**IRP \_ MN \_ REMOVE \_ 设备**](../kernel/irp-mn-remove-device.md)请求时，驱动程序只应在返回 [**IoCallDriver**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver)或 [**PoCallDriver**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-pocalldriver)后调用 [**IoDeleteDevice**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iodeletedevice) 。
 
 **驱动程序模型： WDM**
 

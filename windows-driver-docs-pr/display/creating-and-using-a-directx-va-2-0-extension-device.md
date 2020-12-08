@@ -1,7 +1,6 @@
 ---
 title: 创建和使用 DirectX VA 2.0 扩展设备
 description: 创建和使用 DirectX VA 2.0 扩展设备
-ms.assetid: 650a77a5-67c3-4b11-93c8-24232905eb43
 keywords:
 - DirectX 视频加速 WDK 显示，扩展支持
 - 视频加速 WDK DirectX，扩展支持
@@ -9,12 +8,12 @@ keywords:
 - 扩展设备 WDK DirectX VA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7e8774a9cc2f5f7f1a4fe662068e4bf80bde67f9
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 7a9e7d1da0f5b363bdbbd1f5f46888e062dd2503
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89063154"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96831887"
 ---
 # <a name="creating-and-using-a-directx-va-20-extension-device"></a>创建和使用 DirectX VA 2.0 扩展设备
 

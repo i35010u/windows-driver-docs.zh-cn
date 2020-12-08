@@ -1,15 +1,14 @@
 ---
 title: 启用和禁用共享 GPIO 中断
 description: 在某些情况下，两个或多个外围设备的中断请求线路可能会连接到相同的物理常规用途 i/o (GPIO) pin。 通常为共享中断线路配置用于共享中断线路的 GPIO pin。
-ms.assetid: F3C8F2B1-54BC-46A1-8AC2-50006E1156FF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 65f5bc128c193c02a802413ad1c73c2a2a7ab3a9
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 409b24c7503a0edbcaeb42c8f496121516e0abda
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89064502"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96830621"
 ---
 # <a name="enabling-and-disabling-shared-gpio-interrupts"></a>启用和禁用共享 GPIO 中断
 

@@ -1,17 +1,16 @@
 ---
 title: OID_TCP4_OFFLOAD_STATS
 description: 本主题介绍) OID_TCP4_OFFLOAD_STATS 对象标识符 (OID。
-ms.assetid: e6933a86-0ff3-48ff-a0e3-3bfc32b19df3
 keywords:
 - OID_TCP4_OFFLOAD_STATS
 ms.date: 11/06/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6d517f62a08fe5a0da921601e4c1330d019b23d6
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: eacad2f6ed5d1a4c5731555e9d9bd2bbf18ff8bf
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89215833"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96832141"
 ---
 # <a name="oid_tcp4_offload_stats"></a>OID_TCP4_OFFLOAD_STATS
 

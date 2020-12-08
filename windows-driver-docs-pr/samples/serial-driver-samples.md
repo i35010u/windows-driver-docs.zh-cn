@@ -1,15 +1,14 @@
 ---
 title: 串行驱动程序示例
 description: 此目录中的驱动程序示例提供了为设备编写自定义串行驱动程序的起点。
-ms.assetid: C4C6ED0B-50EA-4483-A81F-FC3C7F5CCE12
 ms.date: 11/19/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 72d7d1bb119540974346981cb775ca04a10b3867
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 93d21fc6d7355bbaefbfc8a66a4568fd8817f37b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89188037"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96831177"
 ---
 # <a name="serial-driver-samples"></a>串行驱动程序示例
 

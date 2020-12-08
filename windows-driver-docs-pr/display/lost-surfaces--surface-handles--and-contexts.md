@@ -1,19 +1,18 @@
 ---
 title: 丢失的图面、图面句柄和上下文
 description: 丢失的图面、图面句柄和上下文
-ms.assetid: d2458077-56f8-481b-b612-a706e9560314
 keywords:
 - 上下文 WDK Direct3D，D3dCreateSurfaceEx
 - D3dCreateSurfaceEx
 - surface 处理 WDK Direct3D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 77903f29486e7d8e59e45df274d4dbcdf3880e14
-ms.sourcegitcommit: f8619f20a0903dd64f8641a5266ecad6df5f1d57
+ms.openlocfilehash: 0c91bf54b0f1aab5e5714daca535345cd4669e21
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91423698"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96832391"
 ---
 # <a name="lost-surfaces-surface-handles-and-contexts"></a>丢失的图面、图面句柄和上下文
 

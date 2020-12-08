@@ -1,17 +1,16 @@
 ---
 title: 命令
 description: 命令
-ms.assetid: be2ff9ca-48d2-4050-8390-2ead1d53f8d9
 keywords:
-- 命令参考
+- 命令，引用
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c82d5f8ac1435753dce83e8b8cda901920fb0d11
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 467686eae21bce040bf11f25ef5aaceae0dc7eed
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63375071"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96831997"
 ---
 # <a name="commands"></a>命令
 
@@ -19,7 +18,7 @@ ms.locfileid: "63375071"
 ## <span id="ddk_commands_dbg"></span><span id="DDK_COMMANDS_DBG"></span>
 
 
-引用的本部分讨论 CDB、 KD 和 WinDbg 中可以使用各种调试器命令。
+参考的此部分讨论了可在 CDB、KD 和 WinDbg 中使用的各种调试器命令。
 
  
 

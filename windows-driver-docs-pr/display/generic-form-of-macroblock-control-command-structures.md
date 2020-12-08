@@ -1,17 +1,16 @@
 ---
 title: 宏块控制命令结构的通用格式
 description: 宏块控制命令结构的通用格式
-ms.assetid: 44009238-0a8e-4018-9b50-06729640f5e4
 keywords:
 - macroblocks WDK DirectX VA，通用命令结构
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3d2e2fad17c0af7ee07bf02281c0c1f8cab5f5ad
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 660b6d1facf2b72bfffb44dff6a43137e718bd9a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89065628"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96832421"
 ---
 # <a name="generic-form-of-macroblock-control-command-structures"></a>宏块控制命令结构的通用格式
 
@@ -33,7 +32,7 @@ ms.locfileid: "89065628"
 
 本部分介绍通用宏块控件命令结构的成员，该结构用作创建其他宏块控件命令的基础。 本节中的宏块控制命令结构定义分为四个部分。
 
-**注意**   宏块控件命令与16字节的内存边界对齐，并以单字节对齐方式打包构造为打包的数据结构。
+**注意**   宏块控件命令与16字节的内存边界对齐，并以单字节对齐方式打包构造为打包的数据结构。
 
  
 

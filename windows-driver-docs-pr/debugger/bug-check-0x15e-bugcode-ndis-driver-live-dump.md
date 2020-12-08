@@ -1,7 +1,6 @@
 ---
 title: Bug 检查 0x15E BUGCODE_NDIS_DRIVER_LIVE_DUMP
 description: BUGCODE_NDIS_DRIVER_LIVE_DUMP bug 代码的值为0x0000015E。 此错误代码指示 NDIS 已捕获实时内核转储。 在这种情况下，NDIS 不会生成 bug 检查。
-ms.assetid: 3663A955-A1D7-4880-BD83-0976012F2CB1
 keywords:
 - Bug 检查 0x15E BUGCODE_NDIS_DRIVER_LIVE_DUMP
 - BUGCODE_NDIS_DRIVER
@@ -13,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 95d460f5df8e170eb6ea91cfe70196de753fb59d
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: fbda536d97be57085e7d0c8b47cae4f328526122
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105506"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96830791"
 ---
 # <a name="bug-check-0x15e-bugcode_ndis_driver_live_dump"></a>Bug 检查0x15E： BUGCODE \_ NDIS \_ 驱动程序 \_ 实时 \_ 转储
 

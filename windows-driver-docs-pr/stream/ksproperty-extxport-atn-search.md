@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ EXTXPORT \_ ATN \_ 搜索
 description: "\"KSPROPERTY \\_ EXTXPORT \\_ ATN \\_ 搜索\" 属性搜索磁带上 (ATN) 的特定绝对磁道号。"
-ms.assetid: e5bc7552-64a8-4567-9dc3-3f2b50411cc6
 keywords:
 - KSPROPERTY_EXTXPORT_ATN_SEARCH 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6bda2c5169d63e45d528bb09a3565352152d3912
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: c1850a8cca09b9fc029280c994579a87590769c6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105406"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96830835"
 ---
 # <a name="ksproperty_extxport_atn_search"></a>KSPROPERTY \_ EXTXPORT \_ ATN \_ 搜索
 
@@ -63,7 +62,7 @@ ms.locfileid: "90105406"
 
 ) 操作数据 (的属性值是一个 DWORD，用于指定绝对磁道号。
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 KSPROPERTY **dwAbsTrackNumber** \_ EXTXPORT S 结构的 dwAbsTrackNumber 成员 \_ 指定要搜索的绝对磁道号。

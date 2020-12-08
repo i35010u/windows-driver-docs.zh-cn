@@ -1,7 +1,6 @@
 ---
 title: 以前 Windows 版本中的启动选项
 description: 描述 Windows 以前版本中的启动选项
-ms.assetid: 3999f950-3325-4003-8d89-9922734b4987
 keywords:
 - 启动选项窗口
 - Windows 7
@@ -10,12 +9,12 @@ keywords:
 - WDK 启动选项
 ms.date: 04/18/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 9e48e215446e738cb9f276190bd3455afda719cc
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: ce96023a8f3544ea18ba4224560be5c8642b05db
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89384371"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96831917"
 ---
 # <a name="boot-options-in-previous-versions-of-windows"></a>以前 Windows 版本中的启动选项
 

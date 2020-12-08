@@ -1,15 +1,14 @@
 ---
 title: Windows Management Instrumentation (WMI) 驱动程序示例
 description: 此目录中的驱动程序示例提供了为设备编写自定义 WMI 驱动程序的起点。
-ms.assetid: 26466524-2350-433C-B2A5-FF916EF3E152
 ms.date: 11/21/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 492682186f42c975d637a27bd767c68154960afb
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: e61e4247c8162a40fe7e5a18ce452130b909160a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89187269"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96831141"
 ---
 # <a name="windows-management-instrumentation-wmi-driver-samples"></a>Windows Management Instrumentation (WMI) 驱动程序示例
 

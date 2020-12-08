@@ -1,15 +1,14 @@
 ---
 title: REMOTE_NDIS_RESET_MSG
 description: 此消息将从主机发送到远程 NDIS 设备，以重置设备并返回状态。
-ms.assetid: b5938b0d-75bf-497f-afeb-9950b383af5e
 ms.date: 07/31/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cfa815c5df7846e6b85845606f424fd69c58f194
-ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
+ms.openlocfilehash: 7dc2d0a8ef3f5f57eb097916d10a6a01efc94371
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88969590"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96832117"
 ---
 # <a name="remote_ndis_reset_msg"></a>远程 \_ NDIS \_ 重置 \_ 消息
 
@@ -28,7 +27,7 @@ ms.locfileid: "88969590"
 <th>Offset</th>
 <th>大小</th>
 <th>字段</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -65,7 +64,7 @@ ms.locfileid: "88969590"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Version</p></td>
+<td><p>版本</p></td>
 <td><p>在 Microsoft Windows XP 和更高版本的 Windows 操作系统中可用。 在 Windows 2000 中也可以作为可再发行二进制文件。</p></td>
 </tr>
 <tr class="even">

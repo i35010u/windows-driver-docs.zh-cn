@@ -1,15 +1,14 @@
 ---
 title: AV/C 流式处理格式 GUID
 description: AV/C 流式处理格式 GUID
-ms.assetid: 60f1fd59-e760-4be4-8990-e49628b76d15
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6b7a0f6cedaec4530a958626e174c4989116b3b9
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 9e938222ac8a0bc0068dace38c42d16fea0b3a3c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104008"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96832073"
 ---
 # <a name="avc-streaming-format-guids"></a>AV/C 流式处理格式 GUID
 
@@ -21,7 +20,7 @@ ms.locfileid: "90104008"
 
 KSDATAFORMAT 结构指定 Guid 的主要格式、格式子类型和说明符。 说明符指定在内存中遵循 KSDATAFORMAT 结构的扩展数据结构。 例如，假设数据格式具有 KSDATAFORMAT 类型交错的主要格式 \_ \_ 、KSDATAFORMAT 子类型 DVSD 的格式子类型 \_ \_ 以及 KSDATAFORMAT \_ 说明符 DVINFO 的说明符 \_ 。 在这种情况下，扩展数据结构是 [**DVINFO**](/windows-hardware/drivers/ddi/avcstrm/ns-avcstrm-_dvinfo) 结构。
 
-*Avcstrm*头文件定义以下流格式 guid：
+*Avcstrm* 头文件定义以下流格式 guid：
 
 <span id="KSDATAFORMAT_TYPE_INTERLEAVED"></span><span id="ksdataformat_type_interleaved"></span>KSDATAFORMAT \_ 类型 \_ 交错  
 指定交错的音频和视频信号。 任何包含音频的视频流都应将此 GUID 指定为流的类型。
@@ -67,7 +66,7 @@ KSDATAFORMAT 结构指定 Guid 的主要格式、格式子类型和说明符。 
 
 子单位驱动程序指示帧大小 (样本大小) 其格式子类型及其扩展数据结构的组合。 例如，KSDATAFORMAT \_ 子类型 \_ DVSD 格式子类型和 DVINFO 扩展数据结构中设置的 NTSC 位的组合指示 DV 帧大小为 120 KB。
 
-[**KSDATAFORMAT**](/windows-hardware/drivers/ddi/ks/ns-ks-ksdataformat)结构包含用于验证扩展数据结构大小的**FormatSize**成员。 也就是说，在有效的扩展数据结构大小 FormatSize 等于 sizeof (KSDATAFORMAT) + sizeof (扩展数据结构 (s) # A5。
+[**KSDATAFORMAT**](/windows-hardware/drivers/ddi/ks/ns-ks-ksdataformat)结构包含用于验证扩展数据结构大小的 **FormatSize** 成员。 也就是说，在有效的扩展数据结构大小 FormatSize 等于 sizeof (KSDATAFORMAT) + sizeof (扩展数据结构 (s) # A5。
 
 下表介绍了 KS 数据格式说明符 Guid 及其相应的扩展数据结构。
 

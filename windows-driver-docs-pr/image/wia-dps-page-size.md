@@ -1,7 +1,6 @@
 ---
 title: WIA \_ DPS \_ 页面 \_ 大小
 description: "\"WIA \\_ DPS \\_ 页面 \\_ 大小\" 属性包含当前选定要扫描的页面的大小。"
-ms.assetid: 16e32b83-26b8-4283-a937-9fbbe77b42b8
 keywords:
 - WIA_DPS_PAGE_SIZE 图像设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0e32ea3e47d3fc96c40bde748233a4ab95785c82
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: ad383b2745d87680e617c7b2acb95c3b9665b11d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89190077"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96831755"
 ---
 # <a name="wia_dps_page_size"></a>WIA \_ DPS \_ 页面 \_ 大小
 
@@ -35,7 +34,7 @@ ms.locfileid: "89190077"
 
 访问权限：读/写
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 若要选择要扫描的页面的尺寸，应用程序会设置 WIA \_ DPS \_ 页面 \_ 大小。 WIA 微型驱动程序创建并维护此属性。
@@ -131,7 +130,7 @@ WIA_DPS_PAGE_SIZE = WIA_PAGE_CUSTOM WIA_DPS_PAGE_HEIGHT = 10000 WIA_DPS_PAGE_WID
 <td><p>适用于 Microsoft Windows XP。 对于 Windows Vista 和更高版本，请使用相同的 WIA_IPS_PAGE_SIZE 属性。</p></td>
 </tr>
 <tr class="even">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Wiadef (包含 Wiadef) </td>
 </tr>
 </tbody>

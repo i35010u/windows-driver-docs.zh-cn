@@ -1,15 +1,14 @@
 ---
 title: 基于 GPIO 的中断资源
 description: 适用于将中断发送到常规用途 i/o (GPIO) pin 的外围设备的驱动程序获取 GPIO 中断作为抽象 Windows 中断资源。
-ms.assetid: 65031C43-917D-4665-BD7F-97D3DDA0A918
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 53ab768a4fe42b3afebe135a67a87916af84bd30
-ms.sourcegitcommit: 3464f10ffa0727e38fbe225cfab52bb8c2bb1747
+ms.openlocfilehash: 813c1fbd8134a237572522e5f70574bad7fd1ea8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93352994"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96830611"
 ---
 # <a name="gpio-based-interrupt-resources"></a>基于 GPIO 的中断资源
 

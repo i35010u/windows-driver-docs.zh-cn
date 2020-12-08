@@ -1,7 +1,6 @@
 ---
 title: KSCATEGORY_AUDIO
 description: KSCATEGORY_AUDIO
-ms.assetid: 5acdca77-ed90-4f20-bdcc-5f51312c9dd7
 keywords:
 - KSCATEGORY_AUDIO 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 0347b69515ca0fb1da25b4110afd3c1c90af2713
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: ed24161b5a0707bad5d6d81296a325fdd7d501ba
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91732832"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96831393"
 ---
 # <a name="kscategory_audio"></a>KSCATEGORY_AUDIO
 
@@ -33,7 +32,7 @@ ms.locfileid: "91732832"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">属性</th>
+<th align="left">Attribute</th>
 <th align="left">设置</th>
 </tr>
 </thead>

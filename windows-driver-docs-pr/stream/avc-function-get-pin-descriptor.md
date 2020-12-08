@@ -1,7 +1,6 @@
 ---
 title: AVC \_ 函数 \_ 获取 \_ PIN \_ 描述符
 description: AVC \_ 函数 \_ 获取 \_ PIN \_ 描述符
-ms.assetid: 1a02c328-e908-4125-abe7-4db9970ac86a
 keywords:
 - AVC_FUNCTION_GET_PIN_DESCRIPTOR 流媒体设备
 topic_type:
@@ -12,12 +11,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 47692d518d5e4966efd6b041b414276bcb6193e9
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 1c215938440af67ff5d8a61a1bdfe2cca52ce54a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89186635"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96830911"
 ---
 # <a name="avc_function_get_pin_descriptor"></a>AVC \_ 函数 \_ 获取 \_ PIN \_ 描述符
 
@@ -25,7 +24,7 @@ ms.locfileid: "89186635"
 ## <span id="ddk_avc_function_get_pin_descriptor_ks"></span><span id="DDK_AVC_FUNCTION_GET_PIN_DESCRIPTOR_KS"></span>
 
 
-**AVC \_ 函数 \_ 获取 \_ pin \_ 描述符**函数代码获取每个 pin ID (从零) 偏移量的固定描述符。
+**AVC \_ 函数 \_ 获取 \_ pin \_ 描述符** 函数代码获取每个 pin ID (从零) 偏移量的固定描述符。
 
 ### <a name="io-status-block"></a>I/o 状态块
 
@@ -41,7 +40,7 @@ ms.locfileid: "89186635"
 <thead>
 <tr class="header">
 <th>返回值</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -62,7 +61,7 @@ ms.locfileid: "89186635"
 
  
 
-### <a name="comments"></a>说明
+### <a name="comments"></a>注释
 
 此函数使用 AVC **PinDescriptor** \_ MULTIFUNC IRB 结构的 PinDescriptor 成员 \_ ，如下所示。
 
@@ -83,17 +82,17 @@ typedef struct _AVC_MULTIFUNC_IRB {
 
 ### <a name="requirements"></a>要求
 
-**标头：** 在 *avc*中声明。 包括 *avc*。
+**标头：** 在 *avc* 中声明。 包括 *avc*。
 
 ### <a name="avc_multifunc_irb-input"></a>AVC \_ MULTIFUNC \_ IRB 输入
 
 **通用**  
-此成员的 **函数** submember 必须设置为 AVC 函数从 AVC 函数的枚举 ** \_ \_ 获取 \_ PIN \_ 说明符** \_ 。
+此成员的 **函数** submember 必须设置为 AVC 函数从 AVC 函数的枚举 **\_ \_ 获取 \_ PIN \_ 说明符** \_ 。
 
 <span id="PinDescriptor"></span><span id="pindescriptor"></span><span id="PINDESCRIPTOR"></span>**PinDescriptor**  
 指定 AV/C 子单位设备上的 pin 说明。
 
-*avc.sys*的虚拟实例不支持此函数代码。
+*avc.sys* 的虚拟实例不支持此函数代码。
 
 除了 pin 说明符以外，此函数还可能返回 intersect 处理程序的地址，以及与 intersect 处理程序关联的不透明的上下文值。 如果 intersect 处理程序成员为 **NULL**，则子单位驱动程序必须提供交集处理程序。 如果 intersect 处理程序成员不为 **NULL**，则将提供交集处理程序，并且驱动程序可以使用该处理程序。
 

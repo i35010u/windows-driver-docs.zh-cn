@@ -1,15 +1,14 @@
 ---
 title: 安装 Windows Sockets Direct 组件
 description: 安装 Windows Sockets Direct 组件
-ms.assetid: d9f428a7-0335-4df1-81f8-977189b0b9a4
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: eb54f3fcc113d82425b592b9f1362d791946b8b7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2c85c2d387fa81f5a9c662d88a3f76842918a49a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380729"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96832221"
 ---
 # <a name="installing-windows-sockets-direct-components"></a>安装 Windows Sockets Direct 组件
 
@@ -17,11 +16,11 @@ ms.locfileid: "63380729"
 
 
 
-下面的主题介绍如何安装 （即，Windows 套接字交换机和单个 SAN 服务提供商） 的 Windows 套接字直接组件：
+以下主题介绍如何安装 Windows 套接字直接组件 (也就是说，Windows 套接字交换机和单个 SAN 服务提供商) 已安装：
 
-[安装 Windows 套接字开关](installing-the-windows-sockets-switch.md)
+[安装 Windows Sockets 交换机](installing-the-windows-sockets-switch.md)
 
-[SAN 服务提供程序安装](installing-a-san-service-provider.md)
+[安装 SAN 服务提供程序](installing-a-san-service-provider.md)
 
  
 

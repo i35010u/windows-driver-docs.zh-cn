@@ -1,7 +1,6 @@
 ---
 title: 'DoubleFetch 规则 (wdm) '
 description: 了解 (wdm) 的 DoubleFetch 规则。
-ms.assetid: 2DCDB0E1-AE62-4951-8029-E9557BCC0DDB
 ms.date: 10/21/2020
 keywords:
 - 'DoubleFetch 规则 (wdm) '
@@ -12,16 +11,16 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 8719bc18790196f9e1dea455d4ed84ff5c948de9
-ms.sourcegitcommit: 1690ad77580a2cfc47debb9751fd109a5991dd52
+ms.openlocfilehash: 04aaa02de94ec1626918fe6a2ed5f25a2f24972e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92346138"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96832465"
 ---
 # <a name="doublefetch-rule-wdm"></a>DoubleFetch 规则 (wdm) 
 
-**DoubleFetch**规则是一项重要的安全规则，它检查驱动程序是否安全访问通过 irp 传递到用户空间的缓冲区。  若要在驱动程序和用户模式组件之间安全发送数据，请参阅 [使用未缓冲和直接 i/o](../kernel/using-neither-buffered-nor-direct-i-o.md)中所述的适当方法。
+**DoubleFetch** 规则是一项重要的安全规则，它检查驱动程序是否安全访问通过 irp 传递到用户空间的缓冲区。  若要在驱动程序和用户模式组件之间安全发送数据，请参阅 [使用未缓冲和直接 i/o](../kernel/using-neither-buffered-nor-direct-i-o.md)中所述的适当方法。
 
 驱动程序应遵循 [访问数据缓冲区的方法](../kernel/methods-for-accessing-data-buffers.md)中所述的指导原则和最佳做法，来访问数据缓冲区。
 

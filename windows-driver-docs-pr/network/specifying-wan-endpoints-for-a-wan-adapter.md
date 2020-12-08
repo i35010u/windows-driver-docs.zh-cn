@@ -1,18 +1,17 @@
 ---
 title: 指定 WAN 适配器的 WAN 终结点
 description: 指定 WAN 适配器的 WAN 终结点
-ms.assetid: e6dd12c3-03e3-4f7d-8ad7-2511bf46c4f8
 keywords:
-- 添加注册表部分 WDK 网络连接、 WAN 适配器终结点
+- 添加-注册表--WDK 网络，WAN 适配器终结点
 - WAN 适配器终结点 WDK 网络
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e22610913c44b8aff40210aa29ef42e3150a2322
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: cd59c5b13fac909531addb7b205f6ae036151b69
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63388117"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96832105"
 ---
 # <a name="specifying-wan-endpoints-for-a-wan-adapter"></a>指定 WAN 适配器的 WAN 终结点
 
@@ -20,13 +19,13 @@ ms.locfileid: "63388117"
 
 
 
-WAN 适配器的 INF 文件必须添加**WanEndpoints**到适配器的实例键的值。 **WanEndpoints**是 REG\_DWORD 值，该值指定数量的终结点 （也称为通道、 线路或持有者渠道） 支持的 WAN 适配器。 例如， **WanEndpoints**值*基本速率接口*(BRI) ISDN 适配器是 2，而**WanEndpoints**值*主速率接口*(PRI) ISDN 适配器通常为 23。
+WAN 适配器的 INF 文件必须将 **WanEndpoints** 值添加到适配器的实例键。 **WanEndpoints** 是一个 REG \_ DWORD 值，它指定 WAN 适配器支持的端点 (也称为通道、线路或持有者通道) 。 例如，*基本速率接口* (BRI) ISDN 适配器的 **WanEndpoints** 值为2，而 *主速率接口* 的 **WanEndpoints** 值 (PRI) ISDN 适配器通常是23。
 
-**请注意**   ISDN 驱动程序在 Windows 8.1，Windows Server 2012 R2 中已弃用及更高版本。
+**注意**   Windows 8.1、Windows Server 2012 R2 和更高版本中已弃用 ISDN 驱动程序。
 
  
 
-以下是一种*添加注册表部分*，它将**WanEndpoints**值为 2，BRI ISDN 适配器：
+下面是一个 *添加注册表部分* 的示例，它为 BRI ISDN 适配器添加 **WanEndpoints** 值2：
 
 ```INF
 [a1.reg]

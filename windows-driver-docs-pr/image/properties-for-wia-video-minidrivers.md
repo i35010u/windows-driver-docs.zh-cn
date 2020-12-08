@@ -1,15 +1,14 @@
 ---
 title: WIA 视频微型驱动程序的属性
 description: WIA 视频微型驱动程序的属性
-ms.assetid: 1d02baba-c9af-4596-9d7a-2b6c6675c87c
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 16c6b925d0f9d8c4313387525a617565086ddc35
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 7d388fce9fa3b41c5cf6427ea2f0a8d47b31d9e6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89190725"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96831405"
 ---
 # <a name="properties-for-wia-video-minidrivers"></a>WIA 视频微型驱动程序的属性
 

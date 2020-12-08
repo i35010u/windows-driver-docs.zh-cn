@@ -1,7 +1,6 @@
 ---
 title: IoAllocateIrpSignalEventInCompletion 规则
 description: IoAllocateIrpSignalEventInCompletion 规则指定当设置了 Irp-PendingReturned 标志并且完成例程正在处理本地创建的异步 IRP 时，驱动程序应在完成例程中调用 KeSetEvent。
-ms.assetid: 856D9755-F400-4586-9DF8-DE9ADCCCE44A
 ms.date: 05/21/2018
 keywords:
 - IoAllocateIrpSignalEventInCompletion 规则
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 87ff2f129a4dfda43a152b143f0cf1dc1be416b4
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 5ddb3e30634ef3c9e463ec3a98bbc53aade05d20
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106894"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96832435"
 ---
 # <a name="ioallocateirpsignaleventincompletion-rule"></a>IoAllocateIrpSignalEventInCompletion 规则
 
 
-**IoAllocateIrpSignalEventInCompletion**规则指定当设置了**Irp- &gt; PendingReturned**标志并且完成例程正在处理本地创建的异步 Irp 时，驱动程序应在完成例程中调用[**KeSetEvent**](/windows-hardware/drivers/ddi/wdm/nf-wdm-kesetevent) 。
+**IoAllocateIrpSignalEventInCompletion** 规则指定当设置了 **Irp- &gt; PendingReturned** 标志并且完成例程正在处理本地创建的异步 Irp 时，驱动程序应在完成例程中调用 [**KeSetEvent**](/windows-hardware/drivers/ddi/wdm/nf-wdm-kesetevent) 。
 
 <a name="how-to-test"></a>如何测试
 -----------

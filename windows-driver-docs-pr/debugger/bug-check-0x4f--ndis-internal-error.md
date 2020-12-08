@@ -1,9 +1,8 @@
 ---
-title: Bug Check 0x4F NDIS_INTERNAL_ERROR
-description: NDIS_INTERNAL_ERROR bug 检查的值为 0x0000004F.This bug 检查极少出现。
-ms.assetid: e71916b3-3bb5-4595-a333-81ed2785b495
+title: Bug 检查 0x4F NDIS_INTERNAL_ERROR
+description: NDIS_INTERNAL_ERROR bug 检查的值为0x0000004F。此 bug 检查很少出现。
 keywords:
-- Bug Check 0x4F NDIS_INTERNAL_ERROR
+- Bug 检查 0x4F NDIS_INTERNAL_ERROR
 - NDIS_INTERNAL_ERROR
 ms.date: 05/23/2017
 topic_type:
@@ -13,22 +12,22 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 922a1b79862294ac3f86094ba7d6a64b3d76fc16
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: dcd86688d6cd2d5b745cfab2c7d69202afbc5129
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67519394"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96831624"
 ---
-# <a name="bug-check-0x4f-ndisinternalerror"></a>Bug 检查 0x4F：NDIS\_INTERNAL\_ERROR
+# <a name="bug-check-0x4f-ndis_internal_error"></a>Bug 检查0x4F： NDIS \_ 内部 \_ 错误
 
 
-NDIS\_内部\_错误 bug 检查的值为 0x0000004F。
+"NDIS \_ 内部 \_ 错误 bug 检查" 的值为 "0x0000004F"。
 
-检查此错误极少出现。
+此 bug 检查很少出现。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题面向程序员。 如果您是在使用计算机时收到蓝屏错误代码的客户，请参阅[蓝屏错误疑难解答](https://www.windows.com/stopcode)。
 
 
  

@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ BDA \_ PIDFILTER 取消 \_ 映射 \_ PID
 description: 客户端使用 KSPROPERTY \_ BDA PIDFILTER 取消标记 \_ \_ \_ 来通知 PID 筛选器节点有关使用特定 pid 标识的数据包，以便从输入流进行筛选 (即，停止从输入传递到输出) 。
-ms.assetid: 111d8857-84f4-4a7f-8771-ea6537c4c592
 keywords:
 - KSPROPERTY_BDA_PIDFILTER_UNMAP_PIDS 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4af19e3a06972627aa1e74eddf43cb7fd90857c1
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: ad6ca4f9001e588c13cbaaf832ec554aab40b09f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89192157"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96830851"
 ---
 # <a name="ksproperty_bda_pidfilter_unmap_pids"></a>KSPROPERTY \_ BDA \_ PIDFILTER 取消 \_ 映射 \_ PID
 
@@ -86,7 +85,7 @@ BDA \_ PID 取消 \_ 结构描述了使用特定 pid 标识的数据包映射，
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**BDA \_ PID 取消 \_ 映射**](/windows-hardware/drivers/ddi/bdatypes/ns-bdatypes-_bda_pid_unmap)

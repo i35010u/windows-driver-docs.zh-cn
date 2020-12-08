@@ -1,7 +1,6 @@
 ---
 title: KSCATEGORY_VIRTUAL
 description: KSCATEGORY_VIRTUAL
-ms.assetid: 065bd2b1-4863-49ff-b6e7-f09c4234adad
 keywords:
 - KSCATEGORY_VIRTUAL 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 9d8d3f16c6c5fdae69b8d03626e8dc24bf89dc5f
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 66d18c4fdec984445c78539c6860acc65937f27d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89097235"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96832322"
 ---
 # <a name="kscategory_virtual"></a>KSCATEGORY_VIRTUAL
 

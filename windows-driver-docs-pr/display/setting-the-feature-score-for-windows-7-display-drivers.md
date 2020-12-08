@@ -1,15 +1,14 @@
 ---
 title: 设置 Windows 7 显示驱动程序的功能评分
 description: 设置 Windows 7 显示驱动程序的功能评分
-ms.assetid: 7b2cf25d-a88d-48e1-8d62-8c245c289566
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ac3ebf1d6c3f1fcce2c91b0a0f948da660d6ba00
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: cdb11562d3aa173ce459b3897c36748e3e15cdf5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89066636"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96832377"
 ---
 # <a name="setting-the-feature-score-for-windows-7-display-drivers"></a>设置 Windows 7 显示驱动程序的功能评分
 
@@ -25,7 +24,7 @@ ms.locfileid: "89066636"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Feature
+<th align="left">功能
 <div>
  
 </div>

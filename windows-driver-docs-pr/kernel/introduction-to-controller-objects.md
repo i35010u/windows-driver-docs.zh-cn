@@ -1,7 +1,6 @@
 ---
 title: 控制器对象简介
 description: 控制器对象简介
-ms.assetid: a46732a7-1e60-41d5-96e9-d5284c000af1
 keywords:
 - 控制器对象 WDK 内核，关于控制器对象
 - ControllerControl 例程，关于 ControllerControl 例程
@@ -9,12 +8,12 @@ keywords:
 - I/o WDK 内核，重叠
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7ba0ef993936c825fb100705d71625df2209a306
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 5bdbd74656086b9cd54c2fe29365836c97a8bda3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89189347"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96832289"
 ---
 # <a name="introduction-to-controller-objects"></a>控制器对象简介
 
@@ -24,7 +23,7 @@ ms.locfileid: "89189347"
 
 顾名思义，控制器对象通常表示包含附加设备的物理设备控制器。 由物理控制器协调的一组相似设备的最低级别非 WDM 驱动程序可以创建控制器对象，并使用它来同步连接的设备之间的 i/o 操作。 该驱动程序实现 [*ControllerControl*](https://msdn.microsoft.com/library/windows/hardware/ff542049) 例程并调用 i/o 管理器的控制器对象支持例程。
 
-**注意**   WDM 驱动程序不支持使用控制器对象。
+**注意**   WDM 驱动程序不支持使用控制器对象。
 
  
 

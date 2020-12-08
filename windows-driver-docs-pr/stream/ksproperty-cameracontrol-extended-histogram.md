@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ CAMERACONTROL \_ 扩展 \_ 直方图
 description: KSPROPERTY \_ CAMERACONTROL \_ 扩展 \_ 直方图是用于控制驱动程序生成的直方图元数据的属性 ID。 这只是针对预览 pin 的 pin 级别控制。
-ms.assetid: 638AA1AA-F8E5-4FD7-9283-CF1F23266474
 keywords:
 - KSPROPERTY_CAMERACONTROL_EXTENDED_HISTOGRAM 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 09/10/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: ed29f643cd1a898a32e23f9484dfe306316f81d6
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 0b05424b686043a23558aa4abce00b370dd3387c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103998"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96830849"
 ---
 # <a name="ksproperty_cameracontrol_extended_histogram"></a>KSPROPERTY \_ CAMERACONTROL \_ 扩展 \_ 直方图
 
@@ -46,14 +45,14 @@ ms.locfileid: "90103998"
 <tr class="odd">
 <td><p>版本 1</p></td>
 <td><p>Pin</p></td>
-<td><p>同步</p></td>
+<td><p>Synchronous</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-以下标志可以放置在 **KSCAMERA \_ EXTENDEDPROP \_ 标头中。** 用于控制驱动程序中直方图元数据的标志字段。 默认为 **直方图 \_ **。
+以下标志可以放置在 **KSCAMERA \_ EXTENDEDPROP \_ 标头中。** 用于控制驱动程序中直方图元数据的标志字段。 默认为 **直方图 \_**。
 
 ```cpp
 #define KSCAMERA_EXTENDEDPROP_HISTOGRAM_OFF      0x0000000000000000
@@ -64,7 +63,7 @@ ms.locfileid: "90103998"
 
 如果设置为 **" \_ 直方图**"，驱动程序不应在预览 pin 上传递直方图元数据。 驱动程序不应在其元数据缓冲区大小要求中包含直方图元数据大小。
 
-如果设置为 ** \_ "直方图 on**"，则驱动程序应在预览 pin 上传递直方图元数据。 驱动程序必须在其元数据缓冲区大小要求中包含直方图元数据大小。
+如果设置为 **\_ "直方图 on**"，则驱动程序应在预览 pin 上传递直方图元数据。 驱动程序必须在其元数据缓冲区大小要求中包含直方图元数据大小。
 
 如果驱动程序没有生成直方图元数据的功能，驱动程序不应实现此控制。 如果驱动程序支持此控件，则它还必须支持 [**KSPROPERTY \_ CAMERACONTROL \_ 扩展 \_ 元数据**](ksproperty-cameracontrol-extended-metadata.md) 控件。
 

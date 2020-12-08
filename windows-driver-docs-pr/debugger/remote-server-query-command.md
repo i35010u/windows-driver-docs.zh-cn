@@ -1,7 +1,6 @@
 ---
 title: 远程服务器查询命令
-description: 若要显示的本地或远程服务器上可用的会话的列表，请使用以下语法。
-ms.assetid: c95114a3-2ff5-456b-90e2-4d7bc6346f1f
+description: 若要显示本地或远程服务器上的可用会话列表，请使用以下语法。
 keywords:
 - 远程服务器查询命令 Windows 调试
 ms.date: 05/23/2017
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: d98ff180d451e52e4f2e4e2b11b3c1240d95d37c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1673a5268cd1ffc68fa813459698f9bfb7b6816d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63353525"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96831930"
 ---
 # <a name="remote-server-query-command"></a>远程服务器查询命令
 
 
-若要显示的本地或远程服务器上可用的会话的列表，请使用以下语法。
+若要显示本地或远程服务器上的可用会话列表，请使用以下语法。
 
 ```console
 remote /q Computer
@@ -51,7 +50,7 @@ When there are no remote sessions running on the server, the Remote tool display
 No Remote servers running on \\Computer
 ```
 
-但是，当在计算机上运行的仅远程会话不可见的远程会话时，远程工具将显示以下消息：
+但是，当计算机上运行的唯一远程会话不可见时，远程工具会显示以下消息：
 
 ```console
 No visible sessions on server \\Computer

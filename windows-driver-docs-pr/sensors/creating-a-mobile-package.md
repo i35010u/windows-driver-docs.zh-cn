@@ -1,15 +1,14 @@
 ---
 title: 创建移动包
 description: 本主题提供有关创建用于在移动设备上安装示例驱动程序的包的信息。
-ms.assetid: E929D80D-17BF-4079-8CF9-972020306358
 ms.date: 07/20/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 9d0163cb922df608c4ed17a8694236e3199b0bb6
-ms.sourcegitcommit: 3464f10ffa0727e38fbe225cfab52bb8c2bb1747
+ms.openlocfilehash: 492663152225e1ee980a2d00b23a9a4c09482f3b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93352988"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96831047"
 ---
 # <a name="creating-a-mobile-package"></a>创建移动包
 
@@ -63,7 +62,7 @@ Copyright (c) Microsoft Corporation.  All rights reserved.
 >[!NOTE]
 > **Security InfSectionName** 元素的值必须与本主题中讨论的 **AddReg** 字段的值完全相同：请 [查看 INX 文件](review-and-revise-the-inf-file.md)。
 
-2. 在记事本的主菜单中，单击 " **文件** &gt; **另存为** "，然后在 " **另存为** " 对话框窗口中，使用下拉框将 " **保存类型** " 字段设置为 " **所有文件** "。 * * * *
+2. 在记事本的主菜单中，单击 " **文件** &gt; **另存为**"，然后在 " **另存为** " 对话框窗口中，使用下拉框将 " **保存类型** " 字段设置为 " **所有文件**"。 * * * *
 
 3. 在 " **文件名** " 文本框中，键入以下内容：
 

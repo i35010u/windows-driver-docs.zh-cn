@@ -1,7 +1,6 @@
 ---
 title: AVC \_ 函数 \_ 版本
 description: AVC \_ 函数 \_ 版本
-ms.assetid: 77a35af2-ddf4-454b-a3a9-f5b7312fa64a
 keywords:
 - AVC_FUNCTION_RELEASE 流媒体设备
 topic_type:
@@ -12,12 +11,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 17cbf2f7f03f79ecc688a4fe3c5ed5010b825789
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 3726a44f05ca8b8dd273e6227e85e8d5ad5ea041
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89187487"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96830899"
 ---
 # <a name="avc_function_release"></a>AVC \_ 函数 \_ 版本
 
@@ -25,7 +24,7 @@ ms.locfileid: "89187487"
 ## <span id="ddk_avc_function_release_ks"></span><span id="DDK_AVC_FUNCTION_RELEASE_KS"></span>
 
 
-**AVC \_ 函数 \_ release**函数代码会导致*avc.sys*释放缓存的 AVCCONNECTINFO 值建议的任何连接。
+**AVC \_ 函数 \_ release** 函数代码会导致 *avc.sys* 释放缓存的 AVCCONNECTINFO 值建议的任何连接。
 
 ### <a name="io-status-block"></a>I/o 状态块
 
@@ -41,7 +40,7 @@ ms.locfileid: "89187487"
 <thead>
 <tr class="header">
 <th>返回值</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -62,7 +61,7 @@ ms.locfileid: "89187487"
 
  
 
-### <a name="comments"></a>说明
+### <a name="comments"></a>注释
 
 此函数使用 AVC **PinId** \_ MULTIFUNC IRB 结构的 PinId 成员 \_ ，如下所示。
 
@@ -83,7 +82,7 @@ typedef struct _AVC_MULTIFUNC_IRB {
 
 ### <a name="requirements"></a>要求
 
-**标头：** 在 *avc*中声明。 包括 *avc*。
+**标头：** 在 *avc* 中声明。 包括 *avc*。
 
 ### <a name="avc_multifunc_irb-input"></a>AVC \_ MULTIFUNC \_ IRB 输入
 
@@ -93,7 +92,7 @@ typedef struct _AVC_MULTIFUNC_IRB {
 **PinId**  
 指定要为其释放连接的 pin (或 ID) 。
 
-*avc.sys*的虚拟实例不支持此函数代码。
+*avc.sys* 的虚拟实例不支持此函数代码。
 
 当 pin 变为非活动状态时，子单位驱动程序必须使用此函数。
 

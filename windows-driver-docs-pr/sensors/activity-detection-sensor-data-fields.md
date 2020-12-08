@@ -1,15 +1,14 @@
 ---
 title: 活动检测传感器数据字段
 description: 本主题提供有关特定于活动检测传感器的数据字段的信息。
-ms.assetid: D123C082-9E20-44C2-A9F2-DAC0E09F61B7
 ms.date: 07/20/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: fec70cfb14a58a5d813150ba8da8bc41a619d169
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 65f6e8937bc9e456c6beaa150e0487df9cee6525
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91733040"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96831075"
 ---
 # <a name="activity-detection-sensor-data-fields"></a>活动检测传感器数据字段
 

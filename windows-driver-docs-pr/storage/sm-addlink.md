@@ -1,7 +1,6 @@
 ---
 title: SM \_ AddLink 函数
 description: SM \_ ADDLINK wmi 方法将 wmi 提供程序配置为通知 wmi 客户端 fabric 链接事件。
-ms.assetid: 29ddfdb7-232a-4715-bf36-5f64554ee608
 keywords:
 - SM_AddLink 函数存储设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: e6b4408d773b884fcfc0c35f18dd27ce7260b218
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 4c2035d3105a2eee14a21b70cff4987dd293ba9e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89184371"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96830943"
 ---
 # <a name="sm_addlink-function"></a>SM \_ AddLink 函数
 
@@ -62,7 +61,7 @@ void SM_AddLink(
 <tbody>
 <tr class="odd">
 <td align="left"><p>目标平台</p></td>
-<td align="left">“桌面”</td>
+<td align="left">台式机</td>
 </tr>
 <tr class="even">
 <td align="left"><p>标头</p></td>

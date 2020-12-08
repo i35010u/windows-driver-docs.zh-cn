@@ -1,9 +1,8 @@
 ---
 title: 清晰度元素
-description: 可选的清晰度元素指定的相对量，以减少或增强的清晰度的扫描的文档。
-ms.assetid: 80a2023e-74fa-4e7e-b8e7-ecae8827cf5b
+description: 可选的清晰度元素指定要减小或增强扫描文档的清晰度的相对量。
 keywords:
-- 清晰度元素成像设备
+- 清晰度元素图像处理设备
 topic_type:
 - apiref
 api_name:
@@ -12,19 +11,19 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7f28fa4e62977f79ff3c7666c4afd79131737f4b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 55231b8fe78220de597a95bd74660b74c61963d2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63367889"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96830487"
 ---
 # <a name="sharpness-element"></a>清晰度元素
 
 
-可选**清晰度**元素指定的相对量，以减少或增强的清晰度的扫描的文档。
+可选的 **清晰度** 元素指定要减小或增强扫描文档的清晰度的相对量。
 
-<a name="usage"></a>用法
+<a name="usage"></a>使用情况
 -----
 
 ```xml
@@ -47,26 +46,26 @@ ms.locfileid: "63367889"
 </colgroup>
 <thead>
 <tr class="header">
-<th>特性</th>
-<th>在任务栏的搜索框中键入</th>
-<th>必需</th>
+<th>属性</th>
+<th>类型</th>
+<th>必须</th>
 <th>描述</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><strong><strong>Override</strong></strong></p></td>
+<td><p><strong><strong>忽略</strong></strong></p></td>
 <td><p>xs:string</p></td>
 <td><p>否</p></td>
 <td><p></p>
-<p>可选。 一个布尔值，必须为 0，为 false，1 或 true。<strong>falsetrue</strong></p></td>
+<p>可选。 必须为0、false、1或 true 的布尔值。<strong>falsetrue</strong></p></td>
 </tr>
 <tr class="even">
 <td><p><strong><strong>UsedDefault</strong></strong></p></td>
 <td><p>xs:string</p></td>
 <td><p>否</p></td>
 <td><p></p>
-<p>可选。 一个布尔值，必须为 0，为 false，1 或 true。<strong>falsetrue</strong></p></td>
+<p>可选。 必须为0、false、1或 true 的布尔值。<strong>falsetrue</strong></p></td>
 </tr>
 </tbody>
 </table>
@@ -74,12 +73,12 @@ ms.locfileid: "63367889"
 <a name="text-value"></a>文本值
 ----------
 
-从通过 100 (含)-100 的范围中的值。
+范围从-100 到100（含）之间的值。
 
 ## <a name="child-elements"></a>子元素
 
 
-没有子元素。
+没有任何子元素。
 
 ## <a name="parent-elements"></a>父元素
 
@@ -103,13 +102,13 @@ ms.locfileid: "63367889"
 <a name="remarks"></a>备注
 -------
 
-**清晰度**元素指示要减少或增强的清晰度的扫描的文档的相对量。 值为 0 指示 WSD 扫描服务应进行任何调整扫描和清晰度等等。
+**清晰度** 元素指示要减少或增强扫描文档的清晰度的相对量。 值0表示 WSD 扫描服务不应对扫描的清晰度进行调整。
 
-扫描的所有服务必须至少都支持值 0。
+所有扫描服务必须至少支持值0。
 
-WSD 扫描服务可以指定可选**重写**并**UsedDefault**属性时，才**清晰度**元素包含在**DocumentFinalParameters**层次结构。 有关详细信息**重写**并**UsedDefault**及其使用情况，请参阅[ **DocumentFinalParameters**](documentfinalparameters.md)。
+仅当 **锐度** 元素包含在 **DocumentFinalParameters** 层次结构中时，WSD 扫描服务才能指定 optional **Override** 和 **UsedDefault** 属性。 有关 **Override** 和 **UsedDefault** 及其用法的详细信息，请参阅 [**DocumentFinalParameters**](documentfinalparameters.md)。
 
-你可以部分为此元素允许的值。
+可以将此元素的允许值作为子集。
 
 ## <a name="see-also"></a>请参阅
 

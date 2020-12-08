@@ -1,7 +1,6 @@
 ---
 title: 关于文件系统筛选器驱动程序
 description: 关于文件系统筛选器驱动程序
-ms.assetid: 4bff8ad6-624a-429d-b9ec-3f96c3c7c99d
 keywords:
 - 筛选器驱动程序 WDK 文件系统，关于文件系统筛选器驱动程序
 - 文件系统筛选器驱动程序 WDK，关于文件系统筛选器驱动程序
@@ -9,20 +8,20 @@ keywords:
 - 文件系统筛选器驱动程序不是设备驱动程序
 ms.date: 02/10/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: db2b882a4feb2a4f220a4c068e3f69895c362b54
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 4c5e740c548ad148eb49efdf556b01f36820d3ee
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106890"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96831505"
 ---
 # <a name="about-file-system-filter-drivers"></a>关于文件系统筛选器驱动程序
 
 ## <a name="file-system-filter-drivers-on-windows"></a>Windows 上的文件系统筛选器驱动程序
 
-*文件系统筛选器驱动程序*是一个可选的驱动程序，它将值添加到或修改文件系统的行为。 它是一个内核模式组件，作为 Windows executive 的一部分运行。
+*文件系统筛选器驱动程序* 是一个可选的驱动程序，它将值添加到或修改文件系统的行为。 它是一个内核模式组件，作为 Windows executive 的一部分运行。
 
-文件系统筛选器驱动程序可以对一个或多个文件系统或文件系统卷的 i/o 操作进行筛选。 根据驱动程序的性质， *筛选器* 可以表示 *日志*、 *观察*、 *修改*甚至 *阻止*。 文件系统筛选器驱动程序的典型应用程序包括防病毒实用程序、加密程序和分层存储管理系统。
+文件系统筛选器驱动程序可以对一个或多个文件系统或文件系统卷的 i/o 操作进行筛选。 根据驱动程序的性质， *筛选器* 可以表示 *日志*、 *观察*、 *修改* 甚至 *阻止*。 文件系统筛选器驱动程序的典型应用程序包括防病毒实用程序、加密程序和分层存储管理系统。
 
 Windows 中有两种文件系统筛选器模型：
 
@@ -35,7 +34,7 @@ Windows 中有两种文件系统筛选器模型：
 
 ## <a name="file-system-filter-drivers-are-not-device-drivers"></a>文件系统筛选器驱动程序不是设备驱动程序
 
-*设备驱动程序*是控制特定硬件 i/o 设备的软件组件。 例如，DVD 存储驱动程序控制 DVD 驱动器。
+*设备驱动程序* 是控制特定硬件 i/o 设备的软件组件。 例如，DVD 存储驱动程序控制 DVD 驱动器。
 
 与此相反， *文件系统筛选器驱动程序* 与一个或多个文件系统配合使用来管理文件 i/o 操作。 这些操作包括：
 

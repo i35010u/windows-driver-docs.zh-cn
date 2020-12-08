@@ -1,19 +1,18 @@
 ---
 title: 将 NDIS 6.x 驱动程序移植到 NDIS 6.20
 description: 将 NDIS 6.x 驱动程序移植到 NDIS 6.20
-ms.assetid: 83fb93c3-a1e8-49b7-930f-90b910afcdb0
 keywords:
 - NDIS 6.20 WDK，移植 NDIS 1.x 驱动程序
 - NDIS 1.x 驱动程序 WDK
 - NDIS 1.x 驱动程序 WDK，移植到 NDIS 6.20
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6b3cd15a0c903df7457dddffce254f9cf31935a6
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: a9a108665019e5c0d3556a7acf7b60e306941e16
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89207811"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96831261"
 ---
 # <a name="porting-ndis-6x-drivers-to-ndis-620"></a>将 NDIS 6.x 驱动程序移植到 NDIS 6.20
 

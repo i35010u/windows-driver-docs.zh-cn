@@ -1,7 +1,6 @@
 ---
 title: 回顾旧式对齐方法
 description: 回顾旧式对齐方法
-ms.assetid: 4efc380f-6303-42e1-8651-c9d64498942a
 keywords:
 - 绘制扩展图面对齐 WDK DirectDraw
 - DirectDraw 扩展图面对齐 WDK Windows 2000 显示器
@@ -9,12 +8,12 @@ keywords:
 - 扩展的图面对齐 WDK DirectDraw
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 024031be0d42c752c93342196d307253b0e2dc4b
-ms.sourcegitcommit: f8619f20a0903dd64f8641a5266ecad6df5f1d57
+ms.openlocfilehash: daeb25421b736c83b473c953ddf6b359ae3803fc
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91423928"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96831861"
 ---
 # <a name="review-of-the-older-alignment-method"></a>回顾旧式对齐方法
 

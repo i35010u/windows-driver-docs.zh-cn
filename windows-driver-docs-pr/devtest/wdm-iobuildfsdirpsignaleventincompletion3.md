@@ -1,7 +1,6 @@
 ---
 title: 'IoBuildFsdIrpSignalEventInCompletion3 规则 (wdm) '
 description: IoBuildFsdIrpSignalEventInCompletion3 规则指定在设置了 Irp-PendingReturned 标志并且完成例程正在处理本地创建的异步 IRP 时，需要在完成例程中调用 KeSetEvent。
-ms.assetid: 9A9A8169-AEDC-4B13-B407-22F549678526
 ms.date: 05/21/2018
 keywords:
 - 'IoBuildFsdIrpSignalEventInCompletion3 规则 (wdm) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: cb975ca7c6d06296f39ed577dc376a37f97eb7ee
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 6d6600562e5b3eb352caddaa90e16db7afa3e5af
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106888"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96832431"
 ---
 # <a name="iobuildfsdirpsignaleventincompletion3-rule-wdm"></a>IoBuildFsdIrpSignalEventInCompletion3 规则 (wdm) 
 
 
-**IoBuildFsdIrpSignalEventInCompletion3**规则指定在设置了**Irp- &gt; PendingReturned**标志并且完成例程正在处理本地创建的异步 Irp 时，需要在完成例程中调用[**KeSetEvent**](/windows-hardware/drivers/ddi/wdm/nf-wdm-kesetevent) 。
+**IoBuildFsdIrpSignalEventInCompletion3** 规则指定在设置了 **Irp- &gt; PendingReturned** 标志并且完成例程正在处理本地创建的异步 Irp 时，需要在完成例程中调用 [**KeSetEvent**](/windows-hardware/drivers/ddi/wdm/nf-wdm-kesetevent) 。
 
 在这种情况下，将不会调用完成例程。
 

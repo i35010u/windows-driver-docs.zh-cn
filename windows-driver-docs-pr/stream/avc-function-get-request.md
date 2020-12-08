@@ -1,7 +1,6 @@
 ---
 title: AVC \_ 函数 \_ GET \_ 请求
 description: AVC \_ 函数 \_ GET \_ 请求
-ms.assetid: b29df7a8-782b-4014-b47e-7cf917f8e99d
 keywords:
 - AVC_FUNCTION_GET_REQUEST 流媒体设备
 topic_type:
@@ -12,22 +11,22 @@ api_type:
 - NA
 ms.date: 06/16/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: a392867306bc6625ec968c2488267243ccd439d5
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 5a9064d7837caec2174392486fc10c29f2c3d095
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89189413"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96830903"
 ---
 # <a name="avc_function_get_request"></a>AVC \_ 函数 \_ GET \_ 请求
 
-**AVC \_ 函数 \_ GET \_ REQUEST**函数代码用于注册，以接收 AV/C 单元和子发送请求。
+**AVC \_ 函数 \_ GET \_ REQUEST** 函数代码用于注册，以接收 AV/C 单元和子发送请求。
 
 ## <a name="io-status-block"></a>I/o 状态块
 
 此函数始终将 **Irp- &gt; IoStatus** 设置为 "挂起" 状态 \_ 。
 
-## <a name="comments"></a>说明
+## <a name="comments"></a>注释
 
 此函数使用 AVC \_ 命令 \_ IRB 结构，如下所示。
 
@@ -56,7 +55,7 @@ typedef struct _AVC_COMMAND_IRB {
 
 ## <a name="requirements"></a>要求
 
-**标头：** 在 *avc*中声明。 包括 *avc*。
+**标头：** 在 *avc* 中声明。 包括 *avc*。
 
 ## <a name="avc_command_irb-input"></a>AVC \_ 命令 \_ IRB 输入
 
@@ -94,7 +93,7 @@ typedef struct _AVC_COMMAND_IRB {
 
 **AlternateOpcodes**
   
-仅在注册接收单元命令时使用。 将此设置为包含调用方支持的单元操作码列表的非分页内存的地址。 操作码列表的第一个字节是要遵循的操作码的计数 (等效于) 的字节数。 包含备用操作码列表的内存的总长度为**AlternateOpcodes** \[ 0 \] + 1。
+仅在注册接收单元命令时使用。 将此设置为包含调用方支持的单元操作码列表的非分页内存的地址。 操作码列表的第一个字节是要遵循的操作码的计数 (等效于) 的字节数。 包含备用操作码列表的内存的总长度为 **AlternateOpcodes** \[ 0 \] + 1。
 
 **超时**
   
@@ -106,7 +105,7 @@ typedef struct _AVC_COMMAND_IRB {
 
 **操作码**
   
-输入时忽略。 输出时，这包含 AV/C 单元操作码。 这是通过 **AlternateOpcodes**指定的操作码之一。
+输入时忽略。 输出时，这包含 AV/C 单元操作码。 这是通过 **AlternateOpcodes** 指定的操作码之一。
 
 **OperandLength**
   
@@ -134,7 +133,7 @@ typedef struct _AVC_COMMAND_IRB {
 
 此函数始终返回 \_ "挂起" 状态，因此必须在完成例程中执行任何处理。 完成后，AVC \_ 命令 \_ IRB 结构将保存请求的操作码和操作数。 AV/C 协议要求在100ms 中发送响应。 这可以通过使用 **AVC \_ 函数 \_ SEND \_ RESPONSE** 函数在完成例程中完成。
 
-如果第一个响应使用 **AVC \_ 响应 \_ 过渡** 代码 (来自 **AvcResponseType** 枚举) ，则需要跟进处理。 在后续响应中，必须使用完成**AVC \_ 函数 \_ GET \_ 请求**原始函数时获得的**NodeAddress**和**生成**成员。 在任何情况下，都应在从初始**AVC \_ 函数 \_ 发送 \_ 响应**完成例程返回之前提交下一个**AVC \_ 函数 \_ GET \_ 请求**函数，以便可以收到下一个单位请求。
+如果第一个响应使用 **AVC \_ 响应 \_ 过渡** 代码 (来自 **AvcResponseType** 枚举) ，则需要跟进处理。 在后续响应中，必须使用完成 **AVC \_ 函数 \_ GET \_ 请求** 原始函数时获得的 **NodeAddress** 和 **生成** 成员。 在任何情况下，都应在从初始 **AVC \_ 函数 \_ 发送 \_ 响应** 完成例程返回之前提交下一个 **AVC \_ 函数 \_ GET \_ 请求** 函数，以便可以收到下一个单位请求。
 
 在填写参数之前，建议使用此结构 (使用 **RtlZeroMemory**) 。
 

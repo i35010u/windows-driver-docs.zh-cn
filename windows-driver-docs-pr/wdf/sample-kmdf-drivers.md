@@ -1,25 +1,24 @@
 ---
 title: 示例 KMDF 驱动程序
-description: 本主题列出了可从 Windows 开发人员中心-硬件下载的 (KMDF) 示例驱动程序的内核模式驱动程序框架。
-ms.assetid: 83d15b96-63b1-4584-8ef4-ccbdcc1522bb
+description: 本主题列出了可以从 Windows 开发人员中心-硬件下载的 Kernel-Mode Driver Framework (KMDF) 示例驱动程序。
 keywords:
 - 内核模式驱动程序 WDK KMDF，示例
 - KMDF WDK，示例驱动程序
-- 内核模式驱动程序框架 WDK，示例驱动程序
+- Kernel-Mode Driver Framework WDK，示例驱动程序
 - 基于框架的驱动程序 WDK KMDF，示例
 - 示例驱动程序 WDK KMDF
 ms.date: 06/04/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: d318168d52eb94943dc7f3096098eaa97045c790
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: ebe9832aeb2af7fb94632e2eca3391b15a89e65d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89189637"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96830823"
 ---
 # <a name="sample-kmdf-drivers"></a>示例 KMDF 驱动程序
 
-本主题列出了可以在 [Microsoft 示例门户](/samples/browse/?products=windows-wdk)上浏览和下载 (KMDF) 示例驱动程序的内核模式驱动程序框架。 还可以在 GitHub 上克隆、分叉或下载 [Windows-driver-samples](https://github.com/Microsoft/Windows-driver-samples) 存储库。
+本主题列出了可以在 [Microsoft 示例门户](/samples/browse/?products=windows-wdk)上浏览和下载的 Kernel-Mode Driver FRAMEWORK (KMDF) 示例驱动程序。 还可以在 GitHub 上克隆、分叉或下载 [Windows-driver-samples](https://github.com/Microsoft/Windows-driver-samples) 存储库。
 
 有关生成这些示例的信息，请参阅 [构建驱动程序](../develop/building-a-driver.md)。
 

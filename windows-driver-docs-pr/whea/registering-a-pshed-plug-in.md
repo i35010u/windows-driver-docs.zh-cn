@@ -1,26 +1,25 @@
 ---
 title: 注册 PSHED 插件
 description: 注册 PSHED 插件
-ms.assetid: 8b710aa2-1477-4906-b5cb-d269d821ea28
 keywords:
 - 平台特定硬件错误驱动程序插件 WDK WHEA，注册
 - 注册 PSHED 插件 WDK WHEA
 - PSHED 插件 WDK WHEA，注册
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e92c6816bc7efa4a7f76b9e731e560501474a7af
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: f7da1700710c3894b2ed28a78ed1c0956668e8b2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91733009"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96832043"
 ---
 # <a name="registering-a-pshed-plug-in"></a>注册 PSHED 插件
 
 
-PSHED 插件通过调用 [**PshedRegisterPlugin**](/windows-hardware/drivers/ddi/ntddk/nf-ntddk-pshedregisterplugin) 函数向 PSHED 注册自身，并传递指向已初始化 [**WHEA \_ PSHED \_ 插件 \_ 注册 \_ 包**](/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_whea_pshed_plugin_registration_packet) 结构的指针。 PSHED 插件通常从其[**DriverEntry**](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_initialize)函数或其[**AddDevice**](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_add_device)函数内调用**PshedRegisterPlugin**函数。
+PSHED 插件通过调用 [**PshedRegisterPlugin**](/windows-hardware/drivers/ddi/ntddk/nf-ntddk-pshedregisterplugin) 函数向 PSHED 注册自身，并传递指向已初始化 [**WHEA \_ PSHED \_ 插件 \_ 注册 \_ 包**](/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_whea_pshed_plugin_registration_packet) 结构的指针。 PSHED 插件通常从其 [**DriverEntry**](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_initialize)函数或其 [**AddDevice**](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_add_device)函数内调用 **PshedRegisterPlugin** 函数。
 
-在调用**PshedRegisterPlugin**之前，PSHED 插件可以调用[**PshedIsSystemWheaEnabled**](/windows-hardware/drivers/ddi/ntddk/nf-ntddk-pshedissystemwheaenabled)来检查系统是否已启用 WHEA。
+在调用 **PshedRegisterPlugin** 之前，PSHED 插件可以调用 [**PshedIsSystemWheaEnabled**](/windows-hardware/drivers/ddi/ntddk/nf-ntddk-pshedissystemwheaenabled)来检查系统是否已启用 WHEA。
 
 PSHED 插件成功注册到 PSHED 后，无法在操作系统会话期间对其取消注册。 因此，不能从系统中卸载已注册的 PSHED 插件，否则可能会发生 bug 检查。 因此，PSHED 插件不实现 [**Unload**](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_unload) 函数。
 

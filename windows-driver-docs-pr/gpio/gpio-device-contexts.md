@@ -1,15 +1,14 @@
 ---
 title: GPIO 设备上下文
 description: 常规用途 i/o (GPIO) 控制器设备由框架设备对象表示。
-ms.assetid: 4BE99C71-9BA6-44E3-A54F-DE8C3440A474
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a915a20ee3562d891a7203139a13cbf7e9d00794
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: bf948359289fe7a0281addd167654358f329ef3e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89064496"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96830609"
 ---
 # <a name="gpio-device-contexts"></a>GPIO 设备上下文
 

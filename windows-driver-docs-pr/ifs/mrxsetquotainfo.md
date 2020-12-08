@@ -1,7 +1,6 @@
 ---
 title: MRxSetQuotaInfo 例程
 description: TheMRxSetQuotaInfo 例程由 RDBSS 调用，请求网络小型重定向程序设置文件系统对象的配额信息。
-ms.assetid: 43d8669f-d122-4385-87a3-bf31bac9dfd2
 keywords:
 - MRxSetQuotaInfo 例程可安装文件系统驱动程序
 - PMRX_CALLDOWN
@@ -15,17 +14,17 @@ api_type:
 - UserDefined
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 39953b7b6eb1aaf68761c76557874f4934f221bd
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 05773ba05d0074066f8cce3c2caf7b90ceb8c18e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89063294"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96831471"
 ---
 # <a name="mrxsetquotainfo-routine"></a>MRxSetQuotaInfo 例程
 
 
-*MRxSetQuotaInfo*例程由[RDBSS](./the-rdbss-driver-and-library.md)调用，请求网络小型重定向程序设置文件系统对象的配额信息。
+*MRxSetQuotaInfo* 例程由 [RDBSS](./the-rdbss-driver-and-library.md)调用，请求网络小型重定向程序设置文件系统对象的配额信息。
 
 <a name="syntax"></a>语法
 ------
@@ -34,12 +33,12 @@ ms.locfileid: "89063294"
 PMRX_CALLDOWN MRxSetQuotaInfo;
 
 NTSTATUS MRxSetQuotaInfo(
-  _Inout_ PRX_CONTEXT RxContext
+  _Inout_ PRX_CONTEXT RxContext
 )
 { ... }
 ```
 
-<a name="parameters"></a>parameters
+<a name="parameters"></a>参数
 ----------
 
 *RxContext* \[in、out\]  
@@ -92,11 +91,11 @@ NTSTATUS MRxSetQuotaInfo(
 
 RDBSS 发出对 *MRxSetQuotaInfo* 的调用，以响应接收 [**IRP \_ MJ \_ 集 \_ 配额**](irp-mj-set-quota.md) 请求。
 
-在调用 *MRxSetQuotaInfo*之前，RDBSS 会修改 \_ *RXCONTEXT* 参数指向的 RX 上下文结构中的以下成员：
+在调用 *MRxSetQuotaInfo* 之前，RDBSS 会修改 \_ *RXCONTEXT* 参数指向的 RX 上下文结构中的以下成员：
 
-*信息. buffer*成员设置为 i/o 请求数据包中的用户缓冲区。 如果需要，此缓冲区已被 RDBSS 锁定。
+*信息. buffer* 成员设置为 i/o 请求数据包中的用户缓冲区。 如果需要，此缓冲区已被 RDBSS 锁定。
 
-**LengthRemaining**成员设置为**IrpSp &gt; 参数. SetQuota**。
+**LengthRemaining** 成员设置为 **IrpSp &gt; 参数. SetQuota**。
 
 <a name="requirements"></a>要求
 ------------
@@ -109,7 +108,7 @@ RDBSS 发出对 *MRxSetQuotaInfo* 的调用，以响应接收 [**IRP \_ MJ \_ �
 <tbody>
 <tr class="odd">
 <td align="left"><p>目标平台</p></td>
-<td align="left">桌面型</td>
+<td align="left">台式机</td>
 </tr>
 <tr class="even">
 <td align="left"><p>标头</p></td>

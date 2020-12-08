@@ -1,7 +1,6 @@
 ---
 title: 筛选数据
 description: 为了优化数据吞吐量和电池寿命，传感器设备必须对数据更新事件应用筛选条件，以便仅在需要时才引发这些事件。
-ms.assetid: EDABA09D-2C46-4546-9429-CF6DEFBF69C4
 keywords:
 - 更改敏感度
 - 传感器更改敏感度
@@ -18,12 +17,12 @@ keywords:
 - 数据筛选
 ms.date: 07/20/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: fba833d045b6b7896de33a379f104205b82e4de2
-ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
+ms.openlocfilehash: 4c5f33fce01df44202a4ea68f32af18babc06d08
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90010471"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96831015"
 ---
 # <a name="filtering-data"></a>筛选数据
 
@@ -59,7 +58,7 @@ ms.locfileid: "90010471"
 | 活动检测        | 5000                                 |
 | 环境光线传感器      | 1000                                 |
 | 气压计                 | 1000                                 |
-| 自定义传感器             | 不可用                                  |
+| 自定义传感器             | 空值                                  |
 | 地磁方向   | 100                                  |
 | 重力向量            | 100                                  |
 | 陀螺测试仪                 | 100                                  |
@@ -82,7 +81,7 @@ ms.locfileid: "90010471"
 | 活动检测        | 0 (未订阅任何活动)              |
 | 环境光线传感器      | 25% lux 更改                         |
 | 气压计                 | 0.001 bar                              |
-| 自定义传感器             | 不可用                                    |
+| 自定义传感器             | 空值                                    |
 | 地磁方向   | 10.0 度                           |
 | 重力向量            | 10.0 度                           |
 | 陀螺测试仪                 | 每秒0.50 度                |
@@ -96,7 +95,7 @@ ms.locfileid: "90010471"
 
 ## <a name="effective-current-report-interval-cri-and-change-sensitivity-cs"></a>有效的当前报表间隔 (CRI) 并 (CS 的更改敏感度) 
 
-多个应用程序可将当前报表间隔设置 (CRI) ，并为给定传感器 (CS) 属性设置更改敏感度。 当应用程序配置存在冲突时 (例如两个应用程序请求不同的更改敏感度值或不同的报表间隔) ，则传感器类扩展会确定要发送到驱动程序的最相关的 CS 和 CRI。 传感器类扩展提供给驱动程序的 CS 和 CRI 值称为) 有效的当前报表间隔 (E-CRI 和 (E-CS) 的有效的更改敏感度。
+多个应用程序可将当前报表间隔设置 (CRI) ，并为给定传感器 (CS) 属性设置更改敏感度。 当应用程序配置存在冲突时 (例如两个应用程序请求不同的更改敏感度值或不同的报表间隔) ，则传感器类扩展会确定要发送到驱动程序的最相关的 CS 和 CRI。 传感器类扩展提供给驱动程序的 CS 和 CRI 值称为 (E-CRI) 的有效当前 Report-Interval，以及 (E-CS) 的有效 Change-Sensitivity。
 
 以下函数由传感器类扩展调用、启动/停止传感器、报告示例读取或设置 CRI 和电子商务。
 

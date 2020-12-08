@@ -1,15 +1,14 @@
 ---
 title: 关于存储接收器驱动程序
 description: 关于存储接收器驱动程序
-ms.assetid: e150228e-820f-49ac-bc3f-644e77f3d544
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: eae47543610473920c9deb799ef6a34e28089a7e
-ms.sourcegitcommit: e1ff1dd43b87dfb7349cebf70ed2878dc8d7c794
+ms.openlocfilehash: 945ee68ca0e911c664f491b163484e2acd592f20
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/02/2020
-ms.locfileid: "75606521"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96830959"
 ---
 # <a name="about-storage-silo-drivers"></a>关于存储接收器驱动程序
 

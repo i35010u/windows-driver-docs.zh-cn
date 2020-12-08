@@ -1,7 +1,6 @@
 ---
 title: MRxSetFileInfo 例程
 description: MRxSetFileInfo 例程由 RDBSS 调用，请求网络小型重定向程序在文件系统对象上设置文件信息。
-ms.assetid: 4fd8cdc4-2973-4a91-b773-c84cf6f64f70
 keywords:
 - MRxSetFileInfo 例程可安装文件系统驱动程序
 - PMRX_CALLDOWN
@@ -15,17 +14,17 @@ api_type:
 - UserDefined
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2dfeb0de1cd3247e05d051f8fbec12ecd39bb641
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 31fe0087dd918e19fc9d71710a013ea50b1964c7
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89066872"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96831479"
 ---
 # <a name="mrxsetfileinfo-routine"></a>MRxSetFileInfo 例程
 
 
-*MRxSetFileInfo*例程由[RDBSS](./the-rdbss-driver-and-library.md)调用，请求网络小型重定向程序在文件系统对象上设置文件信息。
+*MRxSetFileInfo* 例程由 [RDBSS](./the-rdbss-driver-and-library.md)调用，请求网络小型重定向程序在文件系统对象上设置文件信息。
 
 <a name="syntax"></a>语法
 ------
@@ -34,12 +33,12 @@ ms.locfileid: "89066872"
 PMRX_CALLDOWN MRxSetFileInfo;
 
 NTSTATUS MRxSetFileInfo(
-  _Inout_ PRX_CONTEXT RxContext
+  _Inout_ PRX_CONTEXT RxContext
 )
 { ... }
 ```
 
-<a name="parameters"></a>parameters
+<a name="parameters"></a>参数
 ----------
 
 *RxContext* \[in、out\]  
@@ -108,13 +107,13 @@ NTSTATUS MRxSetFileInfo(
 
 RDBSS 发出对 *MRxSetFileInfo* 的调用，以响应接收 [**IRP \_ MJ \_ 集 \_ 信息**](irp-mj-set-information.md) 请求。
 
-在调用 *MRxSetFileInfo*之前，RDBSS 会修改 \_ *RXCONTEXT* 参数指向的 RX 上下文结构中的以下成员：
+在调用 *MRxSetFileInfo* 之前，RDBSS 会修改 \_ *RXCONTEXT* 参数指向的 RX 上下文结构中的以下成员：
 
-**FileInformationClass**成员设置为**IrpSp- &gt; SetFile. FileInformationClass**，即指定的文件 \_ 信息 \_ 类值。
+**FileInformationClass** 成员设置为 **IrpSp- &gt; SetFile. FileInformationClass**，即指定的文件 \_ 信息 \_ 类值。
 
-**Info. Buffer**成员设置为**Irp- &gt;AssociatedIrp.SystemBuffer**。
+**Info. Buffer** 成员设置为 **Irp- &gt;AssociatedIrp.SystemBuffer**。
 
-**信息. length**成员设置为 IrpSp. ** &gt; SetFile**。
+**信息. length** 成员设置为 IrpSp. **&gt; SetFile**。
 
 <a name="requirements"></a>要求
 ------------
@@ -127,7 +126,7 @@ RDBSS 发出对 *MRxSetFileInfo* 的调用，以响应接收 [**IRP \_ MJ \_ 集
 <tbody>
 <tr class="odd">
 <td align="left"><p>目标平台</p></td>
-<td align="left">桌面型</td>
+<td align="left">台式机</td>
 </tr>
 <tr class="even">
 <td align="left"><p>标头</p></td>
@@ -136,7 +135,7 @@ RDBSS 发出对 *MRxSetFileInfo* 的调用，以响应接收 [**IRP \_ MJ \_ 集
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**MRxIsValidDirectory**](/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_chkdir_calldown)

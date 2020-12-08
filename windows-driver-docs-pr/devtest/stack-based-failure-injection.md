@@ -1,20 +1,19 @@
 ---
 title: 基于堆栈的错误注入
 description: 基于堆栈的故障注入选项注入内核模式驱动程序中的资源故障。
-ms.assetid: B5C06413-81FB-46DA-B053-80ED347DA3EB
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3314c8904bb98c57ed1dc58486e9a9bf4cc3e211
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: b590dd241c77d16bc6267ea0c8199c90a4b8b892
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89383465"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96830683"
 ---
 # <a name="stack-based-failure-injection"></a>基于堆栈的错误注入
 
 
-**注意**   启用此功能的说明仅适用于适用于 Windows 8 的 WDK。 对于 Windows 8.1，此功能已集成到驱动程序验证程序中。 在运行 Windows 8.1 的计算机上，使用 " [系统低资源" 模拟](systematic-low-resource-simulation.md) 选项。
+**注意**  启用此功能的说明仅适用于适用于 Windows 8 的 WDK。 对于 Windows 8.1，此功能已集成到驱动程序验证程序中。 在运行 Windows 8.1 的计算机上，使用 " [系统低资源" 模拟](systematic-low-resource-simulation.md) 选项。
 
  
 
@@ -29,7 +28,7 @@ ms.locfileid: "89383465"
 
 在将 [驱动程序部署到测试计算机](/windows-hardware/drivers)时，可以激活一个或多个驱动程序的基于堆栈的故障注入功能。 [为驱动程序包项目配置驱动程序验证程序属性](/windows-hardware/drivers)时，可以选择 "基于堆栈的故障注入" 选项。 您必须重新启动计算机，以激活或停用基于堆栈的故障注入选项。 你还可以运行测试实用工具，在测试计算机上启用驱动程序验证程序和此功能。
 
-**重要提示**   当你在测试计算机上激活基于堆栈的故障注入时，请确保不要同时选择[低资源模拟](low-resources-simulation.md)。
+**重要提示**  当你在测试计算机上激活基于堆栈的故障注入时，请确保不要同时选择 [低资源模拟](low-resources-simulation.md)。
 
  
 
@@ -43,17 +42,17 @@ ms.locfileid: "89383465"
     6.  有关详细信息，请参阅 [将驱动程序部署到测试计算机](/windows-hardware/drivers) 。 必须重新启动测试计算机才能激活此选项。
 -   **使用启用和禁用驱动程序验证程序测试**
 
-    1.  还可以通过运行实用工具测试来启用驱动程序验证程序。 按照 [如何使用 Visual Studio 在运行时测试驱动程序](/windows-hardware/drivers)中所述的说明进行操作。 在 " **所有测试 \\ 驱动程序验证程序** " 测试类别下，选择 " **启用驱动程序验证程序 (可能需要重新启动") ** 并 **禁用驱动程序验证程序 (可能需要重新启动) ** 测试。
-    2.  通过在 "**驱动程序测试组**" 窗口中单击 "**启用驱动程序验证程序 (可能需要重新启动) ** ，选择" 驱动程序验证程序 "选项。
+    1.  还可以通过运行实用工具测试来启用驱动程序验证程序。 按照 [如何使用 Visual Studio 在运行时测试驱动程序](/windows-hardware/drivers)中所述的说明进行操作。 在 " **所有测试 \\ 驱动程序验证程序** " 测试类别下，选择 " **启用驱动程序验证程序 (可能需要重新启动")** 并 **禁用驱动程序验证程序 (可能需要重新启动)** 测试。
+    2.  通过在 "**驱动程序测试组**" 窗口中单击 "**启用驱动程序验证程序 (可能需要重新启动)** ，选择" 驱动程序验证程序 "选项。
     3.  选择 (检查) 基于堆栈的失败注入。
-    4.  将这些测试添加到测试组后，可以保存测试组。 若要启用基于堆栈的故障注入，请在已配置用于测试的计算机上运行 " **启用驱动程序验证程序 (可能需要重新启动) ** 测试"。
+    4.  将这些测试添加到测试组后，可以保存测试组。 若要启用基于堆栈的故障注入，请在已配置用于测试的计算机上运行 " **启用驱动程序验证程序 (可能需要重新启动)** 测试"。
 
-        若要停用驱动程序验证程序，请运行 " **禁用驱动程序验证程序" (需要重新启动) ** 测试。
+        若要停用驱动程序验证程序，请运行 " **禁用驱动程序验证程序" (需要重新启动)** 测试。
 
 ## <a name="span-idusing_the_stack_based_failure_injection_optionspanspan-idusing_the_stack_based_failure_injection_optionspanspan-idusing_the_stack_based_failure_injection_optionspanusing-the-stack-based-failure-injection-option"></a><span id="Using_the_Stack_Based_Failure_Injection_option"></span><span id="using_the_stack_based_failure_injection_option"></span><span id="USING_THE_STACK_BASED_FAILURE_INJECTION_OPTION"></span>使用基于堆栈的故障注入选项
 
 
-使用基于堆栈的故障注入进行测试时，需要注意的一个重要事项是，它找到的大多数 bug 都将导致 bug 检查。 如果你的驱动程序是启动加载的驱动程序，这可能会很麻烦。 因此，如果禁用了驱动程序验证程序，则会自动禁用基于堆栈的故障注入。 这意味着，你可以通过使用命令 **！ verifier-disable**禁用驱动程序验证程序，在启动时从调试器禁用基于堆栈的故障注入。
+使用基于堆栈的故障注入进行测试时，需要注意的一个重要事项是，它找到的大多数 bug 都将导致 bug 检查。 如果你的驱动程序是启动加载的驱动程序，这可能会很麻烦。 因此，如果禁用了驱动程序验证程序，则会自动禁用基于堆栈的故障注入。 这意味着，你可以通过使用命令 **！ verifier-disable** 禁用驱动程序验证程序，在启动时从调试器禁用基于堆栈的故障注入。
 
 如果可能，请将你的驱动程序设置为在启动时不加载该驱动程序，以便在初始测试中注入基于堆栈的故障。 然后，可以运行一些简单的加载和卸载测试。 基于堆栈的故障注入发现的许多 bug 都在初始化或清理过程中发生。 重复加载和卸载驱动程序是查找这些问题的好方法。
 
@@ -62,11 +61,11 @@ ms.locfileid: "89383465"
 ## <a name="span-idusing_the_stack_based_failure_injection__sbfi__debugger_extensionspanspan-idusing_the_stack_based_failure_injection__sbfi__debugger_extensionspanspan-idusing_the_stack_based_failure_injection__sbfi__debugger_extensionspanusing-the-stack-based-failure-injection-sbfi-debugger-extension"></a><span id="Using_the_Stack_Based_Failure_Injection__SBFI__debugger_extension"></span><span id="using_the_stack_based_failure_injection__sbfi__debugger_extension"></span><span id="USING_THE_STACK_BASED_FAILURE_INJECTION__SBFI__DEBUGGER_EXTENSION"></span>使用基于堆栈的故障注入 (SBFI) 调试程序扩展
 
 
-基于堆栈故障注入发现的大多数问题都将导致 bug 检查。 为了帮助确定这些代码 bug 的原因，WDK 提供了基于堆栈的故障注入调试器扩展和必要的符号。 安装过程将同时在您的调试器系统上安装。 默认位置为 C： \\ Program Files (x86) \\ Windows 工具包 \\ 8.0 \\ 调试 \\ * &lt; &gt; *程序 "。
+基于堆栈故障注入发现的大多数问题都将导致 bug 检查。 为了帮助确定这些代码 bug 的原因，WDK 提供了基于堆栈的故障注入调试器扩展和必要的符号。 安装过程将同时在您的调试器系统上安装。 默认位置为 C： \\ Program Files (x86) \\ Windows 工具包 \\ 8.0 \\ 调试 \\ *&lt; &gt;* 程序 "。
 
 **运行调试器扩展**
 
-- 在调试器命令提示符下，键入以下命令： **！**<em> &lt; 路径 &gt;kmautofaildbg.dll \\ </em> ** autofail**。 例如，假定在 c： dbgext 安装了调试器扩展， \\ 并且 kmautofail 在符号路径中，则应输入以下命令：
+- 在调试器命令提示符下，键入以下命令： **！**<em> &lt; 路径 &gt;kmautofaildbg.dll \\</em> **autofail**。 例如，假定在 c： dbgext 安装了调试器扩展， \\ 并且 kmautofail 在符号路径中，则应输入以下命令：
 
   ```
   !c:\dbgext\kmautofaildbg.dll.autofail

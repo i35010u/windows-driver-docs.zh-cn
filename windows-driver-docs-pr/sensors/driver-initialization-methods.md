@@ -1,15 +1,14 @@
 ---
 title: 驱动程序初始化方法
-ms.assetid: CA8F6308-501D-47BC-902E-3259949A1D57
 description: 传感器驱动程序支持的方法来初始化设备。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b54568165741c8157a72718623187dac7c0dc83e
-ms.sourcegitcommit: ec7bebe3f94536455e62b372c2a28fe69d1717f7
+ms.openlocfilehash: 6e96260f7b177b3a611377624812face12c6b512
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93349707"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96831013"
 ---
 # <a name="driver-initialization-methods"></a>驱动程序初始化方法
 

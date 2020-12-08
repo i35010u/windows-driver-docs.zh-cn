@@ -1,19 +1,18 @@
 ---
 title: 保留应用程序的处理器
 description: 保留应用程序的处理器
-ms.assetid: e09790e9-29a7-4ff6-a122-b4bd99de8bc7
 keywords:
 - CPU 配置 WDK RSS
 - 保留应用程序的处理器 WDK RSS
 - 处理器 WDK RSS
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0c7551d9eb380d4dd5cd33e7261900f7f547757b
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: a3277bd8b2bb6c790a56964fd310f756459ffd1e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89215040"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96831247"
 ---
 # <a name="reserving-processors-for-applications"></a>保留应用程序的处理器
 
@@ -25,9 +24,9 @@ ms.locfileid: "89215040"
 
 对于基本 CPU 号，NDIS 使用默认值0，但管理员可以更改此值。 RSS 接口不允许管理员为要使用的应用程序保留一个不连续的任意 Cpu 子集。
 
-在带有可伸缩网络包的 Microsoft Windows Server 2003 中，管理员可以在**HKEY \_ 本地 \_ 计算机 \\ \\ 系统 \\ CurrentControlSet \\ Services \\ Tcpip \\ 参数**中用**RssBaseCpu**注册表关键字设置基本 CPU 号。 **RssBaseCpu**值是一个 DWORD 类型，如果不存在，NDIS 将使用默认值0。
+在带有可伸缩网络包的 Microsoft Windows Server 2003 中，管理员可以在 **HKEY \_ 本地 \_ 计算机 \\ \\ 系统 \\ CurrentControlSet \\ Services \\ Tcpip \\ 参数** 中用 **RssBaseCpu** 注册表关键字设置基本 CPU 号。 **RssBaseCpu** 值是一个 DWORD 类型，如果不存在，NDIS 将使用默认值0。
 
-在 Windows Server 2008 中，管理员可以在**HKEY \_ 本地 \_ 计算机 \\ \\ 系统 \\ CurrentControlSet \\ Services \\ NDIS \\ 参数**中用**RssBaseCpu**注册表关键字设置基本 CPU 号。 **RssBaseCpu**值是一个 DWORD 类型，如果不存在，NDIS 将使用默认值0。 此注册表关键字还适用于 Windows Server 的更高版本。
+在 Windows Server 2008 中，管理员可以在 **HKEY \_ 本地 \_ 计算机 \\ \\ 系统 \\ CurrentControlSet \\ Services \\ NDIS \\ 参数** 中用 **RssBaseCpu** 注册表关键字设置基本 CPU 号。 **RssBaseCpu** 值是一个 DWORD 类型，如果不存在，NDIS 将使用默认值0。 此注册表关键字还适用于 Windows Server 的更高版本。
 
 **注意** 从 Windows 8 和 Windows Server 2012 开始，管理员可以使用 PowerShell cmdlet 控制网络适配器的许多方面。 现在不鼓励直接编辑注册表。
 

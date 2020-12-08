@@ -1,7 +1,6 @@
 ---
 title: 'DebugBreakUsage 规则 (wdm) '
 description: DebugBreakUsage 规则指定驱动程序不得调用 DbgBreakPoint 或 DbgBreakPointWithStatus。 仅当构建驱动程序的非调试版本时，此规则才适用。
-ms.assetid: 1f634b7c-6939-41ea-8eed-5207f40e5476
 ms.date: 05/21/2018
 keywords:
 - 'DebugBreakUsage 规则 (wdm) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: dd4f95caea40e0837c423b7d5d2c785cedc2ec53
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: b18af7bbd3ab7bf8a60c857d54d179098a7715ea
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104500"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96832475"
 ---
 # <a name="debugbreakusage-rule-wdm"></a>DebugBreakUsage 规则 (wdm) 
 
 
-**DebugBreakUsage**规则指定驱动程序不得调用[**DbgBreakPoint**](/windows-hardware/drivers/ddi/wdm/nf-wdm-dbgbreakpoint)或[**DbgBreakPointWithStatus**](/windows-hardware/drivers/ddi/wdm/nf-wdm-dbgbreakpointwithstatus)。 仅当构建驱动程序的非调试版本时，此规则才适用。
+**DebugBreakUsage** 规则指定驱动程序不得调用 [**DbgBreakPoint**](/windows-hardware/drivers/ddi/wdm/nf-wdm-dbgbreakpoint)或 [**DbgBreakPointWithStatus**](/windows-hardware/drivers/ddi/wdm/nf-wdm-dbgbreakpointwithstatus)。 仅当构建驱动程序的非调试版本时，此规则才适用。
 
 **驱动程序模型： WDM**
 

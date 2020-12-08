@@ -1,7 +1,6 @@
 ---
 title: KSCATEGORY_AUDIO_SPLITTER
 description: KSCATEGORY_AUDIO_SPLITTER
-ms.assetid: cae34eb3-899b-49d4-a6ea-0d94f4666518
 keywords:
 - KSCATEGORY_AUDIO_SPLITTER 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 2835b4b804f0dc520635efa507e748bf0e140aba
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: cd55e6d5a3e73c8b8eac7e7c2d204ef2ee46f42d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89095493"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96831395"
 ---
 # <a name="kscategory_audio_splitter"></a>KSCATEGORY_AUDIO_SPLITTER
 

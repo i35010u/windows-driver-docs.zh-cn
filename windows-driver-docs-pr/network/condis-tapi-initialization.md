@@ -1,7 +1,6 @@
 ---
 title: CoNDIS TAPI 初始化
 description: CoNDIS TAPI 初始化
-ms.assetid: eabb2038-ab64-4f48-8c94-e47d1139727b
 keywords:
 - CoNDIS WAN 驱动程序 WDK 网络，TAPI 服务
 - telephonic services WDK WAN，initiliazing
@@ -9,12 +8,12 @@ keywords:
 - 初始化 CoNDIS TAPI
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f01a468cf95705049dca8ccc821c19954818e6e5
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: ba7cb67717ae8735c253a3ed94ef67bffecb75ce
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89218469"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96831688"
 ---
 # <a name="condis-tapi-initialization"></a>CoNDIS TAPI 初始化
 
@@ -32,13 +31,13 @@ ms.locfileid: "89218469"
 
 若要检索有关基础硬件的信息，NDPROXY 会发出请求线路和通道地址的请求。 也就是说，NDPROXY 驱动程序查询 CoNDIS WAN 微型端口驱动程序的 TAPI 功能。 NDPROXY 驱动程序调用 [**NdisCoOidRequest**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscooidrequest) 函数来查询微型端口驱动程序的 TAPI 功能。 在此调用中，NDPROXY 将传递 NDIS \_ OID \_ 请求结构。 NDPROXY 在 NDIS OID 请求中指定以下 \_ \_ 内容：
 
--   **RequestType**成员中的**NdisRequestQueryInformation**值
+-   **RequestType** 成员中的 **NdisRequestQueryInformation** 值
 
 -    (OID) 的对象标识符，指定要从 **OID** 成员的微型端口驱动程序中检索的 TAPI 功能
 
 -   用于保存在 **InformationBuffer** 成员中返回的 TAPI 功能信息的缓冲区
 
-通过 NDPROXY 驱动程序发送到 CoNDIS WAN 微型端口驱动程序的所有查询均可同步或异步完成。 如果 CoNDIS WAN 微型端口驱动程序确定它无法立即完成查询，则它可以只返回 NDIS 状态 "挂起"， \_ \_ 并在它已完成查询时从其*ProtocolCoOidRequest*函数内调用[**NdisMCmOidRequestComplete**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismcmoidrequestcomplete)函数。
+通过 NDPROXY 驱动程序发送到 CoNDIS WAN 微型端口驱动程序的所有查询均可同步或异步完成。 如果 CoNDIS WAN 微型端口驱动程序确定它无法立即完成查询，则它可以只返回 NDIS 状态 "挂起"， \_ \_ 并在它已完成查询时从其 *ProtocolCoOidRequest* 函数内调用 [**NdisMCmOidRequestComplete**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismcmoidrequestcomplete)函数。
 
 在 CoNDIS WAN 微型端口驱动程序通知 NDPROXY 注册 [CONDIS TAPI 注册](condis-tapi-registration.md)中指定的新地址族后，NDPROXY 将查询以下 oid，以确定 CoNDIS WAN 微型端口驱动程序和微型端口驱动程序 NIC 的特定于 TAPI 的功能。
 

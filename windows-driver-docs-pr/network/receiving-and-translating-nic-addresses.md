@@ -1,7 +1,6 @@
 ---
 title: 接收和转换 NIC 地址
 description: 接收和转换 NIC 地址
-ms.assetid: c7171a4d-cc77-427e-8d23-8811f650e543
 keywords:
 - Windows 套接字直通 WDK，初始化 SAN 使用情况
 - 正在初始化 SAN 使用情况
@@ -14,12 +13,12 @@ keywords:
 - 通知 WDK San
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e5ad04ce07695c2e7afd8a74391fbf4e771def11
-ms.sourcegitcommit: 409dd20db50c58b817ef985048fb7aab952cb0ad
+ms.openlocfilehash: b51b37c72eb28c0a5e824e0a1504dd002534a234
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93244854"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96831253"
 ---
 # <a name="receiving-and-translating-nic-addresses"></a>接收和转换 NIC 地址
 

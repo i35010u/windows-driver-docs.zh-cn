@@ -1,7 +1,6 @@
 ---
 title: '旋转锁规则 (ndis) '
 description: 旋转锁规则验证 NDIS 旋转锁定接口的正确使用。
-ms.assetid: 27A20B0C-A1B9-40E6-BA9D-64BB9F58B027
 ms.date: 05/21/2018
 keywords:
 - '旋转锁规则 (ndis) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 2802c202239900d90b4eb7e7ab0a23ac51a96072
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 45572393e02f6bdfd71d4861a352579fca704dc2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102214"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96831899"
 ---
 # <a name="spinlock-rule-ndis"></a>旋转锁规则 (ndis) 
 
 
-**旋转锁**规则验证 NDIS 旋转锁定接口的正确使用。 此规则指定仅当旋转锁处于解锁状态时才对 [**NdisAcquireSpinLock**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisacquirespinlock) 进行调用。 此规则还将验证旋转锁是否在微型端口处理程序例程退出之前被释放。
+**旋转锁** 规则验证 NDIS 旋转锁定接口的正确使用。 此规则指定仅当旋转锁处于解锁状态时才对 [**NdisAcquireSpinLock**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisacquirespinlock) 进行调用。 此规则还将验证旋转锁是否在微型端口处理程序例程退出之前被释放。
 
 **驱动程序模型： NDIS**
 

@@ -1,7 +1,6 @@
 ---
 title: SD 卡驱动程序堆栈
 description: SD 卡驱动程序堆栈
-ms.assetid: 196739bb-530f-4a60-98a0-ece0b4c5ef34
 keywords:
 - SD WDK 总线，驱动程序堆栈
 - 驱动程序堆栈 WDK SD 总线
@@ -14,12 +13,12 @@ keywords:
 - 软件 WDK SD 总线
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 38a402ac5f4cdbf5f6ba05dba537f36af4edf6da
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: fbf6643e2117b5a3d52afd16f68a62dd8677ca3c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89383823"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96831125"
 ---
 # <a name="sd-card-driver-stack"></a>SD 卡驱动程序堆栈
 

@@ -1,15 +1,14 @@
 ---
 title: 将传感器连接到带 Cove 板
 description: 本主题提供有关如何将传感器测试板连接到带 Cove 板的指导。
-ms.assetid: B081F4B6-D15E-4F1A-A5C0-E19DA806EAB2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2477325e8ee4efd1522e67674026e08c257501e6
-ms.sourcegitcommit: 9e5ade5d1a311383016385ae3bc3f0a22da1dfc5
+ms.openlocfilehash: f5e8ebeba4e37f7761460a687f4c9de9f8c37a8a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95518426"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96831067"
 ---
 # <a name="connect-your-sensor-to-the-sharks-cove-board"></a>将传感器连接到带 Cove 板
 

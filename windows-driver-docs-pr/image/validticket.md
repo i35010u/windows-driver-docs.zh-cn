@@ -1,9 +1,8 @@
 ---
 title: ValidTicket 元素
-description: 所需的 ValidTicket 元素指示客户端的 ScanTicket 是否有效。
-ms.assetid: 8c2f35b5-1b1e-49a4-8aab-4d57ff9f1803
+description: 必需的 ValidTicket 元素指示客户端的 ScanTicket 是否有效。
 keywords:
-- ValidTicket 元素成像设备
+- ValidTicket 元素图像设备
 topic_type:
 - apiref
 api_name:
@@ -12,19 +11,19 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 62cce5fb77d4c10f1da4d1ea5c23129cba95c512
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 811552a596d53106aec1253a0ac19b6f50713c84
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63356132"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96832357"
 ---
 # <a name="validticket-element"></a>ValidTicket 元素
 
 
-所需**ValidTicket**元素指示客户端是否[ **ScanTicket** ](scanticket.md)有效。
+必需的 **ValidTicket** 元素指示客户端的 [**ScanTicket**](scanticket.md) 是否有效。
 
-<a name="usage"></a>用法
+<a name="usage"></a>使用情况
 -----
 
 ```xml
@@ -41,12 +40,12 @@ ms.locfileid: "63356132"
 <a name="text-value"></a>文本值
 ----------
 
-必需。 一个布尔值，必须为 0，为 false，1 或 true。
+必需。 必须为0、false、1或 true 的布尔值。
 
 ## <a name="child-elements"></a>子元素
 
 
-没有子元素。
+没有任何子元素。
 
 ## <a name="parent-elements"></a>父元素
 
@@ -70,7 +69,7 @@ ms.locfileid: "63356132"
 <a name="remarks"></a>备注
 -------
 
-客户端提交[ **ScanTicket** ](scanticket.md)通过验证[ **ValidateScanTicketRequest** ](validatescanticketrequest.md)操作。 WSD 扫描服务将返回验证信息，其中包括**ValidTicket**，在[ **ValidateScanTicketResponse**](validatescanticketresponse.md)。
+客户端通过 [**ValidateScanTicketRequest**](validatescanticketrequest.md)操作提交 [**ScanTicket**](scanticket.md)进行验证。 WSD 扫描服务在 [**ValidateScanTicketResponse**](validatescanticketresponse.md)中返回验证信息，其中包括 **ValidTicket**。
 
 ## <a name="see-also"></a>请参阅
 

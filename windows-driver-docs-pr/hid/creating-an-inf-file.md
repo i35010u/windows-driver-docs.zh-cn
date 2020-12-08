@@ -1,7 +1,6 @@
 ---
 title: 创建 INF 文件
 description: 创建 INF 文件
-ms.assetid: c45fb42c-f0d6-4ab8-9a19-4bbf98c4cf8c
 keywords:
 - 游戏杆 WDK HID、INF 文件
 - 虚拟游戏杆驱动程序 WDK HID、INF 文件
@@ -10,12 +9,12 @@ keywords:
 - INF 文件 WDK 操纵杆，创建
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 833e83e7fb036fc60940a0622a34dbdcd32dc65e
-ms.sourcegitcommit: a866b3470025d85b25a48857a81f893179698e7e
+ms.openlocfilehash: 73d99bf690b059ffbda3848c4708d6ece785a8e1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92356031"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96830577"
 ---
 # <a name="creating-an-inf-file"></a>创建 INF 文件
 

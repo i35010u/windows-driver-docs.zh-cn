@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ 分配器 \_ 控件 \_ 捕获 \_ CAP
 description: KSPROPERTY \_ 分配器 \_ 控制 \_ 捕获 \_ Cap 属性通知覆盖混音器 (视频端口的捕获功能，如果) 提供了捕获支持。
-ms.assetid: 9e2947a3-ef5b-4a2a-a607-6c0c4be44b1c
 keywords:
 - KSPROPERTY_ALLOCATOR_CONTROL_CAPTURE_CAPS 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d711de3fa2153e8c5912a9af6693fd3c0e9c7904
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 0e9f57f058bda902c4f95206f60f9e923519a339
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103374"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96830855"
 ---
 # <a name="ksproperty_allocator_control_capture_caps"></a>KSPROPERTY \_ 分配器 \_ 控件 \_ 捕获 \_ CAP
 
@@ -79,7 +78,7 @@ KSPROPERTY \_ 分配器 \_ 控制 \_ 捕获 \_ Cap 属性通知覆盖混音器 (
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSPROPERTY**](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)

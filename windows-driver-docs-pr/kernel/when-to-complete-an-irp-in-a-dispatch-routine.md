@@ -1,18 +1,17 @@
 ---
 title: 何时在 Dispatch 例程中完成 IRP
 description: 何时在 Dispatch 例程中完成 IRP
-ms.assetid: 24159535-927f-490c-9472-05ea565b7ae5
 keywords:
 - 完成 Irp WDK 内核，调度例程
 - 调度例程 WDK 内核，完成 Irp
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: eab14c5cb6dc47b3b44e528c5c146a01f30d7e26
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 6453f8e84b28855b1074d0b1cd9ab4a17e45d854
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89184243"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96832285"
 ---
 # <a name="when-to-complete-an-irp-in-a-dispatch-routine"></a>何时在 Dispatch 例程中完成 IRP
 
@@ -20,7 +19,7 @@ ms.locfileid: "89184243"
 
 
 
-通常，驱动程序不会在其调度例程中完成 Irp，除非给定请求的参数无效，或者在设备驱动程序中，除非特定**IRP \_ MJ \_ <em>XXX</em> **不需要设备 i/o 操作。
+通常，驱动程序不会在其调度例程中完成 Irp，除非给定请求的参数无效，或者在设备驱动程序中，除非特定 **IRP \_ MJ \_ <em>XXX</em>** 不需要设备 i/o 操作。
 
 分层驱动程序链中的每个驱动程序都可以在其自己的 i/o 堆栈位置中检查该驱动程序的调度例程收到的每个 IRP 的参数有效性。 在最高可能的驱动程序的调度例程中完成具有无效参数的 Irp 可提高任何驱动程序链和整个系统的 i/o 吞吐量。
 

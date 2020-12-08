@@ -1,6 +1,5 @@
 ---
 title: 'ForwardedAtBadIrql 规则 (wdm) '
-ms.assetid: d2d91fb9-330b-420b-8409-509cfb47fe07
 ms.date: 05/21/2018
 description: '了解详细信息： ForwardedAtBadIrql 规则 (wdm) '
 keywords:
@@ -12,12 +11,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 6acf43a1a7c501a061120f1b2a1b8df210864836
-ms.sourcegitcommit: f47c072e88dce59daba1231027b60eb56bd2cde9
+ms.openlocfilehash: 2e6a1b3ed05b32168317fd9b08a77793d2d58bd8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92689408"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96832453"
 ---
 # <a name="forwardedatbadirql-rule-wdm"></a>ForwardedAtBadIrql 规则 (wdm) 
 

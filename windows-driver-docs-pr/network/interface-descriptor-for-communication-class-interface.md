@@ -1,15 +1,14 @@
 ---
 title: 通信类接口的接口描述符
 description: 通信类接口的接口描述符
-ms.assetid: e3873a58-34fc-4ca0-8c45-197401cbf08b
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e87c6169d447e5d49e316d589045d5d96ad7e02d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0c5adeeeba701f67f6cf071ed445729a31c1e763
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380730"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96832215"
 ---
 # <a name="interface-descriptor-for-communication-class-interface"></a>通信类接口的接口描述符
 
@@ -27,10 +26,10 @@ ms.locfileid: "63380730"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">偏移量</th>
+<th align="left">Offset</th>
 <th align="left">字段</th>
 <th align="left">大小</th>
-<th align="left">ReplTest1</th>
+<th align="left">值</th>
 <th align="left">描述</th>
 </tr>
 </thead>
@@ -61,7 +60,7 @@ ms.locfileid: "63380730"
 <td align="left"><p>bNumEndpoints</p></td>
 <td align="left"><p>1</p></td>
 <td align="left"><p>0x01</p></td>
-<td align="left"><p>1 个终结点</p></td>
+<td align="left"><p>1个终结点</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>5</p></td>
@@ -75,14 +74,14 @@ ms.locfileid: "63380730"
 <td align="left"><p>bInterfaceSubclass</p></td>
 <td align="left"><p>1</p></td>
 <td align="left"><p>0x02</p></td>
-<td align="left"><p>抽象控制模型</p></td>
+<td align="left"><p>抽象控件模型</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>7</p></td>
 <td align="left"><p>bInterfaceProtocol</p></td>
 <td align="left"><p>1</p></td>
 <td align="left"><p>0xFF</p></td>
-<td align="left"><p>特定于供应商的协议</p></td>
+<td align="left"><p>供应商特定协议</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>8</p></td>

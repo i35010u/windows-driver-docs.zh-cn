@@ -1,22 +1,21 @@
 ---
 title: 日志记录和调查
-description: 本主题介绍日志记录和调查的 GPIO 实现。
-ms.assetid: 27D6349D-5F92-450B-B9AA-90BA9C5D7E65
+description: 本主题介绍 GPIO 实现的日志记录和调查。
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 60b92bcd702c6d59c12a8473c23372540e1c8dce
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fbddf175c1509ef34e6199f0aacc4fd498e18235
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63392627"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96830595"
 ---
 # <a name="logging-and-investigations"></a>日志记录和调查
 
 
-本主题介绍日志记录和调查的 GPIO 实现。
+本主题介绍 GPIO 实现的日志记录和调查。
 
-## <a name="span-idlivedebugprintsfromthekerneldebuggerspanspan-idlivedebugprintsfromthekerneldebuggerspanspan-idlivedebugprintsfromthekerneldebuggerspanlive-debug-prints-from-the-kernel-debugger"></a><span id="Live_debug_prints_from_the_kernel_debugger"></span><span id="live_debug_prints_from_the_kernel_debugger"></span><span id="LIVE_DEBUG_PRINTS_FROM_THE_KERNEL_DEBUGGER"></span>从内核调试程序的实时调试打印
+## <a name="span-idlive_debug_prints_from_the_kernel_debuggerspanspan-idlive_debug_prints_from_the_kernel_debuggerspanspan-idlive_debug_prints_from_the_kernel_debuggerspanlive-debug-prints-from-the-kernel-debugger"></a><span id="Live_debug_prints_from_the_kernel_debugger"></span><span id="live_debug_prints_from_the_kernel_debugger"></span><span id="LIVE_DEBUG_PRINTS_FROM_THE_KERNEL_DEBUGGER"></span>从内核调试器打印实时调试
 
 
 ``` syntax
@@ -25,16 +24,16 @@ ms.locfileid: "63392627"
 !wmitrace.stop buttonTrace
 ```
 
-## <a name="span-idlogsandinvestigationsspanspan-idlogsandinvestigationsspanspan-idlogsandinvestigationsspanlogs-and-investigations"></a><span id="Logs_and_investigations"></span><span id="logs_and_investigations"></span><span id="LOGS_AND_INVESTIGATIONS"></span>日志和调查
+## <a name="span-idlogs_and_investigationsspanspan-idlogs_and_investigationsspanspan-idlogs_and_investigationsspanlogs-and-investigations"></a><span id="Logs_and_investigations"></span><span id="logs_and_investigations"></span><span id="LOGS_AND_INVESTIGATIONS"></span>日志和调查
 
 
-从 KD IFR 日志：
+KD 中的 IFR 日志：
 
 ``` syntax
 !rcdrkd msgpiowin32 
 ```
 
-LogMan:
+LogMan
 
 ``` syntax
  
@@ -45,9 +44,9 @@ logman stop -ets buttonTrace
 
 ### <a name="span-idvalidationsspanspan-idvalidationsspanspan-idvalidationsspanvalidations"></a><span id="Validations"></span><span id="validations"></span><span id="VALIDATIONS"></span>验证
 
-可以使用 IFR 日志或 Logman 验证正确切换状态。
+你可以使用 IFR 日志或 Logman 来验证状态是否正确切换。
 
-例如，如果希望停靠指示器更改，以下条目应是日志中找到在触发通知时。
+例如，如果需要更改插接指示器，则应在触发通知时在日志中找到以下条目。
 
 ``` syntax
 --- start of log ---

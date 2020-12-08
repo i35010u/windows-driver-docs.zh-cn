@@ -1,7 +1,6 @@
 ---
 title: IoAllocateFree 规则
 description: IoAllocateFree 规则指定，驱动程序只应在以前使用 IoAllocateIrp 分配的 Irp 上使用 IoFreeIrp。
-ms.assetid: 902CC117-9B46-4F3E-A836-80F518E01281
 ms.date: 05/21/2018
 keywords:
 - IoAllocateFree 规则
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 6c7897fe5d1c51d928aa6166e5451e1bc6205326
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 986e4444b11df9001041c746b3589898b6c77f0c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104708"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96832439"
 ---
 # <a name="ioallocatefree-rule"></a>IoAllocateFree 规则
 
 
-**IoAllocateFree**规则指定，驱动程序只应在以前使用[**IoAllocateIrp**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioallocateirp)分配的 irp 上使用[**IoFreeIrp**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iofreeirp) 。
+**IoAllocateFree** 规则指定，驱动程序只应在以前使用 [**IoAllocateIrp**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioallocateirp)分配的 irp 上使用 [**IoFreeIrp**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iofreeirp) 。
 
 <a name="how-to-test"></a>如何测试
 -----------

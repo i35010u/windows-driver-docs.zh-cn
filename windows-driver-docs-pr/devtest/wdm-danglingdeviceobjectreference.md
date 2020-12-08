@@ -1,7 +1,6 @@
 ---
 title: 'DanglingDeviceObjectReference 规则 (wdm) '
 description: DanglingDeviceObjectReference 规则指定驱动程序将 ObDereferenceObject 与 IoGetAttachedDeviceReference 返回的设备对象指针一起调用。
-ms.assetid: b2aeaa16-f246-48c7-9e80-719d441a44ef
 ms.date: 05/21/2018
 keywords:
 - 'DanglingDeviceObjectReference 规则 (wdm) '
@@ -12,19 +11,19 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: c484c18b7eaada4847ff5f3023fd07235771c913
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 4d9c5a5ec754474da66d989e52d9e47bb19b06d9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105612"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96832477"
 ---
 # <a name="danglingdeviceobjectreference-rule-wdm"></a>DanglingDeviceObjectReference 规则 (wdm) 
 
 
-**DanglingDeviceObjectReference**规则指定驱动程序将[**ObDereferenceObject**](/windows-hardware/drivers/ddi/wdm/nf-wdm-obdereferenceobject)与[**IoGetAttachedDeviceReference**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-iogetattacheddevicereference)返回的设备对象指针一起调用。
+**DanglingDeviceObjectReference** 规则指定驱动程序将 [**ObDereferenceObject**](/windows-hardware/drivers/ddi/wdm/nf-wdm-obdereferenceobject)与 [**IoGetAttachedDeviceReference**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-iogetattacheddevicereference)返回的设备对象指针一起调用。
 
-此规则还指定通过在驱动程序退出之前调用**ObDereferenceObject**来取消引用通过调用**IoGetAttachedDeviceReference**引用的驱动程序的所有设备对象指针。 ObfDereferenceObject
+此规则还指定通过在驱动程序退出之前调用 **ObDereferenceObject** 来取消引用通过调用 **IoGetAttachedDeviceReference** 引用的驱动程序的所有设备对象指针。 ObfDereferenceObject
 
 **驱动程序模型： WDM**
 

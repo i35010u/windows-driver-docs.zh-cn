@@ -1,7 +1,6 @@
 ---
 title: AVC \_ 函数 \_ 获取 \_ PIN \_ 计数
 description: AVC \_ 函数 \_ 获取 \_ PIN \_ 计数
-ms.assetid: fb455843-c979-479c-ba7c-f84875a9ba6f
 keywords:
 - AVC_FUNCTION_GET_PIN_COUNT 流媒体设备
 topic_type:
@@ -12,12 +11,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9a92bf97614242fecdf1f12ce92cb24428da1c7b
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: f27f851de0d01b82bb057787c5a0ebba98fb6386
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89188475"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96830907"
 ---
 # <a name="avc_function_get_pin_count"></a>AVC \_ 函数 \_ 获取 \_ PIN \_ 计数
 
@@ -25,7 +24,7 @@ ms.locfileid: "89188475"
 ## <span id="ddk_avc_function_get_pin_count_ks"></span><span id="DDK_AVC_FUNCTION_GET_PIN_COUNT_KS"></span>
 
 
-**AVC \_ 函数 \_ 获取 \_ PIN \_ 计数**函数代码获取底层子单位设备支持的 pin 数目。
+**AVC \_ 函数 \_ 获取 \_ PIN \_ 计数** 函数代码获取底层子单位设备支持的 pin 数目。
 
 ### <a name="io-status-block"></a>I/o 状态块
 
@@ -41,7 +40,7 @@ ms.locfileid: "89188475"
 <thead>
 <tr class="header">
 <th>返回值</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -62,7 +61,7 @@ ms.locfileid: "89188475"
 
  
 
-### <a name="comments"></a>说明
+### <a name="comments"></a>注释
 
 此函数使用 AVC **PinCount** \_ MULTIFUNC IRB 结构的 PinCount 成员 \_ ，如下所示。
 
@@ -80,17 +79,17 @@ typedef struct _AVC_MULTIFUNC_IRB {
 
 ### <a name="requirements"></a>要求
 
-**标头：** 在 *avc*中声明。 包括 *avc*。
+**标头：** 在 *avc* 中声明。 包括 *avc*。
 
 ### <a name="avc_multifunc_irb-input"></a>AVC \_ MULTIFUNC \_ IRB 输入
 
 **通用**  
-此成员的 **函数** submember 必须设置为 AVC 函数从 AVC 函数枚举 ** \_ \_ 获取 \_ PIN \_ 计数** \_ 。
+此成员的 **函数** submember 必须设置为 AVC 函数从 AVC 函数枚举 **\_ \_ 获取 \_ PIN \_ 计数** \_ 。
 
 <span id="PinCount"></span><span id="pincount"></span><span id="PINCOUNT"></span>**PinCount**  
 指定从函数返回时，AV/C 设备上的 pin 数目。
 
-*avc.sys*的虚拟实例不支持此函数代码。
+*avc.sys* 的虚拟实例不支持此函数代码。
 
 此名称必须以 IRQL = 被动 \_ 级别调用。
 

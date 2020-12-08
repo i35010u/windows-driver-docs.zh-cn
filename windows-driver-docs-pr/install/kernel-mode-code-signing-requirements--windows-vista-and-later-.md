@@ -1,7 +1,6 @@
 ---
 title: 内核模式代码签名要求
 description: 内核模式代码签名要求
-ms.assetid: da02fcb3-d073-42cd-8247-71e2e9e93f65
 keywords:
 - 驱动程序签名 WDK，内核模式代码签名要求
 - 对驱动程序进行签名 WDK，内核模式代码签名要求
@@ -11,12 +10,12 @@ keywords:
 - 内核模式驱动程序签名 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e096bcaf5206f681a9cfa8c34d9d47ea77e826af
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: ea350818ce717313eb5e27c8b634a431133b2bbf
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91733503"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96831397"
 ---
 # <a name="kernel-mode-code-signing-requirements"></a>内核模式代码签名要求
 
@@ -27,7 +26,7 @@ ms.locfileid: "91733503"
 
 有关签名和仪表板提交的信息，请参阅 [获取 Microsoft 为多个 Windows 版本签名的驱动程序](../dashboard/get-drivers-signed-by-microsoft-for-multiple-windows-versions.md)。
 
-### <a name="kernel-mode-code-signing-requirements-for-public-release-of-a-driver"></a><a href="" id="kernel-mode-code-signing-requirements-for-public-release-of-a-driver"></a> 公共版本驱动程序的内核模式代码签名要求
+### <a name="kernel-mode-code-signing-requirements-for-public-release-of-a-driver"></a><a href="" id="kernel-mode-code-signing-requirements-for-public-release-of-a-driver"></a> Kernel-Mode 公开发布驱动程序的代码签名要求
 
 > [!NOTE]
 > 从 Windows 10 版本1607开始，Windows 将不会加载任何新的内核模式驱动程序，这些驱动程序未由 Microsoft 通过 [硬件开发人员中心](../dashboard/register-for-the-hardware-program.md)进行签名。  有效的签名可通过 [硬件认证](../dashboard/hardware-certification-submissions.md) 或 [证明](../dashboard/attestation-signing-a-kernel-driver-for-public-release.md)获得。 
@@ -49,7 +48,7 @@ Windows Vista 和更高版本的 Windows 仅对以下驱动程序强制实施内
 
 -   内核模式 *启动-启动驱动程序*。
 
-### <a name="kernel-mode-code-signing-requirements-during-development-and-test"></a><a href="" id="kernel-mode-code-signing-requirements-during-development-and-test"></a> 开发和测试期间的内核模式代码签名要求
+### <a name="kernel-mode-code-signing-requirements-during-development-and-test"></a><a href="" id="kernel-mode-code-signing-requirements-during-development-and-test"></a> 在开发和测试期间 Kernel-Mode 代码签名要求
 
 <a href="" id="--------64-bit-versions-of-windows-starting-with-"></a>**64 位版本的 windows （从 Windows Vista 开始）**  
 内核模式代码签名策略要求对内核模式驱动程序进行 [测试签名](test-signing-driver-packages.md) ，并 [启用](the-testsigning-boot-configuration-option.md)测试签名。 测试签名可以是 [WHQL 测试签名](whql-test-signature-program.md) ，也可以由 [测试证书](./makecert-test-certificate.md)内部生成。 驱动程序必须对其进行测试签名，如下所示：

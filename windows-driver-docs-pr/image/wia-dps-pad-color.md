@@ -1,9 +1,8 @@
 ---
-title: WIA\_DPS\_PAD\_颜色
-description: WIA\_DPS\_PAD\_颜色属性包含当前 WIA 微型驱动程序来填充未对齐的数据时使用的填充颜色。 WIA 微型驱动程序创建并维护此属性。
-ms.assetid: db78fc1b-72e4-4edc-8f4f-9209e6b36aa6
+title: WIA \_ DPS \_ PAD \_ 颜色
+description: WIA \_ DPS \_ PAD \_ COLOR 属性包含 wia 微型驱动程序填充未对齐的数据时使用的当前填充颜色。 WIA 微型驱动程序创建并维护此属性。
 keywords:
-- WIA_DPS_PAD_COLOR 成像设备
+- WIA_DPS_PAD_COLOR 图像设备
 topic_type:
 - apiref
 api_name:
@@ -14,33 +13,33 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 45da42ad8c6d7d70794a31c49e9d3ea44d79beca
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 96a88b1b1e84bfac3a61678e508416bc6c06f951
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63378071"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96831771"
 ---
-# <a name="wiadpspadcolor"></a>WIA\_DPS\_PAD\_颜色
+# <a name="wia_dps_pad_color"></a>WIA \_ DPS \_ PAD \_ 颜色
 
 
-WIA\_DPS\_PAD\_颜色属性包含当前 WIA 微型驱动程序来填充未对齐的数据时使用的填充颜色。 WIA 微型驱动程序创建并维护此属性。
+WIA \_ DPS \_ PAD \_ COLOR 属性包含 wia 微型驱动程序填充未对齐的数据时使用的当前填充颜色。 WIA 微型驱动程序创建并维护此属性。
 
 ## <span id="ddk_wia_dps_pad_color_si"></span><span id="DDK_WIA_DPS_PAD_COLOR_SI"></span>
 
 
-属性类型：VT\_UI1 | VT\_VECTOR
+属性类型： VT \_ UI1 |VT \_ 矢量
 
-有效值：WIA\_PROP\_NONE
+有效值： WIA " \_ \_ 无"
 
-访问权限：读取/写入
+访问权限：读/写
 
 <a name="remarks"></a>备注
 -------
 
-WIA\_DPS\_PAD\_COLOR 属性应报告为 RGBQUAD 结构 （它 Microsoft Windows SDK 文档中所述） 的窗体中的 4 字节值的向量。
+\_应将 "WIA DPS \_ PAD \_ 颜色" 属性报告为四个字节值的向量，格式为 "RGBQUAD 结构 (，如 Microsoft Windows SDK 文档) 中所述。
 
-应用程序读取 WIA\_DPS\_PAD\_颜色以获取所使用的填充颜色。
+应用程序将读取 WIA \_ DPS \_ PAD \_ 颜色以获取所使用的填充颜色。
 
 <a name="requirements"></a>要求
 ------------
@@ -52,8 +51,8 @@ WIA\_DPS\_PAD\_COLOR 属性应报告为 RGBQUAD 结构 （它 Microsoft Windows 
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Wiadef.h （包括 Wiadef.h）</td>
+<td><p>标头</p></td>
+<td>Wiadef (包含 Wiadef) </td>
 </tr>
 </tbody>
 </table>

@@ -1,15 +1,14 @@
 ---
 title: Windows 便携设备 (WPD) 驱动程序示例
 description: 此目录中的驱动程序示例提供了为设备编写自定义 WPD 驱动程序的起点。
-ms.assetid: 5EB5B820-A29A-4A93-BBB9-6F4CDF101E3B
 ms.date: 11/21/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 71c710d6d5d50516faa78c0f6faac955ab0c7fe6
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: a4c618dc8bafeb30442f3dec42cacf2f10bba921
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89186181"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96831147"
 ---
 # <a name="windows-portable-device-wpd-driver-samples"></a>Windows 便携设备 (WPD) 驱动程序示例
 

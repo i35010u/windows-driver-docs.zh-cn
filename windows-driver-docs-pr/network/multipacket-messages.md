@@ -1,15 +1,14 @@
 ---
 title: 多数据包消息
 description: 多数据包消息
-ms.assetid: 58979799-4618-43b9-a6dc-0635f6ade9b3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2f17eb1fe0b9a6a21a65ae425f317f4c8d24fdf9
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: a2db89efd0212004e5d63049a83a5cb9f31a5ec0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107000"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96831321"
 ---
 # <a name="multipacket-messages"></a>多数据包消息
 
@@ -17,9 +16,9 @@ ms.locfileid: "90107000"
 
 
 
-在任一方向，都可以通过单个传输发送多个 [**远程 \_ NDIS \_ 数据包 \_ **](/previous-versions/ff570635(v=vs.85)) 消息消息。 Multipacket 消息通过连接多个 **远程 \_ NDIS \_ 数据包 \_ 消息** 元素形成。 此类传输的最大长度由[**远程 \_ NDIS \_ INITIALIZE \_ **](/previous-versions/ff570624(v=vs.85))消息和响应消息中传递的*MaxTransferSize*参数控制。 宿主还会将其捆绑的消息数限制为单一传输到设备在[**远程 \_ NDIS \_ INITIALIZE \_ CMPLT**](/previous-versions/ff570621(v=vs.85))响应消息中返回的*MaxPacketsPerMessage*参数。
+在任一方向，都可以通过单个传输发送多个 [**远程 \_ NDIS \_ 数据包 \_**](/previous-versions/ff570635(v=vs.85)) 消息消息。 Multipacket 消息通过连接多个 **远程 \_ NDIS \_ 数据包 \_ 消息** 元素形成。 此类传输的最大长度由 [**远程 \_ NDIS \_ INITIALIZE \_**](/previous-versions/ff570624(v=vs.85))消息和响应消息中传递的 *MaxTransferSize* 参数控制。 宿主还会将其捆绑的消息数限制为单一传输到设备在 [**远程 \_ NDIS \_ INITIALIZE \_ CMPLT**](/previous-versions/ff570621(v=vs.85))响应消息中返回的 *MaxPacketsPerMessage* 参数。
 
-与单数据包消息的不同之处在于，每个[**远程 \_ NDIS \_ 数据包 \_ **](/previous-versions/ff570635(v=vs.85))消息标头中的*MessageLength*字段都包含一些额外的填充字节。 这些填充字节将添加到除最后一个 **远程 \_ ndis \_ 数据包 \_ 消息** 以外的所有字符，以使后续远程 \_ ndis \_ 数据包 \_ 消息在适当的字节边界处启动。 对于从设备发送到主机的消息，这种填充应该会导致每个远程 \_ NDIS \_ 数据包消息从 \_ multipacket 消息开头开始的字节偏移量开始的字节偏移量。 当主机向设备发送 multipacket 消息时，它将遵循[**远程 \_ NDIS \_ INITIALIZE \_ CMPLT**](/previous-versions/ff570621(v=vs.85))响应消息中设备指定的*PacketAlignmentFactor* 。
+与单数据包消息的不同之处在于，每个 [**远程 \_ NDIS \_ 数据包 \_**](/previous-versions/ff570635(v=vs.85))消息标头中的 *MessageLength* 字段都包含一些额外的填充字节。 这些填充字节将添加到除最后一个 **远程 \_ ndis \_ 数据包 \_ 消息** 以外的所有字符，以使后续远程 \_ ndis \_ 数据包 \_ 消息在适当的字节边界处启动。 对于从设备发送到主机的消息，这种填充应该会导致每个远程 \_ NDIS \_ 数据包消息从 \_ multipacket 消息开头开始的字节偏移量开始的字节偏移量。 当主机向设备发送 multipacket 消息时，它将遵循 [**远程 \_ NDIS \_ INITIALIZE \_ CMPLT**](/previous-versions/ff570621(v=vs.85))响应消息中设备指定的 *PacketAlignmentFactor* 。
 
 请注意，不会在任何远程 NDIS 定义的字段中显式指定组合消息中的 multipacket 消息和 [**远程 \_ ndis \_ 数据包 \_ 消息**](/previous-versions/ff570635(v=vs.85)) 元素数的组合长度。 组合长度在特定于总线的传输机制中是隐式的，主机或设备必须遍历组合消息的 *MessageLength* 字段，以确定组合消息的数量。
 
@@ -34,7 +33,7 @@ ms.locfileid: "90107000"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">偏移量</th>
+<th align="left">Offset</th>
 <th align="left">大小</th>
 <th align="left">字段</th>
 <th align="left">值</th>
@@ -104,7 +103,7 @@ ms.locfileid: "90107000"
 <tr class="odd">
 <td align="left"><p>40</p></td>
 <td align="left"><p>4</p></td>
-<td align="left"><p>保留</p></td>
+<td align="left"><p>预留</p></td>
 <td align="left"><p>0</p></td>
 </tr>
 <tr class="even">
@@ -182,7 +181,7 @@ ms.locfileid: "90107000"
 <tr class="even">
 <td align="left"><p>112</p></td>
 <td align="left"><p>4</p></td>
-<td align="left"><p>保留</p></td>
+<td align="left"><p>预留</p></td>
 <td align="left"><p>0</p></td>
 </tr>
 <tr class="odd">

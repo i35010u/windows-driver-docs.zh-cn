@@ -1,15 +1,14 @@
 ---
 title: 枚举属性
 description: 本主题介绍 PnP 驱动程序存储区中可用的静态传感器属性。
-ms.assetid: E4663410-375F-48B9-A9E4-6E608FA8D2FF
 ms.date: 01/04/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: e410fd57060206af7169921f6728d80b30932494
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 582e5bc260e0dd0c046edff96840922170a1fa07
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91733048"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96831009"
 ---
 # <a name="enumeration-properties"></a>枚举属性
 

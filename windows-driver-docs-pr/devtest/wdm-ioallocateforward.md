@@ -1,7 +1,6 @@
 ---
 title: 'IoAllocateForward 规则 (wdm) '
 description: IoAllocateForward 规则指定如果 IRP 是通过调用 IoAllocateIrp 生成的，则驱动程序必须在调用 IoCallDriver 或 PoCallDriver 之前设置完成例程。
-ms.assetid: 5FA404C9-B5FD-47DA-9F9D-14C8F269B6A4
 ms.date: 05/21/2018
 keywords:
 - 'IoAllocateForward 规则 (wdm) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 3f69f861b3a809a0b3b84609256a463566035004
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: ce270fdeeba6bb764af28a76a1e5a9d1e41fdebb
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107382"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96832445"
 ---
 # <a name="ioallocateforward-rule-wdm"></a>IoAllocateForward 规则 (wdm) 
 
 
-**IoAllocateForward**规则指定如果 IRP 是通过调用[**IoAllocateIrp**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioallocateirp)生成的，则驱动程序必须在调用[**IoCallDriver**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver)或[**PoCallDriver**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-pocalldriver)之前设置完成例程。
+**IoAllocateForward** 规则指定如果 IRP 是通过调用 [**IoAllocateIrp**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioallocateirp)生成的，则驱动程序必须在调用 [**IoCallDriver**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver)或 [**PoCallDriver**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-pocalldriver)之前设置完成例程。
 
 **驱动程序模型： WDM**
 

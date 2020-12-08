@@ -1,7 +1,6 @@
 ---
 title: Bug 检查 0x80 NMI_HARDWARE_FAILURE
 description: NMI_HARDWARE_FAILURE bug 检查的值为0x00000080。 此错误检查表明出现硬件故障。
-ms.assetid: 1b376540-d101-44af-8295-d8078a920c67
 keywords:
 - Bug 检查 0x80 NMI_HARDWARE_FAILURE
 - NMI_HARDWARE_FAILURE
@@ -13,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: ccdd17878cc72c05e7787bf184e35f72ebb40f89
-ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
+ms.openlocfilehash: c1b5245d705ce950efa7e13f5bef200bea383424
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84534802"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96831611"
 ---
 # <a name="bug-check-0x80-nmi_hardware_failure"></a>Bug 检查0x80： NMI \_ 硬件 \_ 故障
 
@@ -26,7 +25,7 @@ ms.locfileid: "84534802"
 NMI \_ 硬件 \_ 故障 bug 检查的值为0x00000080。 此错误检查表明出现硬件故障。
 
 > [!IMPORTANT]
-> 本主题适用于程序员。 如果你是在使用计算机时收到蓝屏错误代码的客户，请参阅[排查蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题面向程序员。 如果您是在使用计算机时收到蓝屏错误代码的客户，请参阅[蓝屏错误疑难解答](https://www.windows.com/stopcode)。
 
 
 ## <a name="nmi_hardware_failure-parameters"></a>NMI \_ 硬件 \_ 故障参数

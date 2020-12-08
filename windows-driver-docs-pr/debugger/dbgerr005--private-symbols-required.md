@@ -1,18 +1,17 @@
 ---
-title: 所需的 dbgerr005 私有符号
-description: 所需的 dbgerr005 私有符号
-ms.assetid: 0e3b9c98-1f02-4fff-9a91-d3a7470df882
+title: 需要 dbgerr005 私有符号
+description: 需要 dbgerr005 私有符号
 keywords:
 - dbgerr005
-- 私有符号所需 (dbgerr005)
+- 需要 (dbgerr005) 的私有符号
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8ab67971615c9971fba45d4c27c3c6e8e470a250
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0c729db55bcd98f840a2c6e0df5011f19b3a0d8e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63376074"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96831587"
 ---
 # <a name="dbgerr005-private-symbols-required"></a>dbgerr005:需要专用符号
 
@@ -20,17 +19,17 @@ ms.locfileid: "63376074"
 ## <span id="ddk_dbgerr005_dbg"></span><span id="DDK_DBGERR005_DBG"></span>
 
 
-调试器错误**dbgerr005**显示消息"私有符号 (symbols.pri) 需要。 局部变量" 此错误指示调试器无法执行操作，因为私有符号不存在。
+调试器错误 **dbgerr005** 显示消息 "Private 符号 (符号。) 对于局部变量是必需的。" 此错误表示调试器无法执行操作，因为没有私有符号。
 
-在内核模式调试，调试器需要 Microsoft Windows 的符号。 在用户模式调试，调试器需要符号为目标应用程序，并且通常需要符号为 Windows 以及。
+在内核模式调试期间，调试器需要 Microsoft Windows 的符号。 在用户模式调试过程中，调试器需要目标应用程序的符号，并且通常还需要适用于 Windows 的符号。
 
-即使最基本的调试，需要一些基本的符号，如函数名称和全局变量。 这些被称为*公共符号*。 如数据结构名称的符号，只有一个对象文件、 本地变量和行号信息中可见的全局变量并不总是必需进行调试，尽管它们是有用的更深入的调试会话。 这些被称为*私有符号*。
+即使是最基本的调试，也需要一些基本符号，如函数名称和全局变量。 它们称为 *公共符号*。 尽管它们对于更深入的调试会话很有用，但这些符号（例如数据结构名称、只能在一个对象文件、局部变量和行号信息中看到的全局变量）不一定需要用于调试。 它们称为 *私有符号*。
 
-许多软件制造商，包括 Microsoft，生成其符号文件的两个版本。 向客户发布的版本包含仅公共符号。 在内部使用的版本包含公钥和私钥的符号。
+许多软件制造商（包括 Microsoft）都生成其符号文件的两个版本。 向客户发布的版本仅包含公共符号。 内部使用的版本包含公共和私有符号。
 
-可以使用公共符号单独执行大多数调试操作。 但是，某些操作-例如，显示本地变量-需要私有符号。 当尝试进行此类的操作和私有符号不可用时，显示此错误消息。
+大多数调试操作都可以独立于公共符号执行。 但某些操作（如显示局部变量）需要私有符号。 如果尝试执行此类操作且私有符号不可用，则会显示此错误消息。
 
-时看到此消息，则通常最好只需继续调试。 你无法获得的信息至关重要，可能不正确地调试目标。
+出现此消息时，通常最好是继续调试。 无法获取的信息可能不是正确调试目标所必需的。
 
  
 

@@ -1,7 +1,6 @@
 ---
 title: KSCATEGORY_VIDEO_CAMERA
 description: KSCATEGORY_VIDEO_CAMERA
-ms.assetid: 188FC545-C2DB-4938-88B2-AAB2A473E36E
 keywords:
 - KSCATEGORY_VIDEO_CAMERA 设备和驱动程序安装
 topic_type:
@@ -14,17 +13,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 2d0722d464bfdc454355ac8c32258ae2fa1cd4f4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6e9d5604a3b3d56b7e9e2ddff703a949d267db6b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63386267"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96832327"
 ---
-# <a name="kscategoryvideocamera"></a>KSCATEGORY_VIDEO_CAMERA
+# <a name="kscategory_video_camera"></a>KSCATEGORY_VIDEO_CAMERA
 
 
-KSCATEGORY_VIDEO_CAMERA GUID 定义，如下所示：
+KSCATEGORY_VIDEO_CAMERA GUID 定义如下：
 
 <table>
 <colgroup>
@@ -33,7 +32,7 @@ KSCATEGORY_VIDEO_CAMERA GUID 定义，如下所示：
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">特性</th>
+<th align="left">Attribute</th>
 <th align="left">设置</th>
 </tr>
 </thead>
@@ -61,8 +60,8 @@ KSCATEGORY_VIDEO_CAMERA GUID 定义，如下所示：
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>Header</p></td>
-<td align="left">Ks.h （包括 Ks.h）</td>
+<td align="left"><p>标头</p></td>
+<td align="left">Ks (包含 Ks .h) </td>
 </tr>
 </tbody>
 </table>

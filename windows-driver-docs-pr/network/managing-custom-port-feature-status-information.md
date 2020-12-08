@@ -1,15 +1,14 @@
 ---
 title: 管理自定义端口功能状态信息
 description: 管理自定义端口功能状态信息
-ms.assetid: C989888B-1636-488A-80BF-13D136312417
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b1734c3c7d7828fed318dc6a196166be49808a43
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 8706251d13ebcf7224de9a89262ad5b4066c2227
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89218044"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96832195"
 ---
 # <a name="managing-custom-port-feature-status-information"></a>管理自定义端口功能状态信息
 
@@ -19,11 +18,11 @@ Hyper-v 可扩展交换机接口使用以下对象标识符 (OID) 来查询可�
 <a href="" id="oid-switch-port-feature-status-query"></a>[OID \_ 交换机 \_ 端口 \_ 功能 \_ 状态 \_ 查询](./oid-switch-port-feature-status-query.md)  
 此 OID 方法请求由可扩展交换机的协议边缘发出，以获取指定端口属性的自定义功能状态信息。
 
-成功从此 OID 方法请求返回后， [**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的**InformationBuffer**成员包含指向缓冲区的指针。 此缓冲区包含以下数据：
+成功从此 OID 方法请求返回后， [**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的 **InformationBuffer** 成员包含指向缓冲区的指针。 此缓冲区包含以下数据：
 
 -   [**NDIS \_ 交换机 \_ 端口 \_ 功能 \_ 状态 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_port_feature_status_parameters)结构，指定要返回的自定义功能状态信息。
 
-    **注意**   对于自定义功能状态， **FeatureStatusType**成员设置为**NdisSwitchPortPropertyTypeCustom**。
+    **注意**  对于自定义功能状态， **FeatureStatusType** 成员设置为 **NdisSwitchPortPropertyTypeCustom**。
 
      
 
@@ -33,7 +32,7 @@ Hyper-v 可扩展交换机接口使用以下对象标识符 (OID) 来查询可�
 
 可扩展交换机扩展在收到 [oid \_ 交换机 \_ 端口 \_ 功能 \_ 状态 \_ 查询](./oid-switch-port-feature-status-query.md)的 oid 方法请求时必须遵循以下准则：
 
--   如果扩展插件管理的自定义可扩展交换机端口属性与[**NDIS \_ 交换机 \_ 端口 \_ 功能 \_ 状态 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_port_feature_status_parameters)结构的**FeatureStatusId**成员匹配，则必须处理 OID 请求。
+-   如果扩展插件管理的自定义可扩展交换机端口属性与 [**NDIS \_ 交换机 \_ 端口 \_ 功能 \_ 状态 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_port_feature_status_parameters)结构的 **FeatureStatusId** 成员匹配，则必须处理 OID 请求。
 
 -   如果扩展处理 OID 方法请求，则它必须返回与 [**NDIS \_ 交换机 \_ 端口 \_ 功能 \_ 状态 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_port_feature_status_parameters) 结构指定的参数匹配的功能状态信息。
 

@@ -1,7 +1,6 @@
 ---
 title: 在 WMI 中注册和取消注册 NDIS 微型端口驱动程序
 description: 在 WMI 中注册和取消注册 NDIS 微型端口驱动程序
-ms.assetid: 7460cb3f-7dc1-4454-b683-e1849233fc1d
 keywords:
 - 微型端口适配器 WDK 网络，注册
 - 适配器 WDK 网络，注册
@@ -12,12 +11,12 @@ keywords:
 - 适配器 WD
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 46ef277bb1350f15f60fbaa6de29f8b0c51dfe0a
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 41fe9efef8bdfa6261d3733dd1d1d1848a93d72f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89211973"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96831245"
 ---
 # <a name="registration-and-deregistration-of-ndis-miniport-drivers-with-wmi"></a>在 WMI 中注册和取消注册 NDIS 微型端口驱动程序
 

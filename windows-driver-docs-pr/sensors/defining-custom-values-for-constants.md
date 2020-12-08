@@ -1,15 +1,14 @@
 ---
 title: 定义 (以前版本) 的传感器常量的自定义值
 description: 定义 (以前版本) 的传感器常量的自定义值
-ms.assetid: 0ed635c2-117d-4a49-a565-31e5a0a9861d
 ms.date: 07/20/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: a24719a10e80cb2de8b5bfe5d841189fc9bfd02f
-ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
+ms.openlocfilehash: be2f7810ac3b2fb989191214742f54cc5d3bf64f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90010131"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96831031"
 ---
 # <a name="defining-custom-values-for-sensor-constants-previous-version"></a>定义 (以前版本) 的传感器常量的自定义值
 

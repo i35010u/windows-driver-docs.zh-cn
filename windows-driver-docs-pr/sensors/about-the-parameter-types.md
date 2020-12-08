@@ -1,15 +1,14 @@
 ---
 title: 关于传感器参数类型
 description: 关于参数类型
-ms.assetid: 392ea7b9-df6f-4d47-9367-a167c0656dd4
 ms.date: 07/20/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: a1631b4ba30182f1374d7cdc1227c0be8bb1fd39
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: c7fa57caf884c1483f6fb8cf8d351fc95ebebe76
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91734149"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96831095"
 ---
 # <a name="about-sensor-parameter-types"></a>关于传感器参数类型
 

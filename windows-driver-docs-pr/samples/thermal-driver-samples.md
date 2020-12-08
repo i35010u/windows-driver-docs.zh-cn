@@ -1,15 +1,14 @@
 ---
 title: 热感驱动程序示例
 description: 此目录中的热量驱动程序示例提供了为设备编写自定义驱动程序的起点。
-ms.assetid: FACF0FB6-8D43-4CFA-A255-EA302957A329
 ms.date: 11/21/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 7fe109e7d77d7f8e809ce593433ac2cc1fa84bf6
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 9add11ee04ac669a95b7adddc91135e32c4983af
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89187151"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96831149"
 ---
 # <a name="thermal-driver-samples"></a>热感驱动程序示例
 

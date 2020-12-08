@@ -1,19 +1,18 @@
 ---
 title: 筛选器驱动程序缓冲区管理
 description: 筛选器驱动程序缓冲区管理
-ms.assetid: 92b38710-056d-4853-b266-ca86cee298b6
 keywords:
 - 筛选器驱动程序 WDK 网络，缓冲区
 - NDIS 筛选器驱动程序 WDK，缓冲区
 - 缓冲区管理 WDK NDIS 筛选器
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8fff94f453fa96750da135d1d90be51a429120bc
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: e83b0a6c5cf5db75c3727316fe909c594858cbef
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89217066"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96832257"
 ---
 # <a name="filter-driver-buffer-management"></a>筛选器驱动程序缓冲区管理
 
@@ -41,7 +40,7 @@ ms.locfileid: "89217066"
 
 [**NdisAllocateNetBuffer**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisallocatenetbuffer)
 
-调用 **NdisAllocateNetBufferAndNetBufferList** 比调用 **NdisAllocateNetBufferList** 后跟 **NdisAllocateNetBuffer**更有效。 但是， **NdisAllocateNetBufferAndNetBufferList** 只 \_ 在网络 \_ 缓冲区列表结构上创建了一个网络缓冲区结构 \_ 。 若要**使用 NdisAllocateNetBufferAndNetBufferList**，则在调用**NdisAllocateNetBufferListPool**时，驱动程序必须将*AllocateNetBuffer*参数设置为**TRUE** 。
+调用 **NdisAllocateNetBufferAndNetBufferList** 比调用 **NdisAllocateNetBufferList** 后跟 **NdisAllocateNetBuffer** 更有效。 但是， **NdisAllocateNetBufferAndNetBufferList** 只 \_ 在网络 \_ 缓冲区列表结构上创建了一个网络缓冲区结构 \_ 。 若要 **使用 NdisAllocateNetBufferAndNetBufferList**，则在调用 **NdisAllocateNetBufferListPool** 时，驱动程序必须将 *AllocateNetBuffer* 参数设置为 **TRUE** 。
 
 发起发送请求的筛选器驱动程序应该确定基础驱动程序的上下文和回填空间要求。 筛选器驱动程序使用重新启动属性来确定底层驱动程序的回填要求。 筛选器驱动程序应该确定 *重启* 状态中的回填和环境要求。 驱动程序应为整个堆栈分配足够的回填和上下文空间。 如有必要，筛选器驱动程序可以释放池，并在 *重新启动* 状态下重新分配池。
 
@@ -57,7 +56,7 @@ ms.locfileid: "89217066"
 
 [**NdisFreeNetBuffer**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfreenetbuffer)
 
-\_在释放关联的**NdisAllocateNetBuffer**网络 \_ 缓冲区列表结构之前，驱动程序应释放用 NdisAllocateNetBuffer 分配的网络缓冲区结构 \_ 。 \_当驱动程序为关联**NdisAllocateNetBufferAndNetBufferList**的**NdisFreeNetBufferList**网络 \_ 缓冲区列表结构调用 NdisFreeNetBufferList 时，将释放用 NdisAllocateNetBufferAndNetBufferList 分配的网络缓冲区结构 \_ 。
+\_在释放关联的 **NdisAllocateNetBuffer** 网络 \_ 缓冲区列表结构之前，驱动程序应释放用 NdisAllocateNetBuffer 分配的网络缓冲区结构 \_ 。 \_当驱动程序为关联 **NdisAllocateNetBufferAndNetBufferList** 的 **NdisFreeNetBufferList** 网络 \_ 缓冲区列表结构调用 NdisFreeNetBufferList 时，将释放用 NdisAllocateNetBufferAndNetBufferList 分配的网络缓冲区结构 \_ 。
 
  
 

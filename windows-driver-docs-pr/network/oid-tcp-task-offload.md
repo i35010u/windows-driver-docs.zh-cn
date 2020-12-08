@@ -1,17 +1,16 @@
 ---
 title: OID_TCP_TASK_OFFLOAD
 description: 本主题介绍) OID_TCP_TASK_OFFLOAD 对象标识符 (OID。
-ms.assetid: 4e16cdb7-b899-43b6-a94b-d691622be105
 keywords:
 - OID_TCP_TASK_OFFLOAD
 ms.date: 11/06/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4350c7d874f6fe10d4db38eb9e7421bd5ce12039
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: ee7d54c1ec6eb5bfe2151229d219b9796dc70ee0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89215829"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96832149"
 ---
 # <a name="oid_tcp_task_offload"></a>OID_TCP_TASK_OFFLOAD
 
@@ -25,9 +24,9 @@ ms.locfileid: "89215829"
 - 主机堆栈处理的发送和接收数据包的封装格式。
 - 此类数据包中封装标头的大小。
 
-使用此信息，微型端口驱动程序或其 NIC 可以定位传输数据包中第一个 IP 标头的开头，这是执行卸载任务的先决条件。 卸载目标需要知道封装格式才能处理接收数据包。 为了响应 OID_TCP_TASK_OFFLOAD 的查询，微型端口驱动程序或卸载目标将在 *InformationBuffer*中返回，后跟一个或多个 [NDIS_TASK_OFFLOAD](/previous-versions/windows/hardware/network/ff558995(v=vs.85)) 结构的 NDIS_TASK_OFFLOAD_HEADER 结构。 每个 NDIS_TASK_OFFLOAD 结构描述了微型端口驱动程序 NIC 或卸载目标支持的卸载功能。 如果微型端口驱动程序的 NIC 或卸载目标支持多个版本的特定卸载功能，则它应为每个版本返回一个 NDIS_TASK_OFFLOAD 结构。
+使用此信息，微型端口驱动程序或其 NIC 可以定位传输数据包中第一个 IP 标头的开头，这是执行卸载任务的先决条件。 卸载目标需要知道封装格式才能处理接收数据包。 为了响应 OID_TCP_TASK_OFFLOAD 的查询，微型端口驱动程序或卸载目标将在 *InformationBuffer* 中返回，后跟一个或多个 [NDIS_TASK_OFFLOAD](/previous-versions/windows/hardware/network/ff558995(v=vs.85)) 结构的 NDIS_TASK_OFFLOAD_HEADER 结构。 每个 NDIS_TASK_OFFLOAD 结构描述了微型端口驱动程序 NIC 或卸载目标支持的卸载功能。 如果微型端口驱动程序的 NIC 或卸载目标支持多个版本的特定卸载功能，则它应为每个版本返回一个 NDIS_TASK_OFFLOAD 结构。
 
-每个 NDIS_TASK_OFFLOAD 结构都有一个 **任务** 成员，该成员指定结构应用于的特定卸载功能。 每个 NDIS_TASK_OFFLOAD 结构还包含 **TaskBuffer** ，其中包含与指定的卸载功能有关的信息。 **TaskBuffer**中的信息设置为以下结构之一：
+每个 NDIS_TASK_OFFLOAD 结构都有一个 **任务** 成员，该成员指定结构应用于的特定卸载功能。 每个 NDIS_TASK_OFFLOAD 结构还包含 **TaskBuffer** ，其中包含与指定的卸载功能有关的信息。 **TaskBuffer** 中的信息设置为以下结构之一：
 
 - [NDIS_TASK_TCP_IP_CHECKSUM](/previous-versions/windows/hardware/network/ff559004(v=vs.85))  
     指定校验和卸载功能。
@@ -43,7 +42,7 @@ ms.locfileid: "89215829"
 
 ## <a name="enabling-offload-capabilities"></a>启用卸载功能
 
-在查询 NIC 或卸载目标的卸载功能之后，主机堆栈通过设置 OID_TCP_TASK_OFFLOAD 来启用一个或多个此类功能。 设置 OID_TCP_TASK_OFFLOAD 时，主机堆栈提供 *InformationBuffer*中的 NDIS_TASK_OFFLOAD_HEADER 结构，其后紧跟主机堆栈正在启用的每个卸载功能的 NDIS_TASK_OFFLOAD 结构。
+在查询 NIC 或卸载目标的卸载功能之后，主机堆栈通过设置 OID_TCP_TASK_OFFLOAD 来启用一个或多个此类功能。 设置 OID_TCP_TASK_OFFLOAD 时，主机堆栈提供 *InformationBuffer* 中的 NDIS_TASK_OFFLOAD_HEADER 结构，其后紧跟主机堆栈正在启用的每个卸载功能的 NDIS_TASK_OFFLOAD 结构。
 
 每个 NDIS_TASK_OFFLOAD 结构中的 **任务** 指示宿主堆栈正在启用的卸载功能。 宿主堆栈还通过设置每个 NDIS_TASK_OFFLOAD 结构的 **TaskBuffer** 中结构的成员来启用特定卸载功能的特定方面。
 
@@ -60,7 +59,7 @@ ms.locfileid: "89215829"
 
 ## <a name="disabling-offload-capabilities"></a>禁用卸载功能
 
-若要禁用 NIC 或卸载目标支持的所有卸载功能，主机堆栈会将 OID_TCP_TASK_OFFLOAD 设置。 在 *InformationBuffer*中，主机堆栈提供 NDIS_TASK_OFFLOAD_HEADER 结构，此结构的 **OffsetFirstTask** 成员设置为零。
+若要禁用 NIC 或卸载目标支持的所有卸载功能，主机堆栈会将 OID_TCP_TASK_OFFLOAD 设置。 在 *InformationBuffer* 中，主机堆栈提供 NDIS_TASK_OFFLOAD_HEADER 结构，此结构的 **OffsetFirstTask** 成员设置为零。
 
 ## <a name="requirements"></a>要求
 

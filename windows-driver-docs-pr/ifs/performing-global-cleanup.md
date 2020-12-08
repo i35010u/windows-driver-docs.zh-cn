@@ -1,18 +1,17 @@
 ---
 title: 执行全局清理
 description: 执行全局清理
-ms.assetid: 18e0fca0-16ec-4ca9-8b71-47f58f41c46d
 keywords:
 - 全局清除 WDK 文件系统微筛选器
 - 清除全局 WDK 文件系统微筛选器
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 016a3a204f2fc3df3e25077e85c6edffec46addc
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 8834cc1a3d16d857c98f426409d949b51d55eaca
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89067374"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96830527"
 ---
 # <a name="performing-global-cleanup"></a>执行全局清理
 

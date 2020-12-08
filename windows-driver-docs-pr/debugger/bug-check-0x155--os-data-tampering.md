@@ -1,7 +1,6 @@
 ---
 title: Bug 检查 0x155 OS_DATA_TAMPERING
-description: OS_DATA_TAMPERING bug 检查具有 0x00000155 值。
-ms.assetid: 14FE8B69-C260-41DE-AE01-BE127ABB6267
+description: OS_DATA_TAMPERING bug 检查的值为0x00000155。
 keywords:
 - Bug 检查 0x155 OS_DATA_TAMPERING
 - OS_DATA_TAMPERING
@@ -13,23 +12,23 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: f7a4ef6e999e6ea4ec373cdfeb8bdbfb9e548bf1
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: 4ab35eac526adb4c87373f06c2ec329badaa0de6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67520049"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96830799"
 ---
-# <a name="bug-check-0x155-osdatatampering"></a>Bug 检查 0x155：OS\_数据\_篡改
+# <a name="bug-check-0x155-os_data_tampering"></a>Bug 检查0x155：操作系统 \_ 数据 \_ 篡改
 
 
-OS\_数据\_篡改 bug 检查的值为 0x00000155。
+OS \_ 数据 \_ 篡改 bug 检查的值为0x00000155。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题面向程序员。 如果您是在使用计算机时收到蓝屏错误代码的客户，请参阅[蓝屏错误疑难解答](https://www.windows.com/stopcode)。
 
 
-## <a name="osdatatampering-parameters"></a>OS\_数据\_篡改参数
+## <a name="os_data_tampering-parameters"></a>OS \_ 数据 \_ 篡改参数
 
 
 无

@@ -1,7 +1,6 @@
 ---
 title: IoAllocateComplete 规则
 description: IoAllocateComplete 规则指定如果 IRP 是使用 IoAllocateIrp 创建的，则驱动程序不应调用 IoCompleteRequest。
-ms.assetid: BCF1F1DF-3586-46D0-85B5-1F5A2DEE18D1
 ms.date: 05/21/2018
 keywords:
 - IoAllocateComplete 规则
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: e586956180d56536f377724ca438627b87897588
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 55fe64e5d11b677ab7f7c3ea03f9968f5a0ed61a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90101484"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96832451"
 ---
 # <a name="ioallocatecomplete-rule"></a>IoAllocateComplete 规则
 
 
-**IoAllocateComplete**规则指定如果 IRP 是使用[**IoAllocateIrp**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioallocateirp)创建的，则驱动程序不应调用[**IoCompleteRequest**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocompleterequest) 。
+**IoAllocateComplete** 规则指定如果 IRP 是使用 [**IoAllocateIrp**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioallocateirp)创建的，则驱动程序不应调用 [**IoCompleteRequest**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocompleterequest) 。
 
 <a name="how-to-test"></a>如何测试
 -----------

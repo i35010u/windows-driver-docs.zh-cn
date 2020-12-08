@@ -1,7 +1,6 @@
 ---
 title: USB 视频类扩展单元的设备要求
 description: USB 视频类扩展单元的设备要求
-ms.assetid: 4678c3a4-9ca7-4518-afe8-99a9e61f3dcd
 keywords:
 - 扩展单元-WDK USB 视频类，设备要求
 - 扩展单元描述符 WDK USB 视频类
@@ -10,12 +9,12 @@ keywords:
 - 控制 WDK USB 视频类
 ms.date: 06/16/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 11c5f0fab16d7af0b5d0f43c602f354c507c019a
-ms.sourcegitcommit: b481c9513a9ea7f824ecabd1ae18876548032252
+ms.openlocfilehash: 54bf13879a7eea979074853362e95b7ade9861b5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84879017"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96830881"
 ---
 # <a name="device-requirements-for-usb-video-class-extension-units"></a>USB 视频类扩展单元的设备要求
 
@@ -25,17 +24,17 @@ ms.locfileid: "84879017"
 
 扩展单元描述符必须包含有效的唯一 GUID。 此 GUID 由 Usbvideo.sys 用来公开在相应扩展节点上设置的属性。 应使用 Microsoft Windows SDK 附带的名为 Guidgen.exe 的工具创建扩展单元的唯一 GUID。
 
-扩展单元属性集（KSPROPERTY extension unit）上的属性标识符 \_ \_ 对应于 USB 视频类固件公开的编号相同的扩展单元控件 id。 可以通过 IKsControl 接口使用标准 KSPROPERTY 请求访问扩展单元控件。
+扩展单元属性集上的属性标识符 (KSPROPERTY \_ Extension \_ unit) 对应于 USB 视频类固件公开的编号相同的扩展单元控制 id。 可以通过 IKsControl 接口使用标准 KSPROPERTY 请求访问扩展单元控件。
 
 扩展单元上的控件（称为扩展单元控件 Id）必须连续编号为1到一些最大值 n。 如果有空白，则 USB 视频类驱动程序不会公开超出该间隔的控件。 USB 视频类驱动程序的当前实现将扩展单元上的控件数限制为31。
 
-使用属性 ID = 0 （KSPROPERTY \_ 扩展 \_ 单元 \_ 信息）来获取扩展单元描述符的一部分，它是由视频设备规范的通用串行总线设备类定义定义的语法。 此规范可在[USB 实现论坛](https://www.usb.org/)网站上找到。
+使用属性 ID = 0 (KSPROPERTY \_ extension \_ unit \_ INFO) 以获取扩展单元描述符的一部分，它是由视频设备规范的通用串行总线设备类定义定义的语法。 此规范可在 [USB 实现论坛](https://www.usb.org/) 网站上找到。
 
 使用属性 ID = 1 和更高版本将请求发送到相应的扩展单元控件。
 
-请注意，KSPROPERTY \_ 扩展 \_ 单元 \_ 控制（属性 ID = 1）不是真实属性。 相反，它表示标识符1和更高版本引用实际扩展单元控件 Id。
+请注意，KSPROPERTY \_ EXTENSION \_ UNIT \_ CONTROL (属性 ID = 1) 不是真实属性。 相反，它表示标识符1和更高版本引用实际扩展单元控件 Id。
 
-\_ \_ 未实现 KSPROPERTY 扩展单元 \_ 传递 \_ （属性 ID = 0xffff）。
+KSPROPERTY \_ 扩展 \_ 单元 \_ 传递 \_ (属性 ID = 0xffff) 未实现。
 
 下面的代码示例摘自示例扩展插件 DLL 中所示的完整示例，演示了如何发出 KSPROPERTY \_ 扩展 \_ 单元 \_ 信息请求：
 

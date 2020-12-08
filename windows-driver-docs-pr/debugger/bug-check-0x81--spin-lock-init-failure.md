@@ -1,7 +1,6 @@
 ---
 title: Bug 检查 0x81 SPIN_LOCK_INIT_FAILURE
-description: SPIN_LOCK_INIT_FAILURE bug 检查具有 0x00000081 值。检查此错误极少出现。
-ms.assetid: 0af215f5-e7f6-47bd-86e7-9cb3dd1524be
+description: SPIN_LOCK_INIT_FAILURE bug 检查的值为0x00000081。此 bug 检查很少出现。
 keywords:
 - Bug 检查 0x81 SPIN_LOCK_INIT_FAILURE
 - SPIN_LOCK_INIT_FAILURE
@@ -13,22 +12,22 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 0c79092d8a48341f14b0168178d9f2a0c6cd69cc
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: 2c85b9d622dd5740eff7acb7cd51aac7aa6c373b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67519158"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96831605"
 ---
-# <a name="bug-check-0x81-spinlockinitfailure"></a>Bug 检查 0x81：旋转\_锁\_INIT\_失败
+# <a name="bug-check-0x81-spin_lock_init_failure"></a>Bug 检查0x81：自旋 \_ 锁 \_ 初始化 \_ 失败
 
 
-数值调节钮\_锁\_INIT\_故障错误检查的值为 0x00000081。
+旋转 \_ 锁 \_ 初始化 \_ 失败 bug 检查的值为0x00000081。
 
-检查此错误极少出现。
+此 bug 检查很少出现。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题面向程序员。 如果您是在使用计算机时收到蓝屏错误代码的客户，请参阅[蓝屏错误疑难解答](https://www.windows.com/stopcode)。
 
 
  

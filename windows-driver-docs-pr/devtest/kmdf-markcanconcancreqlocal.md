@@ -1,7 +1,6 @@
 ---
 title: 'MarkCancOnCancReqLocal 规则 (kmdf) '
 description: MarkCancOnCancReqLocal 规则指定在同一 i/o 请求上不能连续调用 WdfRequestMarkCancelable 方法两次。
-ms.assetid: f09158bd-272c-480b-bf25-036f11c96ad8
 ms.date: 05/21/2018
 keywords:
 - 'MarkCancOnCancReqLocal 规则 (kmdf) '
@@ -12,19 +11,19 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 26bc65cfbaf92b893a82387bcf013adff062ba3f
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 83da59352ffbade573dde9668803345a2cb4088a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102274"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96830707"
 ---
 # <a name="markcanconcancreqlocal-rule-kmdf"></a>MarkCancOnCancReqLocal 规则 (kmdf) 
 
 
-**MarkCancOnCancReqLocal**规则指定在同一 i/o 请求上不能连续调用[**WdfRequestMarkCancelable**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestmarkcancelable)方法两次。
+**MarkCancOnCancReqLocal** 规则指定在同一 i/o 请求上不能连续调用 [**WdfRequestMarkCancelable**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestmarkcancelable)方法两次。
 
-**MarkCancOnCancReqLocal**规则仅在默认 i/o 队列回调函数中执行此检查。
+**MarkCancOnCancReqLocal** 规则仅在默认 i/o 队列回调函数中执行此检查。
 
 **驱动程序模型： KMDF**
 

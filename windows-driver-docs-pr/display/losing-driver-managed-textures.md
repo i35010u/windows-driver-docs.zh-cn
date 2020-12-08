@@ -1,7 +1,6 @@
 ---
 title: 丢失驱动程序管理的纹理
 description: 丢失驱动程序管理的纹理
-ms.assetid: 19f87190-bb3a-40a6-a216-8df9816e2842
 keywords:
 - 绘图图面 WDK DirectDraw，丢失纹理
 - DirectDraw 图面，WDK Windows 2000 显示，丢失纹理
@@ -11,12 +10,12 @@ keywords:
 - 丢失纹理 WDK DirectDraw
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ec26cdb202588e9c687a8efff0b4675985945ea3
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 32764d2d7c49edb0992281cc622d5e698fbf409d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90716272"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96832393"
 ---
 # <a name="losing-driver-managed-textures"></a>丢失驱动程序管理的纹理
 

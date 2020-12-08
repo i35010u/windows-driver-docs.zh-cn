@@ -1,22 +1,21 @@
 ---
 title: 哪些数据类型需要形实转换
 description: 哪些数据类型需要形实转换
-ms.assetid: af1d7986-7bf2-4587-b487-91658e7a3b19
 keywords:
-- 形式转换 WDK
-- WOW64 形式转换层 WDK
-- 32 位 I/O 支持 WDK 64 位形式转换
+- thunk WDK
+- WOW64 thunk 层 WDK
+- 32位 i/o 支持 WDK 64 位，thunk
 - 数据类型 WDK 64 位
-- 指针精确度 WDK 64 位
+- 指针精度 WDK 64 位
 - 固定精度数据类型 WDK 64 位
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f4f6ca86749a487a1d7bfd04abffa81793ffab29
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: da0a40f76b934a8e957eda8ea41fb778c4f28448
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383199"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96832279"
 ---
 # <a name="which-data-types-need-thunking"></a>哪些数据类型需要形实转换
 
@@ -24,7 +23,7 @@ ms.locfileid: "63383199"
 
 
 
-下表列出了需要形式转换，以及其 thunked 等效项的常见数据类型。
+下表列出了需要 thunk 的常见数据类型及其 thunked 等效项。
 
 <table>
 <colgroup>
@@ -33,8 +32,8 @@ ms.locfileid: "63383199"
 </colgroup>
 <thead>
 <tr class="header">
-<th>指针精度数据类型 （之前形式转换）</th>
-<th>（后形式转换） 的等效 32 位的固定精度数据类型</th>
+<th>Thunk 之前的指针精度数据类型 () </th>
+<th>Thunk 后的等效32位固定精度数据类型 () </th>
 </tr>
 </thead>
 <tbody>

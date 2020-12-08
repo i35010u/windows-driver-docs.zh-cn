@@ -1,15 +1,14 @@
 ---
 title: 在带 Cove 板上安装示例设备和驱动程序
 description: 按照以下步骤安装示例驱动程序，并将 ADXL345 加速感应连接到带 Cove 板上的 J1C1 标头。
-ms.assetid: A67EBD9C-9C5A-49D3-9205-37FC4396DF56
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e0535ec0d7a9639a7f2d312c91ad24ae04da1d0e
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: cef7882a8dad4d2f294033c7e039e5c25139120b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91734501"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96830991"
 ---
 # <a name="install-the-sample-device-and-driver-on-your-sharks-cove-board"></a>在带 Cove 板上安装示例设备和驱动程序
 
@@ -60,7 +59,7 @@ ms.locfileid: "91734501"
 ## <a name="set-the-configuration-and-platform-in-visual-studio"></a>在 Visual Studio 中设置配置和平台
 
 
-在 Visual Studio 的解决方案资源管理器中，右键单击 " **解决方案 ' SpbAccelerometer ' (2 个项目") **，然后选择 " **Configuration Manager**"。 设置配置和平台。 请确保配置 **win 8.1 进行调试**，并将平台设置为 **Win32**。 对驱动程序项目和包项目执行此操作。 不要选中 " **部署** " 框。
+在 Visual Studio 的解决方案资源管理器中，右键单击 " **解决方案 ' SpbAccelerometer ' (2 个项目")**，然后选择 " **Configuration Manager**"。 设置配置和平台。 请确保配置 **win 8.1 进行调试**，并将平台设置为 **Win32**。 对驱动程序项目和包项目执行此操作。 不要选中 " **部署** " 框。
 
 ## <a name="build-the-sample-using-visual-studio"></a>使用 Visual Studio 生成示例
 
@@ -74,7 +73,7 @@ ms.locfileid: "91734501"
 
 包中包含以下文件：
 
-| 文件                  | 说明                                                                       |
+| 文件                  | 描述                                                                       |
 |-----------------------|-----------------------------------------------------------------------------------|
 | SpbSamples.cat        | 签名目录文件，用作整个包的签名。      |
 | SpbAccelerometer .inf  |  (INF) 包含安装驱动程序所需的信息的信息。 |
@@ -246,5 +245,5 @@ testsigning             Yes
 
 
 1.  在主计算机上，在 Visual Studio 中打开 SpbAccelerometer 解决方案。
-2.  在解决方案资源管理器中，双击 " **打包** (小写) ，然后选择" **属性**"。 转到  “驱动程序安装”&gt;“部署”。 选中 " **启用部署**"。 选中“部署前删除以前的驱动程序版本”。 对于 " **目标计算机名称**"，请输入以前预配的带 Cove 板的名称。 选择“安装并验证”  。 单击“确定”  。
+2.  在解决方案资源管理器中，双击 " **打包** (小写) ，然后选择" **属性**"。 转到  “驱动程序安装”&gt;“部署”。 选中 " **启用部署**"。 选中“部署前删除以前的驱动程序版本”。 对于 " **目标计算机名称**"，请输入以前预配的带 Cove 板的名称。 选择“安装并验证”  。 单击 **“确定”** 。
 3.  在 " **调试** " 菜单上，选择 " **启动调试**"。 你的驱动程序包将自动复制到带 Cove 板。 你的驱动程序将自动安装并加载。 在 Visual Studio 中的主计算机上运行的 Windows 用户模式调试器 () 自动附加到托管驱动程序的带 Cove 板) 上运行的 (Wudfhost.exe 实例。

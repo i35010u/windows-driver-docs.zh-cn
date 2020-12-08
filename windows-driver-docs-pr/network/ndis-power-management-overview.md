@@ -1,15 +1,14 @@
 ---
 title: NDIS 电源管理概述
 description: NDIS 电源管理概述
-ms.assetid: 8ae3803f-c3e4-4499-9e61-678f4ab61fbc
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9e0cfd9044fbf8d6a5369a2ea40b3d77380ffa9a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c742a5b2012234fad85a99a906671ba162557f87
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63378280"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96831293"
 ---
 # <a name="ndis-power-management-overview"></a>NDIS 电源管理概述
 
@@ -17,25 +16,25 @@ ms.locfileid: "63378280"
 
 
 
-本部分概述与的 NDIS 6.20 驱动程序引入 Windows 7 中的电源管理界面提供的功能。
+本部分概述了在 Windows 7 中引入的用于 NDIS 6.20 驱动程序的功能。
 
-微型端口驱动程序和协议驱动程序支持 NDIS 6.20 和更高版本的 NDIS 必须支持 NDIS 6.20 电源管理接口。 但是，NDIS 提供到上一接口转换为较旧的网络适配器和 NDIS 6.1 或更早的微型端口驱动程序不支持 NDIS 6.20 电源管理功能的。 有关 NDIS 6.20 向后兼容性问题的详细信息，请参阅[NDIS 6.20 向后兼容性](ndis-6-20-backward-compatibility.md)。
+支持 ndis 6.20 和更高版本的 NDIS 的微型端口驱动程序和协议驱动程序必须支持 NDIS 6.20 电源管理接口。 但是，NDIS 为较旧的网络适配器以及不支持 NDIS 6.20 电源管理功能的 NDIS 6.1 或更低的微型端口驱动程序提供了以前的接口转换。 有关 NDIS 6.20 向后兼容性问题的详细信息，请参阅 [ndis 6.20 向后兼容性](ndis-6-20-backward-compatibility.md)。
 
-支持 NDIS 6.20 电源管理接口：
+NDIS 6.20 电源管理界面支持：
 
--   根据数据包的 LAN 唤醒 (WOL) 模式此外类型为 NDIS 6.1 和更早的方法。 因此，NDIS 6.20 WOL 模式可以更具体，以避免不必要的唤醒事件。 例如，网络适配器可以确定 TCP 同步 (SYN) 数据包。 WOL 方法的详细信息，请参阅[WOL 方法在 NDIS 6.20](wol-methods-in-ndis-6-20.md)。
+-   LAN 唤醒 (基于数据包类型的 WOL) 模式，以及 NDIS 6.1 及更低版本的方法。 因此，可以更具体地了解 NDIS 6.20 WOL 模式，以避免不必要的唤醒事件。 例如，网络适配器可以 (SYN) 数据包来识别 TCP 同步。 有关 WOL 方法的详细信息，请参阅 [NDIS 6.20 中的 WOL 方法](wol-methods-in-ndis-6-20.md)。
 
--   协议将给网络适配器卸载某些最常用的协议。 协议卸载到网络适配器，因为它可以代表计算机以避免不必要的唤醒事件做出响应。 例如，网络适配器可以处理无唤醒计算机的 IPv4 地址解析协议 (ARP) 和 IPv6 邻居招标 (NS) 协议数据包。 对卸载有关电源管理协议的详细信息，请参阅[协议将卸载 NDIS 电源管理的](protocol-offloads-for-ndis-power-management.md)。
+-   对于一些最常见的协议，将协议卸载到网络适配器。 由于协议已卸载到网络适配器，因此它可以代表计算机进行响应，以避免不需要的唤醒事件。 例如，网络适配器可以在不唤醒计算机的情况下，处理 (ARP) 和 IPv6 邻居请求 (NS) 协议数据包。 有关电源管理协议卸载的详细信息，请参阅 [NDIS 电源管理的协议卸载](protocol-offloads-for-ndis-power-management.md)。
 
-有关 NDIS 用于设置低功耗状态和还原完整功能的 WOL 事件序列的信息，请参阅[低的电源可用于 LAN 唤醒](low-power-for-wake-on-lan.md)。
+有关 NDIS 用于设置低功耗状态和全部恢复功能的 WOL 事件序列的信息，请参阅 [LAN 唤醒的低功率](low-power-for-wake-on-lan.md)。
 
-此外支持 NDIS 6.20 电源管理：
+NDIS 6.20 电源管理还支持：
 
--   NDIS 6.20 可以返回到完整的电源状态的网络适配器，媒体连接时。 媒体已断开连接时，操作系统将在低功耗状态的网络适配器。 有关媒体断开连接时设置低功耗状态的详细信息，请参阅[媒体断开连接的低开机](low-power-on-media-disconnect.md)。
+-   当媒体连接时，NDIS 6.20 可将网络适配器恢复为完全电源状态。 当媒体断开连接时，操作系统将网络适配器置于低功耗状态。 有关在媒体断开连接时设置低功耗状态的详细信息，请参阅 [Media Disconnect 断开连接](low-power-on-media-disconnect.md)。
 
-本部分包括以下主题：
+本节包括下列主题：
 
-[在 NDIS 6.20 WOL 方法](wol-methods-in-ndis-6-20.md)
+[NDIS 6.20 中的 WOL 方法](wol-methods-in-ndis-6-20.md)
 
 [NDIS 电源管理的 WOL 模式](wol-patterns-for-ndis-power-management.md)
 

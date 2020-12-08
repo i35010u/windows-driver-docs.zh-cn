@@ -1,7 +1,6 @@
 ---
 title: Bug 检查 0x4E PFN_LIST_CORRUPT
-description: PFN_LIST_CORRUPT bug 检查的值为0x0000004E。 这表示页面帧号（PFN）列表已损坏。
-ms.assetid: cf78aecb-80d3-4637-a2b5-a2511999c5e3
+description: PFN_LIST_CORRUPT bug 检查的值为0x0000004E。 这表明) 列表 (PFN 的页面帧号。
 keywords:
 - Bug 检查 0x4E PFN_LIST_CORRUPT
 - PFN_LIST_CORRUPT
@@ -13,26 +12,26 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: ab66501f1bbc3ffb22b280091174cd02b48e1cac
-ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
+ms.openlocfilehash: 4526f61c168d5884417556bb74ab7e7ce03ab875
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84534624"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96831629"
 ---
 # <a name="bug-check-0x4e-pfn_list_corrupt"></a>Bug 检查0x4E： PFN \_ 列表 \_ 已损坏
 
 
-PFN \_ LIST \_ 损坏 bug 检查的值为0x0000004E。 这表示页面帧号（PFN）列表已损坏。
+PFN \_ LIST \_ 损坏 bug 检查的值为0x0000004E。 这表明) 列表 (PFN 的页面帧号。
 
 > [!IMPORTANT]
-> 本主题适用于程序员。 如果你是在使用计算机时收到蓝屏错误代码的客户，请参阅[排查蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题面向程序员。 如果您是在使用计算机时收到蓝屏错误代码的客户，请参阅[蓝屏错误疑难解答](https://www.windows.com/stopcode)。
 
 
 ## <a name="pfn_list_corrupt-parameters"></a>PFN \_ 列出 \_ 损坏的参数
 
 
-*参数 1*指示违规类型。 其他参数的意义取决于*参数 1*的值。
+*参数 1* 指示违规类型。 其他参数的意义取决于 *参数 1* 的值。
 
 <table>
 <colgroup>
@@ -54,7 +53,7 @@ PFN \_ LIST \_ 损坏 bug 检查的值为0x0000004E。 这表示页面帧号（P
 <tbody>
 <tr class="odd">
 <td align="left"><p>0x01</p></td>
-<td align="left"><p>已损坏的<strong>ListHead</strong>值</p></td>
+<td align="left"><p>已损坏的 <strong>ListHead</strong> 值</p></td>
 <td align="left"><p>可用页数</p></td>
 <td align="left"><p>0</p></td>
 <td align="left"><p>列表头已损坏。</p></td>
@@ -92,7 +91,7 @@ PFN \_ LIST \_ 损坏 bug 检查的值为0x0000004E。 这表示页面帧号（P
 <td align="left"><p>页面框架编号</p></td>
 <td align="left"><p>当前页面状态</p></td>
 <td align="left"><p>0</p></td>
-<td align="left"><p>页表项（PTE）或 PFN 已损坏。</p></td>
+<td align="left"><p> (PTE) 或 PFN 的页表项已损坏。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x9A</p></td>
@@ -109,9 +108,9 @@ PFN \_ LIST \_ 损坏 bug 检查的值为0x0000004E。 这表示页面帧号（P
 <a name="cause"></a>原因
 -----
 
-此错误通常是由驱动程序传递错误的内存描述符列表导致的。 例如，驱动程序可能使用同一列表调用了两次**MmUnlockPages** 。
+此错误通常是由驱动程序传递错误的内存描述符列表导致的。 例如，驱动程序可能使用同一列表调用了两次 **MmUnlockPages** 。
 
-如果内核调试器可用，请检查堆栈跟踪： [**！分析**](-analyze.md)调试扩展显示有关 bug 检查的信息，可帮助确定根本原因，然后输入[**k （显示 stack Backtrace）**](k--kb--kc--kd--kp--kp--kv--display-stack-backtrace-.md)命令之一来查看调用堆栈。
+如果内核调试器可用，请检查堆栈跟踪： [**！分析**](-analyze.md) 调试扩展显示有关 bug 检查的信息，可帮助确定根本原因，然后输入一个 [**k (显示堆栈 Backtrace)**](k--kb--kc--kd--kp--kp--kv--display-stack-backtrace-.md) 命令来查看调用堆栈。
 
  
 

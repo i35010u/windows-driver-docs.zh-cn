@@ -1,15 +1,14 @@
 ---
 title: 系统定义的 ECP
 description: 系统定义的 ECP
-ms.assetid: 6acb4be4-a7aa-431d-b2d8-3ef6d41cb4ef
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ac469ec4aa9ba4a01becb9df50aa5a78fdd5a0ca
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 68e89c0e3b13339c68859f7edef04bdd53cf66d6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89063230"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96831827"
 ---
 # <a name="system-defined-ecps"></a>系统定义的 ECP
 
@@ -31,7 +30,7 @@ ms.locfileid: "89063230"
 <span id="GUID_ECP_PREFETCH_OPEN"></span><span id="guid_ecp_prefetch_open"></span>GUID \_ ECP \_ 预提取 \_ 打开  
 标识 [**预提取的 \_ 开放 \_ ECP \_ 上下文**](/previous-versions/ff551843(v=vs.85)) 结构的 GUID。
 
-Prefetcher 是操作系统的一个组件，它与缓存管理器和内存管理器紧密集成，使磁盘访问更高效，从而提高性能。 如果其他组件干扰 prefetcher，系统性能会下降，可能会死锁。 因此，prefetcher 会将预提取的 \_ 开放式 \_ ECP \_ 上下文结构附加到一个文件中，以便与 prefetcher 对该文件执行打开的请求进行通信。 此打开请求由预提取的**Context**已 \_ 打开 \_ ECP 上下文的上下文成员指定 \_ 。 其他组件（如文件系统筛选器驱动程序）可以确定是否已将预取 \_ 开放式 \_ ECP \_ 上下文附加到文件，然后采取相应的操作。
+Prefetcher 是操作系统的一个组件，它与缓存管理器和内存管理器紧密集成，使磁盘访问更高效，从而提高性能。 如果其他组件干扰 prefetcher，系统性能会下降，可能会死锁。 因此，prefetcher 会将预提取的 \_ 开放式 \_ ECP \_ 上下文结构附加到一个文件中，以便与 prefetcher 对该文件执行打开的请求进行通信。 此打开请求由预提取的 **Context** 已 \_ 打开 \_ ECP 上下文的上下文成员指定 \_ 。 其他组件（如文件系统筛选器驱动程序）可以确定是否已将预取 \_ 开放式 \_ ECP \_ 上下文附加到文件，然后采取相应的操作。
 
 <span id="GUID_ECP_NFS_OPEN"></span><span id="guid_ecp_nfs_open"></span>GUID \_ ECP \_ NFS \_ 打开  
 标识 [**NFS \_ 开放 \_ ECP \_ 上下文**](/previous-versions/ff550942(v=vs.85)) 结构的 GUID。 网络文件系统 (NFS) 服务器将 NFS \_ 开放 \_ ECP \_ 上下文结构附加到打开的文件请求。 NFS 服务器对 NFS 服务器为满足客户端请求而进行的任何打开的文件请求使用此 GUID。 然后，文件系统堆栈可以确定是否已将 \_ NFS \_ 打开 \_ 的 ECP 上下文附加到打开的文件请求。 基于 NFS \_ 打开 ECP 上下文中的 \_ 信息 \_ ，文件系统堆栈可以确定请求打开文件的客户端和原因。
@@ -40,7 +39,7 @@ Prefetcher 是操作系统的一个组件，它与缓存管理器和内存管理
 标识 [**SRV \_ 开放 \_ ECP \_ 上下文**](/previous-versions/ff556749(v=vs.85)) 结构的 GUID。 服务器将 SRV \_ 开放 \_ ECP \_ 上下文结构附加到打开的文件请求。 服务器对任何打开的文件请求使用此 GUID，服务器将该请求用于满足条件客户端请求。 然后，文件系统堆栈可以确定是否已将 SRV \_ 开放式 \_ ECP \_ 上下文附加到打开的文件请求。 基于 SRV \_ 开放 ECP 上下文中的 \_ 信息 \_ ，文件系统堆栈可以确定请求打开文件的客户端和原因。
 
 <span id="GUID_ECP_DUAL_OPLOCK_KEY"></span><span id="guid_ecp_dual_oplock_key"></span>GUID \_ ECP \_ 双重 \_ OPLOCK \_ 键  
-标识 [**双 OPLOCK \_ 密钥 \_ ECP \_ 上下文**](./dual-oplock-key-ecp-context.md) 结构的 GUID。 与 [**oplock \_ key \_ ecp \_ 上下文**](./oplock-key-ecp-context.md) 结构一样， **双 oplock \_ 键 \_ ecp \_ 上下文** 用于将 OPLOCK 密钥附加到打开的文件请求。 然而，使用 **双重 OPLOCK \_ 键 \_ ECP \_ 上下文**时，还可以设置父键来为目标文件的目录提供 OPLOCK。
+标识 [**双 OPLOCK \_ 密钥 \_ ECP \_ 上下文**](./dual-oplock-key-ecp-context.md) 结构的 GUID。 与 [**oplock \_ key \_ ecp \_ 上下文**](./oplock-key-ecp-context.md) 结构一样， **双 oplock \_ 键 \_ ecp \_ 上下文** 用于将 OPLOCK 密钥附加到打开的文件请求。 然而，使用 **双重 OPLOCK \_ 键 \_ ECP \_ 上下文** 时，还可以设置父键来为目标文件的目录提供 OPLOCK。
 
 <span id="GUID_ECP_IO_DEVICE_HINT"></span><span id="guid_ecp_io_device_hint"></span>GUID \_ ECP \_ IO \_ 设备 \_ 提示  
 标识 **IO \_ 设备 \_ 提示 \_ ECP \_ 上下文** 结构的 GUID。 设备提示用于帮助提供名称提供程序微筛选器驱动程序，以便将重分析目标跟踪到新设备。

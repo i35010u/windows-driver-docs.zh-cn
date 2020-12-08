@@ -1,7 +1,6 @@
 ---
 title: KSCATEGORY_TVTUNER
 description: KSCATEGORY_TVTUNER
-ms.assetid: 44d9d407-a94c-40de-b749-af50bc5718f4
 keywords:
 - KSCATEGORY_TVTUNER 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: c9a10795ee965a62d144d402b286b660830897fa
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 6fdd0aa72c35f23927f25a891e317cabed628f90
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89097051"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96832341"
 ---
 # <a name="kscategory_tvtuner"></a>KSCATEGORY_TVTUNER
 
@@ -56,7 +55,7 @@ ms.locfileid: "89097051"
 
 KS 设备的驱动程序将注册 KSCATEGORY_TVTUNER 的实例，以向操作系统指示设备支持 KSCATEGORY_TVTUNER 功能类别。
 
-有关如何在 INF 文件中注册此功能类别的示例，请参阅 WDK 的*src/swtuner/algtuner*目录中的软件调谐器示例附带的*Bdan* inf 文件。
+有关如何在 INF 文件中注册此功能类别的示例，请参阅 WDK 的 *src/swtuner/algtuner* 目录中的软件调谐器示例附带的 *Bdan* inf 文件。
 
 有关视频设备的信息，请参阅 [视频捕获设备](../stream/video-capture-devices.md)、 [筛选器图示例](../stream/filter-graph-examples.md)和 [编码器设备](../stream/encoder-devices.md)。
 
@@ -76,7 +75,7 @@ KS 设备的驱动程序将注册 KSCATEGORY_TVTUNER 的实例，以向操作系
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSCATEGORY_TVAUDIO**](kscategory-tvaudio.md)

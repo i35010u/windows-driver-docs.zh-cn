@@ -1,7 +1,6 @@
 ---
 title: 注册获取硬件错误事件通知
 description: 注册获取硬件错误事件通知
-ms.assetid: 86816fc7-fa69-4ecf-9d50-822b0fa6992d
 keywords:
 - 事件 WDK WHEA，注册通知
 - 注册硬件事件通知
@@ -10,12 +9,12 @@ keywords:
 - Windows 硬件错误体系结构 WDK，注册事件通知
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a8756a4c453c09154e88310c72df5b5c13718915
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 096b98da9882811c47b91992cd77fd40385d72ea
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91733385"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96832041"
 ---
 # <a name="registering-for-notification-of-hardware-error-events"></a>注册获取硬件错误事件通知
 
@@ -24,9 +23,9 @@ ms.locfileid: "91733385"
 
 WHEA 提供程序引发硬件错误事件的通道如下所示：
 
--   **System**信道 (Windows Vista) 。
+-   **System** 信道 (Windows Vista) 。
 
--   **WHEA**信道 (windows Server 2008 和 WINDOWS Vista SP1) 。
+-   **WHEA** 信道 (windows Server 2008 和 WINDOWS Vista SP1) 。
 
 -   Windows 7 及更高版本)  (**WHEA/Errors** 通道。
 
@@ -168,7 +167,7 @@ VOID UnsubscribeHwErrorEvents(EVT_HANDLE SubHandle)
 }
 ```
 
-**注意**   在**Evt*Xxx** \_ Microsoft Windows SDK 文档的[Windows 事件日志](/windows/win32/wes/windows-event-log)部分中介绍了前面的示例中使用的所有 .evt * Xxx * 函数和 .evt*Xxx*数据类型。
+**注意** 在 **Evt*Xxx** \_ Microsoft Windows SDK 文档的 [Windows 事件日志](/windows/win32/wes/windows-event-log)部分中介绍了前面的示例中使用的所有 .evt * Xxx * 函数和 .evt *Xxx* 数据类型。
 
  
 

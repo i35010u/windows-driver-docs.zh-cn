@@ -1,15 +1,14 @@
 ---
 title: 可选电源管理 OID
 description: 可选电源管理 OID
-ms.assetid: 31c8ec45-ecb2-42e2-be4d-2b89fe02a908
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6207b28cdadb035151440586f7496873b7af496a
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: d784e0a5a52ac92a392a0043f5ffd73a47f04772
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104858"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96832125"
 ---
 # <a name="optional-power-management-oids"></a>可选电源管理 OID
 

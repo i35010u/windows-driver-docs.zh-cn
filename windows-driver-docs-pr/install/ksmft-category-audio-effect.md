@@ -1,7 +1,6 @@
 ---
 title: KSMFT_CATEGORY_AUDIO_EFFECT
 description: KSMFT_CATEGORY_AUDIO_EFFECT
-ms.assetid: a6747c99-3c16-4833-905a-52472a854f77
 keywords:
 - KSMFT_CATEGORY_AUDIO_EFFECT 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: eeb33d4fbe5c02e6d0c9464908fe925c1867c6bf
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 6491a15812f9acbcc1f3532eab99191fb4854fa8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89097337"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96832307"
 ---
 # <a name="ksmft_category_audio_effect"></a>KSMFT_CATEGORY_AUDIO_EFFECT
 

@@ -1,16 +1,15 @@
 ---
 title: OID_GEN_DIRECTED_BYTES_XMIT
 description: 作为查询，OID_GEN_DIRECTED_BYTES_XMIT OID 指定传输的数据包中的字节数，这些字节在未发生错误的情况下传输。
-ms.assetid: 645215fb-457e-43cd-b45e-e34f313af46e
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_GEN_DIRECTED_BYTES_XMIT 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: caba659a200b7be20b552321ada027a94707badb
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: fef65a5367ac0aa70dad403f9bf847b41e3c7208
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89208665"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96831265"
 ---
 # <a name="oid_gen_directed_bytes_xmit"></a>OID \_ 生成 \_ 定向 \_ 字节 \_ XMIT
 
@@ -55,7 +54,7 @@ ms.locfileid: "89208665"
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [OID \_ 生成 \_ 统计信息](oid-gen-statistics.md)

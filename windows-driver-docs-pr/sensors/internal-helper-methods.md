@@ -1,15 +1,14 @@
 ---
 title: 驱动程序更新方法
-ms.assetid: F809BCE4-9176-4503-9EC7-B80AC229ABB5
 description: 更新传感器驱动程序支持的方法。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dbab5c75dfd56811260c9206dd758f8d58a015bf
-ms.sourcegitcommit: ec7bebe3f94536455e62b372c2a28fe69d1717f7
+ms.openlocfilehash: caa6f209775ef6fc3220d2f995b58221d0308c07
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93349765"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96830971"
 ---
 # <a name="driver-update-methods"></a>驱动程序更新方法
 
@@ -23,7 +22,7 @@ ms.locfileid: "93349765"
 
 ## <a name="sensor-reporting-field-updates"></a>传感器报告-现场更新
 
-**DriverUpdateCRI** 、 **DriverUpdateCS** 和 **DriverUpdateLDA** 方法演示了驱动程序如何更新当前报表间隔、更改敏感度和位置数据准确性字段。
+**DriverUpdateCRI**、 **DriverUpdateCS** 和 **DriverUpdateLDA** 方法演示了驱动程序如何更新当前报表间隔、更改敏感度和位置数据准确性字段。
 
 ```cpp
 DriverUpdateCRI(sensorID)

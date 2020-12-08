@@ -1,9 +1,8 @@
 ---
-title: WIA\_IPA\_颜色\_配置文件
-description: WIA\_IPA\_颜色\_配置文件属性保留供将来使用由 Microsoft 和未实现这一次。
-ms.assetid: a360e4e7-bd34-4839-8af3-1ece6423653a
+title: WIA \_ IPA \_ 颜色 \_ 配置文件
+description: '\_Microsoft 保留了 WIA IPA \_ 颜色 \_ 配置文件属性以供将来使用，此时不会实现。'
 keywords:
-- WIA_IPA_COLOR_PROFILE 成像设备
+- WIA_IPA_COLOR_PROFILE 图像设备
 topic_type:
 - apiref
 api_name:
@@ -14,24 +13,24 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: abe19c2dfdd3056087111bf5995fe8757a2b51bd
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: bf50f3707ae08936fc256b13e28025f6c33f4be1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63369569"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96831713"
 ---
-# <a name="wiaipacolorprofile"></a>WIA\_IPA\_颜色\_配置文件
+# <a name="wia_ipa_color_profile"></a>WIA \_ IPA \_ 颜色 \_ 配置文件
 
 
-WIA\_IPA\_颜色\_配置文件属性保留供将来使用由 Microsoft 和未实现这一次。
+\_Microsoft 保留了 WIA IPA \_ 颜色 \_ 配置文件属性以供将来使用，此时不会实现。
 
 ## <span id="ddk_wia_ipa_color_profile_si"></span><span id="DDK_WIA_IPA_COLOR_PROFILE_SI"></span>
 
 
-属性类型：VT\_I4
+属性类型： VT \_ I4
 
-有效值：WIA\_PROP\_NONE
+有效值： WIA " \_ \_ 无"
 
 访问权限：只读
 
@@ -45,8 +44,8 @@ WIA\_IPA\_颜色\_配置文件属性保留供将来使用由 Microsoft 和未实
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Wiadef.h （包括 Wiadef.h）</td>
+<td><p>标头</p></td>
+<td>Wiadef (包含 Wiadef) </td>
 </tr>
 </tbody>
 </table>

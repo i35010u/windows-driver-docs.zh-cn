@@ -1,19 +1,18 @@
 ---
 title: 支持具有不完整配置寄存器的电脑卡
 description: 支持具有不完整配置寄存器的电脑卡
-ms.assetid: 62bdb1e7-ca45-42e6-bdf5-c48fb3ddb3fc
 keywords:
 - 不完整的配置注册 WDK 多功能设备
 - 系统提供的多功能总线驱动程序 WDK
 - mf.sys
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 130d76a9cd80fc75337e99a2a9efc3031e0477b8
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 35cf2ec3477c7b75d0761ed8a19bcea59838932e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89190949"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96831687"
 ---
 # <a name="supporting-pc-cards-that-have-incomplete-configuration-registers"></a>支持具有不完整配置寄存器的电脑卡
 
@@ -29,7 +28,7 @@ ms.locfileid: "89190949"
 
     设备的自定义 INF 必须指定 mf.sys 作为设备的函数驱动程序。 系统提供的 mf.sys 驱动程序将枚举设备的功能。
 
-    有关使用系统提供的 mf.sys 驱动程序的详细信息，请参阅 [使用系统提供的多功能总线驱动程序](using-the-system-supplied-multifunction-bus-driver.md) 。
+    有关使用系统提供的 mf.sys 驱动程序的详细信息，请参阅 [使用 System-Supplied 多功能总线驱动程序](using-the-system-supplied-multifunction-bus-driver.md) 。
 
 此类设备的供应商必须提供以下各项：
 
@@ -49,7 +48,7 @@ ms.locfileid: "89190949"
 
 -   作为设备的服务 mf.sys。
 
-    有关详细信息，请参阅 [使用系统提供的多功能总线驱动程序](using-the-system-supplied-multifunction-bus-driver.md) 。
+    有关详细信息，请参阅 [使用 System-Supplied 多功能总线驱动程序](using-the-system-supplied-multifunction-bus-driver.md) 。
 
 -   多功能设备的资源要求。
 
@@ -61,11 +60,11 @@ ms.locfileid: "89190949"
 
 -   设备的每个函数的资源映射，标识每个子函数所需的父资源。
 
-    在 INF *DDInstall*中指定资源映射。**HW** 部分。 有关创建资源映射的详细信息，请参阅 [创建多功能设备的资源图](creating-resource-maps-for-a-multifunction-device.md) 。
+    在 INF *DDInstall* 中指定资源映射。**HW** 部分。 有关创建资源映射的详细信息，请参阅 [创建多功能设备的资源图](creating-resource-maps-for-a-multifunction-device.md) 。
 
 INF 必须重述设备指定的所有资源要求，因为如果 INF 中存在替代配置，则 PnP 管理器不会使用设备提供的任何设备资源要求。
 
-对于这种设备，可以使用 **PcCardConfig** 条目来编程配置选项 register，类似于对单功能设备进行编程。 **PcCardConfig**项包含适用于整个设备的信息。 **PcCardConfig**条目记录在[**INF LogConfig 指令**](../install/inf-logconfig-directive.md)中。
+对于这种设备，可以使用 **PcCardConfig** 条目来编程配置选项 register，类似于对单功能设备进行编程。 **PcCardConfig** 项包含适用于整个设备的信息。 **PcCardConfig** 条目记录在 [**INF LogConfig 指令**](../install/inf-logconfig-directive.md)中。
 
 为多功能设备指定 **PcCardConfig** 条目时， *ConfigIndex* 的格式与为单功能设备定义的格式相同。 单功能 PC 卡的配置注册包含对该设备的属性中定义的一组资源的索引。 此指令还可用于使用配置选项注册的基于索引格式的某些设备设备。
 

@@ -1,27 +1,26 @@
 ---
 title: 强制挂起 I/O 请求
 description: 强制挂起 I/O 请求
-ms.assetid: 0255fc5c-0e75-4108-ba29-f1a61ce9b0dd
 keywords:
 - "\"强制挂起 i/o 请求\" 选项 WDK 驱动程序验证程序"
 - STATUS_PENDING WDK 驱动程序验证程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8a6f1fa3652349bb87686288d3baaa6692e22115
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: b6f0154231c0a8c527d8f1948f7d6e219dd74409
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89383437"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96831581"
 ---
 # <a name="force-pending-io-requests"></a>强制挂起 I/O 请求
 
 
-"强制挂起 i/o 请求" 选项会随机返回状态 \_ "挂起"，以响应驱动程序对 [**IoCallDriver**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver)的调用。 此选项将测试驱动程序的逻辑，以响应 \_ **IoCallDriver**中的状态挂起返回值。
+"强制挂起 i/o 请求" 选项会随机返回状态 \_ "挂起"，以响应驱动程序对 [**IoCallDriver**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver)的调用。 此选项将测试驱动程序的逻辑，以响应 \_ **IoCallDriver** 中的状态挂起返回值。
 
 只有 Windows Vista 和更高版本的 Windows 操作系统才支持此选项。
 
-**警告**   不要对驱动程序使用此选项，除非您对驱动程序的操作有详细了解，并且已经验证驱动程序设计为处理 \_ 从其所有调用到**IOCALLDRIVER**的状态待定返回值。 如果驱动程序上运行此选项，而该驱动程序未设计为处理 \_ 所有调用的挂起状态，则可能会导致崩溃、内存损坏和异常系统行为，这可能很难进行调试或纠正。
+**警告**   不要对驱动程序使用此选项，除非您对驱动程序的操作有详细了解，并且已经验证驱动程序设计为处理 \_ 从其所有调用到 **IOCALLDRIVER** 的状态待定返回值。 如果驱动程序上运行此选项，而该驱动程序未设计为处理 \_ 所有调用的挂起状态，则可能会导致崩溃、内存损坏和异常系统行为，这可能很难进行调试或纠正。
 
  
 
@@ -35,19 +34,19 @@ ms.locfileid: "89383437"
 
 在运行此测试之前，请查看驱动程序设计和源代码，并确认该驱动程序旨在处理 \_ 其所有 [**IoCallDriver**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver) 调用的挂起状态。
 
-许多驱动程序设计为不处理对 \_ **IoCallDriver**的所有调用的状态。 它们可能会将 IRP 发送到特定的已知驱动程序，该驱动程序保证会立即完成 IRP。 \_向不处理驱动程序的驱动程序发送挂起状态可能导致驱动程序和系统崩溃和内存损坏。
+许多驱动程序设计为不处理对 \_ **IoCallDriver** 的所有调用的状态。 它们可能会将 IRP 发送到特定的已知驱动程序，该驱动程序保证会立即完成 IRP。 \_向不处理驱动程序的驱动程序发送挂起状态可能导致驱动程序和系统崩溃和内存损坏。
 
 ### <a name="span-idhow_should_drivers_handle_status_pending_spanspan-idhow_should_drivers_handle_status_pending_spanhow-should-drivers-handle-status_pending"></a><span id="how_should_drivers_handle_status_pending_"></span><span id="HOW_SHOULD_DRIVERS_HANDLE_STATUS_PENDING_"></span>驱动程序应如何处理 \_ 挂起状态？
 
 调用 [**IoCallDriver**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver) 的较高级别的驱动程序必须处理状态 \_ 挂起的返回值，如下所示：
 
--   在调用 **IoCallDriver**之前，驱动程序必须调用 [**IoBuildSynchronousFsdRequest**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iobuildsynchronousfsdrequest) 来安排对 IRP 的同步处理。
+-   在调用 **IoCallDriver** 之前，驱动程序必须调用 [**IoBuildSynchronousFsdRequest**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iobuildsynchronousfsdrequest) 来安排对 IRP 的同步处理。
 
 -   如果 **IoCallDriver** 返回状态 \_ "挂起"，则驱动程序必须通过对指定的事件调用 [**KeWaitForSingleObject**](/windows-hardware/drivers/ddi/wdm/nf-wdm-kewaitforsingleobject) 来等待 IRP 完成。
 
 -   驱动程序必须预计 IRP 可能在 i/o 管理器发出事件信号之前被释放。
 
--   调用 **IoCallDriver**后，调用方无法引用 IRP。
+-   调用 **IoCallDriver** 后，调用方无法引用 IRP。
 
 ### <a name="span-idwhich_errors_does_force_pending_i_o_request_detect_spanspan-idwhich_errors_does_force_pending_i_o_request_detect_spanwhich-errors-does-force-pending-io-request-detect"></a><span id="which_errors_does_force_pending_i_o_request_detect_"></span><span id="WHICH_ERRORS_DOES_FORCE_PENDING_I_O_REQUEST_DETECT_"></span>强制挂起 i/o 请求检测哪些错误？
 
@@ -57,7 +56,7 @@ ms.locfileid: "89383437"
 
 -   驱动程序未调用 **KeWaitForSingleObject**。
 
--   在调用 **IoCallDriver**之后，驱动程序将引用 IRP 结构中的值。 在调用 **IoCallDriver**之后，较高级别的驱动程序将无法访问 irp，除非它已设置完成例程，然后仅在所有较低级别的驱动程序都完成 IRP 时才访问。 如果已释放 IRP，驱动程序会崩溃。
+-   在调用 **IoCallDriver** 之后，驱动程序将引用 IRP 结构中的值。 在调用 **IoCallDriver** 之后，较高级别的驱动程序将无法访问 irp，除非它已设置完成例程，然后仅在所有较低级别的驱动程序都完成 IRP 时才访问。 如果已释放 IRP，驱动程序会崩溃。
 
 -   驱动程序未正确调用相关函数。 例如，驱动程序调用 **KeWaitForSingleObject** ，并将一个句柄传递到 (的 *对象* 参数) 的事件，而不是将指针传递到事件对象。
 
@@ -98,7 +97,7 @@ ms.locfileid: "89383437"
 -   **使用驱动程序验证器管理器**
 
     1.  启动驱动程序验证器管理器。 在命令提示符窗口中键入 **Verifier** 。
-    2.  选择 " **为代码开发人员 (创建自定义设置") **，然后单击 " **下一步**"。
+    2.  选择 " **为代码开发人员 (创建自定义设置")**，然后单击 " **下一步**"。
     3.  选择 " **从完整列表中选择单个设置**"。
     4.  选择 [I/o 验证](i-o-verification.md) 并强制挂起 i/o 请求。
 
@@ -108,7 +107,7 @@ ms.locfileid: "89383437"
 
 若要查看强制挂起 i/o 请求测试的结果，请使用带有标志值0x40 的 **！ verifier** 调试器扩展。
 
-有关 **！ verifier**的信息，请参阅*Windows 调试工具*文档中的 **！ verifier**主题。
+有关 **！ verifier** 的信息，请参阅 *Windows 调试工具* 文档中的 **！ verifier** 主题。
 
 如果测试计算机因强制挂起 i/o 请求测试而崩溃，则可以使用 **！ verifier 40** 命令查找原因。 在当前的堆栈跟踪中，查找驱动程序最近使用的 IRP 的地址。 例如，如果使用 **kP** 命令显示线程的堆栈帧，则可以在当前堆栈跟踪的函数参数中找到 IRP 地址。 然后，运行 **！ verifier 40** 并查找 IRP 的地址。 最近的强制挂起堆栈跟踪显示在显示的顶部。
 

@@ -1,7 +1,6 @@
 ---
 title: SD 卡请求
 description: SD 卡请求
-ms.assetid: 3c04573a-5fe7-4332-b899-5aff3234f1ad
 keywords:
 - SD WDK 总线，请求处理
 - I/o WDK SD bus
@@ -12,12 +11,12 @@ keywords:
 - SdBusSubmitRequestAsync
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f3cc402ad272e1d781c96233d203bcf81bc3a623
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: d61cebc02e78f7a777efe9c6dabde4e68e333848
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89384175"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96831113"
 ---
 # <a name="sd-card-requests"></a>SD 卡请求
 
@@ -27,7 +26,7 @@ ms.locfileid: "89384175"
 同步请求例程使用两个参数：接口上下文和请求数据包。
 
 <a href="" id="interface-context"></a>**接口上下文**  
-在使用[**SdBusOpenInterface**](/windows-hardware/drivers/ddi/ntddsd/nf-ntddsd-sdbusopeninterface)打开 SD 接口后，设备驱动程序从[**SDBUS \_ 接口 \_ 标准**](/previous-versions/windows/hardware/drivers/ff537923(v=vs.85))结构的**上下文**成员检索接口上下文。 每当驱动程序调用接口中的方法时，该驱动程序都必须传递此上下文信息。
+在使用 [**SdBusOpenInterface**](/windows-hardware/drivers/ddi/ntddsd/nf-ntddsd-sdbusopeninterface)打开 SD 接口后，设备驱动程序从 [**SDBUS \_ 接口 \_ 标准**](/previous-versions/windows/hardware/drivers/ff537923(v=vs.85))结构的 **上下文** 成员检索接口上下文。 每当驱动程序调用接口中的方法时，该驱动程序都必须传递此上下文信息。
 
 <a href="" id="request-packet"></a>**请求数据包**  
 设备驱动程序必须分配和初始化 [**SDBUS \_ 请求 \_ 数据包**](/previous-versions/windows/hardware/drivers/ff537931(v=vs.85)) 结构。 此结构指定请求函数和请求的其他特征。
@@ -51,7 +50,7 @@ ms.locfileid: "89384175"
 <a href="" id="user-context"></a>**用户上下文**  
 此参数保存一个指向用户上下文数据的指针，系统会将该指针传递到完成例程参数中指定的完成例程。
 
-当设备驱动程序 &lt; \_ 调用 **SdBusSubmitRequestAsync** 例程时，必须以 IRQL = 调度级别运行。 **SdBusSubmitRequest** 是分配其自己的 IRP 并调用 **SdBusSubmitRequestAsync**的包装器。 提供此方法是为了方便驱动程序编写器。
+当设备驱动程序 &lt; \_ 调用 **SdBusSubmitRequestAsync** 例程时，必须以 IRQL = 调度级别运行。 **SdBusSubmitRequest** 是分配其自己的 IRP 并调用 **SdBusSubmitRequestAsync** 的包装器。 提供此方法是为了方便驱动程序编写器。
 
 以下各节提供了一些代码示例，这些代码示例演示了设备驱动程序如何提交 SD 请求的两个主要类别：有关不同请求的说明，请参阅 [**SD \_ REQUEST \_ FUNCTION**](/windows-hardware/drivers/ddi/ntddsd/ne-ntddsd-sd_request_function)。
 
@@ -94,7 +93,7 @@ ms.locfileid: "89384175"
 <a href="" id="property-contents-and-length"></a>**属性内容和长度**  
 此代码示例将指针放置在设备扩展
 
-请求数据包的**GetSetProperty**成员。 总线驱动程序会将函数编号存储在此位置。 示例代码还将此缓冲区的大小存储在请求数据包的 **GetSetProperty** 成员中。
+请求数据包的 **GetSetProperty** 成员。 总线驱动程序会将函数编号存储在此位置。 示例代码还将此缓冲区的大小存储在请求数据包的 **GetSetProperty** 成员中。
 
 ## <a name="secure-digital-sd-device-command-requests"></a>安全数字 (SD) 设备命令请求
 

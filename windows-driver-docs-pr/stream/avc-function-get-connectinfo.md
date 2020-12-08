@@ -1,7 +1,6 @@
 ---
 title: AVC \_ 函数 \_ GET \_ CONNECTINFO
 description: AVC \_ 函数 \_ GET \_ CONNECTINFO
-ms.assetid: d4230024-a765-47f0-9958-9f71761f7b85
 keywords:
 - AVC_FUNCTION_GET_CONNECTINFO 流媒体设备
 topic_type:
@@ -12,12 +11,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 26c48f833f5ccf4c6263b64866d24210ba9f3e17
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: f76f6d783172baaf22245457f6d1977d168a1139
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89186799"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96830921"
 ---
 # <a name="avc_function_get_connectinfo"></a>AVC \_ 函数 \_ GET \_ CONNECTINFO
 
@@ -41,7 +40,7 @@ AVC \_ 函数 \_ 获取 \_ 连接 \_ 信息函数代码获取每个 pin ID 的 A
 <thead>
 <tr class="header">
 <th>返回值</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -62,7 +61,7 @@ AVC \_ 函数 \_ 获取 \_ 连接 \_ 信息函数代码获取每个 pin ID 的 A
 
  
 
-### <a name="comments"></a>说明
+### <a name="comments"></a>注释
 
 此函数使用 AVC **PreConnectInfo** \_ MULTIFUNC IRB 结构的 PreConnectInfo 成员 \_ ，如下所示。
 
@@ -92,7 +91,7 @@ typedef struct _AVC_PRECONNECT_INFO {
 
 ### <a name="requirements"></a>要求
 
-**标头：** 在 *avc*中声明。 包括 *avc*。
+**标头：** 在 *avc* 中声明。 包括 *avc*。
 
 ### <a name="avc_multifunc_irb-input"></a>AVC \_ MULTIFUNC \_ IRB 输入
 
@@ -102,7 +101,7 @@ typedef struct _AVC_PRECONNECT_INFO {
 <span id="ConnectInfo"></span><span id="connectinfo"></span><span id="CONNECTINFO"></span>**ConnectInfo**  
 指定 AV/C 设备的连接信息。
 
-*avc.sys*的虚拟实例不支持此函数代码。
+*avc.sys* 的虚拟实例不支持此函数代码。
 
 如果子单元驱动程序负责创建 KSPIN 描述符结构中包含的数据范围，则它必须使用此函数 \_ 。 AVCPRECONNECTINFO 结构将追加到 PC 外部连接的 **DataRanges** 成员。
 

@@ -1,15 +1,14 @@
 ---
 title: WIA 扫描程序微型驱动程序的属性
 description: WIA 扫描程序微型驱动程序的属性
-ms.assetid: 9de8694a-0d19-4945-b0c1-a3c4bc71dad3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bd38c76852664956fb9472f8e291a7a925cc2674
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 8dbdfc95636c36e6b25b9c00b54b5d4e405e8d6f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89183905"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96831411"
 ---
 # <a name="properties-for-wia-scanner-minidrivers"></a>WIA 扫描程序微型驱动程序的属性
 

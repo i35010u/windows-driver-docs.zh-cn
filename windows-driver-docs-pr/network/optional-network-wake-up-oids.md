@@ -1,17 +1,16 @@
 ---
 title: 可选网络唤醒 OID
 description: 可选网络唤醒 OID
-ms.assetid: 0e9b4844-1623-4bfd-8e73-ebbd970c7e95
 keywords:
 - 可选网络唤醒 Oid
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7ebb1d150d391ea67022cd55dcecf31998b6f9b2
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 60b9b2ad174c907a9fb22eaf4379ecc7a6cd4a20
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104564"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96832129"
 ---
 # <a name="optional-network-wake-up-oids"></a>可选网络唤醒 OID
 

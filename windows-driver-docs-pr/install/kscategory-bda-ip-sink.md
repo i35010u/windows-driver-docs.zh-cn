@@ -1,7 +1,6 @@
 ---
 title: KSCATEGORY_BDA_IP_SINK
 description: KSCATEGORY_BDA_IP_SINK
-ms.assetid: 7c9627b3-2d6b-471c-9101-0768890bfe10
 keywords:
 - KSCATEGORY_BDA_IP_SINK 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 841f88231458f51392c06a8cd41bc7327d873d15
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 7e61f8a794a9e94d325a918496143bc2c57e5719
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89095485"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96831391"
 ---
 # <a name="kscategory_bda_ip_sink"></a>KSCATEGORY_BDA_IP_SINK
 

@@ -1,11 +1,10 @@
 ---
 title: .sympath（设置符号路径）
-description: .Sympath 命令设置或更改的符号路径。 符号路径指定的调试器查找符号文件的位置。
-ms.assetid: 32146871-a59f-4c93-b886-137c5ecf5c99
+description: Sympath 命令设置或更改符号路径。 符号路径指定调试器查找符号文件的位置。
 keywords:
-- 设置符号路径 (.sympath) 命令
-- 符号文件和路径，设置符号路径 (.sympath) 命令
-- .sympath （设置符号路径） Windows 调试
+- 设置符号路径 ( sympath) 命令
+- 符号文件和路径，将符号路径 ( 设置) 命令
+- sympath (设置) Windows 调试的符号路径
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -14,30 +13,30 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 35abbd135a02d86ef44baab83858a989ec4f3d4b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 56fb6514db04ad4090f8fd42cc704cded549df85
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63338795"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96832015"
 ---
 # <a name="sympath-set-symbol-path"></a>.sympath（设置符号路径）
 
 
-**.Sympath**命令设置或更改的符号路径。 符号路径指定的调试器查找符号文件的位置。
+**Sympath** 命令设置或更改符号路径。 符号路径指定调试器查找符号文件的位置。
 
 ```dbgcmd
 .sympath[+] [Path [; ...]]
 ```
 
-## <a name="span-idddkmetasetsymbolpathdbgspanspan-idddkmetasetsymbolpathdbgspanparameters"></a><span id="ddk_meta_set_symbol_path_dbg"></span><span id="DDK_META_SET_SYMBOL_PATH_DBG"></span>参数
+## <a name="span-idddk_meta_set_symbol_path_dbgspanspan-idddk_meta_set_symbol_path_dbgspanparameters"></a><span id="ddk_meta_set_symbol_path_dbg"></span><span id="DDK_META_SET_SYMBOL_PATH_DBG"></span>参数
 
 
 <span id="______________"></span> **+**   
-指定的新位置将追加到 （而不是替换） 的前一个符号搜索路径。
+指定新位置将追加到 (而不是替换) 上一个符号搜索路径。
 
-<span id="_______Path______"></span><span id="_______path______"></span><span id="_______PATH______"></span> *路径*   
-完全限定的路径或完全限定的路径的列表。 由分号分隔多个路径。 如果*路径*是省略，则显示当前符号路径。
+<span id="_______Path______"></span><span id="_______path______"></span><span id="_______PATH______"></span>*路径*   
+完全限定的路径或完全限定路径的列表。 多个路径之间用分号分隔。 如果省略 *路径* ，则显示当前的符号路径。
 
 ### <a name="span-idenvironmentspanspan-idenvironmentspanspan-idenvironmentspanenvironment"></a><span id="Environment"></span><span id="environment"></span><span id="ENVIRONMENT"></span>环境
 
@@ -48,30 +47,30 @@ ms.locfileid: "63338795"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>模式</strong></p></td>
-<td align="left"><p>用户模式下，内核模式</p></td>
+<td align="left"><p><strong>交货</strong></p></td>
+<td align="left"><p>用户模式，内核模式</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>目标</strong></p></td>
-<td align="left"><p>实时、 崩溃转储</p></td>
+<td align="left"><p>实时，故障转储</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>平台</strong></p></td>
-<td align="left"><p>全部</p></td>
+<td align="left"><p>all</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-有关详细信息和更改此路径的其他方法，请参阅[符号路径](symbol-path.md)。
+有关更改此路径的详细信息和其他方式，请参阅 [符号路径](symbol-path.md)。
 
 <a name="remarks"></a>备注
 -------
 
-更改符号路径时，将不加载新符号信息。 可以使用[ **.reload （重新加载模块）** ](-reload--reload-module-.md)命令以重新加载符号。
+更改符号路径时，不会加载新的符号信息。 您可以使用 [**. reload.sql (重载模块)**](-reload--reload-module-.md) 命令重新加载符号。
 
  
 

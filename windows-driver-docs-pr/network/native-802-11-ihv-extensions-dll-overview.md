@@ -1,31 +1,30 @@
 ---
 title: 本机 802.11 IHV 扩展 DLL 概述
 description: 本机 802.11 IHV 扩展 DLL 概述
-ms.assetid: 6a3d3e62-41b3-4ae2-a379-273431a36bb1
 keywords:
 - IHV 扩展 DLL WDK 本机802.11，关于本机 802.11 IHV 扩展 DLL
 - 本机 802.11 IHV 扩展 DLL WDK，关于本机 802.11 IHV 扩展 DLL
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 046c62e2400a2e7f753b5f360c90f0bc25c9d6dc
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: e9faafe0175d0a5ad01b8e9225516269be8ce128
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89217038"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96831315"
 ---
 # <a name="native-80211-ihv-extensions-dll-overview"></a>本机 802.11 IHV 扩展 DLL 概述
 
 
 
 
- 
+ 
 
 通过 IHV 扩展 DLL，独立硬件供应商 (IHV) 可以支持以下各项：
 
 -   专用或非标准身份验证算法。 通过此支持，IHV 扩展 DLL 发送并接收与身份验证算法相关的所有安全数据包。
 
-    IHV 扩展 DLL 还可以支持操作系统不支持的网络配置的标准身份验证算法。 例如，DLL 可支持具有预共享密钥的 Wi-fi 受保护的访问， (在) 身份验证算法 (IBSS) 网络，这是 Windows Vista 不支持的配置。
+    IHV 扩展 DLL 还可以支持操作系统不支持的网络配置的标准身份验证算法。 例如，DLL 可以支持使用预共享密钥 (Wi-Fi 受保护的访问，而不是 Windows Vista 不支持的配置 (IBSS) 网络上的) 身份验证算法。
 
 -   专用或非标准密码算法。 通过此支持，IHV 扩展 DLL 负责派生密码密钥并将密钥下载到本机802.11 微型端口驱动程序。
 
@@ -43,6 +42,6 @@ ms.locfileid: "89217038"
 
 同样，IHV 扩展 DLL 通过其 IHV 处理函数提供 API。 本机 802.11 IHV 扩展性主机进程将此 API 用于各种操作，如启动预关联或后关联操作。 有关 IHV 处理程序函数的详细信息，请参阅 [本机 802.11 IHV 处理程序函数](./native-802-11-ihv-handler-functions.md)。
 
- 
+ 
 
- 
+ 

@@ -1,15 +1,14 @@
 ---
 title: 源代码
 description: 本部分包含以下主题。
-ms.assetid: C8275DAF-5062-4244-A78E-C14CC90055E2
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2a02ccde657cf12f573791add9e8b8cbb00eaa36
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6dddff69af3fb7aeb7e2859dedc6f65df782922b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63368111"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96830741"
 ---
 # <a name="source-code"></a>源代码
 
@@ -18,7 +17,7 @@ ms.locfileid: "63368111"
 
 -   [源路径](source-path.md)
 -   [使用源服务器](using-a-source-server.md)
--   [创建源代码管理系统](creating-your-own-source-control-system.md)
+-   [创建自己的源代码管理系统](creating-your-own-source-control-system.md)
 -   [SrcSrv](srcsrv.md)
 
  

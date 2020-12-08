@@ -1,15 +1,14 @@
 ---
 title: 流输出阶段
 description: 流输出阶段
-ms.assetid: e3f4685f-a214-4934-a36f-92591ef99db8
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 39e85f5fd9f4f340c76c3fa718a07d13e7a0653c
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 2a77e2d68c4a8568a0100e6070cd78a163c7f68c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89066564"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96831855"
 ---
 # <a name="stream-output-stage"></a>流输出阶段
 

@@ -1,7 +1,6 @@
 ---
 title: 管理 NDIS 端口
 description: 管理 NDIS 端口
-ms.assetid: 08bb6623-aa9f-483e-a3cd-7dea676f3478
 keywords:
 - 端口 WDK NDIS，管理
 - NDIS 端口 WDK，管理
@@ -9,12 +8,12 @@ keywords:
 - 端口号 WDK NDIS
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f3e248c83563b76d1845c04901eaf1e79aaf8300
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 221ce480d44b7e829e858b97c8012cf473a6d54f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89218069"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96832205"
 ---
 # <a name="managing-an-ndis-port"></a>管理 NDIS 端口
 

@@ -1,7 +1,6 @@
 ---
 title: KSMFT_CATEGORY_AUDIO_DECODER
 description: KSMFT_CATEGORY_AUDIO_DECODER
-ms.assetid: 0a6ae714-89c4-44c5-a03d-473396a3886e
 keywords:
 - KSMFT_CATEGORY_AUDIO_DECODER 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 87f43d802fac37ce27cdb0fc35482b1a5c3851cd
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 972911448c361db6816905256b2fdc18d27ba67f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89097339"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96832305"
 ---
 # <a name="ksmft_category_audio_decoder"></a>KSMFT_CATEGORY_AUDIO_DECODER
 

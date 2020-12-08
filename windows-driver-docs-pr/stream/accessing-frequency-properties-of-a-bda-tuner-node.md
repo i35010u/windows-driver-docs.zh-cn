@@ -1,7 +1,6 @@
 ---
 title: 访问 BDA 调谐器节点的频率属性
 description: 访问 BDA 调谐器节点的频率属性
-ms.assetid: 47c24e99-c82c-4bc8-af36-bd7f728634ba
 keywords:
 - 方法设置 WDK BDA，RF 调谐器节点
 - 属性设置 WDK BDA，RF 调谐器节点
@@ -10,12 +9,12 @@ keywords:
 - 频率属性 WDK BDA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 44788878ce12d3e25b5b37ff7e7d3b1d4d4f75eb
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 846af99806e2a68d3a4c84f73253d980099e04ac
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89184633"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96830927"
 ---
 # <a name="accessing-frequency-properties-of-a-bda-tuner-node"></a>访问 BDA 调谐器节点的频率属性
 

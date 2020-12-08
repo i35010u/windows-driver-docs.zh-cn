@@ -1,7 +1,6 @@
 ---
 title: MRxTruncate 例程
 description: MRxTruncate 例程由 RDBSS 调用，请求网络最小化重定向器截断文件系统对象的内容。
-ms.assetid: d60ec8ef-2ccf-42ad-97d2-1aaf9d60acfb
 keywords:
 - MRxTruncate 例程可安装文件系统驱动程序
 - PMRX_CALLDOWN
@@ -15,17 +14,17 @@ api_type:
 - UserDefined
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c1131b2ddbf69c3d6e571db53c903245480725c5
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: ca328e817d48ea77096d091864d55a03972cd147
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89066120"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96831453"
 ---
 # <a name="mrxtruncate-routine"></a>MRxTruncate 例程
 
 
-*MRxTruncate*例程由[RDBSS](./the-rdbss-driver-and-library.md)调用，请求网络最小化重定向器截断文件系统对象的内容。
+*MRxTruncate* 例程由 [RDBSS](./the-rdbss-driver-and-library.md)调用，请求网络最小化重定向器截断文件系统对象的内容。
 
 <a name="syntax"></a>语法
 ------
@@ -34,12 +33,12 @@ ms.locfileid: "89066120"
 PMRX_CALLDOWN MRxTruncate;
 
 NTSTATUS MRxTruncate(
-  _Inout_ PRX_CONTEXT RxContext
+  _Inout_ PRX_CONTEXT RxContext
 )
 { ... }
 ```
 
-<a name="parameters"></a>parameters
+<a name="parameters"></a>参数
 ----------
 
 *RxContext* \[in、out\]  
@@ -74,7 +73,7 @@ NTSTATUS MRxTruncate(
 <a name="remarks"></a>备注
 -------
 
-如果以下两个条件均为 true，则将*MRxTruncate*作为清理操作的一部分进行调用：
+如果以下两个条件均为 true，则将 *MRxTruncate* 作为清理操作的一部分进行调用：
 
 -   文件对象对应于磁盘文件或目录
 
@@ -84,7 +83,7 @@ NTSTATUS MRxTruncate(
 
 调用 *MRxTruncate* 后，将在清理操作过程中调用 [**MRxCleanupFobx**](/previous-versions/windows/hardware/drivers/ff549841(v=vs.85)) 。
 
-RDBSS 忽略 *MRxTruncate*的返回值。
+RDBSS 忽略 *MRxTruncate* 的返回值。
 
 <a name="requirements"></a>要求
 ------------
@@ -97,7 +96,7 @@ RDBSS 忽略 *MRxTruncate*的返回值。
 <tbody>
 <tr class="odd">
 <td align="left"><p>目标平台</p></td>
-<td align="left">桌面型</td>
+<td align="left">台式机</td>
 </tr>
 <tr class="even">
 <td align="left"><p>标头</p></td>
@@ -106,7 +105,7 @@ RDBSS 忽略 *MRxTruncate*的返回值。
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**MRxAreFilesAliased**](/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_chkfcb_calldown)

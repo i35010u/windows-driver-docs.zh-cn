@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ 扩展 \_ 单元 \_ 信息
 description: KSPROPERTY \_ 扩展 \_ 单元 \_ 信息属性检索扩展单元描述符的 guidExtensionCode、bNumControls、bNrInPins 和 baSourceID 成员。
-ms.assetid: a7a2f655-8df7-4260-883f-53d6f5a7c6f3
 keywords:
 - KSPROPERTY_EXTENSION_UNIT_INFO 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 93215d7f6df875593eaab5dffdebe029bc381dc6
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 167409cdcd401fd3bbfeb96e31cfea300ab82a2e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105934"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96830833"
 ---
 # <a name="ksproperty_extension_unit_info"></a>KSPROPERTY \_ 扩展 \_ 单元 \_ 信息
 
@@ -66,7 +65,7 @@ KSPROPERTY \_ 扩展 \_ 单元 \_ 信息属性检索扩展单元描述符的 gui
 
 此属性适用于 Windows Vista 和更高版本，以及适用于 Microsoft DirectX 9.2 或更高版本的 SDK。
 
-在设备启动过程中，系统提供的 USB 视频类驱动程序 (*Usbvideo.sys*) 从设备的扩展单元描述符缓存信息。 然后*Usbvideo.sys*使用此缓存信息来响应 KSPROPERTY \_ 扩展 \_ 单元 \_ 信息。
+在设备启动过程中，系统提供的 USB 视频类驱动程序 (*Usbvideo.sys*) 从设备的扩展单元描述符缓存信息。 然后 *Usbvideo.sys* 使用此缓存信息来响应 KSPROPERTY \_ 扩展 \_ 单元 \_ 信息。
 
 因此，此属性返回的字段与扩展单元描述符中设备提供的字段相同。 有关此类描述符的示例，请参阅 [示例扩展单元描述符](./sample-extension-unit-descriptor.md)。
 

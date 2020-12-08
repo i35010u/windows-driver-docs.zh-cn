@@ -1,15 +1,14 @@
 ---
 title: 合成传感器实现细节
 description: 本部分提供有关 Windows 合成传感器驱动程序堆栈的实现细节。
-ms.assetid: B53D76AC-127C-4B5A-B908-A647D2B3F164
 ms.date: 07/20/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: f870c69122d8f79f637eddd4b8acc784d6b10985
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 45640256ffdb33738ef472cd41951eac603cde39
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91733055"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96831003"
 ---
 # <a name="fusion-sensor-implementation-details"></a>合成传感器实现细节
 
@@ -29,9 +28,9 @@ ms.locfileid: "91733055"
 
 -   应用程序调用 **传感器本机 api** 来访问合成和罗盘的特性和功能。 Api 是 ReadFile 和 DeviceIoControl 的包装器。 这些 Api 将发送到传感器类扩展，后者随后处理并完成请求。
 
--   **传感器类扩展**为任何所需的特定于传感器的扩展性提供支持。
+-   **传感器类扩展** 为任何所需的特定于传感器的扩展性提供支持。
 
--   **合成驱动程序**是驱动程序的特定于功能的软件部分。 它读取物理传感器并处理数据。 指南针和合成传感器的算法是在此组件中实现的。
+-   **合成驱动程序** 是驱动程序的特定于功能的软件部分。 它读取物理传感器并处理数据。 指南针和合成传感器的算法是在此组件中实现的。
 
 ## <a name="coordinate-systems"></a>坐标系统
 

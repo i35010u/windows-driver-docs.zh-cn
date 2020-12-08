@@ -1,18 +1,17 @@
 ---
 title: 处理双监视器配置
 description: 处理双监视器配置
-ms.assetid: 224ebc3f-dace-4b41-bfc8-6fd81c8b309d
 keywords:
 - TMM WDK 显示，两个监视器配置
 - 监视器配置 WDK 显示，两监视器
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 96396d991c6ffaee7e84d5fb00cefe0b41275bf4
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: cdc20cac63cef6480df2168b7e5edd893e5264ac
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89065822"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96830673"
 ---
 # <a name="handling-two-monitor-configurations"></a>处理双监视器配置
 
@@ -21,7 +20,7 @@ ms.locfileid: "89065822"
 
 以下顺序显示了 TMM 调用 [IViewHelper](/windows-hardware/drivers/ddi/index) 方法的顺序，以及在这种情况下执行其他操作：
 
-1.  TMM 调用 **EnumDisplayDevices** 函数来检索当前显示配置，其中包括适配器、显示和监视器。 有关 **EnumDisplayDevices**的详细信息，请参阅 Microsoft Windows SDK 文档。
+1.  TMM 调用 **EnumDisplayDevices** 函数来检索当前显示配置，其中包括适配器、显示和监视器。 有关 **EnumDisplayDevices** 的详细信息，请参阅 Microsoft Windows SDK 文档。
 
 2.  TMM 将显示配置与以前记录的显示配置进行比较。
 
@@ -47,7 +46,7 @@ ms.locfileid: "89065822"
 
 2.  TMM 调用 [**IViewHelper：： Commit**](/previous-versions/windows/hardware/drivers/ff568167(v=vs.85)) 方法。
 
-在前面的 **SetActiveTopology** 调用中，参数三设置为1，而不是2。 在这种情况下， **SetActiveTopology** 将 *targetArray* 解释为具有一个元素的数组。 **SetActiveTopology** 关闭第二个目标并进入单一视图。 接下来，TMM 使用 **ChangeDisplaySettingsEx** 函数来扩展显示。 有关 **ChangeDisplaySettingsEx**的详细信息，请参阅 Microsoft Windows SDK 文档。
+在前面的 **SetActiveTopology** 调用中，参数三设置为1，而不是2。 在这种情况下， **SetActiveTopology** 将 *targetArray* 解释为具有一个元素的数组。 **SetActiveTopology** 关闭第二个目标并进入单一视图。 接下来，TMM 使用 **ChangeDisplaySettingsEx** 函数来扩展显示。 有关 **ChangeDisplaySettingsEx** 的详细信息，请参阅 Microsoft Windows SDK 文档。
 
 下图显示了在添加监视器以进行双监视器配置时，TMM 处理此情况时所发生的操作流。
 

@@ -1,15 +1,14 @@
 ---
 title: 移动运营商通知事件技术详细信息
 description: 移动运营商通知事件技术详细信息
-ms.assetid: 639f238a-4bb4-4ac0-9b59-92a761dbc351
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 32c9e938a80a9680f1b13d15b4c3052251eea9ab
-ms.sourcegitcommit: 0c3cab853b0b75149b7604eef03275f997792a84
+ms.openlocfilehash: 6fe0e0ae1ddfac35dec7cc4707f6c011decca992
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96157273"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96832271"
 ---
 # <a name="mobile-operator-notification-event-technical-details"></a>移动运营商通知事件技术详细信息
 
@@ -25,7 +24,7 @@ ms.locfileid: "96157273"
 
 MobileOperatorNotification 事件负载包括以下字段：
 
-|字段|说明|
+|字段|描述|
 |----|----|
 |**MessageType**|触发事件的消息的枚举。|
 |**Interface**|与事件关联的物理接口对应的 GUID。|

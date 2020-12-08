@@ -1,15 +1,14 @@
 ---
 title: 重力矢量数据字段
 description: 本主题提供有关特定于重力矢量的数据字段的信息。
-ms.assetid: E9FAE9F1-841F-4E70-A279-7CB5AD80D80B
 ms.date: 01/04/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 54538bf2427a0a87217604cf4c0fb1a14a2b76a9
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 2e38cb67a3a18325c662eb8b8f05c53f43c4766c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91732806"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96830987"
 ---
 # <a name="gravity-vector-data-fields"></a>重力矢量数据字段
 

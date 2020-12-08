@@ -1,18 +1,17 @@
 ---
 title: 重新分析点的安全注意事项
 description: 文件系统筛选器驱动程序的安全注意事项
-ms.assetid: 6aae70d9-c934-4759-bb26-728b0ac025d1
 keywords:
 - 安全 WDK 文件系统，重新分析点
 - 重新分析点 WDK 文件系统
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c62b8139bb3a9be72903203e8682c8820e78c528
-ms.sourcegitcommit: 2dd8e4262c30e3f8570e35da7b9485139b216ac8
+ms.openlocfilehash: 8098d1dddf9d3952d64e3f180684fc71083a07b6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90027576"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96831443"
 ---
 # <a name="security-considerations-for-reparse-points"></a>重新分析点的安全注意事项
 

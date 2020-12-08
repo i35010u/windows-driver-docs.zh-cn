@@ -1,15 +1,14 @@
 ---
 title: 驱动程序接口方法
-ms.assetid: 675F4188-3B9A-421B-98EF-FE063B550231
 description: 传感器驱动程序支持的接口方法。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: edb433ee935c26574e66b3b4917c80bf7f763770
-ms.sourcegitcommit: ec7bebe3f94536455e62b372c2a28fe69d1717f7
+ms.openlocfilehash: 4df769113f6918edd7fd85658dd1c08814d988e9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93349683"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96831011"
 ---
 # <a name="driver-interface-methods"></a>驱动程序接口方法
 
@@ -152,7 +151,7 @@ DDIOnClientUnsubscribeFromEvents(sensorID, clientID)
 
 ## <a name="sensor-reporting-fields"></a>传感器报告字段
 
-**DDIOnSetCRI** 、 **DDIOnSetCS** 和 **DDIOnSetLDA** 方法演示了驱动程序如何设置当前报表间隔、更改敏感度和位置数据准确性字段。
+**DDIOnSetCRI**、 **DDIOnSetCS** 和 **DDIOnSetLDA** 方法演示了驱动程序如何设置当前报表间隔、更改敏感度和位置数据准确性字段。
 
 ```cpp
 /////////////////////////////////////////////////////////////////////////////////////////////

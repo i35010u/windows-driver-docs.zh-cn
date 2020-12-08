@@ -1,7 +1,6 @@
 ---
 title: WIA \_ DPS \_ 页面
 description: WIA \_ DPS \_ PAGES 属性包含要从自动文档送纸器中获取的当前页数。
-ms.assetid: 51ab2eab-c7b4-4d54-bfc7-d53a8f66c7a9
 keywords:
 - WIA_DPS_PAGES 图像设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ed3250c7e7eeb89154cb40c3cc7f6ce78f22b549
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: f4a286bf13cfdd734bfa16fa677f93a437463c58
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89191865"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96831751"
 ---
 # <a name="wia_dps_pages"></a>WIA \_ DPS \_ 页面
 
@@ -63,10 +62,10 @@ WIA \_ DPS \_ PAGES 属性包含要从自动文档送纸器中获取的当前页
 
  
 
-**注意**   如果启用了双工模式 (即， [**WIA \_ DPS \_ 文档 \_ 处理 \_ 选择**](wia-dps-document-handling-select.md)属性将设置为 "馈送器 |双工) ，WIA \_ DPS \_ 页面仍等于要扫描的页数。
+**注意**   如果启用了双工模式 (即， [**WIA \_ DPS \_ 文档 \_ 处理 \_ 选择**](wia-dps-document-handling-select.md) 属性将设置为 "馈送器 |双工) ，WIA \_ DPS \_ 页面仍等于要扫描的页数。
 如果启用了双工，则即使页面的背面为空白，一张纸也会自动包含两页。
 
-如果将 "WIA \_ DPS \_ 页面" 设置为 "1"，则扫描程序将处理页面的一方。 如果扫描程序在处于双工模式时无法只扫描页面的一侧，则应将 \_ \_ [**wia \_ 属性 \_ 信息**](/windows-hardware/drivers/ddi/wiamindr_lh/ns-wiamindr_lh-_wia_property_info)结构的**inc.** 的 "wia DPS 页面" 值更改为 "2"。 此值向应用程序发出信号，指示该应用程序必须请求两个中的两个页面。 如果 WIA \_ DPS \_ 页面为零，扫描程序将扫描当前加载到文档送纸器中的 *所有* 页面。
+如果将 "WIA \_ DPS \_ 页面" 设置为 "1"，则扫描程序将处理页面的一方。 如果扫描程序在处于双工模式时无法只扫描页面的一侧，则应将 \_ \_ [**wia \_ 属性 \_ 信息**](/windows-hardware/drivers/ddi/wiamindr_lh/ns-wiamindr_lh-_wia_property_info)结构的 **inc.** 的 "wia DPS 页面" 值更改为 "2"。 此值向应用程序发出信号，指示该应用程序必须请求两个中的两个页面。 如果 WIA \_ DPS \_ 页面为零，扫描程序将扫描当前加载到文档送纸器中的 *所有* 页面。
 
  
 
@@ -90,7 +89,7 @@ WIA \_ DPS \_ PAGES 属性包含要从自动文档送纸器中获取的当前页
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**WIA \_ DPS \_ 文档 \_ 处理 \_ 选择**](wia-dps-document-handling-select.md)

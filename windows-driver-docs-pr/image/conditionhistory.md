@@ -1,9 +1,8 @@
 ---
 title: ConditionHistory 元素
-description: 可选 ConditionHistory 元素是在扫描仪提供有关最新的条件和错误的详细信息的 ConditionHistoryEntry 元素的集合。
-ms.assetid: 3725a635-6571-4a34-b8f9-9fe6881bd6da
+description: 可选的 ConditionHistory 元素是 ConditionHistoryEntry 元素的集合，这些元素提供有关扫描仪上的最新条件和错误的详细信息。
 keywords:
-- ConditionHistory 元素成像设备
+- ConditionHistory 元素图像设备
 topic_type:
 - apiref
 api_name:
@@ -12,19 +11,19 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c9c0438c690d72dcbc166f0756b8d3019e3b5ca2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 404b477259d56fb747c478320858434cdf84ae2a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63373173"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96830497"
 ---
 # <a name="conditionhistory-element"></a>ConditionHistory 元素
 
 
-可选**ConditionHistory**元素包含一系列[ **ConditionHistoryEntry** ](conditionhistoryentry.md)提供了有关最新的条件和错误的详细信息，扫描程序的元素.
+可选的 **ConditionHistory** 元素是 [**ConditionHistoryEntry**](conditionhistoryentry.md) 元素的集合，这些元素提供有关扫描仪上的最新条件和错误的详细信息。
 
-<a name="usage"></a>用法
+<a name="usage"></a>使用情况
 -----
 
 ```xml
@@ -83,9 +82,9 @@ ms.locfileid: "63373173"
 <a name="remarks"></a>备注
 -------
 
-客户端可以查询的扫描程序**ConditionHistory**元素通过调用[ **GetScannerElementsRequest** ](getscannerelementsrequest.md)操作。
+客户端可以通过调用 [**GetScannerElementsRequest**](getscannerelementsrequest.md)操作来查询扫描程序的 **ConditionHistory** 元素。
 
-在从信息性严重程度上为严重不同条件。
+条件的严重性因严重性而异。
 
 ## <a name="see-also"></a>请参阅
 

@@ -1,22 +1,21 @@
 ---
 title: NdisQueryMdl 宏
 description: NdisQueryMdl 宏从 MDL 检索缓冲区长度，还可以选择基准虚拟地址。
-ms.assetid: 0eccd784-c815-4094-87e5-a3e283abed73
 ms.date: 07/18/2017
 keywords:
 - NdisQueryMdl 从 Windows Vista 开始的宏网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 639f68ab80a020c73f28ff51fcbd2d6512526e49
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 53ebc1e638b83b95d68a8c3be05e74e9f833c225
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104872"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96832167"
 ---
 # <a name="ndisquerymdl-macro"></a>NdisQueryMdl 宏
 
 
-**NdisQueryMdl**宏从 MDL 检索缓冲区长度，还可以选择基准虚拟地址。
+**NdisQueryMdl** 宏从 MDL 检索缓冲区长度，还可以选择基准虚拟地址。
 
 <a name="syntax"></a>语法
 ------
@@ -39,15 +38,15 @@ VOID NdisQueryMdl(
 *\_VirtualAddress*   
 指向调用方提供的变量的指针，此宏返回 MDL 描述的虚拟地址范围的基本虚拟地址。 基本虚拟地址可以为 **NULL** ，原因如下：
 
--   系统资源不足或已用尽， * \_ Priority*参数设置为**LowPagePriority**或**NormalPagePriority**。
+-   系统资源不足或已用尽， *\_ Priority* 参数设置为 **LowPagePriority** 或 **NormalPagePriority**。
 
--   系统资源已耗尽， * \_ Priority*参数设置为**HighPagePriority**。
+-   系统资源已耗尽， *\_ Priority* 参数设置为 **HighPagePriority**。
 
 *\_长短*   
 指向调用方提供的变量的指针，此宏返回 MDL 所描述的虚拟地址范围的长度（以字节为单位）。
 
 *\_大事*   
-页面优先级值。 有关此参数的可能值的列表，请参阅[**MmGetSystemAddressForMdlSafe**](../kernel/mm-bad-pointer.md)宏的*Priority*参数。
+页面优先级值。 有关此参数的可能值的列表，请参阅 [**MmGetSystemAddressForMdlSafe**](../kernel/mm-bad-pointer.md)宏的 *Priority* 参数。
 
 <a name="return-value"></a>返回值
 ------------
@@ -57,7 +56,7 @@ VOID NdisQueryMdl(
 <a name="remarks"></a>备注
 -------
 
-**NdisQueryMdl**宏提供[**NdisQueryBuffer**](/previous-versions/windows/hardware/network/ff554407(v=vs.85))函数的基于 MDL 的版本。
+**NdisQueryMdl** 宏提供 [**NdisQueryBuffer**](/previous-versions/windows/hardware/network/ff554407(v=vs.85))函数的基于 MDL 的版本。
 
 <a name="requirements"></a>要求
 ------------
@@ -70,7 +69,7 @@ VOID NdisQueryMdl(
 <tbody>
 <tr class="odd">
 <td><p>目标平台</p></td>
-<td>桌面型</td>
+<td>台式机</td>
 </tr>
 <tr class="even">
 <td><p>版本</p></td>
@@ -91,7 +90,7 @@ VOID NdisQueryMdl(
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**MmGetSystemAddressForMdlSafe**](../kernel/mm-bad-pointer.md)

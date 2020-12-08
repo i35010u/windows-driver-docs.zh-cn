@@ -1,15 +1,14 @@
 ---
 title: 关于 ISensorDriver
 description: 关于 ISensorDriver
-ms.assetid: 2c51c235-e402-4f89-bff5-39af87d95e19
 ms.date: 07/20/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: e6aa412043f480919fb7d222f20b73444096d287
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: c3b504c4e3fd84fd97372ad4a39f60234ed5736a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91734155"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96831101"
 ---
 # <a name="about-isensordriver"></a>关于 ISensorDriver
 
@@ -30,7 +29,7 @@ ms.locfileid: "91734155"
 
 ## <a name="methods-to-manage-data-and-properties"></a>用于管理数据和属性的方法
 
-客户端应用程序还可以将传感器数据作为 **数据字段**或包含有关传感器设备的元数据的 **属性** 进行检索。 若要检索支持的数据字段或属性的列表，传感器类扩展将调用 [**ISensorDriver：： OnGetSupportedDataFields**](/windows-hardware/drivers/ddi/sensorsclassextension/nf-sensorsclassextension-isensordriver-ongetsupporteddatafields) 或 [**ISensorDriver：： OnGetSupportedProperties**](/windows-hardware/drivers/ddi/sensorsclassextension/nf-sensorsclassextension-isensordriver-ongetsupportedproperties)。 若要检索数据字段或属性值，类扩展将调用 [**ISensorDriver：： OnGetDataFields**](/windows-hardware/drivers/ddi/sensorsclassextension/nf-sensorsclassextension-isensordriver-ongetdatafields) 或 [**ISensorDriver：： OnGetProperties**](/windows-hardware/drivers/ddi/sensorsclassextension/nf-sensorsclassextension-isensordriver-ongetproperties)。 对于可以设置的属性，类扩展将调用 [**ISensorDriver：： OnSetProperties**](/windows-hardware/drivers/ddi/sensorsclassextension/nf-sensorsclassextension-isensordriver-onsetproperties) 以提供新的属性值。
+客户端应用程序还可以将传感器数据作为 **数据字段** 或包含有关传感器设备的元数据的 **属性** 进行检索。 若要检索支持的数据字段或属性的列表，传感器类扩展将调用 [**ISensorDriver：： OnGetSupportedDataFields**](/windows-hardware/drivers/ddi/sensorsclassextension/nf-sensorsclassextension-isensordriver-ongetsupporteddatafields) 或 [**ISensorDriver：： OnGetSupportedProperties**](/windows-hardware/drivers/ddi/sensorsclassextension/nf-sensorsclassextension-isensordriver-ongetsupportedproperties)。 若要检索数据字段或属性值，类扩展将调用 [**ISensorDriver：： OnGetDataFields**](/windows-hardware/drivers/ddi/sensorsclassextension/nf-sensorsclassextension-isensordriver-ongetdatafields) 或 [**ISensorDriver：： OnGetProperties**](/windows-hardware/drivers/ddi/sensorsclassextension/nf-sensorsclassextension-isensordriver-ongetproperties)。 对于可以设置的属性，类扩展将调用 [**ISensorDriver：： OnSetProperties**](/windows-hardware/drivers/ddi/sensorsclassextension/nf-sensorsclassextension-isensordriver-onsetproperties) 以提供新的属性值。
 
 ## <a name="methods-to-manage-wpd-commands"></a>用于管理 WPD 命令的方法
 

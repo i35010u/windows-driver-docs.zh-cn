@@ -1,19 +1,18 @@
 ---
 title: 跟踪消息标头文件
 description: 跟踪消息标头文件
-ms.assetid: 835162c0-6596-42ae-bc6d-824dd6c3f69f
 keywords:
 - 跟踪消息头文件 WDK
 - TMH 文件 WDK
 - 文件 WDK 软件跟踪
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0842b909cf07b4862ba4ffca349cd8fbef5579b1
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: cfa8c8b6ea11e1c7d3ece98d66d3c5bd85ef5783
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89382777"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96831537"
 ---
 # <a name="trace-message-header-file"></a>跟踪消息标头文件
 
@@ -22,7 +21,7 @@ ms.locfileid: "89382777"
 
 当你编译包含 WPP 宏的 [跟踪提供程序](trace-provider.md) 时，WPP 会自动生成 TMH 文件。 TMH 文件具有与源文件相同的名称，但文件扩展名为 TMH。 WPP 将该文件保存在源文件所在的同一目录中。
 
-向源代码添加 WPP 宏时，还必须为 WPP 将生成的 TMH 文件添加** \# 包含**指令。 Include 语句的形式为：
+向源代码添加 WPP 宏时，还必须为 WPP 将生成的 TMH 文件添加 **\# 包含** 指令。 Include 语句的形式为：
 
 ```
 #include SourceFileName.tmh

@@ -1,18 +1,17 @@
 ---
 title: 顶点缓冲区重命名
 description: 顶点缓冲区重命名
-ms.assetid: b76552b4-77a9-43f4-984b-10de92dffa83
 keywords:
 - DirectX 8.0 发行说明了 WDK Windows 2000 显示、顶点缓冲区、重命名
 - 顶点缓冲 WDK DirectX 8.0，重命名
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7a91a517a742b3d51918a51225451fe2218d0402
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 161a46fe1b3bb3d3b2f0ba61ec45fdbdd6fd3bfe
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89067019"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96831531"
 ---
 # <a name="vertex-buffer-renaming"></a>顶点缓冲区重命名
 

@@ -1,17 +1,16 @@
 ---
 title: 客户端对象和引擎
 description: 客户端对象和引擎
-ms.assetid: 959912c0-bce9-4d5b-9119-1ac07a8ea1ad
 keywords:
 - EngExtCpp 扩展，客户端对象
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ed92f23ba38fdb7c5407f27e7307aaf6a8c49d7b
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 1e03e8c9d8788d5c04d10f2cc812fd466cdec800
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105920"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96831991"
 ---
 # <a name="client-objects-and-the-engine"></a>客户端对象和引擎
 

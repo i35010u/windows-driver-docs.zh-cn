@@ -1,21 +1,20 @@
 ---
 title: OID_GEN_HARDWARE_STATUS
-description: 为查询，OID_GEN_HARDWARE_STATUS OID 指定新的硬件状态的基础的 nic。
-ms.assetid: beab6f7a-b064-446f-8008-ef8db9d7c080
+description: 作为查询，OID_GEN_HARDWARE_STATUS OID 指定基础 NIC 的当前硬件状态。
 ms.date: 08/08/2017
-keywords: -OID_GEN_HARDWARE_STATUS 网络与 Windows Vista 一起启动的驱动程序
+keywords: -从 Windows Vista 开始 OID_GEN_HARDWARE_STATUS 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: de190f8dd238d047a9ccc9653321edd9b439df5d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2d61bcba1fd89905bccb8d7ce8b57f12312ccda6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63381347"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96832147"
 ---
-# <a name="oidgenhardwarestatus"></a>OID\_GEN\_硬件\_状态
+# <a name="oid_gen_hardware_status"></a>OID \_ 生成 \_ 硬件 \_ 状态
 
 
-为查询，OID\_GEN\_硬件\_状态 OID 指定新的硬件状态的基础的 nic。
+作为查询，OID \_ 代 \_ 硬件 \_ 状态 OID 指定基础 NIC 的当前硬件状态。
 
 **版本信息**
 
@@ -37,13 +36,13 @@ ms.locfileid: "63381347"
 <a name="remarks"></a>备注
 -------
 
-OID\_GEN\_硬件\_状态 OID 作为以下 NDIS 之一指定基础 NIC 的新的硬件状态\_硬件\_状态类型的值：
+OID 生成 \_ \_ 硬件 \_ 状态 OID 将基础 NIC 的当前硬件状态指定为下列 NDIS \_ 硬件 \_ 状态类型值之一：
 
 <a href="" id="ndishardwarestatusready"></a>**NdisHardwareStatusReady**  
-可用并能够发送和接收数据而无法通过网络
+可用且能够通过网络发送和接收数据
 
 <a href="" id="ndishardwarestatusinitializing"></a>**NdisHardwareStatusInitializing**  
-初始化
+正在初始化
 
 <a href="" id="ndishardwarestatusreset"></a>**NdisHardwareStatusReset**  
 重置
@@ -52,7 +51,7 @@ OID\_GEN\_硬件\_状态 OID 作为以下 NDIS 之一指定基础 NIC 的新的�
 关闭
 
 <a href="" id="ndishardwarestatusnotready"></a>**NdisHardwareStatusNotReady**  
-未就绪
+未准备就绪
 
 <a name="requirements"></a>要求
 ------------
@@ -64,8 +63,8 @@ OID\_GEN\_硬件\_状态 OID 作为以下 NDIS 之一指定基础 NIC 的新的�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Ntddndis.h （包括 Ndis.h）</td>
+<td><p>标头</p></td>
+<td>Ntddndis (包含 Ndis .h) </td>
 </tr>
 </tbody>
 </table>

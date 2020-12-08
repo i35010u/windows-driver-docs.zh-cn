@@ -1,7 +1,6 @@
 ---
 title: Bug 检查 0x15F CONNECTED_STANDBY_WATCHDOG_TIMEOUT_LIVEDUMP
-description: CONNECTED_STANDBY_WATCHDOG_TIMEOUT_LIVEDUMP bug 检查具有 0x0000015F 值。 这指示已发生连接备用监视器超时。
-ms.assetid: 4C10AAC1-0B8F-4BBE-B470-55A8ED373687
+description: CONNECTED_STANDBY_WATCHDOG_TIMEOUT_LIVEDUMP bug 检查的值为0x0000015F。 这表示已连接待机监视器超时。
 keywords:
 - Bug 检查 0x15F CONNECTED_STANDBY_WATCHDOG_TIMEOUT_LIVEDUMP
 - CONNECTED_STANDBY_WATCHDOG_TIMEOUT_LIVEDUMP
@@ -13,23 +12,23 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 9901d8484f06e9dda095b5446098682c990ba45c
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: 028cafbc6c33cd720ca9d96b1dfb005f29264a6b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67519996"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96830785"
 ---
-# <a name="bug-check-0x15f-connectedstandbywatchdogtimeoutlivedump"></a>Bug 检查 0x15F：连接\_待机\_监视器\_超时\_LIVEDUMP
+# <a name="bug-check-0x15f-connected_standby_watchdog_timeout_livedump"></a>Bug 检查0x15F：连接 \_ 备用 \_ 监视器 \_ 超时 \_ LIVEDUMP
 
 
-已连接\_待机\_监视器\_超时\_LIVEDUMP bug 检查的值为 0x0000015F。 这指示已发生连接备用监视器超时。
+连接的 \_ 待机 \_ 监视程序 \_ 超时 \_ LIVEDUMP bug 检查的值为0x0000015F。 这表示已连接待机监视器超时。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题面向程序员。 如果您是在使用计算机时收到蓝屏错误代码的客户，请参阅[蓝屏错误疑难解答](https://www.windows.com/stopcode)。
 
 
-## <a name="connectedstandbywatchdogtimeoutlivedump-parameters"></a>连接\_待机\_监视器\_超时\_LIVEDUMP 参数
+## <a name="connected_standby_watchdog_timeout_livedump-parameters"></a>连接 \_ 备用 \_ 监视器 \_ 超时 \_ LIVEDUMP 参数
 
 
 <table>
@@ -46,39 +45,39 @@ ms.locfileid: "67519996"
 <tbody>
 <tr class="odd">
 <td align="left">1</td>
-<td align="left"><p>CS 监视器子代码</p>
-0x1:DRIPS 监视程序超时。 该系统已经没有的激活器活动和未满足的任何设备约束与连接待机的复原能力阶段中时间太长而无需输入 DRIPS （最深的运行时空闲平台状态）。
-<p>2-一个指向其他信息 (nt ！POP_DRIPS_WATCHDOG_METRICS)</p>
-<p>3-非 DRIPS 持续时间以毫秒为单位</p>
+<td align="left"><p>CS 监视子代码</p>
+0x1： DRIPS 监视程序超时。 系统已处于连接备用的复原阶段，无激活激活，且没有设备约束的时间太长，无需进入 DRIPS (最深的运行时空闲平台状态) 。
+<p>2-指向附加信息的指针 (nt！POP_DRIPS_WATCHDOG_METRICS) </p>
+<p>3-非 DRIPS 的持续时间（毫秒）</p>
 <p>4-保留</p>
-0x2:DRIPS 监视程序设备约束超时。 该系统已经在用于连接待机复原阶段时间太长而无需输入 DRIPS （最深的运行时空闲平台状态） 与活动没有激活器的未满足的设备限制引起的。
-<p>2-nt ！TRIAGE_POP_FX_DEVICE 设备</p>
+0x2： DRIPS 监视程序设备约束超时。 系统处于连接待机状态的复原阶段过长，无需进入 DRIPS (最深的运行时空闲平台状态) ，因为没有处于活动状态的未满足的设备约束。
+<p>2-nt！TRIAGE_POP_FX_DEVICE 设备</p>
 <p>3-组件索引</p>
 <p>4-保留</p>
-0x3:DRIPS 监视程序 preveto 超时。 该系统已经在用于连接待机复原阶段时间太长而无需输入 DRIPS （最深的运行时空闲平台状态） 由于 active PEP 预否决权没有未满足的设备约束以及活动没有激活器。
-<p>2-否决权代码</p>
-<p>3-一个指向否决权名称字符串 (PWSTR)</p>
-<p>4-一个指向 PEP PPM 回调</p>
-0x4:沉睡状态监视器
+0x3： DRIPS 监视器 preveto 超时。 系统处于连接待机状态的复原阶段的时间太长，无需进入 DRIPS (最深的运行时空闲平台状态) ，因为没有未满足的设备约束且没有活动的激活程序的活动 PEP 预先否决。
+<p>2-否决代码</p>
+<p>3-指向否决名称字符串的指针 (PWSTR) </p>
+<p>4-指向 PEP PPM 回调的指针</p>
+0x4：深度睡眠监视器
 <p>2-指标</p>
-<p>3 -NonDeepSleepDurationMs</p>
+<p>3-NonDeepSleepDurationMs</p>
 <p>4-保留</p>
-0x5:深度睡眠电源设置监视器
+0x5：深度睡眠电源设置监视器
 <p>2-指标</p>
-<p>3 -NonDeepSleepDurationMs</p>
+<p>3-NonDeepSleepDurationMs</p>
 <p>4-保留</p></td>
 </tr>
 <tr class="even">
 <td align="left">2</td>
-<td align="left">请参阅参数 1</td>
+<td align="left">请参阅参数1</td>
 </tr>
 <tr class="odd">
 <td align="left">3</td>
-<td align="left">请参阅参数 1</td>
+<td align="left">请参阅参数1</td>
 </tr>
 <tr class="even">
 <td align="left">4</td>
-<td align="left">请参阅参数 1</td>
+<td align="left">请参阅参数1</td>
 </tr>
 </tbody>
 </table>
@@ -88,7 +87,7 @@ ms.locfileid: "67519996"
 <a name="cause"></a>原因
 -----
 
-此计算机暴露行为，从而减少屏幕关闭电池寿命。 通常这被由于 CPU 活动、 设备活动或没有足够的空闲状态的设备。
+此计算机显示的行为会降低屏幕的电池寿命。 这通常是由 CPU 活动、设备活动或设备处于空闲状态不足引起的。
 
  
 

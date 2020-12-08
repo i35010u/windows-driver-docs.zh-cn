@@ -1,15 +1,14 @@
 ---
 title: 将 NDIS 6.x 驱动程序移植到 NDIS 6.30
 description: 本部分介绍将 NDIS 1.x 驱动程序移植到 NDIS 6.30 的要求。
-ms.assetid: 3120C82A-94FF-48F0-8191-CF0C63535113
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: eb651e2e86c45398affb0955265e7c39e7d501b1
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: e57eece1e390adca8ad95ddd594f3d713c55e5df
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89212083"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96831269"
 ---
 # <a name="porting-ndis-6x-drivers-to-ndis-630"></a>将 NDIS 6.x 驱动程序移植到 NDIS 6.30
 

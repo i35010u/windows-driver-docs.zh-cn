@@ -1,7 +1,6 @@
 ---
 title: '筛选数据 (以前版本) '
 description: 为了优化数据吞吐量，传感器设备必须对数据更新事件应用筛选条件，以便仅在需要时才会引发这些事件。
-ms.assetid: 1895EC5C-08C1-4976-83F2-CD5A2B55338D
 keywords:
 - 更改敏感度
 - 传感器更改敏感度
@@ -16,12 +15,12 @@ keywords:
 - 数据筛选
 ms.date: 07/20/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 83b51901af517e976661c183ed4b96ba27f1fa9e
-ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
+ms.openlocfilehash: d3957d447bc5515164604491ea1ce4cc5f3d006d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90010651"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96831005"
 ---
 # <a name="filtering-data-previous-version"></a>筛选数据 (以前版本) 
 
@@ -94,7 +93,7 @@ ms.locfileid: "90010651"
 ## <a name="effective-current-report-interval-cri-and-change-sensitivity-cs"></a>有效的当前报表间隔 (CRI) 并 (CS 的更改敏感度) 
 
 
-多个应用程序可将当前报表间隔设置 (CRI) ，并为给定传感器 (CS) 属性设置更改敏感度。 驱动程序负责确定应用哪个请求的属性。 驱动程序设置的属性称为有效的当前报表间隔 (E-CRI) 和 (E-CS) 的有效的更改敏感度。
+多个应用程序可将当前报表间隔设置 (CRI) ，并为给定传感器 (CS) 属性设置更改敏感度。 驱动程序负责确定应用哪个请求的属性。 驱动程序设置的属性称为 (CRI) 的有效当前 Report-Interval e-CS (的有效 Change-Sensitivity。
 
 ## <a name="setting-the-e-cri-and-e-cs-for-client-applications"></a>设置客户端应用程序的 CRI 和电子 CS
 
@@ -146,9 +145,9 @@ ms.locfileid: "90010651"
 | 客户端文件句柄 | 已订阅事件 | CRI | CS (X)  | CX (Y)  | CS (Z)  |
 |--------------------|----------------------|-----|--------|--------|--------|
 | FF80A267           | FALSE                | 50  | .001   | .001   | .001   |
-| FF802489           | TRUE                 | 70  | 02    | 02    | 02    |
+| FF802489           | true                 | 70  | 02    | 02    | 02    |
 | FF80D345           | FALSE                | 15  | Null   | Null   | Null   |
-| FF803287           | TRUE                 | 100 | 。005   | 。005   | 。005   |
+| FF803287           | true                 | 100 | 。005   | 。005   | 。005   |
 
  
 
@@ -188,7 +187,7 @@ ms.locfileid: "90010651"
 2.  使用中断将减少驱动程序和传感器固件中不必要的代码执行。
 3.  使用中断将减少总线活动。
 
-**注意**   如果驱动程序依赖于中断，但驱动程序中存在当前报表间隔和更改敏感性逻辑，则驱动程序可能会在数据更新之间收到大量的中断。 因此，在当前报表间隔过期之前，驱动程序可能需要禁用 (或屏蔽) 中断。
+**注意**  如果驱动程序依赖于中断，但驱动程序中存在当前报表间隔和更改敏感性逻辑，则驱动程序可能会在数据更新之间收到大量的中断。 因此，在当前报表间隔过期之前，驱动程序可能需要禁用 (或屏蔽) 中断。
 
  
 

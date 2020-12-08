@@ -1,7 +1,6 @@
 ---
 title: 'ExclusiveResourceAccess 规则 (wdm) '
 description: ExclusiveResourceAccess 规则指定在调用 ExReleaseResourceLite 或 ExReleaseResourceForThreadLite 之前，驱动程序调用 ExAcquireResourceExclusiveLite，并指定驱动程序在对 ExReleaseResourceLite 的任何后续调用之前调用 ExReleaseResourceForThreadLite 或 ExAcquireResourceExclusiveLite。
-ms.assetid: 3de539c0-5af2-4ced-8111-44918f4effc4
 ms.date: 05/21/2018
 keywords:
 - 'ExclusiveResourceAccess 规则 (wdm) '
@@ -12,21 +11,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 2e92cacb81c64aab991da4b09aefa4a1f0181715
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: fd4902cd1aedb6bfcea75e96aa15fb283b084134
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105826"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96832463"
 ---
 # <a name="exclusiveresourceaccess-rule-wdm"></a>ExclusiveResourceAccess 规则 (wdm) 
 
 
-**ExclusiveResourceAccess**规则指定在调用[**ExReleaseResourceLite**](/windows-hardware/drivers/ddi/wdm/nf-wdm-exreleaseresourcelite)或[**ExReleaseResourceForThreadLite**](/previous-versions/ff545585(v=vs.85))之前，驱动程序调用[**ExAcquireResourceExclusiveLite**](/previous-versions/ff544351(v=vs.85)) ，并指定驱动程序在对**ExReleaseResourceLite**的任何后续调用之前调用**ExReleaseResourceForThreadLite**或**ExAcquireResourceExclusiveLite** 。
+**ExclusiveResourceAccess** 规则指定在调用 [**ExReleaseResourceLite**](/windows-hardware/drivers/ddi/wdm/nf-wdm-exreleaseresourcelite)或 [**ExReleaseResourceForThreadLite**](/previous-versions/ff545585(v=vs.85))之前，驱动程序调用 [**ExAcquireResourceExclusiveLite**](/previous-versions/ff544351(v=vs.85)) ，并指定驱动程序在对 **ExReleaseResourceLite** 的任何后续调用之前调用 **ExReleaseResourceForThreadLite** 或 **ExAcquireResourceExclusiveLite** 。
 
 如果它们正在获取和释放不同的资源，则允许嵌套调用。 用于获取或释放相同资源的嵌套调用违反了此规则。
 
-此规则还指出，当例程结束时，驱动程序不能以独占方式访问该资源。 静态驱动程序验证器监视 **DriverEntry**、 **AddDevice**、 **StartIo**、 **StartDevice**、 **DpcForIsr**、 **Cancel**、 **调度**、 **RemoveDevice**和 **Unload** 例程的结尾。
+此规则还指出，当例程结束时，驱动程序不能以独占方式访问该资源。 静态驱动程序验证器监视 **DriverEntry**、 **AddDevice**、 **StartIo**、 **StartDevice**、 **DpcForIsr**、 **Cancel**、 **调度**、 **RemoveDevice** 和 **Unload** 例程的结尾。
 
 **驱动程序模型： WDM**
 

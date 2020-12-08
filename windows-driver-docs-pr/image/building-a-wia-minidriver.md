@@ -1,15 +1,14 @@
 ---
 title: 构建 WIA 微型驱动程序
 description: 构建 WIA 微型驱动程序
-ms.assetid: 7a13d355-f42e-406d-8cba-4739df1af9fa
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: de9ef18aee074501805796e1fbde24a17ffef610
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: a196c7a363c4b2f787b910b29125f0a2afcc89a0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106380"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96831413"
 ---
 # <a name="building-a-wia-minidriver"></a>构建 WIA 微型驱动程序
 
@@ -31,7 +30,7 @@ ms.locfileid: "90106380"
 <thead>
 <tr class="header">
 <th>标头文件</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -66,7 +65,7 @@ WIA 使用下表中显示的库文件。 所有微型驱动程序都需要这些
 <thead>
 <tr class="header">
 <th>库文件</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>

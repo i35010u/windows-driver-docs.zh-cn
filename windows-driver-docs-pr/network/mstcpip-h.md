@@ -1,17 +1,16 @@
 ---
 title: Mstcpip.h
 description: 本部分包含 Mstcpip 标头的内核模式网络驱动程序主题。
-ms.assetid: 5623EB2D-CA8D-4176-922E-29B8C66AA2CF
 keywords:
 - Mstcpip 网络驱动程序
 ms.date: 08/08/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c99f090869e37b6bede8673ddbc7c13749707562
-ms.sourcegitcommit: 29c2e6dd8a3de3c11822d990adf1edd774f8a136
+ms.openlocfilehash: 35447af75ea56ad0b03170d09fb7e0d22f3ffa5c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91238777"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96831323"
 ---
 # <a name="mstcpiph"></a>Mstcpip.h
 

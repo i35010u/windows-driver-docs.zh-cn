@@ -1,9 +1,8 @@
 ---
-title: Bug Check 0x7A KERNEL_DATA_INPAGE_ERROR
-description: KERNEL_DATA_INPAGE_ERROR bug 检查具有 0x0000007A 值。 检查此错误指示无法到内存中读取的分页文件中的内核数据请求的页面。
-ms.assetid: 466d4864-8840-47b2-9a9a-302a125bf095
+title: Bug 检查 0x7A KERNEL_DATA_INPAGE_ERROR
+description: KERNEL_DATA_INPAGE_ERROR bug 检查的值为0x0000007A。 此 bug 检查表明无法将页面文件中请求的内核数据页读入内存中。
 keywords:
-- Bug Check 0x7A KERNEL_DATA_INPAGE_ERROR
+- Bug 检查 0x7A KERNEL_DATA_INPAGE_ERROR
 - KERNEL_DATA_INPAGE_ERROR
 ms.date: 05/23/2017
 topic_type:
@@ -13,26 +12,26 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: d4f783ee46dda213c74a9ff5b427170f890d629c
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: d151c23b67b96fd190b1dc653506d86cac75cc2f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67519193"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96831617"
 ---
-# <a name="bug-check-0x7a-kerneldatainpageerror"></a>Bug 检查 0x7A：KERNEL\_DATA\_INPAGE\_ERROR
+# <a name="bug-check-0x7a-kernel_data_inpage_error"></a>Bug 检查0x7A：内核 \_ 数据 \_ INPAGE \_ 错误
 
 
-内核\_数据\_页内\_错误 bug 检查的值为 0x0000007A。 检查此错误指示无法到内存中读取的分页文件中的内核数据请求的页面。
+内核 \_ 数据 \_ INPAGE \_ 错误 bug 检查的值为0x0000007A。 此 bug 检查表明无法将页面文件中请求的内核数据页读入内存中。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题面向程序员。 如果您是在使用计算机时收到蓝屏错误代码的客户，请参阅[蓝屏错误疑难解答](https://www.windows.com/stopcode)。
 
 
-## <a name="kerneldatainpageerror-parameters"></a>内核\_数据\_页内\_错误参数
+## <a name="kernel_data_inpage_error-parameters"></a>内核 \_ 数据 \_ INPAGE \_ 错误参数
 
 
-消息中列出的四个参数可以具有三个可能的含义。 如果第一个参数是 1 或 2 或 3 和第三个参数为 0，则参数具有以下定义。
+消息中列出的四个参数可以有三种可能的含义。 如果第一个参数是1或2，或3，第三个参数为0，则参数具有以下定义。
 
 <table>
 <colgroup>
@@ -48,27 +47,27 @@ ms.locfileid: "67519193"
 <tbody>
 <tr class="odd">
 <td align="left"><p>1</p></td>
-<td align="left"><p>持有的时间 （1、 2 或 3） 的锁类型</p></td>
+<td align="left"><p> (1、2或3保存的锁类型) </p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>2</p></td>
-<td align="left"><p>错误状态 （通常 I/O 状态代码）</p></td>
+<td align="left"><p>错误状态通常 (i/o 状态代码) </p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>3</p></td>
-<td align="left"><p><strong>如果锁类型为 1:</strong>当前进程</p>
-<p><strong>如果锁类型为 2 或 3:</strong>0</p></td>
+<td align="left"><p><strong>如果锁类型为1：</strong> 当前进程</p>
+<p><strong>如果锁类型为2或3：</strong> 0</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>4</p></td>
-<td align="left"><p>无法呼叫到内存中的虚拟地址</p></td>
+<td align="left"><p>无法分页到内存的虚拟地址</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-如果第一个参数为 3 （和第三个参数为非零值） 或 4，参数具有以下定义。
+如果第一个参数为 3 (并且第三个参数为非零) 或4，则这些参数具有以下定义。
 
 <table>
 <colgroup>
@@ -84,11 +83,11 @@ ms.locfileid: "67519193"
 <tbody>
 <tr class="odd">
 <td align="left"><p>1</p></td>
-<td align="left"><p>已保留 （3 或 4） 的锁类型</p></td>
+<td align="left"><p>已保留 (3 或 4) 的锁类型</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>2</p></td>
-<td align="left"><p>错误状态 （通常 I/O 状态代码）</p></td>
+<td align="left"><p>错误状态 (通常为 i/o 状态代码) </p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>3</p></td>
@@ -96,14 +95,14 @@ ms.locfileid: "67519193"
 </tr>
 <tr class="even">
 <td align="left"><p>4</p></td>
-<td align="left"><p>出错的地址</p></td>
+<td align="left"><p>出错地址</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-否则，参数具有以下定义。
+否则，这些参数具有以下定义。
 
 <table>
 <colgroup>
@@ -119,11 +118,11 @@ ms.locfileid: "67519193"
 <tbody>
 <tr class="odd">
 <td align="left"><p>1</p></td>
-<td align="left"><p>页表项 (PTE) 的地址的</p></td>
+<td align="left"><p>页表项的地址 (PTE) </p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>2</p></td>
-<td align="left"><p>错误状态 （通常 I/O 状态代码）</p></td>
+<td align="left"><p>错误状态通常 (i/o 状态代码) </p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>3</p></td>
@@ -131,7 +130,7 @@ ms.locfileid: "67519193"
 </tr>
 <tr class="even">
 <td align="left"><p>4</p></td>
-<td align="left"><p>出错的地址</p></td>
+<td align="left"><p>出错地址</p></td>
 </tr>
 </tbody>
 </table>
@@ -141,55 +140,55 @@ ms.locfileid: "67519193"
 <a name="cause"></a>原因
 -----
 
-通常情况下，可以确定该内核的原因\_数据\_页内\_错误 bug 检查从错误状态 (参数 2)。 一些常见的状态代码如下所示：
+通常，你可以 \_ \_ \_ 从错误状态 (参数 2) 确定内核数据 INPAGE 错误 bug 检查的原因。 一些常见状态代码包括：
 
--   0xC000009A 的或状态\_不足\_资源，指示缺少非分页缓冲的池的资源。
+-   0xC000009A 或状态 \_ 资源不足 \_ ，表示缺少非分页池资源。
 
--   0xC000009C 或状态\_设备\_数据\_错误，通常表示在硬盘上的坏扇区 （扇区）。
+-   0xC000009C 或状态 \_ 设备 \_ 数据 \_ 错误通常指示硬盘)  (扇区错误。
 
--   0xC000009D 或状态\_设备\_不\_已连接，指示有缺陷或松散连接电缆、 终止或控制器看不到硬盘。
+-   0xC000009D 或状态 \_ 设备 \_ 未 \_ 连接，指示有缺陷或松动的电缆、终止，或控制器看不到硬盘。
 
--   0xC000016A 或状态\_磁盘\_操作\_失败，指示在硬盘上的坏扇区 （扇区）。
+-   0xC000016A 或 STATUS \_ DISK \_ 操作 \_ 失败，指示硬盘)  (扇区错误。
 
--   0xC0000185 或状态\_IO\_设备\_错误，指示不正确终止或出现故障的布线 SCSI 设备或该两个设备上尝试使用相同的 IRQ。
+-   0xC0000185 或状态 \_ IO \_ 设备 \_ 错误表示 SCSI 设备上出现不正确的终止或故障布线，或者两个设备正在尝试使用同一 IRQ。
 
--   0xC000000E 或状态\_否\_SUCH\_设备，将指示硬件故障或不正确的驱动器配置。 检查您的缆线，并检查诊断实用程序，可从您的驱动器制造商的驱动器。 如果您正在使用较旧 PATA (IDE) 驱动器，此状态代码可以指示不正确的主/从驱动器配置。
+-   0xC000000E 或 STATUS \_ NO \_ 此类 \_ 设备表示硬件故障或驱动器配置不正确。 检查电缆，并使用驱动器制造商提供的诊断实用程序检查驱动器。 如果使用的是较旧的 PATA (IDE) 驱动器，则此状态代码可指示不正确的主/从驱动器配置。
 
-这些状态代码为有特定原因最常见的。 有关可以返回其他可能的状态代码的详细信息，请参阅 Ntstatus.h 文件在 Microsoft Windows 驱动程序工具包 (WDK)。
+这些状态代码是有特定原因的最常见状态代码。 有关可返回的其他可能的状态代码的详细信息，请参阅 Microsoft Windows 驱动程序工具包中的 Ntstatus .h 文件 (WDK) 。
 
-此错误消息的另一个常见原因是出现故障的硬件或失败的 RAM。
+此错误消息的另一个常见原因是硬件损坏或 RAM 发生故障。
 
-病毒感染也会导致此 bug 检查。
+病毒感染也可能导致此错误检查。
 
-<a name="resolution"></a>分辨率
+<a name="resolution"></a>解决方法
 ----------
 
-**解决错误的阻止问题：** I/O 状态代码为 0xC000009C 或 0xC000016A 通常指示，数据可能不会从磁盘读取因块 （扇区）。 如果该错误后，可以重新启动计算机，Autochk 自动运行，并尝试映射坏扇区中，以防止它不再使用。
+**解决坏块问题：** 0xC000009C 或0xC000016A 的 i/o 状态代码通常指示由于坏块 (扇区) 无法从磁盘读取数据。 如果在出现错误后重新启动计算机，Autochk 会自动运行，并尝试映射坏扇区，以防止它被使用。
 
-如果 Autochk 不会扫描硬盘出现错误，可以手动启动磁盘扫描程序。 运行**Chkdsk /f /r**系统分区上。 磁盘扫描开始之前，必须重新启动计算机。 如果由于出现错误，无法启动计算机，使用恢复控制台并运行**Chkdsk /r**。
+如果 Autochk 不扫描硬盘错误，可以手动启动磁盘扫描程序。 在系统分区上运行 **Chkdsk/f/r** 。 在磁盘扫描开始之前，必须重新启动计算机。 如果由于错误而无法启动计算机，请使用恢复控制台并运行 **Chkdsk/r**。
 
-**警告**  系统分区已使用 FAT 文件系统格式化的如果的长文件名的 Windows 操作系统使用可能已损坏，如果使用磁盘扫描程序或基于 MS-DOS 的硬盘的另一个工具来验证的完整性从 MS-DOS 硬盘。 始终使用与你的 Windows 版本相匹配的 Chkdsk 的版本。
+**警告**   如果系统分区是使用 FAT 文件系统进行格式化的，则 Windows 操作系统使用的长文件名可能会损坏，因为使用的是磁盘扫描程序或其他基于 ms-dos 的硬盘工具来验证硬盘的完整性。 始终使用与您的 Windows 版本相匹配的 Chkdsk 版本。
 
  
 
-**解析有故障的硬件问题：** 如果 I/O 状态为 C0000185 且分页文件为 SCSI 磁盘上，检查磁盘电缆和 SCSI 终止的问题。
+**解决硬件问题：** 如果 i/o 状态为 C0000185，且页面文件位于 SCSI 磁盘上，请检查磁盘布线和 SCSI 终止问题。
 
-**解决失败 RAM 问题：** 运行硬件诊断系统制造商提供，尤其是内存扫描程序。 有关这些过程的详细信息，请参阅您的计算机的用户手册。
+**解决失败的 RAM 问题：** 运行系统制造商提供的硬件诊断，尤其是内存扫描器。 有关这些过程的详细信息，请参阅您的计算机的所有者手册。
 
-检查计算机中的所有适配器卡正确就都位。 使用墨迹橡皮擦或电力联系处理方法，可在电子用品商店，以确保适配器卡联系人是干净。
+检查计算机中的所有适配器卡是否都已正确安装。 使用电子用品商店提供的墨水橡皮擦或电气联系人治疗，确保适配器卡触点清晰。
 
-检查事件查看器中的系统日志可能有助于识别导致错误的设备的其他错误消息。 此外可以禁用内存中缓存的 BIOS 来尝试解决此错误。
+检查中的系统日志事件查看器是否有其他错误消息，这些错误消息可能有助于识别导致错误的设备。 还可以禁用 BIOS 的内存缓存，尝试解决此错误。
 
-请确保安装最新的 Windows Service Pack。
+请确保安装了最新的 Windows Service Pack。
 
-如果上述步骤未解决此错误，转到一个修复工具，以便诊断测试系统主板。 破裂、 污损的跟踪或在主板上的有故障组件可能导致此错误。
+如果前面的步骤不能解决此错误，请将系统主板用于诊断测试。 母板上的破解、有划痕的跟踪或故障组件会导致此错误。
 
-**解决感染病毒：** 使用任何最新的、 商业病毒扫描检查硬盘上的主启动记录的软件检查计算机有病毒。 所有 Windows 文件系统可以受到病毒都感染。
+**解决病毒感染：** 使用任意最新的商业病毒扫描软件检查计算机的病毒，以检查硬盘的主启动记录。 所有 Windows 文件系统都可以感染病毒。
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[**Bug 检查 0x77 (内核\_堆栈\_页内\_错误)** ](bug-check-0x77--kernel-stack-inpage-error.md)
+[**Bug 检查 0x77 (内核 \_ 堆栈 \_ INPAGE \_ 错误)**](bug-check-0x77--kernel-stack-inpage-error.md)
 
  
 

@@ -1,9 +1,8 @@
 ---
-title: WIA\_DPS\_页\_宽度
-description: WIA\_DPS\_页\_宽度属性包含当前所选页上，在千分之几秒的英寸为单位的宽度 (。 001)。
-ms.assetid: 02787660-3fb3-4e5d-ade8-b11ad29412c1
+title: WIA \_ DPS \_ 页面 \_ 宽度
+description: "\"WIA \\_ DPS \\_ 页面 \\_ 宽度\" 属性包含当前选定页面的宽度（以英寸的千分之几分之)  ( 001。"
 keywords:
-- WIA_DPS_PAGE_WIDTH 成像设备
+- WIA_DPS_PAGE_WIDTH 图像设备
 topic_type:
 - apiref
 api_name:
@@ -14,33 +13,33 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 31e447b1a5f4f0d0926f64250762629840f72be9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7a478c32940a56328a78a560e31ac1d832414bc8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380949"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96831757"
 ---
-# <a name="wiadpspagewidth"></a>WIA\_DPS\_页\_宽度
+# <a name="wia_dps_page_width"></a>WIA \_ DPS \_ 页面 \_ 宽度
 
 
-WIA\_DPS\_页\_宽度属性包含当前所选页上，在千分之几秒的英寸为单位的宽度 (。 001)。
+"WIA \_ DPS \_ 页面 \_ 宽度" 属性包含当前选定页面的宽度（以英寸的千分之几分之)  ( 001。
 
 ## <span id="ddk_wia_dps_page_width_si"></span><span id="DDK_WIA_DPS_PAGE_WIDTH_SI"></span>
 
 
-属性类型：VT\_I4
+属性类型： VT \_ I4
 
-有效值：WIA\_PROP\_NONE
+有效值： WIA " \_ \_ 无"
 
 访问权限：只读
 
 <a name="remarks"></a>备注
 -------
 
-应用程序读取 WIA\_DPS\_页\_WIDTH 属性来确定正在扫描的页的物理尺寸。 如果扩展盘区设置不同于已知的页面大小，此属性会将报告页的宽度其[ **WIA\_DPS\_页\_大小**](wia-dps-page-size.md)属性设置为WIA\_页\_自定义。 WIA 微型驱动程序创建和维护 WIA\_DPS\_页\_宽度。
+应用程序将读取 "WIA \_ DPS \_ 页面宽度" \_ 属性，以确定所扫描页面的物理尺寸。 如果范围设置不同于已知页面大小，则此属性将报告 " [**wia \_ DPS \_ 页面 \_ 大小**](wia-dps-page-size.md) " 属性设置为 "wia \_ 页面自定义" 的页面宽度 \_ 。 WIA 微型驱动程序创建并维护 WIA \_ DPS \_ 页面 \_ 宽度。
 
-WIA\_DPS\_页面\_宽度必须提供的值等效的度量[ **WIA\_IP\_大 XEXTENT** ](wia-ips-xextent.md)属性，宽度，以像素为单位，页后，可以扫描的报告。
+WIA \_ DPS \_ 页面 \_ 宽度必须提供等效于 [**WIA \_ IPS \_ XEXTENT**](wia-ips-xextent.md) 属性值的度量值，此值报告要扫描的页面的宽度（以像素为单位）。
 
 <a name="requirements"></a>要求
 ------------
@@ -52,12 +51,12 @@ WIA\_DPS\_页面\_宽度必须提供的值等效的度量[ **WIA\_IP\_大 XEXTEN
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Version</p></td>
-<td><p>适用于 Microsoft Windows XP。 适用于 Windows Vista 及更高版本，使用相同的 WIA_IPS_PAGE_WIDTH 属性。</p></td>
+<td><p>版本</p></td>
+<td><p>适用于 Microsoft Windows XP。 对于 Windows Vista 和更高版本，请使用相同的 WIA_IPS_PAGE_WIDTH 属性。</p></td>
 </tr>
 <tr class="even">
-<td><p>Header</p></td>
-<td>Wiadef.h （包括 Wiadef.h）</td>
+<td><p>标头</p></td>
+<td>Wiadef (包含 Wiadef) </td>
 </tr>
 </tbody>
 </table>
@@ -65,13 +64,13 @@ WIA\_DPS\_页面\_宽度必须提供的值等效的度量[ **WIA\_IP\_大 XEXTEN
 ## <a name="see-also"></a>请参阅
 
 
-[**WIA\_DPS\_PAGE\_HEIGHT**](wia-dps-page-height.md)
+[**WIA \_ DPS \_ 页面 \_ 高度**](wia-dps-page-height.md)
 
-[**WIA\_DPS\_PAGE\_SIZE**](wia-dps-page-size.md)
+[**WIA \_ DPS \_ 页面 \_ 大小**](wia-dps-page-size.md)
 
-[**WIA\_IPS\_PAGE\_WIDTH**](wia-ips-page-width.md)
+[**WIA \_ IP \_ 页面 \_ 宽度**](wia-ips-page-width.md)
 
-[**WIA\_IPS\_XEXTENT**](wia-ips-xextent.md)
+[**WIA \_ IP \_ XEXTENT**](wia-ips-xextent.md)
 
  
 

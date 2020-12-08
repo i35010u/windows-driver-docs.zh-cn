@@ -1,15 +1,14 @@
 ---
 title: '为传感器创建持久的唯一标识符 (早期版本) '
 description: '为传感器创建持久的唯一标识符 (早期版本) '
-ms.assetid: 09ff583e-6bb5-4812-ae3b-970dac671e39
 ms.date: 07/20/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 1359b5ac40ea925b55f1eb07958e27190767c201
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: b18b22f81be973d0b9cb717bb7d55326c6e1921a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91734519"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96831041"
 ---
 # <a name="creating-a-persistent-unique-identifier-for-a-sensor-previous-version"></a>为传感器创建持久的唯一标识符 (早期版本) 
 

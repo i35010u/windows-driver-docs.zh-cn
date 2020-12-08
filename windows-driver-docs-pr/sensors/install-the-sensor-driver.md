@@ -1,15 +1,14 @@
 ---
 title: 安装传感器驱动程序
 description: 本主题说明如何在开发板上安装传感器驱动程序。
-ms.assetid: 01CC1903-A36B-4ECC-856D-6196EC606973
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d336d17ee23c6807a5b331512392213a993ee5ff
-ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
+ms.openlocfilehash: 5b03c37770f18cbcba1b2006e898095623cf735f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90010397"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96830995"
 ---
 # <a name="install-the-sensor-driver"></a>安装传感器驱动程序
 
@@ -42,7 +41,7 @@ ms.locfileid: "90010397"
 3. 在带 Cove 上，在根目录中创建一个 " **工具** " 文件夹。 然后，将闪存驱动器连接到带 Cove 的 USB 集线器，并将 *Asl.exe* 文件复制到 " **Tools** " 文件夹中。
 
 4. 以管理员身份打开命令提示符窗口，然后输入以下命令： **cd \\ 工具** 
- **目录**确保*Asl.exe*文件列在目录中。
+ **目录** 确保 *Asl.exe* 文件列在目录中。
 
 5. 通过输入以下命令调用 ASL 编译器并创建 ASL 文件： **ASL/tab = ssdt**
 6. 输入以下命令，确保已成功创建 ASL 文件： **dir ssdt. ASL**
@@ -54,7 +53,7 @@ ms.locfileid: "90010397"
 ## <a name="update-the-default-ssdt"></a>更新默认 SSDT
 
 
-执行以下任务以更新 SSDT，并将其加载到替换出厂默认版本。 更新后的 SSDT 将存储在称为 *备有电池的 RAM*的内存大中。 因此，请确保带 Cove 附带的按钮单元格 (电池) 插入其插槽中。
+执行以下任务以更新 SSDT，并将其加载到替换出厂默认版本。 更新后的 SSDT 将存储在称为 *备有电池的 RAM* 的内存大中。 因此，请确保带 Cove 附带的按钮单元格 (电池) 插入其插槽中。
 
 1. 复制以下已更新的 SSDT，并将其粘贴到记事本的新实例中。
 
@@ -147,7 +146,7 @@ ms.locfileid: "90010397"
 
 3. 在 " **文件名" 框中** ，键入 *ssdt*，然后选择 " **保存**"，然后关闭记事本。
 
-4. 在 "命令提示符" 窗口中，使用 **dir** 命令确保你可以看到现在作为 *ssdt-old*列出的默认文件，并将新文件列为 *ssdt. asl*。
+4. 在 "命令提示符" 窗口中，使用 **dir** 命令确保你可以看到现在作为 *ssdt-old* 列出的默认文件，并将新文件列为 *ssdt. asl*。
 
 5. 通过输入以下命令，将 *ssdt asl* 文件编译为带 Cove 可以理解的格式： **asl ssdt. asl**
 6. 通过输入以下命令验证是否已在 **步骤 3** 中成功创建已编译的文件： **dir ssdt** ，应会看到 "工具" 目录中列出的 *ssdt* 文件。
@@ -156,7 +155,7 @@ ms.locfileid: "90010397"
 ## <a name="turn-on-testsigning"></a>打开 testsigning
 
 
-安装示例传感器驱动程序之前，必须打开 testsigning。 执行以下任务以打开 testsigning。 执行以下步骤，通过 **设备管理器**安装传感器驱动程序。
+安装示例传感器驱动程序之前，必须打开 testsigning。 执行以下任务以打开 testsigning。 执行以下步骤，通过 **设备管理器** 安装传感器驱动程序。
 
 1. 在 "命令提示符" 窗口中，输入以下命令，查看是否已打开 testsigning。<br/>
 **bcdedit/enum**
@@ -169,7 +168,7 @@ ms.locfileid: "90010397"
 
 5. 重新启动带 Cove。 在系统重新启动时，请将音量调高，使其保持约2秒，以输入系统设置 (UEFI) "窗口。
 
-6. 在 UEFI 窗口中，选择 "**设备管理器** &gt; **系统安装程序** &gt; **启动**"，并确保将 " **UEFI 安全启动**" 设置为 " ** &lt; 禁用 &gt; **"。
+6. 在 UEFI 窗口中，选择 "**设备管理器** &gt; **系统安装程序** &gt; **启动**"，并确保将 " **UEFI 安全启动**" 设置为 " **&lt; 禁用 &gt;**"。
 
 7. 保存更改并退出 UEFI 窗口。
 
@@ -181,9 +180,9 @@ ms.locfileid: "90010397"
 -   直接从网络源将驱动程序下载到带 Cove。
 -   在主计算机上开发传感器驱动程序，并将带 Cove 连接为预配的客户端。 然后将该驱动程序从主计算机部署到带 Cove。
 -   将驱动程序包复制到闪存驱动器，并将闪存驱动器连接到带 Cove。 然后，在命令提示符窗口中使用 **devcon** 命令手动安装驱动程序。
--   将驱动程序包复制到闪存驱动器，并将闪存驱动器连接到带 Cove。 然后通过 **设备管理器**手动安装驱动程序。
+-   将驱动程序包复制到闪存驱动器，并将闪存驱动器连接到带 Cove。 然后通过 **设备管理器** 手动安装驱动程序。
 
-为简单起见，我们将使用上一列表中的最后一个方法。 执行以下步骤，通过 **设备管理器**手动安装传感器驱动程序。
+为简单起见，我们将使用上一列表中的最后一个方法。 执行以下步骤，通过 **设备管理器** 手动安装传感器驱动程序。
 
 在安装传感器驱动程序之前，必须将传感器连接到带 Cove。 若要了解如何从 SparkFun 修改 ADXL345 加速器分类板，以使其使用示例传感器驱动程序，请参阅 [准备传感器测试板](prepare-your-sensor-test-board.md)。 若要了解如何将传感器分类板连接到带 Cove，请参阅 [将传感器连接到带 Cove](connect-your-sensor-to-the-sharks-cove-board.md)。
 

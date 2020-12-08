@@ -1,15 +1,14 @@
 ---
 title: 介质断开连接时降低功耗
 description: 介质断开连接时降低功耗
-ms.assetid: 592f3835-47ec-443a-9ab5-e700fed2f7f4
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a23d8ec8da8d2f9cc7e6078ab9c48780f0a1e366
-ms.sourcegitcommit: 29c2e6dd8a3de3c11822d990adf1edd774f8a136
+ms.openlocfilehash: 6b66e6821cbac9cff7213dcc6c4ab17c56e1037a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91230013"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96832219"
 ---
 # <a name="low-power-on-media-disconnect"></a>介质断开连接时降低功耗
 
@@ -23,15 +22,15 @@ ms.locfileid: "91230013"
 
 -   网络适配器硬件必须能够在 media connect 上生成唤醒事件。
 
--   微型端口驱动程序必须在[**NDIS \_ PM \_ 功能**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_capabilities)结构的**MinLinkChangeWakeUp**成员中报告网络适配器的唤醒事件功能。
+-   微型端口驱动程序必须在 [**NDIS \_ PM \_ 功能**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_capabilities)结构的 **MinLinkChangeWakeUp** 成员中报告网络适配器的唤醒事件功能。
 
--   **MinLinkChangeWakeUp**的值必须对应于[**irp \_ MN \_ 查询 \_ 功能**](../kernel/irp-mn-query-capabilities.md)Irp 报告的[**设备 \_ 功能**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_device_capabilities)结构的**DeviceWake**成员值。
+-   **MinLinkChangeWakeUp** 的值必须对应于 [**irp \_ MN \_ 查询 \_ 功能**](../kernel/irp-mn-query-capabilities.md)Irp 报告的 [**设备 \_ 功能**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_device_capabilities)结构的 **DeviceWake** 成员值。
 
 -   微型端口驱动程序必须注册为 NDIS 6.20 驱动程序或更高版本。
 
 -   网络适配器必须是以太网 PCI 适配器。
 
--   唤醒事件功能必须通过** \* DEVICESLEEPONDISCONNECT** standard INF file 关键字启用。
+-   唤醒事件功能必须通过 **\* DEVICESLEEPONDISCONNECT** standard INF file 关键字启用。
 
 -   计算机已完全接通电源时，计算机芯片组必须能够正确地传播唤醒事件。 NDIS 通过查询 DEVPKEY \_ PciDevice S0WAKEUPSUPPORTED PCI 属性来验证这一点 \_ 。
 
@@ -39,9 +38,9 @@ ms.locfileid: "91230013"
 
 小型端口驱动程序在初始化期间报告 D3 上的断开连接功能。 有关在断开连接功能上报告 D3 的详细信息，请参阅 [报告电源管理功能](reporting-power-management-capabilities.md)。
 
-** \* DEVICESLEEPONDISCONNECT** standard INF file 关键字指定设备是否已启用或禁用在断开连接时支持 D3。 有关此 INF 关键字的详细信息，请参阅 [电源管理的标准化 INF 关键字](standardized-inf-keywords-for-power-management.md)。
+**\* DEVICESLEEPONDISCONNECT** standard INF file 关键字指定设备是否已启用或禁用在断开连接时支持 D3。 有关此 INF 关键字的详细信息，请参阅 [电源管理的标准化 INF 关键字](standardized-inf-keywords-for-power-management.md)。
 
-在初始化期间，在 "断开连接时支持 D3" 的微型端口驱动程序必须报告可以支持通知操作系统媒体连接事件的功能的最低性能级别。 微型端口驱动程序报告[**NDIS \_ PM \_ 功能**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_capabilities)结构的**MinLinkChangeWakeUp**成员中的电源级别。 例如，微型端口驱动程序可以报告 **NdisDeviceStateD3**。
+在初始化期间，在 "断开连接时支持 D3" 的微型端口驱动程序必须报告可以支持通知操作系统媒体连接事件的功能的最低性能级别。 微型端口驱动程序报告 [**NDIS \_ PM \_ 功能**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_capabilities)结构的 **MinLinkChangeWakeUp** 成员中的电源级别。 例如，微型端口驱动程序可以报告 **NdisDeviceStateD3**。
 
 下图说明了在发生媒体断开连接事件后，将网络适配器设置为低功耗状态的事件的顺序。
 
@@ -51,7 +50,7 @@ ms.locfileid: "91230013"
 
 1.  网络适配器硬件检测到媒体断开连接事件，并将该信息传递给微型端口驱动程序。
 
-2.  微型端口驱动程序使用 [**ndis \_ 状态 \_ 链接 \_ 状态**](./ndis-status-link-state.md) 状态指示通知 ndis 的媒体断开连接事件。 [**Ndis \_ 状态 \_ 指示**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_status_indication)结构的**StatusBuffer**成员包含[**ndis \_ 链接 \_ 状态**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_link_state)结构。 MediaConnectStateDisconnected 值是在**NDIS \_ 链接 \_ 状态**结构的**MediaConnectState**成员中设置的。
+2.  微型端口驱动程序使用 [**ndis \_ 状态 \_ 链接 \_ 状态**](./ndis-status-link-state.md) 状态指示通知 ndis 的媒体断开连接事件。 [**Ndis \_ 状态 \_ 指示**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_status_indication)结构的 **StatusBuffer** 成员包含 [**ndis \_ 链接 \_ 状态**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_link_state)结构。 MediaConnectStateDisconnected 值是在 **NDIS \_ 链接 \_ 状态** 结构的 **MediaConnectState** 成员中设置的。
 
 3.  NDIS 使用 [OID \_ pm \_ 参数](./oid-pm-parameters.md) 禁用 LAN 唤醒功能，启用对媒体连接的唤醒连接 (\_ \_ \_ \_ \_ \_ 在 **WakeUpFlags** 成员) 中设置启用的链接更改 "启用"。
 
@@ -75,13 +74,13 @@ ms.locfileid: "91230013"
 
 4.  NDIS 通知微型端口驱动程序网络适配器处于完全电源 (D0) 状态，并且 oid 设置了 [oid \_ PNP \_ 集 \_ 功能](./oid-pnp-set-power.md)的请求。
 
-5.  网络适配器使用 [**ndis \_ 状态 \_ 链接 \_ 状态**](./ndis-status-link-state.md) 状态指示向 ndis 通知一个 media connect 事件。 **MediaConnectStateConnected**值是在[**NDIS \_ 链接 \_ 状态**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_link_state)结构的**MediaConnectState**成员中设置的。
+5.  网络适配器使用 [**ndis \_ 状态 \_ 链接 \_ 状态**](./ndis-status-link-state.md) 状态指示向 ndis 通知一个 media connect 事件。 **MediaConnectStateConnected** 值是在 [**NDIS \_ 链接 \_ 状态**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_link_state)结构的 **MediaConnectState** 成员中设置的。
 
 从 NDIS 6.30 开始，如果微型端口驱动程序支持 [**NDIS \_ 状态 \_ PM \_ 唤醒 \_ 原因**](./ndis-status-pm-wake-reason.md) 状态指示，则如果网络适配器唤醒系统，则必须发出此状态通知。 驱动程序在处理 oid [ \_ PNP \_ 设置 \_ ](./oid-pnp-set-power.md) 的 oid 设置请求时发出此状态通知，以将转换为全功耗 (D0) 状态。
 
 有关详细信息，请参阅 [NDIS 唤醒原因状态指示](overview-of-ndis-wake-reason-statue-indications.md)。
 
-**注意**   如果微型端口驱动程序发出[**ndis \_ 状态 \_ PM \_ 唤醒 \_ 原因**](./ndis-status-pm-wake-reason.md)状态指示，则必须在发出[**ndis \_ 状态 \_ 链接 \_ 状态**](./ndis-status-link-state.md)状态指示之前执行此操作。
+**注意**  如果微型端口驱动程序发出 [**ndis \_ 状态 \_ PM \_ 唤醒 \_ 原因**](./ndis-status-pm-wake-reason.md) 状态指示，则必须在发出 [**ndis \_ 状态 \_ 链接 \_ 状态**](./ndis-status-link-state.md) 状态指示之前执行此操作。
 
  
 

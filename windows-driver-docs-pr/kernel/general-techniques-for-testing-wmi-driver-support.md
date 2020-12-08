@@ -1,7 +1,6 @@
 ---
 title: 用于测试 WMI 驱动程序支持的常规方法
 description: 用于测试 WMI 驱动程序支持的常规方法
-ms.assetid: 4d1a9198-2cc7-491d-a803-80f846882a6e
 keywords:
 - WMI WDK 内核，测试
 - 测试 WMI 支持 WDK 内核
@@ -12,12 +11,12 @@ keywords:
 - WMI WDK 内核，错误
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b32fbe906d8bfa9191463373f556037ad0c2fafd
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 70f889cde65a091c8e4313f6d0ccd7d64056a194
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89183880"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96831371"
 ---
 # <a name="general-techniques-for-testing-wmi-driver-support"></a>用于测试 WMI 驱动程序支持的常规方法
 
@@ -36,7 +35,7 @@ ms.locfileid: "89183880"
 Microsoft Windows XP 和更高版本的操作系统包含 Wmic 工具，该工具提供了一个命令行界面，可用于发出 WMI 相关命令来测试驱动程序。
 
 <a href="" id="wmimofck"></a>Wmimofck  
-**Wmimofck**命令可用于检查二进制 MOF 文件的语法。 还可以使用 **wmimofck-t** 命令生成 VBScript 文件。 你可以使用此脚本来测试驱动程序的 WMI 类实例查询的处理。 **Wmimofck**命令生成可测试查询和设置类、执行方法和接收事件的网页。 请注意，网页不支持执行使用复杂参数或返回值的方法， (如) 的嵌入类的数组。 在这种情况下，可以改为使用 Wbemtest。 有关 Wmimofck 的详细信息，请参阅 [使用 wmimofck.exe](using-wmimofck-exe.md) 。
+**Wmimofck** 命令可用于检查二进制 MOF 文件的语法。 还可以使用 **wmimofck-t** 命令生成 VBScript 文件。 你可以使用此脚本来测试驱动程序的 WMI 类实例查询的处理。 **Wmimofck** 命令生成可测试查询和设置类、执行方法和接收事件的网页。 请注意，网页不支持执行使用复杂参数或返回值的方法， (如) 的嵌入类的数组。 在这种情况下，可以改为使用 Wbemtest。 有关 Wmimofck 的详细信息，请参阅 [使用 wmimofck.exe](using-wmimofck-exe.md) 。
 
 还可以通过使用 WMI 用户模式 API 编写自定义 WMI 客户端应用程序来测试驱动程序的 WMI 支持。
 
@@ -46,7 +45,7 @@ WMI 客户端应用程序执行以下任务来测试驱动程序：
 
 -   连接到 WMI。
 
-    若要连接到 WMI，应用程序可以调用组件对象模型 (COM) 函数 **CoCreateInstance**来检索指向 **IWbemLocator** 接口的指针。 然后，应用程序会调用 **IWbemLocator：： ConnectServer** 方法连接到 WMI。 通过此调用，应用程序将收到指向 **IWbemServices** 接口的指针。
+    若要连接到 WMI，应用程序可以调用组件对象模型 (COM) 函数 **CoCreateInstance** 来检索指向 **IWbemLocator** 接口的指针。 然后，应用程序会调用 **IWbemLocator：： ConnectServer** 方法连接到 WMI。 通过此调用，应用程序将收到指向 **IWbemServices** 接口的指针。
 
 -   访问驱动程序中的信息。
 

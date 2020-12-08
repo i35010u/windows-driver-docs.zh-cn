@@ -1,17 +1,16 @@
 ---
 title: OID_GEN_CO_TRANSMIT_QUEUE_LENGTH
-description: 本主题介绍 OID_GEN_CO_TRANSMIT_QUEUE_LENGTH 对象标识符（OID）。
-ms.assetid: bd99e26d-abd4-4b71-8106-e474f61630ff
+description: 本主题介绍) OID_GEN_CO_TRANSMIT_QUEUE_LENGTH 对象标识符 (OID。
 keywords:
 - OID_GEN_CO_TRANSMIT_QUEUE_LENGTH
 ms.date: 11/02/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 976b978bb8d69ba95a01e45a1525593a0cf436e4
-ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
+ms.openlocfilehash: 252ccd3ebbb03fbf2de800618b7fc11da7a9fe11
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85917026"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96831287"
 ---
 # <a name="oid_gen_co_transmit_queue_length"></a>OID_GEN_CO_TRANSMIT_QUEUE_LENGTH
 
@@ -19,5 +18,5 @@ OID_GEN_CO_TRANSMIT_QUEUE_LENGTH OID 指定当前排队等待传输的 Pdu 数�
 
 ## <a name="requirements"></a>要求
 
-**版本**： Windows Vista 和更高版本的**标头**： Ntddndis （包括 Ndis .h）
+**版本**： Windows Vista 和更高版本的 **标头**： Ntddndis (包括 Ndis .h) 
 

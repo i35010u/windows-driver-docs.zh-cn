@@ -1,15 +1,14 @@
 ---
 title: 简单外设总线 (SPB) 驱动程序示例
 description: 此目录中的驱动程序示例提供了为设备编写自定义 SPB 驱动程序的起点。
-ms.assetid: E9A667EA-3AE5-4A0E-BC3F-CD442141886B
 ms.date: 11/21/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 6a1fc9f365c73b52e093f368c251d543e9be1352
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: c7b3f016838d3b1b2fb32afedabd457b73afa60a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89188035"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96831169"
 ---
 # <a name="simple-peripheral-bus-spb-driver-samples"></a>简单外设总线 (SPB) 驱动程序示例
 

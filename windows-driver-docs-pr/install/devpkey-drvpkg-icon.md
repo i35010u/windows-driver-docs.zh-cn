@@ -1,7 +1,6 @@
 ---
 title: DEVPKEY_DrvPkg_Icon
 description: DEVPKEY_DrvPkg_Icon
-ms.assetid: 30aa817c-9dda-4504-b51a-78ef91d0cf01
 keywords:
 - DEVPKEY_DrvPkg_Icon 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: da4190616118e1e79c155fc548f95344046f5fc7
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 96204b5dc34a3de6ba9cb87e98046b00eda8d24f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90716740"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96832343"
 ---
 # <a name="devpkey_drvpkg_icon"></a>DEVPKEY_DrvPkg_Icon
 
@@ -70,7 +69,7 @@ DEVPKEY_DrvPkg_Icon 设备属性表示 Windows 用于直观表示设备实例的
     @executable-file-path,resource-identifier
     ```
 
-    图标资源说明符的第一个字符是 at 符号 ( @ ) ，后跟 (* \* .exe*或* \* .dll*文件) 的可执行文件的路径，后跟逗号分隔符 (、) ，然后是*资源标识符*项。
+    图标资源说明符的第一个字符是 at 符号 ( @ ) ，后跟 (*\* .exe* 或 *\* .dll* 文件) 的可执行文件的路径，后跟逗号分隔符 (、) ，然后是 *资源标识符* 项。
 
 例如，图标说明符 " @shell32.dll ，-30" 表示可执行文件 "shell32.dll" 和资源标识符 "-30"。
 

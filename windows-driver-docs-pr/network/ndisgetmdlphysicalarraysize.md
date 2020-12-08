@@ -1,22 +1,21 @@
 ---
 title: NdisGetMdlPhysicalArraySize 宏
 description: NdisGetMdlPhysicalArraySize 宏检索与 MDL 关联的断开连接的物理内存块的数量。
-ms.assetid: 25e3f9a3-3057-4081-af74-427102197906
 ms.date: 07/18/2017
 keywords:
 - NdisGetMdlPhysicalArraySize 从 Windows Vista 开始的宏网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 7abde061cee85358fa9bac71265d1330b95d26c6
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 0b5f190a4860b5af1839beea77402cc6a3a3c927
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104876"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96832171"
 ---
 # <a name="ndisgetmdlphysicalarraysize-macro"></a>NdisGetMdlPhysicalArraySize 宏
 
 
-**NdisGetMdlPhysicalArraySize**宏检索与 MDL 关联的断开连接的物理内存块的数量。
+**NdisGetMdlPhysicalArraySize** 宏检索与 MDL 关联的断开连接的物理内存块的数量。
 
 <a name="syntax"></a>语法
 ------
@@ -45,7 +44,7 @@ VOID NdisGetMdlPhysicalArraySize(
 <a name="remarks"></a>备注
 -------
 
-**NdisGetMdlPhysicalArraySize**宏提供[**NdisGetBufferPhysicalArraySize**](/previous-versions/windows/hardware/network/ff552033(v=vs.85))函数的基于 MDL 的版本。
+**NdisGetMdlPhysicalArraySize** 宏提供 [**NdisGetBufferPhysicalArraySize**](/previous-versions/windows/hardware/network/ff552033(v=vs.85))函数的基于 MDL 的版本。
 
 <a name="requirements"></a>要求
 ------------
@@ -58,7 +57,7 @@ VOID NdisGetMdlPhysicalArraySize(
 <tbody>
 <tr class="odd">
 <td><p>目标平台</p></td>
-<td>桌面型</td>
+<td>台式机</td>
 </tr>
 <tr class="even">
 <td><p>版本</p></td>
@@ -79,7 +78,7 @@ VOID NdisGetMdlPhysicalArraySize(
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**NdisGetBufferPhysicalArraySize**](/previous-versions/windows/hardware/network/ff552033(v=vs.85))

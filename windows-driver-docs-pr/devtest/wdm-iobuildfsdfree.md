@@ -1,7 +1,6 @@
 ---
 title: 'IoBuildFsdFree 规则 (wdm) '
 description: IoBuildFsdFree 规则指定，驱动程序应仅对先前使用 IoBuildAsynchronousFsdRequest 分配的 Irp 使用 IoFreeIrp。
-ms.assetid: F507CD5C-88F9-4EEA-BB41-40F2728CAA85
 ms.date: 05/21/2018
 keywords:
 - 'IoBuildFsdFree 规则 (wdm) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: aafd33e067db0cabafb2a27832f1c4e2ea5ab052
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 397849913bb59af48032bdb758f6ebe1df2aac33
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107350"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96832433"
 ---
 # <a name="iobuildfsdfree-rule-wdm"></a>IoBuildFsdFree 规则 (wdm) 
 
 
-**IoBuildFsdFree**规则指定，驱动程序应仅对先前使用[**IoBuildAsynchronousFsdRequest**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iobuildasynchronousfsdrequest)分配的 irp 使用[**IoFreeIrp**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iofreeirp) 。
+**IoBuildFsdFree** 规则指定，驱动程序应仅对先前使用 [**IoBuildAsynchronousFsdRequest**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iobuildasynchronousfsdrequest)分配的 irp 使用 [**IoFreeIrp**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iofreeirp) 。
 
 **驱动程序模型： WDM**
 

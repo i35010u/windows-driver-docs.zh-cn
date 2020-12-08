@@ -1,7 +1,6 @@
 ---
 title: 'MdlAfterReqCompletedIntIoctlA 规则 (kmdf) '
 description: MdlAfterReqCompletedIntIoctlA 规则指定在 EvtIoInternalDeviceControl 回调函数中，内存描述符列表 (MDL) 在 i/o 请求完成后无法访问。
-ms.assetid: 34f3122d-ef9e-4080-8716-5e195ab934ae
 ms.date: 05/21/2018
 keywords:
 - 'MdlAfterReqCompletedIntIoctlA 规则 (kmdf) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 8977ffba684a4a2dfa0bf2a996337f544b6c0ae2
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 12585dbe812e7631e694686fe1095ad595895cfa
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102268"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96830705"
 ---
 # <a name="mdlafterreqcompletedintioctla-rule-kmdf"></a>MdlAfterReqCompletedIntIoctlA 规则 (kmdf) 
 
 
-**MdlAfterReqCompletedIntIoctlA**规则指定在[*EvtIoInternalDeviceControl*](/windows-hardware/drivers/ddi/wdfio/nc-wdfio-evt_wdf_io_queue_io_internal_device_control)回调函数中，内存描述符列表 (MDL) 在 i/o 请求完成后无法访问。
+**MdlAfterReqCompletedIntIoctlA** 规则指定在 [*EvtIoInternalDeviceControl*](/windows-hardware/drivers/ddi/wdfio/nc-wdfio-evt_wdf_io_queue_io_internal_device_control)回调函数中，内存描述符列表 (MDL) 在 i/o 请求完成后无法访问。
 
 在驱动程序的 *EvtIoInternalDeviceControl* 回调函数中，通过调用 [**WdfRequestRetrieveInputWdmMdl**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestretrieveinputwdmmdl) 或 [**WDFREQUESTRETRIEVEOUTPUTWDMMDL**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestretrieveoutputwdmmdl) 方法检索到的 MDL 在对 i/o 请求调用 [**WdfRequestComplete**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcomplete)、 [**WdfRequestCompleteWithInformation**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcompletewithinformation)或 [**WdfRequestCompleteWithPriorityBoost**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcompletewithpriorityboost) 后无法访问。
 

@@ -1,7 +1,6 @@
 ---
 title: 等待/唤醒 IRP 完成概述
 description: 等待/唤醒 IRP 完成概述
-ms.assetid: a5e09fda-f722-4335-8576-7b058b2f7a21
 keywords:
 - 电源管理 WDK 内核，唤醒功能
 - 外部唤醒信号 WDK
@@ -12,12 +11,12 @@ keywords:
 - 等待/唤醒 Irp WDK 电源管理，完成
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ce74b13ccc2c81a596de11e6a717d8bb4a5110ee
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 85ebde47e108c5280a4275e14bc938d846f87fbc
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89192480"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96831355"
 ---
 # <a name="overview-of-waitwake-irp-completion"></a>等待/唤醒 IRP 完成概述
 

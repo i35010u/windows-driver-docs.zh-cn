@@ -1,15 +1,14 @@
 ---
 title: 集合列表序列化帮助程序
 description: V2 传感器驱动程序使用集合列表序列化帮助器函数来对传感器 \_ 集合列表结构执行与序列化相关的操作 \_ 。
-ms.assetid: 586FEDD7-6BA1-4E76-8E8D-E486F4711FAE
 ms.date: 07/20/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: cccc10db6319bedd8706c6031b56547f9bbd4952
-ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
+ms.openlocfilehash: f5093b5a0d195f31bf0f9809dae55a451b802074
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90010581"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96831057"
 ---
 # <a name="collection-list-serialization-helpers"></a>集合列表序列化帮助程序
 

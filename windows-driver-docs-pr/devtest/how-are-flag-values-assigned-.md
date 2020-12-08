@@ -1,15 +1,14 @@
 ---
 title: 如何分配标志值
 description: 如何分配标志值
-ms.assetid: de74e2d9-0ebf-4125-9dbb-42f7755010f4
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9264e9a2a983091a4cad2a439c6afcae97ff3376
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 307a0b5275a1a9df58c8fcd0a97997ae34c8289c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89381771"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96831559"
 ---
 # <a name="how-are-flag-values-assigned"></a>标志值是如何分配的？
 

@@ -1,7 +1,6 @@
 ---
 title: 使用图形 DDI
 description: 使用图形 DDI
-ms.assetid: e48d117b-8c1c-4617-84f8-b0b489b1083a
 keywords:
 - 绘制 WDK GDI，DDI
 - GDI WDK Windows 2000 显示器，DDI
@@ -13,12 +12,12 @@ keywords:
 - 绘制 WDK GDI，函数
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fad73bf38bd9d64380e1ccd258a6726c795d76f7
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 0ee0fb04fb303c407d104dfa6964ce67f6fc98bd
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89067084"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96831533"
 ---
 # <a name="using-the-graphics-ddi"></a>使用图形 DDI
 
@@ -30,7 +29,7 @@ ms.locfileid: "89067084"
 
 图形 DDI 函数名称采用 *DrvXxx* 格式。 GDI 调用这些 *DrvXxx* 函数将数据传递给驱动程序。 当应用程序发出 GDI 请求，且 GDI 确定驱动程序支持相关函数时，GDI 将调用此函数。 驱动程序负责提供函数并在函数完成时返回到 GDI。
 
-本部分介绍了显示和打印机驱动程序的编写器必须知道的图形 DDI 函数。 图形 DDI 函数声明、结构定义和常量可以在 *winddi*中找到。 有关图形 DDI 函数的详细信息，请参阅 [打印机和显示驱动程序实现的 GDI 函数](/windows-hardware/drivers/ddi/index)。
+本部分介绍了显示和打印机驱动程序的编写器必须知道的图形 DDI 函数。 图形 DDI 函数声明、结构定义和常量可以在 *winddi* 中找到。 有关图形 DDI 函数的详细信息，请参阅 [打印机和显示驱动程序实现的 GDI 函数](/windows-hardware/drivers/ddi/index)。
 
 本节中包含的主题如下所示：
 

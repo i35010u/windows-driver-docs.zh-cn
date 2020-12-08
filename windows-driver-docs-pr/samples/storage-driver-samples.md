@@ -1,15 +1,14 @@
 ---
 title: 存储驱动程序示例
 description: 此目录中的存储驱动程序示例提供了为设备编写自定义驱动程序的起点。
-ms.assetid: 4FEB911D-78D5-403E-91AB-8A064E31F4FA
 ms.date: 12/02/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 42108d0514e894ec28f8bed76506bbc488e3c69e
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 061ae83c5bc1d03e2c3e5f4b96bb83dbf5a092d7
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89190303"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96831153"
 ---
 # <a name="storage-driver-samples"></a>存储驱动程序示例
 
@@ -26,4 +25,4 @@ ms.locfileid: "89190303"
 | [StorAHCI StorPort 微型端口](/samples/microsoft/windows-driver-samples/storahci-storport-miniport-driver) | 示例 Storport ACHI 微型端口驱动程序。 |
 | [多路径 i/o (MPIO) DSM 示例](/samples/microsoft/windows-driver-samples/multipath-io-mpio-dsm-sample)     |  (DSM) 生成特定于供应商的特定于设备的模块时要遵循的示例。 此示例 DSM 支持 iSCSI 和光纤通道设备。 |
 | [超级软盘 (sfloppy) 存储类驱动程序](/samples/microsoft/windows-driver-samples/super-floppy-sfloppy-storage-class-driver) | 适用于超级软盘驱动器的类驱动程序。 |
-| [SCSI 传递接口工具](/samples/microsoft/windows-driver-samples/scsi-pass-through-interface-tool) | 演示如何在使用 DeviceIoControl API 的应用程序中使用 pass IOCTLs 与 SCSI 设备通信。 |
+| [SCSI Pass-Through 接口工具](/samples/microsoft/windows-driver-samples/scsi-pass-through-interface-tool) | 演示如何在使用 DeviceIoControl API 的应用程序中使用 pass IOCTLs 与 SCSI 设备通信。 |

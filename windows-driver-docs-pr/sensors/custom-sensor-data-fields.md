@@ -1,15 +1,14 @@
 ---
 title: 自定义传感器数据字段
 description: 本主题提供了有关自定义传感器可以使用的数据字段的信息。
-ms.assetid: 8034B185-8A1B-43D9-9FFC-02E85284008A
 ms.date: 07/20/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 5fa66eae54e30a250e2698e7f231d406d0227011
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 89228bb9973de1768a7a297f003ebc4015d13f85
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91734151"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96831039"
 ---
 # <a name="custom-sensor-data-fields"></a>自定义传感器数据字段
 

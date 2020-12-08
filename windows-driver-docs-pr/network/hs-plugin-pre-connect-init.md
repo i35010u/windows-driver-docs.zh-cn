@@ -1,17 +1,16 @@
 ---
 title: HS_PLUGIN_PRE_CONNECT_INIT 函数
 description: 调用 HS_PLUGIN_PRE_CONNECT_INIT 函数以通知插件在连接到热点网络时初始化其状态。
-ms.assetid: 799242a0-144f-4d3f-b48c-9e96a851d8c4
 keywords:
 - typedef DWORD (WINAPI HS_PLUGIN_PRE_CONNECT_INIT 从 Windows Vista 开始) 函数网络驱动程序
 ms.date: 07/31/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f7eb6c551ec078bdb033e9a8e5fdab8a627ba36f
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: f408725a7ded74d3b0a1ad9d9b7cf91bafc58576
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89403028"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96832251"
 ---
 # <a name="hs_plugin_pre_connect_init-function"></a>HS \_ 插件 \_ \_ CONNECT \_ INIT 函数
 
@@ -25,14 +24,14 @@ ms.locfileid: "89403028"
 
 ```ManagedCPlusPlus
  typedef DWORD (WINAPI *HS_PLUGIN_PRE_CONNECT_INIT)(
-  _In_ HS_NETWORK_IDENTITY *pNetworkIdentity
+  _In_ HS_NETWORK_IDENTITY *pNetworkIdentity
 );
 ```
 
 <a name="parameters"></a>参数
 ----------
 
-* \* pNetworkIdentity* \[\]  
+*\* pNetworkIdentity* \[\]  
 指向目标网络的 [**HS \_ 网络 \_ 标识**](hs-network-identity.md) 结构的指针。
 
 <a name="return-value"></a>返回值
@@ -54,13 +53,13 @@ ms.locfileid: "89403028"
 <td><p>Windows 10 移动版</p></td>
 </tr>
 <tr class="even">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Hotspotoffloadplugin (包含 Hotspotoffloadplugin) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**HS \_ 网络 \_ 标识**](hs-network-identity.md)

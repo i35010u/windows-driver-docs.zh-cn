@@ -1,18 +1,17 @@
 ---
 title: 用于流式传输类微型驱动程序通信的 DirectShow 筛选器
 description: 用于流式传输类微型驱动程序通信的 DirectShow 筛选器
-ms.assetid: d2122827-758c-4557-b2fd-8774179b5da4
 keywords:
 - 筛选器关系图配置 WDK 视频捕获，DirectShow
 - DirectShow WDK 视频捕获
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d63a51740bf9ca20f9e690cea5d9e6d6dc4f12c5
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: f076c1c06062a78c4a715032cb8c4b8f4e1473d4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105174"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96830869"
 ---
 # <a name="directshow-filter-to-stream-class-minidriver-communication"></a>用于流式传输类微型驱动程序通信的 DirectShow 筛选器
 
@@ -34,7 +33,7 @@ ms.locfileid: "90105174"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>Property</p>
+<td><p>properties</p>
 <div>
  
 </div>
@@ -43,7 +42,7 @@ ms.locfileid: "90105174"
 <td><p><a href="/windows-hardware/drivers/stream/srb-set-stream-property" data-raw-source="[&lt;strong&gt;SRB_SET_STREAM_PROPERTY&lt;/strong&gt;](./srb-set-stream-property.md)"><strong>SRB_SET_STREAM_PROPERTY</strong></a></p></td>
 </tr>
 <tr class="even">
-<td><p>Property</p>
+<td><p>properties</p>
 <div>
  
 </div>

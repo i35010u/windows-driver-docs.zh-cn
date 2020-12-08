@@ -1,15 +1,14 @@
 ---
 title: 运行测试通过
 description: MITT 平台通过提供测试自动化和用于自定义为目标调查发送的 GPIO 模式的选项来测试 GPIO 按钮。
-ms.assetid: E24AD015-1E14-4EF9-8443-D0F38FA3321E
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 437fe9f2cd4d912b1a9ebc279c92a7deca2d18b5
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: cfbcf999bb79fc0235e52fdd3b6067ea215f9deb
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89381521"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96830578"
 ---
 # <a name="running-test-passes"></a>运行测试通过
 
@@ -40,7 +39,8 @@ MITT 平台通过提供测试自动化和用于自定义为目标调查发送的
 6.  在 **搜索** 编辑字段中点击。 *验证*：屏幕键盘应部署。
 7.  将系统 (横向旋转到纵向，并向后) 。 *验证*：系统应旋转。
 
-**注意**   对于系统可转换为平板电脑模式的每个不同方法，重复这些步骤。
+**注意**  
+对于系统可转换为平板电脑模式的每个不同方法，重复这些步骤。
 
  
 

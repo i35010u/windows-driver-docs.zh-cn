@@ -1,22 +1,21 @@
 ---
-title: 如何将跟踪-如果使用表达式
-description: 如何将跟踪-如果使用表达式
-ms.assetid: 05fc8225-ba4e-4718-a5e1-c9e49ec931b7
+title: 如何使用 Trace-If 表达式
+description: 如何使用 Trace-If 表达式
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1b68ac23817724130314ed08d04950621e896f75
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 897fb455ec7a6907062732d0d4e6b47f16202198
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63329824"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96831549"
 ---
 # <a name="how-are-trace-if-expressions-used"></a>如何使用 Trace-If 表达式？
 
 
-若要帮助你了解如何跟踪-如果使用了表达式，我们提供了演示如何使用此类表达式的示例和语法的"开始\_wpp config"语句。 此示例中引用的函数跟踪\_返回，该记录的事件，如果表达式 FAILED(HR) 为 true。
+为了帮助您了解如何使用 Trace-If 表达式，我们提供了一个示例，演示了 "begin \_ wpp config" 语句的用法和语法。 此示例引用函数跟踪 \_ 返回，如果表达式失败 (HR) 为 true，则会记录事件。
 
-FAILED(HR) 为 true，如果假定没有有状态 ULONG 的源文件，并将通过调用跟踪记录一个事件\_RETURN(Status)。
+如果失败 (HR) 为 true，则假定存在具有状态 ULONG 的源文件，并将通过调用 TRACE \_ RETURN (status) 记录事件。
 ```
 //MACRO: TRACE_RETURN
 //
@@ -32,26 +31,26 @@ FAILED(HR) 为 true，如果假定没有有状态 ULONG 的源文件，并将通
 #define WPP_LEVEL_EXP_LOGGER(LEVEL, HR) WPP_LEVEL_LOGGER(ERROR)
 ```
 
-在前面的示例，请注意，、 跟踪\_之间开始新的定义返回\_wpp 配置和结束\_wpp 行。 此定义然后跟预 / 宏和已启用和记录器定义发布到发布。
+在上面的示例中，请注意，TRACE \_ RETURN 在 begin \_ wpp config 和 end \_ wpp 行之间定义。 然后，此定义后跟 PRE/POST 宏以及 ENABLED 和记录器定义。
 
-在 begin\_wpp 配置和结束\_wpp 分隔符定义分析由预处理器配置块。 包含配置块定义的文件必须由 WPP 扫描。 使用-scan:file.extension 参数指定此文件。
+Begin \_ wpp config 和 end \_ wpp 分隔符定义由预处理器分析的配置块。 必须通过 WPP 扫描包含配置块定义的文件。 此文件是用-scan： file. extension 参数指定的。
 
-**请注意**璝惠 **-扫描**和其他**运行\_WPP**选项，请参阅[WPP 预处理器](wpp-preprocessor.md)。
+**注意**   有关 **-扫描** 和其他 **运行 \_ wpp** 选项的信息，请参阅 [WPP 预处理器](wpp-preprocessor.md)。
 
 
 
-以下列表提供了有关示例配置块中的每个语句的详细信息：
+以下列表提供了有关示例配置块中每个语句的详细信息：
 
 <span id="USEPREFIX"></span><span id="useprefix"></span>**USEPREFIX**  
-定义要记录的事件时使用的前缀格式字符串。 在示例中，使用 STDPREFIX。 适用于 STDPREFIX 的值，请参阅[如何更改跟踪的每个行上的前缀输出？](how-do-i-change-the-prefix-output-on-every-trace-line-.md)
+定义要在记录事件时使用的前缀格式字符串。 在此示例中，使用了 STDPREFIX。 有关 STDPREFIX 的可用值，请参阅 [如何实现更改每个跟踪行的前缀输出？](how-do-i-change-the-prefix-output-on-every-trace-line-.md)
 
 <span id="USESUFFIX"></span><span id="usesuffix"></span>**USESUFFIX**  
-定义要记录的事件时使用的后缀格式字符串。
+定义要在记录事件时使用的后缀格式字符串。
 
-<span id="FUNC"></span><span id="func"></span>**FUNC**  
-定义名称和跟踪函数的签名。 在示例中，该函数采用一个参数和没有任何格式字符串。
+<span id="FUNC"></span><span id="func"></span>**求**  
+定义 trace 函数的名称和签名。 在此示例中，函数采用一个参数，而不采用格式字符串。
 
-有关跟踪的另一个示例-如果表达式，请参阅[如何将跟踪语句包括一个 C 中 /C++宏？](how-do-i-include-a-trace-statement-in-a-c-c---macro-.md)部分。
+有关 Trace-If 表达式的另一个示例，请参阅 [如何实现在 C/c + + 宏中包含跟踪语句？](how-do-i-include-a-trace-statement-in-a-c-c---macro-.md) 一节。
 
 
 

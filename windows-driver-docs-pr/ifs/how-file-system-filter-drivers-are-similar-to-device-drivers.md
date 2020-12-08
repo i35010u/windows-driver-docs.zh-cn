@@ -1,19 +1,18 @@
 ---
 title: 文件系统筛选器驱动程序与设备驱动程序的类似程度如何
 description: 文件系统筛选器驱动程序与设备驱动程序的类似程度如何
-ms.assetid: 7797239e-e0cc-4422-bcc6-31cfe6efd8e4
 keywords:
 - 筛选器驱动程序 WDK 文件系统和设备驱动程序
 - 文件系统筛选器驱动程序（WDK）和设备驱动程序
 - 设备驱动程序 WDK 文件系统
 ms.date: 10/16/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 8350bd322e894b589127aa4a732da7cc4e2f191f
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: f1e8e4a1c321ecc354e47287634f24ad08dc3e31
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89063332"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96831491"
 ---
 # <a name="how-file-system-filter-drivers-are-similar-to-device-drivers"></a>文件系统筛选器驱动程序与设备驱动程序的类似程度如何
 

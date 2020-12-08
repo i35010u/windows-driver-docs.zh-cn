@@ -1,7 +1,6 @@
 ---
 title: HRESULT 值
 description: 下面列出了函数和方法的常见返回值及其常见含义。
-ms.assetid: 713f3ee2-2f5b-415e-9908-90f5ae428b43
 ms.date: 12/07/2017
 keywords:
 - HRESULT 值 Windows 调试
@@ -14,12 +13,12 @@ api_location:
 api_type:
 - HeaderDef
 ms.localizationpriority: medium
-ms.openlocfilehash: db6fa523be3e4a5629b937235ecdbc417130bd8e
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 6e03ceecf2333defc9bebcfa9f939e8d44b47781
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89210219"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96830749"
 ---
 # <a name="hresult-values"></a>HRESULT 值
 

@@ -1,15 +1,14 @@
 ---
 title: 管理 Hyper-V 可扩展交换机运行时数据
 description: 管理 Hyper-V 可扩展交换机运行时数据
-ms.assetid: 08A353F5-D8CB-4645-9337-8169D302F6F2
 ms.date: 12/04/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 8010e00ec91e74d920fe56ac24bcec0f371e17df
-ms.sourcegitcommit: 3464f10ffa0727e38fbe225cfab52bb8c2bb1747
+ms.openlocfilehash: cb0f5c2d6bfb0688f1b937c9825c323ed030d596
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93352996"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96832185"
 ---
 # <a name="managing-hyper-v-extensible-switch-run-time-data"></a>管理 Hyper-V 可扩展交换机运行时数据
 
@@ -35,7 +34,7 @@ ms.locfileid: "93352996"
 
 2.  如果扩展具有为指定 NIC 保存的运行时数据，则会将其数据保存在 [**NDIS \_ 交换机 \_ NIC \_ 保存 \_ 状态**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_nic_save_state) 结构内，从结构的开头开始 *SaveDataOffset* 字节。 然后，扩展将完成 OID 方法请求，并 \_ 成功执行 NDIS 状态 \_ 。
 
-3.  如果 [**NDIS \_ 交换机 \_ NIC \_ 保存 \_ 状态**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_nic_save_state) 结构没有提供足够的缓冲区来保存运行时状态，扩展插件会将方法结构的 *BytesNeeded* 字段设置为 **ndis \_ SIZEOF \_ ndis \_ SWITCH \_ NIC \_ 保存 \_ 状态修订号 \_ \_ 1** 加上保存数据所需的缓冲区数量，并使用 **NDIS 状态缓冲区完成 OID \_ \_ \_ 太 \_ 短** 。 将用所需大小重新发出 OID。
+3.  如果 [**NDIS \_ 交换机 \_ NIC \_ 保存 \_ 状态**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_nic_save_state) 结构没有提供足够的缓冲区来保存运行时状态，扩展插件会将方法结构的 *BytesNeeded* 字段设置为 **ndis \_ SIZEOF \_ ndis \_ SWITCH \_ NIC \_ 保存 \_ 状态修订号 \_ \_ 1** 加上保存数据所需的缓冲区数量，并使用 **NDIS 状态缓冲区完成 OID \_ \_ \_ 太 \_ 短**。 将用所需大小重新发出 OID。
 
 4.  如果该扩展没有要为指定的 NIC 保存的运行时数据，则必须调用 [**NdisFOidRequest**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfoidrequest)。 这会将 OID 方法请求转发到可扩展交换机驱动程序堆栈中的底层驱动程序。 有关此过程的详细信息，请参阅 [在 NDIS 筛选器驱动程序中筛选 OID 请求](filtering-oid-requests-in-an-ndis-filter-driver.md)。
 

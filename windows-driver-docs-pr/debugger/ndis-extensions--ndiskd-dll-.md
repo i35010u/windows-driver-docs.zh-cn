@@ -1,19 +1,18 @@
 ---
 title: NDIS 扩展 (Ndiskd.dll)
 description: NDIS 扩展 (Ndiskd.dll)
-ms.assetid: bf4a7cc2-0116-4d6d-8a6f-2e9dc77d3631
 keywords:
 - 'NDIS 扩展 ( # A0) '
 - 'ndiskd.dll (NDIS 扩展) '
 - 扩展，NDIS
 ms.date: 06/29/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 9a732031da2058eb57e3633b323657b70eca217b
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 475ad2c18f366e3b114a0c8926af2e2dacee0570
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89210869"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96831949"
 ---
 # <a name="ndis-extensions-ndiskddll"></a>NDIS 扩展 (Ndiskd.dll)
 

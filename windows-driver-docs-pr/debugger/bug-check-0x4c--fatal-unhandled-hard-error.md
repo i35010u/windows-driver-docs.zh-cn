@@ -1,7 +1,6 @@
 ---
 title: Bug 检查 0x4C FATAL_UNHANDLED_HARD_ERROR
-description: FATAL_UNHANDLED_HARD_ERROR bug 检查的值为 0x0000004C.This bug 检查极少出现。
-ms.assetid: 39ecd06b-1522-4b87-bfd8-a0022e3a6861
+description: FATAL_UNHANDLED_HARD_ERROR bug 检查的值为0x0000004C。此 bug 检查很少出现。
 keywords:
 - Bug 检查 0x4C FATAL_UNHANDLED_HARD_ERROR
 - FATAL_UNHANDLED_HARD_ERROR
@@ -13,22 +12,22 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: ec53fbe478236d45e0db269305f0a1f248bd6114
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: e94eb05c5f00e164b440631b39f1a77cd261ce10
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67519407"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96831649"
 ---
-# <a name="bug-check-0x4c-fatalunhandledharderror"></a>Bug 检查 0x4C：致命\_未处理\_硬盘\_错误
+# <a name="bug-check-0x4c-fatal_unhandled_hard_error"></a>Bug 检查0x4C：严重的 \_ 未处理 \_ 硬 \_ 错误
 
 
-严重\_未处理\_硬盘\_错误 bug 检查的值为 0x0000004C。
+"严重 \_ 未处理的 \_ 硬 \_ 错误错误检查" 的值为0x0000004C。
 
-检查此错误极少出现。
+此 bug 检查很少出现。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题面向程序员。 如果您是在使用计算机时收到蓝屏错误代码的客户，请参阅[蓝屏错误疑难解答](https://www.windows.com/stopcode)。
 
 
  

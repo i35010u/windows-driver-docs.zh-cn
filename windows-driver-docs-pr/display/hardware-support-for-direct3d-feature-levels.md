@@ -1,15 +1,14 @@
 ---
 title: Direct3D 功能级别的硬件支持
 description: 显示设备硬件必须支持 Microsoft Direct3D 功能级别，如以下 Direct3D 主题 Direct3D feature levels10Level9 ID3D11Device Methods10Level9 ID3D11DeviceContext MethodsHardware Support for Direct3D 10Level9 FormatsIn （添加）中所述，用户模式驱动程序必须在 Direct3D 功能级别中公开某些功能9_1、9_2 和9_3，才能将 Direct3D 功能正确地公开给应用程序。 这些驱动程序主题列出了驱动程序必须公开所需的 Direct3D 9 capabilitiesRequired DXGI 格式的特定功能和显示格式。
-ms.assetid: 32FF5A1F-FBD0-4273-BA21-85CC0E759DC0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 049544c4c7b20ed5e47fe3d3c883359d19bf954e
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: e79f38cbfe8afe4d28a8328551c7d24c1f54269c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89065604"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96830651"
 ---
 # <a name="hardware-support-for-direct3d-feature-levels"></a>Direct3D 功能级别的硬件支持
 

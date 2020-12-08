@@ -1,24 +1,23 @@
 ---
 title: Win32 DeviceCapabilities API 行为更改
 description: Win32 DeviceCapabilities API 行为更改
-ms.assetid: 44745e33-2bd8-4200-be29-b3ddb0e30de4
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9631053a57ee794600b353d06f4bcbce48bcbe52
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: bdb1d084c247e08c3777ad66adc4144cf637f92e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63370374"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96831189"
 ---
 # <a name="win32-devicecapabilities-api-behavior-changes"></a>Win32 DeviceCapabilities API 行为更改
 
 
-在 XPSDrv 模式下运行的 Unidrv/PScript5 驱动程序创建 Microsoft Win32 中的以下更改**DeviceCapabilities**函数。
+在 XPSDrv 模式下运行的 Unidrv/PScript5 驱动程序在 Microsoft Win32 **DeviceCapabilities** 函数中创建了以下更改。
 
-当 GPD/PPD 功能或选项使用映射到打印架构关键字 GPD 的**PrintSchemaKeywordMap**或 PPD 的**MSPrintSchemaKeywordMap**关键字、 GPD 或 PPD 打印架构关键字的支持。
+使用 GPD 的 **PrintSchemaKeywordMap** 或 Ppd 的 **MSPRINTSCHEMAKEYWORDMAP** 关键字将 GPD/PPD 功能或选项映射到打印架构关键字时，GPD 或 ppd 支持该打印架构关键字。
 
-（在下表中，"仅 PS"方法的行为更改为特定于 PScript5 驱动程序。 "仅 Unidrv"平均值的行为更改是特定于 Unidrv 驱动程序。 如果未显示这两个这些短语，行为更改适用于 Unidrv 和 PScript5 驱动程序。）
+下表中 ("仅 PS" 表示行为更改特定于 PScript5 驱动程序。 "仅 Unidrv" 表示行为更改特定于 Unidrv 驱动程序。 如果这两个短语都未出现，则行为更改适用于 Unidrv 和 PScript5 驱动程序。 ) 
 
 <table>
 <colgroup>
@@ -36,69 +35,69 @@ ms.locfileid: "63370374"
 <tbody>
 <tr class="odd">
 <td><p>DC_COPIES</p></td>
-<td><p>(仅 Unidrv)启用 EMF 后， <strong>DeviceCapabilitiesreturns</strong>是 9999 的最大值或 GPD 文件硬编码值的指定 * MaxCopies 值。</p>
-<p>当禁用 EMF 时， <strong>DeviceCapabilities</strong>返回 GPD * MaxCopies 值。</p>
-<p>(仅 PS)<strong>DeviceCapabilities</strong>返回 9999 硬编码值。</p></td>
-<td><p>(仅 Unidrv)<strong>DeviceCapabilities</strong>返回 GPD * MaxCopies 值。</p>
-<p>(仅 PS)<strong>DeviceCapabilities</strong>返回 PPD 文件 * MSXPSMaxCopies 值或如果未在 PPD 文件中指定的值为 1。</p></td>
+<td><p> (Unidrv 仅) 启用了 EMF 后， <strong>DeviceCapabilitiesreturns</strong> 为最大值9999或 GPD 文件的指定 * MaxCopies 值的硬编码值。</p>
+<p>禁用 EMF 后， <strong>DeviceCapabilities</strong> 将返回 GPD * MaxCopies 值。</p>
+<p>仅 (PS) <strong>DeviceCapabilities</strong> 返回硬编码的值9999。</p></td>
+<td><p> (Unidrv 仅) <strong>DeviceCapabilities</strong> 返回 GPD * MaxCopies 值。</p>
+<p>仅 (PS) <strong>DeviceCapabilities</strong> 返回 ppd 文件的 * MSXPSMaxCopies 值; 如果未在 PPD 文件中指定该值，则返回1。</p></td>
 </tr>
 <tr class="even">
 <td><p>DC_TRUETYPE</p></td>
-<td><p>有关 Unidrv，如果 * 指定 FontFormat GPD 关键字，则<strong>DeviceCapabilities</strong>返回 (DCTT_BITMAP |DCTT_DOWNLOAD);否则为<strong>DeviceCapabilities</strong>返回 DCTT_BITMAP。</p>
-<p>用于 PS <strong>DeviceCapabilities</strong>始终返回 (DCTT_DOWNLOAD |DCTT_SUBDEV)。</p></td>
-<td><p>如果 GPD 或 PPD 支持具有"PageDeviceFontSubstitution"打印架构关键字的功能，将返回值中设置 DCTT_SUBDEV 标志。</p>
-<p>如果 GPD 或 PPD 支持具有"PageTrueTypeFontMode"打印架构关键字的功能，请执行以下操作：</p>
+<td><p>对于 Unidrv，如果指定了 * FontFormat GPD 关键字， <strong>DeviceCapabilities</strong> 将返回 (DCTT_BITMAP |DCTT_DOWNLOAD) ;否则， <strong>DeviceCapabilities</strong> 将返回 DCTT_BITMAP。</p>
+<p>对于 PS， <strong>DeviceCapabilities</strong> 始终返回 (DCTT_DOWNLOAD |DCTT_SUBDEV) 。</p></td>
+<td><p>如果 GPD 或 PPD 支持带有 "PageDeviceFontSubstitution" Print Schema 关键字的功能，则将在返回值中设置 DCTT_SUBDEV 标志。</p>
+<p>如果 GPD 或 PPD 支持带有 "PageTrueTypeFontMode" Print Schema 关键字的功能，则会发生以下情况：</p>
 <ul>
-<li><p>如果该功能支持使用"DownloadAsOutlineFont"打印架构关键字选项，将返回值中设置 DCTT_DOWNLOAD 和 DCTT_DOWNLOAD_OUTLINE 标志。</p></li>
-<li><p>如果该功能支持使用"自动"、"DownloadAsRasterFont"或"DownloadAsNativeTrueTypeFont"打印架构关键字选项，将返回值中设置 DCTT_DOWNLOAD 标志。</p></li>
-<li><p>如果该功能支持使用"RenderAsBitmap"打印架构关键字选项，将返回值中设置 DCTT_BITMAP 标志。</p></li>
+<li><p>如果该功能支持带有 "DownloadAsOutlineFont" Print Schema 关键字的选项，则会在返回值中设置 DCTT_DOWNLOAD 和 DCTT_DOWNLOAD_OUTLINE 标志。</p></li>
+<li><p>如果该功能支持带有 "Automatic"、"DownloadAsRasterFont" 或 "DownloadAsNativeTrueTypeFont" Print Schema 关键字的选项，则将在返回值中设置 DCTT_DOWNLOAD 标志。</p></li>
+<li><p>如果该功能支持带有 "RenderAsBitmap" Print Schema 关键字的选项，则将在返回值中设置 DCTT_BITMAP 标志。</p></li>
 </ul>
-<p>如果没有 DCTT_<em>Xxx</em>设置标志， <strong>DeviceCapabilities</strong>返回 0。</p></td>
+<p>如果未设置 DCTT_<em>Xxx</em> 标志，则 <strong>DeviceCapabilities</strong> 将返回0。</p></td>
 </tr>
 <tr class="odd">
 <td><p>DC_ORIENTATION</p></td>
-<td><p>(仅 PS)<strong>DeviceCapabilities</strong>返回 90 或 270 基于 PPD 的 * LandscapeOrientation 值和设置硬编码旋转横向方向的选项输入 DEVMODE 结构中。</p></td>
-<td><p>(仅 PS)默认返回值为 0，这意味着没有横向方向。</p>
-<p>如果 PPD 支持具有"PageOrientation"打印架构关键字的功能，会发生以下情况：</p>
+<td><p>仅 (PS) <strong>DeviceCapabilities</strong> 基于 PPD 的 * LandscapeOrientation 值返回90或270，并为输入 DEVMODE 结构中的硬编码旋转横向方向选项设置。</p></td>
+<td><p>仅 (PS) 默认返回值为0，这意味着没有横向方向。</p>
+<p>如果 PPD 支持带有 "PageOrientation" Print Schema 关键字的功能，则会发生以下情况：</p>
 <ul>
-<li><p>如果该功能支持使用"横向"Print Schema 关键字，选项<strong>DeviceCapabilities</strong>返回 90。</p></li>
-<li><p>如果该功能支持使用"ReverseLandscape"Print Schema 关键字，选项<strong>DeviceCapabilities</strong>返回 270。</p></li>
+<li><p>如果该功能支持带有 "横向" Print Schema 关键字的选项，则 <strong>DeviceCapabilities</strong> 将返回90。</p></li>
+<li><p>如果该功能支持带有 "ReverseLandscape" Print Schema 关键字的选项，则 <strong>DeviceCapabilities</strong> 将返回270。</p></li>
 </ul></td>
 </tr>
 <tr class="even">
 <td><p>DC_COLLATE</p></td>
-<td><p>启用 EMF 后， <strong>DeviceCapabilities</strong>是硬编码返回 1 （这意味着，支持排序规则）。</p>
-<p>当禁用 EMF 时， <strong>DeviceCapabilities</strong>如果 GPD 或 PPD 指定 Collate 作为受支持的功能和逐份打印 GPD 或 PPD 功能不受任何设备设置功能，则返回 1。 否则为<strong>DeviceCapabilities</strong>返回 0。</p></td>
-<td><p>行为是使用 EMF 禁用非 XPSDrv 驱动程序的一样。</p></td>
+<td><p>启用 EMF 后， <strong>DeviceCapabilities</strong> 会硬编码为返回 1 (这意味着将支持对) 进行排序。</p>
+<p>禁用 EMF 后，如果 GPD 或 PPD 将 Collate 指定为支持的功能，并且逐份打印 GPD 或 PPD 功能不受任何设备设置功能的约束，则 <strong>DeviceCapabilities</strong> 返回1。 否则， <strong>DeviceCapabilities</strong> 将返回0。</p></td>
+<td><p>此行为与禁用 EMF 的非 XPSDrv 驱动程序的行为相同。</p></td>
 </tr>
 <tr class="odd">
 <td><p>DC_NUP</p></td>
-<td><p><strong>DeviceCapabilities</strong>返回硬编码的值，以指示对 1、 2、 4、 6、 9 或 16 ups 的支持。</p></td>
-<td><p>如果 GPD 或 PPD 定义了一项功能与"DocumentNUp"Print Schema 关键字 （仅如果没有"JobNUpAllDocumentsContiguously"的功能存在，则使用"DocumentNUp"功能），然后，对于该功能的任何具有数字形式的选项 GPD/PPD 关键字名称的选项数字 （即 1、 2、 6 和等等），数值的数字将被报告为每个表值的支持页面之一。</p>
-<p>否则，将报告 XPSDrv NUp 不受支持。</p></td>
+<td><p><strong>DeviceCapabilities</strong> 返回硬编码值，以指示支持1、2、4、6、9或16个 ups。</p></td>
+<td><p>如果 GPD 或 PPD 使用 "DocumentNUp" 打印架构关键字定义了一项功能 (仅当不存在 "JobNUpAllDocumentsContiguously" 功能时才使用 "DocumentNUp" 功能) 然后，对于该功能的任何选项，该功能的选项 GPD/PPD 关键字 name 作为数字编号 (即1、2、6等) ，该数字将报告为每个工作表值支持的页面之一。</p>
+<p>否则，XPSDrv 将报告不支持 NUp。</p></td>
 </tr>
 <tr class="even">
 <td><p>DC_PERSONALITY</p></td>
-<td><p>Unidrv 返回字符串由定义 * 个性或 * rcPersonalityID GPD 关键字。</p>
-<p>PS 始终返回"PostScript"。</p></td>
-<td><p>保留行为相同按原样非 XPSDrv 驱动程序。</p></td>
+<td><p>Unidrv 返回由 * 个性或 * rcPersonalityID GPD 关键字定义的字符串。</p>
+<p>PS 始终返回 "PostScript"。</p></td>
+<td><p>使行为与非 XPSDrv 驱动程序的行为相同。</p></td>
 </tr>
 <tr class="odd">
 <td><p>DC_MEDIAREADY</p></td>
-<td><p>如果曾经创建窗体的送纸器分配表， <strong>DeviceCapabilities</strong>返回具有分配的送纸器的表中唯一的窗体名称列出。</p>
-<p>如果尚未创建窗体的送纸器分配表， <strong>DeviceCapabilities</strong>指标系统默认区域设置、"A4"的指标系统默认区域设置，或 GPD 或 PPD 定义默认纸张大小，如果打印机返回"号"支持"字母"和"A4"。</p></td>
-<td><p>行为是与非 XPSDrv 创建含窗体的送纸器分配表相同。</p></td>
+<td><p>如果已创建 Form-Tray 分配表，则 <strong>DeviceCapabilities</strong> 将返回表中列出的具有分配的托盘的唯一窗体名称。</p>
+<p>如果尚未创建 Form-Tray 分配表，则对于非指标系统默认区域设置， <strong>DeviceCapabilities</strong> 将返回 "letter"; 对于指标系统默认区域设置，则返回 GPD 或 PPD 定义的默认纸张大小（如果打印机不支持 "Letter" 和 "A4"。</p></td>
+<td><p>此行为与未创建窗体托盘分配表的非 XPSDrv 相同。</p></td>
 </tr>
 <tr class="even">
 <td><p>DC_STAPLE</p></td>
-<td><p>(仅 PS)PPD 作用 o't 有单个"装订"功能。 PScript5 驱动程序检查是否以下 PPD 功能 PPD 中定义，且不受设备设置来确定设备是否可以支持装订。</p>
+<td><p>仅 (PS) 使用 PPD 时，o't 只有一个 "装订" 功能。 PScript5 驱动程序将检查 PPD 中是否定义了以下任一 PPD 功能，并且这些功能是否不受设备设置的约束，以确定设备是否可以支持装订。</p>
 <ul>
 <li><p>"StapleLocation"</p></li>
 <li><p>"StapleX", "StapleY"</p></li>
 <li><p>"StapleWhen"</p></li>
 <li><p>"StapleOrientation"</p></li>
 </ul></td>
-<td><p>(仅 PS)如果 PPD 支持具有"JobStapleAllDocuments"或"DocumentStaple"打印架构关键字的功能<strong>DeviceCapabilities</strong>返回 1，表示支持装订。 否则为<strong>DeviceCapabilities</strong>返回 0。</p></td>
+<td><p>仅 (PS) 如果 PPD 支持带有 "JobStapleAllDocuments" 或 "DocumentStaple" 打印架构关键字的功能，则 <strong>DeviceCapabilities</strong> 返回1以指示支持装订。 否则， <strong>DeviceCapabilities</strong> 将返回0。</p></td>
 </tr>
 </tbody>
 </table>

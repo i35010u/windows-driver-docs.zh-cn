@@ -1,17 +1,16 @@
 ---
 title: OID_GEN_CO_SUPPORTED_LIST
-description: 本主题介绍 OID_GEN_CO_SUPPORTED_LIST 对象标识符（OID）。
-ms.assetid: 51c2b7f5-8429-4609-b048-542a3509f645
+description: 本主题介绍) OID_GEN_CO_SUPPORTED_LIST 对象标识符 (OID。
 keywords:
 - OID_GEN_CO_SUPPORTED_LIST
 ms.date: 11/02/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c711692d10de29fe375c1769b6034ec1bd45f615
-ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
+ms.openlocfilehash: 63ccf0b00f3882309b392b0f43bbdc048f02f328
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85917027"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96831291"
 ---
 # <a name="oid_gen_co_supported_list"></a>OID_GEN_CO_SUPPORTED_LIST
 
@@ -21,5 +20,5 @@ OID_GEN_CO_SUPPORTED_LIST OID 为基础驱动程序或其 NIC 支持的对象指
 
 ## <a name="requirements"></a>要求
 
-**版本**： Windows Vista 和更高版本的**标头**： Ntddndis （包括 Ndis .h）
+**版本**： Windows Vista 和更高版本的 **标头**： Ntddndis (包括 Ndis .h) 
 

@@ -1,19 +1,18 @@
 ---
 title: IRP_MJ_CREATE 调度例程
 description: IRP_MJ_CREATE 调度例程
-ms.assetid: 1ff7915a-0949-43fe-9cf4-c0ad9abf6592
 keywords:
 - IRP_MJ_CREATE
 - 安全 WDK 文件系统，添加安全检查
 - 安全检查 WDK 文件系统，IRP_MJ_CREATE
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1b64883f38927d2d3228d8baeeed33fbc3ea46cf
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 3b5fadc4805e32800a5cbe29c0acb4bfff3d43a3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89065942"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96830533"
 ---
 # <a name="irp_mj_create-dispatch-routine"></a>IRP \_ MJ \_ 创建调度例程
 

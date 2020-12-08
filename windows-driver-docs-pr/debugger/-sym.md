@@ -1,11 +1,10 @@
 ---
 title: 符号
-description: 符号扩展控件干扰符号加载和符号提示。
-ms.assetid: 84551b24-740c-4289-acc4-8a0053f80b41
+description: 符号扩展控制干扰符号加载和符号提示。
 keywords:
 - 符号，干扰符号加载
-- 符号提示
-- Windows 调试的符号
+- 符号，提示
+- 符号 Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -14,17 +13,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 8d83a66e563f5e3022f311c93d06593d51d929d2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 85b94c0300e36e0090e6d3df51f72c07f24bc9df
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63338775"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96832035"
 ---
 # <a name="sym"></a>!sym
 
 
-**！ 符号**干扰性的扩展控件符号加载和符号提示。
+**！符号** extension 控制干扰符号加载和符号提示。
 
 ```dbgcmd
 !sym 
@@ -34,22 +33,22 @@ ms.locfileid: "63338775"
 !sym prompts off
 ```
 
-## <a name="span-idddksymdbgspanspan-idddksymdbgspanparameters"></a><span id="ddk__sym_dbg"></span><span id="DDK__SYM_DBG"></span>参数
+## <a name="span-idddk__sym_dbgspanspan-idddk__sym_dbgspanparameters"></a><span id="ddk__sym_dbg"></span><span id="DDK__SYM_DBG"></span>参数
 
 
-<span id="_______noisy______"></span><span id="_______NOISY______"></span> **noisy**   
+<span id="_______noisy______"></span><span id="_______NOISY______"></span>**噪音**   
 激活干扰符号加载。
 
-<span id="_______quiet______"></span><span id="_______QUIET______"></span> **quiet**   
+<span id="_______quiet______"></span><span id="_______QUIET______"></span>**quiet**   
 停用干扰符号加载。
 
-<span id="_______prompts______"></span><span id="_______PROMPTS______"></span> **prompts**   
-允许身份验证对话框 SymSrv 收到身份验证请求时出现。
+<span id="_______prompts______"></span><span id="_______PROMPTS______"></span>**提示**   
+允许在 SymSrv 接收到身份验证请求时显示身份验证对话框。
 
-<span id="_______prompts_off______"></span><span id="_______PROMPTS_OFF______"></span> **关闭的提示**   
-SymSrv 收到身份验证请求时，禁止显示所有身份验证对话框。 这可能会导致 SymSrv 正在访问符号无法通过 internet。
+<span id="_______prompts_off______"></span><span id="_______PROMPTS_OFF______"></span>**提示关闭**   
+当 SymSrv 接收到身份验证请求时，禁止显示所有身份验证对话框。 这可能会导致 SymSrv 无法通过 internet 访问符号。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 <table>
 <colgroup>
@@ -73,13 +72,13 @@ SymSrv 收到身份验证请求时，禁止显示所有身份验证对话框。 
 <a name="remarks"></a>备注
 -------
 
-如果 **！ 符号**扩展不带任何参数，则显示干扰符号加载和符号提示的当前状态。
+如果 **！符号** 扩展名与 no 参数一起使用，则显示当前的干扰符号加载和符号提示的状态。
 
-**！ 符号干扰**并 **！ 符号静默**扩展控制干扰符号加载。 有关详细信息以及显示和更改此选项的其他方法，请参阅[SYMOPT\_调试](symbol-options.md#symopt-debug)。
+**！符号干扰** 和 **！符号 quiet** extension 控制干扰符号加载。 有关详细信息和显示和更改此选项的其他方法，请参阅 [SYMOPT \_ 调试](symbol-options.md#symopt-debug)。
 
-**！ 符号提示**并 **！ 符号提示关闭**扩展控制 SymSrv 遇到身份验证请求时是否显示身份验证对话框。 这些命令的后面必须跟[ **.reload （重新加载模块）** ](-reload--reload-module-.md)它们才会生效。 可通过代理服务器，internet 防火墙、 智能卡读卡器和安全网站发送身份验证请求。 有关详细信息和更改此选项的其他方法，请参阅[防火墙和代理服务器](firewalls-and-proxy-servers.md)。
+当 SymSrv 遇到身份验证请求时， **！符号提示** 和 **！符号会提示关闭** 扩展控制是否显示身份验证对话框。 这些命令后面必须有 [**。请重新加载 (重载模块)**](-reload--reload-module-.md) 使其生效。 代理服务器、internet 防火墙、智能卡读取器和安全网站可能会发送身份验证请求。 有关详细信息和其他更改此选项的方法，请参阅 [防火墙和代理服务器](firewalls-and-proxy-servers.md)。
 
-**请注意**  干扰符号加载不应混淆干扰源加载-由控制[ **（干扰源加载） 可通过.srcnoisy** ](-srcnoisy--noisy-source-loading-.md)命令。
+**注意**   不应将干扰符号加载与干扰源加载相混淆--由 [**srcnoisy (干扰源加载)**](-srcnoisy--noisy-source-loading-.md) 命令。
 
  
 

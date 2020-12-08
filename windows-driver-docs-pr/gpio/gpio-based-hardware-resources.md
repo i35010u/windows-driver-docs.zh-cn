@@ -1,15 +1,14 @@
 ---
 title: 基于 GPIO 的硬件资源
 description: 从 Windows 8 开始，受 GPIO 控制器驱动程序控制的常规用途 I/O (GPIO) 引脚可以作为系统管理的硬件资源供其他驱动程序使用。
-ms.assetid: 03A6ACDF-8BB7-40C0-A331-7F61F48A44DC
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a6cda6080e95ac1524d694c96f14491660225ba5
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 0cd0eca3b5921690847a7b0804d3e0ff15069e70
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89064512"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96830617"
 ---
 # <a name="gpio-based-hardware-resources"></a>基于 GPIO 的硬件资源
 
@@ -43,7 +42,7 @@ GPIO i/o 资源表示一个或多个 GPIO pin 的集合，外围设备的驱动�
 
 [将 KMDF 驱动程序连接到 GPIO I/O 管脚](./connecting-a-kmdf-driver-to-gpio-i-o-pins.md)
 
-在这两个主题中， `IoRoutine` 代码示例中的函数会打开用于读取或写入的 GPIO i/o pin 资源，具体取决于 `ReadOperation` 参数值。 如果打开资源以读取 (`DesiredAccess` = 泛型 \_ READ) ，则会将资源中的 pin 配置为输入，并向 pin 资源发送一项 [**IOCTL \_ GPIO \_ 读取 \_ pin**](/windows-hardware/drivers/ddi/gpio/ni-gpio-ioctl_gpio_read_pins) 请求，以在这些 pin 读取输入值。 GpioClx 不允许向 [**IOCTL \_ gpio \_ 写入 \_ pin**](/windows-hardware/drivers/ddi/gpio/ni-gpio-ioctl_gpio_write_pins) 请求发送一组输入插针，并完成此类请求，状态为 \_ GPIO \_ 操作 \_ 被拒绝。 同样，如果打开 pin 资源来写入 (`DesiredAccess` = 一般 \_ 写入) ，则会将资源中的 pin 配置为输出，并将 **IOCTL \_ GPIO \_ 写入 \_ ** pin 请求发送到 pin 资源会设置驱动这些 pin 的输出闩锁中的值。 通常，将 **IOCTL \_ GPIO \_ 读取 \_ pin** 请求发送到一组输出插针只会读取写入到输出闩锁的最后一个值。
+在这两个主题中， `IoRoutine` 代码示例中的函数会打开用于读取或写入的 GPIO i/o pin 资源，具体取决于 `ReadOperation` 参数值。 如果打开资源以读取 (`DesiredAccess` = 泛型 \_ READ) ，则会将资源中的 pin 配置为输入，并向 pin 资源发送一项 [**IOCTL \_ GPIO \_ 读取 \_ pin**](/windows-hardware/drivers/ddi/gpio/ni-gpio-ioctl_gpio_read_pins) 请求，以在这些 pin 读取输入值。 GpioClx 不允许向 [**IOCTL \_ gpio \_ 写入 \_ pin**](/windows-hardware/drivers/ddi/gpio/ni-gpio-ioctl_gpio_write_pins) 请求发送一组输入插针，并完成此类请求，状态为 \_ GPIO \_ 操作 \_ 被拒绝。 同样，如果打开 pin 资源来写入 (`DesiredAccess` = 一般 \_ 写入) ，则会将资源中的 pin 配置为输出，并将 **IOCTL \_ GPIO \_ 写入 \_** pin 请求发送到 pin 资源会设置驱动这些 pin 的输出闩锁中的值。 通常，将 **IOCTL \_ GPIO \_ 读取 \_ pin** 请求发送到一组输出插针只会读取写入到输出闩锁的最后一个值。
 
 若要使用中断资源接收中断，客户端驱动程序必须将 (ISR) 的中断服务例程连接到中断。 通常，驱动程序会通过调用 [**WdfInterruptCreate**](/windows-hardware/drivers/ddi/wdfinterrupt/nf-wdfinterrupt-wdfinterruptcreate) 方法来建立此连接， (或 [**IoConnectInterruptEx**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioconnectinterruptex) 例程) 。 有关 KMDF 中断的详细信息，请参阅 [创建中断对象](../wdf/creating-an-interrupt-object.md)。
 

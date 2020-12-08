@@ -1,15 +1,14 @@
 ---
 title: 位置模拟器指南
 description: 本部分包含实现位置模拟器驱动程序的指南。
-ms.assetid: 4AA6C3EE-0150-45A8-ACC2-D0267591D33D
 ms.date: 11/17/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: c5bdcee9009248a74745c1d0eef0d29fb7bb2494
-ms.sourcegitcommit: 73216293357f08eb00d8b154fa377a090644ca4f
+ms.openlocfilehash: e702cb4ca7ca411767107ee8da369558633cc897
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94810113"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96831509"
 ---
 # <a name="guidance-for-location-simulators"></a>位置模拟器指南
 

@@ -1,7 +1,6 @@
 ---
 title: 'PeriodicTimer 规则 (ndis) '
 description: '\_如果在 NdisSetTimerObject 函数的 MillisecondsPeriod 参数中指定了非零值，则 PeriodicTimer 规则指定 NdisCancelTimerObject 的调用方必须以 IRQL 被动级别运行。'
-ms.assetid: a6bda698-5150-4fd5-b665-d460b88fe0ac
 ms.date: 05/21/2018
 keywords:
 - 'PeriodicTimer 规则 (ndis) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 026028c9c08ebcad5497ff653965c7f95cb92a4f
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 385ec1f063fe248378e761b008c4781d36869295
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104734"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96831906"
 ---
 # <a name="periodictimer-rule-ndis"></a>PeriodicTimer 规则 (ndis) 
 
 
-如果在[**NdisSetTimerObject**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndissettimerobject)函数的*MillisecondsPeriod*参数中指定了非零值，则**PeriodicTimer**规则指定[**NdisCancelTimerObject**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscanceltimerobject)的调用方必须以**IRQL = 被动 \_ 级别**运行。 如果**NdisSetTimerObject**函数的*MillisecondsPeriod*参数为零，则**NdisCancelTimerObject**的调用方可以在**IRQL &lt; = 调度 \_ 级别**运行。
+如果在 [**NdisSetTimerObject**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndissettimerobject)函数的 *MillisecondsPeriod* 参数中指定了非零值，则 **PeriodicTimer** 规则指定 [**NdisCancelTimerObject**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscanceltimerobject)的调用方必须以 **IRQL = 被动 \_ 级别** 运行。 如果 **NdisSetTimerObject** 函数的 *MillisecondsPeriod* 参数为零，则 **NdisCancelTimerObject** 的调用方可以在 **IRQL &lt; = 调度 \_ 级别** 运行。
 
 **驱动程序模型： NDIS**
 

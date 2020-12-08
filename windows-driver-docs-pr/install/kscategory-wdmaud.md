@@ -1,7 +1,6 @@
 ---
 title: KSCATEGORY_WDMAUD
 description: KSCATEGORY_WDMAUD
-ms.assetid: a03ea284-6d28-4f6b-9e31-97d66cf7a00d
 keywords:
 - KSCATEGORY_WDMAUD 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: eabd53c108816c2fafc4d1b6facd6de7e1aaabef
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: c8caef21e7bd0d64861d795044404e52b9544e4f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89095051"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96832315"
 ---
 # <a name="kscategory_wdmaud"></a>KSCATEGORY_WDMAUD
 

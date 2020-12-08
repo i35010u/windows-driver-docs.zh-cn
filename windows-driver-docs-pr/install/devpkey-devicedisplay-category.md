@@ -1,7 +1,6 @@
 ---
 title: DEVPKEY_DeviceDisplay_Category
 description: DEVPKEY_DeviceDisplay_Category
-ms.assetid: 4f1999cd-e3b7-4755-ab48-1feabbc9d245
 keywords:
 - DEVPKEY_DeviceDisplay_Category 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 43c18cd21ad9037be0b707961405501cf5d56522
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: c14de4ee48df99a504842b4aeae8fc5222be0041
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91732549"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96831709"
 ---
 # <a name="devpkey_devicedisplay_category"></a>DEVPKEY_DeviceDisplay_Category
 
@@ -33,7 +32,7 @@ DEVPKEY_DeviceDisplay_Category 设备属性表示应用于设备实例的一个�
 </colgroup>
 <thead>
 <tr>
-<th>属性</th>
+<th>Attribute</th>
 <th>值</th>
 </tr>
 </thead>
@@ -62,7 +61,7 @@ DEVPKEY_DeviceDisplay_Category 设备属性表示应用于设备实例的一个�
 <a name="remarks"></a>备注
 -------
 
-物理设备的设备类别通过[设备元数据包](./overview-of-device-metadata-packages.md)中的[**device.devicecategory**](/previous-versions/windows/hardware/metadata/ff541101(v=vs.85)) XML 元素进行指定。 系统中该设备的每个实例都继承该物理设备的设备类别。
+物理设备的设备类别通过 [设备元数据包](./overview-of-device-metadata-packages.md)中的 [**device.devicecategory**](/previous-versions/windows/hardware/metadata/ff541101(v=vs.85)) XML 元素进行指定。 系统中该设备的每个实例都继承该物理设备的设备类别。
 
 每台物理设备可以在 [设备元数据包](./overview-of-device-metadata-packages.md)中指定一个或多个功能类别。 Windows 设备和打印机使用每个类别将设备实例组合到识别的设备类别之一中。
 
@@ -96,7 +95,7 @@ DEVPKEY_DeviceDisplay_Category 设备属性表示应用于设备实例的一个�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**Device.devicecategory**](/previous-versions/windows/hardware/metadata/ff541101(v=vs.85))

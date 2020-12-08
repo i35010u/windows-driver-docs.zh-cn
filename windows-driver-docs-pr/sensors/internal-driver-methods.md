@@ -1,15 +1,14 @@
 ---
 title: 内部帮助器方法
 description: 传感器驱动程序支持多个内部帮助器方法，这些方法可执行轮询数据、设置属性、检索属性、更新设备状态和支持事件等任务。
-ms.assetid: BF5956FE-E1B6-476A-9B6E-86B400DE0A20
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1216844c253fcbb1d294b168eb0f817af43c66b4
-ms.sourcegitcommit: ec7bebe3f94536455e62b372c2a28fe69d1717f7
+ms.openlocfilehash: 21242f1448cabca41446e833966e0dce821d2025
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93349795"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96830975"
 ---
 # <a name="internal-helper-methods"></a>内部帮助器方法
 
@@ -61,7 +60,7 @@ DriverUpdateDeviceState()
 
 ## <a name="internal-methods-for-intelligent-sensors"></a>智能传感器的内部方法
 
-如果传感器驱动程序支持智能传感器 (如 HID) ，则可能包括对轮询数据、处理事件、检索属性、设置属性和管理电源的方法的支持。 伪代码使用 **HIDSensorPollData** 、 **HIDSensorSetProperties** 和 **HIDSensorGetProperties** 方法演示了这些任务。
+如果传感器驱动程序支持智能传感器 (如 HID) ，则可能包括对轮询数据、处理事件、检索属性、设置属性和管理电源的方法的支持。 伪代码使用 **HIDSensorPollData**、 **HIDSensorSetProperties** 和 **HIDSensorGetProperties** 方法演示了这些任务。
 
 ```cpp
 HIDSensorPollData(sensorID) // Driver issues USB/HID “GET_INPUT” command to the sensor device

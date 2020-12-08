@@ -1,9 +1,8 @@
 ---
-title: WIA\_DPS\_辊\_颜色
-description: WIA\_DPS\_辊\_颜色属性包含当前辊颜色。
-ms.assetid: d1bc9bc8-ad23-48b8-8456-21aa3556ab69
+title: WIA \_ DPS \_ 影印 \_ 颜色
+description: WIA \_ DPS \_ 影印 \_ 颜色属性包含当前影印颜色。
 keywords:
-- WIA_DPS_PLATEN_COLOR 成像设备
+- WIA_DPS_PLATEN_COLOR 图像设备
 topic_type:
 - apiref
 api_name:
@@ -14,33 +13,33 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 613b8448d2b5364a4c0059256ab49165b573f68d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 14a2bb8c021dbc8b7da629790e3b1e7f1dc5d471
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555667"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96831749"
 ---
-# <a name="wiadpsplatencolor"></a>WIA\_DPS\_辊\_颜色
+# <a name="wia_dps_platen_color"></a>WIA \_ DPS \_ 影印 \_ 颜色
 
 
-WIA\_DPS\_辊\_颜色属性包含当前辊颜色。
+WIA \_ DPS \_ 影印 \_ 颜色属性包含当前影印颜色。
 
 ## <span id="ddk_wia_dps_platen_color_si"></span><span id="DDK_WIA_DPS_PLATEN_COLOR_SI"></span>
 
 
-属性类型：VT\_UI1 | VT\_VECTOR
+属性类型： VT \_ UI1 |VT \_ 矢量
 
-有效值：WIA\_PROP\_NONE
+有效值： WIA " \_ \_ 无"
 
 访问权限：只读
 
 <a name="remarks"></a>备注
 -------
 
-微型驱动程序应报告 WIA\_DPS\_辊\_颜色为 RGBQUAD 结构 （它 Microsoft Windows SDK 文档中所述） 的窗体中的 4 字节值的向量。 WIA 微型驱动程序创建并维护此属性。
+微型驱动程序应将 WIA \_ DPS \_ 影印颜色报告 \_ 为四个字节值的向量，其形式为 RGBQUAD 结构 (，如 Microsoft Windows SDK 文档) 中所述。 WIA 微型驱动程序创建并维护此属性。
 
-应用程序读取 WIA\_DPS\_辊\_获取扫描程序的辊颜色的颜色。 此颜色可帮助应用程序后期处理最终映像。
+应用程序将读取 WIA \_ DPS \_ 影印 \_ 颜色，以获取扫描仪的影印颜色。 此颜色可帮助应用程序后处理最终映像。
 
 <a name="requirements"></a>要求
 ------------
@@ -53,7 +52,7 @@ WIA\_DPS\_辊\_颜色属性包含当前辊颜色。
 <tbody>
 <tr class="odd">
 <td><p>标头</p></td>
-<td>Wiadef.h （包括 Wiadef.h）</td>
+<td>Wiadef (包含 Wiadef) </td>
 </tr>
 </tbody>
 </table>

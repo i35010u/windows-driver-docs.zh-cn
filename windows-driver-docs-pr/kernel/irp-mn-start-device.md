@@ -2,23 +2,22 @@
 title: IRP_MN_START_DEVICE
 description: 了解 "IRP_MN_START_DEVICE" 内核模式驱动程序体系结构。 所有 PnP 驱动程序都必须处理此 IRP。
 ms.date: 08/12/2017
-ms.assetid: 0aac1346-b5c7-4dcc-ab86-03e8fd151505
 keywords:
-- IRP_MN_START_DEVICE 内核模式驱动程序体系结构
+- IRP_MN_START_DEVICE Kernel-Mode 驱动程序体系结构
 ms.localizationpriority: medium
-ms.openlocfilehash: d285e3a9d0f9d5e8635bc9d84dd4ac69520242e7
-ms.sourcegitcommit: 2aedb606f9f14e74687f0d3da60e14fc6ffffa7e
+ms.openlocfilehash: 56f6e9bd04566ef02edab667d9c8f1b886bd8122
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91544402"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96831365"
 ---
 # <a name="irp_mn_start_device"></a>IRP \_ MN \_ 启动 \_ 设备
 
 
 所有 PnP 驱动程序都必须处理此 IRP。
 
-## <a name="value"></a>值
+## <a name="value"></a>“值”
 
 0x00
 
@@ -39,14 +38,14 @@ PnP 管理器在 \_ 系统线程的上下文中以 IRQL 被动级别发送此 IR
 ## <a name="input-parameters"></a>输入参数
 
 
-[**IO \_ 堆栈 \_ 位置**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_stack_location)结构的**StartDevice. AllocatedResources**成员指向一个[**CM \_ 资源列表 \_ **](/windows-hardware/drivers/ddi/wdm/ns-wdm-_cm_resource_list) ，描述 PnP 管理器分配给设备的硬件资源。 此列表包含原始格式的资源。 使用原始资源对设备进行编程。
+[**IO \_ 堆栈 \_ 位置**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_stack_location)结构的 **StartDevice. AllocatedResources** 成员指向一个 [**CM \_ 资源列表 \_**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_cm_resource_list) ，描述 PnP 管理器分配给设备的硬件资源。 此列表包含原始格式的资源。 使用原始资源对设备进行编程。
 
-**StartDevice. AllocatedResourcesTranslated** 指向 [**CM \_ 资源列表 \_ **](/windows-hardware/drivers/ddi/wdm/ns-wdm-_cm_resource_list) ，描述 PnP 管理器分配给设备的硬件资源。 此列表包含以翻译形式列出的资源。 使用已翻译的资源连接中断向量、映射 i/o 空间和映射内存。
+**StartDevice. AllocatedResourcesTranslated** 指向 [**CM \_ 资源列表 \_**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_cm_resource_list) ，描述 PnP 管理器分配给设备的硬件资源。 此列表包含以翻译形式列出的资源。 使用已翻译的资源连接中断向量、映射 i/o 空间和映射内存。
 
 ## <a name="output-parameters"></a>输出参数
 
 
-None
+无
 
 ## <a name="io-status-block"></a>I/o 状态块
 
@@ -55,7 +54,7 @@ None
 
 如果驱动程序需要一段时间才能对设备运行其启动操作，则可以将 IRP 标记为 "挂起" 并返回 "挂起" 状态 \_ 。
 
-<a name="operation"></a>Operation
+<a name="operation"></a>操作
 ---------
 
 此 IRP 必须首先由设备的父总线驱动程序处理，然后由设备堆栈中的每个更高的驱动程序处理。

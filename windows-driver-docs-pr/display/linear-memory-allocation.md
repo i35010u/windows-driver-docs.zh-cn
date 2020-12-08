@@ -1,17 +1,16 @@
 ---
 title: 线性内存分配
 description: 线性内存分配
-ms.assetid: f39c6752-c771-43d4-b89e-77f3d542d1fd
 keywords:
 - 线性内存分配 WDK DirectDraw
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 88d18661674fe2b8a66e1d9e812b425c31f60fb6
-ms.sourcegitcommit: f8619f20a0903dd64f8641a5266ecad6df5f1d57
+ms.openlocfilehash: 4cb2bfc91f34a00dc08335ee2ef695a907501f64
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91423758"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96830647"
 ---
 # <a name="linear-memory-allocation"></a>线性内存分配
 
@@ -27,9 +26,9 @@ ms.locfileid: "91423758"
 
 ![阐释线性内存堆分配的关系图](images/ddfig4.png)
 
-指向主图面的开头的指针是 **fpPrimary**（ [**VIDEOMEMORYINFO**](/windows/win32/api/ddrawint/ns-ddrawint-videomemoryinfo) 结构的成员）。 主要表面和各种 Windows 缓存的大小将添加到此，以指定指向草稿区域开头的指针，由[**VIDEOMEMORY**](/windows/win32/api/ddrawint/ns-ddrawint-videomemory)结构的**fpStart**成员指示。 由**VIDEOMEMORY**结构的**fpEnd**成员指示的终结点是通过添加剩余内存的大小减一来计算的。
+指向主图面的开头的指针是 **fpPrimary**（ [**VIDEOMEMORYINFO**](/windows/win32/api/ddrawint/ns-ddrawint-videomemoryinfo) 结构的成员）。 主要表面和各种 Windows 缓存的大小将添加到此，以指定指向草稿区域开头的指针，由 [**VIDEOMEMORY**](/windows/win32/api/ddrawint/ns-ddrawint-videomemory)结构的 **fpStart** 成员指示。 由 **VIDEOMEMORY** 结构的 **fpEnd** 成员指示的终结点是通过添加剩余内存的大小减一来计算的。
 
-[**VIDEOMEMORY**](/windows/win32/api/ddrawint/ns-ddrawint-videomemory)结构包含管理显示内存堆的信息。 此示例在 **VIDEOMEMORY** 结构数组中只有一个元素，因为只有一个堆。 VIDMEM \_ ISLINEAR， **VIDEOMEMORY**结构的**dwFlags**成员中的标志将此标记表示为线性内存。
+[**VIDEOMEMORY**](/windows/win32/api/ddrawint/ns-ddrawint-videomemory)结构包含管理显示内存堆的信息。 此示例在 **VIDEOMEMORY** 结构数组中只有一个元素，因为只有一个堆。 VIDMEM \_ ISLINEAR， **VIDEOMEMORY** 结构的 **dwFlags** 成员中的标志将此标记表示为线性内存。
 
 以下伪代码显示如何为线性内存设置 [**VIDEOMEMORY**](/windows/win32/api/ddrawint/ns-ddrawint-videomemory) 结构：
 

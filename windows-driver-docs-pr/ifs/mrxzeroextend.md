@@ -1,7 +1,6 @@
 ---
 title: MRxZeroExtend 例程
 description: MRxZeroExtend 例程由 RDBSS 调用，请求网络最小化重定向器截断文件系统对象的内容。
-ms.assetid: d4a7c201-3c7d-40e9-a7da-17f40862c258
 keywords:
 - MRxZeroExtend 例程可安装文件系统驱动程序
 - PMRX_CALLDOWN
@@ -15,17 +14,17 @@ api_type:
 - UserDefined
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c8a4bc06de976b59cac6abb3c7c930d6a987b0ae
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 5d7b30de9b82d8d32c465ccf6203db5c13e2cd78
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89065932"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96831451"
 ---
 # <a name="mrxzeroextend-routine"></a>MRxZeroExtend 例程
 
 
-*MRxZeroExtend*例程由[RDBSS](./the-rdbss-driver-and-library.md)调用，请求网络最小化重定向器截断文件系统对象的内容。
+*MRxZeroExtend* 例程由 [RDBSS](./the-rdbss-driver-and-library.md)调用，请求网络最小化重定向器截断文件系统对象的内容。
 
 <a name="syntax"></a>语法
 ------
@@ -34,12 +33,12 @@ ms.locfileid: "89065932"
 PMRX_CALLDOWN MRxZeroExtend;
 
 NTSTATUS MRxZeroExtend(
-  _Inout_ PRX_CONTEXT RxContext
+  _Inout_ PRX_CONTEXT RxContext
 )
 { ... }
 ```
 
-<a name="parameters"></a>parameters
+<a name="parameters"></a>参数
 ----------
 
 *RxContext* \[in、out\]  
@@ -74,11 +73,11 @@ NTSTATUS MRxZeroExtend(
 <a name="remarks"></a>备注
 -------
 
-如果文件对象未标记为要删除并且文件对象不是分页文件，则将*MRxZeroExtend*作为清理操作的一部分进行调用。 调用*MRxZeroExtend*以确保有效数据长度和文件大小之间的部分为零扩展。 在调用*MRxZeroExtend*之后，RDBSS 将 FCB 结构的结构的**ValidDataLength QuadPart**成员设置为等于 FileSize**结构的 QuadPart 成员。**
+如果文件对象未标记为要删除并且文件对象不是分页文件，则将 *MRxZeroExtend* 作为清理操作的一部分进行调用。 调用 *MRxZeroExtend* 以确保有效数据长度和文件大小之间的部分为零扩展。 在调用 *MRxZeroExtend* 之后，RDBSS 将 FCB 结构的结构的 **ValidDataLength QuadPart** 成员设置为等于 FileSize **结构的 QuadPart 成员。**
 
 调用 *MRxZeroExtend* 后，将在清理操作过程中调用 [**MRxCleanupFobx**](/previous-versions/windows/hardware/drivers/ff549841(v=vs.85)) 。
 
-RDBSS 忽略 *MRxZeroExtend*的返回值。
+RDBSS 忽略 *MRxZeroExtend* 的返回值。
 
 <a name="requirements"></a>要求
 ------------
@@ -91,7 +90,7 @@ RDBSS 忽略 *MRxZeroExtend*的返回值。
 <tbody>
 <tr class="odd">
 <td align="left"><p>目标平台</p></td>
-<td align="left">桌面型</td>
+<td align="left">台式机</td>
 </tr>
 <tr class="even">
 <td align="left"><p>标头</p></td>
@@ -100,7 +99,7 @@ RDBSS 忽略 *MRxZeroExtend*的返回值。
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**MRxAreFilesAliased**](/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_chkfcb_calldown)

@@ -1,20 +1,19 @@
 ---
 title: D3dkmthk.h - 保留
-description: 本部分列出了 D3dkmthk.h 中保留的设备驱动程序接口 (DDIs)。
-ms.assetid: 6CE9FFD6-40C7-47B4-B631-3C2F331247F8
+description: 本部分列出了 DDIs) 在 D3dkmthk 中 (保留的设备驱动程序接口。
 ms.date: 01/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: e285c7e7e4e4eb807ec358fafa2d6e0872ad5c00
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d6bebaa924345ba04e1e8c9245a438160f3e4931
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63382936"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96831873"
 ---
-# <a name="span-iddisplayd3dkmthkh-reservedspand3dkmthkh---reserved"></a><span id="display.d3dkmthk_h_-_reserved"></span>D3dkmthk.h-保留
+# <a name="span-iddisplayd3dkmthk_h_-_reservedspand3dkmthkh---reserved"></a><span id="display.d3dkmthk_h_-_reserved"></span>D3dkmthk.h - 保留
 
 
-本部分列出了 D3dkmthk.h 中保留的设备驱动程序接口 (DDIs)。
+本部分列出了 DDIs) 在 D3dkmthk 中 (保留的设备驱动程序接口。
 
  
 

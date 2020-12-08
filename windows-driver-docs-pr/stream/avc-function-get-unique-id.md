@@ -1,7 +1,6 @@
 ---
 title: AVC \_ 函数 \_ 获取 \_ 唯一 \_ ID
 description: AVC \_ 函数 \_ 获取 \_ 唯一 \_ ID
-ms.assetid: 51b35686-03a9-45b3-8bdc-14cbd24714dc
 keywords:
 - AVC_FUNCTION_GET_UNIQUE_ID 流媒体设备
 topic_type:
@@ -12,12 +11,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8d209f93bd4e1fdb089984c89c468ec0c107e630
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 93fe53564df365a2cf6c1ade9a75c1c6ae3810ba
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89187489"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96830897"
 ---
 # <a name="avc_function_get_unique_id"></a>AVC \_ 函数 \_ 获取 \_ 唯一 \_ ID
 
@@ -25,7 +24,7 @@ ms.locfileid: "89187489"
 ## <span id="ddk_avc_function_get_unique_id_ks"></span><span id="DDK_AVC_FUNCTION_GET_UNIQUE_ID_KS"></span>
 
 
-**AVC \_ 函数 \_ 获取 \_ 唯一 \_ id**函数代码获取 AV/C 单元的唯一 id。
+**AVC \_ 函数 \_ 获取 \_ 唯一 \_ id** 函数代码获取 AV/C 单元的唯一 id。
 
 ### <a name="io-status-block"></a>I/o 状态块
 
@@ -41,7 +40,7 @@ ms.locfileid: "89187489"
 <thead>
 <tr class="header">
 <th>返回值</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -62,7 +61,7 @@ ms.locfileid: "89187489"
 
  
 
-### <a name="comments"></a>说明
+### <a name="comments"></a>注释
 
 此函数使用 AVC **UniqueID** \_ MULTIFUNC IRB 结构的 UniqueID 成员 \_ ，如下所示。
 
@@ -91,17 +90,17 @@ typedef struct _AVC_UNIQUE_ID {
 
 ### <a name="requirements"></a>要求
 
-**标头：** 在 *avc*中声明。 包括 *avc*。
+**标头：** 在 *avc* 中声明。 包括 *avc*。
 
 ### <a name="avc_multifunc_irb-input"></a>AVC \_ MULTIFUNC \_ IRB 输入
 
 **通用**  
-必须将此成员的 **函数** submember 设置为 AVC 函数 GET AVC 函数枚举中的 ** \_ \_ \_ 唯一 \_ ID** \_ 。
+必须将此成员的 **函数** submember 设置为 AVC 函数 GET AVC 函数枚举中的 **\_ \_ \_ 唯一 \_ ID** \_ 。
 
 <span id="UniqueID"></span><span id="uniqueid"></span><span id="UNIQUEID"></span>**UniqueID**  
 指定一个 GUID，它表示整个单元。 同一单元内的所有子单元连接共享同一 GUID。 不能有两个单位共享同一 GUID。
 
-*avc.sys*的虚拟实例不支持此函数代码。
+*avc.sys* 的虚拟实例不支持此函数代码。
 
 如果子单元驱动程序必须将设备 GUID 报告给某个应用程序，而该应用程序必须知道多个子单位驱动程序实例中的哪个 (属于同一单元) ，或者它为外部插头构建其自己的 AVCPRECONNECTINFO 结构，则它将使用此函数。
 

@@ -1,17 +1,16 @@
 ---
 title: OID_GEN_CO_VENDOR_DESCRIPTION
-description: 本主题介绍 OID_GEN_CO_VENDOR_DESCRIPTION 对象标识符（OID）。
-ms.assetid: 8f8fe301-893a-47f9-9a82-0cd26fc8070a
+description: 本主题介绍) OID_GEN_CO_VENDOR_DESCRIPTION 对象标识符 (OID。
 keywords:
 - OID_GEN_CO_VENDOR_DESCRIPTION
 ms.date: 11/02/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a8edbe9f882cc5c6a774cd8d0d368cfa64f57914
-ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
+ms.openlocfilehash: b53d24335a51dc71f835efe7590590b73c5247be
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85917024"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96831283"
 ---
 # <a name="oid_gen_co_vendor_description"></a>OID_GEN_CO_VENDOR_DESCRIPTION
 
@@ -19,5 +18,5 @@ ms.locfileid: "85917024"
 
 ## <a name="requirements"></a>要求
 
-**版本**： Windows Vista 和更高版本的**标头**： Ntddndis （包括 Ndis .h）
+**版本**： Windows Vista 和更高版本的 **标头**： Ntddndis (包括 Ndis .h) 
 

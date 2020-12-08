@@ -1,17 +1,16 @@
 ---
 title: WDI_TLV_ASSOCIATION_RESPONSE_PARAMETERS
 description: WDI_TLV_ASSOCIATION_RESPONSE_PARAMETERS 为 TLV，其中包含 OID_WDI_TASK_SEND_AP_ASSOCIATION_RESPONSE 的关联响应参数。
-ms.assetid: FB116762-2064-48FA-B630-D5AE54657D10
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_ASSOCIATION_RESPONSE_PARAMETERS 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: e94842d79f0fad1a9ebb8e5e423f2cbbdc209e25
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: bcf5557b86de6a0491940f706a97e0d2596fc957
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89206177"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96832099"
 ---
 # <a name="wdi_tlv_association_response_parameters"></a>WDI \_ TLV \_ 关联 \_ 响应 \_ 参数
 
@@ -23,7 +22,7 @@ WDI \_ tlv \_ 关联 \_ 响应 \_ 参数是一个 Tlv，其中包含 [OID \_ WDI
 
 0x97
 
-## <a name="length"></a>Length
+## <a name="length"></a>长度
 
 
 Sum (所有包含的元素的大小) 。
@@ -39,7 +38,7 @@ Sum (所有包含的元素的大小) 。
 <thead>
 <tr class="header">
 <th>类型</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -72,7 +71,7 @@ Sum (所有包含的元素的大小) 。
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
-<td><p>Windows Server 2016</p></td>
+<td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
 <td><p>标头</p></td>

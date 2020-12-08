@@ -1,16 +1,15 @@
 ---
 title: Windows 显示器驱动程序模型 (WDDM) 的道路地图
 description: '用于开发 Windows 显示驱动程序模型的驱动程序的道路地图 (WDDM) '
-ms.assetid: 4f7ea2f4-ca2f-4b1d-97be-fb22e81c8080
 ms.date: 12/06/2018
 ms.localizationpriority: medium
 ms.custom: seodec18
-ms.openlocfilehash: 7adaa3577484af67c2b791bb1c9cd125d7fcd550
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 5076307a8397cc8865231e372a67040379d3421b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89066370"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96831859"
 ---
 # <a name="road-map-for-the-windows-display-driver-model-wddm"></a>Windows 显示器驱动程序模型 (WDDM) 的道路地图
 
@@ -44,11 +43,11 @@ Windows 显示驱动程序模型 (WDDM) 要求图形硬件供应商提供配对�
 
 - 步骤7：开发、构建、测试和调试显示驱动程序。
 
-  有关如何为图形适配器开发显示驱动程序的信息，请参阅 [初始化显示微型端口和用户模式显示驱动](initializing-display-miniport-and-user-mode-display-drivers.md) 程序和 [Windows 显示驱动程序模型 (WDDM) 操作流](windows-vista-and-later-display-driver-model-operation-flow.md)。 有关迭代生成、测试和调试的信息，请参阅 [开发、测试和部署驱动程序](/windows-hardware/drivers) 。 有关特定于显示驱动程序的调试提示，请参阅 [WDDM 驱动程序的调试提示](debugging-tips-for-wddm-drivers.md)。 此过程有助于确保构建一个可正常工作的驱动程序。
+  有关如何为图形适配器开发显示驱动程序的信息，请参阅 [初始化显示微型端口和 User-Mode 显示](initializing-display-miniport-and-user-mode-display-drivers.md) 驱动程序 [模型和 Windows 显示驱动程序模型 (WDDM) 操作流](windows-vista-and-later-display-driver-model-operation-flow.md)。 有关迭代生成、测试和调试的信息，请参阅 [开发、测试和部署驱动程序](/windows-hardware/drivers) 。 有关特定于显示驱动程序的调试提示，请参阅 [WDDM 驱动程序的调试提示](debugging-tips-for-wddm-drivers.md)。 此过程有助于确保构建一个可正常工作的驱动程序。
 
 - 步骤8：为显示驱动程序创建驱动程序包。
 
-  有关详细信息，请参阅 [分发驱动程序包](../develop/distributing-a-driver-package-win8.md)。 有关如何安装图形适配器的显示驱动程序的信息，请参阅 [显示微型端口和用户模式显示驱动程序的安装要求](installing-display-miniport-and-user-mode-display-drivers.md)。
+  有关详细信息，请参阅 [分发驱动程序包](../develop/distributing-a-driver-package-win8.md)。 有关如何安装图形适配器的显示驱动程序的信息，请参阅 [显示微型端口和 User-Mode 显示器驱动程序的安装要求](installing-display-miniport-and-user-mode-display-drivers.md)。
 
 - 步骤9：签署和分发您的显示驱动程序。
 

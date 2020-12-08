@@ -1,7 +1,6 @@
 ---
 title: KSCATEGORY_VBICODEC
 description: KSCATEGORY_VBICODEC
-ms.assetid: c69857e5-19ca-44aa-ae42-bc015be2b0f8
 keywords:
 - KSCATEGORY_VBICODEC 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: f51b03232f9ba15fb2407335ccc167d84073c8b7
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: fbf62effe0404f0fcc6d555ab9e608c8c2cabfbc
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89097237"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96832337"
 ---
 # <a name="kscategory_vbicodec"></a>KSCATEGORY_VBICODEC
 
@@ -76,7 +75,7 @@ KS 设备的驱动程序将注册 KSCATEGORY_VBICODEC 的实例，以向操作�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSCATEGORY_VIDEO**](kscategory-video.md)

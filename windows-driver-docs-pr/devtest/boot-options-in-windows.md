@@ -1,7 +1,6 @@
 ---
 title: Windows 中的启动选项概述
 description: 描述 Windows 启动加载器体系结构、独立于固件的启动配置和启动选项编辑工具。
-ms.assetid: 1cc5b1cc-8d0e-4b4e-93fe-272772a3e458
 keywords:
 - 启动选项 WDK，Windows
 - 编辑启动选项
@@ -19,12 +18,12 @@ keywords:
 - 独立于固件的启动选项 WDK
 ms.date: 04/23/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 76f2b8f2242fd779089e2c12b0945d774dc7e77f
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 7b2acfaf51da2de3848add4b982a8f9277bf7ccf
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89382427"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96831915"
 ---
 # <a name="overview-of-boot-options-in-windows"></a>Windows 中的启动选项概述
 
@@ -35,7 +34,7 @@ Windows 启动加载器体系结构包括与固件无关的启动配置和存储
 
 ## <a name="boot-loading-architecture"></a>启动加载体系结构
 
-Windows 包括旨在快速、安全地加载 Windows 的启动加载程序组件。 以前的 Windows NT 启动加载程序 *ntldr*由三个组件替代：
+Windows 包括旨在快速、安全地加载 Windows 的启动加载程序组件。 以前的 Windows NT 启动加载程序 *ntldr* 由三个组件替代：
 
 - Windows 启动管理器 ( # A0) 
 

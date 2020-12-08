@@ -1,7 +1,6 @@
 ---
 title: WIA \_ DPS \_ 扫描 \_ 可用 \_ 项
 description: WIA \_ DPS \_ SCAN \_ 可用 \_ 项属性提供应用程序在程序控制下执行的推送扫描操作的输入源的名称。 WIA 微型驱动程序创建并维护此属性。
-ms.assetid: 747cd5bb-4746-4086-8a87-08a6728125bc
 keywords:
 - WIA_DPS_SCAN_AVAILABLE_ITEM 图像设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2feeac86a6a20ab02cd1daafbedf974a6d2e3d5e
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 47f1ff1b1848ec7a6ecc544956e8bdc0531aa762
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89185281"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96831735"
 ---
 # <a name="wia_dps_scan_available_item"></a>WIA \_ DPS \_ 扫描 \_ 可用 \_ 项
 
@@ -32,7 +31,7 @@ WIA \_ DPS \_ SCAN \_ 可用 \_ 项属性提供应用程序在程序控制下执
 
 访问权限：只读
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 在 Windows 7 和更高版本中，WIA \_ DPS \_ SCAN \_ 可用 \_ 项是 WIA 扫描器设备的 wia 项树中的根项的可选属性。 应用程序可以查询此属性，以确定输入源 (平板、自动文档送纸器或胶片扫描适配器) 从中进行扫描，或从其传输数据的存储位置。
@@ -57,7 +56,7 @@ WIA 树中的根项具有一个或多个子项 (平板项、进纸器项和胶�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Wiadef (包含 Wiadef) </td>
 </tr>
 </tbody>

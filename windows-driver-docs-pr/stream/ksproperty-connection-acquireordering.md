@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ 连接 \_ ACQUIREORDERING
 description: KSPROPERTY \_ CONNECTION \_ ACQUIREORDERING 属性是一个可选属性，当状态更改顺序很重要时，应在 pin 上实现该属性。
-ms.assetid: b0d27615-bece-49b1-8497-f3c389ea37fc
 keywords:
 - KSPROPERTY_CONNECTION_ACQUIREORDERING 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e97e7a178fc42b5f9816edfa60b5fa8714f8f442
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 4b75d5b1b57d0df0410c09ba65cb1054e03e9fd5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103272"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96830837"
 ---
 # <a name="ksproperty_connection_acquireordering"></a>KSPROPERTY \_ 连接 \_ ACQUIREORDERING
 
@@ -61,7 +60,7 @@ KSPROPERTY \_ CONNECTION \_ ACQUIREORDERING 属性是一个可选属性，当状
 
  
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 如果状态更改排序非常重要，则此属性返回 **TRUE** 。 如果返回 **FALSE** ，则不需要实现属性。

@@ -1,19 +1,18 @@
 ---
 title: 文件系统筛选器驱动程序与设备驱动程序的差异在哪里
 description: 文件系统筛选器驱动程序与设备驱动程序的差异在哪里
-ms.assetid: 64a59564-a4d7-4174-82d3-60bd1a30b2d8
 keywords:
 - 筛选器驱动程序 WDK 文件系统和设备驱动程序
 - 文件系统筛选器驱动程序（WDK）和设备驱动程序
 - 设备驱动程序 WDK 文件系统
 ms.date: 10/16/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 2c2552f062dce96f481496221289b4e3d5d6bb40
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 836cd0aefed659310f6de74cc38690901dc2a378
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91733578"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96831499"
 ---
 # <a name="how-file-system-filter-drivers-are-different-from-device-drivers"></a>文件系统筛选器驱动程序与设备驱动程序的差异在哪里
 
@@ -37,7 +36,7 @@ Microsoft Windows 操作系统中的文件系统筛选器驱动程序和设备�
 
   设备驱动程序创建物理和功能设备对象来表示设备。 即插即用 (PnP) Manager 构建并维护一个全局设备树，其中包含设备驱动程序创建的所有设备对象。 文件系统筛选器驱动程序创建的设备对象不包含在此设备树中。
 
-  文件系统筛选器驱动程序不创建物理或功能设备对象。 而是创建控制设备对象并筛选设备对象。 *控制设备对象*表示系统和用户模式应用程序的筛选器驱动程序。 *筛选器设备对象*执行筛选特定文件系统或卷的实际工作。 文件系统筛选器驱动程序通常会创建一个控制设备对象和一个或多个筛选器设备对象。
+  文件系统筛选器驱动程序不创建物理或功能设备对象。 而是创建控制设备对象并筛选设备对象。 *控制设备对象* 表示系统和用户模式应用程序的筛选器驱动程序。 *筛选器设备对象* 执行筛选特定文件系统或卷的实际工作。 文件系统筛选器驱动程序通常会创建一个控制设备对象和一个或多个筛选器设备对象。
 
 - **其他差异**
 

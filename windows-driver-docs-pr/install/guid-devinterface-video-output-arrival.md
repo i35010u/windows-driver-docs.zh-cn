@@ -1,7 +1,6 @@
 ---
 title: GUID_DEVINTERFACE_VIDEO_OUTPUT_ARRIVAL
 description: GUID_DEVINTERFACE_VIDEO_OUTPUT_ARRIVAL
-ms.assetid: 4a0bf1fe-3b68-456b-ba13-156dec1e7700
 keywords:
 - GUID_DEVINTERFACE_VIDEO_OUTPUT_ARRIVAL 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 03688841c632b4d884fcea749b4196f20b0ba873
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 52e1eba26b0583dc90cc77d2b8f2e309dfb64a28
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89096881"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96831707"
 ---
 # <a name="guid_devinterface_video_output_arrival"></a>GUID_DEVINTERFACE_VIDEO_OUTPUT_ARRIVAL
 
@@ -76,7 +75,7 @@ ms.locfileid: "89096881"
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**GUID_DISPLAY_DEVICE_ARRIVAL**](guid-display-device-arrival.md)

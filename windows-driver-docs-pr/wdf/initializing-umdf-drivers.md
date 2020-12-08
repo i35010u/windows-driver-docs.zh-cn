@@ -1,9 +1,8 @@
 ---
 title: 初始化 UMDF 驱动程序
 description: 初始化 UMDF 驱动程序
-ms.assetid: b21ec019-1a80-4219-8aa8-3545ec3383b9
 keywords:
-- 用户模式驱动程序框架 WDK，初始化驱动程序
+- User-Mode Driver Framework WDK，初始化驱动程序
 - UMDF WDK，初始化驱动程序
 - 用户模式驱动程序 WDK UMDF，初始化
 - 初始化驱动程序 WDK UMDF
@@ -12,12 +11,12 @@ keywords:
 - 驱动程序主机进程 WDK UMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e888d7e69975f4328145e9d10884f29e582e50ba
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: d3ebae0dabb2c0308617dca8305ef44434e514f7
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89185849"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96832051"
 ---
 # <a name="initializing-umdf-drivers"></a>初始化 UMDF 驱动程序
 

@@ -1,31 +1,30 @@
 ---
 title: C28129
-description: 警告的 C28129 操作数，仅应使用位设置和清除修改对进行了赋值。
-ms.assetid: b5afad45-6498-42f3-b1aa-9ba3cc8abb6d
+description: 警告 C28129 已对操作数进行了赋值，只应使用位集修改并清除。
 keywords:
-- 警告列出 WDK PREfast for Drivers
-- 错误列出 WDK PREfast for Drivers
+- 列出用于驱动程序的 WDK PREfast 的警告
+- 为驱动程序列出的 WDK PREfast 的错误
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 f1_keywords:
 - C28129
-ms.openlocfilehash: d62f0973b5f806675ea1a428d0b4388ec4a7e250
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 279c8a23742540e6c9cbe316ec62e2af91ff58cb
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63361406"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96830735"
 ---
 # <a name="c28129"></a>C28129
 
 
-警告 C28129:分配对操作数，应仅修改使用位设置和清除
+警告 C28129：已对操作数进行了赋值，只应使用位集进行修改并清除
 
-该驱动程序正在使用赋值修改操作数。 分配一个值可能无意中更改的值的位数而非其需要改变，从而导致意外的结果。
+驱动程序使用赋值来修改操作数。 分配值时，可能会无意中更改需要更改的其他位的值，导致意外后果。
 
 ### <a name="span-idexamplespanspan-idexamplespanexample"></a><span id="example"></span><span id="EXAMPLE"></span>示例
 
-下面的代码示例会引起此警告。
+下面的代码示例 elicits 此警告。
 
 ```
 fdo->Flags = DO_BUFFERED_IO;

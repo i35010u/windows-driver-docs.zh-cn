@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ WAVE \_ 输入 \_ 功能
 description: "\"KSPROPERTY \\_ wave \\_ 输入 \\_ 功能\" 属性返回波形设备的输入功能。"
-ms.assetid: 84ed0f41-52b6-40e0-b334-c336e158cbfc
 keywords:
 - KSPROPERTY_WAVE_INPUT_CAPABILITIES 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7791aa4aca9f07beb2f9b72459b67fc2247c87bc
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 28ef86828cc64a53d7dcad7681ada437ddcadbc6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104458"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96830827"
 ---
 # <a name="ksproperty_wave_input_capabilities"></a>KSPROPERTY \_ WAVE \_ 输入 \_ 功能
 
@@ -79,7 +78,7 @@ ms.locfileid: "90104458"
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSPROPERTY**](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)

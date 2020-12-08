@@ -1,20 +1,19 @@
 ---
 title: NtXxx 例程
 description: NtXxx 例程
-ms.assetid: 71db6fa6-d1f8-4aed-9de1-bba1f6cee1ce
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 0cf4a17280df18e6ac75eafabc471074ec846863
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 20c6047eff7028870343f4cb6f813c78de3a6253
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106346"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96831361"
 ---
 # <a name="ntxxx-routines"></a>NtXxx 例程
 
 
-本部分介绍 Windows Native 系统服务例程的 **Nt * Xxx*** 版本。 大多数本机系统服务例程有两个版本，其中一个的名称以前缀 **Nt**开头;其他版本的名称以前缀 **Zw**开头。 例如，对 [**NtCreateFile**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntcreatefile) 和 [**ZwCreateFile**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntcreatefile) 的调用执行类似的操作，事实上，它是由相同的内核模式系统例程提供服务的。
+本部分介绍 Windows Native 系统服务例程的 **Nt * Xxx*** 版本。 大多数本机系统服务例程有两个版本，其中一个的名称以前缀 **Nt** 开头;其他版本的名称以前缀 **Zw** 开头。 例如，对 [**NtCreateFile**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntcreatefile) 和 [**ZwCreateFile**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntcreatefile) 的调用执行类似的操作，事实上，它是由相同的内核模式系统例程提供服务的。
 
 对于来自内核模式驱动程序的调用，Windows Native 系统服务例程的 **Nt * xxx*** 和 **Zw * xxx*** 版本的行为方式与它们处理和解释输入参数的方式不同。 有关例程的 **nt * xxx*** 和 **Zw * xxx*** 版本之间的关系的详细信息，请参阅 [使用本机系统服务例程的 nt 和 Zw 版本](using-nt-and-zw-versions-of-the-native-system-services-routines.md)。
 

@@ -1,19 +1,18 @@
 ---
 title: 由微筛选器驱动程序生成的 I/O 请求
 description: 由微筛选器驱动程序生成的 I/O 请求
-ms.assetid: cf06dcb9-58e2-4341-8229-8f172f37c176
 keywords:
 - 筛选器管理器 WDK 文件系统微筛选器，由驱动程序生成的 i/o 请求
 - I/o 请求 WDK 文件系统
 - Irp WDK 文件系统
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2919e578e336e6ba01ab36e2d032c7c6d0e55444
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 97c00a17961aececf9c8ca50c67e63fbc1b2deea
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89065946"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96831483"
 ---
 # <a name="io-requests-generated-by-the-minifilter-driver"></a>由微筛选器驱动程序生成的 I/O 请求
 

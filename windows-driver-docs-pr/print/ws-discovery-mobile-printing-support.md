@@ -1,19 +1,18 @@
 ---
 title: WS-Discovery 移动打印支持
 description: WS-Discovery 移动打印支持
-ms.assetid: 788E2A1C-FBE9-40CD-A3EB-14A2DE266A2C
 ms.date: 06/15/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 6da8ee0c3aebd34ae626d3ce3d382ff93e04d96b
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 8da956024da9b72b0a603bd912c9e237de5bfef3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89205865"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96831175"
 ---
 # <a name="ws-discovery-mobile-printing-support"></a>WS-Discovery 移动打印支持
 
-支持从 Windows 10 移动版打印的设备必须将 MobilePrinter 类别添加到其 WS-RELIABLEMESSAGING ThisModel 响应中，如以下示例中所示：
+支持从 Windows 10 移动版打印的设备，必须将 MobilePrinter 类别添加到其 WS-Discovery ThisModel 响应中，如以下示例中所示：
 
 ```xml
 <soap:Envelope
@@ -76,8 +75,8 @@ ms.locfileid: "89205865"
 
 下表提供了有关 MobilePrinter category 关键字的其他信息：
 
-| 常量/值 | 说明 |
+| 常量/值 | 描述 |
 |--|--|
 | PNPX_DEVICECATEGORY_PRINTER_MOBILE<br><br>L "MobilePrinter" | MobilePrinter 类别<br><br>关键字：打印机 |
 
-有关如何将设备类别添加到 WS 发现元数据交换的详细信息，请参阅 [pnp-x 规范](/previous-versions/gg463082(v=msdn.10))。
+有关如何将设备类别添加到 WS-Discovery 元数据交换的详细信息，请参阅 [pnp-x 规范](/previous-versions/gg463082(v=msdn.10))。

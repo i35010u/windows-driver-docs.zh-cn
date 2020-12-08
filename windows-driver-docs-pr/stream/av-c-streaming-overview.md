@@ -1,7 +1,6 @@
 ---
 title: AV/C 流式处理概述
 description: AV/C 流式处理概述
-ms.assetid: c500fad7-26b7-4507-953e-258dd9c91253
 keywords:
 - AV/C WDK，流筛选器驱动程序
 - 流筛选器驱动程序 WDK AV/C
@@ -10,12 +9,12 @@ keywords:
 - 筛选器驱动程序 WDK AV/C 流式处理
 ms.date: 06/15/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 20af25904d1ffa95f9aa95092596979cb44ee881
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 4a62b1948b4617bbbf184c3268094a0291f7ae27
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89186829"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96830923"
 ---
 # <a name="avc-streaming-overview"></a>AV/C 流式处理概述
 

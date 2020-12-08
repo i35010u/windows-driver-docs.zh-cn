@@ -1,7 +1,6 @@
 ---
 title: 'SpinLockBalanced 规则 (ndis) '
 description: SpinLockBalanced 规则验证对获取旋转锁的函数的调用次数是否等于释放同一旋转锁的函数的调用次数。
-ms.assetid: 61abb66e-b271-4102-828b-7e5ce77295c4
 ms.date: 05/21/2018
 keywords:
 - 'SpinLockBalanced 规则 (ndis) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: e3228d023137b04c0a457ca08e6ba18f067bf38d
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: eb6c1ab38b740aa22a84fb3cada5d50e709ae4dc
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102212"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96831893"
 ---
 # <a name="spinlockbalanced-rule-ndis"></a>SpinLockBalanced 规则 (ndis) 
 
 
-**SpinLockBalanced**规则验证对获取旋转锁的函数的调用次数是否等于释放同一旋转锁的函数的调用次数。
+**SpinLockBalanced** 规则验证对获取旋转锁的函数的调用次数是否等于释放同一旋转锁的函数的调用次数。
 
 **驱动程序模型： NDIS**
 

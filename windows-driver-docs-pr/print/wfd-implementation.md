@@ -1,17 +1,16 @@
 ---
-title: Wi-fi Direct 打印实现
-description: 提供 Wi-fi Direct 打印实现设备要求的相关信息。
-ms.assetid: 03266F8F-4C91-49E7-9CAF-2D08AF5E3E18
+title: Wi-Fi 直接打印实现
+description: 提供 Wi-Fi 直接打印实现的设备要求的相关信息。
 ms.date: 06/15/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 549520ec4a92e61147f2ccf3672884b6d133ad03
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 69b55fb84ca5dc8b7d3d84f18a357c12ac511975
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89211881"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96831217"
 ---
-# <a name="wi-fi-direct-printing-implementation"></a>Wi-fi Direct 打印实现
+# <a name="wi-fi-direct-printing-implementation"></a>Wi-Fi 直接打印实现
 
 ## <a name="device-requirements"></a>设备要求
 
@@ -37,11 +36,11 @@ ms.locfileid: "89211881"
 
 如果 WFD WSD 设备不符合上述要求，则此实现中描述的连接体验将不会应用到这些设备。
 
-设备应按照 [Wi-fi 联合-Wi-fi Direct 工业白皮书](https://www.wi-fi.org)中指定的方式实现永久性组和并发连接。
+设备应按照 [Wi-fi 联合-Wi-Fi Direct 工业白皮书](https://www.wi-fi.org)中指定的方式来实施永久性组和并发 Connection-Multiple 组。
 
-## <a name="how-to-publish-container-uuid-over-wi-fi-direct-for-printers"></a>如何在 Wi-fi Direct 上为打印机发布容器 UUID
+## <a name="how-to-publish-container-uuid-over-wi-fi-direct-for-printers"></a>如何通过 Wi-Fi 直接在打印机上发布容器 UUID
 
-Windows 使用每个 Wi-fi 联盟 "Wi-fi 对等 (P2P) 规范 v1.1" 部分 3.1.2.1.2 (Scan 阶段) 来使用探测请求/响应来发现打印机。 在这种情况下，设备打印机将使用适当的探测请求/响应帧回复 PC。
+Windows 使用探测请求/响应按 Wi-Fi 联盟 "Wi-fi 对等 (P2P) 规范 v1.1" 3.1.2.1.2 (Scan 阶段) 来直接发现 Wi-Fi 打印机。 在这种情况下，设备打印机将使用适当的探测请求/响应帧回复 PC。
 
 可使用自定义扩展 & 探测响应帧的探测请求。 Microsoft 定义了具有多个属性的自定义 IE 来启用各种扩展。
 
@@ -68,9 +67,9 @@ Microsoft 使用供应商 ID 0x137 来表示 Microsoft 拥有的。 每个供应
 
 ## <a name="implementing-vertical-pairing-data-blob"></a>实现垂直配对数据 Blob
 
-在连接到打印机之前，垂直配对数据 Blob 允许 PC 了解 WSD 打印服务。 此机制是服务发现的简单替代，因为它是在编写 Wi-fi Direct 的服务发现规范之前实现的。
+在连接到打印机之前，垂直配对数据 Blob 允许 PC 了解 WSD 打印服务。 此机制是服务发现的简单替代，因为它是在写入 Wi-Fi Direct 的服务发现规范之前实现的。
 
-与容器 UUID 一样，垂直配对数据 Blob 也是 Microsoft IE 的一个属性。 与 "容器 ID" 属性不同，此项必须在 M7/M8-2ms WPS 消息)  (中发布，具体取决于设备的角色。
+与容器 UUID 一样，垂直配对数据 Blob 也是 Microsoft IE 的一个属性。 与容器 ID 属性不同的是，这必须在 M7/M8-2ms WPS 消息 (中发布，Wi-Fi 直接配对) ，具体取决于设备的角色。
 
 ### <a name="how-to-construct-a-microsoft-80211-custom-ie-for-vertical-pairing"></a>如何构造用于垂直配对的 Microsoft 802.11 自定义 IE
 
@@ -103,7 +102,7 @@ VPI TLV 附带的数据长度为2个字节，包含两个不同的字段： "传
 
 传输字段指定 Windows 可用来与设备通信的传输。 每个 VPI 只能指定一个传输。 如果设备支持多个 Pnp-x 传输，则可以通过为 Microsoft 供应商扩展中的每个传输) 包含多个 VPI TLVs (。 下表列出了 VPI 传输字段的有效值。
 
-| 值 | Transport |
+| “值” | Transport |
 |--|--|
 | 0x00 | 无 |
 | 0x01 | DPWS |
@@ -114,15 +113,15 @@ VPI TLV 附带的数据长度为2个字节，包含两个不同的字段： "传
 > [!NOTE]
 > Windows 7 支持 DPWS (0x01) 或 Secure DPWS (0x03) ，但不能同时支持两者。
 
-如果设备未实现 Rally 垂直配对，则它必须仅指定一个传输值为0x00 的 VPI ("无") 。 在这种情况下，设备不应指定传输 UUID TLV。 这会通知 Windows 它不应与设备配对。 因此，Windows 在配置设备的 Wi-fi 设置时不会尝试与设备预配对。
+如果设备未实现 Rally 垂直配对，则它必须仅指定一个传输值为0x00 的 VPI ("无") 。 在这种情况下，设备不应指定传输 UUID TLV。 这会通知 Windows 它不应与设备配对。 因此，Windows 在配置设备的 Wi-Fi 设置时，不会尝试与设备预配对。
 
 ### <a name="vpi-profile-request-field"></a>VPI 配置文件请求字段
 
 VPI 允许设备使用 WPS 协议预配设备的服务。 在这种情况下，设备服务可以请求 Windows 发送用于配置服务的信息。 此信息称为配置文件。 VPI 的第二个字段指定设备是否正在请求 Windows 向其发送配置文件。 下表列出了 VPI 配置文件请求字段的有效值。
 
-| 值 | 说明 |
+| “值” | 描述 |
 |--|--|
-| 0x01 | 请求了 wi-fi 配置文件。 这是 Windows 7 当前支持的唯一值。 |
+| 0x01 | 请求 Wi-Fi 配置文件。 这是 Windows 7 当前支持的唯一值。 |
 | 0x00，0x02 –0xFF | 预留 |
 
 VPI 配置文件请求字段值0x00 被视为保留值，因为 Windows 7 当前不支持此值。 应仅将 "VPI 配置文件请求" 字段设置为 () 的值 0x01 Wi-fi 配置文件，即使为该传输指定的值为 0x00 (none) 。
@@ -163,6 +162,6 @@ UUID 值以全部小写指定，DPWS 标识字符串使用格式 urn： uuid： 
 
 第二个 TLV 的类型值为0x1002，它将 TLV 标识为传输 UUID。 第二个 TLV 中的数据长度为16字节，其中包含00010203-0405-0607-0809-0a0b0c0e0e0f 的二进制版本。
 
-如果客户垂直对打印机进行配对，Windows 将首先使用适当的设置来配置设备的 Wi-fi 收音机。 然后，它使用指定的传输 UUID 值配对设备的 DPWS 设备。
+当客户垂直配对打印机时，Windows 首先使用适当的设置来配置设备的 Wi-Fi 收音机。 然后，它使用指定的传输 UUID 值配对设备的 DPWS 设备。
 
-在设备连接到 Wi-fi 网络并公布其 DPWS 服务后，Windows 将创建适当的 PnP 设备节点并安装和加载相应的驱动程序。
+在设备连接到 Wi-Fi 网络并公布其 DPWS 服务后，Windows 将创建适当的 PnP 设备节点并安装和加载相应的驱动程序。

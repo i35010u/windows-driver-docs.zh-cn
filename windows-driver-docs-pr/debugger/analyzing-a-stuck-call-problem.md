@@ -1,17 +1,16 @@
 ---
 title: 分析调用阻塞问题
 description: 分析调用阻塞问题
-ms.assetid: e1a80cde-cf83-4a16-ae4b-5ddd5eb77b6d
 keywords:
-- RPC 调试停滞的调用
+- RPC 调试，停滞调用
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dfdd02f84b9bff7f826339b87ac577636ee372f6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f17e2428a320af84be7dffa9644ce6cde010f29d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63355415"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96832013"
 ---
 # <a name="analyzing-a-stuck-call-problem"></a>分析调用阻塞问题
 
@@ -19,11 +18,11 @@ ms.locfileid: "63355415"
 ## <span id="ddk_analyzing_a_stuck_call_problem_dbg"></span><span id="DDK_ANALYZING_A_STUCK_CALL_PROBLEM_DBG"></span>
 
 
-当某个进程持有关键节或资源时直接或间接地做出 RPC 调用，，会出现一个常见问题。 在这种情况下，RPC 调用将转到另一个进程或计算机，并将调度到 manager 例程 （server 例程），然后挂起或时间太长。 这将导致原始调用方会遇到的关键部分超时。
+当进程在持有关键部分或资源的同时直接或间接调用 RPC 时，会出现一个常见问题。 在这种情况下，RPC 调用将转到另一个进程或计算机，并调度到管理器例程 (server 例程) ，然后挂起或耗时太长。 这会导致原始调用方遇到关键部分超时。
 
-拥有关键部分中，线程的堆栈顶部时，通过调试程序将检查是 RPC，但不是清楚它正在等待。
+通过调试器检查时，RPC 位于拥有临界区的线程的堆栈顶层，但并不清楚它的等待时间。
 
-下面是此类堆栈的一个示例。 可能会出现许多变体。
+下面是此类堆栈的一个示例。 可能有很多变化。
 
 ```dbgcmd
 0:002> ~1k
@@ -46,15 +45,15 @@ ChildEBP RetAddr
 0068ffec 00000000 KERNEL32!CreateFileA+0x11b
 ```
 
-下面介绍了如何解决此问题。
+下面介绍如何解决此问题。
 
- **停滞的调用问题进行故障排除**
+ **解决停滞呼叫问题**
 
-1.  请确保调试器为调试拥有卡滞的单元格的进程。 （这是包含怀疑挂起 RPC 中的客户端线程进程。）
+1.  请确保调试器正在调试拥有粘滞单元的进程。  (这是包含怀疑 RPC 中挂起的客户端线程的进程 ) 
 
-2.  获取此线程的堆栈指针。 堆栈将如下所示在前面的示例所示。 在此示例中，堆栈指针是 0x0068FBA0。
+2.  获取此线程的堆栈指针。 堆栈将与前面的示例中所示的堆栈类似。 在此示例中，堆栈指针是0x0068FBA0。
 
-3.  获取此线程的调用信息。 为了做到这一点，使用[ **！ rpcexts.rpcreadstack** ](-rpcexts-rpcreadstack.md)扩展与线程作为其参数，堆栈指针，如下所示：
+3.  获取此线程的调用信息。 若要执行此操作，请使用带有线程堆栈指针的 [**！ rpcreadstack**](-rpcexts-rpcreadstack.md) 扩展作为其参数，如下所示：
 
     ```dbgcmd
     0:001> !rpcexts.rpcreadstack 68fba0
@@ -66,9 +65,9 @@ ChildEBP RetAddr
             Endpoint:       "1120"  (Address: 00693988)
     ```
 
-    此处显示的信息将允许你跟踪调用。
+    此处显示的信息将允许你跟踪呼叫。
 
-4.  网络地址为空，指示在本地计算机。 终结点是 1120年。 您需要确定哪个进程承载此终结点。 这可以通过将传递到此终结点号[ **！ rpcexts.getendpointinfo** ](-rpcexts-getendpointinfo.md)扩展，按如下所示：
+4.  "网络地址" 为空，表示本地计算机。 终结点为1120。 需要确定承载此终结点的进程。 为此，可将此终结点编号传递到 [**！ rpcexts getendpointinfo**](-rpcexts-getendpointinfo.md) 扩展，如下所示：
 
     ```dbgcmd
     0:001> !rpcexts.getendpointinfo 1120
@@ -78,7 +77,7 @@ ChildEBP RetAddr
     0278 0000.0001 01            TCP 1120
     ```
 
-5.  从上述信息，可以看到进程 0x278 包含此终结点。 您可以确定是否此过程就会知道任何有关此调用通过使用[ **！ rpcexts.getcallinfo** ](-rpcexts-getcallinfo.md)扩展。 此扩展插件需要四个参数：*CallID*， *IfStart*，和*ProcNum* （其中已找到在步骤 3 中），和*ProcessID* 0x278 的：
+5.  通过上述信息，可以看到进程0x278 包含此终结点。 你可以通过使用 [**！ rpcexts. getcallinfo**](-rpcexts-getcallinfo.md) 扩展来确定此进程是否知道此调用的任何内容。 此扩展需要四个参数： *CallID*、 *IfStart* 和 *ProcNum* (，它们是在步骤3中找到的) 和0x278 的 *ProcessID* ：
 
     ```dbgcmd
     0:001> !rpcexts.getcallinfo 1 19bb5061 0 278
@@ -88,7 +87,7 @@ ChildEBP RetAddr
     0278 0000.0004 02 000 19bb5061 0000.0002 00000001 00000001 00072c09 0000.0003
     ```
 
-6.  步骤 5 中的信息很有用，但有些缩写。 单元格 ID 作为 0000.0004 提供第二列中。 如果传递进程 ID 和为此单元格号[ **！ rpcexts.getdbgcell** ](-rpcexts-getdbgcell.md)扩展，您将看到显示的此单元格是更具可读性：
+6.  步骤5中的信息很有用，但略有简化。 单元 ID 在第二列中指定为0000.0004。 如果将进程 ID 和此单元格编号传递到 [**！ rpcexts; getdbgcell**](-rpcexts-getdbgcell.md) 扩展，则会看到此单元格的可读性更高：
 
     ```dbgcmd
     0:001> !rpcexts.getdbgcell 278 0.4
@@ -104,16 +103,16 @@ ChildEBP RetAddr
     Owning connection identifier: 0x0.3
     ```
 
-    这将显示在调用处于状态"调度"，这意味着是已离开 RPC 运行时。 上次更新时间是 470.25。 可通过使用了解目前[ **！ rpcexts.rpctime** ](-rpcexts-rpctime.md)扩展：
+    这表明调用处于 "已调度" 状态，这意味着已离开 RPC 运行时。 上次更新时间为470.25。 你可以通过使用 [**！ rpcexts**](-rpcexts-rpctime.md) 扩展名来了解当前时间：
 
     ```dbgcmd
     0:001> !rpcexts.rpctime
     Current time is: 6003, 422
     ```
 
-    这将显示，通过此调用的最后一个联系人以来大约 5533 秒，即大约 92 分钟。 因此，这必须是停滞的调用。
+    这表明，与此调用的最后一次联系大约为5533秒，即约92分钟。 因此，这必须是停滞调用。
 
-7.  最后一步将调试器附加到服务器进程之前可以隔离当前应使用服务的线程标识符服务调用的线程。 这是另一个单元格号;它在步骤 6 中显示为"0x0.2"。 可以使用它，如下所示：
+7.  在将调试器附加到服务器进程之前的最后一步，你可以使用服务线程标识符隔离当前应该为调用提供服务的线程。 这是另一个单元号码;它在步骤6中显示为 "0x 0.2"。 可以按以下方式使用它：
 
     ```dbgcmd
     0:001> !rpcexts.getdbgcell 278 0.2
@@ -124,11 +123,11 @@ ChildEBP RetAddr
     Last update time (in seconds since boot):470.25 (0x1D6.19)
     ```
 
-    现在您知道您正在寻找进程 0x278 0x1A4 线程。
+    现在，你已了解正在查找进程0x278 中的线程0x1A4。
 
-很可能该线程已进行另一个 RPC 调用。 如有必要，可以通过重复此过程中跟踪此调用。
+线程可能会进行另一个 RPC 调用。 如果需要，可以通过重复此过程来跟踪此调用。
 
-**请注意**  此过程演示如何查找服务器线程，如果您知道客户端线程。 有关反向技术的示例，请参阅[标识的调用方从服务器线程](identifying-the-caller-from-the-server-thread.md)。
+**注意**   此过程说明如何在知道客户端线程的情况下查找服务器线程。 有关反向方法的示例，请参阅 [从服务器线程标识调用方](identifying-the-caller-from-the-server-thread.md)。
 
  
 

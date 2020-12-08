@@ -1,15 +1,14 @@
 ---
 title: WindowsInfo XML 架构定义
 description: WindowsInfo XML 架构定义
-ms.assetid: d14e0537-0b95-4986-a11c-67645bd88b26
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e77c0d8dc59f154cc44b9119b3a0923082bdca79
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: 398cbf13054321557501260810366e2e49bee7c4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89402737"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96832267"
 ---
 # <a name="windowsinfo-xml-schema-definition"></a>WindowsInfo XML 架构定义
 

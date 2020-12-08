@@ -1,7 +1,6 @@
 ---
 title: “本机 802.11 IHV 扩展”主题
 description: “本机 802.11 IHV 扩展”主题
-ms.assetid: 14eb9f2b-4f6f-42cc-b367-ac139a446dc4
 keywords:
 - 独立硬件供应商扩展 WDK 本机802.11
 - IHV 扩展 WDK 本机802.11
@@ -12,14 +11,14 @@ keywords:
 - 本机 802.11 IHV 扩展 WDK，添加功能
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3a5d3513eb283b6931c0ca7bd97e720a3c179d59
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 6b913ae3f7d4bf2adeb4e415f8a91743ea08c101
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89217032"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96831307"
 ---
-# <a name="native-80211-ihv-extensions-topics"></a>“本机 802.11 IHV 扩展”主题 
+# <a name="native-80211-ihv-extensions-topics"></a>“本机 802.11 IHV 扩展”主题 
 
 本部分介绍独立硬件供应商 (IHV) 如何向本机802.11 框架添加功能。 有关本机 802.11 framework 的详细信息，请参阅 [本机802.11 软件体系结构](/previous-versions/windows/hardware/wireless/native-802-11-software-architecture)。
 
@@ -33,6 +32,6 @@ ms.locfileid: "89217032"
 
 [本机 802.11 IHV UI 扩展 DLL](native-802-11-ihv-ui-extensions-dll2.md)
 
- 
+ 
 
- 
+ 

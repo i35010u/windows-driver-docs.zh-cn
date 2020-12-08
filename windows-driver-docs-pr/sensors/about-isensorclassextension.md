@@ -1,15 +1,14 @@
 ---
 title: 关于 ISensorClassExtension
 description: 关于 ISensorClassExtension
-ms.assetid: 1f55f28a-796a-40e5-9995-e6a28761b9a4
 ms.date: 07/20/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: ddfae531170efa42523f80d2cb0953c31d0ea62c
-ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
+ms.openlocfilehash: 1a6b78831fe24e31768d6dce7d6a4815581709bd
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90009837"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96831111"
 ---
 # <a name="about-isensorclassextension"></a>关于 ISensorClassExtension
 
@@ -22,7 +21,7 @@ ms.locfileid: "90009837"
 
 ## <a name="methods-to-raise-events"></a>引发事件的方法
 
-驱动程序可以通过调用[**ISensorClassExtension：:P oststatechange**](/windows-hardware/drivers/ddi/sensorsclassextension/nf-sensorsclassextension-isensorclassextension-poststatechange)调用[**ISensorClassExtension：:P ostevent**](/windows-hardware/drivers/ddi/sensorsclassextension/nf-sensorsclassextension-isensorclassextension-postevent)和 state information 事件，引发各种传感器事件 (通常包含传感器数据) 。 有关传感器驱动程序中事件的工作原理的详细信息，请参阅 [关于传感器驱动程序事件](about-sensor-driver-events.md)。
+驱动程序可以通过调用 [**ISensorClassExtension：:P oststatechange**](/windows-hardware/drivers/ddi/sensorsclassextension/nf-sensorsclassextension-isensorclassextension-poststatechange)调用 [**ISensorClassExtension：:P ostevent**](/windows-hardware/drivers/ddi/sensorsclassextension/nf-sensorsclassextension-isensorclassextension-postevent)和 state information 事件，引发各种传感器事件 (通常包含传感器数据) 。 有关传感器驱动程序中事件的工作原理的详细信息，请参阅 [关于传感器驱动程序事件](about-sensor-driver-events.md)。
 
 ## <a name="methods-to-manage-ioctls-and-handles"></a>用于管理 IOCTLs 和句柄的方法
 
