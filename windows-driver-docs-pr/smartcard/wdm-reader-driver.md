@@ -1,18 +1,17 @@
 ---
 title: WDM 读卡器驱动程序
 description: WDM 读卡器驱动程序
-ms.assetid: ead76f5f-1d28-4343-99c0-e7974fa4c3da
 keywords:
 - 供应商提供的驱动程序 WDK 智能卡，必需例程
 - WDM WDK 智能卡
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2dd1ecc163386d8380f6d9ade3398116b119f8af
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: ea809e231bc87660e721565fa72bbae88642e703
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89384611"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96804859"
 ---
 # <a name="wdm-reader-driver"></a>WDM 读卡器驱动程序
 

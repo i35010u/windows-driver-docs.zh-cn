@@ -1,7 +1,6 @@
 ---
 title: 从其他驱动程序堆栈获取配置信息
 description: 从其他驱动程序堆栈获取配置信息
-ms.assetid: ca0f3d51-24c6-44df-828f-6aeb2565c1ae
 keywords:
 - I/o WDK 内核，设备配置空间
 - 设备配置空间 WDK i/o
@@ -11,12 +10,12 @@ keywords:
 - BUS_INTERFACE_STANDARD
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 37437175d4945510bf461a7b76001ee43bce3f01
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: dfbd4fb0998779e41d35f54fc4c641b2ba076fa1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89185135"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803545"
 ---
 # <a name="obtaining-configuration-information-from-other-driver-stacks"></a>从其他驱动程序堆栈获取配置信息
 
@@ -30,7 +29,7 @@ ms.locfileid: "89185135"
 
 Windows 2000 和更高版本的 Windows 不允许驱动程序访问属于其他驱动程序堆栈的硬件。 可以编写筛选器驱动程序来提供所需的功能。 例如，如果想要访问桥硬件，则必须设计一个筛选器驱动程序，该驱动程序在桥的配置空间上实现所需的操作。 还必须提供一个 INF 文件，用于指定桥硬件的可能的硬件 Id，以便在检测到桥的设备 ID 时，PnP 管理器可以将筛选器驱动程序加载到桥的驱动程序堆栈上。
 
-或者，你可以使用设备的共同安装程序中的**SetupDi<em>Xxx</em> **函数以编程方式安装筛选器。
+或者，你可以使用设备的共同安装程序中的 **SetupDi <em>Xxx</em>** 函数以编程方式安装筛选器。
 
 然后，筛选器驱动程序可以使用 [**总线 \_ 接口 \_ 标准**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_bus_interface_standard) 接口访问桥。
 

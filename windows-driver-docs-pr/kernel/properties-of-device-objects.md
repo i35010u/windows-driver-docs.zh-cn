@@ -1,18 +1,17 @@
 ---
 title: 设备对象的属性
 description: 设备对象的属性
-ms.assetid: 6cd31263-e725-4a62-bec9-f40feb0b66cc
 keywords:
 - 设备对象 WDK 内核，属性
 - 属性 WDK 设备对象
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 33a4d23f1ce69544b289f5ce4c59fbd2b3cde734
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: efccbb01050f06c43b51e21c8da6c58d67791acc
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89403504"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96805401"
 ---
 # <a name="properties-of-device-objects"></a>设备对象的属性
 

@@ -1,16 +1,15 @@
 ---
 title: 协议驱动程序同步 OID 请求
 description: 本主题介绍微型端口适配器同步 OID 请求
-ms.assetid: 34B88444-DDF1-4AEA-8277-3EA87CA7004A
 keywords: 协议驱动程序同步 OID 请求接口，协议 driverSynchronous OID 调用，协议 driverWDK 同步 Oid，协议 driverSynchronous OID 请求
 ms.date: 09/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ab6bbd7a536317fe5836cd3203acf65ee6a41ccc
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: a3e4773694fe463438cd84a1de652751b86236a5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89215141"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96805169"
 ---
 # <a name="protocol-driver-synchronous-oid-requests"></a>协议驱动程序同步 OID 请求
 

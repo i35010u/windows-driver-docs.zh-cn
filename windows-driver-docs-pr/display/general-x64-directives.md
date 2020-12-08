@@ -1,20 +1,19 @@
 ---
 title: 常规 x64 指令
-description: 本主题介绍正确修饰在 64 位 Windows 上使用 INF 所需的更改。
-ms.assetid: FC372524-0422-4022-AF54-4C6116C89F30
+description: 本主题介绍适当修饰用于64位 Windows 的 INF 所需的更改。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2531f37de4e26fe355f575660ed2e085b0da45c7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c0b70f49c59ce52b61607f9a49dfd9a229da0897
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379071"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803929"
 ---
 # <a name="general-x64-directives"></a>常规 x64 指令
 
 
-本主题介绍正确修饰在 64 位 Windows 上使用 INF 所需的更改。
+本主题介绍适当修饰用于64位 Windows 的 INF 所需的更改。
 
 例如：
 

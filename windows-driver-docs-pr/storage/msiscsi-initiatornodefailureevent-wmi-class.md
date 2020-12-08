@@ -1,15 +1,14 @@
 ---
 title: MSiSCSI \_ INITIATORNODEFAILUREEVENT WMI 类
 description: MSiSCSI \_ INITIATORNODEFAILUREEVENT WMI 类
-ms.assetid: 2e542667-4da8-447b-b625-2cd27d52da61
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 19fef874dacaac7db86a2771dcfc4c9612ad23d7
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: ab79b38982aaedb0de76b1c82490d36495e1dfbd
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89190941"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96804437"
 ---
 # <a name="msiscsi_initiatornodefailureevent-wmi-class"></a>MSiSCSI \_ INITIATORNODEFAILUREEVENT WMI 类
 
@@ -21,7 +20,7 @@ ms.locfileid: "89190941"
 
 由于此类与存储微型端口驱动程序的特定实例相关联，因此微型端口驱动程序必须使用微型端口驱动程序管理 (PDO) 的特定物理设备对象的名称注册该类。
 
-\_当节点发生故障时，MSiSCSI INITIATORNODEFAILUREEVENT WMI 类将触发事件。 此类在 *管理 mof*中定义。
+\_当节点发生故障时，MSiSCSI INITIATORNODEFAILUREEVENT WMI 类将触发事件。 此类在 *管理 mof* 中定义。
 
 ```cpp
 class MSiSCSI_InitiatorNodeFailureEvent : WMIEvent {

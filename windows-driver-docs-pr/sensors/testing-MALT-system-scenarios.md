@@ -1,15 +1,14 @@
 ---
 title: 测试系统方案
 description: 此测试重点在于确保环境光线传感器 (ALS) 在发生系统电源事件（如睡眠或休眠）后正常工作。
-ms.assetid: f2778853-ddc8-4118-aa58-9df6dab53b7a
 ms.date: 12/13/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 807b58349ed6f78b7447fe8b40888013453bed19
-ms.sourcegitcommit: e6247811ff9a07070547af3d89705dae33a2f465
+ms.openlocfilehash: 553feb8f89fb7089fb214296d6b98e79e17efc58
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/23/2020
-ms.locfileid: "91026414"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96805073"
 ---
 # <a name="testing-system-scenarios"></a>测试系统方案
 

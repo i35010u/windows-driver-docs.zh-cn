@@ -1,17 +1,16 @@
 ---
 title: 使用调试器
 description: 使用调试器
-ms.assetid: e2490442-9d90-454b-95e0-db8c5d7fa19a
 keywords:
 - 调试驱动程序 WDK、调试器
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 906670f0821d49d385860b6f4d50e1a11d13da96
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: d9425098ca43a8a09d1cd6850b14347df6e809e2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89382167"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96804197"
 ---
 # <a name="using-a-debugger"></a>使用调试器
 

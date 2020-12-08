@@ -1,15 +1,14 @@
 ---
 title: 智能卡微型驱动器概述
 description: 智能卡微型驱动器概述
-ms.assetid: B5047C79-F74E-44FA-ADE5-8716ABC9EB79
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5e53ef8940237d98d22795f23e9d6f20892d0adc
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: aaec6672076f906aee53e05602adbec59b0cd4cc
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89382685"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96804879"
 ---
 # <a name="smart-card-minidriver-overview"></a>智能卡微型驱动器概述
 
@@ -44,7 +43,7 @@ ms.locfileid: "89382685"
 
             o (诸如智能卡驱动程序之类的驱动程序的 LSA 插件) 需要进行数字签名。
 
-            **注意**   [Windows 硬件兼容性计划](/windows-hardware/design/compatibility/index)提供了用于对 Windows 的驱动程序进行数字签名的唯一方法。 因此，请务必参考网站获取此信息。
+            **注意** [Windows 硬件兼容性计划](/windows-hardware/design/compatibility/index) 提供了用于对 Windows 的驱动程序进行数字签名的唯一方法。 因此，请务必参考网站获取此信息。
 
              
 
@@ -87,7 +86,8 @@ ms.locfileid: "89382685"
 
 此外，以下部分中描述的函数所返回的错误应来自放弃 \_ \* 类别 (*winerror.h*) 。 例如，我们建议你使用放弃 \_ E \_ 无效 \_ 参数 (0x80100004) 而不是错误 \_ \_ (0x00000057) 的参数无效。
 
-**注意**   如果无法从卡读取文件，因为 i/o 错误，或某些其他无法恢复的数据问题与卡上该文件的实际存在无关，则 Microsoft 建议返回放弃 \_ E \_ COMM \_ 数据 \_ 丢失。
+**注意**  
+如果无法从卡读取文件，因为 i/o 错误，或某些其他无法恢复的数据问题与卡上该文件的实际存在无关，则 Microsoft 建议返回放弃 \_ E \_ COMM \_ 数据 \_ 丢失。
 
 如果 \_ \_ \_ 在这种情况下返回的放弃 E 文件未 \_ 找到为伞错误代码，则会提供误导性的调试信息。
 
@@ -101,7 +101,7 @@ ms.locfileid: "89382685"
 ## <a name="span-idhandling_memory_allocationsspanspan-idhandling_memory_allocationsspanspan-idhandling_memory_allocationsspanhandling-memory-allocations"></a><span id="Handling_Memory_Allocations"></span><span id="handling_memory_allocations"></span><span id="HANDLING_MEMORY_ALLOCATIONS"></span>处理内存分配
 
 
-此规范中的所有分配内存缓冲区的 API 元素都是通过调用 [**PFN \_ CSP \_ 分配**](/previous-versions/dn468763(v=vs.85))来实现的。 因此，任何此类内存缓冲区都必须通过调用 [**PFN \_ CSP \_ **](/previous-versions/dn468767(v=vs.85))释放。
+此规范中的所有分配内存缓冲区的 API 元素都是通过调用 [**PFN \_ CSP \_ 分配**](/previous-versions/dn468763(v=vs.85))来实现的。 因此，任何此类内存缓冲区都必须通过调用 [**PFN \_ CSP \_**](/previous-versions/dn468767(v=vs.85))释放。
 
 卡微型驱动程序执行的任何内存分配都应该通过使用 [**PFN \_ csp \_ 分配**](/previous-versions/dn468763(v=vs.85)) 或 [**PFN \_ csp \_ REALLOC**](/previous-versions/dn468770(v=vs.85))来完成。
 
@@ -121,9 +121,9 @@ ms.locfileid: "89382685"
 
 ### <a name="span-idcard_data_version_checksspanspan-idcard_data_version_checksspanspan-idcard_data_version_checksspancard_data-version-checks"></a><span id="CARD_DATA_Version_Checks"></span><span id="card_data_version_checks"></span><span id="CARD_DATA_VERSION_CHECKS"></span>卡 \_ 数据版本检查
 
-将最低版本定义为卡微型驱动程序上下文结构的最低版本 (即，支持的 [**卡 \_ 数据**](/previous-versions/dn468748(v=vs.85)) 结构) ，并将当前版本定义为此卡微型驱动程序设计为的级别，并将所有微型驱动程序结构项保证为在 [**CardAcquireContext**](/previous-versions/dn468701(v=vs.85))成功返回时有效。 当前版本必须大于或等于最小版本，并小于或等于 \_ \_ \_ 在 *CARDMOD*中定义的卡数据当前版本。
+将最低版本定义为卡微型驱动程序上下文结构的最低版本 (即，支持的 [**卡 \_ 数据**](/previous-versions/dn468748(v=vs.85)) 结构) ，并将当前版本定义为此卡微型驱动程序设计为的级别，并将所有微型驱动程序结构项保证为在 [**CardAcquireContext**](/previous-versions/dn468701(v=vs.85))成功返回时有效。 当前版本必须大于或等于最小版本，并小于或等于 \_ \_ \_ 在 *CARDMOD* 中定义的卡数据当前版本。
 
-调用应用程序调用 [**CardAcquireContext**](/previous-versions/dn468701(v=vs.85))时，它指定要加载的所需版本。 此请求的版本在[**卡 \_ 数据**](/previous-versions/dn468748(v=vs.85))结构的**dwVersion**成员中设置。
+调用应用程序调用 [**CardAcquireContext**](/previous-versions/dn468701(v=vs.85))时，它指定要加载的所需版本。 此请求的版本在 [**卡 \_ 数据**](/previous-versions/dn468748(v=vs.85))结构的 **dwVersion** 成员中设置。
 
 如果请求的版本低于卡微型驱动程序支持的最低版本，则 [**CardAcquireContext**](/previous-versions/dn468701(v=vs.85)) 必须返回修订不匹配错误 (参见下面的示例代码) 。
 
@@ -148,17 +148,17 @@ ms.locfileid: "89382685"
        min(pCardData->dwVersion, CURRENT_VERSION_SUPPORTED);
 ```
 
-**注意**   如果卡微型驱动程序返回的版本不适用于调用应用程序的目的，则调用应用程序负责处理此情况。
+**注意**  如果卡微型驱动程序返回的版本不适用于调用应用程序的目的，则调用应用程序负责处理此情况。
 
  
 
-在对[**CardAcquireContext**](/previous-versions/dn468701(v=vs.85))的调用中设置**dwVersion**后，假设调用方或卡片微型驱动程序在同一上下文中时不会对其进行更改。
+在对 [**CardAcquireContext**](/previous-versions/dn468701(v=vs.85))的调用中设置 **dwVersion** 后，假设调用方或卡片微型驱动程序在同一上下文中时不会对其进行更改。
 
 ### <a name="span-idother_structure_version_checksspanspan-idother_structure_version_checksspanspan-idother_structure_version_checksspanother-structure-version-checks"></a><span id="Other_Structure_Version_Checks"></span><span id="other_structure_version_checks"></span><span id="OTHER_STRUCTURE_VERSION_CHECKS"></span>其他结构版本检查
 
 对于其他版本控制结构和其他卡微型驱动程序 API 方法，版本处理与 [**卡 \_ 数据**](/previous-versions/dn468748(v=vs.85)) 结构相同，但有一个例外。 如果使用包含设置为0的 **dwVersion** 成员的结构调用 API 方法，则必须将此值视为 **dwVersion** 值1。
 
-[**CardRSADecrypt**](/previous-versions/dn468737(v=vs.85))和[**CardSignData**](/previous-versions/dn468741(v=vs.85))函数对传入的数据结构的版本号进行特殊处理。
+[**CardRSADecrypt**](/previous-versions/dn468737(v=vs.85))和 [**CardSignData**](/previous-versions/dn468741(v=vs.85))函数对传入的数据结构的版本号进行特殊处理。
 
  
 

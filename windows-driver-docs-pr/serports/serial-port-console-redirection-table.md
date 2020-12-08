@@ -1,18 +1,17 @@
 ---
 title: 串行端口控制台重定向表 (SPCR)
 description: 串行端口控制台重定向表，用于指示串行端口或非旧 UART 接口是否可与 Microsoft® Windows®紧急管理服务 (EMS) 一起使用。
-ms.assetid: cbcd2e71-881a-44f6-b3d8-5d2aadb02b27
 keywords:
 - SPCR
 - EMS
 - UART
 ms.date: 07/23/2018
-ms.openlocfilehash: 06b78300722d22a80dcc6fd8e8ef8a4253158bb6
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: a09f52c33d0613279d7f6f9a8c475cdb666c5862
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89382045"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96804945"
 ---
 # <a name="serial-port-console-redirection-table--spcr"></a>串行端口控制台重定向表 (SPCR) 
 
@@ -27,9 +26,9 @@ ms.locfileid: "89382045"
 >1. Microsoft 的社区承诺，提供于 <https://www.microsoft.com/openspecifications/en/us/programs/community-promise/default.aspx> ; 或
 >2. 从1.0 年10月 1 2012 日起，开源最终规范协议版本 ( "OWF 1.0" ) [http://www.openwebfoundation.org/legal/the-owf-1-0-agreements/owfa-1-0/](http://www.openwebfoundation.org/legal/the-owf-1-0-agreements/owfa-1-0) 。
 
-| **字段** | **字节长度** | **字节偏移量** | **说明** |
+| 字段 | **字节长度** | **字节偏移量** | **说明** |
 |-----------|-----------------|-----------------|-----------------|
-| Header |  |  |  |
+| 标头 |  |  |  |
 | 签名 | 4 | 0 | "SPCR"。 串行端口控制台重定向表的签名。 |
 | 长度 | 4 | 4 | 整个串行端口控制台重定向表的长度（以字节为单位）。 |
 | 修订 | 1 | 8 | 2 |
@@ -61,9 +60,9 @@ ms.locfileid: "89382045"
 
 ## <a name="revision-history"></a>修订历史
 
-| Date      | 审阅  | 说明|
+| Date      | 审阅  | 描述|
 |--------|-----|------|
-| 2/15/00   | .10  | 创建|
+| 2/15/00   | .10  | 已创建|
 | 3/1/00    | .50  | "SPCR"。 添加的签名数据 |
 | 3/20/00   | .55  | 数据修订为包含端口和 irq|
 | 3/22/00   | . 56  | 阐明了端口标识添加了禁用重定向功能的功能。 添加了指向通用寄存器地址结构的指针 |

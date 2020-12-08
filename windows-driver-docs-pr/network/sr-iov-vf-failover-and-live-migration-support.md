@@ -1,15 +1,14 @@
 ---
 title: SR-IOV VF 故障转移和实时迁移支持
 description: SR-IOV VF 故障转移和实时迁移支持
-ms.assetid: 93D6EFC7-B701-4D10-8114-FA437E80096B
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dfe967b9581ce926bab92fcc51465178ac77ba6d
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 05a0b9a6563e3cb78ad6f49b8bb020dc3b9e2a71
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89216594"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803661"
 ---
 # <a name="sr-iov-vf-failover-and-live-migration-support"></a>SR-IOV VF 故障转移和实时迁移支持
 

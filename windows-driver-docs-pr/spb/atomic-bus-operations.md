@@ -1,15 +1,14 @@
 ---
 title: 原子总线操作
 description: 若要使用已连接到 SPB 的外围设备的某些硬件功能，SPB 控制器的客户端 (即，外设驱动程序) 可能需要执行与设备之间的数据传输序列作为原子总线操作。
-ms.assetid: F8CD670F-C817-40BF-AF4B-5F3839E46EFB
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0220a3f54bd25c8de8d284c2ce313df5defeae37
-ms.sourcegitcommit: c766ab74e32eb44795cbbd1a4f352d3a6a9adc14
+ms.openlocfilehash: 37fb48e8ef05a47f8758409bf53edcd0f0756384
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89389566"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96804857"
 ---
 # <a name="atomic-bus-operations"></a>原子总线操作
 
@@ -72,7 +71,7 @@ I i2c 总线上的典型外围设备可能实现多个内部设备功能。 若�
 
 可以改为使用其他请求模式来执行此读修改-写入操作。 例如，步骤2中的 **IRP \_ MJ \_ 写入** 请求可以替换为指定两个数据传输的 **IOCTL \_ SPB \_ 执行 \_ 序列** 请求，两者都是写入。 序列中的第一个传输会将一个字节加载到函数地址注册。 第二次传输会将数据字节写入所选的函数地址。 与步骤2中的 **IRP \_ MJ \_ 写入** 请求不同，此请求不要求客户端将函数地址字节和数据字节组合到同一个写入缓冲区。
 
-若要对此设备中的函数地址0执行读修改写操作，可以使用简单的读取 ([**IRP \_ MJ \_ read**](../kernel/irp-mj-read.md)) 请求来替换前面列表的步骤1中的**IOCTL \_ SPB \_ 执行 \_ 顺序**请求。
+若要对此设备中的函数地址0执行读修改写操作，可以使用简单的读取 ([**IRP \_ MJ \_ read**](../kernel/irp-mj-read.md)) 请求来替换前面列表的步骤1中的 **IOCTL \_ SPB \_ 执行 \_ 顺序** 请求。
 
  
 

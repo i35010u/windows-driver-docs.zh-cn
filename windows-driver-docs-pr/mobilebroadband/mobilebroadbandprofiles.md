@@ -1,15 +1,14 @@
 ---
 title: MobileBroadbandProfiles
 description: MobileBroadbandProfiles
-ms.assetid: 251ece1e-67ec-48d3-977a-f033f1bff8c4
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7cdd696cd6902742fff33dbb6d77a5ac257e1af1
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: 526735fb45d0e758f11ec23071237043cdde9233
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89403262"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96805289"
 ---
 # <a name="mobilebroadbandprofiles"></a>MobileBroadbandProfiles
 
@@ -42,7 +41,7 @@ MobileBroadbandProfiles 元素指定要使用的购买和 Internet 移动宽带�
 <thead>
 <tr class="header">
 <th>元素</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -70,7 +69,7 @@ MobileBroadbandProfiles 元素指定要使用的购买和 Internet 移动宽带�
 <thead>
 <tr class="header">
 <th>元素</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>

@@ -1,15 +1,14 @@
 ---
 title: SPB 外围设备驱动程序概述
 description: SPB 外围设备驱动程序控制连接到简单外设总线 (SPB) 的外围设备。
-ms.assetid: 8352EBD9-D94C-4EC6-A17E-3A72DDE4C16C
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 63cebea80edb5217c429cba40ed01518d49294b6
-ms.sourcegitcommit: 0c3cab853b0b75149b7604eef03275f997792a84
+ms.openlocfilehash: b7c935f58d2ddee43ef9862591122afc3549b266
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96157325"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96804833"
 ---
 # <a name="overview-of-spb-peripheral-device-drivers"></a>SPB 外围设备驱动程序概述
 

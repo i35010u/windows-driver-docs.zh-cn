@@ -1,23 +1,22 @@
 ---
 title: 获取固件信息（功能索引 26）
 description: 此函数检索有关固件映像槽的信息。
-ms.assetid: ABE67651-6351-4D8E-BCFF-0488D2A34DC5
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 82253e65ea939a7ae4821708cd517d056820b656
-ms.sourcegitcommit: 2f37e8de9759164804a3b1c7f5c9e497a607539b
+ms.openlocfilehash: 0a72510a0a0059e7d0d534778c7b29f8b0f7571c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83851332"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96804595"
 ---
 # <a name="get-firmware-info-function-index-26"></a>获取固件信息（功能索引 26）
 
 
-此函数检索有关固件映像槽的信息。 调用[获取 Nvdimm-n 标识（函数索引1）](get-nvdimm-n-identification--function-index-1-.md)以检索当前槽号。
+此函数检索有关固件映像槽的信息。 调用 [获取 Nvdimm-n id (函数索引 1) ](get-nvdimm-n-identification--function-index-1-.md) 检索当前槽号。
 
 > [!NOTE]
-> 标有星号（）的所有寄存器 \* 都是在可通过字节寻址的可处理电源接口规范中定义的寄存器。
+> 标记为星形 () 的所有寄存器 \* 都是在可通过字节可寻址的、支持电源的接口规范中定义的寄存器。
 
  
 
@@ -38,7 +37,7 @@ ms.locfileid: "83851332"
 <th align="left">字段</th>
 <th align="left">字节长度</th>
 <th align="left">字节偏移量</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -68,7 +67,7 @@ ms.locfileid: "83851332"
 <th align="left">字段</th>
 <th align="left">字节长度</th>
 <th align="left">字节偏移量</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -76,15 +75,15 @@ ms.locfileid: "83851332"
 <td align="left"><strong>状态</strong></td>
 <td align="left">4</td>
 <td align="left">0</td>
-<td align="left"><p>请参阅<a href="-dsm-interface-for-byte-addressable-energy-backed-function-class--function-interface-1-.md" data-raw-source="[_DSM Method Output](-dsm-interface-for-byte-addressable-energy-backed-function-class--function-interface-1-.md)">_DSM 方法输出</a>获取详细信息。</p></td>
+<td align="left"><p>请参阅 <a href="-dsm-interface-for-byte-addressable-energy-backed-function-class--function-interface-1-.md" data-raw-source="[_DSM Method Output](-dsm-interface-for-byte-addressable-energy-backed-function-class--function-interface-1-.md)">_DSM 方法输出</a> 获取详细信息。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><strong>版本</strong></td>
+<td align="left"><strong>Version</strong></td>
 <td align="left">2</td>
 <td align="left">4</td>
 <td align="left"><p>指定插槽中固件映像的固件版本。</p>
-<p><em>Byte 0 – <em>SLOTX_FWVER0</em> （0，0x07/0x09）</p>
-<p></em>Byte 1 – <em>SLOTX_FWVER1</em> （0，0X08/0x0A）</p></td>
+<p><em>Byte 0 – <em>SLOTX_FWVER0</em> (0，0x07/0x09) </p>
+<p></em>字节1– <em>SLOTX_FWVER1</em> (0、0X08/0x0A) </p></td>
 </tr>
 </tbody>
 </table>
@@ -102,7 +101,7 @@ ms.locfileid: "83851332"
 
 [选择固件映像槽（功能索引 25）](select-firmware-image-slot--function-index-25-.md)
 
-[\_用于字节寻址的支持能源的函数类的 DSM 接口（Function Interface 1）](-dsm-interface-for-byte-addressable-energy-backed-function-class--function-interface-1-.md)
+[\_用于字节寻址的支持能源的函数类 (函数接口 1) 的 DSM 接口 ](-dsm-interface-for-byte-addressable-energy-backed-function-class--function-interface-1-.md)
 
  
 

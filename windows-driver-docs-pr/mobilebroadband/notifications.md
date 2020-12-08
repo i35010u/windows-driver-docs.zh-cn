@@ -1,15 +1,14 @@
 ---
 title: 通知
 description: 通知
-ms.assetid: 55292cae-9255-4dae-9f60-93ce22253e60
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 11dae23205e6b0f7a447434bbfcfd3d4988702a1
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: f63013c0b21f3d0c72bc98560a00b28d1938d2e4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89217838"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96805269"
 ---
 # <a name="notifications"></a>通知
 

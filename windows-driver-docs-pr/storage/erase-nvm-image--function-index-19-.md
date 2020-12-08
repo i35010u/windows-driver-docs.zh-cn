@@ -1,15 +1,14 @@
 ---
 title: 擦除 NVM 图像（功能索引 19）
 description: 此函数删除在非易失性内存模块中保存的备份映像。
-ms.assetid: D2856D56-413F-4444-9CDF-C42ACA3CFBA0
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: c28dffb4c037ab4c24dfef4db7c57cdcf5cfd76c
-ms.sourcegitcommit: 2f37e8de9759164804a3b1c7f5c9e497a607539b
+ms.openlocfilehash: d2b6881ccbec615a5881f6df8ae842cdac757bb9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83851702"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96804635"
 ---
 # <a name="erase-nvm-image-function-index-19"></a>擦除 NVM 图像（功能索引 19）
 
@@ -17,7 +16,7 @@ ms.locfileid: "83851702"
 此函数删除在非易失性内存模块中保存的备份映像。
 
 > [!NOTE]
-> 标有星号（）的所有寄存器 \* 都是在可通过字节寻址的可处理电源接口规范中定义的寄存器。
+> 标记为星形 () 的所有寄存器 \* 都是在可通过字节可寻址的、支持电源的接口规范中定义的寄存器。
 
  
 
@@ -43,7 +42,7 @@ ms.locfileid: "83851702"
 <th align="left">字段</th>
 <th align="left">字节长度</th>
 <th align="left">字节偏移量</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -51,9 +50,9 @@ ms.locfileid: "83851702"
 <td align="left"><strong>状态</strong></td>
 <td align="left">4</td>
 <td align="left">0</td>
-<td align="left"><p>此函数可以返回以下特定于函数的错误代码：</p>
+<td align="left"><p>此函数可能返回以下 Function-Specific 错误代码：</p>
 <p>1：操作超时。</p>
-<p>有关详细信息，请参阅<a href="-dsm-interface-for-byte-addressable-energy-backed-function-class--function-interface-1-.md" data-raw-source="[_DSM Method Output](-dsm-interface-for-byte-addressable-energy-backed-function-class--function-interface-1-.md)">_DSM 方法输出</a>。</p></td>
+<p>有关详细信息，请参阅 <a href="-dsm-interface-for-byte-addressable-energy-backed-function-class--function-interface-1-.md" data-raw-source="[_DSM Method Output](-dsm-interface-for-byte-addressable-energy-backed-function-class--function-interface-1-.md)">_DSM 方法输出</a> 。</p></td>
 </tr>
 </tbody>
 </table>
@@ -61,14 +60,14 @@ ms.locfileid: "83851702"
  
 
 > [!NOTE]
-> 这是一个同步函数。 仅当擦除操作已完成或超时时，它才返回。如果操作所用的时间超过在 \* *erase \_ TIMEOUT0* （0，0x1E）和 \* *erase \_ TIMEOUT1* （0，0x1F）中定义的超时时间，则平台应在返回前中止此函数。
+> 这是一个同步函数。 仅当擦除操作已完成或超时时，它才返回。如果操作所用的时间超过了 \* *erase \_ TIMEOUT0* (0，0x1E) 并 \* *擦除 \_ TIMEOUT1* (0，0x1F) 中定义的超时，则平台应在返回之前中止此函数。
 
  
 
 ## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
-[\_用于字节寻址的支持能源的函数类的 DSM 接口（Function Interface 1）](-dsm-interface-for-byte-addressable-energy-backed-function-class--function-interface-1-.md)
+[\_用于字节寻址的支持能源的函数类 (函数接口 1) 的 DSM 接口 ](-dsm-interface-for-byte-addressable-energy-backed-function-class--function-interface-1-.md)
 
  
 

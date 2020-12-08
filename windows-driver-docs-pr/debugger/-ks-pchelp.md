@@ -1,9 +1,8 @@
 ---
-title: ks.pchelp
-description: Ks.pchelp 扩展显示显示特定于 PortCls 的 Ks.dll 扩展命令的帮助文本。
-ms.assetid: 6724deae-fceb-415b-991c-370347d5ff15
+title: ks. pchelp
+description: Pchelp 扩展显示了显示特定于 PortCls Ks.dll 扩展命令的帮助文本。
 keywords:
-- ks.pchelp Windows 调试
+- pchelp Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,23 +11,23 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: daf4a926d69efd6a9cb542a67196c58cdbf7d6bc
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c816f3808362a6ee436502791dc19632dcf41116
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63336218"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96804067"
 ---
 # <a name="kspchelp"></a>!ks.pchelp
 
 
-**！ Ks.pchelp**扩展显示显示特定于 PortCls 的 Ks.dll 扩展命令的帮助文本。
+**Pchelp** 扩展显示了显示特定于 PortCls Ks.dll 扩展命令的帮助文本。
 
 ```dbgcmd
 !ks.pchelp 
 ```
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 <table>
 <colgroup>
@@ -49,9 +48,9 @@ ms.locfileid: "63336218"
 
  
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-有关详细信息，请参阅[流式处理的内核调试](kernel-streaming-debugging.md)。
+有关详细信息，请参阅 [内核流调试](kernel-streaming-debugging.md)。
 
  
 

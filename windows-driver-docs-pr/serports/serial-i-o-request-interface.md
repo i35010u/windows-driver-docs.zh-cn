@@ -1,23 +1,22 @@
 ---
 title: 串行 I/O 请求接口
 description: 若要控制连接到串行控制器上某个端口的外围设备，客户端应用程序或外围设备驱动程序将 i/o 请求发送到端口。
-ms.assetid: D536A0EC-2B8B-491B-8A14-656F4B5A3843
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cd789ec6c01b2b5171bcb4385c4a68674aa12ccd
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 9f0b48e03526beaaef7826ba43c79cf262a689c3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106798"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96804949"
 ---
 # <a name="serial-io-request-interface"></a>串行 I/O 请求接口
 
 若要控制连接到串行控制器上某个端口的外围设备，客户端应用程序或外围设备驱动程序将 i/o 请求发送到端口。 客户端使用 [**IRP \_ mj \_ WRITE**](/previous-versions/ff546904(v=vs.85)) 和 [**irp \_ mj \_ 读取**](/previous-versions/ff546883(v=vs.85)) 请求将数据传输到串行端口并从中接收数据。 此外，Windows 定义了一组串行 i/o 控制请求 (IOCTLs) ，客户端可以使用这些请求来配置串行端口。
 
-串行**IRP \_ MJ \_ <em>XXX</em> **请求和串行 IOCTLs 一起构成了一系列串行控制器设备支持的串行 i/o 请求接口。 此接口受 Serial.sys 驱动程序的支持，以及 SerCx2 或 SerCx 的组合以及基于扩展的串行控制器驱动程序。
+串行 **IRP \_ MJ \_ <em>XXX</em>** 请求和串行 IOCTLs 一起构成了一系列串行控制器设备支持的串行 i/o 请求接口。 此接口受 Serial.sys 驱动程序的支持，以及 SerCx2 或 SerCx 的组合以及基于扩展的串行控制器驱动程序。
 
-SerCx2、SerCx 和 Serial.sys 支持许多相同的串行 IOCTLs。 但是，SerCx2、SerCx 和 Serial.sys 支持 *串行设备控制请求*中指定的 IOCTLs 的不同子集。 下表汇总了 SerCx2、SerCx 和 Serial.sys 支持的 IOCTLs 子集。 表中的 **"是"** 条目指示串行框架扩展或驱动程序支持相应的 IOCTL，而 " **无** " 条目指示它不存在。
+SerCx2、SerCx 和 Serial.sys 支持许多相同的串行 IOCTLs。 但是，SerCx2、SerCx 和 Serial.sys 支持 *串行设备控制请求* 中指定的 IOCTLs 的不同子集。 下表汇总了 SerCx2、SerCx 和 Serial.sys 支持的 IOCTLs 子集。 表中的 **"是"** 条目指示串行框架扩展或驱动程序支持相应的 IOCTL，而 " **无** " 条目指示它不存在。
 
 <table>
 <colgroup>
@@ -267,16 +266,16 @@ SerCx2、SerCx 和 Serial.sys 支持许多相同的串行 IOCTLs。 但是，Ser
 </table>
 
 
-**备注**
+备注
 
 1. 根据串行控制器驱动程序的实现和串行控制器硬件的功能，SerCx2 可能支持也可能不支持此 IOCTL。
 
 2. SerCx2 不支持特殊字符。 SerCx2 始终完成具有状态 "成功" 状态代码的 **IOCTL \_ 串行 \_ 组 \_ 字符** 请求 \_ ，但不会设置任何特殊字符，也不会执行任何其他操作来响应此请求。 对于 **IOCTL \_ 序列 \_ 获取 \_ 字符** 请求，SerCx2 将 [**串行 \_ 字符**](/windows-hardware/drivers/ddi/ntddser/ns-ntddser-_serial_chars) 结构中的所有字符值设置为 null，并完成状态为 " \_ 成功" 状态代码的请求。
 
-3. SerCx2 和 SerCx 仅支持为**串行 \_ HANDFLOW**结构的**FlowReplace**和**ControlHandShake**成员定义的标志的子集。 Serial.sys 支持所有这些标志。 有关详细信息，请参阅 [**SERIAL \_ HANDFLOW**](/windows-hardware/drivers/ddi/ntddser/ns-ntddser-_serial_handflow)。
+3. SerCx2 和 SerCx 仅支持为 **串行 \_ HANDFLOW** 结构的 **FlowReplace** 和 **ControlHandShake** 成员定义的标志的子集。 Serial.sys 支持所有这些标志。 有关详细信息，请参阅 [**SERIAL \_ HANDFLOW**](/windows-hardware/drivers/ddi/ntddser/ns-ntddser-_serial_handflow)。
 
-4. **Ioctl \_ 串行 \_ 获取 \_ 调制解调器 \_ 控制**和**ioctl \_ 串行 \_ 集 \_ 调制解调器 \_ 控制**请求主要用于硬件测试。 没有为调制解调器控制操作定义标准寄存器布局。 使用调制解调器控制 IOCTLs 的外围设备驱动程序会导致自身依赖于特定串行控制器的硬件功能。
+4. **Ioctl \_ 串行 \_ 获取 \_ 调制解调器 \_ 控制** 和 **ioctl \_ 串行 \_ 集 \_ 调制解调器 \_ 控制** 请求主要用于硬件测试。 没有为调制解调器控制操作定义标准寄存器布局。 使用调制解调器控制 IOCTLs 的外围设备驱动程序会导致自身依赖于特定串行控制器的硬件功能。
 
 5. Serial.sys 驱动程序始终完成具有状态成功的 **IOCTL \_ 串行 \_ 重置 \_ 设备** 请求 \_ ，但不执行任何操作来响应此请求。 SerCx2 和 SerCx 不支持 **IOCTL \_ 串行 \_ 重置 \_ 设备** 请求，并始终完成这些请求，状态为 " \_ 未实现" \_ 。
 
-有关**IOCTL \_ 串行 \_ <em>XXX</em> **请求以及串行控制器的读取和写入请求的详细信息，请参阅[ntddser](/windows-hardware/drivers/ddi/ntddser/)标头。
+有关 **IOCTL \_ 串行 \_ <em>XXX</em>** 请求以及串行控制器的读取和写入请求的详细信息，请参阅 [ntddser](/windows-hardware/drivers/ddi/ntddser/)标头。

@@ -1,7 +1,6 @@
 ---
 title: Bug 检查 0x10D WDF_VIOLATION
-description: WDF_VIOLATION bug 检查具有 0x0000010D 值。 这表示内核模式驱动程序框架 (KMDF) 检测到 Windows 基于 framework 的驱动程序中发现错误。
-ms.assetid: 2d8c9730-cd24-4f8c-8f8b-252644737847
+description: WDF_VIOLATION bug 检查的值为0x0000010D。 这表明 Kernel-Mode Driver Framework (KMDF) 检测到 Windows 在基于框架的驱动程序中发现了错误。
 keywords:
 - Bug 检查 0x10D WDF_VIOLATION
 - WDF_VIOLATION
@@ -13,26 +12,26 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: e7e2cfcc7425fc52a2dbed725fad29885b9b379c
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: 2d388b284eeb20040e72519eea70cd14aef60307
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67521427"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96804005"
 ---
-# <a name="bug-check-0x10d-wdf_violation"></a>Bug 检查 0x10D：WDF\_冲突
+# <a name="bug-check-0x10d-wdf_violation"></a>Bug 检查0x10D： WDF \_ 冲突
 
 
-WDF\_冲突错误检查的值为 0x0000010D。 这表示内核模式驱动程序框架 (KMDF) 检测到 Windows 基于 framework 的驱动程序中发现错误。
+WDF \_ 冲突 bug 检查的值为0x0000010D。 这表明 Kernel-Mode Driver Framework (KMDF) 检测到 Windows 在基于框架的驱动程序中发现了错误。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题面向程序员。 如果您是在使用计算机时收到蓝屏错误代码的客户，请参阅[蓝屏错误疑难解答](https://www.windows.com/stopcode)。
 
 
-## <a name="wdf_violation-parameters"></a>WDF\_冲突参数
+## <a name="wdf_violation-parameters"></a>WDF \_ 冲突参数
 
 
-参数 1 指示错误检查的特定错误代码。 保留参数 4。
+参数1指示 bug 检查的特定错误代码。 参数4为保留参数。
 
 <table>
 <colgroup>
@@ -44,41 +43,41 @@ WDF\_冲突错误检查的值为 0x0000010D。 这表示内核模式驱动程序
 <thead>
 <tr class="header">
 <th align="left">参数 1</th>
-<th align="left">参数 2</th>
-<th align="left">参数 3</th>
+<th align="left">参数2</th>
+<th align="left">参数3</th>
 <th align="left">错误的原因</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p>0x1</p></td>
-<td align="left"><p>指向 WDF_POWER_ROUTINE_TIMED_OUT_DATA 结构</p></td>
-<td align="left"><p>保留</p></td>
-<td align="left"><p>基于框架的驱动程序电源操作期间已超时。 这通常意味着设备堆栈未设置 DO_POWER_PAGABLE 位和驱动程序尝试执行可分页操作后关闭分页设备堆栈。</p></td>
+<td align="left"><p>指向 WDF_POWER_ROUTINE_TIMED_OUT_DATA 结构的指针</p></td>
+<td align="left"><p>预留</p></td>
+<td align="left"><p>基于框架的驱动程序在执行电源操作时超时。 这通常意味着设备堆栈未设置 DO_POWER_PAGABLE 位，驱动程序在关闭分页设备堆栈后尝试执行可分页操作。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x2</p></td>
-<td align="left"><p>保留</p></td>
-<td align="left"><p>保留</p></td>
-<td align="left"><p>正在尝试获取当前持有的锁。</p></td>
+<td align="left"><p>预留</p></td>
+<td align="left"><p>预留</p></td>
+<td align="left"><p>尝试获取当前正在持有的锁。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x3</p></td>
 <td align="left"><p>WDFREQUEST 句柄</p></td>
-<td align="left"><p>在这两个缓冲区保留的未完成引用的数目</p></td>
-<td align="left"><p>Windows 驱动程序框架验证程序遇到致命错误。 特别是，I/O 请求已完成，但无法删除一个框架请求对象，因为有未完成的引用，到输入的缓冲区、 输出缓冲区，或这两者。</p></td>
+<td align="left"><p>同时保留在两个缓冲区上的未处理引用数</p></td>
+<td align="left"><p>Windows Driver Framework 验证程序遇到错误。 特别是，i/o 请求已完成，但无法删除框架请求对象，因为存在对输入缓冲区和/或输出缓冲区的未处理引用。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x4</p></td>
-<td align="left"><p>保留</p></td>
+<td align="left"><p>预留</p></td>
 <td align="left"><p>调用方的地址</p></td>
-<td align="left"><p>一个<strong>NULL</strong>参数传递给需要非函数<strong>NULL</strong>值。</p></td>
+<td align="left"><p>向函数传递的 <strong>NULL</strong> 参数需要非<strong>NULL</strong> 值。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x5</p></td>
-<td align="left"><p>中传递的句柄值</p></td>
-<td align="left"><p>保留</p></td>
-<td align="left"><p>类型不正确的 framework 对象句柄传递给框架对象方法。</p></td>
+<td align="left"><p>传入的句柄值</p></td>
+<td align="left"><p>预留</p></td>
+<td align="left"><p>向框架对象方法传递了错误类型的框架对象句柄。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x6</p></td>
@@ -88,15 +87,15 @@ WDF\_冲突错误检查的值为 0x0000010D。 这表示内核模式驱动程序
 </tr>
 <tr class="odd">
 <td align="left"><p>0x7</p></td>
-<td align="left"><p>Framework 对象的句柄</p></td>
-<td align="left"><p>保留</p></td>
-<td align="left"><p>驱动程序尝试通过调用错误地删除 framework 对象<strong>WdfObjectDereference</strong>若要删除而不是调用的句柄<strong>WdfObjectDelete</strong>。</p></td>
+<td align="left"><p>框架对象的句柄</p></td>
+<td align="left"><p>预留</p></td>
+<td align="left"><p>驱动程序试图通过调用 <strong>WdfObjectDereference</strong> 来删除一个句柄而不是调用 <strong>WdfObjectDelete</strong>来尝试错误地删除框架对象。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x8</p></td>
 <td align="left"><p>DMA 事务对象的句柄</p></td>
-<td align="left"><p>保留</p></td>
-<td align="left"><p>DMA 事务对象上的操作发生，而不是处于正确状态。</p></td>
+<td align="left"><p>预留</p></td>
+<td align="left"><p>当 DMA 事务对象的状态不正确时，操作发生。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x9</p></td>
@@ -107,8 +106,8 @@ WDF\_冲突错误检查的值为 0x0000010D。 这表示内核模式驱动程序
 <tr class="even">
 <td align="left"><p>0xA</p></td>
 <td align="left"><p>指向 WDF_QUEUE_FATAL_ERROR_DATA 结构的指针</p></td>
-<td align="left"><p>保留</p></td>
-<td align="left"><p>处理队列中当前的请求时发生致命错误。</p></td>
+<td align="left"><p>预留</p></td>
+<td align="left"><p>处理队列中当前存在的请求时出现错误。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0xB</p></td>
@@ -119,35 +118,35 @@ WDF\_冲突错误检查的值为 0x0000010D。 这表示内核模式驱动程序
 <tr class="even">
 <td align="left"><p>0xC</p></td>
 <td align="left"><p>WDFDEVICE 句柄</p></td>
-<td align="left"><p>指向新 PnP IRP</p></td>
-<td align="left"><p>新的状态更改 PnP IRP 到达该驱动程序处理另一个状态更改 PnP IRP 时。</p></td>
+<td align="left"><p>指向新 PnP IRP 的指针</p></td>
+<td align="left"><p>当驱动程序正在处理另一个状态更改 PnP IRP 时，会收到新的状态更改 PnP IRP。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0xD</p></td>
 <td align="left"><p>WDFDEVICE 句柄</p></td>
-<td align="left"><p>指向 power IRP</p></td>
-<td align="left"><p>设备的电源策略所有者接收到没有请求的 IRP 的幂。 可能有多个电源策略所有者，但只允许有一个。 KMDF 驱动程序可以通过调用更改电源策略所有权<strong>WdfDeviceInitSetPowerPolicyOwnership</strong>。</p></td>
+<td align="left"><p>指向电源 IRP 的指针</p></td>
+<td align="left"><p>设备的电源策略所有者收到了未请求的 power IRP。 可能有多个电源策略所有者，但只允许使用一个。 KMDF 驱动程序可以通过调用 <strong>WdfDeviceInitSetPowerPolicyOwnership</strong>更改电源策略所有权。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0xE</p></td>
-<td align="left"><p>IRQL 事件回调函数调用的。</p></td>
-<td align="left"><p>IRQL 事件回调函数返回。</p></td>
-<td align="left"><p>一个事件的回调函数未返回在相同的 IRQL 在其中调用它。 回调函数已更改的 IRQL 直接或间接地 （例如，通过获取调节锁，它将提升到 DISPATCH_LEVEL IRQL，但不是释放自旋锁）。</p></td>
+<td align="left"><p>调用事件回调函数的 IRQL。</p></td>
+<td align="left"><p>事件回调函数返回的 IRQL。</p></td>
+<td align="left"><p>事件回调函数未返回与调用该函数的 IRQL 相同的情况。 回调函数会直接或间接地更改 IRQL (例如，通过获取旋转锁，这会引发 IRQL 来 DISPATCH_LEVEL，但不会释放旋转锁) 。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0xF</p></td>
 <td align="left"><p>事件回调函数的地址。</p></td>
-<td align="left"><p>保留</p></td>
-<td align="left"><p>一个事件的回调函数进入临界区，但未返回之前离开临界区。</p></td>
+<td align="left"><p>预留</p></td>
+<td align="left"><p>事件回调函数进入了一个关键区域，但它未在返回前离开关键区域。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-**参数 1 等于 0x6**
+**参数1等于0x6**
 
-如果参数 1 为 0x6，致命错误已处理 WDF 请求中。 在这种情况下，进一步参数 2 指定的错误，类型定义的枚举 WDF\_请求\_致命错误\_错误。
+如果参数1等于0x6，则在处理 WDF 请求时出错。 在这种情况下，参数2进一步指定了由枚举 WDF 请求错误所定义的错误的类型 \_ \_ \_ 。
 
 <table>
 <colgroup>
@@ -157,8 +156,8 @@ WDF\_冲突错误检查的值为 0x0000010D。 这表示内核模式驱动程序
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">参数 2</th>
-<th align="left">参数 3</th>
+<th align="left">参数2</th>
+<th align="left">参数3</th>
 <th align="left">错误的原因</th>
 </tr>
 </thead>
@@ -166,31 +165,31 @@ WDF\_冲突错误检查的值为 0x0000010D。 这表示内核模式驱动程序
 <tr class="odd">
 <td align="left"><p>0x1</p></td>
 <td align="left"><p>IRP 的地址</p></td>
-<td align="left"><p>没有更多的 I/O 堆栈位置均可设置基础 IRP 的格式。</p></td>
+<td align="left"><p>没有更多的 i/o 堆栈位置可用于设置基础 IRP 的格式。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x2</p></td>
 <td align="left"><p>WDF 请求句柄值</p></td>
-<td align="left"><p>尝试设置不包含 IRP 的框架请求对象的格式。</p></td>
+<td align="left"><p>尝试对不包含 IRP 的框架请求对象进行格式设置。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x3</p></td>
 <td align="left"><p>WDF 请求句柄值</p></td>
-<td align="left"><p>该驱动程序试图发送已发送到的 I/O 目标 framework 请求。</p></td>
+<td align="left"><p>驱动程序尝试发送已发送到 i/o 目标的框架请求。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x4</p></td>
-<td align="left"><p>尝试写入到 WDR_REQUEST_FATAL_ERROR_INFORMATION_LENGTH_MISMATCH_DATA 结构，其中包含指向 IRP、 WDF 请求句柄值、 IRP 主要函数和字节数的指针的指针</p></td>
-<td align="left"><p>驱动程序已完成的框架请求，但具有更多的字节写入输出缓冲区中指定。</p></td>
+<td align="left"><p>指向 WDR_REQUEST_FATAL_ERROR_INFORMATION_LENGTH_MISMATCH_DATA 结构的指针，该结构包含一个指向 IRP 的指针、一个 WDF 请求句柄值、一个 IRP 主函数和尝试写入的字节数</p></td>
+<td align="left"><p>驱动程序已经完成框架请求，但写入到输出缓冲区的字节比 IRP 中指定的多。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-**参数 1 等于 0xB**
+**参数1等于0xB**
 
-如果参数 1 等于 0xB，尝试获取或释放锁的句柄无效。 在这种情况下，参数 3 进一步指定进行的错误。
+如果参数1等于0xB，则尝试获取或释放锁定是无效的。 在这种情况下，参数3会进一步指定已进行的错误。
 
 <table>
 <colgroup>
@@ -200,8 +199,8 @@ WDF\_冲突错误检查的值为 0x0000010D。 这表示内核模式驱动程序
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">参数 2</th>
-<th align="left">参数 3</th>
+<th align="left">参数2</th>
+<th align="left">参数3</th>
 <th align="left">错误的原因</th>
 </tr>
 </thead>
@@ -209,12 +208,12 @@ WDF\_冲突错误检查的值为 0x0000010D。 这表示内核模式驱动程序
 <tr class="odd">
 <td align="left"><p>句柄值</p></td>
 <td align="left"><p>0x0</p></td>
-<td align="left"><p>一个句柄传递给<strong>WdfObjectAcquireLock</strong>或<strong>WdfObjectReleaseLock</strong>表示不支持同步锁的对象。</p></td>
+<td align="left"><p>传递给 <strong>WdfObjectAcquireLock</strong> 或 <strong>WdfObjectReleaseLock</strong> 的句柄表示不支持同步锁定的对象。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>WDF 数值调节钮锁定句柄</p></td>
+<td align="left"><p>WDF 旋转锁句柄</p></td>
 <td align="left"><p>0x1</p></td>
-<td align="left"><p>即没有获取它的线程被释放自旋锁。</p></td>
+<td align="left"><p>旋转锁正在由未获取它的线程释放。</p></td>
 </tr>
 </tbody>
 </table>
@@ -224,28 +223,28 @@ WDF\_冲突错误检查的值为 0x0000010D。 这表示内核模式驱动程序
 <a name="cause"></a>原因
 -----
 
-请参阅每个代码的原因的说明的 Parameters 节中的说明。
+有关原因的说明，请参阅参数部分中每个代码的说明。
 
-<a name="resolution"></a>分辨率
+<a name="resolution"></a>解决方法
 ----------
 
-[ **！ 分析**](-analyze.md)调试扩展显示有关错误检查的信息，有助于在收集信息，例如出错的代码模块。
+[**！分析**](-analyze.md)调试扩展显示有关 bug 检查的信息，可帮助收集信息，如出错代码模块。
 
-通常情况下，WDF 转储文件会进一步产生导致此 bug 检查驱动程序的信息。 使用此命令可查看日志文件。
+通常，WDF 转储文件将生成有关导致此错误检查的驱动程序的详细信息。 使用此命令查看日志文件。
 
 ```dbgcmd
 kd> !wdfkd.wdflogdump <WDF_Driver_Name>
 ```
 
-如果参数 1 等于**0x2**，检查调用方的堆栈，以确定有问题的锁。
+如果参数1等于 **0x2**，则检查调用方的堆栈以确定有问题的锁。
 
-如果参数 1 等于**0x3**，驱动程序的内核模式驱动程序框架错误日志将包含有关未完成的引用的详细信息。
+如果参数1等于 **0x3**，则驱动程序的 Kernel-Mode driver Framework 错误日志将包含有关未完成引用的详细信息。
 
-如果参数 1 等于**0x4**，使用[ **ln 调试器**](ln--list-nearest-symbols-.md)命令的值与*参数 3*作为其参数来确定函数需要一个非**NULL**参数。
+如果参数1等于 **0x4**，请使用 *参数为 3* 的值为的 [**ln 调试器**](ln--list-nearest-symbols-.md)命令作为其参数，以确定哪一个函数需要非 **空** 参数。
 
-如果参数 1 等于**0x7**，使用 **!wdfkd.wdfhandle** *Parameter 2* 扩展命令，以确定句柄类型。
+如果参数1等于 **0x7**，请使用 **！ wdfkd**_参数 2_ 扩展命令来确定句柄类型。
 
-如果参数 1 等于**0xA**，然后 WDF\_队列\_致命错误\_错误\_数据结构将指示有问题的请求或队列句柄。 它还指示 NTSTATUS，如果不是状态\_成功后，可用时。
+如果参数1等于 **0xA**，则 WDF \_ 队列 \_ 严重 \_ 错误 \_ 数据结构将指示有问题的请求或队列句柄。 如果状态为 "成功"，则它还将指示 NTSTATUS （如果 \_ 可用）。
 
  
 

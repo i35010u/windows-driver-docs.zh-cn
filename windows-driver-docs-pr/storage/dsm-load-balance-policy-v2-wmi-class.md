@@ -1,15 +1,14 @@
 ---
 title: DSM \_ 负载 \_ 均衡 \_ 策略 \_ V2 WMI 类
 description: DSM \_ 负载 \_ 均衡 \_ 策略 \_ V2 WMI 类
-ms.assetid: 8895d0ca-b9bd-4f8d-bf8f-4ba2f459c264
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 53f788e7657cdc76f3c94dbdcba953fbb2ae1abb
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: eb395b5969cbac94e88edb597a388a149883f6d7
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89188537"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96804663"
 ---
 # <a name="dsm_load_balance_policy_v2-wmi-class"></a>DSM \_ 负载 \_ 均衡 \_ 策略 \_ V2 WMI 类
 

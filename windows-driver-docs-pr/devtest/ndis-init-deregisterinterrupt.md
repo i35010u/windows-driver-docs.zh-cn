@@ -1,7 +1,6 @@
 ---
 title: 'Init \_ DeRegisterInterrupt rule (ndis) '
 description: Init \_ DeRegisterInterrupt 规则指定在 MPInitilize 期间至少调用 NdisMRegisterInterruptEx 一次，NdisMDeregisterInterruptEx 应在 MPHaltEx 中至少调用一次。
-ms.assetid: C7436321-43DD-4B38-A0A3-9888CFDDA284
 ms.date: 05/21/2018
 keywords:
 - 'Init_DeRegisterInterrupt 规则 (ndis) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 2bef7df976aa608a3d0dc42d40c220df699baef2
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 5fb1410cfa8fd7520f7bfaec45915c87d0a7cadf
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90101776"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96804245"
 ---
 # <a name="init_deregisterinterrupt-rule-ndis"></a>Init \_ DeRegisterInterrupt rule (ndis) 
 
 
-**Init \_ DeRegisterInterrupt**规则指定在 MPInitilize 期间至少调用[**NdisMRegisterInterruptEx**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismregisterinterruptex)一次， [**NdisMDeregisterInterruptEx**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismderegisterinterruptex)应在 MPHaltEx 中至少调用一次。
+**Init \_ DeRegisterInterrupt** 规则指定在 MPInitilize 期间至少调用 [**NdisMRegisterInterruptEx**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismregisterinterruptex)一次， [**NdisMDeregisterInterruptEx**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismderegisterinterruptex)应在 MPHaltEx 中至少调用一次。
 
 注册中断（通常发生在初始化期间）应撤消 (取消注册) 如果在初始化过程中出现问题或在停止小型端口过程中出现问题。
 

@@ -1,15 +1,14 @@
 ---
 title: SerCx2 体系结构概述
 description: SerCx2 与串行控制器驱动程序一起工作，可在外围设备驱动程序与串行连接外围设备之间进行通信。
-ms.assetid: BA5D8966-ACC5-44ED-8CB8-61D1BCF39522
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8b08bc721b818853e9e32c8b58cf78df8096faae
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 25be21532aadf0329cfb0c7b8cbfd3fa0068e85b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89186943"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96804983"
 ---
 # <a name="sercx2-architectural-overview"></a>SerCx2 体系结构概述
 

@@ -1,15 +1,14 @@
 ---
 title: SerCx2 PIO-Receive 事务
 description: SerCx2 要求所有串行控制器驱动程序都实现对使用程控 i/o (PIO) 的接收事务的支持。
-ms.assetid: 00C43A55-ACAF-4AB6-BDFB-F3D9350C4536
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 728d98486b04daaaa11d3d8b8b23af2373f76245
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 4f5bc67a410968537626c7fa82617edf76b62c01
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89186915"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96804963"
 ---
 # <a name="sercx2-pio-receive-transactions"></a>SerCx2 PIO-Receive 事务
 
@@ -19,7 +18,7 @@ SerCx2 要求所有串行控制器驱动程序都实现对使用程控 i/o (PIO)
 
 ## <a name="creating-the-pio-receive-object"></a>创建 PIO 接收对象
 
-在 SerCx2 可以调用任何串行控制器驱动程序的 *EvtSerCx2PioReceive*Xxx * * 函数之前，驱动程序必须调用 [**SerCx2PioReceiveCreate**](/windows-hardware/drivers/ddi/sercx/nf-sercx-sercx2pioreceivecreate) 方法将这些函数注册到 SerCx2。 此方法接受作为输入参数的指针，该指针指向 [**SERCX2 \_ PIO \_ 接收 \_ 配置**](/windows-hardware/drivers/ddi/sercx/ns-sercx-_sercx2_pio_receive_config) 结构，该结构包含指向驱动程序的 *EvtSerCx2PioReceive*Xxx * * 函数的指针。
+在 SerCx2 可以调用任何串行控制器驱动程序的 *EvtSerCx2PioReceive* Xxx * * 函数之前，驱动程序必须调用 [**SerCx2PioReceiveCreate**](/windows-hardware/drivers/ddi/sercx/nf-sercx-sercx2pioreceivecreate) 方法将这些函数注册到 SerCx2。 此方法接受作为输入参数的指针，该指针指向 [**SERCX2 \_ PIO \_ 接收 \_ 配置**](/windows-hardware/drivers/ddi/sercx/ns-sercx-_sercx2_pio_receive_config) 结构，该结构包含指向驱动程序的 *EvtSerCx2PioReceive* Xxx * * 函数的指针。
 
 需要驱动程序才能实现以下三个函数：
 
@@ -32,7 +31,7 @@ SerCx2 要求所有串行控制器驱动程序都实现对使用程控 i/o (PIO)
 - [*EvtSerCx2PioReceiveInitializeTransaction*](/windows-hardware/drivers/ddi/sercx/nc-sercx-evt_sercx2_pio_receive_initialize_transaction)
 - [*EvtSerCx2PioReceiveCleanupTransaction*](/windows-hardware/drivers/ddi/sercx/nc-sercx-evt_sercx2_pio_receive_cleanup_transaction)
 
-**SerCx2PioReceiveCreate**方法创建一个 PIO 接收对象，并向该对象的[**SERCX2PIORECEIVE**](./sercx2-object-handles.md)句柄提供调用驱动程序。 驱动程序的 *EvtSerCx2PioReceive*Xxx * * 函数全部使用此句柄作为其第一个参数。 以下 SerCx2 方法使用此句柄作为其第一个参数：
+**SerCx2PioReceiveCreate** 方法创建一个 PIO 接收对象，并向该对象的 [**SERCX2PIORECEIVE**](./sercx2-object-handles.md)句柄提供调用驱动程序。 驱动程序的 *EvtSerCx2PioReceive* Xxx * * 函数全部使用此句柄作为其第一个参数。 以下 SerCx2 方法使用此句柄作为其第一个参数：
 
 - [**SerCx2PioReceiveReady**](/windows-hardware/drivers/ddi/sercx/nf-sercx-sercx2pioreceiveready)
 - [**SerCx2PioReceiveInitializeTransactionComplete**](/windows-hardware/drivers/ddi/sercx/nf-sercx-sercx2pioreceiveinitializetransactioncomplete)

@@ -1,7 +1,6 @@
 ---
 title: DEVPKEY_Device_PowerRelations
 description: DEVPKEY_Device_PowerRelations
-ms.assetid: 616e6d02-9047-491b-b7e7-758e1804dff5
 keywords:
 - DEVPKEY_Device_PowerRelations 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: a1b270f7267e75a9928406028bd6259191f92e8c
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: a7a79d516a59d323de5680200ec82b5c035b6b60
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90716768"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96804135"
 ---
 # <a name="devpkey_device_powerrelations"></a>DEVPKEY_Device_PowerRelations
 

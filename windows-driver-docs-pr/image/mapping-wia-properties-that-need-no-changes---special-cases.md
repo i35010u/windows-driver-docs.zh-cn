@@ -1,22 +1,21 @@
 ---
 title: 映射不需更改的 WIA 属性 - 特殊案例
 description: 映射不需更改的 WIA 属性 - 特殊案例
-ms.assetid: 4ed02c01-efe8-4728-a54a-26fe27aa403c
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e2aaa0a07c1700095260f19390a952d7418ee099
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: bd701da078f7b8717aecd145c2c6ced06593a7c2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89188065"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803863"
 ---
 # <a name="mapping-wia-properties-that-need-no-changes---special-cases"></a>映射不需更改的 WIA 属性 - 特殊案例
 
 
 兼容层可能会失败的情况如下：
 
--   与所需的 Windows Vista 属性相关的 Windows XP 属性丢失/损坏可能会导致兼容层不可用。 在这些情况下，当前会话将失败;由于 Windows XP 和 Windows Vista 驱动程序与 (应用程序之间的项结构和属性之间存在差异，因此无法继续使用该选项) 。 [**WIA \_ dps \_ 文档 \_ 处理 \_ 选择**](./wia-dps-document-handling-select.md)和[**WIA \_ dps \_ 文档 \_ 处理 \_ 功能**](./wia-dps-document-handling-capabilities.md)是一种特殊情况; 如果 Windows XP 驱动程序不支持这些属性，则只会为 windows Vista 应用程序翻译平板项目
+-   与所需的 Windows Vista 属性相关的 Windows XP 属性丢失/损坏可能会导致兼容层不可用。 在这些情况下，当前会话将失败;由于 Windows XP 和 Windows Vista 驱动程序与 (应用程序之间的项结构和属性之间存在差异，因此无法继续使用该选项) 。 [**WIA \_ dps \_ 文档 \_ 处理 \_ 选择**](./wia-dps-document-handling-select.md)和 [**WIA \_ dps \_ 文档 \_ 处理 \_ 功能**](./wia-dps-document-handling-capabilities.md)是一种特殊情况; 如果 Windows XP 驱动程序不支持这些属性，则只会为 windows Vista 应用程序翻译平板项目
 
 -   某些依赖于特定上下文 (平板、进纸器或属性上下文) 的 Windows XP 根属性可能不可用，除非已设置该特定上下文，或者这些属性对于每个上下文可能具有不同的有效值和当前值。 WIA \_ DPS \_ 文档 \_ 处理 \_ 选择将用于设置正确的进纸器/平板上下文; 当需要在 Windows XP 驱动程序的根项上) 或平板时，它将设置为送纸器 (和双工。 在所有其他情况下，应通过适当的属性来设置上下文。 如果 Windows XP 设备同时支持送纸器和平板，并且所有根属性都可以转换为 Windows Vista 中的平板和进纸器项，也会出现这种情况。
 

@@ -1,15 +1,14 @@
 ---
 title: 开发人员指南
 description: 本主题讨论使用和开发智能卡微型驱动程序的一般准则。
-ms.assetid: 48999DF6-3AC2-4DEA-8ABC-C427237B31E8
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4b454f32f7db161d62d8b1f4bad5714656601e0d
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 9fe56f346bcd0e4d33fc3e1c891601a783a00505
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90101634"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96804919"
 ---
 # <a name="developer-guidelines"></a>开发人员指南
 
@@ -568,8 +567,8 @@ Microsoft 基本智能卡加密服务提供程序组策略设置位于 \[ HKEY \
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">密钥</th>
-<th align="left">说明</th>
+<th align="left">键</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -615,8 +614,8 @@ Microsoft CNG 智能卡密钥存储提供程序组策略设置位于 \[ HKEY \_ 
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">密钥</th>
-<th align="left">说明</th>
+<th align="left">键</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -670,5 +669,5 @@ Microsoft CNG 智能卡密钥存储提供程序组策略设置位于 \[ HKEY \_ 
     -   DM-CRYPT \_ 默认 \_ 容器（ \_ 可选）
     -   DM-CRYPT \_ DELETEKEYSET
     -   DM-CRYPT \_ VERIFYCONTEXT
--   即使在 DLL 进程分离调用了*DllMain*后，也可以调用[**CardDeleteContext**](/previous-versions/dn468715(v=vs.85)) \_ \_ 。
+-   即使在 DLL 进程分离调用了 *DllMain* 后，也可以调用 [**CardDeleteContext**](/previous-versions/dn468715(v=vs.85)) \_ \_ 。
 

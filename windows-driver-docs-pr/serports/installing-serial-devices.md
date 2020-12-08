@@ -1,17 +1,16 @@
 ---
 title: 安装串行设备
 description: 安装串行设备
-ms.assetid: e51ac390-1de0-4377-bcc3-5f179b6ca6df
 keywords:
 - 串行设备 WDK，安装
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 25d7ffec7485e29994df0da939bcb0961c6ed3ec
-ms.sourcegitcommit: 735fea11056fe943c4368ee54573790e0602de66
+ms.openlocfilehash: aa8c1c9d11e9dfd0336f962af986a23867083e36
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91979970"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96805019"
 ---
 # <a name="installing-serial-devices"></a>安装串行设备
 

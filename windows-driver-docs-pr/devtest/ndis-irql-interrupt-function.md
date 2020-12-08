@@ -1,7 +1,6 @@
 ---
 title: 'Irql \_ 中断 \_ 函数规则 (ndis) '
 description: Irql \_ 中断 \_ 函数规则指定必须在正确的 Irql 级别调用用于中断的 NDIS 函数。
-ms.assetid: a71eaa14-b1f8-4ef6-8dc4-5c0c0d168685
 ms.date: 05/21/2018
 keywords:
 - 'Irql_Interrupt_Function 规则 (ndis) '
@@ -12,12 +11,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: a31b0397c698f459d741601a0a818934053b63e5
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 20f0133dc8ef76523f6ded538b833377db9d357d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104740"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96804205"
 ---
 # <a name="irql_interrupt_function-rule-ndis"></a>Irql \_ 中断 \_ 函数规则 (ndis) 
 

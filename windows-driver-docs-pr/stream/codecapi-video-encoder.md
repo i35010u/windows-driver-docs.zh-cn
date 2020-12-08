@@ -1,15 +1,14 @@
 ---
 title: CODECAPI \_ 视频 \_ 编码器
 description: CODECAPI \_ 视频 \_ 编码器
-ms.assetid: e08f26ff-1e11-42a4-a9f8-3af9b885a901
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a2da4844e6829e02cef91ad1b5564db9845a4b44
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 408f9862d036993f845f2edf63129471c6ff63cc
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89186353"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96804377"
 ---
 # <a name="codecapi_video_encoder"></a>CODECAPI \_ 视频 \_ 编码器
 
@@ -53,11 +52,11 @@ ms.locfileid: "89186353"
 
 ### <a name="span-idheadersspanspan-idheadersspanheaders"></a><span id="headers"></span><span id="HEADERS"></span>只要
 
-在 *ksmedia*中声明。 包括 *ksmedia*。
+在 *ksmedia* 中声明。 包括 *ksmedia*。
 
 ### <a name="requirements"></a>要求
 
-**标头：** 在 *ksmedia*中声明。 包括 *ksmedia*。
+**标头：** 在 *ksmedia* 中声明。 包括 *ksmedia*。
 
 ### <a name="see-also"></a>另请参阅
 

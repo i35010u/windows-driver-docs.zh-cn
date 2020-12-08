@@ -1,19 +1,18 @@
 ---
 title: 处理对存储外设的电源请求
 description: 处理对存储外设的电源请求
-ms.assetid: 3cc7b885-27ad-4384-aeec-4d76f9ad4f1c
 keywords:
 - 外围设备 WDK 存储，电源请求
 - 存储外围设备 WDK，电源请求
 - power requests WDK 存储
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e47c97eed68ca5ae2ef01178f2c2cce907d659cd
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: eee06f8eb9c53b415be99cfb1e04613d66a7acaa
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89192665"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96804527"
 ---
 # <a name="handling-power-requests-to-storage-peripherals"></a>处理对存储外设的电源请求
 
@@ -31,7 +30,7 @@ ms.locfileid: "89192665"
 
 -   将电源请求转发到下一个较低的驱动程序。
 
-请注意，驱动程序必须调用 [**PoStartNextPowerIrp**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-postartnextpowerirp) 和 [**PoCallDriver**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-pocalldriver)，而不是 **IoCallDriver**来发送 power 请求。
+请注意，驱动程序必须调用 [**PoStartNextPowerIrp**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-postartnextpowerirp) 和 [**PoCallDriver**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-pocalldriver)，而不是 **IoCallDriver** 来发送 power 请求。
 
 除非存储类驱动程序具有 [**StartIo**](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_startio) 例程，否则它应在设置设备的电源状态之前，将存储端口驱动程序的 LU 特定的队列 (IRP \_ MJ \_ SCSI \_) 锁定 \_ \_ ，以阻止未同步的操作，直到电源操作 (其中可能涉及几个步骤) 完成。 发出的用于处理电源操作的任何 SRBs 应将 SRB \_ 标志设置 \_ 为绕过 \_ 锁定 \_ 队列，确保它们到达端口驱动程序。 驱动程序完成设置电源状态后，它应将队列解锁 (IRP \_ MJ \_ SCSI with SRB \_ FUNCTION \_ unlock \_ queue，并使用 SRB \_ FLAGS \_ 旁路 \_ 锁定 \_) 队列，以使端口驱动程序可以在设备通电后恢复向设备发送已排队的 irp。
 

@@ -1,19 +1,18 @@
 ---
 title: 从 FilterUnloadCallback 例程返回状态
 description: 从 FilterUnloadCallback 例程返回状态
-ms.assetid: 6fdaadc7-860d-49d6-833c-64624f435fd3
 keywords:
 - status 值 WDK 文件系统
 - 返回状态 WDK 文件系统
 - 拒绝卸载操作
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1b74b987047ca1c270d22e54150a092439d1344d
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 433a8fb83704bd68a8ce83a2a1503ebec04e4a22
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89064964"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803561"
 ---
 # <a name="returning-status-from-a-filterunloadcallback-routine"></a>从 FilterUnloadCallback 例程返回状态
 

@@ -1,24 +1,23 @@
 ---
 title: COPPKeyExchange 函数
-description: 此示例 COPPKeyExchange 函数检索图形硬件使用的数字证书。
-ms.assetid: ecf26fc7-fba0-4dcf-9b63-9808b8efec13
+description: 示例 COPPKeyExchange 函数检索图形硬件使用的数字证书。
 keywords:
-- 复制保护 WDK COPP，微型端口驱动程序代码模板
-- 视频复制保护 WDK COPP，微型端口驱动程序代码模板
-- 受保护的视频 WDK COPP，微型端口驱动程序代码模板
-- 微型端口驱动程序 WDK Windows 2000，COPP 代码模板
+- 复制保护 WDK COPP，视频微型端口驱动程序代码模板
+- 视频复制保护 WDK COPP，视频微型端口驱动程序代码模板
+- 受保护的视频 WDK COPP，视频微型端口驱动程序代码模板
+- 视频微型端口驱动程序 WDK Windows 2000，COPP 代码模板
 ms.date: 02/16/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 14d2690e1f9387e02b327202a3d3a8df239a78ab
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e1c2bbe0bb4b235286ff282ee51713372d3ac3b8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331303"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803577"
 ---
 # <a name="coppkeyexchange-function"></a>COPPKeyExchange 函数
 
-此示例 COPPKeyExchange 函数检索图形硬件使用的数字证书。
+示例 COPPKeyExchange 函数检索图形硬件使用的数字证书。
 
 ### <a name="syntax"></a>语法
 
@@ -30,47 +29,47 @@ HRESULT COPPKeyExchange(
 );
 ```
 
-## <a name="parameters"></a>Parameters
+## <a name="parameters"></a>参数
 
 *pThis [in]*
 
-* 指向 COPP DirectX VA 设备对象指针。
+* 指向 COPP DirectX VA 设备对象的指针。
 
 *pRandom [out]*
 
-* 指向一个变量来接收一个 128 位随机数字。
+* 指向接收128位随机数的变量的指针。
 
 *pGHCertificate [out]*
 
-* 指向接收图形硬件证书字节的列表。
+* 一个指针，指向接收图形硬件证书的字节列表。
 
 ## <a name="return-value"></a>返回值
 
-返回零 （S_OK 或 DD_OK） 如果成功，则否则，返回错误代码。
+如果成功，则返回零 (S_OK 或 DD_OK) ;否则，将返回错误代码。
 
 ## <a name="remarks"></a>备注
 
-接收到对其 COPPKeyExchange 函数的调用之前，COPP DirectX VA 设备应为 VMR 提供图形硬件证书的大小。 也就是说，COPPGetCertificateLength 函数应在 COPPKeyExchange 之前调用。 如果之前 COPPGetCertificateLength，将调用 COPPKeyExchange，COPPKeyExchange 应返回 E_UNEXPECTED。
+COPP DirectX VA 设备应该先向 VMR 提供图形硬件证书的大小，然后才能接收对其 COPPKeyExchange 函数的调用。 也就是说，应在 COPPKeyExchange 之前调用 COPPGetCertificateLength 函数。 如果在 COPPGetCertificateLength 之前调用 COPPKeyExchange，则 COPPKeyExchange 应返回 E_UNEXPECTED。
 
-## <a name="mapping-rendermocomp-to-coppkeyexchange"></a>映射到 COPPKeyExchange RenderMoComp
+## <a name="mapping-rendermocomp-to-coppkeyexchange"></a>将 RenderMoComp 映射到 COPPKeyExchange
 
-示例 COPPKeyExchange 函数直接映射到 DD_MOTIONCOMPCALLBACKS 结构的 RenderMoComp 成员调用。 RenderMoComp 成员指向显示驱动程序提供 DdMoCompRender 回调的函数的引用 DD_RENDERMOCOMPDATA 结构。
+示例 COPPKeyExchange 函数直接映射到对 DD_MOTIONCOMPCALLBACKS 结构的 RenderMoComp 成员的调用。 RenderMoComp 成员指向显示驱动程序提供的 DdMoCompRender 回调函数，该函数引用 DD_RENDERMOCOMPDATA 结构。
 
-而无需显示驱动程序提供 BeginMoCompFrame 或 EndMoCompFrame 要调用的函数首先调用 RenderMoComp 回调函数。
+调用 RenderMoComp 回调函数时，不会首先调用显示驱动程序提供的 BeginMoCompFrame 或 EndMoCompFrame 函数。
 
 按如下所示填充 DD_RENDERMOCOMPDATA 结构。
 
-| 成员 | 值 |
+| 成员 | “值” |
 |--|--|
-| dwNumBuffers | 在 lpBufferInfo 的缓冲区数。 值为 1。 |
-| lpBufferInfo | 指向一个 RGB32 系统内存图面，其中包含保存的硬件证书所需的空间。 对 COPPGetCertificateLength 的调用中返回的表面所需的长度。 <br>请注意，系统内存图面用于返回该证书，因为该证书的大小可以超过通过 lpOutputData 参数传递的最大缓冲区的大小。|
-| dwFunction | DXVA_COPPKeyExchangeFnCode 常量 （dxva.h 中定义）。 |
+| dwNumBuffers | LpBufferInfo 处的缓冲区数。 值为 1。 |
+| lpBufferInfo | 指向单个 RGB32 系统内存的指针，其中包含持有硬件证书所需的空间。 在调用 COPPGetCertificateLength 时，将返回所需的图面长度。 <br>请注意，系统内存图面用于返回证书，因为证书的大小可以超过通过 lpOutputData 参数传递的最大缓冲区的大小。|
+| dwFunction | DXVA) 中定义 DXVA_COPPKeyExchangeFnCode 常量 (。 |
 | lpInputData | NULL。 |
-| lpOutputData | 指向由驱动程序生成的 128 位随机数字。 |
+| lpOutputData | 指向驱动程序生成的128位随机数的指针。 |
 
 ## <a name="example-code"></a>示例代码
 
-以下代码举例说明如何实现 COPPKeyExchange 函数：
+下面的代码提供了一个示例，说明如何实现 COPPKeyExchange 函数：
 
 ```cpp
 DWORD
@@ -102,11 +101,11 @@ COPPKeyExchange(
 }
 ```
 
-**要求**
+**惠?**
 
-| 目标平台 | Version |
+| 目标平台 | 版本 |
 | -- | -- |
-| 桌面设备 |  此函数仅适用于 Windows Server 2003 SP1 和更高版本和 Windows XP SP2 和更高版本。 |
+| 台式机 |  此函数仅适用于 Windows Server 2003 SP1 及更高版本以及 Windows XP SP2 及更高版本。 |
 
 
 

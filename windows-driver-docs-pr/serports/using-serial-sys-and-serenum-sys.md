@@ -1,7 +1,6 @@
 ---
 title: 使用 Serial.sys 和 Serenum.sys
 description: 使用 Serial.sys 和 Serenum.sys
-ms.assetid: 2dcf22c8-0666-4b58-8fd3-97a4d17eaa2a
 keywords:
 - 串行端口 WDK
 - 串行设备 WDK
@@ -16,12 +15,12 @@ keywords:
 - 筛选器驱动程序 WDK 串行设备
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5278d6d2ca9c752705e5c144b6e9a232418b652a
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 5299fba72d8be8481b655ac778e9ce604345c453
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89191831"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96804927"
 ---
 # <a name="using-serialsys-and-serenumsys"></a>使用 Serial.sys 和 Serenum.sys
 

@@ -1,18 +1,17 @@
 ---
 title: 为 I/O 操作设备编程
 description: 为 I/O 操作设备编程
-ms.assetid: 952b07d8-81e3-40ec-8acd-be1143a7d2a2
 keywords:
 - 关键部分例程 WDK 内核
 - I/o WDK 内核，设备编程
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 79b55abff74b3fb4b9794b380b5d75ac4b99c529
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: d81c7f5c3ef965d7dfdda63b3de34b9439d766a1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89188221"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96805399"
 ---
 # <a name="programming-a-device-for-an-io-operation"></a>为 I/O 操作设备编程
 
@@ -32,7 +31,7 @@ ms.locfileid: "89188221"
 
 -   每个 *SynchCritSection* 例程必须尽快返回控制权，因为运行任何 *SynchCritSection* 例程会阻止驱动程序的 ISR 执行。
 
-    不应使用**switch**语句或使用多个嵌套 if if 来编写单个、大型、通用的*SynchCritSection*例程。 **then。else**语句来确定要执行的操作或要更新的状态信息。 另一方面，应避免编写多个只计划一个设备注册的 *SynchCritSection* 例程。
+    不应使用 **switch** 语句或使用多个嵌套 if if 来编写单个、大型、通用的 *SynchCritSection* 例程。 **then。else** 语句来确定要执行的操作或要更新的状态信息。 另一方面，应避免编写多个只计划一个设备注册的 *SynchCritSection* 例程。
 
  
 

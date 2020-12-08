@@ -1,7 +1,6 @@
 ---
 title: DEVPKEY_Device_RemovalPolicyDefault
 description: DEVPKEY_Device_RemovalPolicyDefault
-ms.assetid: e51fb2d2-5bc7-440c-8fc8-9e3f461350ea
 keywords:
 - DEVPKEY_Device_RemovalPolicyDefault 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 00f9cb10e1cb5369ebb25f2658d2bc90493c07c4
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 52ccc0f19d42c11b1f9ffd938831c060e79bc39b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90716760"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96804137"
 ---
 # <a name="devpkey_device_removalpolicydefault"></a>DEVPKEY_Device_RemovalPolicyDefault
 
@@ -66,7 +65,7 @@ DEVPKEY_Device_RemovalPolicyDefault 设备属性表示设备实例的默认删�
 <a name="remarks"></a>备注
 -------
 
-Windows 将 DEVPKEY_Device_RemovalPolicyDefault 的值设置为 Cfgmgr32 中定义的 CM_REMOVAL_POLICY_*Xxx* 值之一。
+Windows 将 DEVPKEY_Device_RemovalPolicyDefault 的值设置为 Cfgmgr32 中定义的 CM_REMOVAL_POLICY_ *Xxx* 值之一。
 
 可以调用 [**SetupDiGetDeviceProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdigetdevicepropertyw) 来检索 DEVPKEY_Device_RemovalPolicyDefault 的值。
 

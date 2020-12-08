@@ -1,15 +1,14 @@
 ---
 title: MB 多模多载波
 description: 本主题介绍对已集成到 Windows 8 移动宽带的 MB 多模式多的支持。
-ms.assetid: ADEC17E0-9150-4094-8287-CA13C186AB5B
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 33284dae0b1f53c9c026b7fefb3b7de2028ad370
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 0b8b89d55ba2298038d4527ba4af0176a42688d5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89213941"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803515"
 ---
 # <a name="mb-multimode-multicarrier"></a>MB 多模多载波
 

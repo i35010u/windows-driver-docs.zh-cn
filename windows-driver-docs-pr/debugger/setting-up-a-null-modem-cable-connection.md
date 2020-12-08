@@ -1,7 +1,6 @@
 ---
 title: 手动设置通过串行线缆进行的内核模式调试
 description: 适用于 Windows 的调试工具支持通过空调缆线进行内核调试。
-ms.assetid: f7311928-bab1-4692-8dd6-5e464dd7127a
 keywords:
 - 设置，建立调试电缆连接
 - 空调制解调器电缆
@@ -10,12 +9,12 @@ keywords:
 - '电缆连接、调试 (空调) 电缆) '
 ms.date: 07/11/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: a17bdee8f94e7116bc8e53cca8db1ec9105a212e
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: e23be4c140ba80bf386b8b3240e6dc79e5df5266
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89210839"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803607"
 ---
 # <a name="setting-up-kernel-mode-debugging-over-a-serial-cable-manually"></a>手动设置通过串行线缆进行的内核模式调试
 
@@ -45,7 +44,7 @@ ms.locfileid: "89210839"
 
 ### <a name="span-idusing_windbgspanspan-idusing_windbgspanspan-idusing_windbgspanusing-windbg"></a><span id="Using_WinDbg"></span><span id="using_windbg"></span><span id="USING_WINDBG"></span>使用 WinDbg
 
-在主计算机上，打开 WinDbg。 在 " **文件** " 菜单上，选择 " **内核调试**"。 在 "内核调试" 对话框中，打开 " **COM** " 选项卡。在 " **波特率** " 框中，输入为调试选择的费率。 在 " **端口** " 框中，输入 com*n* ，其中 *n* 是你在主机计算机上选择进行调试的 com 端口号。 选择“确定”。
+在主计算机上，打开 WinDbg。 在 " **文件** " 菜单上，选择 " **内核调试**"。 在 "内核调试" 对话框中，打开 " **COM** " 选项卡。在 " **波特率** " 框中，输入为调试选择的费率。 在 " **端口** " 框中，输入 com *n* ，其中 *n* 是你在主机计算机上选择进行调试的 com 端口号。 选择“确定”。
 
 还可以通过在命令提示符窗口中输入以下命令来启动与 WinDbg 的会话： *n* 是在主计算机上用于调试的 COM 端口号， *rate* 是用于调试的波特速率：
 
@@ -62,7 +61,7 @@ ms.locfileid: "89210839"
 
 在主计算机上，可以使用环境变量指定 COM 端口和波特率。 这样就不必在每次启动调试会话时指定端口和波特率。 若要使用环境变量来指定 COM 端口和波特率，请打开命令提示符窗口并输入以下命令，其中 *n* 是在主计算机上用于调试的 COM 端口的编号， *rate* 是用于调试的波特率：
 
-- **设置 \_ NT \_ 调试 \_ 端口 = COM * * * n*
+- **设置 \_NT \_ 调试 \_ 端口 = COM**_n_
 - **设置 \_NT \_ 调试 \_ 波特率 \_ =**<em>速率</em>
 
 若要启动调试会话，请打开命令提示符窗口，然后输入以下命令之一：
@@ -90,7 +89,7 @@ ms.locfileid: "89210839"
 
 用于通过串行电缆进行调试的波特率必须设置为主机和目标计算机上的相同值。 例如，假设您选择了波特率为115200。
 
-在目标计算机上，以管理员身份打开命令提示符窗口，然后输入 **bcdedit/dbgsettings**。 **Bcdedit**的输出应显示 `baudrate 115200` 。
+在目标计算机上，以管理员身份打开命令提示符窗口，然后输入 **bcdedit/dbgsettings**。 **Bcdedit** 的输出应显示 `baudrate 115200` 。
 
 在主计算机上，当您启动调试器或设置环境变量时，请指定正确的波特率。 使用以下方法之一来指定波特率为115200。
 

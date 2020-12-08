@@ -1,15 +1,14 @@
 ---
 title: 使用自定义硬件 ID 和兼容 ID
 description: 使用自定义硬件 ID 和兼容 ID
-ms.assetid: 4f0ae082-b601-4322-add8-63941c2bdad3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 086de4b31791bf4bb0376735aed11a6a216be162
-ms.sourcegitcommit: a44ade167cdfb541cf1818e9f9e3726f23f90b66
+ms.openlocfilehash: 69118dfab20afa0a330a421308a8276e0cbd0147
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94361595"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96805443"
 ---
 # <a name="using-custom-hardware-ids-and-compatible-ids"></a>使用自定义硬件 ID 和兼容 ID
 
@@ -38,7 +37,7 @@ bus-type-guid\vendor-specific-id
 
 -   供应商 *特定 id* 是供应商定义的格式，通常标识供应商、设备、子系统、修订号，以及可能的其他设备信息。 例如，格式可能采用 *供应商* & *设备* & *子系统* & *修订版本* 的形式，其中，与号字符 ( "&" ) 分隔子字段，每个子字段的格式是特定于供应商的。 有关实际设备标识字符串的示例，请参阅 [设备标识字符串](device-identification-strings.md)。
 
-PnP 管理器将 [**IRP_MN_QUERY_ID**](../kernel/irp-mn-query-id.md) 请求发送到总线驱动程序，以获取设备的设备标识字符串。 设备标识字符串包括设备 ID、设备实例 ID、硬件 Id 列表以及兼容 Id 列表。 以下虚构示例包括设备 ID、硬件 Id 列表以及兼容 Id 列表。 在这些示例中，枚举器由 *总线类型 guid* 子字段指定，后者是 guid "{xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx-zzzz-yyyyyyyyyyyy}"。 供应商 *特定 id* 字段的格式为 *供应* 商 & *设备* & *子系统* & *修订版* ，其中 *供应商* 子字段为 "ven_1"， *设备* 子字段为 "dev_2"， *子系统* 子字段为 "subsys_3"， *修订* 子字段为 "rev_4"。
+PnP 管理器将 [**IRP_MN_QUERY_ID**](../kernel/irp-mn-query-id.md) 请求发送到总线驱动程序，以获取设备的设备标识字符串。 设备标识字符串包括设备 ID、设备实例 ID、硬件 Id 列表以及兼容 Id 列表。 以下虚构示例包括设备 ID、硬件 Id 列表以及兼容 Id 列表。 在这些示例中，枚举器由 *总线类型 guid* 子字段指定，后者是 guid "{xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx-zzzz-yyyyyyyyyyyy}"。 供应商 *特定 id* 字段的格式为 *供应* 商 & *设备* & *子系统* & *修订版*，其中 *供应商* 子字段为 "ven_1"，*设备* 子字段为 "dev_2"，*子系统* 子字段为 "subsys_3"，*修订* 子字段为 "rev_4"。
 
 设备 ID 是设备的最特定说明的硬件 ID。 在以下示例中，设备 ID 指定供应商、设备、子系统和修订版本。
 

@@ -1,9 +1,8 @@
 ---
-title: ks.kshelp
-description: Ks.kshelp 扩展显示显示原始 KS 1.0 特定 Ks.dll 扩展命令的帮助文本。
-ms.assetid: 672446ad-74a0-4caa-9801-eafef80929cb
+title: ks. kshelp
+description: Kshelp 扩展显示一个帮助文本，其中显示了原始 KS 1.0 特定 Ks.dll 扩展命令。
 keywords:
-- ks.kshelp Windows 调试
+- kshelp Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,23 +11,23 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 61b6016f920a90d8f591bb5d2e76cc06ff33699d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3e9967d034a172900028b845af5332b1aa4cd7b7
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63336239"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96804075"
 ---
 # <a name="kskshelp"></a>!ks.kshelp
 
 
-**！ Ks.kshelp**扩展显示显示原始 KS 1.0 特定 Ks.dll 扩展命令的帮助文本。
+**Kshelp** 扩展显示了显示特定于 ks 1.0 的原始 Ks.dll 扩展命令的帮助文本。
 
 ```dbgcmd
 !ks.kshelp 
 ```
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 <table>
 <colgroup>
@@ -49,9 +48,9 @@ ms.locfileid: "63336239"
 
  
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-有关详细信息，请参阅[流式处理的内核调试](kernel-streaming-debugging.md)。
+有关详细信息，请参阅 [内核流调试](kernel-streaming-debugging.md)。
 
  
 

@@ -1,15 +1,14 @@
 ---
 title: 串行连接的外围设备的连接 ID
 description: 如果为连接到由 SerCx2 管理的串行端口的外围设备编写驱动程序，则该驱动程序接收的硬件资源列表包括一个连接 ID，该 ID 封装了平台固件中的设备连接信息。
-ms.assetid: 9A688552-DFAF-48A1-935D-70C3B13F30EC
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b27ba7f0a727e3d469db2129308c0a33062e9896
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 44bfc7b850167a5317337c66c525e1ac4e413ebe
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89187005"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96805051"
 ---
 # <a name="connection-ids-for-serially-connected-peripheral-devices"></a>串行连接的外围设备的连接 ID
 
@@ -17,7 +16,7 @@ SerCx2 管理要将外围设备永久连接到的串行端口。 由于这些物
 
 系统启动时，即插即用 (PnP) manager 将同时枚举 PnP 设备和非 PnP 设备。 对于具有与串行端口的固定连接的非 PnP 外围设备，PnP 管理器会查询硬件平台的 ACPI 固件，以获取描述如何访问设备的一组连接参数。 这些连接参数标识设备连接到的端口的串行控制器，并包括串行控制器与设备通信所需的其他信息，如波特率和流控制设置。
 
-PnP 管理器分配一个连接 ID 以表示此外围设备的连接参数。 PnP 管理器将此 ID 和连接参数一起存储在名为 *资源中心*的系统数据存储中。  (资源中心是一种内部数据存储，其中 PnP 管理器存储与串行连接的外围设备有关的配置信息。 ) 连接 ID 封装这些参数，以便外围设备驱动程序可以将它们视为不透明。
+PnP 管理器分配一个连接 ID 以表示此外围设备的连接参数。 PnP 管理器将此 ID 和连接参数一起存储在名为 *资源中心* 的系统数据存储中。  (资源中心是一种内部数据存储，其中 PnP 管理器存储与串行连接的外围设备有关的配置信息。 ) 连接 ID 封装这些参数，以便外围设备驱动程序可以将它们视为不透明。
 
 外围设备驱动程序接收串行连接外围设备的连接 ID 作为驱动程序分配的硬件资源的一部分。 当外设驱动程序调用系统函数以打开与外围设备的连接时，驱动程序会提供连接 ID，系统函数使用该 ID 从资源中心检索设备的连接参数。
 

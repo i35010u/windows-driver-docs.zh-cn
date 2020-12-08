@@ -1,17 +1,16 @@
 ---
 title: GUID_NDIS_GEN_INTERRUPT_MODERATION_PARAMETERS
 description: 本主题描述了 NDIS WMI 接口的 GUID_NDIS_GEN_INTERRUPT_MODERATION_PARAMETERS GUID。
-ms.assetid: f4be78b8-421b-467a-a0a6-b8256b8a4ab3
 keywords:
 - GUID_NDIS_GEN_INTERRUPT_MODERATION_PARAMETERS，WDK GUID_NDIS_GEN_INTERRUPT_MODERATION_PARAMETERS 网络驱动程序
 ms.date: 11/22/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a94098371cfe0e0a727660da8801c5a4e1046e6d
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 56093f0ec6171e09e9229a8e06f01c313e6f6206
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89207565"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803719"
 ---
 # <a name="guid_ndis_gen_interrupt_moderation_parameters"></a>GUID_NDIS_GEN_INTERRUPT_MODERATION_PARAMETERS
 

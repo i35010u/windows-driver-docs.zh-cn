@@ -1,15 +1,14 @@
 ---
 title: Windows 内核模式即插即用管理器
 description: Windows 内核模式即插即用管理器
-ms.assetid: 43d06dbe-da66-4103-8be3-f27ff075a1b4
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 3d75abca0f5e3ca176ead9a39277538a7834110d
-ms.sourcegitcommit: 1690ad77580a2cfc47debb9751fd109a5991dd52
+ms.openlocfilehash: a19635c44f647520208a2b896b9a575fcb6ecb39
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92345957"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803721"
 ---
 # <a name="windows-kernel-mode-plug-and-play-manager"></a>Windows 内核模式即插即用管理器
 

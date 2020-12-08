@@ -1,16 +1,15 @@
 ---
 title: OID_NIC_SWITCH_VPORT_PARAMETERS
 description: 过量驱动程序可以获取 NIC 交换机上的虚拟端口 (VPort) 的参数，这些参数在支持单个根 i/o 虚拟化 (SR-IOV) 的网络适配器上创建。
-ms.assetid: B22C760E-F2B0-4774-A532-4044C679CD64
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_NIC_SWITCH_VPORT_PARAMETERS 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 463abaec2d6c48a126595f23e4e672f38f307b73
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: e2a1c05e6002882b9f46df928e2a05ba1d010ad9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106012"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803665"
 ---
 # <a name="oid_nic_switch_vport_parameters"></a>OID \_ NIC \_ SWITCH \_ VPORT \_ 参数
 
@@ -19,26 +18,26 @@ ms.locfileid: "90106012"
 
 过量驱动程序发出 oid \_ NIC SWITCH VPORT 参数的 oid 集请求 \_ \_ \_ ，以设置附加到网络适配器的 NIC 交换机的指定 VPORT 的配置参数。 这些 OID 集请求将颁发给网络适配器 PCI Express (PCIe) 物理功能 (PF) 的微型端口驱动程序。 对于支持 (SR-IOV) 接口的单个根 i/o 虚拟化的 PF 微型端口驱动程序，这些 OID 设置请求是必需的。
 
-[**Ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的**InformationBuffer**成员包含指向[**NDIS \_ NIC \_ 交换机 \_ VPORT \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_parameters)结构的指针。
+[**Ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的 **InformationBuffer** 成员包含指向 [**NDIS \_ NIC \_ 交换机 \_ VPORT \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_parameters)结构的指针。
 
-过量驱动程序通过将[**NDIS \_ NIC \_ SWITCH \_ VPort \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_parameters)结构的**VPortId**成员设置为与 VPort 关联的标识符来指定 OID 方法或 set 请求的 VPort。 过量驱动程序通过以下方式之一获取 VPort 标识符：
+过量驱动程序通过将 [**NDIS \_ NIC \_ SWITCH \_ VPort \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_parameters)结构的 **VPortId** 成员设置为与 VPort 关联的标识符来指定 OID 方法或 set 请求的 VPort。 过量驱动程序通过以下方式之一获取 VPort 标识符：
 
 -   从 Oid NIC 交换机的上一个 OID 方法请求 [ \_ \_ \_ 创建 \_ VPORT](oid-nic-switch-create-vport.md)。
 
 -   从 [oid \_ NIC \_ 交换机 \_ 枚举 \_ VPORTS](oid-nic-switch-enum-vports.md)的上一个 oid 方法请求开始。
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 OID \_ NIC \_ SWITCH \_ VPORT \_ 参数可用于 [oid 方法请求](#oid-method-requests) 或 [oid 设置请求](#oid-set-requests)。
 
 ### <a name="handling-oid-method-requests-of-oid_nic_switch_vport_parameters"></a><a href="" id="oid-method-requests"></a>处理 OID \_ NIC \_ SWITCH \_ VPORT \_ 参数的 oid 方法请求
 
-过量驱动程序发出 oid \_ NIC switch VPORT 参数的 oid 方法请求 \_ \_ \_ ，以查询附加到网络适配器的 NIC 交换机的 VPORT 的当前配置参数。 过量驱动程序通过将[**NDIS \_ NIC \_ SWITCH \_ VPort \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_parameters)结构的**VPortId**成员设置为 VPort 标识符来指定要查询的 VPort。
+过量驱动程序发出 oid \_ NIC switch VPORT 参数的 oid 方法请求 \_ \_ \_ ，以查询附加到网络适配器的 NIC 交换机的 VPORT 的当前配置参数。 过量驱动程序通过将 [**NDIS \_ NIC \_ SWITCH \_ VPort \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_parameters)结构的 **VPortId** 成员设置为 VPort 标识符来指定要查询的 VPort。
 
 NDIS 处理 \_ \_ \_ \_ 适用于微型端口驱动程序的 oid NIC 交换机 VPORT 参数的 oid 方法请求。 NDIS 返回从 [oid \_ nic \_ switch \_ CREATE \_ VPORT](oid-nic-switch-create-vport.md) 和 [OID \_ nic \_ 交换机 \_ 枚举 \_ VPORTS](oid-nic-switch-enum-vports.md)的以前 oid 请求获取的信息。
 
-成功从 OID 方法请求返回后， [**ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的**InformationBuffer**成员包含指向[**NDIS \_ NIC \_ 交换机 \_ VPORT \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_parameters)结构的指针。 此结构包含指定开关的配置参数。
+成功从 OID 方法请求返回后， [**ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的 **InformationBuffer** 成员包含指向 [**NDIS \_ NIC \_ 交换机 \_ VPORT \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_parameters)结构的指针。 此结构包含指定开关的配置参数。
 
 有关详细信息，请参阅 [查询虚拟端口的参数](./querying-the-parameters-of-a-virtual-port.md)。
 
@@ -48,13 +47,13 @@ NDIS 处理 \_ \_ \_ \_ 适用于微型端口驱动程序的 oid NIC 交换机 V
 
 只能更改 VPort 的配置参数的有限子集。 过量驱动程序通过设置 [**NDIS \_ NIC \_ 交换机 \_ VPORT \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_parameters) 结构的以下成员来指定要更改的参数：
 
-1.  **VPortId**成员设置为将更改其参数的 VPort 的标识符。
+1.  **VPortId** 成员设置为将更改其参数的 VPort 的标识符。
 
-2.  在 \_ \_ flags 成员中设置相应的 NDIS NIC 交换机 \_ VPORT \_ 参数 \_ *Xxx* \_ 更改**Flags**标志。 仅当在 Ntddndis 中定义了相应的 NDIS nic 交换机参数 Xxx changed 标志时，才能更改[**NDIS \_ nic \_ 交换机 \_ VPORT \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_parameters)结构的成员 \_ \_ \_ \_ *Xxx* \_ 。
+2.  在 \_ \_ flags 成员中设置相应的 NDIS NIC 交换机 \_ VPORT \_ 参数 \_ *Xxx* \_ 更改 **Flags** 标志。 仅当在 Ntddndis 中定义了相应的 NDIS nic 交换机参数 Xxx changed 标志时，才能更改 [**NDIS \_ nic \_ 交换机 \_ VPORT \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_parameters)结构的成员 \_ \_ \_ \_ *Xxx* \_ 。
 
 3.  [**NDIS \_ NIC \_ 交换机 \_ VPORT \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_parameters)结构的相应成员是用要更改的 VPORT 配置参数设置的。
 
-当 PF 微型端口驱动程序接收 OID NIC SWITCH VPORT 参数的 OID 集请求后 \_ \_ \_ \_ ，该驱动程序将用配置参数配置硬件。 此驱动程序只能在 \_ \_ \_ \_ \_ *Xxx* \_ [**ndis \_ nic \_ 交换机 \_ VPORT \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_parameters)结构的**flags**成员中更改由 ndis nic 交换机 VPORT 参数 Xxx 更改的标志。
+当 PF 微型端口驱动程序接收 OID NIC SWITCH VPORT 参数的 OID 集请求后 \_ \_ \_ \_ ，该驱动程序将用配置参数配置硬件。 此驱动程序只能在 \_ \_ \_ \_ \_ *Xxx* \_ [**ndis \_ nic \_ 交换机 \_ VPORT \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_parameters)结构的 **flags** 成员中更改由 ndis nic 交换机 VPORT 参数 Xxx 更改的标志。
 
 有关详细信息，请参阅 [设置虚拟端口的参数](./setting-the-parameters-of-a-virtual-port.md)。
 

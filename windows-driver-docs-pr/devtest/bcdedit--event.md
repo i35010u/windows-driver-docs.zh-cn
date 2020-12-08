@@ -1,7 +1,6 @@
 ---
-title: BCDEdit/event
+title: BCDEdit /event
 description: /Event 命令启用或禁用指定启动项的远程事件日志记录。
-ms.assetid: 7bb5ad1b-d2fa-4697-b518-9aed0cbeacce
 ms.date: 09/23/2020
 keywords:
 - BCDEdit/event 驱动程序开发工具
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: edfe07007159bbf09b17517c485a9d9125b98b80
-ms.sourcegitcommit: f2fbb6e54e085e9329288cee49860fe380be9c4c
+ms.openlocfilehash: 1131c1526b8d02b69f69852c248f770521e5c80b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91778966"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803591"
 ---
-<a name="bcdedit-event"></a>BCDEdit/event
+<a name="bcdedit-event"></a>BCDEdit /event
 ============
 
-**/Event**启用或禁用指定启动项的远程事件日志记录。
+**/Event** 启用或禁用指定启动项的远程事件日志记录。
 
 ``` syntax
 bcdedit /event [{ID}] { on | off }

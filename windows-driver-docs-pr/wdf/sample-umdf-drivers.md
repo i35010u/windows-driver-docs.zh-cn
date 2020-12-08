@@ -1,19 +1,18 @@
 ---
 title: 示例 UMDF 驱动程序
-description: 本主题列出了可用的用户模式驱动程序框架 (UMDF) 示例驱动程序，可从 GitHub 上的 Windows 驱动程序示例存储库下载该驱动程序。
-ms.assetid: 9C8576E1-4CC7-4A7E-A822-C6BBFDC7482D
+description: 本主题列出了可从 GitHub 上的 Windows 驱动程序示例存储库中下载的 User-Mode Driver Framework (UMDF) 示例驱动程序。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 866a0950972fab08d57a8728bb0c699229b33001
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 964864f76cb52baea11e7fe82f8d11547efe3153
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91733605"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96804335"
 ---
 # <a name="sample-umdf-drivers"></a>示例 UMDF 驱动程序
 
-本主题列出了可以在 [Microsoft 示例门户](/samples/browse/?products=windows-wdk)上浏览和下载 (UMDF) 示例驱动程序的可用用户模式驱动程序框架。 还可以在 GitHub 上克隆、分叉或下载 [Windows-driver-samples](https://github.com/Microsoft/Windows-driver-samples) 存储库。
+本主题列出了可在 [Microsoft 示例门户](/samples/browse/?products=windows-wdk)上浏览和下载的 User-Mode Driver FRAMEWORK (UMDF) 示例驱动程序。 还可以在 GitHub 上克隆、分叉或下载 [Windows-driver-samples](https://github.com/Microsoft/Windows-driver-samples) 存储库。
 
 旧版本的驱动程序示例存档在[Windows 8.1 驱动程序示例](https://go.microsoft.com/fwlink/p/?LinkId=618052)中
 

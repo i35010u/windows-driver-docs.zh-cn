@@ -1,7 +1,6 @@
 ---
 title: DEVPKEY_DeviceClass_Exclusive
 description: DEVPKEY_DeviceClass_Exclusive
-ms.assetid: a05ada91-6a6f-4253-aca5-0740294a5c24
 keywords:
 - DEVPKEY_DeviceClass_Exclusive 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 13f013dafa0b8f2ccc70a16d2e9828915d86b6df
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 81feb37e6d2fc3a1180be8587f7e0d9fe27247e9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90714924"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96804112"
 ---
 # <a name="devpkey_deviceclass_exclusive"></a>DEVPKEY_DeviceClass_Exclusive
 
@@ -66,7 +65,7 @@ DEVPKEY_DeviceClass_Exclusive 设备属性表示一个布尔型标志，该标�
 <a name="remarks"></a>备注
 -------
 
-安装应用程序安装设备安装程序类时，可以设置 DEVPKEY_DeviceClass_Exclusive 的值。 有关如何安装设备安装程序类和设置此属性的信息，请参阅[**Inf ClassInstall32 部分**](./inf-classinstall32-section.md)和有关在[**inf AddReg 指令**](./inf-addreg-directive.md)的 "特殊的*值-名称*关键字" 一节中**提供的注册表值的**信息。
+安装应用程序安装设备安装程序类时，可以设置 DEVPKEY_DeviceClass_Exclusive 的值。 有关如何安装设备安装程序类和设置此属性的信息，请参阅 [**Inf ClassInstall32 部分**](./inf-classinstall32-section.md)和有关在 [**inf AddReg 指令**](./inf-addreg-directive.md)的 "特殊的 *值-名称* 关键字" 一节中 **提供的注册表值的** 信息。
 
 可以调用 [**SetupDiGetClassProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdigetclasspropertyw) 或 [**SetupDiGetClassPropertyEx**](/windows/win32/api/setupapi/nf-setupapi-setupdigetclasspropertyexw) 来检索 DEVPKEY_DeviceClass_Exclusive 的值。
 

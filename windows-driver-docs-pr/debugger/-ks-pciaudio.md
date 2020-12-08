@@ -1,9 +1,8 @@
 ---
-title: ks.pciaudio
-description: Ks.pciaudio 扩展显示当前附加到 PortCls FDOs 的列表。
-ms.assetid: 30d74f14-1cff-4b18-996a-8c91c20edebe
+title: ks. pciaudio
+description: Pciaudio 扩展显示当前附加到 PortCls 的 FDOs 列表。
 keywords:
-- ks.pciaudio Windows 调试
+- pciaudio Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,41 +11,41 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: b73db84e86a5829cb22b763fd79cceb31f620887
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ae1e42eee4b0e4f562f65367c656b8ce6bbc7151
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63336222"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96804063"
 ---
 # <a name="kspciaudio"></a>!ks.pciaudio
 
 
-**！ Ks.pciaudio**扩展显示当前附加到 PortCls FDOs 的列表。
+**Pciaudio** 扩展显示当前附加到 PortCls 的 FDOs 列表。
 
 ```dbgcmd
 !ks.pciaudio [Options] [Level]  
 ```
 
-## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>参数
+## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>Parameters
 
 
-<span id="_______Options______"></span><span id="_______options______"></span><span id="_______OPTIONS______"></span> *选项*   
-可选。 指定要显示的信息类型。 *选项*可以是以下位的任意组合。
+<span id="_______Options______"></span><span id="_______options______"></span><span id="_______OPTIONS______"></span>*选项*   
+可选。 指定要显示的信息的类型。 *选项* 可以是以下位的任意组合。
 
-<span id="Bit_0__0x1_"></span><span id="bit_0__0x1_"></span><span id="BIT_0__0X1_"></span>位 0 (0x1)  
+<span id="Bit_0__0x1_"></span><span id="bit_0__0x1_"></span><span id="BIT_0__0X1_"></span>位 0 (0x1)   
 显示正在运行的流的列表。
 
-<span id="Bit_1__0x2_"></span><span id="bit_1__0x2_"></span><span id="BIT_1__0X2_"></span>位 1 (0x2)  
-显示列表的所有流。
+<span id="Bit_1__0x2_"></span><span id="bit_1__0x2_"></span><span id="BIT_1__0X2_"></span>位 1 (0x2)   
+显示列出所有流。
 
-<span id="Bit_3__0x4_"></span><span id="bit_3__0x4_"></span><span id="BIT_3__0X4_"></span>位 3 (0x4)  
-显示输出流。 *级别*具有仅在设置此位时的含义。
+<span id="Bit_3__0x4_"></span><span id="bit_3__0x4_"></span><span id="BIT_3__0X4_"></span>第 3 (0x4)   
+输出显示的流。 只有在设置了此位时，*级别* 才有意义。
 
-<span id="_______Level______"></span><span id="_______level______"></span><span id="_______LEVEL______"></span> *级别*   
-可选的且仅当在中设置位 3 适用*选项*。 级别都与用于相同[ **！ ks.dump**](-ks-dump.md)。
+<span id="_______Level______"></span><span id="_______level______"></span><span id="_______LEVEL______"></span>*级别*   
+可选，并且仅当在 *选项* 中设置位3时才适用。 级别与 [**！ ks**](-ks-dump.md)相同。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 <table>
 <colgroup>
@@ -67,14 +66,14 @@ ms.locfileid: "63336222"
 
  
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-有关详细信息，请参阅[流式处理的内核调试](kernel-streaming-debugging.md)。
+有关详细信息，请参阅 [内核流调试](kernel-streaming-debugging.md)。
 
 <a name="remarks"></a>备注
 -------
 
-下面是输出的示例 **！ ks.pciaudio**:
+下面是 **pciaudio** 的输出示例：
 
 ```dbgcmd
 kd> !ks.pciaudio

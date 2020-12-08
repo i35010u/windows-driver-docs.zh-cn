@@ -1,15 +1,14 @@
 ---
 title: SerCx2 I/O 事务
 description: SerCx2 简化了读取 (的处理 IRP_MJ_READ) 并 (IRP_MJ_WRITE 串行控制器驱动程序的) 请求。
-ms.assetid: C1B3F059-A445-4224-8316-DBF194CE6A80
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a6c33a2768ffec969422d6b0c9f18345e2b36b92
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: f7f41e1cc25fe80e9066263ed735be20a2f3c2ff
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105084"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96804967"
 ---
 # <a name="sercx2-io-transactions"></a>SerCx2 I/O 事务
 
@@ -25,7 +24,7 @@ SerCx2 简化了对串行控制器驱动程序的读取 ([**irp \_ mj \_ read**]
 <thead>
 <tr class="header">
 <th>主题</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>

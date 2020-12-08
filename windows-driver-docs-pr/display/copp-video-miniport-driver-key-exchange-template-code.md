@@ -1,17 +1,16 @@
 ---
 title: COPP 视频微型端口驱动程序密钥交换模板代码
 description: COPP 视频微型端口驱动程序密钥交换模板代码
-ms.assetid: 5c0de949-e460-4f01-a762-706eac3abee0
 keywords:
 - 密钥交换 WDK COPP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cffbc50947b0358709dd9800c2c8678e752a22f9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e3e8ccdebbc05f14a09f825a616f9fc3925a6b17
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331343"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96804193"
 ---
 # <a name="copp-video-miniport-driver-key-exchange-template-code"></a>COPP 视频微型端口驱动程序密钥交换模板代码
 
@@ -19,9 +18,9 @@ ms.locfileid: "63331343"
 ## <span id="ddk_copp_video_miniport_driver_key_exchange_template_code_gg"></span><span id="DDK_COPP_VIDEO_MINIPORT_DRIVER_KEY_EXCHANGE_TEMPLATE_CODE_GG"></span>
 
 
-本部分仅适用于 Windows Server 2003 SP1 和更高版本，和 Windows XP SP2 及更高版本。
+本部分仅适用于 Windows Server 2003 SP1 及更高版本以及 Windows XP SP2 及更高版本。
 
-使用下面的代码示例检索数字证书的图形硬件用于 COPP DirectX VA 设备对象。
+使用以下示例代码检索 COPP DirectX VA 设备对象的图形硬件使用的数字证书。
 
 ```cpp
 VP_STATUS

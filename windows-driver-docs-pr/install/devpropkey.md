@@ -1,7 +1,6 @@
 ---
 title: DEVPROPKEY 结构
 description: 在 Windows Vista 和更高版本的 Windows 中，DEVPROPKEY 结构表示统一设备属性模型中设备属性的设备属性键。
-ms.assetid: 98986d43-84c0-44e6-83f9-08e872ea5e6d
 keywords:
 - DEVPROPKEY 结构设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 8d38055cc0474b8aea6af6c3e2391f0677058141
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 887296b6209141279b1811e68724a67bda6fb77b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89095749"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803557"
 ---
 # <a name="devpropkey-structure"></a>DEVPROPKEY 结构
 
@@ -32,7 +31,7 @@ ms.locfileid: "89095749"
 ```ManagedCPlusPlus
 struct DEVPROPKEY {
   DEVPROPGUID fmtid;
-  DEVPROPID   pid;
+  DEVPROPID   pid;
 };
 ```
 
@@ -62,7 +61,7 @@ typedef ULONG DEVPROPID, *PDEVPROPID;
 
 DEVPROPKEY 结构是 [统一设备属性模型](./unified-device-property-model--windows-vista-and-later-.md)的一部分。
 
-系统提供的设备属性键的基本集是在 *Devpkey*中定义的。
+系统提供的设备属性键的基本集是在 *Devpkey* 中定义的。
 
 [**DEFINE \_ DEVPROPKEY**](./define-devpropkey.md)宏创建表示设备属性键的 DEVPROPKEY 结构的实例。
 
@@ -82,7 +81,7 @@ DEVPROPKEY 结构是 [统一设备属性模型](./unified-device-property-model-
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**定义 \_ DEVPROPKEY**](./define-devpropkey.md)

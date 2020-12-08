@@ -1,15 +1,14 @@
 ---
 title: 使用 SPB I/O 请求接口
 description: 从 Windows 8 开始，SPB framework 扩展 (SpbCx) 是系统提供的组件，它支持 SPB i/o 请求接口。
-ms.assetid: 0A752413-FA0B-4C26-BF6D-19033E07095E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4072eb3737d809eab4f383a68d335e989066f3fc
-ms.sourcegitcommit: c766ab74e32eb44795cbbd1a4f352d3a6a9adc14
+ms.openlocfilehash: 22ea6a84717e01e63c4f6f58db066cd1430ed67a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89389571"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96804823"
 ---
 # <a name="using-the-spb-io-request-interface"></a>使用 SPB I/O 请求接口
 

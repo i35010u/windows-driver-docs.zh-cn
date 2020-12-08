@@ -1,26 +1,25 @@
 ---
 title: 使用 TmXxx 例程
 description: 使用 TmXxx 例程
-ms.assetid: 8bc763e9-e67c-4810-9901-e5dc1a1cfd0c
 keywords:
 - 内核事务管理器 WDK，TmXxx 例程
 - KTM WDK，TmXxx 例程
 - TmXxx 例程，WDK KTM
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 14f0166cee703b24adc35e914034ad8766ae2fd3
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 53d681cb21c6d0ac20c6fd450f867626ce5c0517
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89185775"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803741"
 ---
 # <a name="using-tmxxx-routines"></a>使用 TmXxx 例程
 
 
-大多数 [KTM 例程](/windows-hardware/drivers/ddi/index) 使用 **Zw*Xxx * * * 的命名格式。 这些例程基于处理程序。 也就是说，其输入或输出参数中至少有一个是 KTM 对象的句柄。
+大多数 [KTM 例程](/windows-hardware/drivers/ddi/index) 使用 **Zw* Xxx * * * 的命名格式。 这些例程基于处理程序。 也就是说，其输入或输出参数中至少有一个是 KTM 对象的句柄。
 
-KTM 还提供了较少数量的例程，这些例程使用的命名格式为 **Tm*Xxx * * *。 这些例程是基于指针的。 其中至少有一个输入或输出参数是指向 KTM 对象的指针。
+KTM 还提供了较少数量的例程，这些例程使用的命名格式为 **Tm* Xxx * * *。 这些例程是基于指针的。 其中至少有一个输入或输出参数是指向 KTM 对象的指针。
 
 某些 **Tm * xxx*** 例程重复 **Zw * xxx*** 例程。 其他 **Tm * xxx*** 例程没有 **Zw * xxx*** 等效项。
 

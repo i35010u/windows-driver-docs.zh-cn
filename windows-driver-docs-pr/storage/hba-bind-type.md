@@ -1,15 +1,14 @@
 ---
 title: HBA \_ 绑定 \_ 类型
 description: HBA \_ 绑定 \_ 类型
-ms.assetid: a5388574-f48a-4bdc-9ffe-408fa6de1eeb
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 8150404a89fa3ff8f3f167d9fe776df3270b6c4a
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: dc4bff27148e040efe9dec78e4f1e892cae54dd4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105082"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96804495"
 ---
 # <a name="hba_bind_type"></a>HBA \_ 绑定 \_ 类型
 

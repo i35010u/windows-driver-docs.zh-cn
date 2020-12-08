@@ -1,15 +1,14 @@
 ---
 title: SerCx2 I/O 事务概述
 description: SerCx2 通过向串行控制器驱动程序发出一个或多个 i/o 事务来处理来自客户端的读取或写入请求。
-ms.assetid: 04DDFE53-4855-4029-BE1E-9D184B02A998
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ddd770064516d31ea99b8cbba14f99a9d4e8c6f8
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: cca74013c93515c34097ab0686ef20d826ba286f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89186957"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96805003"
 ---
 # <a name="overview-of-sercx2-io-transactions"></a>SerCx2 I/O 事务概述
 
@@ -27,7 +26,7 @@ SerCx2 定义了以下三种常规类型的 i/o 事务：
 
 -   PIO
 -   系统 DMA
--   “自定义”
+-   自定义
 
 所有串行控制器驱动程序都必须支持使用 PIO 传输数据的 i/o 事务。 串行控制器驱动程序还可以支持使用系统 DMA 或自定义数据传输机制的 i/o 事务，具体取决于串行控制器和相关硬件的功能。 驱动程序可以支持系统 DMA 事务或自定义事务，但不能同时支持两者。
 

@@ -1,19 +1,18 @@
 ---
 title: 初始化 SAN 服务提供程序
 description: 初始化 SAN 服务提供程序
-ms.assetid: 73e923e9-c7bd-4d46-9d21-fc1392a79c65
 keywords:
 - Windows 套接字直通 WDK，初始化 SAN 使用情况
 - 正在初始化 SAN 使用情况
 - SAN 服务提供商 WDK，初始化
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a90cc80b4c426f88c5cfd42e7cba2ac30a0cff67
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: b2a3f488a7192a070c30723b7abf0f8edd7109bf
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89217282"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803703"
 ---
 # <a name="initializing-a-san-service-provider"></a>初始化 SAN 服务提供程序
 

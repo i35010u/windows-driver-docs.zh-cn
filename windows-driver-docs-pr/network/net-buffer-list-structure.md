@@ -1,7 +1,6 @@
 ---
 title: NET_BUFFER_LIST 结构
 description: NET_BUFFER_LIST 结构
-ms.assetid: f7f19e48-cb63-458d-b175-6f99080e4cdf
 keywords:
 - NET_BUFFER_LIST
 - 网络数据 WDK，结构
@@ -9,12 +8,12 @@ keywords:
 - 包 WDK 网络，数据结构
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ebc8e5646a7367b5f96f9d6754af85c631cdd589
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 3cefaeae0364a615483723eec9b59e330558d1ba
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89217251"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96805205"
 ---
 # <a name="net_buffer_list-structure"></a>网络 \_ 缓冲区 \_ 列表结构
 
@@ -28,7 +27,7 @@ ms.locfileid: "89217251"
 
 ![阐释网络 \- 缓冲区列表结构中的字段的关系图 \-](images/netbufferlist.png)
 
-NET \_ buffer \_ list 结构包含**NetBufferListHeader**成员中的[**网络 \_ 缓冲区 \_ 列表 \_ 标头**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list_header)结构。 网络 \_ 缓冲区 \_ 列表 \_ 标头结构包含**NetBufferListData**成员中的[**网络 \_ 缓冲区 \_ 列表 \_ 数据**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list_data)结构。 应使用 NDIS 宏来访问 NET \_ BUFFER \_ LIST 结构成员。 有关这些宏的详细信息，请参阅 [**NET \_ BUFFER \_ LIST**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list) structure 参考页。
+NET \_ buffer \_ list 结构包含 **NetBufferListHeader** 成员中的 [**网络 \_ 缓冲区 \_ 列表 \_ 标头**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list_header)结构。 网络 \_ 缓冲区 \_ 列表 \_ 标头结构包含 **NetBufferListData** 成员中的 [**网络 \_ 缓冲区 \_ 列表 \_ 数据**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list_data)结构。 应使用 NDIS 宏来访问 NET \_ BUFFER \_ LIST 结构成员。 有关这些宏的详细信息，请参阅 [**NET \_ BUFFER \_ LIST**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list) structure 参考页。
 
 某些成员仅由 NDIS 使用。 以下列表中定义了驱动程序最有可能使用的成员：
 
@@ -68,7 +67,7 @@ NDIS 使用 **SourceHandle** 将网络 \_ 缓冲区 \_ 列表结构返回到发�
 指定此网络 \_ 缓冲区列表结构的网络数据操作的最终完成状态 \_ 。 微型端口驱动程序在完成发送操作之前写入此值。
 
 <a href="" id="netbufferlistinfo"></a>**NetBufferListInfo**  
-指定列表中所有[**网络 \_ 缓冲区**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer)结构通用的[**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)结构信息。 此信息通常称为 "带外 (OOB) 数据"。
+指定列表中所有 [**网络 \_ 缓冲区**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer)结构通用的 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)结构信息。 此信息通常称为 "带外 (OOB) 数据"。
 
 <a href="" id="next"></a>**一个**  
 指定一个指针，该指针指向 \_ \_ 网络 \_ 缓冲区列表结构的链接列表中的下一个网络缓冲区列表结构 \_ 。 如果网络 \_ 缓冲区 \_ 列表结构是列表中的最后一个结构，则该成员为 **NULL**。
@@ -76,7 +75,7 @@ NDIS 使用 **SourceHandle** 将网络 \_ 缓冲区 \_ 列表结构返回到发�
 <a href="" id="firstnetbuffer"></a>**FirstNetBuffer**  
 指定一个指针，该指针指向 \_ \_ 与此网络 \_ 缓冲区列表结构关联的网络缓冲区结构的链接列表中的第一个网络缓冲区结构 \_ 。
 
-**注释**  **上下文** 是指向 [**网络 \_ 缓冲区 \_ 列表 \_ 上下文**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list_context) 结构的指针。 NDIS 提供宏和函数以便在 **上下文** 中处理数据。 有关网络 \_ 缓冲区 \_ 列表上下文结构的详细信息 \_ ，请参阅 [网络 \_ 缓冲区 \_ 列表 \_ 上下文结构](net-buffer-list-context-structure.md)。
+**注释**  **上下文** 是指向 [**网络 \_ 缓冲区 \_ 列表 \_ 上下文**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list_context) 结构的指针。 NDIS 提供宏和函数以便在 **上下文** 中处理数据。 有关网络 \_ 缓冲区 \_ 列表上下文结构的详细信息 \_ ，请参阅 [网络 \_ 缓冲区 \_ 列表 \_ 上下文结构](net-buffer-list-context-structure.md)。
 
  
 

@@ -1,18 +1,17 @@
 ---
-title: 示例 6 停止跟踪会话
-description: 示例 6 停止跟踪会话
-ms.assetid: a8520531-bebb-4334-9dc3-d50f4a851e7e
+title: 示例6停止跟踪会话
+description: 示例6停止跟踪会话
 keywords:
 - 跟踪会话 WDK，停止
 - 停止跟踪会话
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4aef4eae6325a2827594a5626d98ec15dadb60d2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 28320397e343cf0c124096402dafb22725ea7494
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63344654"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96804287"
 ---
 # <a name="example-6-stopping-a-trace-session"></a>示例 6：停止跟踪会话
 
@@ -26,7 +25,7 @@ ms.locfileid: "63344654"
 tracelog -stop MyTrace
 ```
 
-在响应中，跟踪日志显示跟踪会话的属性。
+在响应中，Tracelog 显示跟踪会话的属性。
 
 ```
 Operation Status:       0L      The operation completed successfully.
@@ -48,7 +47,7 @@ Log File Mode:          Sequential
 Log Filename:           C:\Tracing\MyTrace.etl
 ```
 
-若要验证是否已停止跟踪会话，请使用列表 (**tracelog-l**) 或查询 (**tracelog-q**) 命令。
+若要验证是否已停止跟踪会话，请使用列表 (**tracelog-l**) 或 query (**tracelog**) 命令。
 
  
 

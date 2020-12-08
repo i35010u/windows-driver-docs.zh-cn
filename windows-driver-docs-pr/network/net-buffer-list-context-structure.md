@@ -1,7 +1,6 @@
 ---
 title: NET_BUFFER_LIST_CONTEXT 结构
 description: NET_BUFFER_LIST_CONTEXT 结构
-ms.assetid: 45be8503-2c5f-46e6-9fc3-b1b3c42f0d91
 keywords:
 - NET_BUFFER_LIST_CONTEXT
 - 网络数据 WDK，结构
@@ -13,12 +12,12 @@ keywords:
 - 上下文 da
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8499a1d4b11a9c6a8010bad7264c5cc0409d6813
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: c1dd253d2acce75bc2d88f3ac518d8b126ef3e01
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89213867"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96805215"
 ---
 # <a name="net_buffer_list_context-structure"></a>网络 \_ 缓冲区 \_ 列表 \_ 上下文结构
 
@@ -32,7 +31,7 @@ NDIS 驱动程序使用 [**网络 \_ 缓冲区 \_ 列表 \_ 上下文**](/window
 
 ![阐释网络 \- 缓冲区 \- 列表 \- 上下文结构中的字段的关系图](images/netbufferlistcontext.png)
 
-[**网络 \_ 缓冲区 \_ 列表 \_ 上下文**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list_context)结构包含包含上下文数据的**ContextData**成员。 此数据可以是驱动程序需要用于 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list) 结构的任何上下文信息。
+[**网络 \_ 缓冲区 \_ 列表 \_ 上下文**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list_context)结构包含包含上下文数据的 **ContextData** 成员。 此数据可以是驱动程序需要用于 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list) 结构的任何上下文信息。
 
 驱动程序应使用以下 NDIS 宏和函数来访问和操作网络 \_ 缓冲区 \_ 列表上下文结构中的成员 \_ ：
 

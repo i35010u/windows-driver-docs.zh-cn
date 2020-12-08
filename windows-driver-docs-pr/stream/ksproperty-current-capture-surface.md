@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ 当前 \_ 捕获 \_ 图面
 description: KSPROPERTY \_ 当前 \_ 捕获 \_ SURFACE 属性获取或设置给定 pin 使用的捕获内存类型。若要使用 VRAM 传输，捕获微型驱动程序必须支持此属性。
-ms.assetid: fcb07f74-d43a-4850-b8be-c349c92f9f9f
 keywords:
 - KSPROPERTY_CURRENT_CAPTURE_SURFACE 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: feeb20016386afca6a3a9655da325081a789ea73
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 4a700adb2ec3841d74eb10e0c758652cad1b02a3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102724"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96804353"
 ---
 # <a name="ksproperty_current_capture_surface"></a>KSPROPERTY \_ 当前 \_ 捕获 \_ 图面
 
@@ -85,7 +84,7 @@ KSPROPERTY \_ 当前 \_ 捕获 \_ SURFACE 返回状态 " \_ 成功" 以指示它
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**捕获 \_ 内存 \_ 分配 \_ 标志**](/windows-hardware/drivers/ddi/ksmedia/ne-ksmedia-capture_memory_allocation_flags)

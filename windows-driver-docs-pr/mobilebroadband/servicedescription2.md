@@ -1,15 +1,14 @@
 ---
 title: ServiceDescription2
 description: ServiceDescription2
-ms.assetid: 92de51be-dfd7-443b-987c-b4b364e1aaa6
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9d21ece95ed9cf34d6997cc130e8e99e8101d5cd
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: 3b0bfa3694ef501fd052324d597729eda882a4c7
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89403446"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96804105"
 ---
 # <a name="servicedescription2"></a>ServiceDescription2
 
@@ -52,7 +51,7 @@ ms.locfileid: "89403446"
 <thead>
 <tr class="header">
 <th>元素</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>

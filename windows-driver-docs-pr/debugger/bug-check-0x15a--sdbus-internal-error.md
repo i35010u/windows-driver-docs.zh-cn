@@ -1,9 +1,8 @@
 ---
-title: Bug Check 0x15A SDBUS_INTERNAL_ERROR
-description: SDBUS_INTERNAL_ERROR bug 检查具有 0x0000015A 值。 这表示 SD 附加设备上发生了不可恢复的硬件故障。
-ms.assetid: C5FBE617-DADD-452C-A1BC-A0DE228FF2DE
+title: Bug 检查 0x15A SDBUS_INTERNAL_ERROR
+description: SDBUS_INTERNAL_ERROR bug 检查的值为0x0000015A。 这表示 SD 连接的设备上发生了不可恢复的硬件故障。
 keywords:
-- Bug Check 0x15A SDBUS_INTERNAL_ERROR
+- Bug 检查 0x15A SDBUS_INTERNAL_ERROR
 - SDBUS_INTERNAL_ERROR
 ms.date: 05/23/2017
 topic_type:
@@ -13,31 +12,31 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 3f5ef8c28ad95e0afb9a38fc5d1d4fb507ee8543
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: 76d546829214a3350435a696a4547b16d52ead8c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67520022"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803987"
 ---
-# <a name="bug-check-0x15a-sdbusinternalerror"></a>Bug 检查 0x15A：SDBUS\_INTERNAL\_ERROR
+# <a name="bug-check-0x15a-sdbus_internal_error"></a>Bug 检查0x15A： SDBUS \_ 内部 \_ 错误
 
 
-SDBUS\_内部\_错误 bug 检查的值为 0x0000015A。 这表示 SD 附加设备上发生了不可恢复的硬件故障。
+SDBUS \_ 内部 \_ 错误 bug 检查的值为0x0000015A。 这表示 SD 连接的设备上发生了不可恢复的硬件故障。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题面向程序员。 如果您是在使用计算机时收到蓝屏错误代码的客户，请参阅[蓝屏错误疑难解答](https://www.windows.com/stopcode)。
 
 
-## <a name="sdbusinternalerror-parameters"></a>SDBUS\_内部\_错误参数
+## <a name="sdbus_internal_error-parameters"></a>SDBUS \_ 内部 \_ 错误参数
 
 
 | 参数 | 描述                                                    |
 |-----------|----------------------------------------------------------------|
-| 1         | 指向内部导致失败的 SD 工作数据包 |
-| 2         | 指针的控制器套接字信息                      |
-| 3         | 指向 SD 请求数据包发送到总线驱动程序   |
-| 4         | 保留                                                       |
+| 1         | 指向导致故障的内部 SD 工作数据包的指针 |
+| 2         | 指针控制器套接字信息                      |
+| 3         | 指向向下发送到总线驱动程序的 SD 请求数据包的指针   |
+| 4         | 预留                                                       |
 
  
 

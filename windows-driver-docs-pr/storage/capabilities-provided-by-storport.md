@@ -1,15 +1,14 @@
 ---
 title: Storport 提供的功能
 description: Storport 提供的功能
-ms.assetid: 30b4d2e4-2004-4d71-8c91-f066e52dd256
 ms.date: 10/08/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: b07e7d11db1826811f5636fd2e819a4a6fa1466c
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 0633e05de18ddbda907d6d251faa3f433390640c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89191324"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96804743"
 ---
 # <a name="capabilities-provided-by-storport"></a>Storport 提供的功能
 
@@ -57,6 +56,6 @@ Storport 通过 Storport 库例程向微型端口驱动程序提供服务。 微
 
 - Storport 微型端口驱动程序不初始化驱动程序对象中的调度入口点。 当微型端口驱动程序调用 [**StorPortInitialize**](/windows-hardware/drivers/ddi/storport/nf-storport-storportinitialize)时，Storport 驱动程序会代表微型端口驱动程序执行此功能。
 
-- Storport 微型端口驱动程序不使用 **HalTranslateBusAddress**将与总线相关的地址转换为逻辑地址。 Storport 微型端口驱动程序通过调用 [**StorPortGetDeviceBase**](/windows-hardware/drivers/ddi/storport/nf-storport-storportgetdevicebase)来实现此目的。
+- Storport 微型端口驱动程序不使用 **HalTranslateBusAddress** 将与总线相关的地址转换为逻辑地址。 Storport 微型端口驱动程序通过调用 [**StorPortGetDeviceBase**](/windows-hardware/drivers/ddi/storport/nf-storport-storportgetdevicebase)来实现此目的。
 
 有关 Storport 可用于 Storport 微型端口驱动程序的库例程的完整列表，请参阅 [Storport 驱动程序支持例程](storport-driver-support-routines.md)。

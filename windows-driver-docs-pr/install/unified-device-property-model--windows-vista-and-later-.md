@@ -1,22 +1,21 @@
 ---
 title: 统一的设备属性模型
 description: 统一的设备属性模型
-ms.assetid: 51105f84-38d8-4005-a3fd-4beccc0a2a39
 keywords:
 - 设备属性 WDK 设备安装，统一设备属性模型
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dcae70c49dd2714a44b154b8d14d3ce0366b7c92
-ms.sourcegitcommit: a44ade167cdfb541cf1818e9f9e3726f23f90b66
+ms.openlocfilehash: cc8f3e72137e599dc33f3eadd804bc29c95a3dd8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94361599"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96804109"
 ---
 # <a name="unified-device-property-model"></a>统一的设备属性模型
 
 
-Windows Vista 和更高版本的 Windows 支持统一的设备属性模型，这反映了 *设备实例* 、 [设备安装程序类](./overview-of-device-setup-classes.md)、 [设备接口类](./overview-of-device-interface-classes.md)和 *设备接口* 的系统配置。 有关统一设备属性模型的信息，请参阅以下主题：
+Windows Vista 和更高版本的 Windows 支持统一的设备属性模型，这反映了 *设备实例*、 [设备安装程序类](./overview-of-device-setup-classes.md)、 [设备接口类](./overview-of-device-interface-classes.md)和 *设备接口* 的系统配置。 有关统一设备属性模型的信息，请参阅以下主题：
 
 -   [系统定义的设备属性](system-defined-device-properties2.md)
 

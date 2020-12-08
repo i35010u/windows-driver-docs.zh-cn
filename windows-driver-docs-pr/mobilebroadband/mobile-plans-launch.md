@@ -1,19 +1,18 @@
 ---
 title: 移动计划启动
 description: 本主题介绍移动计划程序的启动步骤。
-ms.assetid: 85671090-C577-4EE7-9113-974E56FF65EB
 keywords:
 - Windows Mobile 计划启动，移动计划启动移动运营商
 ms.date: 03/25/2019
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
-ms.openlocfilehash: 0b2be2c823404f61bc354d869c60ef840c639a80
-ms.sourcegitcommit: e6247811ff9a07070547af3d89705dae33a2f465
+ms.openlocfilehash: 8e865027073f00f3c61b1f9b31861bb001d0d140
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/23/2020
-ms.locfileid: "91026400"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96805321"
 ---
 # <a name="mobile-plans-launch"></a>移动计划启动
 
@@ -41,7 +40,7 @@ Mobile operatosr 最终负责接受实时的生产内服务。
 
 Microsoft 为移动运营商确立了一个双向实时站点升级流程，让 Microsoft 共同努力处理任何面向客户的生产事件。 实时站点问题是指不是服务或 Microsoft 服务标准操作的一部分的任何事件，导致 (或可能会导致) 中断或降低移动计划体验的质量。 移动计划体验中的关键方案包括：
 
-- 确保移动计划应用可以通过围墙园或 Wi-fi 或以太网连接访问 MO 直销门户。
+- 确保移动计划应用可以通过围墙园或 Wi-Fi 或以太网连接访问 MO 直销门户。
 - 确保用户始终可以使用购买的数据。
 
 此过程的目标是移动运营商和 Microsoft 同意以下各项：

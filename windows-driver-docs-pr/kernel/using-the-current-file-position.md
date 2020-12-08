@@ -1,7 +1,6 @@
 ---
 title: 使用当前文件位置
 description: 使用当前文件位置
-ms.assetid: d342d973-8fff-4d00-a275-114012c17727
 keywords:
 - 文件 WDK 内核
 - 文件对象 WDK 内核
@@ -12,12 +11,12 @@ keywords:
 - 文件位置 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 25434d841706bcd70741274f005fddab5dd0caca
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 043f7c627982943659aa70b1050a277d9dc1cb8a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89185597"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803755"
 ---
 # <a name="using-the-current-file-position"></a>使用当前文件位置
 

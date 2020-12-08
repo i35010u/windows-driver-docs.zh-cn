@@ -1,23 +1,22 @@
 ---
 title: 常规 x64 INF 信息
 description: 常规 x64 INF 信息
-ms.assetid: a1a96e8f-74d3-403d-994a-b21436d166d2
 keywords:
-- INF 文件 WDK 显示，64 位
-- 64 位 WDK 显示
+- INF 文件 WDK 显示，64位
+- 64位 WDK 显示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8d6460ae99f513dcf006f491efa871019739276a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2648e7b38323ab033229714cdbf6a9a371345e23
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63366333"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803925"
 ---
 # <a name="general-x64-inf-information"></a>常规 x64 INF 信息
 
 
-以下特定于 x64 的信息才可进行加载运行 64 位 Windows Vista 及更高版本的显示器驱动程序的 INF 文件：
+对于加载在64位 Windows Vista 和更高版本上运行的显示驱动程序的 INF 文件，需要以下 x64 特定信息：
 
 ```inf
 [DestinationDirs]

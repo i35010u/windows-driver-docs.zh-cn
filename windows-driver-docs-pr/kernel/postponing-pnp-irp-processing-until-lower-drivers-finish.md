@@ -1,7 +1,6 @@
 ---
 title: 将 PnP IRP 处理推迟到较低级驱动程序完成为止
 description: 将 PnP IRP 处理推迟到较低级驱动程序完成为止
-ms.assetid: 5bd9f3aa-30d5-4c45-afec-3e5ae0264f4a
 keywords:
 - PnP WDK 内核，延迟 IRP 处理
 - 即插即用 WDK 内核，推迟 IRP 处理
@@ -13,12 +12,12 @@ keywords:
 - IoCompletion 例程
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 63b8db09c266ab44c724dac2e202920f66266290
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 0f9d4371552d2cbbdf57ee7ddf1d29ab20681ed1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89187889"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803811"
 ---
 # <a name="postponing-pnp-irp-processing-until-lower-drivers-finish"></a>将 PnP IRP 处理推迟到较低级驱动程序完成为止
 
@@ -30,7 +29,7 @@ ms.locfileid: "89187889"
 
 [*IoCompletion*](/windows-hardware/drivers/ddi/wdm/nc-wdm-io_completion_routine)例程可以在 irql 调度 \_ 级别调用，但是函数或筛选器驱动程序可能需要在 irql = 被动级别处理 IRP \_ 。 若要 \_ 从 *IoCompletion* 例程返回到被动级别，驱动程序可以使用内核事件。 驱动程序将注册一个 *IoCompletion* 例程，用于设置内核模式事件，然后驱动程序在其 [*DispatchPnP*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch) 例程中等待事件。 设置事件后，较低的驱动程序已经完成 IRP，并允许该驱动程序处理 IRP。
 
-请注意，驱动程序不得使用此方法来等待较低的驱动程序完成 power IRP ([**IRP \_ MJ \_ power**](./irp-mj-power.md)) 。 等待*IoCompletion*例程中设置的[*DispatchPower*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)例程中的事件可能会导致死锁。 有关详细信息，请参阅 [传递 Power irp](passing-power-irps.md) 。
+请注意，驱动程序不得使用此方法来等待较低的驱动程序完成 power IRP ([**IRP \_ MJ \_ power**](./irp-mj-power.md)) 。 等待 *IoCompletion* 例程中设置的 [*DispatchPower*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)例程中的事件可能会导致死锁。 有关详细信息，请参阅 [传递 Power irp](passing-power-irps.md) 。
 
 下面两个图显示了驱动程序如何等待较低驱动程序完成 PnP IRP 的示例。 该示例显示了函数和总线驱动程序必须执行的操作，以及它们如何与 PnP 管理器和 i/o 管理器进行交互。
 
@@ -46,13 +45,13 @@ ms.locfileid: "89187889"
 
     函数驱动程序可以使用 [**IoCopyCurrentIrpStackLocationToNext**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocopycurrentirpstacklocationtonext) 设置堆栈位置。
 
-    在对 [**IoSetCompletionRoutine**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iosetcompletionroutine)的调用中，函数驱动程序将 *InvokeOnSuccess*、 *InvokeOnError*和 *InvokeOnCancel* 设置为 **TRUE** ，并将内核模式事件作为上下文参数的一部分传递。
+    在对 [**IoSetCompletionRoutine**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iosetcompletionroutine)的调用中，函数驱动程序将 *InvokeOnSuccess*、 *InvokeOnError* 和 *InvokeOnCancel* 设置为 **TRUE** ，并将内核模式事件作为上下文参数的一部分传递。
 
 4.  函数驱动程序在执行任何操作来处理 IRP 之前，会将 IRP 向下传递到 [**IoCallDriver**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver) 。
 
 5.  I/o 管理器通过调用该驱动程序的 *DispatchPnP* 例程将 IRP 发送到设备堆栈中的下一个较低的驱动程序。
 
-6.  在此示例中，下一个较低的驱动程序是设备堆栈（父总线驱动程序）中的最低驱动程序。 总线驱动程序执行其操作来启动设备。 如果与此 IRP 相关，则总线驱动程序将 ** &gt; IoStatus**设置为 irp **- &gt; IoStatus** ，并通过调用 [**IoCompleteRequest**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocompleterequest)来完成 irp。
+6.  在此示例中，下一个较低的驱动程序是设备堆栈（父总线驱动程序）中的最低驱动程序。 总线驱动程序执行其操作来启动设备。 如果与此 IRP 相关，则总线驱动程序将 **&gt; IoStatus** 设置为 irp **- &gt; IoStatus** ，并通过调用 [**IoCompleteRequest**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocompleterequest)来完成 irp。
 
     如果总线驱动程序调用其他驱动程序例程或将 i/o 发送到设备以便启动，则总线驱动程序不会在其 *DispatchPnP* 例程中完成 PnP IRP。 相反，它必须将 IRP 标记为 " [**也**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iomarkirppending) "，并在 \_ 其 *DispatchPnP* 例程中返回 "挂起" 状态。 稍后，驱动程序从另一个驱动程序例程（可能是 DPC 例程）调用 **IoCompleteRequest** 。
 
@@ -62,13 +61,13 @@ ms.locfileid: "89187889"
 
 以下说明与上图中的带圆圈数字相对应：
 
-1.  当总线驱动程序调用 **IoCompleteRequest**时，i/o 管理器会检查更高驱动程序的堆栈位置，并调用它找到的任何 *IoCompletion* 例程。 在此示例中，i/o 管理器查找并调用下一个更高版本的驱动程序（函数驱动程序）的 *IoCompletion* 例程。
+1.  当总线驱动程序调用 **IoCompleteRequest** 时，i/o 管理器会检查更高驱动程序的堆栈位置，并调用它找到的任何 *IoCompletion* 例程。 在此示例中，i/o 管理器查找并调用下一个更高版本的驱动程序（函数驱动程序）的 *IoCompletion* 例程。
 
 2.  函数驱动程序的 *IoCompletion* 例程设置上下文参数中提供的内核模式事件，并返回 \_ 所需的状态更多 \_ 处理 \_ 。
 
-    IoCompletion 例程必须返回状态 \_ \_ \_ ，以便阻止 i/o 管理器在此时调用由较高驱动程序设置的 *IoCompletion* 例程所需的状态。 *IoCompletion*例程使用此状态来 forestall 完成，因此其驱动程序的*DispatchPnP*例程可以重新获得控制权。 当此驱动程序的*DispatchPnP*例程完成 irp 时，i/o 管理器将继续为此 irp 调用更高的驱动程序*IoCompletion*例程。
+    IoCompletion 例程必须返回状态 \_ \_ \_ ，以便阻止 i/o 管理器在此时调用由较高驱动程序设置的 *IoCompletion* 例程所需的状态。 *IoCompletion* 例程使用此状态来 forestall 完成，因此其驱动程序的 *DispatchPnP* 例程可以重新获得控制权。 当此驱动程序的 *DispatchPnP* 例程完成 irp 时，i/o 管理器将继续为此 irp 调用更高的驱动程序 *IoCompletion* 例程。
 
-3.  I/o 管理器停止完成 IRP 并将控制返回到调用 **IoCompleteRequest**的例程，在此示例中为总线驱动程序的 *DispatchPnP* 例程。
+3.  I/o 管理器停止完成 IRP 并将控制返回到调用 **IoCompleteRequest** 的例程，在此示例中为总线驱动程序的 *DispatchPnP* 例程。
 
 4.  总线驱动程序从其 *DispatchPnP* 例程返回，状态指示其 IRP 处理的结果：状态为 \_ 成功或错误状态。
 
@@ -82,7 +81,7 @@ ms.locfileid: "89187889"
 
 7.  在较低的驱动程序成功完成 IRP 后，函数驱动程序将处理 IRP。
 
-    对于首先由父总线驱动程序处理的 Irp，总线驱动程序通常会在 ** &gt; IoStatus** 中设置成功状态，还可以选择在 **irp- &gt; IoStatus**中设置一个值。 函数和筛选器驱动程序将 **IoStatus** 中的值保留原样，除非它们失败。
+    对于首先由父总线驱动程序处理的 Irp，总线驱动程序通常会在 **&gt; IoStatus** 中设置成功状态，还可以选择在 **irp- &gt; IoStatus** 中设置一个值。 函数和筛选器驱动程序将 **IoStatus** 中的值保留原样，除非它们失败。
 
     函数驱动程序的 *DispatchPnP* 例程调用 **IOCOMPLETEREQUEST** 来完成 IRP。 I/o 管理器恢复 i/o 完成处理。 在此示例中，函数驱动程序之上没有筛选器驱动程序，因此没有其他要调用的 *IoCompletion* 例程。 当 **IoCompleteRequest** 将控制权返回给函数驱动程序 *DispatchPnP* 例程时， *DispatchPnP* 例程返回状态。
 

@@ -1,7 +1,6 @@
 ---
 title: KSCATEGORY_PREFERRED_MIDIOUT_DEVICE
 description: KSCATEGORY_PREFERRED_MIDIOUT_DEVICE
-ms.assetid: b3d93d21-d4f8-4f00-9947-034790f3f7b1
 keywords:
 - KSCATEGORY_PREFERRED_MIDIOUT_DEVICE 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: b31624b93aaadd31f8340db442900c885934c4f8
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 5b12985df999e82cc8ccd50bed990b85d050663c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89095681"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803555"
 ---
 # <a name="kscategory_preferred_midiout_device"></a>KSCATEGORY_PREFERRED_MIDIOUT_DEVICE
 

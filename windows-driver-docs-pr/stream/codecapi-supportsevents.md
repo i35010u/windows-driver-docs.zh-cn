@@ -1,15 +1,14 @@
 ---
 title: CODECAPI \_ SUPPORTSEVENTS
 description: CODECAPI \_ SUPPORTSEVENTS
-ms.assetid: feb6d110-9a9c-4e2b-bc19-259f80f3947a
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a82bfb3801870b513ed340f448de3eb509cd3568
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 59bb2fdad1a8d4d0785c73abc6625fce5d7537a2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89186349"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96804375"
 ---
 # <a name="codecapi_supportsevents"></a>CODECAPI \_ SUPPORTSEVENTS
 
@@ -53,7 +52,7 @@ CODECAPI \_ SUPPORTSEVENTS 属性用于指示微型驱动程序是否支持用�
 
 ### <a name="requirements"></a>要求
 
-**标头：** 在 *ksmedia*中声明。 包括 *ksmedia*。
+**标头：** 在 *ksmedia* 中声明。 包括 *ksmedia*。
 
 ### <a name="see-also"></a>另请参阅
 

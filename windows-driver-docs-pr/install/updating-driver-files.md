@@ -1,7 +1,6 @@
 ---
 title: 更新驱动程序文件
 description: 更新驱动程序文件
-ms.assetid: e232abd9-4e51-4fa7-a00c-f5e184706222
 keywords:
 - 硬件更新向导 WDK
 - 正在更新驱动程序文件
@@ -12,12 +11,12 @@ keywords:
 - 现有驱动程序更新 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 79b0547aceae7452e61d2814fc438868591ef0a2
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: ad8c96a2fe021e63ec07a177857cf31eac1fb161
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90714888"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96804099"
 ---
 # <a name="updating-driver-files"></a>更新驱动程序文件
 
@@ -27,9 +26,9 @@ ms.locfileid: "90714888"
 
 每当发生以下情况之一时，就会更新驱动程序：
 
--   将从**设备管理器**运行**硬件更新向导**。
+-   将从 **设备管理器** 运行 **硬件更新向导**。
 
-    **注意**   从 Windows Vista 开始，此向导现在命名为 "**更新驱动程序软件向导**"。
+    **注意**  从 Windows Vista 开始，此向导现在命名为 " **更新驱动程序软件向导**"。
 
      
 
@@ -54,15 +53,15 @@ ms.locfileid: "90714888"
 
 -   在可能的情况下，类安装程序和共同安装程序应避免依赖于是否提供初始安装或正在为已安装的设备更新驱动程序。
 
--   从 Windows XP 开始，将在[**DIF_REGISTER_COINSTALLERS**](./dif-register-coinstallers.md)传递之前删除注册表值**CoInstallers32**和**EnumPropPages32** 。 对于早期版本的操作系统版本，INF 文件必须显式删除这些值或对这些值执行 nonappending 修改操作。
+-   从 Windows XP 开始，将在 [**DIF_REGISTER_COINSTALLERS**](./dif-register-coinstallers.md)传递之前删除注册表值 **CoInstallers32** 和 **EnumPropPages32** 。 对于早期版本的操作系统版本，INF 文件必须显式删除这些值或对这些值执行 nonappending 修改操作。
 
--   从 Windows XP 开始，将在[**DIF_INSTALLDEVICE**](./dif-installdevice.md)传递之前删除注册表值**UpperFilters**和**LowerFilters** 。 对于早期版本的操作系统版本，INF 文件必须显式删除这些值或对这些值执行 nonappending 修改操作。
+-   从 Windows XP 开始，将在 [**DIF_INSTALLDEVICE**](./dif-installdevice.md)传递之前删除注册表值 **UpperFilters** 和 **LowerFilters** 。 对于早期版本的操作系统版本，INF 文件必须显式删除这些值或对这些值执行 nonappending 修改操作。
 
 -   更新驱动程序时， *不要使用* [**inf DelFiles 指令**](inf-delfiles-directive.md) 或 [**inf RenFiles 指令**](inf-renfiles-directive.md) 。 Windows 无法保证特定文件未被其他设备使用。  (类安装程序和共同安装程序可以删除或重命名文件， *前提* 是它们可以可靠地确定没有设备使用这些文件。 ) 
 
 -   如果不再需要这些项，请使用 [**INF DelReg 指令**](inf-delreg-directive.md) 从以前安装的设备中删除旧的特定于设备的注册表项。  (不删除全局注册表项。 ) 
 
--   请勿*在* [**inf DDInstall 部分**](inf-ddinstall-services-section.md)中使用[**inf DelService 指令**](inf-delservice-directive.md)从目标计算机中删除以前安装的设备/驱动程序服务。 Windows 无法保证特定的服务未被其他设备使用。  (类安装程序和共同安装程序可以删除服务， *前提* 是它们可以可靠地确定没有设备在使用服务。 ) 
+-   请勿 *在* [**inf DDInstall 部分**](inf-ddinstall-services-section.md)中使用 [**inf DelService 指令**](inf-delservice-directive.md)从目标计算机中删除以前安装的设备/驱动程序服务。 Windows 无法保证特定的服务未被其他设备使用。  (类安装程序和共同安装程序可以删除服务， *前提* 是它们可以可靠地确定没有设备在使用服务。 ) 
 
 -   更新类安装程序、类共同安装程序或服务 DLL 时，必须为新版本指定一个新的文件名。
 

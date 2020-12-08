@@ -1,7 +1,6 @@
 ---
 title: CD-ROM 独占访问模式
 description: CD-ROM 独占访问模式
-ms.assetid: 4432f6d6-e98c-4354-a7ba-b043a624f064
 keywords:
 - CD-ROM 驱动程序 WDK 存储
 - 存储 cd-rom 驱动程序 WDK
@@ -10,12 +9,12 @@ keywords:
 - CDROM_EXCLUSIVE_LOCK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5256dc9aae743ad321143e6f930196c92a5533f6
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 270e6bc3e52c031cec4c0f7b383f68755a51c29d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89191327"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96804741"
 ---
 # <a name="cd-rom-exclusive-access-mode"></a>CD-ROM 独占访问模式
 
@@ -30,7 +29,7 @@ Cd-rom 设备的许多制造商提供固件更新实用程序。 如果应用程
 
 如果没有独占访问机制，供应商提供这两种类型的应用程序的唯一方式是安装自定义筛选器驱动程序，该驱动程序将无法从其他应用程序和组件进行 i/o 请求，这种方法会导致系统不稳定。 不应使用筛选器驱动程序来获取对 cd-rom 设备的独占访问权限。
 
-若要使用独占访问机制，应用程序必须将 [**IOCTL \_ CDROM \_ 独占 \_ 访问**](/windows-hardware/drivers/ddi/ntddcdrm/ni-ntddcdrm-ioctl_cdrom_exclusive_access) 请求发送到被动级别 IRQL 的 cd-rom 类驱动程序 \_ 。 调用方发出此请求时，调用方必须提供[**CDROM \_ 排他 \_ 锁**](/windows-hardware/drivers/ddi/ntddcdrm/ns-ntddcdrm-_cdrom_exclusive_lock)的**CallerName**成员中的标识字符串。 类驱动程序使用此字符串来标识具有独占访问权限的应用程序。
+若要使用独占访问机制，应用程序必须将 [**IOCTL \_ CDROM \_ 独占 \_ 访问**](/windows-hardware/drivers/ddi/ntddcdrm/ni-ntddcdrm-ioctl_cdrom_exclusive_access) 请求发送到被动级别 IRQL 的 cd-rom 类驱动程序 \_ 。 调用方发出此请求时，调用方必须提供 [**CDROM \_ 排他 \_ 锁**](/windows-hardware/drivers/ddi/ntddcdrm/ns-ntddcdrm-_cdrom_exclusive_lock)的 **CallerName** 成员中的标识字符串。 类驱动程序使用此字符串来标识具有独占访问权限的应用程序。
 
 应用程序在尝试锁定设备之前应查询设备的当前状态。 如果设备已锁定，类驱动程序将返回当前设备所有者的标识字符串。 在锁定设备之前，调用方必须以读/写访问模式打开它。 因此，调用方必须具有管理员权限或在写访问模式下打开 cd-rom 设备的权限。
 
@@ -50,13 +49,13 @@ Cd-rom 设备的许多制造商提供固件更新实用程序。 如果应用程
 
 -   当设备处于锁定状态时，系统将无法打开该设备的请求。
 
--   将 [**IOCTL \_ 存储 \_ 查询 \_ 属性**](/windows-hardware/drivers/ddi/ntddstor/ni-ntddstor-ioctl_storage_query_property) 请求发送到 cd-rom 类驱动程序的其他应用程序将在设备处于锁定状态时从设备接收缓存的信息。 具体而言，如果 [**存储 \_ 查询 \_ 类型**](/windows-hardware/drivers/ddi/ntddstor/ne-ntddstor-_storage_query_type) 为 **PropertyExistsQuery**，则 IOCTL 的行为与设备未锁定时的行为相同。 此外，如果 **存储 \_ 查询 \_ 类型** 为 **PropertyStandardQuery** ，并且 [**存储 \_ 属性 \_ ID**](/windows-hardware/drivers/ddi/ntddstor/ne-ntddstor-storage_property_id) 为 **StorageDeviceProperty** 或 **StorageAdapterProperty**，则 IOCTL 将返回 cd-rom 驱动程序中缓存的信息。 使用 **存储 \_ 查询 \_ 类型** 和 **存储 \_ 属性 \_ ID**的其他组合，IOCTL 失败，状态值状态为 " \_ 拒绝访问" \_ 。
+-   将 [**IOCTL \_ 存储 \_ 查询 \_ 属性**](/windows-hardware/drivers/ddi/ntddstor/ni-ntddstor-ioctl_storage_query_property) 请求发送到 cd-rom 类驱动程序的其他应用程序将在设备处于锁定状态时从设备接收缓存的信息。 具体而言，如果 [**存储 \_ 查询 \_ 类型**](/windows-hardware/drivers/ddi/ntddstor/ne-ntddstor-_storage_query_type) 为 **PropertyExistsQuery**，则 IOCTL 的行为与设备未锁定时的行为相同。 此外，如果 **存储 \_ 查询 \_ 类型** 为 **PropertyStandardQuery** ，并且 [**存储 \_ 属性 \_ ID**](/windows-hardware/drivers/ddi/ntddstor/ne-ntddstor-storage_property_id) 为 **StorageDeviceProperty** 或 **StorageAdapterProperty**，则 IOCTL 将返回 cd-rom 驱动程序中缓存的信息。 使用 **存储 \_ 查询 \_ 类型** 和 **存储 \_ 属性 \_ ID** 的其他组合，IOCTL 失败，状态值状态为 " \_ 拒绝访问" \_ 。
 
--   发送 IOCTL CDROM 的其他应用程序 [** \_ \_ 获取 \_ 查询 \_ 数据**](/windows-hardware/drivers/ddi/ntddcdrm/ni-ntddcdrm-ioctl_cdrom_get_inquiry_data) 请求到 cd-rom 类驱动程序在设备锁定时接收缓存的信息以及解锁后的信息。
+-   发送 IOCTL CDROM 的其他应用程序 [**\_ \_ 获取 \_ 查询 \_ 数据**](/windows-hardware/drivers/ddi/ntddcdrm/ni-ntddcdrm-ioctl_cdrom_get_inquiry_data) 请求到 cd-rom 类驱动程序在设备锁定时接收缓存的信息以及解锁后的信息。
 
 当出现下列任一情况时，系统会删除对 CD-ROM 设备的独占访问权限：
 
--   独占访问锁定的所有者将[**IOCTL \_ CDROM \_ 独占 \_ 访问**](/windows-hardware/drivers/ddi/ntddcdrm/ni-ntddcdrm-ioctl_cdrom_exclusive_access)请求发送到 cd-rom 类驱动程序，并将[**Cdrom \_ 独占 \_ 访问权限**](/windows-hardware/drivers/ddi/ntddcdrm/ns-ntddcdrm-_cdrom_exclusive_access)集的**RequestType**成员设置为**ExclusiveAccessUnlockDevice**。
+-   独占访问锁定的所有者将 [**IOCTL \_ CDROM \_ 独占 \_ 访问**](/windows-hardware/drivers/ddi/ntddcdrm/ni-ntddcdrm-ioctl_cdrom_exclusive_access)请求发送到 cd-rom 类驱动程序，并将 [**Cdrom \_ 独占 \_ 访问权限**](/windows-hardware/drivers/ddi/ntddcdrm/ns-ntddcdrm-_cdrom_exclusive_access)集的 **RequestType** 成员设置为 **ExclusiveAccessUnlockDevice**。
 
 -   独占访问锁定的所有者将关闭设备句柄。
 

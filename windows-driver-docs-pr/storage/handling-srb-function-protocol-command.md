@@ -1,19 +1,18 @@
 ---
 title: 处理 SRB_FUNCTION_PROTOCOL_COMMAND
 description: 处理 SRB_FUNCTION_PROTOCOL_COMMAND
-ms.assetid: 12e9791b-8ddf-4d42-9d89-243bc38eeeb7
 keywords:
 - SCSI 微型端口驱动程序 WDK 存储，HwScsiStartIo
 - HwScsiStartIo
 - SRB_FUNCTION_PROTOCOL_COMMAND
 ms.date: 05/23/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 114cac405a19788af2399627a1c1b740ea72733f
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 0d4a1f40043534368c2ff55da2a887d313101768
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90715402"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96804517"
 ---
 # <a name="handling-srb_function_protocol_command"></a>处理 SRB_FUNCTION_PROTOCOL_COMMAND
 
@@ -23,7 +22,7 @@ ms.locfileid: "90715402"
 
 微型端口应执行以下操作：
 
-* 将 STORAGE_PROTOCOL_COMMAND 结构中提供的命令信息转换为相应的特定于协议的总线命令。 协议由** \* Data >ProtocolType**标识。
+* 将 STORAGE_PROTOCOL_COMMAND 结构中提供的命令信息转换为相应的特定于协议的总线命令。 协议由 **\* Data >ProtocolType** 标识。
 
 * 对于写入类型请求，将 **DataToDeviceBufferOffset** 指向设备的数据传输到。
 
@@ -33,9 +32,9 @@ ms.locfileid: "90715402"
 
 ## <a name="see-also"></a>另请参阅
 
-[IOCTL_STORAGE_PROTOCOL_COMMAND (*winioctl*) ](/windows/win32/api/winioctl/ni-winioctl-ioctl_storage_protocol_command)
+[IOCTL_STORAGE_PROTOCOL_COMMAND (*winioctl*)](/windows/win32/api/winioctl/ni-winioctl-ioctl_storage_protocol_command)
 
-[IOCTL_STORAGE_PROTOCOL_COMMAND (*ntddstor*) ](/windows-hardware/drivers/ddi/ntddstor/ni-ntddstor-ioctl_storage_protocol_command)
+[IOCTL_STORAGE_PROTOCOL_COMMAND (*ntddstor*)](/windows-hardware/drivers/ddi/ntddstor/ni-ntddstor-ioctl_storage_protocol_command)
 
 [HwStorStartIo](/windows-hardware/drivers/ddi/storport/nc-storport-hw_startio)
 

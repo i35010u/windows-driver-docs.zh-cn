@@ -1,19 +1,18 @@
 ---
 title: 关于转换器 Miniclass 驱动程序
 description: 关于转换器 Miniclass 驱动程序
-ms.assetid: ce0f78a3-69ae-4ca7-b2e1-f4892e35a230
 keywords:
 - 转换器驱动程序 WDK 存储，miniclass 驱动程序
 - 存储更换器驱动程序 WDK、miniclass 驱动程序
 - miniclass 驱动程序 WDK 转换器
 ms.date: 12/15/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 290eef3135d095147fc5e2d27e3f8331a186eea6
-ms.sourcegitcommit: e1ff1dd43b87dfb7349cebf70ed2878dc8d7c794
+ms.openlocfilehash: e621caebd18d383e6be68a56b33fd2c3c7b01b47
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/02/2020
-ms.locfileid: "75606561"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96804457"
 ---
 # <a name="about-changer-miniclass-drivers"></a>关于转换器 Miniclass 驱动程序
 

@@ -1,15 +1,14 @@
 ---
 title: 读取器/写入器自旋锁
 description: 从带有 Service Pack 1 的 Windows Vista (SP1) 开始，一组相关的例程使用自旋锁来支持对读取器和编写器共享的数据结构的同步访问。
-ms.assetid: E2853F35-590E-4EF5-8647-1261BC4B8D15
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 58a45f43e641507528bffdfefaf5013f423c2b18
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: f8c65e7d76f65f5ff21db858ba5674775eb9f0af
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89191163"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96805363"
 ---
 # <a name="readerwriter-spin-locks"></a>读取器/写入器自旋锁
 
@@ -24,7 +23,7 @@ ms.locfileid: "89191163"
 
 下面列出了可用于管理读取器/编写器自旋锁（从 Windows Vista SP1 开始）的例程列表。
 
-| 例程名称                                                                                | 说明                                                                                                           |
+| 例程名称                                                                                | 描述                                                                                                           |
 |---------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------|
 | [**ExAcquireSpinLockExclusive**](/previous-versions/windows/hardware/drivers/hh451007(v=vs.85))                         | 获取用于调用方进行独占访问的自旋锁，并将 IRQL 提高到调度 \_ 级别。                      |
 | [**ExAcquireSpinLockExclusiveAtDpcLevel**](/previous-versions/windows/hardware/drivers/hh451009(v=vs.85))    | 获取一个自旋锁，该锁用于通过已在 IRQL = 调度级别运行的调用方进行独占访问 &gt; \_ 。          |

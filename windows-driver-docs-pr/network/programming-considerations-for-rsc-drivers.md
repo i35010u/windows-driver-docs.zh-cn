@@ -1,15 +1,14 @@
 ---
 title: RSC 驱动程序的编程注意事项
 description: 以下各节描述了在 (RSC) 功能的微型端口驱动程序中实现接收段合并时要考虑的问题。
-ms.assetid: 03FDD557-3918-408A-BD79-64CD52BDD43A
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b0cde7a6632f7cc01f5d099d92f04be730c57d2f
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 208b00862e205004724ff619bf5985ec3adfa218
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89215174"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96805179"
 ---
 # <a name="programming-considerations-for-rsc-drivers"></a>RSC 驱动程序的编程注意事项
 

@@ -1,19 +1,18 @@
 ---
 title: 如何创建启动时的全局记录器会话
 description: 如何创建启动时的全局记录器会话
-ms.assetid: ddd9e1b1-d732-4ef1-a0e0-4d8e95660d7c
 keywords:
 - 全局记录器跟踪会话 WDK，创建
 - 启动时全局记录器跟踪会话 WDK，创建
 - EnableKernelFlags WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7424f7c81cf3b7153dcbd6a535a0f91b302cab56
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: ec78e510232e48dfff8d1447641c1116da8f27d6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89384833"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803581"
 ---
 # <a name="how-to-create-a-boot-time-global-logger-session"></a>如何创建启动时的全局记录器会话
 
@@ -28,7 +27,7 @@ ms.locfileid: "89384833"
 
     有关说明和详细信息，请参阅 [**Tracelog 命令语法**](tracelog-command-syntax.md) 和 [全局记录器跟踪会话](global-logger-trace-session.md)。 有关示例，请参阅 [示例13：创建全局记录器会话](example-13--creating-a-global-logger-session.md)。
 
-2.  向 \_ **HKLM \\ 系统 \\ CurrentControlSet \\ Control \\ WMI \\ GlobalLogger**子项添加一个名为**EnableKernelFlags**的注册表项。 当你使用**Tracelog**命令时，Tracelog 会创建**GlobalLogger**注册表子项。 可用于**EnableKernelFlags**的值是从**事件 \_ 跟踪 \_ 属性**结构的**EnableFlags**成员的值中获取的。 有关 **EnableFlags** 值的说明，请参阅 [**事件 \_ 跟踪 \_ 属性**](/windows/desktop/ETW/event-trace-properties)。
+2.  向 \_ **HKLM \\ 系统 \\ CurrentControlSet \\ Control \\ WMI \\ GlobalLogger** 子项添加一个名为 **EnableKernelFlags** 的注册表项。 当你使用 **Tracelog** 命令时，Tracelog 会创建 **GlobalLogger** 注册表子项。 可用于 **EnableKernelFlags** 的值是从 **事件 \_ 跟踪 \_ 属性** 结构的 **EnableFlags** 成员的值中获取的。 有关 **EnableFlags** 值的说明，请参阅 [**事件 \_ 跟踪 \_ 属性**](/windows/desktop/ETW/event-trace-properties)。
 
 3.  重新启动系统。
 
@@ -36,7 +35,7 @@ ms.locfileid: "89384833"
 
 ### <a name="span-idcommentsspanspan-idcommentsspancomments"></a><span id="comments"></span><span id="COMMENTS"></span>提出
 
-存在具有有效值的 **EnableKernelFlags** 项后，会将全局记录器跟踪会话转换为 NT 内核记录器跟踪会话。 **EnableKernelFlags**的值以及其他全局记录器注册表项用于配置会话。 重新启动系统时，跟踪会话启动。
+存在具有有效值的 **EnableKernelFlags** 项后，会将全局记录器跟踪会话转换为 NT 内核记录器跟踪会话。 **EnableKernelFlags** 的值以及其他全局记录器注册表项用于配置会话。 重新启动系统时，跟踪会话启动。
 
 注册表项用于配置全局记录器跟踪会话，因为在系统完全操作之前配置值必须可用。
 
@@ -44,7 +43,7 @@ ms.locfileid: "89384833"
 
 运行此跟踪会话后，使用 **tracelog** 命令将 **开始** 项的值设置为0，以删除添加的注册表子项。 如果没有这样做，则每次启动系统时都会运行该会话，并且日志可能会增长得非常大。
 
-有关 Tracelog 命令的详细信息，请参阅[ **Tracelog 命令语法**](tracelog-command-syntax.md)
+有关 Tracelog 命令的详细信息，请参阅 [ **Tracelog 命令语法**](tracelog-command-syntax.md)
 
 ## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 

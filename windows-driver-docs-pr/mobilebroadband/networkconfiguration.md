@@ -1,15 +1,14 @@
 ---
 title: NetworkConfiguration
 description: NetworkConfiguration
-ms.assetid: 4a52b185-1bfb-4626-99fb-6be364e88e85
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fa4e694910a76d9db87bb641bb0e64b828493be9
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: 5f70ab6f24e03b210d4b84e9145964fcd0e4de76
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89403260"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96805275"
 ---
 # <a name="networkconfiguration"></a>NetworkConfiguration
 
@@ -42,7 +41,7 @@ NetworkConfiguration 元素指定要使用的购买和 Internet 移动宽带配�
 <thead>
 <tr class="header">
 <th>元素</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -70,7 +69,7 @@ NetworkConfiguration 元素指定要使用的购买和 Internet 移动宽带配�
 <thead>
 <tr class="header">
 <th>元素</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>

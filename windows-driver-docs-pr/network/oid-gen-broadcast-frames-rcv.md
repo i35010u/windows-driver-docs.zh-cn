@@ -1,16 +1,15 @@
 ---
 title: OID_GEN_BROADCAST_FRAMES_RCV
 description: 作为查询，OID_GEN_BROADCAST_FRAMES_RCV OID 指定接收的没有错误的广播数据包的数量。
-ms.assetid: c9b09318-a12e-4429-b05c-fee525ab33f5
 ms.date: 11/01/2019
 keywords: -从 Windows Vista 开始 OID_GEN_BROADCAST_FRAMES_RCV 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 9c04eafb233f81989273c289c1e1dfd40c0a7cc0
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 0a442edc63765c9f25041f71e8401ede16b8581c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89206361"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803669"
 ---
 # <a name="oid_gen_broadcast_frames_rcv"></a>OID \_ 生成 \_ 广播 \_ 帧 \_ RCV
 
@@ -57,7 +56,7 @@ ms.locfileid: "89206361"
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [OID \_ 生成 \_ 统计信息](oid-gen-statistics.md)

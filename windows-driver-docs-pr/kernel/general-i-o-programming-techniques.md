@@ -1,22 +1,21 @@
 ---
 title: 常规 I/O 编程技术
 description: 常规 I/O 编程技术
-ms.assetid: c310829f-e102-4a96-aa3e-39136b8a641b
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: a0da47330b740ee894dc5dcd0ed09fca742af599
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: 500b69fd0e7707796e5112bb0daa0542fc4a9918
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89403456"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803817"
 ---
 # <a name="general-io-programming-techniques"></a>常规 I/O 编程技术
 
 
 I/o 编程中最重要的一种方法是应避免的操作：强制操作系统等待你的设备。 几乎每个人都有权看到 Microsoft Windows "冻结"。 有时冻结是由于崩溃造成的，而另一些时候系统只是等待设备响应。
 
-有两种基本编程技术可用于处理等待设备： *同步* 和 *异步*操作。 同步编程等待设备，应避免这样做。 异步编程使用其他技术 (例如等待中断请求) 。 有关同步和异步编程的详细信息，请参阅以下主题：
+有两种基本编程技术可用于处理等待设备： *同步* 和 *异步* 操作。 同步编程等待设备，应避免这样做。 异步编程使用其他技术 (例如等待中断请求) 。 有关同步和异步编程的详细信息，请参阅以下主题：
 
 [同步 I/O 编程](synchronous-i-o-programming.md)
 

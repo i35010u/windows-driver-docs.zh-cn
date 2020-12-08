@@ -1,28 +1,27 @@
 ---
 title: OID_RECEIVE_FILTER_SET_FILTER
 description: 过量驱动程序发出 OID_RECEIVE_FILTER_SET_FILTER 的 OID 方法请求，以在网络适配器上设置筛选器。
-ms.assetid: ec3e119e-662f-48a6-8c68-20da20590b24
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_RECEIVE_FILTER_SET_FILTER 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 82ec5b468b2f7bad15c0cbf3779ea95d70c6dc36
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: a3f5082e829511accbc38d59d7414a84f09c63ae
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91734179"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803663"
 ---
 # <a name="oid_receive_filter_set_filter"></a>OID \_ 接收 \_ 筛选器 \_ 集 \_ 筛选器
 
 过量驱动程序发出 OID 方法请求，即 OID \_ 接收 \_ 筛选器 \_ 集 \_ 筛选器，用于在网络适配器上设置筛选器。
 
-[**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的**InformationBuffer**成员包含指向调用方分配的缓冲区的指针。 此缓冲区的格式设置为包含以下内容：
+[**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的 **InformationBuffer** 成员包含指向调用方分配的缓冲区的指针。 此缓冲区的格式设置为包含以下内容：
 
 -   用于指定 NDIS 接收筛选器参数的 [**ndis \_ 接收 \_ 筛选器 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_parameters) 结构。
 
 -   用于指定网络数据包标头中的字段筛选器测试条件的 [**NDIS \_ 接收 \_ 筛选器 \_ 字段 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_field_parameters) 结构的数组。
 
-成功从 OID 方法请求返回后， [**ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的**InformationBuffer**成员包含指向[**ndis \_ 接收 \_ 筛选器 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_parameters)结构的指针。 如果过量驱动程序正在创建新的接收筛选器，NDIS 将使用新的筛选器标识符更新此结构。
+成功从 OID 方法请求返回后， [**ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的 **InformationBuffer** 成员包含指向 [**ndis \_ 接收 \_ 筛选器 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_parameters)结构的指针。 如果过量驱动程序正在创建新的接收筛选器，NDIS 将使用新的筛选器标识符更新此结构。
 
 <a name="remarks"></a>备注
 -------
@@ -125,7 +124,7 @@ OID \_ 接收 \_ 筛选器集筛选器的 oid 方法请求 \_ \_ 是支持 NDIS 
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**NdisMIndicateReceiveNetBufferLists**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismindicatereceivenetbufferlists)

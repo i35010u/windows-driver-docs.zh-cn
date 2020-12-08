@@ -1,7 +1,6 @@
 ---
 title: kuser
-description: Kuser 扩展将显示共享的用户模式页 (KUSER_SHARED_DATA)。
-ms.assetid: 352a2f96-ff66-41be-94ee-045edbb1f81f
+description: Kuser 扩展显示 (KUSER_SHARED_DATA) 的 "共享用户模式" 页。
 keywords:
 - kuser Windows 调试
 ms.date: 05/23/2017
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: df0ce99c1d41011a468b0edf042aec272cf3ff63
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0acbb9d42d28c6517e455207e18b4a0c11bc7951
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63336205"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96804051"
 ---
 # <a name="kuser"></a>!kuser
 
 
-**！ Kuser**扩展插件都会显示共享的用户模式页 (KUSER\_共享\_数据)。
+**！ Kuser** 扩展显示共享用户模式页面 (kuser \_ 共享 \_ 数据) 。
 
 ```dbgcmd
 !kuser 
@@ -31,7 +30,7 @@ ms.locfileid: "63336205"
 ## <span id="ddk__kuser_dbg"></span><span id="DDK__KUSER_DBG"></span>
 
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 <table>
 <colgroup>
@@ -56,9 +55,9 @@ Kdextx86.dll Ntsdexts.dll</td>
 <a name="remarks"></a>备注
 -------
 
-KUSER\_共享\_数据页面提供了资源和当前登录的用户有关的其他信息。
+"KUSER \_ 共享 \_ 数据" 页提供了有关当前登录用户的资源和其他信息。
 
-下面是一个示例。 请注意，在此示例中，计时周期计数显示在这两个其原始窗体和窗体中更加友好的用户，这是在括号中。 用户友好的显示是仅适用于 Windows XP 及更高版本。
+示例如下。 请注意，在此示例中，滴答计数以原始形式显示，并以更适合用户的形式显示在括号中。 用户友好的显示仅在 Windows XP 和更高版本中可用。
 
 ```dbgcmd
 kd> !kuser

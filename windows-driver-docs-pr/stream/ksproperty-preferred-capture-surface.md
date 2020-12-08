@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ 首选 \_ 捕获 \_ 图面
 description: KSPROPERTY \_ 首选 \_ 捕获 \_ SURFACE 属性返回捕获驱动程序的首选内存目标以便捕获，无论是 VRAM 还是系统内存类型。若要使用 VRAM 传输，捕获微型驱动程序必须支持此属性。
-ms.assetid: ed41c456-279d-4728-a85b-f651361ef8e9
 keywords:
 - KSPROPERTY_PREFERRED_CAPTURE_SURFACE 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9f0006a9c8a1bbd0b48509a75289d70895250eb7
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: b8370be8d461b531c1daeaf5df5ab92770c4ce94
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102388"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803653"
 ---
 # <a name="ksproperty_preferred_capture_surface"></a>KSPROPERTY \_ 首选 \_ 捕获 \_ 图面
 
@@ -85,7 +84,7 @@ KSPROPERTY \_ 首选 \_ 捕获 \_ 图面返回状态 "成功" \_ 以指示已成
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**捕获 \_ 内存 \_ 分配 \_ 标志**](/windows-hardware/drivers/ddi/ksmedia/ne-ksmedia-capture_memory_allocation_flags)

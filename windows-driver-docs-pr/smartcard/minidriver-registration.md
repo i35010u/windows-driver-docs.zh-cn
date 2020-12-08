@@ -1,15 +1,14 @@
 ---
 title: 微型驱动程序注册
 description: 微型驱动程序注册
-ms.assetid: 332FEBD6-9803-4502-8F84-9DB2F17BB19B
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1e24c89803d0a809be4115905611317821cd5f16
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 8f3a9a250209e16455b1c77eba53879b7bdb8a8f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89381449"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96804913"
 ---
 # <a name="minidriver-registration"></a>微型驱动程序注册
 

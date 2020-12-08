@@ -1,40 +1,39 @@
 ---
 title: 设备配置和分层驱动程序
-description: 对于最常见类型的设备，Windows Driver Kit (WDK) 提供了完全正常运行的系统驱动程序的一组示例。
-ms.assetid: 1baaac5a-8eea-42df-bad6-fe620ac32a6c
+description: 对于最常见的设备类型，Windows 驱动程序工具包 (WDK) 提供一组完整的功能系统驱动程序。
 keywords:
-- WDM 驱动程序 WDK 内核配置
+- WDM 驱动程序 WDK 内核，配置
 - WDM 驱动程序 WDK 内核，分层驱动程序
 - 分层驱动程序 WDK 内核
 - 驱动程序层 WDK WDM
-- 将驱动程序
-- 可重复使用的驱动程序 WDK WDM
+- 替换驱动程序
+- 可重用的驱动程序 WDK WDM
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5d0ce221816c0507c1143737287e478bfd11078e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2670181c3c1a73e677484944b256f92b248fe314
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63388142"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96805437"
 ---
 # <a name="device-configurations-and-layered-drivers"></a>设备配置和分层驱动程序
 
 
-对于最常见类型的设备，Windows Driver Kit (WDK) 提供了完全正常运行的系统驱动程序的一组示例。 各个示例驱动程序可以用作模型，开发新的驱动程序的相似类型的设备时。 但是，系统的驱动程序有一个额外的设计要求： 若要轻松地开发新的设备驱动程序。 因此，有许多系统的驱动程序的分层式体系结构，以便可以重复使用某些驱动程序以支持新的驱动程序的类似的设备。
+对于最常见的设备类型，Windows 驱动程序工具包 (WDK) 提供一组完整的功能系统驱动程序。 为类似类型的设备开发新的驱动程序时，可以将单个示例驱动程序用作模型。 但是，系统的驱动程序具有额外的设计要求：以便于开发新的设备驱动程序。 因此，许多系统驱动程序都有一个分层体系结构，以便可以重用某些驱动程序来支持类似设备的新驱动程序。
 
 
 
 
-在大多数情况下，WDK 提供可重复使用驱动程序是 WDM 驱动程序支持即插即用和处理系统提供特定于设备的最低级别 （即插即用总线） 驱动程序的独立于硬件的操作。 在某些情况下，例如并行端口和 SCSI 端口驱动程序，这些可重复使用的驱动程序为更高级别的、 特定于设备的类型的类驱动程序提供支持。 请注意无系统的可重用的驱动程序可以阻止新的中间驱动程序添加到现有的驱动程序的链的开发。
+在大多数情况下，WDK 提供的可重复使用的驱动程序为 WDM 驱动程序，支持 PnP，并为系统提供的特定于设备的最低级别 (PnP 总线) 驱动程序处理与硬件无关的操作。 在某些情况下（例如并行端口和 SCSI 端口驱动程序），这些可重用的驱动程序为更高级、特定于设备类型的类驱动程序提供支持。 请注意，系统的任何可重用驱动程序都不会阻止要添加到现有驱动程序链中的新中间驱动程序的开发。
 
-新 （或替换） 驱动程序的设备驱动程序链中的适当位置部分取决于在给定的 Windows 平台，和部分多少支持新的驱动程序可以从现有系统驱动程序获取设备的硬件配置。
+在设备的驱动程序链中容纳新的 (或替换) 驱动程序的情况部分取决于给定 Windows 平台中设备的硬件配置，部分取决于现有系统驱动程序支持新驱动程序所需的数量。
 
-## <a name="in-this-section"></a>本节内容
+## <a name="in-this-section"></a>在本节中
 
 
 -   [示例设备和驱动程序配置](sample-device-and-driver-configuration.md)
--   [添加驱动程序时考虑的要点](points-to-consider-when-adding-drivers.md)
+-   [添加驱动程序时要考虑的要点](points-to-consider-when-adding-drivers.md)
 
  
 

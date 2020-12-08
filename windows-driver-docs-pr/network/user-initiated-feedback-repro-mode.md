@@ -1,15 +1,14 @@
 ---
 title: 用户发起的反馈 - 再现模式
 description: 本主题介绍在 WDI 驱动程序中通过 IHV 跟踪日志记录执行用户启动的反馈的重现模式。
-ms.assetid: C9784C2D-75B1-4229-A219-748C52F430D5
 ms.date: 06/15/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: bf45e774b860d1cfccc0607de6c145e0026ea929
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 320ad9460f974b2b855da7ae3ba86e1d730de2ef
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90714626"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96805149"
 ---
 # <a name="user-initiated-feedback---repro-mode"></a>用户发起的反馈 - 再现模式
 
@@ -137,14 +136,14 @@ ETW 回调的 *ControlCode* 参数指示何时启用或禁用该提供程序。 
 
 此标志请求提供程序记录其状态信息。 通常会调用此，将内存中的日志刷新到磁盘。 如果 *级别* 参数与以下部分的示例)  (0xff 中的 INF 文件中的 IHV 指定的 UIF 重现模式级别匹配，则 IHV 的实现应在此时刷新和重置固件日志。
 
-### <a name="sample-code"></a>代码示例
+### <a name="sample-code"></a>示例代码
 
 下面是一个示例 ETW 回调实现，可将其用作模板，以便为 UIF 重现模式方案启用详细驱动程序和固件日志记录。
 
 > [!NOTE]
 > Ihv 需要刷新 **EVENT_CONTROL_CODE_CAPTURE_STATE** 和 **EVENT_CONTROL_CODE_DISABLE_PROVIDER** 控制代码的任何挂起的固件日志。
 
-调用 **EVENT_CONTROL_CODE_CAPTURE_STATE** 后，UIF 诊断工具将多次调用 ETW 回调，并提供 **EVENT_CONTROL_CODE_ENABLE_PROVIDER** 控制代码。 因此，为了避免重新启用固件日志记录，状态机将从 *ReproModeStateCaptured* 状态移动到 *ReproModeStateFinal* 状态，然后再移回到 *ReproModeStateNotStarted* 状态。 **EVENT_CONTROL_CODE_DISABLE_PROVIDER**控制代码仅用于禁用该提供程序。 这不是 UIF 过程的一部分，但仍需遵守。
+调用 **EVENT_CONTROL_CODE_CAPTURE_STATE** 后，UIF 诊断工具将多次调用 ETW 回调，并提供 **EVENT_CONTROL_CODE_ENABLE_PROVIDER** 控制代码。 因此，为了避免重新启用固件日志记录，状态机将从 *ReproModeStateCaptured* 状态移动到 *ReproModeStateFinal* 状态，然后再移回到 *ReproModeStateNotStarted* 状态。 **EVENT_CONTROL_CODE_DISABLE_PROVIDER** 控制代码仅用于禁用该提供程序。 这不是 UIF 过程的一部分，但仍需遵守。
 
 Ihv 应更改以下示例中的 **IHV_ETW_REPRO_MODE_LEVEL** 值，以匹配 INF 文件中设置的重现模式级别。
 

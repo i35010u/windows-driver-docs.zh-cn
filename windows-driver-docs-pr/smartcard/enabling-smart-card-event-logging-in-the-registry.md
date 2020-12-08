@@ -1,7 +1,6 @@
 ---
 title: 在注册表中启用智能卡事件日志记录
 description: 在注册表中启用智能卡事件日志记录
-ms.assetid: b07ff2d7-9025-424e-a57e-eb37ae4091f4
 keywords:
 - 智能卡驱动程序 WDK，注册表
 - 注册表 WDK 智能卡
@@ -9,12 +8,12 @@ keywords:
 - 事件 WDK 智能卡
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c7e29273f9cd8053cb54c5b6eac4906ddfcdfa0f
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 4caeace923584d214716d2f5d8ab354c16ba8959
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89384199"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96804917"
 ---
 # <a name="enabling-smart-card-event-logging-in-the-registry"></a>在注册表中启用智能卡事件日志记录
 
@@ -26,7 +25,7 @@ ms.locfileid: "89384199"
 
 若要启用事件日志记录，必须在以下注册表项下向注册表添加几个值：
 
-**HKEY \_LOCAL \_ MACHINE \\ system \\ CurrentControlSet \\ Services \\ EventLog \\ System \\ ** *SmartCardDriver*
+**HKEY \_LOCAL \_ MACHINE \\ system \\ CurrentControlSet \\ Services \\ EventLog \\ System \\** *SmartCardDriver*
 
 下表列出了启用事件日志记录的注册表值。
 
@@ -46,7 +45,7 @@ ms.locfileid: "89384199"
 <td align="left"><p><strong>EventMessageFile</strong></p></td>
 <td align="left"><p><em>% SystemRoot% \System32\Drivers\SmartCardDriver.sys</em></p>
 <div class="alert">
-<strong>重要提示</strong>   文件扩展名必须包含在<strong>EventMessageFile</strong>值名称中，但它不能出现在注册表路径的任何其他部分。
+<strong>重要提示</strong>   文件扩展名必须包含在 <strong>EventMessageFile</strong> 值名称中，但它不能出现在注册表路径的任何其他部分。
 </div>
 <div>
  

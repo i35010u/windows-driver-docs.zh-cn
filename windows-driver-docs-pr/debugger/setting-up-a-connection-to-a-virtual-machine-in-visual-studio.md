@@ -1,15 +1,14 @@
 ---
 title: 在 Visual Studio 中设置虚拟机的内核模式调试
 description: 你可以使用 Microsoft Visual Studio 来设置和执行虚拟机的内核模式调试。
-ms.assetid: E7A289CA-29CE-4C6F-AD08-529E58379715
 ms.date: 10/08/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 3607ba23837c3456d941a89061d941fdf632d5c2
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 89bd68050d7090f4fd89865532429181966eff0e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89216006"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803615"
 ---
 # <a name="setting-up-kernel-mode-debugging-of-a-virtual-machine-in-visual-studio"></a>在 Visual Studio 中设置虚拟机的内核模式调试
 
@@ -40,7 +39,7 @@ ms.locfileid: "89216006"
 
 主计算机可以是运行虚拟机的同一物理计算机，也可以是单独的计算机。
 
-1. 在主计算机上的 Visual Studio 中，在 " **驱动程序** " 菜单上选择 "测试" " ** &gt; 配置计算机**"。
+1. 在主计算机上的 Visual Studio 中，在 " **驱动程序** " 菜单上选择 "测试" " **&gt; 配置计算机**"。
 2. 单击 " **添加新计算机**"。
 3. 对于 " **计算机名称**"，请输入运行目标虚拟机的物理计算机的名称。
 4. 选择 " **手动配置调试器并不设置**"，然后单击 " **下一步**"。
@@ -48,11 +47,11 @@ ms.locfileid: "89216006"
 6. 选中 " **管道**"，然后选中 " **重新连接**"。
 7. 如果调试器在虚拟机所在的同一台计算机上运行，请输入以下 **管道名称**：
 
-   **\\\\.\\管道 \\ **<em>PipeName</em>。
+   **\\\\.\\管道 \\**<em>PipeName</em>。
 
    如果调试器在不同于虚拟机的计算机上运行，请在 " **管道名称**" 中输入以下内容：
 
-   **\\\\**<em>VMHost</em>** \\ 管道 \\ **<em>PipeName</em>
+   **\\\\**<em>VMHost</em>**\\ 管道 \\**<em>PipeName</em>
 
    其中， *VMHost* 是运行目标虚拟机的物理计算机的名称， *PipeName* 是与目标虚拟机上的 COM 端口关联的管道的名称。
 
@@ -84,7 +83,7 @@ ms.locfileid: "89216006"
 
 2. 输入以下 PowerShell 命令，将 COM 端口添加到虚拟机：
 
-   **Set-vmcomport – VMName** *VMName* **1 \\ \\ 。 \\管道 \\ **<em>PipeName</em>
+   **Set-vmcomport – VMName** *VMName* **1 \\ \\ 。 \\管道 \\**<em>PipeName</em>
 
    例如，以下命令将虚拟机 TestVM 上的第一个 COM 端口配置为连接到本地计算机上的命名管道 TestPipe。
 

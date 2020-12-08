@@ -1,7 +1,6 @@
 ---
 title: 卷装载示例
 description: 卷装载示例
-ms.assetid: d6645d05-a945-4454-ac7c-122219bbdc50
 keywords:
 - 筛选器驱动程序 WDK 文件系统，卷装入过程
 - 文件系统筛选器驱动程序 WDK，卷装入过程
@@ -9,12 +8,12 @@ keywords:
 - 卷 WDK 文件系统，装载
 ms.date: 10/16/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 3521fa64f7a9d2cb880c03122b3e235b89ce48c1
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 0895a2b24cd6173926bc8c70ab49b9b8b1deafb7
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89064962"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803883"
 ---
 # <a name="volume-mount-example"></a>卷装载示例
 

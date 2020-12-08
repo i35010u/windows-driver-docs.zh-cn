@@ -1,18 +1,17 @@
 ---
 title: 设计 WMI 微型端口驱动程序回调例程
 description: 设计 WMI 微型端口驱动程序回调例程
-ms.assetid: 3bf5b214-e09c-48bc-832b-d0efd3bc8875
 keywords:
 - WMI SRBs WDK 存储，设计回调例程
 - 回调例程 WDK WMI SRBs
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a51f8f1893b7c63c8099b52db799edc8cdca9db9
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: bffea89cbc34a0dfbf76f41ca84cde4123b38aae
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89184705"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96804689"
 ---
 # <a name="designing-wmi-miniport-driver-callback-routines"></a>设计 WMI 微型端口驱动程序回调例程
 

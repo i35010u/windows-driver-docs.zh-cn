@@ -1,15 +1,14 @@
 ---
 title: 使用 Windows 已检验版本
 description: 使用 Windows 已检验版本
-ms.assetid: 0666cdab-21d3-4eff-ba57-4a73dcbaa742
 ms.date: 05/08/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: dc69fdcfb8f8f50bc02d4456b6da83ccee78acb0
-ms.sourcegitcommit: 0a0b75d93130b6c5854279607cd0aac099f65fd5
+ms.openlocfilehash: 1a692b290eee4d2af81f6cb0557f0dd0478ae4fd
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84428342"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803963"
 ---
 # <a name="using-the-checked-build-of-windows"></a>使用 Windows 已检验版本
 

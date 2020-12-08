@@ -1,32 +1,31 @@
 ---
 title: 卸载设备和驱动程序包
 description: 卸载设备和驱动程序包
-ms.assetid: 4381ee42-778b-402d-b242-892ec921c28f
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d35ac477ef83ca28c2a23b5b4adaeb90e54af305
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 309f4e66c6be275a24b3bbd7635814f20ca5c607
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339458"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96804107"
 ---
 # <a name="uninstalling-devices-and-driver-packages"></a>卸载设备和驱动程序包
 
 
-安装设备后，可能需要卸载设备或[驱动程序包](driver-packages.md)。 例如，最终用户可能会决定将为关联的设备，或可能需要更新驱动程序后，卸载该驱动程序包。
+设备安装完成后，可能需要卸载设备或 [驱动程序包](driver-packages.md)。 例如，最终用户可能决定替换关联的设备，或者在更新驱动程序时可能必须卸载驱动程序包。
 
-当您卸载设备时，必须删除设备节点 (*devnode*)，表示系统中的设备的物理实例。
+卸载设备时，必须删除设备节点 (*devnode*) ，该设备表示系统中设备的物理实例。
 
-当您卸载[驱动程序包](driver-packages.md)，必须完成以下操作：
+卸载 [驱动程序包](driver-packages.md)时，必须完成以下操作：
 
--   删除与之关联的文件[驱动程序包](driver-packages.md)从[驱动程序存储区](driver-store.md)。
+-   从[驱动程序存储区](driver-store.md)中删除与[驱动程序包](driver-packages.md)关联的文件。
 
 -   删除驱动程序包的二进制文件。
 
-本部分介绍如何卸载设备和驱动程序包。 这被专为驱动程序开发人员想要向其客户提供说明或工具。
+本部分介绍如何卸载设备和驱动程序包。 它适用于想要向客户提供说明或工具的驱动程序开发人员。
 
-本部分包括以下主题：
+本节包括下列主题：
 
 [如何卸载设备和驱动程序包](how-devices-and-driver-packages-are-uninstalled.md)
 

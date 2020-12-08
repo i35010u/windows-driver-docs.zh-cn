@@ -1,15 +1,14 @@
 ---
 title: ServiceInfo XML 元素列表
 description: ServiceInfo XML 元素列表
-ms.assetid: 807a2741-a515-468f-9188-0cc4e43b4485
 ms.date: 07/05/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: ed6bdfe13737f82ff871a435a6f2615dd074fa5a
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: 41b960417bacb95c14fd35e4f9737a145abc6a12
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89403442"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96805263"
 ---
 # <a name="serviceinfo-xml-elements-list"></a>ServiceInfo XML 元素列表
 

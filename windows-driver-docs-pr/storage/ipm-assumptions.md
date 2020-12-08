@@ -1,21 +1,20 @@
 ---
 title: 空闲电源管理假设
 description: 空闲电源管理假设
-ms.assetid: 3c8d8121-9987-43d3-b573-4ca1d26fef7d
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f0a519cdaccb34e5866d8edfe6c51a1246fb2e9d
-ms.sourcegitcommit: e1ff1dd43b87dfb7349cebf70ed2878dc8d7c794
+ms.openlocfilehash: 7e06e8671e23f1736de35aebb32806011b3bbd37
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/02/2020
-ms.locfileid: "75606378"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96804455"
 ---
 # <a name="idle-power-management-assumptions"></a>空闲电源管理假设
 
-从向 LUN 发出 SCSI Start Unit 命令后，磁盘启动操作在240秒（4分钟）内完成。
+磁盘启动操作在240秒内完成， (4 分钟后) 从将 SCSI 启动单元命令发出到 LUN 的时间。
 
-以下 SCSI 命令（SRB_FUNCTION_EXECUTE_SCSI 操作）应在无需启动磁盘的情况下完成。 换言之，无需执行前面的 SCSI 启动单元命令。
+以下 SCSI 命令 (需要完成 SRB_FUNCTION_EXECUTE_SCSI 操作) ，而无需启动磁盘。 换言之，无需执行前面的 SCSI 启动单元命令。
 
 - 查询
 

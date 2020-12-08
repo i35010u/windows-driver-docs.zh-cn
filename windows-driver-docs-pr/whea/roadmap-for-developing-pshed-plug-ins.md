@@ -1,15 +1,14 @@
 ---
 title: 用于开发 PSHED 插件的路线图
 description: 用于开发 PSHED 插件的路线图
-ms.assetid: 3e1eb744-e480-4478-9705-94da8029c382
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f43c5d300d3f7583b90ad9fd4d282d51ef5c6312
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 47c2c9d9748befa3bdfd2b8628c894158ce20ec5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89208399"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96804329"
 ---
 # <a name="roadmap-for-developing-pshed-plug-ins"></a>用于开发 PSHED 插件的路线图
 
@@ -64,7 +63,7 @@ PSHED 插件还可以通过使用平台供应商定义的专用接口，与平�
 
     以下主题中的信息将帮助你生成可正常工作的 PSHED 插件：
 
-    -   有关开发 PSHED 插件的指导原则，请参阅 [PSHED 插件指南](pshed-plug-in-guidelines.md)。
+    -   有关开发 PSHED 插件的指南，请参阅 [PSHED Plug-In 准则](pshed-plug-in-guidelines.md)。
     -   有关如何生成 PSHED 插件的信息，请参阅 [生成 PSHED 插件](building-a-pshed-plug-in.md)。
     -   有关可用于调试 PSHED 插件的 WHEA 调试器扩展的信息，请参阅 [Windows 硬件错误体系结构调试器扩展](windows-hardware-error-architecture-debugger-extensions.md)。
     -   有关迭代生成、测试和调试的信息，请参阅 [生成、调试和测试过程的概述](/windows-hardware/drivers)。
@@ -74,7 +73,7 @@ PSHED 插件还可以通过使用平台供应商定义的专用接口，与平�
 
     有关驱动程序包的详细信息，请参阅 [提供驱动程序包](/windows-hardware/drivers)。
 
-    有关如何安装 PSHED 插件的驱动程序包的详细信息，请参阅 [PSHED 插件安装](pshed-plug-in-installation.md)。
+    有关如何安装 PSHED 插件的驱动程序包的详细信息，请参阅 [PSHED Plug-In 安装](pshed-plug-in-installation.md)。
 
 -   步骤7：签署和分发 PSHED 插件。
 

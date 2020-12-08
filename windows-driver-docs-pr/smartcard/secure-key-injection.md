@@ -1,15 +1,14 @@
 ---
 title: 安全密钥注入
 description: 安全密钥注入
-ms.assetid: 21F8ED59-B04C-40D3-AEED-015890798215
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bc9130dab72d159070435decb258a453ed940979
-ms.sourcegitcommit: f8619f20a0903dd64f8641a5266ecad6df5f1d57
+ms.openlocfilehash: 2f87bfad25a6eff3e642ec5442855f4825b00fea
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91423844"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96804909"
 ---
 # <a name="secure-key-injection"></a>安全密钥注入
 
@@ -54,7 +53,7 @@ typedef ULONG_PTR  CARD_KEY_HANDLE;
 ## <a name="span-id_no_card_modespanspan-id_no_card_modespanspan-id_no_card_modespan-no-card-mode"></a><span id="_No_Card_Mode"></span><span id="_no_card_mode"></span><span id="_NO_CARD_MODE"></span> 无卡模式
 
 
-为了使服务器应用程序可以使用安装在不受信任的客户端上的相同微型驱动程序来格式化和加密数据，可以在不需要使用卡的模式下调用 [**CardAcquireContext**](/previous-versions/dn468701(v=vs.85)) 。 通过在**CardAcquireContext**的*dwFlags*参数中设置以下标志来启用此模式。
+为了使服务器应用程序可以使用安装在不受信任的客户端上的相同微型驱动程序来格式化和加密数据，可以在不需要使用卡的模式下调用 [**CardAcquireContext**](/previous-versions/dn468701(v=vs.85)) 。 通过在 **CardAcquireContext** 的 *dwFlags* 参数中设置以下标志来启用此模式。
 
 ``` syntax
 #define CARD_SECURE_KEY_INJECTION_NO_CARD_MODE  0x1
@@ -88,7 +87,7 @@ typedef ULONG_PTR  CARD_KEY_HANDLE;
 
 1.  客户端应用程序从服务器上运行的 CA 应用程序请求新的证书。
 2.  接收客户端的请求时，服务器应用程序会检测到已为密钥恢复配置了证书模板。 因此，服务器应用程序会启动安全密钥注入协议。
-3.  客户端应用程序[**CardGetProperty**](/previous-versions/dn468729(v=vs.85))为 CP \_ 密钥 \_ 导入支持调用 CardGetProperty \_ ，以发现以下内容：
+3.  客户端应用程序 [**CardGetProperty**](/previous-versions/dn468729(v=vs.85))为 CP \_ 密钥 \_ 导入支持调用 CardGetProperty \_ ，以发现以下内容：
 
     -   卡是否支持安全密钥注入。
     -   支持哪种对称密钥导入方法。

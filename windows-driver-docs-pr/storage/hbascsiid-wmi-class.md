@@ -1,15 +1,14 @@
 ---
 title: HBAScsiID WMI 类
 description: HBAScsiID WMI 类
-ms.assetid: ca2ebe3f-bc0b-4723-8dff-00478d9baac3
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 93d151ac0c11ef4c57e3e567b994bc956b0ed05c
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 5fd9763b0ae2d6db114dde0b21b9c005c56c9992
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89184085"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96804481"
 ---
 # <a name="hbascsiid-wmi-class"></a>HBAScsiID WMI 类
 

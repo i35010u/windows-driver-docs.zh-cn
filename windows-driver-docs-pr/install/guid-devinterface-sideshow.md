@@ -1,7 +1,6 @@
 ---
 title: GUID_DEVINTERFACE_SIDESHOW
 description: GUID_DEVINTERFACE_SIDESHOW
-ms.assetid: 74afef18-bfb3-457c-8112-29dadd0c7e66
 keywords:
 - GUID_DEVINTERFACE_SIDESHOW 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 79e27a298e8e6b664f655e275bfd04d3f60e8da0
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 44e2b183c615f994aa0f6f6e2dc2e4b8c77f652a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89096913"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96805471"
 ---
 # <a name="guid_devinterface_sideshow"></a>GUID_DEVINTERFACE_SIDESHOW
 

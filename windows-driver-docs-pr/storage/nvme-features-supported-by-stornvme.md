@@ -1,15 +1,14 @@
 ---
 title: StorNVMe 支持的 NVMe 功能
 description: StorNVMe 支持的 NVMe 功能概述
-ms.assetid: 1c6f78d7-ea00-44d4-95d2-62f5a1c7d568
 ms.date: 05/12/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 2ecbdcacfd01e7cf35a00fc413072baccea22adf
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: ecf961d4baac9af6050facc870c01554e52cb40f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89184935"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96804393"
 ---
 # <a name="nvme-features-supported-by-stornvme"></a>StorNVMe 支持的 NVMe 功能
 

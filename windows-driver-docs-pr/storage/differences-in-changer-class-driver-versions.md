@@ -1,19 +1,18 @@
 ---
 title: 更换器类驱动程序版本中的差异
 description: 更换器类驱动程序版本中的差异
-ms.assetid: 4ae4d1b0-cf2f-4c81-b8ae-3a91fd479a89
 keywords:
 - 更换器驱动程序 WDK 存储，类驱动程序
 - 存储更换器驱动程序 WDK、类驱动程序
 - 类驱动程序 WDK 存储，更换器驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d18ff91d07ed5aca323d40477b8e47193afc7830
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 55e433c175a0df5ef388bdc8a3b040c056fd0b87
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89188939"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96804677"
 ---
 # <a name="differences-in-changer-class-driver-versions"></a>更换器类驱动程序版本中的差异
 
@@ -49,7 +48,7 @@ ms.locfileid: "89188939"
 
 在 Windows XP 及更高版本的操作系统中，变换器类驱动程序除了提供前面列出的例程外，还提供两个附加的例程。
 
--   [**ChangerClassInitialize**](/windows-hardware/drivers/ddi/mcd/nf-mcd-changerclassinitialize) --转换器 miniclass 驱动程序从其**DriverEntry**例程中调用**ChangerClassInitialize**以初始化驱动程序。 **ChangerClassInitialize** 执行以前由 Windows 2000 变换器类驱动程序的 **DriverEntry** 例程执行的许多任务。
+-   [**ChangerClassInitialize**](/windows-hardware/drivers/ddi/mcd/nf-mcd-changerclassinitialize) --转换器 miniclass 驱动程序从其 **DriverEntry** 例程中调用 **ChangerClassInitialize** 以初始化驱动程序。 **ChangerClassInitialize** 执行以前由 Windows 2000 变换器类驱动程序的 **DriverEntry** 例程执行的许多任务。
 
 -   [**ChangerClassSendSrbSynchronous**](/windows-hardware/drivers/ddi/mcd/nf-mcd-changerclasssendsrbsynchronous) --初始化并将 SRB 同步发送到指定的目标设备。
 

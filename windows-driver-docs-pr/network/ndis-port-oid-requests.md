@@ -1,7 +1,6 @@
 ---
 title: NDIS 端口 OID 请求
 description: NDIS 端口 OID 请求
-ms.assetid: 361f9adf-2bf6-4aa8-b66b-fe9304b14550
 keywords:
 - 端口 WDK NDIS，OID 请求
 - NDIS 端口 WDK，OID 请求
@@ -9,12 +8,12 @@ keywords:
 - 关联 OID 请求 WDK NDIS 端口
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d486cc78962758f1f74f9c2d6839cbe089d63c72
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 3a5c796334b722da93104053b2116524f15d92e1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89206099"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96805217"
 ---
 # <a name="ndis-port-oid-requests"></a>NDIS 端口 OID 请求
 
@@ -22,9 +21,9 @@ ms.locfileid: "89206099"
 
 
 
-NDIS 驱动程序可以将 OID 请求与 NDIS 端口关联起来。 在此类 OID 请求中， [**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的**PortNumber**成员设置为目标端口号。 如果 OID 请求用于默认端口，则端口号为零。 完成指定特定端口号的任何 OID 请求之前，过量驱动程序必须确保端口处于活动状态。
+NDIS 驱动程序可以将 OID 请求与 NDIS 端口关联起来。 在此类 OID 请求中， [**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的 **PortNumber** 成员设置为目标端口号。 如果 OID 请求用于默认端口，则端口号为零。 完成指定特定端口号的任何 OID 请求之前，过量驱动程序必须确保端口处于活动状态。
 
-当 NDIS 调用协议驱动程序的[*ProtocolBindAdapterEx*](/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_bind_adapter_ex)函数时，ndis 会提供*BindParameters*参数指向的[**NDIS \_ 绑定 \_ 参数**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_bind_parameters)结构的**ActivePorts**成员中所有当前活动端口的列表。 激活和停用端口时，NDIS 还会通知协议驱动程序具有 PnP 事件。 有关 PnP 端口激活和停用通知的详细信息，请参阅 [处理 NDIS 端口 PnP 通知](handling-ndis-ports-pnp-event-notifications.md)。
+当 NDIS 调用协议驱动程序的 [*ProtocolBindAdapterEx*](/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_bind_adapter_ex)函数时，ndis 会提供 *BindParameters* 参数指向的 [**NDIS \_ 绑定 \_ 参数**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_bind_parameters)结构的 **ActivePorts** 成员中所有当前活动端口的列表。 激活和停用端口时，NDIS 还会通知协议驱动程序具有 PnP 事件。 有关 PnP 端口激活和停用通知的详细信息，请参阅 [处理 NDIS 端口 PnP 通知](handling-ndis-ports-pnp-event-notifications.md)。
 
 以下 Oid 特定于 NDIS 端口接口：
 

@@ -1,7 +1,6 @@
 ---
 title: GUID_DEVINTERFACE_PARALLEL
 description: GUID_DEVINTERFACE_PARALLEL
-ms.assetid: 3c7c27ba-aad6-4ca5-ba26-fba206f967b9
 keywords:
 - GUID_DEVINTERFACE_PARALLEL 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: a2a101a45db8719e6e75e8dc8dbc1dec25d0fd83
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: e7f2dba7264a79a6aa2adfecaba6b0c8e94b72e4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89096923"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96805485"
 ---
 # <a name="guid_devinterface_parallel"></a>GUID_DEVINTERFACE_PARALLEL
 
@@ -84,7 +83,7 @@ ms.locfileid: "89096923"
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**GUID_DEVINTERFACE_PARCLASS**](guid-devinterface-parclass.md)

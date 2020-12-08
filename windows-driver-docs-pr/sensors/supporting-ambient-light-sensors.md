@@ -1,15 +1,14 @@
 ---
 title: 支持环境光线传感器
 description: 支持环境光线传感器
-ms.assetid: a0875084-c093-4659-91b9-375450f65234
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3ae0221039cb83236e98aec09c7e3435f8be588b
-ms.sourcegitcommit: ec7bebe3f94536455e62b372c2a28fe69d1717f7
+ms.openlocfilehash: 4de96e62a25b2a011f844b263c60cfbc044b8c74
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93349691"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96805093"
 ---
 # <a name="supporting-ambient-light-sensors"></a>支持环境光线传感器
 

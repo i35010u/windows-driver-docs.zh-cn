@@ -1,7 +1,6 @@
 ---
 title: Bug 检查 0x100000EA THREAD_STUCK_IN_DEVICE_DRIVER_M
-description: THREAD_STUCK_IN_DEVICE_DRIVER_M bug 检查具有 0x100000EA 值。 这表示无休止地旋转设备驱动程序线程。这具有相同含义/参数作为 bug 检查 0xEA。
-ms.assetid: 0b46e836-0563-4fa9-be96-125caeab08d8
+description: THREAD_STUCK_IN_DEVICE_DRIVER_M bug 检查的值为0x100000EA。 这表示设备驱动程序线程无休止地旋转。这与 bug 检查0xEA 的含义/参数相同。
 keywords:
 - Bug 检查 0x100000EA THREAD_STUCK_IN_DEVICE_DRIVER_M
 - THREAD_STUCK_IN_DEVICE_DRIVER_M
@@ -13,22 +12,22 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: a7b210e5b3fb873a80927bace07b9cbd6862c4dc
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: 37b296c4c84478097eaaa6995b5631ae39629713
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67521698"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96804009"
 ---
-# <a name="bug-check-0x100000ea-threadstuckindevicedriverm"></a>Bug 检查 0x100000EA：THREAD\_STUCK\_IN\_DEVICE\_DRIVER\_M
+# <a name="bug-check-0x100000ea-thread_stuck_in_device_driver_m"></a>Bug 检查0x100000EA：线程 \_ 停滞 \_ 在 \_ 设备 \_ 驱动程序 \_ M 中
 
 
-在线程\_STUCK\_IN\_设备\_驱动程序\_M bug 检查的值为 0x100000EA。 这表示无休止地旋转的设备驱动程序中的线程。
+\_阻塞 \_ \_ 设备 \_ 驱动程序 \_ M bug 检查的线程的值为0x100000EA。 这表示设备驱动程序中的线程无休止地旋转。
 
-Bug 检查 0x100000EA 具有相同的含义和作为参数[ **bug 检查 0xEA** ](bug-check-0xea--thread-stuck-in-device-driver.md) (线程\_STUCK\_IN\_设备\_驱动程序)。
+Bug 检查0x100000EA 具有与 [**bug 检查 0xEA**](bug-check-0xea--thread-stuck-in-device-driver.md) 相同的含义和参数， (线程 \_ 停滞 \_ 在 \_ 设备 \_ 驱动程序) 中。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题面向程序员。 如果您是在使用计算机时收到蓝屏错误代码的客户，请参阅[蓝屏错误疑难解答](https://www.windows.com/stopcode)。
 
 
  

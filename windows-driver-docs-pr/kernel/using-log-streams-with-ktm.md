@@ -1,7 +1,6 @@
 ---
 title: 将日志流与 KTM 配合使用
 description: 将日志流与 KTM 配合使用
-ms.assetid: d7ad0e16-d1f2-4c41-b647-95b5445c2708
 keywords:
 - 日志流 WDK KTM
 - 内核事务管理器 WDK，日志流
@@ -12,12 +11,12 @@ keywords:
 - 资源管理器 WDK KTM，日志流
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cfad3f8fa524ce9c0506e1381f3e2747885eb374
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: c2687bf0894b2cf3eeaddfd21203f394c0bddd02
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89403500"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803789"
 ---
 # <a name="using-log-streams-with-ktm"></a>将日志流与 KTM 配合使用
 
@@ -46,9 +45,9 @@ KTM 会定期在事务管理器的日志流中创建一个 [重启区域](readin
 
 ### <a name="using-log-streams-for-recovery"></a>使用日志流进行恢复
 
-资源管理器调用 **ZwCreateTransactionManager**后，必须调用 [**ZwRecoverTransactionManager**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ntrecovertransactionmanager)。 **ZwRecoverTransactionManager**例程读取事务管理器对象的日志流，以将该 TPS 的状态恢复到已知的正确点。 如果计算机在资源管理器上一次加载后正确关闭或未关闭，则日志流包含最少的信息。 如果发生系统崩溃，日志流将包含足够的恢复信息，以将所有事务还原到已知状态。
+资源管理器调用 **ZwCreateTransactionManager** 后，必须调用 [**ZwRecoverTransactionManager**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ntrecovertransactionmanager)。 **ZwRecoverTransactionManager** 例程读取事务管理器对象的日志流，以将该 TPS 的状态恢复到已知的正确点。 如果计算机在资源管理器上一次加载后正确关闭或未关闭，则日志流包含最少的信息。 如果发生系统崩溃，日志流将包含足够的恢复信息，以将所有事务还原到已知状态。
 
-资源管理器调用 [**ZwCreateResourceManager**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ntcreateresourcemanager)后，必须调用 [**ZwRecoverResourceManager**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ntrecoverresourcemanager)。 **ZwRecoverResourceManager**例程尝试恢复与每个资源管理器的登记关联的事务。 有关如何恢复资源管理器的事务的详细信息，请参阅 [处理恢复操作](handling-recovery-operations.md)。
+资源管理器调用 [**ZwCreateResourceManager**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ntcreateresourcemanager)后，必须调用 [**ZwRecoverResourceManager**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ntrecoverresourcemanager)。 **ZwRecoverResourceManager** 例程尝试恢复与每个资源管理器的登记关联的事务。 有关如何恢复资源管理器的事务的详细信息，请参阅 [处理恢复操作](handling-recovery-operations.md)。
 
 ### <a name="storing-transaction-data"></a>存储事务数据
 

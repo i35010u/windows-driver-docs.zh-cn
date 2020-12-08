@@ -1,19 +1,18 @@
 ---
 title: 处理 SRB_FUNCTION_RESET_DEVICE
 description: 处理 SRB_FUNCTION_RESET_DEVICE
-ms.assetid: d95bca21-306e-4598-a8c6-04990885e23d
 keywords:
 - SCSI 微型端口驱动程序 WDK 存储，HwScsiStartIo
 - HwScsiStartIo
 - SRB_FUNCTION_RESET_DEVICE
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 261a9e1c04660e77993dbca49472788ba0bd4e39
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 6a62deeacdba755b9048a87110613e29cb9cc695
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89191293"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96804507"
 ---
 # <a name="handling-srb_function_reset_device"></a>处理 SRB \_ 函数 \_ 重置 \_ 设备
 

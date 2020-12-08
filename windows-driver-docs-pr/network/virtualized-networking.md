@@ -1,15 +1,14 @@
 ---
 title: 虚拟化网络主题
 description: 虚拟化网络主题
-ms.assetid: 5CDB7E42-BCD6-4385-AC99-6659261C2B2C
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3b44e37ee65ae76999cd1bcbcc7d51a8c68d6b81
-ms.sourcegitcommit: 93c924b8f409fc7f704cc67cc026d70b8ad25d30
+ms.openlocfilehash: f38bfc2c61f4c23d17fd8295288d105918289d77
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91739499"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96805135"
 ---
 # <a name="virtualized-networking-topics"></a>虚拟化网络主题
 

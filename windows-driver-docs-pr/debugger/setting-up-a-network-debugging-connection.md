@@ -1,20 +1,19 @@
 ---
 title: 手动设置 KDNET 网络内核调试
 description: 适用于 Windows 的调试工具支持通过网络进行内核调试。
-ms.assetid: B4A79B2E-D4B1-42CA-9121-DEC923C76927
 keywords:
 - 网络调试
 - 以太网调试
 - 扩展坞
-- 通过网络电缆手动设置内核模式调试
+- 通过网络电缆手动设置 Kernel-Mode 调试
 ms.date: 12/07/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: e27d42f6b9faa46be9a7c1c558ce674ec1889cff
-ms.sourcegitcommit: a1b2e27c3487a099180fb928f64e7ce3d94f21a8
+ms.openlocfilehash: a11bd5376903d2c2f13f533dacaed73ec3736829
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90846536"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803609"
 ---
 # <a name="setting-up-kdnet-network-kernel-debugging-manually"></a>手动设置 KDNET 网络内核调试
 
@@ -22,7 +21,7 @@ ms.locfileid: "90846536"
 
 > [!IMPORTANT]
 > 手动设置网络调试是一种复杂且容易出错的过程。
-> 若要自动设置网络调试，请参阅 **[自动设置 KDNET 网络内核调试](setting-up-a-network-debugging-connection-automatically.md)**。 **强烈**建议所有调试器用户使用 KDNET 实用程序。
+> 若要自动设置网络调试，请参阅 **[自动设置 KDNET 网络内核调试](setting-up-a-network-debugging-connection-automatically.md)**。 **强烈** 建议所有调试器用户使用 KDNET 实用程序。
 
 运行调试器的计算机称为 *主机计算机*，被调试的计算机称为 *目标计算机*。 主计算机必须运行 Windows 7 或更高版本，并且目标计算机必须运行 Windows 8 或更高版本。
 
@@ -63,11 +62,11 @@ ms.locfileid: "90846536"
 
 选择将用于在主机和目标计算机上进行调试的端口号。 你可以选择从49152到65535的任何数字，建议的范围为 50000-50039。 你选择的端口将打开，以供在主计算机上运行的调试器进行独占访问。 请小心选择主机计算机上运行的任何其他应用程序未使用的端口号。
 
-**注意**   可用于网络调试的端口号范围可能受公司网络策略的限制。 没有办法告诉主机计算机的限制。 若要确定公司的策略是否限制可用于网络调试的端口范围，请与网络管理员联系。
+**注意**  可用于网络调试的端口号范围可能受公司网络策略的限制。 没有办法告诉主机计算机的限制。 若要确定公司的策略是否限制可用于网络调试的端口范围，请与网络管理员联系。
 
 如果将多台目标计算机连接到一台主计算机，则每个连接必须具有唯一的端口号。 例如，如果将100目标计算机连接到一台主机计算机，则可将端口50000分配给第一个连接，将端口50001分配给第二个连接，将端口50002分配给第三个连接，依此类推。
 
-**注意**   不同的主机可以使用相同的端口范围 (50000 到 50099) 来连接到另一个100目标计算机。
+**注意**  不同的主机可以使用相同的端口范围 (50000 到 50099) 来连接到另一个100目标计算机。
 
 ## <a name="setting-up-the-target-computer"></a>设置目标计算机
 
@@ -93,9 +92,9 @@ ms.locfileid: "90846536"
 
 4. **bcdedit** 将显示自动生成的键。 复制密钥，并将其存储在可移动存储设备（如 USB 闪存驱动器）上。 在主计算机上启动调试会话时，将需要此密钥。
 
-    **注意**   强烈建议使用自动生成的密钥。 不过，你可以创建自己的密钥，如后面的 "创建自己的密钥" 部分所述。
+    **注意**  强烈建议使用自动生成的密钥。 不过，你可以创建自己的密钥，如后面的 "创建自己的密钥" 部分所述。
 
-5. 使用设备管理器确定要用于调试的适配器的 PCI 总线、设备和功能号。 这些值将显示在 "*常规*" 选项卡上的 "*位置*" 下设备管理器。 然后在提升的命令提示符窗口中输入以下命令，其中*b*、 *d*和*f*是适配器的总线号码、设备号和功能号：
+5. 使用设备管理器确定要用于调试的适配器的 PCI 总线、设备和功能号。 这些值将显示在 "*常规*" 选项卡上的 "*位置*" 下设备管理器。 然后在提升的命令提示符窗口中输入以下命令，其中 *b*、 *d* 和 *f* 是适配器的总线号码、设备号和功能号：
 
     ```console
     bcdedit /set "{dbgsettings}" busparams b.d.f
@@ -103,15 +102,15 @@ ms.locfileid: "90846536"
 
 6. 连接内核调试器后，将重新启动目标 PC。 这将在下一部分中介绍。
 
-**注意**   如果要在目标计算机上安装 Hyper-v 角色，请参阅[设置虚拟机主机的网络调试](setting-up-network-debugging-of-a-virtual-machine-host.md)。
+**注意**  如果要在目标计算机上安装 Hyper-v 角色，请参阅 [设置虚拟机主机的网络调试](setting-up-network-debugging-of-a-virtual-machine-host.md)。
 
-**警告**   如果目标计算机位于扩展坞，并且你为作为扩展坞一部分的网络适配器启用了网络调试，请不要从扩展坞中删除计算机。 如果需要从扩展坞中删除目标计算机，请先禁用内核调试。 若要在目标计算机上禁用内核调试，请以管理员身份打开 "命令提示符" 窗口，然后输入命令 " **bcdedit/debug off**"。 重新启动目标计算机。
+**警告**  如果目标计算机位于扩展坞，并且你为作为扩展坞一部分的网络适配器启用了网络调试，请不要从扩展坞中删除计算机。 如果需要从扩展坞中删除目标计算机，请先禁用内核调试。 若要在目标计算机上禁用内核调试，请以管理员身份打开 "命令提示符" 窗口，然后输入命令 " **bcdedit/debug off**"。 重新启动目标计算机。
 
 ## <a name="starting-the-debugging-session"></a>启动调试会话
 
 确认主机计算机的网络适配器连接到网络集线器或使用适当的网络电缆进行切换。
 
-在主计算机上，打开 WinDbg。 在 " **文件** " 菜单上，选择 " **内核调试**"。 在 "内核调试" 对话框中，打开 " **网络** " 选项卡。输入端口号和密钥。 选择“确定”  。
+在主计算机上，打开 WinDbg。 在 " **文件** " 菜单上，选择 " **内核调试**"。 在 "内核调试" 对话框中，打开 " **网络** " 选项卡。输入端口号和密钥。 选择“确定”。
 
 你还可以通过打开命令提示符窗口并输入以下命令（其中 *n* 是你的端口号，而 *MyKey* 是设置目标计算机时由 **bcdedit** 自动生成的密钥）来启动与 WinDbg 的会话：
 
@@ -159,7 +158,7 @@ bcdedit /dbgsettings net hostip:w.x.y.z port:n key:Key
 
 更改 dbgsettings 时，需要重新启动目标计算机。
 
-## <a name="troubleshooting-tips"></a>故障排查提示
+## <a name="troubleshooting-tips"></a>疑难解答指南
 
 ### <a name="debugging-application-must-be-allowed-through-firewall"></a>必须通过防火墙允许调试应用程序
 
@@ -204,7 +203,7 @@ bcdedit /dbgsettings net hostip:w.x.y.z port:YourDebugPort
 
 ### <a name="always-specify-busparams-when-setting-up-kdnet-on-a-physical-machine-with-a-pci-based-nic"></a>在使用基于 PCI 的 NIC 的物理计算机上设置 KDNET 时，始终指定 busparams
 
-如果要在使用基于 PCI 或 PCIe 的 NIC 的物理计算机上设置 KDNET，应始终为要用于 KDNET 的 NIC 指定 busparams。 若要指定总线参数，请打开设备管理器，然后找到要用于调试的网络适配器。 打开网络适配器的属性页，并记下 "*常规*" 选项卡上 "*位置*" 下显示的 "总线号码"、"设备编号" 和 "功能编号"。在提升的命令提示符窗口中，输入以下命令，其中*b*、 *d*和*f*是以十进制格式表示的总线、设备和函数编号：
+如果要在使用基于 PCI 或 PCIe 的 NIC 的物理计算机上设置 KDNET，应始终为要用于 KDNET 的 NIC 指定 busparams。 若要指定总线参数，请打开设备管理器，然后找到要用于调试的网络适配器。 打开网络适配器的属性页，并记下 "*常规*" 选项卡上 "*位置*" 下显示的 "总线号码"、"设备编号" 和 "功能编号"。在提升的命令提示符窗口中，输入以下命令，其中 *b*、 *d* 和 *f* 是以十进制格式表示的总线、设备和函数编号：
 
 ```console
 bcdedit /set "{dbgsettings}" busparams b.d.f

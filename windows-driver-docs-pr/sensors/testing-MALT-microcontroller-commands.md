@@ -1,15 +1,14 @@
 ---
 title: MALT 的微控制器命令
 description: 本主题定义了 PC 与微控制器 (Arduino) 的命令，这些命令控制 MALT 中的传感器。
-ms.assetid: 38b9c6fc-f13c-4af5-90ab-d9931dc9b7f1
 ms.date: 12/13/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: aca4c6d31dd4878b55ba71dc14ecf62a5db056f1
-ms.sourcegitcommit: e6247811ff9a07070547af3d89705dae33a2f465
+ms.openlocfilehash: 8dc94b7d2895263531827a575362ac20be4a98cf
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/23/2020
-ms.locfileid: "91026416"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96805075"
 ---
 # <a name="microcontroller-commands-for-malt"></a>MALT 的微控制器命令
 
@@ -90,7 +89,7 @@ READCOLORSENSOR 2
 |-----------------------|-----------|-------------|------------|
 | MALTERROR 状态代码 | 红色值 | 绿色值 | 蓝色值 |
 
-### <a name="conversiontime-conversion-time-in-ms"></a>CONVERSIONTIME*转换时间（毫秒*）
+### <a name="conversiontime-conversion-time-in-ms"></a>CONVERSIONTIME *转换时间（毫秒*）
 
 引用中使用的 [OPT3001](https://www.ti.com/product/OPT3001) 轻型传感器支持2次转换：800毫秒和100ms。
 CONVERSIONTIME 更改两个传感器的转换时间。

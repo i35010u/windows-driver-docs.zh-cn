@@ -2,14 +2,13 @@
 title: 电源管理次要 IRP
 description: 电源管理次要 IRP
 ms.date: 08/12/2017
-ms.assetid: 8af0609f-168b-4455-aae8-1a3c9e40ed47
 ms.localizationpriority: medium
-ms.openlocfilehash: 99e1a345ade8e93329d94bcb03568d644d42e6ca
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: d57b8b6b7cad2f9d2857815f40fceb06d80b4807
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89187737"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803793"
 ---
 # <a name="power-management-minor-irps"></a>电源管理次要 IRP
 

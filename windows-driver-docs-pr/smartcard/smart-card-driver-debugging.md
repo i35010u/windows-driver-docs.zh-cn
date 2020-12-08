@@ -1,7 +1,6 @@
 ---
 title: 智能卡驱动程序调试
 description: 智能卡驱动程序调试
-ms.assetid: 701528f6-d8ba-4a73-ad68-cb35497a3474
 keywords:
 - 智能卡驱动程序 WDK，调试
 - 调试驱动程序 WDK 智能卡
@@ -9,12 +8,12 @@ keywords:
 - 供应商提供的驱动程序 WDK 智能卡，调试
 ms.date: 06/04/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 522ba41ede13e7fd316c3d402d679aae94a300c9
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 26a2b355bd5969b2d9742f8d326ad53fe09217d9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89381341"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96804883"
 ---
 # <a name="smart-card-driver-debugging"></a>智能卡驱动程序调试
 
@@ -35,7 +34,7 @@ DEBUG_BREAK
 DEBUG_ALL
 ```
 
-启用的调试功能的组合集由一个称为 *调试级别*的值表示。 您可以通过采用与要启用的功能对应的常量的按位 OR 来计算此值。
+启用的调试功能的组合集由一个称为 *调试级别* 的值表示。 您可以通过采用与要启用的功能对应的常量的按位 OR 来计算此值。
 
 可以通过两种方式设置调试级别。 首先，可以使用 Windows 驱动程序工具包附带的智能卡驱动程序测试程序 *Scdrvtst*，)  (。 第二种是使用 [**SmartcardSetDebugLevel**](/previous-versions/ff548960(v=vs.85)) 智能卡驱动程序库例程。
 
@@ -59,7 +58,7 @@ SmartcardDebug(
 
 此例程还可用于通过以下方式将消息写入远程调试器。
 
-- 若要编写错误消息，请使用 \_ *DEBUGLEVEL*的调试错误常量。
+- 若要编写错误消息，请使用 \_ *DEBUGLEVEL* 的调试错误常量。
 
 - 若要写入标准驱动程序消息，请使用调试 \_ 驱动程序常量。
 

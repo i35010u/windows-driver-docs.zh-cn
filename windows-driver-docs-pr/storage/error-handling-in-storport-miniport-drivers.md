@@ -1,15 +1,14 @@
 ---
 title: Storport 微型端口驱动程序中的错误处理
 description: Storport 微型端口驱动程序中的错误处理
-ms.assetid: 23ea8c36-56cf-45ae-a066-765d3a91b542
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8d2a47606f1c0a7258c8a6eba2275ee307d672e2
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 001e150f962e6c552d6607e5fafa62203c0a5a76
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89186431"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96804633"
 ---
 # <a name="error-handling-in-storport-miniport-drivers"></a>Storport 微型端口驱动程序中的错误处理
 

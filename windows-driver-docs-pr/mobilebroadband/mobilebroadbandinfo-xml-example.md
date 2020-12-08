@@ -1,15 +1,14 @@
 ---
 title: MobileBroadbandInfo XML 示例
 description: MobileBroadbandInfo XML 示例
-ms.assetid: 605566a2-55d7-456c-8999-e3bb626527fd
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4227073db876e23d4d72165e235800a3e1e1adcf
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: d2656212017e385102020cdde2170301f44ca8b7
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89402780"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96805307"
 ---
 # <a name="mobilebroadbandinfo-xml-example"></a>MobileBroadbandInfo XML 示例
 

@@ -1,15 +1,14 @@
 ---
 title: 访问 Storport I/O 模型中的分散/聚合列表
 description: 访问 Storport I/O 模型中的分散/聚合列表
-ms.assetid: db05ac58-3317-44b2-9550-e4520537955f
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d475fc2ddc63eb6b056ea072bc84fe2219d8d6ee
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 27cbce08d974d9f56a34904d4ad9399145f9390e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89190665"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96804813"
 ---
 # <a name="access-to-scattergather-lists-in-the-storport-io-model"></a>访问 Storport I/O 模型中的分散/聚合列表
 

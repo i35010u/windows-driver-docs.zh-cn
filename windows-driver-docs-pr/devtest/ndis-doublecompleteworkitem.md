@@ -1,7 +1,6 @@
 ---
 title: 'DoubleCompleteWorkItem 规则 (ndis) '
 description: DoubleCompleteWorkItem 规则指定 NDIS 驱动程序在工作项中延迟完成时不得多次完成 OID 请求。
-ms.assetid: 7add7473-0324-42e9-83bc-8f563410e44f
 ms.date: 05/21/2018
 keywords:
 - 'DoubleCompleteWorkItem 规则 (ndis) '
@@ -12,12 +11,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 31f4f428542beda8c1839b71fc306f194eef2f32
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: d579fc6f0c5dc34b420b6b2817d91879da0b4889
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90101596"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96804247"
 ---
 # <a name="doublecompleteworkitem-rule-ndis"></a>DoubleCompleteWorkItem 规则 (ndis) 
 

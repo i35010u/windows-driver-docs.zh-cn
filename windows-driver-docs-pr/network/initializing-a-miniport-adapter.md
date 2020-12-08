@@ -1,7 +1,6 @@
 ---
 title: 初始化微型端口适配器
 description: 初始化微型端口适配器
-ms.assetid: 6d7a23dc-cc09-46d3-89d3-34e8e8f17a51
 keywords:
 - 微型端口适配器 WDK 网络，初始化
 - 适配器 WDK 网络，初始化
@@ -10,12 +9,12 @@ keywords:
 - MiniportInitializeEx
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 22a1812be9059405a7f804ccc2da1a552a16e8aa
-ms.sourcegitcommit: 29c2e6dd8a3de3c11822d990adf1edd774f8a136
+ms.openlocfilehash: a40a6af8aa43b2cdc93c1f6e652af6058236c016
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91230049"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803705"
 ---
 # <a name="initializing-a-miniport-adapter"></a>初始化微型端口适配器
 

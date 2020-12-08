@@ -1,7 +1,6 @@
 ---
 title: k、kb、kc、kd、kp、kP、kv（显示堆栈回溯）
 description: K * 命令显示给定线程的堆栈帧以及相关信息。
-ms.assetid: 1061015f-cb0c-490b-b256-e0dedb659f22
 keywords:
 - k、kb、glm-kc-qnw、kd、kp、kP、kv (显示堆栈 Backtrace) Windows 调试
 ms.date: 05/23/2017
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: b63582bf6728f5dd3332009a165dcb77e1a11157
-ms.sourcegitcommit: f610410e1500f0b0a4ca008b52679688ab51033d
+ms.openlocfilehash: 433a5990576c153d90a0745b7f2bb80d29ad8e27
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/15/2020
-ms.locfileid: "88253113"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803625"
 ---
 # <a name="k-kb-kc-kd-kp-kp-kv-display-stack-backtrace"></a>k、kb、kc、kd、kp、kP、kv（显示堆栈回溯）
 
 
-**K \* **命令显示给定线程的堆栈帧以及相关信息。
+**K \** _ 命令显示给定线程的堆栈帧以及相关信息。
 
 用户模式，x86 处理器
 
@@ -81,7 +80,7 @@ ms.locfileid: "88253113"
 ## <a name="span-idddk_cmd_display_stack_backtrace_dbgspanspan-idddk_cmd_display_stack_backtrace_dbgspanparameters"></a><span id="ddk_cmd_display_stack_backtrace_dbg"></span><span id="DDK_CMD_DISPLAY_STACK_BACKTRACE_DBG"></span>参数
 
 
-<span id="_______Thread______"></span><span id="_______thread______"></span><span id="_______THREAD______"></span>*Thread*   
+<span id="_______Thread______"></span><span id="_______thread______"></span><span id="_______THREAD______"></span> _Thread *   
 指定要显示其堆栈的线程。 如果省略此参数，则显示当前线程的堆栈。 有关线程语法的详细信息，请参阅 [线程语法](thread-syntax.md)。 只能在用户模式下指定线程。
 
 <span id="_______Processor______"></span><span id="_______processor______"></span><span id="_______PROCESSOR______"></span>*处理器*   
@@ -115,7 +114,7 @@ ms.locfileid: "88253113"
 使用 [调试器标记语言](debugger-markup-language-commands.md)显示输出。 显示中的每个帧号都是一个链接，你可以选择该链接来设置本地上下文并显示局部变量。 有关本地上下文的信息，请参阅 [**frame**](-frame--set-local-context-.md)。
 
 <span id="_______FrameCount______"></span><span id="_______framecount______"></span><span id="_______FRAMECOUNT______"></span>*FrameCount*   
-指定要显示的堆栈帧的数目。 你应以十六进制格式指定此数字，除非已使用 [**n (Set Number Base) **](n--set-number-base-.md) 命令更改了基数。 默认值为 20 (0x14) ，除非已使用 [**. kframes (Set Stack Length) **](-kframes--set-stack-length-.md) 命令更改了默认值。
+指定要显示的堆栈帧的数目。 你应以十六进制格式指定此数字，除非已使用 [**n (Set Number Base)**](n--set-number-base-.md) 命令更改了基数。 默认值为 20 (0x14) ，除非已使用 [**. kframes (Set Stack Length)**](-kframes--set-stack-length-.md) 命令更改了默认值。
 
 <span id="_______BasePtr______"></span><span id="_______baseptr______"></span><span id="_______BASEPTR______"></span>*BasePtr*   
 指定堆栈跟踪的基指针。 仅当命令后面有一个等号 (=) 时， *BasePtr* 参数才可用。
@@ -127,7 +126,7 @@ ms.locfileid: "88253113"
 指定堆栈跟踪的指令指针。 如果省略 *StackPtr* 和 *InstructionPtr*，则该命令将使用 rsp (或 esp) register 指定的堆栈指针，以及 rip (或 eip) register 指定的指令指针。
 
 <span id="_______WordCount______"></span><span id="_______wordcount______"></span><span id="_______WORDCOUNT______"></span>*WordCount*   
-指定 \_ 堆栈中要转储的 DWORD PTR 值的数量。 默认值为 20 (0x14) ，除非你使用 [**. kframes (Set Stack Length) **](-kframes--set-stack-length-.md) 命令更改了默认值。
+指定 \_ 堆栈中要转储的 DWORD PTR 值的数量。 默认值为 20 (0x14) ，除非你使用 [**. kframes (Set Stack Length)**](-kframes--set-stack-length-.md) 命令更改了默认值。
 
 ### <a name="span-idenvironmentspanspan-idenvironmentspanspan-idenvironmentspanenvironment"></a><span id="Environment"></span><span id="environment"></span><span id="ENVIRONMENT"></span>环境
 
@@ -161,13 +160,13 @@ ms.locfileid: "88253113"
 <a name="remarks"></a>备注
 -------
 
-发出 **k**、 **kb**、 **kp**、 **kp**或 **kv** 命令时，会以表格格式显示堆栈跟踪。 如果启用行加载，还会显示源模块和行号。
+发出 **k**、 **kb**、 **kp**、 **kp** 或 **kv** 命令时，会以表格格式显示堆栈跟踪。 如果启用行加载，还会显示源模块和行号。
 
 堆栈跟踪包括堆栈帧的基指针、返回地址和函数名称。
 
 如果使用 **kp** 或 **kp** 命令，则将显示在堆栈跟踪中调用的每个函数的完整参数。 参数列表包括每个参数的数据类型、名称和值。
 
-此命令可能会很慢。 例如，当 **MyFunction1** 调用 **MyFunction2**时，调试程序必须具有 **MyFunction1** 的完整符号信息以显示在此调用中传递的参数。 此命令不会完全显示公共符号中未公开的内部 Microsoft Windows 例程。
+此命令可能会很慢。 例如，当 **MyFunction1** 调用 **MyFunction2** 时，调试程序必须具有 **MyFunction1** 的完整符号信息以显示在此调用中传递的参数。 此命令不会完全显示公共符号中未公开的内部 Microsoft Windows 例程。
 
 如果使用 **kb** 或 **kv** 命令，则会显示传递给每个函数的前三个参数。 如果使用 **kv** 命令，则还会显示 FPO 数据。
 
@@ -216,7 +215,7 @@ ms.locfileid: "88253113"
 
  
 
-**Kd**命令显示原始堆栈数据。 每个 DWORD 值都显示在单独的行上。 将为这些行以及关联符号显示符号信息。 此格式将创建比其他**k**命令更详细的列表 _\*_ 。 **Kd**命令等效于[**Dds (显示内存) **](d--da--db--dc--dd--dd--df--dp--dq--du--dw--dw--dyb--dyd--display-memor.md)命令，该命令使用堆栈地址作为其参数。
+**Kd** 命令显示原始堆栈数据。 每个 DWORD 值都显示在单独的行上。 将为这些行以及关联符号显示符号信息。 此格式将创建比其他 **k** 命令更详细的列表 _\*_ 。 **Kd** 命令等效于 [**Dds (显示内存)**](d--da--db--dc--dd--dd--df--dp--dq--du--dw--dw--dyb--dyd--display-memor.md)命令，该命令使用堆栈地址作为其参数。
 
 如果在函数 prolog 的开头使用 **k** 命令 (在) 上执行函数 prolog 之前，会收到不正确的结果。 调试器使用帧寄存器来计算当前 backtrace，并且在执行函数的 prolog 之前，此寄存器的设置不正确。
 

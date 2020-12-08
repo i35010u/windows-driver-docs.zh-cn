@@ -1,15 +1,14 @@
 ---
 title: LaunchApplicationOnDeviceConnect
 description: LaunchApplicationOnDeviceConnect
-ms.assetid: d8a5f20a-bd88-4279-9e15-4f20287edfd4
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7557d5e0392ffd3353668efdbcb2d67782205517
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: 072e3b668ad50073f228fa77cb07fd6d4620001d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89403372"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96805339"
 ---
 # <a name="launchapplicationondeviceconnect"></a>LaunchApplicationOnDeviceConnect
 
@@ -42,7 +41,7 @@ LaunchApplicationOnDeviceConnect 元素指定在用户插入设备时应显示�
 <thead>
 <tr class="header">
 <th>元素</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -70,7 +69,7 @@ LaunchApplicationOnDeviceConnect 元素指定在用户插入设备时应显示�
 <thead>
 <tr class="header">
 <th>元素</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>

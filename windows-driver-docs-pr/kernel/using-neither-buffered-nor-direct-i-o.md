@@ -1,19 +1,18 @@
 ---
 title: 既不使用缓冲 I/O，也不使用直接 I/O
 description: 既不使用缓冲 I/O，也不使用直接 I/O
-ms.assetid: e85af2e0-e532-47ca-918e-087e7aff859e
 keywords:
 - 缓冲 WDK i/o，无缓冲和直接 i/o
 - 数据缓冲区 WDK i/o，无缓冲或直接 i/o
 - 缓冲和直接 i/o WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1ab0e157cf2a8c0b71574cac47cd597b68ca2307
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 2f03a059dfedaf8aa003aad7c207914c20d805bb
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89190977"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803765"
 ---
 # <a name="using-neither-buffered-nor-direct-io"></a>既不使用缓冲 I/O，也不使用直接 I/O
 
@@ -27,7 +26,7 @@ ms.locfileid: "89190977"
 
 I/o 管理器确定 i/o 操作是不使用缓冲的，也不是直接 i/o，如下所示：
 
--   对于[**IRP \_ mj \_ 读取**](./irp-mj-read.md)和[**IRP \_ mj \_ 写入**](./irp-mj-write.md)请求，不 \_ \_ \_ \_ 会在[**设备 \_ 对象**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_device_object)结构的**Flags**成员中设置缓冲 IO 和直接 IO。 有关详细信息，请参阅 [初始化设备对象](initializing-a-device-object.md)。
+-   对于 [**IRP \_ mj \_ 读取**](./irp-mj-read.md)和 [**IRP \_ mj \_ 写入**](./irp-mj-write.md)请求，不 \_ \_ \_ \_ 会在 [**设备 \_ 对象**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_device_object)结构的 **Flags** 成员中设置缓冲 IO 和直接 IO。 有关详细信息，请参阅 [初始化设备对象](initializing-a-device-object.md)。
 
 -   对于 [**IRP \_ mj \_ 设备 \_ 控制**](./irp-mj-device-control.md) 和 [**irp \_ mj \_ 内部 \_ 设备 \_ 控制**](./irp-mj-internal-device-control.md) 请求，ioctl 代码的值都包含方法，而 \_ 不是作为 IOCTL 值中的 *TransferType* 值。 有关详细信息，请参阅 [定义 I/o 控制代码](defining-i-o-control-codes.md)。
 

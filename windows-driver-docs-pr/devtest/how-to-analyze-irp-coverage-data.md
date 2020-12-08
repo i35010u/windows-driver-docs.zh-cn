@@ -1,22 +1,21 @@
 ---
 title: 如何分析 IRP 覆盖范围数据
 description: 如何分析 IRP 覆盖范围数据
-ms.assetid: 71b87948-8e69-4b4a-9546-ea27e96a4bf8
 keywords:
 - 驱动程序覆盖套件 WDK，分析数据
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d7d089029e2383160a14164e01c82215a7453d80
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: f70b1873e6a6265289de3f84bddbe106b4d3ae20
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89384837"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803583"
 ---
 # <a name="how-to-analyze-irp-coverage-data"></a>如何分析 IRP 覆盖范围数据
 
 
-**注意**   Windows 10 不再需要驱动程序覆盖率工具包，并且 WDK 中不再包括该安装程序。 若要在 Windows 10 中执行此处所述的任务，请改用 [驱动程序验证程序](driver-verifier.md) 和 [IRP 日志记录](irp-logging.md)。
+**注意**  Windows 10 不再需要驱动程序覆盖率工具包，并且 WDK 中不再包括该安装程序。 若要在 Windows 10 中执行此处所述的任务，请改用 [驱动程序验证程序](driver-verifier.md) 和 [IRP 日志记录](irp-logging.md)。
 
  
 
@@ -63,7 +62,7 @@ Data source
 
 -   驱动程序未处理的 IRP MJ 和 MN 函数代码的列表。 此信息非常重要，可提供有关代码覆盖率测试中的缺陷的见解。
 
-**注意**   关于要测试哪个 Irp 的决策取决于驱动程序和驱动程序支持的 Irp。 IRP MJ 和 MN 覆盖率数据可帮助你评估你的驱动程序的代码覆盖率测试的效率。
+**注意**  关于要测试哪个 Irp 的决策取决于驱动程序和驱动程序支持的 Irp。 IRP MJ 和 MN 覆盖率数据可帮助你评估你的驱动程序的代码覆盖率测试的效率。
 
  
 

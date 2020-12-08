@@ -1,15 +1,14 @@
 ---
 title: 手动设置通过 USB 3.0 线缆进行的内核模式调试
 description: 适用于 Windows 的调试工具支持通过 USB 3.0 电缆进行内核调试。 本主题介绍如何手动设置 USB 3.0 调试。
-ms.assetid: 9A9F5DA0-B98A-4C19-A723-67D06B2409B5
 ms.date: 05/07/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 73b304cfebe1568391c9fdc435c653e4992904ca
-ms.sourcegitcommit: 5a73142b3ff11a4f7713de5cfce71b82a5afb5fc
+ms.openlocfilehash: 1ac36c73fa2ee85ddf72efefc0d0049c30445ea5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95872251"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803597"
 ---
 # <a name="setting-up-kernel-mode-debugging-over-a-usb-30-cable-manually"></a>手动设置通过 USB 3.0 线缆进行的内核模式调试
 
@@ -97,7 +96,7 @@ ms.locfileid: "95872251"
 1. 将通用串行总线 (USB) 3.0 调试电缆连接到在主机和目标计算机上选择进行调试的 USB 3.0 端口。
 2. 确定主机计算机上运行的 Windows 的位数 (32 位或64位) 。
 3. 在主计算机上，以与主计算机上运行的 Windows 的位数匹配的 "管理员) 的形式打开某一版本的 WinDbg (。 例如，如果主计算机运行的是64位版本的 Windows，请以管理员身份打开该版本的 WinDbg 的64位版本。
-4. 在 " **文件** " 菜单上，选择 " **内核调试**"。 在 "内核调试" 对话框中，打开 " **USB** " 选项卡。输入在设置目标计算机时创建的目标名称。 单击“确定”。
+4. 在 " **文件** " 菜单上，选择 " **内核调试**"。 在 "内核调试" 对话框中，打开 " **USB** " 选项卡。输入在设置目标计算机时创建的目标名称。 单击 **“确定”** 。
 
 此时，将在主计算机上安装 USB 调试驱动程序。 这就是将 WinDbg 的位数与 Windows 的位数相匹配的原因。 安装 USB 调试驱动程序之后，可以使用32位或64位版本的 WinDbg 来执行后续的调试会话。
 
@@ -105,7 +104,7 @@ ms.locfileid: "95872251"
 
 ### <a name="using-windbg"></a>使用 WinDbg
 
-在主计算机上，打开 WinDbg。 在 " **文件** " 菜单上，选择 " **内核调试**"。 在 "内核调试" 对话框中，打开 " **USB** " 选项卡。输入在设置目标计算机时创建的目标名称。 单击“确定”。
+在主计算机上，打开 WinDbg。 在 " **文件** " 菜单上，选择 " **内核调试**"。 在 "内核调试" 对话框中，打开 " **USB** " 选项卡。输入在设置目标计算机时创建的目标名称。 单击 **“确定”** 。
 
 还可以通过在命令提示符窗口中输入以下命令来启动与 WinDbg 的会话，其中 *TargetName* 是设置目标计算机时创建的目标名称：
 

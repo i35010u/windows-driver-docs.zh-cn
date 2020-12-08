@@ -1,24 +1,23 @@
 ---
 title: 处理同步驱动程序通知
 description: 处理同步驱动程序通知
-ms.assetid: 84e4e05f-1383-4f5f-8fc0-20cd508afa3c
 keywords:
 - 驱动程序通知 WDK 动态硬件分区，处理
 - 同步驱动程序通知 WDK 动态硬件分区，处理
 - 注册驱动程序通知 WDK 动态硬件分区，同步
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ebb8743ab1fd136d063b6357b84f6e516040af65
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 5673375f267404ce9d88babd8efb55f358878a83
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89184981"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96805419"
 ---
 # <a name="processing-a-synchronous-driver-notification"></a>处理同步驱动程序通知
 
 
-当操作系统调用注册的回调函数时，它会将指针传递到*ChangeContext*参数中的[**KE \_ PROCESSOR \_ CHANGE \_ 通知 \_ 上下文**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_ke_processor_change_notify_context)结构，并将指针传递到*OperationStatus*参数中包含 NTSTATUS 代码的变量。 **KE \_ processor \_ CHANGE \_ 通知 \_ 上下文**结构包含处理器添加操作的状态、要添加的新处理器的处理器编号，以及与指示的状态关联的 NTSTATUS 代码。
+当操作系统调用注册的回调函数时，它会将指针传递到 *ChangeContext* 参数中的 [**KE \_ PROCESSOR \_ CHANGE \_ 通知 \_ 上下文**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_ke_processor_change_notify_context)结构，并将指针传递到 *OperationStatus* 参数中包含 NTSTATUS 代码的变量。 **KE \_ processor \_ CHANGE \_ 通知 \_ 上下文** 结构包含处理器添加操作的状态、要添加的新处理器的处理器编号，以及与指示的状态关联的 NTSTATUS 代码。
 
 将新处理器添加到硬件分区时，操作系统将调用注册的回调函数两次。 操作系统首先调用具有 **KeProcessorAddStartNotify** 状态的回调函数，然后再启动新的处理器。 如果操作系统成功添加了新的处理器，它将第二次调用回调函数并具有 **KeProcessorAddCompleteNotify** 状态。 否则，它会第二次调用回调函数并返回 **KeProcessorAddFailureNotify** 状态。
 

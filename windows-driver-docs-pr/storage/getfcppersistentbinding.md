@@ -1,7 +1,6 @@
 ---
 title: GetFcpPersistentBinding 函数
 description: GetFcpPersistentBinding 方法检索 HBA 微型端口驱动程序用来将其逻辑单元标识为逻辑单元的光纤通道协议 (FCP) 标识符的绑定。
-ms.assetid: ee675022-51f7-4b81-863c-ee608b0284b0
 keywords:
 - GetFcpPersistentBinding 函数存储设备
 topic_type:
@@ -15,27 +14,27 @@ api_type:
 - LibDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: a98b3bcd719bce27510f613aaee182896a2e840e
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 5be106a69394b79237e40c3bd2f53cd79964c411
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89185443"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96804561"
 ---
 # <a name="getfcppersistentbinding-function"></a>GetFcpPersistentBinding 函数
 
 
-**GetFcpPersistentBinding**方法检索 HBA 微型端口驱动程序用来将其逻辑单元标识为逻辑单元的光纤通道协议 (FCP) 标识符的绑定。
+**GetFcpPersistentBinding** 方法检索 HBA 微型端口驱动程序用来将其逻辑单元标识为逻辑单元的光纤通道协议 (FCP) 标识符的绑定。
 
 <a name="syntax"></a>语法
 ------
 
 ```ManagedCPlusPlus
 void GetFcpPersistentBinding(
-   [in] uint32                                          InEntryCount,
-   [out, HBA_STATUS_QUALIFIERS] HBA_STATUS              HBAStatus,
-   [out] uint32                                         TotalEntryCount,
-   [out] uint32                                         OutEntryCount,
+   [in] uint32                                          InEntryCount,
+   [out, HBA_STATUS_QUALIFIERS] HBA_STATUS              HBAStatus,
+   [out] uint32                                         TotalEntryCount,
+   [out] uint32                                         OutEntryCount,
    [out, WmiSizeIs("OutEntryCount")] HBAFCPBindingEntry Entry[]
 );
 ```
@@ -47,7 +46,7 @@ void GetFcpPersistentBinding(
 指示 WMI 提供程序可以在 *输入* 参数中报告的绑定项的数目。
 
 *HBAStatus*   
-返回时，包含操作的状态。 有关允许值及其说明的列表，请参阅 [HBA \_ 状态](hba-status.md)。 微型端口驱动程序在[**GetFcpPersistentBinding \_ OUT**](/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_getfcppersistentbinding_out)结构的**HBAStatus**成员中返回此信息。
+返回时，包含操作的状态。 有关允许值及其说明的列表，请参阅 [HBA \_ 状态](hba-status.md)。 微型端口驱动程序在 [**GetFcpPersistentBinding \_ OUT**](/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_getfcppersistentbinding_out)结构的 **HBAStatus** 成员中返回此信息。
 
 *TotalEntryCount*   
 指示与 HBA 关联的永久性绑定的总数。
@@ -79,7 +78,7 @@ void GetFcpPersistentBinding(
 <tbody>
 <tr class="odd">
 <td align="left"><p>目标平台</p></td>
-<td align="left">“桌面”</td>
+<td align="left">台式机</td>
 </tr>
 <tr class="even">
 <td align="left"><p>标头</p></td>

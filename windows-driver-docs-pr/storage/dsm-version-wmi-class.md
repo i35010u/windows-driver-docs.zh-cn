@@ -1,15 +1,14 @@
 ---
 title: DSM \_ 版本 WMI 类
 description: DSM \_ 版本 WMI 类
-ms.assetid: 79239921-169d-496d-a52b-f4b6b0cb0c80
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 1a109c300bf43597fb3b0576d953f9c1e00eff6a
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 980636c95885a7df1d8f3d5307349c7ccbf69de1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89186893"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96804645"
 ---
 # <a name="dsm_version-wmi-class"></a>DSM \_ 版本 WMI 类
 

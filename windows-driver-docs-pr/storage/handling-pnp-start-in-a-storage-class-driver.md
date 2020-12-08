@@ -1,7 +1,6 @@
 ---
 title: 处理存储类驱动程序中的 PnP 启动
 description: 处理存储类驱动程序中的 PnP 启动
-ms.assetid: 8d4ccd09-c5d2-4c9b-b94d-e22c916f0043
 keywords:
 - 存储类驱动程序 WDK、PnP
 - 类驱动程序 WDK 存储，PnP
@@ -9,12 +8,12 @@ keywords:
 - 即插即用 WDK 存储
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e3a6f7e49b9c7b410e8e08190c021e18df0f46a8
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 4bf251e2f40c70bcd54637b6015e459bbbe3403d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89187543"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96804531"
 ---
 # <a name="handling-pnp-start-in-a-storage-class-driver"></a>处理存储类驱动程序中的 PnP 启动
 
@@ -26,7 +25,7 @@ ms.locfileid: "89187543"
 
 存储类驱动程序的内部 *StartDevice* 例程使用驱动程序确定的数据设置其 FDO 的设备扩展，以管理设备的 i/o 请求。 有关详细信息，请参阅 [设置存储类驱动程序的设备扩展](setting-up-a-storage-class-driver-s-device-extension.md)。
 
-*StartDevice*例程应启用驱动程序在其*AddDevice*例程中注册的任何设备接口。  (参阅 [设备接口类](../install/overview-of-device-interface-classes.md)。 ) 它也可能为其设备对象创建符号链接。
+*StartDevice* 例程应启用驱动程序在其 *AddDevice* 例程中注册的任何设备接口。  (参阅 [设备接口类](../install/overview-of-device-interface-classes.md)。 ) 它也可能为其设备对象创建符号链接。
 
 在较低的设备启动完成后，驱动程序可能会假设设备处于 D0 电源状态 (完全打开且可正常运行) 。 如果设备未完全启动，端口驱动程序将排队请求，直到设备准备就绪。 但是，如果驱动程序的 *StartDevice* 例程需要执行需要浪涌电流的任何操作（例如，加速磁盘驱动器），则在执行该操作之前，驱动程序必须将 D0 电源请求发送到下一个较低的驱动程序。
 

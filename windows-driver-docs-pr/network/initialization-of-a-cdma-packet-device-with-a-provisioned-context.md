@@ -1,15 +1,14 @@
 ---
 title: 初始化使用预配上下文的 CDMA 数据包设备
 description: 初始化使用预配上下文的 CDMA 数据包设备
-ms.assetid: 07b4881c-b8df-4831-b0d3-521d187e4232
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 762b88cadd1f1b78f205e681903e8de57b3c2235
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: d77404efbc31ddf24cfd4c03ecb86fdf91f02ec8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89212395"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803531"
 ---
 # <a name="initialization-of-a-cdma-packet-device-with-a-provisioned-context"></a>初始化使用预配上下文的 CDMA 数据包设备
 

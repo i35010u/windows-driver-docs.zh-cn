@@ -1,7 +1,6 @@
 ---
 title: 使用 I2C 来与子设备通信
 description: 使用 I2C 来与子设备通信
-ms.assetid: 5eea2257-49ca-4d76-a6a1-91401595750f
 keywords:
 - I2C WDK 视频微型端口
 - 视频微型端口驱动程序 WDK Windows 2000，子设备
@@ -9,12 +8,12 @@ keywords:
 - 视频微型端口驱动程序 WDK Windows 2000，I2C
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a54a21d82f69ce6ffcc345d2ead6f368c6a01bdf
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 23289aaa9f63cafb6b558f1d0eb677c390ea161d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89067100"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803888"
 ---
 # <a name="using-i2c-to-communicate-with-a-child-device"></a>使用 I2C 来与子设备通信
 

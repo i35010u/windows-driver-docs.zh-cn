@@ -1,7 +1,6 @@
 ---
 title: 提供 CustomTimerDpc 上下文信息
 description: 提供 CustomTimerDpc 上下文信息
-ms.assetid: b4d711fb-63d4-45c6-8054-f934741ce340
 keywords:
 - timer 对象 WDK 内核，CustomTimerDpc 例程
 - CustomTimerDpc
@@ -10,12 +9,12 @@ keywords:
 - 计时器对象 WDK 内核，上下文信息
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9aef308ee01f14ca04c8f4b9b308b49fda9f1ebf
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: b5e1a1bcda198c7a48aa1e68efc33abfe84a85e6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89189511"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96805389"
 ---
 # <a name="providing-customtimerdpc-context-information"></a>提供 CustomTimerDpc 上下文信息
 
@@ -23,7 +22,7 @@ ms.locfileid: "89189511"
 
 
 
-传递给[**KeInitializeDpc**](/windows-hardware/drivers/ddi/wdm/nf-wdm-keinitializedpc)的*DeferredContext*指针指向其他驱动程序例程和*CustomTimerDpc*例程本身可以保持状态的上下文区域。 内核通过每次调用 DPC 例程传递 *DeferredContext* 指针。
+传递给 [**KeInitializeDpc**](/windows-hardware/drivers/ddi/wdm/nf-wdm-keinitializedpc)的 *DeferredContext* 指针指向其他驱动程序例程和 *CustomTimerDpc* 例程本身可以保持状态的上下文区域。 内核通过每次调用 DPC 例程传递 *DeferredContext* 指针。
 
 与 *IoTimer* 例程不同， *CustomTimerDpc* 与驱动程序创建的设备对象没有特定的关联。 但是，驱动程序可以通过在其上下文区中包含指向设备对象的指针，将 *CustomTimerDpc* 例程与驱动程序创建的设备对象相关联。
 

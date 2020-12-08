@@ -1,17 +1,16 @@
 ---
 title: 安装 Serenum 设备
 description: 安装 Serenum 设备
-ms.assetid: abb58ce0-7afb-43eb-81e0-1942d451355a
 keywords:
 - Serenum 驱动程序 WDK，设备安装
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 90ea3239a7011d1831ae8b3d76d2ad2fad31d505
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 34cdd05025a63d2f8950c3f4f34377e93bb716fd
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89186975"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96805023"
 ---
 # <a name="installing-serenum-devices"></a>安装 Serenum 设备
 

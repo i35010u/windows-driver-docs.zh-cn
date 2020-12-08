@@ -1,7 +1,6 @@
 ---
 title: 后备链表
 description: 后备链表扩展显示有关 "搁置" 列表的信息、重置 "搁置" 列表的计数器或修改 "查找" 列表的深度。
-ms.assetid: ec343563-f293-4ddf-96c8-69fc7b9b4377
 keywords:
 - 后备链表列表
 - 后备链表 Windows 调试
@@ -15,17 +14,17 @@ api_location:
 api_type:
 - DllExport
 ms.localizationpriority: medium
-ms.openlocfilehash: b32d3cffa12a4f5b0390494d86c2cefae7716b75
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 28899ef0bc8f33633ca9ed30e054c93077c7a4ff
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89217700"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96804021"
 ---
 # <a name="lookaside"></a>!lookaside
 
 
-**！后备链表**extension 显示有关 "搁置" 列表的信息、重置 "搁置" 列表的计数器或修改 "查找" 列表的深度。
+**！后备链表** extension 显示有关 "搁置" 列表的信息、重置 "搁置" 列表的计数器或修改 "查找" 列表的深度。
 
 ```dbgcmd
 !lookaside [Address [Options [Depth]]]

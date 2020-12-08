@@ -1,17 +1,16 @@
 ---
 title: OID_CO_TAPI_TRANSLATE_TAPI_SAP
 description: 本主题介绍) OID_CO_TAPI_TRANSLATE_TAPI_SAP 对象标识符 (OID。
-ms.assetid: 701a1d02-8528-4b61-adbb-97c817194ac7
 keywords:
 - OID_CO_TAPI_TRANSLATE_TAPI_SAP
 ms.date: 11/03/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bfd06f249ca2e27b88f7623339a8cbc4baf2037c
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: c3030987a4987d3c3f8917fa3e82c3e5231765f7
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89206371"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803671"
 ---
 # <a name="oid_co_tapi_translate_tapi_sap"></a>OID_CO_TAPI_TRANSLATE_TAPI_SAP
 
@@ -36,7 +35,7 @@ typedef struct _CO_TAPI_TRANSLATE_SAP {
 指定从零开始的行标识符。
 
 **ulAddressID**  
-指定由 **ulLineID**指定的行中的从零开始的地址标识符。
+指定由 **ulLineID** 指定的行中的从零开始的地址标识符。
 
 **ulMediaModes**  
 指定客户端所感兴趣的信息流的媒体模式，作为以下一个或多个 LINEMEDIAMODE_constants： 
@@ -85,11 +84,11 @@ ADSI (模拟显示服务接口) 会话上的会话。
 - **LINEMEDIAMODE_VOICEVIEW**  
 调用的媒体模式为 VoiceView。
 
-**预留**  
+Reserved   
 这是保留的。 客户端必须将此字段设置为0。
 
 **NumberOfSaps**  
-指定**NdisSapParams**中包含在缓冲区中的[NDIS_VAR_DATA_DESC](/previous-versions/windows/hardware/network/ff559020(v=vs.85))结构的数目。
+指定 **NdisSapParams** 中包含在缓冲区中的 [NDIS_VAR_DATA_DESC](/previous-versions/windows/hardware/network/ff559020(v=vs.85))结构的数目。
 
 **NdisSapParams**  
 指定包含一个或多个 NDIS_VAR_DATA_DESC 结构的可变长度数组。 每个 NDIS_VAR_DATA_DESC 结构都包含一个到 [CO_SAP](/previous-versions/windows/hardware/network/ff545392(v=vs.85)) 结构的偏移量以及长度。 每个 CO_SAP 结构指定一个服务访问点 (SAP) ，面向连接的客户端可以在该点上接收传入呼叫。

@@ -1,7 +1,6 @@
 ---
 title: 其他标准驱动程序例程
 description: 其他标准驱动程序例程
-ms.assetid: 3dada9cc-7239-47de-8940-bc4cef8be4ca
 keywords:
 - 驱动对象 WDK 内核
 - 标准驱动程序例程 WDK 内核，驱动程序对象
@@ -10,12 +9,12 @@ keywords:
 - 对象 WDK 驱动程序对象
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 20a221ceb286a7a861c1f8288d63775604aa355f
-ms.sourcegitcommit: 4f08f5686c0bbc27d58930b993cbab1a98e3afb0
+ms.openlocfilehash: 7027c0fb4b51b13ba81d1bd1d361be8b70b40277
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "89443723"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803543"
 ---
 # <a name="other-standard-driver-routines"></a>其他标准驱动程序例程
 

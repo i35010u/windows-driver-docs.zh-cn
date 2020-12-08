@@ -1,15 +1,14 @@
 ---
 title: SPB 框架扩展 (SpbCx)
-description: 从 Windows 8 开始，SPB 框架扩展 (SpbCx) 是系统提供的针对内核模式驱动程序框架的扩展 (KMDF) 。
-ms.assetid: 84015f3c-ff55-4c1a-bb52-63b6f29b99d7
+description: 从 Windows 8 开始， (SpbCx) 的 SPB 框架扩展是系统提供的 Kernel-Mode 驱动程序框架扩展 (KMDF) 。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9a31c0477889f4a6a50bc718a87688c93407d689
-ms.sourcegitcommit: c766ab74e32eb44795cbbd1a4f352d3a6a9adc14
+ms.openlocfilehash: 4ee279f962797f9ef5f23f41df4b4f6c06343c80
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89389585"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96804825"
 ---
 # <a name="spb-framework-extension-spbcx"></a>SPB 框架扩展 (SpbCx)
 
@@ -26,7 +25,7 @@ SpbCx 与 SPB 控制器驱动程序之间的责任划分如下：
 
 -   SPB 控制器驱动程序管理 SPB 控制器设备中特定于硬件的函数。 硬件供应商为其 SPB 控制器设备提供控制器驱动程序。
 
-SpbCx 和 SPB 控制器驱动程序在内核模式下运行。 SpbCx 是一个框架扩展，而 SPB 控制器驱动程序是一个 KMDF 驱动程序。 SPB 控制器驱动程序调用 SpbCx 设备驱动程序接口中的方法， (DDI) 来执行特定于 SPB 的操作，并调用 KMDF 方法来执行其他更通用的驱动程序功能。 有关生成 KMDF 驱动程序的信息，请参阅 [生成和加载基于框架的驱动程序](../wdf/building-and-loading-a-kmdf-driver.md)。
+SpbCx 和 SPB 控制器驱动程序在内核模式下运行。 SpbCx 是一个框架扩展，而 SPB 控制器驱动程序是一个 KMDF 驱动程序。 SPB 控制器驱动程序调用 SpbCx 设备驱动程序接口中的方法， (DDI) 来执行特定于 SPB 的操作，并调用 KMDF 方法来执行其他更通用的驱动程序功能。 有关生成 KMDF 驱动程序的信息，请参阅 [生成和加载 Framework-Based 驱动程序](../wdf/building-and-loading-a-kmdf-driver.md)。
 
 SPB 控制器驱动程序静态链接到 SpbCx 存根库 Spbcx 中的 DDI 入口点。 在运行时，此库执行必要的驱动程序版本协商以动态链接到用于实现 DDI 的框架扩展模块 Spbcx.sys。 需要 Spbcx.sys 特定版本的 SPB 控制器驱动程序可以安全地链接到版本号较高的 Spbcx.sys 版本。 但是，此驱动程序无法链接到版本号较低的 Spbcx.sys 版本。 SpbCx i/o 请求接口类似向后兼容。
 

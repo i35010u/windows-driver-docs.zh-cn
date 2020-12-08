@@ -1,34 +1,33 @@
 ---
 title: INF 文件中的常规 Unicode 要求
-description: 应保存 INF 文件，并将其编码为 unicode 格式;它们不能 ANSI。
-ms.assetid: 100F5DAB-FD25-4B42-8E3B-321E96CD25A2
+description: INF 文件应保存并编码为 Unicode;它们不得为 ANSI。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: aaaec5e465cf85eb2fc6e1a352d3bf3588f2d5a6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 30b7dc841333b5b18adf6f8c4b7b66b354d3ffc6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63343947"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803949"
 ---
 # <a name="general-unicode-requirement-in-inf-files"></a>INF 文件中的常规 Unicode 要求
 
 
-应保存 INF 文件，并将其编码为 Unicode (utf-16);它们不能 ANSI 或 utf-8。
+INF 文件应保存并编码为 Unicode (UTF-16) ;它们不能是 ANSI 或 UTF-8。
 
-**若要检查的 INF 文件中的 Unicode**
+**检查 INF 文件中的 Unicode**
 
-1.  使用 Microsoft 记事本打开 INF 文件。
-2.  在“文件”菜单上，单击“另存为”。
-3.  如果**ANSI**将出现在**编码**字段的对话框框中，更改到编码**Unicode**并保存该文件以新名称。
+1.  使用 Microsoft Notepad 打开 INF 文件。
+2.  在“文件”菜单中，单击“另存为”。
+3.  如果在对话框的 "**编码**" 字段中显示 " **ANSI** "，请将编码更改为 **Unicode** ，并使用新名称保存该文件。
 
-此图显示了**另存为**具有 ANSI 编码的文件的对话框：
+下图显示了具有 ANSI 编码的文件的 " **另存为** " 对话框：
 
-![将另存为包含 ansi 编码对话框](images/saveasdialogansi.jpg)
+![具有 ansi 编码的 "另存为" 对话框](images/saveasdialogansi.jpg)
 
-在此图中显示正确的默认值：
+此图显示了正确的默认值：
 
-![另存为具有 unicode 编码的对话框](images/saveasdialogunicode.jpg)
+![具有 unicode 编码的 "另存为" 对话框](images/saveasdialogunicode.jpg)
 
  
 

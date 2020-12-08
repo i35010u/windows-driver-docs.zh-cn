@@ -1,7 +1,6 @@
 ---
 title: 编解码器优点验证
 description: 编解码器验证
-ms.assetid: 595a21ea-bae2-410e-874a-7f3429ac02a1
 keywords:
 - 硬件编解码器 WDK AVStream，验证设备
 - 编解码器 WDK AVStream
@@ -10,12 +9,12 @@ keywords:
 - 编解码器 WDK AVStream，硬件，验证
 ms.date: 06/16/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: e6db4b8a03f9763015654524a73633752157e8c1
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 6dfc4ef23e49db58d0c2fee68825d43cf597889f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89190015"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96804381"
 ---
 # <a name="codec-merit-validation"></a>编解码器验证
 

@@ -1,16 +1,15 @@
 ---
 title: 手动设置通过 1394 线缆进行的内核模式调试
 description: 适用于 Windows 的调试工具支持通过 1394 (火线) 电缆进行内核调试。 本主题介绍如何手动设置1394调试。
-ms.assetid: bcfc61a1-0315-451c-a279-f6305995b05f
 keywords: 建立1394电缆连接、1394连接、IEEE 1394 电缆、火线电缆
 ms.date: 02/20/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 95e51288d3fd809f21f6f6972da6423db4fb9958
-ms.sourcegitcommit: 67efcd26f7be8f50c92b141ccd14c9c68f4412d8
+ms.openlocfilehash: 480c5bd4347f928e6f0334046f61d6219d32c6b3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88902646"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803619"
 ---
 # <a name="setting-up-kernel-mode-debugging-over-a-1394-cable-manually"></a>手动设置通过 1394 线缆进行的内核模式调试
 
@@ -91,7 +90,7 @@ ms.locfileid: "88902646"
 
 目标计算机可以有多个1394控制器，尽管不建议这样做。 如果目标计算机在主板上有1394控制器，请尽可能使用该控制器进行调试。 如果有其他1394卡，则应拔下卡并使用板载控制器。 另一种解决方案是在计算机的 BIOS 设置中禁用板载1394控制器。
 
-如果你决定在目标计算机上启用多个1394控制器，则必须指定总线参数，以便调试器知道要对哪个控制器进行调试。 若要指定总线参数，请在目标计算机上打开设备管理器，并找到要用于调试的1394控制器。 打开控制器的 "属性" 页，记下 "总线号码"、"设备编号" 和 "功能编号"。 在提升的命令提示符窗口中，输入以下命令，其中 *b*、 *d*和 *f* 是以十进制格式表示的总线、设备和函数编号：
+如果你决定在目标计算机上启用多个1394控制器，则必须指定总线参数，以便调试器知道要对哪个控制器进行调试。 若要指定总线参数，请在目标计算机上打开设备管理器，并找到要用于调试的1394控制器。 打开控制器的 "属性" 页，记下 "总线号码"、"设备编号" 和 "功能编号"。 在提升的命令提示符窗口中，输入以下命令，其中 *b*、 *d* 和 *f* 是以十进制格式表示的总线、设备和函数编号：
 
 **bcdedit-设置 "{dbgsettings}" busparams** <em>b</em>**。**<em>d.</em>**.**<em>f.</em>。
 

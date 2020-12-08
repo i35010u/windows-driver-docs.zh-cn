@@ -1,7 +1,6 @@
 ---
 title: 'Irql \_ IrqlSetting \_ 函数规则 (ndis) '
 description: Irql \_ IrqlSetting \_ 函数规则指定必须在正确的 Irql 级别调用 NDIS 中断宏。
-ms.assetid: 47e62c7c-bd43-4b4a-b7d6-3f64a4b8a6c8
 ms.date: 05/21/2018
 keywords:
 - 'Irql_IrqlSetting_Function 规则 (ndis) '
@@ -12,12 +11,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 9d7e7ad97fae44aa7b99d161ed89ea22d46d7843
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 509ad2bbf8ece15532b63afeedfb0ae21ffb21ff
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104736"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96804203"
 ---
 # <a name="irql_irqlsetting_function-rule-ndis"></a>Irql \_ IrqlSetting \_ 函数规则 (ndis) 
 

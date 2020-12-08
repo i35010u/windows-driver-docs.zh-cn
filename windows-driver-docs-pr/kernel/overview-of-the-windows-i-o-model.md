@@ -1,19 +1,18 @@
 ---
 title: Windows I/O 模型概述
 description: Windows I/O 模型概述
-ms.assetid: 17a012b7-946e-4f42-8d80-e270bc26de06
 keywords:
-- Irp WDK 内核，有关 Windows I/O 模型
-- Windows I/O 模型 WDK
-- I/O WDK 内核、 模型
+- Irp WDK 内核，关于 Windows i/o 模型
+- Windows i/o 模型 WDK
+- I/o WDK 内核，模型
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3b86daddcaf0016aa417d5cf54ce6db32f57f79d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 049cf084bd2f1bc67cfa3483f37500c8f70b8157
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63352065"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803541"
 ---
 # <a name="overview-of-the-windows-io-model"></a>Windows I/O 模型概述
 
@@ -21,17 +20,17 @@ ms.locfileid: "63352065"
 
 
 
-每个操作系统提供了用于处理数据流与外围设备之间的隐式或显式 I/O 模式。 Microsoft Windows I/O 模型的一个功能是它支持异步 I/O。 此外，I/O 模型具有以下常规功能：
+每个操作系统都具有隐式或显式 i/o 模型，可用于处理发件和外围设备的数据流。 Microsoft Windows i/o 模型的一项功能是它对异步 i/o 的支持。 此外，i/o 模型具有以下常规功能：
 
--   I/O 管理器提供所有内核模式驱动程序的一致界面，包括最低级别，中间，和文件系统驱动程序。 I/O 请求数据包 (Irp) 作为发送到驱动程序的所有 I/O 请求。
+-   I/o 管理器为所有内核模式驱动程序提供了一个一致的接口，包括最低级别、中间和文件系统驱动程序。 驱动程序的所有 i/o 请求都作为 i/o 请求数据包发送 (Irp) 。
 
--   I/O 操作的分层。 I/O 管理器将导出 I/O 系统服务，哪些用户模式下受保护的子系统调用执行 I/O 操作代表其应用程序和/或最终用户。 I/O 管理器截获这些调用，设置一个或多个 Irp，并将其路由到物理设备可能是分层驱动程序通过。
+-   I/o 操作是分层的。 I/o 管理器将导出 i/o 系统服务，这些服务受保护的子系统将调用，代表其应用程序和/或最终用户执行 i/o 操作。 I/o 管理器会截获这些调用，设置一个或多个 Irp，并通过可能的分层驱动程序将其路由到物理设备。
 
--   I/O 管理器定义一组标准的例程、 某些必需和可选的驱动程序可以支持其他人。 所有驱动程序都遵循一个相对统一实施模型，提供在外围设备和所需的总线、 函数、 筛选和文件系统驱动程序的不同功能之间的差异。
+-   I/o 管理器定义了驱动程序可以支持的一组标准例程，一些必需和其他选项是可选的。 所有驱动程序都遵循相对一致的实现模型，因为外围设备与总线、函数、筛选器和文件系统驱动程序所需的功能不同。
 
--   与操作系统本身，驱动程序是基于对象的。 驱动程序、 其设备和系统硬件表示为对象。 I/O 管理器和其他操作系统组件导出驱动程序可以调用的操作相应的对象完成工作的内核模式下支持例程。
+-   与操作系统本身一样，驱动程序基于对象。 驱动程序、其设备和系统硬件表示为对象。 I/o 管理器和其他操作系统组件导出内核模式支持例程，驱动程序可调用这些例程来通过操作适当的对象来完成工作。
 
-除了使用 Irp 传达传统的 I/O 请求，I/O 管理器配合 PnP 和电源管理器发送 Irp 包含 PnP 和电源的请求。
+除了使用 Irp 传递传统 i/o 请求以外，i/o 管理器还与 PnP 和电源管理器一起使用，发送包含 PnP 和电源请求的 Irp。
 
  
 

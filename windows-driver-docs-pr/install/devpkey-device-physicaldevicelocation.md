@@ -1,7 +1,6 @@
 ---
 title: DEVPKEY_Device_PhysicalDeviceLocation
 description: DEVPKEY_Device_PhysicalDeviceLocation
-ms.assetid: DEF01D17-7E32-45BB-8846-D3B3B60506EB
 keywords:
 - DEVPKEY_Device_PhysicalDeviceLocation 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 35c78ff28cfcbea38d45017c582c18c05af9b829
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: e6cded914d777a77b96ba3d494bcbffbce49ddf2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90717424"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96804148"
 ---
 # <a name="devpkey_device_physicaldevicelocation"></a>DEVPKEY_Device_PhysicalDeviceLocation
 

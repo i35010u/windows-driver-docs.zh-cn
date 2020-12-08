@@ -1,29 +1,28 @@
 ---
 title: OID_SWITCH_PORT_FEATURE_STATUS_QUERY
 description: Hyper-v 可扩展交换机的协议边缘发出对象标识符 (OID) 方法请求 OID_SWITCH_PORT_FEATURE_STATUS_QUERY，以获取有关可扩展交换机端口的扩展中的自定义状态信息。
-ms.assetid: 577CF1C2-9737-4FB0-9C40-AEE529EF1439
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_SWITCH_PORT_FEATURE_STATUS_QUERY 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 7cffd94e937f6b7eab53aef3a670e8e0804e7ae6
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 3f3e6efe0f049ddd13553cdc0884efe9e88682f1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107204"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96805183"
 ---
 # <a name="oid_switch_port_feature_status_query"></a>OID \_ 交换机 \_ 端口 \_ 功能 \_ 状态 \_ 查询
 
 
 Hyper-v 可扩展交换机的协议边缘发出对象标识符 (OID) 方法请求 "OID \_ 交换机 \_ 端口" \_ 功能 \_ 状态 \_ 查询，以获取有关可扩展交换机端口的扩展中的自定义状态信息。 此信息称为 *功能状态* 信息。 此信息的格式由独立软件供应商 (ISV) 来定义。
 
-成功从此 OID 方法请求返回后， [**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的**InformationBuffer**成员包含指向缓冲区的指针。 此缓冲区包含以下数据：
+成功从此 OID 方法请求返回后， [**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的 **InformationBuffer** 成员包含指向缓冲区的指针。 此缓冲区包含以下数据：
 
 -   [**NDIS \_ 交换机 \_ 端口 \_ 功能 \_ 状态 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_port_feature_status_parameters)结构，指定要返回的功能状态信息类型的参数。
 
 -   " [**NDIS \_ 交换机 \_ 端口" \_ 功能 \_ 状态 \_ 自定义**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_port_feature_status_custom) 结构，其中包含可扩展交换机端口的功能状态信息。
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 有关如何处理 oid 交换机端口功能状态查询的 OID 集请求的指南 \_ \_ \_ \_ \_ ，请参阅 [管理自定义端口功能状态信息](./managing-custom-port-feature-status-information.md)。

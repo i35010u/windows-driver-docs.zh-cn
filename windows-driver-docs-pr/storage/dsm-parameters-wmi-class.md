@@ -1,15 +1,14 @@
 ---
 title: DSM \_ 参数 WMI 类
 description: DSM \_ 参数 WMI 类
-ms.assetid: c946f8cb-327c-4d5a-a133-0051a405fcad
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 1dfc19e05f64bd8c33893eb4f2f3946b99fe6654
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: b9b573066a1d8c5c74e92d5ec572aec6fe282051
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89189443"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96804661"
 ---
 # <a name="dsm_parameters-wmi-class"></a>DSM \_ 参数 WMI 类
 

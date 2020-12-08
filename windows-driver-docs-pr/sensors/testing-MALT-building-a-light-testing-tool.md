@@ -1,19 +1,18 @@
 ---
 title: " (MALT) 构建轻型测试工具"
 description: 了解如何构建 MALT (Microsoft 环境光线工具) ，用于测试和校准屏幕亮度。
-ms.assetid: d045b771-b536-457c-897b-ecb6517bf0a8
 ms.date: 12/13/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: e27fce09398d1fcb17c74f2ca95eb17bf607266d
-ms.sourcegitcommit: 372464be981a39781c71049126f36891cb5d0cad
+ms.openlocfilehash: 26ec57872eac99a9ea252492a8795eea21f7a85d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91645977"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96805097"
 ---
 # <a name="building-a-light-testing-tool-malt"></a> (MALT) 构建轻型测试工具
 
-本主题提供有关如何使用 (和生成的说明和要求) 用于测试和校准屏幕亮度的工具。 MALT (**M**icrosoft **A**mbient **L**右键 **T**ool) 用于引用。
+本主题提供有关如何使用 (和生成的说明和要求) 用于测试和校准屏幕亮度的工具。 MALT (**M** icrosoft **A** mbient **L** 右键 **T** ool) 用于引用。
 
 请使用这些说明来利用您的测试解决方案。 发布微控制器 API，以便进一步利用在 HLK 和其他位置发布的测试。 你的反馈将有助于改进本指南。
 
@@ -35,7 +34,7 @@ ms.locfileid: "91645977"
 * 2 [彩色传感器](https://www.digikey.com/product-detail/en/ams/TCS34727FN/TCS34727FNCT-ND/3737677)
 * [灯具机箱](#step-1---assemble-light-enclosure)
 
-## <a name="instructions"></a>Instructions
+## <a name="instructions"></a>说明
 
 ### <a name="step-1---assemble-light-enclosure"></a>步骤 1-组装灯具机箱
 

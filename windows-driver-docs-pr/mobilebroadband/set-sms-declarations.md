@@ -1,15 +1,14 @@
 ---
 title: 设置短信声明
 description: 设置短信声明
-ms.assetid: fad7fb60-eb08-43e9-bc58-afb8d6b5633c
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c2d792aecce0cb52773392c4bde341e9694ba9e8
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: b1eebd727c612c70975f9301489b3fd64d683f25
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91734537"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803533"
 ---
 # <a name="set-sms-declarations"></a>设置短信声明
 

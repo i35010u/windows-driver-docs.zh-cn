@@ -1,15 +1,14 @@
 ---
 title: 筛选器初始化
 description: 筛选器初始化
-ms.assetid: c39dc5a6-f529-40a2-87d4-bac325b4fa1a
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1e6981da234bea64b79061dd685e7e512c695e9a
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: e9008299e4ef410b8f81d810381054d5dee1ed79
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89186899"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96804625"
 ---
 # <a name="filter-initialization"></a>筛选器初始化
 

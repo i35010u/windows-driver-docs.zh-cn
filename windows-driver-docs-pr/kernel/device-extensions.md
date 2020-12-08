@@ -1,7 +1,6 @@
 ---
 title: 设备扩展
 description: 设备扩展
-ms.assetid: 9ea59994-1112-4ae5-96a8-fa0670694b53
 keywords:
 - 设备对象 WDK 内核，设备扩展
 - 设备扩展 WDK 内核
@@ -11,12 +10,12 @@ keywords:
 - 中间驱动程序扩展 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9653802367f371f9ff814f0a2949f4e891529799
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 771520ecf8d8a45b3594fabb42a10ffd8483d84d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89191927"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96805439"
 ---
 # <a name="device-extensions"></a>设备扩展
 

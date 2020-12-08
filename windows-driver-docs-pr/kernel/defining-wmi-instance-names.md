@@ -1,7 +1,6 @@
 ---
 title: 定义 WMI 实例名称
 description: 定义 WMI 实例名称
-ms.assetid: 0f91710a-7bd2-462a-b677-6dd32160a861
 keywords:
 - WMI WDK 内核，事件块
 - 事件块 WDK WMI
@@ -14,12 +13,12 @@ keywords:
 - WMI WDK 内核，实例名称
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 629fe958f7bb28aecb77d66a15778ae8ef019e0b
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: a355fd1607b099e02489e14217f23697434a3249
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89185663"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803551"
 ---
 # <a name="defining-wmi-instance-names"></a>定义 WMI 实例名称
 
@@ -37,7 +36,7 @@ WMI 块的 *实例* 包含特定物理设备或软件组件所提供的数据。
 
 -   创建实例时，驱动程序会生成 *动态实例名称* 。
 
-    驱动程序指示它将在注册块时为块生成动态实例名称。 注册块后，驱动程序和 WMI 会将动态实例名称作为缓冲区中的字符串**传递。**
+    驱动程序指示它将在注册块时为块生成动态实例名称。 注册块后，驱动程序和 WMI 会将动态实例名称作为缓冲区中的字符串 **传递。**
 
 仅当数据块的实例数或实例名在运行时经常更改时，驱动程序才应生成动态实例名称。 例如，驱动程序可能将进程 Id 或 TCP/IP 连接的 IP 地址用作实例名称。 此类实例名称应为动态的;如果它们是静态的，则驱动程序会产生相当大的开销，因为在每次发生更改时，它都必须调用 [**IoWMIRegistrationControl**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iowmiregistrationcontrol) 来更新实例的数量和名称。
 
@@ -53,7 +52,7 @@ WMI 块的 *实例* 包含特定物理设备或软件组件所提供的数据。
 
     驱动程序无法使用 WMI 库例程来处理使用动态实例名称的数据块的 Irp。
 
-驱动程序通过在 \_ \_ [**WMIREGGUID**](/windows-hardware/drivers/ddi/wmistr/ns-wmistr-wmiregguidw)或[**WMIGUIDREGINFO**](/windows-hardware/drivers/ddi/wmilib/ns-wmilib-_wmiguidreginfo)结构中设置或清除 WMIREG 标志*XXX*来指示块是否使用静态或动态实例名称，以及静态实例名称的类型。 有关详细信息，请参阅 [注册为 WMI 数据提供程序](registering-as-a-wmi-data-provider.md)。
+驱动程序通过在 \_ \_ [**WMIREGGUID**](/windows-hardware/drivers/ddi/wmistr/ns-wmistr-wmiregguidw)或 [**WMIGUIDREGINFO**](/windows-hardware/drivers/ddi/wmilib/ns-wmilib-_wmiguidreginfo)结构中设置或清除 WMIREG 标志 *XXX* 来指示块是否使用静态或动态实例名称，以及静态实例名称的类型。 有关详细信息，请参阅 [注册为 WMI 数据提供程序](registering-as-a-wmi-data-provider.md)。
 
  
 

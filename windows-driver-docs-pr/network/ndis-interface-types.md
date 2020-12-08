@@ -1,34 +1,33 @@
 ---
 title: NDIS 接口类型
-description: 本主题介绍为 NDIS 接口类型。
-ms.assetid: 80320da2-d35f-41de-b001-2cb71d202ccc
+description: 本主题描述了 NDIS 接口的类型。
 keywords:
-- NDIS 接口类型，WDK NDIS 接口类型的网络驱动程序
+- NDIS 接口类型，WDK NDIS 接口类型网络驱动程序
 ms.date: 11/27/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f4b60fd067048cb9ee29d83f514594b322af24b8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f1561ecf7cd5686ca01aafbb80530b7a83447c1f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63392906"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96805219"
 ---
 # <a name="ndis-interface-types"></a>NDIS 接口类型
 
-NDIS 接口类型对应于*IfType*管理信息基础 (MIB) 中定义的对象。 中使用这些接口类型**IfType**成员和*IfType*许多 NDIS 结构和函数的参数。
+NDIS 接口类型与管理信息基础 (MIB) 中定义的 *IfType* 对象相对应。 在 **IfType** 成员中使用这些接口类型，为许多 NDIS 结构和函数使用 *IfType* 参数。
 
-NDIS 接口类型注册与 Internet 分配号机构 (IANA)，这会定期发布接口类型的列表或特定于 Internet 的网络管理数字分配它的派生类中分配数字 RFC，. 有关 IANA IfType*定义*，请参阅[IANA ifType MIB 定义](https://go.microsoft.com/fwlink/p/?linkid=60066)。 有关 IANA 的详细信息，请参阅[IANA](https://go.microsoft.com/fwlink/p/?linkid=60068) Web 站点。
+NDIS 接口类型注册到 Internet 分配的编号颁发机构 (IANA) ，它会定期在分配的数字 RFC 中发布接口类型的列表，或在特定于 Internet 网络管理号码分配的情况下发布接口类型的列表。 有关 IANA IfType *定义* 的详细信息，请参阅 [Iana IfType MIB 定义](https://go.microsoft.com/fwlink/p/?linkid=60066)。 有关 IANA 的详细信息，请参阅 [iana](https://go.microsoft.com/fwlink/p/?linkid=60068) 网站。
 
-下表介绍 IfType 值。
+下表介绍了 IfType 值。
 
 <table>
-<tr><th>名称</th><th>值</th><th>备注</th></tr>
+<tr><th>“属性”</th><th>值</th><th>注释</th></tr>
 <tr><td data-th="Name">
 <p>IF_TYPE_OTHER</p>
 </td><td data-th="Value">
 <p>1</p>
 </td><td data-th="Comment">
-<p>使用此值，如果没有其他 IF_TYPE_<em>Xxx</em>类型适用。</p>
+<p>如果没有其他 IF_TYPE_<em>Xxx</em> 类型适用，则使用此值。</p>
 </td></tr>
 <tr><td data-th="Name">
 <p>IF_TYPE_REGULAR_1822</p>
@@ -122,7 +121,7 @@ NDIS 接口类型注册与 Internet 分配号机构 (IANA)，这会定期发布�
 </td><td data-th="Value">
 <p>19</p>
 </td><td data-th="Comment">
-<p>已过时。 请参阅 DS1 MIB。</p>
+<p>已过时。 请参阅 DS1。</p>
 </td></tr>
 <tr><td data-th="Name">
 <p>IF_TYPE_BASIC_ISDN</p>
@@ -139,7 +138,7 @@ NDIS 接口类型注册与 Internet 分配号机构 (IANA)，这会定期发布�
 </td><td data-th="Value">
 <p>22</p>
 </td><td data-th="Comment">
-<p>专有串行</p>
+<p>专用串行</p>
 </td></tr>
 <tr><td data-th="Name">
 <p>IF_TYPE_PPP</p>
@@ -175,14 +174,14 @@ NDIS 接口类型注册与 Internet 分配号机构 (IANA)，这会定期发布�
 </td><td data-th="Value">
 <p>28</p>
 </td><td data-th="Comment">
-<p>泛型名单</p>
+<p>一般票单</p>
 </td></tr>
 <tr><td data-th="Name">
 <p>IF_TYPE_ULTRA</p>
 </td><td data-th="Value">
 <p>29</p>
 </td><td data-th="Comment">
-<p>超高技术</p>
+<p>超技术</p>
 </td></tr>
 <tr><td data-th="Name">
 <p>IF_TYPE_DS3</p>
@@ -203,7 +202,7 @@ NDIS 接口类型注册与 Internet 分配号机构 (IANA)，这会定期发布�
 </td><td data-th="Value">
 <p>32</p>
 </td><td data-th="Comment">
-<p>DTE 仅</p>
+<p>仅 DTE</p>
 </td></tr>
 <tr><td data-th="Name">
 <p>IF_TYPE_RS232</p>
@@ -232,7 +231,7 @@ NDIS 接口类型注册与 Internet 分配号机构 (IANA)，这会定期发布�
 </td><td data-th="Value">
 <p>37</p>
 </td><td data-th="Comment">
-<p>ATM 的单元格</p>
+<p>ATM 单元</p>
 </td></tr>
 <tr><td data-th="Name">
 <p>IF_TYPE_MIO_X25</p>
@@ -355,70 +354,70 @@ NDIS 接口类型注册与 Internet 分配号机构 (IANA)，这会定期发布�
 </td><td data-th="Value">
 <p>58</p>
 </td><td data-th="Comment">
-<p>已过时。 改为使用 32 位还是 44。</p>
+<p>已过时。 请改用32或44。</p>
 </td></tr>
 <tr><td data-th="Name">
 <p>IF_TYPE_AFLANE_8023</p>
 </td><td data-th="Value">
 <p>59</p>
 </td><td data-th="Comment">
-<p>ATM 仿真 LAN-为 802.3</p>
+<p>ATM 仿真的 LAN-适用于802。3</p>
 </td></tr>
 <tr><td data-th="Name">
 <p>IF_TYPE_AFLANE_8025</p>
 </td><td data-th="Value">
 <p>60</p>
 </td><td data-th="Comment">
-<p>ATM 仿真 LAN 的 802.5</p>
+<p>用于802.5 的 ATM 仿真 LAN</p>
 </td></tr>
 <tr><td data-th="Name">
 <p>IF_TYPE_CCTEMUL</p>
 </td><td data-th="Value">
 <p>61</p>
 </td><td data-th="Comment">
-<p>ATM 模拟线路</p>
+<p>ATM 仿真线路</p>
 </td></tr>
 <tr><td data-th="Name">
 <p>IF_TYPE_FASTETHER</p>
 </td><td data-th="Value">
 <p>62</p>
 </td><td data-th="Comment">
-<p>快速以太网 (100BaseT)</p>
+<p>快速以太网 (100BaseT) </p>
 </td></tr>
 <tr><td data-th="Name">
 <p>IF_TYPE_ISDN</p>
 </td><td data-th="Value">
 <p>63</p>
 </td><td data-th="Comment">
-<p>ISDN 和 X.25</p>
+<p>ISDN 和 .25</p>
 </td></tr>
 <tr><td data-th="Name">
 <p>IF_TYPE_V11</p>
 </td><td data-th="Value">
 <p>64</p>
 </td><td data-th="Comment">
-<p>CCITT V.11/X.21</p>
+<p>CCITT V1.0/X 21</p>
 </td></tr>
 <tr><td data-th="Name">
 <p>IF_TYPE_V36</p>
 </td><td data-th="Value">
 <p>65</p>
 </td><td data-th="Comment">
-<p>CCITT V.36</p>
+<p>CCITT 版本36</p>
 </td></tr>
 <tr><td data-th="Name">
 <p>IF_TYPE_G703_64K</p>
 </td><td data-th="Value">
 <p>66</p>
 </td><td data-th="Comment">
-<p>以 64 kbps CCITT G703</p>
+<p>64Kbps 上的 CCITT G703</p>
 </td></tr>
 <tr><td data-th="Name">
 <p>IF_TYPE_G703_2MB</p>
 </td><td data-th="Value">
 <p>67</p>
 </td><td data-th="Comment">
-<p>已过时。 请参阅 DS1 MIB。</p>
+<p>已过时。 请参阅 DS1。</p>
 </td></tr>
 <tr><td data-th="Name">
 <p>IF_TYPE_QLLC</p>
@@ -432,7 +431,7 @@ NDIS 接口类型注册与 Internet 分配号机构 (IANA)，这会定期发布�
 </td><td data-th="Value">
 <p>69</p>
 </td><td data-th="Comment">
-<p>快速以太网 (100BaseFX)</p>
+<p>快速以太网 (100BaseFX) </p>
 </td></tr>
 <tr><td data-th="Name">
 <p>IF_TYPE_CHANNEL</p>
@@ -444,14 +443,14 @@ NDIS 接口类型注册与 Internet 分配号机构 (IANA)，这会定期发布�
 </td><td data-th="Value">
 <p>71</p>
 </td><td data-th="Comment">
-<p>单选传播范围</p>
+<p>广播分散频谱</p>
 </td></tr>
 <tr><td data-th="Name">
 <p>IF_TYPE_IBM370PARCHAN</p>
 </td><td data-th="Value">
 <p>72</p>
 </td><td data-th="Comment">
-<p>IBM 系统 360/370 OEMI 通道</p>
+<p>IBM System 360/370 OEMI 通道</p>
 </td></tr>
 <tr><td data-th="Name">
 <p>IF_TYPE_ESCON</p>
@@ -514,14 +513,14 @@ NDIS 接口类型注册与 Internet 分配号机构 (IANA)，这会定期发布�
 </td><td data-th="Value">
 <p>81</p>
 </td><td data-th="Comment">
-<p>数字信号级别 0</p>
+<p>数字信号级别0</p>
 </td></tr>
 <tr><td data-th="Name">
 <p>IF_TYPE_DS0_BUNDLE</p>
 </td><td data-th="Value">
 <p>82</p>
 </td><td data-th="Comment">
-<p>Ds0s 相同 ds1 上的组</p>
+<p>同一 ds1 上的 ds0s 组</p>
 </td></tr>
 <tr><td data-th="Name">
 <p>IF_TYPE_BSC</p>
@@ -542,14 +541,14 @@ NDIS 接口类型注册与 Internet 分配号机构 (IANA)，这会定期发布�
 </td><td data-th="Value">
 <p>85</p>
 </td><td data-th="Comment">
-<p>应对网络广播</p>
+<p>对付网络广播</p>
 </td></tr>
 <tr><td data-th="Name">
 <p>IF_TYPE_ISO88025R_DTR</p>
 </td><td data-th="Value">
 <p>86</p>
 </td><td data-th="Comment">
-<p>ISO 802.5r DTR</p>
+<p>ISO 802.5 r DTR</p>
 </td></tr>
 <tr><td data-th="Name">
 <p>IF_TYPE_EPLRS</p>
@@ -570,28 +569,28 @@ NDIS 接口类型注册与 Internet 分配号机构 (IANA)，这会定期发布�
 </td><td data-th="Value">
 <p>89</p>
 </td><td data-th="Comment">
-<p>专有无连接协议</p>
+<p>专用无连接协议</p>
 </td></tr>
 <tr><td data-th="Name">
 <p>IF_TYPE_HOSTPAD</p>
 </td><td data-th="Value">
 <p>90</p>
 </td><td data-th="Comment">
-<p>CCITT ITU X.29 板协议</p>
+<p>CCITT-ITU X 29 PAD 协议</p>
 </td></tr>
 <tr><td data-th="Name">
 <p>IF_TYPE_TERMPAD</p>
 </td><td data-th="Value">
 <p>91</p>
 </td><td data-th="Comment">
-<p>CCITT ITU X.3 板设施</p>
+<p>CCITT-ITU X 3 PAD 设备</p>
 </td></tr>
 <tr><td data-th="Name">
 <p>IF_TYPE_FRAMERELAY_MPI</p>
 </td><td data-th="Value">
 <p>92</p>
 </td><td data-th="Comment">
-<p>Multiproto 互连通过 FR</p>
+<p>Multiproto 互连 over FR</p>
 </td></tr>
 <tr><td data-th="Name">
 <p>IF_TYPE_X213</p>
@@ -612,7 +611,7 @@ NDIS 接口类型注册与 Internet 分配号机构 (IANA)，这会定期发布�
 </td><td data-th="Value">
 <p>95</p>
 </td><td data-th="Comment">
-<p>速率适应数字用户循环</p>
+<p>速率-调整数字用户循环</p>
 </td></tr>
 <tr><td data-th="Name">
 <p>IF_TYPE_SDSL</p>
@@ -626,7 +625,7 @@ NDIS 接口类型注册与 Internet 分配号机构 (IANA)，这会定期发布�
 </td><td data-th="Value">
 <p>97</p>
 </td><td data-th="Comment">
-<p>非常 H 速度数字用户循环</p>
+<p>非常 H-速度数字用户循环</p>
 </td></tr>
 <tr><td data-th="Name">
 <p>IF_TYPE_ISO88025_CRFPRINT</p>
@@ -647,21 +646,21 @@ NDIS 接口类型注册与 Internet 分配号机构 (IANA)，这会定期发布�
 </td><td data-th="Value">
 <p>100</p>
 </td><td data-th="Comment">
-<p>语音接收和传输</p>
+<p>语音接收和发送</p>
 </td></tr>
 <tr><td data-th="Name">
 <p>IF_TYPE_VOICE_FXO</p>
 </td><td data-th="Value">
 <p>101</p>
 </td><td data-th="Comment">
-<p>语音外汇 office</p>
+<p>Voice 外国 exchange office</p>
 </td></tr>
 <tr><td data-th="Name">
 <p>IF_TYPE_VOICE_FXS</p>
 </td><td data-th="Value">
 <p>102</p>
 </td><td data-th="Comment">
-<p>语音外汇工作站</p>
+<p>Voice 外国 exchange 工作站</p>
 </td></tr>
 <tr><td data-th="Name">
 <p>IF_TYPE_VOICE_ENCAP</p>
@@ -675,7 +674,7 @@ NDIS 接口类型注册与 Internet 分配号机构 (IANA)，这会定期发布�
 </td><td data-th="Value">
 <p>104</p>
 </td><td data-th="Comment">
-<p>语音朗读 IP 封装</p>
+<p>IP 语音封装</p>
 </td></tr>
 <tr><td data-th="Name">
 <p>IF_TYPE_ATM_DXI</p>
@@ -703,7 +702,7 @@ NDIS 接口类型注册与 Internet 分配号机构 (IANA)，这会定期发布�
 </td><td data-th="Value">
 <p>108</p>
 </td><td data-th="Comment">
-<p>PPP 多重链接捆绑包</p>
+<p>PPP 多重链接捆绑</p>
 </td></tr>
 <tr><td data-th="Name">
 <p>IF_TYPE_IPOVER_CDLC</p>
@@ -717,7 +716,7 @@ NDIS 接口类型注册与 Internet 分配号机构 (IANA)，这会定期发布�
 </td><td data-th="Value">
 <p>110</p>
 </td><td data-th="Comment">
-<p>IBM 常见链接访问工作站</p>
+<p>对工作站的 IBM 公共链接访问</p>
 </td></tr>
 <tr><td data-th="Name">
 <p>IF_TYPE_STACKTOSTACK</p>
@@ -738,7 +737,7 @@ NDIS 接口类型注册与 Internet 分配号机构 (IANA)，这会定期发布�
 </td><td data-th="Value">
 <p>113</p>
 </td><td data-th="Comment">
-<p>IBM 多 proto 通道支持</p>
+<p>IBM 多协议通道支持</p>
 </td></tr>
 <tr><td data-th="Name">
 <p>IF_TYPE_IPOVER_ATM</p>
@@ -752,14 +751,14 @@ NDIS 接口类型注册与 Internet 分配号机构 (IANA)，这会定期发布�
 </td><td data-th="Value">
 <p>115</p>
 </td><td data-th="Comment">
-<p>ISO 802.5j 纤程令牌环</p>
+<p>ISO 802.5 j 光纤令牌环</p>
 </td></tr>
 <tr><td data-th="Name">
 <p>IF_TYPE_TDLC</p>
 </td><td data-th="Value">
 <p>116</p>
 </td><td data-th="Comment">
-<p>IBM twinaxial 数据链接控件</p>
+<p>IBM twinaxial 数据链接控制</p>
 </td></tr>
 <tr><td data-th="Name">
 <p>IF_TYPE_GIGABITETHERNET</p>
@@ -786,14 +785,14 @@ NDIS 接口类型注册与 Internet 分配号机构 (IANA)，这会定期发布�
 </td><td data-th="Value">
 <p>121</p>
 </td><td data-th="Comment">
-<p>多重链接协议</p>
+<p>多链接协议</p>
 </td></tr>
 <tr><td data-th="Name">
 <p>IF_TYPE_X25_HUNTGROUP</p>
 </td><td data-th="Value">
 <p>122</p>
 </td><td data-th="Comment">
-<p>X.25 查寻组</p>
+<p>X.x.x.x 查寻组</p>
 </td></tr>
 <tr><td data-th="Name">
 <p>IF_TYPE_TRANSPHDLC</p>
@@ -819,7 +818,7 @@ NDIS 接口类型注册与 Internet 分配号机构 (IANA)，这会定期发布�
 </td><td data-th="Value">
 <p>126</p>
 </td><td data-th="Comment">
-<p>（适用于 IP 网络中的 APPN HPR) 的 IP</p>
+<p>IP 网络中 APPN HPR 的 IP () </p>
 </td></tr>
 <tr><td data-th="Name">
 <p>IF_TYPE_DOCSCABLE_MACLAYER</p>
@@ -861,14 +860,14 @@ NDIS 接口类型注册与 Internet 分配号机构 (IANA)，这会定期发布�
 </td><td data-th="Value">
 <p>132</p>
 </td><td data-th="Comment">
-<p>咖啡 pot</p>
+<p>咖啡</p>
 </td></tr>
 <tr><td data-th="Name">
 <p>IF_TYPE_CES</p>
 </td><td data-th="Value">
 <p>133</p>
 </td><td data-th="Comment">
-<p>线路模拟服务</p>
+<p>线路仿真服务</p>
 </td></tr>
 <tr><td data-th="Name">
 <p>IF_TYPE_ATM_SUBINTERFACE</p>
@@ -882,28 +881,28 @@ NDIS 接口类型注册与 Internet 分配号机构 (IANA)，这会定期发布�
 </td><td data-th="Value">
 <p>135</p>
 </td><td data-th="Comment">
-<p>第 2 层虚拟 LAN 使用 802.1Q</p>
+<p>使用 802.1 Q 的第2层虚拟 LAN</p>
 </td></tr>
 <tr><td data-th="Name">
 <p>IF_TYPE_L3_IPVLAN</p>
 </td><td data-th="Value">
 <p>136</p>
 </td><td data-th="Comment">
-<p>第 3 层虚拟 LAN 使用 IP</p>
+<p>使用 IP 的第3层虚拟 LAN</p>
 </td></tr>
 <tr><td data-th="Name">
 <p>IF_TYPE_L3_IPXVLAN</p>
 </td><td data-th="Value">
 <p>137</p>
 </td><td data-th="Comment">
-<p>第 3 层虚拟 LAN 使用 IPX</p>
+<p>使用 IPX 的第3层虚拟 LAN</p>
 </td></tr>
 <tr><td data-th="Name">
 <p>IF_TYPE_DIGITALPOWERLINE</p>
 </td><td data-th="Value">
 <p>138</p>
 </td><td data-th="Comment">
-<p>通过电源线 IP</p>
+<p>通过电源线的 IP</p>
 </td></tr>
 <tr><td data-th="Name">
 <p>IF_TYPE_MEDIAMAILOVERIP</p>

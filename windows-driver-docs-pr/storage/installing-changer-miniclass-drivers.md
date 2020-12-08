@@ -1,19 +1,18 @@
 ---
 title: 安装更换器微型类驱动程序
 description: 安装更换器微型类驱动程序
-ms.assetid: 923e1128-bacc-450b-b250-bc666951965d
 keywords:
 - 转换器驱动程序 WDK 存储，miniclass 驱动程序
 - 存储更换器驱动程序 WDK、miniclass 驱动程序
 - miniclass 驱动程序 WDK 转换器
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a81bd3aea4e189bf6971e1f3a34cf89207d229a2
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 62febcbec5c5e0951f15301f722a3bf9562b1dd0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89191153"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96804463"
 ---
 # <a name="installing-changer-miniclass-drivers"></a>安装更换器微型类驱动程序
 

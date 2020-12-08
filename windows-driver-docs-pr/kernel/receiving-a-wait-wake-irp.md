@@ -1,7 +1,6 @@
 ---
 title: 接收等待/唤醒 IRP
 description: 接收等待/唤醒 IRP
-ms.assetid: 88fa7189-4897-484a-9cf4-b35e56e99d61
 keywords:
 - 电源管理 WDK 内核，唤醒功能
 - 外部唤醒信号 WDK
@@ -13,12 +12,12 @@ keywords:
 - 等待/唤醒 Irp WDK 电源管理，接收
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2ec24fd70c64a36b354d2362865e17919cfbc003
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 880ff72da45c40694e3a86aea36e500cac71c6a9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89186221"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96805351"
 ---
 # <a name="receiving-a-waitwake-irp"></a>接收等待/唤醒 IRP
 

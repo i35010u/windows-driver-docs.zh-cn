@@ -1,22 +1,21 @@
 ---
 title: 如何收集 IRP 覆盖范围数据
 description: 如何收集 IRP 覆盖范围数据
-ms.assetid: f65422fe-f524-41c1-a532-a2c615d65f72
 keywords:
 - 驱动程序覆盖套件 WDK，收集数据
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9c3f8f7bc51b09e66893f49e213d333570636e06
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 63d7e2a3dd5f0f091bda7820ed7f7f1120797144
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89384835"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803585"
 ---
 # <a name="how-to-collect-irp-coverage-data"></a>如何收集 IRP 覆盖范围数据
 
 
-**注意**   Windows 10 不再需要驱动程序覆盖率工具包，并且 WDK 中不再包括该安装程序。 若要在 Windows 10 中执行此处所述的任务，请改用 [驱动程序验证程序](driver-verifier.md) 和 [IRP 日志记录](irp-logging.md)。
+**注意**  Windows 10 不再需要驱动程序覆盖率工具包，并且 WDK 中不再包括该安装程序。 若要在 Windows 10 中执行此处所述的任务，请改用 [驱动程序验证程序](driver-verifier.md) 和 [IRP 日志记录](irp-logging.md)。
 
  
 

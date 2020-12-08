@@ -1,7 +1,6 @@
 ---
 title: DriverEntry of Miniclass 驱动程序例程
 description: 在 Microsoft Windows 2000 中，更换器 miniclass 驱动程序没有 DriverEntry 例程，但在 Windows XP 和更高版本的操作系统中，miniclass 驱动程序必须具有具有以下特征的 DriverEntry 例程。
-ms.assetid: f7954e15-f995-44da-92fd-979248c69553
 keywords:
 - DriverEntry 例程存储设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - DllExport
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 6e4221a4eb4881bd4173771c8ae4ea8e2d843727
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: c0f0712685076374eb5909b45f2211e3d95d898e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89191155"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96804675"
 ---
 # <a name="driverentry-of-changer-miniclass-drivers-routine"></a>DriverEntry of Miniclass 驱动程序例程
 
@@ -31,8 +30,8 @@ ms.locfileid: "89191155"
 
 ```ManagedCPlusPlus
 NTSTATUS DriverEntry(
-  _In_ PVOID Argument1,
-  _In_ PVOID Argument2
+  _In_ PVOID Argument1,
+  _In_ PVOID Argument2
 );
 ```
 
@@ -50,7 +49,7 @@ NTSTATUS DriverEntry(
 
 Miniclass 驱动程序的 **DriverEntry** 例程必须返回 [**ChangerClassInitialize**](/windows-hardware/drivers/ddi/mcd/nf-mcd-changerclassinitialize) 例程返回的值。
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 参数 **Argument1** 和 **Argument2** 指向特定于操作系统的信息。 Miniclass 驱动程序 *不* 应尝试解释这些参数。 相反，它应将这些参数传递到 **ChangerClassInitialize** 例程。
@@ -71,7 +70,7 @@ Miniclass 驱动程序的 **DriverEntry** 例程必须返回 [**ChangerClassInit
 <td align="left">台式机</td>
 </tr>
 <tr class="even">
-<td align="left"><p>Header</p></td>
+<td align="left"><p>标头</p></td>
 <td align="left">Mcd (包含 Mcd) </td>
 </tr>
 <tr class="odd">

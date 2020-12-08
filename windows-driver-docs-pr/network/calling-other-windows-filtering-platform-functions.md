@@ -1,7 +1,6 @@
 ---
 title: 调用其他 Windows 筛选平台函数
 description: 调用其他 Windows 筛选平台函数
-ms.assetid: dae70b4d-2be2-4db3-86cc-2e7df7d5c034
 keywords:
 - Windows 筛选平台标注驱动程序 WDK，调用其他功能
 - 标注驱动程序 WDK Windows 筛选平台，调用其他函数
@@ -10,12 +9,12 @@ keywords:
 - 用户模式标注驱动程序 WDK Windows 筛选平台
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cbdfcdd1490f9c036c8b4480b11baf7f945ff178
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 7f1bc792028bf723237afbdbf1bdee6fee36e18a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91734257"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96805241"
 ---
 # <a name="calling-other-windows-filtering-platform-functions"></a>调用其他 Windows 筛选平台函数
 

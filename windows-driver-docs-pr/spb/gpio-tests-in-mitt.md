@@ -1,21 +1,20 @@
 ---
 title: MITT 中的 GPIO 测试
 description: MITT 软件包中包含的 GPIO 测试模块可用于测试以下按钮的音量：向上、向下、向下和旋转锁定。
-ms.assetid: D50C371B-4A03-4BDD-8EC2-6E7A4A4DF3C5
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cd90d84225babdc0f405007aab76f56fbdeaed09
-ms.sourcegitcommit: 0c3cab853b0b75149b7604eef03275f997792a84
+ms.openlocfilehash: 6ade2665f99605f324ae6c7c36cdaf5047c3ed9b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96157285"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96804863"
 ---
 # <a name="gpio-tests-in-mitt"></a>MITT 中的 GPIO 测试
 
 MITT 软件包中包含的 GPIO 测试模块可用于测试以下按钮的音量：向上、向下、向下和旋转锁定。 你可以使用这些测试来检测 GPIO 驱动程序和微控制器的问题，并确定系统是响应短推送还是长推送。 MITT 板以物理方式将附加到按钮的行拉低。
 
-## <a name="before-you-begin"></a>开始之前
+## <a name="before-you-begin"></a>在开始之前
 
 - 获取 MITT 板和 GPIO 适配器板。 请参阅 [购买使用 MITT 的硬件](./multi-interface-test-tool--mitt--.md)。
 - [下载 MITT](/previous-versions/dn919810(v=vs.85))软件包。 在受测系统上安装它。

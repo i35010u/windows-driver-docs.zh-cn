@@ -1,7 +1,6 @@
 ---
 title: 'Irql \_ IM \_ 函数规则 (ndis) '
 description: Irql \_ IM \_ 函数规则指定必须在正确的 Irql 级别调用用于中间 (IM) 驱动程序的 NDIS 函数。
-ms.assetid: f13ee05d-41d5-48e1-aa53-8904d99f94da
 ms.date: 05/21/2018
 keywords:
 - 'Irql_IM_Function 规则 (ndis) '
@@ -12,12 +11,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: f5a1549b9690ab1a28dba8ae4775689292543629
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 0c618be4837dd79d88985680f738ed6475da3dc5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107104"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96804223"
 ---
 # <a name="irql_im_function-rule-ndis"></a>Irql \_ IM \_ 函数规则 (ndis) 
 

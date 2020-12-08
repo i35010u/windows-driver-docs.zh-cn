@@ -1,7 +1,6 @@
 ---
 title: 打开并初始化串行设备
 description: 打开并初始化串行设备
-ms.assetid: 08266561-4738-4313-b53b-d60081e875c7
 keywords:
 - 串行驱动程序 WDK，设备打开
 - 串行驱动程序 WDK，设备初始化
@@ -10,12 +9,12 @@ keywords:
 - 正在初始化串行设备
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e5c63811e2ceee68493559b7b3e896456ff6695a
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: d3bf5b5c44062c32a97b7a0145eeb45f60352d1a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89186959"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96805007"
 ---
 # <a name="opening-and-initializing-a-serial-device"></a>打开并初始化串行设备
 

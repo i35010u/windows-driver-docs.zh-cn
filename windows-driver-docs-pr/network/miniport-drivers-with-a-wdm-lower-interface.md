@@ -1,7 +1,6 @@
 ---
 title: 包含 WDM 下接口的微型端口驱动程序概述
 description: 包含 WDM 下接口的微型端口驱动程序概述
-ms.assetid: defa955b-c1d2-4c78-a983-584aedc8a1a3
 keywords:
 - 微型端口驱动程序 WDK 网络，WDM 低端接口
 - NDIS 微型端口驱动程序 WDK，WDM 低端接口
@@ -9,12 +8,12 @@ keywords:
 - WDM 低端接口 WDK NDIS
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 04d1ad6ebd2d68834bd6e0d7220abdad31e6b844
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 34dc1b2d2b1299dd53c3741600432a18c55a6cef
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91733387"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803511"
 ---
 # <a name="overview-of-miniport-drivers-with-a-wdm-lower-interface"></a>包含 WDM 下接口的微型端口驱动程序概述
 

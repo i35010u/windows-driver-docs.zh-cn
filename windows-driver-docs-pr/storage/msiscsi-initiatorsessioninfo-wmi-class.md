@@ -1,15 +1,14 @@
 ---
 title: MSiSCSI \_ INITIATORSESSIONINFO WMI 类
 description: MSiSCSI \_ INITIATORSESSIONINFO WMI 类
-ms.assetid: 73053af8-80b0-4cab-8e27-c651be8f0e8c
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 2de592db50203aecece9d9df97ee6a58d83e0f86
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 13094a06d3a75af2ee035d033a8f7c987192a1f3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89188927"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96804429"
 ---
 # <a name="msiscsi_initiatorsessioninfo-wmi-class"></a>MSiSCSI \_ INITIATORSESSIONINFO WMI 类
 
@@ -21,7 +20,7 @@ MSiSCSI \_ INITIATORSESSIONINFO WMI 类公开与属于指示 HBA 发起程序的
 
 由于此类与存储微型端口驱动程序的特定实例相关联，因此微型端口驱动程序必须使用微型端口驱动程序管理 (PDO) 的特定物理设备对象的名称注册该类。
 
-MSiSCSI \_ InitiatorSessionInfo 类在 *管理 mof*中定义。
+MSiSCSI \_ InitiatorSessionInfo 类在 *管理 mof* 中定义。
 
 ```cpp
 class MSiSCSI_InitiatorSessionInfo {

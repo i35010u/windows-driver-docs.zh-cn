@@ -1,7 +1,6 @@
 ---
 title: DEVPKEY_Device_PowerData
 description: DEVPKEY_Device_PowerData
-ms.assetid: a5ebb465-674c-483a-ae2c-c46c30a67662
 keywords:
 - DEVPKEY_Device_PowerData 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: bc2d91f4381949e3259e6bba15766f4e077f3e61
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: b73e74dc9bc7aeef722800079715c9418344b9fc
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90717422"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96804141"
 ---
 # <a name="devpkey_device_powerdata"></a>DEVPKEY_Device_PowerData
 

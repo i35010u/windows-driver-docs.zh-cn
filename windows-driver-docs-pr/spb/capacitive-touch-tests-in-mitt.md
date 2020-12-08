@@ -1,15 +1,14 @@
 ---
 title: MITT 中的电容式触控测试
 description: MITT 软件包中的电容式触控测试需要 MCATT (Microsoft 电容式应用程序测试工具) 。
-ms.assetid: 86E4D489-7DC3-4765-85BE-3706B3CA6C0B
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 83e34faa0f1e77e67415840fccaced8596192bb4
-ms.sourcegitcommit: 0c3cab853b0b75149b7604eef03275f997792a84
+ms.openlocfilehash: 8804bf3c07271994806e4767c370ab7fb27728fb
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96157263"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96804869"
 ---
 # <a name="capacitive-touch-tests-in-mitt"></a>MITT 中的电容式触控测试
 
@@ -21,7 +20,7 @@ MITT 软件包中的电容式触控测试需要 MCATT (Microsoft 电容式应用
 - 目标延迟度量
 - SimpleIo/设备基础方案，例如在 pad 上执行输入时的电源转换。
 
-## <a name="before-you-begin"></a>开始之前
+## <a name="before-you-begin"></a>在开始之前
 
 - 获取 MITT 板。 请参阅 [购买使用 MITT 的硬件](./multi-interface-test-tool--mitt--.md)。
 - 获取触控模拟器板和带缆线连接到适配器。

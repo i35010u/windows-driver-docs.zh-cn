@@ -1,9 +1,8 @@
 ---
-title: usb3kd device_info_from_pdo
-description: Device_info_from_pdo usb3kd 命令在 USB 3.0 树中显示有关 USB 设备的信息。
-ms.assetid: 74FD68E6-78DF-452F-80C2-91A37877DE52
+title: usb3kd.device_info_from_pdo
+description: Usb3kd.device_info_from_pdo 命令显示有关 USB 3.0 树中 USB 设备的信息。
 keywords:
-- usb3kd device_info_from_pdo Windows 调试
+- usb3kd.device_info_from_pdo Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 3e671d6247941c7ab38856586c9a821663870026
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: b81283a5dbc847e0fab62d6408a99158d581a421
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89216298"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96804024"
 ---
 # <a name="usb3kddevice_info_from_pdo"></a>！ usb3kd \_ \_ 来自 pdo 的设备 \_ 信息
 
 
-** \_ \_ 来自 \_ pdo 的！ usb3kd 信息**命令显示有关[usb 3.0 树](usb-3-extensions.md#usb-3-tree)中 usb 设备的信息。
+**\_ \_ 来自 \_ pdo 的！ usb3kd 信息** 命令显示有关 [usb 3.0 树](usb-3-extensions.md#usb-3-tree)中 usb 设备的信息。
 
 ```dbgcmd
 !usb3kd.device_info_from_pdo DeviceObject
@@ -42,7 +41,7 @@ Usb3kd.dll
 <a name="remarks"></a>备注
 -------
 
-**！ \_ \_ 来自 \_ pdo** 和 [**！ ucx \_ 设备**](-usb3kd-ucx-device.md) 的设备信息均显示有关设备的信息，但显示的信息不同。 ** \_ \_ 来自 \_ pdo 的！设备信息**的输出来自于 usb 3.0 集线器驱动程序的观点， **！ ucx \_ 设备**的输出来自 usb 主机控制器扩展驱动程序的观点。 例如， ** \_ \_ 来自 \_ pdo 输出的！设备信息** 包含有关配置和接口描述符的信息， **！ ucx \_ 设备** 输出包含有关终结点的信息。
+**！ \_ \_ 来自 \_ pdo** 和 [**！ ucx \_ 设备**](-usb3kd-ucx-device.md) 的设备信息均显示有关设备的信息，但显示的信息不同。 **\_ \_ 来自 \_ pdo 的！设备信息** 的输出来自于 usb 3.0 集线器驱动程序的观点， **！ ucx \_ 设备** 的输出来自 usb 主机控制器扩展驱动程序的观点。 例如， **\_ \_ 来自 \_ pdo 输出的！设备信息** 包含有关配置和接口描述符的信息， **！ ucx \_ 设备** 输出包含有关终结点的信息。
 
 <a name="examples"></a>示例
 --------
@@ -72,7 +71,7 @@ DevNode 0xfffffa8005981730 for PDO 0xfffffa8004ffc550
       Previous State = DeviceNodeEnumerateCompletion (0x30d)
 ```
 
-现在，可以通过 pdo 命令将 PDO 地址传递到 **！ usb3kd \_ info \_ \_ ** 。
+现在，可以通过 pdo 命令将 PDO 地址传递到 **！ usb3kd \_ info \_ \_** 。
 
 ```dbgcmd
 3: kd> !device_info_from_pdo 0xfffffa80059c3800

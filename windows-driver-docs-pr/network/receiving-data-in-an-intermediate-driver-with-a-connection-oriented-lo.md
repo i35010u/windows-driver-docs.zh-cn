@@ -1,18 +1,17 @@
 ---
 title: 面向连接的下边缘中间驱动程序数据接收
 description: 在包含面向连接的下边缘的中间驱动程序中接收数据
-ms.assetid: c14b4e8a-cfa2-4771-83b2-aa20fda79d39
 keywords:
 - 中间驱动程序 WDK 网络，接收操作
 - NDIS 中间驱动程序 WDK，接收操作
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d82a0937e77f6391df1872a2944de003bd907d70
-ms.sourcegitcommit: 366a15d68eb58d01a8ca6de7b982f62ac8b7deaf
+ms.openlocfilehash: 40d07364425653c1ab4a0f6f56cfcd153c57d0e7
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/19/2020
-ms.locfileid: "90811904"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96805157"
 ---
 # <a name="receiving-data-in-an-intermediate-driver-with-a-connection-oriented-lower-edge"></a>在包含面向连接的下边缘的中间驱动程序中接收数据
 

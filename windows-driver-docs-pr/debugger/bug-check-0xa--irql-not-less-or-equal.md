@@ -1,7 +1,6 @@
 ---
 title: Bug 检查 0xA IRQL_NOT_LESS_OR_EQUAL
 description: IRQL_NOT_LESS_OR_EQUAL bug 检查的值为0x0000000A。
-ms.assetid: a32b80f5-9822-41af-8668-836a70b05c0f
 keywords:
 - Bug 检查 0xA IRQL_NOT_LESS_OR_EQUAL
 - IRQL_NOT_LESS_OR_EQUAL
@@ -13,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 414b665fdc4944d4b79b762c21d2cc0d215d8f80
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: fe86cdf4f6904eb0323bb745bb382783cf0d596a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89217888"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96804305"
 ---
 # <a name="bug-check-0xa-irql_not_less_or_equal"></a>Bug 检查0xA： IRQL \_ 不 \_ 小于 \_ 或 \_ 等于
 
@@ -40,7 +39,7 @@ IRQL \_ 不 \_ 小于 \_ 或 \_ 等于 bug 检查的值为0x0000000a。 这表�
 <thead>
 <tr class="header">
 <th align="left">参数</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -104,13 +103,13 @@ IRQL \_ 不 \_ 小于 \_ 或 \_ 等于 bug 检查的值为0x0000000a。 这表�
 
 - 如果参数3指示此尝试执行可分页的代码，则 IRQL 太高，无法调用此函数。 以较低的 IRQL 运行，或者不将代码标记为可分页。
 
-- 否则，这可能是一个错误指针，可能是由于使用不到或进行反向。 调查参数1的有效性，其中包含[**！ pte**](-pte.md)， [**！ address**](-address.md)和[ **ln** (列出最近的符号) ](ln--list-nearest-symbols-.md)。
+- 否则，这可能是一个错误指针，可能是由于使用不到或进行反向。 调查参数1的有效性，其中包含 [**！ pte**](-pte.md)， [**！ address**](-address.md)和 [ **ln** (列出最近的符号)](ln--list-nearest-symbols-.md)。
 
 
 <a name="resolution"></a>解决方法
 ----------
 
-如果内核调试器可用，则获取堆栈跟踪。 首先运行 [**！分析**](-analyze.md) 调试器扩展，以显示有关 bug 检查的信息。  (**！分析**扩展可帮助确定根本原因。 ) 接下来，输入一个[ **k \* ** (显示堆栈 backtrace) ](k--kb--kc--kd--kp--kp--kv--display-stack-backtrace-.md)命令以查看调用堆栈。
+如果内核调试器可用，则获取堆栈跟踪。 首先运行 [**！分析**](-analyze.md) 调试器扩展，以显示有关 bug 检查的信息。  (**！分析** 扩展可帮助确定根本原因。 ) 接下来，输入一个 [ * *k \** _ (显示 stack backtrace)](k--kb--kc--kd--kp--kp--kv--display-stack-backtrace-.md)命令以查看调用堆栈。
 
 ### <a name="gather-information"></a>收集信息
 
@@ -122,7 +121,7 @@ IRQL \_ 不 \_ 小于 \_ 或 \_ 等于 bug 检查的值为0x0000000a。 这表�
 
 驱动程序验证程序是一个实时运行的工具，用于检查驱动程序的行为。 例如，驱动程序验证程序检查内存资源（如内存池）的使用。 如果它标识了驱动程序代码执行过程中的错误，它会主动创建一个例外，以允许进一步审查驱动程序代码的一部分。 驱动程序验证程序管理器内置于 Windows 中，在所有 Windows Pc 上都可用。 
 
-若要启动驱动程序验证程序管理器，请在命令提示符下键入 **Verifier** 。 你可以配置要验证的驱动程序。 验证驱动程序的代码会在运行时增加开销，因此请尝试尽可能多地验证驱动程序。 有关详细信息，请参阅[驱动程序验证程序](../devtest/driver-verifier.md)。
+若要启动驱动程序验证程序管理器，请在命令提示符下键入 _ *Verifier**。 你可以配置要验证的驱动程序。 验证驱动程序的代码会在运行时增加开销，因此请尝试尽可能多地验证驱动程序。 有关详细信息，请参阅[驱动程序验证程序](../devtest/driver-verifier.md)。
 
 下面是一个调试示例：
 

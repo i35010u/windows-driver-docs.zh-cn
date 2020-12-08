@@ -1,7 +1,6 @@
 ---
 title: 'Irql \_ 收集 \_ DMA \_ 函数规则 (ndis) '
 description: Irql \_ 收集 \_ dma \_ 函数规则指定 NDIS 散播/聚集 dma 函数必须以正确的 Irql 级别进行调用。
-ms.assetid: 2ac0d238-4ca0-4b07-9318-159cd9a64d35
 ms.date: 05/21/2018
 keywords:
 - 'Irql_Gather_DMA_Function 规则 (ndis) '
@@ -12,12 +11,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 20d12af8522338486eefe3c15102194e9b714bda
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 830833c9908cf696e18b92bf6810c97245e36d29
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107106"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96804225"
 ---
 # <a name="irql_gather_dma_function-rule-ndis"></a>Irql \_ 收集 \_ DMA \_ 函数规则 (ndis) 
 

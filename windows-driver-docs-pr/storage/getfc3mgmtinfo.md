@@ -1,7 +1,6 @@
 ---
 title: GetFC3MgmtInfo 函数
 description: GetFC3MgmtInfo WMI 方法检索与光纤通道适配器关联的 FC3 管理信息。
-ms.assetid: dea5d73f-22e2-4c5e-973a-aa8407955ef8
 keywords:
 - GetFC3MgmtInfo 函数存储设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 36c6161d9c563de013ea215e4d2d1893130b28d4
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: e43a1dbc20be1da5fa45d372327be7a8dd5920c5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89185447"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96804563"
 ---
 # <a name="getfc3mgmtinfo-function"></a>GetFC3MgmtInfo 函数
 
@@ -32,7 +31,7 @@ ms.locfileid: "89185447"
 ```ManagedCPlusPlus
 void GetFC3MgmtInfo(
    [out, HBA_STATUS_QUALIFIERS] HBA_STATUS HBAStatus,
-   [out] HBAFC3MgmtInfo                    MgmtInfo
+   [out] HBAFC3MgmtInfo                    MgmtInfo
 );
 ```
 
@@ -40,7 +39,7 @@ void GetFC3MgmtInfo(
 ----------
 
 *HBAStatus*   
-返回时，将包含一个 WMI 限定符值，该值指示操作的状态。 有关允许值及其说明的列表，请参阅 [HBA \_ 状态](hba-status.md)。 微型端口驱动程序在[**GetFC3MgmtInfo \_ OUT**](/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_getfc3mgmtinfo_out)结构的**HBAStatus**成员中返回此信息。
+返回时，将包含一个 WMI 限定符值，该值指示操作的状态。 有关允许值及其说明的列表，请参阅 [HBA \_ 状态](hba-status.md)。 微型端口驱动程序在 [**GetFC3MgmtInfo \_ OUT**](/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_getfc3mgmtinfo_out)结构的 **HBAStatus** 成员中返回此信息。
 
 *MgmtInfo*   
 返回时，包含 [**HBAFC3MgmtInfo**](/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_hbafc3mgmtinfo) 类型的结构，该结构包含与光纤通道适配器关联的 FC3 管理信息。
@@ -66,7 +65,7 @@ void GetFC3MgmtInfo(
 <tbody>
 <tr class="odd">
 <td align="left"><p>目标平台</p></td>
-<td align="left">“桌面”</td>
+<td align="left">台式机</td>
 </tr>
 <tr class="even">
 <td align="left"><p>标头</p></td>

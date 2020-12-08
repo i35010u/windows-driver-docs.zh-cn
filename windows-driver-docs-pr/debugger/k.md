@@ -1,15 +1,14 @@
 ---
-title: K （Windows 调试器术语表）
+title: 'K (Windows 调试器词汇表) '
 description: 词汇表页-K
-ms.assetid: 93b65114-f680-41f7-b754-699f773955ba
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 08d58bc0e1b81a8401c90a9e382c311d74ef633f
-ms.sourcegitcommit: 48c4b6d3a504583d2f588ed892a4a281d4b58301
+ms.openlocfilehash: 16bd63ef281cc23d69c804a9f89a4bc021d861b3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70387075"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803623"
 ---
 # <a name="k"></a>K
 
@@ -19,7 +18,7 @@ ms.locfileid: "70387075"
 
 另请参阅调试服务器。
 
-有关详细信息，请参阅[KD 连接服务器（内核模式）](kd-connection-servers--kernel-mode-.md)。
+有关详细信息，请参阅 [KD 连接服务器 (内核模式) ](kd-connection-servers--kernel-mode-.md)。
 
 <span id="kernel"></span><span id="KERNEL"></span>**壳**  
 内核是 Windows 操作系统的一部分，用于管理和控制对硬件资源的访问。 它执行线程计划和调度、中断和异常处理以及多处理器同步。
@@ -40,13 +39,13 @@ ms.locfileid: "70387075"
 
     这会执行线程计划、中断和异常调度以及多处理器同步等低级别功能。 它还提供了一组例程和一个用于实现更高级别的语义的基本对象。
 
--   硬件抽象层（HAL）。
+-   硬件抽象层 (HAL) 。
 
     这会处理到硬件的所有直接接口。 因此，它将 Windows 内核、设备驱动程序和 Windows Executive 与特定于平台的硬件区别隔离开来。
 
 -   窗口和图形子系统。
 
-    这将实现图形用户界面（GUI）功能。
+    这会 (GUI) 函数实现图形用户界面。
 
 当某个进程错误地访问其他应用程序或系统正在使用的部分内存时，对内核模式进程的缺少限制将强制 Windows 停止整个系统。 这称为 "bug 检查"。
 

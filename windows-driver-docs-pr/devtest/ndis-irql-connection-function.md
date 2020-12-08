@@ -1,7 +1,6 @@
 ---
 title: 'Irql \_ 连接 \_ 函数规则 (ndis) '
 description: Irql \_ 连接 \_ 函数规则指定必须在正确的 Irql 级别调用协议驱动程序的 NDIS 连接函数。
-ms.assetid: 9721cb8a-ac70-4f2b-8bbd-809dc06548dc
 ms.date: 05/21/2018
 keywords:
 - 'Irql_Connection_Function 规则 (ndis) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 3641752e10d9535ceecb5ed96a889fe498f3d02d
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 5b6db4e5e4effb347d9637ba485a9d6fe6d23c00
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107358"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96804235"
 ---
 # <a name="irql_connection_function-rule-ndis"></a>Irql \_ 连接 \_ 函数规则 (ndis) 
 
 
-**Irql \_ 连接 \_ 函数**规则指定必须在正确的 Irql 级别调用协议驱动程序的 NDIS 连接函数。
+**Irql \_ 连接 \_ 函数** 规则指定必须在正确的 Irql 级别调用协议驱动程序的 NDIS 连接函数。
 
 此规则验证以下 NDIS 函数：
 

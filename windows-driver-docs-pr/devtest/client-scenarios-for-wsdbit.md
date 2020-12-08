@@ -1,7 +1,6 @@
 ---
 title: WSDBIT 的客户端方案
 description: WSDBIT 的客户端方案
-ms.assetid: fb692c83-b384-492d-84fb-10e00db9f30f
 keywords:
 - WSDBIT 工具 WDK，测试方案
 - WSDAPI 基本互操作性工具 WDK，测试方案
@@ -9,53 +8,53 @@ keywords:
 - 测试方案 WDK WSDBIT
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 255650478e72e6a4342f27307f555d685acc8d0a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 408373625f59ac92e9c80b549ebc57c8a1523d6e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63343971"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803589"
 ---
 # <a name="client-scenarios-for-wsdbit"></a>WSDBIT 的客户端方案
 
 
-所有测试方案是由于从客户端的角度来看。 在有限情况下，设备交互都需要为完成的方案。 此要求的各自方案所示。
+所有测试方案都是从客户端的角度来决定的。 在有限的情况下，完成该方案需要设备交互。 此要求在各自的方案中指示。
 
-除非另行说明，假定测试设备 (TestDevice) 已启动并且可在其运行这些方案的网络段上。
+除非另有说明，否则假设测试设备 (TestDevice) 已启动，且在运行这些方案的网络段上可用。
 
-某些情况下在 TestDevice 中定义客户端和一个 （或以上） 的托管服务之间的交互。
+某些方案定义了客户端与 TestDevice 中的 (一个或多个托管服务) 的客户端之间的交互。
 
-客户端可以获取托管服务中的终结点有两种
+客户端可以通过以下两种方式之一获取托管服务终结点
 
--   可由用户提供托管服务终结点。 这种情况意味着，在此之后 TestDevice 已开始，将终结点已知与可对已知的参与方的正在运行客户端。
+-   承载的服务终结点可以由用户提供。 这意味着，在 TestDevice 开始后，终结点已知，并可将其提供给正在运行客户端的参与方。
 
--   可以动态发现托管服务终结点。 这种情况意味着发现 TestDevice。 发现 TestDevice 可能通过：
+-   可以动态发现托管服务终结点。 这种情况意味着发现 TestDevice。 可以通过以下操作来发现 TestDevice：
 
-    -   Hello (假定它从设备启动以及是否有**XAddrs**字段)。
-    -   探测\\解决 exchange。
-    -   解决消息 (其中假定*urn: uuid*已知设备终结点地址)。
+    -   一个 Hello (，假定它是从设备启动的，并且有一个 **XAddrs** 字段) 。
+    -   探测 \\ 解析交换。
+    -   解析消息 (假定设备终结点的 *urn： uuid* 地址) 已知。
 
-    然后可以请求元数据和托管服务元数据的后续检查将显示终结点。
+    然后，可以请求元数据，并随后检查 HostedService 元数据将显示端点。
 
-客户端可以选择以支持其中一种方法，但 TestDevice 必须支持这两种方法来获取托管服务终结点。
+客户端可以选择支持其中任一方法，但 TestDevice 必须支持这两种方法才能获得托管服务终结点。
 
-客户端必须能够验证 TestDevice 从收到的附件。 应通过加载到内存中预期的附件的副本并执行操作上收到的附件的字节的字节的内存比较验证附件。
+客户端必须能够验证从 TestDevice 接收的附件。 应通过将预期的附件的副本加载到内存中，并对收到的附件执行字节的内存比较来验证附件。
 
-当客户端发送的事件的续订时，他们可以选择手动启动续订或自动将续订发送时的原始 SubscribeResponse 消息中指定的续订期间下半部分已过。
+当客户端发送事件的续订时，他们可以选择手动启动续订，或在原始 SubscribeResponse 消息中指定的续订期的一半结束后自动发送续订。
 
-**请注意**  因为测试用例可能依赖于以前的测试用例的结果，应按顺序运行测试用例。 （例如，1.3.8 取决于 1.2.1 的结果。）测试 （例如，事件和附件方案中） 之间的方案之间有任何依赖关系。 无法发现 TestDevice 并检查其托管的服务将阻止特定的高级的方案执行在于在第一个方案 （设备和服务检测） 的所有高级方案的隐式依赖关系。
+**注意**   因为测试用例可能会依赖于先前测试用例的结果，所以应按顺序运行测试用例。  (例如，1.3.8 取决于1.2.1 的结果。 ) 测试方案之间没有依赖关系 (例如，在事件和附件方案) 之间没有依赖关系。 第一种方案 (设备和服务检测) 的所有高级方案存在隐式依赖关系，因为未能发现 TestDevice 并检查其托管服务将阻止执行特定的高级方案。
 
  
 
-本部分包括以下主题：
+本节包括下列主题：
 
 [设备和服务检查方案](device-and-service-inspection-scenarios.md)
 
-[设备管理方案](device-control-scenarios.md)
+[设备控制方案](device-control-scenarios.md)
 
 [附件方案](attachments-scenarios.md)
 
-[事件处理方案](eventing-scenarios.md)
+[事件方案](eventing-scenarios.md)
 
 [安全通信方案](secure-communication-scenarios.md)
 

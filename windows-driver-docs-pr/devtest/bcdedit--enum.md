@@ -1,7 +1,6 @@
 ---
-title: BCDEdit/enum
+title: BCDEdit /enum
 description: BCDEdit/enum 命令引导配置数据 (BCD) 存储中列出条目。
-ms.assetid: 73bec802-9ab1-4979-a337-3f7423efaced
 ms.date: 09/24/2020
 keywords:
 - BCDEdit/enum 驱动程序开发工具
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: e260c1804aff71b25ee239bf06327261e5564234
-ms.sourcegitcommit: f2fbb6e54e085e9329288cee49860fe380be9c4c
+ms.openlocfilehash: b3dd27d5ab37cafb2ea687d38e30468fc203e3b2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91778973"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803593"
 ---
-<a name="bcdedit-enum"></a>BCDEdit/enum
+<a name="bcdedit-enum"></a>BCDEdit /enum
 ============
 
-**BCDEdit/enum**命令引导配置数据 (BCD) 存储中列出条目。 /Enum 命令是默认值，因此，运行不带参数的 "bcdedit" 等效于运行 "bcdedit/enum ACTIVE"。
+**BCDEdit/enum** 命令引导配置数据 (BCD) 存储中列出条目。 /Enum 命令是默认值，因此，运行不带参数的 "bcdedit" 等效于运行 "bcdedit/enum ACTIVE"。
 
 ```syntax
 bcdedit [/store <filename>] /enum [<type> | <id>] [/v]

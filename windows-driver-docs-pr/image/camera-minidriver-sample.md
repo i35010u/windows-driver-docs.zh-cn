@@ -1,15 +1,14 @@
 ---
 title: 相机微型驱动程序示例
 description: 相机微型驱动程序示例
-ms.assetid: 82ed48e9-2e3e-4386-bb89-03e3c5ff92b0
 ms.date: 05/29/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: f593911d1314f10b3fcede1f82b7136cc207e556
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 53d6789e61d2f9ba47504879f60bd366940401d3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89193253"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96804155"
 ---
 # <a name="camera-minidriver-sample"></a>相机微型驱动程序示例
 

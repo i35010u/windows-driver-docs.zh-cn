@@ -1,7 +1,6 @@
 ---
 title: GUID_DEVINTERFACE_SERENUM_BUS_ENUMERATOR
 description: GUID_DEVINTERFACE_SERENUM_BUS_ENUMERATOR
-ms.assetid: 163b58b1-9f88-4857-9899-32be5e9ffc3c
 keywords:
 - GUID_DEVINTERFACE_SERENUM_BUS_ENUMERATOR 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 7a108976f643e1fd0dfdee23d35850e51ff5d7fe
-ms.sourcegitcommit: ec7bebe3f94536455e62b372c2a28fe69d1717f7
+ms.openlocfilehash: 67c1f64451847a8a59042c728234e58a8b91ed99
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93349779"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96805477"
 ---
 # <a name="guid_devinterface_serenum_bus_enumerator"></a>GUID_DEVINTERFACE_SERENUM_BUS_ENUMERATOR
 
@@ -33,7 +32,7 @@ GUID_DEVINTERFACE_SERENUM_BUS_ENUMERATOR [设备接口类](./overview-of-device-
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">属性</th>
+<th align="left">Attribute</th>
 <th align="left">设置</th>
 </tr>
 </thead>
@@ -78,7 +77,7 @@ WDK 包含串行枚举器示例 [serenum](../serports/features-of-serial-and-ser
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**GUID_DEVINTERFACE_COMPORT**](guid-devinterface-comport.md)

@@ -1,7 +1,6 @@
 ---
 title: 用于 Serenum 的注册表设置
 description: 用于 Serenum 的注册表设置
-ms.assetid: c8a8f1b7-ea58-49ed-98e0-40297ec9a769
 keywords:
 - Serenum 驱动程序 WDK，注册表设置
 - 注册表 WDK 串行设备
@@ -9,12 +8,12 @@ keywords:
 - 串行设备 WDK，Serenum 驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 890a6cab7e3967425b82a3dc26439a4a4321f8da
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 3a5448bc628a37be585447d72867b2d926b7a7de
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89186941"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96804991"
 ---
 # <a name="registry-settings-for-serenum"></a>用于 Serenum 的注册表设置
 
@@ -26,10 +25,10 @@ ms.locfileid: "89186941"
 指定端口的名称。 Serenum 读取此值，并返回端口名称以响应 [**IOCTL \_ Serenum \_ 获取 \_ 端口 \_ 名称**](/windows-hardware/drivers/ddi/ntddser/ni-ntddser-ioctl_serenum_get_port_name) 请求。
 
 <a href="" id="identifier--reg-sz-"></a>**标识符** (REG \_ SZ)   
-指定端口的名称。 Serenum 读取此值。 提供对 **标识符** 输入值的支持只是为了与某些传统 PCMCIA 设备兼容。 **标识符**输入值的使用已过时，不应在 Windows 2000 和更高版本中使用驱动程序来实现。 Serenum 返回端口名称以响应 IOCTL \_ Serenum \_ 获取 \_ 端口 \_ 名称请求。
+指定端口的名称。 Serenum 读取此值。 提供对 **标识符** 输入值的支持只是为了与某些传统 PCMCIA 设备兼容。 **标识符** 输入值的使用已过时，不应在 Windows 2000 和更高版本中使用驱动程序来实现。 Serenum 返回端口名称以响应 IOCTL \_ Serenum \_ 获取 \_ 端口 \_ 名称请求。
 
 <a href="" id="skipenumerations--reg-dword-"></a>**SkipEnumerations** (REG \_ DWORD)   
-在 Windows XP 和更高版本中，此条目值控制 Serenum 何时枚举端口，以响应对**BusRelations**的[**IRP \_ MN \_ 查询 \_ 设备 \_ 关系**](../kernel/irp-mn-query-device-relations.md)请求。 
+在 Windows XP 和更高版本中，此条目值控制 Serenum 何时枚举端口，以响应对 **BusRelations** 的 [**IRP \_ MN \_ 查询 \_ 设备 \_ 关系**](../kernel/irp-mn-query-device-relations.md)请求。 
 
 系统每次生成串行端口设备堆栈时，Serenum 设置用于枚举端口的 *枚举模式* 。 在端口的设备堆栈的初始化过程中，Serenum 的 [**AddDevice**](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_add_device) 例程读取端口的 **SkipEnumerations** 入口值并设置枚举模式，如下表所述。
 

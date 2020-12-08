@@ -1,7 +1,6 @@
 ---
 title: 对象目录
 description: 对象目录
-ms.assetid: b0e0d077-6736-4a54-b1eb-a30962442942
 keywords:
 - 对象目录 WDK 内核
 - 命名对象 WDK 内核
@@ -9,12 +8,12 @@ keywords:
 - 顶级对象目录 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 07fe246a8e05e3a2079b2774ab79a8c0ea9d0083
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: 370f0c7052b4c9fd28e69ce5f6ebbc5abd621c40
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89403128"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803547"
 ---
 # <a name="object-directories"></a>对象目录
 
@@ -22,7 +21,7 @@ ms.locfileid: "89403128"
 
 
 
-*对象目录*是一个仅用于包含其他命名对象的命名对象。 例如， ** \\ 设备**对象目录包含驱动程序创建的已命名设备对象。
+*对象目录* 是一个仅用于包含其他命名对象的命名对象。 例如， **\\ 设备** 对象目录包含驱动程序创建的已命名设备对象。
 
 不要将对象目录与文件系统目录混淆。 对象目录仅在对象管理器中存在，并且不与磁盘上的任何目录相对应。 事实上， (文件系统目录表示为文件对象。 ) 
 
@@ -30,9 +29,9 @@ ms.locfileid: "89403128"
 
 -   **\\回调**
 
-    系统将在此目录中创建标准的回调对象。 有关详细信息，请参阅 [使用系统定义的回调对象](using-a-system-defined-callback-object.md)。
+    系统将在此目录中创建标准的回调对象。 有关详细信息，请参阅 [使用 System-Defined 的回调对象](using-a-system-defined-callback-object.md)。
 
--   **\\设备**
+-   **\\装置**
 
     驱动程序在此目录中创建命名设备对象。 有关详细信息，请参阅 [命名设备对象](named-device-objects.md)。
 

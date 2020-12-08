@@ -1,22 +1,21 @@
 ---
 title: SerCx2.sys 和 Serial.sys 之间的差异
 description: 尽管收件箱 Sercx2.sys 和 Serial.sys 驱动程序组件都实现了串行 i/o 请求接口，但这些组件不能互换。 它们旨在满足不同的需求集。
-ms.assetid: 62FA69BB-FE04-4B5E-96CC-13764ED83AE6
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6ecd2111a593c498b6c135e732f9db20ccb06dfa
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: d4ffd0ad21176d7e3344e9d6e81550ca5a20c445
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89187142"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96805047"
 ---
 # <a name="differences-between-sercx2sys-and-serialsys"></a>SerCx2.sys 和 Serial.sys 之间的差异
 
 
 尽管收件箱 Sercx2.sys 和 Serial.sys 驱动程序组件都实现了 [串行 i/o 请求接口](serial-i-o-request-interface.md)，但这些组件不能互换。 它们旨在满足不同的需求集。
 
-**注意**   Sercx2.sys 替换 Windows 8 中引入的较早版本的串行框架扩展 Sercx.sys。 有关详细信息，请参阅 [串行控制器驱动程序概述](serial-drivers-overview.md)。
+**请注意**  Sercx2.sys 替换 Windows 8 中引入的较早版本的串行框架扩展 Sercx.sys。 有关详细信息，请参阅 [串行控制器驱动程序概述](serial-drivers-overview.md)。
 
  
 

@@ -1,32 +1,31 @@
 ---
 title: Windows 中的 UEFI
 description: Windows 中的 UEFI
-ms.assetid: 14b54fe3-49f7-4ad8-b9b6-ecc747dff137
 ms.date: 05/26/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 2e92cac3db0b1b3df4e41b3012e5ea33885f5075
-ms.sourcegitcommit: 5273e44c5c6c1c87952d74e95e5473c32a916d10
+ms.openlocfilehash: 1155e22a4da08c2681fc9d08996e6a834af4ed31
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84122698"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803641"
 ---
 # <a name="uefi-in-windows"></a>Windows 中的 UEFI
 
 > [!NOTE]
 > 本节中的某些信息可能仅适用于 Windows 10 移动版和某些处理器体系结构。
 
-Windows 利用统一可扩展固件接口（UEFI）来支持从 SoC 固件启动加载程序到操作系统的系统控制切换。 UEFI 环境是在其上启动 Windows 设备和操作系统运行的最小启动操作系统。
+Windows 利用统一可扩展固件接口 (UEFI) ，以支持从 SoC 固件启动加载程序到操作系统的系统控制。 UEFI 环境是在其上启动 Windows 设备和操作系统运行的最小启动操作系统。
 
-UEFI 是基于标准 UEFI 规范的启动加载程序的一般框架，它描述了一种标准环境和平台固件的一组接口，使操作系统能够启动。 UEFI 规范可在[UEFI.org](https://uefi.org/specifications)上找到。由于 UEFI 的级别非常低，其每个实现特定于特定的 SoC。 对于 Windows 设备，由 SoC 供应商提供的核心 UEFI 环境和某些 UEFI 驱动程序。 其他 UEFI 驱动程序和 UEFI 应用程序（例如闪烁的应用程序）由 Microsoft 提供。
+UEFI 是基于标准 UEFI 规范的启动加载程序的一般框架，它描述了一种标准环境和平台固件的一组接口，使操作系统能够启动。 UEFI 规范可在 [UEFI.org](https://uefi.org/specifications)上找到。由于 UEFI 的级别非常低，其每个实现特定于特定的 SoC。 对于 Windows 设备，由 SoC 供应商提供的核心 UEFI 环境和某些 UEFI 驱动程序。 Microsoft 提供了其他 UEFI 驱动程序和 UEFI 应用程序 (例如闪烁的应用程序) 。
 
-除了 UEFI 规范中所述的实现细节外，还提供了一组额外的 UEFI 要求，用于在 SoC 平台上运行 Windows。 有关这些要求，请参阅[SoC 平台上 Windows 的最低 UEFI 要求](minimum-uefi-requirements-for-windows-on-soc-platforms.md)。
+除了 UEFI 规范中所述的实现细节外，还提供了一组额外的 UEFI 要求，用于在 SoC 平台上运行 Windows。 有关这些要求，请参阅 [SoC 平台上 Windows 的最低 UEFI 要求](minimum-uefi-requirements-for-windows-on-soc-platforms.md)。
 
 ## <a name="in-this-section"></a>在本节中
 
-| 主题 | 说明 |
+| 主题 | 描述 |
 | --- | --- |
-| [SoC 平台上的 Windows 的最低 UEFI 要求](minimum-uefi-requirements-for-windows-on-soc-platforms.md) | 统一可扩展固件接口（UEFI）是运行 Windows 的 SoC 平台所需的启动固件。 本部分介绍在 SoC 平台上运行 Windows 的 UEFI 实现要求。 观察和遵循这些要求将有助于确保 Windows 的正确功能。 |
+| [SoC 平台上的 Windows 的最低 UEFI 要求](minimum-uefi-requirements-for-windows-on-soc-platforms.md) | 统一可扩展固件接口 (UEFI) 是运行 Windows 的 SoC 平台所需的启动固件。 本部分介绍在 SoC 平台上运行 Windows 的 UEFI 实现要求。 观察和遵循这些要求将有助于确保 Windows 的正确功能。 |
 | [Windows 的 UEFI 协议](uefi-protocols-for-windows.md) | 本部分介绍 Windows 定义的 UEFI 协议。 这些协议会向上扩展 UEFI 规范定义的协议，Windows 在启动过程中用于完成特定功能。 |
 | [Windows UEFI 固件更新平台](windows-uefi-firmware-update-platform.md) | Windows 支持一个平台，用于通过使用 UEFI UpdateCapsule 函数处理的驱动程序包来安装系统和设备固件更新。 此平台提供一致、可靠的固件更新体验，并改善最终用户的重要系统固件更新的发现。 |
 

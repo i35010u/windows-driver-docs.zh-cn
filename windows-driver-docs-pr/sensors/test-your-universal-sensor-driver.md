@@ -1,15 +1,14 @@
 ---
 title: 测试通用传感器驱动程序
 description: 本主题提供有关如何测试通用传感器驱动程序的建议。
-ms.assetid: 46F50544-B130-4690-8047-6FBB6DD4749F
 ms.date: 11/08/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: bec613c30a49093b5351a430a2d23f0c48b9092c
-ms.sourcegitcommit: ec7bebe3f94536455e62b372c2a28fe69d1717f7
+ms.openlocfilehash: 0399f4954a59f4e7d4051d8095433c37734911bc
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93349689"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96805091"
 ---
 # <a name="test-your-universal-sensor-driver"></a>测试通用传感器驱动程序
 
@@ -23,7 +22,7 @@ ms.locfileid: "93349689"
 
 -   **SensorInfo 应用** <br/>如果要使用通用 Windows 平台 (UWP) 应用测试传感器驱动程序，则可以使用 [SensorInfo 应用](https://www.microsoft.com/store/appid/95015d9e-2116-44b8-9d3c-15c7b8753086)。 此应用将自动检测附加到 (或嵌入) 平台中的任何传感器，然后调用关联的驱动程序。 然后，该应用将显示它从传感器中读取的信息，并将该信息显示为移动波形。
 
--   **传感器诊断工具** <br/>如果只是想要监视数据检索、事件处理、报告间隔等，请在带 Cove 上安装此工具，以监视这些传感器值。 传感器诊断工具附带了 Windows 驱动程序工具包 (WDK) ，可在以下文件夹中找到： *&lt; 工具包根 &gt; \\ 工具 \\ &lt; 体系结构 &gt; \\sensordiagnostictool.exe* 。 <br/><br/>例如，如果你的驱动程序开发计算机是基于 x64 的计算机，并且你将该 WDK 安装到了默认位置，则会在以下文件夹中找到传感器诊断工具：<br/><br/>*C： \\ Program Files (x86) \\ Windows 工具包 \\ 10 \\ 工具 \\ x64 \\sensordiagnostictool.exe* <br/><br/>**注意**  传感器诊断工具现已弃用，适用于 Windows 10。 对于所有传感器测试和诊断，请使用 Microsoft Store 中的 SensorInfo 应用。
+-   **传感器诊断工具** <br/>如果只是想要监视数据检索、事件处理、报告间隔等，请在带 Cove 上安装此工具，以监视这些传感器值。 传感器诊断工具附带了 Windows 驱动程序工具包 (WDK) ，可在以下文件夹中找到： *&lt; 工具包根 &gt; \\ 工具 \\ &lt; 体系结构 &gt; \\sensordiagnostictool.exe*。 <br/><br/>例如，如果你的驱动程序开发计算机是基于 x64 的计算机，并且你将该 WDK 安装到了默认位置，则会在以下文件夹中找到传感器诊断工具：<br/><br/>*C： \\ Program Files (x86) \\ Windows 工具包 \\ 10 \\ 工具 \\ x64 \\sensordiagnostictool.exe* <br/><br/>**注意**  传感器诊断工具现已弃用，适用于 Windows 10。 对于所有传感器测试和诊断，请使用 Microsoft Store 中的 SensorInfo 应用。
 
 ## <a name="general-driver-testing"></a>常规驱动程序测试
 

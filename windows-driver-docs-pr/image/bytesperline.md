@@ -1,9 +1,8 @@
 ---
 title: BytesPerLine 元素
-description: 所需的 BytesPerLine 元素生成的图像文件中指定每个扫描行的字节的数。
-ms.assetid: 026187db-16b7-48fc-a9e4-fa32cdc73d98
+description: 必需的 BytesPerLine 元素指定生成的图像文件中每个扫描行的字节数。
 keywords:
-- BytesPerLine 元素成像设备
+- BytesPerLine 元素图像设备
 topic_type:
 - apiref
 api_name:
@@ -12,19 +11,19 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1a80f6388de8c74bf8c66b8ac7b2d8329c4f2d4f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6d70898350b00251356332e356c3bcc2c78c7ed0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63373304"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96804177"
 ---
 # <a name="bytesperline-element"></a>BytesPerLine 元素
 
 
-所需**BytesPerLine**元素生成的图像文件中指定的每个扫描行的字节数。
+必需的 **BytesPerLine** 元素指定生成的图像文件中每个扫描行的字节数。
 
-<a name="usage"></a>用法
+<a name="usage"></a>使用情况
 -----
 
 ```xml
@@ -41,12 +40,12 @@ ms.locfileid: "63373304"
 <a name="text-value"></a>文本值
 ----------
 
-必需。 介于 0 到 2147483647 之间的整数值。
+必需。 0到2147483647之间的整数值。
 
 ## <a name="child-elements"></a>子元素
 
 
-没有子元素。
+没有任何子元素。
 
 ## <a name="parent-elements"></a>父元素
 
@@ -79,16 +78,16 @@ ms.locfileid: "63373304"
 <a name="remarks"></a>备注
 -------
 
-WSD 扫描服务返回的整数值是数据像素和扫描程序会将添加到每个扫描行的任何填充所需的总字节数。
+WSD 扫描服务返回的整数值是数据像素和扫描程序将添加到每个扫描行的任何空白所需的总字节数。
 
-[**Format**](format.md)
+[**形式**](format.md)
 
-**BytesPerLine**元素无效，仅当请求[**格式**](format.md)值是未压缩的文件格式。 如果文件格式指示压缩，扫描服务必须返回值为零**BytesPerLine**。
+仅当请求的 [**格式**](format.md)值为未压缩的文件格式时， **BytesPerLine** 元素才有效。 如果文件格式指示压缩，则扫描服务必须将 **BytesPerLine** 的值返回为零。
 
 ## <a name="see-also"></a>请参阅
 
 
-[**Format**](format.md)
+[**形式**](format.md)
 
 [**MediaBackImageInfo**](mediabackimageinfo.md)
 

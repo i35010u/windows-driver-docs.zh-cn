@@ -1,15 +1,14 @@
 ---
 title: HBAFCPBindingEntry WMI 类
 description: HBAFCPBindingEntry WMI 类
-ms.assetid: 58993d0d-2044-430d-b8f6-5ea3b68d460b
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 2fe6daf3abcff6c3009a378aaa6855d81256d9c5
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 54a334b7828ed7f37662624e559df52c6c7957b1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89188821"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96804489"
 ---
 # <a name="hbafcpbindingentry-wmi-class"></a>HBAFCPBindingEntry WMI 类
 
@@ -19,7 +18,7 @@ ms.locfileid: "89188821"
 
 支持 T11 委员会 *光纤通道 HBA API* 规范的 hba 微型端口驱动程序使用 HBAFCPBindingEntry 类定义操作系统用于标识 SCSI 设备的信息与设备的光纤通道协议 (FCP) 标识符之间的绑定。 有关光纤通道协议的说明，请参阅 T11 委员会的 *dpANS 光纤通道用于 SCSI* 规范的协议。 有关标识逻辑单元和 FCP 标识符的操作系统数据之间的此绑定的说明，请参阅 T11 委员会 *光纤通道 HBA API* 规范。
 
-HBAFCPBindingEntry 类在 *Hbaapi*中定义如下：
+HBAFCPBindingEntry 类在 *Hbaapi* 中定义如下：
 
 ```cpp
 class HBAFCPBindingEntry {

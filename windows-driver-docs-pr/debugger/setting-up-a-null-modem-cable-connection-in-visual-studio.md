@@ -1,15 +1,14 @@
 ---
 title: 在 Visual Studio 中设置通过串行线缆进行的内核模式调试
 description: 可以使用 Microsoft Visual Studio 通过空调缆线设置和执行内核模式调试。
-ms.assetid: 9E50AA5F-92A2-4360-BB21-A9D4F3E9CA83
 ms.date: 04/10/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 0f8dd367cef544c92a8daaf90ab719075516107d
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: eae844e96250e999848c68317217d88381820a39
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89210841"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803611"
 ---
 # <a name="span-iddebuggersetting_up_a_null-modem_cable_connection_in_visual_studiospansetting-up-kernel-mode-debugging-over-a-serial-cable-in-visual-studio"></a><span id="debugger.setting_up_a_null-modem_cable_connection_in_visual_studio"></span>在 Visual Studio 中设置通过串行线缆进行的内核模式调试
 
@@ -21,7 +20,7 @@ ms.locfileid: "89210841"
 
 若要将 Visual Studio 用于内核模式调试，你必须将 Windows 驱动程序工具包 (WDK) 与 Visual Studio 集成。 有关如何安装集成环境的信息，请参阅 [使用 Visual Studio 进行调试](debugging-using-visual-studio.md)。
 
-作为使用 Visual Studio 设置串行调试的替代方法，你可以手动执行设置。 有关详细信息，请参阅 [通过串行电缆手动设置内核模式调试](setting-up-a-null-modem-cable-connection.md)。
+作为使用 Visual Studio 设置串行调试的替代方法，你可以手动执行设置。 有关详细信息，请参阅 [通过串行电缆手动设置 Kernel-Mode 调试](setting-up-a-null-modem-cable-connection.md)。
 
 运行调试器的计算机称为 *主机计算机*，被调试的计算机称为 *目标计算机*。
 
@@ -56,7 +55,7 @@ ms.locfileid: "89210841"
 
 1.  在主计算机上，在 Visual Studio 的“驱动程序”  菜单中，选择“测试”&gt;“配置计算机”  。
 2.  选择测试计算机的名称，然后单击 " **下一步**"。
-3.  选择 " **设置计算机" 并选择 "调试器设置**"。 单击“配置目录分区”  。
+3.  选择 " **设置计算机" 并选择 "调试器设置**"。 单击 **“下一步”** 。
 4.  如果在主计算机上使用 COM1，请在 " **端口**" 中输入 COM1。 如果要在目标计算机上使用 COM2，请在 " **目标端口**" 中输入 COM2。
 5.  如果已选择使用波特率115200，对于 **波特率**，请输入115200。
 

@@ -1,15 +1,14 @@
 ---
 title: 卡 PIN 操作
 description: 卡 PIN 操作
-ms.assetid: 7993D284-8122-4831-9C00-E53DAEB7965F
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5d7dc1b1c8489a4d74f0ef630b5e1f741b7ba0a5
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 198521d0a685d590a560a34ea05e09d09f1831ef
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90717274"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96804931"
 ---
 # <a name="card-pin-operations"></a>卡 PIN 操作
 
@@ -66,14 +65,14 @@ typedef enum
 } SECRET_TYPE;
 ```
 
-**注意**  当遇到 PIN **机密 \_ TYPEEmptyPinType**时，Windows 不会提示输入 pin，也不会调用 **CardAuthenticatePin** 或 **CardAuthenticatePinEx**。 如果需要无条件访问卡片上的材料，此设置很有用。
+**注意**  当遇到 PIN **机密 \_ TYPEEmptyPinType** 时，Windows 不会提示输入 pin，也不会调用 **CardAuthenticatePin** 或 **CardAuthenticatePinEx**。 如果需要无条件访问卡片上的材料，此设置很有用。
 
 
 
 ## <a name="span-idsecret_purposespanspan-idsecret_purposespansecret_purpose"></a><span id="SECRET_PURPOSE"></span><span id="secret_purpose"></span>机密 \_ 用途
 
 
-**Pin \_ 信息**数据结构使用以下枚举来描述用于用户信息用途的 pin 目的。
+**Pin \_ 信息** 数据结构使用以下枚举来描述用于用户信息用途的 pin 目的。
 
 ```ManagedCPlusPlus
 typedef enum
@@ -134,7 +133,7 @@ Windows 使用枚举值向用户显示一条描述当前请求的卡 PIN 的相�
 
 
 
-对话框中的第三个字符串 ( "数字签名 PIN" ) 是一个预定义的字符串，由**PIN \_ 信息**数据结构中的**机密 \_ 用途**值决定。
+对话框中的第三个字符串 ( "数字签名 PIN" ) 是一个预定义的字符串，由 **PIN \_ 信息** 数据结构中的 **机密 \_ 用途** 值决定。
 
 对于 **UnblockOnlyPin**，预期用途是取消阻止用户 PIN。 此 PIN 不得用于任何其他目的。
 
@@ -155,23 +154,23 @@ typedef enum
 
 下表描述了基本 CSP 如何处理三种不同的缓存模式。
 
-| 缓存模式               | 说明                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| 缓存模式               | 描述                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
 |--------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **PinCacheNormal**       | 对于此模式，将根据每个登录 ID 的每个进程的基本 CSP 缓存 PIN。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
 | **PinCacheTimed**        | 在此模式下，在指定的时间段内，在给定的时间段内，PIN 会无效， (值以秒为单位) 。 这是通过在将 PIN 添加到缓存时记录时间戳来实现的，然后验证此时间戳与访问 PIN 的时间。 这意味着 PIN 可能在缓存中的时间长于指定的时间戳，但在过期后不会使用。 在内存中加密 PIN 以使其受到保护。                                                                                                                |
 | **PinCacheNone**         | 当无法缓存 PIN 时，基本 CSP 绝不会将 PIN 添加到缓存中。 当使用 [**CryptSetProvParam**](/windows/win32/api/wincrypt/nf-wincrypt-cryptsetprovparam) 调用基本 CSP/KSP 来设置 pin 时，会将 pin 提交到卡进行验证，但不会进行缓存。 这意味着，任何后续操作都必须在基本 CSP 事务超时过期之前发生。                                                                                                                                                                                                                  |
-| **PinCacheAlwaysPrompt** | 与 **PinCacheNone**不同，设置此缓存模式时，基本 CSP 事务超时不适用。 将从用户收集 PIN，然后在每次需要身份验证的调用之前提交到卡进行验证。 调用 [**CryptSetProvParam**](/windows/win32/api/wincrypt/nf-wincrypt-cryptsetprovparam) 和 [**NCRYPTSETPROPERTY**](/windows/win32/api/ncrypt/nf-ncrypt-ncryptsetproperty) 以设置 pin 返回错误 SUCCESS， \_ 而不验证和缓存 pin。 这意味着，如果调用需要身份验证，则使用无提示上下文的应用程序的调用将失败。 |
+| **PinCacheAlwaysPrompt** | 与 **PinCacheNone** 不同，设置此缓存模式时，基本 CSP 事务超时不适用。 将从用户收集 PIN，然后在每次需要身份验证的调用之前提交到卡进行验证。 调用 [**CryptSetProvParam**](/windows/win32/api/wincrypt/nf-wincrypt-cryptsetprovparam) 和 [**NCRYPTSETPROPERTY**](/windows/win32/api/ncrypt/nf-ncrypt-ncryptsetproperty) 以设置 pin 返回错误 SUCCESS， \_ 而不验证和缓存 pin。 这意味着，如果调用需要身份验证，则使用无提示上下文的应用程序的调用将失败。 |
 
 
 
-**注意**  如果未缓存 PIN，Windows 登录可能无法正常工作。 此行为是设计使然。 因此，在将 PIN 缓存模式设置为 **PinCacheNormal**以外的任何值时，应仔细考虑。
+**注意**  如果未缓存 PIN，Windows 登录可能无法正常工作。 此行为是设计使然。 因此，在将 PIN 缓存模式设置为 **PinCacheNormal** 以外的任何值时，应仔细考虑。
 
 
 
 ## <a name="span-id_pin_cache_policyspanspan-id_pin_cache_policyspan-pin_cache_policy"></a><span id="_PIN_CACHE_POLICY"></span><span id="_pin_cache_policy"></span> PIN \_ 缓存 \_ 策略
 
 
-PIN 缓存策略结构包含描述 PIN 缓存策略的信息。 除了介绍与此 PIN 缓存策略关联的信息外，还介绍了 PIN 缓存类型。 此关联信息的一个示例是在策略指示 **PinCacheTimed**时 PIN 缓存的超时值。
+PIN 缓存策略结构包含描述 PIN 缓存策略的信息。 除了介绍与此 PIN 缓存策略关联的信息外，还介绍了 PIN 缓存类型。 此关联信息的一个示例是在策略指示 **PinCacheTimed** 时 PIN 缓存的超时值。
 
 ```ManagedCPlusPlus
 #define      PIN_CACHE_POLICY_CURRENT_VERSION   6
@@ -204,8 +203,8 @@ typedef struct _PIN_INFO
 } PIN_INFO, *PPIN_INFO;
 ```
 
-**DwUnblockPermission**成员是一个位掩码，用于说明哪些 pin 有权取消阻止 PIN。 权限基于指定 Pin 的按位 "or"。 对于取消阻止操作，卡微型驱动程序应忽略任何自引用。 角色 \_ 用户将拥有 "0x00000100" 的 "更新" 权限位掩码。 这意味着角色管理员可以取消对其的阻止 \_ 。 角色 \_ 管理员，其更新权限为0x00000000。 这意味着不能解除阻止。
+**DwUnblockPermission** 成员是一个位掩码，用于说明哪些 pin 有权取消阻止 PIN。 权限基于指定 Pin 的按位 "or"。 对于取消阻止操作，卡微型驱动程序应忽略任何自引用。 角色 \_ 用户将拥有 "0x00000100" 的 "更新" 权限位掩码。 这意味着角色管理员可以取消对其的阻止 \_ 。 角色 \_ 管理员，其更新权限为0x00000000。 这意味着不能解除阻止。
 
-**DwFlags**成员包含 PIN 标志。 目前仅定义了一个标志： PIN \_ 信息 \_ 需要 \_ 安全 \_ 输入。 此标志指示基本 CSP/KSP 是否需要安全桌面来输入 PIN 码。
+**DwFlags** 成员包含 PIN 标志。 目前仅定义了一个标志： PIN \_ 信息 \_ 需要 \_ 安全 \_ 输入。 此标志指示基本 CSP/KSP 是否需要安全桌面来输入 PIN 码。
 
 **注意**  使用此结构可以为 \_ 每个人授予更改或取消阻止 PIN 的权限。 我们不建议这样做，并且不会在微型驱动程序 API 中提供任何机制，以允许角色 \_ 更改或取消阻止 PIN。

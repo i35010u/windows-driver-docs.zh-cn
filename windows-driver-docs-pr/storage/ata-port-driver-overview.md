@@ -1,7 +1,6 @@
 ---
 title: ATA 端口驱动程序概述
 description: ATA 端口驱动程序概述
-ms.assetid: c7b9d794-a8cb-4bdd-bb93-bff473ea26a7
 keywords:
 - 存储端口驱动程序 WDK，ATA 端口驱动程序
 - ATA 端口驱动程序 WDK
@@ -9,12 +8,12 @@ keywords:
 - IDE 控制器 WDK ATA 端口驱动程序
 ms.date: 10/08/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: aa2d18a33111b45716297a6a9613774c4c143946
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: c29bbf16902a0ec091d7fc69bf2e9e4824d13cc9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89192893"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96804775"
 ---
 # <a name="ata-port-driver-overview"></a>ATA 端口驱动程序概述
 

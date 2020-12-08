@@ -1,15 +1,14 @@
 ---
 title: LaunchDeviceStageOnDeviceConnect
 description: LaunchDeviceStageOnDeviceConnect
-ms.assetid: 6c3ac8f9-373f-4b70-85c6-a4bd3d81a534
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3a5ef7b2df88bbe03c445cb5040b677f5af944d8
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: 7a3e62d13ce53d884c2a1de32f8679ba351702e2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89403360"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96805333"
 ---
 # <a name="launchdevicestageondeviceconnect"></a>LaunchDeviceStageOnDeviceConnect
 
@@ -52,7 +51,7 @@ ms.locfileid: "89403360"
 <thead>
 <tr class="header">
 <th>元素</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>

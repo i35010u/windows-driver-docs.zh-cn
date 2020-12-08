@@ -1,15 +1,14 @@
 ---
 title: Windows 内核模式执行支持库
 description: Windows 内核模式执行支持库
-ms.assetid: cfb8c6c0-9454-4dc6-98e8-c41cbf1c0cad
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 9464743c547600021b7a9dc7ef74d1624ab4d369
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 68d983bd6f6f4edff8cc1e8df704d50561330b7f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89184247"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803723"
 ---
 # <a name="windows-kernel-mode-executive-support-library"></a>Windows 内核模式执行支持库
 

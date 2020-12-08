@@ -1,17 +1,16 @@
 ---
 title: 支持非标准显示模式
 description: 支持非标准显示模式
-ms.assetid: 33a10aed-dfc9-4b64-97fb-e4b7c744dc0d
 keywords:
-- 使用了非标准的显示模式 WDK DirectX 9.0
+- 非标准显示模式 WDK DirectX 9。0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f56ef493d16ceda5ee3b055a76164a41c82b4af6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: cdb00c7d196cce7c33906c1f2b4020928ae57d87
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63350214"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803897"
 ---
 # <a name="supporting-nonstandard-display-modes"></a>支持非标准显示模式
 
@@ -19,13 +18,13 @@ ms.locfileid: "63350214"
 ## <span id="ddk_supporting_nonstandard_display_modes_gg"></span><span id="DDK_SUPPORTING_NONSTANDARD_DISPLAY_MODES_GG"></span>
 
 
-DirectX 9.0 版本支持任何使用了非标准的显示模式，例如 10-位的每个通道 (10:10:10:2) 的设备驱动程序显示，呈现器目标格式必须响应请求，以枚举这些扩展了非标准的显示模式。 此外，DirectX 9.0 驱动程序必须能够执行操作启用标准和非标准的显示模式之间切换。 以下部分介绍如何驱动程序支持使用了非标准的显示模式：
+支持任何非标准显示模式的设备的 DirectX 9.0 版本驱动程序，如每通道10位数 (10:10:10:2) 显示和呈现目标格式，则必须响应枚举这些扩展非标准显示模式的请求。 此外，DirectX 9.0 驱动程序必须能够执行启用在标准和非标准显示模式之间切换的操作。 以下各节介绍了驱动程序如何支持非标准显示模式：
 
-[枚举扩展的格式](enumerating-extended-formats.md)
+[枚举扩展格式](enumerating-extended-formats.md)
 
-[标准和非标准模式之间切换](switching-between-standard-and-nonstandard-modes.md)
+[在标准与非标准模式之间切换](switching-between-standard-and-nonstandard-modes.md)
 
-[处理非标准的显示模式](handling-nonstandard-display-modes.md)
+[处理非标准显示模式](handling-nonstandard-display-modes.md)
 
  
 

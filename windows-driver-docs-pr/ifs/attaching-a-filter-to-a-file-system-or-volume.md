@@ -1,7 +1,6 @@
 ---
 title: 将筛选器附加到文件系统或卷
 description: 将筛选器附加到文件系统或卷
-ms.assetid: 7c5059b3-cd9f-4a83-8f78-5a2fcc96b246
 keywords:
 - 筛选器驱动程序 WDK 文件系统，附加筛选器
 - 文件系统筛选器驱动程序 WDK，附加筛选器
@@ -9,12 +8,12 @@ keywords:
 - 卷 WDK 文件系统，附加筛选器
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9c44cf7c99277bca7f8872cf0ab1960b92a429e9
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 3d05528fc7a60d6d995e8bcb8d1ba65d23ad4039
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89066220"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803567"
 ---
 # <a name="attaching-a-filter-to-a-file-system-or-volume"></a>将筛选器附加到文件系统或卷
 
@@ -28,11 +27,11 @@ ms.locfileid: "89066220"
 
 -   文件系统筛选器驱动程序可以附加到一个或多个文件系统驱动程序、侦听 [**irp \_ MJ \_ 文件 \_ 系统 \_ 控制**](./irp-mj-file-system-control.md)、irp \_ MN \_ 装入 \_ 卷请求，以及在装入卷时附加到卷。
 
-**注意**   通常情况下，应假定卷到驱动器号之间的映射是一对多的，而不是一对一的。 这是因为高级存储功能，如动态卷和卷装入点。
+**注意**   通常情况下，应假定卷到驱动器号之间的映射是一对多的，而不是一对一的。 这是因为高级存储功能，如动态卷和卷装入点。
 
  
 
-**注意**   不应假设 IRP \_ MN \_ 装入 \_ 卷请求始终由文件系统同步处理。 例如，如果驱动器中没有软盘，可能会以异步方式装载软盘驱动器。 因此，筛选器驱动程序应准备好在其装入完成例程中传播 **PendingReturned** 标志。 有关详细信息，请参阅 "[检查 PendingReturned 标志](checking-the-pendingreturned-flag.md)"。
+**注意**   不应假设 IRP \_ MN \_ 装入 \_ 卷请求始终由文件系统同步处理。 例如，如果驱动器中没有软盘，可能会以异步方式装载软盘驱动器。 因此，筛选器驱动程序应准备好在其装入完成例程中传播 **PendingReturned** 标志。 有关详细信息，请参阅 "[检查 PendingReturned 标志](checking-the-pendingreturned-flag.md)"。
 
  
 

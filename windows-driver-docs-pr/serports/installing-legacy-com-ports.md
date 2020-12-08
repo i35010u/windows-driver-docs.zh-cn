@@ -1,17 +1,16 @@
 ---
 title: 安装旧版 COM 端口
 description: 安装旧版 COM 端口
-ms.assetid: 9cf2a22c-fb4e-4f15-8410-021d2b4f2ce1
 keywords:
 - 旧 COM 端口 WDK 串行设备
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 821738dd2afabf813ea4d3d4e91f84540e293f3b
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 5845892413f1d26431489c7b35148352da4096dd
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89187113"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96805027"
 ---
 # <a name="installing-legacy-com-ports"></a>安装旧版 COM 端口
 
@@ -25,10 +24,10 @@ ms.locfileid: "89187113"
 
 2. 将端口的 **LegacyDiscovered** 输入值设置为0x00000001，这表示端口已报告。
 
-3. 将 COM 端口子项下的一些条目值复制到**IoReportDetectedDevice**返回的物理设备对象 (*PDO*) 即插即用设备密钥。
+3. 将 COM 端口子项下的一些条目值复制到 **IoReportDetectedDevice** 返回的物理设备对象 (*PDO*) 即插即用设备密钥。
 
 4. 串行将即插即用设备密钥下的 **portvalue** 条目值设置为旧 COM 端口子项下 **DosDevices** 条目值的值。 对于序列复制的所有其他输入值，它会保留相同的条目值名称。 有关串行复制的入口值的详细信息，请参阅 Microsoft Windows 驱动程序工具包 (WDK) 中提供的串行示例代码。
 
-**IoReportDetectedDevice**调用将端口标记为根枚举设备。 在后续系统启动时，即插即用管理器会根据其 INF 文件中的信息自动配置设备。
+**IoReportDetectedDevice** 调用将端口标记为根枚举设备。 在后续系统启动时，即插即用管理器会根据其 INF 文件中的信息自动配置设备。
 
 即插即用 manager 为旧 COM 端口创建以下 [兼容 id](../install/compatible-ids.md) ： DETECTEDInternal \\ SERIAL 和检测到的 \\ 串行。

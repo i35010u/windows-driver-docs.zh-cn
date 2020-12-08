@@ -1,7 +1,6 @@
 ---
 title: 自动设置 KDNET 网络内核调试
 description: 使用 KDNET 为 Windows 调试工具自动配置网络内核调试。
-ms.assetid: B4A79B2E-D4B1-42CA-9121-DEC923C76927
 keywords:
 - 网络调试
 - 以太网调试
@@ -9,18 +8,18 @@ keywords:
 - KDNET
 ms.date: 11/11/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 140ff62eeb5796fde0c247e449cf237e710ba6b6
-ms.sourcegitcommit: 5587af31b12cf96c1a31d42f7b40e8f72e3d739c
+ms.openlocfilehash: d45ae63d4ad1880092053fb7f1a44bacb6c8e14d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94570377"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803617"
 ---
 # <a name="setting-up-kdnet-network-kernel-debugging-automatically"></a>自动设置 KDNET 网络内核调试
 
 适用于 Windows 的调试工具支持通过网络进行内核调试。 本主题介绍如何使用 kdnet.exe 安装工具自动设置网络调试。
 
-运行调试器的计算机称为 *主机计算机* ，被调试的计算机称为 *目标计算机* 。 主计算机必须运行 Windows 7 或更高版本，并且目标计算机必须运行 Windows 8 或更高版本。
+运行调试器的计算机称为 *主机计算机*，被调试的计算机称为 *目标计算机*。 主计算机必须运行 Windows 7 或更高版本，并且目标计算机必须运行 Windows 8 或更高版本。
 
 ## <a name="determining-the-ip-address-of-the-host-computer"></a>确定主机计算机的 IP 地址
 
@@ -92,7 +91,7 @@ IPv4 Address. . . . . . . . . . . : <YourHostIPAddress>
 
 ## <a name="connecting-windbg-to-the-target-for-kernel-debugging"></a>将 WinDbg 连接到用于内核调试的目标
 
-在主计算机上，打开 WinDbg。 在 " **文件** " 菜单上，选择 " **内核调试** "。 在 "内核调试" 对话框中，打开 " **网络** " 选项卡。将之前保存的端口号和密钥粘贴到前面的 notepad.exe 文件中。 选择“确定”。
+在主计算机上，打开 WinDbg。 在 " **文件** " 菜单上，选择 " **内核调试**"。 在 "内核调试" 对话框中，打开 " **网络** " 选项卡。将之前保存的端口号和密钥粘贴到前面的 notepad.exe 文件中。 选择“确定”。
 
 你还可以通过打开命令提示符窗口并输入以下命令（其中 <YourPort> 是上面选择的端口）来启动 WinDbg 会话， <YourKey> 它是上面 kdnet.exe 返回的键。 将上保存的项粘贴到前面的 notepad.exe 文件中。
 
@@ -133,9 +132,9 @@ IPv4 Address. . . . . . . . . . . : <YourHostIPAddress>
 
 调试器必须具有通过防火墙的访问权限。 使用 "控制面板" 允许通过防火墙进行访问。 
 
-1. 打开 **"控制面板" " &gt; 系统和安全"** ，然后选择 " **允许应用通过 Windows 防火墙** "。 
+1. 打开 **"控制面板" " &gt; 系统和安全"** ，然后选择 " **允许应用通过 Windows 防火墙**"。 
 
-2. 在应用程序列表中，找到 " *WINDOWS GUI 符号调试器* " 和 " *windows 内核调试器* "。 
+2. 在应用程序列表中，找到 " *WINDOWS GUI 符号调试器* " 和 " *windows 内核调试器*"。 
 
 3. 使用此复选框可允许这两个应用程序通过防火墙实现 **三** 种不同的网络类型。 
 
@@ -196,7 +195,7 @@ Key=2steg4fzbj2sz.23418vzkd4ko3.1g34ou07z4pev.1sp3yo9yz874p
 
 ### <a name="summary-of-debugging-type-options"></a>调试类型选项摘要
 
-| KNDET 选项 | 说明                  | 等效 set 命令           |
+| KNDET 选项 | 描述                  | 等效 set 命令           |
 |--------------|------------------------------|----------------------------------|
 | *b*          | 启用 bootmgr 调试    | bcdedit/bootdebug {bootmgr} on  |
 | *h*          | 启用虚拟机监控程序调试 | bcdedit/set hypervisordebug on  |
@@ -211,7 +210,7 @@ Key=2steg4fzbj2sz.23418vzkd4ko3.1g34ou07z4pev.1sp3yo9yz874p
 
 [b. d. f] 指定要配置的设备的总线参数。
 
-使用目标计算机上的设备管理器确定要用于调试的适配器的 PCI 总线、设备和功能号。 对于 "总线参数"，请输入 *b* 。 *d.**f* ，其中 *b* 、 *d* 和 *f* 是适配器的总线号、设备号和功能号。 这些值显示在“常规”选项卡上的“位置”下的设备管理器中 。  
+使用目标计算机上的设备管理器确定要用于调试的适配器的 PCI 总线、设备和功能号。 对于 "总线参数"，请输入 *b*。*d.**f* ，其中 *b*、 *d* 和 *f* 是适配器的总线号、设备号和功能号。 这些值显示在“常规”选项卡上的“位置”下的设备管理器中 。  
 
 例如：
 

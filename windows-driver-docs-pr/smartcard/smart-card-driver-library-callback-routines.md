@@ -1,7 +1,6 @@
 ---
 title: 智能卡驱动程序库回调例程
 description: 智能卡驱动程序库回调例程
-ms.assetid: e536d539-4871-4b1d-bb5a-92a310dfa1e7
 keywords:
 - IOCTLs WDK 智能卡
 - 库回调例程 WDK 智能卡
@@ -10,12 +9,12 @@ keywords:
 - 供应商提供的驱动程序 WDK 智能卡，IOCTL 请求管理
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 19ecac31aba7ce311519818fcca6ce8752e1fabf
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: e74f1c8245ace4b3929e5b900cb9a86e2b9d7616
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106238"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96804881"
 ---
 # <a name="smart-card-driver-library-callback-routines"></a>智能卡驱动程序库回调例程
 
@@ -25,9 +24,9 @@ ms.locfileid: "90106238"
 
 智能卡体系结构定义一组标准回调例程类型。 有关这些例程的详细信息，请参阅 [智能卡驱动程序回调](/windows-hardware/drivers/ddi/index)。
 
-读取器驱动程序必须通过在智能卡设备扩展中存储指向它们的指针（这是智能卡[** \_ 扩展**](/windows-hardware/drivers/ddi/smclib/ns-smclib-_smartcard_extension)类型），使这些回调例程可供驱动程序库例程（ [**SmartcardDeviceControl (WDM) **](/previous-versions/ff548939(v=vs.85))使用。 这些指针存储在智能卡扩展结构的 **ReaderFunction** 成员中的数组中 \_ 。 单个回调例程可以通过一系列常数值标识，这些值应用作 **ReaderFunction** 数组中的索引。
+读取器驱动程序必须通过在智能卡设备扩展中存储指向它们的指针（这是智能卡 [**\_ 扩展**](/windows-hardware/drivers/ddi/smclib/ns-smclib-_smartcard_extension)类型），使这些回调例程可供驱动程序库例程（ [**SmartcardDeviceControl (WDM)**](/previous-versions/ff548939(v=vs.85))使用。 这些指针存储在智能卡扩展结构的 **ReaderFunction** 成员中的数组中 \_ 。 单个回调例程可以通过一系列常数值标识，这些值应用作 **ReaderFunction** 数组中的索引。
 
-例如，如果你想要[**SmartcardDeviceControl**](/previous-versions/ff548939(v=vs.85))在处理[**IOCTL \_ 智能卡 \_ 电源**](/previous-versions/windows/hardware/drivers/ff548907(v=vs.85))请求后，在名为**DriverCardPower**的读取器驱动程序中调用回调例程，则必须使用[*RDF \_ 卡 \_ 电源*](/previous-versions/windows/hardware/drivers/ff548919(v=vs.85))常量按以下方式初始化设备扩展：
+例如，如果你想要 [**SmartcardDeviceControl**](/previous-versions/ff548939(v=vs.85))在处理 [**IOCTL \_ 智能卡 \_ 电源**](/previous-versions/windows/hardware/drivers/ff548907(v=vs.85))请求后，在名为 **DriverCardPower** 的读取器驱动程序中调用回调例程，则必须使用 [*RDF \_ 卡 \_ 电源*](/previous-versions/windows/hardware/drivers/ff548919(v=vs.85))常量按以下方式初始化设备扩展：
 
 ```cpp
 SmartcardExtension->ReaderFunction[RDF_CARD_POWER] = 

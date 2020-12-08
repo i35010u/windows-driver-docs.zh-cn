@@ -1,18 +1,17 @@
 ---
 title: Storport 中的多层重置
 description: Storport 中的多层重置
-ms.assetid: 11c717b9-5154-43dd-b357-ff093cabec4b
 keywords:
 - Storport 驱动程序 WDK，错误
 - 错误 WDK Storport
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 290fa4409f2053028880a492bff19f4b52d29bcc
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: e5696bf4aba92099aac7c96374bad00a47f84a81
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89184937"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96804419"
 ---
 # <a name="multi-tier-reset-in-storport"></a>Storport 中的多层重置
 

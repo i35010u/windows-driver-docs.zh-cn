@@ -1,18 +1,17 @@
 ---
 title: 使用全局标志实用工具
 description: 使用全局标志实用工具
-ms.assetid: 934272e9-867c-4eb4-8bc1-e65e5b3f2aeb
 keywords:
 - 全局标志实用工具
 - 驱动程序验证程序 WDK，全局标志实用工具
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 035b7a4a3920220e8180b79ac38ef2176ba673be
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 4ff4fa6276d52802895f568f14f835981b4a4e39
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89383681"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803945"
 ---
 # <a name="using-the-global-flags-utility"></a>使用全局标志实用工具
 
@@ -157,7 +156,7 @@ ms.locfileid: "89383681"
 
 最好避免使用低于页面 \_ 大小的池标记。 例如，如果将0x30 放在基于 Itanium 的处理器上的此文本框中，则会将一个专用池用于大小介于17到32字节之间的所有分配，并用于包含池标记0x0030 的分配。
 
-**注意**   如果驱动程序验证程序启用了驱动程序的特殊池，并且全局标志实用工具已为池标记或分配大小启用了特殊池，则会将此特殊池用于满足这些条件的所有分配 (受池可用性) 。
+**注意**   如果驱动程序验证程序启用了驱动程序的特殊池，并且全局标志实用工具已为池标记或分配大小启用了特殊池，则会将此特殊池用于满足这些条件的所有分配 (受池可用性) 。
 
  
 

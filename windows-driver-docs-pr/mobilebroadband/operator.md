@@ -1,15 +1,14 @@
 ---
 title: 运算符
 description: 运算符
-ms.assetid: 770ad50d-d42d-49ad-a302-e839a0ca1fb4
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ee0edd3721c920c14e895d9cc6dba3361147417d
-ms.sourcegitcommit: 7e4d9508198a30bdc1cb6eda83852dda4e42213e
+ms.openlocfilehash: 9a11245af89dadeaf27785711f49d1912987ae22
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89304314"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96805267"
 ---
 # <a name="operator"></a>运算符
 
@@ -39,13 +38,13 @@ Operator 元素指定 APN 数据库中包含的操作员的详细信息。
 <tr class="header">
 <th>Attribute</th>
 <th>类型</th>
-<th>必需</th>
-<th>说明</th>
+<th>必须</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>名称</p></td>
+<td><p>“属性”</p></td>
 <td><p>xs:string</p></td>
 <td><p>是</p></td>
 <td><p>操作员的名称和国家/地区。</p>
@@ -79,7 +78,7 @@ Operator 元素指定 APN 数据库中包含的操作员的详细信息。
 <thead>
 <tr class="header">
 <th>元素</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -111,7 +110,7 @@ Operator 元素指定 APN 数据库中包含的操作员的详细信息。
 <thead>
 <tr class="header">
 <th>元素</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>

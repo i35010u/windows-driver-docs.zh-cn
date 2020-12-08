@@ -1,15 +1,14 @@
 ---
 title: 使用 ACPI 配置计算机上的 USB 端口
 description: 使用 ACPI 配置计算机上的 USB 端口
-ms.assetid: 999f9fef-512c-415a-abc6-d64560c5c2f8
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7c92f675ce190575695b536ca1fbff5d14655ad3
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 1c39c9a37d86343bb6eb5163ce48aa65b0855241
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89097189"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96805445"
 ---
 # <a name="using-acpi-to-configure-usb-ports-on-a-computer"></a>使用 ACPI 配置计算机上的 USB 端口
 
@@ -56,7 +55,7 @@ ms.locfileid: "89097189"
 <td align="left"><p>端口由 USB 主机控制器物理实现，但未使用。</p></td>
 <td align="left"><p>端口是未连接到端口插头终端或集成设备的多余端口。</p></td>
 <td align="left"><p>已清除 (0x00) </p></td>
-<td align="left"><p>Clear</p></td>
+<td align="left"><p>清除</p></td>
 <td align="left"><p>已清除</p></td>
 </tr>
 </tbody>
@@ -64,7 +63,7 @@ ms.locfileid: "89097189"
 
  
 
-**注意**   此配置无效，无法将端口定义为不可连接，但对用户可见。
+**注意**   此配置无效，无法将端口定义为不可连接，但对用户可见。
 
  
 
@@ -86,7 +85,7 @@ ms.locfileid: "89097189"
         0x30, 0x1C, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00})
     ```
 
--   若要指定外部的端口 (用户可见) 并且可以连接到外部设备， **_UPC。PortIsConnectable** 字节必须设置为0xff 和 **_PLD。UserVisible** 位必须设置为1。 _**UPC**。**PortConnectorType** byte 必须设置为 ACPI 3.0 规范第9.13 节中指定的相应 USB 连接器类型。
+-   若要指定外部的端口 (用户可见) 并且可以连接到外部设备， **_UPC。PortIsConnectable** 字节必须设置为0xff 和 **_PLD。UserVisible** 位必须设置为1。 _ **UPC**。**PortConnectorType** byte 必须设置为 ACPI 3.0 规范第9.13 节中指定的相应 USB 连接器类型。
 
     在以下示例中，为设备分配了新的设备容器，并显示为单独的物理设备。
 

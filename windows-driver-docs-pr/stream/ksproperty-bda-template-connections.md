@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ BDA \_ 模板 \_ 连接
 description: 客户端使用 KSPROPERTY \_ BDA \_ 模板 \_ 连接来检索模板拓扑中的 pin 与节点之间的连接列表。
-ms.assetid: 59268751-34fd-4291-bf36-45a435a4ccf2
 keywords:
 - KSPROPERTY_BDA_TEMPLATE_CONNECTIONS 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5b42fb47f9426bd2863a142b733ff0ef72679512
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: c1dd2c6fdb631b7ea224dc0e3465f0a31b96a4fc
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89193011"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96804357"
 ---
 # <a name="ksproperty_bda_template_connections"></a>KSPROPERTY \_ BDA \_ 模板 \_ 连接
 
@@ -84,7 +83,7 @@ ms.locfileid: "89193011"
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**BdaPropertyTemplateConnections**](/windows-hardware/drivers/ddi/bdasup/nf-bdasup-bdapropertytemplateconnections)

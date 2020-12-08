@@ -1,20 +1,19 @@
 ---
 title: 筛选器安装
 description: 筛选器安装
-ms.assetid: 118d9fd9-c499-4371-9084-a4368a78f5e0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 40fedbe775c3c9534646ecc45c71d85f2ef19cf7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 00a95e8a841ba1a6bf66f82830385aa119ad4d92
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63355881"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96804611"
 ---
 # <a name="filter-installation"></a>筛选器安装
 
 
-崩溃转储筛选器驱动程序可以安装在崩溃转储堆栈中，通过添加以下代码示例中所示的注册表项中的服务名称。 初始化故障转储或休眠状态时，加载转储驱动程序。 在这一次加载的注册表项中所述的筛选器驱动程序。
+故障转储筛选器驱动程序可以安装在故障转储堆栈中，方法是在下面的代码示例中所示的注册表项中添加服务名称。 当初始化故障转储或休眠时，将加载转储驱动程序。 此时会加载注册表项中提到的筛选器驱动程序。
 
 ```cpp
 HKLM\SYSTEM\CurrentControlSet\Control\CrashControl

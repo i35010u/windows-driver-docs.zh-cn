@@ -1,15 +1,14 @@
 ---
 title: HBAFCPID WMI 类
 description: HBAFCPID WMI 类
-ms.assetid: 6b0d0f79-a7a8-4341-955b-2c3068936a1d
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 1b07c8ec63fb59a38236c1c1fd38826679f49091
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: f5fb652085a3ec5a92aa254a66dbbdd0b05a328e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89184091"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96804483"
 ---
 # <a name="hbafcpid-wmi-class"></a>HBAFCPID WMI 类
 
@@ -21,7 +20,7 @@ ms.locfileid: "89184091"
 
 微型端口驱动程序使用此标识符来构造操作系统用于标识逻辑单元的信息与逻辑单元的 FCP 标识符之间的绑定。 有关此类绑定的信息，请参阅 [**HBAFCPBindingEntry**](/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_hbafcpbindingentry)。 有关光纤通道协议的说明，请参阅 T11 委员会的 *dpANS 光纤通道用于 SCSI* 规范的协议。
 
-HBAFCPID 类在 *Hbaapi*中定义如下：
+HBAFCPID 类在 *Hbaapi* 中定义如下：
 
 ```cpp
 class HBAFCPID {

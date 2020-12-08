@@ -1,7 +1,6 @@
 ---
 title: 重命名的 WHEA 数据类型
 description: 重命名的 WHEA 数据类型
-ms.assetid: e2c511a2-fd6e-4c7a-a47f-eb9b9f917bb4
 keywords:
 - Windows 硬件错误体系结构 WDK，已重命名数据类型
 - WHEA WDK，已重命名数据类型
@@ -9,12 +8,12 @@ keywords:
 - 重命名数据类型 WDK WHEA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bfe038559855d3d3c67ed9c99b1573d242c7758f
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: c49c4e22a36b1880b1f0eaa0c29dd1f578288ab7
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107194"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96804323"
 ---
 # <a name="renamed-whea-data-types"></a>重命名的 WHEA 数据类型
 
@@ -33,7 +32,7 @@ ms.locfileid: "90107194"
 
 下表列出了 WHEA 数据类型 "以前的" 和新的名称。
 
-### <a name="renamed-whea-globally-unique-identifiers-guids"></a><a href="" id="renamed-whea-globally-unique-identifiers--guids-"></a> 已重命名 WHEA 全局唯一标识符 (Guid) 
+### <a name="renamed-whea-globally-unique-identifiers-guids"></a><a href="" id="renamed-whea-globally-unique-identifiers--guids-"></a> 已重命名 WHEA Globally-Unique 标识符 (Guid) 
 
 <table>
 <colgroup>

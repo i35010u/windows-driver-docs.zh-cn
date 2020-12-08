@@ -1,7 +1,6 @@
 ---
 title: 处理 PnP 分页请求
 description: 处理 PnP 分页请求
-ms.assetid: c30c70d9-69c6-42d7-ae69-9c2421ba1d53
 keywords:
 - 存储筛选器驱动程序 WDK、PnP
 - 筛选器驱动程序 WDK 存储，PnP
@@ -9,12 +8,12 @@ keywords:
 - PnP WDK 存储
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 206969b3e874c8b3dc1006507797ccf340d093ec
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 293fcc2bde3e4c1b688255a819cc050269355ad1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89187545"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96804533"
 ---
 # <a name="handling-pnp-paging-requests"></a>处理 PnP 分页请求
 
@@ -22,7 +21,7 @@ ms.locfileid: "89187545"
 ## <span id="ddk_handling_pnp_paging_requests_kg"></span><span id="DDK_HANDLING_PNP_PAGING_REQUESTS_KG"></span>
 
 
-存储筛选器驱动程序必须使用 Irp [** \_ MJ Pnp (irp MJ \_ pnp**](../kernel/irp-mj-pnp.md)处理 pnp 寻呼请求，并将**UsageNotification**设置为**DeviceUsageTypePaging**) 如果它正在筛选的函数驱动程序处理此 IRP。 [** \_ \_ \_ \_ **](../kernel/irp-mn-device-usage-notification.md)
+存储筛选器驱动程序必须使用 Irp [**\_ MJ Pnp (irp MJ \_ pnp**](../kernel/irp-mj-pnp.md)处理 pnp 寻呼请求，并将 **UsageNotification** 设置为 **DeviceUsageTypePaging**) 如果它正在筛选的函数驱动程序处理此 IRP。 [**\_ \_ \_ \_**](../kernel/irp-mn-device-usage-notification.md)
 
 必须将以下项添加到筛选器的 DeviceExtension：
 
@@ -30,7 +29,7 @@ ULONG PagingCount;
 
 KEVENT PagingCountEvent;
 
-收到 PnP 寻呼请求后，存储筛选器驱动程序必须更新筛选器中的 PagingCount 和 ** \_ \_ PAGABLE** 位的设置。 更新 " ** \_ \_ PAGABLE** " 位的时间取决于是否设置或清除该位。 如果 IRP 指示应该设置位，则筛选器驱动程序必须在将 IRP 向下转发到驱动程序堆栈 *之前* 对其进行设置。 但如果 IRP 指出应清除该位，则筛选器驱动程序不应立即清除该位。 它必须首先转发 IRP，并等待较低的驱动程序返回其状态，并仅在较低的驱动程序返回 **状态为 \_ 成功**时清除此位。
+收到 PnP 寻呼请求后，存储筛选器驱动程序必须更新筛选器中的 PagingCount 和 **\_ \_ PAGABLE** 位的设置。 更新 " **\_ \_ PAGABLE** " 位的时间取决于是否设置或清除该位。 如果 IRP 指示应该设置位，则筛选器驱动程序必须在将 IRP 向下转发到驱动程序堆栈 *之前* 对其进行设置。 但如果 IRP 指出应清除该位，则筛选器驱动程序不应立即清除该位。 它必须首先转发 IRP，并等待较低的驱动程序返回其状态，并仅在较低的驱动程序返回 **状态为 \_ 成功** 时清除此位。
 
 下面跟踪存储筛选器驱动程序执行的操作流。 请参阅大纲下紧下方的伪代码示例，以查看 C 代码中此大纲的表示形式：
 
@@ -43,7 +42,7 @@ C. 如果删除最后一个寻呼设备 ( (！ **UsageNotification. InPath** && 
 
 2.  如果在筛选器中未设置 " **执行 \_ 电源 \_ 浪涌** " 位，则设置 " **do \_ power \_ PAGABLE** " 位。
 
-    下面说明了为何必须在 PAGABLE 中设置 **DO \_ POWER \_ ** 位，而不是在上移：
+    下面说明了为何必须在 PAGABLE 中设置 **DO \_ POWER \_** 位，而不是在上移：
 
     电源要求状态如果任何较低的设备对象设置了 " **DO \_ power \_ PAGABLE** " 位，则所有更高级别的驱动程序都必须执行相同操作。 如果筛选器驱动程序在发送寻呼请求 IRP 之前未能设置 **DO \_ POWER \_ PAGABLE** ，则可能会违反此条件，如下所示：
 
@@ -61,15 +60,15 @@ E. 如果 IRP 成功完成，则
 
 F. 否则，如果 IRP 失败，
 
-1.  检查本地布尔值，查看筛选器中是否设置了 ** \_ \_ PAGABLE** 。
+1.  检查本地布尔值，查看筛选器中是否设置了 **\_ \_ PAGABLE** 。
 
-2.  如果按下了 ** \_ \_ PAGABLE** ，请将其清除。
+2.  如果按下了 **\_ \_ PAGABLE** ，请将其清除。
 
 G. 结束同步 (KeSetEvent (PagingCountEvent，... ) # A3。
 
 ### <a name="span-idpseudocode_examplespanspan-idpseudocode_examplespanpseudocode-example"></a><span id="pseudocode_example"></span><span id="PSEUDOCODE_EXAMPLE"></span>伪代码示例
 
-下面的代码示例中的字母 (*//A*，) *//B*等标记的部分映射到上述大纲的字母。
+下面的代码示例中的字母 (*//A*，) *//B* 等标记的部分映射到上述大纲的字母。
 
 ```cpp
 case DeviceUsageTypePaging: { 

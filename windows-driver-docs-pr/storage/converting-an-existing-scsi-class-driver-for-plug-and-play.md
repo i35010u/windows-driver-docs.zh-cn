@@ -1,7 +1,6 @@
 ---
 title: 转换现有的即插即用型 SCSI 类驱动程序
 description: 转换现有的即插即用型 SCSI 类驱动程序
-ms.assetid: b6570eef-f425-4b73-aa8a-7084f53bb10a
 keywords:
 - 存储类驱动程序 WDK，转换 SCSI 类驱动程序
 - 类驱动程序 WDK 存储，转换 SCSI 类驱动程序
@@ -12,12 +11,12 @@ keywords:
 - 转换 SCSI 类驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b68d8e302db0afac14fb02e0afa2be45452bca94
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: d31012344e2f0cc18d0dabce42571850d23ab20e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89191321"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96804717"
 ---
 # <a name="converting-an-existing-scsi-class-driver-for-plug-and-play"></a>转换现有的即插即用型 SCSI 类驱动程序
 
@@ -27,9 +26,9 @@ ms.locfileid: "89191321"
 
 若要成功运行为 PnP 驱动程序，必须修改现有的 SCSI 类驱动程序，如下所示：
 
--   驱动程序初始化代码必须遵循即插即用驱动程序的初始化规则。 现有 SCSI 驱动程序的 **DriverEntry** 例程中的功能划分为存储类驱动程序的 **DriverEntry**、 *AddDevice*和 *DispatchPnP* 例程，如存储类 [驱动程序的 DriverEntry 例程](storage-class-driver-s-driverentry-routine.md)、 [存储类驱动程序的 AddDevice 例程](storage-class-driver-s-adddevice-routine.md)以及 [处理存储类驱动程序中的 PnP 启动中](handling-pnp-start-in-a-storage-class-driver.md)所述。
+-   驱动程序初始化代码必须遵循即插即用驱动程序的初始化规则。 现有 SCSI 驱动程序的 **DriverEntry** 例程中的功能划分为存储类驱动程序的 **DriverEntry**、 *AddDevice* 和 *DispatchPnP* 例程，如存储类 [驱动程序的 DriverEntry 例程](storage-class-driver-s-driverentry-routine.md)、 [存储类驱动程序的 AddDevice 例程](storage-class-driver-s-adddevice-routine.md)以及 [处理存储类驱动程序中的 PnP 启动中](handling-pnp-start-in-a-storage-class-driver.md)所述。
 
--   生成 SRBs 的代码不得将 **PathId**、 **TargetId**和 **Lun** 字段设置为目标设备地址，并应将这些字段初始化为0xff。 设备地址在代表设备的 PDO 中是隐式的，驱动程序必须仅与此类设备对象通信，因此类驱动程序不需要提供设备地址。
+-   生成 SRBs 的代码不得将 **PathId**、 **TargetId** 和 **Lun** 字段设置为目标设备地址，并应将这些字段初始化为0xff。 设备地址在代表设备的 PDO 中是隐式的，驱动程序必须仅与此类设备对象通信，因此类驱动程序不需要提供设备地址。
 
 -   通过发出 [**ioctl \_ scsi \_ get \_ 查询 \_ 数据**](/windows-hardware/drivers/ddi/ntddscsi/ni-ntddscsi-ioctl_scsi_get_inquiry_data) 和 [**IOCTL \_ scsi \_ get \_ 功能**](/windows-hardware/drivers/ddi/ntddscsi/ni-ntddscsi-ioctl_scsi_get_capabilities) 请求来获取 SCSI 查询和功能数据的代码应发出 [**ioctl \_ 存储 \_ 查询 \_ 属性**](/windows-hardware/drivers/ddi/ntddstor/ni-ntddstor-ioctl_storage_query_property) 请求来检索设备和适配器描述符。
 

@@ -1,18 +1,17 @@
 ---
 title: 使用 CertMgr 在测试计算机上安装测试证书
 description: 使用 CertMgr 在测试计算机上安装测试证书
-ms.assetid: 5928c810-65e8-412e-9723-7b371574006c
 keywords:
 - Certmgr.msc 工具
 - 证书管理器工具 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 51abb4b3bdcf80cd3b8ecb9c10454047d20f6d07
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 564b8c0d1b9a629792a8ed5c26c098499f88df0b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89097187"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96805441"
 ---
 # <a name="using-certmgr-to-install-test-certificates-on-a-test-computer"></a>使用 CertMgr 在测试计算机上安装测试证书
 

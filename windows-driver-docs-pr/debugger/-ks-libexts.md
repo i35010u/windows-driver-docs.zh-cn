@@ -1,9 +1,8 @@
 ---
-title: ks.libexts
-description: Ks.libexts 扩展提供访问的静态链接到了扩展模块的 Microsoft 提供的库扩展。
-ms.assetid: 03328041-9922-4367-b6e9-d822a9c03f32
+title: ks. libexts
+description: Libexts 扩展提供对以静态方式链接到扩展模块的 Microsoft 提供的库扩展的访问。
 keywords:
-- ks.libexts Windows 调试
+- libexts Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,47 +11,47 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 05c2e88f471b2aafa8b82a7d451103a5dcb130fc
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2c8b9ff0634b3727e04f68a91b44d2100b15b132
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63336240"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96804073"
 ---
 # <a name="kslibexts"></a>!ks.libexts
 
 
-**！ Ks.libexts**扩展提供访问的静态链接到了扩展模块的 Microsoft 提供的库扩展。
+使用 **！ libexts** 扩展可以访问以静态方式链接到扩展模块的 Microsoft 提供的库扩展。
 
 ```dbgcmd
 !ks.libexts [Command] [Libext] 
 ```
 
-## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>参数
+## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>Parameters
 
 
-<span id="Command"></span><span id="command"></span><span id="COMMAND"></span>*命令*  
-可选。 指定以下值之一。 如果省略此参数，则 **！ ks.libexts**返回的帮助信息。
+<span id="Command"></span><span id="command"></span><span id="COMMAND"></span>*Command*  
+可选。 指定下列值之一。 如果省略此参数，则 **！ libexts** 返回帮助信息。
 
 <span id="disableall________"></span><span id="DISABLEALL________"></span>**disableall**   
-禁用库的所有扩展。 这使用时，省略*Libext*参数。
+禁用所有库扩展。 如果使用此参数，则省略 *Libext* 参数。
 
-<span id="_________disable"></span><span id="_________DISABLE"></span> **disable**  
-通过名称来禁用特定库扩展插件。 这使用时，指定在名称*Libext*参数。
+<span id="_________disable"></span><span id="_________DISABLE"></span>**禁用**  
+按名称禁用特定的库扩展。 如果使用此参数，请在 *Libext* 参数中指定该名称。
 
-<span id="_________enableall"></span><span id="_________ENABLEALL"></span> **enableall**  
-启用库的所有扩展。 仅启用与正确的符号加载的组件。 这使用时，省略*Libext*参数。
+<span id="_________enableall"></span><span id="_________ENABLEALL"></span>**enableall**  
+启用所有库扩展。 仅启用具有正确符号的已加载组件。 如果使用此参数，则省略 *Libext* 参数。
 
-<span id="enable"></span><span id="ENABLE"></span>**enable**  
-启用特定库扩展插件的名称。 这使用时，指定在名称*Libext*参数。 仅可以启用与正确的符号加载的组件。
+<span id="enable"></span><span id="ENABLE"></span>**可**  
+按名称启用特定的库扩展。 如果使用此参数，请在 *Libext* 参数中指定该名称。 只能启用具有正确符号的已加载组件。
 
-<span id="_________details"></span><span id="_________DETAILS"></span> **详细信息**  
-显示有关当前链接的库的所有扩展的详细信息。 这使用时，省略*Libext*参数。
+<span id="_________details"></span><span id="_________DETAILS"></span>**详细信息**  
+显示有关当前链接的所有库扩展的详细信息。 如果使用此参数，则省略 *Libext* 参数。
 
-<span id="_______Libext______"></span><span id="_______libext______"></span><span id="_______LIBEXT______"></span> *Libext*   
-指定库扩展插件的名称。 仅为所需*命令*的值**启用**或**禁用**。
+<span id="_______Libext______"></span><span id="_______libext______"></span><span id="_______LIBEXT______"></span>*Libext*   
+指定库扩展的名称。 仅对 **enable** 或 **disable** 的 *命令* 值是必需的。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 <table>
 <colgroup>
@@ -73,16 +72,16 @@ ms.locfileid: "63336240"
 
  
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-有关详细信息，请参阅[流式处理的内核调试](kernel-streaming-debugging.md)。
+有关详细信息，请参阅 [内核流调试](kernel-streaming-debugging.md)。
 
 <a name="remarks"></a>备注
 -------
 
-扩展模块包含允许单独的组件以进行生成和链接到 Ks.dll 的可扩展性框架。 这些额外的组件称为库扩展插件。
+扩展模块包含一个可扩展性框架，可用于生成单独的组件并将其链接到 Ks.dll。 这些额外的组件称为库扩展。
 
-**！ Ks.libexts**命令允许查看有关这些库扩展以及对其进行控制的统计信息。 有关详细信息，发出 **！ ks.libexts**不带任何参数。
+通过 **！ libexts** 命令，可以查看有关这些库扩展的统计信息并对其进行控制。 有关详细信息，请 **libexts** 不带参数的。
 
  
 

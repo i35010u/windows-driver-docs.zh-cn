@@ -1,19 +1,18 @@
 ---
 title: 串行设备控制请求
 description: 串行设备控制请求
-ms.assetid: 12dab038-e4da-47b5-ada8-e1c7ee980cde
 keywords:
 - 串行设备 WDK，设备控制请求
 - 设备控制请求 WDK 串行设备
 - 串行驱动程序 WDK，设备控制请求
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b55d3762dcdd77720391a971128b8d0987df6cb4
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 8455c77534ada18beddf184136181c9a78b1dadf
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89185483"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96804959"
 ---
 # <a name="serial-device-control-requests"></a>串行设备控制请求
 

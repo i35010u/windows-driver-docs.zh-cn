@@ -1,15 +1,14 @@
 ---
 title: MSiSCSI \_ TCPIPCONFIG WMI 类
 description: MSiSCSI \_ TCPIPCONFIG WMI 类
-ms.assetid: 57451576-a900-4eaa-b229-bda79a81d014
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 3a99bc03af79e9c9c247b1aa9d313596b27184d0
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: fadbb317eb10a11566edfaf567167d244018c8da
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89184941"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96804421"
 ---
 # <a name="msiscsi_tcpipconfig-wmi-class"></a>MSiSCSI \_ TCPIPCONFIG WMI 类
 
@@ -23,7 +22,7 @@ MSiSCSI \_ TCPIPCONFIG WMI 类报告有关某个 HBA IP 地址的 tcp/ip 配置�
 
 由于 MSiSCSI \_ TCPIPConfig 类与存储微型端口驱动程序的特定实例相关联，因此微型端口驱动程序必须使用微型端口驱动程序管理的特定物理设备对象 (PDO) 的名称注册该类。
 
-MSiSCSI \_ TCPIPConfig 类是在 *配置*中定义的。
+MSiSCSI \_ TCPIPConfig 类是在 *配置* 中定义的。
 
 ```cpp
 class MSiSCSI_TCPIPConfig {

@@ -1,7 +1,6 @@
 ---
 title: GUID_DEVINTERFACE_PARTITION
 description: GUID_DEVINTERFACE_PARTITION
-ms.assetid: c489b62a-167d-47a9-bfeb-fdd40cc8dece
 keywords:
 - GUID_DEVINTERFACE_PARTITION 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: d04b633f1e9c10886050bcaf4c1fee29f934ba1e
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 1e0887254db13427cbf41eb7a314638eb0ff026d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89096915"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96805481"
 ---
 # <a name="guid_devinterface_partition"></a>GUID_DEVINTERFACE_PARTITION
 
@@ -78,7 +77,7 @@ ms.locfileid: "89096915"
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**PartitionClassGuid**](partitionclassguid.md)

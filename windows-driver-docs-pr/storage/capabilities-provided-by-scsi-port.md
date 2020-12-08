@@ -1,15 +1,14 @@
 ---
 title: SCSI 端口提供的功能
 description: SCSI 端口提供的功能
-ms.assetid: 549dc3f1-b62f-4047-bdc0-7e24d5bc6ad5
 ms.date: 10/08/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 92f7d4a48be753d7e41a82e66ee5d3ca78c5949c
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 105a0f9ea40cb3811ba04cd63f6e1ac409d7cac5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89188545"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96804747"
 ---
 # <a name="capabilities-provided-by-scsi-port"></a>SCSI 端口提供的功能
 

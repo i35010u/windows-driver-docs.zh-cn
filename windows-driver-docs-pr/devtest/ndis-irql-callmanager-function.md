@@ -1,7 +1,6 @@
 ---
 title: 'Irql \_ CallManager \_ 函数规则 (ndis) '
 description: Irql \_ CallManager \_ 函数规则指定必须在正确的 Irql 级别调用 ndis CALLMANAGER 的 ndis 函数。
-ms.assetid: 3e026fb0-8c5f-40cc-affb-3b35f17f40f7
 ms.date: 05/21/2018
 keywords:
 - 'Irql_CallManager_Function 规则 (ndis) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: b4fb107d38a1b4ee9b45a8330f41eb363c30dfb9
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 2eb6ed63ba9d3e6afee78c9f6c73a3f39c0ded27
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107360"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96804237"
 ---
 # <a name="irql_callmanager_function-rule-ndis"></a>Irql \_ CallManager \_ 函数规则 (ndis) 
 
 
-**Irql \_ CallManager \_ 函数**规则指定必须在正确的 Irql 级别调用 ndis CallManager 的 ndis 函数。
+**Irql \_ CallManager \_ 函数** 规则指定必须在正确的 Irql 级别调用 ndis CallManager 的 ndis 函数。
 
 此规则检查以下 NDIS 函数：
 

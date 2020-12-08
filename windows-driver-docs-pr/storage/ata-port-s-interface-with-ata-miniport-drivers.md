@@ -1,19 +1,18 @@
 ---
 title: ATA 端口的可以与 ATA 微型端口驱动程序交互的接口
 description: ATA 端口的可以与 ATA 微型端口驱动程序交互的接口
-ms.assetid: c3a9b862-8d6e-4ad7-8061-178b053b820c
 keywords:
 - ATA 端口驱动程序 WDK、微型端口驱动程序
 - ATA 微型端口驱动程序 WDK
 - 微型端口驱动程序 WDK 存储，ATA 微型端口驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ae20bc453a84f05773ff2481b09351615bcb28c9
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: ca6dde39b35f821cc38ce5726f2f751a3ca4eaaf
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91733019"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96804777"
 ---
 # <a name="ata-ports-interface-with-ata-miniport-drivers"></a>ATA 端口的可以与 ATA 微型端口驱动程序交互的接口
 
@@ -64,5 +63,5 @@ ATA 微型端口驱动程序初始化控制器接口后，端口驱动程序会�
 
 ![同时实现控制器和通道接口的供应商微型端口驱动程序](images/ataport2.png)
 
-实现通道接口的 ATA 微型端口驱动程序向控制器驱动程序公开控制器和通道管理例程， (*Pciidex.sys*) 。 出于性能方面的原因， *Pciidex.sys* 将通道管理入口点传递给 ata 端口驱动程序，ata 端口驱动程序会直接调用 ata 微型端口驱动程序的通道管理例程，而不会 *Pciidex.sys*的中介。 *Pciidex.sys*驱动程序调用 ATA 微型端口驱动程序的控制器例程。
+实现通道接口的 ATA 微型端口驱动程序向控制器驱动程序公开控制器和通道管理例程， (*Pciidex.sys*) 。 出于性能方面的原因， *Pciidex.sys* 将通道管理入口点传递给 ata 端口驱动程序，ata 端口驱动程序会直接调用 ata 微型端口驱动程序的通道管理例程，而不会 *Pciidex.sys* 的中介。 *Pciidex.sys* 驱动程序调用 ATA 微型端口驱动程序的控制器例程。
 

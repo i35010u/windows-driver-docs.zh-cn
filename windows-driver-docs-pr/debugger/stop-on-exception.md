@@ -1,17 +1,16 @@
 ---
 title: 异常时停止
 description: 异常时停止
-ms.assetid: f459fa28-2fdf-4094-ba58-7e01a2309bb7
 keywords:
-- 停止的异常 （全局标志）
+- '发生异常时停止 (全局标志) '
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b79223fdaa80d7417e82089e8449ddb63b5bf546
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 773d9f7e62aa8313b90973904406b2e04894aabb
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63335525"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803599"
 ---
 # <a name="stop-on-exception"></a>异常时停止
 
@@ -19,7 +18,7 @@ ms.locfileid: "63335525"
 ## <span id="ddk_stop_on_exception_dtools"></span><span id="DDK_STOP_ON_EXCEPTION_DTOOLS"></span>
 
 
-**异常停止**标志会导致进入内核调试器，每次内核模式异常发生时的内核。
+每当发生内核模式异常时，" **异常时停止** " 标志将导致内核进入内核调试器。
 
 <table>
 <colgroup>
@@ -41,16 +40,16 @@ ms.locfileid: "63335525"
 </tr>
 <tr class="even">
 <td align="left"><p><strong>目标</strong></p></td>
-<td align="left"><p>整个系统的注册表项、 内核标志和图像文件注册表项</p></td>
+<td align="left"><p>系统范围的注册表项、内核标志、映像文件注册表项</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-### <a name="span-idcommentsspanspan-idcommentsspancomments"></a><span id="comments"></span><span id="COMMENTS"></span>注释
+### <a name="span-idcommentsspanspan-idcommentsspancomments"></a><span id="comments"></span><span id="COMMENTS"></span>提出
 
-Windows 将传递所有第一机会异常 (除状态\_端口\_断开连接) 到调试器，然后将其传递给本地异常处理程序在严重级别为警告或错误。
+Windows 将除状态端口断开) 之外的所有第一次机会异常 (传递到 \_ \_ 调试器，然后将其传递给本地异常处理程序。
 
  
 

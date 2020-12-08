@@ -1,19 +1,18 @@
 ---
 title: 移动计划围墙花园
 description: 移动计划围墙花园
-ms.assetid: fb1566c6-8d47-4aa9-93f4-415ef7070ac6
 keywords:
 - Windows Mobile 计划 mobile operators 围墙园
 ms.date: 07/31/2019
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
-ms.openlocfilehash: 597ddbf6cac266e20b6b522f63d80473d6ac8c10
-ms.sourcegitcommit: 29c2e6dd8a3de3c11822d990adf1edd774f8a136
+ms.openlocfilehash: b185c1594fa8ba1e77131b8fe05d1c7cf59a4807
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91230051"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96805309"
 ---
 # <a name="mobile-plans-walled-garden"></a>移动计划围墙花园
 
@@ -28,7 +27,7 @@ MO Direct web 门户和 `GetBalance` API 终结点也必须属于此围墙园。
 
 只有少量的必需终结点对于最终用户始终是可访问的。 下表定义了围墙园所需的终结点。
 
-| 代码 | HTTP/HTTPS |
+| URL | HTTP/HTTPS |
 | --- | --- |
 | 数据市场 <span></span> 。 | https |
 | 预览版 <span></span> . 数据市场 | https |

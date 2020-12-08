@@ -1,7 +1,6 @@
 ---
 title: 接收端缩放简介
 description: 接收端缩放简介
-ms.assetid: 492628a7-ca2e-40cd-bf81-53a925130422
 keywords:
 - 接收方缩放 WDK 网络，关于接收方缩放
 - RSS WDK 网络，关于接收方缩放
@@ -9,12 +8,12 @@ keywords:
 ms.date: 09/04/2020
 ms.localizationpriority: medium
 ms.custom: contperfq1
-ms.openlocfilehash: baa4a97bd06f3fc22af891c10fefef6ce6bc13d2
-ms.sourcegitcommit: 79a54c0aea8e30e38e0e3227078a12cc64ad3a3c
+ms.openlocfilehash: 1d499ddc8090d4f3640032114e6840ce5524254d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89475035"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803689"
 ---
 # <a name="introduction-to-receive-side-scaling"></a>接收端缩放简介
 

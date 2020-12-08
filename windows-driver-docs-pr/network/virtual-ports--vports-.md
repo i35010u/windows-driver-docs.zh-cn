@@ -1,15 +1,14 @@
 ---
 title: 虚拟端口 (VPort)
 description: 虚拟端口 (VPort)
-ms.assetid: FCE0B5F5-5E2E-493A-BE25-57FB2C8B0389
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b5cecf79be1c811b341b67653c6eace559ac7da5
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 9d152ff2ce2576c0aa70e9146039beb500040d25
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89216908"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96805133"
 ---
 # <a name="virtual-ports-vports"></a>虚拟端口 (VPort)
 
@@ -78,7 +77,7 @@ NIC 交换机将物理端口的网络流量桥接到一个或多个 VPorts。 �
 
 除了配置参数外，过量驱动程序还可以通过发出 [oid \_ 接收 \_ 筛选器 \_ 集 \_ 筛选器](./oid-receive-filter-set-filter.md)的 oid 方法请求，为每个 VPort 配置接收筛选器。 NIC 交换机按 VPort 执行指定的接收筛选。
 
-接收筛选器的 VPorts 参数包括数据包筛选条件，如媒体访问控制列表 (MAC) 地址和虚拟 LAN (VLAN) 标识符。 MAC 地址和 VLAN 标识符的筛选器始终在与[OID \_ 接收 \_ 筛选器 \_ 集 \_ 筛选](./oid-receive-filter-set-filter.md)器请求关联的[**NDIS \_ 接收 \_ 筛选器 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_parameters)中一起指定。 NIC 交换机必须将传入数据包筛选到其目标 MAC 地址和 VLAN 标识符与 VPort 上设置的任何接收筛选条件匹配的交换机。 NIC 交换机筛选从另一个 VPort 或外部物理端口接收的数据包。 如果数据包与筛选器匹配，则 NIC 交换机必须将其转发到 VPort。
+接收筛选器的 VPorts 参数包括数据包筛选条件，如媒体访问控制列表 (MAC) 地址和虚拟 LAN (VLAN) 标识符。 MAC 地址和 VLAN 标识符的筛选器始终在与 [OID \_ 接收 \_ 筛选器 \_ 集 \_ 筛选](./oid-receive-filter-set-filter.md)器请求关联的 [**NDIS \_ 接收 \_ 筛选器 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_parameters)中一起指定。 NIC 交换机必须将传入数据包筛选到其目标 MAC 地址和 VLAN 标识符与 VPort 上设置的任何接收筛选条件匹配的交换机。 NIC 交换机筛选从另一个 VPort 或外部物理端口接收的数据包。 如果数据包与筛选器匹配，则 NIC 交换机必须将其转发到 VPort。
 
 可以在 VPort 上设置多个 MAC 地址和 VLAN 标识符对。 如果仅设置 MAC 地址，则接收筛选器指定 VPort 应收到与以下条件匹配的数据包：
 

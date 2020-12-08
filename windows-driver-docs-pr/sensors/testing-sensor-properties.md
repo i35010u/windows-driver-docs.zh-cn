@@ -1,51 +1,50 @@
 ---
 title: 测试传感器数据检索
-description: 传感器诊断工具，可以通过调用传感器 API 中的属性来测试您的数据检索的驱动程序和固件支持。
-ms.assetid: A4473253-D4AC-4374-9C5D-919B597FE2F0
+description: 传感器诊断工具允许通过在传感器 API 中调用属性来测试驱动程序和固件支持。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3f4d898ff9b4c5983cf4321671cc6fc4460057d7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 64e624ce549aee6075661f6bb155979b201acca8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391909"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96805055"
 ---
 # <a name="testing-sensor-data-retrieval"></a>测试传感器数据检索
 
 
-传感器诊断工具，可以通过调用传感器 API 中的属性来测试您的数据检索的驱动程序和固件支持。
+传感器诊断工具允许通过在传感器 API 中调用属性来测试驱动程序和固件支持。
  
 
-## <a name="configuring-the-sensor-diagnostic-tool-to-retrieve-a-single-sensor-reading"></a>配置传感器诊断工具来检索单个传感器读数
+## <a name="configuring-the-sensor-diagnostic-tool-to-retrieve-a-single-sensor-reading"></a>配置传感器诊断工具以检索单个传感器读数
 
 
-以下过程介绍如何配置诊断的工具，以检索读取加速感应器。
+下面的过程介绍如何配置诊断工具以检索加速感应程序读取。
 
-1.  展开左侧的传感器窗格中加速感应器的节点。 检查**已连接**框，并取消选中**已订阅**框。
-2.  旋转加速感应器和固定的。
-3.  单击**刷新数据/执行**按钮，然后查看右窗格中的 Data 节中检索到的数据。
+1.  在左侧传感器窗格中展开加速感应节点。 选中 " **已连接** " 框，并取消选中 "已 **订阅** " 框。
+2.  旋转加速感应并固定到位。
+3.  单击 " **刷新数据"/"执行** " 按钮，然后在右窗格的 "数据" 部分中查看检索到的数据。
 
-右窗格中的数据部分包含有关您的传感器更新后的数据。 此数据应对应于加速感应器的静态位置。
+右窗格的 "数据" 部分包含传感器的更新数据。 此数据应与加速感应的静态位置相对应。
 
-## <a name="configuring-the-sensor-diagnostic-tool-for-synchronous-polling"></a>配置传感器诊断工具的同步轮询
+## <a name="configuring-the-sensor-diagnostic-tool-for-synchronous-polling"></a>为同步轮询配置传感器诊断工具
 
 
-以下过程介绍如何配置诊断的工具进行同步的加速感应器轮询。 换而言之，这允许你以获取在固定时间间隔从传感器读取数据。
+下面的过程介绍如何将诊断工具配置为对加速感应程序执行同步轮询。 换句话说，这使您能够定期从传感器读取数据。
 
-1.  展开的节点，在左侧的传感器窗格中; 加速感应器检查**已连接**框，并取消选中**已订阅**框。
-2.  在中**自动数据请求**文本框中，输入所需的轮询间隔以毫秒为单位。 （请注意，间隔为零会禁用同步轮询）。
+1.  在左侧传感器窗格中展开加速感应的节点;选中 " **已连接** " 框，并取消选中 "已 **订阅** " 框。
+2.  在 " **自动数据请求** " 文本框中，输入所需的轮询间隔（以毫秒为单位）。  (请注意，间隔为0将禁用同步轮询。 ) 
 
-右窗格中的数据部分将开始显示轮询的数据。 移动加速感应器，你应该看到此窗格中的新值。
+右窗格的 "数据" 部分将开始显示轮询后的数据。 移动加速感应时，应会在此窗格中看到新值。
 
-CSV 文件中，可以记录轮询的传感器数据。 请参阅[测试传感器事件](testing-sensor-events.md)主题以及有关如何执行此操作的说明的"日志记录事件数据的 CSV 文件"部分。
+可以在 CSV 文件中记录轮询的传感器数据。 有关如何执行此操作的说明，请参阅 [测试传感器事件](testing-sensor-events.md) 主题和 "将事件数据记录到 CSV 文件" 一节。
 
-您可以指定哪些数据应与该工具的 Data 节中显示**Datafield**将出现在第二行的右窗格中的控件的下拉列表。
+可以指定应在工具的数据部分中显示的数据，其 " **Datafield** " 下拉列表显示在右窗格中的第二行控件中。
 
 ## <a name="related-topics"></a>相关主题
 [测试传感器功能](testing-sensor-functionality.md)  
 [测试传感器属性支持](testing-and-logging-sensor-data.md)  
-[传感器的测试活动](testing-sensor-events.md)  
+[测试传感器事件](testing-sensor-events.md)  
 
 
 

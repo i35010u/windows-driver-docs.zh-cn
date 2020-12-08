@@ -1,15 +1,14 @@
 ---
 title: 在 Visual Studio 中设置通过 USB 3.0 线缆进行的内核模式调试
 description: 你可以使用 Microsoft Visual Studio 通过 USB 3.0 电缆设置和执行内核模式调试。
-ms.assetid: F8DD0475-13CE-464A-A491-AEFA962A96DB
 ms.date: 04/10/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 0402a0ded58820141bbbcd7134dd306fac29392b
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 8e570df643f79a2f491b639f39d3c5f0ede7afb8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89212589"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803601"
 ---
 # <a name="setting-up-kernel-mode-debugging-over-a-usb-30-cable-in-visual-studio"></a>在 Visual Studio 中设置通过 USB 3.0 线缆进行的内核模式调试
 
@@ -19,7 +18,7 @@ ms.locfileid: "89212589"
 
 你可以使用 Microsoft Visual Studio 通过 USB 3.0 电缆设置和执行内核模式调试。 若要将 Visual Studio 用于内核模式调试，你必须将 Windows 驱动程序工具包 (WDK) 与 Visual Studio 集成。 有关如何安装集成环境的信息，请参阅 [使用 Visual Studio 进行调试](debugging-using-visual-studio.md)。
 
-作为使用 Visual Studio 设置 USB 3.0 调试的替代方法，你可以手动执行设置。 有关详细信息，请参阅 [通过 USB 3.0 电缆手动设置内核模式调试](setting-up-a-usb-3-0-debug-cable-connection.md)。
+作为使用 Visual Studio 设置 USB 3.0 调试的替代方法，你可以手动执行设置。 有关详细信息，请参阅 [通过 USB 3.0 电缆手动设置 Kernel-Mode 调试](setting-up-a-usb-3-0-debug-cable-connection.md)。
 
 运行调试器的计算机称为 " *主机*"，正在调试的计算机称为 " *目标计算机*"。
 
@@ -77,7 +76,7 @@ ms.locfileid: "89212589"
     -   字符串的最大长度为24个字符。
     -   字符串中的唯一字符是连字符 (-) 、下划线 (\_) 、数字0到9以及字母 A 到 Z (大写或小写。
 
-    输入**总线参数**值*b*。*d.**f*，其中*b*、 *d*和*f*是要用于在目标计算机上进行调试的 USB 主机控制器的总线、设备和功能号。 总线、设备和函数编号必须采用 decimal 格式 (例如： 48.0.0) 。 这些值将显示在 "*常规*" 选项卡上的 "*位置*" 下设备管理器。  
+    输入 **总线参数** 值 *b*。*d.**f*，其中 *b*、 *d* 和 *f* 是要用于在目标计算机上进行调试的 USB 主机控制器的总线、设备和功能号。 总线、设备和函数编号必须采用 decimal 格式 (例如： 48.0.0) 。 这些值显示在“常规”选项卡上的“位置”下的设备管理器中 。  
 
 4.  配置过程需要几分钟的时间，并且可能会自动重启目标计算机一次或两次。 完成此过程后，选择 " **完成**"。
 
@@ -100,15 +99,15 @@ baudrate                115200
 busparams               48.0.0
 ```
 
-验证 *debugtype* 是否为 USB， *targetname* 是否为主机应该上的 Visual Studio 中指定的名称。 可以忽略 *debugport* 和 *波特率*的值;它们不适用于通过 USB 进行调试。
+验证 *debugtype* 是否为 USB， *targetname* 是否为主机应该上的 Visual Studio 中指定的名称。 可以忽略 *debugport* 和 *波特率* 的值;它们不适用于通过 USB 进行调试。
 
 验证 *busparams* 是否与指定的总线参数匹配。
 
-如果看不到为 **总线参数**输入的值，请输入以下命令：
+如果看不到为 **总线参数** 输入的值，请输入以下命令：
 
 **bcdedit/set "{dbgsettings}" busparams** <em>b</em>**.**<em>d.</em>**.**<em>f</em>
 
-其中， *b*、 *d*和 *f* 是目标计算机上选择用于调试的 xHCI 控制器的总线、设备和功能号。
+其中， *b*、 *d* 和 *f* 是目标计算机上选择用于调试的 xHCI 控制器的总线、设备和功能号。
 
 示例：
 

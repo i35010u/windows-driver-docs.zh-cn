@@ -1,7 +1,6 @@
 ---
 title: 单个设备的电源 IRP
 description: 单个设备的电源 IRP
-ms.assetid: a8d5db12-8f6b-4c65-9814-0bc3e476dd1c
 keywords:
 - power Irp WDK 内核，设备
 - 设备电源 Irp WDK 内核
@@ -12,12 +11,12 @@ keywords:
 - 设备唤醒 ups WDK 电源管理
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9c03614d8a51913cbfc919b6a8e26d77bf0dbfe2
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: 3db3b21cba76c4c3f0914c1ae5e6809ff7e6f1fa
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89403514"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803803"
 ---
 # <a name="power-irps-for-individual-devices"></a>单个设备的电源 IRP
 
@@ -25,7 +24,7 @@ ms.locfileid: "89403514"
 
 
 
-*设备电源 IRP*指定主要 IRP 代码[**irp \_ MJ \_ 功能**](./irp-mj-power.md)，下面列出的一个小电源 IRP 代码，以及**DevicePowerState**成员中的值。 **Power.Type**
+*设备电源 IRP* 指定主要 IRP 代码 [**irp \_ MJ \_ 功能**](./irp-mj-power.md)，下面列出的一个小电源 IRP 代码，以及 **DevicePowerState** 成员中的值。 **Power.Type**
 
 [**IRP \_ MN \_ 查询 \_ 能力**](./irp-mn-query-power.md)
 
@@ -73,7 +72,7 @@ ms.locfileid: "89403514"
 
 5.  当驱动程序通过将 IRP 向下传递到堆栈中时，i/o 管理器将调用由驱动程序设置的 *IoCompletion* 例程。 调用完所有 *IoCompletion* 例程后，将运行回调例程。
 
-有关设备电源 Irp 的详细信息，请参阅 [管理单个设备的电源](device-power-states.md) 和 [具有唤醒功能的支持设备](supporting-devices-that-have-wake-up-capabilities.md)。 有关电源序列 IRP 的详细信息，请参阅 [**IRP \_ MN \_ power \_ sequence**](./irp-mn-power-sequence.md)。
+有关设备电源 Irp 的详细信息，请参阅 [管理单个设备的电源](device-power-states.md) 以及 [具有 Wake-Up 功能的支持设备](supporting-devices-that-have-wake-up-capabilities.md)。 有关电源序列 IRP 的详细信息，请参阅 [**IRP \_ MN \_ power \_ sequence**](./irp-mn-power-sequence.md)。
 
  
 

@@ -1,7 +1,6 @@
 ---
 title: 在中间级驱动程序中处理 IRP
 description: 在中间级驱动程序中处理 IRP
-ms.assetid: 7606ab1b-68af-4d27-8668-7662969b85b8
 keywords:
 - Irp WDK 内核，处理示例
 - IoCompletion 例程
@@ -11,12 +10,12 @@ keywords:
 - IoCallDriver
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 36cd72017b7926246afcddc4f7cecd5da7681e5c
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 845ce23e3fda57f6a23cd5dde2bf935f9b532ccb
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89184137"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96805409"
 ---
 # <a name="processing-irps-in-an-intermediate-level-driver"></a>在中间级驱动程序中处理 IRP
 
@@ -54,9 +53,9 @@ ms.locfileid: "89184137"
 
 镜像驱动程序的目的是将写入请求发送到多个物理设备，并将读取请求交替发送到这些设备的驱动程序。 对于写入请求，驱动程序会为要写入数据的每个设备创建重复的 Irp，前提是输入 IRP 中的参数有效。
 
-上图显示了对 [**IoAllocateIrp**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioallocateirp) 的调用，但较高级别的驱动程序可以调用其他支持例程为较低级别的驱动程序分配 irp。 请参阅 [为低级驱动程序创建 irp](creating-irps-for-lower-level-drivers.md)。
+上图显示了对 [**IoAllocateIrp**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioallocateirp) 的调用，但较高级别的驱动程序可以调用其他支持例程为较低级别的驱动程序分配 irp。 请参阅 [为 Lower-Level 驱动程序创建 irp](creating-irps-for-lower-level-drivers.md)。
 
-当调度例程调用 **IoAllocateIrp**时，它会指定 IRP 所需的 i/o 堆栈位置数量。 驱动程序必须为链中的每个较低驱动程序指定堆栈位置，并从镜像驱动程序正下方的每个驱动程序的设备对象中获取相应的值。 或者，当驱动程序调用 **IoAllocateIrp** 为其分配的每个 IRP 获取自己的堆栈位置时，驱动程序可以将一个添加到此值，如上图中的驱动程序所述。
+当调度例程调用 **IoAllocateIrp** 时，它会指定 IRP 所需的 i/o 堆栈位置数量。 驱动程序必须为链中的每个较低驱动程序指定堆栈位置，并从镜像驱动程序正下方的每个驱动程序的设备对象中获取相应的值。 或者，当驱动程序调用 **IoAllocateIrp** 为其分配的每个 IRP 获取自己的堆栈位置时，驱动程序可以将一个添加到此值，如上图中的驱动程序所述。
 
 此中间驱动程序的调度例程将调用 [**IoGetCurrentIrpStackLocation**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetcurrentirpstacklocation) (未显示原始 IRP) ，以检查参数。
 

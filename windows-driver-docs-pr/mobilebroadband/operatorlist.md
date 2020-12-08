@@ -1,20 +1,19 @@
 ---
 title: OperatorList
 description: OperatorList
-ms.assetid: 28006331-aa65-4b33-ae94-a027c8a60d48
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f74580ab4eca2660504b1c1b43fd588176fc4587
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e64a43c37673ff822dc246c5f823c33bcbdde68b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63375704"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96805265"
 ---
 # <a name="operatorlist"></a>OperatorList
 
 
-OperatorList 元素指定的运算符包含 APN 数据库中的列表。
+OperatorList 元素指定 APN 数据库中包含的操作员列表。
 
 ## <a name="span-idusagespanspan-idusagespanspan-idusagespanusage"></a><span id="Usage"></span><span id="usage"></span><span id="USAGE"></span>使用情况
 
@@ -30,7 +29,7 @@ OperatorList 元素指定的运算符包含 APN 数据库中的列表。
 
 没有特性。
 
-## <a name="span-idchildelementsspanspan-idchildelementsspanspan-idchildelementsspanchild-elements"></a><span id="Child_elements"></span><span id="child_elements"></span><span id="CHILD_ELEMENTS"></span>子元素
+## <a name="span-idchild_elementsspanspan-idchild_elementsspanspan-idchild_elementsspanchild-elements"></a><span id="Child_elements"></span><span id="child_elements"></span><span id="CHILD_ELEMENTS"></span>子元素
 
 
 <table>
@@ -46,7 +45,7 @@ OperatorList 元素指定的运算符包含 APN 数据库中的列表。
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><a href="operator.md" data-raw-source="[Operator](operator.md)">Operator</a></p></td>
+<td><p><a href="operator.md" data-raw-source="[Operator](operator.md)">“运算符”</a></p></td>
 <td><p>指定运算符的详细信息。</p></td>
 </tr>
 </tbody>
@@ -54,12 +53,12 @@ OperatorList 元素指定的运算符包含 APN 数据库中的列表。
 
  
 
-## <a name="span-idparentelementsspanspan-idparentelementsspanspan-idparentelementsspanparent-elements"></a><span id="Parent_elements"></span><span id="parent_elements"></span><span id="PARENT_ELEMENTS"></span>父元素
+## <a name="span-idparent_elementsspanspan-idparent_elementsspanspan-idparent_elementsspanparent-elements"></a><span id="Parent_elements"></span><span id="parent_elements"></span><span id="PARENT_ELEMENTS"></span>父元素
 
 
 没有父元素。
 
-## <a name="span-idxsdspanspan-idxsdspanxsd"></a><span id="XSD"></span><span id="xsd"></span>XSD
+## <a name="span-idxsdspanspan-idxsdspanxsd"></a><span id="XSD"></span><span id="xsd"></span>XSD.EXE
 
 
 ``` syntax

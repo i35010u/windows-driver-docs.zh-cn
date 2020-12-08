@@ -1,7 +1,6 @@
 ---
 title: 系统的电源 IRP
 description: 系统的电源 IRP
-ms.assetid: a37e8dda-af7a-4f28-bf04-908a74bb5b2f
 keywords:
 - power Irp WDK 内核，系统
 - 系统电源 Irp WDK 内核
@@ -18,12 +17,12 @@ keywords:
 - 用户请求电源更改 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 42c4d212e5fb662d748f89adfe6fa5bc2ea2ae61
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: ec48426d03d9e573b67bb9cbaf62189fee8b1ae5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89188229"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803799"
 ---
 # <a name="power-irps-for-the-system"></a>系统的电源 IRP
 
@@ -31,7 +30,7 @@ ms.locfileid: "89188229"
 
 
 
-*系统电源 IRP*指定主要 Irp 代码[**irp \_ MJ \_ 功能**](./irp-mj-power.md)，下面列出的一个小电源 IRP 代码，以及 IRP 堆栈的**SystemPowerState**成员中的值 **。** 只有电源管理器可以发送此类 IRP;驱动程序无法发送系统电源 IRP。
+*系统电源 IRP* 指定主要 Irp 代码 [**irp \_ MJ \_ 功能**](./irp-mj-power.md)，下面列出的一个小电源 IRP 代码，以及 IRP 堆栈的 **SystemPowerState** 成员中的值 **。** 只有电源管理器可以发送此类 IRP;驱动程序无法发送系统电源 IRP。
 
 由于以下原因之一，电源管理器会发送系统电源 IRP：
 
@@ -41,7 +40,7 @@ ms.locfileid: "89188229"
 
 -   若要在查询之后重申当前系统电源状态 (**IRP \_ MN \_ 设置 \_ power**) 
 
-Power manager 发送 **IRP \_ MN \_ QUERY \_ power** 和 IRP MN 代表系统 ** \_ \_ 设置 \_ 电源** 请求。 驱动程序可能会失败 **irp \_ MN \_ 查询 \_ 电源** 请求，但不能失败 **irp \_ MN \_ 集的 \_ 电源**。
+Power manager 发送 **IRP \_ MN \_ QUERY \_ power** 和 IRP MN 代表系统 **\_ \_ 设置 \_ 电源** 请求。 驱动程序可能会失败 **irp \_ MN \_ 查询 \_ 电源** 请求，但不能失败 **irp \_ MN \_ 集的 \_ 电源**。
 
 例如，要更改系统电源状态，电源管理器会将系统电源 IRP 发送到设备树的每个设备节点堆栈中的顶部驱动程序。 下图显示了单个设备堆栈中的驱动程序如何处理系统电源 IRP。
 
@@ -63,7 +62,7 @@ Power manager 发送 **IRP \_ MN \_ QUERY \_ power** 和 IRP MN 代表系统 ** 
 
 7.  在其 *IoCompletion* 例程中，设备电源策略所有者调用 [**PoRequestPowerIrp**](/windows-hardware/drivers/ddi/wdm/nf-wdm-porequestpowerirp) 来发送设备电源 IRP，并指定对系统 IRP 中系统电源状态有效的设备电源状态。 驱动程序设置在设备电源 IRP 完成时要调用的回调例程。
 
-    如有必要，驱动程序会在其[**设备 \_ 功能**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_device_capabilities)结构的缓存副本中询问**DeviceState**成员 (参阅[报告设备电源功能](reporting-device-power-capabilities.md)) ，以确定哪种设备电源状态对应于 IRP 中的系统电源状态。
+    如有必要，驱动程序会在其 [**设备 \_ 功能**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_device_capabilities)结构的缓存副本中询问 **DeviceState** 成员 (参阅 [报告设备电源功能](reporting-device-power-capabilities.md)) ，以确定哪种设备电源状态对应于 IRP 中的系统电源状态。
 
 8.  设备 IRP 完成并且所有设备 IRP 完成例程均已运行之后，将调用电源策略所有者的回调例程。 在回调例程中，驱动程序将其返回状态复制到系统 IRP。 在 Windows Server 2003、Windows XP 和 Windows 2000 中，回调调用 [**PoStartNextPowerIrp**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-postartnextpowerirp) 来启动下一个 power IRP。 但是，在 Windows 7 和 Windows Vista 中，调用 **PoStartNextPowerIrp** 不是必需的，这样的调用不会执行任何电源管理操作。 最后，回调调用 [**IoCompleteRequest**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocompleterequest) 来完成系统 IRP。
 

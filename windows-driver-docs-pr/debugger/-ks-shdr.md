@@ -1,20 +1,19 @@
 ---
-title: ks.shdr
-description: ks.shdr
-ms.assetid: 033d8ca2-b777-40e6-9aab-f06554c1a61c
+title: ks. shdr
+description: ks. shdr
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c87e43b98d566809a9d81d25406cbd9f545ca723
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 81b9fd393dab1aee6bfb0ba0bfe1b5cca7f678dd
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63336310"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96804055"
 ---
 # <a name="ksshdr"></a>!ks.shdr
 
 
-**！ Ks.shdr**扩展命令是已过时; 请使用[ **！ ks.dump** ](-ks-dump.md)相反。
+**Shdr** 扩展命令已过时;改为使用 [**！ ks。**](-ks-dump.md)
 
  
 

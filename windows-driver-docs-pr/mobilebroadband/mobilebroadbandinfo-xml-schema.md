@@ -1,15 +1,14 @@
 ---
 title: MobileBroadbandInfo XML 架构概述
 description: MobileBroadbandInfo XML 架构概述
-ms.assetid: fdbc340c-8fed-4a25-96c4-ec185af04de9
 ms.date: 07/05/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 77a7ebb73b3cd619d1f3b458aa6d91c862f2bf22
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: d222c601922301cc6168574ce5f345a430e1c45b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89402782"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96805293"
 ---
 # <a name="mobilebroadbandinfo-xml-schema-overview"></a>MobileBroadbandInfo XML 架构概述
 
@@ -19,7 +18,8 @@ ms.locfileid: "89402782"
 
 MobileBroadbandInfo.xml 文档中的数据是根据此部分中所述的 MobileBroadbandInfo XML 架构格式化的。
 
-**注意**  该 XML 文档必须使用 UTF-8 编码进行保存。
+**注意**  
+该 XML 文档必须使用 UTF-8 编码进行保存。
 
  
 

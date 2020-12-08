@@ -1,15 +1,14 @@
 ---
 title: JavaScript 调试器脚本
 description: 本主题介绍如何使用 JavaScript 创建脚本，这些脚本可理解调试器对象和扩展和自定义调试器的功能。
-ms.assetid: 3442E2C4-4054-4698-B7FB-8FE19D26C171
 ms.date: 04/09/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: e0e7c2bb18d05d80def588c7d9c32dd35b051ccc
-ms.sourcegitcommit: 20eac54e419a594f7cea766ee28f158559dfd79c
+ms.openlocfilehash: 102c5fdb37060e6c4ba3540d96214e27e80fb15c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91754974"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803629"
 ---
 # <a name="javascript-debugger-scripting"></a>JavaScript 调试器脚本
 
@@ -45,14 +44,14 @@ ms.locfileid: "91754974"
 
 JsProvider.dll 是为支持 JavaScript 调试器脚本而加载的 JavaScript 提供程序。
 
-**要求**
+**惠?**
 
 JavaScript 调试器脚本设计为适用于所有受支持的 Windows 版本。
 
 ## <a name="span-idloading_the_javascript_scripting_providerspanspan-idloading_the_javascript_scripting_providerspanspan-idloading_the_javascript_scripting_providerspanloading-the-javascript-scripting-provider"></a><span id="Loading_the_JavaScript_Scripting_Provider"></span><span id="loading_the_javascript_scripting_provider"></span><span id="LOADING_THE_JAVASCRIPT_SCRIPTING_PROVIDER"></span>正在加载 JavaScript 脚本提供程序
 
 
-使用任何脚本命令之前，需要使用加载 [** (加载扩展 DLL) **](-load---loadby--load-extension-dll-.md) 命令加载脚本提供程序。 若要加载 JavaScript 提供程序，请使用以下命令。
+使用任何脚本命令之前，需要使用加载 [**(加载扩展 DLL)**](-load---loadby--load-extension-dll-.md) 命令加载脚本提供程序。 若要加载 JavaScript 提供程序，请使用以下命令。
 
 ```dbgcmd
 0:000> .load jsprovider.dll
@@ -78,9 +77,9 @@ Available Script Providers:
 -   [**.scriptrun（运行脚本）**](-scriptrun--run-script-.md)
 -   [**.scriptlist（列出已加载的脚本）**](-scriptlist--list-loaded-scripts-.md)
 
-**要求**
+**惠?**
 
-使用任何脚本命令之前，需要使用加载 [** (加载扩展 DLL) **](-load---loadby--load-extension-dll-.md) 命令加载脚本提供程序。 若要加载 JavaScript 提供程序，请使用以下命令。
+使用任何脚本命令之前，需要使用加载 [**(加载扩展 DLL)**](-load---loadby--load-extension-dll-.md) 命令加载脚本提供程序。 若要加载 JavaScript 提供程序，请使用以下命令。
 
 ```dbgcmd
 0:000> .load jsprovider.dll
@@ -102,7 +101,7 @@ Available Script Providers:
 
 以 "结尾的任何文件。NatVis "被理解为 NatVis 脚本，以" .js "结尾的任何文件都理解为 JavaScript 脚本。 可以通过 scriptload 命令加载任意一种类型的脚本。
 
-有关详细信息，请参阅[ **。 Scriptproviders (List Script Providers) **](-scriptproviders--list-script-providers-.md)
+有关详细信息，请参阅 [ **。 Scriptproviders (List Script Providers)**](-scriptproviders--list-script-providers-.md)
 
 ## <a name="span-idscriptload__load_script_spanspan-idscriptload__load_script_spanscriptload-load-script"></a><span id=".scriptload__load_script_"></span><span id=".SCRIPTLOAD__LOAD_SCRIPT_"></span>scriptload (加载脚本) 
 
@@ -116,7 +115,7 @@ JavaScript script successfully loaded from 'C:\WinDbg\Scripts\TestScript.js'
 
 脚本所执行的任何对象模型操作都将保持不变，直到脚本随后被卸载或再次使用不同内容运行。
 
-有关详细信息，请参阅[ **。 Scriptload (加载脚本) **](-scriptload--load-script-.md)
+有关详细信息，请参阅 [ **。 Scriptload (加载脚本)**](-scriptload--load-script-.md)
 
 ## <a name="span-idscriptrunspanscriptrun"></a><span id=".SCRIPTRUN"></span>.scriptrun
 
@@ -131,7 +130,7 @@ Hello World!  We are in JavaScript!
 
 脚本所执行的任何调试器对象模型操作都将保持不变，直到随后卸载脚本或再次使用不同内容运行。
 
-有关详细信息，请参阅 [**。 scriptrun () 运行脚本 **](-scriptrun--run-script-.md)。
+有关详细信息，请参阅 [**。 scriptrun () 运行脚本**](-scriptrun--run-script-.md)。
 
 ## <a name="span-idscriptunload__unload_script_spanspan-idscriptunload__unload_script_spanscriptunload-unload-script"></a><span id=".scriptunload__unload_script_"></span><span id=".SCRIPTUNLOAD__UNLOAD_SCRIPT_"></span>scriptunload (卸载脚本) 
 
@@ -143,7 +142,7 @@ Scriptunload 命令卸载已加载的脚本并调用 *uninitializeScript* 函数
 JavaScript script unloaded from 'C:\WinDbg\Scripts\TestScript.js'
 ```
 
-有关详细信息，请参阅 [**。 scriptunload (卸载脚本) **](-scriptunload--unload-script-.md)。
+有关详细信息，请参阅 [**。 scriptunload (卸载脚本)**](-scriptunload--unload-script-.md)。
 
 ## <a name="span-idscriptlist__list_loaded_scripts_spanspan-idscriptlist__list_loaded_scripts_spanscriptlist-list-loaded-scripts"></a><span id=".scriptlist__list_loaded_scripts_"></span><span id=".SCRIPTLIST__LIST_LOADED_SCRIPTS_"></span>scriptlist (列出加载的脚本) 
 
@@ -156,7 +155,7 @@ Command Loaded Scripts:
     JavaScript script from 'C:\WinDbg\Scripts\TestScript.js'
 ```
 
-有关详细信息，请参阅 [**。 scriptlist (List) 加载的脚本 **](-scriptlist--list-loaded-scripts-.md)。
+有关详细信息，请参阅 [**。 scriptlist (List) 加载的脚本**](-scriptlist--list-loaded-scripts-.md)。
 
 ## <a name="span-idstartedspanspan-idstartedspanspan-idstartedspanget-started-with-javascript-debugger-scripting"></a><span id="Started"></span><span id="started"></span><span id="STARTED"></span>JavaScript 调试器脚本入门
 
@@ -170,13 +169,13 @@ Command Loaded Scripts:
 // Prints Hello World
 function initializeScript()
 {
-    host.diagnostics.debugLog("***> Hello World! \n");
+    host.diagnostics.debugLog("**_> Hello World! \n");
 }
 ```
 
-使用文本编辑器（如记事本）创建一个名为 *HelloWorld.js* 的文本文件，该文件包含上面所示的 JavaScript 代码。
+使用文本编辑器（如记事本）创建一个名为 _HelloWorld.js * 的文本文件，该文件包含上面所示的 JavaScript 代码。
 
-使用 [**load (负载扩展 DLL) **](-load---loadby--load-extension-dll-.md) 命令加载 JavaScript 提供程序。
+使用 [**load (负载扩展 DLL)**](-load---loadby--load-extension-dll-.md) 命令加载 JavaScript 提供程序。
 
 ```dbgcmd
 0:000> .load jsprovider.dll
@@ -190,7 +189,7 @@ JavaScript script successfully loaded from 'c:\WinDbg\Scripts\HelloWorld.js'
 ***> Hello World! 
 ```
 
-加载脚本后，调试器中会提供其他功能。 使用 [**dx (显示 NatVis Expression) **](dx--display-visualizer-variables-.md) 命令显示 *调试程序。* 请注意，我们的脚本现已驻留。
+加载脚本后，调试器中会提供其他功能。 使用 [**dx (显示 NatVis Expression)**](dx--display-visualizer-variables-.md) 命令显示 *调试程序。* 请注意，我们的脚本现已驻留。
 
 ```dbgcmd
 0:000> dx Debugger.State.Scripts
@@ -217,7 +216,7 @@ function addTwoValues(a, b)
 
 使用文本编辑器（如记事本）创建名为的文本文件 *FirstSampleFunction.js*
 
-使用 [**load (负载扩展 DLL) **](-load---loadby--load-extension-dll-.md) 命令加载 JavaScript 提供程序。
+使用 [**load (负载扩展 DLL)**](-load---loadby--load-extension-dll-.md) 命令加载 JavaScript 提供程序。
 
 ```dbgcmd
 0:000> .load jsprovider.dll
@@ -230,7 +229,7 @@ function addTwoValues(a, b)
 JavaScript script successfully loaded from 'c:\WinDbg\Scripts\FirstSampleFunction.js'
 ```
 
-加载脚本后，调试器中会提供其他功能。 使用 [**dx (显示 NatVis Expression) **](dx--display-visualizer-variables-.md) 命令显示 *调试程序。* 请注意，我们的脚本现已驻留。
+加载脚本后，调试器中会提供其他功能。 使用 [**dx (显示 NatVis Expression)**](dx--display-visualizer-variables-.md) 命令显示 *调试程序。* 请注意，我们的脚本现已驻留。
 
 ```dbgcmd
 0:000> dx Debugger.State.Scripts
@@ -261,7 +260,7 @@ Debugger.State.Scripts.FirstSampleFunction.Contents                 : [object Ob
 @$myScript.addTwoValues(10, 41),d : 51
 ```
 
-你还可以使用 *@ $scriptContents* 内置别名来处理脚本。 *@ $ScriptContents*别名将合并所有。所有加载的脚本的内容。
+你还可以使用 *@ $scriptContents* 内置别名来处理脚本。 *@ $ScriptContents* 别名将合并所有。所有加载的脚本的内容。
 
 ```dbgcmd
 0:001> dx @$scriptContents.addTwoValues(10, 40),d
@@ -277,7 +276,7 @@ JavaScript script successfully unloaded from 'c:\WinDbg\Scripts\FirstSampleFunct
 
 ### <a name="span-idautomatespanspan-idautomatespanspan-idautomatespandebugger-command-automation"></a><span id="Automate"></span><span id="automate"></span><span id="AUTOMATE"></span>调试器命令自动化
 
-本部分介绍如何创建和执行简单的 JavaScript 调试器脚本，以自动发送 [**u (Unassemble) **](u--unassemble-.md) 命令。 该示例还演示如何在循环中收集和显示命令输出。
+本部分介绍如何创建和执行简单的 JavaScript 调试器脚本，以自动发送 [**u (Unassemble)**](u--unassemble-.md) 命令。 该示例还演示如何在循环中收集和显示命令输出。
 
 此脚本提供单个函数 RunCommands ( # A1。
 
@@ -290,21 +289,21 @@ function RunCommands()
 {
 var ctl = host.namespace.Debugger.Utility.Control;   
 var output = ctl.ExecuteCommand("u");
-host.diagnostics.debugLog("***> Displaying command output \n");
+host.diagnostics.debugLog("**_> Displaying command output \n");
 
 for (var line of output)
    {
    host.diagnostics.debugLog("  ", line, "\n");
    }
 
-host.diagnostics.debugLog("***> Exiting RunCommands Function \n");
+host.diagnostics.debugLog("_*_> Exiting RunCommands Function \n");
 
 }
 ```
 
-使用文本编辑器（如记事本）创建名为的文本文件 *RunCommands.js*
+使用文本编辑器（如记事本）创建名为 _RunCommands.js *
 
-使用 [**load (负载扩展 DLL) **](-load---loadby--load-extension-dll-.md) 命令加载 JavaScript 提供程序。
+使用 [**load (负载扩展 DLL)**](-load---loadby--load-extension-dll-.md) 命令加载 JavaScript 提供程序。
 
 ```dbgcmd
 0:000> .load jsprovider.dll
@@ -317,7 +316,7 @@ host.diagnostics.debugLog("***> Exiting RunCommands Function \n");
 JavaScript script successfully loaded from 'c:\WinDbg\Scripts\RunCommands.js'
 ```
 
-加载脚本后，调试器中会提供其他功能。 使用 [**dx (显示 NatVis Expression) **](dx--display-visualizer-variables-.md) 命令显示 *RunCommands* ，以了解我们的脚本现在为常驻。
+加载脚本后，调试器中会提供其他功能。 使用 [**dx (显示 NatVis Expression)**](dx--display-visualizer-variables-.md) 命令显示 *RunCommands* ，以了解我们的脚本现在为常驻。
 
 ```dbgcmd
 0:000>dx -r3 Debugger.State.Scripts.RunCommands
@@ -347,7 +346,7 @@ Debugger.State.Scripts.RunCommands
   00007ffd`87f06e74 4c8bd1          mov     r10,rcx
   00007ffd`87f06e77 488bca          mov     rcx,rdx
   00007ffd`87f06e7a 4c8bda          mov     r11,rdx
-***> Exiting RunCommands Function
+**_> Exiting RunCommands Function
 ```
 
 ## <a name="span-idspecial_javascript_debugger_functionsspanspan-idspecial_javascript_debugger_functionsspanspan-idspecial_javascript_debugger_functionsspanspecial-javascript-debugger-functions"></a><span id="Special_JavaScript_Debugger_Functions"></span><span id="special_javascript_debugger_functions"></span><span id="SPECIAL_JAVASCRIPT_DEBUGGER_FUNCTIONS"></span>特殊 JavaScript 调试器函数
@@ -372,7 +371,7 @@ function initializeScript()
 {
     // Add code here that you want to run every time the script is loaded. 
     // We will just send a message to indicate that function was called.
-    host.diagnostics.debugLog("***> initializeScript was called\n");
+    host.diagnostics.debugLog("_*_> initializeScript was called\n");
 }
 ```
 
@@ -385,7 +384,7 @@ function invokeScript()
 {
     // Add code here that you want to run every time the script is executed. 
     // We will just send a message to indicate that function was called.
-    host.diagnostics.debugLog("***> invokeScript was called\n");
+    host.diagnostics.debugLog("_*_> invokeScript was called\n");
 }
 ```
 
@@ -400,7 +399,7 @@ function uninitializeScript()
 {
     // Add code here that you want to run every time the script is unloaded. 
     // We will just send a message to indicate that function was called.
-    host.diagnostics.debugLog("***> uninitialize was called\n");
+    host.diagnostics.debugLog("_*_> uninitialize was called\n");
 }
 ```
 
@@ -411,7 +410,7 @@ function uninitializeScript()
 
 |命令 |[.scriptload](-scriptload--load-script-.md)|[.scriptrun（运行脚本）](-scriptrun--run-script-.md)|[.scriptload（卸载脚本）](-scriptunload--unload-script-.md)|
 |--- |--- |--- |--- |
-|root|是|是| | |
+|根|是|是| | |
 |initializeScript|是|是| | |
 |invokeScript       | |是| |
 |uninitializeScript | ||是|
@@ -421,21 +420,21 @@ function uninitializeScript()
 
 ```javascript
 // Root of Script
-host.diagnostics.debugLog("***>; Code at the very top (root) of the script is always run \n");
+host.diagnostics.debugLog("_*_>; Code at the very top (root) of the script is always run \n");
 
 
 function initializeScript()
 {
     // Add code here that you want to run every time the script is loaded. 
     // We will just send a message to indicate that function was called.
-    host.diagnostics.debugLog("***>; initializeScript was called \n");
+    host.diagnostics.debugLog("_*_>; initializeScript was called \n");
 }
 
 function invokeScript()
 {
     // Add code here that you want to run every time the script is executed. 
     // We will just send a message to indicate that function was called.
-    host.diagnostics.debugLog("***>; invokeScript was called \n");
+    host.diagnostics.debugLog("_*_>; invokeScript was called \n");
 }
 
 
@@ -443,7 +442,7 @@ function uninitializeScript()
 {
     // Add code here that you want to run every time the script is unloaded. 
     // We will just send a message to indicate that function was called.
-    host.diagnostics.debugLog("***>; uninitialize was called\n");
+    host.diagnostics.debugLog("_*_>; uninitialize was called\n");
 }
 
 
@@ -451,14 +450,14 @@ function main()
 {
     // main is just another function name in JavaScript
     // main is not called by .scriptload or .scriptrun  
-    host.diagnostics.debugLog("***>; main was called \n");
+    host.diagnostics.debugLog("_*_>; main was called \n");
 }
 ```
 
 ## <a name="span-idvisualizerspanspan-idvisualizerspanspan-idvisualizerspancreating-a-debugger-visualizer-in-javascript"></a><span id="Visualizer"></span><span id="visualizer"></span><span id="VISUALIZER"></span>在 JavaScript 中创建调试器可视化工具
 
 
-自定义可视化文件允许您对可视化结构中的数据进行分组和组织，以便更好地反映数据关系和内容。 您可以使用 JavaScript 调试器扩展来编写调试可视化工具，它的操作方式与 NatVis 非常相似。 这是通过创作 JavaScript 原型对象来实现的， (或作为给定数据类型的可视化工具的 ES6 类) 。 有关 NatVis 和调试器的详细信息，请参阅 [**dx (显示 NatVis 表达式) **](dx--display-visualizer-variables-.md)。
+自定义可视化文件允许您对可视化结构中的数据进行分组和组织，以便更好地反映数据关系和内容。 您可以使用 JavaScript 调试器扩展来编写调试可视化工具，它的操作方式与 NatVis 非常相似。 这是通过创作 JavaScript 原型对象来实现的， (或作为给定数据类型的可视化工具的 ES6 类) 。 有关 NatVis 和调试器的详细信息，请参阅 [_ *Dx (显示 NatVis 表达式)* *](dx--display-visualizer-variables-.md)。
 
 **示例类-Simple1DArray**
 
@@ -521,7 +520,7 @@ function initializeScript()
 
 将该脚本保存到名为 arrayVisualizer.js 的文件中。
 
-使用 [**load (负载扩展 DLL) **](-load---loadby--load-extension-dll-.md) 命令加载 JavaScript 提供程序。
+使用 [**load (负载扩展 DLL)**](-load---loadby--load-extension-dll-.md) 命令加载 JavaScript 提供程序。
 
 ```dbgcmd
 0:000> .load C:\ScriptProviders\jsprovider.dll
@@ -641,7 +640,7 @@ g_array1D.Select(@$myScript.multiplyBySeven),d
   }
 ```
 
-使用 [**load (负载扩展 DLL) **](-load---loadby--load-extension-dll-.md) 命令加载 JavaScript 提供程序。
+使用 [**load (负载扩展 DLL)**](-load---loadby--load-extension-dll-.md) 命令加载 JavaScript 提供程序。
 
 ```dbgcmd
 0:000> .load jsprovider.dll
@@ -708,7 +707,7 @@ function performOp64BitValues(a64, b64, op)
 
 使用文本编辑器（如记事本）创建名为的文本文件 *PlayWith64BitValues.js*
 
-使用 [**load (负载扩展 DLL) **](-load---loadby--load-extension-dll-.md) 命令加载 JavaScript 提供程序。
+使用 [**load (负载扩展 DLL)**](-load---loadby--load-extension-dll-.md) 命令加载 JavaScript 提供程序。
 
 ```dbgcmd
 0:000> .load jsprovider.dll
@@ -780,7 +779,7 @@ function comparisonWith64BitValues(a64, b64)
 
 使用文本编辑器（如记事本）创建名为的文本文件 *ComparisonWith64BitValues.js*
 
-使用 [**load (负载扩展 DLL) **](-load---loadby--load-extension-dll-.md) 命令加载 JavaScript 提供程序。
+使用 [**load (负载扩展 DLL)**](-load---loadby--load-extension-dll-.md) 命令加载 JavaScript 提供程序。
 
 ```dbgcmd
 0:000> .load jsprovider.dll
@@ -830,7 +829,7 @@ Error: 64 bit value loses precision on conversion to number
 
 为了允许调试器扩展维护精度，一组数学函数将在64位库类型的顶层进行投影。 如果扩展需要 (或可能) 需要精度高于53位的传入64位值，则应使用以下方法，而不是依赖标准运算符：
 
-| **方法名**   | **信号**             | **说明**                                                                                               |
+| **方法名称**   | **Signature**             | **说明**                                                                                               |
 |-------------------|---------------------------|---------------------------------------------------------------------------------------------------------------|
 | asNumber          | . asNumber ( # A1               | 将64位值转换为 JavaScript 数字。 如果发生精度损失，则会 \* \* 引发异常\*\* |
 | convertToNumber   | . convertToNumber ( # A1        | 将64位值转换为 JavaScript 数字。 如果发生精度损失，则 \* \* 不会引发异常\*\* |

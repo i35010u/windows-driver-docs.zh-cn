@@ -1,7 +1,6 @@
 ---
 title: 手动设置通过 USB 2.0 线缆进行的内核模式调试
 description: 适用于 Windows 的调试工具支持通过 USB 2.0 电缆进行内核调试。 本主题介绍如何手动设置 USB 2.0 调试。
-ms.assetid: 8dd0703a-ddcd-461f-b164-1c079a93bb3a
 keywords:
 - 安装程序，建立 USB 2.0 电缆连接
 - 电缆连接，USB 2.0 调试电缆
@@ -10,12 +9,12 @@ keywords:
 - USB 2.0 调试连接，软件要求
 ms.date: 02/07/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: a75e80aceeb0c83c5180b3320eb66c2c5c01d679
-ms.sourcegitcommit: 67efcd26f7be8f50c92b141ccd14c9c68f4412d8
+ms.openlocfilehash: fd7714d0290acfb73b62ebf1f2322852e143dc01
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88902571"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803603"
 ---
 # <a name="setting-up-kernel-mode-debugging-over-a-usb-20-cable-manually"></a>手动设置通过 USB 2.0 线缆进行的内核模式调试
 
@@ -46,7 +45,7 @@ ms.locfileid: "88902571"
     Bus.Device.Function (in decimal): 0.29.7
     ```
 
-    **注意**   许多 EHCI 主机控制器支持在端口1上进行调试，但某些 EHCI 主机控制器支持在端口2上进行调试。
+    **注意**  许多 EHCI 主机控制器支持在端口1上进行调试，但某些 EHCI 主机控制器支持在端口2上进行调试。
 
      
 
@@ -54,7 +53,7 @@ ms.locfileid: "88902571"
 
 5.  确定 EHCI 控制器和支持调试的端口号后，下一步是找到与正确的端口号关联的物理 USB 连接器。 若要查找物理连接器，请将任何 USB 2.0 设备插入目标计算机上的任何 USB 连接器。 刷新 UsbView 以查看设备所在的位置。 如果 UsbView 显示已连接到 EHCI 主机控制器的设备和标识为调试端口的端口，则已找到可用于调试的物理 USB 连接器。 可能没有与 EHCI 控制器上的调试端口关联的外部物理 USB 连接器。 在这种情况下，可以在计算机中查找物理 USB 连接器。 执行相同的步骤，确定内部 USB 连接器是否适用于内核调试。 如果找不到 (与调试端口关联的外部或内部) 的物理 USB 连接器，则无法使用该计算机作为通过 USB 2.0 电缆进行调试的目标。
 
-    **注意**   对于异常，请参阅[此注释](#what-if-usbview-shows-a-debug-capable-port)。
+    **注意**  对于异常，请参阅 [此注释](#what-if-usbview-shows-a-debug-capable-port) 。
 
 > [!IMPORTANT]
 > 使用 bcdedit 更改启动信息之前，您可能需要在测试电脑上暂时挂起 Windows 安全功能，例如 BitLocker 和安全启动。 完成调试并禁用内核调试之后，可以重新启用安全启动。  
@@ -74,7 +73,7 @@ ms.locfileid: "88902571"
 
   **bcdedit/set "{dbgsettings}" busparams** *b.d.f*
 
-   其中， *b*、 *d*和 *f* 是主机控制器的总线、设备和函数号。 总线、设备和函数编号必须为十进制格式 (例如 **busparams 0.29.7**) 。
+   其中， *b*、 *d* 和 *f* 是主机控制器的总线、设备和函数号。 总线、设备和函数编号必须为十进制格式 (例如 **busparams 0.29.7**) 。
 
 8. 重新启动目标计算机。
 
@@ -90,18 +89,18 @@ ms.locfileid: "88902571"
 
 1.  确定主机计算机上运行的 Windows 的位数 (32 位或64位) 。
 2.  在主计算机上，以与主计算机上运行的 Windows 的位数匹配的 "管理员) 的形式打开某一版本的 WinDbg (。 例如，如果主计算机运行的是64位版本的 Windows，请以管理员身份打开该版本的 WinDbg 的64位版本。
-3.  在 " **文件** " 菜单上，选择 " **内核调试**"。 在 "内核调试" 对话框中，打开 " **USB** " 选项卡。输入在设置目标计算机时创建的目标名称。 单击“确定”。
+3.  在 " **文件** " 菜单上，选择 " **内核调试**"。 在 "内核调试" 对话框中，打开 " **USB** " 选项卡。输入在设置目标计算机时创建的目标名称。 单击 **“确定”** 。
 
 此时，将在主计算机上安装 USB 调试驱动程序。 这就是将 WinDbg 的位数与 Windows 的位数相匹配的原因。 安装 USB 调试驱动程序之后，可以使用32位或64位版本的 WinDbg 来执行后续的调试会话。
 
-**注意**   USB 2.0 调试电缆实际上是两条电缆，其中的连接器位于中间。 转换器的方向非常重要;一侧为设备供电，而另一端则不支持。 如果 USB 调试不起作用，请尝试交换转换器的方向。 也就是说，从转换器拔出两根电缆，并交换电缆连接到的边。
+**注意**  USB 2.0 调试电缆实际上是两条电缆，其中的连接器位于中间。 转换器的方向非常重要;一侧为设备供电，而另一端则不支持。 如果 USB 调试不起作用，请尝试交换转换器的方向。 也就是说，从转换器拔出两根电缆，并交换电缆连接到的边。
 
 
 ## <a name="starting-a-debugging-session"></a>启动调试会话
 
 ### <a name="using-windbg"></a>使用 WinDbg
 
-在主计算机上，打开 WinDbg。 在 " **文件** " 菜单上，选择 " **内核调试**"。 在 "内核调试" 对话框中，打开 " **USB** " 选项卡。输入在设置目标计算机时创建的目标名称。 单击“确定”。
+在主计算机上，打开 WinDbg。 在 " **文件** " 菜单上，选择 " **内核调试**"。 在 "内核调试" 对话框中，打开 " **USB** " 选项卡。输入在设置目标计算机时创建的目标名称。 单击 **“确定”** 。
 
 还可以通过在命令提示符窗口中输入以下命令来启动与 WinDbg 的会话，其中 *TargetName* 是设置目标计算机时创建的目标名称：
 

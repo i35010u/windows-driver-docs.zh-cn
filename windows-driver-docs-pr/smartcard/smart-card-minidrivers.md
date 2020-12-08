@@ -1,15 +1,14 @@
 ---
 title: 智能卡微型驱动器
 description: 智能卡微型驱动器
-ms.assetid: BE24E8C3-663A-47A3-B30C-CBB0AEF89E45
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 38cd1142d830315a4bf55e64b6e1624e1de32399
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 48299f2ff74c18a355e8c722b046754efd7c89e4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89382697"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96804885"
 ---
 # <a name="smart-card-minidrivers"></a>智能卡微型驱动器
 

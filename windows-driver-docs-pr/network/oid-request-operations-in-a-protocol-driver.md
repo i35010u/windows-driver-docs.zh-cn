@@ -1,7 +1,6 @@
 ---
 title: 协议驱动程序中的 OID 请求操作
 description: 协议驱动程序中的 OID 请求操作
-ms.assetid: 767252a2-98de-4df2-89dc-ee48b2c7ca9d
 keywords:
 - 协议驱动程序 WDK 网络，OID 请求
 - NDIS 协议驱动程序 WDK，OID 请求
@@ -9,12 +8,12 @@ keywords:
 - Oid WDK 网络，协议驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f1f4c4fdb7ebdb1f3b8ef7762dd224a62a27150d
-ms.sourcegitcommit: 366a15d68eb58d01a8ca6de7b982f62ac8b7deaf
+ms.openlocfilehash: 5c3a95f50e79cb97a916487c3199176b477989b1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/19/2020
-ms.locfileid: "90812010"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803659"
 ---
 # <a name="oid-request-operations-in-a-protocol-driver"></a>协议驱动程序中的 OID 请求操作
 

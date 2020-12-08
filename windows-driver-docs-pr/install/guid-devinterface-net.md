@@ -1,7 +1,6 @@
 ---
 title: GUID_DEVINTERFACE_NET
 description: GUID_DEVINTERFACE_NET
-ms.assetid: e1cdda95-1915-4bbc-86e9-dff99b7fcc7b
 keywords:
 - GUID_DEVINTERFACE_NET 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: c984b542c05117145d36013908afbb8ec53e7a85
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: e28335a3bcf4c4f35f6ee07ecf36cb3ecdfd16b5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89096937"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96805493"
 ---
 # <a name="guid_devinterface_net"></a>GUID_DEVINTERFACE_NET
 

@@ -1,7 +1,6 @@
 ---
 title: 'Irql \_ 筛选器 \_ 驱动程序 \_ 函数规则 (ndis) '
 description: Irql \_ 筛选器 \_ 驱动程序 \_ 函数规则指定必须在正确的 Irql 级别调用筛选器驱动程序的 NDIS 函数。
-ms.assetid: 1dd45962-151b-472c-88a6-6042ecb7491c
 ms.date: 05/21/2018
 keywords:
 - 'Irql_Filter_Driver_Function 规则 (ndis) '
@@ -12,12 +11,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 7660097ab421fabdc50ce1dcf4e4bba509d5905b
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 761aeb0e16371421d2cfd7293c2f3addc239b60a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107354"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96804233"
 ---
 # <a name="irql_filter_driver_function-rule-ndis"></a>Irql \_ 筛选器 \_ 驱动程序 \_ 函数规则 (ndis) 
 

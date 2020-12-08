@@ -1,18 +1,17 @@
 ---
 title: NDIS 6.20 中的媒体可扩展性
 description: NDIS 6.20 中的媒体可扩展性
-ms.assetid: abc240da-be6e-4a7a-a9d1-186633c5bfd3
 keywords:
 - NDIS 6.20 WDK，媒体扩展性
 - 媒体扩展 WDK NDIS 6.20
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b6748395393533ad7aa4ce6c091df83a06f93fad
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 2382784e904807ebe0405593c4864ff307a511d7
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89212163"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803679"
 ---
 # <a name="media-extensibility-in-ndis-620"></a>NDIS 6.20 中的媒体可扩展性
 

@@ -1,22 +1,21 @@
 ---
-title: Filter
-description: Filter
-ms.assetid: eb8f0e55-eefd-48bb-abaa-0658bc977b5f
+title: 筛选器
+description: 筛选器
 keywords:
-- 筛选器 WDK Windows 筛选平台
+- 筛选 WDK Windows 筛选平台
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c4877b19762c72cf4d5c5d2de063229ceb4d34ec
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4319e8f0bfa60d150d177a9d94477d65771229b0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380924"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96805221"
 ---
-# <a name="filter"></a>Filter
+# <a name="filter"></a>筛选器
 
 
-一个*筛选器*定义多个筛选条件来筛选 TCP/IP 网络数据和操作的所有筛选条件为真时要执行的数据。 如果筛选器需要进行其他处理的网络数据，它可以指定[标注](callout.md)筛选器的操作。 如果这样的筛选器的筛选条件都成立，[筛选器引擎](filter-engine.md)将网络数据传递给其他处理的指定标注。
+*筛选器* 定义用于筛选 tcp/ip 网络数据的多个筛选条件，以及在所有筛选条件都为 true 时要对数据执行的操作。 如果筛选器需要额外处理网络数据，则可以指定筛选器操作的 [标注](callout.md) 。 如果此类筛选器的筛选条件全部为 true，则 [筛选器引擎](filter-engine.md) 会将网络数据传递到指定的标注进行其他处理。
 
  
 

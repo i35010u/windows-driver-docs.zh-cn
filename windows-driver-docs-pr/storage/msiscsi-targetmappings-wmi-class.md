@@ -1,15 +1,14 @@
 ---
 title: MSiSCSI \_ TARGETMAPPINGS WMI 类
 description: MSiSCSI \_ TARGETMAPPINGS WMI 类
-ms.assetid: 12bfe80a-8431-4607-99f5-ddd6815aecc6
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: d41c4812e40a0a4c92b8498a018d78407cc798d7
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: f7a4afa725687e0e9247a9336bc7052524ecee80
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89188921"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96804423"
 ---
 # <a name="msiscsi_targetmappings-wmi-class"></a>MSiSCSI \_ TARGETMAPPINGS WMI 类
 
@@ -23,7 +22,7 @@ MSiSCSI \_ TARGETMAPPINGS WMI 类包含一组 iSCSI 逻辑单元号 (LUN) 映射
 
 \_对于管理发起方 HBA 的每个加载的微型端口驱动程序实例，都应该有一个 MSiSCSI TARGETMAPPINGS WMI 类的实例。 微型端口驱动程序必须 \_ 使用微型端口驱动程序管理 (PDO) 的特定物理设备对象的名称注册 MSiSCSI TargetMappings 类。
 
-MSiSCSI \_ TargetMappings 类未发布，并在 *操作*中定义。
+MSiSCSI \_ TargetMappings 类未发布，并在 *操作* 中定义。
 
 当 WMI 工具套件编译此类定义时，它会生成 [**MSiSCSI \_ TargetMappings**](/windows-hardware/drivers/ddi/iscsiop/ns-iscsiop-_msiscsi_targetmappings) 数据结构。
 

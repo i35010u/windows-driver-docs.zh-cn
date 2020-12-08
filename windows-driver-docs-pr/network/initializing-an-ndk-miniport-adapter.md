@@ -1,15 +1,14 @@
 ---
 title: 初始化 NDK 微型端口适配器
 description: 本部分介绍如何初始化 NDK 微型端口适配器
-ms.assetid: 0A920057-3C12-4770-BA08-6C3BB24072EB
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0ec206d7f65506f487f30c78e674190483d943f5
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 0a8e6ff740946bf3c191707d4849e580a492d97b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89216614"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803686"
 ---
 # <a name="initializing-an-ndk-miniport-adapter"></a>初始化 NDK 微型端口适配器
 
@@ -25,7 +24,7 @@ ms.locfileid: "89216614"
     - 如果启用 **的成员启用** 了该成员的 NDK 功能，则该驱动程序会将该成员设置为 **TRUE** ，否则设置为 **FALSE** 。
 
         > [!NOTE]
-        > 有关查询和设置微型端口驱动程序 NDK 功能的当前状态的详细信息，请参阅 [启用和禁用 Ndk 功能](enabling-and-disabling-ndk-functionality.md)。         
+        > 有关查询和设置微型端口驱动程序 NDK 功能的当前状态的详细信息，请参阅 [启用和禁用 Ndk 功能](enabling-and-disabling-ndk-functionality.md)。         
 
     - 在 **NdkCapabilities** 成员中，微型端口驱动程序存储一个指向 [**NDIS \_ NDK \_ 功能**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_ndk_capabilities) 结构的指针，该结构指定适配器的功能。
 

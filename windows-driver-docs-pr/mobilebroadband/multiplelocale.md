@@ -1,15 +1,14 @@
 ---
 title: MultipleLocale
 description: MultipleLocale
-ms.assetid: 95590875-2797-4a73-a211-6102305098f9
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 18993dce99d7ac5496b130d17f33d20b76e3c801
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: 70b50312782e0ba661fb6d117d1e89a0787fb023
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89403524"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96805283"
 ---
 # <a name="multiplelocale"></a>MultipleLocale
 
@@ -52,13 +51,13 @@ MultipleLocale 元素指定服务元数据包是否支持多个区域设置。
 <thead>
 <tr class="header">
 <th>元素</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><p><a href="metadatakey.md" data-raw-source="[MetadataKey](metadatakey.md)">MetadataKey</a></p></td>
-<td><p><a href="metadatakey.md" data-raw-source="[MetadataKey](metadatakey.md)">MetadataKey</a>元素指定设备元数据包的属性。 其中包括：</p>
+<td><p><a href="metadatakey.md" data-raw-source="[MetadataKey](metadatakey.md)">MetadataKey</a>元素指定设备元数据包的属性。 这些功能包括以下这些：</p>
 <ul>
 <li><p>设备支持的每个硬件功能的标识符。</p></li>
 <li><p>包中的文本字符串的语言特定区域设置。</p></li>

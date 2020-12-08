@@ -1,7 +1,6 @@
 ---
 title: 初始化微型端口中间驱动程序
 description: 初始化微型端口中间驱动程序
-ms.assetid: b0beea1f-7374-49e9-9650-0bdb37902469
 keywords:
 - NDIS 中间驱动程序 WDK，初始化
 - 中间驱动程序 WDK 网络，初始化
@@ -9,12 +8,12 @@ keywords:
 - 微型端口中间驱动程序 WDK NDIS
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c920ff6dcadd476cee78376c92cd2a17a9b4db29
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 8927cfe2c4bcf4b02a23c13080318da565026245
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89206441"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803699"
 ---
 # <a name="initializing-a-miniport-intermediate-driver"></a>初始化微型端口中间驱动程序
 

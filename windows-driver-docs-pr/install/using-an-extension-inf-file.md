@@ -1,15 +1,14 @@
 ---
 title: 使用扩展 INF 文件
 description: 从 Windows 10 开始，可以通过提供名为扩展 INF 的其他 INF 文件来扩展驱动程序包 INF 文件的功能。
-ms.assetid: 124C4E58-7F06-46F5-B530-29A03FA75C0A
 ms.date: 06/05/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f1b4b872749fbb9c10e920e51bd284a39a2e8d5e
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 5bc95c540a2b55ce0deb598e32e5870f6d0c5cb9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89097191"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96805449"
 ---
 # <a name="using-an-extension-inf-file"></a>使用扩展 INF 文件
 
@@ -43,17 +42,17 @@ ms.locfileid: "89097191"
 
 ## <a name="specifying-extensionid"></a>指定 ExtensionId
 
-编写扩展 INF 时，会生成一个名为 " **ExtensionId**" 的特殊 GUID，它是 INF 的 " ** \[ 版本 \] ** " 部分中的条目。
+编写扩展 INF 时，会生成一个名为 " **ExtensionId**" 的特殊 GUID，它是 INF 的 " **\[ 版本 \]** " 部分中的条目。
 
 系统通过将设备的硬件 ID 和兼容 Id 与适用于该系统的 " [**模型**](inf-models-section.md) " 部分的扩展 INF 中指定的 id 相匹配，来标识特定设备可能的扩展 inf。
 
-在指定相同 **ExtensionId** 值的所有可能的扩展 inf 中，系统仅选择一个安装，并将其设置应用于基本 INF 的设置。  按照该顺序使用在 INF 中指定的驱动程序日期和驱动程序版本来选择具有相同 **ExtensionId**的多个扩展 inf 之间的单个 INF。
+在指定相同 **ExtensionId** 值的所有可能的扩展 inf 中，系统仅选择一个安装，并将其设置应用于基本 INF 的设置。  按照该顺序使用在 INF 中指定的驱动程序日期和驱动程序版本来选择具有相同 **ExtensionId** 的多个扩展 inf 之间的单个 INF。
 
 为了说明这一点，请考虑以下方案，其中包含一个假设设备，其中有三个扩展 Inf：
 
 ![显示如何选择基本 INF 和扩展 Inf 的关系图](images/extension-base-inf-example.png)
 
-**ExtensionId**值 `{A}` 、 `{B}` 和 `{C}` 显示在大括号中，每个驱动程序的[排名](how-setup-ranks-drivers--windows-vista-and-later-.md)显示在横幅功能区中。
+**ExtensionId** 值 `{A}` 、 `{B}` 和 `{C}` 显示在大括号中，每个驱动程序的 [排名](how-setup-ranks-drivers--windows-vista-and-later-.md)显示在横幅功能区中。
 
 首先，系统选择具有最新版本和最高级别的驱动程序。
 
@@ -67,7 +66,7 @@ ms.locfileid: "89097191"
 
 以下是将 INF 定义为扩展 INF 所需的项。
 
-1.  在 "[**版本**](inf-version-section.md)" 部分中指定**类**和**ClassGuid**的这些值。 有关安装程序类的详细信息，请参阅 [供应商可用的系统定义的设备安装程序类](./system-defined-device-setup-classes-available-to-vendors.md)。
+1.  在 "[**版本**](inf-version-section.md)" 部分中指定 **类** 和 **ClassGuid** 的这些值。 有关安装程序类的详细信息，请参阅 [供应商可用的系统定义的设备安装程序类](./system-defined-device-setup-classes-available-to-vendors.md)。
 
     ```cpp
     [Version]
@@ -76,7 +75,7 @@ ms.locfileid: "89097191"
     ClassGuid   = {e2f84ce7-8efa-411c-aa69-97454ca4cb57}
     ```
 
-2.  提供 " [** \[ \] 版本**](inf-version-section.md)" 部分中的**ExtensionId**条目。 为扩展 INF 的初始版本生成新的 GUID，或重复使用最后一个 GUID 对初始扩展 INF 进行后续更新。
+2.  提供 " [**\[ \] 版本**](inf-version-section.md)" 部分中的 **ExtensionId** 条目。 为扩展 INF 的初始版本生成新的 GUID，或重复使用最后一个 GUID 对初始扩展 INF 进行后续更新。
 
     ```cpp
     ExtensionId = {zzzzzzzz-zzzz-zzzz-zzzz-zzzzzzzzzzzz} ; replace with your own GUID
@@ -84,7 +83,7 @@ ms.locfileid: "89097191"
 
 请注意，组织可能仅使用其拥有的 **ExtensionID** 。  有关注册扩展 ID 的信息，请参阅 [Windows 硬件开发人员中心仪表板中的管理硬件提交](../dashboard/manage-your-hardware-submissions.md)。     
 
-3.  如果要更新扩展 INF，请将 **ExtensionId** 保留不变，并递增 (或 [**) 的版本**](inf-driverver-directive.md) 或日期，或同时指定这两个。 对于给定的 **ExtensionId** 值，PnP 选择具有最高 **DriverVer**的 INF。
+3.  如果要更新扩展 INF，请将 **ExtensionId** 保留不变，并递增 (或 [**) 的版本**](inf-driverver-directive.md) 或日期，或同时指定这两个。 对于给定的 **ExtensionId** 值，PnP 选择具有最高 **DriverVer** 的 INF。
 
 >[!NOTE]
 > 如果扩展 INF 面向 Windows 10 S，请参阅 [S 模式下的 windows 10 驱动程序要求](./windows10sdriverrequirements.md) ，了解有关该版本 Windows 的驱动程序安装的信息。

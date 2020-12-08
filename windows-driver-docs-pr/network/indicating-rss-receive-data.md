@@ -1,19 +1,18 @@
 ---
 title: 指示 RSS 接收数据
 description: 指示 RSS 接收数据
-ms.assetid: 8d040d7d-3a8a-4d81-8508-8de225e000ab
 keywords:
 - 接收方缩放 WDK 网络，指示接收数据
 - RSS WDK 网络，指示接收数据
 - 指示接收数据 WDK RSS
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6864b287659e4df2a58cbfc01f7fa30e1eca0f0d
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: e27452cb70c39ff4c95ab0b700228b1e56b650c6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89212409"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803527"
 ---
 # <a name="indicating-rss-receive-data"></a>指示 RSS 接收数据
 
@@ -21,7 +20,7 @@ ms.locfileid: "89212409"
 
 
 
-微型端口驱动程序通过从其[*MiniportInterruptDPC*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_interrupt_dpc)函数调用[**NdisMIndicateReceiveNetBufferLists**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismindicatereceivenetbufferlists)函数来指示收到的数据。
+微型端口驱动程序通过从其 [*MiniportInterruptDPC*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_interrupt_dpc)函数调用 [**NdisMIndicateReceiveNetBufferLists**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismindicatereceivenetbufferlists)函数来指示收到的数据。
 
 NIC 成功计算 RSS 哈希值后，驱动程序应将哈希类型、哈希函数和哈希值存储在 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list) 结构中，并附带以下宏：
 

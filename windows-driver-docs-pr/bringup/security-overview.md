@@ -1,15 +1,14 @@
 ---
 title: 安全性
 description: 使用此部分中的主题来了解有关 Windows 10 移动版中的安全性的详细信息。
-ms.assetid: 15783e59-f37b-4373-8604-d35c57eedfcc
 ms.date: 08/31/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 7766e0bfeb1031388d680c454e55898a039b033e
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 6efe327c2f79da66930502f17a2b7bc0a4ba01f8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90101520"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803645"
 ---
 # <a name="security"></a>安全性
 
@@ -24,7 +23,7 @@ ms.locfileid: "90101520"
 <table>
   <thead>
     <th>任务</th>
-    <th>说明</th>
+    <th>描述</th>
   </thead>
   <tbody>
     <tr>

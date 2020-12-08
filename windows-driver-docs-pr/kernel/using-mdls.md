@@ -1,17 +1,16 @@
 ---
 title: 使用 MDL
 description: 使用 MDL
-ms.assetid: 60652eb8-cfdb-4591-88ff-cf9dc4b9743d
 keywords:
 - 内存管理 WDK 内核，
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bd795313a4fb4be012c7a3aa128268f36f4fcc18
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 8672b6444bdc87e9d1e95a6a19268db24e06b868
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89187579"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803775"
 ---
 # <a name="using-mdls"></a>使用 MDL
 
@@ -32,7 +31,7 @@ MDL 的其余成员是不透明的。 请勿直接访问 MDL 的不透明成员�
 
 您可以使用 [**IoAllocateMdl**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioallocatemdl) 例程分配 MDL。 若要释放 MDL，请使用 [**IoFreeMdl**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iofreemdl) 例程。 或者，可以通过调用 [**MmInitializeMdl**](./mm-bad-pointer.md) 例程来分配非分页内存块，然后将此内存块的格式设置为 MDL。
 
-**IoAllocateMdl**和**MmInitializeMdl**都不会初始化紧跟 MDL 结构的数据数组。 对于驻留在驱动程序分配的非分页内存块中的 MDL，请使用 [**MmBuildMdlForNonPagedPool**](/windows-hardware/drivers/ddi/wdm/nf-wdm-mmbuildmdlfornonpagedpool) 来初始化此数组，以描述 i/o 缓冲区所在的物理内存。
+**IoAllocateMdl** 和 **MmInitializeMdl** 都不会初始化紧跟 MDL 结构的数据数组。 对于驻留在驱动程序分配的非分页内存块中的 MDL，请使用 [**MmBuildMdlForNonPagedPool**](/windows-hardware/drivers/ddi/wdm/nf-wdm-mmbuildmdlfornonpagedpool) 来初始化此数组，以描述 i/o 缓冲区所在的物理内存。
 
 对于可分页内存，虚拟内存和物理内存之间的对应关系是临时的，因此遵循 MDL 结构的数据数组仅在特定情况下有效。 调用 [**MmProbeAndLockPages**](/windows-hardware/drivers/ddi/wdm/nf-wdm-mmprobeandlockpages) ，将可分页内存锁定到位置，并为当前布局初始化此数据数组。 在调用方使用 [**MmUnlockPages**](/windows-hardware/drivers/ddi/wdm/nf-wdm-mmunlockpages) 例程之前，不会分页内存，此时数据数组的内容将不再有效。
 
@@ -40,9 +39,9 @@ MDL 的其余成员是不透明的。 请勿直接访问 MDL 的不透明成员�
 
 请注意，使用 [**IoBuildPartialMdl**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iobuildpartialmdl) 例程生成部分 MDL 时，调用方应使用 **MmGetMdlVirtualAddress** 而不是 **MmGetSystemAddressForMdlSafe** 例程来确定要传入的虚拟地址。 **IoBuildPartialMdl** 使用 **MmGetMdlVirtualAddress** 从源 mdl 返回的地址来确定目标 mdl 的偏移量。 如果地址不同 (例如，当第一个地址是用户地址) 时，传递 **MmGetSystemAddressForMdlSafe** 返回的地址可能会导致数据损坏或 bug 检查。
 
-当驱动程序调用**IoAllocateMdl**时，它可以通过将一个指向 irp 的指针指定为**IoAllocateMdl**的*IRP*参数，从而将 irp 与新分配的 MDL 关联起来。 IRP 可以有一个或多个与之关联的 MDLs。 如果 IRP 具有与之关联的单个 MDL，则 IRP 的 **MdlAddress** 成员将指向该 mdl。 如果 IRP 具有多个与之关联的 MDLs，则 **MdlAddress** 指向与 IRP 关联的 MDLs 的链接列表中的第一个 MDL，称为 *MDL 链*。 MDLs 由其 **下一** 成员链接。 链中最后一个 MDL 的 **下一个** MDL 成员设置为 **NULL**。
+当驱动程序调用 **IoAllocateMdl** 时，它可以通过将一个指向 irp 的指针指定为 **IoAllocateMdl** 的 *IRP* 参数，从而将 irp 与新分配的 MDL 关联起来。 IRP 可以有一个或多个与之关联的 MDLs。 如果 IRP 具有与之关联的单个 MDL，则 IRP 的 **MdlAddress** 成员将指向该 mdl。 如果 IRP 具有多个与之关联的 MDLs，则 **MdlAddress** 指向与 IRP 关联的 MDLs 的链接列表中的第一个 MDL，称为 *MDL 链*。 MDLs 由其 **下一** 成员链接。 链中最后一个 MDL 的 **下一个** MDL 成员设置为 **NULL**。
 
-如果当驱动程序调用**IoAllocateMdl**时，它为*SecondaryBuffer*参数指定**FALSE** ，IRP 的**MDLADDRESS**成员设置为指向新的 MDL。 如果 *SecondaryBuffer* 为 **TRUE**，则例程将在 MDL 链的末尾插入新 MDL。
+如果当驱动程序调用 **IoAllocateMdl** 时，它为 *SecondaryBuffer* 参数指定 **FALSE** ，IRP 的 **MDLADDRESS** 成员设置为指向新的 MDL。 如果 *SecondaryBuffer* 为 **TRUE**，则例程将在 MDL 链的末尾插入新 MDL。
 
 完成 IRP 后，系统将解除锁定并释放与 IRP 关联的所有 MDLs。 系统在将 i/o 完成例程排队之前解锁 MDLs，并在执行 i/o 完成例程后释放它们。
 
@@ -73,4 +72,4 @@ VOID MyFreeMdl(PMDL Mdl)
 } 
 ```
 
-如果链中 MDL 所描述的物理页面被锁定，则该示例函数会调用 [**MmUnlockPages**](/windows-hardware/drivers/ddi/wdm/nf-wdm-mmunlockpages) 例程来解锁页面，然后再调用 [**IOFREEMDL**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iofreemdl) 以释放 MDL。 但是，在调用 **IoFreeMdl**之前，示例函数不需要显式取消对页面的映射。 相反， **IoFreeMdl** 会在页面释放 MDL 时自动 messagebox 取消。
+如果链中 MDL 所描述的物理页面被锁定，则该示例函数会调用 [**MmUnlockPages**](/windows-hardware/drivers/ddi/wdm/nf-wdm-mmunlockpages) 例程来解锁页面，然后再调用 [**IOFREEMDL**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iofreemdl) 以释放 MDL。 但是，在调用 **IoFreeMdl** 之前，示例函数不需要显式取消对页面的映射。 相反， **IoFreeMdl** 会在页面释放 MDL 时自动 messagebox 取消。

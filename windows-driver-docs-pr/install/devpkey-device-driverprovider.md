@@ -1,7 +1,6 @@
 ---
 title: DEVPKEY_Device_DriverProvider
 description: DEVPKEY_Device_DriverProvider
-ms.assetid: cbc1582a-1f43-4239-b00a-f7c99bf2deee
 keywords:
 - DEVPKEY_Device_DriverProvider 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: ca4cccf4251f9f4643528525be798c81a933dba6
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: b5ffff5f91c3383a38ad62c129a1ab1202bf9953
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90717494"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803849"
 ---
 # <a name="devpkey_device_driverprovider"></a>DEVPKEY_Device_DriverProvider
 
@@ -67,7 +66,7 @@ DEVPKEY_Device_DriverProvider 设备属性表示设备实例的 [驱动程序包
 <a name="remarks"></a>备注
 -------
 
-DEVPKEY_Device_DriverProvider 的值由设备 INF 文件的[**INF 版本部分**](./inf-driverver-directive.md)中包含的**提供程序**指令提供。
+DEVPKEY_Device_DriverProvider 的值由设备 INF 文件的 [**INF 版本部分**](./inf-driverver-directive.md)中包含的 **提供程序** 指令提供。
 
 可以调用 [**SetupDiGetDeviceProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdigetdevicepropertyw) 来检索 DEVPKEY_Device_DriverProvider 的值。
 
@@ -82,7 +81,7 @@ Windows Server 2003、Windows XP 和 Windows 2000 支持此属性，但不支持
 ## <a name="see-also"></a>请参阅
 
 
-[**INF 版本部分**](./inf-driverver-directive.md)
+[**INF Version 节**](./inf-driverver-directive.md)
 
 [**SetupDiGetDeviceProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
 

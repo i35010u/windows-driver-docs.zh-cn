@@ -1,15 +1,14 @@
 ---
 title: DSM \_ 计数器 WMI 类
 description: DSM \_ 计数器 WMI 类
-ms.assetid: 11ff77d7-5643-45ec-ac38-26ee70e6ea94
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 7df8da686e152b2e7c372407e54a30439652e380
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: b104f9260e93301ea9dc2103cd1a6beb580277a2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89186907"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96804667"
 ---
 # <a name="dsm_counters-wmi-class"></a>DSM \_ 计数器 WMI 类
 

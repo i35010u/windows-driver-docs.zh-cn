@@ -1,7 +1,6 @@
 ---
 title: 标注驱动程序的 INF 文件
 description: 标注驱动程序的 INF 文件
-ms.assetid: 2cdaf6a4-3297-4081-a64e-7ab5dc74e7e8
 keywords:
 - Windows 筛选平台标注驱动程序 WDK，安装
 - 标注驱动程序 WDK Windows 筛选平台，安装
@@ -9,12 +8,12 @@ keywords:
 - INF 文件 WDK Windows 筛选平台
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 29b89f20dc28458f2594a78cbb509deb7dc8454d
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 8406e46d7dce2d725b067161d77e789cc7b4831a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89212392"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803525"
 ---
 # <a name="inf-files-for-callout-drivers"></a>标注驱动程序的 INF 文件
 

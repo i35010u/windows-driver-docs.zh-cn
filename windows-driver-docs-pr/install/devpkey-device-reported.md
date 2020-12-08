@@ -1,7 +1,6 @@
 ---
 title: DEVPKEY_Device_Reported
 description: DEVPKEY_Device_Reported
-ms.assetid: dfec9e24-4d4e-42e4-a229-ad3d060fb1b5
 keywords:
 - DEVPKEY_Device_Reported 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 870e13791d775f79c7e220877f3420285ccca34a
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 70998dba6fd3c4c231fb0baaca2ce5a547cd24c8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90714650"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96804127"
 ---
 # <a name="devpkey_device_reported"></a>DEVPKEY_Device_Reported
 

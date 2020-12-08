@@ -1,9 +1,8 @@
 ---
-title: ks.topology
-description: Ks.topology 扩展显示的对象最接近的筛选器内部拓扑的已排序关系图。
-ms.assetid: 04ef6920-c022-4136-a42a-800679fe7ff4
+title: ks。拓扑
+description: Ks 扩展显示最接近对象的筛选器内部拓扑的已排序关系图。
 keywords:
-- ks.topology Windows 调试
+- ks. 拓扑 Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,35 +11,35 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: aea4718827c4d81d26e5a88d4c874cd469012faa
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b0df1cc68bd44ff60b6a83280bb9da7cdcd823da
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63336206"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96804053"
 ---
 # <a name="kstopology"></a>!ks.topology
 
 
-**！ Ks.topology**扩展显示最接近的筛选器的内部拓扑的已排序关系图*对象*。
+**！ Ks** 扩展显示最接近 *对象* 的筛选器内部拓扑的已排序关系图。
 
 ```dbgcmd
 !ks.topology Object [Level] [Flags] 
 ```
 
-## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>参数
+## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>Parameters
 
 
-<span id="_______Object______"></span><span id="_______object______"></span><span id="_______OBJECT______"></span> *Object*   
-指定指向要用作基础关系图的对象的指针。 可以是指向文件对象、 IRP、 pin、 筛选器或其他 KS 对象的指针。
+<span id="_______Object______"></span><span id="_______object______"></span><span id="_______OBJECT______"></span>*对象*   
+指定一个指针，该指针指向要用作关系图基础的对象。 可以是指向文件对象、IRP、pin、筛选器或其他 KS 对象的指针。
 
-<span id="_______Level______"></span><span id="_______level______"></span><span id="_______LEVEL______"></span> *级别*   
-可选。 指定要显示在 0 到 7 的详细信息级别越来越多的信息显示为较高的值的小数位数。 若要显示所有可用的详细信息，请提供值为 7。
+<span id="_______Level______"></span><span id="_______level______"></span><span id="_______LEVEL______"></span>*级别*   
+可选。 指定要在0-7 刻度上显示的详细信息的级别，并为较高的值显示更多的信息。 若要显示所有可用的详细信息，请提供值7。
 
-<span id="_______Flags______"></span><span id="_______flags______"></span><span id="_______FLAGS______"></span> *标志*   
-当前不可用。
+<span id="_______Flags______"></span><span id="_______flags______"></span><span id="_______FLAGS______"></span>*标志*   
+目前不可用。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 <table>
 <colgroup>
@@ -61,16 +60,16 @@ ms.locfileid: "63336206"
 
  
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-有关详细信息，请参阅[流式处理的内核调试](kernel-streaming-debugging.md)。
+有关详细信息，请参阅 [内核流调试](kernel-streaming-debugging.md)。
 
 <a name="remarks"></a>备注
 -------
 
-有关帮助，发出 **！ ks.topology**命令不带任何参数。
+若要获得帮助，请发出不带参数的 **！ ks** 命令。
 
-请注意，此命令可能需要一些时间来执行。
+请注意，此命令可能需要几分钟才能执行。
 
  
 

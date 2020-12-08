@@ -1,17 +1,16 @@
 ---
 title: 调试处理停滞问题
 description: 调试处理停滞问题
-ms.assetid: 9dff37ed-4843-4e85-8ab3-6a0a37a58c23
 keywords:
 - 内核流调试，视频流停止，处理延迟
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 768cb0ad03b4e6e74c792fe4765353e95c4dce17
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: dd4fc8198d2c4ec1c1f7e354d5fea7bea094678a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89211179"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803643"
 ---
 # <a name="debugging-a-processing-stall"></a>调试处理停滞问题
 

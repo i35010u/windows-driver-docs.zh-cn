@@ -1,17 +1,16 @@
 ---
 title: COPP 视频微型端口驱动程序序列启动模板代码
 description: COPP 视频微型端口驱动程序序列启动模板代码
-ms.assetid: f1fc0d03-43f6-44a0-b911-1ca473e4e701
 keywords:
 - 序列启动 WDK COPP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fb5c9294e1b38975e75bb8c49c9328a38faf6de6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 431d29a9b5376865639b117ca383ef96b16195b1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331327"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96804179"
 ---
 # <a name="copp-video-miniport-driver-sequence-start-template-code"></a>COPP 视频微型端口驱动程序序列启动模板代码
 
@@ -19,9 +18,9 @@ ms.locfileid: "63331327"
 ## <span id="ddk_copp_video_miniport_driver_sequence_start_template_code_gg"></span><span id="DDK_COPP_VIDEO_MINIPORT_DRIVER_SEQUENCE_START_TEMPLATE_CODE_GG"></span>
 
 
-本部分仅适用于 Windows Server 2003 SP1 和更高版本，和 Windows XP SP2 及更高版本。
+本部分仅适用于 Windows Server 2003 SP1 及更高版本以及 Windows XP SP2 及更高版本。
 
-下面的示例代码用于将当前的视频会话设置为受保护模式 COPP DirectX VA 设备对象。
+使用以下示例代码将当前视频会话设置为 COPP DirectX VA 设备对象的保护模式。
 
 ```cpp
 VP_STATUS

@@ -1,7 +1,6 @@
 ---
 title: KSCATEGORY_NETWORK
 description: KSCATEGORY_NETWORK
-ms.assetid: 8112f828-e215-433a-9749-1ba965a97700
 keywords:
 - KSCATEGORY_NETWORK 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 058f5dea2ccca9a1291dc8d00142a687ddc20351
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 70d483f1518718a2b2399c853f290386f471f419
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89095685"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96805457"
 ---
 # <a name="kscategory_network"></a>KSCATEGORY_NETWORK
 

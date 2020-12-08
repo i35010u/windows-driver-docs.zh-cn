@@ -1,18 +1,17 @@
 ---
 title: 与智能卡驱动程序库的交互
 description: 与智能卡驱动程序库的交互
-ms.assetid: 44cf41f4-bbff-4193-afad-6d4106ce50c3
 keywords:
 - IOCTLs WDK 智能卡
 - 供应商提供的驱动程序 WDK 智能卡，IOCTL 请求管理
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f2cff599869626d9f409f74a24dea0810c7ee3e1
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: eb041709b3c25bc254fc8a0e2c3179de590771fa
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89384961"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96804929"
 ---
 # <a name="interaction-with-the-smart-card-driver-library"></a>与智能卡驱动程序库的交互
 
@@ -26,7 +25,7 @@ ms.locfileid: "89384961"
 
 以下数字与上图中的数字相对应。 从数字1开始，该图显示了读取器驱动程序必须 (与系统提供的驱动程序库一起完成的步骤，) 才能处理 IOCTL 请求：
 
-1.  读取器驱动程序将所有 IOCTL 请求传递到 [**SmartcardDeviceControl (WDM) **](/previous-versions/ff548939(v=vs.85)) 驱动程序库例程。
+1.  读取器驱动程序将所有 IOCTL 请求传递到 [**SmartcardDeviceControl (WDM)**](/previous-versions/ff548939(v=vs.85)) 驱动程序库例程。
 
 2.  如果读取器驱动程序传递到 [**SmartcardDeviceControl**](/previous-versions/ff548939(v=vs.85)) 的参数不正确，则 **SmartcardDeviceControl** 返回并返回错误消息。 **SmartcardDeviceControl** 返回，但不完成 IOCTL 请求。 在这种情况下，读取器驱动程序必须完成 IOCTL 请求。
 

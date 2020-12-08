@@ -1,19 +1,18 @@
 ---
 title: 移动套餐概述
 description: 移动套餐概述
-ms.assetid: AA432EAE-A89B-4C4C-9539-BC2763091055
 keywords:
 - Windows Mobile 计划移动运营商
 ms.date: 07/31/2019
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
-ms.openlocfilehash: cf7c097aaf9e357afff5fec47460b07dd175d592
-ms.sourcegitcommit: e6247811ff9a07070547af3d89705dae33a2f465
+ms.openlocfilehash: be7043183bcbec80ba441ff5778d68806f1704d3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/23/2020
-ms.locfileid: "91026444"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96805325"
 ---
 # <a name="mobile-plans-overview"></a>移动套餐概述
 

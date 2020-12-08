@@ -1,22 +1,21 @@
 ---
 title: SpbAccelerometer 驱动程序概述
-description: 此示例 UMDF 驱动程序控制 ADXL345 加速感应器连接到简单的外围总线 （存储）。
-ms.assetid: 355C753D-E5E3-4F8B-B16F-45EFA1E741F3
+description: 此示例 UMDF 驱动程序控制连接到 (SPB) 的简单外围总线的 ADXL345 加速感应。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0bfc90e8722d974ac3cd9094771fb1638b46947c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1b4f79ac83aabb8081739459776474714bd5ce18
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380009"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96805095"
 ---
 # <a name="spbaccelerometer-driver-overview"></a>SpbAccelerometer 驱动程序概述
 
 
-此示例 UMDF 驱动程序控制 ADXL345 加速感应器连接到简单的外围总线 （存储）。ADXL345 是可以测量 + /-每个轴的 16 g 低功耗、 3 轴加速计。 此传感器支持 SPI 和 I2C 传输;示例驱动程序支持 I2C 传输。 (从 ADXL345 和多个专题板，你可以订购[SparkFun](https://go.microsoft.com/fwlink/p/?linkid=401463)。)
+此示例 UMDF 驱动程序控制连接到 (SPB) 的简单外围总线的 ADXL345 加速感应。ADXL345 是可以沿每个轴测量 +/-16g 的低功率、3轴、加速度。 此传感器支持 SPI 传输和 I2C 传输;示例驱动程序支持 I2C 传输。  (可以从 [SparkFun](https://go.microsoft.com/fwlink/p/?linkid=401463)订购 ADXL345 和专题讨论板。 ) 
 
-即使您的系统不支持此传感器，您可以集成其他设备通过 I2C 作为参考使用示例驱动程序。
+即使你的系统不支持此传感器，你也可以使用该示例驱动程序作为参考来通过 I2C 集成其他设备。
 
  
 

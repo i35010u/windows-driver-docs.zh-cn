@@ -1,7 +1,6 @@
 ---
 title: 'Init \_ RegisterSG rule (ndis) '
 description: Init \_ RegisterSG 规则指定，如果在初始化过程中出现问题或在停止微型端口驱动程序的过程中出现问题，则在初始化期间 (SG) 的分散收集列表的注册必须撤消。如果在 MiniportInitializeEx 期间至少调用了一次 NdisMRegisterScatterGatherDma，则 NdisMDeregisterScatterGatherDma 函数应在 MiniportHaltEx 中至少调用一次。
-ms.assetid: c4d00be1-b44b-4769-bbe6-6128a742d088
 ms.date: 05/21/2018
 keywords:
 - 'Init_RegisterSG 规则 (ndis) '
@@ -12,19 +11,19 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 8976d44a697740e3db98284148637d99b8d1a148
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: c73201873a4c00cf09699d815620c4b8040bc182
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105318"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96804241"
 ---
 # <a name="init_registersg-rule-ndis"></a>Init \_ RegisterSG rule (ndis) 
 
 
 Init \_ RegisterSG 规则指定，如果在初始化过程中出现问题或在停止微型端口驱动程序的过程中出现问题，则在初始化期间 (SG) 的分散收集列表的注册必须撤消。
 
-如果在**MiniportInitializeEx**期间至少调用了一次**NdisMRegisterScatterGatherDma** ，则**NdisMDeregisterScatterGatherDma**函数应在**MiniportHaltEx**中至少调用一次。
+如果在 **MiniportInitializeEx** 期间至少调用了一次 **NdisMRegisterScatterGatherDma** ，则 **NdisMDeregisterScatterGatherDma** 函数应在 **MiniportHaltEx** 中至少调用一次。
 
 **驱动程序模型： NDIS**
 

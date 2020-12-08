@@ -1,7 +1,6 @@
 ---
 title: 为 SAN 服务提供程序创建代理驱动程序
 description: 为 SAN 服务提供程序创建代理驱动程序
-ms.assetid: 350c21a3-98e3-48a2-8403-68de97314933
 keywords:
 - Windows 套接字直接 WDK，代理驱动程序
 - 代理驱动程序 WDK San
@@ -11,12 +10,12 @@ keywords:
 - SAN 服务提供商 WDK，代理驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1655feb54492e801cf9489f6f6984912e065b80b
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 9db5c9457d5821059d7f1e94801b1c0ad492d38c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89217682"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803529"
 ---
 # <a name="creating-a-proxy-driver-for-a-san-service-provider"></a>为 SAN 服务提供程序创建代理驱动程序
 

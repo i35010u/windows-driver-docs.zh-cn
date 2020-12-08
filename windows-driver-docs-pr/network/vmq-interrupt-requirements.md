@@ -1,22 +1,21 @@
 ---
 title: VMQ 中断要求
 description: VMQ 中断要求
-ms.assetid: 7ECC9031-D41B-4664-963D-F1C20B297B7C
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3c12f34507238eca0b6b0c2067f04d674b8b316b
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 45d89d3f018c2ef127891596a6064a571f373bb4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89216904"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96805117"
 ---
 # <a name="vmq-interrupt-requirements"></a>VMQ 中断要求
 
 
 支持虚拟机队列 (VMQ) 功能的微型端口驱动程序还必须支持以下中断分配要求：
 
--   微型端口驱动程序必须支持 MSI-X。 驱动程序必须在[**ndis \_ 接收 \_ 筛选器 \_ 功能**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_capabilities)结构的**SupportedQueueProperties**成员中设置**ndis \_ 接收 \_ 筛选器 \_ MSI \_ X \_ 支持**的标志。
+-   微型端口驱动程序必须支持 MSI-X。 驱动程序必须在 [**ndis \_ 接收 \_ 筛选器 \_ 功能**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_capabilities)结构的 **SupportedQueueProperties** 成员中设置 **ndis \_ 接收 \_ 筛选器 \_ MSI \_ X \_ 支持** 的标志。
 
     驱动程序在 [**NDIS \_ 微型端口 \_ 适配器 \_ 硬件 \_ 协助 \_ 属性**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_adapter_hardware_assist_attributes) 结构中返回此结构，驱动程序在其对 [**NdisMSetMiniportAttributes**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsetminiportattributes) 函数的调用中使用。
 

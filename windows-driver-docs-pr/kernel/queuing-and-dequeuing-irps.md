@@ -1,7 +1,6 @@
 ---
 title: 排队和取消排队 IRP
 description: 排队和取消排队 IRP
-ms.assetid: 736107bf-4790-4562-8785-c37fbbed03d3
 keywords:
 - Irp WDK 内核，队列
 - 队列 Irp
@@ -15,12 +14,12 @@ keywords:
 - 取消安全 IRP 队列 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 130fea5da3632965f1d20ddf9a2fc0b01236ab91
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: a1a99d85c8ec2a80dd4a8282c7a2886abd7afac8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89186225"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96805371"
 ---
 # <a name="queuing-and-dequeuing-irps"></a>排队和取消排队 IRP
 
@@ -32,7 +31,7 @@ ms.locfileid: "89186225"
 
 因此，最低级别的驱动程序需要以下项之一：
 
--   [*StartIo*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_startio)例程（i/o 管理器调用此例程来启动对 irp 的 i/o 操作，驱动程序已排入系统提供的 irp 队列 (参阅[**IoStartPacket**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-iostartpacket)) 。
+-   [*StartIo*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_startio)例程（i/o 管理器调用此例程来启动对 irp 的 i/o 操作，驱动程序已排入系统提供的 irp 队列 (参阅 [**IoStartPacket**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-iostartpacket)) 。
 
 -   内部 IRP 排队和出列机制，驱动程序使用该机制来管理比能够满足其速度更快的 Irp。 驱动程序可以使用设备队列、联锁队列或取消安全队列。 有关详细信息，请参阅 [驱动程序管理的 IRP 队列](driver-managed-irp-queues.md)。
 
@@ -62,7 +61,7 @@ ms.locfileid: "89186225"
 
 实现其自己的队列结构的驱动程序必须确保对队列的访问是同步的，并且取消的 Irp 将从队列中删除。 若要使此任务更简单地用于驱动程序编写器，请取消安全 IRP 队列提供可在实现 IRP 队列时使用的标准框架。 有关详细信息，请参阅 [取消安全 IRP 队列](cancel-safe-irp-queues.md) 。 这是实现 IRP 队列的首选方法。
 
-驱动程序还可以完全实现 IRP 队列同步和取消逻辑。 例如，驱动程序可以使用联锁队列。 驱动程序的调度例程将 Irp 插入到联锁队列，驱动程序创建的线程或驱动程序的工作线程回调会通过调用 **ExInterlocked*Xxx*列表** 支持例程来删除它们。
+驱动程序还可以完全实现 IRP 队列同步和取消逻辑。 例如，驱动程序可以使用联锁队列。 驱动程序的调度例程将 Irp 插入到联锁队列，驱动程序创建的线程或驱动程序的工作线程回调会通过调用 **ExInterlocked *Xxx* 列表** 支持例程来删除它们。
 
 例如，系统软盘控制器驱动程序使用联锁队列。 其专用设备线程处理的 Irp 处理方式与其他设备驱动程序的 *StartIo* 例程处理相同，并处理其他设备驱动程序的 [*DpcForIsr*](/windows-hardware/drivers/ddi/wdm/nc-wdm-io_dpc_routine) 例程所执行的一些相同的 irp 处理。
 

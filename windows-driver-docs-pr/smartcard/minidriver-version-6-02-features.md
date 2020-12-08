@@ -1,15 +1,14 @@
 ---
 title: 微型驱动程序版本 6.02 功能
 description: 微型驱动程序版本 6.02 功能
-ms.assetid: 8BF4B63B-B723-4899-BCAF-7826FAFF2155
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 62f20133c4099f83cf08c7daba8ce31f3d5067a5
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 15d009d70ad4537d3b11778d1da8be7980a459e9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89383511"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96804903"
 ---
 # <a name="minidriver-version-602-features"></a>微型驱动程序版本 6.02 功能
 
@@ -40,11 +39,11 @@ ms.locfileid: "89383511"
 -   [**CardDeauthenticateEx**](/previous-versions/dn468713(v=vs.85))
 -   [**CardChangeAuthenticatorEx**](/previous-versions/dn468706(v=vs.85))
 
-**重要提示**   并非所有预配系统都支持多个 Pin;因此，在可通过卡预配系统将 Pin 应用于字段时，必须小心谨慎。
+**重要提示**  并非所有预配系统都支持多个 Pin;因此，在可通过卡预配系统将 Pin 应用于字段时，必须小心谨慎。
 
  
 
-## <a name="span-idsupport_for_read-only_cardsspanspan-idsupport_for_read-only_cardsspanspan-idsupport_for_read-only_cardsspansupport-for-read-only-cards"></a><span id="Support_for_Read-Only_Cards"></span><span id="support_for_read-only_cards"></span><span id="SUPPORT_FOR_READ-ONLY_CARDS"></span>支持只读卡
+## <a name="span-idsupport_for_read-only_cardsspanspan-idsupport_for_read-only_cardsspanspan-idsupport_for_read-only_cardsspansupport-for-read-only-cards"></a><span id="Support_for_Read-Only_Cards"></span><span id="support_for_read-only_cards"></span><span id="SUPPORT_FOR_READ-ONLY_CARDS"></span>支持 Read-Only 卡
 
 
 安全 PIN 通道是 Windows Vista Service Pack 1 (SP1) 中的一项功能，它启用安全 PIN 提示，然后在 Windows 与智能卡之间建立安全通道以进行 PIN 身份验证。 安全 PIN 通道保护卡 PIN 不受窃听，同时通过操作系统组件进行传播，并传输到卡。

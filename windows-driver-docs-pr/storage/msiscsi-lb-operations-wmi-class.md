@@ -1,15 +1,14 @@
 ---
 title: MSiSCSI \_ LB \_ 操作 WMI 类
 description: MSiSCSI \_ LB \_ 操作 WMI 类
-ms.assetid: 75c93040-52bf-4e9c-a503-a87f382ee1c9
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: f8674616b86f6029ce3f96e6533637e8877e7c01
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 590bb2838053d431fb2288bf4e29eea0ea93ecf4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89188925"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96804425"
 ---
 # <a name="msiscsi_lb_operations-wmi-class"></a>MSiSCSI \_ LB \_ 操作 WMI 类
 

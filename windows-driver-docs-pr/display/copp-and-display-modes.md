@@ -1,7 +1,6 @@
 ---
 title: COPP 和显示模式
 description: COPP 和显示模式
-ms.assetid: e7da753d-0ccd-428e-b51f-3fd0a19674e8
 keywords:
 - 复制保护 WDK COPP，显示模式
 - 视频副本保护 WDK COPP，显示模式
@@ -10,19 +9,19 @@ keywords:
 - 显示模式 WDK COPP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cd0f4a46d58e01ce6e83dff6d943615cf3a2560c
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 02e8828610b0ca4b0c0e09c9eba9620d06a9b46c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89064894"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96804199"
 ---
 # <a name="copp-and-display-modes"></a>COPP 和显示模式
 
 
 本部分仅适用于 Windows Server 2003 SP1 及更高版本以及 Windows XP SP2 及更高版本。
 
-无论当前使用何种显示模式，视频微型端口驱动程序都应报告与 DirectX VA COPP 设备关联的物理连接器支持的所有保护类型。 当视频微型端口驱动程序收到对其[*COPPQueryStatus*](./coppquerystatus.md)函数的调用时，该驱动程序会报告支持的保护类型 \_ 。 [** \_ **](/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_coppstatusinput) **guidStatusRequestID** 有关详细信息，请参阅 [COPP Status](copp-status.md)。
+无论当前使用何种显示模式，视频微型端口驱动程序都应报告与 DirectX VA COPP 设备关联的物理连接器支持的所有保护类型。 当视频微型端口驱动程序收到对其 [*COPPQueryStatus*](./coppquerystatus.md)函数的调用时，该驱动程序会报告支持的保护类型 \_ 。 [**\_**](/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_coppstatusinput) **guidStatusRequestID** 有关详细信息，请参阅 [COPP Status](copp-status.md)。
 
 如果对于特定保护类型，当前解决方法过高，则当调用视频微型端口驱动程序的 [*COPPCommand*](./coppcommand.md) 函数来为该保护类型设置保护级别时，驱动程序将返回错误。 以下方案举例说明了驱动程序的 *COPPCommand* 函数应何时返回 success 或错误：
 

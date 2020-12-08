@@ -1,15 +1,14 @@
 ---
 title: ServiceName
 description: ServiceName
-ms.assetid: 50a3c985-c798-4287-87c6-ffa9a3c2058a
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cc92a417f04aece774500e3f6ce55c48bd254762
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: a77bda6d798863ee5d9f007f43afb71fefa913c3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89403182"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803535"
 ---
 # <a name="servicename"></a>ServiceName
 
@@ -52,7 +51,7 @@ ms.locfileid: "89403182"
 <thead>
 <tr class="header">
 <th>元素</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
