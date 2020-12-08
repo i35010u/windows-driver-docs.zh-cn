@@ -1,23 +1,22 @@
 ---
 title: CleanupPort
 description: CleanupPort
-ms.assetid: c24a9f09-3fac-4fe7-a4d2-aeb9f818fa54
 keywords:
 - WSDMON 端口监视 WDK，CleanupPort 命令
 - CleanupPort
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 35103b9f47f1e4e9588aa6843c4a0ff12ecbd72a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e4f7ff112c3c7ea78042284ef2962eead33a093d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331191"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96797725"
 ---
 # <a name="cleanupport"></a>CleanupPort
 
 
-若要删除指定的端口，如果它不用于任何打印机在系统中，可以调用 CleanupPort 命令。
+如果指定的端口未用于系统中的任何打印机，则可以调用 CleanupPort 命令来删除该端口。
 
  
 

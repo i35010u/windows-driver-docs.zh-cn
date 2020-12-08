@@ -1,26 +1,25 @@
 ---
 title: 自动检测 PPD 的双工单元
 description: 自动检测 PPD 的双工单元
-ms.assetid: bbecceb1-ba1d-4d2d-9a7b-e43f49345ca2
 keywords:
-- 自动检测双面打印单元 WDK 打印机自动配置
-- PPD 文件 WDK 自动配置，正在自动检测双面打印单元
-- 框中自动配置支持 WDK 打印机，自动检测双面打印单元
-- 检测双面打印单元
-- 双面打印单元 WDK 打印机自动配置
+- 自动检测双工单元 WDK 打印机自动配置
+- PPD 文件 WDK 自动配置，自动检测双工单元
+- 内置自动配置支持 WDK 打印机，自动检测双工单元
+- 检测双工单元
+- 双工单元 WDK 打印机自动配置
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d808c550e226e0fc0eeb236aca9d0df79867936e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7e920f3472629b27fe72c6f2f2308d669b3ed15b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63345945"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96797857"
 ---
 # <a name="autodetect-the-duplex-unit-for-ppd"></a>自动检测 PPD 的双工单元
 
 
-以下两个示例显示一个可能的双面打印单元功能之间的映射中 PPD 文件和对应的 GDL 文件中所述。 此第一个示例是 PPD 文件的摘录。
+以下两个示例显示了双工单元功能之间的一种可能的映射，如 PPD 文件中所述，以及它在 GDL 文件中的对应项。 此第一个示例摘自 PPD 文件。
 
 ```PPD
 *OpenUI *DuplexUnit: Boolean
@@ -37,7 +36,7 @@ ms.locfileid: "63345945"
 *CloseUI: *DuplexUnit
 ```
 
-下一个示例是一段摘录 GDL 文件，并显示对应于前面的示例中的双面打印单元功能 DuplexUnit 功能定义。
+下一个示例摘自 GDL 文件，并显示与上一示例中的双工单元功能对应的 DuplexUnit 功能定义。
 
 ```GDL
 *Feature: DuplexUnit

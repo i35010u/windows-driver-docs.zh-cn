@@ -1,19 +1,18 @@
 ---
 title: 双向通信
 description: 双向通信
-ms.assetid: c88f5f43-4a14-4f63-9f17-b6680fc0d645
 keywords:
 - 打印机配置 WDK，双向通信
 - 双向通信 WDK 打印
 - 双向通信 WDK 打印
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 07d32ba37ae42ee73e2999d15b25e34abaef7a91
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 2528c4eac7b3d248369297743148151fa2c65f13
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89218268"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96797799"
 ---
 # <a name="bidirectional-communication"></a>双向通信
 
@@ -30,7 +29,7 @@ ms.locfileid: "89218268"
 
 有关打印后台处理程序如何支持双向通信的说明，请参阅 [添加双向通信](adding-bidirectional-communication.md) 和 [后台处理程序通知](spooler-notification.md)。
 
-## <a name="in-this-section"></a>本节内容
+## <a name="in-this-section"></a>在本节中
 
 
 [双向通信架构](bidirectional-communication-schema.md)

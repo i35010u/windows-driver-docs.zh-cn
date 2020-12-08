@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ AUDIOMODULE \_ 通知 \_ 设备 \_ ID
 description: KSPROPERTY \_ AUDIOMODULE \_ 通知 \_ 设备 \_ ID 检索音频模块通知设备标识符 GUID。
-ms.assetid: CD9C5FCD-FB2A-4B21-A15E-BA520C3311A7
 keywords:
 - KSPROPERTY_AUDIOMODULE_NOTIFICATION_DEVICE_ID 音频设备
 topic_type:
@@ -12,17 +11,17 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4d34b4b67cc5de451812f4599acd31e4d3b487be
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 77ba562e3a2305d08cf7a7a67b2d7eeedcdb2fac
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89209963"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96798921"
 ---
 # <a name="ksproperty_audiomodule_notification_device_id"></a>KSPROPERTY \_ AUDIOMODULE \_ 通知 \_ 设备 \_ ID
 
 
-**KSPROPERTY \_ AUDIOMODULE \_ 通知 \_ 设备 \_ ID**检索音频模块通知设备标识符 GUID。
+**KSPROPERTY \_ AUDIOMODULE \_ 通知 \_ 设备 \_ ID** 检索音频模块通知设备标识符 GUID。
 
 ### <a name="span-idusage_summary_tablespanspan-idusage_summary_tablespanspan-idusage_summary_tablespanusage-summary-table"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用情况摘要表
 
@@ -92,7 +91,7 @@ ms.locfileid: "89209963"
 </tr>
 <tr class="odd">
 <td align="left"><p>版本</p></td>
-<td align="left"><p>Windows 10 版本1703</p></td>
+<td align="left"><p>Windows 10 版本 1703</p></td>
 </tr>
 </tbody>
 </table>

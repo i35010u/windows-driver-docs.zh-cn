@@ -1,7 +1,6 @@
 ---
 title: 添加 NIC
 description: 添加 NIC
-ms.assetid: 3da89acc-5504-4362-b148-e8228795721f
 keywords:
 - Nic WDK 网络，添加
 - 网络接口卡 WDK 网络，添加
@@ -9,12 +8,12 @@ keywords:
 - 添加 Nic WDK 网络
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b81b9681a5a684fac7a07feb631eaba35fa5d7ca
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 79abac6747426eb7da78a1b97ff0ac5440f75c05
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89210787"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96799427"
 ---
 # <a name="adding-a-nic"></a>添加 NIC
 
@@ -29,9 +28,9 @@ ms.locfileid: "89210787"
 2.  小型端口驱动程序从其 **DriverEntry** 函数注册为微型端口驱动程序并执行其他驱动程序初始化。 有关注册为微型端口驱动程序的详细信息，请参阅 [初始化微型端口驱动程序](initializing-a-miniport-driver.md)。
 
 3.  NDIS 在微型端口驱动程序的驱动程序对象中填充以下项：
-    -   *AddDevice*例程的入口点。
+    -   *AddDevice* 例程的入口点。
     -   用于处理 Irp 的 *DispatchXxx* 入口点。
-    -   *卸载*例程的入口点。
+    -   *卸载* 例程的入口点。
 
 4.  PnP 管理器调用 NDIS 的 *AddDevice* 例程。 NDIS 的 *AddDevice* 例程为新添加的 NIC 创建一个功能设备对象 (FDO) ，并将此 FDO 附加到 nic 的设备堆栈。
 

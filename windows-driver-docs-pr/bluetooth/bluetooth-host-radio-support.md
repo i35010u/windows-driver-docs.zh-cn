@@ -1,15 +1,14 @@
 ---
 title: 蓝牙主机无线电支持
-ms.assetid: 7AA53797-F8DC-4FA6-9A19-E20289AF50CA
 description: 提供有关 Windows 中的蓝牙主机无线电支持的问题和解答列表
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 648404b2c0c39e3e370b2c7b2edd752b36affc38
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 7596a71843e2562249c3522f75622ab60d142540
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91733441"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96798577"
 ---
 # <a name="bluetooth-host-radio-support"></a>蓝牙主机无线电支持
 
@@ -33,7 +32,7 @@ ms.locfileid: "91733441"
 2. 若要运行更新驱动程序软件向导，请右键单击蓝牙单选项目，然后选择 " **更新驱动程序软件**"。
 3. 使用向导强制安装蓝牙堆栈。
 
-有关此过程的详细说明，请参阅 [附录 a：如何在 Windows Vista 中的新硬件上安装内置的蓝牙驱动程序](bluetooth-faq--appendix-a.md)。
+有关此过程的详细说明，请参阅 [附录 a：如何在 Windows Vista 中的新硬件上安装 In-Box Bluetooth 驱动程序](bluetooth-faq--appendix-a.md)。
 
 ## <a name="ensure-in-box-support-for-bluetooth-radios"></a>确保对蓝牙无线电收发器提供内置支持
 
@@ -86,7 +85,7 @@ Windows 附带的蓝牙堆栈只为某些蓝牙配置文件提供内置支持。
 
 下表列出了 Windows 支持的 Bth 中的配置文件。
 
-|服务 ID|说明|
+|服务 ID|描述|
 |----|----|
 |{00001101-0000-1000-8000-00805f9b34fb}|SPP|
 |{00001103-0000-1000-8000-00805f9b34fb}|DUN

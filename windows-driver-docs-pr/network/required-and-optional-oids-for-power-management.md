@@ -1,7 +1,6 @@
 ---
 title: 电源管理的必需和可选 OID
 description: 电源管理的必需和可选 OID
-ms.assetid: 147e35b2-dfa5-4238-82e6-5c48ffa30af5
 keywords:
 - Oid WDK 网络，电源管理
 - 唤醒功能，WDK 网络，Oid
@@ -9,12 +8,12 @@ keywords:
 - 对象标识符 WDK 网络
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: aa2c71c02f34a728ac18f38e7ce6a39111d91fbd
-ms.sourcegitcommit: 366a15d68eb58d01a8ca6de7b982f62ac8b7deaf
+ms.openlocfilehash: 24e56852db4916ea445741f97241f5c0661cab0c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/19/2020
-ms.locfileid: "90811887"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96797915"
 ---
 # <a name="required-and-optional-oids-for-power-management"></a>电源管理的必需和可选 OID
 
@@ -46,9 +45,9 @@ ms.locfileid: "90811887"
 
     此 OID 指示网络适配器必须转换为指示的设备电源状态。 在驱动程序返回 NDIS 状态成功之前，微型端口驱动程序必须将网络适配器设置为指定的状态 \_ \_ 。 小型端口驱动程序必须始终为 \_ \_ 响应此 OID 返回 NDIS 状态成功。 如果 OID \_ PNP \_ SET \_ POWER 将网络适配器设置为工作电源状态，而微型端口驱动程序未能通过此 OID，NDIS 会假定设备处于不可恢复的状态。
 
-若要支持网络唤醒事件，微型端口驱动程序还必须支持 [OID \_ PNP \_ ENABLE \_ 唤醒 \_ ](./oid-pnp-enable-wake-up.md) OID。 协议驱动程序和 NDIS 都使用此 OID 启用网络适配器的唤醒功能。 有关详细信息，请参阅 [启用唤醒事件](enabling-wake-up-events.md)。
+若要支持网络唤醒事件，微型端口驱动程序还必须支持 [OID \_ PNP \_ ENABLE \_ 唤醒 \_ ](./oid-pnp-enable-wake-up.md) OID。 协议驱动程序和 NDIS 都使用此 OID 启用网络适配器的唤醒功能。 有关详细信息，请参阅 [启用 Wake-Up 事件](enabling-wake-up-events.md)。
 
-若要支持网络唤醒帧 (参阅 [网络唤醒事件](network-wake-up-events.md)) ，微型端口驱动程序还必须支持与唤醒事件相关的以下 oid：
+若要支持网络唤醒帧 (参阅 [网络 Wake-Up 事件](network-wake-up-events.md)) ，微型端口驱动程序还必须支持与唤醒事件相关的以下 oid：
 
 -   [OID \_ PNP \_ 添加 \_ 唤醒 \_ \_ 模式](./oid-pnp-add-wake-up-pattern.md)
 

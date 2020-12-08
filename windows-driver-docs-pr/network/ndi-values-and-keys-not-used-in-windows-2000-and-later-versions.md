@@ -1,27 +1,26 @@
 ---
-title: 不推荐使用的 Ndi 值和键
-description: Ndi 值和 Windows 2000 及更高版本中不推荐使用的密钥
-ms.assetid: 932e1c83-feb6-47a8-bed3-847ee4094b9e
+title: 弃用的 Ndi 值和键
+description: Windows 2000 及更高版本中弃用的 Ndi 值和密钥
 keywords:
-- 添加注册表部分 WDK 网络、 Ndi 值和密钥
+- 添加-注册表--WDK 网络、Ndi 值和密钥
 - Ndi 密钥 WDK 网络
 - Ndi 值 WDK 网络
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 84224a135380761c23db7486004e22568c09da1a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 199ee202242ec18368908aba749ab9ed7e521291
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383609"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96798051"
 ---
-# <a name="deprecated-ndi-values-and-keys"></a>不推荐使用的 Ndi 值和键
+# <a name="deprecated-ndi-values-and-keys"></a>弃用的 Ndi 值和键
 
 
 
 
 
-**重要**  以下**Ndi** Windows 操作系统中不再使用注册表项和值。 如果要从 Windows 95/98/我迁移网络驱动程序，到更高版本的操作系统，请使用这些值。
+**重要提示**  以下 **Ndi** 注册表项和值不再用于 Windows 操作系统。 如果要将网络驱动程序从 Windows 95/98/Me 迁移到更高版本的操作系统，请不要使用这些值。
 
  
 
@@ -35,41 +34,41 @@ ms.locfileid: "63383609"
 
 **InfSelection**
 
-**Ndi\\CardType**
+**Ndi \\ CardType**
 
-**Ndi\\兼容性**
+**Ndi \\ 兼容性**
 
-**Ndi\\DeviceID**
+**Ndi \\ DeviceID**
 
-**Ndi\\**<em>filename</em>\\...
+**Ndi \\**<em>filename</em> \\...
 
-**Ndi\\安装**
+**Ndi \\ 安装**
 
-**Ndi\\InstallInf**
+**Ndi \\ InstallInf**
 
-**Ndi\\Interfaces\\DefLower**
+**Ndi \\ 接口 \\ DefLower**
 
-**Ndi\\Interfaces\\DefUpper**
+**Ndi \\ 接口 \\ DefUpper**
 
-**Ndi\\Interfaces\\ExcludeAny**
+**Ndi \\ 接口 \\ ExcludeAny**
 
-**Ndi\\Interfaces\\RequireAny**
+**Ndi \\ 接口 \\ RequireAny**
 
-**Ndi\\NdiInstaller**
+**Ndi \\ NdiInstaller**
 
-**Ndi\\**<em>param-key-name</em>**\\resc**
+**Ndi \\**<em>param-名称</em>**\\ resc**
 
-**Ndi\\Params\\**<em>param-key-name</em>**\\flag**
+**Ndi \\Params \\**<em>参数键名称</em>**\\ 标志**
 
-**Ndi\\Params\\**<em>param-key-name</em>**\\location**
+**Ndi \\Params \\**<em>参数-名称</em>**\\ 位置**
 
-**Ndi\\Remove**
+**Ndi \\ 删除**
 
-**NDIS**\\...
+**NDIS** \\...
 
 **StaticVxD**
 
-因为 Windows 不支持**Ndi\\**<em>参数密钥名称</em>**\\resc**并**Ndi\\Params\\**<em>参数密钥名称</em>**\\标志**的值，用户不能指定适配器资源通过**高级**属性页。
+由于 Windows 不支持 **Ndi \\**<em>param-name</em>**\\ resc** 和 **Ndi \\ \\ Params**<em>param-name</em>**\\ 标志** 值，用户无法通过 "**高级** 属性" 页指定适配器资源。
 
  
 

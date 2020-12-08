@@ -1,20 +1,19 @@
 ---
 title: 虚拟环绕
 description: 虚拟环绕
-ms.assetid: be68a531-6691-4db1-ad85-d56e77ee82e2
 ms.date: 11/07/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 49077027100bb4aa273d46ee5b97df9bed4f82ca
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c0007693517f568beceddd54b8e40daa807d4c85
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328505"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96798825"
 ---
 # <a name="virtual-surround"></a>虚拟环绕
 
 
-虚拟环绕使用简单的数字方法来合并两个通道的多渠道的信号。 这是允许要还原到原始多渠道信号，同时使用大多数现代音频接收器中可用的 Pro 逻辑解码器的转换后的信号的方式。 虚拟外侧代码非常适用于有两个通道的声卡和接收方，具有环绕声音增强机制的系统。
+虚环绕使用简单数字方法将多通道信号合并为两个通道。 这是通过使用大多数新式音频接收器提供的 Pro 逻辑解码器，使转换后的信号恢复为原始多通道信号的方式。 对于具有双通道声卡的系统和具有环绕声增强机制的接收器，虚拟环绕是理想之选。
 
  
 

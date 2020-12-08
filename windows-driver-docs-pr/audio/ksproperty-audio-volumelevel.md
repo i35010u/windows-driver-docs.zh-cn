@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ 音频 \_ VOLUMELEVEL
 description: KSPROPERTY \_ AUDIO \_ VOLUMELEVEL 属性指定 (KSNODETYPE volume) 的卷节点中通道的音量级别 \_ 。
-ms.assetid: 5b420c71-fc82-413d-a93d-e8f3408cc8d7
 keywords:
 - KSPROPERTY_AUDIO_VOLUMELEVEL 音频设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6834f5854bde3431bb383655a25ab2898daf12f1
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 8217d7619e134a45232c234454c0be69c64b4f7c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102036"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96798977"
 ---
 # <a name="ksproperty_audio_volumelevel"></a>KSPROPERTY \_ 音频 \_ VOLUMELEVEL
 
@@ -70,7 +69,7 @@ KSPROPERTY \_ AUDIO \_ VOLUMELEVEL 属性指定 ([**KSNODETYPE \_ volume**](ksno
 + 2147483647 为 + 32767.99998474 分贝 (获取) 。
 
 > [!NOTE]
-> 分贝范围由从-2147483648 到 + 2147483647 的整数值表示，其中此刻度的分辨率为1/65536 分贝。
+> 分贝范围由从-2147483648 到 + 2147483647 的整数值表示，其中此刻度的分辨率为1/65536 分贝。
 
  
 

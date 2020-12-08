@@ -1,22 +1,21 @@
 ---
 title: WDI_TLV_BSS_ENTRY_PHY_INFO
 description: WDI_TLV_BSS_ENTRY_PHY_INFO 是未使用的 TLV。
-ms.assetid: BF96172C-BAD1-4A48-A680-4956430DB5D1
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_BSS_ENTRY_PHY_INFO 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: e219c479bb5d8401cd7cd0e08c0cdc9983f075da
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 98808352d3f2c25760ebd4941908ffe20c1b7ab1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63347280"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96799333"
 ---
-# <a name="wditlvbssentryphyinfo"></a>WDI\_TLV\_BSS\_条目\_PHY\_信息
+# <a name="wdi_tlv_bss_entry_phy_info"></a>WDI \_ TLV \_ BSS \_ 项 \_ PHY \_ 信息
 
 
-WDI\_TLV\_BSS\_条目\_PHY\_信息是未使用的 TLV。
+WDI \_ tlv \_ BSS \_ 项 \_ PHY \_ 信息是未使用的 tlv。
 
 <a name="requirements"></a>要求
 ------------
@@ -33,10 +32,10 @@ WDI\_TLV\_BSS\_条目\_PHY\_信息是未使用的 TLV。
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
-<td><p>Windows Server 2016</p></td>
+<td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Wditypes.hpp</td>
 </tr>
 </tbody>

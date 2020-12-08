@@ -1,16 +1,15 @@
 ---
 title: OID_SRIOV_READ_VF_CONFIG_BLOCK
 description: 过量驱动程序发出对象标识符 (OID) 方法请求 OID_SRIOV_READ_VF_CONFIG_BLOCK 从指定的 PCI Express (PCIe) 虚拟函数 (VF) 配置块中读取数据。
-ms.assetid: A7AC7A18-5DA2-4EE8-B635-04616ABFE08C
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_SRIOV_READ_VF_CONFIG_BLOCK 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: d2a3ee5e3da4de087cca914110b37a9ed7a1e076
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: a7d4d9c081932ad41230f9cc39bbb28c826c9d87
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102416"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96799360"
 ---
 # <a name="oid_sriov_read_vf_config_block"></a>OID \_ SRIOV \_ 读取 \_ VF \_ 配置 \_ 块
 
@@ -19,18 +18,18 @@ ms.locfileid: "90102416"
 
 过量驱动程序将此 OID 方法请求发送到网络适配器的 PCIe 物理功能 (PF) 的微型端口驱动程序。 对于支持单个根 i/o 虚拟化 (SR-IOV) 接口的 PF 小型端口驱动程序，需要此 OID 方法请求。
 
-[**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的**InformationBuffer**成员包含指向调用方分配的缓冲区的指针。 此缓冲区的格式设置为包含以下内容：
+[**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的 **InformationBuffer** 成员包含指向调用方分配的缓冲区的指针。 此缓冲区的格式设置为包含以下内容：
 
 -   [**NDIS \_ SRIOV \_ 读取 \_ vf \_ 配置 \_ 块 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_read_vf_config_block_parameters)结构，其中包含从该结构开始到缓冲区内的某个位置的偏移量（以字节为单位），其中包含从 VF 配置块中读取的数据。
 
 -   要从指定的 VF 配置块中读取的数据的额外缓冲区空间。
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 VF 配置块用于 backchannel 和 VF 微型端口驱动程序之间的通信。 IHV 可以为微型端口驱动程序定义一个或多个 VF 配置块。 每个 VF 配置块都有一个 IHV 定义的格式、长度和块 ID。
 
-**注意**   每个 VF 配置块中的数据仅用于 PF 和 VF 微型端口驱动程序。
+**注意**  每个 VF 配置块中的数据仅用于 PF 和 VF 微型端口驱动程序。
 
  
 
@@ -46,9 +45,9 @@ VF 配置块用于 backchannel 和 VF 微型端口驱动程序之间的通信。
 
 当它处理 OID \_ SRIOV READ VF CONFIG 块的 oid 方法请求时 \_ \_ \_ \_ ，PF 微型端口驱动程序必须遵循以下准则：
 
--   PF 微型端口驱动程序必须验证由[**NDIS \_ SRIOV \_ READ \_ VF \_ CONFIG \_ 块 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_read_vf_config_block_parameters)结构的**VFId**成员指定的 VF 是否包含之前已分配的资源。 在 oid [ \_ NIC \_ 交换机 \_ 分配 \_ vf](oid-nic-switch-allocate-vf.md)的 oid 方法请求期间，PF 微型端口驱动程序为 VF 分配资源。 如果没有为指定的 VF 分配资源，则驱动程序必须使 OID 请求失败。
+-   PF 微型端口驱动程序必须验证由 [**NDIS \_ SRIOV \_ READ \_ VF \_ CONFIG \_ 块 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_read_vf_config_block_parameters)结构的 **VFId** 成员指定的 VF 是否包含之前已分配的资源。 在 oid [ \_ NIC \_ 交换机 \_ 分配 \_ vf](oid-nic-switch-allocate-vf.md)的 oid 方法请求期间，PF 微型端口驱动程序为 VF 分配资源。 如果没有为指定的 VF 分配资源，则驱动程序必须使 OID 请求失败。
 
--   PF 微型端口驱动程序必须验证[**NDIS \_ SRIOV \_ READ \_ VF \_ 配置 \_ 块 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_read_vf_config_block_parameters)结构的**块 id**成员是否指定了有效的 VF 配置块。 否则，驱动程序必须使 OID 请求失败。
+-   PF 微型端口驱动程序必须验证 [**NDIS \_ SRIOV \_ READ \_ VF \_ 配置 \_ 块 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_read_vf_config_block_parameters)结构的 **块 id** 成员是否指定了有效的 VF 配置块。 否则，驱动程序必须使 OID 请求失败。
 
 有关 backchannel) 接口 (的单个根 i/o 虚拟化内的通信的详细信息，请参阅 [SR-IOV PF/VF Backchannel 通信](./sr-iov-pf-vf-backchannel-communication.md)。
 

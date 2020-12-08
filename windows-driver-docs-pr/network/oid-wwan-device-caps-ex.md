@@ -1,25 +1,24 @@
 ---
 title: OID_WWAN_DEVICE_CAPS_EX
 description: OID_WWAN_DEVICE_CAPS_EX 与 OID_WWAN_DEVICE_CAPS 类似但不同。
-ms.assetid: BE664B41-3FE7-4E93-8739-12BD2F0AE5B8
 keywords:
 - OID_WWAN_DEVICE_CAPS_EX，每个执行器 OID，设备功能，例如
 ms.date: 04/04/2019
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: c015c93c01b1b57a8f0ca5c3ef80a85c5e1a5775
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: ef40490cdbd96ca892841d69510425b7586cb260
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89213211"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96797967"
 ---
 # <a name="oid_wwan_device_caps_ex"></a>OID \_ WWAN \_ 设备 \_ CAP \_ EX
 
 
 OID \_ wwan \_ 设备 \_ Cap \_ 类似于 [oid \_ wwan \_ 设备 \_ cap](oid-wwan-device-caps.md) ，但它是每个执行器 oid，这与 OID_WWAN_DEVICE_CAPS 这是一个每设备 oid 的情况不同。 此 OID 用于指示硬件的设备/执行器功能，包括对扩展可选功能（如 LTE 附加 APN 配置）的功能。
 
-微型端口驱动程序必须异步处理查询请求，最初 \_ 返回 \_ 原始请求所需的 ndis 状态指示，之后再 \_ 发送 [**ndis \_ 状态 \_ WWAN \_ 设备 \_ cap \_ **](./ndis-status-wwan-device-caps-ex.md) （包含 [**Ndis \_ wwan \_ 设备 \_ \_ **](/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_device_caps_ex) cap ex 结构，后者又包含一个 [**wwan \_ 设备 \_ cap \_ ex**](/windows-hardware/drivers/ddi/wwan/ns-wwan-_wwan_device_caps_ex) 结构）来提供有关设备功能的信息。
+微型端口驱动程序必须异步处理查询请求，最初 \_ 返回 \_ 原始请求所需的 ndis 状态指示，之后再 \_ 发送 [**ndis \_ 状态 \_ WWAN \_ 设备 \_ cap \_**](./ndis-status-wwan-device-caps-ex.md) （包含 [**Ndis \_ wwan \_ 设备 \_ \_**](/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_device_caps_ex) cap ex 结构，后者又包含一个 [**wwan \_ 设备 \_ cap \_ ex**](/windows-hardware/drivers/ddi/wwan/ns-wwan-_wwan_device_caps_ex) 结构）来提供有关设备功能的信息。
 
 下图演示了一个查询请求。
 
@@ -46,9 +45,9 @@ Windows 10 版本1703之前的 Windows 版本仍可使用现有的 [OID \_ WWAN 
 
 从 Windows 10 1903 版开始，OID_WWAN_DEVICE_CAPS_EX 已升级到修订版本2。 如果微型端口驱动程序支持5G，微型端口驱动程序必须使用此 OID 的修订版本2和其中包含的数据结构。
 
-当主机使用此 OID 查询功能时，微型端口驱动程序必须检查底层硬件是否支持5G 手机功能。 如果是这样，微型端口驱动程序会根据硬件功能在[**WWAN_DEVICE_CAPS_EX**](/windows-hardware/drivers/ddi/wwan/ns-wwan-_wwan_device_caps_ex)结构的**WwanDataClass**字段中设置位掩码。
+当主机使用此 OID 查询功能时，微型端口驱动程序必须检查底层硬件是否支持5G 手机功能。 如果是这样，微型端口驱动程序会根据硬件功能在 [**WWAN_DEVICE_CAPS_EX**](/windows-hardware/drivers/ddi/wwan/ns-wwan-_wwan_device_caps_ex)结构的 **WwanDataClass** 字段中设置位掩码。
 
-此外，在**WWAN_DEVICE_CAPS_EX**结构的 " **WwanOptionalServiceCaps** " 字段中，定义了一个新的可选服务位，它包含所有新5G 相关扩展的支持。
+此外，在 **WWAN_DEVICE_CAPS_EX** 结构的 " **WwanOptionalServiceCaps** " 字段中，定义了一个新的可选服务位，它包含所有新5G 相关扩展的支持。
 
 有关5G 数据类支持的详细信息，请参阅 [MB 5G 数据类支持](mb-5g-data-class-support.md)。
 
@@ -63,7 +62,7 @@ Windows 10 版本1703之前的 Windows 版本仍可使用现有的 [OID \_ WWAN 
 <tbody>
 <tr class="odd">
 <td><p>版本</p></td>
-<td><p>Windows 10 版本1703</p></td>
+<td><p>Windows 10 版本 1703</p></td>
 </tr>
 <tr class="even">
 <td><p>标头</p></td>
@@ -72,7 +71,7 @@ Windows 10 版本1703之前的 Windows 版本仍可使用现有的 [OID \_ WWAN 
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [OID \_ WWAN \_ 设备 \_ CAP](oid-wwan-device-caps.md)

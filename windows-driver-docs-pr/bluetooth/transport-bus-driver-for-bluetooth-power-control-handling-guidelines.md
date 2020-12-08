@@ -1,15 +1,14 @@
 ---
 title: 用于蓝牙功率控制处理的传输总线驱动程序指南
 description: Ihv 需要实施传输总线驱动程序，以便支持通常在芯片 (SoC) 系统上集成的多功能控制器的蓝牙功能。
-ms.assetid: 00792128-320E-45C1-9F58-343B72565CA7
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2637e979688e7615d78c4c92514ec6d734624311
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 153e1b02e573609d50909a1f79a442fea600c93c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91733527"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96798491"
 ---
 # <a name="transport-bus-driver-for-bluetooth-power-control-handling-guidelines"></a>用于蓝牙功率控制处理的传输总线驱动程序指南
 
@@ -20,7 +19,7 @@ Ihv 需要实施传输总线驱动程序，以便支持通常在芯片 (SoC) 系
 
 本节中的信息及其副标题适用于：
 
--   Windows 8.1
+-   Windows 8.1
 
 通常，蓝牙是一种用于在芯片 (SoC) 系统上的系统上集成的多功能控制器中的功能。 以前版本的 Windows （最高为 Windows 7）提供了一个收件箱类驱动程序，将 USB 作为唯一的传输选项。 Windows 8 引入了 [蓝牙可扩展传输 IOCTLs](/windows-hardware/drivers/ddi/index)。 在 Windows 8.1 中将继续支持 USB 传输和可扩展传输模型。 扩展性模型 DDI 在 Windows 中保持不变，为系统集成商提供选择合适的 SoC 平台传输的灵活性，例如 (通用异步接收器/发送器) 。 此外，更简单、低功耗控制器（例如 GPIOs）可用作处理电源控制的 "sideband" 机制 (例如，启用蓝牙无线电，并将其作为睡眠/唤醒信号) 。
 

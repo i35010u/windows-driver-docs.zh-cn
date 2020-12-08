@@ -1,7 +1,6 @@
 ---
 title: body 元素
 description: 必需的 body 元素提供在事件通知消息中显示的文本。 此文本应提供有关打印机事件的用户特定详细信息。
-ms.assetid: 3343c272-5090-4b60-ab04-08038d2583ff
 keywords:
 - body 元素打印设备
 topic_type:
@@ -12,18 +11,18 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: af4331e3b9bd3f02afb5c7646988d3411fcdf57d
-ms.sourcegitcommit: b3e38d06762246c77cedd8e82d740ebea104c538
+ms.openlocfilehash: c58f9f46a51ba523a29016dccb6f24f227db7eed
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91662451"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96797773"
 ---
 # <a name="body-element"></a>body 元素
 
 必需的 **body** 元素提供在事件通知消息中显示的文本。 此文本应提供有关打印机事件的用户特定详细信息。
 
-**Body**元素在*asyncui*命名空间中的此 URI 上定义：
+**Body** 元素在 *asyncui* 命名空间中的此 URI 上定义：
 
 ```xml
 https://schemas.microsoft.com/2003/print/asyncui/v1/request
@@ -54,8 +53,8 @@ https://schemas.microsoft.com/2003/print/asyncui/v1/request
 <tr class="header">
 <th>属性</th>
 <th>类型</th>
-<th>必需</th>
-<th>说明</th>
+<th>必须</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -86,7 +85,7 @@ https://schemas.microsoft.com/2003/print/asyncui/v1/request
 <thead>
 <tr class="header">
 <th>元素</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -108,7 +107,7 @@ https://schemas.microsoft.com/2003/print/asyncui/v1/request
 <thead>
 <tr class="header">
 <th>元素</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -131,7 +130,7 @@ https://schemas.microsoft.com/2003/print/asyncui/v1/request
 
 可以按顺序使用多个正文标记，在这种情况下，将在事件通知消息中连接每个 **正文** 标记所生成的文本。 将在每个文本字符串对之间插入空格。 同一通知消息可以同时显示这两种信息：状态信息（如 "打印机已用尽墨）" 和用户说明，如 "更换墨盒并按下打印机上的恢复按钮" 以继续操作。
 
-**Body**元素中包含的文本应允许用户了解可用的操作。
+**Body** 元素中包含的文本应允许用户了解可用的操作。
 
 使用以下建议使消息文本非常有用和简洁：
 

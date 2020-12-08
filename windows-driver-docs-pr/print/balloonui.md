@@ -1,7 +1,6 @@
 ---
 title: balloonUI 元素
 description: 可选的 balloonUI 元素用于在客户端计算机上显示消息气球。
-ms.assetid: 8db15dcb-26ed-429e-ad4c-e5dc59f9bbca
 keywords:
 - balloonUI 元素打印设备
 topic_type:
@@ -12,18 +11,18 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f2aa235e10c70a6972d9ec5e0f3838e096bd03c3
-ms.sourcegitcommit: b3e38d06762246c77cedd8e82d740ebea104c538
+ms.openlocfilehash: 52307d45a1d57ed35a7b959fee305f9bbd3a3608
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91662397"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96797839"
 ---
 # <a name="balloonui-element"></a>balloonUI 元素
 
 可选的 **balloonUI** 元素用于在客户端计算机上显示消息气球。
 
-**BalloonUI**元素在*asyncui*命名空间中的此 URI 处定义：
+**BalloonUI** 元素在 *asyncui* 命名空间中的此 URI 处定义：
 
 ```xml
 https://schemas.microsoft.com/2003/print/asyncui/v1/request
@@ -54,8 +53,8 @@ https://schemas.microsoft.com/2003/print/asyncui/v1/request
 <tr class="header">
 <th>属性</th>
 <th>类型</th>
-<th>必需</th>
-<th>说明</th>
+<th>必须</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -86,7 +85,7 @@ https://schemas.microsoft.com/2003/print/asyncui/v1/request
 <thead>
 <tr class="header">
 <th>元素</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -96,7 +95,7 @@ https://schemas.microsoft.com/2003/print/asyncui/v1/request
 <p>一个必需的元素，它提供在事件通知消息中显示的文本。 此文本应提供有关打印机事件的用户特定详细信息。</p></td>
 </tr>
 <tr class="even">
-<td><p><a href="title.md" data-raw-source="[&lt;strong&gt;title&lt;/strong&gt;](title.md)"><strong>词首</strong></a></p></td>
+<td><p><a href="title.md" data-raw-source="[&lt;strong&gt;title&lt;/strong&gt;](title.md)"><strong>title</strong></a></p></td>
 <td><p></p>
 <p>一个必需的元素，该元素提供在事件通知消息标题中显示的文本。</p></td>
 </tr>
@@ -113,7 +112,7 @@ https://schemas.microsoft.com/2003/print/asyncui/v1/request
 <thead>
 <tr class="header">
 <th>元素</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -158,8 +157,8 @@ https://schemas.microsoft.com/2003/print/asyncui/v1/request
 
 [**action**](action.md)
 
-[**大量**](body.md)
+[**body**](body.md)
 
 [**requestOpen**](requestopen.md)
 
-[**词首**](title.md)
+[**title**](title.md)

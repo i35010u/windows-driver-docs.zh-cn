@@ -1,7 +1,6 @@
 ---
 title: 存储筛选器驱动程序的 AddDevice 例程
 description: 存储筛选器驱动程序的 AddDevice 例程
-ms.assetid: 7970fb3e-4e4c-4ff7-9738-e09454a864c4
 keywords:
 - 存储筛选器驱动程序 WDK，AddDevice
 - 筛选器驱动程序 WDK 存储，AddDevice
@@ -9,12 +8,12 @@ keywords:
 - AddDevice 例程 WDK 存储
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3f546dfe38c6672f083206c3fa0c3417a9dfa17a
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 74f62e204ca1d70cb19fc610a2c245070ef4b1a2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91733706"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96799299"
 ---
 # <a name="storage-filter-drivers-adddevice-routine"></a>存储筛选器驱动程序的 AddDevice 例程
 

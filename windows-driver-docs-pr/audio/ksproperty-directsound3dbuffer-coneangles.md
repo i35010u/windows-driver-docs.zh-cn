@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ DIRECTSOUND3DBUFFER \_ CONEANGLES
 description: KSPROPERTY \_ DIRECTSOUND3DBUFFER \_ CONEANGLES 属性指定三维声音缓冲区的声音投影圆锥的内部和外部圆锥角。
-ms.assetid: a3978aaf-218c-4021-abf0-e426eacf52c7
 keywords:
 - KSPROPERTY_DIRECTSOUND3DBUFFER_CONEANGLES 音频设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5c9f7b85c71e8caf8153793fff95cf0bb224da47
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 267fc2a8ae2b7b8397670625024a9492be9eb5a0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102584"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96798909"
 ---
 # <a name="ksproperty_directsound3dbuffer_coneangles"></a>KSPROPERTY \_ DIRECTSOUND3DBUFFER \_ CONEANGLES
 
@@ -74,7 +73,7 @@ KSPROPERTY \_ DIRECTSOUND3DBUFFER \_ CONEANGLES 属性请求返回状态 \_ SUCC
 
 -   DS3DBUFFER 结构的 **dwInsideConeAngle** 和 **dwOutsideConeAngle** 成员。
 
--   **IDirectSound3DBuffer：： GetConeAngles**和**IDirectSound3DBuffer：： SetConeAngles**方法。
+-   **IDirectSound3DBuffer：： GetConeAngles** 和 **IDirectSound3DBuffer：： SetConeAngles** 方法。
 
 <a name="requirements"></a>要求
 ------------

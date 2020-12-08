@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ DIRECTSOUND3DBUFFER \_ 位置
 description: KSPROPERTY \_ DIRECTSOUND3DBUFFER \_ position 属性指定三维声音缓冲区的位置。
-ms.assetid: 727ffb54-f020-473f-8631-1300da0f312c
 keywords:
 - KSPROPERTY_DIRECTSOUND3DBUFFER_POSITION 音频设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c728b725ab44531fc7ee68ff97d824fb9a171434
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: e287f16a88c02f25fb3965ae0b01f652be2f3943
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102560"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96798897"
 ---
 # <a name="ksproperty_directsound3dbuffer_position"></a>KSPROPERTY \_ DIRECTSOUND3DBUFFER \_ 位置
 
@@ -74,7 +73,7 @@ KSPROPERTY \_ DIRECTSOUND3DBUFFER \_ POSITION 属性请求返回状态 \_ SUCCES
 
 -   DS3DBUFFER 结构的 **vPosition** 成员。
 
--   **IDirectSound3DBuffer：： GetPosition**和**IDirectSound3DBuffer：： SetPosition**方法。
+-   **IDirectSound3DBuffer：： GetPosition** 和 **IDirectSound3DBuffer：： SetPosition** 方法。
 
 <a name="requirements"></a>要求
 ------------

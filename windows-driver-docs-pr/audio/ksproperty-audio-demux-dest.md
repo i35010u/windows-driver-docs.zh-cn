@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ AUDIO \_ 多路分解器 \_ DEST
 description: KSPROPERTY \_ AUDIO \_ 多路分解器 \_ DEST 属性指定信号分离器定向到其输入流的目标流。 这是多路分解器节点 (KSNODETYPE 多路分解器) 的属性 \_ 。
-ms.assetid: 431918da-2267-4fe5-a002-12d16b5f0984
 keywords:
 - KSPROPERTY_AUDIO_DEMUX_DEST 音频设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6c27f424291ac2c80e5f2d1832a07fcf3b194c41
-ms.sourcegitcommit: 372464be981a39781c71049126f36891cb5d0cad
+ms.openlocfilehash: 9ad7bc84cfbf429417d274e896facdb52a28d62d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91646011"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96799045"
 ---
 # <a name="ksproperty_audio_demux_dest"></a>KSPROPERTY \_ AUDIO \_ 多路分解器 \_ DEST
 
@@ -67,10 +66,10 @@ KSPROPERTY \_ AUDIO \_ 多路分解器 \_ DEST 属性指定信号分离器定向
 
 KSPROPERTY \_ 音频 \_ 多路分解器 \_ DEST 属性请求返回状态 " \_ 成功" 以指示该请求已成功完成。 否则，请求将返回相应的错误状态代码。
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
-Pin ID 标识多路分解器节点上的逻辑 pin。 有关筛选器内某个节点上的逻辑插针 Id 的讨论，请参阅 [**PCCONNECTION \_ 描述符**](/windows-hardware/drivers/ddi/portcls/ns-portcls-_pcconnection_descriptor)。
+Pin ID 标识多路分解器节点上的逻辑 pin。 有关筛选器内某个节点上的逻辑插针 Id 的讨论，请参阅 [**PCCONNECTION \_ 描述符**](/previous-versions/windows/hardware/drivers/ff537688(v=vs.85))。
 
 <a name="requirements"></a>要求
 ------------
@@ -95,5 +94,5 @@ Pin ID 标识多路分解器节点上的逻辑 pin。 有关筛选器内某个�
 
 [**KSNODEPROPERTY**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty)
 
-[**PCCONNECTION \_ 描述符**](/windows-hardware/drivers/ddi/portcls/ns-portcls-_pcconnection_descriptor)
+[**PCCONNECTION \_ 描述符**](/previous-versions/windows/hardware/drivers/ff537688(v=vs.85))
 

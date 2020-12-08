@@ -1,15 +1,14 @@
 ---
 title: Windows 音频处理对象
 description: 音频处理对象 () ，为 Windows 音频流提供可自定义的基于软件的数字信号处理。
-ms.assetid: 67EA9A13-1AA6-4BF2-A16D-518075EA7E37
 ms.date: 10/18/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 43ad9b8c856bda62ff0605f18ff4785bc231efce
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: c31d24ffad4308a7961267684061a93d769a7ec3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89206619"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96798725"
 ---
 # <a name="windows-audio-processing-objects"></a>Windows 音频处理对象
 

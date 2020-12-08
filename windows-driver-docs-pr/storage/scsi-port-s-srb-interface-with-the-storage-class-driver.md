@@ -1,15 +1,14 @@
 ---
 title: SCSI 端口的可以与存储类驱动程序交互的 SRB 接口
 description: SCSI 端口的可以与存储类驱动程序交互的 SRB 接口
-ms.assetid: ca30bf9b-6d76-4160-8a4e-54c681dfc843
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b8a0182ec1492dece8c911e6cb5caa31ecce1761
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: c02a4ebfc404e999e476e0c7e8a7cb9a08784a5f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89187775"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96799325"
 ---
 # <a name="scsi-ports-srb-interface-with-the-storage-class-driver"></a>SCSI 端口的可以与存储类驱动程序交互的 SRB 接口
 

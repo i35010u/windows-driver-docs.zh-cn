@@ -1,7 +1,6 @@
 ---
 title: 选择用户模式或内核模式
 description: 选择用户模式或内核模式
-ms.assetid: 1e63d01e-8cf2-488a-89e8-d4a3ff5cfe19
 keywords:
 - 打印机图形 DLL WDK、用户模式与内核模式
 - 图形 DLL WDK 打印机、用户模式与内核模式
@@ -9,12 +8,12 @@ keywords:
 - 内核模式执行 WDK 打印机图形
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d4d7905c56496ff8960e8df60f278769a6859763
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: d4302952425715f41f5b9e71cbbb6ef8cbb7ee7f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89208431"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96797729"
 ---
 # <a name="choosing-user-mode-or-kernel-mode"></a>选择用户模式或内核模式
 
@@ -253,7 +252,7 @@ ms.locfileid: "89208431"
 
 -   对于创建或修改绘图服务的函数，新驱动程序必须继续调用 [GDI 支持服务](../display/gdi-support-services.md) ，而不是其 Win32 等效项。
 
--   您可以使用 FLOAT 数据类型，而不是对 [GDI 浮点服务](../display/gdi-floating-point-services.md)使用图形 DDI 函数。
+-   您可以使用 FLOAT 数据类型，而不是对 [GDI Floating-Point Services](../display/gdi-floating-point-services.md)使用图形 DDI 函数。
 
  
 

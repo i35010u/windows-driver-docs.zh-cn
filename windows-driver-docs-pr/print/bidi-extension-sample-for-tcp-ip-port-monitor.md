@@ -1,18 +1,17 @@
 ---
 title: TCP/IP 端口监视器的双向扩展示例
 description: TCP/IP 端口监视器的双向扩展示例
-ms.assetid: 76454b0c-0e02-4372-97ed-2401a785cef8
 keywords:
 - 双向扩展文件 WDK 打印机自动配置
 - 内置自动配置支持 WDK 打印机，双向扩展文件
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8c9f56681bb515ef57b391a69a28b8898ac9ed7d
-ms.sourcegitcommit: ab64169b631da4db3f0b895600f1c38a22cb7e2e
+ms.openlocfilehash: aeba3de30eff9863635d3f3556fc0b60fc678d45
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75652879"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96797817"
 ---
 # <a name="bidi-extension-sample-for-tcpip-port-monitor"></a>TCP/IP 端口监视器的双向扩展示例
 

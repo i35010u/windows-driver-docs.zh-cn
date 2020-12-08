@@ -1,7 +1,6 @@
 ---
 title: customData 元素
 description: 可选的 customData 元素为此异步通知 XML 架构指定自定义数据源。
-ms.assetid: 5e14a627-72c0-440d-b616-6963c3d69d2b
 keywords:
 - customData 元素打印设备
 topic_type:
@@ -12,18 +11,18 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 58f6b7a57c60e8b243adac47833b5a05b8758f08
-ms.sourcegitcommit: b3e38d06762246c77cedd8e82d740ebea104c538
+ms.openlocfilehash: 17720a2752af6ba7a261089fbae4b35414ecda15
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91662383"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96797427"
 ---
 # <a name="customdata-element"></a>customData 元素
 
 可选的 **customData** 元素为此异步通知 XML 架构指定自定义数据源。
 
-**CustomData**元素在*asyncui*命名空间中的此 URI 处定义：
+**CustomData** 元素在 *asyncui* 命名空间中的此 URI 处定义：
 
 ```xml
 https://schemas.microsoft.com/2003/print/asyncui/v1/request
@@ -56,8 +55,8 @@ https://schemas.microsoft.com/2003/print/asyncui/v1/request
 <tr class="header">
 <th>属性</th>
 <th>类型</th>
-<th>必需</th>
-<th>说明</th>
+<th>必须</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -96,7 +95,7 @@ https://schemas.microsoft.com/2003/print/asyncui/v1/request
 <thead>
 <tr class="header">
 <th>元素</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -119,7 +118,7 @@ https://schemas.microsoft.com/2003/print/asyncui/v1/request
 <thead>
 <tr class="header">
 <th>元素</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>

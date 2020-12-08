@@ -1,7 +1,6 @@
 ---
-title: KSNODETYPE\_DAC
-description: KSNODETYPE\_DAC
-ms.assetid: 70b30425-cffc-49e1-aa8b-8f5734bd196e
+title: KSNODETYPE \_ DAC
+description: KSNODETYPE \_ DAC
 keywords:
 - KSNODETYPE_DAC 音频设备
 topic_type:
@@ -12,32 +11,32 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 38cf31e47ab2f9c0a6583a25daee3d8a320d1fd9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3679defb69e397204ece8f9018dcce481e8d3266
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333256"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96799163"
 ---
-# <a name="ksnodetypedac"></a>KSNODETYPE\_DAC
+# <a name="ksnodetype_dac"></a>KSNODETYPE \_ DAC
 
 
 ## <span id="ddk_ksnodetype_dac_ks"></span><span id="DDK_KSNODETYPE_DAC_KS"></span>
 
 
-KSNODETYPE\_DAC 节点表示的数字模拟转换器 (DAC)。 DAC 节点都有一个输入的流和一个输出流。
+KSNODETYPE \_ dac 节点表示 (dac) 的数字到模拟转换器。 DAC 节点有一个输入流和一个输出流。
 
-一个很好的一般规则是音频驱动程序应公开其拓扑中的只有一个 DAC 节点。 DirectSound 假设驱动程序的拓扑包含单个 DAC 节点，因为它扬声器配置属性将请求发送到其发现的第一个 DAC 节点，但不适用于任何其他。 事实上，拓扑可以安全地包含多个 DAC 的节点，但仅，如果所有 DAC 节点都表示相同的物理控制。 在这种情况下，DAC 节点中的任何一个上设置属性具有 DAC 的所有节点上设置相同的属性的影响。 一些音频驱动程序可能需要使用多个 DAC 节点我解决 Windows 中的问题 / 98，Windows 2000 和 Windows XP:如果微型端口驱动程序提供了多个批呈现 pin 工厂，并且具有混合了从这些引脚一起通过源 DAC 节点和节点流的拓扑，wdmaud.drv （mixer 行驱动程序） 将错误地报告的单独的批音量控件为每个 pin 工厂。 它应生成仅单个批音量控件。 若要解决此问题，解决解决方案是将 DAC 节点插入到每个 pin 工厂中的数据路径。
+好的一般规则是，音频驱动程序在其拓扑中只应公开一个 DAC 节点。 由于 DirectSound 假定驱动程序的拓扑仅包含一个 DAC 节点，因此它会将扬声器配置属性请求发送到它发现的第一个 DAC 节点，而不是发送到任何其他节点。 事实上，拓扑可以安全地包含多个 DAC 节点，但前提是所有 DAC 节点都表示相同的物理控件。 在这种情况下，在任何一个 DAC 节点上设置属性都具有在所有 DAC 节点上设置相同属性的效果。 某些音频驱动程序可能需要使用多个 DAC 节点来解决 Windows Me/98 中的问题，Windows 2000 和 Windows XP：如果微型端口驱动程序提供了多个波形呈现端口工厂，并且具有一个拓扑，该拓扑通过馈送 DAC 节点的 SUM 节点 wdmaud，将流与这些 pin 组合在一起，) 会错误地为每个 pin 工厂报告 (单独的波形音量控件。 它应仅生成一个波形音量控件。 若要解决此问题，一种解决方法是将 DAC 节点插入到每个 pin 工厂的数据路径中。
 
-KSNODETYPE\_DAC 的节点可以支持以下可选属性：
+KSNODETYPE \_ DAC 节点可以支持以下可选属性：
 
-[**KSPROPERTY\_音频\_通道\_配置**](ksproperty-audio-channel-config.md)
+[**KSPROPERTY \_ 音频 \_ 通道 \_ 配置**](ksproperty-audio-channel-config.md)
 
-[**KSPROPERTY\_AUDIO\_DYNAMIC\_SAMPLING\_RATE**](ksproperty-audio-dynamic-sampling-rate.md)
+[**KSPROPERTY \_ 音频 \_ 动态 \_ 采样 \_ 速率**](ksproperty-audio-dynamic-sampling-rate.md)
 
-[**KSPROPERTY\_AUDIO\_SAMPLING\_RATE**](ksproperty-audio-sampling-rate.md)
+[**KSPROPERTY \_ 音频 \_ 采样 \_ 率**](ksproperty-audio-sampling-rate.md)
 
-[**KSPROPERTY\_音频\_立体声\_演讲者\_GEOMETRY**](ksproperty-audio-stereo-speaker-geometry.md)
+[**KSPROPERTY \_ 音频 \_ 立体声 \_ 扬声器 \_ 几何**](ksproperty-audio-stereo-speaker-geometry.md)
 
  
 

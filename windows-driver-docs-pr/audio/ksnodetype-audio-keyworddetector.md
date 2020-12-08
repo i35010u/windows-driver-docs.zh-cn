@@ -1,7 +1,6 @@
 ---
-title: KSNODETYPE\_AUDIO\_KEYWORDDETECTOR
-description: KSNODETYPE\_音频\_KEYWORDDETECTOR 音频终结点是可用于 Windows 10 和更高版本的 Windows 的新终结点。 KSNODETYPE\_音频\_KEYWORDDETECTOR 允许受支持检测程序音频捕获驱动程序。
-ms.assetid: 7D4CD2B7-F4B4-4A81-B18A-2B7E86D1EF80
+title: KSNODETYPE \_ 音频 \_ KEYWORDDETECTOR
+description: KSNODETYPE \_ audio \_ KEYWORDDETECTOR 音频终结点是 windows 10 和更高版本的 windows 中可用的新终结点。 KSNODETYPE \_ audio \_ KEYWORDDETECTOR 允许音频捕获驱动程序支持检测程序。
 keywords:
 - KSNODETYPE_AUDIO_KEYWORDDETECTOR 音频设备
 topic_type:
@@ -12,34 +11,34 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 907d58ddd8e69da248406d74cd812fcf4394f57c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: eb65dc3b7fdd8138d837dd5e93b67cf96932f326
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333346"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96799171"
 ---
-# <a name="ksnodetypeaudiokeyworddetector"></a>KSNODETYPE\_AUDIO\_KEYWORDDETECTOR
+# <a name="ksnodetype_audio_keyworddetector"></a>KSNODETYPE \_ 音频 \_ KEYWORDDETECTOR
 
 
-KSNODETYPE\_音频\_KEYWORDDETECTOR 音频终结点是可用于 Windows 10 和更高版本的 Windows 的新终结点。 KSNODETYPE\_音频\_KEYWORDDETECTOR 允许受支持检测程序音频捕获驱动程序。
+KSNODETYPE \_ audio \_ KEYWORDDETECTOR 音频终结点是 windows 10 和更高版本的 windows 中可用的新终结点。 KSNODETYPE \_ audio \_ KEYWORDDETECTOR 允许音频捕获驱动程序支持检测程序。
 
-不能与其他捕获设备共享此筛选器。 筛选器都具有一个 KS pin 工厂，它具有 pin 类别 KSNODETYPE\_音频\_KEYWORDDETECTOR。 不能有多个 pin 工厂给定 KS 筛选器实例中具有此 KS pin 类别。
+此筛选器不能与其他捕获设备共享。 该筛选器具有具有 pin 类别 KSNODETYPE AUDIO KEYWORDDETECTOR 的 KS pin 工厂 \_ \_ 。 给定 KS 筛选器实例中不能有多个具有此 KS pin 类别的 pin 工厂。
 
-KSNODETYPE\_音频\_KEYWORDDETECTOR 音频终结点必须支持以下 KS 属性：
+KSNODETYPE \_ audio \_ KEYWORDDETECTOR 音频终结点必须支持以下 KS 属性：
 
-[**KSPROPERTY\_SOUNDDETECTOR\_SUPPORTEDPATTERNS**](ksproperty-sounddetector-supportedpatterns.md)
+[**KSPROPERTY \_ SOUNDDETECTOR \_ SUPPORTEDPATTERNS**](ksproperty-sounddetector-supportedpatterns.md)
 
-[**KSPROPERTY\_SOUNDDETECTOR\_模式**](ksproperty-sounddetector-patterns.md)
+[**KSPROPERTY \_ SOUNDDETECTOR \_ 模式**](ksproperty-sounddetector-patterns.md)
 
-[**KSPROPERTY\_SOUNDDETECTOR\_ARMED**](ksproperty-sounddetector-armed.md)
+[**KSPROPERTY \_ SOUNDDETECTOR \_**](ksproperty-sounddetector-armed.md)
 
-[**KSPROPERTY\_SOUNDDETECTOR\_MATCHRESULT**](ksproperty-sounddetector-matchresult.md)
+[**KSPROPERTY \_ SOUNDDETECTOR \_ MATCHRESULT**](ksproperty-sounddetector-matchresult.md)
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[KSPROPSETID\_SoundDetector](kspropsetid-sounddetector.md)
+[KSPROPSETID \_ SoundDetector](kspropsetid-sounddetector.md)
 
  
 

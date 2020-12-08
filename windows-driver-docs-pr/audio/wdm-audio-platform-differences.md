@@ -1,18 +1,17 @@
 ---
 title: WDM 音频平台差异
 description: WDM 音频平台差异
-ms.assetid: bb5d1aa6-edb3-4859-ab65-9622065608e2
 keywords:
 - WDM 音频驱动程序 WDK，关于 WDM 音频驱动程序
 - 音频驱动程序 WDK，平台差异
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: acaf5bc72ceb5a682413a7ecac200cbf444d48c7
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 29c4ee75223d723358ee33dac229bbf5d7a74ce4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89206649"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96798749"
 ---
 # <a name="wdm-audio-platform-differences"></a>WDM 音频平台差异
 

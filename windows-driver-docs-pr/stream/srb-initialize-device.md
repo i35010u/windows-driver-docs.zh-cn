@@ -1,7 +1,6 @@
 ---
 title: SRB \_ 初始化 \_ 设备
 description: SRB \_ 初始化 \_ 设备
-ms.assetid: a4e35253-43d8-4d11-8a5b-72a9863f6677
 keywords:
 - SRB_INITIALIZE_DEVICE 流媒体设备
 topic_type:
@@ -12,12 +11,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c7ca813f6bf818f538957b4f0786ea197f7165ad
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 491d07c92fca1da0c07f090bded6bdfd675b23df
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89189931"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96799283"
 ---
 # <a name="srb_initialize_device"></a>SRB \_ 初始化 \_ 设备
 
@@ -42,7 +41,7 @@ ms.locfileid: "89189931"
 
 ### <a name="comments"></a>注释
 
-类驱动程序将指针传递到 \_ \_ *pSrb* - &gt; **CommandData.Config信息**中的端口配置信息结构。 *PSrb*指针指向[**HW \_ 流 \_ 请求 \_ 块**](/windows-hardware/drivers/ddi/strmini/ns-strmini-_hw_stream_request_block)结构。 类驱动程序会在*pSrb*CommandData.Config信息中填写大部分字段 - &gt; ** ** ，以及从操作系统获取的有关设备的信息。 在大多数情况下，微型驱动程序只需在**ConfigInfo**的**StreamDescriptorSize**成员中填写其[**HW \_ 流 \_ 描述符**](/windows-hardware/drivers/ddi/strmini/ns-strmini-_hw_stream_descriptor)结构的大小。
+类驱动程序将指针传递到 \_ \_ *pSrb* - &gt; **CommandData.Config信息** 中的端口配置信息结构。 *PSrb* 指针指向 [**HW \_ 流 \_ 请求 \_ 块**](/windows-hardware/drivers/ddi/strmini/ns-strmini-_hw_stream_request_block)结构。 类驱动程序会在 *pSrb* CommandData.Config信息中填写大部分字段 - &gt; **** ，以及从操作系统获取的有关设备的信息。 在大多数情况下，微型驱动程序只需在 **ConfigInfo** 的 **StreamDescriptorSize** 成员中填写其 [**HW \_ 流 \_ 描述符**](/windows-hardware/drivers/ddi/strmini/ns-strmini-_hw_stream_descriptor)结构的大小。
 
  
 

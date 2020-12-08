@@ -1,7 +1,6 @@
 ---
 title: 微型端口适配器设备 PnP 事件通知
 description: 微型端口适配器设备 PnP 事件通知
-ms.assetid: b9417d5d-1f99-480e-8021-e5dd02f28c36
 keywords:
 - 即插即用 WDK 网络，处理 PnP 事件通知
 - 微型端口适配器 WDK 网络，即插即用事件通知
@@ -10,12 +9,12 @@ keywords:
 - 事件 WDK 网络
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2cd23c3d7aeb5bbd199b77b4d881e164dadea895
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 0d15df02720cb8cf460a050b7896ad1c95ed58c9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89218015"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96798071"
 ---
 # <a name="miniport-adapter-device-pnp-event-notifications"></a>微型端口适配器设备 PnP 事件通知
 

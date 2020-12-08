@@ -1,7 +1,6 @@
 ---
 title: WDM 音频体系结构基本概念
 description: WDM 音频体系结构基本概念
-ms.assetid: 9b702ee2-857b-468e-9258-3b87471c2daf
 keywords:
 - WDM 音频驱动程序 WDK、体系结构
 - 音频驱动程序 WDK，体系结构
@@ -9,12 +8,12 @@ keywords:
 - Windows 驱动模型 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4d4f1aa99b322593fe8d051d20c9538be5feec2d
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 74a8367acca43df69f2279d461c3a6a7d2c3c60b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91733542"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96798765"
 ---
 # <a name="wdm-audio-architecture-basic-concepts"></a>WDM 音频体系结构：基本概念
 

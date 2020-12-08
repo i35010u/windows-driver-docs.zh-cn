@@ -1,18 +1,17 @@
 ---
 title: 配置端口
 description: 配置端口
-ms.assetid: f5996e94-aa48-4aa0-82f5-331a57d2fb6b
 keywords:
 - 端口管理 WDK 打印，配置端口
 - ConfigurePort
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: da49c0aa9b7342d208c6526c88524ee4ddf73719
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 9fbf7c1a8ebc16d9dc8df4300b60efdd389129d9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89214949"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96797579"
 ---
 # <a name="configuring-a-port"></a>配置端口
 
@@ -28,7 +27,7 @@ ms.locfileid: "89214949"
 
 1.  调用打印后台处理程序的 OpenPrinter 函数 (Windows SDK 文档) 中所述，这将导致调用端口监视器服务器 DLL 中的 [**XcvOpenPort**](/windows-hardware/drivers/ddi/winsplp/nf-winsplp-xcvopenport) 函数。
 
-2.  一次或多次调用打印后台处理程序的 [**XcvData**](/previous-versions/ff564255(v=vs.85)) 函数，以便在 UI dll 和服务器 dll 之间传输配置信息。 **XcvData**函数调用服务器 DLL 的[**XcvDataPort**](/windows-hardware/drivers/ddi/winsplp/nf-winsplp-xcvdataport)函数。 [**ConfigurePortUI**](/windows-hardware/drivers/ddi/winsplp/nf-winsplp-configureportui)函数通常通过显示对话框从用户那里获取配置信息。
+2.  一次或多次调用打印后台处理程序的 [**XcvData**](/previous-versions/ff564255(v=vs.85)) 函数，以便在 UI dll 和服务器 dll 之间传输配置信息。 **XcvData** 函数调用服务器 DLL 的 [**XcvDataPort**](/windows-hardware/drivers/ddi/winsplp/nf-winsplp-xcvdataport)函数。 [**ConfigurePortUI**](/windows-hardware/drivers/ddi/winsplp/nf-winsplp-configureportui)函数通常通过显示对话框从用户那里获取配置信息。
 
 3.  调用打印后台处理程序的 ClosePrinter 函数 (Windows SDK 文档) 中所述，这将导致调用端口监视器服务器 DLL 中的 [**XcvClosePort**](/windows-hardware/drivers/ddi/winsplp/nf-winsplp-xcvcloseport) 函数。
 

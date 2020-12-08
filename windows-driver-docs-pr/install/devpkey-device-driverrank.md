@@ -1,7 +1,6 @@
 ---
 title: DEVPKEY_Device_DriverRank
 description: DEVPKEY_Device_DriverRank
-ms.assetid: 9a6a8e9f-fd3c-4a64-b0d2-565cda0dae52
 keywords:
 - DEVPKEY_Device_DriverRank 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 418408b804bb2fab4a8e5961b219544e66c31e45
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: d4f91f15bd6f73491ccf3cb0c9edbb56ff19d862
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91733003"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96798145"
 ---
 # <a name="devpkey_device_driverrank"></a>DEVPKEY_Device_DriverRank
 
@@ -33,7 +32,7 @@ DEVPKEY_Device_DriverRank 设备属性表示为设备实例安装的驱动程序
 </colgroup>
 <thead>
 <tr>
-<th>属性</th>
+<th>Attribute</th>
 <th>值</th>
 </tr>
 </thead>
@@ -76,7 +75,7 @@ Windows Server 2003、Windows XP 和 Windows 2000 支持此属性，但不支持
 **版本**： windows Vista 和更高版本的 windows **标题**： Devpkey (包含 Devpkey) 
 
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**SetupDiGetDeviceProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)

@@ -1,7 +1,6 @@
 ---
-title: KSPROPERTY\_AUDIO\_MIC\_SNR
+title: KSPROPERTY \_ 音频 \_ MIC \_ SNR
 description: KSPROPERTY \_ 音频 \_ MIC \_ SNR 属性指定 (SNR) 以 dB 单位表示的麦克风信号与噪声比率。
-ms.assetid: 1DF088D0-7C0D-42B6-B7FA-2E714C70DAA4
 keywords:
 - KSPROPERTY_AUDIO_MIC_SNR 音频设备
 topic_type:
@@ -14,14 +13,14 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6ee2cfef72a5321de8ed116a60c19c9c5ddb8adb
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 0ef44dd84d05f360ea2350cdab553cd721ad563d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102616"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96799027"
 ---
-# <a name="ksproperty_audio_mic_snr"></a>KSPROPERTY\_AUDIO\_MIC\_SNR
+# <a name="ksproperty_audio_mic_snr"></a>KSPROPERTY \_ 音频 \_ MIC \_ SNR
 
 
 KSPROPERTY \_ 音频 \_ MIC \_ SNR 属性指定 (SNR) 以 dB 单位表示的麦克风信号与噪声比率。

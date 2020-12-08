@@ -1,15 +1,14 @@
 ---
 title: Microsoft 蓝牙测试平台配对
 description: " (BTP) 配对测试的蓝牙测试平台。"
-ms.assetid: 19caf4db-9303-47d1-be12-5ff4b2710bc8
 ms.date: 2/14/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 05feae68f098b9318e9db044c4a33b52d10e6a3c
-ms.sourcegitcommit: 6e6189e3b7f2b376607b507220bd538a296f5b4e
+ms.openlocfilehash: 7910f1c9b22aa15ef4f8a180952d45bd528086dc
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/18/2020
-ms.locfileid: "90799782"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96798495"
 ---
 # <a name="btp-pairing-tests"></a>BTP 配对测试
 

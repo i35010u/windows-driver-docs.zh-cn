@@ -1,17 +1,16 @@
 ---
 title: 电池类驱动程序功能
 description: 电池类驱动程序功能
-ms.assetid: cd7536d9-bcf1-4674-8ebf-af2b888a0f0a
 keywords:
 - 电池类驱动程序 WDK，功能
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3e068e0e772f7e439d248940d616444f85b07d4f
-ms.sourcegitcommit: 7a7e61b4147a4aa86bf820fd0b0c7681fe17e544
+ms.openlocfilehash: 09029e68579410e1cf2e5012a7151f047345749b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89056933"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96798697"
 ---
 # <a name="battery-class-driver-functionality"></a>电池类驱动程序功能
 

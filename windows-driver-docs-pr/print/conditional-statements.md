@@ -1,7 +1,6 @@
 ---
 title: 条件语句
 description: 条件语句
-ms.assetid: eea2f9c1-a73b-46ed-a778-ece6bed615ac
 keywords:
 - Unidrv，条件语句
 - GPD 文件 WDK Unidrv，条件语句
@@ -10,12 +9,12 @@ keywords:
 - Unidrv WDK 打印
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 48f2476cf2a96ea99b5a07a41c72a5eb16379b0c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 113869a5c607c0be27fa71f59f2321e10fe6cde4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63330314"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96797597"
 ---
 # <a name="conditional-statements"></a>条件语句
 
@@ -23,7 +22,7 @@ ms.locfileid: "63330314"
 
 
 
-GPD 语言提供了类似于 C 的条件语句，可用于描述某些打印机属性可以使用打印机的配置的依赖关系。 例如，边距和页的游标来源可能取决于页面方向。 **\*交换机**并 **\*用例**语句允许您表示此类依赖项。 这些语句的格式如下所示：
+GPD 语言提供了类似于 C 的条件语句，使你可以描述某些打印机属性可对打印机配置具有的依赖项。 例如，页面的边距和光标原点可能取决于页面的方向。 **\* Switch** 和 **\* Case** 语句允许您表达此类依赖项。 这些语句的格式如下所示：
 
 <table>
 <colgroup>
@@ -32,16 +31,16 @@ GPD 语言提供了类似于 C 的条件语句，可用于描述某些打印机�
 <tbody>
 <tr class="odd">
 <td><p></p>
-* 切换<em>FeatureName</em> {* 用例<em>Option1_Name</em> {} * 用例<em>Option2_Name</em> {}<em>等</em>* 用例<em>OptionN_Name</em>{} * 默认 {}}</td>
+* Switch <em>功能</em> 名 {* case <em>Option1_Name</em> {} * case <em>Option2_Name</em> {} <em>等</em> <em>OptionN_Name</em> {} * 默认值 {}}</td>
 </tr>
 </tbody>
 </table>
 
  
 
-*FeatureName*必须是一项功能，GPD 文件中指定的名称 **\*功能**条目。 使用的选项名称必须与指定的功能相关联的选项。
+功能 *名称必须是* 包含 **\* 功能** 条目的 GPD 文件中指定的功能的名称。 使用的选项名称必须是与指定功能相关联的选项。
 
-要表示边距和游标来源都依赖于页面方向在哪一页中，可以使用以下项：
+若要表达页边距和光标源依赖于页面方向的情况，可以使用以下条目：
 
 ```cpp
 *Feature: Orientation
@@ -83,13 +82,13 @@ GPD 语言提供了类似于 C 的条件语句，可用于描述某些打印机�
 }
 ```
 
-在此示例中，相应的选项的打印机**PaperSize**功能都依赖于所选的选项的打印机**方向**功能。
+在此示例中，打印机的 **PaperSize** 功能的选项取决于打印机 **方向** 功能的所选选项。
 
-如果未列出的所有功能的选项作为 **\*用例**语句参数，可以包括 **\*默认**语句，就像 C 语言中一样。 如果不包括所有选项，并且不都包括 **\*默认**语句，则必须评估相关属性 (在示例中，  **\*PrintableArea**， \* **PrintableOrigin**，并 **\*CursorOrigin**) 前面的 GPD 文件中的其他位置\***交换机**语句。
+如果没有将功能的所有选项列出为 **\* Case** 语句参数，则可以包含 **\* 默认** 语句，就像 C 语言中一样。 如果未包括所有选项，并且未包括 **\* 默认** 语句，则必须在 PrintableArea、PrintableOrigin 和 CursorOrigin 中的 **\***、 \* *_PrintableOrigin_* 和) **\*** 中计算相关属性 (，在 \* *_Switch_* 语句前面。
 
-### <a href="" id="ddk-specifying-multiple-dependencies-gg"></a>指定多个依赖项
+### <a name="specifying-multiple-dependencies"></a><a href="" id="ddk-specifying-multiple-dependencies-gg"></a>指定多个依赖项
 
-可以包括 **\*交换机**内的语句 **\*用例**并 **\*默认**语句。 这可以指定多个依赖项，按如下所示：
+可以在 **\* Case** 和 **\* Default** 语句中包含 **\* Switch** 语句。 这允许您指定多个依赖项，如下所示：
 
 ```cpp
 *Feature: feature1 {*Option: optionA {...} *Option: optionB {...}}
@@ -113,67 +112,67 @@ GPD 语言提供了类似于 C 的条件语句，可用于描述某些打印机�
     }
 ```
 
-在此示例中 AttributeX，属于 optionE feature3，是依赖于 feature1 和功能 2。
+在此示例中，AttributeX 是 feature3 的 optionE，同时依赖于 feature1 和 feature2。
 
-如果用户已选定 feature1 的以及可选、 功能 2，为 optionD feature3 的 optionE，然后 attributeX 设置为值 x。
+如果用户已选择 optionA for feature1，optionD for feature2，optionE feature3，则 attributeX 设置为 ValueX。
 
-如果用户已选定 feature1 的以及可选、 功能 2，为 optionC feature3 的 optionE，然后 attributeX 设置为 ValueY。
+如果用户已选择 optionA for feature1，optionC for feature2，optionE feature3，则 attributeX 设置为 ValueY。
 
-如果用户已选定为 feature1 optionB 和 feature3 的 optionE，然后 attributeX 设置为 ValueZ。 功能 2 的设置无关。
+如果用户已选择 optionB for feature1，optionE 为 feature3，则 attributeX 设置为 ValueZ。 Feature2 的设置不相关。
 
-指定多个依赖项时，将应用以下规则：
+指定多个依赖项时，下列规则适用：
 
--   多个依赖项必须指定一个作用域内 **\*交换机**条目。 使用示例，例如，您不能使用 **\*交换机**条目，以指示该 feature3 是依赖 feature1，然后，在后续非嵌套 **\*开关**语句中，指示该 feature3 是依赖于功能 2。
+-   必须在单个 **\* 交换机** 条目的作用域内指定多个依赖项。 例如，使用示例，你不能使用 **\* 开关** 项来指示 feature3 依赖于 feature1，然后在后续的非嵌套 **\* Switch** 语句中，指示 feature3 依赖于 feature2。
 
--   您不能多次指定相同的功能中每个嵌套\***交换机**条目。
+-   不能在每个嵌套交换机条目中多次指定相同的功能 \* *_Switch_* 。
 
-### <a href="" id="ddk-where-to-place-a-switch-statement-gg"></a>下一位置\*Switch 语句
+### <a name="where-to-place-a-switch-statement"></a><a href="" id="ddk-where-to-place-a-switch-statement-gg"></a>Switch 语句的放置位置 \*
 
-可以将放置 **\*交换机**GPD 文件中的以下位置中的语句：
+可以在 GPD 文件中的以下位置放置 **\* Switch** 语句：
 
--   内部\*选项语句
+-   在 \* 选项语句中
 
--   内部\*功能语句
+-   在 \* 功能语句内
 
--   内部 **\*用例**语句
+-   在 **\* Case** 语句内
 
--   内部 **\*默认**语句
+-   在 **\* 默认** 语句中
 
--   在该文件的顶部级别 (即，而不是在一组大括号)
+-   在文件的顶层 (即，不在一组大括号内) 
 
-### <a href="" id="ddk-what-to-place-inside-switch-case-and-default-statements-gg"></a>内发生的内容\*开关，\*的情况下，和\*默认语句
+### <a name="what-to-place-inside-switch-case-and-default-statements"></a><a href="" id="ddk-what-to-place-inside-switch-case-and-default-statements-gg"></a>\*Switch、 \* Case 和 \* Default 语句中要放置的内容
 
-内 **\*交换机**条目，然后就可以仅 **\*用例**并 **\*默认**条目。
+在 **\* 交换机** 条目中，只能放置 **\* Case** 和 **\* Default** 条目。
 
-可以放置在的 GPD 文件条目 **\*用例**或 **\*默认**条目被称为可重定位项。 可重定位是以下类型的 GPD 条目：
+可放置在 **\* Case** 或 **\* 默认** 项内的 GPD 文件项称为可重定位项。 以下类型的 GPD 项可重定位：
 
--   大多数[打印机属性](printer-attributes.md)，除[仅限根级别属性](root-level-only-attributes.md)。 ([常规属性](general-attributes.md)前面必须是外部\_GLOBAL 除非\***开关**条目是在根级别-不在大括号内。)
+-   大多数 [打印机属性](printer-attributes.md)（ [仅限根级别属性](root-level-only-attributes.md)除外）。  ([常规属性](general-attributes.md)前面必须是 EXTERN \_ GLOBAL，除非 \* *_交换机_* 条目位于根级别（不在大括号内）。 ) 
 
--   嵌套\***交换机**，可以指定多个依赖项的条目。
+-   嵌套式 \* *_交换机_* 条目，可用于指定多个依赖关系。
 
--   \*命令项。
+-   \*命令条目。
 
--   \*TTFSEnabled？，可让字体替换。
+-   \*TTFSEnabled？，用于实现字体替换。
 
-以下类型的 GPD 条目不是可重定位的：
+以下类型的 GPD 项不可重定位：
 
--   仅在根级别的特性。
+-   仅限根级别的特性。
 
--   \*用于指定 TTFS 条目替换字体。
+-   \*用于指定替换字体的 TTFS 项。
 
--   \*约束\*InvalidCombination， \*InvalidInstallableCombination，\*中所述定义无效的选项，组合的 NotInstalledConstraints 条目[选项约束](option-constraints.md).
+-   \*约束、 \* InvalidCombination、 \* InvalidInstallableCombination、 \* NotInstalledConstraints 项定义了无效的选项组合，如 [选项约束](option-constraints.md)中所述。
 
--   \*功能和\*选项的条目 (尽管[功能特性](feature-attributes.md)并[选项属性](option-attributes.md)是可重定位)。
+-   \*功能和 \* 选项项 (虽然 [功能特性](feature-attributes.md) 和 [选项特性](option-attributes.md) 可) 重定位。
 
-一种方法可以确定是否条目置于正确地深入了解\***用例**语句将删除所有\***开关**并\***用例**语句。 如果中的条目\***用例**陈述是正确的它们是否仍正确后\***开关**并\***用例**删除语句。
+确定是否已正确地在 Case 语句中放置项的一种方法 \* **Case** 是删除所有 \* *_Switch_* 和 \* *_Case_* 语句。 如果 \* *_Case_* 语句内的条目是正确的，则在 \* 删除 *_Switch_* 和 \* *_Case_* 语句后，它们仍然是正确的。
 
-### <a name="ordering-of-switch-statements-in-a-v4-print-driver-derived-from-a-class-driver"></a>V4 打印驱动程序派生自类驱动程序中的 switch 语句的顺序
+### <a name="ordering-of-switch-statements-in-a-v4-print-driver-derived-from-a-class-driver"></a>V4 打印驱动程序中从类驱动程序派生的 switch 语句排序
 
-派生的 v4 打印机驱动程序 GPD 文件需要遵循的基本类驱动程序的顺序相同。
+派生的 v4 打印机驱动程序的 GPD 文件需要遵循与基类驱动程序相同的顺序。
 
-请考虑以下方案。 必须通过设置派生自 v4 类驱动程序的 v4 打印机驱动程序**RequiredClass**中的类驱动程序到\*-manifest.ini 文件。
+请考虑以下场景。 通过将 **RequiredClass** 设置为-manifest.ini 文件中的类驱动程序，可以从 v4 类驱动程序派生 v4 打印机驱动程序 \* 。
 
-类驱动程序 GPD 文件具有以下开关树：
+类驱动程序的 GPD 文件具有以下开关树：
 
 ```cpp
 * Option: A4
@@ -183,7 +182,7 @@ GPD 语言提供了类似于 C 的条件语句，可用于描述某些打印机�
     2. Switch: InputBin
 ```
 
-派生的 v4 打印机驱动程序想要添加**MarginSetting**切换，因此其 GPD 文件包含以下开关树：
+派生的 v4 打印机驱动程序想要添加 **MarginSetting** 开关，因此其 GPD 文件将具有以下开关树：
 
 ```cpp
 * Option: A4
@@ -196,9 +195,9 @@ GPD 语言提供了类似于 C 的条件语句，可用于描述某些打印机�
     3. Switch: MarginSetting
 ```
 
-请注意，**解析**之前设置**InputBin**中派生 GPD 并**MarginSetting**后两者设置。 派生的 v4 打印机驱动程序 GPD 文件遵循的基本类驱动程序的顺序相同，并将添加**MarginSetting**后。
+请注意， **解析** 在派生的 GPD 中的 **InputBin** 之前设置，而 **MarginSetting** 在这两个之后设置。 派生的 v4 打印机驱动程序的 GPD 文件的顺序与基类驱动程序的相同，并在之后添加 **MarginSetting** 。
 
-例如，错误地派生的 GPD 文件可能如下所示：
+例如，错误派生的 GPD 文件可能如下所示：
 
 ```cpp
 * Option: A4

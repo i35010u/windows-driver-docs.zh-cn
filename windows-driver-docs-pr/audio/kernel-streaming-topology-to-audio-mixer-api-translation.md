@@ -1,7 +1,6 @@
 ---
 title: 从内核流式处理拓扑到音频混音器 API 的转换
 description: 从内核流式处理拓扑到音频混音器 API 的转换
-ms.assetid: ee89dc67-c9f3-41cd-8a09-0c46d636fe64
 keywords:
 - 混音器 API WDK 音频
 - 内核流式处理 WDK 音频
@@ -17,12 +16,12 @@ keywords:
 - KS 引脚音频，转换
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c48e71837963301d90d630da78c214150a324c65
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 4e00623a0398664e428a9fc609d272d993f63655
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89207037"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96799219"
 ---
 # <a name="kernel-streaming-topology-to-audio-mixer-api-translation"></a>从内核流式处理拓扑到音频混音器 API 的转换
 
@@ -30,7 +29,7 @@ ms.locfileid: "89207037"
 ## <span id="kernel_streaming_topology_to_audio_mixer_api_translation"></span><span id="KERNEL_STREAMING_TOPOLOGY_TO_AUDIO_MIXER_API_TRANSLATION"></span>
 
 
-**混音**器 API 是一组 Windows 多媒体功能，用于检索有关音频混音器设备的信息。 **混音**器 API 将音频混合器行分类为源和目标线。 *源行* 是音频卡 (的输入，例如 CD、麦克风、线路输入和波形) 。 *目标行* 是卡的输出 (例如，) 中的扬声器、耳机、电话线和波形。 为了使源行有效，它应具有从源到目标的唯一路径。 单个源行可能映射到多个目标，但不能有多个路径可以将源行连接到目标行。 有关 **混音** 器 API 的详细信息，请参阅 Microsoft Windows SDK 文档。
+**混音** 器 API 是一组 Windows 多媒体功能，用于检索有关音频混音器设备的信息。 **混音** 器 API 将音频混合器行分类为源和目标线。 *源行* 是音频卡 (的输入，例如 CD、麦克风、线路输入和波形) 。 *目标行* 是卡的输出 (例如，) 中的扬声器、耳机、电话线和波形。 为了使源行有效，它应具有从源到目标的唯一路径。 单个源行可能映射到多个目标，但不能有多个路径可以将源行连接到目标行。 有关 **混音** 器 API 的详细信息，请参阅 Microsoft Windows SDK 文档。
 
 音频适配器的 WDM 驱动程序公开一个 KS 筛选器拓扑，该拓扑表示通过硬件的数据路径和这些路径上可用的功能。  (在 Wdmaud.sys 和 winspool.drv 文件中的 [WDMAud 系统驱动程序](user-mode-wdm-audio-components.md#wdmaud_system_driver)) 应解释 KS 筛选器拓扑，并生成通过 **混音** 器 API 公开的相应源和目标混音器行。 WDMAud 还处理 **混音** 器 API 调用，并将其转换为对适配器驱动程序管理的筛选器引脚和节点的等效属性调用。
 

@@ -1,15 +1,14 @@
 ---
 title: Windows 内核模式内核事务管理器
 description: Windows 内核模式内核事务管理器
-ms.assetid: 43bf96ed-8be8-4670-a310-99cd7c7f9073
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 1a4a429b7ef058cc8090cab7ede08e2f11dcd134
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: bd376fcfadac612807d2b21a3686f4db3b33a6a1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91733475"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96798097"
 ---
 # <a name="windows-kernel-mode-kernel-transaction-manager"></a>Windows 内核模式内核事务管理器
 

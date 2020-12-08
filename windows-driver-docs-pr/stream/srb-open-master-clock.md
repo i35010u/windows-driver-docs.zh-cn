@@ -1,7 +1,6 @@
 ---
 title: SRB \_ 开放 \_ 主 \_ 时钟
 description: SRB \_ 开放 \_ 主 \_ 时钟
-ms.assetid: 1ccad1bc-27e7-4038-b341-389240051fb8
 keywords:
 - SRB_OPEN_MASTER_CLOCK 流媒体设备
 topic_type:
@@ -12,12 +11,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1d053f810d4c5dfa9fb8cee58a40c485bd92a9d6
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 536fb3c2874ef421a4594690db88504ed1f6f216
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89186301"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96799265"
 ---
 # <a name="srb_open_master_clock"></a>SRB \_ 开放 \_ 主 \_ 时钟
 
@@ -42,7 +41,7 @@ ms.locfileid: "89186301"
 
 ### <a name="comments"></a>注释
 
-类驱动程序设置**CommandData**。*PSrb*的**MasterClockHandle**成员指向其创建用于表示主时钟的时钟对象的句柄。 *PSrb*指针指向[**HW \_ 流 \_ 请求 \_ 块**](/windows-hardware/drivers/ddi/strmini/ns-strmini-_hw_stream_request_block)结构。
+类驱动程序设置 **CommandData**。*PSrb* 的 **MasterClockHandle** 成员指向其创建用于表示主时钟的时钟对象的句柄。 *PSrb* 指针指向 [**HW \_ 流 \_ 请求 \_ 块**](/windows-hardware/drivers/ddi/strmini/ns-strmini-_hw_stream_request_block)结构。
 
 微型驱动程序应将 SRB 中的 **MasterClockHandle** 字段值保留到主时钟的句柄。
 

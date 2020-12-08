@@ -1,15 +1,14 @@
 ---
 title: 在 Visual Studio 中生成 v4 打印机驱动程序
 description: 使用内置驱动程序模板和驱动程序开发向导在 Microsoft Visual Studio 2019 中构建 v4 打印机驱动程序。
-ms.assetid: FAEAF22B-552F-4B3F-B275-A5BAC0DC700E
 ms.date: 09/24/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 700848422be1731acaf44bd45280ac0dce7a9c09
-ms.sourcegitcommit: 29c2e6dd8a3de3c11822d990adf1edd774f8a136
+ms.openlocfilehash: e0ec90be026dc5f2d752e1bb2c04091675f4bbaa
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91230045"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96797767"
 ---
 # <a name="build-a-v4-printer-driver-in-visual-studio"></a>在 Visual Studio 中生成 v4 打印机驱动程序
 

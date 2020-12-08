@@ -1,15 +1,14 @@
 ---
 title: 蓝牙附录
 description: 包含 Microsoft 定义的蓝牙 HCI 扩展插件示例和关系图。
-ms.assetid: 5C3C2479-03F9-4D33-94DA-3371D84C514B
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0476e4dc254e524f853923e0ab77bdf0c81f3e19
-ms.sourcegitcommit: 68d0aec4c282c9c1e1ab54509c8f4575dd273d56
+ms.openlocfilehash: 875dd68761227e3affb5be9f8ff5e74598462e68
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91221943"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96798589"
 ---
 # <a name="bluetooth-appendix"></a>蓝牙附录
 
@@ -24,7 +23,7 @@ ms.locfileid: "91221943"
 <table>
 <tr>
 <th>参数</th>
-<th>值</th>
+<th>“值”</th>
 <th></th>
 </tr>
 <tr>
@@ -184,7 +183,7 @@ ms.locfileid: "91221943"
 </td>
 </tr>
 </table>
-<p> </p>
+<p> </p>
 然后，控制器接收以下播发数据包。
 
 
@@ -465,14 +464,14 @@ ms.locfileid: "91221943"
 <td>-70</td>
 </tr>
 </table>
-<p> </p>
+<p> </p>
 <table>
 
 
 <table>
 <tr>
 <th>参数</th>
-<th>值</th>
+<th>“值”</th>
 </tr>
 <tr>
 <td><i>RSSI_threshold_high</i></td>
@@ -506,7 +505,7 @@ ms.locfileid: "91221943"
 
 此流程图提供广告筛选的示例控制器实现，并允许在收到广告时进行列表筛选。
 
-当主机收到播发通知或 <MSHelp： link tabindex = "0" 关键字 = "hci_vs_msft_le_monitor_device_event bltooth" 时，控制器可以通过不同方式实现这种逻辑，><b>HCI_VS_MSFT_LE_Monitor_Device_Event</b></mshelp： link> 由流程图指定。
+如果主机收到广告通知或 <MSHelp： link tabindex = "0" 关键字 = "bltooth.hci_vs_msft_le_monitor_device_event" ><b>HCI_VS_MSFT_LE_Monitor_Device_Event</b><>/MSHelp： link，则控制器可以通过不同的方式实现此逻辑。
 
 <p><img src="images/HCI_Filtering_Flowchart.png" alt="Microsoft HCI extension filtering flowchart"/></p>
 
@@ -517,4 +516,4 @@ ms.locfileid: "91221943"
 当启用活动扫描时，此序列图显示与符合播发筛选器的播发相关联的传播扫描响应。
 此关系图只显示控制器和主机之间预期的事件序列，而不显示控制器与特定设备之间的事件。
 假设 <i>有一个播发，该播发</i> 满足广告筛选器，而播发 <i>B</i> 不满足播发筛选器。
-<p> <img src="images/HCI_Propagate_Scan_Sequence.png" alt="HCI propagate scan sequence diagram"/></p>
+<p> <img src="images/HCI_Propagate_Scan_Sequence.png" alt="HCI propagate scan sequence diagram"/></p>

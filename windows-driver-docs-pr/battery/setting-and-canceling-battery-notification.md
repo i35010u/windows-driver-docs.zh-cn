@@ -1,7 +1,6 @@
 ---
 title: 设置和取消电池通知
 description: 设置和取消电池通知
-ms.assetid: bd0920f0-9f3f-47f7-b1a7-29ec233e93ff
 keywords:
 - 电池通知 WDK
 - 电池 miniclass 驱动程序 WDK，通知
@@ -11,12 +10,12 @@ keywords:
 - 停止电池通知
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b7d26db0fa1c5cc66ac27122f4932361b3cd384a
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: db788f334e915d84a992994034c9d2afb90de109
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90716576"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96798661"
 ---
 # <a name="setting-and-canceling-battery-notification"></a>设置和取消电池通知
 
@@ -36,11 +35,11 @@ NTSTATUS
     );
 ```
 
-*上下文*参数是指向上下文区域的指针，该上下文区域由 miniclass 驱动程序分配，并在 \_ 设备初始化时在电池微型端口信息结构中传递给类驱动程序 \_ 。 *BatteryTag*参数是之前由[*BatteryMiniQueryTag*](/windows/win32/api/batclass/nc-batclass-bclass_query_tag_callback)返回的值。
+*上下文* 参数是指向上下文区域的指针，该上下文区域由 miniclass 驱动程序分配，并在 \_ 设备初始化时在电池微型端口信息结构中传递给类驱动程序 \_ 。 *BatteryTag* 参数是之前由 [*BatteryMiniQueryTag*](/windows/win32/api/batclass/nc-batclass-bclass_query_tag_callback)返回的值。
 
-*BatteryNotify*参数包含一组指示电池电源条件的标志，以及一个用于定义可接受电池容量范围的一对 ULONG 值。 当电池不再满足指定的电源条件或其容量高于或低于指定的范围时，miniclass 驱动程序应调用 [**BatteryClassStatusNotify**](/windows/win32/api/batclass/nf-batclass-batteryclassstatusnotify)。
+*BatteryNotify* 参数包含一组指示电池电源条件的标志，以及一个用于定义可接受电池容量范围的一对 ULONG 值。 当电池不再满足指定的电源条件或其容量高于或低于指定的范围时，miniclass 驱动程序应调用 [**BatteryClassStatusNotify**](/windows/win32/api/batclass/nf-batclass-batteryclassstatusnotify)。
 
-*BatteryMiniSetStatusNotify*对于 \_ \_ 无法确定用于此电池的任何条件或触发器值，BatteryMiniSetStatusNotify 应返回状态。
+*BatteryMiniSetStatusNotify* 对于 \_ \_ 无法确定用于此电池的任何条件或触发器值，BatteryMiniSetStatusNotify 应返回状态。
 
 类驱动程序调用 [*BatteryMiniDisableStatusNotify*](/windows/win32/api/batclass/nc-batclass-bclass_disable_status_notify_callback) 例程来取消 BatteryMiniSetStatusNotify 以前请求的电池状态更改的通知。 此例程声明如下：
 
@@ -52,7 +51,7 @@ NTSTATUS
     );
 ```
 
-*上下文*参数是一个指针，指向由 miniclass 驱动程序分配的上下文区域，并将其传递给 \_ 设备初始化时的电池微型端口信息结构中的类驱动程序 \_ 。
+*上下文* 参数是一个指针，指向由 miniclass 驱动程序分配的上下文区域，并将其传递给 \_ 设备初始化时的电池微型端口信息结构中的类驱动程序 \_ 。
 
 Miniclass 驱动程序可以忽略两个例程的功能，并且 \_ 不支持返回状态 \_ 。 然而，提供 *BatteryMiniSetStatusNotify* 例程的 miniclass 驱动程序必须提供相应的 *BatteryMiniDisableStatusNotify* 例程，反之亦然。
 

@@ -1,19 +1,18 @@
 ---
 title: 在 Windows 中安装
 description: 在 Windows 中安装
-ms.assetid: 790caffd-ebb0-4ba1-b31c-b03d3c83bc59
 keywords:
 - 音频适配器 WDK，系统组件
 - 适配器驱动程序 WDK 音频，系统组件
 - 端口类音频适配器 WDK，系统组件
 ms.date: 10/26/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f731477c1fb25de0ccb5cba368ed8c8993dc1338
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: fdf2f31da40d09dedfaa4129a20c6c1afc3c074e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89209089"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96799235"
 ---
 # <a name="installing-in-windows"></a>在 Windows 中安装
 

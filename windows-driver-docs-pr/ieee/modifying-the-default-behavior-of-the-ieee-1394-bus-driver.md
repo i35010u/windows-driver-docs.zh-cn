@@ -1,15 +1,14 @@
 ---
 title: 修改 IEEE 1394 总线驱动程序的默认行为
 description: Windows 7 包括 1394ohci.sys，这是通过使用内核模式驱动程序框架（ (KMDF) 实现的新 IEEE 1394 总线驱动程序）。
-ms.assetid: B636943E-EE52-4D0D-A638-89C05AD41F1A
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 65e3aa88824fc33fc947ae09fa5a8c561cbbe024
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 8734d411d5c366e0ba1516653d3f197d3fb1e160
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89383039"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96798209"
 ---
 # <a name="modifying-the-default-behavior-of-the-ieee-1394-bus-driver"></a>修改 IEEE 1394 总线驱动程序的默认行为
 
@@ -52,7 +51,7 @@ Windows 7 包括 1394ohci.sys，这是通过使用内核模式驱动程序框架
 <th>类型</th>
 <th>值</th>
 <th>默认</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -84,7 +83,7 @@ Windows 7 包括 1394ohci.sys，这是通过使用内核模式驱动程序框架
 <td>仅针对1394a 拓扑优化</td>
 <td>将此值设置为0将禁用间隙计数优化。 将此值设置为1可启用间隙计数优化。
 <div class="alert">
-<strong>注意</strong>   启用间隙计数优化可改进所有1394总线拓扑（包括1394b）的间隙计数。 根据 IEEE-1394a 规范中指定的表方法，使用的 "间隙计数" 值。 最终用户必须确保使用的间距计数对其1394总线拓扑有效。
+<strong>注意</strong>  启用间隙计数优化可改进所有1394总线拓扑（包括1394b）的间隙计数。 根据 IEEE-1394a 规范中指定的表方法，使用的 "间隙计数" 值。 最终用户必须确保使用的间距计数对其1394总线拓扑有效。
 </div>
 <div>
  
@@ -97,7 +96,7 @@ Windows 7 包括 1394ohci.sys，这是通过使用内核模式驱动程序框架
 <td>0</td>
 <td>如果在1394总线上找不到支持同步的节点，则将此值设置为0将禁用循环启动数据包。 将此值设置为1可启用循环启动数据包，无论是否在1394总线上都找到了支持同步的节点。
 <div class="alert">
-<strong>注意</strong>   1394ohci.sys 总线驱动程序将禁用，并且仅当本地节点为总线管理器时，才启用循环启动数据包。
+<strong>注意</strong>  1394ohci.sys 总线驱动程序将禁用，并且仅当本地节点为总线管理器时，才启用循环启动数据包。
 </div>
 <div>
  

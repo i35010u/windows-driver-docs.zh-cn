@@ -1,17 +1,16 @@
 ---
 title: Const (TCP/IP)
 description: TCP/IP Const 构造定义必须返回的数据类型和值。
-ms.assetid: a0ede11d-ada4-4dc4-87a4-68c96635c0fd
 keywords:
 - Const 构造
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6b36f92246e2a41abd9767e86849deb7c20b05a3
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 31456a8267691a88dbdf31d5d9e029f447b438b4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106104"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96797577"
 ---
 # <a name="const-tcpip"></a>Const (TCP/IP)
 
@@ -26,12 +25,12 @@ TCP/IP Const 构造定义必须返回的数据类型和值。 Const 用于不在
 <thead>
 <tr class="header">
 <th>Attribute</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><strong>name</strong></p></td>
+<td><p>name</p></td>
 <td><p>架构值的名称。</p></td>
 </tr>
 <tr class="even">

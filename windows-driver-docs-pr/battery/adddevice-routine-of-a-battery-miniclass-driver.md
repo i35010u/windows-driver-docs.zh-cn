@@ -1,18 +1,17 @@
 ---
 title: 电池微型类驱动程序的 AddDevice 例程
 description: 电池微型类驱动程序的 AddDevice 例程
-ms.assetid: 1b34e223-e238-4547-bd44-754be2e6749c
 keywords:
 - AddDevice 例程 WDK 电池
 - 电池 miniclass 驱动程序 WDK，例程
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f011074ef3769587cf3f6cb95ee11f2f3a63ccbc
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 051024cc561c5b6e48ea1aaea08ebdf23620d483
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90716614"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96798705"
 ---
 # <a name="adddevice-routine-of-a-battery-miniclass-driver"></a>电池微型类驱动程序的 AddDevice 例程
 

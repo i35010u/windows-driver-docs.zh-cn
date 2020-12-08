@@ -1,17 +1,16 @@
 ---
 title: OID_WWAN_DEVICE_RESET
 description: OID_WWAN_DEVICE_RESET
-ms.assetid: CF15A1FD-9E48-458C-80DF-F63636F73962
 keywords:
 - MB 设备重置，移动宽带设备重置，移动宽带微型端口驱动程序设备重置
 ms.date: 08/18/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e06accfa568ec45084e3e543b63ef3766068f19e
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: f47157e67a7c0b2707f0b657a25d82078aa27e64
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89218349"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96797953"
 ---
 # <a name="oid_wwan_device_reset"></a>OID_WWAN_DEVICE_RESET
 
@@ -27,7 +26,7 @@ ms.locfileid: "89218349"
 
 **版本**： Windows 10，版本 1709 **头**： Ntddndis (包括 Ndis .h) 
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [NDIS_STATUS_WWAN_DEVICE_RESET_STATUS](ndis-status-wwan-device-reset-status.md)
 

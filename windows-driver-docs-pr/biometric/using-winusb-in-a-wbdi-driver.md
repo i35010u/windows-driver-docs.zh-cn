@@ -1,22 +1,21 @@
 ---
 title: 在 WBDI 驱动程序中使用 WinUSB
 description: 在 WBDI 驱动程序中使用 WinUSB
-ms.assetid: a2f109cd-cb61-4c63-8e93-111f62a2c02d
 keywords:
 - 生物识别驱动程序 WDK，WinUSB
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c981c488567c49c94d30c2213d8bb2b0b6415ce5
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 068897264192edb0ac06f36d726e56215b1e6921
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89095401"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96798609"
 ---
 # <a name="using-winusb-in-a-wbdi-driver"></a>在 WBDI 驱动程序中使用 WinUSB
 
 
-Microsoft 建议 WBDI 驱动程序使用用户模式驱动程序框架内置的 [USB i/o 目标](../wdf/usb-i-o-targets-in-umdf.md) (UMDF) 。
+Microsoft 建议 WBDI 驱动程序使用内置于 User-Mode Driver Framework (UMDF) 的 [USB i/o 目标](../wdf/usb-i-o-targets-in-umdf.md) 。
 
 ### <a name="span-idsetting_umdfdispatcherspanspan-idsetting_umdfdispatcherspansetting-umdfdispatcher"></a><span id="setting_umdfdispatcher"></span><span id="SETTING_UMDFDISPATCHER"></span>设置 UmdfDispatcher
 

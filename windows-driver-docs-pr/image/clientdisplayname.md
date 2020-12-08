@@ -1,9 +1,8 @@
 ---
 title: ClientDisplayName 元素
-description: 所需的 ClientDisplayName 元素指定扫描程序应在其用户界面中显示的字符串。
-ms.assetid: e43e5c51-5f8e-47af-b5da-707b89401935
+description: 必需的 ClientDisplayName 元素指定扫描程序应在其用户界面中显示的字符串。
 keywords:
-- ClientDisplayName 元素成像设备
+- ClientDisplayName 元素图像设备
 topic_type:
 - apiref
 api_name:
@@ -12,19 +11,19 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 252523edba3eea7350b9a096c0b9b5ee50df5d7e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 040b474bce5242e9f7c88006a4c93f5b8a7ca2e6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63373198"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96798175"
 ---
 # <a name="clientdisplayname-element"></a>ClientDisplayName 元素
 
 
-所需**ClientDisplayName**元素指定扫描程序应在其用户界面中显示的字符串。
+必需的 **ClientDisplayName** 元素指定扫描程序应在其用户界面中显示的字符串。
 
-<a name="usage"></a>用法
+<a name="usage"></a>使用情况
 -----
 
 ```xml
@@ -41,12 +40,12 @@ ms.locfileid: "63373198"
 <a name="text-value"></a>文本值
 ----------
 
-必需。 任何有效字符的字符串。
+必需。 任何有效的字符串。
 
 ## <a name="child-elements"></a>子元素
 
 
-没有子元素。
+没有任何子元素。
 
 ## <a name="parent-elements"></a>父元素
 
@@ -70,7 +69,7 @@ ms.locfileid: "63373198"
 <a name="remarks"></a>备注
 -------
 
-显示的名称，用户可以选择作为扫描目标的请求的客户端。 当用户选择此显示名称，并按扫描按钮时，WSD 扫描服务即会发送[ **ScanAvailableEvent** ](scanavailableevent.md)订阅接收它扫描目标的事件。
+显示的名称使用户能够选择请求客户端作为扫描目标。 当用户选择此显示名称并按下 "扫描" 按钮时，WSD 扫描服务会将 [**ScanAvailableEvent**](scanavailableevent.md) 事件发送到订阅接收它的扫描目标。
 
 ## <a name="see-also"></a>请参阅
 

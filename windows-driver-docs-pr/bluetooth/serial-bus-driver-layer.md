@@ -1,15 +1,14 @@
 ---
 title: 串行总线驱动程序层
 description: 串行总线驱动程序基于由 ACPI 创建的 PDO 进行加载，并可查询和访问系统资源，如 GPIO 和 I2C 控制器执行信号控制。
-ms.assetid: E6A3E1CF-C25B-429B-946D-B300BAF3CF9B
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 047fa780d2b9151945989edd8ed4bd19928289a0
-ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
+ms.openlocfilehash: b43bcf3dc5fdeb88ec5291522cc9acb59ef60b90
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90010543"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96798527"
 ---
 # <a name="serial-bus-driver-layer"></a>串行总线驱动程序层
 

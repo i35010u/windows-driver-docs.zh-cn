@@ -1,29 +1,28 @@
 ---
 title: 将东亚版 AFM 文件转换为 NTF 文件
 description: 将东亚版 AFM 文件转换为 NTF 文件
-ms.assetid: 0932068a-9101-4cdc-8c80-b2d3a4b507ba
 keywords:
 - 微型驱动程序 WDK Pscript，转换 AFM 文件
-- NTF 文件
-- .ntf 文件
-- .afm 文件
+- CONTOSO.NTF 文件
+- contoso.ntf 文件
+- afm 文件
 - AFM 文件
-- 将 AFM 文件转换为 NTF 文件 WDK Pscript
+- 将 AFM 文件转换为 CONTOSO.NTF 文件 WDK Pscript
 - Adobe 字体指标 WDK Pscript
 - 东亚字体 WDK 打印
 - 亚洲字体 WDK 打印
-- 简体中文字体支持 WDK 打印
-- 繁体中文字体支持 WDK 打印
-- 日语字体支持 WDK
+- 简体中文支持 WDK 打印
+- 中文传统字体支持 WDK 打印
+- 日语支持 WDK
 - 朝鲜语字体支持 WDK 打印
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ef9272459d5353a20f2273779bb596627aeb207e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c33441a9ee657a46af0c953d68b7202dc48155a6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63365697"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96797505"
 ---
 # <a name="converting-east-asian-afm-files-to-ntf-files"></a>将东亚版 AFM 文件转换为 NTF 文件
 
@@ -31,25 +30,25 @@ ms.locfileid: "63365697"
 
 
 
-若要处理东亚字体.afm 文件，Makentf.exe (中所述[NTF 文件转换 AFM 文件](converting-afm-files-to-ntf-files.md)) 需要.map 和.ps 文件，以创建映射表从 Unicode 到 CID (字符 ID) 的字体。
+若要处理东亚字体的 afm 文件，请 Makentf.exe (将 [Afm 文件转换为 Contoso.ntf 文件](converting-afm-files-to-ntf-files.md) 中所述的) 需要使用映射和 .ps 文件创建从 UNICODE 到 CID 的映射表 (字体的字符 ID) 。
 
-东亚.afm 文件具有 CID 说明和该字体中包含每个字形的指标。 .Map 文件列出了 Unicode 代码和相应的字体的字符集的字符代码。 .Ps 文件包含 Unicode 代码的列表和字体的字符的相应 Cid 设置。
+东亚的 afm 文件包含字体中包含的每个字形的 CID 说明和指标。 .Map 文件列出字体字符集的 Unicode 代码和对应的字符代码。 .Ps 文件包含 Unicode 代码列表和该字体字符集的相应 Cid。
 
-从开始使用东亚.afm 文件，Makentf.exe 决定该字符集。 基于的字符集，Makentf.exe 查找相应的.map 和.ps 文件。 从.map 文件 Makentf.exe 列出了可以使用该字体中的 Unicode 代码。 从 Unicode 代码列表和.ps 文件，Makentf.exe 然后创建该字体的 Unicode CID 映射表。 目前，.afm 文件用于验证该字体中实际包含每个 CID （标志符号）。 如果.afm 文件中找到 CID，则在映射表中创建从 Unicode 代码到 CID 一个映射条目。 如果找不到 CID，不创建映射项。
+从东亚的 afm 文件开始，Makentf.exe 确定字符集。 根据字符集，Makentf.exe 将查找适当的 .map 和 .ps 文件。 在 .map 文件中，Makentf.exe 列出了可用于字体的 Unicode 代码。 从 Unicode 代码列表和 .ps 文件中，Makentf.exe 然后创建该字体的 Unicode 到 CID 的映射表。 目前，此文件用于验证每个 CID (标志符号) 是否确实包含在该字体中。 如果在该文件中找到了该 CID，则会在映射表中创建从 Unicode 代码到 CID 的映射条目。 如果找不到该 CID，则不会创建映射条目。
 
-以下列表中显示为简体中文、 繁体中文、 日语和朝鲜语创建.ntf 文件所需的.map 和.ps 文件。 将这些文件和.afm 文件放在同一目录中。
+以下列表显示了为简体中文、繁体中文、日语和朝鲜语创建 contoso.ntf 文件所需的 .map 和 .ps 文件。 将这些文件和你的 afm 文件放在同一目录中。
 
 ### <a name="chinese-simplified"></a>简体中文
 
--   ucs2gbk.map
+-   ucs2gbk
 
 -   unigbh.ps
 
 -   unigbv.ps
 
-### <a name="chinese-traditional"></a>繁体中文
+### <a name="chinese-traditional"></a>中文(繁体)
 
--   ucs2bg5.map
+-   ucs2bg5
 
 -   unicnsh.ps
 
@@ -57,11 +56,11 @@ ms.locfileid: "63365697"
 
 ### <a name="japanese"></a>日语
 
--   ucs283h.map
+-   ucs283h
 
--   ucs283v.map
+-   ucs283v
 
--   ucs2msj.map
+-   ucs2msj
 
 -   uni83h.ps
 
@@ -71,11 +70,11 @@ ms.locfileid: "63365697"
 
 -   unijisv.ps
 
-### <a name="korean"></a>朝鲜语
+### <a name="korean"></a>韩语
 
--   ucs2jhb.map
+-   ucs2jhb
 
--   ucs2uhc.map
+-   ucs2uhc
 
 -   uniksh.ps
 

@@ -1,17 +1,16 @@
 ---
 title: KSEVENTSETID \_ LoopedStreaming
 description: KSEVENTSETID \_ LoopedStreaming
-ms.assetid: 88baf1f0-d18f-4601-9ba3-fea957712cd6
 keywords:
 - KSEVENTSETID_LoopedStreaming
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7a60171d9bf3c7a9ab24da9bf68e7a5349e1dde2
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 3175ea943d389d0d60f169dd51b40d8eb59c8be4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89209025"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96799199"
 ---
 # <a name="kseventsetid_loopedstreaming"></a>KSEVENTSETID \_ LoopedStreaming
 

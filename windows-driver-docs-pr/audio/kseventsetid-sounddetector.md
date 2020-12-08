@@ -1,24 +1,23 @@
 ---
-title: KSEVENTSETID\_SoundDetector
-description: KSEVENTSETID\_SoundDetector 事件集使用的音频驱动程序通知操作系统声音检测程序检测到匹配项。
-ms.assetid: 372F7BD6-3015-4B60-8089-71222E533FE3
+title: KSEVENTSETID \_ SoundDetector
+description: '\_音频驱动程序使用 KSEVENTSETID SoundDetector 事件集通知操作系统声音检测程序已检测到匹配项。'
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 21370ef6c59676f77a88f0d31b6b00678372ef65
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5eaa399db2f64df93f9d36c4708479bb8ff3a9f2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333328"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96799193"
 ---
-# <a name="kseventsetidsounddetector"></a>KSEVENTSETID\_SoundDetector
+# <a name="kseventsetid_sounddetector"></a>KSEVENTSETID \_ SoundDetector
 
 
-KSEVENTSETID\_SoundDetector 事件集使用的音频驱动程序通知操作系统声音检测程序检测到匹配项。
+\_音频驱动程序使用 KSEVENTSETID SoundDetector 事件集通知操作系统声音检测程序已检测到匹配项。
 
-在此集中的事件项指定为以下**KSEVENT\_SOUNDDETECTOR**枚举值：
+此集中的事件项被指定为以下 **KSEVENT \_ SOUNDDETECTOR** 枚举值：
 
--   [**KSEVENT\_SOUNDDETECTOR\_MATCHDETECTED**](ksevent-sounddetector-matchdetected.md)
+-   [**KSEVENT \_ SOUNDDETECTOR \_ MATCHDETECTED**](ksevent-sounddetector-matchdetected.md)
 
  
 

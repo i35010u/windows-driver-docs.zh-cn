@@ -1,16 +1,15 @@
 ---
 title: OID_WWAN_CONNECT
 description: OID_WWAN_CONNECT 激活或停用特定的数据包上下文并读取上下文的激活状态。
-ms.assetid: 51be35fe-750b-4c2b-aab3-a9df59711f7d
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_WWAN_CONNECT 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: bc2f423083657545463b8aed26636d952db445fb
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 5694b161be1c057629e0307dcc0f047cef6a098f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89213201"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96797981"
 ---
 # <a name="oid_wwan_connect"></a>OID \_ WWAN \_ 连接
 
@@ -28,7 +27,7 @@ OID \_ WWAN \_ CONNECT 激活或停用特定的数据包上下文并读取上下
 
 此对象激活或停用特定的数据包上下文并读取上下文的激活状态。 当激活状态发生变化时，微型端口驱动程序必须发送相应的事件通知。
 
-仅当微型端口驱动程序处于 **WwanRegisterStateHome**、 **WwanRegisterStatePartner**或 **WwanRegisterStateRoaming**的注册状态时，才会调用此对象。 当数据包服务处于活动状态时，该设备还必须处于 **WwanPacketServiceStateAttached**的附加状态。
+仅当微型端口驱动程序处于 **WwanRegisterStateHome**、 **WwanRegisterStatePartner** 或 **WwanRegisterStateRoaming** 的注册状态时，才会调用此对象。 当数据包服务处于活动状态时，该设备还必须处于 **WwanPacketServiceStateAttached** 的附加状态。
 
 此对象支持 set 和 query 操作。
 
@@ -44,7 +43,7 @@ OID \_ WWAN \_ CONNECT 激活或停用特定的数据包上下文并读取上下
 
 由于此版本中仅支持一个激活的上下文，因此激活或停用特定的上下文数量，以设置或撕裂第2层连接。
 
-在设置请求时，MB 服务 furnishes WWAN **ConnectionId** **ActivationCommand** \_ 上下文 \_ 状态数据结构中的 ConnectionId 和 ActivationCommand 参数。 基于**ActivationCommand**参数值*WwanActivationCommandActivate*或*WwanActivationCommandDeactivate*，它指示微型端口驱动程序激活或停用**ConnectionId**标识的数据包上下文。
+在设置请求时，MB 服务 furnishes WWAN **ConnectionId** **ActivationCommand** \_ 上下文 \_ 状态数据结构中的 ConnectionId 和 ActivationCommand 参数。 基于 **ActivationCommand** 参数值 *WwanActivationCommandActivate* 或 *WwanActivationCommandDeactivate*，它指示微型端口驱动程序激活或停用 **ConnectionId** 标识的数据包上下文。
 
 -   如果服务或订阅需要激活，微型端口驱动程序应返回错误代码 WWAN \_ 状态 \_ 服务 " \_ 未 \_ 激活"。 在激活服务或订阅之前，可能不会发生 PDP 激活。 所有紧急服务都可能受设备和操作员提供的支持的限制。 操作系统可能会调用 OID \_ WWAN \_ 服务激活， \_ 以响应此错误代码。
 
@@ -54,7 +53,7 @@ OID \_ WWAN \_ CONNECT 激活或停用特定的数据包上下文并读取上下
 
 微型端口驱动程序使用以下逻辑来确定设置请求中 AccessString、用户名和密码设置的有效性：
 
--   如果 **ActivationCommand** 为 *WwanActivationCommandDeactivate*，则微型端口驱动程序应忽略这三个参数的设置。 其余情况下，仅在 **ActivationCommand** 为 *WwanActivationCommandActivate*时才考虑这种情况。
+-   如果 **ActivationCommand** 为 *WwanActivationCommandDeactivate*，则微型端口驱动程序应忽略这三个参数的设置。 其余情况下，仅在 **ActivationCommand** 为 *WwanActivationCommandActivate* 时才考虑这种情况。
 
 上下文激活会在用户登录和注销期间保持。 它不是每个登录用户。
 
@@ -62,7 +61,7 @@ OID \_ WWAN \_ CONNECT 激活或停用特定的数据包上下文并读取上下
 
 对于对查询请求的响应，微型端口驱动程序将发送 NDIS \_ 状态 \_ WWAN \_ 上下文 \_ 状态通知。
 
-**重要提示**   纪录
+**重要提示**  纪录
 
  
 
@@ -88,7 +87,7 @@ OID \_ WWAN \_ CONNECT 激活或停用特定的数据包上下文并读取上下
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [WWAN 数据包上下文管理](./mb-packet-context-management.md)

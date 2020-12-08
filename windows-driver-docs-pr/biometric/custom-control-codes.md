@@ -1,42 +1,41 @@
 ---
 title: 自定义控制代码
-description: 供应商可以定义自定义控件代码
-ms.assetid: 66eebb4b-ee1e-42d2-9a4b-98a79a0f7b75
+description: 供应商可以定义自定义控制代码
 keywords:
 - 生物识别驱动程序 WDK，控制代码
 ms.date: 11/13/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 969f55aecbbcc2147da842b029f53e13591c4293
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4f2d3a243d2df63d88542f77599d51c7b15a4789
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328406"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96798629"
 ---
 # <a name="custom-control-codes"></a>自定义控制代码
 
-供应商可以定义自定义控件代码开始 0x800。
+供应商可以从0x800 开始定义自定义控制代码。
 
-若要定义特定于供应商的 I/O 控制代码，请使用以下参数使用系统提供 CTL_CODE 宏：
+若要定义供应商特定的 i/o 控制代码，请将系统提供的 CTL_CODE 宏用于以下参数：
 
 ```c
 #define IOCTL_BIOMETRIC_Device_Function CTL_CODE(FILE_DEVICE_BIOMETRIC, Function, METHOD_BUFFERED, FILE_ANY_ACCESS)
 ```
 
-所有输入/输出参数都是供应商定义的。 **状态**成员设置为下表中的值之一：
+所有输入/输出参数均由供应商定义。 **Status** 成员设置为下表中的值之一：
 
-| 状态值 | 描述 |
+| 状态值 | 说明 |
 | --- | --- |
-| STATUS_SUCCESS，则为 S_OK， | 已成功完成该操作。 如果返回的数据大小是 DWORD，负载将包含调用所需的缓冲区的大小。 否则，有效负载包含完整输出缓冲区。 |
-| E_INVALIDARG | 参数未正确指定。 |
+| S_OK，STATUS_SUCCESS | 操作已成功完成。 如果返回的数据的大小为 DWORD，则负载包含调用所需的缓冲区大小。 否则，负载包含完整的输出缓冲区。 |
+| E_INVALIDARG | 未正确指定参数。 |
 
-供应商定义 Ioctl 可以用于任何特定于供应商的操作。 通过 Windows 生物识别服务，提供对设备的排他控制用于显示这些调用。 下面是一些示例的供应商可以如何使用供应商特定 Ioctl:
+供应商定义的 IOCTLs 可用于任何供应商特定的操作。 这些调用都通过 Windows 生物识别服务，该服务具有设备的独占控制权。 下面是一些供应商如何使用特定于供应商的 IOCTLs 的示例：
 
-- 设置应用程序或组件和设备之间的专有安全会话。
-- 使用从 WinBio 引擎或插件的数据库在设备上的匹配和存储功能的接口。
-- 特定于供应商的设备事件的挂起 I/O。
-- 管理特定于供应商的会话。
+- 在应用程序或组件与设备之间设置专用的安全会话。
+- 在设备上通过 WinBio 引擎或数据库插件提供匹配和存储功能的接口。
+- 针对供应商特定设备事件挂起的 i/o。
+- 管理供应商特定的会话。
 
-此功能是在 Windows 7 和更高版本的 Windows 中可用。
+此功能在 windows 7 和更高版本的 Windows 中可用。
 
 

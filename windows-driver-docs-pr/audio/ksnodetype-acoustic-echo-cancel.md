@@ -1,7 +1,6 @@
 ---
 title: KSNODETYPE \_ 回声 \_ \_ 取消
 description: KSNODETYPE \_ 回声 \_ \_ 取消
-ms.assetid: 5f70b9ad-d569-404a-bf6d-01be689e2d56
 keywords:
 - KSNODETYPE_ACOUSTIC_ECHO_CANCEL 音频设备
 topic_type:
@@ -12,12 +11,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fd380124364884f5a6bdabe463200322ca6a22ef
-ms.sourcegitcommit: 372464be981a39781c71049126f36891cb5d0cad
+ms.openlocfilehash: 9a5053c2a109983c4c4ec6fa44a894d39716fb5c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91646009"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96799179"
 ---
 # <a name="ksnodetype_acoustic_echo_cancel"></a>KSNODETYPE \_ 回声 \_ \_ 取消
 
@@ -62,7 +61,7 @@ AEC 节点应使用标头文件 Ksmedia 中的 pin Id 对其逻辑 pin 进行编
 
  
 
-请注意，上表中的 pin 是节点上的逻辑引脚，它们专用于指定筛选器的内部连接，而不是用于连接到其他筛选器的筛选器的外部 pin。 有关详细信息，请参阅 [**PCCONNECTION \_ 描述符**](/windows-hardware/drivers/ddi/portcls/ns-portcls-_pcconnection_descriptor)。
+请注意，上表中的 pin 是节点上的逻辑引脚，它们专用于指定筛选器的内部连接，而不是用于连接到其他筛选器的筛选器的外部 pin。 有关详细信息，请参阅 [**PCCONNECTION \_ 描述符**](/previous-versions/windows/hardware/drivers/ff537688(v=vs.85))。
 
 有关包含 AEC 节点的筛选器如何为全双工 DirectSound 应用程序提供支持的信息，请参阅 [DirectSound 捕获效果](./directsound-capture-effects.md)。
 

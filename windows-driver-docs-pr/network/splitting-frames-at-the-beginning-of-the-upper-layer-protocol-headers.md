@@ -1,34 +1,33 @@
 ---
 title: 正在开始拆分高层协议标头中的帧
-description: 在上层协议标头的开头拆分帧
-ms.assetid: 2559ac20-46dc-4116-9d12-b2cd634e501b
+description: 在上端 Layer-Protocol 标头的开头拆分帧
 keywords:
 - 从上层协议开头拆分了 "WDK 网络" 的以太网帧
 - 上层协议 WDK 标头-数据拆分
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5b0eda52a894df30e9786d49e663c2f43cced474
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 94029e1211249600f7543504be6054e33c718741
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89207165"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96797907"
 ---
-# <a name="splitting-frames-at-the-beginning-of-the-upper-layer-protocol-headers"></a>在上层协议标头的开头拆分帧
+# <a name="splitting-frames-at-the-beginning-of-the-upper-layer-protocol-headers"></a>在上端 Layer-Protocol 标头的开头拆分帧
 
 
 
 
 
-*上层协议*是 IP 传输协议，例如 TCP、UDP 或 ICMP。
+*上层协议* 是 IP 传输协议，例如 TCP、UDP 或 ICMP。
 
-**注意**   在标头中，IPsec 不被视为数据拆分要求的上层协议。 有关拆分 IPsec 帧的详细信息，请参阅 [拆分 Ipsec 帧](splitting-ipsec-frames.md)。
+**注意**  在标头中，IPsec 不被视为数据拆分要求的上层协议。 有关拆分 IPsec 帧的详细信息，请参阅 [拆分 Ipsec 帧](splitting-ipsec-frames.md)。
 
  
 
 如果 NIC 在上层协议标头的开头拆分了以太网帧，则指定的 [**网络 \_ 缓冲区**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer) 必须正好包含两个 MDLs。 第一个 MDL 描述的缓冲区必须以 (MAC 标头的以太网帧的第一个字节开头) 并且第二个 MDL 描述的缓冲区必须从上层协议标头的第一个字节开始。
 
-**注意**   NIC 可以在 TCP 或 UDP 有效负载处拆分 TCP 和 UDP 帧。 有关详细信息，请参阅在 [TCP 负载处拆分帧](splitting-frames-at-the-tcp-payload.md) 和 [在 UDP 负载处拆分帧](splitting-frames-at-the-udp-payload.md)。
+**注意**  NIC 可以在 TCP 或 UDP 有效负载处拆分 TCP 和 UDP 帧。 有关详细信息，请参阅在 [TCP 负载处拆分帧](splitting-frames-at-the-tcp-payload.md) 和 [在 UDP 负载处拆分帧](splitting-frames-at-the-udp-payload.md)。
 
  
 

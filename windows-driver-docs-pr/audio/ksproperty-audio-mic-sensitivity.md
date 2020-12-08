@@ -1,7 +1,6 @@
 ---
-title: KSPROPERTY\_AUDIO\_MIC\_SENSITIVITY
+title: KSPROPERTY \_ 音频 \_ MIC \_ 敏感度
 description: KSPROPERTY \_ 音频 \_ MIC \_ 敏感度属性以分贝为单位指定麦克风敏感度，相对于完全比例 (dBFS) 单位。
-ms.assetid: FE62AAA5-E022-459F-817B-3661535FA9BD
 keywords:
 - KSPROPERTY_AUDIO_MIC_SENSITIVITY 音频设备
 topic_type:
@@ -14,14 +13,14 @@ api_type:
 - HeaderDef
 ms.date: 05/10/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: dbfa5579f07f0d9d6ae27baaae5efe0bfa3ba33d
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 22acfc44ac214bdd9527ed7886ce658fddb97763
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102620"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96799029"
 ---
-# <a name="ksproperty_audio_mic_sensitivity"></a>KSPROPERTY\_AUDIO\_MIC\_SENSITIVITY
+# <a name="ksproperty_audio_mic_sensitivity"></a>KSPROPERTY \_ 音频 \_ MIC \_ 敏感度
 
 KSPROPERTY \_ 音频 \_ MIC \_ 敏感度属性以分贝为单位指定麦克风敏感度，相对于完全比例 (dBFS) 单位。
 

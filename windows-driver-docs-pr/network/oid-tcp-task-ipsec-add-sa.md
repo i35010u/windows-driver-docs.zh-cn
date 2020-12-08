@@ -1,17 +1,16 @@
 ---
 title: OID_TCP_TASK_IPSEC_ADD_SA
 description: 本主题介绍) OID_TCP_TASK_IPSEC_ADD_SA 对象标识符 (OID。
-ms.assetid: 7062c0df-627c-4110-a69f-ebad60f4e3b8
 keywords:
 - OID_TCP_TASK_IPSEC_ADD_SA
 ms.date: 11/06/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ac14567abac234c2320fcae43aae963b83c282ce
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 8d8352fa13df46b0c7e6712e180694d3ce5d97c9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89213335"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96798003"
 ---
 # <a name="oid_tcp_task_ipsec_add_sa"></a>OID_TCP_TASK_IPSEC_ADD_SA
 
@@ -19,7 +18,7 @@ OID_TCP_TASK_IPSEC_ADD_SA OID 由传输协议设置，请求微型端口驱动�
 
 每个 SA 的信息被格式化为 [OFFLOAD_IPSEC_ADD_SA](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_offload_ipsec_add_sa) 结构。
 
-OFFLOAD_IPSEC_ADD_SA 结构的前七个成员 (**SrcAddr**、 **SrcMask**、 **DestAddr**、 **DestMask**、 **Protocol**、 **SrcPort**和 **DestPort**) 构成了一个筛选器，该筛选器指定要应用 SAs 的源和目标以及 IP 协议。 此筛选器适用于传输模式连接，即两个主机之间的端到端连接。 如果通过隧道建立指定的连接，则隧道的源地址和目标地址将分别由 **SrcTunnelAddr** 和 **DestTunnelAddr**指定。
+OFFLOAD_IPSEC_ADD_SA 结构的前七个成员 (**SrcAddr**、 **SrcMask**、 **DestAddr**、 **DestMask**、 **Protocol**、 **SrcPort** 和 **DestPort**) 构成了一个筛选器，该筛选器指定要应用 SAs 的源和目标以及 IP 协议。 此筛选器适用于传输模式连接，即两个主机之间的端到端连接。 如果通过隧道建立指定的连接，则隧道的源地址和目标地址将分别由 **SrcTunnelAddr** 和 **DestTunnelAddr** 指定。
 
 如果筛选器参数设置为零，则不会使用该参数来筛选指定 SAs 的数据包。 例如，如果 **SrcAddr** 设置为零，则指定的 SAs 可以应用于包含任何源地址的数据包。 为此，如果所有筛选器参数均设置为零，则指定的 SAs 适用于向任何目标主机发送任意类型的数据包的任何源主机。
 

@@ -1,15 +1,14 @@
 ---
 title: 内存用法规则集 (NDIS)
 description: 使用这些规则验证驱动程序是否正确调用 NDIS 函数以分配和释放内存。
-ms.assetid: F28314C6-4B4D-479F-BB96-6850C8F98153
 ms.date: 05/21/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: efc74cda3cfa0984c530a55e1c371199202d420c
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 9dead89936b83706e814f5fb985fedeaf44d7b8c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103394"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96798331"
 ---
 # <a name="memory-usage-rule-set-ndis"></a>内存用法规则集 (NDIS)
 
@@ -27,7 +26,7 @@ ms.locfileid: "90103394"
 <thead>
 <tr class="header">
 <th align="left">主题</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -75,7 +74,7 @@ ms.locfileid: "90103394"
 
 2.  单击 " **规则** " 选项卡。在 " **规则集**" 下，选择 **MemoryUsage**。
 
-    若要从 Visual Studio 开发人员命令提示符窗口中选择默认规则集，请使用 **/check**选项指定**MemoryUsage。 sdv** 。 例如：
+    若要从 Visual Studio 开发人员命令提示符窗口中选择默认规则集，请使用 **/check** 选项指定 **MemoryUsage。 sdv** 。 例如：
 
     ```
     msbuild /t:sdv /p:Inputs="/check:MemoryUsage.sdv" mydriver.VcxProj /p:Configuration="Win8 Release" /p:Platform=Win32

@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ DIRECTSOUND3DLISTENER \_ 批处理
 description: KSPROPERTY \_ DIRECTSOUND3DLISTENER \_ batch 属性指定3d 侦听器的批处理模式设置。
-ms.assetid: 370191f8-e5a2-40f0-a979-c14cf7f44756
 keywords:
 - KSPROPERTY_DIRECTSOUND3DLISTENER_BATCH 音频设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4955c34cf0320b7b3c650bf327fb95e2b97677e3
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: ff557516434972fdaba9faf9362cf3bb55b0652e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102540"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96798891"
 ---
 # <a name="ksproperty_directsound3dlistener_batch"></a>KSPROPERTY \_ DIRECTSOUND3DLISTENER \_ 批处理
 

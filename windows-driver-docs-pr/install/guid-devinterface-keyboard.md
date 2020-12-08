@@ -1,7 +1,6 @@
 ---
 title: GUID_DEVINTERFACE_KEYBOARD
 description: GUID_DEVINTERFACE_KEYBOARD
-ms.assetid: ae434c45-07f6-4aa1-b9d3-e4ceca8cc81c
 keywords:
 - GUID_DEVINTERFACE_KEYBOARD 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: eee21a27e2b01dc9492becf17df3e90a4e731731
-ms.sourcegitcommit: 735fea11056fe943c4368ee54573790e0602de66
+ms.openlocfilehash: dc09cb4a804d574bbe0ed4bdebe0731cab5bccdd
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91979982"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96798125"
 ---
 # <a name="guid_devinterface_keyboard"></a>GUID_DEVINTERFACE_KEYBOARD
 
@@ -51,7 +50,7 @@ ms.locfileid: "91979982"
 
  
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 键盘设备的驱动程序注册此设备接口类的实例，以通知系统和应用程序是否存在键盘设备。
@@ -78,13 +77,13 @@ WDK 包含系统提供的键盘类驱动程序的示例代码。 键盘类驱动
 <td align="left"><p>在 Microsoft Windows 2000 和更高版本的 Windows 中可用。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>标题</p></td>
+<td align="left"><p>标头</p></td>
 <td align="left">Ntddkbd (包含 Ntddkbd) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**GUID_CLASS_KEYBOARD**](guid-class-keyboard.md)

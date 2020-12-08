@@ -1,19 +1,18 @@
 ---
 title: 防护带裁剪
 description: 防护带裁剪
-ms.assetid: bd4ebd97-c948-4219-95a5-f7c6ca45f792
 keywords:
 - Direct3D WDK Windows 2000 显示，防护频带剪辑
 - 保护带剪辑 WDK Direct3D
 - 剪辑 WDK Direct3D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c601a25aa78cd13c608523228a4d1ad8ad520575
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: a35adbeefaf36818c324e94fb1703a77591e7a1d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90716938"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96798311"
 ---
 # <a name="guard-band-clipping"></a>防护带裁剪
 

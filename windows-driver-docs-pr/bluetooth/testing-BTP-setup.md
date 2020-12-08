@@ -2,14 +2,13 @@
 title: Microsoft 蓝牙测试平台安装程序
 description: 如何设置 Microsoft 蓝牙测试平台安装程序
 ms.date: 2/14/2020
-ms.assetid: 85ac7c5b-b5f7-49e0-85f8-72e191c00974
 ms.localizationpriority: medium
-ms.openlocfilehash: c008a2f9d588301b522fd99c91fb358dbe4d56be
-ms.sourcegitcommit: b3e38d06762246c77cedd8e82d740ebea104c538
+ms.openlocfilehash: 512c124ed32cfa8f15b22d6155a9d024a178c9a8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91662395"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96798515"
 ---
 # <a name="setting-up-the-bluetooth-test-platform-btp"></a>设置蓝牙测试平台 (BTP) 
 
@@ -42,9 +41,9 @@ Traduci 具有 4 12 针端口 (标签为 JA、作业、JC、JD) 用于测试外�
 
 3. 下载 BTP 软件包，该 [软件包](testing-BTP-software-package.md)会将所有所需的文件安装到 `C:\BTP` 目录。
 
-4. 确保**禁用**[安全启动](/windows-hardware/design/device-experiences/oem-secure-boot)。
+4. 确保 **禁用**[安全启动](/windows-hardware/design/device-experiences/oem-secure-boot)。
 
-5. 确保 **禁用**BitLocker。
+5. 确保 **禁用** BitLocker。
 
 6. 确保将 Traduci 板插入 SUT。
 

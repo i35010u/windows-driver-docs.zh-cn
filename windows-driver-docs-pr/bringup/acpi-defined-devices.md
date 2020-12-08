@@ -1,21 +1,20 @@
 ---
 title: ACPI 定义的设备
 description: ACPI 5.0 规范定义了许多用于表示和控制典型平台功能的设备类型。
-ms.assetid: 10BD17C9-E8FE-41E0-BD8C-E622B60E6BB6
 ms.date: 08/25/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: e979f56d0f4f7ce3fe0bfe503786ece86cfc84eb
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 62b390f96831dc516defb8bd37da1e2f70c00d42
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89186053"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96798483"
 ---
 # <a name="acpi-defined-devices"></a>ACPI 定义的设备
 
 [ACPI 5.0 规范](https://uefi.org/specifications)定义了许多用于表示和控制典型平台功能的设备类型。 例如，ACPI 定义 "电源" 按钮、"睡眠" 按钮和 "系统指示器"。 对于基于 SoC 的平台，Windows 提供内置驱动程序来支持本文中所述的 ACPI 定义的设备。
 
-有关详细信息，请参阅 ACPI 5.0 规范中的第9部分 "ACPI 定义的设备和特定于设备的对象"。
+有关详细信息，请参阅 ACPI 5.0 规范中的第9部分 "ACPI 定义的设备和 Device-Specific 对象"。
 
 ## <a name="lid-device"></a>盖子设备
 
@@ -27,7 +26,7 @@ ms.locfileid: "89186053"
 
 有关 Windows 中的电池管理的详细信息，请参阅 [Windows 电源和电池子系统要求](/windows-hardware/design/component-guidelines/windows-power-and-battery-subsystem-requirements)。
 
-### <a name="battery-device-specific-method-_dsm"></a> (DSM) 的特定于电池的设备方法 \_
+### <a name="battery-device-specific-method-_dsm"></a> (DSM) 的电池 Device-Specific 方法 \_
 
 为了支持平台被动热量管理，Microsoft 定义了一个 \_ DSM 方法，用于与平台固件通信，这是由电池热区设置的散热限制。 有关详细信息，请参阅以下主题：
 
@@ -88,14 +87,14 @@ Windows 热量管理模型基于 ACPI 的热区概念。 这是一个合作固�
 
 - （可选）描述热区的活动冷却行为：
 
-  - \_AL*x* 用于列出热区中的风扇。
+  - \_AL *x* 用于列出热区中的风扇。
 
-  - \_AC*x* 必须开启风扇 *x* 的温度。
+  - \_AC *x* 必须开启风扇 *x* 的温度。
 
 有关 ACPI 热量区域的详细信息，请参阅 [ACPI 5.0 规范](https://uefi.org/specifications)中的第11章 "热量管理"。
 
 ### <a name="logical-processor-idling-as-a-thermal-mitigation"></a>作为热缓解的逻辑处理器置于空闲状态
 
-该平台可以向操作系统指出，热区中的处理器核心应该空闲 (而不是限制) 。 为此，可以在一个或多个热量区域中包含处理器聚合器设备 (ACPI000C) 。 超过热量区域的 PSV 后，Windows 将停止一些核心 \_ 。 该数字可以是* (1- &lt; zone 被动限制 &gt;) \* &lt; 热区 &gt; 中的内核数*，或用途中报告的内核数，以较 \_ 大者为准。 有关详细信息，请参阅 [ACPI 5.0 规范](https://uefi.org/specifications)中的 8.5.1 "逻辑处理器置于空闲状态" 部分。
+该平台可以向操作系统指出，热区中的处理器核心应该空闲 (而不是限制) 。 为此，可以在一个或多个热量区域中包含处理器聚合器设备 (ACPI000C) 。 超过热量区域的 PSV 后，Windows 将停止一些核心 \_ 。 该数字可以是 *(1- &lt; zone 被动限制 &gt;) \* &lt; 热区 &gt; 中的内核数*，或用途中报告的内核数，以较 \_ 大者为准。 有关详细信息，请参阅 [ACPI 5.0 规范](https://uefi.org/specifications)中的 8.5.1 "逻辑处理器置于空闲状态" 部分。
 
-Oem 可以 (DSM) 包含特定于设备的方法 \_ 来支持适用于 Windows 的 Microsoft 热量扩展。 有关详细信息，请参阅 [Microsoft 热量扩展的特定于设备的方法](device-specific-method-for-microsoft-thermal-extensions.md)。
+Oem 可以 (DSM) 包含 Device-Specific 方法 \_ ，以支持适用于 Windows 的 Microsoft 热量扩展。 有关详细信息，请参阅 [Microsoft 热量扩展的特定于设备的方法](device-specific-method-for-microsoft-thermal-extensions.md)。

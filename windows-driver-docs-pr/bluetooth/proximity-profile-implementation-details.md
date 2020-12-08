@@ -1,15 +1,14 @@
 ---
 title: 邻近感应配置文件实现详细信息
 description: 若要实现节能设计，设备实现必须遵循特定要求，以确保它们与 Windows 保持兼容。
-ms.assetid: 0FFDF345-EA14-4564-AA8A-7E44E9DB28DA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 82b92e9c6297a18f6cb6ecf780e4bcbc38af658f
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 07c53c92d635d9ba6cc8c6f9a82c2baa50ef88e2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91733535"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96798523"
 ---
 # <a name="proximity-profile-implementation-details"></a>邻近感应配置文件实现详细信息
 

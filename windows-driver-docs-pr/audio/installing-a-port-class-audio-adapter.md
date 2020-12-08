@@ -1,7 +1,6 @@
 ---
 title: 安装端口类音频适配器
 description: 安装端口类音频适配器
-ms.assetid: 02cea7c1-cf9a-4f4b-9d35-d565fac731ec
 keywords:
 - 端口类音频适配器 WDK，安装
 - 音频微型端口驱动程序 WDK，适配器驱动程序
@@ -14,12 +13,12 @@ keywords:
 - 音频适配器驱动程序 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a1d66c34db13a1ca157f720d5ecfb06474ecc716
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 3489ed322613c1010df24886d4ad777ae5b8e9c8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89209443"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96799249"
 ---
 # <a name="installing-a-port-class-audio-adapter"></a>安装端口类音频适配器
 

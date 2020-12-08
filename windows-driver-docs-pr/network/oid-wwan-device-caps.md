@@ -1,16 +1,15 @@
 ---
 title: OID_WWAN_DEVICE_CAPS
 description: OID_WWAN_DEVICE_CAPS 返回 MB 设备的功能，包括它支持的移动电话技术、它支持的数据包数据的类、它支持的射频类型、它所提供的语音服务的类型以及它是否使用订户标识模块 (SIM 卡) 。 受支持的移动电话技术以及设备是否使用 SIM 尤为重要，因为网络提供程序选择和 SIM 用户界面取决于这两项功能的值。 制造商和固件版本作为可选字段返回。 不支持设置请求。 微型端口驱动程序必须异步处理查询请求，最初将 NDIS_STATUS_INDICATION_REQUIRED 返回给原始请求，稍后发送 NDIS_STATUS_WWAN_DEVICE_CAPS 状态通知，其中包含一个 NDIS_WWAN_DEVICE_CAPS 结构，该通知指示完成查询请求时的 MB 设备功能。
-ms.assetid: bcf04d0b-70f3-48b7-a505-c82e50edadb2
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_WWAN_DEVICE_CAPS 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 8093f7209e5437daa66ecd8d77fa1315c9d85677
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 00dc557a6d7f5916a16f4d7553ebdd0d07d2636b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89209291"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96797963"
 ---
 # <a name="oid_wwan_device_caps"></a>OID \_ WWAN \_ 设备 \_ CAP
 
@@ -19,12 +18,12 @@ OID \_ WWAN \_ 设备 \_ cap 返回 MB 设备的功能，包括它支持的移�
 
 不支持设置请求。
 
-微型端口驱动程序必须异步处理查询请求，最初 \_ 返回 \_ \_ 原始请求所需的 ndis 状态指示，并在以后发送 [**ndis \_ 状态 \_ WWAN \_ 设备 \_ cap**](./ndis-status-wwan-device-caps.md) 状态通知，其中包含 [**ndis \_ WWAN \_ 设备 \_ **](/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_device_caps) cap 结构，该通知在完成查询请求时指示 MB 设备的功能。
+微型端口驱动程序必须异步处理查询请求，最初 \_ 返回 \_ \_ 原始请求所需的 ndis 状态指示，并在以后发送 [**ndis \_ 状态 \_ WWAN \_ 设备 \_ cap**](./ndis-status-wwan-device-caps.md) 状态通知，其中包含 [**ndis \_ WWAN \_ 设备 \_**](/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_device_caps) cap 结构，该通知在完成查询请求时指示 MB 设备的功能。
 
 <a name="remarks"></a>备注
 -------
 
-从 Windows 8 开始，MB 驱动程序模型已更新到版本2.0。 Windows 8 微型端口驱动程序应将[**ndis \_ wwan \_ 设备 \_ Cap**](/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_device_caps)结构的**标头. 修订**成员设置为*查询*请求的**ndis \_ wwan \_ 设备 \_ cap \_ 版本 \_ 2** 。 Windows 7 微型端口驱动程序应将**ndis \_ wwan \_ 设备 \_ Cap**结构的 "**修订**成员" 成员设置为 "用于*查询*请求的**ndis \_ wwan \_ 设备 \_ cap \_ 版本 \_ 1** "。
+从 Windows 8 开始，MB 驱动程序模型已更新到版本2.0。 Windows 8 微型端口驱动程序应将 [**ndis \_ wwan \_ 设备 \_ Cap**](/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_device_caps)结构的 **标头. 修订** 成员设置为 *查询* 请求的 **ndis \_ wwan \_ 设备 \_ cap \_ 版本 \_ 2** 。 Windows 7 微型端口驱动程序应将 **ndis \_ wwan \_ 设备 \_ Cap** 结构的 "**修订** 成员" 成员设置为 "用于 *查询* 请求的 **ndis \_ wwan \_ 设备 \_ cap \_ 版本 \_ 1** "。
 
 有关使用此 OID 的详细信息，请参阅 [WWAN 驱动程序初始化过程](./mb-miniport-driver-initialization.md)。
 
@@ -307,7 +306,7 @@ AWS 带区
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**NDIS \_ WWAN \_ 设备 \_ CAP**](/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_device_caps)

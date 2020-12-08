@@ -1,23 +1,22 @@
 ---
 title: 创建到远程设备的 L2CAP 客户端连接
 description: 创建到远程设备的 L2CAP 客户端连接
-ms.assetid: b279db4b-3a4e-407e-ae9b-7330af1905b4
 keywords:
 - SDP WDK 蓝牙
 - 服务发现协议 WDK 蓝牙
-- 异步连接-不减少 WDK 蓝牙
+- 异步 Connection-Less WDK 蓝牙
 - ACL WDK 蓝牙
 - L2CAP 配置文件驱动程序 WDK 蓝牙
 - 逻辑链路控制器和适配协议 WDK 蓝牙
 - 连接 WDK 蓝牙
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 234c065e5ffce1cf9f26ea6adfe23f4a00258481
-ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
+ms.openlocfilehash: eb94a2d6da727957ff06b3308945c71f719544a5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90010527"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96798545"
 ---
 # <a name="creating-a-l2cap-client-connection-to-a-remote-device"></a>创建到远程设备的 L2CAP 客户端连接
 
@@ -28,9 +27,9 @@ L2CAP 客户端配置文件驱动程序必须具有有关远程设备的信息�
 
 若要启动到远程设备的 L2CAP 连接，请在客户端配置文件驱动程序包含设备所需的信息后，它应 [生成并发送](building-and-sending-a-brb.md) [**BRB \_ L2CA \_ OPEN \_ 通道**](/previous-versions/ff536615(v=vs.85)) 请求。
 
-当客户端配置文件驱动程序生成请求时，它将提供一个指针，该指针指向**Argument1 参数**关联的[** \_ BRB \_ L2CA \_ 开放 \_ 通道**](/windows-hardware/drivers/ddi/bthddi/ns-bthddi-_brb_l2ca_open_channel)结构。 此结构包含远程设备的蓝牙地址、为设备注册的 PSM 以及其他配置参数。
+当客户端配置文件驱动程序生成请求时，它将提供一个指针，该指针指向 **Argument1 参数** 关联的 [**\_ BRB \_ L2CA \_ 开放 \_ 通道**](/windows-hardware/drivers/ddi/bthddi/ns-bthddi-_brb_l2ca_open_channel)结构。 此结构包含远程设备的蓝牙地址、为设备注册的 PSM 以及其他配置参数。
 
-如果远程设备接受开放通道请求，则 BRB L2CA 开放式通道结构的 **OutResults** 和 **InResults** 成员 \_ \_ \_ \_ 包含有关新创建的连接的信息。 **OutResults**成员指定通道的出站半个参数， **InResults**成员指定通道的入站半部分的参数。
+如果远程设备接受开放通道请求，则 BRB L2CA 开放式通道结构的 **OutResults** 和 **InResults** 成员 \_ \_ \_ \_ 包含有关新创建的连接的信息。 **OutResults** 成员指定通道的出站半个参数， **InResults** 成员指定通道的入站半部分的参数。
 
 在 BRB L2CA 开放通道结构中传递的几个配置值（ \_ \_ \_ \_ 如 **Mtu** 成员）用于协商与远程设备的连接。 客户端配置文件驱动程序应提供尽可能宽的范围，以提高通道协商成功的几率。 指定最小消息传输单位 (MTU) 大于基本蓝牙最小 MTU 大小的大小仅在绝对必要时才执行。 如果协商失败，连接将失败。
 

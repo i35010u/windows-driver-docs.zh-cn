@@ -1,15 +1,14 @@
 ---
 title: ConvertDevModeToPrintTicket 打印票证支持
 description: 此方法由打印子系统调用，以将 DEVMODEW 结构转换为 PrintTicket 对象。
-ms.assetid: 489b546a-50e7-47c8-857f-456ea788d470
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3c540646877a0fc36e4be15b45dc1073d768ff0b
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 9161c660088bcfe8ce8f19b09399acc584f585af
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89218262"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96797525"
 ---
 # <a name="convertdevmodetoprintticket-print-ticket-support"></a>ConvertDevModeToPrintTicket 打印票证支持
 

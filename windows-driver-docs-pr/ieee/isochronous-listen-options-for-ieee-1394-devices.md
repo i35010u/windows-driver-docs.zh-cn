@@ -1,7 +1,6 @@
 ---
 title: IEEE 1394 设备的常时等量侦听选项
 description: IEEE 1394 设备的常时等量侦听选项
-ms.assetid: a369b7f0-be85-49f0-bb09-d07cbd3d3558
 keywords:
 - 同步 i/o WDK IEEE 1394 总线，侦听选项
 - 侦听选项 WDK IEEE 1394 总线
@@ -13,12 +12,12 @@ keywords:
 - 标头 WDK IEEE 1394 总线
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0790f37e0ab98681f66f2b466819450db2017cea
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: ef9725900a670b05a1620e3970aec351b4c7bddb
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89382211"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96798216"
 ---
 # <a name="isochronous-listen-options-for-ieee-1394-devices"></a>IEEE 1394 设备的常时等量侦听选项
 
@@ -30,9 +29,9 @@ ms.locfileid: "89382211"
 
 ### <a name="receiving-or-stripping-packet-headers"></a>接收或剥离数据包标头
 
-主机控制器可能会也可能不会自动从同步数据包中去除标头。 \_ \_ \_ \_ \_ 如果主机控制器*不*会自动去除按同步数据包的标头，则总线驱动程序会将 "[**获取 \_ 本地 \_ 主机 \_ INFO2**](/windows-hardware/drivers/ddi/1394/ns-1394-_get_local_host_info2) " 结构的 " **HostCapabilities** " 成员的 ISO HDR 标志设置为 "主机信息"。
+主机控制器可能会也可能不会自动从同步数据包中去除标头。 \_ \_ \_ \_ \_ 如果主机控制器 *不* 会自动去除按同步数据包的标头，则总线驱动程序会将 "[**获取 \_ 本地 \_ 主机 \_ INFO2**](/windows-hardware/drivers/ddi/1394/ns-1394-_get_local_host_info2) " 结构的 " **HostCapabilities** " 成员的 ISO HDR 标志设置为 "主机信息"。
 
-另外，主机控制器还可以支持可配置的标头。 \_ \_ \_ \_ 如果可以将主机控制器配置为去除标头，则总线驱动程序会将主机信息设置为支持 ISOCH 去除标志。 若要实际将主机控制器配置为包含标头，驱动程序将提交 [**请求 \_ ISOCH \_ 分配 \_ 资源**](https://msdn.microsoft.com/library/windows/hardware/ff537649) 请求， \_ 并 \_ \_ 设置其他 QUADLETS 标志。 **NQuadletsToStrip**成员指定要去除每个数据包开头的 quadlets 数。 例如， **nQuadletsToStrip** = 1 将去除同步数据包标头。
+另外，主机控制器还可以支持可配置的标头。 \_ \_ \_ \_ 如果可以将主机控制器配置为去除标头，则总线驱动程序会将主机信息设置为支持 ISOCH 去除标志。 若要实际将主机控制器配置为包含标头，驱动程序将提交 [**请求 \_ ISOCH \_ 分配 \_ 资源**](https://msdn.microsoft.com/library/windows/hardware/ff537649) 请求， \_ 并 \_ \_ 设置其他 QUADLETS 标志。 **NQuadletsToStrip** 成员指定要去除每个数据包开头的 quadlets 数。 例如， **nQuadletsToStrip** = 1 将去除同步数据包标头。
 
 ### <a name="stream-versus-packet-based-dma"></a>流与基于数据包的 DMA
 

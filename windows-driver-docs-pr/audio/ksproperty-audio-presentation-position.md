@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ 音频 \_ 演示 \_ 位置
 description: KSPROPERTY \_ AUDIO \_ PRESENTATION \_ POSITION 属性请求检索一个结构，该结构指定当前在向终结点呈现的音频数据内的位置。
-ms.assetid: 21067580-12FF-4327-B9AA-D16E2635FA12
 keywords:
 - KSPROPERTY_AUDIO_PRESENTATION_POSITION 音频设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dfe8ab6a56d858fc3f71b9a55b9bbb314f72d31a
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: f883cf35bb5faeb9185aed5e862e500b6b1895c7
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102054"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96798997"
 ---
 # <a name="ksproperty_audio_presentation_position"></a>KSPROPERTY \_ 音频 \_ 演示 \_ 位置
 

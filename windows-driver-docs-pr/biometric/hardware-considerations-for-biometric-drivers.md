@@ -1,17 +1,16 @@
 ---
 title: 生物识别驱动程序的硬件注意事项
 description: 生物识别驱动程序的硬件注意事项
-ms.assetid: 07b16cfb-d3aa-4458-b6e3-acb76afe9b19
 keywords:
 - 生物识别驱动程序 WDK，硬件注意事项
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cbdf8aa3390f0db3fd7f86fbcad28a9700abb821
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 064a590bf671f9576f33e3215ee79e294475dfd4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91733537"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96798627"
 ---
 # <a name="hardware-considerations-for-biometric-drivers"></a>生物识别驱动程序的硬件注意事项
 

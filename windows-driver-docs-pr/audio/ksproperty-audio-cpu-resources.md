@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ 音频 \_ CPU \_ 资源
 description: "\"KSPROPERTY \\_ 音频 \\_ CPU \\_ 资源\" 属性指定是在硬件中实现节点的功能，还是在主机 CPU 上运行的软件中对其进行模拟。"
-ms.assetid: 4379aa05-9661-44cd-8f10-0fb37009a4f3
 keywords:
 - KSPROPERTY_AUDIO_CPU_RESOURCES 音频设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8a5d23f9fc5b436e0d54560f572bc2ff9e68d984
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 2781ff618d34bce784f07859f247ef24fb110e6c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102126"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96799047"
 ---
 # <a name="ksproperty_audio_cpu_resources"></a>KSPROPERTY \_ 音频 \_ CPU \_ 资源
 
@@ -73,14 +72,14 @@ ms.locfileid: "90102126"
 
 KSPROPERTY \_ 音频 \_ CPU \_ 资源属性请求返回状态 " \_ 成功" 以指示已成功完成。 否则，请求将返回相应的错误状态代码。
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 此属性用于确定是否在硬件或软件中实现以下节点类型：
 
 -   AEC 节点 ([**KSNODETYPE 的 \_ 声音 \_ 回声 \_ 取消**](ksnodetype-acoustic-echo-cancel.md)) 
 
--   干扰禁止节点 ([**KSNODETYPE \_ 干扰 \_ **](ksnodetype-noise-suppress.md)) 
+-   干扰禁止节点 ([**KSNODETYPE \_ 干扰 \_**](ksnodetype-noise-suppress.md)) 
 
 -   Peakmeter 节点 ([**KSNODETYPE \_ Peakmeter**](ksnodetype-peakmeter.md)) 
 

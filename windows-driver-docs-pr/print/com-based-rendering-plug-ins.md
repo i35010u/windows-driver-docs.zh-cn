@@ -1,18 +1,17 @@
 ---
 title: 基于 COM 的渲染插件
 description: 基于 COM 的渲染插件
-ms.assetid: c80d6c2b-ba4d-4bd1-bd3a-8c1b0bf29884
 keywords:
 - 基于 COM 的呈现插件 WDK 打印
 - 呈现插件 WDK 打印，基于 COM
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 65464490e079ea77f4a101e116de9e484aa088d0
-ms.sourcegitcommit: 51cba71be022c726c04c29ba5c0360860b65d7a4
+ms.openlocfilehash: e16b3acd5a4d8d56eca5befc7fe639c860826c1c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/09/2020
-ms.locfileid: "89562205"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96797685"
 ---
 # <a name="com-based-rendering-plug-ins"></a>基于 COM 的渲染插件
 

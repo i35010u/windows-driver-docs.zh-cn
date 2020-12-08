@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ 音频 \_ EQ \_ 带区
 description: KSPROPERTY \_ AUDIO \_ EQ \_ 波段属性指定均衡表中的一组频率带区。 这是 (KSNODETYPE 均衡器) 的 EQ 节点中通道的获取属性 \_ 。
-ms.assetid: 64304cad-cf07-4bdb-96d5-7dd594380725
 keywords:
 - KSPROPERTY_AUDIO_EQ_BANDS 音频设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 724b00bcc2795939f3db33a2b3604836aa287dc0
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: e5e606bba86970ea7ef53775050ccb019a0b0c7d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102112"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96799039"
 ---
 # <a name="ksproperty_audio_eq_bands"></a>KSPROPERTY \_ 音频 \_ EQ \_ 带区
 

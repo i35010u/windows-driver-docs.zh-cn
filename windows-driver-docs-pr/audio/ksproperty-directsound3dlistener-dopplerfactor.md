@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ DIRECTSOUND3DLISTENER \_ DOPPLERFACTOR
 description: KSPROPERTY \_ DIRECTSOUND3DLISTENER \_ DOPPLERFACTOR 属性指定3d 侦听器的 Doppler 系数。
-ms.assetid: e07eb51f-6d87-4183-90cc-09bfa7523944
 keywords:
 - KSPROPERTY_DIRECTSOUND3DLISTENER_DOPPLERFACTOR 音频设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a6621e39a108473f8b6d43eb91ad100857afa5e2
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 416bdfbe9dd379f07fd7d7d0cda3ab6b12e03d5a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102534"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96798879"
 ---
 # <a name="ksproperty_directsound3dlistener_dopplerfactor"></a>KSPROPERTY \_ DIRECTSOUND3DLISTENER \_ DOPPLERFACTOR
 

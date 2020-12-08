@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ 音频 \_ CHORUS \_ 级别
 description: KSPROPERTY \_ AUDIO \_ CHORUS \_ level 属性指定 CHORUS 级别。 这是 chorus 节点 (KSNODETYPE chorus) 的属性 \_ 。
-ms.assetid: 80541b2c-0fb3-4306-8ed2-e524b5a4c113
 keywords:
 - KSPROPERTY_AUDIO_CHORUS_LEVEL 音频设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f46113bfa2280cce5b658f7b099d73b447c66791
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: a01b819498dc0c07f15d30def8d48feaeff59dfc
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102134"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96799071"
 ---
 # <a name="ksproperty_audio_chorus_level"></a>KSPROPERTY \_ 音频 \_ CHORUS \_ 级别
 
@@ -71,7 +70,7 @@ KSPROPERTY \_ AUDIO \_ CHORUS \_ level 属性指定 CHORUS 级别。 这是 chor
 
 KSPROPERTY \_ 音频 \_ CHORUS \_ 级别属性请求返回状态 " \_ 成功" 以指示它已成功完成。 否则，请求将返回相应的错误状态代码。
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 此属性用于获取和设置 chorus 回显的音量级别。

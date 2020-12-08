@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ AUDIOMODULE 枚举
 description: KSPROPERTY \_ AUDIOMODULE 枚举定义音频驱动程序用于传达有关合作伙伴定义的音频模块的信息的常量。
-ms.assetid: 94873A4A-A40F-40A7-B7A2-B693A5253714
 keywords:
 - KSPROPERTY_AUDIOMODULE 枚举音频设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7f950d8e5af3c1a71eb03514443d443970d89ed3
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: fd4fe27f7a5c3c5984edd41aa6307835ae6688da
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89209961"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96798919"
 ---
 # <a name="ksproperty_audiomodule-enumeration"></a>KSPROPERTY \_ AUDIOMODULE 枚举
 
@@ -33,9 +32,9 @@ KSPROPERTY \_ AUDIOMODULE 枚举定义音频驱动程序用于传达有关合作
 
 ```ManagedCPlusPlus
 typedef enum  { 
-  KSPROPERTY_AUDIOMODULE_DESCRIPTORS             = 1,
-  KSPROPERTY_AUDIOMODULE_COMMAND                 = 2,
-  KSPROPERTY_AUDIOMODULE_NOTIFICATION_DEVICE_ID  = 3
+  KSPROPERTY_AUDIOMODULE_DESCRIPTORS             = 1,
+  KSPROPERTY_AUDIOMODULE_COMMAND                 = 2,
+  KSPROPERTY_AUDIOMODULE_NOTIFICATION_DEVICE_ID  = 3
 } KSPROPERTY_AUDIOMODULE;
 ```
 
@@ -67,7 +66,7 @@ typedef enum  {
 <tbody>
 <tr class="odd">
 <td align="left"><p>最低受支持的客户端</p></td>
-<td align="left"><p>Windows 10 版本1703</p></td>
+<td align="left"><p>Windows 10 版本 1703</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>最低受支持的服务器</p></td>

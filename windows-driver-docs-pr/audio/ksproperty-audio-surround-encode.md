@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ 音频 \_ 环绕 \_ 编码
 description: "\"KSPROPERTY \\_ 音频 \\_ 环绕 \\_ 编码\" 属性指定是启用还是禁用筛选器的环绕编码器。 环绕编码器节点 (KSNODETYPE \\_ PROLOGIC \\_ 编码器) 执行杜能环绕 Pro 逻辑编码。"
-ms.assetid: 249ee13f-a986-4cb1-906f-55062274df45
 keywords:
 - KSPROPERTY_AUDIO_SURROUND_ENCODE 音频设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dc914be8f5288fd5980a0d2c07c2835fc48a6533
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 4bc1fe494a0258bd53b56f374a697bf3802bd01c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102040"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96798985"
 ---
 # <a name="ksproperty_audio_surround_encode"></a>KSPROPERTY \_ 音频 \_ 环绕 \_ 编码
 

@@ -1,32 +1,31 @@
 ---
 title: OID_RECEIVE_FILTER_ALLOCATE_QUEUE
 description: 过量驱动程序发出对象标识符 (OID) 方法请求 OID_RECEIVE_FILTER_ALLOCATE_QUEUE 分配具有一组初始配置参数的队列。
-ms.assetid: 8dd7ab91-b752-46fd-ae1b-014dc0fb0157
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_RECEIVE_FILTER_ALLOCATE_QUEUE 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: cc1f49c7900bf5d9eef7f7cb986dcb40a81ff842
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 8d53ec38edb08a36178632016589745d9ec059d6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90101458"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96799367"
 ---
 # <a name="oid_receive_filter_allocate_queue"></a>OID \_ 接收 \_ 筛选器 \_ 分配 \_ 队列
 
 
 过量驱动程序发出对象标识符 (oid) 方法请求 OID \_ 接收 \_ 筛选器 \_ 分配 \_ 队列，以分配具有一组初始配置参数的队列。
 
-[**Ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的**InformationBuffer**成员包含指向[**NDIS \_ 接收 \_ 队列 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_queue_parameters)结构的指针。 成功从 OID 方法请求返回后， **ndis \_ OID \_ 请求**结构的**InformationBuffer**成员包含一个指向**NDIS \_ 接收 \_ 队列 \_ 参数**结构的指针，该结构具有新的队列标识符。
+[**Ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的 **InformationBuffer** 成员包含指向 [**NDIS \_ 接收 \_ 队列 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_queue_parameters)结构的指针。 成功从 OID 方法请求返回后， **ndis \_ OID \_ 请求** 结构的 **InformationBuffer** 成员包含一个指向 **NDIS \_ 接收 \_ 队列 \_ 参数** 结构的指针，该结构具有新的队列标识符。
 
 <a name="remarks"></a>备注
 -------
 
 \_ \_ \_ \_ 对于 NDIS 6.20 和更高的微型端口驱动程序，oid 接收筛选器分配队列的 oid 方法请求是可选的。 对于支持虚拟机队列 (VMQ) 接口的微型端口驱动程序是必需的。
 
-过量驱动程序将 [**NDIS \_ 接收 \_ 队列 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_queue_parameters) 结构与请求的队列配置进行初始化。 NDIS 在**ndis \_ 接收 \_ 队列 \_ 参数**结构的**QueueId**成员中分配一个队列标识符，并将该方法请求传递给微型端口驱动程序。
+过量驱动程序将 [**NDIS \_ 接收 \_ 队列 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_queue_parameters) 结构与请求的队列配置进行初始化。 NDIS 在 **ndis \_ 接收 \_ 队列 \_ 参数** 结构的 **QueueId** 成员中分配一个队列标识符，并将该方法请求传递给微型端口驱动程序。
 
-**注意**   过量驱动程序可以在[**ndis 接收 \_ \_ 队列 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_queue_parameters)结构的**flags**成员中设置** \_ \_ \_ \_ 每个 \_ 队列 \_ 接收 \_ 指示**和**ndis \_ 接收 \_ 队列 \_ \_ \_ \_ **参数的 ndis 接收队列参数。 其他标志不用于队列分配。
+**注意** 过量驱动程序可以在 [**ndis 接收 \_ \_ 队列 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_queue_parameters)结构的 **flags** 成员中设置 **\_ \_ \_ \_ 每个 \_ 队列 \_ 接收 \_ 指示** 和 **ndis \_ 接收 \_ 队列 \_ \_ \_ \_** 参数的 ndis 接收队列参数。 其他标志不用于队列分配。
 
  
 
@@ -111,7 +110,7 @@ ms.locfileid: "90101458"
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)

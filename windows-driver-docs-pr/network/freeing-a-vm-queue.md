@@ -1,15 +1,14 @@
 ---
 title: 释放 VM 队列
 description: 释放 VM 队列
-ms.assetid: 32679638-eeef-4e11-bf56-c96f047e4de7
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ab520cd4e41e66641738ab0033a7cf8fa4d24c05
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 86a52f7e476bdee10602dd6b85ebccf1318f3aa0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89212475"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96799399"
 ---
 # <a name="freeing-a-vm-queue"></a>释放 VM 队列
 
@@ -17,11 +16,11 @@ ms.locfileid: "89212475"
 
 
 
-为了释放接收队列，过量驱动程序 [会发出 oid \_ 接收 \_ 筛选器 \_ 释放 \_ 队列](./oid-receive-filter-free-queue.md) 集 OID 请求。 [**Ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的**InformationBuffer**成员包含指向[**ndis \_ 接收 \_ 队列 \_ 可用 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_queue_free_parameters)结构的指针，该结构具有类型为**ndis \_ 接收 \_ 队列 \_ ID**的队列标识符。
+为了释放接收队列，过量驱动程序 [会发出 oid \_ 接收 \_ 筛选器 \_ 释放 \_ 队列](./oid-receive-filter-free-queue.md) 集 OID 请求。 [**Ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的 **InformationBuffer** 成员包含指向 [**ndis \_ 接收 \_ 队列 \_ 可用 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_queue_free_parameters)结构的指针，该结构具有类型为 **ndis \_ 接收 \_ 队列 \_ ID** 的队列标识符。
 
 [OID \_接收 \_ 筛选器 \_ 空闲 \_ 队列](./oid-receive-filter-free-queue.md) 释放通过使用 [OID \_ 接收 \_ 筛选器 \_ 分配 \_ 队列](./oid-receive-filter-allocate-queue.md) OID 分配的过量驱动程序的接收队列。 有关分配接收队列的详细信息，请参阅 [分配 VM 队列](allocating-a-vm-queue.md)。
 
-**注意**   始终分配默认队列，该队列具有**NDIS \_ 默认 \_ 接收 \_ 队列 \_ ID**的队列标识符，不能被释放。
+**注意**  始终分配默认队列，该队列具有 **NDIS \_ 默认 \_ 接收 \_ 队列 \_ ID** 的队列标识符，不能被释放。
 
  
 

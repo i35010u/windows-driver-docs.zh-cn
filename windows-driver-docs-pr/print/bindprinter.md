@@ -1,17 +1,16 @@
 ---
 title: BindPrinter
 description: IPrintTicketProvider BindPrinter 方法将打印机或打印队列绑定到打印票证架构的特定版本。
-ms.assetid: 81f32a9a-417a-4851-972e-373112590e1c
 keywords:
 - BindPrinter
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: abcc46f85420083cb3c522082dfcd3dc45e48518
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: c463cbd87e8746d17da9ff73f110c54aeadf7616
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89214959"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96797783"
 ---
 # <a name="bindprinter"></a>BindPrinter
 

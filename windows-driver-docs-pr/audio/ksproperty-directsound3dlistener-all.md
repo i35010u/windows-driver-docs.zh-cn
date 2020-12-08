@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ DIRECTSOUND3DLISTENER \_ ALL
 description: KSPROPERTY \_ DIRECTSOUND3DLISTENER \_ all 属性用于设置或获取指定侦听器 ID 的所有 DirectSound 3d 侦听器属性。
-ms.assetid: cdf98ed6-cd8e-480c-b766-c348f41919ef
 keywords:
 - KSPROPERTY_DIRECTSOUND3DLISTENER_ALL 音频设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b2c5960e36c7ec0ffcf16f9224e0f455a9c96b88
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: e40231ea3e5aabe7b53d2a61f415d8f297735621
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102556"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96798893"
 ---
 # <a name="ksproperty_directsound3dlistener_all"></a>KSPROPERTY \_ DIRECTSOUND3DLISTENER \_ ALL
 

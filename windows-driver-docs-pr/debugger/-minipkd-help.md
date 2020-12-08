@@ -1,9 +1,8 @@
 ---
-title: minipkd.help
-description: Minipkd.help 扩展显示 Minipkd.dll 扩展命令的帮助文本。
-ms.assetid: 5629aec8-8c9d-4ed0-91fb-c8d020f78405
+title: minipkd。帮助
+description: Minipkd 扩展显示 Minipkd.dll 扩展命令的帮助文本。
 keywords:
-- minipkd.help Windows 调试
+- minipkd Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,23 +11,23 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 005fb48ab498aafad1f79b443d68bf37118ce51c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9ba253156b8a159f1385664e2b380e2e66abcc9e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63336076"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96798423"
 ---
 # <a name="minipkdhelp"></a>!minipkd.help
 
 
-**！ Minipkd.help**扩展显示 Minipkd.dll 扩展命令的帮助文本。
+**！ Minipkd** 显示 Minipkd.dll 扩展命令的帮助文本。
 
 ```dbgcmd
 !minipkd.help 
 ```
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 <table>
 <colgroup>
@@ -49,20 +48,20 @@ ms.locfileid: "63336076"
 
  
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-有关详细信息，请参阅[SCSI 微型端口调试](scsi-miniport-debugging.md)。
+有关详细信息，请参阅 [SCSI 微型端口调试](scsi-miniport-debugging.md)。
 
 <a name="remarks"></a>备注
 -------
 
-如果出现类似于以下错误消息，它指示符号路径不正确，并且不指向 Scsiport.sys 符号的正确版本。
+如果出现类似于下面的错误消息，则表示符号路径不正确，并且不指向正确的 Scsiport.sys 符号版本。
 
 ```dbgcmd
 minipkd error (0) <path> ... \minipkd\minipkd.c @ line 435
 ```
 
-使用[ **.sympath （设置符号路径）** ](-sympath--set-symbol-path-.md)命令显示当前路径，并将路径更改。 使用[ **.reload （重新加载模块）** ](-reload--reload-module-.md)命令以重新加载当前路径中的符号。
+使用 [**. sympath (设置符号路径)**](-sympath--set-symbol-path-.md) 命令来显示当前路径并更改路径。 使用 [**. reload.sql (Reload.sql Module)**](-reload--reload-module-.md) 命令从当前路径重新加载符号。
 
  
 

@@ -1,18 +1,17 @@
 ---
 title: 编写 64 位音频驱动程序
 description: 编写 64 位音频驱动程序
-ms.assetid: 0b4cbb98-506e-443f-bac2-59dbdbcb1798
 keywords:
 - 音频驱动程序 WDK，64位
 - 64位 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 498670d4444f69b9cd461c10b13c418cf7b44fef
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 368284f736c54809acd2e3c0f56d9f528d92cd45
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91733539"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96798701"
 ---
 # <a name="writing-64-bit-audio-drivers"></a>编写 64 位音频驱动程序
 
@@ -40,7 +39,7 @@ ms.locfileid: "91733539"
 
 这会保留指针值的所有64位。
 
-资源列表以物理地址类型的结构存储资源的物理地址 \_ (参阅 [IResourceList](/windows-hardware/drivers/ddi/portcls/nn-portcls-iresourcelist)) 。 若要避免截断64位地址，应在将地址复制到结构或从结构中读取地址时访问结构的 **QuadPart** 成员而不是其 **LowPart** 成员。 例如， **FindTranslatedPort** 宏返回指向 [**CM \_ 部分 \_ 资源 \_ 描述符**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_cm_partial_resource_descriptor) 结构的指针，该结构包含 i/o 端口的基址。 **U**。**端口**。此结构的**开始**成员是 \_ 指向基址的物理地址指针。 下面的代码演示了不执行的操作：
+资源列表以物理地址类型的结构存储资源的物理地址 \_ (参阅 [IResourceList](/windows-hardware/drivers/ddi/portcls/nn-portcls-iresourcelist)) 。 若要避免截断64位地址，应在将地址复制到结构或从结构中读取地址时访问结构的 **QuadPart** 成员而不是其 **LowPart** 成员。 例如， **FindTranslatedPort** 宏返回指向 [**CM \_ 部分 \_ 资源 \_ 描述符**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_cm_partial_resource_descriptor) 结构的指针，该结构包含 i/o 端口的基址。 **U**。**端口**。此结构的 **开始** 成员是 \_ 指向基址的物理地址指针。 下面的代码演示了不执行的操作：
 
 ```cpp
     PUSHORT pBase = (PUSHORT)FindTranslatedPort(0)->u.Port.Start.LowPart;  // wrong

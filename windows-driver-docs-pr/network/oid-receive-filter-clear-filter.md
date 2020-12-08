@@ -1,23 +1,22 @@
 ---
 title: OID_RECEIVE_FILTER_CLEAR_FILTER
 description: 过量驱动程序发出 OID 设置 OID_RECEIVE_FILTER_CLEAR_FILTER 的请求，以清除网络适配器上的接收筛选器。
-ms.assetid: 5e92a11a-468e-431d-b4e5-7b0da3847e8a
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_RECEIVE_FILTER_CLEAR_FILTER 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 5fc9f87d9c21deb14e720fc45fa08f7da91d0323
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: d0c8ad80c73dc615a1822d72e62cf7733dae68a1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91733917"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96799359"
 ---
 # <a name="oid_receive_filter_clear_filter"></a>OID \_ 接收 \_ 筛选器 \_ 清除 \_ 筛选器
 
 
 过量驱动程序发出 oid 设置 OID \_ 接收 \_ 筛选器 \_ 清除 \_ 筛选器的请求，以清除网络适配器上的接收筛选器。
 
-[**Ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的**InformationBuffer**成员包含指向[**ndis \_ 接收 \_ 筛选器 \_ CLEAR \_ PARAMETERS**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_clear_parameters)结构的指针。
+[**Ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的 **InformationBuffer** 成员包含指向 [**ndis \_ 接收 \_ 筛选器 \_ CLEAR \_ PARAMETERS**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_clear_parameters)结构的指针。
 
 <a name="remarks"></a>备注
 -------
@@ -34,7 +33,7 @@ NDIS 接收筛选器在以下 NDIS 接口中使用：
 
 过量驱动程序（如 NDIS 协议或筛选器驱动程序）使用 OID \_ 接收 \_ 筛选器 \_ 清除 \_ 筛选器集请求来清除以前设置的筛选器。 只有设置接收筛选器的驱动程序才能将其清除。
 
-过量驱动程序通过将[**NDIS \_ 接收 \_ 筛选器 \_ \_ **](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_clear_parameters)的**FilterId**成员设置为筛选器的标识符，清除接收筛选器。 驱动程序从 [oid \_ 接收 \_ 筛选器 \_ 集 \_ 筛选](oid-receive-filter-set-filter.md)器的早期 oid 方法请求中获取了筛选器标识符。
+过量驱动程序通过将 [**NDIS \_ 接收 \_ 筛选器 \_ \_**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_clear_parameters)的 **FilterId** 成员设置为筛选器的标识符，清除接收筛选器。 驱动程序从 [oid \_ 接收 \_ 筛选器 \_ 集 \_ 筛选](oid-receive-filter-set-filter.md)器的早期 oid 方法请求中获取了筛选器标识符。
 
 ### <a name="additional-instructions-for-ndis-packet-coalescing"></a>有关 NDIS 数据包合并的其他说明
 
@@ -50,7 +49,7 @@ NDIS 接收筛选器在以下 NDIS 接口中使用：
 
 -   如果某个小型小型驱动程序已完成 OID \_ 接收 \_ 筛选器 \_ 清除筛选器的 oid 请求 \_ 以清除 VPort 上的最后一个筛选器，则该驱动程序不能在非默认 VPort 上指示数据包。
 
-    **注意**   如果某个小型小型驱动程序已经完成[oid \_ NIC \_ 交换机 \_ DELETE \_ VPort](oid-nic-switch-delete-vport.md)的 oid 请求以释放 VPort，则它也不能在非默认 VPort 上指示数据包。
+    **注意**  如果某个小型小型驱动程序已经完成 [oid \_ NIC \_ 交换机 \_ DELETE \_ VPort](oid-nic-switch-delete-vport.md) 的 oid 请求以释放 VPort，则它也不能在非默认 VPort 上指示数据包。
 
      
 
@@ -62,7 +61,7 @@ NDIS 接收筛选器在以下 NDIS 接口中使用：
 
 -   如果某个小型小型驱动程序已完成 OID \_ 接收 \_ 筛选器 \_ 清除筛选器的 oid 请求 \_ 以清除接收队列中的最后一个筛选器，则该驱动程序不能在接收队列中指示数据包。
 
-    **注意**   如果某个微型端口驱动程序已经完成[oid \_ 接收 \_ 筛选器 \_ \_ ](oid-receive-filter-free-queue.md)的 oid 请求，则该驱动程序也不能在接收队列中指示数据包，以释放接收队列。
+    **注意**  如果某个微型端口驱动程序已经完成 [oid \_ 接收 \_ 筛选器 \_ \_](oid-receive-filter-free-queue.md) 的 oid 请求，则该驱动程序也不能在接收队列中指示数据包，以释放接收队列。
 
      
 
@@ -78,7 +77,7 @@ NDIS 接收筛选器在以下 NDIS 接口中使用：
 <thead>
 <tr class="header">
 <th>术语</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -133,7 +132,7 @@ NDIS 为此请求返回以下状态代码之一：
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)

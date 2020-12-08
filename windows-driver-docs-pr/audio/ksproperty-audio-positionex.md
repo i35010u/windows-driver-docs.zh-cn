@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ 音频 \_ POSITIONEX
 description: KSPROPERTY \_ audio \_ POSITIONEX 属性为调用方提供流位置，并为内核流式传输 (KS 基于) 的音频驱动程序提供关联的时间戳信息。
-ms.assetid: 660b1ee9-7c52-4d95-8df9-b1c0dce320e3
 keywords:
 - KSPROPERTY_AUDIO_POSITIONEX 音频设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ff49181c0a181b509a285799d18a34d430004583
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 955104bfe0acd03048cf62daf21a8a50441a0c58
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102068"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96799001"
 ---
 # <a name="ksproperty_audio_positionex"></a>KSPROPERTY \_ 音频 \_ POSITIONEX
 
@@ -64,7 +63,7 @@ KSPROPERTY \_ audio \_ POSITIONEX 属性为调用方提供流位置，并为内�
 
 \_ \_ 如果调用成功，KSPROPERTY 音频 POSITIONEX 属性请求将返回 S \_ OK。 否则，它将返回相应的 HRESULT 错误代码。
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 通常，音频应用程序必须监视音频流的当前位置。 此位置被指定为距流开头的字节偏移量。 流位置信息有两种可能的解释：

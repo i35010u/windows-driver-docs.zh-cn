@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ DIRECTSOUND3DLISTENER \_ 速度
 description: KSPROPERTY \_ DIRECTSOUND3DLISTENER \_ 速度属性指定3d 侦听器的速度矢量。
-ms.assetid: 654a8cd1-c8ad-4d65-9d14-7602d269bcff
 keywords:
 - KSPROPERTY_DIRECTSOUND3DLISTENER_VELOCITY 音频设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 72ea3d93ebd047ff3d08eb5d70b3f1f54543787d
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 276523b5ff97a2aaf28698664066b0261de1d681
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102520"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96798875"
 ---
 # <a name="ksproperty_directsound3dlistener_velocity"></a>KSPROPERTY \_ DIRECTSOUND3DLISTENER \_ 速度
 

@@ -1,15 +1,14 @@
 ---
 title: 蓝牙核心驱动程序层和支持的功率转换
 description: 下表总结了蓝牙核心驱动程序支持的设备和系统电源状态。
-ms.assetid: 25A3598E-51A7-4B16-92F7-9D2F39177946
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fcaec58673c3d6ad36ceb942a309ed07b3300efb
-ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
+ms.openlocfilehash: 1cce679ebfca9a7dfc9511c195fc86bc8b6a5856
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90010597"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96798587"
 ---
 # <a name="bluetooth-core-driver-layer-and-supported-power-transitions"></a>蓝牙核心驱动程序层和支持的功率转换
 
@@ -38,32 +37,32 @@ ms.locfileid: "90010597"
     </tr>
     <tr>
         <td>S1</td>
-        <td>不可用</td>
-        <td>不可用</td>
-        <td>不可用</td>
+        <td>空值</td>
+        <td>空值</td>
+        <td>空值</td>
     </tr>
     <tr>
        <td>S2</td>
-        <td>不可用</td>
-        <td>不可用</td>
-        <td>不可用</td>
+        <td>空值</td>
+        <td>空值</td>
+        <td>空值</td>
     </tr>
     <tr>
         <td>S3 (睡眠) </td>
-        <td>不可用</td>
+        <td>空值</td>
         <td>如果唤醒，则为睡眠</td>
         <td>可以关闭电源</td>
     </tr>
     <tr>
         <td>S4（休眠）</td>
-        <td>不可用</td>
+        <td>空值</td>
         <td>如果唤醒，则为睡眠</td>
         <td>可以关闭电源</td>
     </tr>
     <tr>
         <td>S5（关闭）</td>
-        <td>不可用</td>
-        <td>不可用</td>
+        <td>空值</td>
+        <td>空值</td>
         <td>可以关闭电源</td>
     </tr>
 </table>

@@ -1,19 +1,18 @@
 ---
 title: NDIS 接口提供程序操作
 description: NDIS 接口提供程序操作
-ms.assetid: cd5c76b0-6b38-44ea-ac1b-02be5d073203
 keywords:
 - NDIS 网络接口 WDK，接口提供程序
 - 网络接口 WDK，接口提供程序
 - 接口提供程序 WDk 网络接口
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4f527fc8e178e536f93963e1f3f1c6d60a90bae8
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 79884e07fc933b0e01e10f23bdb7e5215391c633
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90716700"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96798021"
 ---
 # <a name="ndis-interface-provider-operations"></a>NDIS 接口提供程序操作
 
@@ -33,7 +32,7 @@ ms.locfileid: "90716700"
 
 如果接口提供程序检测到接口正在关闭，则它应取消注册接口。
 
-**注意**   当卸载微型端口适配器时，NDIS 代理提供程序注销接口，并在分离时筛选模块。
+**注意**  当卸载微型端口适配器时，NDIS 代理提供程序注销接口，并在分离时筛选模块。
 
  
 

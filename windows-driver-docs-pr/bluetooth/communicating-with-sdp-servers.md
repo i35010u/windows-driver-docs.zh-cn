@@ -1,7 +1,6 @@
 ---
 title: “与 SDP 服务器进行通信”概述
 description: “与 SDP 服务器进行通信”概述
-ms.assetid: 833f2eea-d7e6-4f19-979e-3bb4db47fa43
 keywords:
 - 蓝牙 WDK、SDP 服务器通信
 - SDP WDK 蓝牙
@@ -14,12 +13,12 @@ keywords:
 - 服务广告 WDK 蓝牙
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e3812cacd79685ce6d256215b2b541e71fa321bc
-ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
+ms.openlocfilehash: b0cfc54cd7fa7efd673f12bb6d94dfc0b998096b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90009925"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96798547"
 ---
 # <a name="communicating-with-sdp-servers-overview"></a>“与 SDP 服务器进行通信”概述
 

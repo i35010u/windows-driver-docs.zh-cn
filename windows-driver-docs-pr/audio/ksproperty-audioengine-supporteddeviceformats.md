@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ AUDIOENGINE \_ SUPPORTEDDEVICEFORMATS
 description: KSPROPERTY \_ AUDIOENGINE \_ SUPPORTEDDEVICEFORMATS 属性请求检索硬件音频引擎支持的设备格式。
-ms.assetid: BF602B17-09E2-4003-95F8-CB45605EFA09
 keywords:
 - KSPROPERTY_AUDIOENGINE_SUPPORTEDDEVICEFORMATS 音频设备
 topic_type:
@@ -14,17 +13,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e95fc380af9cf8baf97449f20bc1eaa880be6b4e
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: baf5a5d1b197522c41d13bb803896e84e809c19f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102004"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96798949"
 ---
 # <a name="ksproperty_audioengine_supporteddeviceformats"></a>KSPROPERTY \_ AUDIOENGINE \_ SUPPORTEDDEVICEFORMATS
 
 
-**KSPROPERTY \_ AUDIOENGINE \_ SUPPORTEDDEVICEFORMATS**属性请求检索硬件音频引擎支持的设备格式。
+**KSPROPERTY \_ AUDIOENGINE \_ SUPPORTEDDEVICEFORMATS** 属性请求检索硬件音频引擎支持的设备格式。
 
 ### <a name="span-idusage_summary_tablespanspan-idusage_summary_tablespanspan-idusage_summary_tablespanusage-summary-table"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用情况摘要表
 
@@ -60,7 +59,7 @@ ms.locfileid: "90102004"
 
 ### <a name="span-idreturn_valuespanspan-idreturn_valuespanspan-idreturn_valuespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>返回值
 
-**KSPROPERTY \_ AUDIOENGINE \_ SUPPORTEDDEVICEFORMATS**属性请求返回**状态 \_ SUCCESS**以指示已成功完成。 否则，请求将返回相应的错误状态代码。
+**KSPROPERTY \_ AUDIOENGINE \_ SUPPORTEDDEVICEFORMATS** 属性请求返回 **状态 \_ SUCCESS** 以指示已成功完成。 否则，请求将返回相应的错误状态代码。
 
 <a name="requirements"></a>要求
 ------------

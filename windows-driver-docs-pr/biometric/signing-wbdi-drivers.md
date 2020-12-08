@@ -1,15 +1,14 @@
 ---
 title: 为 WBDI 驱动程序签名
 description: 为 WBDI 驱动程序签名
-ms.assetid: 1BE83F60-4A04-457E-BD31-5E6F104A3505
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 27a0357fd4cc98e2e11fe04fdf8f1c519e963a4d
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: f11ff74ce93426c52de5f3ceee0b7c1f52190bc5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91733450"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96798617"
 ---
 # <a name="signing-wbdi-drivers"></a>为 WBDI 驱动程序签名
 

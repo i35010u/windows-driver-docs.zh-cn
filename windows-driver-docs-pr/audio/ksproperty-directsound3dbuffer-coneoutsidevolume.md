@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ DIRECTSOUND3DBUFFER \_ CONEOUTSIDEVOLUME
 description: KSPROPERTY \_ DIRECTSOUND3DBUFFER \_ CONEOUTSIDEVOLUME 属性指定3d 声音缓冲区的 "圆锥外" 音量。
-ms.assetid: faaa4419-6de4-4417-a9a6-922e60130946
 keywords:
 - KSPROPERTY_DIRECTSOUND3DBUFFER_CONEOUTSIDEVOLUME 音频设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 09211caee15f19286036282c02e3551af839d1cf
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 0c6aed966326bd82cfdce926d8d15f213bb9e763
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102574"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96798907"
 ---
 # <a name="ksproperty_directsound3dbuffer_coneoutsidevolume"></a>KSPROPERTY \_ DIRECTSOUND3DBUFFER \_ CONEOUTSIDEVOLUME
 
@@ -74,7 +73,7 @@ KSPROPERTY \_ DIRECTSOUND3DBUFFER \_ CONEOUTSIDEVOLUME 属性请求返回状态 
 
 -   DS3DBUFFER 结构的 **lConeOutsideVolume** 成员。
 
--   **IDirectSound3DBuffer：： GetOutsideVolume**和**IDirectSound3DBuffer：： SetOutsideVolume**方法。
+-   **IDirectSound3DBuffer：： GetOutsideVolume** 和 **IDirectSound3DBuffer：： SetOutsideVolume** 方法。
 
 <a name="requirements"></a>要求
 ------------

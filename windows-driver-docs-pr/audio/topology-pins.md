@@ -1,7 +1,6 @@
 ---
 title: 拓扑引脚
 description: 拓扑引脚
-ms.assetid: b434e2a7-4acc-4ef1-9db9-8f1b82f68de3
 keywords:
 - 拓扑引脚 WDK 音频
 - 锁定 WDK 音频、拓扑
@@ -17,12 +16,12 @@ keywords:
 - PCPIN_DESCRIPTOR 结构
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 56d02d3dfbbe4108f59ea7cca42793431dbf85f3
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: c400e4661ec4dd16304f5603dcbd29eeb24787d1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89209933"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96798861"
 ---
 # <a name="topology-pins"></a>拓扑引脚
 
@@ -60,7 +59,7 @@ WDMAud 将来自微型端口驱动程序的 pin 描述符的信息转换为一�
 
 有关 MIXERLINE 结构的详细信息，请参阅 Microsoft Windows SDK 文档。
 
-以下两个表显示了 WDMAud 如何 \_ \_ 在) 引脚中将输入 (KSPIN 数据流转换为源混音器行。 第一个表显示输入插针 **KS pin 类别 GUID**如何映射到关联的 MIXERLINE 目标类型。
+以下两个表显示了 WDMAud 如何 \_ \_ 在) 引脚中将输入 (KSPIN 数据流转换为源混音器行。 第一个表显示输入插针 **KS pin 类别 GUID** 如何映射到关联的 MIXERLINE 目标类型。
 
 PCPIN \_ 描述符值 MIXERLINE 值 KS pin 类别 GUID 桥插？
 目标类型 KSNODETYPE \_ 麦克风
@@ -135,7 +134,7 @@ MIXERLINE \_ TARGETTYPE \_ WAVEOUT
 
  
 
-下表显示了输入插针 **KS pin 类别 GUID**如何映射到关联的 MIXERLINE 组件类型。
+下表显示了输入插针 **KS pin 类别 GUID** 如何映射到关联的 MIXERLINE 组件类型。
 
 <table>
 <colgroup>
@@ -205,11 +204,11 @@ MIXERLINE \_ TARGETTYPE \_ WAVEOUT
 
 在前面的表中，左栏指定了 pin 的 PCPIN 描述符结构中的 pin 类别 GUID \_ ，右侧列指定了 MIXERLINE 结构的相应目标类型和组件类型。
 
-列中的条目标有 "桥接 Pin？" 指示 pin 是否为桥接 pin。 "是" 表示 pin 通信类型为 KSPIN \_ COMMUNICATION \_ BRIDGE。 如果是 "否"，则表示 pin 通信类型为 KSPIN \_ 通信 \_ *Xxx*值，而不是 KSPIN \_ 通信 \_ 桥。 如果在将 pin 参数转换为混音器参数时 WDMAud 忽略 pin 通信类型，则 "桥接" 条目是一个短划线 (-) 。
+列中的条目标有 "桥接 Pin？" 指示 pin 是否为桥接 pin。 "是" 表示 pin 通信类型为 KSPIN \_ COMMUNICATION \_ BRIDGE。 如果是 "否"，则表示 pin 通信类型为 KSPIN \_ 通信 \_ *Xxx* 值，而不是 KSPIN \_ 通信 \_ 桥。 如果在将 pin 参数转换为混音器参数时 WDMAud 忽略 pin 通信类型，则 "桥接" 条目是一个短划线 (-) 。
 
 对于上表中未显示的所有 pin 类别，WDMAud 会将输入插针转换为未定义 MIXERLINE TARGETTYPE 目标类型的源混合器行， \_ \_ 并将 MIXERLINE COMPONENTTYPE 源的组件类型 \_ 定义为 \_ \_ undefined。
 
-下表显示了 WDMAud 如何将输出 (KSPIN 的输出转换 \_ \_ 为向目标混音器行) 针脚。 列标题与上表中的相同。 第一个表显示 output 引脚 **KS pin 类别 GUID**如何映射到关联的 MIXERLINE 目标类型。
+下表显示了 WDMAud 如何将输出 (KSPIN 的输出转换 \_ \_ 为向目标混音器行) 针脚。 列标题与上表中的相同。 第一个表显示 output 引脚 **KS pin 类别 GUID** 如何映射到关联的 MIXERLINE 目标类型。
 
 PCPIN \_ 描述符值 MIXERLINE 值 KS pin 类别 GUID 桥插？
 目标类型 KSNODETYPE \_ 演讲者
@@ -276,7 +275,7 @@ MIXERLINE \_ TARGETTYPE \_ WAVEIN
 
  
 
-下表显示 output 引脚 **KS pin 类别 GUID**如何映射到关联的 MIXERLINE 组件类型。
+下表显示 output 引脚 **KS pin 类别 GUID** 如何映射到关联的 MIXERLINE 组件类型。
 
 <table>
 <colgroup>
@@ -340,7 +339,7 @@ MIXERLINE \_ TARGETTYPE \_ WAVEIN
 
 对于上表中未显示的所有 pin 类别，WDMAud 会将输出插针转换为目标混音器行，其目标类型为 MIXERLINE \_ TARGETTYPE， \_ 未定义 MIXERLINE \_ COMPONENTTYPE DST 的组件类型 \_ \_ 。
 
-在前面的表中，大多数 KS pin 类别 Guid 都具有 KSNODETYPE 的 \_ *Xxx*名称。 在头文件 Ksmedia 和 Dmusprop 中定义这些名称。  (这种命名约定中的两个出发都是 Guid KSCATEGORY \_ 音频和 PINNAME \_ 捕获，如[拓扑节点](topology-nodes.md)中所述 ) ，KSNODETYPE \_ *XXX* guid 还可用于指定 KS 节点类型。 大多数 KSNODETYPE \_ *Xxx* guid 指定固定类别或节点类型，但不能同时指定两者。 [**KSNODETYPE \_ 合成**](./ksnodetype-synthesizer.md)器例外，它可以指定 pin 类别或节点类型，具体取决于使用的上下文。 有关 \_ 表示 pin 类别的 KSNODETYPE*Xxx* guid 列表，请参阅[固定类别属性](pin-category-property.md)。 有关 \_ 表示节点类型的 KSNODETYPE*Xxx* guid 列表，请参阅[音频拓扑节点](./audio-topology-nodes.md)。
+在前面的表中，大多数 KS pin 类别 Guid 都具有 KSNODETYPE 的 \_ *Xxx* 名称。 在头文件 Ksmedia 和 Dmusprop 中定义这些名称。  (这种命名约定中的两个出发都是 Guid KSCATEGORY \_ 音频和 PINNAME \_ 捕获，如 [拓扑节点](topology-nodes.md)中所述 ) ，KSNODETYPE \_ *XXX* guid 还可用于指定 KS 节点类型。 大多数 KSNODETYPE \_ *Xxx* guid 指定固定类别或节点类型，但不能同时指定两者。 [**KSNODETYPE \_ 合成**](./ksnodetype-synthesizer.md)器例外，它可以指定 pin 类别或节点类型，具体取决于使用的上下文。 有关 \_ 表示 pin 类别的 KSNODETYPE *Xxx* guid 列表，请参阅 [固定类别属性](pin-category-property.md)。 有关 \_ 表示节点类型的 KSNODETYPE *Xxx* guid 列表，请参阅 [音频拓扑节点](./audio-topology-nodes.md)。
 
 KSCATEGORY \_ AUDIO 是另一个双重使用 GUID。 它可用作 **ks pin 类别 guid** 或 **ks 筛选器类别 guid**，具体取决于上下文。 在设备安装过程中，音频驱动程序在筛选器类别 KSCATEGORY 音频下注册其设备接口 \_ 。 有关详细信息，请参阅 [安装音频适配器的设备接口](installing-device-interfaces-for-an-audio-adapter.md)。
 

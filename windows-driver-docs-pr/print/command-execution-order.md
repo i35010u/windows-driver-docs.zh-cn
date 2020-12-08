@@ -1,18 +1,17 @@
 ---
 title: 命令执行顺序
 description: 命令执行顺序
-ms.assetid: 2bf7438c-bfb0-407f-9c80-be3b8a9322f9
 keywords:
 - 打印机命令 WDK Unidrv，执行顺序
 - 序列号 WDK Unidrv
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d89aadeeaa2ccaf5dcaedb7237d158f75722faa3
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: fb811f2cd0aa4f75b30710330b08f52113626c35
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89210613"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96797655"
 ---
 # <a name="command-execution-order"></a>命令执行顺序
 
@@ -50,13 +49,13 @@ ms.locfileid: "89210613"
 
 在上述每个部分中，命令按序列号所指示的顺序执行。
 
-若要指定命令的部分和序列号，请使用[命令属性](command-attributes.md)中所述的** \* Order**属性。 格式为：
+若要指定命令的部分和序列号，请使用 [命令属性](command-attributes.md)中所述的 **\* Order** 属性。 格式为：
 
-** \* 顺序**： *SectionName*。*SequenceNumber*
+**\* 顺序**： *SectionName*。*SequenceNumber*
 
 其中， *SectionName* 是作业 \_ 安装、DOC \_ 设置、页面 \_ 设置、页面 \_ 完成、文档 \_ 完成或作业完成的其中一个 \_ ， *SequenceNumber* 为数值。
 
-序列号不必是连续的，但部分中指定的每个数字必须是唯一的。 部分中的命令将从其序列号最小的序列号到最高的顺序执行。 例如，以下条目指示将 **InputBin**、 **PaperSize**和 **解决** 功能的选项分配给 "文档 \_ 设置" 部分，并按指定顺序发送：
+序列号不必是连续的，但部分中指定的每个数字必须是唯一的。 部分中的命令将从其序列号最小的序列号到最高的顺序执行。 例如，以下条目指示将 **InputBin**、 **PaperSize** 和 **解决** 功能的选项分配给 "文档 \_ 设置" 部分，并按指定顺序发送：
 
 ```cpp
 *Feature: InputBin

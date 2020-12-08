@@ -1,15 +1,14 @@
 ---
 title: CPSUI 选项类型
 description: CPSUI 选项类型
-ms.assetid: 3b3c002c-a201-4f81-b208-30864343409b
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 09961eb0ba31eb06e90409217a723b000fdb1921
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: a669b676de3272aa76bc2d9d2056f2ee491e6a57
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89217783"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96797487"
 ---
 # <a name="cpsui-option-types"></a>CPSUI 选项类型
 
@@ -39,7 +38,7 @@ ms.locfileid: "89217783"
 
 [**TVOT \_ UDARROW**](tvot-udarrow.md)
 
-选项的类型是在[**OPTTYPE**](/windows-hardware/drivers/ddi/compstui/ns-compstui-_opttype)结构的**类型**成员中指定的。
+选项的类型是在 [**OPTTYPE**](/windows-hardware/drivers/ddi/compstui/ns-compstui-_opttype)结构的 **类型** 成员中指定的。
 
  
 

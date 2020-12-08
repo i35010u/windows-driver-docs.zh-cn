@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ AUDIOMODULE \_ 描述符
 description: KSPROPERTY \_ AUDIOMODULE \_ 描述符用于检索终结点波形筛选器上的每个音频模块的静态数据描述符。
-ms.assetid: EAD613AA-005B-4751-B60E-212853CA40B4
 keywords:
 - KSPROPERTY_AUDIOMODULE_DESCRIPTORS 音频设备
 topic_type:
@@ -12,12 +11,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4590b7a33839534883b39866504e86bf3e08e924
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: b71b97e8c8b8dc2dc4bbabb9c120e108295b4261
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89209965"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96798923"
 ---
 # <a name="ksproperty_audiomodule_descriptors"></a>KSPROPERTY \_ AUDIOMODULE \_ 描述符
 
@@ -86,7 +85,7 @@ ms.locfileid: "89209965"
 </tr>
 <tr class="odd">
 <td align="left"><p>版本</p></td>
-<td align="left"><p>Windows 10 版本1703</p></td>
+<td align="left"><p>Windows 10 版本 1703</p></td>
 </tr>
 </tbody>
 </table>

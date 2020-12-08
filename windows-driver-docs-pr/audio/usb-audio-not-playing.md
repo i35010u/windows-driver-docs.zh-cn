@@ -1,21 +1,20 @@
 ---
 title: USB 音频未播放
 description: 音频驱动程序事件集
-ms.assetid: ee800f71-9c90-4084-b879-32300e6706fc
 ms.date: 12/19/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: e966c25498f7dfd48875dea858b95015659c4866
-ms.sourcegitcommit: f610410e1500f0b0a4ca008b52679688ab51033d
+ms.openlocfilehash: 64f45f12867f8c67986305f0ffdb33e1a207720c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/15/2020
-ms.locfileid: "88253008"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96798837"
 ---
 # <a name="usb-audio-not-playing-kb-4045958-audio-services-not-responding-error-and-usb-audio-device-does-not-work-in-windows-10-version-1703"></a>USB 音频未播放 (KB 4045958) "音频服务未响应" 错误，并且 USB 音频设备在 Windows 10 版本1703中无法正常工作
 
 ## <a name="symptoms"></a>症状
 
-请参考以下方案：
+假设出现了下面这种情景：
 
 1. 第一次将通用串行总线 (USB) 音频设备（例如音频适配器或 USB 数字到模拟转换器 (DAC) ）连接到基于 Windows 10 版本1703的计算机。
 2. 操作系统检测设备并加载标准 USB 音频2.0 驱动程序 ( # A0) 。
@@ -37,7 +36,7 @@ ms.locfileid: "88253008"
 
 ### <a name="method-1"></a>方法 1
 
-卸载设备。 要实现这一点，请执行下列操作：
+卸载设备。 为此，请执行以下步骤：
 
 1. 打开“设备管理器”。
 1. 选择并按住 (或双击设备名称) ，然后选择 " **卸载**"。

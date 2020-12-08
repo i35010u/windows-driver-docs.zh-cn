@@ -1,46 +1,45 @@
 ---
-title: Windows Vista 默认 a p o s
+title: Windows Vista 默认值为
 description: Windows 默认 APO
-ms.assetid: 713d848c-4b74-4682-a625-eba5f9f24bb7
 keywords:
 - APO WDK
-- 增强功能选项卡上的 WDK
+- 增强功能选项卡 WDK
 - 默认 APO WDK
 ms.date: 11/07/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 8b4570fb34d544c1c034f857d29b5dc204386602
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: bb8f22f0202c8305bf850cbdac615f503beafcc8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63335240"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96798723"
 ---
 # <a name="windows-default-apos"></a>Windows 默认 APO
 
 
-使用 Windows Vista 音频驱动程序不提供数字音频系统效果。 由称为系统效果音频处理对象 (Apo) 的实时进程内 COM 对象提供用于创建系统效果处理的所有数字信号。
+对于 Windows Vista，音频驱动程序不提供数字音频系统效果。 用于创建系统效果的所有数字信号处理都是由实时的进程内 COM 对象（称为系统特效音频处理对象)  (）提供的。
 
-Windows 提供了**增强功能**选项卡上配置这些系统效果控件面板的声音小程序。 随 Windows 提供默认情况下不显示在下面的列表。
+Windows 在 "控制面板" 上提供了 "声音" 小程序的 " **增强** " 选项卡，用于配置这些系统效果。 以下列表显示了默认情况下随 Windows 提供的。
 
 [低音增强](bass-boost.md)
 
 [低音管理](bass-management.md)
 
-[增强的便携式计算机声音](enhanced-sound-for-laptop-computers.md)
+[便携式计算机的增强音](enhanced-sound-for-laptop-computers.md)
 
 [响度均衡 DSP](loudness-equalization-dsp.md)
 
-[低频率保护](low-frequency-protection.md)
+[低频保护](low-frequency-protection.md)
 
-[聊天室更正](room-correction.md)
+[房间修正](room-correction.md)
 
-[演讲者填充](speaker-fill.md)
+[扬声器填充](speaker-fill.md)
 
-[演讲者 Phantoming](speaker-phantoming.md)
+[扬声器构成幻路](speaker-phantoming.md)
 
-[虚拟外侧代码](virtual-surround.md)
+[虚拟环绕](virtual-surround.md)
 
-[通过耳机的虚拟化的环绕声](virtualized-surround-sound-over-headphones.md)
+[耳机的虚拟化环绕声](virtualized-surround-sound-over-headphones.md)
 
  
 

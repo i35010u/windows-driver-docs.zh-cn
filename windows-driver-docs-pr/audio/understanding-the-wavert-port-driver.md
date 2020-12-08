@@ -1,15 +1,14 @@
 ---
 title: 了解 WaveRT 端口驱动程序
 description: 了解 WaveRT 端口驱动程序
-ms.assetid: 2627615a-3fde-4ed6-9f7f-f6d7e5d82b3b
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f801002504e67e72c181f6ec55e4a3bfde1d674b
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: e5dc9a37d1ce673fd6c840307deb4ba51941f4b0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89210319"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96798843"
 ---
 # <a name="understanding-the-wavert-port-driver"></a>了解 WaveRT 端口驱动程序
 
@@ -18,7 +17,7 @@ WaveRT 端口驱动程序将上一 WaveCyclic 端口驱动程序的简单性与 
 
 WaveRT 端口驱动程序无需通过提供其主客户端 (（通常为音频引擎) 并直接访问数据缓冲区）来持续映射和复制音频数据。 这种直接访问还消除了驱动程序在音频流中操作数据的需要。 因此，WaveRT 端口驱动程序可满足某些音频设备 (DMA) 控制器的直接内存访问需求。
 
-若要将自身与其他波形呈现和 wave 捕获设备区分开来，WaveRT 端口驱动程序除了[**KSCATEGORY \_ 音频**](../install/kscategory-audio.md)、 [**KSCATEGORY \_ 呈现**](../install/kscategory-render.md)和[**KSCATEGORY \_ 捕获**](../install/kscategory-capture.md)外，还会将其自身注册到[**KSCATEGORY \_ 实时**](../install/kscategory-realtime.md)。 此自注册在安装适配器驱动程序的过程中发生。
+若要将自身与其他波形呈现和 wave 捕获设备区分开来，WaveRT 端口驱动程序除了 [**KSCATEGORY \_ 音频**](../install/kscategory-audio.md)、 [**KSCATEGORY \_ 呈现**](../install/kscategory-render.md)和 [**KSCATEGORY \_ 捕获**](../install/kscategory-capture.md)外，还会将其自身注册到 [**KSCATEGORY \_ 实时**](../install/kscategory-realtime.md)。 此自注册在安装适配器驱动程序的过程中发生。
 
 在 Windows Vista 和更高版本的操作系统中，当操作系统启动并初始化音频引擎时，音频引擎会枚举代表音频设备的 KS 筛选器。 在枚举过程中，音频引擎实例化所找到的音频设备的驱动程序。 此过程将导致为这些设备创建筛选器对象。 对于 WaveRT 音频设备，生成的筛选器对象具有以下组件：
 

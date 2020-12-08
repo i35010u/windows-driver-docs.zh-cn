@@ -1,18 +1,17 @@
 ---
 title: 在 WBDI 驱动程序中管理队列
 description: 在 WBDI 驱动程序中管理队列
-ms.assetid: f0434581-8492-42e1-ae50-4114e7b8b202
 keywords:
 - 生物识别驱动程序 WDK，管理队列
 - 管理队列-WDK 生物识别
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f8a0468901a400ff1a001430cf8fcaa2e77b81af
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: e6a44a4aaa77558d6fb4dcd94db7af7ac4009b12
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89095419"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96798623"
 ---
 # <a name="managing-queues-in-a-wbdi-driver"></a>在 WBDI 驱动程序中管理队列
 

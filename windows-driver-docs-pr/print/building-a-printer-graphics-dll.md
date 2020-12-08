@@ -1,18 +1,17 @@
 ---
 title: 生成打印机图形 DLL
 description: 生成打印机图形 DLL
-ms.assetid: bec1e9cc-a846-43e5-bc9e-e43a151ef6c4
 keywords:
 - 打印机图形 DLL WDK，生成
 - 图形 DLL WDK 打印机，生成
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1a644bd1945080efc774fa108f1be21fd7fc4dad
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: b092886ef8dee5255c041f672f3717a87141783c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107200"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96797757"
 ---
 # <a name="building-a-printer-graphics-dll"></a>生成打印机图形 DLL
 
@@ -22,7 +21,7 @@ ms.locfileid: "90107200"
 
 生成打印机图形 DLL 时，必须注意用于用户模式执行的 Dll 与用于内核模式执行的 Dll 之间的以下差异。
 
-**注意**   在 Windows Vista 中，打印机图形 Dll 只能在用户模式下执行。 有关详细信息，请参阅 [选择用户模式或内核模式](choosing-user-mode-or-kernel-mode.md)。
+**注意**   在 Windows Vista 中，打印机图形 Dll 只能在用户模式下执行。 有关详细信息，请参阅 [选择用户模式或内核模式](choosing-user-mode-or-kernel-mode.md)。
 
  
 

@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ 音频 \_ 动态 \_ 范围
 description: KSPROPERTY \_ 音频 \_ 动态 \_ 范围属性指定从响度节点 (KSNODETYPE 响度) 输出的音频流的动态范围 \_ 。
-ms.assetid: bab1cc2c-0751-4425-8546-9587baece585
 keywords:
 - KSPROPERTY_AUDIO_DYNAMIC_RANGE 音频设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4d776ea5d93dbacfed17f5762ed3c94ee19d3d3c
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 0a529d4d9946da1db025ebbcdd6bcd792597ba6f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102120"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96799043"
 ---
 # <a name="ksproperty_audio_dynamic_range"></a>KSPROPERTY \_ 音频 \_ 动态 \_ 范围
 
@@ -72,7 +71,7 @@ KSPROPERTY \_ 音频 \_ 动态 \_ 范围属性请求返回状态 " \_ 成功" �
 
 默认情况下，KSAUDIO 动态范围结构的 **QuietCompression** 和 **LoudCompression** 成员的 \_ 值 \_ 设置为零%。 这会生成音频流的完整动态范围。 小型端口驱动程序在实例化其数据路径包含节点的固定值时，将属性设置为其默认值。
 
-某些设备可能不支持对 **QuietCompression** 和 **LoudCompression**的更改。 如果客户端尝试更改设备不支持的值，微型端口驱动程序应返回错误。
+某些设备可能不支持对 **QuietCompression** 和 **LoudCompression** 的更改。 如果客户端尝试更改设备不支持的值，微型端口驱动程序应返回错误。
 
 <a name="requirements"></a>要求
 ------------

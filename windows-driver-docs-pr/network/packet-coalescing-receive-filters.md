@@ -1,15 +1,14 @@
 ---
 title: 数据包合并接收筛选器
 description: 数据包合并接收筛选器
-ms.assetid: B5C17A9D-A495-4A3D-B53E-B10F53C732D4
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 21b9da26cb22eedf54140b0328bde35428e97db1
-ms.sourcegitcommit: db9d058a9e592d4c47c67fc14f04f0ddc3aa92af
+ms.openlocfilehash: 849d0c5a4da85449cd2a3da515976211975aadf4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91989807"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96797919"
 ---
 #  <a name="packet-coalescing-receive-filters"></a>数据包合并接收筛选器
 
@@ -20,7 +19,7 @@ ms.locfileid: "91989807"
 
 -   网络适配器合并与合并接收筛选器匹配的数据包的最长时间。 适配器使用此值在适配器上的硬件计时器上设置过期值。 计时器过期后，适配器必须中断主机，使微型端口驱动程序能够处理合并的数据包。
 
-    **注意**   当首个匹配接收筛选器的数据包合并并启动计时器后，网络适配器必须合并与接收筛选器匹配的其他数据包，而无需重置和重新启动计时器。
+    **注意**  当首个匹配接收筛选器的数据包合并并启动计时器后，网络适配器必须合并与接收筛选器匹配的其他数据包，而无需重置和重新启动计时器。
 
      
 

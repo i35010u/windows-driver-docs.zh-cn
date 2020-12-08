@@ -1,26 +1,25 @@
 ---
 title: 自动配置 PPD 的打印机内存
 description: 自动配置 PPD 的打印机内存
-ms.assetid: 75df1026-896f-4840-a69d-975f813ca636
 keywords:
 - 内存 WDK 打印机自动配置
-- PPD 文件 WDK 自动配置内存
-- 框中自动配置支持 WDK 打印机，内存
+- PPD 文件 WDK 自动配置，内存
+- 内置自动配置支持 WDK 打印机，内存
 - autoconfiguring 打印机内存 WDK
 - 打印机内存配置 WDK 自动配置
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 52037f4a9f90823f2d9130110a24ac7e584278a5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 644bd119942edc23eebdb46b1a29d7e48f6e5644
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63350753"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96797859"
 ---
 # <a name="autoconfigure-the-printers-memory-for-ppd"></a>自动配置 PPD 的打印机内存
 
 
-将条目添加到 PPD.中指定的内存选项 GDL 第一个示例是与可安装的内存选项 PPD 文件的示例摘录：
+向 GDL 中为 PPD 指定的内存选项添加项。 第一个示例摘自 PPD 文件，该文件涉及可安装内存选项：
 
 ```PPD
 *% === Installable Options ===========
@@ -36,7 +35,7 @@ ms.locfileid: "63350753"
 *CloseGroup: InstallableOptions
 ```
 
-若要为"InstalledMemory"PPD 启用自动配置功能，请添加以下代码示例 GDL 文件。
+若要启用 "InstalledMemory" PPD 功能的自动配置，请将下面的代码示例添加到 GDL 文件中。
 
 ```GDL
 *% This feature definition merges with the definition in the PPD file

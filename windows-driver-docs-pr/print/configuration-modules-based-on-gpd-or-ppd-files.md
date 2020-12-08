@@ -1,7 +1,6 @@
 ---
 title: 基于 GPD 或 PPD 文件的配置模块
 description: 基于 GPD 或 PPD 文件的配置模块
-ms.assetid: b0aeea58-1c58-475e-8d4a-597778e42a7c
 keywords:
 - 版本 3 XPS 驱动程序 WDK XPSDrv，GPD 文件
 - 版本 3 XPS 驱动程序 WDK XPSDrv、PPD 文件
@@ -9,19 +8,19 @@ keywords:
 - PPD 文件 WDK XPSDrv
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b7bc56ecf70727b06d8c17e3f556fbe8496a4eb4
-ms.sourcegitcommit: ab64169b631da4db3f0b895600f1c38a22cb7e2e
+ms.openlocfilehash: 3c169c8e470c6c386ee63347dac7f49d0e1bc3cc
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75652852"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96797603"
 ---
 # <a name="configuration-modules-based-on-gpd-or-ppd-files"></a>基于 GPD 或 PPD 文件的配置模块
 
 
 对于 Windows Vista，GPD 和 PPD 文件包含特定于 XPSDrv 打印驱动程序的打印架构映射和新条目。 这些更改适用于 GPD 和 PPD 文件，这些文件可用于创建仅限 GPD 或 PPD 的配置模块和 Unidrv 或 Pscript5 打印驱动程序插件的配置模块。
 
-### <a name="xpsdrv-specific-gpd-and-ppd-entries"></a>XPSDrv 特定的 GPD 和 PPD 条目
+### <a name="xpsdrv-specific-gpd-and-ppd-entries"></a>XPSDrv-Specific GPD 和 PPD 条目
 
 若要使用 GPD 或 PPD 文件为 XPSDrv 打印驱动程序创建版本3打印驱动程序配置模块，必须执行以下操作之一：
 
@@ -43,7 +42,7 @@ ms.locfileid: "75652852"
 
 包括 Msxpsinc. gpd 或 Msxpsinc 文件是首选方法，而不是将这些属性添加到 GPD 或 PPD 文件中。 Microsoft 可能会将 XPSDrv 驱动程序的属性添加到相应的包含文件。 如果 Microsoft 将这些新属性添加到包含文件中，并在 GPD 或 PPD 文件中使用包含文件，则不需要编辑打印驱动程序的 GPD 或 PPD 文件。
 
-对于所有 Microsoft Unidrv 或基于 PScript5 驱动程序的 XPSDrv 驱动程序，根 GPD 或 PPD 文件（在 INF 文件中指定为驱动程序的 `DataFile`）必须包含相应的 Msxpsinc. GPD 或 Msxpsinc 文件。
+在 INF 文件中指定的根 GPD 或 PPD 文件 (，作为 `DataFile` 所有 Microsoft Unidrv 或基于 PScript5 驱动程序的 XPSDrv 驱动程序的驱动程序) ，必须包含相应的 Msxpsinc. GPD 或 Msxpsinc 文件。
 
 例如，对于 Model-foo. gpd，包括：
 

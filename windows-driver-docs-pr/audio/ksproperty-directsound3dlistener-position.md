@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ DIRECTSOUND3DLISTENER \_ 位置
 description: KSPROPERTY \_ DIRECTSOUND3DLISTENER \_ position 属性指定3d 侦听器的位置。
-ms.assetid: c2cb6bc2-e983-49c8-a251-ab28879b4fcd
 keywords:
 - KSPROPERTY_DIRECTSOUND3DLISTENER_POSITION 音频设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7da012efccd5223478349578cd9df49ecb1844e1
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: c6ad2f712326b2a0b79d35e2c84df657d8ae22fe
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102524"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96798877"
 ---
 # <a name="ksproperty_directsound3dlistener_position"></a>KSPROPERTY \_ DIRECTSOUND3DLISTENER \_ 位置
 

@@ -1,7 +1,6 @@
 ---
 title: PLMDebug
 description: PLMDebug.exe 是一种工具，使您可以使用 Windows 调试器调试 Windows 应用程序，该应用程序在进程生命周期管理 (PLM) 下运行。
-ms.assetid: 68BE8F5D-6425-43E2-B5BC-C1D35614AB32
 keywords:
 - PLMDebug Windows 调试
 ms.date: 06/03/2020
@@ -12,18 +11,18 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 37652b5bcbe70d01e0a7498ae4ab8ad41a814199
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: ee198d36435dbecc114fb688fe11fb7fa072279b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89212233"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96798361"
 ---
 # <a name="plmdebug"></a>PLMDebug
 
 PLMDebug.exe 是一种工具，使您可以使用 Windows 调试器调试 Windows 应用程序，该应用程序在进程生命周期管理 (PLM) 下运行。 使用 PLMDebug，可以手动控制挂起、继续和终止 Windows 应用。
 
-**提示**   使用 Windows 10 版本1607或更高版本，可以使用 UWP 命令（如 createpackageapp）调试 UWP 应用。 有关详细信息，请参阅 [使用 WinDbg 调试 UWP 应用](debugging-a-uwp-app-using-windbg.md)。
+**提示**  使用 Windows 10 版本1607或更高版本，可以使用 UWP 命令（如 createpackageapp）调试 UWP 应用。 有关详细信息，请参阅 [使用 WinDbg 调试 UWP 应用](debugging-a-uwp-app-using-windbg.md)。
 
 **从何处获取 PLMDebug**
 
@@ -58,7 +57,7 @@ plmdebug /activateBgTask "{TaskID}"
 显示已安装包的运行状态。 如果未指定 *Package* ，此命令将显示所有已安装包的运行状态。
 
 <span id="________enableDebug_Package_DebuggerCommandLine"></span><span id="________enabledebug_package_debuggercommandline"></span><span id="________ENABLEDEBUG_PACKAGE_DEBUGGERCOMMANDLINE"></span>**/enableDebug** *包* \[ *DebuggerCommandLine*\]  
-递增包的调试引用计数。 如果包具有非零的调试引用计数，则从 PLM 策略中免除。 对 **/enableDebug** 的每次调用都必须与对/**disableDebug**的调用配对。 如果指定 *DebuggerCommandLine*，则在启动包的任何应用时，调试器将附加。
+递增包的调试引用计数。 如果包具有非零的调试引用计数，则从 PLM 策略中免除。 对 **/enableDebug** 的每次调用都必须与对/**disableDebug** 的调用配对。 如果指定 *DebuggerCommandLine*，则在启动包的任何应用时，调试器将附加。
 
 <span id="________terminate_Package"></span><span id="________terminate_package"></span><span id="________TERMINATE_PACKAGE"></span>**/Terminate** *包*  
 终止包。
@@ -185,7 +184,7 @@ SampleTask : {50DB0363-D722-4E23-A18F-1EF49B226CC3}
 
 **plmdebug/activatebgtask "{50DB0363-D722-4E23-A18F-1EF49B226CC3}"**
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [在 Visual Studio 中调试 UWP 应用时如何触发挂起、继续和后台事件](/visualstudio/debugger/how-to-trigger-suspend-resume-and-background-events-for-windows-store-apps-in-visual-studio)
 

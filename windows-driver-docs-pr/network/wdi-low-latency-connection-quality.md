@@ -1,15 +1,14 @@
 ---
 title: WDI 低延迟连接质量
 description: 本部分介绍如何在 WDI 中保持低延迟连接的质量
-ms.assetid: 194A26DA-A138-4967-9A09-5843A38007E9
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d8eeb6248d690d89589e447041398142f68e38b4
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: c34575f10a0442f7055f43642f14d01640c2c548
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89211533"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96797855"
 ---
 # <a name="wdi-low-latency-connection-quality"></a>WDI 低延迟连接质量
 
@@ -20,7 +19,7 @@ ms.locfileid: "89211533"
 
 主机将 [NDIS \_ 状态 \_ WDI \_ 指示 \_ 漫游 \_ 需要](./ndis-status-wdi-indication-roaming-needed.md) 适配器的强请求进行漫游，因此，在此模式下，适配器应小心发送此指示的频率。 如果适配器执行其自己的漫游/AP 选择决定，则必须使用适当的机制 (如 "邻居报告" 或 "PMKIDs) " 以查找和选择/分级 Ap。
 
-若要优化关联进程，在可能的情况下，适配器应使用缓存的 BSS 条目进行 TSF 计时器同步。 缓存的条目应该足以应对 TSF 计时器同步，这是最新的，因为它是从最近的探测请求获取的。 即使驱动程序决定选择不具有最新缓存探测响应的 AP，TSF 同步也可以在以后进行。 驱动程序可以在接收到下一个信标之前禁用 Wi-fi 节能，这通常出现在100ms 中。
+若要优化关联进程，在可能的情况下，适配器应使用缓存的 BSS 条目进行 TSF 计时器同步。 缓存的条目应该足以应对 TSF 计时器同步，这是最新的，因为它是从最近的探测请求获取的。 即使驱动程序决定选择不具有最新缓存探测响应的 AP，TSF 同步也可以在以后进行。 驱动程序可以禁用 Wi-Fi 电源保存，直到收到下一个信标，这通常发生在100ms 内。
 
 当在多通道并发模式下操作时，建议适配器使用 ECSA 或其他机制来实现通道多路复用时无缝/无抖动体验。
 

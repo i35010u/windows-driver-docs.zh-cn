@@ -1,7 +1,6 @@
 ---
 title: KSEVENT \_ LOOPEDSTREAMING \_ 位置
 description: KSEVENT \_ LOOPEDSTREAMING \_ POSITION 事件指示音频流已到达循环缓冲区中的指定位置。使用情况摘要 TableTargetEvent 描述符 TypeEvent 值 TypePinKSEVENTLOOPEDSTREAMING \_ 位置 \_ 事件 \_ 数据 (操作数据的事件值类型) 是一个 LOOPEDSTREAMING \_ 位置 \_ 事件 \_ 数据结构，其中包含以下信息：当位置事件发生时系统将发送到客户端的通知类型。触发事件的缓冲区位置。
-ms.assetid: 6609ddac-e506-4fab-b580-0def30be2e9c
 keywords:
 - KSEVENT_LOOPEDSTREAMING_POSITION 音频设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 53e69c0b4cce21366a10b3dbd511a26a3b774b81
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 0ae08ad0f5775004c2d663eaa2831ba1e5acdbb5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102682"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96799207"
 ---
 # <a name="ksevent_loopedstreaming_position"></a>KSEVENT \_ LOOPEDSTREAMING \_ 位置
 
@@ -65,7 +64,7 @@ KSEVENT \_ LOOPEDSTREAMING \_ POSITION 事件指示音频流已到达循环缓�
 
 在 Windows Server 2003、Windows XP、Windows 2000、Windows Me 和 Windows 98 中，WavePci 和 WaveCyclic 端口驱动程序包含它们自己的用于 KSEVENT \_ LOOPEDSTREAMING 位置事件的内置处理程序 \_ 。 WavePci 和 WaveCyclic 微型端口驱动程序不应为这些事件实现处理程序。
 
-在 Windows Vista 中，任何 Wave*Xxx* 端口驱动程序都不会实现事件处理程序，也不能支持 KSEVENT \_ LOOPEDSTREAMING \_ 位置事件。
+在 Windows Vista 中，任何 Wave *Xxx* 端口驱动程序都不会实现事件处理程序，也不能支持 KSEVENT \_ LOOPEDSTREAMING \_ 位置事件。
 
 循环缓冲区是 [**KSINTERFACE \_ 标准 \_ 循环 \_ 流式处理**](../stream/ksinterface-standard-looped-streaming.md)类型的音频流的数据缓冲区。 当播放或记录光标到达循环缓冲区的末尾时，游标将环绕到缓冲区的开头。
 

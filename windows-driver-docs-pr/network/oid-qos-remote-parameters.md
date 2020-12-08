@@ -1,32 +1,31 @@
 ---
 title: OID_QOS_REMOTE_PARAMETERS
 description: 过量驱动程序发出对象标识符 (OID) 查询请求 OID_QOS_REMOTE_PARAMETERS，以获取远程对等方的 NDIS 服务 (QoS) 参数。
-ms.assetid: F9DA87FF-577F-4E06-929B-4AD65105B2F0
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_QOS_REMOTE_PARAMETERS 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: a9650c76cd052696a17ca50b1b818d6522deb648
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: bf5e5fb53fa6e5bd6e57b3e21e2646485b13cf61
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90101461"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96799369"
 ---
 # <a name="oid_qos_remote_parameters"></a>OID \_ QOS \_ 远程 \_ 参数
 
 
 过量驱动程序发出 (OID 的对象标识符) 查询 OID \_ QOS \_ 远程参数请求 \_ ，以获取远程对等方 (QOS) 参数的 NDIS 服务质量。 微型端口驱动程序使用这些远程 QoS 参数来解析其操作的 NDIS QoS 参数。 驱动程序将包含操作参数的网络适配器配置为执行 QoS 数据包传输。
 
-成功从 OID 查询请求返回后， [**ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的**InformationBuffer**成员包含指向[**ndis \_ QOS \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_qos_parameters)结构的指针。
+成功从 OID 查询请求返回后， [**ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的 **InformationBuffer** 成员包含指向 [**ndis \_ QOS \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_qos_parameters)结构的指针。
 
-**注意**   此 OID 查询请求仅对支持 IEEE 802.1 数据中心桥接 (DCB) 接口的微型端口驱动程序有效。
+**注意**  此 OID 查询请求仅对支持 IEEE 802.1 数据中心桥接 (DCB) 接口的微型端口驱动程序有效。
 
  
 
 <a name="remarks"></a>备注
 -------
 
-当 NDIS 成功处理 OID QOS 远程参数的 OID 请求时 \_ \_ \_ ，它将返回其已从以前的 [**ndis \_ 状态 \_ QOS \_ 远程 \_ 参数 \_ **](./ndis-status-qos-remote-parameters-change.md) 缓存的远程 NDIS qos 参数，并更改了微型端口驱动程序颁发的状态指示。 驱动程序发出此状态指示来报告初始远程 NDIS QoS 参数集。 每当远程 NDIS QoS 参数发生更改时，驱动程序还会发出此状态指示。
+当 NDIS 成功处理 OID QOS 远程参数的 OID 请求时 \_ \_ \_ ，它将返回其已从以前的 [**ndis \_ 状态 \_ QOS \_ 远程 \_ 参数 \_**](./ndis-status-qos-remote-parameters-change.md) 缓存的远程 NDIS qos 参数，并更改了微型端口驱动程序颁发的状态指示。 驱动程序发出此状态指示来报告初始远程 NDIS QoS 参数集。 每当远程 NDIS QoS 参数发生更改时，驱动程序还会发出此状态指示。
 
 NDIS 返回按以下方式初始化的 [**ndis \_ QOS \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_qos_parameters) 结构：
 
@@ -93,7 +92,7 @@ NDIS 返回以下状态代码之一。
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 ****

@@ -1,7 +1,6 @@
 ---
 title: DEVPKEY_Device_DriverVersion
 description: DEVPKEY_Device_DriverVersion
-ms.assetid: 68df1313-e948-4aea-9b90-c838f7bf228d
 keywords:
 - DEVPKEY_Device_DriverVersion 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 066d107788f8fdc4a6bbc8cb72da0c7b463ac702
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 53a864508748a7b4151ee2e663efa8bd1dc10586
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90714692"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96798139"
 ---
 # <a name="devpkey_device_driverversion"></a>DEVPKEY_Device_DriverVersion
 
@@ -67,7 +66,7 @@ PKEY_Device_DriverVersion 设备属性表示设备实例上当前安装的驱动
 <a name="remarks"></a>备注
 -------
 
-DEVPKEY_Device_DriverVersion 的值是由 inf [**DriverVer 指令**](./inf-driverver-directive.md)提供的，inf 版本部分包括在安装设备的 inf[**版本部分**](./inf-version-section.md)中，或由安装设备的[**inf *DDInstall*部分**](./inf-ddinstall-section.md)中包含的特定于设备的 inf **DriverVer**指令提供。
+DEVPKEY_Device_DriverVersion 的值是由 inf [**DriverVer 指令**](./inf-driverver-directive.md)提供的，inf 版本部分包括在安装设备的 inf [**版本部分**](./inf-version-section.md)中，或由安装设备的 [**inf *DDInstall* 部分**](./inf-ddinstall-section.md)中包含的特定于设备的 inf **DriverVer** 指令提供。
 
 可以调用 [**SetupDiGetDeviceProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdigetdevicepropertyw) 来检索 PKEY_Device_DriverVersion 的值。
 
@@ -86,7 +85,7 @@ Windows Server 2003、Windows XP 和 Windows 2000 支持此属性，但不支持
 
 [**INF DriverVer 指令**](./inf-driverver-directive.md)
 
-[**INF 版本部分**](./inf-version-section.md)
+[**INF Version 节**](./inf-version-section.md)
 
 [**SetupDiGetDeviceProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
 

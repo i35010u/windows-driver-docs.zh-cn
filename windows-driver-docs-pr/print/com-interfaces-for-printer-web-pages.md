@@ -7,15 +7,14 @@ MS-HAID:
 MSHAttr:
 - PreferredSiteName:MSDN
 - PreferredLib:/library/windows/hardware
-ms.assetid: 49b9705f-ba7c-4239-823b-7d738f4318b9
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6faa561bf25864859ecc0029ddbf6b214703de71
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 38fdb9532ba562a226ec82d03df4c4bd06697a40
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89214953"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96797689"
 ---
 # <a name="com-interfaces-for-printer-web-pages"></a>打印机网页的 COM 接口
 

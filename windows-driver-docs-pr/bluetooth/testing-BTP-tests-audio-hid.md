@@ -1,15 +1,14 @@
 ---
 title: Microsoft 蓝牙测试平台-音频和 HID 方案测试
 description: 蓝牙测试平台 (BTP) 音频和 HID 方案测试。
-ms.assetid: b5b039bb-af0f-446f-9657-aa0e137a3437
 ms.date: 2/14/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 2e586a0882736c6ba3298ef485eae179d14023bd
-ms.sourcegitcommit: 6e6189e3b7f2b376607b507220bd538a296f5b4e
+ms.openlocfilehash: da5c83b8b53353ccd8b36ceac03329cb3c047f2b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/18/2020
-ms.locfileid: "90799826"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96798507"
 ---
 # <a name="btp-audio-and-hid-scenario-tests"></a>BTP 音频和 HID 方案测试 #
 

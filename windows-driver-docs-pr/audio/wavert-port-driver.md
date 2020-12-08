@@ -1,24 +1,23 @@
 ---
 title: WaveRT 端口驱动程序
 description: WaveRT 端口驱动程序
-ms.assetid: d25e37e2-2e29-4bf9-8150-221ebef88c87
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4a1f45d2daa9dea6ba789ed5d00d4184d62fe507
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 59f346a146b40552a41d6db073727e1e2ae5f993
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328473"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96798769"
 ---
 # <a name="wavert-port-driver"></a>WaveRT 端口驱动程序
 
 
-本部分提供有关批的实时 (WaveRT) 端口驱动程序适用于 Windows Vista 和更高版本的 Microsoft Windows 操作系统的信息。
+本部分提供有关 Windows Vista 和更高版本的 Microsoft Windows 操作系统的声波实时 (WaveRT) 端口驱动程序的信息。
 
-本部分包括以下主题：
+本节包括下列主题：
 
-[引入 WaveRT 端口驱动程序](introducing-the-wavert-port-driver.md)
+[WaveRT 端口驱动程序简介](introducing-the-wavert-port-driver.md)
 
 [了解 WaveRT 端口驱动程序](understanding-the-wavert-port-driver.md)
 

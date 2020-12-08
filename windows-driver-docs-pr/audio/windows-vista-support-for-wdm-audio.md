@@ -1,15 +1,14 @@
 ---
 title: Windows Vista 对 WDM 音频的支持
 description: Windows Vista 对 WDM 音频的支持
-ms.assetid: a9cf1660-3757-4f8d-82c7-de654bddfb49
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: edfd472149a90b0dfa403551dc7fd53cb994f3b7
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 06e6e53f3de5b00e7234f297da39d27110786690
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89206609"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96798713"
 ---
 # <a name="windows-vista-support-for-wdm-audio"></a>Windows Vista 对 WDM 音频的支持
 

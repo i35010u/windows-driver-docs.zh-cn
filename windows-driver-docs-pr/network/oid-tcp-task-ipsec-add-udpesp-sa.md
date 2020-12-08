@@ -1,17 +1,16 @@
 ---
 title: OID_TCP_TASK_IPSEC_ADD_UDPESP_SA
 description: 本主题介绍) OID_TCP_TASK_IPSEC_ADD_UDPESP_SA 对象标识符 (OID。
-ms.assetid: 022db6dd-1099-4069-81af-7f919d91464e
 keywords:
 - OID_TCP_TASK_IPSEC_ADD_UDPESP_SA
 ms.date: 11/06/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c6587baeb83aa03ad76d2277a2b41fd62a3910ae
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: e3e557e04f2cf137da5447180d85eafd8ead1ae6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89213315"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96797997"
 ---
 # <a name="oid_tcp_task_ipsec_add_udpesp_sa"></a>OID_TCP_TASK_IPSEC_ADD_UDPESP_SA
 
@@ -19,7 +18,7 @@ ms.locfileid: "89213315"
 
 每个 SA 的信息被格式化为 [OFFLOAD_IPSEC_ADD_UDPESP_SA](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_offload_ipsec_add_udpesp_sa) 结构。 请注意，此结构与[OID_TCP_TASK_IPSEC_ADD_SA](oid-tcp-task-ipsec-add-sa.md)请求中使用的[OFFLOAD_IPSEC_ADD_SA](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_offload_ipsec_add_sa)结构几乎完全相同。 唯一的区别是 OFFLOAD_IPSEC_ADD_UDPESP_SA 结构包含 **EncapTypeEntry** 和 **EncapTypeEntryOffldHandle** 成员。
 
-OFFLOAD_IPSEC_ADD_UDPESP_SA 结构的前七个成员 (**SrcAddr**、 **SrcMask**、 **DestAddr**、 **DestMask**、 **Protocol**、 **SrcPort**和 **DestPort**) 构成了一个筛选器，该筛选器指定要应用 SAs 的源和目标以及 IP 协议。 此筛选器适用于传输模式连接，即两个主机之间的端到端连接。 如果通过隧道建立指定的连接，则隧道的源地址和目标地址将分别由 **SrcTunnelAddr** 和 **DestTunnelAddr**指定。
+OFFLOAD_IPSEC_ADD_UDPESP_SA 结构的前七个成员 (**SrcAddr**、 **SrcMask**、 **DestAddr**、 **DestMask**、 **Protocol**、 **SrcPort** 和 **DestPort**) 构成了一个筛选器，该筛选器指定要应用 SAs 的源和目标以及 IP 协议。 此筛选器适用于传输模式连接，即两个主机之间的端到端连接。 如果通过隧道建立指定的连接，则隧道的源地址和目标地址将分别由 **SrcTunnelAddr** 和 **DestTunnelAddr** 指定。
 
 如果筛选器参数设置为零，则不会使用该参数来筛选指定 SAs 的数据包。 例如，如果 **SrcAddr** 设置为零，则指定的 SAs 可以应用于包含任何源地址的数据包。 为此，如果所有筛选器参数均设置为零，则指定的 SAs 适用于向任何目标主机发送任意类型的数据包的任何源主机。
 

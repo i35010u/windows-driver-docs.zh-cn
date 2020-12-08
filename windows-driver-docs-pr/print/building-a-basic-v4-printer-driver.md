@@ -1,16 +1,15 @@
 ---
 title: 构建基本 v4 打印机驱动程序
 description: 使用 Microsoft Visual Studio 2019 中的驱动程序开发向导来生成一个基本 v4 打印机驱动程序，以选择创建功能打印机驱动程序的最小功能集。
-ms.assetid: 6E50CD69-D385-4724-B6B1-85D42EFFC6F0
 ms.date: 09/24/2020
 ms.custom: contperfq1
 ms.localizationpriority: medium
-ms.openlocfilehash: 4a18d121ba04a9afdeab50e97ff5cb119eefef9c
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: abecc1ccf395be4e8d10ae242e07e85bffe4c3fc
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91734429"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96797761"
 ---
 # <a name="build-a-basic-v4-printer-driver"></a>构建基本 v4 打印机驱动程序
 
@@ -26,7 +25,7 @@ ms.locfileid: "91734429"
 
 1. 按照[ (WDK 下载 Windows 驱动程序工具包](../download-the-wdk.md)中的指南进行操作) 
 
-    1. 安装 Visual Studio 2019，其中包含 **带有 c + +** 工作负荷的桌面开发以及 **Windows 10 SDK**的正确版本。
+    1. 安装 Visual Studio 2019，其中包含 **带有 c + +** 工作负荷的桌面开发以及 **Windows 10 SDK** 的正确版本。
 
     1. 安装适用于 Windows 10 的 WDK 2004 版。
 
@@ -40,15 +39,15 @@ ms.locfileid: "91734429"
 
 1. 在 " **名称** " 字段中键入驱动程序的名称，然后选择 **"确定"**。 例如，可以键入 " *MyV4PrintDriver*"。
 
-1. 在 **创建 V4 打印驱动程序向导**中的 " **选择驱动程序呈现类型：**" 下，选择 " **使用自定义呈现筛选器 (v4 打印驱动程序"，仅接受 XPS) **。
+1. 在 **创建 V4 打印驱动程序向导** 中的 " **选择驱动程序呈现类型：**" 下，选择 " **使用自定义呈现筛选器 (v4 打印驱动程序"，仅接受 XPS)**。
 
 1. 将所有其他选项保留默认设置，然后选择 " **下一步**"。
 
 1. 在向导的 " **安装信息** " 部分中，保留所有选项的默认设置，然后选择 " **下一步**"。
 
-1. 在向导的 " **安装信息 (第2页) ** " 部分中，将所有选项保留默认设置，然后选择 " **下一步**"。
+1. 在向导的 " **安装信息 (第2页)** " 部分中，将所有选项保留默认设置，然后选择 " **下一步**"。
 
-Microsoft Visual Studio 使用前面的选项来生成 *MyV4PrintDriver*的项目文件。
+Microsoft Visual Studio 使用前面的选项来生成 *MyV4PrintDriver* 的项目文件。
 
 ## <a name="verify-the-generated-driver-files"></a>验证生成的驱动程序文件
 
@@ -68,19 +67,19 @@ Microsoft Visual Studio 使用前面的选项来生成 *MyV4PrintDriver*的项�
 
 请注意，上表中有一个创建的文件是一个 INF 文件。 请注意，Visual Studio 创建了一个需要完成的框架 INF 文件，以便可以使用它来安装驱动程序。
 
-## <a name="create-a-unique-printerdriverid-for-the-driver"></a>为驱动程序创建唯一的**PrinterDriverID**
+## <a name="create-a-unique-printerdriverid-for-the-driver"></a>为驱动程序创建唯一的 **PrinterDriverID**
 
 1. 在 "Visual Studio Tools" 菜单中选择 " **创建 GUID**"。
 
 1. 选择选项 **4。注册表格式** ，然后选择 " **复制** " 按钮。
 
-1. 在 Visual Studio 的 " **解决方案资源管理器**中，展开" *MyV4PrintDriver* "节点。
+1. 在 Visual Studio 的 " **解决方案资源管理器** 中，展开" *MyV4PrintDriver* "节点。
 
-1. 选择 " **驱动程序文件**"，然后在 " **属性** " 窗口中查看 " *唯一标识符* " 字段的值。 将此值替换为使用 **Paste**生成的 GUID。
+1. 选择 " **驱动程序文件**"，然后在 " **属性** " 窗口中查看 " *唯一标识符* " 字段的值。 将此值替换为使用 **Paste** 生成的 GUID。
 
 ## <a name="complete-the-inf-file"></a>完成 INF 文件
 
-在 MyV4PrintDriver 项目中，应存在 **驱动程序文件**的条目。 打开此文件，应列出 MyV4PrintDriver 文件。 打开此文件。
+在 MyV4PrintDriver 项目中，应存在 **驱动程序文件** 的条目。 打开此文件，应列出 MyV4PrintDriver 文件。 打开此文件。
 
 ### <a name="1-update-the-copyright-notice"></a>1. 更新版权声明
 
@@ -97,9 +96,9 @@ INF 文件的前2行是驱动程序包的版权声明。
 ; INF file for the Fabrikam 1234 print driver
 ```
 
-### <a name="2-verify-the-version-section-is-correct"></a>2. 验证** \[ 版本 \] **部分是否正确
+### <a name="2-verify-the-version-section-is-correct"></a>2. 验证 **\[ 版本 \]** 部分是否正确
 
-查找包含** \[ 版本 \] **的行。
+查找包含 **\[ 版本 \]** 的行。
 
 - 检查并确保显示以下行：
 
@@ -113,9 +112,9 @@ INF 文件的前2行是驱动程序包的版权声明。
     **Signature**="$WINDOWS NT$"
     ```
 
-### <a name="3-configure-the-sourcedisksfiles-section"></a>3. 配置** \[ SourceDisksFiles \] **节
+### <a name="3-configure-the-sourcedisksfiles-section"></a>3. 配置 **\[ SourceDisksFiles \]** 节
 
-查找包含** \[ SourceDisksFiles \] **的行。
+查找包含 **\[ SourceDisksFiles \]** 的行。
 
 在此键入以下行：
 
@@ -126,9 +125,9 @@ MyV4PrintDriverRenderFilter-PipelineConfig.xml=1
 MyV4PrintDriverRenderFilter.dll=1
 ```
 
-### <a name="4-configure-the-driverfiles-section"></a>4. 配置** \[ DriverFiles \] **节
+### <a name="4-configure-the-driverfiles-section"></a>4. 配置 **\[ DriverFiles \]** 节
 
-查找包含** \[ DriverFiles \] **的行。
+查找包含 **\[ DriverFiles \]** 的行。
 
 在此键入以下行：
 
@@ -139,9 +138,9 @@ MyV4PrintDriverRenderFilter-PipelineConfig.xml
 MyV4PrintDriverRenderFilter.dll
 ```
 
-### <a name="5-configure-the-standardntarch-section"></a>5. 配置** \[ 标准. NT $ $ $ $ \] $**
+### <a name="5-configure-the-standardntarch-section"></a>5. 配置 **\[ 标准. NT $ $ $ $ \] $**
 
-找到包含** \[ STANDARD. NT $ $ $ \] **的行。
+找到包含 **\[ STANDARD. NT $ $ $ \]** 的行。
 
 本部分引用 `Install` 每个模型的 INF 部分。 例如，如果您的打印机型号为 Fabrikam 1234，则可以键入以下内容：
 
@@ -152,17 +151,17 @@ MyV4PrintDriverRenderFilter.dll
 
 ### <a name="6-add-printerdriverid-to-the-inf-file"></a>6. 将 **PrinterDriverID** 添加到 INF 文件
 
-在 Visual Studio 的 " **解决方案资源管理器**中，展开" *MyV4PrintDriver* "节点。
+在 Visual Studio 的 " **解决方案资源管理器** 中，展开" *MyV4PrintDriver* "节点。
 
 选择 " **驱动程序文件**"，然后在 " **属性** " 窗口中查看 " *唯一标识符* " 字段的值。 这是 GUID)  (的驱动程序 ID。 突出显示并复制它。
 
-在 INF 文件中的 " ** \[ 标准 NT $ $ $ $ \] ** " 部分中，键入以下行：
+在 INF 文件中的 " **\[ 标准 NT $ $ $ $ \]** " 部分中，键入以下行：
 
 ```inf
 "Fabrikam 1234"=DriverInstall,
 ```
 
-然后在逗号后，粘贴在上一步中复制的 GUID。 已完成的** \[ 标准 NT $ $ \] ** $ "一节" 应如下所示：
+然后在逗号后，粘贴在上一步中复制的 GUID。 已完成的 **\[ 标准 NT $ $ \]** $ "一节" 应如下所示：
 
 ```inf
 "Fabrikam 1234"=DriverInstall, {GUID}
@@ -170,9 +169,9 @@ MyV4PrintDriverRenderFilter.dll
 "Fabrikam 1234"=DriverInstall, WSDPRINT\Fabrikam1234
 ```
 
-### <a name="7-configure-the-strings-section"></a>7. 配置** \[ 字符串 \] **部分
+### <a name="7-configure-the-strings-section"></a>7. 配置 **\[ 字符串 \]** 部分
 
-查找包含** \[ 字符串 \] **的行。
+查找包含 **\[ 字符串 \]** 的行。
 
 在此，你将找到 *ManufacturerName* 字符串的定义。 将 <*制造商名称*> 的字符替换为公司名称，以提供制造商的目标打印机名称并删除包含的行的其余部分;做
 
@@ -235,7 +234,7 @@ DiskName="MyV4PrintDriver Installation Disk"
 
 ## <a name="update-the-driver-files-list"></a>更新 **驱动程序文件** 列表
 
-1. 在 Visual Studio 的 " **解决方案资源管理器**中，展开" *MyV4PrinterDriver* "节点。
+1. 在 Visual Studio 的 " **解决方案资源管理器** 中，展开" *MyV4PrinterDriver* "节点。
 
 1. 选择文件 MyV4PrintDriver，并将其拖到 " **驱动程序文件** " 节点。
 
@@ -243,7 +242,7 @@ DiskName="MyV4PrintDriver Installation Disk"
 
 ## <a name="add-the-pipeline-config-file-to-the-driver-package"></a>将管道配置文件添加到驱动程序包
 
-1. 在 **解决方案资源管理器**中，选择并按住 (或右键单击 ") *MyV4PrintDriver* " 项目，然后选择 " **属性**"。
+1. 在 **解决方案资源管理器** 中，选择并按住 (或右键单击 ") *MyV4PrintDriver* " 项目，然后选择 " **属性**"。
 
 1. 在 " **MyV4PrintDriver 属性页** " 窗口的左窗格中，展开 " **配置属性** "。
 
@@ -255,11 +254,11 @@ DiskName="MyV4PrintDriver Installation Disk"
 
     - 选择 MyV4PrintDriverRenderFilter-PipelineConfig.xml 文件，然后按 " **打开**"。
 
-    - 选择“确定”  。
+    - 选择“确定”。
 
 ## <a name="add-a-reference-to-the-render-filter-to-the-driver-package"></a>将对呈现筛选器的引用添加到驱动程序包
 
-1. 在 Visual Studio 的 " **解决方案资源管理器**中，展开" *MyV4PrinterDriver* "节点。
+1. 在 Visual Studio 的 " **解决方案资源管理器** 中，展开" *MyV4PrinterDriver* "节点。
 
 1. 选择并按住 (或右键单击 " **引用** " 节点) > 选择 " **添加引用**"。
 
@@ -267,7 +266,7 @@ DiskName="MyV4PrintDriver Installation Disk"
 
 ## <a name="configure-the-driver-solution-for-debugging-and-deployment"></a>为调试和部署配置驱动程序解决方案
 
-1. 在 **解决方案资源管理器**中，选择并按住 (或右键单击 ") *MyV4PrintDriver* " 项目，然后选择 " **属性**"。
+1. 在 **解决方案资源管理器** 中，选择并按住 (或右键单击 ") *MyV4PrintDriver* " 项目，然后选择 " **属性**"。
 
 1. 在 " **MyV4PrintDriver 属性页** " 窗口的左窗格中，展开 " **配置属性** "。
 
@@ -281,11 +280,11 @@ DiskName="MyV4PrintDriver Installation Disk"
 
     - 在 " **可选参数** " 字段中键入驱动程序的名称 (名称) 附近没有任何引号。
 
-    - 选择“确定”  。
+    - 选择“确定”。
 
 ## <a name="configure-driver-signing"></a>配置驱动程序签名
 
-1. 在 **解决方案资源管理器**中，选择并按住 (或右键单击 ") *MyV4PrintDriver* " 项目，然后选择 " **属性**"。
+1. 在 **解决方案资源管理器** 中，选择并按住 (或右键单击 ") *MyV4PrintDriver* " 项目，然后选择 " **属性**"。
 
 1. 在 " **MyV4PrintDriver 属性页** " 窗口的左窗格中，展开 " **配置属性** "。
 
@@ -297,17 +296,17 @@ DiskName="MyV4PrintDriver Installation Disk"
 
 1. 选择 " **TimeStampServer**"，然后从下拉框中选择 "Verisign"。
 
-1. 选择“确定”  。
+1. 选择“确定”。
 
 ## <a name="build-and-deploy-the-driver"></a>生成和部署驱动程序
 
-1. 在 **解决方案资源管理器**中，选择并按住 (或右键单击 ") *解决方案 MyV4PrintDriver (2 项目) *"，然后选择 " **生成解决方案**"。
+1. 在 **解决方案资源管理器** 中，选择并按住 (或右键单击 ") *解决方案 MyV4PrintDriver (2 项目)*"，然后选择 " **生成解决方案**"。
 
 1. 生成过程完成后，将自动安装驱动程序。 请确保 " **输出** " 窗口中没有任何错误。
 
 ## <a name="test-the-driver"></a>测试驱动程序
 
-使用即插即用或 **添加打印机向导**创建打印队列。
+使用即插即用或 **添加打印机向导** 创建打印队列。
 
 有关 v4 打印机驱动程序的 INF 文件的详细信息，请参阅 [V4 驱动程序 inf](v4-driver-inf.md)。
 

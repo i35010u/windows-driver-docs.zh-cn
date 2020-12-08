@@ -1,7 +1,6 @@
 ---
 title: WaveCyclic 端口驱动程序
 description: WaveCyclic 端口驱动程序
-ms.assetid: c5572ae3-0d91-43a6-a49c-c6c005263f5b
 keywords:
 - WaveCyclic 端口驱动程序 WDK 音频
 - PortCls WDK 音频，端口驱动程序
@@ -9,19 +8,19 @@ keywords:
 - 微型端口驱动程序 WDK 音频、端口驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 251e43ef4ad30452ee4cf397b7c5bacd016c15a9
-ms.sourcegitcommit: 0c34101a0eed9f187fec03026021fff89bd233e3
+ms.openlocfilehash: 66763c68f4caaf3443994c81d4639d391fd4231a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91135162"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96798797"
 ---
 # <a name="wavecyclic-port-driver"></a>WaveCyclic 端口驱动程序
 
 
 ## <span id="wavecyclic_port_driver"></span><span id="WAVECYCLIC_PORT_DRIVER"></span>
 
-**重要提示**   不再建议使用 WaveCyclic，而是改用 WaverRT。
+**重要提示**  不再建议使用 WaveCyclic，而是改用 WaverRT。
 
 
 WaveCyclic 端口驱动程序通过基于 DMA 的音频设备来管理波形流的播放或录制，该音频设备处理循环缓冲区中的音频数据。 此设备是音频适配器上的硬件功能。 通常，适配器是主板上的集成芯片组的一部分，或者安装在插入到主板上 PCI 或 ISA 插槽的音频卡上。 适配器驱动程序提供了相应的 [WaveCyclic 微型端口驱动](wavecyclic-miniport-driver.md) 程序对象，该对象绑定到 WaveCyclic 端口驱动程序对象，以形成可捕获或呈现波形流的 [波形筛选器](wave-filters.md) 。

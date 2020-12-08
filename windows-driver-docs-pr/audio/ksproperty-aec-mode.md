@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ AEC \_ 模式
 description: KSPROPERTY \_ aec \_ 模式属性用于控制 aec 节点的操作模式。 这是 AEC 节点的一个可选属性， (KSNODETYPE \_ \_ 的声音回声 \_ 取消) 。
-ms.assetid: 79f0d655-4764-454f-8867-6cf1b5cedc82
 keywords:
 - KSPROPERTY_AEC_MODE 音频设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 40907367801e55a8285569eff12a275775b598a3
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: fd0ad04d9845b2812158f77ead59e127fc262183
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102324"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96799089"
 ---
 # <a name="ksproperty_aec_mode"></a>KSPROPERTY \_ AEC \_ 模式
 

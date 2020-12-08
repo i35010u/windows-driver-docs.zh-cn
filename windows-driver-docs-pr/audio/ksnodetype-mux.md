@@ -1,7 +1,6 @@
 ---
-title: KSNODETYPE\_MUX
-description: KSNODETYPE\_MUX
-ms.assetid: c22054fe-7ede-4694-8ae1-6e18e1270185
+title: KSNODETYPE \_ MUX
+description: KSNODETYPE \_ MUX
 keywords:
 - KSNODETYPE_MUX 音频设备
 topic_type:
@@ -12,24 +11,24 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5759a6447467d8f9533e0d1199e668fd9f302092
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 665fcbda2d2e6b47c556a5230c62159c087e5744
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333218"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96799137"
 ---
-# <a name="ksnodetypemux"></a>KSNODETYPE\_MUX
+# <a name="ksnodetype_mux"></a>KSNODETYPE \_ MUX
 
 
 ## <span id="ddk_ksnodetype_mux_ks"></span><span id="DDK_KSNODETYPE_MUX_KS"></span>
 
 
-KSNODETYPE\_MUX 节点表示多路复用器 (MUX)。 MUX 具有多个输入的流和一个输出流，所有使用相同的数据格式。 一次只有一个输入的流被路由到输出流。
+KSNODETYPE \_ mux 节点表示 (MUX) 的多路复用器。 MUX 具有多个输入流和一个输出流，它们都具有相同的数据格式。 一次只能将一个输入流路由到输出流。
 
-KSNODETYPE\_MUX 节点应支持以下必需的属性：
+KSNODETYPE \_ MUX 节点应支持以下必需属性：
 
-[**KSPROPERTY\_AUDIO\_MUX\_SOURCE**](ksproperty-audio-mux-source.md)
+[**KSPROPERTY \_ 音频 \_ MUX \_ 源**](ksproperty-audio-mux-source.md)
 
  
 

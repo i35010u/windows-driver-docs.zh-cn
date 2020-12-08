@@ -1,19 +1,18 @@
 ---
 title: 顶点混合
 description: 顶点混合
-ms.assetid: 58e740fb-01e4-4c8c-8e44-f0c358fd621a
 keywords:
-- 贷款 WDK Direct3D
-- 混合 WDK Direct3D 的顶点
-- Direct3D WDK Windows 2000 显示顶点值混合处理
+- 借贷 WDK Direct3D
+- 顶点混合 WDK Direct3D
+- Direct3D WDK Windows 2000 显示，顶点混合
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2cb2073616de6260f2a715c36739b5371958d31a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1ba760d6aca51b4374f262174f9d42af4a7eab33
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390757"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96798233"
 ---
 # <a name="vertex-blending"></a>顶点混合
 
@@ -21,9 +20,9 @@ ms.locfileid: "63390757"
 ## <span id="ddk_vertex_blending_gg"></span><span id="DDK_VERTEX_BLENDING_GG"></span>
 
 
-支持顶点混合操作的最新的直接 X 版本。 顶点混合在这种方式工作： 从建模空间对象乘以 4 X 4 世界矩阵，该全局空间相对于原点特定的世界空间中放置该模型的源。 矩阵的一个部分的作用方向和另一个部分的作用的位置。 可以有最多三个世界矩阵应用，允许对象来将"弯曲"通过的对象的范围内混合使用不同的权重的顶点。
+最新的直接 X 版本支持顶点混合操作。 顶点混合的工作方式如下：建模空间中的对象乘以4X4 世界矩阵，并将模型的原点置于相对于该世界空间原点的特定世界空间。 矩阵的一部分是方向，另一部分则是位置。 最多可应用三个世界矩阵，允许对象通过将顶点与对象范围内的不同权重混合为 "弯曲"。
 
-接下来，应用视图矩阵，其中有效地压缩空间中的相对于特定视点中;呈现到二维图片上的实际非常类似于照相机。
+接下来，将应用视图矩阵，这会有效地压缩相对于特定视点的空间;与相机非常类似于将现实世界呈现为二维图片。
 
  
 

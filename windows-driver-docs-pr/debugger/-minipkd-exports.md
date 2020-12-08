@@ -1,9 +1,8 @@
 ---
-title: minipkd.exports
-description: Minipkd.exports 扩展显示指定的适配器的微型端口导出结果的地址。
-ms.assetid: 7d92539c-26b5-4cab-84df-b643612a98d0
+title: minipkd
+description: Minipkd 扩展显示指定适配器的微型端口导出地址。
 keywords:
-- minipkd.exports Windows 调试
+- minipkd Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,29 +11,29 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 22ba392e27018d5308a95337e28bee7edeb0f6b5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6b9397ef56e5b5b25445ce4f818d5fff45ea0483
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63336075"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96798431"
 ---
 # <a name="minipkdexports"></a>!minipkd.exports
 
 
-**！ Minipkd.exports**扩展显示指定的适配器的微型端口导出结果的地址。
+**！ Minipkd** extension 显示指定适配器的微型端口导出地址。
 
 ```dbgcmd
 !minipkd.exports Adapter 
 ```
 
-## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>参数
+## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>Parameters
 
 
-<span id="_______Adapter______"></span><span id="_______adapter______"></span><span id="_______ADAPTER______"></span> *Adapter*   
+<span id="_______Adapter______"></span><span id="_______adapter______"></span><span id="_______ADAPTER______"></span>*适配器*   
 指定适配器的地址。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 <table>
 <colgroup>
@@ -55,9 +54,9 @@ ms.locfileid: "63336075"
 
  
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-有关详细信息，请参阅[SCSI 微型端口调试](scsi-miniport-debugging.md)。
+有关详细信息，请参阅 [SCSI 微型端口调试](scsi-miniport-debugging.md)。
 
  
 

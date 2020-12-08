@@ -1,7 +1,6 @@
 ---
 title: 电池微型类驱动程序的 Unload 例程
 description: 电池微型类驱动程序的 Unload 例程
-ms.assetid: f0acbf94-95d1-4a9d-aafd-1f868c5560cc
 keywords:
 - 电池 miniclass 驱动程序 WDK，例程
 - 卸载例程
@@ -9,12 +8,12 @@ keywords:
 - 卸载设备
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 066c28d4e17453b1428903a632added9811afa49
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 6e6e761374ab1f5c04e86651213b435fe68b066b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90716566"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96798655"
 ---
 # <a name="unload-routine-of-a-battery-miniclass-driver"></a>电池微型类驱动程序的 Unload 例程
 
@@ -24,7 +23,7 @@ ms.locfileid: "90716566"
 
 电池 miniclass 驱动程序的 *卸载* 例程可确保已删除所有驱动程序的设备并释放 miniclass 驱动程序已分配的所有资源。
 
-*卸载*例程应该首先检查以确保所有设备已被删除，如果不是，请为其余每个设备执行以下操作：
+*卸载* 例程应该首先检查以确保所有设备已被删除，如果不是，请为其余每个设备执行以下操作：
 
 1.  调用 [**BatteryClassUnload**](/windows/win32/api/batclass/nf-batclass-batteryclassunload) 以通知类驱动程序，miniclass 驱动程序正在卸载设备。
 

@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ 音频 \_ 混合 \_ 电平 \_
 description: KSPROPERTY \_ AUDIO \_ MIX \_ level level \_ 属性指定 supermixer 节点 (KSNODETYPE SUPERMIX) 的混合级别功能 \_ 。 单个 get 属性请求检索输入和输出通道的所有组合的信息。
-ms.assetid: ab7a5dfb-8975-41bb-9347-953406701804
 keywords:
 - KSPROPERTY_AUDIO_MIX_LEVEL_CAPS 音频设备
 topic_type:
@@ -14,17 +13,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6052dbaf5ba33b673d8b2d892d6bdab8d4f1bb6c
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: a266348f6261b3946a414898ec885387824b8e1f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102096"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96799023"
 ---
 # <a name="ksproperty_audio_mix_level_caps"></a>KSPROPERTY \_ 音频 \_ 混合 \_ 电平 \_
 
 
-KSPROPERTY \_ AUDIO \_ MIX \_ level level \_ 属性指定 supermixer 节点 ([**KSNODETYPE \_ SUPERMIX**](ksnodetype-supermix.md)) 的混合级别功能。 单个 *get*属性请求检索输入和输出通道的所有组合的信息。
+KSPROPERTY \_ AUDIO \_ MIX \_ level level \_ 属性指定 supermixer 节点 ([**KSNODETYPE \_ SUPERMIX**](ksnodetype-supermix.md)) 的混合级别功能。 单个 *get* 属性请求检索输入和输出通道的所有组合的信息。
 
 ## <span id="ddk_ksproperty_audio_mix_level_caps_ks"></span><span id="DDK_KSPROPERTY_AUDIO_MIX_LEVEL_CAPS_KS"></span>
 
@@ -61,7 +60,7 @@ KSPROPERTY \_ AUDIO \_ MIX \_ level level \_ 属性指定 supermixer 节点 ([**
 
  
 
- (操作数据) 的属性值是 KSAUDIO MIXCAP 表类型的 \_ 结构 \_ ，它指定*m* \* supermixer 节点中包含*m*个输入通道和*n*个输出通道的所有 m*n*输入输出路径的功能。
+ (操作数据) 的属性值是 KSAUDIO MIXCAP 表类型的 \_ 结构 \_ ，它指定 *m* \* supermixer 节点中包含 *m* 个输入通道和 *n* 个输出通道的所有 m *n* 输入输出路径的功能。
 
 ### <a name="span-idreturn_valuespanspan-idreturn_valuespanspan-idreturn_valuespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>返回值
 

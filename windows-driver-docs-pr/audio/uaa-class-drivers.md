@@ -1,7 +1,6 @@
 ---
 title: UAA 类驱动程序
 description: UAA 类驱动程序
-ms.assetid: 57f8f6fe-53a9-4ef1-b4f6-715232e88fdf
 keywords:
 - HD 音频，通用音频体系结构
 - 高清晰音频 (HD 音频) ，通用音频体系结构
@@ -10,12 +9,12 @@ keywords:
 - 类驱动程序 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0dbd00078e3f8da5dfd41d962fce5d27a20017e3
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 5ff794af3d751173adb565932178b59f9fbb5912
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89209917"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96798847"
 ---
 # <a name="uaa-class-drivers"></a>UAA 类驱动程序
 

@@ -1,15 +1,14 @@
 ---
 title: 开发生物识别驱动程序的路线图
 description: 开发生物识别驱动程序的路线图
-ms.assetid: 8ed13c75-86d1-4ac0-9f44-05162521b915
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 835e7f2949fbf0a3c3c3fab0f9e66e80b16f856d
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 644b88db4399a7733fc3fa52634a7c4723f9f303
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89095413"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96798619"
 ---
 # <a name="roadmap-for-developing-biometric-drivers"></a>开发生物识别驱动程序的路线图
 

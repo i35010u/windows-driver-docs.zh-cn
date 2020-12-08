@@ -1,15 +1,14 @@
 ---
 title: WaveRT 微型端口驱动程序
 description: WaveRT 微型端口驱动程序
-ms.assetid: 154dc921-424f-4021-8f17-5482ceef99a8
 ms.date: 10/01/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 4cc8738271105249b783fafda7063c06e2854a68
-ms.sourcegitcommit: 372464be981a39781c71049126f36891cb5d0cad
+ms.openlocfilehash: a9a5e05e7c5c9043fdcac3fe8f9cd82dd4b0d540
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91646051"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96798779"
 ---
 # <a name="wavert-miniport-driver"></a>WaveRT 微型端口驱动程序
 
@@ -42,7 +41,7 @@ WaveRT 微型端口驱动程序必须实现两个接口：
 
 ### <a name="span-idiminiportwavertstreamspanspan-idiminiportwavertstreamspaniminiportwavertstream"></a><span id="iminiportwavertstream"></span><span id="IMINIPORTWAVERTSTREAM"></span>IMiniportWaveRTStream
 
-[IMiniportWaveRTStream](/windows-hardware/drivers/ddi/portcls/nn-portcls-iminiportwavertstream)接口继承[**IUnknown**](/windows/win32/api/unknwn/nn-unknwn-iunknown)接口中的方法。 IMiniportWaveRTStream 提供了以下附加方法：
+[IMiniportWaveRTStream](/windows-hardware/drivers/ddi/portcls/nn-portcls-iminiportwavertstream)接口继承 [**IUnknown**](/windows/win32/api/unknwn/nn-unknwn-iunknown)接口中的方法。 IMiniportWaveRTStream 提供了以下附加方法：
 
 [**IMiniportWaveRTStream：： AllocateAudioBuffer**](/windows-hardware/drivers/ddi/portcls/nf-portcls-iminiportwavertstream-allocateaudiobuffer) 分配音频数据的循环缓冲区。
 

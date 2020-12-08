@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ E-ac3 \_ 语言 \_ 代码
 description: KSPROPERTY \_ E-ac3 \_ language \_ CODE 属性指定 AC 3 编码流的语言代码。
-ms.assetid: 42c0fb44-437c-4fa9-95ee-823880028369
 keywords:
 - KSPROPERTY_AC3_LANGUAGE_CODE 音频设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 218ca58415691812ca084294f8d1a724a1415afb
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: fe8d55da9c5a3fbdf9a7e22011e42c4cbe55ac5c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102336"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96799087"
 ---
 # <a name="ksproperty_ac3_language_code"></a>KSPROPERTY \_ E-ac3 \_ 语言 \_ 代码
 

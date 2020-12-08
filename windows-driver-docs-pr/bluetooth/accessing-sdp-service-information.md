@@ -1,7 +1,6 @@
 ---
 title: 访问 SDP 服务信息
 description: 访问 SDP 服务信息
-ms.assetid: 0b327fbd-1101-4566-ac2f-3d039eed6835
 keywords:
 - 蓝牙 WDK、SDP 服务器通信
 - SDP WDK 蓝牙
@@ -14,12 +13,12 @@ keywords:
 - IOCTL_BTH_SDP_SERVICE_SEARCH
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5ca62609fff56107cda23cde78948b0286378674
-ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
+ms.openlocfilehash: d6359c612cff4089cb40dd1ae86ac455f34e8822
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90010591"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96798585"
 ---
 # <a name="accessing-sdp-service-information"></a>访问 SDP 服务信息
 
@@ -40,7 +39,7 @@ ms.locfileid: "90010591"
 
 在配置文件驱动程序获取 *动态* 协议/服务多路复用器 (PSM) 用于所需服务后，可以使用 **BRB \_ L2CA \_ 开放 \_ 通道** BRB 连接到远程服务。
 
-**注意**   如果服务具有固定的 PSM，其中很多都是，则 L2CAP 客户端配置文件驱动程序无需使用 SDP 来获取 PSM。 但是，L2CAP 客户端配置文件驱动程序仍可以使用 SDP 来获取 SDP 服务器特性。
+**注意**  如果服务具有固定的 PSM，其中很多都是，则 L2CAP 客户端配置文件驱动程序无需使用 SDP 来获取 PSM。 但是，L2CAP 客户端配置文件驱动程序仍可以使用 SDP 来获取 SDP 服务器特性。
 
  
 

@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ FMRX \_
 description: KSPROPERTY \_ FMRX \_ volume 属性控制调频广播的音量。
-ms.assetid: 28650DEB-EA09-4E30-A1A7-179D1E1A641F
 keywords:
 - KSPROPERTY_FMRX_VOLUME 音频设备
 topic_type:
@@ -14,17 +13,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f47e22d8375cb0519f7b74c77364d7028a6dbe36
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: a7b021846f1962b6893c2beaffa0bf391143f2cb
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102498"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96798867"
 ---
 # <a name="ksproperty_fmrx_volume"></a>KSPROPERTY \_ FMRX \_
 
 
-**KSPROPERTY \_ FMRX \_ VOLUME**属性控制调频广播的音量。
+**KSPROPERTY \_ FMRX \_ VOLUME** 属性控制调频广播的音量。
 
 ### <a name="span-idusage_summary_tablespanspan-idusage_summary_tablespanspan-idusage_summary_tablespanusage-summary-table"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用情况摘要表
 
@@ -62,12 +61,12 @@ ms.locfileid: "90102498"
 
 ### <a name="span-idreturn_valuespanspan-idreturn_valuespanspan-idreturn_valuespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>返回值
 
-**KSPROPERTY \_ FMRX \_ volume**属性请求返回调频无线电量。
+**KSPROPERTY \_ FMRX \_ volume** 属性请求返回调频无线电量。
 
 <a name="remarks"></a>备注
 -------
 
-FM volume 和路由 (终结点选择) 由拓扑筛选器上的 **KSPROPERTY \_ FMRX \_ volume** 和 [**KSPROPERTY \_ FMRX \_ ENDPOINTID**](ksproperty-fmrx-endpointid.md) 属性控制。 **KSPROPERTY \_ FMRX \_ volume**属性的基本支持应返回最小卷、最大卷和卷范围。
+FM volume 和路由 (终结点选择) 由拓扑筛选器上的 **KSPROPERTY \_ FMRX \_ volume** 和 [**KSPROPERTY \_ FMRX \_ ENDPOINTID**](ksproperty-fmrx-endpointid.md) 属性控制。 **KSPROPERTY \_ FMRX \_ volume** 属性的基本支持应返回最小卷、最大卷和卷范围。
 
 <a name="requirements"></a>要求
 ------------

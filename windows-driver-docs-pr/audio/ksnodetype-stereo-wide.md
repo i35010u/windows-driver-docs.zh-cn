@@ -1,7 +1,6 @@
 ---
-title: KSNODETYPE\_立体声\_宽
-description: KSNODETYPE\_立体声\_宽
-ms.assetid: aef36aba-4d78-4051-9859-417b840a83b4
+title: KSNODETYPE \_ 立体声 \_
+description: KSNODETYPE \_ 立体声 \_
 keywords:
 - KSNODETYPE_STEREO_WIDE 音频设备
 topic_type:
@@ -12,24 +11,24 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6ea2be48714f61f0674e3f089a57f379462dfd0b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 54d56e1e78b0b3db2f30c5961b0c80b6a118a098
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333189"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96799117"
 ---
-# <a name="ksnodetypestereowide"></a>KSNODETYPE\_立体声\_宽
+# <a name="ksnodetype_stereo_wide"></a>KSNODETYPE \_ 立体声 \_
 
 
 ## <span id="ddk_ksnodetype_stereo_wide_ks"></span><span id="DDK_KSNODETYPE_STEREO_WIDE_KS"></span>
 
 
-KSNODETYPE\_立体声\_通用节点表示的立体声宽度控件。 通过增加明显立体声图像的宽度，此类型的控件可以向现有的立体声 （两个通道） 流添加 spaciousness。 生成的立体声映像中的某些声音看上去来源于帧的左右扬声器的区域之外的位置。
+KSNODETYPE \_ 立体声 \_ 宽节点表示立体声宽度控制。 此类控件可以通过增加立体声图像的外观宽度，将 spaciousness 添加到现有立体声 (双通道) 流。 在生成的立体声图像中，有些声音看起来来自由左右扬声器括起来的区域之外的位置。
 
-宽度节点应支持以下必需的属性：
+宽度节点应支持以下必需属性：
 
-[**KSPROPERTY\_音频\_宽度**](ksproperty-audio-wideness.md)
+[**KSPROPERTY \_ 音频 \_ 宽度**](ksproperty-audio-wideness.md)
 
  
 

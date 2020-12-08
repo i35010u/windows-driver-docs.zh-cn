@@ -1,19 +1,18 @@
 ---
 title: UPS 注册表项
 description: UPS 注册表项
-ms.assetid: d0d4ef8f-9df1-48a3-b0fc-cea4eb3cdf40
 keywords:
 - UPS 微型驱动程序 WDK，注册表项
 - UPS 注册表项 WDK
 - 注册表 WDK UPS
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 494ef69cc0c7b632e5fa9f5fdaf9fa0ff897133b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 65ff6bd900f1f0309b010942c09e73f1d255a863
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328427"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96798653"
 ---
 # <a name="ups-registry-entries"></a>UPS 注册表项
 
@@ -21,29 +20,29 @@ ms.locfileid: "63328427"
 ## <span id="ddk_ups_registry_entries_kg"></span><span id="DDK_UPS_REGISTRY_ENTRIES_KG"></span>
 
 
-UPS 注册表条目提供有关系统的 UPS 的特定于模型的信息。 供应商提供 UPS 微型驱动程序负责提供这些注册表项，将存储在 UPS 服务树的某些值。
+UPS 注册表项提供有关系统的 UPS 的特定于模型的信息。 供应商提供的微型驱动程序负责为其中某些注册表条目（存储在 UPS 服务的树下）提供值。
 
 以下注册表项是 UPS 服务树的根：
 
-**HKEY\_LOCAL\_MACHINE**\\**SYSTEM**\\**CurrentControlSet**\\**Services**\\**UPS**
+**HKEY \_本地 \_ 计算机** \\ **系统** \\ **CurrentControlSet** \\ **服务** \\ **UPS**
 
-在以下四个项下组织 UPS 注册表项：
+UPS 注册表项按以下四个键组织：
 
--   **UPS** -服务控制管理器项目，以及 Windows NT 4.0 UPS 服务所使用的项目
+-   **Ups** --服务控制管理器条目，以及 Windows NT 4.0 UPS 服务使用的条目
 
-    这些项是仅供系统使用。 供应商不能修改这些条目。
+    这些项仅供系统使用。 供应商不得修改这些条目。
 
--   **UPS**\\**Config** -UPS 服务的配置有关的信息。
+-   **UPS** \\**Config** --与 UPS 服务配置有关的信息。
 
-    这些项是仅供系统使用。 供应商不能修改这些条目。
+    这些项仅供系统使用。 供应商不得修改这些条目。
 
--   [UPS\\状态的注册表条目](ups-status-registry-entries.md)-状态信息。
+-   [UPS \\状态注册表项](ups-status-registry-entries.md) -状态信息。
 
-    对于供应商和系统是使用这些条目。 如果供应商创建和修改这些条目，根据需要，**电源选项**显示它们。
+    这些条目适用于供应商和系统使用。 如果供应商根据需要创建和修改这些条目， **电源选项** 会显示这些条目。
 
--   [UPS\\ServiceProviders 注册表项](ups-serviceproviders-registry-entries.md)-为不同供应商和模型 UPS 设备条目。
+-   [UPS \\ServiceProviders 注册表项](ups-serviceproviders-registry-entries.md) -用于不同供应商和型号 UPS 设备的条目。
 
-    对于供应商和系统是使用这些条目。 供应商应创建这些项时[安装 UPS 微型驱动程序](installing-ups-minidrivers.md)。 管理员已选择使用 UPS 模型后，系统的 UPS 服务将 UPS 特定于模型的值复制到其他，控制系统的注册表位置。
+    这些条目适用于供应商和系统使用。 供应商应该在 [安装 UPS 微型驱动程序](installing-ups-minidrivers.md)时创建这些条目。 系统的 UPS 服务在管理员选择了要使用的 UPS 模型后，将特定于模型的值复制到其他由系统控制的注册表位置。
 
  
 

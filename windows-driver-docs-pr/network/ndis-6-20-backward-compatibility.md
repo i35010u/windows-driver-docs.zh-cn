@@ -1,18 +1,17 @@
 ---
 title: NDIS 6.20 后向兼容性
 description: NDIS 6.20 后向兼容性
-ms.assetid: a2d71cae-aed2-4c23-9ad2-5c32d4ab2294
 keywords:
 - NDIS 6.20 WDK，向后兼容性
 - 向后兼容性 WDK NDIS 6.20
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b022bedee4934d75a95024b85a167f6bfa07c761
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 71f45373bec84a6d004388391b1b536a17c70cf3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90716708"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96798037"
 ---
 # <a name="ndis-620-backward-compatibility"></a>NDIS 6.20 后向兼容性
 
@@ -24,11 +23,11 @@ NDIS 6.20 向向后兼容的功能添加了适用于 NDIS 6.0 驱动程序的功
 
 NDIS 6.20 支持为 NDIS 6.1 添加的功能的更新版本。 有关 NDIS 6.1 功能的更新的详细信息，请参阅 ndis [6.1 功能的 ndis 6.20 支持](ndis-6-20-updates-to-ndis-6-1-features.md)。
 
-**注意**   NDIS 6.20 接口支持超过64个处理器。 在 x86 版本的操作系统) 中，以前的 NDIS 版本限制为不超过64处理器 (32。
+**注意**  NDIS 6.20 接口支持超过64个处理器。 在 x86 版本的操作系统) 中，以前的 NDIS 版本限制为不超过64处理器 (32。
 
  
 
-若要保持与较旧的 NDIS 版本的向后兼容性，未更新为支持超过64处理器的驱动程序默认情况下为处理器组零。 有关处理器组的详细信息，请参阅处理器组的内核模式驱动程序体系结构设计文档。
+若要保持与较旧的 NDIS 版本的向后兼容性，未更新为支持超过64处理器的驱动程序默认情况下为处理器组零。 有关处理器组的详细信息，请参阅处理器组的 Kernel-Mode 驱动程序体系结构设计文档。
 
 一些 NDIS 6.1 和更早版本的函数已过时，不能与 NDIS 6.20 驱动程序一起使用。 请参阅特定函数的参考页的 "要求" 部分，以确定其 NDIS 版本兼容性。 有关过时接口的列表，请参阅 [NDIS 6.20 中的过时接口](obsolete-interfaces-in-ndis-6-20.md)。
 

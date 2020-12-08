@@ -1,7 +1,6 @@
 ---
 title: IRP_MJ_FILE_SYSTEM_CONTROL 上的安全检查
 description: 描述文件系统对 IRP_MJ_FILE_SYSTEM_CONTROL 进行安全检查的方式
-ms.assetid: 38b88379-c007-4e88-a6d9-5aacd6bdefd3
 keywords:
 - IRP_MJ_FILE_SYSTEM_CONTROL
 - 安全 WDK 文件系统，添加安全检查
@@ -10,12 +9,12 @@ keywords:
 - 设置文件信息处理 WDK 文件系统
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5a20d4de50422eb7d6c5fdc3137959d8c2380b7e
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: eebb2c479c9fa45753edd669eb67264e71130f16
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89067402"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96798193"
 ---
 # <a name="security-checks-on-irp_mj_file_system_control-ifs"></a>IRP_MJ_FILE_SYSTEM_CONTROL (IFS 的安全检查) 
 

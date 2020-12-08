@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ AUDIOENGINE \_ 描述符
 description: 适用于卸载的硬件解决方案的音频驱动程序使用 KSPROPERTY \_ AUDIOENGINE \_ 描述符来提供有关表示硬件音频引擎的节点的信息。
-ms.assetid: 1D912155-6DB2-4AFF-949F-47C19E47678C
 keywords:
 - KSPROPERTY_AUDIOENGINE_DESCRIPTOR 音频设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7121d4ab3efeb1011cdaab42363ee0a896bf83a1
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: f03193c4f989cd661e855e487d620a8ee7105cac
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102014"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96798957"
 ---
 # <a name="ksproperty_audioengine_descriptor"></a>KSPROPERTY \_ AUDIOENGINE \_ 描述符
 
@@ -58,11 +57,11 @@ ms.locfileid: "90102014"
 
  
 
-属性值的类型为 **KSAUDIOENGINE， \_ ** 它指示音频引擎节点的静态属性。
+属性值的类型为 **KSAUDIOENGINE， \_** 它指示音频引擎节点的静态属性。
 
 ### <a name="span-idreturn_valuespanspan-idreturn_valuespanspan-idreturn_valuespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>返回值
 
-**KSPROPERTY \_ AUDIOENGINE \_ 描述符**属性请求返回**状态 \_ SUCCESS** ，指示该请求已成功完成。 否则，请求将返回相应的错误状态代码。
+**KSPROPERTY \_ AUDIOENGINE \_ 描述符** 属性请求返回 **状态 \_ SUCCESS** ，指示该请求已成功完成。 否则，请求将返回相应的错误状态代码。
 
 <a name="requirements"></a>要求
 ------------

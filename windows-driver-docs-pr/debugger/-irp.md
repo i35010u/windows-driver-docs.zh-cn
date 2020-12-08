@@ -1,7 +1,6 @@
 ---
 title: irp 扩展命令
 description: Irp 扩展显示有关 i/o 请求数据包 (IRP) 的信息。
-ms.assetid: 2260255d-813b-4b89-8dbe-6ce7e5596ccf
 keywords:
 - IRP
 - IRP
@@ -15,17 +14,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 156fee361c9033ecef5b39c06796dcd0e15c4e2b
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 17d743933bbc52267bf9230a8e5e67940a4aed90
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89217102"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96798449"
 ---
 # <a name="irp"></a>!irp
 
 
-**！ Irp**扩展显示有关 i/o 请求数据包 (irp) 的信息。
+**！ Irp** 扩展显示有关 i/o 请求数据包 (irp) 的信息。
 
 ```dbgcmd
 !irp Address [Detail] 
@@ -49,7 +48,7 @@ ms.locfileid: "89217102"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>Windows XP 及更高版本</strong></p></td>
+<td align="left"><p><strong>Windows XP 及更高版本</strong></p></td>
 <td align="left"><p>Kdexts.dll</p></td>
 </tr>
 </tbody>
@@ -139,7 +138,7 @@ Irp is active with 8 stacks 5 is current (= 0x831f4b00)
                         Args: 00007000 00000000 00018400 00000000
 ```
 
-请注意，驱动程序名称旁边的完成例程是在该堆栈位置上设置的，它是由驱动程序在下面的行中设置的。 在前面的示例中， **ntfs！ NtfsMasterIrpSyncCompletionRoutine**由** \\ FileSystem \\ ntfs**设置。 **Ntfs！ NtfsMasterIrpSyncCompletionRoutine**， **847eeed0-829E2ba8**以上的**完成上下文**项指示完成例程的地址以及将传递到**Ntfs！ NtfsMasterIrpSyncCompletionRoutine**的上下文。 从这里可以看到， **Ntfs！ NtfsMasterIrpSyncCompletionRoutine** 的地址为 **847eeed0**，并且在调用时将传递给此例程的上下文为 **829e2ba8**。
+请注意，驱动程序名称旁边的完成例程是在该堆栈位置上设置的，它是由驱动程序在下面的行中设置的。 在前面的示例中， **ntfs！ NtfsMasterIrpSyncCompletionRoutine** 由 **\\ FileSystem \\ ntfs** 设置。 **Ntfs！ NtfsMasterIrpSyncCompletionRoutine**， **847eeed0-829E2ba8** 以上的 **完成上下文** 项指示完成例程的地址以及将传递到 **Ntfs！ NtfsMasterIrpSyncCompletionRoutine** 的上下文。 从这里可以看到， **Ntfs！ NtfsMasterIrpSyncCompletionRoutine** 的地址为 **847eeed0**，并且在调用时将传递给此例程的上下文为 **829e2ba8**。
 
 **IRP 主要功能代码**
 

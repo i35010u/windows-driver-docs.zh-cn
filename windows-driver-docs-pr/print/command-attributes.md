@@ -1,7 +1,6 @@
 ---
 title: 命令属性
 description: 命令属性
-ms.assetid: 8ce2c668-a130-428e-bf5f-0eab2dcd3fdb
 keywords:
 - 打印机属性 WDK Unidrv，命令
 - 命令 WDK Unidrv
@@ -13,12 +12,12 @@ keywords:
 - 参数
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5ef6f2a4992140531c67578232305d22bbe4e965
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 17a17d56a8f223b9398c79cff8af5b05a907de97
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107198"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96797667"
 ---
 # <a name="command-attributes"></a>命令属性
 
@@ -30,7 +29,7 @@ ms.locfileid: "90107198"
 
 -   导致硬件执行操作的转义序列（如果在打印机硬件中实现了此操作）。
 
--   如果在[呈现插件](rendering-plug-ins.md)中实现该操作，则为[**IPrintOemUni：： CommandCallback**](/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintoemuni-commandcallback)方法所需的回调标识符和参数。
+-   如果在 [呈现插件](rendering-plug-ins.md)中实现该操作，则为 [**IPrintOemUni：： CommandCallback**](/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintoemuni-commandcallback)方法所需的回调标识符和参数。
 
 -   命令的发送顺序，相对于其他命令。
 

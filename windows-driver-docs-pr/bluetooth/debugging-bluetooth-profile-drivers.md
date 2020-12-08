@@ -1,7 +1,6 @@
 ---
 title: 调试蓝牙配置文件驱动程序
 description: 调试蓝牙配置文件驱动程序
-ms.assetid: 3c04017e-7f5c-49d4-ad7e-36c7405133a1
 keywords:
 - 调试配置文件驱动程序 WDK 蓝牙
 - 蓝牙 WDK，调试配置文件驱动程序
@@ -9,12 +8,12 @@ keywords:
 - 配置文件驱动程序 WDK 蓝牙，调试
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5608d7f8a2cd57b41798445d30f7e5f10464a627
-ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
+ms.openlocfilehash: 6ff24e28fac3416f7530b611dc456fe58d748cbe
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90009901"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96798539"
 ---
 # <a name="debugging-bluetooth-profile-drivers"></a>调试蓝牙配置文件驱动程序
 

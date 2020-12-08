@@ -1,17 +1,16 @@
 ---
 title: Microsoft 蓝牙测试平台-BM.EXE-64-EVB
 description: 蓝牙测试平台 (BTP) 支持的硬件 (BM64) 。
-ms.assetid: a6beeecb-5967-4e08-bfe2-b8aae26861ad
 ms.date: 7/28/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 65b7678ae6c8908845e0601ecaef3e0883bcd6f2
-ms.sourcegitcommit: 6e6189e3b7f2b376607b507220bd538a296f5b4e
+ms.openlocfilehash: 9e4e566ad8fbea468c42510ed10886f7aa40b2a9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/18/2020
-ms.locfileid: "90799830"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96798517"
 ---
-# <a name="bm-64-evb-board"></a>BM.EXE-64-EVB
+# <a name="bm-64-evb-board"></a>BM-64-EVB 开发板
 
 ## <a name="overview"></a>概述
 
@@ -24,14 +23,14 @@ BM.EXE-64-EVB 是一个独立的评估委员会，用于测试 BTP 的音频和�
 ## <a name="getting-started"></a>入门
 
 若要将 BM.EXE-64-EVB 与 BTP 配合使用，必须从出厂默认值更新 BM64 的固件和 EEPROM 设置。此外，还应更新 PIC 微控制器以确保稳定性。
-从 "*文档/软件库/固件*" 选项卡上的[**微芯片**](https://www.microchip.com/wwwproducts/en/BM64)中下载并提取最新的 BM64 软件工具包 (DSPK v 2.1.3 用于此开发) 。
+从 "*文档/软件库/固件*" 选项卡上的 [**微芯片**](https://www.microchip.com/wwwproducts/en/BM64)中下载并提取最新的 BM64 软件工具包 (DSPK v 2.1.3 用于此开发) 。
 
 开始之前的一些配置说明：
 
-- 对于使用 external MCU/PC 控制 ** (来运行 BM64 固件、EEPROM 更新、BTP 测试) **
+- 对于使用 external MCU/PC 控制 **(来运行 BM64 固件、EEPROM 更新、BTP 测试)**
   - SW46 应将所有位置都切换为关闭
   - SW47 应将所有位置都切换为关闭
-- 有关使用内部 MCU 控件 ** (运行独立微芯片示例) **
+- 有关使用内部 MCU 控件 **(运行独立微芯片示例)**
   - 应将 SW46 的所有位置都转换为，以便 #2
   - 应将所有位置切换到 "SW47"
 - 仅在将新固件上传到 PIC 微控制器时， **才** 应连接 JP33。
@@ -55,8 +54,8 @@ BM.EXE-64-EVB 是一个独立的评估委员会，用于测试 BTP 的音频和�
 
 1. 将 SW9 位置1和2设置为 ON，并确保删除 JP33。
 2. 将微 B USB 电缆插入到 EVB) 上标记为 *UART* 的 P3 (。
-3. 启动 `isupdate.exe` 工具并选择与 bm.exe-64-EVB 关联的 com 端口 (使用 `Device Manager` ，并查找 * (COM & LPT) *) 的端口。
-4. 设置应为 " *115200*"，将 "*映像*数 *" 设置为*" *16*"，将 "*内存*" 设置为 "*闪存*"，*子类型*设置为 "*串行闪存*"。 设置后，单击 " *连接*"。
+3. 启动 `isupdate.exe` 工具并选择与 bm.exe-64-EVB 关联的 com 端口 (使用 `Device Manager` ，并查找 *(COM & LPT)*) 的端口。
+4. 设置应为 " *115200*"，将 "*映像* 数 *" 设置为*" *16*"，将 "*内存*" 设置为 "*闪存*"，*子类型* 设置为 "*串行闪存*"。 设置后，单击 " *连接*"。
      - 如果连接正确，则右侧的 " *设备* " 应该用信息和端口连接来填充， *> COM #* 应在底部窗格中。 其外观应类似于下图 (与相应的 COM 端口) 。
      - 给定 *波特率* 仅适用于此示例的默认设备。 如果已发生 EEPROM 更改以修改 BM64 的波特率，请改为使用此新值。
 
@@ -64,7 +63,7 @@ BM.EXE-64-EVB 是一个独立的评估委员会，用于测试 BTP 的音频和�
 
 5. 单击 " *浏览* " 并导航到)  (找到的 DSPK 中的 BM64 十六进制文件 `DSPK v2.x.y Package\Software\Firmware Image\BM64 Firmware` 。 突出显示所有16个文件 (`BT5506_SHS_FLASH.H00` 通过 `BT5506_SHS_FLASH.H15`) 并单击 " *打开*"。
 6. 单击 " *更新* " 更新 BM64's 固件。 当更新发生时，底部窗格将显示进度。 **不要中断此进程，这是因为设备损坏的风险。**
-7. 完成更新过程后，将在底部窗格中显示*写入内存的结束*时间。 之后，单击 " *断开连接*"。 等待底部窗格中的 " *端口断开连接* " 消息出现。
+7. 完成更新过程后，将在底部窗格中显示 *写入内存的结束* 时间。 之后，单击 " *断开连接*"。 等待底部窗格中的 " *端口断开连接* " 消息出现。
 8. 卸下微 B USB 电缆，将 " **SW9" 位置1和 "2" 设置为 "关**"，然后将微 B usb 插回 P3。
 
 ## <a name="updating-eeprom-for-the-bm64"></a>更新 BM64 的 EEPROM
@@ -80,14 +79,14 @@ BM.EXE-64-EVB 是一个独立的评估委员会，用于测试 BTP 的音频和�
   - 3.4.1.6：更改 *名称片段* 是可选的，并且不会影响使用 (如果发生更改，请确保名称大于0且小于 32 ASCII 字符) 。
   - 3.4.1.12：如果想要使用默认表（如果看板出现严重错误），请勿覆盖现有表。
 - 节 3.4.2-"DSP 工具配置" 修改：
-  - 3.4.2.1：选择 "IS206X_012_DUALMODESPK2 1_E1 .0" (或类似于 *IC 版本*的) 。
+  - 3. 2. 2. 1：对于 *IC 版本*，请选择 "IS206X_012_DUALMODESPK2" (或类似) 。
 - 节 3.4.3-"MPET 工具配置" 修改：
-  - 3.4.3.3：为默认 *bin* 文件选择 IS206X_012_DUALMODESPK2 "1_E1 _1214" (或类似) 。
+  - 3. 3. 3. 3：对于默认 *bin* 文件 (或类似的) 中选择 "1_1214"。
   - 3.4.3.5：添加和合并在指南的3.4.1 和3.4.2 节中创建的文件。
   - 3.4.3.8：根据所使用的 DPSK 版本，弹出窗口可能不会影响性能。
 - 第3.5 部分-"更新 EEPROM 参数" 修改：
   - 3.5.1：在启动前拔下 USB （如果不是已经）。
-  - 3.5.5：使用从节3.4.3 生成的*ipf。* 此外，弹出窗口的文件大小可能会出现*警告。* 单击 *"确定"* (这种情况下会同时) 默认表。
+  - 3.5.5：使用从节3.4.3 生成的 *ipf。* 此外，弹出窗口的文件大小可能会出现 *警告。* 单击 *"确定"* (这种情况下会同时) 默认表。
   - 3.5.6： **不要中断此进程，这是因为设备损坏的风险**。
 
 ## <a name="verifying-installation-with-spkcommand"></a>验证是否已安装 SPKCommand
@@ -166,5 +165,5 @@ BM.EXE-64-EVB 是一个独立的评估委员会，用于测试 BTP 的音频和�
 
 ### <a name="using-mspk-spkcommand"></a>使用 MSPK SPKCommand
 
-另一种解决方案是使用不同版本的 SPKCommand。 为此，请在 "*文档/软件库/固件*" 选项卡上从[**微芯片**](https://www.microchip.com/wwwproducts/en/BM64)下载并提取 MSPK v 1.35 BM64 软件工具包。在 MSPK v 1.35 工具包中，找到 `SPKCommandSetTool v192.006.exe`)  (的工具 `BM64 Software & Tools (MSPKv1.35)\Tools\SPK CommandSet Tool` 。 使用 SPKCommand 工具的 MSPK v 1.35 版本通过 [SPKCommand 验证安装](testing-BTP-hw-bm64.md#verifying-installation-with-spkcommand) 中的相同说明。
+另一种解决方案是使用不同版本的 SPKCommand。 为此，请在 "*文档/软件库/固件*" 选项卡上从 [**微芯片**](https://www.microchip.com/wwwproducts/en/BM64)下载并提取 MSPK v 1.35 BM64 软件工具包。在 MSPK v 1.35 工具包中，找到 `SPKCommandSetTool v192.006.exe`)  (的工具 `BM64 Software & Tools (MSPKv1.35)\Tools\SPK CommandSet Tool` 。 使用 SPKCommand 工具的 MSPK v 1.35 版本通过 [SPKCommand 验证安装](testing-BTP-hw-bm64.md#verifying-installation-with-spkcommand) 中的相同说明。
 如果 BM.EXE-64-EVB 使用 MSPK v 1.35 工具正确响应，则可将该板用于 BTP。

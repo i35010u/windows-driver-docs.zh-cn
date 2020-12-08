@@ -1,7 +1,6 @@
 ---
 title: 用户模式 WDM 音频组件
 description: 用户模式 WDM 音频组件
-ms.assetid: 067944fb-6854-4ae8-81ca-9b8f2eed939e
 keywords:
 - 用户模式组件 WDK 音频
 - Winmm.dll 系统组件 WDK 音频
@@ -15,12 +14,12 @@ keywords:
 - 'WDMAud 系统驱动程序，用户模式 (WDMAud. winspool.drv) '
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 21bdb025f98a292fc81252fb4051d0bbb4492113
-ms.sourcegitcommit: 89b8a43480246dd726e3632aab2db9cf2eb7505d
+ms.openlocfilehash: cbf156007d929cef26fd07f58fce971de9cc8003
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92254042"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96798833"
 ---
 # <a name="user-mode-wdm-audio-components"></a>用户模式 WDM 音频组件
 
@@ -42,7 +41,7 @@ ms.locfileid: "92254042"
 
 ### <a name="span-idwinmm_system_componentspanspan-idwinmm_system_componentspanwinmm-system-component"></a><span id="winmm_system_component"></span><span id="WINMM_SYSTEM_COMPONENT"></span>Winmm.dll 系统组件
 
-Winmm.dll 系统组件 ( # A0 及其16位对应项，Mmsystem.dll) 实现 Microsoft Windows 多媒体 Api 波浪*xxx*、midi*xxx*、混音器*xxx*和 aux*xxx* (参阅 Microsoft Windows SDK 文档) 。 Winmm.dll 组件使用 WDMAud 系统驱动程序将 Winmm.dll API 调用转换为内核流式处理 i/o 请求。
+Winmm.dll 系统组件 ( # A0 及其16位对应项，Mmsystem.dll) 实现 Microsoft Windows 多媒体 Api 波浪 *xxx*、midi *xxx*、混音器 *xxx* 和 aux *xxx* (参阅 Microsoft Windows SDK 文档) 。 Winmm.dll 组件使用 WDMAud 系统驱动程序将 Winmm.dll API 调用转换为内核流式处理 i/o 请求。
 
 ### <a name="span-idwdmaud_system_driverspanspan-idwdmaud_system_driverspanwdmaud-system-driver"></a><span id="wdmaud_system_driver"></span><span id="WDMAUD_SYSTEM_DRIVER"></span>WDMAud 系统驱动程序
 

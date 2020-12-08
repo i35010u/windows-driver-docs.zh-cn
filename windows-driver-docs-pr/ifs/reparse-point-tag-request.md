@@ -1,15 +1,14 @@
 ---
 title: 重新分析点标记请求
 description: 描述如何获取需要一个重分析点标记的那些文件系统筛选器驱动程序。
-ms.assetid: B4E4382B-4FB8-4E21-8FC4-EDDE8DD4AC77
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 235f18bb4ed8f89898fb7cefeb65f4a06e91eea4
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 2261af8b8ff87889f5cdfb219fbca33043e48e77
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106110"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96798179"
 ---
 # <a name="reparse-point-tag-request"></a>重新分析点标记请求
 

@@ -1,19 +1,18 @@
 ---
 title: WaveCyclic 微型端口驱动程序
 description: WaveCyclic 微型端口驱动程序
-ms.assetid: 8a4811e9-e52b-4183-8d11-482883500f82
 keywords:
 - 音频微型端口驱动程序 WDK，WaveCyclic
 - 微型端口驱动程序 WDK 音频，WaveCyclic
 - WaveCyclic 微型端口驱动程序 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 72e1702067d788cb8048be3634fd56f4839d7e60
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: f7ab638f9f2f054a8d424a8f6d35e281505069b0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90716632"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96798799"
 ---
 # <a name="wavecyclic-miniport-driver"></a>WaveCyclic 微型端口驱动程序
 
@@ -21,7 +20,7 @@ ms.locfileid: "90716632"
 ## <span id="wavecyclic_miniport_driver"></span><span id="WAVECYCLIC_MINIPORT_DRIVER"></span>
 
 
-**重要提示**   不再建议使用 WavePci，而是改用 WaverRT。
+**重要提示**  不再建议使用 WavePci，而是改用 WaverRT。
 
  
 

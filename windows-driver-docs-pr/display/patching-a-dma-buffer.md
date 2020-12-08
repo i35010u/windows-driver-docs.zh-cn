@@ -1,18 +1,17 @@
 ---
 title: 修补 DMA 缓冲区
 description: 修补 DMA 缓冲区
-ms.assetid: 4d8a8a89-0617-4ab8-8609-37bbdb8999f0
 keywords:
 - DMA 缓冲 WDK 显示，修补
 - 修补 DMA 缓冲区 WDK 显示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2666a5700bc755075c90c383d070b56903e6de16
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 1bc14f7c33affb6e2bc1892c006744a54c4a5a6e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89064682"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96798271"
 ---
 # <a name="patching-a-dma-buffer"></a>修补 DMA 缓冲区
 

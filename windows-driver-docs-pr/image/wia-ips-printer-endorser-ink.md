@@ -1,9 +1,8 @@
 ---
-title: WIA\_IPS\_打印机\_印记签署器\_墨迹
-description: WIA\_IPS\_打印机\_印记签署器\_墨迹属性用于报告的印刷器/印记签署器设备的当前墨迹缺墨状态。
-ms.assetid: CCD7C10A-7739-4E75-B30C-2C2E7FE90B13
+title: WIA \_ IPS \_ PRINTER \_ ENDORSER \_ INK
+description: WIA \_ IPS \_ PRINTER \_ ENDORSER \_ INK 属性用于报告 Imprinter/ENDORSER 设备的当前墨水或碳粉状态。
 keywords:
-- WIA_IPS_PRINTER_ENDORSER_INK 成像设备
+- WIA_IPS_PRINTER_ENDORSER_INK 图像设备
 topic_type:
 - apiref
 api_name:
@@ -14,28 +13,28 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f00dcd70369a07020ad8fefe18436f8e42642578
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9553781a3624e76041bca16b5794cacf744e0512
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63351161"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96798157"
 ---
-# <a name="wiaipsprinterendorserink"></a>WIA\_IPS\_打印机\_印记签署器\_墨迹
+# <a name="wia_ips_printer_endorser_ink"></a>WIA \_ IPS \_ PRINTER \_ ENDORSER \_ INK
 
 
-**WIA\_IPS\_打印机\_印记签署器\_墨迹**属性用于报告的印刷器/印记签署器设备的当前墨迹缺墨状态。 属性值指示剩余的可用手写内容，以占总容量。 例如，值为 50 指示有一半或 50%的剩余墨水。 此属性是初始化和维护的 WIA 微型驱动程序。 与 Windows 8 和更高版本的 Windows 提供了此功能。
+**WIA \_ IPS \_ PRINTER \_ ENDORSER \_ INK** 属性用于报告 Imprinter/ENDORSER 设备的当前墨水或碳粉状态。 属性值指示剩余的可用墨迹，以占总容量的百分比表示。 例如，如果值为50，则表示剩余的墨水为半或50%。 此属性由 WIA 迷你驱动程序初始化和维护。 此功能适用于 windows 8 和更高版本的 Windows。
 
-属性类型：VT\_I4
+属性类型： VT \_ I4
 
-有效值：WIA\_PROP\_列表
+有效值： WIA 内容 \_ \_ 列表
 
-访问权限：读写
+访问权限： Read-Write
 
 <a name="remarks"></a>备注
 -------
 
-**WIA\_IPS\_打印机\_印记签署器\_墨迹**属性是可选的印刷器/印记签署器项。 此属性的有效值为 0 到 100 (含) 之间。
+对于 Imprinter/Endorser 项， **WIA \_ IPS \_ PRINTER \_ ENDORSER \_ INK** 属性是可选的。 此属性的有效值介于0和100（含）之间。
 
 <a name="requirements"></a>要求
 ------------
@@ -47,8 +46,8 @@ ms.locfileid: "63351161"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Wiadef.h （包括 Wiadef.h）</td>
+<td><p>标头</p></td>
+<td>Wiadef (包含 Wiadef) </td>
 </tr>
 </tbody>
 </table>

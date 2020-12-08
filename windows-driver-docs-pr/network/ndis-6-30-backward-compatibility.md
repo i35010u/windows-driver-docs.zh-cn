@@ -1,15 +1,14 @@
 ---
 title: NDIS 6.30 后向兼容性
 description: NDIS 6.30 向向后兼容的功能添加了适用于 NDIS 6.20 和 NDIS 6.0 驱动程序的功能。
-ms.assetid: 71C2BBCF-206A-4C2D-BF9C-C4074FB9276D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f801f525a8c045934f70c3845e7203343cbf1775
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: f95d8982f1405c039ea3a8755ae4cf80b50e80e2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90716706"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96798035"
 ---
 # <a name="ndis-630-backward-compatibility"></a>NDIS 6.30 后向兼容性
 

@@ -1,15 +1,14 @@
 ---
 title: 双向请求和响应架构
 description: 双向请求和响应架构提供一组 XML 格式的查询和响应，这些查询和响应可用于应用程序和打印机之间的双向通信。
-ms.assetid: C005D90D-DCDB-410C-BD6F-83111849547E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6f45db3e99ade01df7e3366819ab14143666b59f
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: e1e223bd1cc4effd7d19504c0e9c9c8f3ea889fc
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89214955"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96797797"
 ---
 # <a name="bidirectional-request-and-response-schemas"></a>双向请求和响应架构
 

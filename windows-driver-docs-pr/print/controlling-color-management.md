@@ -1,17 +1,16 @@
 ---
 title: 控制颜色管理
 description: 控制颜色管理
-ms.assetid: cb210b8d-fee1-4904-8c50-f03d2445085e
 keywords:
 - 颜色管理 WDK 打印，控制
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1a6891fd7149d1bd3f7efeae95845a29b1085a7c
-ms.sourcegitcommit: 51cba71be022c726c04c29ba5c0360860b65d7a4
+ms.openlocfilehash: a52f49a00fef0b0011decceeaf1db812f579344b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/09/2020
-ms.locfileid: "89562217"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96797539"
 ---
 # <a name="controlling-color-management"></a>控制颜色管理
 
@@ -28,7 +27,7 @@ ms.locfileid: "89562217"
 </colgroup>
 <thead>
 <tr class="header">
-<th>Flag</th>
+<th>标志</th>
 <th>定义</th>
 </tr>
 </thead>

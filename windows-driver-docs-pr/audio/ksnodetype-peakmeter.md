@@ -1,7 +1,6 @@
 ---
 title: KSNODETYPE \_ PEAKMETER
 description: KSNODETYPE \_ PEAKMETER
-ms.assetid: 11c886eb-dd63-44dd-9bca-dd19a8dd6948
 keywords:
 - KSNODETYPE_PEAKMETER 音频设备
 topic_type:
@@ -12,18 +11,18 @@ api_type:
 - NA
 ms.date: 04/21/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: f34d86c0fb4c63847fadf3426257303a687d8f3a
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: dcca758775bae217ae8acb558fede425fb09f34e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89207003"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96799135"
 ---
 # <a name="ksnodetype_peakmeter"></a>KSNODETYPE \_ PEAKMETER
 
 ## <span id="ddk_ksnodetype_peakmeter_ks"></span><span id="DDK_KSNODETYPE_PEAKMETER_KS"></span>
 
-**KSNODETYPE \_ PEAKMETER**节点表示硬件 PEAKMETER。 KS peakmeter 节点有一个输入插针和一个输出插针，这两个 pin 共享相同的数据格式。
+**KSNODETYPE \_ PEAKMETER** 节点表示硬件 PEAKMETER。 KS peakmeter 节点有一个输入插针和一个输出插针，这两个 pin 共享相同的数据格式。
 
 当 peakmeter 重置为零时，KS peakmeter 内部记录音频信号的最大值。 在 IOCTL KS 属性请求之后，peakmeter 会自动将自身重置为零， \_ \_ 以获取 [**KSPROPERTY \_ 音频 \_ PEAKMETER2**](ksproperty-audio-peakmeter2.md) 属性。
 
@@ -72,8 +71,8 @@ Peakmeter 节点还应支持下表中的属性。
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">属性名</th>
-<th align="left">说明</th>
+<th align="left">属性名称</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>

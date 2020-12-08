@@ -1,96 +1,95 @@
 ---
 title: UEFI 电池充电应用程序的体系结构
 description: Microsoft 提供的 UEFI 电池充电应用程序的体系结构
-ms.assetid: eabac2ec-6e2f-448f-9793-117e12c288d9
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e69976ba90a8fd4d87c0d2a29a2e223a05669aa8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6a8e2f59100eb7d3eafbf80bebf68285423973c9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328135"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96798479"
 ---
 # <a name="architecture-of-the-uefi-battery-charging-application-provided-by-microsoft"></a>Microsoft 提供的 UEFI 电池充电应用程序的体系结构
 
-本主题提供有关设计的 UEFI 电池充电由 Microsoft 提供适用于运行 Windows 10 移动版设备的应用程序的信息。 Oem 可以使用电池充电来自 Microsoft，应用程序或它们可以实现自己的收费应用程序。 实现其自己 UEFI 电池充电应用程序的 Oem 可能会使用中的信息本主题指导原则是其设计。
+本主题提供有关 Microsoft 为运行 Windows 10 移动版的设备提供的 UEFI 电池充电应用程序设计的信息。 Oem 可以使用 Microsoft 的电池充电应用程序，也可以实现其自己的收费应用程序。 如果 Oem 实现自己的 UEFI 电池充电应用程序，则可以使用本主题中的信息作为其设计的指导原则。
 
-UEFI 电池充电应用程序是一个第一的 Microsoft 自有应用程序在启动过程中运行。 UEFI 电池充电应用程序有以下主要职责：
+UEFI 电池充电应用程序是在启动过程中最先运行的 Microsoft 拥有的应用程序之一。 UEFI 电池充电应用程序具有以下主要职责：
 
-- 请确保该设备具有足够的电源来启动。
+- 请确保设备有足够的电量启动。
 
-- 提供*关机充电*如果由 OEM 启用支持。 关闭电源收费的详细信息，请参阅[启动环境中的电池充电](battery-charging-in-the-boot-environment.md)。
+- 如果 OEM 启用，请提供 *断电* 支持。 有关断电的详细信息，请参阅 [在启动环境中进行电池充电](battery-charging-in-the-boot-environment.md)。
 
-UEFI 电池充电应用程序使用密钥 UEFI 协议，并对返回的相关驱动程序的各种状态做出反应。
+UEFI 电池充电应用程序使用密钥 UEFI 协议，并响应相关驱动程序返回的各种状态。
 
 > [!NOTE]
-> 术语*UEFI 电池充电应用程序*本主题中引用 UEFI 电池充电 mobilestartup.efi 所加载的库。 有关 mobilestartup.efi 详细信息，请参阅[启动和 UEFI](boot-and-uefi.md)。
+> 本主题中的 " *uefi 电池充电应用程序* " 一词是指由 mobilestartup 加载的 uefi 电池充电库。 有关 mobilestartup 的详细信息，请参阅 [Boot AND UEFI](boot-and-uefi.md)。
 
-## <a name="uefi-protocols-used-by-the-uefi-battery-charging-application"></a>使用 UEFI 电池充电应用程序的 UEFI 协议
+## <a name="uefi-protocols-used-by-the-uefi-battery-charging-application"></a>UEFI 电池充电应用程序使用的 UEFI 协议
 
-UEFI 电池充电应用程序 （由 Microsoft 拥有） 使用以下各节所述的协议 （由 Oem 实现）。
+Microsoft) 拥有的 UEFI 电池充电应用程序 (使用由 Oem 实现的协议 () 以下部分中所述。
 
-### <a name="uefi-battery-charging-protocol-efibatterychargingprotocol"></a>UEFI 电池充电协议 (EFI\_电池\_正在充电\_协议)
+### <a name="uefi-battery-charging-protocol-efi_battery_charging_protocol"></a> (EFI 电池充电协议的 UEFI 充电协议 \_ \_ \_) 
 
-以下步骤介绍如何 UEFI 电池充电应用程序使用 UEFI 电池充电协议的关键方面：
+以下步骤介绍了 UEFI 电池充电应用程序如何使用 UEFI 电池充电协议的主要方面：
 
-1. UEFI 电池充电应用程序使用轮询电池硬件的实时状态[EFI\_电池\_正在充电\_协议。GetBatteryInformation](efi-battery-charging-protocolgetbatteryinformation.md) (在设备的支持的版本 0x00010002 [EFI\_电池\_正在充电\_协议](efi-battery-charging-protocol.md)) 或[EFI\_电池\_正在充电\_协议。GetBatteryStatus](efi-battery-charging-protocolgetbatterystatus.md) (在设备的支持的 EFI 版本 0x00010001\_电池\_正在充电\_协议)。 这些函数返回的费用 (SOC) 值，只要有可能正确的状态至关重要。 SOC 是基于其状态 （包括容量、 电压和温度） 的值从 0 到 100 电量量从 OEM 定义的映射。
+1. 通过使用 [EFI \_ 电池 \_ 充电协议，UEFI 电池充电应用程序会轮询电池硬件的实时状态 \_ 。GetBatteryInformation](efi-battery-charging-protocolgetbatteryinformation.md) (在支持) [efi \_ 电池 \_ 充电 \_ 协议](efi-battery-charging-protocol.md) 的版本0x00010002 或 [efi \_ 电池 \_ 充电协议的设备中 \_ 。GetBatteryStatus](efi-battery-charging-protocolgetbatterystatus.md) (在支持 \_) EFI 电池 \_ 充电协议版本0x00010001 的设备中 \_ 。 如果可能，这些函数应尽可能 (SOC) 值返回准确的状态。 SOC 是从电池中的电量量开始的 OEM 定义的映射，其状态为从0到100的值 (包括容量、电压和温度) 。
 
-2. Oem 定义*启动到 Main OS 阈值*（从 0 到 100 的值）。 此值可以是不同的设备模型的不同。 有关详细信息*启动到 Main OS 阈值*和其他阈值的值，请参阅[启动环境中的电池充电](battery-charging-in-the-boot-environment.md)。
+2. Oem 定义从0到 100) 中的 " *启动到主操作系统" 阈值* (值。 对于不同的设备型号，此值可能会不同。 有关 *启动到主操作系统阈值* 和其他阈值的详细信息，请参阅 [启动环境中的电池充电](battery-charging-in-the-boot-environment.md)。
 
-3. 电池充电应用程序使用该驱动程序从 SOC，并将对其进行比较*启动到 Main OS 阈值*值以确定它是否需要阻止引导过程，以便在 UEFI 中进行收费或继续启动。 它接收有关状态的费用的任何其他信息。
+3. 电池充电应用程序使用驱动程序中的 SOC，并将其与 " *启动到主操作系统阈值* " 的值进行比较，以确定是否需要阻止启动过程以在 UEFI 中计费或继续启动。 它不会收到有关费用状态的任何其他信息。
 
-4. UEFI 电池充电的应用程序调用[EFI\_电池\_正在充电\_协议。ChargeBattery](efi-battery-charging-protocolchargebattery.md)收费设备，且该等待**CompletionEvent**对应[EFI\_电池\_正在充电\_状态](efi-battery-charging-status.md)返回。
+4. UEFI 电池充电应用程序调用 [EFI \_ 电池 \_ 充电 \_ 协议。ChargeBattery](efi-battery-charging-protocolchargebattery.md)对设备计费，并等待返回具有相应 [EFI \_ 电池 \_ 充电 \_ 状态](efi-battery-charging-status.md)的 **CompletionEvent** 。
 
-有关此协议的详细信息，请参阅[UEFI 电池充电协议](uefi-battery-charging-protocol.md)。
+有关此协议的详细信息，请参阅 [UEFI 电池充电协议](uefi-battery-charging-protocol.md)。
 
-### <a name="uefi-display-power-state-protocol-efidisplaypowerprotocol"></a>UEFI 显示电源状态协议 (EFI\_显示\_电源\_协议)
+### <a name="uefi-display-power-state-protocol-efi_display_power_protocol"></a>UEFI 显示电源状态协议 (EFI \_ 显示 \_ 电源 \_ 协议) 
 
-在 UEFI 电池充电过程中，UEFI 电池充电应用程序显示交替的低能耗 UI。 在 10 秒，而无需按下，应用程序调用的电源按钮后[EFI\_显示\_POWER\_协议。SetDisplayPowerState](efi-display-power-protocolsetdisplaypowerstate.md)若要关闭显示器和背景光。 这有助于 UEFI 电池充电时，过程中占用较少的电量的设备，可帮助设备费用，并且更快地进入主操作系统。 如果用户按下电源按钮时显示处于关闭状态，应用程序调用 EFI\_显示\_电源\_协议。SetDisplayPowerState 再次以启用显示。 有关更多详细信息，请参阅[的用户体验](#user-experience)本主题中更高版本。
+在 UEFI 电池充电过程中，UEFI 电池充电应用程序将显示一个备用的低功耗 UI。 10秒后，如果未按下电源按钮，应用程序将调用 [EFI \_ 显示 \_ 电源 \_ 协议。SetDisplayPowerState](efi-display-power-protocolsetdisplaypowerstate.md) 关闭显示屏和背景光。 这可以帮助设备在 UEFI 电池充电期间消耗更少的电量，这有助于设备充电并更快地进入主操作系统。 如果用户在显示处于关闭状态的情况下按下 "电源" 按钮，应用程序将调用 EFI \_ 显示 \_ 电源 \_ 协议。SetDisplayPowerState 再次打开显示。 有关更多详细信息，请参阅本主题后面的 [用户体验](#user-experience) 。
 
-有关此协议的详细信息，请参阅[UEFI 显示电源状态协议](uefi-display-power-state-protocol.md)。
+有关此协议的详细信息，请参阅 [UEFI 显示电源状态协议](uefi-display-power-state-protocol.md)。
 
-### <a name="uefi-usb-function-protocol-efiusbfnioprotocol"></a>UEFI USB 函数协议 (EFI\_USBFN\_IO\_协议)
+### <a name="uefi-usb-function-protocol-efi_usbfn_io_protocol"></a>UEFI USB function 协议 (EFI \_ USBFN \_ IO \_ 协议) 
 
-UEFI 电池充电应用程序以独占方式在依赖[EFI\_USBFN\_IO\_协议。DetectPort](efi-usbfn-io-protocoldetectport.md)来确定已连接的端口类型。 根据端口类型，应用程序调用[EFI\_电池\_正在充电\_协议。ChargeBattery](efi-battery-charging-protocolchargebattery.md) 1500 mA 或 500 mA。
+UEFI 电池充电应用程序仅依赖于 [EFI \_ USBFN \_ IO \_ 协议。DetectPort](efi-usbfn-io-protocoldetectport.md) 确定连接的端口类型。 根据端口类型，应用程序将调用 [EFI \_ 电池 \_ 充电 \_ 协议。ChargeBattery](efi-battery-charging-protocolchargebattery.md) 为 1500 ma 或 500 ma。
 
-有关此协议的详细信息，请参阅[UEFI USB 函数协议](uefi-usb-function-protocol.md)。
+有关此协议的详细信息，请参阅 [UEFI USB 函数协议](uefi-usb-function-protocol.md)。
 
 ## <a name="application-logic"></a>应用程序逻辑
 
-下图描述了 UEFI 电池充电应用程序的逻辑步骤。
+下图描述了 UEFI 电池充电应用程序的逻辑过程。
 
 ![uefi 电池充电逻辑](images/oem-battery-charge-logic.png)
 
-以下说明展开上的逻辑的重要部分：
+以下内容概述了逻辑的一些关键部分：
 
-- 然后再调用[EFI\_电池\_正在充电\_协议。ChargeBattery](efi-battery-charging-protocolchargebattery.md)，应用程序调用[EFI\_USBFN\_IO\_协议。DetectPort](efi-usbfn-io-protocoldetectport.md)来确定最大当前 USB 充电可提供：
+- 在调用 [EFI \_ 电池 \_ 充电 \_ 协议之前。ChargeBattery](efi-battery-charging-protocolchargebattery.md)，应用程序调用 [EFI \_ USBFN \_ IO \_ 协议。DetectPort](efi-usbfn-io-protocoldetectport.md) 确定 USB 充电器可提供的最大电流：
 
-  - 如果存在一个端口，应用程序使用 1500 mA 专用的墙充电器或 500 mA 的其他端口。
+  - 如果存在端口，则该应用程序将为其他端口使用 1500 mA 作为专用壁式充电器或 500 mA。
 
-  - 如果存在任何端口，应用程序使用 500 mA。 无线充电器被应忽略此值。
+  - 如果没有端口，应用程序将使用 500 mA。 无线充电器应忽略此值。
 
-  - 如果不存在的充电器，应用程序使用 500 mA。 但是，应用程序需要[EFI\_电池\_正在充电\_协议。ChargeBattery](efi-battery-charging-protocolchargebattery.md)以返回[EFI\_电池\_正在充电\_完成\_令牌](efi-battery-charging-completion-token.md)状态为**EfiBatteryChargingSourceNotDetected**。
+  - 如果没有任何充电器，应用程序将使用 500 mA。 但是，应用程序需要 [EFI \_ 电池 \_ 充电 \_ 协议。ChargeBattery](efi-battery-charging-protocolchargebattery.md)返回状态为 **EfiBatteryChargingSourceNotDetected** 的 [EFI \_ 电池 \_ 充电 \_ 完成 \_ 令牌](efi-battery-charging-completion-token.md)。
 
-- 在所有情况下，OEM 必须确保设备与充电器保持安全的操作区域中。
+- 在所有情况下，OEM 必须确保设备和充电器处于安全的操作区域内。
 
-- 如果设备中没有的电池，但没有已连接的电源，当应用程序调用[EFI\_电池\_正在充电\_协议。ChargeBattery](efi-battery-charging-protocolchargebattery.md)给电池充电，UEFI 电池充电驱动程序应返回**EfiBatteryChargingStatusBatteryNotDetected**。 应用程序通过显示一条错误 UI 并关闭该设备来处理此错误。
+- 如果设备中没有电池，但在应用程序调用 [EFI \_ 电池 \_ 充电协议时有连接的电源 \_ 。ChargeBattery](efi-battery-charging-protocolchargebattery.md) 为电池充电，UEFI 电池充电驱动程序应返回 **EfiBatteryChargingStatusBatteryNotDetected**。 应用程序通过显示错误 UI 并关闭设备来处理此错误。
 
-- [EFI\_电池\_正在充电\_状态](efi-battery-charging-status.md)在这种相同的方式解释值*阈值充电*和*关闭电源收费*模式下除外**EfiBatteryChargingStatusSuccess**。 有关这些计费模式的详细信息，请参阅[启动环境中的电池充电](battery-charging-in-the-boot-environment.md)。
+- [EFI \_ 电池 \_ 充电 \_ 状态](efi-battery-charging-status.md)值的解释方式与 *阈值充电* 和 *电源切断充电* 模式相同，但 **EfiBatteryChargingStatusSuccess** 除外。 有关这些收费模式的详细信息，请参阅 [启动环境中的电池充电](battery-charging-in-the-boot-environment.md)。
 
-- 计费模式设备时，断开电源应导致信号与应用程序的固件**EfiBatteryChargingSourceNotDetected**，这将导致关闭该应用程序设备。
+- 当设备处于充电模式时，断开电源将导致固件使用 **EfiBatteryChargingSourceNotDetected** 向应用程序发出信号，这将导致应用程序关闭设备。
 
-- 如果固件发出信号状态为应用程序**EfiBatteryChargingStatusOverheat**或**EfiBatteryChargingStatusTimeout**，设备暂停收取 5 分钟 （但应用程序仍然会调用[EFI\_电池\_正在充电\_协议。GetBatteryInformation](efi-battery-charging-protocolgetbatteryinformation.md)或[EFI\_电池\_正在充电\_协议。GetBatteryStatus](efi-battery-charging-protocolgetbatterystatus.md)每隔大约 1 秒)。 设备 5 分钟之后，恢复通过调用充电[EFI\_电池\_正在充电\_协议。ChargeBattery](efi-battery-charging-protocolchargebattery.md)。 在这 5 分钟内，固件仍应发出具有相应应用程序提供的事件信号[EFI\_电池\_正在充电\_状态](efi-battery-charging-status.md)值 （例如，源断开的连接应发出信号**EfiBatteryChargingSourceNotDetected**)。
+- 如果固件用 **EfiBatteryChargingStatusOverheat** 或 **EfiBatteryChargingStatusTimeout** 的状态对应用程序发出信号，则设备将在5分钟内暂停充电 (但应用程序仍调用 [EFI \_ 电池 \_ 充电 \_ 协议。GetBatteryInformation](efi-battery-charging-protocolgetbatteryinformation.md) 或 [EFI \_ 电池 \_ 充电 \_ 协议。GetBatteryStatus](efi-battery-charging-protocolgetbatterystatus.md) 大约为1秒的间隔) 。 5分钟后，设备会通过调用 [EFI \_ 电池 \_ 充电协议恢复充电 \_ 。ChargeBattery](efi-battery-charging-protocolchargebattery.md)。 在5分钟内，固件仍应使用适当的 [EFI \_ 电池 \_ 充电 \_ 状态](efi-battery-charging-status.md) 值向应用程序提供的事件发出信号 (例如，源断开连接应发出 **EfiBatteryChargingSourceNotDetected**) 信号。
 
-- 将两种计费模式期间标有的框中显示相关动画的 UI**应用程序中保持**上图中。
+- 在这两种充电模式下，在上图中标记为 " **应用** " 的框中，将显示相关的动画 UI。
 
-- 在中*关机充电*模式下，如果固件已发送信号的事件，并且提供的状态**EfiBatteryChargingStatusSuccess**、 UEFI 电池充电应用程序无法启动到之前将主操作系统用户持有的 3 秒的电源按钮。 但是，如果应用程序检测到已断开 USB 电缆连接这一次，它将关闭电源的设备。 UEFI 电池充电应用程序需要驱动程序保持在完全在电池*充电模式关机*。
+- 在 *关闭充电* 模式下，如果固件发出了一个事件，并提供了 **EfiBatteryChargingStatusSuccess** 状态，则在用户按住电源按钮3秒钟之前，UEFI 电池充电应用程序不会启动到主操作系统。 但是，如果应用程序检测到 USB 电缆此时已断开连接，则它会关闭设备电源。 UEFI 电池充电应用程序期望驱动程序在 *电源关闭充电模式下* 维持电池电量完全相同。
 
-- 在*充电模式关机*，只要错误或成功事件，固件具有未收到信号，UEFI 电池充电应用程序不关闭电源的设备。
+- 在关闭 *充电模式下*，只要固件未发出错误或成功事件，UEFI 电池充电应用程序就不会关闭设备电源。
 
 ### <a name="error-handling"></a>错误处理
 
-每次[EFI\_电池\_正在充电\_协议。ChargeBattery](efi-battery-charging-protocolchargebattery.md)调用时， [EFI\_电池\_正在充电\_完成\_令牌](efi-battery-charging-completion-token.md)指定。 在令牌中的事件驱动程序遇到错误，如果通过向发出信号[EFI\_电池\_正在充电\_状态](efi-battery-charging-status.md)。 下表说明了 UEFI 电池充电应用程序如何对不同的情况下的不同状态值做出响应。
+每次进行 [EFI \_ 电池 \_ 充电 \_ 协议。调用 ChargeBattery](efi-battery-charging-protocolchargebattery.md) 时，指定了 [EFI \_ 电池 \_ 充电 \_ 完成 \_ 令牌](efi-battery-charging-completion-token.md) 。 如果驱动程序遇到错误，则令牌中的事件以 [EFI \_ 电池 \_ 充电 \_ 状态](efi-battery-charging-status.md)进行信号。 下表说明了在不同情况下，UEFI 电池充电应用程序如何对不同状态值做出反应。
 
 <table>
 <colgroup>
@@ -101,8 +100,8 @@ UEFI 电池充电应用程序以独占方式在依赖[EFI\_USBFN\_IO\_协议。D
 <thead>
 <tr class="header">
 <th>状态</th>
-<th>阈值计费模式</th>
-<th>打开 / 关闭 （之前和之后的费用状态达到的阈值） 计费模式</th>
+<th>阈值充电模式</th>
+<th>在收费状态达到阈值之前和之后 (的电充电模式) </th>
 </tr>
 </thead>
 <tbody>
@@ -114,13 +113,13 @@ UEFI 电池充电应用程序以独占方式在依赖[EFI\_USBFN\_IO\_协议。D
 <tr class="even">
 <td><p>EfiBatteryChargingStatusSuccess</p></td>
 <td><p>启动到 OS</p></td>
-<td><p><strong>之前的费用状态达到的阈值：</strong>在关闭电源计费模式下继续</p>
-<p><strong>之后的费用状态达到的阈值：</strong>保持关闭电源计费模式，直到 USB 已断开连接</p></td>
+<td><p><strong>在收费状态达到阈值之前：</strong> 在电源关闭充电模式下继续</p>
+<p><strong>当收费状态达到阈值后：</strong> 在 USB 断开连接之前，请保持断电充电模式</p></td>
 </tr>
 <tr class="odd">
 <td><p>EfiBatteryChargingStatusOverheat</p></td>
-<td><p>暂停时间为 5 分钟收费，然后在继续收费</p></td>
-<td><p>暂停时间为 5 分钟收费，然后在继续收费</p></td>
+<td><p>在5分钟内暂停充电，然后恢复充电</p></td>
+<td><p>在5分钟内暂停充电，然后恢复充电</p></td>
 </tr>
 <tr class="even">
 <td><p>EfiBatteryChargingStatusVoltageOutOfRange</p></td>
@@ -134,8 +133,8 @@ UEFI 电池充电应用程序以独占方式在依赖[EFI\_USBFN\_IO\_协议。D
 </tr>
 <tr class="even">
 <td><p>EfiBatteryChargingStatusTimeout</p></td>
-<td><p>暂停时间为 5 分钟收费，然后在继续收费</p></td>
-<td><p>暂停时间为 5 分钟收费，然后在继续收费</p></td>
+<td><p>在5分钟内暂停充电，然后恢复充电</p></td>
+<td><p>在5分钟内暂停充电，然后恢复充电</p></td>
 </tr>
 <tr class="odd">
 <td><p>EfiBatteryChargingStatusAborted</p></td>
@@ -190,7 +189,7 @@ UEFI 电池充电应用程序以独占方式在依赖[EFI\_USBFN\_IO\_协议。D
 </tbody>
 </table>
 
-下表说明了 UEFI 电池充电应用程序如何应对从收到的状态值[EFI\_电池\_正在充电\_协议。GetBatteryInformation](efi-battery-charging-protocolgetbatteryinformation.md)或[EFI\_电池\_正在充电\_协议。GetBatteryStatus](efi-battery-charging-protocolgetbatterystatus.md)。
+下表说明了 UEFI 电池充电应用程序如何响应从 [EFI \_ 电池 \_ 充电协议接收到的状态值 \_ 。GetBatteryInformation](efi-battery-charging-protocolgetbatteryinformation.md) 或 [EFI \_ 电池 \_ 充电 \_ 协议。GetBatteryStatus](efi-battery-charging-protocolgetbatterystatus.md)。
 
 <table>
 <colgroup>
@@ -201,26 +200,26 @@ UEFI 电池充电应用程序以独占方式在依赖[EFI\_USBFN\_IO\_协议。D
 <thead>
 <tr class="header">
 <th>状态</th>
-<th>阈值计费模式</th>
-<th>打开 / 关闭 （之前和之后的费用状态达到的阈值） 计费模式</th>
+<th>阈值充电模式</th>
+<th>在收费状态达到阈值之前和之后 (的电充电模式) </th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><p>EFI_SUCCESS</p>
-<p>检测不到任何错误时返回此值。</p></td>
+<p>如果未检测到错误，则返回该值。</p></td>
 <td><p>不适用</p></td>
 <td><p>不适用</p></td>
 </tr>
 <tr class="even">
 <td><p>EFI_INVALID_PARAMETER</p>
-<p>输入的参数不正确时返回此值。 这应从理论上讲不是可以在生产环境中。</p></td>
+<p>当输入参数不正确时，将返回此值。 理论上，这在生产环境中不可能出现。</p></td>
 <td><p>显示错误 UI 10 秒，然后关闭</p></td>
 <td><p>显示错误 UI 10 秒，然后关闭</p></td>
 </tr>
 <tr class="odd">
 <td><p>EFI_DEVICE_ERROR 或 EFI_NOT_READY</p>
-<p>采用相同的方式处理这些错误情况。 这些值应由返回<a href="efi-battery-charging-protocolgetbatteryinformation.md" data-raw-source="[EFI_BATTERY_CHARGING_PROTOCOL.GetBatteryInformation](efi-battery-charging-protocolgetbatteryinformation.md)">EFI_BATTERY_CHARGING_PROTOCOL。GetBatteryInformation</a>或<a href="efi-battery-charging-protocolgetbatterystatus.md" data-raw-source="[EFI_BATTERY_CHARGING_PROTOCOL.GetBatteryStatus](efi-battery-charging-protocolgetbatterystatus.md)">EFI_BATTERY_CHARGING_PROTOCOL。GetBatteryStatus</a>情况下，设备可能无法启动到由于某些设备错误将主操作系统中。 具体而言：</p>
+<p>这些错误条件的处理方式相同。 应 EFI_BATTERY_CHARGING_PROTOCOL 返回这些值 <a href="efi-battery-charging-protocolgetbatteryinformation.md" data-raw-source="[EFI_BATTERY_CHARGING_PROTOCOL.GetBatteryInformation](efi-battery-charging-protocolgetbatteryinformation.md)">。GetBatteryInformation</a> 或 <a href="efi-battery-charging-protocolgetbatterystatus.md" data-raw-source="[EFI_BATTERY_CHARGING_PROTOCOL.GetBatteryStatus](efi-battery-charging-protocolgetbatterystatus.md)">EFI_BATTERY_CHARGING_PROTOCOL。GetBatteryStatus</a> ，因为某些设备出错，设备可能无法启动到主操作系统。 具体而言：</p>
 <ul>
 <li><p>EfiBatteryChargingStatusAborted</p></li>
 <li><p>EfiBatteryChargingStatusDeviceError</p></li>
@@ -232,23 +231,23 @@ UEFI 电池充电应用程序以独占方式在依赖[EFI\_USBFN\_IO\_协议。D
 <li><p>EfiBatteryChargingErrorRequestShutdown</p></li>
 <li><p>EfiBatteryChargingErrorRequestReboot</p></li>
 </ul>
-<p>引发 EFI_DEVICE_ERROR 或 EFI_NOT_READY 跟完成令牌之一的上面列出的错误将导致设备最终关闭。</p></td>
-<td><p>恢复并调用<a href="efi-battery-charging-protocolchargebattery.md" data-raw-source="[EFI_BATTERY_CHARGING_PROTOCOL.ChargeBattery](efi-battery-charging-protocolchargebattery.md)">EFI_BATTERY_CHARGING_PROTOCOL。ChargeBattery</a></p></td>
-<td><p>恢复并调用<a href="efi-battery-charging-protocolchargebattery.md" data-raw-source="[EFI_BATTERY_CHARGING_PROTOCOL.ChargeBattery](efi-battery-charging-protocolchargebattery.md)">EFI_BATTERY_CHARGING_PROTOCOL。ChargeBattery</a></p></td>
+<p>引发上述错误之一的 EFI_DEVICE_ERROR 或 EFI_NOT_READY 后，将导致设备最终关闭。</p></td>
+<td><p>恢复并调用 <a href="efi-battery-charging-protocolchargebattery.md" data-raw-source="[EFI_BATTERY_CHARGING_PROTOCOL.ChargeBattery](efi-battery-charging-protocolchargebattery.md)">EFI_BATTERY_CHARGING_PROTOCOL。ChargeBattery</a></p></td>
+<td><p>恢复并调用 <a href="efi-battery-charging-protocolchargebattery.md" data-raw-source="[EFI_BATTERY_CHARGING_PROTOCOL.ChargeBattery](efi-battery-charging-protocolchargebattery.md)">EFI_BATTERY_CHARGING_PROTOCOL。ChargeBattery</a></p></td>
 </tr>
 </tbody>
 </table>
 
 ## <a name="user-experience"></a>用户体验
 
-下图显示了如何 UEFI 电池充电应用程序用户界面屏幕绘制如果电池不足够费用或设备是否在*充电模式关机*。
+下图显示了在电池电量不足的情况下，以及设备是否处于 *关机模式* 时，UEFI 电池充电应用程序如何将 UI 绘制到屏幕。
 
-![电池充电的用户体验](images/oem-battery-charge-user-experience.png)
+![电池充电用户体验](images/oem-battery-charge-user-experience.png)
 
-以下步骤介绍如何在应用程序绘制到屏幕用户界面：
+以下步骤说明了应用程序如何将 UI 绘制到屏幕：
 
-- 应用程序通过写入到框架中的每个像素的背景填充颜色清除屏幕。
+- 应用程序通过将背景填充颜色写入帧中的每个像素来清除屏幕。
 
-- 应用程序通过直接到显示位图缓冲区中复制像素绘制交替低水平电量电池 UI 位图。 如果没有被按下电源按钮，应用程序调用的情况下通过 10 秒[EFI\_显示\_POWER\_协议。SetDisplayPowerState](efi-display-power-protocolsetdisplaypowerstate.md)若要关闭显示器和背景光。 如果用户按下电源按钮，EFI\_DISPLAY\_电源\_协议。SetDisplayPowerState 调用以启用显示。
+- 应用程序通过将位图缓冲区中的像素直接复制到显示器，来绘制备用电池电量小用户位图。 如果10秒通过，但没有按下电源按钮，应用程序将调用 [EFI \_ 显示 \_ 电源 \_ 协议。SetDisplayPowerState](efi-display-power-protocolsetdisplaypowerstate.md) 关闭显示屏和背景光。 如果用户按下 "电源" 按钮，则 EFI \_ 显示 \_ 电源 \_ 协议。调用 SetDisplayPowerState 以重新打开显示。
 
-- 当应用程序从驱动程序收到错误时，应用程序通过写入帧缓冲区中的每个像素的背景填充颜色清除屏幕并应用程序然后通过复制相应的位图像素来绘制电池错误屏幕直接到显示的缓冲区。
+- 当应用程序收到来自驱动程序的错误时，应用程序会通过将背景填充颜色写入帧缓冲区中的每个像素来清除屏幕，然后应用程序通过将像素从适当的位图缓冲区直接复制到显示器来绘制电池错误屏幕。

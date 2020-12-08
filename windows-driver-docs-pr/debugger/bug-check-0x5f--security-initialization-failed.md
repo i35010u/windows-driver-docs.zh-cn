@@ -1,7 +1,6 @@
 ---
 title: Bug 检查 0x5F SECURITY_INITIALIZATION_FAILED
-description: SECURITY_INITIALIZATION_FAILED bug 检查的值为 0x0000005F.This bug 检查极少出现。
-ms.assetid: af0eea86-a88c-4ee2-8e03-776cd63b7adf
+description: SECURITY_INITIALIZATION_FAILED bug 检查的值为0x0000005F。此 bug 检查很少出现。
 keywords:
 - Bug 检查 0x5F SECURITY_INITIALIZATION_FAILED
 - SECURITY_INITIALIZATION_FAILED
@@ -13,22 +12,22 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: dfa380c426ac6f7dfcfb726b9b5dbcdc536d8a90
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: 07ea04ad291b28e9dee299829704232644c4fb22
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67519322"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96798401"
 ---
-# <a name="bug-check-0x5f-securityinitializationfailed"></a>Bug 检查 0x5F：安全\_初始化\_失败
+# <a name="bug-check-0x5f-security_initialization_failed"></a>Bug 检查0x5F：安全 \_ 初始化 \_ 失败
 
 
-安全性\_初始化\_失败错误检查的值为 0x0000005F。
+安全 \_ 初始化 \_ 失败 bug 检查的值为0x0000005F。
 
-检查此错误极少出现。
+此 bug 检查很少出现。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题面向程序员。 如果您是在使用计算机时收到蓝屏错误代码的客户，请参阅[蓝屏错误疑难解答](https://www.windows.com/stopcode)。
 
 
  

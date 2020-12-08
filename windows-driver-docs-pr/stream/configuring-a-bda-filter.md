@@ -1,7 +1,6 @@
 ---
 title: 配置 BDA 筛选器
 description: 配置 BDA 筛选器
-ms.assetid: 4af9efc3-8073-4111-9ad0-8b2fba4d1545
 keywords:
 - 方法设置 WDK BDA，筛选器配置
 - 属性设置 WDK BDA，筛选器配置
@@ -9,12 +8,12 @@ keywords:
 - 筛选配置 WDK BDA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 296d4878606675847f62db3cbbfbaabebf9c1b71
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 256925f793cb42aec47fa67a1996f83884a3c5ab
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89191821"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96799297"
 ---
 # <a name="configuring-a-bda-filter"></a>配置 BDA 筛选器
 

@@ -1,19 +1,18 @@
 ---
 title: 创建属性表页
 description: 创建属性表页
-ms.assetid: 90b1743c-b530-408a-aa30-9ab774166306
 keywords:
 - 公共属性表用户界面 WDK 打印，创建属性表页面
 - CPSUI WDK 打印，创建属性表页面
 - 属性表页 WDK 打印，创建
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 42828d199831e747a33c50f8d391ca61dfa9d2d4
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 399007c75334d851318af47cb525e1d699e1fd8c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89214925"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96797455"
 ---
 # <a name="creating-property-sheet-pages"></a>创建属性表页
 

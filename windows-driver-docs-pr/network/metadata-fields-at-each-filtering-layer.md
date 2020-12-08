@@ -1,21 +1,20 @@
 ---
 title: 每个筛选层的元数据字段
-description: 本部分介绍在每个筛选层上的 Windows 筛选平台标注驱动程序的元数据字段。
-ms.assetid: 77152ebe-1721-48b3-9380-7f565931a0e5
+description: 本部分介绍 Windows 筛选平台标注驱动程序每个筛选层的元数据字段。
 keywords:
-- 元数据字段在每个筛选层网络驱动程序
+- 每个筛选层网络驱动程序中的元数据字段
 ms.date: 11/09/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 32a29f1a099572a24d0023a7c1a0200890827d8f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 629e1ddf3248b06aaa4060bd845042e00f02b4b3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63335226"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96798087"
 ---
 # <a name="metadata-fields-at-each-filtering-layer"></a>每个筛选层的元数据字段
 
-下表列出了可用的层的可能的元数据字段。 某些字段为仅在特定情况下可用。 例如，元数据字段 FWPS_METADATA_FIELD_FRAGMENT_DATA 才可用于入站 IP 数据包层该数据包分为碎片。 表中未列出的层不具有任何可用的元数据字段。
+下表列出了层可以使用的元数据字段。 某些字段仅在特定情况下可用。 例如，只有当数据包分段时，"元数据" 字段 FWPS_METADATA_FIELD_FRAGMENT_DATA 才适用于入站 IP 数据包层。 表中未列出的层不具有任何可用的元数据字段。
 
 <table>
 <tr>

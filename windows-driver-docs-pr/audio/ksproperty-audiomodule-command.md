@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ AUDIOMODULE \_ 命令
 description: KSPROPERTY \_ AUDIOMODULE \_ 命令属性是一个命令属性，用于获取和设置硬件 (固定句柄) 或软件缓存 (筛选器句柄) 中的缓冲区和说明。
-ms.assetid: 90C69481-A3DF-4801-8733-C417950880E5
 keywords:
 - KSPROPERTY_AUDIOMODULE_COMMAND 音频设备
 topic_type:
@@ -12,19 +11,19 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f479a2bd1e9249507f8287d51c85ebe826d945c5
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 495f69f526f4fd3a3afc14ab2560b7bfd133eb99
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102598"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96798933"
 ---
 # <a name="ksproperty_audiomodule_command"></a>KSPROPERTY \_ AUDIOMODULE \_ 命令
 
 
-**KSPROPERTY \_ AUDIOMODULE \_ 命令**属性是一个命令属性，用于获取和设置硬件 (固定句柄) 或软件缓存 (筛选器句柄) 中的缓冲区和说明。
+**KSPROPERTY \_ AUDIOMODULE \_ 命令** 属性是一个命令属性，用于获取和设置硬件 (固定句柄) 或软件缓存 (筛选器句柄) 中的缓冲区和说明。
 
-*设置*值作为命令的一部分提供。 使用 *Get* 时，它将返回此命令的结果。
+*设置* 值作为命令的一部分提供。 使用 *Get* 时，它将返回此命令的结果。
 
 ### <a name="span-idusage_summary_tablespanspan-idusage_summary_tablespanspan-idusage_summary_tablespanusage-summary-table"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用情况摘要表
 
@@ -90,7 +89,7 @@ ms.locfileid: "90102598"
 </tr>
 <tr class="odd">
 <td align="left"><p>版本</p></td>
-<td align="left"><p>Windows 10 版本1703</p></td>
+<td align="left"><p>Windows 10 版本 1703</p></td>
 </tr>
 </tbody>
 </table>

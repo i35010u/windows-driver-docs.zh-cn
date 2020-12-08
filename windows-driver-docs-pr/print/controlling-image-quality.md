@@ -1,25 +1,24 @@
 ---
 title: 控制图像质量
 description: 控制图像质量
-ms.assetid: b6d25178-6726-4ce0-ab34-efeedc618044
 keywords:
 - Unidrv，图像质量
 - 图像质量选项 WDK Unidrv
 - 草稿图像质量 WDK Unidrv
 - 更好的图像质量 WDK Unidrv
 - 最佳图像质量 WDK Unidrv
-- 质量设置条目 WDK Unidrv
+- 质量设置项 WDK Unidrv
 - 打印作业 WDK，图像质量
-- 格式 WDK 图像质量
+- 格式化 WDK 图像质量
 - Unidrv WDK 打印
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e5f993d6dc41c93c245993e2b1c841a00480dd9d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9caf7e8fe4d7de5270d8a35b389eab0353ede9e4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63358652"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96797535"
 ---
 # <a name="controlling-image-quality"></a>控制图像质量
 
@@ -27,11 +26,11 @@ ms.locfileid: "63358652"
 
 
 
-Unidrv 的用户界面提供一组三个单选按钮，允许用户选择"草稿"，"更好"或"最好"图像质量的打印作业。 草稿质量最佳质量执行相反的操作时，通过图像分辨率高低，强调打印机速度。
+Unidrv 的用户界面提供一组三个单选按钮，允许用户选择 "草稿"、"更好" 或 "最佳" 图像质量来打印作业。 草稿质量强调打印机在图像分辨率上的速度，而最佳质量则会相反。
 
-这些单选按钮的用途是允许用户能够轻松选择所需获取所需的质量，并且无需单独显式选择所需的选项的功能选项。
+这些单选按钮的用途是使用户可以轻松地选择获取所需质量所需的功能选项，而无需单独显式选择所需的选项。
 
-打印机的 GPD 文件中指定的单选按钮被按下时，应选择 Unidrv 的选项。 GPD 语言定义以下三项：
+按下某个单选按钮时，Unidrv 应选择的选项在打印机的 GPD 文件中指定。 GPD 语言定义以下三个条目：
 
 <table>
 <colgroup>
@@ -52,15 +51,15 @@ Unidrv 的用户界面提供一组三个单选按钮，允许用户选择"草稿
 
  
 
-每个条目与其中一个单选按钮关联，每个条目接受选项的列表。 当用户选择相应的按钮时，Unidrv 列表，并设置指定的选项。
+其中的每个条目都与某个单选按钮相关联，并且每个条目都接受一个选项列表。 当用户选择相应的按钮时，Unidrv 将遍历列表并设置指定的选项。
 
-为每个质量设置条目的格式如下所示：
+每个质量设置条目的格式如下所示：
 
-\**XXXX*QualitySettings:列表 (*FeatureName*。*OptionName*， *FeatureName*。*OptionName*， *FeatureName*。*选项名称*，...)
+\**XXXX* QualitySettings：*列出 (功能* 列表。*OptionName*，功能 *名。**OptionName*，功能 *名。**OptionName*，... ) 
 
-其中每个*FeatureName*一个名称与相关联\**功能*条目，和*OptionName*是一个名称与关联的功能之一的\**选项*条目。 一个空列表会导致该相关联的单选按钮灰显。
+*其中每个* 功能名称是与功能条目关联的名称 \* *Feature* ， *OptionName* 是与该功能的一个 \* *选项* 条目关联的名称。 空列表导致关联的单选按钮灰显。
 
-附加的所需条目指定的默认图像质量。 格式如下所示：
+附加的必需条目指定默认图像质量。 其格式如下所示：
 
 <table>
 <colgroup>
@@ -68,16 +67,16 @@ Unidrv 的用户界面提供一组三个单选按钮，允许用户选择"草稿
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>*<strong>DefaultQuality:</strong><em>DefaultQuality</em></p></td>
+<td><p>*<strong>DefaultQuality：</strong> <em>DefaultQuality</em></p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-其中*DefaultQuality*是之一`DRAFTQUALITY`， `BETTERQUALITY`，或`BESTQUALITY`。
+其中， *DefaultQuality* 是 `DRAFTQUALITY` 、或之一 `BETTERQUALITY` `BESTQUALITY` 。
 
-这些 GPD 文件条目可以使用的任何选项相关联`ColorMode`和`MediaType`功能。 通常情况下，它们都将置于[条件语句](conditional-statements.md)，如以下示例所示。
+这些 GPD 文件项可以与和功能的任何选项关联 `ColorMode` `MediaType` 。 通常，它们放置在 [条件语句](conditional-statements.md)中，如下面的示例中所示。
 
 ```cpp
 *switch: ColorMode {
@@ -105,9 +104,9 @@ Unidrv 的用户界面提供一组三个单选按钮，允许用户选择"草稿
         *DefaultQuality: BETTERQUALITY }}
 ```
 
-在示例中所示，一个好的策略是指定一个\***用例**条目为单色模式，然后使用\***默认**所有多色模式下的条目。 这是因为 Unidrv 的**页面设置**属性表页向用户提供了两个选择-颜色或普通打印。 如果在示例中使用格式，Unidrv 显示质量按钮时用户选择颜色打印选项。
+如示例中所示，一个好的策略是为 \* 单颜色模式指定一个 **事例** 条目，然后 \* 对所有多色模式使用 *_默认_* 条目。 这是因为，Unidrv 的 " **页面设置** " 属性页页面为用户提供了两种选择：彩色打印或 noncolor 打印。 如果使用示例中的格式，则当用户选择颜色打印选项时，Unidrv 将显示质量按钮。
 
-下面是更复杂示例，这会为这两种颜色模式的图像质量和媒体类型：
+下面是一个更复杂的示例，该示例将图像质量与彩色模式和媒体类型紧密结合：
 
 ```cpp
 *switch: Colormode {
@@ -148,17 +147,17 @@ Unidrv 的用户界面提供一组三个单选按钮，允许用户选择"草稿
 }
 ```
 
-当使用质量设置 GPD 条目时，必须遵守以下规则：
+使用 quality 设置 GPD 项时，必须遵守以下规则：
 
--   必须始终使用所有四个条目。 指定空的选项列表允许，并且会导致该相关联的单选按钮灰显。
+-   必须始终使用全部四个条目。 允许指定空选项列表，并使关联的单选按钮灰显。
 
--   必须指定所有 ColorMode 和媒体类型组合的所有四个条目。 这些示例使用\***默认**中每个条件语句，以实现此目的的条目。
+-   必须为所有 ColorMode 和媒体的组合指定所有四个条目。 示例使用 \* 每个条件语句中的 **默认** 项来实现此目的。
 
--   质量设置条目中的选项列表不能违反任何[选项约束](option-constraints.md)已指定。
+-   质量设置项中的选项列表不得违反指定的任何 [选项约束](option-constraints.md) 。
 
--   包含在选项列表中的选项不应更改所选的介质类型。 此外，可接受时，例如，若要设置为 24 位/像素的最佳质量、 质量更好的 8 位/像素的颜色模式和 4 草稿品质，更改为 1 位/像素 （单色） 为每像素位将无法接受。
+-   选项列表中包含的选项不应更改所选的媒体类型。 同时，虽然可接受，但要将颜色模式设置为24位/像素以获得最佳质量，为8位/像素设置为更高的质量，将4位/像素更改为1个比特/像素 (单色) 不可接受。
 
-如果一项功能包含在指定质量设置的条件语句，分析器设置的功能\*UpdateQualityMacro？ 归于**TRUE**。 (请参阅[功能特性](feature-attributes.md)。)
+如果在指定质量设置的条件语句中包含功能，则分析器将该功能的 \* UpdateQualityMacro？特性设置为 **TRUE**。  (参阅 [功能特性](feature-attributes.md)。 ) 
 
  
 

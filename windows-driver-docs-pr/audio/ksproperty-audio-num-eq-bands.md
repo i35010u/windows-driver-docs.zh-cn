@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ 音频 \_ 数字 \_ EQ \_ 带区
 description: KSPROPERTY \_ AUDIO \_ NUM \_ EQ \_ 波段属性用于检索均衡表中的频率带区数。 这是 (KSNODETYPE 均衡器) 的 EQ 节点中通道的获取属性 \_ 。
-ms.assetid: b7bb9f05-0b27-4b41-aa38-efb87fc1beee
 keywords:
 - KSPROPERTY_AUDIO_NUM_EQ_BANDS 音频设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6959c41a08898617b097fecb1f3dbb8d4d8b647c
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 311a2fdaf8f1e3fa6482541098055c5159a724a3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102082"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96799003"
 ---
 # <a name="ksproperty_audio_num_eq_bands"></a>KSPROPERTY \_ 音频 \_ 数字 \_ EQ \_ 带区
 
@@ -67,7 +66,7 @@ KSPROPERTY \_ AUDIO \_ NUM \_ EQ \_ 波段属性用于检索均衡表中的频�
 
 KSPROPERTY \_ 音频 \_ 号 \_ EQ \_ 波段属性请求返回状态 " \_ 成功" 以指示已成功完成。 否则，请求将返回相应的错误状态代码。
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 此属性与 [**KSPROPERTY \_ audio \_ eq \_ 带区**](ksproperty-audio-eq-bands.md) 和 [**KSPROPERTY \_ 音频 \_ eq \_ 级别**](ksproperty-audio-eq-level.md) 属性结合使用，以确定包含这些属性的值的数组的长度。

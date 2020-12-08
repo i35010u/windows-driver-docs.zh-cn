@@ -1,7 +1,6 @@
 ---
 title: WDMAud 拓扑分析
 description: WDMAud 拓扑分析
-ms.assetid: 8aa3e2e8-c9a2-4c3e-94b1-44a0dc218bf3
 keywords:
 - WDMAud 拓扑分析 WDK 音频
 - 分析 WDK 音频的拓扑
@@ -12,12 +11,12 @@ keywords:
 - 翻译节点 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d507d597ec47b5b5b9a4f200d076496112225be7
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: f9346b84b249c5b5a2ce82a7077bf9eb472a8fe2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89206639"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96798733"
 ---
 # <a name="wdmaud-topology-parsing"></a>WDMAud 拓扑分析
 

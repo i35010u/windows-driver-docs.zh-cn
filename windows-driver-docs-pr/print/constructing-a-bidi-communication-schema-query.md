@@ -1,18 +1,17 @@
 ---
 title: 构造双向通信架构查询
 description: 构造双向通信架构查询
-ms.assetid: b18fc69a-652c-4e36-83b3-fc4715b03c0f
 keywords:
 - 双向通信架构 WDK 打印
 - 双向通信架构 WDK 打印
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c878e55763c7f3005282b68a515435215252309d
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 82c85c4bd9b5aa9cd4152755b99bec17bc884f9e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89217807"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96797555"
 ---
 # <a name="constructing-a-bidi-communication-schema-query"></a>构造双向通信架构查询
 

@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ DIRECTSOUND3DBUFFER \_ MINDISTANCE
 description: KSPROPERTY \_ DIRECTSOUND3DBUFFER \_ MINDISTANCE 属性指定三维声音缓冲区的最小距离。
-ms.assetid: 998e591d-7c23-4857-908c-4e90918c9a94
 keywords:
 - KSPROPERTY_DIRECTSOUND3DBUFFER_MINDISTANCE 音频设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d0002345a6a50be53d3830d6ec7c1ae61e6ec844
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: ee53c015188642d9b37559d0b83aa79cb8bbdee7
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102568"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96798903"
 ---
 # <a name="ksproperty_directsound3dbuffer_mindistance"></a>KSPROPERTY \_ DIRECTSOUND3DBUFFER \_ MINDISTANCE
 
@@ -74,7 +73,7 @@ KSPROPERTY \_ DIRECTSOUND3DBUFFER \_ MINDISTANCE 属性请求返回状态 \_ SUC
 
 -   DS3DBUFFER 结构的 **flMinDistance** 成员。
 
--   **IDirectSound3DBuffer：： GetMinDistance**和**IDirectSound3DBuffer：： SetMinDistance**方法。
+-   **IDirectSound3DBuffer：： GetMinDistance** 和 **IDirectSound3DBuffer：： SetMinDistance** 方法。
 
 <a name="requirements"></a>要求
 ------------

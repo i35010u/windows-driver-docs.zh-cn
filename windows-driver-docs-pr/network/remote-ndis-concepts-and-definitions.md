@@ -1,7 +1,6 @@
 ---
 title: 远程 NDIS 的概念和定义
 description: 远程 NDIS 的概念和定义
-ms.assetid: caf01e69-9368-4b9b-a343-ef17a2154bb8
 keywords:
 - 远程 NDIS WDK 网络，概念
 - 远程 NDIS WDK 网络，定义
@@ -22,12 +21,12 @@ keywords:
 - 远程 NDIS WDK 网络，消息封装
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4ed26ea97e369bcb62f28d2f714b7d06c2bb4e2d
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 6a07c6bec39f14d69c3a66e15b738b92ef560303
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89211965"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96799357"
 ---
 # <a name="remote-ndis-concepts-and-definitions"></a>远程 NDIS 的概念和定义
 

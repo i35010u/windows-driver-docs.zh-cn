@@ -1,19 +1,18 @@
 ---
 title: 自定义的图形 DDI 函数
 description: 自定义的图形 DDI 函数
-ms.assetid: 33d7d567-5371-4873-a4ef-cd2b06f65d73
 keywords:
 - 呈现插件 WDK 打印，图形 DDI 函数
 - 图形 DDI 函数 WDK 打印
-- 挂接图形 DDI 函数 WDK 打印
+- 挂钩图形 DDI 功能 WDK 打印
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: aeeeaeedfce98e2b4ef4eadbcfa271ee61bd19a2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 970d5121266303ce7b8dd6ec3792f7d9cc00b84c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63365509"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96797405"
 ---
 # <a name="customized-graphics-ddi-functions"></a>自定义的图形 DDI 函数
 
@@ -21,15 +20,15 @@ ms.locfileid: "63365509"
 
 
 
-打印机微型驱动程序开发人员可以扩展功能的核心打印机驱动程序图形 DDIs 通过实现插件方法。 插件呈现可挂接出一些图形 DDI 功能，并提供核心打印机驱动程序函数的自定义的实现。 新打印机呈现插件的开发人员应实现其插件的基于 COM 的方法。请参阅[COM 接口的呈现插件](com-interfaces-for-rendering-plug-ins.md)有关一系列定义 COM 接口。
+打印机微型驱动程序开发人员可以通过实现插件方法来扩展核心打印机驱动程序图形 DDIs 的功能。 呈现插件可以挂钩一些图形 DDI 函数，以提供核心打印机驱动程序函数的自定义实现。 新的打印机呈现插件开发人员应为插件实现基于 COM 的方法。有关定义的 COM 接口的列表，请参阅 [用于呈现插件的 COM 接口](com-interfaces-for-rendering-plug-ins.md) 。
 
-在 COM 接口的发布之前, Ihv 可以扩展图形 DDIs 的功能通过实现一个或多个 OEM*Xxx*其呈现插件的函数。尽管这些函数的用法仍支持出于兼容性原因，但新呈现插件的编写器应使用中的 COM 接口的方法。
+在发布 COM 接口之前，Ihv 可以通过为其呈现插件实现一个或多个 OEM *Xxx* 函数来扩展图形 DDIs 的功能。尽管出于兼容性原因仍支持使用这些函数，但新的呈现插件的编写器应使用 COM 接口中的方法。
 
-本部分的剩余部分包含以下主题：
+本部分的其余部分包含以下主题：
 
-[基于 COM 的呈现插件](com-based-rendering-plug-ins.md)
+[基于 COM 的渲染插件](com-based-rendering-plug-ins.md)
 
-[非基于 COM 的呈现插件](non-com-based-rendering-plug-ins.md)
+[不是基于 COM 的渲染插件](non-com-based-rendering-plug-ins.md)
 
  
 

@@ -1,15 +1,14 @@
 ---
 title: Windows 音频体系结构
 description: 本主题提供了 Windows 10 音频体系结构的高级摘要。
-ms.assetid: 1FC95504-18AA-4F3B-8E96-005276699694
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4dccf71c450eaf9f9c1cf084bbeb2002ecfdac34
-ms.sourcegitcommit: 20eac54e419a594f7cea766ee28f158559dfd79c
+ms.openlocfilehash: 6ab6b349dffacc16855a88425ba99a6afe2ed027
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91754870"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96798731"
 ---
 # <a name="windows-audio-architecture"></a>Windows 音频体系结构
 

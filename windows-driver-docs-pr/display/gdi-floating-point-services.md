@@ -1,7 +1,6 @@
 ---
 title: GDI 浮点服务
 description: GDI 浮点服务
-ms.assetid: 7e32c683-ffad-4a95-9c3a-6716f7ce20cb
 keywords:
 - GDI WDK Windows 2000 显示，浮点操作
 - 图形驱动程序 WDK Windows 2000 显示，浮点操作
@@ -9,12 +8,12 @@ keywords:
 - 浮点运算 WDK GDI
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 39f10c806d97ef943264a061d7de8ea60172c3af
-ms.sourcegitcommit: f8619f20a0903dd64f8641a5266ecad6df5f1d57
+ms.openlocfilehash: 971cafc03d508ed8e2506b5a7d3d64e35c4da568
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91423628"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96798323"
 ---
 # <a name="gdi-floating-point-services"></a>GDI 浮点服务
 
@@ -34,7 +33,7 @@ ms.locfileid: "91423628"
 <thead>
 <tr class="header">
 <th align="left">函数</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>

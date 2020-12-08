@@ -1,7 +1,6 @@
 ---
 title: WDM 音频术语
 description: WDM 音频术语
-ms.assetid: bb36a66a-84dc-46c2-adcb-761d0acec3a1
 keywords:
 - WDM 音频驱动程序 WDK，关于 WDM 音频驱动程序
 - 音频驱动程序 WDK，关于音频驱动程序
@@ -20,12 +19,12 @@ keywords:
 - subdevices WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2a99cf03eef8051c64b96808fc265557e2cc5b85
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 660a4547d2a33a6b896870009afb4bff2129b3ab
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89206659"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96798753"
 ---
 # <a name="wdm-audio-terminology"></a>WDM 音频术语
 
@@ -43,7 +42,7 @@ ms.locfileid: "89206659"
 
 小型端口驱动程序位于驱动程序堆栈中的端口驱动程序下。 也就是说，对微型端口驱动程序的所有调用都是从端口驱动程序中进行的，而微型端口驱动程序的所有调用都是端口驱动程序的较小边缘接口。
 
-下图说明了在此上下文中使用字词 *堆栈*、 *上边缘接口*和 *更低边缘接口* 时的含义。 表示端口驱动程序的块堆积在代表微型端口驱动程序的块的顶部。 因此，小型端口驱动程序位于 "堆栈" 中的端口驱动程序下。
+下图说明了在此上下文中使用字词 *堆栈*、 *上边缘接口* 和 *更低边缘接口* 时的含义。 表示端口驱动程序的块堆积在代表微型端口驱动程序的块的顶部。 因此，小型端口驱动程序位于 "堆栈" 中的端口驱动程序下。
 
 ![阐释驱动程序堆栈术语的关系图](images/drvstack.png)
 
@@ -75,7 +74,7 @@ ms.locfileid: "89206659"
 
 ### <a name="span-idbus_driver__generic_spanspan-idbus_driver__generic_spanspan-idbus_driver__generic_spanbus-driver-generic"></a><span id="Bus_Driver__Generic_"></span><span id="bus_driver__generic_"></span><span id="BUS_DRIVER__GENERIC_"></span>一般) 的总线驱动程序 (
 
-总线驱动程序 (一般) 提供对物理总线的微型驱动程序访问权限。 Microsoft Windows *硬件抽象层 (HAL) * 有时称为 *系统总线驱动程序* ，因为它提供对系统总线的访问。 有关详细信息，请参阅 [总线驱动程序](../kernel/bus-drivers.md)。
+总线驱动程序 (一般) 提供对物理总线的微型驱动程序访问权限。 Microsoft Windows *硬件抽象层 (HAL)* 有时称为 *系统总线驱动程序* ，因为它提供对系统总线的访问。 有关详细信息，请参阅 [总线驱动程序](../kernel/bus-drivers.md)。
 
 ### <a name="span-idclass_driver__generic_spanspan-idclass_driver__generic_spanspan-idclass_driver__generic_spanclass-driver-generic"></a><span id="Class_Driver__Generic_"></span><span id="class_driver__generic_"></span><span id="CLASS_DRIVER__GENERIC_"></span>类驱动程序 (泛型) 
 
@@ -115,7 +114,7 @@ ms.locfileid: "89206659"
 
 适配器驱动程序管理可能包含多个不同硬件功能的适配器卡。 如上图所示，适配器驱动程序包含用于管理各种硬件功能的微型端口驱动程序。 同样，端口类驱动程序旨在为包含多个硬件功能的适配器提供支持。 端口类驱动程序为它支持的每个完善定义的函数类型提供端口驱动程序。 适配器驱动程序将特定函数的微型端口驱动程序绑定到该函数类型的相应端口驱动程序。 每个函数的端口驱动程序处理与使用该函数的 WDM 音频客户端的通信。 微型端口驱动程序包含用于管理该函数的所有硬件特定代码。
 
-端口类驱动程序 (WDM 音频) 主要充当与单个设备对象相关联的多个 subdevices 的容器。 总线驱动程序为每个即插即用 (PnP) 节点所枚举的 * (PDO) 创建单个物理设备对象 * 。
+端口类驱动程序 (WDM 音频) 主要充当与单个设备对象相关联的多个 subdevices 的容器。 总线驱动程序为每个即插即用 (PnP) 节点所枚举的 *(PDO) 创建单个物理设备对象* 。
 
 对于音频适配器，单个 PnP 节点通常包含多个音频功能。 若要将与节点相关联的各种函数作为不同设备公开，通常需要为适配器编写总线驱动程序。 总线驱动程序枚举硬件函数并创建相应的 PDOs。 在此方案中，一个或多个特定于函数的驱动程序需要绑定到 PDOs，并与总线驱动程序协商以访问适配器上的共享资源。
 

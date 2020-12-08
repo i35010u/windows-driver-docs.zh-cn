@@ -1,7 +1,6 @@
 ---
 title: 语音分配
 description: 语音分配
-ms.assetid: fb1e6c36-02b4-41a6-b9c4-09f393d389db
 keywords:
 - DirectMusic 内核模式 WDK 音频，语音分配
 - 内核模式 synths WDK 音频，语音分配
@@ -12,12 +11,12 @@ keywords:
 - 合成 WDK 音频，语音分配
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f8bef84b341e326fab675911d6529b77ba1de833
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 455e1844949968ee5261e1960a1c42a31355d3b8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89206663"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96798811"
 ---
 # <a name="voice-allocation"></a>语音分配
 

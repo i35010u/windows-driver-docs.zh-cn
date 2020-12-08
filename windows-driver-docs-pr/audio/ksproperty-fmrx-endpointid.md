@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ FMRX \_ ENDPOINTID
 description: KSTOPOLOGY \_ ENDPOINTID 属性包含调频收音机输出/呈现器终结点的终结点 ID。
-ms.assetid: C71DA54C-069D-43F6-8107-AF109D4CA967
 keywords:
 - KSPROPERTY_FMRX_ENDPOINTID 音频设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fe4fe83a024231915473e2efd3dddad2474e70f9
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 54e904b8c8dfb1b2b98f90836ccfc49b7350ed38
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102504"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96798869"
 ---
 # <a name="ksproperty_fmrx_endpointid"></a>KSPROPERTY \_ FMRX \_ ENDPOINTID
 
@@ -62,7 +61,7 @@ ms.locfileid: "90102504"
 
 ### <a name="span-idreturn_valuespanspan-idreturn_valuespanspan-idreturn_valuespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>返回值
 
-**KSPROPERTY \_ FMRX \_ ENDPOINTID**属性请求返回调频收音机当前呈现器终结点的名称和 pin ID。
+**KSPROPERTY \_ FMRX \_ ENDPOINTID** 属性请求返回调频收音机当前呈现器终结点的名称和 pin ID。
 
 <a name="requirements"></a>要求
 ------------
@@ -79,7 +78,7 @@ ms.locfileid: "90102504"
 </tr>
 <tr class="even">
 <td align="left"><p>最低受支持的服务器</p></td>
-<td align="left"><p>Windows Server 2016</p></td>
+<td align="left"><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>客户端</p></td>

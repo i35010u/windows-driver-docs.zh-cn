@@ -1,15 +1,14 @@
 ---
 title: Ksmedia.h
 description: 本部分包含 Ksmedia 标头的参考主题。
-ms.assetid: D5654BC1-45F5-4EC9-9E93-60318EF4C159
 ms.date: 11/27/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 7b7d75c681eebfad714520911a5660ca2424a613
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 510e1ca350defe85595d1ace17d1a8c8fac90d79
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89207035"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96799183"
 ---
 # <a name="ksmediah"></a>Ksmedia.h
 
@@ -17,7 +16,7 @@ ms.locfileid: "89207035"
 
 ## <a name="span-idin_this_sectionspanin-this-section"></a><span id="in_this_section"></span>本部分中的内容
 
-|主题|说明|
+|主题|描述|
 |--- |--- |
 |[KSEVENT_CONTROL_CHANGE](ksevent-control-change.md)|KSEVENT_CONTROL_CHANGE 事件指示在表示硬件卷控制旋钮、静音开关或其他类型手动控制的节点上发生了控件值更改。  (操作数据) 的事件值类型是一个 KSEVENTDATA 结构，它指定要用于事件的通知类型。|Pin|[KSE_NODE](/windows-hardware/drivers/ddi/ks/ns-ks-kse_node)|[KSEVENTDATA](/windows-hardware/drivers/ddi/ks/ns-ks-kseventdata)|
 |[KSEVENT_LOOPEDSTREAMING_POSITION](ksevent-loopedstreaming-position.md)|KSEVENT_LOOPEDSTREAMING_POSITION 事件指示音频流已到达循环缓冲区中的指定位置。|

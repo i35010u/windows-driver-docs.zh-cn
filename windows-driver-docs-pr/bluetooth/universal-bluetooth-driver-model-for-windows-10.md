@@ -1,15 +1,14 @@
 ---
 title: Windows 10 的蓝牙通用 Windows 驱动程序模型
 description: 在 Windows 10 中，所有设备的蓝牙传输驱动程序接口都已聚合，并使用通用 Windows 驱动程序模型。
-ms.assetid: E65A71D3-C0D2-4E13-9E19-1E6C6C1A172E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a79ffdf57bd27a9f2d3c2b71caf2b78157f9fe84
-ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
+ms.openlocfilehash: 220c7cc7adc79eae79cfb0c4688d5f24e9923782
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90010007"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96798487"
 ---
 # <a name="bluetooth-universal-windows-driver-model-for-windows-10"></a>Windows 10 的蓝牙通用 Windows 驱动程序模型
 

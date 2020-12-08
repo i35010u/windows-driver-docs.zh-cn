@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ HRTF3D \_ INITIALIZE
 description: KSPROPERTY \_ HRTF3D \_ initialize 属性指定用于初始化 HRTF 算法的参数值。
-ms.assetid: 45c6c80a-caea-4fb2-a8c8-f64130c0f837
 keywords:
 - KSPROPERTY_HRTF3D_INITIALIZE 音频设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9184e61a58a0aafd2c6fb8d451bfd56e09c06b7e
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 23785f76920444a02543522d510f8abaa2ba48f0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102490"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96798863"
 ---
 # <a name="ksproperty_hrtf3d_initialize"></a>KSPROPERTY \_ HRTF3D \_ INITIALIZE
 

@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ AUDIOGFX \_ RENDERTARGETDEVICEID
 description: KSPROPERTY \_ AUDIOGFX \_ RENDERTARGETDEVICEID 属性用于向 GFX 筛选器发出最终音频混合的音频设备即插即用设备 ID。
-ms.assetid: 66251f22-a2e3-453e-985a-74ff18a60e66
 keywords:
 - KSPROPERTY_AUDIOGFX_RENDERTARGETDEVICEID 音频设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 527f654607441a6f3ff70beaec530e294d38d2fd
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 484aa65dc0204f92750c11dff3f4344161a04082
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102610"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96798941"
 ---
 # <a name="ksproperty_audiogfx_rendertargetdeviceid"></a>KSPROPERTY \_ AUDIOGFX \_ RENDERTARGETDEVICEID
 

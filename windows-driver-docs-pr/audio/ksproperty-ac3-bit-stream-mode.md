@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ E-ac3 \_ 位 \_ 流 \_ 模式
 description: KSPROPERTY \_ E-ac3 \_ 位 \_ 流 \_ 模式属性指定位流模式，这是编码为 AC 3 流的音频服务的类型。
-ms.assetid: ee3705f5-f16d-4f5e-a551-bea8986d88b6
 keywords:
 - KSPROPERTY_AC3_BIT_STREAM_MODE 音频设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d401a2eb9a6a4b0fff1e680cfc4b932b463522ef
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: ba62311d8c0e570ad56b2ec74f2b4105673af7b5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102350"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96799105"
 ---
 # <a name="ksproperty_ac3_bit_stream_mode"></a>KSPROPERTY \_ E-ac3 \_ 位 \_ 流 \_ 模式
 

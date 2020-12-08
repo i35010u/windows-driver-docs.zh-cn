@@ -1,26 +1,25 @@
 ---
 title: 自动检测 GPD 的打印机硬盘驱动器
 description: 自动检测 GPD 的打印机硬盘驱动器
-ms.assetid: c3bc415e-fa4d-42d0-9686-3105a588a7ea
 keywords:
 - 自动检测打印机硬盘驱动器 WDK 打印机自动配置
 - GPD 文件 WDK GDL 扩展，自动检测硬盘驱动器
-- 框中自动配置支持 WDK 打印机，自动检测硬盘驱动器
+- 内置自动配置支持 WDK 打印机，自动检测硬盘驱动器
 - 检测打印机硬盘驱动器
-- 硬盘驱动器自动检测 WDK 打印机
+- 硬盘自动检测 WDK 打印机
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 54409b51cd6d1ea1a1aee0a8faf3db8e47d91587
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3383a7c8a1e5a00a99c21f42bbc3a225d9652f2b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63349254"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96797841"
 ---
 # <a name="autodetecting-the-printers-hard-drive-for-gpd"></a>自动检测 GPD 的打印机硬盘驱动器
 
 
-将条目添加到 GPD 文件中任何硬与驱动器有关功能的 GDL 文件。 例如，如果您有取决于是否安装了硬盘驱动器的逐份打印功能，可以使用自动配置来自动确定打印机是否能够逐份打印。 请考虑下面的代码示例从 GPD 文件。
+将条目添加到 GDL 文件，以获取 GPD 文件中任何与硬盘相关的功能。 例如，如果您的逐份打印功能取决于是否安装了硬盘驱动器，则可以使用自动配置功能自动确定打印机是否能够进行分页。 请考虑 GPD 文件中的以下代码示例。
 
 ```GPD
 *% Printer supports collation only if PrinterHardDisk is installed
@@ -91,7 +90,7 @@ ms.locfileid: "63349254"
 }
 ```
 
-若要自动检测是否已安装硬盘，并启用或禁用排序规则相应地，只需将添加到 GDL 文件下面的代码示例。
+若要自动检测是否已安装硬盘，并相应地启用或禁用排序，只需将下面的代码示例添加到 GDL 文件。
 
 ```GDL
 *%The GDL parser merges this code with the corresponding feature construct in the GPD file

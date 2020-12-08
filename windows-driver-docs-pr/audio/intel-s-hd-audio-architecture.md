@@ -1,27 +1,26 @@
 ---
 title: Intel 的 HD 音频体系结构
 description: Intel 的 HD 音频体系结构
-ms.assetid: 86cba795-847c-4f54-93f8-e34ae73dc708
 keywords:
 - HD 音频，体系结构
-- 高清晰音频（HD 音频），体系结构
+- 高清晰音频 (HD 音频) ，体系结构
 - 体系结构 WDK 音频
 - Intel 高质音频规范
 - UAA WDK
 - 通用音频体系结构 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3734d28fdb1581207179cf09c467bd438a092a99
-ms.sourcegitcommit: 98930ca95b9adbb6e5e472f89e91ab084e67e31d
+ms.openlocfilehash: fbbc7ba536ea698b901c04761bc0774fbe9e8d3d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82925577"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96799267"
 ---
 # <a name="intels-hd-audio-architecture"></a>Intel 的 HD 音频体系结构
 
 
-Intel 高质音频规范（请参阅[INTEL HD 音频](https://www.intel.com/content/www/us/en/standards/intel-standards-and-initiatives.html)网站）介绍正在开发作为 Intel AC * 编解码器和控制器规范的后继的音频硬件体系结构。 操作系统的 UAA 驱动程序组件可以为公开 HD 音频注册集的音频解决方案提供服务，并连接到系统的内部总线，无需硬件供应商提供特定于解决方案的驱动程序。
+Intel 高质音频规范 (参见 [INTEL HD 音频](https://www.intel.com/content/www/us/en/standards/intel-standards-and-initiatives.html) 网站) 介绍正在开发的音频硬件体系结构，作为 Intel AC 97 编解码器和控制器规范的后续版本。 操作系统的 UAA 驱动程序组件可以为公开 HD 音频注册集的音频解决方案提供服务，并连接到系统的内部总线，无需硬件供应商提供特定于解决方案的驱动程序。
 
 HD 音频体系结构为数字音频控制器提供了一个统一的编程接口。 通常，今天的音频编解码器符合 AC ' 97 工业标准，数字控制器通过另一种行业标准 AC 链接连接到一个或多个 AC ' 97 编解码器。 尽管这些标准可帮助确保一致地实现编解码器和链接，但目前不存在定义数字音频控制器接口的标准。 供应商倾向于与系统集成的 AC ' 97 数字音频控制器建立非常相似的解决方案，但每个 AC 的97解决方案可能会有所不同，足以需要单独的驱动程序。 HD 音频体系结构旨在通过指定在所有实现中统一的基本寄存器集来消除对特定于解决方案的驱动程序的要求。
 
@@ -29,7 +28,7 @@ HD 音频体系结构为数字音频控制器提供了一个统一的编程接�
 
 -   提供控制器硬件版本信息。
 
--   提供硬件配置信息，包括串行数据输出（SDO）线路和 DMA 引擎的数量。
+-   提供硬件配置信息，包括串行数据 (SDO) 线路和 DMA 引擎的数量。
 
 -   管理 HD 音频链接上可用的总线带宽量。
 
@@ -43,7 +42,7 @@ HD 音频体系结构为数字音频控制器提供了一个统一的编程接�
 
 ![说明 intel hd 音频设备的 uaa 驱动程序体系结构的示意图](images/hdaudio.png)
 
-UAA 高质音频类驱动程序提供到驱动程序上方的操作系统音频堆栈的流接口（上图中未显示）。
+UAA 高质音频类驱动程序提供到驱动程序上操作系统音频堆栈的流接口 (前面的图) 中未显示。
 
 HD 音频总线驱动程序直接访问 HD 音频控制器中的硬件寄存器，并提供 UAA HD 音频类驱动程序或调制解调器驱动程序用来管理 DMA 引擎并将命令发送到编解码器的 DDI。 HD 音频总线驱动程序在 HD 音频链接上代表音频设备处理所有中断、即插即用通知和电源管理事件。
 

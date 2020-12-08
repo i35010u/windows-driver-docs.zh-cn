@@ -1,7 +1,6 @@
 ---
 title: 微型端口适配器挂起检查和重置操作
 description: 微型端口适配器挂起检查和重置操作
-ms.assetid: 53ffc5a9-bcba-4189-8845-73adfcf6816d
 keywords:
 - 小型端口适配器 WDK 网络，检查挂起操作
 - 微型端口适配器 WDK 网络，重置操作
@@ -11,12 +10,12 @@ keywords:
 - 挂起并重置 o
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 01aa5fda72e948e256dc2f3009497e4e9da818b9
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 6307236c05d1c6f08cee24691169831f5b19f43e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89206411"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96798083"
 ---
 # <a name="miniport-adapter-check-for-hang-and-reset-operations"></a>微型端口适配器挂起检查和重置操作
 
@@ -29,13 +28,13 @@ NDIS 调用 NDIS 微型端口驱动程序的 [*MiniportCheckForHangEx*](/windows
 
 默认情况下，NDIS 大约每2秒调用 *MiniportCheckForHangEx* 。 如果 *MiniportCheckForHangEx* 返回 **TRUE**，ndis 将调用 ndis 微型端口驱动程序的 [*MiniportResetEx*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_reset) 函数。 如果默认超时值为2秒太小，则微型端口驱动程序可以在初始化时设置不同的值，如下所示：
 
-1.  将[**NDIS \_ 微型端口 \_ 适配器 \_ 注册 \_ 属性**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_adapter_registration_attributes)结构的**CheckForHangTimeInSeconds**成员设置为一个非零值。
-2.  在[**NdisMSetMiniportAttributes**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsetminiportattributes)函数的*MiniportAttributes*参数中传递[**NDIS \_ 微型端口 \_ 适配器 \_ 注册 \_ 属性**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_adapter_registration_attributes)结构。
+1.  将 [**NDIS \_ 微型端口 \_ 适配器 \_ 注册 \_ 属性**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_adapter_registration_attributes)结构的 **CheckForHangTimeInSeconds** 成员设置为一个非零值。
+2.  在 [**NdisMSetMiniportAttributes**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsetminiportattributes)函数的 *MiniportAttributes* 参数中传递 [**NDIS \_ 微型端口 \_ 适配器 \_ 注册 \_ 属性**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_adapter_registration_attributes)结构。
 
 有关设置驱动程序属性的详细信息，请参阅 [初始化适配器](initializing-a-miniport-adapter.md)。
-**CheckForHangTimeInSeconds**的值应大于微型端口驱动程序的初始化时间。 但是，如果驱动程序的初始化时间超过 **CheckForHangTimeInSeconds** 秒，此超时将过期，导致 NDIS 调用驱动程序的 *MiniportCheckForHangEx* 函数。 如果 *MiniportCheckForHangEx* 返回 **TRUE**，NDIS 将调用驱动程序的 *MiniportResetEx* 函数。 出于此原因，应将驱动程序的 [*MiniportCheckForHangEx*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_check_for_hang) 函数与驱动程序初始化同步，以便当驱动程序未完成初始化时， *MiniportCheckForHangEx* 不会返回 **TRUE** 。
+**CheckForHangTimeInSeconds** 的值应大于微型端口驱动程序的初始化时间。 但是，如果驱动程序的初始化时间超过 **CheckForHangTimeInSeconds** 秒，此超时将过期，导致 NDIS 调用驱动程序的 *MiniportCheckForHangEx* 函数。 如果 *MiniportCheckForHangEx* 返回 **TRUE**，NDIS 将调用驱动程序的 *MiniportResetEx* 函数。 出于此原因，应将驱动程序的 [*MiniportCheckForHangEx*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_check_for_hang) 函数与驱动程序初始化同步，以便当驱动程序未完成初始化时， *MiniportCheckForHangEx* 不会返回 **TRUE** 。
 
-如果微型端口驱动程序未在两次连续调用 *MiniportCheckForHangEx*的情况下完成 OID 请求，NDIS 可以调用驱动程序的 *MiniportResetEx* 函数。 对于某些 OID 请求，如果驱动程序未在四次连续调用*MiniportCheckForHangEx*的情况下完成请求，NDIS 将调用*MiniportResetEx* 。
+如果微型端口驱动程序未在两次连续调用 *MiniportCheckForHangEx* 的情况下完成 OID 请求，NDIS 可以调用驱动程序的 *MiniportResetEx* 函数。 对于某些 OID 请求，如果驱动程序未在四次连续调用 *MiniportCheckForHangEx* 的情况下完成请求，NDIS 将调用 *MiniportResetEx* 。
 
 Reset 操作不会影响 [微型端口适配器操作状态](miniport-adapter-states-and-operations.md)。 此外，当重置操作正在进行时，适配器的状态可能会发生更改。 例如，如果正在执行重置操作，NDIS 可能会调用驱动程序的 [*MiniportPause*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_pause) 函数。 在这种情况下，驱动程序可以按任意顺序完成重置或暂停操作，同时满足每个操作的一般要求。
 

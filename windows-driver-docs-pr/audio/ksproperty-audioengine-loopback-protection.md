@@ -1,9 +1,8 @@
 ---
-title: KSPROPERTY\_AUDIOENGINE\_LOOPBACK\_PROTECTION
-description: KSPROPERTY\_AUDIOENGINE\_环回\_保护属性请求将允许音频驱动程序设置的音频引擎节点的环回保护状态。
-ms.assetid: E798582C-7662-413C-B25C-6A129FDEEE38
+title: KSPROPERTY \_ AUDIOENGINE \_ 环回 \_ 保护
+description: KSPROPERTY \_ AUDIOENGINE \_ 环回 \_ protection 属性请求允许音频驱动程序设置音频引擎节点的环回保护状态。
 keywords:
-- KSPROPERTY_AUDIOENGINE_LOOPBACK_PROTECTION Audio Devices
+- KSPROPERTY_AUDIOENGINE_LOOPBACK_PROTECTION 音频设备
 topic_type:
 - apiref
 api_name:
@@ -14,19 +13,19 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6de57599601cfbb434ab859330d2ab0c587b88a1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 232e7acd13e3ec37b50099332c830af602a121cc
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332798"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96798951"
 ---
-# <a name="kspropertyaudioengineloopbackprotection"></a>KSPROPERTY\_AUDIOENGINE\_LOOPBACK\_PROTECTION
+# <a name="ksproperty_audioengine_loopback_protection"></a>KSPROPERTY \_ AUDIOENGINE \_ 环回 \_ 保护
 
 
-**KSPROPERTY\_AUDIOENGINE\_环回\_保护**属性请求将允许音频驱动程序设置的音频引擎节点的环回保护状态。
+**KSPROPERTY \_ AUDIOENGINE \_ 环回 \_ protection** 属性请求允许音频驱动程序设置音频引擎节点的环回保护状态。
 
-### <a name="span-idusagesummarytablespanspan-idusagesummarytablespanspan-idusagesummarytablespanusage-summary-table"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用率摘要表
+### <a name="span-idusage_summary_tablespanspan-idusage_summary_tablespanspan-idusage_summary_tablespanusage-summary-table"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用情况摘要表
 
 <table>
 <colgroup>
@@ -38,7 +37,7 @@ ms.locfileid: "63332798"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Get</th>
+<th align="left">获取</th>
 <th align="left">设置</th>
 <th align="left">目标</th>
 <th align="left">属性描述符类型</th>
@@ -49,7 +48,7 @@ ms.locfileid: "63332798"
 <tr class="odd">
 <td align="left"><p>否</p></td>
 <td align="left"><p>是</p></td>
-<td align="left"><p>通过 Pin 实例的节点</p></td>
+<td align="left"><p>节点 via 引脚实例</p></td>
 <td align="left"><p>KSP_NODE</p></td>
 <td align="left"><p>ULONG</p></td>
 </tr>
@@ -58,16 +57,16 @@ ms.locfileid: "63332798"
 
  
 
-### <a name="span-idreturnvaluespanspan-idreturnvaluespanspan-idreturnvaluespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>返回值
+### <a name="span-idreturn_valuespanspan-idreturn_valuespanspan-idreturn_valuespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>返回值
 
-KSPROPERTY\_AUDIOENGINE\_环回\_保护属性请求将返回状态\_成功以指示已成功完成。 否则，请求将返回相应的错误状态代码。
+KSPROPERTY \_ AUDIOENGINE \_ 环回 \_ PROTECTION 属性请求返回状态 SUCCESS，指示该请求已 \_ 成功完成。 否则，请求将返回相应的错误状态代码。
 
 <a name="remarks"></a>备注
 -------
 
-与此属性调用相关联的输入的缓冲区填充与枚举值的类型 CONSTRICTOR\_选项。 因此输入的缓冲区被设置为 CONSTRICTOR\_选项\_禁用或 CONSTRICTOR\_选项\_静音。
+与此属性调用关联的输入缓冲区使用类型 CONSTRICTOR 选项的枚举值进行填充 \_ 。 因此，输入缓冲区设置为 CONSTRICTOR 选项 " \_ \_ 禁用" 或 "CONSTRICTOR \_ 选项静音" \_ 。
 
-如果有任何活动流与 CONSTRICTOR\_选项\_静音有效，则此音频输出 KS 环回点击就会发出静默。 如果所有活动流有 CONSTRICTOR\_选项\_，只有禁用起作用 （这是默认状态），然后将环回分流点是否包含有意义的数据。
+如果有任何活动流的 CONSTRICTOR \_ 选项 \_ 静音有效，则此音频输出的 KS 环回将发出无声。 如果所有活动流都 \_ \_ (默认状态为 "禁用"，则此状态为 "") ，然后仅通过环回点击才能包含有意义的数据。
 
 <a name="requirements"></a>要求
 ------------
@@ -79,20 +78,20 @@ KSPROPERTY\_AUDIOENGINE\_环回\_保护属性请求将返回状态\_成功以指
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>Version</p></td>
+<td align="left"><p>版本</p></td>
 <td align="left"><p>Windows 8</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>Header</p></td>
+<td align="left"><p>标头</p></td>
 <td align="left">Ksmedia.h</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[**KSPROPERTY\_AUDIOENGINE**](ksproperty-audioengine.md)
+[**KSPROPERTY \_ AUDIOENGINE**](ksproperty-audioengine.md)
 
  
 

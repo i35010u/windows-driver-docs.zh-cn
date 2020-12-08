@@ -1,15 +1,14 @@
 ---
 title: 创作更新驱动程序包
 description: 本主题提供有关创作更新驱动程序包，并提供示例 INF 文件设置和配置的信息。
-ms.assetid: 9018900A-3670-4C78-9094-1DDAB82847DD
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 12f57e949fb15d315a7329a0af3f5c61a3374da3
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 3e25dfe77a7ed6b226e9a611611268bd00a4f1ed
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89188911"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96798471"
 ---
 # <a name="authoring-an-update-driver-package"></a>创作更新驱动程序包
 
@@ -287,7 +286,7 @@ Modify any strings here [optional]
     Inf2Cat.exe /driver:"." /os:8_x64
     ```
 
-    */Driver*参数指向 INF 所在的位置。 根据固件驱动程序包的目标 OS 更改 */os* 参数的值。 有关详细信息，请参阅 [**Inf2Cat**](../devtest/inf2cat.md)。
+    */Driver* 参数指向 INF 所在的位置。 根据固件驱动程序包的目标 OS 更改 */os* 参数的值。 有关详细信息，请参阅 [**Inf2Cat**](../devtest/inf2cat.md)。
 
     有关安全目录和驱动程序的详细信息，请参阅 [目录文件和数字签名](../install/catalog-files.md) 和 [为 PnP 驱动程序包创建编录文件](../install/creating-a-catalog-file-for-a-pnp-driver-package.md)。
 
@@ -315,7 +314,7 @@ Modify any strings here [optional]
 驱动程序包签名后，可以使用以下机制之一进行安装：
 
 -   **设备管理器**。 对于手动测试，设备管理器提供了一个用于查找固件资源设备并更新其驱动程序以启动固件资源更新的友好界面。
-    1.  按类型查看设备时，在 "固件" 类中找到所需的固件资源设备，或在按连接查看设备时在 "Microsoft UEFI 兼容的系统" 设备下找到所需的固件资源设备。
+    1.  按类型查看设备时，在 "固件" 类中找到所需的固件资源设备，或在按连接查看设备时在 "Microsoft UEFI-Compliant 系统" 设备下找到所需的固件资源设备。
     2.  右键单击固件资源设备，并选择 "更新驱动程序软件 ..."选.
     3.  使用 "浏览计算机以查找驱动程序软件" 选项，查找固件资源设备并将其安装到固件资源设备上。 在将指定的固件资源更新驱动程序包添加到 Windows 驱动程序存储区并启动安装之前，此操作将确保指定的固件资源更新驱动程序包比已在固件资源设备上的任何现有固件资源更新驱动程序包更新。
 -   **pnputil**。 对于自动测试，可以从管理员提升的命令提示符处使用 pnputil 命令行实用工具将固件资源更新驱动程序包导入 Windows 驱动程序存储区，并在当前使用较旧的固件资源版本的任何/所有适用的固件资源设备上启动设备安装。如 DriverVer 当前安装的驱动程序包 INF 文件或缺少第三方提供的驱动程序包 INF 文件的完全一样。 例如，使用以下命令行来添加和安装 X： \\ 固件：

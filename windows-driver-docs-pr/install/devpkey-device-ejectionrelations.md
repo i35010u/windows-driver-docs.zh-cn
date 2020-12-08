@@ -1,7 +1,6 @@
 ---
 title: DEVPKEY_Device_EjectionRelations
 description: DEVPKEY_Device_EjectionRelations
-ms.assetid: 3b3a0d6f-4163-40a8-817d-924f63871e51
 keywords:
 - DEVPKEY_Device_EjectionRelations 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 8ae2c0e1585e88ea27f49f0cfa5b1896ee32a898
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: b62875f596aebf8effa7934319fbafe14e991ed2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90717050"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96798133"
 ---
 # <a name="devpkey_device_ejectionrelations"></a>DEVPKEY_Device_EjectionRelations
 

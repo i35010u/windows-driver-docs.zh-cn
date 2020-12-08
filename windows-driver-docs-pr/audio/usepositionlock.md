@@ -1,20 +1,19 @@
 ---
 title: UsePositionLock
 description: UsePositionLock 注册表值更改 PortCls 序列化其 i/o 的方式。
-ms.assetid: AD5AF873-4129-4C82-B251-0469CF6149E9
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bc98ddda33b937a9d6e2e22daaa82f85ca75b256
-ms.sourcegitcommit: 372464be981a39781c71049126f36891cb5d0cad
+ms.openlocfilehash: 6749f4d6732f5a4c35b2a2a0b88ab499c7d9e0a6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91646059"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96798835"
 ---
 # <a name="usepositionlock"></a>UsePositionLock
 
 
-*UsePositionLock*注册表值更改 PortCls 序列化其 i/o 的方式。 如果你的音频驱动程序受到 portcls 用于序列化的全局设备锁定的故障影响，则启用此设置可能会很有帮助。 请注意，如果启用了 *UsePositionLock* ，则会由音频驱动程序在下面列出的回调与其他属性 (回调之间应用任何序列化（如果需要) ）。 默认情况下不启用此标志。 在打开驱动程序之前，请务必查看驱动程序中是否有任何争用情况。
+*UsePositionLock* 注册表值更改 PortCls 序列化其 i/o 的方式。 如果你的音频驱动程序受到 portcls 用于序列化的全局设备锁定的故障影响，则启用此设置可能会很有帮助。 请注意，如果启用了 *UsePositionLock* ，则会由音频驱动程序在下面列出的回调与其他属性 (回调之间应用任何序列化（如果需要) ）。 默认情况下不启用此标志。 在打开驱动程序之前，请务必查看驱动程序中是否有任何争用情况。
 
 使用以下 INF 设置来启用此行为。
 

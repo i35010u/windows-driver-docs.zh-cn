@@ -1,17 +1,16 @@
 ---
 title: 拆分 ICMP 帧和其他上层协议帧
 description: 拆分 ICMP 帧和其他上层协议帧
-ms.assetid: 693c0b23-f9b5-4a1e-a6c7-5f658a9a636c
 keywords:
 - ICMP 帧拆分 WDK 网络
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b075000e83f42526b843d41a022a7beb1e4c9120
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 093f00ebc52b8ef818cb4161e3d876d12c5ad7cc
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63392895"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96797881"
 ---
 # <a name="splitting-icmp-frames-and-other-upper-layer-protocol-frames"></a>拆分 ICMP 帧和其他上层协议帧
 
@@ -19,9 +18,9 @@ ms.locfileid: "63392895"
 
 
 
-NIC 必须拆分 IP 上限层-协议而不是 TCP 或 UDP （例如，ICMP 帧） 上限层协议标头的开始处的帧，或必须不会拆分此类框架。
+NIC 必须用除 TCP 或 UDP 以外的上层协议来拆分 IP 帧 (例如，在上层协议标头的开头) 的 ICMP 帧，或者不得拆分此类帧。
 
-有关拆分的上限层协议标头的详细信息，请参阅[Upper 层协议标头的开始处拆分帧](splitting-frames-at-the-beginning-of-the-upper-layer-protocol-headers.md)。
+有关在上层协议标头处拆分的详细信息，请参阅在 [上层协议标头的开头拆分帧](splitting-frames-at-the-beginning-of-the-upper-layer-protocol-headers.md)。
 
  
 

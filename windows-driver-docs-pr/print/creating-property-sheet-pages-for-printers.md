@@ -1,19 +1,18 @@
 ---
 title: 为打印机创建属性表页
 description: 为打印机创建属性表页
-ms.assetid: b9b7aa52-39b7-4809-acdf-e72293da37e1
 keywords:
 - 打印机接口 DLL WDK，属性表页
 - 属性表页 WDK 打印，创建
 - 属性表页 WDK 打印，打印机接口 DLL
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d95b6fd1a1178d4d3eb13f9c81daa21785a18da5
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: f9da3fa9a1f956382b0658dd9f9ceab578940aec
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89214931"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96797453"
 ---
 # <a name="creating-property-sheet-pages-for-printers"></a>为打印机创建属性表页
 

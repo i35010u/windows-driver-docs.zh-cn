@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ 音频 \_ PEAKMETER2
 description: Windows 8 引入了 KSPROPERTY \_ AUDIO \_ PEAKMETER2 属性，该属性报告 \_ 自上次重置 peakmeter 节点后 peakmeter 节点上发生的最大音频信号级别 (KSNODETYPE peakmeter) 。
-ms.assetid: 0A59A482-476D-412C-8D15-D821357C355B
 keywords:
 - KSPROPERTY_AUDIO_PEAKMETER2 音频设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 04/21/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 878d9833fe2af92dc41beb70c357dadcdf5e161b
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 76eb2f1b499dbc069bc9da66e797dd61c0c86c37
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102084"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96799005"
 ---
 # <a name="ksproperty_audio_peakmeter2"></a>KSPROPERTY \_ 音频 \_ PEAKMETER2
 
@@ -85,7 +84,7 @@ KSPROPERTY \_ 音频 \_ PEAKMETER2 属性请求返回状态 " \_ 成功" 以指�
 </table>
 
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 KSPROPERTY \_ 音频 \_ PEAKMETER2 属性与 [**KSPROPERTY \_ 音频 \_ PEAKMETER**](ksproperty-audio-peakmeter.md) 属性几乎相同。 \_Windows 8 中引入了 KSPROPERTY AUDIO \_ PEAKMETER2 属性，以提供已改进的 pin 拓扑硬件计数。 旧的 KSPROPERTY \_ AUDIO \_ PEAKMETER 属性已弃用，不应再使用。

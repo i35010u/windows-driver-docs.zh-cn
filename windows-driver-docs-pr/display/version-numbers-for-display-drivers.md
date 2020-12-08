@@ -1,17 +1,16 @@
 ---
 title: 显示驱动程序的版本号
 description: 显示驱动程序的版本号
-ms.assetid: 73d26532-61c1-45d1-a388-7c0befc53487
 keywords:
-- 显示版本号 WDK Windows 2000
+- 版本号 WDK Windows 2000 显示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4dabe47e0f30e73e63831039886eebbcffd33a32
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a521d66a09127b2b9ea062266ee6826383e388dc
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390756"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96798255"
 ---
 # <a name="version-numbers-for-display-drivers"></a>显示驱动程序的版本号
 
@@ -19,11 +18,11 @@ ms.locfileid: "63390756"
 ## <span id="ddk_ensuring_correct_version_numbers_gg"></span><span id="DDK_ENSURING_CORRECT_VERSION_NUMBERS_GG"></span>
 
 
-若要确保最终用户可以使用显示器驱动程序特定的操作系统上和与特定版本的 DirectX，相应的版本号必须应用于该驱动程序。 使用 DirectX，版本号已变得非常重要的设备驱动程序。 如果设备驱动程序随版本错误号或使用格式不正确的版本号，最终用户在安装任何 DirectX 应用程序时将时遇到问题。
+若要确保最终用户能够在特定操作系统上使用显示器驱动程序并使用特定版本的 DirectX，则必须将相应的版本号应用于该驱动程序。 使用 DirectX 时，版本号对于设备驱动程序已变得非常重要。 如果设备驱动程序附带了错误的版本号或使用错误格式的版本号，则在安装任何 DirectX 应用程序时，最终用户会遇到困难。
 
-**请注意** **DriverVer**指令提供了一种方法，若要添加的驱动程序包，其中包括驱动程序文件和 INF 文件本身，到 INF 文件版本信息。 通过使用并更新**DriverVer**指令，驱动程序包可以安全地确定地替换为同一个包的未来版本。 有关此指令的详细信息，请参阅 Windows Driver Kit (WDK) 文档的设备安装部分中的 INF DriverVer 指令。
+**注意****DriverVer** 指令提供一种将驱动程序包的版本信息（包括驱动程序文件和 inf 文件本身）添加到 INF 文件的方法。 通过使用和更新 **DriverVer** 指令，驱动程序包可以安全且最终地替换为同一包的未来版本。 有关此指令的详细信息，请参阅 Windows 驱动程序工具包 (WDK) 文档的 "设备安装" 部分中的 INF DriverVer 指令。
 
-下表提供的适用于 IHV 或 OEM 提供的驱动程序的版本编号的范围与各种版本的 DirectX 的兼容性。
+下表提供了适用于 IHV 或 OEM 提供的驱动程序的版本号的范围，以便与各种版本的 DirectX 兼容。
 
 <table>
 <colgroup>
@@ -43,12 +42,12 @@ ms.locfileid: "63390756"
 <div>
  
 </div>
-经过：</th>
+向上直到：</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>仅限 Windows 98 的驱动程序 (DirectX5)</p></td>
+<td align="left"><p>仅限 Windows 98 的驱动程序 (DirectX5) </p></td>
 <td align="left"><p>4.05.00.0000</p></td>
 <td align="left"><p>4.05.00.9999</p></td>
 </tr>
@@ -78,12 +77,12 @@ ms.locfileid: "63390756"
 <td align="left"><p>4.11.10.9999</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>Windows 98 / 我的 DirectX 7.0 兼容的驱动程序</p></td>
+<td align="left"><p>Windows 98/Me DirectX 7.0 兼容的驱动程序</p></td>
 <td align="left"><p>4.12.10.0000</p></td>
 <td align="left"><p>4.12.10.9999</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>Windows 2000 DirectX 7.0 兼容的驱动程序</p></td>
+<td align="left"><p>Windows 2000 DirectX 7.0-兼容驱动程序</p></td>
 <td align="left"><p>5.12.10.0000</p></td>
 <td align="left"><p>5.12.10.9999</p></td>
 </tr>
@@ -93,12 +92,12 @@ ms.locfileid: "63390756"
 <td align="left"><p>6.12.10.9999</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>Windows 98 / 我的 DirectX 8.0 兼容的驱动程序</p></td>
+<td align="left"><p>Windows 98/Me DirectX 8.0 兼容的驱动程序</p></td>
 <td align="left"><p>4.13.10.0000</p></td>
 <td align="left"><p>4.13.10.9999</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>Windows 2000 DirectX 8.0 兼容的驱动程序</p></td>
+<td align="left"><p>Windows 2000 DirectX 8.0-兼容驱动程序</p></td>
 <td align="left"><p>5.13.10.0000</p></td>
 <td align="left"><p>5.13.10.9999</p></td>
 </tr>
@@ -108,12 +107,12 @@ ms.locfileid: "63390756"
 <td align="left"><p>6.13.10.9999</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>Windows 98 / 我的 DirectX 9.0 兼容的驱动程序</p></td>
+<td align="left"><p>Windows 98/Me DirectX 9.0 兼容的驱动程序</p></td>
 <td align="left"><p>4.14.10.0000</p></td>
 <td align="left"><p>4.14.10.9999</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>Windows 2000 DirectX 9.0 兼容的驱动程序</p></td>
+<td align="left"><p>Windows 2000 DirectX 9.0-兼容驱动程序</p></td>
 <td align="left"><p>5.14.10.0000</p></td>
 <td align="left"><p>5.14.10.9999</p></td>
 </tr>
@@ -127,30 +126,30 @@ ms.locfileid: "63390756"
 
  
 
-**请注意**   DirectX 9.0 DDK 文档所指示的 Windows XP 及更高版本的 DirectX 兼容驱动程序的版本号必须介于 6。*nn*.01.0000 到 6。*nn*.01.9999。 但是，若要支持旧 WHQL 手动测试规范，文档还指示版本号可能从 6。*nn*.10.0000 到 6。*nn*.10.9999。
-由于此旧 WHQL 需求，某些 DirectX 应用程序所需的显示驱动程序版本号*n*。*nn*.10。*nnnn*。 如果显示驱动程序的版本号从切换*n*。*nn*.10。*nnnn*到*n*。*nn*.01。*nnnn* ，以便更准确地遵守 DirectX 9.0 DDK 文档要求，因为它们将解释为早期版本的驱动程序，此类应用程序可能无法运行。
+**注意**   DirectX 9.0 DDK 文档表明 Windows XP 和更高版本的 DirectX 兼容驱动程序的版本号必须介于6之间。*nn*. 01.0000 到6。*nn*. 01.9999。 但是，若要支持旧版的 WHQL 手动测试规范，文档还表明版本号可能为6。*nn*. 10.0000 到6。*nn*. 10.9999。
+由于这种传统的 WHQL 要求，某些 DirectX 应用程序需要显示驱动程序版本号 *n*。*nn*. 10。*nnnn*。 如果显示驱动程序的版本号已从 *n* 切换。*nn*. 10。*nnnn* 到 *n*。*nn*. 01。*nnnn* ，使其更准确地符合 DIRECTX 9.0 DDK 文档要求，此类应用程序可能不会运行，因为它们会将驱动程序解释为早期版本。
 
-因此，显示器驱动程序的版本号应设置为*n*。*nn*.10。*nnnn*。
+因此，显示驱动程序的版本号应设置为 *n*。*nn*. 10。*nnnn*。
 
  
 
-不支持 DirectX 的设备驱动程序，版本号必须大于 4.00.00.0095 且小于 4.02.00.0095。 例如，如果显示设备驱动程序，Windows 3.1 显示驱动程序或仅限 Windows 95 的显示驱动程序版本号为 4.01.00.0000 会是正确的。
+对于不支持 DirectX 的设备驱动程序，版本号必须大于4.00.00.0095 且小于4.02.00.0095。 例如，如果显示设备驱动程序是 Windows 3.1 显示器驱动程序或仅限 Windows 95 的显示驱动程序，则版本号4.01.00.0000 是正确的。
 
-相反，此驱动程序的 4.03.00.0000 版本号会不正确。 仅在 Windows 95 上支持 DirectX 的设备驱动程序应具有等于或大于 4.02.00.0095 且小于 4.04.00.0000 版本号。
+相反，此驱动程序的版本号4.03.00.0000 不正确。 仅在 Windows 95 上支持 DirectX 的设备驱动程序的版本号应等于或大于4.02.00.0095 且小于4.04.00.0000。
 
-### <a name="span-idstoringinternalversionnumbersspanspan-idstoringinternalversionnumbersspanstoring-internal-version-numbers"></a><span id="storing_internal_version_numbers"></span><span id="STORING_INTERNAL_VERSION_NUMBERS"></span>存储内部版本号
+### <a name="span-idstoring_internal_version_numbersspanspan-idstoring_internal_version_numbersspanstoring-internal-version-numbers"></a><span id="storing_internal_version_numbers"></span><span id="STORING_INTERNAL_VERSION_NUMBERS"></span>存储内部版本号
 
-除了 Microsoft 要求来表示版本号的格式，许多供应商具有表示您要存储的产品支持的内部版本号和测试目的。 每个 DirectX 驱动程序有一个存储中重复的版本号： 一个存储为两个 dword 值的二进制版本和一个字符串版本。 不能修改二进制版本。
+除了 Microsoft 在版本号上所需的格式之外，许多供应商已将存储内部版本号的需求表示为产品支持和测试目的。 每个 DirectX 驱动程序都有一个存储在副本中的版本号：一个二进制版本作为2个 Dword 存储，一个字符串版本。 不能修改二进制版本。
 
-但是，可以按以下方式追加字符串版本：
+不过，可以通过以下方式追加字符串版本：
 
-1.  供应商创建的版本号，如本文前面部分中所述。 此版本号"按原样"中使用二进制版本数。
+1.  供应商创建版本号，如本文前面所述。 此版本号在二进制版本号中按 "原样" 使用。
 
-2.  供应商使用此版本号的字符串版本号作为基础。 如果需要，可以将特定于供应商的版本字符串追加到现有的版本编号，以形成完整的字符串版本号。 特定于供应商的字符串和版本号分隔"-"（连字符字符）。
+2.  供应商使用此版本号作为字符串版本号的基础。 如果需要，可将特定于供应商的版本字符串追加到现有版本号，以形成完整的字符串版本号。 特定于供应商的字符串和版本号之间用 "-" (连字符) 。
 
-例如，如果"4.03.00.2100"是 DirectX 符合要求的显示驱动程序的版本号和供应商在内部使用"xx.xx.xx"数字格式，驱动程序中的组合的字符串版本号是"4.03.00.2100-xx.xx.xx"。
+例如，如果 "4.03.00.2100" 是符合 DirectX 标准的显示驱动程序的版本号，并且供应商在内部使用 "xx. xx. xx. xx" 数字格式，则驱动程序中的组合字符串版本号将是 "4.03.00.2100"。
 
-当客户将检查驱动程序的版本号 (通过右键单击文件在 Windows 资源管理器中，选择**属性**，然后单击**版本**选项卡)，Windows 显示的字符串版本。 供应商的产品支持应能够识别的版本号的特定于供应商的部分，如果它存在并采取相应措施。
+当客户通过右键单击 Windows 资源管理器中的文件，选择 " **属性**"，然后单击 " **版本** " 选项卡) 来检查驱动程序的版本号 (，Windows 将显示字符串版本。 供应商的产品支持人员应能够标识版本编号的供应商特定部分（如果有）并采取适当的措施。
 
  
 

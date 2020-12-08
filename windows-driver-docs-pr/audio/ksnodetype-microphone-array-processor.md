@@ -1,7 +1,6 @@
 ---
-title: KSNODETYPE\_麦克风\_数组\_处理器
-description: KSNODETYPE\_麦克风\_数组\_处理器
-ms.assetid: b390247c-25d8-406b-8b2a-006a5a596b73
+title: KSNODETYPE \_ 麦克风 \_ 阵列 \_ 处理器
+description: KSNODETYPE \_ 麦克风 \_ 阵列 \_ 处理器
 keywords:
 - KSNODETYPE_MICROPHONE_ARRAY_PROCESSOR 音频设备
 topic_type:
@@ -12,14 +11,14 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 943884020e4fd2bd634d65ee1ba3d4ef19118bfc
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ae777ce230d10d4d6d649eda0c30ad09b33b7614
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333243"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96799147"
 ---
-# <a name="ksnodetypemicrophonearrayprocessor"></a>KSNODETYPE\_麦克风\_数组\_处理器
+# <a name="ksnodetype_microphone_array_processor"></a>KSNODETYPE \_ 麦克风 \_ 阵列 \_ 处理器
 
 
 ## <span id="ddk_ksnodetype_microphone_array_processor_ks"></span><span id="DDK_KSNODETYPE_MICROPHONE_ARRAY_PROCESSOR_KS"></span>

@@ -1,19 +1,18 @@
 ---
 title: WavePci 微型端口驱动程序
 description: WavePci 微型端口驱动程序
-ms.assetid: 8a166087-d158-4d49-a917-2a5a78b43cb4
 keywords:
 - 音频微型端口驱动程序 WDK，WavePci
 - 微型端口驱动程序 WDK 音频，WavePci
 - WavePci 微型端口驱动程序 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 54e5dbf183d7bfe6adb67cfe980dc985f992714f
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 54df9f20eafa86349cf2ce6fd691554c9c51b0a4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90716624"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96798791"
 ---
 # <a name="wavepci-miniport-driver"></a>WavePci 微型端口驱动程序
 
@@ -21,7 +20,7 @@ ms.locfileid: "90716624"
 ## <span id="wavepci_miniport_driver"></span><span id="WAVEPCI_MINIPORT_DRIVER"></span>
 
 
-**重要提示**   不再建议使用 WavePci，而是改用 WaverRT。
+**重要提示**  不再建议使用 WavePci，而是改用 WaverRT。
 
  
 

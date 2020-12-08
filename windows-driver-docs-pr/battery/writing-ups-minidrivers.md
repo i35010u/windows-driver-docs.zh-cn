@@ -1,7 +1,6 @@
 ---
 title: 编写 UPS 微型驱动程序
 description: 编写 UPS 微型驱动程序
-ms.assetid: 85142cbf-cb3b-4ccf-a005-8fcb7a7ad12b
 keywords:
 - UPS 微型驱动程序 WDK
 - 简单的信号 WDK
@@ -12,12 +11,12 @@ keywords:
 - 不间断电源 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d085a24ff19904e17bbf65528a8ca9b70ce7a013
-ms.sourcegitcommit: 7a7e61b4147a4aa86bf820fd0b0c7681fe17e544
+ms.openlocfilehash: eb3f8fae9bd8c3e4aa098fa425e7a0b19fa7195d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89056869"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96798635"
 ---
 # <a name="writing-ups-minidrivers"></a>编写 UPS 微型驱动程序
 
@@ -47,7 +46,7 @@ ms.locfileid: "89056869"
 
 [安装 UPS 微型驱动程序](installing-ups-minidrivers.md)
 
-**注意**   Windows Vista 和更高版本的 Windows 不支持连接到 COM 端口的 UPS 设备。 这些 Windows 版本继续支持通过 [USB](../index.yml)连接的 UPS 设备。
+**注意**   Windows Vista 和更高版本的 Windows 不支持连接到 COM 端口的 UPS 设备。 这些 Windows 版本继续支持通过 [USB](../index.yml)连接的 UPS 设备。
 
  
 

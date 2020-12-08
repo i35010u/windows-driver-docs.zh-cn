@@ -1,19 +1,18 @@
 ---
 title: 蓝牙打印
 description: 蓝牙打印
-ms.assetid: 6c40c142-9b52-4878-a84b-82d411086304
 keywords:
 - 打印机驱动程序 WDK，蓝牙
 - 蓝牙 WDK，打印
 - 无线连接 WDK 打印机
 ms.date: 06/02/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: d8095f96055a26884083589b21e96253a7334d4e
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 3ca3b6af4dfb35659f42f16de68cb6315af4a31f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89208447"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96797775"
 ---
 # <a name="bluetooth-printing"></a>蓝牙打印
 

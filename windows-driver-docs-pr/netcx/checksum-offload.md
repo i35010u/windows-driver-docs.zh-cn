@@ -1,17 +1,16 @@
 ---
 title: 校验和卸载
 description: NetAdapterCx 中的校验和卸载使用情况、规则和示例
-ms.assetid: ''
 keywords:
 - WDF 网络适配器类扩展卸载，NetAdapterCx 硬件卸载，NetAdapterCx 卸载，Get-netadapter 卸载，校验和卸载
 ms.date: 08/10/2020
 ms.custom: Fe
-ms.openlocfilehash: b0c69e3f0088b7c41ae254eddc7f14c6962ada3e
-ms.sourcegitcommit: ea3215e9d5afe073ed6d01fb6dddf31d95ef3b63
+ms.openlocfilehash: 7722001157cd30df38dd062b052c2f9aaf588472
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94673771"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96798095"
 ---
 # <a name="checksum-offload"></a>校验和卸载
 

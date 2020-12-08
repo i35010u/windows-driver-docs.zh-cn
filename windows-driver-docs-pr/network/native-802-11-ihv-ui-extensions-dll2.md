@@ -1,25 +1,24 @@
 ---
-title: 本机 802.11 IHV UI 扩展 DLL 主题
-description: 本机 802.11 IHV UI 扩展 DLL 主题
-ms.assetid: f2015385-a9ee-42a2-a2fb-b4316bdbf368
+title: “本机 802.11 IHV UI 扩展 DLL”主题
+description: “本机 802.11 IHV UI 扩展 DLL”主题
 keywords:
-- IHV 扩展 WDK 本机 802.11, UI DLL
+- IHV 扩展 WDK 本机802.11，UI DLL
 - IHV UI 扩展 DLL WDK 本机802.11
-- 本机 802.11 IHV 扩展 WDK, UI DLL
+- 本机 802.11 IHV 扩展 WDK，UI DLL
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c4e54fd3df7da7678bf0a93235ed791733ea97e3
-ms.sourcegitcommit: fec48fa5342d9cd4cd5ccc16aaa06e7c3d730112
+ms.openlocfilehash: 54d89f8aa9d7e0c58f191d4b0c244dcb44b40035
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/17/2019
-ms.locfileid: "69565129"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96798055"
 ---
-# <a name="native-80211-ihv-ui-extensions-dll-topics"></a>本机 802.11 IHV UI 扩展 DLL 主题 
+# <a name="native-80211-ihv-ui-extensions-dll-topics"></a>“本机 802.11 IHV UI 扩展 DLL”主题 
 
-本部分讨论本机 802.11 IHV UI 扩展 DLL 的体系结构, 并提供以下主题:
+本部分讨论本机 802.11 IHV UI 扩展 DLL 的体系结构，并提供以下主题：
 
-[Windows SDK 引用](windows-sdk-references.md)
+[Windows SDK 参考](windows-sdk-references.md)
 
 [本机 802.11 IHV UI 扩展 DLL 概述](native-802-11-ihv-ui-extensions-dll-overview.md)
 
@@ -29,11 +28,11 @@ ms.locfileid: "69565129"
 
 [扩展无线网络适配器的高级属性](extending-the-advanced-properties-for-wireless-network-adapters.md)
 
-[处理显示自定义 UI 的请求](handling-requests-for-the-display-of-a-custom-ui.md)
+[处理自定义 UI 显示请求](handling-requests-for-the-display-of-a-custom-ui.md)
 
- 
+ 
 
- 
+ 
 
 
 

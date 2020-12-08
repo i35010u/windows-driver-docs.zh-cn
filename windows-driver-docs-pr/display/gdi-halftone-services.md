@@ -1,7 +1,6 @@
 ---
 title: GDI 半色调服务
 description: GDI 半色调服务
-ms.assetid: 21112cfc-f7c4-4cce-a9bb-c68d918f5678
 keywords:
 - GDI WDK Windows 2000 显示，半色调
 - 图形驱动程序 WDK Windows 2000 显示，半色调
@@ -9,12 +8,12 @@ keywords:
 - 半色调 WDK GDI
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 27c7364d7bf65efc3b7140a7c21640e28ebdc755
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 3c66d1ba0333cdc85d7e00c00660d4972dc1ea4e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90716472"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96798313"
 ---
 # <a name="gdi-halftone-services"></a>GDI 半色调服务
 
@@ -32,7 +31,7 @@ GDI 半色调支持包括下表中列出的服务。
 <thead>
 <tr class="header">
 <th align="left">函数</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>

@@ -1,7 +1,6 @@
 ---
 title: 安装蓝牙设备
 description: 安装蓝牙设备
-ms.assetid: 2bf2b2df-260c-42a5-9ee9-6db91f304036
 keywords:
 - 蓝牙 WDK，蓝牙驱动程序安装
 - 客户端配置文件驱动程序 WDK 蓝牙
@@ -9,12 +8,12 @@ keywords:
 - INF 文件 WDK 蓝牙
 ms.date: 05/29/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 0c3523331841d24e6d33c7caa6c7ff941b22077f
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 54f4ffcae404e4f944661bdff699fc7ce7ed0030
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90101764"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96798529"
 ---
 # <a name="installing-a-bluetooth-device"></a>安装蓝牙设备
 
@@ -23,7 +22,7 @@ ms.locfileid: "90101764"
 
 蓝牙配置文件驱动程序有两种安装类型：
 
-- 远程设备的**客户端安装**，远程设备在该远程设备上公布其服务并且计算机连接到它。 示例包括：鼠标设备、键盘和打印机。
+- 远程设备的 **客户端安装**，远程设备在该远程设备上公布其服务并且计算机连接到它。 示例包括：鼠标设备、键盘和打印机。
 
 - **服务器端安装** ，其中计算机公布服务和远程设备可以连接到计算机以使用这些服务。 例如，供应商可能会创作服务器端安装，以使 PDA 能够打印到连接到计算机的打印机。
 

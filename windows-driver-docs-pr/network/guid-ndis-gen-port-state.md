@@ -1,17 +1,16 @@
 ---
 title: GUID_NDIS_GEN_PORT_STATE
 description: 本主题描述了 NDIS WMI 接口的 GUID_NDIS_GEN_PORT_STATE GUID。
-ms.assetid: 0632843e-ea79-4ada-919e-8ab7d94a4421
 keywords:
 - GUID_NDIS_GEN_PORT_STATE，WDK GUID_NDIS_GEN_PORT_STATE 网络驱动程序
 ms.date: 11/22/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8851ac5161ff52a663cb79e8530f01a72e988abf
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: c6eb3a1bc665350fd63fdcf8324e7af47925fca3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89207557"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96799397"
 ---
 # <a name="guid_ndis_gen_port_state"></a>GUID_NDIS_GEN_PORT_STATE
 

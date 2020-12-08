@@ -1,7 +1,6 @@
 ---
 title: 'IRP_MJ_INTERNAL_DEVICE_CONTROL (IFS) '
 description: IRP\_MJ\_INTERNAL\_DEVICE\_CONTROL
-ms.assetid: a60325d5-993f-4505-bded-2c2be9782492
 keywords:
 - IRP_MJ_INTERNAL_DEVICE_CONTROL 可安装的文件系统驱动程序
 topic_type:
@@ -12,12 +11,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 615169905c0da782e875ee5b80b68059dcd53e87
-ms.sourcegitcommit: 9b4760aae390b36dbdf9e0dd729a4a643c3f7831
+ms.openlocfilehash: 8fd4b9bcc30f8873414161a41d3b01f82734f169
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90565257"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96798181"
 ---
 # <a name="irp_mj_internal_device_control-ifs"></a>\_ (IFS) 的 IRP MJ \_ 内部 \_ 设备 \_ 控制
 
@@ -42,7 +41,7 @@ IRP \_ MJ \_ 内部 \_ 设备 \_ 控制请求由 i/o 管理器和其他操作系
 ## <a name="parameters"></a>参数
 
 
-文件系统或筛选器驱动程序与给定的 IRP 一起调用[**IoGetCurrentIrpStackLocation**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetcurrentirpstacklocation) ，以获取指向其自己的*IrpSp*[**堆栈位置**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_stack_location)的指针，如以下列表所示。  (IRP 显示为 *irp*。 ) 驱动程序可以使用在处理设备控制请求中的以下 irp 成员和 irp 堆栈位置设置的信息：
+文件系统或筛选器驱动程序与给定的 IRP 一起调用 [**IoGetCurrentIrpStackLocation**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetcurrentirpstacklocation) ，以获取指向其自己的 *IrpSp*[**堆栈位置**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_stack_location)的指针，如以下列表所示。  (IRP 显示为 *irp*。 ) 驱动程序可以使用在处理设备控制请求中的以下 irp 成员和 irp 堆栈位置设置的信息：
 
 <a href="" id="deviceobject"></a>*DeviceObject*  
 指向目标设备对象的指针。
@@ -51,7 +50,7 @@ IRP \_ MJ \_ 内部 \_ 设备 \_ 控制请求由 i/o 管理器和其他操作系
 指向系统提供的输入缓冲区的指针，该缓冲区将传递给目标设备的设备驱动程序。 用于方法 \_ 缓冲或方法 \_ 直接 i/o。 此参数是否是必需的取决于特定的 i/o 控制代码。
 
 <a href="" id="irp--iostatus"></a>*Irp- &gt; IoStatus*  
-指向 [**IO \_ 状态 \_ 块**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_status_block) 结构的指针，该结构接收最终完成状态和有关请求的操作的信息。 有关详细信息，请参阅[**ZwDeviceIoControlFile**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-zwdeviceiocontrolfile)的*IoStatusBlock*参数说明。
+指向 [**IO \_ 状态 \_ 块**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_status_block) 结构的指针，该结构接收最终完成状态和有关请求的操作的信息。 有关详细信息，请参阅 [**ZwDeviceIoControlFile**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-zwdeviceiocontrolfile)的 *IoStatusBlock* 参数说明。
 
 <a href="" id="irp--mdladdress"></a>*Irp- &gt; MdlAddress*  
 用于描述要传递到目标设备的设备驱动程序的输出缓冲区 (MDL) 的内存描述符列表的地址。 用于方法 \_ 直接 i/o。 此参数是否是必需的取决于特定的 i/o 控制代码。
@@ -63,23 +62,23 @@ IRP \_ MJ \_ 内部 \_ 设备 \_ 控制请求由 i/o 管理器和其他操作系
 一个指针，指向要传递给目标设备的设备驱动程序的调用方提供的输出缓冲区。 此参数用于 \_ 缓存方法或非方法方法 \_ 。 此参数是可选的还是必需的取决于特定的 i/o 控制代码。
 
 <a href="" id="irpsp--fileobject"></a>*IrpSp- &gt; FileObject*  
-指向与 *DeviceObject*关联的文件对象的指针。
+指向与 *DeviceObject* 关联的文件对象的指针。
 
-*IrpSp- &gt; FileObject*参数包含指向**RelatedFileObject**字段的指针，该字段也是文件 \_ 对象结构。 文件对象结构的 **RelatedFileObject** 字段在 \_ 处理 IRP \_ MJ \_ 内部设备控件期间无效 \_ \_ ，不应使用。
+*IrpSp- &gt; FileObject* 参数包含指向 **RelatedFileObject** 字段的指针，该字段也是文件 \_ 对象结构。 文件对象结构的 **RelatedFileObject** 字段在 \_ 处理 IRP \_ MJ \_ 内部设备控件期间无效 \_ \_ ，不应使用。
 
 <a href="" id="irpsp--majorfunction"></a>*IrpSp- &gt; MajorFunction*  
 指定 IRP \_ MJ \_ 内部 \_ 设备 \_ 控制。
 
 <a href="" id="irpsp--parameters-deviceiocontrol-inputbufferlength"></a>*IrpSp- &gt; DeviceIoControl. InputBufferLength*  
-Irp 所指向的缓冲区大小（以字节为单位） * &gt;AssociatedIrp.SystemBuffer*。
+Irp 所指向的缓冲区大小（以字节为单位） *&gt;AssociatedIrp.SystemBuffer*。
 
 <a href="" id="irpsp--parameters-deviceiocontrol-iocontrolcode"></a>*IrpSp- &gt; DeviceIoControl. IoControlCode*  
 要传递给目标设备的设备驱动程序的 IOCTL 函数代码。
 
-有关 IOCTL 请求的详细信息，请参阅 Microsoft Windows SDK 文档中的使用*内核模式体系结构指南*中的[i/o 控制代码](../kernel/introduction-to-i-o-control-codes.md)和 "设备输入和输出控制代码"。
+有关 IOCTL 请求的详细信息，请参阅 Microsoft Windows SDK 文档中的使用 *内核模式体系结构指南* 中的 [i/o 控制代码](../kernel/introduction-to-i-o-control-codes.md)和 "设备输入和输出控制代码"。
 
 <a href="" id="irpsp--parameters-deviceiocontrol-outputbufferlength"></a>*IrpSp- &gt; DeviceIoControl. OutputBufferLength*  
-Irp 所指向的缓冲区大小（以字节为单位）。 * &gt; UserBuffer*。
+Irp 所指向的缓冲区大小（以字节为单位）。 *&gt; UserBuffer*。
 
 <a href="" id="irpsp--parameters-deviceiocontrol-type3inputbuffer"></a>*IrpSp- &gt; DeviceIoControl. Type3InputBuffer*  
 使用方法的内核模式请求的输入缓冲区 \_ 均不是。
@@ -101,7 +100,7 @@ Irp 所指向的缓冲区大小（以字节为单位）。 * &gt; UserBuffer*。
 
 [**IRP \_ MJ \_ 设备 \_ 控制**](irp-mj-device-control.md)
 
-[**IRP \_ MJ \_ 内部 \_ 设备 \_ 控制 (WDK 内核参考) **](../kernel/irp-mj-internal-device-control.md)
+[**IRP \_ MJ \_ 内部 \_ 设备 \_ 控制 (WDK 内核参考)**](../kernel/irp-mj-internal-device-control.md)
 
 [使用 I/O 控制代码](../kernel/introduction-to-i-o-control-codes.md)
 

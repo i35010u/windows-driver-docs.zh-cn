@@ -1,36 +1,35 @@
 ---
 title: 组件
 description: 组件
-ms.assetid: 15cc741e-5919-4d71-802b-519494827722
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4481b65a74fa282f69a39f3b4bec63945111490b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4bd81e2540ba1fb23fd763330c3f9ea481faa517
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63353259"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96797619"
 ---
 # <a name="component"></a>组件
 
 
-架构路径：\\Printer.Status.Summary:Detailed。事件\#\#\#。组件
+架构路径： \\ Printer. Status。 Summary：详细信息。事件 \# \# \# 。组件
 
-数据类型： 属性
+数据类型：属性
 
-说明： 此属性包含说明的一部分打印设备受影响的当前事件的值项。
+说明：此属性包含的值项描述了当前事件所影响的打印设备部分。
 
-组件属性包含两个对子值：组和名称。
+组件属性包含两个子值：组和名称。
 
 ### <a name="span-idgroupspanspan-idgroupspan-group"></a><span id="group"></span><span id="GROUP"></span> 组
 
-架构路径：\\Printer.Status.Summary:Detailed。事件\#\#\#。组件组：
+架构路径： \\ Printer. Status。 Summary：详细信息。事件 \# \# \# 。组件：组
 
-节点类型： 值
+节点类型：值
 
-数据类型： BIDI\_字符串
+数据类型：双向 \_ 字符串
 
-说明： 受影响的当前事件的组件组。 组合的组件组和组件名称 （介绍下一步） 以确定问题的确切位置。 以下列表包含组的典型值：
+说明：受当前事件影响的组件组。 下一) 中描述的组件组和组件名称 (组合在一起，以确定问题的确切位置。 以下列表包含组的典型值：
 
 InputBin
 
@@ -42,15 +41,15 @@ OutputBins
 
 ### <a name="span-idnamespanspan-idnamespan-name"></a><span id="name"></span><span id="NAME"></span> 名称
 
-架构路径：\\Printer.Status.Detailed.Event\#\#\#。组件名称：
+架构路径： \\ Printer. Status。 \# \# \#组件：名称
 
-节点类型： 值
+节点类型：值
 
-数据类型： BIDI\_字符串
+数据类型：双向 \_ 字符串
 
-说明： 受影响的当前事件的各个组件的名称。 组件名称和 （如上所示） 的组件组组合以确定问题的确切位置。
+说明：受当前事件影响的单个组件的名称。 组合上述) 的组件名称和组件组 (，以确定问题的确切位置。
 
-典型值为*名称*如下所示：
+*Name* 的典型值如下所示：
 
 Tray1
 
@@ -60,9 +59,9 @@ LargeCapacityBin
 
 OutputBin1
 
-Toner.Black
+粉黑色
 
-Ink.Cyan
+蓝绿色
 
  
 

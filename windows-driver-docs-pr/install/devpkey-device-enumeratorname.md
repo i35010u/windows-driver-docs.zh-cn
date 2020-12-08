@@ -1,7 +1,6 @@
 ---
 title: DEVPKEY_Device_EnumeratorName
 description: DEVPKEY_Device_EnumeratorName
-ms.assetid: 513b298d-31a1-4791-a434-620a0a2edac0
 keywords:
 - DEVPKEY_Device_EnumeratorName 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 3dd3439daa7570b60f21941efafbfc868ac7df73
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: c05b84ef7445b752aaa9f13f37fb7405fee638d4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90717048"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96798131"
 ---
 # <a name="devpkey_device_enumeratorname"></a>DEVPKEY_Device_EnumeratorName
 

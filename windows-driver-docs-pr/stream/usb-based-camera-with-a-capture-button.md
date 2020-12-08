@@ -1,7 +1,6 @@
 ---
 title: 带捕获按钮的基于 USB 的摄像机
 description: 带有 "捕获" 按钮的基于 USB 的相机
-ms.assetid: abbd824c-1ade-4dbc-8807-e558c444a3ea
 keywords:
 - 筛选器关系图配置 WDK 视频捕获、带有捕获按钮的基于 USB 的摄像机
 - 仍锁定 WDK 视频捕获
@@ -12,12 +11,12 @@ keywords:
 - 照相机 WDK 视频捕获
 ms.date: 06/19/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: cdf786c8c33a1203f0491853f9617b853af3a883
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 542ed94ea80d3e7ef7e61c80b768a6a173bf8cc3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89191789"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96799263"
 ---
 # <a name="usb-based-camera-with-a-capture-button"></a>带有 "捕获" 按钮的基于 USB 的相机
 

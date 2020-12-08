@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ 音频 \_ 低音 \_
 description: KSPROPERTY \_ 音频 \_ 低音 \_ 增强属性启用和禁用低音节点中通道的低音提升 (KSNODETYPE \_ 音) 。
-ms.assetid: aa54b88b-e251-4d16-9ced-842fec569914
 keywords:
 - KSPROPERTY_AUDIO_BASS_BOOST 音频设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 94e8238cc0086ac4576e27b437ebf647b5df2ea6
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 3bc347322ef2a249ed333bc4b7bdc98d0f91a5ed
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102150"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96799075"
 ---
 # <a name="ksproperty_audio_bass_boost"></a>KSPROPERTY \_ 音频 \_ 低音 \_
 

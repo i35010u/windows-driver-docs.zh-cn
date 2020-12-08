@@ -1,15 +1,14 @@
 ---
 title: 实现硬件卸载的 APO 效果
 description: 音频处理对象的硬件卸载 (于) 可提供可能的性能增强功能，还可节省电力。
-ms.assetid: 159DFFD2-2434-4EDC-A83C-455BA80F74C6
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fcac15a5298309b30ecfd4a0cdf8140dfca1153e
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: a2e4742e476a66f6a08e9e87f46431ab2a8ba08a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90714792"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96799253"
 ---
 # <a name="hardware-offloaded-apo-effects"></a>硬件卸载 APO 效果
 

@@ -1,15 +1,14 @@
 ---
 title: ACPI 命名空间层次结构
 description: ACPI 命名空间层次结构必须准确地对平台的硬件拓扑进行建模，从处理器的系统总线开始 ( \ 0034; \\_SB \ 0034; ) 。
-ms.assetid: 14B5F787-65B1-4BC3-90CD-D4AD1C8044D1
 ms.date: 05/15/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: e492a96e9522f98385a4fcf3d3256016a5101432
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 729048c08d90fb3687cc4f72b2fb065191cb6472
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89186041"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96798477"
 ---
 # <a name="acpi-namespace-hierarchy"></a>ACPI 命名空间层次结构
 
@@ -27,7 +26,7 @@ ACPI 命名空间层次结构必须精确地模拟平台的硬件拓扑，从处
 
     但是，在某些情况下，必须在命名空间中的父控制器下包括此类设备。 例如，对于嵌入的 USB HSIC 或 SDIO 设备，这是必需的，其中特定于平台的 (非标准) 控件 (例如，电源开关、GPIO 或 SPB 连接等) 作为系统设计的一部分与设备相关联。 在这种情况下，标准的父总线驱动程序会枚举设备，但 [WINDOWS ACPI 驱动程序](../kernel/acpi-driver.md)Acpi.sys 将作为筛选器加载到设备堆栈中，以根据需要为代表总线驱动程序的非标准控件调用控件方法。
 
--   任何 "专用" 总线或设备 (例如，专用于使用一个函数驱动 (程序的 I2S) 例如，音频驱动程序) 无需显示在命名空间中。 但是，在这种情况下，设备使用的任何系统资源必须出现在命名空间中的函数设备资源列表中。 有关详细信息，请参阅[设备管理命名空间对象](device-management-namespace-objects.md)主题中的**设备配置对象**部分。
+-   任何 "专用" 总线或设备 (例如，专用于使用一个函数驱动 (程序的 I2S) 例如，音频驱动程序) 无需显示在命名空间中。 但是，在这种情况下，设备使用的任何系统资源必须出现在命名空间中的函数设备资源列表中。 有关详细信息，请参阅 [设备管理命名空间对象](device-management-namespace-objects.md)主题中的 **设备配置对象** 部分。
 
 ACPI 定义了许多标准命名空间对象和方法，但实现者可以在需要时定义新的命名空间对象和方法。 ACPI 定义的对象和方法用于常见的操作系统功能，如下所示：
 

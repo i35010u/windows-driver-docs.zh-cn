@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ 音频 \_ 筛选器 \_ 状态
 description: KSPROPERTY \_ 音频 \_ 筛选器 \_ 状态属性用于查询 GFX 筛选器，以获取它支持的属性集的列表。 列表以属性集 Guid 数组的形式进行检索。
-ms.assetid: e0a3bce7-d321-445c-866c-78502b5ea887
 keywords:
 - KSPROPERTY_AUDIO_FILTER_STATE 音频设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 682d32db80c86a7f94fd6962f71f780a811a775b
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 45d55c257ab57b08864111d93fc3fd3d383781c0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102110"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96799037"
 ---
 # <a name="ksproperty_audio_filter_state"></a>KSPROPERTY \_ 音频 \_ 筛选器 \_ 状态
 
@@ -67,7 +66,7 @@ KSPROPERTY \_ 音频 \_ 筛选器 \_ 状态属性用于查询 GFX 筛选器，�
 
 KSPROPERTY \_ 音频 \_ 筛选器 \_ 状态属性请求返回状态 " \_ 成功" 以指示已成功完成。 否则，请求将返回相应的错误状态代码。
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 此属性返回的 Guid 数组的大小取决于筛选器支持的属性集数。 在检索该数组之前，客户端首先会通过使用长度为零的属性值缓冲区发送微型端口驱动程序的属性处理程序 KSPROPERTY 的 \_ 音频 \_ 筛选器 \_ 状态 get 属性请求，来查询属性的 GUID 数组的大小。 处理程序通过返回所需的缓冲区大小和状态代码状态缓冲区溢出来做出响应 \_ \_ 。 有关详细信息，请参阅 [音频属性处理程序](./audio-property-handlers.md)。

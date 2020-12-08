@@ -1,19 +1,18 @@
 ---
 title: 调试 Windows 安装程序和 OS 加载程序
 description: 调试 Windows 安装程序和 OS 加载程序
-ms.assetid: 5195b1c5-2478-4faf-8f1e-ed5341d39ac4
 keywords:
 - Windows 安装程序调试
 - OS 加载程序调试
 - 安装程序调试
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4cbbdccf790efdc31f08626a259a17ad68427a79
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 2f32d3186f5c0012904d0a4fdc25863674f693ae
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89216732"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96798385"
 ---
 # <a name="debugging-windows-setup-and-the-os-loader"></a>调试 Windows 安装程序和 OS 加载程序
 

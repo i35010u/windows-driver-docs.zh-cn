@@ -1,7 +1,6 @@
 ---
 title: 转换打印监视器以便与群集打印服务器配合使用
 description: 转换打印监视器以便与群集打印服务器配合使用
-ms.assetid: 6b374d61-bb2b-42a4-9609-3cde9b82bb2b
 keywords:
 - 打印监视器 WDK、群集打印服务器
 - 群集打印服务器 WDK
@@ -9,12 +8,12 @@ keywords:
 - 转换群集打印服务器的打印监视器
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 30bb321cd561e7e4e48fe567de6eaaaae83f12fe
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 163af4489d79e182abfb1f5a738951f19e4c8bb5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89217805"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96797507"
 ---
 # <a name="converting-print-monitors-for-use-with-clustered-print-servers"></a>转换打印监视器以便与群集打印服务器配合使用
 
@@ -36,7 +35,7 @@ ms.locfileid: "89217805"
 
 未转换的打印监视器只能在非群集环境中使用。 它们不能与群集服务器一起使用。
 
-在运行 Windows 2000 或更高版本的计算机上运行 Windows 或更高版本的群集节点上运行的打印机端口监视器已建立连接 (在网络上或在本地) ，端口监视器应在合理的时间内由后台处理程序发出的调用返回。  (后台处理程序资源超时的默认值为180秒。 有关详细信息，请参阅 [设置端口超时值](setting-port-time-out-values.md) 。 ) 
+在运行 Windows 2000 或更高版本的计算机上运行 Windows 或更高版本的群集节点上运行的打印机端口监视器已建立连接 (在网络上或在本地) ，端口监视器应在合理的时间内由后台处理程序发出的调用返回。  (后台处理程序资源超时的默认值为180秒。 有关详细信息，请参阅 [设置端口 Time-Out 值](setting-port-time-out-values.md) 。 ) 
 
 当从一个群集节点故障转移到另一个群集节点发生故障时，后台处理程序必须等待所有当前打印作业完成或失败。 如果挂起的打印作业在端口监视器中保留的时间超过了后台处理程序资源超时时间，则后台处理程序可能会以不完整状态恢复联机状态，同时临时丢失打印机。 这可能会影响连接到缺少打印机的用户。
 

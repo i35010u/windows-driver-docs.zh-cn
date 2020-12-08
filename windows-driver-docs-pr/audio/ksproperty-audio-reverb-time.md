@@ -1,7 +1,6 @@
 ---
-title: KSPROPERTY\_AUDIO\_REVERB\_TIME
-description: KSPROPERTY\_音频\_混响\_时间属性指定混响时间。 这是混响节点的属性 (KSNODETYPE\_混响)。
-ms.assetid: ADB53E00-4E0F-4E13-92C7-5ACB1A0B546E
+title: KSPROPERTY \_ 音频 \_ 回音 \_ 时间
+description: KSPROPERTY \_ 音频 \_ 回音 \_ 时间属性指定 reverberation 时间。 这是回音节点 (KSNODETYPE 回音) 的属性 \_ 。
 keywords:
 - KSPROPERTY_AUDIO_REVERB_TIME 音频设备
 topic_type:
@@ -14,19 +13,19 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 617fbed6b1e061f02a806d9ce96185306030c423
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0e90a50cea8f6fc06458584fa4f034e0632d5800
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332951"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96798991"
 ---
-# <a name="kspropertyaudioreverbtime"></a>KSPROPERTY\_AUDIO\_REVERB\_TIME
+# <a name="ksproperty_audio_reverb_time"></a>KSPROPERTY \_ 音频 \_ 回音 \_ 时间
 
 
-KSPROPERTY\_音频\_混响\_时间属性指定混响时间。 这是混响节点的属性 ([**KSNODETYPE\_混响**](ksnodetype-reverb.md))。
+KSPROPERTY \_ 音频 \_ 回音 \_ 时间属性指定 reverberation 时间。 这是回音节点 ([**KSNODETYPE \_ 回音**](ksnodetype-reverb.md)) 的属性。
 
-### <a name="span-idusagesummarytablespanspan-idusagesummarytablespanspan-idusagesummarytablespanusage-summary-table"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用率摘要表
+### <a name="span-idusage_summary_tablespanspan-idusage_summary_tablespanspan-idusage_summary_tablespanusage-summary-table"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用情况摘要表
 
 <table>
 <colgroup>
@@ -38,7 +37,7 @@ KSPROPERTY\_音频\_混响\_时间属性指定混响时间。 这是混响节点
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Get</th>
+<th align="left">获取</th>
 <th align="left">设置</th>
 <th align="left">目标</th>
 <th align="left">属性描述符类型</th>
@@ -49,7 +48,7 @@ KSPROPERTY\_音频\_混响\_时间属性指定混响时间。 这是混响节点
 <tr class="odd">
 <td align="left"><p>是</p></td>
 <td align="left"><p>是</p></td>
-<td align="left"><p>Filter</p></td>
+<td align="left"><p>筛选器</p></td>
 <td align="left"><p>KSNODEPROPERTY</p></td>
 <td align="left"><p>ULONG</p></td>
 </tr>
@@ -58,14 +57,14 @@ KSPROPERTY\_音频\_混响\_时间属性指定混响时间。 这是混响节点
 
  
 
-属性的值为类型为 ULONG，并指定将为其继续混响的秒数。 以秒为单位和值的范围可以介于 0 1/256th 增量 255.9961 通过。 若要解决此问题，属性值应表示为定点 16.16 值，满足以下条件：
+属性值的类型为 ULONG，它指定 reverberation 将继续执行的秒数。 它以秒为单位表示，值的范围是从0到255.9961，以 1/256th 为增量。 为此，应将属性值表示为固定点16.16 值，其中以下为 true：
 
--   值 0x00010000 表示 1 秒
--   值为 0xFFFFFFFF 表示 (65536 的 1/65536) 秒
+-   值0x00010000 表示1秒
+-   值0xFFFFFFFF 表示 (65536-1/65536) 秒
 
-### <a name="span-idreturnvaluespanspan-idreturnvaluespanspan-idreturnvaluespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>返回值
+### <a name="span-idreturn_valuespanspan-idreturn_valuespanspan-idreturn_valuespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>返回值
 
-KSPROPERTY\_音频\_混响\_时间属性请求将返回状态\_成功以指示已成功完成。 否则，请求将返回相应的错误状态代码。
+KSPROPERTY \_ 音频 \_ 回音 \_ 时间属性请求返回状态 " \_ 成功" 以指示已成功完成。 否则，请求将返回相应的错误状态代码。
 
 <a name="requirements"></a>要求
 ------------
@@ -77,20 +76,20 @@ KSPROPERTY\_音频\_混响\_时间属性请求将返回状态\_成功以指示�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>Version</p></td>
-<td align="left"><p>Windows Vista</p></td>
+<td align="left"><p>版本</p></td>
+<td align="left"><p>Windows Vista</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>Header</p></td>
+<td align="left"><p>标头</p></td>
 <td align="left">Ksmedia.h</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[**KSNODETYPE\_REVERB**](ksnodetype-reverb.md)
+[**KSNODETYPE \_ 回音**](ksnodetype-reverb.md)
 
  
 

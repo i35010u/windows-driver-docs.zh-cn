@@ -1,17 +1,16 @@
 ---
 title: OID_WWAN_BASE_STATIONS_INFO
 description: OID_WWAN_BASE_STATIONS_INFO
-ms.assetid: 041CFD25-7CEA-4041-B723-E42FB8189461
 keywords:
 - MB 基站信息 OID，移动宽带基站信息 OID，移动宽带微型端口驱动程序基站信息 OID
 ms.date: 08/21/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 264c1e802d41ce66c7165037b022fbd72eeec7fb
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 140dff12a89f84bf96ad7cf7b943914dafa0f486
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89216992"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96797983"
 ---
 # <a name="oid_wwan_base_stations_info"></a>OID_WWAN_BASE_STATIONS_INFO
 
@@ -27,7 +26,7 @@ OID_WWAN_BASE_STATIONS_INFO 检索有关调制解调器已知的服务和相邻�
 
 **版本**： Windows 10，版本 1709 **头**： Ntddndis (包括 Ndis .h) 
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [NDIS_WWAN_BASE_STATIONS_INFO_REQ](/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_base_stations_info_req)
 

@@ -1,18 +1,17 @@
 ---
 title: 在 TCP 有效负载中拆分帧
 description: 在 TCP 有效负载中拆分帧
-ms.assetid: 3d7c6f75-4523-4ad3-b15d-53f9d4ee1074
 keywords:
 - 以太网帧拆分 WDK 网络，TCP 有效负载
 - TCP 负载 WDK 标头-数据拆分
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c9a4a2d79c5214e85950787aaac2d953a53af452
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 5045e9f47ccc70311cbc88a3c25491f51c077e07
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89206721"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96797905"
 ---
 # <a name="splitting-frames-at-the-tcp-payload"></a>在 TCP 有效负载中拆分帧
 
@@ -26,7 +25,7 @@ ms.locfileid: "89206721"
 
 Nic 还必须支持仅通过 timestamp 选项拆分 TCP 标头。 也就是说，timestamp 选项是必需的唯一 TCP 选项。 否则，支持 tcp 标头和 TCP 选项是可选的。 如果某个帧的 TCP 标头包含无法识别的 TCP 选项，则 NIC 必须将位于 TCP 标头开头的帧拆分 (即位于上层协议标头) 或不拆分该帧。
 
-**注意**   出于标头数据要求的目的，支持 IPv4 选项、IPv6 扩展标头或 TCP 选项，这意味着 NIC 识别元素的能力，确定元素的长度，将其包含在标头 MDL 中，并找到其端和帧中下一个元素的开头。
+**注意**  出于标头数据要求的目的，支持 IPv4 选项、IPv6 扩展标头或 TCP 选项，这意味着 NIC 识别元素的能力，确定元素的长度，将其包含在标头 MDL 中，并找到其端和帧中下一个元素的开头。
 
  
 

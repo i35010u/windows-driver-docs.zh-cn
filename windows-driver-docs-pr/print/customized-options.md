@@ -1,18 +1,17 @@
 ---
 title: 自定义选项
 description: 自定义选项
-ms.assetid: 8b54c59e-b469-488a-ae31-52045c00c971
 keywords:
 - 打印机选项 WDK Unidrv，自定义
-- 自定义的打印机选项 WDK Unidrv
+- 自定义打印机选项 WDK Unidrv
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1caff8562f1b5e306908267500eb0e8fcc7e0a86
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 49b009116d9f02af5670d68b7bfe8127052a1a23
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63369823"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96797389"
 ---
 # <a name="customized-options"></a>自定义选项
 
@@ -20,13 +19,13 @@ ms.locfileid: "63369823"
 
 
 
-自定义的选项在未定义的 GPD 语言中的预定义名称。 必须创建这些选项的唯一名称。
+自定义选项是指不是由 GPD 语言的预定义名称定义的选项。 您必须为这些选项创建唯一名称。
 
-自定义的选项可以与自定义的功能相关联。 与自定义功能相关联的自定义选项的示例，请参阅[自定义功能](customized-features.md)。
+自定义选项可以与自定义的功能相关联。 有关与自定义功能关联的自定义选项的示例，请参阅 [自定义功能](customized-features.md)。
 
-此外可以指定自定义的选项的一些[标准功能](standard-features.md)。 例如，如果您的打印机提供未由的标准选项之一描述的纸张大小**PaperSize**功能，您可以通过创建选项的唯一名称来指定自定义的纸张大小选项。
+还可以为某些 [标准功能](standard-features.md)指定自定义选项。 例如，如果您的打印机提供的纸张大小不是 **PaperSize** 功能的标准选项之一所描述的，则可以通过创建选项的唯一名称来指定自定义的纸张大小选项。
 
-自定义的选项名称中必须是唯一一项功能，但可以在不同的功能中重用的选项名称。 此外，可以使用自定义功能内的标准选项名称。 因此，例如，您可以使用标准选项名称 ON 和 OFF 内多个\*[功能](feature-entry-format.md)条目的自定义功能。
+自定义选项名称在功能中必须是唯一的，但选项名称可在不同的功能中重复使用。 此外，还可以在自定义功能中使用标准选项名称。 例如，可以在多个 \* [功能](feature-entry-format.md)条目中为自定义功能使用标准选项名称。
 
  
 

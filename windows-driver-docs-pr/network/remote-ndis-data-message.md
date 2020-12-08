@@ -1,15 +1,14 @@
 ---
 title: 远程 NDIS 数据消息
 description: 远程 NDIS 数据消息
-ms.assetid: 99ba2f83-9e2c-4681-a4ff-d61fedb20884
 ms.date: 07/31/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1a1d7ebefaa25e413f3483db3570ff451b92255b
-ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
+ms.openlocfilehash: 3d6287cdd141a3d7ac8512e85698fa9e5e1c1fac
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88969412"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96799351"
 ---
 # <a name="remote-ndis-data-message"></a>远程 NDIS 数据消息
 

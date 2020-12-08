@@ -1,19 +1,18 @@
 ---
 title: 蓝牙注册表项
 description: 蓝牙注册表项
-ms.assetid: a4d2848d-cb3c-4413-b06f-fe4695448f6a
 keywords:
 - 蓝牙 WDK，注册表项
 - 注册表 WDK 蓝牙
 - COD_Type 子项
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1a46c7acc424c608ec320e941dd2ff206d2154c4
-ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
+ms.openlocfilehash: b81c86f25b0f9881246f8d9e0bc0fadb886affaa
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90009905"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96798571"
 ---
 # <a name="bluetooth-registry-entries"></a>蓝牙注册表项
 
@@ -27,7 +26,7 @@ ms.locfileid: "90009905"
 
 HKEY \_ 本地 \_ 计算机 \\ 系统 \\ CurrentControlSet \\ Services \\ BTHPORT \\ 参数
 
-请注意，设置这些值将更改系统的设备的蓝牙类，而不考虑可能附加的蓝牙收音机。 你可以将**货到货**到货**到货到**货到货到货 `DWORD` 到的[Bluetooth SIG Assigned Numbers](https://www.bluetooth.com/specifications/assigned-numbers/baseband/)
+请注意，设置这些值将更改系统的设备的蓝牙类，而不考虑可能附加的蓝牙收音机。 你可以将 **货到货** 到货 **到货到** 货到货到货 `DWORD` 到的 [Bluetooth SIG Assigned Numbers](https://www.bluetooth.com/specifications/assigned-numbers/baseband/)
 
 蓝牙配置文件驱动程序 BthPort.sys，读取 "**货至货到货货货货货货货货货货货货货****货"** 这些值仅影响 `COD_MAJOR_XXX` `COD_XXX_MINOR_XXX` 设备类的和位。 `COD_SERVICE_XXX`此注册表项不影响位。
 

@@ -1,19 +1,18 @@
 ---
 title: 停靠窗口
 description: 停靠窗口
-ms.assetid: e8963a3b-0e86-4f4f-a59e-27cbde6a6ff8
 keywords:
 - 调试信息窗口，停靠窗口
 - 停靠窗口
 - 窗口停靠
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0bc2e4e8fd44ebcf8cce27827b8dcd557e11a165
-ms.sourcegitcommit: f610410e1500f0b0a4ca008b52679688ab51033d
+ms.openlocfilehash: 8edd58bfca037b6f52cb1c2f683fb4842908f3a9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/15/2020
-ms.locfileid: "88252963"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96798381"
 ---
 # <a name="docking-a-window"></a>停靠窗口
 

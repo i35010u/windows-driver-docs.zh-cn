@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ BDA \_ 表 \_ 部分
 description: '\_ \_ \_ 当在节点的输出上传递数据时，客户端使用 KSPROPERTY BDA 表部分来通知节点要使用的表部分。'
-ms.assetid: 58e6cc37-b6f1-49d6-a832-46f1edabf740
 keywords:
 - KSPROPERTY_BDA_TABLE_SECTION 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dfd33893a97b1c51ac670140a0cc9236b19a4d82
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 2e52b7e92484a151e16a32bebcfa645476f8b134
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89192395"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96799293"
 ---
 # <a name="ksproperty_bda_table_section"></a>KSPROPERTY \_ BDA \_ 表 \_ 部分
 
@@ -61,10 +60,10 @@ ms.locfileid: "89192395"
 
  
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
-KSP **NodeId**节点的节点成员 \_ 指定了 LNB 放大器节点。
+KSP **NodeId** 节点的节点成员 \_ 指定了 LNB 放大器节点。
 
 "BDA \_ 表" \_ 部分结构描述了表部分。
 
@@ -78,7 +77,7 @@ KSP **NodeId**节点的节点成员 \_ 指定了 LNB 放大器节点。
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Bdamedia (包含 Bdamedia) </td>
 </tr>
 </tbody>

@@ -1,7 +1,6 @@
 ---
 title: 内核模式 WDM 音频组件
 description: 内核模式 WDM 音频组件
-ms.assetid: 827997e2-6f07-4635-ac35-4ad026b82eae
 keywords:
 - 内核模式组件 WDK 音频
 - WDMAud 系统驱动程序 WDK 音频
@@ -23,12 +22,12 @@ keywords:
 - WDM 音频组件 WDK
 ms.date: 05/08/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 52be472e83f3a3c7a3accc88cbc8cc6f5bcef847
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 1e0f22113d81a3efd8f4db281c71b91dadcbebd2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89207045"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96799224"
 ---
 # <a name="kernel-mode-wdm-audio-components"></a>内核模式 WDM 音频组件
 
@@ -66,7 +65,7 @@ AVCAudio 类系统驱动程序
 
 ### <a name="span-idkm_wdmaud_system_driverspanspan-idkm_wdmaud_system_driverspanwdmaud-system-driver"></a><span id="km_wdmaud_system_driver"></span><span id="KM_WDMAUD_SYSTEM_DRIVER"></span>WDMAud 系统驱动程序
 
- ( # A0) 的内核模式 WDMAud 系统驱动程序与用户模式 WDMAud 系统驱动程序 (winspool.drv) 配对。 在用户模式 Microsoft Windows 多媒体系统调用和内核流式处理 i/o 请求之间转换的 WDMAud 驱动程序对。 对于以下 Api，WDMAud 执行 i/o： **waveIn**、 **waveOut**、 **midiIn**、 **midiOut**、 **混音**器和 **aux** () Microsoft Windows SDK 文档中所述。 内核模式 WDMAud 驱动程序是内核流式处理 (KS) 筛选器和 SysAudio 系统驱动程序的客户端。
+ ( # A0) 的内核模式 WDMAud 系统驱动程序与用户模式 WDMAud 系统驱动程序 (winspool.drv) 配对。 在用户模式 Microsoft Windows 多媒体系统调用和内核流式处理 i/o 请求之间转换的 WDMAud 驱动程序对。 对于以下 Api，WDMAud 执行 i/o： **waveIn**、 **waveOut**、 **midiIn**、 **midiOut**、 **混音** 器和 **aux** () Microsoft Windows SDK 文档中所述。 内核模式 WDMAud 驱动程序是内核流式处理 (KS) 筛选器和 SysAudio 系统驱动程序的客户端。
 
 ### <a name="span-idsysaudio_system_driverspanspan-idsysaudio_system_driverspansysaudio-system-driver"></a><span id="sysaudio_system_driver"></span><span id="SYSAUDIO_SYSTEM_DRIVER"></span>SysAudio 系统驱动程序
 
@@ -74,7 +73,7 @@ SysAudio 系统驱动程序 ( # A0) 生成用于呈现和捕获音频内容的�
 
 -   DirectSound (参阅 Microsoft Windows SDK 文档。 ) 
 
--   Windows 多媒体 Api **waveIn**、 **waveOut**、 **midiIn**、 **MidiOut**、 **混音**器和 **aux** (参阅 Windows SDK 文档。 ) 
+-   Windows 多媒体 Api **waveIn**、 **waveOut**、 **midiIn**、 **MidiOut**、 **混音** 器和 **aux** (参阅 Windows SDK 文档。 ) 
 
 -   Redbook CD 数字音频 (参阅 Redbook 系统驱动程序。 ) 
 
@@ -118,7 +117,7 @@ SBEmul 系统驱动程序 ( # A0) 为 MS-DOS 应用程序提供声霸卡声。 S
 
 ### <a name="span-idswmidi_system_driverspanspan-idswmidi_system_driverspanswmidi-system-driver"></a><span id="swmidi_system_driver"></span><span id="SWMIDI_SYSTEM_DRIVER"></span>SWMidi 系统驱动程序
 
-SWMidi 系统驱动程序 ( # A0) 是一个 KS 筛选器，它提供软件仿真的通用 MIDI (GM) 和高质量 Roland GS wavetable 合成。 如果硬件合成器不可用，则 **midiOut * * Xxx* 应用程序将使用 SWMidi。 SWMidi 筛选器接收来自 WDMAud 系统驱动程序的带有时间戳的 MIDI 流的输入，并将 PCM 波纹流输出到 KMixer 系统驱动程序。 SWMidi 在内部混合其所有声音，形成一个带有 PCM 波纹格式的双通道输出流。
+SWMidi 系统驱动程序 ( # A0) 是一个 KS 筛选器，它提供软件仿真的通用 MIDI (GM) 和高质量 Roland GS wavetable 合成。 当硬件合成器不可用时， **midiOut**_Xxx_ 应用程序将使用 SWMidi。 SWMidi 筛选器接收来自 WDMAud 系统驱动程序的带有时间戳的 MIDI 流的输入，并将 PCM 波纹流输出到 KMixer 系统驱动程序。 SWMidi 在内部混合其所有声音，形成一个带有 PCM 波纹格式的双通道输出流。
 
 ### <a name="span-iddmusic_system_driverspanspan-iddmusic_system_driverspandmusic-system-driver"></a><span id="dmusic_system_driver"></span><span id="DMUSIC_SYSTEM_DRIVER"></span>DMusic 系统驱动程序
 

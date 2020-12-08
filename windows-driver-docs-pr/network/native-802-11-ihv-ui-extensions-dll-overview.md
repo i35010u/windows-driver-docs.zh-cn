@@ -1,24 +1,23 @@
 ---
 title: 本机 802.11 IHV UI 扩展 DLL 概述
 description: 本机 802.11 IHV UI 扩展 DLL 概述
-ms.assetid: 82276ffb-eec4-4a77-9feb-f8f2ca1d7b34
 keywords:
 - IHV UI 扩展 DLL WDK 本机802.11，关于 IHV UI 扩展 DLL
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d4e96fb9942a59123bd6ad6850efa142bac0055b
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: acd13460419c869fad0155493a6dbd9d68729167
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89206103"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96798057"
 ---
 # <a name="native-80211-ihv-ui-extensions-dll-overview"></a>本机 802.11 IHV UI 扩展 DLL 概述
 
 
 
 
- 
+ 
 
 如果独立硬件供应商 (IHV) 提供本机 802.11 IHV 扩展 DLL，则 IHV 可以选择提供本机 802.11 IHV UI 扩展 DLL。 通过此 DLL，IHV 可以执行以下操作：
 
@@ -41,6 +40,6 @@ ms.locfileid: "89206103"
 
 有关 Microsoft 网络配置 UI 和其他本机802.11 组件的详细信息，请参阅 [本机802.11 软件体系结构](/previous-versions/windows/hardware/wireless/native-802-11-software-architecture)。
 
- 
+ 
 
- 
+ 

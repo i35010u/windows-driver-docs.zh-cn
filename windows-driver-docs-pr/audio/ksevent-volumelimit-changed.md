@@ -1,7 +1,6 @@
 ---
 title: KSEVENT \_ VOLUMELIMIT \_ 已更改
 description: KSEVENT \_ VOLUMELIMIT \_ changed 事件向音频堆栈表明音频设备的音频音量级别限制已更改。
-ms.assetid: CC6A6027-03CA-4D2C-8AA2-155E1617E19B
 keywords:
 - KSEVENT_VOLUMELIMIT_CHANGED 音频设备
 topic_type:
@@ -12,12 +11,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1b16a8d5b6f9a391f7acb3594b0509602858385f
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 37e5dc1edd15d1c0c711e3089a963d34fc4bbbe2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102648"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96799201"
 ---
 # <a name="ksevent_volumelimit_changed"></a>KSEVENT \_ VOLUMELIMIT \_ 已更改
 
@@ -55,7 +54,7 @@ KSEVENT \_ VOLUMELIMIT \_ changed 事件向音频堆栈表明音频设备的音�
 <a name="remarks"></a>备注
 -------
 
-有关如何实现对 KSEVENT PINCAPS VOLUMELIMITCHANGE 事件的支持的信息 \_ \_ ，请参阅[**KSEVENT \_ PINCAPS \_ FORMATCHANGE**](ksevent-pincaps-formatchange.md)的 "**备注**" 部分。
+有关如何实现对 KSEVENT PINCAPS VOLUMELIMITCHANGE 事件的支持的信息 \_ \_ ，请参阅 [**KSEVENT \_ PINCAPS \_ FORMATCHANGE**](ksevent-pincaps-formatchange.md)的 "**备注**" 部分。
 
 请注意，虽然 KSEVENT \_ PINCAPS \_ FORMATCHANGE 是在链接到 Portcls) 的微型端口驱动程序 (上实现的，但 KSEVENT \_ VOLUMELIMIT \_ CHANGED 事件是在拓扑筛选器上实现的。
 

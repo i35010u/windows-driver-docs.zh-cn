@@ -1,7 +1,6 @@
 ---
 title: bitmap 元素
 description: 可选的 bitmap 元素用于在消息框中显示正文文本左侧的位图图像。
-ms.assetid: 6dd1a82f-7a9e-4ed6-9d0d-76e025331d2c
 keywords:
 - 位图元素打印设备
 topic_type:
@@ -12,18 +11,18 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c4bb43d3d1cec0df6dfabd7930aad33a4e5fb1a0
-ms.sourcegitcommit: b3e38d06762246c77cedd8e82d740ebea104c538
+ms.openlocfilehash: 9732673738eff3bc31c23f45b1a221ce2adfb647
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91662453"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96797781"
 ---
 # <a name="bitmap-element"></a>bitmap 元素
 
 可选的 **bitmap** 元素用于在消息框中显示正文文本左侧的位图图像。
 
-**Bitmap**元素在*asyncui*命名空间中的此 URI 上定义：
+**Bitmap** 元素在 *asyncui* 命名空间中的此 URI 上定义：
 
 ```xml
 https://schemas.microsoft.com/2003/print/asyncui/v1/request
@@ -52,8 +51,8 @@ https://schemas.microsoft.com/2003/print/asyncui/v1/request
 <tr class="header">
 <th>属性</th>
 <th>类型</th>
-<th>必需</th>
-<th>说明</th>
+<th>必须</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -88,7 +87,7 @@ https://schemas.microsoft.com/2003/print/asyncui/v1/request
 <thead>
 <tr class="header">
 <th>元素</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>

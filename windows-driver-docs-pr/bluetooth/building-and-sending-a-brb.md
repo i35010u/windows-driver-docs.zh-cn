@@ -1,7 +1,6 @@
 ---
 title: 生成和发送 BRB
 description: 生成和发送 BRB
-ms.assetid: 53a692e7-9c71-4dca-9331-32ac97b94179
 keywords:
 - 蓝牙 WDK，蓝牙请求块
 - BRBs WDK
@@ -10,12 +9,12 @@ keywords:
 - 返回值 WDK 蓝牙
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 98fe8bce35db8b65afda0504f4f471d540b7f1e0
-ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
+ms.openlocfilehash: 8bc86b103fd9c072da3c016c9bbf7b48daaf1670
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90010577"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96798557"
 ---
 # <a name="building-and-sending-a-brb"></a>生成和发送 BRB
 
@@ -36,7 +35,7 @@ ms.locfileid: "90010577"
 
 下面的伪代码示例演示如何设置 L2CAP Ping BRB，以使蓝牙驱动程序堆栈进行处理。
 
-**注意**   为方便起见，下面的伪代码示例不演示错误处理。
+**注意**  为方便起见，下面的伪代码示例不演示错误处理。
 
  
 

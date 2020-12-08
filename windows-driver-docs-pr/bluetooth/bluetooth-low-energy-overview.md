@@ -1,15 +1,14 @@
 ---
 title: 低耗电蓝牙概述
 description: 本部分概述了 Windows 8 中引入的蓝牙低能耗
-ms.assetid: 8783E31B-99A3-40EB-8A67-647AFAB7D4D3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a9de6ea613de54713beb31fc28e2603241835fe0
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 0c78189a13f218e9bd2d2aecfd5de21c06b3d067
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90716554"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96798583"
 ---
 # <a name="bluetooth-low-energy-overview"></a>低耗电蓝牙概述
 
@@ -28,7 +27,7 @@ Windows 8 引入了对蓝牙低能耗技术的支持。
 
 ![windows 8 蓝牙低能耗实现的设备对象结构](images/bthlewin8supt.png)
 
-每个设备及其主要服务在 Windows 中都表示为设备对象，可以使用[**SetupDiEnumDeviceInfo**](/windows/win32/api/setupapi/nf-setupapi-setupdienumdeviceinfo)和[**SetupDiGetDeviceProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)等[设备安装功能](/previous-versions/ff549791(v=vs.85))来查询和管理这些设备对象。
+每个设备及其主要服务在 Windows 中都表示为设备对象，可以使用 [**SetupDiEnumDeviceInfo**](/windows/win32/api/setupapi/nf-setupapi-setupdienumdeviceinfo)和 [**SetupDiGetDeviceProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)等 [设备安装功能](/previous-versions/ff549791(v=vs.85))来查询和管理这些设备对象。
 
 除了标准的 [蓝牙配置文件驱动程序函数](/windows-hardware/drivers/ddi/index)外，Windows 8 还引入了新的 [蓝牙低能耗功能](/windows-hardware/drivers/ddi/index) ，可用于开发 bluetooth GATT 客户端应用程序。
 

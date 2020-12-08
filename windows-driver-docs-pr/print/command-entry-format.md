@@ -1,18 +1,17 @@
 ---
 title: 命令项格式
 description: 命令项格式
-ms.assetid: f2b14c12-3c34-45b2-9ead-8cd57d657e9e
 keywords:
-- 打印机命令 WDK Unidrv，条目格式
-- 格式 WDK 打印机命令
+- 打印机命令 WDK Unidrv，输入格式
+- 格式化 WDK 打印机命令
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: da6a4734f4555ecfe543cdcfc11b01891806f9e2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d73597685f73a77ee0231362d0788bfe65052ea8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63382621"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96797665"
 ---
 # <a name="command-entry-format"></a>命令项格式
 
@@ -20,7 +19,7 @@ ms.locfileid: "63382621"
 
 
 
-若要 GPD 文件中指定的打印机命令项，请使用以下格式：
+若要在 GPD 文件中指定打印机命令项，请使用以下格式：
 
 <table>
 <colgroup>
@@ -28,16 +27,16 @@ ms.locfileid: "63382621"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p><strong>* 命令</strong>:<em>CommandName</em> {<em>CommandAttributes</em>}</p></td>
+<td><p><strong>* 命令</strong>： <em>CommandName</em> {<em>CommandAttributes</em>}</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-其中*CommandName*是预定义的[命令名](command-names.md)，并*CommandAttributes*是一套[命令属性](command-attributes.md)。
+其中， *CommandName* 是预定义的 [命令名称](command-names.md)之一， *CommandAttributes* 是一组 [命令属性](command-attributes.md)。
 
-例如，GPD 文件可能包含以下 CmdStartPage 命令，初始化要打印的页的规范。
+例如，GPD 文件可能包含 CmdStartPage 命令的以下规范，用于初始化打印页面。
 
 ```cpp
 *Command: CmdStartPage
@@ -47,7 +46,7 @@ ms.locfileid: "63382621"
 }
 ```
 
-当对于特定*CommandName*值，您只需指定\*Cmd 属性，可以使用命令条目格式，按如下所示的缩写的形式：
+如果对于特定的 *CommandName* 值，只需指定 \* Cmd 属性，就可以使用命令条目格式的缩短版本，如下所示：
 
 <table>
 <colgroup>
@@ -55,16 +54,16 @@ ms.locfileid: "63382621"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p><strong>* 命令</strong>:<em>CommandName</em>:<em>CommandString</em></p></td>
+<td><p><strong>* 命令</strong>： <em>CommandName</em>： <em>command.commandstring</em></p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-其中*CommandString*是表示打印机命令转义序列的文本字符串。 有关指定转义序列的详细信息，请参阅[命令字符串格式](command-string-format.md)。
+其中， *command.commandstring* 是表示打印机命令转义序列的文本字符串。 有关指定转义序列的详细信息，请参阅 [命令字符串格式](command-string-format.md)。
 
-例如，GPD 文件可能包含 CmdBoldOn 命令，可将粗体文本上的以下规范：
+例如，GPD 文件可能包含 CmdBoldOn 命令的以下规范，此规范将打开粗体文本：
 
 ```cpp
 *Command: CmdBoldOn: "<1B>(s3B"

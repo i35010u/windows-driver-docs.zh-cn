@@ -1,16 +1,15 @@
 ---
 title: OID_WWAN_LTE_ATTACH_STATUS
 description: OID_WWAN_LTE_ATTACH_STATUS 用于通知操作系统上次使用的 LTE 附加上下文。
-ms.assetid: 394650CF-5410-40C6-8749-D941DF68D303
 ms.date: 08/23/2018
 keywords: -从 Windows Vista 开始 OID_WWAN_LTE_ATTACH_STATUS 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: cbd2ae98bdcd52c9b951841fa7f5ec6026026b01
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 83d58d48c23175b33ff61d2fe4d5d3a188491f57
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89210099"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96797941"
 ---
 # <a name="oid_wwan_lte_attach_status"></a>OID_WWAN_LTE_ATTACH_STATUS
 
@@ -28,7 +27,7 @@ OID_WWAN_LTE_ATTACH_STATUS 用于通知操作系统上次使用的默认 LTE 附
 
 **版本**： Windows 10，版本 1703 **头**： Ntddndis (包括 Ndis .h) 
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [MB LTE 附加操作](mb-lte-attach-operations.md)
 

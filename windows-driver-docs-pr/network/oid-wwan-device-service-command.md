@@ -1,16 +1,15 @@
 ---
 title: OID_WWAN_DEVICE_SERVICE_COMMAND
 description: OID_WWAN_DEVICE_SERVICE_COMMAND 允许微型端口驱动程序实现特定于供应商的命令。包含供应商定义的结构的 NDIS_STATUS_WWAN_DEVICE_SERVICE_RESPONSE 状态通知 (NDIS_WWAN_DEVICE_SERVICE_COMMAND) 在完成该事务时提供响应。
-ms.assetid: 296E2D23-6EDA-4480-91A3-B6CB39243DAD
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_WWAN_DEVICE_SERVICE_COMMAND 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: fc8b57fae4df01f33af2f956725f1058faf4ce3c
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 2b9c400555b78196851998426e20d6cc3b50e0a0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89218351"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96797947"
 ---
 # <a name="oid_wwan_device_service_command"></a>OID \_ WWAN \_ 设备 \_ 服务 \_ 命令
 
@@ -43,7 +42,7 @@ OID \_ WWAN \_ 设备 \_ 服务 \_ 命令允许微型端口驱动程序实现特
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**NDIS \_ 状态 \_ WWAN \_ 设备 \_ 服务 \_ 响应**](./ndis-status-wwan-device-service-response.md)

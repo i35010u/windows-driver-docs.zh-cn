@@ -1,22 +1,21 @@
 ---
 title: 演示如何质询可能已断开连接的设备的代码示例
 description: 演示如何质询可能已断开连接的设备的代码示例
-ms.assetid: 74633481-229f-4074-a84e-cc515eaaacd0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 31638e6a26d664fb817ddd76228d915811329eb7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e2366575b3d615ca5949abf2d574ed7ccbb41c1d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63373214"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96798173"
 ---
 # <a name="code-example-for-challenging-a-potentially-disconnected-device"></a>演示如何质询可能已断开连接的设备的代码示例
 
 > [!IMPORTANT]  
-> WSD 占领功能已弃用，将在 2018年中删除所有与 WSD 占领相关文档。
+> 已弃用 WSD 争取冠军宝座功能，并且2018中将删除所有与 WSD 争取冠军宝座相关的文档。
 
-下面的代码示例演示如何调用**RegisterDeviceToChallenge**函数 (这中的代码示例中列出[实现帮助器方法的示例代码](code-example-for-implementing-helper-methods.md)) 质询可能断开连接的设备。
+下面的代码示例演示对 **RegisterDeviceToChallenge** 函数的调用 (该函数在用于 [实现帮助器方法的示例代码](code-example-for-implementing-helper-methods.md) 中列出，) 以质询可能断开连接的设备。
 
 ```cpp
 HRESULT hr = S_OK;

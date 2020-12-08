@@ -1,18 +1,17 @@
 ---
 title: 安装电池驱动程序
 description: 安装电池驱动程序
-ms.assetid: 09db4d88-0cac-4171-8d05-d15a2cf4dab4
 keywords:
 - 电池 miniclass 驱动程序 WDK，安装
 - 电池类驱动程序 WDK，安装
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c35fae997ac206d02fb31c2517d356a4e20c3827
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 8e351353f723542f6565764705f327d42bf2abd5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90101765"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96798685"
 ---
 # <a name="installing-a-battery-driver"></a>安装电池驱动程序
 
@@ -70,7 +69,7 @@ DefaultDestDir = 12
 
 ### <a name="span-idddinstallspanspan-idddinstallspanspan-idddinstallspanddinstall"></a><span id="DDInstall"></span><span id="ddinstall"></span><span id="DDINSTALL"></span>*DDInstall*
 
-在示例) 的 " [**Inf *DDInstall* " 部分**](../install/inf-ddinstall-section.md) 中 (名为 \_ "NewBatt 指令" 时， [**inf CopyFiles 指令**](../install/inf-copyfiles-directive.md) 会将电池类驱动程序 (*Battc.sys*) 并将新的 miniclass 驱动程序 (*NewBatt.sys) * 到 **DestinationDirs** 指令中指定的目标。
+在示例) 的 " [**Inf *DDInstall* " 部分**](../install/inf-ddinstall-section.md) 中 (名为 \_ "NewBatt 指令" 时， [**inf CopyFiles 指令**](../install/inf-copyfiles-directive.md) 会将电池类驱动程序 (*Battc.sys*) 并将新的 miniclass 驱动程序 (*NewBatt.sys)* 到 **DestinationDirs** 指令中指定的目标。
 
 ``` syntax
 [NewBatt_Inst]
@@ -80,7 +79,7 @@ CopyFiles = @battc.sys
 
 ### <a name="span-idddinstallservicesspanspan-idddinstallservicesspanspan-idddinstallservicesspanddinstallservices"></a><span id="DDInstall.Services"></span><span id="ddinstall.services"></span><span id="DDINSTALL.SERVICES"></span>*DDInstall*。服务器
 
-[**INF *DDInstall*。服务部分**](../install/inf-ddinstall-services-section.md)包括一个[**INF AddService 指令**](../install/inf-addservice-directive.md)，该指令指定有关电池驱动程序的其他信息。 电池驱动程序的 INF 文件应指示该驱动程序是一个内核驱动程序，该驱动程序使用正常的错误处理并在操作系统初始化期间启动。 电池驱动程序指定负载顺序组扩展基准。
+[**INF *DDInstall*。服务部分**](../install/inf-ddinstall-services-section.md)包括一个 [**INF AddService 指令**](../install/inf-addservice-directive.md)，该指令指定有关电池驱动程序的其他信息。 电池驱动程序的 INF 文件应指示该驱动程序是一个内核驱动程序，该驱动程序使用正常的错误处理并在操作系统初始化期间启动。 电池驱动程序指定负载顺序组扩展基准。
 
 ``` syntax
 [NewBatt_Inst.Services]

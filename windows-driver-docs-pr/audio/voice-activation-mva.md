@@ -1,15 +1,14 @@
 ---
 title: 多语音助手
 description: 多个语音助手平台为除 Cortana 以外的其他语音助手提供支持。
-ms.assetid: 48a7e96b-58e8-4a49-b673-14036d4108d5
 ms.date: 09/08/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: eb76f370eebd245149a88bb4fb4a77960d5407c6
-ms.sourcegitcommit: 89b8a43480246dd726e3632aab2db9cf2eb7505d
+ms.openlocfilehash: f0a04a71e8bf4f26be3aca8ca1484eadb971b0ce
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92254040"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96798813"
 ---
 # <a name="multiple-voice-assistant"></a>多语音助手
 
@@ -110,7 +109,7 @@ Microsoft 提供了 OS default 关键字 spotter (software 关键字 spotter) �
 
 用于启用语音激活的音频堆栈外部接口用作语音平台和音频驱动程序的通信管道。 外部接口分为三部分。
 
-- [*事件检测器设备驱动程序接口 (DDI) *](/windows-hardware/drivers/ddi/eventdetectoroemadapter/nn-eventdetectoroemadapter-ieventdetectoroemadapter)。 事件检测器设备驱动程序接口负责配置和武装 HW 关键字 Spotter (KWS) 。  它还可由驱动程序用来通知系统检测事件。
+- [*事件检测器设备驱动程序接口 (DDI)*](/windows-hardware/drivers/ddi/eventdetectoroemadapter/nn-eventdetectoroemadapter-ieventdetectoroemadapter)。 事件检测器设备驱动程序接口负责配置和武装 HW 关键字 Spotter (KWS) 。  它还可由驱动程序用来通知系统检测事件。
 - [*IEvent 检测到 OEM 适配器 DLL*](/windows-hardware/drivers/ddi/eventdetectoroemadapter/nn-eventdetectoroemadapter-ieventdetectoroemadapter)。 此 DLL 实现了一个 COM 接口，用于改编驱动程序特定的不透明数据以供 OS 用于帮助进行关键字检测。
 - *WaveRT 流增强功能*。 增强功能使得音频驱动程序能够突发地流式传输来自关键字检测的缓冲音频数据。
 
@@ -128,7 +127,7 @@ Microsoft 提供了 OS default 关键字 spotter (software 关键字 spotter) �
 
 - 支持的关键字类型- [**KSPROPERTY \_ SOUNDDETECTOR \_ 模式**](./ksproperty-sounddetector.md)。 此属性由操作系统设置，用于配置要检测的关键字。
 - 关键字模式 Guid 列表- [**KSPROPERTY \_ SOUNDDETECTOR \_ SUPPORTEDPATTERNS**](./ksproperty-sounddetector.md)。 此属性用于获取 Guid 列表，这些 Guid 用于标识支持模式的类型。
-- [**KSPROPERTY \_ SOUNDDETECTOR \_ **](./ksproperty-sounddetector.md)。 此读取/写入属性是一个简单的布尔状态，它指示是否已确定探测器。 操作系统将此设置为参与关键字检测器。 操作系统可以清除此来脱开。 如果设置了关键字模式，并且在检测到了关键字之后，驱动程序会自动清除此设置。  (操作系统必须进行重置。 ) 
+- [**KSPROPERTY \_ SOUNDDETECTOR \_**](./ksproperty-sounddetector.md)。 此读取/写入属性是一个简单的布尔状态，它指示是否已确定探测器。 操作系统将此设置为参与关键字检测器。 操作系统可以清除此来脱开。 如果设置了关键字模式，并且在检测到了关键字之后，驱动程序会自动清除此设置。  (操作系统必须进行重置。 ) 
 - 匹配结果- [**KSPROPERTY \_ SOUNDDETECTOR \_ reset**](ksproperty-sounddetector-reset.md) 用于在启动时重置声音检测程序。
 
 在关键字检测时，将发送包含 KSNOTIFICATIONID_SoundDetector 的 PNP 通知。 注意：这不是 KSEvent，而是使用负载通过 IoReportTargetDeviceChangeAsynchronous 发送的 PNP 事件。
@@ -206,11 +205,11 @@ OEM 的实现可以选择任何 COM 线程模型。
 
 ### <a name="devpkey_ksaudio_packetsize_constraints2"></a>DEVPKEY \_ KsAudio \_ PacketSize \_ Constraints2
 
-由于将 \_ \_ \_ 数据从 KsAudio 缓冲区传输到音频硬件) 的机制，DEVPKEY KsAudio PacketSize Constraints2 属性值包含一个 [**PacketSize \_ Constraints2 \_ **](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-_ksaudio_packetsize_constraints2) WaveRT 结构，该结构描述 (物理硬件约束。 此结构包含一个数组，其中包含0个或多个 [**KSAUDIO \_ PACKETSIZE \_ PROCESSINGMODE \_ 约束**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-_ksaudio_packetsize_signalprocessingmode_constraint) 结构，其中描述了特定于任何信号处理模式的约束。 驱动程序在调用 [**PcRegisterSubdevice**](/windows-hardware/drivers/ddi/portcls/nf-portcls-pcregistersubdevice) 之前设置此属性，或以其他方式为其流式处理 pin 启用其 KS 筛选器接口。
+由于将 \_ \_ \_ 数据从 KsAudio 缓冲区传输到音频硬件) 的机制，DEVPKEY KsAudio PacketSize Constraints2 属性值包含一个 [**PacketSize \_ Constraints2 \_**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-_ksaudio_packetsize_constraints2) WaveRT 结构，该结构描述 (物理硬件约束。 此结构包含一个数组，其中包含0个或多个 [**KSAUDIO \_ PACKETSIZE \_ PROCESSINGMODE \_ 约束**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-_ksaudio_packetsize_signalprocessingmode_constraint) 结构，其中描述了特定于任何信号处理模式的约束。 驱动程序在调用 [**PcRegisterSubdevice**](/windows-hardware/drivers/ddi/portcls/nf-portcls-pcregistersubdevice) 之前设置此属性，或以其他方式为其流式处理 pin 启用其 KS 筛选器接口。
 
 ### <a name="iminiportwavertinputstream"></a>IMiniportWaveRTInputStream
 
-驱动程序实现此接口，以便更好地协调从驱动程序到操作系统的音频数据流。 如果此接口在捕获流中可用，则操作系统将使用此接口上的方法访问 WaveRT 缓冲区中的数据。 有关详细信息，请参阅[ **IMiniportWaveRTInputStream：： GetReadPacket**](/windows-hardware/drivers/ddi/portcls/nf-portcls-iminiportwavertinputstream-getreadpacket)
+驱动程序实现此接口，以便更好地协调从驱动程序到操作系统的音频数据流。 如果此接口在捕获流中可用，则操作系统将使用此接口上的方法访问 WaveRT 缓冲区中的数据。 有关详细信息，请参阅 [ **IMiniportWaveRTInputStream：： GetReadPacket**](/windows-hardware/drivers/ddi/portcls/nf-portcls-iminiportwavertinputstream-getreadpacket)
 
 ### <a name="iminiportwavertoutputstream"></a>IMiniportWaveRTOutputStream
 

@@ -1,7 +1,6 @@
 ---
 title: 自定义的数据流压缩
 description: 自定义的数据流压缩
-ms.assetid: 7e42f3c7-c833-49ee-976b-ed32b921af95
 keywords:
 - Unidrv，数据流压缩
 - 数据流压缩 WDK Unidrv
@@ -10,12 +9,12 @@ keywords:
 - Unidrv WDK 打印
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9533a2dab1e60782a1e97716df10379f6d5dd72d
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: c15322a55e2cb5f5343d240c52f5d214c837e721
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89218254"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96797419"
 ---
 # <a name="customized-data-stream-compression"></a>自定义的数据流压缩
 
@@ -29,7 +28,7 @@ Unidrv 允许使用自定义代码执行数据压缩操作。 若要执行自定
 
 2.  在打印机的 *GPD* 文件中包含一个 CmdEnableOEMComp 命令项。
 
-IPrintOemUni：： Compression 方法接收扫描行数据作为输入。 方法必须压缩数据，然后将结果返回到 Unidrv。 **CmdEnableOEMComp**命令条目指定必须发送到打印机的命令，以便打印机可以接受压缩的数据。 对于要发送到打印机的每个扫描行，Unidrv 将调用 IPrintOemUni：： Compression 来压缩扫描行数据。 然后，如果这是唯一可用的压缩方法，Unidrv 会将 **CmdEnableOEMComp** 命令条目指定的命令发送到打印机，后跟压缩后的数据。
+IPrintOemUni：： Compression 方法接收扫描行数据作为输入。 方法必须压缩数据，然后将结果返回到 Unidrv。 **CmdEnableOEMComp** 命令条目指定必须发送到打印机的命令，以便打印机可以接受压缩的数据。 对于要发送到打印机的每个扫描行，Unidrv 将调用 IPrintOemUni：： Compression 来压缩扫描行数据。 然后，如果这是唯一可用的压缩方法，Unidrv 会将 **CmdEnableOEMComp** 命令条目指定的命令发送到打印机，后跟压缩后的数据。
 
 如果打印机微型驱动程序包含同时启用 Unidrv 支持的压缩方法的 GPD 条目，则 Unidrv 将尝试每个扫描行的每个压缩算法，并选择产生最佳结果的算法。 有关 Unidrv 的压缩功能的详细信息，请参阅 [压缩光栅数据](compressing-raster-data.md)。
 

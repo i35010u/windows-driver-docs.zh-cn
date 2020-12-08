@@ -1,7 +1,6 @@
 ---
 title: 自定义的 Unidrv 字体安装程序
 description: 自定义的 Unidrv 字体安装程序
-ms.assetid: d753368d-b1c8-454e-a02b-131dc778e723
 keywords:
 - 打印机驱动程序自定义 WDK，安装组件
 - 自定义打印机驱动程序 WDK，安装组件
@@ -11,12 +10,12 @@ keywords:
 - UFF 文件
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ba383e83d480a82b11b345748ead4bcd29a98009
-ms.sourcegitcommit: a44ade167cdfb541cf1818e9f9e3726f23f90b66
+ms.openlocfilehash: 1536d379ff4341d756e5363e81e8e95f9e23a141
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94361327"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96797409"
 ---
 # <a name="customized-font-installers-for-unidrv"></a>自定义的 Unidrv 字体安装程序
 

@@ -1,18 +1,17 @@
 ---
 title: OID_WWAN_MODEM_LOGGING_CONFIG
 description: OID_WWAN_MODEM_LOGGING_CONFIG 用于配置调制解调器收集的日志以及在数据服务流 (DSS) 上将它们从调制解调器发送到主机的频率。
-ms.assetid: 418157C2-27B4-4007-9FC4-BEEFEE8EB88B
 ms.date: 04/11/2019
 keywords:
 - 从 Windows Vista 开始 OID_WWAN_MODEM_LOGGING_CONFIG 网络驱动程序
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: df09b6ffd9af6b7afae7686ecf441bf09f588f37
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 3952eb17aafc69ac3ee7300dd496044e4ee53827
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89216984"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96797921"
 ---
 # <a name="oid_wwan_modem_logging_config"></a>OID_WWAN_MODEM_LOGGING_CONFIG
 
@@ -32,7 +31,7 @@ OID_WWAN_MODEM_LOGGING_CONFIG 用于配置调制解调器收集的日志以及�
 
 **版本**： Windows 10，版本 1903 **头**： Ntddndis (包括 Ndis .h) 
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [使用 DSS 进行 MB 调制解调器日志记录](mb-modem-logging-with-dss.md)
 

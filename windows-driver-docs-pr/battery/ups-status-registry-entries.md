@@ -1,23 +1,22 @@
 ---
 title: UPS 状态注册表项
 description: UPS 微型驱动程序必须设置某些 UPS 状态注册表项
-ms.assetid: c24ef185-ba8d-4cfd-9d33-b70682905f00
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 874a732c925e8663acd04de22c970860f8dba5f9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b6a63ba2a29d0d39a3a25ebacc757a75dbfe93b2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328423"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96798645"
 ---
-# <a name="upsstatus-registry-entries"></a>UPS\\状态注册表项
+# <a name="upsstatus-registry-entries"></a>UPS \\ 状态注册表项
 
 
 ## <span id="ddk_ups_status_registry_entries_kg"></span><span id="DDK_UPS_STATUS_REGISTRY_ENTRIES_KG"></span>
 
 
-以下注册表项下**UPS**\\**状态**密钥，必须由 UPS 微型驱动程序设置。
+必须通过 ups 微型驱动程序设置以下注册表项（位于 **ups** \\ **状态** 密钥下）。
 
 ### <a name="span-idbatterycapacityspanspan-idbatterycapacityspanspan-idbatterycapacityspanbatterycapacity"></a><span id="BatteryCapacity"></span><span id="batterycapacity"></span><span id="BATTERYCAPACITY"></span>BatteryCapacity
 
@@ -25,10 +24,10 @@ ms.locfileid: "63328423"
 **BatteryCapacity**
 
 <span id="Value_Type"></span><span id="value_type"></span><span id="VALUE_TYPE"></span>值类型  
-REG\_DWORD
+REG \_ DWORD
 
-<span id="Value"></span><span id="value"></span><span id="VALUE"></span>值  
-UPS 中剩余电池电量的百分比。 此百分比表示为 0 到 100 的范围中的值。 （显示的值舍入到最接近的整数。）
+<span id="Value"></span><span id="value"></span><span id="VALUE"></span>负值  
+UPS 中剩余的电池容量百分比。 此百分比表示为介于0到100之间的值。  (显示的值舍入为最接近的整数。 ) 
 
 <span id="Default_Value"></span><span id="default_value"></span><span id="DEFAULT_VALUE"></span>默认值  
 0
@@ -39,10 +38,10 @@ UPS 中剩余电池电量的百分比。 此百分比表示为 0 到 100 的范�
 **BatteryStatus**
 
 <span id="Value_Type"></span><span id="value_type"></span><span id="VALUE_TYPE"></span>值类型  
-REG\_DWORD
+REG \_ DWORD
 
-<span id="Value"></span><span id="value"></span><span id="VALUE"></span>值  
-UPS 电池的当前状态。 下表列出了值。
+<span id="Value"></span><span id="value"></span><span id="VALUE"></span>负值  
+UPS 电池的当前状态。 下表中列出了这些值。
 
 <table>
 <colgroup>
@@ -51,18 +50,18 @@ UPS 电池的当前状态。 下表列出了值。
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">值</th>
+<th align="left">“值”</th>
 <th align="left">含义</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p>0</p></td>
-<td align="left"><p>电池状态是未知的。</p></td>
+<td align="left"><p>电池状态为未知。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>1</p></td>
-<td align="left"><p>电池是确定。</p></td>
+<td align="left"><p>电池正常。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>2</p></td>
@@ -82,10 +81,10 @@ UPS 电池的当前状态。 下表列出了值。
 **CommStatus**
 
 <span id="Value_Type"></span><span id="value_type"></span><span id="VALUE_TYPE"></span>值类型  
-REG\_DWORD
+REG \_ DWORD
 
-<span id="Value"></span><span id="value"></span><span id="VALUE"></span>值  
-UPS 的通信路径的状态。 下表列出了值。
+<span id="Value"></span><span id="value"></span><span id="VALUE"></span>负值  
+到 UPS 的通信路径的状态。 下表中列出了这些值。
 
 <table>
 <colgroup>
@@ -94,22 +93,22 @@ UPS 的通信路径的状态。 下表列出了值。
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">ReplTest1</th>
+<th align="left">“值”</th>
 <th align="left">含义</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p>0</p></td>
-<td align="left"><p>UPS 的通信路径是未知的。</p></td>
+<td align="left"><p>到 UPS 的通信路径未知。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>1</p></td>
-<td align="left"><p>UPS 的通信路径是确定。</p></td>
+<td align="left"><p>到 UPS 的通信路径正常。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>2</p></td>
-<td align="left"><p>UPS 的通信路径已丢失。</p></td>
+<td align="left"><p>与 UPS 的通信路径已经丢失。</p></td>
 </tr>
 </tbody>
 </table>
@@ -127,8 +126,8 @@ UPS 的通信路径的状态。 下表列出了值。
 <span id="Value_Type"></span><span id="value_type"></span><span id="VALUE_TYPE"></span>值类型  
 REG\_SZ
 
-<span id="Value"></span><span id="value"></span><span id="VALUE"></span>值  
-报告可显示字符串形式的 UPS 固件修订版本。
+<span id="Value"></span><span id="value"></span><span id="VALUE"></span>负值  
+报告 UPS 固件修订为可显示的字符串。
 
 <span id="Default_Value_"></span><span id="default_value_"></span><span id="DEFAULT_VALUE_"></span>默认值：  
 ""
@@ -141,8 +140,8 @@ REG\_SZ
 <span id="Value_Type"></span><span id="value_type"></span><span id="VALUE_TYPE"></span>值类型  
 REG\_SZ
 
-<span id="Value"></span><span id="value"></span><span id="VALUE"></span>值  
-报告可显示字符串 UPS 序列号。
+<span id="Value"></span><span id="value"></span><span id="VALUE"></span>负值  
+将 UPS 序列号报告为可显示的字符串。
 
 <span id="Default_Value_"></span><span id="default_value_"></span><span id="DEFAULT_VALUE_"></span>默认值：  
 ""
@@ -153,10 +152,10 @@ REG\_SZ
 **TotalUPSRuntime**
 
 <span id="Value_Type"></span><span id="value_type"></span><span id="VALUE_TYPE"></span>值类型  
-REG\_DWORD
+REG \_ DWORD
 
-<span id="Value"></span><span id="value"></span><span id="VALUE"></span>值  
-剩余 UPS 运行的时间，以分钟为单位。
+<span id="Value"></span><span id="value"></span><span id="VALUE"></span>负值  
+剩余的 UPS 运行时间量，以分钟为单位。
 
 <span id="Default_Value"></span><span id="default_value"></span><span id="DEFAULT_VALUE"></span>默认值  
 0
@@ -167,10 +166,10 @@ REG\_DWORD
 **UtilityPowerStatus**
 
 <span id="Value_Type"></span><span id="value_type"></span><span id="VALUE_TYPE"></span>值类型  
-REG\_DWORD
+REG \_ DWORD
 
-<span id="Value_"></span><span id="value_"></span><span id="VALUE_"></span>值：  
-报告到 UPS 实用程序提供电源的状态。 下表列出了值。
+<span id="Value_"></span><span id="value_"></span><span id="VALUE_"></span>负值  
+报告实用工具提供的电源进入 UPS 的状态。 下表中列出了这些值。
 
 <table>
 <colgroup>
@@ -179,18 +178,18 @@ REG\_DWORD
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">值</th>
+<th align="left">“值”</th>
 <th align="left">含义</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p>0</p></td>
-<td align="left"><p>实用程序提供电源的状态是未知的。</p></td>
+<td align="left"><p>实用程序提供的电源状态未知。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>1</p></td>
-<td align="left"><p>实用程序提供电源是确定。</p></td>
+<td align="left"><p>实用工具提供的电源正常。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>2</p></td>

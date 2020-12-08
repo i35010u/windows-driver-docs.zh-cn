@@ -1,18 +1,17 @@
 ---
 title: 颜色属性
 description: 颜色属性
-ms.assetid: c8de0186-9cf5-43e5-81e7-33351a34c13c
 keywords:
 - 颜色属性 WDK Unidrv
 - 常规打印机属性 WDK Unidrv，color
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d4d801d408234105fb1b228b94eca2d2bff691fe
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 91aa71108c321d697dbbd67e1e13a72faecf5b5d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107088"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96797707"
 ---
 # <a name="color-attributes"></a>颜色属性
 
@@ -83,10 +82,10 @@ ms.locfileid: "90107088"
 
  
 
-**注意**   当** \* ChangeColorModeOnDoc？** color 属性设置为**TRUE**时，会启用颜色优化。 如果此属性设置为 **FALSE**，则不执行任何优化。 启用颜色优化后，假脱机文件中的颜色将导致以彩色播放假脱机文件;假脱机文件中缺少颜色会导致后台处理文件以单色播放。
+**注意**  当 **\* ChangeColorModeOnDoc？** color 属性设置为 **TRUE** 时，会启用颜色优化。 如果此属性设置为 **FALSE**，则不执行任何优化。 启用颜色优化后，假脱机文件中的颜色将导致以彩色播放假脱机文件;假脱机文件中缺少颜色会导致后台处理文件以单色播放。
 如果要创建 Unidrv 呈现插件来生成颜色水印，请注意，当颜色水印打印在黑白文档上时，将会导致彩色水印打印为黑白。 若要确保颜色水印正确地打印彩色和黑白文档，请禁用颜色优化。
 
-通过设置 " ** \* ChangeColorModeOnDoc？** color" 属性的 " **dwColorOptimization** " 成员，还可以控制由 "[**属性 \_ 信息 \_ 2**](/windows-hardware/drivers/ddi/winddiui/ns-winddiui-_attribute_info_2) " 或 "[**属性 \_ 信息 \_ 3**](/windows-hardware/drivers/ddi/winddiui/ns-winddiui-_attribute_info_3) " 结构控制的颜色优化。 还可以通过使用 [**GdiEndPageEMF**](/windows-hardware/drivers/ddi/winppi/nf-winppi-gdiendpageemf) 函数来控制颜色优化。
+通过设置 " **\* ChangeColorModeOnDoc？** color" 属性的 " **dwColorOptimization** " 成员，还可以控制由 "[**属性 \_ 信息 \_ 2**](/windows-hardware/drivers/ddi/winddiui/ns-winddiui-_attribute_info_2) " 或 "[**属性 \_ 信息 \_ 3**](/windows-hardware/drivers/ddi/winddiui/ns-winddiui-_attribute_info_3) " 结构控制的颜色优化。 还可以通过使用 [**GdiEndPageEMF**](/windows-hardware/drivers/ddi/winppi/nf-winppi-gdiendpageemf) 函数来控制颜色优化。
 
  
 

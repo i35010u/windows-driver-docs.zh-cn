@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ 音频 \_ 静音
 description: KSPROPERTY \_ 音频 \_ 静音属性指定静音节点上的频道 (KSNODETYPE \_ 静音是否静音) 。
-ms.assetid: 3c8d7a09-521d-47fd-8441-866a0d12540f
 keywords:
 - KSPROPERTY_AUDIO_MUTE 音频设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d2ecd4b7127f0e48b977b4b10a47d325b4caaffa
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 09e19c84db52bfca1a8edc0544aaeb33f31c5399
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102090"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96799007"
 ---
 # <a name="ksproperty_audio_mute"></a>KSPROPERTY \_ 音频 \_ 静音
 

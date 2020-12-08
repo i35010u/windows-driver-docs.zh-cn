@@ -1,15 +1,14 @@
 ---
 title: Microsoft 蓝牙测试平台-BTP 电池测试
 description: 蓝牙测试平台 (BTP) 电池测试。
-ms.assetid: 19caf4db-9303-47d1-be12-5ff4b2710bc8
 ms.date: 2/14/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 7d0a71b75c80608b3e175549a4337c88cfba29a4
-ms.sourcegitcommit: 6e6189e3b7f2b376607b507220bd538a296f5b4e
+ms.openlocfilehash: 77d20db9fc91e74e4146e1d9c4d64df647a7d1d8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/18/2020
-ms.locfileid: "90799827"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96798505"
 ---
 # <a name="btp-battery-tests"></a>BTP 电池测试 #
 

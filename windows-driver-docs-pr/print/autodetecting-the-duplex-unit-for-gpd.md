@@ -1,26 +1,25 @@
 ---
 title: 自动检测 GPD 的双工单元
 description: 自动检测 GPD 的双工单元
-ms.assetid: a5c91b00-ca7c-4c22-a16c-a976011d8b89
 keywords:
-- 自动检测双面打印单元 WDK 打印机自动配置
-- GPD 文件 WDK GDL 扩展，自动检测双面打印单元
-- 框中自动配置支持 WDK 打印机，自动检测双面打印单元
-- 检测双面打印单元
-- 双面打印单元 WDK 打印机自动配置
+- 自动检测双工单元 WDK 打印机自动配置
+- GPD 文件 WDK GDL 扩展，自动检测双工单元
+- 内置自动配置支持 WDK 打印机，自动检测双工单元
+- 检测双工单元
+- 双工单元 WDK 打印机自动配置
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 13822ae9ded4430943a937ad182cfd383a3bb8e8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1329f5db7d0d685a28d48f3cb2e300463bb70da5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63387282"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96797853"
 ---
 # <a name="autodetecting-the-duplex-unit-for-gpd"></a>自动检测 GPD 的双工单元
 
 
-假设 GPD 文件具有一个双工功能，如以下示例定义，以便双面打印单元是可安装：
+假设你的 GPD 文件有一个双工功能，该功能按如下示例所示进行定义，以便可以安装双工单元：
 
 ```GPD
 *Feature: Duplex
@@ -77,7 +76,7 @@ ms.locfileid: "63387282"
 }
 ```
 
-下面的 GDL 代码示例提供了自动检测存在双面打印单元 （这前面 GPD 代码示例中所述） 的功能，并设置相应的选项。 在此示例中，后台处理程序将发送的查询中所示\* **BidiQuery**构造。 当打印机收到查询时，响应其中一个的两个可能\***选项**构造的值。
+下面的 GDL 代码示例提供了自动检测双工单元 (的功能，这在前面的 GPD 代码示例) 中介绍，并设置相应的选项。 在此示例中，后台处理程序发送在 BidiQuery 构造中显示的查询 \* **BidiQuery** 。 当打印机收到查询时，它将以两个可能的 \* *_选项_* 构造值之一来响应。
 
 ```GDL
 *Feature: DuplexUnit

@@ -1,9 +1,8 @@
 ---
-title: WIA\_IPS\_打印机\_印记签署器\_图形\_上传
-description: WIA\_IPS\_打印机\_印记签署器\_图形\_上传属性用于报告是否印刷器/印记签署器项支持上传映像 （图形） 数据传输。 此属性是初始化和维护的 WIA 微型驱动程序。
-ms.assetid: BCA1F340-5BF8-429A-90B9-9638E52E61DE
+title: WIA \_ IPS \_ 打印机 \_ ENDORSER \_ 图形 \_ 上传
+description: WIA \_ IPS \_ PRINTER \_ ENDORSER \_ GRAPHICS \_ 上传属性用于报告 Imprinter/ENDORSER 项是否支持) 数据传输上传 (图形的图像。 此属性由 WIA 微型驱动程序初始化和维护。
 keywords:
-- WIA_IPS_PRINTER_ENDORSER_GRAPHICS_UPLOAD 成像设备
+- WIA_IPS_PRINTER_ENDORSER_GRAPHICS_UPLOAD 图像设备
 topic_type:
 - apiref
 api_name:
@@ -14,33 +13,33 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d1271c01b4b643fcb128d8e834b1f19f36d86c89
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 88bbb1c2f2eea95dc8c482c05ca3eefe50ad2881
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63352088"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96798163"
 ---
-# <a name="wiaipsprinterendorsergraphicsupload"></a>WIA\_IPS\_打印机\_印记签署器\_图形\_上传
+# <a name="wia_ips_printer_endorser_graphics_upload"></a>WIA \_ IPS \_ 打印机 \_ ENDORSER \_ 图形 \_ 上传
 
 
-**WIA\_IPS\_打印机\_印记签署器\_图形\_上载**属性用于报告的印刷器/印记签署器项是否支持上传映像 （图形）数据传输。 此属性是初始化和维护的 WIA 微型驱动程序。
+**WIA \_ IPS \_ PRINTER \_ ENDORSER \_ GRAPHICS \_ 上传** 属性用于报告 Imprinter/ENDORSER 项是否支持) 数据传输上传 (图形的图像。 此属性由 WIA 微型驱动程序初始化和维护。
 
 
 
 
-属性类型：VT\_I4 （布尔值）
+属性类型： VT \_ I4 (布尔) 
 
-有效值：WIA\_PROP\_NONE
+有效值： WIA " \_ \_ 无"
 
 访问权限：只读
 
 <a name="remarks"></a>备注
 -------
 
-如果此属性的当前值设置为非零值 (True)，这意味着 WIA 微型驱动程序支持接收由 WIA 应用程序客户端上传到它的图像数据。 传输文件格式所描述[ **WIA\_IPA\_格式**](wia-ipa-format.md)并[ **WIA\_IPA\_TYMED**](wia-ipa-tymed.md)实现相同的印刷器/印记签署器项上的属性。
+如果此属性的当前值设置为非零值 (True) ，则表示 WIA 微型驱动程序支持接收由 WIA 应用程序客户端上载到的图像数据。 传输文件格式由在同一 Imprinter/Endorser 项上实现的 [**wia \_ IPA \_ 格式**](wia-ipa-format.md) 和 [**wia \_ IPA \_ TYMED**](wia-ipa-tymed.md) 属性描述。
 
-此属性是必需的和有效的所有印刷器/印记签署器项的报告非零值 (True)，以便[ **WIA\_IPS\_打印机\_印记签署器\_图形**](wia-ips-printer-endorser-graphics.md)，但它可以实现对始终为 0 (False) 值的报表。 否则，该属性是无效。
+此属性是必需的，并且对报告非零值 (True) 用于 [**WIA \_ IPS \_ 打印机 \_ Endorser \_ 图形**](wia-ips-printer-endorser-graphics.md)的所有 Imprinter/Endorser 项是必需的，但它可以实现为始终报告0值 (False) 。 否则，属性无效。
 
 <a name="requirements"></a>要求
 ------------
@@ -52,8 +51,8 @@ ms.locfileid: "63352088"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Wiadef.h （包括 Wiadef.h）</td>
+<td><p>标头</p></td>
+<td>Wiadef (包含 Wiadef) </td>
 </tr>
 </tbody>
 </table>

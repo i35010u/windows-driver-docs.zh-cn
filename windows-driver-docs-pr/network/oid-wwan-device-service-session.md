@@ -1,16 +1,15 @@
 ---
 title: OID_WWAN_DEVICE_SERVICE_SESSION
 description: OID_WWAN_DEVICE_SERVICE_SESSION 指示微型端口驱动程序打开或关闭设备服务会话。NDIS_STATUS_WWAN_DEVICE_SERVICE_SESSION 状态通知，其中包含描述操作结果的 NDIS_WWAN_SET_DEVICE_SERVICE_SESSION 结构。
-ms.assetid: 32D4EDE3-4782-4C54-95B8-83DE7E63C4F8
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_WWAN_DEVICE_SERVICE_SESSION 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: e5e3f659ef97cffc295829c203aabdf927c2a632
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: aec3d03e92ed5d98f0f24790d9b5c98919b3bd65
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89212119"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96797949"
 ---
 # <a name="oid_wwan_device_service_session"></a>OID \_ WWAN \_ 设备 \_ 服务 \_ 会话
 
@@ -43,7 +42,7 @@ OID \_ WWAN \_ 设备 \_ 服务 \_ 会话定向微型端口驱动程序以打开
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**NDIS \_ WWAN \_ 设置 \_ 设备 \_ 服务 \_ 会话**](/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_device_set_service_session)

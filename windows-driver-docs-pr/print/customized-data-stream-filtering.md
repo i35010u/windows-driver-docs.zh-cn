@@ -1,7 +1,6 @@
 ---
 title: 自定义的数据流筛选
 description: 自定义的数据流筛选
-ms.assetid: 768d4b95-4d8d-4460-9a8c-c80785f7f799
 keywords:
 - Unidrv，数据流筛选
 - 数据流筛选 WDK Unidrv
@@ -10,12 +9,12 @@ keywords:
 - Unidrv WDK 打印
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 123ce8e58cc0da0526c3c296653d025d12eb4f46
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 080f6c67ab7b8403b113e7ba172706a238ff225b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89218250"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96797415"
 ---
 # <a name="customized-data-stream-filtering"></a>自定义的数据流筛选
 

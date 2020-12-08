@@ -1,22 +1,21 @@
 ---
 title: WDI_TLV_BSS_ENTRY
-description: WDI_TLV_BSS_ENTRY 是 TLV 包含 BSS 条目信息。
-ms.assetid: 1D3AAB94-9FCE-4243-994A-7195440DDFCA
+description: WDI_TLV_BSS_ENTRY 是包含 BSS 输入信息的 TLV。
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_BSS_ENTRY 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 17452b6d04ea66c8381c8c993d66d3c5fe8288d5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f54dc436f46f6d165aa05583a32f2b99262aff5c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63329891"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96797861"
 ---
-# <a name="wditlvbssentry"></a>WDI\_TLV\_BSS\_条目
+# <a name="wdi_tlv_bss_entry"></a>WDI \_ TLV \_ BSS \_ 条目
 
 
-WDI\_TLV\_BSS\_项是包含 BSS 条目信息 TLV。
+WDI \_ tlv \_ bss \_ 条目是包含 BSS 条目信息的 tlv。
 
 ## <a name="tlv-type"></a>TLV 类型
 
@@ -26,21 +25,21 @@ WDI\_TLV\_BSS\_项是包含 BSS 条目信息 TLV。
 ## <a name="length"></a>长度
 
 
-所有的大小 （以字节为单位） 总和包含 TLVs。
+Sum (包含所有 TLVs 的大小的) 字节。
 
 ## <a name="values"></a>值
 
 
-| 在任务栏的搜索框中键入                                                                                      | 允许多个 TLV 实例 | 可选                                                                            | 描述                                                                                                                                                                                                                                                       |
+| 类型                                                                                      | 允许多个 TLV 实例 | 可选                                                                            | 说明                                                                                                                                                                                                                                                       |
 |-------------------------------------------------------------------------------------------|--------------------------------|-------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [**WDI\_TLV\_BSSID**](wdi-tlv-bssid.md)                                                  |                                |                                                                                     | BSS BSSID。                                                                                                                                                                                                                                             |
-| [**WDI\_TLV\_探测\_响应\_帧**](wdi-tlv-probe-response-frame.md)                  |                                | X                                                                                   | 探测响应帧。 如果不收到任何探测响应帧，这为空。                                                                                                                                                                            |
-| [**WDI\_TLV\_BEACON\_FRAME**](wdi-tlv-beacon-frame.md)                                   |                                | X                                                                                   | 信号帧。 如果收到没有信号，则为空。                                                                                                                                                                                                  |
-| [**WDI\_TLV\_BSS\_条目\_信号\_信息**](wdi-tlv-bss-entry-signal-info.md)               |                                |                                                                                     | BSS 信号信息 （接收到的信号强度和链接质量）。                                                                                                                                                                                    |
-| [**WDI\_TLV\_BSS\_条目\_通道\_信息**](wdi-tlv-bss-entry-channel-info.md)             |                                |                                                                                     | BSS 项的逻辑的通道数量和带区 ID。                                                                                                                                                                                                         |
-| [**WDI\_TLV\_BSS\_ENTRY\_DEVICE\_CONTEXT**](wdi-tlv-bss-entry-device-context.md)         |                                | X                                                                                   | 有关对等方的设备上下文。 此上下文从 IHV 组件提供，可用于存储 IHV 组件想要维护的每个 BSS 项状态。 若要避免生存期管理问题，IHV 组件必须在此字段中不使用指针。 |
-| [**WDI\_TLV\_BSS\_ENTRY\_AGE\_INFO**](wdi-tlv-bss-entry-age-info.md)                     |                                | X (注意：此 TLV 是必需的如果由 IHV 组件维护 BSS 列表。） | 此 BSS 项，包括最新发现此条目的时间戳的年龄信息。                                                                                                                                                  |
-| [**WDI\_TLV\_P2P\_已发现\_服务\_条目**](wdi-tlv-p2p-discovered-service-entry.md) | X                              | X                                                                                   | 如果发现请求指定 WDI 使用天然气查询包括的服务信息检索远程设备上找到的服务列表\_P2P\_服务\_发现\_类型\_服务\_发现类型的信息。                                  |
+| [**WDI \_ TLV \_ BSSID**](wdi-tlv-bssid.md)                                                  |                                |                                                                                     | BSS 的 BSSID。                                                                                                                                                                                                                                             |
+| [**WDI \_ TLV \_ 探测 \_ 响应 \_ 帧**](wdi-tlv-probe-response-frame.md)                  |                                | X                                                                                   | 探测响应帧。 如果未收到探测响应帧，则为空。                                                                                                                                                                            |
+| [**WDI \_ TLV \_ 信标 \_ 帧**](wdi-tlv-beacon-frame.md)                                   |                                | X                                                                                   | 信号框架。 如果未收到信号，则为空。                                                                                                                                                                                                  |
+| [**WDI \_ TLV \_ BSS \_ 输入 \_ 信号 \_ 信息**](wdi-tlv-bss-entry-signal-info.md)               |                                |                                                                                     | 信号信息 (收到 BSS 的信号强度和链接质量) 。                                                                                                                                                                                    |
+| [**WDI \_ TLV \_ BSS \_ 条目 \_ 通道 \_ 信息**](wdi-tlv-bss-entry-channel-info.md)             |                                |                                                                                     | BSS 条目的逻辑通道号和带区 ID。                                                                                                                                                                                                         |
+| [**WDI \_ TLV \_ BSS \_ 条目 \_ 设备 \_ 上下文**](wdi-tlv-bss-entry-device-context.md)         |                                | X                                                                                   | 有关对等的设备上下文。 此上下文是从 IHV 组件提供的，可用于存储 IHV 组件要维护的每个 BSS 进入状态。 为了避免生存期管理问题，IHV 组件不能在此字段中使用指针。 |
+| [**WDI \_ TLV \_ BSS \_ 条目 \_ AGE \_ 信息**](wdi-tlv-bss-entry-age-info.md)                     |                                | X (注意：如果受 IHV 组件维护，则此 TLV 是必需的。 )  | 此 BSS 条目的时间信息，包括最近发现此项的时间戳。                                                                                                                                                  |
+| [**WDI \_ TLV \_ P2P \_ 发现的 \_ 服务 \_ 条目**](wdi-tlv-p2p-discovered-service-entry.md) | X                              | X                                                                                   | 在远程设备上找到的服务列表，其中包括在发现请求指定 WDI \_ P2P \_ 服务 \_ 发现 \_ 类型 \_ \_ 作为发现类型的情况下使用汽油查询检索的服务信息。                                  |
 
  
 
@@ -59,10 +58,10 @@ WDI\_TLV\_BSS\_项是包含 BSS 条目信息 TLV。
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
-<td><p>Windows Server 2016</p></td>
+<td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Wditypes.hpp</td>
 </tr>
 </tbody>

@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ 音频 \_ AGC
 description: KSPROPERTY \_ AUDIO \_ AGC 属性指定 AGC 节点中通道的 AGC (自动增益控制)  (KSNODETYPE \_ AGC) 的状态。
-ms.assetid: 72630e9b-a1e7-4319-831a-94f8b856cf93
 keywords:
 - KSPROPERTY_AUDIO_AGC 音频设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5523f6f78aa1b1eb3ca39718d572f96113029f3a
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 5adfee395102a56ebf79ace8d3ee176071993151
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102158"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96799077"
 ---
 # <a name="ksproperty_audio_agc"></a>KSPROPERTY \_ 音频 \_ AGC
 

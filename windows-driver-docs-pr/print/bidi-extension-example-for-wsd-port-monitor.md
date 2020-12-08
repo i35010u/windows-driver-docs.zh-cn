@@ -1,7 +1,6 @@
 ---
 title: WSD 端口监视器的双向扩展示例
 description: WSD 端口监视器的双向扩展示例
-ms.assetid: a04f16d5-ae99-4df5-bb55-aef95bd03588
 keywords:
 - 双向扩展文件 WDK 打印机自动配置
 - 内置自动配置支持 WDK 打印机，双向扩展文件
@@ -9,16 +8,16 @@ keywords:
 - 架构扩展 WDK WSD
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 89e70f6eb1bda920791cf0d67181c9a9367ebaee
-ms.sourcegitcommit: ab64169b631da4db3f0b895600f1c38a22cb7e2e
+ms.openlocfilehash: 7fde07e778b952dcd721d224596c319ddc7c660f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75652911"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96797819"
 ---
 # <a name="bidi-extension-example-for-wsd-port-monitor"></a>WSD 端口监视器的双向扩展示例
 
-下面的代码示例是一个示例 XML 文件，它扩展了 Web 服务设备（WSD）端口监视器的双向通信架构：
+下面的代码示例是一个示例 XML 文件，它为设备 (WSD) 端口监视器扩展了 Web 服务的双向通信架构：
 
 ```xml
 <?xml version='1.0'?>
@@ -205,7 +204,7 @@ ms.locfileid: "75652911"
 
 ### <a name="description-of-schema-extension"></a>架构扩展的说明
 
-前面的示例双向扩展文件包含 &lt;定义&gt;的根元素，其中包含两个主要部分： &lt;架构&gt;，其中放置双向架构扩展，&lt;PortStatus&gt;，其中，驱动程序将 WSD 状态映射到端口\_
+前面的示例双向扩展文件包含根元素 &lt; 定义，其中包含 &gt; 两个主要部分： &lt; 架构 &gt; ，其中包含双向架构扩展， &lt; PortStatus &gt; ，其中，驱动程序将 WSD 状态映射到端口 \_ 信息 \_ 3 端口状态 (结构，如 Windows SDK 文档) 中所述。
 
 架构扩展中使用的所有命名空间都必须在 Schema 元素中定义。 扩展处理将不会识别在较低级别元素中定义的命名空间。 在较低级别元素中定义命名空间会导致扩展文件验证失败。
 
@@ -218,7 +217,7 @@ ms.locfileid: "75652911"
 
 此扩展文件中的每个双向查询包括：
 
--   描述如何从 WSD 数据撰写双向数据的算法;可以用四个构造[常量](const.md)、[已安装](installed.md)、[列表](list.md)和[值](value.md)来定义算法。
+-   描述如何从 WSD 数据撰写双向数据的算法;可以用四个构造 [常量](const.md)、 [已安装](installed.md)、 [列表](list.md)和 [值](value.md)来定义算法。
 
 -   用于描述如何获取 WSD 数据的 WSD 查询参数。
 
@@ -226,7 +225,7 @@ ms.locfileid: "75652911"
 
 ### <a name="parameter-construct"></a>参数构造
 
-前面的示例中使用的 &lt;参数&gt; 元素定义了一个变量属性，该属性可以采用不同的值（例如，TopBin 或 BottomBin），因此可以使用以下形式的查询：
+&lt; &gt; 前面的示例双向扩展文件中使用的 Parameter 元素定义了一个变量属性，该属性可以采用不同的值 (例如，TopBin 或 BottomBin) ，这样就可以使用以下形式的查询：
 
 -   `\Printer.Layout.InputBins.TopBin:Installed`
 

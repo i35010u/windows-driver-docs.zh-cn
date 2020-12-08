@@ -1,29 +1,28 @@
 ---
 title: 双向通信架构层次结构
 description: 双向通信架构层次结构
-ms.assetid: b3435c17-f72b-4925-8d13-bd3e71b4947e
 keywords:
 - 双向通信架构 WDK 打印
 - 双向通信架构 WDK 打印
-- 层次结构 WDK bidi 通信
+- 层次结构 WDK 双向通信
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 17a038643a66fabf8374255195d22fd1ffa909d3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 12efcb7eb4e9115e773b85347c67f9d381ecfdca
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379043"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96797811"
 ---
 # <a name="bidirectional-communication-schema-hierarchy"></a>双向通信架构层次结构
 
-双向通信架构包含以下层次结构或树中的属性和值。
+双向通信架构包含下面的层次结构或属性和值树。
 
--   在纯文本 (例如，DeviceInfo) 中显示属性。
+-   属性以纯文本形式显示 (例如 DeviceInfo) 。
 
--   从 bidi 映射文件生成的属性显示在方括号中 (例如，\[类型\])。
+-   从双向映射文件生成的属性将显示在括号中 (例如， \[ 键入 \]) 。
 
--   斜体文本 (例如，FriendlyName) 中显示值。
+-   值以斜体文本显示 (例如，FriendlyName) 。
 
 ```cpp
 Printer

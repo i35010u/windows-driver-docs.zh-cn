@@ -1,7 +1,6 @@
 ---
 title: KSEVENT \_ PINCAPS \_ JACKINFOCHANGE
 description: KSEVENT \_ PINCAPS \_ JACKINFOCHANGE 事件向音频堆栈表明音频设备的插孔信息已更改。
-ms.assetid: 46514043-5044-4373-94ca-b00898aeefba
 keywords:
 - KSEVENT_PINCAPS_JACKINFOCHANGE 音频设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a5627e1d605340ff0fa433d3bf853c6078823f9c
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 64a86135e80edf9717e9c82861bc932645bfef49
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102656"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96799203"
 ---
 # <a name="ksevent_pincaps_jackinfochange"></a>KSEVENT \_ PINCAPS \_ JACKINFOCHANGE
 

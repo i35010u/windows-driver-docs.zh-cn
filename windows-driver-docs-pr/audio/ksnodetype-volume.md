@@ -1,7 +1,6 @@
 ---
 title: KSNODETYPE \_ 卷
 description: KSNODETYPE \_ 卷
-ms.assetid: 4776ea69-6492-428e-97ce-dd8842f22c16
 keywords:
 - KSNODETYPE_VOLUME 音频设备
 topic_type:
@@ -12,12 +11,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 73855533ca2a5c9ede99c774f2a7dcc731759fcd
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: c39d58114d5d5989d9b861865e77af9ab4b71bf4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89206997"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96799109"
 ---
 # <a name="ksnodetype_volume"></a>KSNODETYPE \_ 卷
 

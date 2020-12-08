@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ 音频 \_ 质量
 description: "\"KSPROPERTY \\_ 音频 \\_ 质量\" 属性指定节点输出流的质量级别。 这是 SRC 节点 (KSNODETYPE src) 的属性 \\_ 。"
-ms.assetid: ef57de3b-f7ac-4ecd-915e-27f34fcc2028
 keywords:
 - KSPROPERTY_AUDIO_QUALITY 音频设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 57901a4025eacfa0bb9700f0cec23cc4c7fe6873
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: e807aa4bb055c347b84c3cb04b5f6c77609c7e12
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102052"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96798993"
 ---
 # <a name="ksproperty_audio_quality"></a>KSPROPERTY \_ 音频 \_ 质量
 
@@ -79,7 +78,7 @@ ms.locfileid: "90102052"
 
 KSPROPERTY \_ 音频 \_ 质量属性请求返回状态 " \_ 成功" 以指示它已成功完成。 否则，请求将返回相应的错误状态代码。
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 有关 [KMixer 系统驱动程序](./kernel-mode-wdm-audio-components.md#kmixer-system-driver) 执行的采样速率转换的类型的信息，请参阅 [KMixer 驱动程序采样速率转换和混合策略](./index.md)。

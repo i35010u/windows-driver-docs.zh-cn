@@ -1,17 +1,16 @@
 ---
 title: Const (WSD)
 description: 用于设备 (WSD) Const 构造的 Web 服务定义必须返回的数据类型和值。
-ms.assetid: e9bcf007-0117-48a9-9873-a9bbc5702e29
 keywords:
 - Const 构造
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1ecf085c031db26ce7b5653fd352a58615cf04a4
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: ec2f1fbf5dd1e63030d6da5cfcdf98777d6cd415
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105778"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96797565"
 ---
 # <a name="const-wsd"></a>Const (WSD)
 
@@ -26,12 +25,12 @@ ms.locfileid: "90105778"
 <thead>
 <tr class="header">
 <th>Attribute</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><strong>name</strong></p></td>
+<td><p>name</p></td>
 <td><p>架构值的名称。</p></td>
 </tr>
 <tr class="even">

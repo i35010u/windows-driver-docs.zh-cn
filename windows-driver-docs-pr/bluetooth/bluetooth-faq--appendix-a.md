@@ -1,15 +1,14 @@
 ---
 title: 在新硬件上安装内置蓝牙驱动程序
 description: 本附录介绍了在 Windows Vista 中的新硬件上安装内置 Bluetooth 驱动程序的过程
-ms.assetid: 399514FD-2BD8-4DC2-8446-F5EEB4120876
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e168c8833d27039b0cb3bc6bb700b0888b37ebca
-ms.sourcegitcommit: b3e38d06762246c77cedd8e82d740ebea104c538
+ms.openlocfilehash: bd41c40be56371a7a6f4ef7e41cf865ba68624a4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91662371"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96798633"
 ---
 # <a name="appendix-a-how-to-install-an-in-box-bluetooth-driver-on-new-hardware-in-windows-vista"></a>附录 A：如何在 Windows Vista 中的新硬件上安装内置的蓝牙驱动程序
 
@@ -21,7 +20,7 @@ ms.locfileid: "91662371"
 
 开始设备管理器：
 
-1.  选择 " **开始**"，导航到 "所有程序" "附件" " ** &gt; &gt; 命令提示符**"，选择并按住 (或右键单击) **命令提示符**"，然后选择并按住 (或右键单击) " 以 **管理员身份运行** "以使用提升的权限打开命令窗口。
+1.  选择 " **开始**"，导航到 "所有程序" "附件" " **&gt; &gt; 命令提示符**"，选择并按住 (或右键单击) **命令提示符**"，然后选择并按住 (或右键单击) " 以 **管理员身份运行** "以使用提升的权限打开命令窗口。
 2.  键入以下内容： **devmgmt.msc**
 
 在 " **其他设备**" 下的 "设备管理器设备列表中找到蓝牙收音机的条目。 在下图中，无线电的名称为 "UGT"。 在某些便携式计算机上，可能需要先使用组合键（如 Fn + F5）来打开蓝牙收音机。
@@ -33,7 +32,7 @@ ms.locfileid: "91662371"
 USB \\ 类 \_ E0&子类 \_ 01&Prot \_ 01
 ### <a name="span-idstep_2__start_the_update_driver_software_wizardspanspan-idstep_2__start_the_update_driver_software_wizardspanspan-idstep_2__start_the_update_driver_software_wizardspanstep-2-start-the-update-driver-software-wizard"></a><span id="Step_2__Start_the_Update_Driver_Software_Wizard"></span><span id="step_2__start_the_update_driver_software_wizard"></span><span id="STEP_2__START_THE_UPDATE_DRIVER_SOFTWARE_WIZARD"></span>步骤2：启动更新驱动程序软件向导
 
-选择并按住 (或右键单击蓝牙单选节点) ，然后选择 " **更新驱动程序软件**"。 若要转到下图中的页面，请选择 **"浏览计算机以查找驱动程序软件**"。 若要手动选择驱动程序，请选择 " **让我从计算机上的设备驱动程序列表中**选择"。
+选择并按住 (或右键单击蓝牙单选节点) ，然后选择 " **更新驱动程序软件**"。 若要转到下图中的页面，请选择 **"浏览计算机以查找驱动程序软件**"。 若要手动选择驱动程序，请选择 " **让我从计算机上的设备驱动程序列表中** 选择"。
 
 ![显示 "更新驱动程序软件-U G T" 窗口的屏幕截图。](images/bthnewhwstep2.jpg)
 

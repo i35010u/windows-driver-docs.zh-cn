@@ -1,26 +1,25 @@
 ---
 title: 复合模板数据类型问题
 description: 复合模板数据类型问题
-ms.assetid: 61f26465-c79d-42e3-94c8-26c2c61ecb98
 keywords:
 - 模板 WDK GDL，数据类型
-- 数据类型 WDK GDL，模板的数据类型的问题
+- 数据类型 WDK GDL，模板数据类型的问题
 - 数据类型 WDK GDL，复合
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3b54f141501b36833db2ead1b1da50e730b11931
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: faa0e340f264ecd6e97231184c2757ecba43996e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63353154"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96797601"
 ---
 # <a name="compound-template-data-type-issues"></a>复合模板数据类型问题
 
 
-复合数据类型都从其他数据类型创建并使用括号括起的数据类型之一，也必须由括号括括起来的括号括起来的数据类型的所有数据类型。
+如果从其他数据类型创建复合数据类型，并使用括号将其中一种数据类型括起来，则括在括号内的所有数据类型都必须括在括号内。
 
-例如，假设您通过使用以下模板定义 GPD 整数列表。
+例如，假设你使用以下模板来定义 GPD 整数的列表。
 
 ```cpp
 *Template:  LIST_OF_INTS
@@ -45,7 +44,7 @@ ms.locfileid: "63353154"
 }
 ```
 
-然后，以下值是有效和等效表达式的列表\_OF\_列表\_OF\_整数数据类型。
+然后，以下值是 \_ \_ \_ \_ 整数数据类型列表的有效和等效表达式。
 
 ```cpp
 *ListList: 1,2,3:10,11,12:20,21,22 
@@ -53,13 +52,13 @@ ms.locfileid: "63353154"
 *ListList: ((1,2,3):(10,11,12):(20,21,22))
 ```
 
-但是，下面的值违反了嵌套的括号规则。
+但是，以下值违反了括号规则的嵌套。
 
 ```cpp
 *ListList: (1,2,3):(10,11,12):(20,21,22)
 ```
 
-前面的示例将生成语法错误的下一步括号分析器筛选器假定遇到任何括号属于最外层的上下文，因为属于下一步上下文中，依次类推。
+前面的示例将生成语法错误，因为分析器筛选器假设其遇到的任何括号属于最外层上下文，下一个括号属于下一个上下文，依此类推。
 
  
 

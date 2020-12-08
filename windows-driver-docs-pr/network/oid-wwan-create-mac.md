@@ -1,16 +1,15 @@
 ---
 title: OID_WWAN_CREATE_MAC
 description: OID_WWAN_CREATE_MAC 要求微型端口驱动程序创建新的 NDIS 端口。
-ms.assetid: 4EF98858-86CD-409B-BE41-E57B24158609
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_WWAN_CREATE_MAC 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: ce764086a083935b8a57bc7d84f29bcae1f05b10
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 4e3d19799aca287ea8b089d89c1e0b0247bbbed3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89207429"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96797979"
 ---
 # <a name="oid_wwan_create_mac"></a>OID \_ WWAN \_ CREATE \_ MAC
 
@@ -46,7 +45,7 @@ OID \_ WWAN \_ CREATE \_ MAC 请求微型端口驱动程序来创建新的 NDIS 
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**NDIS \_ WWAN \_ MAC \_ 信息**](/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_mac_info)

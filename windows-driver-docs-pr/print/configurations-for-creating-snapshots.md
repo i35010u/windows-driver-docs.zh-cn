@@ -1,25 +1,24 @@
 ---
 title: 用于创建快照的配置
 description: 用于创建快照的配置
-ms.assetid: d837348e-81e2-432a-b8b2-5df9cc1c7a9a
 keywords:
-- GDL WDK 配置
-- 快照 WDK GDL 快照的配置
+- GDL WDK，配置
+- 快照 WDK GDL，快照配置
 - 分析器 WDK GDL，快照配置
 - 配置 WDK GDL，创建快照
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5b247e773cbf29240fbeb10db946a5f41ac0ce31
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1d595471e0e3a2a6bbeec17ab87b07402fda963b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63360576"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96797585"
 ---
 # <a name="configurations-for-creating-snapshots"></a>用于创建快照的配置
 
 
-配置是没有什么比参数和分配给每个参数的当前值的列表。 GDL 分析器接口需要的配置为在 XML 中，但为了简化，下面的伪代码示例显示了典型表示的配置使用的参数值对的列表。
+配置只是一个参数列表和分配给每个参数的当前值。 GDL 分析器接口需要将配置置于 XML 中，但为了简化，下面的伪代码示例演示了使用参数/值对列表的配置的典型表示形式。
 
 ```cpp
 Today: Sunday

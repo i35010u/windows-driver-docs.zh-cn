@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ AUDIOEFFECTSDISCOVERY \_ EFFECTSLIST
 description: KSPROPERTY \_ AUDIOEFFECTSDISCOVERY \_ EFFECTSLIST 属性指定静音节点上的通道是否 (静音) 静音 \_ 。
-ms.assetid: 53FDAFE2-8E5C-42C7-A8F3-13666BA90D98
 keywords:
 - KSPROPERTY_AUDIOEFFECTSDISCOVERY_EFFECTSLIST 音频设备
 topic_type:
@@ -14,16 +13,16 @@ api_type:
 - HeaderDef
 ms.date: 09/30/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 5450f0b5c5ecef2543661063af2217b8763c434f
-ms.sourcegitcommit: 372464be981a39781c71049126f36891cb5d0cad
+ms.openlocfilehash: a2fae33153d238a7a081830f3f54601fe1be9248
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91646299"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96798961"
 ---
 # <a name="ksproperty_audioeffectsdiscovery_effectslist"></a>KSPROPERTY \_ AUDIOEFFECTSDISCOVERY \_ EFFECTSLIST
 
-**KSPROPERTY \_ AUDIOEFFECTSDISCOVERY \_ EFFECTSLIST**属性是一个筛选器属性，其值是应用于特定 KS pin 工厂的音频效果类型的列表，适用于特定的音频信号处理路径。
+**KSPROPERTY \_ AUDIOEFFECTSDISCOVERY \_ EFFECTSLIST** 属性是一个筛选器属性，其值是应用于特定 KS pin 工厂的音频效果类型的列表，适用于特定的音频信号处理路径。
 
 ### <a name="span-idusage_summary_tablespanspan-idusage_summary_tablespanspan-idusage_summary_tablespanusage-summary-table"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用情况摘要表
 
@@ -59,13 +58,13 @@ ms.locfileid: "91646299"
 
 属性值是零个或多个音频效果类型 Guid 的数组 (例如，音频 \_ 效果 \_ 类型 \_ 声音 \_ 回声 \_ 取消) ，后者是由 **KSP \_ PINMODE** 结构标识的 pin 信号处理路径中的。
 
-**注意**   \_ \_ 不得为此属性设置 KSPROPERTY 类型拓扑标志位。
+**注意** \_ \_ 不得为此属性设置 KSPROPERTY 类型拓扑标志位。
 
 ### <a name="return-value"></a>返回值
 
-**KSPROPERTY \_ AUDIOEFFECTSDISCOVERY \_ EFFECTSLIST**属性请求返回状态 \_ SUCCESS 以指示已成功完成。 否则，此属性请求将返回相应的错误状态代码。
+**KSPROPERTY \_ AUDIOEFFECTSDISCOVERY \_ EFFECTSLIST** 属性请求返回状态 \_ SUCCESS 以指示已成功完成。 否则，此属性请求将返回相应的错误状态代码。
 
-## <a name="remarks"></a>注解
+## <a name="remarks"></a>备注
 
 如果音频驱动程序使用 Microsoft 的通用代理 APO 来检索用于 KS pin 的不同信号处理路径中包含的音频效果，则它必须支持此属性。 一般代理 APO 包含在 *msapofxproxy.dll* 文件中。 音频驱动程序可以在音频驱动程序中完成所有信号处理时，或在相应的数字信号处理器 (DSP) 硬件组件中完成所有信号处理，而不是在 APO 中进行任何处理时，使用此通用代理 APO。 在这种情况下，APO 的唯一功能是向音频系统报告信号处理效果。
 
@@ -85,7 +84,7 @@ ms.locfileid: "91646299"
 <tbody>
 <tr class="odd">
 <td><p>版本</p></td>
-<td><p>Windows 8.1</p></td>
+<td><p>Windows 8.1</p></td>
 </tr>
 <tr class="even">
 <td><p>标头</p></td>
@@ -94,7 +93,7 @@ ms.locfileid: "91646299"
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [**KSP \_ PINMODE**](/windows/win32/api/msapofxproxy/ns-msapofxproxy-ksp_pinmode)
 

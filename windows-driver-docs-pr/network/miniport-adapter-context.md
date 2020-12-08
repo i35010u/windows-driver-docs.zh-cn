@@ -1,19 +1,18 @@
 ---
 title: 微型端口适配器上下文
 description: 微型端口适配器上下文
-ms.assetid: cb43d02d-cf52-46a4-b56d-aa3afcbd0ca5
 keywords:
 - 逻辑适配器 WDK 网络
 - 上下文 WDK 微型端口适配器
 - 微型端口适配器 WDK 网络，上下文
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cbd40de28ff71cc08ce8d5fbdca184b4785cdd7e
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: d7b2cf31362b2d74a1100d7935f4f4022ce5c18a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89218017"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96798081"
 ---
 # <a name="miniport-adapter-context"></a>微型端口适配器上下文
 

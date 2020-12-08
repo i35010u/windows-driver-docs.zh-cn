@@ -1,17 +1,16 @@
 ---
 title: ConvertDevModeToPrintTicket 概述
 description: 对于安装的每个打印驱动程序插件，将调用 ConvertDevModeToPrintTicket 方法。
-ms.assetid: 71387d8b-60ce-4deb-a20b-9d7b0b7be230
 keywords:
 - ConvertDevModeToPrintTicket
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b64cec1bdae0ec765913817258b5d61bb4e505e5
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 5812891f5ba7c51b630f4148739973c7f075d30c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89210615"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96797541"
 ---
 # <a name="convertdevmodetoprintticket-overview"></a>ConvertDevModeToPrintTicket 概述
 

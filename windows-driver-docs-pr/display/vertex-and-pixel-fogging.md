@@ -1,25 +1,24 @@
 ---
 title: 顶点和像素雾化
 description: 顶点和像素雾化
-ms.assetid: 4cdba82f-0cfe-4416-951c-59b577c7f30e
 keywords:
-- 雾化 WDK Direct3D 像素
-- 顶点雾 WDK Direct3D
-- 雾化 WDK Direct3D
-- 线性雾 WDK Direct3D
-- 指数雾 WDK Direct3D
-- 指数平方的雾 WDK Direct3D
+- 象素 fogging WDK Direct3D
+- 顶点雾化 WDK Direct3D
+- fogging WDK Direct3D
+- 线性雾化 WDK Direct3D
+- 指数雾化 WDK Direct3D
+- 指数方形雾化 WDK Direct3D
 - 单色照明 WDK Direct3D
-- 颜色雾计算 WDK Direct3D
-- 混合雾身份 WDK Direct3D
+- 颜色雾化计算 WDK Direct3D
+- 混合雾化系数 WDK Direct3D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3f6cb7e11cbc1802167deb8881fe0b9e2a06e4c0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f838177220939f63ee97efce62b2f70cd38fe08f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390787"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96798235"
 ---
 # <a name="vertex-and-pixel-fogging"></a>顶点和像素雾化
 
@@ -27,21 +26,21 @@ ms.locfileid: "63390787"
 ## <span id="ddk_vertex_and_pixel_fogging_gg"></span><span id="DDK_VERTEX_AND_PIXEL_FOGGING_GG"></span>
 
 
-雾有三个主要配置文件类型： 线性、 指数函数和指数平方值。 此外，还有两个主要的实现方法： 顶点雾 （也称为迭代或本地模糊） 和像素雾 （也称为表或全局雾）。
+雾化具有三个主要的配置文件类型：线性和指数平方。 还有两种主要实现方法：顶点雾化 (也称为 "循环访问" 或 "局部雾化) " 和 "像素雾化" (也称为 "表" 或 "全局雾化) "。
 
-在单色 （冲刺） 照明模式下，雾可以仅当雾颜色为黑色时正常工作。 （如果有任何照明，任何雾颜色有效因为雾呈现为黑色。）可以是雾视为对象的可见性-雾值越低、 更高版本的模糊效果和不可见的度量值。
+在单色 (斜坡) 照明模式下，只有当雾化颜色为黑色时，雾化才能正常工作。  (如果没有照明，则任何雾化颜色都将起作用，因为雾化呈现为黑色。 ) 雾化可以视为可见性的度量值，越小，雾化效果越大，对象的可见性就越小。
 
-混合身份雾**f**所有雾计算中使用。 它代表的对象的颜色与雾颜色比例。 最终颜色由以下公式确定：
+雾化混合系数 **f** 用于所有雾化计算。 它表示雾化颜色与对象颜色的比例。 最终颜色由以下公式确定：
 
-**颜色 = f \* objColor + (1.0-f) \* fogColor**
+**Color = f \* objColor + (1.0-f) \* fogColor**
 
-因此，混合身份 0.0 一团迷雾是完整雾颜色和混合因子 1.0 一团迷雾是完整的对象的颜色。 通常情况下， **f**与距离会降低。
+因此，雾化混合系数0.0 为完全雾化颜色，雾化混合系数1.0 为完全对象颜色。 通常情况下， **f** 会降低距离。
 
-下图所示，线性雾密度以线性方式增加，随着距离的增加。
+如下图所示，线性雾化密度随着距离的增加而以线性方式增加。
 
-![说明线性雾的关系图](images/d3dfig23.png)
+![说明线性雾化的关系图](images/d3dfig23.png)
 
-此线性增加不同于指数雾雾密度以指数方式增加。 可以按如下所示设置线性雾配置文件： D3DRENDERSTATE\_FOGSTART 呈现状态设置为 ZFront 并*f* = 1.0; D3DRENDERSTATE\_FOGEND 呈现状态设置为 ZBack 和*f* = 0.0。 D3DRENDERSTATE\_FOGDENSITY 呈现状态将被忽略。
+这种线性增长不同于指数雾化，其中雾化密度呈指数级增长。 可以按如下所示设置线性雾化配置文件： D3DRENDERSTATE \_ FOGSTART render 状态设置为 ZFront 和 *f* = 1.0; D3DRENDERSTATE \_ FOGEND Render 状态设置为 ZBack， *f* = 0.0。 忽略 D3DRENDERSTATE \_ FOGDENSITY 呈现状态。
 
  
 

@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ E-ac3 \_ DOWNMIX
 description: KSPROPERTY \_ E-ac3 \_ DOWNMIX 属性指定是否需要为 AC 3 编码流中的程序通道 downmixed，以适应扬声器配置。
-ms.assetid: 1d47f890-f7da-423f-adef-72b06a0f79d8
 keywords:
 - KSPROPERTY_AC3_DOWNMIX 音频设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ef17bb55631ebd6ee5d5cee79a17d3278d406b27
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: c829e97c7ba8074087e94de1b0999d4698ce7cad
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102344"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96799093"
 ---
 # <a name="ksproperty_ac3_downmix"></a>KSPROPERTY \_ E-ac3 \_ DOWNMIX
 

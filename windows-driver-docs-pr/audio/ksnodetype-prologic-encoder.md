@@ -1,7 +1,6 @@
 ---
 title: KSNODETYPE \_ PROLOGIC \_ 编码器
 description: KSNODETYPE \_ PROLOGIC \_ 编码器
-ms.assetid: cca6fe1d-20f8-4112-956b-a1b33b48a4ff
 keywords:
 - KSNODETYPE_PROLOGIC_ENCODER 音频设备
 topic_type:
@@ -12,12 +11,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c4f72435e2290506ac5c0f358f536cb3f538bc07
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: fcb8102184421ea4affae6da48d57e711102fc69
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89207001"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96799133"
 ---
 # <a name="ksnodetype_prologic_encoder"></a>KSNODETYPE \_ PROLOGIC \_ 编码器
 

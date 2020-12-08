@@ -1,7 +1,6 @@
 ---
 title: irpfind
-description: Irpfind 扩展显示当前分配的在目标系统中，或指定的搜索条件匹配的那些 Irp 有关所有 I/O 请求数据包 (IRP) 有关的信息。
-ms.assetid: f0d850d9-8804-40df-90a3-b9c6a6b4540f
+description: Irpfind 扩展显示当前在目标系统中分配 (IRP) 的所有 i/o 请求包的相关信息，以及与指定的搜索条件匹配的那些 Irp。
 keywords:
 - irpfind Windows 调试
 ms.date: 05/23/2017
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: fede13a247b35ebc4ec556b41a461c1eac7354d1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: db382518237cf0f17d8e37821cd6b77e5c2199c3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63336390"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96798445"
 ---
 # <a name="irpfind"></a>!irpfind
 
 
-**！ Irpfind**扩展显示有关所有 I/O 请求数据包 (IRP) 当前分配的目标系统中，或指定的搜索条件匹配的那些 Irp 的信息。
+**！ Irpfind** extension 显示有关当前在目标系统中分配的所有 i/o 请求数据包 (IRP) 的信息，或者与与指定的搜索条件匹配的那些 irp 有关的信息。
 
 语法
 
@@ -30,32 +29,32 @@ ms.locfileid: "63336390"
 !irpfind [-v][PoolType[RestartAddress[CriteriaData]]]
 ```
 
-## <a name="span-idddkirpfinddbgspanspan-idddkirpfinddbgspanparameters"></a><span id="ddk__irpfind_dbg"></span><span id="DDK__IRPFIND_DBG"></span>参数
+## <a name="span-idddk__irpfind_dbgspanspan-idddk__irpfind_dbgspanparameters"></a><span id="ddk__irpfind_dbg"></span><span id="DDK__IRPFIND_DBG"></span>参数
 
 
-<span id="_______-v______"></span><span id="_______-V______"></span> **-v**   
-显示详细的信息。
+<span id="_______-v______"></span><span id="_______-V______"></span>**-v**   
+显示详细信息。
 
-<span id="_______PoolType______"></span><span id="_______pooltype______"></span><span id="_______POOLTYPE______"></span> *PoolType*   
+<span id="_______PoolType______"></span><span id="_______pooltype______"></span><span id="_______POOLTYPE______"></span>*PoolType*   
 指定要搜索的池的类型。 允许使用以下值：
 
 <span id="0"></span>0  
-指定非分页的内存池。 这是默认设置。
+指定非分页内存池。 这是默认值。
 
 <span id="1"></span>1  
-指定分页的内存池。
+指定分页内存池。
 
 <span id="2"></span>2  
-指定特殊的池。
+指定特殊池。
 
 <span id="4"></span>4  
-指定的会话池。
+指定会话池。
 
-<span id="_______RestartAddress______"></span><span id="_______restartaddress______"></span><span id="_______RESTARTADDRESS______"></span> *RestartAddress*   
-指定要开始搜索的十六进制地址。 这是上一次搜索已过早终止的情况下很有用。 默认值为 0。
+<span id="_______RestartAddress______"></span><span id="_______restartaddress______"></span><span id="_______RESTARTADDRESS______"></span>*RestartAddress*   
+指定从其开始搜索的十六进制地址。 如果以前的搜索提前终止，这会很有用。 默认值为零。
 
-<span id="_______Criteria______"></span><span id="_______criteria______"></span><span id="_______CRITERIA______"></span> *条件*   
-指定用于搜索的条件。 仅这些 Irp 满足给定的匹配项将会显示。
+<span id="_______Criteria______"></span><span id="_______criteria______"></span><span id="_______CRITERIA______"></span>*条件*   
+指定搜索条件。 将仅显示那些满足给定匹配项的 Irp。
 
 <table>
 <colgroup>
@@ -70,55 +69,55 @@ ms.locfileid: "63336390"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>arg</strong></p></td>
-<td align="left"><p>查找与其中一个参数等于的堆栈位置的所有 Irp<em>数据</em>。</p></td>
+<td align="left"><p><strong>与我们联系</strong></p></td>
+<td align="left"><p>查找所有具有堆栈位置的 Irp，其中其中一个参数等于 <em>Data</em>。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>device</strong></p></td>
-<td align="left"><p>查找所有 Irp 堆栈位置使用其中<strong>DeviceObject</strong>等于<em>数据</em>。</p></td>
+<td align="left"><p><strong>设备</strong></p></td>
+<td align="left"><p>查找堆栈位置的所有 Irp，其中 <strong>DeviceObject</strong> 等于 <em>Data</em>。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>fileobject</strong></p></td>
-<td align="left"><p>查找所有 Irp 其<strong>Irp.Tail.Overlay.OriginalFileObject</strong>等于<em>数据</em>。</p></td>
+<td align="left"><p>查找其 <strong>Irp OriginalFileObject</strong> 等于 <em>Data</em>的所有 irp。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>mdlprocess</strong></p></td>
-<td align="left"><p>查找所有 Irp 其<strong>Irp.MdlAddress.Process</strong>等于<em>数据</em>。</p></td>
+<td align="left"><p>查找其 <strong>MdlAddress</strong> 等于 <em>Data</em>的所有 irp。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>thread</strong></p></td>
-<td align="left"><p>查找所有 Irp 其<strong>Irp.Tail.Overlay.Thread</strong>等于<em>数据</em>。</p></td>
+<td align="left"><p>查找其 <strong>Irp</strong> 为 " <em>数据</em>" 的所有 irp。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>userevent</strong></p></td>
-<td align="left"><p>查找所有 Irp 其<strong>Irp.UserEvent</strong>等于<em>数据</em>。</p></td>
+<td align="left"><p>查找其 <strong>UserEvent</strong> 等于 <em>Data</em>的所有 irp。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-<span id="_______Data______"></span><span id="_______data______"></span><span id="_______DATA______"></span> *数据*   
-指定在搜索匹配的数据。
+<span id="_______Data______"></span><span id="_______data______"></span><span id="_______DATA______"></span>*数据*   
+指定要在搜索中匹配的数据。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 Kdexts.dll
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-请参阅[插调试](plug-and-play-debugging.md)对于此扩展命令的应用程序。 有关 Irp 的信息，请参阅 Windows Driver Kit (WDK) 文档和*Microsoft Windows Internals*由 Mark Russinovich 和 David solomon 合著。
+请参阅 [即插即用调试](plug-and-play-debugging.md) 此扩展命令的应用程序。 有关 Irp 的信息，请参阅 Windows 驱动程序工具包 (WDK) 文档和 *Microsoft Windows 内部机制* ，Mark Russinovich 和 David 所罗门群岛。
 
 <a name="remarks"></a>备注
 -------
 
-此示例中的非分页池的设置完成后的用户事件 FF9E4F48 查找 IRP:
+此示例在非分页池中查找要在完成时设置用户事件 FF9E4F48 的 IRP：
 
 ```dbgcmd
 kd> !irpfind 0 0 userevent ff9e4f48
 ```
 
-下面的示例生成非分页缓冲池中的所有 Irp 的完整列表：
+下面的示例生成非分页池中所有 Irp 的完整列表：
 
 ```dbgcmd
 kd> !irpfind

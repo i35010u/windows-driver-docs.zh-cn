@@ -1,7 +1,6 @@
 ---
-title: KSNODETYPE\_AGC
-description: KSNODETYPE\_AGC
-ms.assetid: 54d6bb6a-9c15-4020-bc6e-92b24878e1fd
+title: KSNODETYPE \_ AGC
+description: KSNODETYPE \_ AGC
 keywords:
 - KSNODETYPE_AGC 音频设备
 topic_type:
@@ -12,32 +11,32 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c2676a77bb38cb5aa79a11198112f34d0eb8e47b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e33d370dce0db361e25453c756a2da6ea9ef5d3b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333294"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96799181"
 ---
-# <a name="ksnodetypeagc"></a>KSNODETYPE\_AGC
+# <a name="ksnodetype_agc"></a>KSNODETYPE \_ AGC
 
 
 ## <span id="ddk_ksnodetype_agc_ks"></span><span id="DDK_KSNODETYPE_AGC_KS"></span>
 
 
-KSNODETYPE\_AGC 节点表示自动增益控制 (AGC)。 AGC 节点具有一个输入的流和一个输出流，并在两个流的每个具有相同的数据格式。 节点自动调整衰减或提升应用于输入流，以便实现最大动态范围，而不剪辑信号的量。
+KSNODETYPE \_ AGC 节点表示 (AGC) 的自动增益控制。 AGC 节点有一个输入流和一个输出流，两个流中的每一个都具有相同的数据格式。 节点会自动调整应用于输入流的衰减量或收益量，以实现最大动态范围而不剪裁信号。
 
-KSNODETYPE\_AGC 节点应支持以下属性：
+KSNODETYPE \_ AGC 节点应支持以下属性：
 
-[**KSPROPERTY\_AUDIO\_AGC**](ksproperty-audio-agc.md)
+[**KSPROPERTY \_ 音频 \_ AGC**](ksproperty-audio-agc.md)
 
-KSNODETYPE\_AGC 节点还可以支持以下可选属性：
+KSNODETYPE \_ AGC 节点还可以支持以下可选属性：
 
-[**KSPROPERTY\_TOPOLOGYNODE\_启用**](ksproperty-topologynode-enable.md)
+[**KSPROPERTY \_ TOPOLOGYNODE \_ ENABLE**](ksproperty-topologynode-enable.md)
 
-[**KSPROPERTY\_TOPOLOGYNODE\_重置**](ksproperty-topologynode-reset.md)
+[**KSPROPERTY \_ TOPOLOGYNODE \_ 重置**](ksproperty-topologynode-reset.md)
 
-KSPROPERTY\_TOPOLOGYNODE\_启用属性用于同时启用和禁用节点。 该节点禁用时，在直通模式下运行 （也就是说，它允许要传递到无需修改输出的输入的流）。
+KSPROPERTY \_ TOPOLOGYNODE \_ enable 属性用于启用和禁用节点。 如果禁用，则节点在传递模式下运行 (也就是说，它允许输入流传递到输出，而无需) 修改。
 
  
 

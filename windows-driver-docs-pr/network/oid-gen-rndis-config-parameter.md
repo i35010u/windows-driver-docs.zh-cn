@@ -1,16 +1,15 @@
 ---
 title: OID_GEN_RNDIS_CONFIG_PARAMETER
 description: 作为集，OID_GEN_RNDIS_CONFIG_PARAMETER 用于设置特定于设备的参数。
-ms.assetid: 79e74e8b-7811-46a5-8ede-f6cca92967b0
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_GEN_RNDIS_CONFIG_PARAMETER 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: b147abdbefedfc08a3b65df922fb7229003c09b4
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 9a7adfece53265e72a9c040c2ed29aca06391406
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89206739"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96798005"
 ---
 # <a name="oid_gen_rndis_config_parameter"></a>OID \_ GEN \_ RNDIS \_ CONFIG \_ 参数
 
@@ -37,7 +36,7 @@ ms.locfileid: "89206739"
 <a name="remarks"></a>备注
 -------
 
-OID \_ GEN \_ RNDIS \_ CONFIG \_ 参数用于 RNDIS 设备。 主机使用它来设置特定于设备的参数。 它不由微型端口驱动程序使用。 有关此 OID 的详细信息，请参阅 [设置特定于设备的参数](./setting-device-specific-parameters.md)。
+OID \_ GEN \_ RNDIS \_ CONFIG \_ 参数用于 RNDIS 设备。 主机使用它来设置特定于设备的参数。 它不由微型端口驱动程序使用。 有关此 OID 的详细信息，请参阅 [设置 Device-Specific 参数](./setting-device-specific-parameters.md)。
 
 <a name="requirements"></a>要求
 ------------

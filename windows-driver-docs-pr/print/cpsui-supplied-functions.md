@@ -1,7 +1,6 @@
 ---
 title: CPSUI 提供的函数
 description: CPSUI 提供的函数
-ms.assetid: 49da252a-fb51-43f3-b2e8-27253470b4b5
 keywords:
 - 公共属性表用户界面 WDK 打印，功能
 - CPSUI WDK 打印，函数
@@ -11,12 +10,12 @@ keywords:
 - ComPropSheet
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 26dde763222df5f61a33cd8f99596a717543046a
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: b6585e287135660468b0931f4013e572e22443fc
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89217779"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96797481"
 ---
 # <a name="cpsui-supplied-functions"></a>CPSUI 提供的函数
 
@@ -30,7 +29,7 @@ CPSUI 为应用程序提供了以下两个重要功能：
 
     [**CommonPropertySheetUI**](/windows-hardware/drivers/ddi/compstui/nf-compstui-commonpropertysheetuia)函数是 CPSUI 的入口点。 函数会导致创建并显示属性页页面，然后允许用户查看和修改它们。
 
-    当应用程序调用 [**CommonPropertySheetUI**](/windows-hardware/drivers/ddi/compstui/nf-compstui-commonpropertysheetuia)时，它将提供 [页面创建回调](page-creation-callbacks.md) 的地址，用于描述要创建的页面。 CPSUI 调用此回调以获取页面说明。 然后，它会显示页面，使应用程序用户可以修改该页中包含的值，并使用 [页面事件回调](page-event-callbacks.md)将修改后的值传递到应用程序。 在用户通过单击 **"确定" 或 "** 取消" 来**取消**属性表之前， **CommonPropertySheetUI**函数不会返回。
+    当应用程序调用 [**CommonPropertySheetUI**](/windows-hardware/drivers/ddi/compstui/nf-compstui-commonpropertysheetuia)时，它将提供 [页面创建回调](page-creation-callbacks.md) 的地址，用于描述要创建的页面。 CPSUI 调用此回调以获取页面说明。 然后，它会显示页面，使应用程序用户可以修改该页中包含的值，并使用 [页面事件回调](page-event-callbacks.md)将修改后的值传递到应用程序。 在用户通过单击 **"确定" 或 "** 取消" 来 **取消** 属性表之前， **CommonPropertySheetUI** 函数不会返回。
 
     请注意，打印机接口 Dll 不调用此函数;它由打印后台处理程序调用。
 
