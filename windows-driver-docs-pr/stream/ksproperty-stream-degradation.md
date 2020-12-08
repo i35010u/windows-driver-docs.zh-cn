@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ 流 \_ 降级
 description: KSPROPERTY \_ 流 \_ 降级属性是一个可选属性，如果 pin 允许降级策略，则应实现该属性。
-ms.assetid: b8f9db81-a9ed-4a13-8d64-14854193c91b
 keywords:
 - KSPROPERTY_STREAM_DEGRADATION 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7445bb59930e6478fe6e4a71f38472fcee9c64a8
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 8449b6305657ab663fc80af905bf4b5da85f0d70
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103032"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96814863"
 ---
 # <a name="ksproperty_stream_degradation"></a>KSPROPERTY \_ 流 \_ 降级
 
@@ -61,7 +60,7 @@ KSPROPERTY \_ 流 \_ 降级属性是一个可选属性，如果 pin 允许降级
 
  
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 查询时，属性返回要以 [**KSMULTIPLE \_ ITEM**](/windows-hardware/drivers/ddi/ks/ns-ks-ksmultiple_item) 格式返回的结构的大小和计数，后跟 [**KSDEGRADE**](/previous-versions/ff561671(v=vs.85)) 结构。

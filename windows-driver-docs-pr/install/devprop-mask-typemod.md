@@ -1,7 +1,6 @@
 ---
 title: DEVPROP_MASK_TYPEMOD
 description: 在 Windows Vista 和更高版本的 Windows 中，DEVPROP_MASK_TYPEMOD 掩码可以在按位 "与" 属性数据类型标识符组合在一起，以便从属性数据类型标识符提取 DEVPROP_TYPEMOD_Xxx 的属性数据类型修饰符。
-ms.assetid: 9ed153d7-dd37-4978-9e03-44efac2ab97a
 keywords:
 - DEVPROP_MASK_TYPEMOD 设备和驱动程序安装
 topic_type:
@@ -14,17 +13,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 300415646e2f9023baf5156676e1d09d90b16e0a
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: e0a0045f87954aceb5e214bdb24095f9c74a7a48
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89095923"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96813729"
 ---
 # <a name="devprop_mask_typemod"></a>DEVPROP_MASK_TYPEMOD
 
 
-在 Windows Vista 和更高版本的 Windows 中，可以在按位 "与" 的 [属性数据类型标识符](/previous-versions/ff541476(v=vs.85)) 中组合 DEVPROP_MASK_TYPEMOD 掩码，以便从属性数据类型标识符提取 DEVPROP_TYPEMOD_*Xxx* [**属性数据类型修饰符**](/previous-versions/ff549770(v=vs.85)) 。
+在 Windows Vista 和更高版本的 Windows 中，可以在按位 "与" 的 [属性数据类型标识符](/previous-versions/ff541476(v=vs.85)) 中组合 DEVPROP_MASK_TYPEMOD 掩码，以便从属性数据类型标识符提取 DEVPROP_TYPEMOD_ *Xxx* [**属性数据类型修饰符**](/previous-versions/ff549770(v=vs.85)) 。
 
 <a name="remarks"></a>备注
 -------
@@ -49,7 +48,7 @@ ms.locfileid: "89095923"
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**DEVPROP_MASK_TYPE**](devprop-mask-type.md)

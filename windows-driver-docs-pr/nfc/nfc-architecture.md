@@ -1,7 +1,6 @@
 ---
 title: NFC 体系结构
 description: 下面进一步显示了 Windows 上 NFC 堆栈的高级体系结构示意图。 NFC UMDF 驱动程序将实现此规范中所述的 DDIs。
-ms.assetid: 0FA2BE92-05E1-40D1-AD1D-AE9ADF425E67
 keywords:
 - NFC
 - 近场通信
@@ -10,12 +9,12 @@ keywords:
 - NFP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1afa32f3b1dcb6f46ebd84872cba58ffa5f23625
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 9416ce0b5c76a74c133c5d971a3c969b893e7290
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89382523"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96813539"
 ---
 # <a name="nfc-architecture"></a>NFC 体系结构
 

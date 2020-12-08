@@ -1,22 +1,21 @@
 ---
 title: 初识 UWP 设备应用
 description: 本主题概述了使 UWP 设备应用与常规 UWP 应用程序不同的特性和功能。
-ms.assetid: 395745E6-7A97-4B26-A82C-0729E7B999C6
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fcd866225e191b021f0979ce016d1b34c2c5d5c8
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 73c037436556d4e107a037be8cc12d4b0cec9d58
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91734205"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96815183"
 ---
 # <a name="meet-uwp-device-apps"></a>初识 UWP 设备应用
 
 
 设备制造商可以创建用作设备配套的 UWP 设备应用。 设备应用能够使用外围设备或内部设备的全部功能，并可以执行特权操作，例如固件更新。 本主题概述了使 UWP 设备应用与常规 UWP 应用程序不同的特性和功能。
 
-**注意**   其中每个功能都是可选的。 单个设备应用不需要全部使用。 所有这些功能都需要设备元数据。
+**注意**  其中每个功能都是可选的。 单个设备应用不需要全部使用。 所有这些功能都需要设备元数据。
 
  
 
@@ -31,7 +30,7 @@ ms.locfileid: "91734205"
 
 若要创建用于设备服务的后台任务 () 的设备更新，请使用 [DeviceServicingTrigger](/uwp/api/Windows.ApplicationModel.Background.DeviceServicingTrigger) 触发器。 可用于所有 UWP 应用的类似触发器 [DeviceUseTrigger](/uwp/api/Windows.ApplicationModel.Background.DeviceUseTrigger)（可用于实现可靠的内容同步）。 有关详细信息，请参阅 [UWP 设备应用的设备同步和更新](device-sync-and-update-for-uwp-device-apps.md)。
 
-**注意**   设备后台任务会限制应用可在后台运行的时间量，不允许无限操作或无限同步。
+**注意**  设备后台任务会限制应用可在后台运行的时间量，不允许无限操作或无限同步。
 
  
 
@@ -82,7 +81,7 @@ Oem 和组件供应商可以为 PC 内部的设备开发 UWP 设备应用程序�
 
 ![windows 应用商店设备应用可以自动安装](images/autoinstalluserexperience.png)
 
-**警告**   请注意，在安装应用时，自动安装功能不会向用户提供通知。 某些用户可能会发现这种体验令人费解，并使应用程序成为不良评级。
+**警告**  请注意，在安装应用时，自动安装功能不会向用户提供通知。 某些用户可能会发现这种体验令人费解，并使应用程序成为不良评级。
 
  
 

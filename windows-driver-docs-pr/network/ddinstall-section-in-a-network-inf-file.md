@@ -1,19 +1,18 @@
 ---
 title: 网络 INF 文件中的 DDInstall 节
 description: 网络 INF 文件中的 DDInstall 节
-ms.assetid: f6621796-0d1f-4d96-9850-720718e7ac44
 keywords:
 - INF 文件 WDK network，DDInstall 部分
 - 网络 INF 文件 WDK，DDInstall 部分
 - DDInstall 部分 WDK 网络
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2dc8ffe2ea0d1867c6fea150c7a63a61bd279c26
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 405c655eaa18c2c7d028d96fc5404b9b13626639
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89212203"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96814983"
 ---
 # <a name="ddinstall-section-in-a-network-inf-file"></a>网络 INF 文件中的 DDInstall 节
 
@@ -31,9 +30,9 @@ ms.locfileid: "89212203"
 
 ### <a name="characteristics"></a>特征
 
-网络 INF 文件中的每个 *DDInstall* 部分必须具有 **特征** 条目。 **特征**条目指定正在安装的网络组件的某些特征，并可能会限制用户对该组件的操作。 例如，" **特征** " 条目可以指定组件是否支持用户界面、是否可以删除，或者是否对用户隐藏了该组件。
+网络 INF 文件中的每个 *DDInstall* 部分必须具有 **特征** 条目。 **特征** 条目指定正在安装的网络组件的某些特征，并可能会限制用户对该组件的操作。 例如，" **特征** " 条目可以指定组件是否支持用户界面、是否可以删除，或者是否对用户隐藏了该组件。
 
-**特征**条目可以具有以下一个或多个值 (将多个值求和) ：
+**特征** 条目可以具有以下一个或多个值 (将多个值求和) ：
 
 <table>
 <colgroup>
@@ -44,7 +43,7 @@ ms.locfileid: "89212203"
 <thead>
 <tr class="header">
 <th align="left">十六进制值</th>
-<th align="left">名称</th>
+<th align="left">“属性”</th>
 <th align="left">说明</th>
 </tr>
 </thead>
@@ -123,7 +122,7 @@ Characteristics = 0x84; NCF_PHYSICAL, NCF_HAS_UI
 
 ### <a name="bustype"></a>BusType
 
-物理网络适配器的 *DDInstall* 部分必须包含一个 **BusType** 条目，该条目指定可在其上运行适配器的总线 (类型（如 PCI 或 ISA) ）。 **BusType**条目的可能值由 \_ ndis 标头文件中的接口类型枚举指定 () ，如下所示：
+物理网络适配器的 *DDInstall* 部分必须包含一个 **BusType** 条目，该条目指定可在其上运行适配器的总线 (类型（如 PCI 或 ISA) ）。 **BusType** 条目的可能值由 \_ ndis 标头文件中的接口类型枚举指定 () ，如下所示：
 
 <table>
 <colgroup>
@@ -133,7 +132,7 @@ Characteristics = 0x84; NCF_PHYSICAL, NCF_HAS_UI
 <thead>
 <tr class="header">
 <th align="left">BusType 项</th>
-<th align="left">值</th>
+<th align="left">“值”</th>
 </tr>
 </thead>
 <tbody>
@@ -194,11 +193,11 @@ Characteristics = 0x84; NCF_PHYSICAL, NCF_HAS_UI
 
  
 
-**注意**   如果适配器可在多种类型的总线上运行，则安装该适配器的 INF 文件应包含每种总线类型的*DDInstall*部分。
+**注意**  如果适配器可在多种类型的总线上运行，则安装该适配器的 INF 文件应包含每种总线类型的 *DDInstall* 部分。
 
  
 
-例如，如果适配器可在 ISA 总线和 PnPISA 总线上运行，则该适配器的 INF 文件应包含 ISA 的 *DDInstall* 部分和 PnPISA 的 *DDInstall* 部分。 每个此类*DDInstall*部分中的**BusType**条目应为该部分指定相应的总线类型，如下所示：
+例如，如果适配器可在 ISA 总线和 PnPISA 总线上运行，则该适配器的 INF 文件应包含 ISA 的 *DDInstall* 部分和 PnPISA 的 *DDInstall* 部分。 每个此类 *DDInstall* 部分中的 **BusType** 条目应为该部分指定相应的总线类型，如下所示：
 
 ```INF
 [a1.isa]
@@ -222,11 +221,11 @@ BusType=14
     Port1FunctionNumber = 2
     ```
 
-**注意**   假定 PCI 设备号或 PCI 函数到端口号的映射为静态。 它还假定适配器的端口按顺序编号。
+**注意**  假定 PCI 设备号或 PCI 函数到端口号的映射为静态。 它还假定适配器的端口按顺序编号。
 
  
 
-**Port1DeviceNumber**和**Port1FunctionNumber**项是互斥的。 如果给定 *DDInstall* 部分中同时存在这两个条目，则只使用 **Port1DeviceNumber** 条目。
+**Port1DeviceNumber** 和 **Port1FunctionNumber** 项是互斥的。 如果给定 *DDInstall* 部分中同时存在这两个条目，则只使用 **Port1DeviceNumber** 条目。
 
  
 

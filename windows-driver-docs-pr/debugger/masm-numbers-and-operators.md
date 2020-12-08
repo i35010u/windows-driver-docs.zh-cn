@@ -1,7 +1,6 @@
 ---
 title: MASM 数字和运算符
 description: MASM 数字和运算符
-ms.assetid: 9aeb3ef2-d83a-4f99-9a55-4bbd8a7e11b5
 keywords:
 - 表达式，MASM 表达式语法
 - " (MASM) 的数值表达式"
@@ -14,12 +13,12 @@ keywords:
 - 一元运算符
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e6f7b9e597de795f3058ced310429a2f16c2750b
-ms.sourcegitcommit: bb3b62a57ba3aea4a0adeefd2d81993367b7b334
+ms.openlocfilehash: 1250add2e013afdce1125c1389a9e30e2091b5a5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88148493"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96814537"
 ---
 # <a name="masm-numbers-and-operators"></a>MASM 数字和运算符
 
@@ -29,13 +28,13 @@ ms.locfileid: "88148493"
 
 可以在 base64、10、8或2中将数字放入 MASM 表达式中。
 
-使用 [**n (Set Number Base) **](n--set-number-base-.md) 命令将默认基数设置为16、10或8。 然后，在此基准中解释所有没有前缀数字。 您可以通过指定 **0x** 前缀 (十六进制) 、 **0n** 前缀 (decimal) 、 **0t** 前缀 (八进制) 或 **w..1 ....** 前缀 (binary) 来覆盖默认基数。
+使用 [**n (Set Number Base)**](n--set-number-base-.md) 命令将默认基数设置为16、10或8。 然后，在此基准中解释所有没有前缀数字。 您可以通过指定 **0x** 前缀 (十六进制) 、 **0n** 前缀 (decimal) 、 **0t** 前缀 (八进制) 或 **w..1 ....** 前缀 (binary) 来覆盖默认基数。
 
 还可以通过在数字后添加 **h** 来指定十六进制数。 可以在数字中使用大写或小写字母。 例如，"0x4AB3"、"0X4aB3"、"4AB3h"、"4AB3h" 和 "4aB3H" 的含义相同。
 
 如果未在表达式中的前缀后面添加数字，则该数字将读取为0。 因此，你可以将0写入0，前缀后跟0，并且仅限前缀。 例如，在十六进制中，"0"、"0x0" 和 "0x" 的含义相同。
 
-可以采用 **xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx \` ** 格式输入十六进制64位值。 还可以省略) 的抑音符 (\` 。 如果包含 "抑音符"，则会禁用 [自动符号扩展](sign-extension.md) 。
+可以采用 **xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx \`** 格式输入十六进制64位值。 还可以省略) 的抑音符 (\` 。 如果包含 "抑音符"，则会禁用 [自动符号扩展](sign-extension.md) 。
 
 ## <a name="symbols-in-masm-expressions"></a>MASM 表达式中的符号
 
@@ -53,7 +52,7 @@ ms.locfileid: "88148493"
 
 始终可以使用括号覆盖优先规则。
 
-如果将 MASM 表达式的一部分括在括号中，而两个 at 符号 ( @ @ ) 出现在表达式之前，则根据 [c + + 表达式规则](c---numbers-and-operators.md)解释该表达式。 不能在两个 at 符号和左括号之间添加空格。 还可以通过使用 **@ @c + + ( ... ) **或 **@ @masm ( ... ) **来指定[表达式计算器](evaluating-expressions.md)。
+如果将 MASM 表达式的一部分括在括号中，而两个 at 符号 ( @ @ ) 出现在表达式之前，则根据 [c + + 表达式规则](c---numbers-and-operators.md)解释该表达式。 不能在两个 at 符号和左括号之间添加空格。 还可以通过使用 **@ @c + + ( ... )** 或 **@ @masm ( ... )** 来指定 [表达式计算器](evaluating-expressions.md)。
 
 执行算术计算时，MASM 表达式计算器会将所有数字和符号视为 ULONG64 类型。
 
@@ -68,7 +67,7 @@ ms.locfileid: "88148493"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">操作员</th>
+<th align="left">运算符</th>
 <th align="left">含义</th>
 </tr>
 </thead>
@@ -86,7 +85,7 @@ ms.locfileid: "88148493"
 <td align="left"><p>如果参数为零，则返回1。 对于任何非零参数，返回零。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>你好</strong></p></td>
+<td align="left"><p><strong>hi</strong></p></td>
 <td align="left"><p>高16位</p></td>
 </tr>
 <tr class="odd">
@@ -146,7 +145,7 @@ ms.locfileid: "88148493"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">操作员</th>
+<th align="left">运算符</th>
 <th align="left">含义</th>
 </tr>
 </thead>
@@ -184,7 +183,7 @@ ms.locfileid: "88148493"
 <p>小于</p>
 <p>大于</p>
 <p>小于或等于</p>
-<p>大于等于</p>
+<p>大于或等于</p>
 <p>不等于</p></td>
 </tr>
 <tr class="odd">
@@ -218,7 +217,7 @@ ms.locfileid: "88148493"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">操作员</th>
+<th align="left">运算符</th>
 <th align="left">含义</th>
 </tr>
 </thead>
@@ -252,7 +251,7 @@ ms.locfileid: "88148493"
 </tbody>
 </table>
 
-## <a name="registers-and-pseudo-registers-in-masm-expressions"></a>在 MASM 表达式中注册和伪寄存器
+## <a name="registers-and-pseudo-registers-in-masm-expressions"></a>在 MASM 表达式中注册和 Pseudo-Registers
 
 可以在 MASM 表达式中使用寄存器和伪寄存器。 你可以在 "所有寄存器" 和 "伪注册" 之前添加 at 符号 ( @ ) 。 At 符号使调试器能够更快地访问该值。 基于 x86 的最常见寄存器不需要此 at 符号。 对于其他寄存器和伪寄存器，建议你添加 at 符号，但实际上并不是必需的。 如果在不太常用的寄存器上省略 at 符号，则调试器会尝试将文本解析为十六进制数，然后将其作为符号，最后作为寄存器进行分析。
 

@@ -1,7 +1,6 @@
 ---
 title: cbreg
-description: Cbreg 扩展显示 CardBus 套接字寄存器并 CardBus Exchangable 卡体系结构 (ExCA) 注册。
-ms.assetid: 7943e152-b1c9-464c-a0ad-3beac48884d2
+description: Cbreg 扩展显示 CardBus 套接字寄存器和 CardBus Exchangable 卡体系结构 (ExCA) 寄存器。
 keywords:
 - CardBus
 - ExCA 寄存器
@@ -14,32 +13,32 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 0633d985e91f628746d2bf30d1f055654c7320dd
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 47cc82c79231dcd22e7de88c1a23e74448ddf09a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63336898"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96814091"
 ---
 # <a name="cbreg"></a>!cbreg
 
 
-**！ Cbreg**扩展显示 CardBus 套接字寄存器和 CardBus Exchangable 卡体系结构 (ExCA) 注册。
+**！ Cbreg** Extension 显示 Cardbus 套接字寄存器和 Cardbus Exchangable 卡体系结构 (ExCA) 寄存器。
 
 ```dbgsyntax
     !cbreg [%%]Address 
 ```
 
-## <a name="span-idddkcbregdbgspanspan-idddkcbregdbgspanparameters"></a><span id="ddk__cbreg_dbg"></span><span id="DDK__CBREG_DBG"></span>参数
+## <a name="span-idddk__cbreg_dbgspanspan-idddk__cbreg_dbgspanparameters"></a><span id="ddk__cbreg_dbg"></span><span id="DDK__CBREG_DBG"></span>参数
 
 
 <span id="_______________"></span> **%%**   
-指示*地址*是物理地址，而不是虚拟的地址。
+指示 *地址* 是物理地址而不是虚拟地址。
 
-<span id="_______Address______"></span><span id="_______address______"></span><span id="_______ADDRESS______"></span> *Address*   
+<span id="_______Address______"></span><span id="_______address______"></span><span id="_______ADDRESS______"></span>*地址*   
 指定要显示的寄存器的地址。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 <table>
 <colgroup>
@@ -61,11 +60,11 @@ Kext.dll Kdextx86.dll</td>
 
  
 
-**！ Cbreg**扩展功能仅适用于基于 x86 的目标计算机。
+**！ Cbreg** 扩展仅适用于基于 x86 的目标计算机。
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-[ **！ Exca** ](-exca.md)扩展可用于通过套接字数量显示 PCIC ExCA 寄存器。
+[**！ Exca**](-exca.md)扩展可用于按套接号显示 PCIC exca 寄存器。
 
  
 

@@ -1,7 +1,6 @@
 ---
 title: CM_Get_Hardware_Profile_Info
 description: CM_Get_Hardware_Profile_Info
-ms.assetid: f995c6b6-5fa0-4548-9b0d-d6b83ce10790
 keywords:
 - CM_Get_Hardware_Profile_InfoA
 - CM_Get_Hardware_Profile_InfoW
@@ -15,13 +14,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: d1aa62da979a3f600a10181fc15806c3ac4713ea
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2c54344093bbdfabcd7817ecfda95274e8b92328
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63385556"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96814334"
 ---
-# <a name="cmgethardwareprofileinfo"></a>CM_Get_Hardware_Profile_Info
+# <a name="cm_get_hardware_profile_info"></a>CM_Get_Hardware_Profile_Info
 
 此函数保留供系统使用。

@@ -1,7 +1,6 @@
 ---
 title: 将 NDIS 网络接口映射到 NDIS OID
 description: 将 NDIS 网络接口映射到 NDIS OID
-ms.assetid: 117f94fd-829d-4ad8-be25-a6a90a8d4c50
 keywords:
 - NDIS 网络接口 WDK，映射
 - 网络接口 WDK，映射
@@ -12,12 +11,12 @@ keywords:
 - NDIS 网络接口
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7aa9991b0967236eb0c04aa854c11a026b0c47f7
-ms.sourcegitcommit: eba1bbec165d56f64d4c1ab5c3f7465dcd299ae3
+ms.openlocfilehash: 2381dba7115772736882c1d543deecb37bb3c417
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91510578"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96813679"
 ---
 # <a name="mapping-of-ndis-network-interfaces-to-ndis-oids"></a>将 NDIS 网络接口映射到 NDIS OID
 
@@ -33,13 +32,13 @@ NDIS 代理接口提供程序还代表小型端口适配器和筛选器模块生
 
 除了特定于接口提供程序的 Oid 以外，接口提供程序还必须支持 NDIS 可用于获取接口信息的其他 NDIS Oid。 NDIS 可以向提供程序颁发这些 Oid，提供程序可以颁发这些 Oid （如有必要）从基础接口中收集信息。
 
-**注意**   NDIS 定义 RFC 2863 中未包含的其他统计信息。 有关将 NDIS 支持的所有接口统计信息映射到 Oid 的列表，请参阅 [**NDIS \_ 接口 \_ 信息**](/windows/win32/api/ifdef/ns-ifdef-ndis_interface_information) 结构的成员。 本主题中的表为尝试将规范与 NDIS 实现相关的读取器定义为 RFC 2863 规范中定义的统计信息进行了映射。
+**注意**  NDIS 定义 RFC 2863 中未包含的其他统计信息。 有关将 NDIS 支持的所有接口统计信息映射到 Oid 的列表，请参阅 [**NDIS \_ 接口 \_ 信息**](/windows/win32/api/ifdef/ns-ifdef-ndis_interface_information) 结构的成员。 本主题中的表为尝试将规范与 NDIS 实现相关的读取器定义为 RFC 2863 规范中定义的统计信息进行了映射。
 
  
 
-下表显示了从管理信息库 (MIB) 中定义的对象到 NDIS 6.0 Oid 的映射，以及 NDIS 可能用于从 NDIS 5 获取信息的 Oid。*x* 及更早版本的驱动程序。 该表还包括一些未定义为 MIB 对象的其他接口对象。 接口对象还对应于与[OID \_ GEN \_ 接口 \_ ](./oid-gen-interface-info.md)信息 OID 关联的[**NDIS \_ 接口 \_ 信息**](ndis-interface-information.md)结构中的成员。
+下表显示了从管理信息库 (MIB) 中定义的对象到 NDIS 6.0 Oid 的映射，以及 NDIS 可能用于从 NDIS 5 获取信息的 Oid。*x* 及更早版本的驱动程序。 该表还包括一些未定义为 MIB 对象的其他接口对象。 接口对象还对应于与 [OID \_ GEN \_ 接口 \_](./oid-gen-interface-info.md)信息 OID 关联的 [**NDIS \_ 接口 \_ 信息**](ndis-interface-information.md)结构中的成员。
 
-**注意**   用星号标记的表中的 NDIS 6.0 Oid (\*) 前缀特定于接口提供程序。 其他 NDIS 6.0 Oid 可以颁发给接口提供程序和其他 NDIS 驱动程序。
+**注意**  用星号标记的表中的 NDIS 6.0 Oid (\*) 前缀特定于接口提供程序。 其他 NDIS 6.0 Oid 可以颁发给接口提供程序和其他 NDIS 驱动程序。
 
  
 

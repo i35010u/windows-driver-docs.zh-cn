@@ -1,7 +1,6 @@
 ---
 title: DCISendCommand
 description: DCISendCommand
-ms.assetid: b34690b6-bbe8-4787-a507-0b0a32cf1302
 keywords:
 - DCISendCommand 显示设备
 topic_type:
@@ -12,12 +11,12 @@ api_type:
 - NA
 ms.date: 01/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 46e800b70cc4e65fd23bcac74bb4de728018d824
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 24e2abdb8846876e90827076b8aabf4350beadcb
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380104"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96814489"
 ---
 # <a name="dcisendcommand"></a>DCISendCommand
 
@@ -25,9 +24,9 @@ ms.locfileid: "63380104"
 ## <span id="ddk_dcisendcommand_gg"></span><span id="DDK_DCISENDCOMMAND_GG"></span>
 
 
-不使用此函数;使用最新的 DirectX 图形接口改为与您 DirectDraw 支持的驱动程序进行通信。
+请勿使用此函数;请改用最新的 DirectX 图形界面与 DirectDraw 支持的驱动程序通信。
 
-**DCISendCommand**函数将命令发送到图面。
+**DCISendCommand** 函数将命令发送到图面。
 
  
 

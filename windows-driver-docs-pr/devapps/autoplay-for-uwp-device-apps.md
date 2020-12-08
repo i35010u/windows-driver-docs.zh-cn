@@ -1,22 +1,21 @@
 ---
 title: UWP 设备应用的自动播放
 description: 本主题介绍如何使用设备元数据创作向导来启用自动播放。 它还介绍了如何在应用中处理自动播放激活。
-ms.assetid: A95382E6-DFF4-4F36-9C9B-4B26161160DE
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6a2aef56176af5a699c4e2c381e43d1efaa78e59
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 050149a7c3c657d8793946fb51cc51f8a6c5ac36
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91734485"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96815221"
 ---
 # <a name="autoplay-for-uwp-device-apps"></a>UWP 设备应用的自动播放
 
 
 设备制造商可以将其 UWP 设备应用指定为其设备的自动播放处理程序。 他们还可以让其他 UWP 应用充当其设备的自动播放处理程序。 本主题介绍如何使用设备元数据创作向导来启用自动播放。 它还介绍了如何在应用中处理自动播放激活。 有关设备应用的详细信息，请参阅 " [满足 UWP 设备应用](meet-uwp-device-apps.md)"。
 
-**注意**   不需要为所有类型的自动播放使用设备元数据。 如果没有设备元数据，自动播放使你可以在用户将设备连接到 PC 时提供应用作为选项。 这包括非体积设备，如照相机或 media player，或卷设备（如 USB 拇指驱动器、SD 卡或 DVD）。 自动播放还允许你在用户使用邻近)  (点击时，将应用注册为一个选项。 但不能自动安装应用，无需设备元数据。 有关无需设备元数据时使用自动播放的详细信息，请参阅 [使用自动播放自动启动](/previous-versions/windows/apps/hh452731(v=win.10))。
+**注意**  不需要为所有类型的自动播放使用设备元数据。 如果没有设备元数据，自动播放使你可以在用户将设备连接到 PC 时提供应用作为选项。 这包括非体积设备，如照相机或 media player，或卷设备（如 USB 拇指驱动器、SD 卡或 DVD）。 自动播放还允许你在用户使用邻近)  (点击时，将应用注册为一个选项。 但不能自动安装应用，无需设备元数据。 有关无需设备元数据时使用自动播放的详细信息，请参阅 [使用自动播放自动启动](/previous-versions/windows/apps/hh452731(v=win.10))。
 
  
 
@@ -29,7 +28,7 @@ ms.locfileid: "91734485"
 -   其他 UWP 应用只能处理 Windows 8.1 中支持的设备的自动播放激活 \[ \] 。
 -   UWP 设备应用和其他 UWP 应用只能处理 Windows 8.1 中支持的设备的自动播放激活 \[ \] 。
 
-此示例显示了已注册为**Contoso Pedometer**设备的自动播放处理程序的名为**contoso 仪表板**的应用程序的自动播放对话框：
+此示例显示了已注册为 **Contoso Pedometer** 设备的自动播放处理程序的名为 **contoso 仪表板** 的应用程序的自动播放对话框：
 
 ![设备的示例自动播放对话框](images/autoplayfordeviceapps.png)
 
@@ -57,18 +56,18 @@ ms.locfileid: "91734485"
 
 -   **请确保已安装设备元数据创作向导**。 你需要它来启用自动播放。 在此版本中，此向导包含在 Microsoft Visual Studio Professional 和 Microsoft Visual Studio Ultimate 中。 但是，如果您已 Microsoft Visual Studio Express Windows，则需要下载用于 [Windows 8.1 的独立 SDK](https://go.microsoft.com/fwlink/p/?linkid=309209) 以获取向导。
 
--   **将应用与 Microsoft Store 相关联**。 你将需要应用的包信息来启用自动播放。 有关详细信息，请参阅[步骤1：创建 UWP 设备应用](step-1--create-a-uwp-device-app.md)中的 "*将应用与 Microsoft Store 相关联"* 部分。
+-   **将应用与 Microsoft Store 相关联**。 你将需要应用的包信息来启用自动播放。 有关详细信息，请参阅 [步骤1：创建 UWP 设备应用](step-1--create-a-uwp-device-app.md)中的 "*将应用与 Microsoft Store 相关联"* 部分。
 
 -   **创建设备元数据**。 如果尚未开始使用，请参阅[构建 UWP 设备应用循序渐进](build-a-uwp-device-app-step-by-step.md)指南中的[步骤2：创建设备元数据](step-2--create-device-metadata.md)。
 
 ## <a name="span-idenabling_autoplayspanspan-idenabling_autoplayspanspan-idenabling_autoplayspanenabling-autoplay"></a><span id="Enabling_AutoPlay"></span><span id="enabling_autoplay"></span><span id="ENABLING_AUTOPLAY"></span>启用自动播放
 
 
-**设备元数据创作向导**允许你将 UWP 应用声明为设备的默认自动播放处理程序。 还可以让其他 UWP 应用充当设备的自动播放处理程序。 您可以选择这些选项中的任一选项，也可以选择这两种选项。
+**设备元数据创作向导** 允许你将 UWP 应用声明为设备的默认自动播放处理程序。 还可以让其他 UWP 应用充当设备的自动播放处理程序。 您可以选择这些选项中的任一选项，也可以选择这两种选项。
 
 **使用设备元数据创作向导启用自动播放**
 
-1.  双击DeviceMetadataWizard.exe，从 *% ProgramFiles (x86) %* Windows 工具包 8.1 bin X86 启动**设备元数据创作向导** \\ \\ \\ \\ 。 ** **
+1.  双击DeviceMetadataWizard.exe，从 *% ProgramFiles (x86) %* Windows 工具包 8.1 bin X86 启动 **设备元数据创作向导** \\ \\ \\ \\ 。 ****
 2.  单击 " **编辑设备元数据**"。 这将允许你编辑现有的设备元数据包。
 3.  在 " **打开** " 对话框中，找到与 UWP 设备应用关联的设备元数据包。  (其文件扩展名为 **devicemetadata** 。 ) 
 4.   (可选 ) 。如果没有设备应用的包名称、发布者名称和应用 ID，请单击 " **应用信息** " 以查看 UWP 设备应用的打包信息。
@@ -77,7 +76,7 @@ ms.locfileid: "91734485"
     -   **包名称**：在应用包清单中，这是 Identity 元素的 name 属性。
     -   **发布者名称**：在应用包清单中，这是 Identity 元素的发布服务器特性。
     -   **应用 ID**：在应用包清单中，这是应用程序元素的 ID 属性。
-    -   **Verb**：这是自动播放激活的标识符。 你的应用程序将使用它来确定激活是否来自你的设备。 可以将任何值用于谓词设置，但 **open**除外。
+    -   **Verb**：这是自动播放激活的标识符。 你的应用程序将使用它来确定激活是否来自你的设备。 可以将任何值用于谓词设置，但 **open** 除外。
     -   **自动播放事件类型**：将其保留为 **设备**。 在设备元数据中，向导将自动指定与 UWP 设备应用关联的体验 ID。
 
 7.  如果想让其他应用充当设备的自动播放处理程序，请选择 " **为已注册的应用程序启用自动播放**"。
@@ -95,7 +94,7 @@ ms.locfileid: "91734485"
 若要将应用注册为设备的自动播放处理程序，需要指定与 UWP 设备应用关联的体验 ID 以及将用于激活应用的自动播放 **谓词** 和 **ActionDisplayName** 。
 
 1.  在 Microsoft Visual Studio 中打开应用程序的项目。
-2.  在 **解决方案资源管理器**中，右键单击 **appxmanifest.xml** 文件并选择 " **查看代码**"。 这会在 XML (文本) 编辑器中显示应用包清单。
+2.  在 **解决方案资源管理器** 中，右键单击 **appxmanifest.xml** 文件并选择 " **查看代码**"。 这会在 XML (文本) 编辑器中显示应用包清单。
 3.  在元素中 `Application` 的元素下面 `VisualElements` ，将以下元素粘贴 `Extensions` 到包清单文件中。
     ```XML
           <Extensions>

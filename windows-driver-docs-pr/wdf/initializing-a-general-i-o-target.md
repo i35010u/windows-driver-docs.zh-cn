@@ -1,18 +1,17 @@
 ---
 title: 初始化常规 I/O 目标
 description: 初始化常规 I/O 目标
-ms.assetid: c5d5b589-09a3-4f58-83bf-2876b37b0937
 keywords:
 - 一般 i/o 目标 WDK KMDF，初始化
 - 初始化常规 i/o 目标 WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 89a38d455c34c10ca2dae2228212813ae75cf0e6
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 6c81b19d9b079528f749620f71326520820663fe
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89183921"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96814711"
 ---
 # <a name="initializing-a-general-io-target"></a>初始化常规 I/O 目标
 

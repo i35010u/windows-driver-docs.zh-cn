@@ -1,9 +1,8 @@
 ---
 title: wdfkd.wdfcollection
-description: Wdfkd.wdfcollection 扩展显示所有 WDFCOLLECTION 结构中存储的对象。
-ms.assetid: 095bc37d-214a-4f00-9e44-5ce6009d6636
+description: Wdfkd. wdfcollection 扩展显示存储在 WDFCOLLECTION 结构中的所有对象。
 keywords:
-- wdfkd.wdfcollection Windows 调试
+- wdfkd wdfcollection Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,39 +11,39 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 70b476fa2babfe4d52fd7a82d4f7e9a18e573112
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a1dc1c917185c60ce6b1be32f2ba1d6004779fd5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63341775"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96814647"
 ---
 # <a name="wdfkdwdfcollection"></a>!wdfkd.wdfcollection
 
 
-**！ Wdfkd.wdfcollection**扩展将显示所有 WDFCOLLECTION 结构中存储的对象。
+**！ Wdfkd wdfcollection** 扩展显示存储在 wdfcollection 结构中的所有对象。
 
 ```dbgcmd
 !wdfkd.wdfcollection Handle
 ```
 
-## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>参数
+## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>Parameters
 
 
-<span id="_______Handle______"></span><span id="_______handle______"></span><span id="_______HANDLE______"></span> *句柄*   
-结构 WDFCOLLECTION 类型句柄。
+<span id="_______Handle______"></span><span id="_______handle______"></span><span id="_______HANDLE______"></span>*句柄*   
+结构的 WDFCOLLECTION 类型的句柄。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 Wdfkd.dll
 
-### <a name="span-idframeworksspanspan-idframeworksspanspan-idframeworksspanframeworks"></a><span id="Frameworks"></span><span id="frameworks"></span><span id="FRAMEWORKS"></span>框架
+### <a name="span-idframeworksspanspan-idframeworksspanspan-idframeworksspanframeworks"></a><span id="Frameworks"></span><span id="frameworks"></span><span id="FRAMEWORKS"></span>协作
 
 KMDF 1，UMDF 2
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-有关详细信息，请参阅[内核模式驱动程序框架调试](kernel-mode-driver-framework-debugging.md)。
+有关详细信息，请参阅 [内核模式驱动程序框架调试](kernel-mode-driver-framework-debugging.md)。
 
  
 

@@ -1,7 +1,6 @@
 ---
 title: EXT \_ TDOP \_ GET \_ TYPE \_ SIZE
 description: "\"调试请求\" 的 \"扩展 \\_ TDOP \\_ 获取 \\_ 类型 \\_ 大小\" 子操作 \" \\_ Ext 类型 \\_ \\_ 化 \\_ 数据 \\_ ANSI 请求\" 操作返回指定类型化数据的大小。"
-ms.assetid: 3e668522-60bb-4abc-87b8-6b1beea573a3
 keywords:
 - EXT_TDOP_GET_TYPE_SIZE Windows 调试
 topic_type:
@@ -12,19 +11,19 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dbb93a4394df2611848d72675507e8bf5242871e
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 8ad8df899fcede66947d3e77c50d6078abf03e8e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89211170"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96814573"
 ---
 # <a name="ext_tdop_get_type_size"></a>EXT \_ TDOP \_ GET \_ TYPE \_ SIZE
 
 
 "调试请求" 的 "扩展 \_ TDOP \_ 获取 \_ 类型 \_ 大小" 子操作 " [**ext 类型 \_ \_ \_ 化 \_ 数据 \_ ANSI**](debug-request-ext-typed-data-ansi.md)[**请求**](request.md) " 操作返回指定类型化数据的大小。
 
-**参数**
+**Parameters**
 
 <span id="Operation"></span><span id="operation"></span><span id="OPERATION"></span>**运作**  
 设置为 EXT \_ TDOP \_ 获取 \_ \_ 此子操作的类型大小。

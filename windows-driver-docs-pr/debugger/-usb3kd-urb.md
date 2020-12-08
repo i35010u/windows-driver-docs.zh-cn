@@ -1,7 +1,6 @@
 ---
 title: usb3kd.urb
 description: Usb3kd. urb 扩展显示有关 USB 请求块 (URB) 的信息。
-ms.assetid: B4583F32-BBC9-4182-A403-9C43BBD9BA4F
 keywords:
 - usb3kd urb Windows 调试
 ms.date: 05/23/2017
@@ -12,12 +11,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 155080747a246958664fcb9dcb08a6334ddc9aed
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 9604445c3f5198473c5e1bc2b97cb1d1fc423dad
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89206835"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96814037"
 ---
 # <a name="usb3kdurb"></a>!usb3kd.urb
 

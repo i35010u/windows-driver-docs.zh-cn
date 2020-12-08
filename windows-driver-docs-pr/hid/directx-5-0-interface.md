@@ -1,7 +1,6 @@
 ---
 title: DirectX 5.0 接口
 description: DirectX 5.0 接口
-ms.assetid: 416a9187-d64f-48a4-8868-fd5158d58a25
 keywords:
 - 操纵杆 WDK HID，接口
 - 虚拟游戏杆驱动程序 WDK HID，接口
@@ -16,12 +15,12 @@ keywords:
 - VJoyD WDK HID，版本
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3e06c7c2f30fe0b07b33a147c0cb8869cfae996a
-ms.sourcegitcommit: 9145bffd4cc3b990a9ebff43b588db6ef2001f5d
+ms.openlocfilehash: eb0ac98e1b888681ad6bd9e38e6659a74e186cce
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/09/2020
-ms.locfileid: "89592460"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96814503"
 ---
 #  <a name="directx-50-interface"></a>DirectX 5.0 接口
 
@@ -76,9 +75,9 @@ VJPOLLREG 结构的 **lpCfg** 成员指向标准的 configuration manager 回调
 
 由于驱动程序始终是为其资源分配而调用的，因此它们不应检查默认端口以查找所需的资源。 遗憾的是，必须找到某种方法来使用以前的接口的驱动程序仍以旧方法工作。 这意味着，当 VJoyD 仅将一组资源分配给单个驱动程序时，加载的任何旧驱动程序仍可以使用尚未分配给它们的端口。 分配资源后，驱动程序应执行设备需要的任何握手来确定设备状态。
 
-VJPOLLREG 结构的**fpInitialize**成员指向的[*初始化*](/previous-versions/ff541025(v=vs.85))回调 () 替换之前接口中的*JoyId*回调。 主要区别在于，VJoyD 会将设备传递到 VJoyD 的任何设备实例标识传递回驱动程序，以便在驱动程序支持多个设备时，可以区分实例。
+VJPOLLREG 结构的 **fpInitialize** 成员指向的 [*初始化*](/previous-versions/ff541025(v=vs.85))回调 () 替换之前接口中的 *JoyId* 回调。 主要区别在于，VJoyD 会将设备传递到 VJoyD 的任何设备实例标识传递回驱动程序，以便在驱动程序支持多个设备时，可以区分实例。
 
-**注意**   如果需要打开注册表项，则应使用[VJOYD \_ OpenConfigKey \_ service](/previous-versions/ff543545(v=vs.85))和[VJOYD \_ OpenTypeKey \_ 服务](/previous-versions/ff543549(v=vs.85))宏，而不是直接打开注册表项。 使用这些服务宏可确保打开正确的注册表分支。 此外，如果基础注册表数据的结构不同，则未来版本的 DirectInput 将支持服务宏。
+**注意**   如果需要打开注册表项，则应使用 [VJOYD \_ OpenConfigKey \_ service](/previous-versions/ff543545(v=vs.85)) 和 [VJOYD \_ OpenTypeKey \_ 服务](/previous-versions/ff543549(v=vs.85)) 宏，而不是直接打开注册表项。 使用这些服务宏可确保打开正确的注册表分支。 此外，如果基础注册表数据的结构不同，则未来版本的 DirectInput 将支持服务宏。
 
  
 

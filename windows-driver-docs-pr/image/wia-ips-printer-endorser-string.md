@@ -1,9 +1,8 @@
 ---
-title: WIA\_IPS\_打印机\_印记签署器\_字符串
-description: WIA\_IPS\_打印机\_印记签署器\_字符串属性用于配置要将打印/认可的文本。 WIA 微型驱动程序创建并维护此属性。
-ms.assetid: DF4B1361-EC9C-4BEA-97F5-9179DCB77044
+title: WIA \_ IPS \_ PRINTER \_ ENDORSER \_ 字符串
+description: WIA \_ IPS \_ PRINTER \_ ENDORSER \_ STRING 属性用于配置要打印/认可的文本。 WIA 微型驱动程序创建并维护此属性。
 keywords:
-- WIA_IPS_PRINTER_ENDORSER_STRING 成像设备
+- WIA_IPS_PRINTER_ENDORSER_STRING 图像设备
 topic_type:
 - apiref
 api_name:
@@ -14,37 +13,37 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a30b966b37d4b29fea63899f3f51e9c2f80d625a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 48767fb5e7b79e376f594a752c7c8b3612b98737
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63351131"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96815099"
 ---
-# <a name="wiaipsprinterendorserstring"></a>WIA\_IPS\_打印机\_印记签署器\_字符串
+# <a name="wia_ips_printer_endorser_string"></a>WIA \_ IPS \_ PRINTER \_ ENDORSER \_ 字符串
 
 
-**WIA\_IPS\_打印机\_印记签署器\_字符串**属性用于配置要将打印/认可的文本。 WIA 微型驱动程序创建并维护此属性。
+**WIA \_ IPS \_ PRINTER \_ ENDORSER \_ STRING** 属性用于配置要打印/认可的文本。 WIA 微型驱动程序创建并维护此属性。
 
 
 
 
-**请注意**  此属性替换[ **WIA\_DPS\_印记签署器\_字符串**](wia-dps-endorser-string.md)，现已过时。
+**注意**  此属性替换现在已过时的 [**WIA \_ DPS \_ ENDORSER \_ 字符串**](wia-dps-endorser-string.md)。
 
  
 
-属性类型：VT\_BSTR
+属性类型： VT \_ BSTR
 
-有效值：WIA\_PROP\_列表
+有效值： WIA 内容 \_ \_ 列表
 
 访问权限：读/写
 
 <a name="remarks"></a>备注
 -------
 
-可以由一个或多个字符字符串表示要打印/认可的文本。 每个字符的字符串可以包含一个或多个特殊字符格式设置序列所描述[ **WIA\_IPS\_打印机\_印记签署器\_有效\_格式\_说明符**](wia-ips-printer-endorser-valid-format-specifiers.md)属性。 字符串必须包含指定的唯一字符[ **WIA\_IPS\_打印机\_印记签署器\_有效\_字符**](wia-ips-printer-endorser-valid-characters.md)必须终止 NULL。 当配置多个字符字符串时，WIA 微型驱动程序必须打印/赞同将在新页 （循环的字符串列表） 的每个字符串。
+要打印/认可的文本可以用一个或多个字符串表示。 每个字符串可以包含一个或多个由 [**WIA \_ IPS \_ PRINTER \_ ENDORSER \_ 有效 \_ 格式 \_ 说明符**](wia-ips-printer-endorser-valid-format-specifiers.md) 属性描述的特殊字符格式设置序列。 字符串只能包含 [**WIA \_ IPS \_ PRINTER \_ ENDORSER \_ 有效 \_ 字符**](wia-ips-printer-endorser-valid-characters.md) 指定的字符，并且必须以 NULL 结尾。 当配置多个字符串时，WIA 微型驱动程序必须在新页面上打印/认可每个字符串 (在) 的字符串列表中循环。
 
-此属性是可选的所有印刷器/印记签署器数据源项。
+对于所有 Imprinter/Endorser 数据源项，此属性是可选的。
 
 <a name="requirements"></a>要求
 ------------
@@ -56,8 +55,8 @@ ms.locfileid: "63351131"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Wiadef.h （包括 Wiadef.h）</td>
+<td><p>标头</p></td>
+<td>Wiadef (包含 Wiadef) </td>
 </tr>
 </tbody>
 </table>
@@ -65,7 +64,7 @@ ms.locfileid: "63351131"
 ## <a name="see-also"></a>请参阅
 
 
-[**WIA\_DPS\_印记签署器\_字符串**](wia-dps-endorser-string.md)
+[**WIA \_ DPS \_ ENDORSER \_ 字符串**](wia-dps-endorser-string.md)
 
  
 

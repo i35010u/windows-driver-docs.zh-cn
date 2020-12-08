@@ -1,9 +1,8 @@
 ---
 title: ValidationInfo 元素
-description: 所需的 ValidationInfo 元素包含对客户端的 ValidateScanTicketRequest 响应中的所有 ScanTicket 验证信息。
-ms.assetid: c727cbd7-6da0-4750-b36e-3b65e56015fa
+description: 必需的 ValidationInfo 元素包含所有 ScanTicket 验证信息，以响应客户端的 ValidateScanTicketRequest。
 keywords:
-- ValidationInfo 元素成像设备
+- ValidationInfo 元素图像设备
 topic_type:
 - apiref
 api_name:
@@ -12,19 +11,19 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2c6dd42552ec29116bdcd47a0bea3117c4c7b012
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1231960c9c2b733dce498b478a43563f6d829116
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63354862"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96815397"
 ---
 # <a name="validationinfo-element"></a>ValidationInfo 元素
 
 
-所需**ValidationInfo**元素包含所有[ **ScanTicket** ](scanticket.md)客户端的响应的验证信息[ **ValidateScanTicketRequest**](validatescanticketrequest.md)。
+必需的 **ValidationInfo** 元素包含所有 [**ScanTicket**](scanticket.md) 验证信息，以响应客户端的 [**ValidateScanTicketRequest**](validatescanticketrequest.md)。
 
-<a name="usage"></a>用法
+<a name="usage"></a>使用情况
 -----
 
 ```xml
@@ -85,7 +84,7 @@ ms.locfileid: "63354862"
 <a name="remarks"></a>备注
 -------
 
-**ValidationInfo**元素包含定义的元素是否在客户端[ **ScanTicket** ](scanticket.md)有效并且，如果不是，WSD 扫描服务更改，以使哪些数据有效的票证。 扫描服务将返回此信息在其[ **ValidateScanTicketResponse** ](validatescanticketresponse.md)操作。
+**ValidationInfo** 元素包含定义客户端的 [**ScanTicket**](scanticket.md)是否有效的元素，如果不是，则 WSD 扫描服务更改的数据以使票证有效。 扫描服务会在其 [**ValidateScanTicketResponse**](validatescanticketresponse.md) 操作中返回此信息。
 
 ## <a name="see-also"></a>请参阅
 

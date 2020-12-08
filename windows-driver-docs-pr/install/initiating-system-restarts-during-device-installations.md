@@ -1,15 +1,14 @@
 ---
 title: 设备安装过程中开始系统重启
 description: 设备安装过程中开始系统重启
-ms.assetid: 52db2894-e759-4382-97de-5db7f268ff59
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a20f306e3df8d6469afda92ea4de82e5a1a0a0d9
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: a0d4521c59b60a667684e295cb28f828a166b705
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90716356"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96813727"
 ---
 # <a name="initiating-system-restarts-during-device-installations"></a>设备安装过程中开始系统重启
 

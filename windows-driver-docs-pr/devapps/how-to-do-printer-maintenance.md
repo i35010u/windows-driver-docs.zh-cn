@@ -1,21 +1,20 @@
 ---
 title: 如何在 UWP 设备应用中进行打印机维护
 description: 在 Windows 8.1 中，UWP 设备应用可以执行打印机维护，如对齐打印头和清洁喷嘴。
-ms.assetid: 52141F66-872A-4381-92C8-B04ABDABA7AD
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5e94428a45bb86b5f345b3b7c8befc909eabec0d
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 706cb112fa55a7c35fb931eb37c4396508448a21
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91732919"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96815175"
 ---
 # <a name="how-to-do-printer-maintenance-in-a-uwp-device-app"></a>如何在 UWP 设备应用中进行打印机维护
 
 在 Windows 8.1 中，UWP 设备应用可以执行打印机维护，如对齐打印头和清洁喷嘴。 本主题使用 [打印作业管理和打印机维护](https://go.microsoft.com/fwlink/p/?LinkID=299829) 示例的 c # 版本来演示如何使用双向通信 () 双向通信来执行此类设备维护。 若要详细了解 UWP 设备应用的详细信息，请参阅了解 [uwp 设备应用](meet-uwp-device-apps.md)。
 
-[打印作业管理和打印机维护](https://go.microsoft.com/fwlink/p/?LinkID=299829)示例的 c # 版本演示了在**DeviceAppForPrinters2**项目中通过**DeviceMaintenance.xaml.cs**文件进行的打印机维护。 若要使用双向，示例将在 **PrinterExtensionLibrary** 项目中使用打印机扩展库。 打印机扩展库提供了一种便捷的方式来访问 v4 打印驱动程序的打印机扩展接口。 有关详细信息，请参阅 [打印机扩展库概述](printer-extension-library-overview.md)。
+[打印作业管理和打印机维护](https://go.microsoft.com/fwlink/p/?LinkID=299829)示例的 c # 版本演示了在 **DeviceAppForPrinters2** 项目中通过 **DeviceMaintenance.xaml.cs** 文件进行的打印机维护。 若要使用双向，示例将在 **PrinterExtensionLibrary** 项目中使用打印机扩展库。 打印机扩展库提供了一种便捷的方式来访问 v4 打印驱动程序的打印机扩展接口。 有关详细信息，请参阅 [打印机扩展库概述](printer-extension-library-overview.md)。
 
 >[!NOTE]
 >本主题中所示的代码示例基于 c # 版本的 [打印作业管理和打印机维护](https://go.microsoft.com/fwlink/p/?LinkID=299829) 示例。 此示例在 JavaScript 和 c + + 中也可用。 请注意，由于 c + + 可以直接访问 COM，因此该示例的 c + + 版本不包括代码库项目。 下载示例以查看最新版本的代码。
@@ -24,7 +23,7 @@ ms.locfileid: "91732919"
 
 Windows 8.1 在 v4 打印机驱动程序中引入了新的打印机扩展接口，可用于实现设备维护： [**IPrinterBidiSetRequestCallback**](/windows-hardware/drivers/ddi/printerextension/nn-printerextension-iprinterbidisetrequestcallback)、 [**IPrinterExtensionAsyncOperation**](/windows-hardware/drivers/ddi/printerextension/nn-printerextension-iprinterextensionasyncoperation) 和 [**IPrinterQueue2**](/windows-hardware/drivers/ddi/printerextension/nn-printerextension-iprinterqueue2)。 通过这些接口，可以将双向请求异步发送到端口监视器，以便将其转换为设备和特定于协议的命令，然后将其发送到打印机。 有关详细信息，请参阅 [设备维护 (V4 打印机驱动程序) ](../print/device-maintenance.md)。
 
-**提示**   C # 和 JavaScript 应用无法直接与 COM Api 一起使用。 如果要编写 c # 或 JavaScript UWP 设备应用，请使用打印机扩展库来访问这些接口 (如本主题) 中所示。
+**提示**  C # 和 JavaScript 应用无法直接与 COM Api 一起使用。 如果要编写 c # 或 JavaScript UWP 设备应用，请使用打印机扩展库来访问这些接口 (如本主题) 中所示。
 
 ## <a name="prerequisites"></a>先决条件
 
@@ -94,7 +93,7 @@ private async void EnumeratePrinters_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-**提示**   有关和类的详细 `PrinterEnumeration` 信息 `PrinterInfo` ，请参阅**PrinterEnumeration.cs**文件。
+**提示**  有关和类的详细 `PrinterEnumeration` 信息 `PrinterInfo` ，请参阅 **PrinterEnumeration.cs** 文件。
 
 ## <a name="step-3-send-bidi-request"></a>步骤3：发送双向请求
 
@@ -185,7 +184,7 @@ internal async void OnBidiResponseReceived(object sender, string bidiResponse)
 }
 ```
 
-## <a name="testing"></a>测试
+## <a name="testing"></a>正在测试
 
 在可以测试 UWP 设备应用之前，必须使用设备元数据将其链接到您的打印机。
 
@@ -205,10 +204,10 @@ internal async void OnBidiResponseReceived(object sender, string bidiResponse)
 
 4. 断开连接并卸载打印机。 此步骤是必需的，以便 Windows 将在下一次检测到设备时读取更新的设备元数据。
 5. 编辑并保存设备元数据。 若要将设备应用链接到设备，你必须将设备应用关联到设备。 **注意：** 如果尚未创建设备元数据，请参阅 [为 UWP 设备应用创建设备元数据](./step-2--create-device-metadata.md)。
-    1. 如果**设备元数据创作向导**尚未打开，请通过双击 "DeviceMetadataWizard.exe" 从 *% ProgramFiles (x86) %* \\ Windows 工具包 \\ 8.1 \\ bin \\ x86 **DeviceMetadataWizard.exe**启动它。
+    1. 如果 **设备元数据创作向导** 尚未打开，请通过双击 "DeviceMetadataWizard.exe" 从 *% ProgramFiles (x86) %* \\ Windows 工具包 \\ 8.1 \\ bin \\ x86 **DeviceMetadataWizard.exe** 启动它。
     2. 单击 " **编辑设备元数据**"。 这将允许你编辑现有的设备元数据包。
     3. 在 " **打开** " 对话框中，找到与 UWP 设备应用关联的设备元数据包。  (其文件扩展名为 **devicemetadata** 。 ) 
-    4. 在 " **指定 uwp 设备应用信息** " 页上，在 " **UWP 设备应用** " 框中输入 Microsoft Store 应用信息。 单击 " **导入 UWP 应用程序清单文件** " 以自动输入 **包名称**、 **发布者名称**和 **UWP 应用 ID**。
+    4. 在 " **指定 uwp 设备应用信息** " 页上，在 " **UWP 设备应用** " 框中输入 Microsoft Store 应用信息。 单击 " **导入 UWP 应用程序清单文件** " 以自动输入 **包名称**、 **发布者名称** 和 **UWP 应用 ID**。
     5. 如果你的应用正在注册打印机通知，请填写 **通知处理程序** 框。 在 " **事件 ID**" 中，输入打印事件处理程序的名称。 在 " **事件资产**" 中，输入代码所在的文件的名称。
     6. 完成后，单击 " **下一步** "，直到到达 " **完成** " 页。
     7. 在 " **查看设备元数据包** " 页上，确保所有设置均正确，并选中 "将 **设备元数据包复制到本地计算机上的元数据存储区** " 复选框。 然后单击“保存”  。

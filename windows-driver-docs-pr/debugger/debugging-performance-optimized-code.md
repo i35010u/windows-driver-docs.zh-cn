@@ -1,17 +1,16 @@
 ---
 title: 调试性能优化的代码
 description: 调试性能优化的代码
-ms.assetid: 9dbae9e7-c181-491e-9566-6f5e8182aae0
 keywords:
 - 性能优化的代码
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 37dd60ada9fd9760d1a9b46500e49fab16ac69d1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 71dc51ee27f7214975749be689c6237ba52a71c3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63350615"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96813985"
 ---
 # <a name="debugging-performance-optimized-code"></a>调试性能优化的代码
 
@@ -19,17 +18,17 @@ ms.locfileid: "63350615"
 ## <span id="ddk_performance_optimized_code_dbg"></span><span id="DDK_PERFORMANCE_OPTIMIZED_CODE_DBG"></span>
 
 
-Microsoft 拥有某些技术，使用它来重新排列已编译和链接的代码，使它执行与更高的效率。 这些技术优化内存层次结构，该组件，并基于培训方案。
+Microsoft 提供了一些方法，用于重新排列编译和链接的代码，使其能够更高效地执行。 这些技术优化内存层次结构的组件，并基于定型方案。
 
-生成优化减少分页 （和页错误），并提高代码和数据之间的空间局部性。 它解决了会通过不佳定位的原始代码中引入的关键性能瓶颈。 已进行过这种优化组件可能具有其代码或数据块函数移到不同位置的二进制文件中。
+生成的优化可减少分页 (和页错误) ，并增加代码和数据之间的空间位置。 它解决了原始代码的不良位置导致的关键性能瓶颈。 已通过此优化的组件可能会在函数内的代码或数据块移动到二进制文件的不同位置。
 
-已经过优化，通过这些技术的模块，在代码和数据块的位置通常将找到的内存地址不同于他们会驻留在普通的编译和链接之后的位置。 此外，函数可能具有已拆分为多个非连续的块，以便最常用的代码路径可以是所在的位置相互靠近相同页面上。
+在已通过这些技术优化的模块中，代码和数据块的位置通常会位于不同于其在正常编译和链接后所在位置的内存地址。 此外，函数可能已拆分为多个非连续块，以便最常用的代码路径可以在同一页中彼此接近。
 
-因此，一个函数 （或任何符号） 加上偏移量不一定会会在非优化代码的含义相同。
+因此，函数 (或任何符号) 加上偏移量不一定具有在非优化代码中的相同含义。
 
-### <a name="span-iddebuggingperformanceoptimizedcodespanspan-iddebuggingperformanceoptimizedcodespandebugging-performance-optimized-code"></a><span id="debugging_performance_optimized_code"></span><span id="DEBUGGING_PERFORMANCE_OPTIMIZED_CODE"></span>调试性能优化的代码
+### <a name="span-iddebugging_performance_optimized_codespanspan-iddebugging_performance_optimized_codespandebugging-performance-optimized-code"></a><span id="debugging_performance_optimized_code"></span><span id="DEBUGGING_PERFORMANCE_OPTIMIZED_CODE"></span>调试 Performance-Optimized 代码
 
-在调试时，可以看到是否模块已优化性能使用[ **！ lmi** ](-lmi.md)扩展为其加载符号的任何模块的命令：
+调试时，可以通过在已加载符号的任何模块上使用 [**！ lmi**](-lmi.md) extension 命令来查看模块是否已进行性能优化：
 
 ```dbgcmd
 0:000> !lmi ntdll
@@ -49,13 +48,13 @@ Debug Data Dirs: Type Size     VA  Pointer
                  c:\symbols\dll\ntdll.pdb
 ```
 
-在此输出中，请注意，术语**perf** "特征"行上。 这表示，这种性能优化已应用到 ntdll.dll。
+在此输出中，请注意 "特性" 行的术语 " **性能** "。 这表示已将此性能优化应用到 ntdll.dll。
 
-调试程序能够了解函数或某一偏移量; 无其他符号这可以在函数或毫无问题的其他标签上设置断点。 但是，拆卸操作的输出可能是令人困惑，因为此反汇编将反映，优化器所做的更改。
+调试器能够理解函数或其他不带偏移量的符号;这允许您在函数或其他标签上设置断点，而不会出现任何问题。 但是，dissassembly 操作的输出可能会造成混淆，因为此反汇编将反映优化器所做的更改。
 
-由于调试器将尝试保持接近原始代码，可能会看到一些有趣的结果。 法则时使用的性能优化的代码只是您不能对优化的代码执行算术的可靠地址。
+由于调试器将尝试保持接近原始代码，你可能会看到一些有趣结果。 使用性能优化代码的经验法则只是无法对优化代码执行可靠的地址算法。
 
-下面是一个示例：
+以下是示例：
 
 ```dbgcmd
 kd> bl
@@ -74,13 +73,13 @@ f864b4da 034114           add     eax,[ecx+0x14]
 f864b4dd 57               push    edi
 ```
 
-您可以看到从断点列表中的地址**IPTransmit**是 0xF8640CA6。
+你可以从断点列表中看到 **IPTransmit** 的地址为0xF8640CA6。
 
-反汇编 0xF864B4CB 在此函数中的代码部分，输出将指示这是过去的函数的开头 0xE48 字节。 但是，如果减去此地址中的函数的基数，似乎是 0xA825 实际偏移量。
+当你在0xF864B4CB 中 unassemble 此函数中的部分代码时，输出将指示这是超出函数开头的0xE48 字节数。 但是，如果从该地址中减去函数的基，则实际偏移将显示为 "0xA825"。
 
-发生了什么情况是：确实，调试器显示开始 0xF864B4CB 的二进制说明反汇编。 但是，而不是通过简单的减法计算偏移量，则调试器会显示-尽它可以-前执行优化的偏移量，因为它在函数进入到存在原始代码中。 该值是 0xE48。
+发生的情况如下：调试器确实显示了从0xF864B4CB 开始的二进制指令的反汇编。 但调试器不是通过简单减法计算偏移量，而是在执行优化之前，调试器会显示与函数项的偏移量相同的偏移量。 该值为0xE48。
 
-另一方面，如果您尝试一下**IPTransmit**+ 0xE48，就会看到以下：
+另一方面，如果尝试查看 **IPTransmit**+ 0xE48，将看到以下内容：
 
 ```dbgcmd
 kd> u tcpip!iptransmit+e48
@@ -95,9 +94,9 @@ f8641afb 5b               pop     ebx
 f8641afc c9               leave
 ```
 
-什么这里的问题在于调试器可识别符号**IPTransmit**命令等效于地址 0xF8640CA6，以及分析器执行简单的加法运算，以查找该 0xF8640CA6 + 0xE48 = 0xF8641AEE。 为参数然后使用此地址[ **u （反汇编）** ](u--unassemble-.md)命令。 但在分析此位置后，这不是可发现调试器**IPTransmit** plus 0xE48 的偏移量。 实际上，它根本不属于此函数。 相反，它对应于该函数**ARPTransmit** plus 0xD8 的偏移量。
+此处的情况是，调试器会将符号 **IPTransmit** 识别为与地址0xF8640CA6 等效，而命令分析器会执行简单的加法操作来查找 0XF8640CA6 + 0XE48 = 0xF8641AEE。 此地址随后用作 [**u (Unassemble)**](u--unassemble-.md) 命令的参数。 但一旦分析此位置，调试器就会发现这不是 **IPTransmit** ，而是0xE48 的偏移量。 事实上，它根本不是此函数的一部分。 相反，它对应于函数 **ARPTransmit** 和0xD8 的偏移量。
 
-发生这种情况的原因是该性能优化是不可逆通过算术的地址。 调试器可以接受地址，并推断其原始的符号和偏移量，而它并没有足够的信息获取符号和偏移量并将其转换为正确的地址。 因此，反汇编不在这些情况下很有用。
+出现这种情况的原因是无法通过地址算法来保证性能优化。 尽管调试器可以提取地址并推导出其原始符号和偏移量，但它没有足够的信息来获取符号和偏移量并将其转换为正确的地址。 因此，在这种情况下，反汇编并不有用。
 
  
 

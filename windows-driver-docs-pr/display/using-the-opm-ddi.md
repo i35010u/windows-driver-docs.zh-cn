@@ -1,7 +1,6 @@
 ---
 title: 使用 OPM DDI
 description: 使用 OPM DDI
-ms.assetid: cd3c78a4-0241-48ab-9005-c544db199eb5
 keywords:
 - OPM WDK 显示，关于 DDI
 - OPM WDK 显示，创建受保护的输出
@@ -13,12 +12,12 @@ keywords:
 - 保护级别 WDK 显示，更改
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2fa6addf3f39323f98fe69ed36ed4c61cc8e7ad4
-ms.sourcegitcommit: abe7fe9f3fbee8d12641433eeab623a4148ffed3
+ms.openlocfilehash: a523167121606504f066b7e63ab8e8c8434f6c88
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92185185"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96815441"
 ---
 # <a name="using-the-opm-ddi"></a>使用 OPM DDI
 
@@ -29,13 +28,13 @@ Microsoft DirectX graphics 内核子系统 (*Dxgkrnl.sys*) 使用 OPM DDI 来创
 2. DirectX 图形内核子系统调用 [**DxgkDdiOPMGetCertificateSize**](/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgkddi_opm_get_certificate_size) 和 [**DxgkDdiOPMGetCertificate**](/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgkddi_opm_get_certificate) 函数，以获取显示微型端口驱动程序的 OPM 证书或 COPP 证书及其大小。
 
    > [!NOTE]
-   > *DxgkDdiOPMCreateProtectedOutput*、 *DxgkDdiOPMGetCertificateSize*和 *DxgkDdiOPMGetCertificate* 是 DirectX 图形内核子系统不会将受保护的输出句柄传递到的唯一 OPM DDI 函数。
+   > *DxgkDdiOPMCreateProtectedOutput*、 *DxgkDdiOPMGetCertificateSize* 和 *DxgkDdiOPMGetCertificate* 是 DirectX 图形内核子系统不会将受保护的输出句柄传递到的唯一 OPM DDI 函数。
 
 3. DirectX 图形内核子系统将调用 [**DxgkDdiOPMGetRandomNumber**](/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgkddi_opm_get_random_number) 函数，以获取受保护的输出的随机数字。
 
 4. DirectX 图形内核子系统在对 [**DxgkDdiOPMSetSigningKeyAndSequenceNumbers**](/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgkddi_opm_set_signing_key_and_sequence_numbers) 函数的调用中传递256字节缓冲区。 该缓冲区包含用一个显示微型端口驱动程序的公钥进行加密的数据。 有关公钥的详细信息，请从 [输出内容保护和 Windows Vista](https://download.microsoft.com/download/5/D/6/5D6EAF2B-7DDF-476B-93DC-7CF0072878E6/output_protect.doc) 网站下载内容保护文档的输出。 使用的公钥依赖于受保护的输出的语义。 如果受保护的输出具有 OPM 语义，则使用显示微型端口驱动程序的 OPM 证书中的公钥。 如果受保护的输出具有 COPP 语义，则使用显示微型端口驱动程序的 COPP 证书中的公钥。 用于对数据进行加密的加密方案也依赖于受保护的输出的语义。 如果受保护的输出具有 COPP 语义，且受保护的输出具有 OPM 语义，则数据将通过标准 RSA 算法进行加密。 有关 RSA、AES 和 RSAES-OAEP-ENCRYPT 的信息，请参阅 [Rsa 实验室](https://www.rsa.com/) 网站。 显示微型端口驱动程序使用适当的私钥和解密方法来解密数据。 随机数字、两个随机序列号和128位 AES 密钥位于解密的数据中。 显示微型端口驱动器确保随机数字与驱动程序在调用 [**DxgkDdiOPMGetRandomNumber**](/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgkddi_opm_get_random_number) 函数时返回的随机数字匹配。 然后，该驱动程序存储两个序列号和128位 AES 密钥。
 
-5. DirectX 图形内核子系统现在可以调用 [**DxgkDdiOPMGetInformation**](/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgkddi_opm_get_information) 或 [**DxgkDdiOPMGetCOPPCompatibleInformation**](/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgkddi_opm_get_copp_compatible_information) 函数来获取受保护的输出中的信息。 DirectX 图形内核子系统还可以调用 [**DxgkDdiOPMConfigureProtectedOutput**](/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgkddi_opm_configure_protected_output) 配置受保护的输出。 仅当输出具有 OPM 语义并且只有在输出具有 COPP 语义时才能调用*DxgkDdiOPMGetCOPPCompatibleInformation* ，才能调用*DxgkDdiOPMGetInformation* 。 通常，DirectX 图形内核子系统调用 *DxgkDdiOPMGetInformation* 或 *DxgkDdiOPMGetCOPPCompatibleInformation* 来获取有关输出的信息，然后调用 *DxgkDdiOPMConfigureProtectedOutput* 一次或多次，以配置输出。 然后，DirectX 图形内核子系统再次调用 *DxgkDdiOPMGetInformation* 或 *DxgkDdiOPMGetCOPPCompatibleInformation* 。 DirectX 图形内核子系统可以通过调用 *DxgkDdiOPMGetInformation* 或 *DxgkDdiOPMGetCOPPCompatibleInformation*获取以下类型的信息：
+5. DirectX 图形内核子系统现在可以调用 [**DxgkDdiOPMGetInformation**](/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgkddi_opm_get_information) 或 [**DxgkDdiOPMGetCOPPCompatibleInformation**](/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgkddi_opm_get_copp_compatible_information) 函数来获取受保护的输出中的信息。 DirectX 图形内核子系统还可以调用 [**DxgkDdiOPMConfigureProtectedOutput**](/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgkddi_opm_configure_protected_output) 配置受保护的输出。 仅当输出具有 OPM 语义并且只有在输出具有 COPP 语义时才能调用 *DxgkDdiOPMGetCOPPCompatibleInformation* ，才能调用 *DxgkDdiOPMGetInformation* 。 通常，DirectX 图形内核子系统调用 *DxgkDdiOPMGetInformation* 或 *DxgkDdiOPMGetCOPPCompatibleInformation* 来获取有关输出的信息，然后调用 *DxgkDdiOPMConfigureProtectedOutput* 一次或多次，以配置输出。 然后，DirectX 图形内核子系统再次调用 *DxgkDdiOPMGetInformation* 或 *DxgkDdiOPMGetCOPPCompatibleInformation* 。 DirectX 图形内核子系统可以通过调用 *DxgkDdiOPMGetInformation* 或 *DxgkDdiOPMGetCOPPCompatibleInformation* 获取以下类型的信息：
 
     - 输出的连接器类型。
     - 输出支持的内容保护类型。 输出当前支持：

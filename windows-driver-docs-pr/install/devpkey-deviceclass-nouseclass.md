@@ -1,7 +1,6 @@
 ---
 title: DEVPKEY_DeviceClass_NoUseClass
 description: DEVPKEY_DeviceClass_NoUseClass
-ms.assetid: 9b720e2d-0d81-42a4-acea-931428547231
 keywords:
 - DEVPKEY_DeviceClass_NoUseClass 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: e0f1f577e26603f22fcdc156df95f75ebba8e2fb
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 76f4ddcd47bb2f4f9f2398b8e1d8789fe282407f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90717404"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96815355"
 ---
 # <a name="devpkey_deviceclass_nouseclass"></a>DEVPKEY_DeviceClass_NoUseClass
 

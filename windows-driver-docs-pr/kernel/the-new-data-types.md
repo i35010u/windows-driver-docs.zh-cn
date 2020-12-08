@@ -1,24 +1,23 @@
 ---
 title: 新数据类型
 description: 新数据类型
-ms.assetid: 13a0d51e-0a9a-471f-8427-d4a7a7eb6459
 keywords:
-- 64 位 WDK 内核，移植到驱动程序
-- 移植到 64 位 Windows 的驱动程序
+- 64位 WDK 内核，将驱动程序移植到
+- 将驱动程序移植到64位 Windows
 - 数据类型 WDK 64 位
-- 固定精度的整数类型 WDK 64 位
-- 指针精度的整数类型 WDK 64 位
-- 特定于精度指针类型 WDK 64 位
+- 固定精度整数类型 WDK 64 位
+- 指针精度整数类型 WDK 64 位
+- 特定精度指针类型 WDK 64 位
 - 转换数据类型
-- 64 位 WDK 内核，数据类型
+- 64位 WDK 内核，数据类型
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 85c1158f8a67c31d017f5aaf15d0db117825f776
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 56199f85185f8f52f97bdae898be4723118c8712
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63353561"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96814281"
 ---
 # <a name="the-new-data-types"></a>新数据类型
 
@@ -26,13 +25,13 @@ ms.locfileid: "63353561"
 
 
 
-有三个类的新的数据类型： 固定精度的整数类型、 指针精度的整数类型和特定于精度指针类型。 这些类型已添加到 Windows 环境 （特别是，对 Basetsd.h)，允许开发人员准备好之前引入的 64 位 Windows。 这些新类型被派生自基本的 C 语言整数和长类型，以便在现有代码中起作用。 因此，使用在代码中的类型现在，测试你的代码在 32 位 Windows 上和 64 位编译器用于查找并提前解决可移植性问题，因此您的驱动程序可以是准备就绪后 64 位 Windows 可用于测试这些数据。
+有三类新数据类型：固定精度整数类型、指针精度整数类型和特定精度指针类型。 这些类型已添加到 Windows 环境 (具体说来，到 Basetsd) ，以允许开发人员在引入之前准备好64位 Windows。 这些新类型派生自基本 C 语言整数和长类型，因此它们可在现有代码中使用。 因此，你现在可以在代码中使用这些数据类型，在32位 Windows 上测试你的代码，并使用64位编译器提前查找并修复可移植性问题，以便在64位 Windows 可用于测试时可以准备好驱动程序。
 
-此外，采用这些新的数据类型将使代码更可靠。 若要使用这些数据类型，必须扫描代码中可能不安全的指针使用情况、 多态性，以及数据定义。 为了安全起见，使用新的类型。 例如，当变量属于类型时才**ULONG\_PTR**，很明显，它将使用的强制转换指针的算术运算和多态性。 不能直接通过使用本机 Win32 数据类型来指示这类使用情况。 您可以执行此操作通过使用派生的类型命名或匈牙利表示法，但这两种方法容易出错。
+此外，采用这些新数据类型将使代码更可靠。 若要使用这些数据类型，您必须扫描您的代码以获得可能不安全的指针用法、多态性和数据定义。 为安全起见，请使用新类型。 例如，当变量的类型为 **ULONG \_ PTR** 时，很明显，它将用于转换算术运算或多态性的指针。 不能使用本机 Win32 数据类型直接指示这种用法。 可以通过使用派生类型命名或匈牙利表示法来实现此目的，但这两种方法都容易出错。
 
-### <a name="fixed-precision-integer-types"></a>固定精度的整数类型
+### <a name="fixed-precision-integer-types"></a>Fixed-Precision 整数类型
 
-固定精度的数据类型都具有相同的长度为 32 位和 64 位编程。 为了帮助您记住这，其精度为数据类型的名称的一部分。 以下是固定精度的数据类型。
+固定精度数据类型的长度与32位和64位编程的长度相同。 为帮助您记住这一点，其精度是数据类型名称的一部分。 下面是固定精度的数据类型。
 
 <table>
 <colgroup>
@@ -41,59 +40,59 @@ ms.locfileid: "63353561"
 </colgroup>
 <thead>
 <tr class="header">
-<th>在任务栏的搜索框中键入</th>
+<th>类型</th>
 <th>定义</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><p><strong>DWORD32</strong></p></td>
-<td><p>32 位无符号的整数</p></td>
+<td><p>32 位无符号整数</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>DWORD64</strong></p></td>
-<td><p>64 位无符号的整数</p></td>
+<td><p>64 位无符号整数</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>INT32</strong></p></td>
-<td><p>32 位有符号的整数</p></td>
+<td><p>32 位带符号整数</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>INT64</strong></p></td>
-<td><p>64 位有符号的整数</p></td>
+<td><p>64 位带符号整数</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>LONG32</strong></p></td>
-<td><p>32 位有符号的整数</p></td>
+<td><p>32 位带符号整数</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>LONG64</strong></p></td>
-<td><p>64 位有符号的整数</p></td>
+<td><p>64 位带符号整数</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>UINT32</strong></p></td>
-<td><p>无符号<strong>INT32</strong></p></td>
+<td><p>无符号 <strong>INT32</strong></p></td>
 </tr>
 <tr class="even">
 <td><p><strong>UINT64</strong></p></td>
-<td><p>无符号<strong>INT64</strong></p></td>
+<td><p>无符号 <strong>INT64</strong></p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>ULONG32</strong></p></td>
-<td><p>无符号<strong>LONG32</strong></p></td>
+<td><p>无符号 <strong>LONG32</strong></p></td>
 </tr>
 <tr class="even">
 <td><p><strong>ULONG64</strong></p></td>
-<td><p>无符号<strong>LONG64</strong></p></td>
+<td><p>无符号 <strong>LONG64</strong></p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-### <a name="pointer-precision-integer-types"></a>指针精度的整数类型
+### <a name="pointer-precision-integer-types"></a>Pointer-Precision 整数类型
 
-当指针精确度更改时 （即，因为它将成为 32 位用于 32 位平台，用于 64 位平台编译时的 64 位编译时），这些数据类型将相应地反映的精度。 因此，则可以安全地强制转换到其中一种类型的指针执行指针算术; 时如果指针精确度为 64 位，类型为 64 位。 计数类型还反映一个指针，可以引用的最大大小。 以下是指针精确度和计数类型。
+当指针精度改变 (也就是说，在为32位平台编译时，32位就变成位，为64位平台编译时64位) ，这些数据类型会相应地反映精度。 因此，在执行指针算法时，可以安全地将指针转换为这些类型之一;如果指针精确度为64位，则类型为64位。 计数类型还反映了指针可引用的最大大小。 下面是指针的精度和计数类型。
 
 <table>
 <colgroup>
@@ -102,55 +101,55 @@ ms.locfileid: "63353561"
 </colgroup>
 <thead>
 <tr class="header">
-<th>在任务栏的搜索框中键入</th>
+<th>类型</th>
 <th>定义</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><p><strong>DWORD_PTR</strong></p></td>
-<td><p>指针精确度的无符号 long 类型。</p></td>
+<td><p>指针精度的无符号长类型。</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>HALF_PTR</strong></p></td>
-<td><p>带符号整型类型的后半部分指针精确度 （在 32 位系统中，在 64 位系统上的 32 位的 16 位）。</p></td>
+<td><p>半指针精度的带符号整型 (16 位在32位系统上，32比64位系统) 。</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>INT_PTR</strong></p></td>
-<td><p>带符号整型类型的指针精确度。</p></td>
+<td><p>指针精度的带符号整数类型。</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>LONG_PTR</strong></p></td>
-<td><p>带符号长类型的指针精确度。</p></td>
+<td><p>指针精度的带符号长类型。</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>SIZE_T</strong></p></td>
-<td><p>最大可以引用的指针的字节数。 使用此类型必须跨越多个完整范围的指针的计数。</p></td>
+<td><p>指针可引用的最大字节数。 此类型用于必须跨越指针的整个范围的计数。</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>SSIZE_T</strong></p></td>
-<td><p>签名<strong>SIZE_T</strong>。</p></td>
+<td><p>签名 <strong>SIZE_T</strong>。</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>UHALF_PTR</strong></p></td>
-<td><p>无符号<strong>HALF_PTR</strong>。</p></td>
+<td><p>无符号 <strong>HALF_PTR</strong>。</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>UINT_PTR</strong></p></td>
-<td><p>无符号<strong>INT_PTR</strong>。</p></td>
+<td><p>无符号 <strong>INT_PTR</strong>。</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>ULONG_PTR</strong></p></td>
-<td><p>无符号<strong>LONG_PTR</strong>。</p></td>
+<td><p>无符号 <strong>LONG_PTR</strong>。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-### <a name="fixed-precision-pointer-types"></a>固定精度指针类型
+### <a name="fixed-precision-pointer-types"></a>Fixed-Precision 指针类型
 
-也有新的显式大小指针的指针类型。 在 64 位代码中使用这些指针类型时要小心：如果声明使用 32 位类型的指针，系统将创建通过截断将 64 位指针的指针。
+还有显式调整指针大小的新指针类型。 在64位代码中使用这些指针类型时要小心：如果使用32位类型声明指针，系统将通过截断64位指针来创建指针。
 
 <table>
 <colgroup>
@@ -159,28 +158,28 @@ ms.locfileid: "63353561"
 </colgroup>
 <thead>
 <tr class="header">
-<th>在任务栏的搜索框中键入</th>
+<th>类型</th>
 <th>定义</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><p><strong>POINTER_32</strong></p></td>
-<td><p>将 32 位指针。 在 32 位系统上，这是本机指针。 在 64 位系统上，这是被截断的 64 位指针。</p></td>
+<td><p>32位指针。 在32位系统上，这是本机指针。 在64位系统上，这是一个被截断的64位指针。</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>POINTER_64</strong></p></td>
-<td><p>将 64 位指针。 在 64 位系统上，这是本机指针。 在 32 位系统上，这是一个符号扩展的 32 位指针。</p>
-<p>请注意，不安全地假定高指针位的状态。</p></td>
+<td><p>64位指针。 在64位系统上，这是本机指针。 在32位系统上，这是一个带符号扩展的32位指针。</p>
+<p>请注意，假定高指针位的状态是不安全的。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-### <a name="helper-functions"></a>帮助器函数
+### <a name="helper-functions"></a>Helper 函数
 
-以下内联函数 （Basetsd.h 中定义） 可帮助你安全地转换值从一种类型到另一个：
+ (在) Basetsd 中定义的以下内联函数可帮助你安全地将值从一种类型转换为另一种类型：
 
 ```cpp
 unsigned long HandleToUlong( const void *h )
@@ -198,7 +197,7 @@ void * LongToPtr( const long l )
 void * ULongToPtr( const unsigned long ul )
 ```
 
-**警告**  **IntToPtr**登录扩展**int**值**UIntToPtr**补零无符号**int**值、 **LongToPtr**补符号**长**值，并且**ULongToPtr**零扩展**无符号长**值。
+**警告**  **IntToPtr** -扩展 **int** 值， **UIntToPtr** 0-扩展无符号 **整数** 值， **LongToPtr** 符号扩展 **长** 值， **ULongToPtr** 零扩展 **无符号长整型** 值。
 
  
 

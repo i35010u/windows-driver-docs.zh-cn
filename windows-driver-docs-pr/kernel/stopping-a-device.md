@@ -1,7 +1,6 @@
 ---
 title: 停止设备
 description: 停止设备
-ms.assetid: 65a47e7b-aabd-4b55-8fa6-c3482da1cc84
 keywords:
 - PnP WDK 内核，停止设备
 - 即插即用 WDK 内核，停止设备
@@ -9,12 +8,12 @@ keywords:
 - 停止 Irp WDK PnP
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9e84754646589ee1554bbf89bddc620edec5c4ae
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: 0f380038242cb8de5dbc7943b3b77cf66ccb4b94
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89402916"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96814285"
 ---
 # <a name="stopping-a-device"></a>停止设备
 

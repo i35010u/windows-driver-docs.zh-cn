@@ -1,15 +1,14 @@
 ---
 title: 检索 IEEE 1394 节点的配置 ROM 的内容
 description: Windows 7 包括 1394ohci.sys （一种新的 IEEE 1394 总线驱动程序），该驱动程序通过使用内核模式驱动程序框架 (KMDF) 实现。
-ms.assetid: AC327938-A813-4665-8E2E-43BEE11D4AA9
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fd4176ff990c090090ff9703027392033ff97e46
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 03c272983ffb1d871eba31c166c096b382ffb29f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89383019"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96815400"
 ---
 # <a name="retrieving-the-contents-of-a-ieee-1394-nodes-configuration-rom"></a>检索 IEEE 1394 节点的配置 ROM 的内容
 
@@ -30,7 +29,7 @@ Windows 7 包括 1394ohci.sys （一种新的 IEEE 1394 总线驱动程序），
 ## <a name="retrieving-the-configuration-rom-header"></a>正在检索配置 ROM 标头
 
 
-若要检索节点配置 ROM 的内容，客户端驱动程序通过指定**GetLocalHostInformation NLEVEL**获取主机配置 rom，将[**请求 \_ 获取 \_ 本地 \_ 主机 \_ 信息**](https://msdn.microsoft.com/library/windows/hardware/ff537644)请求发送到 IEEE 1394 驱动程序堆栈 \_ \_ \_ 。 完成请求后，总线驱动程序会在 [**GET \_ LOCAL \_ HOST \_ 信息 5**](/windows-hardware/drivers/ddi/1394/ns-1394-_get_local_host_info5) 结构中检索节点的配置 ROM 标头。 配置 ROM 标头位于节点配置 ROM 的前5个 quadlets。 此标头包含总线信息块的内容（如 IEEE-1394a 规范中所定义）。
+若要检索节点配置 ROM 的内容，客户端驱动程序通过指定 **GetLocalHostInformation NLEVEL** 获取主机配置 rom，将 [**请求 \_ 获取 \_ 本地 \_ 主机 \_ 信息**](https://msdn.microsoft.com/library/windows/hardware/ff537644)请求发送到 IEEE 1394 驱动程序堆栈 \_ \_ \_ 。 完成请求后，总线驱动程序会在 [**GET \_ LOCAL \_ HOST \_ 信息 5**](/windows-hardware/drivers/ddi/1394/ns-1394-_get_local_host_info5) 结构中检索节点的配置 ROM 标头。 配置 ROM 标头位于节点配置 ROM 的前5个 quadlets。 此标头包含总线信息块的内容（如 IEEE-1394a 规范中所定义）。
 
 1394ohci.sys 总线驱动程序尝试在单个异步块读取事务中检索配置 ROM 标头。 但是，某些1394设备可能无法正确响应此事务。 在这种情况下，新的1394总线驱动程序使用五个异步 quadlet 读取事务来检索配置 ROM 标头。
 
@@ -52,7 +51,7 @@ Windows 7 包括 1394ohci.sys （一种新的 IEEE 1394 总线驱动程序），
 
 1394ohci.sys 总线驱动程序使用以下步骤来确定它是否可以重复使用节点配置 ROM 的内容的缓存副本：
 
-1.  总线驱动程序确定节点的配置 ROM 标头的总线信息块中的 **节点 \_ 供应商 \_ id**、 **芯片 \_ id hi**和 **芯片 \_ id lo** 值是否与某个驱动程序的某个缓存副本的配置 rom 内容的标头中的相同值匹配。
+1.  总线驱动程序确定节点的配置 ROM 标头的总线信息块中的 **节点 \_ 供应商 \_ id**、 **芯片 \_ id hi** 和 **芯片 \_ id lo** 值是否与某个驱动程序的某个缓存副本的配置 rom 内容的标头中的相同值匹配。
 2.  如果在步骤1中找到匹配项，则总线驱动程序将确定总线信息块中的生成值是否匹配。 如果代值未更改 (或者设置为1（表示它不会更改) ），则总线驱动程序将重用配置 ROM 的缓存内容。
 
 可以在 IEEE 1394 规范的前面步骤中找到配置 ROM 值的说明。 如果 1394ohci.sys 总线驱动程序找不到匹配的缓存配置 ROM 标头，或者必须重新读取节点配置 ROM 的内容，因为 **生成** 值发生了更改，则将按照前面的步骤来检索新配置 ROM 的内容。

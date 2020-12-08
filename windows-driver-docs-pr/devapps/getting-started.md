@@ -1,15 +1,14 @@
 ---
 title: UWP 设备应用入门
 description: 从这里开始构建 UWP 设备应用。
-ms.assetid: 6280E9CC-422B-4100-8B38-07BADD6A578A
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d4fe8fdecaa3d7146deeed8c8146dd3bc8b1630e
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 826f9847b85df9370a3949708b83ffabb299334f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91732965"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96815205"
 ---
 # <a name="getting-started-with-uwp-device-apps"></a>UWP 设备应用入门
 
@@ -20,7 +19,7 @@ ms.locfileid: "91732965"
 
 设备制造商可以创建用作设备配套的 UWP 设备应用。 UWP 设备应用的功能超出常规的 UWP 应用，可执行特权操作，例如固件更新。 而且，UWP 设备应用程序可以从自动播放 (在更多设备上启动，而不能) 、首次连接设备时自动安装，并扩展 Windows 中内置的打印机和照相机体验。
 
-**注意**   Windows 运行时设备 Api 不需要设备元数据。 这意味着你的应用程序无需成为 UWP 设备应用即可使用它们。 UWP 应用可以使用这些 Api 来访问 USB、人体学接口设备 (HID) 、Bluetooth 设备等。 有关详细信息，请参阅 [集成设备](/previous-versions/windows/apps/dn263141(v=win.10))。
+**注意**  Windows 运行时设备 Api 不需要设备元数据。 这意味着你的应用程序无需成为 UWP 设备应用即可使用它们。 UWP 应用可以使用这些 Api 来访问 USB、人体学接口设备 (HID) 、Bluetooth 设备等。 有关详细信息，请参阅 [集成设备](/previous-versions/windows/apps/dn263141(v=win.10))。
 
  
 
@@ -31,7 +30,7 @@ ms.locfileid: "91732965"
 
 若要开发 UWP 设备应用：需要 Microsoft Visual Studio、开发 UWP 应用以及设备元数据创作向导来开发设备元数据。
 
-**注意**   若要在 Windows 10 中开发 UWP 设备应用，请 (WDK) Microsoft Visual Studio 下载2017和 Windows 驱动程序工具包。 [成为 Windows 有问必答，获取工具包和工具](https://go.microsoft.com/fwlink/p/?LinkId=526775)
+**注意**  若要在 Windows 10 中开发 UWP 设备应用，请 (WDK) Microsoft Visual Studio 下载2017和 Windows 驱动程序工具包。 [成为 Windows 有问必答，获取工具包和工具](https://go.microsoft.com/fwlink/p/?LinkId=526775)
 
  
 

@@ -1,19 +1,18 @@
 ---
 title: 注册设备接口类
 description: 注册设备接口类
-ms.assetid: 1518570d-1cfb-498e-91f7-35f9cc11aff5
 keywords:
 - 接口类 WDK 设备安装
 - 注册设备接口类
 - 设备接口类 WDK 设备安装
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9b4f6ab369afd593546048c9cda8e7502d724663
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 37b2a4e8453dc518cbc85c0d25aed082747100a0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89095667"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96815283"
 ---
 # <a name="registering-a-device-interface-class"></a>注册设备接口类
 
@@ -25,7 +24,7 @@ ms.locfileid: "89095667"
 
 -   内核模式组件（如大多数驱动程序）可以调用 i/o 管理器例程。 本主题介绍如何使用这些例程。
 
--   用户模式 *设备安装应用程序* 调用 **SetupDi * * * Xxx* 函数。 有关这些函数的详细信息，请参阅 [SetupDi 设备接口函数](using-device-installation-functions.md#ddk-setupdi-device-interface-functions-dg)。
+-   用户模式 *设备安装应用程序* 调用 **SetupDi**_Xxx_ 函数。 有关这些函数的详细信息，请参阅 [SetupDi 设备接口函数](using-device-installation-functions.md#ddk-setupdi-device-interface-functions-dg)。
 
 -   INF 文件可以包含 [**Inf DDInstall 部分**](inf-ddinstall-interfaces-section.md)。
 

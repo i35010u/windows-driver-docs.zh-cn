@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ CAMERACONTROL \_ PERFRAMESETTING \_ 集
 description: '\_ \_ \_ KSPROPERTY CAMERACONTROL PERFRAMESETTING 属性中定义的 KSPROPERTY CAMERACONTROL PERFRAMESETTING set 属性 \_ ID \_ \_ 用于设置驱动程序中的每帧设置。'
-ms.assetid: 2EFBEA64-8340-4367-A56B-2C46167F0DE5
 keywords:
 - KSPROPERTY_CAMERACONTROL_PERFRAMESETTING_SET 流媒体设备
 topic_type:
@@ -14,16 +13,16 @@ api_type:
 - HeaderDef
 ms.date: 09/11/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 8598abde6b73580e46252ef6cee83fe7a2e3db57
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 0c7c178c043b5a3e0aeabb15d9ef7a408e421896
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89183819"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96814887"
 ---
 # <a name="ksproperty_cameracontrol_perframesetting_set"></a>KSPROPERTY \_ CAMERACONTROL \_ PERFRAMESETTING \_ 集
 
-[**KSPROPERTY \_ CAMERACONTROL \_ PERFRAMESETTING \_ 属性**](/windows-hardware/drivers/ddi/ksmedia/ne-ksmedia-ksproperty_cameracontrol_perframesetting_property)中定义的**KSPROPERTY \_ CAMERACONTROL \_ PERFRAMESETTING \_ set**属性 ID 用于设置驱动程序中的每帧设置。
+[**KSPROPERTY \_ CAMERACONTROL \_ PERFRAMESETTING \_ 属性**](/windows-hardware/drivers/ddi/ksmedia/ne-ksmedia-ksproperty_cameracontrol_perframesetting_property)中定义的 **KSPROPERTY \_ CAMERACONTROL \_ PERFRAMESETTING \_ set** 属性 ID 用于设置驱动程序中的每帧设置。
 
 ## <a name="usage-summary"></a>使用情况摘要
 
@@ -33,9 +32,9 @@ ms.locfileid: "89183819"
 
 在 GET 调用中，将先向驱动程序发送零长度缓冲区，以找出所需的数据缓冲区大小来保存驱动程序具有的整个每帧设置。 对于此调用，驱动程序必须返回 **状态 \_ 缓冲区 \_ 溢出** ，其中包含所需的每帧设置缓冲区大小（如果以前未设置每帧设置，则必须为0）; 否则为至少大小 [**KSCAMERA \_ PERFRAMESETTING \_ 标头**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-kscamera_perframesetting_header) 。
 
-每帧设置负载必须以 **KSCAMERA \_ PERFRAMESETTING \_ 标头**开始，后跟一个或多个框架设置。 在 FrameCount 中指定帧设置的数目。 每个帧的设置必须以 [**KSCAMERA \_ PERFRAMESETTING \_ 框架 \_ 标题**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-kscamera_perframesetting_frame_header)开头，后跟零个或多个项设置。 在 ItemCount 中指定项设置的数目。 每个项的设置（如果有）必须以 [**KSCAMERA \_ PERFRAMESETTING \_ 项 \_ 标题**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-kscamera_perframesetting_item_header)开头。
+每帧设置负载必须以 **KSCAMERA \_ PERFRAMESETTING \_ 标头** 开始，后跟一个或多个框架设置。 在 FrameCount 中指定帧设置的数目。 每个帧的设置必须以 [**KSCAMERA \_ PERFRAMESETTING \_ 框架 \_ 标题**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-kscamera_perframesetting_frame_header)开头，后跟零个或多个项设置。 在 ItemCount 中指定项设置的数目。 每个项的设置（如果有）必须以 [**KSCAMERA \_ PERFRAMESETTING \_ 项 \_ 标题**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-kscamera_perframesetting_item_header)开头。
 
-对于每个项的设置，如果存在值有效负载，则 **KSCAMERA \_ PERFRAMESETTING \_ 项 \_ 标头** 必须后跟 [**KSCAMERA \_ EXTENDEDPROP \_ 值**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_value)。 如果自定义项存在，则 **KSCAMERA \_ PERFRAMESETTING \_ item \_ 标头** 必须后跟 [**KSCAMERA \_ PERFRAMESETTING \_ 自定义 \_ 项**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-kscamera_perframesetting_custom_item)，后跟与 **KSCAMERA \_ PERFRAMESETTING \_ 自定义 \_ 项**中指定的 GUID Id 关联的自定义数据。
+对于每个项的设置，如果存在值有效负载，则 **KSCAMERA \_ PERFRAMESETTING \_ 项 \_ 标头** 必须后跟 [**KSCAMERA \_ EXTENDEDPROP \_ 值**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_value)。 如果自定义项存在，则 **KSCAMERA \_ PERFRAMESETTING \_ item \_ 标头** 必须后跟 [**KSCAMERA \_ PERFRAMESETTING \_ 自定义 \_ 项**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-kscamera_perframesetting_custom_item)，后跟与 **KSCAMERA \_ PERFRAMESETTING \_ 自定义 \_ 项** 中指定的 GUID Id 关联的自定义数据。
 
 如果 FrameCount 为0，则驱动程序必须拒绝每帧设置负载。 如果 ItemCount 为0，则不指定帧设置。 驱动程序必须将全局设置应用于关联的帧。 例如，FrameCount = 1，ItemCount = 0 表示具有全局设置的单个帧可变照片序列。
 
@@ -65,9 +64,9 @@ ms.locfileid: "89183819"
 
 **每帧设置 ISO**
 
-如果驱动程序不支持 **KSCAMERA \_ EXTENDEDPROP \_ ISO \_ 手册**，则不包括值负载。 否则，每帧设置的项标头必须后跟 **KSCAMERA \_ EXTENDEDPROP \_ 值**。 在 **SET** 调用中， **KSCAMERA \_ EXTENDEDPROP \_ 值。** 如果在 KSCAMERA PERFRAMESETTING ITEM 标头中支持并指定 **KSCAMERA \_ EXTENDEDPROP \_ iso \_ 手册** ，则值 ul 包含所需的 iso 速度 ** \_ \_ \_ 。标志**。
+如果驱动程序不支持 **KSCAMERA \_ EXTENDEDPROP \_ ISO \_ 手册**，则不包括值负载。 否则，每帧设置的项标头必须后跟 **KSCAMERA \_ EXTENDEDPROP \_ 值**。 在 **SET** 调用中， **KSCAMERA \_ EXTENDEDPROP \_ 值。** 如果在 KSCAMERA PERFRAMESETTING ITEM 标头中支持并指定 **KSCAMERA \_ EXTENDEDPROP \_ iso \_ 手册** ，则值 ul 包含所需的 iso 速度 **\_ \_ \_ 。标志**。
 
-下面显示了在每帧设置 ISO 功能为 **KSCAMERA \_ EXTNDEDPROP \_ iso \_ AUTO**、 **KSCAMERA \_ EXTENDEDPROP \_ ISO \_ ** (min = 30、max = 210、Step = 20) 时，项标头和值负载应如下所示：
+下面显示了在每帧设置 ISO 功能为 **KSCAMERA \_ EXTNDEDPROP \_ iso \_ AUTO**、 **KSCAMERA \_ EXTENDEDPROP \_ ISO \_** (min = 30、max = 210、Step = 20) 时，项标头和值负载应如下所示：
 
 ```cpp
 KSCAMERA_EXTNDEDPROP_ISO_AUTO, 
@@ -97,7 +96,7 @@ KSCAMERA_EXTENDEDPROP_ISO_MANUAL (min = 30, max = 210, step =20)
 </colgroup>
 <thead>
 <tr class="header">
-<th>名称</th>
+<th>“属性”</th>
 <th>可用值</th>
 </tr>
 </thead>
@@ -107,7 +106,7 @@ KSCAMERA_EXTENDEDPROP_ISO_MANUAL (min = 30, max = 210, step =20)
 <td><p>100毫微秒内的自动或时间。</p></td>
 </tr>
 <tr class="even">
-<td><p>闪烁</p></td>
+<td><p>Flash</p></td>
 <td><p>开启/关闭，自动，红眼降低/关闭，闪烁电量百分比。</p></td>
 </tr>
 <tr class="odd">
@@ -119,7 +118,7 @@ KSCAMERA_EXTENDEDPROP_ISO_MANUAL (min = 30, max = 210, step =20)
 <td><p>用整数 ISO 值自动或手动。</p></td>
 </tr>
 <tr class="odd">
-<td><p>侧重点</p></td>
+<td><p>焦点</p></td>
 <td><p>自动或逻辑镜头位置。 此值没有特定的单位。</p></td>
 </tr>
 <tr class="even">
@@ -143,9 +142,9 @@ KSCAMERA_EXTENDEDPROP_ISO_MANUAL (min = 30, max = 210, step =20)
 
 当组装要在驱动程序上设置的每帧设置负载时，框架将查找自定义 IMFAttributes 以构造自定义项负载。
 
-**KSCAMERA \_ PERFRAMESETTING \_ 标头**中的**LoopCount**字段指定了每帧设置应应用于要在照片序列中捕获的未来帧的重复次数。 管道 (将 **LoopCount** 硬编码为1。例如，每帧设置仅应用一次，而不会进一步重复) 。 **KSCAMERA \_ PERFRAMESETTING \_ 标头**中的**FrameCount**字段指定每个帧设置应应用于每个重复的帧的帧设置的数目。
+**KSCAMERA \_ PERFRAMESETTING \_ 标头** 中的 **LoopCount** 字段指定了每帧设置应应用于要在照片序列中捕获的未来帧的重复次数。 管道 (将 **LoopCount** 硬编码为1。例如，每帧设置仅应用一次，而不会进一步重复) 。 **KSCAMERA \_ PERFRAMESETTING \_ 标头** 中的 **FrameCount** 字段指定每个帧设置应应用于每个重复的帧的帧设置的数目。
 
-**KSCAMERA \_ PERFRAMESETTING \_ FRAME \_ 页眉**中的**ItemCount**字段指定应应用于相应帧的项设置的数目。 如果 **ItemCount** 为0，则全局设置应应用于相应的帧。
+**KSCAMERA \_ PERFRAMESETTING \_ FRAME \_ 页眉** 中的 **ItemCount** 字段指定应应用于相应帧的项设置的数目。 如果 **ItemCount** 为0，则全局设置应应用于相应的帧。
 
 下表列出了可能的配置和相应的照片序列类型。
 

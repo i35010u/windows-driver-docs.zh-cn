@@ -1,15 +1,14 @@
 ---
 title: 安装设备元数据创作向导
 description: 安装设备元数据创作向导
-ms.assetid: 3DA5F7E8-B33B-4D05-9506-DDEE06773A5D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fc0bfdda0182204bbd8aa2583a40d63c6b857016
-ms.sourcegitcommit: 372464be981a39781c71049126f36891cb5d0cad
+ms.openlocfilehash: e1398703d5291de050fc498b91960f9cf139eedb
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91646097"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96813865"
 ---
 # <a name="installing-the-device-metadata-authoring-wizard"></a>安装设备元数据创作向导
 

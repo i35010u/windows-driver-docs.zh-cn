@@ -1,9 +1,8 @@
 ---
 title: ScannerLocation 元素
-description: 可选 ScannerLocation 元素指定扫描程序以管理方式分配的的位置。
-ms.assetid: 564a468d-7a4a-49c6-921a-5d8825c783fb
+description: 可选的 ScannerLocation 元素指定管理的扫描程序位置。
 keywords:
-- ScannerLocation 元素成像设备
+- ScannerLocation 元素图像设备
 topic_type:
 - apiref
 api_name:
@@ -12,19 +11,19 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b8107024dc1c0215a94a4a606062b6a7ed2c1cd4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0a04e2ed1dd10812b5e057c3b8419de4b1fe9620
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63370065"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96813753"
 ---
 # <a name="scannerlocation-element"></a>ScannerLocation 元素
 
 
-可选**ScannerLocation**元素指定的扫描程序以管理方式分配的位置。
+可选的 **ScannerLocation** 元素指定管理的扫描程序位置。
 
-<a name="usage"></a>用法
+<a name="usage"></a>使用情况
 -----
 
 ```xml
@@ -46,19 +45,19 @@ ms.locfileid: "63370065"
 </colgroup>
 <thead>
 <tr class="header">
-<th>特性</th>
-<th>在任务栏的搜索框中键入</th>
-<th>必需</th>
+<th>属性</th>
+<th>类型</th>
+<th>必须</th>
 <th>描述</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><strong><strong>lang</strong></strong></p></td>
+<td><p><strong><strong>语言</strong></strong></p></td>
 <td><p>xs:string</p></td>
 <td><p>否</p></td>
 <td><p></p>
-<p>（可选）标识的字符串的字符串指定的语言的字符字符串。<em>字符串</em></p></td>
+<p> (可选) 用于标识字符串指定的字符串语言的字符串。<em>字符串</em></p></td>
 </tr>
 </tbody>
 </table>
@@ -66,12 +65,12 @@ ms.locfileid: "63370065"
 <a name="text-value"></a>文本值
 ----------
 
-指定扫描程序的位置的字符串。
+指定扫描程序位置的字符串。
 
 ## <a name="child-elements"></a>子元素
 
 
-没有子元素。
+没有任何子元素。
 
 ## <a name="parent-elements"></a>父元素
 
@@ -95,12 +94,12 @@ ms.locfileid: "63370065"
 <a name="remarks"></a>备注
 -------
 
-配置**ScannerLocation**元素的值是特定于实现的; 例如，您可以配置扫描程序的本地控制台或设备的 web 服务器通过此值。 扫描设备可以返回此元素中使用启用对多个本地化语言的支持的多个版本**xml: lang**属性。
+**ScannerLocation** 元素的值的配置是特定于实现的;例如，可以通过扫描仪的本地控制台或设备的 web 服务器来配置此值。 扫描设备可以返回此元素的多个版本，以通过使用 **xml： lang** 特性来支持多种本地化语言。
 
 <a name="examples"></a>示例
 --------
 
-以下代码示例演示如何使用 ScannerLocation 元素。
+下面的代码示例演示如何使用 ScannerLocation 元素。
 
 ```xml
 <wscn:ScannerLocation xml:lang="en-AU, en-CA, en-GB, en-US">

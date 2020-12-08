@@ -1,7 +1,6 @@
 ---
 title: 'NdisOidDoubleComplete 规则 (ndis) '
 description: NdisOidDoubleComplete 规则指定 NDIS 微型端口驱动程序不得为同一 OID 调用两次 NdisMOidRequestComplete 例程。
-ms.assetid: 876A3D3C-554F-4D71-AD1B-F568D0AD6C0D
 ms.date: 05/21/2018
 keywords:
 - 'NdisOidDoubleComplete 规则 (ndis) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: c76276fdfe2cbdf9770b22fdf55a084f376e70e4
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 8d52ded0e98ec2807d0b6302def38f792d5d8d84
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90101752"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96813841"
 ---
 # <a name="ndisoiddoublecomplete-rule-ndis"></a>NdisOidDoubleComplete 规则 (ndis) 
 
 
-**NdisOidDoubleComplete**规则指定 NDIS 微型端口驱动程序不得为同一 OID 调用两次[**NdisMOidRequestComplete**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismoidrequestcomplete)例程。
+**NdisOidDoubleComplete** 规则指定 NDIS 微型端口驱动程序不得为同一 OID 调用两次 [**NdisMOidRequestComplete**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismoidrequestcomplete)例程。
 
 将跟踪 OID ( 跟踪的 \_ 对象) 。 若要使用内核调试器帮助调试此错误，请使用 **！ ndiskd** 调试器扩展。
 

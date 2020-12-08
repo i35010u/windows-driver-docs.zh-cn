@@ -1,34 +1,33 @@
 ---
 title: 保持缓存一致性
 description: 保持缓存一致性
-ms.assetid: 70b4b313-ce33-4562-aa0d-127a91706409
 keywords:
-- I/O WDK 内核，缓存一致性
-- 缓存协调性 WDK 内核
-- 完整性 WDK I/O
-- 数据传输 WDK 内核缓存一致性
+- I/o WDK 内核，缓存一致性
+- 缓存一致性 WDK 内核
+- 完整性 WDK i/o
+- 数据传输 WDK 内核，缓存一致性
 - 传输数据 WDK 内核，缓存一致性
-- 内存管理 WDK 内核缓存一致性
-- 处理器缓存 WDK I/O
+- 内存管理 WDK 内核，缓存一致性
+- 处理器缓存 WDK i/o
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 20495fec25a2aa119fe634e5ecb4852af180223d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e2c9a876c0cad525236f84829b7499370652920c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63378753"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96815071"
 ---
 # <a name="maintaining-cache-coherency"></a>保持缓存一致性
 
 
-当驱动程序系统内存，并且其设备之间传输数据时，可以在一个或多个处理器缓存和/或系统 DMA 控制器的缓存中缓存数据。 驱动程序使用 DMA 或 PIO 到服务的读/写 Irp 或任何设备 I/O 控制请求都需要 DMA 或 PIO 数据传输操作应确保的完整性可能是缓存的数据在传输过程操作。 本部分介绍如何执行此操作。
+当驱动程序在系统内存与其设备之间传输数据时，可以将数据缓存在一个或多个处理器缓存中，或者缓存到系统 DMA 控制器的缓存中。 使用 DMA 或 PIO 来服务读/写 Irp 的驱动程序或任何需要 DMA 或 PIO 数据传输操作的设备 i/o 控制请求应在传输操作过程中确保缓存数据的完整性。 本部分说明如何执行此操作。
 
-本部分包含以下主题：
+本节包含下列主题：
 
-[正在刷新 DMA 操作期间缓存数据](flushing-cached-data-during-dma-operations.md)
+[执行 DMA 操作期间刷新缓存数据](flushing-cached-data-during-dma-operations.md)
 
-[正在刷新 PIO 操作期间缓存数据](flushing-cached-data-during-pio-operations.md)
+[执行 PIO 操作期间刷新缓存数据](flushing-cached-data-during-pio-operations.md)
 
  
 

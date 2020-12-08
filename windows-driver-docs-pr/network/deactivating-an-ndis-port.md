@@ -1,7 +1,6 @@
 ---
 title: 停用 NDIS 端口
 description: 停用 NDIS 端口
-ms.assetid: 2a5d288f-b6ea-4b63-91a3-44155aae8064
 keywords:
 - 端口 WDK NDIS，停用
 - NDIS 端口 WDK，停用
@@ -9,12 +8,12 @@ keywords:
 - 停用 PnP 事件 WDK NDIS 端口
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8f36e246de7a946f0a980923728d44756963f020
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 49c980ae7d98c32f95c8b0c828ddf87ccf52f24b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89211113"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96814971"
 ---
 # <a name="deactivating-an-ndis-port"></a>停用 NDIS 端口
 
@@ -24,10 +23,10 @@ ms.locfileid: "89211113"
 
 若要停用 NDIS 端口，微型端口驱动程序 (PnP) 事件向 NDIS 发送端口停用即插即用。 当微型端口驱动程序成功激活端口之后，驱动程序必须停用端口，然后才能释放端口。 另外，驱动程序可能会出于特定于应用程序的原因停用端口。 当端口停用后，可以重新激活它，但如果释放端口，则无法重新激活它。
 
-若要发送端口停用 PnP 事件，小型端口驱动程序将使用 **NetEventPortDeactivation** PnP 事件代码来调用 [**NdisMNetPnPEvent**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismnetpnpevent) 函数。 若要停用端口，微型端口驱动程序必须将**NdisMNetPnPEvent**的*NetPnPEvent*参数指向的[**NET \_ PNP \_ 事件 \_ 通知**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_pnp_event_notification)结构的成员设置为，如下所示：
+若要发送端口停用 PnP 事件，小型端口驱动程序将使用 **NetEventPortDeactivation** PnP 事件代码来调用 [**NdisMNetPnPEvent**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismnetpnpevent) 函数。 若要停用端口，微型端口驱动程序必须将 **NdisMNetPnPEvent** 的 *NetPnPEvent* 参数指向的 [**NET \_ PNP \_ 事件 \_ 通知**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_pnp_event_notification)结构的成员设置为，如下所示：
 
 <a href="" id="portnumber"></a>**PortNumber**  
-事件通知的源端口。 将此成员设置为零，因为**NetPnPEvent**成员指定的结构的**Buffer**成员中提供了端口号。
+事件通知的源端口。 将此成员设置为零，因为 **NetPnPEvent** 成员指定的结构的 **Buffer** 成员中提供了端口号。
 
 <a href="" id="netpnpevent"></a>**NetPnPEvent**  
 描述端口停用事件的 [**NET \_ PNP \_ 事件**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_pnp_event) 结构。 设置此结构的成员，如下所示：
@@ -52,7 +51,7 @@ ms.locfileid: "89211113"
 
 当微型端口驱动程序停用端口时，NDIS 会通知所有与 **NetEventPortDeactivation** PnP 事件绑定到微型端口驱动程序的协议驱动程序。 此 PnP 事件列出已更改为已分配状态且不包含已停用的任何端口的端口。 有关在协议驱动程序中处理端口停用事件的详细信息，请参阅 [处理端口停用 PnP 事件](handling-the-port-deactivation-pnp-event.md)。
 
-在微型端口驱动程序分配 NDIS 端口之前，驱动程序必须调用 [**NdisMSetMiniportAttributes**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsetminiportattributes) 函数，以便在 [**ndis \_ 微型端口 \_ 适配器 \_ 注册 \_ 属性**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_adapter_registration_attributes) 结构中设置注册属性。 小型端口驱动程序可以通过在 \_ 调用 NdisMSetMiniportAttributes 时设置 NDIS 微型端口 \_ 控件 \_ 默认 \_ 端口属性标志**NdisMSetMiniportAttributes**，来控制默认端口的激活。 如果微型端口驱动程序假设有责任激活默认端口，而微型端口驱动程序激活了默认端口，则必须在从 [*MiniportHaltEx*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_halt) 函数返回之前停用默认端口。
+在微型端口驱动程序分配 NDIS 端口之前，驱动程序必须调用 [**NdisMSetMiniportAttributes**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsetminiportattributes) 函数，以便在 [**ndis \_ 微型端口 \_ 适配器 \_ 注册 \_ 属性**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_adapter_registration_attributes) 结构中设置注册属性。 小型端口驱动程序可以通过在 \_ 调用 NdisMSetMiniportAttributes 时设置 NDIS 微型端口 \_ 控件 \_ 默认 \_ 端口属性标志 **NdisMSetMiniportAttributes**，来控制默认端口的激活。 如果微型端口驱动程序假设有责任激活默认端口，而微型端口驱动程序激活了默认端口，则必须在从 [*MiniportHaltEx*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_halt) 函数返回之前停用默认端口。
 
 由 NDIS 端口号元素数组指定的所有端口都 \_ \_ 必须处于 "已激活" 状态。 微型端口驱动程序不应尝试停用已停用的端口。
 

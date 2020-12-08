@@ -1,7 +1,6 @@
 ---
 title: wdfkd.wdfcrashdump
 description: 如果数据存在，wdfcrashdump 扩展将显示小型转储文件中的错误日志信息和其他故障转储信息。
-ms.assetid: 419c76b1-e291-4503-8c59-aa46140e40b3
 keywords:
 - wdfkd wdfcrashdump Windows 调试
 ms.date: 05/23/2017
@@ -12,12 +11,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 3b37a986c9b2bfa14546ac04599bfe0f0f02ed22
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: d95629d88512115a517b4fa46b233cc0c3849283
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91734319"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96814641"
 ---
 # <a name="wdfkdwdfcrashdump"></a>!wdfkd.wdfcrashdump
 
@@ -73,7 +72,7 @@ UMDF 2.15
 <a name="remarks"></a>备注
 -------
 
-此示例演示如何使用 **！ wdfkd** 来查看有关 KMDF 驱动程序的信息。 如果为*InfoType*指定**加载程序**，则输出将在小型转储文件中包含动态绑定的驱动程序。
+此示例演示如何使用 **！ wdfkd** 来查看有关 KMDF 驱动程序的信息。 如果为 *InfoType* 指定 **加载程序**，则输出将在小型转储文件中包含动态绑定的驱动程序。
 
 ```dbgcmd
 0: kd> !wdfcrashdump loader 

@@ -1,7 +1,6 @@
 ---
 title: 'StorPortCompleteRequest 规则 (storport) '
 description: 此规则验证小型小型端口是否不会对 StorPortCompleteRequest 进行调用。 不建议使用 StorPortCompleteRequest;应改用 notificationType RequestComplete 调用 StorPortNotification 微型端口。
-ms.assetid: 6DDAC83F-C4D5-4600-B5F3-AA7F216BB797
 ms.date: 05/21/2018
 keywords:
 - 'StorPortCompleteRequest 规则 (storport) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: aa4ad2c1939e103240a592b273cd29901307d645
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 51c54dc3ac6a56e73fbb79b3477a9702b4f46717
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107042"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96813825"
 ---
 # <a name="storportcompleterequest-rule-storport"></a>StorPortCompleteRequest 规则 (storport) 
 
 
-此规则验证小型小型端口是否不会对 **StorPortCompleteRequest** 进行调用。 不建议使用**StorPortCompleteRequest** ;微型端口应改为调用具有**notificationType = RequestComplete**的**StorPortNotification** 。
+此规则验证小型小型端口是否不会对 **StorPortCompleteRequest** 进行调用。 不建议使用 **StorPortCompleteRequest** ;微型端口应改为调用具有 **notificationType = RequestComplete** 的 **StorPortNotification** 。
 
 **驱动程序模型： Storport**
 

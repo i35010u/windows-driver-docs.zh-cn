@@ -1,7 +1,6 @@
 ---
 title: CM_Delete_DevNode_Key_Ex
 description: CM_Delete_DevNode_Key_Ex
-ms.assetid: 35b97fa6-6451-4d2a-92ce-927a537a7ccb
 keywords:
 - CM_Delete_DevNode_Key_Ex 设备和驱动程序安装
 topic_type:
@@ -12,13 +11,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: b526bef7ffc56392d207f1d39f41489fb55fc686
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2464a3ae1d69fe87d6e1072b5d2c753179dfe3ec
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63357859"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96814373"
 ---
-# <a name="cmdeletedevnodekeyex"></a>CM_Delete_DevNode_Key_Ex
+# <a name="cm_delete_devnode_key_ex"></a>CM_Delete_DevNode_Key_Ex
 
 此函数保留供系统使用。

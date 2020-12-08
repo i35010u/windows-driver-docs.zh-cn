@@ -1,15 +1,14 @@
 ---
 title: USSD API
 description: USSD API
-ms.assetid: c5700791-6978-4626-ab69-aa4391247542
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c3d53434d6b57eaf1387b4cffb64a3de3af9f435
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: b51c59359c84494dedf3a14f75d0e612a3ffa2e3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89209827"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96815039"
 ---
 # <a name="ussd-api"></a>USSD API
 

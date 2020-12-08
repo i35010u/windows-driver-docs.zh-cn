@@ -1,19 +1,18 @@
 ---
 title: 适配器对象简介
 description: 适配器对象简介
-ms.assetid: a1a0d516-dee0-484a-b971-c7a595fef155
 keywords:
 - AdapterControl 例程，关于 AdapterControl 例程
 - DMA 传输 WDK 内核，适配器对象
 - 适配器对象 WDK 内核，关于适配器对象
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0c8034b4141272ac622b5bdfd4c7545166a1d1bf
-ms.sourcegitcommit: 057b72e8a44ba8f4282e072edc7be0b7e9341d2a
+ms.openlocfilehash: 50397fdffac0326a54d0372acea1c743dea7a857
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "89412434"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96815277"
 ---
 # <a name="introduction-to-adapter-objects"></a>适配器对象简介
 
@@ -41,7 +40,7 @@ ms.locfileid: "89412434"
 
  (适用于支持总线主机 DMA 的 SCSI 设备，SCSI 端口驱动程序为特定于 HBA 的 SCSI 微型端口驱动程序设置适配器对象。 微型端口驱动程序的 [*HwScsiFindAdapter*](/previous-versions/windows/hardware/drivers/ff557300(v=vs.85)) 例程为端口驱动程序提供特定于适配器的数据。 ) 
 
-若要详细了解何时以及如何使用适配器对象和*AdapterControl*例程，请参阅此部分以及[使用 Bus 主 DMA](using-bus-master-dma.md) 。
+若要详细了解何时以及如何使用适配器对象和 *AdapterControl* 例程，请参阅此部分以及 [使用 Bus-Master DMA](using-bus-master-dma.md) 。
 
 ## <a name="related-topics"></a>相关主题
 

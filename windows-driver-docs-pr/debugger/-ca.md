@@ -1,9 +1,8 @@
 ---
 title: ca
-description: Ca 扩展显示控件区域有关的信息。
-ms.assetid: 7e9164a5-238e-4327-bd2a-a814bff5f7db
+description: Ca 扩展显示有关控件区域的信息。
 keywords:
-- 控件区域
+- 控制区
 - ca Windows 调试
 ms.date: 05/23/2017
 topic_type:
@@ -13,30 +12,30 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 329cbf608b047efc53ccf316e3d1af7a332c89a2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0bed7aba527d5482a2427c9a15a725b63e5e7352
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63334643"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96814111"
 ---
 # <a name="ca"></a>!ca
 
 
-**！ Ca**扩展显示控件区域有关的信息。
+**！ Ca** 扩展显示有关控件区域的信息。
 
 ```dbgsyntax
 !ca [Address | 0 | -1] [Flags]
 ```
 
-## <a name="span-idddkcadbgspanspan-idddkcadbgspanparameters"></a><span id="ddk__ca_dbg"></span><span id="DDK__CA_DBG"></span>参数
+## <a name="span-idddk__ca_dbgspanspan-idddk__ca_dbgspanparameters"></a><span id="ddk__ca_dbg"></span><span id="DDK__CA_DBG"></span>参数
 
 
-<span id="_______Address______"></span><span id="_______address______"></span><span id="_______ADDRESS______"></span> *Address*   
-控件区域的地址。 如果指定此参数为 0，信息会显示有关所有控件区域。 如果指定此参数为-1，信息会显示有关未使用的段列表。
+<span id="_______Address______"></span><span id="_______address______"></span><span id="_______ADDRESS______"></span>*地址*   
+控件区域的地址。 如果为此参数指定0，则显示有关所有控件区域的信息。 如果为此参数指定-1，则将显示关于未使用的段列表的信息。
 
-<span id="_______Flags______"></span><span id="_______flags______"></span><span id="_______FLAGS______"></span> *标志*   
-指定所显示的信息的标志。 此参数是一个或多个下列标志的按位 OR。
+<span id="_______Flags______"></span><span id="_______flags______"></span><span id="_______FLAGS______"></span>*标志*   
+用于指定显示哪些信息的标志。 此参数是以下一个或多个标志的按位 "或"。
 
 <table>
 <colgroup>
@@ -45,7 +44,7 @@ ms.locfileid: "63334643"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Flag</th>
+<th align="left">标志</th>
 <th align="left">描述</th>
 </tr>
 </thead>
@@ -56,15 +55,15 @@ ms.locfileid: "63334643"
 </tr>
 <tr class="even">
 <td align="left"><p><span id="0x2"></span><span id="0X2"></span>0x2</p></td>
-<td align="left"><p>显示子部分信息。</p></td>
+<td align="left"><p>显示子节信息。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><span id="0x4"></span><span id="0X4"></span>0x4</p></td>
-<td align="left"><p>显示映射视图的列表。 (Windows 7 及更高版本)</p></td>
+<td align="left"><p>显示映射视图的列表。  (Windows 7 及更高版本) </p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><span id="0x8"></span><span id="0X8"></span>0x8</p></td>
-<td align="left"><p>显示压缩 （单行） 输出。</p></td>
+<td align="left"><p>显示 compact (单行) 输出。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><span id="0x10"></span><span id="0X10"></span>0x10</p></td>
@@ -72,7 +71,7 @@ ms.locfileid: "63334643"
 </tr>
 <tr class="even">
 <td align="left"><p><span id="0x20"></span><span id="0X20"></span>0x20</p></td>
-<td align="left"><p>显示控件区域由页面文件提供支持。</p></td>
+<td align="left"><p>显示页文件支持的控件区域。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><span id="0x40"></span><span id="0X40"></span>0x40</p></td>
@@ -83,9 +82,9 @@ ms.locfileid: "63334643"
 
  
 
-如果未指定任何的最后三个标志，将显示所有三种类型的控件区域。
+如果未指定最后三个标志中的任何一个，则显示所有三种类型的控件区域。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 <table>
 <colgroup>
@@ -106,16 +105,16 @@ ms.locfileid: "63334643"
 
  
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-有关控制方面的信息，请参阅*Microsoft Windows Internals*由 Mark Russinovich 和 David solomon 合著。 
+有关控件区域的信息，请参阅 Russinovich 和 David 所罗门群岛的 *Microsoft Windows 内部机制* 。 
 
 <a name="remarks"></a>备注
 -------
 
-若要获取的所有控件区域的列表映射文件，请使用[ **！ memusage** ](-memusage.md)扩展。
+若要获取所有映射文件的控件区域的列表，请使用 [**！ memusage**](-memusage.md) 扩展名。
 
-下面是一个示例：
+以下是示例：
 
 ```dbgcmd
 kd> !memusage

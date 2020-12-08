@@ -1,7 +1,6 @@
 ---
 title: 'Irql \_ MCM \_ 函数规则 (ndis) '
 description: Irql \_ MCM \_ 函数规则指定必须在正确的 Irql 级别调用用于驱动程序的 NDIS MCM 函数。
-ms.assetid: 8cd71bf0-92ee-409d-90e3-6bb0c14ebda4
 ms.date: 05/21/2018
 keywords:
 - 'Irql_MCM_Function 规则 (ndis) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 57fc46c6f0dc363a079de6c25c9f247084ddbe60
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 333e05a3a0fc4486cfa0b5de58314e713d420f1d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104504"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96815473"
 ---
 # <a name="irql_mcm_function-rule-ndis"></a>Irql \_ MCM \_ 函数规则 (ndis) 
 
 
-**Irql \_ MCM \_ 函数**规则指定必须在正确的 Irql 级别调用用于驱动程序的 NDIS MCM 函数。
+**Irql \_ MCM \_ 函数** 规则指定必须在正确的 Irql 级别调用用于驱动程序的 NDIS MCM 函数。
 
 **驱动程序模型： NDIS**
 

@@ -1,7 +1,6 @@
 ---
 title: usbkd.usbchain
 description: Usbkd. usbchain 命令显示从指定 PDO 开始，并返回到根集线器的 USB 设备链。
-ms.assetid: 0D69E29E-3886-436F-B5EE-E4F297D9CE36
 keywords:
 - usbkd usbchain Windows 调试
 ms.date: 05/23/2017
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: ef6a9ab3f55c0825495a01839396cb4d47d94407
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 9d180d15c442c2de8f6cd9f0118036abb8db856c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89213566"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96814025"
 ---
 # <a name="usbkdusbchain"></a>!usbkd.usbchain
 
 
-**！ Usbkd. usbchain**命令显示从指定 PDO 开始，并返回到根集线器的 USB 设备链。
+**！ Usbkd. usbchain** 命令显示从指定 PDO 开始，并返回到根集线器的 USB 设备链。
 
 ```dbgcmd
 !usbkd.usbchain PDO

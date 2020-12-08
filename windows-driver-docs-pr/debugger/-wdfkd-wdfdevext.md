@@ -1,9 +1,8 @@
 ---
 title: wdfkd.wdfdevext
-description: Wdfkd.wdfdevext 扩展显示与 Microsoft Windows 驱动程序模型 (WDM) DEVICE_OBJECT 结构 DeviceExtension 成员相关联的信息。
-ms.assetid: 89559cae-7323-4c91-b20a-7d42069cdb93
+description: Wdfdevext 扩展显示与 Microsoft Windows 驱动模型 (WDM) DEVICE_OBJECT 结构的 DeviceExtension 成员关联的信息。
 keywords:
-- wdfkd.wdfdevext Windows 调试
+- wdfkd wdfdevext Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,44 +11,44 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 2e8bfffaaa59aec3c82713d0229cc6dbb558a9e9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ccc46cedc921b7f206ef02e99840d7dd5b572c56
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63341771"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96814621"
 ---
 # <a name="wdfkdwdfdevext"></a>!wdfkd.wdfdevext
 
 
-**！ Wdfkd.wdfdevext**扩展插件都会显示与之关联的信息**DeviceExtension**成员的 Microsoft Windows 驱动程序模型 (WDM) 设备\_对象结构。
+**！ Wdfkd wdfdevext** 扩展显示与 Microsoft WINDOWS 驱动模型 (WDM) 设备对象结构的 **DeviceExtension** 成员关联的信息 \_ 。
 
 ```dbgcmd
 !wdfkd.wdfdevext DeviceExtension
 ```
 
-## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>参数
+## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>Parameters
 
 
-<span id="_______DeviceExtension______"></span><span id="_______deviceextension______"></span><span id="_______DEVICEEXTENSION______"></span> *DeviceExtension*   
+<span id="_______DeviceExtension______"></span><span id="_______deviceextension______"></span><span id="_______DEVICEEXTENSION______"></span>*DeviceExtension*   
 指向设备扩展的指针。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 Wdfkd.dll
 
-### <a name="span-idframeworksspanspan-idframeworksspanspan-idframeworksspanframeworks"></a><span id="Frameworks"></span><span id="frameworks"></span><span id="FRAMEWORKS"></span>框架
+### <a name="span-idframeworksspanspan-idframeworksspanspan-idframeworksspanframeworks"></a><span id="Frameworks"></span><span id="frameworks"></span><span id="FRAMEWORKS"></span>协作
 
-KMDF 1，1，UMDF UMDF 2
+KMDF 1，UMDF 1，UMDF 2
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-有关详细信息，请参阅[内核模式驱动程序框架调试](kernel-mode-driver-framework-debugging.md)。
+有关详细信息，请参阅 [内核模式驱动程序框架调试](kernel-mode-driver-framework-debugging.md)。
 
 <a name="remarks"></a>备注
 -------
 
-下面是一个示例，用于 HdAudBus.sys，是 KMDF 驱动程序。 使用[ **！ devnode** ](-devnode.md)若要查找具有 HdAudBus 作为其功能驱动程序的设备节点。 获取输出中的物理设备对象 (PDO) 并将其传递给[ **！ devstack**](-devstack.md)。 获取输出中的设备扩展地址 **！ devstack**并将其传递给 **！ wdfdevext**。
+下面是一个 KMDF 驱动程序 HdAudBus.sys 的示例。 使用 [**！ devnode**](-devnode.md) 查找将 HdAudBus 作为其函数驱动程序的设备节点。 从输出中获取 (PDO) 的物理设备对象，并将其传递到 [**！ devstack**](-devstack.md)。 从 **！ devstack** 的输出中获取设备扩展地址，并将其传递给 **！ wdfdevext**。
 
 ```dbgcmd
 0: kd> !devnode 0 1 hdaudbus
@@ -75,7 +74,7 @@ Device context is 0xffffe000009a3c00
 !wdfobject 0xffffe000009a3910
 ```
 
-下面是一个示例，用于 Wudfrd.sys，即 UMDF 2 驱动程序堆栈的内核模式部分功能驱动程序。 使用[ **！ devnode** ](-devnode.md)若要查找具有 Wudfrd 作为其功能驱动程序的设备节点。 获取输出中的物理设备对象 (PDO) 并将其传递给[ **！ devstack**](-devstack.md)。 获取输出中的设备扩展地址 **！ devstack**并将其传递给 **！ wdfdevext**。
+下面是 Wudfrd.sys 的示例，它是 UMDF 2 驱动程序堆栈的内核模式部分的函数驱动程序。 使用 [**！ devnode**](-devnode.md) 查找将 Wudfrd 作为其函数驱动程序的设备节点。 从输出中获取 (PDO) 的物理设备对象，并将其传递到 [**！ devstack**](-devstack.md)。 从 **！ devstack** 的输出中获取设备扩展地址，并将其传递给 **！ wdfdevext**。
 
 ```dbgcmd
 0: kd> !devnode 0 1 wudfrd

@@ -1,7 +1,6 @@
 ---
 title: NDEF 协议
 description: NDEF 协议
-ms.assetid: 5AF082EC-70D6-4117-BFCE-B28A8DBAC210
 keywords:
 - NFC
 - 近场通信
@@ -10,12 +9,12 @@ keywords:
 - NFP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d4107d2c4a95ed1e2f8ddad76739931632a7a3db
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 3f6b78db5144b24bd19b808cf61fc0675378e000
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89382521"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96813551"
 ---
 # <a name="ndef-protocol"></a>NDEF 协议
 

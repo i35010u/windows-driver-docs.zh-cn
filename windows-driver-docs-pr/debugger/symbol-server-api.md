@@ -1,7 +1,6 @@
 ---
 title: 符号服务器 API
 description: 符号服务器 API
-ms.assetid: 7a74bdc8-edb2-4615-9c26-a1b3cf9850a4
 keywords:
 - 符号服务器，符号服务器 API
 - SymbolServerXxx 例程
@@ -11,12 +10,12 @@ keywords:
 - 调试帮助库文档 (dbghelp.dll) ，符号服务器 API
 ms.date: 02/24/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: f5011347cabe8d38896a07837cff666b0957baa3
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 35779b7d920a057c21e4e54d5d0a301786efcc0e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89206567"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96813951"
 ---
 # <a name="symbol-server-api"></a>符号服务器 API
 

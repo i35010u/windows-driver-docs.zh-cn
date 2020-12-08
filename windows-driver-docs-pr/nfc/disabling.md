@@ -1,7 +1,6 @@
 ---
 title: 禁用 NFP
 description: 客户端可以暂时禁用订阅、发布和状态显示。
-ms.assetid: 94BE6D24-60AD-45BD-AF2D-388022114975
 keywords:
 - NFC
 - 近场通信
@@ -10,12 +9,12 @@ keywords:
 - NFP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 045be0930a196bf15082cdbb29520a9837ea9a2c
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 130d280898b4c76193e6698ba69d92c2156b5016
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89382827"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96813596"
 ---
 # <a name="disabling-nfp"></a>禁用 NFP
 

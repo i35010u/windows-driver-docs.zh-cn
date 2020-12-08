@@ -1,17 +1,16 @@
 ---
 title: 框架对象方法
 description: 框架对象方法
-ms.assetid: f82275c5-15f9-43f5-91bb-b83446526c28
 keywords:
 - framework 对象 WDK KMDF，方法
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5b87a50c76cd471da0f79630baf4973cbaf029b0
-ms.sourcegitcommit: 9b4760aae390b36dbdf9e0dd729a4a643c3f7831
+ms.openlocfilehash: ab0eed2cadae9b039c06e50c1c4c2b545fed61c3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90565271"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96814773"
 ---
 # <a name="framework-object-methods"></a>框架对象方法
 

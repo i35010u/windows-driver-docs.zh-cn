@@ -1,7 +1,6 @@
 ---
 title: ndiskd.nbpool
 description: Ndiskd. nbpool 扩展显示 NET_BUFFER (NB) 池的相关信息。
-ms.assetid: 4FCD48B7-C469-4057-A279-20522B00E80B
 keywords:
 - ndiskd nbpool Windows 调试
 ms.date: 05/23/2017
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 172429372cffbfe6df4a774080f936983ec53d28
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: e0732696d4b0e2535b780254664f3bd54edf8f5c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89216756"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96814065"
 ---
 # <a name="ndiskdnbpool"></a>!ndiskd.nbpool
 
 
-**！ Ndiskd nbpool**扩展显示 (NB) 池的[**网络 \_ 缓冲区**](../network/net-buffer-structure.md)的相关信息。 如果运行不带参数的此扩展，！ ndiskd 将显示系统中所有已分配的 NB 池的列表。
+**！ Ndiskd nbpool** 扩展显示 (NB) 池的 [**网络 \_ 缓冲区**](../network/net-buffer-structure.md)的相关信息。 如果运行不带参数的此扩展，！ ndiskd 将显示系统中所有已分配的 NB 池的列表。
 
 ```console
 !ndiskd.nbpool [-handle <x>] [-allocations] [-find <str>] [-findva <x>] [-findpa <x>] 
@@ -144,7 +143,7 @@ ALL ALLOCATED NBs
 
 [调试网络堆栈](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-175-Debugging-the-Network-Stack)
 
-[**NDIS 扩展 ( # A0) **](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 扩展 ( # A0)**](ndis-extensions--ndiskd-dll-.md)
 
 [**!ndiskd.help**](-ndiskd-help.md)
 

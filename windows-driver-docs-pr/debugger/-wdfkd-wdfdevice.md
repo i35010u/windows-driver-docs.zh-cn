@@ -1,9 +1,8 @@
 ---
 title: wdfkd.wdfdevice
-description: Wdfkd.wdfdevice 扩展显示与 WDFDEVICE 类型对象句柄关联的信息。
-ms.assetid: c6dd98e5-a0ed-437d-a313-5d8a416105dd
+description: Wdfkd. wdfdevice 扩展显示与 WDFDEVICE 类型的对象句柄关联的信息。
 keywords:
-- wdfkd.wdfdevice Windows 调试
+- wdfkd wdfdevice Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,62 +11,62 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 7988c67632c258e7d351fb3848e7e91ab81e378b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d369a75d6117c00a7b6bd52af335e113d6b9e46f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63341763"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96814617"
 ---
 # <a name="wdfkdwdfdevice"></a>!wdfkd.wdfdevice
 
 
-**！ Wdfkd.wdfdevice**扩展插件都会显示与 WDFDEVICE 类型对象句柄关联的信息。
+**！ Wdfkd wdfdevice** 扩展显示与 wdfdevice 类型的对象句柄关联的信息。
 
 ```dbgcmd
 !wdfkd.wdfdevice Handle [Flags]
 ```
 
-## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>参数
+## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>Parameters
 
 
-<span id="_______Handle______"></span><span id="_______handle______"></span><span id="_______HANDLE______"></span> *句柄*   
+<span id="_______Handle______"></span><span id="_______handle______"></span><span id="_______HANDLE______"></span>*句柄*   
 WDFDEVICE 类型化对象的句柄。
 
-<span id="_______Flags______"></span><span id="_______flags______"></span><span id="_______FLAGS______"></span> *标志*   
-可选。 要显示的信息类型。 *标志*可以是以下位的任意组合：
+<span id="_______Flags______"></span><span id="_______flags______"></span><span id="_______FLAGS______"></span>*标志*   
+可选。 要显示的信息的类型。 *标志* 可以是以下位的任意组合：
 
-<span id="Bit_0__0x1_"></span><span id="bit_0__0x1_"></span><span id="BIT_0__0X1_"></span>位 0 (0x1)  
-显示将包括有关设备，如关联的 WDFCHILDLIST 类型句柄、 同步作用域和执行级别的详细信息。
+<span id="Bit_0__0x1_"></span><span id="bit_0__0x1_"></span><span id="BIT_0__0X1_"></span>位 0 (0x1)   
+此显示内容将包含有关设备的详细信息，例如，关联的 WDFCHILDLIST 类型的句柄、同步范围和执行级别。
 
-<span id="Bit_1__0x2_"></span><span id="bit_1__0x2_"></span><span id="BIT_1__0X2_"></span>位 1 (0x2)  
-显示将包括详细的电源状态信息。
+<span id="Bit_1__0x2_"></span><span id="bit_1__0x2_"></span><span id="BIT_1__0X2_"></span>位 1 (0x2)   
+显示内容将包括详细的电源状态信息。
 
-<span id="Bit_2__0x4_"></span><span id="bit_2__0x4_"></span><span id="BIT_2__0X4_"></span>位 2 (0x4)  
-显示将包括详细的电源策略状态信息。
+<span id="Bit_2__0x4_"></span><span id="bit_2__0x4_"></span><span id="BIT_2__0X4_"></span>位 2 (0x4)   
+显示内容将包括详细的电源策略状态信息。
 
-<span id="Bit_3__0x8_"></span><span id="bit_3__0x8_"></span><span id="BIT_3__0X8_"></span>位 3 (0x8)  
-显示将包含详细的 Plug and Play (PnP) 状态信息。
+<span id="Bit_3__0x8_"></span><span id="bit_3__0x8_"></span><span id="BIT_3__0X8_"></span>第 3 (0x8)   
+显示内容将包括详细即插即用 (PnP) 状态信息。
 
-<span id="Bit_4__0x10_"></span><span id="bit_4__0x10_"></span><span id="BIT_4__0X10_"></span>4 位 (0x10)  
-显示将包含设备对象的回调函数。
+<span id="Bit_4__0x10_"></span><span id="bit_4__0x10_"></span><span id="BIT_4__0X10_"></span>位 4 (0x10)   
+显示将包括设备对象的回调函数。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 Wdfkd.dll
 
-### <a name="span-idframeworksspanspan-idframeworksspanspan-idframeworksspanframeworks"></a><span id="Frameworks"></span><span id="frameworks"></span><span id="FRAMEWORKS"></span>框架
+### <a name="span-idframeworksspanspan-idframeworksspanspan-idframeworksspanframeworks"></a><span id="Frameworks"></span><span id="frameworks"></span><span id="FRAMEWORKS"></span>协作
 
 KMDF 1，UMDF 2
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-有关详细信息，请参阅[内核模式驱动程序框架调试](kernel-mode-driver-framework-debugging.md)。
+有关详细信息，请参阅 [内核模式驱动程序框架调试](kernel-mode-driver-framework-debugging.md)。
 
 <a name="remarks"></a>备注
 -------
 
-下面的示例使用 **！ wdfkd.wdfdevice**表示物理设备对象 (PDO)，而无需指定任何标志的 WDFDEVICE 句柄上的扩展。
+下面的示例在 wdfkd PDO)  (PDO 的 WDFDEVICE 句柄上使用 **！ wdfdevice** 扩展，无需指定任何标志。
 
 ```dbgcmd
 kd> !wdfdevice 0x7cad31c8 
@@ -91,7 +90,7 @@ No pended pnp or power irps
 Device is the power policy owner for the stack
 ```
 
-下面的示例显示上述示例中，但这次 0xF 标志值为同一个设备对象。 此标志的值，位 0x1、 0x2，0x4 和 0x8，原因显示以包括详细的设备信息、 电源状态信息、 电源策略的状态信息，和 PnP 状态信息的组合。
+下面的示例显示与前面的示例相同的设备对象，但此时间的标志值为0xF。 此标志值（位0x1、0x2、0x4 和0x8 的组合）将导致显示内容包括详细设备信息、电源状态信息、电源策略状态信息和 PnP 状态信息。
 
 ```dbgcmd
 kd> !wdfdevice 0x7cad31c8 f 

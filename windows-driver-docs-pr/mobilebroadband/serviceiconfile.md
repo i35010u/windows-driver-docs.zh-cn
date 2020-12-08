@@ -1,15 +1,14 @@
 ---
 title: ServiceIconFile
 description: ServiceIconFile
-ms.assetid: a35a121d-66a8-485e-ac12-adc653db3572
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4a1e76158beea1fd2f7747b56c4fc41c51d7204e
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: 4ea6a6150f88a24443ade3e6415fc76b5e6857f4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89403444"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96814211"
 ---
 # <a name="serviceiconfile"></a>ServiceIconFile
 
@@ -55,7 +54,7 @@ ServiceIconFile 元素指定服务元数据包中服务图标文件的名称。 
 <thead>
 <tr class="header">
 <th>元素</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>

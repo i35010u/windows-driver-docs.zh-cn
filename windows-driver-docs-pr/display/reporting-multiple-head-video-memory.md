@@ -1,17 +1,16 @@
 ---
 title: 报告多头视频内存
 description: 报告多头视频内存
-ms.assetid: 664b60f5-9e19-4dfc-8bd7-73ceccf6cbea
 keywords:
 - 多头硬件 WDK DirectX 9.0，内存报告
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 10d8790e73b0fa5032c6806d90b11dacfa2141f9
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: a008234362bdbf79e0d63da09ab98889cf2d75b6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90716004"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96815451"
 ---
 # <a name="reporting-multiple-head-video-memory"></a>报告多头视频内存
 

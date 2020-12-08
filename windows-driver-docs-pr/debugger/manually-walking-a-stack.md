@@ -1,18 +1,17 @@
 ---
 title: 手动遍历堆栈
 description: 手动遍历堆栈
-ms.assetid: 9235fe4d-3e94-4143-867f-18b696e489d0
 keywords:
 - 堆栈跟踪，手动遍历堆栈
 - 遍历堆栈
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bcb994d4b0641161ecf7c3bd7bdf7a6af253609e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1e5a6af4c32ee115bd7de42fedfdf3b3a35823ee
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383295"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96814559"
 ---
 # <a name="manually-walking-a-stack"></a>手动遍历堆栈
 
@@ -20,15 +19,15 @@ ms.locfileid: "63383295"
 ## <span id="ddk_manually_walking_a_stack_dbg"></span><span id="DDK_MANUALLY_WALKING_A_STACK_DBG"></span>
 
 
-在某些情况下，堆栈跟踪函数将无法在调试器中。 这可能引起对无效的地址导致调试器无法继续的位置返回的地址; 的调用或您可能会遇到不能直接获得的堆栈跟踪; 的堆栈指针或者，可能有一些其他调试器问题。 在任何情况下，能够手动遍历堆栈通常是有价值的。
+在某些情况下，堆栈跟踪函数在调试器中将失败。 这可能是由于调用了导致调试器丢失返回地址位置的无效地址所致;或者，您可能遇到过无法直接获取堆栈跟踪的堆栈指针;否则可能存在其他一些调试程序问题。 在任何情况下，都可以手动遍历堆栈，这通常很有价值。
 
-基本概念是相当简单： 转储堆栈指针、 已加载模块发现、 查找可能的函数地址，并通过检查以查看每个可能的堆栈项是是否通过到下一个调用来验证。
+基本概念非常简单：转储堆栈指针，找出模块的加载位置，查找可能的函数地址，并通过检查每个可能的堆栈条目是否调用下一个。
 
-之前通过一个示例，务必要注意[ **kb （显示堆栈回溯）** ](k--kb--kc--kd--kp--kp--kv--display-stack-backtrace-.md)命令在 Intel 系统上有另一项功能。 通过执行 kb =\[ebp\] \[eip\] \[esp\]，调试器将显示在帧的堆栈跟踪替换为基的指针、 指令指针和堆栈指针的给定值分别。
+在执行示例之前，请务必注意， [**kb (显示 Stack Backtrace)**](k--kb--kc--kd--kp--kp--kv--display-stack-backtrace-.md) 命令在 Intel 系统上具有其他功能。 通过执行 kb = \[ ebp \] \[ eip \] \[ \] ，调试程序将分别显示带有给定的基指针、指令指针和堆栈指针值的帧的堆栈跟踪。
 
-。 例如，因此结果可以检查结束时使用失败引起的实际上可以在堆栈跟踪。
+在此示例中，将使用实际提供堆栈跟踪的失败，以便可以在结束时检查结果。
 
-第一步是找出哪些模块加载的位置。 这通过实现[ **（检查符号） x** ](x--examine-symbols-.md) （某些符号编辑长度性的） 的命令：
+第一步是找出加载的模块。 这是通过 [**x (检查符号)**](x--examine-symbols-.md) 命令完成的， (出于长度) 的原因，编辑某些符号：
 
 ```dbgcmd
 kd> x *! 
@@ -68,7 +67,7 @@ fe680000 fe6bcf20   rdr       (rdr.sys, \\ntstress\symbols\sys\rdr.DBG)
 fe6c0000 fe6f0920   srv       (load from srv.sys deferred) 
 ```
 
-第二步转储出要查找由给定的模块中的地址的堆栈指针**x \*！** 命令：
+第二步是转储堆栈指针，查找 **x \*** 所提供的模块中的地址。 命令：
 
 ```dbgcmd
 kd> dd esp 
@@ -94,9 +93,9 @@ fe4cca5c  c00000d6 00000000 004ccb28 fe4ccbc4
 fe4cca6c  fe680ba4 fe682050 00000000 fe4ccbd4 
 ```
 
-若要确定哪些值是可能的函数地址以及不参数或保存的寄存器，首先要考虑的是不同类型的信息在堆栈上的类似。 大多数整数将较小值，这意味着它们将通常为零 （如 0x00000270) 显示为 dword 值时。 大多数本地地址的指针将堆栈指针 （如 fe4cca78) 旁。 状态代码通常以 c (c00000d6) 开头。 可以通过每个字符将在 20 7f 的范围内的事实识别 Unicode 和 ASCII 字符串。 (KD，在[ **dc （显示内存）** ](d--da--db--dc--dd--dd--df--dp--dq--du--dw--dw--dyb--dyd--display-memor.md)命令将显示在右侧的字符。)按列出的范围的函数地址将是最重要的是， **x \*！**。
+若要确定哪些值很可能是函数地址以及哪些是参数或保存的寄存器，首先要考虑不同类型的信息在堆栈上的外观。 大多数整数将是较小的值，这意味着，当 0x00000270)  (时，它们将大部分为零。 指向本地地址的大多数指针都将接近堆栈指针 (如 fe4cca78) 。 状态代码通常以 c (c00000d6) 开始。 Unicode 和 ASCII 字符串可以通过这一事实标识，因为每个字符都将在7f 范围内。  (在 KD 中， [**dc (显示 Memory)**](d--da--db--dc--dd--dd--df--dp--dq--du--dw--dw--dyb--dyd--display-memor.md) 命令将在右侧显示字符。 ) 最重要的是，函数地址将在 **x \* ！** 列出的范围内。
 
-请注意，列出的所有模块到 8040 c 000 77f70000 和到 fe6f0920 fe4c0000 的范围内。 根据这些范围，上述列表中的可能的函数地址是：80136039，801036fe (两次列出，因此更有可能参数)，fe682ae4，fe68f57a，fe682a78，fe6a1198，8011 c 901，80127797、 80110008，fe6a1430，fe6a10ae，fe6b2c04，fe685968，fe680ba4，和 fe682050。 使用检查这些位置[ **ln （列表最接近符号）** ](ln--list-nearest-symbols-.md)命令用于每个地址：
+请注意，列出的所有模块都位于77f70000 到8040c000 和 fe4c0000 到 fe6f0920 的范围内。 根据这些范围，前面列出的可能的函数地址为：80136039、801036fe (列出两次，因此更有可能是参数) 、fe682ae4、fe68f57a、fe682a78、fe6a1198、8011c901、80127797、80110008、fe6a1430、fe6a10ae、fe6b2c04、fe685968、fe680ba4 和 fe682050。 使用 ln (列出每个地址的 [**最接近符号)**](ln--list-nearest-symbols-.md) 命令来调查这些位置：
 
 ```dbgcmd
 kd> ln 80136039 
@@ -133,7 +132,7 @@ kd> ln fe682050
 (fe682050)   rdr!__strnicmp+0xaa  |  (fe682050)   rdr!_BackPackSpinLock-0xa10 
 ```
 
-如前面提到的 801036fe 很可能不是堆栈跟踪的一部分如列出两次。 如果返回的地址偏移量为零，也可以忽略 （您不能返回到函数的开头）。 根据此信息，堆栈跟踪显示为：
+如前所述，801036fe 不太可能是堆栈跟踪的一部分，因为它列出了两次。 如果返回地址的偏移量为零，则可以将其忽略， (无法返回到函数) 的开头。 基于此信息，堆栈跟踪如下所示：
 
 ```dbgcmd
 NT!_KiServiceExit+0x1e
@@ -150,7 +149,7 @@ rdr!_RdrReconnectConnection+0x1b6
 rdr!__strnicmp+0xaa 
 ```
 
-若要验证每个符号，反汇编指定若要查看它是否按其上方的函数调用的返回地址之前。 若要减少长度，请编辑以下 （通过试用和错误来找到使用的偏移量）：
+若要验证每个符号，请在指定的返回地址之前立即 unassemble，以查看它是否对其上方的函数进行调用。 若要缩短长度，请将以下内容编辑 (通过试用和错误) 找到的偏移量：
 
 ```dbgcmd
 kd> u 80136039-2 l1      //  looks ok, its a call
@@ -201,9 +200,9 @@ rdr!__strnicmp+0xa8:
 fe68204e 0000             add     [eax],al 
 ```
 
-此基础，显示的**RdrReconnectConnection**称为**RdrCleanupTransportConnection**到**RdrTdiDisconnect**到**ZwCloseObjectAuditAlarm**到**KiSystemServiceExit**。 在堆栈上的其他函数是可能的剩余部分之前处于活动状态的堆栈。
+基于这一点，似乎 **RdrReconnectConnection** 名为 **RdrCleanupTransportConnection**、 **RdrTdiDisconnect**、 **ZwCloseObjectAuditAlarm** 和 **KiSystemServiceExit**。 堆栈上的其他函数可能是之前处于活动状态的堆栈的遗留部分。
 
-在这种情况下，堆栈跟踪都将正常工作。 下面是实际的堆栈跟踪以检查答案：
+在这种情况下，堆栈跟踪会正常运行。 下面是用于检查答案的实际堆栈跟踪：
 
 ```dbgcmd
 kd> k 
@@ -224,7 +223,7 @@ fe4cce90 8016660d NT!_IoCreateFile+0x433
 fe4cced0 80136039 NT!_NtCreateFile+0x2d 
 ```
 
-第一个条目是当前位置基于堆栈跟踪，但为堆栈直到正确位置**RdrReconnectConnection**调用。 可以使用相同的过程来跟踪整个堆栈。 有关更精确的手动堆栈审核方法，将需要反汇编潜在的每个函数，然后按照每个**推送**并**pop**来标识在堆栈上的每个 DWORD。
+第一项是基于堆栈跟踪的当前位置，否则堆栈会正确地定位到调用 **RdrReconnectConnection** 的点。 可以使用相同的过程跟踪整个堆栈。 若要获得更精确的手动堆栈遍历方法，需要 unassemble 每个潜在函数并按照每个 **推送** 和 **pop** 来识别堆栈上的每个 DWORD。
 
  
 

@@ -1,17 +1,16 @@
 ---
 title: WSK_SET_STATIC_EVENT_CALLBACKS
 description: WSK_SET_STATIC_EVENT_CALLBACKS
-ms.assetid: fa95bc7d-c7b2-4cca-a419-ef5eb2520976
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WSK_SET_STATIC_EVENT_CALLBACKS 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: ea92198fb9270a9ed10fd53d9bd0fb09b61f3a91
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: f28f8fafd6e2dbb849581e7890bdec8b8190709e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106808"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96813619"
 ---
 # <a name="wsk_set_static_event_callbacks"></a>WSK \_ 设置 \_ 静态 \_ 事件 \_ 回调
 
@@ -65,9 +64,9 @@ WSK 应用程序使用 WSK \_ 设置 \_ 静态 \_ 事件 \_ 回调客户端控�
 </tbody>
 </table>
 
-WSK 应用程序可以在[**WSK \_ 事件 \_ 回调 \_ 控制**](/windows-hardware/drivers/ddi/wsk/ns-wsk-_wsk_event_callback_control)结构的**EventMask**成员中指定不同套接字类型的事件标志的组合。 当 WSK 应用程序创建新的套接字时，WSK 子系统将自动为正在创建的 WSK 套接字的特定 [类别](./winsock-kernel-socket-categories.md) 启用适当的事件回调函数。
+WSK 应用程序可以在 [**WSK \_ 事件 \_ 回调 \_ 控制**](/windows-hardware/drivers/ddi/wsk/ns-wsk-_wsk_event_callback_control)结构的 **EventMask** 成员中指定不同套接字类型的事件标志的组合。 当 WSK 应用程序创建新的套接字时，WSK 子系统将自动为正在创建的 WSK 套接字的特定 [类别](./winsock-kernel-socket-categories.md) 启用适当的事件回调函数。
 
-有关标准 WSK 事件回调函数的事件标志的详细信息，请参阅 [** \_ WSK \_ 事件 \_ 回调**](so-wsk-event-callback.md)。
+有关标准 WSK 事件回调函数的事件标志的详细信息，请参阅 [**\_ WSK \_ 事件 \_ 回调**](so-wsk-event-callback.md)。
 
 有关启用和禁用套接字的事件回调函数的详细信息，请参阅 [启用和禁用事件回调函数](./enabling-and-disabling-event-callback-functions.md)。
 

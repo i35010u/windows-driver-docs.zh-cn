@@ -1,15 +1,14 @@
 ---
 title: 数据输出终结点描述符
 description: 数据输出终结点描述符
-ms.assetid: 59a001c8-3723-4549-80ed-28ea8901dd87
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 81edac6dd3a68e03b663b95b3d77a4a5fb422fee
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9f642c348ff758e65ba8fc8f642631bd6153e851
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63377283"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96814987"
 ---
 # <a name="data-out-endpoint-descriptor"></a>数据输出终结点描述符
 
@@ -27,11 +26,11 @@ ms.locfileid: "63377283"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">偏移量</th>
+<th align="left">Offset</th>
 <th align="left">字段</th>
 <th align="left">大小</th>
-<th align="left">ReplTest1</th>
-<th align="left">Description</th>
+<th align="left">值</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -40,7 +39,7 @@ ms.locfileid: "63377283"
 <td align="left"><p>bLength</p></td>
 <td align="left"><p>1</p></td>
 <td align="left"><p>0x07</p></td>
-<td align="left"><p>此说明符，以字节为单位的大小</p></td>
+<td align="left"><p>此描述符的大小（以字节为单位）</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>1</p></td>
@@ -54,21 +53,21 @@ ms.locfileid: "63377283"
 <td align="left"><p>bEndpointAddress</p></td>
 <td align="left"><p>1</p></td>
 <td align="left"><p>0x03</p></td>
-<td align="left"><p>终结点 3 出</p></td>
+<td align="left"><p>终结点3外</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>3</p></td>
 <td align="left"><p>bmAttributes</p></td>
 <td align="left"><p>1</p></td>
 <td align="left"><p>0x02</p></td>
-<td align="left"><p>大容量终结点</p></td>
+<td align="left"><p>批量终结点</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>4</p></td>
 <td align="left"><p>wMaxPacketSize</p></td>
 <td align="left"><p>2</p></td>
 <td align="left"><p>0x0040</p></td>
-<td align="left"><p>64 字节最大数据包大小</p></td>
+<td align="left"><p>64字节最大数据包大小</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>6</p></td>

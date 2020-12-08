@@ -1,33 +1,32 @@
 ---
 title: Ssindex.cmd 脚本
 description: Ssindex.cmd 脚本
-ms.assetid: 38bff31a-af4e-4fd4-bdf6-da901067bdd0
 keywords:
-- SrcSrv，Ssindex.cmd 脚本
+- Srcsrv.ini，Ssindex.cmd 脚本
 - Ssindex.cmd 脚本
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6919455b6405bee51d73913f3d8842845defa6c9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 2c6b7144cedab6b48b4516633698c3a4c771a63c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547736"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96813895"
 ---
 # <a name="the-ssindexcmd-script"></a>Ssindex.cmd 脚本
 
 
-Ssindex.cmd 脚本将生成的文件签入源代码管理，以及每个文件的版本信息的列表。 它在生成时生成了应用程序的.pdb 文件中存储此信息的子集。 SSIndex 使用以下的 Perl 模块之一以便与源代码管理：
+Ssindex.cmd 脚本生成签入源代码管理的文件列表以及每个文件的版本信息。 它在生成应用程序时生成的 .pdb 文件中存储此信息的子集。 Ssindex.cmd 使用以下 Perl 模块之一与源控件交互：
 
--   p4.pm (Perforce)
+-   p4.pm (Perforce) 
 
--   vss.pm (Visual SourceSafe)
+-   vss.pm (Visual SourceSafe) 
 
--   tfs.pm (Team Foundation Server)
+-   tfs.pm (Team Foundation Server) 
 
--   svn.pm (Subversion)
+-   svn.pm (Subversion) 
 
-有关详细信息，运行使用 Ssindex.cmd **-？** 或 **-??** （详细的帮助） 选项，或检查脚本。
+有关详细信息，请运行包含 **-？** 的 ssindex.cmd 或 **-??**  (详细帮助) 选项或检查脚本。
 
  
 

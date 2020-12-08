@@ -1,15 +1,14 @@
 ---
 title: SIM 工具包概述
 description: SIM 工具包概述
-ms.assetid: 39869948-d61c-438c-a90c-05dcb099acad
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0a5ea9142aaea1a40a67cb4ef06b6533c15f0c50
-ms.sourcegitcommit: db9d058a9e592d4c47c67fc14f04f0ddc3aa92af
+ms.openlocfilehash: ef20b450cb56360e65aefc1a102fb482b89f8ace
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91989857"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96814933"
 ---
 # <a name="sim-toolkit-overview"></a>SIM 工具包概述
 

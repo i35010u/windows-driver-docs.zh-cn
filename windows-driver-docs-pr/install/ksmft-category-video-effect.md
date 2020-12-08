@@ -1,7 +1,6 @@
 ---
 title: KSMFT_CATEGORY_VIDEO_EFFECT
 description: KSMFT_CATEGORY_VIDEO_EFFECT
-ms.assetid: 81286240-d6eb-4872-a06c-34046767a2cc
 keywords:
 - KSMFT_CATEGORY_VIDEO_EFFECT 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 3089d197622b83a0ce8b7998ec724c6500c565a7
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: fc3e5655fbf77faac85d849501a67cf279049059
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89095031"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96815313"
 ---
 # <a name="ksmft_category_video_effect"></a>KSMFT_CATEGORY_VIDEO_EFFECT
 

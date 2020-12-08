@@ -1,17 +1,16 @@
 ---
 title: WSK_TRANSPORT_LIST_CHANGE
 description: WSK_TRANSPORT_LIST_CHANGE
-ms.assetid: 3b12d692-467c-4d31-bd2a-bb6e34d87fde
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WSK_TRANSPORT_LIST_CHANGE 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: c25399bfc09649acd0e98fe23b8a6d217816a3c8
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: ef9f7154ff406f4edb31f81b1a88cc6673514b7d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89216072"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96813613"
 ---
 # <a name="wsk_transport_list_change"></a>WSK \_ 传输 \_ 列表 \_ 更改
 
@@ -28,7 +27,7 @@ WSK 应用程序使用 WSK \_ 传输 \_ 列表 \_ 更改客户端控制操作，
 <thead>
 <tr class="header">
 <th>参数</th>
-<th>值</th>
+<th>“值”</th>
 </tr>
 </thead>
 <tbody>

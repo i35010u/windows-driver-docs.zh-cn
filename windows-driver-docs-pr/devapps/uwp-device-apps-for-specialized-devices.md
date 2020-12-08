@@ -1,22 +1,21 @@
 ---
 title: 适用于内部设备的 UWP 设备应用
 description: 此主题介绍 UWP 设备应用访问内部设备的方式。
-ms.assetid: 864EDABF-C734-425D-A532-A01E545E4E51
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8c0e4a8af47a024d6c181a8153bce8b6e5de0ee2
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: d28d5786a1e605bc19013f49ad61329e13e136c8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91733356"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96815163"
 ---
 # <a name="uwp-device-apps-for-internal-devices"></a>适用于内部设备的 UWP 设备应用
 
 
 此主题介绍 UWP 设备应用访问内部设备的方式。 *内部设备* 是位于或与 PC 机箱集成的设备。
 
-**注意**   本主题中提到的某些 Api 也可用于访问外部设备。 本主题重点介绍如何访问内部设备。 有关每个 API 的详细信息，请参阅 [WINDOWS api 参考](/uwp/api/)。
+**注意**  本主题中提到的某些 Api 也可用于访问外部设备。 本主题重点介绍如何访问内部设备。 有关每个 API 的详细信息，请参阅 [WINDOWS api 参考](/uwp/api/)。
 
  
 

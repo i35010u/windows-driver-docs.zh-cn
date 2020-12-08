@@ -1,15 +1,14 @@
 ---
 title: 在 Windows 8.1 中创建设备后台任务
 description: 本主题介绍如何创建使用 DeviceUseTrigger 或 DeviceServicingTrigger 的设备后台任务。
-ms.assetid: 34263DB8-BB42-480B-AF7F-CC45772E6E84
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bdfcdd404a6459877a869c157019ea2dfd5c421e
-ms.sourcegitcommit: 68c99026bf38b864867ee3751d05459743ea8e11
+ms.openlocfilehash: 342b7f9a7dff2d8f87ccee5e8dff2b831bd3db72
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92434678"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96815187"
 ---
 # <a name="creating-a-device-background-task-in-windows-81-uwp-device-apps"></a>在 Windows 8.1 (UWP 设备应用中创建设备后台任务) 
 

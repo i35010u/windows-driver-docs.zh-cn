@@ -1,21 +1,20 @@
 ---
 title: 记录错误
 description: 记录错误
-ms.assetid: 02d77bdf-f94d-47c6-8824-d5643cf4a89c
 keywords:
 - 错误 WDK 内核
-- 日志 WDK 内核
-- 日志记录错误 WDK 内核
+- 记录 WDK 内核
+- 记录错误 WDK 内核
 - 日志文件 WDK 内核
 - 消息 WDK 错误日志
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 451d58340f813d2f29f5e838349de8b2270f581e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 41cccae6a61224bdd08024b5c97eaab6cb508677
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63378760"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96815077"
 ---
 # <a name="logging-errors"></a>记录错误
 
@@ -23,11 +22,11 @@ ms.locfileid: "63378760"
 
 
 
-驱动程序，如大多数 Microsoft Windows 系统组件，可以在系统事件日志中记录错误。 这些错误将显示在事件查看器。
+像大多数 Microsoft Windows 系统组件一样，驱动程序可以将错误记录到系统事件日志中。 这些错误显示在事件查看器中。
 
 ![事件查看器主窗口的屏幕截图](images/event-viewer.png)
 
-本部分包括以下主题：
+本节包括下列主题：
 
 [写入到系统事件日志](writing-to-the-system-event-log.md)
 

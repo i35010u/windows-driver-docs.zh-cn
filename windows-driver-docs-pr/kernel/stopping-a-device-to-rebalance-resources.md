@@ -1,19 +1,18 @@
 ---
 title: 停止设备以重新平衡资源
 description: 停止设备以重新平衡资源
-ms.assetid: eed28d41-8a9d-4b9e-90d7-ea4ddeeaad2d
 keywords:
 - 重新平衡资源 WDK PnP
 - 资源重新平衡 WDK PnP
 - 暂停 PnP 设备
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2e1d897b44b2ca0de05917bffd4650ec42277d1d
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: ee00c4a5afdfe4cb47844b2f059b55ce696b7c27
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89184741"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96814289"
 ---
 # <a name="stopping-a-device-to-rebalance-resources"></a>停止设备以重新平衡资源
 

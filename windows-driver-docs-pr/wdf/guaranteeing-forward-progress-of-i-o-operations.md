@@ -1,7 +1,6 @@
 ---
 title: 保证向前推进 I/O 操作
 description: 保证向前推进 I/O 操作
-ms.assetid: e230eb3b-54ac-43b1-ac2b-8fa137cee43e
 keywords:
 - 保证前进进度 WDK KMDF
 - 前进进度，保证 WDK KMDF
@@ -9,12 +8,12 @@ keywords:
 - I/o 队列 WDK KMDF，保证前进进度
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7fe35f4ab690b814511a35bbd37f64d4aeac0412
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: c316be6b4da240f594f530e5f9cfbf3d95803951
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89192011"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96814749"
 ---
 # <a name="guaranteeing-forward-progress-of-io-operations"></a>保证向前推进 I/O 操作
 
@@ -43,7 +42,7 @@ ms.locfileid: "89192011"
 
 ### <a name="enabling-guaranteed-forward-progress-for-an-io-queue"></a>启用 i/o 队列的保证前进进度
 
-若要为 i/o 队列启用有保证的前进进度，驱动程序将初始化 [**WDF \_ IO \_ queue \_ forward \_ 进度 \_ 策略**](/windows-hardware/drivers/ddi/wdfio/ns-wdfio-_wdf_io_queue_forward_progress_policy) 结构，然后调用 [**WdfIoQueueAssignForwardProgressPolicy**](/windows-hardware/drivers/ddi/wdfio/nf-wdfio-wdfioqueueassignforwardprogresspolicy) 方法。 如果驱动程序调用 [**WdfDeviceConfigureRequestDispatching**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceconfigurerequestdispatching) 来配置 i/o 队列，则必须在调用 **WdfIoQueueAssignForwardProgressPolicy**之前执行此操作。
+若要为 i/o 队列启用有保证的前进进度，驱动程序将初始化 [**WDF \_ IO \_ queue \_ forward \_ 进度 \_ 策略**](/windows-hardware/drivers/ddi/wdfio/ns-wdfio-_wdf_io_queue_forward_progress_policy) 结构，然后调用 [**WdfIoQueueAssignForwardProgressPolicy**](/windows-hardware/drivers/ddi/wdfio/nf-wdfio-wdfioqueueassignforwardprogresspolicy) 方法。 如果驱动程序调用 [**WdfDeviceConfigureRequestDispatching**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceconfigurerequestdispatching) 来配置 i/o 队列，则必须在调用 **WdfIoQueueAssignForwardProgressPolicy** 之前执行此操作。
 
 当驱动程序调用 [**WdfIoQueueAssignForwardProgressPolicy**](/windows-hardware/drivers/ddi/wdfio/nf-wdfio-wdfioqueueassignforwardprogresspolicy)时，它可以指定以下三个事件回调函数，它们都是可选的：
 
@@ -90,11 +89,11 @@ ms.locfileid: "89192011"
 
         如果驱动程序提供了 [*EvtIoAllocateRequestResources*](/windows-hardware/drivers/ddi/wdfio/nc-wdfio-evt_wdf_io_allocate_request_resources) 回调函数，则框架将调用它。 如果回调函数返回状态 \_ SUCCESS，则该框架会将请求添加到 i/o 队列。 如果回调函数返回错误状态值，则框架将删除刚刚创建的请求对象，并使用其预分配请求对象之一。 当驱动程序的请求处理程序收到 request 对象时，它将确定请求对象是否已预先分配，并因此是否应使用驱动程序的预分配资源。
 
-        如果驱动程序未提供[*EvtIoAllocateRequestResources*](/windows-hardware/drivers/ddi/wdfio/nc-wdfio-evt_wdf_io_allocate_request_resources)回调函数，则该框架*会*将该请求添加到 i/o 队列，就好像驱动程序没有启用保证的前进进度一样。
+        如果驱动程序未提供 [*EvtIoAllocateRequestResources*](/windows-hardware/drivers/ddi/wdfio/nc-wdfio-evt_wdf_io_allocate_request_resources)回调函数，则该框架 *会* 将该请求添加到 i/o 队列，就好像驱动程序没有启用保证的前进进度一样。
 
     -   请求对象分配失败。
 
-        框架接下来要执行的操作取决于为[**WDF \_ IO \_ 队列 \_ 转发 \_ 进度 \_ 策略**](/windows-hardware/drivers/ddi/wdfio/ns-wdfio-_wdf_io_queue_forward_progress_policy)结构的**ForwardProgressReservedPolicy**成员提供的值。 此成员通知框架何时使用保留的请求：总是，仅当 i/o 请求为分页 i/o 操作时，或仅当 [*EvtIoWdmIrpForForwardProgress*](/windows-hardware/drivers/ddi/wdfio/nc-wdfio-evt_wdf_io_wdm_irp_for_forward_progress) 回调函数指示应使用保留的请求时。
+        框架接下来要执行的操作取决于为 [**WDF \_ IO \_ 队列 \_ 转发 \_ 进度 \_ 策略**](/windows-hardware/drivers/ddi/wdfio/ns-wdfio-_wdf_io_queue_forward_progress_policy)结构的 **ForwardProgressReservedPolicy** 成员提供的值。 此成员通知框架何时使用保留的请求：总是，仅当 i/o 请求为分页 i/o 操作时，或仅当 [*EvtIoWdmIrpForForwardProgress*](/windows-hardware/drivers/ddi/wdfio/nc-wdfio-evt_wdf_io_wdm_irp_for_forward_progress) 回调函数指示应使用保留的请求时。
 
     在所有情况下，驱动程序的请求处理程序都可以调用 [**WdfRequestIsReserved**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestisreserved) 来确定框架是否使用了保留的请求对象。 如果是这样，则驱动程序应使用 [*EvtIoAllocateResourcesForReservedRequest*](/windows-hardware/drivers/ddi/wdfio/nc-wdfio-evt_wdf_io_allocate_resources_for_reserved_request) 回调函数分配的请求资源。
 
@@ -104,9 +103,9 @@ ms.locfileid: "89192011"
 
 您决定为读写操作创建单独的 i/o 队列，并为这两个 i/o 队列启用有保证的前进进度。 您决定为所有其他请求类型创建第三个 i/o 队列，而无需保证前进进度。
 
-你的驱动程序堆栈和设备能够并行处理四个写入操作，因此，在调用[**WdfIoQueueAssignForwardProgressPolicy**](/windows-hardware/drivers/ddi/wdfio/nf-wdfio-wdfioqueueassignforwardprogresspolicy)之前，将[**WDF \_ IO \_ 队列 \_ 前进 \_ 进度 \_ 策略**](/windows-hardware/drivers/ddi/wdfio/ns-wdfio-_wdf_io_queue_forward_progress_policy)结构的**TotalForwardProgressRequests**成员设置为4。
+你的驱动程序堆栈和设备能够并行处理四个写入操作，因此，在调用 [**WdfIoQueueAssignForwardProgressPolicy**](/windows-hardware/drivers/ddi/wdfio/nf-wdfio-wdfioqueueassignforwardprogresspolicy)之前，将 [**WDF \_ IO \_ 队列 \_ 前进 \_ 进度 \_ 策略**](/windows-hardware/drivers/ddi/wdfio/ns-wdfio-_wdf_io_queue_forward_progress_policy)结构的 **TotalForwardProgressRequests** 成员设置为4。
 
-如果你的驱动程序的设备是寻呼设备，则你决定只有在驱动程序的设备为寻呼设备时**ForwardProgressReservedPolicy** ，才需要确保转发进度，因此，你的驱动程序将 WDF \_ IO \_ 队列 \_ 前进进度策略结构的 ForwardProgressReservedPolicy 成员设置 \_ \_ 为[**WdfIoForwardProgressReservedPolicyPagingIO**](/windows-hardware/drivers/ddi/wdfio/ne-wdfio-_wdf_io_forward_progress_reserved_policy)。
+如果你的驱动程序的设备是寻呼设备，则你决定只有在驱动程序的设备为寻呼设备时 **ForwardProgressReservedPolicy** ，才需要确保转发进度，因此，你的驱动程序将 WDF \_ IO \_ 队列 \_ 前进进度策略结构的 ForwardProgressReservedPolicy 成员设置 \_ \_ 为 [**WdfIoForwardProgressReservedPolicyPagingIO**](/windows-hardware/drivers/ddi/wdfio/ne-wdfio-_wdf_io_forward_progress_reserved_policy)。
 
 由于你的驱动程序需要每个读取请求和每个写入请求都有一个 framework memory 对象，因此你决定驱动程序应预先分配一些内存对象，以便在内存不足的情况下对 [**WdfIoTargetFormatRequestForRead**](/windows-hardware/drivers/ddi/wdfiotarget/nf-wdfiotarget-wdfiotargetformatrequestforread) 和 [**WdfIoTargetFormatRequestForWrite**](/windows-hardware/drivers/ddi/wdfiotarget/nf-wdfiotarget-wdfiotargetformatrequestforwrite) 调用。
 

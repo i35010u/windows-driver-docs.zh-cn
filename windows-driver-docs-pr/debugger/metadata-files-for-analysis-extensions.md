@@ -1,15 +1,14 @@
 ---
 title: 分析扩展插件的元数据文件
 description: 编写分析扩展插件时，还需要编写一个元数据文件，用于描述要调用插件的情况。
-ms.assetid: 13B9B7A5-1D68-49A3-825B-454AC070FCC1
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c125a23fadc290a0d3bce5dbd558f4b8b0f2ad9d
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: e40da85caabf99b2a5412b14e5f0854dbb3d8901
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89209389"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96814529"
 ---
 # <a name="metadata-files-for-analysis-extension-plug-ins"></a>分析扩展插件的元数据文件
 
@@ -24,7 +23,7 @@ Analysis extension 插件的元数据文件是包含键值对的 ASCII 文本文
 
 -   行末尾的任何字符集。 此窗体适用于不包含任何换行符的值。
 
-    **重要提示**   如果元数据文件中的最后一个值具有此格式的值，则行必须以换行符结尾。
+    **重要提示**  如果元数据文件中的最后一个值具有此格式的值，则行必须以换行符结尾。
 
      
 
@@ -34,7 +33,7 @@ Analysis extension 插件的元数据文件是包含键值对的 ASCII 文本文
 
 可以在元数据文件中使用以下键。
 
-| 密钥            | 说明                                                                                                                                                                                                                                                                                       |
+| 键            | 描述                                                                                                                                                                                                                                                                                       |
 |----------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | PluginId       | String-标识插件。                                                                                                                                                                                                                                                                  |
 | DebuggeeClass  | 字符串可能的值为 "内核" 和 "用户"。 指示插件仅对分析内核模式故障或仅用户模式故障进行分析感兴趣。                                                                                                                                     |
@@ -77,7 +76,7 @@ ExceptionCode   0xC0000005
 ExecutableName  MyApp.exe
 ```
 
-适用于 Windows 的调试工具提供了一个示例，可用于生成名为 dbgexts.dll 的调试器扩展模块。 此扩展模块实现了几个调试器扩展命令，但它还可以充当分析扩展插件;也就是说，它将导出[** \_ EFN \_ 分析**](/windows-hardware/drivers/ddi/extsfns/nc-extsfns-ext_analysis_plugin)函数。 下面是一个元数据文件，用于将 dbgexts.dll 描述为分析扩展插件。
+适用于 Windows 的调试工具提供了一个示例，可用于生成名为 dbgexts.dll 的调试器扩展模块。 此扩展模块实现了几个调试器扩展命令，但它还可以充当分析扩展插件;也就是说，它将导出 [**\_ EFN \_ 分析**](/windows-hardware/drivers/ddi/extsfns/nc-extsfns-ext_analysis_plugin)函数。 下面是一个元数据文件，用于将 dbgexts.dll 描述为分析扩展插件。
 
 ```text
 PluginId         PluginSample

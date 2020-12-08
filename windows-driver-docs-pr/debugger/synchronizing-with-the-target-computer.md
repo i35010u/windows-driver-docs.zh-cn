@@ -1,18 +1,17 @@
 ---
 title: 与目标计算机同步
 description: 与目标计算机同步
-ms.assetid: bc9bbe35-6665-49ee-ba95-16ff03e25e96
 keywords:
 - 与目标计算机同步
-- 与目标计算机中，同步概述
+- 与目标计算机同步，概述
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e739d249ee1356490e7166413055894b1e2427f9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 74f219da19904e48944a9342d2912a1aad04c8eb
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63368139"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96813919"
 ---
 # <a name="synchronizing-with-the-target-computer"></a>与目标计算机同步
 
@@ -20,15 +19,15 @@ ms.locfileid: "63368139"
 ## <span id="ddk_synchronizing_with_the_target_computer_dbg"></span><span id="DDK_SYNCHRONIZING_WITH_THE_TARGET_COMPUTER_DBG"></span>
 
 
-有时在内核模式调试，目标计算机停止响应到调试器。
+有时，在内核模式调试期间，目标计算机停止响应调试器。
 
-在 KD，可以按[ **CTRL + R （重新同步）** ](ctrl-r--re-synchronize-.md) ，然后按 ENTER 与目标计算机进行同步。 在 WinDbg 中，使用[CTRL + ALT + R](debug---kernel-connection---resynchronize.md)或调试 |内核连接 |重新同步。
+在 KD 中，可以按 [**CTRL + R (重新同步)**](ctrl-r--re-synchronize-.md) 然后按 enter 与目标计算机同步。 在 WinDbg 中，使用 [CTRL + ALT + R](debug---kernel-connection---resynchronize.md) 或 Debug |内核连接 |重新同步.
 
-这些命令经常还原主机和目标之间的通信。 但是，重新同步可能始终会失败，尤其是当使用的 1394年内核连接。
+这些命令经常还原主机与目标之间的通信。 但是，重新同步可能并不总是成功，尤其是在使用1394内核连接的情况下。
 
-[ **.Restart （重新启动内核连接）** ](-restart--restart-kernel-connection-.md)命令提供了更有效的方法的重新同步。 此命令相当于退出调试器，然后将新的调试器附加到现有会话。 此命令将仅在 KD 中进行，而不在 WinDbg 中。
+请 [**重新启动 (Restart 内核连接)**](-restart--restart-kernel-connection-.md) 命令提供更强大的重新同步方法。 此命令等效于退出调试器，然后将新的调试器附加到现有会话。 此命令仅在 KD 中可用，不能在 WinDbg 中使用。
 
-**.Restart**执行时，命令是最有用[remote.exe 通过远程调试](remote-debugging-through-remote-exe.md)。 （在此类型的调试，可能会很难终止并重新启动调试器。）但是，不能使用 **.restart**从调试客户端，如果您正在执行通过调试器的远程调试。
+[通过 remote.exe执行远程调试](remote-debugging-through-remote-exe.md)时， **restart** 命令最有用。  (这种调试中，可能很难结束并重新启动调试器。 ) 不过，如果您是通过调试器执行远程调试，则不能使用. 从调试客户端 **重新启动** 。
 
  
 

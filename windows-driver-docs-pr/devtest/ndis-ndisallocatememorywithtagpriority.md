@@ -1,7 +1,6 @@
 ---
 title: 'NdisAllocateMemoryWithTagPriority 规则 (ndis) '
 description: NdisAllocateMemoryWithTagPriority 规则指定驱动程序不得在不提供标记的情况下调用 NdisAllocateMemoryWithTagPriority。每个内存分配应使用唯一的池标记，以确保内核调试器和驱动程序验证程序可以识别不同的已分配内存块。
-ms.assetid: e27fe997-366d-4fe1-ad1e-3f145dc55f30
 ms.date: 05/21/2018
 keywords:
 - 'NdisAllocateMemoryWithTagPriority 规则 (ndis) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: bad096e6a32053c24388aec38583df64fc619151
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 3dd01ec87cc8e3485e8bd0d17d61c210e367d041
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105456"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96815133"
 ---
 # <a name="ndisallocatememorywithtagpriority-rule-ndis"></a>NdisAllocateMemoryWithTagPriority 规则 (ndis) 
 
 
-**NdisAllocateMemoryWithTagPriority**规则指定驱动程序不得在不提供*标记*的情况下调用**NdisAllocateMemoryWithTagPriority** 。
+**NdisAllocateMemoryWithTagPriority** 规则指定驱动程序不得在不提供 *标记* 的情况下调用 **NdisAllocateMemoryWithTagPriority** 。
 
 每个内存分配应使用唯一的池标记，以确保内核调试器和驱动程序验证器可以识别不同的已分配内存块。
 

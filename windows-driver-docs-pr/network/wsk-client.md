@@ -1,17 +1,16 @@
 ---
 title: WSK_CLIENT
 description: 本主题介绍 WSK 应用程序的 WSK_CLIENT 数据类型。
-ms.assetid: 7958dbd6-eaa6-4be8-a3a0-b3433ced924b
 keywords:
 - WSK_CLIENT，WDK WSK_CLIENT 网络驱动程序
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a5204874061c946bb8766a571fd912b2f849ce85
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: f3b210b1c7fa620cde6aa112b36267397d546658
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89207109"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96813623"
 ---
 # <a name="wsk_client"></a>WSK_CLIENT
 
@@ -22,7 +21,7 @@ typedef PVOID PWSK_CLIENT;
 ```
 
 **PWSK_CLIENT**  
-**WSK_CLIENT**结构的内容对于 WSK 应用程序是不透明的。
+**WSK_CLIENT** 结构的内容对于 WSK 应用程序是不透明的。
 
 ## <a name="remarks"></a>备注
 
@@ -37,7 +36,7 @@ typedef PVOID PWSK_CLIENT;
 **标头**： Wsk (包含 Wsk) 
 
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [WskCaptureProviderNPI](/windows-hardware/drivers/ddi/wsk/nf-wsk-wskcaptureprovidernpi)  
 [WskControlClient](/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_control_client)  

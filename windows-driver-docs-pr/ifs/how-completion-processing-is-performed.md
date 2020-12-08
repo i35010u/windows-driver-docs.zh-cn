@@ -1,17 +1,16 @@
 ---
 title: 如何执行完成处理
 description: 如何执行完成处理
-ms.assetid: 5741c226-9781-4d9a-b6dd-d8ecc17c4c6f
 keywords:
 - IRP 完成例程 WDK 文件系统，处理阶段
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: eac2526a3f9047f64c5e2157ecd7cd373a12a93f
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: bc9a9deee02e4fc5b9a8115632061c82006ebcbb
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89063342"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96814446"
 ---
 # <a name="how-completion-processing-is-performed"></a>如何执行完成处理
 
@@ -29,13 +28,13 @@ ms.locfileid: "89063342"
 
 第二个阶段是在发起 i/o 请求的线程的上下文中执行的。 它作为特殊内核 APC 执行，因此在 IRQL \_ 级别运行。 在此阶段中，将执行以下任务：
 
--   如果 IRP 表示缓冲操作，则会将 **irp &gt;AssociatedIrp.SystemBuffer** 的内容复制到 ** &gt; UserBuffer**。
+-   如果 IRP 表示缓冲操作，则会将 **irp &gt;AssociatedIrp.SystemBuffer** 的内容复制到 **&gt; UserBuffer**。
 
 -   如果 IRP 包含 MDL，则会释放 MDL。
 
--   将 ** &gt; IoStatus** 的内容复制到 ** &gt; UserIosb** ，以便 i/o 请求的发起方可以查看操作的最终状态。
+-   将 **&gt; IoStatus** 的内容复制到 **&gt; UserIosb** ，以便 i/o 请求的发起方可以查看操作的最终状态。
 
--   如果已在 **Irp- &gt; UserEvent**中提供事件，则会发出信号。 否则，如果此 IRP 有一个 file 对象，则会向其发出事件信号。
+-   如果已在 **Irp- &gt; UserEvent** 中提供事件，则会发出信号。 否则，如果此 IRP 有一个 file 对象，则会向其发出事件信号。
 
 -   如果 IRP 是通过调用 [**IoBuildDeviceIoControlRequest**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iobuilddeviceiocontrolrequest) 或 [**IoBuildSynchronousFsdRequest**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iobuildsynchronousfsdrequest)创建的，则它会从线程的挂起 i/o 请求列表中取消排队。
 
@@ -43,7 +42,7 @@ ms.locfileid: "89063342"
 
 -   IRP 已释放。
 
-**注意**   如果已停止 IRP 的完成处理，因为完成例程返回状态 \_ \_ "需要更多 \_ 的处理"，则可以通过在同一 IRP 上调用[**IoCompleteRequest**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocompleterequest)来恢复该完成。 当发生这种情况时，将继续执行第一步处理，从驱动程序的完成例程开始，其完成例程返回状态 " \_ 需要更多 \_ 处理" \_ 。
+**注意**   如果已停止 IRP 的完成处理，因为完成例程返回状态 \_ \_ "需要更多 \_ 的处理"，则可以通过在同一 IRP 上调用 [**IoCompleteRequest**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocompleterequest) 来恢复该完成。 当发生这种情况时，将继续执行第一步处理，从驱动程序的完成例程开始，其完成例程返回状态 " \_ 需要更多 \_ 处理" \_ 。
 
  
 

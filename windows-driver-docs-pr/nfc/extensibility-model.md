@@ -1,7 +1,6 @@
 ---
 title: NFC 类扩展扩展性模型
 description: NFC 类扩展驱动程序允许开发人员添加 NCI 规范未涵盖的特定于芯片组的 NCI 专用扩展。
-ms.assetid: 8CCCE7BF-595A-4F30-9924-B5BD45D6137F
 keywords:
 - NFC
 - 近场通信
@@ -10,12 +9,12 @@ keywords:
 - NFP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a9c8a49ac6951c285c67c3f1c46cf36840eddf4a
-ms.sourcegitcommit: 0c3cab853b0b75149b7604eef03275f997792a84
+ms.openlocfilehash: 94ecef0e42563198da3d13534913b000fed0beb5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96157345"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96813587"
 ---
 # <a name="nfc-class-extension-extensibility-model"></a>NFC 类扩展扩展性模型
 

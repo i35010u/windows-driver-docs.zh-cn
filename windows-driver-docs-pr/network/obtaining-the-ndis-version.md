@@ -1,17 +1,16 @@
 ---
 title: 获取 NDIS 版本
 description: 获取 NDIS 版本
-ms.assetid: f7bbd11c-b6ec-4adb-8c42-ec438d518ed8
 keywords:
 - NDIS 版本信息 WDK，与操作系统版本
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3828523ea30d891762ed3d1f7b829f0215c3c3ba
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 4fbdbcab03b4adcf1615dbfa7007ed0e96b41ec2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89206409"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96813651"
 ---
 # <a name="obtaining-the-ndis-version"></a>获取 NDIS 版本
 

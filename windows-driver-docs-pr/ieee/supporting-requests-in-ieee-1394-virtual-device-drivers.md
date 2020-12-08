@@ -1,7 +1,6 @@
 ---
 title: 支持 IEEE 1394 虚拟设备驱动程序中的请求
 description: 支持 IEEE 1394 虚拟设备驱动程序中的请求
-ms.assetid: 17e0c84b-29d9-461f-a5f6-7677ecb7fb6e
 keywords:
 - 模拟驱动程序 WDK IEEE 1394 总线
 - 硬件仿真驱动程序 WDK IEEE 1394 总线
@@ -14,12 +13,12 @@ keywords:
 - REQUEST_SET_DEVICE_XMIT_PROPERTIES
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7e816673261896d20dcdba147031eab96f7e600b
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: d08258db295feaedd3e89978ce8c4f554f81b93d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89383007"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96815405"
 ---
 # <a name="supporting-requests-in-ieee-1394-virtual-device-drivers"></a>支持 IEEE 1394 虚拟设备驱动程序中的请求
 
@@ -41,7 +40,7 @@ ms.locfileid: "89383007"
 
 -   [**请求 \_ 分配 \_ 地址 \_ 范围**](https://msdn.microsoft.com/library/windows/hardware/ff537632)
 
-    虚拟设备的驱动程序必须在 \_ \_ \_ 通过**fulAccessType**请求 \_ 分配 \_ 地址范围请求分配内存时，在 IRB 的 fulAccessType 成员中设置访问标志类型广播标志 \_ 。 由于虚拟设备没有实际的节点号，因此用于虚拟设备的驱动程序没有接收请求的方法，除非它们在广播模式下接收数据包。 如果多个节点分配了相同的地址范围，则只有一个节点会接收到该范围的异步请求。 如果虚拟设备和物理设备的驱动程序分配相同的地址范围，则物理设备的优先级高于虚拟设备，因此物理设备接收数据包。 如果多个虚拟设备分配相同的地址范围，则分配该范围的第一个驱动程序具有优先级。
+    虚拟设备的驱动程序必须在 \_ \_ \_ 通过 **fulAccessType** 请求 \_ 分配 \_ 地址范围请求分配内存时，在 IRB 的 fulAccessType 成员中设置访问标志类型广播标志 \_ 。 由于虚拟设备没有实际的节点号，因此用于虚拟设备的驱动程序没有接收请求的方法，除非它们在广播模式下接收数据包。 如果多个节点分配了相同的地址范围，则只有一个节点会接收到该范围的异步请求。 如果虚拟设备和物理设备的驱动程序分配相同的地址范围，则物理设备的优先级高于虚拟设备，因此物理设备接收数据包。 如果多个虚拟设备分配相同的地址范围，则分配该范围的第一个驱动程序具有优先级。
 
 -   [**请求 \_ \_ \_ 从 \_ 设备对象获取 \_ 地址**](https://msdn.microsoft.com/library/windows/hardware/ff537641)
 

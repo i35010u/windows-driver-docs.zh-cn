@@ -1,7 +1,6 @@
 ---
 title: 'NdisAllocateMdl 规则 (ndis) '
 description: NdisAllocateMdl 规则指定按替代顺序调用 NdisAllocateMdl 和 NdisFreeMdl。 最终目标是确保在 MiniportHaltEx 结束时释放所有 MDLs。
-ms.assetid: 8146E72B-0B63-4224-9677-5E6FEFCEB745
 ms.date: 05/21/2018
 keywords:
 - 'NdisAllocateMdl 规则 (ndis) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: b2ad77e99be95a58d6eb6f6ebe5e75c2bc74605f
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 0700b30956c5307629343f73f5d210a736788d68
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105458"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96815131"
 ---
 # <a name="ndisallocatemdl-rule-ndis"></a>NdisAllocateMdl 规则 (ndis) 
 
 
-**NdisAllocateMdl**规则指定按替代顺序调用[**NdisAllocateMdl**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisallocatemdl)和[**NdisFreeMdl**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfreemdl) 。 最终目标是确保在 [*MiniportHaltEx*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_halt) 结束时释放所有 MDLs。
+**NdisAllocateMdl** 规则指定按替代顺序调用 [**NdisAllocateMdl**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisallocatemdl)和 [**NdisFreeMdl**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfreemdl) 。 最终目标是确保在 [*MiniportHaltEx*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_halt) 结束时释放所有 MDLs。
 
 此规则使用三种不同的状态。 分配或释放 MDL 后，状态会更改。 如果在 [*MiniportHaltEx*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_halt) 退出时仍分配 MDL，规则将报告缺陷。
 

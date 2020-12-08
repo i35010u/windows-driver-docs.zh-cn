@@ -1,7 +1,6 @@
 ---
 title: NFP 设备接口
 description: 客户端应用程序通过一组发送到打开句柄的 i/o 控制代码来与邻近感应设备通信。
-ms.assetid: ED63FDCF-3253-4976-8571-82F4824923C5
 keywords:
 - NFC
 - 近场通信
@@ -10,12 +9,12 @@ keywords:
 - NFP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d38fd042fcc3e7aa4431b6b401260d31a40c1f38
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 32f58c86eac5f7aa303dfc8801207a6fcc3688d2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89382829"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96813595"
 ---
 # <a name="nfp-device-interface"></a>NFP 设备接口
 

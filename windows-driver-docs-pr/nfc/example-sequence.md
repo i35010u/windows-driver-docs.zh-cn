@@ -1,6 +1,5 @@
 ---
 title: 示例序列
-ms.assetid: 2B15570A-A220-4BF7-B595-D9CF66E02673
 keywords:
 - 智能卡资源管理器中的 IOCTLs 序列示例，包括启动连接和断开连接
 - NFC
@@ -11,12 +10,12 @@ keywords:
 description: 提供智能卡资源管理器中 IOCTLs 序列的示例，包括启动、连接和断开连接。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 56c6f73dec1d6ab1678fc01694da8e9be453f378
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 51875b06c9b939d108ba7b181fc776c7f4b6da79
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89384859"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96813589"
 ---
 # <a name="example-sequence"></a>示例序列
 

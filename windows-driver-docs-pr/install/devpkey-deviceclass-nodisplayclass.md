@@ -1,7 +1,6 @@
 ---
 title: DEVPKEY_DeviceClass_NoDisplayClass
 description: DEVPKEY_DeviceClass_NoDisplayClass
-ms.assetid: b604c201-c6db-491f-bd7a-ae097249e98a
 keywords:
 - DEVPKEY_DeviceClass_NoDisplayClass 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 544645f721eadaedcb8f6b06e5660edb3180ded9
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: d2f907091276b12e83d41b4dc876f1d95cd1df57
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90717408"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96815361"
 ---
 # <a name="devpkey_deviceclass_nodisplayclass"></a>DEVPKEY_DeviceClass_NoDisplayClass
 
@@ -68,7 +67,7 @@ DEVPKEY_DeviceClass_NoDisplayClass 设备属性表示一个布尔型标志，该
 
 如果 DEVPKEY_DeviceClass_NoDisplayClass 的值设置为 DEVPROP_TRUE，则设备管理器不会在设备安装程序类中显示设备。 如果此值未设置为 DEVPROP_TRUE，设备管理器会在设备安装程序类中显示设备。
 
-设备安装程序类的**NoDisplayClass**注册表值可由安装类的 inf 文件的 inf [**ClassInstall32 部分**](./inf-classinstall32-section.md)中包含的[**inf AddReg 指令**](./inf-addreg-directive.md)设置。
+设备安装程序类的 **NoDisplayClass** 注册表值可由安装类的 inf 文件的 inf [**ClassInstall32 部分**](./inf-classinstall32-section.md)中包含的 [**inf AddReg 指令**](./inf-addreg-directive.md)设置。
 
 可以调用 [**SetupDiGetClassProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdigetclasspropertyw) 或 [**SetupDiGetClassPropertyEx**](/windows/win32/api/setupapi/nf-setupapi-setupdigetclasspropertyexw) 来检索 DEVPKEY_DeviceClass_NoDisplayClass 的值。
 

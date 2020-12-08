@@ -1,7 +1,6 @@
 ---
 title: 缓冲状态控件
 description: 缓冲状态控件
-ms.assetid: 16590332-9d0d-4d8b-8304-a3fa9269c0e2
 keywords:
 - RDBSS WDK 文件系统，缓冲状态
 - 重定向驱动器缓冲子系统 WDK 文件系统，缓冲状态
@@ -11,12 +10,12 @@ keywords:
 - SRV_OPEN 结构
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9ec24d99eb8e95ddfb75fdd5267bd8f79415bf8b
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 8c40d6688f56ad0a06c2d037c1e5770514d97a71
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103582"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96814463"
 ---
 # <a name="buffering-state-control"></a>缓冲状态控件
 
@@ -42,7 +41,7 @@ RDBSS 提供了一个缓冲管理器，它是一种用于提供分布式缓存�
 
 RDBSS 中提供了两个例程，用于指示对 SRV 开放式结构的缓冲状态更改 \_ ：
 
--   用于注册请求的[**RxIndicateChangeOfBufferingState**](/windows-hardware/drivers/ddi/rxprocs/nf-rxprocs-rxindicatechangeofbufferingstate)
+-   用于注册请求的 [**RxIndicateChangeOfBufferingState**](/windows-hardware/drivers/ddi/rxprocs/nf-rxprocs-rxindicatechangeofbufferingstate)
 
 -   [**RxIndicateChangeOfBufferingStateForSrvOpen**](/windows-hardware/drivers/ddi/rxprocs/nf-rxprocs-rxindicatechangeofbufferingstateforsrvopen)用于将 SRV \_ 开放结构与密钥关联的 RxIndicateChangeOfBufferingStateForSrvOpen
 
@@ -70,7 +69,7 @@ RDBSS 提供以下例程来管理可由网络微型重定向程序驱动程序�
 <thead>
 <tr class="header">
 <th align="left">例程所返回的值</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>

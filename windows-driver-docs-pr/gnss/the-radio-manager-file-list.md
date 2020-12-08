@@ -1,15 +1,14 @@
 ---
 title: 无线电管理器文件列表
 description: 下表描述了在收音机管理器 DLL 中找到的文件。
-ms.assetid: 70A8B11F-89FF-49E3-933E-2BB66D5E1BF6
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b34c2d6280e0fffbceff58fa1b4be38e6deea0d1
-ms.sourcegitcommit: ca5045a739eefd6ed14b9dbd9249b335e090c4e9
+ms.openlocfilehash: 715b40f4ba144607f3f27ec7eb4600c2bedb6987
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/06/2020
-ms.locfileid: "85968264"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96815399"
 ---
 # <a name="the-radio-manager-file-list"></a>无线电管理器文件列表
 

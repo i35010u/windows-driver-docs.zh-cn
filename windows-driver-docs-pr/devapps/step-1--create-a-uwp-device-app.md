@@ -1,15 +1,14 @@
 ---
 title: 步骤1创建 UWP 设备应用
 description: 本主题介绍使用 Microsoft Visual Studio 创建 UWP 设备应用程序的基本过程。 了解所有 UWP 设备应用共用的任务。
-ms.assetid: 4D8240AD-F589-4623-BC6E-47E304831250
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5cde4ec5fbe1986defecb1458cac6c95ae023976
-ms.sourcegitcommit: ec7bebe3f94536455e62b372c2a28fe69d1717f7
+ms.openlocfilehash: 8dd1220feb850e1dc82f7798f3047674dc7c579f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93349793"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96815173"
 ---
 # <a name="step-1-create-a-uwp-device-app"></a>步骤1：创建 UWP 设备应用
 
@@ -57,14 +56,14 @@ UWP 设备应用是一种特殊类型的 UWP 应用，设备制造商可以创�
 
 需要 Microsoft Store 上的开发人员帐户。 在后续步骤中创作应用程序清单和设备元数据时，需要发布者名称。 创建存储配置文件后，还可以为应用保留一个名称。
 
-若要创建 Microsoft Store 帐户，请在 " [UWP 应用注册" 页上](https://go.microsoft.com/fwlink/p/?LinkId=302197) ，单击 " **立即注册** "。
+若要创建 Microsoft Store 帐户，请在 " [UWP 应用注册" 页上](https://go.microsoft.com/fwlink/p/?LinkId=302197) ，单击 " **立即注册**"。
 
 输入 **发布者显示名称** 后，请输入应用应在 Microsoft Store 中列出的名称。 在帐户验证完成之前，你将无法更改此名称。 仔细挑选名称，因为客户会在浏览时看到此名称，并将通过此名称来了解你的应用。
 
 ## <a name="span-idassociate_your_app_with_the_windows_storespanspan-idassociate_your_app_with_the_windows_storespanspan-idassociate_your_app_with_the_windows_storespanassociate-your-app-with-the-microsoft-store"></a><span id="Associate_your_app_with_the_Windows_Store"></span><span id="associate_your_app_with_the_windows_store"></span><span id="ASSOCIATE_YOUR_APP_WITH_THE_WINDOWS_STORE"></span>将你的应用与 Microsoft Store
 
 
-创建 Microsoft Store 帐户并选择发布者名称后，将应用程序与 Microsoft Store 相关联。 这样做会自动将以下值下载到本地应用包清单文件中，名为 **appxmanifest.xml** 。
+创建 Microsoft Store 帐户并选择发布者名称后，将应用程序与 Microsoft Store 相关联。 这样做会自动将以下值下载到本地应用包清单文件中，名为 **appxmanifest.xml**。
 
 -   包显示名称
 
@@ -81,17 +80,17 @@ UWP 设备应用是一种特殊类型的 UWP 应用，设备制造商可以创�
 
 **若要将应用与 Microsoft Store**
 
-1.  在 **解决方案资源管理器** 中，右键单击项目，然后选择 **"将 &gt; 应用与应用商店关联"** 。
+1.  在 **解决方案资源管理器** 中，右键单击项目，然后选择 **"将 &gt; 应用与应用商店关联"**。
 
-2.  在 "将 **应用与 Microsoft Store 关联** " 对话框中，单击 " **下一步** "。 系统将提示你登录到 Microsoft Store。
+2.  在 "将 **应用与 Microsoft Store 关联** " 对话框中，单击 " **下一步**"。 系统将提示你登录到 Microsoft Store。
 
-3.  在 " **登录** " 页上，登录到 Microsoft Store，然后单击 " **下一步** "。
+3.  在 " **登录** " 页上，登录到 Microsoft Store，然后单击 " **下一步**"。
 
 4.  在 " **为此包选择应用程序名称** " 页上，选择保留的 **应用名称** 。 你还可以单击 " **保留名称** "，以将其保留 Microsoft Store。
 
-5.  选择应用名称后，单击 " **下一步** "。
+5.  选择应用名称后，单击 " **下一步**"。
 
-6.  在 "摘要" 页上，查看您选择的值。 如果看上去不错，请单击 " **关联** "。 否则，单击 " **上一** 步" 返回并修复任何错误。 单击 " **关联** " 会自动将发布者显示名称和其他值下载到应用程序包清单中。
+6.  在 "摘要" 页上，查看您选择的值。 如果看上去不错，请单击 " **关联**"。 否则，单击 " **上一** 步" 返回并修复任何错误。 单击 " **关联** " 会自动将发布者显示名称和其他值下载到应用程序包清单中。
 
 ## <a name="span-idreview_the_app_package_manifestspanspan-idreview_the_app_package_manifestspanspan-idreview_the_app_package_manifestspanreview-the-app-package-manifest"></a><span id="Review_the_app_package_manifest"></span><span id="review_the_app_package_manifest"></span><span id="REVIEW_THE_APP_PACKAGE_MANIFEST"></span>查看应用程序包清单
 
@@ -105,7 +104,7 @@ UWP 设备应用是一种特殊类型的 UWP 应用，设备制造商可以创�
 2.  在清单设计器中打开该文件后，单击 " **打包** " 选项卡以查看包和发布服务器信息。
 
     **注意**  
-    若要查看 XML 中的相同信息，请右键单击 **appxmanifest.xml** ，然后选择 " **打开方式 &gt; Xml (文本) 编辑器** "。
+    若要查看 XML 中的相同信息，请右键单击 **appxmanifest.xml** ，然后选择 " **打开方式 &gt; Xml (文本) 编辑器**"。
 
      
 
@@ -135,13 +134,13 @@ UWP 设备应用是一种特殊类型的 UWP 应用，设备制造商可以创�
 
 ### <a name="span-idlearn_morespanspan-idlearn_morespanspan-idlearn_morespanlearn-more"></a><span id="Learn_more"></span><span id="learn_more"></span><span id="LEARN_MORE"></span>了解更多信息
 
-**[适用于打印机的 UWP 设备应用](uwp-device-apps-for-printers.md)** ：显示打印机状态并扩展打印设置体验。 从 Windows 8.1 开始，你的应用程序还可以管理打印作业并执行打印机维护。
+**[适用于打印机的 UWP 设备应用](uwp-device-apps-for-printers.md)**：显示打印机状态并扩展打印设置体验。 从 Windows 8.1 开始，你的应用程序还可以管理打印作业并执行打印机维护。
 
-**[适用于照相机的 UWP 设备应用](uwp-device-apps-for-webcams.md)** ：扩展相机选项体验。 您的应用程序还可以使用驱动程序 MFT 来提供自定义效果。
+**[适用于照相机的 UWP 设备应用](uwp-device-apps-for-webcams.md)**：扩展相机选项体验。 您的应用程序还可以使用驱动程序 MFT 来提供自定义效果。
 
-**[集成设备](/previous-versions/windows/apps/dn263141(v=win.10))** ：了解适用于 USB、HID、蓝牙、扫描等的 Windows 运行时 api。
+**[集成设备](/previous-versions/windows/apps/dn263141(v=win.10))**：了解适用于 USB、HID、蓝牙、扫描等的 Windows 运行时 api。
 
-**[适用于内部设备的 UWP 设备应用](uwp-device-apps-for-specialized-devices.md)** ：精益 oem 如何为 PC 的内部设备编写设备应用。
+**[适用于内部设备的 UWP 设备应用](uwp-device-apps-for-specialized-devices.md)**：精益 oem 如何为 PC 的内部设备编写设备应用。
 
 
  

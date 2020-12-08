@@ -1,15 +1,14 @@
 ---
 title: 框架中断对象
 description: 框架中断对象
-ms.assetid: FA2B8C11-69D2-4A9E-8F57-C7295DA4EE44
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 69ecc100f6e0135c18e8eb562e2a347de11c266b
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 4652f1cf0c95862ba736e00af7b448298862ecbe
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89192753"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96814807"
 ---
 # <a name="framework-interrupt-object"></a>框架中断对象
 

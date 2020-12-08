@@ -1,7 +1,6 @@
 ---
 title: WDM 设备对象的类型
 description: WDM 设备对象的类型
-ms.assetid: 89cc888d-3097-4637-96d2-6b9c59878d2f
 keywords:
 - 功能设备对象 WDK 内核
 - FDO WDK 内核
@@ -11,12 +10,12 @@ keywords:
 - 筛选 DOs WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b6c86b7f56031335be9abf429c03b3ad7db6cbfc
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: a04e8a348fda37eeb357193f992306de52956790
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89185605"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96814243"
 ---
 # <a name="types-of-wdm-device-objects"></a>WDM 设备对象的类型
 

@@ -1,7 +1,6 @@
 ---
 title: DEVPROP_MASK_TYPE
 description: 在 Windows Vista 和更高版本的 Windows 中，可以使用按位 "与" 属性数据类型标识符将 DEVPROP_MASK_TYPE 掩码组合在一起，以便从属性数据类型标识符中提取基本数据类型标识符。
-ms.assetid: 5d1d5cb2-d967-47b4-bde7-fdf4248b1913
 keywords:
 - DEVPROP_MASK_TYPE 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: ed25c4d270a34309bf9cc3efb7604ab9cff6fdc0
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: e95fd1e98d47480a5ebffb9b6df79c5491c0df72
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89095927"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96813741"
 ---
 # <a name="devprop_mask_type"></a>DEVPROP_MASK_TYPE
 
@@ -49,7 +48,7 @@ ms.locfileid: "89095927"
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**DEVPROP_MASK_TYPEMOD**](devprop-mask-typemod.md)

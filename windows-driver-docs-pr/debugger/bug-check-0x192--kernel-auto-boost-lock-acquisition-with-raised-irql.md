@@ -1,9 +1,8 @@
 ---
-title: Bug Check 0x192 KERNEL_AUTO_BOOST_LOCK_ACQUISITION_WITH_RAISED_IRQL
-description: KERNEL_AUTO_BOOST_LOCK_ACQUISITION_WITH_RAISED_IRQL bug 检查指示执行在 DISPATCH_LEVEL 或更高版本时已获取跟踪的 AutoBoost 锁。
-ms.assetid: D88EF2CC-26DC-44D8-80CB-18D058C6A413
+title: Bug 检查 0x192 KERNEL_AUTO_BOOST_LOCK_ACQUISITION_WITH_RAISED_IRQL
+description: KERNEL_AUTO_BOOST_LOCK_ACQUISITION_WITH_RAISED_IRQL bug 检查指示在 DISPATCH_LEVEL 或更高版本中执行时获取了 AutoBoost 跟踪的锁。
 keywords:
-- Bug Check 0x192 KERNEL_AUTO_BOOST_LOCK_ACQUISITION_WITH_RAISED_IRQL
+- Bug 检查 0x192 KERNEL_AUTO_BOOST_LOCK_ACQUISITION_WITH_RAISED_IRQL
 - KERNEL_AUTO_BOOST_LOCK_ACQUISITION_WITH_RAISED_IRQL
 ms.date: 05/23/2017
 topic_type:
@@ -13,38 +12,38 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 6b71a6f292ad0688962b2001a941b1b3a6382bbe
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: bd33b6067526f8944e0148e3f78edaaccbd6cc83
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67519828"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96814005"
 ---
-# <a name="bug-check-0x192-kernelautoboostlockacquisitionwithraisedirql"></a>Bug 检查 0x192：内核\_自动\_BOOST\_锁\_采集\_WITH\_凸起\_IRQL
+# <a name="bug-check-0x192-kernel_auto_boost_lock_acquisition_with_raised_irql"></a>Bug 检查0x192：内核 \_ 自动 \_ 提升 \_ 锁 \_ 获取 \_ 时 \_ 引发的 \_ IRQL
 
 
-内核\_自动\_BOOST\_锁\_采集\_WITH\_凸起\_IRQL bug 检查的值为 0x00000192。 这指示执行在调度时已获取跟踪的 AutoBoost 锁\_级别或更高版本。
+\_ \_ \_ \_ \_ 使用引发的 IRQL bug 检查进行内核自动提升锁获取的 \_ \_ 值为0x00000192。 这表示在调度 \_ 级别或更高级别执行时获取了由 AutoBoost 跟踪的锁。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题面向程序员。 如果您是在使用计算机时收到蓝屏错误代码的客户，请参阅[蓝屏错误疑难解答](https://www.windows.com/stopcode)。
 
 
-## <a name="kernelautoboostlockacquisitionwithraisedirql-parameters"></a>内核\_自动\_BOOST\_锁\_采集\_WITH\_凸起\_IRQL 参数
+## <a name="kernel_auto_boost_lock_acquisition_with_raised_irql-parameters"></a>内核 \_ 自动 \_ 提升 \_ 锁 \_ 获取 \_ ，并 \_ 引发 \_ IRQL 参数
 
 
 | 参数 | 描述                             |
 |-----------|-----------------------------------------|
-| 1         | 该线程的地址               |
-| 2         | 锁地址                        |
-| 3         | 获取锁所在的 IRQL |
-| 4         | 保留                                |
+| 1         | 线程的地址               |
+| 2         | 锁定地址                        |
+| 3         | 在其上获取锁的 IRQL |
+| 4         | 预留                                |
 
  
 
 <a name="cause"></a>原因
 -----
 
-调用方不能阻止 APC 上面锁\_级别，因为可能以独占方式中断线程，这会导致死锁持有锁。
+调用方不能阻塞在 APC 级别以上的锁上 \_ ，因为该锁可能被中断的线程独占处理，从而导致死锁。
 
  
 

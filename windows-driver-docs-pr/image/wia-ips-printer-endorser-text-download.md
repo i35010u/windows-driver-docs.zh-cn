@@ -1,9 +1,8 @@
 ---
-title: WIA\_IPS\_打印机\_印记签署器\_文本\_下载
-description: WIA\_IPS\_打印机\_印记签署器\_文本\_下载属性用于报告是否印刷器/印记签署器项支持下载文本数据传输。 WIA 微型驱动程序创建并维护此属性。
-ms.assetid: AEFF6C6F-8DA9-4AFF-8614-A1134C7C499C
+title: WIA \_ IPS \_ PRINTER \_ ENDORSER \_ 文本 \_ 下载
+description: WIA \_ IPS \_ PRINTER \_ ENDORSER \_ TEXT \_ 下载属性用于报告 Imprinter/ENDORSER 项是否支持下载文本数据传输。 WIA 微型驱动程序创建并维护此属性。
 keywords:
-- WIA_IPS_PRINTER_ENDORSER_TEXT_DOWNLOAD 成像设备
+- WIA_IPS_PRINTER_ENDORSER_TEXT_DOWNLOAD 图像设备
 topic_type:
 - apiref
 api_name:
@@ -14,33 +13,33 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f6438233e31552ef13b1118a2972c30e276eb36e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6e51c8cb159b581862e5d85099686fd2c7b0912d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63351098"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96815095"
 ---
-# <a name="wiaipsprinterendorsertextdownload"></a>WIA\_IPS\_打印机\_印记签署器\_文本\_下载
+# <a name="wia_ips_printer_endorser_text_download"></a>WIA \_ IPS \_ PRINTER \_ ENDORSER \_ 文本 \_ 下载
 
 
-WIA\_IPS\_打印机\_印记签署器\_文本\_下载属性用于报告是否印刷器/印记签署器项支持下载文本数据传输。 WIA 微型驱动程序创建并维护此属性。
+WIA \_ IPS \_ PRINTER \_ ENDORSER \_ TEXT \_ 下载属性用于报告 Imprinter/ENDORSER 项是否支持下载文本数据传输。 WIA 微型驱动程序创建并维护此属性。
 
 
 
 
-属性类型：VT\_I4 （布尔值）
+属性类型： VT \_ I4 (布尔) 
 
-有效值：WIA\_PROP\_NONE
+有效值： WIA " \_ \_ 无"
 
 访问权限：只读
 
 <a name="remarks"></a>备注
 -------
 
-如果此属性的当前值设置为值为 True （非零），WIA 微型驱动程序支持接收应用程序客户端上载的文本数据。 传输文件格式所描述[ **WIA\_IPA\_格式**](wia-ipa-format.md)并[ **WIA\_IPA\_TYMED**](wia-ipa-tymed.md)实现相同的印刷器/印记签署器项上的属性。
+如果此属性的当前值设置为 True (非零) 值，则 WIA 微型驱动程序支持接收由应用程序客户端上载的文本数据。 传输文件格式由在同一 Imprinter/Endorser 项上实现的 [**wia \_ IPA \_ 格式**](wia-ipa-format.md) 和 [**wia \_ IPA \_ TYMED**](wia-ipa-tymed.md) 属性描述。
 
-此属性是必需的所有印刷器/印记签署器项，但它可以实现以始终报告的值为 0 (False)。
+此属性对所有 Imprinter/Endorser 项是必需的，但它可以实现为始终报告值 0 (False) 。
 
 <a name="requirements"></a>要求
 ------------
@@ -52,8 +51,8 @@ WIA\_IPS\_打印机\_印记签署器\_文本\_下载属性用于报告是否印�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Wiadef.h （包括 Wiadef.h）</td>
+<td><p>标头</p></td>
+<td>Wiadef (包含 Wiadef) </td>
 </tr>
 </tbody>
 </table>

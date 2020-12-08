@@ -1,15 +1,14 @@
 ---
 title: 调用 SetupWriteTextLogError
 description: 调用 SetupWriteTextLogError
-ms.assetid: 55edc72a-2d53-4084-a1e4-e7e6515a4990
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 847946fd2f2c5e66e352325e9085c62a189164fb
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: e40f8790e2708592d856ca06a425f3bc9ab5b26e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90716786"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96814371"
 ---
 # <a name="calling-setupwritetextlogerror"></a>调用 SetupWriteTextLogError
 
@@ -20,19 +19,19 @@ ms.locfileid: "90716786"
 
 **SetupWriteTextLogError** 写入以下格式的第一个日志条目：
 
-*entry_prefix time_stamp 类别*  缩进格式的消息 *
+*entry_prefix time_stamp 类别* * * * * 缩进格式的消息 *
 
 **SetupWriteTextLogError** 按以下格式写入第二个日志条目：
 
-*entry_prefix time_stamp 类别*  ** <strong>* 缩进 * **错误：</strong>* 错误-编号错误-说明 *
+*entry_prefix time_stamp 类别*  **<strong>* 缩进 * **错误：</strong>* 错误-编号错误-说明 *
 
 其中：
 
--   *Entry_prefix*、*时间戳*、*类别*、*缩进*和*格式化消息*字段与[文本日志节正文的格式](format-of-a-text-log-section-body.md)中所述的字段相同。
+-   *Entry_prefix*、*时间戳*、*类别*、*缩进* 和 *格式化消息* 字段与 [文本日志节正文的格式](format-of-a-text-log-section-body.md)中所述的字段相同。
 
--   *错误*号字段包含错误号。
+-   *错误* 号字段包含错误号。
 
--   *错误描述*字段包含错误的用户友好说明。
+-   *错误描述* 字段包含错误的用户友好说明。
 
 下面的示例演示应用程序通常如何调用 [**SetupWriteTextLogError**](/windows/win32/api/setupapi/nf-setupapi-setupwritetextlogerror) 来记录文本日志中有关错误的信息。 示例中使用的错误是系统启动错误。 应用程序调用 **SetupWriteTextLogError**，并提供以下参数值：
 
@@ -48,7 +47,7 @@ ms.locfileid: "90716786"
 
 - 未提供以逗号分隔的参数列表<em>。</em>
 
-参数 *LogToken*、 *类别*和 *LogFlags* 会影响 **SetupWriteTextLogError** 的操作，其方式与这些参数影响 **SetupWriteTextLog**操作的方式相同。
+参数 *LogToken*、 *类别* 和 *LogFlags* 会影响 **SetupWriteTextLogError** 的操作，其方式与这些参数影响 **SetupWriteTextLog** 操作的方式相同。
 
 下面的代码调用 [**SetupWriteTextLogError**](/windows/win32/api/setupapi/nf-setupapi-setupwritetextlogerror) 来编写此示例的日志条目：
 

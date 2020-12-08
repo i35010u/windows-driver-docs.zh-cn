@@ -1,7 +1,6 @@
 ---
 title: 消息传输
 description: 消息传输
-ms.assetid: 96C5CE38-25EE-425A-A7C5-05990CBE2C3E
 keywords:
 - NFC
 - 近场通信
@@ -10,12 +9,12 @@ keywords:
 - NFP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 53254154ce0aa287427f3afcb0333eb51110c27d
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 003e3610855b2a194e88d77cc9739536a4658edb
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89382535"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96813555"
 ---
 # <a name="message-transmission"></a>消息传输
 

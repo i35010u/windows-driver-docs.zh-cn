@@ -1,18 +1,17 @@
 ---
 title: 默认 NDIS 端口
 description: 默认 NDIS 端口
-ms.assetid: a9edf83f-9226-4c75-a04e-1879a05df24c
 keywords:
 - 端口 WDK NDIS，默认值
 - NDIS 端口 WDK，默认 NDIS 端口
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 57c7e42679636fe362e841980ded40ce427bf723
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 41e11e7d73b18809f94f8b2a08cb726ba2dde1f2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89211101"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96814967"
 ---
 # <a name="default-ndis-port"></a>默认 NDIS 端口
 

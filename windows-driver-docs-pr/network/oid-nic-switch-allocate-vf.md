@@ -1,16 +1,15 @@
 ---
 title: OID_NIC_SWITCH_ALLOCATE_VF
 description: 过量驱动程序) 方法请求 (OID 发出对象标识符，OID_NIC_SWITCH_ALLOCATE_VF 为 PCI Express (PCIe) 虚拟函数 (VF) 分配资源。
-ms.assetid: CB88CE0C-705F-406B-90FE-FB206D6F4864
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_NIC_SWITCH_ALLOCATE_VF 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 3d66c0a457eb7b98d071ab2881bb44f42b1ee8ee
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: de76907adb183c962f923ed50f3d353df31950a9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106854"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96814935"
 ---
 # <a name="oid_nic_switch_allocate_vf"></a>OID \_ NIC \_ 交换机 \_ 分配 \_ VF
 
@@ -19,7 +18,7 @@ ms.locfileid: "90106854"
 
 过量驱动程序将此 OID 方法请求发送到网络适配器的 PCIe 物理功能 (PF) 的微型端口驱动程序。 对于支持单个根 i/o 虚拟化 (SR-IOV) 接口的 PF 小型端口驱动程序，需要此 OID 方法请求。
 
-[**Ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的**InformationBuffer**成员包含指向[**NDIS \_ NIC \_ 交换机 \_ VF \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vf_parameters)结构的指针。
+[**Ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的 **InformationBuffer** 成员包含指向 [**NDIS \_ NIC \_ 交换机 \_ VF \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vf_parameters)结构的指针。
 
 <a name="remarks"></a>备注
 -------
@@ -28,7 +27,7 @@ ms.locfileid: "90106854"
 
 有关如何分配 VF 资源的详细信息，请参阅为 [虚拟函数分配资源](./allocating-resources-for-a-virtual-function.md)。
 
-**注意**   在过量驱动程序为 VF 请求分配资源后，该驱动程序是唯一可请求为同一 VF 释放资源的组件。 过量驱动程序必须发出 oid [ \_ NIC \_ 交换机 \_ 自由 \_ vf](oid-nic-switch-free-vf.md) 的 OID 设置请求，以释放 vf 资源。 在停止过量驱动程序之前，必须释放由驱动程序的 OID \_ NIC \_ 交换机 \_ 分配 \_ vf 请求分配的每个 VF 的资源。
+**注意**  在过量驱动程序为 VF 请求分配资源后，该驱动程序是唯一可请求为同一 VF 释放资源的组件。 过量驱动程序必须发出 oid [ \_ NIC \_ 交换机 \_ 自由 \_ vf](oid-nic-switch-free-vf.md) 的 OID 设置请求，以释放 vf 资源。 在停止过量驱动程序之前，必须释放由驱动程序的 OID \_ NIC \_ 交换机 \_ 分配 \_ vf 请求分配的每个 VF 的资源。
 
  
 

@@ -1,7 +1,6 @@
 ---
 title: Bug 检查 0x18B SECURE_KERNEL_ERROR
-description: SECURE_KERNEL_ERROR bug 检查具有 0x0000018B 值。 这指示安全内核遇到致命错误。
-ms.assetid: 333355E3-6966-4BEB-A649-DA22B973EE84
+description: SECURE_KERNEL_ERROR bug 检查的值为0x0000018B。 这表明安全内核遇到错误。
 keywords:
 - Bug 检查 0x18B SECURE_KERNEL_ERROR
 - SECURE_KERNEL_ERROR
@@ -13,31 +12,31 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: cfe9e10376181a6b234627b668d3443c82d17b1a
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: ab736a674263912c756d9b9ae6405b2283213f66
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67367681"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96815219"
 ---
-# <a name="bug-check-0x18b-securekernelerror"></a>Bug 检查 0x18B：安全\_内核\_错误
+# <a name="bug-check-0x18b-secure_kernel_error"></a>Bug 检查0x18B：安全 \_ 内核 \_ 错误
 
 
-SECURE\_内核\_错误 bug 检查的值为 0x0000018B。 这指示安全内核遇到致命错误。
+安全 \_ 内核 \_ 错误错误检查的值为0x0000018B。 这表明安全内核遇到错误。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果您是在使用计算机时收到蓝屏错误代码的客户，请参阅[蓝屏错误疑难解答](https://www.windows.com/stopcode)。
 
 
-## <a name="securekernelerror-parameters"></a>安全\_内核\_错误参数
+## <a name="secure_kernel_error-parameters"></a>安全 \_ 内核 \_ 错误参数
 
 
 | 参数 | 描述 |
 |-----------|-------------|
 | 1         | 保留    |
-| 2         | 保留    |
-| 3         | 保留    |
-| 4         | 保留    |
+| 2         | 预留    |
+| 3         | 预留    |
+| 4         | 预留    |
 
  
 

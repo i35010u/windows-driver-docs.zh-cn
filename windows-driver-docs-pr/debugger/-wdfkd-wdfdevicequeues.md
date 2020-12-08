@@ -1,9 +1,8 @@
 ---
 title: wdfkd.wdfdevicequeues
-description: Wdfkd.wdfdevicequeues 扩展显示的所有框架队列对象属于指定设备有关的信息。
-ms.assetid: bd0e7fcc-b561-48fb-901a-605e9d647b61
+description: Wdfkd. wdfdevicequeues 扩展显示属于指定设备的所有框架队列对象的相关信息。
 keywords:
-- wdfkd.wdfdevicequeues Windows 调试
+- wdfkd wdfdevicequeues Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,44 +11,44 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: d46ae2fe52473f64845d16191813a91c62e35fff
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7ad99174f9b76045e31d1ff121457f0ba435eda9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63341758"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96814615"
 ---
 # <a name="wdfkdwdfdevicequeues"></a>!wdfkd.wdfdevicequeues
 
 
-**！ Wdfkd.wdfdevicequeues**扩展显示的所有框架队列对象属于指定设备有关的信息。
+**！ Wdfkd wdfdevicequeues** 扩展显示属于指定设备的所有框架队列对象的相关信息。
 
 ```dbgcmd
 !wdfkd.wdfdevicequeues Handle
 ```
 
-## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>参数
+## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>Parameters
 
 
-<span id="_______Handle______"></span><span id="_______handle______"></span><span id="_______HANDLE______"></span> *句柄*   
+<span id="_______Handle______"></span><span id="_______handle______"></span><span id="_______HANDLE______"></span>*句柄*   
 WDFDEVICE 类型化对象的句柄。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 Wdfkd.dll
 
-### <a name="span-idframeworksspanspan-idframeworksspanspan-idframeworksspanframeworks"></a><span id="Frameworks"></span><span id="frameworks"></span><span id="FRAMEWORKS"></span>框架
+### <a name="span-idframeworksspanspan-idframeworksspanspan-idframeworksspanframeworks"></a><span id="Frameworks"></span><span id="frameworks"></span><span id="FRAMEWORKS"></span>协作
 
 KMDF 1，UMDF 2
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-有关详细信息，请参阅[内核模式驱动程序框架调试](kernel-mode-driver-framework-debugging.md)并[ **！ wdfkd.wdfqueue**](-wdfkd-wdfqueue.md)。
+有关详细信息，请参阅 [内核模式驱动程序框架调试](kernel-mode-driver-framework-debugging.md) 和 [**！ wdfkd。 wdfqueue**](-wdfkd-wdfqueue.md)。
 
 <a name="remarks"></a>备注
 -------
 
-下面的示例演示从显示 **！ wdfkd.wdfdevicequeues**扩展。
+下面的示例演示了 **！ wdfkd. wdfdevicequeues** 扩展中的显示。
 
 ```dbgcmd
 kd> !wdfdevicequeues 0x7cad31c8 

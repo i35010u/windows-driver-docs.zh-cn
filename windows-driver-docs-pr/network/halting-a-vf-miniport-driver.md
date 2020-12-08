@@ -1,15 +1,14 @@
 ---
 title: 停止 VF 微型端口驱动程序
 description: 停止 VF 微型端口驱动程序
-ms.assetid: 707CE182-E2A7-4703-9A6B-1058194F9414
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e3b3257ad4013e5faa0ee247ffc66e7640fdc3fc
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 964f950b863145578c413cccc348b624fdd50b93
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89212903"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96813683"
 ---
 # <a name="halting-a-vf-miniport-driver"></a>停止 VF 微型端口驱动程序
 

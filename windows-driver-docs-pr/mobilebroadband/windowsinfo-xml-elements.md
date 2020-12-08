@@ -1,15 +1,14 @@
 ---
 title: WindowsInfo XML 元素列表
 description: WindowsInfo XML 元素列表
-ms.assetid: 045f149a-4bd5-4f33-a18f-39953f2e5e19
 ms.date: 07/05/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 4d5c8544de8afc94803efdd77ce73c35f0cb85f0
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: e3bfa25a1cf29ae9573400032f23b5313b173c62
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89402744"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96815019"
 ---
 # <a name="windowsinfo-xml-elements-list"></a>WindowsInfo XML 元素列表
 
@@ -31,7 +30,7 @@ ms.locfileid: "89402744"
 
             -   [PackageIdentity](packageidentity.md)
 
-            -   [应用程序](application-windowsinfo-v2.md)
+            -   应用程序
 
             -   [谓词](verb.md)
 

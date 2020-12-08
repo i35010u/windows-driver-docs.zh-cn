@@ -1,28 +1,27 @@
 ---
 title: 解释 Bug 检查代码
 description: 当 Microsoft Windows 遇到损害安全系统操作的情况时，系统将会挂起。
-ms.assetid: b5c8e18e-c2d3-47d9-b2bd-38aaaedcfde9
 keywords:
 - 工具 WDK，bug 检查代码
 - 驱动程序开发工具 WDK，bug 检查代码
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 26510840c7924572992a1127a4c80d4093de646a
-ms.sourcegitcommit: 372464be981a39781c71049126f36891cb5d0cad
+ms.openlocfilehash: 417fa77f88a03bd72f472f355c284f5f3b91c08e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91646127"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96813861"
 ---
 # <a name="interpreting-a-bug-check-code"></a>解释 Bug 检查代码
 
-当 Microsoft Windows 遇到损害安全系统操作的情况时，系统将会挂起。 此条件称为 " *bug 检查*"。 通常也称为 *系统崩溃*、 *内核错误*、 *停止错误*或 *BSOD*。 硬件设备、其驱动程序或相关软件可能导致此错误。
+当 Microsoft Windows 遇到损害安全系统操作的情况时，系统将会挂起。 此条件称为 " *bug 检查*"。 通常也称为 *系统崩溃*、 *内核错误*、 *停止错误* 或 *BSOD*。 硬件设备、其驱动程序或相关软件可能导致此错误。
 
 如果系统上启用了故障转储，则会创建故障转储文件。
 
 如果内核调试器已附加并且处于活动状态，则系统会导致中断，因此可以使用调试器来调查故障。
 
-如果未附加调试器，则会出现蓝色文本屏幕，其中包含有关错误的信息。 此屏幕称为 *蓝屏*、 *bug 检查屏幕*、 *停止屏幕*或 *BSOD*。
+如果未附加调试器，则会出现蓝色文本屏幕，其中包含有关错误的信息。 此屏幕称为 *蓝屏*、 *bug 检查屏幕*、 *停止屏幕* 或 *BSOD*。
 
 ## <a name="interpreting-bug-check-code-tools"></a>解释 bug 检查代码工具
 
@@ -74,6 +73,6 @@ The system has been shut down.
 
 ## <a name="related-topics"></a>相关主题
 
-[Bug 检查代码引用](../debugger/bug-check-code-reference2.md)
+[Bug 检查代码参考](../debugger/bug-check-code-reference2.md)
 
 [Windows 调试](../debugger/index.md)

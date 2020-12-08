@@ -1,7 +1,6 @@
 ---
 title: 'GuardedRegions 规则 (wdm) '
 description: GuardedRegions 规则验证是否在严格替换中使用对 KeEnterGuardedRegion 和 KeLeaveGuardedRegion 的调用。
-ms.assetid: CF98BF68-905C-48D2-AE72-08DD5559AA0D
 ms.date: 05/21/2018
 keywords:
 - 'GuardedRegions 规则 (wdm) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: d0d6677b0d74f2ba0a0beed6de981b0c61d7adb6
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 08a3b3649fe0e7e58b6d974430d3cabe97aa5347
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104594"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96814495"
 ---
 # <a name="guardedregions-rule-wdm"></a>GuardedRegions 规则 (wdm) 
 
 
-**GuardedRegions**规则验证是否在严格替换中使用对[**KeEnterGuardedRegion**](/windows-hardware/drivers/ddi/ntddk/nf-ntddk-keenterguardedregion)和[**KeLeaveGuardedRegion**](/windows-hardware/drivers/ddi/ntddk/nf-ntddk-keleaveguardedregion)的调用。
+**GuardedRegions** 规则验证是否在严格替换中使用对 [**KeEnterGuardedRegion**](/windows-hardware/drivers/ddi/ntddk/nf-ntddk-keenterguardedregion)和 [**KeLeaveGuardedRegion**](/windows-hardware/drivers/ddi/ntddk/nf-ntddk-keleaveguardedregion)的调用。
 
 对 [**KeEnterGuardedRegion**](/windows-hardware/drivers/ddi/ntddk/nf-ntddk-keenterguardedregion) 的每次调用都必须具有对 [**KeLeaveGuardedRegion**](/windows-hardware/drivers/ddi/ntddk/nf-ntddk-keleaveguardedregion)的匹配调用。
 

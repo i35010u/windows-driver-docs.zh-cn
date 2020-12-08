@@ -1,17 +1,16 @@
 ---
 title: SymStore 事务
 description: SymStore 事务
-ms.assetid: f0bb2f3f-0f6b-4ed6-809e-f55b1c537d7f
 keywords:
-- SymStore 事务
+- SymStore，事务
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0a4a657cd27e7a852210c6ae5f982e9f1e4390b2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 981c4cb955ed793ee9513de3e855fbc4b7bc0f81
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63368021"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96813927"
 ---
 # <a name="symstore-transactions"></a>SymStore 事务
 
@@ -19,66 +18,66 @@ ms.locfileid: "63368021"
 ## <span id="ddk_symbol_files_overview_dbg"></span><span id="DDK_SYMBOL_FILES_OVERVIEW_DBG"></span>
 
 
-SymStore 的每个调用记录为一个事务。 有两种类型的事务： 添加和删除。
+对 SymStore 的每次调用都记录为一个事务。 有两种类型的事务：添加和删除。
 
-创建符号存储区时，服务器的根目录下创建一个名为"000admin"的目录。 000admin 目录包含一个文件的每个事务，以及日志文件 server.txt 和 history.txt。 Server.txt 文件包含目前在服务器的所有事务的列表。 History.txt 文件包含所有事务按时间历史的记录。
+创建符号存储区时，会在服务器的根目录下创建名为 "000admin" 的目录。 000admin 目录包含每个事务的一个文件，以及日志文件 server.txt 和 history.txt。 server.txt 文件包含当前服务器上的所有事务的列表。 history.txt 文件包含所有事务的按时间排序的历史记录。
 
-SymStore 存储或删除符号的文件，每次都会创建新的事务数。 然后，000admin 中创建一个文件，其名称，此事务数。 此文件包含所有文件或已添加到符号存储区在该事务期间的指针的列表。 如果删除事务，则 SymStore 将读取通过其事务文件以确定哪些文件和指针它应删除。
+每次 SymStore 存储或删除符号文件时，都将创建一个新的事务号。 然后，在000admin 中创建一个文件，其名称为此事务号。 此文件包含在此事务中添加到符号存储区的所有文件或指针的列表。 如果删除了某个事务，SymStore 将读取其事务文件，以确定应删除的文件和指针。
 
-**外**并**del**选项用于指定是否要执行添加或删除事务。 包括 **/p**与添加操作的选项指定一个指针，是要添加; 省略 **/p**选项指定的实际符号文件是要添加。
+" **添加** " **和 "** 删除" 选项指定是否要执行添加或删除事务。 包含带有 add 操作的 **/p** 选项可指定要添加的指针;如果省略 **/p** 选项，则指定要添加实际的符号文件。
 
-还有可能在两个单独的阶段中创建符号存储区。 在第一阶段，您将使用与 SymStore **/x**选项来创建索引文件。 在第二个阶段中，使用与 SymStore **/y**选项创建的文件或指针的实际存储区中的索引文件的信息。
+还可以在两个不同的阶段创建符号存储区。 在第一个阶段中，将 SymStore 与 **/x** 选项一起使用来创建索引文件。 在第二阶段，使用带有 **/y** 选项的 SymStore 从索引文件中的信息创建文件或指针的实际存储。
 
-这可以是非常有用的技术的原因有多种。 例如，这允许要很轻松地重新创建存储区以某种方式将丢失，只要索引文件仍存在的符号存储区。 或者可能是包含符号文件的计算机具有慢速网络连接到计算机将在其创建符号存储区。 在这种情况下，可以创建符号文件所在的同一计算机上的索引文件、 索引文件传输到第二台计算机，然后在第二台计算机上创建存储。
+由于各种原因，这可能是一项有用的技术。 例如，只要索引文件仍然存在，这就可以轻松地重新创建符号存储区。 或者，包含符号文件的计算机的网络连接速度慢于将在其上创建符号存储区的计算机。 在这种情况下，可以在与符号文件相同的计算机上创建索引文件，将索引文件传输到第二台计算机，然后在第二台计算机上创建该存储。
 
-有关 SymStore 的所有参数的完整列表，请参阅[ **SymStore 命令行选项**](symstore-command-line-options.md)。
+有关所有 SymStore 参数的完整列表，请参阅 [**SymStore Command-Line 选项**](symstore-command-line-options.md)。
 
-**请注意**   SymStore 不支持从多个用户同时事务。 建议一个用户将指定的符号的"管理员"存储和负责所有**添加**并**del**事务。
+**注意**   SymStore 不支持多个用户同时执行的事务。 建议将一个用户指定为符号存储的 "管理员"，并负责所有 **添加** 和 **全部事务。**
 
  
 
-### <a name="span-idtransactionexamplesspanspan-idtransactionexamplesspantransaction-examples"></a><span id="transaction_examples"></span><span id="TRANSACTION_EXAMPLES"></span>事务示例
+### <a name="span-idtransaction_examplesspanspan-idtransaction_examplesspantransaction-examples"></a><span id="transaction_examples"></span><span id="TRANSACTION_EXAMPLES"></span>事务示例
 
-下面是两个示例的添加生成 2195年的 Windows 2000 的符号指针的 SymStore \\ \\MyDir\\symsrv:
+下面是两个 SymStore 示例，用于将2195的生成2000的符号指针添加到 \\ \\ MyDir \\ symsrv：
 
 ```console
 symstore add /r /p /f \\BuildServer\BuildShare\2195free\symbols\*.* /s \\MyDir\symsrv /t "Windows 2000" /v "Build 2195 x86 free" /c "Sample add"
 symstore add /r /p /f \\BuildServer\BuildShare\2195free\symbols\*.* /s \\MyDir\symsrv /t "Windows 2000" /v "Build 2195 x86 checked" /c "Sample add"
 ```
 
-在以下示例中，SymStore 添加的应用程序项目中的实际符号文件\\ \\largeapp\\appserver\\到会\\ \\MyDir\\symsrv:
+在下面的示例中，SymStore 将 largeapp microsoft.windows.appserver.2008 bin 中的应用程序项目的实际符号文件添加 \\ \\ \\ \\ 到 \\ \\ MyDir \\ symsrv：
 
 ```console
 symstore add /r /f \\largeapp\appserver\bins\*.* /s \\MyDir\symsrv /t "Large Application" /v "Build 432" /c "Sample add"
 ```
 
-下面是如何使用索引文件的示例。 首先，SymStore 创建基于集合中的符号文件的索引文件\\ \\largeapp\\appserver\\箱\\。 在这种情况下，索引文件都放置在第三台计算机\\\\中心服务器\\hubshare。 您使用 **/g**选项以指定该文件作为前缀"\\\\largeapp\\appserver"可能会在将来更改：
+下面是如何使用索引文件的示例。 首先，SymStore 基于 \\ \\ largeapp \\ microsoft.windows.appserver.2008 \\ 箱中的符号文件集合创建索引文件 \\ 。 在这种情况下，索引文件放在第三台计算机上，即 \\ \\ hubserver \\ hubshare。 使用 **/g** 选项来指定文件前缀 " \\ \\ largeapp \\ microsoft.windows.appserver.2008" 将来可能会更改：
 
 ```console
 symstore add /r /p /g \\largeapp\appserver /f \\largeapp\appserver\bins\*.* /x \\hubserver\hubshare\myindex.txt
 ```
 
-现在假设您将从计算机的所有符号文件都移\\ \\largeapp\\应用服务器并将其放\\ \\myarchive\\应用服务器。 然后可以从索引文件创建符号存储区本身\\\\中心服务器\\hubshare\\myindex.txt，如下所示：
+现在假设你将所有符号文件移出计算机 \\ \\ largeapp \\ microsoft.windows.appserver.2008，并将其放在 \\ \\ myarchive \\ microsoft.windows.appserver.2008。 然后，可以按如下所示从索引文件 \\ \\ hubserver \\ hubsharemyindex.txt 创建符号存储区 \\ ：
 
 ```console
 symstore add /y \\hubserver\hubshare\myindex.txt /g \\myarchive\appserver /s \\MyDir\symsrv /p /t "Large Application" /v "Build 432" /c "Sample Add from Index"
 ```
 
-最后，下面是 SymStore 删除由先前的事务添加的文件的示例。 请参阅下面有关如何确定事务 ID （在此情况下，0000000096） 的说明的"server.txt 和 history.txt 文件"部分。
+最后，下面的示例说明了如何删除先前事务中添加的文件 SymStore。 请参阅下面的 "server.txt 和 history.txt 文件" 部分，了解有关如何确定事务 ID 的说明 (在本例中为 0000000096) 。
 
 ```console
 symstore del /i 0000000096 /s \\MyDir\symsrv
 ```
 
-### <a name="span-idtheservertxtandhistorytxtfilesspanspan-idtheservertxtandhistorytxtfilesspanthe-servertxt-and-historytxt-files"></a><span id="the_server_txt_and_history_txt_files"></span><span id="THE_SERVER_TXT_AND_HISTORY_TXT_FILES"></span>Server.txt 和 history.txt 文件
+### <a name="span-idthe_server_txt_and_history_txt_filesspanspan-idthe_server_txt_and_history_txt_filesspanthe-servertxt-and-historytxt-files"></a><span id="the_server_txt_and_history_txt_files"></span><span id="THE_SERVER_TXT_AND_HISTORY_TXT_FILES"></span>server.txt 和 history.txt 文件
 
-添加事务，多个项的信息添加到 server.txt 和 history.txt 将来查找功能。 下面是行的在 server.txt 和 history.txt 添加事务的一个示例：
+添加事务后，会将多个信息添加到 server.txt 和 history.txt 中，以供将来查找功能使用。 下面是添加事务 server.txt 和 history.txt 中的行的示例：
 
 ```text
 0000000096,add,ptr,10/09/99,00:08:32,Windows Vista SP 1,x86 fre 1.156c-RTM-2,Added from \\mybuilds\symbols,
 ```
 
-这是以逗号分隔行。 这些字段进行了说明，如下所示：
+这是一个以逗号分隔的行。 这些字段的说明如下所示：
 
 <table>
 <colgroup>
@@ -94,15 +93,15 @@ symstore del /i 0000000096 /s \\MyDir\symsrv
 <tbody>
 <tr class="odd">
 <td align="left"><p>0000000096</p></td>
-<td align="left"><p>事务 ID 号，因为由 SymStore 创建。</p></td>
+<td align="left"><p>事务 ID 号，由 SymStore 创建。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>添加</p></td>
-<td align="left"><p>事务的类型。 此字段可以是<strong>添加</strong>或<strong>del</strong>。</p></td>
+<td align="left"><p>add</p></td>
+<td align="left"><p>事务的类型。 此字段可以为 " <strong>添加</strong> " 或 " <strong>del</strong>"。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>ptr</p></td>
-<td align="left"><p>是否已添加文件或指针。 此字段可以是<strong>文件</strong>或<strong>ptr</strong>。</p></td>
+<td align="left"><p>是否添加了文件或指针。 此字段可以是 <strong>file</strong> 或 <strong>ptr</strong>。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>10/09/99</p></td>
@@ -110,7 +109,7 @@ symstore del /i 0000000096 /s \\MyDir\symsrv
 </tr>
 <tr class="odd">
 <td align="left"><p>00:08:32</p></td>
-<td align="left"><p>事务开始时的时间。</p></td>
+<td align="left"><p>事务启动的时间。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>Windows Vista SP 1</p></td>
@@ -118,22 +117,22 @@ symstore del /i 0000000096 /s \\MyDir\symsrv
 </tr>
 <tr class="odd">
 <td align="left"><p>x86 如 fre</p></td>
-<td align="left"><p>版本 （可选）。</p></td>
+<td align="left"><p>版本 (可选) 。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>添加从</p></td>
-<td align="left"><p>注释 （可选）</p></td>
+<td align="left"><p>添加自</p></td>
+<td align="left"><p>注释 (可选) </p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>未使用</p></td>
-<td align="left"><p>（保留以供将来使用。）</p></td>
+<td align="left"><p> (保留以供以后使用。 ) </p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-下面是从事务文件 0000000096 一些示例行。 每行记录在目录和文件或已添加到目录的指针的位置。
+下面是事务文件0000000096中的一些示例行。 每行记录目录以及已添加到目录中的文件或指针的位置。
 
 ```text
 canon800.dbg\35d9fd51b000,\\mybuilds\symbols\sp4\dll\canon800.dbg
@@ -144,7 +143,7 @@ certcrpt.dbg\352bf04911000,\\mybuilds\symbols\sp4\dll\certcrpt.dbg
 certenc.dbg\352bf2f7f000,\\mybuilds\symbols\sp4\dll\certenc.dbg
 ```
 
-如果您使用**del**事务来撤销原始**添加**事务将从 server.txt，删除这些行和将到 history.txt 添加以下行：
+如果使用 **del** 事务来撤消原始 **添加** 事务，将从 server.txt 中删除这些行，并将以下行添加到 history.txt：
 
 ```text
 0000000105,del,0000000096
@@ -166,11 +165,11 @@ certenc.dbg\352bf2f7f000,\\mybuilds\symbols\sp4\dll\certenc.dbg
 <tbody>
 <tr class="odd">
 <td align="left"><p>0000000105</p></td>
-<td align="left"><p>事务 ID 号，因为由 SymStore 创建。</p></td>
+<td align="left"><p>事务 ID 号，由 SymStore 创建。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>del</p></td>
-<td align="left"><p>事务的类型。 此字段可以是<strong>添加</strong>或<strong>del</strong>。</p></td>
+<td align="left"><p>事务的类型。 此字段可以为 " <strong>添加</strong> " 或 " <strong>del</strong>"。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0000000096</p></td>

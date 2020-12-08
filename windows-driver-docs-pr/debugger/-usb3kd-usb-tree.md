@@ -1,9 +1,8 @@
 ---
-title: usb3kd usb_tree
-description: Usb_tree usb3kd 扩展以树格式显示有关计算机上所有 USB 3.0 控制器、集线器和设备的信息。
-ms.assetid: 8E24AD44-7B32-4299-8428-D8E9B36F5848
+title: usb3kd.usb_tree
+description: Usb3kd.usb_tree 扩展以树格式显示有关计算机上所有 USB 3.0 控制器、集线器和设备的信息。
 keywords:
-- usb3kd usb_tree Windows 调试
+- usb3kd.usb_tree Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,12 +11,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 6e13f043a91310b61f0ebbe31465a11ec567b26e
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 05ca66897c915836b753761fd2ba31498e88e9eb
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89212293"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96814035"
 ---
 # <a name="usb3kdusb_tree"></a>！ usb3kd \_ 树
 
@@ -45,7 +44,7 @@ ms.locfileid: "89212293"
 
 输出使用 [ (DML) 的调试器标记语言 ](debugger-markup-language-commands.md) 来提供链接。 这些链接执行命令，以便为树中的各个对象指定详细信息。 例如，你可以通过单击其中一个 " [**设备 \_ 信息**](-usb3kd-device-info.md) " 链接来获取有关某个连接的设备的信息。 作为单击链接的替代方法，可以输入命令。 例如，若要查看有关第一个连接的设备的信息，可以输入命令 **！设备 \_ 信息 0xfffffa8004630690**。
 
-**注意**   DML 功能在 WinDbg 中可用，但在 Visual Studio 或 KD 中不可用。
+**注意**  DML 功能在 WinDbg 中可用，但在 Visual Studio 或 KD 中不可用。
 
  
 

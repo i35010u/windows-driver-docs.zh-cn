@@ -1,7 +1,6 @@
 ---
 title: I/O 请求的调度方法
 description: I/O 请求的调度方法
-ms.assetid: 3e91aa7c-bccf-4eeb-8b68-b1277a690f8c
 keywords:
 - I/o 队列 WDK KMDF，创建
 - I/o 队列 WDK KMDF，调度方法
@@ -13,12 +12,12 @@ keywords:
 - 手动分派 WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7dbfeaa435c769185cd6fcfbc5786a945b0483f6
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 29c7437612565a3e4b9508a3823bb27a49d0b6b2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89188729"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96814831"
 ---
 # <a name="dispatching-methods-for-io-requests"></a>I/O 请求的调度方法
 
@@ -28,7 +27,7 @@ ms.locfileid: "89188729"
 
 当驱动程序调用 [**WdfIoQueueCreate**](/windows-hardware/drivers/ddi/wdfio/nf-wdfio-wdfioqueuecreate) 来创建 i/o 队列时，它将为队列指定调度方法。 该框架提供了三种调度方法： [顺序](#sequential-dispatching)、 [并行](#parallel-dispatching)和 [手动](#manual-dispatching)。 驱动程序可以为任何 i/o 队列指定任意一种调度方法，包括设备的 [默认 i/o 队列](creating-i-o-queues.md)。
 
-驱动程序通过在队列的[**wdf \_ io \_ 队列 \_ CONFIG**](/windows-hardware/drivers/ddi/wdfio/ns-wdfio-_wdf_io_queue_config)结构中指定[**WDF \_ io \_ 队列 \_ 调度 \_ 类型**](/windows-hardware/drivers/ddi/wdfio/ne-wdfio-_wdf_io_queue_dispatch_type)的值来设置队列的调度方法。
+驱动程序通过在队列的 [**wdf \_ io \_ 队列 \_ CONFIG**](/windows-hardware/drivers/ddi/wdfio/ns-wdfio-_wdf_io_queue_config)结构中指定 [**WDF \_ io \_ 队列 \_ 调度 \_ 类型**](/windows-hardware/drivers/ddi/wdfio/ne-wdfio-_wdf_io_queue_dispatch_type)的值来设置队列的调度方法。
 
 有关使用每个调度方法的示例，请参阅 [I/o 队列的使用示例](example-uses-of-i-o-queues.md)。
 

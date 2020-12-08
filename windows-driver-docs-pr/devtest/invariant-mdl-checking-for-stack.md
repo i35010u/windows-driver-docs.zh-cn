@@ -1,22 +1,21 @@
 ---
 title: 针对堆栈的固定 MDL 检查
 description: 面向堆栈的固定 MDL 检查选项用于监控驱动程序如何处理驱动程序堆栈中的固定 MDL 缓冲区。
-ms.assetid: AB27803A-6B3A-40FA-B962-79B0DA2F5FA9
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 29082fb8b96cfdf1082bb81b71753cbab0707d3f
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 84b374b15e155a53d0ceac33b97f3c68cbc8d884
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89384549"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96813843"
 ---
 # <a name="invariant-mdl-checking-for-stack"></a>针对堆栈的固定 MDL 检查
 
 
 面向堆栈的固定 MDL 检查选项用于监控驱动程序如何处理驱动程序堆栈中的固定 MDL 缓冲区。 驱动程序验证程序可检测是否对固定 MDL 缓冲区进行了非法修改。 若要使用此选项，必须在至少一个驱动程序上启用 I/O 验证。
 
-**注意**   从 Windows 8 开始可以使用此选项。
+**注意**  从 Windows 8 开始可以使用此选项。
 
  
 
@@ -47,7 +46,7 @@ ms.locfileid: "89384549"
 
 -   **使用驱动程序验证器管理器**
     1.  启动驱动程序验证器管理器。 在命令提示符窗口中键入 **Verifier** 。
-    2.  选择 " **为代码开发人员 (创建自定义设置") ** ，然后单击 " **下一步"。**
+    2.  选择 " **为代码开发人员 (创建自定义设置")** ，然后单击 " **下一步"。**
     3.  选择 " **从完整列表中选择单个设置**"。
     4.  选择 (检查堆栈的 [I/o 验证](i-o-verification.md) 和固定 MDL 检查) 。
     5.  重新启动计算机。

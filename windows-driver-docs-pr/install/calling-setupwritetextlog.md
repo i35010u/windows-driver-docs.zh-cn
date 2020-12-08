@@ -1,15 +1,14 @@
 ---
 title: 调用 SetupWriteTextLog
 description: 调用 SetupWriteTextLog
-ms.assetid: a07118ae-bef6-4d01-94d9-98587cbff863
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: be8b02fe8f8fd2d16bcd2fdbc6d1dc19019a693f
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 59397a3eae8de77b7c397e01153e6ce270221a1e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90717506"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96814405"
 ---
 # <a name="calling-setupwritetextlog"></a>调用 SetupWriteTextLog
 
@@ -32,9 +31,9 @@ entry_prefix time_stamp event_category indentation formatted_message
 
 -   一个标志值，它是系统定义的常量的按位 "或"，用于指定事件级别、缩进深度以及是否包含时间戳。 [设置文本日志的事件级别](setting-the-event-level-for-a-text-log.md)中介绍了事件级别。 如果为文本日志设置的事件级别大于或等于该条目的事件级别，则 **SetupWriteTextLog** 会将日志条目写入文本日志;否则， **SetupWriteTextLog** 不会将日志条目写入文本日志。 通过使用缩进，可以排列经过格式的消息，使节中的信息更易于阅读和理解。 有关详细信息，请参阅 [写入缩进的日志条目](writing-indented-log-entries.md)。
 
--   一个 **printf**兼容的格式字符串，用于对消息和格式字符串之后的以逗号分隔的变量列表进行格式设置。
+-   一个 **printf** 兼容的格式字符串，用于对消息和格式字符串之后的以逗号分隔的变量列表进行格式设置。
 
--   以逗号分隔的变量列表，其值由 **printf**兼容的格式字符串进行格式设置。
+-   以逗号分隔的变量列表，其值由 **printf** 兼容的格式字符串进行格式设置。
 
 有关如何调用 [**SetupWriteTextLog**](/windows/win32/api/setupapi/nf-setupapi-setupwritetextlog) 来记录不是错误或警告事件的信息的示例，请参阅 [编写信息日志条目](writing-an-information-log-entry.md)。
 

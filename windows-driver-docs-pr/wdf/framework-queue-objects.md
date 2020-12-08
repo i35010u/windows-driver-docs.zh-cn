@@ -1,7 +1,6 @@
 ---
 title: 框架队列对象
 description: 框架队列对象
-ms.assetid: 42736e2d-2482-46b4-bf52-4efe369db40b
 keywords:
 - I/o 请求 WDK KMDF，队列对象
 - I/o 队列 WDK KMDF
@@ -16,12 +15,12 @@ keywords:
 - framework 对象 WDK KMDF、i/o 队列对象
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 971be1ebd25d7c540dfd40a37d6bec86fd694997
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 5b34dfabd7f25171fe6956dd2e22d3f953a59dc6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89184631"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96814767"
 ---
 # <a name="framework-queue-objects"></a>框架队列对象
 

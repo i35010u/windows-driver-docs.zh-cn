@@ -1,22 +1,21 @@
 ---
 title: 驱动程序创建的文件对象与应用程序创建的文件对象
 description: 驱动程序创建的文件对象与应用程序创建的文件对象
-ms.assetid: f81ae0ed-a29c-476e-9b16-ff554eef1de9
 keywords:
 - 用于处理 i/o WDK UMDF、驱动程序创建的文件对象
 - 用于处理 i/o WDK UMDF 的文件对象，应用程序已创建
 - I/o 请求 WDK UMDF、文件对象、驱动程序创建的与应用程序创建的
-- 用户模式驱动程序框架 WDK，处理 i/o、驱动程序创建与应用程序创建的文件对象
+- User-Mode Driver Framework WDK，处理 i/o、驱动程序创建与应用程序创建的文件对象
 - UMDF WDK，处理 i/o、驱动程序创建与应用程序创建的文件对象
 - 用户模式驱动程序 WDK UMDF，处理 i/o、驱动程序创建与应用程序创建的文件对象
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fbc6dfb0bb6286ceff092bdd4170bc4ea06e97dd
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: a740a9661738774706fca8c7cdd40b88ab481919
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90716658"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96814817"
 ---
 # <a name="driver-created-versus-application-created-file-objects"></a>驱动程序创建的文件对象与应用程序创建的文件对象
 

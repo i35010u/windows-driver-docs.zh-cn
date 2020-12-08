@@ -1,7 +1,6 @@
 ---
 title: 卡仿真 RF 序列
 description: NFCEE 卡仿真模式下的 StateRfDiscovered 和 StateRfDataXchg 的状态图。
-ms.assetid: 553A5002-3FE3-4178-B671-9F23560F939C
 keywords:
 - NFC
 - 近场通信
@@ -10,12 +9,12 @@ keywords:
 - NFP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 42791e1929f7badd60dc7848aeaaba478d9cc6c8
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 391b58c66307eee832a4714a51593802b57a2903
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89381455"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96813607"
 ---
 # <a name="card-emulation-rf-sequence"></a>卡仿真 RF 序列
 

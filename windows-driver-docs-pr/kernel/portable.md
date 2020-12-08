@@ -1,18 +1,17 @@
 ---
 title: 可移植
 description: 可移植
-ms.assetid: 3ce16503-e375-44c1-82a7-796286c1a253
 keywords:
 - 便携驱动程序 WDK 内核
 - 平台相关的定义 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5048d8ba996ddc92bca67f41a1a3761283382950
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: c337078601295adbb825c95dbc59502bde0240cc
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89185381"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96814293"
 ---
 # <a name="portable"></a>可移植
 
@@ -40,7 +39,7 @@ ms.locfileid: "89185381"
 
 -   调用操作系统为其提供备用支持例程的任何标准 C 运行时库函数。
 
-### <a name="using-wdk-supplied-interfaces"></a>使用 WDK 提供的接口
+### <a name="using-wdk-supplied-interfaces"></a>使用 WDK-Supplied 接口
 
 每个 Windows NT executive 组件都将导出一组内核模式 [驱动程序支持例程](/windows-hardware/drivers/ddi/index) ，驱动程序和所有其他内核模式组件都调用。 如果支持例程的基础实现随时间而变化，则其调用方将保持可移植，因为定义组件的接口不会更改。
 
@@ -48,7 +47,7 @@ WDK 提供一组头文件，用于定义特定于系统的数据类型和常量�
 
 某些驱动程序，如 [SCSI 微型端口驱动程序](../storage/scsi-miniport-drivers.md)、 [NDIS 驱动](/previous-versions/windows/hardware/network/ff556938(v=vs.85))程序和 [视频微型端口驱动程序](../display/video-miniport-drivers-in-the-windows-2000-display-driver-model.md)，包括其他系统提供的标头文件。
 
-如果驱动程序需要与平台相关的定义，最好将这些定义隔离于** \# ifdef**语句中，以便可以针对相应的硬件平台编译和链接每个驱动程序。 不过，您几乎始终可以通过使用 WDK 主头文件提供的支持例程、宏、常量和类型来避免在驱动程序中实现任何特定于平台的、有条件地编译代码。
+如果驱动程序需要与平台相关的定义，最好将这些定义隔离于 **\# ifdef** 语句中，以便可以针对相应的硬件平台编译和链接每个驱动程序。 不过，您几乎始终可以通过使用 WDK 主头文件提供的支持例程、宏、常量和类型来避免在驱动程序中实现任何特定于平台的、有条件地编译代码。
 
 内核模式驱动程序可以使用 WDK 中记录的内核模式 **Rtl * Xxx*** 例程。 内核模式驱动程序无法调用用户模式 **Rtl * Xxx*** 例程。
 

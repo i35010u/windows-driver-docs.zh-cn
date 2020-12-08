@@ -1,18 +1,17 @@
 ---
 title: 重启驱动程序堆栈
 description: 重启驱动程序堆栈
-ms.assetid: 5c9138f8-4a29-4740-b085-efe24d950fba
 keywords:
 - 驱动程序堆栈 WDK 网络，重新启动
 - 重新启动驱动程序堆栈 WDK 网络
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1622977937735ce0ca329ae636c10f590348b709
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 809bade1c7952562374921d711a6efc35dea0961
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89215017"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96813631"
 ---
 # <a name="restarting-a-driver-stack"></a>重启驱动程序堆栈
 

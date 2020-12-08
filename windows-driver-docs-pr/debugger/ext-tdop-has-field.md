@@ -1,7 +1,6 @@
 ---
 title: EXT \_ TDOP \_ 有 \_ 字段
 description: EXT \_ TDOP \_ 具有 \_ 调试请求的字段子操作 " \_ \_ Ext \_ 类型化 \_ 数据 \_ ANSI 请求操作" 确定结构是否包含指定的成员。
-ms.assetid: c1486aff-63d3-4ceb-8dce-45a9c5835c99
 keywords:
 - EXT_TDOP_HAS_FIELD Windows 调试
 topic_type:
@@ -12,19 +11,19 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 72eeee230fba6caf678060461c8129b9b1e59ae5
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 1d02daf7107ecff79e9c9ab39d0d43d8934ed8ac
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89211173"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96814577"
 ---
 # <a name="ext_tdop_has_field"></a>EXT \_ TDOP \_ 有 \_ 字段
 
 
-EXT \_ TDOP \_ 具有 \_ 调试请求的字段子操作 " [** \_ \_ ext \_ 类型化 \_ 数据 \_ ANSI**](debug-request-ext-typed-data-ansi.md)[**请求**](request.md) 操作" 确定结构是否包含指定的成员。
+EXT \_ TDOP \_ 具有 \_ 调试请求的字段子操作 " [**\_ \_ ext \_ 类型化 \_ 数据 \_ ANSI**](debug-request-ext-typed-data-ansi.md)[**请求**](request.md) 操作" 确定结构是否包含指定的成员。
 
-**参数**
+**Parameters**
 
 <span id="Operation"></span><span id="operation"></span><span id="OPERATION"></span>**运作**  
 设置为 EXT \_ TDOP \_ \_ 对于此子操作具有字段。

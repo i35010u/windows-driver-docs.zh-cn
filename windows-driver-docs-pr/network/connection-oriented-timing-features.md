@@ -1,7 +1,6 @@
 ---
 title: 面向连接的计时功能
 description: 面向连接的计时功能
-ms.assetid: 73b005c2-39bd-4931-89cd-7ea3db9068ca
 keywords:
 - 面向连接的 NDIS WDK，计时功能
 - CoNDIS WDK 网络，计时功能
@@ -10,12 +9,12 @@ keywords:
 - 本地时钟 WDK CoNDIS
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: eaab8dc899055c5d0876285d4bf2e94949e11383
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 020c09e281d0d91d4b1d982964bc768127a1fbc8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89207971"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96813709"
 ---
 # <a name="connection-oriented-timing-features"></a>面向连接的计时功能
 
@@ -25,7 +24,7 @@ ms.locfileid: "89207971"
 
 面向连接的 NDIS 支持使用 NIC 的本地时间来计划数据包传输和时间戳发送和接收数据包。
 
-**注意**   这些面向连接的计时功能是可选的。 所有 CoNDIS Nic 均不支持这些功能。
+**注意**  这些面向连接的计时功能是可选的。 所有 CoNDIS Nic 均不支持这些功能。
 
  
 

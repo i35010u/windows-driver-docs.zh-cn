@@ -1,7 +1,6 @@
 ---
 title: 调试环境
 description: 从 Windows 驱动程序工具包开始 (WDK) 8.0，驱动程序开发环境和 Windows 调试器集成到 Microsoft Visual Studio 中。
-ms.assetid: 13F9D82A-4C04-425A-A063-B349DB5C8E08
 keywords:
 - WinDbg
 - KD
@@ -9,19 +8,19 @@ keywords:
 - NTSD
 ms.date: 02/20/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: e921ac0fa4aae7b5855b16dc022197fef31fb49e
-ms.sourcegitcommit: 17c1bbc5ea0bef3bbc87794b030a073f905dc942
+ms.openlocfilehash: 7dc8d60cb9b542820aac5ac69aa07adef88e05ee
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88802515"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96813989"
 ---
 # <a name="debugging-environments"></a>调试环境
 
 有六种可用的调试环境：
 
 - WinDbg 预览版
-- Windows 调试器 (WinDbg) 
+- Windows 调试器 (WinDbg)
 - 内核调试器 (KD) 
 - NTKD
 - 控制台调试器 (CDB) 
@@ -31,7 +30,7 @@ ms.locfileid: "88802515"
 
 ### <a name="span-idwindbgpreviewspanspan-idwindbgpreviewspanspan-idwindbgpreviewspanwindbg-preview"></a><span id="WinDbgPreview"></span><span id="windbgpreview"></span><span id="WINDBGPREVIEW"></span>WinDbg 预览
 
-WinDbg 预览版是最新版本的 WinDbg，具有更多新式视觉对象、更快的 windows，以及使用可扩展调试器数据模型前端和中心构建的完整的脚本编写体验。 现在，WinDbg 预览版使用与 WinDbg 相同的基础引擎，因此你所习惯的所有命令、扩展和工作流的仍然与以前一样使用。
+WinDbg 预览版是 WinDbg 的最新版本，在重要位置构建有可扩展的调试器数据模型，具有更现代的视觉效果、更快速的 Windows 和成熟的脚本体验。 现在，WinDbg 预览版使用与 WinDbg 相同的基础引擎，因此你所习惯的所有命令、扩展和工作流的仍然与以前一样使用。
 
 有关详细信息，请参阅 [使用 WinDbg Preview 进行调试](debugging-using-windbg-preview.md)
 
@@ -80,7 +79,7 @@ start cdb parameters
 ntsd parameters
 ```
 
-可以从 NTSD (或 CDB) 重定向输入和输出，以便可以从 Visual Studio、WinDbg 或 KD)  (内核调试器控制该输入和输出。 如果此方法与 NTSD 一起使用，则不会显示任何控制台窗口。 因此，从内核调试器控制 NTSD 会特别有用，因为它会导致极轻量的调试程序，这在包含目标应用程序的计算机上几乎没有任何负担。 这种组合可用于调试系统进程、关闭和更高的启动阶段。 有关详细信息，请参阅 [从内核调试器控制用户模式调试器](controlling-the-user-mode-debugger-from-the-kernel-debugger.md) 。
+可以从 NTSD (或 CDB) 重定向输入和输出，以便可以从 Visual Studio、WinDbg 或 KD)  (内核调试器控制该输入和输出。 如果此方法与 NTSD 一起使用，则不会显示任何控制台窗口。 因此，从内核调试器控制 NTSD 会特别有用，因为它会导致极轻量的调试程序，这在包含目标应用程序的计算机上几乎没有任何负担。 这种组合可用于调试系统进程、关闭和更高的启动阶段。 有关详细信息，请参阅 [控制内核调试器中的 User-Mode 调试器](controlling-the-user-mode-debugger-from-the-kernel-debugger.md) 。
 
 ## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 

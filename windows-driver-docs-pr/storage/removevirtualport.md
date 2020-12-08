@@ -1,7 +1,6 @@
 ---
 title: RemoveVirtualPort 方法
 description: RemoveVirtualPort 方法)  (WWPN 中删除特定全球通用端口名称的虚拟端口。
-ms.assetid: 47A85B72-821C-4552-BA6E-1742D58B54A4
 keywords:
 - RemoveVirtualPort 方法存储设备
 topic_type:
@@ -12,24 +11,24 @@ api_type:
 - COM
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 8f3408ec5bd31c6abea3d5961656c23b2e29cf83
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 7e96ebb0ab5d9eeade472f08ff04c9c3943c08e4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89191119"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96813483"
 ---
 # <a name="removevirtualport-method"></a>RemoveVirtualPort 方法
 
 
-**RemoveVirtualPort**方法)  (WWPN 中删除特定全球通用端口名称的虚拟端口。
+**RemoveVirtualPort** 方法)  (WWPN 中删除特定全球通用端口名称的虚拟端口。
 
 <a name="syntax"></a>语法
 ------
 
 ```ManagedCPlusPlus
 void RemoveVirtualPort(
-   [in] uint8   WWPN[8],
+   [in] uint8   WWPN[8],
    [out] uint16 Status
 );
 ```
@@ -40,7 +39,7 @@ void RemoveVirtualPort(
 *WWPN \[ 8\]*   
 要删除的虚拟端口的全球通用端口名称。
 
-*状态值*   
+*状态*   
 返回时，包含操作的状态。
 
 <a name="return-value"></a>返回值

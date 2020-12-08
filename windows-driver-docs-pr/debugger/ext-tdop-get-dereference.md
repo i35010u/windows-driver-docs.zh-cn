@@ -1,7 +1,6 @@
 ---
 title: EXT \_ TDOP \_ GET \_ 取消引用
 description: "\"扩展 \\_ TDOP \\_ 获取 \\_ \" 调试请求的取消引用子 \\_ 操作 \\_ ext \\_ 类型 \\_ 化 \\_ 的数据 ANSI 请求操作取消引用指针并返回它指向的值。"
-ms.assetid: 0b5eed03-4241-4038-8950-12c82c2d086f
 keywords:
 - EXT_TDOP_GET_DEREFERENCE Windows 调试
 topic_type:
@@ -12,19 +11,19 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e60ac76258ed7605bb213c790b398a9ca283b656
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 6115210a0b99bec09bda27347d8b58f12598491b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89213015"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96814579"
 ---
 # <a name="ext_tdop_get_dereference"></a>EXT \_ TDOP \_ GET \_ 取消引用
 
 
-"扩展 \_ TDOP \_ 获取 \_ " 调试请求的取消引用子操作 [** \_ \_ ext \_ 类型化的 \_ 数据 \_ ANSI**](debug-request-ext-typed-data-ansi.md)[**请求**](request.md) 操作取消引用指针并返回它指向的值。
+"扩展 \_ TDOP \_ 获取 \_ " 调试请求的取消引用子操作 [**\_ \_ ext \_ 类型化的 \_ 数据 \_ ANSI**](debug-request-ext-typed-data-ansi.md)[**请求**](request.md) 操作取消引用指针并返回它指向的值。
 
-**参数**
+**Parameters**
 
 <span id="Operation"></span><span id="operation"></span><span id="OPERATION"></span>**运作**  
 设置为 EXT \_ TDOP 将 \_ 获取 \_ 此子操作的取消引用。

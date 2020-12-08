@@ -1,7 +1,6 @@
 ---
 title: 使用压缩纹理图面
 description: 使用压缩纹理图面
-ms.assetid: efa7efff-a1ad-49f3-b6e8-f08b520e77ae
 keywords:
 - 绘制压缩纹理 WDK DirectDraw，关于压缩纹理图面
 - DirectDraw 压缩纹理 WDK Windows 2000 显示，关于压缩纹理图面
@@ -12,12 +11,12 @@ keywords:
 - rasterizers WDK DirectDraw
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 56b5723d57cb4f612b22f3becc659c9841d5ba32
-ms.sourcegitcommit: f8619f20a0903dd64f8641a5266ecad6df5f1d57
+ms.openlocfilehash: a58a9943ed716284094825d53866cd104c797510
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91423494"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96814491"
 ---
 # <a name="using-compressed-texture-surfaces"></a>使用压缩纹理图面
 
@@ -25,7 +24,7 @@ ms.locfileid: "91423494"
 ## <span id="ddk_using_compressed_texture_surfaces_gg"></span><span id="DDK_USING_COMPRESSED_TEXTURE_SURFACES_GG"></span>
 
 
-如果在 \_ [**dwCaps2**](/windows/win32/api/ddrawi/ns-ddrawi-ddcorecaps)结构的**DDCORECAPS**成员中设置 DDCAPS2 COPYFOURCC 标志，则 DirectDraw 仅调用驱动程序在同一 DXT 类型的两个表面之间执行 blt。 如果未设置此标志，则 DirectDraw HEL 将执行 blt。 这对于实现表面到显示复制 blts 非常重要，因为这是一种机制，通过该机制，可以从 (系统内存) 表面下载纹理以显示内存。 因此，公开 DXT 纹理图面的实际要求您的驱动程序支持 DDCAPS2 \_ COPYFOURCC 标志。
+如果在 \_ [**dwCaps2**](/windows/win32/api/ddrawi/ns-ddrawi-ddcorecaps)结构的 **DDCORECAPS** 成员中设置 DDCAPS2 COPYFOURCC 标志，则 DirectDraw 仅调用驱动程序在同一 DXT 类型的两个表面之间执行 blt。 如果未设置此标志，则 DirectDraw HEL 将执行 blt。 这对于实现表面到显示复制 blts 非常重要，因为这是一种机制，通过该机制，可以从 (系统内存) 表面下载纹理以显示内存。 因此，公开 DXT 纹理图面的实际要求您的驱动程序支持 DDCAPS2 \_ COPYFOURCC 标志。
 
 DDCAPS2 \_ COPYFOURCC 标志有一些其他含义。 你的驱动程序必须能够在 FOURCC 格式之间执行至少具有以下属性的 blt：
 
@@ -39,7 +38,7 @@ DDCAPS2 \_ COPYFOURCC 标志有一些其他含义。 你的驱动程序必须能
 
 -   驱动程序必须能够在显示内存中为其支持的每个 FOURCC 格式执行这些 blts。
 
-**注意**   Microsoft DirectShow 使用 DDCAPS2 \_ COPYFOURCC 标志来加速某些视频功能; 此标志的要求表示可以复制所有 FOURCC 格式。
+**注意**   Microsoft DirectShow 使用 DDCAPS2 \_ COPYFOURCC 标志来加速某些视频功能; 此标志的要求表示可以复制所有 FOURCC 格式。
 
  
 
@@ -51,7 +50,7 @@ DDCAPS2 \_ COPYFOURCC 标志有一些其他含义。 你的驱动程序必须能
 
 DirectDraw DDCAPS \_ CANBLTSYSMEM 功能位的语义意味着从系统内存中的所有 blts 调用显示驱动程序以显示内存。 因此，可以将此类 blts 的驱动程序从 DXT 表面调用到非 DXT 图面。 在这种情况下，唯一的要求是驱动程序返回 DDHAL \_ driver \_ NOTHANDLED （如果它无法执行解压缩）。 这会导致 DirectDraw 将 \_ 不支持的 DDERR 错误代码传播到应用程序。 可以从系统内存中实现 blts 的解压缩，以显示驱动程序中的内存，但这对于 DirectX 6.0 和更高版本不是必需的。
 
-DirectDraw 显示内存分配例程不处理像素格式注意事项。 例如， [**HeapVidMemAllocAligned**](/windows/win32/api/dmemmgr/nf-dmemmgr-heapvidmemallocaligned)需要字节计数作为其输入参数。 同样，DDHAL \_ PLEASEALLOC \_ 块 (查看[**dd \_ Surface \_ 全局**](/windows/win32/api/ddrawint/ns-ddrawint-dd_surface_global)结构的**fpVidMem**成员) 表示 dd surface global 结构的**dwBlockSizeX**和**dwBlockSizeY**成员分别为 \_ \_ 字节和行计数。 因此，如果您的驱动程序使用这两种机制来通过 DirectDraw 分配器分配显示内存，则您的驱动程序必须能够自行计算 DXT 的内存消耗量（以字节为单位）。 下面的示例演示了执行此计算的一种方法：
+DirectDraw 显示内存分配例程不处理像素格式注意事项。 例如， [**HeapVidMemAllocAligned**](/windows/win32/api/dmemmgr/nf-dmemmgr-heapvidmemallocaligned)需要字节计数作为其输入参数。 同样，DDHAL \_ PLEASEALLOC \_ 块 (查看 [**dd \_ Surface \_ 全局**](/windows/win32/api/ddrawint/ns-ddrawint-dd_surface_global)结构的 **fpVidMem** 成员) 表示 dd surface global 结构的 **dwBlockSizeX** 和 **dwBlockSizeY** 成员分别为 \_ \_ 字节和行计数。 因此，如果您的驱动程序使用这两种机制来通过 DirectDraw 分配器分配显示内存，则您的驱动程序必须能够自行计算 DXT 的内存消耗量（以字节为单位）。 下面的示例演示了执行此计算的一种方法：
 
 ```cpp
 DWORD dx, dy;
@@ -87,7 +86,7 @@ dy = (nHeight + 3) >> 2;
 surfsize = dx * dy * blksize;
 ```
 
-当应用程序调用 Direct3D 和 DirectDraw SDK 文档) 集中 (中所述的**IDirect3DVertexBuffer7：： Lock**或**IDirectDrawSurface7：： GetSurfaceDesc**方法时，该驱动程序必须 \_ 在[**LINEARSIZE**](/previous-versions/windows/hardware/drivers/ff550340(v=vs.85))结构的**dwFlags**成员中设置 DDSD DDSURFACEDESC2 标志。 此外，驱动程序必须将分配的字节数设置为包含同一结构的 **dwLinearSize** 成员中的压缩的图面数据。  (**dwLinearSize** 成员位于具有 **lPitch** 成员的联合中，因此这些成员是互相排斥的，如 DDSD \_ LINEARSIZE 和 DDSD \_ 螺距标志。 ) 
+当应用程序调用 Direct3D 和 DirectDraw SDK 文档) 集中 (中所述的 **IDirect3DVertexBuffer7：： Lock** 或 **IDirectDrawSurface7：： GetSurfaceDesc** 方法时，该驱动程序必须 \_ 在 [**LINEARSIZE**](/previous-versions/windows/hardware/drivers/ff550340(v=vs.85))结构的 **dwFlags** 成员中设置 DDSD DDSURFACEDESC2 标志。 此外，驱动程序必须将分配的字节数设置为包含同一结构的 **dwLinearSize** 成员中的压缩的图面数据。  (**dwLinearSize** 成员位于具有 **lPitch** 成员的联合中，因此这些成员是互相排斥的，如 DDSD \_ LINEARSIZE 和 DDSD \_ 螺距标志。 ) 
 
 你的硬件或驱动程序可以采用你选择的任何格式来转换和存储压缩纹理 (通常会将其重新排序为更具硬件效率的布局) 。 但是，无论何时，如果应用程序调用 **IDirect3DVertexBuffer7：： Lock** 方法，你的硬件或驱动程序都必须能够将压缩纹理转换回其原始 DXT 代码格式。
 
@@ -114,7 +113,7 @@ realRGBBitCount  = 0
 
  (RefRast) 代码时，应遵循以下三个项目：
 
-1.  DirectDraw SDK 文档中 * (DXT4 和 DXT5) 格式的第三位线性 Alpha 插值 * 部分显示了为 DXT4 和 DXT5 格式增加 Alpha 值的正确顺序。
+1.  DirectDraw SDK 文档中 *(DXT4 和 DXT5) 格式的第三位线性 Alpha 插值* 部分显示了为 DXT4 和 DXT5 格式增加 Alpha 值的正确顺序。
 
 2.  引用光栅化代码应有以下逻辑来保护颜色比较逻辑。
     ```cpp

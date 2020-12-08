@@ -1,7 +1,6 @@
 ---
 title: NFP 设备驱动程序要求
 description: 提供有关 NFP 设备驱动程序要求的信息。
-ms.assetid: 48EB0861-7BC5-4CA2-9AE5-DD3BA17AC39A
 keywords:
 - NFC
 - 近场通信
@@ -10,19 +9,19 @@ keywords:
 - NFP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d041a673a3f75ebfd64c802d0695dd1b31cb1204
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: d23181f3aaaa142f6cc570f76d7227b9a4772fcc
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89382475"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96813493"
 ---
 # <a name="nfp-device-driver-requirements"></a>NFP 设备驱动程序要求
 
 
 提供有关 NFP 设备驱动程序要求的信息。
 
-## <a name="in-this-section"></a>本节内容
+## <a name="in-this-section"></a>在本节中
 
 
 -   [设备标识符](device-identifiers.md)

@@ -1,7 +1,6 @@
 ---
 title: 创建处理
 description: 创建处理
-ms.assetid: c15a56d2-47db-4124-8250-f25f69d2d4e3
 keywords:
 - 安全 WDK 文件系统，语义模型检查
 - 语义模型检查 WDK 文件系统，创建处理
@@ -10,12 +9,12 @@ keywords:
 - IRP_MJ_CREATE
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 598fd41cf7888802a9f80cee9b37bd6be41de7d9
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 4bb43e8fe154c3c3622590fdc4a879d2bf58f278
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89065116"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96815115"
 ---
 # <a name="create-processing"></a>创建处理
 

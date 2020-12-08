@@ -1,6 +1,5 @@
 ---
 title: NFCEE 发现序列
-ms.assetid: F6894EFD-4140-490B-B0BB-1A9BDA4DCECE
 keywords:
 - NFC
 - 近场通信
@@ -10,12 +9,12 @@ keywords:
 description: NFC CX 的相关信息，提供两种操作模式以支持不同的 NFCEE 管理实现。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 32912ce4d8affa9d6ff5f17ea77c48bb3d13f5d9
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 2660fd42603a592236550c87d4b2a1c15b2eff09
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89382489"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96813499"
 ---
 # <a name="nfcee-discovery-sequence"></a>NFCEE 发现序列
 

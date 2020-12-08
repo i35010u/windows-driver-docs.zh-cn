@@ -1,7 +1,6 @@
 ---
 title: DEVPKEY_DeviceClass_IconPath
 description: DEVPKEY_DeviceClass_IconPath
-ms.assetid: c81ea18d-dd21-4b5e-8aba-52f7ad6931bf
 keywords:
 - DEVPKEY_DeviceClass_IconPath 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 80e47155109d90f810ff5325cc2ce764321e05eb
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 568f9f4fe1872c3ad1b563c631c21b2492cbebb7
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90717414"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96815359"
 ---
 # <a name="devpkey_deviceclass_iconpath"></a>DEVPKEY_DeviceClass_IconPath
 

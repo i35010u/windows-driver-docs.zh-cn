@@ -1,19 +1,18 @@
 ---
 title: 定义通知类
 description: 定义通知类
-ms.assetid: e21cf020-0bf8-4091-aac4-6324a680194a
 keywords:
 - 通知对象 WDK 网络，通知类
 - 网络通知对象 WDK，通知类
 - 通知类 WDK 网络
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d31b6488ee7cd9db7dee3632769479c7512606a2
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: a8356160a914998f02ce9a9fdc49fef262ce61f4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89211097"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96814963"
 ---
 # <a name="defining-a-notify-class"></a>定义通知类
 
@@ -41,7 +40,7 @@ ms.locfileid: "89211097"
 
 -   一个变量，该变量指定通知对象先前执行的操作。 定义常量以指示对象可能执行的不同操作。 当网络配置子系统调用 notify 对象的 [**INetCfgComponentControl：： ApplyRegistryChanges**](/previous-versions/windows/hardware/network/ff547727(v=vs.85)) 方法将配置更改应用到注册表时， **ApplyRegistryChanges** 将使用此变量来确定如何更改注册表。 例如，如果通知对象先前执行了与在其 [**INetCfgComponentSetup：： Install**](/previous-versions/windows/hardware/network/ff547762(v=vs.85)) 方法中安装拥有对象的组件相关的操作，则 **安装** 应将此变量设置为将操作指示为 "安装"。
 
--   **HKEY**类型的注册表项。 Notify 对象调用拥有对象的组件的 [**INetCfgComponent：： OpenParamKey**](/previous-versions/windows/hardware/network/ff547890(v=vs.85)) 方法来打开和检索包含组件参数的注册表项。 然后，通知对象将 **HKEY** 成员设置为该密钥。
+-   **HKEY** 类型的注册表项。 Notify 对象调用拥有对象的组件的 [**INetCfgComponent：： OpenParamKey**](/previous-versions/windows/hardware/network/ff547890(v=vs.85)) 方法来打开和检索包含组件参数的注册表项。 然后，通知对象将 **HKEY** 成员设置为该密钥。
 
 为 notify 类定义构造函数和析构函数。 还应考虑定义只有 notify 类可以使用的私有方法。
 

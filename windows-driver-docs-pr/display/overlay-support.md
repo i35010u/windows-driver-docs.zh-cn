@@ -1,23 +1,22 @@
 ---
 title: 覆盖支持
 description: 覆盖支持
-ms.assetid: 325a08b2-c357-49b7-a9c3-878c44bc2d26
 keywords:
-- 绘图页上翻转 WDK DirectDraw，覆盖面
-- DirectDraw 翻转 WDK Windows 2000 显示覆盖图面
+- 绘图页反向 WDK DirectDraw，覆盖面
+- DirectDraw 翻转 WDK Windows 2000 显示，覆盖面
 - 页面翻转 WDK DirectDraw，覆盖面
 - 翻转 WDK DirectDraw，覆盖面
 - 覆盖面 WDK DirectDraw
-- WDK DirectDraw 表面覆盖
-- 显示 WDK DirectDraw 翻转
+- 表面 WDK DirectDraw，覆盖
+- surface DirectDraw，翻转
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8bfb67c70958b55682303b6bc4b7e723d9eb6e68
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a3ea75d59b65888718aca2d95c9a42c4a705cf75
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383983"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96813793"
 ---
 # <a name="overlay-support"></a>覆盖支持
 
@@ -25,11 +24,11 @@ ms.locfileid: "63383983"
 ## <span id="ddk_overlay_support_gg"></span><span id="DDK_OVERLAY_SUPPORT_GG"></span>
 
 
-DirectDraw 还支持覆盖层。 *覆盖面*是指可以在顶部显示主面而不会改变其下面的图面中的物理位。 使用一个覆盖区，寄存器是设置包含覆盖面主图面上定义一个矩形。 矩形的位置更改为数字模拟转换器 (DAC)。 扫描行读取主图面上的内存中的数据，直到它达到留出供在覆盖区上的矩形。 它从覆盖面读取直到该行在覆盖层中的已完成，然后继续在原始主图面上的映像。 这主图面中切换到在覆盖区上并返回上扫描行的每个阶段发生的情况并将继续，直到完全显示在覆盖区。
+DirectDraw 还支持覆盖。 *覆盖面* 是指可以在主表面上显示的曲面，而不会更改其下表面的物理位。 对于叠加，会设置在包含覆盖图面的主图面上定义矩形的寄存器。 数字到模拟转换器 (DAC) 更改矩形的位置。 扫描行读取主表面内存中的数据，直到到达为覆盖设置的矩形。 它从覆盖面中读取，直到覆盖区中的那一行完成，然后再继续执行原始的主表面图像。 这种从主表面切换到叠加，并在每次扫描行时进行切换，然后继续，直到覆盖完全显示为止。
 
-覆盖面可以具有与主表面的不同的像素深度。 例如，虽然 8 位 / 像素 (bpp) 可能看起来相当不错的主图面，视频剪辑可能需要以接受显示的 16 bpp。 像素深度主表面和覆盖层之间无缝切换。 有关使用 DirectDraw 叠加的详细信息，请参阅[DirectX 的视频端口扩展](video-port-extensions-to-directx.md)部分。
+覆盖面可以与主表面具有不同的像素深度。 例如，虽然8位/像素 (bpp) 对于主要表面可能看起来很正常，但视频剪辑可能需要 16 bpp 才能显示可接受。 像素深度在主要表面与覆盖区之间无缝切换。 有关带有 DirectDraw 的覆盖的详细信息，请参阅 [视频端口扩展到 DirectX](video-port-extensions-to-directx.md) 部分。
 
-覆盖翻转方式与主表面完全相同。 DirectDraw 图面上对象交换指针，以便在新的覆盖面读取扫描线在到达边界在覆盖区上的矩形。 相同的翻转算法中所述[计时翻转](timing-a-flip.md)阻止撕裂现象。
+叠加翻转的方式与主表面完全相同。 DirectDraw surface 对象交换指针，以便在扫描行到达边界覆盖的矩形时，读取新的覆盖图面。 [计时反向](timing-a-flip.md)所述的相同翻转算法会阻止撕裂。
 
  
 

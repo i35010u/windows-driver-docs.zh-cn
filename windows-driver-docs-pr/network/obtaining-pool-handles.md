@@ -1,7 +1,6 @@
 ---
 title: 获取池句柄
 description: 获取池句柄
-ms.assetid: 752b0d64-2ca3-4dc0-a6cd-642e96af1f8f
 keywords:
 - 池处理 WDK 网络
 - 协议驱动程序 WDK 网络，池句柄
@@ -11,12 +10,12 @@ keywords:
 - 中间驱动程序 WDK 网络，po
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d8d141b0a03444318abedf04f3327fb713e7f81b
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: bbf9a26f98649300c76c17f832572b9f88bf98f5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89215496"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96813667"
 ---
 # <a name="obtaining-pool-handles"></a>获取池句柄
 

@@ -1,7 +1,6 @@
 ---
 title: WSDBIT 简介
 description: WSDBIT 简介
-ms.assetid: 8a8ee9de-95b2-43df-ba96-3b09fcd5751c
 keywords:
 - WSDBIT 工具 WDK，关于
 - WSDAPI 基本互操作性工具 WDK，关于
@@ -10,12 +9,12 @@ keywords:
 - 互操作性测试 WDK WSDBIT
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a00ae63c8b3424281abbda2df773dbe131e06191
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 9b4a45658dfb07161eabcda10ee98239d8723d0f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89384557"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96813851"
 ---
 # <a name="introduction-to-wsdbit"></a>WSDBIT 简介
 
@@ -40,7 +39,7 @@ ms.locfileid: "89384557"
 
 -   *简单和高级控制* 测试并验证服务特定消息。
 
--   根据[SOAP 消息传输优化机制](https://www.w3.org/TR/2005/REC-soap12-mtom-20050125/)中的定义，*附件*测试和验证消息附件 (MTOM) 规范。
+-   根据 [SOAP 消息传输优化机制](https://www.w3.org/TR/2005/REC-soap12-mtom-20050125/)中的定义，*附件* 测试和验证消息附件 (MTOM) 规范。
 
 -   *事件* 测试并验证 [Web 服务事件](/previous-versions/ms951233(v=msdn.10))。
 
@@ -50,7 +49,7 @@ ms.locfileid: "89384557"
 
 你还可以有选择地实现测试用例的各个部分。 例如，你只能实现 [设备和服务检查](device-and-service-inspection-scenarios.md) 以及 [简单和高级控制](device-control-scenarios.md) 互操作性测试事例。
 
-**注意**   你至少必须实现设备和服务检查互操作性测试事例，因为其他测试用例需要该测试用例。
+**注意**   你至少必须实现设备和服务检查互操作性测试事例，因为其他测试用例需要该测试用例。
 
  
 

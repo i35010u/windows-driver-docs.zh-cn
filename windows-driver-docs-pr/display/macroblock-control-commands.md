@@ -1,7 +1,6 @@
 ---
 title: 宏块控制命令
 description: 宏块控制命令
-ms.assetid: be70ec8f-1821-4075-b5e3-b7574fbe4e27
 keywords:
 - macroblocks WDK DirectX VA，命令
 - DXVA_MBctrl_I_HostResidDiff_1
@@ -10,12 +9,12 @@ keywords:
 - DXVA_MBctrl_P_OffHostIDCT_1
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0d7cb0f6c50a6ee1c21352ae50a7000b8fd92f89
-ms.sourcegitcommit: a44ade167cdfb541cf1818e9f9e3726f23f90b66
+ms.openlocfilehash: 725057466e7d848bc6b24a0eecdf015e12d20aff
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94361251"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96813813"
 ---
 # <a name="macroblock-control-commands"></a>宏块控制命令
 
@@ -37,7 +36,7 @@ ms.locfileid: "94361251"
 
 选择要使用的宏块控件结构的方式取决于要解码的图片类型以及解码方式。 以下结构成员和标志确定了图片类型、解码选项，以及将使用四个 DirectX VA 宏块控制结构中的哪一种：
 
--   [**BPic4MVallowed \_ bMV**](/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_pictureparameters)结构的 **bPicIntra** 、 **bChromaFormat** 、 **bPicOBMC** 、 **bPicBinPB** 、 **DXVA** 和 **PictureParameters \_ RPS** 成员。
+-   [**BPic4MVallowed \_ bMV**](/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_pictureparameters)结构的 **bPicIntra**、 **bChromaFormat**、 **bPicOBMC**、 **bPicBinPB**、 **DXVA** 和 **PictureParameters \_ RPS** 成员。
 
 -   [**DXVA \_ ConfigPictureDecode**](/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_configpicturedecode)结构的 **bConfigResidDiffHost** 成员。
 
@@ -49,7 +48,7 @@ ms.locfileid: "94361251"
 
 [**DXVA \_ MBctrl \_ I \_ HostResidDiff \_ 1**](/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_mbctrl_i_hostresiddiff_1)结构用于包含基于主机的 *残留差别解码* 的图片。 以下结构成员和标志必须等于指示的值：
 
--   **bPicIntra** ) 中的图片必须等于 1 (。
+-   **bPicIntra**) 中的图片必须等于 1 (。
 
 -   **bChromaFormat** 必须等于 1 (4:2:0 采样) 。
 
@@ -61,7 +60,7 @@ ms.locfileid: "94361251"
 
 [**DXVA \_ MBctrl \_ I \_ OffHostIDCT \_ 1**](/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_mbctrl_i_offhostidct_1)结构用于包含4:2:0 采样，并具有脱离主机残留差别解码的图片。 以下结构成员和标志必须等于指示的值：
 
--   **bPicIntra** ) 中的图片必须等于 1 (。
+-   **bPicIntra**) 中的图片必须等于 1 (。
 
 -   **bChromaFormat** 必须等于 1 (4:2:0 采样) 。
 
@@ -75,7 +74,7 @@ ms.locfileid: "94361251"
 
 以下结构成员和标志必须等于指示的值：
 
--   **bPicIntra** 在 *我的图片* ) 中， *P picture* 和 *B picture* 或 concealment 运动矢量的必须等于零 (解码。
+-   **bPicIntra** 在 *我的图片*) 中， *P picture* 和 *B picture* 或 concealment 运动矢量的必须等于零 (解码。
 
 -   **bChromaFormat** 必须等于 1 (4:2:0 采样) 。
 

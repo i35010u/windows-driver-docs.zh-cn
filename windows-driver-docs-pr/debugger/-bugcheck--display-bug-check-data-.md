@@ -1,9 +1,8 @@
 ---
 title: .bugcheck（显示 Bug 检查数据）
-description: .Bugcheck 命令显示在目标计算机上的 bug 检查中的数据。
-ms.assetid: 4b453b5a-4a3c-4056-92e7-b6a17f987fa4
+description: 错误检查命令显示目标计算机上 bug 检查中的数据。
 keywords:
-- .bugcheck （显示 Bug 检查数据） Windows 调试
+- ) Windows 调试，检查 (显示 Bug 检查数据
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: a24198184af88054b599c230d8e308bdd3d882fa
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0d2ebfa5d637543012273c281e3bb97120145bd7
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63336934"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96814131"
 ---
 # <a name="bugcheck-display-bug-check-data"></a>.bugcheck（显示 Bug 检查数据）
 
 
-**.Bugcheck**命令显示来自错误数据时，请在目标计算机。
+**错误** 检查命令显示目标计算机上 bug 检查中的数据。
 
 ```dbgsyntax
     .bugcheck 
@@ -40,34 +39,34 @@ ms.locfileid: "63336934"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>模式</strong></p></td>
-<td align="left"><p>内核模式下</p></td>
+<td align="left"><p><strong>交货</strong></p></td>
+<td align="left"><p>仅限内核模式</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>目标</strong></p></td>
-<td align="left"><p>实时、 崩溃转储</p></td>
+<td align="left"><p>实时，故障转储</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>平台</strong></p></td>
-<td align="left"><p>全部</p></td>
+<td align="left"><p>all</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-有关错误检查的详细信息，请参阅[Bug 检查 （蓝屏）](bug-checks--blue-screens-.md)。 单个错误检查的说明，请参阅[Bug 检查代码参考](bug-check-code-reference2.md)部分。
+有关 bug 检查的详细信息，请参阅 [Bug 检查 (蓝屏) ](bug-checks--blue-screens-.md)。 有关各个 bug 检查的说明，请参阅 [Bug 检查代码参考](bug-check-code-reference2.md) 部分。
 
 <a name="remarks"></a>备注
 -------
 
-此命令显示当前的 bug 检查数据。 （此 bug 检查数据将可访问的崩溃的计算机重启。）
+此命令显示当前 bug 检查数据。  (此错误检查数据将可访问，直到重新启动崩溃的计算机。 ) 
 
-您还可以显示 bug 检查数据在 32 位系统上使用**dd NT ！KiBugCheckData L5**，或通过使用 64 位系统上**dq NT ！KiBugCheckData L5**。 但是，.bugcheck 命令是更加可靠，因为它在某些情况下， [ **d\* （显示内存）** ](d--da--db--dc--dd--dd--df--dp--dq--du--dw--dw--dyb--dyd--display-memor.md)命令将不 （如用户模式的小型转储）。
+你还可以使用 dd NT 在32位系统上显示 bug 检查数据 **！KiBugCheckData L5**，或在64位系统上使用 **dq NT！KiBugCheckData L5**。 但是，错误检查命令更可靠，因为在 [**d \* (显示) 内存**](d--da--db--dc--dd--dd--df--dp--dq--du--dw--dw--dyb--dyd--display-memor.md) 的某些情况下，该命令将不 (如用户模式小型转储) 。
 
-[ **！ 分析**](-analyze.md)的 bug 检查发生后，扩展命令也是很有用。
+发生 bug 检查后，" [**！分析**](-analyze.md) 扩展" 命令也很有用。
 
  
 

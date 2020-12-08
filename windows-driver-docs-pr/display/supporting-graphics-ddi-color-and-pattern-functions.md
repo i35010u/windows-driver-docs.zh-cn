@@ -1,15 +1,14 @@
 ---
 title: 支持图形 DDI 颜色和模式函数
 description: 支持图形 DDI 颜色和模式函数
-ms.assetid: fb6f15e0-2111-433d-b7e0-74fdf116c559
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a866b17c6f3d4007e385f28316adf81ef4342e12
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6704fc2c620bb8012308c4e19fab3d6964b8089c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63372759"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96814487"
 ---
 # <a name="supporting-graphics-ddi-color-and-pattern-functions"></a>支持图形 DDI 颜色和模式函数
 
@@ -17,7 +16,7 @@ ms.locfileid: "63372759"
 ## <span id="ddk_supporting_graphics_ddi_color_and_pattern_functions_gg"></span><span id="DDK_SUPPORTING_GRAPHICS_DDI_COLOR_AND_PATTERN_FUNCTIONS_GG"></span>
 
 
-图形 DDI 颜色和模式函数包括[调色板管理](managing-palettes.md)并[画笔实现](realizing-brushes.md)函数。
+图形 DDI 颜色和图案函数包括 [调色板管理](managing-palettes.md) 和 [画笔实现](realizing-brushes.md) 函数。
 
  
 

@@ -1,34 +1,33 @@
 ---
 title: HS_HOST_POST_CONNECT_AUTH_COMPLETION 函数
-description: HS_HOST_POST_CONNECT_AUTH_COMPLETION 函数指示在第2层 Wi-fi 连接设置后的身份验证尝试是成功还是失败。
-ms.assetid: 2c69802b-968b-400c-b02c-c2d39fa51d5a
+description: HS_HOST_POST_CONNECT_AUTH_COMPLETION 函数指示在第2层的 Wi-Fi 连接设置之后，身份验证尝试是成功还是失败。
 keywords:
 - typedef DWORD (WINAPI HS_HOST_POST_CONNECT_AUTH_COMPLETION 从 Windows Vista 开始) 函数网络驱动程序
 ms.date: 07/31/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8841bd4842a427fe2ea8c99cb96cec5e5f99e48f
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: 3c448aea107405f1037f4cb0f685a6d6c564731b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89403094"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96814179"
 ---
 # <a name="hs_host_post_connect_auth_completion-function"></a>HS \_ 主机 \_ 后 \_ 连接 \_ 身份验证 \_ 完成功能
 
 [!include[Wi-Fi Hotspot Offloading deprecation](../includes/wi-fi-hotspot-offloading-deprecation.md)]
 
 
-**HS \_ 主机 \_ 后 \_ 连接 \_ 身份验证 \_ 完成**功能指示在第2层的 wi-fi 连接设置之后的身份验证尝试是成功还是失败。
+**HS \_ HOST \_ 后 \_ 连接 \_ 身份验证 \_ 完成** 功能指示在第2层的 Wi-Fi 连接设置之后，身份验证尝试是成功还是失败。
 
 <a name="syntax"></a>语法
 ------
 
 ```ManagedCPlusPlus
  typedef DWORD (WINAPI *HS_HOST_POST_CONNECT_AUTH_COMPLETION)(
-  _In_     HANDLE                    hPluginContext,
-  _In_     DWORD                     dwConnectionId,
-  _In_     eHS_AUTHENTICATION_RESULT AuthResult,
-  _In_opt_ LPVOID                    pvReserved
+  _In_     HANDLE                    hPluginContext,
+  _In_     DWORD                     dwConnectionId,
+  _In_     eHS_AUTHENTICATION_RESULT AuthResult,
+  _In_opt_ LPVOID                    pvReserved
 );
 ```
 
@@ -55,7 +54,7 @@ ms.locfileid: "89403094"
 <a name="remarks"></a>备注
 -------
 
-插件必须调用此函数，以通知主机对 HS 插件的先前调用的结果将 [** \_ \_ 启动 \_ \_ 连接 \_ 身份验证**](hs-plugin-start-post-connect-auth.md)。
+插件必须调用此函数，以通知主机对 HS 插件的先前调用的结果将 [**\_ \_ 启动 \_ \_ 连接 \_ 身份验证**](hs-plugin-start-post-connect-auth.md)。
 
 <a name="requirements"></a>要求
 ------------
@@ -71,13 +70,13 @@ ms.locfileid: "89403094"
 <td><p>Windows 10 移动版</p></td>
 </tr>
 <tr class="even">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Hotspotoffloadplugin (包含 Hotspotoffloadplugin) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**eHS \_ AUTHENTICATION \_ 结果**](ehs-authentication-result.md)

@@ -1,7 +1,6 @@
 ---
 title: .childdbg（调试子进程）
 description: Childdbg 命令控制子进程的调试。
-ms.assetid: 87d70d3b-d9d5-4a37-b8a7-1616ba78b2f3
 keywords:
 - childdbg (调试子进程) Windows 调试
 ms.date: 05/23/2017
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 703f331824ff5ce3bb921b04f2a4a7f82c29dc99
-ms.sourcegitcommit: bb3b62a57ba3aea4a0adeefd2d81993367b7b334
+ms.openlocfilehash: 3a1079dee8d532338318de69fcce510ad259224e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88148471"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96814067"
 ---
 # <a name="childdbg-debug-child-processes"></a>.childdbg（调试子进程）
 
 
-**Childdbg**命令控制子进程的调试。
+**Childdbg** 命令控制子进程的调试。
 
 ```dbgsyntax
 .childdbg 0 
@@ -69,9 +68,9 @@ ms.locfileid: "88148471"
 <a name="remarks"></a>备注
 -------
 
-**子进程**是由原始目标应用程序启动的其他进程。
+**子进程** 是由原始目标应用程序启动的其他进程。
 
-如果没有参数，则**childdbg**将显示子进程调试的当前状态。
+如果没有参数，则 **childdbg** 将显示子进程调试的当前状态。
 
  
 

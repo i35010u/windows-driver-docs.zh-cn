@@ -1,7 +1,6 @@
 ---
 title: KSMFT_CATEGORY_VIDEO_DECODER
 description: KSMFT_CATEGORY_VIDEO_DECODER
-ms.assetid: 56f2c39a-dea6-4dc0-84bb-f052d27fb084
 keywords:
 - KSMFT_CATEGORY_VIDEO_DECODER 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 8350b1451acc610d4f099ca31fef51d45ff53339
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 5a33e155ef293fee131147c0d337b6f9bcd25f9d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89095047"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96815311"
 ---
 # <a name="ksmft_category_video_decoder"></a>KSMFT_CATEGORY_VIDEO_DECODER
 

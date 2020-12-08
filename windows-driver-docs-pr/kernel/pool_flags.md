@@ -1,7 +1,6 @@
 ---
 title: POOL_FLAGS
 description: 标志，用于指示池内存的类型、需要内存的属性，以及可以选择的内存属性。
-ms.assetid: 1eaee689-69fb-4720-adbc-b9db5fdc113a
 keywords:
 - 内存管理 WDK 内核，系统分配的空间
 - 系统分配的空间 WDK 内核
@@ -11,12 +10,12 @@ keywords:
 - 缓冲区内存分配 WDK 内核
 ms.date: 06/16/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 1f5c1efa80979791025c01101d17128a730f24be
-ms.sourcegitcommit: 53565c07d980307b079a6accf541fd221e623142
+ms.openlocfilehash: 8216b5e3cea04ce93a561a59d1a61715c1dabc3a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86972156"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96814292"
 ---
 # <a name="pool_flags"></a>POOL_FLAGS
 
@@ -54,10 +53,10 @@ ULONG64 类型的值，指定池内存的类型以及必需和可选属性。 �
 
 池分配器必须识别和满足必需的标志。 如果分配器不能识别该标志或无法进行分配，则分配将失败。
 
-|名称|说明|
+|“属性”|描述|
 |-|-|
 |POOL_FLAG_USE_QUOTA|此标志由最高层驱动程序传递，该驱动程序分配内存以满足最初发出 i/o 请求的进程上下文中的请求。 较低级别的驱动程序无需指定此标志。|
-|POOL_FLAG_UNINITIALIZED|使分配保持未初始化状态。 分配的内容为 indeterminant。 驱动程序必须非常小心，切勿将未初始化的内存复制到不受信任的目标（用户模式，通过网络等）。|
+|POOL_FLAG_UNINITIALIZED|使分配保持未初始化状态。 分配的内容为 indeterminant。 驱动程序必须非常小心，切勿将未初始化的内存复制到 (用户模式、网络等 ) 的不受信任目标。|
 |POOL_FLAG_SESSION|为操作系统保留。|
 |POOL_FLAG_CACHE_ALIGNED|缓存对齐池分配。 警告：此标志被视为最佳工作，如果程序的正确性需要缓存对齐分配，则不应使用此标志。|
 |POOL_FLAG_RESERVED1|保留以供内部使用。|
@@ -72,13 +71,13 @@ ULONG64 类型的值，指定池内存的类型以及必需和可选属性。 �
 
 池分配器找机会满足了可选标志。 如果分配器不识别可选标志，则将其忽略。 如果分配器无法满足可选标志，则它可能会也可能不会成功，具体取决于特定标志的语义。
 
-|名称|说明|
+|“属性”|描述|
 |-|-|
-|POOL_FLAG_SPECIAL_POOL|在特殊池中进行分配（用于调试）。 如果无法使用特殊池，则分配器将尝试使用常规池。|
+|POOL_FLAG_SPECIAL_POOL|在特殊池中进行分配 (用于调试) 。 如果无法使用特殊池，则分配器将尝试使用常规池。|
 
 ## <a name="requirements"></a>要求
 
-**标头**： wdm .h （包括 Wdm、Ntddk、Ntifs、Wudfwdm）
+**标头**： wdm .h (包括 Wdm、Ntddk、Ntifs、Wudfwdm) 
 
 ## <a name="see-also"></a>另请参阅
 

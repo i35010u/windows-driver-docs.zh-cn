@@ -1,15 +1,14 @@
 ---
 title: 送纸器扫描仪的必需 WIA 项属性
 description: 送纸器扫描仪的必需 WIA 项属性
-ms.assetid: f9868f05-3c1f-4042-9820-9c1c38af3432
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c5fe04f3af1d80abdf8643e61b5deb61d3e45347
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: d757935d58b34b2184174b889658a1f6bf3b6a6a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89187591"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96814442"
 ---
 # <a name="required-wia-item-properties-for-feeder-scanners"></a>送纸器扫描仪的必需 WIA 项属性
 
@@ -87,7 +86,7 @@ ms.locfileid: "89187591"
 
 [**WIA \_ IP \_ YRES**](./wia-ips-yres.md)
 
-**注意**   如果支持 WiaImgFmt raw 格式，则需要 " [**WIA \_ IPA \_ raw \_ BITS \_ PER \_ 通道**](./wia-ipa-raw-bits-per-channel.md)" 属性 \_ 。 [**WIA \_ IPA \_ format**](./wia-ipa-format.md)属性必须支持 WiaImgFmt \_ BMP 格式。 如果[**wia \_ IPA \_ DEPTH**](./wia-ipa-depth.md)属性设置为1位/像素 (BPP) 或[**wia \_ IPA \_ DATATYPE**](./wia-ipa-datatype.md)属性设置为 wia 数据阈值，则需要[**wia \_ ip \_ 阈值**](./wia-ips-threshold.md)属性 \_ \_ 。
+**注意**   如果支持 WiaImgFmt raw 格式，则需要 " [**WIA \_ IPA \_ raw \_ BITS \_ PER \_ 通道**](./wia-ipa-raw-bits-per-channel.md) " 属性 \_ 。 [**WIA \_ IPA \_ format**](./wia-ipa-format.md)属性必须支持 WiaImgFmt \_ BMP 格式。 如果 [**wia \_ IPA \_ DEPTH**](./wia-ipa-depth.md)属性设置为1位/像素 (BPP) 或 [**wia \_ IPA \_ DATATYPE**](./wia-ipa-datatype.md)属性设置为 wia 数据阈值，则需要 [**wia \_ ip \_ 阈值**](./wia-ips-threshold.md)属性 \_ \_ 。
 
  
 

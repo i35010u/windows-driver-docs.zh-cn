@@ -1,19 +1,18 @@
 ---
 title: 框架对象上下文空间
 description: 框架对象上下文空间
-ms.assetid: 21a46e04-2330-4a3d-ba72-c04295bfbb3c
 keywords:
 - framework 对象 WDK KMDF，上下文空间
 - 上下文空间 WDK KMDF
 - 对象上下文空间 WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c92f232b6e9cdea3a872ed4de812b26dc9cf6474
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 492402227f4dbf44e340708701010ebc5ddedd9a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89184309"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96814789"
 ---
 # <a name="framework-object-context-space"></a>框架对象上下文空间
 
@@ -45,12 +44,12 @@ ms.locfileid: "89184309"
 
 1.  定义描述要存储的数据的结构。 例如，如果想要为驱动程序的设备对象创建上下文数据，则驱动程序可能会定义一个名为 "我的设备上下文" 的结构 \_ \_ 。
 
-2.  使用 [**wdf \_ declare \_ 上下文 \_ 类型**](./wdf-declare-context-type.md) 宏或 [** \_ \_ \_ \_ 具有 \_ NAME 宏的 wdf 声明上下文类型**](./wdf-declare-context-type-with-name.md) 。 这两个宏均执行以下操作：
+2.  使用 [**wdf \_ declare \_ 上下文 \_ 类型**](./wdf-declare-context-type.md) 宏或 [**\_ \_ \_ \_ 具有 \_ NAME 宏的 wdf 声明上下文类型**](./wdf-declare-context-type-with-name.md) 。 这两个宏均执行以下操作：
 
     -   创建和初始化 [**WDF \_ 对象 \_ 上下文 \_ 类型 \_ 信息**](/windows-hardware/drivers/ddi/wdfobject/ns-wdfobject-_wdf_object_context_type_info) 结构。
     -   定义驱动程序稍后用于访问对象的上下文空间的访问器方法。 访问器方法的返回值是指向对象的上下文空间的指针。
 
-    WDF \_ DECLARE \_ 上下文 \_ 类型宏根据您的结构名称创建访问器方法的名称。 例如，如果你的上下文结构的名称是 "我的 \_ 设备 \_ 上下文"，则宏会创建一个名为 **WdfObjectGet \_ MY \_ device \_ context**的访问器方法。
+    WDF \_ DECLARE \_ 上下文 \_ 类型宏根据您的结构名称创建访问器方法的名称。 例如，如果你的上下文结构的名称是 "我的 \_ 设备 \_ 上下文"，则宏会创建一个名为 **WdfObjectGet \_ MY \_ device \_ context** 的访问器方法。
 
     \_ \_ \_ 通过具有 NAME 宏的 WDF 声明上下文类型 \_ \_ ，您可以指定访问器方法的名称。 例如，可以指定 **GetMyDeviceContext** 作为设备对象的上下文访问器方法的名称。
 
@@ -64,13 +63,13 @@ ms.locfileid: "89184309"
 
 由于步骤1和步骤2定义全局数据结构并创建驱动程序可调用的例程，因此您的驱动程序必须在声明全局数据的驱动程序区域中完成这些步骤，通常是标头文件。 不能从驱动程序的例程中完成这些步骤。
 
-驱动程序必须在创建对象的驱动程序例程（如调用[**WdfDeviceCreate**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicecreate)的[*EvtDriverDeviceAdd*](/windows-hardware/drivers/ddi/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)回调函数）内完成步骤3、4和5。
+驱动程序必须在创建对象的驱动程序例程（如调用 [**WdfDeviceCreate**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicecreate)的 [*EvtDriverDeviceAdd*](/windows-hardware/drivers/ddi/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)回调函数）内完成步骤3、4和5。
 
 框架可以代表驱动程序创建两种类型的对象-框架请求对象和框架文件对象。 你的驱动程序可以通过分别调用 [**WdfDeviceInitSetRequestAttributes**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceinitsetrequestattributes) 和 [**WdfDeviceInitSetFileObjectConfig**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceinitsetfileobjectconfig)来注册这些对象的上下文空间。 驱动程序还可以调用 [**WdfObjectAllocateContext**](/windows-hardware/drivers/ddi/wdfobject/nf-wdfobject-wdfobjectallocatecontext) 来为这些对象分配上下文空间。
 
 创建对象后，驱动程序可以使用以下任一方法获取指向对象上下文空间的指针：
 
--   通过使用 [**WDF \_ declare \_ 上下文 \_ 类型**](./wdf-declare-context-type.md) 或 [** \_ \_ \_ \_ 具有 \_ NAME 宏的 wdf declare 上下文类型**](./wdf-declare-context-type-with-name.md) ，调用你在前面过程中的步骤2中创建的上下文访问器方法。
+-   通过使用 [**WDF \_ declare \_ 上下文 \_ 类型**](./wdf-declare-context-type.md) 或 [**\_ \_ \_ \_ 具有 \_ NAME 宏的 wdf declare 上下文类型**](./wdf-declare-context-type-with-name.md) ，调用你在前面过程中的步骤2中创建的上下文访问器方法。
 
 -   调用 [**WdfObjectGetTypedContext**](./wdfobjectgettypedcontext.md)，提供驱动程序定义的上下文结构的名称。
 

@@ -1,17 +1,16 @@
 ---
 title: WDI_TLV_MAC_STATISTICS
 description: WDI_TLV_MAC_STATISTICS 是包含 OID_WDI_GET_STATISTICS 的每对等 MAC 统计信息的 TLV。
-ms.assetid: 47ABF170-76D7-4F17-BA92-56E1FEFF729D
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_MAC_STATISTICS 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 6af95c0c583bc8d38c3fe9d0a8c301a70d2ae5d7
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 4e89787421fe11bae10f4fefff117b1496b54adc
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104766"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96814902"
 ---
 # <a name="wdi_tlv_mac_statistics"></a>WDI \_ TLV \_ MAC \_ 统计信息
 
@@ -39,7 +38,7 @@ Sum (所有包含的元素的大小) 。
 <thead>
 <tr class="header">
 <th>类型</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -122,7 +121,7 @@ Sum (所有包含的元素的大小) 。
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
-<td><p>Windows Server 2016</p></td>
+<td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
 <td><p>标头</p></td>

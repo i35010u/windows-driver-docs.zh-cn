@@ -1,7 +1,6 @@
 ---
 title: 智能卡的功能流
 description: 智能卡发现后对 NDEF 消息进行分层读取和写入的流程图和简短说明。
-ms.assetid: 7B4B4902-FD16-4C9B-BB54-A1D6EFCAE9DB
 keywords:
 - NFC
 - 近场通信
@@ -10,12 +9,12 @@ keywords:
 - NFP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9bb566b16c219dedbe5dedc9c6d920fbaf0b7b97
-ms.sourcegitcommit: 0c3cab853b0b75149b7604eef03275f997792a84
+ms.openlocfilehash: 76d997b410bfec7bedde5a0374a30d1b4df1faed
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96157311"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96813579"
 ---
 # <a name="functional-flow-for-smart-card"></a>智能卡的功能流
 

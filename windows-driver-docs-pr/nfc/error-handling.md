@@ -1,7 +1,6 @@
 ---
-title: 错误处理。
+title: 错误处理
 description: 本主题讨论 NFC 客户端的错误处理要求。
-ms.assetid: 52376A1F-9ADD-4297-ADF9-A1EBF5714316
 keywords:
 - NFC
 - 近场通信
@@ -10,14 +9,14 @@ keywords:
 - NFP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 81c9ca19c61d28a536684ad5ad52894f4e046742
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: c9de1f5c4487c2a3c69dbaf98e1dce37fffa5a22
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89382021"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96813591"
 ---
-# <a name="error-handling"></a>错误处理。
+# <a name="error-handling"></a>错误处理
 
 
 本主题讨论 NFC 客户端的错误处理要求。

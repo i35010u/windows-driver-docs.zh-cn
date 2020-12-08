@@ -1,7 +1,6 @@
 ---
 title: sx、sxd、sxe、sxi、sxn、sxr、sx-（设置异常）
 description: Sx * 命令控制调试器在要调试的应用程序中发生异常或发生某些事件时所执行的操作。
-ms.assetid: fdb5059f-e7d9-4e14-aa3d-030e72c30732
 keywords:
 - sx、sxd、sxe、sxi、sxn、sxr、sx (设置异常) Windows 调试
 ms.date: 05/23/2017
@@ -12,12 +11,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 16450986db24adcba82cecab99b187ca6ddc8bcb
-ms.sourcegitcommit: 76681fc52a8a65fa4fe381582e7d5867e0527dae
+ms.openlocfilehash: 650d51913bcdec4f3b221d13b880d058f3b22eb3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94688540"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96813963"
 ---
 # <a name="sx-sxd-sxe-sxi-sxn-sxr-sx--set-exceptions"></a>sx、sxd、sxe、sxi、sxn、sxr、sx-（设置异常）
 
@@ -76,7 +75,7 @@ sxr
 
 有关中断状态和处理状态的详细信息、所有事件代码的说明、所有事件的默认状态的列表以及控制此状态的其他方法的详细信息，请参阅 [控制异常和事件](controlling-exceptions-and-events.md)。
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 **Sx** 命令显示当前进程的异常列表以及所有 nonexception 事件的列表，并显示每个异常和事件的调试器的默认行为。
@@ -101,7 +100,7 @@ sxr
 <tr class="header">
 <th align="left">命令</th>
 <th align="left">状态名称</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -143,7 +142,7 @@ sxr
 <tr class="header">
 <th align="left">命令</th>
 <th align="left">状态名称</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>

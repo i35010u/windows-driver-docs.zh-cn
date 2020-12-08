@@ -1,9 +1,8 @@
 ---
-title: usb3kd ucx_endpoint
-description: Ucx_endpoint usb3kd 命令显示有关 USB 3.0 树中 USB 设备上的终结点的信息。 该显示基于 UcxVersion.sys 维护的数据。
-ms.assetid: 37667665-ACA1-48D3-B79E-5B9BBD689034
+title: usb3kd.ucx_endpoint
+description: Usb3kd.ucx_endpoint 命令显示有关 USB 3.0 树中 USB 设备上的终结点的信息。 该显示基于 UcxVersion.sys 维护的数据。
 keywords:
-- usb3kd ucx_endpoint Windows 调试
+- usb3kd.ucx_endpoint Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 00e2d36f9c5beb7de5ec61c71b01ba7473125eca
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 99d3736515f8abc3f2e8b86e530e1f16bd8935fd
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89217423"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96814045"
 ---
 # <a name="usb3kducx_endpoint"></a>！ usb3kd ucx \_ 终结点
 
 
-[**！ Usb3kd ucx \_ 终结点**](-usb3kd-device-info.md)命令显示 usb [3.0 树](usb-3-extensions.md#usb-3-tree)中 usb 设备上的终结点的相关信息。 此显示基于 USB 主机控制器扩展驱动程序所维护的数据结构，* (Ucx .sys) 。*
+[**！ Usb3kd ucx \_ 终结点**](-usb3kd-device-info.md)命令显示 usb [3.0 树](usb-3-extensions.md#usb-3-tree)中 usb 设备上的终结点的相关信息。 此显示基于 USB 主机控制器扩展驱动程序所维护的数据结构，*(Ucx .sys) 。*
 
 ```dbgcmd
 !usb3kd.ucx_endpoint UcxEndpointPrivContext
@@ -42,7 +41,7 @@ Usb3kd.dll
 <a name="remarks"></a>备注
 -------
 
-USB 主机控制器扩展驱动程序 (Ucx*版本*.sys) 提供 usb 3.0 集线器驱动程序与 usb 3.0 主机控制器驱动程序之间的抽象层。 扩展驱动程序具有其自己的主机控制器、设备和终结点的表示形式。 输出 **！ ucx \_ endpoint** 命令基于扩展驱动程序所维护的数据结构。 有关 USB 主机控制器扩展驱动程序和 USB 3.0 主机控制器驱动程序的详细信息，请参阅 [Usb 驱动程序堆栈体系结构](/windows-hardware/drivers/ddi/index)。
+USB 主机控制器扩展驱动程序 (Ucx *版本*.sys) 提供 usb 3.0 集线器驱动程序与 usb 3.0 主机控制器驱动程序之间的抽象层。 扩展驱动程序具有其自己的主机控制器、设备和终结点的表示形式。 输出 **！ ucx \_ endpoint** 命令基于扩展驱动程序所维护的数据结构。 有关 USB 主机控制器扩展驱动程序和 USB 3.0 主机控制器驱动程序的详细信息，请参阅 [Usb 驱动程序堆栈体系结构](/windows-hardware/drivers/ddi/index)。
 
 <a name="examples"></a>示例
 --------

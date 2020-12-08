@@ -1,19 +1,18 @@
 ---
 title: 呼叫管理程序执行的面向连接的操作
 description: 呼叫管理程序执行的面向连接的操作
-ms.assetid: 6df23eb2-df02-4d24-88b3-c02b87edb38b
 keywords:
 - 面向连接的 NDIS WDK，呼叫管理器
 - CoNDIS WDK 网络，呼叫管理器
 - 呼叫经理 WDK 网络，面向连接的操作
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c39b9e9b15186bd2efa3f68458eccd90f28af84b
-ms.sourcegitcommit: 366a15d68eb58d01a8ca6de7b982f62ac8b7deaf
+ms.openlocfilehash: dae6bd19262c88b892d60c330f959f5ebf8bec07
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/19/2020
-ms.locfileid: "90811920"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96813719"
 ---
 # <a name="connection-oriented-operations-performed-by-call-managers"></a>呼叫管理程序执行的面向连接的操作
 
@@ -23,7 +22,7 @@ ms.locfileid: "90811920"
 
 调用管理器执行以下操作：
 
--   ** (AFs) 注册并注销一个或多个地址系列。**
+-   **(AFs) 注册并注销一个或多个地址系列。**
 
     调用管理器使用 NDIS [注册一个或多个地址族](registering-and-opening-an-address-family.md) 。 通过注册地址族，呼叫管理器会公布其呼叫管理器服务 (具体而言，一种信号协议) 绑定到面向连接的客户端。 有关向 NDIS 注册入口点的信息，请参阅 [CoNDIS Registration](condis-miniport-driver-registration.md)。
 

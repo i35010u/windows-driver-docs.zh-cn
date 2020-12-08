@@ -1,15 +1,14 @@
 ---
 title: Windows 自动选择最佳字符编码
 description: Windows 自动选择最佳字符编码
-ms.assetid: 3fde6e89-c9ea-43d2-a999-506686b223f4
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6da42fb6a2ebbfd176a5ac5d46ba3e528de14318
-ms.sourcegitcommit: 20eac54e419a594f7cea766ee28f158559dfd79c
+ms.openlocfilehash: 214b7b627f67ed22ef88728fa73dcb2257ca93c3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91754968"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96815021"
 ---
 # <a name="windows-automatically-selects-optimal-character-encoding"></a>Windows 自动选择最佳字符编码
 

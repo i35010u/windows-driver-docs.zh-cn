@@ -1,19 +1,18 @@
 ---
 title: SymStore
 description: SymStore
-ms.assetid: acc7bf3a-62ea-4c93-843e-b81d4f71555f
 keywords:
 - SymStore，功能
 - SymStore，使用
 - '符号存储，SymStore ( # A0) '
 ms.date: 03/27/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: a18bc0517543b18ae7755ef9b9d0e5ec5126f745
-ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
+ms.openlocfilehash: 29d99077a49d85bfa47bb83175b05e1d41a8ebc6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88969318"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96813925"
 ---
 # <a name="symstore"></a>SymStore
 

@@ -1,7 +1,6 @@
 ---
 title: DefaultScanTicket 元素
 description: 了解 "DefaultScanTicket" 元素。 查看代码示例和其他可用资源。
-ms.assetid: 1c0f15c8-b14f-4607-8655-36e1397082e6
 keywords:
 - DefaultScanTicket 元素图像设备
 topic_type:
@@ -12,12 +11,12 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 366e55805ad20818c2530a0922eb04f4d33db0d0
-ms.sourcegitcommit: 2aedb606f9f14e74687f0d3da60e14fc6ffffa7e
+ms.openlocfilehash: b413af0de4850d4e641a3faa68eeb5ab78ba3f8d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91544412"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96813777"
 ---
 # <a name="defaultscanticket-element"></a>DefaultScanTicket 元素
 
@@ -31,7 +30,7 @@ ms.locfileid: "91544412"
 </wscn:DefaultScanTicket>
 ```
 
-<a name="attributes"></a>属性
+<a name="attributes"></a>特性
 ----------
 
 没有特性。
@@ -80,12 +79,12 @@ ms.locfileid: "91544412"
 </tbody>
 </table>
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
-**DefaultScanTicket**元素是[**ScanTicket**](scanticket.md)元素的实例。 **DefaultScanTicket** 描述了创建作业时，WSD 扫描服务将应用的当前默认值集，而无需指定处理元素。
+**DefaultScanTicket** 元素是 [**ScanTicket**](scanticket.md)元素的实例。 **DefaultScanTicket** 描述了创建作业时，WSD 扫描服务将应用的当前默认值集，而无需指定处理元素。
 
-客户端可以通过[**GetScannerElementsRequest**](getscannerelementsrequest.md)操作请求扫描程序的**DefaultScanTicket**元素，然后在通过[**CreateScanJobRequest**](createscanjobrequest.md)操作请求扫描作业时使用该元素而不会出错。 **DefaultScanTicket**将包含设备支持的所有**ScanTicket**选项的值。
+客户端可以通过 [**GetScannerElementsRequest**](getscannerelementsrequest.md)操作请求扫描程序的 **DefaultScanTicket** 元素，然后在通过 [**CreateScanJobRequest**](createscanjobrequest.md)操作请求扫描作业时使用该元素而不会出错。 **DefaultScanTicket** 将包含设备支持的所有 **ScanTicket** 选项的值。
 
 <a name="examples"></a>示例
 --------

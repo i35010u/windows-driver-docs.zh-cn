@@ -1,7 +1,6 @@
 ---
 title: SymProxy
 description: SymProxy
-ms.assetid: c0b122fe-4996-4659-a3f1-95831605c0b3
 keywords:
 - '符号，SymProxy ( # A0) '
 - 符号存储，HTTP
@@ -9,12 +8,12 @@ keywords:
 - SymProxy
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4e3a823f2164f46c2711da45ab156b44b84c144b
-ms.sourcegitcommit: 20eac54e419a594f7cea766ee28f158559dfd79c
+ms.openlocfilehash: 8a0501d1cb7bf162fb6f3dee074c6d8f64c475fc
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91754946"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96813933"
 ---
 # <a name="symproxy"></a>SymProxy
 

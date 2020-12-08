@@ -1,17 +1,16 @@
 ---
 title: Ws2def.h
 description: 本部分包含 Ws2def 标头的内核模式网络驱动程序主题。
-ms.assetid: D84A448E-5810-485F-9CAC-4366E4223DBE
 keywords:
 - Ws2def 网络驱动程序
 ms.date: 08/08/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 00836acd7b144aa117b11497816b0ee71a89d604
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: d1b99e0467712e365d79b230117e14d753ad8b66
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91734230"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96813627"
 ---
 # <a name="ws2defh"></a>Ws2def.h
 
@@ -24,7 +23,7 @@ Ws2def 标头包含 Winsock2 规范的定义。 它包含在 Winsock2. h 中。 
 >
 > 有关此标头的网络驱动程序参考的详细信息，请参阅 [Ws2def (reference) ](/previous-versions/windows/hardware/drivers/mt808757(v=vs.85))。
 
-## <a name="in-this-section"></a>在此部分中
+## <a name="in-this-section"></a>在本节中
 
 * [AF_INET](af-inet.md)
 * [AF_INET6](af-inet6.md)

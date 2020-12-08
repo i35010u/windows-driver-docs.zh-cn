@@ -1,20 +1,19 @@
 ---
 title: 创建 Netmap.inf 文件
 description: 创建 Netmap.inf 文件
-ms.assetid: 0f9b4f57-717c-4f11-b0c6-d117a949ab38
 keywords:
-- 网络组件升级，WDK，netmap.inf 文件
-- 升级网络组件 WDK，netmap.inf 文件
-- netmap.inf 文件 WDK
-- 供应商提供的文件 WDK netmap.inf 文件
+- 网络组件升级 WDK，netmap .inf 文件
+- 升级网络组件 WDK，netmap .inf 文件
+- netmap 文件 WDK
+- 供应商提供的文件 WDK netmap 文件
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8d05da941108e5db69604c8aeabfaaea786d750e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fed100d0a42a469d5b567bdbe9dba5bf96d642fc
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63357388"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96813684"
 ---
 # <a name="creating-a-netmapinf-file"></a>创建 Netmap.inf 文件
 
@@ -22,25 +21,25 @@ ms.locfileid: "63357388"
 
 
 
-**请注意**  供应商提供网络升级不支持在 Microsoft Windows XP (SP1 和更高版本)，Microsoft Windows Server 2003 和更高版本操作系统。
+**注意**  Microsoft Windows XP (SP1 及更高版本) 、Microsoft Windows Server 2003 和更高版本的操作系统不支持供应商提供的网络升级。
 
  
 
-Netmap.inf 文件是供应商提供文件中的条目指定的目录中驻留**OemNetUpgradeDirs**一部分[netupg.inf](creating-a-netupg-inf-file.md)文件或目录中，其中包含netupgrd.dll。 Netmap.inf 文件中：
+Netmap 文件是供应商提供的文件，它位于 [netupg](creating-a-netupg-inf-file.md)文件的 **OemNetUpgradeDirs** 部分中的条目所指定的目录中或包含 netupgrd.dll 的目录中。 Netmap 文件：
 
--   映射网络组件的升级前的设备 ID 到该组件的 Microsoft Windows 2000 或更高版本的设备 ID
+-   将网络组件的 preupgrade 设备 ID 映射到组件的 Microsoft Windows 2000 或更高版本的设备 ID
 
--   指定网络迁移 NetSetup 加载的 DLL
+-   指定 NetSetup 加载的网络迁移 DLL
 
--   （可选） 指定备用的帮助消息文件
+-   根据需要指定其他帮助消息文件
 
-已在 Windows 2000 或更高版本操作系统中内置的升级支持的网络组件不需要供应商提供 netmap.inf 文件，因为这些组件将自动升级在 Windows 2000 和更高版本操作系统的安装过程系统。
+在 Windows 2000 或更高版本的操作系统中具有内置升级支持的网络组件不需要供应商提供的 netmap 文件，因为在安装 Windows 2000 和更高版本的操作系统的过程中，这些组件将自动升级。
 
-本部分包括以下主题：
+本节包括下列主题：
 
--   [映射 Netmap.inf 文件中的 Id](mapping-ids-in-a-netmap-inf-file.md)
--   [Netmap.inf 文件中指定升级 DLL](specifying-the-upgrade-dll-in-a-netmap-inf-file.md)
--   [Netmap.inf 文件中指定备用的帮助消息文件](specifying-alternative-help-message-files-in-a-netmap-inf-file.md)
+-   [Netmap.inf 文件中的映射 ID](mapping-ids-in-a-netmap-inf-file.md)
+-   [在 Netmap.inf 文件中指定升级 DLL](specifying-the-upgrade-dll-in-a-netmap-inf-file.md)
+-   [在 Netmap.inf 文件中指定备用帮助消息文件](specifying-alternative-help-message-files-in-a-netmap-inf-file.md)
 
  
 

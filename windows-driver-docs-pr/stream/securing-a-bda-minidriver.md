@@ -1,20 +1,19 @@
 ---
 title: 保护 BDA 微型驱动程序
 description: 保护 BDA 微型驱动程序
-ms.assetid: e3061a1b-ecba-48a6-9ff0-0176254c2933
 keywords:
-- 广播驱动程序体系结构 WDK AVStream 安全性
-- BDA WDK AVStream 安全性
+- 广播驱动程序体系结构 WDK AVStream，安全性
+- BDA WDK AVStream，安全性
 - 安全 WDK BDA
-- 蓝色的屏幕，WDK BDA
+- 蓝屏 WDK BDA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 818289ebb74d39aac3317b224a218f4ff6d9b0f4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b5e247af6faa8ff4cfd118b35886313fe295c072
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63360112"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96814855"
 ---
 # <a name="securing-a-bda-minidriver"></a>保护 BDA 微型驱动程序
 
@@ -22,11 +21,11 @@ ms.locfileid: "63360112"
 
 
 
-BDA 微型驱动程序应使用的安全考虑，以防止恶意代码引入到操作系统来实现。 此类恶意代码可能会导致问题，例如，导致蓝屏到操作系统的有害影响。 以下部分说明如何防止恶意代码引入到 BDA 微型驱动程序：
+应出于安全考虑，使用 BDA 微型驱动程序来防止恶意代码引入操作系统。 例如，此类恶意代码可能会导致出现有害的影响，导致操作系统出现蓝屏。 以下部分介绍如何防止恶意代码引入到 BDA 微型驱动程序：
 
-[引入了对 BDA 微型驱动程序的威胁](introducing-threats-to-a-bda-minidriver.md)
+[引入对 BDA 微型驱动程序的威胁](introducing-threats-to-a-bda-minidriver.md)
 
-[阻止 BDA 微型驱动程序的威胁](preventing-bda-minidriver-threats.md)
+[阻止 BDA 微型驱动程序威胁](preventing-bda-minidriver-threats.md)
 
  
 

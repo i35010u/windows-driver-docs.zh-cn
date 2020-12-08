@@ -1,7 +1,6 @@
 ---
 title: bugdump
 description: Bugdump 扩展会格式化并显示 bug 检查回调缓冲区中包含的信息。
-ms.assetid: cbea92de-e45b-416c-87f1-6faba95788d0
 keywords:
 - bugdump Windows 调试
 ms.date: 05/23/2017
@@ -12,12 +11,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 4e208df2962d6d502db6a2d8ab1e59426489d6a1
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 958db9562672694a4538ecdb83d8a98d725e7fb9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89209889"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96814129"
 ---
 # <a name="bugdump"></a>!bugdump
 
@@ -47,7 +46,7 @@ ms.locfileid: "89209889"
 <td align="left"><p>Kdextx86.dll</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>Windows XP 及更高版本</strong></p></td>
+<td align="left"><p><strong>Windows XP 及更高版本</strong></p></td>
 <td align="left"><p>Kdexts.dll</p></td>
 </tr>
 </tbody>
@@ -64,7 +63,7 @@ ms.locfileid: "89209889"
 
 此扩展只能在发生错误检查后，或在调试内核模式故障转储文件时使用。
 
-*组件*参数对应于[**KeRegisterBugCheckCallback**](/windows-hardware/drivers/ddi/wdm/nf-wdm-keregisterbugcheckcallback)中使用的最终参数。
+*组件* 参数对应于 [**KeRegisterBugCheckCallback**](/windows-hardware/drivers/ddi/wdm/nf-wdm-keregisterbugcheckcallback)中使用的最终参数。
 
 保存回调数据的缓冲区在小型内存转储中不可用。 这些缓冲区存在于内核内存转储和完整内存转储中。 但是，在 Windows XP SP1、Windows Server 2003 和更高版本的 Windows 中，在调用驱动程序的 **BugCheckCallback** 例程之前会创建转储文件，因此这些缓冲区将不包含这些例程写入的数据。
 

@@ -1,15 +1,14 @@
 ---
 title: 扫描仪存储的 WIA 项标志
 description: 扫描仪存储的 WIA 项标志
-ms.assetid: 493b7c4f-d36a-4447-92a3-34b42ef58397
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 306f0f8544e480af983527465037cdd218af467f
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 779371575f8952a87d36dfa77cbbe61b2278503a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89191681"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96815385"
 ---
 # <a name="wia-item-flags-for-scanner-storage"></a>扫描仪存储的 WIA 项标志
 
@@ -29,7 +28,7 @@ WIA 项是可以包含存储项的文件夹。 只有文件夹项需要此标志
 Wia 类别 (wia \_ 类别完成的文件项 \_ \_ 需要支持以下 wia 项目标志) ：
 
 <a href="" id="wiaitemtypefile"></a>**WiaItemTypeFile**  
-项包含可用于传输的数据。 **WiaItemTypeImage**标志还需要此标志。
+项包含可用于传输的数据。 **WiaItemTypeImage** 标志还需要此标志。
 
 <a href="" id="wiaitemtypetransfer"></a>**WiaItemTypeTransfer**  
 WIA 项可用于传输数据。 此标志是必需的，因为平板扫描仪项可用于传输数据。

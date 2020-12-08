@@ -1,15 +1,14 @@
 ---
 title: 验证后台事件
 description: 验证后台事件
-ms.assetid: c840f555-2e09-409d-9d4f-4d9e8bd8d5a5
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dd42cd0597bc6a6dfad4724da075ca34a736e4aa
-ms.sourcegitcommit: 7e4d9508198a30bdc1cb6eda83852dda4e42213e
+ms.openlocfilehash: 996d7a9d8b1688e1e8c24af4ae83086d0a6b38e2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89304280"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96815025"
 ---
 # <a name="verify-background-events"></a>验证后台事件
 

@@ -1,19 +1,18 @@
 ---
 title: SymChk
 description: SymChk
-ms.assetid: ba025aac-2a72-4150-9f29-0dc57b6483b7
 keywords:
 - SymChk
-- SymChk 概述
-- 符号 SymChk
+- SymChk，概述
+- 符号，SymChk
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ac43d666a4b1237fa454bfbc15ab8f544fc88bc2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c9cf7fe785260a775435fe3204081825139602d1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63368033"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96813935"
 ---
 # <a name="symchk"></a>SymChk
 
@@ -21,9 +20,9 @@ ms.locfileid: "63368033"
 ## <span id="ddk_symchk_dtoolq"></span><span id="DDK_SYMCHK_DTOOLQ"></span>
 
 
-SymChk （Microsoft 符号检查器工具）、 Symchk.exe，是一个程序，将符号文件，以验证正确的符号可用的可执行文件进行比较。
+SymChk (Microsoft 符号检查器工具) Symchk.exe，它是一种将可执行文件与符号文件进行比较以验证正确符号是否可用的程序。
 
-本部分包括：
+本节包括：
 
 [使用 SymChk](using-symchk.md)
 

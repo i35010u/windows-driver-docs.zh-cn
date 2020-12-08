@@ -1,17 +1,16 @@
 ---
 title: 停止设备以将其禁用 (Windows 98/Me)
 description: 停止设备以将其禁用 (Windows 98/Me)
-ms.assetid: 2fc42fe4-ad29-4a51-9560-74b568bcd129
 keywords:
 - 禁用 PnP 设备
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 94a4bb01c4ee338572cd60724a5c9a0b874c5ffd
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: 9aadf1cdebc88c5389329d0b2d66378161697569
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89402920"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96814291"
 ---
 # <a name="stopping-a-device-to-disable-it-windows-98me"></a>停止设备以将其禁用 (Windows 98/Me)
 

@@ -1,20 +1,19 @@
 ---
 title: 将驱动程序从 UMDF 1 移植到 UMDF 2
-description: 本主题介绍如何将用户模式驱动程序框架 (UMDF) 1 驱动程序移植到 UMDF 2。
-ms.assetid: 99D20B4C-17C4-42AC-B4D9-F5FD64E10723
+description: 本主题介绍如何将 User-Mode Driver Framework (UMDF) 1 驱动程序移植到 UMDF 2。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c8827afd665d3028d5af189f4e913888c7e57caa
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 1386c606fda41ec414c599f2566da32dca2fcb1f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89190487"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96814687"
 ---
 # <a name="porting-a-driver-from-umdf-1-to-umdf-2"></a>将驱动程序从 UMDF 1 移植到 UMDF 2
 
 
-本主题介绍如何将用户模式驱动程序框架 (UMDF) 1 驱动程序移植到 UMDF 2。 你可以从使用源/目录文件 (的 UMDF 1 驱动程序开始，而不是使用 Visual Studio 项目) ，也可以转换包含在 Visual Studio 项目中的 UMDF 1 驱动程序。 在 Visual Studio 中，结果将为 UMDF 2 驱动程序项目。 UMDF 2 驱动程序在适用于桌面版的 Windows 10 上运行， (家庭版、专业版、企业版和教育版) 以及 Windows 10 移动版。
+本主题介绍如何将 User-Mode Driver Framework (UMDF) 1 驱动程序移植到 UMDF 2。 你可以从使用源/目录文件 (的 UMDF 1 驱动程序开始，而不是使用 Visual Studio 项目) ，也可以转换包含在 Visual Studio 项目中的 UMDF 1 驱动程序。 在 Visual Studio 中，结果将为 UMDF 2 驱动程序项目。 UMDF 2 驱动程序在适用于桌面版的 Windows 10 上运行， (家庭版、专业版、企业版和教育版) 以及 Windows 10 移动版。
 
 回显驱动程序示例是已从 UMDF 1 移植到 UMDF 2 的驱动程序示例。
 
@@ -24,11 +23,11 @@ ms.locfileid: "89190487"
 ## <a name="getting-started"></a>入门
 
 
-首先，在 Visual Studio 中打开新的驱动程序项目。 选择 **Visual C++- &gt; Windows 驱动程序- &gt; &gt; 用户模式驱动程序 (UMDF 2) ** 模板。 Visual Studio 将打开一个部分填充的模板，其中包含驱动程序必须实现的回调函数的存根。 此新驱动程序项目将是 UMDF 2 驱动程序的基础。 使用 UMDF 2 回显示例作为你应介绍的代码类型的指南。
+首先，在 Visual Studio 中打开新的驱动程序项目。 选择 **Visual C++- &gt; Windows 驱动程序- &gt; &gt; 用户模式驱动程序 (UMDF 2)** 模板。 Visual Studio 将打开一个部分填充的模板，其中包含驱动程序必须实现的回调函数的存根。 此新驱动程序项目将是 UMDF 2 驱动程序的基础。 使用 UMDF 2 回显示例作为你应介绍的代码类型的指南。
 
 接下来，查看现有的 UMDF 1 驱动程序代码并确定对象映射。 UMDF 1 中的每个 COM 对象在 UMDF 2 中都有相应的 WDF 对象。 例如， **IWDFDevice** 接口映射到 WDF 设备对象，该对象由 WDFDEVICE 句柄表示。 UMDF 1 中几乎所有框架提供的接口方法在 UMDF 2 中都具有相应的方法。 例如， [**IWDFDevice：： GetDefaultIoQueue**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdevice-getdefaultioqueue) 映射到 [**WdfDeviceGetDefaultQueue**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicegetdefaultqueue)。
 
-同样，驱动程序提供的回调函数在两个版本中具有等效项。 在 UMDF 1 中，驱动程序提供的接口的命名约定 (除了 **IDriverEntry**) 的 *情况*下是对象*回调*Xxx<strong>，而在 UMDF 2 中，驱动程序提供的例程的命名约定为 *.evt*ObjectXxx</strong>。 例如， [**IDriverEntry：： OnDeviceAdd**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-idriverentry-ondeviceadd) 回调方法映射到 [*EvtDriverDeviceAdd*](/windows-hardware/drivers/ddi/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)。
+同样，驱动程序提供的回调函数在两个版本中具有等效项。 在 UMDF 1 中，驱动程序提供的接口的命名约定 (除了 **IDriverEntry**) 的 *情况* 下是对象 *回调* Xxx <strong>，而在 UMDF 2 中，驱动程序提供的例程的命名约定为 *.evt* ObjectXxx</strong>。 例如， [**IDriverEntry：： OnDeviceAdd**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-idriverentry-ondeviceadd) 回调方法映射到 [*EvtDriverDeviceAdd*](/windows-hardware/drivers/ddi/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)。
 
 你的驱动程序在 UMDF 1 和2中都实现了回调函数，但驱动程序为其回调提供指针的方式不同。 在 UMDF 1 中，驱动程序将回调方法实现为驱动程序提供的接口的成员。 驱动程序在创建框架对象时向框架注册这些接口，例如通过调用 [**IWDFDriver：： CreateDevice**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdriver-createdevice)。
 

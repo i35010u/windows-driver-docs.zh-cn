@@ -1,7 +1,6 @@
 ---
 title: 可配置性
 description: 本主题 discuses 可用于 NFC 客户端驱动程序的扩展点，使客户端驱动程序可以配置其多个操作的参数。
-ms.assetid: 29C6C96E-9F20-4750-ABDD-103871B405FA
 keywords:
 - NFC
 - 近场通信
@@ -10,12 +9,12 @@ keywords:
 - NFP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5eaa650eec7e0862cea425b5f6dbb8d9ce008848
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: c509ac07252e2abe3388f590ac8251574824fa21
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89382843"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96813605"
 ---
 # <a name="configurability"></a>可配置性
 

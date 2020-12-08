@@ -1,7 +1,6 @@
 ---
 title: 初始化序列
 description: 下图说明了在初始化期间 NFC CX 和 NFCC 交换的一组高级 NCI 包。
-ms.assetid: 4977E1D4-2546-4573-B555-FA87DB8A2168
 keywords:
 - NFC
 - 近场通信
@@ -10,12 +9,12 @@ keywords:
 - NFP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 353d076bb49889c40660a3232056286762539f5f
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 63b8ec86809265296b507d3e5c222e18c7d78d83
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89382559"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96813575"
 ---
 # <a name="initialization-sequence"></a>初始化序列
 

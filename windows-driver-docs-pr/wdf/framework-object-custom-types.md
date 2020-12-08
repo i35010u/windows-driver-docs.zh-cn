@@ -1,15 +1,14 @@
 ---
 title: 框架对象自定义类型
 description: 框架对象自定义类型
-ms.assetid: E00393ED-7285-4354-9E1B-D9ABDB7DC9F2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7fa124c6818a48cb75916be329549edb4aec6072
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: dbed9508c13ba967cb507d7ff5aa74afd8a13619
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89190849"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96814785"
 ---
 # <a name="framework-object-custom-types"></a>框架对象自定义类型
 

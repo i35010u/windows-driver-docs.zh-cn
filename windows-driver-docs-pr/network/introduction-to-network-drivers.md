@@ -1,17 +1,16 @@
 ---
 title: 网络驱动程序简介主题
 description: 网络驱动程序简介
-ms.assetid: a3160487-666b-470d-a551-d04b0723d0e7
 keywords:
 - 网络驱动程序 WDK，关于网络驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f2dcd95c8aa3ed9b4f19b25b714e24395f718a10
-ms.sourcegitcommit: 29c2e6dd8a3de3c11822d990adf1edd774f8a136
+ms.openlocfilehash: 64ad5a577f23a7248e2a6028e04b6c736057fc76
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91229999"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96814133"
 ---
 # <a name="introduction-to-network-drivers-topics"></a>网络驱动程序简介主题
 

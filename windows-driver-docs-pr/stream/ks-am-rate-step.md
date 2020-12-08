@@ -1,7 +1,6 @@
 ---
 title: KS \_ AM \_ 速率 \_ 步骤
 description: KS \_ AM \_ RATE \_ 步骤属性尚未实现。
-ms.assetid: fc3e3369-335b-4403-876f-c55d4616e290
 keywords:
 - KS_AM_RATE_Step 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2754aa294aa13d776c1380fe34152d74904b9dcd
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 77b1346c10df1c91b0c2a9eeac2f0b53a3789b17
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103316"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96814889"
 ---
 # <a name="ks_am_rate_step"></a>KS \_ AM \_ 速率 \_ 步骤
 

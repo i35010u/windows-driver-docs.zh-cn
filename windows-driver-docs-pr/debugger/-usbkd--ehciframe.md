@@ -1,9 +1,8 @@
 ---
-title: usbkd _ehciframe
-description: _Ehciframe usbkd 命令显示一个 EHCI 小型端口 FrameListBaseAddress 定期列表条目链，并按帧号进行索引。
-ms.assetid: 6359FC98-F070-410E-AFE7-C2C67A4F7C98
+title: usbkd._ehciframe
+description: Usbkd._ehciframe 命令显示通过帧号索引的 EHCI 小型端口 FrameListBaseAddress 定期列表条目链。
 keywords:
-- usbkd _ehciframe Windows 调试
+- usbkd._ehciframe Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: df97fb241d2a163595ab1981dff08b640cb4dd3c
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 9a7402fb6525d2238bf073250aa1fae7bd36ce16
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89207685"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96814657"
 ---
 # <a name="usbkd_ehciframe"></a>！ usbkd。 \_ehciframe
 
 
-**！ Usbkd。 \_ehciframe**命令显示以帧号为索引的 EHCI 小型端口 FrameListBaseAddress 定期列表条目链。
+**！ Usbkd。 \_ehciframe** 命令显示以帧号为索引的 EHCI 小型端口 FrameListBaseAddress 定期列表条目链。
 
 ```dbgcmd
 !usbkd._ehciframe StructAddr, FrameNumber

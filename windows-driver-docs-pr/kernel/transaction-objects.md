@@ -1,7 +1,6 @@
 ---
 title: 事务对象
 description: 事务对象
-ms.assetid: 124105bd-70be-49b1-8ea4-af6ba1f3cf16
 keywords:
 - 事务 WDK KTM，对象
 - 事务 WDK KTM
@@ -11,12 +10,12 @@ keywords:
 - 事务对象 WDK KTM
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dab559a79173e6f7b9ac2a9cdaabfd048ee9fb6b
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: ae4155137559dfe88eed00c073c4ae9433f15469
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89189773"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96814259"
 ---
 # <a name="transaction-objects"></a>事务对象
 

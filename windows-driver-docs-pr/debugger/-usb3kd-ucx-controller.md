@@ -1,9 +1,8 @@
 ---
-title: usb3kd ucx_controller
-description: Ucx_controller usb3kd 命令显示有关 USB 3.0 主机控制器的信息。 该显示基于 UcxVersion.sys 维护的数据结构。
-ms.assetid: A2768E47-C8D7-4A01-80AC-98FB5AAA17BD
+title: usb3kd.ucx_controller
+description: Usb3kd.ucx_controller 命令显示有关 USB 3.0 主机控制器的信息。 该显示基于 UcxVersion.sys 维护的数据结构。
 keywords:
-- usb3kd ucx_controller Windows 调试
+- usb3kd.ucx_controller Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 8addc5a0b15f545b24a8ca035fee47116af5681a
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: ec2eedc7051921c7a8d8f0420f5cffa89c401ce4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89206599"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96814053"
 ---
 # <a name="usb3kducx_controller"></a>！ usb3kd ucx \_ 控制器
 
 
-[**！ Usb3kd. ucx \_ 控制器**](-usb3kd-device-info.md)命令显示有关 USB 3.0 主机控制器的信息。 此显示基于 USB 主机控制器扩展驱动程序所维护的数据结构，* (Ucx .sys) 。*
+[**！ Usb3kd. ucx \_ 控制器**](-usb3kd-device-info.md)命令显示有关 USB 3.0 主机控制器的信息。 此显示基于 USB 主机控制器扩展驱动程序所维护的数据结构，*(Ucx .sys) 。*
 
 ```dbgcmd
 !usb3kd.ucx_controller UcxControllerPrivContext
@@ -42,7 +41,7 @@ Usb3kd.dll
 <a name="remarks"></a>备注
 -------
 
-USB 主机控制器扩展驱动程序 (Ucx*版本*.sys) 提供 usb 3.0 集线器驱动程序与 usb 3.0 主机控制器驱动程序之间的抽象层。 扩展驱动程序具有其自己的主机控制器、设备和终结点的表示形式。 输出 [**！ ucx \_ 控制器**](-usb3kd-device-info.md) 命令基于扩展驱动程序所维护的数据结构。 有关 USB 主机控制器扩展驱动程序和 USB 3.0 主机控制器驱动程序的详细信息，请参阅 [Usb 驱动程序堆栈体系结构](/windows-hardware/drivers/ddi/index)。
+USB 主机控制器扩展驱动程序 (Ucx *版本*.sys) 提供 usb 3.0 集线器驱动程序与 usb 3.0 主机控制器驱动程序之间的抽象层。 扩展驱动程序具有其自己的主机控制器、设备和终结点的表示形式。 输出 [**！ ucx \_ 控制器**](-usb3kd-device-info.md) 命令基于扩展驱动程序所维护的数据结构。 有关 USB 主机控制器扩展驱动程序和 USB 3.0 主机控制器驱动程序的详细信息，请参阅 [Usb 驱动程序堆栈体系结构](/windows-hardware/drivers/ddi/index)。
 
 <a name="examples"></a>示例
 --------

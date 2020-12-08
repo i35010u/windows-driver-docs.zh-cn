@@ -1,7 +1,6 @@
 ---
 title: 'ReadReqs 规则 (kmdf) '
 description: ReadReqs 规则指定读取请求不会传递到不适当的 KMDF 方法。
-ms.assetid: 96ab967b-976a-456b-b155-08732dd6700a
 ms.date: 05/21/2018
 keywords:
 - 'ReadReqs 规则 (kmdf) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 78966215f257dacb87dcae1643f92308b5dd616e
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: a589f0ed10948a55551d14a74bab41fc33d1d500
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103616"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96815479"
 ---
 # <a name="readreqs-rule-kmdf"></a>ReadReqs 规则 (kmdf) 
 
 
-**ReadReqs**规则指定读取请求不会传递到不适当的 KMDF 方法。
+**ReadReqs** 规则指定读取请求不会传递到不适当的 KMDF 方法。
 
 在 EvtIoRead 回调中提供给驱动程序的所有请求都保证为读取请求。 无法将这些读取请求发送到以下 DDIs：
 

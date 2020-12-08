@@ -1,15 +1,14 @@
 ---
 title: 调试旧版 Windows
 description: 了解如何调试以前版本的 Windows。 请参阅主题，了解如何调试不同的 Windows 版本并查看其他可用的信息。
-ms.assetid: 4751D53D-A7CD-4645-B6E9-A8E06ABF4C6D
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a20ff6d8a7ac111b2caad75d38110c18fdfe1041
-ms.sourcegitcommit: 2aedb606f9f14e74687f0d3da60e14fc6ffffa7e
+ms.openlocfilehash: 258c043d9ad9525ea935fca929ab41d5e7ce08c4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91544386"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96813983"
 ---
 # <a name="debugging-previous-versions-of-windows"></a>调试旧版 Windows
 

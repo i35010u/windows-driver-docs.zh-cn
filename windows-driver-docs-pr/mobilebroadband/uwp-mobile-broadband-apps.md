@@ -1,15 +1,14 @@
 ---
 title: UWP 移动宽带应用概述
 description: UWP 移动宽带应用概述
-ms.assetid: bb02397b-0da5-4e09-be1c-8812abec6fd5
 ms.date: 07/05/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 14884d4d2910403d5b8edb836a944e0e044eb298
-ms.sourcegitcommit: 74a8dc9ef1da03857dec5cab8d304e2869ba54a7
+ms.openlocfilehash: 6cd06dde18f10f5fa19fbdf67da6ce6b441835b2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90759784"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96815035"
 ---
 # <a name="uwp-mobile-broadband-apps-overview"></a>UWP 移动宽带应用概述
 

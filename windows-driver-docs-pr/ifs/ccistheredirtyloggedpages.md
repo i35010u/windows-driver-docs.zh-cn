@@ -1,7 +1,6 @@
 ---
 title: CcIsThereDirtyLoggedPages 例程
 description: CcIsThereDirtyLoggedPages 例程确定卷是否包含系统缓存中有脏日志数据的任何文件。
-ms.assetid: B8FDD817-87E6-4D82-B668-7F1078041281
 keywords:
 - CcIsThereDirtyLoggedPages 例程可安装文件系统驱动程序
 topic_type:
@@ -14,36 +13,36 @@ api_type:
 - DllExport
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e33ba50c3825797a6439d74400603a5de7312abd
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 78baef8b8538c52f47ce933bbdda935bd667eeb0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89065366"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96814456"
 ---
 # <a name="ccistheredirtyloggedpages-routine"></a>CcIsThereDirtyLoggedPages 例程
 
 
-**CcIsThereDirtyLoggedPages**例程确定卷是否包含系统缓存中有脏日志数据的任何文件。
+**CcIsThereDirtyLoggedPages** 例程确定卷是否包含系统缓存中有脏日志数据的任何文件。
 
 <a name="syntax"></a>语法
 ------
 
 ```ManagedCPlusPlus
 BOOLEAN CcIsThereDirtyLoggedPages(
-  _In_     PDEVICE_OBJECT DeviceObject,
-  _In_opt_ PULONG         NumberOfDirtyPages
+  _In_     PDEVICE_OBJECT DeviceObject,
+  _In_opt_ PULONG         NumberOfDirtyPages
 );
 ```
 
-<a name="parameters"></a>parameters
+<a name="parameters"></a>参数
 ----------
 
 *DeviceObject* \[中\]  
 指向与要检查的卷关联的设备对象的指针。
 
 *NumberOfDirtyPages* \[in，可选\]  
-指向 **ULONG** 缓冲区的可选指针，该缓冲区接收与 *DeviceObject*关联的卷上的脏日志页数。
+指向 **ULONG** 缓冲区的可选指针，该缓冲区接收与 *DeviceObject* 关联的卷上的脏日志页数。
 
 <a name="return-value"></a>返回值
 ------------
@@ -93,7 +92,7 @@ BOOLEAN CcIsThereDirtyLoggedPages(
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**CcFlushCache**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ccflushcache)

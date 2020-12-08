@@ -1,15 +1,14 @@
 ---
 title: Windows 10 中的网络内核调试支持的以太网 NIC
 description: 了解当目标计算机运行 Windows 10 时通过以太网网络电缆进行内核调试。
-ms.assetid: F98A7ACE-DD04-423C-A438-89E21363C693
 ms.date: 06/12/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 89068f34a310f8e69edcffcb9a55e59df9fd456d
-ms.sourcegitcommit: 372464be981a39781c71049126f36891cb5d0cad
+ms.openlocfilehash: 772280545e375fb93f1d636cd687f3be0171c21c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91646037"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96813967"
 ---
 # <a name="supported-ethernet-nics-for-network-kernel-debugging-in-windows-10"></a>Windows 10 中的网络内核调试支持的以太网 NIC
 
@@ -42,7 +41,7 @@ ms.locfileid: "91646037"
 
 [Windows 10 版本 1703 中的网络内核调试支持的以太网 NIC](supported-ethernet-nics-for-network-kernel-debugging-in-windows-10-1703.md)
 
-**使用 VerifiedNicList.xml确定 NIC 支持 **  
+**使用 VerifiedNicList.xml确定 NIC 支持**  
 
 若要确定适用于任何特定版本的 Windows 的 Nic 集，请检查 `VerifiedNicList.xml` 由该特定版本的 windows 附带的 WDK 安装的 "调试器" 目录中的文件。 对于64位 Windows，默认情况下，它将安装在此目录中：
 
@@ -59,7 +58,7 @@ ms.locfileid: "91646037"
 - 选择并按住 (或右键单击 "网络适配器" 节点) ，然后选择 " **属性**"。
 - 在 " **详细信息** " 选项卡的 " **属性**" 下，选择 " **硬件 id**"。
 
-供应商和设备 Id 显示为即使 \_ *VENDORID*和 DEV \_ *DeviceID*。 例如，如果你看到 PCI \\ 即使 \_ 8086&DEV \_ 104B，则供应商 id 为8086，设备 id 为104B。
+供应商和设备 Id 显示为即使 \_ *VENDORID* 和 DEV \_ *DeviceID*。 例如，如果你看到 PCI \\ 即使 \_ 8086&DEV \_ 104B，则供应商 id 为8086，设备 id 为104B。
 
 ### <a name="vendor-id-8086-intel-corporation"></a>供应商 ID 8086，Intel Corporation
 

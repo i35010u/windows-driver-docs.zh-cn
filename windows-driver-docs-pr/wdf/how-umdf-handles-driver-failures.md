@@ -1,25 +1,24 @@
 ---
 title: UMDF 如何处理驱动程序故障
-description: 本主题介绍在 UMDF 驱动程序失败时，用户模式驱动程序框架 (UMDF) 和操作系统采取的操作。 它适用于 UMDF 版本1和2。
-ms.assetid: 1811f131-6a51-4e53-bc8d-da511619f6fd
+description: 本主题介绍在 UMDF 驱动程序出现故障时，User-Mode Driver Framework (UMDF) 和操作系统执行的操作。 它适用于 UMDF 版本1和2。
 keywords:
-- 用户模式驱动程序框架 WDK，驱动程序故障
+- User-Mode Driver Framework WDK，驱动程序故障
 - UMDF WDK，驱动程序故障
 - 用户模式驱动程序 WDK UMDF，驱动程序故障
 - 失败的驱动程序 WDK UMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5094cd861d5778116171bfd1e1fbd20db6ad9e7f
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 6ae1eb2c8ad6c879fd0ea2087cfd9c7352bfb286
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90714856"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96814719"
 ---
 # <a name="how-umdf-handles-driver-failures"></a>UMDF 如何处理驱动程序故障
 
 
-本主题介绍在 UMDF 驱动程序失败时，用户模式驱动程序框架 (UMDF) 和操作系统采取的操作。 它适用于 UMDF 版本1和2。
+本主题介绍在 UMDF 驱动程序出现故障时，User-Mode Driver Framework (UMDF) 和操作系统执行的操作。 它适用于 UMDF 版本1和2。
 
 以下事件按显示的顺序发生：
 
@@ -29,7 +28,7 @@ ms.locfileid: "90714856"
     -   反射器完成未完成的 i/o，状态 \_ 驱动程序 \_ 进程 \_ 终止错误代码。
     -   Microsoft Win32 应用程序 \_ \_ \_ 为未完成的 I/o 接收错误驱动程序进程终止错误代码。
 
-    **注意**   在 Microsoft Windows XP 上运行的反射器完成了具有状态 \_ 驱动程序内部错误的未完成 i/o \_ \_ ，而 Win32 应用程序又接收 \_ 未完成 I/o 的错误 IO \_ 设备错误代码。 因此，在 Windows XP 上运行的应用程序不应使用错误 \_ IO \_ 设备检测驱动程序故障，因为它们不能确定从典型 i/o 请求返回的状态的任何差异 (例如，通过调用 Win32 [**DeviceIoControl**](/windows/win32/api/ioapiset/nf-ioapiset-deviceiocontrol) 函数返回的状态) 。
+    **注意**   在 Microsoft Windows XP 上运行的反射器完成了具有状态 \_ 驱动程序内部错误的未完成 i/o \_ \_ ，而 Win32 应用程序又接收 \_ 未完成 I/o 的错误 IO \_ 设备错误代码。 因此，在 Windows XP 上运行的应用程序不应使用错误 \_ IO \_ 设备检测驱动程序故障，因为它们不能确定从典型 i/o 请求返回的状态的任何差异 (例如，通过调用 Win32 [**DeviceIoControl**](/windows/win32/api/ioapiset/nf-ioapiset-deviceiocontrol) 函数返回的状态) 。
 
      
 
@@ -47,7 +46,7 @@ ms.locfileid: "90714856"
 
 -   操作系统将内核驱动程序卸载到设备堆栈中。
 
-    **注意**   在旧堆栈的所有句柄都关闭之前，操作系统将不会关闭并重新启动设备堆栈。 应用程序将检测设备故障以及设备 (DBT REMOVEDEVICEPENDING) 的意外删除通知 \_ 。 但是，如果旧堆栈的任何句柄保持打开状态，则不会重新启动设备。
+    **注意**   在旧堆栈的所有句柄都关闭之前，操作系统将不会关闭并重新启动设备堆栈。 应用程序将检测设备故障以及设备 (DBT REMOVEDEVICEPENDING) 的意外删除通知 \_ 。 但是，如果旧堆栈的任何句柄保持打开状态，则不会重新启动设备。
 
      
 

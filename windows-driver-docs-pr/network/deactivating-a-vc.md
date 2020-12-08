@@ -1,18 +1,17 @@
 ---
 title: 停用 VC
 description: 停用 VC
-ms.assetid: 094e339c-b5a7-4894-9a3d-145231311647
 keywords:
 - 虚拟连接 WDK CoNDIS，停用
 - 停用虚拟连接
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0b33ca35d6e4b67d567096821398c11d52b9c54e
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 212c6e9cb46584daca99c3b7adf131394a760707
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89211123"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96814989"
 ---
 # <a name="deactivating-a-vc"></a>停用 VC
 

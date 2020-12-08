@@ -1,7 +1,6 @@
 ---
 title: 初始化自旋锁
 description: 初始化自旋锁
-ms.assetid: 7ed27e43-4406-4e64-b2c9-42b8a883efdb
 keywords:
 - 初始化自旋锁
 - 旋转锁定 WDK 内核
@@ -11,12 +10,12 @@ keywords:
 - 排队自旋锁 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0377d6f36e73b743ba3e3f83923c18b5f47c0f7e
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 6cf35092bd1b13f9591bbad4243ab6b09e00a697
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89185795"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96815279"
 ---
 # <a name="initializing-spin-locks"></a>初始化自旋锁
 

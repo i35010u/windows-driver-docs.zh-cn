@@ -1,15 +1,14 @@
 ---
 title: 安装 Windows 已检验版本
 description: 安装 Windows 已检验版本
-ms.assetid: 88bbd0a2-2b72-4000-87ba-cbdafeb4c609
 ms.date: 05/08/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: d4f51b149e44cc06da636783477bf9c926ea8a91
-ms.sourcegitcommit: 076f9cd83313f6d8ab5688340f05bde7e8fbb8ee
+ms.openlocfilehash: a5ac71b5d2dc8cd7deed8b3de0350e24142545bc
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/09/2020
-ms.locfileid: "82999048"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96813881"
 ---
 # <a name="installing-the-checked-build-of-windows"></a>安装 Windows 已检验版本
 

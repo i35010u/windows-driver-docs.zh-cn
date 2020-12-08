@@ -2,7 +2,6 @@
 title: NFC 术语表
 description: 本主题提供了 (CX) 术语的 NFC 类扩展术语表。
 Robots: noindex, nofollow
-ms.assetid: F8674D9B-AD43-452A-A146-473ABE65A298
 keywords:
 - NFC
 - 近场通信
@@ -11,12 +10,12 @@ keywords:
 - NFP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fd150be898994ff2528699f0ce3401ea8d233b9f
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 3f8d41dc8336a36723081808e50b751f59ceb450
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89384819"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96813571"
 ---
 # <a name="nfc-glossary"></a>NFC 术语表
 

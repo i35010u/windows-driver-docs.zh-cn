@@ -1,7 +1,6 @@
 ---
 title: 硬件资源的框架对象
 description: 硬件资源的框架对象
-ms.assetid: 64eb628f-ce3d-494b-9fc1-7179a722c5f2
 keywords:
 - 硬件资源 WDK KMDF，框架对象
 - framework 对象 WDK KMDF，硬件资源
@@ -14,12 +13,12 @@ keywords:
 - 硬件资源 WDK KMDF，指定
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ad40f4c93759908efdc5d41c3e71c1b2d2f18dd6
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 9976ad235193fe1d3776a86a0a131e8ef57fb9c3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89186732"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96814769"
 ---
 # <a name="framework-objects-for-hardware-resources"></a>硬件资源的框架对象
 

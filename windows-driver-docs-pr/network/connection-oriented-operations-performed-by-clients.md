@@ -1,18 +1,17 @@
 ---
 title: 客户端执行的面向连接的操作
 description: 客户端执行的面向连接的操作
-ms.assetid: 342f534e-d203-4823-a4d8-a8a51b7ff0bd
 keywords:
 - 面向连接的客户端 WDK
 - 客户端操作 WDK CoNDIS
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d5df88bfbfbd968d7efd8807f88bd5f656fed58e
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 0d5c33fad54bfd448c1cae0bd78174f70968aed5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89207989"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96813717"
 ---
 # <a name="connection-oriented-operations-performed-by-clients"></a>客户端执行的面向连接的操作
 

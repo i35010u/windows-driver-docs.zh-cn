@@ -1,7 +1,6 @@
 ---
 title: 'StorPortBuildIo 规则 (storport) '
 description: 此规则验证如果 StorPort 微型端口的 StorPortBuildIo 例程返回 FALSE，则不会将相关 SRB 传递到 StartIo。
-ms.assetid: C35954F9-9C59-408B-BF80-2B8DCD328F9C
 ms.date: 05/21/2018
 keywords:
 - 'StorPortBuildIo 规则 (storport) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: e2fef0dacf8e08b71e742271defb348869a50f3d
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 27e564c6fce9b2e3f6d44936932413fbb8a9fa01
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107044"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96813829"
 ---
 # <a name="storportbuildio-rule-storport"></a>StorPortBuildIo 规则 (storport) 
 
 
-此规则验证如果 StorPort 微型端口的 **StorPortBuildIo** 例程返回 **FALSE**，则不会将相关 SRB 传递到 **StartIo**。  (在这种情况下，微型端口驱动程序必须通过**StorPortBuildIo**或其他) 的通知类型**RequestComplete**调用[**StorPortNotification**](/windows-hardware/drivers/ddi/storport/nf-storport-storportnotification)来完成 SRB。
+此规则验证如果 StorPort 微型端口的 **StorPortBuildIo** 例程返回 **FALSE**，则不会将相关 SRB 传递到 **StartIo**。  (在这种情况下，微型端口驱动程序必须通过 **StorPortBuildIo** 或其他) 的通知类型 **RequestComplete** 调用 [**StorPortNotification**](/windows-hardware/drivers/ddi/storport/nf-storport-storportnotification)来完成 SRB。
 
 > [!NOTE]
 > 此规则测试 StorPort 的正确操作，而不是微型端口的正确操作。

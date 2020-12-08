@@ -1,19 +1,18 @@
 ---
 title: 框架对象层次结构
 description: 框架对象层次结构
-ms.assetid: ffacca8f-4083-4998-83d2-7c31544eb497
 keywords:
 - UMDF 对象 WDK，层次结构
 - 框架对象 WDK UMDF、层次结构
 - 层次结构 WDK UMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: af9c05c5be711e98a7dc9ae7b333b2251013c766
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 0b34943eb877a6c5680636e79bd7ae75b83d1443
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89188717"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96814781"
 ---
 # <a name="framework-object-hierarchy"></a>框架对象层次结构
 

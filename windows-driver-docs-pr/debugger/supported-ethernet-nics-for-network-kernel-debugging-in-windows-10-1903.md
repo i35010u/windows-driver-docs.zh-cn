@@ -1,15 +1,14 @@
 ---
 title: Windows 10 版本1903中的网络内核调试支持的以太网 Nic (19H1) 版本18362
 description: 了解当目标计算机运行的是 Windows 10 版本1903时，通过以太网网络电缆进行内核调试。
-ms.assetid: 7527D9CB-7F6C-4E3E-A3FE-A57C2F0D9524
 ms.date: 06/18/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 81bf43eda3bb76119df4c6832ef0164c996eb4de
-ms.sourcegitcommit: 372464be981a39781c71049126f36891cb5d0cad
+ms.openlocfilehash: 68d1904aafb98ab566f2c455f45299fb2f9b4cad
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91646071"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96813969"
 ---
 # <a name="supported-ethernet-nics-for-network-kernel-debugging-in-windows-10-version-1903-19h1-build-18362"></a>Windows 10 版本1903中的网络内核调试支持的以太网 Nic (19H1) 版本18362
 

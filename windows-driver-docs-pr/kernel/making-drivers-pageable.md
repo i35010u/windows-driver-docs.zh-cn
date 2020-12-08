@@ -1,7 +1,6 @@
 ---
 title: 使驱动程序可分页
 description: 使驱动程序可分页
-ms.assetid: 0b3c1e00-2416-4534-9934-bb05f91c7482
 keywords:
 - 内存管理 WDK 内核，可分页驱动程序
 - 可分页驱动程序 WDK 内核
@@ -9,12 +8,12 @@ keywords:
 - 页面外的驱动程序 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5e67273ee76958a59df0c45c341a6e2afb7290a4
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: af4861a5d91fc1d5541ea60fa04418947d10aefd
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89403336"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96815065"
 ---
 # <a name="making-drivers-pageable"></a>使驱动程序可分页
 

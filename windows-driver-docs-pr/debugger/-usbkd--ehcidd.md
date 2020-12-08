@@ -1,9 +1,8 @@
 ---
-title: usbkd _ehcidd
-description: _Ehcidd usbkd 命令显示 usbehci _DEVICE_DATA 结构中的信息。
-ms.assetid: 8D594564-6506-44A8-A109-A76DA5AE7D89
+title: usbkd._ehcidd
+description: Usbkd._ehcidd 命令显示 usbehci _DEVICE_DATA 结构中的信息。
 keywords:
-- usbkd _ehcidd Windows 调试
+- usbkd._ehcidd Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 4249943606ff40e29ec5c0d21f28b84b3279e364
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: ea14ef5a17db3831131f8ed099af61feb2642c65
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89216258"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96814665"
 ---
 # <a name="usbkd_ehcidd"></a>！ usbkd。 \_ehcidd
 
 
-**！ Usbkd。 \_ehcidd**命令显示 usbehci 中的信息 **！ \_设备 \_ 数据**结构。
+**！ Usbkd。 \_ehcidd** 命令显示 usbehci 中的信息 **！ \_设备 \_ 数据** 结构。
 
 ```dbgcmd
 !usbkd._ehcidd StructAddr
@@ -61,7 +60,7 @@ MINIPORT List @ fffff80001e5bbd0
     ...
 ```
 
-在上面的输出中， `ffffe0000781bda0` 是** \_ 设备 \_ 数据**结构的地址。
+在上面的输出中， `ffffe0000781bda0` 是 **\_ 设备 \_ 数据** 结构的地址。
 
 现在，将结构地址传递给 **！ \_ehcidd**
 

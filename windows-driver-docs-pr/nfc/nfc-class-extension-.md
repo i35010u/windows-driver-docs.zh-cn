@@ -1,7 +1,6 @@
 ---
 title: NFC 类扩展
 description: 本部分介绍 NFC 类扩展 (CX) 和 NFC 客户端驱动程序之间的接口。
-ms.assetid: 64599C5E-7E72-4712-B733-24C078919B84
 keywords:
 - NFC
 - 近场通信
@@ -11,12 +10,12 @@ keywords:
 - CX
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b40bba382e4262cb394d6dbf7dd74727005e5e78
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 03124893baec2b8e7abf08525aa4983947fadf5c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89382509"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96813535"
 ---
 # <a name="nfc-class-extension-cx-design-guide"></a>NFC 类扩展 (CX) 设计指南
 
@@ -61,7 +60,7 @@ NFC 类扩展驱动程序实现了所有标准 NFC 论坛标记 (T1T、T2T、T3T
 
 
 
-## <a name="in-this-section"></a>本节内容
+## <a name="in-this-section"></a>在本节中
 
 
 -   [术语表](glossary.md)

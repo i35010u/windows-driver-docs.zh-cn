@@ -1,7 +1,6 @@
 ---
 title: Bug 检查 0x100 LOADER_BLOCK_MISMATCH
-description: LOADER_BLOCK_MISMATCH bug 检查具有 0x00000100 值。 这指示加载程序块是无效的或与系统为正在加载不匹配。
-ms.assetid: 4f025141-ab81-4acd-9114-a6701e1000d3
+description: LOADER_BLOCK_MISMATCH bug 检查的值为0x00000100。 这表示加载程序块无效，或与要加载的系统不匹配。
 keywords:
 - Bug 检查 0x100 LOADER_BLOCK_MISMATCH
 - LOADER_BLOCK_MISMATCH
@@ -13,23 +12,23 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: ee6d6e63c764fe584bee19963ff326b776c00d54
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: 2515cdcc3b39dafc360046ec96afea2bd96eda2c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67521893"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96814637"
 ---
-# <a name="bug-check-0x100-loaderblockmismatch"></a>Bug 检查 0x100：加载程序\_阻止\_不匹配
+# <a name="bug-check-0x100-loader_block_mismatch"></a>Bug 检查0x100：加载程序 \_ 块 \_ 不匹配
 
 
-加载程序\_阻止\_不匹配错误检查的值为 0x00000100。 这指示加载程序块是无效的或与系统为正在加载不匹配。
+加载程序 \_ 阻止 \_ 错误检查的值为0x00000100。 这表示加载程序块无效，或与要加载的系统不匹配。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题面向程序员。 如果您是在使用计算机时收到蓝屏错误代码的客户，请参阅[蓝屏错误疑难解答](https://www.windows.com/stopcode)。
 
 
-## <a name="loaderblockmismatch-parameters"></a>加载程序\_阻止\_不匹配参数
+## <a name="loader_block_mismatch-parameters"></a>加载器 \_ 块 \_ 参数不匹配
 
 
 <table>
@@ -50,15 +49,15 @@ ms.locfileid: "67521893"
 </tr>
 <tr class="even">
 <td align="left"><p>2</p></td>
-<td align="left"><p>加载程序黑色扩展的大小</p></td>
+<td align="left"><p>加载器黑色扩展的大小</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>3</p></td>
-<td align="left"><p>加载程序块的主要版本</p></td>
+<td align="left"><p>加载程序块的主版本</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>4</p></td>
-<td align="left"><p>加载程序块的次要版本</p></td>
+<td align="left"><p>加载程序块的次版本</p></td>
 </tr>
 </tbody>
 </table>

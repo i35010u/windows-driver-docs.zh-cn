@@ -1,15 +1,14 @@
 ---
 title: 版本
 description: 版本
-ms.assetid: 1a476586-bef9-41ec-8e8a-f4343361dc92
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cafd1b38786a8440c3c615e4f1fae2395051fd04
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: d972634aa0edd09c5a7b02e743881a6fe0c05b08
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89402784"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96815029"
 ---
 # <a name="version"></a>版本
 
@@ -47,7 +46,7 @@ Version 元素指定创建服务元数据包的应用程序软件的版本。
 <thead>
 <tr class="header">
 <th>元素</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>

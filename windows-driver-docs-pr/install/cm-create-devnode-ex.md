@@ -1,7 +1,6 @@
 ---
 title: CM_Create_DevNode_Ex
 description: CM_Create_DevNode_Ex
-ms.assetid: 8a005611-22a7-4f94-abcf-7f5965da7f31
 keywords:
 - CM_Create_DevNode_ExA
 - CM_Create_DevNode_ExW
@@ -15,13 +14,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 85cc1409841dd3b209174f8acbbbfd82886f2edb
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 61180822eea8e0312bc2445cd2809d5390ed18f1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63357867"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96814381"
 ---
-# <a name="cmcreatedevnodeex"></a>CM_Create_DevNode_Ex
+# <a name="cm_create_devnode_ex"></a>CM_Create_DevNode_Ex
 
 此函数保留供系统使用。

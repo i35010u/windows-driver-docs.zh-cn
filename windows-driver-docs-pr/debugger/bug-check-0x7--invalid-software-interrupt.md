@@ -1,7 +1,6 @@
 ---
 title: Bug 检查 0x7 INVALID_SOFTWARE_INTERRUPT
 description: INVALID_SOFTWARE_INTERRUPT bug 检查的值为0x00000007。此 bug 检查很少出现。
-ms.assetid: ceba1694-ed12-4e7a-85c9-9ad73a046bf3
 keywords:
 - Bug 检查 0x7 INVALID_SOFTWARE_INTERRUPT
 - INVALID_SOFTWARE_INTERRUPT
@@ -13,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 79c4f69e842aea0e930e863f6f4631a6d8cdd210
-ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
+ms.openlocfilehash: 8b4ef5a264096a7a16cd1309646b0036e87cf119
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84534806"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96814603"
 ---
 # <a name="bug-check-0x7-invalid_software_interrupt"></a>Bug 检查0x7： \_ 软件 \_ 中断无效
 
@@ -33,7 +32,7 @@ ms.locfileid: "84534806"
 
 
 > [!IMPORTANT]
-> 本主题适用于程序员。 如果你是在使用计算机时收到蓝屏错误代码的客户，请参阅[排查蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题面向程序员。 如果您是在使用计算机时收到蓝屏错误代码的客户，请参阅[蓝屏错误疑难解答](https://www.windows.com/stopcode)。
 
 
  

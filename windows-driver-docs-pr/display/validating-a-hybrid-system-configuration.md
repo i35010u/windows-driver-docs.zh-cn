@@ -1,15 +1,14 @@
 ---
 title: 验证混合系统配置
-ms.assetid: 9DB53DAB-0A3D-48A4-84C0-8D60F56B64E8
 description: 验证混合系统的过程的 decription。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2691dc4522ee9433f7c81be07e9d3b11bf13d0a1
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 46d9bb76a0b45203d85b33a72e5b6c1b5ab100e9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89067056"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96815425"
 ---
 # <a name="validating-a-hybrid-system-configuration"></a>验证混合系统配置
 

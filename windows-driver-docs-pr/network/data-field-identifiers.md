@@ -1,17 +1,16 @@
 ---
 title: 数据字段标识符
 description: 本部分介绍 Windows 筛选平台标注驱动程序的数据字段标识符。
-ms.assetid: 6e617ef4-807b-4564-8b95-b289edfee8d2
 keywords:
 - 数据字段标识符网络驱动程序
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 898b3270405eccb7ba72914bf9c8fa0a5b502139
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 9049d46c33aca52a4922856986615448986904d5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105796"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96815005"
 ---
 # <a name="data-field-identifiers"></a>数据字段标识符
 
@@ -159,8 +158,8 @@ FWPS_LAYER_STREAM_PACKET_V4</p>
 </td>
 <td>
 <p><a href="/windows-hardware/drivers/ddi/fwpsk/ne-fwpsk-fwps_fields_stream_packet_v4_"><b>FWPS_FIELDS_STREAM_PACKET_V4</b></a></p>
-<div class="alert"><b>注意</b>   在 windows 7 和更高版本的 Windows 中受支持。</div>
-<div> </div>
+<div class="alert"><b>注意</b>  在 windows 7 和更高版本的 Windows 中受支持。</div>
+<div> </div>
 </td>
 </tr>
 <tr>
@@ -170,8 +169,8 @@ FWPS_LAYER_STREAM_PACKET_V6</p>
 </td>
 <td>
 <p><a href="/windows-hardware/drivers/ddi/fwpsk/ne-fwpsk-fwps_fields_stream_packet_v6_"><b>FWPS_FIELDS_STREAM_PACKET_V6</b></a></p>
-<div class="alert"><b>注意</b>   在 windows 7 和更高版本的 Windows 中受支持。</div>
-<div> </div>
+<div class="alert"><b>注意</b>  在 windows 7 和更高版本的 Windows 中受支持。</div>
+<div> </div>
 </td>
 </tr>
 <tr>
@@ -235,8 +234,8 @@ FWPS_LAYER_ALE_RESOURCE_RELEASE_V4</p>
 </td>
 <td>
 <p><a href="/windows-hardware/drivers/ddi/fwpsk/ne-fwpsk-fwps_fields_ale_resource_release_v4_"><b> FWPS_FIELDS_ALE_RESOURCE_RELEASE_V4</b></a></p>
-<div class="alert"><b>注意</b>   在 windows 7 和更高版本的 Windows 中受支持。</div>
-<div> </div>
+<div class="alert"><b>注意</b>  在 windows 7 和更高版本的 Windows 中受支持。</div>
+<div> </div>
 </td>
 </tr>
 <tr>
@@ -246,8 +245,8 @@ FWPS_LAYER_ALE_RESOURCE_RELEASE_V6</p>
 </td>
 <td>
 <p><a href="/windows-hardware/drivers/ddi/fwpsk/ne-fwpsk-fwps_fields_ale_resource_release_v6_"><b> FWPS_FIELDS_ALE_RESOURCE_RELEASE_V6</b></a></p>
-<div class="alert"><b>注意</b>   在 windows 7 和更高版本的 Windows 中受支持。</div>
-<div> </div>
+<div class="alert"><b>注意</b>  在 windows 7 和更高版本的 Windows 中受支持。</div>
+<div> </div>
 </td>
 </tr>
 <tr>
@@ -257,8 +256,8 @@ FWPS_LAYER_ALE_ENDPOINT_CLOSURE_V4</p>
 </td>
 <td>
 <p><a href="/windows-hardware/drivers/ddi/fwpsk/ne-fwpsk-fwps_fields_ale_endpoint_closure_v4_"><b> FWPS_FIELDS_ALE_ENDPOINT_CLOSURE_V4</b></a></p>
-<div class="alert"><b>注意</b>   在 windows 7 和更高版本的 Windows 中受支持。</div>
-<div> </div>
+<div class="alert"><b>注意</b>  在 windows 7 和更高版本的 Windows 中受支持。</div>
+<div> </div>
 </td>
 </tr>
 <tr>
@@ -268,8 +267,8 @@ FWPS_LAYER_ALE_ENDPOINT_CLOSURE_V6</p>
 </td>
 <td>
 <p><a href="/windows-hardware/drivers/ddi/fwpsk/ne-fwpsk-fwps_fields_ale_endpoint_closure_v6_"><b> FWPS_FIELDS_ALE_ENDPOINT_CLOSURE_V6</b></a></p>
-<div class="alert"><b>注意</b>   在 windows 7 和更高版本的 Windows 中受支持。</div>
-<div> </div>
+<div class="alert"><b>注意</b>  在 windows 7 和更高版本的 Windows 中受支持。</div>
+<div> </div>
 </td>
 </tr>
 <tr>
@@ -318,8 +317,8 @@ FWPS_LAYER_ALE_BIND_REDIRECT_V4</p>
 <dl>
 <dt><a href="/windows-hardware/drivers/ddi/fwpsk/ne-fwpsk-fwps_fields_ale_bind_redirect_v4_"><b> FWPS_FIELDS_ALE_BIND_REDIRECT_V4</b></a></dt> 
 <dt> FWPS_FIELDS_ALE_BIND_REDIRECT_V4 
-<div class="alert"><b>注意</b>   在 windows 7 和更高版本的 Windows 中受支持。</div>
-<div> </div>
+<div class="alert"><b>注意</b> 在 windows 7 和更高版本的 Windows 中受支持。</div>
+<div> </div>
 </dt>
 </dl>
 </p>
@@ -332,8 +331,8 @@ FWPS_LAYER_ALE_BIND_REDIRECT_V6</p>
 </td>
 <td>
 <p><a href="/windows-hardware/drivers/ddi/fwpsk/ne-fwpsk-fwps_fields_ale_bind_redirect_v6_"><b> FWPS_FIELDS_ALE_BIND_REDIRECT_V6</b></a></p>
-<div class="alert"><b>注意</b>   在 windows 7 和更高版本的 Windows 中受支持。</div>
-<div> </div>
+<div class="alert"><b>注意</b>  在 windows 7 和更高版本的 Windows 中受支持。</div>
+<div> </div>
 </td>
 </tr>
 <tr>
@@ -343,8 +342,8 @@ FWPS_LAYER_ALE_CONNECT_REDIRECT_V4</p>
 </td>
 <td>
 <p><a href="/windows-hardware/drivers/ddi/fwpsk/ne-fwpsk-fwps_fields_ale_connect_redirect_v4_"><b> FWPS_FIELDS_ALE_CONNECT_REDIRECT_V4</b></a></p>
-<div class="alert"><b>注意</b>   在 windows 7 和更高版本的 Windows 中受支持。</div>
-<div> </div>
+<div class="alert"><b>注意</b>  在 windows 7 和更高版本的 Windows 中受支持。</div>
+<div> </div>
 </td>
 </tr>
 <tr>
@@ -354,8 +353,8 @@ FWPS_LAYER_ALE_CONNECT_REDIRECT_V6</p>
 </td>
 <td>
 <p><a href="/windows-hardware/drivers/ddi/fwpsk/ne-fwpsk-fwps_fields_ale_connect_redirect_v6_"><b> FWPS_FIELDS_ALE_CONNECT_REDIRECT_V6</b></a></p>
-<div class="alert"><b>注意</b>   在 windows 7 和更高版本的 Windows 中受支持。</div>
-<div> </div>
+<div class="alert"><b>注意</b>  在 windows 7 和更高版本的 Windows 中受支持。</div>
+<div> </div>
 </td>
 </tr>
 <tr>
@@ -401,8 +400,8 @@ FWPS_LAYER_NAME_RESOLUTION_CACHE_V4</p>
 </td>
 <td>
 <p><a href="/windows-hardware/drivers/ddi/fwpsk/ne-fwpsk-fwps_fields_name_resolution_cache_v4_"><b> FWPS_FIELDS_NAME_RESOLUTION_CACHE_V4</b></a></p>
-<div class="alert"><b>注意</b>   在 windows 7 和更高版本的 Windows 中受支持。</div>
-<div> </div>
+<div class="alert"><b>注意</b>  在 windows 7 和更高版本的 Windows 中受支持。</div>
+<div> </div>
 </td>
 </tr>
 <tr>
@@ -412,8 +411,8 @@ FWPS_LAYER_NAME_RESOLUTION_CACHE_V6</p>
 </td>
 <td>
 <p><a href="/windows-hardware/drivers/ddi/fwpsk/ne-fwpsk-fwps_fields_name_resolution_cache_v6_"><b> FWPS_FIELDS_NAME_RESOLUTION_CACHE_V6</b></a></p>
-<div class="alert"><b>注意</b>   在 windows 7 和更高版本的 Windows 中受支持。</div>
-<div> </div>
+<div class="alert"><b>注意</b>  在 windows 7 和更高版本的 Windows 中受支持。</div>
+<div> </div>
 </td>
 </tr>
 <tr>
@@ -423,8 +422,8 @@ FWPS_LAYER_INBOUND_MAC_FRAME_ETHERNET</p>
 </td>
 <td>
 <p><a href="/windows-hardware/drivers/ddi/fwpsk/ne-fwpsk-fwps_fields_inbound_mac_frame_ethernet_"><b> FWPS_FIELDS_INBOUND_MAC_FRAME_ETHERNET</b></a></p>
-<div class="alert"><b>注意</b>   在 windows <i>8</i>和更高版本的 windows 中受支持。</div>
-<div> </div>
+<div class="alert"><b>注意</b>  在 windows <i>8</i> 和更高版本的 windows 中受支持。</div>
+<div> </div>
 </td>
 </tr>
 <tr>
@@ -434,8 +433,8 @@ FWPS_LAYER_OUTBOUND_MAC_FRAME_ETHERNET</p>
 </td>
 <td>
 <p><a href="/windows-hardware/drivers/ddi/fwpsk/ne-fwpsk-fwps_fields_outbound_mac_frame_ethernet_"><b> FWPS_FIELDS_OUTBOUND_MAC_FRAME_ETHERNET</b></a></p>
-<div class="alert"><b>注意</b>   在 windows <i>8</i>和更高版本的 windows 中受支持。</div>
-<div> </div>
+<div class="alert"><b>注意</b>  在 windows <i>8</i> 和更高版本的 windows 中受支持。</div>
+<div> </div>
 </td>
 </tr>
 <tr>
@@ -445,8 +444,8 @@ FWPM_LAYER_INBOUND_MAC_FRAME_NATIVE </p>
 </td>
 <td>
 <p><a href="/windows-hardware/drivers/ddi/fwpsk/ne-fwpsk-fwps_fields_inbound_mac_frame_native_"><b>FWPS_FIELDS_INBOUND_MAC_FRAME_NATIVE</b></a></p>
-<div class="alert"><b>注意</b>   在 windows <i>8</i>和更高版本的 windows 中受支持。</div>
-<div> </div>
+<div class="alert"><b>注意</b>  在 windows <i>8</i> 和更高版本的 windows 中受支持。</div>
+<div> </div>
 </td>
 </tr>
 <tr>
@@ -455,8 +454,8 @@ FWPM_LAYER_INBOUND_MAC_FRAME_NATIVE </p>
 </td>
 <td>
 <p><a href="/windows-hardware/drivers/ddi/fwpsk/ne-fwpsk-fwps_fields_outbound_mac_frame_native_"><b>FWPS_FIELDS_OUTBOUND_MAC_FRAME_NATIVE</b></a></p>
-<div class="alert"><b>注意</b>   在 windows <i>8</i>和更高版本的 windows 中受支持。</div>
-<div> </div>
+<div class="alert"><b>注意</b>  在 windows <i>8</i> 和更高版本的 windows 中受支持。</div>
+<div> </div>
 </td>
 </tr>
 <tr>
@@ -565,8 +564,8 @@ FWPS_LAYER_KM_AUTHORIZATION</p>
 </td>
 <td>
 <p><a href="/windows-hardware/drivers/ddi/fwpsk/ne-fwpsk-fwps_fields_km_authorization_"><b>FWPS_FIELDS_KM_AUTHORIZATION</b></a></p>
-<div class="alert"><b>注意</b>   在 windows 7 和更高版本的 Windows 中受支持。</div>
-<div> </div>
+<div class="alert"><b>注意</b>  在 windows 7 和更高版本的 Windows 中受支持。</div>
+<div> </div>
 </td>
 </tr>
 <tr>
@@ -575,8 +574,8 @@ FWPS_LAYER_KM_AUTHORIZATION</p>
 </td>
 <td>
 <p><a href="/windows-hardware/drivers/ddi/fwpsk/ne-fwpsk-fwps_fields_ingress_vswitch_ethernet_"><b>FWPS_FIELDS_INGRESS_VSWITCH_ETHERNET </b></a></p>
-<div class="alert"><b>注意</b>   在 windows <i>8</i>和更高版本的 windows 中受支持。</div>
-<div> </div>
+<div class="alert"><b>注意</b>  在 windows <i>8</i> 和更高版本的 windows 中受支持。</div>
+<div> </div>
 </td>
 </tr>
 <tr>
@@ -585,8 +584,8 @@ FWPS_LAYER_KM_AUTHORIZATION</p>
 </td>
 <td>
 <p><a href="/windows-hardware/drivers/ddi/fwpsk/ne-fwpsk-fwps_fields_egress_vswitch_ethernet_"><b>FWPS_FIELDS_EGRESS_VSWITCH_ETHERNET </b></a></p>
-<div class="alert"><b>注意</b>   在 windows <i>8</i>和更高版本的 windows 中受支持。</div>
-<div> </div>
+<div class="alert"><b>注意</b>  在 windows <i>8</i> 和更高版本的 windows 中受支持。</div>
+<div> </div>
 </td>
 </tr>
 <tr>
@@ -595,8 +594,8 @@ FWPS_LAYER_KM_AUTHORIZATION</p>
 </td>
 <td>
 <p><a href="/windows-hardware/drivers/ddi/fwpsk/ne-fwpsk-fwps_fields_ingress_vswitch_transport_v4_"><b>FWPS_FIELDS_INGRESS_VSWITCH_TRANSPORT_V4 </b></a></p>
-<div class="alert"><b>注意</b>   在 windows <i>8</i>和更高版本的 windows 中受支持。</div>
-<div> </div>
+<div class="alert"><b>注意</b>  在 windows <i>8</i> 和更高版本的 windows 中受支持。</div>
+<div> </div>
 </td>
 </tr>
 <tr>
@@ -605,8 +604,8 @@ FWPS_LAYER_KM_AUTHORIZATION</p>
 </td>
 <td>
 <p><a href="/windows-hardware/drivers/ddi/fwpsk/ne-fwpsk-fwps_fields_ingress_vswitch_transport_v6_"><b>FWPS_FIELDS_INGRESS_VSWITCH_TRANSPORT_V6 </b></a></p>
-<div class="alert"><b>注意</b>   在 windows <i>8</i>和更高版本的 windows 中受支持。</div>
-<div> </div>
+<div class="alert"><b>注意</b>  在 windows <i>8</i> 和更高版本的 windows 中受支持。</div>
+<div> </div>
 </td>
 </tr>
 <tr>
@@ -615,8 +614,8 @@ FWPS_LAYER_KM_AUTHORIZATION</p>
 </td>
 <td>
 <p><a href="/windows-hardware/drivers/ddi/fwpsk/ne-fwpsk-fwps_fields_egress_vswitch_transport_v4_"><b>FWPS_FIELDS_EGRESS_VSWITCH_TRANSPORT_V4 </b></a></p>
-<div class="alert"><b>注意</b>   在 windows <i>8</i>和更高版本的 windows 中受支持。</div>
-<div> </div>
+<div class="alert"><b>注意</b>  在 windows <i>8</i> 和更高版本的 windows 中受支持。</div>
+<div> </div>
 </td>
 </tr>
 <tr>
@@ -625,8 +624,8 @@ FWPS_LAYER_KM_AUTHORIZATION</p>
 </td>
 <td>
 <p><a href="/windows-hardware/drivers/ddi/fwpsk/ne-fwpsk-fwps_fields_egress_vswitch_transport_v6_"><b>FWPS_FIELDS_EGRESS_VSWITCH_TRANSPORT_V6 </b></a></p>
-<div class="alert"><b>注意</b>   在 windows <i>8</i>和更高版本的 windows 中受支持。</div>
-<div> </div>
+<div class="alert"><b>注意</b>  在 windows <i>8</i> 和更高版本的 windows 中受支持。</div>
+<div> </div>
 </td>
 </tr>
 </table>

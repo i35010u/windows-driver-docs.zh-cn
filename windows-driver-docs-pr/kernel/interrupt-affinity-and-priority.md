@@ -1,7 +1,6 @@
 ---
 title: 中断相关性
 description: 中断相关性
-ms.assetid: e36a52d0-3a94-4017-b4a1-0b41f737523c
 keywords:
 - 中断服务例程 WDK 内核，相关性
 - Isr WDK 内核，相关性
@@ -10,12 +9,12 @@ keywords:
 - 处理器关联 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 314a83b5f83efdf247b8774dd1c7799e299011d4
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: caa77c2f90ca3562d0b45476c3755e624f206d9d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89189349"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96815275"
 ---
 # <a name="interrupt-affinity"></a>中断相关性
 
@@ -24,14 +23,14 @@ ms.locfileid: "89189349"
 
 从 Windows Vista 开始，管理员可以使用注册表为中断设置关联策略。
 
-管理员可以在** \\ 中断管理 \\ 关联策略**注册表项下设置以下各项：
+管理员可以在 **\\ 中断管理 \\ 关联策略** 注册表项下设置以下各项：
 
 -   **DevicePolicy** 是一个 \_ 指定关联策略的 REG DWORD 值。 每个可能的设置对应于 [**IRQ \_ 设备 \_ 策略**](/windows-hardware/drivers/ddi/wdm/ne-wdm-_irq_device_policy) 值。
 
 
 -   **AssignmentSetOverride** 是 \_ 指定 [**KAFFINITY**](#about-kaffinity) 掩码的注册表二进制值。 如果 **DevicePolicy** 为 0X04 (**IrqPolicySpecifiedProcessors**) ，则此掩码指定要向其分配设备中断的一组处理器。
 
-下表列出了 [**IRQ \_ 设备 \_ 策略**](/windows-hardware/drivers/ddi/wdm/ne-wdm-_irq_device_policy) 值，以及 **DevicePolicy**的相应注册表设置。 有关每个值的含义的详细信息，请参阅 [**IRQ \_ 设备 \_ 策略**](/windows-hardware/drivers/ddi/wdm/ne-wdm-_irq_device_policy)。
+下表列出了 [**IRQ \_ 设备 \_ 策略**](/windows-hardware/drivers/ddi/wdm/ne-wdm-_irq_device_policy) 值，以及 **DevicePolicy** 的相应注册表设置。 有关每个值的含义的详细信息，请参阅 [**IRQ \_ 设备 \_ 策略**](/windows-hardware/drivers/ddi/wdm/ne-wdm-_irq_device_policy)。
 
 <table>
 <colgroup>
@@ -84,9 +83,9 @@ AddReg=add-registry-section
 HKR, "Interrupt Management\Affinity Policy", DevicePolicy, 0x00010001, 2
 ```
 
-系统在将 [**irp \_ MN \_ FILTER \_ 资源 \_ 需求**](./irp-mn-filter-resource-requirements.md) irp 发送到驱动程序时，使注册表设置对设备的驱动程序可用。 操作系统为**类型**成员设置为**CmResourceTypeInterrupt**的每个中断提供[**IO \_ 资源 \_ 说明符**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_resource_descriptor)结构。 对于消息发出信号中断， \_ \_ \_ 将设置 **标志** 成员的 CM 资源中断消息位; 否则，将会清除。 **U. 中断**成员描述中断的设置。
+系统在将 [**irp \_ MN \_ FILTER \_ 资源 \_ 需求**](./irp-mn-filter-resource-requirements.md) irp 发送到驱动程序时，使注册表设置对设备的驱动程序可用。 操作系统为 **类型** 成员设置为 **CmResourceTypeInterrupt** 的每个中断提供 [**IO \_ 资源 \_ 说明符**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_resource_descriptor)结构。 对于消息发出信号中断， \_ \_ \_ 将设置 **标志** 成员的 CM 资源中断消息位; 否则，将会清除。 **U. 中断** 成员描述中断的设置。
 
-下表提供了注册表设置和 **u**成员之间的对应关系。
+下表提供了注册表设置和 **u** 成员之间的对应关系。
 
 <table>
 <colgroup>

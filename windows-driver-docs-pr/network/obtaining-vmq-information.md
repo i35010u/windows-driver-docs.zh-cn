@@ -1,15 +1,14 @@
 ---
 title: 获取 VMQ 信息
 description: 获取 VMQ 信息
-ms.assetid: e851b656-ef59-42e7-b734-17ce9830096a
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f418042f64095deda660170cc3e6a4b1ce9a79f7
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 017ecde49ee802c781d915bd4725d433093c8222
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89217545"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96813649"
 ---
 # <a name="obtaining-vmq-information"></a>获取 VMQ 信息
 

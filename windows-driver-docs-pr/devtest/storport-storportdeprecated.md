@@ -1,7 +1,6 @@
 ---
 title: 'StorPortDeprecated 规则 (storport) '
 description: 此规则验证驱动程序是否未调用这些弃用的 StorPortValidateRange 或 StorPortLogError 中的任何一个。
-ms.assetid: 90223719-91AB-4D10-88A0-0DBD2D99C5B2
 ms.date: 05/21/2018
 keywords:
 - 'StorPortDeprecated 规则 (storport) '
@@ -12,12 +11,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 522c1469dfd5fddf8531be517bb0e36e42c1bf6f
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 44c57dd230547ee4a30f70589a4083223a1076fd
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104036"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96813819"
 ---
 # <a name="storportdeprecated-rule-storport"></a>StorPortDeprecated 规则 (storport) 
 

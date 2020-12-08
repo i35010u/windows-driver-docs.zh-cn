@@ -1,6 +1,5 @@
 ---
 title: NFC 堆栈体系结构
-ms.assetid: 04800C37-99EA-431A-98C5-24984030CEA9
 keywords:
 - NFC
 - 近场通信
@@ -10,12 +9,12 @@ keywords:
 description: 近乎现场通信的示意图 (NFC) 堆栈体系结构和设计。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8a142b9e5a0cc92e79f2706b34d67df46d50d9ec
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 89fb8f173d35519c7670d0a5ab7eda7bd764a1a8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89382493"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96813505"
 ---
 # <a name="nfc-stack-architecture"></a>NFC 堆栈体系结构
 

@@ -1,7 +1,6 @@
 ---
 title: 消息类型
 description: 消息类型
-ms.assetid: 3C64F85F-D8AE-4448-A75C-965DCCD85216
 keywords:
 - NFC
 - 近场通信
@@ -10,12 +9,12 @@ keywords:
 - NFP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 84929e611bfe75c414585c6bee0c0c2d1e80cb93
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: f21997d9d1ce3361459cc2aaf118ab94ca7790b3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89382527"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96813553"
 ---
 # <a name="message-type"></a>消息类型
 
@@ -46,9 +45,9 @@ ms.locfileid: "89382527"
 ## <a name="subtype-component"></a>子类型组件
 
 
-*MessageType*的子类型组件定义为第一个点后面的所有内容。 例如，Windows<strong>.com： t</strong> 的突出显示部分显示子类型组件。
+*MessageType* 的子类型组件定义为第一个点后面的所有内容。 例如，Windows<strong>.com： t</strong> 的突出显示部分显示子类型组件。
 
-子类型组件可以由 Windows 或应用程序定义。 NFP 提供程序应使用它将消息只传递到指定 *messageType*的订阅服务器。
+子类型组件可以由 Windows 或应用程序定义。 NFP 提供程序应使用它将消息只传递到指定 *messageType* 的订阅服务器。
 
 子类型字符串区分大小写，并描述消息的内容。
 

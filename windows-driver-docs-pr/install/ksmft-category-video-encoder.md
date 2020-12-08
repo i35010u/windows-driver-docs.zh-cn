@@ -1,7 +1,6 @@
 ---
 title: KSMFT_CATEGORY_VIDEO_ENCODER
 description: KSMFT_CATEGORY_VIDEO_ENCODER
-ms.assetid: aa3725c0-a393-4100-acd5-d8776322b82a
 keywords:
 - KSMFT_CATEGORY_VIDEO_ENCODER 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 7be6b913f16576c7746c232e7a2390c08d0b26c0
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: db29d9ee79ae46cdebc121a9ec9aeb3218d53f27
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89095029"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96815309"
 ---
 # <a name="ksmft_category_video_encoder"></a>KSMFT_CATEGORY_VIDEO_ENCODER
 

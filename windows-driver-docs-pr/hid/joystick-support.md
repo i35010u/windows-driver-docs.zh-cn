@@ -1,7 +1,6 @@
 ---
 title: “游戏杆支持”概述
 description: “游戏杆支持”概述
-ms.assetid: 09fcbdf0-4e70-4144-9afc-4b085a2b4ba7
 keywords:
 - 游戏杆 WDK HID
 - 操纵杆 WDK HID，关于操纵杆
@@ -12,12 +11,12 @@ keywords:
 - VJoyD WDK HID，关于 VJoyD
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c92c182c4110ef8875aefff7ec816c963a462776
-ms.sourcegitcommit: 3464f10ffa0727e38fbe225cfab52bb8c2bb1747
+ms.openlocfilehash: a862acc488e8587c10a5ecf87dddb3562765c896
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93352970"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96814469"
 ---
 # <a name="joystick-support-overview"></a>“游戏杆支持”概述
 
@@ -25,7 +24,7 @@ ms.locfileid: "93352970"
 
 
 
-Microsoft DirectX 提供的游戏杆支持类型与版本之间存在差异。 在 Windows 95/98/Me 中，DirectX 支持以下两种方法来自定义游戏杆功能：通过 Windows 注册表中的自定义项和通过虚拟设备驱动程序 (VxD) 创建，这称为 *操纵杆微型驱动程序* 。 DirectX 版本1.0、2.0 和3.0 中使用的微型驱动程序支持原始的微型驱动程序接口，在 DirectX 3.0 接口中有细微差别。 除了原始微型驱动程序模型之外，DirectX 版本5.0 及更高版本还包括一个通常单独描述的备用驱动程序接口。
+Microsoft DirectX 提供的游戏杆支持类型与版本之间存在差异。 在 Windows 95/98/Me 中，DirectX 支持以下两种方法来自定义游戏杆功能：通过 Windows 注册表中的自定义项和通过虚拟设备驱动程序 (VxD) 创建，这称为 *操纵杆微型驱动程序*。 DirectX 版本1.0、2.0 和3.0 中使用的微型驱动程序支持原始的微型驱动程序接口，在 DirectX 3.0 接口中有细微差别。 除了原始微型驱动程序模型之外，DirectX 版本5.0 及更高版本还包括一个通常单独描述的备用驱动程序接口。
 
 Windows 95/98/Me 游戏杆驱动程序和配置程序支持插入 IBM 标准游戏端口的模拟操纵杆。 游戏杆制造商可以使操纵杆配置程序可自定义，并向最终用户提供有关如何自定义游戏杆的明确指导。 游戏杆可以通过注册表向 Windows 95/98/Me 发送相关功能。 这些功能包括使用限制、视图点 (POV) 头衔、rudders 以及游戏杆按钮的数目。
 

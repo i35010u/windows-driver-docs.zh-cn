@@ -1,7 +1,6 @@
 ---
 title: INF DDInstall.Interfaces 节
 description: 根据特定设备/驱动程序支持的设备接口数量，每个模型的 DDInstall 部分可以具有一个或多个 AddInterface 指令。
-ms.assetid: 16904119-00a4-45d7-a32e-24ba4c8a3416
 keywords:
 - INF DDInstall 设备和驱动程序安装
 topic_type:
@@ -12,12 +11,12 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 859bbb1a931a8995fa22b63a050c4a2262080d0b
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 80f136a1066c7a5dce948fbf6bdad1938356354b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89095131"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96814305"
 ---
 # <a name="inf-ddinstallinterfaces-section"></a>INF DDInstall.Interfaces 节
 
@@ -56,25 +55,25 @@ AddInterface={InterfaceClassGUID} [, [reference string] [,[add-interface-section
 有关其用法的 **包含** 项和限制的详细信息，请参阅 [指定设备文件的源位置和目标位置](specifying-the-source-and-target-locations-for-device-files.md)。
 
 <a href="" id="needs-inf-section-name--inf-section-name----"></a>**需求 =**<em>inf-名称</em> \[ **，**<em>inf-节名称</em> \] .。。  
-此可选条目指定在安装此设备过程中必须处理的特定部分。 通常，此类命名部分是 <em>DDInstall</em>**。** 在 **包含** 项中列出的系统提供的 INF 文件内的接口部分。 但是，它可以是在此类<em>DDInstall</em>中引用的任何部分 **。** 包含的 INF 的接口部分。
+此可选条目指定在安装此设备过程中必须处理的特定部分。 通常，此类命名部分是 <em>DDInstall</em>**。** 在 **包含** 项中列出的系统提供的 INF 文件内的接口部分。 但是，它可以是在此类 <em>DDInstall</em>中引用的任何部分 **。** 包含的 INF 的接口部分。
 
-不能嵌套**需求**条目。 有关其用法的 **需求** 条目和限制的详细信息，请参阅 [指定设备文件的源位置和目标位置](specifying-the-source-and-target-locations-for-device-files.md)。
+不能嵌套 **需求** 条目。 有关其用法的 **需求** 条目和限制的详细信息，请参阅 [指定设备文件的源位置和目标位置](specifying-the-source-and-target-locations-for-device-files.md)。
 
 <a name="remarks"></a>备注
 -------
 
-在 INF 文件的 "每制造商"*型号*部分下， *DDInstall*节名称必须由特定于设备/模型的条目引用。 有关如何使用跨平台 INF 文件中的**ntx86** **、.** **ntia64**、 **. ntamd64**、 **ntarm**和**ntarm64**扩展的信息，请参阅为[多个平台和操作系统创建 INF 文件](creating-inf-files-for-multiple-platforms-and-operating-systems.md)。
+在 INF 文件的 "每制造商"*型号* 部分下， *DDInstall* 节名称必须由特定于设备/模型的条目引用。 有关如何使用跨平台 INF 文件中的 **ntx86** **、.** **ntia64**、 **. ntamd64**、 **ntarm** 和 **ntarm64** 扩展的信息，请参阅为 [多个平台和操作系统创建 INF 文件](creating-inf-files-for-multiple-platforms-and-operating-systems.md)。
 
-如果尚未安装指定的 **{**<em>InterfaceClassGUID</em>**}** ，操作系统的安装代码将在系统中安装该设备接口类。 如果 INF 文件安装一个或多个新的设备接口类，则它还具有标识新类的 GUID 的** \[ InterfaceInstall32 \] **部分。
+如果尚未安装指定的 **{**<em>InterfaceClassGUID</em>**}** ，操作系统的安装代码将在系统中安装该设备接口类。 如果 INF 文件安装一个或多个新的设备接口类，则它还具有标识新类的 GUID 的 **\[ InterfaceInstall32 \]** 部分。
 
-有关如何创建 GUID 的详细信息，请参阅 [在驱动程序中使用 guid](../kernel/using-guids-in-drivers.md)。 对于系统定义的接口类 Guid，请参阅相应的系统提供的标头，如内核流式处理接口类 GUID 的*Ks。*
+有关如何创建 GUID 的详细信息，请参阅 [在驱动程序中使用 guid](../kernel/using-guids-in-drivers.md)。 对于系统定义的接口类 Guid，请参阅相应的系统提供的标头，如内核流式处理接口类 GUID 的 *Ks。*
 
-加载驱动程序时，必须为 INF 的<em>DDInstall</em>中指定的每个 **{**<em>InterfaceClassGUID</em>**}** 值调用[**IoSetDeviceInterfaceState**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iosetdeviceinterfacestate)一次 **。接口**部分，驱动程序在基础设备上支持该接口，以实现更高级别的组件的运行时使用。 设备驱动程序可以在初始调用**IoSetDeviceInterfaceState**之前调用[**IoRegisterDeviceInterface**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioregisterdeviceinterface) ，而不是在 INF 中注册对设备接口的支持。 通常，PnP 函数或筛选器驱动程序从其 [**AddDevice**](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_add_device) 例程进行此调用。
+加载驱动程序时，必须为 INF 的 <em>DDInstall</em>中指定的每个 **{**<em>InterfaceClassGUID</em>**}** 值调用 [**IoSetDeviceInterfaceState**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iosetdeviceinterfacestate)一次 **。接口** 部分，驱动程序在基础设备上支持该接口，以实现更高级别的组件的运行时使用。 设备驱动程序可以在初始调用 **IoSetDeviceInterfaceState** 之前调用 [**IoRegisterDeviceInterface**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioregisterdeviceinterface) ，而不是在 INF 中注册对设备接口的支持。 通常，PnP 函数或筛选器驱动程序从其 [**AddDevice**](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_add_device) 例程进行此调用。
 
 <a name="examples"></a>示例
 --------
 
-此示例显示了 <em>DDInstall</em>**。** 系统提供的 WDM 音频设备/驱动程序的 INF 文件中的 "接口" 部分显示为 [**inf *DDInstall* 部分**](inf-ddinstall-section.md) 和 [**inf *DDInstall*的示例。服务部分**](inf-ddinstall-services-section.md) 。
+此示例显示了 <em>DDInstall</em>**。** 系统提供的 WDM 音频设备/驱动程序的 INF 文件中的 "接口" 部分显示为 [**inf *DDInstall* 部分**](inf-ddinstall-section.md) 和 [**inf *DDInstall* 的示例。服务部分**](inf-ddinstall-services-section.md) 。
 
 ```inf
 ;
@@ -101,20 +100,20 @@ KSNAME_Topology = "Topology"
 ; ...
 ```
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**AddInterface**](inf-addinterface-directive.md)
 
-[***DDInstall***](inf-ddinstall-section.md)
+[**_DDInstall_* _](inf-ddinstall-section.md)
 
-[**InterfaceInstall32**](inf-interfaceinstall32-section.md)
+[_ *InterfaceInstall32**](inf-interfaceinstall32-section.md)
 
 [**IoRegisterDeviceInterface**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioregisterdeviceinterface)
 
 [**IoSetDeviceInterfaceState**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iosetdeviceinterfacestate)
 
-[***模型***](inf-models-section.md)
+[**_模型_**](inf-models-section.md)
 
  
 

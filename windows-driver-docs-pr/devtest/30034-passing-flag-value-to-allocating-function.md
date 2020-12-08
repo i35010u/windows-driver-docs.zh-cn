@@ -1,31 +1,30 @@
 ---
 title: C30034
-description: 警告 C30034 传递到可能会导致可执行文件所分配的内存的分配函数的标志值。
-ms.assetid: 11B06B23-17B4-4B97-A1EE-3351B72B7B1D
+description: 警告 C30034 将标志值传递给可能导致分配可执行内存的分配函数。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 f1_keywords:
 - C30034
-ms.openlocfilehash: dded5285c83771be4df8fc3b2402aa4d50a570ae
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 616bfdb6f2042be0a7fc4c495d236d061fcac6e9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63360783"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96813885"
 ---
 # <a name="c30034"></a>C30034
 
 
-警告 C30034:传递给可能会导致可执行文件所分配的内存分配函数的标志值。 请验证正在分配的函数不请求一种形式的可执行文件的非分页缓冲池。
+警告 C30034：将标志值传递给可能导致分配可执行内存的分配函数。 请验证分配函数未请求可执行的非分页池的形式。
 
-已禁止\_内存优化\_分配\_也许\_UNSAFE
+禁止的 \_ 内存 \_ 分配 \_ 可能 \_ 不安全
 
-已找到的可执行文件的非分页缓冲池可能是因为分配会导致一个函数调用。 使用参数指示产生的分配实际上可能是不可执行，但确定这是不可能和可执行文件的内存已分配。 这是最常见的使用可选的分配函数作为参数的函数。
+调用了对函数的调用，导致可执行的可执行非分页池分配。 使用的参数指示生成的分配实际上可能是不可执行的，但确定这不太可能是因为分配了可执行的内存。 最常见的情况是，使用将可选的分配函数作为参数的函数。
 
-## <a name="span-idexamplespanspan-idexamplespanspan-idexamplespanexample"></a><span id="Example"></span><span id="example"></span><span id="EXAMPLE"></span>示例
+## <a name="span-idexamplespanspan-idexamplespanspan-idexamplespanexample"></a><span id="Example"></span><span id="example"></span><span id="EXAMPLE"></span>实例
 
 
-下面的代码生成此警告，因为如果不知道*pAllocate*分配指定的类型-在此第四个参数 (0，这是可执行文件) 或分配类型集内*pAllocate。*
+下面的代码将生成此警告，因为在 *pAllocate* 中分配指定的类型时，它是未知的，这是第四个参数 (0，这是可执行) ，或者从 pAllocate 内设置分配类型 *。*
 
 ```
 ExInitializeNPagedLookasideList(   pLookaside,

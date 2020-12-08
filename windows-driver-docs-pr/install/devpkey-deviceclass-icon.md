@@ -1,7 +1,6 @@
 ---
 title: DEVPKEY_DeviceClass_Icon
 description: DEVPKEY_DeviceClass_Icon
-ms.assetid: 036b6daf-b5de-4aa0-b7e3-ba0430107938
 keywords:
 - DEVPKEY_DeviceClass_Icon 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 6f5ddbddbdba5cd5c749052cb863e5a159bfc69c
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: baf5a55a9c18e26ecc121bd39807528f59f840bd
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90714922"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96815363"
 ---
 # <a name="devpkey_deviceclass_icon"></a>DEVPKEY_DeviceClass_Icon
 
@@ -62,9 +61,9 @@ DEVPKEY_DeviceClass_Icon 设备属性表示 [设备安装程序类](./overview-o
 <a name="remarks"></a>备注
 -------
 
-DEVPKEY_DeviceClass_Icon 的值是由安装类的[**Inf ClassInstall32 部分**](./inf-classinstall32-section.md)中包含的[**inf AddReg 指令**](./inf-addreg-directive.md)设置的。 若要设置 DEVPKEY_DeviceClass_Icon 的值，请使用 **AddReg** 指令为类设置 **图标** 注册表项值。
+DEVPKEY_DeviceClass_Icon 的值是由安装类的 [**Inf ClassInstall32 部分**](./inf-classinstall32-section.md)中包含的 [**inf AddReg 指令**](./inf-addreg-directive.md)设置的。 若要设置 DEVPKEY_DeviceClass_Icon 的值，请使用 **AddReg** 指令为类设置 **图标** 注册表项值。
 
-**图标**项值是字符串格式的整数。 如果数字为负数，则该数值的绝对值是 setupapi.dll 中的图标的资源标识符。 如果数字为正，则该数字是类安装程序 DLL 中的图标的资源标识符（如果存在类安装程序）或类属性页提供程序（如果没有类安装程序，并且存在属性页提供程序）。 零值无效。
+**图标** 项值是字符串格式的整数。 如果数字为负数，则该数值的绝对值是 setupapi.dll 中的图标的资源标识符。 如果数字为正，则该数字是类安装程序 DLL 中的图标的资源标识符（如果存在类安装程序）或类属性页提供程序（如果没有类安装程序，并且存在属性页提供程序）。 零值无效。
 
 可以调用 [**SetupDiGetClassProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdigetclasspropertyw) 或 [**SetupDiGetClassPropertyEx**](/windows/win32/api/setupapi/nf-setupapi-setupdigetclasspropertyexw) 来检索 DEVPKEY_DeviceClass_Icon 的值。
 

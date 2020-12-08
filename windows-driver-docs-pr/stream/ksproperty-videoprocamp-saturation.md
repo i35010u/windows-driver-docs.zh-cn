@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ VIDEOPROCAMP \_ 饱和度
 description: "\"KSPROPERTY \\_ VIDEOPROCAMP \\_ 饱和度\" 属性控制相机的饱和度或色度增益。 此属性是可选的。"
-ms.assetid: 1b7fd731-088b-4370-a537-9e302d28864b
 keywords:
 - KSPROPERTY_VIDEOPROCAMP_SATURATION 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1044c87fc7cbef9b7839b754e38e81a7c36b89d5
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 45f59289f8377d31309021c34755e81e8d0127df
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103270"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96814861"
 ---
 # <a name="ksproperty_videoprocamp_saturation"></a>KSPROPERTY \_ VIDEOPROCAMP \_ 饱和度
 
@@ -86,7 +85,7 @@ KSPROPERTY **Value** \_ VIDEOPROCAMP S 结构的 Value 成员 \_ 指定饱和度
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSPROPERTY**](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)

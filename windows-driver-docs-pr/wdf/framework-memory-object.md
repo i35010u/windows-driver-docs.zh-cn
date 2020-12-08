@@ -1,7 +1,6 @@
 ---
 title: 框架内存对象
 description: 框架内存对象
-ms.assetid: b5f7bb8b-115a-4536-9857-b7229ae2ec99
 keywords:
 - UMDF 对象 WDK，内存对象
 - framework 对象 WDK UMDF，内存对象
@@ -9,12 +8,12 @@ keywords:
 - IWDFMemory
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2943028cc4ba3b869512a8891bc609acf03f4fe3
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: b9cd5e511e11807193602091c6891efebca5feb2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89187227"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96814799"
 ---
 # <a name="framework-memory-object"></a>框架内存对象
 

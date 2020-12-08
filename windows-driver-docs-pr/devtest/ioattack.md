@@ -1,15 +1,14 @@
 ---
 title: IoAttack
 description: 渗透测试 (设备基础) 测试、运行 i/o 攻击、执行模糊测试
-ms.assetid: ae0eda5c-534e-44c2-a997-66fe1337ca9f
 ms.date: 07/10/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 08af7b67172fba6b027d30fe316883bec473afce
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 12bcfa8adac07c2a18a7290e207f659c2f2da5bb
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89384543"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96813835"
 ---
 # <a name="ioattack"></a>IoAttack
 
@@ -32,7 +31,7 @@ ms.locfileid: "89384543"
 >
 
 
-[渗透测试 (设备基础) ](penetration-tests--device-fundamentals-.md)测试**运行 i/o 攻击**执行模糊测试。 **运行 I/o 攻击**测试使用以前通过 IoSpy 在测试系统上创建的[IoSpy 数据文件](iospy.md)。
+[渗透测试 (设备基础)](penetration-tests--device-fundamentals-.md)测试 **运行 i/o 攻击** 执行模糊测试。 **运行 I/o 攻击** 测试使用以前通过 IoSpy 在测试系统上创建的 [IoSpy 数据文件](iospy.md)。
 
 在测试系统上运行 IoAttack 之前，必须执行以下操作：
 

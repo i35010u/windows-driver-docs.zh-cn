@@ -1,22 +1,21 @@
 ---
 title: WSK_TDI_BEHAVIOR
 description: WSK_TDI_BEHAVIOR
-ms.assetid: 84e4c8c3-2c31-4db5-bb25-309c6bb176ff
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WSK_TDI_BEHAVIOR 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 94763244f19bdf76a95d099b76cbdb0deb61cbca
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 619cff30d822890fff0d15c0a1363b1ef46bf576
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89216500"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96813617"
 ---
 # <a name="wsk_tdi_behavior"></a>WSK \_ TDI \_ 行为
 
 
-**注意**   TDI 功能已弃用，并将在将来的 Microsoft Windows 版本中删除。
+**注意**   TDI 功能已弃用，并将在将来的 Microsoft Windows 版本中删除。
 
  
 
@@ -34,7 +33,7 @@ WSK 应用程序使用 WSK \_ TDI \_ 行为客户端控制操作来控制 WSK �
 <thead>
 <tr class="header">
 <th>参数</th>
-<th>值</th>
+<th>“值”</th>
 </tr>
 </thead>
 <tbody>
@@ -78,7 +77,7 @@ WSK 应用程序使用 WSK \_ TDI \_ 行为客户端控制操作来控制 WSK �
 
 此客户端控制操作的 *Irp* 参数必须为 **NULL** 。
 
-**注意**   Windows Vista 之后的 Microsoft Windows 版本不支持 TDI。
+**注意**  Windows Vista 之后的 Microsoft Windows 版本不支持 TDI。
 
  
 

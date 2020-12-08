@@ -1,7 +1,6 @@
 ---
 title: EXT \_ TDOP \_ 副本
 description: '\_调试请求的 ext TDOP \_ COPY 子操作 " \_ \_ ext \_ 类型化 \_ 数据 \_ ANSI 请求" 操作会生成类型化数据说明的副本。'
-ms.assetid: 2de920de-db93-408d-8e80-a29c4e2930a0
 keywords:
 - EXT_TDOP_COPY Windows 调试
 topic_type:
@@ -12,19 +11,19 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 59bdc0499fdc0cbcc1a815f04ebcc6270ec0ad20
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 473010c86032e226f9cce0dae606902ff292148b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89213023"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96814581"
 ---
 # <a name="ext_tdop_copy"></a>EXT \_ TDOP \_ 副本
 
 
-\_调试请求的 ext TDOP \_ COPY 子操作 " [** \_ \_ ext \_ 类型化 \_ 数据 \_ ANSI**](debug-request-ext-typed-data-ansi.md)[**请求**](request.md)" 操作会生成类型化数据说明的副本。
+\_调试请求的 ext TDOP \_ COPY 子操作 " [**\_ \_ ext \_ 类型化 \_ 数据 \_ ANSI**](debug-request-ext-typed-data-ansi.md)[**请求**](request.md)" 操作会生成类型化数据说明的副本。
 
-**参数**
+**Parameters**
 
 <span id="Operation"></span><span id="operation"></span><span id="OPERATION"></span>**运作**  
 \_对于此子操作，设置为 EXT TDOP \_ COPY。
@@ -33,7 +32,7 @@ ms.locfileid: "89213023"
 指定 [**调试 \_ 类型化 \_ 数据**](/windows-hardware/drivers/ddi/wdbgexts/ns-wdbgexts-_debug_typed_data) 结构的原始实例。
 
 <span id="OutData"></span><span id="outdata"></span><span id="OUTDATA"></span>**OutData**  
-接收由**InData**指定的[**调试 \_ 类型化 \_ 数据**](/windows-hardware/drivers/ddi/wdbgexts/ns-wdbgexts-_debug_typed_data)结构实例的副本。
+接收由 **InData** 指定的 [**调试 \_ 类型化 \_ 数据**](/windows-hardware/drivers/ddi/wdbgexts/ns-wdbgexts-_debug_typed_data)结构实例的副本。
 
 <span id="Status"></span><span id="status"></span><span id="STATUS"></span>**状态值**  
 接收此子操作返回的状态代码。 这与 [**请求**](request.md)返回的值相同。

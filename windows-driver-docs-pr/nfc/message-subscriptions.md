@@ -1,7 +1,6 @@
 ---
 title: NFP 消息订阅
 description: NFP 消息订阅
-ms.assetid: ECE9C495-978F-4BD7-95BC-B68432F9B81E
 keywords:
 - NFC
 - 近场通信
@@ -10,12 +9,12 @@ keywords:
 - NFP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 09f7a7cc5a5db2c2a330b7d68c6d831d324ffcff
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: e91ec625e2ec35d303dfdea6775eaebdfbb443c7
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89382539"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96813559"
 ---
 # <a name="nfp-message-subscriptions"></a>NFP 消息订阅
 
@@ -90,7 +89,7 @@ ms.locfileid: "89382539"
 
 ### <a name="required-actions"></a>必需的措施
 
-驱动程序必须将 "CompleteEventImmediately" 计数器设置为零，如果客户端尚未发送替换 IOCTL，则不得递增计数器 [** \_ NFP \_ 获取 \_ 下一个已 \_ 订阅 10-20 \_ 消息**](/windows-hardware/drivers/ddi/nfpdev/ni-nfpdev-ioctl_nfp_get_next_subscribed_message) 。
+驱动程序必须将 "CompleteEventImmediately" 计数器设置为零，如果客户端尚未发送替换 IOCTL，则不得递增计数器 [**\_ NFP \_ 获取 \_ 下一个已 \_ 订阅 10-20 \_ 消息**](/windows-hardware/drivers/ddi/nfpdev/ni-nfpdev-ioctl_nfp_get_next_subscribed_message) 。
 
 ## <a name="malformed-messages"></a>消息格式不正确
 
@@ -104,13 +103,13 @@ ms.locfileid: "89382539"
 -   驱动程序不得将部分消息传递给订阅服务器。
 -   驱动程序不能将消息传送到未通过强 CRC 的客户端。
 
-    **注意**   NFC 论坛认证可为启用 NFC 的 NFP 提供商保证这一点。
+    **注意**  NFC 论坛认证可为启用 NFC 的 NFP 提供商保证这一点。
 
      
 
 -   驱动程序必须使用高度可靠的传输和/或尝试重新传输无法执行强 CRC 的消息。
 
-    **注意**   NFC 论坛认证可为启用 NFC 的 NFP 提供商保证这一点。
+    **注意**  NFC 论坛认证可为启用 NFC 的 NFP 提供商保证这一点。
 
      
 

@@ -1,7 +1,6 @@
 ---
 title: 启用 NFP
 description: 客户端可以使用 IOCTL_NFP_ENABLE 重新启用以前禁用的订阅、发布和状态。
-ms.assetid: 5F5F3C85-6B66-4335-ADA1-E4B6E702FFCB
 keywords:
 - NFC
 - 近场通信
@@ -10,12 +9,12 @@ keywords:
 - NFP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 45fadbd8adb2d23662b709f95f065c133cdcb08e
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 6594c4b5ccdb31f58ab15b8478ad3a40518979ac
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89385099"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96813593"
 ---
 # <a name="enabling-nfp"></a>启用 NFP
 

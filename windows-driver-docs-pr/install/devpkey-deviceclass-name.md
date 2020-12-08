@@ -1,7 +1,6 @@
 ---
 title: DEVPKEY_DeviceClass_Name
 description: DEVPKEY_DeviceClass_Name
-ms.assetid: c07ca3c7-42f1-497b-82bf-6e43cafe9867
 keywords:
 - DEVPKEY_DeviceClass_Name 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 2a7564b4bbd4440a7c06a0d47092b0c8b17f2c7d
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 67d2cbd41495b029727eb428e218f0c336162825
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90717410"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96815357"
 ---
 # <a name="devpkey_deviceclass_name"></a>DEVPKEY_DeviceClass_Name
 
@@ -62,7 +61,7 @@ DEVPKEY_DeviceClass_Name 设备属性表示 [设备安装程序类](./overview-o
 <a name="remarks"></a>备注
 -------
 
-DEVPKEY_DeviceClass_Name 的值是由安装类的[**Inf ClassInstall32 部分**](./inf-classinstall32-section.md)中包含的[**inf AddReg 指令**](./inf-addreg-directive.md)设置的。 若要设置类的友好名称，请使用 **AddReg** 指令设置类的 ** (默认) ** 注册表项值。
+DEVPKEY_DeviceClass_Name 的值是由安装类的 [**Inf ClassInstall32 部分**](./inf-classinstall32-section.md)中包含的 [**inf AddReg 指令**](./inf-addreg-directive.md)设置的。 若要设置类的友好名称，请使用 **AddReg** 指令设置类的 **(默认)** 注册表项值。
 
 可以调用 [**SetupDiGetClassProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdigetclasspropertyw) 或 [**SetupDiGetClassPropertyEx**](/windows/win32/api/setupapi/nf-setupapi-setupdigetclasspropertyexw) 来检索 DEVPKEY_DeviceClass_Name 的值。
 

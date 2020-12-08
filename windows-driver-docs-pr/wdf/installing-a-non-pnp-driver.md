@@ -1,20 +1,19 @@
 ---
 title: 安装非 PnP 驱动程序
 description: 安装非 PnP 驱动程序
-ms.assetid: 99676d85-feb2-482c-a91b-cfc48be5904c
 keywords:
-- 内核模式驱动程序框架 WDK，安装驱动程序
+- Kernel-Mode Driver Framework WDK，安装驱动程序
 - 基于框架的驱动程序 WDK KMDF，安装
 - INF 文件 WDK KMDF，非 PnP 驱动程序
 - 非 PnP 驱动程序 WDK KMDF
 ms.date: 03/12/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: b0a216ba87ed215cdcf20f9960874ab982328fbf
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: aaebee444a8461b5512a65b51b53d4bdf3683c28
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89184149"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96814705"
 ---
 # <a name="installing-a-non-pnp-driver"></a>安装非 PnP 驱动程序
 

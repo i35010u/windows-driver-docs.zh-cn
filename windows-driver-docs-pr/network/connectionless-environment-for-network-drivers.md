@@ -1,18 +1,17 @@
 ---
 title: 网络驱动程序的无连接环境
 description: 网络驱动程序的无连接环境
-ms.assetid: 998d4630-ae85-4219-9da1-f4f4c5e93d44
 keywords:
-- 无连接的环境 WDK 网络
+- 无连接环境 WDK 网络
 - 无连接驱动程序 WDK 网络
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 163b2b5dd14977d7a3bb6064aafd990bbb760b16
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4ad979e9615999ee8b53f57227be8afe4e85c8a4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63357412"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96813705"
 ---
 # <a name="connectionless-environment-for-network-drivers"></a>网络驱动程序的无连接环境
 
@@ -20,16 +19,16 @@ ms.locfileid: "63357412"
 
 
 
-无连接的环境是无连接媒体，如以太网的标准网络驱动程序环境。 在此环境中的驱动程序的说明，请参阅[NDIS 驱动程序](ndis-drivers.md)并[NDIS 微型端口驱动程序](ndis-miniport-drivers2.md)。
+无连接环境是用于无连接媒体（如以太网）的标准网络驱动程序环境。 有关此环境中驱动程序的说明，请参阅 [Ndis 驱动](ndis-drivers.md) 程序和 [Ndis 小型端口驱动程序](ndis-miniport-drivers2.md)。
 
-下图显示了无连接的网络驱动程序在 NDIS 环境。
+下图显示了用于无连接网络驱动程序的 NDIS 环境。
 
-![说明无连接的网络驱动程序在 ndis 环境的关系图](images/media01.png)
+![阐释无连接网络驱动程序的 ndis 环境的示意图](images/media01.png)
 
 ## <a name="related-topics"></a>相关主题
 
 
-[面向连接的网络驱动程序的环境](connection-oriented-environment-for-network-drivers.md)
+[网络驱动程序的面向连接的环境](connection-oriented-environment-for-network-drivers.md)
 
 [NDIS 驱动程序](ndis-drivers.md)
 

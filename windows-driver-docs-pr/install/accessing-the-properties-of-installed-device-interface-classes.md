@@ -1,17 +1,16 @@
 ---
 title: 访问已安装设备接口的属性
 description: 访问已安装设备接口的属性
-ms.assetid: 4079DD59-878E-4b71-9815-543BA838C56D
 keywords:
 - 设备接口 WDK 设备安装，访问属性
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 014a12505fe25c5a1238305cb3c08ff78aa2c1a0
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 18aee414d84cbc081d5238b61a913bbae9a29305
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91734275"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96815075"
 ---
 # <a name="accessing-the-properties-of-installed-device-interfaces"></a>访问已安装设备接口的属性
 

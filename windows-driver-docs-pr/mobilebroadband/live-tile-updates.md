@@ -1,15 +1,14 @@
 ---
 title: 动态磁贴更新
 description: 动态磁贴更新
-ms.assetid: 46ad4a92-0a80-47ca-a8dc-2608d863e14f
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f8db16889599bc611c6859dd9c8c28ba213871d7
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 3752e0639d75cd1f54db283055ee60cc1f148a8e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89216213"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96815267"
 ---
 # <a name="live-tile-updates"></a>动态磁贴更新
 

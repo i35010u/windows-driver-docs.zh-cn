@@ -1,7 +1,6 @@
 ---
 title: EXT \_ TDOP \_ GET \_ 字段
 description: '\_调试请求的 ext TDOP \_ GET \_ FIELD sub 操作 \_ \_ Ext \_ 类型化 \_ 数据 \_ ANSI 请求操作返回表示给定结构成员的类型化数据说明。'
-ms.assetid: c91c0ecf-c093-4585-a6b5-6bda91899ec3
 keywords:
 - EXT_TDOP_GET_FIELD Windows 调试
 topic_type:
@@ -12,19 +11,19 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bcd56f57a4d782331d70354b39ca9e798fecd53e
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 927e5c671bb79ca5baf82c8dad87994a10a70659
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89212991"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96814575"
 ---
 # <a name="ext_tdop_get_field"></a>EXT \_ TDOP \_ GET \_ 字段
 
 
-\_调试请求的 ext TDOP \_ GET \_ FIELD sub 操作[** \_ \_ ext \_ 类型化 \_ 数据 \_ ANSI**](debug-request-ext-typed-data-ansi.md)[**请求**](request.md)操作返回表示给定结构成员的类型化数据说明。
+\_调试请求的 ext TDOP \_ GET \_ FIELD sub 操作 [**\_ \_ ext \_ 类型化 \_ 数据 \_ ANSI**](debug-request-ext-typed-data-ansi.md)[**请求**](request.md)操作返回表示给定结构成员的类型化数据说明。
 
-**参数**
+**Parameters**
 
 <span id="Operation"></span><span id="operation"></span><span id="OPERATION"></span>**运作**  
 \_对于此子操作，设置为 EXT TDOP \_ GET \_ FIELD。

@@ -1,15 +1,14 @@
 ---
 title: WDM 和 WDF 之间的差异
 description: WDM 模型与操作系统密切相关。
-ms.assetid: 4D35F0AB-44CE-49CA-8AB7-3922871567B0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e36ca7e43cc8f83a88907fc3b0eb11db98aa4e2f
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 9c86517e2109792596563690c05c14acf60fe926
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89183947"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96814845"
 ---
 # <a name="differences-between-wdm-and-wdf"></a>WDM 和 WDF 之间的差异
 
@@ -18,7 +17,7 @@ WDM 模型与操作系统密切相关。 驱动程序通过调用系统服务例
 
 相比之下，Windows 驱动程序框架 (WDF) 模型注重驱动程序的要求，框架库处理与系统的大多数交互。
 
-框架截获 i/o 请求，在适当的位置采取默认操作，并根据需要调用驱动程序的回调。 WDF 模型是基于对象的和事件驱动的。 对象表示常用驱动程序构造，如设备、锁定或队列。 内核模式驱动程序框架 (KMDF) 或用户模式驱动程序框架 (UMDF) 驱动程序包含一个入口点 ([**DriverEntry**](./driverentry-for-kmdf-drivers.md)) 、为设备提供服务和支持 i/o 所需的与事件相关的回调函数，以及实现所依赖的任何其他内部实用工具函数。
+框架截获 i/o 请求，在适当的位置采取默认操作，并根据需要调用驱动程序的回调。 WDF 模型是基于对象的和事件驱动的。 对象表示常用驱动程序构造，如设备、锁定或队列。 Kernel-Mode Driver Framework (KMDF) 或 User-Mode Driver Framework (UMDF) 驱动程序包含一个入口点 ([**DriverEntry**](./driverentry-for-kmdf-drivers.md)) 、为设备提供服务和支持 i/o 所需的与事件相关的回调函数，以及实现所依赖的任何其他内部实用工具函数。
 
 本部分介绍了以下几个方面的 WDM 与 WDF 之间的重要差异：
 
@@ -92,7 +91,7 @@ WDF 驱动程序遵循定期模式来创建所有类型的对象：
 
 配置结构保存指向对象特定信息的指针，如驱动程序的对象的事件回调函数。 驱动程序将填充此结构，然后在调用对象创建方法时将其传递到框架。 例如，对 [**WdfDriverCreate**](/windows-hardware/drivers/ddi/wdfdriver/nf-wdfdriver-wdfdrivercreate) 的调用包括一个指向 [**WDF \_ 驱动程序 \_ 配置**](/windows-hardware/drivers/ddi/wdfdriver/ns-wdfdriver-_wdf_driver_config) 结构的指针，该结构包含指向驱动程序的 [*EvtDriverDeviceAdd*](/windows-hardware/drivers/ddi/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add) 回调函数的指针。
 
-框架定义名为 WDF \_ *对象* \_ CONFIG \_ INIT 的函数以初始化配置结构，其中*对象*表示对象类型的名称。 [**WDF \_ 对象 \_ 属性 \_ INIT**](/windows-hardware/drivers/ddi/wdfobject/nf-wdfobject-wdf_object_attributes_init)函数初始化驱动程序的[**WDF \_ 对象 \_ 属性**](/windows-hardware/drivers/ddi/wdfobject/ns-wdfobject-_wdf_object_attributes)结构。
+框架定义名为 WDF \_ *对象* \_ CONFIG \_ INIT 的函数以初始化配置结构，其中 *对象* 表示对象类型的名称。 [**WDF \_ 对象 \_ 属性 \_ INIT**](/windows-hardware/drivers/ddi/wdfobject/nf-wdfobject-wdf_object_attributes_init)函数初始化驱动程序的 [**WDF \_ 对象 \_ 属性**](/windows-hardware/drivers/ddi/wdfobject/ns-wdfobject-_wdf_object_attributes)结构。
 
 ## <a name="object-context-area"></a>对象上下文区域
 

@@ -1,15 +1,14 @@
 ---
 title: 设置微型端口驱动程序信息的场合
 description: 设置微型端口驱动程序信息的场合
-ms.assetid: 46834d76-e1b9-440c-af18-a4b564d1a76e
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 05e9f8e34fc804649b062f464beda33bd402aee2
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 95589ae1a67c9a90c554d8ebf219e1f3fb74d469
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89214654"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96813647"
 ---
 # <a name="occasions-for-setting-miniport-driver-information"></a>设置微型端口驱动程序信息的场合
 
@@ -23,9 +22,9 @@ ms.locfileid: "89214654"
 
 -   如果协议调用 [**NdisCloseAdapterEx**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscloseadapterex)。
 
-在[硬件重置操作](hardware-reset.md)期间调用*MiniportOidRequest*或*MiniportCoOidRequest* 。 在这种情况下，将调用 *MiniportOidRequest* 或 *MiniportCoOidRequest* ，以将微型端口驱动程序的初始状态重置为其地址。
+在 [硬件重置操作](hardware-reset.md)期间调用 *MiniportOidRequest* 或 *MiniportCoOidRequest* 。 在这种情况下，将调用 *MiniportOidRequest* 或 *MiniportCoOidRequest* ，以将微型端口驱动程序的初始状态重置为其地址。
 
-当某个微型端口驱动程序的 NIC 被协议的[**NdisCloseAdapterEx**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscloseadapterex)调用关闭时，NDIS 将调用*MiniportOidRequest*或*MiniportCoOidRequest* 。 这种微型端口驱动程序将被请求更新其寻址信息。
+当某个微型端口驱动程序的 NIC 被协议的 [**NdisCloseAdapterEx**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscloseadapterex)调用关闭时，NDIS 将调用 *MiniportOidRequest* 或 *MiniportCoOidRequest* 。 这种微型端口驱动程序将被请求更新其寻址信息。
 
  
 

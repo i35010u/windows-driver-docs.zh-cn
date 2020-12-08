@@ -1,19 +1,18 @@
 ---
 title: 旧筛选器驱动程序移植指南
 description: 旧筛选器驱动程序移植指南
-ms.assetid: 6dd9637e-e9b3-4434-996c-c3f8ce6584c4
 keywords:
 - 筛选器管理器 WDK 文件系统微筛选器，移植旧驱动程序
 - 迁移旧筛选器驱动程序
 - 旧筛选器驱动程序 WDK 文件系统微筛选器
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 98f4061d28dfc815e1fca93ea5367f1adf6942ae
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 995abd10280f942cff3414c235f952ec57246365
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103584"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96814461"
 ---
 # <a name="guidelines-for-porting-legacy-filter-drivers"></a>旧筛选器驱动程序移植指南
 

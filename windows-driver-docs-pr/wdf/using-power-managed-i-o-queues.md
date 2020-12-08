@@ -1,19 +1,18 @@
 ---
 title: 使用通过电源管理的 I/O 队列
 description: 使用通过电源管理的 I/O 队列
-ms.assetid: 271d55ef-d82e-4ffd-bf41-a602c42c3f0e
 keywords:
 - I/o 队列-KMDF
 - 电源管理 i/o 队列 WDK KMDF
 - 重新排队参数 WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 67fbf145cd4dbad3232b483ffd6e5c0d6e1719ba
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: f6a798e29d57f3a4e741bb7de5f6aa550a3c69a4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89192303"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96814679"
 ---
 # <a name="using-power-managed-io-queues"></a>使用通过电源管理的 I/O 队列
 
@@ -22,13 +21,13 @@ ms.locfileid: "89192303"
 
 有关电源管理 i/o 队列的详细信息，请参阅 [电源管理以了解 I/o 队列](power-management-for-i-o-queues.md)。
 
-## <a name="callback-functions-for-power-managed-queues"></a>电源管理队列的回调函数
+## <a name="callback-functions-for-power-managed-queues"></a>Power-Managed 队列的回调函数
 
 
 如果驱动程序使用电源管理的 i/o 队列，则可以提供其他两个回调函数：
 
 <a href="" id="---------evtiostop"></a>[*EvtIoStop*](/windows-hardware/drivers/ddi/wdfio/nc-wdfio-evt_wdf_io_queue_io_stop)  
-[*EvtIoStop*](/windows-hardware/drivers/ddi/wdfio/nc-wdfio-evt_wdf_io_queue_io_stop)回调函数停止处理指定的 i/o 请求。 当设备 (D0) 状态或已删除时，框架将为每个未[完成](completing-i-o-requests.md)的 i/o 请求（包括驱动程序[拥有](request-ownership.md)的请求以及该驱动程序已[转发](forwarding-i-o-requests.md)到 i/o 目标的请求）调用一个 i/o 队列的*EvtIoStop*回调函数一次。
+[*EvtIoStop*](/windows-hardware/drivers/ddi/wdfio/nc-wdfio-evt_wdf_io_queue_io_stop)回调函数停止处理指定的 i/o 请求。 当设备 (D0) 状态或已删除时，框架将为每个未 [完成](completing-i-o-requests.md)的 i/o 请求（包括驱动程序 [拥有](request-ownership.md)的请求以及该驱动程序已 [转发](forwarding-i-o-requests.md)到 i/o 目标的请求）调用一个 i/o 队列的 *EvtIoStop* 回调函数一次。
 
 <a href="" id="---------evtioresume"></a>[*EvtIoResume*](/windows-hardware/drivers/ddi/wdfio/nc-wdfio-evt_wdf_io_queue_io_resume)  
 [*EvtIoResume*](/windows-hardware/drivers/ddi/wdfio/nc-wdfio-evt_wdf_io_queue_io_resume)回调函数恢复处理以前停止的 i/o 请求。 在设备返回到其工作状态后，框架会调用 i/o 队列的 *EvtIoResume* 回调函数，从队列中恢复向驱动程序提供 i/o 请求。

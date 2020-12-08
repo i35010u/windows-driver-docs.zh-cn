@@ -1,7 +1,6 @@
 ---
 title: 安装引导启动驱动程序
 description: 安装引导启动驱动程序
-ms.assetid: 0b93233b-266c-4d2e-a5d8-01d2d477dd13
 keywords:
 - 设备设置 WDK 设备安装，启动驱动程序
 - 设备安装 WDK，启动驱动程序
@@ -14,12 +13,12 @@ keywords:
 - 供应商提供的启动驱动程序 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9629f32c62c6a7d8a6f6f3f8cd99292cba264073
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: d459e424fe7eda2c7cb2a4bc9818b83aa4c6fdab
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89097295"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96813723"
 ---
 # <a name="installing-a-boot-start-driver"></a>安装引导启动驱动程序
 
@@ -27,15 +26,15 @@ ms.locfileid: "89097295"
 
 
 
-*启动驱动程序*是设备的驱动程序，必须安装该驱动程序才能启动 Microsoft Windows 操作系统。 大多数引导启动驱动程序都包含在 Windows 中，在 windows 安装的文本模式安装阶段，Windows 会自动安装这些引导启动驱动程序。 如果设备的引导启动驱动程序未包含在 Windows 中，则用户可以在安装文本模式期间为设备安装其他供应商提供的启动驱动程序。
+*启动驱动程序* 是设备的驱动程序，必须安装该驱动程序才能启动 Microsoft Windows 操作系统。 大多数引导启动驱动程序都包含在 Windows 中，在 windows 安装的文本模式安装阶段，Windows 会自动安装这些引导启动驱动程序。 如果设备的引导启动驱动程序未包含在 Windows 中，则用户可以在安装文本模式期间为设备安装其他供应商提供的启动驱动程序。
 
 若要安装启动 Windows 所需的设备，但其驱动程序未包含在操作系统中，用户必须执行以下操作：
 
 1.  安装设备硬件并打开计算机。
 
-2.  开始 Windows 安装 (运行 Windows 安装程序) 。 在安装的文本模式阶段 () ，Windows 将显示一条消息，指示你可以按特定的 **F * * n* 键来安装引导启动驱动程序。
+2.  开始 Windows 安装 (运行 Windows 安装程序) 。 在安装的文本模式阶段 () ，Windows 将显示一条消息，指示你可以按特定的 **F**_n_ 键来安装引导启动驱动程序。
 
-3.  当 Windows 显示此消息时，按指定的 **F * * n* 键安装引导启动驱动程序，然后插入 [启动启动驱动程序分发磁盘](#boot-start-driver-distribution-disk)。
+3.  当 Windows 显示此消息时，按指定的 **F**_n_ 键安装引导启动驱动程序，然后插入启动启动 [驱动程序分发磁盘](#boot-start-driver-distribution-disk)。
 
 **注意**  此过程演示如何安装不包含在 Windows 中的 "内置" 驱动程序。 不要使用此过程来替换或更新 Windows 附带的驱动程序。 请等待 Windows 启动并使用设备管理器在设备上执行 "更新驱动程序" 操作。
 
@@ -72,15 +71,15 @@ ms.locfileid: "89097295"
 
 
 
-### <a name="boot-start-driver-distribution-disk"></a><a href="" id="boot-start-driver-distribution-disk"></a> 启动-启动驱动程序分发磁盘
+### <a name="boot-start-driver-distribution-disk"></a><a href="" id="boot-start-driver-distribution-disk"></a> Boot-Start 驱动程序分发磁盘
 
-*启动驱动程序分发磁盘*是一种介质，如软盘或 u 盘，其中包含*txtsetup.oem*文件和相关的驱动程序文件。 *Txtsetup.oem*文件是一个文本文件，其中包含一系列硬件组件、将复制到系统的分发磁盘上的文件列表，以及要创建的注册表项和值的列表。  (WDK) 中的 Windows 驱动程序工具包提供了一个示例 *txtsetup.oem* 文件，该文件在 \\ wdk 的 src 目录下。 有关 *txtsetup.oem* 文件的内容的详细信息，请参阅 [txtsetup.oem 文件格式](/previous-versions/ff553509(v=vs.85))。
+*启动驱动程序分发磁盘* 是一种介质，如软盘或 u 盘，其中包含 *txtsetup.oem* 文件和相关的驱动程序文件。 *Txtsetup.oem* 文件是一个文本文件，其中包含一系列硬件组件、将复制到系统的分发磁盘上的文件列表，以及要创建的注册表项和值的列表。  (WDK) 中的 Windows 驱动程序工具包提供了一个示例 *txtsetup.oem* 文件，该文件在 \\ wdk 的 src 目录下。 有关 *txtsetup.oem* 文件的内容的详细信息，请参阅 [txtsetup.oem 文件格式](/previous-versions/ff553509(v=vs.85))。
 
 以下要求和建议适用于特定于平台的分发磁盘：
 
 - Windows Server 2003 和更早版本 (平台特定的分发磁盘) 
 
-  对于驱动程序支持的每个平台，Windows 都需要一个特定于平台的分发磁盘。 平台特定的分发磁盘包含一个 *txtsetup.oem* 文件和相关的驱动程序文件。 *Txtsetup.oem*文件必须位于分发磁盘的根目录中。
+  对于驱动程序支持的每个平台，Windows 都需要一个特定于平台的分发磁盘。 平台特定的分发磁盘包含一个 *txtsetup.oem* 文件和相关的驱动程序文件。 *Txtsetup.oem* 文件必须位于分发磁盘的根目录中。
 
 - 跨平台和平台特定的分发磁盘 (Windows Server 2003 Service Pack 1 (SP1) 和更高版本) 
 
@@ -125,7 +124,7 @@ ms.locfileid: "89097295"
 
 在跨平台分发磁盘上，Windows 使用平台特定的 *txtsetup.oem* 文件，该文件与运行 Windows 的平台相对应。 如果对应的平台目录包含特定于平台的 *txtsetup.oem* 文件不存在，则 Windows 将在默认目录中使用 *txtsetup.oem* 文件（如果存在）。
 
-Windows 还支持特定于平台的分发磁盘。 平台特定的分发磁盘包含一个特定于平台的 *txtsetup.oem* 文件和相关的驱动程序文件。 *Txtsetup.oem*文件必须位于其相应的平台目录中，与跨平台分发磁盘或分发磁盘的默认目录中的操作相同。
+Windows 还支持特定于平台的分发磁盘。 平台特定的分发磁盘包含一个特定于平台的 *txtsetup.oem* 文件和相关的驱动程序文件。 *Txtsetup.oem* 文件必须位于其相应的平台目录中，与跨平台分发磁盘或分发磁盘的默认目录中的操作相同。
 
 跨平台分发磁盘或特定于平台的分发磁盘上的给定平台的驱动程序文件必须相对于包含特定于平台的 *txtsetup.oem* 文件的目录。
 

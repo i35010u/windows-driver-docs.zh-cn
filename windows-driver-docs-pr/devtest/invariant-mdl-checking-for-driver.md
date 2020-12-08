@@ -1,22 +1,21 @@
 ---
 title: 针对驱动程序的固定 MDL 检查
 description: 面向驱动程序的固定 MDL 检查选项用于监控每个驱动程序是如何处理固定 MDL 缓冲区的。
-ms.assetid: 2FA69B7C-3EF4-4660-84D4-5108C97E395F
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6d03abfdb3be6a8e708c34ccb48ba1aac1953d71
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 9a5d0a35f337d18bb933fcf398faaf95ab71aca5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89384553"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96813845"
 ---
 # <a name="invariant-mdl-checking-for-driver"></a>针对驱动程序的固定 MDL 检查
 
 
 面向驱动程序的固定 MDL 检查选项用于监控每个驱动程序是如何处理固定 MDL 缓冲区的。 此选项可检测是否对固定 MDL 缓冲区进行了非法修改。 若要使用此选项，你必须在至少一个驱动程序上启用 I/O 验证。
 
-**注意**   从 Windows 8 开始可以使用此选项。
+**注意**  从 Windows 8 开始可以使用此选项。
 
  
 
@@ -45,7 +44,7 @@ ms.locfileid: "89384553"
 
 -   **使用驱动程序验证器管理器**
     1.  启动驱动程序验证器管理器。 在命令提示符窗口中键入 **Verifier** 。
-    2.  选择 " **为代码开发人员 (创建自定义设置") ** ，然后单击 " **下一步"。**
+    2.  选择 " **为代码开发人员 (创建自定义设置")** ，然后单击 " **下一步"。**
     3.  选择 " **从完整列表中选择单个设置**"。
     4.  选择 (检查是否有驱动程序) [I/o 验证](i-o-verification.md) 和固定 MDL 检查。
     5.  重新启动计算机。

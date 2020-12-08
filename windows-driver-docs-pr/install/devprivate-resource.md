@@ -1,7 +1,6 @@
 ---
 title: DEVPRIVATE_RESOURCE
 description: DEVPRIVATE_RESOURCE
-ms.assetid: 842d9092-f7b6-4111-88d9-64a580007295
 keywords:
 - DEVPRIVATE_RESOURCE 设备和驱动程序安装
 topic_type:
@@ -12,17 +11,17 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 9b1e49706a4c75c7cc07a61173da7151a20235fb
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 64a0f1b8c613b0bbf4cbcca759004da62a5840cd
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89095925"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96813751"
 ---
 # <a name="devprivate_resource"></a>DEVPRIVATE_RESOURCE
 
 
-**注意**   此结构仅供内部使用。
+**注意**  此结构仅供内部使用。
 
  
 

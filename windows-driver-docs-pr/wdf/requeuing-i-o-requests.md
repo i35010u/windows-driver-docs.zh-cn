@@ -1,19 +1,18 @@
 ---
 title: 将 I/O 请求重新排队
 description: 将 I/O 请求重新排队
-ms.assetid: b509959c-b2ab-4f04-9c08-5c5e90726b73
 keywords:
 - I/o 请求 WDK KMDF，正在重新排队
 - 正在重新排队 i/o 请求 WDK KMDF
 - 请求处理 WDK KMDF，正在重新排队 i/o 请求
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6c374f1d227640d72d08d9a56715ab0fdc9776b1
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 82e9ce4f98ed7daf71bd07c71d9c6ff6167e731c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89192307"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96814685"
 ---
 # <a name="requeuing-io-requests"></a>将 I/O 请求重新排队
 
@@ -31,7 +30,7 @@ ms.locfileid: "89192307"
 
 如果你的驱动程序调用 [**WdfRequestForwardToIoQueue**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestforwardtoioqueue) 重新排队某个 i/o 请求，该驱动程序是从使用顺序 [调度方法](dispatching-methods-for-i-o-requests.md)的 i/o 队列获取的，则该框架将向该驱动程序提供下一个从顺序排列的 i/o 请求，而无需等待重新排队的请求完成。
 
-如果驱动程序使用手动调度方法，则它可以调用 [**WdfRequestRequeue**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestrequeue) 方法，将 i/o 请求返回到从中获取驱动程序的 i/o 队列的开头。 调用 **WdfRequestRequeue**之后，驱动程序的下一次调用 [**WdfIoQueueRetrieveNextRequest**](/windows-hardware/drivers/ddi/wdfio/nf-wdfio-wdfioqueueretrievenextrequest) 会检索重新排队的请求。
+如果驱动程序使用手动调度方法，则它可以调用 [**WdfRequestRequeue**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestrequeue) 方法，将 i/o 请求返回到从中获取驱动程序的 i/o 队列的开头。 调用 **WdfRequestRequeue** 之后，驱动程序的下一次调用 [**WdfIoQueueRetrieveNextRequest**](/windows-hardware/drivers/ddi/wdfio/nf-wdfio-wdfioqueueretrievenextrequest) 会检索重新排队的请求。
 
 ### <a name="requeuing-an-io-request-to-a-parent-devices-io-queue"></a>正在重新排队对父设备的 i/o 队列发出 i/o 请求
 
@@ -43,7 +42,7 @@ ms.locfileid: "89192307"
 
 在 KMDF 版本1.9 之前，驱动程序只能通过创建 [远程 i/o 目标](general-i-o-targets.md)、增加子设备的设备堆栈的大小并指定正确的 WDM 设备对象，将从子设备发送到其父设备的 i/o 请求。
 
-从 KMDF 版本1.9 开始，驱动程序可以在创建子设备之前调用 [**WdfPdoInitAllowForwardingRequestToParent**](/windows-hardware/drivers/ddi/wdfpdo/nf-wdfpdo-wdfpdoinitallowforwardingrequesttoparent) ，然后调用 [**WdfRequestForwardToParentDeviceIoQueue**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestforwardtoparentdeviceioqueue) ，重新排队从子 i/o 队列到父队列的请求。 如果驱动程序使用**WdfPdoInitAllowForwardingRequestToParent** 和 **WdfRequestForwardToParentDeviceIoQueue**，则框架将增加子的设备堆栈大小，并将正确的 WDM 设备对象分配给 i/o 请求。
+从 KMDF 版本1.9 开始，驱动程序可以在创建子设备之前调用 [**WdfPdoInitAllowForwardingRequestToParent**](/windows-hardware/drivers/ddi/wdfpdo/nf-wdfpdo-wdfpdoinitallowforwardingrequesttoparent) ，然后调用 [**WdfRequestForwardToParentDeviceIoQueue**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestforwardtoparentdeviceioqueue) ，重新排队从子 i/o 队列到父队列的请求。 如果驱动程序使用 **WdfPdoInitAllowForwardingRequestToParent** 和 **WdfRequestForwardToParentDeviceIoQueue**，则框架将增加子的设备堆栈大小，并将正确的 WDM 设备对象分配给 i/o 请求。
 
  
 

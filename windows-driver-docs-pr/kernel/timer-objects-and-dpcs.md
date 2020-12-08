@@ -1,7 +1,6 @@
 ---
 title: KeXxxTimer 例程、KTIMER 对象和 DPC
 description: 从 Windows 2000 开始，可以使用一组 KeXxxTimer 例程来管理计时器。
-ms.assetid: b58487de-6e9e-45f4-acb8-9233c8718ee2
 keywords:
 - 计时器的 WDK 内核
 - 计时器对象 WDK 内核
@@ -22,17 +21,17 @@ keywords:
 - 超时间隔 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 865135da6e3029d860ad23133460a2102d9fa6bf
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 15f1b8cfd3e490145008d3afd0766e3104f77909
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89187141"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96814271"
 ---
 # <a name="kexxxtimer-routines-ktimer-objects-and-dpcs"></a>KeXxxTimer 例程、KTIMER 对象和 DPC
 
 
-从 Windows 2000 开始，可以使用一组 **Ke*Xxx*计时器** 例程来管理计时器。 这些例程使用基于 [**KTIMER**](./eprocess.md) 结构的计时器对象。 若要创建 timer 对象，驱动程序首先为 **KTIMER** 结构分配存储。 然后，该驱动程序将调用一个例程，如 [**KeInitializeTimer**](/windows-hardware/drivers/ddi/wdm/nf-wdm-keinitializetimer) 或 [**KeInitializeTimerEx**](/windows-hardware/drivers/ddi/wdm/nf-wdm-keinitializetimerex) 来初始化此结构。
+从 Windows 2000 开始，可以使用一组 **Ke *Xxx* 计时器** 例程来管理计时器。 这些例程使用基于 [**KTIMER**](./eprocess.md) 结构的计时器对象。 若要创建 timer 对象，驱动程序首先为 **KTIMER** 结构分配存储。 然后，该驱动程序将调用一个例程，如 [**KeInitializeTimer**](/windows-hardware/drivers/ddi/wdm/nf-wdm-keinitializetimer) 或 [**KeInitializeTimerEx**](/windows-hardware/drivers/ddi/wdm/nf-wdm-keinitializetimerex) 来初始化此结构。
 
 
 
@@ -45,7 +44,7 @@ ms.locfileid: "89187141"
 
 -   通知计时器收到信号时，所有正在等待的线程均已满足等待。 计时器的状态将保持为已终止状态，直到它被显式重置。
 
--   同步计时器过期时，会将其状态设置为 "已终止"，直到释放单个等待线程。 然后，计时器将重置为未终止状态。
+-   同步计时器过期时，会将其状态设置为 "已终止"，直到释放单个等待线程。 然后，计时器将重置为 Not-Signaled 状态。
 
 **KeInitializeTimer** 始终创建通知计时器。 **KeInitializeTimerEx** 接受类型参数，该 *类型* 参数可以是 **NotificationTimer** 或 **SynchronizationTimer**。
 

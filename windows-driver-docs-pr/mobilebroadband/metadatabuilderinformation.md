@@ -1,15 +1,14 @@
 ---
 title: MetadataBuilderInformation
 description: MetadataBuilderInformation
-ms.assetid: 94403994-2165-405e-bfa0-974af8e241fe
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e27031858bd84ac402e444e10a5894470b234d28
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: 15ea3febec9a098a1298f921bb011d34431167e7
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89403348"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96815264"
 ---
 # <a name="metadatabuilderinformation"></a>MetadataBuilderInformation
 
@@ -48,16 +47,16 @@ MetadataBuilderInformation 元素指定有关创建设备元数据包的应用�
 <thead>
 <tr class="header">
 <th>元素</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><a href="application-service-schema.md" data-raw-source="[Application](application-service-schema.md)">应用程序</a></p></td>
+<td><p>应用程序</p></td>
 <td><p><a href="application-service-schema.md" data-raw-source="[Application](application-service-schema.md)">Application</a>元素指定创建服务元数据包的应用程序软件的名称。</p></td>
 </tr>
 <tr class="even">
-<td><p><a href="version.md" data-raw-source="[Version](version.md)">版本</a></p></td>
+<td><p><a href="version.md" data-raw-source="[Version](version.md)">Version</a></p></td>
 <td><p><a href="version.md" data-raw-source="[Version](version.md)">Version</a>元素指定创建服务元数据包的应用程序软件的版本。</p></td>
 </tr>
 </tbody>
@@ -76,7 +75,7 @@ MetadataBuilderInformation 元素指定有关创建设备元数据包的应用�
 <thead>
 <tr class="header">
 <th>元素</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>

@@ -1,7 +1,6 @@
 ---
 title: 映射驱动程序文件
 description: 映射驱动程序文件
-ms.assetid: 9a13a6a9-b585-4be1-b7c8-da65fa3ba6c6
 keywords:
 - 映射驱动程序文件
 - 驱动程序替换图
@@ -11,12 +10,12 @@ keywords:
 - 启动驱动程序替换
 ms.date: 05/13/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 9f5b224163df80d0775ae963fbd62b0fe5130f69
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 6e9aa50af3064f5115111a672298bb848f26107f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89217366"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96814541"
 ---
 # <a name="mapping-driver-files"></a>映射驱动程序文件
 
@@ -50,7 +49,7 @@ ms.locfileid: "89217366"
         D:\Debugging Tools for Windows> kd
         ```
 
-    -   启动内核调试器后，使用 [**kdfiles (设置驱动程序替换映射) **](-kdfiles--set-driver-replacement-map-.md) 命令。
+    -   启动内核调试器后，使用 [**kdfiles (设置驱动程序替换映射)**](-kdfiles--set-driver-replacement-map-.md) 命令。
 
         ```console
         D:\Debugging Tools for Windows> kd

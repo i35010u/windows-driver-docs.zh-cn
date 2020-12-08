@@ -1,7 +1,6 @@
 ---
 title: 解析主机名和 IP 地址
 description: 解析主机名和 IP 地址
-ms.assetid: 4a5f421c-6827-4ca2-be88-67ec43dc84b2
 keywords:
 - WSK WDK 网络，名称解析
 - Winsock 内核 WDK 网络，名称解析
@@ -10,12 +9,12 @@ keywords:
 - 传输地址 WDK Winsock 内核
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b8e8f8e6374df1c0a601e5ba9d2f74b73522cb6d
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 7bb2a44ac49a318d8e90f974965d7fc592ce79af
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90715516"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96813637"
 ---
 # <a name="resolving-host-names-and-ip-addresses"></a>解析主机名和 IP 地址
 
@@ -36,7 +35,7 @@ ms.locfileid: "90715516"
 
 1.  调用 [**WskRegister**](/windows-hardware/drivers/ddi/wsk/nf-wsk-wskregister) 以注册到 WSK。
 
-2.  调用 [**WskCaptureProviderNPI**](/windows-hardware/drivers/ddi/wsk/nf-wsk-wskcaptureprovidernpi) 捕获 WSK 提供程序 [网络编程接口 (NPI) ](network-programming-interface.md)。
+2.  调用 [**WskCaptureProviderNPI**](/windows-hardware/drivers/ddi/wsk/nf-wsk-wskcaptureprovidernpi) 捕获 WSK 提供程序 [网络编程接口 (NPI)](network-programming-interface.md)。
 
 3.  使用 WSK 提供程序 NPI 完成后，调用 [**WskReleaseProviderNPI**](/windows-hardware/drivers/ddi/wsk/nf-wsk-wskreleaseprovidernpi) 以释放 WSK 提供程序 NPI。
 

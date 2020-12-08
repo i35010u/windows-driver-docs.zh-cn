@@ -1,7 +1,6 @@
 ---
 title: 链接集合
 description: 链接集合
-ms.assetid: 3f934661-c33c-4c08-82ac-ee2e0f519c8e
 keywords:
 - 链接集合 WDK HID
 - 嵌套集合 WDK HID
@@ -11,12 +10,12 @@ keywords:
 - 阵列 WDK HID
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8b72b4d017d6f6ae05e5d4c97c441b14c87ad2c1
-ms.sourcegitcommit: 9145bffd4cc3b990a9ebff43b588db6ef2001f5d
+ms.openlocfilehash: 23f934e02dd9ef8a460ca1e4d64a4fce5bdfbb30
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/09/2020
-ms.locfileid: "89592399"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96813787"
 ---
 # <a name="link-collections"></a>链接集合
 
@@ -24,13 +23,13 @@ ms.locfileid: "89592399"
 
 
 
-作为[顶级集合](top-level-collections.md)中嵌套子集合的*链接集合*。 顶级集合可以有零个或多个链接集合。
+作为 [顶级集合](top-level-collections.md)中嵌套子集合的 *链接集合*。 顶级集合可以有零个或多个链接集合。
 
 [**HidP \_GetLinkCollectionNodes**](/windows-hardware/drivers/ddi/hidpi/nf-hidpi-hidp_getlinkcollectionnodes) 返回顶级集合的 [链接集合数组](#ddk-link-collection-array-kg) ，其中包含有关顶级集合的链接集合的信息。
 
 ### <a name="link-collection-array"></a><a href="" id="ddk-link-collection-array-kg"></a>链接集合数组
 
-*链接集合数组*介绍了顶层集合中包含的所有链接集合。 每个链接集合均由一个 [**HIDP \_ 链接 \_ 集合 \_ 节点**](/windows-hardware/drivers/ddi/hidpi/ns-hidpi-_hidp_link_collection_node) 结构表示。 数组的链接节点以在顶级集合中标识顺序和分层顺序的方式进行链接。 链接集合数组的第一个元素表示顶级集合，其余成员表示顶级集合的链接集合。
+*链接集合数组* 介绍了顶层集合中包含的所有链接集合。 每个链接集合均由一个 [**HIDP \_ 链接 \_ 集合 \_ 节点**](/windows-hardware/drivers/ddi/hidpi/ns-hidpi-_hidp_link_collection_node) 结构表示。 数组的链接节点以在顶级集合中标识顺序和分层顺序的方式进行链接。 链接集合数组的第一个元素表示顶级集合，其余成员表示顶级集合的链接集合。
 
 通过跟踪链接连接数组中的节点，用户模式应用程序或内核模式驱动程序可以确定顶级集合中的所有链接集合的组织和使用情况。 此外，应用程序或驱动程序可以按其链接集合来组织控件。 这是可能的，因为顶级集合的 [按钮功能数组](button-capability-arrays.md) 和 [值功能数组](value-capability-arrays.md) 标识包含功能数组所述的每个 [HID 使用情况](hid-usages.md) 的链接集合。
 
@@ -51,7 +50,7 @@ ms.locfileid: "89592399"
 <thead>
 <tr class="header">
 <th>链接节点</th>
-<th>Parent</th>
+<th>父级</th>
 <th>子女</th>
 <th>First Child</th>
 <th>下一个同级</th>
@@ -106,7 +105,7 @@ ms.locfileid: "89592399"
 同级按从左到右的顺序排列。 同级的 *下一个同级* 元素是紧靠同级的同级元素。 链接集合节点的 **NextSibling** 成员指定其在链接集合数组中的下一个同级的索引。 如果链接集合节点没有下一个同级，则 **NextSibling** 设置为零。
 
 <a href="" id="first-child"></a>**第一个子**  
-*第一个子级*是同级中的最左侧同级。 链接集合节点的 **FirstChild** 成员指定链接集合数组中第一个子级的索引。 如果链接集合节点没有任何子节点，则将 **FirstChild** 设置为零。
+*第一个子级* 是同级中的最左侧同级。 链接集合节点的 **FirstChild** 成员指定链接集合数组中第一个子级的索引。 如果链接集合节点没有任何子节点，则将 **FirstChild** 设置为零。
 
 应用程序或驱动程序可以通过从父项的第一个子级开始，确定父集合的所有子级，并从第一个子级的同级节点序列化，直到同级节点的 **NextSibling** 成员为零。
 
@@ -121,11 +120,11 @@ Node1 = Collection[Collection[7].FirstChild]] ;
 
 ### <a name="aliased-collections"></a><a href="" id="aliased-collections"></a> 别名集合
 
-可以在报表描述符中使用分隔符项来分隔一组化名为的 *集合*。 每个别名集均由一个别名链接集合节点表示。 完全和唯一的一组*n* *n* &gt; = 2，别名节点通过以下方式链接在一起：
+可以在报表描述符中使用分隔符项来分隔一组化名为的 *集合*。 每个别名集均由一个别名链接集合节点表示。 完全和唯一的一组 *n* *n* &gt; = 2，别名节点通过以下方式链接在一起：
 
 -   别名节点在链接集合数组中按顺序排列。
 
--   前 *n*个节点的 **IsAlias** 成员设置为 **TRUE**。 紧跟此类序列的第 *n* 个节点将其 **IsAlias** 成员设置为 **FALSE**。 此节点终止化名为的节点序列。 与此节点关联的使用情况是首选用法。
+-   前 *n* 个节点的 **IsAlias** 成员设置为 **TRUE**。 紧跟此类序列的第 *n* 个节点将其 **IsAlias** 成员设置为 **FALSE**。 此节点终止化名为的节点序列。 与此节点关联的使用情况是首选用法。
 
 应用程序或驱动程序可以通过重复递增链接集合数组的数组索引来确定哪些集合是别名的，以便查找这样的序列。
 

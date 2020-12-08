@@ -1,7 +1,6 @@
 ---
 title: NFC 驱动程序加载顺序
 description: 当 ACPI 创建设备节点以表示 NFCC 时，PnP 将与 NFC 客户端驱动程序（如果为该设备节点）匹配。
-ms.assetid: 8094B525-A4A1-42D2-8D1F-4B32D77418E3
 keywords:
 - NFC
 - 近场通信
@@ -10,12 +9,12 @@ keywords:
 - NFP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d747ed4138f98573c157f644ccd0f83d5229d518
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 1753ab689615124a2ae09dcf0ea773c0dad55350
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89384861"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96813599"
 ---
 # <a name="nfc-driver-load-order"></a>NFC 驱动程序加载顺序
 

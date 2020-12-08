@@ -1,15 +1,14 @@
 ---
 title: NDKPI 对象生存期要求
 description: 本部分介绍 NDKPI 对象生存期的要求
-ms.assetid: 94993523-D0D7-441E-B95C-417800840BAC
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c8ea8774dfcdebe6f0b3fb1562f5738ddb7ff13b
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 23fe6cd42df100f95fa9faf410a12d9be64f5620
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89216608"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96814937"
 ---
 # <a name="ndkpi-object-lifetime-requirements"></a>NDKPI 对象生存期要求
 
@@ -45,17 +44,18 @@ NDK 使用者通过调用 ndk 提供程序对该对象的 create 函数来启动
 
 通过启动完成请求，提供程序会有效地将控制权返回给使用者。 提供程序必须假定在提供程序启动完成请求后，可以随时关闭对象。
 
-**注意**   若要在启动完成请求后防止死锁，提供程序必须：
+**注意**  
+若要在启动完成请求后防止死锁，提供程序必须：
 
 -   直到完成回调返回后，才对对象执行其他操作。
 -   如果提供程序绝对必须接触对象，请采取必要的措施来保持对象不变。
 
  
 
-## <a name="example-consumer-provider-interaction"></a>示例：使用者提供者交互
+## <a name="example-consumer-provider-interaction"></a>示例： Consumer-Provider 交互
 
 
-请参考以下方案：
+假设出现了下面这种情景：
 
 1.  使用者创建一个连接器 ([**NDK \_ 连接器**](/windows-hardware/drivers/ddi/ndkpi/ns-ndkpi-_ndk_connector)) ，然后调用 *NdkConnect* ([*ndk \_ FN \_ 连接*](/windows-hardware/drivers/ddi/ndkpi/nc-ndkpi-ndk_fn_connect)) 。
 2.  该提供程序将处理连接请求，导致失败，并在 *NdkConnect* (调用的上下文中调用使用者的完成回调，而不是由于内部实现选择) 而返回内联失败。
@@ -74,12 +74,12 @@ NDK 使用者通过调用 ndk 提供程序对该对象的 create 函数来启动
 
 提供程序不能在前面的对象上完成关闭请求 (包括 [**NDK \_ 适配器**](/windows-hardware/drivers/ddi/ndkpi/ns-ndkpi-_ndk_adapter) 关闭请求) 之前任何后续对象上的任何正在进行的关闭完成回调都返回给提供程序。 这是为了允许 NDK 使用者安全卸载。
 
-NDK 使用者不会为[**ndk \_ 适配器**](/windows-hardware/drivers/ddi/ndkpi/ns-ndkpi-_ndk_adapter)对象调用*NdkCloseObject* ， (是从使用者回调函数内部) 阻止调用。
+NDK 使用者不会为 [**ndk \_ 适配器**](/windows-hardware/drivers/ddi/ndkpi/ns-ndkpi-_ndk_adapter)对象调用 *NdkCloseObject* ， (是从使用者回调函数内部) 阻止调用。
 
 ## <a name="closing-adapter-objects"></a>关闭适配器对象
 
 
-请参考以下方案：
+假设出现了下面这种情景：
 
 1.  使用者在完成队列 (CQ) 对象上调用 *NdkCloseObject* 。
 2.  提供程序返回状态 " \_ 挂起"，以后调用使用者的完成回调。
@@ -96,11 +96,11 @@ NDK 使用者不会为[**ndk \_ 适配器**](/windows-hardware/drivers/ddi/ndkpi
 访问接口不能完成对对象的关闭请求，直到：
 
 -   已完成对象上所有挂起的异步请求 (换言之，它们的完成回调已经返回给提供程序) 。
--   所有使用者的事件回调 (例如* (，CQ*上的 CQ 上的*NdkConnectEventCallback* (ndk fn [* \_ \_ \_ 通知 \_ 回调*](/windows-hardware/drivers/ddi/ndkpi/nc-ndkpi-ndk_fn_cq_notification_callback)) ，) 返回到提供程序。 [* \_ \_ \_ \_ *](/windows-hardware/drivers/ddi/ndkpi/nc-ndkpi-ndk_fn_connect_event_callback)
+-   所有使用者的事件回调 (例如 *(，CQ* 上的 CQ 上的 *NdkConnectEventCallback* (ndk fn [*\_ \_ \_ 通知 \_ 回调*](/windows-hardware/drivers/ddi/ndkpi/nc-ndkpi-ndk_fn_cq_notification_callback)) ，) 返回到提供程序。 [*\_ \_ \_ \_*](/windows-hardware/drivers/ddi/ndkpi/nc-ndkpi-ndk_fn_connect_event_callback)
 
 提供程序必须保证在调用关闭完成回调之后或在关闭请求返回状态成功后，不会再进行回调 \_ 。 请注意，关闭请求还必须启动挂起的异步请求所需的任何刷新或取消操作。
 
-**注意**   从逻辑上讲，NDK 使用者不能为[**ndk \_ 适配器**](/windows-hardware/drivers/ddi/ndkpi/ns-ndkpi-_ndk_adapter)对象调用*NdkCloseObject* ， (是从使用者回调函数内部) 阻止调用。
+**注意** 从逻辑上讲，NDK 使用者不能为 [**ndk \_ 适配器**](/windows-hardware/drivers/ddi/ndkpi/ns-ndkpi-_ndk_adapter)对象调用 *NdkCloseObject* ， (是从使用者回调函数内部) 阻止调用。
 
  
 

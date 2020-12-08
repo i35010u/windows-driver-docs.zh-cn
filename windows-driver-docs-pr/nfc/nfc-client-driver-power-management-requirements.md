@@ -1,6 +1,5 @@
 ---
 title: NFC 客户端驱动程序电源管理要求
-ms.assetid: FBA0821B-859F-4A44-998E-E00162FBD265
 keywords:
 - NFC
 - 近场通信
@@ -10,12 +9,12 @@ keywords:
 description: 有关在连接待机时满足 NFP 设备的要求的信息。 platforms
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 498e7431c0edb93227a35a2722e0226751844e1e
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 11854c775f91b77b9ff24c516644164ce061ef49
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89382491"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96813521"
 ---
 # <a name="nfc-client-driver-power-management-requirements"></a>NFC 客户端驱动程序电源管理要求
 

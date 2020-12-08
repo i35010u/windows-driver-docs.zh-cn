@@ -1,7 +1,6 @@
 ---
 title: NDIS 如何设置网络适配器的电源策略
 description: NDIS 如何设置网络适配器的电源策略
-ms.assetid: ede0e33d-16f9-45ec-9e9d-b188f6360b2f
 keywords:
 - 网络接口卡 WDK 网络，电源策略
 - Nic WDK 网络，电源策略
@@ -14,12 +13,12 @@ keywords:
 - 电源管理 WDK NDIS 微型端口，用户输入
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 89da2d0422af6f0d35272c635cd65a21e41dd0f5
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 6795808c6f646b470da02c5d3cb6fa567d76e547
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103436"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96814201"
 ---
 # <a name="how-ndis-sets-the-power-policy-for-a-network-adapter"></a>NDIS 如何设置网络适配器的电源策略
 
@@ -31,7 +30,7 @@ NDIS 充当每个网络设备的设备电源策略所有者。 因此，NDIS 设
 
 NDIS 使用以下信息来设置 NIC 的电源策略：
 
--   总线驱动程序为响应 IRP 发出的[**IRP \_ MN \_ 查询 \_ 功能**](../kernel/irp-mn-query-capabilities.md)请求而返回的[**设备 \_ 功能**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_device_capabilities)结构。
+-   总线驱动程序为响应 IRP 发出的 [**IRP \_ MN \_ 查询 \_ 功能**](../kernel/irp-mn-query-capabilities.md)请求而返回的 [**设备 \_ 功能**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_device_capabilities)结构。
 
 -   小型端口驱动程序对 NDIS 发出的 [OID \_ PNP \_ 功能](./oid-pnp-capabilities.md) 请求的响应。
 
@@ -49,7 +48,7 @@ NDIS 使用以下信息来设置 NIC 的电源策略：
 <thead>
 <tr class="header">
 <th align="left">成员</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -102,7 +101,7 @@ NDIS 使用设备 \_ 功能信息来确定：
 
 **WakeFromD0** 到 **WakeFromD3** 表示 NIC 可从中唤醒系统的设备电源状态。
 
-**DeviceState**数组指示了每个系统电源状态的最高驱动设备电源状态，在该状态下，NIC 可以同时仍支持系统电源状态。 例如，请考虑下面的数组值。
+**DeviceState** 数组指示了每个系统电源状态的最高驱动设备电源状态，在该状态下，NIC 可以同时仍支持系统电源状态。 例如，请考虑下面的数组值。
 
 ```cpp
 DeviceState[PowerSystemWorking] PowerDeviceD0
@@ -121,7 +120,7 @@ DeviceState[PowerSystemShutdown] PowerDeviceD3
 
 当微型端口驱动程序成功从其 [*MiniportInitializeEx*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_initialize) 函数返回后， \_ \_ 如果满足以下任一条件，NDIS 就会向驱动程序发送 OID PNP 功能请求：
 
--   总线驱动程序返回的[**设备 \_ 功能**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_device_capabilities)结构的**SystemWake**和**DeviceWake**成员*不*会设置为**PowerSystemUnspecified**。
+-   总线驱动程序返回的 [**设备 \_ 功能**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_device_capabilities)结构的 **SystemWake** 和 **DeviceWake** 成员 *不* 会设置为 **PowerSystemUnspecified**。
 
 -   小型小型驱动程序在 \_ \_ \_ \_ \_ 初始化过程中调用 [**NdisMSetMiniportAttributes**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsetminiportattributes) 时，不会对 "挂起" 标志设置 NDIS 特性。
 
@@ -135,9 +134,9 @@ DeviceState[PowerSystemShutdown] PowerDeviceD3
 
 -   设备在收到包含协议驱动程序指定模式的网络帧时，可从中唤醒系统的最小设备电源状态。
 
-当 NDIS 获取此信息后，它会确定每个系统电源状态的设备电源状态，如果用户在 UI 中启用了 LAN 唤醒，则可以将其设置为 NIC。 如果没有可供 NIC 从中生成唤醒信号的低功率设备状态 (则为，如果在设备功能结构的**DeviceState**阵列中指定的所有低功耗设备电源状态 \_ 低于 nic 可从中唤醒系统) 的最小设备电源状态，NDIS 会使设备在 "**电源管理**" 选项卡中无法使用 nic**来使计算机脱离待机**状态。 然后，用户无法启用 LAN 唤醒。
+当 NDIS 获取此信息后，它会确定每个系统电源状态的设备电源状态，如果用户在 UI 中启用了 LAN 唤醒，则可以将其设置为 NIC。 如果没有可供 NIC 从中生成唤醒信号的低功率设备状态 (则为，如果在设备功能结构的 **DeviceState** 阵列中指定的所有低功耗设备电源状态 \_ 低于 nic 可从中唤醒系统) 的最小设备电源状态，NDIS 会使设备在 "**电源管理**" 选项卡中无法使用 nic **来使计算机脱离待机** 状态。 然后，用户无法启用 LAN 唤醒。
 
-**注意**   仅当 NIC 和系统都支持电源管理时，LAN 唤醒才能实现。 如果系统不支持电源管理，NDIS 将不会查询 NIC 的电源管理功能。
+**注意**  仅当 NIC 和系统都支持电源管理时，LAN 唤醒才能实现。 如果系统不支持电源管理，NDIS 将不会查询 NIC 的电源管理功能。
 
  
 

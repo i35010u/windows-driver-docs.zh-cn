@@ -1,7 +1,6 @@
 ---
 title: KSCATEGORY_BDA_NETWORK_EPG
 description: KSCATEGORY_BDA_NETWORK_EPG
-ms.assetid: 70a02c74-f092-4d1b-bf35-392da5c4fcb6
 keywords:
 - KSCATEGORY_BDA_NETWORK_EPG 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 1f4401ffd7ce20329e29d4183c702d268e5fe6e1
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 53b3cd486124e949199f67dbb24a52f988fb4d16
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89095697"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96815319"
 ---
 # <a name="kscategory_bda_network_epg"></a>KSCATEGORY_BDA_NETWORK_EPG
 

@@ -1,18 +1,17 @@
 ---
 title: 句柄管理
 description: 句柄管理
-ms.assetid: 09d9c836-1754-4a50-92a3-229a3ae05ccb
 keywords:
 - 处理 WDK 文件系统
 - 安全 WDK 文件系统，最大限度地减少威胁
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e8664ab9f5befec7807dd6006f25d540ddeffd9e
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 520d225b5eeff0cd21d770abac2d26f54f74a863
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89063350"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96814445"
 ---
 # <a name="handle-management"></a>句柄管理
 
@@ -34,7 +33,7 @@ ms.locfileid: "89063350"
 
 对于使用由应用程序创建的句柄的驱动程序，必须特别小心地使用这些句柄：
 
--   最佳做法是通过调用[**ObReferenceObjectByHandle**](/windows-hardware/drivers/ddi/wdm/nf-wdm-obreferenceobjectbyhandle)将句柄转换为对象指针，并指定通常来自 Irp *AccessMode* - &gt; Irp->requestormode) 、 *DesiredAccess*和*ObjectType*参数（如 IoFileObjectType 或 ExEventObjectType）的正确 AccessMode (。
+-   最佳做法是通过调用 [**ObReferenceObjectByHandle**](/windows-hardware/drivers/ddi/wdm/nf-wdm-obreferenceobjectbyhandle)将句柄转换为对象指针，并指定通常来自 Irp *AccessMode* - &gt; Irp->requestormode) 、 *DesiredAccess* 和 *ObjectType* 参数（如 IoFileObjectType 或 ExEventObjectType）的正确 AccessMode (。
 
 -   如果句柄必须直接在调用中使用，则最好使用函数的 Nt 变体，而不是函数的 Zw 变体。 这会强制执行参数检查并处理操作系统验证，因为上一模式将为 **UserMode** ，因此不受信任。 请注意，如果先前模式为 **UserMode**，则传递到作为指针的 Nt 函数的参数可能无法通过验证。 Nt 和 Zw 例程返回应检查错误的 *IoStatusBlock* parameterwith 错误信息。
 

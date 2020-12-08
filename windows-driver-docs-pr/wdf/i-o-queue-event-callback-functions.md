@@ -1,7 +1,6 @@
 ---
 title: I/O 队列事件回调函数
 description: I/O 队列事件回调函数
-ms.assetid: 5aa63c47-493d-4583-9eaa-1e50fdc089dd
 keywords:
 - I/o 队列 WDK UMDF
 - 队列 WDK UMDF
@@ -9,12 +8,12 @@ keywords:
 - 事件回调函数 WDK UMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d19e70b6802436de6e12a49fb3ffcc25fe477d3f
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 178437c02a1af4580fe099a545d3361a2acf55de
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89191209"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96814715"
 ---
 # <a name="io-queue-event-callback-functions"></a>I/O 队列事件回调函数
 

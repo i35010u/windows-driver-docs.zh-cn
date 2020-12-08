@@ -1,15 +1,14 @@
 ---
 title: 准备移植
 description: 准备移植
-ms.assetid: 355CD834-6B64-4E6F-AA17-AE1145F269CA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 648ebd064a8b1564340d439e3e2b99eab369256d
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: a93d567e7818626a30411fd1af6bbad402a80daa
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91734407"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96814758"
 ---
 # <a name="preparing-for-porting"></a>准备移植
 
@@ -20,7 +19,7 @@ ms.locfileid: "91734407"
 
 -   请参阅 [示例](/samples/browse/)。 WDF 附带了一组丰富的示例，其中的大多数示例都是名称类似的 WDM 驱动程序的端口。
 -   以增量方式工作。 由于该框架为 i/o、即插即用、电源管理和 WMI 请求实现了默认行为，因此你可以一次编码并调试一个设备或驱动程序功能。
--   对于内核模式驱动程序框架 (KMDF) ，实现 WMI 事件跟踪，以提供用于调试的详细跟踪日志。
+-   对于 Kernel-Mode Driver Framework (KMDF) ，实现 WMI 事件跟踪，以提供用于调试的详细跟踪日志。
 -   在许多情况下，WDF 默认值提供的功能比现有 WDM 驱动程序实现的功能更多。 在尝试移植复杂代码（特别是对于同步或队列管理）之前，请确保 WDF 提供的内容。 它可能会节省大量用于移植驱动程序的时间。
 -   使用 Windows 驱动程序工具包 (WDK) 中包含的特定于 WDF 的 [调试器扩展](debugger-extensions-for-kmdf-drivers.md) 。
 -   调试时启用 [KMDF 验证](using-kmdf-verifier.md) 程序或 [UMDF 验证](using-umdf-verifier.md) 程序。

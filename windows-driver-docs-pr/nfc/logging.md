@@ -1,6 +1,5 @@
 ---
 title: 日志记录
-ms.assetid: CB7FE988-6E5A-4669-9FFB-A2B3F8DAF30F
 keywords:
 - NFC
 - 近场通信
@@ -10,12 +9,12 @@ keywords:
 description: 用于函数/方法、NCI 数据包/协议和其他详细日志记录的 NFC 日志记录。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 68efc52ff6164aef73781979d600edef0ac017bf
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 2a2581f3682e8d5766ccf921a83d7effe030375e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89382545"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96813565"
 ---
 # <a name="logging"></a>日志记录
 

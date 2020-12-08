@@ -1,7 +1,6 @@
 ---
 title: CcSetLogHandleForFileEx 例程
 description: CcSetLogHandleForFileEx 例程为文件设置日志句柄并跟踪文件日志的回调函数。
-ms.assetid: D56BEAC9-6AB8-44BA-ADFC-D2435A1458DB
 keywords:
 - CcSetLogHandleForFileEx 例程可安装文件系统驱动程序
 topic_type:
@@ -14,31 +13,31 @@ api_type:
 - DllExport
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1f9943bb14565e88b5feff39199a3943a885fabd
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 2ae1e73d16e84873bd5776f64e6604fd5265c434
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89065358"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96815395"
 ---
 # <a name="ccsetloghandleforfileex-routine"></a>CcSetLogHandleForFileEx 例程
 
 
-**CcSetLogHandleForFileEx**例程为文件设置日志句柄并跟踪文件日志的回调函数。
+**CcSetLogHandleForFileEx** 例程为文件设置日志句柄并跟踪文件日志的回调函数。
 
 <a name="syntax"></a>语法
 ------
 
 ```ManagedCPlusPlus
 VOID CcSetLogHandleForFileEx(
-  _In_ PFILE_OBJECT     FileObject,
-  _In_ PVOID            LogHandle,
-  _In_ PFLUSH_TO_LSN    FlushToLsnRoutine,
-  _In_ PQUERY_LOG_USAGE QueryLogUsageRoutine
+  _In_ PFILE_OBJECT     FileObject,
+  _In_ PVOID            LogHandle,
+  _In_ PFLUSH_TO_LSN    FlushToLsnRoutine,
+  _In_ PQUERY_LOG_USAGE QueryLogUsageRoutine
 );
 ```
 
-<a name="parameters"></a>parameters
+<a name="parameters"></a>参数
 ----------
 
 *FileObject* \[\]，它指向要存储日志句柄的文件的文件对象。
@@ -56,16 +55,16 @@ VOID (*PFLUSH_TO_LSN) (
 ```
 
 <a href="" id="loghandle"></a>
-***LogHandle***
+***LogHandle** _
 
 一个指针，指向用于标识此客户端的不透明结构。
 
 <a href="" id="lsn"></a>
-***Lsn***
+_*_Lsn_*_
 
 这是在从此回调例程返回时磁盘上必须有的 LSN。
 
-*QueryLogUsageRoutine* \[指向用于 \] 检索此文件的日志用量百分比的客户端回调例程的指针。 调用此例程来检查是否满足阈值来启动写入脏页。 此例程声明如下：
+_QueryLogUsageRoutine * \[ 在指向 \] 客户端回调例程的指针中调用以检索此文件的日志用量百分比。 调用此例程来检查是否满足阈值来启动写入脏页。 此例程声明如下：
 
 ```cpp
 typedef  
@@ -76,12 +75,12 @@ VOID (*PQUERY_LOG_USAGE) (
 ```
 
 <a href="" id="loghandle"></a>
-***LogHandle***
+***LogHandle** _
 
 一个指针，指向用于标识此客户端的不透明结构。
 
 <a href="" id="percentagefull"></a>
-***PercentageFull***
+_*_PercentageFull_*_
 
 一个介于0到100之间的值，用于指示日志使用的百分比。
 
@@ -93,9 +92,9 @@ VOID (*PQUERY_LOG_USAGE) (
 <a name="remarks"></a>备注
 -------
 
-**CcSetLogHandleForFileEx** 设置文件的日志句柄，以便在对 [**CcGetDirtyPages**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ccgetdirtypages)的后续调用中使用。
+_ *CcSetLogHandleForFileEx** 设置文件的日志句柄，以便在对 [**CcGetDirtyPages**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ccgetdirtypages)的后续调用中使用。
 
-*FlushToLsnRoutine*和*QueryLogUsageRoutine*的回调是必需的。 这些值不得为 NULL。
+*FlushToLsnRoutine* 和 *QueryLogUsageRoutine* 的回调是必需的。 这些值不得为 NULL。
 
 <a name="requirements"></a>要求
 ------------
@@ -133,7 +132,7 @@ VOID (*PQUERY_LOG_USAGE) (
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**CcGetDirtyPages**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ccgetdirtypages)

@@ -1,7 +1,6 @@
 ---
 title: WDF 驱动程序例程的 DriverEntry
 description: DriverEntry 是加载驱动程序后调用的第一个驱动程序提供的例程。 它负责初始化驱动程序。
-ms.assetid: b49d1767-7cfd-45bb-a2be-0597f7373e79
 keywords:
 - DriverEntry 例程
 - 例程
@@ -12,12 +11,12 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 0d91763fa4dc60b983f9ced9e7e26f3a4bd8a261
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: ad81b90a9dec1745f5a53710e8639afd07577c48
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91732589"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96814811"
 ---
 # <a name="driverentry-for-wdf-drivers-routine"></a>WDF 驱动程序例程的 DriverEntry
 
@@ -31,8 +30,8 @@ ms.locfileid: "91732589"
 
 ```ManagedCPlusPlus
 NTSTATUS DriverEntry(
-  _In_ PDRIVER_OBJECT  DriverObject,
-  _In_ PUNICODE_STRING RegistryPath
+  _In_ PDRIVER_OBJECT  DriverObject,
+  _In_ PUNICODE_STRING RegistryPath
 );
 ```
 
@@ -48,7 +47,7 @@ NTSTATUS DriverEntry(
 <a name="return-value"></a>返回值
 ------------
 
-如果例程成功，则它必须返回状态 " \_ 成功"。 否则，它必须返回在 *ntstatus*中定义的错误状态值之一。
+如果例程成功，则它必须返回状态 " \_ 成功"。 否则，它必须返回在 *ntstatus* 中定义的错误状态值之一。
 
 <a name="remarks"></a>备注
 -------
@@ -61,7 +60,7 @@ NTSTATUS DriverEntry(
 
 -   调用 [**WdfDriverCreate**](/windows-hardware/drivers/ddi/wdfdriver/nf-wdfdriver-wdfdrivercreate)。
 
-    对 [**WdfDriverCreate**](/windows-hardware/drivers/ddi/wdfdriver/nf-wdfdriver-wdfdrivercreate) 的调用使驱动程序可以使用 Windows 驱动程序框架接口。  (在调用 **WdfDriverCreate**之前，驱动程序无法调用其他框架例程 ) 
+    对 [**WdfDriverCreate**](/windows-hardware/drivers/ddi/wdfdriver/nf-wdfdriver-wdfdrivercreate) 的调用使驱动程序可以使用 Windows 驱动程序框架接口。  (在调用 **WdfDriverCreate** 之前，驱动程序无法调用其他框架例程 ) 
 
 -   分配任何特定于设备的系统资源和可能需要的全局变量。
 
@@ -75,7 +74,7 @@ NTSTATUS DriverEntry(
 
 -   提供 [DriverEntry 返回值](../kernel/driverentry-return-values.md)。
 
-**注意**   UMDF 驱动程序在用户模式主机进程中运行，而 KMDF 驱动程序在系统进程的内核模式下运行。 此框架可能会将 UMDF 驱动程序的多个实例加载到主机进程的单独实例中。 因此：
+**注意**  UMDF 驱动程序在用户模式主机进程中运行，而 KMDF 驱动程序在系统进程的内核模式下运行。 此框架可能会将 UMDF 驱动程序的多个实例加载到主机进程的单独实例中。 因此：
 
  
 
@@ -84,7 +83,7 @@ NTSTATUS DriverEntry(
 
 有关何时调用基于框架的驱动程序的 **DriverEntry** 例程的详细信息，请参阅 [生成和加载 WDF 驱动程序](./building-and-loading-a-kmdf-driver.md)。
 
-**DriverEntry**例程未在 WDK 标头中声明。 静态驱动程序验证器 (SDV) 和其他验证工具可能需要如下所示的声明：
+**DriverEntry** 例程未在 WDK 标头中声明。 静态驱动程序验证器 (SDV) 和其他验证工具可能需要如下所示的声明：
 
 ``` syntax
 DRIVER_INITIALIZE MyDriverEntry;
@@ -187,7 +186,7 @@ DriverEntry(
 }
 ```
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**WdfDriverCreate**](/windows-hardware/drivers/ddi/wdfdriver/nf-wdfdriver-wdfdrivercreate)

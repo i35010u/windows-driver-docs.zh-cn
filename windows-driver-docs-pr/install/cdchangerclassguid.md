@@ -1,7 +1,6 @@
 ---
 title: CdChangerClassGuid
 description: CdChangerClassGuid
-ms.assetid: f48d6fe8-e75c-49ed-98ad-77d730ea5dbe
 keywords:
 - CdChangerClassGuid 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 1b2c3e88bd3f52a368849a67fe4850452b2898bb
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 40a2852ea62e7304a3a1e2d1c9be682308faf370
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89097179"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96815365"
 ---
 # <a name="cdchangerclassguid"></a>CdChangerClassGuid
 
@@ -46,7 +45,7 @@ CdChangerClassGuid 是 cd-rom 转换器设备的 [设备接口类](./overview-of
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**GUID_DEVINTERFACE_CDCHANGER**](guid-devinterface-cdchanger.md)

@@ -1,7 +1,6 @@
 ---
 title: 驱动程序对硬件的访问
 description: 驱动程序对硬件的访问
-ms.assetid: 66743284-6cdd-467e-b3b4-3d588cd296a5
 keywords:
 - PnP WDK KMDF，硬件访问
 - 即插即用 WDK KMDF，硬件访问
@@ -14,12 +13,12 @@ keywords:
 - 回调函数 WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 138ba7d3a963dc85922d4a72c9fa905fddd1b8bc
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 73f511269112209cfde07fd00e1e066fe7a28d16
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103624"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96814815"
 ---
 # <a name="driver-access-to-hardware"></a>驱动程序对硬件的访问
 

@@ -1,15 +1,14 @@
 ---
 title: 识别内部相机的位置
 description: 本主题提供有关在 Windows 8.1 中的系统上支持内部相机的信息。
-ms.assetid: 7664F0F6-BD95-4919-82E4-F6F8080C2B5B
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7b3b5a5ed0d9639fb4a4447ae39775012b68f87c
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 3c0e020ad8f5d73f6087d15339d75daca9fc3252
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91733210"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96815181"
 ---
 # <a name="identifying-the-location-of-internal-cameras-uwp-device-apps"></a>确定 (UWP 设备应用的内部照相机位置) 
 
@@ -46,13 +45,13 @@ ms.locfileid: "91733210"
 
 | Bits 69:67 的值 \[\] | Panel   |
 |-------------------------|---------|
-| 0                       | TOP     |
+| 0                       | 顶部     |
 | 1                       | 下  |
 | 2                       | Left    |
 | 3                       | Right   |
 | 4                       | Front   |
-| 5                       | Back    |
-| 6                       | Unknown |
+| 5                       | 返回    |
+| 6                       | 未知 |
 
 此外，位 143:128 (垂直偏移) 和 bits 159:144 (水平偏移) 必须提供与显示器相关的相机相对位置。 此原点相对于显示组件中的本机像素寻址，并且应与横向或纵向的当前显示方向匹配。 原点是显示的左下角，其中，正水平和垂直偏移值分别向右和向上偏移。
 
@@ -63,7 +62,7 @@ ms.locfileid: "91733210"
 1. 将 Windows 安装到目标 PC
 2. 中转到 **设备管理器**
 3. 选择并按住 (或右键单击目标网络摄像机) ，然后选择 "**属性**"
-4. 打开 "**详细信息**" 选项卡，然后在**属性**菜单中选择 "**地址**"
+4. 打开 "**详细信息**" 选项卡，然后在 **属性** 菜单中选择 "**地址**"
 5. " **值** " 框中的值是你的设备所在的地址
 6. 在 \_ ACPI 表的 ADR 中设置值
 7. \_基于 ACPI 规范和 PC 设计设置 PLD 值
@@ -100,11 +99,11 @@ Device(PRTD)
 
 只有照相机的设备节点具有 **型号 ID** 属性并且设备类别为，Windows 设备元数据系统才能查询内部嵌入的相机的设备元数据包 `Imaging.Webcam` 。 若要使内置相机的元数据可由 Windows 发现，以便设备元数据包正确地与设备和相机特定的 UWP 设备应用相关联，OEM 需要执行以下操作：
 
-- 使用设备注册表项中的标志在设备节点中设置**模型 ID** `InternalDeviceModification`
+- 使用设备注册表项中的标志在设备节点中设置 **模型 ID** `InternalDeviceModification`
 
 ### <a name="how-to-set-the-model-id-for-the-internal-cameras-device-node"></a>如何设置内部照相机设备节点的型号 ID
 
-对于内部相机，OEM 创建用于模型 ID 的 GUID，并为其创建一个注册表项。 **模型 ID**属性是使用 InternalDeviceModification 机制添加到设备节点的，后者是基于注册表的查找表 (LUT) ，它包含映射到特定设备的注册表项。 此 InternalDeviceModification 表将保留在以下注册表项下：
+对于内部相机，OEM 创建用于模型 ID 的 GUID，并为其创建一个注册表项。 **模型 ID** 属性是使用 InternalDeviceModification 机制添加到设备节点的，后者是基于注册表的查找表 (LUT) ，它包含映射到特定设备的注册表项。 此 InternalDeviceModification 表将保留在以下注册表项下：
 
 - `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\InternalDeviceModification`
 
@@ -119,7 +118,7 @@ InternalDeviceModification 注册表项指示至少有一个相机使用 ModelID
 |注册表项名称|InternalDeviceModification|
 |----|----|
 |必需/可选| 必须|
-|`Path`|`HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control`|
+|路径|`HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control`|
 |格式要求|无|
 |有效子项|模型 ID 注册表项 (参阅以下子项格式要求和示例) |
 
@@ -155,18 +154,18 @@ InternalDeviceModification 注册表项指示至少有一个相机使用 ModelID
 
 \_当系统具有两个相同的相机设备并且两者都具有相同的硬件 id 时，ACPI 表中提供的 PLD 面板值使每个照相机彼此之间相互区分。 若要创建不同的模型 Id，请使用硬件 Id 和 PLD \_ 面板值的组合。
 
-**注意**   \_注册表项中的 PLD 面板设置是可选的。 Windows 根据 ACPI 表中的设置来确定相机的物理位置。
+**注意** \_注册表项中的 PLD 面板设置是可选的。 Windows 根据 ACPI 表中的设置来确定相机的物理位置。
 
 在 \_ ACPI 规范中，PLD 面板注册表值定义为 \_ PLD (物理设备位置) 。 此值指示照相机在其机箱中的物理位置，必须是以下各项之一。
 
-| 值 | 说明|
+| “值” | 描述|
 |-------|----------|
-| 0     | TOP|
+| 0     | 顶部|
 | 1     | 下|
 | 2     | Left|
 | 3     | Right|
 | 4     | Front|
-| 5     | Back |
+| 5     | 返回 |
 | 6     | 将忽略未知的 (垂直位置和水平位置)  |
 
 ### <a name="internaldevicemodification-registry-key-examples"></a>InternalDeviceModification 注册表项示例

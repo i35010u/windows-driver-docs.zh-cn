@@ -1,14 +1,13 @@
 ---
 title: 生成和加载 WDF 驱动程序
 description: 本主题介绍如何在 Visual Studio 中为驱动程序项目选择目标操作系统和 framework 版本。 它还介绍了共同安装程序，以及如何确定是否应在驱动程序包中包含此组件。
-ms.assetid: 82c77b1f-4bf0-46d9-bae3-822e9be5a7fb
 keywords:
 - 内核模式驱动程序 WDK KMDF，构建驱动程序
 - KMDF WDK，构建驱动程序
-- 内核模式驱动程序框架 WDK，构建驱动程序
+- Kernel-Mode Driver Framework WDK，构建驱动程序
 - 内核模式驱动程序 WDK KMDF，加载驱动程序
 - KMDF WDK，加载驱动程序
-- 内核模式驱动程序框架 WDK，加载驱动程序
+- Kernel-Mode Driver Framework WDK，加载驱动程序
 - 构建驱动程序 WDK，KMDF
 - 加载驱动程序 WDK KMDF
 - 生成实用工具 WDK，KMDF
@@ -16,12 +15,12 @@ keywords:
 - KMDF 驱动程序 WDK KMDF，加载
 ms.date: 05/16/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: ff4dfbb91f41c11cc365bd2f2d79caff0fcfde21
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: d350fe97003aba22a9371c7265d44720aa380105
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89187075"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96814851"
 ---
 # <a name="building-and-loading-a-wdf-driver"></a>生成和加载 WDF 驱动程序
 
@@ -51,7 +50,7 @@ ms.locfileid: "89187075"
 否则，请执行以下步骤：
 
 -   右键单击该解决方案，然后选择 " **Configuration Manager**"。  将 **项目配置** 设置为所需的值 (例如 **Debug**) 。
--   右键单击驱动程序项目，然后选择 " **属性**"。  打开 **配置属性->驱动程序设置->驱动程序模型**。  将[驱动程序模型设置](../develop/driver-model-settings-properties-for-driver-projects.md)中的**KMDF 版本次要 (目标版本) **或**UMDF 版本次要 (目标) 版本**更改为所需值。  有关 KMDF 版本的详细信息 ** (必需的最小) ** 和 **UMDF 版本必需 (最低要求) **，请参阅 [指定所需的最小](./building-a-wdf-driver-for-multiple-versions-of-windows.md#specifying-minimum-required)值。
+-   右键单击驱动程序项目，然后选择 " **属性**"。  打开 **配置属性->驱动程序设置->驱动程序模型**。  将 [驱动程序模型设置](../develop/driver-model-settings-properties-for-driver-projects.md)中的 **KMDF 版本次要 (目标版本)** 或 **UMDF 版本次要 (目标) 版本** 更改为所需值。  有关 KMDF 版本的详细信息 **(必需的最小)** 和 **UMDF 版本必需 (最低要求)**，请参阅 [指定所需的最小](./building-a-wdf-driver-for-multiple-versions-of-windows.md#specifying-minimum-required)值。
 
 您可以使用 Windows 10 附带的 Windows 驱动程序工具包 (WDK) 来构建 KMDF 1.9-1.29 驱动程序，同时还可以使用 UMDF 1.9 2.29 驱动程序。
 

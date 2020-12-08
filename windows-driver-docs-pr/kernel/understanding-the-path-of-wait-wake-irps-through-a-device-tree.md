@@ -1,7 +1,6 @@
 ---
 title: 通过设备树了解等待/唤醒 IRP 的路径
 description: 通过设备树了解等待/唤醒 IRP 的路径
-ms.assetid: 35118367-d20b-45c9-a296-656028339c59
 keywords:
 - 等待/唤醒 Irp WDK 电源管理，设备树路径
 - 总线驱动程序 WDK 电源管理
@@ -13,12 +12,12 @@ keywords:
 - PDO WDK 电源管理
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5e650185ae9a875b18f2c8ee9c5a7618f773219a
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 36fdb75120b4f30bbdba45115d7dfb30834257a7
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89189275"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96814235"
 ---
 # <a name="understanding-the-path-of-waitwake-irps-through-a-device-tree"></a>通过设备树了解等待/唤醒 IRP 的路径
 

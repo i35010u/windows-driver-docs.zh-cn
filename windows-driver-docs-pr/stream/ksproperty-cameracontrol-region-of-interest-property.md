@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ CAMERACONTROL \_ \_ \_ 感兴趣的区域 \_ 属性
 description: 用户模式客户端使用此属性来获取或设置照相机的感兴趣的区域。 此属性是可选的。
-ms.assetid: 70EC5974-58A6-4106-AAFA-A7656E17E6CB
 keywords:
 - KSPROPERTY_CAMERACONTROL_REGION_OF_INTEREST_PROPERTY 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 31fe3cecd4b084f9dbe0d33222a14ad51f94cc0c
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 5829c74bdba9bbd95ddfc508b2d25fce00a829f0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103900"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96814875"
 ---
 # <a name="ksproperty_cameracontrol_region_of_interest_property"></a>KSPROPERTY \_ CAMERACONTROL \_ \_ \_ 感兴趣的区域 \_ 属性
 
@@ -64,7 +63,7 @@ ms.locfileid: "90103900"
 <a name="remarks"></a>备注
 -------
 
-属性 ID 是 ** \_ \_ \_ \_ 相关 \_ 属性 \_ id 的 KSPROPERTY CAMERACONTROL 区域**。
+属性 ID 是 **\_ \_ \_ \_ 相关 \_ 属性 \_ id 的 KSPROPERTY CAMERACONTROL 区域**。
 
 <a name="requirements"></a>要求
 ------------
@@ -82,7 +81,7 @@ ms.locfileid: "90103900"
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSPROPERTY**](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)

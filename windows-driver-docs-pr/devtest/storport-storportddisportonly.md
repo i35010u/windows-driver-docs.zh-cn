@@ -1,7 +1,6 @@
 ---
 title: 'StorPortDDIsPortOnly 规则 (storport) '
 description: 此规则包含 StorPort 仅限 DDIs 的 (的列表，其中包含不应在 StorPort 微型端口中调用的互锁函数) 。
-ms.assetid: 55922047-5029-4EB8-B363-61C098339F2E
 ms.date: 05/21/2018
 keywords:
 - 'StorPortDDIsPortOnly 规则 (storport) '
@@ -12,12 +11,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 33593ef01a64cebced4d091a43f8acc35d641d48
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 94c4be565c4e56e749b2a91469fe14a16402e362
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104042"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96813821"
 ---
 # <a name="storportddisportonly-rule-storport"></a>StorPortDDIsPortOnly 规则 (storport) 
 

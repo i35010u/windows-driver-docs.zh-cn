@@ -1,7 +1,6 @@
 ---
 title: NFC 类扩展接口
 description: NFC CX 接口基于 UMDF 类扩展模型。
-ms.assetid: 400043BE-4C16-40C7-B0EB-BA223F882F21
 keywords:
 - NFC
 - 近场通信
@@ -10,12 +9,12 @@ keywords:
 - NFP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3e2f43750a5b4527120003315007c58c7117283a
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 1a936b21ab5febb8c2f2154019b1901eeab48708
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89382505"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96813523"
 ---
 # <a name="nfc-class-extension-interface"></a>NFC 类扩展接口
 

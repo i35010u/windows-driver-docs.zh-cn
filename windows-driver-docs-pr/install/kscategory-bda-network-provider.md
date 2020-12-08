@@ -1,7 +1,6 @@
 ---
 title: KSCATEGORY_BDA_NETWORK_PROVIDER
 description: KSCATEGORY_BDA_NETWORK_PROVIDER
-ms.assetid: a73f7ea3-19bf-4328-a96f-f28ee91db242
 keywords:
 - KSCATEGORY_BDA_NETWORK_PROVIDER 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 9c5e5dacc20a7e5d63d2344dda3533156491ed40
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 36d0e08c4edde230bd8b93b3c669db085c07d9db
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89097271"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96815321"
 ---
 # <a name="kscategory_bda_network_provider"></a>KSCATEGORY_BDA_NETWORK_PROVIDER
 

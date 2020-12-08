@@ -1,15 +1,14 @@
 ---
 title: 为 UWP 设备应用创建照相机驱动程序 MFT
 description: UWP 设备应用允许设备制造商通过相机驱动程序 MFT 将自定义设置和特殊效果应用于照相机的视频流 (media foundation 转换) 。
-ms.assetid: 079CB01E-D16C-4597-8F08-BD75F1D02427
 ms.date: 09/14/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 252562c5915abcbe8ccc4e381e65676a94d81e0f
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: df8e0701f94483e44b4d1d75a09f18f33d82c8d1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91734471"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96815215"
 ---
 # <a name="creating-a-camera-driver-mft-for-a-uwp-device-app"></a>为 UWP 设备应用创建照相机驱动程序 MFT
 
@@ -137,7 +136,7 @@ if(!m_pSourceTransform && m_pInputAttributes) {
 
 ### <a name="header-files-to-include"></a>要包含的头文件
 
-需要包含 `IInspectable` `IMFTransform` 驱动程序 MFT 必须实现的和方法的标头文件。 有关要包括的标头文件的列表，请参阅[适用于照相机的 UWP 设备应用](/samples/browse/)示例的**SampleMFT0**目录中的**stdafx.h。**
+需要包含 `IInspectable` `IMFTransform` 驱动程序 MFT 必须实现的和方法的标头文件。 有关要包括的标头文件的列表，请参阅 [适用于照相机的 UWP 设备应用](/samples/browse/)示例的 **SampleMFT0** 目录中的 **stdafx.h。**
 
 ```cpp
 // required for IInspectable
@@ -154,7 +153,7 @@ if(!m_pSourceTransform && m_pInputAttributes) {
 
 - **IInspectable：： GetRuntiGetTrustLevel** 应 `TrustLevel::BaseTrust` 在 out 参数中返回。
 
-下面的代码示例演示如何 `IInspectable` 在示例驱动程序 MFT 中实现这些方法。 此代码可在示例的**SampleMFT0**目录中的**Mft0**文件中找到。
+下面的代码示例演示如何 `IInspectable` 在示例驱动程序 MFT 中实现这些方法。 此代码可在示例的 **SampleMFT0** 目录中的 **Mft0** 文件中找到。
 
 ```cpp
 // Mft0.cpp

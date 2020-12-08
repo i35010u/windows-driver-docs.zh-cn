@@ -1,7 +1,6 @@
 ---
 title: ScannerElementsChangeEvent 元素
 description: 必需的 ScannerElementsChangeEvent 元素将通知客户端已在扫描仪中发生了更改。
-ms.assetid: 5a3eb934-631d-432b-befa-c67360fe68d1
 keywords:
 - ScannerElementsChangeEvent 元素图像设备
 topic_type:
@@ -12,19 +11,19 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 10d89a5b510c6204bbad13fefb1b12b674a6d9b2
-ms.sourcegitcommit: ab64169b631da4db3f0b895600f1c38a22cb7e2e
+ms.openlocfilehash: f6c4bddf7712914734250fabedaf9b6ec1f074b0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75653007"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96813759"
 ---
 # <a name="scannerelementschangeevent-element"></a>ScannerElementsChangeEvent 元素
 
 
-必需的**ScannerElementsChangeEvent**元素将通知客户端已在扫描仪中发生了更改。
+必需的 **ScannerElementsChangeEvent** 元素将通知客户端已在扫描仪中发生了更改。
 
-<a name="usage"></a>Usage
+<a name="usage"></a>使用情况
 -----
 
 ```xml
@@ -33,7 +32,7 @@ ms.locfileid: "75653007"
 </wscn:ScannerElementsChangeEvent>
 ```
 
-<a name="attributes"></a>属性
+<a name="attributes"></a>特性
 ----------
 
 没有特性。
@@ -65,9 +64,9 @@ ms.locfileid: "75653007"
 <a name="remarks"></a>备注
 -------
 
-当某个元素在扫描仪中的[**ScannerDescription**](scannerdescription.md)、 [**ScannerConfiguration**](scannerconfiguration.md)、 [**DefaultScanTicket**](defaultscanticket.md)或供应商扩展中发生更改时，WSD 扫描服务应将**ScannerElementsChangeEvent**元素发送到客户端。
+当某个元素在扫描仪中的 [**ScannerDescription**](scannerdescription.md)、 [**ScannerConfiguration**](scannerconfiguration.md)、 [**DefaultScanTicket**](defaultscanticket.md)或供应商扩展中发生更改时，WSD 扫描服务应将 **ScannerElementsChangeEvent** 元素发送到客户端。
 
-**ScannerElementsChangeEvent**的主体必须包含一个[**ElementChanges**](elementchanges.md)元素，该元素具有更新的元素的完整 XML。 如果返回的 XML 中缺少一个可选元素，则 WSD 扫描服务将向客户端指示该服务不再支持该元素。 此支持更改可能是由于删除了某个选项（如胶卷扫描选项或双工扫描模式）引起的。 客户端必须对**ElementChanges**中的信息与以前的数据进行比较，以确定哪些值已更改并且必须更新其内部数据存储。
+**ScannerElementsChangeEvent** 的主体必须包含一个 [**ElementChanges**](elementchanges.md)元素，该元素具有更新的元素的完整 XML。 如果返回的 XML 中缺少一个可选元素，则 WSD 扫描服务将向客户端指示该服务不再支持该元素。 此支持更改可能是由于删除了某个选项（如胶卷扫描选项或双工扫描模式）引起的。 客户端必须对 **ElementChanges** 中的信息与以前的数据进行比较，以确定哪些值已更改并且必须更新其内部数据存储。
 
 <a name="examples"></a>示例
 --------
@@ -274,7 +273,7 @@ ms.locfileid: "75653007"
 </soap:Envelope>
 ```
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**DefaultScanTicket**](defaultscanticket.md)

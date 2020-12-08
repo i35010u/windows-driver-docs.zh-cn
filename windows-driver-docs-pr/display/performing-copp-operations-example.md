@@ -1,7 +1,6 @@
 ---
 title: 执行 COPP 操作的示例
 description: 执行 COPP 操作的示例
-ms.assetid: ba5c98d3-63d1-4e2d-ba11-6054c1623e80
 keywords:
 - 复制保护 WDK COPP，COPP 操作示例代码
 - 视频复制保护 WDK COPP，COPP 操作示例代码
@@ -9,12 +8,12 @@ keywords:
 - 受保护的视频 WDK COPP，COPP 操作示例代码
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a72ebbdb1efc583f9ce0041c0097df8267a02f65
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: c01814363a36d90bfc6c252c2cb37f5b22c75a31
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90716446"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96815459"
 ---
 # <a name="performing-copp-operations-example"></a>执行 COPP 操作的示例
 
@@ -24,7 +23,7 @@ ms.locfileid: "90716446"
 
 **本部分仅适用于 Windows Server 2003 SP1 及更高版本以及 Windows XP SP2 及更高版本。**
 
-使用以下示例代码，通过认证的输出保护协议 (COPP) 执行操作。 示例代码实现了 [*DdMoCompRender*](/windows/win32/api/ddrawint/nc-ddrawint-pdd_mocompcb_render) 回调函数。 [**DD \_ MOTIONCOMPCALLBACKS**](/windows/win32/api/ddrawint/ns-ddrawint-dd_motioncompcallbacks)结构的**RenderMoComp**成员指向回调函数。 示例代码只显示了如何将 *DdMoCompRender* 用于 COPP 操作。 有关执行 ProcAmp 控件和取消隔行扫描操作的 *DdMoCompRender* 的实现，请参阅 [执行 ProcAmp 控件和取消隔行扫描操作](performing-procamp-control-and-deinterlacing-operations.md) 和 [使用子流组合操作执行取消隔行扫描](performing-deinterlacing-with-substream-compositing-operations.md)。
+使用以下示例代码，通过认证的输出保护协议 (COPP) 执行操作。 示例代码实现了 [*DdMoCompRender*](/windows/win32/api/ddrawint/nc-ddrawint-pdd_mocompcb_render) 回调函数。 [**DD \_ MOTIONCOMPCALLBACKS**](/windows/win32/api/ddrawint/ns-ddrawint-dd_motioncompcallbacks)结构的 **RenderMoComp** 成员指向回调函数。 示例代码只显示了如何将 *DdMoCompRender* 用于 COPP 操作。 有关执行 ProcAmp 控件和取消隔行扫描操作的 *DdMoCompRender* 的实现，请参阅 [执行 ProcAmp 控件和取消隔行扫描操作](performing-procamp-control-and-deinterlacing-operations.md) 和 [使用子流组合操作执行取消隔行扫描](performing-deinterlacing-with-substream-compositing-operations.md)。
 
 ```cpp
 DWORD APIENTRY

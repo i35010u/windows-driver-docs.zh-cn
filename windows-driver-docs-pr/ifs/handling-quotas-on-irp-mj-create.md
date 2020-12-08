@@ -1,19 +1,18 @@
 ---
 title: 处理 IRP_MJ_CREATE 上的配额
 description: 处理 IRP_MJ_CREATE 上的配额
-ms.assetid: 71cf5e78-c87a-48fe-ba0b-f5efe8166525
 keywords:
 - IRP_MJ_CREATE
 - 配额 WDK 文件系统
 - 安全检查 WDK 文件系统，IRP_MJ_CREATE
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 28b7f2e1cfe7181d4ce9f11f7e947d539905a56e
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: f2566d41aa22d76b2c2b83735cf446e1bb131e0f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89063348"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96814448"
 ---
 # <a name="handling-quotas-on-irp_mj_create"></a>处理 IRP \_ MJ CREATE 的 \_ 配额
 

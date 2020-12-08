@@ -1,9 +1,8 @@
 ---
-title: usbkd _ehciep
-description: _Ehciep usbkd 命令显示 usbehci _ENDPOINT_DATA 结构中的信息。 使用此命令显示 (的异步终结点的相关信息，) 控制和批量终结点。
-ms.assetid: 0DA42FDD-41D6-4234-9D9C-36872F0CE0C1
+title: usbkd._ehciep
+description: Usbkd._ehciep 命令显示 usbehci _ENDPOINT_DATA 结构中的信息。 使用此命令显示 (的异步终结点的相关信息，) 控制和批量终结点。
 keywords:
-- usbkd _ehciep Windows 调试
+- usbkd._ehciep Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 100e5a10ed3be099030fd55b0a4887a1e6937b72
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: fff483e56c95723a2b6f9ffbede148745e106d45
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89210877"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96814663"
 ---
 # <a name="usbkd_ehciep"></a>！ usbkd。 \_ehciep
 
 
-**！ Usbkd。 \_ehciep**命令显示 usbehci 中的信息 **！ \_终结点 \_ 数据**结构。 使用此命令显示 (的异步终结点的相关信息，) 控制和批量终结点。
+**！ Usbkd。 \_ehciep** 命令显示 usbehci 中的信息 **！ \_终结点 \_ 数据** 结构。 使用此命令显示 (的异步终结点的相关信息，) 控制和批量终结点。
 
 ```dbgcmd
 !usbkd._ehciep StructAddr
@@ -56,7 +55,7 @@ Usbkd.dll
         Port 4: !port2_info ffffe000026df1c0 
 ```
 
-在上面的输出中，FDO 的设备扩展的地址显示为 [DML](debugger-markup-language-commands.md) 命令 **！ ehci \_ info ffffe0000206e1a0**的参数。 单击 DML 命令或将设备扩展的地址传递给 [**！ usbhcdext**](-usbkd-usbhcdext.md)。
+在上面的输出中，FDO 的设备扩展的地址显示为 [DML](debugger-markup-language-commands.md) 命令 **！ ehci \_ info ffffe0000206e1a0** 的参数。 单击 DML 命令或将设备扩展的地址传递给 [**！ usbhcdext**](-usbkd-usbhcdext.md)。
 
 ```dbgcmd
 0: kd> !usbkd.usbhcdext ffffe0000206e1a0

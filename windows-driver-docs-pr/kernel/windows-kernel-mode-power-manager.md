@@ -1,15 +1,14 @@
 ---
 title: Windows 内核模式电源管理器
 description: Windows 内核模式电源管理器
-ms.assetid: 2d39e43a-63a6-4474-a1ed-c24b4526a3f5
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: e4954eb4c4d39c3d888c62b150d3fce96d3a97aa
-ms.sourcegitcommit: 6f9087dab3bf214c287b179829e6a59d74db0591
+ms.openlocfilehash: f3fe20081708c766aa233164e731d2e057ae2756
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89471902"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96815047"
 ---
 # <a name="windows-kernel-mode-power-manager"></a>Windows 内核模式电源管理器
 

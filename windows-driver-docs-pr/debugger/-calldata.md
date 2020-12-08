@@ -1,7 +1,6 @@
 ---
 title: calldata
-description: Calldata 扩展的过程调用中命名的表的统计信息的表单中显示性能信息。
-ms.assetid: 50f63fd3-a0fa-44f0-a7aa-752ae098f4e8
+description: Calldata 扩展以指定表中的过程调用统计信息的形式显示性能信息。
 keywords:
 - calldata Windows 调试
 ms.date: 05/23/2017
@@ -12,29 +11,29 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: aa13ef08711196c45efedcdf7e26bda48f1b0a23
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a868c09417ecf247555d61d2247ce9f6d7848740
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63334638"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96814099"
 ---
 # <a name="calldata"></a>!calldata
 
 
-**！ Calldata**扩展过程调用中命名的表的统计信息的表单中显示性能信息。
+**！ Calldata** extension 以指定表中的过程调用统计信息的形式显示性能信息。
 
 ```dbgsyntax
     !calldata Table 
 ```
 
-## <a name="span-idddkcalldatadbgspanspan-idddkcalldatadbgspanparameters"></a><span id="ddk__calldata_dbg"></span><span id="DDK__CALLDATA_DBG"></span>参数
+## <a name="span-idddk__calldata_dbgspanspan-idddk__calldata_dbgspanparameters"></a><span id="ddk__calldata_dbg"></span><span id="DDK__CALLDATA_DBG"></span>参数
 
 
-<span id="_______Table______"></span><span id="_______table______"></span><span id="_______TABLE______"></span> *Table*   
+<span id="_______Table______"></span><span id="_______table______"></span><span id="_______TABLE______"></span>*表*   
 收集调用数据的表的名称。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 <table>
 <colgroup>

@@ -1,7 +1,6 @@
 ---
 title: 在驱动程序中初始化 WMI 支持
 description: 在驱动程序中初始化 WMI 支持
-ms.assetid: cf79176c-8e08-45f9-b2fb-a82707d8667b
 keywords:
 - WMI WDK KMDF，初始化支持
 - 提供程序实例 WDK KMDF
@@ -12,12 +11,12 @@ keywords:
 - 初始化 WMI 支持 WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f8ebb2798f7e7486c6a528e5e1e2596a6b90353b
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 4b39bdc8c3d027b0ce417f3406066a55286679b6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89184163"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96814707"
 ---
 # <a name="initializing-wmi-support-in-your-driver"></a>在驱动程序中初始化 WMI 支持
 
@@ -26,7 +25,7 @@ ms.locfileid: "89184163"
 
 若要支持 WMI 数据块，请使用基于框架的驱动程序：
 
--   将托管对象格式注册 (MOF) 未在 *Wmicore*中定义的任何自定义 WMI 数据提供程序的资源名称。
+-   将托管对象格式注册 (MOF) 未在 *Wmicore* 中定义的任何自定义 WMI 数据提供程序的资源名称。
 
 -   创建一个或多个 WMI 实例对象，以表示它可以读取或写入的数据块。
 
@@ -51,13 +50,13 @@ ms.locfileid: "89184163"
 
 在 WMI 客户端可以访问驱动程序的 WMI 数据块之前，驱动程序必须向系统的 WMI 服务注册其提供程序实例。 驱动程序可以使用以下任一方法来注册提供程序实例：
 
--   将提供程序实例的[**WDF \_ WMI \_ 实例 \_ 配置**](/windows-hardware/drivers/ddi/wdfwmi/ns-wdfwmi-_wdf_wmi_instance_config)结构的**Register**成员设置为**TRUE**。
+-   将提供程序实例的 [**WDF \_ WMI \_ 实例 \_ 配置**](/windows-hardware/drivers/ddi/wdfwmi/ns-wdfwmi-_wdf_wmi_instance_config)结构的 **Register** 成员设置为 **TRUE**。
 
     如果你的驱动程序将 " **注册** " 设置为 " **TRUE**"，则在设备首次进入工作状态 (D0) 状态时，框架会自动注册该实例。
 
 -   调用 [**WdfWmiInstanceRegister**](/windows-hardware/drivers/ddi/wdfwmi/nf-wdfwmi-wdfwmiinstanceregister) 方法。
 
-    如果在调用[**WdfWmiInstanceCreate**](/windows-hardware/drivers/ddi/wdfwmi/nf-wdfwmi-wdfwmiinstancecreate)后，你的驱动程序调用[**WdfWmiInstanceRegister**](/windows-hardware/drivers/ddi/wdfwmi/nf-wdfwmi-wdfwmiinstanceregister) ，框架将在设备处于工作状态 (D0) 状态后注册该实例。
+    如果在调用 [**WdfWmiInstanceCreate**](/windows-hardware/drivers/ddi/wdfwmi/nf-wdfwmi-wdfwmiinstancecreate)后，你的驱动程序调用 [**WdfWmiInstanceRegister**](/windows-hardware/drivers/ddi/wdfwmi/nf-wdfwmi-wdfwmiinstanceregister) ，框架将在设备处于工作状态 (D0) 状态后注册该实例。
 
 )  (删除 [*实例的设备*](/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_self_managed_io_cleanup) 时，框架会自动注销每个提供程序实例。 有关框架调用驱动程序的回调函数的顺序的信息，请参阅 [PnP 和电源管理方案](pnp-and-power-management-scenarios.md)。
 

@@ -1,7 +1,6 @@
 ---
 title: devhandles
-description: Devhandles 扩展显示指定设备打开的句柄。
-ms.assetid: a473dd58-1571-4969-b8b7-f7a71128d824
+description: Devhandles 扩展显示指定设备的开放句柄。
 keywords:
 - devhandles Windows 调试
 ms.date: 05/23/2017
@@ -12,29 +11,29 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 3145c0e050e4bf8cfc090a856dd5b39489209d8f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e8da8ec4acd46ee0ef0220a0b6823b13035a5fac
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63336830"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96815249"
 ---
 # <a name="devhandles"></a>!devhandles
 
 
-**！ Devhandles**扩展显示指定设备打开的句柄。
+**！ Devhandles** extension 显示指定设备的开放句柄。
 
 ```dbgcmd
 !devhandles Address 
 ```
 
-## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>参数
+## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>Parameters
 
 
-<span id="_______Address______"></span><span id="_______address______"></span><span id="_______ADDRESS______"></span> *Address*   
-指定要显示打开的句柄其设备的地址。
+<span id="_______Address______"></span><span id="_______address______"></span><span id="_______ADDRESS______"></span>*地址*   
+指定要为其显示打开句柄的设备的地址。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 <table>
 <colgroup>
@@ -58,11 +57,11 @@ ms.locfileid: "63336830"
 <a name="remarks"></a>备注
 -------
 
-若要显示完整的句柄的信息，此扩展要求私有符号。
+若要显示完整的句柄信息，此扩展需要私有符号。
 
-可以使用获取的设备对象的地址[ **！ drvobj** ](-drvobj.md)或[ **！ devnode** ](-devnode.md)扩展。
+可以使用 [**！ drvobj**](-drvobj.md) 或 [**！ devnode**](-devnode.md) 扩展来获取设备对象的地址。
 
-以下是截断的示例：
+下面是一个被截断的示例：
 
 ```dbgcmd
 lkd> !devhandles 0x841153d8

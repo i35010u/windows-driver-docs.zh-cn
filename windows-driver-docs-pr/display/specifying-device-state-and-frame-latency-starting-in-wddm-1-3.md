@@ -1,16 +1,15 @@
 ---
 title: 在 WDDM 1.3 中指定设备状态和帧延迟
-ms.assetid: 97FC54BD-0D20-4235-B914-5F44690274AE
 description: 从 Windows 显示器驱动程序模型 (WDDM) 1.3 开始，用户模式显示驱动程序可以使用转义标志将设备状态和帧延迟信息传递到显示微型端口驱动程序。
 ms.date: 12/06/2018
 ms.localizationpriority: medium
 ms.custom: seodec18
-ms.openlocfilehash: 5d5f01ecd66a2b464d1fb6e440b7b62e8e738f6c
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 05d158539f44ef95380f56cd115d0fda4d66454a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89064590"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96815443"
 ---
 # <a name="specifying-device-state-and-frame-latency-in-wddm-13"></a>在 WDDM 1.3 中指定设备状态和帧延迟
 

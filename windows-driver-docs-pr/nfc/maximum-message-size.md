@@ -1,7 +1,6 @@
 ---
 title: NFP 最大消息大小
 description: 每个提供程序实现可以指定发布和订阅的最大消息大小。 Windows 要求此最大提供程序支持的消息大小不能小于 10 KB。
-ms.assetid: 9806130F-AB9D-4265-8D9E-72CED49BF2C2
 keywords:
 - NFC
 - 近场通信
@@ -10,12 +9,12 @@ keywords:
 - NFP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a4027a580d623fc1fc2173a7f077e2761f30a4b7
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 549019a5b31ba8d5f2a63f2ffd3f0d2860e31d23
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89382541"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96813563"
 ---
 # <a name="nfp-maximum-message-size"></a>NFP 最大消息大小
 

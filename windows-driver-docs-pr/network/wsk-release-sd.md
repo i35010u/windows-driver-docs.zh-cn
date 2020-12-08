@@ -1,22 +1,21 @@
 ---
 title: WSK_RELEASE_SD
 description: WSK_RELEASE_SD
-ms.assetid: de8cc759-c778-464e-9e19-984ea20c0d29
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WSK_RELEASE_SD 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 9ee06a72392cadb00826d0507a38f14c347baec3
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: df23ce884d20997666227a1ab3b8fa4a2cf875dc
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89214961"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96813621"
 ---
 # <a name="wsk_release_sd"></a>WSK \_ RELEASE \_ SD
 
 
-WSK 应用程序使用 WSK \_ release \_ sd client control 操作来释放以前使用 [**WSK \_ 缓存 \_ SD**](wsk-cache-sd.md) 客户端控制操作获取的安全描述符的缓存副本，或使用 [** \_ WSK \_ security**](so-wsk-security.md) socket 选项检索此描述符。
+WSK 应用程序使用 WSK \_ release \_ sd client control 操作来释放以前使用 [**WSK \_ 缓存 \_ SD**](wsk-cache-sd.md) 客户端控制操作获取的安全描述符的缓存副本，或使用 [**\_ WSK \_ security**](so-wsk-security.md) socket 选项检索此描述符。
 
 若要释放安全描述符的缓存副本，WSK 应用程序需要使用以下参数调用 [**WskControlClient**](/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_control_client) 函数。
 
@@ -28,7 +27,7 @@ WSK 应用程序使用 WSK \_ release \_ sd client control 操作来释放以前
 <thead>
 <tr class="header">
 <th>参数</th>
-<th>值</th>
+<th>“值”</th>
 </tr>
 </thead>
 <tbody>

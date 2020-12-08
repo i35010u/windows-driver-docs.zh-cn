@@ -1,7 +1,6 @@
 ---
 title: 事务管理器对象
 description: 事务管理器对象
-ms.assetid: af53cda4-e2ab-47df-9311-a4da2a2ee08d
 keywords:
 - 日志流 WDK KTM，创建
 - 虚拟时钟值 WDK KTM，在事务管理器对象中
@@ -9,17 +8,17 @@ keywords:
 - 事务管理器对象 WDK KTM
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5fed949ddaad2afad740b54fbd6a7ba9d2b4fe3b
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: 6e514b9c474b955581d47ff18d2dc9f60ead4020
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89403546"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96814261"
 ---
 # <a name="transaction-manager-objects"></a>事务管理器对象
 
 
-*事务管理器对象*的主要目的是创建和维护 KTM 用来记录有关事务的状态信息的[公用日志文件系统](introduction-to-the-common-log-file-system.md) (CLFS) 日志流。
+*事务管理器对象* 的主要目的是创建和维护 KTM 用来记录有关事务的状态信息的 [公用日志文件系统](introduction-to-the-common-log-file-system.md) (CLFS) 日志流。
 
 事务管理器对象还包含一个 [虚拟时钟值](using-virtual-clock-values.md) ，KTM 维护该虚拟时钟值并将其用于对象的日志流中的序列信息。
 

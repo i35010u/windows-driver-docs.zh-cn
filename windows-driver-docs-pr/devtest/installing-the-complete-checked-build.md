@@ -1,18 +1,17 @@
 ---
 title: 安装完整的已检验版本
 description: 安装完整的已检验版本
-ms.assetid: 92953679-ab38-4df2-9241-135b57429b66
 keywords:
 - 已检查生成 WDK，安装
 - 完成已检查的生成 WDK
 ms.date: 05/08/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: ec5336d6cb34e28d5c679a37a8c28a54b14b58a3
-ms.sourcegitcommit: 076f9cd83313f6d8ab5688340f05bde7e8fbb8ee
+ms.openlocfilehash: 82a6b0b5116837a39adb1e382b5d180121e8f31e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/09/2020
-ms.locfileid: "82999058"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96813877"
 ---
 # <a name="installing-the-complete-checked-build"></a>安装完整的已检验版本
 

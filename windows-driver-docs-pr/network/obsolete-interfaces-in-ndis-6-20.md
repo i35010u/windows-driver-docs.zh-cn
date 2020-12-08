@@ -1,18 +1,17 @@
 ---
 title: NDIS 6.20 中已过时的接口
 description: NDIS 6.20 中已过时的接口
-ms.assetid: 11c3abd5-651e-4f9c-9f0b-ced6c00947f1
 keywords:
 - NDIS 6.20 WDK，过时 NDIS 6.1 接口
 - 过时的 NDIS 6.1 接口 WDK NDIS 6.20
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bdc2aff692c36caf6dcd5e8cb195a06515526731
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 1d67890ff7d3a1dca44df879db04caa6c88e95c3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107544"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96813673"
 ---
 # <a name="obsolete-interfaces-in-ndis-620"></a>NDIS 6.20 中已过时的接口
 

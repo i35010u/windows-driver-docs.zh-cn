@@ -1,22 +1,21 @@
 ---
 title: 在示例中使用的定义和变量
 description: 在示例中使用的定义和变量
-ms.assetid: 55dd0618-2171-406b-a22a-437412c77cbc
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 142e5d678d5e0460ec79ab893052173cc9fa7127
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d9f149cc49d8b90adf41ec89aa9796782b796bfb
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63364581"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96813775"
 ---
 # <a name="definitions-and-variables-used-in-the-examples"></a>在示例中使用的定义和变量
 
 > [!IMPORTANT]  
-> WSD 占领功能已弃用，将在 2018年中删除所有与 WSD 占领相关文档。
+> 已弃用 WSD 争取冠军宝座功能，并且2018中将删除所有与 WSD 争取冠军宝座相关的文档。
 
-下面的代码演示在本部分中的代码示例中的常量定义和使用的公共变量。
+下面的代码演示了在本部分的代码示例中使用的常量定义和常见变量。
 
 ```cpp
 //

@@ -1,15 +1,14 @@
 ---
 title: 使 ISR 处于活动或非活动状态
 description: 从 Windows 8 开始，驱动程序可以调用 IoReportInterruptActive 或 IoReportInterruptInactive 例程，使已注册的中断服务例程 (ISR) 活动或非活动状态。
-ms.assetid: 788D9341-D1F8-4126-8C30-AA49DE27F4BB
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 97fc698357cbdc04179e3a3b4dcc2239cea00bc9
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 8a11f65ae3765b7845a2b9afd48f33d319cd7b63
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89187585"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96815069"
 ---
 # <a name="making-an-isr-active-or-inactive"></a>使 ISR 处于活动或非活动状态
 
@@ -24,7 +23,7 @@ ms.locfileid: "89187585"
 
 调用 **IoReportInterruptInactive** 和 **IoReportInterruptActive** 是可选的。 如果驱动程序永远不会调用这些例程，则已注册的 ISR 会保持活动状态，直到驱动程序调用 [**IoDisconnectInterruptEx**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iodisconnectinterruptex) 例程来取消注册 ISR。
 
-驱动程序应将设备配置为仅当这些中断的 ISR 处于活动状态时才发出中断。 当 ISR 处于非活动状态时，无法阻止设备发出中断可能会导致系统不稳定。 例如，如果设备与其他设备共享级别触发的中断线路，并且设备在 ISR 处于非活动状态时发出中断请求，则线路上其他设备的 Isr 不会确认中断，中断将继续激发。 在调用 **IoReportInterruptInactive**之前，驱动程序应将设备配置为停止发出中断。 调用 **IoReportInterruptActive**之后，驱动程序应将设备配置为开始发出中断。
+驱动程序应将设备配置为仅当这些中断的 ISR 处于活动状态时才发出中断。 当 ISR 处于非活动状态时，无法阻止设备发出中断可能会导致系统不稳定。 例如，如果设备与其他设备共享级别触发的中断线路，并且设备在 ISR 处于非活动状态时发出中断请求，则线路上其他设备的 Isr 不会确认中断，中断将继续激发。 在调用 **IoReportInterruptInactive** 之前，驱动程序应将设备配置为停止发出中断。 调用 **IoReportInterruptActive** 之后，驱动程序应将设备配置为开始发出中断。
 
 若要注销 ISR，无论 ISR 当前处于活动状态还是非活动状态，驱动程序都可以调用 **IoDisconnectInterruptEx** 。
 

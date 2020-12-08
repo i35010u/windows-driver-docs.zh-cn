@@ -1,7 +1,6 @@
 ---
 title: DEVPROP_TYPE_NTSTATUS
 description: DEVPROP_TYPE_NTSTATUS 标识符表示在 Ntstatus 中定义的 NTSTATUS 状态代码值的基本数据类型标识符。
-ms.assetid: 7593d24d-8e89-409e-9047-0c14268b8e62
 keywords:
 - DEVPROP_TYPE_NTSTATUS 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 3004ab8097b1f6dfe0e347659b8f99f2e184a1de
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 5a8f4a0d0966bc91424740545a0d54b4327e4bc5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89096047"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96815353"
 ---
 # <a name="devprop_type_ntstatus"></a>DEVPROP_TYPE_NTSTATUS
 
@@ -41,7 +40,7 @@ DEVPROP_TYPE_NTSTATUS 标识符表示在 Ntstatus 中定义的 NTSTATUS 状态�
 
 - 将 *PropertyBuffer* 参数设置为一个指向缓冲区的指针，该缓冲区可包含至少一个 NTSTATUS 值。
 
-- 将 *PropertyBufferSize* 参数设置为 <strong>sizeof (</strong>NTSTATUS<strong>) </strong>。
+- 将 *PropertyBufferSize* 参数设置为 <strong>sizeof (</strong>NTSTATUS <strong>)</strong>。
 
 - 根据需要设置其余函数参数来设置属性。
 
@@ -77,7 +76,7 @@ DEVPROP_TYPE_NTSTATUS 标识符表示在 Ntstatus 中定义的 NTSTATUS 状态�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**DEVPROP_TYPE_ERROR**](devprop-type-error.md)

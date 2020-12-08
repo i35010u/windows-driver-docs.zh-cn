@@ -1,17 +1,16 @@
 ---
 title: HS_HOST_SEND_USER_MESSAGE 函数
 description: 调用 HS_HOST_SEND_USER_MESSAGE 函数以便与用户通信。 消息内容包含在传递到热点卸载服务的自定义 UI 显示字符串中。
-ms.assetid: c4ab1fda-18eb-44e4-aa64-f7b37b4147a3
 keywords:
 - typedef DWORD (WINAPI HS_HOST_SEND_USER_MESSAGE 从 Windows Vista 开始) 函数网络驱动程序
 ms.date: 07/31/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 128d81ef1c9e97df4713defe608143485508516e
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: c9eacd455c1eaeeca0fc932eb2faa96d61842ec3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89403080"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96814177"
 ---
 # <a name="hs_host_send_user_message-function"></a>HS \_ 主机 \_ 发送 \_ 用户 \_ 消息函数
 
@@ -25,9 +24,9 @@ ms.locfileid: "89403080"
 
 ```ManagedCPlusPlus
  typedef DWORD (WINAPI *HS_HOST_SEND_USER_MESSAGE)(
-  _In_ HANDLE hPluginContext,
-  _In_ DWORD  dwConnectionId,
-  _In_ DWORD  dwStringID
+  _In_ HANDLE hPluginContext,
+  _In_ DWORD  dwConnectionId,
+  _In_ DWORD  dwStringID
 );
 ```
 
@@ -67,7 +66,7 @@ ms.locfileid: "89403080"
 <td><p>Windows 10 移动版</p></td>
 </tr>
 <tr class="even">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Hotspotoffloadplugin (包含 Hotspotoffloadplugin) </td>
 </tr>
 </tbody>

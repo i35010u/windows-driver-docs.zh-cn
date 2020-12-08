@@ -1,17 +1,16 @@
 ---
 title: WSK_CACHE_SD
 description: WSK_CACHE_SD
-ms.assetid: 60a4c7f9-d7e3-4378-b22b-93c69a9b8a37
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WSK_CACHE_SD 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: aabbdfc9bec1e70ce58f1c1efedf7becc1d7170c
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: a6d81c687bc88c511738c5d4da23b95b91fd4bef
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89216506"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96813625"
 ---
 # <a name="wsk_cache_sd"></a>WSK \_ 缓存 \_ SD
 
@@ -28,7 +27,7 @@ WSK 应用程序使用 WSK \_ CACHE \_ SD client control 操作来获取可传�
 <thead>
 <tr class="header">
 <th>参数</th>
-<th>值</th>
+<th>“值”</th>
 </tr>
 </thead>
 <tbody>

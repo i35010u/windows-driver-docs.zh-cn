@@ -1,9 +1,8 @@
 ---
 title: 解析元素
-description: 可选的解析元素指定扫描图像的分辨率。
-ms.assetid: d46c197d-40ed-4623-a842-7ee5cb9e8367
+description: 可选的解决方法元素指定扫描图像的分辨率。
 keywords:
-- 解析元素成像设备
+- 解析元素图像设备
 topic_type:
 - apiref
 api_name:
@@ -12,19 +11,19 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 255336081378ac86b22aeb48fdc150d1cc01089d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d8c3386a9889f222136ff97f40d887240aa40e1f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63356235"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96814411"
 ---
 # <a name="resolution-element"></a>解析元素
 
 
-可选**解析**元素指定扫描图像的分辨率。
+可选的 **解决方法** 元素指定扫描图像的分辨率。
 
-<a name="usage"></a>用法
+<a name="usage"></a>使用情况
 -----
 
 ```xml
@@ -46,9 +45,9 @@ ms.locfileid: "63356235"
 </colgroup>
 <thead>
 <tr class="header">
-<th>特性</th>
-<th>在任务栏的搜索框中键入</th>
-<th>必需</th>
+<th>属性</th>
+<th>类型</th>
+<th>必须</th>
 <th>描述</th>
 </tr>
 </thead>
@@ -58,7 +57,7 @@ ms.locfileid: "63356235"
 <td><p>xs:string</p></td>
 <td><p>否</p></td>
 <td><p></p>
-<p>可选。 一个布尔值，必须为 0，为 false，1 或 true。<strong>falsetrue</strong></p></td>
+<p>可选。 必须为0、false、1或 true 的布尔值。<strong>falsetrue</strong></p></td>
 </tr>
 </tbody>
 </table>
@@ -77,10 +76,10 @@ ms.locfileid: "63356235"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><a href="height.md" data-raw-source="[&lt;strong&gt;Height&lt;/strong&gt;](height.md)"><strong>Height</strong></a></p></td>
+<td><p><a href="height.md" data-raw-source="[&lt;strong&gt;Height&lt;/strong&gt;](height.md)"><strong>高度</strong></a></p></td>
 </tr>
 <tr class="even">
-<td><p><a href="width.md" data-raw-source="[&lt;strong&gt;Width&lt;/strong&gt;](width.md)"><strong>Width</strong></a></p></td>
+<td><p><a href="width.md" data-raw-source="[&lt;strong&gt;Width&lt;/strong&gt;](width.md)"><strong>宽度</strong></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -110,24 +109,24 @@ ms.locfileid: "63356235"
 <a name="remarks"></a>备注
 -------
 
-**解析**元素包含一个[**宽度**](width.md) x [**高度**](height.md)描述对所需的扫描分辨率。 如果**高度**元素缺少**宽度**使用值，无法完成方形的解决方法 (例如，300x300)。
+**解析** 元素包含用于描述所需的扫描分辨率的单一 [**宽度**](width.md)x [**高度**](height.md)对。 如果缺少 **Height** 元素，则使用 **Width** 值，从而生成正方形解析 (例如 300 x 300) 。
 
-**解析**值均以每英寸像素数。
+**分辨率** 值以像素/英寸为单位。
 
-客户端可以指定可选**MustHonor**属性时，才**解析**元素包含在**CreateScanJobRequest**层次结构。 有关详细信息**MustHonor**及其使用情况，请参阅[ **CreateScanJobRequest**](createscanjobrequest.md)。
+仅当 **解析** 元素包含在 **CreateScanJobRequest** 层次结构内时，客户端才能指定可选的 **MustHonor** 属性。 有关 **MustHonor** 及其用法的详细信息，请参阅 [**CreateScanJobRequest**](createscanjobrequest.md)。
 
 ## <a name="see-also"></a>请参阅
 
 
 [**CreateScanJobRequest**](createscanjobrequest.md)
 
-[**Height**](height.md)
+[**高度**](height.md)
 
 [**MediaBack**](mediaback.md)
 
 [**MediaFront**](mediafront.md)
 
-[**Width**](width.md)
+[**宽度**](width.md)
 
  
 

@@ -1,34 +1,33 @@
 ---
 title: HS_CONNECTION_CONTEXT 结构
 description: HS_CONNECTION_CONTEXT 结构包含插件用于 post 连接身份验证所需的信息。
-ms.assetid: 22b219fc-691b-4813-a523-a76de037e64d
 keywords:
 - 从 Windows Vista 开始 HS_CONNECTION_CONTEXT 结构网络驱动程序
 - 从 Windows Vista 开始 PHS_CONNECTION_CONTEXT 结构指针网络驱动程序
 ms.date: 07/31/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2eba522df8560d4619218b31d7616d0aa06d6d09
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: 3ed8b120f2e6ca77e80b4b6881e6aab96dc553ff
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89403114"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96814207"
 ---
 # <a name="hs_connection_context-structure"></a>HS \_ 连接 \_ 上下文结构
 
 [!include[Wi-Fi Hotspot Offloading deprecation](../includes/wi-fi-hotspot-offloading-deprecation.md)]
 
 
-**HS \_ 连接 \_ 上下文**结构包含插件用于 post 连接身份验证所需的信息。
+**HS \_ 连接 \_ 上下文** 结构包含插件用于 post 连接身份验证所需的信息。
 
 <a name="syntax"></a>语法
 ------
 
 ```ManagedCPlusPlus
 typedef struct _HS_CONNECTION_CONTEXT {
-  HS_MAC_ADDRESS  MacAddress;
+  HS_MAC_ADDRESS  MacAddress;
   HS_SIM_IDENTITY SIMIdentity;
-  WCHAR           pszPhoneNumber[HS_MAX_PHONE_NUMBER_LENGTH+1];
+  WCHAR           pszPhoneNumber[HS_MAX_PHONE_NUMBER_LENGTH+1];
 } HS_CONNECTION_CONTEXT, *PHS_CONNECTION_CONTEXT;
 ```
 
@@ -54,13 +53,13 @@ typedef struct _HS_CONNECTION_CONTEXT {
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Hotspotoffloadplugin (包含 Hotspotoffloadplugin) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**HS \_ MAC \_ 地址**](hs-mac-address.md)

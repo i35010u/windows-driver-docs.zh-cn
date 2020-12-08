@@ -1,7 +1,6 @@
 ---
 title: 锁定可分页代码或数据
 description: 锁定可分页代码或数据
-ms.assetid: b99b6af3-b4b1-4fd6-ac73-27c1068183a4
 keywords:
 - 可分页驱动程序 WDK 内核，锁定代码或数据
 - 锁定 WDK 可分页驱动程序
@@ -11,12 +10,12 @@ keywords:
 - 页关键字 WDK
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 190171d0fbbffc0703aa0fc7903d1a9ee5f7dda2
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: b6f7b6f90c4e0a6e4023f81158e9c8449c3e9fcd
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89187587"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96815073"
 ---
 # <a name="locking-pageable-code-or-data"></a>锁定可分页代码或数据
 
@@ -32,9 +31,9 @@ ms.locfileid: "89187587"
 
 若要将可分页代码隔离到一个命名部分，请使用以下编译器指令进行标记：
 
-** \# pragma 分配 \_ 文本 (PAGE * Xxx**<em>， *RoutineName</em>* * ) **
+**\# pragma 分配 \_ 文本 (PAGE * Xxx**<em>， *RoutineName</em>* * )**
 
-可分页代码部分的名称必须以四个字母 "PAGE" 开头，并可后跟四个字符， (在此处表示为 **_Xxx_**) 以唯一标识该部分。 节名 (的前四个字母为 "PAGE" ) 必须大写。 *RoutineName*标识要包含在可分页节中的入口点。
+可分页代码部分的名称必须以四个字母 "PAGE" 开头，并可后跟四个字符， (在此处表示为 **_Xxx_**) 以唯一标识该部分。 节名 (的前四个字母为 "PAGE" ) 必须大写。 *RoutineName* 标识要包含在可分页节中的入口点。
 
 驱动程序文件中的可分页代码部分的最短有效名称只是页面。 例如，下面的代码示例中的杂注指令在 `RdrCreateConnection` 名为 PAGE 的可分页代码部分中标识为入口点。
 
@@ -44,7 +43,7 @@ ms.locfileid: "89187587"
 #endif 
 ```
 
-若要在内存中驻留和锁定可分页的驱动程序代码，驱动程序将调用 [**MmLockPagableCodeSection**](/windows-hardware/drivers/ddi/wdm/nf-wdm-mmlockpagablecodesection)，传递地址 (通常是可分页代码部分) 的驱动程序例程的入口点。 **MmLockPagableCodeSection** 会锁定包含调用中引用的例程的部分的全部内容。 换句话说，此调用会使每个与相同 PAGE*Xxx* 标识符关联的例程在内存中驻留和锁定。
+若要在内存中驻留和锁定可分页的驱动程序代码，驱动程序将调用 [**MmLockPagableCodeSection**](/windows-hardware/drivers/ddi/wdm/nf-wdm-mmlockpagablecodesection)，传递地址 (通常是可分页代码部分) 的驱动程序例程的入口点。 **MmLockPagableCodeSection** 会锁定包含调用中引用的例程的部分的全部内容。 换句话说，此调用会使每个与相同 PAGE *Xxx* 标识符关联的例程在内存中驻留和锁定。
 
 **MmLockPagableCodeSection** 返回一个句柄，该句柄在 (通过调用 [**MmUnlockPagableImageSection**](/windows-hardware/drivers/ddi/wdm/nf-wdm-mmunlockpagableimagesection) 例程) 或驱动程序必须在其代码中的其他位置锁定节时使用。
 
@@ -78,15 +77,15 @@ CHAR Array2[64*1024];
 
 若要还原锁定的节的可分页状态，请根据需要调用 [**MmUnlockPagableImageSection**](/windows-hardware/drivers/ddi/wdm/nf-wdm-mmunlockpagableimagesection)，传递 [**MmLockPagableCodeSection**](/windows-hardware/drivers/ddi/wdm/nf-wdm-mmlockpagablecodesection) 或 [**MmLockPagableDataSection**](/windows-hardware/drivers/ddi/wdm/nf-wdm-mmlockpagabledatasection)返回的句柄值。 驱动程序的 [*Unload*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_unload) 例程必须调用 **MmUnlockPagableImageSection** ，以释放为可锁定代码和数据部分获得的每个句柄。
 
-锁定节是一种代价高昂的操作，因为在将页面锁定到内存之前，内存管理器必须搜索其已加载的模块列表。 如果驱动程序在其代码中的多个位置锁定某个部分，则应在其首次调用**MmLockPagable*Xxx*节**后使用更有效的[**MmLockPagableSectionByHandle**](/windows-hardware/drivers/ddi/ntddk/nf-ntddk-mmlockpagablesectionbyhandle) 。
+锁定节是一种代价高昂的操作，因为在将页面锁定到内存之前，内存管理器必须搜索其已加载的模块列表。 如果驱动程序在其代码中的多个位置锁定某个部分，则应在其首次调用 **MmLockPagable *Xxx* 节** 后使用更有效的 [**MmLockPagableSectionByHandle**](/windows-hardware/drivers/ddi/ntddk/nf-ntddk-mmlockpagablesectionbyhandle) 。
 
-传递给 **MmLockPagableSectionByHandle** 的句柄是先前调用 **MmLockPagableCodeSection** 或 **MmLockPagableDataSection**时返回的句柄。
+传递给 **MmLockPagableSectionByHandle** 的句柄是先前调用 **MmLockPagableCodeSection** 或 **MmLockPagableDataSection** 时返回的句柄。
 
-内存管理器维护每个节句柄的计数，并在每次驱动程序为该部分调用**MmLockPagable<em>Xxx</em> **时递增此计数。 对 **MmUnlockPagableImageSection** 的调用将减少计数。 当任何节句柄的计数器为非零值时，该部分将在内存中保持锁定状态。
+内存管理器维护每个节句柄的计数，并在每次驱动程序为该部分调用 **MmLockPagable <em>Xxx</em>** 时递增此计数。 对 **MmUnlockPagableImageSection** 的调用将减少计数。 当任何节句柄的计数器为非零值时，该部分将在内存中保持锁定状态。
 
-只要加载了驱动程序的驱动程序，它的句柄就会有效。 因此，驱动程序只应调用一次 **MmLockPagable*Xxx*部分** 。 如果驱动程序需要其他锁定调用，则应使用 **MmLockPagableSectionByHandle**。
+只要加载了驱动程序的驱动程序，它的句柄就会有效。 因此，驱动程序只应调用一次 **MmLockPagable *Xxx* 部分** 。 如果驱动程序需要其他锁定调用，则应使用 **MmLockPagableSectionByHandle**。
 
-如果驱动程序为已锁定的节调用了任何**MmLockPagable<em>Xxx</em> **例程，则内存管理器会递增此部分的引用计数。 如果调用锁例程时该部分已分页，则该部分中的内存管理器页会将其引用计数设置为1。
+如果驱动程序为已锁定的节调用了任何 **MmLockPagable <em>Xxx</em>** 例程，则内存管理器会递增此部分的引用计数。 如果调用锁例程时该部分已分页，则该部分中的内存管理器页会将其引用计数设置为1。
 
 使用此技术可最大程度地减少驱动程序对系统资源的影响。 当驱动程序运行时，它可以锁定必须常驻的代码和数据。 如果设备没有未完成的 i/o 请求， (即关闭设备或设备从未打开) 时，驱动程序可以对相同的代码或数据进行解锁，使其可用于分页。
 
@@ -94,7 +93,7 @@ CHAR Array2[64*1024];
 
 请考虑以下用于锁定代码或数据部分的实现准则。
 
-- **Mm (未) 锁定<em>Xxx</em> **例程的主要用途是使通常非分页的代码或数据可以分页，并作为未分页的代码或数据进行分页。 诸如串行驱动程序和并行驱动程序之类的驱动程序都是很好的示例：如果驱动程序管理的设备没有打开的句柄，则不需要部分代码，也不需要将其打开。重定向程序和服务器也是可以使用此方法的驱动程序的好示例。 如果没有活动连接，则可以将这两个组件都调出。
+- **Mm (未) 锁定 <em>Xxx</em>** 例程的主要用途是使通常非分页的代码或数据可以分页，并作为未分页的代码或数据进行分页。 诸如串行驱动程序和并行驱动程序之类的驱动程序都是很好的示例：如果驱动程序管理的设备没有打开的句柄，则不需要部分代码，也不需要将其打开。重定向程序和服务器也是可以使用此方法的驱动程序的好示例。 如果没有活动连接，则可以将这两个组件都调出。
 
 - 整个可分页节被锁定在内存中。
 

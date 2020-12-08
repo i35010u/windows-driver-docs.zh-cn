@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ CAMERACONTROL \_ 隐私
 description: KSPROPERTY \_ CAMERACONTROL \_ 隐私属性指定是否防止相机传感器获取视频。
-ms.assetid: 6a96301e-b4f1-4d4d-9cc6-f0cb1e2c1391
 keywords:
 - KSPROPERTY_CAMERACONTROL_PRIVACY 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 159aaab1f809ab02bf126a458eab9d2d098e7248
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: bcdb935f7954a2c6a7fff415042ecc054cf3babe
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103754"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96814881"
 ---
 # <a name="ksproperty_cameracontrol_privacy"></a>KSPROPERTY \_ CAMERACONTROL \_ 隐私
 
@@ -88,7 +87,7 @@ KSPROPERTY **Value** \_ CAMERACONTROL \_ NODE S 结构的 Value 成员 \_ 指定
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSPROPERTY \_ CAMERACONTROL \_ 节点 \_ S**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_cameracontrol_node_s)

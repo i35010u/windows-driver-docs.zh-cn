@@ -1,9 +1,8 @@
 ---
 title: .cache（设置缓存大小）
-description: .Cache 命令设置用来保存从目标中获得的数据缓存的大小。 此外设置缓存和内存选项的数。
-ms.assetid: 638cb2e6-b333-4311-967c-d86c2e93b4ec
+description: Cache 命令设置用于保存从目标获取的数据的缓存大小。 还设置了一些缓存和内存选项。
 keywords:
-- .cache （设置缓存大小） Windows 调试
+- 。缓存 (设置缓存大小) Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 7c7cac5f40151f3d11a1de2dbd04e7621863fc0d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 32f0d5b990c3242ab017b4fae0a3b33ed30af3b0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63336926"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96814109"
 ---
 # <a name="cache-set-cache-size"></a>.cache（设置缓存大小）
 
 
-**.Cache**命令设置用来保存从目标中获得的数据缓存的大小。 此外设置缓存和内存选项的数。
+**Cache** 命令设置用于保存从目标获取的数据的缓存大小。 还设置了一些缓存和内存选项。
 
 ```dbgsyntax
 .cache Size 
@@ -30,48 +29,48 @@ ms.locfileid: "63336926"
 .cache 
 ```
 
-## <a name="span-idddkmetasetcachesizedbgspanspan-idddkmetasetcachesizedbgspanparameters"></a><span id="ddk_meta_set_cache_size_dbg"></span><span id="DDK_META_SET_CACHE_SIZE_DBG"></span>参数
+## <a name="span-idddk_meta_set_cache_size_dbgspanspan-idddk_meta_set_cache_size_dbgspanparameters"></a><span id="ddk_meta_set_cache_size_dbg"></span><span id="DDK_META_SET_CACHE_SIZE_DBG"></span>参数
 
 
-<span id="_______Size______"></span><span id="_______size______"></span><span id="_______SIZE______"></span> *大小*   
-内核调试缓存，以千字节的大小。 如果*大小*为零，禁用缓存。 命令输出会显示以字节为单位的缓存大小。 （默认大小为 1000 KB）。
+<span id="_______Size______"></span><span id="_______size______"></span><span id="_______SIZE______"></span>*大小*   
+内核调试缓存的大小（kb）。 如果 *大小* 为零，则将禁用缓存。 命令输出显示缓存大小（以字节为单位）。  (默认大小为 1000 KB。 ) 
 
-<span id="_______Option______"></span><span id="_______option______"></span><span id="_______OPTION______"></span> *选项*   
+<span id="_______Option______"></span><span id="_______option______"></span><span id="_______OPTION______"></span>*选项*   
 可以是下列选项之一：
 
-<span id="hold"></span><span id="HOLD"></span>**hold**  
-自动缓存刷新已禁用。
+<span id="hold"></span><span id="HOLD"></span>**暂时**  
+已禁用自动缓存刷新。
 
 <span id="unhold"></span><span id="UNHOLD"></span>**unhold**  
-关闭**保存**选项。 （这是默认设置。）
+关闭 **保留** 选项。 （这是默认设置。）
 
 <span id="decodeptes"></span><span id="DECODEPTES"></span>**decodeptes**  
-所有转换页表项 (Pte) 将都进行隐式解码。 （这是默认设置。）
+将隐式解码 (Pte) 的所有转换页表项。 （这是默认设置。）
 
 <span id="nodecodeptes"></span><span id="NODECODEPTES"></span>**nodecodeptes**  
-关闭**decodeptes**选项。
+关闭 **decodeptes** 选项。
 
 <span id="forcedecodeptes"></span><span id="FORCEDECODEPTES"></span>**forcedecodeptes**  
-所有虚拟地址将转换为之前访问的物理地址。 此选项还会导致缓存被禁用。 除非您担心与内核模式内存，它是使用更加高效**forcedecodeuser**相反。
+在访问之前，所有虚拟地址都将转换为物理地址。 此选项还会导致缓存被禁用。 除非你担心内核模式内存，否则使用 **forcedecodeuser** 更有效。
 
 <span id="forcedecodeuser"></span><span id="FORCEDECODEUSER"></span>**forcedecodeuser**  
-所有用户模式虚拟地址将都转换为之前访问的物理地址。 此选项还会导致缓存被禁用。
+在访问之前，所有的用户模式虚拟地址都将转换为物理地址。 此选项还会导致缓存被禁用。
 
-**请注意**  必须激活**forcedecodeuser** (或**forcedecodeptes**) 之前使用[ **.thread （设置注册上下文）** ](-thread--set-register-context-.md)， [ **.context （设置用户模式地址上下文）**](-context--set-user-mode-address-context-.md)， [ **.process （设置进程上下文）**](-process--set-process-context-.md)，或[ **！ 会话**](-session.md)期间实时调试。 如果您使用 **/p**选项与 **.thread**并 **.process**，则**forcedecodeuser**选项自动设置。 在任何其他情况下，你将需要使用 **.cache forcedecodeuser**显式命令。
+**注意**   在使用) 之前，必须激活 **forcedecodeuser** (或 **forcedecodeptes** 。 [**(设置寄存器上下文)**](-thread--set-register-context-.md)， [**上下文 (设置 User-Mode 地址上下文**](-context--set-user-mode-address-context-.md)) ，在实时调试期间 [**处理 (设置进程上下文)**](-process--set-process-context-.md)或 [**！ session**](-session.md) 。 如果将 **/p** 选项与 **thread** 和 **. 进程** 一起使用，则会自动设置 **forcedecodeuser** 选项。 在任何其他情况下，都需要显式使用 " **forcedecodeuser** " 命令。
 
  
 
 <span id="noforcedecodeptes"></span><span id="NOFORCEDECODEPTES"></span>**noforcedecodeptes**  
-关闭**forcedecodeptes**并**forcedecodeuser**选项。 （这是默认设置。）
+禁用 **forcedecodeptes** 和 **forcedecodeuser** 选项。 （这是默认设置。）
 
 <span id="flushall"></span><span id="FLUSHALL"></span>**flushall**  
 删除整个虚拟内存缓存。
 
 <span id="flushu"></span><span id="FLUSHU"></span>**flushu**  
-删除所有项的范围，但从缓存中，出现错误，以及用户模式下的所有条目。
+从缓存中删除具有错误的范围的所有条目，以及所有用户模式条目。
 
-<span id="flush_Address"></span><span id="flush_address"></span><span id="FLUSH_ADDRESS"></span>**flush** *Address*  
-删除缓存中，开始 4096 字节块*地址*。
+<span id="flush_Address"></span><span id="flush_address"></span><span id="FLUSH_ADDRESS"></span>**刷新***地址*  
+从 *地址* 开始删除缓存的4096字节块。
 
 ### <a name="span-idenvironmentspanspan-idenvironmentspanspan-idenvironmentspanenvironment"></a><span id="Environment"></span><span id="environment"></span><span id="ENVIRONMENT"></span>环境
 
@@ -82,16 +81,16 @@ ms.locfileid: "63336926"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>模式</strong></p></td>
-<td align="left"><p>内核模式下</p></td>
+<td align="left"><p><strong>交货</strong></p></td>
+<td align="left"><p>仅限内核模式</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>目标</strong></p></td>
-<td align="left"><p>仅实时调试</p></td>
+<td align="left"><p>仅限实时调试</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>平台</strong></p></td>
-<td align="left"><p>全部</p></td>
+<td align="left"><p>all</p></td>
 </tr>
 </tbody>
 </table>
@@ -101,9 +100,9 @@ ms.locfileid: "63336926"
 <a name="remarks"></a>备注
 -------
 
-如果 **.cache**使用任何自变量、 当前缓存大小、 状态、 使用和显示选项。
+如果在没有参数的情况下使用 **缓存** ，则显示当前缓存大小、状态和选项。
 
-**.Cache forcedecodeuser**或 **.cache forcedecodeptes**选项将仅上一次，只要调试器将继续分解为目标计算机。 如果任何单步执行或执行目标的发生， **noforcedecodeptes**状态将再次才会生效。 这可以防止调试器干扰执行或重新启动以用于生产的方式。
+仅当调试器保持在目标计算机中时，才会持续执行 **cache forcedecodeuser** 或 **cache forcedecodeptes** 选项。 如果发生了目标的任何单步执行或执行，则 **noforcedecodeptes** 状态将再次生效。 这会阻止调试器干扰执行或重新启动产生效益等待。
 
  
 

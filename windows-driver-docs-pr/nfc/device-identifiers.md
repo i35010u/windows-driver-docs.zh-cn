@@ -1,7 +1,6 @@
 ---
 title: NFP 设备标识符
 description: NFP 设备标识符
-ms.assetid: B387D3F8-A9A7-47F0-B5E3-8437581947E4
 keywords:
 - NFC
 - 近场通信
@@ -10,12 +9,12 @@ keywords:
 - NFP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6db5d49c2b202fb92c7364d9548d0d3f4354f038
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 3604854d006dcddd8b209c3b6c4843cfbb51422a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89382831"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96813601"
 ---
 # <a name="nfp-device-identifiers"></a>NFP 设备标识符
 

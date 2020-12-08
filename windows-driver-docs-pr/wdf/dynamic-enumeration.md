@@ -1,7 +1,6 @@
 ---
 title: 动态枚举
 description: 动态枚举
-ms.assetid: 6e46b456-7d2d-4c6e-8692-7f310366387d
 keywords:
 - 动态枚举 WDK KMDF
 - 子说明 WDK KMDF
@@ -11,12 +10,12 @@ keywords:
 - 遍历动态子列表 WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d6dc1417e1626e318757746f406d42b088004063
-ms.sourcegitcommit: 9796f75f8e83f4c9cc1f055056910a3ae6292f18
+ms.openlocfilehash: a02b3759f1f3ccca4eb561b95f241f69265a1869
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93066351"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96814809"
 ---
 # <a name="dynamic-enumeration"></a>动态枚举
 
@@ -91,7 +90,7 @@ ms.locfileid: "93066351"
 
 如果你在驱动程序的动态枚举中包含对 [**WdfChildListBeginScan**](/windows-hardware/drivers/ddi/wdfchildlist/nf-wdfchildlist-wdfchildlistbeginscan) 和 [**WdfChildListEndScan**](/windows-hardware/drivers/ddi/wdfchildlist/nf-wdfchildlist-wdfchildlistendscan)的调用，则该框架会将所有更改存储到子列表，并在驱动程序调用 **WdfChildListEndScan** 时，通知 PnP 经理发生的更改。 稍后，框架将为子列表中的每个设备调用总线驱动程序的 [*EvtChildListCreateDevice*](/windows-hardware/drivers/ddi/wdfchildlist/nc-wdfchildlist-evt_wdf_child_list_create_device) 回调函数。 此回调函数调用 [**WdfDeviceCreate**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicecreate) 为每个新设备创建一个 PDO。
 
-当驱动程序调用 [**WdfChildListBeginScan**](/windows-hardware/drivers/ddi/wdfchildlist/nf-wdfchildlist-wdfchildlistbeginscan)时，框架会将以前报告的所有设备标记为不再存在。 因此，驱动程序必须为驱动程序可以检测到的所有子级（而不只是新发现的子项）调用 [**WdfChildListAddOrUpdateChildDescriptionAsPresent**](/windows-hardware/drivers/ddi/wdfchildlist/nf-wdfchildlist-wdfchildlistaddorupdatechilddescriptionaspresent) 。 若要向子列表添加单个子级，驱动程序可以对 [**WdfChildListUpdateAllChildDescriptionsAsPresent**](/windows-hardware/drivers/ddi/wdfchildlist/nf-wdfchildlist-wdfchildlistupdateallchilddescriptionsaspresent) 进行单一调用，而无需先调用 **WdfChildListBeginScan** 。
+当驱动程序调用 [**WdfChildListBeginScan**](/windows-hardware/drivers/ddi/wdfchildlist/nf-wdfchildlist-wdfchildlistbeginscan)时，框架会将以前报告的所有设备标记为不再存在。 因此，驱动程序必须为驱动程序可以检测到的所有子级（而不只是新发现的子项）调用 [**WdfChildListAddOrUpdateChildDescriptionAsPresent**](/windows-hardware/drivers/ddi/wdfchildlist/nf-wdfchildlist-wdfchildlistaddorupdatechilddescriptionaspresent) 。 若要向子列表添加单个子级，驱动程序可以对 [**WdfChildListUpdateAllChildDescriptionsAsPresent**](/windows-hardware/drivers/ddi/wdfchildlist/nf-wdfchildlist-wdfchildlistupdateallchilddescriptionsaspresent) 进行单一调用，而无需先调用 **WdfChildListBeginScan**。
 
 ### <a name="updating-a-dynamic-child-list"></a>更新动态子列表
 

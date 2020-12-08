@@ -1,17 +1,16 @@
 ---
 title: WSK_TRANSPORT_LIST_QUERY
 description: WSK_TRANSPORT_LIST_QUERY
-ms.assetid: feb6aed2-fac9-4d3f-a36b-f721c737aacf
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WSK_TRANSPORT_LIST_QUERY 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 8e38f3ccc1a0632ac52a9f5ebe51557334f5308f
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 469fed5a3f74b2d8848be26dcd91b0894e0d08f1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106802"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96813611"
 ---
 # <a name="wsk_transport_list_query"></a>WSK \_ 传输 \_ 列表 \_ 查询
 
@@ -63,7 +62,7 @@ WSK 应用程序使用 WSK \_ 传输 \_ 列表 \_ 查询客户端控制操作来
 </tbody>
 </table>
 
-WSK 应用程序可以在*OutputSize*参数中指定零，在*OutputBuffer*参数中指定**NULL** ，以确定要包含可用网络传输的完整列表所需的[**WSK \_ 传输**](/windows-hardware/drivers/ddi/wsk/ns-wsk-_wsk_transport)结构的大小（以字节为单位）。 在这种情况下，对 [**WskControlClient**](/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_control_client) 函数的调用返回状态 \_ 缓冲区 \_ 溢出， *OutputSizeReturned* 参数指向的变量包含所需的缓冲区大小。 然后，应用程序可以分配一个足够大的缓冲区来包含可用网络传输的完整列表，并可以第二次调用 **WskControlClient** 函数，并指定上表中显示的参数。
+WSK 应用程序可以在 *OutputSize* 参数中指定零，在 *OutputBuffer* 参数中指定 **NULL** ，以确定要包含可用网络传输的完整列表所需的 [**WSK \_ 传输**](/windows-hardware/drivers/ddi/wsk/ns-wsk-_wsk_transport)结构的大小（以字节为单位）。 在这种情况下，对 [**WskControlClient**](/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_control_client) 函数的调用返回状态 \_ 缓冲区 \_ 溢出， *OutputSizeReturned* 参数指向的变量包含所需的缓冲区大小。 然后，应用程序可以分配一个足够大的缓冲区来包含可用网络传输的完整列表，并可以第二次调用 **WskControlClient** 函数，并指定上表中显示的参数。
 
 此客户端控制操作的 *Irp* 参数必须为 **NULL** 。
 

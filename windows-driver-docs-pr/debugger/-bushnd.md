@@ -1,7 +1,6 @@
 ---
 title: bushnd
 description: Bushnd 扩展显示 HAL BUS_HANDLER 结构。
-ms.assetid: dd2cb9c1-9abe-4209-a4fa-dc50965e807e
 keywords:
 - bushnd Windows 调试
 ms.date: 05/23/2017
@@ -12,29 +11,29 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: c8fad94f5cbe2fa8fcabef12ef3523978b048e09
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1177be2113ef1111e258625ea15fbf7f3caf81d7
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63336920"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96814125"
 ---
 # <a name="bushnd"></a>!bushnd
 
 
-**！ Bushnd**扩展插件都会显示 HAL 总线\_处理程序结构。
+**！ Bushnd** EXTENSION 显示 HAL 总线 \_ 处理程序结构。
 
 ```dbgsyntax
     !bushnd [Address] 
 ```
 
-## <a name="span-idddkbushnddbgspanspan-idddkbushnddbgspanparameters"></a><span id="ddk__bushnd_dbg"></span><span id="DDK__BUSHND_DBG"></span>参数
+## <a name="span-idddk__bushnd_dbgspanspan-idddk__bushnd_dbgspanparameters"></a><span id="ddk__bushnd_dbg"></span><span id="DDK__BUSHND_DBG"></span>参数
 
 
-<span id="_______Address______"></span><span id="_______address______"></span><span id="_______ADDRESS______"></span> *Address*   
-指定的十六进制地址的 HAL 总线\_处理程序结构。 如果省略， **！ bushnd**显示的总线和处理程序的基址列表。
+<span id="_______Address______"></span><span id="_______address______"></span><span id="_______ADDRESS______"></span>*地址*   
+指定 HAL 总线 \_ 处理程序结构的十六进制地址。 如果省略， **！ bushnd** 将显示一个总线列表和该处理程序的基址。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 <table>
 <colgroup>

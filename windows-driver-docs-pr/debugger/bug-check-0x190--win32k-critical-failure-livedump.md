@@ -1,7 +1,6 @@
 ---
 title: Bug 检查 0x190 WIN32K_CRITICAL_FAILURE_LIVEDUMP
-description: WIN32K_CRITICAL_FAILURE_LIVEDUMP bug 检查具有 0x00000190 值。 这指示 Win32k 遇到严重故障。 捕获实时转储收集调试信息。
-ms.assetid: 39C0145D-08FE-4BBC-A729-9E70198CF87F
+description: WIN32K_CRITICAL_FAILURE_LIVEDUMP bug 检查的值为0x00000190。 这表明 Win32k.sys 遇到了严重故障。 捕获实时转储以收集调试信息。
 keywords:
 - Bug 检查 0x190 WIN32K_CRITICAL_FAILURE_LIVEDUMP
 - WIN32K_CRITICAL_FAILURE_LIVEDUMP
@@ -13,23 +12,23 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: e780671177311bcc54b901c85a56307fd0b5dc56
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: 7324eb7ceb9f60c9e8b45c7676b9bc26ae7d3694
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67519834"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96814021"
 ---
-# <a name="bug-check-0x190-win32kcriticalfailurelivedump"></a>Bug 检查 0x190：WIN32K\_严重\_失败\_LIVEDUMP
+# <a name="bug-check-0x190-win32k_critical_failure_livedump"></a>Bug 检查0x190： WIN32K.SYS \_ 严重 \_ 故障 \_ LIVEDUMP
 
 
-WIN32K\_严重\_失败\_LIVEDUMP bug 检查的值为 0x00000190。 这指示 Win32k 遇到严重故障。 捕获实时转储收集调试信息。
+WIN32K.SYS \_ 严重 \_ 故障 \_ LIVEDUMP bug 检查的值为0x00000190。 这表明 Win32k.sys 遇到了严重故障。 捕获实时转储以收集调试信息。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题面向程序员。 如果您是在使用计算机时收到蓝屏错误代码的客户，请参阅[蓝屏错误疑难解答](https://www.windows.com/stopcode)。
 
 
-## <a name="win32kcriticalfailurelivedump-parameters"></a>WIN32K\_严重\_失败\_LIVEDUMP 参数
+## <a name="win32k_critical_failure_livedump-parameters"></a>WIN32K.SYS \_ 严重 \_ 故障 \_ LIVEDUMP 参数
 
 
 <table>
@@ -46,23 +45,23 @@ WIN32K\_严重\_失败\_LIVEDUMP bug 检查的值为 0x00000190。 这指示 Win
 <tbody>
 <tr class="odd">
 <td align="left">1</td>
-<td align="left"><p>失败的类型</p>
-<p>0x1:REGION_VALIDATION_FAILURE 的区域是超出图面上的界限。</p>
-2-指向 DC 3 的指针到区域的图面 4 指针
-<p>0x2:OPERATOR_NEW_USED-"new"运算符用于分配内存。</p>
+<td align="left"><p>失败类型</p>
+<p>0x1： REGION_VALIDATION_FAILURE 区域超出了表面界限。</p>
+2-指向 DC 3 的指针-指向 SURFACE 4 的指针-指向区域的指针
+<p>0x2： OPERATOR_NEW_USED 运算符 "NEW" 用于分配内存。</p>
 2-保留 3-保留 4-保留</td>
 </tr>
 <tr class="even">
 <td align="left">2</td>
-<td align="left">请参阅参数 1</td>
+<td align="left">请参阅参数1</td>
 </tr>
 <tr class="odd">
 <td align="left">3</td>
-<td align="left">请参阅参数 1</td>
+<td align="left">请参阅参数1</td>
 </tr>
 <tr class="even">
 <td align="left">4</td>
-<td align="left">请参阅参数 1</td>
+<td align="left">请参阅参数1</td>
 </tr>
 </tbody>
 </table>

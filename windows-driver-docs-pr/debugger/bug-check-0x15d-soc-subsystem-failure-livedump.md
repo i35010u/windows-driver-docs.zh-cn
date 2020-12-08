@@ -1,7 +1,6 @@
 ---
 title: Bug 检查 0x15D SOC_SUBSYSTEM_FAILURE_LIVEDUMP
 description: SOC_SUBSYSTEM_FAILURE_LIVEDUMP bug 代码的值为0x0000015D。
-ms.assetid: F7903E88-1706-46E6-A5D0-6972702058A8
 keywords:
 - Bug 检查 0x15D SOC_SUBSYSTEM_FAILURE_LIVEDUMP
 - Bug 检查 0x14B SOC_SUBSYSTEM_FAILURE
@@ -13,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 514dcb04bece8dd832759f31fb2ec03c1496d35e
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 5c6945cea7f0bcecb7a025b6a003c60bb82f0d34
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106092"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96814015"
 ---
 # <a name="bug-check-0x15d-soc_subsystem_failure_livedump"></a>Bug 检查0x15D： SOC \_ 子系统 \_ 故障 \_ LIVEDUMP
 
@@ -40,7 +39,7 @@ SOC \_ 子系统 \_ 故障 \_ LIVEDUMP bug 代码的值为0x0000015D。 这表�
 <thead>
 <tr class="header">
 <th align="left">参数</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -83,7 +82,7 @@ SOC \_ 子系统 \_ 故障 \_ LIVEDUMP bug 代码的值为0x0000015D。 这表�
 
 使用 SoC 供应商进一步分析数据，包括可选供应商提供的常规用途数据块。
 
-你可能想要使用 [**k、kb、glm-kc-qnw、kd、kp、kp、kv (显示 Stack Backtrace) **](k--kb--kc--kd--kp--kp--kv--display-stack-backtrace-.md) 命令来检查堆栈跟踪。 可以指定处理器编号来检查所有处理器上的堆栈。
+你可能想要使用 [**k、kb、glm-kc-qnw、kd、kp、kp、kv (显示 Stack Backtrace)**](k--kb--kc--kd--kp--kp--kv--display-stack-backtrace-.md) 命令来检查堆栈跟踪。 可以指定处理器编号来检查所有处理器上的堆栈。
 
 你还可以在代码中设置一个断点，使其导致此 stop 代码，并尝试单步执行出错的代码。
 

@@ -1,17 +1,16 @@
 ---
 title: 识别服务器线程中的调用方
 description: 识别服务器线程中的调用方
-ms.assetid: d19dc242-1043-4e61-9fcb-eadac0ab63c8
 keywords:
-- RPC 调试、 标识调用方
+- RPC 调试，标识调用方
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ecea5be6fff755074eebc25c1fc64dcf56af8dc5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 50c1f0d60afb8fa928a7b094f58f4ee6a7cbfe49
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63381038"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96814569"
 ---
 # <a name="identifying-the-caller-from-the-server-thread"></a>识别服务器线程中的调用方
 
@@ -19,23 +18,23 @@ ms.locfileid: "63381038"
 ## <span id="ddk_identifying_the_caller_from_the_server_thread_dbg"></span><span id="DDK_IDENTIFYING_THE_CALLER_FROM_THE_SERVER_THREAD_DBG"></span>
 
 
-就可以确定哪些操作对给定的 RPC 调用，即使您拥有的唯一信息是提供服务调用的服务器线程。
+即使您拥有的信息是为调用提供服务的服务器线程，也可以确定执行给定 RPC 调用的操作。
 
-这可能非常有用-例如，若要找出谁传递给 RPC 调用的参数无效。
+这可能非常有用，例如，要找出谁向 RPC 调用传递无效参数。
 
-具体取决于哪个协议序列可供此特定的调用，可以获取不同程度的详细信息。 某些协议 （如 NetBios) 不在所有具有此信息。
+根据此特定调用所使用的协议顺序，您可以获得不同的详细程度。 某些协议 (如 NetBios) 根本没有此信息。
 
-**标识服务器线程从调用方**
+**从服务器线程标识调用方**
 
-1.  启动用户模式下调试程序与服务器线程作为目标。
+1.  使用服务器线程作为目标启动用户模式调试器。
 
-2.  使用获取的进程 ID [ **|（进程状态）** ](---process-status-.md)命令：
+2.  使用 [**| (进程状态)**](---process-status-.md) 命令获取进程 ID：
     ```dbgcmd
     0:001> |
       0     id: 3d4 name: rtsvr.exe
     ```
 
-3.  使用此过程中获取活动调用[ **！ rpcexts.getcallinfo** ](-rpcexts-getcallinfo.md)扩展。 （请参阅有关语法的说明的参考页。）需要提供 0x3D4 的进程 ID:
+3.  使用 [**！ rpcexts**](-rpcexts-getcallinfo.md) 扩展名获取此进程中的活动调用。  (参见参考页获取语法说明。 ) 需要提供0x3D4 的进程 ID：
 
     ```dbgcmd
     0:001> !rpcexts.getcallinfo 0 0 FFFF 3d4
@@ -45,9 +44,9 @@ ms.locfileid: "63381038"
     03d4 0000.0004 02 000 19bb5061 0000.0002 00000001 00000001 00a1aced 0000.0003
     ```
 
-    查找状态为 02 或 01 （调度或处于活动状态） 的调用。 在此示例中，该过程仅有一次调用。 如果没有更多，您将必须使用[ **！ rpcexts.getdbgcell** ](-rpcexts-getdbgcell.md)扩展名 THRDCELL 列中的单元格号。 这样，您可以检查 Id 以便您可以确定该调用您已对感兴趣的线程。
+    查找状态为02或 01 (的调用) 已调度或处于活动状态。 在此示例中，该进程只有一个调用。 如果有更多的信息，则必须对 THRDCELL 列中的单元号码使用 [**！ getdbgcell**](-rpcexts-getdbgcell.md) 扩展。 这将允许你检查线程 Id，以便确定你感兴趣的调用。
 
-4.  您知道您感兴趣的调用，请查看 CONN/CLN 列中的单元格号。 这是连接对象的单元格 ID。 在这种情况下，单元格号是 0000.0003。 将此单元格号和进程 ID 与传递 **！ rpcexts.getdbgcell**:
+4.  知道您感兴趣的调用后，请查看 CONN/CLN 列中的单元编号。 这是连接对象的单元 ID。 在这种情况下，单元号码为0000.0003。 将此单元格数字和进程 ID 传递到 **！ rpcexts。 getdbgcell**：
     ```dbgcmd
     0:001> !rpcexts.getdbgcell 3d4 0.3
     Getting cell info ...
@@ -63,17 +62,17 @@ ms.locfileid: "63381038"
     Process object for caller is 0xFF9DF5F0
     ```
 
-此扩展将显示所有可用信息有关的客户端的此连接。 实际信息的量而异，具体取决于正在使用的传输。
+此扩展将显示有关此连接的客户端的所有可用信息。 实际信息量会有所不同，具体取决于所使用的传输。
 
-在此示例中，正在使用本地命名的管道作为传输协议和显示进程对象地址的调用方。 如果您附加内核调试程序 （或启动本地内核调试程序），则可以使用[ **！ 过程**](-process.md)扩展来解释此进程的地址。
+在此示例中，将使用本地命名管道作为传输，并显示调用方的进程对象地址。 如果将内核调试器附加 (或启动本地内核调试器) ，则可以使用 [**！进程**](-process.md) 扩展解释此进程地址。
 
-如果 LRPC 用作传输，将显示进程 ID 和调用方的线程 ID。
+如果将 LRPC 用作传输，则将显示调用方的进程 ID 和线程 ID。
 
-如果使用 TCP 作为传输协议，将显示调用方的 IP 地址。
+如果使用 TCP 作为传输，则将显示调用方的 IP 地址。
 
-如果作为传输协议使用远程命名的管道，不将提供任何信息。
+如果使用远程命名管道作为传输，则将不会提供任何信息。
 
-**请注意**  上面的示例演示如何查找客户端线程，如果知道服务器线程。 有关反向技术的示例，请参阅[分析停滞调用问题](analyzing-a-stuck-call-problem.md)。
+**注意**   前面的示例演示了在知道服务器线程的情况如何查找客户端线程。 有关反向方法的示例，请参阅 [分析停滞调用问题](analyzing-a-stuck-call-problem.md)。
 
  
 
