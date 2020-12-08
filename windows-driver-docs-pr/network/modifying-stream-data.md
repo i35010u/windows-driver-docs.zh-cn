@@ -1,18 +1,17 @@
 ---
 title: 修改流数据
 description: 修改流数据
-ms.assetid: 8f591bc1-272c-4e53-8e49-3350c6a3a33e
 keywords:
 - 分类标注 WDK Windows 筛选平台，流数据更改
 - 流数据更改 WDK Windows 筛选平台
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 548047b7011c41a8277af178ddf946ac790b4722
-ms.sourcegitcommit: 20eac54e419a594f7cea766ee28f158559dfd79c
+ms.openlocfilehash: d535bb578ad6b1cfda52c6a327277a9664cc4191
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91754930"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837673"
 ---
 # <a name="modifying-stream-data"></a>修改流数据
 

@@ -1,9 +1,8 @@
 ---
 title: DestinationToken 元素
-description: 所需的 DestinationToken 元素包含扫描程序将分配给当前的客户端目标的特定于设备的字符串。
-ms.assetid: 92ff99a2-079a-4001-aa01-ff5db09f6fd2
+description: 必需的 DestinationToken 元素包含扫描程序分配给当前客户端目标的设备特定字符串。
 keywords:
-- DestinationToken 元素成像设备
+- DestinationToken 元素图像设备
 topic_type:
 - apiref
 api_name:
@@ -12,19 +11,19 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bd3c7643a90b37ff7993fdde5582883ef31cb0d6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9e8810b9f11e2098c3b8fa8991d6a58a77c0135c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63373182"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838595"
 ---
 # <a name="destinationtoken-element"></a>DestinationToken 元素
 
 
-所需**DestinationToken**元素包含为当前的客户端目标扫描程序分配一个特定于设备的字符串。
+必需的 **DestinationToken** 元素包含扫描程序分配给当前客户端目标的设备特定字符串。
 
-<a name="usage"></a>用法
+<a name="usage"></a>使用情况
 -----
 
 ```xml
@@ -41,12 +40,12 @@ ms.locfileid: "63373182"
 <a name="text-value"></a>文本值
 ----------
 
-必需。 任何有效字符的字符串。
+必需。 任何有效的字符串。
 
 ## <a name="child-elements"></a>子元素
 
 
-没有子元素。
+没有任何子元素。
 
 ## <a name="parent-elements"></a>父元素
 
@@ -73,7 +72,7 @@ ms.locfileid: "63373182"
 <a name="remarks"></a>备注
 -------
 
-客户端包括**DestinationToken**令牌会在发送时[ **CreateScanJobRequest** ](createscanjobrequest.md)操作元素的后面[ **ScanAvailableEvent** ](scanavailableevent.md)事件。 WSD 扫描服务使用指定的字符串来检查正确的客户端发送扫描请求。
+当客户端在 [**ScanAvailableEvent**](scanavailableevent.md)事件后发送 [**CreateScanJobRequest**](createscanjobrequest.md)操作元素时，将包括 **DestinationToken** 标记。 WSD 扫描服务使用指定的字符串来检查正确的客户端是否正在发送扫描请求。
 
 ## <a name="see-also"></a>请参阅
 

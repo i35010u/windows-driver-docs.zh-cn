@@ -1,18 +1,17 @@
 ---
 title: 访问用户模式内存时处理异常
 description: 访问用户模式内存时处理异常
-ms.assetid: 44ed69a0-da0e-4335-9128-a78a83ea80dd
 keywords:
 - 用户模式内存 WDK Windows 2000 显示
 - 用户模式内存 WDK Windows 2000 显示，异常处理
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 039861dbf497b1410bde179940bf79474154ebb1
-ms.sourcegitcommit: f8619f20a0903dd64f8641a5266ecad6df5f1d57
+ms.openlocfilehash: b6a1bac46a773dcb3695184e1dab3767223c684e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91423816"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838303"
 ---
 # <a name="exception-handling-when-accessing-user-mode-memory"></a>访问用户模式内存时处理异常
 
@@ -32,15 +31,15 @@ ms.locfileid: "91423816"
 
 在以下情况下，运行时在将内存传递给驱动程序之前，将在用户模式下保护分配的内存的所有权。
 
--   驱动程序将指针指定的顶点数据处理到用户模式内存。 驱动程序会在对其 [**D3dDrawPrimitives2**](/windows-hardware/drivers/ddi/d3dhal/nc-d3dhal-lpd3dhal_drawprimitives2cb) 函数的调用中接收此内存指针。 在此*D3dDrawPrimitives2*调用中， \_ 将设置[**D3DHAL \_ DRAWPRIMITIVES2DATA**](/windows-hardware/drivers/ddi/d3dhal/ns-d3dhal-_d3dhal_drawprimitives2data)结构**dwFlags**成员的 D3DHALDP2 USERMEMVERTICES 标志。
+-   驱动程序将指针指定的顶点数据处理到用户模式内存。 驱动程序会在对其 [**D3dDrawPrimitives2**](/windows-hardware/drivers/ddi/d3dhal/nc-d3dhal-lpd3dhal_drawprimitives2cb) 函数的调用中接收此内存指针。 在此 *D3dDrawPrimitives2* 调用中， \_ 将设置 [**D3DHAL \_ DRAWPRIMITIVES2DATA**](/windows-hardware/drivers/ddi/d3dhal/ns-d3dhal-_d3dhal_drawprimitives2data)结构 **dwFlags** 成员的 D3DHALDP2 USERMEMVERTICES 标志。
 
 -   该驱动程序将更新 D3DHAL DRAWPRIMITIVES2DATA 点的 **lpdwRStates** 成员的呈现状态数组 \_ 。 驱动程序在调用其 *D3dDrawPrimitives2* 函数时更新此数组。
 
--   驱动程序在调用其[**D3dGetDriverState**](/windows/win32/api/ddrawint/nc-ddrawint-pdd_getdriverstate)函数的过程中，在[**DD \_ GETDRIVERSTATEDATA**](/windows/win32/api/ddrawint/ns-ddrawint-dd_getdriverstatedata)结构的**lpdwStates**成员上更新其状态。
+-   驱动程序在调用其 [**D3dGetDriverState**](/windows/win32/api/ddrawint/nc-ddrawint-pdd_getdriverstate)函数的过程中，在 [**DD \_ GETDRIVERSTATEDATA**](/windows/win32/api/ddrawint/ns-ddrawint-dd_getdriverstatedata)结构的 **lpdwStates** 成员上更新其状态。
 
 -   驱动程序位块传输或访问在用户内存中分配的系统纹理。
 
-显示驱动程序可以使用 **try/except** 机制来实现异常处理。 有关 **try/except**的详细信息，请参阅 Microsoft Visual C++ 文档。
+显示驱动程序可以使用 **try/except** 机制来实现异常处理。 有关 **try/except** 的详细信息，请参阅 Microsoft Visual C++ 文档。
 
 下面的代码示例演示当因访问无效内存而导致错误时，驱动程序如何使用 **try/except** 机制来引发异常。
 
@@ -55,7 +54,7 @@ __except(EXCEPTION_EXECUTE_HANDLER)
 }
 ```
 
-**注意**   除了访问用户模式值并将其复制到本地变量外，驱动程序不应在** \_ \_ try**块中执行任何其他操作。 其他操作可能会导致其例外。 操作系统处理这些异常的方式不同。
+**注意**  除了访问用户模式值并将其复制到本地变量外，驱动程序不应在 **\_ \_ try** 块中执行任何其他操作。 其他操作可能会导致其例外。 操作系统处理这些异常的方式不同。
 
  
 

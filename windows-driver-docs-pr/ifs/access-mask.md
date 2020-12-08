@@ -1,7 +1,6 @@
 ---
 title: 访问掩码
 description: 访问掩码
-ms.assetid: eb379196-7a10-4d52-8b81-825550ebbbb0
 keywords:
 - 安全描述符 WDK 文件系统，访问掩码
 - 描述符文件系统、访问掩码
@@ -11,12 +10,12 @@ keywords:
 - 特定权限 WDK 文件系统
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c0dd057bb4451771fc5b0dfc717eb7534c6e2421
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 39cfadb14e05ce11988640917e7cd67f554793be
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89066264"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96836821"
 ---
 # <a name="access-mask"></a>访问掩码
 

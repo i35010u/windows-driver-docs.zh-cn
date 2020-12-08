@@ -1,15 +1,14 @@
 ---
 title: 如何使用 IoSpy 和 IoAttack 执行模糊测试
 description: 本主题介绍如何使用 IoSpy 和 IoAttack 工具执行模糊测试
-ms.assetid: f800e962-2a0f-4039-a479-395a62428b06
 ms.date: 07/10/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 955370b3932635f2aa8c0e71fe693a1db7927019
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 99ec2f896d39ffcf30064398fb5154eee2be7e80
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89384829"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96836851"
 ---
 # <a name="how-to-perform-fuzz-tests-with-iospy-and-ioattack"></a>如何使用 IoSpy 和 IoAttack 执行模糊测试
 
@@ -36,7 +35,7 @@ ms.locfileid: "89384829"
 
 1.  安装 [IoSpy](iospy.md)：
 
-    若要在)  (的特定设备上安装 IoSpy 并启用模糊测试，请运行 " **启用 I/o Spy** 测试"。 *DQ*参数控制安装 IoSpy 筛选器驱动程序的设备。
+    若要在)  (的特定设备上安装 IoSpy 并启用模糊测试，请运行 " **启用 I/o Spy** 测试"。 *DQ* 参数控制安装 IoSpy 筛选器驱动程序的设备。
 
 2.  在指定的设备上运行 IOCTL 和 WMI 测试：
 
@@ -48,7 +47,7 @@ ms.locfileid: "89384829"
 
     此命令从为模糊测试启用的所有设备中删除 [IoSpy](iospy.md) 筛选器驱动程序。 运行该命令后，重新启动测试系统以从内存中卸载 IoSpy 筛选器驱动程序。
 
-    **注意**   在卸载 IoSpy 时，它不会删除 IoSpy 数据文件。 此文件的位置由 *DFD* 参数设置为 **Enable i/o Spy** 测试。 默认位置为% SystemDrive% \\ DriverTest \\ IoSpy。 有关详细信息，请参阅 [IoSpy Data File](iospy.md)。
+    **注意**  在卸载 IoSpy 时，它不会删除 IoSpy 数据文件。 此文件的位置由 *DFD* 参数设置为 **Enable i/o Spy** 测试。 默认位置为% SystemDrive% \\ DriverTest \\ IoSpy。 有关详细信息，请参阅 [IoSpy Data File](iospy.md)。
 
      
 
@@ -56,7 +55,7 @@ ms.locfileid: "89384829"
 
     测试系统现在可以通过运行 " **运行 I/o 攻击** " 测试来运行模糊测试。 有关如何运行 IoAttack 的详细信息，请参阅 [IoAttack](ioattack.md)。
 
-    **注意**   为了验证驱动程序的 IOCTL 和 WMI 接口的访问权限，应使用不同的权限（如来宾帐户和管理员帐户）运行[IoAttack](ioattack.md)帐户。
+    **注意**   为了验证驱动程序的 IOCTL 和 WMI 接口的访问权限，应使用不同的权限（如来宾帐户和管理员帐户）运行 [IoAttack](ioattack.md) 帐户。
 
      
 

@@ -1,46 +1,45 @@
 ---
-title: 例如，如果希望使用对象引用跟踪
-description: 例如，如果希望使用对象引用跟踪
-ms.assetid: 3c6102e6-4dac-4d90-ab8f-162dd6d8adf9
+title: 示例15使用对象引用跟踪
+description: 示例15使用对象引用跟踪
 ms.date: 10/12/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 0730f0242c1011826bfbf037f1879b81a8db2823
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 108bdd0e927ec04863b8e7ef738bde73292135d1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63347757"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838525"
 ---
 # <a name="example-15-using-object-reference-tracing"></a>示例 15：使用对象引用跟踪
 
 
-对象引用跟踪是一项 Windows 功能，用于引用或取消引用某个对象时记录顺序的堆栈跟踪。 这被为了检测可能会导致崩溃或内存泄漏的对象处理中的错误。 这些错误的一些很难检测，因为它们不一致地出现。 有关详细信息，请参阅[对象引用跟踪](object-reference-tracing.md)。
+对象引用跟踪是一项 Windows 功能，它在引用或取消引用对象时记录顺序堆栈跟踪。 它旨在检测可能导致崩溃或内存泄漏的对象处理错误。 其中一些错误很难检测，因为它们不是一致地显示。 有关详细信息，请参阅 [对象引用跟踪](object-reference-tracing.md)。
 
-可以通过使用配置对象引用跟踪**全局标志**对话框或在命令提示符。 下面的示例使用命令提示符。 有关使用信息**全局标志**对话框可以配置对象引用跟踪，请参阅[配置对象引用跟踪](configuring-object-reference-tracing.md)。
+您可以通过使用 " **全局标志** " 对话框或在命令提示符处配置对象引用跟踪。 下面的示例使用命令提示符。 有关使用 " **全局标志** " 对话框配置对象引用跟踪的信息，请参阅 [配置对象引用跟踪](configuring-object-reference-tracing.md)。
 
-Gflags 可用于启用、 禁用和配置对象引用跟踪。 过程如下所示：
+您可以使用 Gflags 来启用、禁用和配置对象引用跟踪。 流程如下：
 
--   **请用 Gflags 启用对象引用跟踪**注册表中或作为内核标志 （运行时间） 设置。 如果将设置添加到注册表时，必须重新启动计算机以启动跟踪。 如果启用设置的运行的时版本，跟踪将立即启动，但在关闭或重新启动计算机时，跟踪设置将还原为注册表项中。
+-   **使用 Gflags 可以在注册表中启用对象引用跟踪** ，或在运行时) 设置 (运行时使用内核标志。 如果将此设置添加到注册表，则必须重新启动计算机才能启动跟踪。 如果启用设置的运行时版本，则跟踪会立即开始，但当你关闭或重新启动计算机时，跟踪设置将恢复为注册表项中的设置。
 
--   **开始创建可疑对象**。 跟踪包括仅由开始跟踪之后启动的进程创建的对象。 如果进程启动期间或在重新启动后很快，到注册表中，添加跟踪设置，然后重新启动系统。
+-   **启动创建可疑对象的过程**。 跟踪仅包括在跟踪开始后启动的进程创建的对象。 如果在重新启动过程中或一段时间后启动进程，请将跟踪设置添加到注册表，然后重新启动系统。
 
--   **使用** [ **！ obtrace** ](-obtrace.md) **调试器扩展**若要查看的跟踪。 默认情况下，跟踪之前，会保留该对象被销毁，但你可以使用 **/p**参数，以维护跟踪之前禁用跟踪。
+-   **使用** [**！ obtrace**](-obtrace.md) **调试器扩展** 来查看跟踪。 默认情况下，将一直维护跟踪直到对象被销毁，但你可以使用 **/p** 参数维护跟踪，直到禁用跟踪。
 
--   **使用 Gflags 禁用对象引用跟踪**。 在注册表或作为内核标志 （运行时间） 设置。 如果从注册表中删除了设置，必须重新启动计算机以结束跟踪。 如果禁用设置的运行的时版本，跟踪立即结束，但在关闭或重新启动计算机时，跟踪设置将还原为在注册表中。
+-   **使用 Gflags 禁用对象引用跟踪**。在注册表中，或作为内核标志 (运行时) 设置。 如果从注册表删除设置，则必须重新启动计算机以结束跟踪。 如果禁用设置的运行时版本，则跟踪会立即结束，但当你关闭或重新启动计算机时，跟踪设置将恢复为注册表中的设置。
 
-这些示例显示如何使用 Gflags 来启用和禁用对象引用跟踪。 \\
+这些示例演示如何使用 Gflags 来启用和禁用对象引用跟踪。 \\
 
-### <a name="span-idenableruntimetracingspanspan-idenableruntimetracingspanenable-run-time-tracing"></a><span id="enable_run_time_tracing"></span><span id="ENABLE_RUN_TIME_TRACING"></span>启用运行时跟踪
+### <a name="span-idenable_run_time_tracingspanspan-idenable_run_time_tracingspanenable-run-time-tracing"></a><span id="enable_run_time_tracing"></span><span id="ENABLE_RUN_TIME_TRACING"></span>启用运行时跟踪
 
-以下命令在命令提示符下启用对象引用跟踪。 该命令使用 **/ko**参数来启用内核 （运行时间） 的标志设置为的对象引用跟踪。 该命令使用 **/t**参数来指定池标记**标记 1**并**Fred**。 因此，所有对象的创建与**标记 1**或**Fred**跟踪的情况。
+以下命令在命令提示符下启用对象引用跟踪。 该命令使用 **/ko** 参数启用对象引用跟踪作为内核标志 (运行时) 设置。 该命令使用 **/t** 参数指定池标记 **Tag1** 和 **Fred**。 因此，将跟踪使用 **Tag1** 或 **Fred** 创建的所有对象。
 
 ```console
 gflags /ko /t Tag1;Fred
 ```
 
-由于该命令更改内核标志 （运行） 设置，则对象引用跟踪将立即启动。 跟踪将包括所有对象的池标记**标记 1**或**Fred**通过该命令将提交之后启动的进程创建的。
+由于该命令会将内核标志更改 (运行时) 设置，因此将立即开始对象引用跟踪。 此跟踪将包含所有对象，这些对象具有在提交命令后启动的进程创建的池标记 **Tag1** 或 **Fred** 。
 
-Gflags 响应通过打印以下消息：
+Gflags 通过打印以下消息进行响应：
 
 ```console
 Running Kernel Settings :
@@ -50,21 +49,21 @@ Object Ref Tracing Enabled
         Process Name: All Processes
 ```
 
-此消息表示，启用对象引用跟踪。 "临时 Traces"指示当对象被销毁时删除的跟踪的所有记录。 若要使"永久"更改跟踪，请使用 **/p**参数，以便将 Windows 保留的跟踪数据，直到对象引用跟踪处于禁用状态，或关闭或重新启动计算机。
+此消息表示启用了对象引用跟踪。 "临时跟踪" 表示在销毁对象时删除跟踪的所有记录。 若要使跟踪 "永久化"，请使用 **/p** 参数，该参数指示 Windows 保留跟踪数据，直到禁用对象引用跟踪或关闭或重新启动计算机。
 
-### <a name="span-idenabletracingintheregistryspanspan-idenabletracingintheregistryspanenable-tracing-in-the-registry"></a><span id="enable_tracing_in_the_registry"></span><span id="ENABLE_TRACING_IN_THE_REGISTRY"></span>在注册表中启用跟踪
+### <a name="span-idenable_tracing_in_the_registryspanspan-idenable_tracing_in_the_registryspanenable-tracing-in-the-registry"></a><span id="enable_tracing_in_the_registry"></span><span id="ENABLE_TRACING_IN_THE_REGISTRY"></span>在注册表中启用跟踪
 
-以下命令将对象引用跟踪的配置添加到注册表。 你配置的跟踪开始时重新启动计算机。
+以下命令将对象引用跟踪配置添加到注册表。 重新启动计算机时，将开始配置的跟踪。
 
-该命令使用 **/ro**参数，以便能够作为注册表设置的对象引用跟踪。 该命令使用 **/i**来指定 notepad.exe 的进程并 **/t**参数来指定池标记**标记 1**并**Fred**。 创建由记事本的所有对象使用的都处理结果，**标记 1**或**Fred**池标记跟踪的情况。 该命令还使用 **/p**参数，它将保留跟踪数据，直到禁用跟踪。
+该命令使用 **/ro** 参数启用对象引用跟踪作为注册表设置。 该命令使用 **/i** 指定 notepad.exe 的进程，并使用 **/T** 参数指定 **Tag1** 和 **Fred** 的池标记。 因此，使用 **Tag1** 或 **Fred** 池标记创建的所有对象都将被跟踪。 该命令还使用 **/p** 参数，该参数将保留跟踪数据，直到禁用跟踪。
 
 ```console
 gflags /ro /t Tag1;Fred /i Notepad.exe /p
 ```
 
-当用户提交该命令时，Gflags 在注册表中存储的信息。 但是，由于注册表设置不是有效的直到重新启动计算机，此对象引用跟踪已配置，但尚未开始。
+提交该命令时，Gflags 会将信息存储在注册表中。 但是，因为在您重新启动计算机之前，注册表设置是无效的，所以此对象引用跟踪已配置，但尚未启动。
 
-Gflags 响应通过打印以下消息：
+Gflags 通过打印以下消息进行响应：
 
 ```console
 Boot Registry Settings :
@@ -74,15 +73,15 @@ Object Ref Tracing Enabled
         Process Name: Notepad.exe
 ```
 
-该消息指示，在注册表中启用对象引用跟踪。 "永久 Traces"指示关闭或重新启动计算机之前将保留跟踪数据。 池标记和要跟踪的图像文件名称，还列出了该消息。
+此消息表示在注册表中启用了对象引用跟踪。 "永久跟踪" 表示在关闭或重新启动计算机之前将保留跟踪数据。 该消息还会列出要跟踪的池标记和映像文件的名称。
 
-### <a name="span-iddisplaytheobjectreferencetracingconfigurationspanspan-iddisplaytheobjectreferencetracingconfigurationspandisplay-the-object-reference-tracing-configuration"></a><span id="display_the_object_reference_tracing_configuration"></span><span id="DISPLAY_THE_OBJECT_REFERENCE_TRACING_CONFIGURATION"></span>显示跟踪配置的对象引用
+### <a name="span-iddisplay_the_object_reference_tracing_configurationspanspan-iddisplay_the_object_reference_tracing_configurationspandisplay-the-object-reference-tracing-configuration"></a><span id="display_the_object_reference_tracing_configuration"></span><span id="DISPLAY_THE_OBJECT_REFERENCE_TRACING_CONFIGURATION"></span>显示对象引用跟踪配置
 
-您可以显示当前有效存储或存储在注册表中重新启动计算机时要使用的对象引用跟踪配置。
+可以显示当前有效的对象引用跟踪配置，或将其存储在计算机重新启动时要使用的注册表中。
 
-在此示例中，没有存储在注册表中的一个对象引用跟踪配置，另一个为运行时配置。 运行时跟踪会立即开始 （和覆盖任何注册表设置）。 但是，如果重新启动系统，运行时间设置都将丢失，并且对象引用跟踪会话注册表设置才会生效。
+在此示例中，有一个对象引用跟踪配置存储在注册表中，另一个对象引用配置为运行时。 运行时跟踪会立即开始 (并覆盖) 的任何注册表设置。 但是，如果重新启动系统，则运行时设置将丢失，并且对象引用跟踪会话注册表设置将生效。
 
-下面的命令显示的运行的时对象引用跟踪配置。 它使用 **/ko**不带任何其他参数的参数。
+以下命令显示运行时对象引用跟踪配置。 它使用不带任何其他参数的 **/ko** 参数。
 
 ```console
 gflags /ko
@@ -96,15 +95,15 @@ Object Ref Tracing Enabled
         Process Name: All Processes
 ```
 
-如果对象引用已启用跟踪，因为它是在此示例中，将显示的设置描述正在进行的跟踪。
+如果启用对象引用跟踪（如本示例所示），则显示的设置将描述正在进行的跟踪。
 
-下面的命令显示存储在注册表中的对象引用跟踪配置数据。 它使用 **/ro**不带任何其他参数的参数。
+以下命令显示注册表中存储的对象引用跟踪配置数据。 它使用不带任何其他参数的 **/ro** 参数。
 
 ```console
 gflags /ro
 ```
 
-在响应中，Gflags 显示存储在注册表中的数据：
+作为响应，Gflags 显示注册表中存储的数据：
 
 ```console
 Boot Registry Settings :
@@ -114,34 +113,34 @@ Object Ref Tracing Enabled
         Process Name: Notepad.exe
 ```
 
-如果由于对象引用跟踪配置添加到注册表，已重新启动计算机，以响应 gflags /ro 命令显示的设置描述正在进行的跟踪。 但是，如果你具有尚未重新启动，或者你具有重新启动，但然后开始运行时对象引用跟踪 (**/ko**)，存储在注册表中的设置不是当前有效，但它们将再次变得有效当您重新启动系统。
+如果已重新启动计算机，因为你已将对象引用跟踪配置添加到注册表，则响应 gflags/ro 命令时显示的设置将描述正在进行的跟踪。 但是，如果尚未重新启动，或者重新启动了运行时对象引用跟踪 (**/ko**) ，则注册表中存储的设置当前不起作用，但当你重新启动系统时，它们将再次生效。
 
-### <a name="span-iddisableobjectreferencetracingspanspan-iddisableobjectreferencetracingspandisable-object-reference-tracing"></a><span id="disable_object_reference_tracing"></span><span id="DISABLE_OBJECT_REFERENCE_TRACING"></span>禁用对象引用跟踪
+### <a name="span-iddisable_object_reference_tracingspanspan-iddisable_object_reference_tracingspandisable-object-reference-tracing"></a><span id="disable_object_reference_tracing"></span><span id="DISABLE_OBJECT_REFERENCE_TRACING"></span>禁用对象引用跟踪
 
-如果禁用运行时 （内核标志） 对象引用跟踪设置，跟踪会立即停止。 禁用注册表中的对象引用跟踪设置后，跟踪将停止时重新启动计算机。
+禁用 (内核标志) 对象引用跟踪设置时，跟踪会立即停止。 如果在注册表中禁用对象引用跟踪设置，则重新启动计算机时跟踪将停止。
 
-以下命令禁用运行时对象引用跟踪。 它使用 **/d**参数来禁用所有设置。 不能禁用设置有选择地。
+以下命令将禁用运行时对象引用跟踪。 它使用 **/d** 参数禁用所有设置。 不能有选择地禁用设置。
 
 ```console
 gflags /ko -d
 ```
 
-如果命令成功，Gflags 做出响应并显示以下消息：
+命令成功后，Gflags 将会出现以下消息：
 
 ```console
 Running Kernel Settings :
 Object Ref Tracing Disabled
 ```
 
-以下命令禁用运行时对象引用跟踪。
+以下命令将禁用运行时对象引用跟踪。
 
-以下命令禁用注册表中的对象引用跟踪设置。 它使用 **/d**参数来禁用所有设置。 不能禁用设置有选择地。 当重新启动计算机时，此命令才有效。
+以下命令禁用注册表中的对象引用跟踪设置。 它使用 **/d** 参数禁用所有设置。 不能有选择地禁用设置。 当你重新启动计算机时，此命令有效。
 
 ```console
 gflags /ro -d
 ```
 
-如果命令成功，Gflags 做出响应并显示以下消息：
+命令成功后，Gflags 将会出现以下消息：
 
 ```console
 Boot Registry Settings :

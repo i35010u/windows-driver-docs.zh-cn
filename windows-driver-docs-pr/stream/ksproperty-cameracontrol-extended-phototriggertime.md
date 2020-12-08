@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ CAMERACONTROL \_ 扩展 \_ PHOTOTRIGGERTIME
 description: 此属性控制照相机驱动程序的触发时间。 触发时间用于确定照片序列的参考框架。
-ms.assetid: C0DE5F4D-9566-4D8C-9061-D397577E89E2
 keywords:
 - KSPROPERTY_CAMERACONTROL_EXTENDED_PHOTOTRIGGERTIME 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 09/11/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: f80ea4decdcddb031c7ac76d320f1f81d9d825f8
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 18395b9dab5858807004417517174eb7f59e6e47
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104376"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837855"
 ---
 # <a name="ksproperty_cameracontrol_extended_phototriggertime"></a>KSPROPERTY \_ CAMERACONTROL \_ 扩展 \_ PHOTOTRIGGERTIME
 
@@ -55,13 +54,13 @@ ms.locfileid: "90104376"
 </tbody>
 </table>
 
-属性值 (操作数据) 包含 [**KSCAMERA \_ EXTENDEDPROP \_ 标头**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header) 结构和 [**KSCAMERA \_ EXTENDEDPROP \_ 值**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_value) 结构。 以100毫微秒为单位的照片触发时间设置或返回为 **KSCAMERA \_ EXTENDEDPROP \_ 值**中的值。
+属性值 (操作数据) 包含 [**KSCAMERA \_ EXTENDEDPROP \_ 标头**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header) 结构和 [**KSCAMERA \_ EXTENDEDPROP \_ 值**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_value) 结构。 以100毫微秒为单位的照片触发时间设置或返回为 **KSCAMERA \_ EXTENDEDPROP \_ 值** 中的值。
 
-总的属性数据大小为 **sizeof** (KSCAMERA \_ EXTENDEDPROP \_ 标头) + **sizeof** (KSCAMERA \_ EXTENDEDPROP \_ VALUE) 。 [**KSCAMERA \_ EXTENDEDPROP \_ 标头**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)的**Size**成员设置为此总属性数据大小。
+总的属性数据大小为 **sizeof** (KSCAMERA \_ EXTENDEDPROP \_ 标头) + **sizeof** (KSCAMERA \_ EXTENDEDPROP \_ VALUE) 。 [**KSCAMERA \_ EXTENDEDPROP \_ 标头**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)的 **Size** 成员设置为此总属性数据大小。
 
-使用[**KSCAMERA \_ EXTENDEDPROP \_ 标头**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)的**flags**成员中的下列标志之一设置或清除触发器时间。
+使用 [**KSCAMERA \_ EXTENDEDPROP \_ 标头**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)的 **flags** 成员中的下列标志之一设置或清除触发器时间。
 
-| 触发时间标志                           | 说明                     |
+| 触发时间标志                           | 描述                     |
 |---------------------------------------------|---------------------------------|
 | KSPROPERTY \_ 摄影机 \_ PHOTOTRIGGERTIME \_ CLEAR | 清除 "触发器时间" 设置。 |
 | KSPROPERTY \_ 照相机 \_ PHOTOTRIGGERTIME \_ 集   | 设置新的触发器时间值。   |
@@ -82,7 +81,7 @@ ms.locfileid: "90104376"
 <thead>
 <tr class="header">
 <th>成员</th>
-<th>Value</th>
+<th>“值”</th>
 </tr>
 </thead>
 <tbody>
@@ -115,11 +114,11 @@ ms.locfileid: "90104376"
 </tbody>
 </table>
 
-如果触发器时间当前未设置为任何时间值，则[**KSCAMERA \_ EXTENDEDPROP \_ 标头**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)的**Flags**成员必须包含 KSPROPERTY \_ 摄像 \_ PHOTOTRIGGERTIME \_ CLEAR 值。
+如果触发器时间当前未设置为任何时间值，则 [**KSCAMERA \_ EXTENDEDPROP \_ 标头**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)的 **Flags** 成员必须包含 KSPROPERTY \_ 摄像 \_ PHOTOTRIGGERTIME \_ CLEAR 值。
 
 ### <a name="setting-the-property"></a>设置属性
 
-设置属性时， [**KSCAMERA \_ EXTENDEDPROP \_ 值**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_value)的**u) **成员将包含触发器时间值。 触发器时间基于操作标志进行设置或清除。 当标志为 KSPROPERTY \_ 摄像 PHOTOTRIGGERTIME 时， \_ \_ 不使用 **KSCAMERA \_ EXTENDEDPROP \_ 值** 中的值，将忽略该值。
+设置属性时， [**KSCAMERA \_ EXTENDEDPROP \_ 值**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_value)的 **u)** 成员将包含触发器时间值。 触发器时间基于操作标志进行设置或清除。 当标志为 KSPROPERTY \_ 摄像 PHOTOTRIGGERTIME 时， \_ \_ 不使用 **KSCAMERA \_ EXTENDEDPROP \_ 值** 中的值，将忽略该值。
 
 ## <a name="requirements"></a>要求
 

@@ -1,19 +1,18 @@
 ---
 title: PnP 驱动程序的 Unload 例程
 description: PnP 驱动程序的 Unload 例程
-ms.assetid: 71b30a84-d3c7-4674-94a6-b99f83567183
 keywords:
 - 卸载例程 WDK 内核，PnP 驱动程序
 - PnP 卸载例程 WDK 内核
 - 即插即用卸载例程 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2ce5d3245a6fb8442660a7f18ca4cd3c4f9d902a
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 37d2755b36f09c32930691397b8557e0470ad06a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89186229"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837997"
 ---
 # <a name="pnp-drivers-unload-routine"></a>PnP 驱动程序的 Unload 例程
 

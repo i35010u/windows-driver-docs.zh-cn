@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ CAMERACONTROL \_ 扩展 \_ FOCUSSTATE
 description: '\_ \_ \_ KSPROPERTY CAMERACONTROL 扩展属性枚举中定义的 KSPROPERTY CAMERACONTROL 扩展 FOCUSSTATE 属性 \_ ID \_ \_ 用于从驱动程序获取焦点状态。 这是一个只读筛选器级属性。'
-ms.assetid: 53D54443-59AD-4078-BD13-CB193B89E488
 keywords:
 - KSPROPERTY_CAMERACONTROL_EXTENDED_FOCUSSTATE 流媒体设备
 topic_type:
@@ -14,16 +13,16 @@ api_type:
 - HeaderDef
 ms.date: 09/10/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 08c9ee92539b9e748d30bb9a1e5171a4c1421dfb
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 4d35112708c419741fe17c843946d155ee2a76cc
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107124"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837617"
 ---
 # <a name="ksproperty_cameracontrol_extended_focusstate"></a>KSPROPERTY \_ CAMERACONTROL \_ 扩展 \_ FOCUSSTATE
 
-[**KSPROPERTY \_ CAMERACONTROL \_ 扩展 \_ 属性**](/windows-hardware/drivers/ddi/ksmedia/ne-ksmedia-ksproperty_cameracontrol_extended_property)枚举中定义的**KSPROPERTY \_ CAMERACONTROL \_ 扩展 \_ FOCUSSTATE**属性 ID 用于从驱动程序获取焦点状态。 这是一个只读筛选器级属性。
+[**KSPROPERTY \_ CAMERACONTROL \_ 扩展 \_ 属性**](/windows-hardware/drivers/ddi/ksmedia/ne-ksmedia-ksproperty_cameracontrol_extended_property)枚举中定义的 **KSPROPERTY \_ CAMERACONTROL \_ 扩展 \_ FOCUSSTATE** 属性 ID 用于从驱动程序获取焦点状态。 这是一个只读筛选器级属性。
 
 ## <a name="usage-summary-table"></a>使用情况摘要表
 

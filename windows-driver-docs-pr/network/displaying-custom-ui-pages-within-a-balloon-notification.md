@@ -1,25 +1,24 @@
 ---
 title: 在气球通知中显示自定义 UI 页
 description: 在气球通知中显示自定义 UI 页
-ms.assetid: 5ed2ba59-88ae-4379-b729-1d741b30a7a0
 keywords:
 - 自定义 UI WDK 本机 802.11 IHV UI 扩展 DLL、气球通知
 - 气球通知 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6e19a7a0e1d1486517569d8267754c2c899ffdff
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 888181918fd9191295abff569bdd65ff30fe4bfb
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91732519"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838757"
 ---
 # <a name="displaying-custom-ui-pages-within-a-balloon-notification"></a>在气球通知中显示自定义 UI 页
 
 
 
 
- 
+ 
 
 如果本机 802.11 IHV 扩展 DLL 调用 [**Dot11ExtSendUIRequest**](/windows-hardware/drivers/ddi/wlanihv/nc-wlanihv-dot11ext_send_ui_request) 来 (UI) 显示自定义用户界面，则当无线 LAN (WLAN) 适配器连接到无线网络时，操作系统将通过可单击的气球通知显示 UI。 在这种情况下，自定义 UI 的请求显示为气球通知：
 
@@ -47,10 +46,10 @@ ms.locfileid: "91732519"
 
 显示自定义 UI 时，本机 802.11 IHV UI 扩展 DLL 可以通过 [IPROPERTYBAG COM 接口](/previous-versions/windows/internet-explorer/ie-developer/platform-apis/aa768196(v=vs.85))读取或写入特定于上下文的数据。 有关此过程的详细信息，请参阅 [访问配置文件和上下文数据](accessing-profile-and-context-data.md)。 自定义 UI 的显示完成后，本机 802.11 IHV UI 扩展 DLL 可通过调用 **WlanSendUIResponse** 将用户输入的响应数据返回到本机 802.11 IHV 扩展 dll。 DLL 传入 UI 请求的 GUID，以及指向包含响应数据的缓冲区的指针。
 
-在本机 802.11 IHV UI 扩展 DLLcalls **WlanSendUIResponse**后，操作系统将调用本机 802.11 IHV 扩展 DLL 的 [*Dot11ExtIhvProcessUIResponse*](/windows-hardware/drivers/ddi/wlanihv/nc-wlanihv-dot11extihv_process_ui_response) IHV 处理程序函数来转发自定义 UI 的响应数据。
+在本机 802.11 IHV UI 扩展 DLLcalls **WlanSendUIResponse** 后，操作系统将调用本机 802.11 IHV 扩展 DLL 的 [*Dot11ExtIhvProcessUIResponse*](/windows-hardware/drivers/ddi/wlanihv/nc-wlanihv-dot11extihv_process_ui_response) IHV 处理程序函数来转发自定义 UI 的响应数据。
 
 有关 **WlanSendUIResponse** API 的详细信息，请参阅 Windows SDK 中的文档。
 
- 
+ 
 
- 
+ 

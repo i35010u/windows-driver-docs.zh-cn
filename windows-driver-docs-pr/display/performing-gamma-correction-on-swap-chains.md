@@ -1,18 +1,17 @@
 ---
 title: 针对交换链执行灰度校正
 description: 针对交换链执行灰度校正
-ms.assetid: 4912cd15-bd56-43b6-9419-66917bf3f72c
 keywords:
 - 伽玛更正 WDK DirectX 9.0，交换链
 - 交换链 WDK DirectX 9。0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fb0b36cc0388bd7ce34b32d9907eed028c29a90e
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: e3f082951ec6ffc5c60d8806cd6d9aea1aba47bb
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90716026"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838063"
 ---
 # <a name="performing-gamma-correction-on-swap-chains"></a>针对交换链执行灰度校正
 
@@ -26,7 +25,7 @@ ms.locfileid: "90716026"
 
 驱动程序在 \_ \_ \_ \_ D3DCAPS9 结构的 **Caps3** 成员中将 D3DCAPS3 线性设置为 SRGB 表示功能位，以指示其设备支持伽玛2.2 更正。 驱动程序将返回 D3DCAPS9 结构，以响应 **GetDriverInfo2** 查询，如 [报告 DirectX 8.0 Style Direct3D 功能](reporting-directx-8-0-style-direct3d-capabilities.md)中所述的那样返回 D3DCAPS8 结构。 支持 [GetDriverInfo2](supporting-getdriverinfo2.md)中介绍了此查询的支持。
 
-有关**IDirect3DSwapChain:P*Xxx*** 的详细信息，请参阅最新的 DirectX SDK 文档。
+有关 **IDirect3DSwapChain:P *Xxx*** 的详细信息，请参阅最新的 DirectX SDK 文档。
 
  
 

@@ -1,7 +1,6 @@
 ---
 title: 拆分 DMA 传输请求
 description: 拆分 DMA 传输请求
-ms.assetid: 7d5b1649-1021-4876-a9c0-e6b156785ef2
 keywords:
 - I/o WDK 内核，拆分传输请求
 - 拆分传输请求
@@ -10,12 +9,12 @@ keywords:
 - 传输数据 WDK 内核，拆分请求
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 661170e3746f274b54a45b8fcc4048564cb8cef1
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 6fb00adefee5a026e4d4364f9fcd7f2e48c61450
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89190673"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837949"
 ---
 # <a name="splitting-dma-transfer-requests"></a>拆分 DMA 传输请求
 
@@ -25,7 +24,7 @@ ms.locfileid: "89190673"
 
 任何驱动程序都可能需要拆分传输请求并执行多个 DMA 传输操作来满足给定的 IRP，具体取决于以下各项：
 
--   [**IoGetDmaAdapter**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetdmaadapter)返回的[映射寄存器](map-registers.md)的数目
+-   [**IoGetDmaAdapter**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetdmaadapter)返回的 [映射寄存器](map-registers.md)的数目
 
 -   要传输的数据的字节数，包含在 IRP 的驱动程序 i/o 堆栈位置的 **长度** 成员中
 
@@ -35,17 +34,17 @@ ms.locfileid: "89190673"
 
 驱动程序可以确定由 IRP 指定的所有数据传输所需的映射寄存器的数目，如下所示：
 
-1.  调用 [**MmGetMdlVirtualAddress**](./mm-bad-pointer.md)，将指针传递到 ** &gt; MdlAddress**的 MDL，以获取缓冲区的起始虚拟地址。 请注意，驱动程序不能尝试使用此虚拟地址来访问内存。 **MmGetMdlVirtualAddress**返回的值是 MDL 的索引，不一定是有效地址。
+1.  调用 [**MmGetMdlVirtualAddress**](./mm-bad-pointer.md)，将指针传递到 **&gt; MdlAddress** 的 MDL，以获取缓冲区的起始虚拟地址。 请注意，驱动程序不能尝试使用此虚拟地址来访问内存。 **MmGetMdlVirtualAddress** 返回的值是 MDL 的索引，不一定是有效地址。
 
 2.  将所返回的索引和 **Length** 的值的值传递到 " [**地址" 和 "大小" \_ \_ \_ 以 \_ 跨 \_ 页**](./mm-bad-pointer.md) 宏。
 
-如果**ADDRESS \_ 和 \_ SIZE \_ \_ \_ **返回的值超过了**IoGetDmaAdapter**返回的*NUMBEROFMAPREGISTERS*值，则驱动程序将无法在单个 DMA 操作中传输所有请求的数据。 相反，它必须执行以下操作：
+如果 **ADDRESS \_ 和 \_ SIZE \_ \_ \_** 返回的值超过了 **IoGetDmaAdapter** 返回的 *NUMBEROFMAPREGISTERS* 值，则驱动程序将无法在单个 DMA 操作中传输所有请求的数据。 相反，它必须执行以下操作：
 
 1.  将缓冲区拆分为多个部分，以适合可用映射寄存器的数量，)  (和任何特定于设备的 DMA 约束。
 
 2.  执行满足传输请求所需的任意 DMA 操作。
 
-例如，假设 "**地址" \_ 和 "大小" 为 " \_ \_ \_ 跨 \_ 页**" 指示需要十二个映射寄存器才能满足传输请求，但**IoGetDmaAdapter**返回的*NumberOfMapRegisters*值只是5。  (假设没有特定于设备的 DMA 约束。 ) 在这种情况下，驱动程序必须执行三个 DMA 传输操作，调用 [**MapTransfer**](/windows-hardware/drivers/ddi/wdm/nc-wdm-pmap_transfer) 三次以传输 IRP 请求的所有数据。
+例如，假设 "**地址" \_ 和 "大小" 为 " \_ \_ \_ 跨 \_ 页**" 指示需要十二个映射寄存器才能满足传输请求，但 **IoGetDmaAdapter** 返回的 *NumberOfMapRegisters* 值只是5。  (假设没有特定于设备的 DMA 约束。 ) 在这种情况下，驱动程序必须执行三个 DMA 传输操作，调用 [**MapTransfer**](/windows-hardware/drivers/ddi/wdm/nc-wdm-pmap_transfer) 三次以传输 IRP 请求的所有数据。
 
 系统的 DMA 设备驱动程序使用各种技术来拆分 DMA 传输，而没有足够的映射寄存器来满足具有单个 i/o 操作的 IRP 的需要。 使用以下方法之一：
 

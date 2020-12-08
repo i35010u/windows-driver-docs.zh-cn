@@ -1,37 +1,36 @@
 ---
 title: 安装地理位置驱动程序示例
-description: 地理位置驱动程序示例模拟硬件，因为没有自动安装的即插即用 n 播放功能。 相反，必须使用 Windows 实用工具，devcon.exe，以安装该示例。
-ms.assetid: A08EA9B0-E1D6-47AE-BD89-C43D7D817DAF
+description: 由于地理位置驱动程序示例模拟硬件，因此没有可用于自动执行安装的即插即用功能。 相反，必须使用 Windows 实用程序 devcon.exe 来安装该示例。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 40cca5ae13c929345f9409de21fcdf0a0043b125
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 34105f258ddef1a2f31616942c0c314ac19eb469
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63371033"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837299"
 ---
 # <a name="installing-the-geolocation-driver-sample"></a>安装地理位置驱动程序示例
 
 > [!IMPORTANT] 
-> 已弃用此文档和 Windows 8.1 的地理位置驱动程序示例。
+> 此文档和 Windows 8.1 的地理位置驱动程序示例已弃用。
 
-地理位置驱动程序示例模拟硬件，因为没有自动安装的即插即用 n 播放功能。 相反，必须使用 Windows 实用工具，devcon.exe，以安装该示例。
+由于地理位置驱动程序示例模拟硬件，因此没有可用于自动执行安装的即插即用功能。 相反，必须使用 Windows 实用程序 devcon.exe 来安装该示例。
 
 以下步骤概述了安装过程。
 
-1.  请确保您的驱动程序生成且未出错。
+1.  请确保你的驱动程序生成时没有错误。
 
-2.  2. 启用测试签名通过运行命令"bcdedit /set testsigning 上"从提升的命令提示符。 （需要重新启动计算机之后启用测试签名。）
-3.  将您的驱动程序的 DLL 和 INF 文件复制到单独的文件夹。
+2.  2. 通过在提升的命令提示符下运行命令 "bcdedit/set testsigning on" 来启用测试签名。  (在启用测试签名后，需要重新启动计算机。 ) 
+3.  将驱动程序的 DLL 和 INF 文件复制到一个单独的文件夹中。
 
-4.  查找两个辅助安装程序 DLL 文件 （已检查或免费） 从 redist/wdf/*处理器\_类型*安装 WDK 文件夹。 将这些文件复制到步骤 3 中创建的文件夹。 例如，如果您安装 WDK 驱动器 C 上，您可以复制 WUDFUpdate\_从 c: 01009.dll\\WinDDK\\*生成\#*\\redist\\wdf\\x86。
+4.  从安装了 WDK 的 "可再发行/wdf/*处理器 \_ 类型* " 文件夹 (选中或免费) 查找两个共同安装程序 DLL 文件。 将这些文件复制到你在步骤3中创建的文件夹。 例如，如果在驱动器 C 上安装了 WDK，则可以复制 WUDFUpdate \_01009.dll 从 C： \\ WinDDK \\ *\# build* \\ \\ \\
 
-5.  运行 Devcon.exe。 可以在工具中找到此程序\\安装 WDK devcon 文件夹。 例如，对于名为 WDKExample 传感器，则键入：
+5.  运行 Devcon.exe。 可以在安装了 WDK 的 tools devcon 文件夹中找到此程序 \\ 。 例如，对于名为 WDKExample 的传感器，你可以键入：
 
-    **devcon.exe 安装 WDKExample.inf"传感器\\WDKExample"**
+    **devcon.exe 安装 WDKExample "传感器 \\ WDKExample"**
 
-    **请注意**  不使用 Devcon.exe 安装已发布的驱动程序。 此建议是仅用于测试。
+    **注意**  不要使用 Devcon.exe 来安装已发布的驱动程序。 此建议仅用于测试。
 
      
 

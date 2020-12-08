@@ -1,15 +1,14 @@
 ---
 title: 存储和传输缩略图数据
 description: 存储和传输缩略图数据
-ms.assetid: 4c27f93f-859e-42e3-95ea-9bfd8d0329d6
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 657a232b77adbbc8291efa87a8eb54401df70839
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 98a7f0f9d6e5303be4ead74053db8ec037a32dc5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89184801"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838583"
 ---
 # <a name="storing-and-transferring-thumbnail-data"></a>存储和传输缩略图数据
 

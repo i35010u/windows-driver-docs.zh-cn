@@ -1,15 +1,14 @@
 ---
 title: OID 请求的 Hyper-V 可扩展交换机控制路径
 description: OID 请求的 Hyper-V 可扩展交换机控制路径
-ms.assetid: 69ABBD54-F794-4A0A-8F50-915CA1EDD95C
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dc5a4d818b7a197d200e38ae6ea04a92cf6ac661
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 08bf61442ec0171a631578f5c55d211b8c3e29b8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89214748"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837687"
 ---
 # <a name="hyper-v-extensible-switch-control-path-for-oid-requests"></a>OID 请求的 Hyper-V 可扩展交换机控制路径
 
@@ -24,7 +23,7 @@ ms.locfileid: "89214748"
 
 ![用于 ndis 6.30 的 vswitch oid 控制路径示意图](images/vswitch-oid-controlpath.png)
 
-**注意**   在可扩展交换机接口中，NDIS 筛选器驱动程序称为*可扩展交换机扩展*，驱动程序堆栈称为*可扩展交换机驱动程序堆栈*。
+**注意**  在可扩展交换机接口中，NDIS 筛选器驱动程序称为 *可扩展交换机扩展* ，驱动程序堆栈称为 *可扩展交换机驱动程序堆栈*。
 
  
 
@@ -40,11 +39,11 @@ ms.locfileid: "89214748"
 
 可扩展交换机的微型端口边缘负责完成 OID 请求。 但是，对于某些可扩展的开关 OID 请求，基础扩展可能会失败 OID 请求，从而拒绝通知。 例如，当可扩展交换机的协议边缘通知有关将创建的新端口的扩展时，它会发出 oid [ \_ 交换机 \_ 端口 \_ 创建](./oid-switch-port-create.md)请求。 基础筛选或转发扩展可以通过完成 OID 请求来拒绝端口创建，状态 \_ 数据 \_ 不 \_ 接受。 有关此过程的详细信息，请参阅 [接收 OID 有关 Hyper-v 可扩展交换机配置更改的请求](receiving-oid-requests-about-hyper-v-extensible-switch-configuration-changes.md)。
 
-**注意**   如果扩展不会拒绝可扩展的 switch OID 请求，则应在请求完成时监视状态。 扩展应执行此操作，以确定可扩展交换机控制路径中的基础扩展或可扩展交换机接口是否否决了 OID 请求。
+**注意**  如果扩展不会拒绝可扩展的 switch OID 请求，则应在请求完成时监视状态。 扩展应执行此操作，以确定可扩展交换机控制路径中的基础扩展或可扩展交换机接口是否否决了 OID 请求。
 
  
 
-**注意**   当可扩展的 switch OID 请求处于挂起状态时，使用[**NdisFRestartFilter**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfrestartfilter)的堆栈重新启动请求将无法完成。 出于此原因，等待堆栈重新启动的扩展必须完成任何正在进行的 OID 请求。
+**注意**  当可扩展的 switch OID 请求处于挂起状态时，使用 [**NdisFRestartFilter**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfrestartfilter) 的堆栈重新启动请求将无法完成。 出于此原因，等待堆栈重新启动的扩展必须完成任何正在进行的 OID 请求。
 
  
 

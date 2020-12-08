@@ -1,18 +1,17 @@
 ---
 title: 创建头
 description: 创建头
-ms.assetid: 0b6d4aa0-e3c9-45df-998d-d6dfca5ab720
 keywords:
 - 机头 WDK DirectX 9。0
 - 多头硬件 WDK DirectX 9.0，创建磁头
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f13d483b8d78fbf8c35da77ceb4836e117a33847
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 27d13f041d2aecdfb9664c7c21eb1d471f0027e1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90716962"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838081"
 ---
 # <a name="creating-heads"></a>创建头
 
@@ -31,8 +30,8 @@ Microsoft DirectX 9.0 驱动程序为每个多头卡创建一个 Microsoft Direc
 1.  对于每个 head，将执行以下操作来设置显示模式和主翻转曲面：
     -   运行时设置显示模式。
     -   运行时创建 DirectDraw 对象。
-    -   运行时将创建一个主翻转链，并可能创建一个 Z 缓冲区。 运行时在每个图面的[**DDSCAPS2**](/previous-versions/windows/hardware/drivers/ff550292(v=vs.85))结构的**dwCaps2**成员中指定**DDSCAPS2 \_ ADDITIONALPRIMARY** (0x80000000) 功能位 (包括 Z 缓冲区) ，以指示多头卡的其他主要表面。 运行时调用驱动程序的 [*DdCreateSurface*](/previous-versions/windows/hardware/drivers/ff549263(v=vs.85)) 函数。
-    -   运行时首先为主节点和由**AdapterOrdinalInGroup**为从属项定义的顺序调用驱动程序的[**D3dCreateSurfaceEx**](/windows/win32/api/ddrawint/nc-ddrawint-pdd_createsurfaceex)函数。 在此调用中，运行时传递的 Direct3D 句柄保证在组中的所有头中是唯一的。 驱动程序可以在从属标头的句柄查找表中插入引用。 但是，由于 Direct3D 上下文不是在从属标题上创建的，因此不会向任何从属头发出 [**D3dDrawPrimitives2**](/windows-hardware/drivers/ddi/d3dhal/nc-d3dhal-lpd3dhal_drawprimitives2cb) 命令。 因此，不需要插入此引用。
+    -   运行时将创建一个主翻转链，并可能创建一个 Z 缓冲区。 运行时在每个图面的 [**DDSCAPS2**](/previous-versions/windows/hardware/drivers/ff550292(v=vs.85))结构的 **dwCaps2** 成员中指定 **DDSCAPS2 \_ ADDITIONALPRIMARY** (0x80000000) 功能位 (包括 Z 缓冲区) ，以指示多头卡的其他主要表面。 运行时调用驱动程序的 [*DdCreateSurface*](/previous-versions/windows/hardware/drivers/ff549263(v=vs.85)) 函数。
+    -   运行时首先为主节点和由 **AdapterOrdinalInGroup** 为从属项定义的顺序调用驱动程序的 [**D3dCreateSurfaceEx**](/windows/win32/api/ddrawint/nc-ddrawint-pdd_createsurfaceex)函数。 在此调用中，运行时传递的 Direct3D 句柄保证在组中的所有头中是唯一的。 驱动程序可以在从属标头的句柄查找表中插入引用。 但是，由于 Direct3D 上下文不是在从属标题上创建的，因此不会向任何从属头发出 [**D3dDrawPrimitives2**](/windows-hardware/drivers/ddi/d3dhal/nc-d3dhal-lpd3dhal_drawprimitives2cb) 命令。 因此，不需要插入此引用。
     -   在运行时对所有 head (（包括 master) ）调用 [*DdCreateSurface*](/previous-versions/windows/hardware/drivers/ff549263(v=vs.85)) 后，将对主 Head 的 DirectDraw 对象上的每个从属 head 翻转链进行进一步的 [**D3dCreateSurfaceEx**](/windows/win32/api/ddrawint/nc-ddrawint-pdd_createsurfaceex) 调用。 驱动程序会在主头的句柄查找表中输入每个从属标头的每个正面、背面和深度/模具缓冲区。
 
 2.  运行时仅为主头上的 DirectDraw 对象调用驱动程序的 [*D3dContextCreate*](/windows-hardware/drivers/ddi/d3dhal/nc-d3dhal-lpd3dhal_contextcreatecb) 函数。 这是在应用程序运行时唯一使用的上下文。

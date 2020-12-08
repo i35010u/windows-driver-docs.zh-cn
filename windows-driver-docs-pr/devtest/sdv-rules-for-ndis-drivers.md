@@ -1,15 +1,14 @@
 ---
 title: NDIS 驱动程序的规则
 description: NDIS 驱动程序的规则
-ms.assetid: fd31b797-1175-4f65-8fa0-a50acd01f446
 ms.date: 05/21/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: fd8f59801878ca09963f8df46fa7254cb4b31235
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 9a203df3be3b53da81aa20a091fd8b82a34028a4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89384855"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838323"
 ---
 # <a name="rules-for-ndis-drivers"></a>NDIS 驱动程序的规则
 
@@ -27,7 +26,7 @@ ms.locfileid: "89384855"
 <thead>
 <tr class="header">
 <th align="left">主题</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>

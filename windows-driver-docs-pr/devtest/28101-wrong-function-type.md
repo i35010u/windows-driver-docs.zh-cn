@@ -1,7 +1,6 @@
 ---
 title: C28101
 description: 警告 C28101 驱动程序模块已推断出当前函数不是正确的函数类型。
-ms.assetid: 81a68dd6-ff9d-4cb2-9bd9-3a0f0d152230
 keywords:
 - 列出用于驱动程序的 WDK PREfast 的警告
 - 为驱动程序列出的 WDK PREfast 的错误
@@ -9,12 +8,12 @@ ms.date: 05/01/2020
 ms.localizationpriority: medium
 f1_keywords:
 - C28101
-ms.openlocfilehash: c9010bc786be062410db717f7f34e02e6a906e5a
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 4adb789027ed94db901bf7fac182c846ffd9d69b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89385127"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837819"
 ---
 # <a name="c28101"></a>C28101
 

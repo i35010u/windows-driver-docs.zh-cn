@@ -1,15 +1,14 @@
 ---
 title: 内核模式驱动程序和组件的 TraceLogging
 description: 本主题介绍如何使用内核模式驱动程序和组件中的 TraceLogging API。
-ms.assetid: 6AF8DD2C-400F-4E9D-A6DF-40A847BCBD76
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ee733525b724aa6d5ad875ba9080de96f70f8f5b
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: ad92bf5cb2abbf821b26ddc90c2278fe298c388b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90716837"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838131"
 ---
 # <a name="tracelogging-for-kernel-mode-drivers-and-components"></a>内核模式驱动程序和组件的 TraceLogging
 
@@ -42,13 +41,13 @@ ms.locfileid: "90716837"
     TRACELOGGING_DECLARE_PROVIDER(hProviderVariableName)
     ```
 
-    下面的示例 TraceLogging 语句声明名为 *g \_ hProvider*的变量。
+    下面的示例 TraceLogging 语句声明名为 *g \_ hProvider* 的变量。
 
     ```command
     TRACELOGGING_DECLARE_PROVIDER(g_hProvider);
     ```
 
-    当你在代码中稍后调用[**TRACELOGGING \_ 定义 \_ 提供程序**](/windows/win32/api/traceloggingprovider/nf-traceloggingprovider-tracelogging_define_provider)宏时，通过[**TRACELOGGING \_ 声明 \_ 提供**](/windows/win32/api/traceloggingprovider/nf-traceloggingprovider-tracelogging_declare_provider)程序声明的变量成为提供程序的句柄。
+    当你在代码中稍后调用 [**TRACELOGGING \_ 定义 \_ 提供程序**](/windows/win32/api/traceloggingprovider/nf-traceloggingprovider-tracelogging_define_provider)宏时，通过 [**TRACELOGGING \_ 声明 \_ 提供**](/windows/win32/api/traceloggingprovider/nf-traceloggingprovider-tracelogging_declare_provider)程序声明的变量成为提供程序的句柄。
 
     > [!NOTE]
     > 你可能希望将此宏放在标头文件中，以便可以在全局范围内使用 TraceLogging 提供程序的句柄。
@@ -73,7 +72,7 @@ ms.locfileid: "90716837"
     > [!NOTE]
     > 对于内核模式，请注意，在将提供程序元数据显式存储到 TLG \_ 元数据 \_ 段 (。 rdata) 中，为该句柄创建的变量 (例如，g \_ hProvider) 和提供程序的名称 (例如，"MyTraceLoggingProviderKM" ) 未显式分配一个段，并将使用当前的隐式段。
 
-**TRACELOGGING \_ 定义 \_ 提供程序**宏要求传递给它的变量位于非分页池中。 如果这种情况并不是这样，则调用方必须在 \# \_ \# \_ \_ 调用 **TRACELOGGING \_ 定义 \_ 提供程序** 宏之前，通过 pragma data seg (for uniqueVarName) 或 const seg (for g hMyProvider) 设置数据段。
+**TRACELOGGING \_ 定义 \_ 提供程序** 宏要求传递给它的变量位于非分页池中。 如果这种情况并不是这样，则调用方必须在 \# \_ \# \_ \_ 调用 **TRACELOGGING \_ 定义 \_ 提供程序** 宏之前，通过 pragma data seg (for uniqueVarName) 或 const seg (for g hMyProvider) 设置数据段。
 
 ## <a name="register-the-driver-with-tracelogging"></a>向 TraceLogging 注册驱动程序
 
@@ -104,7 +103,7 @@ TraceLogging 提供了用于记录事件的宏。
 TraceLoggingWrite(g_hProvider, "EventName", args...)
 ```
 
-其中 \_ ，g hProvider 是定义的提供程序的句柄，而 "事件名称" 是一个字符串文字， (用于标识特定事件的变量) 。 与 **printf** 或 **DbgPrint**类似， **TraceLoggingWrite** 宏支持 (多达 99) 的其他参数个数。 参数 (参数) 必须是 TraceLogging 包装宏，如 [**TraceLoggingLevel**](/windows/win32/api/traceloggingprovider/nf-traceloggingprovider-tracelogginglevel)、 [TraceLoggingInt32](/windows/desktop/tracelogging/tracelogging-wrapper-macros)或 [TraceLoggingString](/windows/desktop/tracelogging/tracelogging-wrapper-macros)。 TraceLogging 包装宏在 TraceLoggingProvider 中定义。
+其中 \_ ，g hProvider 是定义的提供程序的句柄，而 "事件名称" 是一个字符串文字， (用于标识特定事件的变量) 。 与 **printf** 或 **DbgPrint** 类似， **TraceLoggingWrite** 宏支持 (多达 99) 的其他参数个数。 参数 (参数) 必须是 TraceLogging 包装宏，如 [**TraceLoggingLevel**](/windows/win32/api/traceloggingprovider/nf-traceloggingprovider-tracelogginglevel)、 [TraceLoggingInt32](/windows/desktop/tracelogging/tracelogging-wrapper-macros)或 [TraceLoggingString](/windows/desktop/tracelogging/tracelogging-wrapper-macros)。 TraceLogging 包装宏在 TraceLoggingProvider 中定义。
 
 > [!NOTE]
 > 如果使用的是 c + +，则可以使用 [**TraceLoggingValue**](/windows/win32/api/traceloggingprovider/nf-traceloggingprovider-traceloggingvalue) 包装宏为类型自动进行调整。 如果要在 C 中编写驱动程序，则必须使用特定于类型的字段宏 (例如， **TraceLoggingInt32** 或 **TraceLoggingUnicodeString**) 。
@@ -120,8 +119,8 @@ TraceLoggingWrite(
 );
 ```
 
-如果检测到 C) 中 (的内核模式驱动程序，则链接到 TraceLoggingProvider，可以使用 **TraceLoggingWrite**、 **TraceLoggingWriteActivity**或 **TraceLoggingActivityMarker** 宏。 有关跟踪日志记录的示例，请参阅 [TraceLogging 示例](tracelogging-examples.md)。
+如果检测到 C) 中 (的内核模式驱动程序，则链接到 TraceLoggingProvider，可以使用 **TraceLoggingWrite**、 **TraceLoggingWriteActivity** 或 **TraceLoggingActivityMarker** 宏。 有关跟踪日志记录的示例，请参阅 [TraceLogging 示例](tracelogging-examples.md)。
 
-如果要检测用 c + + 编写的驱动程序或组件，请链接到 TraceLoggingProvider 和 TraceLoggingActivity。 链接到 c + + 标头时，可以通过 **TraceLoggingWriteStart**、 **TraceLoggingWriteStop**和 **TraceLoggingWriteTagged** 宏记录事件。
+如果要检测用 c + + 编写的驱动程序或组件，请链接到 TraceLoggingProvider 和 TraceLoggingActivity。 链接到 c + + 标头时，可以通过 **TraceLoggingWriteStart**、 **TraceLoggingWriteStop** 和 **TraceLoggingWriteTagged** 宏记录事件。
 
 有关如何捕获和查看 TraceLogging 数据的示例，请参阅 [捕获和查看 TraceLogging 数据](capture-and-view-tracelogging-data.md)。

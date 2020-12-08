@@ -1,9 +1,8 @@
 ---
-title: WIA\_DPS\_文档\_处理\_容量
-description: WIA\_DPS\_文档\_处理\_容量属性已过时，不应使用。
-ms.assetid: a1d633a5-5dc1-420f-a9c9-b44422093478
+title: WIA \_ DPS \_ 文档 \_ 处理 \_ 容量
+description: WIA \_ DPS \_ 文档 \_ 处理 \_ 容量属性已过时，不应使用。
 keywords:
-- WIA_DPS_DOCUMENT_HANDLING_CAPACITY 成像设备
+- WIA_DPS_DOCUMENT_HANDLING_CAPACITY 图像设备
 topic_type:
 - apiref
 api_name:
@@ -14,21 +13,21 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e9b9b0b7ef7c80f5e0b49d32bd5019cf6813da13
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e7b25d9965c979b2b91be50d136533f42ccd57e4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63335446"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837749"
 ---
-# <a name="wiadpsdocumenthandlingcapacity"></a>WIA\_DPS\_文档\_处理\_容量
+# <a name="wia_dps_document_handling_capacity"></a>WIA \_ DPS \_ 文档 \_ 处理 \_ 容量
 
 
-WIA\_DPS\_文档\_处理\_容量属性已过时，不应使用。
+WIA \_ DPS \_ 文档 \_ 处理 \_ 容量属性已过时，不应使用。
 
-属性类型：VT\_I4
+属性类型： VT \_ I4
 
-有效值：WIA\_PROP\_NONE
+有效值： WIA " \_ \_ 无"
 
 访问权限：只读
 
@@ -42,8 +41,8 @@ WIA\_DPS\_文档\_处理\_容量属性已过时，不应使用。
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Wiadef.h （包括 Wiadef.h）</td>
+<td><p>标头</p></td>
+<td>Wiadef (包含 Wiadef) </td>
 </tr>
 </tbody>
 </table>

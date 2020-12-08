@@ -1,7 +1,6 @@
 ---
 title: SM \_ SendRPS 函数
 description: SM \_ SENDRPS WMI 方法将 (RPS) 请求的读取端口状态块发送到指定的端口或域控制器。
-ms.assetid: a64983ef-c665-43db-ad29-0a6f14421ab8
 keywords:
 - SM_SendRPS 函数存储设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: c708a23da89660b6c34c37f2b67c6d0bcfaf3551
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 9b29646b1b866c529107be75919b13e7c307df9f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89184180"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837631"
 ---
 # <a name="sm_sendrps-function"></a>SM \_ SendRPS 函数
 
@@ -31,15 +30,15 @@ SM \_ SENDRPS WMI 方法将 (RPS) 请求的读取端口状态块发送到指定�
 
 ```ManagedCPlusPlus
 void SM_SendRPS(
-   [in, HBAType("HBA_WWN")] uint8              PortWWN[8],
-   [in, HBAType("HBA_WWN")] uint8              AgentWWN[8],
-   [in, HBAType("HBA_WWN")] uint8              ObjectWWN[8],
-   [in] uint32                                 AgentDomain,
-   [in] uint32                                 ObjectPortNumber,
-   [in] uint32                                 InRespBufferMaxSize,
-   [out, HBA_STATUS_QUALIFIERS] HBA_STATUS     HBAStatus,
-   [out] uint32                                TotalRespBufferSize,
-   [out] uint32                                OutRespBufferSize,
+   [in, HBAType("HBA_WWN")] uint8              PortWWN[8],
+   [in, HBAType("HBA_WWN")] uint8              AgentWWN[8],
+   [in, HBAType("HBA_WWN")] uint8              ObjectWWN[8],
+   [in] uint32                                 AgentDomain,
+   [in] uint32                                 ObjectPortNumber,
+   [in] uint32                                 InRespBufferMaxSize,
+   [out, HBA_STATUS_QUALIFIERS] HBA_STATUS     HBAStatus,
+   [out] uint32                                TotalRespBufferSize,
+   [out] uint32                                OutRespBufferSize,
    [out, WmiSizeIs("OutRespBufferSize")] uint8 RespBuffer[]
 );
 ```
@@ -82,7 +81,7 @@ RPS 命令的结果。 微型端口驱动程序在 SM \_ SendRPS OUT 结构的 R
 
 不适用于 WMI 方法。
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 此 WMI 方法属于 MS \_ SM \_ FabricAndDomainManagementMethods WMI 类。
@@ -101,7 +100,7 @@ RPS 命令的结果。 微型端口驱动程序在 SM \_ SendRPS OUT 结构的 R
 <td align="left">台式机</td>
 </tr>
 <tr class="even">
-<td align="left"><p>Header</p></td>
+<td align="left"><p>标头</p></td>
 <td align="left">Hbapiwmi</td>
 </tr>
 </tbody>

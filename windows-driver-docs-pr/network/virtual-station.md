@@ -1,24 +1,23 @@
 ---
 title: 虚拟工作站
 description: 虚拟工作站
-ms.assetid: 6228439c-4c01-4fa9-8b45-b46ed90fa661
 keywords:
 - 虚拟工作站 WDK 网络
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d5e8cf4199937dff831f917cd9adb0fba7820ed1
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: e1411c2a67f96d67cfc51136461d74c488f3e815
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91732521"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96836693"
 ---
 # <a name="virtual-station"></a>虚拟工作站
 
 
 
 
- 
+ 
 
 从 NDIS 6.20 (Windows 7) 开始，操作系统提供了一个虚拟工作站 (VSTA) ，可与802.11 微型端口驱动程序交互。
 
@@ -28,10 +27,10 @@ ms.locfileid: "91732521"
 
 操作系统将调用 [*Dot11ExtIhvInitVirtualStation*](/windows-hardware/drivers/ddi/wlanihv/nc-wlanihv-dot11extihv_init_virtual_station) 函数，以便为虚拟机操作初始化 IHV 扩展 DLL。 此调用还将初始化操作系统和 DLL 之间的用户模式 API 接口。
 
-**注意**   若要确保以一致的方式创建虚拟工作站，计算机应该只安装一个尝试使用虚拟机功能的 IHV 扩展 DLL。 即使安装了多个 DLL，也只能创建一个虚拟工作站。 在计算机重新启动后，操作系统无法保证哪个 DLL 有权访问虚拟机。 请注意，如果已在对一个 DLL 的请求创建了虚拟机，而另一个 DLL 调用了 **Dot11ExtRequestVirtualStation**，则可能会返回成功代码，但不会创建第二个虚拟机。
+**注意**  若要确保以一致的方式创建虚拟工作站，计算机应该只安装一个尝试使用虚拟机功能的 IHV 扩展 DLL。 即使安装了多个 DLL，也只能创建一个虚拟工作站。 在计算机重新启动后，操作系统无法保证哪个 DLL 有权访问虚拟机。 请注意，如果已在对一个 DLL 的请求创建了虚拟机，而另一个 DLL 调用了 **Dot11ExtRequestVirtualStation**，则可能会返回成功代码，但不会创建第二个虚拟机。
 IHV 扩展 DLL 在调用 **Dot11ExtRequestVirtualStation** 函数后应设置两分钟计时器。 如果计时器在虚拟机适配器到达事件之前过期，则 DLL 应假定未创建虚拟工作站。
 
- 
+ 
 
 ### <a name="extensible-apvirtual-station-interactions"></a><a href="" id="extensible-ap-virtual-station-interactions"></a> 可扩展的 AP/虚拟工作站交互
 
@@ -40,7 +39,7 @@ IHV 扩展 DLL 在调用 **Dot11ExtRequestVirtualStation** 函数后应设置两
 -   通知操作系统，用于 ExtAP 的端口是否可以或无法始终维持功能。 具体而言，驱动程序应使用适当的状态代码 ( [**NDIS \_ 状态 \_ 指示**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_status_indication) - &gt; **StatusCode**) 和原因代码，在 ExtAP 端口上发出以下状态指示：
 
     <a href="" id="ndis-status-dot11-stop-ap"></a>[NDIS \_ 状态 \_ DOT11 \_ 停止 \_ AP](/previous-versions/windows/hardware/wireless/ndis-status-dot11-stop-ap)  
-    指示 AP 功能不能在 ExtAP 端口上保持不变。 在这种情况下，请将[**DOT11 \_ 停止 \_ ap \_ 参数**](/windows-hardware/drivers/ddi/windot11/ns-windot11-_dot11_stop_ap_parameters) - &gt; **ulReason**设置为 "DOT11 \_ 停止 \_ ap \_ 原因 \_ \_ " 设置为 "活动"。 在以下情况下发出此状态指示：
+    指示 AP 功能不能在 ExtAP 端口上保持不变。 在这种情况下，请将 [**DOT11 \_ 停止 \_ ap \_ 参数**](/windows-hardware/drivers/ddi/windot11/ns-windot11-_dot11_stop_ap_parameters) - &gt; **ulReason** 设置为 "DOT11 \_ 停止 \_ ap \_ 原因 \_ \_ " 设置为 "活动"。 在以下情况下发出此状态指示：
 
     -   在虚拟工作站端口开始使用共享资源之前，会阻止同时进行虚拟工作站和 ExtAP 连接
     -   如果 ExtAP 端口转换为 ExtAP INIT 状态，虚拟工作站资源使用会阻止成功初始化 ExtAP 端口。
@@ -70,6 +69,6 @@ IHV 扩展 DLL 在调用 **Dot11ExtRequestVirtualStation** 函数后应设置两
 
 [**DOT11EXT \_ 虚拟 \_ 工作站 \_ api**](/windows-hardware/drivers/ddi/wlanihv/ns-wlanihv-_dot11ext_virtual_station_apis)
 
- 
+ 
 
- 
+ 

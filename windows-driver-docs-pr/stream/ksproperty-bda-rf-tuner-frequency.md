@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ BDA \_ RF \_ 调谐器 \_ 频率
 description: 客户端使用 KSPROPERTY \_ bda \_ rf 射频射频和 \_ \_ KSPROPERTY \_ bda \_ rf \_ 射频 \_ \_ 乘法器来控制调谐器节点的频率设置。
-ms.assetid: 0bcecf33-06d5-4b07-8602-da97db5c1306
 keywords:
 - KSPROPERTY_BDA_RF_TUNER_FREQUENCY 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5c42dab6b0c1ea315edb8042e5b63464fd4da8e9
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: de9c808b771dcd1b08549c9ede4e9bd580ebcc2b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89186601"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837867"
 ---
 # <a name="ksproperty_bda_rf_tuner_frequency"></a>KSPROPERTY \_ BDA \_ RF \_ 调谐器 \_ 频率
 
@@ -61,7 +60,7 @@ ms.locfileid: "89186601"
 
  
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 KSP **NodeId** \_ 节点的节点标识号指定调谐器节点的标识符。
@@ -86,7 +85,7 @@ KSP **NodeId** \_ 节点的节点标识号指定调谐器节点的标识符。
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Bdamedia (包含 Bdamedia) </td>
 </tr>
 </tbody>

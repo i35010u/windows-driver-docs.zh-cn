@@ -1,7 +1,6 @@
 ---
 title: Bug 检查 0x67 CONFIG_INITIALIZATION_FAILED
-description: CONFIG_INITIALIZATION_FAILED bug 检查具有 0x00000067 值。 检查此错误表示注册表配置失败。
-ms.assetid: 3bc4d6d9-785e-4283-b4c5-2c868c03f084
+description: CONFIG_INITIALIZATION_FAILED bug 检查的值为0x00000067。 此 bug 检查表明注册表配置失败。
 keywords:
 - Bug 检查 0x67 CONFIG_INITIALIZATION_FAILED
 - CONFIG_INITIALIZATION_FAILED
@@ -13,23 +12,23 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: fc98346dbc99cb3a17778a57d8571232670974cf
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: 94efdf8d7ab4c9db0cf88a76da4950f2ff6238e1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67519281"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838683"
 ---
-# <a name="bug-check-0x67-configinitializationfailed"></a>Bug 检查 0x67：CONFIG\_初始化\_失败
+# <a name="bug-check-0x67-config_initialization_failed"></a>Bug 检查0x67：配置 \_ 初始化 \_ 失败
 
 
-在配置\_初始化\_失败错误检查的值为 0x00000067。 检查此错误表示注册表配置失败。
+配置 \_ 初始化 \_ 失败 bug 检查的值为0x00000067。 此 bug 检查表明注册表配置失败。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题面向程序员。 如果您是在使用计算机时收到蓝屏错误代码的客户，请参阅[蓝屏错误疑难解答](https://www.windows.com/stopcode)。
 
 
-## <a name="configinitializationfailed-parameters"></a>CONFIG\_初始化\_失败参数
+## <a name="config_initialization_failed-parameters"></a>配置 \_ 初始化 \_ 失败参数
 
 
 <table>
@@ -58,7 +57,7 @@ ms.locfileid: "67519281"
 </tr>
 <tr class="even">
 <td align="left"><p>4</p></td>
-<td align="left"><p>保留</p></td>
+<td align="left"><p>预留</p></td>
 </tr>
 </tbody>
 </table>
@@ -68,7 +67,7 @@ ms.locfileid: "67519281"
 <a name="cause"></a>原因
 -----
 
-注册表无法分配包含注册表文件所需的池。 这种情况下应永远不会发生，因为寄存器分配尽可能早地在系统初始化此池，以便在很多页面缓冲池应可用。
+注册表无法分配包含注册表文件所需的池。 永远不会发生这种情况，因为在系统初始化中，寄存器会提前分配此池，以便有充足的分页池可用。
 
  
 

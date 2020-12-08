@@ -1,24 +1,23 @@
 ---
 title: HS_PLUGIN_SEND_KEEP_ALIVE 函数
 description: 主机调用 HS_PLUGIN_SEND_KEEP_ALIVE 函数发送网络连接 keep-alive 消息。 它将以插件的 HS_PLUGIN_PROFILE 结构的 dwKeepAliveTimeMins 成员中指定的频率进行调用。
-ms.assetid: 1db91146-03bb-4513-9c1b-f0dbd5c941f5
 keywords:
 - typedef DWORD (WINAPI HS_PLUGIN_SEND_KEEP_ALIVE 从 Windows Vista 开始) 函数网络驱动程序
 ms.date: 07/31/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3cd2e3bca7a7a3cad2b12abfb9592e5f84413d5b
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: a34a0f314fa995bcdeccb1a7a4fd66c2636655a4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89403006"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838427"
 ---
 # <a name="hs_plugin_send_keep_alive-function"></a>HS \_ 插件 \_ 发送 \_ \_ keep-alive 函数
 
 [!include[Wi-Fi Hotspot Offloading deprecation](../includes/wi-fi-hotspot-offloading-deprecation.md)]
 
 
-**HS \_ 插件 \_ 发送 \_ \_ ** keep-alive 函数由主机调用，以发送网络连接 keep-alive 消息。 它将以插件的[**HS \_ 插件 \_ 配置文件**](hs-plugin-profile.md)结构的**dwKeepAliveTimeMins**成员中指定的频率进行调用。
+**HS \_ 插件 \_ 发送 \_ \_** keep-alive 函数由主机调用，以发送网络连接 keep-alive 消息。 它将以插件的 [**HS \_ 插件 \_ 配置文件**](hs-plugin-profile.md)结构的 **dwKeepAliveTimeMins** 成员中指定的频率进行调用。
 
 <a name="syntax"></a>语法
 ------
@@ -55,13 +54,13 @@ ms.locfileid: "89403006"
 <td><p>Windows 10 移动版</p></td>
 </tr>
 <tr class="even">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Hotspotoffloadplugin (包含 Hotspotoffloadplugin) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**HS \_ 插件 \_ 配置文件**](hs-plugin-profile.md)

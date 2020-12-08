@@ -1,17 +1,16 @@
 ---
 title: NDIS_STATUS_RESET_END
 description: NDIS_STATUS_RESET_END 状态表明微型端口适配器重置操作已完成。
-ms.assetid: 09ced263-9e4b-45e3-ae5e-db033a03b5b6
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 NDIS_STATUS_RESET_END 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 3c60d37a058d37887a493bcba8066bde08b87787
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 4f617fc3e44a8adddbbac0668c6c5b3cb95c1d3f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89206071"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837167"
 ---
 # <a name="ndis_status_reset_end"></a>NDIS \_ 状态 \_ 重置 \_ 结束
 
@@ -49,7 +48,7 @@ NDIS \_ 状态 \_ 重置 \_ 结束状态表明微型端口适配器重置操作�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**NDIS \_ 状态 \_ 重置 \_ 启动**](ndis-status-reset-start.md)

@@ -1,7 +1,6 @@
 ---
 title: PnP 通知概述
 description: PnP 通知概述
-ms.assetid: 134a1ea1-78c2-4bab-b5e9-ae21901772ea
 keywords:
 - PnP WDK 内核，通知
 - 即插即用 WDK 内核，通知
@@ -12,12 +11,12 @@ keywords:
 - EventCategoryHardwareProfileChange 通知
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 24b5aabad16dfc14af8cdbfe828d48980088a622
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 17c7e7f589df5e198b0e2154f7c53d12ebd93d99
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89188847"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838441"
 ---
 # <a name="pnp-notification-overview"></a>PnP 通知概述
 

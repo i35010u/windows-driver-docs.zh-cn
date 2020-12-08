@@ -1,7 +1,6 @@
 ---
 title: MRxShouldTryToCollapseThisOpen 例程
 description: MRxShouldTryToCollapseThisOpen 例程由 RDBSS 调用，请求网络小型重定向程序指示 RDBSS 应尝试并将打开的请求折叠到现有的文件系统对象。
-ms.assetid: a68755c1-73f5-4134-b506-2a0163637a13
 keywords:
 - MRxShouldTryToCollapseThisOpen 例程可安装文件系统驱动程序
 - PMRX_CALLDOWN
@@ -15,17 +14,17 @@ api_type:
 - UserDefined
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6626548191ee7ef4b17445d2967a0d3028557034
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 350b0ed4d58a8391f8a8906765ea33f0b7e67c71
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89067380"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96836807"
 ---
 # <a name="mrxshouldtrytocollapsethisopen-routine"></a>MRxShouldTryToCollapseThisOpen 例程
 
 
-*MRxShouldTryToCollapseThisOpen*例程由[RDBSS](./the-rdbss-driver-and-library.md)调用，请求网络小型重定向程序指示 RDBSS 应尝试并将打开的请求折叠到现有的文件系统对象。
+*MRxShouldTryToCollapseThisOpen* 例程由 [RDBSS](./the-rdbss-driver-and-library.md)调用，请求网络小型重定向程序指示 RDBSS 应尝试并将打开的请求折叠到现有的文件系统对象。
 
 <a name="syntax"></a>语法
 ------
@@ -34,12 +33,12 @@ ms.locfileid: "89067380"
 PMRX_CALLDOWN MRxShouldTryToCollapseThisOpen;
 
 NTSTATUS MRxShouldTryToCollapseThisOpen(
-  _Inout_ PRX_CONTEXT RxContext
+  _Inout_ PRX_CONTEXT RxContext
 )
 { ... }
 ```
 
-<a name="parameters"></a>parameters
+<a name="parameters"></a>参数
 ----------
 
 *RxContext* \[in、out\]  
@@ -74,11 +73,11 @@ NTSTATUS MRxShouldTryToCollapseThisOpen(
 <a name="remarks"></a>备注
 -------
 
-调用*MRxShouldTryToCollapseThisOpen*来确定是否应折叠打开的请求。
+调用 *MRxShouldTryToCollapseThisOpen* 来确定是否应折叠打开的请求。
 
-在调用 *MRxShouldTryToCollapseThisOpen*之前，RDBSS 会修改 \_ *RXCONTEXT* 参数指向的 RX 上下文结构中的以下成员：
+在调用 *MRxShouldTryToCollapseThisOpen* 之前，RDBSS 会修改 \_ *RXCONTEXT* 参数指向的 RX 上下文结构中的以下成员：
 
-**PRelevantSrvOpen**成员设置为 SRV \_ OPEN。
+**PRelevantSrvOpen** 成员设置为 SRV \_ OPEN。
 
 对 *MRxShouldTryToCollapseThisOpen* 的调用可能是对目录的更改通知请求。 因此，网络小型重定向程序可能不允许折叠打开的请求，使更改通知正常工作。
 
@@ -95,7 +94,7 @@ NTSTATUS MRxShouldTryToCollapseThisOpen(
 <tbody>
 <tr class="odd">
 <td align="left"><p>目标平台</p></td>
-<td align="left">桌面型</td>
+<td align="left">台式机</td>
 </tr>
 <tr class="even">
 <td align="left"><p>标头</p></td>
@@ -104,7 +103,7 @@ NTSTATUS MRxShouldTryToCollapseThisOpen(
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**MRxAreFilesAliased**](/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_chkfcb_calldown)

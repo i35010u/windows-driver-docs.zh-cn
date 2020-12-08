@@ -1,15 +1,14 @@
 ---
 title: KSPROPSETID \_ BdaPinControl
 description: KSPROPSETID \_ BdaPinControl
-ms.assetid: f3c6ae83-d50f-49c8-a851-763f191f1932
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3c81944fbffc4407ded5b31f6e840c355075118e
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: a923f866a0d6471b3a01a577756f453a957f78c6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89185325"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837835"
 ---
 # <a name="kspropsetid_bdapincontrol"></a>KSPROPSETID \_ BdaPinControl
 

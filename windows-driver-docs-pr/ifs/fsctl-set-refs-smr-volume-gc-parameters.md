@@ -1,7 +1,6 @@
 ---
 title: FSCTL_SET_REFS_SMR_VOLUME_GC_PARAMETERS 控制代码
 description: FSCTL \_ SET \_ REFS \_ SMR \_ VOLUME \_ GC \_ PARAMETERS 控制代码控制对 Shingled 磁性记录 (SMR) 卷的垃圾回收。
-ms.assetid: 782542C4-CFC5-4BF7-AF38-3247A3AC6AB9
 keywords:
 - FSCTL_SET_REFS_SMR_VOLUME_GC_PARAMETERS 控制代码可安装的文件系统驱动程序
 topic_type:
@@ -14,17 +13,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 17c8d0807067afda55130839a225ce69b658921e
-ms.sourcegitcommit: f8619f20a0903dd64f8641a5266ecad6df5f1d57
+ms.openlocfilehash: af82408fb24ec00bb9e29bf303bf6494ea2c4abb
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91423772"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838039"
 ---
 # <a name="fsctl_set_refs_smr_volume_gc_parameters-control-code"></a>FSCTL \_ 设置 \_ REFS \_ SMR \_ VOLUME \_ GC \_ PARAMETERS 控制代码
 
 
-**FSCTL \_ SET \_ REFS \_ SMR \_ VOLUME \_ GC \_ PARAMETERS**控制代码控制对 Shingled 磁性记录 (SMR) 卷的垃圾回收。
+**FSCTL \_ SET \_ REFS \_ SMR \_ VOLUME \_ GC \_ PARAMETERS** 控制代码控制对 Shingled 磁性记录 (SMR) 卷的垃圾回收。
 
 ```ManagedCPlusPlus
 BOOL
@@ -38,7 +37,7 @@ BOOL
                     (LPOVERLAPPED) lpOverlapped );  // OVERLAPPED structure
 ```
 
-<a name="parameters"></a>parameters
+<a name="parameters"></a>参数
 ----------
 
 *hDevice* \[中\]  
@@ -65,9 +64,9 @@ BOOL
 *lpOverlapped* \[中\]  
 指向 [**重叠**](/windows/win32/api/minwinbase/ns-minwinbase-overlapped) 的结构的指针。
 
-如果在未指定**文件 \_ 标志 \_ 重叠**的情况下打开*hDevice* ，则将忽略*lpOverlapped* 。
+如果在未指定 **文件 \_ 标志 \_ 重叠** 的情况下打开 *hDevice* ，则将忽略 *lpOverlapped* 。
 
-如果使用**FILE \_ 标记 \_ 交叠**标志打开*hDevice* ，则操作将作为 (异步) 操作的重叠进行。 在这种情况下， *lpOverlapped* 必须指向包含事件对象句柄的有效 [**重叠**](/windows/win32/api/minwinbase/ns-minwinbase-overlapped) 结构。 否则，函数将会失败。
+如果使用 **FILE \_ 标记 \_ 交叠** 标志打开 *hDevice* ，则操作将作为 (异步) 操作的重叠进行。 在这种情况下， *lpOverlapped* 必须指向包含事件对象句柄的有效 [**重叠**](/windows/win32/api/minwinbase/ns-minwinbase-overlapped) 结构。 否则，函数将会失败。
 
 对于重叠操作， [**DeviceIoControl**](/windows/win32/api/ioapiset/nf-ioapiset-deviceiocontrol) 将立即返回，并且在操作完成后会发出事件对象。 否则，在操作完成或发生错误之前，函数不会返回。
 
@@ -98,7 +97,7 @@ BOOL
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**DeviceIoControl**](/windows/win32/api/ioapiset/nf-ioapiset-deviceiocontrol)

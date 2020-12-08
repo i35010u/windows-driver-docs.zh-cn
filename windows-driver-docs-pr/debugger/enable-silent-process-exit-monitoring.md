@@ -1,15 +1,14 @@
 ---
 title: 启用静默进程退出监视
 description: 启用静默进程退出监视
-ms.assetid: 3FEA9660-541B-42D0-B020-CECEBF14BB4D
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: da0530cf8c63ace48b68f03478af099b7fc54b10
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c1246c58fc03420927303d713d447a16563d256d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63354693"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838231"
 ---
 # <a name="enable-silent-process-exit-monitoring"></a>启用静默进程退出监视
 
@@ -17,7 +16,7 @@ ms.locfileid: "63354693"
 ## <span id="ddk_enable_pool_tagging_dtools"></span><span id="DDK_ENABLE_POOL_TAGGING_DTOOLS"></span>
 
 
-**启用无提示的进程退出监视**标志可使无提示退出监视进程。
+" **启用无提示进程退出监视** " 标志为进程启用静态退出监视。
 
 <table>
 <colgroup>
@@ -35,16 +34,16 @@ ms.locfileid: "63354693"
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>目标</strong></p></td>
-<td align="left"><p>图像文件注册表项</p></td>
+<td align="left"><p>映像文件注册表项</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-### <a name="span-idcommentsspanspan-idcommentsspancomments"></a><span id="comments"></span><span id="COMMENTS"></span>注释
+### <a name="span-idcommentsspanspan-idcommentsspancomments"></a><span id="comments"></span><span id="COMMENTS"></span>提出
 
-有关监视无提示退出一个过程的详细信息，请参阅[监视无提示的进程退出](registry-entries-for-silent-process-exit.md)。
+有关监视进程以进行无提示退出的详细信息，请参阅 [监视无提示进程退出](registry-entries-for-silent-process-exit.md)。
 
  
 

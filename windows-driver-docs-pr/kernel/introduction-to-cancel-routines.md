@@ -1,19 +1,18 @@
 ---
 title: Cancel 例程简介
 description: Cancel 例程简介
-ms.assetid: 99f7f045-2b2f-4fb3-ac1c-99ab76fa46ad
 keywords:
 - 正在取消 Irp，关于取消 Irp
 - 取消例程，关于取消例程
 - 关联的 IRP
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d4addaf196e1211bfd21a99cd6f95077387df830
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 66d5e599f5f592dc693fa0bc63e79913ae9fa6d6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89189353"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96836931"
 ---
 # <a name="introduction-to-cancel-routines"></a>Cancel 例程简介
 
@@ -27,7 +26,7 @@ ms.locfileid: "89189353"
 
 当主 IRP 取消时，创建关联的 Irp 的驱动程序必须将其取消。 由于关联的 Irp 不与请求线程关联，因此在取消 master IRP 时，master IRP 的 *Cancel* 例程负责取消任何关联的 irp。
 
-任何驱动程序的 *取消* 例程数取决于驱动程序的设计。 通常情况下，驱动程序应在其 i/o 处理中的每个阶段都有一个 *取消* 例程，此时 IRP 可能处于无限期的挂起状态。 此类挂起的 Irp 被视为 *处于*可取消状态。
+任何驱动程序的 *取消* 例程数取决于驱动程序的设计。 通常情况下，驱动程序应在其 i/o 处理中的每个阶段都有一个 *取消* 例程，此时 IRP 可能处于无限期的挂起状态。 此类挂起的 Irp 被视为 *处于* 可取消状态。
 
 请考虑以下设计准则：
 

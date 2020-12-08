@@ -1,28 +1,27 @@
 ---
 title: OID_PM_REMOVE_WOL_PATTERN
 description: 作为集，NDIS 和协议驱动程序使用 OID_PM_REMOVE_WOL_PATTERN OID 从网络适配器中删除电源管理 LAN 唤醒 (WOL) 模式。
-ms.assetid: fdaa2646-6f41-4f51-9c27-6194270f26ed
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_PM_REMOVE_WOL_PATTERN 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 65cca92d82db896203099d1da227404b20b84207
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: a009ec0aab2527e1e09a0f8a80f8f93d9061006d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104606"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837929"
 ---
 # <a name="oid_pm_remove_wol_pattern"></a>OID \_ PM \_ 删除 \_ WOL \_ 模式
 
 
-作为集，NDIS 和协议驱动程序使用 OID \_ PM \_ 删除 \_ wol \_ 模式 OID 从网络适配器中删除电源管理 LAN 唤醒 (wol) 模式。 [**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的**InformationBuffer**成员包含指向 ULONG 模式标识符的指针。
+作为集，NDIS 和协议驱动程序使用 OID \_ PM \_ 删除 \_ wol \_ 模式 OID 从网络适配器中删除电源管理 LAN 唤醒 (wol) 模式。 [**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的 **InformationBuffer** 成员包含指向 ULONG 模式标识符的指针。
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 NDIS 和协议驱动程序使用 OID \_ PM \_ 删除 \_ wol \_ 模式，以从基础网络适配器中删除 LAN 唤醒 (wol) 模式。
 
-**数据。设置 \_ 信息。** [**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的 InformationBuffer 成员必须指向以前添加的 WOL 模式标识符的 ULONG 值。 当 NDIS 发送之前的 OID pm 时，NDIS 在[**ndis \_ PM \_ WOL \_ 模式**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_wol_pattern)结构的**PatternId**成员中设置此模式标识符。 [ \_ \_ 将 \_ WOL \_ 模式](oid-pm-add-wol-pattern.md)OID 请求添加到基础网络适配器。
+**数据。设置 \_ 信息。** [**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的 InformationBuffer 成员必须指向以前添加的 WOL 模式标识符的 ULONG 值。 当 NDIS 发送之前的 OID pm 时，NDIS 在 [**ndis \_ PM \_ WOL \_ 模式**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_wol_pattern)结构的 **PatternId** 成员中设置此模式标识符。 [ \_ \_ 将 \_ WOL \_ 模式](oid-pm-add-wol-pattern.md)OID 请求添加到基础网络适配器。
 
 ### <a name="return-status-codes"></a>返回状态代码
 
@@ -36,7 +35,7 @@ NDIS 和协议驱动程序使用 OID \_ PM \_ 删除 \_ wol \_ 模式，以从�
 <thead>
 <tr class="header">
 <th>术语</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -71,7 +70,7 @@ NDIS 为此请求返回以下状态代码之一：
 <thead>
 <tr class="header">
 <th>术语</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -116,7 +115,7 @@ NDIS 为此请求返回以下状态代码之一：
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)

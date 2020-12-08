@@ -1,19 +1,18 @@
 ---
 title: D3dCreateSurfaceEx 和后备图面
 description: D3dCreateSurfaceEx 和后备图面
-ms.assetid: aad37654-616f-4cbd-9a9c-07458fb61947
 keywords:
 - 上下文 WDK Direct3D，D3dCreateSurfaceEx
 - D3dCreateSurfaceEx
 - 支持面 WDK Direct3D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9a8ffda795867a233f9b14eaa277a6a10fc4c992
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: cc0098c42884bc44ecf124b83a08d678670b58ff
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90716524"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838505"
 ---
 # <a name="d3dcreatesurfaceex-and-backing-surfaces"></a>D3dCreateSurfaceEx 和后备图面
 

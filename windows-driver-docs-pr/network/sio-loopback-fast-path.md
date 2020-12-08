@@ -1,16 +1,15 @@
 ---
 title: SIO_LOOPBACK_FAST_PATH 控制代码
 description: SIO_LOOPBACK_FAST_PATH 套接字 i/o 控制代码允许 WSK 应用程序配置 TCP 套接字，以便更快地在环回接口上操作。
-ms.assetid: 5A5AD945-9EFD-4157-AFA4-F9C3995B7C43
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 SIO_LOOPBACK_FAST_PATH 控制代码网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 3ca5da89519c56f7b4bad32f58e5cb31968d7402
-ms.sourcegitcommit: a866b3470025d85b25a48857a81f893179698e7e
+ms.openlocfilehash: 1f4b8e69bbe8b6738cd00e1c02233578c650aa8d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92356007"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837663"
 ---
 # <a name="sio_loopback_fast_path-control-code"></a>SIO \_ 环回 \_ 快速 \_ 路径控制代码
 
@@ -19,7 +18,7 @@ ms.locfileid: "92356007"
 
  
 
-**SIO \_ 环回 \_ FAST \_ PATH**套接字 i/o 控制代码允许 WSK 应用程序配置 TCP 套接字，以便更快地在环回接口上操作。
+**SIO \_ 环回 \_ FAST \_ PATH** 套接字 i/o 控制代码允许 WSK 应用程序配置 TCP 套接字，以便更快地在环回接口上操作。
 
 若要使用此 IOCTL，WSK 应用程序需要使用以下参数调用 [**WskControlSocket**](/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_control_socket) 函数。
 
@@ -76,7 +75,7 @@ ms.locfileid: "92356007"
 
  
 
-应用程序可以使用 **SIO \_ 环回 \_ FAST \_ 路径** IOCTL 提高 TCP 套接字上环回操作的性能。 此 IOCTL 请求 TCP/IP 堆栈为此套接字上的环回操作使用特殊的快速路径。 **SIO \_ 环回 \_ FAST \_ 路径**IOCTL 只能与 TCP 套接字一起使用。 此 IOCTL 必须在环回会话两侧使用。 使用 IPv4 或 IPv6 环回接口支持 TCP 环回快速路径。
+应用程序可以使用 **SIO \_ 环回 \_ FAST \_ 路径** IOCTL 提高 TCP 套接字上环回操作的性能。 此 IOCTL 请求 TCP/IP 堆栈为此套接字上的环回操作使用特殊的快速路径。 **SIO \_ 环回 \_ FAST \_ 路径** IOCTL 只能与 TCP 套接字一起使用。 此 IOCTL 必须在环回会话两侧使用。 使用 IPv4 或 IPv6 环回接口支持 TCP 环回快速路径。
 
 计划启动连接请求的套接字必须应用此 IOCTL，才能发出连接请求。 侦听连接请求的套接字必须应用此 IOCTL 才能接受连接。
 
@@ -108,7 +107,7 @@ ms.locfileid: "92356007"
 
 有关 WSK IRP 处理的详细信息，请参阅将 [irp 与 Winsock 内核函数配合使用](./using-irps-with-winsock-kernel-functions.md)。
 
-完成 IRP 后，如果请求成功，子系统会将 *IRP &gt; IoStatus* 设置为 **状态 " \_ 成功** "。 否则， * &gt; IoStatus* 将设置为 " **状态 \_ 无效 \_ 缓冲区 \_ 大小** " 或在调用不成功时 ** \_ 不 \_ 支持的状态** 。
+完成 IRP 后，如果请求成功，子系统会将 *IRP &gt; IoStatus* 设置为 **状态 " \_ 成功** "。 否则， *&gt; IoStatus* 将设置为 " **状态 \_ 无效 \_ 缓冲区 \_ 大小** " 或在调用不成功时 **\_ 不 \_ 支持的状态** 。
 
 ## <a name="return-value"></a>返回值
 
@@ -131,7 +130,7 @@ ms.locfileid: "92356007"
 <td><p>Windows Server 2012</p></td>
 </tr>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Mstcpip.h</td>
 </tr>
 <tr class="even">
@@ -141,10 +140,10 @@ ms.locfileid: "92356007"
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
-[**SIO \_ 环回 \_ FAST \_ 路径 (SDK) **](/windows/win32/winsock/sio-loopback-fast-path)
+[**SIO \_ 环回 \_ FAST \_ 路径 (SDK)**](/windows/win32/winsock/sio-loopback-fast-path)
 
 [将 IRP 与 Winsock 内核函数配合使用](./using-irps-with-winsock-kernel-functions.md)
 

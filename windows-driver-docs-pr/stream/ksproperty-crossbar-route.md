@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ 横线 \_ 路由
 description: KSPROPERTY \_ 纵横制 \_ 路由属性用于查询是否可以进行特定的路由，以及如何通过指定输出 pin 索引和输入 pin 索引来路由视频或音频流。 必须实现此属性。
-ms.assetid: 2c64575c-49c6-437b-924e-042ee0f15d9b
 keywords:
 - KSPROPERTY_CROSSBAR_ROUTE 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1c4cf7f7d88297d4633756547ed454b41ff1658d
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: ef7a2bc3011a22e0afcb6df4a6616d0221e4a5de
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102736"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837619"
 ---
 # <a name="ksproperty_crossbar_route"></a>KSPROPERTY \_ 横线 \_ 路由
 
@@ -84,7 +83,7 @@ KSPROPERTY \_ 纵横制 \_ 路由属性用于查询是否可以进行特定的�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSPROPERTY**](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)

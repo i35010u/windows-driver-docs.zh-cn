@@ -1,7 +1,6 @@
 ---
 title: 在启动期间跟踪
 description: 在启动期间跟踪
-ms.assetid: 79594c33-5755-4484-aaf5-ac409b05ddcc
 keywords:
 - 在启动过程中进行软件跟踪 WDK
 - 在启动过程中跟踪 WDK
@@ -10,12 +9,12 @@ keywords:
 - 启动时间跟踪 WDK，关于引导时跟踪
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c19c8d78a14fab707314827b84dae96937304e0f
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 389dac14e8b2f4fd0aaa75bff5b98321236edacd
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89381629"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838089"
 ---
 # <a name="tracing-during-boot"></a>在启动期间跟踪
 

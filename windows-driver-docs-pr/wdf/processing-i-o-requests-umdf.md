@@ -1,29 +1,28 @@
 ---
-title: 处理 i/o 请求（UMDF 1）
+title: 处理 (UMDF 1) 的 i/o 请求
 description: 处理 I/O 请求
-ms.assetid: d12e879e-3aeb-4e88-82de-47e06e7ac482
 keywords:
 - I/o 请求 WDK UMDF
 - 请求处理 WDK UMDF
-- 用户模式驱动程序框架 WDK，i/o 请求
+- User-Mode Driver Framework WDK、i/o 请求
 - UMDF WDK，i/o 请求
 - 用户模式驱动程序 WDK UMDF，i/o 请求
 - 处理 i/o 请求 WDK UMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 66e7eb1d97f6ce1dc3da183c7565d579ca277d19
-ms.sourcegitcommit: f788aa204a3923f9023d8690488459a4d9bc2495
+ms.openlocfilehash: 024ce57a2b29aa098b1b5273a62bc3fab7811b92
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86141338"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837027"
 ---
-# <a name="processing-io-requests-umdf-1"></a>处理 i/o 请求（UMDF 1）
+# <a name="processing-io-requests-umdf-1"></a>处理 (UMDF 1) 的 i/o 请求
 
 
 [!include[UMDF 1 Deprecation](../includes/umdf-1-deprecation.md)]
 
-## <a name="in-this-section"></a>本节内容
+## <a name="in-this-section"></a>在本节中
 
 
 -   [I/O 请求处理操作流](i-o-request-processing-operation-flow.md)

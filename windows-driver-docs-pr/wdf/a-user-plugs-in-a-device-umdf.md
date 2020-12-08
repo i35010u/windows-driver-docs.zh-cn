@@ -1,18 +1,17 @@
 ---
 title: '用户插入设备 (UMDF 1) '
 description: 用户插入设备
-ms.assetid: 1968270b-ce57-4a8c-8b7a-bbd4a972435d
 keywords:
 - 电源管理方案 WDK UMDF，插入设备
 - 插入设备方案 WDK UMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f8cfdd13374a6d5942711655d49df3acac555d21
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 9fd192a43eb15de8ecf27a13e9c0d1491dc60c5d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89190099"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837615"
 ---
 # <a name="a-user-plugs-in-a-device-umdf-1"></a>用户插入设备 (UMDF 1) 
 

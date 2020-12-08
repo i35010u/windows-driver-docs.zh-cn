@@ -1,15 +1,14 @@
 ---
 title: 数据中心桥接概述
 description: 数据中心桥接概述
-ms.assetid: FEB3FDBB-8A3C-4907-A6D0-CB5E94BCFEFF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 99ff05c37809849ff480496f31a41c0a770497c2
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: a59df9c2c07291ac03da2ad05f698a33fbc8dcd4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89212103"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837667"
 ---
 # <a name="overview-of-data-center-bridging"></a>数据中心桥接概述
 
@@ -41,11 +40,11 @@ DCBX 还用于检测网络适配器 (*本地对等*) 与远程对等节点之间
 
 DCBX 包含 DCB 类型- (TLV) 设置，这些设置通过链路层发现协议 (LLDP) 数据包来执行。 在 IEEE 802.1 AB-2005 标准中指定 LLDP。
 
-**注意**   DCBX 指定本地对等方在任何给定时间都只维护一个远程对等方的配置参数。 因此，网络适配器只维护一组本地、远程和操作 NDIS QoS 参数。
+**注意**  DCBX 指定本地对等方在任何给定时间都只维护一个远程对等方的配置参数。 因此，网络适配器只维护一组本地、远程和操作 NDIS QoS 参数。
 
  
 
-每个 ETS 流量类和 PFC 配置设置都与一个 IEEE 802.1 p 优先级关联。 优先级别指定为数据包的 802.1 Q 标记内的3位值。 对于 NDIS 数据包，802.1 p 优先级由与数据包的[**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)结构关联的[**NDIS \_ 网络 \_ 缓冲区 \_ 列表 \_ 8021Q \_ 信息**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_net_buffer_list_8021q_info)结构的**UserPriority**成员指定。
+每个 ETS 流量类和 PFC 配置设置都与一个 IEEE 802.1 p 优先级关联。 优先级别指定为数据包的 802.1 Q 标记内的3位值。 对于 NDIS 数据包，802.1 p 优先级由与数据包的 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)结构关联的 [**NDIS \_ 网络 \_ 缓冲区 \_ 列表 \_ 8021Q \_ 信息**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_net_buffer_list_8021q_info)结构的 **UserPriority** 成员指定。
 
 有关优先级别的详细信息，请参阅 [IEEE 802.1 p Priority 级别](ieee-802-1p-priority-levels.md)。
 

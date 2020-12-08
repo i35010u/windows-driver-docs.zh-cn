@@ -1,17 +1,16 @@
 ---
 title: OID_OFFLOAD_ENCAPSULATION
 description: 本主题介绍) OID_OFFLOAD_ENCAPSULATION 对象标识符 (OID。
-ms.assetid: 8B5BE43C-1004-427A-B16D-5A2AA34C96CD
 keywords:
 - OID_OFFLOAD_ENCAPSULATION，WDK Oid，WDK 网络对象标识符，WDK 网络 Oid
 ms.date: 11/01/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 12feb48ef6e417a202f4e405c67b2472c958358c
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 380d20d289bbba0cfd0fc6e6aa8d82bb93202ffa
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89212333"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837105"
 ---
 # <a name="oid_offload_encapsulation"></a>OID_OFFLOAD_ENCAPSULATION
 
@@ -53,7 +52,7 @@ NDIS 使用包含当前封装设置的 [NDIS_OFFLOAD_ENCAPSULATION](/windows-har
 
 协议驱动程序必须准备好处理任何 NDIS_STATUS_Xxx 故障代码。 如果发生故障，协议驱动程序不得尝试执行任何卸载操作，这些操作将定向到受影响的微型端口适配器。
 
-### <a name="see-also"></a>另请参阅
+### <a name="see-also"></a>请参阅
 
 [NDIS_BIND_PARAMETERS](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_bind_parameters)  
 [NDIS_OFFLOAD_ENCAPSULATION](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_offload_encapsulation)  

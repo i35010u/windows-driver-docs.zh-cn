@@ -1,18 +1,17 @@
 ---
 title: 处理 IRP_MN_SURPRISE_REMOVAL 请求
 description: 处理 IRP_MN_SURPRISE_REMOVAL 请求
-ms.assetid: 39a90617-40ad-4c10-95d3-2b618d66d70e
 keywords:
 - 意外删除 WDK PnP
 - IRP_MN_SURPRISE_REMOVAL
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4a93da8583ab59b3cefb3cdf3f5f58b82c9b4d8d
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: e63b5ff6104970537d3020acc95db47f895c911d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106582"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837241"
 ---
 # <a name="handling-an-irp_mn_surprise_removal-request"></a>处理 IRP \_ MN \_ 意外 \_ 删除请求
 
@@ -30,9 +29,9 @@ PnP 管理器发送 [**IRP \_ MN \_ 意外 \_ 删除**](./irp-mn-surprise-remova
 
 -   设备的函数驱动程序确定设备不再存在 (因为例如，它的请求) 中重复超时。 总线可能可枚举，但它没有热插拔通知。 在这种情况下，函数驱动程序调用 [**IoInvalidateDeviceState**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioinvalidatedevicestate)。 在响应中，PnP 管理器会将 [**IRP \_ MN \_ 查询 \_ PnP \_ 设备 \_ 状态**](./irp-mn-query-pnp-device-state.md) 请求发送到设备堆栈。 函数驱动程序 \_ \_ 在 [**pnp \_ 设备 \_ 状态**](#about-pnp_device_state) 位掩码中设置 pnp 设备失败标志，指示该设备已失败。
 
--   驱动程序堆栈已成功完成 [**IRP \_ MN \_ 停止 \_ 设备**](./irp-mn-stop-device.md) 请求，但随后无法 [** \_ \_ 启动 \_ 设备**](./irp-mn-start-device.md) 请求。 在这种情况下，设备可能仍处于连接状态。
+-   驱动程序堆栈已成功完成 [**IRP \_ MN \_ 停止 \_ 设备**](./irp-mn-stop-device.md) 请求，但随后无法 [**\_ \_ 启动 \_ 设备**](./irp-mn-start-device.md) 请求。 在这种情况下，设备可能仍处于连接状态。
 
-所有 PnP 驱动程序都必须处理此 IRP，并且必须将 **irp &gt; IoStatus** 设置为状态 " \_ 成功"。 在调用驱动程序的[*AddDevice*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_add_device)例程之后，必须准备 PnP 设备的驱动程序，以便随时处理**IRP \_ MN \_ 意外 \_ 删除**。 正确处理 IRP 后，驱动程序和 PnP 管理器可以：
+所有 PnP 驱动程序都必须处理此 IRP，并且必须将 **irp &gt; IoStatus** 设置为状态 " \_ 成功"。 在调用驱动程序的 [*AddDevice*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_add_device)例程之后，必须准备 PnP 设备的驱动程序，以便随时处理 **IRP \_ MN \_ 意外 \_ 删除**。 正确处理 IRP 后，驱动程序和 PnP 管理器可以：
 
 1.  禁用设备，以防设备仍处于连接状态。
 
@@ -50,7 +49,7 @@ PnP 管理器在系统线程的上下文中以 IRQL = 被动级别发送 **IRP \
 
 PnP 管理器会在通知用户模式应用程序和其他内核模式组件之前，将此 IRP 发送到驱动程序。 IRP 完成后，PnP 管理器会将 GUID **EventCategoryTargetDeviceChange** \_ 目标设备删除完成的 EventCategoryTargetDeviceChange 通知发送 \_ \_ \_ 到在设备上注册此类通知的内核模式组件。
 
-**IRP \_ MN \_ 意外 \_ 删除**irp 首先由设备堆栈中的顶层驱动程序处理，然后再由下一个较低的驱动程序处理。
+**IRP \_ MN \_ 意外 \_ 删除** irp 首先由设备堆栈中的顶层驱动程序处理，然后再由下一个较低的驱动程序处理。
 
 为了响应 **IRP \_ MN \_ 意外 \_ 删除**，驱动程序必须按照列出的顺序执行以下操作：
 
@@ -106,7 +105,7 @@ PnP 管理器会在通知用户模式应用程序和其他内核模式组件之�
 
 所有驱动程序都应该处理此 IRP，并请注意，设备已从计算机中物理删除。 但是，如果不处理 IRP，某些驱动程序将不会产生不良结果。 例如，不使用系统硬件资源并驻留在基于协议的总线上的设备（如 USB 或1394）无法占用硬件资源，因为它不使用任何硬件资源。 由于函数和筛选器驱动程序仅通过父总线驱动程序访问设备，因此在删除设备后，不会有驱动程序尝试访问该设备的风险。 由于总线支持删除通知，因此当设备消失并且总线驱动程序在所有后续尝试访问设备时，会通知父总线驱动程序。
 
-在 Windows 98/Me 上，PnP 管理器不会发送此 IRP。 如果用户在未首先使用相应的用户界面的情况下删除设备，则 PnP 管理器仅向设备驱动程序发送 **IRP \_ MN \_ REMOVE \_ 设备** 请求。 所有 WDM 驱动程序都必须处理 **IRP \_ MN \_ 意外 \_ 删除** 和 **irp \_ MN \_ 删除 \_ 设备**。 **IRP \_ MN \_ REMOVE \_ 设备**的代码应检查驱动程序是否收到了以前的意外删除 IRP，并应处理这两种情况。
+在 Windows 98/Me 上，PnP 管理器不会发送此 IRP。 如果用户在未首先使用相应的用户界面的情况下删除设备，则 PnP 管理器仅向设备驱动程序发送 **IRP \_ MN \_ REMOVE \_ 设备** 请求。 所有 WDM 驱动程序都必须处理 **IRP \_ MN \_ 意外 \_ 删除** 和 **irp \_ MN \_ 删除 \_ 设备**。 **IRP \_ MN \_ REMOVE \_ 设备** 的代码应检查驱动程序是否收到了以前的意外删除 IRP，并应处理这两种情况。
 
  ## <a name="using-guid_reenumerate_self_interface_standard"></a>使用 GUID_REENUMERATE_SELF_INTERFACE_STANDARD
 
@@ -133,7 +132,7 @@ PNP 设备状态值中的标志 \_ 位 \_ 定义如下。
 <thead>
 <tr class="header">
 <th>标志位</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -179,6 +178,6 @@ PNP 设备状态值中的标志 \_ 位 \_ 定义如下。
 
 PnP 管理器 \_ \_ 通过将 **IRP \_ MN \_ 查询 \_ PnP \_ 设备 \_ 状态** 请求发送到设备堆栈，在启动设备后立即查询设备的 PnP 设备状态。 为响应此 IRP，设备的驱动程序在 PNP 设备状态中设置相应的 \_ 标志 \_ 。
 
-如果在初始查询后任何状态特征发生更改，驱动程序将通过调用 [**IoInvalidateDeviceState**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioinvalidatedevicestate)通知 PnP 管理器。 为响应对 **IoInvalidateDeviceState**的调用，PnP 管理器会再次查询设备的 PnP \_ 设备 \_ 状态。
+如果在初始查询后任何状态特征发生更改，驱动程序将通过调用 [**IoInvalidateDeviceState**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioinvalidatedevicestate)通知 PnP 管理器。 为响应对 **IoInvalidateDeviceState** 的调用，PnP 管理器会再次查询设备的 PnP \_ 设备 \_ 状态。
 
 如果设备被标记为 PNP \_ 设备 \_ 不 \_ DISABLEABLE，则调试器会显示 devnode 的 DNUF \_ NOT \_ DISABLEABLE 用户标志。 调试器还显示一个 **DisableableDepends** 值，该值计算设备无法禁用的原因数。 此值是 X + Y 的总和，其中 X 为1，如果不能禁用设备，Y 是不能禁用的设备子设备的计数。

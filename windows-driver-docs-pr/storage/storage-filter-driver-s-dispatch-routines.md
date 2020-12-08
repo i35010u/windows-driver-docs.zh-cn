@@ -1,7 +1,6 @@
 ---
 title: 存储筛选器驱动程序的调度例程
 description: 存储筛选器驱动程序的调度例程
-ms.assetid: 0d1af035-537f-4632-800b-eb344dc5a3c8
 keywords:
 - 存储筛选器驱动程序 WDK，调度例程
 - 筛选器驱动程序 WDK 存储，调度例程
@@ -9,12 +8,12 @@ keywords:
 - 调度例程 WDK 存储
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3c06c1edfd1385e26a9c014f91f3e90335bfd914
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: bfb6184eac8c1f0fbb8ccdb0c5e80100fb334062
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89188795"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838549"
 ---
 # <a name="storage-filter-drivers-dispatch-routines"></a>存储筛选器驱动程序的调度例程
 
@@ -24,13 +23,13 @@ ms.locfileid: "89188795"
 
 - 对于已由存储类驱动程序处理的请求，在设置 i/o 堆栈位置之前修改 IRP 的 i/o 堆栈位置中的 SRB，可能需要设置 [*IoCompletion*](/windows-hardware/drivers/ddi/wdm/nc-wdm-io_completion_routine) 例程，并将 IRP 传递到带有 [**IoCallDriver**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver)的下一个低版本驱动程序。
 
-- 使用 SRB 和 CDB 为其设备设置新的 IRP，调用[**IoSetCompletionRoutine**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iosetcompletionroutine)以便 SRB (和 IRP （如果驱动程序调用[**IoAllocateIrp**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioallocateirp)或[**IoBuildAsynchronousFsdRequest**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iobuildasynchronousfsdrequest)) 可释放），并通过[**IoCallDriver**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver)将 IRP 传递到
+- 使用 SRB 和 CDB 为其设备设置新的 IRP，调用 [**IoSetCompletionRoutine**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iosetcompletionroutine)以便 SRB (和 IRP （如果驱动程序调用 [**IoAllocateIrp**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioallocateirp)或 [**IoBuildAsynchronousFsdRequest**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iobuildasynchronousfsdrequest)) 可释放），并通过 [**IoCallDriver**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver)将 IRP 传递到
 
     SFD 最有可能设置新的 Irp，其中包含主要的函数代码 [**IRP_MJ_INTERNAL_DEVICE_CONTROL**](../kernel/irp-mj-internal-device-control.md)。
 
 ## <a name="processing-requests"></a>处理请求
 
-对于不需要特殊处理的请求，SFD 的 *调度* 例程通常使用输入 IRP 调用 [**IoSkipCurrentIrpStackLocation**](../kernel/mm-bad-pointer.md) ，然后使用指向类驱动程序的设备对象和 IRP 的指针调用 [**IoCallDriver**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver) 。 请注意，SFD 很少在 Irp 中设置不需要特殊处理的 [*IoCompletion*](/windows-hardware/drivers/ddi/wdm/nc-wdm-io_completion_routine) 例程，因为对 *IoCompletion* 例程的调用是不必要的，因为它会降低驱动程序设备的 i/o 吞吐量。 如果 SFD 设置了*IoCompletion*例程，它将调用[**IoCopyCurrentIrpStackLocationToNext**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocopycurrentirpstacklocationtonext)而不是**IoSkipCurrentIrpStackLocation** ，然后在调用**IoSetCompletionRoutine**之前调用[**IoCallDriver**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iosetcompletionroutine) 。
+对于不需要特殊处理的请求，SFD 的 *调度* 例程通常使用输入 IRP 调用 [**IoSkipCurrentIrpStackLocation**](../kernel/mm-bad-pointer.md) ，然后使用指向类驱动程序的设备对象和 IRP 的指针调用 [**IoCallDriver**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver) 。 请注意，SFD 很少在 Irp 中设置不需要特殊处理的 [*IoCompletion*](/windows-hardware/drivers/ddi/wdm/nc-wdm-io_completion_routine) 例程，因为对 *IoCompletion* 例程的调用是不必要的，因为它会降低驱动程序设备的 i/o 吞吐量。 如果 SFD 设置了 *IoCompletion* 例程，它将调用 [**IoCopyCurrentIrpStackLocationToNext**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocopycurrentirpstacklocationtonext)而不是 **IoSkipCurrentIrpStackLocation** ，然后在调用 **IoSetCompletionRoutine** 之前调用 [**IoCallDriver**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iosetcompletionroutine) 。
 
 对于需要特殊处理的请求，SFD 可以执行以下操作：
 
@@ -44,15 +43,15 @@ ms.locfileid: "89188795"
 
 5. 如有必要，将要传输到设备的数据转换为特定于设备的非标准格式。
 
-6. 如果驱动程序为 SRB、SCSI 请求感知缓冲区、MDL 和/或 IRP 分配了对[**IoAllocateIrp**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioallocateirp)或[**IoBuildAsynchronousFsdRequest**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iobuildasynchronousfsdrequest)的调用，或者如果驱动程序必须转换设备特定的、非标准格式的数据，请调用[**IoSetCompletionRoutine**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iosetcompletionroutine) 。
+6. 如果驱动程序为 SRB、SCSI 请求感知缓冲区、MDL 和/或 IRP 分配了对 [**IoAllocateIrp**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioallocateirp)或 [**IoBuildAsynchronousFsdRequest**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iobuildasynchronousfsdrequest)的调用，或者如果驱动程序必须转换设备特定的、非标准格式的数据，请调用 [**IoSetCompletionRoutine**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iosetcompletionroutine) 。
 
 7. 通过 [**IoCallDriver**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver)将驱动程序创建的 IRP 传递到 (和) 下一个较低版本的驱动程序。
 
 ## <a name="handling-srb-formats"></a>处理 SRB 格式
 
-从 Windows 8 开始，类驱动程序和端口驱动程序之间的 SFD 筛选必须检查是否支持 SRB 格式。 具体而言，这涉及到检测 SRB 格式并正确地访问结构的成员。 IRP 中的 SRB 是 [**SCSI_REQUEST_BLOCK**](/windows-hardware/drivers/ddi/srb/ns-srb-_scsi_request_block) 或 [**STORAGE_REQUEST_BLOCK**](/windows-hardware/drivers/ddi/srb/ns-srb-_storage_request_block)。 筛选器驱动程序可以提前确定下面的端口驱动程序支持的 SRBs，方法是发出 [**IOCTL_STORAGE_QUERY_PROPERTY**](/windows-hardware/drivers/ddi/ntddstor/ni-ntddstor-ioctl_storage_query_property) 请求并指定 **StorageAdapterProperty** 标识符。 [**STORAGE_ADAPTER_DESCRIPTOR**](/windows-hardware/drivers/ddi/ntddstor/ns-ntddstor-_storage_adapter_descriptor)结构中返回的**SrbType**和**AddressType**值指示端口驱动程序使用的 SRB 格式和寻址方案。 筛选器驱动程序分配和发送的任何新 SRBs 必须是该查询所返回的类型。
+从 Windows 8 开始，类驱动程序和端口驱动程序之间的 SFD 筛选必须检查是否支持 SRB 格式。 具体而言，这涉及到检测 SRB 格式并正确地访问结构的成员。 IRP 中的 SRB 是 [**SCSI_REQUEST_BLOCK**](/windows-hardware/drivers/ddi/srb/ns-srb-_scsi_request_block) 或 [**STORAGE_REQUEST_BLOCK**](/windows-hardware/drivers/ddi/srb/ns-srb-_storage_request_block)。 筛选器驱动程序可以提前确定下面的端口驱动程序支持的 SRBs，方法是发出 [**IOCTL_STORAGE_QUERY_PROPERTY**](/windows-hardware/drivers/ddi/ntddstor/ni-ntddstor-ioctl_storage_query_property) 请求并指定 **StorageAdapterProperty** 标识符。 [**STORAGE_ADAPTER_DESCRIPTOR**](/windows-hardware/drivers/ddi/ntddstor/ns-ntddstor-_storage_adapter_descriptor)结构中返回的 **SrbType** 和 **AddressType** 值指示端口驱动程序使用的 SRB 格式和寻址方案。 筛选器驱动程序分配和发送的任何新 SRBs 必须是该查询所返回的类型。
 
-同样，从 Windows 8 开始，仅支持[**SCSI_REQUEST_BLOCK**](/windows-hardware/drivers/ddi/srb/ns-srb-_scsi_request_block)类型的 SRBs 的 SFDs 必须检查是否将[**STORAGE_ADAPTER_DESCRIPTOR**](/windows-hardware/drivers/ddi/ntddstor/ns-ntddstor-_storage_adapter_descriptor)结构中返回的**SrbType**值设置为**SRB_TYPE_SCSI_REQUEST_BLOCK**。 若要处理**SrbType**设置为**SRB_TYPE_STORAGE_REQUEST_BLOCK**的情况，筛选器驱动程序必须在其上方的驱动程序发送的请求中设置**StorageAdapterProperty**标识符时，为[**IOCTL_STORAGE_QUERY_PROPERTY**](/windows-hardware/drivers/ddi/ntddstor/ni-ntddstor-ioctl_storage_query_property)设置完成例程。 完成例程会将**STORAGE_ADAPTER_DESCRIPTOR**中的**SrbType**成员修改为**SRB_TYPE_SCSI_REQUEST_BLOCK**以正确设置支持的类型。
+同样，从 Windows 8 开始，仅支持 [**SCSI_REQUEST_BLOCK**](/windows-hardware/drivers/ddi/srb/ns-srb-_scsi_request_block)类型的 SRBs 的 SFDs 必须检查是否将 [**STORAGE_ADAPTER_DESCRIPTOR**](/windows-hardware/drivers/ddi/ntddstor/ns-ntddstor-_storage_adapter_descriptor)结构中返回的 **SrbType** 值设置为 **SRB_TYPE_SCSI_REQUEST_BLOCK**。 若要处理 **SrbType** 设置为 **SRB_TYPE_STORAGE_REQUEST_BLOCK** 的情况，筛选器驱动程序必须在其上方的驱动程序发送的请求中设置 **StorageAdapterProperty** 标识符时，为 [**IOCTL_STORAGE_QUERY_PROPERTY**](/windows-hardware/drivers/ddi/ntddstor/ni-ntddstor-ioctl_storage_query_property)设置完成例程。 完成例程会将 **STORAGE_ADAPTER_DESCRIPTOR** 中的 **SrbType** 成员修改为 **SRB_TYPE_SCSI_REQUEST_BLOCK** 以正确设置支持的类型。
 
 下面是一个用于处理这两种 SRB 格式的筛选器调度例程的示例。
 
@@ -116,6 +115,6 @@ NTSTATUS FilterScsiIrp(
 
 ## <a name="setting-up-requests"></a>设置请求
 
-与存储类驱动程序一样，SFD 可能具有要从驱动程序的*调度*例程调用的*BuildRequest*或*SplitTransferRequest*例程，或者可能会实现内联相同的功能。
+与存储类驱动程序一样，SFD 可能具有要从驱动程序的 *调度* 例程调用的 *BuildRequest* 或 *SplitTransferRequest* 例程，或者可能会实现内联相同的功能。
 
 有关 *BuildRequest* 和 *SplitTransferRequest* 例程的详细信息，请参阅 [存储类驱动程序](introduction-to-storage-class-drivers.md)。 有关 *调度* 例程一般要求的详细信息，请参阅 [编写调度例程](../kernel/writing-dispatch-routines.md)。

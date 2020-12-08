@@ -1,18 +1,17 @@
 ---
 title: 在预操作回调例程中完成 I/O 操作
 description: 在预操作回调例程中完成 I/O 操作
-ms.assetid: 1f339779-dc88-4673-87d5-36cee0b27fc2
 keywords:
 - preoperation 回调例程 WDK 文件系统微筛选器，完成 i/o 操作
 - 完成 i/o 请求 WDK 文件系统
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fbf9d8d9964e55da285b6bcf2afb89aaaf1d951a
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 8709986a556fd6202b5aac136c28f91cc9c50158
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89065146"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838789"
 ---
 # <a name="completing-an-io-operation-in-a-preoperation-callback-routine"></a>在预操作回调例程中完成 I/O 操作
 
@@ -42,7 +41,7 @@ ms.locfileid: "89065146"
 
 1.  将回调数据结构的 **IoStatus** 字段设置为该操作的最终 NTSTATUS 值。
 
-2.  \_ \_ 当工作例程调用[**FltCompletePendedPreOperation**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltcompletependedpreoperation)时，传递 FLT PREOP 在*CallbackStatus*参数中完成。
+2.  \_ \_ 当工作例程调用 [**FltCompletePendedPreOperation**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltcompletependedpreoperation)时，传递 FLT PREOP 在 *CallbackStatus* 参数中完成。
 
 完成 i/o 操作时，微筛选器驱动程序必须将回调数据结构的 **IoStatus** 字段设置为该操作的最终 NTSTATUS 值，但此 NTSTATUS 值不能为状态 "挂起" \_ 或 "状态 \_ FLT 不 \_ 允许 \_ 快速 IO" \_ 。 对于清理或关闭操作，该字段的状态必须为 " \_ 成功"。 不能用任何其他 NTSTATUS 值来完成这些操作。
 

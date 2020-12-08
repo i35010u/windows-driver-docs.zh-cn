@@ -1,7 +1,6 @@
 ---
 title: 设置 MofImagePath 注册表值
 description: 设置 MofImagePath 注册表值
-ms.assetid: b8c43cd3-d4f4-4f1e-b692-8005d845d64a
 keywords:
 - WMI WDK 内核，发布架构
 - 发布 WMI 架构 WDK
@@ -10,12 +9,12 @@ keywords:
 - MofImagePath
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5dee7b92e4d21d0bc872f0ce870d37b8eec6beb0
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 896a46f24c8a73c209b9bd89d17573ba7e51b89c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89188833"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837979"
 ---
 # <a name="setting-the-mofimagepath-registry-value"></a>设置 MofImagePath 注册表值
 
@@ -31,7 +30,7 @@ ms.locfileid: "89188833"
 
 2.  将已编译的 MOF 文件作为资源包括在文件（如 DLL）中。
 
-3.  在驱动程序的 "服务" 项下添加 **MofImagePath** 注册表值。 例如，以下示例显示了名为 *DriverName*的驱动程序的注册表值：
+3.  在驱动程序的 "服务" 项下添加 **MofImagePath** 注册表值。 例如，以下示例显示了名为 *DriverName* 的驱动程序的注册表值：
 
     ```cpp
     HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services

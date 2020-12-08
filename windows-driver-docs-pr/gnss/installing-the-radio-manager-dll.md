@@ -1,27 +1,26 @@
 ---
 title: 安装无线电管理器 DLL
-description: 若要安装单选管理器 DLL，您将需要按照以下步骤。
-ms.assetid: 49D9DF01-2440-49DE-91C3-2DCAF8CA1C64
+description: 若要安装收音机管理器 DLL，需执行以下步骤。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 090c2b41f2774d0d68399afe7785fa8093d7d4dc
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3619ea64cc7b75007a0b7bc17dfa889dc4d601cd
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63371035"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837288"
 ---
 # <a name="installing-the-radio-manager-dll"></a>安装无线电管理器 DLL
 
 > [!IMPORTANT] 
-> 已弃用此文档和 Windows 8.1 的地理位置驱动程序示例。
+> 此文档和 Windows 8.1 的地理位置驱动程序示例已弃用。
 
-若要安装单选管理器 DLL，您将需要按照以下步骤。
+若要安装收音机管理器 DLL，需执行以下步骤。
 
-1.  请确保正确生成 DLL。
-2.  复制文件 install.cmd 和从 SampleRM.reg  **\\ C++ \\RadioManagerGPS**到单独的文件夹的文件夹。
-3.  生成文件夹 SampleRM.dll 的文件复制到步骤 2 （如上所示） 中创建的单独文件夹中。
-4.  从提升的命令提示符，运行 install.cmd。
+1.  请确保 DLL 生成时没有错误。
+2.  将 SampleRM 和 **\\ c + + \\ RadioManagerGPS** 文件夹中的文件复制到一个单独的文件夹。
+3.  将 "生成" 文件夹中的文件 SampleRM.dll 复制到) 前面的步骤 2 (中创建的单独文件夹中。
+4.  在提升的命令提示符下，运行 install。
 
  
 

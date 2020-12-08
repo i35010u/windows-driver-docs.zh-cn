@@ -1,15 +1,14 @@
 ---
 title: Direct3D 11 视频播放改进
 description: 由于在主流应用中采用了 Microsoft Direct3D 10 技术的广泛采用，某些应用程序开发人员希望将所有内容视为相同。
-ms.assetid: BB32F074-16E8-46E4-B9CF-6AEBE331B549
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b66a1d2d1f0a8aa86858b5d34ad6e31641dfa71e
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 9e879bc4ebc17a4f3547ac9fc776295dd9444152
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89063150"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838507"
 ---
 # <a name="direct3d-11-video-playback-improvements"></a>Direct3D 11 视频播放改进
 
@@ -52,7 +51,7 @@ ms.locfileid: "89063150"
 -   它在解码和视频处理功能中具有 DirectX 视频加速 (DXVA) 2.0 和 DXVA 的奇偶校验。
 -   它在会话0中适用于转码方案。
 
-## <a name="span-iddirect3d_11_video_device_driver_interfaces__ddis_spanspan-iddirect3d_11_video_device_driver_interfaces__ddis_spanspan-iddirect3d_11_video_device_driver_interfaces__ddis_spandirect3d11-video-device-driver-interfaces-ddis"></a><span id="Direct3D_11_video_device_driver_interfaces__DDIs_"></span><span id="direct3d_11_video_device_driver_interfaces__ddis_"></span><span id="DIRECT3D_11_VIDEO_DEVICE_DRIVER_INTERFACES__DDIS_"></span>Direct3D 11 视频设备驱动程序接口 (DDIs) 
+## <a name="span-iddirect3d_11_video_device_driver_interfaces__ddis_spanspan-iddirect3d_11_video_device_driver_interfaces__ddis_spanspan-iddirect3d_11_video_device_driver_interfaces__ddis_spandirect3d-11-video-device-driver-interfaces-ddis"></a><span id="Direct3D_11_video_device_driver_interfaces__DDIs_"></span><span id="direct3d_11_video_device_driver_interfaces__ddis_"></span><span id="DIRECT3D_11_VIDEO_DEVICE_DRIVER_INTERFACES__DDIS_"></span>Direct3D 11 视频设备驱动程序接口 (DDIs) 
 
 
 这些设备驱动程序接口 (适用于 Windows 8 的新的或更新的 DDIs) ：
@@ -68,8 +67,8 @@ ms.locfileid: "89063150"
 -   [*CheckFormatSupport*](/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_checkformatsupport)
 -   [*CheckVideoDecoderFormat*](/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_checkvideodecoderformat)
 -   [*CheckVideoProcessorFormat*](/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_checkvideoprocessorformat)
--   [*ConfigureAuthenticatedChannel (D3D11 \_ 1) *](/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_configureauthenticatedchannel)
--   [*CreateAuthenticatedChannel (D3D11 \_ 1) *](/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_createauthenticatedchannel)
+-   [*ConfigureAuthenticatedChannel (D3D11 \_ 1)*](/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_configureauthenticatedchannel)
+-   [*CreateAuthenticatedChannel (D3D11 \_ 1)*](/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_createauthenticatedchannel)
 -   [*CreateCryptoSession*](/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_createcryptosession)
 -   [*CreateResource2*](/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_createresource2)
 -   [*CreateVideoDecoder*](/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_createvideodecoder)
@@ -79,7 +78,7 @@ ms.locfileid: "89063150"
 -   [*CreateVideoProcessorInputView*](/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_createvideoprocessorinputview)
 -   [*CreateVideoProcessorOutputView*](/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_createvideoprocessoroutputview)
 -   [*CryptoSessionGetHandle*](/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_cryptosessiongethandle)
--   [*DecryptionBlt (D3D11 \_ 1) *](/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_decryptionblt)
+-   [*DecryptionBlt (D3D11 \_ 1)*](/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_decryptionblt)
 -   [*DestroyAuthenticatedChannel*](/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_destroyauthenticatedchannel)
 -   [*DestroyCryptoSession*](/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_destroycryptosession)
 -   [*DestroyVideoDecoder*](/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_destroyvideodecoder)
@@ -88,7 +87,7 @@ ms.locfileid: "89063150"
 -   [*DestroyVideoProcessorEnum*](/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_destroyvideoprocessorenum)
 -   [*DestroyVideoProcessorInputView*](/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_destroyvideoprocessorinputview)
 -   [*DestroyVideoProcessorOutputView*](/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_destroyvideoprocessoroutputview)
--   [*EncryptionBlt (D3D11 \_ 1) *](/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_encryptionblt)
+-   [*EncryptionBlt (D3D11 \_ 1)*](/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_encryptionblt)
 -   [*FinishSessionKeyRefresh*](/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_finishsessionkeyrefresh)
 -   [*GetCaptureHandle*](/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_getcapturehandle)
 -   [*Getcertificate 时出错*](/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_getcertificate)
@@ -108,8 +107,8 @@ ms.locfileid: "89063150"
 -   [*GetVideoProcessorRateConversionCaps*](/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_getvideoprocessorrateconversioncaps)
 -   [*NegotiateAuthenticatedChannelKeyExchange*](/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_negotiateauthenticatedchannelkeyexchange)
 -   [*NegotiateCryptoSessionKeyExchange*](/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_negotiatecryptosessionkeyeschange)
--   [*QueryAuthenticatedChannel (D3D11 \_ 1) *](/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_queryauthenticatedchannel)
--   [*RetrieveSubObject (D3D11 \_ 1) *](/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_retrievesubobject)
+-   [*QueryAuthenticatedChannel (D3D11 \_ 1)*](/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_queryauthenticatedchannel)
+-   [*RetrieveSubObject (D3D11 \_ 1)*](/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_retrievesubobject)
 -   [*StartSessionKeyRefresh*](/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_startsessionkeyrefresh)
 -   [*VideoDecoderBeginFrame*](/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_videodecoderbeginframe)
 -   [*VideoDecoderEndFrame*](/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_videodecoderendframe)
@@ -200,7 +199,7 @@ ms.locfileid: "89063150"
 
 所有 Windows 8 硬件上都需要 Direct3D 11 API 支持。
 
-有关硬件设备实现此功能时必须满足的要求的信息，请参阅相关[WHCK 文档](/windows-hardware/test/hlk/windows-hardware-lab-kit)，了解设备上的**¦ DX11 视频解码 FeatureLevel 9** **和¦ DX11 VideoProcessing。**
+有关硬件设备实现此功能时必须满足的要求的信息，请参阅相关 [WHCK 文档](/windows-hardware/test/hlk/windows-hardware-lab-kit)，了解设备上的 **¦ DX11 视频解码 FeatureLevel 9** **和¦ DX11 VideoProcessing。**
 
 请参阅 [WDDM 1.2 功能](wddm-v1-2-features.md) ，了解 Windows 8 中添加的功能。
 

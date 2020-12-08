@@ -1,29 +1,28 @@
 ---
 title: 非执行 (NX) 非分页缓冲池
-description: 最佳做法是，Windows 8 和更高版本的 Windows 驱动程序应从中分配大多数或所有其非分页内存不执行 (NX) 非分页缓冲的池。
-ms.assetid: E5BF34F6-ABA0-4EC7-B740-CC83EF8438CF
+description: 作为最佳做法，Windows 8 及更高版本的 Windows 的驱动程序应从非执行 (NX) 非分页池分配其大部分或全部非分页内存。
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 0981ffff9c53307c3d39958990c585e529b436e9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 03f1c27da965918a316c49e4f454b443af35c0ad
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63341947"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838007"
 ---
 # <a name="no-execute-nx-nonpaged-pool"></a>非执行 (NX) 非分页缓冲池
 
 
-最佳做法是，Windows 8 和更高版本的 Windows 驱动程序应从中分配大多数或所有其非分页内存不执行 (NX) 非分页缓冲的池。 通过从 NX 中分配内存，非分页的池的内核模式驱动程序提高了安全性通过防止恶意软件执行此内存中的说明。
+作为最佳做法，Windows 8 及更高版本的 Windows 的驱动程序应从非执行 (NX) 非分页池分配其大部分或全部非分页内存。 通过从 NX 非分页池分配内存，内核模式驱动程序可防止恶意软件在此内存中执行指令，从而提高安全性。
 
-从 Windows 8 开始，内核模式驱动程序可以分配的内存从 NX 池非分页的内存。 为用户模式 Win32 堆分配器的运行方式类似的多用途的内核模式内存分配器管理此池。 此池中的内存是 NX 和非分页。 X86、 x64 和 ARM 处理器体系结构使被指定为 NX 以防止这些页面中的说明执行的内存页。 通常情况下，内核模式驱动程序使用从非分页缓冲池分配的内存来存储数据，并且不需要执行此内存中的说明的功能。
+从 Windows 8 开始，内核模式驱动程序可以从 NX 非分页内存池分配内存。 此池由一般用途的内核模式内存分配器进行管理，其操作方式类似于用户模式 Win32 堆分配器。 此池中的内存为 NX 和非分页。 X86、x64 和 ARM 处理器体系结构允许将内存页指定为 NX，以防止在这些页中执行指令。 通常，内核模式驱动程序使用从非分页池分配的内存来存储数据，而不需要在此内存中执行指令的能力。
 
-## <a name="support-for-legacy-drivers"></a>对旧版驱动程序的支持
+## <a name="support-for-legacy-drivers"></a>对旧驱动程序的支持
 
 
-在 Windows 7 和 Windows 的早期版本中，从非分页缓冲池分配的所有内存都是可执行文件。 为了鼓励移植这些驱动程序以使用 NX 的 Windows 8 和更高版本的 Windows，Microsoft 中的非分页缓冲的池提供了几种选择机制，使开发人员能够轻松地更新其驱动程序。 有关详细信息，请参阅[NX 池选择的机制](nx-pool-opt-in-mechanisms.md)。
+在 Windows 7 和更早版本的 Windows 中，从非分页池分配的所有内存都是可执行的。 为了鼓励在 Windows 8 和更高版本的 Windows 中移植这些驱动程序以使用 NX 非分页池，Microsoft 提供了多种选择机制，使开发人员能够以最小的工作量更新其驱动程序。 有关详细信息，请参阅 [NX 池 Opt-In 机制](nx-pool-opt-in-mechanisms.md)。
 
-为了向后兼容，驱动程序二进制文件，运行在 Windows 7 和早期版本的 Windows，并从可执行文件的非分页池分配内存将运行 Windows 8 和更高版本的 Windows，而无需修改。 但是，这些驱动程序不利用改进的安全性的 NX 非分页缓冲的池。
+为了向后兼容，在 windows 7 和更早版本的 Windows 上运行的驱动程序二进制文件和从可执行的非分页池分配内存的情况下，将在 Windows 8 和更高版本的 Windows 上运行，而不进行修改。 但是，这些驱动程序无法利用 NX 非分页池的增强安全性。
 
  
 

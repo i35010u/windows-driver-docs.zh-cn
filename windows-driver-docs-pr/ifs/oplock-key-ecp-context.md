@@ -1,7 +1,6 @@
 ---
 title: OPLOCK_KEY_ECP_CONTEXT 结构
 description: OPLOCK_KEY_ECP_CONTEXT 结构用于将 OPLOCK 密钥附加到文件中。
-ms.assetid: 029dd105-162a-4674-a3d5-b54a91fa4be2
 keywords:
 - OPLOCK_KEY_ECP_CONTEXT 结构可安装文件系统驱动程序
 - POPLOCK_KEY_ECP_CONTEXT 结构指针可安装的文件系统驱动程序
@@ -15,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/08/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 2d7cf0bcb1684b44a04eb7c9b4866b7dc673ef8d
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 248d34ff47fd19f12c5b5c0cf1d8497a9a3000f5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91733290"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837777"
 ---
 # <a name="oplock_key_ecp_context-structure"></a>OPLOCK_KEY_ECP_CONTEXT 结构
 
@@ -30,7 +29,7 @@ OPLOCK_KEY_ECP_CONTEXT 结构用于将 OPLOCK 密钥附加到文件中。 此结
 
 ```ManagedCPlusPlus
 typedef struct _OPLOCK_KEY_ECP_CONTEXT {
-  GUID  OplockKey;
+  GUID  OplockKey;
   ULONG Reserved;
 } OPLOCK_KEY_ECP_CONTEXT, *POPLOCK_KEY_ECP_CONTEXT;
 ```
@@ -40,7 +39,7 @@ typedef struct _OPLOCK_KEY_ECP_CONTEXT {
 **OplockKey**  
 Oplock 项的 GUID。 此 GUID 在不同的句柄之间共享，并将其标识为属于相同的客户端缓存。 当两个句柄共享同一个 oplock 键时，在一个句柄上执行的请求将不会中断另一个句柄上的未完成 oplock。
 
-**保护**  
+Reserved   
 保留。 必须设置为零。
 
 ## <a name="remarks"></a>备注
@@ -64,7 +63,7 @@ Oplock 项的 GUID。 此 GUID 在不同的句柄之间共享，并将其标识�
 **标头**： *Ntifs* (包含 Ntifs 或 Ntddk) 
 
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [DUAL_OP_LOCK_KEY_ECP_CONTEXT](./dual-oplock-key-ecp-context.md)
 

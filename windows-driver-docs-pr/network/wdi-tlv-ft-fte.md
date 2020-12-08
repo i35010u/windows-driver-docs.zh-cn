@@ -1,22 +1,21 @@
 ---
 title: WDI_TLV_FT_FTE
-description: WDI_TLV_FT_FTE 是包含一个快速转换元素 TLV。
-ms.assetid: E502508A-FB01-4F1E-9A68-40AA88894C61
+description: WDI_TLV_FT_FTE 是包含快速转换元素的 TLV。
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_FT_FTE 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: c7fae0d2513243cb04316b9083f816f74ff32858
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ea0892d79a5f4240cb91c5399787265f91ee141c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63353134"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837883"
 ---
-# <a name="wditlvftfte"></a>WDI\_TLV\_FT\_FTE
+# <a name="wdi_tlv_ft_fte"></a>WDI \_ TLV \_ FT \_ FTE
 
 
-WDI\_TLV\_FT\_FTE 是包含一个快速转换元素 TLV。
+WDI \_ tlv \_ FT \_ FTE 是包含快速转换元素的 tlv。
 
 ## <a name="tlv-type"></a>TLV 类型
 
@@ -26,14 +25,14 @@ WDI\_TLV\_FT\_FTE 是包含一个快速转换元素 TLV。
 ## <a name="length"></a>长度
 
 
-UINT8 元素的数组大小 （以字节为单位）。 该数组必须包含一个或多个元素。
+UINT8 元素数组的大小 (以字节为单位) 。 数组必须包含1个或多个元素。
 
 ## <a name="values"></a>值
 
 
-| 在任务栏的搜索框中键入      | 描述                                                    |
+| 类型      | 描述                                                    |
 |-----------|----------------------------------------------------------------|
-| UINT8\[\] | 快速转换包含的元素的 R0KHID 和 SNonce。 |
+| UINT8\[\] | 包含 R0KHID 和 SNonce 的快速转换元素。 |
 
  
 
@@ -52,10 +51,10 @@ UINT8 元素的数组大小 （以字节为单位）。 该数组必须包含一
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
-<td><p>Windows Server 2016</p></td>
+<td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Wditypes.hpp</td>
 </tr>
 </tbody>

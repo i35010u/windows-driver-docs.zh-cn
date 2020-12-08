@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ 调谐器 \_ 标准版
 description: KSPROPERTY \_ 调谐器 \_ 标准属性检索当前的模拟视频标准。 必须实现此属性。
-ms.assetid: b20dd01c-bd6b-4908-a3c4-eb2914eb54d0
 keywords:
 - KSPROPERTY_TUNER_STANDARD 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d789b162af80a563f2d9b8ad3dbf9aef4df8cb3f
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 73bb337bfb00b9f0f1d713894882e0dc8c855aa1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105978"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837609"
 ---
 # <a name="ksproperty_tuner_standard"></a>KSPROPERTY \_ 调谐器 \_ 标准版
 
@@ -88,7 +87,7 @@ KSPROPERTY 调谐器标准版结构的 **标准** 成员 \_ \_ \_ 指定当前�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSPROPERTY**](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)

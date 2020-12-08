@@ -1,7 +1,6 @@
 ---
 title: 传播 DO_BUFFERED_IO 和 DO_DIRECT_IO 标志
 description: 传播 DO_BUFFERED_IO 和 DO_DIRECT_IO 标志
-ms.assetid: a0cb4f1a-3c27-4608-a208-ffcf4113b722
 keywords:
 - 筛选器驱动程序 WDK 文件系统，附加筛选器
 - 文件系统筛选器驱动程序 WDK，附加筛选器
@@ -13,12 +12,12 @@ keywords:
 - 传播 DO_DIRECT_IO 标志
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8883f4b6d5d89472076a0bfc7e5e345a745a0c1c
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: fe5c5f2dca6cdbde8700a3d91a5b464dc41e20fa
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89063000"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838607"
 ---
 # <a name="propagating-the-do_buffered_io-and-do_direct_io-flags"></a>传播执行 \_ 缓冲 \_ IO 和执行 \_ 直接 \_ IO 标志
 

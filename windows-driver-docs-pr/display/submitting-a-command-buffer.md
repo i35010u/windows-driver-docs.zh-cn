@@ -1,19 +1,18 @@
 ---
 title: 提交命令缓冲区
 description: 提交命令缓冲区
-ms.assetid: 3622697a-3989-4756-89d4-c67c81815d49
 keywords:
 - 命令缓冲区 WDK 显示，提交
 - 提交命令缓冲区 WDK 显示
 - 传递命令缓冲区 WDK 显示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 596cea0e58860b649524ff9ddb1e47c480cfb37c
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 62dc302043778bc40285cc8435d657f57c1e20a1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89065988"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837793"
 ---
 # <a name="submitting-a-command-buffer"></a>提交命令缓冲区
 
@@ -34,7 +33,7 @@ ms.locfileid: "89065988"
 2.  用户模式显示驱动程序调用 Direct3D 运行时的 [**pfnRenderCb**](/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_rendercb) 函数来向运行时提交命令缓冲区。
 
 3.  DirectX 图形内核子系统调用显示微型端口驱动程序的 [**DxgkDdiRender**](/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_render) 或 [**DxgkDdiRenderKm**](/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_renderkm) 函数来验证命令缓冲区，以硬件的格式写入 DMA 缓冲区，并生成一个描述所使用的表面的分配列表。 请注意，DMA 缓冲区尚未进行修补 (也就是说，) 分配的物理地址。
-    **注意**   如果运行时通过调用用户模式显示驱动程序的[**当前**](/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_present)函数来启动了命令缓冲区提交，图形子系统将调用显示微型端口驱动程序的[**DxgkDdiPresent**](/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_present)函数，而不是[**DxgkDdiRender**](/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_render)或[**DxgkDdiRenderKm**](/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_renderkm)。
+    **注意**   如果运行时通过调用用户模式显示驱动程序的 [**当前**](/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_present) 函数来启动了命令缓冲区提交，图形子系统将调用显示微型端口驱动程序的 [**DxgkDdiPresent**](/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_present) 函数，而不是 [**DxgkDdiRender**](/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_render) 或 [**DxgkDdiRenderKm**](/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_renderkm)。
 
      
 

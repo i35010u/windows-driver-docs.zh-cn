@@ -1,7 +1,6 @@
 ---
 title: 'SpinLockDpc 规则 (storport) '
 description: 此规则验证是否立即调用 KeAcquireSpinLockRaiseToDpc，然后调用 KeReleaseSpinlock。
-ms.assetid: 955B5A37-5E14-4380-A30D-3D019C4D5B59
 ms.date: 05/21/2018
 keywords:
 - 'SpinLockDpc 规则 (storport) '
@@ -12,12 +11,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: b33b150a2d7b2dc393a7230e600d21d95d2b08fb
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 6c17f95d13bd98fee0636954daa022ed5f8877c8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107056"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838137"
 ---
 # <a name="spinlockdpc-rule-storport"></a>SpinLockDpc 规则 (storport) 
 

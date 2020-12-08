@@ -1,15 +1,14 @@
 ---
 title: 添加轮询事件支持
 description: 添加轮询事件支持
-ms.assetid: 7c7617d4-22d6-48a8-b69c-dd0347f078dd
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 48b385f5f99b356e4906fd04dbda0373ffa50871
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 7a2bba254c5da22ab592da37409a34e5a2b00a84
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89192105"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837775"
 ---
 # <a name="adding-polling-event-support"></a>添加轮询事件支持
 
@@ -35,7 +34,7 @@ WIA 服务调用 **IStiUSD：： GetStatus** 方法执行两个主要操作：
 
 2.  轮询设备事件，例如推送按钮事件。
 
-可以通过检查[**STI \_ 设备 \_ 状态**](/windows-hardware/drivers/ddi/sti/ns-sti-_sti_device_status)结构的**StatusMask**成员来确定操作请求。 **StatusMask**成员可以是以下请求之一：
+可以通过检查 [**STI \_ 设备 \_ 状态**](/windows-hardware/drivers/ddi/sti/ns-sti-_sti_device_status)结构的 **StatusMask** 成员来确定操作请求。 **StatusMask** 成员可以是以下请求之一：
 
 <a href="" id="sti-devstatus-online-state"></a>STI \_ DEVSTATUS \_ ONLINE \_ 状态  
 此操作请求检查设备是否处于联机状态，是否应通过设置 STI **dwOnlinesState** \_ 设备状态结构的 dwOnlinesState 成员来填充设备 \_ 。
@@ -47,8 +46,8 @@ WIA 服务调用 **IStiUSD：： GetStatus** 方法执行两个主要操作：
 
 对于轮询事件和中断事件，将调用 **IStiUSD：： GetNotificationData** 方法。 在此方法中，你应填写适当的事件信息以返回到 WIA 服务。
 
-**注意**   \_ \_ 请始终在**dwEventHandlingState**成员中清除 STI EVENTHANDLING 挂标志，以确保在发生设备事件时正确设置该标志。
-检测到事件时，此 WIA 驱动程序应将 *m \_ guidLastEvent* 类成员变量设置为正确的事件 GUID。 当 WIA 服务调用**IStiUSD：： GetNotificationData**方法时，将检查*m \_ guidLastEvent* 。 在**CWIADevice**类中定义*m \_ guidLastEvent*成员变量 (在以下代码段) 中，用于缓存最后一个发出信号的事件。 WIA 服务请求此成员变量后，它始终设置为 GUID \_ NULL。
+**注意** \_ \_ 请始终在 **dwEventHandlingState** 成员中清除 STI EVENTHANDLING 挂标志，以确保在发生设备事件时正确设置该标志。
+检测到事件时，此 WIA 驱动程序应将 *m \_ guidLastEvent* 类成员变量设置为正确的事件 GUID。 当 WIA 服务调用 **IStiUSD：： GetNotificationData** 方法时，将检查 *m \_ guidLastEvent* 。 在 **CWIADevice** 类中定义 *m \_ guidLastEvent* 成员变量 (在以下代码段) 中，用于缓存最后一个发出信号的事件。 WIA 服务请求此成员变量后，它始终设置为 GUID \_ NULL。
 
  
 

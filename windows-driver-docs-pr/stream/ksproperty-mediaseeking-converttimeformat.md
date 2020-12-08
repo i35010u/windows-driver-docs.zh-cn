@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ MEDIASEEKING \_ CONVERTTIMEFORMAT
 description: KSPROPERTY \_ MEDIASEEKING \_ CONVERTTIMEFORMAT 属性将指定的媒体时间从一种受支持的格式转换为另一种格式。
-ms.assetid: a465bfcf-85eb-4b14-b614-e26edff6f9bb
 keywords:
 - KSPROPERTY_MEDIASEEKING_CONVERTTIMEFORMAT 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6b75b508506b45ede54548ae4bc718741fe56f5a
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 0a65cc99b9b43c36b6f0ae54c3aad572aa1dbb62
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104826"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838715"
 ---
 # <a name="ksproperty_mediaseeking_converttimeformat"></a>KSPROPERTY \_ MEDIASEEKING \_ CONVERTTIMEFORMAT
 
@@ -61,7 +60,7 @@ KSPROPERTY \_ MEDIASEEKING \_ CONVERTTIMEFORMAT 属性将指定的媒体时间�
 
  
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 另请参阅 [KS 属性](./ks-properties.md)。
@@ -82,7 +81,7 @@ KSPROPERTY \_ MEDIASEEKING \_ CONVERTTIMEFORMAT 属性将指定的媒体时间�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSP \_ TIMEFORMAT**](/windows-hardware/drivers/ddi/ks/ns-ks-ksp_timeformat)

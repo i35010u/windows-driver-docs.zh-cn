@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ CAMERACONTROL \_ 扩展 \_ 投资回报 \_ ISPCONTROL
 description: '\_ \_ \_ \_ KSPROPERTY CAMERACONTROL 扩展属性枚举中定义的 KSPROPERTY CAMERACONTROL 扩展 ROI ISPCONTROL 属性 \_ ID \_ \_ 用于获取或配置 ROI 设置并应用所需的处理。'
-ms.assetid: 47F6C327-3279-44C2-9B18-50E6EC9C5E77
 keywords:
 - KSPROPERTY_CAMERACONTROL_EXTENDED_ROI_ISPCONTROL 流媒体设备
 topic_type:
@@ -14,16 +13,16 @@ api_type:
 - HeaderDef
 ms.date: 09/11/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: ff6ef3be7365c9d126aa09da2f8d7257d2f019ef
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: c7127204dcb0e386960216e39f7e84f5d707fb0e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89190517"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837849"
 ---
 # <a name="ksproperty_cameracontrol_extended_roi_ispcontrol"></a>KSPROPERTY \_ CAMERACONTROL \_ 扩展 \_ 投资回报 \_ ISPCONTROL
 
-[**KSPROPERTY \_ CAMERACONTROL \_ 扩展 \_ 属性**](/windows-hardware/drivers/ddi/ksmedia/ne-ksmedia-ksproperty_cameracontrol_extended_property)枚举中定义的**KSPROPERTY \_ CAMERACONTROL \_ 扩展 \_ ROI \_ ISPCONTROL**属性 ID 用于获取或配置 ROI 设置并应用所需的处理。
+[**KSPROPERTY \_ CAMERACONTROL \_ 扩展 \_ 属性**](/windows-hardware/drivers/ddi/ksmedia/ne-ksmedia-ksproperty_cameracontrol_extended_property)枚举中定义的 **KSPROPERTY \_ CAMERACONTROL \_ 扩展 \_ ROI \_ ISPCONTROL** 属性 ID 用于获取或配置 ROI 设置并应用所需的处理。
 
 ## <a name="usage-summary-table"></a>使用情况摘要表
 
@@ -49,7 +48,7 @@ ms.locfileid: "89190517"
 </tbody>
 </table>
 
-若要从驱动程序获取当前的 ROI 设置，或配置 ROI 设置并将所需的处理应用 (3As) ，请将**KSPROPERTY \_ CAMERACONTROL \_ 扩展 \_ ROI \_ ISPCONTROL**扩展属性控件连同标准[**KSCAMERA \_ EXTENDEDPROP \_ 标头**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)结构一起发送到驱动程序，后面跟有一个 KSCAMERA EXTENDEDPROP roi ISPCONTROLHEADER 结构，然后使用一个或多个特定的 ISP 特定控制负载结构。 [** \_ \_ \_ **](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_roi_ispcontrolheader) [** \_ \_ \_ **](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_roi_ispcontrol) 下面的列表说明了具有一个焦点 ROI 和两个 ROIs 的数据结构布局。
+若要从驱动程序获取当前的 ROI 设置，或配置 ROI 设置并将所需的处理应用 (3As) ，请将 **KSPROPERTY \_ CAMERACONTROL \_ 扩展 \_ ROI \_ ISPCONTROL** 扩展属性控件连同标准 [**KSCAMERA \_ EXTENDEDPROP \_ 标头**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)结构一起发送到驱动程序，后面跟有一个 KSCAMERA EXTENDEDPROP roi ISPCONTROLHEADER 结构，然后使用一个或多个特定的 ISP 特定控制负载结构。 [**\_ \_ \_**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_roi_ispcontrolheader) [**\_ \_ \_**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_roi_ispcontrol) 下面的列表说明了具有一个焦点 ROI 和两个 ROIs 的数据结构布局。
 
 -   **KSCAMERA \_ EXTENDEDPROP \_ 标头**
 
@@ -61,11 +60,11 @@ ms.locfileid: "89190517"
 
 -   **KSCAMERA \_利用2个 ROIs) ，EXTENDEDPROP \_ ROI \_ ISPCONTROL** (公开
 
--   **KSCAMERA \_EXTENDEDPROP \_ \_ ** roi (投资回报率 1) 
+-   **KSCAMERA \_EXTENDEDPROP \_ \_** roi (投资回报率 1) 
 
 -   **KSCAMERA \_EXTENDEDPROP \_ 投资 \_ 回报** 率 (roi 2) 
 
-下表包含了在使用扩展 ROI 控制的**KSPROPERTY \_ CAMERACONTROL \_ 扩展 \_ roi \_ ISPCONTROL**属性时， **KSCAMERA \_ EXTENDEDPROP \_ 标头**结构字段的说明和要求。
+下表包含了在使用扩展 ROI 控制的 **KSPROPERTY \_ CAMERACONTROL \_ 扩展 \_ roi \_ ISPCONTROL** 属性时， **KSCAMERA \_ EXTENDEDPROP \_ 标头** 结构字段的说明和要求。
 
 <table>
 <colgroup>
@@ -116,7 +115,7 @@ ms.locfileid: "89190517"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Ksmedia.h</td>
 </tr>
 </tbody>

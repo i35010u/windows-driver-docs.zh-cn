@@ -1,15 +1,14 @@
 ---
 title: 驱动程序安全清单
 description: 本文为驱动程序开发人员提供了驱动程序安全核对清单。
-ms.assetid: 25375E02-FCA1-4E94-8D9A-AA396C909278
 ms.date: 03/13/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 74457f0d00a477074519b818e58e5cbbf4edc03b
-ms.sourcegitcommit: ec7bebe3f94536455e62b372c2a28fe69d1717f7
+ms.openlocfilehash: d41b084897a807cb459393a4df454d88b4d09f4b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93349763"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838051"
 ---
 # <a name="driver-security-checklist"></a>驱动程序安全清单
 
@@ -440,7 +439,7 @@ AC (Application Container)
 
 1. 在 Visual Studio 中打开驱动程序解决方案。
 
-2. 在 Visual Studio 中，对于解决方案中的每个项目，将项目属性更改为使用所需的规则集。 例如：项目 &gt; &gt; 属性 &gt; &gt; 代码分析 &gt; &gt; 常规，请选择 " *推荐的驱动程序规则* "。 除了使用 recommenced 驱动程序规则之外，还可以使用 " *建议的本机规则* " 规则集。
+2. 在 Visual Studio 中，对于解决方案中的每个项目，将项目属性更改为使用所需的规则集。 例如：项目 &gt; &gt; 属性 &gt; &gt; 代码分析 &gt; &gt; 常规，请选择 "*推荐的驱动程序规则*"。 除了使用 recommenced 驱动程序规则之外，还可以使用 " *建议的本机规则* " 规则集。
 
 3. 选择 &gt; &gt; "生成" "对解决方案运行代码分析"。
 
@@ -476,17 +475,17 @@ AC (Application Container)
 
 1. 在 Visual Studio 中打开目标驱动程序解决方案。
 
-2. 在 Visual Studio 中，将生成类型更改为 " *发布* "。 静态驱动程序验证程序要求生成类型为 release，而不是调试。
+2. 在 Visual Studio 中，将生成类型更改为 " *发布*"。 静态驱动程序验证程序要求生成类型为 release，而不是调试。
 
 3. 在 Visual Studio 中，选择 "生成" "生成 &gt; &gt; 解决方案"。
 
 4. 在 Visual Studio 中，选择 "驱动程序 &gt; &gt; 启动静态驱动程序验证程序"。
 
-5. 在 SDV 的 " *规则* " 选项卡上，选择 " *规则集* " 下的 " *默认* "。
+5. 在 SDV 的 "*规则*" 选项卡上，选择 "*规则集*" 下的 "*默认*"。
 
    尽管默认规则发现许多常见问题，但也请考虑运行更全面的 " *所有驱动程序规则* " 规则集。
 
-6. 在 SDV 的 *主* 选项卡上，选择 " *启动* "。
+6. 在 SDV 的 *主* 选项卡上，选择 " *启动*"。
 
 7. 当 SDV 完成时，查看输出中的任何警告。 *主* 选项卡显示发现的缺陷总数。
 
@@ -514,7 +513,7 @@ BinSkim 是一个开源工具，它会生成使用静态分析结果交换格式
 
 2. 下载 BinSkim 的方法有很多，例如 NuGet 包。 在此示例中，我们将从此处下载包含 BinSkim 的 zip 文件： <https://github.com/microsoft/binskim> 并将其安装在64位 WINDOWS 电脑上。
 
-3. 选择上的 " **克隆或下载** " 按钮 <https://github.com/microsoft/binskim> ，然后选择 " **下载 Zip** "。
+3. 选择上的 " **克隆或下载** " 按钮 <https://github.com/microsoft/binskim> ，然后选择 " **下载 Zip**"。
 
 4. 选择已下载的 zip 文件并将其解压缩，例如 `C:\binskim-master` 。
 
@@ -627,7 +626,7 @@ BinSkim 是一个开源工具，它会生成使用静态分析结果交换格式
    To resolve this issue, enable the indicated warning(s) by removing /Wxxxx switches (where xxxx is a warning id indicated here) from your command line, and resolve any warnings subsequently raised during compilation.
    ```
 
-若要在 Visual Studio 中启用这些警告，请在项目的属性页中的 "C/c + +" 下，在 " **禁用特定警告** " 中删除不希望排除的值。
+若要在 Visual Studio 中启用这些警告，请在项目的属性页中的 "C/c + +" 下，在 " **禁用特定警告**" 中删除不希望排除的值。
 
 ![用于在 Visual Studio 2019 中禁用特定警告的对话框](images/disable-specific-warnings-dialog.png)
 
@@ -747,15 +746,15 @@ SAFECode - [https://safecode.org/](https://safecode.org/)
 
 *24 抱问题软件安全：* Michael Howard、David LeBlanc 和 John Viega 的编程缺陷和解决方法
 
-*软件安全评估的内容：识别和预防软件漏洞* ，将 Dowd、John 麦克唐纳和 Justin Schuh
+*软件安全评估的内容：识别和预防软件漏洞*，将 Dowd、John 麦克唐纳和 Justin Schuh
 
-*编写安全软件 Second Edition* 、Michael Howard 和 David LeBlanc
+*编写安全软件 Second Edition*、Michael Howard 和 David LeBlanc
 
-*软件安全评估的内容：识别并防止软件漏洞* ，将 Dowd 和约翰麦克唐纳
+*软件安全评估的内容：识别并防止软件漏洞*，将 Dowd 和约翰麦克唐纳
 
-*C 和 c + + 中的安全编码 (软件工程中的 SEI 系列) 第2版* ，Robert Seacord
+*C 和 c + + 中的安全编码 (软件工程中的 SEI 系列) 第2版*，Robert Seacord
 
-*(第2版)* ，Walter Oney Windows 驱动模型
+*(第2版)*，Walter Oney Windows 驱动模型
 
 *开发包含 Windows Driver Foundation (开发人员参考) 、Orwick 和人员 Smith 的驱动程序*
 

@@ -1,19 +1,18 @@
 ---
 title: 标准驱动程序例程要求
 description: 标准驱动程序例程要求
-ms.assetid: 49b382ad-c282-41d2-b8b3-68eca4e12b9c
 keywords:
 - 标准驱动程序例程 WDK 内核，要求
 - 驱动程序例程 WDK 内核，要求
 - 例程的 WDK 内核，要求
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cc5f48e24464d9c44d61c58e252774bcb4f2341e
-ms.sourcegitcommit: a44ade167cdfb541cf1818e9f9e3726f23f90b66
+ms.openlocfilehash: ff7fa2dba26ffb672de6529250837ccabdc530d9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94361573"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837947"
 ---
 # <a name="standard-driver-routine-requirements"></a>标准驱动程序例程要求
 

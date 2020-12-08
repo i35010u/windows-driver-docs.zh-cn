@@ -1,9 +1,8 @@
 ---
-title: rpcexts.thread
-description: Rpcexts.thread 扩展显示的每个线程 RPC 信息。此扩展命令不应与.thread 命令混淆。
-ms.assetid: eecc4eb6-7789-47ed-8b3f-5ec21cc6117c
+title: rpcexts
+description: Rpcexts 扩展显示每个线程的 RPC 信息。不应将此扩展命令与 thread 命令混淆。
 keywords:
-- rpcexts.thread Windows 调试
+- rpcexts Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,31 +11,31 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: fe1b069d044f2e5c518c7d3d91fe47613ffa94fe
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1f3fb7dc82549a813598cf30e482052608ca45c2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63338849"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837019"
 ---
 # <a name="rpcextsthread"></a>!rpcexts.thread
 
 
-**！ Rpcexts.thread**扩展显示的每个线程 RPC 信息。
+**！ Rpcexts** 扩展显示每个线程的 RPC 信息。
 
-不要将此扩展命令与相混淆[ **.thread （设置注册上下文）** ](-thread--set-register-context-.md)命令或[ **！ 线程**](-thread.md) （！kdextx86.thread 和 ！ kdexts.thread) 扩展。
+不应将此扩展命令与 [**. thread (设置 Register Context)**](-thread--set-register-context-.md) 命令或 [**！ thread**](-thread.md) (！ kdexts) 扩展。
 
 ```dbgcmd
 !rpcexts.thread TEB
 ```
 
-## <a name="span-idddkrpcextsthreaddbgspanspan-idddkrpcextsthreaddbgspanparameters"></a><span id="ddk__rpcexts_thread_dbg"></span><span id="DDK__RPCEXTS_THREAD_DBG"></span>参数
+## <a name="span-idddk__rpcexts_thread_dbgspanspan-idddk__rpcexts_thread_dbgspanparameters"></a><span id="ddk__rpcexts_thread_dbg"></span><span id="DDK__RPCEXTS_THREAD_DBG"></span>参数
 
 
-<span id="_______TEB______"></span><span id="_______teb______"></span> *TEB*   
-指定的线程环境块 (TEB) 的地址。
+<span id="_______TEB______"></span><span id="_______teb______"></span>*TEB*   
+指定线程环境块 (TEB) 的地址。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 <table>
 <colgroup>
@@ -57,16 +56,16 @@ ms.locfileid: "63338849"
 
  
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-有关调试 Microsoft 远程过程调用 (RPC) 的详细信息，请参阅[RPC 调试](rpc-debugging.md)。
+有关调试 Microsoft 远程过程调用 (RPC) 的详细信息，请参阅 [Rpc 调试](rpc-debugging.md)。
 
 <a name="remarks"></a>备注
 -------
 
-此扩展显示的每个线程 RPC 信息。 中的每个线程 RPC 信息的字段是此线程的扩展的错误信息。
+此扩展显示每个线程的 RPC 信息。 每个线程的 RPC 信息中的字段是此线程的扩展错误信息。
 
-下面是一个示例：
+以下是示例：
 
 ```dbgcmd
 0:001> !rpcexts.thread 7ffdd000

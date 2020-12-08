@@ -1,9 +1,8 @@
 ---
-title: WIA\_IP\_YSCALING
-description: WIA\_IP\_YSCALING 属性指示是否应使扫描应用沿 y 轴缩放。 WIA 微型驱动程序创建并维护此属性。
-ms.assetid: 4466697b-0d8e-477e-8dd0-2b277d4fd6b3
+title: WIA \_ IP \_ YSCALING
+description: WIA \_ IPS \_ YSCALING 属性指示是否应将沿 y 轴的缩放应用于扫描。 WIA 微型驱动程序创建并维护此属性。
 keywords:
-- WIA_IPS_YSCALING 成像设备
+- WIA_IPS_YSCALING 图像设备
 topic_type:
 - apiref
 api_name:
@@ -14,38 +13,38 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f82dc8979ae3f6507f60ed346a570526a3534b54
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fdfa1055e5272cd01aa5358eaedf3279c53032d5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63357019"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838271"
 ---
-# <a name="wiaipsyscaling"></a>WIA\_IP\_YSCALING
+# <a name="wia_ips_yscaling"></a>WIA \_ IP \_ YSCALING
 
 
-WIA\_IP\_YSCALING 属性指示是否应使扫描应用沿 y 轴缩放。 WIA 微型驱动程序创建并维护此属性。
+WIA \_ IPS \_ YSCALING 属性指示是否应将沿 y 轴的缩放应用于扫描。 WIA 微型驱动程序创建并维护此属性。
 
-属性类型：VT\_I4
+属性类型： VT \_ I4
 
-有效值：WIA\_PROP\_范围或 WIA\_PROP\_列表
+有效值： WIA "内容范围" 或 "WIA 内容" \_ \_ \_ \_ 列表
 
-访问权限：读/写或只读的
+访问权限：读/写或只读
 
 <a name="remarks"></a>备注
 -------
 
-有效值为 WIA\_IP\_YSCALING 属性介于 1 到 65535 之间。
+WIA \_ IPS YSCALING 属性的有效值 \_ 范围为1到65535。
 
-WIA\_IP\_YSCALING 指示仅沿 y 轴缩放。 如果你想要能够统一缩放图像，则必须设置类似的值中 WIA\_IPS\_YSCALING 并在[ **WIA\_IP\_XSCALING** ](wia-ips-xscaling.md)属性。
+WIA \_ ip \_ YSCALING 指示仅沿 y 轴缩放。 若要统一缩放图像，必须在 WIA \_ ips \_ YSCALING 和 [**wia \_ ips \_ XSCALING**](wia-ips-xscaling.md) 属性中设置类似值。
 
-请考虑以下示例：
+请开考虑以下示例：
 
--   100，无需进行扩展 (1 x 100%)。 图像不会更改。
+-   100，无 (1x，100% ) 缩放。 不会更改图像。
 
--   050，1/2 的缩放 (1/2 x，50%)。 沿 y 轴的 50%减小映像大小 (1/2 原始大小)。
+-   050，1/2 缩放 (1/2 倍，50% ) 。 图像大小会在 y 轴上减小 50% (1/2 的原始大小) 。
 
--   200，2 倍缩放 （200%)。 沿 y 轴放大图像大小是 200%(double)。
+-   200，2x 缩放 (200% ) 。 图像大小沿 y 轴放大 200% (双) 。
 
 <a name="requirements"></a>要求
 ------------
@@ -57,12 +56,12 @@ WIA\_IP\_YSCALING 指示仅沿 y 轴缩放。 如果你想要能够统一缩放�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Version</p></td>
-<td><p>在 Windows Vista 和更高版本操作系统中可用。</p></td>
+<td><p>版本</p></td>
+<td><p>在 Windows Vista 和更高版本的操作系统中可用。</p></td>
 </tr>
 <tr class="even">
-<td><p>Header</p></td>
-<td>Wiadef.h （包括 Wiadef.h）</td>
+<td><p>标头</p></td>
+<td>Wiadef (包含 Wiadef) </td>
 </tr>
 </tbody>
 </table>
@@ -70,7 +69,7 @@ WIA\_IP\_YSCALING 指示仅沿 y 轴缩放。 如果你想要能够统一缩放�
 ## <a name="see-also"></a>请参阅
 
 
-[**WIA\_IPS\_XSCALING**](wia-ips-xscaling.md)
+[**WIA \_ IP \_ XSCALING**](wia-ips-xscaling.md)
 
  
 

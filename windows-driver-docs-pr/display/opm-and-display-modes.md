@@ -1,20 +1,19 @@
 ---
 title: OPM 和显示模式
 description: OPM 和显示模式
-ms.assetid: d412a32b-7afd-4f48-9b8e-7cf66533349f
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0e14c5a5210d7175813f7f653eaf588b4e25b549
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 837644799a099f05135af733aa3a8d63a6d060ad
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89063834"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838489"
 ---
 # <a name="opm-and-display-modes"></a>OPM 和显示模式
 
 
-无论当前正在使用哪种显示模式，显示微型端口驱动程序都应报告与受保护的输出关联的物理连接器支持的所有保护类型。 当显示微型端口驱动程序使用 DXGKMDT OPM 接收对其[**DxgkDdiOPMGetInformation**](/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgkddi_opm_get_information)或[**DxgkDdiOPMGetCOPPCompatibleInformation**](/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgkddi_opm_get_copp_compatible_information)函数的调用时，将会报告支持的保护类型 \_ 。 \_ 获取 \_ \_ \_ [**guidInformation \_ DXGKMDT \_ 获取 \_ 信息 \_ 参数**](/windows-hardware/drivers/ddi/d3dkmdt/ns-d3dkmdt-_dxgkmdt_opm_get_info_parameters)结构中设置**的**受支持保护类型。 有关检索受支持的保护类型的详细信息，请参阅检索有关受 [保护的输出的信息](retrieving-information-about-a-protected-output.md) 或 [检索有关受保护的输出的 COPP 兼容信息](retrieving-copp-compatible-information-about-a-protected-output.md)。
+无论当前正在使用哪种显示模式，显示微型端口驱动程序都应报告与受保护的输出关联的物理连接器支持的所有保护类型。 当显示微型端口驱动程序使用 DXGKMDT OPM 接收对其 [**DxgkDdiOPMGetInformation**](/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgkddi_opm_get_information)或 [**DxgkDdiOPMGetCOPPCompatibleInformation**](/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgkddi_opm_get_copp_compatible_information)函数的调用时，将会报告支持的保护类型 \_ 。 \_ 获取 \_ \_ \_ [**guidInformation \_ DXGKMDT \_ 获取 \_ 信息 \_ 参数**](/windows-hardware/drivers/ddi/d3dkmdt/ns-d3dkmdt-_dxgkmdt_opm_get_info_parameters)结构中设置 **的** 受支持保护类型。 有关检索受支持的保护类型的详细信息，请参阅检索有关受 [保护的输出的信息](retrieving-information-about-a-protected-output.md) 或 [检索有关受保护的输出的 COPP-Compatible 信息](retrieving-copp-compatible-information-about-a-protected-output.md)。
 
 如果对于特定保护类型，当前解决方法太高，则当调用显示微型端口驱动程序的 [**DxgkDdiOPMConfigureProtectedOutput**](/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgkddi_opm_configure_protected_output) 函数来为该保护类型设置保护级别时，驱动程序将返回错误。 以下方案举例说明了驱动程序的 *DxgkDdiOPMConfigureProtectedOutput* 函数应何时返回 success 以及何时出现错误：
 

@@ -1,32 +1,31 @@
 ---
 title: 加载主题
 description: 加载主题
-ms.assetid: 375b7365-6526-4282-893e-91b58a14c31f
 keywords:
-- 正在加载的主题
+- 主题，加载
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 87ea987d8f75448fcd40c483e2a9b9e84be203b1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9433131f45be973cd1f2df20e8d5486980413fcd
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383337"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838169"
 ---
 # <a name="loading-a-theme"></a>加载主题
 
 
-之前加载一个主题，我们建议您清除所有工作区数据。 可以通过三种方式执行此操作：
+在加载主题之前，我们建议您清除所有工作区数据。 可以通过三种方式完成此操作：
 
-通过使用 WinDbg 用户界面。 下**文件**菜单中，选择**清除工作区...** 选择**清除所有**在弹出窗口，然后单击**确定**。
+使用 WinDbg 用户界面。 在 " **文件** " 菜单下，选择 " **清除工作区 ...** "在弹出窗口中选择 " **全部清除** "，然后单击 **"确定"**。
 
-通过删除下的注册表项**HKCU\\软件\\Microsoft\\Windbg\\工作区**。
+删除 **HKCU \\ Software \\ Microsoft \\ Windbg \\ 工作区** 下的注册表项。
 
-通过运行命令**reg 删除 HKCU\\软件\\Microsoft\\Windbg**。
+通过运行命令 **reg DELETE HKCU \\ Software \\ Microsoft \\ Windbg**。
 
-别忘了您的工作区的数据已清除，运行其中一个主题。 这些存储为.reg 文件的 Windows 调试工具安装在主题目录中。 运行一个主题将其设置导入注册表中，重新定义你基本的工作区。
+清除所有工作区数据后，运行其中一个主题。 这些文件在用于 Windows 的调试工具的 "主题" 目录中作为 .reg 文件存储。 运行主题会将其设置导入注册表，并重新定义基本工作区。
 
-已加载主题后，可能会更改它以更好地满足您的首选项。 一些常见的选项的更多详细信息，请参阅[自定义主题](customizing-a-theme.md)。
+加载主题后，您可以对其进行更改，使其更适合您的偏好。 有关某些常见选项的更多详细信息，请参阅 [自定义主题](customizing-a-theme.md)。
 
  
 

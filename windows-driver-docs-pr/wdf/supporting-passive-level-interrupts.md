@@ -1,20 +1,19 @@
 ---
 title: 支持被动级别中断
 description: 从 framework 版本1.11 开始，WDF 驱动程序可以创建需要被动级别处理的中断对象。
-ms.assetid: E464F885-928C-40BC-A09F-7A7921F8FF37
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f4b0c0ce2a86ce127737999cab56c2fa06951980
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: b9ac3e06049a14c6f4bc2eb978e7c7716855bd8b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89190785"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96836597"
 ---
 # <a name="supporting-passive-level-interrupts"></a>支持被动级别中断
 
 
-从 framework 1.11 版开始，内核模式驱动程序框架 (KMDF) 和用户模式驱动程序框架 (UMDF) 在 Windows 8 或更高版本的操作系统上运行的驱动程序可以创建需要被动级别处理的中断对象。 如果驱动程序为被动级别中断处理配置了中断对象，则框架将调用驱动程序的中断服务例程 (ISR) 和其他 [中断对象事件回调函数](/windows-hardware/drivers/ddi/wdfinterrupt/) （在 IRQL = 被动 \_ 级别，同时持有被动级别中断锁）。
+从 framework 1.11 版开始，在 Windows 8 或更高版本的操作系统上运行的 Kernel-Mode Driver Framework (KMDF) 和 User-Mode Driver Framework (UMDF) 驱动程序可以创建需要被动级别处理的中断对象。 如果驱动程序为被动级别中断处理配置了中断对象，则框架将调用驱动程序的中断服务例程 (ISR) 和其他 [中断对象事件回调函数](/windows-hardware/drivers/ddi/wdfinterrupt/) （在 IRQL = 被动 \_ 级别，同时持有被动级别中断锁）。
 
 如果要为芯片 (SoC) 平台上的系统开发基于框架的驱动程序，可以使用被动模式中断，通过低速总线（例如，I-C、SPI 或 UART）与离 SoC 设备进行通信。
 
@@ -22,7 +21,7 @@ ms.locfileid: "89190785"
 
 本主题介绍如何 [创建](#creating-a-passive-level-interrupt)、 [服务](#servicing)和 [同步](#synchronizing) 被动级中断。
 
-## <a name="creating-a-passive-level-interrupt"></a>创建被动级中断
+## <a name="creating-a-passive-level-interrupt"></a>创建 Passive-Level 中断
 
 
 若要创建被动级别中断对象，驱动程序必须初始化 [**WDF \_ 中断 \_ 配置**](/windows-hardware/drivers/ddi/wdfinterrupt/ns-wdfinterrupt-_wdf_interrupt_config) 结构，并将其传递给 [**WdfInterruptCreate**](/windows-hardware/drivers/ddi/wdfinterrupt/nf-wdfinterrupt-wdfinterruptcreate) 方法。 在配置结构中，驱动程序应：
@@ -35,20 +34,20 @@ ms.locfileid: "89190785"
 有关设置上述配置结构成员的其他信息，请参阅 [**WDF \_ 中断 \_ CONFIG**](/windows-hardware/drivers/ddi/wdfinterrupt/ns-wdfinterrupt-_wdf_interrupt_config)。
 有关启用和禁用被动级中断的信息，请参阅 [启用和禁用中断](enabling-and-disabling-interrupts.md)。
 
-## <a name="servicing-a-passive-level-interrupt"></a><a href="" id="servicing"></a>为被动级别中断提供服务
+## <a name="servicing-a-passive-level-interrupt"></a><a href="" id="servicing"></a>为 Passive-Level 中断提供服务
 
 
 [*EvtInterruptIsr*](/windows-hardware/drivers/ddi/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_isr)回调函数（在 IRQL = 被动级别运行， \_ 持有被动级中断锁）通常会安排一个中断工作项或中断 DPC 以后处理与中断相关的信息。 基于框架的驱动程序将工作项或 DPC 例程作为 [*EvtInterruptWorkItem*](/windows-hardware/drivers/ddi/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_workitem) 或 [*EvtInterruptDpc*](/windows-hardware/drivers/ddi/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_dpc) 回调函数来实现。
 
-若要计划[*EvtInterruptWorkItem*](/windows-hardware/drivers/ddi/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_workitem)回调函数的执行，驱动程序从[*EvtInterruptIsr*](/windows-hardware/drivers/ddi/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_isr)回调函数中调用[**WdfInterruptQueueWorkItemForIsr**](/windows-hardware/drivers/ddi/wdfinterrupt/nf-wdfinterrupt-wdfinterruptqueueworkitemforisr) 。
+若要计划 [*EvtInterruptWorkItem*](/windows-hardware/drivers/ddi/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_workitem)回调函数的执行，驱动程序从 [*EvtInterruptIsr*](/windows-hardware/drivers/ddi/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_isr)回调函数中调用 [**WdfInterruptQueueWorkItemForIsr**](/windows-hardware/drivers/ddi/wdfinterrupt/nf-wdfinterrupt-wdfinterruptqueueworkitemforisr) 。
 
-若要计划[*EvtInterruptDpc*](/windows-hardware/drivers/ddi/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_dpc)回调函数的执行，驱动程序从[*EvtInterruptIsr*](/windows-hardware/drivers/ddi/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_isr)回调函数中调用[**WdfInterruptQueueDpcForIsr**](/windows-hardware/drivers/ddi/wdfinterrupt/nf-wdfinterrupt-wdfinterruptqueuedpcforisr) 。  (回忆，驱动程序的 *EvtInterruptIsr* 回调函数可以调用 [**WdfInterruptQueueWorkItemForIsr**](/windows-hardware/drivers/ddi/wdfinterrupt/nf-wdfinterrupt-wdfinterruptqueueworkitemforisr) 或 **WdfInterruptQueueDpcForIsr**，但不能同时调用两者。 ) 
+若要计划 [*EvtInterruptDpc*](/windows-hardware/drivers/ddi/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_dpc)回调函数的执行，驱动程序从 [*EvtInterruptIsr*](/windows-hardware/drivers/ddi/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_isr)回调函数中调用 [**WdfInterruptQueueDpcForIsr**](/windows-hardware/drivers/ddi/wdfinterrupt/nf-wdfinterrupt-wdfinterruptqueuedpcforisr) 。  (回忆，驱动程序的 *EvtInterruptIsr* 回调函数可以调用 [**WdfInterruptQueueWorkItemForIsr**](/windows-hardware/drivers/ddi/wdfinterrupt/nf-wdfinterrupt-wdfinterruptqueueworkitemforisr) 或 **WdfInterruptQueueDpcForIsr**，但不能同时调用两者。 ) 
 
 大多数驱动程序对每种类型的中断使用单个 [*EvtInterruptWorkItem*](/windows-hardware/drivers/ddi/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_workitem) 或 [*EvtInterruptDpc*](/windows-hardware/drivers/ddi/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_dpc) 回调函数。 如果驱动程序为每个设备创建了多个框架中断对象，请考虑对每个中断使用单独的 *EvtInterruptWorkItem* 或 *EvtInterruptDpc* 回调。
 
 驱动程序通常会在其 [*EvtInterruptWorkItem*](/windows-hardware/drivers/ddi/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_workitem) 或 [*EvtInterruptDpc*](/windows-hardware/drivers/ddi/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_dpc) 回调函数中完成 i/o 请求。
 
-下面的代码示例演示如何使用被动级别中断的驱动程序在其[*EvtInterruptIsr*](/windows-hardware/drivers/ddi/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_isr)函数内计划[*EvtInterruptWorkItem*](/windows-hardware/drivers/ddi/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_workitem)回调。
+下面的代码示例演示如何使用被动级别中断的驱动程序在其 [*EvtInterruptIsr*](/windows-hardware/drivers/ddi/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_isr)函数内计划 [*EvtInterruptWorkItem*](/windows-hardware/drivers/ddi/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_workitem)回调。
 
 ```cpp
 BOOLEAN
@@ -305,12 +304,12 @@ EvtIoInternalDeviceControl(
 }
 ```
 
-## <a name="synchronizing-a-passive-level-interrupt"></a><a href="" id="synchronizing"></a>同步被动级别中断
+## <a name="synchronizing-a-passive-level-interrupt"></a><a href="" id="synchronizing"></a>同步 Passive-Level 中断
 
 
 若要防止死锁，请在编写实现被动级中断处理的驱动程序时遵循以下准则：
 
--   如果**AutomaticSerialization**设置为 TRUE，则不要从[*EvtInterruptDpc*](/windows-hardware/drivers/ddi/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_dpc)或[*EvtInterruptWorkItem*](/windows-hardware/drivers/ddi/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_workitem)回调函数中[发送同步请求](sending-i-o-requests-synchronously.md)。
+-   如果 **AutomaticSerialization** 设置为 TRUE，则不要从 [*EvtInterruptDpc*](/windows-hardware/drivers/ddi/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_dpc)或 [*EvtInterruptWorkItem*](/windows-hardware/drivers/ddi/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_workitem)回调函数中 [发送同步请求](sending-i-o-requests-synchronously.md)。
 -   在 [完成 i/o 请求](completing-i-o-requests.md)之前释放被动级中断锁。
 -   必要时提供 [*EvtInterruptDisable*](/windows-hardware/drivers/ddi/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_disable)、 [*EvtInterruptEnable*](/windows-hardware/drivers/ddi/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_enable)和 [*EvtInterruptWorkItem*](/windows-hardware/drivers/ddi/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_workitem) 。
 -   如果驱动程序必须在任意线程上下文中执行与中断相关的工作，例如在 [请求处理程序](request-handlers.md)中，请使用 [**WdfInterruptTryToAcquireLock**](/previous-versions/hh439284(v=vs.85)) 和 [**WdfInterruptReleaseLock**](/previous-versions/ff547376(v=vs.85))。 不要从任意线程上下文调用 [**WdfInterruptAcquireLock**](/previous-versions/ff547340(v=vs.85))、 [**WdfInterruptSynchronize**](/windows-hardware/drivers/ddi/wdfinterrupt/nf-wdfinterrupt-wdfinterruptsynchronize)、 [**WdfInterruptEnable**](/windows-hardware/drivers/ddi/wdfinterrupt/nf-wdfinterrupt-wdfinterruptenable)或 [**WdfInterruptDisable**](/windows-hardware/drivers/ddi/wdfinterrupt/nf-wdfinterrupt-wdfinterruptdisable) 。 有关可以通过从任意线程上下文调用 **WdfInterruptAcquireLock** 而导致的死锁情况示例，请参阅 [**WdfInterruptAcquireLock**](/previous-versions/ff547340(v=vs.85))的 "备注" 部分。

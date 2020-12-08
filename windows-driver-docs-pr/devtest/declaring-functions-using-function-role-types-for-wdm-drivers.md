@@ -1,15 +1,14 @@
 ---
 title: 使用 WDM 驱动程序的函数角色类型来声明函数
 description: 使用 WDM 驱动程序的函数角色类型来声明函数
-ms.assetid: 3260b53e-82be-4dbc-8ac5-d0e52de77f9d
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: aa293cc6985ebc47cd6bbd15bd1f09c4e5002a81
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 71e191a7ffe6272dabd2b4df601e8bc5ebc8e945
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106416"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838145"
 ---
 # <a name="declaring-functions-using-function-role-types-for-wdm-drivers"></a>使用 WDM 驱动程序的函数角色类型来声明函数
 
@@ -24,7 +23,7 @@ ms.locfileid: "90106416"
 DRIVER_UNLOAD CsampUnload;
 ```
 
-*CsampUnload*函数的定义保持不变：
+*CsampUnload* 函数的定义保持不变：
 
 ```
 VOID
@@ -145,7 +144,7 @@ DriverObject->MajorFunction[IRP_MJ_CLEANUP] = FooCreateCleanup; // Advanced styl
 IO_COMPLETION_ROUTINE myCompletionRoutine;
 ```
 
-实现 *myCompletionRoutine*时，参数类型必须与 IO 完成例程使用的参数 \_ 类型 \_ （即 PDEVICE \_ 对象、PIRP 和 (PVOID）相同。有关语法) ，请参阅 [**IoCompletion**](/windows-hardware/drivers/ddi/wdm/nc-wdm-io_completion_routine) 例程。
+实现 *myCompletionRoutine* 时，参数类型必须与 IO 完成例程使用的参数 \_ 类型 \_ （即 PDEVICE \_ 对象、PIRP 和 (PVOID）相同。有关语法) ，请参阅 [**IoCompletion**](/windows-hardware/drivers/ddi/wdm/nc-wdm-io_completion_routine) 例程。
 
 ```
 NTSTATUS

@@ -1,15 +1,14 @@
 ---
 title: 其他规则集 (WDM)
 description: 使用这些规则来验证驱动程序是否正确遵循了对注册表项、字符串和设备对象指针的正确处理的一组一般要求。
-ms.assetid: 50E8BFFE-AC38-4023-9FFB-DC53B749A603
 ms.date: 05/21/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 5e645bb775e9b608dbc9fdfdeb7bea1e1e8ecabd
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 87a0d1b19e51a377f6e598124b93afc41c3d09c7
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104438"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838629"
 ---
 # <a name="miscellaneous-rule-set-wdm"></a>其他规则集 (WDM)
 
@@ -27,7 +26,7 @@ ms.locfileid: "90104438"
 <thead>
 <tr class="header">
 <th align="left">主题</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -71,7 +70,7 @@ ms.locfileid: "90104438"
 
 2.  单击 " **规则** " 选项卡。在 " **规则集**" 下，选择 " **杂项**"。
 
-    若要从 Visual Studio 开发人员命令提示符窗口中选择默认规则集，请使用 **/check**选项指定**sdv** 。 例如：
+    若要从 Visual Studio 开发人员命令提示符窗口中选择默认规则集，请使用 **/check** 选项指定 **sdv** 。 例如：
 
     ```
     msbuild /t:sdv /p:Inputs="/check:Miscellaneous.sdv" mydriver.VcxProj /p:Configuration="Win8 Release" /p:Platform=Win32

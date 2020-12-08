@@ -1,22 +1,21 @@
 ---
 title: Windows 驱动程序的 SAL 2.0 注释
 description: Microsoft 源代码批注语言 (SAL) 包含特定于 Windows 驱动程序分析和相关内核代码的注释。
-ms.assetid: 2CD181B8-4E1D-457A-9FF9-DAB3AB932730
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9644029412de5691f58b51b1a0a3faebf06bd962
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: ce98304261585fc058a497c4e3505dd4b83a702c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102870"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838341"
 ---
 # <a name="sal-20-annotations-for-windows-drivers"></a>Windows 驱动程序的 SAL 2.0 注释
 
 
 Microsoft 源代码批注语言 (SAL) 包含特定于 Windows 驱动程序分析和相关内核代码的注释。 批注语言提供了一种方法来描述函数、参数、返回值、结构和结构字段的属性。 批注类似于添加到代码中并被编译器忽略但由静态分析工具使用的注释。 使用批注有助于提高开发人员的工作效率，帮助提高静态分析的结果准确性，并使工具能够更好地确定是否存在特定的 bug。 驱动程序批注不适用于非驱动程序或非内核相关的代码。 驱动程序批注是在 Driverspecs 中定义的。
 
-**注意**   Windows 8 引入了 SAL 2.0，后者替代了 SAL 1.0。 有关 SAL 2.0 的信息，请参阅 [使用 Sal 注释减少 C/c + + 代码缺陷](/cpp/code-quality/using-sal-annotations-to-reduce-c-cpp-code-defects)。 SAL 2.0 替换 SAL 1.0。 对于 Windows 8，应将 SAL 2.0 与适用于 windows 8)  (的 Windows 驱动程序工具包结合使用。 如果需要有关 SAL 1.0 的驱动程序的信息，请参阅 WDK for Windows 7 随附的文档。
+**注意**  Windows 8 引入了 SAL 2.0，后者替代了 SAL 1.0。 有关 SAL 2.0 的信息，请参阅 [使用 Sal 注释减少 C/c + + 代码缺陷](/cpp/code-quality/using-sal-annotations-to-reduce-c-cpp-code-defects)。 SAL 2.0 替换 SAL 1.0。 对于 Windows 8，应将 SAL 2.0 与适用于 windows 8)  (的 Windows 驱动程序工具包结合使用。 如果需要有关 SAL 1.0 的驱动程序的信息，请参阅 WDK for Windows 7 随附的文档。
 
  
 
@@ -29,7 +28,7 @@ Microsoft 源代码批注语言 (SAL) 包含特定于 Windows 驱动程序分析
 <thead>
 <tr class="header">
 <th align="left">驱动程序批注</th>
-<th align="left">类别</th>
+<th align="left">Category</th>
 <th align="left">使用</th>
 </tr>
 </thead>

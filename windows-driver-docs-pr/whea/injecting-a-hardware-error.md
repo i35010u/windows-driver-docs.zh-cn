@@ -1,19 +1,18 @@
 ---
 title: 注入硬件错误
 description: 注入硬件错误
-ms.assetid: c27c79d9-c0b2-433b-b3f4-7674c361f1aa
 keywords:
 - 注入硬件错误 WDK WHEA
 - 错误 WDK WHEA，注入，WHEA WDK，注入
 - Windows 硬件错误体系结构 WDK，注入
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c1faf71c3c400fefb3e55103c2470d5630509691
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 021dc8808a1d92165b79934b092fb6c96d3c67ba
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89213077"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837597"
 ---
 # <a name="injecting-a-hardware-error"></a>注入硬件错误
 

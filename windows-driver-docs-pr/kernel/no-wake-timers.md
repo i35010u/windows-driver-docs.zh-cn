@@ -1,7 +1,6 @@
 ---
 title: 无唤醒功能的计时器
 description: 从 Windows 8.1 开始，驱动程序可以使用无唤醒计时器，以避免不必要地从低功耗状态唤醒处理器。
-ms.assetid: 04CD107B-F196-4FF8-A423-C43CAA9A7EBD
 keywords:
 - 无唤醒计时器
 - ExXxxTimer 例程
@@ -12,12 +11,12 @@ keywords:
 - KeSetCoalescableTimer
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e5823fcc28c86e419ac698962822da7a536f6358
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 96fce6a17ca6a3a3e37e15bf47c1e0ef93a6d66c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89188849"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838005"
 ---
 # <a name="no-wake-timers"></a>无唤醒功能的计时器
 
@@ -28,11 +27,11 @@ ms.locfileid: "89188849"
 
 驱动程序可以使用无唤醒计时器来启动非关键操作，这些操作只需在处理器处于活动状态时执行。 例如，驱动程序可能使用非唤醒计时器定期将累计状态信息从内存缓冲区刷新到文件中。 此状态信息介绍了驱动程序在处理器处于活动状态时所执行的处理工作。 当处理器处于低功耗状态时，不会生成任何状态信息，并且无需唤醒处理器。
 
-若要创建无唤醒计时器，WDM 驱动程序将调用 [**ExAllocateTimer**](/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatetimer) 例程。 在此调用中，驱动程序在 \_ \_ Attributes 参数中设置 EX 计时器 NO \_ 唤醒*Attributes*标志位。
+若要创建无唤醒计时器，WDM 驱动程序将调用 [**ExAllocateTimer**](/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatetimer) 例程。 在此调用中，驱动程序在 \_ \_ Attributes 参数中设置 EX 计时器 NO \_ 唤醒 *Attributes* 标志位。
 
-若要将非唤醒计时器设置为在某个截止时间过期，驱动程序将调用 [**ExSetTimer**](/windows-hardware/drivers/ddi/wdm/nf-wdm-exsettimer) 例程。 在此调用中，驱动程序可以指定在计时器唤醒处理器之前，不唤醒计时器在到达其到期时间之前应等待的时间。 驱动程序将此容许延迟时间写入[**EXT \_ SET \_ 参数**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_ext_set_parameters_v0)结构中的**NoWakeTolerance**成员，驱动程序将该结构作为输入参数传递到**ExSetTimer**例程。 如果驱动程序将 **NoWakeTolerance** 成员设置为特殊值 EX \_ 计时器 \_ 无限制 \_ 容差，则计时器将永远不会唤醒处理器，因此，在由于其他原因而使处理器唤醒之前，无法过期。
+若要将非唤醒计时器设置为在某个截止时间过期，驱动程序将调用 [**ExSetTimer**](/windows-hardware/drivers/ddi/wdm/nf-wdm-exsettimer) 例程。 在此调用中，驱动程序可以指定在计时器唤醒处理器之前，不唤醒计时器在到达其到期时间之前应等待的时间。 驱动程序将此容许延迟时间写入 [**EXT \_ SET \_ 参数**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_ext_set_parameters_v0)结构中的 **NoWakeTolerance** 成员，驱动程序将该结构作为输入参数传递到 **ExSetTimer** 例程。 如果驱动程序将 **NoWakeTolerance** 成员设置为特殊值 EX \_ 计时器 \_ 无限制 \_ 容差，则计时器将永远不会唤醒处理器，因此，在由于其他原因而使处理器唤醒之前，无法过期。
 
-内核模式驱动程序框架 (KMDF) 驱动程序或用户模式驱动程序框架 (UMDF) 驱动程序可以调用 [**WdfTimerCreate**](/windows-hardware/drivers/ddi/wdftimer/nf-wdftimer-wdftimercreate) 方法来创建无唤醒计时器。 在此调用中，驱动程序将一个指针作为参数传递给 [**WDF \_ 计时器 \_ 配置**](/windows-hardware/drivers/ddi/wdftimer/ns-wdftimer-_wdf_timer_config) 结构。 若要创建永不唤醒处理器的无唤醒计时器，驱动程序将此结构的 **TolerableDelay** 成员设置为 **TolerableDelayUnlimited** 常量。 从 Windows 8.1 和 KMDF 版本1.13 或 UMDF 2.0 开始，此常量受支持。
+Kernel-Mode Driver Framework (KMDF) 驱动程序或 User-Mode Driver Framework (UMDF) 驱动程序可以调用 [**WdfTimerCreate**](/windows-hardware/drivers/ddi/wdftimer/nf-wdftimer-wdftimercreate) 方法来创建无唤醒计时器。 在此调用中，驱动程序将一个指针作为参数传递给 [**WDF \_ 计时器 \_ 配置**](/windows-hardware/drivers/ddi/wdftimer/ns-wdftimer-_wdf_timer_config) 结构。 若要创建永不唤醒处理器的无唤醒计时器，驱动程序将此结构的 **TolerableDelay** 成员设置为 **TolerableDelayUnlimited** 常量。 从 Windows 8.1 和 KMDF 版本1.13 或 UMDF 2.0 开始，此常量受支持。
 
 ## <a name="comparison-to-coalescable-timers"></a>与 coalescable 计时器的比较
 

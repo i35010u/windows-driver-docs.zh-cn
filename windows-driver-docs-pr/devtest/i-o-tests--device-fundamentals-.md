@@ -1,15 +1,14 @@
 ---
 title: I/O 测试（设备基础功能）
 description: 设备基础 i/o 测试在指定设备上执行基本 i/o 测试。
-ms.assetid: 4FF125BE-846A-4A93-9B4F-C6BC469EA0AF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: afd348820fce1bd3a8e6a57b664bb68dff1043cd
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 0b79c04f476d976a10d98d77e6fb72c435267eaa
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107108"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96836843"
 ---
 # <a name="io-tests-device-fundamentals"></a>I/O 测试（设备基础功能）
 

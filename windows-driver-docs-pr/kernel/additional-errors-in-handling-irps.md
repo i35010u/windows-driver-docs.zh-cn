@@ -1,7 +1,6 @@
 ---
 title: 处理 IRP 时出现其他错误
 description: 处理 IRP 时出现其他错误
-ms.assetid: fb46e7a8-8181-46d3-a929-cec01fd71f20
 keywords:
 - 可靠性 WDK 内核，双完成 Irp
 - 双完成 Irp WDK 内核
@@ -11,12 +10,12 @@ keywords:
 - 可靠性 WDK 内核，聚合公共和专用 IOCTL 路径
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a6d84e8928ebbee95f9bdf0f7fbbbd70624f37b7
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 2edb383aea10466a421306736e07ed8597873200
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89192063"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96836951"
 ---
 # <a name="additional-errors-in-handling-irps"></a>处理 IRP 时出现其他错误
 

@@ -1,9 +1,8 @@
 ---
 title: wudfext.wudfusbinterface
-description: Wudfext.wudfusbinterface 扩展显示有关 USB 接口对象的信息。
-ms.assetid: 4c93919a-781d-4bd8-9be2-eecdb75781b1
+description: Wudfext. wudfusbinterface 扩展显示有关 USB 接口对象的信息。
 keywords:
-- wudfext.wudfusbinterface Windows 调试
+- wudfext wudfusbinterface Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,32 +11,32 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: d7ccab3b154d474c02c55276f960e6e0faac2a93
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 21ee18952b64b5e9992bd0dbf160a1d49f69cc58
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63351582"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838383"
 ---
 # <a name="wudfextwudfusbinterface"></a>!wudfext.wudfusbinterface
 
 
-**！ Wudfext.wudfusbinterface**扩展显示有关 USB 接口对象的信息。
+**！ Wudfext wudfusbinterface** 扩展显示有关 USB 接口对象的信息。
 
 ```dbgcmd
 !wudfext.wudfusbinterface pWDFUSBInterface TypeName
 ```
 
-## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>参数
+## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>Parameters
 
 
-<span id="_______pWDFUSBInterface______"></span><span id="_______pwdfusbinterface______"></span><span id="_______PWDFUSBINTERFACE______"></span> *pWDFUSBInterface*   
-指定的地址**IWDFUsbInterface**接口来显示有关的信息。 [ **！ Wudfext.wudfobject** ](-wudfext-wudfobject.md)扩展命令确定地址**IWDFUsbInterface**。
+<span id="_______pWDFUSBInterface______"></span><span id="_______pwdfusbinterface______"></span><span id="_______PWDFUSBINTERFACE______"></span>*pWDFUSBInterface*   
+指定要显示其相关信息的 **IWDFUsbInterface** 接口的地址。 [**！ Wudfext wudfobject**](-wudfext-wudfobject.md) extension 命令确定 **IWDFUsbInterface** 的地址。
 
-<span id="_______TypeName______"></span><span id="_______typename______"></span><span id="_______TYPENAME______"></span> *TypeName*   
-可选。 指定的接口类型 (例如， **IWDFDevice**)。 如果为值*TypeName*是提供，该扩展使用的值作为接口的类型。 如果星号 (\*) 作为提供*TypeName*，或者如果*TypeName*是省略，该扩展会尝试自动确定提供的接口的类型。
+<span id="_______TypeName______"></span><span id="_______typename______"></span><span id="_______TYPENAME______"></span>*TypeName*   
+可选。 指定接口的类型 (例如 **IWDFDevice**) 。 如果为 *TypeName* 提供了一个值，扩展将使用值作为该接口的类型。 如果将星号 (\*) 提供为 *typename*，或者省略 *typename* ，则扩展将尝试自动确定所提供的接口的类型。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 <table>
 <colgroup>
@@ -50,7 +49,7 @@ ms.locfileid: "63351582"
 <td align="left"><p>不可用</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>使用 UMDF 1.7 和更高版本的 Windows XP</strong></p></td>
+<td align="left"><p><strong>Windows XP （UMDF 版本1.7 及更高版本）</strong></p></td>
 <td align="left"><p>Wudfext.dll</p></td>
 </tr>
 </tbody>
@@ -58,9 +57,9 @@ ms.locfileid: "63351582"
 
  
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-有关详细信息，请参阅[用户模式驱动程序框架调试](user-mode-driver-framework-debugging.md)。
+有关详细信息，请参阅 [用户模式驱动程序框架调试](user-mode-driver-framework-debugging.md)。
 
  
 

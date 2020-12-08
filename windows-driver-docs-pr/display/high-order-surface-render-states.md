@@ -1,7 +1,6 @@
 ---
 title: 高阶图面渲染状态
 description: 高阶图面渲染状态
-ms.assetid: c664e0b8-8b96-4f66-bb9c-b87c5d5e7a05
 keywords:
 - DirectX 8.0 发行说明了 WDK Windows 2000 显示、高顺序曲面、渲染状态
 - 高阶图面 WDK DirectX 8.0，呈现状态
@@ -9,12 +8,12 @@ keywords:
 - 呈现状态 WDK DirectX 8.0，高序位图面
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6616f73773c76362ae17e635a634a1f93a95307f
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 3a6c1ff5e8befba9f1267b6e5348cbe7eb0fc6eb
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89064774"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838287"
 ---
 # <a name="high-order-surface-render-states"></a>高阶图面渲染状态
 

@@ -1,17 +1,16 @@
 ---
 title: 可移植 PDB 符号
 description: 可移植 PDB (程序数据库) 格式描述由公共语言基础结构语言的编译器生成并由调试器使用的调试信息的编码。
-ms.assetid: 511af309-4e48-445c-ab04-85d558584fd4
 keywords:
 - 符号，概述
 ms.date: 10/12/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 0fc7f6446010e2453770561404156485f506ba6d
-ms.sourcegitcommit: 735fea11056fe943c4368ee54573790e0602de66
+ms.openlocfilehash: b227e86a622ab221f509c6ace6118d3453b6ccc6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91979964"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837335"
 ---
 # <a name="portable-pdb-symbols"></a>可移植 PDB 符号
 
@@ -31,7 +30,7 @@ ms.locfileid: "91979964"
 
 此可移植 Pdb 读者实现了 Microsoft.diasymreader.native 接口，如 ISymUnmanagedReader 和 ISymUnmanagedBinder。 有关这些 .NET 接口的详细信息，请参阅 [诊断符号存储 (非托管 API 参考) ](/dotnet/framework/unmanaged-api/diagnostics/)。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [符号和符号文件](symbols-and-symbol-files.md)
 

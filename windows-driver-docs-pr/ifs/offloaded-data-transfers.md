@@ -1,15 +1,14 @@
 ---
 title: 卸载的数据传输
 description: 在同一台计算机之间传输数据是一种频繁的文件系统活动。
-ms.assetid: 66006CC0-8902-47CD-8E7C-187FE5BA71EF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 95dfef3ec9a62345a117ce956b5925a4e61691ce
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 5151094df48e80e16aa2e4cf7e393775064e24fb
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89063302"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837789"
 ---
 # <a name="offloaded-data-transfers"></a>卸载的数据传输
 
@@ -48,7 +47,7 @@ Windows 8 中引入了两个新的 FSCTLs，可帮助你卸载数据传输。 �
 
 ### <a name="span-idintegration_with_the_copy_enginespanspan-idintegration_with_the_copy_enginespanspan-idintegration_with_the_copy_enginespanintegration-with-the-copy-engine"></a><span id="Integration_with_the_Copy_Engine"></span><span id="integration_with_the_copy_engine"></span><span id="INTEGRATION_WITH_THE_COPY_ENGINE"></span>与复制引擎集成
 
-**CopyFile**和相关函数使用 Windows 中的核心复制引擎。 从 Windows 8 开始，复制引擎将在传统的复制文件代码路径之前以透明方式尝试使用卸载的数据传输。 由于复制 Api 由大多数应用程序、实用程序和 shell 使用，因此，默认情况下，如果有任何代码修改或用户干预，则这些调用方可以使用卸载的数据传输功能。
+**CopyFile** 和相关函数使用 Windows 中的核心复制引擎。 从 Windows 8 开始，复制引擎将在传统的复制文件代码路径之前以透明方式尝试使用卸载的数据传输。 由于复制 Api 由大多数应用程序、实用程序和 shell 使用，因此，默认情况下，如果有任何代码修改或用户干预，则这些调用方可以使用卸载的数据传输功能。
 
 以下步骤总结了 copy 引擎如何尝试卸载的数据传输：
 
@@ -76,16 +75,16 @@ Hyper-v 存储堆栈和 Windows SMB 文件服务器中提供了对卸载操作�
 
 ![卸载的数据传输方案](images/odx-scenario-3.png)
 
-## <a name="span-idfile_system_filter_opt-in_model_and_impact_to_applicationsspanspan-idfile_system_filter_opt-in_model_and_impact_to_applicationsspanspan-idfile_system_filter_opt-in_model_and_impact_to_applicationsspanfile-system-filter-opt-in-model-and-impact-to-applications"></a><span id="File_System_Filter_Opt-In_Model_and_Impact_to_Applications"></span><span id="file_system_filter_opt-in_model_and_impact_to_applications"></span><span id="FILE_SYSTEM_FILTER_OPT-IN_MODEL_AND_IMPACT_TO_APPLICATIONS"></span>文件系统筛选器选择模式和对应用程序的影响
+## <a name="span-idfile_system_filter_opt-in_model_and_impact_to_applicationsspanspan-idfile_system_filter_opt-in_model_and_impact_to_applicationsspanspan-idfile_system_filter_opt-in_model_and_impact_to_applicationsspanfile-system-filter-opt-in-model-and-impact-to-applications"></a><span id="File_System_Filter_Opt-In_Model_and_Impact_to_Applications"></span><span id="file_system_filter_opt-in_model_and_impact_to_applications"></span><span id="FILE_SYSTEM_FILTER_OPT-IN_MODEL_AND_IMPACT_TO_APPLICATIONS"></span>文件系统筛选器 Opt-In 模型和对应用程序的影响
 
 
 从 Windows 8 开始，筛选器管理器允许筛选器将卸载功能指定为支持的功能。 附加到卷的文件系统筛选器可以共同确定是否支持某个卸载的操作;如果不是，则操作将失败，并出现相应的错误代码。
 
-筛选器[**必须通过名 \_ \_ **](./fsctl-offload-write.md)为**SupportedFeatures**的注册表**DWORD**值（位于 FSCTL 的注册表中的驱动程序服务定义），在 HKEY [** \_ \_ **](./fsctl-offload-read.md) \_ 本地 \_ 计算机 \\ 系统 \\ CurrentControlSet \\ \\ &lt; &gt; \\ 此值包含位域，其中位确定选择加入的功能，并且应在筛选器安装过程中设置。
+筛选器 [**必须通过名 \_ \_**](./fsctl-offload-write.md)为 **SupportedFeatures** 的注册表 **DWORD** 值（位于 FSCTL 的注册表中的驱动程序服务定义），在 HKEY [**\_ \_**](./fsctl-offload-read.md) \_ 本地 \_ 计算机 \\ 系统 \\ CurrentControlSet \\ \\ &lt; &gt; \\ 此值包含位域，其中位确定选择加入的功能，并且应在筛选器安装过程中设置。
 
 目前，定义的位是：
 
-| Flag                                               | 含义                               |
+| 标志                                               | 含义                               |
 |----------------------------------------------------|---------------------------------------|
 | 支持的 \_ FS \_ 功能 \_ 卸载 \_ 读取0x00000001  | 筛选器支持 FSCTL \_ 卸载 \_ 读取  |
 | 支持的 \_ FS \_ 功能 \_ 卸载 \_ 写入0x00000002 | 筛选器支持 FSCTL \_ 卸载 \_ 写入 |
@@ -114,7 +113,7 @@ Hyper-v 存储堆栈和 Windows SMB 文件服务器中提供了对卸载操作�
 卸载数据传输是在数据中心内移动数据的一种新方法。 由于在核心复制引擎中集成了卸载逻辑，因此，默认情况下，很多应用程序能够执行卸载的数据移动，而无需明确选择加入。 因此，筛选器开发人员需要了解这些新操作对筛选器的影响。 不了解这些操作完全或不能评估新数据流可能会导致数据不一致或损坏的情况。 下面的列表汇总了一组操作项，供筛选器开发人员记下进行卸载：
 
 -   了解新的数据流、对筛选器的影响，以及支持这些卸载操作的筛选器的功能。
--   更新筛选器安装程序，将 SupportedFeatures 的 REG \_ DWORD **SupportedFeatures**值添加到 HKLM \\ System \\ CurrentControlSet \\ Services \\ \[ filter \] 子项。 将其初始化以指定卸载功能。
+-   更新筛选器安装程序，将 SupportedFeatures 的 REG \_ DWORD **SupportedFeatures** 值添加到 HKLM \\ System \\ CurrentControlSet \\ Services \\ \[ filter \] 子项。 将其初始化以指定卸载功能。
 -   对于想要执行卸载操作的筛选器，请将注册更新为 **IRP \_ MJ \_ 文件 \_ 系统 \_ 控制** 来处理 [**FSCTL \_ 卸载 \_ 读取**](./fsctl-offload-read.md) 和 [**FSCTL \_ 卸载 \_ 写入**](./fsctl-offload-write.md)操作。
 -   对于需要阻止卸载操作的筛选器，返回 \_ 筛选器中不支持的状态代码状态 \_ 。 不要依赖于注册表值来强制阻止卸载操作，因为最终用户可以对其进行更改。 筛选器应显式允许或禁止卸载操作。
 
@@ -123,7 +122,7 @@ Hyper-v 存储堆栈和 Windows SMB 文件服务器中提供了对卸载操作�
 
 使用卸载操作时，i/o 堆栈不会显示文件数据。 相反，它被视为数据的逻辑代理作为512字节的标记。 此令牌是存储子系统生成的特定于供应商的格式的不透明且唯一的字符串，也可以是众所周知的类型来表示数据的模式 (例如逻辑上等于零) 的数据范围。 对标记是其代理的数据进行的修改将导致令牌无效，或使存储子系统按特定于供应商的 (方式（例如通过快照机制) ）保存原始数据。 对于文件中指定范围的后续卸载读取请求将生成唯一标记。
 
-有类标记表示定义良好的数据模式。 最常见的已知标记是与零等效的零标记。 当令牌被定义为众所周知的令牌时，**存储 \_ 卸载 \_ 令牌**结构中的**TOKENTYPE**成员将设置为存储 \_ 卸载 \_ 令牌 \_ 类型 \_ 众所周知的 \_ 。 设置此字段时， **WellKnownPattern** 成员确定标记的数据模式。
+有类标记表示定义良好的数据模式。 最常见的已知标记是与零等效的零标记。 当令牌被定义为众所周知的令牌时，**存储 \_ 卸载 \_ 令牌** 结构中的 **TOKENTYPE** 成员将设置为存储 \_ 卸载 \_ 令牌 \_ 类型 \_ 众所周知的 \_ 。 设置此字段时， **WellKnownPattern** 成员确定标记的数据模式。
 
 -   当 **WellKnownPattern** 字段设置为存储 \_ 卸载 \_ 模式 \_ 零或存储 \_ 卸载 \_ 模式 \_ 为零时 \_ ，将 \_ \_ 显示零标记。 当 [**FSCTL \_ 卸载 \_ 读取**](./fsctl-offload-read.md) 操作返回此令牌时，它表示所需文件范围内包含的数据在逻辑上等于零。 向 [**FSCTL \_ 卸载 \_ 写入**](./fsctl-offload-write.md) 操作提供此令牌时，它指示要写入的文件的所需范围应在逻辑上归零。
 -   除了零标记，当前还没有定义其他已知的标记模式。 不建议用户定义自己的已知标记模式。
@@ -131,7 +130,7 @@ Hyper-v 存储堆栈和 Windows SMB 文件服务器中提供了对卸载操作�
 ## <a name="span-idtruncationspanspan-idtruncationspanspan-idtruncationspantruncation"></a><span id="Truncation"></span><span id="truncation"></span><span id="TRUNCATION"></span>短
 
 
-Windows 与之通信的基础存储子系统可以处理卸载操作所需的更少数据。 这称为 "截断"。 使用 "卸载" 读取时，这意味着返回的令牌表示比请求的数据范围少的数据。 这由[**FSCTL \_ 卸载 \_ 读取 \_ 输出**](/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_fsctl_offload_read_output)结构中的**TransferLength**成员指示，该结构是从要读取的文件范围的开头开始的字节计数。 对于卸载写入，截断表明写入的数据量小于所需的数据量。 这由[**FSCTL \_ 卸载 \_ 写入 \_ 输出**](/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_fsctl_offload_write_output)结构中的**LengthWritten**成员指示，后者是要写入的文件范围开头的字节计数。 命令处理中的错误或大型范围内堆栈限制会导致截断。
+Windows 与之通信的基础存储子系统可以处理卸载操作所需的更少数据。 这称为 "截断"。 使用 "卸载" 读取时，这意味着返回的令牌表示比请求的数据范围少的数据。 这由 [**FSCTL \_ 卸载 \_ 读取 \_ 输出**](/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_fsctl_offload_read_output)结构中的 **TransferLength** 成员指示，该结构是从要读取的文件范围的开头开始的字节计数。 对于卸载写入，截断表明写入的数据量小于所需的数据量。 这由 [**FSCTL \_ 卸载 \_ 写入 \_ 输出**](/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_fsctl_offload_write_output)结构中的 **LengthWritten** 成员指示，后者是要写入的文件范围开头的字节计数。 命令处理中的错误或大型范围内堆栈限制会导致截断。
 
 在以下两种情况下，NTFS 会截断要读取或写入的范围：
 
@@ -139,7 +138,7 @@ Windows 与之通信的基础存储子系统可以处理卸载操作所需的更
 
     ![eof 之前发生的 vdl](images/odx-vdl-1.png)
 
-    在[**FSCTL \_ 卸载 \_ 读取**](./fsctl-offload-read.md)操作过程中，在 \_ \_ \_ \_ FSCTL 卸载读取输出的结构中设置了标志卸载读取标志全部为零，这 \_ \_ \_ 表示文件的其余部分包含零，而**TransferLength**成员被截断为 VDL。 [** \_ \_ \_ **](/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_fsctl_offload_read_output)
+    在 [**FSCTL \_ 卸载 \_ 读取**](./fsctl-offload-read.md)操作过程中，在 \_ \_ \_ \_ FSCTL 卸载读取输出的结构中设置了标志卸载读取标志全部为零，这 \_ \_ \_ 表示文件的其余部分包含零，而 **TransferLength** 成员被截断为 VDL。 [**\_ \_ \_**](/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_fsctl_offload_read_output)
 
 2.  类似于方案1，但当 VDL 未与逻辑扇区边界对齐时，所需范围将被 NTFS 截断到下一个逻辑扇区边界。
 
@@ -153,7 +152,7 @@ Windows 与之通信的基础存储子系统可以处理卸载操作所需的更
 -   NTFS 不支持对用 Bitlocker 或 NTFS 加密 (的文件执行的卸载 FSCTLs EFS) ，消除重复的文件、压缩文件、常驻文件、稀疏文件或参与了 TxF 事务处理的文件。
 -   NTFS 不支持对 volsnap 快照中的文件执行的卸载 FSCTLs。
 -   如果所需的文件范围与源设备上的逻辑扇区大小不对齐，或所需的文件范围与目标设备上的逻辑扇区大小不对齐，则 NTFS 将无法卸载 FSCTL。 这与非缓存 IO 遵循相同的语义。
--   在[**FSCTL \_ 卸载 \_ 写入**](./fsctl-offload-write.md)之前，目标文件必须预先分配 (**SetEndOfFile** ，而不是**SetAllocation**) 。
+-   在 [**FSCTL \_ 卸载 \_ 写入**](./fsctl-offload-write.md)之前，目标文件必须预先分配 (**SetEndOfFile** ，而不是 **SetAllocation**) 。
 -   在处理卸载读取和卸载写入时，NTFS 首先调用 [**CcCoherencyFlushAndPurgeCache**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-cccoherencyflushandpurgecache) 以提交系统缓存中任何已修改的数据。 这与非缓存 IO 的语义相同。
 
  

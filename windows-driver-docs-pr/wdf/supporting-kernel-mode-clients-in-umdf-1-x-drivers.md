@@ -1,28 +1,27 @@
 ---
 title: 支持 UMDF 1.x 驱动程序中的内核模式客户端
 description: 支持 UMDF 1.x 驱动程序中的内核模式客户端
-ms.assetid: 933dc761-2616-4bee-8357-dbb6644596c2
 keywords:
 - 内核模式客户端 WDK UMDF
 - UMDF 驱动程序 WDK UMDF，内核模式客户端
 - 用户模式驱动程序 WDK UMDF、内核模式客户端
 - UMDF WDK，内核模式客户端
-- 用户模式驱动程序框架 WDK，内核模式客户端
+- User-Mode Driver Framework WDK，内核模式客户端
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 29d659c97ecbc64a40ce62ad5edf0d46dc5f97a0
-ms.sourcegitcommit: 9b4760aae390b36dbdf9e0dd729a4a643c3f7831
+ms.openlocfilehash: a03f3abfba2bec00fdfb5c81e47ae8fe59c2fda7
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90565277"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96836617"
 ---
 # <a name="supporting-kernel-mode-clients-in-umdf-1x-drivers"></a>支持 UMDF 1.x 驱动程序中的内核模式客户端
 
 [!include[UMDF 1 Deprecation](../includes/umdf-1-deprecation.md)]
 
 >[!WARNING]
->另请参阅 [在 UMDF 2.x 中支持内核模式客户端](supporting-kernel-mode-clients-in-umdf-drivers.md)。
+>另请参阅 [在 UMDF 2.x 中支持 Kernel-Mode 客户端](supporting-kernel-mode-clients-in-umdf-drivers.md)。
 
 UMDF 版本1.9 及更高版本允许 UMDF 驱动程序支持 *内核模式客户端*。 内核模式客户端可以是以下任一项：
 
@@ -44,7 +43,7 @@ UMDF 版本1.9 及更高版本允许 UMDF 驱动程序支持 *内核模式客户
 
 仅当 UMDF 驱动程序已为内核模式客户端启用支持时，UMDF 驱动程序才能接收来自内核模式驱动程序的 i/o 请求。 此外，如果设备安装尝试将内核模式驱动程序加载到设备的驱动程序堆栈中的 UMDF 驱动程序之上，则该框架仅在 UMDF 驱动程序已启用对内核模式客户端的支持时才会加载驱动程序。
 
-若要为内核模式客户端启用 UMDF 驱动程序支持，UMDF 驱动程序的 INF 文件必须在其 INF *DDInstall*中包含[UmdfKernelModeClientPolicy](specifying-wdf-directives-in-inf-files.md)指令。**WDF**部分。 如果 UMDF 驱动程序的 INF 文件不包括此指令，则 UMDF 不允许运行安装在 UMDF 驱动程序之上的内核模式驱动程序运行。
+若要为内核模式客户端启用 UMDF 驱动程序支持，UMDF 驱动程序的 INF 文件必须在其 INF *DDInstall* 中包含 [UmdfKernelModeClientPolicy](specifying-wdf-directives-in-inf-files.md)指令。**WDF** 部分。 如果 UMDF 驱动程序的 INF 文件不包括此指令，则 UMDF 不允许运行安装在 UMDF 驱动程序之上的内核模式驱动程序运行。
 
 该框架提供了两种方法，这些方法对支持内核模式客户端的驱动程序很有用。 驱动程序可以调用 [**IWDFIoRequest2：： GetRequestorMode**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest2-getrequestormode) 方法来确定 i/o 请求是否来自内核模式或用户模式。 如果 i/o 请求来自用户模式，则驱动程序可以调用 [**IWDFIoRequest2：： IsFromUserModeDriver**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest2-isfromusermodedriver) 来确定请求是来自应用程序还是来自其他用户模式驱动程序。
 
@@ -64,7 +63,7 @@ UMDF 版本1.9 及更高版本允许 UMDF 驱动程序支持 *内核模式客户
 
 -   UMDF 驱动程序可以在用户模式下修改 i/o 请求的输出数据。 因此，内核模式驱动程序必须验证它从用户模式驱动程序接收到的任何输出数据。
 
--   通常，内核模式客户端应验证 UMDF 驱动程序传递给[**IWDFIoRequest：： CompleteWithInformation**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest-completewithinformation)的*信息*值。 如果客户端是 KMDF 驱动程序，它可以调用 [**WdfRequestGetCompletionParams**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestgetcompletionparams) 以在 IO \_ 状态块结构中获取此信息 \_ 。
+-   通常，内核模式客户端应验证 UMDF 驱动程序传递给 [**IWDFIoRequest：： CompleteWithInformation**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest-completewithinformation)的 *信息* 值。 如果客户端是 KMDF 驱动程序，它可以调用 [**WdfRequestGetCompletionParams**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestgetcompletionparams) 以在 IO \_ 状态块结构中获取此信息 \_ 。
 
     通常情况下，框架不验证 UMDF 驱动程序传递给 [**IWDFIoRequest：： CompleteWithInformation**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest-completewithinformation)的信息值。  (此参数通常指定传输的字节数。 ) 框架只为输出缓冲区验证信息值，并且仅对 [缓冲的 i/o](./accessing-data-buffers-in-umdf-1-x-drivers.md#using-buffered-i-o-in-umdf-drivers) 数据访问方法进行验证。  (例如，如果访问方法是缓冲 i/o，则框架将验证传输的字节数是否未超过读取操作的输出缓冲区大小。 ) 
 
@@ -87,7 +86,7 @@ UMDF 版本1.9 及更高版本允许 UMDF 驱动程序支持 *内核模式客户
     -   [**IPnpCallbackHardware::OnPrepareHardware**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-ipnpcallbackhardware-onpreparehardware)
     -   [**IPnpCallbackHardware::OnReleaseHardware**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-ipnpcallbackhardware-onreleasehardware)
 
-    若要使用 *ntstatus*中定义的 ntstatus 值，请使用 UMDF 1。*x* 驱动程序必须包含这两行，然后才能包含任何其他标头。
+    若要使用 *ntstatus* 中定义的 ntstatus 值，请使用 UMDF 1。*x* 驱动程序必须包含这两行，然后才能包含任何其他标头。
 
     ```cpp
     #define UMDF_USING_NTSTATUS
@@ -106,7 +105,7 @@ UMDF 版本1.9 及更高版本允许 UMDF 驱动程序支持 *内核模式客户
 
 ### <a name="kernel-mode-client-support-in-earlier-umdf-versions"></a><a href="" id="kernel-mode-client-support-in-earlier-umdf-versions"></a> 早期 UMDF 版本中的内核模式客户端支持
 
-对于低于版本1.9 的 UMDF 版本，驱动程序的 INF 文件可以包含一个[**Inf AddReg 指令**](../install/inf-addreg-directive.md)，以在 \_ 设备[硬件密钥](./using-the-registry-in-umdf-1-x-drivers.md)的**WUDF**子项下创建一个 REG DWORD 大小的**UpperDriverOk**注册表值。
+对于低于版本1.9 的 UMDF 版本，驱动程序的 INF 文件可以包含一个 [**Inf AddReg 指令**](../install/inf-addreg-directive.md)，以在 \_ 设备 [硬件密钥](./using-the-registry-in-umdf-1-x-drivers.md)的 **WUDF** 子项下创建一个 REG DWORD 大小的 **UpperDriverOk** 注册表值。
 
 如果将 **UpperDriverOk** 注册表值设置为非零值，则框架允许将内核模式驱动程序加载到用户模式驱动程序之上。 内核模式驱动程序可以将用户模式应用程序的 i/o 请求转发到 UMDF 驱动程序，但内核模式驱动程序无法将内核模式下创建的 i/o 请求发送到 UMDF 驱动程序。
 

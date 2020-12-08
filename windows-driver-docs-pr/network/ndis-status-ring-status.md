@@ -1,17 +1,16 @@
 ---
 title: NDIS_STATUS_RING_STATUS
 description: NDIS_STATUS_RING_STATUS 状态指示线路的环状态。 支持 WAN 的微型端口驱动程序可以使用此状态报告环形故障。
-ms.assetid: 8971eeea-13ff-47d5-8167-83c061cad054
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 NDIS_STATUS_RING_STATUS 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 27a826762fc3e9f45bc00d9e91b236dd2c574f24
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 5d2d49d7c1a8220a62e88990bd413a27ca7b80d0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89206069"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837173"
 ---
 # <a name="ndis_status_ring_status"></a>NDIS \_ 状态 \_ 环形 \_ 状态
 
@@ -23,7 +22,7 @@ ms.locfileid: "89206069"
 
 NDIS 4。*x* 和更早的 NDIS WAN 微型端口驱动程序使用此状态指示。 NDIS 5.0 和更高版本的 WAN 微型端口驱动程序必须使用 CoNDIS WAN 接口。 有关 CoNDIS WAN 接口的详细信息，请参阅在 [NDIS 5.1) 中实现 CONDIS WAN 微型端口驱动 (程序 ](/previous-versions/windows/hardware/network/ff546752(v=vs.85))。
 
-[**NdisMIndicateStatus**](/previous-versions/windows/hardware/network/ff553538(v=vs.85))函数的*StatusBuffer*参数包含一个具有以下状态值之一的 ULONG 值：
+[**NdisMIndicateStatus**](/previous-versions/windows/hardware/network/ff553538(v=vs.85))函数的 *StatusBuffer* 参数包含一个具有以下状态值之一的 ULONG 值：
 
 NDIS \_ 环形 \_ 凸 \_ 线 \_ 故障
 
@@ -53,7 +52,7 @@ NDIS \_ 环形 \_ 信号 \_ 丢失
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**NdisMIndicateStatus**](/previous-versions/windows/hardware/network/ff553538(v=vs.85))

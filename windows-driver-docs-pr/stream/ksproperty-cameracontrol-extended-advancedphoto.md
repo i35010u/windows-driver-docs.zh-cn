@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ CAMERACONTROL \_ 扩展 \_ ADVANCEDPHOTO
 description: KSPROPERTY \_ CAMERACONTROL \_ EXTENDED \_ ADVANCEDPHOTO 用于控制驱动程序上的相片 HDR、flash no flash 和超高的低亮度。 这是仅适用于照片 pin 的 pin 级别控制。
-ms.assetid: 88C14C9E-8675-42BF-A606-64232ABD4FD1
 keywords:
 - KSPROPERTY_CAMERACONTROL_EXTENDED_ADVANCEDPHOTO 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 09/10/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: fca0d8617d73da00270eea84c7e7949b34cb310f
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 645c827ced7d662044b4234e1536ded37b17e8e6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89188763"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837067"
 ---
 # <a name="ksproperty_cameracontrol_extended_advancedphoto"></a>KSPROPERTY \_ CAMERACONTROL \_ 扩展 \_ ADVANCEDPHOTO
 
@@ -46,7 +45,7 @@ KSPROPERTY \_ CAMERACONTROL \_ EXTENDED \_ ADVANCEDPHOTO 用于控制驱动程�
 <tr class="odd">
 <td><p>版本 1</p></td>
 <td><p>Pin</p></td>
-<td><p>同步</p></td>
+<td><p>Synchronous</p></td>
 </tr>
 </tbody>
 </table>
@@ -160,7 +159,7 @@ KSPROPERTY \_ CAMERACONTROL \_ EXTENDED \_ ADVANCEDPHOTO 用于控制驱动程�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Ksmedia.h</td>
 </tr>
 </tbody>

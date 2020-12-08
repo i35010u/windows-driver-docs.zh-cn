@@ -1,7 +1,6 @@
 ---
 title: ptov
 description: Ptov 扩展显示给定进程的整个物理到虚拟映射。
-ms.assetid: 82352d12-4e81-4746-9333-b2cc98eb7a9d
 keywords:
 - ptov Windows 调试
 ms.date: 05/23/2017
@@ -12,27 +11,27 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 12c1db265f222894e8b89c851b76ca61b6107aba
-ms.sourcegitcommit: 424c435700d8f8a85bdaa83e8ddaab9568c8d347
+ms.openlocfilehash: 52aeccf365ac674b9459294077540538151896a0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/26/2019
-ms.locfileid: "70025149"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837589"
 ---
 # <a name="ptov"></a>!ptov
 
 
-**! Ptov**扩展显示给定进程的整个物理到虚拟图。
+**！ Ptov** 扩展显示给定进程的整个物理到虚拟图。
 
 ```dbgcmd
 !ptov DirBase
 ```
 
-## <a name="span-idddk__ptov_dbgspanspan-idddk__ptov_dbgspanparameters"></a><span id="ddk__ptov_dbg"></span><span id="DDK__PTOV_DBG"></span>Parameters
+## <a name="span-idddk__ptov_dbgspanspan-idddk__ptov_dbgspanparameters"></a><span id="ddk__ptov_dbg"></span><span id="DDK__PTOV_DBG"></span>参数
 
 
 <span id="_______DirBase______"></span><span id="_______dirbase______"></span><span id="_______DIRBASE______"></span>*DirBase*   
-指定进程的目录库。 若要确定目录基础, 请使用[ **! process**](-process.md)命令, 并查看 DirBase 显示的值。
+指定进程的目录库。 若要确定目录基础，请使用 [**！ process**](-process.md) 命令，并查看 DirBase 显示的值。
 
 ### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
@@ -44,11 +43,11 @@ ms.locfileid: "70025149"
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>Windows 2000</strong></p></td>
-<td align="left"><p>Kdextx86</p></td>
+<td align="left"><p>Kdextx86.dll</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>Windows XP 和更高版本</strong></p></td>
-<td align="left"><p>Kdexts</p></td>
+<td align="left"><p><strong>Windows XP 及更高版本</strong></p></td>
+<td align="left"><p>Kdexts.dll</p></td>
 </tr>
 </tbody>
 </table>
@@ -58,7 +57,7 @@ ms.locfileid: "70025149"
 <a name="remarks"></a>备注
 -------
 
-下面是一个示例。 首先, 使用[ **. process**](-process--set-process-context-.md)和[ **! 进程**](-process.md)来确定当前进程的目录基:
+示例如下。 首先，使用 [**. process**](-process--set-process-context-.md) 和 [**！进程**](-process.md) 来确定当前进程的目录基：
 
 ```dbgcmd
 1: kd> .process
@@ -70,7 +69,7 @@ PROCESS 852b4040  SessionId: none  Cid: 0004    Peb: 00000000  ParentCid: 0000
     ...
 ```
 
-在这种情况下, 目录基为0x00185000。 将此地址传递给 **! ptov**:
+在这种情况下，目录基为0x00185000。 将此地址传递给 **！ ptov**：
 
 ```dbgcmd
 1: kd> !ptov 185000
@@ -116,11 +115,11 @@ ceefb000 fffff680`00008000
 ...
 ```
 
-目录基是在虚拟地址转换中使用的第一个表的物理地址。 此表具有不同的名称, 具体取决于目标操作系统的位数以及对于目标操作系统是否启用了物理地址扩展 (PAE)。
+目录基是在虚拟地址转换中使用的第一个表的物理地址。 此表具有不同的名称，具体取决于目标操作系统的位数以及对于目标操作系统是否启用了物理地址扩展 (PAE) 。
 
-对于64位 Windows, 目录基是页映射级别 4 (PML4) 表的物理地址。 对于启用了 PAE 的32位 Windows, 目录基为 "页目录指针 (PDP)" 表的物理地址。 对于禁用了 PAE 的32位 Windows, 目录 bas 是页面目录 (PD) 表的物理地址。
+对于64位 Windows，目录基是页映射级别 4 (PML4) 表的物理地址。 对于启用了 PAE 的32位 Windows，目录库是 (PDP) 表的页面目录指针的物理地址。 对于禁用了 PAE 的32位 Windows，目录 bas 是页面目录 (PD) 表的物理地址。
 
-相关主题, 请参阅[ **! vtop**](-vtop.md)和[将虚拟地址转换为物理地址](converting-virtual-addresses-to-physical-addresses.md)。 有关虚拟地址转换的信息, 请参阅*Microsoft Windows 内部机制*, 方法是标记 Russinovich 和 David 所罗门群岛。
+相关主题，请参阅 [**！ vtop**](-vtop.md) 和 [将虚拟地址转换为物理地址](converting-virtual-addresses-to-physical-addresses.md)。 有关虚拟地址转换的信息，请参阅 *Microsoft Windows 内部机制*，方法是标记 Russinovich 和 David 所罗门群岛。
 
  
 

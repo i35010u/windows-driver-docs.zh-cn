@@ -1,15 +1,14 @@
 ---
 title: ServiceInfo XML 架构概述
 description: ServiceInfo XML 架构概述
-ms.assetid: e59aa675-fea2-4c2d-90f8-4979aac1c7e8
 ms.date: 07/05/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 17a33398729a6aa133b8f704906ae4b3afbaa6d4
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: 51d57a7875d43c1c7bab0217eaef8209ca338523
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89403436"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838435"
 ---
 # <a name="serviceinfo-xml-schema-overview"></a>ServiceInfo XML 架构概述
 
@@ -19,7 +18,8 @@ ms.locfileid: "89403436"
 
 ServiceInfo.xml 文档中的数据是根据此部分中所述的 ServiceInfo XML 架构设置格式的。
 
-**注意**  该 XML 文档必须使用 UTF-8 编码进行保存。
+**注意**  
+该 XML 文档必须使用 UTF-8 编码进行保存。
 
  
 

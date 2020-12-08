@@ -1,7 +1,6 @@
 ---
 title: TraceView 的概念
 description: TraceView 的概念
-ms.assetid: 4fab2b23-8f7b-407b-b944-41ac8caf1a75
 keywords:
 - TraceView WDK，术语
 - 跟踪会话 WDK，组
@@ -16,12 +15,12 @@ keywords:
 - TMF 文件 WDK，选项
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 473f2b03f7f2bbcbb465c32be19cb86d2bd50dff
-ms.sourcegitcommit: 878a1cb0149dc18ccbd31774e12bad76084dfa24
+ms.openlocfilehash: ea684f1ff21d03ba71599b18866e4ef4fd5af655
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94937789"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838105"
 ---
 # <a name="traceview-concepts"></a>TraceView 的概念
 

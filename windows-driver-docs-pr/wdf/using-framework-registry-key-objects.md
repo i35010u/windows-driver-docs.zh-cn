@@ -1,30 +1,29 @@
 ---
 title: 使用框架注册表项对象
 description: 使用框架注册表项对象
-ms.assetid: 2236b4e1-2e17-4e59-b12e-70fff5fd7513
 keywords:
 - 注册表 WDK KMDF
 - 注册表-密钥对象 WDK KMDF
 - 基于框架的驱动程序 WDK KMDF，注册表
 - 内核模式驱动程序 WDK KMDF、注册表
 - KMDF WDK，注册表
-- 内核模式驱动程序框架 WDK，注册表
+- Kernel-Mode Driver Framework WDK，注册表
 - 密钥 WDK KMDF
 - 打开注册表项 WDK KMDF
 - 删除注册表项 WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 29045fbb786494df7afd9a092f3ea841ae3b79f2
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 0ee652af71be859c64da753a36b57749e4d84135
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91733095"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838707"
 ---
 # <a name="using-framework-registry-key-objects"></a>使用框架注册表项对象
 
 
-基于框架的驱动程序使用 *框架注册表项对象*访问注册表。 注册表项对象定义允许您的驱动程序创建、打开和关闭注册表项的方法;添加和删除注册表值;和读取或写入分配给注册表值的数据。
+基于框架的驱动程序使用 *框架注册表项对象* 访问注册表。 注册表项对象定义允许您的驱动程序创建、打开和关闭注册表项的方法;添加和删除注册表值;和读取或写入分配给注册表值的数据。
 
 若要打开注册表项，驱动程序必须调用 [**WdfRegistryOpenKey**](/windows-hardware/drivers/ddi/wdfregistry/nf-wdfregistry-wdfregistryopenkey)。 如果该注册表项不存在，则驱动程序必须调用 [**WdfRegistryCreateKey**](/windows-hardware/drivers/ddi/wdfregistry/nf-wdfregistry-wdfregistrycreatekey)，这将创建一个新密钥并将其打开。
 

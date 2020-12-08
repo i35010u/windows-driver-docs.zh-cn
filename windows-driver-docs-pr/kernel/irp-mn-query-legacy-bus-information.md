@@ -2,26 +2,25 @@
 title: IRP_MN_QUERY_LEGACY_BUS_INFORMATION
 description: 此 IRP 保留供系统使用。
 ms.date: 08/12/2017
-ms.assetid: 223a5c7a-9bba-457e-9004-94446c7ebb63
 keywords:
-- IRP_MN_QUERY_LEGACY_BUS_INFORMATION 内核模式驱动程序体系结构
+- IRP_MN_QUERY_LEGACY_BUS_INFORMATION Kernel-Mode 驱动程序体系结构
 ms.localizationpriority: medium
-ms.openlocfilehash: 2e0f3efda270bedc00de5ccd97ba42dc745ee656
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e82b22b5e17a9b450c4d1c100b27929a8e2baf86
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63381431"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96836919"
 ---
-# <a name="irpmnquerylegacybusinformation"></a>IRP\_MN\_查询\_旧版\_总线\_信息
+# <a name="irp_mn_query_legacy_bus_information"></a>IRP \_ MN \_ 查询 \_ 旧的 \_ 总线 \_ 信息
 
 
 此 IRP 保留供系统使用。
 
-<a name="major-code"></a>主代码
+<a name="major-code"></a>主要代码
 ----------
 
-[**IRP\_MJ\_PNP** ](irp-mj-pnp.md)要求
+[**IRP \_MJ \_ PNP**](irp-mj-pnp.md) 要求
 ------------
 
 <table>
@@ -31,8 +30,8 @@ ms.locfileid: "63381431"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Wdm.h 中 （包括 wdm.h 中、 Ntddk.h 或 Ntifs.h）</td>
+<td><p>标头</p></td>
+<td>Wdm.h（包括 Wdm.h、Ntddk.h 或 Ntifs.h）</td>
 </tr>
 </tbody>
 </table>

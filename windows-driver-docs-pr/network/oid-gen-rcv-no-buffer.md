@@ -1,16 +1,15 @@
 ---
 title: OID_GEN_RCV_NO_BUFFER
 description: 作为查询，OID_GEN_RCV_NO_BUFFER OID 指定 NIC 由于缺少 NIC 接收缓冲区空间而无法接收的帧数。
-ms.assetid: 0fcbc7cc-439b-450f-b256-3584b29909fb
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_GEN_RCV_NO_BUFFER 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f60197d295594ff4d495969eab8c4c4542fee5c
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: f3e5645f1d30631ec6753a33ac76f4f56f58a07e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89213373"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96836751"
 ---
 # <a name="oid_gen_rcv_no_buffer"></a>OID \_ 生成 \_ RCV \_ 无 \_ 缓冲区
 
@@ -55,7 +54,7 @@ ms.locfileid: "89213373"
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [OID \_ 生成 \_ 统计信息](oid-gen-statistics.md)

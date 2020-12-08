@@ -1,7 +1,6 @@
 ---
 title: 支持空闲时关闭电源
 description: 某些设备可以进入低功耗 (Dx) 状态，而系统仍处于正常工作 (S0) 状态。
-ms.assetid: d0ce51db-eeb7-45ef-b823-248cd03ee2a9
 keywords:
 - 空闲的关闭 WDK KMDF
 - 电源管理 WDK KMDF、空闲关机
@@ -11,12 +10,12 @@ keywords:
 - 系统睡眠状态 WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 58ae2311ee47f96bea0026ded47bf8b6eb160110
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 8ec33333aa4f0f0b2d2fac68fdd379736fac6adf
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89190793"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96836615"
 ---
 # <a name="supporting-idle-power-down"></a>支持空闲时关闭电源
 
@@ -25,7 +24,7 @@ ms.locfileid: "89190793"
 
 其中一些设备还可以在检测到外部事件时在总线上触发唤醒信号。 总线驱动程序会响应此信号，驱动程序堆栈会将设备还原到其工作状态。 在框架要求总线驱动程序启动将设备还原到其工作状态之前，不检测到外部事件 (设备仍处于低功耗状态。 ) 
 
-如果设备或组件处于空闲状态，则[电源策略所有者](power-policy-ownership.md)中的[*EvtDriverDeviceAdd*](/windows-hardware/drivers/ddi/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)回调函数必须执行以下两个步骤：
+如果设备或组件处于空闲状态，则 [电源策略所有者](power-policy-ownership.md)中的 [*EvtDriverDeviceAdd*](/windows-hardware/drivers/ddi/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)回调函数必须执行以下两个步骤：
 
 1.  调用 [**WdfDeviceAssignS0IdleSettings**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceassigns0idlesettings) 指定：
 
@@ -54,7 +53,7 @@ ms.locfileid: "89190793"
 -   如果驱动程序之前调用 [**WdfDeviceStopIdle**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicestopidle)，则驱动程序随后称为 [**WdfDeviceResumeIdle**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceresumeidle)。
 -   如果电源策略所有者是总线驱动程序，则总线驱动程序的任何子设备都不是 D0。
 
-如果你的驱动程序 (或用户) 为你的设备启用了空闲电源，则可能必须使用 [**WdfDeviceStopIdle**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicestopidle) 方法。 如果设备处于工作状态 (D0) 状态，则此方法会阻止设备置于空闲状态，直到驱动程序调用 [**WdfDeviceResumeIdle**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceresumeidle)。 如果当驱动程序调用 **WdfDeviceStopIdle**时设备处于低功耗状态，并且系统正在工作 (S0) 状态，则该框架将请求总线驱动程序将设备还原到其工作 (D0) 状态。 对 **WdfDeviceStopIdle** 的每次成功调用都必须通过调用 **WdfDeviceResumeIdle**进行匹配。 有关在调试器中查看 power reference 计数的信息，请参阅 [在 WDF 中调试 Power Reference 泄漏](debugging-power-reference-leaks-in-wdf.md)。
+如果你的驱动程序 (或用户) 为你的设备启用了空闲电源，则可能必须使用 [**WdfDeviceStopIdle**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicestopidle) 方法。 如果设备处于工作状态 (D0) 状态，则此方法会阻止设备置于空闲状态，直到驱动程序调用 [**WdfDeviceResumeIdle**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceresumeidle)。 如果当驱动程序调用 **WdfDeviceStopIdle** 时设备处于低功耗状态，并且系统正在工作 (S0) 状态，则该框架将请求总线驱动程序将设备还原到其工作 (D0) 状态。 对 **WdfDeviceStopIdle** 的每次成功调用都必须通过调用 **WdfDeviceResumeIdle** 进行匹配。 有关在调试器中查看 power reference 计数的信息，请参阅 [在 WDF 中调试 Power Reference 泄漏](debugging-power-reference-leaks-in-wdf.md)。
 
 有关驱动程序何时需要调用 [**WdfDeviceStopIdle**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicestopidle)的详细信息，请参阅该方法的参考页。
 

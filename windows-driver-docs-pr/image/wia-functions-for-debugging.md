@@ -1,15 +1,14 @@
 ---
 title: 用于调试的 WIA 函数
 description: 用于调试的 WIA 函数
-ms.assetid: 164eeab3-1e4a-46de-99db-28b8f63593a4
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 26eaa92ce59e99a4b2b5841cb2228138006d8379
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: e8d43270dec862039a116b441243cb69fc84c694
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90101662"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837737"
 ---
 # <a name="wia-functions-for-debugging"></a>用于调试的 WIA 函数
 
@@ -27,7 +26,7 @@ ms.locfileid: "90101662"
 <thead>
 <tr class="header">
 <th>函数</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>

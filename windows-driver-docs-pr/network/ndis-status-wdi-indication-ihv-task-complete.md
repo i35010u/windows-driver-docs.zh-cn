@@ -1,33 +1,32 @@
 ---
 title: NDIS_STATUS_WDI_INDICATION_IHV_TASK_COMPLETE
 description: NDIS_STATUS_WDI_INDICATION_IHV_TASK_COMPLETE 指示 OID_WDI_TASK_IHV 完成。
-ms.assetid: 03EA1580-110D-483B-BD4D-9275A7AC18A8
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 NDIS_STATUS_WDI_INDICATION_IHV_TASK_COMPLETE 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 01103caf1cfb5b576ee47556ae64447d94c0a118
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4cb7bfd18d094e6e38297bd7a6f545bcc48883cd
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390722"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837131"
 ---
-# <a name="ndisstatuswdiindicationihvtaskcomplete"></a>NDIS\_状态\_WDI\_指示\_IHV\_任务\_完成
+# <a name="ndis_status_wdi_indication_ihv_task_complete"></a>NDIS \_ 状态 \_ WDI \_ 指示 \_ IHV \_ 任务 \_ 完成
 
 
-NDIS\_状态\_WDI\_指示\_IHV\_任务\_完成指示完成[OID\_WDI\_任务\_IHV](oid-wdi-task-ihv.md)。
+NDIS \_ 状态 \_ WDI \_ 指示 \_ IHV \_ 任务 \_ 完成指示 [OID \_ WDI \_ 任务 \_ IHV](oid-wdi-task-ihv.md)的完成。
 
-| Object |
+| 对象 |
 |--------|
 | 端口   |
 
  
 
-## <a name="payload-data"></a>有效负载数据
+## <a name="payload-data"></a>负载数据
 
 
-此指示不包含任何其他数据。 标头中的数据就足够了。 从消息的完成状态不转发到的任何人。
+此指示不包含其他数据。 标头中的数据足够了。 消息的完成状态不会转发给任何人。
 
 <a name="requirements"></a>要求
 ------------
@@ -44,11 +43,11 @@ NDIS\_状态\_WDI\_指示\_IHV\_任务\_完成指示完成[OID\_WDI\_任务\_IHV
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
-<td><p>Windows Server 2016</p></td>
+<td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Dot11wdi.h</td>
+<td><p>标头</p></td>
+<td>Dot11wdi</td>
 </tr>
 </tbody>
 </table>

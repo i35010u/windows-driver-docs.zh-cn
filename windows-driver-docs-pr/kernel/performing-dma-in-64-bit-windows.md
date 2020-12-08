@@ -1,7 +1,6 @@
 ---
 title: 在 64 位 Windows 中执行 DMA
 description: 在 64 位 Windows 中执行 DMA
-ms.assetid: 3ef00c05-356d-488a-8422-503d8132344d
 keywords:
 - 64位 WDK 内核，将驱动程序移植到
 - 将驱动程序移植到64位 Windows
@@ -15,12 +14,12 @@ keywords:
 - 指针算法 WDK 64 位
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 74107e24495a13842608d6bb4c3f820223c8bdf6
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 4d7301cece2bf177f088e2393cace3b09db118c5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89187053"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96836911"
 ---
 # <a name="performing-dma-in-64-bit-windows"></a>在 64 位 Windows 中执行 DMA
 
@@ -42,7 +41,7 @@ ms.locfileid: "89187053"
 
 4.  检查 [**Mm64BitPhysicalAddress**](mm64bitphysicaladdress.md) 全局系统变量的值。 如果为 **TRUE**，则系统支持64位物理寻址。
 
-5.  将[**设备 \_ 描述**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_device_description)结构的**Dma64BitAddresses**成员设置为**TRUE** ，以指示你的驱动程序支持64位 DMA 地址。
+5.  将 [**设备 \_ 描述**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_device_description)结构的 **Dma64BitAddresses** 成员设置为 **TRUE** ，以指示你的驱动程序支持64位 DMA 地址。
 
 32位 Windows 中的 DMA 例程是64位就绪。 如果设备驱动程序正确使用这些例程，则 DMA 代码应在64位 Windows 上无需修改的情况下运行。
 

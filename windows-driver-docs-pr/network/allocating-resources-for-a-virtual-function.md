@@ -1,15 +1,14 @@
 ---
 title: 为虚拟功能分配资源
 description: 为虚拟功能分配资源
-ms.assetid: 00191D2C-E093-4DB7-AC82-8E8E5A74656F
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fdc15c3671cd556185a993614326f31d76e12277
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: aaeddf6f61faa1c952e2b3a0069253cd2743b9fc
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89206509"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838761"
 ---
 # <a name="allocating-resources-for-a-virtual-function"></a>为虚拟功能分配资源
 
@@ -30,9 +29,9 @@ PF 微型端口驱动程序（在 Hyper-v 父分区的管理操作系统中运�
 
 -   当驱动程序处理 [oid \_ NIC \_ 交换机 \_ 分配 \_ VF](./oid-nic-switch-allocate-vf.md)的对象标识符 (OID) 方法请求时，PF 微型端口驱动程序为 VF 分配软件资源。 即使已为 VF 分配硬件资源，也会将其视为 nonoperational，直到 PF 微端口驱动程序成功完成 OID \_ NIC \_ 交换机 \_ 分配 \_ VF。
 
-过量驱动程序可以通过发出 [oid \_ NIC \_ 交换机 \_ 分配 \_ VF](./oid-nic-switch-allocate-vf.md)的 oid 方法请求，为 VF 请求分配软件资源。 OID 请求的[**ndis \_ oid \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的**InformationBuffer**成员包含指向[**NDIS \_ NIC \_ 交换机 \_ VF \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vf_parameters)结构的指针。
+过量驱动程序可以通过发出 [oid \_ NIC \_ 交换机 \_ 分配 \_ VF](./oid-nic-switch-allocate-vf.md)的 oid 方法请求，为 VF 请求分配软件资源。 OID 请求的 [**ndis \_ oid \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的 **InformationBuffer** 成员包含指向 [**NDIS \_ NIC \_ 交换机 \_ VF \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vf_parameters)结构的指针。
 
-成功从 OID 请求返回后， [**ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的**InformationBuffer**成员包含指向[**NDIS \_ NIC \_ 交换机 \_ VF \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vf_parameters)结构的指针。 此结构具有适配器唯一的 VF 标识符和 PCI 请求者标识符 (RID) 。 这些标识符通过以下方式使用：
+成功从 OID 请求返回后， [**ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的 **InformationBuffer** 成员包含指向 [**NDIS \_ NIC \_ 交换机 \_ VF \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vf_parameters)结构的指针。 此结构具有适配器唯一的 VF 标识符和 PCI 请求者标识符 (RID) 。 这些标识符通过以下方式使用：
 
 -   过量驱动程序在与 VF 相关的操作中使用 VF 标识符，如下所示：
 
@@ -48,7 +47,7 @@ PF 微型端口驱动程序（在 Hyper-v 父分区的管理操作系统中运�
 
 有关 PF 微型端口驱动程序如何处理 [oid \_ nic \_ 交换机 \_ 分配 \_ vf](./oid-nic-switch-allocate-vf.md) 方法请求的详细信息，请参阅 [处理 oid \_ nic \_ 交换机 \_ 分配 \_ vf 请求](handling-oid-nic-switch-allocate-vf-requests.md)。
 
-**注意**   通过 oid [ \_ NIC \_ 交换机 \_ 分配 \_ vf](./oid-nic-switch-allocate-vf.md)的 OID 方法请求分配了用于 vf 的资源后，无法动态更改 vf 的资源参数。
+**注意**  通过 oid [ \_ NIC \_ 交换机 \_ 分配 \_ vf](./oid-nic-switch-allocate-vf.md)的 OID 方法请求分配了用于 vf 的资源后，无法动态更改 vf 的资源参数。
 
  
 

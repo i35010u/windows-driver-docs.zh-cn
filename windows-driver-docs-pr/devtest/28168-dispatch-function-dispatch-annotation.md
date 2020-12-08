@@ -1,26 +1,25 @@
 ---
 title: C28168
-description: 调度函数没有警告 C28168 _Dispatch_type_批注匹配此调度表条目。
-ms.assetid: 5e5acc54-acb3-4366-a625-eb79865e932e
+description: 警告 C28168 调度函数没有与此调度表项匹配的 _Dispatch_type_ 注释。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 f1_keywords:
 - C28168
-ms.openlocfilehash: b0193771152d701e04b3e39a3bd0586079099a5b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7c78faf01d7352137abcc91fe8aad184d04c9e0d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63361322"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838159"
 ---
 # <a name="c28168"></a>C28168
 
 
-警告 C28168:调度函数没有 **\_调度\_类型\_** 批注匹配此调度表条目
+警告 C28168：调度函数没有与此调度表项匹配的 **\_ 调度 \_ 类型 \_** 批注
 
-此警告支持[Static Driver Verifier](static-driver-verifier.md)通过检查到调度表分配每个函数将以一个或多个批注 **\_调度\_类型\_** 指示的由该函数执行的调度操作的类型的批注。 针对函数的批注不匹配的调度表项槽时，代码分析工具将报告此错误。
+此警告支持 [静态驱动程序验证程序](static-driver-verifier.md)，方法是检查分配给调度表的每个函数是否使用一个或多个 **\_ 调度 \_ 类型 \_** 批注（指示该函数执行的调度操作的类型）进行批注。 当函数上的批注与调度表条目槽不匹配时，代码分析工具将报告此错误。
 
-可以通过添加可更正此缺陷 **\_调度\_类型\_** 批注相对于函数或更正所使用的调度表项。
+可以通过向函数添加 **\_ 调度 \_ 类型 \_** 注释或更正所使用的调度表项来更正此缺陷。
 
 ### <a name="span-idexamplespanspan-idexamplespanexample"></a><span id="example"></span><span id="EXAMPLE"></span>示例
 
@@ -42,10 +41,10 @@ pDo->MajorFunction[IRP_MJ_CREATE] = SampleCreate;
 ...
 ```
 
-## <a name="span-idcommentsspanspan-idcommentsspanspan-idcommentsspancomments"></a><span id="Comments"></span><span id="comments"></span><span id="COMMENTS"></span>注释
+## <a name="span-idcommentsspanspan-idcommentsspanspan-idcommentsspancomments"></a><span id="Comments"></span><span id="comments"></span><span id="COMMENTS"></span>提出
 
 
-在某些情况下，可能需要禁止显示此警告。 有一些驱动程序，例如，筛选器驱动程序后直接注册其他人, 可能注册在一个循环内的调度例程。
+在某些情况下，可能需要禁止显示此警告。 有些驱动程序（例如筛选器驱动程序）可以在循环中注册调度例程，然后再直接注册其他驱动程序。
 
 ```ManagedCPlusPlus
 DriverObject->MajorFunction[IRP_MJ_CREATE]         = DispatchCreate;
@@ -56,7 +55,7 @@ for (Index = 0; Index <= IRP_MJ_MAXIMUM_FUNCTION; Index++)
     }
 ```
 
-在此示例中， **DispatchPassIrp**使用下列批注正确声明函数：
+在此示例中， **DispatchPassIrp** 函数已由以下注释正确声明：
 
 ```ManagedCPlusPlus
 __drv_dispatchType(IRP_MJ_CREATE_NAMED_PIPE)
@@ -68,13 +67,13 @@ __drv_dispatchType(IRP_MJ_CREATE_NAMED_PIPE)
     DRIVER_DISPATCH DispatchPassIrp;
 ```
 
-在此情况下，代码分析工具将报告此错误：
+在这种情况下，代码分析工具将报告此错误：
 
 ```
 The function 'DispatchPassIrp' does not have a _Dispatch_type_ annotation matching dispatch table position 'IRP_MJ_CREATE' (0x00):  This can be  corrected either by adding a _Dispatch_type_ annotation to the function declaration or correcting the dispatch table entry being used.
 ```
 
-在某些筛选器驱动程序中常见的调度表中的循环这种用法。 在此情况下，可以忽略该错误消息，因为这是静态分析的限制。 针对函数的批注不匹配的调度表项槽时，代码分析工具将报告此错误。 在这种情况下，代码分析工具将报告非法赋值 (的撤消了更高版本)。 但是，没有更高版本的一个静态工具，可知道，将撤消非法状态的方法。 如果您知道要进行分配，这样一来，并带来更高版本，则可以禁止显示警告。
+此在调度表中使用循环在某些筛选器驱动程序中很常见。 在这种情况下，可以忽略错误消息，因为这是静态分析的限制。 当函数上的批注与调度表条目槽不匹配时，代码分析工具将报告此错误。 在这种情况下，代码分析工具将报告一个非法赋值 (，稍后将其) 撤消。 但是，静态工具没有办法知道稍后将撤消非法状态。 如果你知道你是以这种方式进行分配，并稍后修复它们，则可以禁止显示此警告。
 
  
 

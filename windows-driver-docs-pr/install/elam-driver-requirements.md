@@ -1,15 +1,14 @@
 ---
 title: ELAM 驱动程序要求
 description: 驱动程序安装必须使用现有的工具进行联机和脱机安装，并通过典型的 INF 处理注册驱动程序。
-ms.assetid: B00B4361-B531-4D28-A521-0F8B3B48CEA4
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d5a2d3d64910f8629a6bd9b767c2f9b1a7aaf3cb
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: d587f455b0aec6ba67d9228dfe4d87e59b5cc7fa
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90716892"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96836969"
 ---
 # <a name="elam-driver-requirements"></a>ELAM 驱动程序要求
 
@@ -166,8 +165,8 @@ ELAM 配置单元在使用后将通过早期启动反恶意软件以提高性能
 </tr>
 <tr class="even">
 <td align="left"><p>内存中的内存占用 (驱动程序 + 配置数据) </p></td>
-<td align="left"><p>不可用</p></td>
-<td align="left"><p>不可用</p></td>
+<td align="left"><p>空值</p></td>
+<td align="left"><p>空值</p></td>
 <td align="left"><p>128kB</p></td>
 </tr>
 </tbody>

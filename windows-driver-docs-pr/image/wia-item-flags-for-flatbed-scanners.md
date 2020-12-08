@@ -1,15 +1,14 @@
 ---
 title: 平板扫描仪的 WIA 项标志
 description: 平板扫描仪的 WIA 项标志
-ms.assetid: bd070e41-47e9-4165-a250-e759b8a214aa
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0d1dd61b5471440b0d3455189279c1ca31e60bde
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: bccdecbca3642226f7fdb46dc5e36a6e8486787a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89184465"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838263"
 ---
 # <a name="wia-item-flags-for-flatbed-scanners"></a>平板扫描仪的 WIA 项标志
 
@@ -30,7 +29,7 @@ WIA 项是可配置的，并遵循一组基于 [**WIA \_ IPA \_ item \_ CATEGORY
 WIA 项可用于传输数据。 此标志是必需的，因为平板扫描仪项可用于传输数据。
 
 <a href="" id="wiaitemtypefile"></a>**WiaItemTypeFile**  
-该项是一个文件。 **WiaItemTypeImage**标志需要此标志。
+该项是一个文件。 **WiaItemTypeImage** 标志需要此标志。
 
 <a href="" id="wiaitemtypeimage"></a>**WiaItemTypeImage**  
 该项是一个图像。 此标志仅对还设置了 **WiaItemTypeFile** 标志的项有效。 此标志是必需的，因为平板扫描仪会报告 [**WIA \_ IPA \_ 格式**](./wia-ipa-format.md) 属性值的图像格式。 所有 WIA 平板扫描仪项都需要至少支持一种图像格式。 WIA 当前需要 WiaImgFmt \_ BMP 和 WiaImgFmt \_ MEMORYBMP 作为支持的图像格式。

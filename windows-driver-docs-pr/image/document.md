@@ -1,9 +1,8 @@
 ---
-title: 文档元素
-description: 所需的文档元素包含有关一个扫描作业期间扫描的文档的详细信息。
-ms.assetid: 42710d90-22ec-4c5f-ae4c-4a14ed494758
+title: Document 元素
+description: 必需的 Document 元素包含有关扫描作业期间扫描的文档之一的详细信息。
 keywords:
-- 文档元素成像设备
+- 文档元素图像处理设备
 topic_type:
 - apiref
 api_name:
@@ -12,19 +11,19 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: eed70515c6a83b2f6bac1f615001d72db916f27c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 09760eeaba07b12a59923fca0a6d8e651af4e602
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63364550"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838033"
 ---
-# <a name="document-element"></a>文档元素
+# <a name="document-element"></a>Document 元素
 
 
-所需**文档**元素包含有关一个扫描作业期间扫描的文档的详细信息。
+必需的 **Document** 元素包含有关扫描作业期间扫描的文档之一的详细信息。
 
-<a name="usage"></a>用法
+<a name="usage"></a>使用情况
 -----
 
 ```xml

@@ -1,17 +1,16 @@
 ---
 title: 使用移动宽带元数据创作向导
 description: 使用移动宽带元数据创作向导
-ms.assetid: CBEF0B73-9C1D-4ACF-9EB2-52020FBC2625
 keywords:
 - 使用移动宽带元数据创作向导
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b76a0519b8b0b207fdcefcbf58ca14820a9a1a98
-ms.sourcegitcommit: e2de6b9ffb5c7356deb864f9da879533f49b25bf
+ms.openlocfilehash: 20135528e3bcaefe18f402ef75cacefc4592d4d9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/03/2020
-ms.locfileid: "91702652"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838621"
 ---
 # <a name="using-the-mobile-broadband-metadata-authoring-wizard"></a>使用移动宽带元数据创作向导
 

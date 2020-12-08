@@ -1,15 +1,14 @@
 ---
 title: ELAM 驱动程序提交过程
 description: 可以使用列出的步骤提交 () ELAM 的早期启动反恶意软件，以确保验证并遵守文档要求
-ms.assetid: ''
 ms.date: 04/27/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 394311af9df0611b1cff9586d7f9eab22afe446d
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 881717dc60abd35167a4aa61adad3d8502bfebe0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89097203"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96836970"
 ---
 # <a name="elam-driver-submission-process"></a>ELAM 驱动程序提交过程
 

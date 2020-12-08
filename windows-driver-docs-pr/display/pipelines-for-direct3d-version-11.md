@@ -1,7 +1,6 @@
 ---
 title: Direct3D 版本 11 的管道
 description: Direct3D 版本 11 的管道
-ms.assetid: 7d724751-761e-409c-8398-d1b5d58c057c
 keywords:
 - Direct3D 版本 11 WDK Windows 7 显示，管道
 - Direct3D 版本 11 WDK Windows Server 2008 R2 显示，管道
@@ -19,12 +18,12 @@ keywords:
 - 无序访问资源视图 WDK Windows Server 2008 R2 显示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8f5694915dd5d3c90f97f698f4f6598aa84084d4
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 08adbd3befb4140030371117b48777feaf2c273a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89063830"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838061"
 ---
 # <a name="pipelines-for-direct3d-version-11"></a>Direct3D 版本 11 的管道
 
@@ -141,7 +140,7 @@ Direct3D 运行时调用以下驱动程序函数来创建、设置和销毁无�
 
 [**CopyStructureCount**](/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_copystructurecount)
 
-[**SetRenderTargets (D3D11) **](/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_setrendertargets)
+[**SetRenderTargets (D3D11)**](/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_setrendertargets)
 
  
 

@@ -1,7 +1,6 @@
 ---
 title: Bug 检查 0x1C4 DRIVER_VERIFIER_DETECTED_VIOLATION_LIVEDUMP
 description: DRIVER_VERIFIER_DETECTED_VIOLATION_LIVEDUMP bug 检查的值为0x000001C4。
-ms.assetid: B5C00570-477C-4C0C-B8B9-A7796FC33D63
 keywords:
 - Bug 检查 0x1C4 DRIVER_VERIFIER_DETECTED_VIOLATION_LIVEDUMP
 - DRIVER_VERIFIER_DETECTED_VIOLATION_LIVEDUMP
@@ -13,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 38508dba045d2a8831cbf49090cb5e35fc020de3
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: db492f7f48ca47f39d47dc2816345cc15d5ccf70
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89214854"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96836891"
 ---
 # <a name="bug-check-0x1c4-driver_verifier_detected_violation_livedump"></a>Bug 检查0x1C4：驱动程序 \_ 验证程序 \_ 检测到 \_ 违反 \_ LIVEDUMP
 
@@ -32,7 +31,7 @@ ms.locfileid: "89214854"
 
 ## <a name="driver_verifier_detected_violation_livedump-parameters"></a>驱动程序 \_ 验证程序 \_ 检测到 \_ 违反 \_ LIVEDUMP 参数
 
-| 参数 | 说明                              |
+| 参数 | 描述                              |
 |-----------|------------------------------------------|
 |1| 驱动程序冲突的子类。 请参阅下面的值。|
 |2| 请参阅下面的值。 |

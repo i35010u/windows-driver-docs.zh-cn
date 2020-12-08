@@ -1,19 +1,18 @@
 ---
 title: 网络升级过程的 GUI 模式阶段
 description: 网络升级过程的 GUI 模式阶段
-ms.assetid: 35c382aa-5905-4a22-b9fa-b876d1373b94
 keywords:
 - 网络组件升级 WDK，阶段
 - 升级网络组件 WDK，阶段
 - GUI 模式阶段 WDK 网络
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: baa8b7fad2e39602bfbefec4484384ae83db34ea
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 5865c41531e3b73b9050bdf0117d8d6966d3a6cd
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89207591"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838753"
 ---
 # <a name="gui-mode-phase-of-the-network-upgrade-process"></a>网络升级过程的 GUI 模式阶段
 
@@ -21,19 +20,19 @@ ms.locfileid: "89207591"
 
 
 
-**注意**   Microsoft Windows XP (SP1 及更高版本) 、Microsoft Windows Server 2003 和更高版本的操作系统不支持供应商提供的网络升级。
+**注意**  Microsoft Windows XP (SP1 及更高版本) 、Microsoft Windows Server 2003 和更高版本的操作系统不支持供应商提供的网络升级。
 
  
 
 在系统上安装 Windows 2000 或更高版本的操作系统之前，NetSetup 将读取在 Winnt32.exe 阶段写入 AnswerFile 的特定于网络的信息。
 
-如果网络迁移 DLL 在 AnswerFile 中将 [**InfToRunBeforeInstall**](/previous-versions/windows/hardware/network/ff559059(v=vs.85)) 键写入组件的 *OEM 部分* ，则 NetSetup 将查找密钥指定的 inf 文件和部分，并处理本部分中的 inf 指令。 此部分通常包含 **AddReg**、 **DelReg**、 **AddService**或 **DelService** 指令。
+如果网络迁移 DLL 在 AnswerFile 中将 [**InfToRunBeforeInstall**](/previous-versions/windows/hardware/network/ff559059(v=vs.85)) 键写入组件的 *OEM 部分* ，则 NetSetup 将查找密钥指定的 inf 文件和部分，并处理本部分中的 inf 指令。 此部分通常包含 **AddReg**、 **DelReg**、 **AddService** 或 **DelService** 指令。
 
 安装 Windows 2000 或更高版本的操作系统后，NetSetup 将使用为组件的 Windows 2000 或更高版本 INF 文件中的组件指定的默认参数值安装系统中检测到的每个网络组件。 然后，NetSetup 安装 AnswerFile 中列出的网络组件。
 
-如果 AnswerFile 中的网络组件的 *OEM 部分* 包含 [OemDllToLoad](examining-the-answerfile.md) 键，则 NetSetup 将加载网络迁移 dll （如果尚未加载 dll），然后调用 dll 的 [**PostUpgradeInitialize**](/previous-versions/windows/hardware/network/ff562410(v=vs.85)) 函数。 **PostUpgradeInitialize**函数为 DLL 提供 dll 用来初始化自身的信息。 然后，NetSetup 将为每个要由 DLL 升级的网络组件调用一次 DLL 的 [**DoPostUpgradeProcessing**](/previous-versions/windows/hardware/network/ff545629(v=vs.85)) 函数。 **DoPostUpgradeProcessing** 可以显示一个用户界面，该用户界面允许用户指定组件的参数值。 **DoPostUpgradeProcessing** 将任何用户指定的参数值写入注册表。
+如果 AnswerFile 中的网络组件的 *OEM 部分* 包含 [OemDllToLoad](examining-the-answerfile.md) 键，则 NetSetup 将加载网络迁移 dll （如果尚未加载 dll），然后调用 dll 的 [**PostUpgradeInitialize**](/previous-versions/windows/hardware/network/ff562410(v=vs.85)) 函数。 **PostUpgradeInitialize** 函数为 DLL 提供 dll 用来初始化自身的信息。 然后，NetSetup 将为每个要由 DLL 升级的网络组件调用一次 DLL 的 [**DoPostUpgradeProcessing**](/previous-versions/windows/hardware/network/ff545629(v=vs.85)) 函数。 **DoPostUpgradeProcessing** 可以显示一个用户界面，该用户界面允许用户指定组件的参数值。 **DoPostUpgradeProcessing** 将任何用户指定的参数值写入注册表。
 
-如果网络适配器的微型端口驱动程序需要适配器的实例 ID 才能进行升级，则在升级后可能需要适配器的实例 ID。 网络迁移 DLL 可从其**DoPostUpgradeProcessing**函数调用[**HrGetInstanceGuidOfPreNT5NetCardInstance**](/previous-versions/windows/hardware/network/ff546613(v=vs.85)) ，以获取网络适配器的 Windows 2000 或更高版本的实例 GUID。
+如果网络适配器的微型端口驱动程序需要适配器的实例 ID 才能进行升级，则在升级后可能需要适配器的实例 ID。 网络迁移 DLL 可从其 **DoPostUpgradeProcessing** 函数调用 [**HrGetInstanceGuidOfPreNT5NetCardInstance**](/previous-versions/windows/hardware/network/ff546613(v=vs.85)) ，以获取网络适配器的 Windows 2000 或更高版本的实例 GUID。
 
 NetSetup 启动安装的网络协议、客户端和服务。
 

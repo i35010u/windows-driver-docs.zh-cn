@@ -1,7 +1,6 @@
 ---
 title: 运动补偿回调
 description: 运动补偿回调
-ms.assetid: a1f748e4-0d62-4543-a409-bb9ec02a7d77
 keywords:
 - 绘制 WDK DirectDraw，运动补偿
 - DirectDraw WDK Windows 2000 显示，动作补偿
@@ -13,12 +12,12 @@ keywords:
 - 数字视频解码 WDK DirectDraw
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8c4e8993e7e009af2f14c79d96aaeeb05f626b98
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: de359747d923ed556285ca054c93e127f0e6ee1d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90717196"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838491"
 ---
 # <a name="motion-compensation-callbacks"></a>运动补偿回调
 
@@ -54,15 +53,15 @@ ms.locfileid: "90717196"
 
 2.  对下游输入插针的 **IAMVideoAccelerator：： GetUncompFormatsSupported** 的调用将从设备驱动程序的 [*DdMoCompGetFormats*](/windows/win32/api/ddrawint/nc-ddrawint-pdd_mocompcb_getformats)返回数据。
 
-3.  在相关处理开始时，解码器的**IAMVideoAcceleratorNotify：： GetCreateVideoAcceleratorData**的输出插针中的[**DXVA \_ ConnectMode**](/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_connectmode)数据结构会传递到设备驱动程序的[*DdMoCompCreate*](/windows/win32/api/ddrawint/nc-ddrawint-pdd_mocompcb_create)，这将通知解码器有关视频加速对象的信息。
+3.  在相关处理开始时，解码器的 **IAMVideoAcceleratorNotify：： GetCreateVideoAcceleratorData** 的输出插针中的 [**DXVA \_ ConnectMode**](/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_connectmode)数据结构会传递到设备驱动程序的 [*DdMoCompCreate*](/windows/win32/api/ddrawint/nc-ddrawint-pdd_mocompcb_create)，这将通知解码器有关视频加速对象的信息。
 
 4.  从 **IAMVideoAccelerator：： GetCompBufferInfo** 返回的数据源自设备驱动程序的 [*DdMoCompGetBuffInfo*](/windows/win32/api/ddrawint/nc-ddrawint-pdd_mocompcb_getcompbuffinfo)。
 
 5.  使用 **IAMVideoAccelerator：： Execute** 发送的缓冲区由设备驱动程序的 [*DdMoCompRender*](/windows/win32/api/ddrawint/nc-ddrawint-pdd_mocompcb_render)接收。
 
-6.  使用 **IAMVideoAccelerator：： QueryRenderStatus** 会调用设备驱动程序的 [*DdMoCompQueryStatus*](/windows/win32/api/ddrawint/nc-ddrawint-pdd_mocompcb_querystatus)。 DDERR \_ WASSTILLDRAWING From *DdMoCompQueryStatus* 返回代码将被主机解码器视为 E \_ 挂自 **IAMVideoAccelerator：： QueryRenderStatus**的返回代码。
+6.  使用 **IAMVideoAccelerator：： QueryRenderStatus** 会调用设备驱动程序的 [*DdMoCompQueryStatus*](/windows/win32/api/ddrawint/nc-ddrawint-pdd_mocompcb_querystatus)。 DDERR \_ WASSTILLDRAWING From *DdMoCompQueryStatus* 返回代码将被主机解码器视为 E \_ 挂自 **IAMVideoAccelerator：： QueryRenderStatus** 的返回代码。
 
-7.  发送到 **IAMVideoAccelerator：： BeginFrame** 的数据由设备驱动程序的 [*DdMoCompBeginFrame*](/windows/win32/api/ddrawint/nc-ddrawint-pdd_mocompcb_beginframe)接收。 需要在 DdMoCompBeginFrame 中使用 DDERR WASSTILLDRAWING 的返回代码，以 \_ 使*DdMoCompBeginFrame* \_ 主机解码器在响应**IAMVideoAccelerator：： BeginFrame**时查看 E 挂起。
+7.  发送到 **IAMVideoAccelerator：： BeginFrame** 的数据由设备驱动程序的 [*DdMoCompBeginFrame*](/windows/win32/api/ddrawint/nc-ddrawint-pdd_mocompcb_beginframe)接收。 需要在 DdMoCompBeginFrame 中使用 DDERR WASSTILLDRAWING 的返回代码，以 \_ 使 *DdMoCompBeginFrame* \_ 主机解码器在响应 **IAMVideoAccelerator：： BeginFrame** 时查看 E 挂起。
 
 8.  发送到 **IAMVideoAccelerator：： EndFrame** 的数据由设备驱动程序的 [*DdMoCompEndFrame*](/windows/win32/api/ddrawint/nc-ddrawint-pdd_mocompcb_endframe)接收。
 

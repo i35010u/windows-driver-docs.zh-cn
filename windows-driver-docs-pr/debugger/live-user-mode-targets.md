@@ -1,19 +1,18 @@
 ---
 title: 实时用户模式目标
 description: 实时用户模式目标
-ms.assetid: 2709dd01-6486-471d-afa1-a8441665da8d
 keywords:
 - 调试器引擎 API，目标，用户模式
 - 调试器引擎 API，从进程断开连接
 - 调试器引擎 API，处理选项
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2f907c41e2be3b95442333c63a1bf9bdfc764246
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 5e5402707eefc939e8398cfdf581f46aea09d404
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89214148"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838175"
 ---
 # <a name="live-user-mode-targets"></a>实时用户模式目标
 
@@ -23,9 +22,9 @@ ms.locfileid: "89214148"
 
 用于创建和附加到本主题中列出的进程的方法可用于本地计算机和运行进程服务器的远程计算机。
 
-用户模式进程可以使用 [**Create process**](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugclient5-createprocess) 或 [**CreateProcess2**](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugclient5-createprocess2)创建，后者执行给定的命令来创建进程。 方法 [**AttachProcess**](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugclient5-attachprocess) 可用于将 [调试器引擎](introduction.md#debugger-engine) 附加到现有的用户模式进程。 [**CreateProcessAndAttach**](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugclient5-createprocessandattach) 和 [**CreateProcessAndAttach2**](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugclient5-createprocessandattach2) 创建新的用户模式进程，并将其附加到同一台计算机上或其他用户模式进程。 [**请求**](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugadvanced3-request)操作[**调试 \_ 请求 \_ 获取 \_ 其他 \_ 创建 \_ 选项**](debug-request-get-additional-create-options.md)、[**调试 \_ 请求 \_ 设置 \_ 附加 \_ 创建 \_ 选项**](debug-request-set-additional-create-options.md)和[**调试 \_ 请求 \_ 集 \_ 本地 \_ 隐式 \_ 命令 \_ 行**](debug-request-set-local-implicit-command-line.md)可用于设置某些用于创建进程的默认选项。
+用户模式进程可以使用 [**Create process**](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugclient5-createprocess) 或 [**CreateProcess2**](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugclient5-createprocess2)创建，后者执行给定的命令来创建进程。 方法 [**AttachProcess**](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugclient5-attachprocess) 可用于将 [调试器引擎](introduction.md#debugger-engine) 附加到现有的用户模式进程。 [**CreateProcessAndAttach**](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugclient5-createprocessandattach) 和 [**CreateProcessAndAttach2**](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugclient5-createprocessandattach2) 创建新的用户模式进程，并将其附加到同一台计算机上或其他用户模式进程。 [**请求**](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugadvanced3-request)操作 [**调试 \_ 请求 \_ 获取 \_ 其他 \_ 创建 \_ 选项**](debug-request-get-additional-create-options.md)、[**调试 \_ 请求 \_ 设置 \_ 附加 \_ 创建 \_ 选项**](debug-request-set-additional-create-options.md)和 [**调试 \_ 请求 \_ 集 \_ 本地 \_ 隐式 \_ 命令 \_ 行**](debug-request-set-local-implicit-command-line.md)可用于设置某些用于创建进程的默认选项。
 
-**注意**   在调用[**WaitForEvent**](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugcontrol3-waitforevent)方法之前，引擎不会完全附加到进程。 只有在进程生成事件（例如进程创建事件）后，它才会在调试器会话中可用。 有关更多详细信息，请参阅 [调试会话和执行模型](debugging-session-and-execution-model.md) 。
+**注意**   在调用 [**WaitForEvent**](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugcontrol3-waitforevent) 方法之前，引擎不会完全附加到进程。 只有在进程生成事件（例如进程创建事件）后，它才会在调试器会话中可用。 有关更多详细信息，请参阅 [调试会话和执行模型](debugging-session-and-execution-model.md) 。
 
  
 
@@ -41,7 +40,7 @@ ms.locfileid: "89214148"
 
 引擎可以使用三种不同的方法从进程断开连接。
 
-1.  *分离*。 恢复进程中的所有线程，以便它将继续运行，不再进行调试。 [**DetachCurrentProcess**](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugclient5-detachcurrentprocess) 将从当前进程分离引擎， [**DetachProcesses**](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugclient5-detachprocesses) 将从所有进程分离引擎。 并非所有目标都支持分离。 可以使用 " [**请求**](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugadvanced3-request) 操作" [**调试 \_ 请求 \_ 目标 \_ \_ **](./debug-request-target-can-detach.md) 来检查目标是否支持分离。
+1.  *分离*。 恢复进程中的所有线程，以便它将继续运行，不再进行调试。 [**DetachCurrentProcess**](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugclient5-detachcurrentprocess) 将从当前进程分离引擎， [**DetachProcesses**](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugclient5-detachprocesses) 将从所有进程分离引擎。 并非所有目标都支持分离。 可以使用 " [**请求**](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugadvanced3-request) 操作" [**调试 \_ 请求 \_ 目标 \_ \_**](./debug-request-target-can-detach.md) 来检查目标是否支持分离。
 
 2.  *终止*。 尝试终止进程。 [**TerminateCurrentProcess**](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugclient5-terminatecurrentprocess) 将终止当前进程，并且 [**TerminateProcesses**](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugclient5-terminateprocesses) 将终止调试器会话中的所有进程。
 

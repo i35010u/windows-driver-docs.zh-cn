@@ -1,7 +1,6 @@
 ---
 title: Bug 检查 0xBB NETWORK_BOOT_INITIALIZATION_FAILED
-description: NETWORK_BOOT_INITIALIZATION_FAILED bug 检查具有 0x000000BB 值。 这表示 Windows 无法关闭网络已成功启动。
-ms.assetid: 1cc86ca0-437d-4a26-90ed-76f122c522ef
+description: NETWORK_BOOT_INITIALIZATION_FAILED bug 检查的值为0x000000BB。 这表明 Windows 未能成功地从网络启动。
 keywords:
 - Bug 检查 0xBB NETWORK_BOOT_INITIALIZATION_FAILED
 - NETWORK_BOOT_INITIALIZATION_FAILED
@@ -13,23 +12,23 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 47151abd52ddfa22da5cbe5e332d0cacd633e0a5
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: 6c6c19a117b1584a35fc283501c0575e88e395e0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67519001"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838239"
 ---
-# <a name="bug-check-0xbb-networkbootinitializationfailed"></a>Bug 检查 0xBB：网络\_引导\_初始化\_失败
+# <a name="bug-check-0xbb-network_boot_initialization_failed"></a>Bug 检查0xBB：网络 \_ 启动 \_ 初始化 \_ 失败
 
 
-网络\_引导\_初始化\_失败错误检查的值为 0x000000BB。 这表示 Windows 无法关闭网络已成功启动。
+网络 \_ 启动 \_ 初始化 \_ 失败 bug 检查的值为0x000000BB。 这表明 Windows 未能成功地从网络启动。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题面向程序员。 如果您是在使用计算机时收到蓝屏错误代码的客户，请参阅[蓝屏错误疑难解答](https://www.windows.com/stopcode)。
 
 
-## <a name="networkbootinitializationfailed-parameters"></a>网络\_引导\_初始化\_失败参数
+## <a name="network_boot_initialization_failed-parameters"></a>网络 \_ 启动 \_ 初始化 \_ 失败参数
 
 
 <table>
@@ -46,22 +45,22 @@ ms.locfileid: "67519001"
 <tbody>
 <tr class="odd">
 <td align="left"><p>1</p></td>
-<td align="left"><p>失败的网络初始化的一部分。 可能的值为：</p>
-<p><strong>1:</strong>更新注册表时发生故障。</p>
-<p><strong>2:</strong>启动网络堆栈时失败。 Windows 将 Ioctl 发送到重定向程序和数据报接收方，然后等待重定向程序准备就绪。 如果还没有准备好在一段时间内，将发出此错误消息。</p>
-<p><strong>3:</strong>将 DHCP IOCTL 发送到 TCP 时失败。 这是 Windows 如何通知其 IP 地址的传输。</p></td>
+<td align="left"><p>失败的网络初始化部分。 可能的值为：</p>
+<p><strong>1：</strong> 更新注册表时失败。</p>
+<p><strong>2：</strong> 启动网络堆栈时失败。 Windows 将 IOCTLs 发送到重定向程序和数据报接收器，然后等待重定向程序准备就绪。 如果在特定时间段内未准备就绪，则会发出此错误。</p>
+<p><strong>3：</strong> 将 DHCP IOCTL 发送到 TCP 时失败。 这是 Windows 通知其 IP 地址的传输方式。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>2</p></td>
-<td align="left"><p>故障状态</p></td>
+<td align="left"><p>失败状态</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>3</p></td>
-<td align="left"><p>保留</p></td>
+<td align="left"><p>预留</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>4</p></td>
-<td align="left"><p>保留</p></td>
+<td align="left"><p>预留</p></td>
 </tr>
 </tbody>
 </table>
@@ -71,7 +70,7 @@ ms.locfileid: "67519001"
 <a name="cause"></a>原因
 -----
 
-Windows 启动关闭网络，并在 I/O 初始化过程中一项重要功能失败时，会出现此错误。
+当 Windows 在网络上启动时，此错误将导致，而关键功能在 i/o 初始化过程中失败。
 
  
 

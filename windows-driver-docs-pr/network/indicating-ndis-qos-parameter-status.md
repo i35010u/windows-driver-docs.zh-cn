@@ -1,30 +1,29 @@
 ---
 title: 指示 NDIS QoS 参数状态
 description: 指示 NDIS QoS 参数状态
-ms.assetid: 7E896BC3-839F-4119-BF79-A7BB4CA61CDA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 78dec8376f7df295cfee5dac65ed75e13d30de87
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: cacab0a0f4d0094ed7c34afe11a28901909b1c3c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327775"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837202"
 ---
 # <a name="indicating-ndis-qos-parameter-status"></a>指示 NDIS QoS 参数状态
 
 
-IEEE 802.1 数据中心桥接 (DCB) 接口支持 NDIS 服务质量 (QoS) 的微型端口驱动程序必须发出 NDIS 状态指示，只要发生以下事件之一：
+对于 IEEE 802.1 数据中心桥接 (DCB) 接口，支持 NDIS 服务 (QoS) 的微型端口驱动程序必须在发生以下任一事件时发出 NDIS 状态指示：
 
--   驱动程序的操作的 NDIS QoS 参数或者解决第一次或更高版本更改。
+-   驱动程序的操作 NDIS QoS 参数是首次解决的，或者以后更改。
 
-    有关如何颁发 NDIS 状态指示该类型的详细信息，请参阅[对操作的 NDIS QoS 参数，该值指示更改](indicating-changes-to-the-operational-ndis-qos-parameters.md)。
+    有关如何发出此类型的 NDIS 状态指示的详细信息，请参阅 [指示对操作 Ndis QoS 参数的更改](indicating-changes-to-the-operational-ndis-qos-parameters.md)。
 
--   驱动程序的远程 NDIS QoS 参数或者从接收到数据链接对等方第一次或更高版本更改。
+-   驱动程序的远程 NDIS QoS 参数是第一次从数据链路对等方接收的，或者以后更改。
 
-    有关如何颁发 NDIS 状态指示该类型的详细信息，请参阅[对远程 NDIS QoS 参数，该值指示更改](indicating-changes-to-the-remote-ndis-qos-parameters.md)。
+    有关如何发出此类型的 NDIS 状态指示的详细信息，请参阅 [指示对远程 NDIS QoS 参数所做的更改](indicating-changes-to-the-remote-ndis-qos-parameters.md)。
 
-有关操作和远程 NDIS QoS 参数的详细信息，请参阅[NDIS QoS 参数的概述](overview-of-ndis-qos-parameters.md)。
+有关操作和远程 NDIS QoS 参数的详细信息，请参阅 " [Ndis Qos 参数概述](overview-of-ndis-qos-parameters.md)"。
 
  
 

@@ -1,7 +1,6 @@
 ---
 title: 使用 TCP/IP 卸载管理员界面
 description: 使用 TCP/IP 卸载管理员界面
-ms.assetid: 2418e577-17cd-4db7-adb0-44b705e29d38
 keywords:
 - TCP/IP 卸载 WDK 网络，管理员界面
 - 卸载 WDK TCP/IP 传输，管理员界面
@@ -9,12 +8,12 @@ keywords:
 - 连接卸载 WDK TCP/IP 传输，管理员界面
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0ec071f0d0c3fa9c0ac4991d47a6f68c48934d87
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 5670b172519fd7992e6c9ef0b98c66a5f59cba76
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89211963"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837646"
 ---
 # <a name="using-the-tcpip-offload-administrator-interface"></a>使用 TCP/IP 卸载管理员界面
 
@@ -34,7 +33,7 @@ NDIS 在卸载标准化关键字的注册表中保留请求的设置。 当 NDIS
 
 例如，如果硬件功能改变 (例如，因为 MUX 中间驱动程序切换为差异基础微型端口适配器) ，所以，中间驱动程序必须使用 [**ndis \_ 状态 \_ 任务 " \_ 卸载 \_ 硬件 \_ 功能**](./ndis-status-task-offload-hardware-capabilities.md) " 或 " [**ndis \_ 状态 \_ TCP \_ 连接 \_ 卸载 \_ 硬件 \_ 功能**](./ndis-status-tcp-connection-offload-hardware-capabilities.md) " 状态指示来报告卸载硬件功能中的任何更改。
 
-NDIS 和过量驱动程序可以使用 [OID \_ 卸载 \_ 封装](./oid-offload-encapsulation.md) OID 来设置或查询基础微型端口适配器的任务卸载封装设置。 [**Ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的**InformationBuffer**成员包含[**ndis \_ 卸载 \_ 封装**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_offload_encapsulation)结构。
+NDIS 和过量驱动程序可以使用 [OID \_ 卸载 \_ 封装](./oid-offload-encapsulation.md) OID 来设置或查询基础微型端口适配器的任务卸载封装设置。 [**Ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的 **InformationBuffer** 成员包含 [**ndis \_ 卸载 \_ 封装**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_offload_encapsulation)结构。
 
  
 

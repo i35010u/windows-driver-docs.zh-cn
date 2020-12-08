@@ -1,18 +1,17 @@
 ---
 title: 文件源文件路径
 description: 文件源文件路径
-ms.assetid: 2fa7cbc1-a1e6-411b-95d2-18fd183ee117
 keywords:
 - 文件源文件路径
 - 源文件和路径，文件源文件路径
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fb8e079b111aecd4ebd3d99a27a8a90b2785e194
-ms.sourcegitcommit: f610410e1500f0b0a4ca008b52679688ab51033d
+ms.openlocfilehash: 8ab09a72d4b673bc8e2ff7b4788885b61b291729
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/15/2020
-ms.locfileid: "88252865"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838209"
 ---
 # <a name="file--source-file-path"></a>文件 | 源文件路径
 

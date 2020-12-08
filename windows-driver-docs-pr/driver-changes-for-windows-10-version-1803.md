@@ -1,15 +1,14 @@
 ---
 title: Windows 10 版本 1803 的驱动程序开发变更
 description: 了解 Windows 10 中用于驱动程序开发的新功能，如对蓝牙 Swift 对的支持。
-ms.assetid: 73ba8c40-d605-4dba-a965-0a87d80b9126
 ms.date: 04/28/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 93958b7f91834c2bb23a03d9d6e1f5ce4c3fe4cc
-ms.sourcegitcommit: 372464be981a39781c71049126f36891cb5d0cad
+ms.openlocfilehash: 7de21f288b44d4ceafc431ca6201f6e25e8fe674
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91646125"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96836813"
 ---
 # <a name="whats-new-in-windows-10-version-1803"></a>Windows 10 版本 1803 中的新增功能
 
@@ -61,7 +60,7 @@ Windows 10 版本 1803 支持蓝牙版本 5.0。 有关配置文件支持的信�
 
 * **D3D11 和 D3D12 视频解码直方图** - 借助照度直方图，媒体团队可以利用直方图的固定功能硬件来改善 HDR/EDR 方案的音调映射质量。 当这些方案已经饱和使用了 GPU 或者想要启用并行处理时，固定功能硬件非常有用。 此功能是可选的。仅当固定功能硬件可用时，才应该实现此功能。 不应配合 3D 或计算方案实现此功能。
 
-* **D3D12 视频解码**现在支持解码层 II，指示驱动程序支持纹理阵列，可在分辨率发生更改时，让应用程序分摊分配成本并减少峰值内存使用量。 
+* **D3D12 视频解码** 现在支持解码层 II，指示驱动程序支持纹理阵列，可在分辨率发生更改时，让应用程序分摊分配成本并减少峰值内存使用量。 
 
 * **平铺资源层和 LDA 原子性** - 提供新的跨节点共享层，以添加对跨链接适配器 (LDA) 节点工作的原子着色器指令的支持。 这提高了 ISV 实现多种 GPU 渲染技术（例如分割帧渲染 (SFR)）的能力，并且与 D3D11 相比，将功能提高到了新的层次。
 

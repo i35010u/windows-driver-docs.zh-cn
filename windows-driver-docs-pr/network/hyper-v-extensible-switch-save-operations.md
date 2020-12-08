@@ -1,15 +1,14 @@
 ---
 title: Hyper-V 可扩展交换机保存操作
 description: Hyper-V 可扩展交换机保存操作
-ms.assetid: 7148B094-2551-4035-A6BE-141DD01BEA14
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ef7cd30c35a5bad8ebbb6993bc5c6e5d6306978a
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: b1a8117bb76b45e6e93701a71ab0442fe77719fc
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89208683"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96836775"
 ---
 # <a name="hyper-v-extensible-switch-save-operations"></a>Hyper-V 可扩展交换机保存操作
 
@@ -39,7 +38,7 @@ ms.locfileid: "89208683"
 
 在保存运行时数据的操作期间，可扩展交换机的协议边缘会发出 oid [ \_ 交换机 \_ NIC \_ save](./oid-switch-nic-save.md) 和 oid 交换机 Nic 的 oid 请求 \_ \_ \_ \_ 。 hyper-v 子分区的网络接口已连接完成。 如果多个 Hyper-v 子分区停止或实时迁移，则协议边缘会发出不同的 OID \_ 交换机 \_ nic \_ save 和 OID \_ 交换机 nic， \_ \_ \_ 为每个网络接口连接保存完整请求。
 
-**注意**   可扩展交换机的协议边缘不会为同一 NIC 的运行时数据交错保存操作。 只有在同一 NIC 上完成了上一个保存操作后，协议边缘才会为 NIC 启动运行时数据保存操作。 但是，如果另一个 NIC 正在进行另一个保存操作，协议边缘可能会为 NIC 启动保存操作。 因此，我们强烈建议扩展以非交错方式执行保存操作。 例如，扩展不应假定新的 save 操作无法在另一个 NIC 上启动，然后才能在其他 NIC 上完成正在进行的保存操作。
+**注意**  可扩展交换机的协议边缘不会为同一 NIC 的运行时数据交错保存操作。 只有在同一 NIC 上完成了上一个保存操作后，协议边缘才会为 NIC 启动运行时数据保存操作。 但是，如果另一个 NIC 正在进行另一个保存操作，协议边缘可能会为 NIC 启动保存操作。 因此，我们强烈建议扩展以非交错方式执行保存操作。 例如，扩展不应假定新的 save 操作无法在另一个 NIC 上启动，然后才能在其他 NIC 上完成正在进行的保存操作。
 
  
 

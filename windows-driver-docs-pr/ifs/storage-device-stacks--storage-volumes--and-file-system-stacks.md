@@ -1,7 +1,6 @@
 ---
 title: 存储设备堆栈、存储卷和文件系统堆栈
 description: 存储设备堆栈、存储卷和文件系统堆栈
-ms.assetid: 5240ce9b-acfa-4e9c-9962-bc776878827c
 keywords:
 - 存储设备 WDK 文件系统
 - 堆栈 WDK 文件系统
@@ -9,12 +8,12 @@ keywords:
 - 卷 WDK 文件系统
 ms.date: 10/16/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: efa44998875477c98ddd6e51f9cc761b08f63669
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 772aa80262b5855268103a963890558233e75cf9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89065928"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838035"
 ---
 # <a name="storage-device-stacks-storage-volumes-and-file-system-stacks"></a>存储设备堆栈、存储卷和文件系统堆栈
 
@@ -25,7 +24,7 @@ ms.locfileid: "89065928"
 
 ## <a name="storage-device-stacks"></a>存储设备堆栈
 
-大多数存储驱动程序都是 pnp 设备驱动程序，由 PnP 管理器加载并管理。 存储设备表示为计算机上的每个物理或逻辑设备包含一个设备节点或*devnode*的 PnP*设备树*。 请务必注意，文件系统和文件系统筛选器驱动程序不是 PnP 设备驱动程序;因此 PnP [设备树](../kernel/device-tree.md) 不包含它们的 devnodes。
+大多数存储驱动程序都是 pnp 设备驱动程序，由 PnP 管理器加载并管理。 存储设备表示为计算机上的每个物理或逻辑设备包含一个设备节点或 *devnode* 的 PnP *设备树*。 请务必注意，文件系统和文件系统筛选器驱动程序不是 PnP 设备驱动程序;因此 PnP [设备树](../kernel/device-tree.md) 不包含它们的 devnodes。
 
 特定存储设备的 devnode 包含设备的 *存储设备堆栈* ;这是表示设备的存储设备驱动程序的附加设备对象的链。 由于存储设备（如磁盘）可能包含一个或多个逻辑卷 (分区或动态卷) ，存储设备堆栈本身通常与堆栈相比，其外观更像是一个树。 此树的根是一个功能设备对象， (用于存储适配器或与存储堆栈集成的其他设备堆栈的 FDO) 。 此树的叶是逻辑卷（也称为 *存储卷*） (PDOs) 的物理设备对象，可在其中装入文件系统卷。
 
@@ -37,15 +36,15 @@ ms.locfileid: "89065928"
 
 ## <a name="storage-volumes"></a>存储卷
 
-*卷*是格式化为存储目录和文件的存储设备，例如固定磁盘、软盘或 cd-rom。 大型卷可以分为多个 *逻辑卷*（也称为 *分区*）。 每个逻辑卷的格式由特定的基于媒体的文件系统（例如 NTFS、FAT 或 CDFS）使用。
+*卷* 是格式化为存储目录和文件的存储设备，例如固定磁盘、软盘或 cd-rom。 大型卷可以分为多个 *逻辑卷*（也称为 *分区*）。 每个逻辑卷的格式由特定的基于媒体的文件系统（例如 NTFS、FAT 或 CDFS）使用。
 
-*存储卷*（或*存储设备对象*）是设备对象−，通常是 (PDO) −的物理设备对象，表示系统的逻辑卷。 存储设备对象驻留在存储设备堆栈中，但它不一定是堆栈中最顶层的设备对象。
+*存储卷*（或 *存储设备对象*）是设备对象−，通常是 (PDO) −的物理设备对象，表示系统的逻辑卷。 存储设备对象驻留在存储设备堆栈中，但它不一定是堆栈中最顶层的设备对象。
 
 在存储卷上装载文件系统时，它会创建文件系统卷设备对象 (VDO) ，以将卷呈现给文件系统。 文件系统 VDO 通过名为 *volume 参数块* (VPB) 的共享对象装入存储设备对象。
 
 ### <a name="mount-manager"></a>装载管理器
 
-*装载管理器*是 i/o 系统的一部分，负责管理存储卷信息，例如卷名称、驱动器号和卷装入点。 向系统中添加新的存储卷时，将通过以下任一方式向装载管理器通知其到达：
+*装载管理器* 是 i/o 系统的一部分，负责管理存储卷信息，例如卷名称、驱动器号和卷装入点。 向系统中添加新的存储卷时，将通过以下任一方式向装载管理器通知其到达：
 
 - 创建存储卷的类驱动程序调用 [**IoRegisterDeviceInterface**](/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioregisterdeviceinterface) 来注册 MOUNTDEV_MOUNTED_DEVICE_GUID 接口类中的新接口。 发生这种情况时，即插即用设备接口通知机制会向装入管理器发出卷在系统中的到达的警报。
 
@@ -65,7 +64,7 @@ ms.locfileid: "89065928"
 
 ## <a name="file-system-stacks"></a>文件系统堆栈
 
-文件系统驱动程序创建两种不同类型的设备对象：控制设备对象 (CDO) 和卷设备对象 (VDO) 。 *文件系统堆栈*包含其中一个设备对象，以及附加到它的文件系统筛选器驱动程序的任何筛选器设备对象。 文件系统的设备对象始终构成堆栈的底部。
+文件系统驱动程序创建两种不同类型的设备对象：控制设备对象 (CDO) 和卷设备对象 (VDO) 。 *文件系统堆栈* 包含其中一个设备对象，以及附加到它的文件系统筛选器驱动程序的任何筛选器设备对象。 文件系统的设备对象始终构成堆栈的底部。
 
 ### <a name="file-system-cdos"></a>文件系统 CDOs
 

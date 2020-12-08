@@ -1,7 +1,6 @@
 ---
 title: 将虚拟地址映射到内存段
 description: 将虚拟地址映射到内存段
-ms.assetid: 3ff64e33-eceb-4603-a3d9-11cb2f7dac85
 keywords:
 - 内存段 WDK 显示，映射虚拟地址
 - 映射虚拟地址
@@ -13,12 +12,12 @@ keywords:
 - 内存空间段 WDK 显示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4def34c4adadf44ade511e4e478976abac718bfe
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: f35547362cd729b0d11649c8eea8183239fb3abb
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89064750"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96836825"
 ---
 # <a name="mapping-virtual-addresses-to-a-memory-segment"></a>将虚拟地址映射到内存段
 
@@ -26,7 +25,7 @@ ms.locfileid: "89064750"
 ## <span id="ddk_mapping_virtual_addresses_to_a_memory_segment_gg"></span><span id="DDK_MAPPING_VIRTUAL_ADDRESSES_TO_A_MEMORY_SEGMENT_GG"></span>
 
 
-显示微型端口驱动程序可以指定它定义的每个内存空间或口径区段，无论 CPU 虚拟地址是否可以通过设置段的[**DXGK \_ SEGMENTDESCRIPTOR**](/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgk_segmentdescriptor)结构的**Flags**成员中的**CpuVisible**位字段标志，直接映射到位于该段中的分配。
+显示微型端口驱动程序可以指定它定义的每个内存空间或口径区段，无论 CPU 虚拟地址是否可以通过设置段的 [**DXGK \_ SEGMENTDESCRIPTOR**](/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgk_segmentdescriptor)结构的 **Flags** 成员中的 **CpuVisible** 位字段标志，直接映射到位于该段中的分配。
 
 若要将 CPU 虚拟地址映射到段，段应具有通过 PCI 口径的线性访问。 换句话说，段内任何分配的偏移量应与 PCI 口径中的偏移量相同。 因此，视频内存管理器可以根据分配在给定段内的偏移量来计算任何分配的与总线相关的物理地址。
 
@@ -46,15 +45,15 @@ ms.locfileid: "89064750"
 
 对于口径区，分配的基础位已经在系统内存中，因此，不需要在逐出过程中传输 (unswizzling 的数据) 。 因此，如果可由应用程序直接访问，则位于口径区内的 CPU 可访问的分配不能 swizzled。
 
-如果某个图面可以由应用程序通过 CPU 直接访问，但会在 swizzled 段中被视为，则显示驱动程序应将曲面实现为两个不同的分配。 当用户模式显示驱动程序创建这样的图面时，它可以调用[**pfnAllocateCb**](/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_allocatecb)函数，并可以将[**D3DDDICB \_ 分配**](/windows-hardware/drivers/ddi/d3dumddi/ns-d3dumddi-_d3dddicb_allocate)结构的**NumAllocations**成员设置为2，并将 D3DDDI [** \_ ALLOCATIONINFO**](/windows-hardware/drivers/ddi/d3dukmdt/ns-d3dukmdt-_d3dddi_allocationinfo) **的 pAllocationInfo 数组的** **pPrivateDriverData**成员设置为 \_ 指向有关分配 (例如，其 D3DDDICB 和 swizzled 格式) 。 GPU 将使用的分配包含 swizzled 格式的位，并且应用程序将访问的分配包含 unswizzled 格式的位。 视频内存管理器调用显示微型端口驱动程序的 [**DxgkDdiCreateAllocation**](/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_createallocation) 函数来创建分配。 显示微型端口驱动程序将从用户模式显示驱动程序传递的每个分配) 解释[**DXGK \_ ALLOCATIONINFO**](/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgk_allocationinfo)结构的**pPrivateDriverData**成员中的专用数据 (。 视频内存管理器不识别分配的格式;它只为分配分配特定大小和对齐的内存块。 调用用户模式显示驱动程序的 *锁* 函数以锁定图面以进行处理会导致以下操作：
+如果某个图面可以由应用程序通过 CPU 直接访问，但会在 swizzled 段中被视为，则显示驱动程序应将曲面实现为两个不同的分配。 当用户模式显示驱动程序创建这样的图面时，它可以调用 [**pfnAllocateCb**](/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_allocatecb)函数，并可以将 [**D3DDDICB \_ 分配**](/windows-hardware/drivers/ddi/d3dumddi/ns-d3dumddi-_d3dddicb_allocate)结构的 **NumAllocations** 成员设置为2，并将 D3DDDI [**\_ ALLOCATIONINFO**](/windows-hardware/drivers/ddi/d3dukmdt/ns-d3dukmdt-_d3dddi_allocationinfo) **的 pAllocationInfo 数组的** **pPrivateDriverData** 成员设置为 \_ 指向有关分配 (例如，其 D3DDDICB 和 swizzled 格式) 。 GPU 将使用的分配包含 swizzled 格式的位，并且应用程序将访问的分配包含 unswizzled 格式的位。 视频内存管理器调用显示微型端口驱动程序的 [**DxgkDdiCreateAllocation**](/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_createallocation) 函数来创建分配。 显示微型端口驱动程序将从用户模式显示驱动程序传递的每个分配) 解释 [**DXGK \_ ALLOCATIONINFO**](/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgk_allocationinfo)结构的 **pPrivateDriverData** 成员中的专用数据 (。 视频内存管理器不识别分配的格式;它只为分配分配特定大小和对齐的内存块。 调用用户模式显示驱动程序的 *锁* 函数以锁定图面以进行处理会导致以下操作：
 
 1.  用户模式显示驱动程序调用 [**pfnRenderCb**](/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_rendercb) 函数，将命令缓冲区中的 unswizzle 操作提交到 Direct3D 运行时，并将其提交到显示微型端口驱动程序。
 
 2.  用户模式显示驱动程序调用 [**pfnLockCb**](/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_lockcb) 函数来锁定 unswizzled 分配。 请注意，用户模式显示驱动程序不得 \_ 在 D3DDDICB 锁结构的 **Flags** 成员中设置 D3DDDILOCKCB DONOTWAIT 标志 \_ 。
 
-3.  **PfnLockCb**函数将等待，直到) 执行分配之间的传输 (。
+3.  **PfnLockCb** 函数将等待，直到) 执行分配之间的传输 (。
 
-4.  **PfnLockCb**函数请求显示微型端口驱动程序为 unswizzled 分配获取虚拟地址，并将虚拟地址返回到[**D3DDDICB \_ 锁定**](/windows-hardware/drivers/ddi/d3dumddi/ns-d3dumddi-_d3dddicb_lock)的**pData**成员中的用户模式显示驱动程序。
+4.  **PfnLockCb** 函数请求显示微型端口驱动程序为 unswizzled 分配获取虚拟地址，并将虚拟地址返回到 [**D3DDDICB \_ 锁定**](/windows-hardware/drivers/ddi/d3dumddi/ns-d3dumddi-_d3dddicb_lock)的 **pData** 成员中的用户模式显示驱动程序。
 
 5.  用户模式显示驱动程序将 unswizzled 分配的虚拟地址返回到 D3DDDIARG 锁定的 **pSurfData** 成员中的应用程序 \_ 。
 

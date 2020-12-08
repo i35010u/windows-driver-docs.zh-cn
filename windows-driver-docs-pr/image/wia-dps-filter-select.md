@@ -1,9 +1,8 @@
 ---
-title: WIA\_DPS\_FILTER\_SELECT
-description: WIA\_DPS\_筛选器\_选择属性保留供将来使用由 Microsoft 和未实现这一次。
-ms.assetid: 0c29c64e-c2f0-4647-b78e-d7fe409db121
+title: WIA \_ DPS \_ 筛选器 \_ 选择
+description: WIA \_ DPS \_ 筛选器 \_ SELECT 属性由 Microsoft 保留，以供将来使用，此时不会实现。
 keywords:
-- WIA_DPS_FILTER_SELECT 成像设备
+- WIA_DPS_FILTER_SELECT 图像设备
 topic_type:
 - apiref
 api_name:
@@ -14,24 +13,24 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 407644a7690f1c405c3595c6fc2b3f3b287b957d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 233b21092d958c09983f3244a6f7d4d0ba038d92
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63352877"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96836985"
 ---
-# <a name="wiadpsfilterselect"></a>WIA\_DPS\_FILTER\_SELECT
+# <a name="wia_dps_filter_select"></a>WIA \_ DPS \_ 筛选器 \_ 选择
 
 
-WIA\_DPS\_筛选器\_选择属性保留供将来使用由 Microsoft 和未实现这一次。
+WIA \_ DPS \_ 筛选器 \_ SELECT 属性由 Microsoft 保留，以供将来使用，此时不会实现。
 
 ## <span id="ddk_wia_dps_filter_select_si"></span><span id="DDK_WIA_DPS_FILTER_SELECT_SI"></span>
 
 
-属性类型：VT\_I4
+属性类型： VT \_ I4
 
-有效值：WIA\_PROP\_NONE
+有效值： WIA " \_ \_ 无"
 
 访问权限：只读
 
@@ -45,8 +44,8 @@ WIA\_DPS\_筛选器\_选择属性保留供将来使用由 Microsoft 和未实现
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Wiadef.h （包括 Wiadef.h）</td>
+<td><p>标头</p></td>
+<td>Wiadef (包含 Wiadef) </td>
 </tr>
 </tbody>
 </table>

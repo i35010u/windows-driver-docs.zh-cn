@@ -1,7 +1,6 @@
 ---
 title: 在 IEEE 1394 总线上接收异步 I/O 请求数据包
 description: 计算机本身是 IEEE 1394 总线上的一个节点，因此可以接收异步 i/o 请求。
-ms.assetid: 7b8eaf40-7fdc-4c25-86a7-8377d2d51877
 keywords:
 - 接收异步 i/o 请求
 - 分配地址范围
@@ -9,12 +8,12 @@ keywords:
 - 后备存储 WDK IEEE 1394 总线
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 69ceeb03868f3ffa6857c5a007c4b01c0dd5a858
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 9d783905561708b0b47ea45bc6e2b35df98fc5ca
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89383031"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838611"
 ---
 # <a name="receiving-asynchronous-io-request-packets-on-the-ieee-1394-bus"></a>在 IEEE 1394 总线上接收异步 I/O 请求数据包
 
@@ -22,7 +21,7 @@ ms.locfileid: "89383031"
 
 当驱动程序分配地址范围时，它可以通过 \_ \_ \_ \_ \_ \_ \_ \_ \_ 在请求的 IRB 的 **fulAccessType** 成员中指定一个或多个访问标志类型 "读取"、"访问标志类型写入" 或 "访问标志类型锁定" 来指定设备可以发送到分配的地址的事务类型。 不是指定类型之一的请求将自动失败。
 
-两个不同的驱动程序可以分配相同的地址范围。 默认情况下，总线驱动程序会自动 demultiplexes 请求，驱动程序只会看到来自驱动程序设备的分配的地址上的请求。 驱动程序可以通过 \_ \_ \_ 在 **fulAccessType**中指定访问标志类型广播标志，请求它们接收所有由总线上的节点发送到地址的数据包。
+两个不同的驱动程序可以分配相同的地址范围。 默认情况下，总线驱动程序会自动 demultiplexes 请求，驱动程序只会看到来自驱动程序设备的分配的地址上的请求。 驱动程序可以通过 \_ \_ \_ 在 **fulAccessType** 中指定访问标志类型广播标志，请求它们接收所有由总线上的节点发送到地址的数据包。
 
 * [分配的地址](#allocated-addresses)
 * [分配和后备存储](#allocation-and-backing-store)
@@ -31,17 +30,17 @@ ms.locfileid: "89383031"
 
 ## <a name="allocated-addresses"></a>分配的地址
 
-总线驱动程序支持两种不同的策略来分配地址范围。 如果驱动程序需要从硬编码地址开始的特定范围的地址，则它可以在请求的 IRB 的 Required1394Offset 成员中指定硬编码地址，并指定**AllocateAddressRange**中地址范围的**长度。** 总线驱动程序将允许两个不同的驱动程序分配相同的地址两次。 如果同一驱动程序尝试分配的地址范围从同一地址开始两次，则总线驱动程序将返回状态代码为 "成功" 的请求 \_ ，但会忽略请求本身。
+总线驱动程序支持两种不同的策略来分配地址范围。 如果驱动程序需要从硬编码地址开始的特定范围的地址，则它可以在请求的 IRB 的 Required1394Offset 成员中指定硬编码地址，并指定 **AllocateAddressRange** 中地址范围的 **长度。** 总线驱动程序将允许两个不同的驱动程序分配相同的地址两次。 如果同一驱动程序尝试分配的地址范围从同一地址开始两次，则总线驱动程序将返回状态代码为 "成功" 的请求 \_ ，但会忽略请求本身。
 
 否则，驱动程序可以允许总线驱动程序选择分配的地址。 总线驱动程序跟踪驱动程序分配的所有地址范围，并将仅返回以前未分配的地址。
 
 总线驱动程序不连续分配地址。 地址根据作为后备存储提供的 MDL 进行分段。 MDL 中的每个段对应于地址范围中的一个段。 需要将分配的地址配置为连续的驱动程序可以从非分页池分配连续内存。
 
-如果驱动程序需要保证每个段都小于特定大小，则可以在 **AllocateAddressRange. MaxSegmentSize**中指定该大小。 无需将最大段大小设置为 **AllocateAddressRange. MaxSegmentSize** 的驱动程序设置为零。
+如果驱动程序需要保证每个段都小于特定大小，则可以在 **AllocateAddressRange. MaxSegmentSize** 中指定该大小。 无需将最大段大小设置为 **AllocateAddressRange. MaxSegmentSize** 的驱动程序设置为零。
 
-总线驱动程序返回 IRB 的 **AllocateAddressRange. p1394AddressRange** 成员指向的内存位置中的地址范围。 设备驱动程序必须分配一个足够大的数组，以便保存每个地址 \_ 范围结构，甚至在最差的案例分段方案中也是如此。 如果驱动程序未指定段大小，或者其最大段大小超过页面 \_ 大小，则驱动程序可以通过使用用于 \_ \_ \_ \_ \_ 后备存储的缓冲区上的地址和大小来跨页面宏来确定最坏的情况。 如果最大段大小小于页面 \_ 大小，则驱动程序必须分配大小为**AllocateAddressRange** / **u.AllocateAddressRange.MaxSegmentSize** + 2 的数组。
+总线驱动程序返回 IRB 的 **AllocateAddressRange. p1394AddressRange** 成员指向的内存位置中的地址范围。 设备驱动程序必须分配一个足够大的数组，以便保存每个地址 \_ 范围结构，甚至在最差的案例分段方案中也是如此。 如果驱动程序未指定段大小，或者其最大段大小超过页面 \_ 大小，则驱动程序可以通过使用用于 \_ \_ \_ \_ \_ 后备存储的缓冲区上的地址和大小来跨页面宏来确定最坏的情况。 如果最大段大小小于页面 \_ 大小，则驱动程序必须分配大小为 **AllocateAddressRange** / **u.AllocateAddressRange.MaxSegmentSize** + 2 的数组。
 
-当总线驱动程序返回分配的地址时，它将记录在 **AllocateAddressRange. hAddressRange**中分配的地址范围的实际数量。
+当总线驱动程序返回分配的地址时，它将记录在 **AllocateAddressRange. hAddressRange** 中分配的地址范围的实际数量。
 
 ## <a name="allocation-and-backing-store"></a>分配和后备存储
 
@@ -51,7 +50,7 @@ ms.locfileid: "89383031"
 
     当驱动程序分配地址时，它可以在 **AllocateAddressRange** 中提供 mdl 来充当后备存储。 总线驱动程序将 MDL 映射到它为驱动程序分配的地址范围，并通过读取或写入 MDL 来处理所有请求。 如果主机控制器支持此方法，则该事务将由主机控制器的 DMA 硬件完全处理。 如果可能，设备驱动程序应该允许总线驱动程序选择分配的地址范围：总线驱动程序将选择支持每个事务的自动 DMA 的1394地址。
 
-    驱动程序必须 \_ \_ 为 **AllocateAddressRange**指定通知标志从不。
+    驱动程序必须 \_ \_ 为 **AllocateAddressRange** 指定通知标志从不。
 
     下面是一个示例：
 
@@ -96,9 +95,9 @@ ms.locfileid: "89383031"
 
     驱动程序可以提供单个 MDL 或 MDLs 的链接列表作为后备存储。 如果驱动程序提供了单个 MDL，则总线驱动程序会将数据泵移入或移出 MDL，以响应异步请求。 完成事务后，它会通过调用驱动程序提供的通知回调来发出设备驱动程序的信号。
 
-    设备驱动程序在 IRB 的 **AllocateAddressRange** 成员中提供通知例程。 驱动程序必须在 \_ \_ XXX 标志后至少设置一个通知标志 \_ 。 当总线驱动程序调用例程时，它将传递一条通知 \_ 信息结构，该结构指定**mdl**中 (的 mdl 后备存储) 、事务开始)  (的 mdl 中的字节**ulOffset**偏移量，以及**nLength** (中受影响的地址范围的长度（以字节为单位）。 通知例程是在调度级别调用的 \_ 。 该驱动程序在**AllocateAddressRange**中传递的此请求的任何上下文信息都由总线驱动程序在通知信息的**上下文**成员中传递。 \_
+    设备驱动程序在 IRB 的 **AllocateAddressRange** 成员中提供通知例程。 驱动程序必须在 \_ \_ XXX 标志后至少设置一个通知标志 \_ 。 当总线驱动程序调用例程时，它将传递一条通知 \_ 信息结构，该结构指定 **mdl** 中 (的 mdl 后备存储) 、事务开始)  (的 mdl 中的字节 **ulOffset** 偏移量，以及 **nLength** (中受影响的地址范围的长度（以字节为单位）。 通知例程是在调度级别调用的 \_ 。 该驱动程序在 **AllocateAddressRange** 中传递的此请求的任何上下文信息都由总线驱动程序在通知信息的 **上下文** 成员中传递。 \_
 
-    仅使用一个 MDL，存在同步问题的风险：设备写入地址范围的速度可能比驱动程序可以读取的速度更快。 若要避免此类冲突，对于设备仅具有写入访问权限的地址，驱动程序可以在 **FifoSListHead**中提供 MDLs 的链接列表，并在 **AllocateAddressRange**中提供自旋锁。 当总线驱动程序收到每个异步请求数据包时，它将保留自旋锁，并弹出列表中的第一个元素来完成请求。 然后，它调用驱动程序的通知例程。
+    仅使用一个 MDL，存在同步问题的风险：设备写入地址范围的速度可能比驱动程序可以读取的速度更快。 若要避免此类冲突，对于设备仅具有写入访问权限的地址，驱动程序可以在 **FifoSListHead** 中提供 MDLs 的链接列表，并在 **AllocateAddressRange** 中提供自旋锁。 当总线驱动程序收到每个异步请求数据包时，它将保留自旋锁，并弹出列表中的第一个元素来完成请求。 然后，它调用驱动程序的通知例程。
 
     在通知 \_ 信息结构中，总线驱动程序提供了用于 (处理 **mdl**) 的 mdl 的 mdl、受影响的第一个地址 (**ulOffset**) 中的字节偏移量，以及 **nLength** (中受影响的地址范围的长度。 它还提供 \_ **fifo**) 中 MDL (的地址 FIFO。 在从其通知例程返回驱动程序之前，应使用 **Fifo** 将元素推送回列表中，或者提供相同大小的其他 MDL;否则，总线驱动程序将用完了 MDLs 来处理来自设备的写入请求。
 
@@ -138,7 +137,7 @@ ms.locfileid: "89383031"
 
     驱动程序在 IRB 的 **AllocateAddressRange** 成员中提供回调。 \_ \_ 忽略 XXX 标志后的通知标志 \_ ，并将所有数据包移交给驱动程序以进行处理。
 
-    驱动程序必须将**AllocateAddressRange**的**Mdl**、 **FifoSListHead**和**FifoSpinLock**成员设置为**NULL**。 下面是一个驱动程序设置的示例，该驱动程序希望在收到所有三个类型的异步请求数据包时收到通知。
+    驱动程序必须将 **AllocateAddressRange** 的 **Mdl**、 **FifoSListHead** 和 **FifoSpinLock** 成员设置为 **NULL**。 下面是一个驱动程序设置的示例，该驱动程序希望在收到所有三个类型的异步请求数据包时收到通知。
 
     ```cpp
     VOID DriverNotificationRoutine( IN PNOTIFICATION_INFO NotificationInfo );
@@ -176,10 +175,10 @@ ms.locfileid: "89383031"
   * 为响应数据包数据调用基于 WDM 的客户端驱动程序) 的 [**WdfMemoryCreate**](/windows-hardware/drivers/ddi/wdfmemory/nf-wdfmemory-wdfmemorycreate) ([**ExAllocatePoolWithTag**](/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepoolwithtag) 来分配内存。
   * 用要返回的数据填充该缓冲区。
   * 初始化 **ResponseMdl** 成员并引用缓冲区。 可以调用 [**MmInitializeMdl**](../kernel/mm-bad-pointer.md) 和 [**MmBuildMdlForNonPagedPool**](/windows-hardware/drivers/ddi/wdm/nf-wdm-mmbuildmdlfornonpagedpool)。
-  * 将** \* NotificationInfo- &gt; ResponsePacket**设置为指向缓冲区。
-  * 将** \* NotificationInfo- &gt; ResponseLength**设置为返回的响应数据的大小，该大小为4，表示 quadlet 读取请求) 。
+  * 将 **\* NotificationInfo- &gt; ResponsePacket** 设置为指向缓冲区。
+  * 将 **\* NotificationInfo- &gt; ResponseLength** 设置为返回的响应数据的大小，该大小为4，表示 quadlet 读取请求) 。
   * 为响应事件调用基于 WDM 的客户端驱动程序) 的 [**WdfMemoryCreate**](/windows-hardware/drivers/ddi/wdfmemory/nf-wdfmemory-wdfmemorycreate) ([**ExAllocatePoolWithTag**](/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepoolwithtag) 分配内存。
-  * 将** \* NotificationInfo- &gt; ResponseEvent**设置为指向事件缓冲区。
+  * 将 **\* NotificationInfo- &gt; ResponseEvent** 设置为指向事件缓冲区。
   * 计划要等待事件的工作项，并在响应事件发出信号后释放响应数据包和事件数据缓冲区。
   * 将 **NotificationInfo- &gt; ResponseCode** 设置为 RCODE \_ 响应 \_ 完成。
 
@@ -189,15 +188,15 @@ ms.locfileid: "89383031"
 
 对于新的1394总线驱动程序，预通知事例中的客户端驱动程序通知回调例程的预期行为如下所示：
 
-* 如果[**通知 \_ 信息**](/windows-hardware/drivers/ddi/1394/ns-1394-_notification_info_w2k)结构的**Mdl**和**Fifo**成员为 NULL，则执行预先通知。
-* [**通知 \_ 信息**](/windows-hardware/drivers/ddi/1394/ns-1394-_notification_info_w2k)结构的**ResponseMdl**、 **ResponsePacket**、 **ResponseLength**和**ResponseEvent**成员不得为空。
-* [**通知 \_ 信息**](/windows-hardware/drivers/ddi/1394/ns-1394-_notification_info_w2k)结构的**fulNotificationOptions**成员必须指示触发通知 (读取、写入、锁定) 的操作。 只有一个标志 (\_ \_ 在读取后通知标志 \_ ，在写入后通知 \_ 标记 \_ \_ ， \_ 或 \_ 在 \_ 每次调用通知例程时通知) 可以设置通知。
+* 如果 [**通知 \_ 信息**](/windows-hardware/drivers/ddi/1394/ns-1394-_notification_info_w2k)结构的 **Mdl** 和 **Fifo** 成员为 NULL，则执行预先通知。
+* [**通知 \_ 信息**](/windows-hardware/drivers/ddi/1394/ns-1394-_notification_info_w2k)结构的 **ResponseMdl**、 **ResponsePacket**、 **ResponseLength** 和 **ResponseEvent** 成员不得为空。
+* [**通知 \_ 信息**](/windows-hardware/drivers/ddi/1394/ns-1394-_notification_info_w2k)结构的 **fulNotificationOptions** 成员必须指示触发通知 (读取、写入、锁定) 的操作。 只有一个标志 (\_ \_ 在读取后通知标志 \_ ，在写入后通知 \_ 标记 \_ \_ ， \_ 或 \_ 在 \_ 每次调用通知例程时通知) 可以设置通知。
 * 可以通过检查异步包结构的 **RequestPacket- &gt; AP \_ tCode** 成员来识别请求的类型 \_ 。 成员指示指定请求类型的 TCODE，例如 block 或 quadlet 读/写，即锁请求的类型。 \_在 1394 .h 中声明异步数据包结构。
-* [**通知 \_ 信息**](/windows-hardware/drivers/ddi/1394/ns-1394-_notification_info_w2k)的**ResponsePacket**和**ResponseEvent**成员包含指向指针的指针。 因此，你必须相应地引用指向响应数据包和响应事件的指针。
-* [**通知 \_ 信息**](/windows-hardware/drivers/ddi/1394/ns-1394-_notification_info_w2k)的**RESPONSELENGTH**成员是指向 ULONG 变量的指针。 因此，在为请求（如）设置响应数据长度时，必须对该成员进行适当的取消引用，如) & 锁请求。
+* [**通知 \_ 信息**](/windows-hardware/drivers/ddi/1394/ns-1394-_notification_info_w2k)的 **ResponsePacket** 和 **ResponseEvent** 成员包含指向指针的指针。 因此，你必须相应地引用指向响应数据包和响应事件的指针。
+* [**通知 \_ 信息**](/windows-hardware/drivers/ddi/1394/ns-1394-_notification_info_w2k)的 **RESPONSELENGTH** 成员是指向 ULONG 变量的指针。 因此，在为请求（如）设置响应数据长度时，必须对该成员进行适当的取消引用，如) & 锁请求。
 * 1394客户端驱动程序负责为从非分页池)  (的响应数据包和响应事件分配内存，并在传递响应后释放该内存。 建议将工作项排队，并且工作项应等待响应事件。 此事件由1394总线驱动程序在发送响应后发出信号。 然后，客户端驱动程序可以释放工作项中的内存。
-* [**通知 \_ 信息**](/windows-hardware/drivers/ddi/1394/ns-1394-_notification_info_w2k)结构中的**ResponseCode**成员必须设置为 RCODE 中定义的其中一个值。 如果 **ResponseCode** 设置为 RCODE \_ 响应完成以外的任何值 \_ ，1394总线驱动程序将发送错误响应数据包。 对于读取或锁定请求，请求不会返回任何数据。 在 Windows 7 中，可能会泄漏内存，有关详细信息，请参阅 [知识库： IEEE 1394 总线驱动程序中的内存泄漏 (2023232) 执行异步通知回调 ](https://support.microsoft.com/help/2023232)。
-* 对于读取和锁定请求，[**通知 \_ 信息**](/windows-hardware/drivers/ddi/1394/ns-1394-_notification_info_w2k)结构的**ResponsePacket**成员必须指向要在异步响应数据包中返回的数据。
+* [**通知 \_ 信息**](/windows-hardware/drivers/ddi/1394/ns-1394-_notification_info_w2k)结构中的 **ResponseCode** 成员必须设置为 RCODE 中定义的其中一个值。 如果 **ResponseCode** 设置为 RCODE \_ 响应完成以外的任何值 \_ ，1394总线驱动程序将发送错误响应数据包。 对于读取或锁定请求，请求不会返回任何数据。 在 Windows 7 中，可能会泄漏内存，有关详细信息，请参阅 [知识库： IEEE 1394 总线驱动程序中的内存泄漏 (2023232) 执行异步通知回调 ](https://support.microsoft.com/help/2023232)。
+* 对于读取和锁定请求，[**通知 \_ 信息**](/windows-hardware/drivers/ddi/1394/ns-1394-_notification_info_w2k)结构的 **ResponsePacket** 成员必须指向要在异步响应数据包中返回的数据。
 
 下面的代码示例显示了工作项实现和客户端驱动程序的通知例程。
 

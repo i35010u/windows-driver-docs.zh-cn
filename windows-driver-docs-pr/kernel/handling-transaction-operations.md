@@ -1,37 +1,36 @@
 ---
 title: 处理事务操作
 description: 处理事务操作
-ms.assetid: 9b82e9d6-3db2-4806-a087-1c9622dc04e2
 keywords:
-- WDK KTM，处理操作的事务
+- 事务 WDK KTM，处理操作
 - 处理事务操作 WDK KTM
-- WDK KTM，提交事务的事务
+- 事务 WDK KTM，提交事务
 - 提交事务 WDK KTM
-- WDK KTM，回滚事务的事务
-- 回滚 WDK KTM 的事务
-- WDK KTM，恢复事务的事务
-- 恢复 WDK KTM 的事务
+- 事务 WDK KTM，回滚事务
+- 回滚事务 WDK KTM
+- 事务 WDK KTM，恢复事务
+- 恢复事务 WDK KTM
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dd579db79ef67370c75770e86d3277b68bb69477
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d4c98c4c2673b69d5b4e73ff556a34464e7f2d89
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63372695"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96836935"
 ---
 # <a name="handling-transaction-operations"></a>处理事务操作
 
 
-资源管理器必须处理三个事务操作：*提交*，*回滚*，并*恢复*。
+资源管理器必须处理三个事务操作： *commit*、 *rollback* 和 *recovery*。
 
-向*提交的事务*，资源管理器对所有更改的事务数据永久和对其他事务可见。
+若要 *提交事务*，资源管理器会对事务的数据进行永久更改，使其对其他事务可见。
 
-向*回滚事务*，资源管理器中删除对事务的数据的所有更改。 资源管理器必须将数据还原到之前创建该事务的状态。
+若要 *回滚事务*，资源管理器将删除对事务数据所做的所有更改。 资源管理器必须将数据还原到创建事务之前所处的状态。
 
-向*恢复事务*，资源管理器的事务将数据还原到已知的良好状态后在系统发生崩溃或其他意外的事件。
+若要 *恢复事务*，资源管理器会在系统崩溃或发生其他意外事件后，将事务的数据还原到已知的良好状态。
 
-本部分包含以下主题：
+本节包含下列主题：
 
 [处理提交操作](handling-commit-operations.md)
 

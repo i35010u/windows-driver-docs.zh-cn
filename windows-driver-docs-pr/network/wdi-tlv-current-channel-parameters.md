@@ -1,22 +1,21 @@
 ---
 title: WDI_TLV_CURRENT_CHANNEL_PARAMETERS
 description: WDI_TLV_CURRENT_CHANNEL_PARAMETERS 是未使用的 TLV。
-ms.assetid: C2447497-0C71-4EF8-B8AE-A7C34DF42405
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_CURRENT_CHANNEL_PARAMETERS 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: ffda21cc386a59006074c6d4c21419a6e7b11ea9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 660ba7ff62a09910fceca39c00185701d98e879b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331815"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837089"
 ---
-# <a name="wditlvcurrentchannelparameters"></a>WDI\_TLV\_当前\_通道\_参数
+# <a name="wdi_tlv_current_channel_parameters"></a>WDI \_ TLV \_ 当前 \_ 通道 \_ 参数
 
 
-WDI\_TLV\_当前\_通道\_参数是未使用的 TLV。
+WDI \_ tlv \_ 当前 \_ 通道 \_ 参数是未使用的 tlv。
 
 <a name="requirements"></a>要求
 ------------
@@ -33,10 +32,10 @@ WDI\_TLV\_当前\_通道\_参数是未使用的 TLV。
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
-<td><p>Windows Server 2016</p></td>
+<td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Wditypes.hpp</td>
 </tr>
 </tbody>

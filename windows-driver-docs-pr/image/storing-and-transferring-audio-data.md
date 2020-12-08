@@ -1,15 +1,14 @@
 ---
 title: 存储和传输音频数据
 description: 存储和传输音频数据
-ms.assetid: c8d0af2f-1c3d-49d5-96ca-de1703f85448
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7b6c8d8c2263ed5272a5fed174dba35ac84de990
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 479826449b11ec0fd11f2467011241a1b0a39210
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89184803"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838581"
 ---
 # <a name="storing-and-transferring-audio-data"></a>存储和传输音频数据
 

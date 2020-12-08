@@ -1,15 +1,14 @@
 ---
 title: 图形内存报告示例
 description: 图形内存报告示例
-ms.assetid: 3dc0e7ae-db6f-4440-8c9c-7227f409f81f
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ea13d05ac1a8c29760fdda4a839cbe0463057e51
-ms.sourcegitcommit: b3e38d06762246c77cedd8e82d740ebea104c538
+ms.openlocfilehash: cf352c0d5350c411845469bfa9df492eda26507e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91662353"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838313"
 ---
 # <a name="examples-of-graphics-memory-reporting"></a>图形内存报告示例
 
@@ -32,7 +31,7 @@ ms.locfileid: "91662353"
 
 ![屏幕截图，显示 "显示" 应用，其中包含在 Windows XP 中选择的 "适配器" 选项卡。](images/reportmemxp1.png)
 
-**注意**   前面的屏幕截图所示的单个 "内存大小" 数字只是专用的板上图形内存，不是可用图形内存总量的准确表示。
+**注意**   前面的屏幕截图所示的单个 "内存大小" 数字只是专用的板上图形内存，不是可用图形内存总量的准确表示。
 
  
 
@@ -52,7 +51,7 @@ ms.locfileid: "91662353"
 
 ![windows xp 显示应用程序的屏幕截图](images/reportmemmobxp1.png)
 
-**注意**   对于 TurboCache 计算机（如上述屏幕截图所示），单个 "内存大小" 数字是专用图形内存和共享系统内存的组合，但不是总大小。 同样，这并不是可用图形内存总量的准确表示。
+**注意**   对于 TurboCache 计算机（如上述屏幕截图所示），单个 "内存大小" 数字是专用图形内存和共享系统内存的组合，但不是总大小。 同样，这并不是可用图形内存总量的准确表示。
 
  
 

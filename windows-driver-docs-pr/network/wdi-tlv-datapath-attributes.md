@@ -1,22 +1,21 @@
 ---
 title: WDI_TLV_DATAPATH_ATTRIBUTES
-description: WDI_TLV_DATAPATH_ATTRIBUTES 是 TLV，其中包含数据路径特性。
-ms.assetid: 3477054B-01CE-4D08-8A58-49FD8840B237
+description: WDI_TLV_DATAPATH_ATTRIBUTES 是包含数据路径属性的 TLV。
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_DATAPATH_ATTRIBUTES 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: d4befa0556667dc4f28dd36f338243483680ee74
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ab44b29b8f90f1baa3939c3ec07c11cba0043266
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331816"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837891"
 ---
-# <a name="wditlvdatapathattributes"></a>WDI\_TLV\_数据路径\_属性
+# <a name="wdi_tlv_datapath_attributes"></a>WDI \_ TLV \_ 数据路径 \_ 属性
 
 
-WDI\_TLV\_数据路径\_属性是包含数据路径属性 TLV。
+WDI \_ TLV \_ 数据路径 \_ 属性是包含数据路径属性的 tlv。
 
 ## <a name="tlv-type"></a>TLV 类型
 
@@ -26,14 +25,14 @@ WDI\_TLV\_数据路径\_属性是包含数据路径属性 TLV。
 ## <a name="length"></a>长度
 
 
-所有的大小 （以字节为单位） 总和包含 TLVs。
+Sum (包含所有 TLVs 的大小的) 字节。
 
 ## <a name="values"></a>值
 
 
-| 在任务栏的搜索框中键入                                                                      | 允许多个 TLV 实例 | 可选 | 描述                |
+| 类型                                                                      | 允许多个 TLV 实例 | 可选 | 说明                |
 |---------------------------------------------------------------------------|--------------------------------|----------|----------------------------|
-| [**WDI\_TLV\_数据路径\_功能**](wdi-tlv-datapath-capabilities.md) |                                | X        | 数据路径的功能。 |
+| [**WDI \_ TLV \_ 数据路径 \_ 功能**](wdi-tlv-datapath-capabilities.md) |                                | X        | 数据路径功能。 |
 
  
 
@@ -52,10 +51,10 @@ WDI\_TLV\_数据路径\_属性是包含数据路径属性 TLV。
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
-<td><p>Windows Server 2016</p></td>
+<td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Wditypes.hpp</td>
 </tr>
 </tbody>

@@ -1,7 +1,6 @@
 ---
 title: DEVPKEY_Device_DriverDate
 description: DEVPKEY_Device_DriverDate
-ms.assetid: d1310b0f-f358-4875-a01b-8bc4cf8b8d2d
 keywords:
 - DEVPKEY_Device_DriverDate 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: afbe9ae02c6c8f6171df68074f3b6a9d31b4b5e1
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: eafe7259b2828b648ff3fe47249fff66d013291d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90717064"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838029"
 ---
 # <a name="devpkey_device_driverdate"></a>DEVPKEY_Device_DriverDate
 
@@ -67,7 +66,7 @@ PKEY_Device_DriverDate 设备属性表示当前为设备实例安装的驱动程
 <a name="remarks"></a>备注
 -------
 
-DEVPKEY_Device_DriverDate 的值是由 inf [**DriverVer 指令**](./inf-driverver-directive.md)提供的，inf 版本部分包括在安装设备的 inf**版本部分**中，也包括在安装设备的[**inf *DDINSTALL*部分**](./inf-ddinstall-section.md)中的设备特定 inf **DriverVer**指令中。
+DEVPKEY_Device_DriverDate 的值是由 inf [**DriverVer 指令**](./inf-driverver-directive.md)提供的，inf 版本部分包括在安装设备的 inf **版本部分** 中，也包括在安装设备的 [**inf *DDINSTALL* 部分**](./inf-ddinstall-section.md)中的设备特定 inf **DriverVer** 指令中。
 
 可以调用 [**SetupDiGetDeviceProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdigetdevicepropertyw) 来检索 DEVPKEY_Device_DriverDate 属性的值。
 

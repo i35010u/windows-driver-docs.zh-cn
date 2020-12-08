@@ -1,7 +1,6 @@
 ---
 title: Bug 检查 0x196 LOADER_ROLLBACK_DETECTED
-description: LOADER_ROLLBACK_DETECTED bug 检查具有 0x00000196 值。 这表示操作系统加载程序的版本与操作系统不匹配。
-ms.assetid: 122AAC03-999A-456D-AFD8-749B19267D41
+description: LOADER_ROLLBACK_DETECTED bug 检查的值为0x00000196。 这表明 OS 加载程序的版本与操作系统不匹配。
 keywords:
 - Bug 检查 0x196 LOADER_ROLLBACK_DETECTED
 - LOADER_ROLLBACK_DETECTED
@@ -13,31 +12,31 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 1e09adca22e10a21dde5cc95319efc0942a45b7a
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: 66250ed6890c58f3df5419a7cb7c3ebb453805e4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67519812"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837351"
 ---
-# <a name="bug-check-0x196-loaderrollbackdetected"></a>Bug 检查 0x196：加载程序\_回滚\_检测到
+# <a name="bug-check-0x196-loader_rollback_detected"></a>Bug 检查0x196： \_ \_ 检测到加载程序回退
 
 
-加载程序\_回滚\_检测到错误检查的值为 0x00000196。 这表示操作系统加载程序的版本与操作系统不匹配。
+加载程序 \_ 回滚 \_ 检测到的 bug 检查的值为0x00000196。 这表明 OS 加载程序的版本与操作系统不匹配。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题面向程序员。 如果您是在使用计算机时收到蓝屏错误代码的客户，请参阅[蓝屏错误疑难解答](https://www.windows.com/stopcode)。
 
 
-## <a name="loaderrollbackdetected-parameters"></a>加载程序\_回滚\_检测到参数
+## <a name="loader_rollback_detected-parameters"></a>加载程序 \_ 回滚 \_ 检测到的参数
 
 
 | 参数 | 描述             |
 |-----------|-------------------------|
-| 1         | 加载程序安全版本 |
+| 1         | 加载器安全版本 |
 | 2         | OS 安全版本     |
-| 3         | 保留                |
-| 4         | 保留                |
+| 3         | 预留                |
+| 4         | 预留                |
 
  
 

@@ -1,30 +1,29 @@
 ---
 title: 保存组日志
 description: 保存组日志
-ms.assetid: 3e572e3e-68c9-4161-97bd-f93505ead496
 keywords:
 - 分组跟踪会话
 - 跟踪会话 WDK，组
-- 正在保存跟踪组日志
+- 保存跟踪组日志
 - 日志文件 WDK TraceView，组日志
 - 日志文件 WDK TraceView
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f7f334808da0b3ae5d6c792b619d5248ec5b4eff
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d09c3ce9a2032a9f1379ad8a2ed2fd77d3729fd4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63340209"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838333"
 ---
 # <a name="saving-a-group-log"></a>保存组日志
 
 
-跟踪会话组的成员身份不会影响事件跟踪日志 (.etl) 文件或 TraceView 跟踪会话组中列出 (.out) 文件的内容。 它们继续记录一个跟踪会话有关的数据。
+跟踪会话组中的成员身份不会影响组中跟踪会话 ( .etl) 文件或 TraceView 列表)  ( 的事件跟踪日志的内容。 它们继续只记录一个跟踪会话的数据。
 
-若要创建的组的消息的记录，按它们出现在[跟踪消息列表](trace-message-lists.md)、 将这些消息复制组跟踪消息列表中，并将其粘贴到文档，可以保存，例如文本或电子表格文件。
+若要创建组的消息，使其在 [跟踪消息列表](trace-message-lists.md)中出现，请从 "组跟踪消息" 列表中复制消息，然后将其粘贴到可以保存的文档中，如文本或电子表格文件。
 
-因为中的消息的跟踪到达[跟踪会话列表](trace-session-list.md)受影响的消息速率、 缓冲区大小，并刷新计时器为每个跟踪会话，到达一起可能实际的不同会话中的跟踪消息发生在非常不同的时间。 有关的更准确地组合的跟踪消息，对其进行排序的时间戳 (在**系统时间**列) 的每条消息。
+由于 [跟踪会话列表](trace-session-list.md) 中跟踪消息的到达受每个跟踪会话的消息速率、缓冲区大小和刷新计时器的影响，来自不同会话的跟踪消息可能在很大程度上发生。 若要更准确地查看组合跟踪消息，请按每条消息的 " **系统时间** ") 列中的时间戳 (进行排序。
 
  
 

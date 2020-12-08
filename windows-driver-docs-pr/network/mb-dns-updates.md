@@ -1,15 +1,14 @@
 ---
 title: MB DNS 更新
 description: MB DNS 更新
-ms.assetid: be93f0b4-a075-455e-b03c-6d23a2be7b1d
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4d409d2e4f1024885b64c08ee1257f0b1383f0e8
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: b0a9a8f835e4709bbff2b535b3b21e11eb2b829b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89207495"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838423"
 ---
 # <a name="mb-dns-updates"></a>MB DNS 更新
 

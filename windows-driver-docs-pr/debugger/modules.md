@@ -1,18 +1,17 @@
 ---
 title: 模块
 description: 模块
-ms.assetid: 0cd99869-4014-4f9f-b5f1-d06c69fd134e
 keywords:
 - 符号、模块
 - modules
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ec24cfd0a579de030162c9068609375490d2e1d2
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: dbcba101254dd8f7bf8c999937162ac8df0e47d7
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89209372"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838515"
 ---
 # <a name="modules"></a>模块
 
@@ -20,11 +19,11 @@ ms.locfileid: "89209372"
 ## <span id="modules"></span><span id="MODULES"></span>
 
 
-*映像*是 Windows 已作为用户模式进程或内核的一部分加载的可执行文件、DLL 或驱动程序。 从中加载映像的文件称为其 *映像文件*。
+*映像* 是 Windows 已作为用户模式进程或内核的一部分加载的可执行文件、DLL 或驱动程序。 从中加载映像的文件称为其 *映像文件*。
 
-[调试器引擎](introduction.md#debugger-engine)缓存每个进程的*模块*列表， (或内核模式下的虚拟进程) 。 通常，此列表中的每个模块都表示进程中的一个映像。 该引擎的模块列表可以使用 **reload.sql**与目标同步。
+[调试器引擎](introduction.md#debugger-engine)缓存每个进程的 *模块* 列表， (或内核模式下的虚拟进程) 。 通常，此列表中的每个模块都表示进程中的一个映像。 该引擎的模块列表可以使用 **reload.sql** 与目标同步。
 
-**注意**   在内核模式调试中，虚拟进程的引擎模块列表同时包含系统范围内的内核模式模块和当前进程的用户模式模块。
+**注意**   在内核模式调试中，虚拟进程的引擎模块列表同时包含系统范围内的内核模式模块和当前进程的用户模式模块。
 
  
 
@@ -54,7 +53,7 @@ ms.locfileid: "89209372"
 
 ### <a name="span-idsynthetic_modulesspanspan-idsynthetic_modulesspan-synthetic-modules"></a><span id="synthetic_modules"></span><span id="SYNTHETIC_MODULES"></span> 综合模块
 
-可以通过创建*合成模块*来标记内存区域。 这些模块不能包含实符号，但是它们可以包含合成符号。 方法 [**AddSyntheticModule**](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugsymbols3-addsyntheticmodule) 创建新的合成模块。 可以使用 [**RemoveSyntheticModule**](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugsymbols3-removesyntheticmodule)删除综合模块。 重新加载目标中的所有模块将删除所有综合模块。
+可以通过创建 *合成模块* 来标记内存区域。 这些模块不能包含实符号，但是它们可以包含合成符号。 方法 [**AddSyntheticModule**](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugsymbols3-addsyntheticmodule) 创建新的合成模块。 可以使用 [**RemoveSyntheticModule**](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugsymbols3-removesyntheticmodule)删除综合模块。 重新加载目标中的所有模块将删除所有综合模块。
 
 ### <a name="span-idimage_pathspanspan-idimage_pathspanimage-path"></a><span id="image_path"></span><span id="IMAGE_PATH"></span>映像路径
 

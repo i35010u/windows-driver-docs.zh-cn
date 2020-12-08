@@ -1,15 +1,14 @@
 ---
 title: 初始化地理位置对象
 description: 地理位置 .cpp 包含初始化方法，该方法可为模拟的地理位置传感器初始化可设置的属性键和数据字段键。
-ms.assetid: 3803BD3B-9853-4AA4-A278-22F8D835B1ED
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 96dabdd3519742278833e0b4c0d89b2f69cc2db6
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: d8de5e48126b78e744ca62b130e6f0a619e5f620
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89188675"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837291"
 ---
 # <a name="initializing-the-geolocation-object"></a>初始化地理位置对象
 
@@ -47,7 +46,7 @@ const PROPERTYKEY g_SupportedGeolocationDataFields[] =
 };
 ```
 
-**CSensorManager：： Start**方法将在创建传感器设备驱动程序接口 (DDI) 后立即调用**CGeolocation：： Initialize** 。 此操作发生在 sensormanager 模块中。
+**CSensorManager：： Start** 方法将在创建传感器设备驱动程序接口 (DDI) 后立即调用 **CGeolocation：： Initialize** 。 此操作发生在 sensormanager 模块中。
 
 然后， **Initialize** 方法会调用 **InitializeGeolocation** 方法。 后一种方法会调用 **CGeolocation：： AddGeolocationSettablePropertyKeys** 来初始化伪传感器支持的可写属性的属性键。 添加属性键后， **InitializeGeolocation** 方法会调用 **CGeolocation：： AddGeolocationDataFieldKeys** 来初始化支持的数据字段的数据字段键。
 

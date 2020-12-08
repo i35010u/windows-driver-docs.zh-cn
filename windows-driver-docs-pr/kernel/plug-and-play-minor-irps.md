@@ -2,14 +2,13 @@
 title: 即插即用次要 IRP
 description: 即插即用次要 IRP
 ms.date: 08/12/2017
-ms.assetid: eeb7dafd-fb44-4fb7-b5f0-314059ee0093
 ms.localizationpriority: medium
-ms.openlocfilehash: 9030c1551cb78782fbea0927a372f069fb7d666d
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: d3b546a095180c50a7bbd7408e7f0585993d925f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106848"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838449"
 ---
 # <a name="plug-and-play-minor-irps"></a>即插即用次要 IRP
 
@@ -32,15 +31,15 @@ PnP 管理器发送这些 Irp。 PnP 驱动程序可以发送其中一些 Irp，
 
 |                              PnP IRP 次要函数代码                              | “值” | Nonbus 设备的函数或筛选器驱动程序 | 用于 bus FDO) 的总线设备 (的函数驱动程序 |  (子 PDOs) 的总线驱动程序或总线筛选器驱动程序 |
 |---------------------------------------------------------------------------------------|---------------------------------------------|----------------------------------------------|--------------------------------------------------|
-|                 [**IRP \_ MN \_ 启动 \_ 设备**](irp-mn-start-device.md)                  |0x00|                  必需                   |                   必需                   |                     必需                     |
-|          [**IRP \_ MN \_ 查询 \_ 删除 \_ 设备**](irp-mn-query-remove-device.md)          |0x01|                  必需                   |                   必需                   |                     必需                     |
-|                [**IRP \_ MN \_ 删除 \_ 设备**](irp-mn-remove-device.md)                 |0x02|                  必需                   |                   必需                   |                     必需                     |
-|         [**IRP \_ MN \_ 取消 \_ 删除 \_ 设备**](irp-mn-cancel-remove-device.md)         |0x03|                  必需                   |                   必需                   |                     必需                     |
-|                  [**IRP \_ MN \_ 停止 \_ 设备**](irp-mn-stop-device.md)                   |0x04|                  必需                   |                   必需                   |                     必需                     |
-|            [**IRP \_ MN \_ 查询 \_ 停止 \_ 设备**](irp-mn-query-stop-device.md)            |0x05|                  必需                   |                   必需                   |                     必需                     |
-|           [**IRP \_ MN \_ 取消 \_ 停止 \_ 设备**](irp-mn-cancel-stop-device.md)           |0x06|                  必需                   |                   必需                   |                     必需                     |
+|                 [**IRP \_ MN \_ 启动 \_ 设备**](irp-mn-start-device.md)                  |0x00|                  必选                   |                   必选                   |                     必选                     |
+|          [**IRP \_ MN \_ 查询 \_ 删除 \_ 设备**](irp-mn-query-remove-device.md)          |0x01|                  必选                   |                   必选                   |                     必选                     |
+|                [**IRP \_ MN \_ 删除 \_ 设备**](irp-mn-remove-device.md)                 |0x02|                  必选                   |                   必选                   |                     必选                     |
+|         [**IRP \_ MN \_ 取消 \_ 删除 \_ 设备**](irp-mn-cancel-remove-device.md)         |0x03|                  必选                   |                   必选                   |                     必选                     |
+|                  [**IRP \_ MN \_ 停止 \_ 设备**](irp-mn-stop-device.md)                   |0x04|                  必选                   |                   必选                   |                     必选                     |
+|            [**IRP \_ MN \_ 查询 \_ 停止 \_ 设备**](irp-mn-query-stop-device.md)            |0x05|                  必选                   |                   必选                   |                     必选                     |
+|           [**IRP \_ MN \_ 取消 \_ 停止 \_ 设备**](irp-mn-cancel-stop-device.md)           |0x06|                  必选                   |                   必选                   |                     必选                     |
 |       [**IRP \_ MN \_ 查询 \_ 设备 \_ 关系**](irp-mn-query-device-relations.md)       |0x07                                             |                                              |                                                  |
-|                                 -   **BusRelations**                                  |x|                可选 (1)                  |                   必需                   |                      无 (2)                       |
+|                                 -   **BusRelations**                                  |x|                可选 (1)                  |                   必须                   |                      无 (2)                       |
 |                               -   **EjectionRelations**                               |x|                     否                      |                      否                      |                     可选                     |
 |                               -   **RemovalRelations**                                |x|                  可选                   |                   可选                   |                        否                        |
 |                             -   **TargetDeviceRelation**                              |x|                     否                      |                      否                      |                     必需                     |
@@ -63,11 +62,11 @@ PnP 管理器发送这些 Irp。 PnP 驱动程序可以发送其中一些 Irp，
 |      [**IRP \_ MN \_ 查询 \_ PNP \_ 设备 \_ 状态**](irp-mn-query-pnp-device-state.md)       |0x14|                  可选                   |                   可选                   |                     可选                     |
 |        [**IRP \_ MN \_ 查询 \_ 总线 \_ 信息**](irp-mn-query-bus-information.md)        |0x15|                     否                      |                      否                      |                   必需 (1)                    |
 |    [**IRP \_ MN \_ 设备 \_ 使用 \_ 通知**](irp-mn-device-usage-notification.md)    |0x16|                必需 (1)                  |                 必需 (1)                  |                   必需 (1)                    |
-|             [**IRP \_ MN \_ 意外 \_ 删除**](irp-mn-surprise-removal.md)              |0x17|                  必需                   |                   必需                   |                     必需                     |
+|             [**IRP \_ MN \_ 意外 \_ 删除**](irp-mn-surprise-removal.md)              |0x17|                  必选                   |                   必选                   |                     必选                     |
 |            [**IRP \_ MN \_ 设备已 \_ 枚举**](irp-mn-device-enumerated.md)             |0x19|                     否                      |                      否                      |                   必需 (1)                    |
 
 在某些情况下， (1) 必需或可选。 有关更多详细信息，请参阅 IRP 的参考页。
 
- (2) 总线筛选器驱动程序可能会处理 **BusRelations**的查询。
+ (2) 总线筛选器驱动程序可能会处理 **BusRelations** 的查询。
 
 Windows 7 和更高版本的 Windows 中支持 (3) 。

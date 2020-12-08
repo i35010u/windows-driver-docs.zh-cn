@@ -1,15 +1,14 @@
 ---
 title: PwrTest
 description: 电源管理测试工具 (PwrTest) 是一种测试工具，开发人员、测试人员和系统集成商可以从系统中测试和记录电源管理信息。
-ms.assetid: 8c242d61-6c5b-44d9-84d1-f78ef9a56a6d
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 55bb35108bc94e01fb6e3eb21603ce356d1d7f4a
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: e368b03a91f1d2e19766cea8c91b43eb3c804d22
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105620"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837311"
 ---
 # <a name="pwrtest"></a>PwrTest
 
@@ -49,7 +48,7 @@ PwrTest 功能分为不同方案。 有关这些方案的详细信息，请参�
 
 2.  PwrTest.exe 随 WDK 一起安装。 若要在测试计算机上运行 Pwrtest，必须从安装了 WDK 的计算机复制 PwrTest.exe。
 
-    你可以在 windows 驱动程序工具包工具目录中找到 PwrTest.exe (例如，C： \\ Program Files (x86) \\ Windows 工具包 \\ * &lt; 版本 &gt; * \\ 工具 \\ * &lt; 平台 &gt; * \\PwrTest.exe) 。
+    你可以在 windows 驱动程序工具包工具目录中找到 PwrTest.exe (例如，C： \\ Program Files (x86) \\ Windows 工具包 \\ *&lt; 版本 &gt;* \\ 工具 \\ *&lt; 平台 &gt;* \\PwrTest.exe) 。
 
 3.  在已设置的测试计算机上，使用提升的权限打开命令提示符窗口， ( 以 **管理员身份运行**) 并导航到 PwrTest.exe 复制到的目录。
 

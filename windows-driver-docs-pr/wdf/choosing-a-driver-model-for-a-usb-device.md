@@ -1,22 +1,21 @@
 ---
 title: 为 USB 设备选择驱动程序模型
 description: 为 USB 设备选择驱动程序模型
-ms.assetid: 7272c491-bb41-4827-98be-17f1c784d2dd
 keywords:
 - 用户模式驱动程序 WDK UMDF、USB 设备
 - UMDF WDK，USB 设备
-- 用户模式驱动程序框架 WDK，USB 设备
+- User-Mode Driver Framework WDK，USB 设备
 - 基于框架的驱动程序 WDK UMDF、USB 设备
 - USB 设备 WDK UMDF
 - USB 设备 WDK UMDF，驱动程序型号
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6c3f7b07d20a3acb95ea6ae63e4c98a0ff058c85
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 90860ce87eaaf0f1df2d1a4681e80de17f932e58
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89187073"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837051"
 ---
 # <a name="choosing-a-driver-model-for-a-usb-device"></a>为 USB 设备选择驱动程序模型
 

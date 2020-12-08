@@ -1,27 +1,26 @@
 ---
 title: 在 IRP_MJ_CREATE 上添加审核
 description: 在 IRP_MJ_CREATE 上添加审核
-ms.assetid: cb71fe83-44f4-48dd-8fff-250f1d27c123
 keywords:
 - IRP_MJ_CREATE
-- 审核 WDK 的文件系统
-- 安全检查 WDK 的文件系统，IRP_MJ_CREATE
+- 审核 WDK 文件系统
+- 安全检查 WDK 文件系统，IRP_MJ_CREATE
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a96484269cbd7d72e31972fbc45fa950128f1cae
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a583d43c114c6f5c56dc7e2a2b0d5f7bebef3872
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63323165"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838473"
 ---
-# <a name="adding-auditing-on-irpmjcreate"></a>添加审核 IRP\_MJ\_创建
+# <a name="adding-auditing-on-irp_mj_create"></a>在 IRP \_ MJ CREATE 上添加审核 \_
 
 
 ## <span id="ddk_adding_auditing_on_irp_mj_create_if"></span><span id="DDK_ADDING_AUDITING_ON_IRP_MJ_CREATE_IF"></span>
 
 
-文件系统中的安全检查的另一个重要方面是添加审核 （如有必要）。 通常情况下，这是同一组做出安全决策，因为审核的目的是为了记录所做的系统的安全决策的例程的一部分。 例如，下面的代码可以用于实现审核文件系统中完成访问检查后：
+文件系统中安全检查的另一个重要方面是在必要时添加审核 () 。 通常，这是作为一组做出安全决策的例程的一部分来完成的，因为审核的目的是记录系统所做的安全决策。 例如，以下代码可用于在完成访问检查后在文件系统内实现审核：
 
 ```cpp
 {

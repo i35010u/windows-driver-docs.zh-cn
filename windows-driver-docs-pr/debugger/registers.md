@@ -1,18 +1,17 @@
 ---
 title: 寄存器
 description: 寄存器
-ms.assetid: fa334c9f-46c6-4288-95ce-43128fff7f03
 keywords:
 - 内存访问，寄存器
 - 寄存器
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8023412334ca0aa855533ac5ce1fb63b6c8034cf
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: f68119db197a1f3c8190c82b556a8a05ca1eb79b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89206801"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837345"
 ---
 # <a name="registers"></a>寄存器
 
@@ -32,7 +31,7 @@ ms.locfileid: "89206801"
 
 方法 [**GetDescription**](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugregisters2-getdescription) 返回有关寄存器的信息。 这包括寄存器的名称、它可以包含的值的类型以及它是否为 subregister。
 
-*Subregister*是包含在另一个寄存器中的寄存器。 当 subregister 更改时，包含它的寄存器还会更改。 例如，在 x86 处理器上， **ax** subregister 与32位 **eax** 寄存器的低16位相同。
+*Subregister* 是包含在另一个寄存器中的寄存器。 当 subregister 更改时，包含它的寄存器还会更改。 例如，在 x86 处理器上， **ax** subregister 与32位 **eax** 寄存器的低16位相同。
 
 有三个特殊寄存器，可以通过使用以下方法找到其值。 这些寄存器的值的解释取决于平台。
 
@@ -50,19 +49,19 @@ ms.locfileid: "89206801"
 
 向寄存器写入值时，如果提供的值与寄存器的类型具有不同的类型，则该值将转换为寄存器的类型。 此转换与方法 [**CoerceValue**](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugcontrol3-coercevalue)执行的转换相同。 如果寄存器的类型不能容纳提供的值，则此转换可能会导致数据丢失。
 
-### <a name="span-idpseudo_registersspanspan-idpseudo_registersspan-pseudo-registers"></a><span id="pseudo_registers"></span><span id="PSEUDO_REGISTERS"></span> 伪寄存器
+### <a name="span-idpseudo_registersspanspan-idpseudo_registersspan-pseudo-registers"></a><span id="pseudo_registers"></span><span id="PSEUDO_REGISTERS"></span> Pseudo-Registers
 
 *伪寄存器* 是由调试器引擎维护的变量，用于保存某些值，例如， **$teb** 是伪寄存器的名称，其值是当前线程的线程环境块 (teb) 的地址。 有关详细信息和伪寄存器列表，请参阅 [伪寄存器语法](pseudo-register-syntax.md)。
 
 每个伪寄存器都有一个索引。 此索引是一个介于零和 [**GetNumberPseudoRegisters**](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugregisters2-getnumberpseudoregisters)) 减1之间返回的伪寄存器 (数之间的数字。 若要按名称查找伪寄存器的索引，请使用 [**GetPseudoIndexByName**](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugregisters2-getpseudoindexbyname)。 使用 [**GetPseudoValues**](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugregisters2-getpseudovalues)可以读取伪寄存器的值，并且可以使用 [**SetPseudoValues**](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugregisters2-setpseudovalues)将值写入伪寄存器。 有关伪寄存器（包括其类型）的说明，请使用 [**GetPseudoDescription**](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugregisters2-getpseudodescription)。
 
-**注意**   并非所有的伪寄存器在所有调试会话中都可用，也不会在特定会话中出现。
+**注意**   并非所有的伪寄存器在所有调试会话中都可用，也不会在特定会话中出现。
 
  
 
 ### <a name="span-iddisplaying_registersspanspan-iddisplaying_registersspandisplaying-registers"></a><span id="displaying_registers"></span><span id="DISPLAYING_REGISTERS"></span>显示寄存器
 
-[**OutputRegisters**](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugregisters2-outputregisters)和[**OutputRegisters2**](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugregisters2-outputregisters2)方法用于格式化目标的寄存器，并将其作为输出发送到客户端。
+[**OutputRegisters**](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugregisters2-outputregisters)和 [**OutputRegisters2**](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugregisters2-outputregisters2)方法用于格式化目标的寄存器，并将其作为输出发送到客户端。
 
 ### <a name="span-ideventsspanspan-ideventsspanevents"></a><span id="events"></span><span id="EVENTS"></span>事件
 

@@ -1,20 +1,19 @@
 ---
 title: '我 (Windows 调试器词汇表) '
 description: 词汇表页面-I
-ms.assetid: 4415522d-6ea3-42f6-9acc-0e3ceaa36dc7
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 37521c8df53d8f12a7b4db9e2801eee351bbd3e5
-ms.sourcegitcommit: cd84cc10570384b0e7a91cb6f91fe67009c1a90e
+ms.openlocfilehash: 44d9c00cbff943535e5856841a79820dd0cfb044
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89238139"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96836873"
 ---
 # <a name="i"></a>I
 
 
-<span id="i_o_request_packet__irp_"></span><span id="I_O_REQUEST_PACKET__IRP_"></span>**I/o 请求数据包 (IRP) **  
+<span id="i_o_request_packet__irp_"></span><span id="I_O_REQUEST_PACKET__IRP_"></span>**I/o 请求数据包 (IRP)**  
 用于表示 i/o 请求并控制其处理的数据结构。 IRP 结构包含一个标头和一个或多个堆栈位置。
 
 <span id="image"></span><span id="IMAGE"></span>**影像**  
@@ -56,7 +55,7 @@ Windows 已作为用户模式进程或 Windows 内核的一部分加载的可执
 <span id="interrupt"></span><span id="INTERRUPT"></span>**妨碍**  
 中断正常命令执行并将控制转移到中断处理程序的条件。 需要处理器服务的 i/o 设备通常会启动中断。
 
-<span id="interrupt_request_level__irql_"></span><span id="INTERRUPT_REQUEST_LEVEL__IRQL_"></span>**中断请求级别 (IRQL) **  
+<span id="interrupt_request_level__irql_"></span><span id="INTERRUPT_REQUEST_LEVEL__IRQL_"></span>**中断请求级别 (IRQL)**  
 中断的优先级排名。 每个处理器都有一个可以提高或降低线程的 IRQL 设置。 在处理器的 IRQL 设置下或之下发生的中断会被屏蔽，并且不会影响当前操作。 超出处理器的 IRQL 设置的中断优先于当前操作。
 
  

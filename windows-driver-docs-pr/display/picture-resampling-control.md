@@ -1,7 +1,6 @@
 ---
 title: 画面重新采样控制
 description: 画面重新采样控制
-ms.assetid: 08d74812-3393-4461-91c4-644ecc5ad428
 keywords:
 - 图片重新采样 WDK DirectX VA
 - 空间可伸缩视频编码 WDK DirectX VA
@@ -9,12 +8,12 @@ keywords:
 - 重新采样图片 WDK DirectX VA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 45e3dad27e16cde46087253b86ee71b801b8e5bd
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: cec24da4a7cbd9fc47a731c29d2eb47aff69c3ea
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89067276"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838055"
 ---
 # <a name="picture-resampling-control"></a>画面重新采样控制
 

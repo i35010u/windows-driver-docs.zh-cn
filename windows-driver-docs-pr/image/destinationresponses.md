@@ -1,9 +1,8 @@
 ---
 title: DestinationResponses 元素
-description: 所需的 DestinationResponses 元素是所有客户端的扫描目标请求的响应的集合。
-ms.assetid: f373b584-eec9-412e-80b2-3d8a69f4b7ca
+description: 必需的 DestinationResponses 元素是对客户端扫描目标请求的所有响应的集合。
 keywords:
-- DestinationResponses 元素成像设备
+- DestinationResponses 元素图像设备
 topic_type:
 - apiref
 api_name:
@@ -12,19 +11,19 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: eccb08fddbdba327c176428e2f4efffa3ba14d11
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ea576a5944523580b8c9f8582230363b9d462291
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63373178"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838597"
 ---
 # <a name="destinationresponses-element"></a>DestinationResponses 元素
 
 
-所需**DestinationResponses**元素是所有客户端的扫描目标请求的响应的集合。
+必需的 **DestinationResponses** 元素是对客户端扫描目标请求的所有响应的集合。
 
-<a name="usage"></a>用法
+<a name="usage"></a>使用情况
 -----
 
 ```xml
@@ -71,7 +70,7 @@ ms.locfileid: "63373178"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>&lt;wse:SubscribeResponse&gt;</p></td>
+<td><p>&lt;wse： SubscribeResponse&gt;</p></td>
 </tr>
 </tbody>
 </table>
@@ -79,7 +78,7 @@ ms.locfileid: "63373178"
 <a name="remarks"></a>备注
 -------
 
-WSD 扫描服务必须指定一个[ **DestinationResponse** ](destinationresponse.md)中的子元素**DestinationResponses**元素为每个[ **ScanDestination** ](scandestination.md)客户端在指定的元素 **&lt;wse： 订阅&gt;** 请求。 **&lt;Wse： 订阅&gt;** 元素规范中所述。
+对于客户端在 **&lt; &gt; wse：订阅** 请求中指定的每个 [**ScanDestination**](scandestination.md)元素，WSD 扫描服务必须在 **DestinationResponses** 元素中指定一个 [**DestinationResponse**](destinationresponse.md)子元素。 **&lt; Wse：订阅 &gt;** 元素在规范中进行了介绍。
 
 ## <a name="see-also"></a>请参阅
 

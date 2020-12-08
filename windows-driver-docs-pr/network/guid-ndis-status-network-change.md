@@ -1,17 +1,16 @@
 ---
 title: GUID_NDIS_STATUS_NETWORK_CHANGE
 description: 本主题描述了 NDIS WMI 接口的 GUID_NDIS_STATUS_NETWORK_CHANGE GUID。
-ms.assetid: 4be2b79d-dc99-4096-bf13-54e75deeee56
 keywords:
 - GUID_NDIS_STATUS_NETWORK_CHANGE，WDK GUID_NDIS_STATUS_NETWORK_CHANGE 网络驱动程序
 ms.date: 11/22/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3edc23b36ace906631263d246b5dc531a3ee9ab0
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 6fc5490af9757fbebc15f7e235bf0b9178c1f6db
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89218101"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838749"
 ---
 # <a name="guid_ndis_status_network_change"></a>GUID_NDIS_STATUS_NETWORK_CHANGE
 

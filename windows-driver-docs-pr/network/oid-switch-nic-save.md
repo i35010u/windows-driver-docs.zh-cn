@@ -1,25 +1,24 @@
 ---
 title: OID_SWITCH_NIC_SAVE
 description: Hyper-v 可扩展交换机的协议边缘发出对象标识符 (OID 在操作过程中 OID_SWITCH_NIC_SAVE) 方法请求，以保存可扩展交换机端口及其网络适配器连接的运行时数据。
-ms.assetid: FE2F9767-7186-42FF-85C1-2A8203FEF629
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_SWITCH_NIC_SAVE 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: f278e5855eb77d3827effb778d81d1934127fb7e
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 597a33e81d0f32f350bb7f50bbbff37bdbdb2ee5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107208"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837921"
 ---
 # <a name="oid_switch_nic_save"></a>OID \_ 交换机 \_ NIC \_ 保存
 
 
 Hyper-v 可扩展交换机的协议边缘发出对象标识符 () OID \_ \_ \_ 在操作期间进行 oid 交换机 NIC 保存，以保存可扩展交换机端口及其网络适配器连接的运行时数据。 该扩展将返回此数据，以便以后可以保存和还原运行时数据。 保存运行时数据后，它将通过 oid [ \_ 交换机 \_ NIC \_ 还原](oid-switch-nic-restore.md)的 oid 设置请求进行还原。
 
-[**Ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的**InformationBuffer**成员包含指向[**ndis \_ 交换机 \_ NIC \_ 保存 \_ 状态**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_nic_save_state)结构的指针。 此结构由可扩展交换机的协议边缘分配。
+[**Ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的 **InformationBuffer** 成员包含指向 [**ndis \_ 交换机 \_ NIC \_ 保存 \_ 状态**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_nic_save_state)结构的指针。 此结构由可扩展交换机的协议边缘分配。
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 当收到 oid 交换机 NIC SAVE 的 OID 方法请求时 \_ \_ \_ ，可扩展交换机扩展通过执行以下操作来保存运行时数据：
@@ -30,7 +29,7 @@ Hyper-v 可扩展交换机的协议边缘发出对象标识符 () OID \_ \_ \_ �
 
 -   该扩展将用自己的标识符和名称填充 *ExtensionId* 和 *ExtensionFriendlyName* 字段，并完成具有 NDIS 状态成功的 OID 方法请求 \_ \_ 。 这会导致可扩展交换机的协议边缘发出另一个 OID 方法请求，以允许扩展返回更多的保存数据，或允许其他扩展关闭堆栈以保存其自己的数据。
 
-**注意**   如果该扩展没有要保存的运行时数据，则必须调用[**NdisFOidRequest**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfoidrequest)将此 OID 方法请求转发到可扩展交换机驱动程序堆栈中的基础扩展。 有关此过程的详细信息，请参阅 [在 NDIS 筛选器驱动程序中筛选 OID 请求](./filtering-oid-requests-in-an-ndis-filter-driver.md)。
+**注意**  如果该扩展没有要保存的运行时数据，则必须调用 [**NdisFOidRequest**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfoidrequest) 将此 OID 方法请求转发到可扩展交换机驱动程序堆栈中的基础扩展。 有关此过程的详细信息，请参阅 [在 NDIS 筛选器驱动程序中筛选 OID 请求](./filtering-oid-requests-in-an-ndis-filter-driver.md)。
 
  
 
@@ -38,7 +37,7 @@ Hyper-v 可扩展交换机在发出 OID 之前填充结构的 *标头*、 *PortI
 
 OID 交换机 NIC SAVE 的 OID 方法请求 \_ \_ \_ 最终由可扩展交换机的基础微型端口边缘处理。 在可扩展交换机的微型端口边缘收到此 OID 方法请求后，它将完成具有 NDIS 状态成功的 OID 请求 \_ \_ 。 这会通知可扩展交换机的协议边缘已查询了运行时数据的可扩展交换机驱动程序堆栈中的所有扩展。 然后，可扩展交换机的协议边缘发出 oid [ \_ 交换机 \_ NIC \_ save \_ 完成](oid-switch-nic-save-complete.md) 的 oid 集请求，以完成保存操作。
 
-有关如何为可扩展交换机端口保存运行时数据的详细信息，请参阅 [保存 Hyper-v 可扩展交换机运行时数据](./managing-hyper-v-extensible-switch-run-time-data.md)。
+有关如何为可扩展交换机端口保存运行时数据的详细信息，请参阅 [保存 Hyper-v 可扩展交换机 Run-Time 数据](./managing-hyper-v-extensible-switch-run-time-data.md)。
 
 ### <a name="return-status-codes"></a>返回状态代码
 

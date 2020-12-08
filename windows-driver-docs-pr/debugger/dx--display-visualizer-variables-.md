@@ -1,7 +1,6 @@
 ---
 title: dx（显示调试器对象模型表达式）
 description: Dx 命令显示使用 NatVis 扩展模型的 c + + 表达式。 Dx 命令适用于调试器对象。
-ms.assetid: 93047911-5195-4FB9-A015-5349084EDC0A
 keywords:
 - dx (显示) Windows 调试的调试器对象模型表达式
 ms.date: 05/28/2019
@@ -12,12 +11,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 5ecfdc957ce70a8bcdf93a9b34f40042661c21a3
-ms.sourcegitcommit: 878a1cb0149dc18ccbd31774e12bad76084dfa24
+ms.openlocfilehash: 1734913957e9df1dc2c80a25fab6bb41a6f72536
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94937817"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838655"
 ---
 # <a name="dx-display-debugger-object-model-expression"></a>dx（显示调试器对象模型表达式）
 

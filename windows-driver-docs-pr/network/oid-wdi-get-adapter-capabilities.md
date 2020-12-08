@@ -1,17 +1,16 @@
 ---
 title: OID_WDI_GET_ADAPTER_CAPABILITIES
 description: OID_WDI_GET_ADAPTER_CAPABILITIES 是一个只读属性，该属性在初始化期间从主机颁发给适配器，并请求适配器的功能。
-ms.assetid: e79deb29-bc0b-472e-b549-86bf71fe66ff
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 OID_WDI_GET_ADAPTER_CAPABILITIES 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: d4c8912bf138853eff9d7d5bb416e681068c78b2
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 0874505685bce9ede675dbf0996f367b6c9f8b86
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106720"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96836737"
 ---
 # <a name="oid_wdi_get_adapter_capabilities"></a>OID \_ WDI \_ 获取 \_ 适配器 \_ 功能
 
@@ -31,7 +30,7 @@ OID \_ WDI \_ 获取 \_ 适配器 \_ 功能是一个只读属性，该属性在�
 ## <a name="get-property-results"></a>获取属性结果
 
 
-如果适配器支持 Wi-fi Direct，则必须指定 [**WDI \_ tlv \_ AP \_ **](./wdi-tlv-ap-attributes.md) 属性和 [**WDI \_ tlv \_ P2P \_ 属性**](./wdi-tlv-p2p-attributes.md) 。
+如果适配器支持 Wi-Fi Direct，则必须指定 [**WDI \_ tlv \_ AP \_ 属性**](./wdi-tlv-ap-attributes.md) 和 [**WDI \_ tlv \_ P2P \_ 属性**](./wdi-tlv-p2p-attributes.md) 。
 
 <table>
 <colgroup>
@@ -83,7 +82,7 @@ OID \_ WDI \_ 获取 \_ 适配器 \_ 功能是一个只读属性，该属性在�
 <td><a href="/windows-hardware/drivers/network/wdi-tlv-p2p-attributes" data-raw-source="[&lt;strong&gt;WDI_TLV_P2P_ATTRIBUTES&lt;/strong&gt;](./wdi-tlv-p2p-attributes.md)"><strong>WDI_TLV_P2P_ATTRIBUTES</strong></a></td>
 <td></td>
 <td>X</td>
-<td>Wi-fi Direct 特性。</td>
+<td>Wi-Fi 直接的特性。</td>
 </tr>
 <tr class="odd">
 <td><a href="/windows-hardware/drivers/network/wdi-tlv-datapath-attributes" data-raw-source="[&lt;strong&gt;WDI_TLV_DATAPATH_ATTRIBUTES&lt;/strong&gt;](./wdi-tlv-datapath-attributes.md)"><strong>WDI_TLV_DATAPATH_ATTRIBUTES</strong></a></td>
@@ -162,7 +161,7 @@ OID \_ WDI \_ 获取 \_ 适配器 \_ 功能是一个只读属性，该属性在�
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
-<td><p>Windows Server 2016</p></td>
+<td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
 <td><p>标头</p></td>

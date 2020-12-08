@@ -1,18 +1,17 @@
 ---
 title: PnP 驱动程序设计指导原则
 description: PnP 驱动程序设计指导原则
-ms.assetid: 4e4a6a8e-3c7f-4561-bbe1-a8c06fe22d0a
 keywords:
 - PnP WDK 内核，设计指南
 - 即插即用 WDK 内核，设计指南
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5e3e5d4de9ce4e99725a771a94c9a7475c986de2
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: e37485f98599e296675ad63312892e684c47e354
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89402746"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838443"
 ---
 # <a name="pnp-driver-design-guidelines"></a>PnP 驱动程序设计指导原则
 

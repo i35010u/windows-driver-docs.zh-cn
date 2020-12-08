@@ -1,18 +1,17 @@
 ---
 title: 在安装期间设置设备对象注册表属性
 description: 在安装期间设置设备对象注册表属性
-ms.assetid: 29d40398-09b9-4e64-aa47-da229066bffd
 keywords:
 - 设备对象 WDK 内核，注册表
 - 注册表 WDK 设备对象
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dc92adc4dd06b19c635683aca14202424dbf4627
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: e4243fee8c07f01209b87cdf18cb965dd227a185
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89191451"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837983"
 ---
 # <a name="setting-device-object-registry-properties-during-installation"></a>在安装期间设置设备对象注册表属性
 
@@ -24,11 +23,11 @@ ms.locfileid: "89191451"
 
 它们按如下方式指定。
 
--   对于单个设备，可在设备的 " *添加-注册表" 部分* 中设置属性。 设备的*DDInstall*中的 INF **AddReg**指令。HW 部分指定设备的 "*添加注册表" 部分*。
+-   对于单个设备，可在设备的 " *添加-注册表" 部分* 中设置属性。 设备的 *DDInstall* 中的 INF **AddReg** 指令。HW 部分指定设备的 "*添加注册表" 部分*。
 
--   对于设备安装程序类，在设备安装程序类的 " *添加-注册表" 部分* 设置属性。 类的**ClassInstall32**部分中的 INF **AddReg**指令指定类的 "*添加注册表" 部分*。
+-   对于设备安装程序类，在设备安装程序类的 " *添加-注册表" 部分* 设置属性。 类的 **ClassInstall32** 部分中的 INF **AddReg** 指令指定类的 "*添加注册表" 部分*。
 
-在 " *添加注册表" 部分*中，可以使用以下关键字指定要设置的单个设备对象属性。
+在 " *添加注册表" 部分* 中，可以使用以下关键字指定要设置的单个设备对象属性。
 
 <table>
 <colgroup>

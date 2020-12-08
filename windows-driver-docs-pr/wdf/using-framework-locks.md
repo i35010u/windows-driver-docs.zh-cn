@@ -1,7 +1,6 @@
 ---
 title: 使用框架锁
 description: 使用框架锁
-ms.assetid: d036a2d5-a9e9-4375-84b0-fbd797ee6f13
 keywords:
 - 同步 WDK KMDF
 - 同步锁定 WDK KMDF
@@ -15,12 +14,12 @@ keywords:
 - framework 旋转锁 WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b348aaccb90e162324ef78bb6e61ba83f86c680e
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 5d130ab0759c75ecf8d6969af720f471d5e72704
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89187763"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838709"
 ---
 # <a name="using-framework-locks"></a>使用框架锁
 
@@ -31,11 +30,11 @@ ms.locfileid: "89187763"
 
 如果已将驱动程序设置为使用框架的 [自动同步](using-automatic-synchronization.md) 功能，则在调用驱动程序的 i/o 请求相关事件回调函数之前，框架将获取同步锁。
 
-与框架设备对象和队列对象相关联的这些 *回拨同步锁*也可由驱动程序获取。 若要获取同步锁，驱动程序将调用 [**WdfObjectAcquireLock**](/previous-versions/ff548721(v=vs.85))。 若要释放锁，驱动程序将调用 [**WdfObjectReleaseLock**](/previous-versions/ff548765(v=vs.85))。
+与框架设备对象和队列对象相关联的这些 *回拨同步锁* 也可由驱动程序获取。 若要获取同步锁，驱动程序将调用 [**WdfObjectAcquireLock**](/previous-versions/ff548721(v=vs.85))。 若要释放锁，驱动程序将调用 [**WdfObjectReleaseLock**](/previous-versions/ff548765(v=vs.85))。
 
 如果驱动程序使用框架的设备级别或队列级别的 i/o 请求相关回调函数的同步，但必须将以 irql = 被动级别运行的代码 \_ 与以 irql = 调度级别运行的回调函数同步，则你可能希望驱动程序使用回调同步锁定 \_ 。 这是因为，驱动程序只能对以相同的 IRQL 执行的回调函数使用自动同步。
 
-例如，仅当工作项对象的父对象的执行级别是 **WdfExecutionLevelPassive** (的情况下，驱动程序才能使用自动同步，因为工作项的回调函数始终以 IRQL = 被动 \_ 级别) 执行。 因此，如果驱动程序在设备对象的[**WDF \_ 对象 \_ 属性**](/windows-hardware/drivers/ddi/wdfobject/ns-wdfobject-_wdf_object_attributes)结构的**ExecutionLevel**成员中指定**WdfExecutionLevelDispatch** ，则驱动程序将无法设置子工作项对象的配置结构的**AutomaticSerialization**成员。 相反，驱动程序必须获取回调同步锁，才能将 [*EvtWorkItem*](/windows-hardware/drivers/ddi/wdfworkitem/nc-wdfworkitem-evt_wdf_workitem) 回调函数与父设备对象的回调函数同步。
+例如，仅当工作项对象的父对象的执行级别是 **WdfExecutionLevelPassive** (的情况下，驱动程序才能使用自动同步，因为工作项的回调函数始终以 IRQL = 被动 \_ 级别) 执行。 因此，如果驱动程序在设备对象的 [**WDF \_ 对象 \_ 属性**](/windows-hardware/drivers/ddi/wdfobject/ns-wdfobject-_wdf_object_attributes)结构的 **ExecutionLevel** 成员中指定 **WdfExecutionLevelDispatch** ，则驱动程序将无法设置子工作项对象的配置结构的 **AutomaticSerialization** 成员。 相反，驱动程序必须获取回调同步锁，才能将 [*EvtWorkItem*](/windows-hardware/drivers/ddi/wdfworkitem/nc-wdfworkitem-evt_wdf_workitem) 回调函数与父设备对象的回调函数同步。
 
 ### <a name="framework-wait-locks"></a>Framework 等待锁
 

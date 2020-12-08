@@ -1,7 +1,6 @@
 ---
 title: GDI 事件服务
 description: GDI 事件服务
-ms.assetid: 966fa3ce-c72c-4b91-9cf7-b789d39e69b5
 keywords:
 - GDI WDK Windows 2000 显示，事件
 - 图形驱动程序 WDK Windows 2000 显示，事件
@@ -9,12 +8,12 @@ keywords:
 - 事件 WDK GDI
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2f0960f32039d45ff24c8de6780a0e9edf0c2103
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 28baf3975c0f2dc4786b5681428c4b38f9744976
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90716474"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96836833"
 ---
 # <a name="gdi-event-services"></a>GDI 事件服务
 
@@ -32,7 +31,7 @@ GDI 提供了若干与事件相关的服务。 使用这些服务的驱动程序
 <thead>
 <tr class="header">
 <th align="left">函数</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>

@@ -1,17 +1,16 @@
 ---
 title: GUID_NDIS_TCP_OFFLOAD_ADMIN_SETTINGS
 description: 本主题描述了 NDIS WMI 接口的 GUID_NDIS_TCP_OFFLOAD_ADMIN_SETTINGS GUID。
-ms.assetid: 8648c75a-dcb3-4723-a2d0-d406d3a073d6
 keywords:
 - GUID_NDIS_TCP_OFFLOAD_ADMIN_SETTINGS，WDK GUID_NDIS_TCP_OFFLOAD_ADMIN_SETTINGS 网络驱动程序
 ms.date: 11/22/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 291d7b7ab7fd49d5791ff0618de1930700f60b4a
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: da740c60a0f0ba26bb7e5340c8aa8351d3667984
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89217630"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96836785"
 ---
 # <a name="guid_ndis_tcp_offload_admin_settings"></a>GUID_NDIS_TCP_OFFLOAD_ADMIN_SETTINGS
 

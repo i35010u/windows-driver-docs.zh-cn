@@ -1,15 +1,14 @@
 ---
 title: 开发 WIA 相机驱动程序
 description: 开发 WIA 相机驱动程序
-ms.assetid: 1f36c399-0903-4e48-b923-9f06b12a42ff
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d90d2deaa3e78d10f031f546d6b92f78e75251f8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3829442a61f14adbcc54e1ed23713ea5c680f766
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63373133"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838593"
 ---
 # <a name="developing-a-wia-camera-driver"></a>开发 WIA 相机驱动程序
 
@@ -17,13 +16,13 @@ ms.locfileid: "63373133"
 
 
 
-WIA 照相机的驱动程序开发人员可以创建任何驱动程序的以下三种类型：
+WIA 相机驱动程序开发人员可以创建以下三种类型的驱动程序中的任何一种：
 
 [PTP 驱动程序](ptp-driver.md)
 
 [大容量存储驱动程序](mass-storage-driver.md)
 
-[WIA 照相机微型驱动程序](wia-camera-minidriver.md)
+[WIA 相机微型驱动程序](wia-camera-minidriver.md)
 
  
 

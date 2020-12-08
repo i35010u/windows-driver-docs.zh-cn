@@ -1,7 +1,6 @@
 ---
 title: 指示微型端口驱动程序状态
 description: 指示微型端口驱动程序状态
-ms.assetid: 366caecb-6c4b-42f3-927d-b72db764d6cf
 keywords:
 - 状态信息 WDK CoNDIS
 - 面向连接的 NDIS WDK，微型端口驱动程序
@@ -9,12 +8,12 @@ keywords:
 - 微型端口驱动程序 WDK 网络，CoNDIS
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 40ec5fcf4577477b3443ebbbd08bf6fb11dbbbe1
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 0cb2eeb0d5a5e33cfeb64b6dc8b279d7c6a7b050
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89212433"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837935"
 ---
 # <a name="indicating-miniport-driver-status"></a>指示微型端口驱动程序状态
 

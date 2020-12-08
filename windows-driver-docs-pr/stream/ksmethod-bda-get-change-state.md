@@ -1,7 +1,6 @@
 ---
 title: KSMETHOD \_ BDA \_ 获取 \_ 更改 \_ 状态
 description: 客户端使用 KSMETHOD \_ BDA \_ GET \_ CHANGE \_ 状态来确定筛选器的当前更改状态。
-ms.assetid: bb635b88-6d51-4d0c-9134-2fc6287a4146
 keywords:
 - KSMETHOD_BDA_GET_CHANGE_STATE 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 42ea045b2922db858df66b672a1543dbdc96fec4
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: a80bf317cd2a6e6fa4689ca45c63f2a76f382cb8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89192169"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96836657"
 ---
 # <a name="ksmethod_bda_get_change_state"></a>KSMETHOD \_ BDA \_ 获取 \_ 更改 \_ 状态
 
@@ -53,7 +52,7 @@ KSMETHOD，其 **Flags** 成员设置为 KSMETHOD \_ 类型 \_ READ。
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**BDA \_ 更改 \_ 状态**](/previous-versions/windows/hardware/drivers/ff556518(v=vs.85))

@@ -1,7 +1,6 @@
 ---
 title: Tracefmt
 description: Tracefmt
-ms.assetid: abf23d76-423d-4d1e-afde-83739015bbfd
 keywords:
 - Tracefmt WDK
 - 软件跟踪 WDK，Tracefmt
@@ -13,12 +12,12 @@ keywords:
 - 跟踪消息格式化文件 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 258c7c7a9dedd8732c49d42328b26107dfed376b
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 885e9e7aa0139e9af57e440ef7cb3a40c54cfb56
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102238"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96836839"
 ---
 # <a name="tracefmt"></a>Tracefmt
 
@@ -39,12 +38,12 @@ Tracefmt ( # A0) 是一种命令行工具，用于设置和显示事件跟踪日
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>安装 WDK、Visual Studio 和桌面应用的 Windows SDK 时，将包含 Tracefmt ( # A0) 。 有关下载套件的信息，请参阅 <a href="/windows-hardware/drivers/download-the-wdk" data-raw-source="[Windows Hardware Downloads](../download-the-wdk.md)">Windows 硬件下载</a>。</p>
+<td align="left"><p>安装 WDK、Visual Studio 和桌面应用的 Windows SDK 时，将包含 Tracefmt ( # A0) 。 有关下载工具包的信息，请参阅 <a href="/windows-hardware/drivers/download-the-wdk" data-raw-source="[Windows Hardware Downloads](../download-the-wdk.md)">Windows 硬件下载</a>。</p>
 <p><strong>Windows 驱动程序工具包 (WDK) 8.1</strong> (安装路径) </p>
 <p>% WindowsSdkDir% \bin\x64\Tracefmt.exe</p>
 <p>% WindowsSdkDir% \bin\x86\Tracefmt.exe</p>
 <div class="alert">
-<strong>注意</strong>   Visual Studio 环境变量% WindowsSdkDir% 表示安装包的 Windows 工具包目录的路径，例如，C:\Program 文件 (x86) \Windows Kits\8.1。
+<strong>注意</strong>  Visual Studio 环境变量（%WindowsSdkDir%）表示安装了工具包的 Windows 工具包目录的路径，例如 C:\Program Files (x86)\Windows Kits\8.1。
 </div>
 <div>
  

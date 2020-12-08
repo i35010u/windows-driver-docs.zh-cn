@@ -1,15 +1,14 @@
 ---
 title: ComputerHardwareIds 输出
 description: ComputerHardwareIds 输出
-ms.assetid: 38a08dda-92db-4389-9c2c-91fe17a88051
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a52571ce2ccb9155f88951af23ad5e81ee5e0081
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: b5cc9dc881ec8a061945014b189cb1cbd96ddd63
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89383115"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837807"
 ---
 # <a name="computerhardwareids-output"></a>ComputerHardwareIds 输出
 
@@ -39,7 +38,7 @@ Hardware IDs
 {d7be59e5-29b5-589a-b49d-de7265ef6a7b}    <- Manufacturer + Family + ProductName
 ```
 
-在此示例中，供应商 (Contoso Inc. ) 通常会将第二个硬件 ID (d7be59e5-29b5-589a-b49d-de7265ef6a7b) 用于供应商设备元数据包的[PACKAGEINFO XML 文档](../install/packageinfo-xml-document.md)中的[**HardwareID**](/previous-versions/windows/hardware/metadata/ff546114(v=vs.85))元素的值。
+在此示例中，供应商 (Contoso Inc. ) 通常会将第二个硬件 ID (d7be59e5-29b5-589a-b49d-de7265ef6a7b) 用于供应商设备元数据包的 [PACKAGEINFO XML 文档](../install/packageinfo-xml-document.md)中的 [**HardwareID**](/previous-versions/windows/hardware/metadata/ff546114(v=vs.85))元素的值。
 
  
 

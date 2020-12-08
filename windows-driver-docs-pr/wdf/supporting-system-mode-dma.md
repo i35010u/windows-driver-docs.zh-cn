@@ -1,15 +1,14 @@
 ---
 title: 支持系统模式 DMA
 description: 介绍 KMDF 驱动程序在其事件回调函数中提供的用于处理系统模式 DMA 设备 i/o 请求的代码。
-ms.assetid: CCC77C15-69CA-44CB-8DEB-29F3EAEA44F6
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ca8dba1e795329654ca735441807b9438c93bee4
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 0b5ea810a451b7d1640e9e2c072214003b24f47b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89190763"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96836593"
 ---
 # <a name="supporting-system-mode-dma"></a>支持系统模式 DMA
 
@@ -18,17 +17,17 @@ ms.locfileid: "89190763"
 
 与 *主线主机* dma 相比，系统模式 dma 介绍了多个设备共享单个（通常是多个多通道 DMA 控制器）的配置。
 
-从内核模式驱动程序框架开始 (KMDF) 版本1.11，该框架支持在 Windows 8 或更高版本的 Windows 操作系统上运行的基于芯片 (SoC) 系统上的系统上系统模式的 DMA。
+从 Kernel-Mode Driver Framework (KMDF) 1.11 版开始，该框架支持在 Windows 8 或更高版本的 Windows 操作系统的 Windows 8 或更高版本上运行的)  (芯片上的系统上的系统模式 DMA。
 
 本主题介绍 KMDF 驱动程序在其事件回调函数中必须提供的代码，以及可注册的可选事件回调函数，以处理系统模式 DMA 设备的 i/o 请求。
 
-有关 KMDF 和 bus 主机 DMA 的信息，请参阅 [在 KMDF 驱动程序中处理 I/o 请求，以获取总线主控 Dma 设备](handling-i-o-requests-in-a-kmdf-driver-for-a-bus-master-dma-device.md)。
+有关 KMDF 和 bus-master DMA 的信息，请参阅 [处理 Bus-Master DMA 设备的 KMDF 驱动程序中的 I/o 请求](handling-i-o-requests-in-a-kmdf-driver-for-a-bus-master-dma-device.md)。
 
 下图显示了驱动程序用于支持系统模式 DMA 的事件回调函数：
 
 ![kmdf 驱动程序中的系统模式 dma 实现](images/sys-mode-dma-in-kmdf.png)
 
-## <a name="creating-a-system-mode-dma-enabler"></a>创建系统模式 DMA 启用程序
+## <a name="creating-a-system-mode-dma-enabler"></a>创建 System-Mode DMA 启用程序
 
 
 创建系统模式 DMA 配置文件的过程分为两个步骤。 以下步骤表示典型方案：
@@ -39,7 +38,7 @@ ms.locfileid: "89190763"
 
 2.  驱动程序的 [*EvtDevicePrepareHardware*](/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware) 回调函数通过调用 [**WDFDMAENABLERCONFIGURESYSTEMPROFILE**](/windows-hardware/drivers/ddi/wdfdmaenabler/nf-wdfdmaenabler-wdfdmaenablerconfiguresystemprofile) 方法将 DMA 启用码与其 dma 资源关联起来。 对于双工启用程序，驱动程序将调用 [**WdfDmaEnablerConfigureSystemProfile**](/windows-hardware/drivers/ddi/wdfdmaenabler/nf-wdfdmaenabler-wdfdmaenablerconfiguresystemprofile) 两次，一次配置每个传输方向。
 
-    在[*EvtDevicePrepareHardware*](/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware)完成之后，驱动程序可以调用[**WdfDmaEnablerConfigureSystemProfile**](/windows-hardware/drivers/ddi/wdfdmaenabler/nf-wdfdmaenabler-wdfdmaenablerconfiguresystemprofile) ，但驱动程序必须在初始化 DMA 事务之前调用此方法。
+    在 [*EvtDevicePrepareHardware*](/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware)完成之后，驱动程序可以调用 [**WdfDmaEnablerConfigureSystemProfile**](/windows-hardware/drivers/ddi/wdfdmaenabler/nf-wdfdmaenabler-wdfdmaenablerconfiguresystemprofile) ，但驱动程序必须在初始化 DMA 事务之前调用此方法。
 
 ## <a name="providing-optional-callback-functions"></a>提供可选的回调函数
 
@@ -60,7 +59,7 @@ ms.locfileid: "89190763"
 
 如果设备不引发中断来表明 DMA 传输结束，则驱动程序可以提供一个 [*EvtDmaTransactionDmaTransferComplete*](/windows-hardware/drivers/ddi/wdfdmatransaction/nc-wdfdmatransaction-evt_wdf_dma_transaction_dma_transfer_complete) 事件回调函数，该函数在系统模式 DMA 传输完成后，框架将调用该函数。
 
-若要注册此回调函数，驱动程序从其一个[请求处理程序](request-handlers.md)调用[**WdfDmaTransactionSetTransferCompleteCallback**](/windows-hardware/drivers/ddi/wdfdmatransaction/nf-wdfdmatransaction-wdfdmatransactionsettransfercompletecallback) 。
+若要注册此回调函数，驱动程序从其一个 [请求处理程序](request-handlers.md)调用 [**WdfDmaTransactionSetTransferCompleteCallback**](/windows-hardware/drivers/ddi/wdfdmatransaction/nf-wdfdmatransaction-wdfdmatransactionsettransfercompletecallback) 。
 
  
 

@@ -1,7 +1,6 @@
 ---
 title: 取消 I/O 请求
 description: 取消 I/O 请求
-ms.assetid: 9a486fa4-7fd3-4433-88aa-34a54d9b1e16
 keywords:
 - 请求处理 WDK KMDF，取消请求
 - I/o 请求 WDK KMDF，取消
@@ -10,12 +9,12 @@ keywords:
 - 转发 i/o 请求 WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4b5a0467edb6de7b1a65b41eab107d8ad9bba447
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 869fbcd6436e5d2987cbaed36515e20ae4fba0b1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89187071"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837047"
 ---
 # <a name="canceling-io-requests"></a>取消 I/O 请求
 
@@ -51,7 +50,7 @@ ms.locfileid: "89187071"
 
 如果驱动程序将拥有相对较长时间的请求，则应调用 [**WdfRequestMarkCancelable**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestmarkcancelable) 或 [**WdfRequestMarkCancelableEx**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestmarkcancelableex) 。 例如，驱动程序可能需要等待设备响应，或者等待较低的驱动程序完成收到单个请求时驱动程序创建的一组请求。
 
-如果驱动程序没有调用[**WdfRequestMarkCancelable**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestmarkcancelable)或[**WdfRequestMarkCancelableEx**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestmarkcancelableex)，或者如果驱动程序在调用**WdfRequestMarkCancelable**或**WdfRequestMarkCancelableEx**后调用[**WdfRequestUnmarkCancelable**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestunmarkcancelable) ，则驱动程序将不知道取消操作，因此会像往常一样处理请求。
+如果驱动程序没有调用 [**WdfRequestMarkCancelable**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestmarkcancelable)或 [**WdfRequestMarkCancelableEx**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestmarkcancelableex)，或者如果驱动程序在调用 **WdfRequestMarkCancelable** 或 **WdfRequestMarkCancelableEx** 后调用 [**WdfRequestUnmarkCancelable**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestunmarkcancelable) ，则驱动程序将不知道取消操作，因此会像往常一样处理请求。
 
 ### <a name="calling-wdfrequestiscanceled"></a>调用 WdfRequestIsCanceled
 
@@ -59,13 +58,13 @@ ms.locfileid: "89187071"
 
 未调用 [**WdfRequestMarkCancelable**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestmarkcancelable) 或 [**WdfRequestMarkCancelableEx**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestmarkcancelableex) 的驱动程序在以下情况下可能会调用 [**WdfRequestIsCanceled**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestiscanceled) ：
 
--   等待设备中断的驱动程序可能会从其[*EvtInterruptDpc*](/windows-hardware/drivers/ddi/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_dpc)回调函数调用[**WdfRequestIsCanceled**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestiscanceled) 。
+-   等待设备中断的驱动程序可能会从其 [*EvtInterruptDpc*](/windows-hardware/drivers/ddi/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_dpc)回调函数调用 [**WdfRequestIsCanceled**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestiscanceled) 。
 
 -   轮询其设备的驱动程序可能会从它的轮询线程中调用 [**WdfRequestIsCanceled**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestiscanceled) 。
 
 -   在每次传输完成后，将 [DMA 事务](dma-transactions-and-dma-transfers.md) 分为多个较小的传输的驱动程序可能会调用 [**WdfRequestIsCanceled**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestiscanceled) 。
 
--   当驱动程序的 i/o 目标完成每个较小的请求时，如果驱动程序没有为收到的请求调用[**WdfRequestMarkCancelable**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestmarkcancelable)或[**WdfRequestMarkCancelableEx**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestmarkcancelableex) ，则接收到多个较小的请求的请求可能会在驱动程序的 i/o 目标完成每个较小的请求后调用[**WdfRequestIsCanceled**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestiscanceled) 。
+-   当驱动程序的 i/o 目标完成每个较小的请求时，如果驱动程序没有为收到的请求调用 [**WdfRequestMarkCancelable**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestmarkcancelable)或 [**WdfRequestMarkCancelableEx**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestmarkcancelableex) ，则接收到多个较小的请求的请求可能会在驱动程序的 i/o 目标完成每个较小的请求后调用 [**WdfRequestIsCanceled**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestiscanceled) 。
 
 ### <a name="canceling-the-request"></a>正在取消请求
 

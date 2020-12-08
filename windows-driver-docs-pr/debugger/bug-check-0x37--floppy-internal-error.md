@@ -1,7 +1,6 @@
 ---
 title: Bug 检查 0x37 FLOPPY_INTERNAL_ERROR
-description: FLOPPY_INTERNAL_ERROR bug 检查具有 0x00000037 值。检查此错误极少出现。
-ms.assetid: a5707c3c-2d11-4f37-8b0e-f9ca8937fef1
+description: FLOPPY_INTERNAL_ERROR bug 检查的值为0x00000037。此 bug 检查很少出现。
 keywords:
 - Bug 检查 0x37 FLOPPY_INTERNAL_ERROR
 - FLOPPY_INTERNAL_ERROR
@@ -13,22 +12,22 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 913ea60589894334066cf6ac348635541b544f6a
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: 2ca180c2517ec80a9a16fb67fd22383ee116c867
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67519499"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837005"
 ---
-# <a name="bug-check-0x37-floppyinternalerror"></a>Bug 检查 0x37：FLOPPY\_INTERNAL\_ERROR
+# <a name="bug-check-0x37-floppy_internal_error"></a>Bug 检查0x37：软盘 \_ 内部 \_ 错误
 
 
-软盘\_内部\_错误 bug 检查的值为 0x00000037。
+软盘 \_ 内部 \_ 错误错误检查的值为0x00000037。
 
-检查此错误极少出现。
+此 bug 检查很少出现。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题面向程序员。 如果您是在使用计算机时收到蓝屏错误代码的客户，请参阅[蓝屏错误疑难解答](https://www.windows.com/stopcode)。
 
 
  

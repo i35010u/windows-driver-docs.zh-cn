@@ -1,47 +1,46 @@
 ---
-title: KSPROPSETID\_BdaFrequencyFilter
-description: KSPROPSETID\_BdaFrequencyFilter
-ms.assetid: 7650a239-3d49-4cb1-99bb-12bac55d70d2
+title: KSPROPSETID \_ BdaFrequencyFilter
+description: KSPROPSETID \_ BdaFrequencyFilter
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 82ced82098e7dc6dd5deaf0c711266ec0b2463ed
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: aad51e36a0d5a3e3b61046dfe895738867166066
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63389232"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837841"
 ---
-# <a name="kspropsetidbdafrequencyfilter"></a>KSPROPSETID\_BdaFrequencyFilter
+# <a name="kspropsetid_bdafrequencyfilter"></a>KSPROPSETID \_ BdaFrequencyFilter
 
 
 ## <span id="ddk_kspropsetid_bdafrequencyfilter_ks"></span><span id="DDK_KSPROPSETID_BDAFREQUENCYFILTER_KS"></span>
 
 
-KSPROPSETID\_BdaFrequencyFilter 未 BDA 频率设置筛选器属性。 它用于控制 RF 调谐器节点接收方拓扑中。
+KSPROPSETID \_ BdaFrequencyFilter 为 BDA frequency filter 属性集。 它用于控制接收方拓扑中的 RF 调谐器节点。
 
-可用属性如下：
+以下属性可用：
 
-<span id="KSPROPERTY_BDA_RF_TUNER_FREQUENCY"></span><span id="ksproperty_bda_rf_tuner_frequency"></span>[**KSPROPERTY\_BDA\_RF\_调谐器\_频率**](ksproperty-bda-rf-tuner-frequency.md)  
-通知信号承运人的基频率调谐器节点。 基频率乘以值 KSPROPERTY\_BDA\_RF\_调谐器\_频率\_乘数属性来获取实际的频率。
+<span id="KSPROPERTY_BDA_RF_TUNER_FREQUENCY"></span><span id="ksproperty_bda_rf_tuner_frequency"></span>[**KSPROPERTY \_ BDA \_ RF \_ 调谐器 \_ 频率**](ksproperty-bda-rf-tuner-frequency.md)  
+向调谐器节点通知信号托架的基本频率。 使用 KSPROPERTY BDA RF 射频乘数属性的值乘以基准频率 \_ \_ \_ \_ \_ ，以获得实际的频率。
 
-<span id="KSPROPERTY_BDA_RF_TUNER_POLARITY"></span><span id="ksproperty_bda_rf_tuner_polarity"></span>[**KSPROPERTY\_BDA\_RF\_调谐器\_极性**](ksproperty-bda-rf-tuner-polarity.md)  
-有关使用传输信号极化通知调谐器节点。
+<span id="KSPROPERTY_BDA_RF_TUNER_POLARITY"></span><span id="ksproperty_bda_rf_tuner_polarity"></span>[**KSPROPERTY \_ BDA \_ RF \_ 调谐器 \_ 极性**](ksproperty-bda-rf-tuner-polarity.md)  
+通知调谐器节点有关传输的信号使用的 polarization。
 
-<span id="KSPROPERTY_BDA_RF_TUNER_RANGE"></span><span id="ksproperty_bda_rf_tuner_range"></span>[**KSPROPERTY\_BDA\_RF\_调谐器\_范围**](ksproperty-bda-rf-tuner-range.md)  
-调谐器范围设置。
+<span id="KSPROPERTY_BDA_RF_TUNER_RANGE"></span><span id="ksproperty_bda_rf_tuner_range"></span>[**KSPROPERTY \_ BDA \_ RF \_ 调谐器 \_ 范围**](ksproperty-bda-rf-tuner-range.md)  
+设置调谐器范围。
 
-<span id="KSPROPERTY_BDA_RF_TUNER_TRANSPONDER"></span><span id="ksproperty_bda_rf_tuner_transponder"></span>[**KSPROPERTY\_BDA\_RF\_调谐器\_转发器**](ksproperty-bda-rf-tuner-transponder.md)  
-通知适当的转发器数量的调谐器节点。
+<span id="KSPROPERTY_BDA_RF_TUNER_TRANSPONDER"></span><span id="ksproperty_bda_rf_tuner_transponder"></span>[**KSPROPERTY \_ BDA \_ RF \_ 调谐器 \_ TRANSPONDER**](ksproperty-bda-rf-tuner-transponder.md)  
+向调谐器节点通知相应的 transponder 号。
 
-<span id="KSPROPERTY_BDA_RF_TUNER_BANDWIDTH"></span><span id="ksproperty_bda_rf_tuner_bandwidth"></span>[**KSPROPERTY\_BDA\_RF\_调谐器\_带宽**](ksproperty-bda-rf-tuner-bandwidth.md)  
-通知的带宽传输信号的调谐器节点。
+<span id="KSPROPERTY_BDA_RF_TUNER_BANDWIDTH"></span><span id="ksproperty_bda_rf_tuner_bandwidth"></span>[**KSPROPERTY \_ BDA \_ RF \_ 调谐器 \_ 带宽**](ksproperty-bda-rf-tuner-bandwidth.md)  
+将传输的信号的带宽通知给调谐器节点。
 
-<span id="KSPROPERTY_BDA_RF_TUNER_FREQUENCY_MULTIPLIER"></span><span id="ksproperty_bda_rf_tuner_frequency_multiplier"></span>[**KSPROPERTY\_BDA\_RF\_调谐器\_频率\_乘数**](ksproperty-bda-rf-tuner-frequency-multiplier.md)  
-用来与 KSPROPERTY 值相乘的值会告知调谐器节点\_BDA\_RF\_调谐器\_频率属性来获取实际的频率。
+<span id="KSPROPERTY_BDA_RF_TUNER_FREQUENCY_MULTIPLIER"></span><span id="ksproperty_bda_rf_tuner_frequency_multiplier"></span>[**KSPROPERTY \_ BDA \_ RF \_ 调谐器 \_ 频率 \_ 乘数**](ksproperty-bda-rf-tuner-frequency-multiplier.md)  
+向调谐器节点通知 KSPROPERTY \_ BDA \_ RF \_ 调谐器 FREQUENCY 属性的值， \_ 以获取实际频率。
 
-### <a name="comments"></a>备注
+### <a name="comments"></a>注释
 
-KSPROPSETID\_BdaFrequencyFilter 属性集是泛型的在几乎所有的调谐器。 它用来通知如何优化 RF 信号的调谐器节点。
+KSPROPSETID \_ BdaFrequencyFilter 属性集在几乎所有调谐器之间是通用的。 它用于通知调谐器节点如何调整 RF 信号。
 
  
 

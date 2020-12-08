@@ -1,17 +1,16 @@
 ---
 title: WDI_TLV_CIPHER_KEY_ID
 description: WDI_TLV_CIPHER_KEY_ID 是一个 TLV，其中包含 OID_WDI_SET_ADD_CIPHER_KEYS 和 OID_WDI_SET_DELETE_CIPHER_KEYS 的密码密钥 ID。
-ms.assetid: 24076B2A-FAC2-4509-9F1C-7F2AF57883CF
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_CIPHER_KEY_ID 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: edfd3a86075635f2572f641120789d8f664065be
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: da7ee5ebe41e8a423d777581ababb2605f086b1d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89212307"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837639"
 ---
 # <a name="wdi_tlv_cipher_key_id"></a>WDI \_ TLV \_ 密码 \_ 密钥 \_ ID
 
@@ -23,7 +22,7 @@ WDI \_ tlv \_ 密码 \_ 密钥 \_ id 是一个 TLV，其中包含 OID 的密码�
 
 0x4D
 
-## <a name="length"></a>Length
+## <a name="length"></a>长度
 
 
 UINT32) 的大小 (以字节为单位）。
@@ -31,7 +30,7 @@ UINT32) 的大小 (以字节为单位）。
 ## <a name="values"></a>值
 
 
-| 类型   | 说明                  |
+| 类型   | 描述                  |
 |--------|------------------------------|
 | UINT32 | 指定密码密钥 ID。 |
 
@@ -52,7 +51,7 @@ UINT32) 的大小 (以字节为单位）。
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
-<td><p>Windows Server 2016</p></td>
+<td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
 <td><p>标头</p></td>

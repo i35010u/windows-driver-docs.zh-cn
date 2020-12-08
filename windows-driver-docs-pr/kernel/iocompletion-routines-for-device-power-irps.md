@@ -1,7 +1,6 @@
 ---
 title: 设备电源 IRP 的 IoCompletion 例程
 description: 设备电源 IRP 的 IoCompletion 例程
-ms.assetid: c275fcba-5fa9-427c-8d7e-2339563985e4
 keywords:
 - IoCompletion 例程
 - power Irp WDK 内核，设备更改
@@ -10,12 +9,12 @@ keywords:
 - 工作状态返回 WDK 电源管理
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8d97dd80cc93544f0aa161ae40b8564e99cce5dd
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 3cb5100d336b0f3871752b273b47bb4f74e0ac97
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89183995"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838459"
 ---
 # <a name="iocompletion-routines-for-device-power-irps"></a>设备电源 IRP 的 IoCompletion 例程
 

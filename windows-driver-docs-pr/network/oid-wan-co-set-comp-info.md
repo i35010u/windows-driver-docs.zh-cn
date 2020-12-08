@@ -1,16 +1,15 @@
 ---
 title: OID_WAN_CO_SET_COMP_INFO
 description: OID_WAN_CO_SET_COMP_INFO OID 通知小型端口驱动程序所选的 PPP 压缩方案的微型端口驱动程序已使用 OID_WAN_CO_GET_COMP_INFO 查询返回的信息。
-ms.assetid: f3b6b846-fa8c-425b-ba05-45927e744d66
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_WAN_CO_SET_COMP_INFO 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: a582a6d003e0989803eba8bfdf3de47c87e9cd55
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: d52b03beb53c3099388d2ea1cdc247318c1e59a0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89213303"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838733"
 ---
 # <a name="oid_wan_co_set_comp_info"></a>OID \_ WAN \_ CO \_ 集 \_ 复合 \_ 信息
 
@@ -62,7 +61,7 @@ OID \_ wan \_ co \_ 集 \_ 复合 \_ 信息 OID 通知小型端口驱动程序�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [OID \_ WAN \_ CO \_ 获取 \_ 复合 \_ 信息](oid-wan-co-get-comp-info.md)

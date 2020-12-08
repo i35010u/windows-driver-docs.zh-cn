@@ -1,23 +1,22 @@
 ---
 title: 在 KMDF 驱动程序中创建可分页的代码
 description: 在 KMDF 驱动程序中创建可分页的代码
-ms.assetid: 5c694ae2-2a16-4c2f-84b0-62e26f4121bc
 keywords:
 - 可分页驱动程序 WDK KMDF
 - KMDF WDK，可分页驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b39ba80d9dc5b7583e5c0c4f6cb7e51161c32bee
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 2b2997b254830c02955e41aa4815af9c41256b77
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89192115"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837041"
 ---
 # <a name="creating-pageable-code-in-a-kmdf-driver"></a>在 KMDF 驱动程序中创建可分页的代码
 
 
-可*分页代码*是代码未使用时可以写入计算机的分页文件中的代码。 可以进行部分驱动程序分页以减少其负载映像和初始加载时间，还可以减少使用计算机的非分页内存池的驱动程序代码量。
+可 *分页代码* 是代码未使用时可以写入计算机的分页文件中的代码。 可以进行部分驱动程序分页以减少其负载映像和初始加载时间，还可以减少使用计算机的非分页内存池的驱动程序代码量。
 
 若要帮助你确定可分页代码或数据是否适合你的驱动程序，请执行以下操作：
 

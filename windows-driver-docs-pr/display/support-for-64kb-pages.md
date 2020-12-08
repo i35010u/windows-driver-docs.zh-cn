@@ -1,22 +1,21 @@
 ---
 title: 64KB 页面支持
 description: 若要支持 64 KB 页面，Windows 显示驱动程序模型 (WDDM) v2 提供两种类型的叶页表，其中一页支持 4 KB 页表项，另一页支持 64 KB 条目。
-ms.assetid: 24D4854E-BBD7-46A9-8FEF-EF13D2968E6B
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 879ce4e95d002169d4b306f019a604163fa62a47
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: d1431a20dfe7d1f6fa7fad871e7d5941dd214706
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89063798"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837787"
 ---
 # <a name="support-for-64kb-pages"></a>64KB 页面支持
 
 
 若要支持 64 KB 页面，Windows 显示驱动程序模型 (WDDM) v2 提供两种类型的叶页表，其中一页支持 4 KB 页表项，另一页支持 64 KB 条目。 页表项大小都涵盖同一虚拟地址范围，因此4KB 页的页表的项数为 64 KB 页表的项数的16倍。
 
-64 KB 页表的大小由 [**DXGK \_ GPUMMUCAPS**](/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgk_gpummucaps)：：**LeafPageTableSizeFor64KPagesInBytes**定义。
+64 KB 页表的大小由 [**DXGK \_ GPUMMUCAPS**](/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgk_gpummucaps)：：**LeafPageTableSizeFor64KPagesInBytes** 定义。
 
 [*UpdatePageTable*](./dxgkddiupdatepagetable.md)操作具有一个标志，该标志指示更新页表的类型， [**DXGK \_ UPDATEPAGETABLEFLAGS**](/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgk_updatepagetableflags)：：**Use64KBPages**。
 
@@ -25,7 +24,7 @@ WDDM v2 支持两种操作模式：
 1.  级别1页表的页表项指向 4 KB 页表或 64 KB 页表。
 2.  级别1页表的页表项同时指向 4 KB 页表和 64 KB 页表。 这称为 "双 PTE" 模式。
 
-*双重 PTE*支持由[**DXGK \_ GPUMMUCAPS**](/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgk_gpummucaps)：：**DualPteSupported** cap 表示。
+*双重 PTE* 支持由 [**DXGK \_ GPUMMUCAPS**](/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgk_gpummucaps)：：**DualPteSupported** cap 表示。
 视频内存管理器根据分配对齐方式、图形处理单元 (GPU) 内存段属性和 GPU 内存段类型选择页面大小。 如果使用 64 KB 页的对齐方式和大小为 64 KB 的倍数，并且它驻留在支持 64 KB 页的内存段中，则将使用 KB 的页映射分配。
 
 ## <a name="span-idsingle_pte_modespanspan-idsingle_pte_modespanspan-idsingle_pte_modespansingle-pte-mode"></a><span id="Single_PTE_mode"></span><span id="single_pte_mode"></span><span id="SINGLE_PTE_MODE"></span>单 PTE 模式
@@ -33,7 +32,7 @@ WDDM v2 支持两种操作模式：
 
 在此模式下，级别1页表的页表项将指向 4 KB 页表或 64 KB 页表。
 
-[**DXGK \_**](/windows-hardware/drivers/ddi/d3dukmdt/ns-d3dukmdt-_dxgk_pte)为**DXGK \_ PTE**添加了 PTE：：**PageTablePageSize**字段。 它应仅用于在旧术语) 中 (page directory 的第1级页表的页表项。 此字段告知内核模式驱动程序使用64KB 或4KB 页面)  (的相应页表的类型。
+[**DXGK \_**](/windows-hardware/drivers/ddi/d3dukmdt/ns-d3dukmdt-_dxgk_pte)为 **DXGK \_ PTE** 添加了 PTE：：**PageTablePageSize** 字段。 它应仅用于在旧术语) 中 (page directory 的第1级页表的页表项。 此字段告知内核模式驱动程序使用64KB 或4KB 页面)  (的相应页表的类型。
 
 当以下情况时，视频内存管理器选择将 64 KB 页表用于虚拟地址范围：
 

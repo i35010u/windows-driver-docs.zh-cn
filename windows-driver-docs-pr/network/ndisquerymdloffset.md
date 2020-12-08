@@ -1,22 +1,21 @@
 ---
 title: NdisQueryMdlOffset 宏
 description: NdisQueryMdlOffset 宏检索物理页面中给定 MDL 缓冲区开始处的偏移量和缓冲区的长度。
-ms.assetid: d6f23e9c-5015-4087-b7a2-badee00bdafa
 ms.date: 07/18/2017
 keywords:
 - NdisQueryMdlOffset 从 Windows Vista 开始的宏网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: ce4e5608eb8fb55dd5d5042b91cb29c23cae78f8
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 8fef0f61e3579dba5175b7402b38ad0956c39e00
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104864"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96836773"
 ---
 # <a name="ndisquerymdloffset-macro"></a>NdisQueryMdlOffset 宏
 
 
-**NdisQueryMdlOffset**宏检索物理页面中给定 MDL 缓冲区开始处的偏移量和缓冲区的长度。
+**NdisQueryMdlOffset** 宏检索物理页面中给定 MDL 缓冲区开始处的偏移量和缓冲区的长度。
 
 <a name="syntax"></a>语法
 ------
@@ -49,7 +48,7 @@ VOID NdisQueryMdlOffset(
 <a name="remarks"></a>备注
 -------
 
-**NdisQueryMdlOffset**宏提供[**NdisQueryBufferOffset**](/previous-versions/windows/hardware/network/ff554411(v=vs.85))函数的基于 MDL 的版本。
+**NdisQueryMdlOffset** 宏提供 [**NdisQueryBufferOffset**](/previous-versions/windows/hardware/network/ff554411(v=vs.85))函数的基于 MDL 的版本。
 
 <a name="requirements"></a>要求
 ------------
@@ -62,7 +61,7 @@ VOID NdisQueryMdlOffset(
 <tbody>
 <tr class="odd">
 <td><p>目标平台</p></td>
-<td>桌面型</td>
+<td>台式机</td>
 </tr>
 <tr class="even">
 <td><p>版本</p></td>
@@ -83,7 +82,7 @@ VOID NdisQueryMdlOffset(
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**NdisQueryBufferOffset**](/previous-versions/windows/hardware/network/ff554411(v=vs.85))

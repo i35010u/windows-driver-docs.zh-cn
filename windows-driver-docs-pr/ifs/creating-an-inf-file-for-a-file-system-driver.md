@@ -1,7 +1,6 @@
 ---
 title: 为文件系统驱动程序创建 INF 文件
 description: 为文件系统驱动程序创建 INF 文件
-ms.assetid: 4b67159f-a5a5-46da-9500-a9c6b6995da4
 keywords:
 - INF 文件系统，创建
 - Setupapi.log WDK 文件系统
@@ -15,12 +14,12 @@ keywords:
 - 创建 INF 文件系统
 ms.date: 10/16/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 364be2467ecfe7048fb91f88a196007bcaa1b6f7
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 88632bd1af3cb6980b12e1d4b10c3c6ba387aae2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91734539"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838283"
 ---
 # <a name="creating-an-inf-file-for-a-file-system-driver"></a>为文件系统驱动程序创建 INF 文件
 
@@ -88,11 +87,11 @@ CatalogFile =
 
 下表显示文件系统筛选器驱动程序在 " [**版本**](../install/inf-version-section.md) " 部分中应指定的值。
 
-| 条目 | 值 |
+| 条目 | “值” |
 | ----- | ----- |
-| **信号** | "$WINDOWS NT $" |
+| **Signature** | "$WINDOWS NT $" |
 | **提供程序** | 在你自己的 INF 文件中，你应该指定除 Microsoft 之外的提供程序。 |
-| **DriverVer** | 请参阅[ **INF DriverVer 指令**](../install/inf-driverver-directive.md) |
+| **DriverVer** | 请参阅 [ **INF DriverVer 指令**](../install/inf-driverver-directive.md) |
 | **CatalogFile** | 将此项留空。 将来，它将包含已签名驱动程序的 WHQL 提供的编录文件的名称。 |
 
 ### <a name="destinationdirs-section-optional-but-recommended"></a>DestinationDirs 节 (可选的，但建议使用) 
@@ -136,7 +135,7 @@ examplefilesystem.sys = 1
 > [!NOTE]
 > [**CopyFiles**](../install/inf-copyfiles-directive.md)指令不应引用目录文件或 INF 文件本身;Setupapi.log 会自动复制这些文件。
 
-你可以创建一个 INF 文件，用于在多个版本的 Windows 操作系统上安装驱动程序。 通过为每个操作系统版本创建附加的 [**DefaultInstall**](../install/inf-defaultinstall-section.md)、 [**DefaultInstall**](../install/inf-defaultinstall-services-section.md)、 **DefaultUninstall**和 **DefaultUninstall** 节来创建这种类型的 INF 文件。 每节都标记有一个 *修饰* (例如，ntx86、. ntia64 或 nt) ，用于指定应用的操作系统版本。 有关创建此类 INF 文件的详细信息，请参阅 [为多个平台和操作系统创建 INF 文件](../install/creating-inf-files-for-multiple-platforms-and-operating-systems.md)。
+你可以创建一个 INF 文件，用于在多个版本的 Windows 操作系统上安装驱动程序。 通过为每个操作系统版本创建附加的 [**DefaultInstall**](../install/inf-defaultinstall-section.md)、 [**DefaultInstall**](../install/inf-defaultinstall-services-section.md)、 **DefaultUninstall** 和 **DefaultUninstall** 节来创建这种类型的 INF 文件。 每节都标记有一个 *修饰* (例如，ntx86、. ntia64 或 nt) ，用于指定应用的操作系统版本。 有关创建此类 INF 文件的详细信息，请参阅 [为多个平台和操作系统创建 INF 文件](../install/creating-inf-files-for-multiple-platforms-and-operating-systems.md)。
 
 在下面的代码示例中， [**CopyFiles**](../install/inf-copyfiles-directive.md) 指令复制在 INF 文件的 ExampleFileSystem. DriverFiles 节中列出的文件。
 
@@ -151,7 +150,7 @@ examplefilesystem.sys
 
 ### <a name="defaultinstallservices-section-required"></a>DefaultInstall 节 (必需) 
 
-[**DefaultInstall**](../install/inf-defaultinstall-services-section.md)部分包含的[**AddService**](../install/inf-addservice-directive.md)指令控制如何以及何时加载特定驱动程序的服务。
+[**DefaultInstall**](../install/inf-defaultinstall-services-section.md)部分包含的 [**AddService**](../install/inf-addservice-directive.md)指令控制如何以及何时加载特定驱动程序的服务。
 
 在下面的代码示例中， [**AddService**](../install/inf-addservice-directive.md) 指令将文件系统服务添加到操作系统。 % ServiceName% 令牌包含在 INF 文件的 **字符串** 部分中定义的服务名称字符串。 ExampleFileSystem 是文件系统驱动程序的 **ServiceInstall** 节的名称。
 
@@ -162,7 +161,7 @@ AddService = %ServiceName%,,ExampleFileSystem.Service
 
 ### <a name="serviceinstall-section-required"></a>ServiceInstall 节 (必需的) 
 
-**ServiceInstall**节将子项或值名称添加到注册表中，并设置值。 **ServiceInstall**部分的名称必须出现在[**DefaultInstall 部分**](../install/inf-defaultinstall-services-section.md)的[**AddService 指令**](../install/inf-addservice-directive.md)中。
+**ServiceInstall** 节将子项或值名称添加到注册表中，并设置值。 **ServiceInstall** 部分的名称必须出现在 [**DefaultInstall 部分**](../install/inf-defaultinstall-services-section.md)的 [**AddService 指令**](../install/inf-addservice-directive.md)中。
 
 下面的代码示例显示了文件系统驱动程序的 **ServiceInstall** 部分。
 
@@ -178,15 +177,15 @@ LoadOrderGroup = "File System"
 AddReg         = ExampleFileSystem.AddRegistry
 ```
 
-**DisplayName**项指定服务的名称。 在前面的示例中，服务名称字符串由% ServiceName% 令牌指定，该令牌在 INF 文件的 **字符串** 部分中定义。
+**DisplayName** 项指定服务的名称。 在前面的示例中，服务名称字符串由% ServiceName% 令牌指定，该令牌在 INF 文件的 **字符串** 部分中定义。
 
-**Description**条目指定描述服务的字符串。 在前面的示例中，此字符串由% ServiceDesc% 令牌指定，该令牌在 INF 文件的 **字符串** 部分中定义。
+**Description** 条目指定描述服务的字符串。 在前面的示例中，此字符串由% ServiceDesc% 令牌指定，该令牌在 INF 文件的 **字符串** 部分中定义。
 
-**ServiceBinary**项指定服务的可执行文件的路径。 在前面的示例中，值12指的是驱动程序目录 (%windir%\system32\drivers) 。
+**ServiceBinary** 项指定服务的可执行文件的路径。 在前面的示例中，值12指的是驱动程序目录 (%windir%\system32\drivers) 。
 
-**ServiceType**条目指定服务的类型。 下表列出了 **ServiceType** 的可能值及其相应的服务类型。
+**ServiceType** 条目指定服务的类型。 下表列出了 **ServiceType** 的可能值及其相应的服务类型。
 
-| 值 | 说明 |
+| “值” | 描述 |
 | ----- | ----------- |
 | 0x00000001 |  (设备驱动程序服务 SERVICE_KERNEL_DRIVER)  |
 | 0x00000002 | SERVICE_FILE_SYSTEM_DRIVER (文件系统或文件系统筛选器驱动程序服务)  |
@@ -195,9 +194,9 @@ AddReg         = ExampleFileSystem.AddRegistry
 
 对于文件系统驱动程序， **ServiceType** 条目应始终设置为 SERVICE_FILE_SYSTEM_DRIVER。
 
-**StartType**项指定启动服务的时间。 下表列出了 **StartType** 的可能值及其相应的启动类型。
+**StartType** 项指定启动服务的时间。 下表列出了 **StartType** 的可能值及其相应的启动类型。
 
-| 值 | 说明 |
+| “值” | 描述 |
 | ----- | ----------- |
 | 0x00000000 | SERVICE_BOOT_START |
 | 0x00000001 | SERVICE_SYSTEM_START |
@@ -211,9 +210,9 @@ AddReg         = ExampleFileSystem.AddRegistry
 
 有关 **StartType** 和 **LoadOrderGroup** 条目如何确定何时加载驱动程序的信息，请参阅 [确定何时加载驱动程序的内容](what-determines-when-a-driver-is-loaded.md)。
 
-**ErrorControl**项指定在系统启动过程中服务无法启动时要执行的操作。 下表列出了 **ErrorControl** 的可能值及其相应的错误控制值。
+**ErrorControl** 项指定在系统启动过程中服务无法启动时要执行的操作。 下表列出了 **ErrorControl** 的可能值及其相应的错误控制值。
 
-| 值 | 说明 |
+| “值” | 描述 |
 | ----- | ----------- |
 | 0x00000000 | SERVICE_ERROR_IGNORE (记录错误并继续系统启动。 )  |
 | 0x00000001 | SERVICE_ERROR_NORMAL (记录错误、向用户显示一条消息，然后继续系统启动。 )  |
@@ -222,9 +221,9 @@ AddReg         = ExampleFileSystem.AddRegistry
 
 对于文件系统驱动程序， **LoadOrderGroup** 条目必须始终设置为 "文件系统"。 这不同于为文件系统筛选器驱动程序或文件系统微筛选器驱动程序指定的，其中 **LoadOrderGroup** 项设置为其中一个文件系统筛选器加载顺序组。 有关用于文件系统筛选器驱动程序和文件系统微筛选器驱动程序的加载顺序组的详细信息，请参阅用于 [文件系统筛选器驱动程序的加载顺序组](load-order-groups-for-file-system-filter-drivers.md) 和 [加载顺序组以及微筛选器驱动程序的高度](load-order-groups-and-altitudes-for-minifilter-drivers.md)。
 
-[**AddReg 指令**](../install/inf-addreg-directive.md)是指一个或多个 INF 写入器定义的**AddRegistry**部分，其中包含要存储在注册表中用于新安装的服务的任何信息。
+[**AddReg 指令**](../install/inf-addreg-directive.md)是指一个或多个 INF 写入器定义的 **AddRegistry** 部分，其中包含要存储在注册表中用于新安装的服务的任何信息。
 
-**注意**   如果在初始安装后 INF 文件还将用于升级驱动程序，则在**AddRegistry**节中包含的条目应 FLG_ADDREG_NOCLOBBER) 标志指定 0x00000002 (。 如果指定此标志，则在安装后续文件时，会保留 HKLM\CurrentControlSet\Services 中的注册表项。 例如：
+**注意**   如果在初始安装后 INF 文件还将用于升级驱动程序，则在 **AddRegistry** 节中包含的条目应 FLG_ADDREG_NOCLOBBER) 标志指定 0x00000002 (。 如果指定此标志，则在安装后续文件时，会保留 HKLM\CurrentControlSet\Services 中的注册表项。 例如：
 
 ```cpp
 [ExampleFileSystem.AddRegistry]
@@ -233,7 +232,7 @@ HKR,Parameters,ExampleParameter,0x00010003,1
 
 ### <a name="defaultuninstall-section-optional"></a>DefaultUninstall 节 (可选) 
 
-**DefaultUninstall**节是可选的，但如果你的驱动程序可以卸载，则建议使用。 它包含 [**DelFiles**](../install/inf-delfiles-directive.md) 和 [**DelReg**](../install/inf-delreg-directive.md) 指令以删除文件和注册表项。
+**DefaultUninstall** 节是可选的，但如果你的驱动程序可以卸载，则建议使用。 它包含 [**DelFiles**](../install/inf-delfiles-directive.md) 和 [**DelReg**](../install/inf-delreg-directive.md) 指令以删除文件和注册表项。
 
 在下面的代码示例中， [**DelFiles**](../install/inf-delfiles-directive.md) 指令会删除 INF 文件的 ExampleFileSystem. DriverFiles 节中列出的文件。
 
@@ -243,11 +242,11 @@ DelFiles   = ExampleFileSystem.DriverFiles
 DelReg     = ExampleFileSystem.DelRegistry
 ```
 
-[**DelReg**](../install/inf-delreg-directive.md)指令是指一个或多个 INF 写入器定义的**DelRegistry**部分，其中包含要从注册表中删除的要卸载的服务的任何信息。
+[**DelReg**](../install/inf-delreg-directive.md)指令是指一个或多个 INF 写入器定义的 **DelRegistry** 部分，其中包含要从注册表中删除的要卸载的服务的任何信息。
 
 ### <a name="defaultuninstallservices-section-optional"></a>DefaultUninstall 节 (可选) 
 
-**DefaultUninstall**部分是可选的，但如果你的驱动程序可以卸载，则建议使用。 它包含用于删除文件系统驱动程序服务的 [**DelService**](../install/inf-delservice-directive.md) 指令。
+**DefaultUninstall** 部分是可选的，但如果你的驱动程序可以卸载，则建议使用。 它包含用于删除文件系统驱动程序服务的 [**DelService**](../install/inf-delservice-directive.md) 指令。
 
 在下面的代码示例中， [**DelService**](../install/inf-delservice-directive.md) 指令从操作系统中删除文件系统驱动程序的服务。
 
@@ -277,4 +276,4 @@ ParameterPath = "SYSTEM\CurrentControlSet\Services\ExampleFileSystem\Parameters"
 Disk1       = "Example File System Driver CD"
 ```
 
-可以通过创建其他特定于区域设置的 **字符串**来创建单个国际 INF 文件。INF 文件中的*LanguageID* 部分。 有关国际 INF 文件的详细信息，请参阅 [创建国际 Inf 文件](../install/creating-international-inf-files.md)。
+可以通过创建其他特定于区域设置的 **字符串** 来创建单个国际 INF 文件。INF 文件中的 *LanguageID* 部分。 有关国际 INF 文件的详细信息，请参阅 [创建国际 Inf 文件](../install/creating-international-inf-files.md)。

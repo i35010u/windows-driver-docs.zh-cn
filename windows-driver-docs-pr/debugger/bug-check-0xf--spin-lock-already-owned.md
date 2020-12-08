@@ -1,7 +1,6 @@
 ---
 title: Bug 检查 0xF SPIN_LOCK_ALREADY_OWNED
-description: SPIN_LOCK_ALREADY_OWNED bug 检查具有 0x0000000F 值。 这表示旋转锁的请求已启动的已拥有自旋锁时。
-ms.assetid: 8347a78a-528e-4767-a13d-ad2fd8f71818
+description: SPIN_LOCK_ALREADY_OWNED bug 检查的值为0x0000000F。 这表示在已经拥有自旋锁时，已启动了自旋锁请求。
 keywords:
 - Bug 检查 0xF SPIN_LOCK_ALREADY_OWNED
 - SPIN_LOCK_ALREADY_OWNED
@@ -13,23 +12,23 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 66f84c007d70a00a320849c446261a4ce227e5d6
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: eb831258764990428d984fc3dedd7fea096a317b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67518759"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96836893"
 ---
-# <a name="bug-check-0xf-spinlockalreadyowned"></a>Bug 检查 0xF：旋转\_锁\_ALREADY\_拥有的
+# <a name="bug-check-0xf-spin_lock_already_owned"></a>Bug 检查0xF： \_ \_ 已拥有自旋 \_ 锁
 
 
-数值调节钮\_锁\_ALREADY\_拥有的 bug 检查的值为 0x0000000F。 这表示旋转锁的请求已启动的已拥有自旋锁时。
+自旋 \_ 锁 \_ 已 \_ 拥有 bug 检查的值为0x0000000F。 这表示在已经拥有自旋锁时，已启动了自旋锁请求。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题面向程序员。 如果您是在使用计算机时收到蓝屏错误代码的客户，请参阅[蓝屏错误疑难解答](https://www.windows.com/stopcode)。
 
 
-## <a name="spinlockalreadyowned-parameters"></a>旋转\_锁\_ALREADY\_拥有的参数
+## <a name="spin_lock_already_owned-parameters"></a>旋转 \_ 锁 \_ 已 \_ 拥有参数
 
 
 无
@@ -37,14 +36,14 @@ ms.locfileid: "67518759"
 <a name="cause"></a>原因
 -----
 
-通常情况下，旋转锁的递归请求导致此错误。 如果类似于旋转锁的递归请求已启动-例如，当旋转锁已获取由一个线程，然后相同的线程调用的函数，还会尝试获得旋转锁时，它也可能发生。 第二个尝试获取旋转锁阻止不在此情况下，因为这样做可能会导致不可恢复的死锁。 如果调用对多个处理器，然后一个处理器之前将被阻止其他处理器释放锁。
+通常，此错误是由对自旋锁的递归请求引起的。 如果已经启动了类似于自旋锁的递归请求的内容，则可能发生此情况，例如，当线程获取了自旋锁，然后该同一线程调用函数时，也会尝试获取旋转锁。 在这种情况下，不会阻止第二次获取自旋锁的尝试，因为这样做会导致无法恢复的死锁。 如果对多个处理器进行调用，则在其他处理器释放该锁之前，将阻止一个处理器。
 
-此错误可以时也可能发生，而无需显式递归中，所有线程和所有自旋锁分配的 IRQL。 旋转锁于 Irql 始终是大于或等于 DPC 级别，但这不是线程，则返回 true。 但是，持有的自旋锁的线程必须保持 IRQL 大于或等于自旋锁。 减少线程下面 IRQL IRQL 它持有自旋锁级别允许另一个线程计划处理器上。 然后，此新线程可尝试获取同一个数值调节钮锁。
+如果对所有线程和所有自旋锁都分配了 IRQL，则此错误也可能发生（没有显式递归）。 旋转锁定 IRQLs 始终大于或等于 DPC 级别，但对于线程，这种情况并不适用。 但是，持有自旋锁的线程必须保持大于或等于自旋锁的 IRQL。 将线程 IRQL 减小到它所持有的自旋锁的 IRQL 级别下面可在处理器上计划另一个线程。 然后，此新线程可以尝试获取同一自旋锁。
 
-<a name="resolution"></a>分辨率
+<a name="resolution"></a>解决方法
 ----------
 
-请确保你不是以递归方式获取锁。 并保存旋转锁的线程，请确保你不会降低线程 IRQL 向下数值调节钮锁所占用的 IRQL 级别。
+确保不以递归方式获取锁。 对于持有自旋锁的线程，请确保不将线程 IRQL 减小到其所持有的自旋锁的 IRQL 以下的级别。
 
  
 

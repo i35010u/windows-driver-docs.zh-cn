@@ -1,9 +1,8 @@
 ---
 title: wdfkd.wdfldr
-description: Wdfkd.wdfldr 扩展显示有关当前动态绑定到 Windows 驱动程序框架的 KMDF 和 UMDF 驱动程序的信息。
-ms.assetid: 0965632d-922b-4812-9cfb-7663af0e3847
+description: Wdfkd. wdfldr 扩展显示有关当前动态绑定到 Windows 驱动程序框架的 KMDF 和 UMDF 驱动程序的信息。
 keywords:
-- wdfkd.wdfldr Windows 调试
+- wdfkd wdfldr Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,44 +11,44 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: f3e0abd7ceb32014f6edfaa5beb5b0e2679a033a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f3f963273da45cf502ed5ac87c8736ced94ac923
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63323465"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838387"
 ---
 # <a name="wdfkdwdfldr"></a>!wdfkd.wdfldr
 
 
-**！ Wdfkd.wdfldr**扩展显示有关当前动态绑定到 Windows 驱动程序框架的驱动程序的信息。 这包括内核模式驱动程序框架 (KMDF) 和用户模式驱动程序框架 (UMDF)。
+**！ Wdfkd wdfldr** 扩展显示有关当前动态绑定到 Windows 驱动程序框架的驱动程序的信息。 这包括 Kernel-Mode Driver Framework (KMDF) 和 User-Mode Driver Framework (UMDF) 。
 
 ```dbgcmd
 !wdfkd.wdfldr [DriverName]
 ```
 
-## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>参数
+## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>Parameters
 
 
-<span id="_______DriverName______"></span><span id="_______drivername______"></span><span id="_______DRIVERNAME______"></span> *DriverName*   
-驱动程序，包括文件扩展名的名称。 如果您提供驱动程序名称，此命令将显示一个驱动程序有关的详细的信息。 如果未提供驱动器名称，此命令显示有关绑定到 Windows 驱动程序框架的所有驱动程序的信息。
+<span id="_______DriverName______"></span><span id="_______drivername______"></span><span id="_______DRIVERNAME______"></span>*DriverName*   
+驱动程序的名称，包括文件扩展名。 如果提供驱动程序名称，则此命令将显示有关一个驱动程序的详细信息。 如果未提供驱动器名称，则此命令将显示有关绑定到 Windows 驱动程序框架的所有驱动程序的信息。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 Wdfkd.dll
 
-### <a name="span-idframeworksspanspan-idframeworksspanspan-idframeworksspanframeworks"></a><span id="Frameworks"></span><span id="frameworks"></span><span id="FRAMEWORKS"></span>框架
+### <a name="span-idframeworksspanspan-idframeworksspanspan-idframeworksspanframeworks"></a><span id="Frameworks"></span><span id="frameworks"></span><span id="FRAMEWORKS"></span>协作
 
-KMDF 1，1，UMDF UMDF 2
+KMDF 1，UMDF 1，UMDF 2
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-有关详细信息，请参阅[内核模式驱动程序框架调试](kernel-mode-driver-framework-debugging.md)。
+有关详细信息，请参阅 [内核模式驱动程序框架调试](kernel-mode-driver-framework-debugging.md)。
 
 <a name="remarks"></a>备注
 -------
 
-下面是输出的示例 **！ wdfldr**。
+下面是 **！ wdfldr** 的输出示例。
 
 ```dbgcmd
 ## 0: kd> !wdfkd.wdfldr
@@ -84,7 +83,7 @@ LIBRARY_MODULE  0xffffe0000039f7c0
   MyUmdf2Driver.dll              v2.0
 ```
 
-下面是另一个示例，用于提供驱动程序名称。
+下面是提供驱动程序名称的另一个示例。
 
 ```dbgcmd
 0: kd> !wdfldr MyUmdf2Driver.dll

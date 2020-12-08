@@ -1,17 +1,16 @@
 ---
 title: 访问配置信息
 description: 访问配置信息
-ms.assetid: ABEC75AE-9CE3-4574-B388-BC48D2BC8154
 keywords:
 - NetAdapterCx 访问配置信息，NetCx 访问配置信息
 ms.date: 06/05/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 64edc5fcb9cd4e8abf7d5124591020150b5431aa
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 11e4b0ecdc8c7434a41333bad86f14683d28af03
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89214085"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838763"
 ---
 # <a name="accessing-configuration-information"></a>访问配置信息
 

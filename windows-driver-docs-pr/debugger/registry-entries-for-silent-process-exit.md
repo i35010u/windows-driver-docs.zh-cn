@@ -1,15 +1,14 @@
 ---
 title: 监视静默进程退出
 description: 从 Windows 7 开始，你可以使用 GFlags 中的 "无提示处理退出" 选项卡，输入要监视以进行无提示退出的进程的名称。
-ms.assetid: 116B2053-7F48-48B4-AEAC-333B7D9C38C7
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a484cc76779b438b609778d39f12548d0aa4697d
-ms.sourcegitcommit: f610410e1500f0b0a4ca008b52679688ab51033d
+ms.openlocfilehash: 1b6d83e424013d7ad3c39758460dc83c8f135ea0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/15/2020
-ms.locfileid: "88253095"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837347"
 ---
 # <a name="monitoring-silent-process-exit"></a>监视静默进程退出
 
@@ -19,10 +18,10 @@ ms.locfileid: "88253095"
 在此监视功能的上下文中，我们使用术语 " *无提示退出* " 表示受监视的进程通过以下方式之一终止。
 
 <span id="Self_termination"></span><span id="self_termination"></span><span id="SELF_TERMINATION"></span>自行终止  
-受监视的进程通过调用 **ExitProcess**自行终止。
+受监视的进程通过调用 **ExitProcess** 自行终止。
 
 <span id="Cross-process_termination"></span><span id="cross-process_termination"></span><span id="CROSS-PROCESS_TERMINATION"></span>跨进程终止  
-第二个进程通过调用 **TerminateProcess**终止监视的进程。
+第二个进程通过调用 **TerminateProcess** 终止监视的进程。
 
 监视功能不检测在进程的最后一个线程退出时发生的正常进程终止。 监视功能不检测由内核模式代码启动的进程终止。
 
@@ -47,11 +46,11 @@ ms.locfileid: "88253095"
 ## <a name="span-idreporting_modespanspan-idreporting_modespanspan-idreporting_modespanreporting-mode"></a><span id="Reporting_Mode"></span><span id="reporting_mode"></span><span id="REPORTING_MODE"></span>报告模式
 
 
-**报表模式**设置可用作应用程序设置，但不能作为全局设置。 您可以使用以下复选框来设置报告模式。
+**报表模式** 设置可用作应用程序设置，但不能作为全局设置。 您可以使用以下复选框来设置报告模式。
 
 **启动监视器进程** 
 **启用转储收集** 
-**启用通知****ReportingMode**注册表项是以下标志的按位 "或"。
+**启用通知****ReportingMode** 注册表项是以下标志的按位 "或"。
 
 | 标志                   | 值 | 含义                                                                                                                                                                                            |
 |------------------------|-------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -66,9 +65,9 @@ ms.locfileid: "88253095"
 
 " **忽略自退出** " 设置可用作应用程序设置，但不能作为全局设置。 您可以使用 " **忽略自退出** " 复选框来指定是否忽略己方退出。
 
-**IgnoreSelfExits**注册表项具有以下值之一。
+**IgnoreSelfExits** 注册表项具有以下值之一。
 
-| 值 | 含义                                                                    |
+| “值” | 含义                                                                    |
 |-------|----------------------------------------------------------------------------|
 | 0x0   | 检测并响应自我终止和跨进程终止。 |
 | 0x1   | 忽略自终止。 检测并响应跨进程终止。  |
@@ -120,7 +119,7 @@ ms.locfileid: "88253095"
 
 转储类型存储在 **DumpType** 注册表项中，后者是 **小型转储 \_ 类型** 枚举成员的按位 "或"。 此枚举是在 dbghelp.dll 中定义的，它包含在 Windows 包的调试工具中。
 
-例如，假设你选择了 " **微**转储类型"，你会看到 " **DumpType** " 注册表项的值为 "0x88"。 值0x88 是以下两个 **小型转储 \_ 类型** 枚举值的按位 "或"。
+例如，假设你选择了 " **微** 转储类型"，你会看到 " **DumpType** " 注册表项的值为 "0x88"。 值0x88 是以下两个 **小型转储 \_ 类型** 枚举值的按位 "或"。
 
 **MiniDumpFilterModulePaths**：0x00000080
 
@@ -129,7 +128,7 @@ ms.locfileid: "88253095"
 
  
 
-如果选择 "**自定义**" 转储类型，请在 "**自定义转储类型**" 框中输入你自己的**小型转储 \_ 类型**枚举值的按位或。 将此值输入为十进制整数。
+如果选择 "**自定义**" 转储类型，请在 "**自定义转储类型**" 框中输入你自己的 **小型转储 \_ 类型** 枚举值的按位或。 将此值输入为十进制整数。
 
 ## <a name="span-idmodule_ignore_listspanspan-idmodule_ignore_listspanspan-idmodule_ignore_listspanmodule-ignore-list"></a><span id="Module_Ignore_List"></span><span id="module_ignore_list"></span><span id="MODULE_IGNORE_LIST"></span>模块忽略列表
 
@@ -141,7 +140,7 @@ ms.locfileid: "88253095"
 ## <a name="span-idreading_process_exit_reports_in_event_viewerspanspan-idreading_process_exit_reports_in_event_viewerspanspan-idreading_process_exit_reports_in_event_viewerspanreading-process-exit-reports-in-event-viewer"></a><span id="Reading_Process_Exit_Reports_in_Event_Viewer"></span><span id="reading_process_exit_reports_in_event_viewer"></span><span id="READING_PROCESS_EXIT_REPORTS_IN_EVENT_VIEWER"></span>读取事件查看器中的进程退出报表
 
 
-当监视的进程无提示退出时，监视器将在事件查看器中创建一个条目。 若要打开事件查看器，请输入 **eventvwr.msc**命令。 导航到 " **Windows 日志" &gt; 应用程序**。 查找具有进程退出监视器的 **源** 的日志条目。
+当监视的进程无提示退出时，监视器将在事件查看器中创建一个条目。 若要打开事件查看器，请输入 **eventvwr.msc** 命令。 导航到 " **Windows 日志" &gt; 应用程序**。 查找具有进程退出监视器的 **源** 的日志条目。
 
 ![显示 "常规" 选项卡的 "事件属性" 对话框将源显示为进程退出监视器](images/gflagssilentprocessexit02.png)
 

@@ -1,17 +1,16 @@
 ---
 title: NDIS_STATUS_PM_WOL_PATTERN_REJECTED
 description: NDIS_STATUS_PM_WOL_PATTERN_REJECTED 状态向过量驱动程序的电源管理唤醒 (WOL) 模式已被拒绝。
-ms.assetid: 49180c69-a3b8-4a6f-b34f-93e063c88f43
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 NDIS_STATUS_PM_WOL_PATTERN_REJECTED 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 705761ae0781191a1ab9ceffbf4b9b810b84b7c5
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 4ac539789524da9f5f9d5135e9c03eb0f99339d9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89215528"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837169"
 ---
 # <a name="ndis_status_pm_wol_pattern_rejected"></a>已 \_ 拒绝 NDIS 状态 \_ PM \_ WOL \_ 模式 \_
 
@@ -21,7 +20,7 @@ ms.locfileid: "89215528"
 <a name="remarks"></a>备注
 -------
 
-当 ndis 或微型端口驱动程序删除 WOL 模式时，它们可以生成 NDIS \_ 状态 \_ PM \_ WOL \_ 模式 \_ 拒绝的状态指示。 对于已拒绝的 WOL 模式， [**NDIS \_ 状态 \_ 指示**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_status_indication)结构的**StatusBuffer**成员包含 ULONG 模式标识符。 NDIS 在[**ndis \_ PM \_ WOL \_ 模式**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_wol_pattern)结构的**PatternId**成员中提供了 WOL 模式标识符。
+当 ndis 或微型端口驱动程序删除 WOL 模式时，它们可以生成 NDIS \_ 状态 \_ PM \_ WOL \_ 模式 \_ 拒绝的状态指示。 对于已拒绝的 WOL 模式， [**NDIS \_ 状态 \_ 指示**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_status_indication)结构的 **StatusBuffer** 成员包含 ULONG 模式标识符。 NDIS 在 [**ndis \_ PM \_ WOL \_ 模式**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_wol_pattern)结构的 **PatternId** 成员中提供了 WOL 模式标识符。
 
 \_ \_ \_ \_ \_ 当必须从网络适配器中删除以前添加的 wol 模式时，ndis 将生成 ndis 状态 PM WOL 模式拒绝的状态指示。 例如，对于更高优先级的 WOL 模式，NDIS 可能会删除 WOL 模式以释放资源。 通知事件将仅发送到添加了删除模式的绑定。
 
@@ -51,7 +50,7 @@ WiFi 驱动程序可能会在本地缓存唤醒模式。 当驱动程序处理 O
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**NDIS \_ PM \_ WOL \_ 模式**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_wol_pattern)

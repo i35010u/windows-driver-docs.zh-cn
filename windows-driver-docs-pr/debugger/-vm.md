@@ -1,7 +1,6 @@
 ---
 title: vm
 description: Vm 扩展显示有关目标系统上的虚拟内存使用统计信息的摘要信息。
-ms.assetid: 25e4f80c-d4ca-407c-991d-e8ee5dfbb309
 keywords:
 - vm Windows 调试
 ms.date: 05/23/2017
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 0a9e06ad65fe3f16190d9bae2c82fd0074b4e205
-ms.sourcegitcommit: ca5045a739eefd6ed14b9dbd9249b335e090c4e9
+ms.openlocfilehash: 0b32f0431d311951d3ea76f0a0a19c356f84419e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/06/2020
-ms.locfileid: "85968232"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838407"
 ---
 # <a name="vm"></a>!vm
 
 
-**！ Vm**扩展显示有关目标系统上的虚拟内存使用统计信息的摘要信息。
+**！ Vm** 扩展显示有关目标系统上的虚拟内存使用统计信息的摘要信息。
 
 ```dbgcmd
 !vm [Flags]
@@ -34,23 +33,23 @@ ms.locfileid: "85968232"
 <span id="_______Flags______"></span><span id="_______flags______"></span><span id="_______FLAGS______"></span>*标志*   
 指定将在此命令的输出中显示的信息。 这可以是以下位的任意总和。 默认值为0，这将导致显示包含系统范围内的虚拟内存统计信息，以及每个进程的内存统计信息。
 
-<span id="Bit_0__0x1_"></span><span id="bit_0__0x1_"></span><span id="BIT_0__0X1_"></span>位0（0x1）  
+<span id="Bit_0__0x1_"></span><span id="bit_0__0x1_"></span><span id="BIT_0__0X1_"></span>位 0 (0x1)   
 使显示忽略特定于进程的统计信息。
 
-<span id="Bit_1__0x2_"></span><span id="bit_1__0x2_"></span><span id="BIT_1__0X2_"></span>位1（0x2）  
+<span id="Bit_1__0x2_"></span><span id="bit_1__0x2_"></span><span id="BIT_1__0X2_"></span>位 1 (0x2)   
 使显示包含内存管理线程堆栈。
 
-<span id="Bit_2__0x4_"></span><span id="bit_2__0x4_"></span><span id="BIT_2__0X4_"></span>位2（0x4）  
+<span id="Bit_2__0x4_"></span><span id="bit_2__0x4_"></span><span id="BIT_2__0X4_"></span>位 2 (0x4)   
 使显示包含终端服务器内存使用量。
 
-<span id="Bit_3__0x8_"></span><span id="bit_3__0x8_"></span><span id="BIT_3__0X8_"></span>位3（0x8）  
+<span id="Bit_3__0x8_"></span><span id="bit_3__0x8_"></span><span id="BIT_3__0X8_"></span>第 3 (0x8)   
 导致显示包含页面文件写入日志。
 
-<span id="Bit_4__0x10_"></span><span id="bit_4__0x10_"></span><span id="BIT_4__0X10_"></span>位4（0x10）  
+<span id="Bit_4__0x10_"></span><span id="bit_4__0x10_"></span><span id="BIT_4__0X10_"></span>位 4 (0x10)   
 使显示包含工作集所有者线程堆栈。
 
-<span id="Bit_5__0x20_"></span><span id="bit_5__0x20_"></span><span id="BIT_5__0X20_"></span>位5（0x20）  
-（Windows Vista 和更高版本）导致显示包含内核虚拟地址使用情况。
+<span id="Bit_5__0x20_"></span><span id="bit_5__0x20_"></span><span id="BIT_5__0X20_"></span>第 5 (0x20)   
+ (Windows Vista 和更高版本) 导致显示包含内核虚拟地址使用情况。
 
 ### <a name="span-idenvironmentspanspan-idenvironmentspanspan-idenvironmentspanenvironment"></a><span id="Environment"></span><span id="environment"></span><span id="ENVIRONMENT"></span>环境
 
@@ -72,7 +71,7 @@ ms.locfileid: "85968232"
 <td align="left"><p>Kdextx86.dll</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>Windows XP 及更高版本</strong></p></td>
+<td align="left"><p><strong>Windows XP 及更高版本</strong></p></td>
 <td align="left"><p>Kdexts.dll</p></td>
 </tr>
 </tbody>
@@ -82,12 +81,12 @@ ms.locfileid: "85968232"
 
 ### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-[**！ Memusage**](-memusage.md) extension 命令可用于分析物理内存使用情况。 有关内存管理的详细信息，请参阅 Russinovich 和 David 所罗门群岛的*Microsoft Windows 内部机制*。
+[**！ Memusage**](-memusage.md) extension 命令可用于分析物理内存使用情况。 有关内存管理的详细信息，请参阅 Russinovich 和 David 所罗门群岛的 *Microsoft Windows 内部机制*。
 
 <a name="remarks"></a>备注
 -------
 
-下面是在*Flags*为1时生成的短输出的示例：
+下面是在 *Flags* 为1时生成的短输出的示例：
 
 ```dbgcmd
 kd> !vm 1

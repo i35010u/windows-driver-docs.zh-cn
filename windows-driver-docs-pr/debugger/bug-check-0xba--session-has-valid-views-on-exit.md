@@ -1,7 +1,6 @@
 ---
 title: Bug 检查 0xBA SESSION_HAS_VALID_VIEWS_ON_EXIT
-description: SESSION_HAS_VALID_VIEWS_ON_EXIT bug 检查具有 0x000000BA 值。 这指示会话驱动程序仍有映射视图时卸载该会话。
-ms.assetid: e0ef7d0e-8a3e-41ca-b0c1-c0f0bb298ef1
+description: SESSION_HAS_VALID_VIEWS_ON_EXIT bug 检查的值为0x000000BA。 这表示会话驱动程序在卸载会话时仍具有映射视图。
 keywords:
 - Bug 检查 0xBA SESSION_HAS_VALID_VIEWS_ON_EXIT
 - SESSION_HAS_VALID_VIEWS_ON_EXIT
@@ -13,23 +12,23 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: f29b05f6323b9f5efef6c4b4c87a76ba47887a61
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: 7c3e5e19932e19f9502b7c2b15ea7c859179be2b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67519006"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838241"
 ---
-# <a name="bug-check-0xba-sessionhasvalidviewsonexit"></a>Bug 检查 0xBA：会话\_HAS\_有效\_视图\_ON\_退出
+# <a name="bug-check-0xba-session_has_valid_views_on_exit"></a>Bug 检查0xBA：会话 \_ \_ \_ \_ 在退出时具有有效的视图 \_
 
 
-会话\_HAS\_有效\_视图\_ON\_退出 bug 检查的值为 0x000000BA。 这指示会话驱动程序仍有映射视图时卸载该会话。
+会话 \_ 具有 \_ \_ \_ 对退出 bug 检查的有效视图， \_ 其值为0x000000BA。 这表示会话驱动程序在卸载会话时仍具有映射视图。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题面向程序员。 如果您是在使用计算机时收到蓝屏错误代码的客户，请参阅[蓝屏错误疑难解答](https://www.windows.com/stopcode)。
 
 
-## <a name="sessionhasvalidviewsonexit-parameters"></a>会话\_HAS\_有效\_视图\_ON\_退出参数
+## <a name="session_has_valid_views_on_exit-parameters"></a>会话 \_ \_ \_ \_ 在 \_ 退出参数上具有有效的视图
 
 
 <table>
@@ -50,15 +49,15 @@ ms.locfileid: "67519006"
 </tr>
 <tr class="even">
 <td align="left"><p>2</p></td>
-<td align="left"><p>泄漏的映射视图的数目</p></td>
+<td align="left"><p>正在泄漏的映射视图数</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>3</p></td>
-<td align="left"><p>此会话的地址映射视图表</p></td>
+<td align="left"><p>此会话的映射视图表的地址</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>4</p></td>
-<td align="left"><p>此会话的映射的视图的表的大小</p></td>
+<td align="left"><p>此会话的映射视图表的大小</p></td>
 </tr>
 </tbody>
 </table>
@@ -68,7 +67,7 @@ ms.locfileid: "67519006"
 <a name="cause"></a>原因
 -----
 
-不取消映射之前会话卸载其映射的视图的会话驱动程序导致此错误。 这表示 win32k.sys、 atmfd.dll、 rdpdd.dll 或视频驱动程序中的 bug。
+此错误是由会话驱动程序在会话卸载之前未映射其映射视图导致的。 这表示 win32k.sys、atmfd.dll、rdpdd.dll 或视频驱动程序中的 bug。
 
  
 

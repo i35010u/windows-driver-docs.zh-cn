@@ -1,17 +1,16 @@
 ---
 title: 存储类驱动程序的 DriverEntry 例程
 description: 存储类驱动程序的 DriverEntry 例程
-ms.assetid: 45e929ff-b4e2-4855-8498-15ec4c30f497
 keywords:
 - DriverEntry WDK 存储
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8b289b27d10f0963e68498ff000e59e3383f4332
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: d87725b99a87a54cb2a8d9f5f970ce6f0ae0d180
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89190935"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837627"
 ---
 # <a name="storage-class-drivers-driverentry-routine"></a>存储类驱动程序的 DriverEntry 例程
 

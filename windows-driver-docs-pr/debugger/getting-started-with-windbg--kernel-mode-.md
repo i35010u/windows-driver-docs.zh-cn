@@ -1,15 +1,14 @@
 ---
 title: WinDbg 入门（内核模式）
 description: 本主题提供的动手练习将帮助你开始使用 WinDbg 作为内核模式调试器。
-ms.assetid: 1B61591F-0D48-4FBD-B242-68BB90D27FAF
 ms.date: 06/02/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 0524a7d6b36158ffac9c3a0951e168dd54d9e43e
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 361f2440c3bbac27d428fc86d1d13949beb30d7b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89211827"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838527"
 ---
 # <a name="getting-started-with-windbg-kernel-mode"></a>WinDbg 入门（内核模式）
 
@@ -38,7 +37,7 @@ Windows 的较早版本的另一个选项是使用 USB 或串行电缆等直接�
 
 ![带有调试电缆的主机和目标示意图](images/configfortest02.png)
 
-有关如何设置主机和目标计算机的详细信息，请参阅 [手动设置内核模式调试](setting-up-kernel-mode-debugging-in-windbg--cdb--or-ntsd.md)。
+有关如何设置主机和目标计算机的详细信息，请参阅 [手动设置 Kernel-Mode 调试](setting-up-kernel-mode-debugging-in-windbg--cdb--or-ntsd.md)。
 
 ### <a name="virtual-machine---vms"></a>虚拟机-Vm
 
@@ -58,12 +57,12 @@ Windows 的较早版本的另一个选项是使用 USB 或串行电缆等直接�
 
 4. 在 WinDbg 窗口底部的命令行中，输入以下命令：
 
-   [**.sympath srv\***](-sympath--set-symbol-path-.md)
+   [**。 sympath srv \** _](-sympath--set-symbol-path-.md)
 
    输出类似于以下内容：
 
    ```dbgcmd
-   Symbol search path is: srv*
+   Symbol search path is: srv_
    Expanded Symbol search path is: cache*;SRV*https://msdl.microsoft.com/download/symbols
    ```
 
@@ -130,7 +129,7 @@ Windows 的较早版本的另一个选项是使用 USB 或串行电缆等直接�
    ...
    ```
 
-10. 输入以下命令，在 **MmCreateProcessAddressSpace**放置断点：
+10. 输入以下命令，在 **MmCreateProcessAddressSpace** 放置断点：
 
     [**bu nt！MmCreateProcessAddressSpace**](bp--bu--bm--set-breakpoint-.md)
 
@@ -173,9 +172,9 @@ Windows 的较早版本的另一个选项是使用 USB 或串行电缆等直接�
 
 13. 输入以下命令以清除断点：
 
-    [**连续性 \***](bc--breakpoint-clear-.md)
+    [**bc \** _](bc--breakpoint-clear-.md)
 
-    输入 [**g**](g--go-.md) 允许目标计算机运行。 通过选择 "**调试**" 菜单中的 "**中断**" 或按**CTRL break**再次中断。
+    输入 [_ *g* *](g--go-.md)允许目标计算机运行。 通过选择 "**调试**" 菜单中的 "**中断**" 或按 **CTRL break** 再次中断。
 
 14. 若要查看所有进程的列表，请输入以下命令：
 
@@ -405,7 +404,7 @@ Windows 的较早版本的另一个选项是使用 USB 或串行电缆等直接�
 - [bc（断点清除）](bc--breakpoint-clear-.md)
 - “调试”菜单上的“单步调试”命令 (F11)
 - [！进程](-process.md)
-- [!thread](-thread.md)
+- [！ thread](-thread.md)
 - [!devnode](-devnode.md)
 - [!devstack](-devstack.md)
 - [!drvobj](-drvobj.md)

@@ -1,13 +1,12 @@
 ---
 title: 像素雾化
 description: 像素雾化
-ms.assetid: 40896f51-87f5-44e9-9199-e92f51a1e8f1
 keywords:
-- 全局雾 WDK Direct3D
-- 表雾 WDK Direct3D
-- 像素雾 WDK Direct3D
-- 雾化 WDK Direct3D
-- 颜色雾计算 WDK Direct3D
+- 全局雾化 WDK Direct3D
+- 表雾化 WDK Direct3D
+- 像素雾化 WDK Direct3D
+- fogging WDK Direct3D
+- 颜色雾化计算 WDK Direct3D
 - D3DRENDERSTATE_RANGEFOGENABLE
 - D3DRENDERSTATE_FOGCOLOR
 - D3DRENDERSTATE_FOGTABLEMODE
@@ -16,12 +15,12 @@ keywords:
 - D3DRENDERSTATE_FOGDENSITY
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6470a86c19c3c580044cee5a3099d662d2b3e6d6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 483f4648f82dabe620d4691c60e6ff39e9ba7565
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63352267"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838057"
 ---
 # <a name="pixel-fog"></a>像素雾化
 
@@ -29,57 +28,57 @@ ms.locfileid: "63352267"
 ## <span id="ddk_pixel_fog_gg"></span><span id="DDK_PIXEL_FOG_GG"></span>
 
 
-像素雾是类似于顶点雾，但混合因子、 雾**f**，在光栅化时，而不是在照明时间计算。 像素雾是比顶点雾更准确。 忽略雾混合 LVERTEX 中指定的身份或 D3DTLVERTEX 结构 （Direct3D SDK 文档中所述）。 像素雾被限制为三个雾配置文件类型 （线性雾、 指数雾和指数平方的雾）。
+像素雾化类似于顶点雾化，但雾化混合系数 **f** 是在光栅化时间而不是在光照时计算的。 像素雾化比顶点雾化更准确。 已忽略 Direct3D SDK 文档)  (中所述的 LVERTEX 或 D3DTLVERTEX 结构中指定的雾化混合系数。 像素雾化限制为三个雾化截面梁类型 (线性雾化、指数雾化和指数方雾化) 。
 
-对于像素雾硬件将执行内插在每个像素的深度值上某个表查找。 没有必要 256 表项如果内插在它们之间以线性方式。 DirectX 的未来版本可能会提供补偿的非线性 z 分发。 ZFront 和 ZBack 间隔中具有值\[0.0，1.0\]。
+对于像素雾化，硬件执行表查找每个像素插值的深度值。 如果表条目是线性内插的，则无需256表条目。 DirectX 的未来版本可能会为非线性 z 分布提供补偿。 ZFront 和 ZBack 在时间间隔 \[ 0.0，1.0 中的值 \] 。
 
-通过设置使用像素雾**PRIMCAPS.dwPRasterCaps**到 D3DPRASTERCAPS\_FOGTABLE。 **D3DDevice7::SetRenderState**方法设置 D3DRENDERSTATE\_FOGENABLE 呈现到的状态**TRUE**; D3DRENDERSTATE\_FOGCOLOR 呈现为 24 位 RGB; 的状态和D3DRENDERSTATE\_FOGTABLEMODE 状态呈现给一个 D3DFOG\_线性、 D3DFOG\_EXP、 或 D3DFOG\_EXP2。 在这里，混合身份雾是根据计算的三种呈现状态，如下所示：
+通过将 **dwPRasterCaps** 设置为 D3DPRASTERCAPS FOGTABLE 来使用像素雾化 \_ 。 **D3DDevice7：： SetRenderState** 方法将 D3DRENDERSTATE \_ FOGENABLE render 状态设置为 **TRUE**; D3DRENDERSTATE FOGCOLOR 将 \_ 状态呈现为24位 RGB; D3DRENDERSTATE \_ FOGTABLEMODE 将状态呈现为 D3DFOG \_ 线性、D3DFOG \_ EXP 或 D3DFOG \_ EXP2 之一。 此处，将根据以下三个渲染状态计算雾化混合系数：
 
-**fStart**由呈现状态 D3DRENDERSTATE\_FOGSTART 和间隔\[0.0，1.0\]。
+**fStart** 由 RENDER 状态 D3DRENDERSTATE FOGSTART 确定， \_ 其间隔为 \[ 0.0，1.0 \] 。
 
-**出去闯荡**由呈现状态 D3DRENDERSTATE\_FOGEND 和间隔\[0.0，1.0\]。
+**防范** 由 RENDER 状态 D3DRENDERSTATE FOGEND 确定， \_ 其间隔为 \[ 0.0，1.0 \] 。
 
-**fDensity**由呈现状态 D3DRENDERSTATE\_FOGDENSITY 和间隔\[0.0，1.0\]。
+**fDensity** 由 RENDER 状态 D3DRENDERSTATE FOGDENSITY 确定， \_ 其间隔为 \[ 0.0，1.0 \] 。
 
-混合身份雾计算**f** z 和刚刚介绍的三个雾呈现状态为基础。 实际的计算取决于呈现状态 D3DRENDERSTATE\_FOGTABLEMODE。 仅 D3DFOGMODE\_线性使用雾开始和结束值。
+雾化混合因子 **f** 的计算基于 z 和刚才介绍的三个雾化呈现状态。 实际的计算取决于 render 状态 D3DRENDERSTATE \_ FOGTABLEMODE。 只有 D3DFOGMODE \_ 线性使用雾化开始值和结束值。
 
--   D3DFOGMODE\_NONE
+-   \_无 D3DFOGMODE
 
-    应用没有像素雾。
+    不应用像素雾化。
 
--   D3DFOGMODE\_线性
+-   D3DFOGMODE \_ 线性
 
-    线性雾增长。
+    线性雾化增长。
 
-![计算的线性雾增长](images/d3dfig10.png)
+![线性雾化增长计算](images/d3dfig10.png)
 
--   D3DFOGMODE\_EXP
+-   D3DFOGMODE \_ EXP
 
-    指数雾增长。
+    指数雾化增长。
 
-![计算指数雾增长](images/d3dfig11.png)
+![指数雾化增长计算](images/d3dfig11.png)
 
--   D3DFOGMODE\_EXP2
+-   D3DFOGMODE \_ EXP2
 
-    平方的雾呈指数级增长。
+    指数平方雾化增长。
 
-![计算指数平方的雾增长](images/d3dfig12.png)
+![指数平方雾化增长计算](images/d3dfig12.png)
 
-通常情况下，指数和指数平方的雾是过于昂贵而无法直接执行操作。 相反，查找表已经预先计算好的数的 z 值在间隔\[0.0，1.0\]使用当前雾密度。 最接近的表项然后可用于当前的 z 值，或两个周围的 z 值之间的一个 interpolating 值可用于获取相应雾身份。
+通常，指数和指数方雾化过于昂贵，无法直接执行。 相反， \[ \] 使用当前雾化密度为间隔0.0、1.0 中的一些 z 值预先计算查找表。 然后，最接近的表项可用于当前 z 值，或者两个周围 z 值之间的插值值可用于获取适当的雾化因子。
 
-最后一个上有雾颜色**C**然后计算中与顶点雾相同的方式，如下所示：
+最后一个 fogged color **C** 的计算方法与顶点雾化相同，如下所示：
 
-**C = (1-f)\*雾\_颜色 + f \* src\_颜色**
+**C = (1-f) \* 雾化 \_ 色 + f \* src \_ 颜色**
 
 在此公式中，
 
--   **f**是混合身份雾
+-   **f** 是雾化混合因子
 
--   **雾\_颜色**是当前雾颜色 (由呈现状态 D3DRENDERSTATE 设置\_FOGCOLOR)
+-   **雾化 \_ 颜色** 是当前雾化颜色 (由渲染状态设置的 D3DRENDERSTATE \_FOGCOLOR) 
 
--   **src\_颜色**是源内, 插，设置纹理的颜色
+-   **src \_ 颜色** 是源，内插，纹理颜色
 
-如果**f**，混合因子、 雾为 0.0，则最终上有雾的颜色等同于雾颜色。 如果**f**为 1.0，没有任何雾影响。
+如果 **f**，雾化混合系数为0.0，则最终的 fogged 颜色与雾化颜色完全相同。 如果 **f** 为1.0，则没有雾化效果。
 
  
 

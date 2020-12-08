@@ -1,20 +1,19 @@
 ---
 title: 排查 UMDF 2.0 驱动程序崩溃问题
-description: 从用户模式驱动程序框架开始 (UMDF) 版本2中，你可以使用在 Wdfkd.dll 中实现的调试器扩展命令子集来调试 UMDF 驱动程序。
-ms.assetid: df1bfc10-379b-457f-a9c8-40fa10048f81
+description: 从 User-Mode Driver Framework (UMDF) 版本2开始，你可以使用 Wdfkd.dll 中实现的调试器扩展命令子集来调试 UMDF 驱动程序。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bf81d6789c2ae3626405c9add7768639c0aa4310
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 1353a187c0891d08fd759e8bccb0285ced0863d2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89191591"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837033"
 ---
 # <a name="troubleshooting-umdf-20-driver-crashes"></a>排查 UMDF 2.0 驱动程序崩溃问题
 
 
-从用户模式驱动程序框架开始 (UMDF) 版本2中，你可以使用在 Wdfkd.dll 中实现的调试器扩展命令子集来调试 UMDF 驱动程序。 本主题介绍了你可能会启动哪些命令来解决 UMDF 驱动程序问题。
+从 User-Mode Driver Framework (UMDF) 版本2开始，你可以使用 Wdfkd.dll 中实现的调试器扩展命令子集来调试 UMDF 驱动程序。 本主题介绍了你可能会启动哪些命令来解决 UMDF 驱动程序问题。
 
 ##  <a name="determining-why-a-umdf-20-driver-crashed"></a>确定 UMDF 2.0 驱动程序崩溃的原因
 
@@ -58,4 +57,4 @@ AppVerif –enable Heaps Exceptions Handles Locks Memory TLS Leak –for WudfHos
 ## <a name="finding-memory-dump-files"></a>查找内存转储文件
 
 
-有关查找用户模式转储文件的信息，请参阅 [确定反射器为何终止了主机进程](determining-why-the-reflector-terminated-the-host-process.md) 。 有关如何设置**LogMinidumpType**注册表值以指定存储在小型转储文件中的信息类型的信息，请参阅[在 UMDF 驱动程序中使用 WPP 软件跟踪](using-wpp-software-tracing-in-umdf-drivers.md)。
+有关查找用户模式转储文件的信息，请参阅 [确定反射器为何终止了主机进程](determining-why-the-reflector-terminated-the-host-process.md) 。 有关如何设置 **LogMinidumpType** 注册表值以指定存储在小型转储文件中的信息类型的信息，请参阅 [在 UMDF 驱动程序中使用 WPP 软件跟踪](using-wpp-software-tracing-in-umdf-drivers.md)。

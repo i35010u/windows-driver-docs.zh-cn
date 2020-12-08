@@ -1,15 +1,14 @@
 ---
 title: MB eSIM MBIM 就绪状态指导
 description: MB eSIM MBIM 就绪状态指导
-ms.assetid: E7EB5E6D-1858-4B94-AF91-05333CC93D8B
 ms.date: 08/10/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5922476e1bd963490cacf803f67903ff52a12c68
-ms.sourcegitcommit: 20eac54e419a594f7cea766ee28f158559dfd79c
+ms.openlocfilehash: e4f78040dc4f6e5d1e7c7bd1e0d3bf1b3d883f04
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91754852"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838421"
 ---
 # <a name="mb-esim-mbim-ready-state-guidance"></a>MB eSIM MBIM 就绪状态指导
 

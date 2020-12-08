@@ -1,30 +1,29 @@
 ---
 title: NDIS_STATUS_QOS_OPERATIONAL_PARAMETERS_CHANGE
 description: 支持 NDIS Service Service (QoS) 的微型端口驱动程序在首次解析其操作 NDIS QoS 参数或稍后更改时发出 NDIS_STATUS_QOS_OPERATIONAL_PARAMETERS_CHANGE 状态指示。
-ms.assetid: 15D2B139-1AEA-4252-8599-0EA4ED2E3733
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 NDIS_STATUS_QOS_OPERATIONAL_PARAMETERS_CHANGE 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 86a7013addd6b9fc8307fe609087a379febaa87a
-ms.sourcegitcommit: a3ccb07628a9cd8936d7f88f4aab8faf9379cae5
+ms.openlocfilehash: 6e1556ba0861f1276985d20bb358410d2dcb5c57
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92088115"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837177"
 ---
 # <a name="ndis_status_qos_operational_parameters_change"></a>NDIS \_ 状态 \_ QOS \_ 操作 \_ 参数 \_ 更改
 
 
 支持 NDIS Service Service (QoS) 的微型端口驱动程序在其操作 NDIS QoS 参数首次解析或稍后更改时发出 **ndis \_ 状态 \_ QoS \_ 操作 \_ 参数 \_ 更改** 状态指示。 微型端口驱动程序用这些操作参数配置网络适配器，以执行 QoS 数据包传输。
 
-当微型端口驱动程序发出此状态指示时，它会将[**ndis \_ 状态 \_ 指示**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_status_indication)结构的**StatusBuffer**成员设置为指向[**ndis \_ QOS \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_qos_parameters)结构的指针。 驱动程序用其操作的 NDIS QoS 参数初始化此结构。
+当微型端口驱动程序发出此状态指示时，它会将 [**ndis \_ 状态 \_ 指示**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_status_indication)结构的 **StatusBuffer** 成员设置为指向 [**ndis \_ QOS \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_qos_parameters)结构的指针。 驱动程序用其操作的 NDIS QoS 参数初始化此结构。
 
-**注意**   此 NDIS 状态指示仅对支持 IEEE 802.1 数据中心桥接 (DCB) 接口的微型端口驱动程序有效。
+**注意**  此 NDIS 状态指示仅对支持 IEEE 802.1 数据中心桥接 (DCB) 接口的微型端口驱动程序有效。
 
  
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 小型端口驱动程序在以下条件下发出 **NDIS \_ 状态 \_ QOS \_ 操作 \_ 参数 \_ 更改** 状态指示：
@@ -41,7 +40,7 @@ ms.locfileid: "92088115"
 
     有关详细信息，请参阅 [管理 NDIS QoS 参数](overview-of-ndis-qos-parameters.md)。
 
-**注意**   过量驱动程序可以使用**ndis \_ 状态 \_ QOS \_ 操作 \_ 参数 \_ 更改**状态指示来确定操作 NDIS QOS 参数。 此外，这些驱动程序还可以发出 oid [ \_ qos \_ 操作 \_ 参数](./oid-qos-operational-parameters.md) 的 oid 查询请求，以随时获取操作的 NDIS qos 参数。
+**注意**  过量驱动程序可以使用 **ndis \_ 状态 \_ QOS \_ 操作 \_ 参数 \_ 更改** 状态指示来确定操作 NDIS QOS 参数。 此外，这些驱动程序还可以发出 oid [ \_ qos \_ 操作 \_ 参数](./oid-qos-operational-parameters.md) 的 oid 查询请求，以随时获取操作的 NDIS qos 参数。
 
  
 
@@ -63,13 +62,13 @@ ms.locfileid: "92088115"
 <td><p>在 NDIS 6.30 和更高版本中受支持。</p></td>
 </tr>
 <tr class="even">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td> (包含 Ndis .h) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 ****

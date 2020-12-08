@@ -1,7 +1,6 @@
 ---
 title: 多处理器防护
 description: 多处理器防护
-ms.assetid: 58c51f3e-98c4-4aa0-ad4d-cd9225f78141
 keywords:
 - 多处理器安全 WDK 内核
 - 对称多处理器平台 WDK 内核
@@ -17,12 +16,12 @@ keywords:
 - 内核调度程序对象 WDK，多处理器安全
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0cd13c29a66746278eea9b7a351b2e55117b8efb
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: ef6086964e2ae8aaa9747e319012ead5d150c8e9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89189305"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838011"
 ---
 # <a name="multiprocessor-safe"></a>多处理器防护
 

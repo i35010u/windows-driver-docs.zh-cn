@@ -1,9 +1,8 @@
 ---
-title: WIA\_DPC\_焦点\_距离
-description: WIA\_DPC\_焦点\_距离属性包含以毫米为单位的数字照相机的映像捕获平面和焦点的点之间的距离。
-ms.assetid: 0f12fbdf-2c40-4b8b-9a22-ee35aa8cbc3f
+title: WIA \_ DPC \_ 焦点 \_ 距离
+description: WIA \_ DPC \_ 聚焦 \_ 距离属性包含数字相机的图像捕获平面与焦点点之间的距离（以毫米为单位）。
 keywords:
-- WIA_DPC_FOCUS_DISTANCE 成像设备
+- WIA_DPC_FOCUS_DISTANCE 图像设备
 topic_type:
 - apiref
 api_name:
@@ -14,31 +13,31 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 15231fb8ba53ff9a6c947ac2e9e1f5ef79e838a9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 094ca48767dc246f828a4baa6b0630211c76957e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63392015"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837753"
 ---
-# <a name="wiadpcfocusdistance"></a>WIA\_DPC\_焦点\_距离
+# <a name="wia_dpc_focus_distance"></a>WIA \_ DPC \_ 焦点 \_ 距离
 
 
-WIA\_DPC\_焦点\_距离属性包含以毫米为单位的数字照相机的映像捕获平面和焦点的点之间的距离。
+WIA \_ DPC \_ 聚焦 \_ 距离属性包含数字相机的图像捕获平面与焦点点之间的距离（以毫米为单位）。
 
 ## <span id="ddk_wia_dpc_focus_distance_si"></span><span id="DDK_WIA_DPC_FOCUS_DISTANCE_SI"></span>
 
 
-属性类型：VT\_I4
+属性类型： VT \_ I4
 
-有效值：WIA\_PROP\_范围或 WIA\_PROP\_列表
+有效值： WIA "内容范围" 或 "WIA 内容" \_ \_ \_ \_ 列表
 
-访问权限：读取/写入
+访问权限：读/写
 
 <a name="remarks"></a>备注
 -------
 
-值为 0xFFFF 的 WIA\_DPC\_焦点\_距离属性对应于超过 655 计量的设置。
+WIA \_ DPC FOCUS 距离属性值为 0xffff \_ \_ 对应于大于655米的设置。
 
 <a name="requirements"></a>要求
 ------------
@@ -50,12 +49,12 @@ WIA\_DPC\_焦点\_距离属性包含以毫米为单位的数字照相机的映�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Version</p></td>
-<td><p>在 Windows Vista 和更高版本操作系统中已过时，并应不再使用。 但是，此属性仍定义 Windows Vista 中与应用程序和用于 Windows Server 2003、 Windows XP 和早期版本的 Windows 设备的兼容性。</p></td>
+<td><p>版本</p></td>
+<td><p>在 Windows Vista 和更高版本的操作系统中已过时，不应再使用。 但是，在 Windows Vista 中仍定义此属性，以与为 Windows Server 2003、Windows XP 和 windows 的早期版本设计的应用程序和设备兼容。</p></td>
 </tr>
 <tr class="even">
-<td><p>Header</p></td>
-<td>Wiadef.h （包括 Wiadef.h）</td>
+<td><p>标头</p></td>
+<td>Wiadef (包含 Wiadef) </td>
 </tr>
 </tbody>
 </table>

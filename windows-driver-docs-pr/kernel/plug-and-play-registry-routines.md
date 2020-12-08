@@ -1,7 +1,6 @@
 ---
 title: 即插即用注册表例程
 description: 即插即用注册表例程
-ms.assetid: d526af4e-8b33-46fb-9af9-b0d9b9f1913a
 keywords:
 - 注册表 WDK 内核，即插即用
 - 驱动程序注册表信息 WDK 内核，即插即用
@@ -13,12 +12,12 @@ keywords:
 - PnP WDK 内核，注册表例程
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4a2756782325cbf288559d6eff46153c429aabd3
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 1e57068b7e234fd4dac20d41713276ef8116b37b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91733141"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838447"
 ---
 # <a name="plug-and-play-registry-routines"></a>即插即用注册表例程
 
@@ -37,13 +36,13 @@ ms.locfileid: "91733141"
 
 相反，驱动程序将使用 [**IoOpenDeviceRegistryKey**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioopendeviceregistrykey) 和 [**IoOpenDeviceInterfaceRegistryKey**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioopendeviceinterfaceregistrykey) 例程来访问其 PnP 密钥。
 
-PnP 管理器为驱动程序分配一个密钥（称为驱动程序的软件密钥），并为每个设备分配一个密钥，称为设备的硬件密钥。 **IoOpenDeviceRegistryKey**例程可用于打开任意一个密钥。 *DevInstKeyType*参数的值确定要打开的键。 指定 PLUGPLAY \_ regkey \_ 驱动程序以打开软件密钥，或将 PLUGPLAY \_ regkey \_ 设备注册到硬件密钥。 *DeviceObject*参数指定设备或驱动程序。  (驱动程序还可以通过 ANDing PLUGPLAY \_ REGKEY \_ current \_ hwprofile 中 to *DevInstKeyType*，来访问其硬件和软件密钥的相对于当前硬件配置文件。 ) 
+PnP 管理器为驱动程序分配一个密钥（称为驱动程序的软件密钥），并为每个设备分配一个密钥，称为设备的硬件密钥。 **IoOpenDeviceRegistryKey** 例程可用于打开任意一个密钥。 *DevInstKeyType* 参数的值确定要打开的键。 指定 PLUGPLAY \_ regkey \_ 驱动程序以打开软件密钥，或将 PLUGPLAY \_ regkey \_ 设备注册到硬件密钥。 *DeviceObject* 参数指定设备或驱动程序。  (驱动程序还可以通过 ANDing PLUGPLAY \_ REGKEY \_ current \_ hwprofile 中 to *DevInstKeyType*，来访问其硬件和软件密钥的相对于当前硬件配置文件。 ) 
 
-**IoOpenDeviceInterfaceRegistryKey** 打开与特定设备接口实例相关联的密钥。 实例由其名称标识，这是由[**IoGetDeviceInterfaces**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetdeviceinterfaces)、 [**IoGetDeviceInterfaceAlias**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetdeviceinterfacealias)或[**IoRegisterDeviceInterface**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioregisterdeviceinterface)返回的[**UNICODE \_ 字符串**](/windows-hardware/drivers/ddi/wudfwdm/ns-wudfwdm-_unicode_string)。 字符串作为 *SymbolicLinkValue* 参数传递给 **IoOpenDeviceInterfaceRegistryKey**。
+**IoOpenDeviceInterfaceRegistryKey** 打开与特定设备接口实例相关联的密钥。 实例由其名称标识，这是由 [**IoGetDeviceInterfaces**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetdeviceinterfaces)、 [**IoGetDeviceInterfaceAlias**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetdeviceinterfacealias)或 [**IoRegisterDeviceInterface**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioregisterdeviceinterface)返回的 [**UNICODE \_ 字符串**](/windows-hardware/drivers/ddi/wudfwdm/ns-wudfwdm-_unicode_string)。 字符串作为 *SymbolicLinkValue* 参数传递给 **IoOpenDeviceInterfaceRegistryKey**。
 
 还可以在 INF 文件中或使用 **SetupDi * Xxx*** 例程来设置这些密钥。 有关详细信息，请参阅 [驱动程序的注册表项](../install/overview-of-registry-trees-and-keys.md)。
 
-[**IoOpenDeviceRegistryKey**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioopendeviceregistrykey)和[**IoOpenDeviceInterfaceRegistryKey**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioopendeviceinterfaceregistrykey)都提供打开的密钥句柄，其中包含*DesiredAccess*参数指定的访问权限。 然后，该驱动程序使用 **Zw * Xxx*** 注册表例程（如 [**ZwQueryValueKey**](/windows-hardware/drivers/ddi/wdm/nf-wdm-zwqueryvaluekey) 和 [**ZwSetValueKey**](/windows-hardware/drivers/ddi/wdm/nf-wdm-zwsetvaluekey)）访问和操作该密钥。 当驱动程序不再使用该句柄之后，驱动程序将通过调用 [**ZwClose**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntclose)来关闭该句柄。 有关详细信息，请参阅 [使用注册表项对象的句柄](using-a-handle-to-a-registry-key-object.md)。
+[**IoOpenDeviceRegistryKey**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioopendeviceregistrykey)和 [**IoOpenDeviceInterfaceRegistryKey**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioopendeviceinterfaceregistrykey)都提供打开的密钥句柄，其中包含 *DesiredAccess* 参数指定的访问权限。 然后，该驱动程序使用 **Zw * Xxx*** 注册表例程（如 [**ZwQueryValueKey**](/windows-hardware/drivers/ddi/wdm/nf-wdm-zwqueryvaluekey) 和 [**ZwSetValueKey**](/windows-hardware/drivers/ddi/wdm/nf-wdm-zwsetvaluekey)）访问和操作该密钥。 当驱动程序不再使用该句柄之后，驱动程序将通过调用 [**ZwClose**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntclose)来关闭该句柄。 有关详细信息，请参阅 [使用 Registry-Key 对象的句柄](using-a-handle-to-a-registry-key-object.md)。
 
 下面的代码示例演示了如何使用 **IoOpenDeviceRegistryKey** 和 **ZwSetValueKey** 来设置与设备硬件密钥下名为 "value" 的值相关联的数据。
 
@@ -69,5 +68,5 @@ if (NTSUCCESS(status)) {
 }
 ```
 
-请注意，可以限制对注册表项的访问，因此，对 [**IoOpenDeviceRegistryKey**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioopendeviceregistrykey) 和 [**IoOpenDeviceInterfaceRegistryKey**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioopendeviceinterfaceregistrykey) 的调用应指定 *DesiredAccess*所需的最小权限。 如果驱动程序请求不允许的访问权限，则例程返回状态 " \_ 拒绝访问" \_ 。 具体而言，驱动程序不应指定密钥 \_ 所有 \_ 访问权限。
+请注意，可以限制对注册表项的访问，因此，对 [**IoOpenDeviceRegistryKey**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioopendeviceregistrykey) 和 [**IoOpenDeviceInterfaceRegistryKey**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioopendeviceinterfaceregistrykey) 的调用应指定 *DesiredAccess* 所需的最小权限。 如果驱动程序请求不允许的访问权限，则例程返回状态 " \_ 拒绝访问" \_ 。 具体而言，驱动程序不应指定密钥 \_ 所有 \_ 访问权限。
 

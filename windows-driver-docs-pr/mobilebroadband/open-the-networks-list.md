@@ -1,15 +1,14 @@
 ---
 title: 打开网络列表
 description: 打开网络列表
-ms.assetid: 55935290-ebcb-4105-9b51-c862654f9f56
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c8ea284cb30d2a37ce75400ff2bbc7659ba2d7e7
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: ac12d4f40ece821fe54d2f39fa97f07508ed232d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89217832"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838253"
 ---
 # <a name="open-the-networks-list"></a>打开网络列表
 

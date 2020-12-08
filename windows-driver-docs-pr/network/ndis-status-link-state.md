@@ -1,17 +1,16 @@
 ---
 title: NDIS_STATUS_LINK_STATE
 description: 微型端口驱动程序使用 NDIS_STATUS_LINK_STATE 状态指示来通知 NDIS 和过量驱动程序的物理特性发生了变化。
-ms.assetid: e9953fe5-68d2-47e5-aceb-b35289500262
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 NDIS_STATUS_LINK_STATE 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: eda585f786bbfde4b50c1412e9648f76ac0f9ab2
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: c25bc2d85be55854c7d2a7b84129912d9e07e034
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89211745"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837191"
 ---
 # <a name="ndis_status_link_state"></a>NDIS \_ 状态 \_ 链接 \_ 状态
 
@@ -23,7 +22,7 @@ ms.locfileid: "89211745"
 
 过量驱动程序不应使用 [OID \_ 生成 \_ 链接 \_ 状态](./oid-gen-link-state.md) oid 来确定链接状态。 相反，请使用 NDIS \_ 状态 \_ 链接 \_ 状态指示进行链接状态更新。
 
-[**Ndis \_ 状态 \_ 指示**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_status_indication)结构的**StatusBuffer**成员包含[**ndis \_ 链接 \_ 状态**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_link_state)结构。 此结构指定介质的物理状态。
+[**Ndis \_ 状态 \_ 指示**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_status_indication)结构的 **StatusBuffer** 成员包含 [**ndis \_ 链接 \_ 状态**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_link_state)结构。 此结构指定介质的物理状态。
 
 如果介质的物理状态没有变化，微型端口驱动程序应避免发送 NDIS \_ 状态 \_ 链接 \_ 状态指示。 但是，不要求避免此状态指示。
 
@@ -33,13 +32,13 @@ ms.locfileid: "89211745"
 
 如果过量驱动程序是 NDIS 5，则为。*x* 或更早的协议驱动程序，ndis 会将 ndis \_ 状态 \_ 链接 \_ 状态指示转换为相应的 ndis 5.1 状态指示。 NDIS 指示链接速度更改，并显示 [**NDIS \_ 状态 \_ 链接 \_ 速度 \_ 更改**](ndis-status-link-speed-change.md) 状态指示。 NDIS 指示连接状态发生更改，并显示 [**ndis \_ 状态 \_ Media \_ CONNECT**](ndis-status-media-connect.md) 和 [**ndis \_ 状态 \_ 媒体 \_ 断开**](ndis-status-media-disconnect.md) 连接状态指示。
 
-NDIS 还会转换 NDIS 5。用于过量 NDIS 6.0 和更高版本驱动程序的*x* 微型端口驱动程序状态。 Ndis 使用 ndis 5 中标识的状态指示或媒体状态更改。*x* OID 查询，用于创建 NDIS \_ 状态 \_ 链接 \_ 状态状态指示。 NDIS 执行以下转换：
+NDIS 还会转换 NDIS 5。用于过量 NDIS 6.0 和更高版本驱动程序的 *x* 微型端口驱动程序状态。 Ndis 使用 ndis 5 中标识的状态指示或媒体状态更改。*x* OID 查询，用于创建 NDIS \_ 状态 \_ 链接 \_ 状态状态指示。 NDIS 执行以下转换：
 
--   [**Ndis \_ 状态 \_ 媒体 \_ 连接**](ndis-status-media-connect.md)状态指示转换为[**Ndis \_ 链接 \_ 状态**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_link_state)结构中的**MediaConnectStateConnected** 。
+-   [**Ndis \_ 状态 \_ 媒体 \_ 连接**](ndis-status-media-connect.md)状态指示转换为 [**Ndis \_ 链接 \_ 状态**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_link_state)结构中的 **MediaConnectStateConnected** 。
 
--   [**Ndis \_ 状态 \_ 媒体 \_ 断开连接**](ndis-status-media-disconnect.md)状态指示转换为[**Ndis \_ 链接 \_ 状态**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_link_state)结构中的**MediaConnectStateDisconnected** 。
+-   [**Ndis \_ 状态 \_ 媒体 \_ 断开连接**](ndis-status-media-disconnect.md)状态指示转换为 [**Ndis \_ 链接 \_ 状态**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_link_state)结构中的 **MediaConnectStateDisconnected** 。
 
--   [**NDIS \_ 状态 \_ 链接 \_ 速度 \_ 更改**](ndis-status-link-speed-change.md)状态指示和 oid 生成[ \_ \_ 链接 \_ 速度](./oid-gen-link-speed.md)oid 用于生成链接速度状态。
+-   [**NDIS \_ 状态 \_ 链接 \_ 速度 \_ 更改**](ndis-status-link-speed-change.md)状态指示和 oid 生成 [ \_ \_ 链接 \_ 速度](./oid-gen-link-speed.md)oid 用于生成链接速度状态。
 
 有关链接状态的详细信息，请参阅 [OID \_ GEN \_ 链接 \_ 状态](./oid-gen-link-state.md)。
 
@@ -63,7 +62,7 @@ NDIS 还会转换 NDIS 5。用于过量 NDIS 6.0 和更高版本驱动程序的*
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**NDIS \_ 链接 \_ 状态**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_link_state)

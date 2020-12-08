@@ -1,16 +1,15 @@
 ---
 title: Windows 10 版本 1709 的驱动程序开发变更
 description: 了解 Windows 10 中用于驱动程序开发的新功能，例如 Windows 调试器的新内容集。
-ms.assetid: 68a5a513-0dab-40f7-b67f-29b76061e1ab
 ms.date: 04/15/2020
 author: EliotSeattle
 ms.localizationpriority: medium
-ms.openlocfilehash: 1bee52123ceaae29020174a88b08af783eacbabc
-ms.sourcegitcommit: c94be6fc464edc94035060a4723efa06ab0f5af9
+ms.openlocfilehash: 425aa6ef511c4d84ae932670415f849982fcf7a0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92153475"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96836819"
 ---
 # <a name="driver-development-additions-for-windows-10-version-1709"></a>适用于 Windows 10 的驱动程序开发添加版本1709
 
@@ -20,7 +19,7 @@ ms.locfileid: "92153475"
 
 以下功能在 Windows 10 版本1709中记录了更新。
 
-- [音频](#audio)
+- [音频：](#audio)
 - [ACPI](#acpi)
 - [生物识别](#biometric)
 - [Windows 调试器](#windows-debugger)

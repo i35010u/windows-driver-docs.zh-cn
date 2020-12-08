@@ -1,15 +1,14 @@
 ---
 title: PwrTest DirectedFx 方案
 description: PwrTest 定向的 Power Framework 方案旨在测试 PoFx v3 功能。
-ms.assetid: edf70fce-4c2a-4747-854f-feb919e01324
 ms.date: 03/27/2019
 ms.custom: 19H1
-ms.openlocfilehash: c629b2f152ab776dc4767f5056c2f5e28e5b2cc1
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: ab4958d5016a64c21d7fdbd03bd268dca6e4d4bb
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89383473"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838511"
 ---
 # <a name="pwrtest-directedfx-scenario"></a>PwrTest DirectedFx 方案
 

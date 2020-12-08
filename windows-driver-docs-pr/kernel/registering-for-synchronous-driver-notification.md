@@ -1,7 +1,6 @@
 ---
 title: 注册同步驱动程序通知
 description: 注册同步驱动程序通知
-ms.assetid: 852a2b69-c71f-4127-946e-8179954d504c
 keywords:
 - 驱动程序通知 WDK 动态硬件分区，注册
 - 同步通知 WDK 动态硬件分区，注册
@@ -10,12 +9,12 @@ keywords:
 - 注册驱动程序通知 WDK 动态硬件分区
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8f343f394d183261e81a7b45410422f9970af959
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 7ea547c2956066bfd01a4f0ecd46d4e26452d5c2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89187877"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837703"
 ---
 # <a name="registering-for-synchronous-driver-notification"></a>注册同步驱动程序通知
 
@@ -33,7 +32,7 @@ VOID
     );
 ```
 
-设备驱动程序通过调用 [**KeRegisterProcessorChangeCallback**](/windows-hardware/drivers/ddi/wdm/nf-wdm-keregisterprocessorchangecallback) 函数，注册同步驱动程序通知。 设备驱动程序通常从其[**DriverEntry**](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_initialize)函数内调用**KeRegisterProcessorChangeCallback**函数。 如果设备驱动程序指定了 KE \_ processor \_ CHANGE \_ ADD \_ 现有标志，则除了在将新处理器添加到硬件分区时，还会调用当前存在于硬件分区中的每个活动处理器的回调函数。 下面的代码示例演示如何注册同步驱动程序通知：
+设备驱动程序通过调用 [**KeRegisterProcessorChangeCallback**](/windows-hardware/drivers/ddi/wdm/nf-wdm-keregisterprocessorchangecallback) 函数，注册同步驱动程序通知。 设备驱动程序通常从其 [**DriverEntry**](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_initialize)函数内调用 **KeRegisterProcessorChangeCallback** 函数。 如果设备驱动程序指定了 KE \_ processor \_ CHANGE \_ ADD \_ 现有标志，则除了在将新处理器添加到硬件分区时，还会调用当前存在于硬件分区中的每个活动处理器的回调函数。 下面的代码示例演示如何注册同步驱动程序通知：
 
 ```cpp
 PVOID CallbackRegistrationHandle;
@@ -80,7 +79,7 @@ NTSTATUS  DriverEntry(
 }
 ```
 
-如果设备驱动程序必须停止收到同步驱动程序通知（例如，在卸载该通知时），则它必须通过调用 [**KeDeregisterProcessorChangeCallback**](/windows-hardware/drivers/ddi/wdm/nf-wdm-kederegisterprocessorchangecallback) 函数来注销回调函数。 设备驱动程序通常从其[*Unload*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_unload)函数内调用**KeDeregisterProcessorChangeCallback**函数。 下面的代码示例演示如何注销回调函数：
+如果设备驱动程序必须停止收到同步驱动程序通知（例如，在卸载该通知时），则它必须通过调用 [**KeDeregisterProcessorChangeCallback**](/windows-hardware/drivers/ddi/wdm/nf-wdm-kederegisterprocessorchangecallback) 函数来注销回调函数。 设备驱动程序通常从其 [*Unload*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_unload)函数内调用 **KeDeregisterProcessorChangeCallback** 函数。 下面的代码示例演示如何注销回调函数：
 
 ```cpp
 // The driver's Unload routine

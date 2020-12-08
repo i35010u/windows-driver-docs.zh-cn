@@ -1,17 +1,16 @@
 ---
 title: NDIS_STATUS_WDI_INDICATION_CREATE_PORT_COMPLETE
 description: 微型端口驱动程序使用 NDIS_STATUS_WDI_INDICATION_CREATE_PORT_COMPLETE 指示 OID_WDI_TASK_CREATE_PORT 完成。
-ms.assetid: 8d3cdac1-06d3-4a21-ac13-e6d789c6922e
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 NDIS_STATUS_WDI_INDICATION_CREATE_PORT_COMPLETE 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: c9491a355f7034ffca6aacaa6b9e0f622fb88e84
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: db0811c2c9a18ee4a96274b3943bf88ef2bf6c59
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89215508"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837145"
 ---
 # <a name="ndis_status_wdi_indication_create_port_complete"></a>NDIS \_ 状态 \_ WDI \_ 指示 \_ 创建 \_ 端口 \_ 完成
 
@@ -48,7 +47,7 @@ ms.locfileid: "89215508"
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
-<td><p>Windows Server 2016</p></td>
+<td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
 <td><p>标头</p></td>

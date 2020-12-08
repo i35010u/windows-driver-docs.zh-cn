@@ -1,7 +1,6 @@
 ---
 title: Bug 检查 0xC5 DRIVER_CORRUPTED_EXPOOL
 description: DRIVER_CORRUPTED_EXPOOL bug 检查的值为0x000000C5。 这表示系统尝试在进程 IRQL 上访问无效内存，但该进程的 IRQL 太高。
-ms.assetid: e375e7d3-9cb1-474f-ade2-1bc65dd79864
 keywords:
 - Bug 检查 0xC5 DRIVER_CORRUPTED_EXPOOL
 - DRIVER_CORRUPTED_EXPOOL
@@ -13,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 429309addb02575e3b1843db7609604a9c01d1f1
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 9632a59f06aebc599bfe8873b79a759d61ebcfaf
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89211239"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838673"
 ---
 # <a name="bug-check-0xc5-driver_corrupted_expool"></a>Bug 检查0xC5：驱动程序 \_ 损坏 \_ EXPOOL
 
@@ -40,7 +39,7 @@ ms.locfileid: "89211239"
 <thead>
 <tr class="header">
 <th align="left">参数</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>

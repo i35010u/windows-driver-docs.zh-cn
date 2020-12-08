@@ -1,15 +1,14 @@
 ---
 title: ServiceProvider
 description: ServiceProvider
-ms.assetid: 6fa22f4d-9be9-4d02-b610-e20bed4958e9
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 27ca57944b619e61315e5907c2b49864e5b9baa1
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: c04b1ccc552332ff3a087df304b3794b9e6bea8d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89403172"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837701"
 ---
 # <a name="serviceprovider"></a>ServiceProvider
 
@@ -55,7 +54,7 @@ ServiceProvider 元素指定服务提供程序的名称。 它显示在 Windows 
 <thead>
 <tr class="header">
 <th>元素</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>

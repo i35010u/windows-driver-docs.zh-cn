@@ -1,19 +1,18 @@
 ---
 title: ERESOURCE 结构
 description: ERESOURCE 结构
-ms.assetid: 202b2ef1-bbe4-4ffd-a82b-21f19c145e8d
 keywords:
 - 同步 WDK 内核，ERESOURCE 结构
 - 锁定 WDK 内核
 - 读/写锁定 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6d8ec9516c1c754d2be5d94e7b6c83db58fc043d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 332eb50bb97d99b68eb88f2d81e570bee0602d15
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63362007"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838777"
 ---
 # <a name="eresource-structures"></a>ERESOURCE 结构
 
@@ -21,9 +20,9 @@ ms.locfileid: "63362007"
 
 
 
-ERESOURCE 结构可用于实现锁定您的驱动程序中的读取/写入器。 系统提供一的组例程来操纵 ERESOURCE 结构，在本部分中有介绍。
+您可以使用 ERESOURCE 结构来实现您的驱动程序中的读/写锁定。 系统提供一组用于操作 ERESOURCE 结构的例程，这将在本节中介绍。
 
-本部分包含以下主题：
+本节包含下列主题：
 
 [ERESOURCE 例程简介](introduction-to-eresource-routines.md)
 

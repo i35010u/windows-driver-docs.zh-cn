@@ -1,21 +1,20 @@
 ---
 title: OID_GEN_MEDIA_CAPABILITIES
 description: OID_GEN_MEDIA_CAPABILITIES OID 已过时。 NDIS 和 NDIS 驱动程序不使用此 OID。
-ms.assetid: 5806ec46-d860-466f-b163-d7a7ad59e87a
 ms.date: 08/08/2017
-keywords: -OID_GEN_MEDIA_CAPABILITIES 网络与 Windows Vista 一起启动的驱动程序
+keywords: -从 Windows Vista 开始 OID_GEN_MEDIA_CAPABILITIES 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: d1d6ecba22065369217f925cc49eaac75a0a0f01
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 6ea9973bf43f101c8d2cfb2d989d54066ea4435c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56562341"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837111"
 ---
-# <a name="oidgenmediacapabilities"></a>OID\_GEN\_媒体\_功能
+# <a name="oid_gen_media_capabilities"></a>OID \_ 生成 \_ 媒体 \_ 功能
 
 
-OID\_GEN\_媒体\_功能 OID 已过时。 NDIS 和 NDIS 驱动程序不使用此 OID。
+OID 生成 \_ \_ 媒体 \_ 功能 oid 已过时。 NDIS 和 NDIS 驱动程序不使用此 OID。
 
 <a name="requirements"></a>要求
 ------------
@@ -31,8 +30,8 @@ OID\_GEN\_媒体\_功能 OID 已过时。 NDIS 和 NDIS 驱动程序不使用此
 <td><p>不支持。</p></td>
 </tr>
 <tr class="even">
-<td><p>Header</p></td>
-<td>Ntddndis.h （包括 Ndis.h）</td>
+<td><p>标头</p></td>
+<td>Ntddndis (包含 Ndis .h) </td>
 </tr>
 </tbody>
 </table>

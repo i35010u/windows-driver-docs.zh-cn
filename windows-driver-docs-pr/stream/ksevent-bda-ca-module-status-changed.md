@@ -1,7 +1,6 @@
 ---
 title: KSEVENT \_ BDA \_ CA \_ 模块 \_ 状态 \_ 已更改
 description: '\_ \_ \_ \_ \_ 当与 ECM 映射节点关联的 CA 模块上的状态发生更改时，客户端使用 KSEVENT BDA CA 模块状态更改为请求通知。'
-ms.assetid: a331cfa9-abd0-422e-8c39-0ff01f9dcc6a
 keywords:
 - KSEVENT_BDA_CA_MODULE_STATUS_CHANGED 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5d1e60f3243c62137535becd97d3f4a4f482c118
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: ff75dc0f036d662f713aa25f23edffae170f1f4a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89188175"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837071"
 ---
 # <a name="ksevent_bda_ca_module_status_changed"></a>KSEVENT \_ BDA \_ CA \_ 模块 \_ 状态 \_ 已更改
 
@@ -47,7 +46,7 @@ KSEVENT
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Bdamedia (包含 Bdamedia) </td>
 </tr>
 </tbody>

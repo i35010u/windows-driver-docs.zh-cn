@@ -2,16 +2,15 @@
 title: IRP_MJ_SYSTEM_CONTROL
 description: 所有驱动程序都必须提供一个 DispatchSystemControl 例程来处理 IRP_MJ_SYSTEM_CONTROL 请求，这些请求由 Windows Management Instrumentation (WMI) 的内核模式组件发送。
 ms.date: 08/12/2017
-ms.assetid: 1b4dfc87-3f74-4e33-9dbb-72d4f72480fc
 keywords:
-- IRP_MJ_SYSTEM_CONTROL 内核模式驱动程序体系结构
+- IRP_MJ_SYSTEM_CONTROL Kernel-Mode 驱动程序体系结构
 ms.localizationpriority: medium
-ms.openlocfilehash: 0216486538751d367dcae3aa92f837230de25ec4
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 692dc50a4b257b0cda27256d6903cb37664269ad
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89188247"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837221"
 ---
 # <a name="irp_mj_system_control"></a>IRP\_MJ\_SYSTEM\_CONTROL
 
@@ -36,7 +35,7 @@ ms.locfileid: "89188247"
 <a name="operation"></a>操作
 ---------
 
-所有驱动程序都必须通过提供[*DispatchSystemControl*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)例程来支持**IRP \_ MJ \_ 系统 \_ 控制**请求。
+所有驱动程序都必须通过提供 [*DispatchSystemControl*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)例程来支持 **IRP \_ MJ \_ 系统 \_ 控制** 请求。
 
 支持 [Windows Management Instrumentation](./implementing-wmi.md) (WMI) 的驱动程序必须通过处理与此主要函数代码关联的次要函数代码来处理 **IRP \_ MJ \_ 系统 \_ 控制** 请求。 有关 WMI 次要函数代码的信息，请参阅 [Wmi 次要 irp](wmi-minor-irps.md)。
 
@@ -52,7 +51,7 @@ ms.locfileid: "89188247"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Wdm.h（包括 Wdm.h、Ntddk.h 或 Ntifs.h）</td>
 </tr>
 </tbody>

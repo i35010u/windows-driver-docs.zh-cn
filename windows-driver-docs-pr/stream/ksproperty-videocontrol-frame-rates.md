@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ VIDEOCONTROL \_ 帧 \_ 速率
 description: "\"KSPROPERTY \\_ VIDEOCONTROL \\_ 帧 \\_ 速率\" 属性枚举可用的帧速率。 此属性是可选的。"
-ms.assetid: f2b6fabc-c03b-4fa5-9e5b-43d7a1c26578
 keywords:
 - KSPROPERTY_VIDEOCONTROL_FRAME_RATES 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 89c6b22397376e0ffb7aef5c57ae82260c9b33e0
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 52ec2bdfc83834b92274b57cae1cfaf03205053a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103542"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96836631"
 ---
 # <a name="ksproperty_videocontrol_frame_rates"></a>KSPROPERTY \_ VIDEOCONTROL \_ 帧 \_ 速率
 
@@ -70,7 +69,7 @@ ms.locfileid: "90103542"
 
 单个值为 100-nansecond 增量。
 
-如果传递给微型驱动程序的缓冲区大小为零，则微型驱动程序应将**NumberOfBytesToTransfer** \_ 传递给微型驱动程序的 HW 流请求块结构的 NumberOfBytesToTransfer 成员设置 \_ \_ 为所需的缓冲区大小并返回状态 \_ 缓冲区 \_ 溢出。
+如果传递给微型驱动程序的缓冲区大小为零，则微型驱动程序应将 **NumberOfBytesToTransfer** \_ 传递给微型驱动程序的 HW 流请求块结构的 NumberOfBytesToTransfer 成员设置 \_ \_ 为所需的缓冲区大小并返回状态 \_ 缓冲区 \_ 溢出。
 
 <a name="requirements"></a>要求
 ------------
@@ -88,7 +87,7 @@ ms.locfileid: "90103542"
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSPROPERTY**](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)

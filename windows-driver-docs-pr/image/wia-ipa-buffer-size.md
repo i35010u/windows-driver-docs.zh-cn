@@ -1,9 +1,8 @@
 ---
-title: WIA\_IPA\_缓冲区\_大小
-description: WIA\_IPA\_缓冲区\_大小属性包含缓冲区的大小，以字节为单位，在数据传输过程中使用。 WIA 微型驱动程序创建并维护此属性。
-ms.assetid: 2feb26fa-674d-4dc2-b8bb-51942cb48737
+title: WIA \_ IPA \_ 缓冲区 \_ 大小
+description: WIA \_ IPA \_ buffer \_ size 属性包含在数据传输过程中使用的缓冲区大小（以字节为单位）。 WIA 微型驱动程序创建并维护此属性。
 keywords:
-- WIA_IPA_BUFFER_SIZE 成像设备
+- WIA_IPA_BUFFER_SIZE 图像设备
 topic_type:
 - apiref
 api_name:
@@ -14,35 +13,35 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1e7b26b1ecbfaf9266b2b593ae6343371f6470c4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 196b858e2c08411738002551e4e5fcfeb485cccf
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63369561"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837727"
 ---
-# <a name="wiaipabuffersize"></a>WIA\_IPA\_缓冲区\_大小
+# <a name="wia_ipa_buffer_size"></a>WIA \_ IPA \_ 缓冲区 \_ 大小
 
 
-WIA\_IPA\_缓冲区\_大小属性包含缓冲区的大小，以字节为单位，在数据传输过程中使用。 WIA 微型驱动程序创建并维护此属性。
+WIA \_ IPA \_ buffer \_ size 属性包含在数据传输过程中使用的缓冲区大小（以字节为单位）。 WIA 微型驱动程序创建并维护此属性。
 
 ## <span id="ddk_wia_ipa_buffer_size_si"></span><span id="DDK_WIA_IPA_BUFFER_SIZE_SI"></span>
 
 
-属性类型：VT\_I4
+属性类型： VT \_ I4
 
-有效值：WIA\_PROP\_NONE
+有效值： WIA " \_ \_ 无"
 
 访问权限：只读
 
 <a name="remarks"></a>备注
 -------
 
-WIA\_IPA\_缓冲区\_SIZE 属性等同于[ **WIA\_IPA\_MIN\_缓冲区\_大小**](wia-ipa-min-buffer-size.md)属性。
+"WIA \_ IPA \_ buffer \_ size" 属性与 " [**wia \_ IPA \_ 最小 \_ 缓冲区 \_ 大小**](wia-ipa-min-buffer-size.md) " 属性相同。
 
-应用程序可以读取 WIA\_IPA\_缓冲区\_大小，以确定驱动程序指定的缓冲区大小的数据传输。 WIA 服务还会读取此属性，以便在数据传输的过程为微型驱动程序分配内存。
+应用程序可以读取 WIA \_ IPA \_ 缓冲区 \_ 大小，以确定用于数据传输的驱动程序指定的缓冲区大小。 WIA 服务还会读取此属性，以便在数据传输过程中为微型驱动程序分配内存。
 
-**请注意**  值的 WIA\_IPA\_缓冲区\_大小属性包含为最小的应用程序可以请求在任何给定时间的数据量。 缓冲区大小越大，将会越大将请求发送到设备。 此较大的缓冲区大小可以使设备看起来缓慢甚至失去反应，可能会降低总体计算机性能，并可能会消耗过多资源。 缓冲区大小太小而降低性能的数据传输需要多个较小的请求。 通过考虑到你的设备、 请求数和这些请求的大小的数据请求的典型大小选择合理的缓冲区大小。
+**注意**   WIA \_ IPA \_ BUFFER \_ SIZE 属性包含的值是应用程序可以在任何给定时间请求的最小数据量。 缓冲区的大小越大，对设备的请求就越多。 这种较大的缓冲区大小会使设备看起来很慢且无响应，这会降低计算机的整体性能，并可能会消耗过多的资源。 如果缓冲区太小，则可能需要很多较小的请求，从而降低数据传输的性能。 通过考虑对设备的数据请求的典型大小、请求数量以及这些请求的大小，选择合理的缓冲区大小。
 
  
 
@@ -56,12 +55,12 @@ WIA\_IPA\_缓冲区\_SIZE 属性等同于[ **WIA\_IPA\_MIN\_缓冲区\_大小**]
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Version</p></td>
-<td><p>对于 Windows Vista 驱动程序的所有传输启用项可选。 如果实现此属性，专为 Windows Server 2003、 Windows XP 和早期版本的 Windows 的应用程序可以估计的传输缓冲区大小，并且，因此，是最佳的传输速率。</p></td>
+<td><p>版本</p></td>
+<td><p>对于所有启用了传输的项，Windows Vista 驱动程序都可选。 如果实现此属性，则为 Windows Server 2003、Windows XP 和早期版本的 Windows 设计的应用程序可以估计传输缓冲区大小，因此，传输速率将是最佳的。</p></td>
 </tr>
 <tr class="even">
-<td><p>Header</p></td>
-<td>Wiadef.h （包括 Wiadef.h）</td>
+<td><p>标头</p></td>
+<td>Wiadef (包含 Wiadef) </td>
 </tr>
 </tbody>
 </table>
@@ -69,7 +68,7 @@ WIA\_IPA\_缓冲区\_SIZE 属性等同于[ **WIA\_IPA\_MIN\_缓冲区\_大小**]
 ## <a name="see-also"></a>请参阅
 
 
-[**WIA\_IPA\_MIN\_缓冲区\_大小**](wia-ipa-min-buffer-size.md)
+[**WIA \_ IPA \_ 最小 \_ 缓冲区 \_ 大小**](wia-ipa-min-buffer-size.md)
 
  
 

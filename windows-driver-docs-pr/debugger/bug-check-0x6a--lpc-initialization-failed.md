@@ -1,7 +1,6 @@
 ---
 title: Bug 检查 0x6A LPC_INITIALIZATION_FAILED
-description: LPC_INITIALIZATION_FAILED bug 检查的值为 0x0000006A.This bug 检查极少出现。
-ms.assetid: a8ffc4ec-0873-4226-800b-f305a85eaf24
+description: LPC_INITIALIZATION_FAILED bug 检查的值为0x0000006A。此 bug 检查很少出现。
 keywords:
 - Bug 检查 0x6A LPC_INITIALIZATION_FAILED
 - LPC_INITIALIZATION_FAILED
@@ -13,22 +12,22 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 429cf625105eb1e3f3bf3b0ac6a5aef03fb63c0c
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: 4c9931fe985d879cd80f9639b4f5036db810b4b1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67519274"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838678"
 ---
-# <a name="bug-check-0x6a-lpcinitializationfailed"></a>Bug 检查 0x6A：LPC\_初始化\_失败
+# <a name="bug-check-0x6a-lpc_initialization_failed"></a>Bug 检查0x6A： LPC \_ 初始化 \_ 失败
 
 
-LPC\_初始化\_失败错误检查的值为 0x0000006A。
+LPC \_ 初始化 \_ 失败 bug 检查的值为0x0000006A。
 
-检查此错误极少出现。
+此 bug 检查很少出现。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题面向程序员。 如果您是在使用计算机时收到蓝屏错误代码的客户，请参阅[蓝屏错误疑难解答](https://www.windows.com/stopcode)。
 
 
  

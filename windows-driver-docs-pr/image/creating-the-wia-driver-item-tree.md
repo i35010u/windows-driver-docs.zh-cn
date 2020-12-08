@@ -1,15 +1,14 @@
 ---
 title: 创建 WIA 驱动程序项树
 description: 创建 WIA 驱动程序项树
-ms.assetid: 3ae489b9-175e-4b1e-a6c8-a72a3a3c212a
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c0be7c0f885bc398e3b552b4e80c5d1634c890b2
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: afd9d32f8becd25e18edc2aa8115595584af38ae
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89191714"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837259"
 ---
 # <a name="creating-the-wia-driver-item-tree"></a>创建 WIA 驱动程序项树
 

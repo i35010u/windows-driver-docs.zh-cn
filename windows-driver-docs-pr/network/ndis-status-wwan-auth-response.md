@@ -1,17 +1,16 @@
 ---
 title: NDIS_STATUS_WWAN_AUTH_RESPONSE
 description: 微型端口驱动程序使用 NDIS_STATUS_WWAN_AUTH_RESPONSE 通知来通知 MB 服务：收到的质询响应是使用 OID_WWAN_AUTH_CHALLENGE 查询请求发出的。NDIS_WWAN_AUTH_RESPONSE 结构。
-ms.assetid: 24831764-4F6D-481B-A440-4F9CAE1F7501
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 NDIS_STATUS_WWAN_AUTH_RESPONSE 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 4223ef2a074bd3e46c138e2118b7be336da752de
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 6b283fb53cf11a73c476f14a6d01aae827e107f4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89216170"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838415"
 ---
 # <a name="ndis_status_wwan_auth_response"></a>NDIS \_ 状态 \_ WWAN \_ 身份验证 \_ 响应
 
@@ -42,7 +41,7 @@ ms.locfileid: "89216170"
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [OID \_ WWAN \_ 身份验证 \_ 质询](./oid-wwan-auth-challenge.md)

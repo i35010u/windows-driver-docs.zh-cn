@@ -1,7 +1,6 @@
 ---
 title: KS 事件
 description: KS 事件
-ms.assetid: 3eaa1d65-8417-4a07-b358-823394baec9b
 keywords:
 - 内核流 WDK，事件
 - KS WDK，事件
@@ -9,12 +8,12 @@ keywords:
 - 事件集 WDK 内核流式处理
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 94c9aeba5c4dc8b7ed2d408b69273adc44b3931c
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 4b14e89e0bf6aa4bc4c6a922cb629b64a60743de
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89186343"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837871"
 ---
 # <a name="ks-events"></a>KS 事件
 

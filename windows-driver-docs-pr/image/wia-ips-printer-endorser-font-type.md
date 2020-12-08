@@ -1,9 +1,8 @@
 ---
-title: WIA\_IPS\_打印机\_印记签署器\_字体\_类型
-description: WIA\_IPS\_打印机\_印记签署器\_字体\_类型属性配置打印机/印记签署器设备使用的字体类型。
-ms.assetid: DBA20346-36F8-4D9A-A9F2-F97F8955CDF8
+title: WIA \_ IPS \_ PRINTER \_ ENDORSER \_ FONT \_ TYPE
+description: WIA \_ IPS \_ PRINTER \_ ENDORSER \_ font \_ type 属性配置 PRINTER/ENDORSER 设备使用的字体类型。
 keywords:
-- WIA_IPS_PRINTER_ENDORSER_FONT_TYPE 成像设备
+- WIA_IPS_PRINTER_ENDORSER_FONT_TYPE 图像设备
 topic_type:
 - apiref
 api_name:
@@ -14,53 +13,53 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 92a1d065a6281a68782511fe9441b091dae761e1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9d77224aa2108460a4f44043e5b275ba48250624
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63388770"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838277"
 ---
-# <a name="wiaipsprinterendorserfonttype"></a>WIA\_IPS\_打印机\_印记签署器\_字体\_类型
+# <a name="wia_ips_printer_endorser_font_type"></a>WIA \_ IPS \_ PRINTER \_ ENDORSER \_ FONT \_ TYPE
 
 
-**WIA\_IPS\_打印机\_印记签署器\_字体\_类型**属性配置打印机/印记签署器设备使用的字体类型。 此属性是初始化和维护的 WIA 微型驱动程序。 与 Windows 8 和更高版本的 Windows 提供了此功能。
+**WIA \_ IPS \_ PRINTER \_ ENDORSER \_ font \_ type** 属性配置 PRINTER/ENDORSER 设备使用的字体类型。 此属性由 WIA 迷你驱动程序初始化和维护。 此功能适用于 windows 8 和更高版本的 Windows。
 
-属性类型：VT\_I4
+属性类型： VT \_ I4
 
-有效值：WIA\_PROP\_列表
+有效值： WIA 内容 \_ \_ 列表
 
-访问权限：读写
+访问权限： Read-Write
 
 <a name="remarks"></a>备注
 -------
 
-接受的值**WIA\_IPS\_打印机\_印记签署器\_字体\_类型**属性显示在下表中。
+下表显示了 " **WIA \_ IPS \_ PRINTER \_ ENDORSER \_ 字体 \_ 类型** " 属性的接受值。
 
-| ReplTest1                                        | 描述                       |
+| “值”                                        | 描述                       |
 |----------------------------------------------|-----------------------------------|
-| WIA\_打印\_字体\_正常                     | 正常的字体。                      |
-| WIA\_打印\_字体\_加粗                       | 粗体的字体。                        |
-| WIA\_打印\_字体\_额外\_加粗                | 额外加粗字体。                  |
-| WIA\_打印\_字体\_斜体\_加粗               | 斜体、 粗体的字体。                |
-| WIA\_打印\_字体\_斜体\_额外\_加粗        | 斜体，额外粗体的字体。          |
-| WIA\_打印\_字体\_斜体                     | 倾斜字体。                      |
-| WIA\_打印\_字体\_小                      | 很小的字体。                       |
-| WIA\_打印\_字体\_小型\_加粗                | 很小的加粗字体。                  |
-| WIA\_打印\_字体\_小型\_额外\_加粗         | 很小的额外加粗字体。            |
-| WIA\_打印\_字体\_小型\_斜体\_加粗        | 小斜体和粗体的字体。       |
-| WIA\_打印\_字体\_小型\_斜体\_额外\_加粗 | 很小的斜体和额外加粗字体。 |
-| WIA\_打印\_字体\_小型\_斜体              | 很小的斜体字体。                |
-| WIA\_打印\_字体\_大                      | 大字体。                       |
-| WIA\_打印\_字体\_大\_加粗                | 大加粗字体。                  |
-| WIA\_PRINT\_FONT\_LARGE\_EXTRA\_BOLD         | 大型额外粗体的字体。            |
-| WIA\_打印\_字体\_LARGE\_斜体\_加粗        | 大型斜体和粗体的字体。       |
-| WIA\_PRINT\_FONT\_LARGE\_ITALIC\_EXTRA\_BOLD | 大型斜体和额外加粗字体。 |
-| WIA\_打印\_字体\_大\_斜体              | 大型倾斜字体。                |
+| WIA \_ 打印 \_ 字体 \_ 正常                     | 普通字体。                      |
+| WIA \_ 打印 \_ 字体 \_ 加粗                       | 粗体。                        |
+| WIA \_ 打印 \_ 字体 \_ 特大 \_                | 附加粗体字体。                  |
+| WIA \_ 打印 \_ 字体 \_ 斜体 \_               | 斜体、粗体。                |
+| WIA \_ 打印 \_ 字体 \_ 斜体 \_ 黑体 \_        | 斜体、附加粗体字体。          |
+| WIA \_ 打印 \_ 字体 \_ 斜体                     | 斜体字体。                      |
+| WIA \_ 打印 \_ 字体 \_ 较小                      | 小号字体。                       |
+| WIA \_ 打印 \_ 字体 \_ 小 \_ 粗体                | 小号粗体。                  |
+| WIA \_ 打印 \_ 字体 \_ 小 \_ 额外 \_ 粗体         | 较小的额外粗体字体。            |
+| WIA \_ 打印 \_ 字体 \_ 小 \_ 斜体 \_        | 小号倾斜和粗体。       |
+| WIA \_ 打印 \_ 字体 \_ 小 \_ 斜体 \_ 额外 \_ 粗体 | 小型斜体和额外粗体字体。 |
+| WIA \_ 打印 \_ 字体- \_ 小 \_ 斜体              | 小型斜体。                |
+| WIA \_ 打印 \_ \_ 大字体                      | 大字体。                       |
+| WIA \_ 打印 \_ 字体 \_ 大 \_ 粗体                | 大粗体。                  |
+| WIA \_ 打印 \_ 字体 \_ 较大 \_ 额外 \_ 粗体         | 特大额外粗体字。            |
+| WIA \_ 打印 \_ 字体 \_ 大 \_ 斜体 \_        | 大斜体和粗体。       |
+| WIA \_ 打印 \_ 字体 \_ 大 \_ 斜体 \_ 特 \_ 粗 | 大斜体和额外粗体字。 |
+| WIA \_ 打印 \_ 字体 \_ 大 \_ 斜体              | 大斜体字体。                |
 
  
 
-**WIA\_IPS\_打印机\_印记签署器\_字体\_类型**属性是可选的印刷器/印记签署器项。 如果不支持这样做，打印机/印记签署器设备不支持字体配置。
+对于 Imprinter/Endorser 项， **WIA \_ IPS \_ PRINTER \_ ENDORSER \_ FONT \_ TYPE** 属性是可选的。 如果不支持此功能，则 printer/endorser 设备不支持字体配置。
 
 <a name="requirements"></a>要求
 ------------
@@ -72,8 +71,8 @@ ms.locfileid: "63388770"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Wiadef.h （包括 Wiadef.h）</td>
+<td><p>标头</p></td>
+<td>Wiadef (包含 Wiadef) </td>
 </tr>
 </tbody>
 </table>

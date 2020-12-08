@@ -1,31 +1,30 @@
 ---
 title: SrcSrv
 description: SrcSrv
-ms.assetid: 4d9a236c-2a0a-4107-8f99-3f9437c79404
 keywords:
 - 源服务器
 - SrcSrv
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6c93ddddc2d985d02c521f7770f6065cb11334b9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7f097d10f83890cf8851df5fffcad55d7b72c722
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63368083"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96836861"
 ---
 # <a name="srcsrv"></a>SrcSrv
 
 
-SrcSrv 工具 (Srcsrv.dll)，客户端检索用于生成应用程序的源文件的确切版本。 由于模块的源代码可以更改版本之间和在过去的年，请务必存在相关模块的版本生成时查看的源代码。
+Srcsrv.ini 工具 ( # A0) 使客户端能够检索用于生成应用程序的源文件的确切版本。 由于模块的源代码可以在不同的版本之间更改，因此，在生成相关模块的版本时，查看源代码是非常重要的。
 
-SrcSrv 从源代码管理中检索相应的文件。 若要使用 SrcSrv，应用程序必须已编制源索引。
+Srcsrv.ini 从源代码管理中检索相应的文件。 若要使用 Srcsrv.ini，必须对应用程序进行源索引。
 
-本部分包括：
+本节包括：
 
 [使用 SrcSrv](using-srcsrv.md)
 
-[源索引编制](source-indexing.md)
+[源索引](source-indexing.md)
 
 [源代码管理系统](source-control-systems.md)
 

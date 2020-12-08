@@ -1,19 +1,18 @@
 ---
 title: 设置和使用联锁队列
 description: 设置和使用联锁队列
-ms.assetid: af44a4c0-5aa7-40aa-b511-df95c9bfe9bb
 keywords:
 - 联锁 IRP 将 WDK 内核排队
 - 双重链接的 Irp WDK 内核
 - 驱动程序专用线程 WDK Irp
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f5ec54d3c324cdecdefb720df575f386e59da349
-ms.sourcegitcommit: 68d0aec4c282c9c1e1ab54509c8f4575dd273d56
+ms.openlocfilehash: 9ab3acada071491e537fb21de8992005d6ad4b62
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91221941"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837973"
 ---
 # <a name="setting-up-and-using-interlocked-queues"></a>设置和使用联锁队列
 
@@ -41,17 +40,17 @@ ms.locfileid: "91221941"
 
 大多数使用双向链接的互锁队列的驱动程序在驱动程序创建的设备对象的设备扩展中提供必要的存储。 如果驱动程序使用 [控制器对象](./introduction-to-controller-objects.md)) 或由驱动程序分配的非分页池，则队列和执行单元旋转锁定可以是在控制器扩展 (。
 
-当驱动程序接受 i/o 请求时，它可以通过在 *ListHead* 的类型为 **LIST \_ 条目**的情况下调用以下任一支持例程，从而将 IRP 插入到其队列中：
+当驱动程序接受 i/o 请求时，它可以通过在 *ListHead* 的类型为 **LIST \_ 条目** 的情况下调用以下任一支持例程，从而将 IRP 插入到其队列中：
 
 [**ExInterlockedInsertTailList**](/previous-versions/ff545402(v=vs.85)) 将 IRP 置于队列末尾
 
 [**ExInterlockedInsertHeadList**](/previous-versions/ff545397(v=vs.85)) 将 IRP 置于队列的顶层。 驱动程序通常只有在必须重试特定请求时才会调用此例程。
 
-驱动程序必须将指向 IRP (*ListEntry*) 的指针传递给 IRP，还必须将 *ListHead* 和 Executive 旋转锁定 (*锁*) 之前初始化的指针）传递给每个 **ExInterlockedInsert*Xxx*列表** 例程。 当驱动程序通过调用[**ExInterlockedRemoveHeadList**](/previous-versions/ff545427(v=vs.85))取消排队 IRP 时，只需要指向*ListHead*和*Lock*的指针。 若要防止死锁，驱动程序不得持有传递到任何 **ExInterlocked * Xxx*** 例程的 ExecutiveSpinLock。
+驱动程序必须将指向 IRP (*ListEntry*) 的指针传递给 IRP，还必须将 *ListHead* 和 Executive 旋转锁定 (*锁*) 之前初始化的指针）传递给每个 **ExInterlockedInsert *Xxx* 列表** 例程。 当驱动程序通过调用 [**ExInterlockedRemoveHeadList**](/previous-versions/ff545427(v=vs.85))取消排队 IRP 时，只需要指向 *ListHead* 和 *Lock* 的指针。 若要防止死锁，驱动程序不得持有传递到任何 **ExInterlocked * Xxx*** 例程的 ExecutiveSpinLock。
 
 由于联锁队列由执行单元旋转锁定进行保护，因此该驱动程序可以将 Irp 插入其双重链接队列中，并从运行时间小于或等于 IRQL = 调度级别的任何驱动程序例程以多处理器安全的方式将其删除 \_ 。
 
-如上图所示，具有 ListHead 类型 **列表 \_ 项**的队列是双重链接列表。 具有 [**SLIST \_ 标头**](./eprocess.md) 类型的 ListHead 的是一个有序的单向链接列表。 驱动程序通过调用 [**ExInitializeSListHead**](/windows-hardware/drivers/ddi/wdm/nf-wdm-initializeslisthead)，为有序链接的互锁队列初始化 ListHead。
+如上图所示，具有 ListHead 类型 **列表 \_ 项** 的队列是双重链接列表。 具有 [**SLIST \_ 标头**](./eprocess.md) 类型的 ListHead 的是一个有序的单向链接列表。 驱动程序通过调用 [**ExInitializeSListHead**](/windows-hardware/drivers/ddi/wdm/nf-wdm-initializeslisthead)，为有序链接的互锁队列初始化 ListHead。
 
 永远不会重试 i/o 操作的驱动程序可以使用 [**ExInterlockedPushEntrySList**](/windows-hardware/drivers/ddi/wdm/nf-wdm-exinterlockedpushentryslist) 和 [**ExInterlockedPopEntrySList**](/windows-hardware/drivers/ddi/wdm/nf-wdm-exinterlockedpopentryslist) 来管理其在有序、单向链接的互操作队列中的 irp 队列。 使用此类联锁队列的任何驱动程序也必须为 **SLIST \_ 标头** 和 ExecutiveSpinLock 类型的 ListHead 提供常驻存储，如下 [图](#ddk-using-an-interlocked-queue-kg)所示。 它必须初始化自旋锁并在调用 **ExInterlockedPushEntrySList** 之前设置其队列，以将初始条目插入到其队列中。
 

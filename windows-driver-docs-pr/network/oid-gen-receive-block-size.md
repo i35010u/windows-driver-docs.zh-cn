@@ -1,21 +1,20 @@
 ---
 title: OID_GEN_RECEIVE_BLOCK_SIZE
 description: 作为查询。
-ms.assetid: 92a7a388-4a41-41cf-96e5-a65b5559553d
 ms.date: 08/08/2017
-keywords: -从 Windows Vista 开始 OID_GEN_RECEIVE_BLOCK_SIZE 网络驱动程序
+keywords: -从 Windows Vista 开始 OID_GEN_RECEIVE_BLOCK_SIZE 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: f320cf7bebb06e6a861c9835cee573b1024f0edf
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9f6b36cb96134a882dee723c28619b9b70b4e4a8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63367533"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96836747"
 ---
-# <a name="oidgenreceiveblocksize"></a>OID\_GEN\_RECEIVE\_BLOCK\_SIZE
+# <a name="oid_gen_receive_block_size"></a>OID \_ 生成 \_ 接收 \_ 块 \_ 大小
 
 
-作为查询。 OID\_GEN\_接收\_阻止\_大小 OID 指定的存储，以字节为单位，NIC 的接收缓冲区空间中占用单个数据包
+作为查询。 OID 生成 \_ \_ 接收 \_ 块 \_ 大小 oid 指定单个数据包在 NIC 的接收缓冲区空间中所占的存储量（以字节为单位）。
 
 **版本信息**
 
@@ -37,9 +36,9 @@ ms.locfileid: "63367533"
 <a name="remarks"></a>备注
 -------
 
-OID\_GEN\_接收\_阻止\_大小 OID 指定的存储，以字节为单位，NIC 的接收缓冲区空间中占用单个数据包
+OID 生成 \_ \_ 接收 \_ 块 \_ 大小 oid 指定单个数据包在 NIC 的接收缓冲区空间中所占的存储量（以字节为单位）。
 
-可以从当前和最大值获取相同的信息*预测先行*大小。 但是，这些 Oid 之一可以强制验证彼此。 协议驱动程序还可以确定是否基础驱动程序，则表示完整数据包接收通过比较的值对于该驱动程序将返回[OID\_代\_当前\_预测先行](oid-gen-current-lookahead.md)和 OID\_GEN\_接收\_阻止\_大小 Oid。
+可以从当前和最大 *预测先行* 大小获取相同的信息。 但是，其中一个 Oid 可能是必需的，以便彼此验证。 此外，协议驱动程序可以通过比较驱动程序为 [OID 生成 \_ 当前的 \_ \_ 预测先行](oid-gen-current-lookahead.md) 和 Oid 生成 \_ \_ 接收 \_ 块 \_ 大小 oid 返回的值，来确定基础驱动程序是否指示完整数据包接收。
 
 <a name="requirements"></a>要求
 ------------
@@ -51,8 +50,8 @@ OID\_GEN\_接收\_阻止\_大小 OID 指定的存储，以字节为单位，NIC 
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Ntddndis.h （包括 Ndis.h）</td>
+<td><p>标头</p></td>
+<td>Ntddndis (包含 Ndis .h) </td>
 </tr>
 </tbody>
 </table>
@@ -60,7 +59,7 @@ OID\_GEN\_接收\_阻止\_大小 OID 指定的存储，以字节为单位，NIC 
 ## <a name="see-also"></a>请参阅
 
 
-[OID\_GEN\_当前\_预测先行](oid-gen-current-lookahead.md)
+[OID \_ 生成 \_ 当前 \_ 预测先行](oid-gen-current-lookahead.md)
 
  
 

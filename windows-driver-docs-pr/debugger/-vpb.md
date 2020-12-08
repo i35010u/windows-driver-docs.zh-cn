@@ -1,7 +1,6 @@
 ---
 title: vpb
-description: Vpb 扩展显示卷参数块 (VPB)。
-ms.assetid: 978d4ec8-6141-4656-9e5c-266de91c9440
+description: Vpb 扩展显示卷参数块 (VPB) 。
 keywords:
 - vpb Windows 调试
 ms.date: 05/23/2017
@@ -12,23 +11,23 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 90f04f4146409059716449aab33c9070a7b3e1df
-ms.sourcegitcommit: 424c435700d8f8a85bdaa83e8ddaab9568c8d347
+ms.openlocfilehash: 97356148ea3a17cdcc8c27225db54a75bc6fad52
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/26/2019
-ms.locfileid: "70025153"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838405"
 ---
 # <a name="vpb"></a>!vpb
 
 
-**! Vpb** extension 显示卷参数块 (vpb)。
+**！ Vpb** 扩展显示 (vpb) 的卷参数块。
 
 ```dbgcmd
 !vpb Address
 ```
 
-## <a name="span-idddk__vpb_dbgspanspan-idddk__vpb_dbgspanparameters"></a><span id="ddk__vpb_dbg"></span><span id="DDK__VPB_DBG"></span>Parameters
+## <a name="span-idddk__vpb_dbgspanspan-idddk__vpb_dbgspanparameters"></a><span id="ddk__vpb_dbg"></span><span id="DDK__VPB_DBG"></span>参数
 
 
 <span id="_______Address______"></span><span id="_______address______"></span><span id="_______ADDRESS______"></span>*地址*   
@@ -44,11 +43,11 @@ ms.locfileid: "70025153"
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>Windows 2000</strong></p></td>
-<td align="left"><p>Kdextx86</p></td>
+<td align="left"><p>Kdextx86.dll</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>Windows XP 和更高版本</strong></p></td>
-<td align="left"><p>Kdexts</p></td>
+<td align="left"><p><strong>Windows XP 及更高版本</strong></p></td>
+<td align="left"><p>Kdexts.dll</p></td>
 </tr>
 </tbody>
 </table>
@@ -57,12 +56,12 @@ ms.locfileid: "70025153"
 
 ### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-有关 VPBs 的信息, 请参阅 Windows 驱动程序工具包 (WDK) 文档和*Microsoft Windows 内部*, 并将其标记为 Russinovich 和 David 所罗门群岛。
+有关 VPBs 的信息，请参阅 Windows 驱动程序工具包 (WDK) 文档和 *Microsoft Windows 内部*，并将其标记为 Russinovich 和 David 所罗门群岛。
 
 <a name="remarks"></a>备注
 -------
 
-下面是一个示例。 首先, 设备树显示有[ **! devnode**](-devnode.md) extension:
+示例如下。 首先，设备树显示有 [**！ devnode**](-devnode.md) extension：
 
 ```dbgcmd
 kd> !devnode 0 1
@@ -90,7 +89,7 @@ DevNode 0x80e203b8 for PDO 0x80e204f8
     .....
 ```
 
-列出的最后一个设备节点是卷。 请检查它的物理设备对象 (PDO) 和[ **! devobj**](-devobj.md) extension:
+列出的最后一个设备节点是卷。 请检查它的物理设备对象 (PDO) ，并提供 [**！ devobj**](-devobj.md) extension：
 
 ```dbgcmd
 kd> !devobj 80e15cb8
@@ -103,7 +102,7 @@ AttachedDevice (Upper) 80e14c60 \Driver\VolSnap
 Device queue is not busy.
 ```
 
-此列表中包含此设备的 VPB 的地址。 将此地址与 **! vpb** extension 一起使用:
+此列表中包含此设备的 VPB 的地址。 将此地址与 **！ vpb** extension 一起使用：
 
 ```dbgcmd
 kd> !vpb 80e15c30

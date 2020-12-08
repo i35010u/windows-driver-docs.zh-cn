@@ -1,15 +1,14 @@
 ---
 title: 意外删除顺序
 description: 意外删除顺序
-ms.assetid: 5A89BEDA-BAC3-476F-99B3-4E6E6DDDE5F5
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5e7b9e1bed0a6fcf5c583f33e8d7b851d33e7905
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: f0d6713265e01915d5e883310cedca58b2871168
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89190767"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96836585"
 ---
 # <a name="surprise-removal-sequence"></a>意外删除顺序
 
@@ -20,7 +19,7 @@ ms.locfileid: "89190767"
 
 ![意外删除序列](images/surprise-removal.png)
 
-如果设备在被删除时未处于工作状态，则框架将在[*EvtDeviceSurpriseRemoval*](/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_surprise_removal)之后立即调用[*EvtDeviceReleaseHardware*](/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_release_hardware)事件回调。 它省略了在设备从工作状态退出时已执行的干预步骤。
+如果设备在被删除时未处于工作状态，则框架将在 [*EvtDeviceSurpriseRemoval*](/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_surprise_removal)之后立即调用 [*EvtDeviceReleaseHardware*](/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_release_hardware)事件回调。 它省略了在设备从工作状态退出时已执行的干预步骤。
 
  
 

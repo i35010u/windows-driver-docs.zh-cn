@@ -1,15 +1,14 @@
 ---
 title: 结束标记
 description: 结束标记
-ms.assetid: c76890fd-46fb-42b9-802a-e083840f46d8
 ms.date: 01/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 79ffd63169a7b12e8a7c5df19cb84803705ef4a6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 55ed50e6b97ae5cb1c1370575992cf1a384a56a3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63360074"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837805"
 ---
 # <a name="end-token"></a>结束标记
 
@@ -17,11 +16,11 @@ ms.locfileid: "63360074"
 ## <span id="ddk_end_token_gg"></span><span id="DDK_END_TOKEN_GG"></span>
 
 
-结束标记告知驱动程序的着色器代码的末尾，并由组成以下位：
+结束标记会将着色器代码末尾的驱动程序通知给驱动程序，并由以下位组成：
 
-### <a name="span-idbitsspanspan-idbitsspanbits"></a><span id="bits"></span><span id="BITS"></span>Bits
+### <a name="span-idbitsspanspan-idbitsspanbits"></a><span id="bits"></span><span id="BITS"></span>带宽
 
-<span id="_31_00_"></span>**\[31:00\]**  0 到 31 位指示着色器代码的末尾。 此值为 0x0000FFFF。
+<span id="_31_00_"></span>**\[ 31:00 \]** 位0到31指示着色器代码的结尾。 此值为0x0000FFFF。
 
 ## <a name="span-idrequirementsspanspan-idrequirementsspanspan-idrequirementsspanrequirements"></a><span id="Requirements"></span><span id="requirements"></span><span id="REQUIREMENTS"></span>要求
 

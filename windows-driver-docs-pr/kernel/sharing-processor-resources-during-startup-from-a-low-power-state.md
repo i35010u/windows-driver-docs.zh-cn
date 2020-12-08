@@ -1,15 +1,14 @@
 ---
 title: 在从低功耗状态启动期间共享处理器资源
 description: 在从低功耗状态启动期间共享处理器资源
-ms.assetid: 2b2e6a1b-7c2d-4f38-9407-a417b75daa6a
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 430f060d57c4244e62465bcb606025a7723ddaba
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: db49ac7117731c8a8278901b93a72fcce239536f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89190981"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837963"
 ---
 # <a name="sharing-processor-resources-during-startup-from-a-low-power-state"></a>在从低功耗状态启动期间共享处理器资源
 

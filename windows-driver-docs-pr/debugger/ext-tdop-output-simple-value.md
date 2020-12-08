@@ -1,7 +1,6 @@
 ---
 title: EXT \_ TDOP \_ OUTPUT \_ 简单 \_ 值
 description: "\"调试\" 请求的 \"EXT \\_ TDOP \\_ OUTPUT \\_ 简单 \\_ 值\" 子操作将 \\_ \\_ \\_ \\_ \\_ 打印指定的类型化数据的值。"
-ms.assetid: dce51823-34e9-43b9-9cbd-41b436b43ccb
 keywords:
 - EXT_TDOP_OUTPUT_SIMPLE_VALUE Windows 调试
 topic_type:
@@ -12,19 +11,19 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9ba9b095b6406a4a93140f73a7b1c7677b80f6e6
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: b8af20de3b8c42493bb391b41ad333d62bd1f02a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89211167"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837823"
 ---
 # <a name="ext_tdop_output_simple_value"></a>EXT \_ TDOP \_ OUTPUT \_ 简单 \_ 值
 
 
-"调试" 请求的 "EXT \_ TDOP \_ OUTPUT \_ 简单 \_ 值" 子操作将打印指定的类型化数据的值。 [** \_ \_ \_ \_ \_ **](debug-request-ext-typed-data-ansi.md)[**Request**](request.md)
+"调试" 请求的 "EXT \_ TDOP \_ OUTPUT \_ 简单 \_ 值" 子操作将打印指定的类型化数据的值。 [**\_ \_ \_ \_ \_**](debug-request-ext-typed-data-ansi.md)[**Request**](request.md)
 
-**参数**
+**Parameters**
 
 <span id="Operation"></span><span id="operation"></span><span id="OPERATION"></span>**运作**  
 设置为 EXT \_ TDOP \_ OUTPUT \_ \_ 此子操作的简单值。

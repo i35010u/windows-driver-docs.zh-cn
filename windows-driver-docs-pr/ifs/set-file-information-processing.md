@@ -1,19 +1,18 @@
 ---
 title: 设置文件信息处理
 description: 设置文件信息处理
-ms.assetid: bda94e8d-0be1-4730-a82e-4aa4d3763cce
 keywords:
 - 安全 WDK 文件系统，语义模型检查
 - 语义模型检查 WDK 文件系统，设置文件信息处理
 - 设置文件信息处理 WDK 文件系统
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5ac7afc3c1c10d25b2cac3e6938dc37ecef1f950
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 8df10a2baf9ae4688d1753f0abab888a9ffb3395
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89062998"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838037"
 ---
 # <a name="set-file-information-processing"></a>设置文件信息处理
 

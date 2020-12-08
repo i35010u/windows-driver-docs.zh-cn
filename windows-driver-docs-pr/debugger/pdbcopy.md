@@ -1,30 +1,29 @@
 ---
 title: PDBCopy
 description: PDBCopy
-ms.assetid: 9f250b0a-597e-4ca2-8e73-306626358bc9
 keywords:
 - PDBCopy
-- PDBCopy 概述
-- 符号 PDBCopy
+- Pdbcopy.exe，概述
+- 符号，Pdbcopy.exe
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 382ae67a34d658059c650ecfa64c346219e562ee
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 469dfa2860176080dc1be33a1ff59c3feeec1c27
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63374811"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838513"
 ---
 # <a name="pdbcopy"></a>PDBCopy
 
 
-PDBCopy 工具 (pdbcopy.exe) 是一个符号文件中删除私有符号信息的命令行工具。 它还可以从公共符号表中删除所选的信息。
+Pdbcopy.exe 工具 ( # A0) 是一个命令行工具，可从符号文件中删除私有符号信息。 它还可以从公共符号表中删除选定的信息。
 
-本部分包括：
+本节包括：
 
 [使用 PDBCopy](using-pdbcopy.md)
 
-[选择删除的公共符号](choosing-which-public-symbols-to-remove.md)
+[选择要删除的公共符号](choosing-which-public-symbols-to-remove.md)
 
 [**PDBCopy 命令行选项**](pdbcopy-command-line-options.md)
 

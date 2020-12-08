@@ -1,7 +1,6 @@
 ---
 title: 扩展格式感知要求
 description: 扩展格式感知要求
-ms.assetid: eab9c254-fca7-449d-a6cf-1b20d2e7173c
 keywords:
 - Direct3D 版本 10.1 WDK Windows 7 显示，可扩展格式感知要求
 - 扩展格式感知要求 WDK Windows 7 显示
@@ -12,25 +11,25 @@ keywords:
 - BltDXGI 和 XR_BIAS WDK Windows 7 显示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7437fbf60c1c2e5aaacbdfc5f506fcb5ff2499f3
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 10d60349f18ec21dda51063731bccc98f990bada
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89065860"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838297"
 ---
 # <a name="extended-format-aware-requirements"></a>扩展格式感知要求
 
 
 本部分仅适用于 Windows 7 及更高版本的操作系统。
 
-用户模式显示扩展了扩展格式的驱动程序，可确保在 "扩展格式[**CheckFormatSupport**](/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_checkformatsupport) " 部分的[详细信息](details-of-the-extended-format.md)中，为表中的每种格式返回准确值。 但是，驱动程序不一定支持每种格式。
+用户模式显示扩展了扩展格式的驱动程序，可确保在 "扩展格式 [**CheckFormatSupport**](/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_checkformatsupport) " 部分的 [详细信息](details-of-the-extended-format.md)中，为表中的每种格式返回准确值。 但是，驱动程序不一定支持每种格式。
 
 可扩展格式感知驱动程序隐式保证支持强制转换完全类型的后台缓冲区。
 
 扩展格式感知驱动程序隐式支持 BGRX 和 BGRA 格式，这些格式与 "扩展格式" 部分的 [详细信息](details-of-the-extended-format.md) 中的表中定义的功能相同。
 
-扩展格式感知驱动程序隐式支持 BGRA 和 BGRA \_ SRGB 扫描，如 [BGRA 扫描支持](bgra-scan-out-support.md) 部分中所述。
+扩展格式感知驱动程序隐式支持 BGRA 和 BGRA \_ SRGB 扫描，如 [BGRA Scan-Out 支持](bgra-scan-out-support.md) 部分中所述。
 
 如果扩展格式感知驱动程序为任何新格式返回任何支持位，则必须在 "扩展格式" 部分的 [详细信息](details-of-the-extended-format.md) 中返回表中所需的所有位。 驱动程序无法返回表中不需要的任何位。
 

@@ -2,16 +2,15 @@
 title: IRP_MN_QUERY_POWER
 description: 此 IRP 将查询设备，以确定是否可以更改系统电源状态或设备电源状态。
 ms.date: 08/12/2017
-ms.assetid: fc4c5364-2160-4525-889a-96785a3c7a07
 keywords:
-- IRP_MN_QUERY_POWER 内核模式驱动程序体系结构
+- IRP_MN_QUERY_POWER Kernel-Mode 驱动程序体系结构
 ms.localizationpriority: medium
-ms.openlocfilehash: d693ebbcfecb967951f1cb49ca3c2812dc4f35a0
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: dcedf5c1572090dd6c6357c97ad1a833bb2de5ca
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89186719"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96836915"
 ---
 # <a name="irp_mn_query_power"></a>IRP \_ MN \_ 查询 \_ 能力
 
@@ -39,9 +38,9 @@ ms.locfileid: "89186719"
 
 **参数。 power. state** 指定电源状态，如下所示：
 
--   如果**SystemPowerState**，则值为[**系统 \_ 电源 \_ 状态**](/windows-hardware/drivers/ddi/wdm/ne-wdm-_system_power_state)类型的枚举**器。**
+-   如果 **SystemPowerState**，则值为 [**系统 \_ 电源 \_ 状态**](/windows-hardware/drivers/ddi/wdm/ne-wdm-_system_power_state)类型的枚举 **器。**
 
--   如果**DevicePowerState**，则值为[**设备 \_ 电源 \_ 状态**](/windows-hardware/drivers/ddi/wdm/ne-wdm-_device_power_state)类型的枚举**器。**
+-   如果 **DevicePowerState**，则值为 [**设备 \_ 电源 \_ 状态**](/windows-hardware/drivers/ddi/wdm/ne-wdm-_device_power_state)类型的枚举 **器。**
 
 **ShutdownType** 指定有关所请求转换的其他信息。 可能的值是 **电源 \_ 操作** 类型的枚举器。
 
@@ -58,7 +57,7 @@ ms.locfileid: "89186719"
 <a name="operation"></a>操作
 ---------
 
-**Irp \_ MN \_ 查询 \_ 功能**的参数与[**irp \_ MN \_ 设置的 \_ 电源**](irp-mn-set-power.md)参数相同。 但不是向驱动程序通知电源状态的不可撤消的更改，而使用 **IRP \_ MN \_ QUERY \_ power** 查询系统或设备是否可以进入特定电源状态。
+**Irp \_ MN \_ 查询 \_ 功能** 的参数与 [**irp \_ MN \_ 设置的 \_ 电源**](irp-mn-set-power.md)参数相同。 但不是向驱动程序通知电源状态的不可撤消的更改，而使用 **IRP \_ MN \_ QUERY \_ power** 查询系统或设备是否可以进入特定电源状态。
 
 驱动程序不得更改其设备的电源状态以响应 **IRP \_ MN \_ QUERY \_ power** request。
 
@@ -74,9 +73,9 @@ ms.locfileid: "89186719"
 
 从 Windows Vista 开始，转换到系统睡眠状态被视为一种关键操作。 尽管驱动程序可能无法通过系统查询-power IRP，电源管理器可能仍会将系统电源状态更改为睡眠状态。 驱动程序收到系统查询-power IRP 后，应该始终准备好驱动程序，以便在系统电源状态下进行后续更改。
 
-当设备电源策略所有者收到系统 power query IRP 时，它应在 IRP 中设置 [*IoCompletion*](/windows-hardware/drivers/ddi/wdm/nc-wdm-io_completion_routine) 例程，然后将其向下传递。 在 *IoCompletion* 例程中，它应为对查询的系统状态有效的设备状态发送 **IRP \_ MN \_ 查询 \_ 能力** 。 有关详细信息，请参阅 [在设备电源策略所有者中处理系统查询-POWER IRP](./handling-a-system-query-power-irp-in-a-device-power-policy-owner.md)。
+当设备电源策略所有者收到系统 power query IRP 时，它应在 IRP 中设置 [*IoCompletion*](/windows-hardware/drivers/ddi/wdm/nc-wdm-io_completion_routine) 例程，然后将其向下传递。 在 *IoCompletion* 例程中，它应为对查询的系统状态有效的设备状态发送 **IRP \_ MN \_ 查询 \_ 能力** 。 有关详细信息，请参阅 [在设备电源策略所有者中处理 System Query-Power IRP](./handling-a-system-query-power-irp-in-a-device-power-policy-owner.md)。
 
-当 IRP 指定 **PowerSystemShutdown** (S5) 时， **ShutdownType** 中的值将提供关闭的原因。 **ShutdownType**告知驱动程序系统是重置 (**PowerActionShutdownReset**) 还是无限期关机，稍后 (**PowerActionShutdownOff**) 。 对于大多数设备的驱动程序，差别是无关紧要。 但是，对于某些设备，如执行 DMA 的视频流式处理设备，驱动程序可能会选择在重置系统时关闭设备的电源，从而停止任何正在进行的 i/o。
+当 IRP 指定 **PowerSystemShutdown** (S5) 时， **ShutdownType** 中的值将提供关闭的原因。 **ShutdownType** 告知驱动程序系统是重置 (**PowerActionShutdownReset**) 还是无限期关机，稍后 (**PowerActionShutdownOff**) 。 对于大多数设备的驱动程序，差别是无关紧要。 但是，对于某些设备，如执行 DMA 的视频流式处理设备，驱动程序可能会选择在重置系统时关闭设备的电源，从而停止任何正在进行的 i/o。
 
 在 Microsoft Windows 2000 及更高版本的系统上， **ShutdownType** 的值也可以是 **PowerActionShutdown**。 在这种情况下，驱动程序无法判断请求哪种类型的关闭，因此应继续进行重置。
 
@@ -90,7 +89,7 @@ ms.locfileid: "89186719"
 
 通过返回状态 \_ SUCCESS，驱动程序可保证它不会启动任何会更改其设置请求电源状态的功能的操作。 驱动程序应该将需要此类操作的任何 Irp 排队，直到它完成将设备恢复到可接受电源状态的集电源 IRP。
 
-在 Windows 2000 和更高版本的系统上，当 IRP 指定 **PowerDeviceD1**、 **PowerDeviceD2**或 **PowerDeviceD3**时， **参数. ShutdownType** 中的值提供有关当前系统电源 irp 的信息（如果系统电源 irp 处于活动状态）。 在这种情况下， **ShutdownType** 处的值表示当前请求的系统电源状态，或者，如果系统请求未完成，则为 **PowerActionNone** 。 在 Windows 98/Me 上，当 IRP 请求设备电源状态时，此字段始终包含 **PowerActionNone** 。
+在 Windows 2000 和更高版本的系统上，当 IRP 指定 **PowerDeviceD1**、 **PowerDeviceD2** 或 **PowerDeviceD3** 时， **参数. ShutdownType** 中的值提供有关当前系统电源 irp 的信息（如果系统电源 irp 处于活动状态）。 在这种情况下， **ShutdownType** 处的值表示当前请求的系统电源状态，或者，如果系统请求未完成，则为 **PowerActionNone** 。 在 Windows 98/Me 上，当 IRP 请求设备电源状态时，此字段始终包含 **PowerActionNone** 。
 
 <a name="requirements"></a>要求
 ------------
@@ -102,7 +101,7 @@ ms.locfileid: "89186719"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Wdm.h（包括 Wdm.h、Ntddk.h 或 Ntifs.h）</td>
 </tr>
 </tbody>

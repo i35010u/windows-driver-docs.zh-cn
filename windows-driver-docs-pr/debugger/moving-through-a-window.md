@@ -1,17 +1,16 @@
 ---
 title: 通过窗口移动
 description: 通过窗口移动
-ms.assetid: c164a446-1f6c-4d37-8ad6-aa254d3268bc
 keywords:
-- 调试信息窗口中导航
+- 调试信息窗口，导航
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 45f14eadd827386e503aca77ebddb6f2669f1fab
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2ce5372e2af8143443d86f33180249bd6b2d8f3e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63358963"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837003"
 ---
 # <a name="moving-through-a-window"></a>通过窗口移动
 
@@ -19,41 +18,41 @@ ms.locfileid: "63358963"
 ## <span id="ddk_moving_through_a_window_dbg"></span><span id="DDK_MOVING_THROUGH_A_WINDOW_DBG"></span>
 
 
-有几种方法的经过调试的信息窗口。
+可以通过多种方法在调试信息窗口中进行移动。
 
-如果在窗口中显示滚动条，可用于显示的窗口的详细信息。
+如果滚动条出现在窗口中，您可以使用它来显示窗口中的更多。
 
-此外，某些 windows 支持**查找**，**转到地址**，或**转到行**命令。 这些命令仅更改 WinDbg 显示。 它们不会影响目标或任何其他调试器操作的执行。
+此外，某些 windows 支持 " **查找**"、" **中转到地址**" 或 " **中转到行** " 命令。 这些命令仅更改 WinDbg 显示。 它们不会影响目标或任何其他调试器操作的执行。
 
-### <a name="span-idfindcommandspanspan-idfindcommandspanfind-command"></a><span id="find_command"></span><span id="FIND_COMMAND"></span>查找命令
+### <a name="span-idfind_commandspanspan-idfind_commandspanfind-command"></a><span id="find_command"></span><span id="FIND_COMMAND"></span>Find 命令
 
-可以使用**查找**命令，在[调试器命令窗口](debugger-command-window.md)中或在[源窗口](source-window.md)。
+可以在 [调试器命令窗口](debugger-command-window.md)或 [源窗口](source-window.md)中使用 "**查找**" 命令。
 
-当一个这些窗口处于活动状态时，单击**查找**上**编辑**菜单或按 CTRL + F。 **查找**对话框随即打开。
+如果其中一个窗口处于活动状态，请单击 "**编辑**" 菜单上的 "**查找**" 或按 CTRL + F。 " **查找** " 对话框将打开。
 
-输入你想要在对话框中，找到并选择的文本**向上**或**向下**来确定您的搜索方向。 只要光标位于窗口开始执行搜索。 您可以使用鼠标将光标放在任意位置。
+在对话框中输入要查找的文本，然后选择 " **向上** " 或 " **向下** " 来确定搜索的方向。 在光标位于窗口中的任何位置开始搜索。 您可以使用鼠标将光标置于任何位置。
 
-选择**仅全字匹配**复选框，如果你想要搜索整个单词。 （如果选中此复选框，并输入多个单词，此复选框则忽略。）选择**区分大小写**复选框，执行区分大小写的搜索。
+如果要搜索单个单词，请选中 " **仅全字匹配** " 复选框。  (如果您选中此复选框，并且您输入了多个字词，则将忽略此复选框。 ) 选中 "区分 **大小写** " 复选框以执行区分大小写的搜索。
 
-如果关闭**查找**对话框中，可以通过单击重复执行上一个搜索向前**查找下一步**上**编辑**菜单或按 F3。 您可以通过按 SHIFT + F3 重复向后的搜索。
+如果关闭 "**查找**" 对话框，则可以通过在 "**编辑**" 菜单上单击 "**查找下** 一个" 或按 F3，按向前方向重复上一个搜索。 可以通过按 SHIFT + F3 向后方向重复搜索。
 
-### <a name="span-idgotoaddresscommandspanspan-idgotoaddresscommandspango-to-address-command"></a><span id="go_to_address_command"></span><span id="GO_TO_ADDRESS_COMMAND"></span>转到地址命令
+### <a name="span-idgo_to_address_commandspanspan-idgo_to_address_commandspango-to-address-command"></a><span id="go_to_address_command"></span><span id="GO_TO_ADDRESS_COMMAND"></span>中转到 Address 命令
 
-**转到地址**命令正在调试的应用程序中的地址的搜索。 若要使用此选项，请单击**转到地址**上**编辑**菜单或按 CTRL + G。
+" **中转到地址** " 命令在要调试的应用程序中搜索地址。 若要使用此选项，请在 "**编辑**" 菜单上单击 "**前往地址**" 或按 CTRL + G。
 
-当**视图代码偏移量**出现对话框，请输入你想要搜索的地址。 您可以输入此地址作为表达式，如函数、 符号或整数内存地址。 如果地址是不明确，列表会显示所有不明确的项。
+当 " **查看代码偏移量** " 对话框出现时，请输入要搜索的地址。 您可以输入此地址作为表达式，如函数、符号或整数内存地址。 如果地址不明确，则会出现一个列表，其中包含所有不明确的项。
 
-单击后**确定**，调试器将光标移到开头的函数或中的地址[反汇编窗口](disassembly-window.md)或[源窗口](source-window.md)。
+单击 **"确定**" 后，调试器会将光标移到 " [反汇编" 窗口](disassembly-window.md) 或 " [源" 窗口](source-window.md)中的函数或地址的开头。
 
-可以使用**转到地址**命令而不考虑哪些调试的信息窗口处于打开状态。 如果调试器在反汇编模式下，调试器将查找你要搜索在反汇编窗口中的地址。 如果调试器在源文件模式下，调试器会尝试在源窗口中查找的地址。 如果调试器无法在源窗口中查找的地址，调试器在反汇编窗口中查找的地址。 如果所需的窗口未打开，调试器将打开它。
+无论打开哪个调试信息窗口，都可以使用 " **跳到地址** " 命令。 如果调试器处于反汇编模式，调试器将在 "反汇编" 窗口中找到要搜索的地址。 如果调试器处于源模式，则调试器将尝试在源窗口中查找该地址。 如果调试器在源窗口中找不到该地址，则调试器将在 "反汇编" 窗口中找到该地址。 如果需要的窗口未打开，调试器会将其打开。
 
-### <a name="span-idmovingtoaspecificlinespanspan-idmovingtoaspecificlinespanmoving-to-a-specific-line"></a><span id="moving_to_a_specific_line"></span><span id="MOVING_TO_A_SPECIFIC_LINE"></span>将移动到的特定行
+### <a name="span-idmoving_to_a_specific_linespanspan-idmoving_to_a_specific_linespanmoving-to-a-specific-line"></a><span id="moving_to_a_specific_line"></span><span id="MOVING_TO_A_SPECIFIC_LINE"></span>移到特定行
 
-**转到行**命令搜索活动的源窗口中的行号。 如果活动窗口不是源窗口，则无法使用**转到行**命令。
+" **中转到行** " 命令在 "活动源" 窗口中搜索行号。 如果活动窗口不是源窗口，则不能使用 " **前往行** " 命令。
 
-若要激活此选项，请单击**转到行**上**编辑**菜单或按 CTRL + L。
+若要激活此选项，请在 "**编辑**" 菜单上单击 "**前往行**" 或按 CTRL + L。
 
-当**转到行**出现对话框，请输入你想要查找，然后单击的行号**确定**。 调试器会将光标移动到该行。 如果大于文件中的最后一行的行号，光标将移到文件末尾。
+出现 " **转为行** " 对话框时，输入要查找的行号，然后单击 **"确定"**。 调试器将光标移到该行。 如果行号大于文件中的最后一行，则光标将移至文件末尾。
 
  
 

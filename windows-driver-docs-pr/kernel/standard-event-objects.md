@@ -1,17 +1,16 @@
 ---
 title: 标准事件对象
 description: 标准事件对象
-ms.assetid: 3c34c485-28b1-45d5-9e79-05dd2b26015e
 keywords:
 - 事件对象 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5ed60a3a9a22b28d92a1ed195db36be7b7d57193
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 7f691532491c0683c3d84d3cb073bb7cfaee5062
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89185789"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837945"
 ---
 # <a name="standard-event-objects"></a>标准事件对象
 
@@ -50,7 +49,7 @@ ms.locfileid: "89185789"
 此事件在操作系统的提交费用较高时设置，相对于当前的提交限制。 换句话说，内存使用量很高，物理内存或页面文件中的可用空间非常小，但操作系统可能会增加页面文件的大小。
 
 <a href="" id="-kernelobjects-maximumcommitcondition"></a>**\\KernelObjects \\ MaximumCommitCondition**  
-当操作系统的提交费用接近 *最大 commit 限制*时，将设置此事件。 换句话说，内存使用量非常高，物理内存或页面文件中的可用空间非常小，操作系统无法增加其分页文件的大小。  (系统管理员始终可以增加页面文件的大小或数量，而无需重新启动计算机（如果存在足够的存储资源）。 ) 
+当操作系统的提交费用接近 *最大 commit 限制* 时，将设置此事件。 换句话说，内存使用量非常高，物理内存或页面文件中的可用空间非常小，操作系统无法增加其分页文件的大小。  (系统管理员始终可以增加页面文件的大小或数量，而无需重新启动计算机（如果存在足够的存储资源）。 ) 
 
 其中每个事件都是通知事件。 只要触发条件保持为 true，它们就会保持设置。
 

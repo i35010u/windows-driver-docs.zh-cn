@@ -1,15 +1,14 @@
 ---
 title: 基于优先级的流控制 (PFC)
 description: 基于优先级的流控制 (PFC)
-ms.assetid: 9DD8A66F-273F-4E5A-99EF-33C2EDF3240C
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 247af69aa834da65e41f92382016382176f9dd5c
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 425b7f614b7723c65c7cfba2f70c029e3f27db79
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89215202"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838557"
 ---
 # <a name="priority-based-flow-control-pfc"></a>基于优先级的流控制 (PFC)
 
@@ -28,7 +27,7 @@ PFC 使用802.3 暂停帧，并将其扩展到以下 PFC 字段：
 
 当接收方发送含 PFC 数据的802.3 暂停帧时，开关会阻止将具有指定优先级别的帧传输到连接到接收器的端口。 当计时器值过期时，开关会恢复端口上已暂停帧的传输。
 
-通过 [**ndis \_ QoS \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_qos_parameters) 结构指定 Ndis 服务质量 (QoS) 参数。 **PfcEnable**成员包含一个位图，其中每个位指定是否对 802.1 p 优先级启用 PFC。
+通过 [**ndis \_ QoS \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_qos_parameters) 结构指定 Ndis 服务质量 (QoS) 参数。 **PfcEnable** 成员包含一个位图，其中每个位指定是否对 802.1 p 优先级启用 PFC。
 
 有关优先级别的详细信息，请参阅 [IEEE 802.1 p Priority 级别](ieee-802-1p-priority-levels.md)。
 

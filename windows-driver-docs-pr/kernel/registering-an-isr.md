@@ -1,7 +1,6 @@
 ---
 title: 注册 ISR
 description: 注册 ISR
-ms.assetid: 903e5664-2193-4456-b133-bb979d700bdf
 keywords:
 - 中断服务例程 WDK 内核，注册 Isr
 - 中断对象 WDK 内核，注册 Isr
@@ -9,19 +8,19 @@ keywords:
 - 注册 Isr WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c0e0b6525ce5c80f4976de0d8612c94d76b9c578
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 2c2887466bcd437c22c66e42389e22c4203b18bd
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89185495"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837989"
 ---
 # <a name="registering-an-isr"></a>注册 ISR
 
 
 驱动程序使用 [**IoConnectInterruptEx**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioconnectinterruptex) 例程为中断注册 ISR。 **IoConnectInterruptEx** 是 Windows Vista 和更高版本操作系统的一部分。 **IoConnectInterruptEx** 采用 *单个 parameter 参数，该参数是* 一个指向 [**IO \_ CONNECT \_ 中断 \_ 参数**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_connect_interrupt_parameters) 结构的指针。 对于 Windows Server 2003、Windows XP 和 Windows 2000，驱动程序可以使用 Windows 驱动程序工具包 (WDK) 中包含的 Iointex 库。
 
-在 Windows Vista 和更高版本中， **IoConnectInterruptEx** 提供了几种不同的方法来注册 ISR。 为*Parameters*版本指定的值 - &gt; **Version**将确定方法，如下所示：
+在 Windows Vista 和更高版本中， **IoConnectInterruptEx** 提供了几种不同的方法来注册 ISR。 为 *Parameters* 版本指定的值 - &gt; **Version** 将确定方法，如下所示：
 
 -   使用 " \_ 基于连接线路" \_ 为设备的所有基于线路的中断注册 [*InterruptService*](/windows-hardware/drivers/ddi/wdm/nc-wdm-kservice_routine) 例程。  (设备最多只能有一个基于行的中断。 ) 系统会自动检测分配给设备的任何基于行的中断。 有关详细信息，请参阅 [使用 \_ 基于连接线路 \_ 的 IoConnectInterruptEx 版本](using-the-connect-line-based-version-of-ioconnectinterruptex.md)。
 

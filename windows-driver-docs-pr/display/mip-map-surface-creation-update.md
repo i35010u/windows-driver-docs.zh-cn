@@ -1,18 +1,17 @@
 ---
 title: MIP 贴图图面创建更新
 description: MIP 贴图图面创建更新
-ms.assetid: a89a11ed-d450-43bb-b0cd-75132d19dbc3
 keywords:
 - MIP 地图面 WDK Direct3D
 - D3DRENDERSTATE_MIPMAPLODBIAS
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bcae41b80786426b9aa19df651b98ac7556e11e8
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: a673a5754ed5b10830ea43a6c76d4fbe23f03fd3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89066493"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838073"
 ---
 # <a name="mip-map-surface-creation-update"></a>MIP 贴图图面创建更新
 
@@ -36,7 +35,7 @@ MIP map LOD 偏量是一个浮点值，它用于更改) 偏差 (的详细级别�
 
 每个单位偏差 (+/-1.0) 只偏移一个 MIP map 级别的选定内容。 负偏差会导致使用较大的 MIP 地图级别，导致图像更清晰但图像更清晰。 正偏差导致使用较小的 MIP 贴图级别，从而导致 blurrier 图像。 应用负偏差还会导致引用较小的纹理数据量，这可以提高某些系统的性能。
 
-**注意**   DirectX 9.0 和更高版本的应用程序可使用 \_ D3DSAMPLERSTATETYPE 枚举中的 D3DSAMP MIPMAPLODBIAS 值控制 mipmap 的详细信息偏移级别。 运行时将用户模式采样器状态映射 (D3DSAMP \_ *Xxx*) 为内核模式 D3DTSS \_ *Xxx*值，以便驱动程序无需处理用户模式采样器状态。 驱动程序仍应处理 D3DTSS \_ MIPMAPLODBIAS 值。 有关 D3DSAMPLERSTATETYPE 的详细信息，请参阅最新的 DirectX SDK 文档。
+**注意**   DirectX 9.0 和更高版本的应用程序可使用 \_ D3DSAMPLERSTATETYPE 枚举中的 D3DSAMP MIPMAPLODBIAS 值控制 mipmap 的详细信息偏移级别。 运行时将用户模式采样器状态映射 (D3DSAMP \_ *Xxx*) 为内核模式 D3DTSS \_ *Xxx* 值，以便驱动程序无需处理用户模式采样器状态。 驱动程序仍应处理 D3DTSS \_ MIPMAPLODBIAS 值。 有关 D3DSAMPLERSTATETYPE 的详细信息，请参阅最新的 DirectX SDK 文档。
 
  
 

@@ -1,7 +1,6 @@
 ---
 title: KSCATEGORY_PREFERRED_WAVEIN_DEVICE
 description: KSCATEGORY_PREFERRED_WAVEIN_DEVICE
-ms.assetid: d5f20f18-396a-4cb7-b653-038310ce8e42
 keywords:
 - KSCATEGORY_PREFERRED_WAVEIN_DEVICE 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 0548d15d92aaf67f25463799a5324ab68b90c9c6
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 11f5c613dab173588367d4fadb3010c8600110ec
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89095677"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838465"
 ---
 # <a name="kscategory_preferred_wavein_device"></a>KSCATEGORY_PREFERRED_WAVEIN_DEVICE
 

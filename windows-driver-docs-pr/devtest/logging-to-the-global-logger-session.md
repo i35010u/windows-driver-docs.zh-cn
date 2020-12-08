@@ -1,7 +1,6 @@
 ---
 title: 记录到全局记录器会话
 description: 记录到全局记录器会话
-ms.assetid: 48dfe101-b083-4d70-b85f-2e115f7e1dfa
 keywords:
 - 在启动 WDK 期间进行跟踪，全局记录器跟踪会话
 - 启动时间跟踪 WDK，全局记录器跟踪会话
@@ -10,12 +9,12 @@ keywords:
 - 在启动过程中记录 WDK 跟踪
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: da2f3085b4b5b09219387cdd10196cf71a5f8282
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 160f75a67d69fffb8902dc8aa278de6afb8fa4a2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89384045"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838347"
 ---
 # <a name="logging-to-the-global-logger-session"></a>记录到全局记录器会话
 

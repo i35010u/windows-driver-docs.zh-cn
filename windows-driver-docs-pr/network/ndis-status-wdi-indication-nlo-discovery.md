@@ -1,17 +1,16 @@
 ---
 title: NDIS_STATUS_WDI_INDICATION_NLO_DISCOVERY
 description: 微型端口驱动程序使用 NDIS_STATUS_WDI_INDICATION_NLO_DISCOVERY 指示网络列表卸载 (NLO) 发现。
-ms.assetid: 1a789bd8-8601-45f3-a9bf-5220c20379cb
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 NDIS_STATUS_WDI_INDICATION_NLO_DISCOVERY 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: fa77a642999477080b5b4f917def9bb18f31f870
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: b8e82e8413b73d4972b22345477575396210610b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89209705"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837135"
 ---
 # <a name="ndis_status_wdi_indication_nlo_discovery"></a>NDIS \_ 状态 \_ WDI \_ 指示 \_ NLO \_ 发现
 
@@ -65,7 +64,7 @@ ms.locfileid: "89209705"
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
-<td><p>Windows Server 2016</p></td>
+<td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
 <td><p>标头</p></td>

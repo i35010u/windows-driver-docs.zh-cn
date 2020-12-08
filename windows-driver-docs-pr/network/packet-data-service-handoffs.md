@@ -1,15 +1,14 @@
 ---
 title: 数据包数据服务移交
 description: 数据包数据服务移交
-ms.assetid: 33cb68ac-42db-4bb0-8855-a8575e6e6331
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: edb17f582cec67f387dcd203186d98e2bc3ce664
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 189f181742258db2a56b9b4b316552cf5ac548be
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89207845"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96836731"
 ---
 # <a name="packet-data-service-handoffs"></a>数据包数据服务移交
 

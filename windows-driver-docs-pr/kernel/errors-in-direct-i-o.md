@@ -1,7 +1,6 @@
 ---
 title: 直接 I/O 出错
 description: 直接 I/O 出错
-ms.assetid: 9efc2875-3402-4e2e-871b-3cc1d8f45360
 keywords:
 - 可靠性 WDK 内核，直接 i/o
 - 直接 i/o WDK 内核
@@ -9,12 +8,12 @@ keywords:
 - 长度为零的缓冲区 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c50047bbfa2a9e3965963d1f430d7166f690cc5a
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 301f08481dc3c7c4ffd51bb5d23b523b4954d473
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89192699"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838775"
 ---
 # <a name="errors-in-direct-io"></a>直接 I/O 出错
 
@@ -22,9 +21,9 @@ ms.locfileid: "89192699"
 
 
 
-最常见的直接 i/o 问题是无法正确处理长度为零的缓冲区。 因为 i/o 管理器不会为长度为零的传输创建 MDLs，所以，长度为零的缓冲区将导致**Irp- &gt; MdlAddress**中出现**NULL**值。
+最常见的直接 i/o 问题是无法正确处理长度为零的缓冲区。 因为 i/o 管理器不会为长度为零的传输创建 MDLs，所以，长度为零的缓冲区将导致 **Irp- &gt; MdlAddress** 中出现 **NULL** 值。
 
-若要映射地址空间，驱动程序应使用[**MmGetSystemAddressForMdlSafe**](./mm-bad-pointer.md)，如果映射失败，则它将返回 null，因为如果驱动程序传递**NULL** **MdlAddress**，则会返回**null** 。 在尝试使用返回的地址之前，驱动程序应始终检查 **NULL 返回值** 。
+若要映射地址空间，驱动程序应使用 [**MmGetSystemAddressForMdlSafe**](./mm-bad-pointer.md)，如果映射失败，则它将返回 null，因为如果驱动程序传递 **NULL** **MdlAddress**，则会返回 **null** 。 在尝试使用返回的地址之前，驱动程序应始终检查 **NULL 返回值** 。
 
 直接 i/o 涉及将用户的地址空间双倍映射到系统地址缓冲区，以便两个不同的虚拟地址具有相同的物理地址。 双重映射具有以下后果，这可能会导致驱动程序出现问题：
 
@@ -56,7 +55,7 @@ ms.locfileid: "89192699"
 
     相反，如果不存在 **NULL 值** ，则对 **RtlInitUnicodeString** 的调用可能会超出缓冲区的范围，并且可能会导致 bug 检查（如果它在系统映射之外）。
 
-如果驱动程序创建并映射其自己的 MDL，应确保它仅使用已探测的方法访问 MDL。 也就是说，当驱动程序调用 [**MmProbeAndLockPages**](/windows-hardware/drivers/ddi/wdm/nf-wdm-mmprobeandlockpages)时，它将指定访问方法 (**IoReadAccess**、 **IoWriteAccess**或 **IoModifyAccess**) 。 如果驱动程序指定了 **IoReadAccess**，则它不能再尝试写入 [**MmGetSystemAddressForMdl**](/windows-hardware/drivers/ddi/wdm/nf-wdm-mmgetsystemaddressformdl) 或 [**MmGetSystemAddressForMdlSafe**](./mm-bad-pointer.md)提供的系统缓冲区。
+如果驱动程序创建并映射其自己的 MDL，应确保它仅使用已探测的方法访问 MDL。 也就是说，当驱动程序调用 [**MmProbeAndLockPages**](/windows-hardware/drivers/ddi/wdm/nf-wdm-mmprobeandlockpages)时，它将指定访问方法 (**IoReadAccess**、 **IoWriteAccess** 或 **IoModifyAccess**) 。 如果驱动程序指定了 **IoReadAccess**，则它不能再尝试写入 [**MmGetSystemAddressForMdl**](/windows-hardware/drivers/ddi/wdm/nf-wdm-mmgetsystemaddressformdl) 或 [**MmGetSystemAddressForMdlSafe**](./mm-bad-pointer.md)提供的系统缓冲区。
 
  
 

@@ -1,7 +1,6 @@
 ---
 title: 设置 IEEE 1394 设备的常时等量传输
 description: 设置 IEEE 1394 设备的常时等量传输
-ms.assetid: 5161da54-0f20-496c-bf64-dc756b987de2
 keywords:
 - 同步 i/o WDK IEEE 1394 总线，设置
 - 总线周期 WDK IEEE 1394 总线
@@ -12,12 +11,12 @@ keywords:
 - 分配带宽
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c76351f24651f2c35e806526b939bb92606d1ea1
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 0aa1972297d606ca5e6ef191992e8aa910d94afa
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89383011"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838613"
 ---
 # <a name="setting-up-isochronous-transfer-for-ieee-1394-devices"></a>设置 IEEE 1394 设备的常时等量传输
 
@@ -30,7 +29,7 @@ IEEE 1394 总线可支持多种不同的速度，受硬件允许的限制。 即
 
 ### <a name="step-2-allocate-bandwidth"></a><a href="" id="step-2---allocate-bandwidth-"></a>步骤 2. 分配带宽。
 
-在进行任何同步数据传输之前，驱动程序必须在总线上保留带宽。 总线会跟踪分配的带宽量，直到它达到固定量 (根据 IEEEE 1394-1995 规范，可以发送的最大带宽为一个 *总线周期*80%，即125毫微秒) ;这样，在释放一些当前分配的带宽之前，不允许任何其他设备获取带宽。 驱动程序将 [**请求 \_ ISOCH \_ 分配 \_ 带宽**](https://msdn.microsoft.com/library/windows/hardware/ff537647) 请求到总线驱动程序以保留带宽。
+在进行任何同步数据传输之前，驱动程序必须在总线上保留带宽。 总线会跟踪分配的带宽量，直到它达到固定量 (根据 IEEEE 1394-1995 规范，可以发送的最大带宽为一个 *总线周期* 80%，即125毫微秒) ;这样，在释放一些当前分配的带宽之前，不允许任何其他设备获取带宽。 驱动程序将 [**请求 \_ ISOCH \_ 分配 \_ 带宽**](https://msdn.microsoft.com/library/windows/hardware/ff537647) 请求到总线驱动程序以保留带宽。
 
 如果请求成功，则总线驱动程序将返回一个带宽句柄。 驱动程序在以后对总线驱动程序的带宽相关请求中使用此句柄。 例如，驱动程序可以使用句柄上的 [**REQUEST \_ ISOCH \_ SET \_ 信道 \_ 带宽**](https://msdn.microsoft.com/library/windows/hardware/ff537658) 来调整分配的带宽量。 当驱动程序已使用分配的带宽完成时，它必须使用 [**请求 \_ ISOCH 的 \_ 可用 \_ 带宽**](https://msdn.microsoft.com/library/windows/hardware/ff537652) 来释放带宽，以便总线上的其他设备可以使用它。
 

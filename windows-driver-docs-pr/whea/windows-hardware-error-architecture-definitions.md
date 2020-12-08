@@ -1,7 +1,6 @@
 ---
 title: Windows 硬件错误体系结构定义
 description: Windows 硬件错误体系结构定义
-ms.assetid: 4de5ead1-aa17-4c14-9afc-bc0d9689a13e
 keywords:
 - Windows 硬件错误体系结构 WDK，术语
 - WHEA WDK，术语
@@ -9,12 +8,12 @@ keywords:
 - 错误 WDK WHEA，术语
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f28191f677a1a494199a8557423c939f320d2311
-ms.sourcegitcommit: 9e5ade5d1a311383016385ae3bc3f0a22da1dfc5
+ms.openlocfilehash: 4f453a98890c98b6335e062c1b3a0fe9430bb2bd
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95518424"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838699"
 ---
 # <a name="windows-hardware-error-architecture-definitions"></a>Windows 硬件错误体系结构定义
 
@@ -36,7 +35,7 @@ ms.locfileid: "95518424"
 <a href="" id="event-log--el-"></a>事件日志 (EL)   
 跟踪系统组件上发生的事件的 Windows 操作系统组件。 WHEA 使用系统事件日志来记录硬件错误事件。
 
-<a href="" id="event-tracing-for-windows--etw-"></a>Windows (ETW 事件跟踪)   
+<a href="" id="event-tracing-for-windows--etw-"></a>Windows 事件跟踪 (ETW)  
 ETW 使软件开发人员能够启动和停止事件跟踪会话，检测应用程序以提供跟踪事件，并使用跟踪事件。 WHEA 使用 ETW 通知订户有关硬件错误事件，并在系统事件日志中记录硬件错误事件。
 
 <a href="" id="extensible-firmware-interface--efi-"></a>可扩展固件接口 (EFI)  

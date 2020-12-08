@@ -1,17 +1,16 @@
 ---
 title: NDIS_STATUS_PACKET_FILTER
 description: NDIS_STATUS_PACKET_FILTER 状态指示对过量驱动程序的数据包筛选器更改。
-ms.assetid: 7633772a-cd3d-4030-b97a-9d503341fdeb
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 NDIS_STATUS_PACKET_FILTER 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 020e557f738efc23490258479d09baf61023e8f5
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 7165b85b54e45f5829806206dafaf11a0cb100d8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89214688"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837182"
 ---
 # <a name="ndis_status_packet_filter"></a>NDIS \_ 状态 \_ 数据包 \_ 筛选器
 
@@ -25,9 +24,9 @@ NDIS \_ 状态 \_ 数据包 \_ 筛选器状态指示对过量驱动程序的数�
 
 NDIS 筛选器驱动程序还可以生成 NDIS \_ 状态 \_ 数据包 \_ 筛选器状态指示。
 
-NDIS 在[**NDIS \_ 状态 \_ 指示**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_status_indication)结构的**StatusBuffer**成员中提供筛选器类型标志的按位 "或"。 有关筛选器类型标志的列表，请参阅 [OID \_ GEN \_ 当前 \_ 数据包 \_ 筛选器](./oid-gen-current-packet-filter.md) oid。 有关数据包筛选器的其他信息，请参阅 [OID \_ GEN \_ 支持的 \_ 数据包 \_ 筛选器](./oid-gen-supported-packet-filters.md)。
+NDIS 在 [**NDIS \_ 状态 \_ 指示**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_status_indication)结构的 **StatusBuffer** 成员中提供筛选器类型标志的按位 "或"。 有关筛选器类型标志的列表，请参阅 [OID \_ GEN \_ 当前 \_ 数据包 \_ 筛选器](./oid-gen-current-packet-filter.md) oid。 有关数据包筛选器的其他信息，请参阅 [OID \_ GEN \_ 支持的 \_ 数据包 \_ 筛选器](./oid-gen-supported-packet-filters.md)。
 
-[**NDIS \_ 状态 \_ 指示**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_status_indication)结构的**StatusBufferSize**成员设置为 sizeof (ULONG) 。
+[**NDIS \_ 状态 \_ 指示**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_status_indication)结构的 **StatusBufferSize** 成员设置为 sizeof (ULONG) 。
 
 <a name="requirements"></a>要求
 ------------
@@ -49,7 +48,7 @@ NDIS 在[**NDIS \_ 状态 \_ 指示**](/windows-hardware/drivers/ddi/ndis/ns-ndi
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**NDIS \_ 状态 \_ 指示**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_status_indication)

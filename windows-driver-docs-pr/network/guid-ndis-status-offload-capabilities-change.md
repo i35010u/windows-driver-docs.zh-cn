@@ -1,17 +1,16 @@
 ---
 title: GUID_NDIS_STATUS_OFFLOAD_CAPABILITIES_CHANGE
 description: 本主题描述了 NDIS WMI 接口的 GUID_NDIS_STATUS_OFFLOAD_CAPABILITIES_CHANGE GUID。
-ms.assetid: f1daadff-a564-4308-82cd-525a1dae866a
 keywords:
 - GUID_NDIS_STATUS_OFFLOAD_CAPABILITIES_CHANGE，WDK GUID_NDIS_STATUS_OFFLOAD_CAPABILITIES_CHANGE 网络驱动程序
 ms.date: 11/22/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0742ab6def51a8065a4f69c88feb4906908598c3
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 3ee5f1833288f542fe87eae3ad120679e19044d8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89218099"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96836793"
 ---
 # <a name="guid_ndis_status_offload_capabilities_change"></a>GUID_NDIS_STATUS_OFFLOAD_CAPABILITIES_CHANGE
 

@@ -1,7 +1,6 @@
 ---
 title: 'SpDuplex 规则 (storport) '
 description: 此规则验证此小型端口是否处于全双工模式。 根据 StorPort 微型端口型号构建的任何驱动程序都必须处于全双工模式。 仅应在将现有 SCSI 驱动程序移植到 StorPort 时使用半双工。
-ms.assetid: 07B331B4-F0D6-48C4-BEEC-166D43F60E41
 ms.date: 05/21/2018
 keywords:
 - 'SpDuplex 规则 (storport) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 9b50dfd2622a0da1205063c95ff1bd0d2987321d
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 5c21f9d8f00628d62584f2903191d8113012f7d0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107060"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838139"
 ---
 # <a name="spduplex-rule-storport"></a>SpDuplex 规则 (storport) 
 
 
-此规则验证此小型端口**是否处于全双工模式。** 根据 StorPort 微型端口型号构建的任何驱动程序都必须处于**全双工模式。** 仅应在将现有 SCSI 驱动程序移植到 StorPort 时使用**半双工**。
+此规则验证此小型端口 **是否处于全双工模式。** 根据 StorPort 微型端口型号构建的任何驱动程序都必须处于 **全双工模式。** 仅应在将现有 SCSI 驱动程序移植到 StorPort 时使用 **半双工**。
 
 **驱动程序模型： Storport**
 

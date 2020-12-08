@@ -1,15 +1,14 @@
 ---
 title: WDI 和 WLAN 选择性挂起功能
 description: 本部分介绍如何为 WDI 驱动程序启用 USB 选择性挂起支持
-ms.assetid: 4FCF726B-4CCF-4F0F-9088-2EABA0DA7D3C
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6e3c70b0dbd3b9d95148ec8cc8603b1dd0fb6894
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: ed5e9adde93ef351d467234f569db82d1db9ed99
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89209617"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837895"
 ---
 # <a name="wdi-and-wlan-selective-suspend-capability"></a>WDI 和 WLAN 选择性挂起功能
 

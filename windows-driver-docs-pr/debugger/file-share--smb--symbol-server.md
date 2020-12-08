@@ -1,15 +1,14 @@
 ---
 title: 文件共享 (SMB) 符号服务器
 description: 运行 SMB 符号服务器只是创建文件共享并向用户授予对该文件共享的访问权限。
-ms.assetid: C5CF9665-9289-48EB-AA12-8881F812488A
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2df08a39bc66f7d5ede833b1a911204b992b9a2e
-ms.sourcegitcommit: f610410e1500f0b0a4ca008b52679688ab51033d
+ms.openlocfilehash: 1de5ed493436d356971564e1ee0253e3cecf6050
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/15/2020
-ms.locfileid: "88253079"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838203"
 ---
 # <a name="file-share-smb-symbol-server"></a>文件共享 (SMB) 符号服务器
 
@@ -19,7 +18,7 @@ ms.locfileid: "88253079"
 ## <a name="span-idcreating_a_smb_file_share_symbol_store_spanspan-idcreating_a_smb_file_share_symbol_store_spanspan-idcreating_a_smb_file_share_symbol_store_spancreating-a-smb-file-share-symbol-store"></a><span id="Creating_a_SMB_File_Share_Symbol_Store_"></span><span id="creating_a_smb_file_share_symbol_store_"></span><span id="CREATING_A_SMB_FILE_SHARE_SYMBOL_STORE_"></span>创建 SMB 文件共享符号存储区
 
 
-使用 Windows 资源管理器或 "计算机管理" 来创建文件共享并分配安全性。 这些步骤假设符号位于 *D： \\ SymStore \\ 符号*中。 使用 Windows 资源管理器完成以下步骤：
+使用 Windows 资源管理器或 "计算机管理" 来创建文件共享并分配安全性。 这些步骤假设符号位于 *D： \\ SymStore \\ 符号* 中。 使用 Windows 资源管理器完成以下步骤：
 
 1. 打开 **Windows 资源管理器**。
 

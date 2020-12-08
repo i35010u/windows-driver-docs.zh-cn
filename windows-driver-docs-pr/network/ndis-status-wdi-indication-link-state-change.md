@@ -1,17 +1,16 @@
 ---
 title: NDIS_STATUS_WDI_INDICATION_LINK_STATE_CHANGE
 description: 微型端口驱动程序使用 NDIS_STATUS_WDI_INDICATION_LINK_STATE_CHANGE 指示以下任何情况
-ms.assetid: 5a8fbe41-d063-4d34-beb8-92ceeb1d97a2
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 NDIS_STATUS_WDI_INDICATION_LINK_STATE_CHANGE 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 79a857901fccb5c879e8efec23806c19e04dd8b2
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 9e2476d8801a0f80cf0422ca1949887210f62aed
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89207435"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837127"
 ---
 # <a name="ndis_status_wdi_indication_link_state_change"></a>NDIS \_ 状态 \_ WDI \_ 指示 \_ 链接 \_ 状态 \_ 更改
 
@@ -55,7 +54,7 @@ ms.locfileid: "89207435"
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
-<td><p>Windows Server 2016</p></td>
+<td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
 <td><p>标头</p></td>

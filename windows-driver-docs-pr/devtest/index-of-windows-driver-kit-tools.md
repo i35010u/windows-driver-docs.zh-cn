@@ -1,7 +1,6 @@
 ---
 title: Windows 驱动程序工具包工具的索引
 description: Windows 驱动程序工具包工具的索引
-ms.assetid: 26db88c4-8fb8-4308-ab8a-1a1eef5e19d8
 keywords:
 - 禁用程序工具
 - DbgCon 工具
@@ -20,12 +19,12 @@ keywords:
 - GUIDGen.exe WDK
 ms.date: 05/09/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 87e19d4512bee1ed4cf8bedd7d489c2ca3972294
-ms.sourcegitcommit: 878a1cb0149dc18ccbd31774e12bad76084dfa24
+ms.openlocfilehash: 9679de6f3b21a5ac2906565d27a86ba0011438fd
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94937801"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838349"
 ---
 # <a name="index-of-windows-driver-kit-tools"></a>Windows 驱动程序工具包工具的索引
 
@@ -145,7 +144,7 @@ ms.locfileid: "94937801"
 |WSDDebug_client 和 WSDDebug_host</br>**WDK 工具：** 是的|**调试客户端：**</br>% WindowsSdkDir% \bin\x64\WSDDebug_client.exe</br>% WindowsSdkDir% \bin\x86\WSDDebug_client.exe</br>**调试主机：**</br>% WindowsSdkDir% \bin\x64\WSDDebug_host.exe</br>
 % WindowsSdkDir% \bin\x86\WSDDebug_host.exe|这些工具是可以用来对设备或应用程序进行故障排除的软设备和客户端。</br>Windows SDK：</br>["在设备上 Web 服务"](/windows/win32/wsdapi/wsd-portal) 部分|
 
-### <a name="supported-platforms"></a>受支持的平台
+### <a name="supported-platforms"></a>支持的平台
 
 你可以在 Windows 7 和更高版本上运行 Windows 10 WDK，并使用它来开发这些操作系统的驱动程序：
 

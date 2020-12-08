@@ -1,7 +1,6 @@
 ---
 title: 存储筛选器驱动程序的 I/O 请求支持
 description: 存储筛选器驱动程序的 I/O 请求支持
-ms.assetid: 2899bf91-584f-47fe-9d5c-3feb07b8707e
 keywords:
 - 存储筛选器驱动程序 WDK，i/o 请求支持
 - 筛选器驱动程序 WDK 存储、i/o 请求支持
@@ -9,12 +8,12 @@ keywords:
 - Irp WDK 存储
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 382eb174948f42cd204c9c2f655f4ba5efa7ac60
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: c46f690a360ddea1720f6ac4670c909f1f5714dc
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89188789"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838545"
 ---
 # <a name="storage-filter-drivers-support-of-io-requests"></a>存储筛选器驱动程序的 I/O 请求支持
 

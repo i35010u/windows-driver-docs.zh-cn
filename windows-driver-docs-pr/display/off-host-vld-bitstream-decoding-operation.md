@@ -1,7 +1,6 @@
 ---
 title: 主机外 VLD 位流解码操作
 description: 主机外 VLD 位流解码操作
-ms.assetid: fd339d5f-2d63-4b2f-a5dc-7ab7a6799a6d
 keywords:
 - 脱离主机 VLD 位流处理 WDK DirectX VA
 - 位流 VLD 处理 WDK DirectX VA
@@ -16,12 +15,12 @@ keywords:
 - 解码视频 WDK DirectX VA，脱离主机 VLD 位流处理
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e314a2c921741c2084f341530205fdf38597b3ff
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: ec3b7109c61fa6971473c53bdae1a0846672441f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89063840"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838071"
 ---
 # <a name="off-host-vld-bitstream-decoding-operation"></a>主机外 VLD 位流解码操作
 
@@ -39,7 +38,7 @@ ms.locfileid: "89063840"
 <thead>
 <tr class="header">
 <th align="left">缓冲区类型</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>

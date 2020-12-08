@@ -1,9 +1,8 @@
 ---
 title: so（设置内核调试选项）
-description: 因此，命令设置或显示内核调试选项。
-ms.assetid: b40260c7-6e60-4198-988f-bcafecb165bc
+description: So 命令设置或显示内核调试选项。
 keywords:
-- 因此 （集内核调试选项） Windows 调试
+- 因此 (设置) Windows 调试的内核调试选项
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,35 +11,35 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 331c83819a53e818e1dfb962224b3e6583025d05
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 973e931954b6bce0709df6a8fd2667263b6bdb51
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63368109"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838355"
 ---
 # <a name="so-set-kernel-debugging-options"></a>so（设置内核调试选项）
 
 
-**因此**命令设置或显示内核调试选项。
+**So** 命令设置或显示内核调试选项。
 
 ```dbgcmd
 so [Options] 
 ```
 
-## <a name="span-idddkcmdsetkerneldebuggingoptionsdbgspanspan-idddkcmdsetkerneldebuggingoptionsdbgspanparameters"></a><span id="ddk_cmd_set_kernel_debugging_options_dbg"></span><span id="DDK_CMD_SET_KERNEL_DEBUGGING_OPTIONS_DBG"></span>参数
+## <a name="span-idddk_cmd_set_kernel_debugging_options_dbgspanspan-idddk_cmd_set_kernel_debugging_options_dbgspanparameters"></a><span id="ddk_cmd_set_kernel_debugging_options_dbg"></span><span id="DDK_CMD_SET_KERNEL_DEBUGGING_OPTIONS_DBG"></span>参数
 
 
-<span id="_______Options______"></span><span id="_______options______"></span><span id="_______OPTIONS______"></span> *选项*   
-一个或多个以下选项：
+<span id="_______Options______"></span><span id="_______options______"></span><span id="_______OPTIONS______"></span>*选项*   
+以下一个或多个选项：
 
 <span id="NOEXTWARNING"></span><span id="noextwarning"></span>**NOEXTWARNING**  
-调试器找不到扩展插件命令时不发出警告。
+如果调试器找不到扩展命令，则不会发出警告。
 
 <span id="NOVERSIONCHECK"></span><span id="noversioncheck"></span>**NOVERSIONCHECK**  
-不会检查调试器扩展 Dll 的版本。
+不检查调试器扩展 Dll 的版本。
 
-如果省略*选项*，将显示当前选项。
+如果省略 *选项*，则显示当前选项。
 
 ### <a name="span-idenvironmentspanspan-idenvironmentspanspan-idenvironmentspanenvironment"></a><span id="Environment"></span><span id="environment"></span><span id="ENVIRONMENT"></span>环境
 
@@ -51,12 +50,12 @@ so [Options]
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>模式</strong></p></td>
-<td align="left"><p>内核模式下</p></td>
+<td align="left"><p><strong>交货</strong></p></td>
+<td align="left"><p>仅限内核模式</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>目标</strong></p></td>
-<td align="left"><p>实时、 崩溃转储</p></td>
+<td align="left"><p>实时，故障转储</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>平台</strong></p></td>
@@ -70,7 +69,7 @@ so [Options]
 <a name="remarks"></a>备注
 -------
 
-您还可以设置调试选项使用的内核\_NT\_调试\_选项[环境变量](kernel-mode-environment-variables.md)。
+你还可以使用 \_ NT \_ 调试 \_ 选项 [环境变量](kernel-mode-environment-variables.md)来设置内核调试选项。
 
  
 

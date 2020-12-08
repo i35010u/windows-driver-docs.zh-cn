@@ -1,18 +1,17 @@
 ---
 title: 即插即用简介
 description: 即插即用简介
-ms.assetid: 2ad9663b-ea47-4f7a-a382-53de3719214b
 keywords:
 - PnP WDK 内核，关于即插即用
 - 即插即用 WDK 内核，关于即插即用
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 438037e237ec276ac999c1512b32b1082746e549
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: b9c5caebcc2db7f79d13e47add407806093d24ef
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89192683"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96836921"
 ---
 # <a name="introduction-to-plug-and-play"></a>即插即用简介
 

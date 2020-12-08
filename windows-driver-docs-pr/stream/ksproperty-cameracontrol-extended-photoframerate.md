@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ CAMERACONTROL \_ 扩展 \_ PHOTOFRAMERATE
 description: 当照相机的照片模式为序列模式时，此属性将获取捕获帧速率。
-ms.assetid: F1269FED-EFB3-4F21-B0EC-F88949D6EEBC
 keywords:
 - KSPROPERTY_CAMERACONTROL_EXTENDED_PHOTOFRAMERATE 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 09/11/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 05c78eeec5135b412777af5901f1be81600f0a1d
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: d6e67631605816d44cb212024889c22237b6211d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103760"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837863"
 ---
 # <a name="ksproperty_cameracontrol_extended_photoframerate"></a>KSPROPERTY \_ CAMERACONTROL \_ 扩展 \_ PHOTOFRAMERATE
 
@@ -55,15 +54,15 @@ ms.locfileid: "90103760"
 </tbody>
 </table>
 
-属性值 (操作数据) 包含 [**KSCAMERA \_ EXTENDEDPROP \_ 标头**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header) 结构和 [**KSCAMERA \_ EXTENDEDPROP \_ 值**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_value) 结构。 以帧/秒为单位的帧速率作为 **KSCAMERA \_ EXTENDEDPROP \_ 值**中的值返回。
+属性值 (操作数据) 包含 [**KSCAMERA \_ EXTENDEDPROP \_ 标头**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header) 结构和 [**KSCAMERA \_ EXTENDEDPROP \_ 值**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_value) 结构。 以帧/秒为单位的帧速率作为 **KSCAMERA \_ EXTENDEDPROP \_ 值** 中的值返回。
 
-此属性的[**KSCAMERA \_ EXTENDEDPROP \_ 标头**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)的**flags**成员中未设置任何标志。
+此属性的 [**KSCAMERA \_ EXTENDEDPROP \_ 标头**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)的 **flags** 成员中未设置任何标志。
 
-总的属性数据大小为 **sizeof** (KSCAMERA \_ EXTENDEDPROP \_ 标头) + **sizeof** (KSCAMERA \_ EXTENDEDPROP \_ VALUE) 。 [**KSCAMERA \_ EXTENDEDPROP \_ 标头**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)的**Size**成员设置为此总属性数据大小。
+总的属性数据大小为 **sizeof** (KSCAMERA \_ EXTENDEDPROP \_ 标头) + **sizeof** (KSCAMERA \_ EXTENDEDPROP \_ VALUE) 。 [**KSCAMERA \_ EXTENDEDPROP \_ 标头**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)的 **Size** 成员设置为此总属性数据大小。
 
 此属性控件是同步的，不可取消。
 
-## <a name="remarks"></a>注解
+## <a name="remarks"></a>备注
 
 当响应 KSPROPERTY \_ 类型 \_ GET 请求时，驱动程序会将 [**KSCAMERA \_ EXTENDEDPROP \_ 标头**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header) 的成员设置为以下项。
 
@@ -75,7 +74,7 @@ ms.locfileid: "90103760"
 <thead>
 <tr class="header">
 <th>成员</th>
-<th>Value</th>
+<th>“值”</th>
 </tr>
 </thead>
 <tbody>
@@ -108,7 +107,7 @@ ms.locfileid: "90103760"
 </tbody>
 </table>
 
-帧速率值是在[**KSCAMERA \_ EXTENDEDPROP \_ 值**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_value)的**比值**成员中设置的。 **Largeint.highpart** 包含帧速率和比率的分子 **。 LowPart** 包含帧速率的分母。
+帧速率值是在 [**KSCAMERA \_ EXTENDEDPROP \_ 值**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_value)的 **比值** 成员中设置的。 **Largeint.highpart** 包含帧速率和比率的分子 **。 LowPart** 包含帧速率的分母。
 
 ## <a name="requirements"></a>要求
 
@@ -129,6 +128,6 @@ ms.locfileid: "90103760"
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [**KSCAMERA \_ EXTENDEDPROP \_ 标头**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)

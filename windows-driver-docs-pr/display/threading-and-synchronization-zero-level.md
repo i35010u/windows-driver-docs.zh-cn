@@ -1,32 +1,31 @@
 ---
 title: 线程和同步零级别
 description: 线程和同步零级别
-ms.assetid: 2baf91e8-fafb-40e2-a24c-cbf04fe45274
 keywords:
 - 线程 WDK 显示，零级
 - 同步 WDK 显示，零级
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ffcca147478dcfe696bab934eb3f5f15e72fb132
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: f9ce5bcbfc40656d89551ddc716bef31d2195880
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89063752"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837296"
 ---
 # <a name="threading-and-synchronization-zero-level"></a>线程和同步零级别
 
 
 Windows 显示驱动程序模型 (WDDM) 允许以可重入方式进行以下对显示微型端口驱动程序的调用。 也就是说，多个线程可以通过调用以下函数同时进入驱动程序：
 
-**注意**   尽管两个或多个线程可以同时在驱动程序中运行，但不能有两个线程属于单个进程。
+**注意**   尽管两个或多个线程可以同时在驱动程序中运行，但不能有两个线程属于单个进程。
 
  
 
 -   [*DxgkDdiCloseAllocation*](/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_closeallocation)
 
 -   [*DxgkDdiCollectDbgInfo*](/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_collectdbginfo) 
-    **请注意**，  [*DxgkDdiCollectDbgInfo*](/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_collectdbginfo)应收集各种故障的调试信息，并且可随时调用，在高 IRQL (上， *DxgkDdiCollectDbgInfo*运行时的 irql 通常不确定) 。 在任何情况下， *DxgkDdiCollectDbgInfo* 必须验证所需的调试信息的可用性和正确的同步。 但是，如果[**DXGKARG \_ COLLECTDBGINFO**](/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgkarg_collectdbginfo)结构的*pCollectDbgInfo*参数设置**Reason**为 "[检测到视频 \_ TDR \_ 超时 \_ ](../debugger/bug-check-code-reference2.md) " 或[检测到视频 \_ 引擎 \_ 超时 \_ ](../debugger/bug-check-code-reference2.md)，则驱动程序必须确保*DxgkDdiCollectDbgInfo*可分页，以 IRQL =**被动 \_ 级别**运行，并支持同步零级别。 *DxgkDdiCollectDbgInfo*
+    **请注意**，[*DxgkDdiCollectDbgInfo*](/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_collectdbginfo)应收集各种故障的调试信息，并且可随时调用，在高 IRQL (上， *DxgkDdiCollectDbgInfo* 运行时的 irql 通常不确定) 。   在任何情况下， *DxgkDdiCollectDbgInfo* 必须验证所需的调试信息的可用性和正确的同步。 但是，如果 [**DXGKARG \_ COLLECTDBGINFO**](/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgkarg_collectdbginfo)结构的 *pCollectDbgInfo* 参数设置 **Reason** 为 "[检测到视频 \_ TDR \_ 超时 \_](../debugger/bug-check-code-reference2.md) " 或 [检测到视频 \_ 引擎 \_ 超时 \_](../debugger/bug-check-code-reference2.md)，则驱动程序必须确保 *DxgkDdiCollectDbgInfo* 可分页，以 IRQL =**被动 \_ 级别** 运行，并支持同步零级别。 *DxgkDdiCollectDbgInfo*
 
      
 

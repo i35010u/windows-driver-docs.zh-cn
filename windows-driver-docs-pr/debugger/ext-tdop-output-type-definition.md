@@ -1,7 +1,6 @@
 ---
 title: EXT \_ TDOP \_ 输出 \_ 类型 \_ 定义
 description: '\_DEBUG 请求的 ext TDOP \_ 输出 \_ 类型 \_ 定义子操作 \_ \_ Ext \_ 类型化 \_ \_ 的数据 ANSI 请求操作将为指定的类型化数据打印类型的定义。'
-ms.assetid: 88e97066-f471-4e6c-9b9b-369f31da5bde
 keywords:
 - EXT_TDOP_OUTPUT_TYPE_DEFINITION Windows 调试
 topic_type:
@@ -12,19 +11,19 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 44e7340fd1af809fd8f3e665d0919eabbae80a93
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: f61277a05b90a24d739c65853e6cb2699767f9a2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89217380"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837821"
 ---
 # <a name="ext_tdop_output_type_definition"></a>EXT \_ TDOP \_ 输出 \_ 类型 \_ 定义
 
 
-\_DEBUG 请求的 ext TDOP \_ 输出 \_ 类型 \_ 定义子操作[** \_ \_ ext \_ 类型化的 \_ 数据 \_ ANSI**](debug-request-ext-typed-data-ansi.md)[**请求**](request.md)操作将为指定的类型化数据打印类型的定义。
+\_DEBUG 请求的 ext TDOP \_ 输出 \_ 类型 \_ 定义子操作 [**\_ \_ ext \_ 类型化的 \_ 数据 \_ ANSI**](debug-request-ext-typed-data-ansi.md)[**请求**](request.md)操作将为指定的类型化数据打印类型的定义。
 
-**参数**
+**Parameters**
 
 <span id="Operation"></span><span id="operation"></span><span id="OPERATION"></span>**运作**  
 设置为 EXT \_ TDOP \_ \_ \_ 此子操作的输出类型定义。

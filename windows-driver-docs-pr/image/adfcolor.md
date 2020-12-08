@@ -1,9 +1,8 @@
 ---
 title: ADFColor 元素
-description: 所需的 ADFColor 元素包含处理自动文档送纸器 (ADF) 的前端或后端支持的功能的颜色的列表。
-ms.assetid: b336c72e-9095-456e-8cb4-4018e72e29fa
+description: 必需的 ADFColor 元素包含自动文档送纸器 (ADF) 支持的颜色处理功能的列表。
 keywords:
-- ADFColor 元素成像设备
+- ADFColor 元素图像设备
 topic_type:
 - apiref
 api_name:
@@ -12,19 +11,19 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c583d30d4b3a84d2afeea16676dd26e32073da8a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a60cc89e72c140bb9c80d802c3af5ad0b2d7b8c2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63367089"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837767"
 ---
 # <a name="adfcolor-element"></a>ADFColor 元素
 
 
-所需**ADFColor**元素包含处理自动文档送纸器 (ADF) 的前端或后端支持的功能的颜色的列表。
+必需的 **ADFColor** 元素包含自动文档送纸器 (ADF) 支持的颜色处理功能的列表。
 
-<a name="usage"></a>用法
+<a name="usage"></a>使用情况
 -----
 
 ```xml
@@ -82,11 +81,11 @@ ms.locfileid: "63367089"
 <a name="remarks"></a>备注
 -------
 
-**ADFColor**元素包含确定色处理和获取扫描程序的 ADF 支持的类型所需的信息。 如果父元素是[ **ADFFront**](adffront.md)，指定的颜色信息适用于 ADF 的正面; 否则，为父元素[ **ADFBack**](adfback.md)和颜色信息适用于 ADF 的后端。
+**ADFColor** 元素包含确定扫描仪 ADF 支持的颜色处理和购置类型所需的信息。 如果父元素为 [**ADFFront**](adffront.md)，则指定的颜色信息适用于 ADF 的正面;否则，父元素为 [**ADFBack**](adfback.md) ，颜色信息适用于 ADF 的背面。
 
-描述每个像素所需的信息的量取决于特定于[ **ColorEntry** ](colorentry.md)关键字。 黑色和白色映像需要仅有一位每像素 (bpp)，而灰度和彩色图像需要更多的信息。 通过颜色空间并扫描设备的技术功能确定确切的信息量。
+描述每个像素所需的信息量取决于特定的 [**ColorEntry**](colorentry.md) 关键字。 黑白图像需要每个像素 (bpp) ，而灰度和彩色图像需要更多的信息。 确切的信息量由扫描设备的颜色空间和技术功能决定。
 
-返回的扫描数据的另一个重要方面是测光获得的数据的解释。 需要为黑白色，其中 0 表示黑色和白色表示按 1 扫描设备返回的所有图像数据都。
+返回的扫描数据的另一个重要方面是获取的数据的 photometric 解释。 扫描设备返回的所有图像数据都需要在白色显示黑色，其中黑色表示为0，白色表示为1。
 
 ## <a name="see-also"></a>请参阅
 

@@ -1,17 +1,16 @@
 ---
 title: 强制系统崩溃
 description: 强制系统崩溃
-ms.assetid: db93b032-2ca7-4197-87dd-4ae77c328f60
 keywords:
 - 系统崩溃，概述
 ms.date: 06/08/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 5a63ef02ee3d6b372b6d79cc3f6e7c1aa7aca652
-ms.sourcegitcommit: a5d81c0d675a093228ae3acab759985198908d9b
+ms.openlocfilehash: db10d3159322c8e6a675dc5ca6ac809c81b95540
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91932663"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838181"
 ---
 # <a name="forcing-a-system-crash"></a>强制系统崩溃
 
@@ -35,4 +34,4 @@ ms.locfileid: "91932663"
 
 [通过键盘强制系统崩溃](forcing-a-system-crash-from-the-keyboard.md)
 
-[使用 "电源" 按钮强制系统崩溃](forcing-a-system-crash-with-the-power-button.md)
+[使用电源按钮强制系统崩溃](forcing-a-system-crash-with-the-power-button.md)

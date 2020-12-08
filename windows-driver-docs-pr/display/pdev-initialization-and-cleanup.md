@@ -1,7 +1,6 @@
 ---
 title: PDEV 初始化和清理
 description: PDEV 初始化和清理
-ms.assetid: 26651869-861a-4be8-bc6c-df3704ca714e
 keywords:
 - 绘制 WDK GDI，初始化，PDEV 初始化
 - 初始化图形驱动程序 WDK Windows 2000 显示，PDEV
@@ -12,12 +11,12 @@ keywords:
 - 绘制 WDK GDI，PDEV 清理
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 411539b4ab39e68724653074a0cc54eb8918c6bb
-ms.sourcegitcommit: abe7fe9f3fbee8d12641433eeab623a4148ffed3
+ms.openlocfilehash: bfd9de5cb9fc229c27d675e37e434fcd5981c5f2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92185158"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838069"
 ---
 # <a name="pdev-initialization-and-cleanup"></a>PDEV 初始化和清理
 
@@ -31,9 +30,9 @@ ms.locfileid: "92185158"
 
 - **曲面**：每个 PDEV 都需要一个独特的图面。 例如，如果打印机驱动程序同时处理两个打印作业，每个打印作业都需要不同的页面格式，如横向和纵向格式，则每个打印作业都需要不同的 PDEV。 同样，显示驱动程序可以在同一显示器上支持两个桌面，每个桌面需要不同的 PDEV 和表面。 对于每个所需的图面，都有一个对 [**DrvEnablePDEV**](/windows/win32/api/winddi/nf-winddi-drvenablepdev) 函数的调用，可以为该表面创建不同的 PDEV。
 
-为响应对 *DrvEnablePDEV*的调用，驱动程序会通过几个结构将有关硬件设备功能的信息返回到 GDI。
+为响应对 *DrvEnablePDEV* 的调用，驱动程序会通过几个结构将有关硬件设备功能的信息返回到 GDI。
 
-在 GDI 调用*DrvEnablePDEV*之前， [**GDIINFO**](/windows/win32/api/winddi/ns-winddi-gdiinfo)结构为零填充。 驱动程序会在 GDIINFO 中填入以下信息，以将以下信息传达给 GDI：
+在 GDI 调用 *DrvEnablePDEV* 之前， [**GDIINFO**](/windows/win32/api/winddi/ns-winddi-gdiinfo)结构为零填充。 驱动程序会在 GDIINFO 中填入以下信息，以将以下信息传达给 GDI：
 
 - 驱动程序版本号
 - 基本设备技术 (光栅与矢量
@@ -51,7 +50,7 @@ ms.locfileid: "92185158"
 
 对于支持设备的内核驱动程序，GDI 将 [**DrvEnablePDEV**](/windows/win32/api/winddi/nf-winddi-drvenablepdev) 为 *hDriver*。 对于打印机驱动程序， *hDriver* 提供了打印机的句柄，并用于对后台处理程序的调用（如 **EngWritePrinter**）。
 
-当 GDI 调用 *DrvEnablePDEV*时，驱动程序必须分配支持创建的 PDEV 所需的内存，即使调用 *DrvEnablePDEV* 来为不同模式创建其他 PDEV 结构。  (驱动程序可以有多个活动的 PDEVs，但一次只能启用一个。 ) 不过，在 GDI 调用 [**DrvEnableSurface**](/windows/win32/api/winddi/nf-winddi-drvenablesurface)之前不支持实际的表面。
+当 GDI 调用 *DrvEnablePDEV* 时，驱动程序必须分配支持创建的 PDEV 所需的内存，即使调用 *DrvEnablePDEV* 来为不同模式创建其他 PDEV 结构。  (驱动程序可以有多个活动的 PDEVs，但一次只能启用一个。 ) 不过，在 GDI 调用 [**DrvEnableSurface**](/windows/win32/api/winddi/nf-winddi-drvenablesurface)之前不支持实际的表面。
 
 如果设备图面需要分配位图，则不需要进行分配，除非在 [**DrvEnableSurface**](/windows/win32/api/winddi/nf-winddi-drvenablesurface) 函数) 中通常 (启用了该图面。 尽管应用程序通常会在实际写入设备之前请求设备信息，但等待分配大位图可以节省宝贵的资源并提高系统初始化期间的驱动程序性能。
 

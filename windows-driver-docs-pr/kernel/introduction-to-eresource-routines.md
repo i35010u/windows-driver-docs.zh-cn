@@ -1,7 +1,6 @@
 ---
 title: ERESOURCE 例程简介
 description: ERESOURCE 例程简介
-ms.assetid: 5c7759db-aeb5-47f3-8adc-ddedb74b5cb4
 keywords:
 - ERESOURCE 结构
 - 专用等待进程 WDK 内核
@@ -11,12 +10,12 @@ keywords:
 - 等待进程 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bbcc530648c108d4353be53e08b94076272c255f
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: e838b5b6daf2c5d3c5a572419af166f5f54f1cad
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89188867"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837237"
 ---
 # <a name="introduction-to-eresource-routines"></a>ERESOURCE 例程简介
 
@@ -34,7 +33,7 @@ ms.locfileid: "89188867"
 
 -   只有一个线程可以专门获取 ERESOURCE。 仅当没有线程获取共享的线程时，才能独占获取 ERESOURCE。
 
-当前无法获取 ERESOURCE 的线程可以选择置于等待状态，直到可以获取 ERESOURCE。 系统维护两个等待 ERESOURCE 的线程列表：一个 *独占等待进程* 列表和一个 *共享等待进程*列表。
+当前无法获取 ERESOURCE 的线程可以选择置于等待状态，直到可以获取 ERESOURCE。 系统维护两个等待 ERESOURCE 的线程列表：一个 *独占等待进程* 列表和一个 *共享等待进程* 列表。
 
 专用或共享同步的典型用途是实现读/写锁定。 读/写锁允许多个线程执行读取操作，但是一次只能写入一个线程。 这可以直接在获取 ERESOURCE 时实现。
 
@@ -50,7 +49,7 @@ ms.locfileid: "89188867"
 
 -   使用 [**ExReleaseResourceLite**](/windows-hardware/drivers/ddi/wdm/nf-wdm-exreleaseresourcelite)发布获取的资源。
 
-[**ExAcquireResourceSharedLite**](/previous-versions/ff544363(v=vs.85))和[**ExAcquireResourceExclusiveLite**](/previous-versions/ff544351(v=vs.85))的*Wait*参数确定当前线程是否等待获取 ERESOURCE。 如果指定的值为 **false** ，并且无法获取 ERESOURCE，则例程将返回 **false**。 如果指定的值为 **TRUE**，则当前线程将放在 ERESOURCE 的相应等待列表中。
+[**ExAcquireResourceSharedLite**](/previous-versions/ff544363(v=vs.85))和 [**ExAcquireResourceExclusiveLite**](/previous-versions/ff544351(v=vs.85))的 *Wait* 参数确定当前线程是否等待获取 ERESOURCE。 如果指定的值为 **false** ，并且无法获取 ERESOURCE，则例程将返回 **false**。 如果指定的值为 **TRUE**，则当前线程将放在 ERESOURCE 的相应等待列表中。
 
 ### <a name="examining-the-state-of-an-eresource-structure"></a>检查 ERESOURCE 结构的状态
 

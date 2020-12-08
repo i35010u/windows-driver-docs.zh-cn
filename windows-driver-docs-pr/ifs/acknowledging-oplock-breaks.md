@@ -1,15 +1,14 @@
 ---
 title: 确认 Oplock 突破
 description: 确认 Oplock 突破
-ms.assetid: ea5bcd1e-d22c-4f80-89e4-1a61e43959dd
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5cff1fab5120a890bb468e3d7832e47faee30b8a
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 3efb2b18856c9c0018ad893910eb21a5744e0114
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91732751"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838475"
 ---
 # <a name="acknowledging-oplock-breaks"></a>确认 Oplock 突破
 
@@ -30,7 +29,7 @@ Oplock 的所有者可以返回不同类型的确认。 与 [grant 请求](grant
 
     -   对于批处理或筛选器 oplock，此 FSCTL 指示 oplock 所有者要关闭被授权者的流句柄。 操作被阻止，正在等待 oplock 中断的确认，继续等待，直到 oplock 所有者的句柄结束。
 -   FSCTL \_ 请求 \_ OPLOCK
-    -   通过 \_ \_ \_ \_ 在传递为 DeviceIoControl 的 lpInBuffer 参数的请求 oplock 输入缓冲区结构的**Flags**成员中指定请求 OPLOCK 输入标志确认 \_ \_ \_ ，此 FSCTL 用于确认 Windows 7 oplock 的中断。 *lpInBuffer* [DeviceIoControl](/windows/win32/api/ioapiset/nf-ioapiset-deviceiocontrol) 仅当在 \_ \_ \_ \_ \_ **Flags** \_ \_ \_ 作为[DeviceIoControl](/windows/win32/api/ioapiset/nf-ioapiset-deviceiocontrol)的*lpOutBuffer*参数传递的请求 oplock 输出缓冲区结构的 Flags 成员中设置请求 oplock 输出标志确认必需标志时，才需要确认。 同样， [**FltFsControlFile**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltfscontrolfile) 和 [**ZwFsControlFile**](/previous-versions/ff566462(v=vs.85)) 可用于从内核模式确认 Windows 7 oplock。 有关详细信息，请参阅 [**FSCTL \_ 请求 \_ OPLOCK**](./fsctl-request-oplock.md)。
+    -   通过 \_ \_ \_ \_ 在传递为 DeviceIoControl 的 lpInBuffer 参数的请求 oplock 输入缓冲区结构的 **Flags** 成员中指定请求 OPLOCK 输入标志确认 \_ \_ \_ ，此 FSCTL 用于确认 Windows 7 oplock 的中断。 *lpInBuffer* [DeviceIoControl](/windows/win32/api/ioapiset/nf-ioapiset-deviceiocontrol) 仅当在 \_ \_ \_ \_ \_ **Flags** \_ \_ \_ 作为 [DeviceIoControl](/windows/win32/api/ioapiset/nf-ioapiset-deviceiocontrol)的 *lpOutBuffer* 参数传递的请求 oplock 输出缓冲区结构的 Flags 成员中设置请求 oplock 输出标志确认必需标志时，才需要确认。 同样， [**FltFsControlFile**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltfscontrolfile) 和 [**ZwFsControlFile**](/previous-versions/ff566462(v=vs.85)) 可用于从内核模式确认 Windows 7 oplock。 有关详细信息，请参阅 [**FSCTL \_ 请求 \_ OPLOCK**](./fsctl-request-oplock.md)。
 
 相关的 FSCTL 代码是 FSCTL \_ OPLOCK \_ 中断 \_ 通知。 如果调用方想要在给定流上的 oplock 中断完成时收到通知，则使用此代码。 此调用可能会阻止。 当 FSCTL \_ OPLOCK \_ 中断 \_ 通知调用返回状态成功时 \_ ，这表示以下内容之一：
 

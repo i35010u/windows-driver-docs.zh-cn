@@ -1,17 +1,16 @@
 ---
 title: 为旧文件系统驱动程序创建 INF 文件
 description: 如何创建旧式文件系统驱动程序的 INF 文件
-ms.assetid: 1e8d0e59-eabd-4bdb-9675-e693a0b364ca
 keywords:
 - INF 文件系统，创建
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4a216c2c1c199ea0bb649eb253252c8954396e03
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 24239fe2c5672f8adf2d36e6822fe1b126233c54
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91734535"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837281"
 ---
 # <a name="creating-an-inf-file-for-a-legacy-file-system-filter-driver"></a>为旧文件系统筛选器驱动程序创建 INF 文件
 
@@ -92,12 +91,12 @@ CatalogFile =
 <thead>
 <tr class="header">
 <th align="left">条目</th>
-<th align="left">值</th>
+<th align="left">“值”</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>信号</strong></p></td>
+<td align="left"><p><strong>Signature</strong></p></td>
 <td align="left"><p>"$WINDOWS NT $"</p></td>
 </tr>
 <tr class="even">
@@ -165,11 +164,11 @@ myLegacyFilter.sys = 1
 
 在 [**DefaultInstall**](../install/inf-defaultinstall-section.md) 节中， [**CopyFiles**](../install/inf-copyfiles-directive.md) 指令将文件系统筛选器驱动程序的驱动程序文件和用户应用程序文件复制到 [**DestinationDirs**](../install/inf-destinationdirs-section.md) 节中指定的目标。
 
-**注意**   [**CopyFiles**](../install/inf-copyfiles-directive.md)指令不应引用目录文件或 INF 文件本身;Setupapi.log 会自动复制这些文件。
+**注意** [**CopyFiles**](../install/inf-copyfiles-directive.md) 指令不应引用目录文件或 INF 文件本身;Setupapi.log 会自动复制这些文件。
 
  
 
-你可以创建一个 INF 文件，用于在多个版本的 Windows 操作系统上安装驱动程序。 通过为每个操作系统版本创建附加的 [**DefaultInstall**](../install/inf-defaultinstall-section.md)、 [**DefaultInstall**](../install/inf-defaultinstall-services-section.md)、 **DefaultUninstall**和 **DefaultUninstall** 节来创建这种类型的 INF 文件。 每节都标记有一个 *修饰* (例如，ntx86、. ntia64 或 nt) ，用于指定应用的操作系统版本。 有关创建此类 INF 文件的详细信息，请参阅 [为多个平台和操作系统创建 INF 文件](../install/creating-inf-files-for-multiple-platforms-and-operating-systems.md)。
+你可以创建一个 INF 文件，用于在多个版本的 Windows 操作系统上安装驱动程序。 通过为每个操作系统版本创建附加的 [**DefaultInstall**](../install/inf-defaultinstall-section.md)、 [**DefaultInstall**](../install/inf-defaultinstall-services-section.md)、 **DefaultUninstall** 和 **DefaultUninstall** 节来创建这种类型的 INF 文件。 每节都标记有一个 *修饰* (例如，ntx86、. ntia64 或 nt) ，用于指定应用的操作系统版本。 有关创建此类 INF 文件的详细信息，请参阅 [为多个平台和操作系统创建 INF 文件](../install/creating-inf-files-for-multiple-platforms-and-operating-systems.md)。
 
 在下面的代码示例中， [**CopyFiles**](../install/inf-copyfiles-directive.md) 指令复制 INF 文件的 MyLegacyFilter 和 MyLegacyFilter 部分中列出的文件。
 
@@ -181,7 +180,7 @@ CopyFiles = MyLegacyFilter.DriverFiles, MyLegacyFilter.UserFiles
 
 ### <a name="span-iddefaultinstallservices_section__required_spanspan-iddefaultinstallservices_section__required_spanspan-iddefaultinstallservices_section__required_spandefaultinstallservices-section-required"></a><span id="DefaultInstall.Services_Section__required_"></span><span id="defaultinstall.services_section__required_"></span><span id="DEFAULTINSTALL.SERVICES_SECTION__REQUIRED_"></span>DefaultInstall 节 (必需) 
 
-[**DefaultInstall**](../install/inf-defaultinstall-services-section.md)部分包含的[**AddService**](../install/inf-addservice-directive.md)指令控制如何以及何时加载特定驱动程序的服务。
+[**DefaultInstall**](../install/inf-defaultinstall-services-section.md)部分包含的 [**AddService**](../install/inf-addservice-directive.md)指令控制如何以及何时加载特定驱动程序的服务。
 
 在下面的代码示例中， [**AddService**](../install/inf-addservice-directive.md) 指令将 MyLegacyFilter 服务添加到操作系统。 % MyLegacyFilterServiceName% 令牌包含在 INF 文件的 [**字符串**](../install/inf-strings-section.md) 部分中定义的服务名称字符串。 MyLegacyFilter 是示例驱动程序的 **ServiceInstall** 节的名称。
 
@@ -192,7 +191,7 @@ AddService = %MyLegacyFilterServiceName%,,MyLegacyFilter.Service
 
 ### <a name="span-idddk_serviceinstall_section_ifspanspan-idddk_serviceinstall_section_ifspanserviceinstall-section-required"></a><span id="ddk_serviceinstall_section_if"></span><span id="DDK_SERVICEINSTALL_SECTION_IF"></span>ServiceInstall 节 (必需的) 
 
-**ServiceInstall**节将子项或值名称添加到注册表中，并设置值。 **ServiceInstall**部分的名称必须出现在[**DefaultInstall**](../install/inf-defaultinstall-services-section.md)部分的[**AddService**](../install/inf-addservice-directive.md)指令中。
+**ServiceInstall** 节将子项或值名称添加到注册表中，并设置值。 **ServiceInstall** 部分的名称必须出现在 [**DefaultInstall**](../install/inf-defaultinstall-services-section.md)部分的 [**AddService**](../install/inf-addservice-directive.md)指令中。
 
 下面的代码示例演示了 MyLegacyFilter 示例驱动程序的 **ServiceInstall** 部分。
 
@@ -208,13 +207,13 @@ LoadOrderGroup = "FSFilter Activity Monitor"
 AddReg         = MyLegacyFilter.AddRegistry
 ```
 
-**DisplayName**项指定服务的名称。 在前面的示例中，服务名称字符串由% MyLegacyFilterServiceName% 令牌指定，该令牌在 INF 文件的 [**字符串**](../install/inf-strings-section.md) 部分中定义。
+**DisplayName** 项指定服务的名称。 在前面的示例中，服务名称字符串由% MyLegacyFilterServiceName% 令牌指定，该令牌在 INF 文件的 [**字符串**](../install/inf-strings-section.md) 部分中定义。
 
-**Description**条目指定描述服务的字符串。 在前面的示例中，此字符串由% MyLegacyFilterServiceDesc% 令牌指定，该令牌在 INF 文件的 [**字符串**](../install/inf-strings-section.md) 部分中定义。
+**Description** 条目指定描述服务的字符串。 在前面的示例中，此字符串由% MyLegacyFilterServiceDesc% 令牌指定，该令牌在 INF 文件的 [**字符串**](../install/inf-strings-section.md) 部分中定义。
 
-**ServiceBinary**项指定服务的可执行文件的路径。 在前面的示例中，值12是指驱动程序目录 (% windir% \\ system32 \\ 驱动程序) 。
+**ServiceBinary** 项指定服务的可执行文件的路径。 在前面的示例中，值12是指驱动程序目录 (% windir% \\ system32 \\ 驱动程序) 。
 
-**ServiceType**条目指定服务的类型。 下表列出了 **ServiceType** 的可能值及其相应的服务类型。
+**ServiceType** 条目指定服务的类型。 下表列出了 **ServiceType** 的可能值及其相应的服务类型。
 
 <table>
 <colgroup>
@@ -223,8 +222,8 @@ AddReg         = MyLegacyFilter.AddRegistry
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">值</th>
-<th align="left">说明</th>
+<th align="left">“值”</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -251,7 +250,7 @@ AddReg         = MyLegacyFilter.AddRegistry
 
 **ServiceType** \_ \_ \_ 对于文件系统筛选器驱动程序，ServiceType 条目应始终设置为 "服务文件系统驱动程序"。
 
-**StartType**项指定启动服务的时间。 下表列出了 **StartType** 的可能值及其相应的启动类型。
+**StartType** 项指定启动服务的时间。 下表列出了 **StartType** 的可能值及其相应的启动类型。
 
 <table>
 <colgroup>
@@ -260,8 +259,8 @@ AddReg         = MyLegacyFilter.AddRegistry
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">值</th>
-<th align="left">说明</th>
+<th align="left">“值”</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -296,7 +295,7 @@ AddReg         = MyLegacyFilter.AddRegistry
 
 有关 **StartType** 和 **LoadOrderGroup** 条目如何确定何时加载驱动程序的信息，请参阅 [确定何时加载驱动程序的内容](what-determines-when-a-driver-is-loaded.md)。
 
-**ErrorControl**项指定在系统启动过程中服务无法启动时要执行的操作。 下表列出了 **ErrorControl** 的可能值及其相应的错误控制值。
+**ErrorControl** 项指定在系统启动过程中服务无法启动时要执行的操作。 下表列出了 **ErrorControl** 的可能值及其相应的错误控制值。
 
 <table>
 <colgroup>
@@ -305,7 +304,7 @@ AddReg         = MyLegacyFilter.AddRegistry
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">值</th>
+<th align="left">“值”</th>
 <th align="left">操作</th>
 </tr>
 </thead>
@@ -333,9 +332,9 @@ AddReg         = MyLegacyFilter.AddRegistry
 
 应将 **LoadOrderGroup** 项设置为适用于正在开发的文件系统筛选器驱动程序类型的加载顺序组。 若要选择加载顺序组，请参阅 [为文件系统筛选器驱动程序加载顺序组](load-order-groups-for-file-system-filter-drivers.md)。
 
-[**AddReg 指令**](../install/inf-addreg-directive.md)是指一个或多个 INF 写入器定义的**AddRegistry**部分，其中包含要存储在注册表中用于新安装的服务的任何信息。
+[**AddReg 指令**](../install/inf-addreg-directive.md)是指一个或多个 INF 写入器定义的 **AddRegistry** 部分，其中包含要存储在注册表中用于新安装的服务的任何信息。
 
-**注意**   如果在初始安装后 INF 文件还将用于升级驱动程序，则**AddRegistry**部分中包含的条目应指定 0X00000002 (FLG \_ ADDREG \_ NOCLOBBER) 标志。 如果指定此标志，则 \\ \\ 会在安装后续文件时保留 HKLM CurrentControlSet Services 中的注册表项。 例如：
+**注意**   如果在初始安装后 INF 文件还将用于升级驱动程序，则 **AddRegistry** 部分中包含的条目应指定 0X00000002 (FLG \_ ADDREG \_ NOCLOBBER) 标志。 如果指定此标志，则 \\ \\ 会在安装后续文件时保留 HKLM CurrentControlSet Services 中的注册表项。 例如：
 
  
 
@@ -346,7 +345,7 @@ HKR,Parameters,ExampleParameter,0x00010003,1
 
 ### <a name="span-iddefaultuninstall_section__optional_spanspan-iddefaultuninstall_section__optional_spanspan-iddefaultuninstall_section__optional_spandefaultuninstall-section-optional"></a><span id="DefaultUninstall_Section__optional_"></span><span id="defaultuninstall_section__optional_"></span><span id="DEFAULTUNINSTALL_SECTION__OPTIONAL_"></span>DefaultUninstall 节 (可选) 
 
-**DefaultUninstall**节是可选的，但如果你的驱动程序可以卸载，则建议使用。 它包含 [**DelFiles**](../install/inf-delfiles-directive.md) 和 [**DelReg**](../install/inf-delreg-directive.md) 指令以删除文件和注册表项。
+**DefaultUninstall** 节是可选的，但如果你的驱动程序可以卸载，则建议使用。 它包含 [**DelFiles**](../install/inf-delfiles-directive.md) 和 [**DelReg**](../install/inf-delreg-directive.md) 指令以删除文件和注册表项。
 
 在下面的代码示例中， [**DelFiles**](../install/inf-delfiles-directive.md) 指令会删除驱动程序的 INF 文件的 DriverFiles 和 MyLegacyFilter 部分中列出的文件：
 
@@ -356,11 +355,11 @@ DelFiles   = MyLegacyFilter.DriverFiles, MyLegacyFilter.UserFiles
 DelReg     = MyLegacyFilter.DelRegistry
 ```
 
-[**DelReg**](../install/inf-delreg-directive.md)指令是指一个或多个 INF 写入器定义的**DelRegistry**部分，其中包含要从注册表中删除的要卸载的服务的任何信息。
+[**DelReg**](../install/inf-delreg-directive.md)指令是指一个或多个 INF 写入器定义的 **DelRegistry** 部分，其中包含要从注册表中删除的要卸载的服务的任何信息。
 
 ### <a name="span-iddefaultuninstallservices_section__optional_spanspan-iddefaultuninstallservices_section__optional_spanspan-iddefaultuninstallservices_section__optional_spandefaultuninstallservices-section-optional"></a><span id="DefaultUninstall.Services_Section__optional_"></span><span id="defaultuninstall.services_section__optional_"></span><span id="DEFAULTUNINSTALL.SERVICES_SECTION__OPTIONAL_"></span>DefaultUninstall 节 (可选) 
 
-**DefaultUninstall**部分是可选的，但如果你的驱动程序可以卸载，则建议使用。 它包含用于删除文件系统筛选器驱动程序服务的 [**DelService**](../install/inf-delservice-directive.md) 指令。
+**DefaultUninstall** 部分是可选的，但如果你的驱动程序可以卸载，则建议使用。 它包含用于删除文件系统筛选器驱动程序服务的 [**DelService**](../install/inf-delservice-directive.md) 指令。
 
 在下面的代码示例中， [**DelService**](../install/inf-delservice-directive.md) 指令从操作系统中删除 MyLegacyFilter 服务。
 
@@ -369,7 +368,7 @@ DelReg     = MyLegacyFilter.DelRegistry
 DelService = MyLegacyFilter,0x200
 ```
 
-**注意**   [**DelService**](../install/inf-delservice-directive.md)指令应始终指定 0X200 (SPSVCINST \_ STOPSERVICE) 标志，以便在服务删除之前将其停止。
+**注意**  [**DelService**](../install/inf-delservice-directive.md) 指令应始终指定 0X200 (SPSVCINST \_ STOPSERVICE) 标志，以便在服务删除之前将其停止。
 
  
 
@@ -389,4 +388,4 @@ MyLegacyFilterDebugFlags  = "DebugFlags"
 Disk1                     = "MyLegacyFilter Source Media"
 ```
 
-可以通过创建其他特定于区域设置的字符串来创建单个国际 INF 文件[**。**](../install/inf-strings-section.md)INF 文件中的*LanguageID*部分。 有关国际 INF 文件的详细信息，请参阅 [创建国际 Inf 文件](../install/creating-international-inf-files.md)。
+可以通过创建其他特定于区域设置的字符串来创建单个国际 INF 文件 [**。**](../install/inf-strings-section.md)INF 文件中的 *LanguageID* 部分。 有关国际 INF 文件的详细信息，请参阅 [创建国际 Inf 文件](../install/creating-international-inf-files.md)。

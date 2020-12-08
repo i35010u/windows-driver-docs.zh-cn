@@ -1,15 +1,14 @@
 ---
 title: Storport 驱动程序的规则
 description: Storport 驱动程序的规则
-ms.assetid: C880A30B-8629-4648-B2E3-7AC8F1A9059D
 ms.date: 05/21/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 7099073ceb6b68c2ea94f41873b2047fe6490fe7
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: ea4849fe68d25522339e857baafd020b7cb83472
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89384853"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838321"
 ---
 # <a name="rules-for-storport-drivers"></a>Storport 驱动程序的规则
 
@@ -27,7 +26,7 @@ ms.locfileid: "89384853"
 <thead>
 <tr class="header">
 <th align="left">主题</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>

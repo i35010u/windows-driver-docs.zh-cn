@@ -1,7 +1,6 @@
 ---
 title: 在 UMDF 中取消 i/o 请求
 description: 在 UMDF 中取消 i/o 请求
-ms.assetid: 4f69903b-00ef-4b47-a564-aaa7d076481b
 keywords:
 - I/o 请求 WDK UMDF，取消
 - 请求处理 WDK UMDF，取消请求
@@ -11,12 +10,12 @@ keywords:
 - 请求处理 WDK UMDF，状态
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cfe83f9c50d68381a2fff3a2b9a2e34ce1fb08a1
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: c2505e81d02da9af123e2841cce375f7e3af1587
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89189927"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837057"
 ---
 # <a name="canceling-io-requests-in-umdf"></a>在 UMDF 中取消 i/o 请求
 
@@ -47,13 +46,13 @@ ms.locfileid: "89189927"
 
 如果驱动程序将拥有相对较长时间的请求，则应调用 **MarkCancelable** 。 例如，驱动程序可能需要等待设备响应，或者可能需要等待较低的驱动程序来完成收到单个请求时驱动程序创建的一组请求。
 
-如果驱动程序未调用**MarkCancelable**，或者如果驱动程序在调用**MarkCancelable**后调用[**IWDFIoRequest：： UnmarkCancelable**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest-unmarkcancelable) ，则驱动程序将无法识别取消，因此处理请求的方式通常为。
+如果驱动程序未调用 **MarkCancelable**，或者如果驱动程序在调用 **MarkCancelable** 后调用 [**IWDFIoRequest：： UnmarkCancelable**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest-unmarkcancelable) ，则驱动程序将无法识别取消，因此处理请求的方式通常为。
 
 ### <a name="calling-iscanceled"></a>调用 T.iscanceled
 
 如果驱动程序没有调用 **MarkCancelable** 来注册 **OnCancel** 回调函数，它可以调用 [**IWDFIoRequest2：： T.iscanceled**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest2-iscanceled) 来确定 i/o 管理器是否已尝试取消 i/o 请求。 如果 **t.iscanceled** 返回 **TRUE**，则驱动程序应取消请求。
 
-例如，当驱动程序的 i/o 目标完成了每个较小的请求时，如果驱动程序没有为收到的请求调用**MarkCancelable** ，则接收到多个较小的请求的驱动程序将会调用**t.iscanceled** 。
+例如，当驱动程序的 i/o 目标完成了每个较小的请求时，如果驱动程序没有为收到的请求调用 **MarkCancelable** ，则接收到多个较小的请求的驱动程序将会调用 **t.iscanceled** 。
 
 ### <a name="canceling-the-request"></a>正在取消请求
 
@@ -65,7 +64,7 @@ ms.locfileid: "89189927"
 
 -   调用 [**IWDFIoRequest：： CancelSentRequest**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest-cancelsentrequest) 可尝试取消驱动程序之前已提交到 i/o 目标的请求。
 
-如果驱动程序取消了驱动程序从框架收到的请求对象的 i/o 请求，则该驱动程序必须始终通过调用[**IWDFIoRequest：： complete**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest-complete)或[**IWDFIoRequest：： CompleteWithInformation**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest-completewithinformation)来完成该请求，并通过*CompletionStatus* \_ \_ WIN32 (错误操作的 CompletionStatus 参数 \_ \_ 中止) 。  (如果驱动程序调用 [**IWDFDevice：： CreateRequest**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdevice-createrequest) 来创建请求对象，则驱动程序将调用 [**IWDFObject：:D eletewdfobject**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfobject-deletewdfobject) ，而不是完成请求。 ) 
+如果驱动程序取消了驱动程序从框架收到的请求对象的 i/o 请求，则该驱动程序必须始终通过调用 [**IWDFIoRequest：： complete**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest-complete)或 [**IWDFIoRequest：： CompleteWithInformation**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest-completewithinformation)来完成该请求，并通过 *CompletionStatus* \_ \_ WIN32 (错误操作的 CompletionStatus 参数 \_ \_ 中止) 。  (如果驱动程序调用 [**IWDFDevice：： CreateRequest**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdevice-createrequest) 来创建请求对象，则驱动程序将调用 [**IWDFObject：:D eletewdfobject**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfobject-deletewdfobject) ，而不是完成请求。 ) 
 
  
 

@@ -1,30 +1,29 @@
 ---
 title: C28715
-description: 语义不同的整数类型之间的警告 C28715 强制转换。
-ms.assetid: 49e37718-9950-4f63-a554-f924ae8cf0a4
+description: 语义不同的整数类型之间的警告 C28715 转换。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 f1_keywords:
 - C28715
-ms.openlocfilehash: fb82a420c90e0788473346af266a19088adad86b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 41ed6a7d48d134b4ba6650397aa72ad209bcde20
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63345861"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837331"
 ---
 # <a name="c28715"></a>C28715
 
 
-警告 C28715:语义不同的整数类型之间强制转换
+警告 C28715：语义不同的整数类型之间的强制转换
 
-此警告指示一个布尔值转换为**NTSTATUS**。 这很可能产生意外结果。 例如，返回一个布尔值的函数的典型失败值 (**FALSE**) 是一种成功状态时作为测试**NTSTATUS**。
+此警告指示布尔值将转换为 **NTSTATUS**。 这可能会产生意外的结果。 例如，在测试为 **NTSTATUS** 时，返回布尔值的函数的典型失败值 (**FALSE**) 为成功状态。
 
-通常情况下，返回布尔值的函数将返回 1 (对于 **，则返回 TRUE**) 或 0 (对于**FALSE**)。 这两个值被视为由成功代码**NT\_成功**宏。 因此，将永远不会检测失败的情况。
+通常，返回布尔值的函数为 **TRUE**) 返回 1 (; 对于 **FALSE**) ，返回 0 (。 **NT \_ success** 宏会将这两个值视为成功代码。 因此，永远不会检测到故障情况。
 
 ### <a name="span-idexamplesspanspan-idexamplesspanexamples"></a><span id="examples"></span><span id="EXAMPLES"></span>示例
 
-PREfast 报告的警告的下面的示例。
+PREfast 报告以下示例的警告。
 
 ```
 extern BOOL SomeFunction(void);

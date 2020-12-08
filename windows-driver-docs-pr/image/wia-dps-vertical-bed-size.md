@@ -1,9 +1,8 @@
 ---
-title: WIA\_DPS\_VERTICAL\_BED\_SIZE
-description: WIA\_DPS\_垂直\_平台\_大小属性包含扫描仪的平板、 千分之几秒的英寸为单位中的物理垂直尺寸 (。 001)。 WIA 微型驱动程序创建并维护此属性。
-ms.assetid: c4e02364-4785-45f4-8e43-056582bb6d1a
+title: WIA \_ DPS \_ 垂直 \_ 床 \_ 大小
+description: "\"WIA \\_ DPS \\_ 垂直 \\_ 床 \\_ 大小\" 属性包含扫描仪的平板的物理垂直尺寸，以英寸 ( 001) 为单位。 WIA 微型驱动程序创建并维护此属性。"
 keywords:
-- WIA_DPS_VERTICAL_BED_SIZE 成像设备
+- WIA_DPS_VERTICAL_BED_SIZE 图像设备
 topic_type:
 - apiref
 api_name:
@@ -14,24 +13,24 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a45ce2b1579b12d42bc0ab6eae799bb8ba05dd0f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7a23677c214ed052307ffbdb576382834d0971f0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63366908"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837741"
 ---
-# <a name="wiadpsverticalbedsize"></a>WIA\_DPS\_VERTICAL\_BED\_SIZE
+# <a name="wia_dps_vertical_bed_size"></a>WIA \_ DPS \_ 垂直 \_ 床 \_ 大小
 
 
-WIA\_DPS\_垂直\_平台\_大小属性包含扫描仪的平板、 千分之几秒的英寸为单位中的物理垂直尺寸 (。 001)。 WIA 微型驱动程序创建并维护此属性。
+"WIA \_ DPS \_ 垂直 \_ 床 \_ 大小" 属性包含扫描仪的平板的物理垂直尺寸，以英寸 ( 001) 为单位。 WIA 微型驱动程序创建并维护此属性。
 
 ## <span id="ddk_wia_dps_vertical_bed_size_si"></span><span id="DDK_WIA_DPS_VERTICAL_BED_SIZE_SI"></span>
 
 
-属性类型：VT\_I4
+属性类型： VT \_ I4
 
-有效值：WIA\_PROP\_NONE
+有效值： WIA " \_ \_ 无"
 
 访问权限：只读
 
@@ -45,12 +44,12 @@ WIA\_DPS\_垂直\_平台\_大小属性包含扫描仪的平板、 千分之几�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Version</p></td>
-<td><p>从 Windows Vista 开始，WIA_DPS_VERTICAL_BED_SIZE 属性是仍然可用 WIA 驱动程序的根级别。 但此属性已替换为 WIA_IPS_MAX_VERTICAL_SIZE 属性，并应将其视为可选。</p></td>
+<td><p>版本</p></td>
+<td><p>从 Windows Vista 开始，WIA_DPS_VERTICAL_BED_SIZE 属性仍可用于 WIA 驱动程序的根级别。 但此属性已替换为 WIA_IPS_MAX_VERTICAL_SIZE 属性，你应将其视为可选。</p></td>
 </tr>
 <tr class="even">
-<td><p>Header</p></td>
-<td>Wiadef.h （包括 Wiadef.h）</td>
+<td><p>标头</p></td>
+<td>Wiadef (包含 Wiadef) </td>
 </tr>
 </tbody>
 </table>
@@ -58,9 +57,9 @@ WIA\_DPS\_垂直\_平台\_大小属性包含扫描仪的平板、 千分之几�
 ## <a name="see-also"></a>请参阅
 
 
-[**WIA\_DPS\_水平\_平台\_大小**](wia-dps-horizontal-bed-size.md)
+[**WIA \_ DPS \_ 横向 \_ 床 \_ 大小**](wia-dps-horizontal-bed-size.md)
 
-[**WIA\_IPS\_MAX\_VERTICAL\_SIZE**](wia-ips-max-vertical-size.md)
+[**WIA \_ IPS \_ 最大 \_ 垂直 \_ 大小**](wia-ips-max-vertical-size.md)
 
  
 

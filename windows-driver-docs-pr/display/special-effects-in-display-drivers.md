@@ -1,7 +1,6 @@
 ---
 title: 显示驱动程序中的特效
 description: 显示驱动程序中的特效
-ms.assetid: f44a89df-6412-442c-8491-3e2f2bbd826f
 keywords:
 - 显示驱动程序 WDK Windows 2000，特殊效果
 - 特殊效果 WDK Windows 2000 显示
@@ -16,12 +15,12 @@ keywords:
 - 动画 WDK Windows 2000 显示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5de4af446e55785b628e3a8b01ad49d0ee244f23
-ms.sourcegitcommit: a44ade167cdfb541cf1818e9f9e3726f23f90b66
+ms.openlocfilehash: fc5c1f2498ea874478387cd8a1308f89bce6d5f1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94361439"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837797"
 ---
 # <a name="special-effects-in-display-drivers"></a>显示驱动程序中的特效
 
@@ -45,7 +44,7 @@ Microsoft Windows 2000 (及更高版本) Shell 会广泛使用 alpha 混合来�
 
 在 alpha 混合与拉伸结合使用的情况下，WDK 中的测试会按以下方式评估显示器驱动程序的 *DrvAlphaBlend* 实现：
 
-1.  该测试将调用显示器驱动程序的 *DrvAlphaBlend* ，从而生成一个 alpha 混合矩形。
+1.  该测试将调用显示器驱动程序的 *DrvAlphaBlend*，从而生成一个 alpha 混合矩形。
 
 2.  测试将使用与对 *DrvAlphaBlend* 的调用中使用的相同源矩形生成目标矩形。
 

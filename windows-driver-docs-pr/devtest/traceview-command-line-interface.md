@@ -1,39 +1,38 @@
 ---
 title: TraceView 命令行接口
 description: TraceView 命令行接口
-ms.assetid: da38268f-ebdf-468c-95fe-500ba747047a
 keywords:
-- TraceView WDK，命令行接口
-- WDK TraceView 命令
+- TraceView WDK，命令行界面
+- 命令 WDK TraceView
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b2e74c971fc34d4d7da368ccf676d9d847b54c4a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: afce14e73b54db86409ef2b78522e693bda6f44d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63369618"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838103"
 ---
 # <a name="traceview-command-line-interface"></a>TraceView 命令行接口
 
 > [!IMPORTANT]
-> TraceView 的命令行接口不包含所有最新的独立工具中提供更新。 建议你使用[Tracelog](tracelog.md)， [Tracefmt](tracefmt.md)，并[Tracepdb](tracepdb.md)相反。
+> TraceView 的命令行界面未包含独立工具中提供的所有最新更新。 建议改用 [Tracelog](tracelog.md)、 [Tracefmt](tracefmt.md)和 [Tracepdb](tracepdb.md) 。
 
-TraceView 命令行界面，可控制从命令提示符窗口的 TraceView 功能。
+使用 TraceView 命令行界面，可以在命令提示符窗口中控制 TraceView 功能。
 
-命令行接口包含三个部分：
+命令行界面包含三个部分：
 
-<span id="TraceView_Control_Commands"></span><span id="traceview_control_commands"></span><span id="TRACEVIEW_CONTROL_COMMANDS"></span>[**TraceView 控制命令**](traceview-control-commands.md)  
-管理[跟踪控制器](trace-controller.md)TraceView 的功能。 它是类似于[Tracelog](tracelog.md)。
+<span id="TraceView_Control_Commands"></span><span id="traceview_control_commands"></span><span id="TRACEVIEW_CONTROL_COMMANDS"></span>[**TraceView 控件命令**](traceview-control-commands.md)  
+管理 TraceView 的 [跟踪控制器](trace-controller.md) 功能。 它类似于 [Tracelog](tracelog.md)。
 
-<span id="TraceView_-process"></span><span id="traceview_-process"></span><span id="TRACEVIEW_-PROCESS"></span>[**TraceView -process**](traceview--process.md)  
-管理[跟踪使用者](trace-consumer.md)TraceView 的功能。 它是类似于[Tracefmt](tracefmt.md)。
+<span id="TraceView_-process"></span><span id="traceview_-process"></span><span id="TRACEVIEW_-PROCESS"></span>[**TraceView-进程**](traceview--process.md)  
+管理 TraceView 的 [跟踪使用者](trace-consumer.md) 功能。 它类似于 [Tracefmt](tracefmt.md)。
 
-<span id="TraceView_-parsepdb"></span><span id="traceview_-parsepdb"></span><span id="TRACEVIEW_-PARSEPDB"></span>[**TraceView -parsepdb**](traceview--parsepdb.md)  
-创建[跟踪消息格式 (.tmf) 文件](trace-message-format-file.md)通过提取跟踪消息格式设置中的说明[PDB 符号文件](pdb-symbol-files.md)。 它是类似于[Tracepdb](tracepdb.md)。
+<span id="TraceView_-parsepdb"></span><span id="traceview_-parsepdb"></span><span id="TRACEVIEW_-PARSEPDB"></span>[**TraceView-parsepdb**](traceview--parsepdb.md)  
+通过从[PDB 符号文件](pdb-symbol-files.md)中提取跟踪消息格式设置说明， [ () 文件创建跟踪消息格式](trace-message-format-file.md)。 它类似于 [Tracepdb](tracepdb.md)。
 
-### <a name="span-idcommentsspanspan-idcommentsspancomments"></a><span id="comments"></span><span id="COMMENTS"></span>注释
+### <a name="span-idcommentsspanspan-idcommentsspancomments"></a><span id="comments"></span><span id="COMMENTS"></span>提出
 
-TraceView 窗口和 TraceView 命令行接口将独立运行，并且不能互换使用。 可以使用 TraceView 命令行接口来控制通过使用 TraceView 窗口中，启动跟踪会话，但不是能使用以控制跟踪会话使用 TraceView 命令行界面启动 TraceView 窗口。
+TraceView 窗口和 TraceView 命令行接口独立运行，不能互换使用。 您可以使用 TraceView 命令行界面来控制使用 TraceView 窗口启动的跟踪会话，但不能使用 TraceView 窗口来控制使用 TraceView 命令行界面启动的跟踪会话。
 
-当提交 TraceView 命令在命令提示符窗口中的时，TraceView 将打开新的命令提示符窗口的其输出。 不能取消其他窗口。
+当你在命令提示符窗口中提交 TraceView 命令时，TraceView 会为其输出打开一个新的命令提示符窗口。 不能禁止显示其他窗口。

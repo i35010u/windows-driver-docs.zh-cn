@@ -1,7 +1,6 @@
 ---
 title: 引用用户空间地址时出错
 description: 引用用户空间地址时出错
-ms.assetid: 87944805-e4ba-431e-b673-b0125dc9ec24
 keywords:
 - 可靠性 WDK 内核，用户空间地址
 - 引用 WDK 内核的用户空间地址
@@ -9,12 +8,12 @@ keywords:
 - 嵌入指针 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d34f5c6580b90de3fc89ba1724d8b2c961e707c6
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 99e081913239f2aa1edc162f38bbe76d95b6576a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89192687"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838773"
 ---
 # <a name="errors-in-referencing-user-space-addresses"></a>引用用户空间地址时出错
 
@@ -92,7 +91,7 @@ ms.locfileid: "89192687"
    RtlMoveMemory(arg, &info, sizeof(info));
 ```
 
-在此示例中，驱动程序应通过使用在**try/except**块中包含的**探测器 * Xxx*** 例程来验证嵌入的指针，方法与前面介绍的方法均不是 IOCTLs 的方法相同 \_ 。 尽管嵌入指针允许驱动程序返回额外信息，但驱动程序可以通过使用相对偏移量或可变长度缓冲区来更有效地获得相同的结果。
+在此示例中，驱动程序应通过使用在 **try/except** 块中包含的 **探测器 * Xxx*** 例程来验证嵌入的指针，方法与前面介绍的方法均不是 IOCTLs 的方法相同 \_ 。 尽管嵌入指针允许驱动程序返回额外信息，但驱动程序可以通过使用相对偏移量或可变长度缓冲区来更有效地获得相同的结果。
 
 有关使用 **try/except** 块处理无效地址的详细信息，请参阅 [处理异常](handling-exceptions.md)。
 

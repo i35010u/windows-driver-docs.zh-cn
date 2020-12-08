@@ -1,19 +1,18 @@
 ---
 title: 其他 SRB_FUNCTION_XXX 请求
 description: 其他 SRB_FUNCTION_XXX 请求
-ms.assetid: b0430d8e-e5cd-4f17-b77f-ec608b1469da
 keywords:
 - SCSI 微型端口驱动程序 WDK 存储，HwScsiStartIo
 - HwScsiStartIo
 - SRB_FUNCTION_XXX 将来使用
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0836c7b0ce8959d69e8af090c61d3041d70eeb4e
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 0395696b2586745042f7d34066c5bda1a4b0e29c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89190938"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837875"
 ---
 # <a name="other-srb_function_xxx-requests"></a>其他 SRB_FUNCTION_XXX 请求
 

@@ -1,7 +1,6 @@
 ---
 title: DEVPKEY_Device_GenericDriverInstalled
 description: DEVPKEY_Device_GenericDriverInstalled
-ms.assetid: 7809bed7-af11-42b0-bcc8-9492c47d92ab
 keywords:
 - DEVPKEY_Device_GenericDriverInstalled 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: c3f2268b3b78b3c13d8da7c5715a9990313ed58b
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 31f26d12cdbe466294a977600c176777beb6a56d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90714694"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838467"
 ---
 # <a name="devpkey_device_genericdriverinstalled"></a>DEVPKEY_Device_GenericDriverInstalled
 

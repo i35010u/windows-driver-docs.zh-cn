@@ -1,37 +1,36 @@
 ---
-title: PROPSETID\_时间码\_读取器
-description: PROPSETID\_时间码\_读取器
-ms.assetid: 7f115ba5-a6b7-4bae-a562-7e84a98ef420
+title: PROPSETID 时间 \_ 码 \_ 读取器
+description: PROPSETID 时间 \_ 码 \_ 读取器
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 52a7a56f06ce0b21d2367c8896c0cd110f2de1ed
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 62bf4ddd3b8208b519b7b4a76e6474eaf77d5515
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63325749"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96836625"
 ---
-# <a name="propsetidtimecodereader"></a>PROPSETID\_时间码\_读取器
+# <a name="propsetid_timecode_reader"></a>PROPSETID 时间 \_ 码 \_ 读取器
 
 
 ## <span id="ddk_propsetid_timecode_reader_ks"></span><span id="DDK_PROPSETID_TIMECODE_READER_KS"></span>
 
 
-PROPSETID\_时间码\_读取器属性集从外部设备中检索时间代码的信息。
+PROPSETID 时间 \_ 码 \_ 读取器属性集从外部设备检索时间码信息。
 
-KSPROPERTY\_中的时间码枚举*ksmedia.h*指定此集的属性。
+\_ *Ksmedia* 中的 KSPROPERTY 时间码枚举指定此集的属性。
 
-对设置此属性是可选的仅支持外部视频捕获设备的微型驱动程序应实现的支持。
+对此属性集的支持是可选的，只应由支持外部视频捕获设备的微型驱动程序实现。
 
-[**KSPROPERTY\_时间码\_读取器**](ksproperty-timecode-reader.md)
+[**KSPROPERTY 时间 \_ 码 \_ 读取器**](ksproperty-timecode-reader.md)
 
-[**KSPROPERTY\_ATN\_读取器**](ksproperty-atn-reader.md)
+[**KSPROPERTY \_ ATN \_ 读取器**](ksproperty-atn-reader.md)
 
-[**KSPROPERTY\_RTC\_读取器**](ksproperty-rtc-reader.md)
+[**KSPROPERTY \_ RTC \_ 读取器**](ksproperty-rtc-reader.md)
 
-### <a name="span-iddirectshowinterfacespanspan-iddirectshowinterfacespandirectshow-interface"></a><span id="directshow_interface"></span><span id="DIRECTSHOW_INTERFACE"></span>DirectShow 接口
+### <a name="span-iddirectshow_interfacespanspan-iddirectshow_interfacespandirectshow-interface"></a><span id="directshow_interface"></span><span id="DIRECTSHOW_INTERFACE"></span>DirectShow 接口
 
-DirectShow **IAMTimecodeReader**接口 （请参阅 Microsoft Windows SDK 中的 DirectShow 文档） 提供对此集的属性的访问。
+DirectShow **IAMTimecodeReader** 接口 (参阅 Microsoft Windows SDK 中的 directshow 文档) 提供对此集的属性的访问权限。
 
  
 

@@ -1,7 +1,6 @@
 ---
 title: I/O 状态块
 description: I/O 状态块
-ms.assetid: 59147bd1-6cd7-4fbe-b7bc-52e09ab88576
 keywords:
 - Irp WDK 内核，i/o 状态块
 - I/o 状态阻止 WDK 内核
@@ -11,12 +10,12 @@ keywords:
 - Irp WDK 内核，状态信息
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b9c250d0ca89d9d6a3064601654abfc62299bd62
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 5ecf3b30cfb5bf15c7e1a0b120e44d10afaab045
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89189785"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96836933"
 ---
 # <a name="io-status-blocks"></a>I/O 状态块
 
@@ -30,7 +29,7 @@ I/o 状态块由 [**IO \_ 状态 \_ 块**](/windows-hardware/drivers/ddi/wdm/ns-
 
 -   它提供了有关该服务工作或无效的原因的详细信息。
 
-完成 IRP 后，" **状态** " 字段将指示处理 IRP 的驱动程序是否确实满足了该请求，或是否失败了 irp，并显示了错误状态。 **信息**字段向调用方提供有关实际发生情况的详细信息。 例如，它包含在读或写操作后实际传输的字节数。
+完成 IRP 后，" **状态** " 字段将指示处理 IRP 的驱动程序是否确实满足了该请求，或是否失败了 irp，并显示了错误状态。 **信息** 字段向调用方提供有关实际发生情况的详细信息。 例如，它包含在读或写操作后实际传输的字节数。
 
 有关详细信息，请参阅 [设置 IRP 中的 I/o 状态块](processing-irps-in-a-lowest-level-driver.md#ddk-setting-the-i-o-status-block-in-an-irp-kg)。
 

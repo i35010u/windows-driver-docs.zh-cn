@@ -1,22 +1,21 @@
 ---
 title: WDI_TLV_CIPHER_KEY_TKIP_KEY
-description: WDI_TLV_CIPHER_KEY_TKIP_KEY 是包含 TKIP 密钥材料 TLV。
-ms.assetid: 73E4F051-5CC3-4F9E-9AFD-F33FAAC5A39D
+description: WDI_TLV_CIPHER_KEY_TKIP_KEY 是包含 TKIP 密钥材料的 TLV。
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_CIPHER_KEY_TKIP_KEY 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 20b55f119ab3565dfec8b1b2a6373fba2069a549
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: bffedaef1e31428c47ec7ac4bcff6558cd88a116
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391004"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837635"
 ---
-# <a name="wditlvcipherkeytkipkey"></a>WDI\_TLV\_密码\_密钥\_TKIP\_密钥
+# <a name="wdi_tlv_cipher_key_tkip_key"></a>WDI \_ TLV \_ 密码 \_ 密钥 \_ TKIP \_ 密钥
 
 
-WDI\_TLV\_密码\_密钥\_TKIP\_键是包含 TKIP 密钥材料 TLV。
+WDI \_ tlv \_ 密码 \_ 密钥 \_ TKIP \_ 密钥是包含 TKIP 密钥材料的 tlv。
 
 ## <a name="tlv-type"></a>TLV 类型
 
@@ -26,14 +25,14 @@ WDI\_TLV\_密码\_密钥\_TKIP\_键是包含 TKIP 密钥材料 TLV。
 ## <a name="length"></a>长度
 
 
-UINT8 元素的数组大小 （以字节为单位）。 该数组必须包含一个或多个元素。
+UINT8 元素数组的大小 (以字节为单位) 。 数组必须包含1个或多个元素。
 
 ## <a name="values"></a>值
 
 
-| 在任务栏的搜索框中键入      | 描述                                                      |
+| 类型      | 描述                                                      |
 |-----------|------------------------------------------------------------------|
-| UINT8\[\] | 指定 TKIP 密钥材料的 UINT8 元素数组。 |
+| UINT8\[\] | 指定 TKIP 密钥材料的 UINT8 元素的数组。 |
 
  
 
@@ -52,10 +51,10 @@ UINT8 元素的数组大小 （以字节为单位）。 该数组必须包含一
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
-<td><p>Windows Server 2016</p></td>
+<td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Wditypes.hpp</td>
 </tr>
 </tbody>

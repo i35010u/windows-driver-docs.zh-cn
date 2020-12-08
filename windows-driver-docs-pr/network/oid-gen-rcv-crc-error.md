@@ -1,16 +1,15 @@
 ---
 title: OID_GEN_RCV_CRC_ERROR
 description: 作为查询，OID_GEN_RCV_CRC_ERROR OID 指定收到的、校验和错误的帧数。
-ms.assetid: dfa5e568-2b0a-4b26-8100-06ea8b0f1a71
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_GEN_RCV_CRC_ERROR 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 1a64c7998ccd362b8ddf21147146fd17073c87a3
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 404fa3cf5898837cc467fb255e7097dbb13b8f21
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89213381"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96836761"
 ---
 # <a name="oid_gen_rcv_crc_error"></a>OID \_ 生成 \_ RCV \_ CRC \_ 错误
 
@@ -55,7 +54,7 @@ ms.locfileid: "89213381"
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [OID \_ 生成 \_ 统计信息](oid-gen-statistics.md)

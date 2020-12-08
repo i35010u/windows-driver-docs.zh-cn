@@ -1,15 +1,14 @@
 ---
 title: 将 PTP 格式代码映射到 WIA 格式 GUID
 description: 将 PTP 格式代码映射到 WIA 格式 GUID
-ms.assetid: a69269c0-1474-4de5-9a08-94902ef1f089
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ff2c112f2bc240bf7bceb16464af1d2b3b7b77a8
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 6ee10bf6b4dd0217572748f0b94be369c087711a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89185193"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838589"
 ---
 # <a name="mapping-ptp-format-codes-to-wia-format-guids"></a>将 PTP 格式代码映射到 WIA 格式 GUID
 
@@ -45,7 +44,7 @@ ms.locfileid: "89185193"
 </tr>
 <tr class="odd">
 <td><p>0x3002</p></td>
-<td><p>脚本</p></td>
+<td><p>Script</p></td>
 <td><p>DATAFMT_SCRIPT</p></td>
 </tr>
 <tr class="even">
@@ -188,7 +187,7 @@ ms.locfileid: "89185193"
 
  
 
- (\_ 在 *wiadef*中定义 WiaImgFmt XXX guid。 ) 
+ (\_ 在 *wiadef* 中定义 WiaImgFmt XXX guid。 ) 
 
  
 

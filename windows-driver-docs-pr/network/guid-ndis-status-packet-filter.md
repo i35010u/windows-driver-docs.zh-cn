@@ -1,17 +1,16 @@
 ---
 title: GUID_NDIS_STATUS_PACKET_FILTER
 description: 本主题描述了 NDIS WMI 接口的 GUID_NDIS_STATUS_PACKET_FILTER GUID。
-ms.assetid: d842862b-5b9f-46bf-aaa9-4542b3a3e047
 keywords:
 - GUID_NDIS_STATUS_PACKET_FILTER，WDK GUID_NDIS_STATUS_PACKET_FILTER 网络驱动程序
 ms.date: 11/22/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bd081804080534b4fe8328b4ef87db7a81a4eda0
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: bf835800819a96292fed77fea9d47ff87b1f3a5e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89209739"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96836789"
 ---
 # <a name="guid_ndis_status_packet_filter"></a>GUID_NDIS_STATUS_PACKET_FILTER
 

@@ -1,7 +1,6 @@
 ---
-title: DEBUG\_REQUEST\_TARGET\_EXCEPTION\_RECORD
-description: DEBUG\_REQUEST\_TARGET\_EXCEPTION\_RECORD
-ms.assetid: 4bfd3d22-00ab-407c-9a83-ce37c8421491
+title: 调试 \_ 请求 \_ 目标 \_ 异常 \_ 记录
+description: 调试 \_ 请求 \_ 目标 \_ 异常 \_ 记录
 keywords:
 - DEBUG_REQUEST_TARGET_EXCEPTION_RECORD Windows 调试
 topic_type:
@@ -12,28 +11,28 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4b847e4bb3378bb4f3f3e53b9972dffe2b0f8e02
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 65262aefde035b97d7d245197f8b0dcf9c48a673
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63349038"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838663"
 ---
-# <a name="debugrequesttargetexceptionrecord"></a>DEBUG\_REQUEST\_TARGET\_EXCEPTION\_RECORD
+# <a name="debug_request_target_exception_record"></a>调试 \_ 请求 \_ 目标 \_ 异常 \_ 记录
 
 
-调试\_请求\_目标\_异常\_记录[**请求**](request.md)操作将返回异常记录中的存储事件用户模式的小型转储文件。
+"调试 \_ 请求 \_ 目标 \_ 异常 \_ 记录 [**请求**](request.md) " 操作返回用户模式小型转储文件中存储事件的异常记录。
 
 <span id="InBuffer"></span><span id="inbuffer"></span><span id="INBUFFER"></span>*InBuffer*  
-不使用。
+未使用。
 
 <span id="OutBuffer"></span><span id="outbuffer"></span><span id="OUTBUFFER"></span>*OutBuffer*  
-异常记录，用于存储事件。 异常记录的类型是异常\_RECORD64，在 winnt.h 中定义。
+存储事件的异常记录。 异常记录的类型为 \_ RECORD64 中定义的异常。
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[**请求**](request.md)
+[**Request**](request.md)
 
  
 

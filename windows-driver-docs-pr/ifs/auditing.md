@@ -1,7 +1,6 @@
 ---
 title: 审核
 description: 审核
-ms.assetid: 0a703a27-91d6-41fc-bd46-a9486842a150
 keywords:
 - 安全 WDK 文件系统，审核
 - 审核 WDK 文件系统
@@ -11,12 +10,12 @@ keywords:
 - 事件 WDK，另请参阅事件
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a0ff2f9566f10e937075d81bbe1702e9ed44bdca
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: d4c4a6bff8b7e0b1f33ce3a575f43427f0594cff
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89065382"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837287"
 ---
 # <a name="auditing"></a>审核
 

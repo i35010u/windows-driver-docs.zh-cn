@@ -1,7 +1,6 @@
 ---
 title: 'KSPROPERTY \_ CAMERACONTROL \_ 扩展 \_ OPTIMIZATIONHINT (扩展硬件优化) '
 description: KSPROPERTY \_ CAMERACONTROL \_ 扩展 \_ OPTIMIZATIONHINT 用于控制照片捕获与视频捕获的主要用例。 在 Windows 10 中，此控制已扩展为支持扩展的硬件优化提示。
-ms.assetid: 1E2787B7-4BC2-4FBC-8909-ACB122B87F08
 keywords:
 - KSPROPERTY_CAMERACONTROL_EXTENDED_OPTIMIZATIONHINT 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 07/08/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 3d013228a95a30a47af7c2725ee7bd2797a203af
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: fe772f777b36ddbdebf8adf1981eaffdc1f53ef7
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89190519"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837865"
 ---
 # <a name="ksproperty_cameracontrol_extended_optimizationhint-expanded-hardware-optimization"></a>KSPROPERTY \_ CAMERACONTROL \_ 扩展 \_ OPTIMIZATIONHINT (扩展硬件优化) 
 
@@ -29,7 +28,7 @@ KSPROPERTY \_ CAMERACONTROL \_ 扩展 \_ OPTIMIZATIONHINT 用于控制照片捕�
 
 | 范围 | 控制 | 类型 |
 |--|--|--|
-| 版本 1 | 筛选器 | 同步 |
+| 版本 1 | 筛选器 | Synchronous |
 
 以下标志可以放置在 KSCAMERA \_ EXTENDEDPROP \_ 标头中。将字段标记为驱动程序中的硬件优化提示。
 
@@ -63,7 +62,7 @@ KSPROPERTY \_ CAMERACONTROL \_ 扩展 \_ OPTIMIZATIONHINT 用于控制照片捕�
 
 下表包含使用控件时 [**KSCAMERA \_ EXTENDEDPROP \_ 标头**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header) 结构字段的说明和要求。
 
-| 成员 | Value |
+| 成员 | “值” |
 |--|--|
 | 版本 | 1 |
 | PinId | KSCAMERA_EXTENDEDPROP_FILTERSCOPE (0xFFFFFFFF)  |
@@ -72,7 +71,7 @@ KSPROPERTY \_ CAMERACONTROL \_ 扩展 \_ OPTIMIZATIONHINT 用于控制照片捕�
 | 功能 | 必须是前面定义的受支持 KSCAMERA_EXTENDEDPROP_OPTIMIZATION_ * 标志的按位 "或"。 |
 | Flags | 这是一个读/写字段。 这可以是上面定义的受支持 KSCAMERA_EXTENDEDPROP_OPTIMIZATION_ * 标志的任何有效组合。 |
 
-## <a name="remarks"></a>注解
+## <a name="remarks"></a>备注
 
 使用优化提示时，请注意以下事项：
 
@@ -80,7 +79,7 @@ KSPROPERTY \_ CAMERACONTROL \_ 扩展 \_ OPTIMIZATIONHINT 用于控制照片捕�
 
 - 对于质量/延迟/电源，当设置提示时，驱动程序应在其约束内优化。 如果没有可用优化，驱动程序应忽略提示。
 
-- 如果同时为视频用例指定了两个提示，则每个提示的优化可能低于仅指定了一个提示时的时间。 更具体说来：
+- 如果同时为视频用例指定了两个提示，则每个提示的优化可能低于仅指定了一个提示时的时间。 更具体地说：
 
   - 如果同时指定了质量或功率，延迟将优先于质量或功率。 在这种情况下，质量可能低于仅指定了质量时的质量，并且功率消耗可能高于仅指定了电源的情况。
 

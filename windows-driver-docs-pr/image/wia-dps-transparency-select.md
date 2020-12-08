@@ -1,9 +1,8 @@
 ---
-title: WIA\_DPS\_透明度\_选择
-description: WIA\_DPS\_透明度\_选择属性已过时，不应使用。
-ms.assetid: 486a5a59-b314-4171-90e7-1eeeed7d5e3d
+title: WIA \_ DPS \_ 透明度 \_ 选择
+description: WIA \_ DPS \_ 透明度 \_ 选择属性已过时，不应使用。
 keywords:
-- WIA_DPS_TRANSPARENCY_SELECT 成像设备
+- WIA_DPS_TRANSPARENCY_SELECT 图像设备
 topic_type:
 - apiref
 api_name:
@@ -14,24 +13,24 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8b8462679f8119e45b1238fe7be2771fd9bf9aa1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f0596751f7bf2f2bb6a0c7d5d7eca794fb4eee92
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63366956"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96836979"
 ---
-# <a name="wiadpstransparencyselect"></a>WIA\_DPS\_透明度\_选择
+# <a name="wia_dps_transparency_select"></a>WIA \_ DPS \_ 透明度 \_ 选择
 
 
-WIA\_DPS\_透明度\_选择属性已过时，不应使用。
+WIA \_ DPS \_ 透明度 \_ 选择属性已过时，不应使用。
 
 ## <span id="ddk_wia_dps_transparency_select_si"></span><span id="DDK_WIA_DPS_TRANSPARENCY_SELECT_SI"></span>
 
 
-属性类型：VT\_I4
+属性类型： VT \_ I4
 
-有效值：WIA\_PROP\_NONE
+有效值： WIA " \_ \_ 无"
 
 访问权限：只读
 
@@ -45,8 +44,8 @@ WIA\_DPS\_透明度\_选择属性已过时，不应使用。
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Wiadef.h （包括 Wiadef.h）</td>
+<td><p>标头</p></td>
+<td>Wiadef (包含 Wiadef) </td>
 </tr>
 </tbody>
 </table>

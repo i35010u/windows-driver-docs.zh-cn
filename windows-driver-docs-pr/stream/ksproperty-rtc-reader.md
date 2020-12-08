@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ RTC \_ 读取器
 description: KSPROPERTY \_ rtc \_ 读取器属性检索当前磁带位置 (RTC) 的相对时间计数器。
-ms.assetid: 728a4504-de60-47c7-a381-3513f2d4745b
 keywords:
 - KSPROPERTY_RTC_READER 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 435268ffeae13bd652c0741ce96d9d2b77256cdb
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: a25ca9857a75a53ba8d8e0cad5defb031aa4d17b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103040"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837843"
 ---
 # <a name="ksproperty_rtc_reader"></a>KSPROPERTY \_ RTC \_ 读取器
 
@@ -66,7 +65,7 @@ KSPROPERTY \_ rtc \_ 读取器属性检索当前磁带位置 (RTC) 的相对时�
 <a name="remarks"></a>备注
 -------
 
-KSPROPERTY **TimecodeSamp**时间 \_ 码 S 结构的 TimecodeSamp 成员描述了 \_ 当前磁带位置的相对时间计数器。
+KSPROPERTY **TimecodeSamp** 时间 \_ 码 S 结构的 TimecodeSamp 成员描述了 \_ 当前磁带位置的相对时间计数器。
 
 <a name="requirements"></a>要求
 ------------
@@ -84,7 +83,7 @@ KSPROPERTY **TimecodeSamp**时间 \_ 码 S 结构的 TimecodeSamp 成员描述�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSPROPERTY**](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)

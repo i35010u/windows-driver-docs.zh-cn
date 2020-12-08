@@ -1,66 +1,65 @@
 ---
 title: 可再发行框架组件
-description: 本主题介绍作为一部分的 Windows 8.1 的 Windows Driver Kit (WDK) 以及如何确定要添加到驱动程序包包含 Microsoft 提供的可再发行组件 framework 更新。
-ms.assetid: 63fbe66e-fa1b-4a70-a8ea-df4f3df9bad4
+description: 本主题介绍了 Microsoft 提供的可再发行框架更新，这些更新作为 Windows 驱动程序工具包的一部分包含在 Windows 8.1 (WDK) ，以及如何确定要添加到驱动程序包中的文件。
 keywords:
 - 基于框架的驱动程序 WDK KMDF，安装
-- 有关安装 KMDF 驱动程序的 INF 文件 WDK KMDF
-- WDK KMDF 驱动程序的安装组件
+- INF 文件 WDK KMDF，关于安装 KMDF 驱动程序
+- 驱动程序的安装组件 WDK KMDF
 ms.date: 05/16/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 3e68121fbed77beac9066701bafc6bfb54920a56
-ms.sourcegitcommit: 7bd9480d40021827e6d46f9b83638dac85380e88
+ms.openlocfilehash: a4801251c6b6b5e95af341b1082fca249bfc5a1c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/19/2019
-ms.locfileid: "65875100"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837607"
 ---
 # <a name="redistributable-framework-components"></a>可再发行框架组件
 
-本主题介绍作为一部分的 Windows Driver Kit (WDK) 中，以及如何确定要添加到驱动程序包包含 Microsoft 提供的可再发行组件 framework 更新。
+本主题介绍了 Microsoft 提供的可再发行框架更新，这些更新作为 Windows 驱动程序工具包的一部分包含 (WDK) ，以及如何确定要添加到驱动程序包。
 
-可再发行框架更新，使其可以运行使用更高版本的 framework 版本而不是包含在操作系统构建的驱动程序。 例如，在 Windows 8 中包含 KMDF 1.11。 但可以在 Windows Vista 或 Windows 7 上运行一个 KMDF 1.11 的驱动程序。 您可以执行此操作之前，但是，您必须确保 KMDF 1.11 框架库取代了早期版本的操作系统中包括的框架库 (在这种情况下，KMDF 1.7 和 KMDF 1.9 分别)。 执行此操作的重新分发的 Microsoft 提供共同安装程序或.msu 文件与驱动程序包。
+可再发行框架更新使你可以运行使用比操作系统中包含的版本更高的版本生成的驱动程序。 例如，KMDF 1.11 包含在 Windows 8 中。 但你可以在 Windows Vista 或 Windows 7 上运行 KMDF 1.11 驱动程序。 但是，在执行此操作之前，必须确保 KMDF 1.11 framework 库替换了之前操作系统中包含的框架库 (在此示例中，分别) KMDF 1.7 和 KMDF 1.9。 为此，可将 Microsoft 提供的共同安装程序或 .msu 文件重新分发到驱动程序包。
 
-## <a name="when-do-i-need-to-include-a-co-installer-or-msu-in-my-driver-package"></a>何时需要我的驱动程序包中包括的共同安装程序或.msu？
+## <a name="when-do-i-need-to-include-a-co-installer-or-msu-in-my-driver-package"></a>何时需要在驱动程序包中包含共同安装程序或 .msu？
 
-首先，确定您的驱动程序将支持的 Windows 版本。  此基础，确定[要使用的框架版本](building-and-loading-a-kmdf-driver.md#which-framework-version-should-i-use)。
+首先，确定驱动程序将支持的 Windows 版本。  基于这一点，确定 [要使用的 framework 版本](building-and-loading-a-kmdf-driver.md#which-framework-version-should-i-use)。
 
-如果所选的 WDF 版本晚于与目标操作系统一起提供的版本，包括驱动程序包中的辅助安装程序或.msu 文件。
+如果所选 WDF 版本比目标 OS 附带的版本新，请在驱动程序包中包含共同安装程序或 .msu 文件。
 
-例如，您希望您的驱动程序在 Windows 7 上运行。  您可以选择生成您使用 WDF 1.9 或 WDF 1.11 的驱动程序。 如果您选择 1.9，提供与 Windows 7，则无需更新系统。 但是，如果您选择 1.11，您需要包括您的驱动程序与 WDF 1.11 更新包。
+例如，你希望你的驱动程序在 Windows 7 上运行。  可以选择使用 WDF 1.11 或 WDF 1.9 生成驱动程序。 如果选择了 "1.9" （随 Windows 7 一起提供），则无需更新系统。 另一方面，如果你选择1.11，则需要在你的驱动程序中包含 WDF 1.11 更新包。
 
-## <a name="should-i-include-the-co-installer-or-the-msu-file"></a>应包含共同安装程序或.msu 文件？
+## <a name="should-i-include-the-co-installer-or-the-msu-file"></a>是否应包括共同安装程序或 .msu 文件？
 
-如果驱动程序安装时触发插入新的硬件设备的系统，要安装只有驱动程序，包括驱动程序包中共同安装程序。 然后，引用在 INF 文件中，辅助安装程序中所述[INF 文件中指定 KMDF 共同安装程序](installing-the-framework-s-co-installer.md)。
+如果通过将新的硬件设备插入系统并仅安装驱动程序来触发驱动程序安装，请在驱动程序包中包含共同安装程序。 然后在 INF 文件中引用共同安装程序，如在 [Inf 文件中指定 KMDF 共同安装程序](installing-the-framework-s-co-installer.md)中所述。
 
-如果你需要安装除了您的驱动程序的应用程序，则应改为重新分发以及调用它的安装程序应用程序的相关 MSU 包 (例如 kmdf-1.11-Win.6.0.msu)。
-在这种情况下，需要无 INF 项。
+如果除驱动程序外，还需要安装一个应用程序，则应改为重新发布相关的 MSU 包 (例如 kmdf-1.11-Win) 连同调用它的安装程序。
+在这种情况下，不需要任何 INF 条目。
 
-您不再需要辅助安装程序和.msu 文件。
+你永远都不需要共同安装程序和 .msu 文件。
 
 
-## <a name="where-can-i-find-these-files-and-whats-included"></a>在哪里可以找到这些文件，并包含的内容？
+## <a name="where-can-i-find-these-files-and-whats-included"></a>在哪里可以找到这些文件，包括哪些内容？
 
-共同安装程序位于`%program files%\Windows Kits\<version>\redist\wdf`。
+共同安装程序位于 `%program files%\Windows Kits\<version>\redist\wdf` 。
 
-此目录包含以下文件，对于 x86 和 x64:
+此目录包含适用于 x86 和 x64 的以下文件：
 
--   *WdfCoinstaller01007.dll*， *WdfCoinstaller01009.dll*， *WdfCoinstaller01011.dll* （对于 KMDF 1.7/1.9/1.11 共同安装程序）。
--   *WUDFUpdate\_01007.dll*， *WUDFUpdate\_01009.dll*， *WUDFUpdate\_01011.dll* （对于 UMDF 共同安装程序）。
--   *winusbcoinstaller.dll*， *winusbcoinstaller2.dll* （共同安装程序为 WinUSB 1.5/1.9 中）。
+-   *WdfCoinstaller01007.dll*， *WdfCoinstaller01009.dll*， *WdfCoinstaller01011.dll* (KMDF 1.7/1.9/1.11) 的共同安装程序。
+-   *WUDFUpdate \_01007.dll*、 *WUDFUpdate \_01009.dll*、 *WUDFUpdate \_01011.dll* (用于 UMDF) 的共同安装程序。
+-   *winusbcoinstaller.dll*， *winusbcoinstaller2.dll* (WinUSB 1.5/1.9) 的共同安装程序。
 
-如果想要的 MSU 文件，请下载并安装程序包 （在 MSI 格式），从[WDK 8 可再发行组件](https://go.microsoft.com/fwlink/p/?LinkID=253170)。
-安装完成后，MSU 和共同安装程序可在`%program files%\Windows Kits\8.0\redist\wdf`。
+如果需要 MSU 文件，请从 [WDK 8 可再发行组件](https://go.microsoft.com/fwlink/p/?LinkID=253170)) 下载并安装 MSI 格式的程序包 (。
+安装后，可以在中找到 MSU 和共同安装程序 `%program files%\Windows Kits\8.0\redist\wdf` 。
 
-## <a name="co-installer-naming-and-versioning"></a>命名的共同安装程序和版本控制
+## <a name="co-installer-naming-and-versioning"></a>共同安装程序命名和版本控制
 
-名为共同安装程序**WdfCoInstaller**<em>MMmmm</em>**.dll**。
+共同安装程序的名称为 **WdfCoInstaller**<em>嗯</em>**。**
 
--   *MM*是主版本号。
--   *mmm*是次版本号。
+-   *MM* 是主要版本号。
+-   *mmm* 为次版本号。
 
-例如，对于 1.0 版的辅助安装程序的文件名是*WdfCoInstaller01000.dll*，并且版本 1.11 的文件名*WdfCoInstaller01011.dll*。
+例如， *WdfCoInstaller01000.dll* 版本1.0 的文件的文件名，并且 *WdfCoInstaller01011.dll* 版本1.11 的文件名。
 
-包含与驱动程序包的共同安装程序的版本必须与用于开发您的驱动程序的框架库的版本匹配。
+驱动程序包中包含的共同安装程序的版本必须与用于开发驱动程序的 framework 库的版本匹配。
 
-请注意框架库的文件的名称，包括仅主版本号。 有关库文件名称的详细信息，请参阅[Framework 库版本控制](framework-library-versioning.md)。
+请注意，框架库的文件名只包含主要版本号。 有关库文件名的详细信息，请参阅 [框架库版本控制](framework-library-versioning.md)。

@@ -1,9 +1,8 @@
 ---
-title: ube
-description: Ube 扩展将重新启用用户空间断点。
-ms.assetid: caa13c30-e03a-44fd-9221-66e44eec88af
+title: u）
+description: U) 扩展重新启用用户空间断点。
 keywords:
-- ube Windows 调试
+- u) Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,29 +11,29 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 1eb9555fb292fadc4aa65987aa70bf4a08f2b625
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2b0bc8e0168837bbe714f24ea2cdbb3fe58237a4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63334154"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838695"
 ---
 # <a name="ube"></a>!ube
 
 
-**！ Ube**扩展将重新启用用户空间断点。
+**！ U)** 扩展重新启用用户空间断点。
 
 ```dbgcmd
 !ube BreakpointNumber 
 ```
 
-## <a name="span-idddkubedbgspanspan-idddkubedbgspanparameters"></a><span id="ddk__ube_dbg"></span><span id="DDK__UBE_DBG"></span>参数
+## <a name="span-idddk__ube_dbgspanspan-idddk__ube_dbgspanparameters"></a><span id="ddk__ube_dbg"></span><span id="DDK__UBE_DBG"></span>参数
 
 
-<span id="_______BreakpointNumber______"></span><span id="_______breakpointnumber______"></span><span id="_______BREAKPOINTNUMBER______"></span> *BreakpointNumber*   
-指定要启用的断点的数目。 一个星号 (\*) 指示所有断点。
+<span id="_______BreakpointNumber______"></span><span id="_______breakpointnumber______"></span><span id="_______BREAKPOINTNUMBER______"></span>*BreakpointNumber*   
+指定要启用的断点号。 星号 (\*) 指示所有断点。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 <table>
 <colgroup>
@@ -58,9 +57,9 @@ ms.locfileid: "63334154"
 <a name="remarks"></a>备注
 -------
 
-这用来重新启用已被禁用的断点[ **！ ubd**](-ubd.md)。
+这用于重新启用 [**！ ubd**](-ubd.md)禁用的断点。
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
 [**!ubc**](-ubc.md)

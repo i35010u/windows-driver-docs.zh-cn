@@ -1,16 +1,15 @@
 ---
 title: OID_SWITCH_NIC_REQUEST
 description: 对象标识符 (OID) 方法请求 OID_SWITCH_NIC_REQUEST 用于封装和转发到 Hyper-v 可扩展交换机外部网络适配器的 OID 请求。
-ms.assetid: 7EF4D950-D18E-400A-B1DD-39768A16E4C4
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_SWITCH_NIC_REQUEST 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: f0b7f7f9c86f19b28c8b24141273a9935df817e6
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 0f31907928e165e622fc8f746b555fe874b998c8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89212151"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837927"
 ---
 # <a name="oid_switch_nic_request"></a>OID \_ 交换机 \_ NIC \_ 请求
 
@@ -19,7 +18,7 @@ ms.locfileid: "89212151"
 
 此 OID 请求还用于封装向连接到可扩展交换机端口的其他网络适配器发出的 OID 请求。 在这种情况下，封装的 OID 请求将通过可扩展交换机驱动程序堆栈转发，以便通过扩展进行检查。
 
-[**Ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的**InformationBuffer**成员包含指向[**ndis \_ 交换机 \_ NIC \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_nic_oid_request)结构的指针。 此结构指定 OID 请求的转发信息。 此结构还包含一个指针，指向要转发的 OID 请求的原始 **NDIS \_ OID \_ 请求** 结构。
+[**Ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的 **InformationBuffer** 成员包含指向 [**ndis \_ 交换机 \_ NIC \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_nic_oid_request)结构的指针。 此结构指定 OID 请求的转发信息。 此结构还包含一个指针，指向要转发的 OID 请求的原始 **NDIS \_ OID \_ 请求** 结构。
 
 <a name="remarks"></a>备注
 -------
@@ -30,7 +29,7 @@ ms.locfileid: "89212151"
 
     当这些 OID 请求到达可扩展交换机接口时，可扩展交换机的协议边缘将在 [**NDIS \_ 交换机 \_ NIC \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_nic_oid_request) 结构内封装 OID 请求。 协议边缘按以下方式设置此结构的成员：
 
-    -   **DestinationPortId**和**DestinationNicIndex**成员设置为外部网络适配器的相应值。
+    -   **DestinationPortId** 和 **DestinationNicIndex** 成员设置为外部网络适配器的相应值。
 
     -   如果 OID 请求源自 Hyper-v 子分区，则 **SourcePortId** 和 **SourceNicIndex** 成员将设置为分区所使用的端口和网络适配器的相应值。 否则， **SourcePortId** 和 **SourceNicIndex** 成员将设置为零。
 
@@ -38,7 +37,7 @@ ms.locfileid: "89212151"
 
 
 
-    -   **OidRequest**成员设置为指向封装的 oid 请求的[**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的指针。
+    -   **OidRequest** 成员设置为指向封装的 oid 请求的 [**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的指针。
 
     然后，协议边缘发出 OID \_ 交换机 \_ NIC \_ 请求请求，以将封装的 OID 请求向下转发到外部网络适配器的可扩展交换机控制路径。
 
@@ -64,8 +63,8 @@ ms.locfileid: "89212151"
 
 2.  此扩展通过按以下方式初始化 [**NDIS \_ 交换机 \_ NIC \_ oid \_ 请求**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_nic_oid_request) 结构来封装 OID 请求：
 
-    -   **DestinationPortId**成员必须设置为外部网络适配器连接到的可扩展交换机端口的标识符。
-    -   **DestinationNicIndex**成员必须设置为底层物理网络适配器的非零索引值。
+    -   **DestinationPortId** 成员必须设置为外部网络适配器连接到的可扩展交换机端口的标识符。
+    -   **DestinationNicIndex** 成员必须设置为底层物理网络适配器的非零索引值。
     -   如果扩展是代表 Hyper-v 子分区建立的，则 **SourcePortId** 和 **SourceNicIndex** 成员将设置为分区所使用的端口和网络适配器的相应值。 否则， **SourcePortId** 和 **SourceNicIndex** 成员将设置为零。
 
         例如，如果扩展插件管理的是子分区的硬件卸载资源，则必须设置 **SourcePortId** 和 **SourceNicIndex** 成员，以指定封装的硬件卸载 OID 请求适用的分区。
@@ -125,7 +124,7 @@ ms.locfileid: "89212151"
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 ****

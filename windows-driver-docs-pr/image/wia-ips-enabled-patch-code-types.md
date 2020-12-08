@@ -1,9 +1,8 @@
 ---
-title: WIA\_IPS\_已启用\_修补\_代码\_类型
-description: WIA\_IPS\_已启用\_修补\_代码\_类型属性用于选择为其修补程序代码读取器将搜索当前会话中的已启用修补程序代码。
-ms.assetid: 278C93EF-661E-41B2-8882-DF05A2FB9723
+title: '\_启用 WIA IP 的 \_ \_ 修补程序 \_ 代码 \_ 类型'
+description: 启用 WIA \_ IPS \_ " \_ 修补程序 \_ 代码 \_ 类型" 属性用于选择修补程序代码读取器将在当前会话中搜索的已启用的修补程序代码。
 keywords:
-- WIA_IPS_ENABLED_PATCH_CODE_TYPES 成像设备
+- WIA_IPS_ENABLED_PATCH_CODE_TYPES 图像设备
 topic_type:
 - apiref
 api_name:
@@ -14,33 +13,33 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 89e9612720111b0c14109bb880dbb8ddd5c94355
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c60190077b17186b01f3477f45e386657346af8e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63370689"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837243"
 ---
-# <a name="wiaipsenabledpatchcodetypes"></a>WIA\_IPS\_已启用\_修补\_代码\_类型
+# <a name="wia_ips_enabled_patch_code_types"></a>\_启用 WIA IP 的 \_ \_ 修补程序 \_ 代码 \_ 类型
 
 
-**WIA\_IPS\_已启用\_修补\_代码\_类型**属性用于选择为其修补程序代码读取器将在当前搜索的已启用修补程序代码会话。 这些修补程序代码可以报告与 WIA 微型驱动程序的部分或全部使用值[ **WIA\_IPS\_支持\_PATCH\_代码\_类型**](wia-ips-supported-patch-code-types.md). 数组中值的顺序指定的优先级顺序为用要搜索的相应修补程序代码。
+**启用 WIA \_ IPS \_ " \_ 修补程序 \_ 代码 \_ 类型**" 属性用于选择修补程序代码读取器将在当前会话中搜索的已启用的修补程序代码。 这些修补程序代码可以是 WIA 微型驱动程序为 [**wia \_ ip \_ 支持的 \_ 修补程序 \_ 代码 \_ 类型**](wia-ips-supported-patch-code-types.md)报告的部分或全部值。 数组中值的顺序指定了要在其中搜索各个修补程序代码的优先级顺序。
 
 
 
 
-属性类型：VT\_I4 | VT\_VECTOR
+属性类型： VT \_ I4 |VT \_ 矢量
 
-有效值：WIA\_PROP\_NONE （单一 array / 矢量值）
+有效值： WIA \_ \_ (单个 "array"/vector 值) 
 
 访问权限：读/写
 
 <a name="remarks"></a>备注
 -------
 
-有效值**WIA\_IP\_已启用\_修补\_代码\_类型**属性是相同的 WIA\_PATCH\_代码\_定义为值[ **WIA\_IP\_支持\_修补\_代码\_类型**](wia-ips-supported-patch-code-types.md)属性。
+" **启用了 wia ips 的 \_ \_ \_ 修补程序 \_ 代码 \_ 类型** " 属性的有效值与为 \_ \_ \_ " [**wia \_ ips 支持的 \_ \_ 修补程序 \_ 代码 \_ 类型**](wia-ips-supported-patch-code-types.md) " 属性定义的 wia 修补程序代码值相同。
 
-此属性是必需的修补程序代码读取器的所有项。
+所有修补程序代码读取器项都需要此属性。
 
 <a name="requirements"></a>要求
 ------------
@@ -52,8 +51,8 @@ ms.locfileid: "63370689"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Wiadef.h （包括 Wiadef.h）</td>
+<td><p>标头</p></td>
+<td>Wiadef (包含 Wiadef) </td>
 </tr>
 </tbody>
 </table>

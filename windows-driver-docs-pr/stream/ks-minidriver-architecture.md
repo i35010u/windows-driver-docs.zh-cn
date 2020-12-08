@@ -1,23 +1,22 @@
 ---
 title: KS 微型驱动程序体系结构
 description: KS 微型驱动程序体系结构
-ms.assetid: a9c17040-72a8-4290-831b-7fb46b00f532
 keywords:
 - 内核流 WDK，体系结构
 - KS WDK，体系结构
 - 筛选器关系图 WDK 内核流式处理
 ms.date: 06/18/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 7265468123adee6ec62cb3ac3744e02aa8387d0d
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 51e482ffa3c4dbbe796315004e3604cf3a109afc
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89192871"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838541"
 ---
 # <a name="ks-minidriver-architecture"></a>KS 微型驱动程序体系结构
 
-内核流式处理服务支持流式处理数据的内核模式处理。 在此模型中，流数据流经分组到块（称为筛选器）的一系列节点。 每个筛选器封装了对数据执行的某个处理任务。 [KS 筛选器](ks-filters.md)作为内核模式[**驱动程序 \_ 对象**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_driver_object)实现。
+内核流式处理服务支持流式处理数据的内核模式处理。 在此模型中，流数据流经分组到块（称为筛选器）的一系列节点。 每个筛选器封装了对数据执行的某个处理任务。 [KS 筛选器](ks-filters.md)作为内核模式 [**驱动程序 \_ 对象**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_driver_object)实现。
 
 在用户模式下，KS 筛选器将通过代理作为 DirectShow 筛选器出现。 因此，图形生成器和用户模式应用程序可以与 KS 筛选器进行交互。 在活动图中，内核模式组件仍直接通信，消除了用户模式和内核模式间的资源消耗转换。
 

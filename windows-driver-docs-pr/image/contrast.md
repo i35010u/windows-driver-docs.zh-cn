@@ -1,9 +1,8 @@
 ---
 title: 对比度元素
-description: 可选的对比度元素指定的相对量，以减少或增强的对比度扫描的文档。
-ms.assetid: c40e824f-4e10-4590-a524-ff69a21a4499
+description: 可选的对比度元素指定要减小的相对量或提高扫描文档的对比度。
 keywords:
-- 对比度元素成像设备
+- 对比度元素图像设备
 topic_type:
 - apiref
 api_name:
@@ -12,19 +11,19 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 09ce7469fdffcb588e122929e669287297204f5f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 44f8cfe66073bbf666d5ec867e2836b453049298
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63368552"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96836809"
 ---
 # <a name="contrast-element"></a>对比度元素
 
 
-可选**对比度**元素指定的相对量，以减少或增强的对比度扫描的文档。
+可选的 **对比度** 元素指定要减小的相对量或提高扫描文档的对比度。
 
-<a name="usage"></a>用法
+<a name="usage"></a>使用情况
 -----
 
 ```xml
@@ -47,26 +46,26 @@ ms.locfileid: "63368552"
 </colgroup>
 <thead>
 <tr class="header">
-<th>特性</th>
-<th>在任务栏的搜索框中键入</th>
-<th>必需</th>
+<th>属性</th>
+<th>类型</th>
+<th>必须</th>
 <th>描述</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><strong><strong>Override</strong></strong></p></td>
+<td><p><strong><strong>忽略</strong></strong></p></td>
 <td><p>xs:string</p></td>
 <td><p>否</p></td>
 <td><p></p>
-<p>可选。 一个布尔值，必须为 0，为 false，1 或 true。<strong>falsetrue</strong></p></td>
+<p>可选。 必须为0、false、1或 true 的布尔值。<strong>falsetrue</strong></p></td>
 </tr>
 <tr class="even">
 <td><p><strong><strong>UsedDefault</strong></strong></p></td>
 <td><p>xs:string</p></td>
 <td><p>否</p></td>
 <td><p></p>
-<p>可选。 一个布尔值，必须为 0，为 false，1 或 true。<strong>falsetrue</strong></p></td>
+<p>可选。 必须为0、false、1或 true 的布尔值。<strong>falsetrue</strong></p></td>
 </tr>
 </tbody>
 </table>
@@ -74,12 +73,12 @@ ms.locfileid: "63368552"
 <a name="text-value"></a>文本值
 ----------
 
-对比度值必须为-1000 到 1000 之间 （含） 范围内。
+对比度值必须介于-1000 到1000（含）之间。
 
 ## <a name="child-elements"></a>子元素
 
 
-没有子元素。
+没有任何子元素。
 
 ## <a name="parent-elements"></a>父元素
 
@@ -103,11 +102,11 @@ ms.locfileid: "63368552"
 <a name="remarks"></a>备注
 -------
 
-**对比度**元素指示的相对量，以增强或降低扫描的文档的对比度。 值为 0 指示 WSD 扫描服务应进行任何调整扫描生成的对比度。
+**对比度** 元素指示要增强或减小扫描文档对比度的相对量。 如果值为0，则表示 WSD 扫描服务对扫描对比度不做任何调整。
 
-所有 WSD 扫描服务必须都支持的所有值之间，其中包含，-1000 到 1000年。 服务必须在内部将这些值映射到的实际**对比度**扫描设备支持的值。
+所有 WSD 扫描服务都必须支持介于-1000 和1000之间的所有值。 服务必须在内部将这些值映射到扫描设备支持的实际 **对比度** 值。
 
-WSD 扫描服务可以指定可选**重写**并**UsedDefault**属性时，才**对比度**元素包含在**DocumentFinalParameters**层次结构。 有关详细信息**重写**并**UsedDefault**及其使用情况，请参阅[ **DocumentFinalParameters**](documentfinalparameters.md)。
+仅当 **对比度** 元素包含在 **DocumentFinalParameters** 层次结构中时，WSD 扫描服务才能指定可选 **Override** 和 **UsedDefault** 属性。 有关 **Override** 和 **UsedDefault** 及其用法的详细信息，请参阅 [**DocumentFinalParameters**](documentfinalparameters.md)。
 
 ## <a name="see-also"></a>请参阅
 

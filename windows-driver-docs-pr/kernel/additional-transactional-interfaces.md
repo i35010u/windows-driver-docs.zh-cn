@@ -1,18 +1,17 @@
 ---
 title: 其他事务接口
 description: 其他事务接口
-ms.assetid: cbd88c96-6445-436b-8e02-09dd9cf40d77
 keywords:
 - 事务 WDK KTM，非 KTM 接口
 - 事务性接口 WDK
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 65f7cc5da17d85e1ade7ae9b21216d72022dde6e
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: cb6aaa68be03317c739797e3c9c35fada42c2f8a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91732985"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96836953"
 ---
 # <a name="additional-transactional-interfaces"></a>其他事务接口
 

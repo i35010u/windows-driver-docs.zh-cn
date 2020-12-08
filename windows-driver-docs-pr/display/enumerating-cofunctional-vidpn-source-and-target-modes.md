@@ -1,7 +1,6 @@
 ---
 title: 枚举协同工作的 VidPN 源和目标模式
 description: 枚举协同工作的 VidPN 源和目标模式
-ms.assetid: f1aa6277-7af6-4ba0-8ff1-d562f7029540
 keywords:
 - 视频显示网络 WDK 显示，枚举目标和源模式
 - VidPN WDK 显示，枚举目标和源模式
@@ -19,12 +18,12 @@ keywords:
 - 枚举透视 WDK 视频呈现网络
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9439dfaa1b0a5d32c60be6d55dcbef801ec613ff
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: dcff16e3c018b8d38318d3dd3d8e5f89c772303f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89065866"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838495"
 ---
 # <a name="enumerating-cofunctional-vidpn-source-and-target-modes"></a>枚举协同工作的 VidPN 源和目标模式
 
@@ -61,7 +60,7 @@ VidPN 管理器随时会要求显示的微型端口驱动程序枚举显示适�
 
 ### <a name="span-idinspecting_the_constraining_vidpnspanspan-idinspecting_the_constraining_vidpnspaninspecting-the-constraining-vidpn"></a><span id="inspecting_the_constraining_vidpn"></span><span id="INSPECTING_THE_CONSTRAINING_VIDPN"></span>检查约束 VidPN
 
-约束 VidPN 的以下属性是必须由 *DxgkDdiEnumVidPnCofuncModality*使用的约束。
+约束 VidPN 的以下属性是必须由 *DxgkDdiEnumVidPnCofuncModality* 使用的约束。
 
 -   拓扑 (源和目标之间的关联集) 
 
@@ -113,22 +112,22 @@ VidPN 管理器随时会要求显示的微型端口驱动程序枚举显示适�
 
 ### <a name="adjusting-scaling-support-flags"></a>调整缩放支持标志
 
-对于约束 VidPN 的拓扑中的每个路径，确定路径是否具有固定的缩放变换。 若要进行确定，请检查 *vpnPath*。**ContentTransformation**，其中 *vpnPath* 是表示路径的 [**D3DKMDT \_ VIDPN \_ 显示 \_ 路径**](/windows-hardware/drivers/ddi/d3dkmdt/ns-d3dkmdt-_d3dkmdt_vidpn_present_path) 结构。 如果为 *vpnPath*。**ContentTransformation** 设置为 **D3DKMDT \_ VPPS \_ IDENTITY**、 **D3DKMDT \_ VPPS \_ 居中**或 **D3DKMDT \_ VPPS \_ 伸展**，然后固定路径的缩放变换。 否则，不会固定缩放变换。
+对于约束 VidPN 的拓扑中的每个路径，确定路径是否具有固定的缩放变换。 若要进行确定，请检查 *vpnPath*。**ContentTransformation**，其中 *vpnPath* 是表示路径的 [**D3DKMDT \_ VIDPN \_ 显示 \_ 路径**](/windows-hardware/drivers/ddi/d3dkmdt/ns-d3dkmdt-_d3dkmdt_vidpn_present_path) 结构。 如果为 *vpnPath*。**ContentTransformation** 设置为 **D3DKMDT \_ VPPS \_ IDENTITY**、 **D3DKMDT \_ VPPS \_ 居中** 或 **D3DKMDT \_ VPPS \_ 伸展**，然后固定路径的缩放变换。 否则，不会固定缩放变换。
 
 如果路径没有固定缩放转换，则确定是否需要调整路径的缩放支持标志。 如果支持标志显示对不 cofunctional 约束的缩放类型的支持，或者无法显示与约束 cofunctional 的缩放类型支持，则必须对其进行调整。 若要更改缩放支持标志，请设置包含标志的 [**D3DKMDT \_ VIDPN \_ 显示 \_ 路径 \_ 缩放 \_ 支持**](/windows-hardware/drivers/ddi/d3dkmdt/ns-d3dkmdt-_d3dkmdt_vidpn_present_path_scaling_support) 结构的成员。
 
 ### <a name="adjusting-rotation-support-flags"></a>调整旋转支持标志
 
-调整路径的旋转支持标志类似于调整路径的缩放支持标志。 假设 *vpnPath* 是 D3DKMDT \_ VIDPN \_ 显示 \_ 路径结构。 如果为 *vpnPath*。**ContentTransformation** 设置为 **D3DKMDT \_ VPPR \_ IDENTITY**、 **D3DKMDT \_ VPPR \_ ROTATE90**、 **D3DKMDT \_ VPPR \_ ROTATE180**或 **D3DKMDT \_ VPPR \_ ROTATE270**，然后固定路径的旋转转换。 否则，不会固定旋转转换。 旋转支持标志在 *vpnPath*中。**ContentTransformation. RotationSupport**。
+调整路径的旋转支持标志类似于调整路径的缩放支持标志。 假设 *vpnPath* 是 D3DKMDT \_ VIDPN \_ 显示 \_ 路径结构。 如果为 *vpnPath*。**ContentTransformation** 设置为 **D3DKMDT \_ VPPR \_ IDENTITY**、 **D3DKMDT \_ VPPR \_ ROTATE90**、 **D3DKMDT \_ VPPR \_ ROTATE180** 或 **D3DKMDT \_ VPPR \_ ROTATE270**，然后固定路径的旋转转换。 否则，不会固定旋转转换。 旋转支持标志在 *vpnPath* 中。**ContentTransformation. RotationSupport**。
 
 ### <a name="span-idreporting_multisampling_methodsspanspan-idreporting_multisampling_methodsspanreporting-multisampling-methods"></a><span id="reporting_multisampling_methods"></span><span id="REPORTING_MULTISAMPLING_METHODS"></span>报表多级方法
 
 如果显示适配器有一个或多个视频输出编解码器，这些编解码器能够通过多级的消除锯齿功能，则必须为具有固定模式的每个源报告 (给定约束) 的多级取样方法。 若要报告可用的多级取样方法，请执行以下步骤：
 
 -   创建 [D3DDDI \_ MULTISAMPLINGMETHOD](/windows-hardware/drivers/ddi/d3dukmdt/ns-d3dukmdt-_d3dddi_multisamplingmethod) 结构的数组
--   将数组传递给[VidPN 接口](/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgk_vidpn_interface)的[**pfnAssignMultisamplingMethodSet**](/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_vidpn_assignmultisamplingmethodset)函数。
+-   将数组传递给 [VidPN 接口](/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgk_vidpn_interface)的 [**pfnAssignMultisamplingMethodSet**](/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_vidpn_assignmultisamplingmethodset)函数。
 
-[D3DDDI \_ MULTISAMPLINGMETHOD](/windows-hardware/drivers/ddi/d3dukmdt/ns-d3dukmdt-_d3dddi_multisamplingmethod)结构有两个成员，您必须对其进行设置，这将对多级采样方法进行特征化。 **采样数**成员指示取样的 subpixels 数。 **NumQualityLevels**成员指示该方法可以操作的质量级别数。 可以指定任意数量的质量级别，只要 noticably 级别的每个增加都会提高所提供图像的质量。
+[D3DDDI \_ MULTISAMPLINGMETHOD](/windows-hardware/drivers/ddi/d3dukmdt/ns-d3dukmdt-_d3dddi_multisamplingmethod)结构有两个成员，您必须对其进行设置，这将对多级采样方法进行特征化。 **采样数** 成员指示取样的 subpixels 数。 **NumQualityLevels** 成员指示该方法可以操作的质量级别数。 可以指定任意数量的质量级别，只要 noticably 级别的每个增加都会提高所提供图像的质量。
 
 ### <a name="span-idenumeration_pivotsspanspan-idenumeration_pivotsspanenumeration-pivots"></a><span id="enumeration_pivots"></span><span id="ENUMERATION_PIVOTS"></span>枚举透视
 

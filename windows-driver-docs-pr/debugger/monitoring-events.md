@@ -1,18 +1,17 @@
 ---
 title: 监视事件
 description: 监视事件
-ms.assetid: f0381cf9-e568-4789-af08-69d8b2c3ecbf
 keywords:
 - 调试器引擎，事件
 - events
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d60f28c6c06aa9e959fdd8ef04842e4710dc5c33
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 8a209137b68b148bee5202ac17d557edb9ad5a3d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89217358"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96836869"
 ---
 # <a name="monitoring-events"></a>监视事件
 
@@ -22,7 +21,7 @@ ms.locfileid: "89217358"
 
 有关 [调试器引擎](introduction.md#debugger-engine)中事件的概述，请参阅 [事件](events.md)。
 
-可使用 [IDebugEventCallbacks](/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebugeventcallbacks) 接口监视目标或调试器引擎中发生的事件。 可以使用[*SetEventCallbacks*](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugclient5-seteventcallbacks)将**IDebugEventCallbacks**对象注册到客户端。 每个客户端最多只能向其中注册一个 **IDebugEventCallbacks** 对象。
+可使用 [IDebugEventCallbacks](/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebugeventcallbacks) 接口监视目标或调试器引擎中发生的事件。 可以使用 [*SetEventCallbacks*](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugclient5-seteventcallbacks)将 **IDebugEventCallbacks** 对象注册到客户端。 每个客户端最多只能向其中注册一个 **IDebugEventCallbacks** 对象。
 
 向客户端注册 **IDebugEventCallbacks** 对象时，引擎将调用该对象的 [**IDebugEventCallbacks：： GetInterestMask**](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugeventcallbacks-getinterestmask) 来确定该对象感兴趣的事件。 只有对象感兴趣的事件才会发送到该对象。
 

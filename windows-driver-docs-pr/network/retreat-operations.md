@@ -1,7 +1,6 @@
 ---
 title: 重新处理操作
 description: 重新处理操作
-ms.assetid: fdf1228b-ccae-4079-b968-b4dbb5665555
 keywords:
 - 网络数据 WDK，撤回操作
 - 数据 WDK 网络，撤回操作
@@ -12,12 +11,12 @@ keywords:
 - 分配 MDLs
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0a8a86e4d25de41766edb1e0227eaf5ebb17d99d
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: b94748530dfd378fa75300b4fa33a033b2cb1e1a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89215005"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838553"
 ---
 # <a name="retreat-operations"></a>重新处理操作
 

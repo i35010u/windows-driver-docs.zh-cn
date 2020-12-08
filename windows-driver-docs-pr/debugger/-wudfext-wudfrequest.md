@@ -1,9 +1,8 @@
 ---
 title: wudfext.wudfrequest
-description: Wudfext.wudfrequest 扩展显示有关的 I/O 请求的信息。
-ms.assetid: 4812c7bb-0fce-43e1-8f07-e4da9dd0c3bb
+description: Wudfext. wudfrequest 扩展显示有关 i/o 请求的信息。
 keywords:
-- wudfext.wudfrequest Windows 调试
+- wudfext wudfrequest Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,39 +11,39 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 13d09e379a886a8e18d58860c6eb65fbf8dec3ca
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 07947401d6440a6af7a0dd0f61b71c20a477b210
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63351581"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838381"
 ---
 # <a name="wudfextwudfrequest"></a>!wudfext.wudfrequest
 
-**！ Wudfext.wudfrequest**扩展显示有关的 I/O 请求的信息。
+**！ Wudfext wudfrequest** 扩展显示有关 i/o 请求的信息。
 
 ```dbgcmd
 !wudfext.wudfrequest pWDFRequest
 ```
 
-## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>参数
+## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>Parameters
 
-<span id="_______pWDFRequest______"></span><span id="_______pwdfrequest______"></span><span id="_______PWDFREQUEST______"></span> *pWDFRequest*   
-指定的地址**WDFIoRequest**接口来显示有关的信息。 [ **！ Wudfext.wudfqueue** ](-wudfext-wudfqueue.md)扩展命令确定地址**WDFIoRequest**。
+<span id="_______pWDFRequest______"></span><span id="_______pwdfrequest______"></span><span id="_______PWDFREQUEST______"></span>*pWDFRequest*   
+指定要显示其相关信息的 **WDFIoRequest** 接口的地址。 [**！ Wudfext wudfqueue**](-wudfext-wudfqueue.md) extension 命令确定 **WDFIoRequest** 的地址。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 Wudfext.dll
  
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-有关详细信息，请参阅[用户模式驱动程序框架调试](user-mode-driver-framework-debugging.md)。
+有关详细信息，请参阅 [用户模式驱动程序框架调试](user-mode-driver-framework-debugging.md)。
 
 <a name="remarks"></a>备注
 -------
 
-以下是一种 **！ wudfext.wudfrequest**显示：
+下面是 **！ wudfext** 显示的示例：
 
 ```dbgcmd
 kd> !wudfrequest 0x000fa530 

@@ -1,19 +1,18 @@
 ---
 title: 向文件系统通知可能发生了媒体更改
 description: 向文件系统通知可能发生了媒体更改
-ms.assetid: b1956370-ec9c-4a43-90a8-12705d28e314
 keywords:
 - 可移动媒体 WDK 内核，通知媒体更改
 - 通知 WDK 可移动介质
 - 媒体更改通知 WDK 可移动媒体
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4bbf701203cd0be385a1937e52f3edc293826f0f
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 508ff0680de796cb06a604c268d48c64359e5b7b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89191328"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838001"
 ---
 # <a name="notifying-the-file-system-of-possible-media-changes"></a>向文件系统通知可能发生了媒体更改
 
@@ -27,13 +26,13 @@ ms.locfileid: "89191328"
 
 1.  通过检查 VPB 中的 VPB 装入标志，确保卷已装入 \_ 。 *VPB*  (如果未装入卷，则驱动程序不得设置 " \_ 验证 \_ 卷位"。 驱动程序应将 **IoStatus** 设置为状态 \_ IO \_ 设备 \_ 错误，将 **IoStatus** 设置为零，并通过 IRP 调用 [**IoCompleteRequest**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocompleterequest) 。 ) 
 
-2.  将**DeviceObject** By or**标志**中的**标志**设置为 DO \_ VERIFY \_ VOLUME。
+2.  将 **DeviceObject** By or **标志** 中的 **标志** 设置为 DO \_ VERIFY \_ VOLUME。
 
 3.  将 IRP 中的 **IoStatus** 块设置为以下内容：
-    -   **状态**设置为 " \_ 需要验证" \_
+    -   **状态** 设置为 " \_ 需要验证" \_
     -   **信息** 设置为零
 
-4.  在使用**IoStatus**块完成任何 IRP，其中**status**字段未设置为 "成功" 状态时 \_ ，驱动程序必须调用[**IoIsErrorUserInduced**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioiserroruserinduced)，这将为以下任何**状态值**返回布尔值**TRUE** ：
+4.  在使用 **IoStatus** 块完成任何 IRP，其中 **status** 字段未设置为 "成功" 状态时 \_ ，驱动程序必须调用 [**IoIsErrorUserInduced**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioiserroruserinduced)，这将为以下任何 **状态值** 返回布尔值 **TRUE** ：
 
     -   状态 \_ 验证是否 \_ 必需
     -   状态 \_ 不 \_ 是 \_ 设备中的媒体 \_

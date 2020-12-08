@@ -1,19 +1,18 @@
 ---
 title: 存储微型端口驱动程序简介
 description: 存储器微型端口驱动程序
-ms.assetid: 374d8370-02a9-43ab-ab47-27fa9f4051ea
 keywords:
 - 存储微型端口驱动程序 WDK
 - 微型端口驱动程序 WDK 存储
 - 存储驱动程序 WDK，微型端口驱动程序
 ms.date: 12/15/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 4ac4b5cb2d52ab6f3df340bf94b577844238d98f
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: d1ee838f057ac174ecc245ba08001cefa1dd0133
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91734487"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838543"
 ---
 # <a name="introduction-to-storage-miniport-drivers"></a>存储微型端口驱动程序简介
 

@@ -1,17 +1,16 @@
 ---
 title: " (调试器引擎的远程调试) "
 description: 如果客户端与目标的通信是间接的，例如通过网络连接进行的，则会发生远程调试。
-ms.assetid: e52cc5fb-9f10-415e-9fe8-6eba71daab6d
 keywords:
 - 调试器引擎，远程调试
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 02314abaaf78f55a4843183d72b3939a0bc7b464
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 6acb06fa01a1fa39753918b84bcb1af85dcc7496
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89206799"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837337"
 ---
 # <a name="remote-debugging-debugger-engine"></a> (调试器引擎的远程调试) 
 
@@ -26,7 +25,7 @@ ms.locfileid: "89206799"
 
 调试服务器是直接与目标进行通信的引擎实例，也是主机引擎。 进程服务器和内核连接服务器直接与目标进行通信，而不是主机引擎。 主机引擎通过发送低级内存、处理器和操作系统请求来与进程服务器或内核连接服务器进行通信，并且服务器将返回结果。
 
-**注意**   用于内核调试的典型双计算机设置--其中一台计算机是目标，另一台计算机不被视为远程调试，因为在主) 计算机上只有一个引擎 (实例，并且它直接与目标通信。
+**注意**   用于内核调试的典型双计算机设置--其中一台计算机是目标，另一台计算机不被视为远程调试，因为在主) 计算机上只有一个引擎 (实例，并且它直接与目标通信。
 
  
 

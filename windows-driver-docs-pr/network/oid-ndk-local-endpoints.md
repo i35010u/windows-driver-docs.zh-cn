@@ -1,16 +1,15 @@
 ---
 title: OID_NDK_LOCAL_ENDPOINTS
 description: 作为查询，NDIS 和过量驱动程序或用户模式应用程序使用 OID_NDK_LOCAL_ENDPOINTS OID 连接到在微型端口适配器上的活动网络直接侦听器和共享终结点列表。
-ms.assetid: 93F077AF-7FEA-4F92-9784-B65ADCC16564
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_NDK_LOCAL_ENDPOINTS 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 326973c51c1fcc18fd7dcc32e64daf04500e9e20
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: eb84956da9d28b54115f45286ec79ee786890d89
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89216606"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838739"
 ---
 # <a name="oid_ndk_local_endpoints"></a>OID \_ NDK \_ 本地 \_ 终结点
 
@@ -22,7 +21,7 @@ ms.locfileid: "89216606"
 <a name="remarks"></a>备注
 -------
 
-NDIS 发出此 OID 以从适配器获取活动网络直接侦听器和共享终结点的列表。 适配器需要在 ndis [** \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的**InformationBuffer**成员的[**ndis \_ NDK \_ 本地 \_ 终结点**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_ndk_local_endpoints)结构中返回侦听器和共享终结点的列表。
+NDIS 发出此 OID 以从适配器获取活动网络直接侦听器和共享终结点的列表。 适配器需要在 ndis [**\_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的 **InformationBuffer** 成员的 [**ndis \_ NDK \_ 本地 \_ 终结点**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_ndk_local_endpoints)结构中返回侦听器和共享终结点的列表。
 
 根据返回的本地终结点的数量，此结构的大小是可变的。 本地终结点数组的大小（作为元素计数）是在 **count** 成员中指定的。
 
@@ -54,7 +53,7 @@ NDIS 发出此 OID 以从适配器获取活动网络直接侦听器和共享终�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**NDIS \_ NDK \_ 本地 \_ 终结点**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_ndk_local_endpoints)

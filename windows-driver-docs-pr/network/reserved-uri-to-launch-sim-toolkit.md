@@ -1,15 +1,14 @@
 ---
 title: 用于启动 SIM 工具包的保留 URI
 description: 用于启动 SIM 工具包的保留 URI
-ms.assetid: d194b37e-427b-4fe2-a49a-050d06a7d3b9
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ccace9f087a38c188b3e6326f3166258660bea76
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 5f1575b3587f9e9a72068ef9847023754fcd8cc7
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89215071"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837913"
 ---
 # <a name="reserved-uri-to-launch-sim-toolkit"></a>用于启动 SIM 工具包的保留 URI
 
@@ -21,7 +20,7 @@ Windows 支持保留 URI 方案，使合作伙伴能够在 "开始" 屏幕上放
 ## <a name="launching-a-uri"></a>启动 URI
 
 
-UWP 应用可以使用对[ (LaunchUriAsync](/uwp/api/Windows.System.Launcher#Windows_System_Launcher_LaunchUriAsync_Windows_Foundation_Uri_)的调用) 方法从**Windows.System**命名空间的**启动**程序对象调用，来加载 SIM 应用程序 CPL。
+UWP 应用可以使用对 [ (LaunchUriAsync](/uwp/api/Windows.System.Launcher#Windows_System_Launcher_LaunchUriAsync_Windows_Foundation_Uri_)的调用) 方法从 **Windows.System** 命名空间的 **启动** 程序对象调用，来加载 SIM 应用程序 CPL。
 
 下面的示例演示合作伙伴如何从应用启动 SIM 应用程序 CPL。
 

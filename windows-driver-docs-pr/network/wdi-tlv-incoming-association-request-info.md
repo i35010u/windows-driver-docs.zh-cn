@@ -1,22 +1,21 @@
 ---
 title: WDI_TLV_INCOMING_ASSOCIATION_REQUEST_INFO
-description: WDI_TLV_INCOMING_ASSOCIATION_REQUEST_INFO 是 TLV，其中包含有关传入关联请求的信息。
-ms.assetid: E36ADD95-1751-4FCE-9032-900968878DEE
+description: WDI_TLV_INCOMING_ASSOCIATION_REQUEST_INFO 是一种 TLV，其中包含传入关联请求的相关信息。
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_INCOMING_ASSOCIATION_REQUEST_INFO 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 95889b682cf985c926f7d0237be439e52fc960a8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 452dd5a96c5fc4c49ee59e76fe7e74b54838e696
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63342273"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837095"
 ---
-# <a name="wditlvincomingassociationrequestinfo"></a>WDI\_TLV\_传入\_关联\_请求\_信息
+# <a name="wdi_tlv_incoming_association_request_info"></a>WDI \_ TLV \_ 传入 \_ 关联 \_ 请求 \_ 信息
 
 
-WDI\_TLV\_传入\_关联\_请求\_信息是 TLV，其中包含有关传入关联请求的信息。
+WDI \_ tlv \_ 传入 \_ 关联 \_ 请求 \_ 信息是一个 tlv，其中包含传入关联请求的相关信息。
 
 ## <a name="tlv-type"></a>TLV 类型
 
@@ -26,16 +25,16 @@ WDI\_TLV\_传入\_关联\_请求\_信息是 TLV，其中包含有关传入关联
 ## <a name="length"></a>长度
 
 
-所有的大小 （以字节为单位） 总和包含 TLVs。
+Sum (包含所有 TLVs 的大小的) 字节。
 
 ## <a name="values"></a>值
 
 
-| 在任务栏的搜索框中键入                                                                                                            | 允许多个 TLV 实例 | 可选 | 描述                                                      |
+| 类型                                                                                                            | 允许多个 TLV 实例 | 可选 | 说明                                                      |
 |-----------------------------------------------------------------------------------------------------------------|--------------------------------|----------|------------------------------------------------------------------|
-| [**WDI\_TLV\_传入\_关联\_请求\_参数**](wdi-tlv-incoming-association-request-parameters.md) |                                |          | 传入关联请求的参数。             |
-| [**WDI\_TLV\_ASSOCIATION\_REQUEST\_FRAME**](wdi-tlv-association-request-frame.md)                              |                                |          | 关联请求帧。                                   |
-| [**WDI\_TLV\_ASSOCIATION\_REQUEST\_DEVICE\_CONTEXT**](wdi-tlv-association-request-device-context.md)           |                                | X        | 向下传递到该端口的特定于供应商的信息。 |
+| [**WDI \_ TLV \_ 传入 \_ 关联 \_ 请求 \_ 参数**](wdi-tlv-incoming-association-request-parameters.md) |                                |          | 传入关联请求的参数。             |
+| [**WDI \_ TLV \_ 关联 \_ 请求 \_ 帧**](wdi-tlv-association-request-frame.md)                              |                                |          | 关联请求框架。                                   |
+| [**WDI \_ TLV \_ 关联 \_ 请求 \_ 设备 \_ 上下文**](wdi-tlv-association-request-device-context.md)           |                                | X        | 向下传递到端口的供应商特定信息。 |
 
  
 
@@ -54,10 +53,10 @@ WDI\_TLV\_传入\_关联\_请求\_信息是 TLV，其中包含有关传入关联
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
-<td><p>Windows Server 2016</p></td>
+<td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Wditypes.hpp</td>
 </tr>
 </tbody>

@@ -1,16 +1,15 @@
 ---
 title: NDIS_STATUS_WWAN_PREFERRED_PROVIDERS
 description: 微型端口驱动程序使用 NDIS_STATUS_WWAN_PREFERRED_PROVIDERS 通知来通知 MB 服务 (PPL) 的首选提供程序列表已更改。
-ms.assetid: b0c06db9-82ca-4f94-80e6-3cf13197abf5
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 NDIS_STATUS_WWAN_PREFERRED_PROVIDERS 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 5a76be872027d6fedadd18bb5bf7b96eff5045ec
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 7c4b8d5af90b458383390dc38248e27eba02b839
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89210723"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838741"
 ---
 # <a name="ndis_status_wwan_preferred_providers"></a>NDIS \_ 状态 \_ WWAN \_ 首选 \_ 提供程序
 
@@ -26,7 +25,7 @@ ms.locfileid: "89210723"
 
 在某些情况下，基于 GSM 的设备的 PPL () 由网络通过无线 (OTA) 或短消息服务 (SMS) 进行更新。 微型端口驱动程序必须相应地更新 PPL。 之后，小型端口驱动程序必须使用这一指示和更新的 PPL 通知 MB 服务有关更新的信息。 对于基于 GSM 的网络，NDIS **PreferredListHeader** \_ WWAN \_ 首选 \_ 提供程序结构的 PreferredListHeader 成员必须指向更新的 PPL。
 
-微型端口驱动程序使用这一指示，通过[OID \_ WWAN \_ 首选 \_ 提供程序](oid-wwan-preferred-providers.md)   从 mb 服务中设置请求，通知 MB 服务有关更新。 对 OID \_ WWAN \_ 首选 \_ 提供程序集请求的响应在 **PreferredListHeader** 成员中必须包含零个元素。
+微型端口驱动程序使用这一指示，通过 [OID \_ WWAN \_ 首选 \_ 提供程序](oid-wwan-preferred-providers.md) 从 mb 服务中设置请求，通知 MB 服务有关更新。 对 OID \_ WWAN \_ 首选 \_ 提供程序集请求的响应在 **PreferredListHeader** 成员中必须包含零个元素。
 
 <a name="requirements"></a>要求
 ------------
@@ -48,7 +47,7 @@ ms.locfileid: "89210723"
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**NDIS \_ WWAN \_ 首选 \_ 提供程序**](/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_preferred_providers)

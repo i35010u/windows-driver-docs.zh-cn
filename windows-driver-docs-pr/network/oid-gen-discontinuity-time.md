@@ -1,16 +1,15 @@
 ---
 title: OID_GEN_DISCONTINUITY_TIME
 description: 作为查询，使用 OID_GEN_DISCONTINUITY_TIME OID 确定 (ifCounterDiscontinuityTime 从 RFC 2863) 的网络接口的中断时间。
-ms.assetid: 3eac6818-c346-47f6-b812-f98b808dc36a
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_GEN_DISCONTINUITY_TIME 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 35833f792e214517a4a91cda5709e20a2b5cebdb
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: d059ea9746ac9f4dfd3091854f976523fdc7f26e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89213855"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837117"
 ---
 # <a name="oid_gen_discontinuity_time"></a>OID 生成中断 \_ \_ \_ 时间
 
@@ -52,7 +51,7 @@ ms.locfileid: "89213855"
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [NDIS 网络接口 Oid](./ndis-network-interface-oids.md)

@@ -1,17 +1,16 @@
 ---
 title: NDIS_STATUS_PM_OFFLOAD_REJECTED
 description: NDIS_STATUS_PM_OFFLOAD_REJECTED 状态向过量驱动程序指示电源管理协议卸载被拒绝。
-ms.assetid: 54922e70-2b56-4141-b79b-73418c7553e3
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 NDIS_STATUS_PM_OFFLOAD_REJECTED 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 2de5326d183c8a53079e55eeac0704ff9c72a8e4
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: bed915c3d0374604c67afcaae0e89c2b27f28a4c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89215538"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837179"
 ---
 # <a name="ndis_status_pm_offload_rejected"></a>已 \_ 拒绝 NDIS 状态 \_ PM \_ 卸载 \_
 
@@ -21,7 +20,7 @@ NDIS \_ 状态 \_ PM \_ 卸载 \_ 已拒绝状态指示过量驱动程序已拒�
 <a name="remarks"></a>备注
 -------
 
-当 ndis 或微型端口驱动程序 \_ \_ 删除已卸载的协议时，它们可以生成 ndis 状态 PM \_ 卸载 \_ 已拒绝状态指示。 对于已拒绝的协议卸载， [**NDIS \_ 状态 \_ 指示**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_status_indication)结构的**StatusBuffer**成员包含 ULONG。 NDIS 在[**ndis \_ PM \_ 协议 \_ 卸载**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_protocol_offload)结构的**ProtocolOffloadId**成员中提供了协议卸载标识符。
+当 ndis 或微型端口驱动程序 \_ \_ 删除已卸载的协议时，它们可以生成 ndis 状态 PM \_ 卸载 \_ 已拒绝状态指示。 对于已拒绝的协议卸载， [**NDIS \_ 状态 \_ 指示**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_status_indication)结构的 **StatusBuffer** 成员包含 ULONG。 NDIS 在 [**ndis \_ PM \_ 协议 \_ 卸载**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_protocol_offload)结构的 **ProtocolOffloadId** 成员中提供了协议卸载标识符。
 
 \_ \_ \_ \_ 当必须从网络适配器中删除以前卸载的协议时，ndis 会生成 ndis 状态 PM 卸载已拒绝的状态指示。 例如，对于更高优先级的协议卸载，NDIS 可能会删除协议卸载以释放资源。 NDIS 将状态指示发送到卸载被拒绝的协议卸载的绑定，但不会将其发送到其他绑定。
 
@@ -55,7 +54,7 @@ WiFi 驱动程序可以在本地缓存协议卸载请求。 当驱动程序处�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**NDIS \_ PM \_ 协议 \_ 卸载**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_protocol_offload)

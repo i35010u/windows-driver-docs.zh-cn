@@ -1,22 +1,21 @@
 ---
 title: NDIS_STATUS_WDI_INDICATION_REQUEST_FTM_COMPLETE
 description: NDIS_STATUS_WDI_INDICATION_REQUEST_FTM_COMPLETE
-ms.assetid: 6EBC0131-F2EF-4A2D-997A-8990E53369CF
 ms.date: 02/11/2019
 keywords:
 - 从 Windows Vista 开始 NDIS_STATUS_WDI_INDICATION_REQUEST_FTM_COMPLETE 网络驱动程序
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 0a6a44f2da4ee51cabb722e442f7b24a86c1a6a1
-ms.sourcegitcommit: ca5045a739eefd6ed14b9dbd9249b335e090c4e9
+ms.openlocfilehash: 5823ae4427064ead79b3b10ea4479ca4f25a2116
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/06/2020
-ms.locfileid: "85968316"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838745"
 ---
 # <a name="ndis_status_wdi_indication_request_ftm_complete"></a>NDIS_STATUS_WDI_INDICATION_REQUEST_FTM_COMPLETE
 
-小型端口驱动程序将**NDIS_STATUS_WDI_INDICATION_REQUEST_FTM_COMPLETE**状态指示发送到主机，作为[OID_WDI_TASK_REQUEST_FTM](oid-wdi-task-request-ftm.md)的任务完成指示。 此通知包含从每个请求的目标接收的精细计时度量（INTERNAL.H）响应列表。
+小型端口驱动程序将 **NDIS_STATUS_WDI_INDICATION_REQUEST_FTM_COMPLETE** 状态指示发送到主机，作为 [OID_WDI_TASK_REQUEST_FTM](oid-wdi-task-request-ftm.md)的任务完成指示。 此通知包含从每个请求的目标接收到 (INTERNAL.H) 响应的精细计时度量列表。
 
 ## <a name="payload-data"></a>负载数据
 

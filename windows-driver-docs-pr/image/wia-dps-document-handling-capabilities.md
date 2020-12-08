@@ -1,7 +1,6 @@
 ---
 title: WIA \_ DPS \_ 文档 \_ 处理 \_ 功能
 description: WIA \_ DPS \_ 文档 \_ 处理 \_ 功能属性包含扫描程序的功能。
-ms.assetid: 19c9cbd0-19ef-4d44-85f1-25e71f9a92bc
 keywords:
 - WIA_DPS_DOCUMENT_HANDLING_CAPABILITIES 图像设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3942353c95f90fcd7685e9b150ae92ada3d51412
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 6be783ed83943745c03336f91be5e118008ff2e1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103456"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96836811"
 ---
 # <a name="wia_dps_document_handling_capabilities"></a>WIA \_ DPS \_ 文档 \_ 处理 \_ 功能
 
@@ -35,7 +34,7 @@ WIA \_ DPS \_ 文档 \_ 处理 \_ 功能属性包含扫描程序的功能。
 
 访问权限：只读
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 应用程序将读取 "WIA \_ DPS \_ 文档 \_ 处理功能" \_ 属性，以确定扫描仪是否安装了平板、文档送纸器或双面打印器。 你还可以使用此属性来进一步定义已安装的功能。 WIA 微型驱动程序创建并维护此属性。

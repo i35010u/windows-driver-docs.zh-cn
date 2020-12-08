@@ -1,17 +1,16 @@
 ---
 title: OID_WWAN_UICC_RESET
 description: OID_WWAN_UICC_RESET
-ms.assetid: D6654B8D-8700-437B-A944-BB273C7D31A1
 keywords:
 - MB UICC reset，Mobile 宽带 UICC reset，Mobile 宽带微型端口驱动程序 UICC reset
 ms.date: 08/17/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: abc3de39179f8a81aec91deb2c1b9968902ce9d6
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 1ac8af29320398830143cf8c3653e932998ab7d3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89213179"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96836729"
 ---
 # <a name="oid_wwan_uicc_reset"></a>OID_WWAN_UICC_RESET
 
@@ -29,7 +28,7 @@ ms.locfileid: "89213179"
 
 **版本**： Windows 10，版本 1709 **头**： Ntddndis (包括 Ndis .h) 
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [NDIS_WWAN_UICC_RESET_INFO](/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_uicc_reset_info)
 

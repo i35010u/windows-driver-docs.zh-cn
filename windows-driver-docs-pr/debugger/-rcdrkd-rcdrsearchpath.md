@@ -1,9 +1,8 @@
 ---
 title: rcdrkd.rcdrsearchpath
-description: Rcdrkd.rcdrsearchpath 扩展设置的跟踪消息格式 (TMF) 和跟踪消息控件 (TMC) 文件的搜索路径。
-ms.assetid: AB19DC1B-009E-445A-B66B-5CC7EF54086F
+description: Rcdrsearchpath 扩展 (TMF) 和跟踪消息控件 (TMC) 文件中的跟踪消息格式设置搜索路径。
 keywords:
-- rcdrkd.rcdrsearchpath Windows 调试
+- rcdrkd rcdrsearchpath Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,29 +11,29 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: edf7feb4f5665989db20cac792a09e019697a305
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 522cb21553a045946505aa8a8be5bf17f7ee1279
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63338946"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837581"
 ---
 # <a name="rcdrkdrcdrsearchpath"></a>!rcdrkd.rcdrsearchpath
 
 
-**！ Rcdrkd.rcdrsearchpath**扩展设置消息控件 (TMC) 文件的跟踪消息格式 (TMF) 和跟踪的搜索路径。
+**！ Rcdrkd rcdrsearchpath** (TMF) 和跟踪消息控件 (TMC) 文件中的跟踪消息格式设置搜索路径。
 
 ```dbgcmd
 !rcdrkd.rcdrsearchpath FilePath
 ```
 
-## <a name="span-idddkdevobjdbgspanspan-idddkdevobjdbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>参数
+## <a name="span-idddk__devobj_dbgspanspan-idddk__devobj_dbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>参数
 
 
-<span id="_______FilePath______"></span><span id="_______filepath______"></span><span id="_______FILEPATH______"></span> *FilePath*   
+<span id="_______FilePath______"></span><span id="_______filepath______"></span><span id="_______FILEPATH______"></span>*FilePath*   
 格式化文件的路径。
 
-## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 
 Rcdrkd.dll
@@ -42,9 +41,9 @@ Rcdrkd.dll
 <a name="remarks"></a>备注
 -------
 
-此命令设置的搜索路径优先于跟踪中指定的搜索路径\_格式\_搜索\_PATH 环境变量。
+此命令设置的搜索路径优先于在跟踪 \_ 格式 \_ 搜索 \_ 路径环境变量中指定的搜索路径。
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
 [RCDRKD 扩展](rcdrkd-extensions.md)

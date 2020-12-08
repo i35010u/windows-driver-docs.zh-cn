@@ -1,17 +1,16 @@
 ---
 title: NDIS_STATUS_OFFLOAD_ENCASPULATION_CHANGE
 description: 微型端口驱动程序使用 NDIS_STATUS_OFFLOAD_ENCASPULATION_CHANGE 状态指示通知 NDIS 和过量驱动程序已在封装设置中发生了更改。
-ms.assetid: 2db2a42e-85a2-41a6-b6ab-13b493057648
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 NDIS_STATUS_OFFLOAD_ENCASPULATION_CHANGE 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 9fe410510a45b08d068d773d36720a3b6bcc9418
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 2b453290902805b4a465231d786d78066bb10829
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89214694"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837181"
 ---
 # <a name="ndis_status_offload_encaspulation_change"></a>NDIS \_ 状态 \_ 卸载 \_ ENCASPULATION \_ 更改
 
@@ -21,7 +20,7 @@ ms.locfileid: "89214694"
 <a name="remarks"></a>备注
 -------
 
-[**Ndis \_ 状态 \_ 指示**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_status_indication)结构的**StatusBuffer**成员包含[**ndis \_ 卸载 \_ 封装**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_offload_encapsulation)结构。 NDIS \_ 卸载 \_ 封装指定了封装设置。
+[**Ndis \_ 状态 \_ 指示**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_status_indication)结构的 **StatusBuffer** 成员包含 [**ndis \_ 卸载 \_ 封装**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_offload_encapsulation)结构。 NDIS \_ 卸载 \_ 封装指定了封装设置。
 
 有关封装设置的详细信息，请参阅 [OID \_ 卸载 \_ 封装](./oid-offload-encapsulation.md)。
 
@@ -45,7 +44,7 @@ ms.locfileid: "89214694"
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**NDIS \_ 卸载 \_ 封装**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_offload_encapsulation)

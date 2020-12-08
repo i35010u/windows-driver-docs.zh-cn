@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ TVAUDIO \_ CAP
 description: KSPROPERTY \_ TVAUDIO \_ cap 属性检索 TV 音频设备的功能。 必须实现此属性。
-ms.assetid: a5b7348e-0f85-430c-acf0-c35e289ef338
 keywords:
 - KSPROPERTY_TVAUDIO_CAPS 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 07bf0b0d6357d2df2b6309c0abcf2f0eb480503e
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 22ef54fcee2673bd604d50a91935ee5068ab37e5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105974"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96836633"
 ---
 # <a name="ksproperty_tvaudio_caps"></a>KSPROPERTY \_ TVAUDIO \_ CAP
 
@@ -84,7 +83,7 @@ KSPROPERTY **Capabilities** \_ TVAUDIO \_ Cap S 结构的功能成员 \_ 指定 
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSPROPERTY**](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)

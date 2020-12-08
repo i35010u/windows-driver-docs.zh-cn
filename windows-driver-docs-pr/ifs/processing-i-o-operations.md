@@ -1,7 +1,6 @@
 ---
 title: 处理 I/O 操作
 description: 处理 I/O 操作
-ms.assetid: 750fa89b-dbdf-45ff-bfa5-83c717d2d7bb
 keywords:
 - 筛选器管理器 WDK 文件系统微筛选器，处理 i/o 操作
 - preoperation 回调例程 WDK 文件系统微筛选器，筛选器管理器
@@ -10,12 +9,12 @@ keywords:
 - 锁定 WDK 文件系统微筛选器
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 17f12678e106f006c8ccb465051f17663377ff0e
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: be3e7e1f9ad39f77cd645aa62b7eb5f98efc9ea9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104512"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838609"
 ---
 # <a name="processing-io-operations"></a>处理 I/O 操作
 
@@ -28,7 +27,7 @@ ms.locfileid: "90104512"
 
 如果需要，可以通过调用 [**FltQueueDeferredIoWorkItem**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltqueuedeferredioworkitem)将操作通过其 preoperation 回调例程排队给工作线程。 完成此操作后，微筛选器驱动程序将 \_ \_ 从其 preoperation 回调例程返回 FLT PREOP，以指示 i/o 操作处于挂起状态，而微筛选器驱动程序负责完成或恢复处理请求。 若要继续处理，微筛选器驱动程序将从工作线程调用 [**FltCompletePendedPreOperation**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltcompletependedpreoperation) 。
 
-如果微筛选器驱动程序需要维护其自己的按实例取消安全队列来处理未完成的 i/o 操作，则可以设置此类队列，方法是：在其*InstanceSetupCallback*例程中调用[*FltCbdqInitialize*](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltcbdqinitialize) ，并根据需要在其 preoperation 回调例程中调用[*FltCbdqInsertIo*](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltcbdqinsertio) ，将 i/o 操作插入队列。
+如果微筛选器驱动程序需要维护其自己的按实例取消安全队列来处理未完成的 i/o 操作，则可以设置此类队列，方法是：在其 *InstanceSetupCallback* 例程中调用 [*FltCbdqInitialize*](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltcbdqinitialize) ，并根据需要在其 preoperation 回调例程中调用 [*FltCbdqInsertIo*](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltcbdqinsertio) ，将 i/o 操作插入队列。
 
 如果 (旧筛选器和微筛选器驱动程序) 完成处理后，筛选器管理器会为 i/o 操作调用微筛选器驱动程序的 [**postoperation 回调**](/windows-hardware/drivers/ddi/fltkernel/nc-fltkernel-pflt_post_operation_callback) 例程。
 

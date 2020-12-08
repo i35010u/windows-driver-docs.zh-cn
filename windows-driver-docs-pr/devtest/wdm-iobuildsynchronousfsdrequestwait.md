@@ -1,7 +1,6 @@
 ---
 title: 'IoBuildSynchronousFsdRequestWait 规则 (wdm) '
 description: IoBuildSynchronousFsdRequestWait 规则指定在 IoCallDriver 或 PoCallDriver 返回状态挂起的情况下应调用 KeWaitForSingleObject \_ 。
-ms.assetid: 99C717B3-1125-4DD9-81A8-1DC4F506B719
 ms.date: 05/21/2018
 keywords:
 - 'IoBuildSynchronousFsdRequestWait 规则 (wdm) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 76e3f2ca8a67fac4846db94373c35ac09a7f16cb
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 296e132c01b02877d8c2f5ce72a0bdf8fe8274e3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104250"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838083"
 ---
 # <a name="iobuildsynchronousfsdrequestwait-rule-wdm"></a>IoBuildSynchronousFsdRequestWait 规则 (wdm) 
 
 
-**IoBuildSynchronousFsdRequestWait**规则指定在[**IoCallDriver**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver)或[**PoCallDriver**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-pocalldriver)返回状态挂起的情况下应调用[**KeWaitForSingleObject**](/windows-hardware/drivers/ddi/wdm/nf-wdm-kewaitforsingleobject) \_ 。
+**IoBuildSynchronousFsdRequestWait** 规则指定在 [**IoCallDriver**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver)或 [**PoCallDriver**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-pocalldriver)返回状态挂起的情况下应调用 [**KeWaitForSingleObject**](/windows-hardware/drivers/ddi/wdm/nf-wdm-kewaitforsingleobject) \_ 。
 
 **驱动程序模型： WDM**
 

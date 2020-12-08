@@ -1,18 +1,17 @@
 ---
 title: 处理 IRP_MN_CANCEL_REMOVE_DEVICE 请求
 description: 处理 IRP_MN_CANCEL_REMOVE_DEVICE 请求
-ms.assetid: 3382c47d-6ac8-409e-b558-ad2f2ae83715
 keywords:
 - IRP_MN_CANCEL_REMOVE_DEVICE
 - 虚假取消-删除请求 WDK PnP
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 523621b725089758efd05e021ce4e08ea115e40b
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: e9303b2dc97060f5f8220cb59e5ee3efabc6f190
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89184733"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838025"
 ---
 # <a name="handling-an-irp_mn_cancel_remove_device-request"></a>处理 IRP \_ MN \_ 取消 \_ 删除 \_ 设备请求
 
@@ -24,7 +23,7 @@ ms.locfileid: "89184733"
 
 除了将 **irp \_ MN \_ CANCEL \_ REMOVE \_ 设备** 发送到设备之外，PNP 管理器还会将 irp 发送到设备的删除关系（如果有）。 PnP 管理器还会将取消-删除 IRP 发送到设备的子项。
 
-当**IRP \_ MN " \_ 取消 \_ 删除 \_ 设备**" 请求完成后，PnP 管理器会调用任何**EventCategoryTargetDeviceChange**通知回调。 此类回调是通过调用 [**IoRegisterPlugPlayNotification**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioregisterplugplaynotification)在设备上注册的。 PnP 管理器还通过调用 **RegisterDeviceNotification**调用为此类通知注册的任何用户模式组件。
+当 **IRP \_ MN " \_ 取消 \_ 删除 \_ 设备**" 请求完成后，PnP 管理器会调用任何 **EventCategoryTargetDeviceChange** 通知回调。 此类回调是通过调用 [**IoRegisterPlugPlayNotification**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioregisterplugplaynotification)在设备上注册的。 PnP 管理器还通过调用 **RegisterDeviceNotification** 调用为此类通知注册的任何用户模式组件。
 
 必须首先由设备的父总线驱动程序和设备堆栈中的每个更高的驱动程序处理 **IRP \_ MN \_ CANCEL \_ REMOVE \_ DEVICE** 请求。 驱动程序会在其 [*DispatchPnP*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch) 例程中处理删除 irp。
 

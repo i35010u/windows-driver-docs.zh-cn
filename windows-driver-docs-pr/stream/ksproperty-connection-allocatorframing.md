@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ 连接 \_ ALLOCATORFRAMING
 description: 在 stream 类模型中，客户端使用 KSPROPERTY \_ 连接 \_ ALLOCATORFRAMING 属性来确定 pin 的帧需求。
-ms.assetid: 02cacade-938b-4fab-928f-75f790692324
 keywords:
 - KSPROPERTY_CONNECTION_ALLOCATORFRAMING 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: df78b022a4701c17d787aceb6a1f85051784a0d3
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 8da2df0eed44adad7e5f9244ca6a48acbee8cb82
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104972"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837845"
 ---
 # <a name="ksproperty_connection_allocatorframing"></a>KSPROPERTY \_ 连接 \_ ALLOCATORFRAMING
 
@@ -61,12 +60,12 @@ ms.locfileid: "90104972"
 
  
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 此属性将返回 [**KSALLOCATOR \_ 组帧**](/windows-hardware/drivers/ddi/ks/ns-ks-ksallocator_framing)，其中描述了 pin 的组帧要求。 例如， **FrameSize** 成员指定 pin 上数据的帧大小。
 
-AVStream 微型驱动程序应使用[**KSPROPERTY \_ 连接 \_ ALLOCATORFRAMING \_ EX**](ksproperty-connection-allocatorframing-ex.md)
+AVStream 微型驱动程序应使用 [**KSPROPERTY \_ 连接 \_ ALLOCATORFRAMING \_ EX**](ksproperty-connection-allocatorframing-ex.md)
 
 请参阅 [KS 分配器](./ks-allocators.md)。 和 [AVStream 分配器](./avstream-allocators.md)。
 
@@ -86,7 +85,7 @@ AVStream 微型驱动程序应使用[**KSPROPERTY \_ 连接 \_ ALLOCATORFRAMING 
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSALLOCATOR \_ 组帧**](/windows-hardware/drivers/ddi/ks/ns-ks-ksallocator_framing)

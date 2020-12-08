@@ -1,7 +1,6 @@
 ---
 title: 处理 NIC 意外删除
 description: 处理 NIC 意外删除
-ms.assetid: afd94749-8f2a-4cce-a646-1f616a845a0e
 keywords:
 - 意外删除 WDK 网络
 - Nic WDK 网络，意外删除
@@ -9,12 +8,12 @@ keywords:
 - 即插即用 WDK NDIS 微型端口，意外 NIC 删除
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 89cae2ad9545ffbdbbbda1403bc6cb086fc8d38d
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: ed7f93c3eb44df329c0d8fb1f0a705bb323c0902
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89207939"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96836779"
 ---
 # <a name="handling-the-surprise-removal-of-a-nic"></a>处理 NIC 意外删除
 

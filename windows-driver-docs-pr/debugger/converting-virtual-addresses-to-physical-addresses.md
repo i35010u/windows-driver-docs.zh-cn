@@ -1,7 +1,6 @@
 ---
 title: 将虚拟地址转换为物理地址
 description: 将虚拟地址转换为物理地址
-ms.assetid: 5b3d19df-09cc-4131-ae64-5ce64d986df3
 keywords:
 - Virtual Address — 虚拟地址
 - 虚拟地址，转换为物理地址
@@ -13,12 +12,12 @@ keywords:
 - 内存，物理地址
 ms.date: 05/04/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 057b6cfd613233e9e48fd9d922e270cee5c136b4
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 51142221ced0dc6be1d464f8cc38b1431ed172de
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89211209"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838667"
 ---
 # <a name="converting-virtual-addresses-to-physical-addresses"></a>将虚拟地址转换为物理地址
 
@@ -42,7 +41,7 @@ ms.locfileid: "89211209"
 
 2.  确定地址的 *字节索引* 。 此数字等于虚拟地址的最小12位。 因此，虚拟地址0x0012F980 的字节索引为0x980。
 
-3.  使用[**！ process**](-process.md) extension 确定地址的*目录基*：
+3.  使用 [**！ process**](-process.md) extension 确定地址的 *目录基*：
 
     ```dbgcmd
     kd> !process 0 0
@@ -55,7 +54,7 @@ ms.locfileid: "89211209"
 
 4.  确定目录基准的 *页面帧号* 。 这只是不带三个尾随十六进制零的目录库。 在此示例中，目录基为0x098FD000，因此页面帧号为0x098FD。
 
-5.  使用 [**！ vtop**](-vtop.md) 扩展。 此扩展插件的第一个参数应为页面帧号。 **！ Vtop**的第二个参数应是相关的虚拟地址：
+5.  使用 [**！ vtop**](-vtop.md) 扩展。 此扩展插件的第一个参数应为页面帧号。 **！ Vtop** 的第二个参数应是相关的虚拟地址：
 
     ```dbgcmd
     kd> !vtop 98fd 12f980
@@ -67,7 +66,7 @@ ms.locfileid: "89211209"
 
 6.  将字节索引添加到页面开头的地址： 0x09DE9000 + 0x980 = 0x09DE9980。 这是所需的物理地址。
 
-可以通过在每个地址显示内存来验证是否已正确完成此计算。 [ **！ D \\ ** * ](-db---dc---dd---dp---dq---du---dw.md)扩展在指定的物理地址显示内存：
+可以通过在每个地址显示内存来验证是否已正确完成此计算。 [ **！ \\ D** _](-db---dc---dd---dp---dq---du---dw.md)扩展在指定的物理地址显示内存：
 
 ```dbgcmd
 kd> !dc 9de9980
@@ -77,7 +76,7 @@ kd> !dc 9de9980
 # 9de99b0 .....
 ```
 
-[**D \* (显示内存) **](d--da--db--dc--dd--dd--df--dp--dq--du--dw--dw--dyb--dyd--display-memor.md)命令使用虚拟地址作为其参数：
+[_ *D \* (显示内存)* *](d--da--db--dc--dd--dd--df--dp--dq--du--dw--dw--dyb--dyd--display-memor.md)命令使用虚拟地址作为其参数：
 
 ```dbgcmd
 kd> dc 12f980
@@ -136,7 +135,7 @@ kd> dc 12f980
 
 内存结构的大小不同，具体取决于处理器和硬件配置。 此示例取自不具有物理地址扩展 (PAE) 启用的 x86 系统。
 
-再次使用0x0012F980 作为虚拟地址，首先需要将其转换为 binary，无论是手动还是通过使用 [**. 格式 (在) 命令中显示数字格式 **](-formats--show-number-formats-.md) ：
+再次使用0x0012F980 作为虚拟地址，首先需要将其转换为 binary，无论是手动还是通过使用 [**. 格式 (在) 命令中显示数字格式**](-formats--show-number-formats-.md) ：
 
 ```dbgcmd
 kd> .formats 12f980

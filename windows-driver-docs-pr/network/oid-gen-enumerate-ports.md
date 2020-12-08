@@ -1,16 +1,15 @@
 ---
 title: OID_GEN_ENUMERATE_PORTS
 description: 作为查询，NDIS 和过量驱动程序使用 OID_GEN_ENUMERATE_PORTS OID 来确定与基础微型端口适配器关联的活动 NDIS 端口的特征。
-ms.assetid: 42a12a05-e360-4493-b037-d3a63906a132
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_GEN_ENUMERATE_PORTS 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: daab3c01f89b13db8c9ff71db8fc97a2f2a2e725
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: be243bdef2adf782a4a513981d926e2c14221eef
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89215451"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837113"
 ---
 # <a name="oid_gen_enumerate_ports"></a>OID \_ 代 \_ 枚举 \_ 端口
 
@@ -30,7 +29,7 @@ ms.locfileid: "89215451"
 
 NDIS 处理此 OID 和微型端口驱动程序不会收到此 OID 查询。
 
-如果查询成功，NDIS 将返回 NDIS \_ 状态 \_ 成功，并提供 [**ndis \_ 端口 \_ 数组**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_port_array) 结构中的查询结果。 NDIS **NumberOfPorts**端口数组的 NumberOfPorts \_ 成员 \_ 包含与微型端口适配器关联的活动端口数。 NDIS 端口数组的 **端口** 成员 \_ \_ 包含指向 [**ndis \_ 端口 \_ 特征**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_port_characteristics) 结构的指针的列表。 每个 NDIS \_ 端口 \_ 特征结构定义单个 NDIDS 端口的特征。
+如果查询成功，NDIS 将返回 NDIS \_ 状态 \_ 成功，并提供 [**ndis \_ 端口 \_ 数组**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_port_array) 结构中的查询结果。 NDIS **NumberOfPorts** 端口数组的 NumberOfPorts \_ 成员 \_ 包含与微型端口适配器关联的活动端口数。 NDIS 端口数组的 **端口** 成员 \_ \_ 包含指向 [**ndis \_ 端口 \_ 特征**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_port_characteristics) 结构的指针的列表。 每个 NDIS \_ 端口 \_ 特征结构定义单个 NDIDS 端口的特征。
 
 <a name="requirements"></a>要求
 ------------
@@ -48,7 +47,7 @@ NDIS 处理此 OID 和微型端口驱动程序不会收到此 OID 查询。
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**NDIS \_ 端口 \_ 数组**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_port_array)

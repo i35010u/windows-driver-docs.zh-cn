@@ -1,7 +1,6 @@
 ---
 title: pte
 description: Pte 扩展显示指定地址 (PDE) 的页表条目 (PTE) 和页面目录条目。
-ms.assetid: e5603e58-8d9f-4693-bca2-a319080187cc
 keywords:
 - '页表项 (PTE) '
 - 'PTE (页表条目) '
@@ -16,12 +15,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: ca587b3e750bd0a926eb5e58508de87465ae1601
-ms.sourcegitcommit: bb3b62a57ba3aea4a0adeefd2d81993367b7b334
+ms.openlocfilehash: c2643d3ade9ff57771017b932caf0ac9134d346c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88148275"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837590"
 ---
 # <a name="pte"></a>!pte
 
@@ -53,20 +52,20 @@ Kdexts.dll
 
 ### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-有关页表、页目录和状态位说明的信息，请参阅*Microsoft Windows 内部机制*，其标记为 Russinovich 和 David 所罗门群岛。 
+有关页表、页目录和状态位说明的信息，请参阅 *Microsoft Windows 内部机制*，其标记为 Russinovich 和 David 所罗门群岛。 
 
 <a name="remarks"></a>备注
 -------
 
-如果提供了一个参数，并且此参数是存储页表的内存区域中的地址，则调试器会将其视为*PTE*参数。 此参数被视为所需 PTE 的实际地址，调试器将显示此 PTE 和相应的 PDE。
+如果提供了一个参数，并且此参数是存储页表的内存区域中的地址，则调试器会将其视为 *PTE* 参数。 此参数被视为所需 PTE 的实际地址，调试器将显示此 PTE 和相应的 PDE。
 
-如果提供了一个参数，并且此参数不是该区域中的地址，则调试器会将其视为*VirtualAddress*参数。 将显示保存此地址的映射的 PTE 和 PDE。
+如果提供了一个参数，并且此参数不是该区域中的地址，则调试器会将其视为 *VirtualAddress* 参数。 将显示保存此地址的映射的 PTE 和 PDE。
 
-如果提供了两个参数，第二个参数为**1** (或任何其他小数值) ，则调试器会将第一个参数视为*LiteralAddress*。 此地址被解释为 PTE 的实际地址和 PDE 的实际地址，并将显示相应的 (和可能无效的) 数据。
+如果提供了两个参数，第二个参数为 **1** (或任何其他小数值) ，则调试器会将第一个参数视为 *LiteralAddress*。 此地址被解释为 PTE 的实际地址和 PDE 的实际地址，并将显示相应的 (和可能无效的) 数据。
 
- (x86 或 x64 目标计算机仅) 如果提供了两个参数，第二个参数大于第一个参数，则调试器会将这两个参数视为*StartAddress*和*EndAddress*。 然后，该命令显示指定内存范围内每个页面的 Pte。
+ (x86 或 x64 目标计算机仅) 如果提供了两个参数，第二个参数大于第一个参数，则调试器会将这两个参数视为 *StartAddress* 和 *EndAddress*。 然后，该命令显示指定内存范围内每个页面的 Pte。
 
-有关所有系统 Pte 的列表，请使用[**！ sysptes**](-sysptes.md)扩展。
+有关所有系统 Pte 的列表，请使用 [**！ sysptes**](-sysptes.md) 扩展。
 
 下面是来自 x86 目标计算机的示例：
 
@@ -83,9 +82,9 @@ kd> !pte 801544f4
 
 第三行使用这些内容并对其进行分析，将它们分割到页面框架编号 (PFN) 和状态位。
 
-有关如何解释和使用 PFN 的信息，请参阅[**！ pfn**](-pfn.md) extension 或将[虚拟地址转换为物理地址](converting-virtual-addresses-to-physical-addresses.md)部分。
+有关如何解释和使用 PFN 的信息，请参阅 [**！ pfn**](-pfn.md) extension 或将 [虚拟地址转换为物理地址](converting-virtual-addresses-to-physical-addresses.md) 部分。
 
-在 x86 或 x64 目标计算机上，下表显示了 PDE 和 PTE 的状态位。 **！ Pte**显示表明这些位带有大写字母或短划线，并添加其他信息。
+在 x86 或 x64 目标计算机上，下表显示了 PDE 和 PTE 的状态位。 **！ Pte** 显示表明这些位带有大写字母或短划线，并添加其他信息。
 
 <table>
 <colgroup>

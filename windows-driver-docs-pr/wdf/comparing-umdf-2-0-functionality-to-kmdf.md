@@ -1,20 +1,19 @@
 ---
 title: 将 UMDF 2 功能与 KMDF 进行比较
-description: 本主题将可用于内核模式驱动程序 (框架的功能与可用于用户模式驱动程序框架 (UMDF) 2 驱动程序的 KMDF) 驱动程序的功能进行比较。
-ms.assetid: 9D4DD1A9-DA49-4132-B98F-AFEC8B427272
+description: 本主题将 Kernel-Mode Driver Framework 可用的功能与 (KMDF) 驱动程序的功能进行比较，该驱动程序可用于 User-Mode Driver Framework (UMDF) 2 驱动程序。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1e9cafcc8fa2868a8253cf6d5b2721b90b68e597
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 73e07c67b84f483684c119f0a07175bb228404a7
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104452"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837049"
 ---
 # <a name="comparing-umdf-2-functionality-to-kmdf"></a>将 UMDF 2 功能与 KMDF 进行比较
 
 
-本主题将可用于内核模式驱动程序 (框架的功能与可用于用户模式驱动程序框架 (UMDF) 2 驱动程序的 KMDF) 驱动程序的功能进行比较。 它旨在帮助您决定是否应该编写 UMDF 2 驱动程序或 KMDF 驱动程序。
+本主题将 Kernel-Mode Driver Framework 可用的功能与 (KMDF) 驱动程序的功能进行比较，该驱动程序可用于 User-Mode Driver Framework (UMDF) 2 驱动程序。 它旨在帮助您决定是否应该编写 UMDF 2 驱动程序或 KMDF 驱动程序。
 
 虽然 UMDF 版本2提供了一项非常重要的功能，这些功能以前仅适用于 KMDF 驱动程序，但以下功能仅适用于 KMDF 驱动程序。 如果驱动程序需要这些功能之一，则必须编写 KMDF 驱动程序。
 
@@ -25,7 +24,7 @@ ms.locfileid: "90104452"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Feature</th>
+<th align="left">功能</th>
 <th align="left">相关信息</th>
 </tr>
 </thead>

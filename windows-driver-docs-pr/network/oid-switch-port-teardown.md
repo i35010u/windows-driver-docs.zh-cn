@@ -1,30 +1,29 @@
 ---
 title: OID_SWITCH_PORT_TEARDOWN
 description: Hyper-v 可扩展交换机的协议边缘 (OID 发出对象标识符) 设置 OID_SWITCH_PORT_TEARDOWN 请求，以通知底层可扩展交换机扩展，可扩展交换机端口将开始删除过程。
-ms.assetid: 94FA23AC-2064-40C8-B99C-D8D3DC10BFF9
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_SWITCH_PORT_TEARDOWN 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: c2dd3548f8321c929177b5e1e8fa2352fa6667ba
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 27fd0d70a3d13d8bce34b017a638ee6c80a480a9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89215855"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96836741"
 ---
 # <a name="oid_switch_port_teardown"></a>OID \_ 交换机 \_ 端口 \_ 拆卸
 
 
 Hyper-v 可扩展交换机的协议边缘 (OID 发出对象标识符) 设置 OID \_ 交换机 \_ 端口 \_ 拆卸请求，通知底层的可扩展交换机扩展，可扩展交换机端口会开始删除过程。 此过程在协议驱动程序发出 oid [ \_ 交换机 \_ 端口 \_ 删除](oid-switch-port-delete.md)请求时启动。
 
-[**Ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的**InformationBuffer**成员包含指向[**NDIS \_ 交换机 \_ 端口 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_port_parameters)结构的指针。
+[**Ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的 **InformationBuffer** 成员包含指向 [**NDIS \_ 交换机 \_ 端口 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_port_parameters)结构的指针。
 
 <a name="remarks"></a>备注
 -------
 
-[**NDIS \_ 交换机 \_ 端口 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_port_parameters)结构的**PortId**成员指定为其发出连接通知的可扩展交换机端口。 可扩展交换机扩展必须按以下方式更新有关其获取的端口的任何缓存信息：
+[**NDIS \_ 交换机 \_ 端口 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_port_parameters)结构的 **PortId** 成员指定为其发出连接通知的可扩展交换机端口。 可扩展交换机扩展必须按以下方式更新有关其获取的端口的任何缓存信息：
 
--   发出 oid [ \_ 交换机 \_ 端口 \_ 数组](oid-switch-port-array.md)的 oid 查询请求。 仅当[OID \_ 开关 \_ 参数](oid-switch-parameters.md)返回将**IsActive**设置为 TRUE 的[**NDIS \_ 开关 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_parameters)结构时，扩展才会在[*FilterAttach*](/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_attach)上发出此 OID。 如果 **IsActive** 为 FALSE，则扩展小型端口发出 **NetEventSwitchActivate** [**NET \_ PNP \_ 事件**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_pnp_event) 时，扩展会发出 OID。
+-   发出 oid [ \_ 交换机 \_ 端口 \_ 数组](oid-switch-port-array.md)的 oid 查询请求。 仅当 [OID \_ 开关 \_ 参数](oid-switch-parameters.md)返回将 **IsActive** 设置为 TRUE 的 [**NDIS \_ 开关 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_parameters)结构时，扩展才会在 [*FilterAttach*](/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_attach)上发出此 OID。 如果 **IsActive** 为 FALSE，则扩展小型端口发出 **NetEventSwitchActivate** [**NET \_ PNP \_ 事件**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_pnp_event) 时，扩展会发出 OID。
 
 -   检查各种 OID 会设置 [oid \_ 交换机 \_ 端口 \_ 创建](oid-switch-port-create.md) 和 [oid \_ 交换机 \_ 端口 \_ 删除](oid-switch-port-delete.md)请求。
 
@@ -38,7 +37,7 @@ Hyper-v 可扩展交换机的协议边缘 (OID 发出对象标识符) 设置 OID
 
 扩展完成此 OID 集请求并且可扩展交换机端口的引用计数器为零后，可扩展交换机的协议边缘将发出 oid [ \_ 交换机 \_ 端口 \_ 删除](oid-switch-port-delete.md)的 oid 设置请求。 此 OID 请求从可扩展交换机中删除端口。
 
-**注意**   扩展通过调用[*ReferenceSwitchPort*](/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_reference_switch_port)来递增可扩展交换机端口的引用计数器。 扩展通过调用 [*DereferenceSwitchPort*](/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_dereference_switch_port)来递减引用计数器。
+**注意**  扩展通过调用 [*ReferenceSwitchPort*](/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_reference_switch_port)来递增可扩展交换机端口的引用计数器。 扩展通过调用 [*DereferenceSwitchPort*](/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_dereference_switch_port)来递减引用计数器。
 
  
 
@@ -46,13 +45,13 @@ Hyper-v 可扩展交换机的协议边缘 (OID 发出对象标识符) 设置 OID
 
 -   扩展必须始终将此 OID 集请求转发到基础扩展。 此扩展不能导致请求失败。
 
-    **注意**   扩展不得修改与 OID 请求关联的[**NDIS \_ 交换机 \_ 端口 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_port_parameters)结构。
+    **注意**  扩展不得修改与 OID 请求关联的 [**NDIS \_ 交换机 \_ 端口 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_port_parameters) 结构。
 
      
 
 -   扩展转发此 OID 请求后，它无法将数据包转发到删除的端口。 扩展还不能为已删除的端口发出 OID 请求，也不能调用 [*ReferenceSwitchPort*](/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_reference_switch_port) 函数。
 
-**注意**   扩展不得颁发 oid \_ 交换机端口拆卸的 oid 设置请求 \_ \_ 。
+**注意**  扩展不得颁发 oid \_ 交换机端口拆卸的 oid 设置请求 \_ \_ 。
 
  
 
@@ -103,7 +102,7 @@ Hyper-v 可扩展交换机的协议边缘 (OID 发出对象标识符) 设置 OID
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 ****

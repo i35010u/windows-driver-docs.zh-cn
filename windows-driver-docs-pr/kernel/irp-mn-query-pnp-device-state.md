@@ -2,16 +2,15 @@
 title: IRP_MN_QUERY_PNP_DEVICE_STATE
 description: 函数、筛选器和总线驱动程序可处理此请求。
 ms.date: 08/12/2017
-ms.assetid: 24362a20-9e9d-4566-bc95-ce52b91056af
 keywords:
-- IRP_MN_QUERY_PNP_DEVICE_STATE 内核模式驱动程序体系结构
+- IRP_MN_QUERY_PNP_DEVICE_STATE Kernel-Mode 驱动程序体系结构
 ms.localizationpriority: medium
-ms.openlocfilehash: 0763a0660ed0892b827b35b28e5fd8652c8297fa
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: fe45dcc9aa36d32ef7561ea6b0d4849a6a923214
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107288"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96836917"
 ---
 # <a name="irp_mn_query_pnp_device_state"></a>IRP \_ MN \_ 查询 \_ PNP \_ 设备 \_ 状态
 
@@ -61,7 +60,7 @@ PnP 管理器在任意线程的上下文中以 IRQL 被动级别发送此 IRP \_
 
 此 IRP 首先由设备堆栈顶部的驱动程序和堆栈中的每个下一个较低的驱动程序处理。
 
-如果驱动程序包含有关设备 PnP 状态的信息，则该驱动程序将处理此 IRP。 驱动程序可以在 PNP \_ 设备状态位掩码中设置或清除标志 \_ 。 如果其他驱动程序已 \_ \_ 在 **Irp- &gt; IoStatus**中设置 PNP 设备状态，则驱动程序必须小心修改该位掩码中的标志，而不是覆盖整个结构。
+如果驱动程序包含有关设备 PnP 状态的信息，则该驱动程序将处理此 IRP。 驱动程序可以在 PNP \_ 设备状态位掩码中设置或清除标志 \_ 。 如果其他驱动程序已 \_ \_ 在 **Irp- &gt; IoStatus** 中设置 PNP 设备状态，则驱动程序必须小心修改该位掩码中的标志，而不是覆盖整个结构。
 
 请参阅 [即插即用](./introduction-to-plug-and-play.md) ，了解用于处理 [即插即用次要 irp](plug-and-play-minor-irps.md)的一般规则。
 

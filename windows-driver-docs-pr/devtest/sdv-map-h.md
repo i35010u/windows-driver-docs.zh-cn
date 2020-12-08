@@ -1,42 +1,41 @@
 ---
 title: Sdv-map.h
 description: Sdv-map.h
-ms.assetid: c230fb86-fe65-416b-bd3e-a0ab7270576d
 keywords:
-- 输出文件 WDK Static Driver Verifier
-- Sdv map.h WDK 的 Static Driver Verifier
-- 头文件 WDK Static Driver Verifier
-- 驱动程序入口点 WDK Static Driver Verifier
-- 入口点 WDK Static Driver Verifier
-- 有关 Sdv map.h 的 Sdv map.h WDK Static Driver Verifier
-- 扫描 DriverEntry 例程 WDK Static Driver Verifier
+- 输出文件 WDK 静态驱动程序验证程序
+- Sdv-map 静态驱动程序验证程序
+- 标头文件 WDK 静态驱动程序验证程序
+- 驱动程序入口点 WDK 静态驱动程序验证程序
+- 入口点 WDK 静态驱动程序验证程序
+- Sdv-map-map 静态驱动程序验证程序，关于 Sdv
+- 扫描 DriverEntry 例程 WDK 静态驱动程序验证程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 02ee90b793f42a3150612dfc97be2ed6ade6d323
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f237f9fab219161aedeeb0f4802370f3791b7550
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63340157"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838327"
 ---
 # <a name="sdv-maph"></a>Sdv-map.h
 
 
-Sdv map.h 是列出 SDV 检测到驱动程序中的驱动程序入口点的标头文件。
+Sdv 是一个标头文件，该文件列出驱动程序中 SDV 检测到的驱动程序入口点。
 
-SDV 在使用时，驱动程序的源目录中创建的 Sdv map.h 文件**staticdv /scan**命令，扫描驱动程序的源代码。 SDV 使用函数角色类型声明标识的入口点。 如果不使用**staticdv /scan**命令，使用时将 SDV 创建 Sdv map.h 文件**staticdv /check**命令以运行 SDV 分析。
+当你使用 **staticdv/scan** 命令扫描驱动程序的源代码时，SDV 在驱动程序的源目录中创建 SDV 文件。 SDV 使用函数角色类型声明来标识入口点。 如果不使用 **staticdv/scan** 命令，则在使用 **staticdv/CHECK** 命令运行 SDV 分析时，SDV 将创建 SDV-map 文件。
 
-如果此文件是不准确或不完整，您可以更正、 批准，重新扫描并重新运行验证。
+如果此文件不准确或不完整，你可以更正并批准它，然后重新扫描并重新运行验证。
 
-本部分包括：
+本节包括：
 
-[了解 Sdv map.h](understanding-the-sdv-map-h-file.md)
+[了解 Sdv](understanding-the-sdv-map-h-file.md)
 
-[Sdv map.h 格式](format-of-the-sdv-map-h-file.md)
+[Sdv 格式](format-of-the-sdv-map-h-file.md)
 
-[批准 Sdv map.h](approving-the-sdv-map-h-file.md)
+[批准 Sdv](approving-the-sdv-map-h-file.md)
 
-[重复入口点函数角色类型](duplicate-entry-points-for-a-function-role-type.md)
+[函数角色类型的重复入口点](duplicate-entry-points-for-a-function-role-type.md)
 
  
 

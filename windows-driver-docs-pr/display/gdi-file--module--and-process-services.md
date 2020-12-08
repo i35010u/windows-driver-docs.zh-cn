@@ -1,7 +1,6 @@
 ---
 title: GDI 文件、模块和进程服务
 description: GDI 文件、模块和进程服务
-ms.assetid: abf37bed-cad9-4fbc-95fe-346b0c07c81b
 keywords:
 - GDI WDK Windows 2000 显示，模块服务
 - 图形驱动程序 WDK Windows 2000 显示，模块服务
@@ -17,12 +16,12 @@ keywords:
 - 模块 WDK GDI
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 043b2093bee6b5251708b0070a7c9379b934eaf3
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 10db78a0cb9a98c37b5a55d258c292de5d221b02
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90714744"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96836829"
 ---
 # <a name="gdi-file-module-and-process-services"></a>GDI 文件、模块和进程服务
 
@@ -40,7 +39,7 @@ GDI 为文件、模块和处理操作提供各种服务。
 <thead>
 <tr class="header">
 <th align="left">函数</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>

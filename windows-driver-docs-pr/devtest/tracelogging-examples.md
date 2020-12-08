@@ -1,15 +1,14 @@
 ---
 title: TraceLogging 示例
 description: 本主题中的源代码演示了如何使用 TraceLogging。
-ms.assetid: 0FD7D517-D46A-4D76-A5E1-3267DBB09A29
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 63f911941915358618766d92de6b66cab24a93d7
-ms.sourcegitcommit: 930dc67b8b83a9e9628c54a5d1470c7f698d1824
+ms.openlocfilehash: 693919cdc43c2c44d3ff298f3d4186dc5bed4b9e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/09/2020
-ms.locfileid: "89591994"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838119"
 ---
 # <a name="tracelogging-examples"></a>TraceLogging 示例
 

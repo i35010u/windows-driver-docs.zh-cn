@@ -1,17 +1,16 @@
 ---
 title: 调试超时
 description: 调试超时
-ms.assetid: 795774da-10fb-4431-908d-94c3baa01132
 keywords:
 - 超时
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 52aa4d073c745b40201cbc064fc3c71b0d00f142
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7a34171e1a39f22ac80b0e891914128c614848a9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63324597"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838233"
 ---
 # <a name="debugging-a-time-out"></a>调试超时
 
@@ -19,15 +18,15 @@ ms.locfileid: "63324597"
 ## <span id="ddk_debugging_time_outs_dbg"></span><span id="DDK_DEBUGGING_TIME_OUTS_DBG"></span>
 
 
-有两个主要超时发生在 Windows 系统上：
+Windows 系统上发生了两个主要的时间：
 
-[资源超时](resource-time-outs.md)（内核模式）
+ (内核模式) 的[资源超时](resource-time-outs.md)
 
-[关键部分超时](critical-section-time-outs.md)（用户模式）
+[临界区超时](critical-section-time-outs.md) (用户模式) 
 
-在许多情况下，这些问题是线程的只需花费太长，无法发布资源或退出代码部分。
+在许多情况下，这些问题只是一个线程释放资源或退出代码段所需的时间太长。
 
-在零售系统中，超时值设置得足够高，则不会看到 （将只挂起，则返回 true 的死锁） 的中断。 在注册表中设置的超时值**HKEY\_本地\_机\\系统\\CurrentControlSet\\控制\\SessionManager**。 整数值在每个超时中指定秒的数。
+在零售系统上，超时值设置得足够高，以致于真正的死锁 (会导致) 中断。 在注册表中的 **HKEY \_ LOCAL \_ MACHINE \\ System \\ CurrentControlSet \\ Control \\ SessionManager** 下设置超时值。 整数值指定每个超时中的秒数。
 
  
 

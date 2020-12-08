@@ -1,26 +1,25 @@
 ---
 title: OID_GEN_INIT_TIME_MS
-description: 为查询，OID_GEN_INIT_TIME_MS OID 以毫秒为单位的初始化所需的驱动程序返回的时间。
-ms.assetid: 044e7a4f-b4d5-4a47-81c0-571fdd2ae5bb
+description: 作为查询，OID_GEN_INIT_TIME_MS OID 返回初始化驱动程序所需的时间（以毫秒为单位）。
 ms.date: 08/08/2017
-keywords: -OID_GEN_INIT_TIME_MS 网络与 Windows Vista 一起启动的驱动程序
+keywords: -从 Windows Vista 开始 OID_GEN_INIT_TIME_MS 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 764c8d33f1bbca445d42962431bfde41945f1e04
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8151e2546ed669f8fe1d59ad78954a37b4f79575
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63338391"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96836755"
 ---
-# <a name="oidgeninittimems"></a>OID\_GEN\_INIT\_时间\_MS
+# <a name="oid_gen_init_time_ms"></a>OID \_ 生成 \_ 初始化 \_ 时间 \_ 毫秒
 
 
-为查询，OID\_GEN\_INIT\_时间\_MS OID 返回以毫秒为单位的驱动程序初始化所需的时间。
+作为查询，OID \_ GEN \_ 初始 \_ 时间 \_ MS OID 返回初始化驱动程序所需的时间（以毫秒为单位）。
 
 <a name="remarks"></a>备注
 -------
 
-OID\_GEN\_INIT\_时间\_MS OID 返回以毫秒为单位的驱动程序初始化所需的时间。
+OID \_ GEN \_ 初始 \_ 时间 \_ MS OID 返回初始化驱动程序所需的时间（以毫秒为单位）。
 
 <a name="requirements"></a>要求
 ------------
@@ -32,12 +31,12 @@ OID\_GEN\_INIT\_时间\_MS OID 返回以毫秒为单位的驱动程序初始化�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Version</p></td>
-<td><p>支持 NDIS 5.1 及更高版本的驱动程序在 Windows Vista 和更高版本的 Windows 和 Windows 的更高版本。 支持 NDIS 5.1 在 Windows XP 中的驱动程序。</p></td>
+<td><p>版本</p></td>
+<td><p>Windows Vista 及更高版本的 windows 和更高版本的 windows 中的 NDIS 5.1 和更高版本驱动程序支持。 Windows XP 中的 NDIS 5.1 驱动程序支持。</p></td>
 </tr>
 <tr class="even">
-<td><p>Header</p></td>
-<td>Ntddndis.h （包括 Ndis.h）</td>
+<td><p>标头</p></td>
+<td>Ntddndis (包含 Ndis .h) </td>
 </tr>
 </tbody>
 </table>

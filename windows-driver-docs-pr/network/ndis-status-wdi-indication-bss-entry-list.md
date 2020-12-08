@@ -1,17 +1,16 @@
 ---
 title: NDIS_STATUS_WDI_INDICATION_BSS_ENTRY_LIST
 description: 微型端口驱动程序使用 NDIS_STATUS_WDI_INDICATION_BSS_ENTRY_LIST 通知主机有关 BSS 项的更新。 这是一个未经请求的指示，随时可以发送。
-ms.assetid: 5b9fd7b1-0817-4b86-9acc-b4f99cb7ae9a
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 NDIS_STATUS_WDI_INDICATION_BSS_ENTRY_LIST 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: ec086f11348957c8787e13715ee317d776011bc7
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: ec7894401993af3742d1bf5a4f85cd15265bd6b2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89207433"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837148"
 ---
 # <a name="ndis_status_wdi_indication_bss_entry_list"></a>NDIS \_ 状态 \_ WDI \_ 指示 \_ BSS \_ 条目 \_ 列表
 
@@ -48,7 +47,7 @@ ms.locfileid: "89207433"
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
-<td><p>Windows Server 2016</p></td>
+<td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
 <td><p>标头</p></td>
@@ -57,7 +56,7 @@ ms.locfileid: "89207433"
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [OID \_ WDI \_ 任务 \_ 扫描](oid-wdi-task-scan.md)

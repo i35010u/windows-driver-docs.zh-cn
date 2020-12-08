@@ -1,7 +1,6 @@
 ---
 title: Tracelog
 description: 'Tracelog ( # A0) 是在命令提示符窗口中运行的事件跟踪控制器。 本部分介绍 Tracelog、说明其命令语法，并提供其使用情况的实际示例。'
-ms.assetid: aa3c144d-260b-44d2-b41c-d18be40ba541
 keywords:
 - Tracelog WDK
 - 软件跟踪 WDK，Tracelog
@@ -10,12 +9,12 @@ keywords:
 - 跟踪会话管理 WDK Tracelog
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8780490725839b794e36c564a8975cc72ca39461
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: a75ea0454067cca3d7ca5b11163cb4d827eeaef8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103204"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838123"
 ---
 # <a name="tracelog"></a>Tracelog
 
@@ -33,7 +32,7 @@ Tracelog ( # A0) 是在命令提示符窗口中运行的事件跟踪控制器。
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>安装 WDK、Visual Studio 和桌面应用的 Windows SDK 时，将包含 Tracelog ( # A0) 。 有关下载套件的信息，请参阅 <a href="/windows-hardware/drivers/download-the-wdk" data-raw-source="[Windows Hardware Downloads](../download-the-wdk.md)">Windows 硬件下载</a>。</p>
+<td align="left"><p>安装 WDK、Visual Studio 和桌面应用的 Windows SDK 时，将包含 Tracelog ( # A0) 。 有关下载工具包的信息，请参阅 <a href="/windows-hardware/drivers/download-the-wdk" data-raw-source="[Windows Hardware Downloads](../download-the-wdk.md)">Windows 硬件下载</a>。</p>
 <p><strong>Windows 驱动程序工具包 (WDK) 8</strong> (安装路径) </p>
 <p>% WindowsSdkDir% \tools\x64\tracelog.exe</p>
 <p>% WindowsSdkDir% \tools\x86\tracelog.exe</p>
@@ -41,7 +40,7 @@ Tracelog ( # A0) 是在命令提示符窗口中运行的事件跟踪控制器。
 <p>% WindowsSdkDir% \bin\x64\tracelog.exe</p>
 <p>% WindowsSdkDir% \bin\x86\tracelog.exe</p>
 <div class="alert">
-<strong>注意</strong>   Visual Studio 环境变量% WindowsSdkDir% 表示安装包的 Windows 工具包目录的路径，例如，C:\Program 文件 (x86) \Windows Kits\8.1。
+<strong>注意</strong>  Visual Studio 环境变量（%WindowsSdkDir%）表示安装了工具包的 Windows 工具包目录的路径，例如 C:\Program Files (x86)\Windows Kits\8.1。
 </div>
 </td>
 </tr>
@@ -55,7 +54,7 @@ Tracelog ( # A0) 是在命令提示符窗口中运行的事件跟踪控制器。
 
 可以在命令提示符窗口中使用 Tracelog 作为事件跟踪控制器。
 
-**注意**   若要控制跟踪会话，你必须是性能日志用户组的成员，或者是计算机上的 "管理员" 组的成员 ("**以管理员身份运行**") 。
+**注意**  若要控制跟踪会话，你必须是性能日志用户组的成员，或者是计算机上的 "管理员" 组的成员 (" **以管理员身份运行** ") 。
 
 Tracelog 功能包括：
 

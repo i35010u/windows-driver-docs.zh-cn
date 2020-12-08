@@ -1,7 +1,6 @@
 ---
 title: Bug 检查 0x117 VIDEO_TDR_TIMEOUT_DETECTED
 description: VIDEO_TDR_TIMEOUT_DETECTED bug 检查的值为0x00000117。 这表示显示驱动程序未能及时响应。
-ms.assetid: 70e24a97-f695-4d35-b52f-69dfddecd9b5
 keywords:
 - Bug 检查 0x117 VIDEO_TDR_TIMEOUT_DETECTED
 - VIDEO_TDR_TIMEOUT_DETECTED
@@ -13,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 4295ff80e00a30508d1fdf878064d46687382141
-ms.sourcegitcommit: 20eac54e419a594f7cea766ee28f158559dfd79c
+ms.openlocfilehash: e42a784bfaf0688c5b9d654ccb5a3f2b145f3a1b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91755018"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96836895"
 ---
 # <a name="bug-check-0x117-video_tdr_timeout_detected"></a>Bug 检查0x117： \_ \_ 检测到视频 TDR 超时 \_
 
@@ -40,7 +39,7 @@ ms.locfileid: "91755018"
 <thead>
 <tr class="header">
 <th align="left">参数</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -167,7 +166,7 @@ Memory read error 10041b08
 BUGCHECK_P2: ffffffff9a02381e
 ```
 
-你可能希望使用 [**k、kb、glm-kc-qnw、kd、kp、kp、kv (显示 Stack Backtrace) **](k--kb--kc--kd--kp--kp--kv--display-stack-backtrace-.md) 命令来检查堆栈跟踪。
+你可能希望使用 [**k、kb、glm-kc-qnw、kd、kp、kp、kv (显示 Stack Backtrace)**](k--kb--kc--kd--kp--kp--kv--display-stack-backtrace-.md) 命令来检查堆栈跟踪。
 
 ```dbgcmd
 3: kd> k

@@ -1,7 +1,6 @@
 ---
 title: DEVPKEY_DeviceClass_Security
 description: DEVPKEY_DeviceClass_Security
-ms.assetid: e23fd11b-07ee-4375-841d-1fa9c42d5a28
 keywords:
 - DEVPKEY_DeviceClass_Security 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: c9e566cd2a755f98a4f53da4ca9677ba120d3e59
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 8505a140e237a754b741b31873164be2af0ff443
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90715564"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838026"
 ---
 # <a name="devpkey_deviceclass_security"></a>DEVPKEY_DeviceClass_Security
 

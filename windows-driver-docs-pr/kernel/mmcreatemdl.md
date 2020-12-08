@@ -1,15 +1,14 @@
 ---
 title: Windows 内核的已过时例程
 description: Windows 内核的已过时例程
-ms.assetid: 876f48be-1d8f-4c65-bc84-e35c31919c47
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 41b93fb15762539f3050e36a21558a6b6cd50ed9
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: aec1e81e335b884e7564f6ab7477a851bdedcc85
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91733147"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838017"
 ---
 # <a name="windows-kernel-obsolete-routines"></a>Windows 内核的已过时例程
 
@@ -24,7 +23,7 @@ ms.locfileid: "91733147"
 <thead>
 <tr class="header">
 <th>过时例程</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>

@@ -1,19 +1,18 @@
 ---
 title: 将 DDI 的 ProcAmp 控件映射到 DirectDraw 和 DirectX VA
 description: 通过 DirectDraw 的 [运动补偿回调函数](motion-compensation-callbacks.md)访问 ProcAmp 控件功能，并将其映射到 [ProcAmp 控制 DDI](./procamp-control-ddi.md)。
-ms.assetid: ca2b92d9-7f3d-45b9-8841-43915dd4237d
 keywords:
 - ProcAmp WDK DirectX VA，映射 ProcAmp 控制 DDI
 - 映射 ProcAmp 控件 DDI
 ms.date: 12/06/2018
 ms.localizationpriority: medium
 ms.custom: seodec18
-ms.openlocfilehash: b510db5e7d77f4843248b66a6e77c1e958a58aa2
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 969998a22f4c1c811d832c84120b4c0d0648f926
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89065147"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96836831"
 ---
 # <a name="map-the-procamp-control-ddi-to-directdraw-and-directx-va"></a>将 DDI 的 ProcAmp 控件映射到 DirectDraw 和 DirectX VA
 

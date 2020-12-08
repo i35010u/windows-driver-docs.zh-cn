@@ -1,32 +1,31 @@
 ---
 title: 注册表通知中的项对象指针无效
 description: 注册表通知中的项对象指针无效
-ms.assetid: 96709c34-63a7-4b4e-8588-c7e8b41b5dea
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: ea401d16b76d9b41856630c74ff7785fd7d4fb80
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 1df5e2c644954859b49fa58ecaf00cad56861154
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89187281"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838455"
 ---
 # <a name="invalid-key-object-pointers-in-registry-notifications"></a>注册表通知中的项对象指针无效
 
 
-若要避免严重错误和可能的内存损坏，注册表筛选驱动程序不得尝试使用无效的对象指针访问密钥对象。 本主题列出了注册表回调通知结构的 **对象** 成员可能包含未定义的非**NULL** 值的情况。
+若要避免严重错误和可能的内存损坏，注册表筛选驱动程序不得尝试使用无效的对象指针访问密钥对象。 本主题列出了注册表回调通知结构的 **对象** 成员可能包含未定义的非 **NULL** 值的情况。
 
 在注册表筛选驱动程序中， [*RegistryCallback*](/windows-hardware/drivers/ddi/wdm/nc-wdm-ex_callback_function) 例程的第二个参数是 [**REG \_ 通知 \_ 类**](/windows-hardware/drivers/ddi/wdm/ne-wdm-_reg_notify_class) 枚举值。 此值指示 *RegistryCallback* 例程的第三个参数所指向的注册表回调通知的类型。 通知结构包含有关注册表操作的信息。 此结构的类型根据正在执行的注册表操作而有所不同。
 
-许多通知结构类型都包含指向密钥对象的 **对象** 成员。 在某些情况下， **对象** 成员可以包含非**NULL**值，但不是指向有效密钥对象的指针。
+许多通知结构类型都包含指向密钥对象的 **对象** 成员。 在某些情况下， **对象** 成员可以包含非 **NULL** 值，但不是指向有效密钥对象的指针。
 
 ### <a name="key-object-value-is-undefined"></a>键对象值未定义
 
-如果对注册表筛选驱动程序的*RegistryCallback*例程的调用中的第二个参数是**RegNtPostCreateKeyEx**或**RegNtPostOpenKeyEx**的**reg \_ 通知 \_ 类**枚举值，则第三个参数是指向[**REG \_ POST \_ 操作 \_ 信息**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_reg_post_operation_information)结构的指针。 仅当结构的**状态**成员设置为状态 "成功" 时，此结构的**对象**成员才有效 \_ 。 任何其他 **状态值** ，包括 **NT \_ SUCCESS** 宏的计算结果为 **TRUE**的非零状态代码，指示 **对象** 成员的值是不确定的。
+如果对注册表筛选驱动程序的 *RegistryCallback* 例程的调用中的第二个参数是 **RegNtPostCreateKeyEx** 或 **RegNtPostOpenKeyEx** 的 **reg \_ 通知 \_ 类** 枚举值，则第三个参数是指向 [**REG \_ POST \_ 操作 \_ 信息**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_reg_post_operation_information)结构的指针。 仅当结构的 **状态** 成员设置为状态 "成功" 时，此结构的 **对象** 成员才有效 \_ 。 任何其他 **状态值** ，包括 **NT \_ SUCCESS** 宏的计算结果为 **TRUE** 的非零状态代码，指示 **对象** 成员的值是不确定的。
 
 ### <a name="key-object-value-is-not-in-a-valid-state"></a>键对象值未处于有效状态
 
-如果注册表回调中的第二个参数是以下 REG notification ** \_ \_ 类** 枚举值之一，则注册表回调通知结构的 **对象** 成员指向正在销毁的密钥对象，其引用计数为零：
+如果注册表回调中的第二个参数是以下 REG notification **\_ \_ 类** 枚举值之一，则注册表回调通知结构的 **对象** 成员指向正在销毁的密钥对象，其引用计数为零：
 
 -   **RegNtPreKeyHandleClose** ([**注册表 \_ 项 \_ 处理 \_ 关闭 \_ 信息**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_reg_key_handle_close_information) 结构) 
 

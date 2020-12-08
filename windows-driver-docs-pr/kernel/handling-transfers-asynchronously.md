@@ -1,7 +1,6 @@
 ---
 title: 以异步方式处理传输
 description: 以异步方式处理传输
-ms.assetid: 84b231bd-54ff-4312-8e6c-cfc33e72b8cc
 keywords:
 - DispatchRead 例程
 - DispatchWrite 例程
@@ -19,12 +18,12 @@ keywords:
 - 传输数据 WDK 内核，异步
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f02b4c3486799ad7e16f852f6ab84ead0d837c39
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 1ec1f4f1762dfc7d6217e7ffba57ab9d657106b0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89190683"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96836925"
 ---
 # <a name="handling-transfers-asynchronously"></a>以异步方式处理传输
 

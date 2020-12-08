@@ -1,17 +1,16 @@
 ---
 title: WDI_TLV_OS_POWER_MANAGEMENT_FEATURES
 description: WDI_TLV_OS_POWER_MANAGEMENT_FEATURES 是一种 TLV，其中包含操作系统电源管理功能的标志。
-ms.assetid: 4F104956-1B26-47DF-A58F-53C24B75DB77
 ms.date: 03/30/2018
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_OS_POWER_MANAGEMENT_FEATURES 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 8a6ab37fce9c75b1a4c318d32d318ab1b0849662
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 9ecd6e2cbfa0e65641a583261707fd6f0949a87f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89215425"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838551"
 ---
 # <a name="wdi_tlv_os_power_management_features"></a>WDI_TLV_OS_POWER_MANAGEMENT_FEATURES
 
@@ -21,14 +20,14 @@ WDI_TLV_OS_POWER_MANAGEMENT_FEATURES 是一种 TLV，其中包含操作系统电
 
 0x144
 
-## <a name="length"></a>Length
+## <a name="length"></a>长度
 
 
 以下值的大小 (以字节为单位) 。
 
 ## <a name="values"></a>值
 
-| 类型 | 说明 |
+| 类型 | 描述 |
 | --- | --- |
 | [**WDI_OS_POWER_MANAGEMENT_FLAGS**](/windows-hardware/drivers/ddi/wditypes/ne-wditypes-_wdi_os_power_management_flags) | 定义支持的 NAPS 支持方案的 **WDI_OS_POWER_MANAGEMENT_FLAGS** 值的按位 or。 |
  

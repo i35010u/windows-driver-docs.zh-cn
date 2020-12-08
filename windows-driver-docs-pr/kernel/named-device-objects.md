@@ -1,18 +1,17 @@
 ---
 title: 命名的设备对象
 description: 命名的设备对象
-ms.assetid: 4e24f0c1-57b2-4e06-a7f5-9a93d365ac8c
 keywords:
 - 设备对象 WDK 内核，名为
 - 命名设备对象 WDK 内核
 ms.date: 09/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3b555a0ecdad24f913c7ada118064554b3cab51e
-ms.sourcegitcommit: 6c42efc074ab939e7737d6c2b016d3f3a75954e1
+ms.openlocfilehash: 3dbb3233e7df42cf0ff7f168dc8dbab0d1ad8cc0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90741026"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838009"
 ---
 # <a name="named-device-objects"></a>命名的设备对象
 

@@ -1,18 +1,17 @@
 ---
 title: 创建日志文件
 description: 创建日志文件
-ms.assetid: dad0f9fc-1a88-4bee-800a-5a4464fff600
 keywords:
-- 日志文件 WDK Driver Verifier
+- 日志文件 WDK 驱动程序验证程序
 - 驱动程序验证程序 WDK，日志文件
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5de449515a57945ab411524d55c6fbdeccf4b777
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 69bd05f2e079a898530f76aa73ca4edb324998f2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380965"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838147"
 ---
 # <a name="creating-log-files"></a>创建日志文件
 
@@ -20,13 +19,13 @@ ms.locfileid: "63380965"
 ## <span id="ddk_creating_log_files_tools"></span><span id="DDK_CREATING_LOG_FILES_TOOLS"></span>
 
 
-驱动程序验证程序可以创建日志文件。 这些文件将包含与 Driver Verifier 的操作和要验证的驱动程序的操作相关的统计信息的一些定期更新。
+驱动程序验证程序可以创建日志文件。 这些文件将包含与驱动程序验证程序的操作有关的统计信息的定期更新以及要验证的驱动程序的操作。
 
-日志文件通过使用创建的验证程序实用工具 **/log**参数。 还可以指定的日志记录的频率。 请参阅[**验证程序命令行**](verifier-command-line.md)有关详细信息。
+使用 **/log** 参数从验证程序实用工具创建日志文件。 还可以指定日志记录的频率。 有关详细信息，请参阅 [**Verifier 命令行**](verifier-command-line.md) 。
 
-每个条目将只包含全局计数器和各个计数器，如同**verifier /query**命令。
+每个条目都包含全局计数器和单个计数器，就像验证程序 **/query** 命令一样。
 
-这些统计信息的说明，请参阅[监视全局计数器](monitoring-global-counters.md)并[监视各个计数器](monitoring-individual-counters.md)。
+有关这些统计信息的说明，请参阅 [监视全局计数器](monitoring-global-counters.md) 和 [监视单个计数器](monitoring-individual-counters.md)。
 
  
 

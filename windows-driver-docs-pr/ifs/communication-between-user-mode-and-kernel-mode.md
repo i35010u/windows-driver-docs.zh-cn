@@ -1,7 +1,6 @@
 ---
 title: 用户模式和内核模式之间的通信
 description: 用户模式和内核模式之间的通信
-ms.assetid: ddfec0d0-ec7d-4f76-91b8-2cc34cfacf4e
 keywords:
 - 筛选器管理器 WDK 文件系统微筛选器，通信服务器端口
 - 通信服务器端口 WDK 文件系统微筛选器
@@ -11,12 +10,12 @@ keywords:
 - 端口 WDK，文件系统微筛选器
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b7b7c68204b7b63d621c65cedc72022adf40c6a2
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 7d3e3c2a1c035a341ff61b1a6d109d6e99e542a0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90717164"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838791"
 ---
 # <a name="communication-between-user-mode-and-kernel-mode"></a>用户模式和内核模式之间的通信
 

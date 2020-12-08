@@ -1,17 +1,16 @@
 ---
 title: GUID_NDIS_TCP_OFFLOAD_CAPABILITIES
 description: 本主题描述了 NDIS WMI 接口的 GUID_NDIS_TCP_OFFLOAD_CAPABILITIES GUID。
-ms.assetid: 93b8af60-3c15-4eea-a0ea-ce1c71f0b60c
 keywords:
 - GUID_NDIS_TCP_OFFLOAD_CAPABILITIES，WDK GUID_NDIS_TCP_OFFLOAD_CAPABILITIES 网络驱动程序
 ms.date: 11/22/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3c8451f49d315e1d8cd84342ef973d94b6822b3e
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 71f3ec33413403f8aa5a4776c784dfffcde9d38a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89217628"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96836783"
 ---
 # <a name="guid_ndis_tcp_offload_capabilities"></a>GUID_NDIS_TCP_OFFLOAD_CAPABILITIES
 

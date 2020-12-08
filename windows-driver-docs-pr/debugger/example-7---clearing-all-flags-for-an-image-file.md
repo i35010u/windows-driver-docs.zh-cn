@@ -1,31 +1,30 @@
 ---
-title: 示例 7 清除所有标志的图像文件
-description: 示例 7 清除所有标志的图像文件
-ms.assetid: 832c79de-07ca-4212-b3b3-ace396986ebb
+title: 示例7清除映像文件的所有标志
+description: 示例7清除映像文件的所有标志
 ms.date: 10/12/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 079f2b24110e1d0116a998d2af87c57d944e5173
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 15611e059d8f078b9dd371d3b73bf0961577e7dc
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63351189"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838227"
 ---
-# <a name="example-7-clearing-all-flags-for-an-image-file"></a>示例 7：清除映像文件的所有标志
+# <a name="example-7-clearing-all-flags-for-an-image-file"></a>示例7：清除映像文件的所有标志
 
 
 ## <span id="ddk_example_7___clearing_all_flags_for_an_image_file_dtools"></span><span id="DDK_EXAMPLE_7___CLEARING_ALL_FLAGS_FOR_AN_IMAGE_FILE_DTOOLS"></span>
 
 
-以下命令将清除所有标志和图像的图像文件的调试器选项。 该命令将高值 (0xFFFFFFFF) 添加到当前的标志值。 通过删除响应 GFlags **GlobalFlag**图像文件，从而删除的所有值将存储在注册表项。
+以下命令将清除映像文件的所有标志和图像调试器选项。 命令将值 (0xFFFFFFFF) 添加到当前标志值。 GFlags 通过删除映像文件的 **GlobalFlag** 注册表项来做出响应，从而删除它存储的所有值。
 
-此命令不会影响整个系统中设置标志**GlobalFlag**注册表项或标志设置为会话 （内核模式）。
+此命令不会影响在系统范围的 **GlobalFlag** 注册表项中设置的标志，也不会影响 (内核模式) 为会话设置的标志。
 
 ```console
 gflags /i notepad.exe ffffffff 
 ```
 
-在响应中，用 GFlags 显示一个消息指示没有标志设置为图像文件：
+作为响应，GFlags 会显示一条消息，指示没有为映像文件设置标志：
 
 ```console
 No Registry Settings for notepad.exe executable 

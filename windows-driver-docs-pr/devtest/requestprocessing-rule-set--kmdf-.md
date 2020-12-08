@@ -1,15 +1,14 @@
 ---
 title: RequestProcessing 规则集 (KMDF)
 description: 使用这些规则验证驱动程序是否正确完成或取消 (IRP) 的 i/o 请求包。
-ms.assetid: 25162982-6A98-4018-82B3-8DD3E0A0A002
 ms.date: 05/21/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 3bac89f29c9ad7b3d9108a5a19fcab72ea12d39d
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 1421603d56ec9f0b3d37e42a2310eeaae7eeecf2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105310"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96836835"
 ---
 # <a name="requestprocessing-rule-set-kmdf"></a>RequestProcessing 规则集 (KMDF)
 
@@ -27,7 +26,7 @@ ms.locfileid: "90105310"
 <thead>
 <tr class="header">
 <th align="left">主题</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -166,7 +165,7 @@ ms.locfileid: "90105310"
 
 2.  单击 " **规则** " 选项卡。在 " **规则集**" 下，选择 **RequestProcessing**。
 
-    若要从 Visual Studio 开发人员命令提示符窗口中选择默认规则集，请使用 **/check**选项指定**RequestProcessing。 sdv** 。 例如：
+    若要从 Visual Studio 开发人员命令提示符窗口中选择默认规则集，请使用 **/check** 选项指定 **RequestProcessing。 sdv** 。 例如：
 
     ```
     msbuild /t:sdv /p:Inputs="/check:RequestProcessing.sdv" mydriver.VcxProj /p:Configuration="Win8 Release" /p:Platform=Win32

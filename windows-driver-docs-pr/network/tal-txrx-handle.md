@@ -1,17 +1,16 @@
 ---
 title: TAL_TXRX_HANDLE
 description: 本主题介绍 WDI 微型端口驱动程序的 TAL_TXRX_HANDLE 数据类型。
-ms.assetid: 65C35CAA-72DB-442A-8483-3089E705764E
 keywords:
 - TAL_TXRX_HANDLE，WDK TAL_TXRX_HANDLE 网络驱动程序
 ms.date: 11/27/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3323a01a3a400440a968d96e82d8954038e3074d
-ms.sourcegitcommit: ca5045a739eefd6ed14b9dbd9249b335e090c4e9
+ms.openlocfilehash: bd38f5e51d957f4db6b2d7b892a5baf7ac439c1a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/06/2020
-ms.locfileid: "85968246"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837905"
 ---
 # <a name="tal_txrx_handle"></a>TAL_TXRX_HANDLE
 
@@ -27,6 +26,6 @@ typedef NDIS_HANDLE TAL_TXRX_HANDLE, *PTAL_TXRX_HANDLE;
 
 **支持的最低服务器**： Windows server 2016
 
-**标头**： Dot11wdi （包括 Ndis .h）
+**标头**： Dot11wdi (包括 Ndis .h) 
 
 

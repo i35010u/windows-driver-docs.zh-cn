@@ -1,7 +1,6 @@
 ---
 title: WDM 简介
 description: 为了使驱动程序开发人员能够在所有 Microsoft Windows 操作系统中编写源代码兼容的设备驱动程序，引入了 Windows 驱动模型 (WDM) 。 遵循 WDM 规则的内核模式驱动程序称为 WDM 驱动程序。
-ms.assetid: 00225ec6-fe56-4cbc-b94d-2ba5f28c0bb9
 keywords:
 - WDM WDK 内核
 - Windows 驱动模型 WDK 内核
@@ -11,19 +10,19 @@ keywords:
 - WDM 驱动程序 WDK 内核，关于 WDM 驱动程序
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f418e7c69a95a4a89030ddc9572ba68ee2823a73
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: f05c97a26d458cd6e91bebedff9c55e836492910
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89403544"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838457"
 ---
 # <a name="introduction-to-wdm"></a>WDM 简介
 
 > [!NOTE]
 > 本部分包含有关 WDM 驱动程序的指导，即不再推荐使用的驱动程序模型。 有关选择驱动程序模型的指南，请参阅 [选择驱动程序模型](../gettingstarted/choosing-a-driver-model.md)。
 
-为了使驱动程序开发人员能够在所有 Microsoft Windows 操作系统中编写源代码兼容的设备驱动程序，引入了 *Windows 驱动模型* (WDM) 。 遵循 WDM 规则的内核模式驱动程序称为 *wdm 驱动*程序。
+为了使驱动程序开发人员能够在所有 Microsoft Windows 操作系统中编写源代码兼容的设备驱动程序，引入了 *Windows 驱动模型* (WDM) 。 遵循 WDM 规则的内核模式驱动程序称为 *wdm 驱动* 程序。
 
 所有 WDM 驱动程序都必须执行以下操作：
 

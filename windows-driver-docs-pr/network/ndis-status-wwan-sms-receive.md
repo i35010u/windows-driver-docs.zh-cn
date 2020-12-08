@@ -1,21 +1,20 @@
 ---
 title: NDIS_STATUS_WWAN_SMS_RECEIVE
 description: 微型端口驱动程序使用 NDIS_STATUS_WWAN_SMS_RECEIVE 通知，通过 OID_WWAN_SMS_READ \ 160; 查询请求或从网络提供程序到新的类-0 (闪存/警报) 消息来通知 MB 服务是否已完成。 小型端口驱动程序还可以通过此通知发送未经请求的事件。此通知使用 NDIS_WWAN_SMS_RECEIVE 结构。
-ms.assetid: fc1c3587-8bba-4ffd-9561-4140c307c705
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 NDIS_STATUS_WWAN_SMS_RECEIVE 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 544cf941a530e77cecbafbc99b09a222244d6a9b
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 034323526a75961765cfe36b2b9077159d225eff
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89213893"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837933"
 ---
 # <a name="ndis_status_wwan_sms_receive"></a>NDIS \_ 状态 \_ WWAN \_ SMS \_ 接收
 
 
-微型端口驱动程序使用 NDIS \_ 状态 " \_ wwan \_ sms 接收通知"， \_ 通过[OID \_ WWAN \_ sms \_ 读取](oid-wwan-sms-read.md)查询请求通知 MB 服务   ，或从网络提供商处到达新的类 0 (闪存/警报) 消息作为事件通知。
+微型端口驱动程序使用 NDIS \_ 状态 " \_ wwan \_ sms 接收通知"， \_ 通过 [OID \_ WWAN \_ sms \_ 读取](oid-wwan-sms-read.md) 查询请求通知 MB 服务，或从网络提供商处到达新的类 0 (闪存/警报) 消息作为事件通知。
 
 小型端口驱动程序还可以通过此通知发送未经请求的事件。
 
@@ -52,7 +51,7 @@ ms.locfileid: "89213893"
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [OID \_ WWAN \_ SMS \_ 读取](oid-wwan-sms-read.md)

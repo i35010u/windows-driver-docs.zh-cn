@@ -1,15 +1,14 @@
 ---
 title: 静态图像 USB I/O 控制代码
 description: 静态图像 USB I/O 控制代码
-ms.assetid: 66a06a25-2fcb-4b14-85e2-485d2d4ac9d5
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 006c66a07440060215e9d89a19e48970b6301191
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: ec10a3a528dc187950484aa73a283a561656fd4d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107180"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838585"
 ---
 # <a name="still-image-usb-io-control-codes"></a>静态图像 USB I/O 控制代码
 
@@ -27,7 +26,7 @@ ms.locfileid: "90107180"
 <thead>
 <tr class="header">
 <th>I/o 控制代码</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -84,7 +83,7 @@ ms.locfileid: "90107180"
 
  
 
-这些代码在 *usbscan*中定义。 有关这些 i/o 控制代码的详细信息，请参阅：
+这些代码在 *usbscan* 中定义。 有关这些 i/o 控制代码的详细信息，请参阅：
 
 [USB 静止图像 i/o 控制代码](/windows-hardware/drivers/ddi/_image/index)
 

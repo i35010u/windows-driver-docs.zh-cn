@@ -1,18 +1,17 @@
 ---
 title: 转储文件目标
 description: 转储文件目标
-ms.assetid: 83fb6753-a6c1-4899-9b06-a6331b3c31a8
 keywords:
 - 目标，转储文件
 - 转储文件
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 24846b3ae6bc7837f52917d697f3b8481e69f9a6
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 10d8eacc1544238e9bba4f70ef6065e55e7abd4c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89217382"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838661"
 ---
 # <a name="dump-file-targets"></a>转储文件目标
 
@@ -26,7 +25,7 @@ ms.locfileid: "89217382"
 
 若要打开故障转储文件以用作调试程序目标，请使用 [**OpenDumpFile**](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugclient5-opendumpfile) 或 [**OpenDumpfileWide**](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugclient5-opendumpfilewide)。 这些方法类似于 [**opendump**](-opendump--open-dump-file-.md) 调试器命令。
 
-**注意**   在调用[**WaitForEvent**](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugcontrol3-waitforevent)方法之前，引擎不会完全附加到转储文件。 从进程或内核创建转储文件时，有关最后一个事件的信息存储在转储文件中。 打开转储文件后，下一次尝试执行时，引擎将为事件回调生成此事件。 只有在调试会话中才能使用转储文件。 有关更多详细信息，请参阅 [调试会话和执行模型](debugging-session-and-execution-model.md) 。
+**注意**   在调用 [**WaitForEvent**](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugcontrol3-waitforevent) 方法之前，引擎不会完全附加到转储文件。 从进程或内核创建转储文件时，有关最后一个事件的信息存储在转储文件中。 打开转储文件后，下一次尝试执行时，引擎将为事件回调生成此事件。 只有在调试会话中才能使用转储文件。 有关更多详细信息，请参阅 [调试会话和执行模型](debugging-session-and-execution-model.md) 。
 
  
 

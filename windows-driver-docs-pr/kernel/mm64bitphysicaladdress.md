@@ -1,15 +1,14 @@
 ---
 title: Windows 内核全局变量
 description: 内核全局变量。
-ms.assetid: 1ea5c4e3-ed70-449c-a49e-b1e3c892e981
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 2fdcb277255b0798b21e9cfa9dd3a763f7bcb582
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 31e45778b632d2c8209661b8e0918424262736ac
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91733489"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838019"
 ---
 # <a name="windows-kernel-global-variables"></a>Windows 内核全局变量
 
@@ -26,7 +25,7 @@ ms.locfileid: "91733489"
 <tr class="header">
 <th>变量</th>
 <th>声明</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>

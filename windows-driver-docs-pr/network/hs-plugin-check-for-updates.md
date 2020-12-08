@@ -1,24 +1,23 @@
 ---
 title: HS_PLUGIN_CHECK_FOR_UPDATES 函数
 description: HS_PLUGIN_CHECK_FOR_UPDATES 函数按在插件 HS_PLUGIN_PROFILE 结构的 dwProfileUpdateTimeDays 成员中指定的频率检查配置更新。
-ms.assetid: 8db3c237-d61b-4dca-b3a5-2fdaeb683b15
 keywords:
 - typedef DWORD (WINAPI HS_PLUGIN_CHECK_FOR_UPDATES 从 Windows Vista 开始) 函数网络驱动程序
 ms.date: 07/31/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6122d1315f1ff213476adef6a0a4713c4dd98c47
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: 6b8ba426cc92ca6b6d866adf99a29eacddc72574
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89403058"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96836781"
 ---
 # <a name="hs_plugin_check_for_updates-function"></a>HS \_ 插件 \_ 检查 \_ \_ 更新功能
 
 [!include[Wi-Fi Hotspot Offloading deprecation](../includes/wi-fi-hotspot-offloading-deprecation.md)]
 
 
-**Hs \_ 插件 \_ 检查 \_ \_ 更新**功能按在插件的[**HS \_ 插件 \_ 配置文件**](hs-plugin-profile.md)结构的**dwProfileUpdateTimeDays**成员中指定的频率检查配置更新。
+**Hs \_ 插件 \_ 检查 \_ \_ 更新** 功能按在插件的 [**HS \_ 插件 \_ 配置文件**](hs-plugin-profile.md)结构的 **dwProfileUpdateTimeDays** 成员中指定的频率检查配置更新。
 
 <a name="syntax"></a>语法
 ------
@@ -55,13 +54,13 @@ ms.locfileid: "89403058"
 <td><p>Windows 10 移动版</p></td>
 </tr>
 <tr class="even">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Hotspotoffloadplugin (包含 Hotspotoffloadplugin) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**HS \_ 插件 \_ 配置文件**](hs-plugin-profile.md)

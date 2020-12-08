@@ -1,19 +1,18 @@
 ---
 title: PnP 和电源管理界面
 description: PnP 和电源管理界面
-ms.assetid: b80228f7-50be-4551-870b-2d7e2b5db239
 keywords:
 - 即插即用 WDK UMDF，电源管理接口
 - PnP WDK UMDF，电源管理接口
 - 电源管理 WDK UMDF，接口
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 609c93098f2be26909dd34e3dacff5b027625c55
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: b189c283ee0bfc6f815af4cd2c048e6b8c359e5e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89184587"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838713"
 ---
 # <a name="pnp-and-power-management-interfaces"></a>PnP 和电源管理界面
 

@@ -1,15 +1,14 @@
 ---
 title: 重新启动测试（设备基础功能）
 description: 设备基础重新启动测试在指定的设备上、之前和之后或在系统重启期间运行 i/o。
-ms.assetid: 71EBEC60-C99F-412D-8FC5-2DD9209CC92D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 57a6c4f7e7207d3fd3722644ef788a04859d1786
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 5f4c7034aac6cdab840a92a3dfb16e1cd57f0604
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107508"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837307"
 ---
 # <a name="reboot-tests-device-fundamentals"></a>重新启动测试（设备基础功能）
 

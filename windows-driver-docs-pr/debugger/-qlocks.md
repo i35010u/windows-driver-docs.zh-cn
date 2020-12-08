@@ -1,7 +1,6 @@
 ---
 title: qlocks
-description: Qlocks 扩展显示的所有排队的自旋锁的状态。
-ms.assetid: fdeefedb-c840-410a-94e4-ae42923e82e7
+description: Qlocks 扩展显示所有排队自旋锁的状态。
 keywords:
 - qlocks Windows 调试
 ms.date: 05/23/2017
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 475431764925dd6e584f9099173963c23c505c53
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2b81387b7d3b68a59c96dabda38041c36992fda8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63334330"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837587"
 ---
 # <a name="qlocks"></a>!qlocks
 
 
-**！ Qlocks**扩展显示的所有排队的自旋锁的状态。
+**！ Qlocks** 扩展显示所有排队的自旋锁的状态。
 
 ```dbgcmd
 !qlocks 
@@ -31,7 +30,7 @@ ms.locfileid: "63334330"
 ## <span id="ddk__qlocks_dbg"></span><span id="DDK__QLOCKS_DBG"></span>
 
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 <table>
 <colgroup>
@@ -52,16 +51,16 @@ ms.locfileid: "63334330"
 
  
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-数值调节钮的锁有关的信息，请参阅 Windows Driver Kit (WDK) 文档和*Microsoft Windows Internals*、 Mark Russinovich 和 David solomon 合著的。
+有关自旋锁的信息，请参阅 Windows 驱动程序工具包 (WDK) 文档和 *Microsoft Windows 内部*，并将其标记为 Russinovich 和 David 所罗门群岛。
 
 <a name="remarks"></a>备注
 -------
 
-此命令将仅在多处理器系统上很有用。
+此命令仅在多处理器系统上有用。
 
-下面是一个示例：
+以下是示例：
 
 ```dbgcmd
 0: kd> !qlocks

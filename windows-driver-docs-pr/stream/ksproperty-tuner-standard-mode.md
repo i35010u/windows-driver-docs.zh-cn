@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ 调谐器 \_ 标准 \_ 模式
 description: KSPROPERTY \_ 调谐器 \_ 标准 \_ 模式属性检索一个布尔值，该值指示驱动程序是否可以将优化设备设置为自动检测信号本身的调谐器标准。 此属性可以选择实现。
-ms.assetid: 9c374778-20fd-427a-864f-f57ec14add07
 keywords:
 - KSPROPERTY_TUNER_STANDARD_MODE 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5ebcd9a956f82414a1a77ad256f54875cc53c6b6
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 6582d44f8325f68895db173ca844bfc0ef9809da
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105980"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837611"
 ---
 # <a name="ksproperty_tuner_standard_mode"></a>KSPROPERTY \_ 调谐器 \_ 标准 \_ 模式
 
@@ -85,7 +84,7 @@ KSPROPERTY \_ 调谐器 \_ 标准 \_ 模式属性检索一个布尔值，该值�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSPROPERTY \_ 调谐器 \_ 标准版**](ksproperty-tuner-standard.md)

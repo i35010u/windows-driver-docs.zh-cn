@@ -1,7 +1,6 @@
 ---
 title: 在功能驱动程序中创建设备对象
 description: 在功能驱动程序中创建设备对象
-ms.assetid: 3b988f6d-c50e-412d-85cb-031746535ff4
 keywords:
 - PnP WDK KMDF、function 驱动程序
 - 即插即用 WDK KMDF，函数驱动程序
@@ -11,12 +10,12 @@ keywords:
 - FDOs WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 509d4c624d277a7589427db45b7e712eec3f5e19
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: b55c346456008d7348fce0235a915aa04994c3b2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89189717"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837045"
 ---
 # <a name="creating-device-objects-in-a-function-driver"></a>在功能驱动程序中创建设备对象
 
@@ -37,7 +36,7 @@ ms.locfileid: "89189717"
 
 -   正在注册函数驱动程序特定的回调函数。
 
-    如果某些函数驱动程序必须参与指定设备所需的系统硬件资源，则会调用 [**WdfFdoInitSetEventCallbacks**](/windows-hardware/drivers/ddi/wdffdo/nf-wdffdo-wdffdoinitseteventcallbacks)。 有关硬件资源的详细信息，请参阅 [基于框架的驱动程序的硬件资源](hardware-resources-for-kmdf-drivers.md)。
+    如果某些函数驱动程序必须参与指定设备所需的系统硬件资源，则会调用 [**WdfFdoInitSetEventCallbacks**](/windows-hardware/drivers/ddi/wdffdo/nf-wdffdo-wdffdoinitseteventcallbacks)。 有关硬件资源的详细信息，请参阅 [Framework-Based 驱动程序的硬件资源](hardware-resources-for-kmdf-drivers.md)。
 
 -   正在注册文件事件回调函数。
 
@@ -66,7 +65,7 @@ ms.locfileid: "89189717"
 
 -   访问设备的注册表项。
 
-    某些函数驱动程序必须获取有关设备或驱动程序的信息，其他驱动程序、用户或安装包已置于注册表中。 驱动程序可以调用 [**WdfFdoInitOpenRegistryKey**](/windows-hardware/drivers/ddi/wdffdo/nf-wdffdo-wdffdoinitopenregistrykey) 来打开设备或驱动程序的注册表项。 有关详细信息，请参阅 [在基于框架的驱动程序中使用注册表](./introduction-to-registry-keys-for-drivers.md)。
+    某些函数驱动程序必须获取有关设备或驱动程序的信息，其他驱动程序、用户或安装包已置于注册表中。 驱动程序可以调用 [**WdfFdoInitOpenRegistryKey**](/windows-hardware/drivers/ddi/wdffdo/nf-wdffdo-wdffdoinitopenregistrykey) 来打开设备或驱动程序的注册表项。 有关详细信息，请参阅 [在 Framework-Based 驱动程序中使用注册表](./introduction-to-registry-keys-for-drivers.md)。
 
 -   创建用于动态枚举的默认子列表配置。
 

@@ -1,20 +1,19 @@
 ---
 title: Windows 内存空间概述
 description: Windows 内存空间概述
-ms.assetid: b49a35c2-6da6-4239-a67b-542d42a5c9e4
 keywords:
-- 内存管理 WDK 内核，有关内存空间
+- 内存管理 WDK 内核，关于内存空间
 - 内存空间 WDK 内核
 - 物理内存 WDK 内核
 - 虚拟内存 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5773a3afab3cbd857cf86b25085b36de86b9f6f3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 517ee46c4d17579dc79bf5c3fd4122d28f541cf3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63377931"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837219"
 ---
 # <a name="overview-of-windows-memory-space"></a>Windows 内存空间概述
 
@@ -22,15 +21,15 @@ ms.locfileid: "63377931"
 
 
 
-下图说明了基于 NT 的操作系统的虚拟内存空间和及其与系统物理内存。
+下图说明了基于 NT 的操作系统的虚拟内存空间及其与系统物理内存的关系。
 
-![演示如何虚拟内存空间和物理内存的关系图](images/16vrtmem.gif)
+![阐释虚拟内存空间和物理内存的示意图](images/16vrtmem.gif)
 
-如此图所示，虚拟内存由分页的物理内存，并可以由不连续的物理内存页来备份虚拟地址范围。 用户空间虚拟内存和分页池中分配的系统空间内存始终是*可分页*。 任何用户空间代码或数据可以出页到辅助存储在任何时候，即使正在执行进程。
+如图所示，虚拟内存由分页的物理内存支持，而不连续的物理内存页可以支持虚拟地址范围。 从分页池分配的用户空间虚拟内存和系统空间内存始终是可 *分页* 的。 即使在执行进程时，任何用户空间代码或数据都可以随时分页到辅助存储。
 
-请注意，任何非当前进程的虚拟地址是不可见，因此其内存空间是不可访问。
+请注意，任何非当前进程的虚拟地址都不可见，因此无法访问其内存空间。
 
-有关内存管理的全面介绍，请参阅*在 Microsoft Windows Internals* Microsoft press 书籍。
+有关内存管理的详细讨论，请参阅 Microsoft 新闻中的 *Microsoft Windows* 内部内容手册。
 
  
 

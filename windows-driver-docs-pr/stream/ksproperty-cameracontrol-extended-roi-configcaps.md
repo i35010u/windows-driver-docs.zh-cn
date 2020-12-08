@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ CAMERACONTROL \_ 扩展 \_ 投资回报 \_ CONFIGCAPS
 description: '\_ \_ \_ \_ KSPROPERTY CAMERACONTROL 扩展属性枚举中定义的 KSPROPERTY CAMERACONTROL 扩展 ROI CONFIGCAPS 属性 \_ ID \_ \_ 用于查询 ROI 功能。'
-ms.assetid: 29722CE2-81D3-453E-82C5-98C8E7115448
 keywords:
 - KSPROPERTY_CAMERACONTROL_EXTENDED_ROI_CONFIGCAPS 流媒体设备
 topic_type:
@@ -14,16 +13,16 @@ api_type:
 - HeaderDef
 ms.date: 09/11/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 5253e98423a153072be2832135a321d84d192962
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 1573c97b831c76d266fde21144fae9ffd7ba54b8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89188132"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837851"
 ---
 # <a name="ksproperty_cameracontrol_extended_roi_configcaps"></a>KSPROPERTY \_ CAMERACONTROL \_ 扩展 \_ 投资回报 \_ CONFIGCAPS
 
-[**KSPROPERTY \_ CAMERACONTROL \_ 扩展 \_ 属性**](/windows-hardware/drivers/ddi/ksmedia/ne-ksmedia-ksproperty_cameracontrol_extended_property)枚举中定义的**KSPROPERTY \_ CAMERACONTROL \_ 扩展 \_ ROI \_ CONFIGCAPS**属性 ID 用于查询 ROI 功能。
+[**KSPROPERTY \_ CAMERACONTROL \_ 扩展 \_ 属性**](/windows-hardware/drivers/ddi/ksmedia/ne-ksmedia-ksproperty_cameracontrol_extended_property)枚举中定义的 **KSPROPERTY \_ CAMERACONTROL \_ 扩展 \_ ROI \_ CONFIGCAPS** 属性 ID 用于查询 ROI 功能。
 
 ## <a name="usage-summary-table"></a>使用情况摘要表
 
@@ -49,7 +48,7 @@ ms.locfileid: "89188132"
 </tbody>
 </table>
 
-若要使用驱动程序查询投资回报率功能，请将**KSPROPERTY \_ CAMERACONTROL \_ 扩展 \_ 投资回报 \_ CONFIGCAPS**扩展属性控件连同标准[**KSCAMERA \_ EXTENDEDPROP \_ 标头**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)结构一起发送到驱动程序，后面跟有一个或多个[**KSCAMERA EXTENDEDPROP \_ \_ roi \_ **](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_roi_configcaps) [**CONFIGCAPSHEADER 结构。 \_ \_ \_ **](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_roi_configcapsheader) 以下列表说明了具有两个投资回报 config cap 的数据结构。
+若要使用驱动程序查询投资回报率功能，请将 **KSPROPERTY \_ CAMERACONTROL \_ 扩展 \_ 投资回报 \_ CONFIGCAPS** 扩展属性控件连同标准 [**KSCAMERA \_ EXTENDEDPROP \_ 标头**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)结构一起发送到驱动程序，后面跟有一个或多个 [**KSCAMERA EXTENDEDPROP \_ \_ roi \_**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_roi_configcaps) [**CONFIGCAPSHEADER 结构。 \_ \_ \_**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_roi_configcapsheader) 以下列表说明了具有两个投资回报 config cap 的数据结构。
 
 -   **KSCAMERA \_ EXTENDEDPROP \_ 标头**
 
@@ -59,7 +58,7 @@ ms.locfileid: "89188132"
 
 -   **KSCAMERA \_ EXTENDEDPROP \_ 投资回报 \_ CONFIGCAPS**
 
-下表包含了在使用扩展 ROI 控制的**KSPROPERTY \_ CAMERACONTROL \_ 扩展 \_ roi \_ CONFIGCAPS**属性时， **KSCAMERA \_ EXTENDEDPROP \_ 标头**结构字段的说明和要求。
+下表包含了在使用扩展 ROI 控制的 **KSPROPERTY \_ CAMERACONTROL \_ 扩展 \_ roi \_ CONFIGCAPS** 属性时， **KSCAMERA \_ EXTENDEDPROP \_ 标头** 结构字段的说明和要求。
 
 <table>
 <colgroup>
@@ -109,7 +108,7 @@ ms.locfileid: "89188132"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Ksmedia.h</td>
 </tr>
 </tbody>

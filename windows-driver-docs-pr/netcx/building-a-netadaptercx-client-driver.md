@@ -1,17 +1,16 @@
 ---
 title: 生成 NetAdapterCx 客户端驱动程序
 description: 生成 NetAdapterCx 客户端驱动程序
-ms.assetid: 0A6957B4-E63A-4687-B31E-064AE3A34936
 keywords:
 - 构建 NetAdapterCx 客户端驱动程序，构建 NIC 驱动程序
 ms.date: 06/05/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e204a998680d0319a62b555a3df85a707026dfcd
-ms.sourcegitcommit: ea3215e9d5afe073ed6d01fb6dddf31d95ef3b63
+ms.openlocfilehash: c9ea6236604c29aa8a1a42feb69d8ac90ffa0423
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94673761"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838765"
 ---
 # <a name="building-a-netadaptercx-client-driver"></a>生成 NetAdapterCx 客户端驱动程序
 

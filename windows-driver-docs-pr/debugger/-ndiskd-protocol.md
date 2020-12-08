@@ -1,7 +1,6 @@
 ---
 title: ndiskd 协议
 description: Ndiskd 命令显示有关 NDIS 协议驱动程序的信息。
-ms.assetid: c1d349d5-b0ba-4665-a399-1bc5cd55dde6
 keywords:
 - ndiskd Windows 调试
 ms.date: 06/26/2020
@@ -12,16 +11,16 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 1975c9fd4a3a1c0095fe42ab63709ce1a82350a5
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 4cb5c55f846b6f932df007c3f17b3995dfc87767
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89217943"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96836905"
 ---
 # <a name="ndiskdprotocol"></a>!ndiskd.protocol
 
-**！ Ndiskd**命令显示有关 NDIS 协议驱动程序的信息。 如果运行不带参数的此扩展，！ ndiskd 将显示系统上处于活动状态的 NDIS 协议驱动程序的列表。
+**！ Ndiskd** 命令显示有关 NDIS 协议驱动程序的信息。 如果运行不带参数的此扩展，！ ndiskd 将显示系统上处于活动状态的 NDIS 协议驱动程序的列表。
 
 ```console
 !ndiskd.protocol [-handle <x>] [-findname <any>] 
@@ -116,7 +115,7 @@ HANDLERS
     DirectOidRequestCompleteHandler        fffff80e2e398120  bp
 ```
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [网络驱动程序设计指南](../network/index.md)
 
@@ -124,6 +123,6 @@ HANDLERS
 
 [调试网络堆栈](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-175-Debugging-the-Network-Stack)
 
-[**NDIS 扩展 ( # A0) **](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 扩展 ( # A0)**](ndis-extensions--ndiskd-dll-.md)
 
 [**!ndiskd.help**](-ndiskd-help.md)

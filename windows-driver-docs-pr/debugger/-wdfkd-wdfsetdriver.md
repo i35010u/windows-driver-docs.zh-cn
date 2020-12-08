@@ -1,9 +1,8 @@
 ---
 title: wdfkd.wdfsetdriver
-description: Wdfkd.wdfsetdriver 扩展设置的调试器扩展命令将应用默认内核模式驱动程序框架 (KMDF) 驱动程序的名称。
-ms.assetid: 90fc99a0-1e78-44bb-ba91-191f116160e7
+description: Wdfkd. wdfsetdriver 扩展设置应用调试器扩展命令的默认 Kernel-Mode Driver Framework (KMDF) 驱动程序的名称。
 keywords:
-- wdfkd.wdfsetdriver Windows 调试
+- wdfkd wdfsetdriver Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,46 +11,46 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 1e7e5457c64ab31256a4b5b2a9dc4947b5f41b9c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9d8d14870200ac6118c4e86200ae33ea05f1408e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63323268"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837013"
 ---
 # <a name="wdfkdwdfsetdriver"></a>!wdfkd.wdfsetdriver
 
 
-**！ Wdfkd.wdfsetdriver**扩展设置到的调试器扩展命令将应用默认内核模式驱动程序框架 (KMDF) 驱动程序的名称。
+**！ Wdfkd。 wdfsetdriver** 扩展设置应用调试器扩展命令的默认 Kernel-Mode driver FRAMEWORK (KMDF) 驱动程序的名称。
 
 ```dbgcmd
 !wdfkd.wdfsetdriver DriverName
 ```
 
-## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>参数
+## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>Parameters
 
 
-<span id="_______DriverName______"></span><span id="_______drivername______"></span><span id="_______DRIVERNAME______"></span> *DriverName*   
-驱动程序的名称。 *DriverName*不得包含.sys 文件扩展名。
+<span id="_______DriverName______"></span><span id="_______drivername______"></span><span id="_______DRIVERNAME______"></span>*DriverName*   
+驱动程序的名称。 *DriverName* 不得包含 .sys 文件扩展名。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 Wdfkd.dll
 
-### <a name="span-idframeworksspanspan-idframeworksspanspan-idframeworksspanframeworks"></a><span id="Frameworks"></span><span id="frameworks"></span><span id="FRAMEWORKS"></span>框架
+### <a name="span-idframeworksspanspan-idframeworksspanspan-idframeworksspanframeworks"></a><span id="Frameworks"></span><span id="frameworks"></span><span id="FRAMEWORKS"></span>协作
 
 KMDF 1，UMDF 2
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-有关详细信息，请参阅[内核模式驱动程序框架调试](kernel-mode-driver-framework-debugging.md)。
+有关详细信息，请参阅 [内核模式驱动程序框架调试](kernel-mode-driver-framework-debugging.md)。
 
 <a name="remarks"></a>备注
 -------
 
-**！ Wdfkd.wdfsetdriver**扩展设置的默认驱动程序名称。 您可以使用此名称与其他**wdfkd**就不再需要你指定的驱动程序名称的扩展。
+**！ Wdfkd. wdfsetdriver** 扩展设置默认的驱动程序名称。 你可以将此名称用于其他 **wdfkd** 扩展，否则将要求你指定驱动程序名称。
 
-若要获取当前默认 KMDF 驱动程序的名称，请使用[ **！ wdfkd.wdfgetdriver** ](-wdfkd-wdfgetdriver.md)扩展。
+若要获取当前默认 KMDF 驱动程序的名称，请使用 [**！ wdfgetdriver**](-wdfkd-wdfgetdriver.md) 扩展。
 
  
 

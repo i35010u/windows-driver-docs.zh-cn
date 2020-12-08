@@ -1,7 +1,6 @@
 ---
 title: 处理设备通电 IRP
 description: 处理设备通电 IRP
-ms.assetid: 8fcfd324-97f9-4fd0-8fa1-87685c6b5ec3
 keywords:
 - 设置-power Irp WDK 内核
 - 设备设置电源 Irp WDK 内核
@@ -11,12 +10,12 @@ keywords:
 - 正在还原电源 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 18018efb1a5200b195161ca037f2de8650ee18c9
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 866cc66791a8a7415cfa76bf8d47f996c940c146
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89185267"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838461"
 ---
 # <a name="handling-device-power-up-irps"></a>处理设备通电 IRP
 
@@ -32,7 +31,7 @@ ms.locfileid: "89185267"
 
 ![说明如何处理设备开机请求的关系图](images/devd0.png)
 
-处理 **IRP \_ MN \_ 设置 \_ ** 电源请求以进行开机时，函数或筛选器驱动程序必须：
+处理 **IRP \_ MN \_ 设置 \_** 电源请求以进行开机时，函数或筛选器驱动程序必须：
 
 -   调用 [**IoAcquireRemoveLock**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioacquireremovelock) ，以确保在处理通电 IRP 时，驱动程序不会收到 [**IRP \_ MN \_ 删除 \_ 设备**](./irp-mn-remove-device.md) 请求。
 
@@ -40,7 +39,7 @@ ms.locfileid: "89185267"
 
 -   调用 [**也**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iomarkirppending) ，将 IRP 标记为挂起。
 
--   调用 [**IoCopyCurrentIrpStackLocationToNext**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocopycurrentirpstacklocationtonext) 以设置 IRP 堆栈位置。 如果驱动程序设置[*IoCompletion*](/windows-hardware/drivers/ddi/wdm/nc-wdm-io_completion_routine)例程，则不能调用**IoSkipCurrentIrpStackLocation** 。
+-   调用 [**IoCopyCurrentIrpStackLocationToNext**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocopycurrentirpstacklocationtonext) 以设置 IRP 堆栈位置。 如果驱动程序设置 [*IoCompletion*](/windows-hardware/drivers/ddi/wdm/nc-wdm-io_completion_routine)例程，则不能调用 **IoSkipCurrentIrpStackLocation** 。
 
 -   调用 [**IoSetCompletionRoutine**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iosetcompletionroutine) 以设置开机 *IoCompletion* 例程。
 

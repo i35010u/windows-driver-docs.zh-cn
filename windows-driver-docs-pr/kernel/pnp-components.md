@@ -1,7 +1,6 @@
 ---
 title: PnP 组件
 description: PnP 组件
-ms.assetid: 33612da4-1ddb-40cf-a8a2-838f85b52cd6
 keywords:
 - PnP WDK 内核，组件
 - 即插即用 WDK 内核，组件
@@ -13,12 +12,12 @@ keywords:
 - PnP 组件 WDK 用户模式
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0516b4c519d53a9a3a9657ee2e68914d07967c7f
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: c765d20122d63ef36ff9aaad86f63c0a0d066079
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89191845"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838445"
 ---
 # <a name="pnp-components"></a>PnP 组件
 

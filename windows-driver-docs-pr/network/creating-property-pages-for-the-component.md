@@ -1,7 +1,6 @@
 ---
 title: 创建组件的属性页
 description: 创建组件的属性页
-ms.assetid: f353844f-56f4-42cd-8f7d-2fa87f469d3c
 keywords:
 - 通知对象 WDK 网络，属性页
 - 网络通知对象 WDK，属性页
@@ -10,12 +9,12 @@ keywords:
 - 属性页回调函数 WDK 网络
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2b779d07192345c16bb81e4643fe73e1d9f3f10a
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: db51a368570c53ec234a8497d589c35f52bc3aa3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89211783"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837693"
 ---
 # <a name="creating-property-pages-for-the-component"></a>创建组件的属性页
 
@@ -25,7 +24,7 @@ ms.locfileid: "89211783"
 
 通知对象在网络配置子系统调用 notify 对象的 [**INetCfgComponentPropertyUi：： MergePropPages**](/previous-versions/windows/hardware/network/ff547746(v=vs.85)) 方法之后创建自定义属性页。 使用 **MergePropPages** 方法，可以将自定义属性页合并到组件的属性表上的默认页集中。 **MergePropPages** 将返回可用于合并自定义页面的适当数量的默认页面。
 
-为了创建自定义属性页， **MergePropPages** 调用 COM **COTASKMEMALLOC** 函数为 PROPSHEETPAGE 结构的句柄分配内存。 其中每个句柄都表示要创建的属性页。 如果 **CoTaskMemAlloc** 成功分配了句柄的内存，则 **MergePropPages** 将为每个属性页声明并填充 **PROPSHEETPAGE** 结构。 **MergePropPages**填充这些结构后，将为每个属性页调用 Win32 **CreatePropertySheetPage**函数。 在此调用中， **MergePropPages** 传递要创建的 PROPSHEETPAGE 结构的地址。
+为了创建自定义属性页， **MergePropPages** 调用 COM **COTASKMEMALLOC** 函数为 PROPSHEETPAGE 结构的句柄分配内存。 其中每个句柄都表示要创建的属性页。 如果 **CoTaskMemAlloc** 成功分配了句柄的内存，则 **MergePropPages** 将为每个属性页声明并填充 **PROPSHEETPAGE** 结构。 **MergePropPages** 填充这些结构后，将为每个属性页调用 Win32 **CreatePropertySheetPage** 函数。 在此调用中， **MergePropPages** 传递要创建的 PROPSHEETPAGE 结构的地址。
 
 还应为 **MergePropPages** 创建的每个属性页实现一个对话框回调函数。 对话框回调函数处理操作系统发送到与该对话框函数关联的属性页的消息。 若要将属性页与对话框函数关联， **MergePropPages** 应将每个页面的每个 PROPSHEETPAGE 结构的 **pfnDlgProc** 成员指向该页的对话框函数。
 
@@ -43,7 +42,7 @@ ms.locfileid: "89211783"
     -   PSN \_ RESET 事件，指示操作系统即将销毁属性页。 用户可以单击属性页上的 "取消" 以启动此操作。 如果用户单击 "取消"，则网络配置子系统将调用 [**INetCfgComponentPropertyUi：： CancelProperties**](/previous-versions/windows/hardware/network/ff547742(v=vs.85)) 方法以使所有更改被忽略。 在关闭该对话框之前，网络配置子系统将调用 **CancelProperties** 。
     -   PSN \_ KILLACTIVE 事件，指示属性页即将变为非活动状态。 当用户激活另一页或单击 "确定" 时发生此事件。
 
-还可以为**MergePropPages**创建的每个属性页实现*属性页回调*函数。 属性页回调函数执行页的初始化和清理操作。 若要将属性页与属性页回调函数关联， **MergePropPages** 应将每个页面的每个 PROPSHEETPAGE 结构的 **pfnCallback** 成员指向该页的属性页回调函数。
+还可以为 **MergePropPages** 创建的每个属性页实现 *属性页回调* 函数。 属性页回调函数执行页的初始化和清理操作。 若要将属性页与属性页回调函数关联， **MergePropPages** 应将每个页面的每个 PROPSHEETPAGE 结构的 **pfnCallback** 成员指向该页的属性页回调函数。
 
 有关详细信息，请参阅 Microsoft Windows SDK 文档：
 

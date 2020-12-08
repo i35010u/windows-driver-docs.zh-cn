@@ -1,9 +1,8 @@
 ---
 title: wdfkd.wdfforwardprogress
-description: Wdfkd.wdfforwardprogress 扩展显示有关进程向前推进的指定的框架队列对象的信息。
-ms.assetid: 3062d914-4fd4-4e33-8cf0-562484380184
+description: Wdfkd. wdfforwardprogress 扩展显示有关指定框架队列对象的向前进度的信息。
 keywords:
-- wdfkd.wdfforwardprogress Windows 调试
+- wdfkd wdfforwardprogress Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,46 +11,46 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 07e960bd078c18d83fd7fea52da0fd73001e8dd6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0c33065789c670a4a1809eed0d24493008c397eb
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63341717"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838399"
 ---
 # <a name="wdfkdwdfforwardprogress"></a>!wdfkd.wdfforwardprogress
 
 
-**！ Wdfkd.wdfforwardprogress**扩展显示有关进程向前推进的指定的框架队列对象的信息。
+**！ Wdfkd wdfforwardprogress** 扩展显示有关指定框架队列对象的向前进度的信息。
 
 ```dbgcmd
 !wdfkd.wdfforwardprogress Handle
 ```
 
-## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>参数
+## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>Parameters
 
 
-<span id="_______Handle______"></span><span id="_______handle______"></span><span id="_______HANDLE______"></span> *句柄*   
-Framework 队列对象的句柄。
+<span id="_______Handle______"></span><span id="_______handle______"></span><span id="_______HANDLE______"></span>*句柄*   
+框架队列对象的句柄。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 Wdfkd.dll
 
-### <a name="span-idframeworksspanspan-idframeworksspanspan-idframeworksspanframeworks"></a><span id="Frameworks"></span><span id="frameworks"></span><span id="FRAMEWORKS"></span>框架
+### <a name="span-idframeworksspanspan-idframeworksspanspan-idframeworksspanframeworks"></a><span id="Frameworks"></span><span id="frameworks"></span><span id="FRAMEWORKS"></span>协作
 
 KMDF 1
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-有关如何调试内核模式驱动程序框架 (KMDF) 驱动程序的详细信息，请参阅[内核模式驱动程序框架调试](kernel-mode-driver-framework-debugging.md)。
+有关如何 (KMDF) 驱动程序调试 Kernel-Mode Driver Framework 的详细信息，请参阅 [内核模式驱动程序框架调试](kernel-mode-driver-framework-debugging.md)。
 
 <a name="remarks"></a>备注
 -------
 
-仅当指定的框架队列对象配置为支持向前推进，此扩展将会成功。 如果此扩展用于其他对象，将显示一条错误消息。
+仅当指定的框架队列对象配置为支持向前进度时，此扩展才会成功。 如果此扩展与其他对象一起使用，将显示一条错误消息。
 
-下面的示例演示从显示 **！ wdfkd.wdfforwardprogress**扩展。
+下面的示例演示了 **！ wdfkd. wdfforwardprogress** 扩展中的显示。
 
 ```dbgcmd
 kd> !wdfkd.wdfforwardprogress 0x79af3250 

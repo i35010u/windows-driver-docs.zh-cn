@@ -1,7 +1,6 @@
 ---
 title: 支持系统唤醒
 description: 支持系统唤醒
-ms.assetid: 519dcd1a-9975-48b1-a032-04348b903ac5
 keywords:
 - 系统唤醒 KMDF
 - 电源管理 WDK KMDF、唤醒功能
@@ -14,19 +13,19 @@ keywords:
 - PMC WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ed19426f99ac9d4357a3e161188e9a986dc38b51
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: bc5d1bc7aa9c667ef7f2291122f816392eafe745
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89190769"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96836589"
 ---
 # <a name="supporting-system-wake-up"></a>支持系统唤醒
 
 
 当系统处于低功耗状态时，某些设备可以检测到外部事件，例如传入网络数据包，并唤醒系统。 例如，如果 PCI 设备具有系统唤醒功能，如设备的电源管理功能 (PMC) 寄存器中所示，则会通过在 PCI 总线上的 PME) 信号 (PME 发出电源管理事件来唤醒系统。
 
-如果设备可以将系统从系统范围内的低功耗状态唤醒，则[电源策略所有者](power-policy-ownership.md)中的[*EvtDriverDeviceAdd*](/windows-hardware/drivers/ddi/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)回调函数必须执行以下两个步骤：
+如果设备可以将系统从系统范围内的低功耗状态唤醒，则 [电源策略所有者](power-policy-ownership.md)中的 [*EvtDriverDeviceAdd*](/windows-hardware/drivers/ddi/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)回调函数必须执行以下两个步骤：
 
 1.  调用 [**WdfDeviceAssignSxWakeSettings**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceassignsxwakesettings) 指定：
 

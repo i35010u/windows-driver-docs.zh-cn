@@ -1,9 +1,8 @@
 ---
 title: ADFFront 元素
-description: 所需的 ADFFront 元素描述的自动文档送纸器 (ADF) 附加到扫描程序前端的功能。
-ms.assetid: 6b49f5da-6866-4ec6-8973-7c582bd3a1a1
+description: 必需的 ADFFront 元素描述附加到扫描仪的自动文档送纸器 (ADF) 的前端功能。
 keywords:
-- ADFFront 元素成像设备
+- ADFFront 元素图像设备
 topic_type:
 - apiref
 api_name:
@@ -12,19 +11,19 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: eda5373bd855dc0d2108174e36c6fb100c43194a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1606e8a7bb73cb3f4c495d5c4c89c251561d2e0d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63367085"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837765"
 ---
 # <a name="adffront-element"></a>ADFFront 元素
 
 
-所需**ADFFront**元素描述的自动文档送纸器 (ADF) 附加到扫描程序前端的功能。
+必需的 **ADFFront** 元素描述附加到扫描仪的自动文档送纸器 (ADF) 的前端功能。
 
-<a name="usage"></a>用法
+<a name="usage"></a>使用情况
 -----
 
 ```xml
@@ -91,7 +90,7 @@ ms.locfileid: "63367085"
 <a name="remarks"></a>备注
 -------
 
-如果扫描仪具有 ADF WSD 扫描服务必须中为其提供详细信息**ADFFront**元素，而不考虑的 ADF 进行双面打印功能。
+如果扫描程序具有 ADF，WSD 扫描服务必须在 **ADFFront** 元素中提供其详细信息，而不考虑 ADF 的双工功能。
 
 ## <a name="see-also"></a>请参阅
 

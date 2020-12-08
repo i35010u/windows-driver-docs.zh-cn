@@ -1,17 +1,16 @@
 ---
 title: 在总线驱动程序中启动设备
 description: 在总线驱动程序中启动设备
-ms.assetid: 1babeabb-1866-4ca5-b5a3-380c246596e5
 keywords:
 - 总线驱动程序 WDK PnP
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 91e69d7fd0dde66021488412fb6f5344f5039312
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 40f156e4ff31d126dafe96dda4d6ef27ee753a67
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89192585"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837943"
 ---
 # <a name="starting-a-device-in-a-bus-driver"></a>在总线驱动程序中启动设备
 

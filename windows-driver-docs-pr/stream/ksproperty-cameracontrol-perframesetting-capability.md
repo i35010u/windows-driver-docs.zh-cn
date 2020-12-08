@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ CAMERACONTROL \_ PERFRAMESETTING \_
 description: '\_ \_ \_ KSPROPERTY CAMERACONTROL PERFRAMESETTING 属性中定义的 KSPROPERTY CAMERACONTROL PERFRAMESETTING 功能属性 \_ ID \_ \_ 用于获取驱动程序中的每帧功能。'
-ms.assetid: 9EB8AB4C-56C0-4F70-AFFE-76444FAADFF8
 keywords:
 - KSPROPERTY_CAMERACONTROL_PERFRAMESETTING_CAPABILITY 流媒体设备
 topic_type:
@@ -14,16 +13,16 @@ api_type:
 - HeaderDef
 ms.date: 09/11/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 0bc3a0308b37be25eccb574751024a6f05f6e19b
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 213714d05f00f0791b563e438527190c5698f13e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89185721"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837061"
 ---
 # <a name="ksproperty_cameracontrol_perframesetting_capability"></a>KSPROPERTY \_ CAMERACONTROL \_ PERFRAMESETTING \_
 
-[**KSPROPERTY \_ CAMERACONTROL \_ PERFRAMESETTING \_ 属性**](/windows-hardware/drivers/ddi/ksmedia/ne-ksmedia-ksproperty_cameracontrol_perframesetting_property)中定义的**KSPROPERTY \_ CAMERACONTROL \_ PERFRAMESETTING \_ 功能**属性 ID 用于获取驱动程序中的每帧功能。 这是一个仅获取控件;驱动程序必须失败任何设置调用。
+[**KSPROPERTY \_ CAMERACONTROL \_ PERFRAMESETTING \_ 属性**](/windows-hardware/drivers/ddi/ksmedia/ne-ksmedia-ksproperty_cameracontrol_perframesetting_property)中定义的 **KSPROPERTY \_ CAMERACONTROL \_ PERFRAMESETTING \_ 功能** 属性 ID 用于获取驱动程序中的每帧功能。 这是一个仅获取控件;驱动程序必须失败任何设置调用。
 
 ## <a name="usage-summary"></a>使用情况摘要
 
@@ -41,7 +40,7 @@ ms.locfileid: "89185721"
 
 在 GET 调用中，将先向驱动程序发送零长度缓冲区，以找出所需的数据缓冲区大小来保存整个功能负载。 为响应调用，驱动程序必须返回 **状态 \_ 缓冲区 \_ 溢出** ，其所需的容量缓冲区大小必须至少为 [**KSCAMERA \_ PERFRAMESETTING \_ CAP \_ 标头**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-kscamera_perframesetting_cap_header)的大小。
 
-下面是在**KSCAMERA \_ PERFRAMESETTING \_ 项 \_ 类型**枚举中定义的项类型上下文中的**KSCAMERA \_ PERFRAMESETTING \_ CAP \_ 标头**字段的说明。 负载字段表示 **KSCAMERA \_ PERFRAMESETTING \_ CAP \_ 项 \_ 标头** 结构之后的项负载结构。
+下面是在 **KSCAMERA \_ PERFRAMESETTING \_ 项 \_ 类型** 枚举中定义的项类型上下文中的 **KSCAMERA \_ PERFRAMESETTING \_ CAP \_ 标头** 字段的说明。 负载字段表示 **KSCAMERA \_ PERFRAMESETTING \_ CAP \_ 项 \_ 标头** 结构之后的项负载结构。
 
 
 **曝光时间项**  
@@ -98,7 +97,7 @@ ms.locfileid: "89185721"
 
 **大小**
 
-如果支持步骤，这就是 **KSCAMERA \_ PERFRAMESETTING \_ 帽 \_ 标头** 结构的大小 + **KSPROPERTY \_ 单步 \_ ** 结构的大小。
+如果支持步骤，这就是 **KSCAMERA \_ PERFRAMESETTING \_ 帽 \_ 标头** 结构的大小 + **KSPROPERTY \_ 单步 \_** 结构的大小。
 
 **类型**
 
@@ -133,7 +132,7 @@ ms.locfileid: "89185721"
 
 **标记**
 
-此字段包含可用标志。 此字段必须包含可用的标志，这些标志可通过执行以下在 ksmedia 和 ksmedia 中定义的 ISO \_ 标志。 如果支持每帧 ISO，则驱动程序必须至少支持以下功能之一： ISO \_ 自动和 iso \_ 手动，其中 iso \_ auto 是必需的。 如果播发了 ISO \_ 手册，驱动程序必须 \\ \\ 在 **KSPROPERTY \_ 步进 \_ 长时间内进一步公布受支持的 ISO 速度最小值步骤。如果 \_ ** 需要手动 iso，则必须支持 iso 手册。
+此字段包含可用标志。 此字段必须包含可用的标志，这些标志可通过执行以下在 ksmedia 和 ksmedia 中定义的 ISO \_ 标志。 如果支持每帧 ISO，则驱动程序必须至少支持以下功能之一： ISO \_ 自动和 iso \_ 手动，其中 iso \_ auto 是必需的。 如果播发了 ISO \_ 手册，驱动程序必须 \\ \\ 在 **KSPROPERTY \_ 步进 \_ 长时间内进一步公布受支持的 ISO 速度最小值步骤。如果 \_** 需要手动 iso，则必须支持 iso 手册。
 
 ```cpp
 #define KSCAMERA_EXTENDEDPROP_ISO_MANUAL    0x0080000000000000
@@ -145,7 +144,7 @@ ms.locfileid: "89185721"
 
 **有效负载**
 
-如果驱动程序仅支持 auto 模式，则不包含有效负载。 否则，必须在 **KSPROPERTY \_ 步进 \_ 长** 结构中指定范围负载。 ISO 速度的最小值、最大值和阶数由 **KSPROPERTY \_ 步进 \_ 长时间决定。UnsignedMinimum**，K**SPROPERTY \_ 步进 \_ 长。UnsignedMaximum**和 **KSPROPERTY \_ 步进 \_ 长。SteppingDelta**。 支持整数手动 ISO 的驱动程序应仅公布 ISO \_ 手册，其中包含支持的 iso 速度范围 (min/max/step) 。 \_每帧 iso 不支持数字 iso Xxx 预设。
+如果驱动程序仅支持 auto 模式，则不包含有效负载。 否则，必须在 **KSPROPERTY \_ 步进 \_ 长** 结构中指定范围负载。 ISO 速度的最小值、最大值和阶数由 **KSPROPERTY \_ 步进 \_ 长时间决定。UnsignedMinimum**，K **SPROPERTY \_ 步进 \_ 长。UnsignedMaximum** 和 **KSPROPERTY \_ 步进 \_ 长。SteppingDelta**。 支持整数手动 ISO 的驱动程序应仅公布 ISO \_ 手册，其中包含支持的 iso 速度范围 (min/max/step) 。 \_每帧 iso 不支持数字 iso Xxx 预设。
 
 **焦点项**  
 
@@ -167,7 +166,7 @@ ms.locfileid: "89185721"
 
 **有效负载**
 
-范围负载必须在 KSPROPERTY \_ 单步执行的 \_ 长结构中指定。 镜头位置的最小值、最大值和阶数从 **KSPROPERTY \_ 步进 \_ 长时间决定。UnsignedMinimum**， **KSPROPERTY \_ 步进 \_ 长。UnsignedMaximum**和 **KSPROPERTY \_ 步进 \_ 长。SteppingDelta**。 按照以下方式定义每帧设置焦点的行为以及它如何 interworks 全局焦点设置。
+范围负载必须在 KSPROPERTY \_ 单步执行的 \_ 长结构中指定。 镜头位置的最小值、最大值和阶数从 **KSPROPERTY \_ 步进 \_ 长时间决定。UnsignedMinimum**， **KSPROPERTY \_ 步进 \_ 长。UnsignedMaximum** 和 **KSPROPERTY \_ 步进 \_ 长。SteppingDelta**。 按照以下方式定义每帧设置焦点的行为以及它如何 interworks 全局焦点设置。
 
 1.  镜头位置为粘滞;但不包括焦点命令。 如果在全局设置中选择了 "连续自动焦点 (CAF") ，则仅为指定的帧重写 CAF 操作，并且 CAF 在提供手动焦点后可能会移动镜头位置， (可能会在完全扫描) 之后移动镜头位置。
 

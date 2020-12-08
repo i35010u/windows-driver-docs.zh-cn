@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ CAMERACONTROL \_ 扩展 \_ CAMERAANGLEOFFSET
 description: "\"相机角度偏移量\" 属性提供有关相机位置的螺距和偏航角度的只读信息。 螺距和偏航角度定义为从水平轴和垂直轴的偏移量。"
-ms.assetid: 06F62EB9-DAF7-486F-9940-24EA2224BCB0
 keywords:
 - KSPROPERTY_CAMERACONTROL_EXTENDED_CAMERAANGLEOFFSET 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 09/10/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: a73a2ba2e592cec272e34e8873b2c273067ccaff
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 1f56b92a376b63f3eb7b05ff3626cae294773f55
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104846"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837065"
 ---
 # <a name="ksproperty_cameracontrol_extended_cameraangleoffset"></a>KSPROPERTY \_ CAMERACONTROL \_ 扩展 \_ CAMERAANGLEOFFSET
 
@@ -59,15 +58,15 @@ ms.locfileid: "90104846"
 
 属性值 (操作数据) 包含 [**KSCAMERA \_ EXTENDEDPROP \_ 标头**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header) 结构和 [**KSCAMERA \_ EXTENDEDPROP \_ FIELDOFVIEW**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_fieldofview) 结构。
 
-总属性数据大小为 **sizeof** (KSCAMERA \_ EXTENDEDPROP \_ 标头) + **sizeof** (KSCAMERA \_ EXTENDEDPROP \_ FIELDOFVIEW) 。 [**KSCAMERA \_ EXTENDEDPROP \_ 标头**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)的**Size**成员设置为此总属性数据大小。
+总属性数据大小为 **sizeof** (KSCAMERA \_ EXTENDEDPROP \_ 标头) + **sizeof** (KSCAMERA \_ EXTENDEDPROP \_ FIELDOFVIEW) 。 [**KSCAMERA \_ EXTENDEDPROP \_ 标头**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)的 **Size** 成员设置为此总属性数据大小。
 
-[**KSCAMERA \_ EXTENDEDPROP \_ 标头**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)的**功能**和**标志**成员不用于此属性。
+[**KSCAMERA \_ EXTENDEDPROP \_ 标头**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)的 **功能** 和 **标志** 成员不用于此属性。
 
 如果驱动程序无法为照相机确定正确的视图字段，则驱动程序不得指示此属性的支持。
 
 此属性控件是同步的，不可取消。
 
-## <a name="remarks"></a>注解
+## <a name="remarks"></a>备注
 
 如果相机传感器和 gyro 传感器都位于相同的物理机箱中，则建议照相机驱动程序报告适当的偏移角度，这可能是0度。 如果相机传感器和 gyro 传感器不在同一个物理机箱中，则建议使用驱动程序来指示对此属性的支持。
 
@@ -83,7 +82,7 @@ ms.locfileid: "90104846"
 <thead>
 <tr class="header">
 <th>成员</th>
-<th>Value</th>
+<th>“值”</th>
 </tr>
 </thead>
 <tbody>
@@ -137,7 +136,7 @@ ms.locfileid: "90104846"
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [**KSCAMERA \_ EXTENDEDPROP \_ 标头**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)
 

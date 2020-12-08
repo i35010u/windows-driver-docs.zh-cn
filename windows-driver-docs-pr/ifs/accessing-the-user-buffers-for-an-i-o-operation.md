@@ -1,7 +1,6 @@
 ---
 title: 访问 I/O 操作的用户缓冲区
 description: 访问 I/O 操作的用户缓冲区
-ms.assetid: 0f4334bf-eec9-4667-af02-537e3357d872
 keywords:
 - 缓冲 WDK 文件系统微筛选器
 - FLT_PARAMETERS
@@ -11,12 +10,12 @@ keywords:
 - 基于 IRP 的 i/o 操作 WDK 文件系统微筛选器
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 301c33b35d51d37d66ad3defa90336cdfc879acd
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: ee65070bed1a05089445d700dee87a6e4c16f984
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89066242"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96836815"
 ---
 # <a name="accessing-the-user-buffers-for-an-io-operation"></a>访问 I/O 操作的用户缓冲区
 

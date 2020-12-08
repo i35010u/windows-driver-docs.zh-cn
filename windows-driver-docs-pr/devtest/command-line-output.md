@@ -1,27 +1,26 @@
 ---
 title: 命令行输出
 description: 命令行输出
-ms.assetid: 21225785-e8b8-4488-b0a0-fe4cea50d1ff
 keywords:
-- 输出文件 WDK Static Driver Verifier
-- 命令行输出 WDK Static Driver Verifier
+- 输出文件 WDK 静态驱动程序验证程序
+- 命令行输出 WDK 静态驱动程序验证程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 03b0caf66d4f52e3c062f5f4d431e3fbd66d313f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 96b41aae12d4c32e41a996b0da889688e081625a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63343100"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837811"
 ---
 # <a name="command-line-output"></a>命令行输出
 
 
-提交到 SDV 命令，它会显示有关命令的信息，在执行，状态消息，以指示成功或失败的命令中，任何错误消息或可能已生成的警告。 输出的底部将显示的验证结果的摘要。
+将命令提交到 SDV 时，它会在执行命令时显示有关该命令的信息、指示该命令是成功还是失败的状态消息，以及可能已生成的任何错误消息或警告。 验证结果的摘要显示在输出的底部。
 
-例如下, 图显示的命令来验证使用的 SDV FailDriver WDM 示例驱动程序的命令行输出[SpinLock](wdm-spinlock.md)规则。 SDV FailDriver WDM 示例驱动程序的驱动程序有有意编码错误，位于\\工具\\sdv\\示例\\Sdv FailDriver WDM 文件夹的 Windows 驱动程序示例。
+例如，下图显示了命令中的命令行输出，用于验证包含 [旋转锁](wdm-spinlock.md) 规则的 SDV-FAILDRIVER-WDM 示例驱动程序。 SDV-FailDriver-WDM 示例驱动程序（包含有意编码错误的驱动程序）位于 \\ \\ \\ \\ Windows 驱动程序示例的 tools SDV samples SDV-FailDriver-WDM 文件夹中。
 
-在此验证，SDV 找到该驱动程序违反该规则。
+在此验证中，SDV 发现驱动程序违反了该规则。
 
 ```
 G:\Windows-driver-samples\tools\sdv\samples\SDV-FailDriver-WDM\driver>msbuild /p:Configuration=Release /p:Platform=x64 /t:sdv /p:inputs=/check:spinlock
@@ -102,9 +101,9 @@ Build succeeded.
 Time Elapsed 00:01:37.93
 ```
 
-在查看结果摘要以查看违反了哪些规则之后, 可以指定 **/查看**中可查看静态报表。 驱动程序验证程序的 MSBuild 命令的选项。 有关命令选项的信息，请参阅[Static Driver Verifier 命令 (MSBuild)](-static-driver-verifier-commands--msbuild-.md)。 璝惠**扫描**，**生成**并**检查**步骤在输出中，请参阅[验证过程](verification-process.md)。
+查看结果摘要以查看违反了哪些规则后，可以在 MSBuild 命令中指定 **/view** 选项，以查看静态驱动程序验证程序报表。 有关命令选项的信息，请参阅 [静态驱动程序验证程序命令 (MSBuild) ](-static-driver-verifier-commands--msbuild-.md)。 有关 **扫描**、 **构建** 和 **检查** 输出中的步骤的信息，请参阅 [验证过程](verification-process.md)。
 
-下表描述了可以出现在结果摘要中的结果。
+下表描述了可能出现在结果摘要中的结果。
 
 <table>
 <colgroup>
@@ -119,31 +118,31 @@ Time Elapsed 00:01:37.93
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>规则将传递</strong></p></td>
-<td align="left"><p>SDV 通过验证，但无法证明规则的任何冲突的规则数。</p></td>
+<td align="left"><p><strong>规则通过</strong></p></td>
+<td align="left"><p>SDV 验证的规则数，但无法证明规则的任何冲突。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>缺陷</strong></p></td>
-<td align="left"><p>SDV 检测到的规则冲突数。</p></td>
+<td align="left"><p>SDV 检测到的规则冲突的数目。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>不适用</strong></p></td>
-<td align="left"><p>SDV 无法验证，因为该驱动程序不支持的入口点所需的分析，或该驱动程序未调用的函数的规则监视的规则数。</p>
-<p>如果此值大于 0，确认<a href="sdv-map-h.md" data-raw-source="[Sdv-map.h](sdv-map-h.md)">Sdv map.h</a>文件内容正确无误。</p></td>
+<td align="left"><p>由于驱动程序不支持分析所需的入口点或驱动程序未调用规则所监视的函数，SDV 无法验证的规则数。</p>
+<p>如果此值大于0，请验证 <a href="sdv-map-h.md" data-raw-source="[Sdv-map.h](sdv-map-h.md)">Sdv</a> 文件的内容是否正确。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>超时</strong></p></td>
-<td align="left"><p>SDV 停止验证，因为它超出了时间限制为验证每个规则的规则数。 设置时间限制<a href="static-driver-verifier-options-file.md" data-raw-source="[Static Driver Verifier Options File](static-driver-verifier-options-file.md)">静态驱动程序验证工具选项文件</a>，Sdv default.xml。</p>
-<p>SDV 中的限制被由于此结果。 它并不表示该驱动程序中的错误。</p></td>
+<td align="left"><p><strong>超时值</strong></p></td>
+<td align="left"><p>SDV 停止验证的规则数，因为它超过了验证每个规则的时间限制。 时间限制设置为 <a href="static-driver-verifier-options-file.md" data-raw-source="[Static Driver Verifier Options File](static-driver-verifier-options-file.md)">静态驱动程序验证程序选项文件</a>，Sdv-default.xml。</p>
+<p>此结果由 SDV 中的限制引起。 它不指示驱动程序中的错误。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>Spaceouts</strong></p></td>
-<td align="left"><p>SDV 停止验证，因为它超出了验证规则的内存限制的规则数。 在中设置的内存限制<a href="static-driver-verifier-options-file.md" data-raw-source="[Static Driver Verifier Options File](static-driver-verifier-options-file.md)">静态驱动程序验证工具选项文件</a>，Sdv default.xml。</p>
-<p>SDV 中的限制被由于此结果。 它并不表示该驱动程序中的错误。</p></td>
+<td align="left"><p>SDV 停止验证的规则数，因为它超过了用于验证该规则的内存限制。 内存限制在 <a href="static-driver-verifier-options-file.md" data-raw-source="[Static Driver Verifier Options File](static-driver-verifier-options-file.md)">静态驱动程序验证程序选项文件</a>中设置 Sdv-default.xml。</p>
+<p>此结果由 SDV 中的限制引起。 它不指示驱动程序中的错误。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>其他</strong></p></td>
-<td align="left"><p>SDV 遇到内部错误从中它无法恢复的次数。</p></td>
+<td align="left"><p>SDV 遇到无法从中恢复的内部错误的次数。</p></td>
 </tr>
 </tbody>
 </table>

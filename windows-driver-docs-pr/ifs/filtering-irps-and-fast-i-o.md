@@ -1,7 +1,6 @@
 ---
 title: 筛选 IRP 和快速 I/O
 description: 筛选 IRP 和快速 I/O
-ms.assetid: fad124b0-525d-4ff9-8f2c-3817fc76685c
 keywords:
 - 筛选器驱动程序 WDK 文件系统，IRP 筛选
 - 文件系统筛选器驱动程序 WDK，IRP 筛选
@@ -14,12 +13,12 @@ keywords:
 - I/o 请求 WDK 文件系统
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bf01d74ffaec6ab6188d74c50d23e45fcc25bb01
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: d25c596e1c809a1a0b4b1a024f1340b6f24d2972
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89065050"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837781"
 ---
 # <a name="filtering-irps-and-fast-io"></a>筛选 IRP 和快速 I/O
 

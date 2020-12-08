@@ -1,15 +1,14 @@
 ---
 title: 'E (Windows 调试器词汇表) '
 description: 词汇表页-E
-ms.assetid: 1e32bd40-8c77-4c6b-913c-6ec26707ed36
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: af34d7eca3a721315dc1b1fdfa312bfc24ee7123
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 73a1937bb49de66b50ea650283f86c9c566d43d0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89207645"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838651"
 ---
 # <a name="e"></a>E
 

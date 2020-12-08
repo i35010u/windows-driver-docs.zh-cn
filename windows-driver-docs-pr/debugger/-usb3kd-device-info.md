@@ -1,9 +1,8 @@
 ---
-title: usb3kd device_info
-description: Device_info usb3kd 命令在 USB 3.0 树中显示有关 USB 设备的信息。
-ms.assetid: BD6D1562-2606-42C1-9EE6-D38D93D685DE
+title: usb3kd.device_info
+description: Usb3kd.device_info 命令显示有关 USB 3.0 树中 USB 设备的信息。
 keywords:
-- usb3kd device_info Windows 调试
+- usb3kd.device_info Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 5d6db47cb7b36f9df307c2ee387aa32731614d72
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 6e5aa791db9ad667abc44c23a652d992e78e093b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89208757"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837011"
 ---
 # <a name="usb3kddevice_info"></a>！ usb3kd \_ 信息
 
 
-**！ Usb3kd \_ info**命令显示有关[USB 3.0 树](usb-3-extensions.md#usb-3-tree)中 usb 设备的信息。
+**！ Usb3kd \_ info** 命令显示有关 [USB 3.0 树](usb-3-extensions.md#usb-3-tree)中 usb 设备的信息。
 
 ```dbgcmd
 !usb3kd.device_info DeviceContext
@@ -42,7 +41,7 @@ Usb3kd.dll
 <a name="remarks"></a>备注
 -------
 
-**！设备 \_ 信息** 和 [**！ ucx \_ 设备**](-usb3kd-ucx-device.md) 都显示设备的相关信息，但显示的信息不同。 **！设备 \_ 信息**的输出来自 usb 3.0 集线器驱动程序的位置，而 **！ ucx \_ 设备**的输出来自 usb 主机控制器扩展驱动程序的位置。 例如， **！设备 \_ 信息** 输出包含有关配置和接口描述符的信息， **！ ucx \_ 设备** 输出包含有关终结点的信息。
+**！设备 \_ 信息** 和 [**！ ucx \_ 设备**](-usb3kd-ucx-device.md) 都显示设备的相关信息，但显示的信息不同。 **！设备 \_ 信息** 的输出来自 usb 3.0 集线器驱动程序的位置，而 **！ ucx \_ 设备** 的输出来自 usb 主机控制器扩展驱动程序的位置。 例如， **！设备 \_ 信息** 输出包含有关配置和接口描述符的信息， **！ ucx \_ 设备** 输出包含有关终结点的信息。
 
 <a name="examples"></a>示例
 --------

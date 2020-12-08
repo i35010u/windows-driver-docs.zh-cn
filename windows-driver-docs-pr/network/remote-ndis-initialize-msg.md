@@ -1,15 +1,14 @@
 ---
 title: REMOTE_NDIS_INITIALIZE_MSG
 description: 此消息由主机发送到远程 NDIS 设备，以便初始化网络连接。
-ms.assetid: 08735ee8-7a4c-4a3d-9082-27c61cfd15e8
 ms.date: 07/31/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 703865ff32108dfb78e8067ae506bdcf6496b803
-ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
+ms.openlocfilehash: 5c273b9991e093679680f132213f179cf0416b01
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88968714"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96836705"
 ---
 # <a name="remote_ndis_initialize_msg"></a>远程 \_ NDIS \_ 初始化 \_ 消息
 
@@ -28,7 +27,7 @@ ms.locfileid: "88968714"
 <th>Offset</th>
 <th>大小</th>
 <th>字段</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -83,7 +82,7 @@ ms.locfileid: "88968714"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Version</p></td>
+<td><p>版本</p></td>
 <td><p>在 Microsoft Windows XP 和更高版本的 Windows 操作系统中可用。 在 Windows 2000 中也可以作为可再发行二进制文件。</p></td>
 </tr>
 <tr class="even">

@@ -1,15 +1,14 @@
 ---
 title: Windows 内核模式内核库
 description: Windows 内核模式内核库
-ms.assetid: e62264ee-5d52-4ae1-bd54-51e93c34762f
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: deff3f336e045e0b8bd00fe5c33a947f96b36ba2
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: b5ed565afa04d1245f815215aef195bbe4c120d4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89185375"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837941"
 ---
 # <a name="windows-kernel-mode-kernel-library"></a>Windows 内核模式内核库
 

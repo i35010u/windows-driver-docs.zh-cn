@@ -1,18 +1,17 @@
 ---
 title: 筛选器驱动程序的特征
 description: 筛选器驱动程序的特征
-ms.assetid: 95e302c1-687e-4a30-b3bc-9d272c688cba
 keywords:
 - 筛选器驱动程序 WDK 网络，特征
 - NDIS 筛选器驱动程序 WDK，特征
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a48d65f588dd0c61016fc913e3b1042c457ca3f6
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: abecd5ae621c0a887d5da513e7a4b04965b9e194
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89208687"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838569"
 ---
 # <a name="filter-driver-characteristics"></a>筛选器驱动程序的特征
 

@@ -1,25 +1,24 @@
 ---
 title: OID_WDI_SET_ADD_CIPHER_KEYS
 description: OID_WDI_SET_ADD_CIPHER_KEYS 在端口的键表中添加或覆盖密码密钥。 这是一个仅设置属性。
-ms.assetid: d10fc976-9e51-4bbb-8f29-caf8c600618a
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 OID_WDI_SET_ADD_CIPHER_KEYS 网络驱动程序
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: c5c5c4c43cad056b90f81f9322b4c762af6fa223
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 1100c909fa19de3d1521515a7a25abb1cecfdd09
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89215845"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838727"
 ---
 # <a name="oid_wdi_set_add_cipher_keys"></a>OID \_ WDI \_ 设置 \_ 添加 \_ 密码 \_ 密钥
 
 
 OID \_ WDI \_ 设置 \_ 添加 \_ 密码 \_ 密钥在端口的键表中添加或覆盖密码密钥。 这是一个仅设置属性。
 
-| 作用域 | 设置序列化任务 | 正常执行时间 (秒)  |
+| 范围 | 设置序列化任务 | 正常执行时间 (秒)  |
 |-------|--------------------------|---------------------------------|
 | 端口  | 是                      | 1                               |
 
@@ -56,7 +55,7 @@ OID \_ WDI \_ 设置 \_ 添加 \_ 密码 \_ 密钥在端口的键表中添加或
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
-<td><p>Windows Server 2016</p></td>
+<td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
 <td><p>标头</p></td>
@@ -65,7 +64,7 @@ OID \_ WDI \_ 设置 \_ 添加 \_ 密码 \_ 密钥在端口的键表中添加或
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [OID \_ WDI \_ 设置 \_ 删除 \_ 密码 \_ 密钥](oid-wdi-set-delete-cipher-keys.md)

@@ -1,17 +1,16 @@
 ---
 title: DriverEntry 的必要责任
 description: DriverEntry 的必要责任
-ms.assetid: 6e997875-e7b7-43e2-8398-f0574f3a5816
 keywords:
 - DriverEntry WDK 内核，所需职责
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7121dbf1fe6094e2223de17388529c2eeba59d85
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 0ddc068bacb4e25a62c09d4103849da7523eef14
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89186011"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838575"
 ---
 # <a name="driverentrys-required-responsibilities"></a>DriverEntry 的必要责任
 

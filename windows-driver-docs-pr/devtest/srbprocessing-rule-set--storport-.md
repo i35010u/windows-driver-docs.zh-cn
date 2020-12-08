@@ -1,15 +1,14 @@
 ---
 title: SrbProcessing 规则集 (Storport)
 description: 使用这些规则验证驱动程序是否正确地处理 SRB 请求。
-ms.assetid: A3BF2AA3-207F-4D74-94B0-6CA215341340
 ms.date: 05/21/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: e0294be51d926d994380bcaca1daa4a50b31a778
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: e0f680a7f4ac08a4fe76e756898013e4061a9278
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104126"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838627"
 ---
 # <a name="srbprocessing-rule-set-storport"></a>SrbProcessing 规则集 (Storport)
 
@@ -27,7 +26,7 @@ ms.locfileid: "90104126"
 <thead>
 <tr class="header">
 <th align="left">主题</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -98,7 +97,7 @@ ms.locfileid: "90104126"
 
 2.  单击 " **规则** " 选项卡。在 " **规则集**" 下，选择 **SrbProcessing**。
 
-    若要从 Visual Studio 开发人员命令提示符窗口中选择默认规则集，请使用 **/check**选项指定**SrbProcessing。 sdv** 。 例如：
+    若要从 Visual Studio 开发人员命令提示符窗口中选择默认规则集，请使用 **/check** 选项指定 **SrbProcessing。 sdv** 。 例如：
 
     ```
     msbuild /t:sdv /p:Inputs="/check:SrbProcessing.sdv" mydriver.VcxProj /p:Configuration="Win8 Release" /p:Platform=Win32

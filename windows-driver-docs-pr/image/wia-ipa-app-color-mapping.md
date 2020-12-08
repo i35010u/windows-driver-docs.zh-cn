@@ -1,9 +1,8 @@
 ---
-title: WIA\_IPA\_应用程序\_颜色\_映射
-description: WIA\_IPA\_应用程序\_颜色\_映射属性保留供将来使用由 Microsoft 和未实现这一次。
-ms.assetid: abf0888b-7c9a-4cd4-9227-3a065d7b732b
+title: WIA \_ IPA \_ 应用 \_ 颜色 \_ 映射
+description: WIA \_ IPA \_ 应用 \_ 颜色 \_ 映射属性由 Microsoft 保留以供将来使用，此时不会实现。
 keywords:
-- WIA_IPA_APP_COLOR_MAPPING 成像设备
+- WIA_IPA_APP_COLOR_MAPPING 图像设备
 topic_type:
 - apiref
 api_name:
@@ -14,24 +13,24 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7d4afe4e81c09fdd54bb06b3bd77e73696cf6295
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 592c213f956acfe7f47462e8edbbbc9e679b87dd
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63369571"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837731"
 ---
-# <a name="wiaipaappcolormapping"></a>WIA\_IPA\_应用程序\_颜色\_映射
+# <a name="wia_ipa_app_color_mapping"></a>WIA \_ IPA \_ 应用 \_ 颜色 \_ 映射
 
 
-WIA\_IPA\_应用程序\_颜色\_映射属性保留供将来使用由 Microsoft 和未实现这一次。
+WIA \_ IPA \_ 应用 \_ 颜色 \_ 映射属性由 Microsoft 保留以供将来使用，此时不会实现。
 
 ## <span id="ddk_wia_ipa_app_color_mapping_si"></span><span id="DDK_WIA_IPA_APP_COLOR_MAPPING_SI"></span>
 
 
-属性类型：VT\_I4
+属性类型： VT \_ I4
 
-有效值：WIA\_PROP\_NONE
+有效值： WIA " \_ \_ 无"
 
 访问权限：只读
 
@@ -45,8 +44,8 @@ WIA\_IPA\_应用程序\_颜色\_映射属性保留供将来使用由 Microsoft �
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Wiadef.h （包括 Wiadef.h）</td>
+<td><p>标头</p></td>
+<td>Wiadef (包含 Wiadef) </td>
 </tr>
 </tbody>
 </table>

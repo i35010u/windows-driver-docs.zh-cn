@@ -1,9 +1,8 @@
 ---
 title: DestinationResponse 元素
-description: 所需的 DestinationResponse 元素包含单个 ScanDestination 注册响应信息。
-ms.assetid: 388304ca-4d62-40cf-ad68-13607a836caf
+description: 必需的 DestinationResponse 元素包含单个 ScanDestination 注册的响应信息。
 keywords:
-- DestinationResponse 元素成像设备
+- DestinationResponse 元素图像设备
 topic_type:
 - apiref
 api_name:
@@ -12,19 +11,19 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 43cf9feb3851452b48e97db1cefb9ec492eb649b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 05dfb1f11ceff04b7705194cdb269ef136a118be
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63373196"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838599"
 ---
 # <a name="destinationresponse-element"></a>DestinationResponse 元素
 
 
-所需**DestinationResponse**元素包含的响应信息的单个[ **ScanDestination** ](scandestination.md)注册。
+必需的 **DestinationResponse** 元素包含单个 [**ScanDestination**](scandestination.md) 注册的响应信息。
 
-<a name="usage"></a>用法
+<a name="usage"></a>使用情况
 -----
 
 ```xml
@@ -52,7 +51,7 @@ ms.locfileid: "63373196"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>&lt;供应商定义的任何元素&gt;</p></td>
+<td><p>&lt;任何供应商定义的元素&gt;</p></td>
 </tr>
 <tr class="even">
 <td><p><a href="clientcontext.md" data-raw-source="[&lt;strong&gt;ClientContext&lt;/strong&gt;](clientcontext.md)"><strong>ClientContext</strong></a></p></td>
@@ -85,7 +84,7 @@ ms.locfileid: "63373196"
 <a name="remarks"></a>备注
 -------
 
-**DestinationResponse**元素包含[ **ClientContext** ](clientcontext.md)元素从其匹配[ **ScanDestination**](scandestination.md)元素，以便客户端可以确定响应。 **DestinationResponse**还包含[ **DestinationToken** ](destinationtoken.md)元素用于所有[ **CreateScanJobRequest** ](createscanjobrequest.md)此目标中的操作元素。
+**DestinationResponse** 元素包含其匹配的 [**ScanDestination**](scandestination.md)元素中的 [**ClientContext**](clientcontext.md)元素，以便客户端可以标识响应。 **DestinationResponse** 还包含 [**DestinationToken**](destinationtoken.md) 元素，可在此目标的所有 [**CreateScanJobRequest**](createscanjobrequest.md) 操作元素中使用。
 
 ## <a name="see-also"></a>请参阅
 

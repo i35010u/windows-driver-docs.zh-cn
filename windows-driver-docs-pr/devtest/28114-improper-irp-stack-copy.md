@@ -1,7 +1,6 @@
 ---
 title: C28114
 description: 警告 C28114 复制整个 IRP 堆栈条目时，应清除或更新的某些字段已初始化。
-ms.assetid: 39e3e313-e40f-4cb9-a534-c9e74fd1e88b
 keywords:
 - 列出用于驱动程序的 WDK PREfast 的警告
 - 为驱动程序列出的 WDK PREfast 的错误
@@ -9,12 +8,12 @@ ms.date: 04/20/2017
 ms.localizationpriority: medium
 f1_keywords:
 - C28114
-ms.openlocfilehash: 6e3bdc7c7de42a6c1a4db05357a4e95041b2bd2f
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: a2fb6b48194224517d3581f6d23bf75f22317dd6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89381655"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837817"
 ---
 # <a name="c28114"></a>C28114
 

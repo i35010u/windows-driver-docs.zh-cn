@@ -1,7 +1,6 @@
 ---
 title: UMDF DDI 编程模型
 description: UMDF DDI 编程模型
-ms.assetid: d4bf0791-d2c4-4504-84ad-020880124363
 keywords:
 - UMDF 对象 WDK，DDI
 - framework 对象 WDK UMDF，DDI
@@ -9,12 +8,12 @@ keywords:
 - DDI WDK UMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d8cda2373b8823e5c09dc12b7ee97a015add4a55
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: d8c96bc6af98bf379e0ccb6f73ab852a31452b52
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89191387"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837831"
 ---
 # <a name="umdf-ddi-programming-model"></a>UMDF DDI 编程模型
 

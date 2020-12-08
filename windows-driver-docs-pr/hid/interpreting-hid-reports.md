@@ -1,22 +1,21 @@
 ---
 title: 解释 HID 报告
 description: 解释 HID 报告
-ms.assetid: 10f8c3a1-ad60-4c99-a425-fa8c9a3be0e1
 keywords:
 - HID 报告 WDK，解释
 - 报告 WDK HID，解释
 ms.date: 09/10/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: a95e5f1bc5b2f648f7d1cd0312e031e901338934
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 370d5d9a4493ea5b87a65c293c69922927027c2f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91734301"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96836817"
 ---
 # <a name="interpreting-hid-reports"></a>解释 HID 报告
 
-本部分介绍用户模式的应用程序和内核模式驱动程序如何使用 **HidP \_ *Xxx * * * [HIDClass 支持例程](/windows-hardware/drivers/ddi/index)来解释 HID 报表中的控件数据。
+本部分介绍用户模式的应用程序和内核模式驱动程序如何使用 **HidP \_ * Xxx** *  [HIDClass 支持例程](/windows-hardware/drivers/ddi/index)来解释 HID 报表中的控件数据。
 
 ## <a name="extracting-value-data-by-specifying-its-usage"></a>通过指定值数据的使用情况来提取该值
 
@@ -28,7 +27,7 @@ ms.locfileid: "91734301"
 
 - [HidP_GetUsageValueArray](/windows-hardware/drivers/ddi/hidpi/nf-hidpi-hidp_getusagevaluearray) 返回使用情况值数组。
 
-若要使用 **HidP_GetUsageValueArray** 应用程序和驱动程序必须分配一个初始化为零的缓冲区，该缓冲区的大小足以容纳用量值数组。 必需的大小（以字节为单位）是使用量值数组的[HIDP_VALUE_CAPS](/windows-hardware/drivers/ddi/hidpi/ns-hidpi-_hidp_value_caps)结构的**BitSize**和**ReportCount**成员的积，向上舍入到最接近的字节。
+若要使用 **HidP_GetUsageValueArray** 应用程序和驱动程序必须分配一个初始化为零的缓冲区，该缓冲区的大小足以容纳用量值数组。 必需的大小（以字节为单位）是使用量值数组的 [HIDP_VALUE_CAPS](/windows-hardware/drivers/ddi/hidpi/ns-hidpi-_hidp_value_caps)结构的 **BitSize** 和 **ReportCount** 成员的积，向上舍入到最接近的字节。
 
 ## <a name="extracting-button-usages-that-are-set-to-on"></a>正在提取设置为 ON 的按钮用法
 
@@ -100,6 +99,6 @@ ms.locfileid: "91734301"
 
 应用程序或驱动程序使用集合的 [按钮功能数组](./button-capability-arrays.md) 和 [值功能数组](./value-capability-arrays.md) 中指定的数据索引来标识 HID 用法。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [初始化 HID 报告](initializing-hid-reports.md)

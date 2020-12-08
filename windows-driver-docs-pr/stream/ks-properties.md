@@ -1,19 +1,18 @@
 ---
 title: KS 属性
 description: KS 属性
-ms.assetid: a385929e-1934-4d88-aaf9-ff1ddbfd30f7
 keywords:
 - 内核流 WDK，属性
 - KS 属性 WDK 内核流式处理
 - 属性 WDK 内核流式处理
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bb4142fb895a8aaa31c7459d859b9e7fb1774cb2
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: f8bd842998c969b438ec8b31b1aca49e83b30cb8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89189989"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837073"
 ---
 # <a name="ks-properties"></a>KS 属性
 
@@ -21,9 +20,9 @@ ms.locfileid: "89189989"
 
 
 
-*属性*表示属于内核流式处理对象（例如筛选器或 pin）的功能或控件状态设置。 内核流式处理微型驱动程序的客户端可以发送 get 和 set 属性请求， (KSPROPERTY \_ 类型 \_ GET 和 KSPROPERTY \_ 类型 \_ 将) 设置为微型驱动程序已经实例化的筛选器和 pin。 一组相关属性称为 *属性集*。
+*属性* 表示属于内核流式处理对象（例如筛选器或 pin）的功能或控件状态设置。 内核流式处理微型驱动程序的客户端可以发送 get 和 set 属性请求， (KSPROPERTY \_ 类型 \_ GET 和 KSPROPERTY \_ 类型 \_ 将) 设置为微型驱动程序已经实例化的筛选器和 pin。 一组相关属性称为 *属性集*。
 
-若要获取或设置单个属性，用户模式客户端将调用 Win32 函数 **DeviceIoControl** ，并将 *dwIoControlCode* 参数设置为 IOCTL \_ KS \_ 属性。 Microsoft Windows SDK 文档中介绍了**DeviceIoControl** 。 内核模式客户端应调用 [**KsSynchronousDeviceControl**](/windows-hardware/drivers/ddi/ksproxy/nf-ksproxy-kssynchronousdevicecontrol)。
+若要获取或设置单个属性，用户模式客户端将调用 Win32 函数 **DeviceIoControl** ，并将 *dwIoControlCode* 参数设置为 IOCTL \_ KS \_ 属性。 Microsoft Windows SDK 文档中介绍了 **DeviceIoControl** 。 内核模式客户端应调用 [**KsSynchronousDeviceControl**](/windows-hardware/drivers/ddi/ksproxy/nf-ksproxy-kssynchronousdevicecontrol)。
 
 输入缓冲区可以是 [**KSPROPERTY**](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier) 结构，也可以是包含 KSPROPERTY 结构和与请求相关的其他信息的包装。 为响应此调用，操作系统会将 IRP 调度到类驱动程序。
 

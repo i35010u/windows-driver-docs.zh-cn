@@ -1,15 +1,14 @@
 ---
-title: 多组件设备，一种或多种功能电源状态
+title: Multiple-Component 设备，一种或多种功能电源状态
 description: 支持多组件设备呈现单个或多个功能性电源状态
-ms.assetid: D601A0F6-A035-4161-879A-D495518E7EC6
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c5ceea16c5647494e51cf08c0a42d276fd3036f6
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 6badcc723cece6113daca86655e4d9572552bbcd
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89190789"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96836599"
 ---
 # <a name="supporting-multiple-component-devices-with-single-or-multiple-functional-power-states"></a>支持多组件设备呈现单个或多个功能性电源状态
 
@@ -18,11 +17,11 @@ ms.locfileid: "89190789"
 
 多组件设备的 KMDF 驱动程序可以定义每个组件的一个或多个功能电源状态。
 
-在这种情况下，驱动程序会直接注册到电源管理框架 (PoFx) 。 若要指定 WDF 不应向 PoFx 注册，驱动程序将调用[**WdfDeviceAssignS0IdleSettings**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceassigns0idlesettings) ，将 IdleTimeoutType 成员的**IdleTimeoutType**成员设置为**DriverManagedIdleTimeout**。 [** \_ \_ \_ \_ \_ **](/windows-hardware/drivers/ddi/wdfdevice/ns-wdfdevice-_wdf_device_power_policy_idle_settings) 通常，驱动程序从其 [*EvtDriverDeviceAdd*](/windows-hardware/drivers/ddi/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add) 回调函数调用此方法。
+在这种情况下，驱动程序会直接注册到电源管理框架 (PoFx) 。 若要指定 WDF 不应向 PoFx 注册，驱动程序将调用 [**WdfDeviceAssignS0IdleSettings**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceassigns0idlesettings) ，将 IdleTimeoutType 成员的 **IdleTimeoutType** 成员设置为 **DriverManagedIdleTimeout**。 [**\_ \_ \_ \_ \_**](/windows-hardware/drivers/ddi/wdfdevice/ns-wdfdevice-_wdf_device_power_policy_idle_settings) 通常，驱动程序从其 [*EvtDriverDeviceAdd*](/windows-hardware/drivers/ddi/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add) 回调函数调用此方法。
 
-接下来，驱动程序必须注册到 PoFx。 为此，驱动程序将调用 [**PoFxRegisterDevice**](/windows-hardware/drivers/ddi/wdm/nf-wdm-pofxregisterdevice) ，然后调用 [**PoFxStartDevicePowerManagement**](/windows-hardware/drivers/ddi/wdm/nf-wdm-pofxstartdevicepowermanagement)。 设备首次启动时，驱动程序必须仅向 PoFx 注册一次。 实现此目的的一种方法是从驱动程序提供的 [*EvtDeviceSelfManagedIoInit*](/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_self_managed_io_init) 函数调用这些例程。 仅在设备首次启动时调用*EvtDeviceSelfManagedIoInit* 。
+接下来，驱动程序必须注册到 PoFx。 为此，驱动程序将调用 [**PoFxRegisterDevice**](/windows-hardware/drivers/ddi/wdm/nf-wdm-pofxregisterdevice) ，然后调用 [**PoFxStartDevicePowerManagement**](/windows-hardware/drivers/ddi/wdm/nf-wdm-pofxstartdevicepowermanagement)。 设备首次启动时，驱动程序必须仅向 PoFx 注册一次。 实现此目的的一种方法是从驱动程序提供的 [*EvtDeviceSelfManagedIoInit*](/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_self_managed_io_init) 函数调用这些例程。 仅在设备首次启动时调用 *EvtDeviceSelfManagedIoInit* 。
 
-删除设备后，驱动程序必须调用 [**PoFxUnregisterDevice**](/windows-hardware/drivers/ddi/wdm/nf-wdm-pofxunregisterdevice) 以从 PoFx 取消注册设备。 若要仅注销一次，建议从驱动程序提供的 [*EvtDeviceSelfManagedIoFlush*](/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_self_managed_io_flush) 函数调用此例程。 仅当删除设备时，才会调用*EvtDeviceSelfManagedIoFlush* 。 通过在 *EvtDeviceSelfManagedIoFlush*中注销，驱动程序会在睡眠和重新平衡转换期间保留电源注册，并且无需维护在这些转换过程中保持挂起状态的 i/o 请求的 power 引用。
+删除设备后，驱动程序必须调用 [**PoFxUnregisterDevice**](/windows-hardware/drivers/ddi/wdm/nf-wdm-pofxunregisterdevice) 以从 PoFx 取消注册设备。 若要仅注销一次，建议从驱动程序提供的 [*EvtDeviceSelfManagedIoFlush*](/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_self_managed_io_flush) 函数调用此例程。 仅当删除设备时，才会调用 *EvtDeviceSelfManagedIoFlush* 。 通过在 *EvtDeviceSelfManagedIoFlush* 中注销，驱动程序会在睡眠和重新平衡转换期间保留电源注册，并且无需维护在这些转换过程中保持挂起状态的 i/o 请求的 power 引用。
 
 当驱动程序调用 [*PoFxRegisterDevice*](/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdfdevice_wdm_post_po_fx_register_device)时，它会收到一个 (POHANDLE) 的电源注册句柄，该句柄可用于与 PoFx 直接交互，如以下主题中所述：
 

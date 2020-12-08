@@ -1,9 +1,8 @@
 ---
-title: WIA\_IPA\_CHANNELS\_PER\_PIXEL
-description: WIA\_IPA\_通道\_每\_像素属性包含的每个像素的图像的通道数。 WIA 微型驱动程序创建并维护此属性。
-ms.assetid: 8588ad6b-6c96-487b-bb00-a775f4274c32
+title: WIA \_ IPA \_ \_ 每像素通道数 \_
+description: WIA \_ IPA \_ \_ 每像素通道 \_ 属性包含图像的每个像素的通道数。 WIA 微型驱动程序创建并维护此属性。
 keywords:
-- WIA_IPA_CHANNELS_PER_PIXEL 成像设备
+- WIA_IPA_CHANNELS_PER_PIXEL 图像设备
 topic_type:
 - apiref
 api_name:
@@ -14,24 +13,24 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ad625fb17e301817ef4387837d055f0773e8314c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8c9aedc14d1516114dd428605131f875d87d2485
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63369564"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837723"
 ---
-# <a name="wiaipachannelsperpixel"></a>WIA\_IPA\_CHANNELS\_PER\_PIXEL
+# <a name="wia_ipa_channels_per_pixel"></a>WIA \_ IPA \_ \_ 每像素通道数 \_
 
 
-WIA\_IPA\_通道\_每\_像素属性包含的每个像素的图像的通道数。 WIA 微型驱动程序创建并维护此属性。
+WIA \_ IPA \_ \_ 每像素通道 \_ 属性包含图像的每个像素的通道数。 WIA 微型驱动程序创建并维护此属性。
 
 ## <span id="ddk_wia_ipa_channels_per_pixel_si"></span><span id="DDK_WIA_IPA_CHANNELS_PER_PIXEL_SI"></span>
 
 
-属性类型：VT\_I4
+属性类型： VT \_ I4
 
-有效值：WIA\_PROP\_NONE
+有效值： WIA " \_ \_ 无"
 
 访问权限：只读
 
@@ -45,8 +44,8 @@ WIA\_IPA\_通道\_每\_像素属性包含的每个像素的图像的通道数。
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Wiadef.h （包括 Wiadef.h）</td>
+<td><p>标头</p></td>
+<td>Wiadef (包含 Wiadef) </td>
 </tr>
 </tbody>
 </table>

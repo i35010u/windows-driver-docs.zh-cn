@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ CAMERACONTROL \_ 扩展 \_ PHOTOTHUMBNAIL
 description: 此属性获取或设置照相机的缩略图功能。
-ms.assetid: 859620FD-02ED-4AA1-83B7-B92517F23B0C
 keywords:
 - KSPROPERTY_CAMERACONTROL_EXTENDED_PHOTOTHUMBNAIL 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 09/11/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: e8dc1576eb97361103557366a493f23be9a6ecec
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 1c9ee89238a3d24a2611badd3c838a4de87ab1c2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104378"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837857"
 ---
 # <a name="ksproperty_cameracontrol_extended_photothumbnail"></a>KSPROPERTY \_ CAMERACONTROL \_ 扩展 \_ PHOTOTHUMBNAIL
 
@@ -55,13 +54,13 @@ ms.locfileid: "90104378"
 </tbody>
 </table>
 
-属性值 (操作数据) 包含 [**KSCAMERA \_ EXTENDEDPROP \_ 标头**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header) 结构和 [**KSCAMERA \_ EXTENDEDPROP \_ 值**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_value) 结构。 **KSCAMERA \_ EXTENDEDPROP \_ 值**是必需的，但**值**成员被忽略。
+属性值 (操作数据) 包含 [**KSCAMERA \_ EXTENDEDPROP \_ 标头**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header) 结构和 [**KSCAMERA \_ EXTENDEDPROP \_ 值**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_value) 结构。 **KSCAMERA \_ EXTENDEDPROP \_ 值** 是必需的，但 **值** 成员被忽略。
 
-总的属性数据大小为 **sizeof** (KSCAMERA \_ EXTENDEDPROP \_ 标头) + **sizeof** (KSCAMERA \_ EXTENDEDPROP \_ VALUE) 。 [**KSCAMERA \_ EXTENDEDPROP \_ 标头**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)的**Size**成员设置为此总属性数据大小。
+总的属性数据大小为 **sizeof** (KSCAMERA \_ EXTENDEDPROP \_ 标头) + **sizeof** (KSCAMERA \_ EXTENDEDPROP \_ VALUE) 。 [**KSCAMERA \_ EXTENDEDPROP \_ 标头**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)的 **Size** 成员设置为此总属性数据大小。
 
-[**KSCAMERA \_ EXTENDEDPROP \_ 标头**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)的**功能**成员包含一个或多个支持的下列缩放值的按位 "或" 组合。
+[**KSCAMERA \_ EXTENDEDPROP \_ 标头**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)的 **功能** 成员包含一个或多个支持的下列缩放值的按位 "或" 组合。
 
-| 缩略图刻度标志                            | 说明                            |
+| 缩略图刻度标志                            | 描述                            |
 |-------------------------------------------------|----------------------------------------|
 | KSCAMERA \_ EXTENDEDPROP \_ PHOTOTHUMBNAIL \_ 禁用 | 缩略图处于禁用状态。               |
 | KSCAMERA \_ EXTENDEDPROP \_ PHOTOTHUMBNAIL \_ 2x      | 缩略图分辨率为 X/2 和 Y/2。   |
@@ -69,7 +68,7 @@ ms.locfileid: "90104378"
 | KSCAMERA \_ EXTENDEDPROP \_ PHOTOTHUMBNAIL \_ 8x      | 缩略图分辨率为 X/8 和 Y/8。   |
 | KSCAMERA \_ EXTENDEDPROP \_ PHOTOTHUMBNAIL \_ 16X     | 缩略图分辨率为 X/16 和 Y/16。 |
 
-[**KSCAMERA \_ EXTENDEDPROP \_ 标头**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)的**Flags**成员包含当前为相机设置的缩略图比例值。 如果未启用缩略图生成，则 \_ \_ \_ 在 **标志**中只设置 KSCAMERA EXTENDEDPROP PHOTOTHUMBNAIL DISABLE。
+[**KSCAMERA \_ EXTENDEDPROP \_ 标头**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)的 **Flags** 成员包含当前为相机设置的缩略图比例值。 如果未启用缩略图生成，则 \_ \_ \_ 在 **标志** 中只设置 KSCAMERA EXTENDEDPROP PHOTOTHUMBNAIL DISABLE。
 
 此属性控件是异步的，不可取消。
 
@@ -87,7 +86,7 @@ ms.locfileid: "90104378"
 <thead>
 <tr class="header">
 <th>成员</th>
-<th>Value</th>
+<th>“值”</th>
 </tr>
 </thead>
 <tbody>
@@ -120,7 +119,7 @@ ms.locfileid: "90104378"
 
 ### <a name="setting-the-property"></a>设置属性
 
-如果设置了属性，则 KSPROPERTY \_ 类型 \_ 集请求， [**KSCAMERA \_ EXTENDEDPROP \_ 标头**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)的**Flags**成员将包含一个缩略图刻度标志。
+如果设置了属性，则 KSPROPERTY \_ 类型 \_ 集请求， [**KSCAMERA \_ EXTENDEDPROP \_ 标头**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)的 **Flags** 成员将包含一个缩略图刻度标志。
 
 ## <a name="requirements"></a>要求
 
@@ -141,7 +140,7 @@ ms.locfileid: "90104378"
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [**KSCAMERA \_ EXTENDEDPROP \_ 标头**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)
 

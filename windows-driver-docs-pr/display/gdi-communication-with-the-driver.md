@@ -1,19 +1,18 @@
 ---
 title: GDI 与驱动程序的通信
 description: GDI 与驱动程序的通信
-ms.assetid: 81d9e87f-883b-4019-86fc-bccde861de46
 keywords:
 - GDI WDK Windows 2000 显示器，驱动程序通信
 - 图形驱动程序 WDK Windows 2000 显示器、驱动程序通信
 - 绘制 WDK GDI，驱动程序通信
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 71911b5b795dc3d00f6637277a7459a21ea37cca
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 3c5151c63ae6822620e0ddec81eb4e04882de12b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90717344"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837801"
 ---
 # <a name="gdi-communication-with-the-driver"></a>GDI 与驱动程序的通信
 

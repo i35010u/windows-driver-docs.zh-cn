@@ -1,15 +1,14 @@
 ---
 title: " (预配的上下文初始化非 SIM 锁定的 GPRS 设备) "
 description: 使用预配的上下文初始化非 SIM 锁定的 GPRS 设备
-ms.assetid: 0bbd4842-72ad-445b-9f28-b28e8740f263
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7bd66f44fa7cc97da2cc0a02e30bb709a075b81f
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: a657ef2108920794a76b132f53c9b35deba75ed1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89210744"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838425"
 ---
 # <a name="initialization-of-a-non-sim-locked-gprs-device-with-a-provisioned-context"></a>使用预配的上下文初始化非 SIM 锁定的 GPRS 设备
 

@@ -1,15 +1,14 @@
 ---
 title: GPIO 扩展
 description: 常规用途输入/输出 (GPIO) extension 命令显示 GPIO 控制器的软件状态。
-ms.assetid: 1703C402-D770-4D3F-AB70-F2D30712A5D9
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ba0ba2e476754b3a413e5eec42dc9591e1021888
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: a816d83707e2f9da474a5a2ddaf5488a51e16684
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89210223"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837343"
 ---
 # <a name="gpio-extensions"></a>GPIO 扩展
 
@@ -37,7 +36,7 @@ GPIO framework 扩展驱动程序的设备扩展结构。 此结构保存有关�
 ## <a name="span-idgetting_started_with_gpio_debuggingspanspan-idgetting_started_with_gpio_debuggingspanspan-idgetting_started_with_gpio_debuggingspangetting-started-with-gpio-debugging"></a><span id="Getting_started_with_GPIO_debugging"></span><span id="getting_started_with_gpio_debugging"></span><span id="GETTING_STARTED_WITH_GPIO_DEBUGGING"></span>GPIO 调试入门
 
 
-若要开始调试 GPIO 问题，请输入 [**！ gpiokd. clientlist**](-gpiokd-clientlist.md) 命令。 **！ Gpiokd. clientlist**命令显示所有已注册的 gpio 控制器的概述，并显示可传递给其他 GPIO 调试器命令的地址。
+若要开始调试 GPIO 问题，请输入 [**！ gpiokd. clientlist**](-gpiokd-clientlist.md) 命令。 **！ Gpiokd. clientlist** 命令显示所有已注册的 gpio 控制器的概述，并显示可传递给其他 GPIO 调试器命令的地址。
 
 ## <a name="span-idin_this_sectionspanin-this-section"></a><span id="in_this_section"></span>本部分中的内容
 
@@ -50,7 +49,7 @@ GPIO framework 扩展驱动程序的设备扩展结构。 此结构保存有关�
 <thead>
 <tr class="header">
 <th align="left">主题</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>

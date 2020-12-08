@@ -1,15 +1,14 @@
 ---
 title: Hyper-V 可扩展交换机转发上下文概述
 description: Hyper-V 可扩展交换机转发上下文概述
-ms.assetid: B2BF07B5-FA44-4994-9605-EFF4A0B9179F
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 06802524c4ac0253e620d877e0b7db8237d2005d
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 0597382d44cee7c4761af5c5edd11f243a002b33
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89214728"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837677"
 ---
 # <a name="hyper-v-extensible-switch-forwarding-context-overview"></a>Hyper-V 可扩展交换机转发上下文概述
 

@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ 调谐器 \_ NETWORKTYPE \_ 扫描 \_ CAP
 description: KSPROPERTY \_ 调谐器 \_ NETWORKTYPE \_ SCAN \_ cap 属性介绍了优化设备支持的特定广播网络类型的扫描功能。 此属性可以选择实现。
-ms.assetid: 89f66812-9192-4d1d-ac8c-38396fc6be8e
 keywords:
 - KSPROPERTY_TUNER_NETWORKTYPE_SCAN_CAPS 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b655dfc096c21259ecda5c490eb9ba87e8f788c6
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: b45c9d7eae17186f7f3a1a22b91ba42cb3c312b8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106002"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837613"
 ---
 # <a name="ksproperty_tuner_networktype_scan_caps"></a>KSPROPERTY \_ 调谐器 \_ NETWORKTYPE \_ 扫描 \_ CAP
 
@@ -84,7 +83,7 @@ KSPROPERTY \_ 调谐器 \_ NETWORKTYPE \_ SCAN \_ cap 属性介绍了优化设�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSPROPERTY \_ 调谐器 \_ NETWORKTYPE \_ 扫描 \_ CAP \_**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_tuner_networktype_scan_caps_s)

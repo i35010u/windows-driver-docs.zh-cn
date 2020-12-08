@@ -1,7 +1,6 @@
 ---
 title: 为公用缓冲区 DMA 设置系统 DMA 控制器
 description: 为公用缓冲区 DMA 设置系统 DMA 控制器
-ms.assetid: 279776e0-dead-4763-9aae-33950837c27c
 keywords:
 - 系统 DMA WDK 内核，公共缓冲区
 - 常见缓冲区 DMA WDK 内核
@@ -10,12 +9,12 @@ keywords:
 - MapTransfer
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3d878b84a2fea22072151d25fcfd1b759b73eb98
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: f73948ca5ad0e69ca6a576fcf06c01fb49be4224
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89189779"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837967"
 ---
 # <a name="setting-up-the-system-dma-controller-for-common-buffer-dma"></a>为公用缓冲区 DMA 设置系统 DMA 控制器
 
@@ -27,11 +26,11 @@ ms.locfileid: "89189779"
 
 驱动程序将以下参数提供给 **MapTransfer**：
 
--   **IoGetDmaAdapter**返回的适配器对象指针
+-   **IoGetDmaAdapter** 返回的适配器对象指针
 
 -   指向描述驱动程序分配的公用缓冲区的 MDL 的指针
 
--   通过**AllocateAdapterChannel**传递到驱动程序的*AdapterControl*例程的*MapRegisterBase*句柄
+-   通过 **AllocateAdapterChannel** 传递到驱动程序的 *AdapterControl* 例程的 *MapRegisterBase* 句柄
 
 -   指向变量的指针 (*长度*) 指示驱动程序分配的公共缓冲区的大小（以字节为单位）
 

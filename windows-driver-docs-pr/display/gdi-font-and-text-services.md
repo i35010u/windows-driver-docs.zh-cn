@@ -1,7 +1,6 @@
 ---
 title: GDI 字体和文本服务
 description: GDI 字体和文本服务
-ms.assetid: c315f3ec-ddee-42d9-8bfb-7bb2e0d1d4b2
 keywords:
 - 字体 WDK GDI
 - GDI WDK Windows 2000 显示，字体
@@ -13,12 +12,12 @@ keywords:
 - 文本输出 WDK GDI
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e1da7cc081e2dcccc49ed2e462c2ba694bd3c7d3
-ms.sourcegitcommit: f8619f20a0903dd64f8641a5266ecad6df5f1d57
+ms.openlocfilehash: 0649a93f3f9f4cb732cec7d674c3a0ddfff8e747
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91423624"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96836827"
 ---
 # <a name="gdi-font-and-text-services"></a>GDI 字体和文本服务
 
@@ -36,7 +35,7 @@ GDI 为字体管理和文本输出提供支持。 [**FONTOBJ**](/windows/win32/a
 <thead>
 <tr class="header">
 <th align="left">函数</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>

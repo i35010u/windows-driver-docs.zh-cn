@@ -1,24 +1,23 @@
 ---
 title: 确定应用程序请求无法完成的原因
-description: 本主题介绍如何将 Wudfext.dll 调试程序扩展与用户模式驱动程序框架结合使用， (UMDF) 第1版或第2版驱动程序，以确定应用程序请求未完成的原因。
-ms.assetid: 33a09277-1e00-4f91-b2ab-b2541091628f
+description: 本主题介绍如何将 Wudfext.dll 调试程序扩展与 User-Mode Driver Framework (UMDF) 版本1或2驱动程序结合使用来确定应用程序请求未完成的原因。
 keywords:
 - UMDF WDK，应用程序请求未完成
 - 调试方案 WDK UMDF，应用程序请求未完成
 - UMDF WDK，调试方案，应用程序请求未完成
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2089749875b60431bb949d2af03ae34f07a5f6e4
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 651df74f010bb10e07e0d5fc13cd20187a356fc5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89191027"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837025"
 ---
 # <a name="determining-why-an-application-request-does-not-complete"></a>确定应用程序请求无法完成的原因
 
 
-本主题介绍如何将 Wudfext.dll 调试程序扩展与用户模式驱动程序框架结合使用， (UMDF) 第1版或第2版驱动程序，以确定应用程序请求未完成的原因。
+本主题介绍如何将 Wudfext.dll 调试程序扩展与 User-Mode Driver Framework (UMDF) 版本1或2驱动程序结合使用来确定应用程序请求未完成的原因。
 
 对于 UMDF 版本1，你将使用在 wudfext.dll 中实现的扩展命令。 从 UMDF 版本2开始，你将使用在 wdfkd.dll 中实现的扩展命令。
 

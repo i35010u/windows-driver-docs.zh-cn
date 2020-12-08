@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ CAMERACONTROL \_ 扩展 \_ EVCOMPENSATION
 description: EV 补偿属性允许按曝光度或区域系统的增量调整公开控制。
-ms.assetid: 1109C533-89CA-4A23-BCF9-D44C28C0C6BF
 keywords:
 - KSPROPERTY_CAMERACONTROL_EXTENDED_EVCOMPENSATION 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 09/10/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 5e21c8853b63af0b23995dc895a50f3c9188cbdb
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 3a7bf65370e01ffd1bebb876f9f12db072b0ff4b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104838"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96836639"
 ---
 # <a name="ksproperty_cameracontrol_extended_evcompensation"></a>KSPROPERTY \_ CAMERACONTROL \_ 扩展 \_ EVCOMPENSATION
 
@@ -60,11 +59,11 @@ EV 补偿属性允许按曝光度或区域系统的增量调整公开控制。
 
 属性值 (操作数据) 包含 [**KSCAMERA \_ EXTENDEDPROP \_ 标头**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header) 结构和 [**KSCAMERA \_ EXTENDEDPROP \_ EVCOMPENSATION**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_evcompensation) 结构。
 
-总属性数据大小为 **sizeof** (KSCAMERA \_ EXTENDEDPROP \_ 标头) + **sizeof** (KSCAMERA \_ EXTENDEDPROP \_ EVCOMPENSATION) 。 [**KSCAMERA \_ EXTENDEDPROP \_ 标头**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)的**Size**成员设置为此总属性数据大小。
+总属性数据大小为 **sizeof** (KSCAMERA \_ EXTENDEDPROP \_ 标头) + **sizeof** (KSCAMERA \_ EXTENDEDPROP \_ EVCOMPENSATION) 。 [**KSCAMERA \_ EXTENDEDPROP \_ 标头**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)的 **Size** 成员设置为此总属性数据大小。
 
-[**KSCAMERA \_ EXTENDEDPROP \_ 标头**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)的**功能**成员包含以下一个或多个补偿设置的按位 "或" 组合。
+[**KSCAMERA \_ EXTENDEDPROP \_ 标头**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)的 **功能** 成员包含以下一个或多个补偿设置的按位 "或" 组合。
 
-| EV 补偿单步执行                    | 说明                                                             |
+| EV 补偿单步执行                    | 描述                                                             |
 |---------------------------------------------|-------------------------------------------------------------------------|
 | KSCAMERA \_ EXTENDEDPROP \_ EVCOMP \_ SIXTHSTEP   | 在公开值的第六个 (1/6) 步骤中，EV 补偿更改。  |
 | KSCAMERA \_ EXTENDEDPROP \_ EVCOMP \_ QUARTERSTEP | EV 值的一个四 (1/4) 步骤中的 EV 补偿更改。 |
@@ -74,11 +73,11 @@ EV 补偿属性允许按曝光度或区域系统的增量调整公开控制。
 
  
 
-[**KSCAMERA \_ EXTENDEDPROP \_ 标头**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)的**Flags**成员包含照相机的当前 EV 补偿步进 (一个) 值。建议使用驱动程序公布仅针对最小 EV 补偿步骤大小的支持。
+[**KSCAMERA \_ EXTENDEDPROP \_ 标头**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)的 **Flags** 成员包含照相机的当前 EV 补偿步进 (一个) 值。建议使用驱动程序公布仅针对最小 EV 补偿步骤大小的支持。
 
 此属性控件是异步的，不可取消。
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 ### <a name="getting-the-property"></a>获取属性
@@ -93,7 +92,7 @@ EV 补偿属性允许按曝光度或区域系统的增量调整公开控制。
 <thead>
 <tr class="header">
 <th>成员</th>
-<th>Value</th>
+<th>“值”</th>
 </tr>
 </thead>
 <tbody>
@@ -130,7 +129,7 @@ EV 补偿属性允许按曝光度或区域系统的增量调整公开控制。
 
 ### <a name="setting-the-property"></a>设置属性
 
-如果设置了该属性，则 KSPROPERTY \_ 类型 \_ 集请求， [**KSCAMERA \_ EXTENDEDPROP \_ 标头**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)的**FLAGS**成员将包含要使用的 EV 补偿单步。 用于补偿的新步骤单位数是在[**KSCAMERA \_ EXTENDEDPROP \_ EVCOMPENSATION**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_evcompensation)的**Value**成员中设置的。
+如果设置了该属性，则 KSPROPERTY \_ 类型 \_ 集请求， [**KSCAMERA \_ EXTENDEDPROP \_ 标头**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)的 **FLAGS** 成员将包含要使用的 EV 补偿单步。 用于补偿的新步骤单位数是在 [**KSCAMERA \_ EXTENDEDPROP \_ EVCOMPENSATION**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_evcompensation)的 **Value** 成员中设置的。
 
 <a name="requirements"></a>要求
 ------------
@@ -152,7 +151,7 @@ EV 补偿属性允许按曝光度或区域系统的增量调整公开控制。
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSCAMERA \_ EXTENDEDPROP \_ 标头**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)

@@ -1,18 +1,17 @@
 ---
 title: 使用框架工作项
 description: 使用框架工作项
-ms.assetid: d7e6d187-bed4-4071-a50b-90f32c4f0d5a
 keywords:
 - 工作项 WDK KMDF
 - 队列 WDK KMDF，框架工作项
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ddafa36be4acc8e97ef9650111576632e91740af
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: ac701ca5bbd48b8a6b75dc72a9bd8941d433f922
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89187757"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838703"
 ---
 # <a name="using-framework-work-items"></a>使用框架工作项
 
@@ -20,7 +19,7 @@ ms.locfileid: "89187757"
 
 
 
-*工作项*是驱动程序在[*EvtWorkItem*](/windows-hardware/drivers/ddi/wdfworkitem/nc-wdfworkitem-evt_wdf_workitem)事件回调函数中执行的任务。 \_在系统工作线程的上下文中，这些函数在 IRQL = 被动级别上以异步方式运行。
+*工作项* 是驱动程序在 [*EvtWorkItem*](/windows-hardware/drivers/ddi/wdfworkitem/nc-wdfworkitem-evt_wdf_workitem)事件回调函数中执行的任务。 \_在系统工作线程的上下文中，这些函数在 IRQL = 被动级别上以异步方式运行。
 
 基于框架的驱动程序通常使用工作项（如果 [*EvtInterruptDpc*](/windows-hardware/drivers/ddi/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_dpc) 或 [*EVTDPCFUNC*](/windows-hardware/drivers/ddi/wdfdpc/nc-wdfdpc-evt_wdf_dpc) 函数以 irql = 调度级别运行 \_ ），则必须在 irql = 被动级别执行额外的处理 \_ 。
 
@@ -52,7 +51,7 @@ ms.locfileid: "89187757"
 
 有关框架对象层次结构的清理规则的详细信息，请参阅 [框架对象生命周期](./framework-object-life-cycle.md)。
 
-### <a name="using-the-work-item-callback-function"></a><a href="" id="ddk-using-the-work-item-callback-function-df"></a>使用工作项回调函数
+### <a name="using-the-work-item-callback-function"></a><a href="" id="ddk-using-the-work-item-callback-function-df"></a>使用 Work-Item 回调函数
 
 在将工作项添加到工作项队列后，它将保留在队列中，直到系统工作线程变为可用。 系统工作线程将从队列中删除工作项，然后调用驱动程序的 [*EvtWorkItem*](/windows-hardware/drivers/ddi/wdfworkitem/nc-wdfworkitem-evt_wdf_workitem) 回调函数，并将工作项对象作为输入传递。
 
@@ -94,7 +93,7 @@ ms.locfileid: "89187757"
 
     每个工作项都与设备或队列关联。 删除关联的设备或队列后，框架会删除所有关联的工作项，因此，如果使用此方法，则驱动程序不必调用 [**WdfObjectDelete**](/windows-hardware/drivers/ddi/wdfobject/nf-wdfobject-wdfobjectdelete)。
 
-几个驱动程序可能需要调用 [**WdfWorkItemFlush**](/windows-hardware/drivers/ddi/wdfworkitem/nf-wdfworkitem-wdfworkitemflush) 以从工作项队列中刷新其工作项。 有关使用 **WdfWorkItemFlush**的示例，请参阅该方法的参考页。
+几个驱动程序可能需要调用 [**WdfWorkItemFlush**](/windows-hardware/drivers/ddi/wdfworkitem/nf-wdfworkitem-wdfworkitemflush) 以从工作项队列中刷新其工作项。 有关使用 **WdfWorkItemFlush** 的示例，请参阅该方法的参考页。
 
 如果驱动程序在未完成的工作项上调用 [**WdfObjectDelete**](/windows-hardware/drivers/ddi/wdfobject/nf-wdfobject-wdfobjectdelete) ，则结果取决于工作项的状态：
 
@@ -102,5 +101,5 @@ ms.locfileid: "89187757"
 |-|-|
 |已创建但未排队|立即清理工作项。|
 |已排队|对 [**WdfObjectDelete**](/windows-hardware/drivers/ddi/wdfobject/nf-wdfobject-wdfobjectdelete) 的调用将等待，直到工作项完成执行，然后清理工作项|
-|执行|如果驱动程序从同一线程) 上的[*EvtWorkItem*](/windows-hardware/drivers/ddi/wdfworkitem/nc-wdfworkitem-evt_wdf_workitem) (中调用[**WdfObjectDelete**](/windows-hardware/drivers/ddi/wdfobject/nf-wdfobject-wdfobjectdelete) ，则[**WdfObjectDelete**](/windows-hardware/drivers/ddi/wdfobject/nf-wdfobject-wdfobjectdelete)将立即返回。 [*EvtWorkItem*](/windows-hardware/drivers/ddi/wdfworkitem/nc-wdfworkitem-evt_wdf_workitem)完成后，将清理工作项。  否则， [**WdfObjectDelete**](/windows-hardware/drivers/ddi/wdfobject/nf-wdfobject-wdfobjectdelete) 将等待 EvtWorkItem 完成。|
+|执行|如果驱动程序从同一线程) 上的 [*EvtWorkItem*](/windows-hardware/drivers/ddi/wdfworkitem/nc-wdfworkitem-evt_wdf_workitem) (中调用 [**WdfObjectDelete**](/windows-hardware/drivers/ddi/wdfobject/nf-wdfobject-wdfobjectdelete) ，则 [**WdfObjectDelete**](/windows-hardware/drivers/ddi/wdfobject/nf-wdfobject-wdfobjectdelete)将立即返回。 [*EvtWorkItem*](/windows-hardware/drivers/ddi/wdfworkitem/nc-wdfworkitem-evt_wdf_workitem)完成后，将清理工作项。  否则， [**WdfObjectDelete**](/windows-hardware/drivers/ddi/wdfobject/nf-wdfobject-wdfobjectdelete) 将等待 EvtWorkItem 完成。|
 

@@ -1,19 +1,18 @@
 ---
 title: 驱动程序通知简介
 description: 驱动程序通知简介
-ms.assetid: c0c09480-628a-4f12-b6a3-881cc3e12fd5
 keywords:
 - 驱动程序通知 WDK 动态硬件分区，同步
 - 驱动程序通知 WDK 动态硬件分区，异步
 - 驱动程序通知 WDK 动态硬件分区，内存通知
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0fa8c1160f478e031a4b2f355113703fc2ea5761
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: d474fa3eafb1cf108a5fd2b0b76f23a22c4b04b4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89402720"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837239"
 ---
 # <a name="introduction-to-driver-notification"></a>驱动程序通知简介
 
@@ -94,12 +93,12 @@ ms.locfileid: "89402720"
 
 ## <a name="memory-notification-event"></a>内存通知事件
 
-使用内存通知事件方法，你可以让设备驱动程序安排一个线程，该线程等待操作系统设置** \\ KernelObjects \\ HighMemoryCondition**事件对象。 当可用物理内存量超过特定值时，操作系统将设置此事件对象。 此事件通知正在等待事件对象的所有线程当前在系统中可用的物理内存量。 此事件可能表示您动态向系统中添加了一个新的内存模块。 当操作系统设置此事件对象时，您的设备驱动程序可以通过分配更多的内存缓冲区来响应事件。
+使用内存通知事件方法，你可以让设备驱动程序安排一个线程，该线程等待操作系统设置 **\\ KernelObjects \\ HighMemoryCondition** 事件对象。 当可用物理内存量超过特定值时，操作系统将设置此事件对象。 此事件通知正在等待事件对象的所有线程当前在系统中可用的物理内存量。 此事件可能表示您动态向系统中添加了一个新的内存模块。 当操作系统设置此事件对象时，您的设备驱动程序可以通过分配更多的内存缓冲区来响应事件。
 
-有关** \\ KernelObjects \\ HighMemoryCondition**事件对象的详细信息，请参阅[标准事件对象](standard-event-objects.md)。
+有关 **\\ KernelObjects \\ HighMemoryCondition** 事件对象的详细信息，请参阅 [标准事件对象](standard-event-objects.md)。
 
 > [!IMPORTANT]
-> 如果操作系统设置** \\ KernelObjects \\ HighMemoryCondition**事件对象，则该事件只会指示您可能已将新内存模块动态添加到硬件分区。 在其他情况下，可能会导致操作系统设置此事件对象。 因此，从 Windows Server 2008 开始，我们不建议设备驱动程序使用此通知方法。 设备驱动程序应使用异步驱动程序通知方法。
+> 如果操作系统设置 **\\ KernelObjects \\ HighMemoryCondition** 事件对象，则该事件只会指示您可能已将新内存模块动态添加到硬件分区。 在其他情况下，可能会导致操作系统设置此事件对象。 因此，从 Windows Server 2008 开始，我们不建议设备驱动程序使用此通知方法。 设备驱动程序应使用异步驱动程序通知方法。
 
 此方法仅适用于内存。 处理器没有相应的通知机制。
 

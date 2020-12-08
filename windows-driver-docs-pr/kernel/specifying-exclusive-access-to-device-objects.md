@@ -1,19 +1,18 @@
 ---
 title: 指定对设备对象的独占访问权限
 description: 指定对设备对象的独占访问权限
-ms.assetid: b492251b-55b0-4323-a508-b395bb3da0ef
 keywords:
 - 独占访问 WDK 设备对象
 - 设备对象 WDK 内核，独占访问
 - 单个 access WDK 设备对象
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 914d733669a593b58a99e2bb21a4ed6cbf0b3b63
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 371b8bfabdec808f0931dfd9d06b2e3d5385542c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89187873"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837951"
 ---
 # <a name="specifying-exclusive-access-to-device-objects"></a>指定对设备对象的独占访问权限
 

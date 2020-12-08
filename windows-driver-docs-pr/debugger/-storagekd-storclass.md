@@ -1,9 +1,8 @@
 ---
 title: storagekd.storclass
-description: Storagekd.storclass 扩展显示有关指定 classpnp 会设备的信息。
-ms.assetid: EC5B44F5-540E-4F25-80AA-09BE4F78BF72
+description: Storagekd. storclass 扩展显示有关指定 classpnp 设备的信息。
 keywords:
-- storagekd.storclass Windows 调试
+- storagekd storclass Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,32 +11,32 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: a9b6875f23e6430fc05c50a3e89148d590cfb1e1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 10c6c1a4c6ee31fa1bb28293ac66274e9803cdc1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63334231"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838697"
 ---
 # <a name="storagekdstorclass"></a>!storagekd.storclass
 
 
-**！ Storagekd.storclass**扩展显示有关指定的信息*classpnp 会*设备。
+**！ Storagekd storclass** 扩展显示有关指定 *classpnp* 设备的信息。
 
 ```dbgcmd
 !storagekd.storclass [Address [Level]] 
 ```
 
-## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>参数
+## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>Parameters
 
 
-<span id="_______Address"></span><span id="_______address"></span><span id="_______ADDRESS"></span> *Address*  
-指定的设备对象或 classpnp 会设备的设备扩展到的地址。 如果*地址*是省略，将显示所有 classpnp 会扩展的列表。
+<span id="_______Address"></span><span id="_______address"></span><span id="_______ADDRESS"></span>*地址*  
+指定设备对象或 classpnp 设备的设备扩展的地址。 如果省略 *Address* ，则显示所有 classpnp 扩展的列表。
 
-<span id="_______Level"></span><span id="_______level"></span><span id="_______LEVEL"></span> *级别*  
-指定要显示的详细信息。 此参数可以设置为 0、 1 或 2，2 提供最详尽数据和 0 最少。 默认值为 0。
+<span id="_______Level"></span><span id="_______level"></span><span id="_______LEVEL"></span>*级别*  
+指定要显示的详细信息的数量。 此参数可以设置为0、1或2，2提供最详细信息，最少为0。 默认值为 0。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 <table>
 <colgroup>
@@ -46,7 +45,7 @@ ms.locfileid: "63334231"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>Windows 8 及更高版本</strong></p></td>
+<td align="left"><p><strong>Windows 8 及更高版本</strong></p></td>
 <td align="left"><p>Storagekd.dll</p></td>
 </tr>
 </tbody>
@@ -57,9 +56,9 @@ ms.locfileid: "63334231"
 <a name="remarks"></a>备注
 -------
 
-下面是举例 **！ storagekd.storclass**显示：
+下面是 **！ storclass** 显示的示例 storagekd：
 
-**1: kd&gt; !storagekd.storclass**
+**1： kd &gt; ！ storagekd. storclass**
 
 ```dbgcmd
 Storage class devices:
@@ -70,7 +69,7 @@ Storage class devices:
 Usage: !storclass <class device> <level [0-2]>
 ```
 
-**1: kd&gt; !storagekd.storclass fffffa80043dc060 1**
+**1： kd &gt; ！ storagekd. storclass fffffa80043dc060 1**
 
 ```dbgcmd
 Storage class device fffffa80043dc060 with extension at fffffa80043dc1b0

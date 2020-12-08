@@ -1,7 +1,6 @@
 ---
 title: 指示如何保护信号
 description: 指示如何保护信号
-ms.assetid: d55a3660-5b7c-43e9-b1c5-b61f8b997a1a
 keywords:
 - 复制保护 WDK COPP，信号保护
 - 视频复制保护 WDK COPP，信号保护
@@ -10,12 +9,12 @@ keywords:
 - 信号保护 WDK COPP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8d15252a80a5282f616b6e195d8b1ddb414fae34
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: d56ff7cd8b689340103606ae627cce4019b4e1ce
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89066042"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838075"
 ---
 # <a name="instructing-how-to-protect-the-signal"></a>指示如何保护信号
 

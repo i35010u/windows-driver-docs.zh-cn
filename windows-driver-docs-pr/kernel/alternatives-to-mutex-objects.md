@@ -1,7 +1,6 @@
 ---
 title: 互斥对象的替代方案
 description: 互斥对象的替代方案
-ms.assetid: c3b78155-426a-449d-8678-5666a7a12cbd
 keywords:
 - 内核调度程序对象 WDK，mutex 对象
 - 调度程序对象 WDK 内核，mutex 对象
@@ -10,12 +9,12 @@ keywords:
 - 受保护的 mutex WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1d1699fe237964f269e381422a3293e03784cfe5
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 1b9692c7a5d31b09c744017f44de0b3e5c76e100
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89192033"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96836927"
 ---
 # <a name="alternatives-to-mutex-objects"></a>互斥对象的替代方案
 

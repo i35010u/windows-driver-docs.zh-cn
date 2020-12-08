@@ -1,9 +1,8 @@
 ---
 title: ADF 元素
-description: 可选的 ADF 元素介绍自动文档送纸器 (ADF) 附加到扫描程序的功能。
-ms.assetid: 2c9114c3-0c6e-4404-a1ee-fd8d63c6e8eb
+description: 可选 ADF 元素描述附加到扫描仪 (ADF) 自动文档送纸器的功能。
 keywords:
-- ADF 元素成像设备
+- ADF 元素图像处理设备
 topic_type:
 - apiref
 api_name:
@@ -12,19 +11,19 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 04aac63bfc0dee8260860181214aaf3baedf1e6c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: bc22f4be18dc3513a8ec1144b58bbac730a95b6e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63367091"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837771"
 ---
 # <a name="adf-element"></a>ADF 元素
 
 
-可选**ADF**元素描述自动文档送纸器 (ADF) 附加到扫描程序的功能。
+可选 **ADF** 元素描述附加到扫描仪 (ADF) 自动文档送纸器的功能。
 
-<a name="usage"></a>用法
+<a name="usage"></a>使用情况
 -----
 
 ```xml
@@ -85,7 +84,7 @@ ms.locfileid: "63367091"
 <a name="remarks"></a>备注
 -------
 
-如果扫描设备具有 ADF，WSD 扫描服务必须提供所有的配置信息**ADF**子元素。
+如果扫描设备有 ADF，则 WSD 扫描服务必须提供所有 **ADF** 子元素的配置信息。
 
 ## <a name="see-also"></a>请参阅
 

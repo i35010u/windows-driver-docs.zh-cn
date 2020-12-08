@@ -1,7 +1,6 @@
 ---
 title: 设备低功耗状态
 description: 设备低功耗状态
-ms.assetid: f594a63f-10ce-439d-abe3-d342555d98f0
 keywords:
 - 设备电源状态 WDK 内核
 - 设备低功耗状态 WDK 电源管理
@@ -18,12 +17,12 @@ keywords:
 - 状态转换延迟 WDK 电源管理
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 452bd3386aede084da08a760a5c5ab3899f28838
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: e349d642739d242f5f2108fcf53e091330b940fc
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89184787"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837719"
 ---
 # <a name="device-low-power-states"></a>设备低功耗状态
 
@@ -43,7 +42,7 @@ D1 和 D2 是中级低功耗状态。 许多设备类不定义这些状态。 �
 
 ### <a name="device-power-state-d1"></a><a href="" id="d1"></a>设备电源状态 D1
 
-设备电源状态 D1 是性能最高的设备低功耗状态。 它具有以下特征：
+设备电源状态 D1 是性能最高的设备低功耗状态。 其具有以下特征：
 
 <a href="" id="power-consumption"></a>功率消耗  
 消耗小于 D0 状态，但大于或等于 D2 状态的。 通常，D1 是一种时钟封闭状态，在该状态下，设备将接收足够的功率来保留设备的硬件上下文。 通常，支持 D1 的总线或设备类的规范更详细地介绍了此状态。
@@ -159,9 +158,9 @@ D3cold 具有以下特征：
 总还原时间是设备电源状态的最大时间。
 
 <a href="" id="wake-up-capability"></a>*唤醒功能*  
-在 D3cold 子状态中，设备可能会触发唤醒信号来唤醒睡眠计算机。 此功能在[**设备 \_ 功能**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_device_capabilities)结构中报告，并从 Windows 8 开始，由[GUID \_ D3COLD \_ 支持 \_ 接口](https://msdn.microsoft.com/library/windows/hardware/hh967714)驱动程序接口中的[*GetIdleWakeInfo*](/windows-hardware/drivers/ddi/wdm/nc-wdm-get_idle_wake_info)例程来处理。 在信号唤醒计算机之后，设备驱动程序将启动设备从 D3cold 到 D0 的转换。 有关详细信息，请参阅下面的备注。
+在 D3cold 子状态中，设备可能会触发唤醒信号来唤醒睡眠计算机。 此功能在 [**设备 \_ 功能**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_device_capabilities)结构中报告，并从 Windows 8 开始，由 [GUID \_ D3COLD \_ 支持 \_ 接口](https://msdn.microsoft.com/library/windows/hardware/hh967714)驱动程序接口中的 [*GetIdleWakeInfo*](/windows-hardware/drivers/ddi/wdm/nc-wdm-get_idle_wake_info)例程来处理。 在信号唤醒计算机之后，设备驱动程序将启动设备从 D3cold 到 D0 的转换。 有关详细信息，请参阅下面的备注。
 
-从 Windows 8 开始，D3cold 子状态下的设备可能能够触发到处于 S0 系统电源状态的计算机的唤醒信号。 此功能由 *GetIdleWakeInfo* 例程报告。 **设备 \_ 功能**结构不包含有关此功能的信息。 唤醒信号到达后，设备驱动程序将启动设备从 D3cold 到 D0 的转换。 在这种情况下，计算机在信号到达时处于唤醒状态，并且只有设备需要唤醒。
+从 Windows 8 开始，D3cold 子状态下的设备可能能够触发到处于 S0 系统电源状态的计算机的唤醒信号。 此功能由 *GetIdleWakeInfo* 例程报告。 **设备 \_ 功能** 结构不包含有关此功能的信息。 唤醒信号到达后，设备驱动程序将启动设备从 D3cold 到 D0 的转换。 在这种情况下，计算机在信号到达时处于唤醒状态，并且只有设备需要唤醒。
 
 在许多现有硬件平台中，处于低功耗 Dx 状态的设备可以触发唤醒信号唤醒睡眠计算机。 但是，如果计算机正在 S0 状态下运行，则相同的设备可能无法触发唤醒信号。 因此，当计算机处于 S0 状态时，此设备的驱动程序不能启动设备从 D0 到低功耗 Dx 状态的转换。 否则，在设备保留 D0 后，它将不可用，直至计算机离开 S0 状态。 仅当计算机准备离开 S0 状态时，此设备才会保留 D0 状态。
 

@@ -1,7 +1,6 @@
 ---
 title: Bug 检查 0x1C5 IO_THREADPOOL_DEADLOCK_LIVEDUMP
-description: IO_THREADPOOL_DEADLOCK_LIVEDUMP bug 检查具有 0x000001C5 值。 这表示内核模式线程池遇到死锁情况。
-ms.assetid: CBAB931F-E2A9-4843-9565-DC1CA3B557E6
+description: IO_THREADPOOL_DEADLOCK_LIVEDUMP bug 检查的值为0x000001C5。 这表示内核模式 threadpool 遇到死锁情况。
 keywords:
 - Bug 检查 0x1C5 IO_THREADPOOL_DEADLOCK_LIVEDUMP
 - IO_THREADPOOL_DEADLOCK_LIVEDUMP
@@ -13,23 +12,23 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 60dec231d7b4f741f72dc0cfba0f0b9080702f83
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: 73e5932dcde8f4a6d8b33b8da940b342eb1c8dcd
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67519723"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96836889"
 ---
-# <a name="bug-check-0x1c5-iothreadpooldeadlocklivedump"></a>Bug 检查 0x1C5：IO\_THREADPOOL\_死锁\_LIVEDUMP
+# <a name="bug-check-0x1c5-io_threadpool_deadlock_livedump"></a>Bug 检查0x1C5： IO \_ 线程 \_ 死锁 \_ LIVEDUMP
 
 
-IO\_THREADPOOL\_死锁\_LIVEDUMP bug 检查的值为 0x000001C5。 这表示内核模式线程池遇到死锁情况。
+IO \_ THREADPOOL \_ 死锁 \_ LIVEDUMP bug 检查的值为0x000001C5。 这表示内核模式 threadpool 遇到死锁情况。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题面向程序员。 如果您是在使用计算机时收到蓝屏错误代码的客户，请参阅[蓝屏错误疑难解答](https://www.windows.com/stopcode)。
 
 
-## <a name="iothreadpooldeadlocklivedump-parameters"></a>IO\_THREADPOOL\_死锁\_LIVEDUMP 参数
+## <a name="io_threadpool_deadlock_livedump-parameters"></a>IO \_ THREADPOOL \_ 死锁 \_ LIVEDUMP 参数
 
 
 <table>
@@ -46,20 +45,20 @@ IO\_THREADPOOL\_死锁\_LIVEDUMP bug 检查的值为 0x000001C5。 这表示内�
 <tbody>
 <tr class="odd">
 <td align="left">1</td>
-<td align="left"><p>池数。</p>
-<p>0x0:ExPoolUntrusted</p></td>
+<td align="left"><p>池号。</p>
+<p>0x0： ExPoolUntrusted</p></td>
 </tr>
 <tr class="even">
 <td align="left">2</td>
-<td align="left">指向 PEX_WORK_QUEUE</td>
+<td align="left">指向 PEX_WORK_QUEUE 的指针</td>
 </tr>
 <tr class="odd">
 <td align="left">3</td>
-<td align="left">保留</td>
+<td align="left">预留</td>
 </tr>
 <tr class="even">
 <td align="left">4</td>
-<td align="left">保留</td>
+<td align="left">预留</td>
 </tr>
 </tbody>
 </table>

@@ -1,30 +1,29 @@
 ---
 title: C28717
-description: 警告 C28717 无效变体类型。
-ms.assetid: e1373005-a1ff-4722-98f9-00c7e4f89370
+description: 警告 C28717 变体类型无效。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 f1_keywords:
 - C28717
-ms.openlocfilehash: 7b8607446b9165fab9fbfc0ac6f2ad530b88c4cc
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7699570b450d43de7a1fec4828fd605f1f44a313
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63371589"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837325"
 ---
 # <a name="c28717"></a>C28717
 
 
-警告 C28717:VARIANT 类型无效
+警告 C28717：无效的 VARIANT 类型
 
-**Vt**字段**变体结构**可能需要仅限特定值。 向它分配任何其他值是错误的。
+**变量结构** 的 **vt** 字段只能采用某些值。 向其分配其他任何值都是错误的。
 
-**Vt**字段**变体**或**VARIANTARG**结构仅可以采用以下值 (可能是或运算的**VT\_BYREF**和/或**VT\_数组**):**VT\_空**， **VT\_NULL**， **VT\_I2**， **VT\_I4**， **VT\_R4**， **VT\_R8**， **VT\_CY**， **VT\_日期**， **VT\_BSTR**， **VT\_调度**， **VT\_错误**， **VT\_BOOL**， **VT\_VARIANT**， **VT\_十进制**， **VT\_记录、 VT\_未知**， **VT\_I1**， **VT\_UI1**， **VT\_UI2**， **VT\_UI4**， **VT\_INT**， **VT\_UINT** (**VT\_空**并**VT\_NULL**不能结合**VT\_数组**)。
+**VARIANT** 或 **VARIANTARG** 结构的 **vt** 字段只能采用以下值 (可能由 **Vt \_ BYREF** 和/或 **vt \_ 数组** 运算) ： **vt \_ EMPTY 为空**， **vt \_ NULL**、 **vt \_ I2**、 **vt \_ I4**、 **vt \_ R4**、 **vt \_ R8**、 **vt \_ CY**、 **vt \_ DATE**、vt **\_ BSTR**、Vt **\_ 调度**、 **vt \_ 错误**、vt **\_ BOOL**、vt **\_ VARIANT**、vt **\_ DECIMAL**、 **vt RECORD、 \_ vt \_ UNKNOWN**、vt **\_ I1**、vt **\_ UI1**、 **vt \_ UI2**、vt **\_ UI4**、vt **\_ INT**、vt **\_ UINT** (**vt \_ EMPTY** 和 **vt \_ NULL** 不能与 **vt \_ ARRAY**) 组合。
 
 ### <a name="span-idexamplespanspan-idexamplespanexample"></a><span id="example"></span><span id="EXAMPLE"></span>示例
 
-PREfast 报告的警告的下面的示例。
+PREfast 报告以下示例的警告。
 
 ```
 VARIANT var;

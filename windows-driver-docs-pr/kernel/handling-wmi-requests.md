@@ -1,19 +1,18 @@
 ---
 title: 处理 WMI 请求
 description: 处理 WMI 请求
-ms.assetid: d95b736c-045d-4888-8bab-b0a6201f8830
 keywords:
 - WMI WDK 内核，请求
 - 请求 WDK WMI
 - Irp WDK WMI
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8d0293f1a41b17e352b03b987ff3ad6b4a6e6e05
-ms.sourcegitcommit: a44ade167cdfb541cf1818e9f9e3726f23f90b66
+ms.openlocfilehash: b16a1823c89eadcad59115f6dc13e4ac2143fce7
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94361461"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96836937"
 ---
 # <a name="handling-wmi-requests"></a>处理 WMI 请求
 

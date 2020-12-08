@@ -1,7 +1,6 @@
 ---
 title: ndiskd
-description: 警告此扩展适用于旧的 NDIS 1.x 驱动程序。Ndiskd 扩展显示 NDIS_PACKET 结构的相关信息。
-ms.assetid: 8e704173-3b09-4377-b73a-ba67a3c3c930
+description: 警告此扩展适用于旧的 NDIS 1.x 驱动程序。 Ndiskd 扩展显示 NDIS_PACKET 结构的相关信息。
 keywords:
 - ndiskd Windows 调试
 ms.date: 05/23/2017
@@ -12,18 +11,18 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: c7ebd9577322e55337316d8c52e66ad165732dfd
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 7f72c8d3d70d7c286ae29bfc1bb0eb56df581eaa
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89209887"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96836587"
 ---
 # <a name="ndiskdpkt"></a>!ndiskd.pkt
 
-**警告**   此扩展适用于旧的 NDIS 1.x 驱动程序。 [NDIS \_ 数据包](/previous-versions/windows/hardware/network/ff557086(v=vs.85))结构及其关联的体系结构已弃用。
+**警告**  此扩展适用于旧的 NDIS 1.x 驱动程序。 [NDIS \_ 数据包](/previous-versions/windows/hardware/network/ff557086(v=vs.85))结构及其关联的体系结构已弃用。
 
-**！ Ndiskd** extension 显示有关[NDIS \_ 数据包](/previous-versions/windows/hardware/network/ff557086(v=vs.85))结构的信息。
+**！ Ndiskd** extension 显示有关 [NDIS \_ 数据包](/previous-versions/windows/hardware/network/ff557086(v=vs.85))结构的信息。
 
 ```console
 !ndiskd.pkt [-packet] [-verbosity] 
@@ -41,6 +40,6 @@ ms.locfileid: "89209887"
 
 Ndiskd.dll
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [NDIS \_ 数据包](/previous-versions/windows/hardware/network/ff557086(v=vs.85))

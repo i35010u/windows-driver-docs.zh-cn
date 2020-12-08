@@ -1,7 +1,6 @@
 ---
 title: 接受连接请求
 description: 接受连接请求
-ms.assetid: 2233daa7-c5c5-49be-b76e-61a90a496447
 keywords:
 - SAN 连接设置 WDK，接受连接请求
 - 传入连接请求 WDK San
@@ -12,12 +11,12 @@ keywords:
 - 拒绝 SAN 连接请求
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 12ca1282c68b9ca7a23b921e19b787362aa46dbe
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: e99f93ce11411b48a86762fabf50c7aad2775a51
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89214063"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96836797"
 ---
 # <a name="accepting-connection-requests"></a>接受连接请求
 
@@ -25,7 +24,7 @@ ms.locfileid: "89214063"
 
 
 
-如果应用程序调用 **WSAAccept**、 **accept**或 **AcceptEx** 函数来接受套接字上的传入连接请求，则 Windows 套接交换机始终会将此调用转发到 tcp/ip 服务提供商。 如果传入连接请求到达非 SAN 网络，则会流过 NDIS 路径，并且 TCP/IP 服务提供程序将处理该请求。 如果连接请求到达 SAN 上的远程对等方，则该开关将充当 TCP/IP 服务提供程序与 SAN 服务提供商之间的中介，以确定是否接受连接请求以及在完成应用程序的 **WSAAccept**、 **accept**或 **AcceptEx** 函数。
+如果应用程序调用 **WSAAccept**、 **accept** 或 **AcceptEx** 函数来接受套接字上的传入连接请求，则 Windows 套接交换机始终会将此调用转发到 tcp/ip 服务提供商。 如果传入连接请求到达非 SAN 网络，则会流过 NDIS 路径，并且 TCP/IP 服务提供程序将处理该请求。 如果连接请求到达 SAN 上的远程对等方，则该开关将充当 TCP/IP 服务提供程序与 SAN 服务提供商之间的中介，以确定是否接受连接请求以及在完成应用程序的 **WSAAccept**、 **accept** 或 **AcceptEx** 函数。
 
 下图显示了用于确定是接受还是拒绝传入连接请求的 Windows 套接字交换机与 SAN 服务提供商之间的交互的概述。 下面的序列和部分更详细地介绍了接受决定。
 
@@ -39,7 +38,7 @@ ms.locfileid: "89214063"
 
 3.  接收到 FD \_ ACCEPT 事件代码时，开关会调用 SAN 服务提供程序的 [**WSPAccept**](/previous-versions/windows/hardware/network/ff566266(v=vs.85)) 函数，以接受或拒绝传入连接请求。
 
-4.  在开关对 SAN 服务提供程序的 [**WSPAccept**](/previous-versions/windows/hardware/network/ff566266(v=vs.85)) 函数的调用中，开关指定条件函数。 在从**WSPAccept**调用返回之前，SAN 服务提供程序必须在调用**WSPAccept**函数的同一线程中调用此条件函数。
+4.  在开关对 SAN 服务提供程序的 [**WSPAccept**](/previous-versions/windows/hardware/network/ff566266(v=vs.85)) 函数的调用中，开关指定条件函数。 在从 **WSPAccept** 调用返回之前，SAN 服务提供程序必须在调用 **WSPAccept** 函数的同一线程中调用此条件函数。
 
 5.  开关将 \_ 从该条件函数返回 CF ACCEPT 或 cf \_ 拒绝代码，以指示它分别接受或拒绝连接请求。
 

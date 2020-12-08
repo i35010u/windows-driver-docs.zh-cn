@@ -1,7 +1,6 @@
 ---
 title: 将 PnP 设备添加到正在运行的系统
 description: 将 PnP 设备添加到正在运行的系统
-ms.assetid: 73d14ba1-6cf1-44eb-8a98-8c2fe44c11bb
 keywords:
 - PnP WDK 内核，将设备添加到运行系统
 - 即插即用 WDK 内核，将设备添加到运行系统
@@ -17,12 +16,12 @@ keywords:
 - I/o 请求数据包 WDK PnP
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c0c1ad09d457cf5e323a1bab5c6d52e0a023a49c
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: d08ebd51ba341784427cc5dc4ee18f12daa4b9d4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89189103"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96836963"
 ---
 # <a name="adding-a-pnp-device-to-a-running-system"></a>将 PnP 设备添加到正在运行的系统
 
@@ -52,11 +51,11 @@ ms.locfileid: "89189103"
 
 3.  总线设备的函数驱动程序将通知 PnP 管理器其子设备集已更改。
 
-    函数驱动程序通过调用*类型*为**BusRelations**的[**IoInvalidateDeviceRelations**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioinvalidatedevicerelations)通知 PnP 管理器。
+    函数驱动程序通过调用 *类型* 为 **BusRelations** 的 [**IoInvalidateDeviceRelations**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioinvalidatedevicerelations)通知 PnP 管理器。
 
 4.  PnP 管理器将在总线的驱动程序上查询总线上当前设备的列表。
 
-    PnP 管理器将 [**IRP \_ MN \_ 查询 \_ 设备 \_ 关系**](./irp-mn-query-device-relations.md) 请求发送到总线的设备堆栈。 **QueryDeviceRelations**值为**BusRelations**，指示 PnP 管理器正在请求总线上存在的设备的当前列表 (*总线关系*) 。
+    PnP 管理器将 [**IRP \_ MN \_ 查询 \_ 设备 \_ 关系**](./irp-mn-query-device-relations.md) 请求发送到总线的设备堆栈。 **QueryDeviceRelations** 值为 **BusRelations**，指示 PnP 管理器正在请求总线上存在的设备的当前列表 (*总线关系*) 。
 
     PnP 管理器将 IRP 发送到总线的设备堆栈中的顶层驱动程序。 根据 PnP Irp 的规则，堆栈中的每个驱动程序会根据需要处理 IRP，并将 IRP 向下传递到下一个驱动程序。
 
@@ -64,7 +63,7 @@ ms.locfileid: "89189103"
 
     有关处理此 IRP 的详细信息，请参阅 [**IRP \_ MN \_ 查询 \_ 设备 \_ 关系**](./irp-mn-query-device-relations.md) 的参考页。
 
-    在此示例中，USB 集线器驱动程序为中心 *FDO*处理此 IRP。 集线器驱动程序为操纵杆设备创建一个 *PDO* ，并在其使用 IRP 返回的子设备列表中包含指向游戏杆 PDO 的引用指针。
+    在此示例中，USB 集线器驱动程序为中心 *FDO* 处理此 IRP。 集线器驱动程序为操纵杆设备创建一个 *PDO* ，并在其使用 IRP 返回的子设备列表中包含指向游戏杆 PDO 的引用指针。
 
     如果 USB 集线器的父总线驱动程序 (USB 主机控制器类/miniclass 驱动程序对) 完成 IRP，则 IRP 会通过集线器驱动程序注册的任何 [*IoCompletion*](/windows-hardware/drivers/ddi/wdm/nc-wdm-io_completion_routine) 例程来返回设备堆栈。
 
@@ -116,7 +115,7 @@ ms.locfileid: "89189103"
 
     PnP 管理器将在处理新的 PnP 设备的这一阶段发送上面列出的 Irp，但不一定按列出的顺序进行操作，因此，不应对 Irp 的发送顺序作出假设。 此外，不应假定 PnP 管理器只发送以上列出的 Irp。
 
-    PnP 管理器检查注册表以确定此计算机上是否已安装了该设备。 PnP 管理器 &lt; *enumerator* &gt; \\ &lt; *deviceID* &gt; 在**枚举**分支下检查设备的枚举器 deviceID 子项。 在此示例中，该设备是新设备，必须配置为 "从头开始"。
+    PnP 管理器检查注册表以确定此计算机上是否已安装了该设备。 PnP 管理器 &lt; *enumerator* &gt; \\ &lt; *deviceID* &gt; 在 **枚举** 分支下检查设备的枚举器 deviceID 子项。 在此示例中，该设备是新设备，必须配置为 "从头开始"。
 
 3.  PnP 管理器将有关设备的信息存储在注册表中。
 
@@ -124,37 +123,37 @@ ms.locfileid: "89189103"
 
     -   PnP 管理器为设备的枚举器的密钥下的设备创建一个子项。
 
-        PnP 管理器创建一个名为**HKLM \\ System \\ CurrentControlSet \\ Enum \\ ** &lt; *枚举器* &gt; **\\** &lt; *deviceID*的子项 &gt; 。 &lt;如果*枚举器* &gt; 子项尚不存在，则创建它。
+        PnP 管理器创建一个名为 **HKLM \\ System \\ CurrentControlSet \\ Enum \\** &lt; *枚举器* &gt; **\\** &lt; *deviceID* 的子项 &gt; 。 &lt;如果 *枚举器* &gt; 子项尚不存在，则创建它。
 
-        *枚举器*是基于 pnp 硬件标准发现 PnP 设备的组件。 枚举器的任务通过与 PnP 管理器合作的 PnP 总线驱动程序执行。 设备通常由其父总线驱动程序（如 PCI 或 PCMCIA）枚举。 某些设备由总线筛选器驱动程序（如 ACPI）枚举。
+        *枚举器* 是基于 pnp 硬件标准发现 PnP 设备的组件。 枚举器的任务通过与 PnP 管理器合作的 PnP 总线驱动程序执行。 设备通常由其父总线驱动程序（如 PCI 或 PCMCIA）枚举。 某些设备由总线筛选器驱动程序（如 ACPI）枚举。
 
     -   PnP 管理器为设备的此实例创建子项。
 
-        如果为**IRP \_ MN \_ 查询 \_ 功能**返回**TRUE** **UniqueID** ，则设备的唯一 ID 在整个系统中是唯一的。 如果不是，则 PnP 管理器会修改 ID，使其在整个系统范围内是唯一的。
+        如果为 **IRP \_ MN \_ 查询 \_ 功能** 返回 **TRUE** **UniqueID** ，则设备的唯一 ID 在整个系统中是唯一的。 如果不是，则 PnP 管理器会修改 ID，使其在整个系统范围内是唯一的。
 
-        PnP 管理器创建一个名为**HKLM \\ System \\ CurrentControlSet \\ Enum \\ ** &lt; *枚举器* &gt; **\\** &lt; *deviceID* &gt; **\\** &lt; *instanceID* &gt; 的子项。
+        PnP 管理器创建一个名为 **HKLM \\ System \\ CurrentControlSet \\ Enum \\** &lt; *枚举器* &gt; **\\** &lt; *deviceID* &gt; **\\** &lt; *instanceID* &gt; 的子项。
 
     -   PnP 管理器将有关设备的信息写入设备实例的子项。
 
         如果为设备提供了以下信息，则 PnP 管理器将存储信息，包括以下信息：
 
-        **DeviceDesc**  -从[ **IRP \_ MN \_ 查询 \_ 设备 \_ 文本**](./irp-mn-query-device-text.md)
+        **DeviceDesc** —从 [ **IRP \_ MN \_ 查询 \_ 设备 \_ 文本**](./irp-mn-query-device-text.md)
 
-        **位置**  -从**IRP \_ MN \_ 查询 \_ 设备 \_ 文本**
+        **位置** -从 **IRP \_ MN \_ 查询 \_ 设备 \_ 文本**
 
-        **功能**  - [ **IRP \_ MN \_ 查询 \_ 功能**的标志](./irp-mn-query-capabilities.md)
+        **功能**- [ **IRP \_ MN \_ 查询 \_ 功能** 的标志](./irp-mn-query-capabilities.md)
 
-        **UINumber**  -从**IRP \_ MN \_ 查询 \_ 功能**
+        **UINumber** —从 **IRP \_ MN \_ 查询 \_ 功能**
 
-        **HardwareID**  -从[ **IRP \_ MN \_ 查询 \_ ID**](./irp-mn-query-id.md)
+        **HardwareID** —从 [ **IRP \_ MN \_ 查询 \_ ID**](./irp-mn-query-id.md)
 
-        **CompatibleIDs**  -从**IRP \_ MN \_ 查询 \_ ID**
+        **CompatibleIDs** —从 **IRP \_ MN \_ 查询 \_ ID**
 
-        **ContainerID**  -从**IRP \_ MN \_ 查询 \_ ID**
+        **ContainerID** -从 **IRP \_ MN \_ 查询 \_ ID**
 
-        **LogConf \\BootConfig**   —从[ **IRP \_ MN \_ 查询 \_ 资源**](./irp-mn-query-resources.md)
+        **LogConf \\BootConfig** —从 [ **IRP \_ MN \_ 查询 \_ 资源**](./irp-mn-query-resources.md)
 
-        **LogConf \\BasicConfigVector**   —从[ **IRP \_ MN \_ 查询 \_ 资源 \_ 要求**](./irp-mn-query-resource-requirements.md)
+        **LogConf \\BasicConfigVector** —从 [ **IRP \_ MN \_ 查询 \_ 资源 \_ 要求**](./irp-mn-query-resource-requirements.md)
 
 此时，PnP 管理器准备好查找该设备的函数驱动程序和筛选器驱动程序（如果有）。  (参见下图。 ) 
 
@@ -184,7 +183,7 @@ ms.locfileid: "89189103"
 
 2.  函数驱动程序
 
-    附加了任何较低级别的筛选器后，PnP 管理器将处理函数驱动程序。 如果尚未加载驱动程序并调用函数驱动程序的*AddDevice*例程，PnP 管理器将调用函数驱动程序的**DriverEntry**例程。 函数驱动程序创建 (FDO) 的函数设备对象，并将其附加到设备堆栈。
+    附加了任何较低级别的筛选器后，PnP 管理器将处理函数驱动程序。 如果尚未加载驱动程序并调用函数驱动程序的 *AddDevice* 例程，PnP 管理器将调用函数驱动程序的 **DriverEntry** 例程。 函数驱动程序创建 (FDO) 的函数设备对象，并将其附加到设备堆栈。
 
     在此示例中，USB 游戏杆的函数驱动程序实际上是一对驱动程序： HID 类驱动程序和 HID miniclass 驱动程序。 这两个驱动程序协同工作以充当函数驱动程序。 驱动程序对仅创建一个 FDO，并将其附加到设备堆栈。
 

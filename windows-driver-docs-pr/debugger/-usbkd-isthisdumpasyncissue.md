@@ -1,7 +1,6 @@
 ---
 title: usbkd.isthisdumpasyncissue
 description: 此命令检查0xFE 崩溃转储文件，以了解故障的可能原因是否是与 USB EHCI 主机控制器关联的 Async 提前问题的中断。
-ms.assetid: 1729E52F-F943-4062-94AC-7890C2E25EBF
 keywords:
 - usbkd isthisdumpasyncissue Windows 调试
 ms.date: 05/23/2017
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 9b46f2858bddf837a6cd798cb33771692cd0177d
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: eac7bce3102cc565ea2281abbfc8423ed72a6148
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89213570"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96836902"
 ---
 # <a name="usbkdisthisdumpasyncissue"></a>!usbkd.isthisdumpasyncissue
 
 
-**！ Usbkd. isthisdumpasyncissue**命令检查由[**Bug 检查 0xFE**](bug-check-0xfe--bugcode-usb-driver.md)生成的故障转储文件，以确定崩溃的可能原因是否是与 USB EHCI 主机控制器关联的 Async 提前问题的中断。
+**！ Usbkd. isthisdumpasyncissue** 命令检查由 [**Bug 检查 0xFE**](bug-check-0xfe--bugcode-usb-driver.md)生成的故障转储文件，以确定崩溃的可能原因是否是与 USB EHCI 主机控制器关联的 Async 提前问题的中断。
 
 ```dbgcmd
 !usbkd.isthisdumpasyncissue
@@ -41,15 +40,15 @@ Usbkd.dll
 <a name="examples"></a>示例
 --------
 
-下面是 **！ usbkd**的输出示例。
+下面是 **！ usbkd** 的输出示例。
 
 ```dbgcmd
 1: kd> !analyze -v
-*** ...
+**_ ...
 BUGCODE_USB_DRIVER (fe) 
 ...
 1: kd> !usbkd.isthisdumpasyncissue
-This is *NOT* Async on Advance Issue because the EndPointData is NULL
+This is _NOT* Async on Advance Issue because the EndPointData is NULL
 ```
 
 ## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅

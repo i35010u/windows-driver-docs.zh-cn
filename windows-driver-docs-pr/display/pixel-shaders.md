@@ -1,17 +1,16 @@
 ---
 title: 像素着色器
 description: 像素着色器
-ms.assetid: a44c5ee8-e9a7-4f9a-9547-e0c5ae49b82c
 keywords:
-- 像素着色器 WDK DirectX 8.0
+- 象素着色器 WDK DirectX 8。0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5a015bfce0079029280901751f89061e52c9b622
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: aeafcb4507dcdf624a4617476ae77d845818c681
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63352249"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838045"
 ---
 # <a name="pixel-shaders"></a>像素着色器
 
@@ -19,9 +18,9 @@ ms.locfileid: "63352249"
 ## <span id="ddk_pixel_shaders_gg"></span><span id="DDK_PIXEL_SHADERS_GG"></span>
 
 
-支持 DirectX 8.0 DDI 的所有驱动程序可能支持新的 DP2 令牌 D3DDP2OP\_SETPIXELSHADER 如果可编程像素着色器支持硬件中。
+\_如果硬件支持可编程像素着色，则支持 DirectX 8.0 DDI 的所有驱动程序都可能支持新的 DP2 TOKEN D3DDP2OP SETPIXELSHADER。
 
-D3DDP2OP\_SETPIXELSHADER 可用于通知当前的可编程像素着色器，若要使用的句柄的驱动程序。 像素着色器句柄是指通过 D3DDP2OP 以前创建的可编程像素着色器句柄\_CREATEPIXELSHADER DP2 令牌。
+D3DDP2OP \_ SETPIXELSHADER 可用于通知驱动程序要使用的当前可编程像素着色器的句柄。 像素着色器句柄是指先前通过 D3DDP2OP CREATEPIXELSHADER DP2 标记创建的可编程像素着色器句柄 \_ 。
 
  
 

@@ -1,25 +1,24 @@
 ---
 title: 在网络连接向导中显示自定义 UI 页
 description: 在网络连接向导中显示自定义 UI 页
-ms.assetid: 102f142a-91d1-4b55-a111-15a297c03e23
 keywords:
 - 自定义 UI WDK 本机 802.11 IHV UI 扩展 DLL，网络连接向导
 - 网络连接向导 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: be438078bd02413f55ff533e56e7526c98479391
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: e4cbb7cbe7926746614c8be480c838ae17ea8b15
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91733233"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838755"
 ---
 # <a name="displaying-custom-ui-pages-within-the-network-connection-wizard"></a>在网络连接向导中显示自定义 UI 页
 
 
 
 
- 
+ 
 
 当通过以下任一方式发出 UI 请求时，可以在操作系统的网络连接向导中显示本机 802.11 IHV UI 扩展 DLL 支持的自定义用户界面 (UI) ：
 
@@ -47,12 +46,12 @@ ms.locfileid: "91733233"
 
 显示自定义 UI 时，本机 802.11 IHV UI 扩展 DLL 可以通过 [IPROPERTYBAG COM 接口](/previous-versions/windows/internet-explorer/ie-developer/platform-apis/aa768196(v=vs.85))读取或写入特定于上下文的数据。 有关此过程的详细信息，请参阅 [访问配置文件和上下文数据](accessing-profile-and-context-data.md)。
 
-显示自定义 UI 后，本机 802.11 IHV UI 扩展 DLL 可通过调用 **WlanSendUIResponse**将用户输入的响应数据返回到本机 802.11 IHV 扩展 dll。 DLL 传入 UI 请求的 GUID，以及指向包含响应数据的缓冲区的指针。
+显示自定义 UI 后，本机 802.11 IHV UI 扩展 DLL 可通过调用 **WlanSendUIResponse** 将用户输入的响应数据返回到本机 802.11 IHV 扩展 dll。 DLL 传入 UI 请求的 GUID，以及指向包含响应数据的缓冲区的指针。
 
-在本机 802.11 IHV UI 扩展 DLL 调用 **WlanSendUIResponse**后，操作系统将调用本机 802.11 IHV 扩展 Dll 的 [*Dot11ExtIhvProcessUIResponse*](/windows-hardware/drivers/ddi/wlanihv/nc-wlanihv-dot11extihv_process_ui_response) IHV 处理程序函数来转发自定义 UI 的响应数据。
+在本机 802.11 IHV UI 扩展 DLL 调用 **WlanSendUIResponse** 后，操作系统将调用本机 802.11 IHV 扩展 Dll 的 [*Dot11ExtIhvProcessUIResponse*](/windows-hardware/drivers/ddi/wlanihv/nc-wlanihv-dot11extihv_process_ui_response) IHV 处理程序函数来转发自定义 UI 的响应数据。
 
 有关 **WlanSendUIResponse** API 的详细信息，请参阅 Microsoft Windows SDK 中的文档。
 
- 
+ 
 
- 
+ 

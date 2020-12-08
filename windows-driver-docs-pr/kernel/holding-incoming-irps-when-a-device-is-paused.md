@@ -1,7 +1,6 @@
 ---
 title: 设备暂停时保持传入的 IRP
 description: 设备暂停时保持传入的 IRP
-ms.assetid: 4964e06b-f1b9-4421-89d1-ad79ce7d7307
 keywords:
 - 保存 Irp
 - Irp WDK PnP
@@ -9,12 +8,12 @@ keywords:
 - 暂停 PnP 设备
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a17577f14191e9af8034d0966d05925dfea63eb9
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 12bf466b05aa8bfcbf512dcf12ce4da0e4080004
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89193233"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837713"
 ---
 # <a name="holding-incoming-irps-when-a-device-is-paused"></a>设备暂停时保持传入的 IRP
 
@@ -34,7 +33,7 @@ ms.locfileid: "89193233"
 
     如果驱动程序已经对 Irp 进行了排队，则它可以重复使用同一队列，因为在暂停设备之前需要驱动程序来完成所有未完成的请求。
 
-    如果驱动程序还没有 IRP 队列，则必须在其 *AddDevice* 例程中创建一个。 它所创建的队列类型取决于驱动程序刷新队列的方式。 驱动程序可以使用联锁的双向链接列表和 **ExInterlocked*Xxx*列表** 例程。
+    如果驱动程序还没有 IRP 队列，则必须在其 *AddDevice* 例程中创建一个。 它所创建的队列类型取决于驱动程序刷新队列的方式。 驱动程序可以使用联锁的双向链接列表和 **ExInterlocked *Xxx* 列表** 例程。
 
 3.  在其 *DispatchPnP* 代码中， **irp \_ MN \_ 查询 \_ 停止 \_ 设备** (或 **IRP \_ MN \_ 停止 \_ 设备**) ，完成所有未完成的请求并设置保留 \_ 新 \_ 请求标志。
 
@@ -42,7 +41,7 @@ ms.locfileid: "89193233"
 
     驱动程序的 *DispatchPnP* 例程必须继续处理 PnP irp，而不是保留它们， [*DispatchPower*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch) 例程必须继续处理电源 irp。
 
-5.  在 *DispatchPnP*中，若要响应启动或取消停止 IRP，请清除 "保留 \_ 新 \_ 请求" 标志，并在 IRP 保留队列中启动 irp。
+5.  在 *DispatchPnP* 中，若要响应启动或取消停止 IRP，请清除 "保留 \_ 新 \_ 请求" 标志，并在 IRP 保留队列中启动 irp。
 
     这些操作可能是处理这些 PnP Irp 的最后步骤。 例如，为了响应启动 IRP，驱动程序必须首先执行任何操作来启动设备，然后它可以在 IRP 持有的队列中启动 Irp。
 

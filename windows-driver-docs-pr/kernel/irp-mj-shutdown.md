@@ -2,16 +2,15 @@
 title: IRP_MJ_SHUTDOWN
 description: 具有数据内部缓存的大容量存储设备的驱动程序必须在 DispatchShutdown 例程中处理此请求。
 ms.date: 08/12/2017
-ms.assetid: af0b01b5-5f81-42da-aa4b-433bd422a51f
 keywords:
-- IRP_MJ_SHUTDOWN 内核模式驱动程序体系结构
+- IRP_MJ_SHUTDOWN Kernel-Mode 驱动程序体系结构
 ms.localizationpriority: medium
-ms.openlocfilehash: 5bd06f97edfa026efcb33aaf512ab2dfd9dd67fe
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: dea40e39ebebc7fcd5b7a565785f1501488a459b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89188245"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837225"
 ---
 # <a name="irp_mj_shutdown"></a>IRP \_ MJ \_ 关闭
 
@@ -60,7 +59,7 @@ PnP 管理器以 IRQL 的形式发送此 IRP<= APC_LEVEL 在任意线程上下�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [*DispatchShutdown*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)

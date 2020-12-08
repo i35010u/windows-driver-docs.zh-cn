@@ -1,36 +1,35 @@
 ---
 title: OID_NIC_SWITCH_HARDWARE_CAPABILITIES
 description: 过量驱动程序会发出对象标识符 (OID) 查询请求 OID_NIC_SWITCH_HARDWARE_CAPABILITIES 获取网络适配器中 NIC 交换机的硬件功能。
-ms.assetid: 2c417a16-68e1-4754-88a5-8bac4653e05d
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_NIC_SWITCH_HARDWARE_CAPABILITIES 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 9e9b4401d132fa51713b45686668252b6df2236f
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: b7484f99a0f7bd8a56de74a4b75bdf5c2b589a48
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106022"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837107"
 ---
 # <a name="oid_nic_switch_hardware_capabilities"></a>OID \_ NIC \_ 交换机 \_ 硬件 \_ 功能
 
 
 过量驱动程序) OID nic 交换机硬件功能 (OID 发出对象标识符 \_ \_ \_ \_ ，以获取网络适配器中 NIC 交换机的硬件功能。
 
-成功从 OID 查询请求返回后， [**ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的**InformationBuffer**成员包含指向[**NDIS \_ NIC \_ 交换机 \_ 功能**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_capabilities)结构的指针。
+成功从 OID 查询请求返回后， [**ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的 **InformationBuffer** 成员包含指向 [**NDIS \_ NIC \_ 交换机 \_ 功能**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_capabilities)结构的指针。
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 [**NDIS \_ NIC \_ 交换机 \_ 功能**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_capabilities)结构包含有关网络适配器上 NIC 交换机的硬件功能的信息。 这些功能可能包括 INF 文件设置当前禁用的硬件功能，或通过 " **高级** 属性" 页当前禁用的硬件功能。
 
-**注意**   指定 NIC 交换机的所有功能都通过 oid NIC 交换机硬件功能的 OID 查询请求 \_ 返回 \_ \_ \_ ，而不考虑是否启用或禁用功能。
+**注意**  指定 NIC 交换机的所有功能都通过 oid NIC 交换机硬件功能的 OID 查询请求 \_ 返回 \_ \_ \_ ，而不考虑是否启用或禁用功能。
 
  
 
-从 NDIS 6.20 开始，微型端口驱动程序会在调用 [*MiniportInitializeEx*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_initialize) 函数时提供 NIC 交换机硬件功能。 驱动程序使用 NIC 交换机硬件功能初始化[**ndis \_ NIC \_ 交换机 \_ 功能**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_capabilities)结构，并将[**ndis \_ 微型端口 \_ 适配器 \_ 硬件 \_ 协助 \_ 属性**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_adapter_hardware_assist_attributes)结构的**HardwareNicSwitchCapabilities**成员设置为指向**NDIS \_ NIC \_ 交换机 \_ 功能**结构的指针。 然后，小型端口驱动程序将调用 [**NdisMSetMiniportAttributes**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsetminiportattributes) 函数，并将 *MiniportAttributes* 参数设置为指向 **NDIS \_ 微型端口 \_ 适配器 \_ 硬件 \_ 协助 \_ 属性** 结构的指针。
+从 NDIS 6.20 开始，微型端口驱动程序会在调用 [*MiniportInitializeEx*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_initialize) 函数时提供 NIC 交换机硬件功能。 驱动程序使用 NIC 交换机硬件功能初始化 [**ndis \_ NIC \_ 交换机 \_ 功能**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_capabilities)结构，并将 [**ndis \_ 微型端口 \_ 适配器 \_ 硬件 \_ 协助 \_ 属性**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_adapter_hardware_assist_attributes)结构的 **HardwareNicSwitchCapabilities** 成员设置为指向 **NDIS \_ NIC \_ 交换机 \_ 功能** 结构的指针。 然后，小型端口驱动程序将调用 [**NdisMSetMiniportAttributes**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsetminiportattributes) 函数，并将 *MiniportAttributes* 参数设置为指向 **NDIS \_ 微型端口 \_ 适配器 \_ 硬件 \_ 协助 \_ 属性** 结构的指针。
 
-**注意**   从 NDIS 6.30 开始，支持单个根 i/o 虚拟化 (SR-IOV) 接口的微型端口驱动程序必须注册 NIC 交换机的硬件功能。 驱动程序通过调用 [**NdisMSetMiniportAttributes**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsetminiportattributes)注册这些功能。
+**注意**  从 NDIS 6.30 开始，支持单个根 i/o 虚拟化 (SR-IOV) 接口的微型端口驱动程序必须注册 NIC 交换机的硬件功能。 驱动程序通过调用 [**NdisMSetMiniportAttributes**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsetminiportattributes)注册这些功能。
 
  
 

@@ -1,9 +1,8 @@
 ---
 title: scsikd.scsiext
-description: Scsikd.scsiext 扩展显示有关指定 SCSI 端口扩展的详细的信息。
-ms.assetid: 0fcb0545-eb5a-4500-8e14-a5296624c80b
+description: Scsikd. scsiext 扩展显示有关指定 SCSI 端口扩展的详细信息。
 keywords:
-- scsikd.scsiext Windows 调试
+- scsikd scsiext Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,29 +11,29 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 6a6268c48eea1f267d99315104c0b57fca465909
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: eaab60be08012bd45f13ecf6cb61a2f2dd683dba
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339827"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837569"
 ---
 # <a name="scsikdscsiext"></a>!scsikd.scsiext
 
 
-**！ Scsikd.scsiext**扩展显示有关指定 SCSI 端口扩展的详细的信息。
+**！ Scsikd scsiext** 扩展显示有关指定 SCSI 端口扩展的详细信息。
 
 ```dbgcmd
 !scsikd.scsiext Device 
 ```
 
-## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>参数
+## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>Parameters
 
 
-<span id="_______Device______"></span><span id="_______device______"></span><span id="_______DEVICE______"></span> *设备*   
-指定的设备对象或 SCSI 端口扩展插件的设备扩展。
+<span id="_______Device______"></span><span id="_______device______"></span><span id="_______DEVICE______"></span>*设备*   
+指定 SCSI 端口扩展的设备对象或设备扩展。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 <table>
 <colgroup>
@@ -55,14 +54,14 @@ ms.locfileid: "63339827"
 
  
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-有关详细信息，请参阅[SCSI 微型端口调试](scsi-miniport-debugging.md)。
+有关详细信息，请参阅 [SCSI 微型端口调试](scsi-miniport-debugging.md)。
 
 <a name="remarks"></a>备注
 -------
 
-下面是示例 **！ scsikd.scsiext**显示，其中的 SCSI 端口扩展指定了一个功能的设备对象 (FDO); 这可以从获取**做**字段或**DevExt**字段中[ **！ minipkd.adapters** ](-minipkd-adapters.md)显示：
+下面是 **！ scsikd** 显示的示例，其中 SCSI 端口扩展已由功能设备对象指定 (FDO) ;这可以从 [**！ minipkd**](-minipkd-adapters.md)显示中的 **DO** 字段或 **DevExt** 字段获取：
 
 ```dbgcmd
 kd> !scsikd.scsiext 816f9a40 
@@ -100,7 +99,7 @@ Adapter Extension:
     LUN 816ea0e8 @ (  0,  1,  0) c ev  pnp(00/ff) pow(0 ,0) DevObj 816ea030
 ```
 
-下面是举例 **！ scsikd.scsiext**显示，其中的 SCSI 端口扩展指定了物理设备对象 (PDO); 这可从此**DevObj**字段或**LUN**字段中[ **！ minipkd.adapters** ](-minipkd-adapters.md)显示：
+下面是 **！ scsikd** 显示的一个示例，其中 SCSI 端口扩展已 (PDO) 中的物理设备对象指定;可以从 [**！ minipkd**](-minipkd-adapters.md)显示中的 **DevObj** 字段或 **LUN** 字段获取此内容：
 
 ```dbgcmd
 kd> !scsikd.scsiext 816ea030

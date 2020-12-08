@@ -1,15 +1,14 @@
 ---
-title: 单个二进制选择加入 POOL_NX_OPTIN
+title: 单个二进制 Opt-In POOL_NX_OPTIN
 description: 若要生成在 Windows 8 和更早版本的 Windows 中运行的单个驱动程序二进制文件，请使用 POOL_NX_OPTIN 选择加入机制。
-ms.assetid: BE9D3C85-0212-4206-A59B-4D53FB842C39
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 68dbfdfe3edc758e6c1023b7486beffbf18e6228
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 2cd00eaa65d94615e8e55ba8c85059357ec850cc
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89190979"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837961"
 ---
 # <a name="single-binary-opt-in-pool_nx_optin"></a>单个二进制选择加入：池 \_ NX \_ OPTIN
 

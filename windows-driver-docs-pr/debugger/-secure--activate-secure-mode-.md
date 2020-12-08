@@ -1,9 +1,8 @@
 ---
 title: .secure（激活安全模式）
-description: 激活的.secure 命令或显示的安全模式下的状态。
-ms.assetid: 58a8936e-898f-4608-b1b0-399d5152f410
+description: Secure 命令激活或显示安全模式的状态。
 keywords:
-- .secure （激活安全模式下） Windows 调试
+- 。安全 (激活安全模式) Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: c22b9876bc2f237acf5faee7364301b2e6c278f6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5b2d17ee181fd94709eff60da5cfd6c3a76e9750
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339810"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837563"
 ---
 # <a name="secure-activate-secure-mode"></a>.secure（激活安全模式）
 
 
-**.Secure**命令激活或显示的安全模式下的状态。
+**Secure** 命令激活或显示安全模式的状态。
 
 ```dbgcmd
 .secure 1 
@@ -34,7 +33,7 @@ ms.locfileid: "63339810"
 
 ### <a name="span-idenvironmentspanspan-idenvironmentspanspan-idenvironmentspanenvironment"></a><span id="Environment"></span><span id="environment"></span><span id="ENVIRONMENT"></span>环境
 
-在调试器处于休眠状态时，可以只启用安全模式。 安全模式下仅适用于内核模式会话中因为根据定义，安全模式可以防止用户模式下调试操作。
+仅当调试器处于休眠状态时，才能启用安全模式。 安全模式仅适用于内核模式会话，因为根据定义，安全模式会阻止用户模式的调试操作。
 
 <table>
 <colgroup>
@@ -43,32 +42,32 @@ ms.locfileid: "63339810"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>模式</strong></p></td>
-<td align="left"><p>内核模式下</p></td>
+<td align="left"><p><strong>交货</strong></p></td>
+<td align="left"><p>仅限内核模式</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>目标</strong></p></td>
-<td align="left"><p>实时、 崩溃转储</p></td>
+<td align="left"><p>实时，故障转储</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>平台</strong></p></td>
-<td align="left"><p>全部</p></td>
+<td align="left"><p>all</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-有关详细信息，请参阅[安全模式下](secure-mode.md)。
+有关详细信息，请参阅 [安全模式](secure-mode.md)。
 
 <a name="remarks"></a>备注
 -------
 
-若要激活安全模式下，使用命令 **.secure 1** (或 **.secure**跟任何非零值)。
+若要激活安全模式，请使用命令 **。 secure 1** (或 **. secure** 后跟) 的任何非零值。
 
-该命令 **.secure**将显示安全模式下是否为当前处于活动状态。
+命令 **。 secure** 将显示安全模式当前是否处于活动状态。
 
  
 

@@ -1,9 +1,8 @@
 ---
 title: .ttime（显示线程时间）
-description: .Ttime 命令显示线程正在运行的时间。
-ms.assetid: ff48310f-3eb9-4112-b5ab-b7c16878ac8f
+description: Ttime 命令显示线程的运行时间。
 keywords:
-- .ttime （显示线程时间） Windows 调试
+- ttime (显示线程时间) Windows 调试
 ms.date: 08/01/2018
 topic_type:
 - apiref
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 49fd367035c7fb38f99c1c30782701d211fd0f36
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4549edf30f32849ce69837e9d290aff0a2da1be4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63334181"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838535"
 ---
 # <a name="ttime-display-thread-times"></a>.ttime（显示线程时间）
 
 
-**.Ttime**命令显示线程正在运行的时间。
+**Ttime** 命令显示线程的运行时间。
 
 ```dbgcmd
 .ttime 
@@ -40,12 +39,12 @@ ms.locfileid: "63334181"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>模式</strong></p></td>
-<td align="left"><p>仅限用户模式</p></td>
+<td align="left"><p><strong>交货</strong></p></td>
+<td align="left"><p>仅用户模式</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>目标</strong></p></td>
-<td align="left"><p>实时、 崩溃转储</p></td>
+<td align="left"><p>实时，故障转储</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>平台</strong></p></td>
@@ -59,11 +58,11 @@ ms.locfileid: "63334181"
 <a name="remarks"></a>备注
 -------
 
-此命令仅适用于用户模式。 在内核模式下应使用[ **！ 线程**](-thread.md)相反。 只要用户创建后，此命令适用于用户模式的小型转储 **/mt**或 **/ma**选项，请参见[用户模式转储文件](user-mode-dump-files.md)有关详细信息。
+此命令仅在用户模式下工作。 在内核模式下，应该改用 [**！线程**](-thread.md) 。 此命令适用于用户模式小型转储，前提是它们是使用 **/mt** 或 **/ma** 选项创建的;有关详细信息，请参阅 [用户模式转储文件](user-mode-dump-files.md) 。
 
-**.Ttime**命令显示了线程，以及在内核模式下和在用户模式下运行的时间量的创建时间。
+**Ttime** 命令显示线程的创建时间以及它在内核模式和用户模式下运行的时间量。
 
-下面是一个示例：
+以下是示例：
 
 ```dbgcmd
 0:000> .ttime

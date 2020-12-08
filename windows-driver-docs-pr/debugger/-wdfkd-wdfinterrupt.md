@@ -1,9 +1,8 @@
 ---
 title: wdfkd.wdfinterrupt
-description: Wdfkd.wdfinterrupt 扩展显示有关 WDFINTERRUPT 对象的信息。
-ms.assetid: 3e032095-94fe-41d5-aeed-645d6b544105
+description: Wdfkd. wdfinterrupt 扩展显示有关 WDFINTERRUPT 对象的信息。
 keywords:
-- wdfkd.wdfinterrupt Windows 调试
+- wdfkd wdfinterrupt Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,50 +11,50 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 58158aead119ad37bf6eca40e4c1fabbda2e7070
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 320adf5a6b2827a8dbaf3270294f3035f3c7009f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63323477"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838391"
 ---
 # <a name="wdfkdwdfinterrupt"></a>!wdfkd.wdfinterrupt
 
 
-**！ Wdfkd.wdfinterrupt**扩展显示 WDFINTERRUPT 对象有关的信息。
+**！ Wdfkd wdfinterrupt** 扩展显示有关 wdfinterrupt 对象的信息。
 
 ```dbgcmd
 !wdfkd.wdfinterrupt Handle [Flags]
 ```
 
-## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>参数
+## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>Parameters
 
 
-<span id="_______Handle______"></span><span id="_______handle______"></span><span id="_______HANDLE______"></span> *句柄*   
+<span id="_______Handle______"></span><span id="_______handle______"></span><span id="_______HANDLE______"></span>*句柄*   
 WDFINTERRUPT 对象的句柄。
 
-<span id="_______Flags______"></span><span id="_______flags______"></span><span id="_______FLAGS______"></span> *标志*   
-可选。 指定要显示信息的种类。 *标志*可以是以下位的任意组合。 默认值为 0x0。
+<span id="_______Flags______"></span><span id="_______flags______"></span><span id="_______FLAGS______"></span>*标志*   
+可选。 指定要显示的信息的类型。 *标志* 可以是以下位的任意组合。 默认值为0x0。
 
-<span id="Bit_0__0x1_"></span><span id="bit_0__0x1_"></span><span id="BIT_0__0X1_"></span>位 0 (0x1)  
-显示与此 WDFINTERRUPT 对象相关联的中断调度表 (IDT) 中断服务例程 (Isr)。 设置此标志等效于以下 **！ wdfinterrupt**扩展名[ **！ idt** ](-idt.md)扩展。
+<span id="Bit_0__0x1_"></span><span id="bit_0__0x1_"></span><span id="BIT_0__0X1_"></span>位 0 (0x1)   
+显示中断调度表 (Isr) 的中断服务例程 (与此 WDFINTERRUPT 对象关联的 IDT) 。 设置此标志等效于在！ **wdfinterrupt** 扩展名后面加上 [**！ idt**](-idt.md) 扩展。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 Wdfkd.dll
 
-### <a name="span-idframeworksspanspan-idframeworksspanspan-idframeworksspanframeworks"></a><span id="Frameworks"></span><span id="frameworks"></span><span id="FRAMEWORKS"></span>框架
+### <a name="span-idframeworksspanspan-idframeworksspanspan-idframeworksspanframeworks"></a><span id="Frameworks"></span><span id="frameworks"></span><span id="FRAMEWORKS"></span>协作
 
 KMDF 1，UMDF 2
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-有关详细信息，请参阅[内核模式驱动程序框架调试](kernel-mode-driver-framework-debugging.md)。
+有关详细信息，请参阅 [内核模式驱动程序框架调试](kernel-mode-driver-framework-debugging.md)。
 
 <a name="remarks"></a>备注
 -------
 
-下面的示例演示的输出 **！ wdfinterrupt**位 0 设置使用的扩展*标志*参数 （因此，输出会显示有关 IDT 信息）。
+下面的示例演示在 *Flags* 参数 (中设置了位0的 **！ wdfinterrupt** extension 的输出，因此输出显示有关 IDT) 的信息。
 
 ```dbgcmd
 kd> !wdfkd.wdfinterrupt 0x7a988698  1 
@@ -89,7 +88,7 @@ To get ISR from KINTERRUPT:
    dt <ServiceContext> wdf01000!FxInterrupt m_EvtInterruptIsr
 ```
 
-在前面的示例中，显示具有两个建议以结束[ **dt （显示类型）** ](dt--display-type-.md)命令，可以用于显示其他数据。
+在前面的示例中，显示中有两个建议的 [**dt (显示**](dt--display-type-.md) 可用于显示其他数据的) 命令。
 
  
 

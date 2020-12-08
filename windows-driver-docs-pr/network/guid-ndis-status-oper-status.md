@@ -1,17 +1,16 @@
 ---
 title: GUID_NDIS_STATUS_OPER_STATUS
 description: 本主题描述了 NDIS WMI 接口的 GUID_NDIS_STATUS_OPER_STATUS GUID。
-ms.assetid: e4e13f9d-6298-47b0-9cb1-70fea87db59a
 keywords:
 - GUID_NDIS_STATUS_OPER_STATUS，WDK GUID_NDIS_STATUS_OPER_STATUS 网络驱动程序
 ms.date: 11/22/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 26a2148df199d2b6e7620eab43203372a3b0f95e
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 53775a0079293d074f7d658d8530a516a6103ae9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89207559"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96836791"
 ---
 # <a name="guid_ndis_status_oper_status"></a>GUID_NDIS_STATUS_OPER_STATUS
 

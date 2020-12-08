@@ -1,15 +1,14 @@
 ---
 title: SIM PIN API
 description: SIM PIN API
-ms.assetid: f1e1dc0f-71ee-47ff-971b-cec36bfa0643
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 976acbf93326e275dccc1f5f3ee2b9a00093ae40
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: c6dd4f8a90bbd8e1766684e28582664766ca31c0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89214810"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837695"
 ---
 # <a name="sim-pin-api"></a>SIM PIN API
 

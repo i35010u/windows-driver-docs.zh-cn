@@ -1,17 +1,16 @@
 ---
 title: 用于上下文的文件系统支持
 description: 用于上下文的文件系统支持
-ms.assetid: 661ee3ff-3171-4d1e-a8fe-8d1852c5e990
 keywords:
 - 上下文 WDK 文件系统微筛选器，文件系统支持
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e24ff6ce9d0a7e392c74217d7619677daf58e25d
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 4265fc0e71af20d0d1c442a9dac259f3350c02ca
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89063650"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838279"
 ---
 # <a name="file-system-support-for-contexts"></a>用于上下文的文件系统支持
 
@@ -23,7 +22,7 @@ NTFS 和 FAT 文件系统不支持页面文件、预创建或关闭后路径或 
 
 文件上下文在 Windows Vista 和更高版本上可用。
 
-对于文件系统 (例如 FAT) ，每个文件仅支持一个数据流，文件上下文等效于流上下文。 此类文件系统通常支持流上下文，但不支持文件上下文。 相反，筛选器管理器将使用文件系统对流上下文的现有支持来提供此支持。 对于附加到这些文件系统的微筛选器驱动程序实例， [**FltSupportsFileContexts**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltsupportsfilecontexts)将返回**FALSE**，而当) 为*实例*参数传递了有效的非**NULL**值时， [**FltSupportsFileContextsEx**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltsupportsfilecontextsex)将返回**TRUE** (。
+对于文件系统 (例如 FAT) ，每个文件仅支持一个数据流，文件上下文等效于流上下文。 此类文件系统通常支持流上下文，但不支持文件上下文。 相反，筛选器管理器将使用文件系统对流上下文的现有支持来提供此支持。 对于附加到这些文件系统的微筛选器驱动程序实例， [**FltSupportsFileContexts**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltsupportsfilecontexts)将返回 **FALSE**，而当) 为 *实例* 参数传递了有效的非 **NULL** 值时， [**FltSupportsFileContextsEx**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltsupportsfilecontextsex)将返回 **TRUE** (。
 
 如果文件不支持上下文类型，则微筛选器无法将该类型的上下文附加到该文件。
 

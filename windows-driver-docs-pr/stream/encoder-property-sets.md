@@ -1,15 +1,14 @@
 ---
 title: 编码器属性集
 description: 编码器属性集
-ms.assetid: b273464d-0d40-488c-a848-291f949609f0
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3bd0a23e8a82c3d0af060715da2a1fa038af3d73
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: f200505706adde784756283e63cc3808731c5c82
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89188479"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837085"
 ---
 # <a name="encoder-property-sets"></a>编码器属性集
 
@@ -58,11 +57,11 @@ ms.locfileid: "89188479"
 
 -   KSPROPERTY \_ 类型 \_ 集
 
-所有筛选器和 pin 对象均支持对其属性的基本支持操作。 它们是否支持 *get* 和 *Set* 操作取决于属性。 表示筛选器或固定对象的固有功能的属性可能只需要 *get* 操作。 尽管*获取*操作也可能对读取当前设置很有用，但表示可配置的设置的属性可能只需要*设置*操作。 若要详细了解如何使用带有视频编码器属性的 get、set 和 basic 支持操作，请参阅 [KS properties](./ks-properties.md)。
+所有筛选器和 pin 对象均支持对其属性的基本支持操作。 它们是否支持 *get* 和 *Set* 操作取决于属性。 表示筛选器或固定对象的固有功能的属性可能只需要 *get* 操作。 尽管 *获取* 操作也可能对读取当前设置很有用，但表示可配置的设置的属性可能只需要 *设置* 操作。 若要详细了解如何使用带有视频编码器属性的 get、set 和 basic 支持操作，请参阅 [KS properties](./ks-properties.md)。
 
 每个属性的说明中的表指示是否需要视频编码器微型驱动程序来支持读取或写入属性。 视频编码器微型驱动程序应返回对 \_ \_ 微型驱动程序不支持的属性的 get 或 set 请求所需的状态。
 
-下面的每个属性集都包含一个属性，该属性必须由视频编码器微型驱动程序实现。 也就是说，每个属性都有其自己的集合，因此在[**KSPROPERTY \_ 集**](/windows-hardware/drivers/ddi/ks/ns-ks-ksproperty_set)结构中的[**KSPROPERTY \_ 项**](/windows-hardware/drivers/ddi/ks/ns-ks-ksproperty_item)成员的**PropertyId**成员中指定0（根据需要）。
+下面的每个属性集都包含一个属性，该属性必须由视频编码器微型驱动程序实现。 也就是说，每个属性都有其自己的集合，因此在 [**KSPROPERTY \_ 集**](/windows-hardware/drivers/ddi/ks/ns-ks-ksproperty_set)结构中的 [**KSPROPERTY \_ 项**](/windows-hardware/drivers/ddi/ks/ns-ks-ksproperty_item)成员的 **PropertyId** 成员中指定0（根据需要）。
 
 以下属性集属于编解码器 API：
 

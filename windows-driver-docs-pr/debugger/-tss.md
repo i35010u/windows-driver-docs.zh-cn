@@ -1,17 +1,16 @@
 ---
 title: tss
 description: tss
-ms.assetid: 6b6109bf-8438-4cf5-963a-f2d1a5317c4e
 keywords:
-- /{tss 扩展 （已过时）
+- 'tss 扩展 (过时) '
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 26af2bf8c44c5ef882f24e935482723ae8b6bc9e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 277f0cf3f6900fb86c5215c36875cf73ab0934a9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63334177"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838537"
 ---
 # <a name="tss"></a>!tss
 
@@ -19,7 +18,7 @@ ms.locfileid: "63334177"
 ## <span id="ddk__tss_dbg"></span><span id="DDK__TSS_DBG"></span>
 
 
-**！ /{Tss**扩展命令已过时。 使用[ **.tss （显示任务状态段）** ](-tss--display-task-state-segment-.md)命令。
+**！ Tss** extension 命令已过时。 改为使用 [**tss (显示任务状态段)**](-tss--display-task-state-segment-.md) 命令。
 
  
 

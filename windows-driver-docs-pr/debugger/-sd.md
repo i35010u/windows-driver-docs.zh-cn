@@ -1,7 +1,6 @@
 ---
 title: sd
 description: Sd 扩展显示指定地址处的安全描述符。
-ms.assetid: 67c72bdb-7bfc-42d6-9b65-31a07dc67729
 keywords:
 - sd Windows 调试
 ms.date: 05/23/2017
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: e6a19fabf60c052308b7e5b3d8254143339615c9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f08a439af20884b603b82f63db66a503b7b0900e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63334232"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837571"
 ---
 # <a name="sd"></a>!sd
 
 
-**！ Sd**扩展显示指定地址处的安全描述符。
+**！ Sd** extension 显示指定地址处的安全描述符。
 
 语法
 
@@ -30,27 +29,27 @@ ms.locfileid: "63334232"
 !sd Address [Flags] 
 ```
 
-## <a name="span-idddksddbgspanspan-idddksddbgspanparameters"></a><span id="ddk__sd_dbg"></span><span id="DDK__SD_DBG"></span>参数
+## <a name="span-idddk__sd_dbgspanspan-idddk__sd_dbgspanparameters"></a><span id="ddk__sd_dbg"></span><span id="DDK__SD_DBG"></span>参数
 
 
-<span id="_______Address______"></span><span id="_______address______"></span><span id="_______ADDRESS______"></span> *Address*   
-指定安全的十六进制地址\_描述符结构。
+<span id="_______Address______"></span><span id="_______address______"></span><span id="_______ADDRESS______"></span>*地址*   
+指定安全描述符结构的十六进制地址 \_ 。
 
-<span id="_______Flags______"></span><span id="_______flags______"></span><span id="_______FLAGS______"></span> *标志*   
-如果此值设置为 1，显示的友好名称。 这包括安全标识符 (SID) 类型，以及域和用户名称的 sid。
+<span id="_______Flags______"></span><span id="_______flags______"></span><span id="_______FLAGS______"></span>*标志*   
+如果此设置为1，则显示友好名称。 这包括 sid) 类型 (安全标识符，以及 SID 的域和用户名。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 Exts.dll
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-应用程序和此命令的示例，请参阅[确定对象的 ACL](determining-the-acl-of-an-object.md)。 有关安全描述符信息，请参阅 Microsoft Windows SDK 文档，Windows Driver Kit (WDK) 文档，并*Microsoft Windows Internals*由 Mark Russinovich 和 David solomon 合著。 另请参阅[ **！ sid** ](-sid.md)并[ **！ acl**](-acl.md)。
+对于应用程序和此命令的示例，请参阅 [确定对象的 ACL](determining-the-acl-of-an-object.md)。 有关安全描述符的详细信息，请参阅 Microsoft Windows SDK 文档、Windows 驱动程序工具包 (WDK) 文档和 *Microsoft Windows 内部机制* ，并标记 Russinovich 和 David 所罗门群岛。 另请参阅 [**！ sid**](-sid.md) 和 [**！ acl**](-acl.md)。
 
 <a name="remarks"></a>备注
 -------
 
-下面是一个示例：
+以下是示例：
 
 ```dbgcmd
 kd> !sd e1a96a80 1

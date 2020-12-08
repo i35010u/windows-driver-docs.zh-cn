@@ -1,28 +1,27 @@
 ---
 title: NDIS_STATUS_RECEIVE_FILTER_CURRENT_CAPABILITIES
 description: 小型端口驱动程序在其当前启用的接收筛选功能更改时发出 NDIS_STATUS_RECEIVE_FILTER_CURRENT_CAPABILITIES 状态指示。
-ms.assetid: 6A1141A3-6E46-4A97-B482-CBE69E3D5075
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 NDIS_STATUS_RECEIVE_FILTER_CURRENT_CAPABILITIES 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: faa535aa3706da07fb0be4d20620f722a770a9c5
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 6a2f834b4450f8d0235c8a741ddbc21ae94bf644
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91733565"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837175"
 ---
 # <a name="ndis_status_receive_filter_current_capabilities"></a>NDIS \_ 状态 \_ 接收 \_ 筛选器 \_ 当前 \_ 功能
 
 
 微型端口驱动程序在其当前启用的接收筛选功能更改时发出 **NDIS \_ 状态 \_ 接收 \_ 筛选器 \_ 当前 \_ 功能** 状态指示。
 
-**注意**   此状态指示只应由支持 NDIS 接收筛选器的微型端口驱动程序来完成。
+**注意**  此状态指示只应由支持 NDIS 接收筛选器的微型端口驱动程序来完成。
 
  
 
-当微型端口驱动程序发出此状态指示时，它会将[**ndis \_ 状态 \_ 指示**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_status_indication)结构的**StatusBuffer**成员设置为指向[**ndis \_ 接收 \_ 筛选器 \_ 功能**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_capabilities)结构的指针。 驱动程序将此结构初始化为其当前启用的接收筛选器功能。
+当微型端口驱动程序发出此状态指示时，它会将 [**ndis \_ 状态 \_ 指示**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_status_indication)结构的 **StatusBuffer** 成员设置为指向 [**ndis \_ 接收 \_ 筛选器 \_ 功能**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_capabilities)结构的指针。 驱动程序将此结构初始化为其当前启用的接收筛选器功能。
 
 <a name="remarks"></a>备注
 -------
@@ -45,19 +44,19 @@ NDIS 接收筛选器在以下 NDIS 接口中使用：
 
 1.  小型端口将 [**NDIS \_ 接收 \_ 筛选器 \_ 功能**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_capabilities) 的结构初始化为网络适配器上当前启用的接收筛选器功能。
 
-    当微型端口驱动程序初始化**标题**成员时，它会将**标头**的**类型**成员设置为 NDIS \_ 对象 \_ 类型 \_ 默认值。 微型端口驱动程序将**标头**的**修订**成员设置为 ndis \_ 接收 \_ 筛选器 \_ 功能 \_ 修订版 \_ 2，并将**Size**成员设置为 ndis \_ SIZEOF \_ 接收 \_ 筛选器 \_ 功能 \_ 修订版本 \_ 2。
+    当微型端口驱动程序初始化 **标题** 成员时，它会将 **标头** 的 **类型** 成员设置为 NDIS \_ 对象 \_ 类型 \_ 默认值。 微型端口驱动程序将 **标头** 的 **修订** 成员设置为 ndis \_ 接收 \_ 筛选器 \_ 功能 \_ 修订版 \_ 2，并将 **Size** 成员设置为 ndis \_ SIZEOF \_ 接收 \_ 筛选器 \_ 功能 \_ 修订版本 \_ 2。
 
 2.  微型端口驱动程序通过以下方式初始化状态指示的 [**NDIS \_ 状态 \_ 指示**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_status_indication) 结构：
 
-    -   **StatusCode**成员必须设置为**NDIS \_ 状态 \_ 接收 \_ 筛选器 \_ 当前 \_ 功能**。
+    -   **StatusCode** 成员必须设置为 **NDIS \_ 状态 \_ 接收 \_ 筛选器 \_ 当前 \_ 功能**。
 
-    -   **StatusBuffer**成员必须设置为[**NDIS \_ 接收 \_ 筛选器 \_ 功能**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_capabilities)结构的地址。
+    -   **StatusBuffer** 成员必须设置为 [**NDIS \_ 接收 \_ 筛选器 \_ 功能**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_capabilities)结构的地址。
 
-    -   **StatusBufferSize**成员必须设置为 `sizeof(NDIS_RECEIVE_FILTER_CAPABILITIES)` 。
+    -   **StatusBufferSize** 成员必须设置为 `sizeof(NDIS_RECEIVE_FILTER_CAPABILITIES)` 。
 
 3.  微型端口驱动程序通过调用 [**NdisMIndicateStatusEx**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismindicatestatusex)发出状态指示。 驱动程序必须将指向 [**NDIS \_ 状态 \_ 指示**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_status_indication) 结构的指针传递到 *StatusIndication* 参数。
 
-**注意**   过量驱动程序可以使用**NDIS \_ 状态 \_ 接收 \_ 筛选器 \_ 当前 \_ 功能**状态指示来确定网络适配器的当前启用的接收筛选器功能。 此外，这些驱动程序还可以发出 oid 查询请求，即 [oid \_ 接收 \_ 筛选器 \_ 当前 \_ 功能](./oid-receive-filter-current-capabilities.md) ，随时可以获取当前启用的接收筛选器功能。
+**注意**  过量驱动程序可以使用 **NDIS \_ 状态 \_ 接收 \_ 筛选器 \_ 当前 \_ 功能** 状态指示来确定网络适配器的当前启用的接收筛选器功能。 此外，这些驱动程序还可以发出 oid 查询请求，即 [oid \_ 接收 \_ 筛选器 \_ 当前 \_ 功能](./oid-receive-filter-current-capabilities.md) ，随时可以获取当前启用的接收筛选器功能。
 
  
 
@@ -81,7 +80,7 @@ NDIS 接收筛选器在以下 NDIS 接口中使用：
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 ****

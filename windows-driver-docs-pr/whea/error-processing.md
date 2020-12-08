@@ -1,7 +1,6 @@
 ---
 title: 错误处理
 description: 错误处理
-ms.assetid: d9cb2f62-1ccf-4ab6-b547-dc54f6d07820
 keywords:
 - Windows 硬件错误体系结构 WDK，错误处理
 - WHEA WDK，错误处理
@@ -17,12 +16,12 @@ keywords:
 - PSHED WDK WHEA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ada88b5cc9d2e874d729ba45a59f5ce8a3e3ecba
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 06b78fc85e6c2c3078501a6017e59278478461cf
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89208413"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837603"
 ---
 # <a name="error-processing"></a>错误处理
 
@@ -33,7 +32,7 @@ Windows 硬件错误体系结构 (WHEA) 根据错误情况的分类，以不同�
 
 ### <a name="corrected-hardware-error"></a>**更正的硬件错误**
 
-1.   (*LLHEH*) 的*低级硬件错误处理程序*将收到有关硬件错误情况的通知。
+1.   (*LLHEH*) 的 *低级硬件错误处理程序* 将收到有关硬件错误情况的通知。
 
 2.  LLHEH 验证是否存在硬件错误。
 

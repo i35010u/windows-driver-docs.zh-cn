@@ -2,16 +2,15 @@
 title: IRP_MJ_READ
 description: 将数据从其设备传输到系统的每个设备驱动程序都必须在 DispatchRead 或 DispatchReadWrite 例程中处理 read 请求，就像此类设备驱动程序中的任何更高级别的驱动程序一样。
 ms.date: 08/12/2017
-ms.assetid: 5ae4c6c5-d8f2-4dc5-8cfd-ecb751fc88be
 keywords:
-- IRP_MJ_READ 内核模式驱动程序体系结构
+- IRP_MJ_READ Kernel-Mode 驱动程序体系结构
 ms.localizationpriority: medium
-ms.openlocfilehash: fd041bfc2919f10af54df641ce8dc6e68a741fb8
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 19705c3b527d53bcfc02678391e3f02799976362
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89188253"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837231"
 ---
 # <a name="irp_mj_read"></a>IRP\_MJ\_READ
 
@@ -46,7 +45,7 @@ IRP 中驱动程序的 i/o 堆栈位置指示在参数上传输的字节数 **�
 <a name="operation"></a>操作
 ---------
 
-收到读取请求后，较高级别的驱动程序会在 IRP 中为下一个较低版本的驱动程序设置 i/o 堆栈位置，或为一个或多个较低版本的驱动程序创建和设置其他 Irp。 它可以通过调用[**IoSetCompletionRoutine**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iosetcompletionroutine)设置其[*IoCompletion*](/windows-hardware/drivers/ddi/wdm/nc-wdm-io_completion_routine)例程，该例程对于输入 IRP 是可选的，但对于驱动程序创建的 irp 是必需的。 然后，驱动程序将请求传递给下一个带 [**IoCallDriver**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver)的低的驱动程序。
+收到读取请求后，较高级别的驱动程序会在 IRP 中为下一个较低版本的驱动程序设置 i/o 堆栈位置，或为一个或多个较低版本的驱动程序创建和设置其他 Irp。 它可以通过调用 [**IoSetCompletionRoutine**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iosetcompletionroutine)设置其 [*IoCompletion*](/windows-hardware/drivers/ddi/wdm/nc-wdm-io_completion_routine)例程，该例程对于输入 IRP 是可选的，但对于驱动程序创建的 irp 是必需的。 然后，驱动程序将请求传递给下一个带 [**IoCallDriver**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver)的低的驱动程序。
 
 收到读取请求后，设备驱动程序将数据从其设备传输到系统内存。 设备驱动程序将 i/o 状态块的 **信息** 字段设置为完成 IRP 后传输的字节数。
 
@@ -66,7 +65,7 @@ IRP 中驱动程序的 i/o 堆栈位置指示在参数上传输的字节数 **�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [*DispatchRead*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)

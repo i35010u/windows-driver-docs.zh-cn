@@ -1,7 +1,6 @@
 ---
-title: KSPROPERTY \_ CAMERACONTROL \_ EXTENDED \_ PHOTOMODE （submode）
+title: 'KSPROPERTY \_ CAMERACONTROL \_ EXTENDED \_ PHOTOMODE (submode) '
 description: KSPROPERTY \_ CAMERACONTROL \_ EXTENDED \_ PHOTOMODE 属性允许配置 submode。
-ms.assetid: B5BE7B11-66FD-476C-8141-C2210B21133C
 keywords:
 - KSPROPERTY_CAMERACONTROL_EXTENDED_PHOTOMODE 流媒体设备
 topic_type:
@@ -14,14 +13,14 @@ api_type:
 - HeaderDef
 ms.date: 07/08/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: b8a6d32664d43cd069c47ec0fe0350e6f6bf0cbd
-ms.sourcegitcommit: 8b6d83bcedea8c872ec8c7df874344421a39dd57
+ms.openlocfilehash: 0e4bbfcda44af8f530f73471d9229e8befa3c61b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86128888"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837859"
 ---
-# <a name="ksproperty_cameracontrol_extended_photomode-submode"></a>KSPROPERTY \_ CAMERACONTROL \_ EXTENDED \_ PHOTOMODE （submode）
+# <a name="ksproperty_cameracontrol_extended_photomode-submode"></a>KSPROPERTY \_ CAMERACONTROL \_ EXTENDED \_ PHOTOMODE (submode) 
 
 KSPROPERTY \_ CAMERACONTROL \_ EXTENDED \_ PHOTOMODE 属性允许配置 submode。
 
@@ -36,7 +35,7 @@ KSPROPERTY \_ CAMERACONTROL \_ EXTENDED \_ PHOTOMODE 属性允许配置 submode�
 
 \_ \_ \_ \_ \_ 常规照片序列将使用 KSCAMERA EXTENDEDPROP PHOTOMODE 序列 SUB NONE。
 
-KSCAMERA \_ EXTENDEDPROP \_ PHOTOMODE \_ sequence \_ 子 \_ 变量用于指示照片序列是可变的。 如果指定了每帧设置，则 \_ \_ \_ \_ \_ 将在 KSCAMERA EXTENDEDPROP PHOTOMODE 结构的 submode 字段中指定 KSCAMERA EXTENDEDPROP PHOTOMODE SEQUENCE 子变量标志 \_ ， \_ 以指示可变照片序列，即使未指定任何项目设置（对于所有帧，项计数为0）。 当帧计数为1并且项计数为0时，可变照片序列会使用全局设置减少为一个帧可变照片序列。
+KSCAMERA \_ EXTENDEDPROP \_ PHOTOMODE \_ sequence \_ 子 \_ 变量用于指示照片序列是可变的。 如果指定了每帧设置，则 \_ \_ \_ \_ \_ 将在 KSCAMERA EXTENDEDPROP PHOTOMODE 结构的 submode 字段中指定 KSCAMERA EXTENDEDPROP PHOTOMODE SEQUENCE 子变量标志 \_ ， \_ 以指示可变的照片序列，即使未指定任何项设置 (项计数对于) 的所有帧都为0。 当帧计数为1并且项计数为0时，可变照片序列会使用全局设置减少为一个帧可变照片序列。
 
 下面是 KSCAMERA \_ \_ 中定义的 EXTENDEDPROP PHOTOMODE 结构的定义：
 
@@ -67,4 +66,4 @@ typedef struct tagKSCAMERA_EXTENDEDPROP_PHOTOMODE {
 
 ## <a name="requirements"></a>要求
 
-**标头：** Ksmedia （包括 Ksmedia）
+**标头：** Ksmedia (包含 Ksmedia) 

@@ -1,7 +1,6 @@
 ---
 title: Bug 检查 0xB9 CHIPSET_DETECTED_ERROR
 description: CHIPSET_DETECTED_ERROR bug 检查的值为0x000000B9。此 bug 检查很少出现。
-ms.assetid: 21d92ea9-dae3-41f1-b0e7-3701c420f7ca
 keywords:
 - Bug 检查 0xB9 CHIPSET_DETECTED_ERROR
 - CHIPSET_DETECTED_ERROR
@@ -13,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 4a89dfd942e2ea3407876965e006029974c466fe
-ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
+ms.openlocfilehash: 0115b33c1f66626f1ceb4ebfcd6efacef36bc209
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84534798"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838243"
 ---
 # <a name="bug-check-0xb9-chipset_detected_error"></a>Bug 检查0xB9：芯片 \_ 检测 \_ 错误
 
@@ -27,7 +26,7 @@ ms.locfileid: "84534798"
 此 bug 检查很少出现。
 
 > [!IMPORTANT]
-> 本主题适用于程序员。 如果你是在使用计算机时收到蓝屏错误代码的客户，请参阅[排查蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题面向程序员。 如果您是在使用计算机时收到蓝屏错误代码的客户，请参阅[蓝屏错误疑难解答](https://www.windows.com/stopcode)。
 
 
  

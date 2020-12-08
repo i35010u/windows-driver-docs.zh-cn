@@ -1,19 +1,18 @@
 ---
 title: 修改 1394 配置 ROM
 description: 修改 1394 配置 ROM
-ms.assetid: 3dc4fe53-a26b-44c7-96ef-e7bb6181c958
 keywords:
 - IEEE 1394 WDK 总线，修改配置 Rom
 - 1394 WDK 总线，修改配置 Rom
 - 配置 Rom WDK IEEE 1394 总线
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 61fa5d4ecd12a523974c71b2b7ffe57676e48661
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: ef0e23a0f3e5d2ba221bb8d8dec37e2069686e8c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89383043"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837285"
 ---
 # <a name="modifying-the-1394-configuration-rom"></a>修改 1394 配置 ROM
 

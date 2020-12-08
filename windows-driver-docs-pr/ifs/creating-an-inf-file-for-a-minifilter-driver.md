@@ -1,7 +1,6 @@
 ---
 title: 创建筛选器驱动程序的 INF 文件
 description: 描述如何创建筛选器驱动程序的 INF 文件
-ms.assetid: 2ae41287-e3c5-4df5-8dec-8575343d5319
 keywords:
 - INF 文件系统、微筛选器驱动程序
 - INF 文件系统、筛选器驱动程序
@@ -13,12 +12,12 @@ keywords:
 - AddRegistry 节 WDK 文件系统
 ms.date: 08/21/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 92748fbe0251a87eef21d1c1ee22657185af74d9
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 09f7e318895d911bd1637a1d74fea8cbfd547f10
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106386"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837279"
 ---
 # <a name="creating-an-inf-file-for-a-filter-driver"></a>创建筛选器驱动程序的 INF 文件
 
@@ -32,19 +31,19 @@ ms.locfileid: "90106386"
 
 文件系统筛选器驱动程序的 INF 文件通常包含以下部分：
 
-| 部分                       | 备注 |
+| 部分                       | 说明 |
 | -------                       | ----- |
-| **Version**                   | 必需 |
+| **Version**                   | 必须 |
 | **DestinationDirs**           | 可选，但建议使用 |
-| **DefaultInstall**            | 必需 |
-| **DefaultInstall**   | 必需 |
-| **ServiceInstall**            | 必需 |
-| **AddRegistry**               | 必需 |
-| **字符串**                   | 必需 |
+| **DefaultInstall**            | 必须 |
+| **DefaultInstall**   | 必须 |
+| **ServiceInstall**            | 必须 |
+| **AddRegistry**               | 必须 |
+| **字符串**                   | 必须 |
 
 > [!NOTE]
 >
-> 从 Windows 10 版本1903开始， **DefaultUninstall** 和 **DefaultUninstall** 部分禁止 [ (异常) ](../develop/creating-a-primitive-driver.md#legacy-compatibility)。 这些部分在以前的操作系统版本中是可选的。
+> 从 Windows 10 版本1903开始， **DefaultUninstall** 和 **DefaultUninstall** 部分禁止 [ (异常)](../develop/creating-a-primitive-driver.md#legacy-compatibility)。 这些部分在以前的操作系统版本中是可选的。
 >
 > Windows 系统64位版本上运行的所有驱动程序都必须在 Windows 加载它们之前进行签名。 有关详细信息，请参阅对 [驱动程序进行签名](../develop/signing-a-driver.md) 。
 
@@ -66,12 +65,12 @@ CatalogFile =
 
 | 条目 | “值” |
 | ----- | ----- |
-| **签名** | "$WINDOWS NT $" |
+| **Signature** | "$WINDOWS NT $" |
 | **类** | 请参阅 [文件系统筛选器驱动程序类和类 guid](file-system-filter-driver-classes-and-class-guids.md)。 |
 | **ClassGuid** | 请参阅 [文件系统筛选器驱动程序类和类 guid](file-system-filter-driver-classes-and-class-guids.md)。 |
 | **提供程序** | 在你自己的 INF 文件中，你应该指定除 Microsoft 之外的提供程序。 |
 | **DriverVer** | 请参阅 [INF DriverVer 指令](../install/inf-driverver-directive.md)。 |
-| **CatalogFile** | 对于签名的防病毒微筛选器驱动程序，此条目包含 [WHQL 提供的编录文件](../install/catalog-files.md)的名称。 所有其他微筛选器驱动程序应将此项留空。 有关详细信息，请参阅[INF 版本部分](../install/inf-version-section.md)中**CatalogFile**条目的说明 |
+| **CatalogFile** | 对于签名的防病毒微筛选器驱动程序，此条目包含 [WHQL 提供的编录文件](../install/catalog-files.md)的名称。 所有其他微筛选器驱动程序应将此项留空。 有关详细信息，请参阅 [INF 版本部分](../install/inf-version-section.md)中 **CatalogFile** 条目的说明 |
 
 ## <a name="destinationdirs-section-optional-but-recommended"></a>DestinationDirs 节 (可选的，但建议使用) 
 
@@ -106,7 +105,7 @@ CopyFiles = Minispy.DriverFiles, Minispy.UserFiles
 
 ## <a name="defaultinstallservices-section-required"></a>DefaultInstall 节 (必需) 
 
-[**DefaultInstall**](../install/inf-defaultinstall-services-section.md)部分包含的[**AddService**](../install/inf-addservice-directive.md)指令控制如何以及何时加载特定驱动程序的服务，如下面的代码示例所示。
+[**DefaultInstall**](../install/inf-defaultinstall-services-section.md)部分包含的 [**AddService**](../install/inf-addservice-directive.md)指令控制如何以及何时加载特定驱动程序的服务，如下面的代码示例所示。
 
 ```cpp
 [DefaultInstall.Services]
@@ -115,7 +114,7 @@ AddService = %MinispyServiceName%,,Minispy.Service
 
 ## <a name="serviceinstall-section-required"></a>ServiceInstall 节 (必需的) 
 
-**ServiceInstall**节包含用于加载驱动程序服务的信息。 在 [MiniSpy 示例驱动程序](/samples/microsoft/windows-driver-samples/minispy-file-system-minifilter-driver/)中，此部分的名称为 "MiniSpy"，如下面的代码示例所示。 **ServiceInstall**部分的名称必须出现在[**DefaultInstall**](../install/inf-defaultinstall-services-section.md)部分的[**AddService**](../install/inf-addservice-directive.md)指令中。
+**ServiceInstall** 节包含用于加载驱动程序服务的信息。 在 [MiniSpy 示例驱动程序](/samples/microsoft/windows-driver-samples/minispy-file-system-minifilter-driver/)中，此部分的名称为 "MiniSpy"，如下面的代码示例所示。 **ServiceInstall** 部分的名称必须出现在 [**DefaultInstall**](../install/inf-defaultinstall-services-section.md)部分的 [**AddService**](../install/inf-addservice-directive.md)指令中。
 
 ```cpp
 [Minispy.Service]
@@ -130,11 +129,11 @@ AddReg         = Minispy.AddRegistry
 Dependencies   = FltMgr
 ```
 
-**ServiceType**条目指定服务的类型。 微筛选器驱动程序应将值指定为 2 (SERVICE_FILE_SYSTEM_DRIVER) 。 有关 **ServiceType** 条目的详细信息，请参阅 [INF AddService 指令](../install/inf-addservice-directive.md)。
+**ServiceType** 条目指定服务的类型。 微筛选器驱动程序应将值指定为 2 (SERVICE_FILE_SYSTEM_DRIVER) 。 有关 **ServiceType** 条目的详细信息，请参阅 [INF AddService 指令](../install/inf-addservice-directive.md)。
 
-**StartType**项指定启动服务的时间。 下表列出了 **StartType** 的可能值及其相应的启动类型。
+**StartType** 项指定启动服务的时间。 下表列出了 **StartType** 的可能值及其相应的启动类型。
 
-| “值”      | 说明 |
+| “值”      | 描述 |
 | -----      | ----------- |
 | 0x00000000 | SERVICE_BOOT_START |
 | 0x00000001 | SERVICE_SYSTEM_START |
@@ -144,7 +143,7 @@ Dependencies   = FltMgr
 
 有关这些启动类型的详细信息，请参阅 [确定驱动程序加载时间的内容](what-determines-when-a-driver-is-loaded.md)中的 "驱动程序启动类型"。
 
-**LoadOrderGroup**条目为筛选器管理器提供所需的信息，以确保微筛选器驱动程序和旧文件系统筛选器驱动程序之间的互操作性。 应指定一个适用于正在开发的微筛选器驱动程序类型的 **LoadOrderGroup** 值。 若要选择加载顺序组，请参阅 [微筛选器驱动程序的加载顺序组和高度](load-order-groups-and-altitudes-for-minifilter-drivers.md)。
+**LoadOrderGroup** 条目为筛选器管理器提供所需的信息，以确保微筛选器驱动程序和旧文件系统筛选器驱动程序之间的互操作性。 应指定一个适用于正在开发的微筛选器驱动程序类型的 **LoadOrderGroup** 值。 若要选择加载顺序组，请参阅 [微筛选器驱动程序的加载顺序组和高度](load-order-groups-and-altitudes-for-minifilter-drivers.md)。
 
 请注意，你必须指定 **LoadOrderGroup** 值，即使你的微筛选器驱动程序的启动类型不 SERVICE_BOOT_START。 通过这种方式，微筛选器驱动程序不同于旧的文件系统筛选器驱动程序。
 
@@ -156,15 +155,15 @@ Dependencies   = FltMgr
 
 对于微筛选器驱动程序，与旧文件系统筛选器驱动程序不同， **StartType** 和 **LoadOrderGroup** 值不确定微筛选器驱动程序在微微筛选器实例堆栈中的位置。 此位置由为微筛选器实例指定的海拔高度决定。
 
-**ErrorControl**项指定在系统启动过程中服务无法启动时要执行的操作。 微筛选器驱动程序应将值指定为 1 (SERVICE_ERROR_NORMAL) 。 有关 **ErrorControl** 项的详细信息，请参阅 [INF AddService 指令](../install/inf-addservice-directive.md)。
+**ErrorControl** 项指定在系统启动过程中服务无法启动时要执行的操作。 微筛选器驱动程序应将值指定为 1 (SERVICE_ERROR_NORMAL) 。 有关 **ErrorControl** 项的详细信息，请参阅 [INF AddService 指令](../install/inf-addservice-directive.md)。
 
-[**AddReg**](../install/inf-addreg-directive.md)指令是指一个或多个 INF 写入器定义的**AddRegistry**部分，其中包含要存储在注册表中用于新安装的服务的信息。 微筛选器驱动程序使用 **AddRegistry** 部分来定义微筛选器驱动程序实例，并指定默认实例。
+[**AddReg**](../install/inf-addreg-directive.md)指令是指一个或多个 INF 写入器定义的 **AddRegistry** 部分，其中包含要存储在注册表中用于新安装的服务的信息。 微筛选器驱动程序使用 **AddRegistry** 部分来定义微筛选器驱动程序实例，并指定默认实例。
 
-**依赖**项项指定驱动程序所依赖的任何服务或加载顺序组的名称。 所有微筛选器驱动程序都必须指定 FltMgr，它是筛选器管理器的服务名称。
+**依赖** 项项指定驱动程序所依赖的任何服务或加载顺序组的名称。 所有微筛选器驱动程序都必须指定 FltMgr，它是筛选器管理器的服务名称。
 
 ## <a name="addregistry-section-required"></a>AddRegistry 节 (必需的) 
 
-**AddRegistry**部分将键和值添加到注册表。 微筛选器驱动程序使用 **AddRegistry** 部分来定义微筛选器实例，并指定默认实例。 筛选器管理器为微筛选器驱动程序创建新的实例时，将使用此信息。
+**AddRegistry** 部分将键和值添加到注册表。 微筛选器驱动程序使用 **AddRegistry** 部分来定义微筛选器实例，并指定默认实例。 筛选器管理器为微筛选器驱动程序创建新的实例时，将使用此信息。
 
 在 [MiniSpy 示例驱动程序](/samples/microsoft/windows-driver-samples/minispy-file-system-minifilter-driver/)中，以下 **AddRegistry** 部分与 [**字符串**](../install/inf-strings-section.md) 部分中的% strkey% token 定义一起定义了三个实例，其中一个实例命名为 MiniSpy 示例驱动程序的默认实例。
 
@@ -183,7 +182,7 @@ HKR,%RegInstancesSubkeyName%"\"%Instance3.Name%,%RegFlagsValueName%,0x00010001,%
 
 [**字符串**](../install/inf-strings-section.md)部分定义了在 INF 文件中使用的每个% strkey% 令牌。
 
-可以通过创建其他特定于区域设置的 **字符串**来创建单个国际 INF 文件。INF 文件中的*LanguageID* 部分。 有关国际 INF 文件的详细信息，请参阅 [创建国际 Inf 文件](../install/creating-international-inf-files.md)。
+可以通过创建其他特定于区域设置的 **字符串** 来创建单个国际 INF 文件。INF 文件中的 *LanguageID* 部分。 有关国际 INF 文件的详细信息，请参阅 [创建国际 Inf 文件](../install/creating-international-inf-files.md)。
 
 下面的代码示例演示了一个典型的 [**字符串**](../install/inf-strings-section.md) 部分。
 
@@ -213,7 +212,7 @@ Instance3.Flags    = 0x1 ; Suppress automatic attachments
 
 > [!NOTE]
 >
-> **DefaultUninstall**和**DefaultUninstall**部分禁止 (从 Windows 10 版本1903开始的[异常) ](../develop/creating-a-primitive-driver.md#legacy-compatibility) 。
+> **DefaultUninstall** 和 **DefaultUninstall** 部分禁止 (从 Windows 10 版本1903开始的 [异常)](../develop/creating-a-primitive-driver.md#legacy-compatibility) 。
 
 在1903版之前的 Windows 10 中， **DefaultUninstall** 和 **DefaultUninstall** 部分是可选的，但如果驱动程序可以卸载，则建议使用：
 

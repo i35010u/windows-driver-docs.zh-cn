@@ -1,19 +1,18 @@
 ---
 title: 处理停止 IRP（Windows 2000 和更高版本）
 description: 处理停止 IRP（Windows 2000 和更高版本）
-ms.assetid: 5148ca15-07f0-4a93-aa65-45b13184184b
 keywords:
 - 停止 Irp WDK PnP
 - Irp WDK PnP
 - I/o 请求数据包 WDK PnP
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 35f8d0bc948f0919e2d4baac5bbdf69c2a424548
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: f16fec154b003781a3ead2a07bf63a1e1b13f3a5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89403522"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837717"
 ---
 # <a name="handling-stop-irps-windows-2000-and-later"></a>处理停止 IRP（Windows 2000 和更高版本）
 

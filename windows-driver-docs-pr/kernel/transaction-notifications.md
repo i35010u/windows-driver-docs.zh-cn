@@ -1,7 +1,6 @@
 ---
 title: 事务通知
 description: 事务通知
-ms.assetid: 62169b56-e70f-4d32-a051-a7fd947dbc64
 keywords:
 - 通知 WDK KTM
 - 事务 WDK KTM，通知
@@ -11,12 +10,12 @@ keywords:
 - 高级事务管理器 WDK KTM
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b437d9448169396b0dbf52eba601c3b832c1d7af
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: fb48bd11f68c6b4ab000636ab9ad0d9fe4d0dbb1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89189777"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837209"
 ---
 # <a name="transaction-notifications"></a>事务通知
 

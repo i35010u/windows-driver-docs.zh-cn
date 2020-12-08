@@ -1,15 +1,14 @@
 ---
 title: 使用 Visual Studio 进行远程调试
 description: 此过程介绍如何使用 Visual Studio 进行远程调试。
-ms.assetid: 9FA347BF-878E-46C8-8459-DC73A8B1EB26
 ms.date: 05/11/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 1a01b06c65199ed93523f52291d6c00264d16a2b
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: fa930a05bd6f28fe759e2ea0cac371e705e59f98
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89216256"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837339"
 ---
 # <a name="remote-debugging-using-visual-studio"></a>使用 Visual Studio 进行远程调试
 

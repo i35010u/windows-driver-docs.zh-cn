@@ -1,9 +1,8 @@
 ---
 title: .send_file（发送文件）
-description: .Send_file 命令将复制文件。 如果您正在执行的进程服务器通过远程调试，它将文件发送从智能客户端计算机到进程服务器的计算机。
-ms.assetid: ad12ec46-79a3-458a-acdc-c2ccb06f8c96
+description: .Send_file 命令将复制文件。 如果通过进程服务器执行远程调试，则会将文件从智能客户端的计算机发送到进程服务器的计算机。
 keywords:
-- .send_file （发送文件） Windows 调试
+- 在 Windows 调试) .send_file (发送文件
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,37 +11,37 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: a0905f792e32ed595c7053573525b5836b1ba277
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: bd1ed0c3eccd738957f6a04fc51f1d77d45ffbd1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339800"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837359"
 ---
-# <a name="sendfile-send-file"></a>.send\_文件 （发送文件）
+# <a name="send_file-send-file"></a>。发送 \_ 文件 (发送文件) 
 
 
-**.Send\_文件**命令将复制文件。 如果您正在执行的进程服务器通过远程调试，它将文件发送从智能客户端计算机到进程服务器的计算机。
+**. Send \_ file** 命令复制文件。 如果通过进程服务器执行远程调试，则会将文件从智能客户端的计算机发送到进程服务器的计算机。
 
 ```dbgcmd
 .send_file [-f] Source Destination 
 .send_file [-f] -s Destination 
 ```
 
-## <a name="span-idddkmetasendfiledbgspanspan-idddkmetasendfiledbgspanparameters"></a><span id="ddk_meta_send_file_dbg"></span><span id="DDK_META_SEND_FILE_DBG"></span>参数
+## <a name="span-idddk_meta_send_file_dbgspanspan-idddk_meta_send_file_dbgspanparameters"></a><span id="ddk_meta_send_file_dbg"></span><span id="DDK_META_SEND_FILE_DBG"></span>参数
 
 
-<span id="_______-f______"></span><span id="_______-F______"></span> **-f**   
-强制文件创建。 默认情况下 **.send\_文件**将不会覆盖任何现有文件。 如果使用-f 开关，始终会创建目标文件，并具有相同名称的任何现有文件将被覆盖。
+<span id="_______-f______"></span><span id="_______-F______"></span>**-f**   
+强制创建文件。 默认情况下， **发送 \_ 文件** 将不会覆盖任何现有文件。 如果使用-f 开关，将始终创建目标文件，并且将覆盖任何同名的现有文件。
 
-<span id="_______Source______"></span><span id="_______source______"></span><span id="_______SOURCE______"></span> *Source*   
-指定的完整路径和要发送的文件的文件名。 如果你正在调试的进程服务器通过，此文件必须位于运行智能客户端的计算机上。
+<span id="_______Source______"></span><span id="_______source______"></span><span id="_______SOURCE______"></span>*源*   
+指定要发送的文件的完整路径和文件名。 如果要通过进程服务器进行调试，则此文件必须位于运行智能客户端的计算机上。
 
-<span id="_______Destination______"></span><span id="_______destination______"></span><span id="_______DESTINATION______"></span> *目标*   
-指定要写入该文件所在的目录。 如果你正在调试的进程服务器通过，此目录名称计算上运行的进程服务器的计算机。
+<span id="_______Destination______"></span><span id="_______destination______"></span><span id="_______DESTINATION______"></span>*目标*   
+指定要写入文件的目录。 如果要通过进程服务器进行调试，则会在运行进程服务器的计算机上计算此目录名称。
 
-<span id="_______-s______"></span><span id="_______-S______"></span> **-s**   
-使调试器来复制所有已加载的符号文件。
+<span id="_______-s______"></span><span id="_______-S______"></span>**-s**   
+使调试器复制所有加载的符号文件。
 
 ### <a name="span-idenvironmentspanspan-idenvironmentspanspan-idenvironmentspanenvironment"></a><span id="Environment"></span><span id="environment"></span><span id="ENVIRONMENT"></span>环境
 
@@ -53,16 +52,16 @@ ms.locfileid: "63339800"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>模式</strong></p></td>
-<td align="left"><p>用户模式下，内核模式</p></td>
+<td align="left"><p><strong>交货</strong></p></td>
+<td align="left"><p>用户模式，内核模式</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>目标</strong></p></td>
-<td align="left"><p>实时、 崩溃转储</p></td>
+<td align="left"><p>实时，故障转储</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>平台</strong></p></td>
-<td align="left"><p>全部</p></td>
+<td align="left"><p>all</p></td>
 </tr>
 </tbody>
 </table>
@@ -72,7 +71,7 @@ ms.locfileid: "63339800"
 <a name="remarks"></a>备注
 -------
 
-当正在执行的进程服务器，通过远程调试，但想要开始改为在本地调试时，此命令是特别有用。 在这种情况下可以使用.send\_文件-s 命令将调试程序已使用的所有符号文件复制到进程服务器。 在本地计算机上运行的调试程序然后可以使用这些符号文件。
+如果已通过进程服务器执行远程调试，但要改为开始调试，则此命令特别有用。 在这种情况下，可以使用. send \_ file-s 命令将调试器已使用的所有符号文件复制到进程服务器。 然后，在本地计算机上运行的调试器可以使用这些符号文件。
 
  
 

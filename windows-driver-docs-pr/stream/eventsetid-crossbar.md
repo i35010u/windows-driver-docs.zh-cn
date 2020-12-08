@@ -1,27 +1,26 @@
 ---
-title: EVENTSETID\_纵横制
-description: EVENTSETID\_纵横制
-ms.assetid: 19e8e431-00fd-462b-bb01-e41e0a7b7f6d
+title: EVENTSETID \_ 横线
+description: EVENTSETID \_ 横线
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ba9e9beda61e831ad8b905d89f8ce7fd53d571ec
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a739adcf09a1d04ed789136dfbf6c1ff520e74d7
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63363809"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837621"
 ---
-# <a name="eventsetidcrossbar"></a>EVENTSETID\_纵横制
+# <a name="eventsetid_crossbar"></a>EVENTSETID \_ 横线
 
 
 ## <span id="ddk_eventsetid_crossbar_ks"></span><span id="DDK_EVENTSETID_CROSSBAR_KS"></span>
 
 
-**EVENTSETID\_纵横制**事件集发生纵横制更改事件，如时选择新信号路由时通知客户端。
+当发生纵横比 change 事件时（例如，当选择新的信号路由时）， **EVENTSETID \_ 纵横制** 事件集会通知客户端。
 
-在此集中的事件项指定在 KSEVENT\_纵横制枚举。
+此集内的事件项是在 KSEVENT 横线枚举中指定的 \_ 。
 
-在此集中的唯一事件是[ **KSEVENT\_纵横制\_CHANGED**](ksevent-crossbar-changed.md)。
+此集中的唯一事件是 [**KSEVENT 的 \_ 横线 \_ 发生了更改**](ksevent-crossbar-changed.md)。
 
  
 

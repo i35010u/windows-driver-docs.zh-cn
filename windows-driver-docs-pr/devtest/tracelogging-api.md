@@ -1,15 +1,14 @@
 ---
 title: TraceLogging API
 description: TraceLogging API
-ms.assetid: AE93DD45-05D7-4E7A-B086-B40A6FA0904B
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 668478a4b4f72c32fe6f290634b1478cc666e682
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: c902184cd71a544b6760521aa9d3bd3e3118b3cb
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106630"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838121"
 ---
 # <a name="tracelogging-api"></a>TraceLogging API
 
@@ -31,7 +30,7 @@ TraceLogging 构建于 ETW 上，并与现有工具兼容。 将继续支持使�
 <thead>
 <tr class="header">
 <th align="left">主题</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>

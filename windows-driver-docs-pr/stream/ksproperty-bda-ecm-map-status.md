@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ BDA \_ ECM \_ 映射 \_ 状态
 description: 客户端使用 KSPROPERTY \_ BDA \_ ECM \_ 映射 \_ 状态来确定 ECM 映射节点上的状态。
-ms.assetid: 8f46e179-8070-4a1b-921d-41d99aaff446
 keywords:
 - KSPROPERTY_BDA_ECM_MAP_STATUS 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7dd1dd317b8bacd37a9c883c8de05e417300f01c
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: d2c0281d02099cca490cc1ad59bf4ce839b711ef
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89188143"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837069"
 ---
 # <a name="ksproperty_bda_ecm_map_status"></a>KSPROPERTY \_ BDA \_ ECM \_ 映射 \_ 状态
 
@@ -61,7 +60,7 @@ ms.locfileid: "89188143"
 
  
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 返回的值指定 ECM 映射节点状态。
@@ -76,7 +75,7 @@ ms.locfileid: "89188143"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Bdamedia (包含 Bdamedia) </td>
 </tr>
 </tbody>

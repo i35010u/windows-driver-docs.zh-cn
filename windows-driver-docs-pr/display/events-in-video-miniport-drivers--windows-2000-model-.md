@@ -1,18 +1,17 @@
 ---
 title: 视频微型端口驱动程序中的事件（Windows 2000 模型）
 description: 视频微型端口驱动程序中的事件（Windows 2000 模型）
-ms.assetid: f6b5ded8-ddb4-4242-9bd3-b12dc96d8f6b
 keywords:
 - 视频微型端口驱动程序 WDK Windows 2000，事件
 - 事件 WDK 视频微型端口
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 50302818d8b2f47d5d7e0da944a0dfc7bc384e71
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: cf95a7a24847d1c24e266924b79bbdfc92faa396
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104492"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838315"
 ---
 # <a name="events-in-video-miniport-drivers-windows-2000-model"></a>视频微型端口驱动程序中的事件（Windows 2000 模型）
 
@@ -36,7 +35,7 @@ ms.locfileid: "90104492"
 <thead>
 <tr class="header">
 <th align="left">函数</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -71,5 +70,5 @@ ms.locfileid: "90104492"
 
 GDI 还为显示驱动程序的事件提供支持。 有关详细信息，请参阅 [在显示驱动程序中使用事件](using-events-in-display-drivers.md) 。
 
-有关事件的更多详细情况，请参阅*内核模式驱动程序设计指南*中的[事件对象](../kernel/event-objects.md)。
+有关事件的更多详细情况，请参阅 *内核模式驱动程序设计指南* 中的 [事件对象](../kernel/event-objects.md)。
 

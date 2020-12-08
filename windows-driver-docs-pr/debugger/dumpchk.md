@@ -1,47 +1,46 @@
 ---
 title: DumpChk
 description: DumpChk
-ms.assetid: f7431207-562b-451a-843e-1c2be038e306
 keywords:
 - DumpChk
 ms.date: 09/17/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a3fbbd46c8ec6c4e361078394f208fc753dc97c7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: cfcff2afc8c886cbedfdda1089aaf5192366c028
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63378147"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838657"
 ---
 # <a name="dumpchk"></a>DumpChk
 
 
-DumpChk （Microsoft 崩溃转储文件检查器工具） 是一个可执行的崩溃转储文件的快速分析程序。 这使您可以查看有关转储文件包含摘要信息。 如果转储文件已损坏，无法打开由调试器的方式，dumpchk 将会显示这一事实。
+DumpChk (Microsoft 崩溃转储文件检查器工具) 是对故障转储文件执行快速分析的程序。 这使你可以查看有关转储文件所包含内容的摘要信息。 如果转储文件损坏，导致调试器无法打开该文件，DumpChk 将显示这一事实。
 
-## <a name="span-idwheretogetdumpchkspanspan-idwheretogetdumpchkspanspan-idwheretogetdumpchkspanwhere-to-get-dumpchk"></a><span id="Where_to_get_DumpChk"></span><span id="where_to_get_dumpchk"></span><span id="WHERE_TO_GET_DUMPCHK"></span>从中获取 DumpChk
+## <a name="span-idwhere_to_get_dumpchkspanspan-idwhere_to_get_dumpchkspanspan-idwhere_to_get_dumpchkspanwhere-to-get-dumpchk"></a><span id="Where_to_get_DumpChk"></span><span id="where_to_get_dumpchk"></span><span id="WHERE_TO_GET_DUMPCHK"></span>从何处获取 DumpChk
 
 
-中包含 DumpChk.exe[有关 Windows 调试工具](index.md)。
+DumpChk.exe 包含在 [Windows 调试工具](index.md)中。
 
-## <a name="span-iddumpchkcommand-lineoptionsspanspan-iddumpchkcommand-lineoptionsspanspan-iddumpchkcommand-lineoptionsspandumpchk-command-line-options"></a><span id="DumpChk_command-line_options"></span><span id="dumpchk_command-line_options"></span><span id="DUMPCHK_COMMAND-LINE_OPTIONS"></span>DumpChk 命令行选项
+## <a name="span-iddumpchk_command-line_optionsspanspan-iddumpchk_command-line_optionsspanspan-iddumpchk_command-line_optionsspandumpchk-command-line-options"></a><span id="DumpChk_command-line_options"></span><span id="dumpchk_command-line_options"></span><span id="DUMPCHK_COMMAND-LINE_OPTIONS"></span>DumpChk 命令行选项
 
 
 ```dbgcmd
 DumpChk [-y SymbolPath] DumpFile
 ```
 
-### <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>参数
+### <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>Parameters
 
-<span id="_______-y________SymbolPath______"></span><span id="_______-y________symbolpath______"></span><span id="_______-Y________SYMBOLPATH______"></span> **-y** *SymbolPath*   
-*SymbolPath*指定 DumpChk 将搜索符号。 符号信息可能需要一些转储文件。 它还有助于提高中显示的信息的转储文件，从而符号名称会得到解决。
+<span id="_______-y________SymbolPath______"></span><span id="_______-y________symbolpath______"></span><span id="_______-Y________SYMBOLPATH______"></span>**-y** *SymbolPath*   
+*SymbolPath* 指定 DumpChk 搜索符号的位置。 某些转储文件可能需要符号信息。 它还可以通过允许解析符号名称来改善转储文件中显示的信息。
 
-<span id="_______DumpFile______"></span><span id="_______dumpfile______"></span><span id="_______DUMPFILE______"></span> *DumpFile*   
-*DumpFile*指定要分析的崩溃转储文件。 这可能包括绝对或相对目录路径或通用命名约定 (UNC) 路径。 如果*DumpFile*包含空格，则必须用引号引起来。
+<span id="_______DumpFile______"></span><span id="_______dumpfile______"></span><span id="_______DUMPFILE______"></span>*DumpFile*   
+*DumpFile* 指定要分析的故障转储文件。 这可能包括绝对或相对目录路径或通用命名约定 (UNC) 路径。 如果 *DumpFile* 包含空格，则必须用引号将其引起来。
 
-## <a name="span-idusingdumpchkspanspan-idusingdumpchkspanspan-idusingdumpchkspanusing-dumpchk"></a><span id="Using_DumpChk"></span><span id="using_dumpchk"></span><span id="USING_DUMPCHK"></span>使用 DumpChk
+## <a name="span-idusing_dumpchkspanspan-idusing_dumpchkspanspan-idusing_dumpchkspanusing-dumpchk"></a><span id="Using_DumpChk"></span><span id="using_dumpchk"></span><span id="USING_DUMPCHK"></span>使用 DumpChk
 
 
-下面是的示例中的转储文件已损坏。 在结束时，显示的错误`DebugClient cannot open DumpFile`，指示必须具有发生某种类型的损坏：
+下面是转储文件损坏的示例。 最后显示的错误 `DebugClient cannot open DumpFile` 指示必须发生某种类型的损坏：
 
 ```console
 C:\Debuggers> dumpchk c:\mydir\dumpfile2.dmp 
@@ -59,15 +58,15 @@ Could not open dump file [c:\mydir\dumpfile2.dmp], HRESULT 0x80004002
 **** DebugClient cannot open DumpFile - error 80004002   
 ```
 
-因为此显示不会结束的单词`Finished dump check`，转储文件已损坏。 结束时的错误消息说明无法打开转储文件。
+因为此显示不以单词结尾，所以 `Finished dump check` 转储文件已损坏。 最后的错误消息说明无法打开转储文件。
 
-请注意，可能会列出其他错误，其中一些实际良性。 例如，以下错误消息不表示问题：
+请注意，可能会列出其他错误，其中一些错误实际上是良性的。 例如，以下错误消息不代表问题：
 
 ```dbgcmd
 error 3 InitTypeRead( nt!_PEB at 7ffd5000) 
 ```
 
-下面是 DumpChk 正常用户模式小型转储上运行的示例。 显示开始转储文件的总体摘要，然后提供了有关转储文件中包含的数据时的详细的信息：
+下面是在正常的用户模式小型转储中运行的 DumpChk 的示例。 此显示从转储文件的总体摘要开始，并提供有关转储文件中包含的数据的详细信息：
 
 ```console
 C:\Debuggers> dumpchk c:\mydir\dumpfile1.dmp 
@@ -200,11 +199,11 @@ PEB at 7ffd9000
 Finished dump check
 ```
 
-在输出开始通过标识转储文件-在这种情况下，使用完整的内存信息，包括应用程序数据，但不是操作系统的数据包括用户模式下小型转储的特征。 这被跟正由 DumpChk，，然后选择转储文件内容的摘要的符号路径。
+输出首先标识转储文件的特征-在本例中，是一种包含完整内存信息的用户模式小型转储，其中包括应用程序数据，但不包括操作系统数据。 后跟 DumpChk 使用的符号路径，然后是转储文件内容的摘要。
 
-因为此显示结尾单词`Finished dump check`，转储文件可能不是已损坏，并可由调试器打开。 但是，corrruption 的更多细微的窗体仍可能会出现在该文件。
+因为此显示以单词结尾 `Finished dump check` ，所以转储文件可能未损坏，并可由调试程序打开。 但是，corrruption 中的更多微妙形式可能仍然存在于文件中。
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 [Windows 调试工具中包含的工具](extra-tools.md)

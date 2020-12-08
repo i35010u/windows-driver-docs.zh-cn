@@ -1,16 +1,15 @@
 ---
 title: PwrTest 语法
 description: 在命令提示符窗口中运行 PwrTest。 您可以使用命令选项来选择和配置 PwrTest 方案。
-ms.assetid: bcae1bb6-ce5b-4ece-a5ba-bae6fefd6408
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 9332707c8790f5a09e545bfe35809aaf133213d0
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 50637e2d1332b4b3af7833cda73921580543fc3f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89381937"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96836841"
 ---
 # <a name="pwrtest-syntax"></a>PwrTest 语法
 
@@ -55,7 +54,7 @@ pwrtest /scenario [/scenario_options] [/common_options]
 
 <span id="_common_options"></span><span id="_COMMON_OPTIONS"></span>/*常用 \_ 选项*  
 
-|       *常用 \_ 选项*       |                                                                                                                说明                                                                                                                 |
+|       *常用 \_ 选项*       |                                                                                                                描述                                                                                                                 |
 |-------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |    **/lf：**<em>文件夹</em>    |                                            指定日志文件的文件夹。 例如，c： \\ myfolder 或 \\ \\ 服务器 \\ 共享。 默认的日志位置与 pwrtest.exe 的文件夹相同。                                             |
 |     **/ln：**<em>名称</em>     |                指定日志文件的名称以及 Windows (ETW) trace 会话的事件跟踪的名称。 日志文件扩展名会自动添加 ( wtl、.xml 等 ) 。 默认名称为 pwrtestlog。                |
@@ -90,7 +89,7 @@ pwrtest /requests  /t:60
 
 PwrTest 会在中为每个执行自动生成多个日志。日志 (纯文本) ，.xml (格式因应用场景而异) ，. wtl (WTTLog) 和 .etl (ETW 跟踪) 日志格式。
 
-为了能够使用所有 PwrTest 方案，你必须首先设置测试计算机，以便使用 Visual Studio 和 WDK 进行测试。 有关详细信息，请参阅 [设置计算机以进行驱动程序部署和测试 (wdk 8.1) ](../gettingstarted/provision-a-target-computer-wdk-8-1.md)，或 [预配用于驱动程序部署和测试 (WDK 8) ](/previous-versions/hh698272(v=vs.85))的计算机。 某些方案需要电源按钮驱动程序，该驱动程序是 Windows 驱动程序测试框架的一部分 (WDTF) 。 使用 Visual Studio 和 WDK 预配系统进行测试时，会自动安装 WDTF (和随附的电源按钮驱动程序) 。 有关 WDTF 的信息，请参阅 [**Windows 设备测试框架 (WDTF)  (Windows 驱动程序) **](../wdtf/index.md)。
+为了能够使用所有 PwrTest 方案，你必须首先设置测试计算机，以便使用 Visual Studio 和 WDK 进行测试。 有关详细信息，请参阅 [设置计算机以进行驱动程序部署和测试 (wdk 8.1) ](../gettingstarted/provision-a-target-computer-wdk-8-1.md)，或 [预配用于驱动程序部署和测试 (WDK 8) ](/previous-versions/hh698272(v=vs.85))的计算机。 某些方案需要电源按钮驱动程序，该驱动程序是 Windows 驱动程序测试框架的一部分 (WDTF) 。 使用 Visual Studio 和 WDK 预配系统进行测试时，会自动安装 WDTF (和随附的电源按钮驱动程序) 。 有关 WDTF 的信息，请参阅 [**Windows 设备测试框架 (WDTF)  (Windows 驱动程序)**](../wdtf/index.md)。
 
 ## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 

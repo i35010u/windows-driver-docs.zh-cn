@@ -1,15 +1,14 @@
 ---
 title: Windows 内核模式 I/O 管理器
 description: Windows 内核模式 I/O 管理器
-ms.assetid: 8652f37d-0ece-4c08-9bce-499f0fedb0dd
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: fa43bdb9c2017d60b247398c6ed231d316aee7ec
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: 59b9079e2148b529c8b6f02750f0dabab9be9b69
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89403492"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838433"
 ---
 # <a name="windows-kernel-mode-io-manager"></a>Windows 内核模式 I/O 管理器
 
@@ -32,7 +31,7 @@ Windows i/o 系统提供名为 stack 的分层驱动程序模型。 通常，在
 
 有关与 IRP 相关的例程列表，请参阅 [irp](/windows-hardware/drivers/ddi/index)。
 
-I/o 管理器有两个子组件：即插即用 manager 和电源管理器。 它们针对即插即用和电源管理的技术管理 i/o 功能。 有关即插即用管理的详细信息，请参阅 [Windows 内核模式即插即用管理器](windows-kernel-mode-plug-and-play-manager.md) 和有关电源管理的详细信息，请参阅 [Windows 内核模式电源管理器](windows-kernel-mode-power-manager.md)。
+I/o 管理器有两个子组件：即插即用 manager 和电源管理器。 它们针对即插即用和电源管理的技术管理 i/o 功能。 有关即插即用管理的详细信息，请参阅 [windows Kernel-Mode 即插即用 Manager](windows-kernel-mode-plug-and-play-manager.md) 和有关电源管理的详细信息，请参阅 [Windows Kernel-Mode 电源管理器](windows-kernel-mode-power-manager.md)。
 
  
 

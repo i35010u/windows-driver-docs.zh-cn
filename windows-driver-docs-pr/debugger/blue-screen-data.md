@@ -1,7 +1,6 @@
 ---
 title: 蓝屏数据
 description: 当 Microsoft Windows 遇到损害安全系统操作的情况时，系统将会挂起。 此条件称为 "bug 检查" 或 "停止" 错误。
-ms.assetid: 8cc42643-e231-49dd-96b0-6cb528d5d7a9
 keywords:
 - 蓝屏数据 Windows 调试
 ms.date: 03/30/2020
@@ -12,23 +11,23 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 0a13e937075411cece713c37cb69c2d84f0de15a
-ms.sourcegitcommit: 51cba71be022c726c04c29ba5c0360860b65d7a4
+ms.openlocfilehash: 01b15a0237cf3ec955152bde3b3b3be6e0c5247b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/09/2020
-ms.locfileid: "89562227"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838367"
 ---
 # <a name="blue-screen-data"></a>蓝屏数据
 
 
-**注意**   本主题适用于程序员。 如果您是在使用计算机时收到蓝屏错误代码的客户，请参阅[蓝屏错误疑难解答](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
+**注意**  本主题适用于程序员。 如果您是在使用计算机时收到蓝屏错误代码的客户，请参阅[蓝屏错误疑难解答](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
 
  
 
-**注意**   如果你是 IT 专业人员或支持代理，请参阅此文，了解其他信息、[排查 "蓝屏" 问题或停止错误问题，然后再联系 Microsoft 支持部门](https://support.microsoft.com/help/3106831/)。
+**注意**   如果你是 IT 专业人员或支持代理，请参阅此文，了解其他信息、 [排查 "蓝屏" 问题或停止错误问题，然后再联系 Microsoft 支持部门](https://support.microsoft.com/help/3106831/)。
 
-当 Microsoft Windows 遇到损害安全系统操作的情况时，系统将会挂起。 此条件称为 " *bug 检查*"。 通常也称为 *系统崩溃*、 *内核错误*或 *停止错误*。
+当 Microsoft Windows 遇到损害安全系统操作的情况时，系统将会挂起。 此条件称为 " *bug 检查*"。 通常也称为 *系统崩溃*、 *内核错误* 或 *停止错误*。
 
 如果在操作系统完整性泄露后允许操作系统继续运行，则它可能会损坏数据或危及系统的安全。
 
@@ -36,7 +35,7 @@ ms.locfileid: "89562227"
 
 如果内核调试器已附加并且处于活动状态，则系统会导致中断，以便可以使用调试器来调查故障。
 
-如果未附加调试器，则会出现蓝色文本屏幕，其中包含有关错误的信息。 此屏幕称为 *蓝屏*、 *bug 检查屏幕*或 *停止屏幕*。
+如果未附加调试器，则会出现蓝色文本屏幕，其中包含有关错误的信息。 此屏幕称为 *蓝屏*、 *bug 检查屏幕* 或 *停止屏幕*。
 
 如果使用的是 Windows 的内部版本，则会在绿色背景上显示文本。
 
@@ -46,7 +45,7 @@ ms.locfileid: "89562227"
 
 ![bug 检查示例 windows 10 blue screen with qr 代码](images/bug-check-example-blue-screen-page-fault.png)
 
-在 [** \_ \_ \_ 非分页 \_ 区域**](bug-check-0x50--page-fault-in-nonpaged-area.md)显示 stop 代码，如页错误。 当它可用时，还会显示正在执行的代码的模块名称，如 AcmeVideo.sys。
+在 [**\_ \_ \_ 非分页 \_ 区域**](bug-check-0x50--page-fault-in-nonpaged-area.md)显示 stop 代码，如页错误。 当它可用时，还会显示正在执行的代码的模块名称，如 AcmeVideo.sys。
 
 如果已写入 [内核模式转储文件](kernel-mode-dump-files.md) ，则会在写入转储时，按百分比完成计数来指示这一点。
 
@@ -63,7 +62,7 @@ ms.locfileid: "89562227"
 
 -   在事件查看器中检查 Windows 系统日志。 错误检查的事件属性将列出四个停止代码参数。 有关详细信息，请参阅[打开事件查看器](https://support.microsoft.com/hub/4338813/windows-help#1TC=windows-7)。
 
--   加载生成的转储文件，并在附加调试器中使用 [**！ "分析**](-analyze.md) " 命令。 有关详细信息，请参阅 [使用 WinDbg 分析内核模式转储文件](analyzing-a-kernel-mode-dump-file-with-windbg.md)。
+-   加载生成的转储文件，并在附加调试器中使用 [**！ "分析**](-analyze.md) " 命令。 有关详细信息，请参阅 [使用 WinDbg 分析 Kernel-Mode 转储文件](analyzing-a-kernel-mode-dump-file-with-windbg.md)。
 
 -   将内核调试器附加到出错的 PC。 当发生停止代码时，调试器输出将在停止代码十六进制值之后包含四个参数。
 
@@ -88,7 +87,7 @@ ms.locfileid: "89562227"
 
 ### <a name="span-idreading_bug_check_information_from_the_debuggerspanspan-idreading_bug_check_information_from_the_debuggerspanreading-bug-check-information-from-the-debugger"></a><span id="reading_bug_check_information_from_the_debugger"></span><span id="READING_BUG_CHECK_INFORMATION_FROM_THE_DEBUGGER"></span>从调试器读取 Bug 检查信息
 
-如果附加了调试器，则 bug 检查将导致目标计算机中断到调试器。 在这种情况下，蓝屏可能不会立即出现，此故障的完整详细信息将发送到调试器并显示在调试器窗口中。 若要第二次查看此信息，请使用 [**错误检查 (显示 Bug 检查数据) **](-bugcheck--display-bug-check-data-.md) 命令或 " [**！分析**](-analyze.md) 扩展" 命令。
+如果附加了调试器，则 bug 检查将导致目标计算机中断到调试器。 在这种情况下，蓝屏可能不会立即出现，此故障的完整详细信息将发送到调试器并显示在调试器窗口中。 若要第二次查看此信息，请使用 [**错误检查 (显示 Bug 检查数据)**](-bugcheck--display-bug-check-data-.md) 命令或 " [**！分析**](-analyze.md) 扩展" 命令。
 
 **内核调试和故障转储分析**
 

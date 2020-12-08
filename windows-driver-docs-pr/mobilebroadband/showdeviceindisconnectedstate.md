@@ -1,15 +1,14 @@
 ---
 title: ShowDeviceInDisconnectedState
 description: ShowDeviceInDisconnectedState
-ms.assetid: f2f517dd-68e5-4013-83ee-777579562db3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4f2324c4b7bfa056f2d1c12d96b1b4f5efe421d5
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: a87097c8808d48fb2149eac37e1954f295184b46
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89403168"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837697"
 ---
 # <a name="showdeviceindisconnectedstate"></a>ShowDeviceInDisconnectedState
 
@@ -52,7 +51,7 @@ ms.locfileid: "89403168"
 <thead>
 <tr class="header">
 <th>元素</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>

@@ -1,7 +1,6 @@
 ---
 title: 处理设备断电 IRP
 description: 处理设备断电 IRP
-ms.assetid: 2f4591d6-5bd0-45db-b02d-cf9dd59c3888
 keywords:
 - 设置-power Irp WDK 内核
 - 设备设置电源 Irp WDK 内核
@@ -12,12 +11,12 @@ keywords:
 - 关闭 power WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 59b6f16dbf384cb3688e408150e6594a00274ef2
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: d47bf6623d65f1f20a5ecd6a2fcd5ff0e027ec15
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89185283"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838463"
 ---
 # <a name="handling-device-power-down-irps"></a>处理设备断电 IRP
 
@@ -25,7 +24,7 @@ ms.locfileid: "89185283"
 
 
 
-设备电源关闭 IRP 指定次要函数代码 [**irp \_ MN \_ 设置 \_ 电源**](./irp-mn-set-power.md) 和设备电源状态 (**PowerDeviceD0**、 **PowerDeviceD1**、 **PowerDeviceD2**或 **PowerDeviceD3**) ，该功能已降低或等于当前设备电源状态。 当 IRP 向下移动设备堆栈时，驱动程序必须处理电源 IRP。 高层驱动程序必须在较低级别的驱动程序之前处理 IRP。 没有要执行的设备特定任务的驱动程序应立即将 IRP 传递到下一个较低版本的驱动程序。
+设备电源关闭 IRP 指定次要函数代码 [**irp \_ MN \_ 设置 \_ 电源**](./irp-mn-set-power.md) 和设备电源状态 (**PowerDeviceD0**、 **PowerDeviceD1**、 **PowerDeviceD2** 或 **PowerDeviceD3**) ，该功能已降低或等于当前设备电源状态。 当 IRP 向下移动设备堆栈时，驱动程序必须处理电源 IRP。 高层驱动程序必须在较低级别的驱动程序之前处理 IRP。 没有要执行的设备特定任务的驱动程序应立即将 IRP 传递到下一个较低版本的驱动程序。
 
 下图显示了处理此类 IRP 所涉及的步骤。
 
@@ -43,7 +42,7 @@ ms.locfileid: "89185283"
 
     驱动程序应将任何传入的 i/o 请求排队，直到设备返回到工作状态。
 
--   可能检查 **ShutdownType**中的值。 如果系统设置-power IRP 处于活动状态，则 **ShutdownType** 会提供有关系统 IRP 的信息。 有关此值的详细信息，请参阅 [系统电源操作](system-power-actions.md)。
+-   可能检查 **ShutdownType** 中的值。 如果系统设置-power IRP 处于活动状态，则 **ShutdownType** 会提供有关系统 IRP 的信息。 有关此值的详细信息，请参阅 [系统电源操作](system-power-actions.md)。
 
     休眠路径上设备的驱动程序必须检查此值。 如果 **ShutdownType** 是 **PowerActionHibernate**，则驱动程序应保存恢复设备所需的任何上下文，但不应关闭设备电源。
 
@@ -53,7 +52,7 @@ ms.locfileid: "89185283"
 
 -   调用 [**IoCopyCurrentIrpStackLocationToNext**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocopycurrentirpstacklocationtonext) 设置下一个较低驱动程序的堆栈位置。
 
--   设置调用[**PoStartNextPowerIrp**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-postartnextpowerirp)的*IoCompletion*例程，该例程指示驱动程序已准备好处理下一个电源 IRP。 在 Windows 7 和 Windows Vista 中，此步骤不是必需的。
+-   设置调用 [**PoStartNextPowerIrp**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-postartnextpowerirp)的 *IoCompletion* 例程，该例程指示驱动程序已准备好处理下一个电源 IRP。 在 Windows 7 和 Windows Vista 中，此步骤不是必需的。
 
 -   在 Windows 7 和 Windows Vista 中调用 [**IoCallDriver**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver) () 或在 windows Server 2003、windows XP 和 windows 2000) 中调用 [**PoCallDriver**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-pocalldriver) (，以将 IRP 传递到下一个较低版本的驱动程序。 IRP 必须一直向下传递到完成 IRP 的总线驱动程序。
 

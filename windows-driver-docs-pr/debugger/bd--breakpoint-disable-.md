@@ -1,9 +1,8 @@
 ---
 title: bd（断点禁用）
-description: Bd 命令禁用，但不会删除，之前设置断点。
-ms.assetid: 9b408f4a-6036-41d7-b89a-3e7841c50a90
+description: Bd 命令禁用但不删除，以前设置了断点。
 keywords:
-- bd （断点停用） Windows 调试
+- bd (断点禁用) Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,27 +11,27 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 650a6a564eaaf6317b56d2c765106a52c3eda5fe
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 92554baaed80e81fd0484ba964b936a028852ce5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63347873"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838373"
 ---
 # <a name="bd-breakpoint-disable"></a>bd（断点禁用）
 
 
-**Bd**命令禁用，但不会删除，之前设置断点。
+**Bd** 命令禁用但不删除，以前设置了断点。
 
 ```dbgcmd
 bd Breakpoints
 ```
 
-## <a name="span-idddkcmdbreakpointdisabledbgspanspan-idddkcmdbreakpointdisabledbgspanparameters"></a><span id="ddk_cmd_breakpoint_disable_dbg"></span><span id="DDK_CMD_BREAKPOINT_DISABLE_DBG"></span>参数
+## <a name="span-idddk_cmd_breakpoint_disable_dbgspanspan-idddk_cmd_breakpoint_disable_dbgspanparameters"></a><span id="ddk_cmd_breakpoint_disable_dbg"></span><span id="DDK_CMD_BREAKPOINT_DISABLE_DBG"></span>参数
 
 
-<span id="_______Breakpoints______"></span><span id="_______breakpoints______"></span><span id="_______BREAKPOINTS______"></span> *断点*   
-指定要禁用的断点的 ID 号。 可以指定任意数量的断点。 您必须将多个 Id 用空格或逗号。 可以使用连字符指定断点 Id 的范围 （-）。 可以使用星号 (\*) 以指示所有断点。 如果你想要使用[数值表达式](numerical-expression-syntax.md)id，请将其括在方括号中 (\[\])。 如果你想要使用[带有通配符字符的字符串](string-wildcard-syntax.md)以匹配断点的符号名称，请将其括在引号 ("")。
+<span id="_______Breakpoints______"></span><span id="_______breakpoints______"></span><span id="_______BREAKPOINTS______"></span>*断点*   
+指定要禁用的断点的 ID 号。 可以指定任意数量的断点。 必须用空格或逗号分隔多个 Id。 可以通过使用连字符 ( ) 来指定断点 Id 的范围。 可以使用星号 (\*) 来指示所有断点。 如果要对 ID 使用[数值表达式](numerical-expression-syntax.md)，请将其括在括号中， (\[ \]) 。 如果要使用 [带有通配符的字符串](string-wildcard-syntax.md) 来匹配断点的符号名称，请将其括在引号中 ( "" ) 。
 
 ### <a name="span-idenvironmentspanspan-idenvironmentspanspan-idenvironmentspanenvironment"></a><span id="Environment"></span><span id="environment"></span><span id="ENVIRONMENT"></span>环境
 
@@ -43,12 +42,12 @@ bd Breakpoints
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>模式</strong></p></td>
-<td align="left"><p>用户模式下，内核模式</p></td>
+<td align="left"><p><strong>交货</strong></p></td>
+<td align="left"><p>用户模式，内核模式</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>目标</strong></p></td>
-<td align="left"><p>仅实时调试</p></td>
+<td align="left"><p>仅限实时调试</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>平台</strong></p></td>
@@ -59,20 +58,20 @@ bd Breakpoints
 
  
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-有关如何使用断点、 其他断点的命令和控制断点的方法以及如何从内核调试程序在用户空间中设置断点的详细信息，请参阅[使用断点](using-breakpoints.md)。 有关条件断点的详细信息，请参阅[设置条件断点](setting-a-conditional-breakpoint.md)。
+若要详细了解如何使用断点、其他断点命令和控制断点的方法，以及如何在用户空间中从内核调试器设置断点，请参阅 [使用断点](using-breakpoints.md)。 有关条件断点的详细信息，请参阅 [设置条件断点](setting-a-conditional-breakpoint.md)。
 
 <a name="remarks"></a>备注
 -------
 
-禁用断点，则系统不检查在断点处指定的条件是否有效。
+当断点处于禁用状态时，系统不会检查断点中指定的条件是否有效。
 
-使用[**是 （启用断点）** ](be--breakpoint-enable-.md)命令以重新启用已禁用的断点。
+使用 " [**(" 断点启用)**](be--breakpoint-enable-.md) 命令以重新启用已禁用的断点。
 
-使用[ **bl （断点列表）** ](bl--breakpoint-list-.md)命令列出所有现有断点、 它们的 ID 号，以及它们的状态。
+使用 [**bl (断点列表)**](bl--breakpoint-list-.md) 命令可列出所有现有断点、其 ID 号及其状态。
 
-使用[ **.bpcmds （显示断点命令）** ](-bpcmds--display-breakpoint-commands-.md)命令列出所有现有断点、 它们的 ID 号，以及用于创建它们的命令。
+使用 [**bpcmds (显示断点命令)**](-bpcmds--display-breakpoint-commands-.md) 命令可列出所有现有断点、其 ID 号以及用于创建它们的命令。
 
  
 

@@ -1,15 +1,14 @@
 ---
 title: NDIS 6.30 中的虚拟化网络增强功能
 description: 本部分介绍 NDIS 6.30 中虚拟化的网络增强功能
-ms.assetid: AA1EC2E2-2903-453A-B214-947CA3C4C931
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 03b0147e2ea63b7926c8cf7635f8ff4447357024
-ms.sourcegitcommit: 93c924b8f409fc7f704cc67cc026d70b8ad25d30
+ms.openlocfilehash: 77f7c36ddfc4de6d42cacb840c591a944370183b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91739501"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96836687"
 ---
 # <a name="virtualized-networking-enhancements-in-ndis-630"></a>NDIS 6.30 中的虚拟化网络增强
 
@@ -22,7 +21,7 @@ NDIS 6.20 包含虚拟机队列 (VMQ) 接口以支持 Microsoft Hyper-V 网络�
 
 ### <a name="single-root-io-virtualization-sr-iov"></a>单根 I/O 虚拟化 (SR-IOV)
 
-SR-IOV 接口允许将 PCI Express (PCIe) 网络适配器上的硬件资源分区为一个或多个虚拟接口，这些接口称为 *虚拟功能 (VFs) *。 这允许在虚拟环境中共享适配器资源。 SR-IOV 使网络流量能够通过将 VF 直接分配给 Hyper-v 子分区，绕过虚拟软件交换机层。 这样，软件仿真层中的 i/o 开销就会降低，并且网络吞吐量实现的性能与在非虚拟化环境中的性能几乎相同。
+SR-IOV 接口允许将 PCI Express (PCIe) 网络适配器上的硬件资源分区为一个或多个虚拟接口，这些接口称为 *虚拟功能 (VFs)*。 这允许在虚拟环境中共享适配器资源。 SR-IOV 使网络流量能够通过将 VF 直接分配给 Hyper-v 子分区，绕过虚拟软件交换机层。 这样，软件仿真层中的 i/o 开销就会降低，并且网络吞吐量实现的性能与在非虚拟化环境中的性能几乎相同。
 
 有关 SR-IOV 接口的详细信息，请参阅 [单一根 I/o 虚拟化 (sr-iov) ](single-root-i-o-virtualization--sr-iov-.md)。
 

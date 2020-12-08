@@ -1,19 +1,18 @@
 ---
 title: 中间驱动程序中的状态指示
 description: 中间驱动程序中的状态指示
-ms.assetid: be8d50f9-4a8d-4f3c-a507-e64dedff9a3e
 keywords:
 - 中间驱动程序 WDK 网络，状态指示
 - NDIS 中间驱动程序 WDK，状态指示
 - 状态指示 WDK 网络，中间驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4fbe5a85312dbf87588362f8ba8331a15bda25f6
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 467c94f8e7ff959e9f57d39b691c9a0b3d4caac1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89214332"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838721"
 ---
 # <a name="status-indications-in-an-intermediate-driver"></a>中间驱动程序中的状态指示
 

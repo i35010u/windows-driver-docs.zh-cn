@@ -1,17 +1,16 @@
 ---
 title: 提前创建关键节事件
 description: 提前创建关键节事件
-ms.assetid: a9453e6d-7566-4226-a950-d32d6192f8ac
 keywords:
-- 早期的关键部分事件创建 （全局标志）
+- '早期关键部分事件创建 (全局标志) '
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b6d9cfcae920046584bf2decab62f48649ed7a77
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0892367b5d7c961e06b695d9c2828e6a5d3b7bfd
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63378635"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838649"
 ---
 # <a name="early-critical-section-event-creation"></a>提前创建关键节事件
 
@@ -19,7 +18,7 @@ ms.locfileid: "63378635"
 ## <span id="ddk_early_critical_section_event_creation_dtools"></span><span id="DDK_EARLY_CRITICAL_SECTION_EVENT_CREATION_DTOOLS"></span>
 
 
-**早期的关键部分事件创建**标志创建事件句柄初始化时关键部分，而不是等待，直到需要该事件。
+在初始化关键节时，" **早期关键部分事件创建** " 标志会创建事件句柄，而不是等到需要该事件时。
 
 <table>
 <colgroup>
@@ -41,18 +40,18 @@ ms.locfileid: "63378635"
 </tr>
 <tr class="even">
 <td align="left"><p><strong>目标</strong></p></td>
-<td align="left"><p>整个系统的注册表项、 内核标志和图像文件注册表项</p></td>
+<td align="left"><p>系统范围的注册表项、内核标志、映像文件注册表项</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-### <a name="span-idcommentsspanspan-idcommentsspancomments"></a><span id="comments"></span><span id="COMMENTS"></span>注释
+### <a name="span-idcommentsspanspan-idcommentsspancomments"></a><span id="comments"></span><span id="COMMENTS"></span>提出
 
-当 Windows 无法创建事件时，它生成在初始化过程中的异常，并进入和离开关键节的调用不会失败。
+当 Windows 无法创建事件时，它会在初始化期间生成异常，而进入并离开临界区的调用将失败。
 
-由于此标志使用大量的非分页缓冲的池内存，则仅在有足够的内存的非常可靠系统上使用它。
+由于此标志使用大量的非分页池内存，因此只能在具有足够内存的非常可靠系统上使用它。
 
  
 

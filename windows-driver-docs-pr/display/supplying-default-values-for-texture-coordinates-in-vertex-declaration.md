@@ -1,19 +1,18 @@
 ---
 title: 顶点声明中的默认纹理坐标
 description: 显示设备支持可编程像素着色器的显示驱动程序必须为顶点声明中缺少的任何纹理坐标提供默认值。
-ms.assetid: 5e346e7e-7460-41d9-aee1-dcc72fc642c1
 keywords:
 - 顶点声明 WDK DirectX 9。0
 - 纹理协调 WDK DirectX 9。0
 ms.date: 12/06/2018
 ms.localizationpriority: medium
 ms.custom: seodec18
-ms.openlocfilehash: 684a943e151b63e482433fe9b06cf4b9370d1e53
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 40c9bcd36cdf053afc3f4d5bd27b59ad91432a09
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89064008"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837791"
 ---
 # <a name="default-texture-coordinates-in-vertex-declarations"></a>顶点声明中的默认纹理坐标
 

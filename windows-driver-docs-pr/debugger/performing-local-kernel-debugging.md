@@ -1,7 +1,6 @@
 ---
 title: 本地内核模式调试
 description: 本地内核模式调试
-ms.assetid: e66dc23b-9254-4148-9828-d27c30bfa492
 keywords:
 - 本地内核调试
 - 本地内核调试，可用命令
@@ -9,22 +8,22 @@ keywords:
 - LiveKD 工具
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 47008d3e9d7b9ee5591efbab30535dd6b9358e48
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 1b2c49ec1ea25d0b818af972343f8540993f930c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89212234"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838361"
 ---
 # <a name="local-kernel-mode-debugging"></a>本地内核模式调试
 
 
 适用于 Windows 的调试工具支持 *本地内核调试*。 这是一台计算机上的内核模式调试。 换句话说，调试器在正在调试的同一台计算机上运行。
 
-## <a name="span-idstarting_local_kernel_debuggingspanspan-idstarting_local_kernel_debuggingspansetting-up-local-kernel-mode-debugging"></a><span id="starting_local_kernel_debugging"></span><span id="STARTING_LOCAL_KERNEL_DEBUGGING"></span>设置本地内核模式调试
+## <a name="span-idstarting_local_kernel_debuggingspanspan-idstarting_local_kernel_debuggingspansetting-up-local-kernel-mode-debugging"></a><span id="starting_local_kernel_debugging"></span><span id="STARTING_LOCAL_KERNEL_DEBUGGING"></span>设置本地 Kernel-Mode 调试
 
 
-有关设置本地内核模式调试的信息，请参阅 [手动设置单台计算机的本地内核模式调试](setting-up-local-kernel-debugging-of-a-single-computer-manually.md)。
+有关设置本地内核模式调试的信息，请参阅 [设置本地 Kernel-Mode 手动调试单个计算机](setting-up-local-kernel-debugging-of-a-single-computer-manually.md)。
 
 ## <a name="span-idstarting_the_debugging_sessionspanspan-idstarting_the_debugging_sessionspanspan-idstarting_the_debugging_sessionspanstarting-the-debugging-session"></a><span id="Starting_the_Debugging_Session"></span><span id="starting_the_debugging_session"></span><span id="STARTING_THE_DEBUGGING_SESSION"></span>启动调试会话
 
@@ -50,11 +49,11 @@ ms.locfileid: "89212234"
 
 特别是，不能使用以下命令：
 
--   执行命令，如**g (中转) **， **p (步骤) **， **t (跟踪) **， **wt (跟踪和监视数据) **， **tb (跟踪到下一个分支) **， **gh (中转**，并处理异常) **gn (Go with Exception Not Handled) **
+-   执行命令，如 **g (中转)**， **p (步骤)**， **t (跟踪)**， **wt (跟踪和监视数据)**， **tb (跟踪到下一个分支)**， **gh (中转**，并处理异常) **gn (Go with Exception Not Handled)**
 
--   关闭和转储文件命令，例如， **崩溃**、 **转储**和 **重新启动**
+-   关闭和转储文件命令，例如， **崩溃**、 **转储** 和 **重新启动**
 
--   断点命令，如**bp**、 **bu**、 **ba**、 **bc**、 **bd**、as **be**和**bl**
+-   断点命令，如 **bp**、 **bu**、 **ba**、 **bc**、 **bd**、as **be** 和 **bl**
 
 -   注册显示命令，如 **r** 和变体
 

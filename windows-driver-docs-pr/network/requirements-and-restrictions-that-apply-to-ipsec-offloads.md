@@ -1,18 +1,17 @@
 ---
 title: 适用于 IPsec 卸载的要求和限制
 description: 适用于 IPsec 卸载的要求和限制
-ms.assetid: c016d6dd-f760-4340-8d56-9bd69e4fe84e
 keywords:
 - 受 ESP 保护的数据包 WDK IPsec 卸载，要求
 - 受 AH 保护的数据包 WDK IPsec 卸载，要求
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b93fcddf13b6b2bb72a115f6a5797533dd67ffa0
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 7f3ecd32d0b75d14ac5257f384c4ef70dca26e5d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89215080"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837915"
 ---
 # <a name="requirements-and-restrictions-that-apply-to-ipsec-offloads"></a>适用于 IPsec 卸载的要求和限制
 

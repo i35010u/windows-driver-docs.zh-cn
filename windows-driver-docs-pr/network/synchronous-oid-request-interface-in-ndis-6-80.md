@@ -1,16 +1,15 @@
 ---
 title: NDIS 6.80 中的同步 OID 请求接口
 description: 本主题介绍了 NDIS 6.80 中的新同步 OID 请求接口
-ms.assetid: 6BF2E800-90A0-48FC-B702-5AD4EC318A35
 keywords: 同步 OID 请求接口，同步 OID 调用，WDK 同步 Oid，同步 OID 请求
 ms.date: 09/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 250a7ba2a0c1114bd7d23c89e7f6f3b4f6f66ffe
-ms.sourcegitcommit: 74a8dc9ef1da03857dec5cab8d304e2869ba54a7
+ms.openlocfilehash: cb4c8f8016a3fae0b657609270c6ff126e01d7e7
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90759790"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837917"
 ---
 # <a name="synchronous-oid-request-interface-in-ndis-680"></a>NDIS 6.80 中的同步 OID 请求接口
 
@@ -24,7 +23,7 @@ Windows 网络驱动程序使用 OID 请求，在 NDIS 绑定堆栈中发送控�
 
 下表描述了常规 Oid、直接 Oid 和同步 Oid 之间的差异。
 
-| 特性 | 常规 OID | 直接 OID | 同步 OID |
+| Attribute | 常规 OID | 直接 OID | 同步 OID |
 | --- | --- | --- | --- |
 | 有效负载 | [NDIS_OID_REQUEST](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request) | NDIS_OID_REQUEST | NDIS_OID_REQUEST |
 | OID 类型 | Stats、Query、Set、Method | Stats、Query、Set、Method | Stats、Query、Set、Method |
@@ -103,7 +102,7 @@ NDIS 将 [NDIS_OID_REQUEST](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid
 
 但是，这会引发新问题。 如果无法克隆 OID，筛选器驱动程序将存储其每个请求的状态？ 例如，假设筛选器驱动程序将一个 OID 转换为另一个 OID。 在堆栈中，筛选器需要保存旧 OID。 在备份堆栈的方式上，筛选器需要还原旧 OID。
 
-为了解决此问题，NDIS 为每个正在进行的同步 OID 请求分配每个筛选器驱动程序的指针大小的槽。 NDIS 将来自筛选器的问题处理程序的调用中的此槽保存到其完整处理程序。 这样，就可以使问题处理程序保存关闭状态，该状态稍后由整个处理程序使用。 下面的代码片段演示了一个示例。
+为了解决此问题，NDIS 为每个正在进行的同步 OID 请求分配每个筛选器驱动程序的指针大小的槽。 NDIS 将来自筛选器的问题处理程序的调用中的此槽保存到其完整处理程序。 这样，就可以使问题处理程序保存关闭状态，该状态稍后由整个处理程序使用。 以下代码片段演示了一个示例。
 
 ```cpp
 NDIS_STATUS

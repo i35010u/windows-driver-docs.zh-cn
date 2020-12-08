@@ -1,28 +1,27 @@
 ---
 title: OID_PM_WOL_PATTERN_LIST
 description: 作为查询，过量驱动程序可以使用 OID_PM_WOL_PATTERN_LIST OID 来枚举基础网络适配器上设置的 LAN 唤醒模式。
-ms.assetid: 7e5a65d8-39ec-4624-aede-97df945ef5e5
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_PM_WOL_PATTERN_LIST 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 91e6a7b37c3a14148998032068df1e2658d8cda8
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: c4b58da7a0ded42618d3b2b383cb49c2acf6e593
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89215859"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96836745"
 ---
 # <a name="oid_pm_wol_pattern_list"></a>OID \_ PM \_ WOL \_ 模式 \_ 列表
 
 
-作为查询，过量驱动程序可以使用 OID \_ PM \_ WOL \_ 模式 \_ 列表 OID 来枚举基础网络适配器上设置的 LAN 唤醒模式。 成功从查询返回后， [**ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的**InformationBuffer**成员包含一个指针，该指针指向描述当前添加的 wol 模式的[**NDIS \_ PM \_ WOL \_ 模式**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_wol_pattern)结构的列表。
+作为查询，过量驱动程序可以使用 OID \_ PM \_ WOL \_ 模式 \_ 列表 OID 来枚举基础网络适配器上设置的 LAN 唤醒模式。 成功从查询返回后， [**ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的 **InformationBuffer** 成员包含一个指针，该指针指向描述当前添加的 wol 模式的 [**NDIS \_ PM \_ WOL \_ 模式**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_wol_pattern)结构的列表。
 
 <a name="remarks"></a>备注
 -------
 
 NDIS 处理微型端口驱动程序的查询。 NDIS 驱动程序可以使用 OID \_ PM \_ WOL \_ 模式 \_ 列表 OID 获取在基础网络适配器上设置的 LAN 唤醒模式的列表。
 
-对于列表中的每个[**NDIS \_ PM \_ WOL \_ 模式**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_wol_pattern)结构，ndis 会将**NextWoLPatternOffset**成员设置为距 OID 信息缓冲区开始处的偏移量， (即， [**ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的**InformationBuffer**成员指向的缓冲区开始) 到列表中的下一**NDIS \_ PM \_ WOL \_ 模式**结构的开头。 列表中最后一个结构的 **NextWoLPatternOffset** 成员中的偏移量为零。
+对于列表中的每个 [**NDIS \_ PM \_ WOL \_ 模式**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_wol_pattern)结构，ndis 会将 **NextWoLPatternOffset** 成员设置为距 OID 信息缓冲区开始处的偏移量， (即， [**ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的 **InformationBuffer** 成员指向的缓冲区开始) 到列表中的下一 **NDIS \_ PM \_ WOL \_ 模式** 结构的开头。 列表中最后一个结构的 **NextWoLPatternOffset** 成员中的偏移量为零。
 
 对于 [**NDIS \_ pm \_ WOL \_ 模式**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_wol_pattern) 结构中的偏移量，而不是 **NextWoLPatternOffset** (例如， **NameBufferOffset**) ，NDIS 提供相对于每个 **NDIS \_ pm \_ wol \_ 模式** 结构开头的偏移量。
 
@@ -31,7 +30,7 @@ NDIS 处理微型端口驱动程序的查询。 NDIS 驱动程序可以使用 OI
 NDIS 为请求返回以下状态代码之一：
 
 <a href="" id="ndis-status-success"></a>NDIS \_ 状态 \_ 成功  
-请求已成功完成。 **InformationBuffer**包含指向 WOL 模式列表的指针（如果有）。
+请求已成功完成。 **InformationBuffer** 包含指向 WOL 模式列表的指针（如果有）。
 
 <a href="" id="ndis-status-pending"></a>NDIS \_ 状态 \_ 挂起  
 请求正在等待完成。 最终状态代码和结果将传递给调用方的 OID 请求完成处理程序。
@@ -62,7 +61,7 @@ NDIS 为请求返回以下状态代码之一：
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)

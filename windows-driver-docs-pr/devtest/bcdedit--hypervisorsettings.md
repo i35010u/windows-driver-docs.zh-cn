@@ -1,7 +1,6 @@
 ---
-title: BCDEdit/hypervisorsettings
+title: BCDEdit /hypervisorsettings
 description: /Hypervisorsettings 命令将设置或显示系统的虚拟机监控程序调试器设置。
-ms.assetid: e86afc56-0304-4afe-9de5-980e5c83bf4f
 ms.date: 10/01/2020
 keywords:
 - BCDEdit/hypervisorsettings 驱动程序开发工具
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: c610374ec8657c33cbdf6f2140d3fc45e1d3a526
-ms.sourcegitcommit: f2fbb6e54e085e9329288cee49860fe380be9c4c
+ms.openlocfilehash: 3b240c098e6098ac26106d82b2c494d8ebbe77dc
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91778968"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96836849"
 ---
-<a name="bcdedit-hypervisorsettings"></a>BCDEdit/hypervisorsettings
+<a name="bcdedit-hypervisorsettings"></a>BCDEdit /hypervisorsettings
 ============
 
-**/Hypervisorsettings**命令将设置或显示系统的虚拟机监控程序调试器设置。
+**/Hypervisorsettings** 命令将设置或显示系统的虚拟机监控程序调试器设置。
 
 若要设置单个虚拟机监控程序调试器设置，请使用 "bcdedit/set {hypervisorsettings} <type> <value>". 有关 set 命令的详细信息，请参阅 [BCDEdit/set](bcdedit--set.md)。
 
@@ -40,11 +39,11 @@ bcdedit /hypervisorsettings [ <debugtype> [DEBUGPORT:<port>] [BAUDRATE:<baud>] [
 \<debugtype\>*NET*  
 指定用于调试的以太网网络连接。 使用此选项时，还必须通过指定主机调试程序的 IPv4 地址来设置 **HOSTIP** 选项。
 
-**HOSTIP： * * \<ip\> * *仅当**hypervisordebugtype**为**Net**时才使用 IP 地址。 对于通过网络连接调试虚拟机监控程序，指定主机调试程序的 IPv4 地址。
+**HOSTIP：** _\<ip\>_ 仅当 **hypervisordebugtype** 为 **Net** 时才使用 IP 地址。 对于通过网络连接调试虚拟机监控程序，指定主机调试程序的 IPv4 地址。
 
-**端口： * * \<port\> * *对于 "网络调试"，指定要在主机调试器上与之通信的端口。 必须是 49152 或以上。
+**端口：** _\<port\>_ 对于 "网络调试"，指定要在主机调试器上与之通信的端口。 必须是 49152 或以上。
 
-**BUSPARAMS： * * \<Bus.Device.Function\> * *定义调试设备的 PCI 总线、设备和功能号。 例如，0.25.0 介绍了总线0上的调试设备，设备25，函数0。 这些值显示在“常规”选项卡上的“位置”下的设备管理器中 。  
+**BUSPARAMS：** _\<Bus.Device.Function\>_ 定义调试设备的 PCI 总线、设备和功能号。 例如，0.25.0 介绍了总线0上的调试设备，设备25，函数0。 这些值显示在“常规”选项卡上的“位置”下的设备管理器中 。  
 
 ### <a name="network-debugging-example"></a>网络调试示例
 
@@ -59,7 +58,7 @@ Key=2steg4fzbj2sz.23418vzkd4ko3.1g34ou07z4pev.1sp3yo9yz874p
 
 可以使用 [BCDEdit/set](bcdedit--set.md) 命令修改这些网络调试设置。
 
-**hypervisorhostip** *IP address*仅 hypervisordebugtype 为 Net 时使用。 ）若要通过网络连接调试虚拟机监控程序，请指定主机调试器的 IPv4 地址。 有关对 Hyper-V 进行调试的信息，请参阅[使用 Hyper-V 创建虚拟机](/virtualization/hyper-v-on-windows/quick-start/quick-create-virtual-machine)。
+**hypervisorhostip** *IP address* 仅 hypervisordebugtype 为 Net 时使用。 ）若要通过网络连接调试虚拟机监控程序，请指定主机调试器的 IPv4 地址。 有关对 Hyper-V 进行调试的信息，请参阅[使用 Hyper-V 创建虚拟机](/virtualization/hyper-v-on-windows/quick-start/quick-create-virtual-machine)。
 
 **hypervisorhostport** \[ *port* \]  
 （仅 hypervisordebugtype 为 Net 时使用。 ）对于网络调试，请指定要在主机调试器上通信的端口。 必须是 49152 或以上。
@@ -67,7 +66,7 @@ Key=2steg4fzbj2sz.23418vzkd4ko3.1g34ou07z4pev.1sp3yo9yz874p
 **hypervisorbusparams** *Bus.Device.Function*  
 定义调试设备的 PCI 总线、设备和功能号。 例如，0.25.0 介绍了总线0上的调试设备，设备25，函数0。 这些值显示在“常规”选项卡上的“位置”下的设备管理器中 。  
 
-**hypervisorusekey** *\<key\>* 仅当**hypervisordebugtype**为**Net**时才使用 (。 ) 用于网络调试指定用于对连接进行加密的密钥。   只允许 0-9 和 a-z 中的字符\[\]\[\]。
+**hypervisorusekey** *\<key\>* 仅当 **hypervisordebugtype** 为 **Net** 时才使用 (。 ) 用于网络调试指定用于对连接进行加密的密钥。   只允许 0-9 和 a-z 中的字符\[\]\[\]。
 
 **hypervisordhcp** \[ **yes** | **no** \]  
 控制虚拟机监控程序所使用的网络调试器使用 DHCP。 将此选项设置为不强制使用自动专用 IP 地址 (APIPA) 获取本地链接 IP 地址。
@@ -77,9 +76,9 @@ Key=2steg4fzbj2sz.23418vzkd4ko3.1g34ou07z4pev.1sp3yo9yz874p
 \<debugtype\> *串行*  
 指定用于调试的串行连接。 指定“串行”选项时，还可以设置 hypervisordebugport 和 hypervisorbaudrate 选项  。
 
-**DEBUGPORT： * * \<port\> * *对于串行调试，指定要用作调试端口的串行端口。
+**DEBUGPORT：** _\<port\>_ 对于串行调试，指定要用作调试端口的串行端口。
 
-**波特率： * * \<baud\> * *对于串行调试，指定用于调试的波特率。
+**波特率：** _\<baud\>_ 对于串行调试，指定用于调试的波特率。
 
 ``` syntax
 bcdedit /set hypervisordebugtype serial
@@ -115,7 +114,7 @@ The operation completed successfully.
 \<debugtype\> *1394*  
 指定用于调试的 IEEE 1394 (FireWire) 连接。 使用此选项时，还应设置 *通道* 选项。
 
-**频道： * * *<channel>*
+**沟**_<channel>_
 
 对于1394调试，指定用于调试的1394通道。
 

@@ -1,9 +1,8 @@
 ---
-title: WIA\_DPS\_垂直\_平台\_注册
-description: WIA\_DPS\_垂直\_平台\_注册属性包含的注册，或垂直对齐方式和边缘检测，放置在扫描程序的平台的文档。 WIA 微型驱动程序创建并维护此属性。
-ms.assetid: 58c1bfb2-1f61-4910-ac6d-189aa203c370
+title: WIA \_ DPS \_ 垂直 \_ 平台 \_ 注册
+description: WIA \_ DPS \_ 垂直 \_ 平台 \_ 注册属性包含放置在扫描仪平板上的文档的注册或垂直对齐和边缘检测。 WIA 微型驱动程序创建并维护此属性。
 keywords:
-- WIA_DPS_VERTICAL_BED_REGISTRATION 成像设备
+- WIA_DPS_VERTICAL_BED_REGISTRATION 图像设备
 topic_type:
 - apiref
 api_name:
@@ -14,31 +13,31 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9173ac0a275817e31af6060b6a52c4417d33c885
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ae07913f520e772d5ee343298216948eb78a4712
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63366911"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837743"
 ---
-# <a name="wiadpsverticalbedregistration"></a>WIA\_DPS\_垂直\_平台\_注册
+# <a name="wia_dps_vertical_bed_registration"></a>WIA \_ DPS \_ 垂直 \_ 平台 \_ 注册
 
 
-WIA\_DPS\_垂直\_平台\_注册属性包含的注册，或垂直对齐方式和边缘检测，放置在扫描程序的平台的文档。 WIA 微型驱动程序创建并维护此属性。
+WIA \_ DPS \_ 垂直 \_ 平台 \_ 注册属性包含放置在扫描仪平板上的文档的注册或垂直对齐和边缘检测。 WIA 微型驱动程序创建并维护此属性。
 
 ## <span id="ddk_wia_dps_vertical_bed_registration_si"></span><span id="DDK_WIA_DPS_VERTICAL_BED_REGISTRATION_SI"></span>
 
 
-属性类型：VT\_I4
+属性类型： VT \_ I4
 
-有效值：WIA\_PROP\_NONE
+有效值： WIA " \_ \_ 无"
 
 访问权限：只读
 
 <a name="remarks"></a>备注
 -------
 
-下表描述了有效使用 WIA 的常量\_DPS\_垂直\_平台\_注册属性。
+下表介绍了在 WIA \_ DPS \_ 垂直 \_ 平台 \_ 注册属性中有效的常量。
 
 <table>
 <colgroup>
@@ -47,22 +46,22 @@ WIA\_DPS\_垂直\_平台\_注册属性包含的注册，或垂直对齐方式和
 </colgroup>
 <thead>
 <tr class="header">
-<th>ReplTest1</th>
+<th>值</th>
 <th>定义</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><p>BOTTOM_JUSTIFIED</p></td>
-<td><p>页面的底部对齐。</p></td>
+<td><p>纸张靠下对齐。</p></td>
 </tr>
 <tr class="even">
-<td><p>居中</p></td>
-<td><p>居中纸张。</p></td>
+<td><p>界线</p></td>
+<td><p>纸张居中。</p></td>
 </tr>
 <tr class="odd">
 <td><p>TOP_JUSTIFIED</p></td>
-<td><p>页面的顶部对齐。</p></td>
+<td><p>纸张靠上对齐。</p></td>
 </tr>
 </tbody>
 </table>
@@ -79,12 +78,12 @@ WIA\_DPS\_垂直\_平台\_注册属性包含的注册，或垂直对齐方式和
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Version</p></td>
-<td><p>在 Windows Vista 和更高版本操作系统中已过时，并应不再使用。 但是，此属性仍定义 Windows Vista 中与应用程序和用于 Windows Server 2003、 Windows XP 和早期版本的 Windows 设备的兼容性。</p></td>
+<td><p>版本</p></td>
+<td><p>在 Windows Vista 和更高版本的操作系统中已过时，不应再使用。 但是，在 Windows Vista 中仍定义此属性，以与为 Windows Server 2003、Windows XP 和 windows 的早期版本设计的应用程序和设备兼容。</p></td>
 </tr>
 <tr class="even">
-<td><p>Header</p></td>
-<td>Wiadef.h （包括 Wiadef.h）</td>
+<td><p>标头</p></td>
+<td>Wiadef (包含 Wiadef) </td>
 </tr>
 </tbody>
 </table>
@@ -92,7 +91,7 @@ WIA\_DPS\_垂直\_平台\_注册属性包含的注册，或垂直对齐方式和
 ## <a name="see-also"></a>请参阅
 
 
-[**WIA\_DPS\_水平\_平台\_注册**](wia-dps-horizontal-bed-registration.md)
+[**WIA \_ DPS \_ 横向 \_ 平台 \_ 注册**](wia-dps-horizontal-bed-registration.md)
 
  
 

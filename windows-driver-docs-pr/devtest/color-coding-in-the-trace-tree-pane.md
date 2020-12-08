@@ -1,32 +1,31 @@
 ---
 title: 跟踪树窗格中的颜色编码
 description: 跟踪树窗格中的颜色编码
-ms.assetid: b9230d0c-7fd7-4f8c-ae1a-ae48f755fbbe
 keywords:
-- 静态驱动程序验证工具报表 WDK，跟踪树窗格
-- 跟踪树窗格 WDK Static Driver Verifier
-- 颜色编码 WDK Static Driver Verifier
+- 静态驱动程序验证器报表 WDK，跟踪树窗格
+- 跟踪树窗格 WDK 静态驱动程序验证程序
+- 颜色编码 WDK 静态驱动程序验证程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 43f605c2afff7ed33ef0e1fce8aa00258b6c129b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 63f8f9ef052438d2308d59c6c1f5ba608888551c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63343153"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837813"
 ---
 # <a name="color-coding-in-the-trace-tree-pane"></a>跟踪树窗格中的颜色编码
 
 
 SDV 使用颜色来帮助您快速解释您看到的内容。
 
--   **黄色突出显示的文本是黑色**指示驱动程序代码。
+-   **带有黄色突出显示的黑色文本** 表示驱动程序代码。
 
--   **黑色文本不突出显示的**指示到驱动程序第一次调用并返回从驱动程序的调用。
+-   **没有突出显示的黑色文本** 指示第一次调用驱动程序和从驱动程序返回的调用。
 
--   **灰色文本**指示 SDV 代码。
+-   **灰色文本** 表示 SDV 代码。
 
--   **蓝色突出显示**指示**跟踪树**窗格中选定的代码行与相关联的元素**源代码**窗格。 蓝色突出显示仅代码的行选择中**源代码**窗格。
+-   **蓝色突出显示** 指示与在 "**源代码**" 窗格中选择的代码行关联的 "**跟踪树**" 窗格元素。 仅当在 " **源代码** " 窗格中选择了一行代码时，才会显示蓝色突出显示。
 
  
 

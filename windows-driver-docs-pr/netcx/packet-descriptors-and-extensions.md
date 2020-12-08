@@ -1,18 +1,17 @@
 ---
 title: 数据包描述符和扩展
 description: 数据包描述符和扩展
-ms.assetid: 7B2357AE-F446-4AE8-A873-E13DF04D8D71
 keywords:
 - WDF 网络适配器类扩展数据包描述符和扩展，NetAdapterCx 数据路径描述符，多环缓冲区，NetAdapterCx 数据包描述符，NetAdapterCx 数据包扩展
 ms.date: 11/04/2019
 ms.localizationpriority: medium
 ms.custom: Vib
-ms.openlocfilehash: de7bc3b2acdb56b87f6738fa6c404481d4450ad6
-ms.sourcegitcommit: 5587af31b12cf96c1a31d42f7b40e8f72e3d739c
+ms.openlocfilehash: 7325d6ef5d65f5183dc4f9cfaf90eba9b3247e5d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94570379"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837699"
 ---
 # <a name="packet-descriptors-and-extensions"></a>数据包描述符和扩展
 

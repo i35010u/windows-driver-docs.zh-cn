@@ -1,15 +1,14 @@
 ---
 title: Reg2inf
 description: Reg2inf 是一种工具，可将注册表项转换为通用驱动程序包。
-ms.assetid: e43a137e-c08a-4715-84f7-32cda67399e3
 ms.date: 04/28/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: a3583cf799f99d5680a5a94f46b9e4bfa7922142
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 8c3a6672e724a3967b588170decc0e0f23dd426e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90715494"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837303"
 ---
 # <a name="reg2inf"></a>Reg2inf
  

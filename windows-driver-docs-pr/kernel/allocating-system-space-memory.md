@@ -1,7 +1,6 @@
 ---
 title: 分配系统空间内存
 description: 分配系统空间内存
-ms.assetid: eee425b3-6ddd-4e9d-b51d-1f2c9ea106a5
 keywords:
 - 内存管理 WDK 内核，系统分配的空间
 - 系统分配的空间 WDK 内核
@@ -11,12 +10,12 @@ keywords:
 - 缓冲区内存分配 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2d16a8b44eabc91cef845de33a7238d55d122644
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 6576953b43716ce268c0701aae5d2d17e20d6c02
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89192055"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96836943"
 ---
 # <a name="allocating-system-space-memory"></a>分配系统空间内存
 
@@ -42,21 +41,21 @@ ms.locfileid: "89192055"
 
 ### <a name="allocating-memory-with-exallocatepoolwithtag"></a>用 ExAllocatePoolWithTag 分配内存
 
-驱动程序还可以调用[**ExAllocatePoolWithTag**](/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepoolwithtag)，并为*PoolType*参数指定以下系统定义的[**池 \_ 类型**](/windows-hardware/drivers/ddi/wdm/ne-wdm-_pool_type)值之一：
+驱动程序还可以调用 [**ExAllocatePoolWithTag**](/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepoolwithtag)，并为 *PoolType* 参数指定以下系统定义的 [**池 \_ 类型**](/windows-hardware/drivers/ddi/wdm/ne-wdm-_pool_type)值之一：
 
--   *PoolType*  = 对于未存储在设备扩展或控制器扩展中的任何对象或资源**非分页池**，当驱动程序在 IRQL APC 级别运行时，可能会访问该驱动程序 &gt; \_ 。
+-   *PoolType*  = 对于未存储在设备扩展或控制器扩展中的任何对象或资源 **非分页池**，当驱动程序在 IRQL APC 级别运行时，可能会访问该驱动程序 &gt; \_ 。
 
-    对于此*PoolType*值，如果指定的*NumberOfBytes*小于或等于页面大小，则[**ExAllocatePoolWithTag**](/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepoolwithtag)将分配所请求的内存量 \_ 。 否则，会浪费上次分配的页上的所有剩余字节数：调用方无法访问这些字节，其他内核模式代码无法使用这些字节。
+    对于此 *PoolType* 值，如果指定的 *NumberOfBytes* 小于或等于页面大小，则 [**ExAllocatePoolWithTag**](/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepoolwithtag)将分配所请求的内存量 \_ 。 否则，会浪费上次分配的页上的所有剩余字节数：调用方无法访问这些字节，其他内核模式代码无法使用这些字节。
 
-    例如，在 x86 上，5 kb 的分配请求 (KB) 返回两个 4 KB 的页面。 第二页的最后 3 KB 对于调用方或其他调用方不可用。 为了避免浪费非分页池，驱动程序应该有效地分配多个页面。 例如，在这种情况下，驱动程序可能会进行两次分配（一个用于页面 \_ 大小，另一个用于 1 KB），分配总共 5 KB。
+    例如，在 x86 上，5 kb 的分配请求 (KB) 返回 2 4-KB 页面。 第二页的最后 3 KB 对于调用方或其他调用方不可用。 为了避免浪费非分页池，驱动程序应该有效地分配多个页面。 例如，在这种情况下，驱动程序可能会进行两次分配（一个用于页面 \_ 大小，另一个用于 1 KB），分配总共 5 KB。
 
-    **注意**   从 Windows Vista 开始，系统自动添加额外的内存，因此不需要两个分配。
+    **注意**  从 Windows Vista 开始，系统自动添加额外的内存，因此不需要两个分配。
 
      
 
--   *PoolType*  = **PagedPool**对于始终以 IRQL &lt; = APC 级别进行访问 \_ 且不在文件系统写入路径中的内存，PagedPool。
+-   *PoolType*  = **PagedPool** 对于始终以 IRQL &lt; = APC 级别进行访问 \_ 且不在文件系统写入路径中的内存，PagedPool。
 
-如果**ExAllocatePoolWithTag**不能分配请求的字节数，则返回**NULL**指针。 驱动程序应始终检查返回的指针。 如果其值为 **NULL**， **DriverEntry** 例程 (或任何其他返回 NTSTATUS 值的驱动程序例程) 应返回状态 \_ \_ 资源不足或处理错误条件（如果可能）。
+如果 **ExAllocatePoolWithTag** 不能分配请求的字节数，则返回 **NULL** 指针。 驱动程序应始终检查返回的指针。 如果其值为 **NULL**， **DriverEntry** 例程 (或任何其他返回 NTSTATUS 值的驱动程序例程) 应返回状态 \_ \_ 资源不足或处理错误条件（如果可能）。
 
  
 

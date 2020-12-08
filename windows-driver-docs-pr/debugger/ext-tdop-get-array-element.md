@@ -1,7 +1,6 @@
 ---
 title: EXT \_ TDOP \_ GET \_ ARRAY \_ 元素
 description: "\"扩展 \\_ TDOP \\_ 获取 \\_ \\_ \" 调试请求的数组元素子操作 \\_ \\_ Ext \\_ 类型化 \\_ 的数据 \\_ ANSI 请求操作返回数组中的一个元素。"
-ms.assetid: 67c87b14-3580-4507-884e-b02576ce7be2
 keywords:
 - EXT_TDOP_GET_ARRAY_ELEMENT Windows 调试
 topic_type:
@@ -12,19 +11,19 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4d366642800eae904e2774957aa65dcca7003c69
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 8c1cdf3659949d1ca54589b1e980990dacb6d98c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89213017"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837825"
 ---
 # <a name="ext_tdop_get_array_element"></a>EXT \_ TDOP \_ GET \_ ARRAY \_ 元素
 
 
 "扩展 \_ TDOP \_ 获取 \_ \_ " 调试请求的数组元素子 [**操作 \_ \_ ext \_ 类型化的 \_ 数据 \_ ANSI**](debug-request-ext-typed-data-ansi.md)[**请求**](request.md) 操作返回数组中的一个元素。
 
-**参数**
+**Parameters**
 
 <span id="Operation"></span><span id="operation"></span><span id="OPERATION"></span>**运作**  
 设置为 EXT \_ TDOP \_ 获取 \_ \_ 此子操作的数组元素。

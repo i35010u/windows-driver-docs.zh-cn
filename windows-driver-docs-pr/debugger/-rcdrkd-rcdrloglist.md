@@ -1,9 +1,8 @@
 ---
 title: rcdrkd.rcdrloglist
-description: Rcdrkd.rcdrloglist 扩展显示驱动程序或驱动程序的一组所拥有的刻录机日志的列表。
-ms.assetid: D4D3C313-EFD4-482B-B4A3-307F2407D2BA
+description: Rcdrkd. rcdrloglist 扩展显示驱动程序或一组驱动程序所拥有的记录器日志的列表。
 keywords:
-- rcdrkd.rcdrloglist Windows 调试
+- rcdrkd rcdrloglist Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,29 +11,29 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: c4de589f5c06e062baa4846a512a688674de7255
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9755f86c000fe7da4bd1bbd0aa6e366659ad30c9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63335784"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837583"
 ---
 # <a name="rcdrkdrcdrloglist"></a>!rcdrkd.rcdrloglist
 
 
-**！ Rcdrkd.rcdrloglist**扩展显示的驱动程序或驱动程序的一组所拥有的刻录机日志列表。
+**！ Rcdrkd rcdrloglist** 扩展显示驱动程序或一组驱动程序所拥有的记录器日志的列表。
 
 ```dbgcmd
 !rcdrkd.rcdrloglist DriverName [DriverName ...]
 ```
 
-## <a name="span-idddkdevobjdbgspanspan-idddkdevobjdbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>参数
+## <a name="span-idddk__devobj_dbgspanspan-idddk__devobj_dbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>参数
 
 
-<span id="_______DriverName______"></span><span id="_______drivername______"></span><span id="_______DRIVERNAME______"></span> *DriverName*   
-驱动程序，不包括.sys 扩展名的名称。
+<span id="_______DriverName______"></span><span id="_______drivername______"></span><span id="_______DRIVERNAME______"></span>*DriverName*   
+驱动程序的名称，不包括 .sys 扩展。
 
-## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 
 Rcdrkd.dll
@@ -42,12 +41,12 @@ Rcdrkd.dll
 <a name="remarks"></a>备注
 -------
 
-此命令将仅适用于使用 WppRecorder API 将消息记录到不同的日志的驱动程序。
+此命令仅与使用 WppRecorder API 将消息记录到不同日志的驱动程序相关。
 
 <a name="examples"></a>示例
 --------
 
-下面的示例显示通过 USB 3.0 主机控制器驱动程序 (usbxhci.sys) 所拥有的所有记录器日志的列表。
+以下示例显示了 USB 3.0 主机控制器驱动程序所拥有的所有记录器日志的列表 ( # A0) 。
 
 ```dbgcmd
 3: kd> !rcdrloglist usbxhci
@@ -65,7 +64,7 @@ Log dump command                           Log ID                   Size
 !rcdrlogdump  usbxhci -a fffffa8005311780  03 1033 0194             1024
 ```
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
 [RCDRKD 扩展](rcdrkd-extensions.md)

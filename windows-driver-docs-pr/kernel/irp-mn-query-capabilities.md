@@ -2,16 +2,15 @@
 title: IRP_MN_QUERY_CAPABILITIES
 description: PnP 管理器发送此 IRP 以获取设备的功能，例如设备是否可以锁定或弹出。函数和筛选器驱动程序在更改总线驱动程序支持的功能时，可以处理此请求。
 ms.date: 08/12/2017
-ms.assetid: 3c968a46-5bfb-4579-b09a-ad6bce4d9e3b
 keywords:
-- IRP_MN_QUERY_CAPABILITIES 内核模式驱动程序体系结构
+- IRP_MN_QUERY_CAPABILITIES Kernel-Mode 驱动程序体系结构
 ms.localizationpriority: medium
-ms.openlocfilehash: 8e18fb090ffc89af73fa3178a39cac5108a662f5
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: d829510d9993d75be495015f08bcc31c79084526
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106742"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838769"
 ---
 # <a name="irp_mn_query_capabilities"></a>IRP \_ MN \_ 查询 \_ 功能
 
@@ -20,7 +19,7 @@ PnP 管理器发送此 IRP 以获取设备的功能，例如设备是否可以�
 
 函数和筛选器驱动程序在更改总线驱动程序支持的功能时，可以处理此请求。 总线驱动程序必须为其子设备处理此请求。
 
-## <a name="value"></a>值
+## <a name="value"></a>“值”
 
 0x09
 
@@ -39,7 +38,7 @@ PnP 管理器和驱动程序将此 IRP 以 IRQL 被动级别发送到 \_ 任意�
 ## <a name="input-parameters"></a>输入参数
 
 
-[**IO \_ 堆栈 \_ 位置**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_stack_location)结构的**DeviceCapabilities**成员指向包含设备功能相关信息的[**设备 \_ 功能**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_device_capabilities)结构。
+[**IO \_ 堆栈 \_ 位置**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_stack_location)结构的 **DeviceCapabilities** 成员指向包含设备功能相关信息的 [**设备 \_ 功能**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_device_capabilities)结构。
 
 ## <a name="output-parameters"></a>输出参数
 
@@ -51,7 +50,7 @@ PnP 管理器和驱动程序将此 IRP 以 IRQL 被动级别发送到 \_ 任意�
 
 驱动程序将 **Irp- &gt; IoStatus** 设置为状态 " \_ 成功"，或设置为适当的错误状态，如状态 "未 \_ 成功"。
 
-如果函数或筛选器驱动程序不处理此 IRP，它将调用 [**IoSkipCurrentIrpStackLocation**](./mm-bad-pointer.md) 并将 IRP 向下传递到下一个驱动程序。 此类驱动程序不得修改 ** &gt; IoStatus 状态** ，并且不能完成 irp。
+如果函数或筛选器驱动程序不处理此 IRP，它将调用 [**IoSkipCurrentIrpStackLocation**](./mm-bad-pointer.md) 并将 IRP 向下传递到下一个驱动程序。 此类驱动程序不得修改 **&gt; IoStatus 状态** ，并且不能完成 irp。
 
 总线驱动程序设置 **irp- &gt; IoStatus** 并完成 irp。
 
@@ -70,7 +69,7 @@ PnP 管理器和驱动程序将此 IRP 以 IRQL 被动级别发送到 \_ 任意�
 
 当处理 **irp \_ MN \_ 查询 \_ 功能** irp 时，设备的电源策略管理器的驱动程序应设置 *IoCompletion* 例程，并按照 IRP 的方式备份设备堆栈，将设备电源功能（如 S 到 D 电源状态映射）复制到其中。 为了确定子设备的电源功能，父总线驱动程序会创建另一个查询功能 IRP，并将 IRP 发送到其父驱动程序。 有关详细信息，请参阅 [报表设备电源功能](./reporting-device-power-capabilities.md) 。
 
-如果驱动程序处理此 IRP，它应检查**设备 \_ 功能****版本**值。 如果该值不是驱动程序所支持的版本，则该驱动程序应该会使 IRP 失败。 如果支持该版本，则驱动程序应检查 " **大小** " 字段。 驱动程序只应设置在作为输入接收的功能结构边界内的字段。
+如果驱动程序处理此 IRP，它应检查 **设备 \_ 功能****版本** 值。 如果该值不是驱动程序所支持的版本，则该驱动程序应该会使 IRP 失败。 如果支持该版本，则驱动程序应检查 " **大小** " 字段。 驱动程序只应设置在作为输入接收的功能结构边界内的字段。
 
 处理此 IRP 的驱动程序可以设置一些 **设备 \_ 功能** 字段，但不得设置 " **大小** " 和 " **版本** " 字段。 这些字段仅由发送 IRP 的组件设置。
 

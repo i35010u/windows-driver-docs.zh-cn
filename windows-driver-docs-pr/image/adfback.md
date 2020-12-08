@@ -1,9 +1,8 @@
 ---
 title: ADFBack 元素
-description: 可选 ADFBack 元素描述双工自动文档送纸器 (ADF) 附加到扫描程序的后端的功能。
-ms.assetid: f364c001-ec1a-4f8c-b25a-eaa5368ba05f
+description: 可选的 ADFBack 元素描述附加到扫描仪的双工自动文档送纸器 (ADF) 的背面功能。
 keywords:
-- ADFBack 元素成像设备
+- ADFBack 元素图像设备
 topic_type:
 - apiref
 api_name:
@@ -12,19 +11,19 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 760b290d234886706ff5de66e3d3d889dc64c515
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 09a5094f96aa2bab433947c32e89d5c12f8c7e79
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63367077"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837769"
 ---
 # <a name="adfback-element"></a>ADFBack 元素
 
 
-可选**ADFBack**元素描述的双工自动文档送纸器 (ADF) 附加到扫描程序的后端功能。
+可选的 **ADFBack** 元素描述附加到扫描仪的双工自动文档送纸器 (ADF) 的背面功能。
 
-<a name="usage"></a>用法
+<a name="usage"></a>使用情况
 -----
 
 ```xml
@@ -91,7 +90,7 @@ ms.locfileid: "63367077"
 <a name="remarks"></a>备注
 -------
 
-WSD 扫描服务应指定**ADFBack**元素及其子项，仅当扫描程序的 ADF 支持双面打印。
+仅当扫描仪的 ADF 支持双工时，WSD 扫描服务才应指定 **ADFBack** 元素及其子元素。
 
 ## <a name="see-also"></a>请参阅
 

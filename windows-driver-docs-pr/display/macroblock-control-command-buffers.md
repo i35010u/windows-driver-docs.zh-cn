@@ -1,18 +1,17 @@
 ---
 title: 宏块控制命令缓冲区
 description: 宏块控制命令缓冲区
-ms.assetid: ed6905f6-7e7c-47d2-8f6e-95cfa03e21cb
 keywords:
 - macroblocks WDK DirectX VA，命令缓冲区
 - 命令缓冲区 WDK DirectX VA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2c4a9266047af1af3425a1daa87e7a2f9bcf4962
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: d34bd550e31605802c257e570511c791a9e2944a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89065754"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837313"
 ---
 # <a name="macroblock-control-command-buffers"></a>宏块控制命令缓冲区
 
@@ -32,15 +31,15 @@ ms.locfileid: "89065754"
 
 每个宏块的宏块控制命令和残留差异数据只影响该宏块中的矩形区域。
 
-宏块控件命令缓冲区中的宏块控制命令总数由相应[**DXVA \_ BufferDescription**](/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_bufferdescription)结构的**dwNumMBsInBuffer**成员指定。
+宏块控件命令缓冲区中的宏块控制命令总数由相应 [**DXVA \_ BufferDescription**](/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_bufferdescription)结构的 **dwNumMBsInBuffer** 成员指定。
 
-残留差数据缓冲区中数据的数量和类型由相应宏块 control 命令的 **wPatternCode**、 **wPC \_ **和 **bNumCoef** 成员确定。
+残留差数据缓冲区中数据的数量和类型由相应宏块 control 命令的 **wPatternCode**、 **wPC \_** 和 **bNumCoef** 成员确定。
 
 下图显示了宏块控件命令缓冲区与残留差异数据缓冲区之间的关系。
 
 ![说明宏块控件命令缓冲区与残留差异数据缓冲区之间的关系的关系图](images/residdiffdata.png)
 
-如果[**DXVA \_ ConfigPictureDecode**](/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_configpicturedecode)结构的**bConfigMBcontrolRasterOrder**成员等于1，则以下表达式将应用于上图，其中*i*是宏块控件命令缓冲区内的宏块的索引。
+如果 [**DXVA \_ ConfigPictureDecode**](/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_configpicturedecode)结构的 **bConfigMBcontrolRasterOrder** 成员等于1，则以下表达式将应用于上图，其中 *i* 是宏块控件命令缓冲区内的宏块的索引。
 
 ![说明 mb 控制命令缓冲区与残留差异数据缓冲区之间的关系的关系图](images/formula3.png)
 

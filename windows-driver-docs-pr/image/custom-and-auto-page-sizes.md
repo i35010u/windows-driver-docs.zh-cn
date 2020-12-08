@@ -1,15 +1,14 @@
 ---
 title: 自定义的和自动设置的页面大小
 description: 自定义的和自动设置的页面大小
-ms.assetid: a1f5f78d-fc05-4a7e-9d19-c7f40302b85f
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 38de471b3232f756392e0ffbf3d225b950b7c4e8
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: b431c7cba78828e825788152c1173f76332573e0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89191709"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837255"
 ---
 # <a name="custom-and-auto-page-sizes"></a>自定义的和自动设置的页面大小
 
@@ -28,7 +27,7 @@ ms.locfileid: "89191709"
 
 如果 \_ 将 WIA 页面 \_ "自动" 设置 (选择为驱动程序的默认值或由应用程序) 设置，则应用程序不应尝试处理图像标题所描述的图像尺寸，直到整个图像传输完成。
 
-**注意**   如果设备的子项目不支持属性，则 WIA 服务内的兼容性层不会将对 WIA \_ ip 页面大小的支持添加 \_ \_ 到从 Windows XP WIA 设备转换的 ADF 项。 应用程序不应期望 ADF 项始终支持此属性，并且应始终检查是否 \_ 支持 WIA ip \_ 页面 \_ 大小。  (通常情况下，应用程序应检查是否支持要协商的任何属性。 ) 
+**注意**  如果设备的子项目不支持属性，则 WIA 服务内的兼容性层不会将对 WIA \_ ip 页面大小的支持添加 \_ \_ 到从 Windows XP WIA 设备转换的 ADF 项。 应用程序不应期望 ADF 项始终支持此属性，并且应始终检查是否 \_ 支持 WIA ip \_ 页面 \_ 大小。  (通常情况下，应用程序应检查是否支持要协商的任何属性。 ) 
 
  
 

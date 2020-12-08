@@ -1,7 +1,6 @@
 ---
 title: PUNLOCK \_ 例程函数指针
 description: 筛选器 (旧筛选器或微筛选器) 可以将 PUNLOCK \_ 例程类型化例程注册为文件锁结构的筛选器 UnlockRoutine 回调例程 \_ 。
-ms.assetid: e188bc88-e3dd-49d3-9c79-8eb408cd0338
 keywords:
 - PUNLOCK_ROUTINE 函数指针可安装的文件系统驱动程序
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - UserDefined
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e62b864aa1f1a52c564563efdc5a9df33e91274f
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 4bb3b4f1d4fe10cdc4ee78432a59a5c72093b537
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89064974"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838601"
 ---
 # <a name="punlock_routine-function-pointer"></a>PUNLOCK \_ 例程函数指针
 
@@ -31,12 +30,12 @@ ms.locfileid: "89064974"
 
 ```ManagedCPlusPlus
 typedef VOID ( *UnlockRoutine)(
-  _In_ PVOID           Context,
-  _In_ PFILE_LOCK_INFO FileLockInfo
+  _In_ PVOID           Context,
+  _In_ PFILE_LOCK_INFO FileLockInfo
 );
 ```
 
-<a name="parameters"></a>parameters
+<a name="parameters"></a>参数
 ----------
 
 *上下文* \[中\]  
@@ -57,9 +56,9 @@ typedef VOID ( *UnlockRoutine)(
 
 如果筛选器为文件锁结构指定 *UnlockRoutine* 例程 \_ ，则在从文件中的锁定字节范围内删除该锁时，将调用此例程。
 
-微筛选器通过将指向例程的指针作为[**FltAllocateFileLock**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltallocatefilelock)的*UnlockRoutine*参数进行传递来指定此例程。
+微筛选器通过将指向例程的指针作为 [**FltAllocateFileLock**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltallocatefilelock)的 *UnlockRoutine* 参数进行传递来指定此例程。
 
-旧筛选器通过将指向例程的指针作为[**FsRtlAllocateFileLock**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtlallocatefilelock)或[**FsRtlInitializeFileLock**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtlinitializefilelock)的*UnlockRoutine*参数进行传递来指定此例程。
+旧筛选器通过将指向例程的指针作为 [**FsRtlAllocateFileLock**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtlallocatefilelock)或 [**FsRtlInitializeFileLock**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtlinitializefilelock)的 *UnlockRoutine* 参数进行传递来指定此例程。
 
 <a name="requirements"></a>要求
 ------------
@@ -72,7 +71,7 @@ typedef VOID ( *UnlockRoutine)(
 <tbody>
 <tr class="odd">
 <td align="left"><p>目标平台</p></td>
-<td align="left">桌面型</td>
+<td align="left">台式机</td>
 </tr>
 <tr class="even">
 <td align="left"><p>标头</p></td>
@@ -85,7 +84,7 @@ typedef VOID ( *UnlockRoutine)(
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**FltAllocateFileLock**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltallocatefilelock)

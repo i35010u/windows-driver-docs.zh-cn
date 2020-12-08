@@ -1,24 +1,23 @@
 ---
 title: 从 Windows 证书存储导入证书
 description: 从 Windows 证书存储导入证书
-ms.assetid: abdf19c7-2cea-4af3-8a86-37fc4a9e7c3d
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 125d944c7888b59b867d3a14f4767bfe09ddd852
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 131744a477729489dfa5c1538a8e16d511bc5955
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63323166"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837321"
 ---
 # <a name="importing-certificates-from-a-windows-certificate-store"></a>从 Windows 证书存储导入证书
 
 
-增强型存储证书管理工具可用于从专用证书存储在计算机中的证书导入到 IEEE 1667 合规 USB 存储设备。
+你可以使用增强的存储证书管理工具将证书从计算机中的专用证书存储导入到符合 IEEE 1667 的 USB 存储设备。
 
-若要从专用证书存储中导入证书，必须指定证书名称使用 **-存储**的参数[ **/add** ](enhstor-add-switch.md)和[**/替换**](-replace-switch.md)增强存储证书管理工具的开关。 该工具将搜索所有指定的证书将私有证书存储和 (如果找到) 将其导入到指定的 USB 存储设备。
+若要从私有证书存储区导入证书，必须使用增强存储证书管理工具的 [**/add**](enhstor-add-switch.md)和 [**/Replace**](-replace-switch.md)开关的 **-store** 参数指定证书名称。 此工具将在所有专用证书存储中搜索指定的证书，如果找到，则 () 将其导入到指定的 USB 存储设备。
 
-**请注意**  该工具会不从导入证书的 Windows 根证书存储。
+**注意**  该工具不会从 Windows 根证书存储中导入证书。
 
  
 

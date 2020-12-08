@@ -1,7 +1,6 @@
 ---
 title: HID 传输概述
 description: HID 传输概述
-ms.assetid: E442CB87-992B-475A-A97F-9C22468BA877
 keywords:
 - HID 传输
 - USB 传输
@@ -12,18 +11,18 @@ keywords:
 - 传输微型驱动程序
 ms.date: 02/28/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: b5940b55f19eb26781a2eaf6917c67b69f5a4ecf
-ms.sourcegitcommit: 9145bffd4cc3b990a9ebff43b588db6ef2001f5d
+ms.openlocfilehash: a20165c66fe592f35a5bf1770468ca5a5a03f57f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/09/2020
-ms.locfileid: "89592431"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838615"
 ---
 # <a name="hid-transport-overview"></a>HID 传输概述
 
 ## <a name="hid-transports-supported-in-windows"></a>Windows 中支持的 HID 传输
 
-| Transport    | 内置微型驱动程序 | Version               |  说明 |
+| Transport    | 内置微型驱动程序 | 版本               |  说明 |
 | ------------ | ----------------- | --------------------- | ---------- | 
 | USB          | Hidusb.sys        | Windows 7 及更高版本。  | Windows 操作系统2000可追溯上提供了对 USB HID 1.11 + 的支持。       |
 | 蓝牙    | Hidbth.sys        | Windows 7 及更高版本。  | Windows 操作系统可追溯上提供对蓝牙 HID 1.1 + 的支持。 |
@@ -52,10 +51,10 @@ Microsoft 建议对上表中列出的传输使用附带的驱动程序。
 | 内置微型驱动程序 | 报表描述符长度 | 在一个报表描述符中 TLCs | 输入/输出/功能报表长度 |
 | ----------------- | ------------------------ | ----------------------------- | ---------------------------------- |
 | Hidclass/Hidparse | 65535字节              | 21845                         | 8 KB-1 位                       |
-| Hidusb            | 65535字节              | 不可用                           | 64 KB                              |
-| Hidbth            | 65535字节              | 不可用                           | 64 KB                              |
-| HidBthLE          | 65535字节              | 不可用                           | 64 KB                              |
-| Hidi2c            | 65535字节              | 不可用                           | 64 KB                              |
+| Hidusb            | 65535字节              | 空值                           | 64 KB                              |
+| Hidbth            | 65535字节              | 空值                           | 64 KB                              |
+| HidBthLE          | 65535字节              | 空值                           | 64 KB                              |
+| Hidi2c            | 65535字节              | 空值                           | 64 KB                              |
 
 ## <a name="see-also"></a>另请参阅
 

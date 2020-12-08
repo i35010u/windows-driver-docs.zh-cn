@@ -1,17 +1,16 @@
 ---
 title: 在网络驱动程序设计指南中导航
 description: 在网络驱动程序设计指南中导航
-ms.assetid: 8d9cbf3c-5eec-4409-ab4c-595bb921832d
 keywords:
 - 网络驱动程序 WDK，文档
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 39c9fd74ceb5a65419367eb856df5922e667769b
-ms.sourcegitcommit: 29c2e6dd8a3de3c11822d990adf1edd774f8a136
+ms.openlocfilehash: 65fef66bd89cf47fc828352e32d6d49015c7fbd3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91230041"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837649"
 ---
 # <a name="navigating-the-network-driver-design-guide"></a>在网络驱动程序设计指南中导航
 
@@ -46,24 +45,24 @@ ms.locfileid: "91230041"
 Windows Vista 和更高版本的操作系统版本支持以下类型的基于 NDIS 的内核模式的网络驱动程序：
 
 <a href="" id="miniport-drivers"></a>[微型端口驱动程序](learning-about-miniport-drivers.md)  
-*微型端口驱动程序*管理微型端口适配器，并为高级驱动程序的适配器提供接口。 *小型端口适配器*是一种概念实体，可以表示物理设备或虚拟设备。 例如，微型端口适配器可以表示网络接口卡 (NIC) 或与中间驱动程序相关联的虚拟设备。
+*微型端口驱动程序* 管理微型端口适配器，并为高级驱动程序的适配器提供接口。 *小型端口适配器* 是一种概念实体，可以表示物理设备或虚拟设备。 例如，微型端口适配器可以表示网络接口卡 (NIC) 或与中间驱动程序相关联的虚拟设备。
 
 微型端口驱动程序有很多变化，如 *面向连接的微型端口调用管理器 (MCM) 、* *Windows 驱动模型 (WDM) 微型端口驱动程序* 和中间驱动程序的上边缘。
 
 <a href="" id="protocol-drivers"></a>[协议驱动程序](learning-about-protocol-drivers.md)  
-*协议驱动程序*在驱动程序堆栈中提供高级服务。 协议驱动程序绑定到基础微型端口适配器。 *上层协议驱动程序*在其上部边缘实现一个接口，可能是特定于应用程序的接口，为网络用户提供服务。 在其下边缘，协议驱动程序提供了一个协议接口，用于将网络数据传递到下一个较低版本的驱动程序并从中接收传入的数据。
+*协议驱动程序* 在驱动程序堆栈中提供高级服务。 协议驱动程序绑定到基础微型端口适配器。 *上层协议驱动程序* 在其上部边缘实现一个接口，可能是特定于应用程序的接口，为网络用户提供服务。 在其下边缘，协议驱动程序提供了一个协议接口，用于将网络数据传递到下一个较低版本的驱动程序并从中接收传入的数据。
 
 协议驱动程序有很多变化，如 *面向连接的呼叫管理器 (MCM) 、面向连接的客户端* 以及中间驱动程序的下边缘。
 
 <a href="" id="filter-drivers"></a>[筛选器驱动程序](learning-about-filter-drivers.md)  
-*筛选器驱动*程序对协议驱动程序和微型端口驱动程序之间的接口的信息进行筛选。 *筛选器模块* 附加在协议驱动程序和微型端口适配器之间的绑定中，对于其他驱动程序通常是透明的。 筛选器驱动程序可以实现 *修改或监视筛选器*。 例如，筛选器驱动程序可以增强基础微型端口适配器提供的服务或仅仅收集统计信息。
+*筛选器驱动* 程序对协议驱动程序和微型端口驱动程序之间的接口的信息进行筛选。 *筛选器模块* 附加在协议驱动程序和微型端口适配器之间的绑定中，对于其他驱动程序通常是透明的。 筛选器驱动程序可以实现 *修改或监视筛选器*。 例如，筛选器驱动程序可以增强基础微型端口适配器提供的服务或仅仅收集统计信息。
 
 <a href="" id="intermediate-drivers"></a>[中间驱动程序](learning-about-intermediate-drivers.md)  
 上层协议驱动程序和微型端口驱动程序之间的 *中间驱动程序* 接口。 中间驱动程序在其上部边缘提供微型端口驱动程序接口，以绑定到过量协议驱动程序。 中间驱动程序在其下边缘提供一个协议驱动程序接口，用于绑定到底层微型端口适配器。 中间驱动程序通常用于实现 *n* 到 *m* 个多路复用器服务。 例如，中间驱动程序可以实现负载平衡和故障转移解决方案。
 
-中间驱动程序还可以在将硬件配置为 *微型端口中间驱动程序*时对其进行管理。
+中间驱动程序还可以在将硬件配置为 *微型端口中间驱动程序* 时对其进行管理。
 
-有关 Windows 网络体系结构和编程注意事项的详细信息，请参阅 [内核模式驱动程序的网络体系结构](windows-network-architecture-and-the-osi-model.md) 和 [网络驱动程序编程注意事项](network-driver-programming-considerations.md)。
+有关 Windows 网络体系结构和编程注意事项的详细信息，请参阅 [用于 Kernel-Mode 驱动程序的网络体系结构](windows-network-architecture-and-the-osi-model.md) 和 [网络驱动程序编程注意事项](network-driver-programming-considerations.md)。
 
 有关用于安装网络组件的网络 INF 文件的详细信息，请参阅 [安装网络组件](installing-network-components.md)。 如果网络驱动程序需要通知对象（例如，为了控制绑定），请参阅 [通知对象获取网络组件](notify-objects-for-network-components.md)。
 

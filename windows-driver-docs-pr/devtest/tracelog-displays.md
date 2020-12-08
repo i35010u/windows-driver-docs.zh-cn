@@ -1,17 +1,16 @@
 ---
 title: Tracelog 显示
 description: Tracelog 显示
-ms.assetid: 663af703-dacb-44ca-8b45-f324fa54ab6c
 keywords:
 - Tracelog WDK，显示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 46fdb2440bd71f05ca114224c6a55e9ebc73c724
-ms.sourcegitcommit: dff3834724bd5204c4a47204540fe8125dd37b20
+ms.openlocfilehash: 9073e0ef845a99e7abe1c00d6a58aa3f929d3856
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70750022"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838133"
 ---
 # <a name="tracelog-displays"></a>Tracelog 显示
 

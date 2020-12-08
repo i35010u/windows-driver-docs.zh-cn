@@ -1,32 +1,31 @@
 ---
 title: Wdfkd.dll 中的调试程序扩展摘要
 description: Windows 驱动程序工具包 (WDK) 包含一个名为 Wdfkd.dll 的调试器扩展库。
-ms.assetid: 5a83ea58-5dbf-40a6-b4cb-9c330851fc33
 keywords:
 - 扩展 WDK 调试器
 - 调试器扩展 WDK KMDF
 - 调试驱动程序 WDK KMDF、调试器扩展
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cb780628c19910c669db5c93673204beb3d841a3
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 28020db9f021088853430c30a0320fbc77dea2ba
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102688"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837039"
 ---
 #  <a name="summary-of-debugger-extensions-in-wdfkddll"></a>Wdfkd.dll 中的调试程序扩展摘要
 
 
-Windows 驱动程序工具包 (WDK) 包含一个名为 *Wdfkd.dll*的调试器扩展库。 此库包含调试程序扩展命令，可用于调试内核模式驱动程序框架 (KMDF) 和用户模式驱动程序框架（从版本2开始 (UMDF) 驱动程序）。
+Windows 驱动程序工具包 (WDK) 包含一个名为 *Wdfkd.dll* 的调试器扩展库。 此库包含调试程序扩展命令，可用于调试 Kernel-Mode Driver Framework (KMDF) ，以及从版本2开始的 User-Mode 驱动程序框架 (UMDF) 驱动程序。
 
-有关每个命令的完整说明，请参阅 [**Windows Driver Framework extension ( # A0) **](../debugger/kernel-mode-driver-framework-extensions--wdfkd-dll-.md)。 有关所有可用调试器扩展库的详细信息，请参阅 [Windows 调试](../debugger/index.md) 包附带的文档。
+有关每个命令的完整说明，请参阅 [**Windows Driver Framework extension ( # A0)**](../debugger/kernel-mode-driver-framework-extensions--wdfkd-dll-.md)。 有关所有可用调试器扩展库的详细信息，请参阅 [Windows 调试](../debugger/index.md) 包附带的文档。
 
 可以在视频中找到演示如何调试 KMDF 驱动程序的视频系列 [：调试 KMDF 驱动程序](debugging-kernel-mode-driver-framework-drivers.md)。
 
 若要调试使用 UMDF 1.11 版或更早版本的驱动程序，必须改用 *Wudfext.dll* 调试程序扩展库。 有关详细信息，请参阅 [用户模式驱动程序框架扩展 ( # A0) ](../debugger/user-mode-driver-framework-extensions--wudfext-dll-.md)。
 
-*Wdfkd.dll*扩展库提供的扩展命令包括：
+*Wdfkd.dll* 扩展库提供的扩展命令包括：
 
 <table>
 <colgroup>

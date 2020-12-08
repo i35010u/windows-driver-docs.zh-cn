@@ -1,7 +1,6 @@
 ---
 title: searchpte
-description: Searchpte 扩展搜索物理内存分配给指定的页帧数 (PFN)。
-ms.assetid: b9bac11e-605b-4064-b078-d3171b59da3b
+description: Searchpte 扩展会搜索指定页面帧号 (PFN) 的物理内存。
 keywords:
 - searchpte Windows 调试
 ms.date: 05/23/2017
@@ -12,33 +11,33 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 522016ebe465bb97d0820a615ccbf41049c83abb
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fab1eb5c55ebcfe8265f26fe199b7114299ac3c9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63334233"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837567"
 ---
 # <a name="searchpte"></a>!searchpte
 
 
-**！ Searchpte**扩展搜索物理内存分配给指定的页帧数 (PFN)。
+**！ Searchpte** extension 搜索指定页面帧号 (PFN) 的物理内存。
 
 ```dbgcmd
 !searchpte PFN 
 !searchpte -?
 ```
 
-## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>参数
+## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>Parameters
 
 
-<span id="_______PFN______"></span><span id="_______pfn______"></span> *PFN*   
+<span id="_______PFN______"></span><span id="_______pfn______"></span>*PFN*   
 以十六进制格式指定 PFN。
 
 <span id="_______-_______"></span> **-?**   
-显示此扩展在调试器命令窗口中的帮助。
+在调试器中显示此扩展的帮助命令窗口。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 <table>
 <colgroup>
@@ -59,14 +58,14 @@ ms.locfileid: "63334233"
 
  
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-有关页表和页目录中的信息，请参阅*Microsoft Windows Internals*、 Mark Russinovich 和 David solomon 合著的。 
+有关页表和页目录的信息，请参阅 Russinovich 和 David 所罗门群岛的 *Microsoft Windows 内部机制*。 
 
 <a name="remarks"></a>备注
 -------
 
-若要停止在任何时间执行，请按 CTRL + BREAK （在 WinDbg) 或 CTRL + C （中 KD)。
+若要随时停止执行，请在 WinDbg) 中按 CTRL + BREAK (，或按 CTRL + C (KD) 。
 
  
 

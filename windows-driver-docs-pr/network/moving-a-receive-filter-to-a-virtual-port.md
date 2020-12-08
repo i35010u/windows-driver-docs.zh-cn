@@ -1,15 +1,14 @@
 ---
 title: 将接收筛选器移到虚拟端口
 description: 将接收筛选器移到虚拟端口
-ms.assetid: 6315FB18-3F57-43C2-B864-3759058092BB
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7a3478ed2f9ccb94e64ee656a1f61fdb125bb6a2
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 7df56eb157e55cf30a4f90073dd13462e886a830
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89215546"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837671"
 ---
 # <a name="moving-a-receive-filter-to-a-virtual-port"></a>将接收筛选器移到虚拟端口
 
@@ -24,13 +23,13 @@ ms.locfileid: "89215546"
 
 -   VF 与来宾操作系统仍在运行的 Hyper-v 子分区分离。 在这种情况下，过量驱动程序发出 OID set 请求，将 VM 网络适配器的接收筛选器从非默认 VPort 移动到附加到 PF 的默认 VPort。 发生这种情况时，数据包流量将恢复为合成数据路径。
 
-若要将接收筛选器从一个 VPort 移到另一个 VPort，过量驱动程序将发出 Oid 请求，即 [oid \_ 接收 \_ 筛选器 \_ 移动 \_ 筛选器](./oid-receive-filter-move-filter.md)。 [**Ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的**InformationBuffer**成员包含指向[**ndis \_ 接收 \_ 筛选器 \_ 移动 \_ 筛选器 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_clear_parameters)结构的指针。
+若要将接收筛选器从一个 VPort 移到另一个 VPort，过量驱动程序将发出 Oid 请求，即 [oid \_ 接收 \_ 筛选器 \_ 移动 \_ 筛选器](./oid-receive-filter-move-filter.md)。 [**Ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的 **InformationBuffer** 成员包含指向 [**ndis \_ 接收 \_ 筛选器 \_ 移动 \_ 筛选器 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_clear_parameters)结构的指针。
 
 在过量驱动程序发出 [OID \_ 接收筛选 \_ 器 \_ 移动 \_ 筛选器](./oid-receive-filter-move-filter.md) 请求之前，它必须按以下方式初始化 [**NDIS \_ 接收 \_ 筛选器 \_ 移动 \_ 筛选器 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_move_filter_parameters) 结构：
 
 -   驱动程序将 **FilterId** 成员设置为先前分配的接收筛选器的标识符的标识符。
 
-    **注意**   过量驱动程序从[oid \_ 接收 \_ 筛选器 \_ 集 \_ 筛选](./oid-receive-filter-set-filter.md)器或[oid \_ 接收 \_ 筛选器 \_ 枚举 \_ 筛选](./oid-receive-filter-enum-filters.md)器的早期 OID 方法请求中获取了筛选器标识符。
+    **注意**  过量驱动程序从 [oid \_ 接收 \_ 筛选器 \_ 集 \_ 筛选](./oid-receive-filter-set-filter.md) 器或 [oid \_ 接收 \_ 筛选器 \_ 枚举 \_ 筛选](./oid-receive-filter-enum-filters.md)器的早期 OID 方法请求中获取了筛选器标识符。
 
      
 

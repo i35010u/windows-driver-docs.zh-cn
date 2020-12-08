@@ -1,15 +1,14 @@
 ---
 title: 底片扫描仪的 WIA 项标志
 description: 底片扫描仪的 WIA 项标志
-ms.assetid: 50aad730-6897-488d-a9de-58ce24738c17
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f4ad85d720c4c847688b3923b6353399e6b3a5a7
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: e69b52dbe02e7acdda6118b7a795755f340d2197
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89184467"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838265"
 ---
 # <a name="wia-item-flags-for-film-scanners"></a>底片扫描仪的 WIA 项标志
 
@@ -30,7 +29,7 @@ WIA 项是可配置的，并遵循一组基于 [**WIA \_ IPA \_ item \_ CATEGORY
 WIA 项可用于传输数据。 此标志是必需的，因为扫描仪的胶卷项可用于传输数据。
 
 <a href="" id="wiaitemtypefile"></a>**WiaItemTypeFile**  
-该项是一个文件。 **WiaItemTypeImage**标志需要此标志。
+该项是一个文件。 **WiaItemTypeImage** 标志需要此标志。
 
 <a href="" id="wiaitemtypeimage"></a>**WiaItemTypeImage**  
 该项是一个图像。 需要此标志，因为胶片扫描器会报告 [**WIA \_ IPA \_ 格式**](./wia-ipa-format.md) 属性值的图像格式。  (WIA 要求所有胶片扫描器项至少支持一种图像格式。 ) WIA 当前要求 \_ 支持 WiaImgFmt BMP 和 WiaImgFmt \_ MEMORYBMP 图像格式。

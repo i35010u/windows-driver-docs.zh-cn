@@ -1,7 +1,6 @@
 ---
 title: 总线驱动程序
 description: 总线驱动程序
-ms.assetid: d1a92c06-882d-49dc-befa-5b9a9e8aecd7
 keywords:
 - 总线驱动程序 WDK WDM
 - 枚举总线设备 WDK WDM
@@ -11,12 +10,12 @@ keywords:
 - WDM 总线驱动程序 WDK
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a0d901d240db82930f88d2ee2f9692d407338a82
-ms.sourcegitcommit: 3040b84a9cc5d5594cb829f15c2bb114a28d5120
+ms.openlocfilehash: 65927c064ea9e9b2909b77b1b62b408af42ceb0f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93365427"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838783"
 ---
 # <a name="bus-drivers"></a>总线驱动程序
 

@@ -1,23 +1,22 @@
 ---
 title: 使用常规框架对象
 description: 使用常规框架对象
-ms.assetid: d3356d3f-8110-44dd-b4a2-36265f5a1714
 keywords:
 - framework 对象 WDK KMDF，常规
 - 常规框架对象 WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bb033433cf4abba3eed40e14b933324a5419e671
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 6085966798cf2b216accc6a441b005c1bab49025
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89187755"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838701"
 ---
 # <a name="using-general-framework-objects"></a>使用常规框架对象
 
 
-*常规框架对象*是框架对象，其他所有类型的框架对象均派生自该对象。
+*常规框架对象* 是框架对象，其他所有类型的框架对象均派生自该对象。
 
 与其他框架对象一样，常规对象支持引用计数、上下文空间、删除回调函数和父对象，如 [框架对象简介](introduction-to-framework-objects.md)中所述。
 
@@ -33,7 +32,7 @@ ms.locfileid: "89187755"
 
     删除父对象时，将删除常规对象。 例如，如果您的驱动程序将框架设备对象指定为其某个常规对象的父对象，则该框架将在删除该设备对象时删除该常规对象。
 
-    驱动程序通过设置对象的[**WDF \_ 对象 \_ 属性**](/windows-hardware/drivers/ddi/wdfobject/ns-wdfobject-_wdf_object_attributes)结构的**ParentObject**成员来指定对象的父对象。
+    驱动程序通过设置对象的 [**WDF \_ 对象 \_ 属性**](/windows-hardware/drivers/ddi/wdfobject/ns-wdfobject-_wdf_object_attributes)结构的 **ParentObject** 成员来指定对象的父对象。
 
 -   提供删除回调函数。
 

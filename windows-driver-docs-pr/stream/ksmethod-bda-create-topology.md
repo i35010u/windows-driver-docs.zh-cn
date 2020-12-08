@@ -1,7 +1,6 @@
 ---
 title: KSMETHOD \_ BDA \_ CREATE \_ 拓扑
 description: 客户端使用 KSMETHOD \_ BDA \_ create \_ 拓扑在环3中创建一个在筛选器中反映已知连接的拓扑结构。
-ms.assetid: 3f34c7cc-d711-478b-a017-ad2c46545a9b
 keywords:
 - KSMETHOD_BDA_CREATE_TOPOLOGY 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 63bc719a72d8495ac8d4b6b9820efbb440fa5422
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 2d1bb4d478bf4a5344ecc38937601f15fd3dc62a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89192177"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96836661"
 ---
 # <a name="ksmethod_bda_create_topology"></a>KSMETHOD \_ BDA \_ CREATE \_ 拓扑
 
@@ -53,7 +52,7 @@ KSMULTIPLE \_ 项结构，它是拓扑信息列表的标头。
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**BdaMethodCreateTopology**](/windows-hardware/drivers/ddi/bdasup/nf-bdasup-bdamethodcreatetopology)

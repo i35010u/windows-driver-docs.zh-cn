@@ -1,18 +1,17 @@
 ---
 title: 示例元数据响应输出
 description: 示例元数据响应输出
-ms.assetid: e31cdc1f-21eb-4121-9618-2d8e3d6775dc
 keywords:
 - WSDBIT 工具 WDK，示例
 - WSDAPI 基本互操作性工具 WDK，示例
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f031c204b52d751476c85595cf4639b08531b4ea
-ms.sourcegitcommit: 80e40a2d0434c0c2904e6fe31626ca643de3ea00
+ms.openlocfilehash: 06114a7c349d100c8b928dced9711a332e0d5f2e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/21/2020
-ms.locfileid: "88714699"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838339"
 ---
 # <a name="sample-metadata-response-output"></a>示例元数据响应输出
 

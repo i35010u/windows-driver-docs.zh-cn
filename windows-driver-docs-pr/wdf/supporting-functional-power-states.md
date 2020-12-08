@@ -1,15 +1,14 @@
 ---
 title: 支持功能性电源状态
 description: 支持功能性电源状态
-ms.assetid: F96214C9-702D-402E-B873-5DF57C521B34
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a3615372978b66395ce0197c77b57e8289a00e55
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 37886ccb064c09c809be01b3f9582f122cb1ecd7
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107196"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96836619"
 ---
 # <a name="supporting-functional-power-states"></a>支持功能性电源状态
 

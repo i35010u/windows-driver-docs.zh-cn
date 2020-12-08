@@ -2,16 +2,15 @@
 title: IRP_MJ_SET_INFORMATION
 description: 设备驱动程序可以选择处理 IRP_MJ_SET_INFORMATION 请求。
 ms.date: 08/12/2017
-ms.assetid: 1bcca676-2926-4d0f-9c0f-c6ea56481153
 keywords:
-- IRP_MJ_SET_INFORMATION 内核模式驱动程序体系结构
+- IRP_MJ_SET_INFORMATION Kernel-Mode 驱动程序体系结构
 ms.localizationpriority: medium
-ms.openlocfilehash: ff2800a077ac5373b0c2d8367d20cd1ede873c04
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 88e15d88c06e64817e72c83864ac9008a2261cb8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89188249"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837227"
 ---
 # <a name="irp_mj_set_information"></a>IRP\_MJ\_SET\_INFORMATION
 
@@ -26,11 +25,11 @@ ms.locfileid: "89188249"
 ## <a name="input-parameters"></a>输入参数
 
 
-**SetFile. FileInformationClass**成员是一个**文件 \_ 信息 \_ 类**常量，它指定要设置的元数据的类型。 有关元数据类型的详细信息，请参阅[**ZwSetInformationFile**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntsetinformationfile)的*FileInformationClass*参数。
+**SetFile. FileInformationClass** 成员是一个 **文件 \_ 信息 \_ 类** 常量，它指定要设置的元数据的类型。 有关元数据类型的详细信息，请参阅 [**ZwSetInformationFile**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntsetinformationfile)的 *FileInformationClass* 参数。
 
-**SetFile**成员指定**AssociatedIrp.SystemBuffer**成员所指向的缓冲区的长度。
+**SetFile** 成员指定 **AssociatedIrp.SystemBuffer** 成员所指向的缓冲区的长度。
 
-**AssociatedIrp.SystemBuffer** 指向包含新信息设置的缓冲区。 **SetFile. FileInformationClass**的值确定) 要返回的** \_ *XXX* \_ 文件** (的数据格式。 有关元数据格式的详细信息，请参阅 [**文件 \_ 信息 \_ 类**](/windows-hardware/drivers/ddi/wdm/ne-wdm-_file_information_class) 枚举。
+**AssociatedIrp.SystemBuffer** 指向包含新信息设置的缓冲区。 **SetFile. FileInformationClass** 的值确定) 要返回的 **\_ *XXX* \_ 文件** (的数据格式。 有关元数据格式的详细信息，请参阅 [**文件 \_ 信息 \_ 类**](/windows-hardware/drivers/ddi/wdm/ne-wdm-_file_information_class) 枚举。
 
 ## <a name="output-parameters"></a>输出参数
 
@@ -60,7 +59,7 @@ ms.locfileid: "89188249"
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**ZwSetInformationFile**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntsetinformationfile)

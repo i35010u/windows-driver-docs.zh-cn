@@ -1,7 +1,6 @@
 ---
 title: Bug 检查 0x69 IO1_INITIALIZATION_FAILED
-description: IO1_INITIALIZATION_FAILED bug 检查具有 0x00000069 值。 检查此错误指示由于某种原因 I/O 系统的初始化失败。
-ms.assetid: 1f150598-d008-41d0-8b2a-ef59bc5e5e6c
+description: IO1_INITIALIZATION_FAILED bug 检查的值为0x00000069。 此 bug 检查指示由于某些原因初始化 i/o 系统失败。
 keywords:
 - Bug 检查 0x69 IO1_INITIALIZATION_FAILED
 - IO1_INITIALIZATION_FAILED
@@ -13,23 +12,23 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: b67f9ce1646426e91ad22edf7d56a32aa3bc0270
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: 428fe6743cae628d99e2d292825f0fcfbf288f3f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67519276"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838677"
 ---
-# <a name="bug-check-0x69-io1initializationfailed"></a>Bug 检查 0x69：IO1\_初始化\_失败
+# <a name="bug-check-0x69-io1_initialization_failed"></a>Bug 检查0x69： IO1 \_ 初始化 \_ 失败
 
 
-IO1\_初始化\_失败错误检查的值为 0x00000069。 检查此错误指示由于某种原因 I/O 系统的初始化失败。
+IO1 \_ 初始化 \_ 失败 bug 检查的值为0x00000069。 此 bug 检查指示由于某些原因初始化 i/o 系统失败。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题面向程序员。 如果您是在使用计算机时收到蓝屏错误代码的客户，请参阅[蓝屏错误疑难解答](https://www.windows.com/stopcode)。
 
 
-## <a name="io1initializationfailed-parameters"></a>IO1\_初始化\_失败参数
+## <a name="io1_initialization_failed-parameters"></a>IO1 \_ 初始化 \_ 失败参数
 
 
 无
@@ -37,9 +36,9 @@ IO1\_初始化\_失败错误检查的值为 0x00000069。 检查此错误指示�
 <a name="cause"></a>原因
 -----
 
-没有可用于分析此错误很少信息。
+有很少的信息可用于分析此错误。
 
-最可能是因为，安装例程已正确安装在系统中，或者用户已重新配置系统。
+这很可能是因为安装例程未正确安装系统，或者用户已重新配置了系统。
 
  
 

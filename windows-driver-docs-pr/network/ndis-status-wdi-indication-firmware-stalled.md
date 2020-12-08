@@ -1,33 +1,32 @@
 ---
 title: NDIS_STATUS_WDI_INDICATION_FIRMWARE_STALLED
 description: NDIS_STATUS_WDI_INDICATION_FIRMWARE_STALLED 用于指示固件停止。
-ms.assetid: 0A0E1446-4FDD-4FB2-8CA7-04FBF5D6DDD1
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 NDIS_STATUS_WDI_INDICATION_FIRMWARE_STALLED 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: e708bcded4e227c312534026dc82b003a1270878
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fbeeaf7235e43ac757edf43be8f6afcc082111d8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390728"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837139"
 ---
-# <a name="ndisstatuswdiindicationfirmwarestalled"></a>NDIS\_状态\_WDI\_指示\_固件\_STALLED
+# <a name="ndis_status_wdi_indication_firmware_stalled"></a>NDIS \_ 状态 \_ WDI \_ 指示 \_ 固件 \_ 停止
 
 
-NDIS\_状态\_WDI\_指示\_固件\_STALLED 用于指示固件停止。
+NDIS \_ 状态 \_ WDI \_ 指示 \_ 固件 \_ 暂停用于指示固件停止。
 
-| Object  |
+| 对象  |
 |---------|
 | 适配器 |
 
  
 
-## <a name="payload-data"></a>有效负载数据
+## <a name="payload-data"></a>负载数据
 
 
-此指示不包含任何其他数据。 标头中的数据就足够了。
+此指示不包含其他数据。 标头中的数据足够了。
 
 <a name="requirements"></a>要求
 ------------
@@ -44,11 +43,11 @@ NDIS\_状态\_WDI\_指示\_固件\_STALLED 用于指示固件停止。
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
-<td><p>Windows Server 2016</p></td>
+<td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Dot11wdi.h</td>
+<td><p>标头</p></td>
+<td>Dot11wdi</td>
 </tr>
 </tbody>
 </table>

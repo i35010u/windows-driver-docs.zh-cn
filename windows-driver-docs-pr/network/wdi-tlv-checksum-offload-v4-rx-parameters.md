@@ -1,17 +1,16 @@
 ---
 title: 'WDI_TLV_CHECKSUM_OFFLOAD_V4_RX_PARAMETERS (0xD2) '
 description: WDI_TLV_CHECKSUM_OFFLOAD_V4_RX_PARAMETERS 是一个 TLV，其中包含用于 IPv4 的 Rx 校验和卸载的参数。
-ms.assetid: A06E0534-CD5E-4D81-AEC8-CFC6106AAD85
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_CHECKSUM_OFFLOAD_V4_RX_PARAMETERS (0xD2) 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 9a5e25df264490262ef1fb33dd6dd9c2f727953a
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 2502d464135182a5b57a76d433342f8d92a70e52
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89218298"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837645"
 ---
 # <a name="wdi_tlv_checksum_offload_v4_rx_parameters-0xd2"></a>WDI \_ TLV \_ 校验和 \_ 卸载 \_ V4 \_ RX \_ 参数 (0xD2) 
 
@@ -25,7 +24,7 @@ WDI \_ tlv \_ 校验和 \_ 卸载 \_ V4 \_ RX \_ 参数是一个 TLV，其中包
 
 0xD2
 
-## <a name="length"></a>Length
+## <a name="length"></a>长度
 
 
 Sum (所有包含的元素的大小) 。
@@ -41,7 +40,7 @@ Sum (所有包含的元素的大小) 。
 <thead>
 <tr class="header">
 <th>类型</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -92,7 +91,7 @@ Sum (所有包含的元素的大小) 。
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
-<td><p>Windows Server 2016</p></td>
+<td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
 <td><p>标头</p></td>

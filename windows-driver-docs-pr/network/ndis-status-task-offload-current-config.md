@@ -1,17 +1,16 @@
 ---
 title: NDIS_STATUS_TASK_OFFLOAD_CURRENT_CONFIG
 description: 微型端口驱动程序使用 NDIS_STATUS_TASK_OFFLOAD_CURRENT_CONFIG 状态指示通知 NDIS 和过量驱动程序已更改了 NIC 的任务卸载配置。
-ms.assetid: 8a098dff-409e-4168-a3aa-372851aa999d
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 NDIS_STATUS_TASK_OFFLOAD_CURRENT_CONFIG 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 04c8067b5ba88dab557248605bb09e40b0e62a62
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: f8123a6064e949dac7acc241b50b7d8e07e1f5a2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89215522"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837161"
 ---
 # <a name="ndis_status_task_offload_current_config"></a>NDIS \_ 状态 \_ 任务 \_ 卸载 \_ 当前 \_ 配置
 
@@ -26,9 +25,9 @@ ms.locfileid: "89215522"
 1.  当微型端口驱动程序收到 [OID \_ TCP \_ 卸载 \_ 参数](./oid-tcp-offload-parameters.md) set 请求时，它必须使用 [**NDIS \_ 卸载 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_offload_parameters) 结构的内容来更新当前启用的任务卸载功能。
 2.  当微型端口驱动程序收到 [OID \_ 卸载 \_ 封装](./oid-offload-encapsulation.md) 集请求时，它必须使用 [**NDIS \_ 卸载 \_ 封装**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_offload_encapsulation) 结构的内容来更新当前启用的任务卸载功能。
 
-[**Ndis \_ 状态 \_ 指示**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_status_indication)结构的**StatusBuffer**成员包含[**ndis \_ 卸载**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_offload)结构。 发出 **NDIS \_ 状态任务 " \_ \_ 卸载 \_ 当前 \_ 配置** 状态指示" 时，微型端口驱动程序必须使用 **NDIS \_ 卸载** 结构来报告 NIC 的当前任务卸载配置。
+[**Ndis \_ 状态 \_ 指示**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_status_indication)结构的 **StatusBuffer** 成员包含 [**ndis \_ 卸载**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_offload)结构。 发出 **NDIS \_ 状态任务 " \_ \_ 卸载 \_ 当前 \_ 配置** 状态指示" 时，微型端口驱动程序必须使用 **NDIS \_ 卸载** 结构来报告 NIC 的当前任务卸载配置。
 
-**注意**   [**NDIS \_ 卸载**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_offload)结构的内容仅反映 NIC 的当前任务卸载配置，而不是其实际硬件功能。
+**注意** [**NDIS \_ 卸载**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_offload) 结构的内容仅反映 NIC 的当前任务卸载配置，而不是其实际硬件功能。
 
  
 
@@ -54,7 +53,7 @@ ms.locfileid: "89215522"
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**NDIS \_ 卸载**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_offload)

@@ -1,9 +1,8 @@
 ---
-title: WIA\_DPC\_焦点\_长度
-description: WIA\_DPC\_焦点\_长度属性包含 35 毫米 （毫米） 的等效焦距。
-ms.assetid: 0fe4b2d7-ca75-4dab-98b4-1b976f101dea
+title: WIA \_ DPC \_ 焦距 \_
+description: WIA \_ DPC \_ 焦距 \_ 属性包含35毫米 (mm) 等效的焦点。
 keywords:
-- WIA_DPC_FOCAL_LENGTH 成像设备
+- WIA_DPC_FOCAL_LENGTH 图像设备
 topic_type:
 - apiref
 api_name:
@@ -14,31 +13,31 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b1f44cadfa148ee2cb38b313db8af6900f4e447c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5d81ab0498975f652772a204609490c82a9c93e1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63392018"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837755"
 ---
-# <a name="wiadpcfocallength"></a>WIA\_DPC\_焦点\_长度
+# <a name="wia_dpc_focal_length"></a>WIA \_ DPC \_ 焦距 \_
 
 
-WIA\_DPC\_焦点\_长度属性包含 35 毫米 （毫米） 的等效焦距。
+WIA \_ DPC \_ 焦距 \_ 属性包含35毫米 (mm) 等效的焦点。
 
 ## <span id="ddk_wia_dpc_focal_length_si"></span><span id="DDK_WIA_DPC_FOCAL_LENGTH_SI"></span>
 
 
-属性类型：VT\_I4
+属性类型： VT \_ I4
 
-有效值：WIA\_PROP\_NONE
+有效值： WIA " \_ \_ 无"
 
-访问权限：读取/写入
+访问权限：读/写
 
 <a name="remarks"></a>备注
 -------
 
-值 WIA\_DPC\_焦点\_LENGTH 属性对应于焦点长度 （毫米） 乘以 100。 聚焦长度确定视觉缩放。
+WIA \_ DPC 焦距属性的值 \_ \_ 对应于以毫米和100为单位的焦点。 焦长度决定了光学缩放。
 
 <a name="requirements"></a>要求
 ------------
@@ -50,12 +49,12 @@ WIA\_DPC\_焦点\_长度属性包含 35 毫米 （毫米） 的等效焦距。
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Version</p></td>
-<td><p>在 Windows Vista 和更高版本操作系统中已过时，并应不再使用。 但是，此属性仍定义 Windows Vista 中与应用程序和用于 Windows Server 2003、 Windows XP 和早期版本的 Windows 设备的兼容性。</p></td>
+<td><p>版本</p></td>
+<td><p>在 Windows Vista 和更高版本的操作系统中已过时，不应再使用。 但是，在 Windows Vista 中仍定义此属性，以与为 Windows Server 2003、Windows XP 和 windows 的早期版本设计的应用程序和设备兼容。</p></td>
 </tr>
 <tr class="even">
-<td><p>Header</p></td>
-<td>Wiadef.h （包括 Wiadef.h）</td>
+<td><p>标头</p></td>
+<td>Wiadef (包含 Wiadef) </td>
 </tr>
 </tbody>
 </table>

@@ -1,7 +1,6 @@
 ---
 title: 确定 UMDF 设备的状态
-description: 本主题介绍如何将调试程序扩展与用户模式驱动程序框架结合使用， (UMDF) 版本1或2驱动程序，以确定 UMDF 设备处于何种状态。
-ms.assetid: ed1a4429-4f36-44b9-9564-587aa381342f
+description: 本主题介绍如何将调试程序扩展与 User-Mode Driver Framework (UMDF) 第1版或第2版驱动程序结合使用，以确定 UMDF 设备处于何种状态。
 keywords:
 - UMDF WDK，UMDF 设备状态
 - UMDF WDK，设备状态
@@ -11,17 +10,17 @@ keywords:
 - UMDF WDK，调试方案，UMDF 设备状态
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 203ec3f5bbe9b623c03ce9624e4df39ffa250d6f
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: add535f0be7bbdfe89273debd54b9d25a146045c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89191562"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837029"
 ---
 # <a name="determining-the-state-of-a-umdf-device"></a>确定 UMDF 设备的状态
 
 
-本主题介绍如何将调试程序扩展与用户模式驱动程序框架结合使用， (UMDF) 版本1或2驱动程序，以确定 UMDF 设备处于何种状态。
+本主题介绍如何将调试程序扩展与 User-Mode Driver Framework (UMDF) 第1版或第2版驱动程序结合使用，以确定 UMDF 设备处于何种状态。
 
 对于 UMDF 版本1，你将使用在 wudfext.dll 中实现的扩展命令。 从 UMDF 版本2开始，你将使用在 wdfkd.dll 中实现的扩展命令。
 
@@ -37,7 +36,7 @@ ms.locfileid: "89191562"
 
         2.  通过提升的权限启动调试器，并附加到相应的进程。
         3.  使用 **reload.sql 调试器命令** 重新加载符号。
-        4.  可以通过使用** ~ \* k**调试器命令查看所有线程。
+        4.  可以通过使用 **~ \* k** 调试器命令查看所有线程。
 
     -   内核模式调试器：
         1.  查找设备 (的相应驱动程序主机进程，WUDFHost.exe) "。 使用 **！处理** 内核模式调试程序扩展，如以下示例中所示，以获取所有 WUDFHost.exe 实例的列表：

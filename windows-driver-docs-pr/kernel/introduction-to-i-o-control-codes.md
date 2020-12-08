@@ -1,7 +1,6 @@
 ---
 title: I/O 控制代码简介
 description: I/O 控制代码简介
-ms.assetid: 8b9e09ef-56f9-42b9-9b65-04bc380f3a1e
 keywords:
 - I/o 控制代码 WDK 内核，关于 i/o 控制代码
 - 控制代码 WDK IOCTLs，关于 i/o 控制代码
@@ -14,12 +13,12 @@ keywords:
 - 控制代码 WDK 用户模式
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 50e81736bd14b7b3f4c4d7895004cd1cd00a97b4
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 29edd706d2519c792c510acb3336411b629309f2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90715058"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837235"
 ---
 # <a name="introduction-to-io-control-codes"></a>I/O 控制代码简介
 

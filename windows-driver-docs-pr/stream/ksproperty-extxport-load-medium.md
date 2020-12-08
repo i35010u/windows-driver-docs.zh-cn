@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ EXTXPORT \_ LOAD \_ MEDIUM
 description: KSPROPERTY \_ EXTXPORT \_ load \_ medium 属性设置或获取外部设备的负载介质。 例如，弹出、打开托盘、关闭纸盒等。
-ms.assetid: 13ec61ae-4be7-4af6-875f-a6ca178cf6bc
 keywords:
 - KSPROPERTY_EXTXPORT_LOAD_MEDIUM 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d3dd10cc7047a3f77fbaedd1a4c920f6628beb10
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 5b9c514dd79111b521991c9eedca1438040c8084
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90101430"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837063"
 ---
 # <a name="ksproperty_extxport_load_medium"></a>KSPROPERTY \_ EXTXPORT \_ LOAD \_ MEDIUM
 
@@ -84,7 +83,7 @@ KSPROPERTY **LoadMedium** \_ EXTXPORT S 结构的 LoadMedium 成员 \_ 指定负
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSPROPERTY**](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)
