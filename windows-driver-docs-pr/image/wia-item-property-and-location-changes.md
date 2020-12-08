@@ -1,15 +1,14 @@
 ---
 title: WIA 项属性和位置更改
 description: WIA 项属性和位置更改
-ms.assetid: 4e8b3d2a-a28c-41d1-9c4b-8d85f28cf904
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 34ec6d8a2b6a012f24957661674033f33dc832fb
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: a591dfed8da8c0a0352f03f281316d2cba5d1b91
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89190993"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96826523"
 ---
 # <a name="wia-item-property-and-location-changes"></a>WIA 项属性和位置更改
 
@@ -29,11 +28,11 @@ ms.locfileid: "89190993"
 
 -   [**WIA \_在 Windows Vista 中，DPS \_ 光学 \_ YRES**](./wia-dps-optical-yres.md) (称为 [**WIA \_ IPS \_ \_ YRES**](./wia-ips-optical-yres.md)) 
 
--   [**WIA \_在 \_ **](./wia-dps-preview.md) Windows Vista 中，DPS preview (称为 [**WIA \_ ip \_ 预览版**](./wia-ips-preview.md)) 
+-   [**WIA \_在 \_**](./wia-dps-preview.md) Windows Vista 中，DPS preview (称为 [**WIA \_ ip \_ 预览版**](./wia-ips-preview.md)) 
 
--   [**WIA \_DPS \_ 显示 \_ 预览 \_ 控件**](./wia-dps-show-preview-control.md) (称为 WIA ip 在 Windows Vista 中 [** \_ \_ 显示 \_ 预览 \_ 控件**](./wia-ips-show-preview-control.md)) 
+-   [**WIA \_DPS \_ 显示 \_ 预览 \_ 控件**](./wia-dps-show-preview-control.md) (称为 WIA ip 在 Windows Vista 中 [**\_ \_ 显示 \_ 预览 \_ 控件**](./wia-ips-show-preview-control.md)) 
 
-**注意**   仅支持平板影印扫描或文档送纸器扫描的扫描仪需要重复 WIA 属性。 成对属性具有相同的属性标识符来实现兼容性。 驱动程序可以为 \_ 根项添加 wia DPS \_ *xxx*属性，并 \_ 为其他项目添加 wia ip \_ *xxx* 。
+**注意**   仅支持平板影印扫描或文档送纸器扫描的扫描仪需要重复 WIA 属性。 成对属性具有相同的属性标识符来实现兼容性。 驱动程序可以为 \_ 根项添加 wia DPS \_ *xxx* 属性，并 \_ 为其他项目添加 wia ip \_ *xxx* 。
 
  
 

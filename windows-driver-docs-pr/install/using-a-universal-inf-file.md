@@ -1,15 +1,14 @@
 ---
 title: 使用通用 INF 文件
 description: 如果要构建通用或移动驱动程序包，则必须使用通用 INF 文件。
-ms.assetid: 2CBEB814-974D-4E8B-A44A-2CFAA8D4C94E
 ms.date: 04/28/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: ac0268558f3cff0e097dbd28892c0615d3319e3e
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 6aacf2f475d3009b311496ffe73e7e069f9ba3af
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105718"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96827041"
 ---
 # <a name="using-a-universal-inf-file"></a>使用通用 INF 文件
 
@@ -36,7 +35,7 @@ ms.locfileid: "90105718"
 -   [**INF DDInstall.FactDef 节**](inf-ddinstall-factdef-section.md)
 -   [**INF DDInstall.LogConfigOverride 节**](inf-ddinstall-logconfigoverride-section.md)
 
-只要**TargetOSVersion**修饰不包含**ProductType**标志或**SuiteMask**标志， [**INF 制造商部分**](inf-manufacturer-section.md)就有效。
+只要 **TargetOSVersion** 修饰不包含 **ProductType** 标志或 **SuiteMask** 标志， [**INF 制造商部分**](inf-manufacturer-section.md)就有效。
 
 例如，仅当 [**INF DefaultInstall 部分**](inf-defaultinstall-section.md) 具有体系结构修饰时，它才有效 `[DefaultInstall.NTAMD64]` 。
 
@@ -61,7 +60,7 @@ ms.locfileid: "90105718"
 
 以下指令有效，但有一些注意事项：
 
--   如果指定的 "*添加注册表" 一节*中的条目的*注册表项根*值为**HKR**，或在以下情况下，则[**INF AddReg 指令**](inf-addreg-directive.md)有效：
+-   如果指定的 "*添加注册表" 一节* 中的条目的 *注册表项根* 值为 **HKR**，或在以下情况下，则 [**INF AddReg 指令**](inf-addreg-directive.md)有效：
     -   为了 (COM) 对象注册 [组件对象模型](/windows/desktop/com) ，可以使用以下项编写密钥：
         -   HKCR
         -   HKLM\SOFTWARE\Classes
@@ -70,14 +69,14 @@ ms.locfileid: "90105718"
         -   HKLM\SOFTWARE\WOW6432Node\Microsoft\Windows 媒体基础
         -   HKLM\SOFTWARE\WOW3232Node\Microsoft\Windows 媒体基础
 
--   仅当[目标目录](inf-destinationdirs-section.md)为下列项之一时， [**INF CopyFiles 指令**](inf-copyfiles-directive.md)才有效：
+-   仅当 [目标目录](inf-destinationdirs-section.md)为下列项之一时， [**INF CopyFiles 指令**](inf-copyfiles-directive.md)才有效：
 
     -   11 (对应于% WINDIR% \\ System32) 
     -   12 (对应于% WINDIR% \\ System32 \\ 驱动程序) 
     -   13 (对应于% WINDIR% \\ System32 \\ DriverStore FileRepository 下的目录， \\ 其中) 存储了驱动程序。  
             **注意：**  CopyFiles 不能用于重命名 **DestinationDirs** 包括 *dirid* 13 的文件。 此外， *dirid* 13 仅在 Windows 10 产品上适用于有限的部分设备安装方案。  有关更多详细信息，请参阅特定设备类的指南和示例。
     -   10，SysWOW64 (对应于% WINDIR% \\ SysWOW64) 
-    -   10个*特定于供应商的子目录名称*  
+    -   10个 *特定于供应商的子目录名称*  
             **注意：** 在 Windows 10 1709 版中，将 *dirid* 10 与供应商特定子目录名称一起使用在通用 INF 中有效，使用 [InfVerif](../devtest/infverif.md) 工具来度量。  在更高版本中，可能不支持此值。  建议移动到 *dirid* 13。
 
 ## <a name="see-also"></a>另请参阅

@@ -1,7 +1,6 @@
 ---
 title: 使用 UMDF 辅助安装程序
 description: 使用 UMDF 辅助安装程序
-ms.assetid: e5ec2122-1602-487b-baad-4a3d9e47cf58
 keywords:
 - UMDF coinstallers WDK
 - coinstallers WDK UMDF
@@ -13,12 +12,12 @@ keywords:
 - INF 文件 WDK UMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ccfb52adcf15c4706678db6350c2925969f19549
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 7975d0e0598007f128e022a6fe14a67273cfd965
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89187321"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96827377"
 ---
 # <a name="using-the-umdf-co-installer"></a>使用 UMDF 辅助安装程序
 
@@ -32,7 +31,7 @@ ms.locfileid: "89187321"
 
 有关共同安装程序目录内容的完整列表，请参阅 [KMDF 驱动程序的安装组件](installation-components-for-kmdf-drivers.md)。
 
-在其他组件中，共同安装程序目录包含一个名为 WUDFUpdate 嗯的*更新共同安装程序*， \_ *MMmmm*其中*MM*是主版本号， *mmm*是次版本号。
+在其他组件中，共同安装程序目录包含一个名为 WUDFUpdate 嗯的 *更新共同安装程序*， \_ *MMmmm* 其中 *MM* 是主版本号， *mmm* 是次版本号。
 
 更新共同安装程序会更新计算机上的 UMDF framework 版本。 例如，如果计算机具有 UMDF 版本1.9，并且共同安装程序包含版本1.11，则共同安装程序会将计算机的 framework 版本更新为1.11。
 
@@ -87,7 +86,7 @@ AddReg=CoInstallers_AddReg
 HKR,,CoInstallers32,0x00010000,WudfCoinstaller.dll
 ```
 
-驱动程序的 INF 文件必须始终包含共同安装程序在安装后读取的**DDInstall 部分。** 有关驱动程序可在 **DDInstall**中指定的指令的信息，请参阅 [在 INF 文件中指定 Wdf 指令](specifying-wdf-directives-in-inf-files.md)。
+驱动程序的 INF 文件必须始终包含共同安装程序在安装后读取的 **DDInstall 部分。** 有关驱动程序可在 **DDInstall** 中指定的指令的信息，请参阅 [在 INF 文件中指定 Wdf 指令](specifying-wdf-directives-in-inf-files.md)。
 
 可以使用 INX 文件和 [Stampinf](../devtest/stampinf.md) 工具避免为多个版本的框架创建多个 INF 文件。 有关 INX 文件的详细信息，请参阅[使用 INX 文件创建 INF 文件](using-inx-files-to-create-inf-files.md)。
 

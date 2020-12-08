@@ -1,15 +1,14 @@
 ---
 title: 底片扫描仪的 WIA 项属性
 description: 底片扫描仪的 WIA 项属性
-ms.assetid: a94ca7f2-90ee-49a7-b011-12947485f37b
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4a5a6652217675d9b62301ea1c88054528de82d3
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: fce6d41f37a9874428b55e157d778a8b090d92e9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89189093"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96826529"
 ---
 # <a name="wia-item-properties-for-film-scanners"></a>底片扫描仪的 WIA 项属性
 

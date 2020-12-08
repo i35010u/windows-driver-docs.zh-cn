@@ -1,7 +1,6 @@
 ---
 title: Bug 检查 0xFF RESERVE_QUEUE_OVERFLOW
 description: RESERVE_QUEUE_OVERFLOW bug 检查的值为0x000000FF。 这表示尝试将新项插入保留队列，导致队列溢出。
-ms.assetid: d327ea41-c568-49f6-8b37-183533fd6261
 keywords:
 - Bug 检查 0xFF RESERVE_QUEUE_OVERFLOW
 - RESERVE_QUEUE_OVERFLOW
@@ -13,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 898e2e8608fe40bc455fffc32d10c6e671e05156
-ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
+ms.openlocfilehash: ff08b52be692f2937c6c36f597a0264f1902d371
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84534506"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96827349"
 ---
 # <a name="bug-check-0xff-reserve_queue_overflow"></a>Bug 检查0xFF：保留 \_ 队列 \_ 溢出
 
@@ -26,7 +25,7 @@ ms.locfileid: "84534506"
 保留 \_ 队列 \_ 溢出 bug 检查的值为0x000000FF。 这表示尝试将新项插入保留队列，导致队列溢出。
 
 > [!IMPORTANT]
-> 本主题适用于程序员。 如果你是在使用计算机时收到蓝屏错误代码的客户，请参阅[排查蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题面向程序员。 如果您是在使用计算机时收到蓝屏错误代码的客户，请参阅[蓝屏错误疑难解答](https://www.windows.com/stopcode)。
 
 
 ## <a name="reserve_queue_overflow-parameters"></a>保留 \_ 队列 \_ 溢出参数
@@ -40,7 +39,7 @@ ms.locfileid: "84534506"
 <thead>
 <tr class="header">
 <th align="left">参数</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>

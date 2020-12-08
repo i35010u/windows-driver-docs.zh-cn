@@ -1,20 +1,19 @@
 ---
 title: 在多页传输过程中的驱动程序行为
 description: 在多页传输过程中的驱动程序行为
-ms.assetid: ecf0428b-c11c-49ff-9aa3-322e55dbca07
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4c53db9b4c0ecdba8536b5eed119afe9aa2dd45a
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 5e64048dc7f391554144491aa7fcc3c1ba7f3630
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89192509"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96827157"
 ---
 # <a name="driver-behavior-during-multipage-transfers"></a>在多页传输过程中的驱动程序行为
 
 
-驱动程序无需直接支持文件夹获取。 如果驱动程序不支持，WIA 服务将以递归方式遍历项树，并对在[**WIA \_ IPA \_ 项 \_ FLAGS**](./wia-ipa-item-flags.md)属性中设置了**WiaItemTypeTransfer**位的所有项调用[**IWiaMiniDrv：:d rvacquireitemdata**](/windows-hardware/drivers/ddi/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvacquireitemdata) 。
+驱动程序无需直接支持文件夹获取。 如果驱动程序不支持，WIA 服务将以递归方式遍历项树，并对在 [**WIA \_ IPA \_ 项 \_ FLAGS**](./wia-ipa-item-flags.md)属性中设置了 **WiaItemTypeTransfer** 位的所有项调用 [**IWiaMiniDrv：:d rvacquireitemdata**](/windows-hardware/drivers/ddi/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvacquireitemdata) 。
 
 支持文件夹获取的驱动程序必须公开文件夹项的 " [**WIA \_ ip \_ 传输 \_ 功能**](./wia-ips-transfer-capabilities.md) " 属性。 此属性是一个标志属性，应 \_ 设置 WIA 传输 \_ 获取 \_ 子级功能， \_ 以指示它直接支持文件夹获取功能。 此支持意味着，驱动程序本身会遍历树以传输相关项，WIA 服务只会对文件夹调用 **IWiaMiniDrv：:D rvacquireitemdata** 。 驱动程序可以通过测试 WIA *lFlags* \_ 传输 \_ 获取子元素的 lFlags 参数来区分普通传输请求和文件夹获取请求 \_ 。
 
@@ -26,7 +25,7 @@ ms.locfileid: "89192509"
 
 如果在 "平台" 的每个子项上调用了单独的传输，则驱动程序将执行三次单独的扫描，这可能会非常耗时。 但是，如果在 "平台" 上请求了文件夹获取，则驱动程序将执行一次扫描，分解它并退回三个不同的区域 (这通常) 。
 
-**注意**   建议仅将更复杂的驱动程序直接支持文件夹采集，因为驱动程序负责遍历项树并采取适当的措施。
+**注意**  建议仅将更复杂的驱动程序直接支持文件夹采集，因为驱动程序负责遍历项树并采取适当的措施。
 
  
 

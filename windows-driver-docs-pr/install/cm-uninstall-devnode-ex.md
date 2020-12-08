@@ -1,7 +1,6 @@
 ---
 title: CM_Uninstall_DevNode_Ex
 description: CM_Uninstall_DevNode_Ex
-ms.assetid: ef9d5186-0cd5-4a7e-8067-f8550ff648e6
 keywords:
 - CM_Uninstall_DevNode_Ex 设备和驱动程序安装
 topic_type:
@@ -12,13 +11,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 732888929ac94d32178bdc8b977e43d111db3eff
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 00b248411c2d024c37e5f5430e3eec173f57a1f6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63363017"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96827905"
 ---
-# <a name="cmuninstalldevnodeex"></a>CM_Uninstall_DevNode_Ex
+# <a name="cm_uninstall_devnode_ex"></a>CM_Uninstall_DevNode_Ex
 
 此函数保留供系统使用。

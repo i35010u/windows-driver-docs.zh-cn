@@ -1,15 +1,14 @@
 ---
 title: 取消 NDIS 选择性挂起空闲通知
 description: 取消 NDIS 选择性挂起空闲通知
-ms.assetid: 14C19F15-9D0E-4F37-942C-7F7AFE1EBA0B
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1b9396ebc74e8116f601b8ab209bc95c3fcaf092
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: c5813d8f7edcdf8904a200a80c3c050e9eb2f6ae
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89218479"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96827591"
 ---
 # <a name="canceling-the-ndis-selective-suspend-idle-notification"></a>取消 NDIS 选择性挂起空闲通知
 
@@ -45,7 +44,7 @@ NDIS 监视颁发给微型端口驱动程序的发送请求和 OID 请求，其�
 
     2.  当总线驱动程序取消 USB 空闲请求 IRP 后，它将调用 IRP 的微型端口驱动程序的完成例程。 此调用会通知驱动程序 IRP 已完成，并且网络适配器可以转换为完全电源状态。 从完成例程的上下文中，驱动程序调用 [**NdisMIdleNotificationComplete**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismidlenotificationcomplete) 来通知 NDIS，网络适配器可以转换为完全电源状态。
 
-    **注意** 根据取消特定于总线的空闲请求的依赖项，微型端口驱动程序会在调用[*MiniportCancelIdleNotification*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_cancel_idle_notification)或在*MiniportCancelIdleNotification*返回后以异步方式调用[**NdisMIdleNotificationComplete**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismidlenotificationcomplete) 。
+    **注意** 根据取消特定于总线的空闲请求的依赖项，微型端口驱动程序会在调用 [*MiniportCancelIdleNotification*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_cancel_idle_notification)或在 *MiniportCancelIdleNotification* 返回后以异步方式调用 [**NdisMIdleNotificationComplete**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismidlenotificationcomplete) 。
 
     有关如何实现 USB 空闲请求 IRP 完成例程的详细信息，请参阅 [实现 Usb 空闲请求 Irp 完成例程](implementing-a-usb-idle-request-irp-completion-routine.md)。
 
@@ -53,7 +52,7 @@ NDIS 监视颁发给微型端口驱动程序的发送请求和 OID 请求，其�
 
     调用 [**NdisMIdleNotificationComplete**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismidlenotificationcomplete) 时，NDIS 执行以下步骤：
 
-    1.  NDIS 问题 IRP MN 为基础总线驱动程序 [** \_ \_ 设置 \_ 电源**](../kernel/irp-mn-set-power.md) 。 此 IRP 请求总线驱动程序将网络适配器的电源状态设置为 PowerDeviceD0。
+    1.  NDIS 问题 IRP MN 为基础总线驱动程序 [**\_ \_ 设置 \_ 电源**](../kernel/irp-mn-set-power.md) 。 此 IRP 请求总线驱动程序将网络适配器的电源状态设置为 PowerDeviceD0。
 
     2.  NDIS 向微型端口驱动程序发出 [oid \_ PNP \_ 设置 \_ 功能](./oid-pnp-set-power.md) 的 oid 设置请求。 在此 OID 请求中，NDIS 指定网络适配器现在正在转换为 NdisDeviceStateD0 的完全电源状态。
 

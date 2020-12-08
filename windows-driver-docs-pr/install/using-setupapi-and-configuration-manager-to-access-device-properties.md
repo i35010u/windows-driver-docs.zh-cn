@@ -1,15 +1,14 @@
 ---
 title: 将 Setupapi.log 和 Configuration Manager 与设备属性一起使用
 description: 使用 SetupAPI 和 Configuration Manager 访问设备属性
-ms.assetid: ec00d9c0-1355-478b-af48-0b589628e2d5
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 03c9c80403dfe16c441bae948e560ef868651751
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 0a6aee1f0c11a19602b0739c2551d82aac9de27e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89096385"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96827023"
 ---
 # <a name="using-setupapi-and-configuration-manager-to-access-device-properties"></a>使用 SetupAPI 和 Configuration Manager 访问设备属性
 

@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ 拓扑 \_ 节点
 description: KSPROPERTY \_ 拓扑 \_ 节点提供筛选器支持的拓扑节点和节点类型 guid 的列表。
-ms.assetid: 3b07b4d5-b222-44f1-be62-3addf3a87847
 keywords:
 - KSPROPERTY_TOPOLOGY_NODES 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 26c675972bbe45c6ad73e2baf77d46e50f6fa9c3
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: b65f37344681ea1c9a04dd145cd4a1d0f00978b8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103370"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96828341"
 ---
 # <a name="ksproperty_topology_nodes"></a>KSPROPERTY \_ 拓扑 \_ 节点
 
@@ -82,7 +81,7 @@ GUID 列表表示节点类型。 序列内的索引必须与节点 ID 号相匹�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSPROPERTY**](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)

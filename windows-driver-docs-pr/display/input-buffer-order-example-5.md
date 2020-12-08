@@ -1,15 +1,14 @@
 ---
 title: 输入缓冲区顺序示例 5
 description: 输入缓冲区顺序示例 5
-ms.assetid: f0ba80bb-ff84-4944-aae5-52eb0848edf5
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a054a2ad11cd34bc8644eb2afe8c3ed555d7d048
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 0ae07ed3e4fb75424a59397c2545044ffb37e35e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89064754"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96827239"
 ---
 # <a name="input-buffer-order-example-5"></a>输入缓冲区顺序示例 5
 
@@ -19,7 +18,7 @@ ms.locfileid: "89064754"
 
 **本部分仅适用于 Windows Server 2003 SP1 及更高版本以及 Windows XP SP2 及更高版本。**
 
-VMR 启动对驱动程序的 [**DeinterlaceBltEx**](./dxva-deinterlacebobdeviceclass-deinterlacebltex.md) 函数的调用，以在 [输入缓冲区顺序示例 4](input-buffer-order-example-4.md) 中使用设备，将2个视频 substreams 与渐进式视频流组合在一起。 即使没有必要在目标缓冲区中生成输出，VMR 仍会传递相同数量的渐进视频样本。 **LpBufferInfo**数组中的图面序列如下：
+VMR 启动对驱动程序的 [**DeinterlaceBltEx**](./dxva-deinterlacebobdeviceclass-deinterlacebltex.md) 函数的调用，以在 [输入缓冲区顺序示例 4](input-buffer-order-example-4.md) 中使用设备，将2个视频 substreams 与渐进式视频流组合在一起。 即使没有必要在目标缓冲区中生成输出，VMR 仍会传递相同数量的渐进视频样本。 **LpBufferInfo** 数组中的图面序列如下：
 
 <table>
 <colgroup>
@@ -78,7 +77,7 @@ VMR 启动对驱动程序的 [**DeinterlaceBltEx**](./dxva-deinterlacebobdevicec
 
  
 
-驱动程序可以忽略索引1和索引3处的图面，因为对于隔行扫描操作不需要它们。 渐进式样本在 \_ 示例的[**DXVA \_ VideoSample2**](/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_videosample2)结构的**SampleFormat**成员中标记 DXVA SampleProgressiveFrame 标志。 子流示例标记有新的 DXVA \_ SampleSubStream 标志。
+驱动程序可以忽略索引1和索引3处的图面，因为对于隔行扫描操作不需要它们。 渐进式样本在 \_ 示例的 [**DXVA \_ VideoSample2**](/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_videosample2)结构的 **SampleFormat** 成员中标记 DXVA SampleProgressiveFrame 标志。 子流示例标记有新的 DXVA \_ SampleSubStream 标志。
 
  
 

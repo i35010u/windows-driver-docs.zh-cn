@@ -1,7 +1,6 @@
 ---
 title: 原始资源和已转换的资源
 description: 原始资源和已转换的资源
-ms.assetid: dfc1376d-7a1a-421c-82ae-e183cac77ec8
 keywords:
 - 硬件资源 WDK KMDF，原始资源
 - 资源列表 WDK KMDF
@@ -10,12 +9,12 @@ keywords:
 - 原始资源 WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b1e1aac7fa0d4ea72c75380dc6f59a295c484266
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: d602aebeb8af665a520df7c39ac8f90ed2c5343b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89184921"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96827411"
 ---
 # <a name="raw-and-translated-resources"></a>原始资源和已转换的资源
 
@@ -30,12 +29,12 @@ PCI 总线设备的驱动程序接收按其在设备的 *基本地址注册* (�
 
 有关原始资源和已翻译资源的详细信息，请参阅 [**CM \_ 部分 \_ 资源 \_ 描述符**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_cm_partial_resource_descriptor) 结构的成员说明。
 
-如果设备的已翻译资源列表包含一个资源，而**Type**该资源的 CM \_ 部分资源描述符结构的 Type 成员 \_ \_ 设置为**CmResourceTypeMemory**，则访问该资源的每个驱动程序都必须执行以下操作：
+如果设备的已翻译资源列表包含一个资源，而 **Type** 该资源的 CM \_ 部分资源描述符结构的 Type 成员 \_ \_ 设置为 **CmResourceTypeMemory**，则访问该资源的每个驱动程序都必须执行以下操作：
 
 -   驱动程序的 [*EvtDevicePrepareHardware*](/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware) 回调函数必须调用 [**MmMapIoSpace**](/windows-hardware/drivers/ddi/wdm/nf-wdm-mmmapiospace) ，以将系统物理地址映射到系统虚拟地址。
 -   驱动程序的 [*EvtDeviceReleaseHardware*](/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_release_hardware) 回调函数必须调用 [**MmUnmapIoSpace**](/windows-hardware/drivers/ddi/wdm/nf-wdm-mmunmapiospace) 来取消对地址的映射。
 
-有关映射总线相对地址的详细信息，请参阅 [将与总线相关的地址映射到虚拟地址](../kernel/mapping-bus-relative-addresses-to-virtual-addresses.md)。
+有关映射总线相对地址的详细信息，请参阅 [将 Bus-Relative 地址映射到虚拟地址](../kernel/mapping-bus-relative-addresses-to-virtual-addresses.md)。
 
  
 

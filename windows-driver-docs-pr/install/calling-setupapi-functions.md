@@ -1,18 +1,17 @@
 ---
 title: 调用 SetupAPI 函数
 description: 调用 SetupAPI 函数
-ms.assetid: 757AAF33-B57B-4ab8-A034-23B8AC0C5CB3
 keywords:
 - Setupapi.log 函数 WDK，调用
 - 调用 Setupapi.log 函数 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ca3a240540ce0dd85448be3e2509def595afa6d2
-ms.sourcegitcommit: a44ade167cdfb541cf1818e9f9e3726f23f90b66
+ms.openlocfilehash: c761c01f4a8d379693605c06a64a29b6f7203069
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94361285"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96827983"
 ---
 # <a name="calling-setupapi-functions"></a>调用 SetupAPI 函数
 

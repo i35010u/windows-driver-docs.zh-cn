@@ -1,7 +1,6 @@
 ---
 title: DEVPROP_TYPE_ERROR
 description: DEVPROP_TYPE_ERROR 标识符表示 WINERROR.H 中定义的 Microsoft Win32 错误代码值的基本数据类型标识符。
-ms.assetid: fe8fa3de-a984-4c6f-902f-5eda24402a65
 keywords:
 - DEVPROP_TYPE_ERROR 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: def32fa4532ec5752f971f991512bf315ab026bd
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 6e422df6760ce6c1e8a92733ca33e227bebe2447
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90715554"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96827663"
 ---
 # <a name="devprop_type_error"></a>DEVPROP_TYPE_ERROR
 
@@ -35,7 +34,7 @@ DEVPROP_TYPE_ERROR 标识符表示 WINERROR.H 中定义的 Microsoft Win32 错�
 
 ### <a name="setting-a-property-of-this-type"></a>设置此类型的属性
 
-若要设置其基本数据类型为 DEVPROP_TYPE_ERROR 的属性，请调用相应的 SetupDiSet*Xxx* 属性函数并按如下所示设置函数输入参数：
+若要设置其基本数据类型为 DEVPROP_TYPE_ERROR 的属性，请调用相应的 SetupDiSet *Xxx* 属性函数并按如下所示设置函数输入参数：
 
 -   将 *PropertyType* 参数设置为 DEVPROP_TYPE_ERROR。
 

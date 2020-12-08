@@ -1,7 +1,6 @@
 ---
 title: IDebugAdvanced2 请求方法
 description: 请求方法执行各种不同的操作。
-ms.assetid: efb3c93c-5405-418b-a063-afa8e5e9e59a
 keywords:
 - 请求方法 Windows 调试
 - 请求方法 Windows 调试，IDebugAdvanced2 接口
@@ -19,29 +18,29 @@ api_type:
 - COM
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1da1e8f81ae3c68a458cfb04e3ac0e1f8824b501
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 75b1eb7eb56a9d9ffb09ada5a6df3548c41d4125
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104066"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96826711"
 ---
 # <a name="idebugadvanced2request-method"></a>IDebugAdvanced2：： Request 方法
 
 
-**请求**方法执行各种不同的操作。
+**请求** 方法执行各种不同的操作。
 
 <a name="syntax"></a>语法
 ------
 
 ```cpp
 HRESULT Request(
-  [in]            ULONG  Request,
-  [in, optional]  PVOID  InBuffer,
-  [in]            ULONG  InBufferSize,
-  [out, optional] PVOID  OutBuffer,
-  [in]            ULONG  OutBufferSize,
-  [out, optional] PULONG OutSize
+  [in]            ULONG  Request,
+  [in, optional]  PVOID  InBuffer,
+  [in]            ULONG  InBufferSize,
+  [out, optional] PVOID  OutBuffer,
+  [in]            ULONG  OutBufferSize,
+  [out, optional] PULONG OutSize
 );
 ```
 
@@ -124,16 +123,16 @@ HRESULT Request(
 指定此方法的输入。 输入的类型和解释取决于 *请求* 参数。
 
 *InBufferSize* \[中\]  
-指定输入缓冲区 *InBuffer*的大小。 如果请求不需要输入，则应将 *InBufferSize* 设置为零。
+指定输入缓冲区 *InBuffer* 的大小。 如果请求不需要输入，则应将 *InBufferSize* 设置为零。
 
 *OutBuffer* \[out，可选\]  
 接收此方法的输出。 输出的类型和解释取决于 *请求* 参数。 如果 *OutBuffer* 为 **NULL**，则不返回输出。
 
 *OutBufferSize* \[中\]  
-指定输出缓冲区 *OutBufferSize*的大小。 如果返回到 *OutBuffer* 的输出的类型具有已知大小，则 *OutBufferSize* 通常应为该大小，即使 *OutBuffer* 设置为 **NULL**也是如此。
+指定输出缓冲区 *OutBufferSize* 的大小。 如果返回到 *OutBuffer* 的输出的类型具有已知大小，则 *OutBufferSize* 通常应为该大小，即使 *OutBuffer* 设置为 **NULL** 也是如此。
 
 *外部* \[out，可选\]  
-接收在输出缓冲区 *OutBuffer*中返回的输出的大小。 如果 *外部* 为 **NULL**，则不返回此信息。
+接收在输出缓冲区 *OutBuffer* 中返回的输出的大小。 如果 *外部* 为 **NULL**，则不返回此信息。
 
 <a name="return-value"></a>返回值
 ------------
@@ -182,7 +181,7 @@ HRESULT Request(
 <tbody>
 <tr class="odd">
 <td align="left"><p>目标平台</p></td>
-<td align="left">桌面型</td>
+<td align="left">台式机</td>
 </tr>
 <tr class="even">
 <td align="left"><p>标头</p></td>

@@ -1,7 +1,6 @@
 ---
 title: ContentType 元素
 description: 可选 ContentType 元素指定原始文档的主要特征。
-ms.assetid: 0e91e4ec-5569-452f-b929-9d2923f3147d
 keywords:
 - ContentType 元素图像处理设备
 topic_type:
@@ -12,12 +11,12 @@ api_type:
 - Schema
 ms.date: 11/09/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 88a980da81fa3ee115aad6f242e8ea03de2d9a99
-ms.sourcegitcommit: ea3215e9d5afe073ed6d01fb6dddf31d95ef3b63
+ms.openlocfilehash: e8af6e46619f42b1e6ddb2c8bc5dc3f9a7618475
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94673767"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96826883"
 ---
 # <a name="contenttype-element"></a>ContentType 元素
 
@@ -36,7 +35,7 @@ ms.locfileid: "94673767"
 
 ## <a name="attributes"></a>特性
 
-| 属性 | 类型 | 必需 | 说明 |
+| 属性 | 类型 | 必须 | 描述 |
 |--|--|--|--|
 | MustHonor | xs:string | 否 | 可选。 必须为0、false、1或 true 的布尔值。 |
 | 替代 | xs:string | 否 | 可选。 必须为0、false、1或 true 的布尔值。 |
@@ -46,7 +45,7 @@ ms.locfileid: "94673767"
 
 必需。 以下值之一：
 
-|术语  |说明  |
+|术语  |描述  |
 |---------|---------|
 |自动     |      扫描设备将自动检测原始类型。   |
 |文本     |     他的文档主要由不同的文本组成，这与背景对比强烈。    |
@@ -66,12 +65,12 @@ ms.locfileid: "94673767"
 
 [**DocumentParameters**](documentparameters.md)
 
-## <a name="remarks"></a>注解
+## <a name="remarks"></a>备注
 
 仅当 **ContentType** 元素包含在 **CreateScanJobRequest** 层次结构内时，客户端才能指定可选的 **MustHonor** 属性。 有关 **MustHonor** 及其用法的详细信息，请参阅 [**CreateScanJobRequest**](createscanjobrequest.md)。
 
 仅当 **ContentType** 元素包含在 **DocumentFinalParameters** 层次结构中时，WSD 扫描服务才能指定可选 **Override** 和 **UsedDefault** 属性。 有关 **Override** 和 **UsedDefault** 及其用法的详细信息，请参阅 [**DocumentFinalParameters**](documentfinalparameters.md)。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [**CreateScanJobRequest**](createscanjobrequest.md)

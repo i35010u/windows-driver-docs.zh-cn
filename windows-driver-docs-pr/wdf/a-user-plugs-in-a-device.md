@@ -1,7 +1,6 @@
 ---
 title: 用户插入设备
 description: 了解用户插入设备后会发生什么情况。 在示例方案中，"设备" 节点包含 KMDF 总线驱动程序。
-ms.assetid: cc047c05-f3aa-4423-98fc-cafd7777e104
 keywords:
 - PnP WDK KMDF，插入设备
 - 即插即用 WDK KMDF，插入设备
@@ -9,12 +8,12 @@ keywords:
 - 添加设备 WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bcc15623072a860364be0987f5a150ddd791ba7a
-ms.sourcegitcommit: 2aedb606f9f14e74687f0d3da60e14fc6ffffa7e
+ms.openlocfilehash: 62700e7d1b4ccb4accd3b8de87c138aeebff99e8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91544424"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96827429"
 ---
 # <a name="a-user-plugs-in-a-device"></a>用户插入设备
 
@@ -35,7 +34,7 @@ ms.locfileid: "91544424"
 
 -   框架将调用每个附加驱动程序的 [*EvtDriverDeviceAdd*](/windows-hardware/drivers/ddi/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add) 回调函数，以便驱动程序可以调用 [**WdfDeviceCreate**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicecreate) 来创建一个框架设备对象，该对象表示驱动程序的设备。 函数驱动程序 (FDO) 创建一个功能设备对象，筛选器驱动程序 (Filter DO) 创建筛选器设备对象。
 
--   框架调用每个函数和筛选器驱动程序的 [*EvtDeviceFilterRemoveResourceRequirements*](/windows-hardware/drivers/ddi/wdffdo/nc-wdffdo-evt_wdf_device_filter_resource_requirements) 回调函数，然后调用每个驱动程序的 [*EvtDeviceFilterAddResourceRequirements*](/windows-hardware/drivers/ddi/wdffdo/nc-wdffdo-evt_wdf_device_filter_resource_requirements) 回调函数。 设备开始之前，框架将调用 [*EvtDeviceRemoveAddedResources*](/windows-hardware/drivers/ddi/wdffdo/nc-wdffdo-evt_wdf_device_remove_added_resources) 回调函数。 在 PnP 管理器将资源分配给设备之前，这三个回调函数允许筛选器和函数驱动程序修改设备所需的硬件资源的列表。 有关详细信息，请参阅 [基于框架的驱动程序的硬件资源](hardware-resources-for-kmdf-drivers.md)
+-   框架调用每个函数和筛选器驱动程序的 [*EvtDeviceFilterRemoveResourceRequirements*](/windows-hardware/drivers/ddi/wdffdo/nc-wdffdo-evt_wdf_device_filter_resource_requirements) 回调函数，然后调用每个驱动程序的 [*EvtDeviceFilterAddResourceRequirements*](/windows-hardware/drivers/ddi/wdffdo/nc-wdffdo-evt_wdf_device_filter_resource_requirements) 回调函数。 设备开始之前，框架将调用 [*EvtDeviceRemoveAddedResources*](/windows-hardware/drivers/ddi/wdffdo/nc-wdffdo-evt_wdf_device_remove_added_resources) 回调函数。 在 PnP 管理器将资源分配给设备之前，这三个回调函数允许筛选器和函数驱动程序修改设备所需的硬件资源的列表。 有关详细信息，请参阅 [Framework-Based 驱动程序的硬件资源](hardware-resources-for-kmdf-drivers.md)
 
 -   框架确保设备已达到其工作 (D0) 电源状态。
 

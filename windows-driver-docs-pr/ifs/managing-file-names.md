@@ -1,19 +1,18 @@
 ---
 title: 管理文件名称
 description: 管理文件名称
-ms.assetid: 390c3817-e306-4d20-9ec0-9d68ccc8ff1b
 keywords:
 - 筛选器管理器 WDK 文件系统微筛选器，文件名
 - 文件名称 WDK 文件系统微筛选器
 - 命名 WDK 文件系统
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4fe714eb1ec0051bcd1786b3558c584a99c0ecdf
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: fa5c2f0fbdd269d408d03ed7bf3722833d1c219d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106502"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96828025"
 ---
 # <a name="managing-file-names"></a>管理文件名称
 
@@ -46,7 +45,7 @@ ms.locfileid: "90106502"
 
 ### <a name="span-idminifilter_driver_callback_routines_for_name_managementspanspan-idminifilter_driver_callback_routines_for_name_managementspanspan-idminifilter_driver_callback_routines_for_name_managementspanminifilter-driver-callback-routines-for-name-management"></a><span id="Minifilter_Driver_Callback_Routines_for_Name_Management"></span><span id="minifilter_driver_callback_routines_for_name_management"></span><span id="MINIFILTER_DRIVER_CALLBACK_ROUTINES_FOR_NAME_MANAGEMENT"></span>名称管理的微筛选器驱动程序回调例程
 
-对于修改命名空间的微微筛选器驱动程序，以下回调例程存储在作为参数传递给[**FltRegisterFilter**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltregisterfilter)的[**FLT \_ 注册**](/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_registration)结构中：
+对于修改命名空间的微微筛选器驱动程序，以下回调例程存储在作为参数传递给 [**FltRegisterFilter**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltregisterfilter)的 [**FLT \_ 注册**](/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_registration)结构中：
 
 <table>
 <colgroup>

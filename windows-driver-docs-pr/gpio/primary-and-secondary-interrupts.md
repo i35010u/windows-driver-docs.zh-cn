@@ -1,15 +1,14 @@
 ---
 title: 主要和次要中断
 description: GPIO 中断处理本质上是一个两阶段过程。
-ms.assetid: 731B0E36-4480-4B69-931E-1F7B40B18911
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 06f0bbb2d066552312971ee9b52f55cc835c0839
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 0f9502fc391187fcbf1edff6965419021dcb771e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89064442"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96827201"
 ---
 # <a name="primary-and-secondary-interrupts"></a>主要和次要中断
 

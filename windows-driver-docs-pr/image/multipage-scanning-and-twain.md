@@ -1,15 +1,14 @@
 ---
 title: 多页扫描和 TWAIN
 description: 多页扫描和 TWAIN
-ms.assetid: 02b5ef48-413d-403b-8c42-caecd9521067
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 921006eaed7cc236ddfc30f4fee701745478c260
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 07b0280b7734439597ba35c98ee258ae2d20c28f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379671"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96827127"
 ---
 # <a name="multipage-scanning-and-twain"></a>多页扫描和 TWAIN
 
@@ -17,7 +16,7 @@ ms.locfileid: "63379671"
 
 
 
-从 Windows XP，TWAIN 兼容性层支持多页扫描从滚动馈送的设备，前提是所有扫描的页是长度相同。 这样做的原因是该 TWAIN 获取从调用应用程序仅在第一页上的页面长度有关的信息。 TWAIN 不需要调用应用程序寻求页之间的图像信息。 此外，TWAIN 应用到所有后续页面收到从应用程序的第一页有关的信息。
+从 Windows XP 开始，如果所有扫描的页的长度相同，TWAIN 兼容层都支持从滚动馈送设备进行多页扫描。 这样做的原因是，TWAIN 仅在第一页上从调用应用程序获取有关页面长度的信息。 TWAIN 不要求调用应用程序要求在页面之间提供图像信息。 而且，TWAIN 将从应用程序收到的有关第一页的信息应用于所有后续页面。
 
  
 

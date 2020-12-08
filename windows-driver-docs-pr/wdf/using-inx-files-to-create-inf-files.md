@@ -1,26 +1,25 @@
 ---
 title: 使用 INX 文件创建 INF 文件
 description: 使用 INX 文件创建 INF 文件
-ms.assetid: b49f8fed-c2b5-46e2-aeaf-e09231fa1578
 keywords:
 - INX 文件 WDK KMDF
 - 生成实用工具 WDK KMDF
 - Stampinf WDK KMDF
 - KMDF WDK，INX 文件
-- 内核模式驱动程序框架 WDK，INX 文件
+- Kernel-Mode Driver Framework WDK，INX 文件
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5bf772230b44f32610979f963d78e7ccc92d0d9f
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: a15743eba418fd3fe295134b7bb6788430c93b5b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89191369"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96828305"
 ---
 # <a name="using-inx-files-to-create-inf-files"></a>使用 INX 文件创建 INF 文件
 
 
-*INX 文件*是一个 INF 文件，其中包含表示版本信息的字符串变量。 使用 Microsoft Visual Studio 生成驱动程序时，生成过程将运行 [Stampinf](../devtest/stampinf.md) 工具，以将 INX 文件中的字符串变量替换为表示特定硬件体系结构或 framework 版本的文本字符串。 还可以手动运行 Stampinf 工具，该工具位于 WDK 的 *bin* 子目录中。
+*INX 文件* 是一个 INF 文件，其中包含表示版本信息的字符串变量。 使用 Microsoft Visual Studio 生成驱动程序时，生成过程将运行 [Stampinf](../devtest/stampinf.md) 工具，以将 INX 文件中的字符串变量替换为表示特定硬件体系结构或 framework 版本的文本字符串。 还可以手动运行 Stampinf 工具，该工具位于 WDK 的 *bin* 子目录中。
 
 如果为驱动程序创建 INX 文件，则不必维护多个特定于版本的 INF 文件。 相反，你可以创建一个 INX 文件，并在需要时使用 Visual Studio 或 Stampinf 生成特定于版本的 INF 文件。
 

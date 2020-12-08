@@ -1,7 +1,6 @@
 ---
 title: irql 扩展命令
 description: Irql 扩展显示在调试器中断之前目标计算机上的处理器的中断请求级别 (IRQL) 。
-ms.assetid: 52dd3b9f-c03c-4b90-a01b-25289de67f5a
 keywords:
 - IRQL
 - 中断请求级别
@@ -14,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: c0d3d9c441a3a241942e0179f326baf59792ea75
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 8e5de42840def3df5f5ae78a3a158e29649a8a48
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89217082"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96827365"
 ---
 # <a name="irql"></a>!irql
 
@@ -38,7 +37,7 @@ ms.locfileid: "89217082"
 
 ### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
-**！ Irql**扩展仅在 windows Server 2003 和更高版本的 windows 中可用。
+**！ Irql** 扩展仅在 windows Server 2003 和更高版本的 windows 中可用。
 
 <table>
 <colgroup>
@@ -48,11 +47,11 @@ ms.locfileid: "89217082"
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>Windows 2000</strong></p></td>
-<td align="left"><p>Unavailable</p></td>
+<td align="left"><p>不可用</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>Windows XP</strong></p></td>
-<td align="left"><p>Unavailable</p></td>
+<td align="left"><p>不可用</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>Windows Server 2003 及更高版本</strong></p></td>
@@ -70,7 +69,7 @@ ms.locfileid: "89217082"
 <a name="remarks"></a>备注
 -------
 
-当目标计算机中断到调试器时，将更改 IRQL，但在调试器中断之前有效的 IRQL 会被保存。 **！ Irql**扩展显示保存的 irql。
+当目标计算机中断到调试器时，将更改 IRQL，但在调试器中断之前有效的 IRQL 会被保存。 **！ Irql** 扩展显示保存的 irql。
 
 同样，当发生 bug 检查并创建故障转储文件时，保存在崩溃转储文件中的 IRQL 是在 bug 检查之前立即发生的，而不是执行 [**KeBugCheckEx**](/windows-hardware/drivers/ddi/wdm/nf-wdm-kebugcheckex) 例程时的 irql。
 

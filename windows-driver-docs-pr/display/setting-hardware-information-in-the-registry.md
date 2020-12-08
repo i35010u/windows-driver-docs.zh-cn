@@ -1,7 +1,6 @@
 ---
 title: 在注册表中设置硬件信息
 description: 在注册表中设置硬件信息
-ms.assetid: 82f5d399-58c3-4bed-a3f2-3501f21fa3e8
 keywords:
 - 硬件 WDK 视频微型端口
 - 注册表 WDK 视频微型端口
@@ -9,12 +8,12 @@ keywords:
 - VideoPortGetRegistryParameters
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 32977c21314c9aec3f50fb9b9a914e823bb59ffa
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: be5cb6d32442ee07b4d0a3b93f63f48d11c7b13a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89066656"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96826609"
 ---
 # <a name="setting-hardware-information-in-the-registry"></a>在注册表中设置硬件信息
 
@@ -26,9 +25,9 @@ ms.locfileid: "89066656"
 
 建议微型端口驱动程序将注册表中的某些硬件信息设置为向用户显示有用信息，并帮助进行调试。 微型端口驱动程序可以设置芯片类型、DAC 类型、内存大小 (的适配器) ，以及用于标识适配器的字符串。 此信息由控制面板中的 "显示" 程序显示。
 
-驱动程序通过调用 **VideoPortSetRegistryParameters**来设置此信息。 通常，驱动程序会在其 *HwVidFindAdapter* 例程中进行调用。
+驱动程序通过调用 **VideoPortSetRegistryParameters** 来设置此信息。 通常，驱动程序会在其 *HwVidFindAdapter* 例程中进行调用。
 
-下表描述了驱动程序可以注册的信息，并提供了**VideoPortSetRegistryParameters**的*ValueName*和*ValueData*参数的详细信息：
+下表描述了驱动程序可以注册的信息，并提供了 **VideoPortSetRegistryParameters** 的 *ValueName* 和 *ValueData* 参数的详细信息：
 
 <table>
 <colgroup>

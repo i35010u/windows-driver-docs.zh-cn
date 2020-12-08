@@ -1,7 +1,6 @@
 ---
 title: Bug 检查 0xF7 DRIVER_OVERRAN_STACK_BUFFER
-description: DRIVER_OVERRAN_STACK_BUFFER bug 检查具有 0x000000F7 值。 这表示一个驱动程序具有溢出基于堆栈的缓冲区。
-ms.assetid: 5981b5e0-90c1-486e-8bbf-2778f2595f6b
+description: DRIVER_OVERRAN_STACK_BUFFER bug 检查的值为0x000000F7。 这表明驱动程序已溢出基于堆栈的缓冲区。
 keywords:
 - Bug 检查 0xF7 DRIVER_OVERRAN_STACK_BUFFER
 - DRIVER_OVERRAN_STACK_BUFFER
@@ -13,23 +12,23 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: e276533ddc3e9ed8eb608b8b271acd6c8b3e7701
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: 8c8d86f0d0660ffa058b278e06c34829eb2a0da3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67518714"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96827353"
 ---
-# <a name="bug-check-0xf7-driveroverranstackbuffer"></a>Bug 检查 0xF7：驱动程序\_OVERRAN\_堆栈\_缓冲区
+# <a name="bug-check-0xf7-driver_overran_stack_buffer"></a>Bug 检查0xF7：驱动程序 \_ OVERRAN \_ 堆栈 \_ 缓冲区
 
 
-该驱动程序\_OVERRAN\_堆栈\_缓冲区 bug 检查的值为 0x000000F7。 这表示一个驱动程序具有溢出基于堆栈的缓冲区。
+驱动程序 \_ OVERRAN \_ 堆栈 \_ 缓冲区 bug 检查的值为0x000000F7。 这表明驱动程序已溢出基于堆栈的缓冲区。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题面向程序员。 如果您是在使用计算机时收到蓝屏错误代码的客户，请参阅[蓝屏错误疑难解答](https://www.windows.com/stopcode)。
 
 
-## <a name="driveroverranstackbuffer-parameters"></a>驱动程序\_OVERRAN\_堆栈\_缓冲区参数
+## <a name="driver_overran_stack_buffer-parameters"></a>驱动程序 \_ OVERRAN \_ 堆栈 \_ 缓冲参数
 
 
 <table>
@@ -46,15 +45,15 @@ ms.locfileid: "67518714"
 <tbody>
 <tr class="odd">
 <td align="left"><p>1</p></td>
-<td align="left"><p>实际的安全检查 cookie 从堆栈</p></td>
+<td align="left"><p>堆栈中的实际安全检查 cookie</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>2</p></td>
-<td align="left"><p>预计的安全检查 cookie</p></td>
+<td align="left"><p>预期的安全检查 cookie</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>3</p></td>
-<td align="left"><p>预计的安全检查 cookie 位求补</p></td>
+<td align="left"><p>预期安全检查 cookie 的位补码</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>4</p></td>
@@ -68,16 +67,16 @@ ms.locfileid: "67518714"
 <a name="cause"></a>原因
 -----
 
-驱动程序溢出本来会被覆盖函数的返回地址和该函数返回时，跳转回任意地址的方式基于堆栈的缓冲区 （或本地变量）。
+驱动程序 overran 基于堆栈的缓冲区 (或局部变量) 的方式将覆盖函数的返回地址，并在函数返回时跳回到任意地址。
 
-这是一种典型"缓冲区溢出"黑客攻击。 系统已关闭以防止恶意用户获得完全控制。
+这是典型的 "缓冲区溢出" 黑客攻击。 系统已关闭，以防止恶意用户完全控制它。
 
-<a name="resolution"></a>分辨率
+<a name="resolution"></a>解决方法
 ----------
 
-使用[ **kb （显示堆栈回溯）** ](k--kb--kc--kd--kp--kp--kv--display-stack-backtrace-.md)命令来获取堆栈跟踪。
+使用 [**kb (显示 Stack Backtrace)**](k--kb--kc--kd--kp--kp--kv--display-stack-backtrace-.md) 命令获取堆栈跟踪。
 
-之前的缓冲区溢出处理程序和 bug 检查调用堆栈上的最后一个例程是溢出其本地变量。
+在缓冲区溢出处理程序和 bug 检查调用之前，堆栈上的最后一个例程是 overran 其局部变量的。
 
  
 

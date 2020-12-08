@@ -1,18 +1,17 @@
 ---
 title: 在后操作回调例程中让 I/O 操作失败
 description: 在后操作回调例程中让 I/O 操作失败
-ms.assetid: 45897bca-1573-42c5-ad00-3198b7362d9e
 keywords:
 - postoperation 回调例程 WDK 文件系统微筛选器，失败的操作
 - 失败 i/o 操作 WDK 文件系统微筛选器
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 376049e6ec0c8dce10505a799e33ef30648a1803
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 3af9f7567e953ccf8122a17660c0f03c8e0f8bd2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89063690"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96826533"
 ---
 # <a name="failing-an-io-operation-in-a-postoperation-callback-routine"></a>在后操作回调例程中让 I/O 操作失败
 

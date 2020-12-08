@@ -1,10 +1,9 @@
 ---
 title: .ignore_missing_pages（隐藏缺少页面错误）
-description: 内核内存转储具有缺少页时，.ignore_missing_pages 命令禁止显示错误消息。
-ms.assetid: 74f4944e-6f0b-4541-b32f-a2da58df7f03
+description: .Ignore_missing_pages 命令将禁止内核内存转储缺少页面时出现的错误消息。
 keywords:
-- 禁止显示缺少的页面错误 (.ignore_missing_pages) 命令
-- .ignore_missing_pages （取消显示缺少的页面错误） Windows 调试
+- 取消 .ignore_missing_pages) 命令 ( 缺少的页错误
+- .ignore_missing_pages (取消) Windows 调试时丢失的页错误
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -13,17 +12,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 4ef9064462f24c7e48d6bf16bbdf9bbb9aad2488
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4788b3f32a53e0f08981670c874174172bcdc2e4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63336469"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96826959"
 ---
-# <a name="ignoremissingpages-suppress-missing-page-errors"></a>.ignore\_缺少\_页 （取消显示缺少的页错误）
+# <a name="ignore_missing_pages-suppress-missing-page-errors"></a>。忽略 \_ 缺失 \_ 页 (取消丢失页错误) 
 
 
-**.Ignore\_缺少\_页面**内核内存转储具有缺少页时，命令禁止显示错误消息。
+如果内核内存转储缺少页面，则 " **忽略 \_ 缺失 \_ 页面** " 命令将取消显示错误消息。
 
 ```dbgcmd
 .ignore_missing_pages 0
@@ -31,14 +30,14 @@ ms.locfileid: "63336469"
 .ignore_missing_pages 
 ```
 
-## <a name="span-idddkmetasuppressmissingpageerrorsdbgspanspan-idddkmetasuppressmissingpageerrorsdbgspanparameters"></a><span id="ddk_meta_suppress_missing_page_errors_dbg"></span><span id="DDK_META_SUPPRESS_MISSING_PAGE_ERRORS_DBG"></span>参数
+## <a name="span-idddk_meta_suppress_missing_page_errors_dbgspanspan-idddk_meta_suppress_missing_page_errors_dbgspanparameters"></a><span id="ddk_meta_suppress_missing_page_errors_dbg"></span><span id="DDK_META_SUPPRESS_MISSING_PAGE_ERRORS_DBG"></span>参数
 
 
-<span id="_______0______"></span> **0**   
-内核内存转储调试时显示所有缺少的页面错误。 这是调试器的默认行为。
+<span id="_______0______"></span>**0**   
+在调试内核内存转储时显示所有缺少的页错误。 这是调试器的默认行为。
 
 <span id="_______1"></span> **1**  
-禁止显示调试内核内存转储时缺少的页面错误。
+禁止在调试内核内存转储时显示丢失的页错误。
 
 ### <a name="span-idenvironmentspanspan-idenvironmentspanspan-idenvironmentspanenvironment"></a><span id="Environment"></span><span id="environment"></span><span id="ENVIRONMENT"></span>环境
 
@@ -49,12 +48,12 @@ ms.locfileid: "63336469"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>模式</strong></p></td>
-<td align="left"><p>内核模式下</p></td>
+<td align="left"><p><strong>交货</strong></p></td>
+<td align="left"><p>仅限内核模式</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>目标</strong></p></td>
-<td align="left"><p>转储文件仅限调试</p></td>
+<td align="left"><p>仅转储文件调试</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>平台</strong></p></td>
@@ -65,14 +64,14 @@ ms.locfileid: "63336469"
 
  
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-详细了解如何调试这些转储文件，请参阅[内核内存转储](kernel-memory-dump.md)。
+有关如何调试这些转储文件的详细信息，请参阅 [内核内存转储](kernel-memory-dump.md)。
 
 <a name="remarks"></a>备注
 -------
 
-不带参数， **.ignore\_缺少\_页面**显示此设置的当前状态。
+如果没有参数，则 " **忽略 \_ 缺失 \_ 页** " 会显示此设置的当前状态。
 
  
 

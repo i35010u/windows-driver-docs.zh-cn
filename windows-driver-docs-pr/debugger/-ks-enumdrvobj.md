@@ -1,9 +1,8 @@
 ---
-title: ks.enumdrvobj
-description: Ks.enumdrvobj 扩展显示与给定的 WDM 驱动程序对象关联的所有 KSDEVICE 结构，并列出的筛选器类型和当前实例化这些设备上的筛选器。
-ms.assetid: 8fcb8c83-48b6-402a-8374-6b1f0314837e
+title: ks. enumdrvobj
+description: Enumdrvobj 扩展显示与给定 WDM 驱动程序对象关联的所有 KSDEVICE 结构，并列出这些设备上当前实例化的筛选器类型和筛选器。
 keywords:
-- ks.enumdrvobj Windows 调试
+- enumdrvobj Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,29 +11,29 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: cfd0360f4136e74d60ab14057f1ab0c725a7ba89
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 45812356b52cc1571d63ef7bd8ce6d9df9c3f6e2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63336322"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96828301"
 ---
 # <a name="ksenumdrvobj"></a>!ks.enumdrvobj
 
 
-**！ Ks.enumdrvobj**扩展显示与给定的 WDM 驱动程序对象关联的所有 KSDEVICE 结构并列出了筛选器类型以及筛选器当前在这些设备上实例化。
+**Enumdrvobj** 扩展显示与给定 WDM 驱动程序对象关联的所有 KSDEVICE 结构，并列出这些设备上当前实例化的筛选器类型和筛选器。
 
 ```dbgcmd
 !ks.enumdrvobj DriverObject
 ```
 
-## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>参数
+## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>Parameters
 
 
-<span id="_______DriverObject______"></span><span id="_______driverobject______"></span><span id="_______DRIVEROBJECT______"></span> *DriverObject*   
+<span id="_______DriverObject______"></span><span id="_______driverobject______"></span><span id="_______DRIVEROBJECT______"></span>*DriverObject*   
 指定指向 WDM 驱动程序对象的指针。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 <table>
 <colgroup>
@@ -55,14 +54,14 @@ ms.locfileid: "63336322"
 
  
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-有关详细信息，请参阅[流式处理的内核调试](kernel-streaming-debugging.md)。
+有关详细信息，请参阅 [内核流调试](kernel-streaming-debugging.md)。
 
 <a name="remarks"></a>备注
 -------
 
-由于 **！ ks.enumdrvobj**枚举链接关闭 WDM 驱动程序对象的所有设备它相当于调用[ **！ ks.enumdevobj** ](-ks-enumdevobj.md)链接关闭每个设备上给定驱动程序。
+由于 **enumdrvobj** 枚举了链接到 WDM 驱动程序对象的每个设备，因此它等效于在与给定驱动程序链接的每个设备上调用 [**enumdevobj。**](-ks-enumdevobj.md)
 
  
 

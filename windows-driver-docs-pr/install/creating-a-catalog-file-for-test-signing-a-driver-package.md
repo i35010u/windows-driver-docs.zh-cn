@@ -1,18 +1,17 @@
 ---
 title: 创建用于对驱动程序包进行测试签名的目录文件
 description: 创建用于对驱动程序包进行测试签名的目录文件
-ms.assetid: 0bbb4dfa-d203-4618-946e-95d2896081ac
 keywords:
 - 测试签名驱动程序包 WDK，编录文件
 - 目录文件 WDK 驱动程序签名，创建
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d4ec453d036d2387a8e349fb49fe5806eb2f4a4d
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 785d86f9d973f65a58c9d02403d18c0cbae01d65
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91733183"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96827827"
 ---
 # <a name="creating-a-catalog-file-for-test-signing-a-driver-package"></a>创建用于对驱动程序包进行测试签名的目录文件
 
@@ -35,5 +34,5 @@ ms.locfileid: "91733183"
 
 对于这些类型的驱动程序，必须将数字签名嵌入驱动程序中。 有关此过程的详细信息，请参阅 [通过嵌入签名对驱动程序进行测试签名](test-signing-a-driver-through-an-embedded-signature.md)。
 
-有关如何创建目录文件的详细信息，请参阅为 [测试签名的驱动程序包创建编录文件](creating-a-catalog-file-for-a-test-signed-driver-package.md)。
+有关如何创建目录文件的详细信息，请参阅为 [Test-Signed 驱动程序包创建编录文件](creating-a-catalog-file-for-a-test-signed-driver-package.md)。
 

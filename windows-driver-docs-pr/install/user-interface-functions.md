@@ -1,15 +1,14 @@
 ---
 title: 用户界面函数
 description: 用户界面函数
-ms.assetid: 30ec0628-cac7-46ab-a9f2-c81ca3ad7125
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6a366cd9e09620c518affff9e724f9c2f56831ff
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 5463475ee1f5e3e175dff7ee9c8bb4cfdcd8dd53
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90714882"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96827055"
 ---
 # <a name="user-interface-functions"></a>用户界面函数
 
@@ -24,7 +23,7 @@ ms.locfileid: "90714882"
 <thead>
 <tr class="header">
 <th align="left">函数</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>

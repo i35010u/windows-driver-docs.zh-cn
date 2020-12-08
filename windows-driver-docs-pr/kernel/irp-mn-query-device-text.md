@@ -2,16 +2,15 @@
 title: IRP_MN_QUERY_DEVICE_TEXT
 description: PnP 管理器使用此 IRP 获取设备的说明或位置信息。如果总线支持此信息，则总线驱动程序必须为其子设备处理此请求。 函数和筛选器驱动程序不处理此 IRP。
 ms.date: 08/12/2017
-ms.assetid: 07661709-8929-4567-a05f-96d995862ee6
 keywords:
-- IRP_MN_QUERY_DEVICE_TEXT 内核模式驱动程序体系结构
+- IRP_MN_QUERY_DEVICE_TEXT Kernel-Mode 驱动程序体系结构
 ms.localizationpriority: medium
-ms.openlocfilehash: 5b4477a6b46db1421ccf629a1a144800e7aff2f1
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 940b6e46231f1a0badb92da313b575acce7dc29b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103150"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96827611"
 ---
 # <a name="irp_mn_query_device_text"></a>IRP \_ MN \_ 查询 \_ 设备 \_ 文本
 
@@ -39,7 +38,7 @@ PnP 管理器在 \_ 任意线程上下文中以 IRQL 被动级别发送此 IRP�
 ## <a name="input-parameters"></a>输入参数
 
 
-[**IO \_ 堆栈 \_ 位置**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_stack_location)结构的**QueryDeviceText. DeviceTextType**成员是一个**设备 \_ 文本 \_ 类型**值，指定请求的字符串。 **设备 \_ 文本 \_ 类型**的可能值包括**DeviceTextDescription**和**DeviceTextLocationInformation**。
+[**IO \_ 堆栈 \_ 位置**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_stack_location)结构的 **QueryDeviceText. DeviceTextType** 成员是一个 **设备 \_ 文本 \_ 类型** 值，指定请求的字符串。 **设备 \_ 文本 \_ 类型** 的可能值包括 **DeviceTextDescription** 和 **DeviceTextLocationInformation**。
 
 **QueryDeviceText** 是指定所请求文本区域设置的 LCID。
 
@@ -66,7 +65,7 @@ PnP 管理器在 \_ 任意线程上下文中以 IRQL 被动级别发送此 IRP�
 
 如果设备未提供说明或位置信息，则设备的父总线驱动程序完成 IRP ([**IoCompleteRequest**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocompleterequest)) ，而不修改 **irp- &gt; IoStatus** 或 **irp- &gt; IoStatus**。
 
-函数和筛选器驱动程序不处理此 IRP;它们将其传递到下一个较低的驱动程序，并且不会更改 ** &gt; IoStatus**。
+函数和筛选器驱动程序不处理此 IRP;它们将其传递到下一个较低的驱动程序，并且不会更改 **&gt; IoStatus**。
 
 支持不同区域设置的不同文本字符串的总线驱动程序应能够处理设备未显式支持的语言的请求。 在这种情况下，总线驱动程序应返回与区域设置最接近的匹配项，或者应回退并返回某些合适的受支持的区域设置字符串。
 

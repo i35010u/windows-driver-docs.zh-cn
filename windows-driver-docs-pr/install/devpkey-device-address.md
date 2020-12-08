@@ -1,7 +1,6 @@
 ---
 title: DEVPKEY_Device_Address
 description: DEVPKEY_Device_Address
-ms.assetid: 48951b9e-0bd0-4f56-9a6f-e8a5aa6c25c2
 keywords:
 - DEVPKEY_Device_Address 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: ce8abd5244b2819f5212848c0eb538857aa598c5
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 35df9a14861884cc09808fbc331c9c97288e425e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90717122"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96827681"
 ---
 # <a name="devpkey_device_address"></a>DEVPKEY_Device_Address
 
@@ -66,7 +65,7 @@ DEVPKEY_Device_Address 设备属性表示设备实例的特定于总线的地址
 <a name="remarks"></a>备注
 -------
 
-Windows 将 DEVPKEY_Device_Address 的值设置为其总线上设备的地址。 有关设备地址解释的信息，请参阅[**IoGetDeviceProperty**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetdeviceproperty)的*DeviceProperty*参数的**DevicePropertyAddress**值。
+Windows 将 DEVPKEY_Device_Address 的值设置为其总线上设备的地址。 有关设备地址解释的信息，请参阅 [**IoGetDeviceProperty**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetdeviceproperty)的 *DeviceProperty* 参数的 **DevicePropertyAddress** 值。
 
 可以调用 [**SetupDiGetDeviceProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdigetdevicepropertyw) 来检索 DEVPKEY_Device_Address 的值。
 

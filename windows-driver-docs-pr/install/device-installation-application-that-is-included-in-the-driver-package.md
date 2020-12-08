@@ -1,15 +1,14 @@
 ---
 title: 驱动程序包中包含的设备安装应用程序
 description: 包含在驱动程序包中的设备安装应用程序
-ms.assetid: bd6e182c-6b7a-4cde-bcc7-637ae6bf39be
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0be1de27f776b43a280c1757264c611f7d40015d
-ms.sourcegitcommit: a44ade167cdfb541cf1818e9f9e3726f23f90b66
+ms.openlocfilehash: eca39315d6d256f9166d0ec849a38abf8fc52118
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94361307"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96827721"
 ---
 # <a name="device-installation-application-that-is-included-in-the-driver-package"></a>包含在驱动程序包中的设备安装应用程序
 

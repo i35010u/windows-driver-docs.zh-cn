@@ -1,7 +1,6 @@
 ---
 title: 'KsTimedPinSetDeviceState 规则 ( # A1'
 description: KsTimedPinSetDeviceState 规则指定 AVStream (KS) 微型端口驱动程序在所需时间内使用 AVStream 微型驱动程序的 AVStrMiniPinSetDeviceState 例程进行状态转换。
-ms.assetid: 2BDA0358-A3B1-4A47-AA08-8B086041BC52
 ms.date: 05/21/2018
 keywords:
 - 'KsTimedPinSetDeviceState 规则 ( # A1'
@@ -12,12 +11,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 9329ef4f356382ba7e788f31da50875b0d63a134
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 847eeaed7e75e0673761d029b28c955bc6840711
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90101502"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96826709"
 ---
 # <a name="kstimedpinsetdevicestate-rule-"></a>KsTimedPinSetDeviceState 规则 ( # A1
 
@@ -53,7 +52,7 @@ KsTimedPinSetDeviceState 规则指定 AVStream (KS) 微型端口驱动程序在�
 
  
 
-<a name="see-also"></a>另请参阅
+<a name="see-also"></a>请参阅
 --------
 
 [*AVStrMiniPinSetDeviceState*](/windows-hardware/drivers/ddi/ks/nc-ks-pfnkspinsetdevicestate)

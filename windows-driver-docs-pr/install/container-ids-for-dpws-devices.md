@@ -1,15 +1,14 @@
 ---
 title: DPWS 设备的容器 ID
 description: DPWS 设备的容器 ID
-ms.assetid: b613a25e-bedf-481c-8c86-9486af01b2ba
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d91b04536745d444374cefb865fe21a7fa3f3f30
-ms.sourcegitcommit: 67efcd26f7be8f50c92b141ccd14c9c68f4412d8
+ms.openlocfilehash: fe12ae6121212dedc6a2d2c72294640be667f759
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88902397"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96827855"
 ---
 # <a name="container-ids-for-dpws-devices"></a>DPWS 设备的容器 ID
 

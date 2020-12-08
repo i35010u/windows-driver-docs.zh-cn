@@ -1,7 +1,6 @@
 ---
 title: DEVPKEY_Device_Capabilities
 description: DEVPKEY_Device_Capabilities
-ms.assetid: 8bda0c77-b711-41a9-9feb-52b22de224f0
 keywords:
 - DEVPKEY_Device_Capabilities 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 23b30b738180b91a2d20f0bc7c35e84a42ae7dc5
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 6b8100a05ae70a37b46c036269fe80c0a759c93c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90715594"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96827667"
 ---
 # <a name="devpkey_device_capabilities"></a>DEVPKEY_Device_Capabilities
 
@@ -66,7 +65,7 @@ DEVPKEY_Device_Capabilities 设备属性表示设备实例的功能。
 <a name="remarks"></a>备注
 -------
 
-Windows 将 DEVPKEY_Device_Capabilities 的值设置为响应设备功能信息的 [**IRP_MN_QUERY_CAPABILITIES**](../kernel/irp-mn-query-capabilities.md) 请求而返回的功能值。 DEVPKEY_Device_Capabilities 的值是在 Cfgmgr32 中定义的 CM_DEVCAP_*Xxx* 功能标志的按位 "或"。 这些标志所表示的设备功能对应于 [**DEVICE_CAPABILITIES**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_device_capabilities) 结构的成员的一个子集。
+Windows 将 DEVPKEY_Device_Capabilities 的值设置为响应设备功能信息的 [**IRP_MN_QUERY_CAPABILITIES**](../kernel/irp-mn-query-capabilities.md) 请求而返回的功能值。 DEVPKEY_Device_Capabilities 的值是在 Cfgmgr32 中定义的 CM_DEVCAP_ *Xxx* 功能标志的按位 "或"。 这些标志所表示的设备功能对应于 [**DEVICE_CAPABILITIES**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_device_capabilities) 结构的成员的一个子集。
 
 可以调用 [**SetupDiGetDeviceProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdigetdevicepropertyw) 来检索 DEVPKEY_Device_Capabilities 的值。
 

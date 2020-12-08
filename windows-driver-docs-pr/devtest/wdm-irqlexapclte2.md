@@ -1,7 +1,6 @@
 ---
 title: 'IrqlExApcLte2 规则 (wdm) '
 description: IrqlExApcLte2 规则指定驱动程序仅在 IRQL APC 级别调用以下例程 \_ 。
-ms.assetid: 5800ec58-2084-4092-9614-dd631458c7dd
 ms.date: 05/21/2018
 keywords:
 - 'IrqlExApcLte2 规则 (wdm) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: b891c787ddb8bac88b39e0b904b86fc5fc4fb0f2
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: bc3b5bc46afe63b7bb17ae09de90c736939ad779
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105564"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96828131"
 ---
 # <a name="irqlexapclte2-rule-wdm"></a>IrqlExApcLte2 规则 (wdm) 
 
 
-**IrqlExApcLte2**规则指定该驱动程序仅在 IRQL &lt; = APC 级别调用以下例程 \_ 。
+**IrqlExApcLte2** 规则指定该驱动程序仅在 IRQL &lt; = APC 级别调用以下例程 \_ 。
 
 -   [**CmRegisterCallback**](/windows-hardware/drivers/ddi/wdm/nf-wdm-cmregistercallback)
 

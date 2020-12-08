@@ -1,7 +1,6 @@
 ---
 title: 设备管理器详细信息 "选项卡
 description: 设备管理器详细信息 "选项卡
-ms.assetid: 5f1e345f-72c6-4bd4-a0fa-304e5d0d91be
 keywords:
 - 设备管理器 WDK，详细信息选项卡
 - 固件修订号 WDK 设备管理器
@@ -9,12 +8,12 @@ keywords:
 - 详细信息选项卡 WDK 设备管理器
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8276cec75fad78c0696372de857be1e6482ffd07
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 73262db80933e296c4aea41ca4143e37dac34c8a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89096503"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96827707"
 ---
 # <a name="device-manager-details-tab"></a>设备管理器详细信息 "选项卡
 

@@ -1,7 +1,6 @@
 ---
 title: FSCTL_ADD_OVERLAY 控制代码
 description: FSCTL \_ ADD \_ 叠加控制代码将新的外部后备源添加到卷的命名空间。 此后备源可以是 Windows 映像格式 (WIM) 文件。
-ms.assetid: 0507ECDE-49C6-4EC4-87D6-76D6475620F4
 keywords:
 - FSCTL_ADD_OVERLAY 控制代码可安装的文件系统驱动程序
 topic_type:
@@ -14,36 +13,36 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5499d57e2064c2e7399a8acd1a78d91dd813385f
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 301281089927163a88cfa032d54a7376592b3cd5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89066526"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96826853"
 ---
 # <a name="fsctl_add_overlay-control-code"></a>FSCTL \_ 添加 \_ 覆盖控制代码
 
 
-**FSCTL \_ ADD \_ 叠加**控制代码将新的外部后备源添加到卷的命名空间。 此后备源可以是 Windows 映像格式 (WIM) 文件。
+**FSCTL \_ ADD \_ 叠加** 控制代码将新的外部后备源添加到卷的命名空间。 此后备源可以是 Windows 映像格式 (WIM) 文件。
 
 若要执行此操作，请调用具有以下参数的 [**FltFsControlFile**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltfscontrolfile) 或 [**ZwFsControlFile**](/previous-versions/ff566462(v=vs.85)) 。
 
-**参数**
+**Parameters**
 
 <a href="" id="instance--in-"></a>*实例 \[\]*  
-仅[**FltFsControlFile**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltfscontrolfile) 。 调用方的不透明实例指针。 此参数是必需的，不能为 NULL。
+仅 [**FltFsControlFile**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltfscontrolfile) 。 调用方的不透明实例指针。 此参数是必需的，不能为 NULL。
 
 <a href="" id="fileobject--in-"></a>*FileObject \[ in\]*  
-仅[**FltFsControlFile**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltfscontrolfile) 。 要向其添加覆盖的卷的文件指针对象。 此参数是必需的，不能为 NULL。
+仅 [**FltFsControlFile**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltfscontrolfile) 。 要向其添加覆盖的卷的文件指针对象。 此参数是必需的，不能为 NULL。
 
 <a href="" id="filehandle--in-"></a>*FileHandle \[\]*  
-仅[**ZwFsControlFile**](/previous-versions/ff566462(v=vs.85)) 。 要向其添加覆盖的卷的句柄。 此参数是必需的，不能为 NULL。
+仅 [**ZwFsControlFile**](/previous-versions/ff566462(v=vs.85)) 。 要向其添加覆盖的卷的句柄。 此参数是必需的，不能为 NULL。
 
 <a href="" id="fscontrolcode--in-"></a>*FsControlCode \[\]*  
-操作的控制代码。 使用 FSCTL 为此操作 ** \_ 添加 \_ 覆盖** 区。
+操作的控制代码。 使用 FSCTL 为此操作 **\_ 添加 \_ 覆盖** 区。
 
 <a href="" id="inputbuffer"></a>*InputBuffer*  
-指向输入缓冲区的指针，该缓冲区必须包含 [**WOF \_ 外部 \_ 信息**](/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_wof_external_info) 结构。 如果需要，其他提供程序特定的数据将立即包含在 **WOF \_ 外部 \_ 信息**之后。
+指向输入缓冲区的指针，该缓冲区必须包含 [**WOF \_ 外部 \_ 信息**](/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_wof_external_info) 结构。 如果需要，其他提供程序特定的数据将立即包含在 **WOF \_ 外部 \_ 信息** 之后。
 
 <a href="" id="inputbufferlength--in-"></a>*InputBufferLength \[\]*  
 设置为 **sizeof** ([**WOF \_ 外部 \_ 信息**](/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_wof_external_info)) 以及任何其他提供程序输入数据的大小。
@@ -52,12 +51,12 @@ ms.locfileid: "89066526"
 指向输出缓冲区的指针，其中包含来自添加操作的所有结果信息。
 
 <a href="" id="outputbufferlength--out-"></a>*OutputBufferLength \[\]*  
-*OutputBuffer*所指向的缓冲区大小。
+*OutputBuffer* 所指向的缓冲区大小。
 
 <a name="status-block"></a>状态块
 ------------
 
-如果操作成功，则[**FltFsControlFile**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltfscontrolfile)或[**ZwFsControlFile**](/previous-versions/ff566462(v=vs.85))返回状态 \_ SUCCESS。 否则，相应的函数可能会返回以下 NTSTATUS 值之一。
+如果操作成功，则 [**FltFsControlFile**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltfscontrolfile)或 [**ZwFsControlFile**](/previous-versions/ff566462(v=vs.85))返回状态 \_ SUCCESS。 否则，相应的函数可能会返回以下 NTSTATUS 值之一。
 
 <table>
 <colgroup>
@@ -67,7 +66,7 @@ ms.locfileid: "89066526"
 <thead>
 <tr class="header">
 <th align="left">术语</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -119,7 +118,7 @@ ms.locfileid: "89066526"
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**FSCTL \_ 删除 \_ 覆盖**](fsctl-remove-overlay.md)

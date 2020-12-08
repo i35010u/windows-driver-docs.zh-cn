@@ -1,19 +1,18 @@
 ---
 title: 图形系统概述
 description: 图形系统概述
-ms.assetid: d120a9df-d8ed-4862-b421-2e7545be1ed0
 keywords:
 - GDI WDK Windows 2000 显示，关于图形系统
 - 图形驱动程序 WDK Windows 2000 显示，关于图形系统
 - 绘制 WDK GDI，关于图形系统
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5c986b25b40b9577d27d4a7436b9fb716ea40d0e
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 00cb93b7d489c8cb23de9cdc8a0f937b80970366
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89064182"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96827297"
 ---
 # <a name="graphics-system-overview"></a>图形系统概述
 

@@ -1,9 +1,8 @@
 ---
-title: ks.eval
-description: Ks.eval 扩展计算表达式中使用的特定于扩展的表达式计算器。
-ms.assetid: 68c9cfb0-ff87-47ea-bd0d-5f45c1de0639
+title: ks. eval
+description: Ks extension 使用扩展特定的表达式计算器来计算表达式的值。
 keywords:
-- ks.eval Windows 调试
+- ks eval Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,29 +11,29 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 8e5c02094509d424108666be077921e1daebc424
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b61d864c4cda5ce3c9333fd2396c71f2dfcaa2d2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63336289"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96828297"
 ---
 # <a name="kseval"></a>!ks.eval
 
 
-**！ Ks.eval**扩展的计算结果表达式中使用的特定于扩展的表达式计算器。
+**！ Ks** extension 使用扩展特定的表达式计算器来计算表达式的值。
 
 ```dbgcmd
 !ks.eval Expression 
 ```
 
-## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>参数
+## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>Parameters
 
 
-<span id="_______Expression______"></span><span id="_______expression______"></span><span id="_______EXPRESSION______"></span> *表达式*   
-指定要计算的表达式。 *表达式*可以包含任何 MASM 运算符、 符号或数字语法，以及下面所述的特定于扩展的运算符。 MASM 表达式的详细信息，请参阅[MASM 数字和运算符](masm-numbers-and-operators.md)。
+<span id="_______Expression______"></span><span id="_______expression______"></span><span id="_______EXPRESSION______"></span>*表达式*   
+指定要计算的表达式。 *表达式* 可以包含任何 MASM 运算符、符号或数字语法，还可以包含下面描述的扩展特定的运算符。 有关 MASM 表达式的详细信息，请参阅 [Masm 数字和运算符](masm-numbers-and-operators.md)。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 <table>
 <colgroup>
@@ -55,26 +54,26 @@ ms.locfileid: "63336289"
 
  
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-有关详细信息，请参阅[流式处理的内核调试](kernel-streaming-debugging.md)。
+有关详细信息，请参阅 [内核流调试](kernel-streaming-debugging.md)。
 
 <a name="remarks"></a>备注
 -------
 
-扩展模块地址参数扩展命令中包括可用于两个特定于扩展的运算符：
+扩展模块包括两个特定于扩展的运算符，可用于扩展命令的 address 参数：
 
-<span id="________fdo_________x_________"></span><span id="________FDO_________X_________"></span> **fdo(** *x* **)**  
-返回与地址处的对象关联的功能的设备对象**x**。
+<span id="________fdo_________x_________"></span><span id="________FDO_________X_________"></span>**fdo (** *x* **)**  
+返回与地址 **x** 上的对象关联的功能设备对象。
 
-<span id="________driver_________x_________"></span><span id="________DRIVER_________X_________"></span> **driver(** *x* **)**  
-返回与关联的驱动程序对象**fdo (**<em>x</em>**)**。
+<span id="________driver_________x_________"></span><span id="________DRIVER_________X_________"></span>**驱动程序 (** *x* **)**  
+返回与 **fdo (** <em>x</em> **)** 相关联的驱动程序对象。
 
-可以使用 **！ ks.eval**命令包含这些扩展插件特定的运算符的表达式进行分析，以及[MASM 数字和运算符](masm-numbers-and-operators.md)。
+您可以使用 **！ ks. eval** 命令分析包含这些特定于扩展的运算符以及 [MASM 数字和运算符](masm-numbers-and-operators.md)的表达式。
 
-请注意，所有运算符都受 **！ ks.eval** Ks.dll 扩展模块中的所有其他扩展命令也都支持。
+请注意，Ks.dll 扩展模块中的所有其他扩展命令也支持 **！ ks** 所支持的所有运算符。
 
-下面是举例 **！ ks.eval**正在使用的地址筛选器扩展插件。 请注意在 0x8241C020 地址是否存在[ **！ ks.allstreams** ](-ks-allstreams.md)输出：
+下面是用于筛选器地址的 **！ ks. eval** 扩展的一个示例。 请注意，0x8241C020 地址存在于 [**！ allstreams**](-ks-allstreams.md) 输出中：
 
 ```dbgcmd
 kd> !eval fdo(829493c4)

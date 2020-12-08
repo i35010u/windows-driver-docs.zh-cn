@@ -1,18 +1,17 @@
 ---
 title: 64 位系统上的设备安装
 description: 64 位系统上的设备安装
-ms.assetid: 76d9bff7-6429-4d20-9790-a41ed2cb1bdd
 keywords:
 - 64位 WDK 设备安装
 - 设备安装 WDK，64位系统
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9ca2dd74a0ca1cb7d902b40fa6afdcc84a701659
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 5eebd3053d0df764b7cc47163da7a2611300a9e5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90717124"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96827709"
 ---
 # <a name="device-installations-on-64-bit-systems"></a>64 位系统上的设备安装
 
@@ -22,7 +21,7 @@ ms.locfileid: "90717124"
 
 如果你的设备将安装在32位平台和64位平台上，则必须在创建 [驱动程序包](driver-packages.md)时执行以下步骤：
 
--   同时为所有内核模式驱动程序、 *设备安装应用程序*、 *类*安装程序和 *共同安装*程序提供32位和64位的编译。 有关详细信息，请参阅将 [驱动程序移植到64位 Windows](../kernel/porting-your-driver-to-64-bit-windows.md)。
+-   同时为所有内核模式驱动程序、 *设备安装应用程序*、 *类* 安装程序和 *共同安装* 程序提供32位和64位的编译。 有关详细信息，请参阅将 [驱动程序移植到64位 Windows](../kernel/porting-your-driver-to-64-bit-windows.md)。
 
 -   提供一个或多个跨平台 INF 文件，这些文件使用 *修饰的 inf 节* 来控制特定于平台的安装行为。
 

@@ -1,22 +1,21 @@
 ---
 title: 按钮报告
 description: 基于在按钮数组的已定义 GPIO 资源上收到的中断，内置常规用途 i/o (GPIO) 按钮驱动程序向 Windows 报告。
-ms.assetid: 7D96E1CB-3406-4D61-9D5C-65BC6BFD1FFA
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 67c037ae6d886c96df3825efad6bd8385fb47319
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: a538d70f60d786b002eeb66098eaeb1d64069c2d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104106"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96827171"
 ---
 # <a name="button-reporting"></a>按钮报告
 
 
 基于在按钮数组的已定义 GPIO 资源上收到的中断，内置常规用途 i/o (GPIO) 按钮驱动程序向 Windows 报告。
 
-内置的 GPIO 按钮驱动程序报告 *表 1 GPIO 按钮报告*中列出的按钮按下和组合。
+内置的 GPIO 按钮驱动程序报告 *表 1 GPIO 按钮报告* 中列出的按钮按下和组合。
 
 **表 1 GPIO 按钮报告**
 
@@ -26,7 +25,7 @@ ms.locfileid: "90104106"
 | 调高音量     | 是                     | 是                  | 双向                                |
 | 减小音量   | 是                     | 是                  | 双向                                |
 | 旋转锁定 | 否                      | 是                  | 双向                                |
-| 电源         | 是                     | 是                  | 双向                                |
+| 强力         | 是                     | 是                  | 双向                                |
 
  
 
@@ -34,19 +33,20 @@ ms.locfileid: "90104106"
 
 定义顺序为 "电源"、"Windows"、"音量增加"、"音量减少" 和 "旋转锁定"。 有关如何为这些类创建 HID 描述符的示例，请参阅 [hid 按钮报告描述符](hid-button-report-descriptors.md)。
 
-**注意**   以前的要求描述了使用**Win + O**进行旋转锁定。 尽管此组合仍然起作用，但它并不受键盘布局更改，而 **Win + F14** 是不可知的。
+**注意**  
+以前的要求描述了使用 **Win + O** 进行旋转锁定。 尽管此组合仍然起作用，但它并不受键盘布局更改，而 **Win + F14** 是不可知的。
 
  
 
 **表2非 GPIO 按钮的报表触发器**
 
-| 单个按钮报告 | 源              | 用法要求      | 报表触发器         | 重复 |
+| 单个按钮报告 | Source              | 用法要求      | 报表触发器         | 重复 |
 |-----------------------------|---------------------|-------------------------|------------------------|----------|
-| 电源                       | 系统控制      | 0x84 (Power)             | 物理按钮–向上键   | 否       |
-| Windows                     | 键盘            | 0xE3 (Win)               | 物理按钮–向上键   | 否       |
+| 强力                       | 系统控制      | 0x84 (Power)             | 物理按钮–向上键   | 否       |
+| Windows                     | Keyboard            | 0xE3 (Win)               | 物理按钮–向上键   | 否       |
 | 调高音量                   | 使用者集合 | 0xE9 (容量)         | 物理按钮–按下 | 是      |
 | 减小音量                 | 使用者集合 | 0xEA (音量降低)       | 物理按钮–按下 | 是      |
-| 旋转锁定               | 键盘            | 0xE3 = 0x69 (Win + F14)  | 物理按钮–按下 | 否       |
+| 旋转锁定               | Keyboard            | 0xE3 = 0x69 (Win + F14)  | 物理按钮–按下 | 否       |
 
  
 
@@ -96,7 +96,7 @@ ms.locfileid: "90104106"
 
  
 
-**注意**  
+**注意**  
 -   有关电源按钮的完整指导和实现，请参阅 [电源按钮行为和实现](/collaborate/connect-redirect?DownloadID=47452)。
 -   有关按钮的连接备用指南，请参阅 [连接备用唤醒源](/collaborate/connect-redirect?DownloadID=49891)。
 -   有关 ACPI 实现的其他指导，请参阅 [Acpi 设计指南](/collaborate/connect-redirect?DownloadID=48755)。

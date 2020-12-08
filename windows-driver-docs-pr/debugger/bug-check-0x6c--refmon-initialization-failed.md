@@ -1,7 +1,6 @@
 ---
 title: Bug 检查 0x6C REFMON_INITIALIZATION_FAILED
-description: REFMON_INITIALIZATION_FAILED bug 检查的值为 0x0000006C.This bug 检查极少出现。
-ms.assetid: a312eb27-56dd-45e5-97d1-8ab4846fd31a
+description: REFMON_INITIALIZATION_FAILED bug 检查的值为0x0000006C。此 bug 检查很少出现。
 keywords:
 - Bug 检查 0x6C REFMON_INITIALIZATION_FAILED
 - REFMON_INITIALIZATION_FAILED
@@ -13,22 +12,22 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 983748c45b272dd15e8f31bef9cb01b78c795abb
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: faf719e4c765f8e3465ba705f1c30750ddad6dbf
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67519259"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96828269"
 ---
-# <a name="bug-check-0x6c-refmoninitializationfailed"></a>Bug 检查 0x6C：REFMON\_初始化\_失败
+# <a name="bug-check-0x6c-refmon_initialization_failed"></a>Bug 检查0x6C： REFMON \_ 初始化 \_ 失败
 
 
-REFMON\_初始化\_失败错误检查的值为 0x0000006C。
+REFMON \_ 初始化 \_ 失败 bug 检查的值为0x0000006C。
 
-检查此错误极少出现。
+此 bug 检查很少出现。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题面向程序员。 如果您是在使用计算机时收到蓝屏错误代码的客户，请参阅[蓝屏错误疑难解答](https://www.windows.com/stopcode)。
 
 
  

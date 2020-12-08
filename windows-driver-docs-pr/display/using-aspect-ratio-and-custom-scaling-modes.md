@@ -1,23 +1,22 @@
 ---
 title: 使用纵横比和自定义缩放模式
 description: 使用纵横比和自定义缩放模式
-ms.assetid: cafb6597-64a2-4d0f-bf7b-ab37f9a53bdc
 keywords:
 - 纵横比调整 WDK 显示
 - 自定义缩放 WDK 显示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 62d5f6c7e8db9e5e6856ae105a44e9a0b1101458
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: a57a576c5599704315ece73f8083537d0a467f01
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90717576"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96826579"
 ---
 # <a name="using-aspect-ratio-and-custom-scaling-modes"></a>使用纵横比和自定义缩放模式
 
 
-若要支持纵横比，请从 Windows 7 (（其中**DXGKDDI \_ 接口 \_ 版本**DXGKDDI interface 版本) WIN7）开始保留扩展的缩放模式和自定义缩放模式 &gt; =  ，将以下功能添加到显示微型端口驱动程序使用的 VidPN 显示路径数据中： ** \_ \_ \_ **
+若要支持纵横比，请从 Windows 7 (（其中 **DXGKDDI \_ 接口 \_ 版本** DXGKDDI interface 版本) WIN7）开始保留扩展的缩放模式和自定义缩放模式 &gt; =  ，将以下功能添加到显示微型端口驱动程序使用的 VidPN 显示路径数据中： **\_ \_ \_**
 
 -   [**D3DKMDT \_VIDPN \_ 显示 \_ 路径 \_ 缩放 \_ 支持**](/windows-hardware/drivers/ddi/d3dkmdt/ns-d3dkmdt-_d3dkmdt_vidpn_present_path_scaling_support) 结构：
 
@@ -32,13 +31,13 @@ ms.locfileid: "90717576"
 [缩放桌面映像](scaling-the-desktop-image.md)中介绍了使用这些缩放模式的监视器上桌面的行为和外观。 当显示模式管理器 (CALL CENTER.DMM) 调用 [*DxgkDdiEnumVidPnCofuncModality*](/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_enumvidpncofuncmodality) 函数时，驱动程序必须根据 VIDPN 显示路径支持的缩放类型设置 [**D3DKMDT \_ VIDPN \_ 现有 \_ 路径 \_ 缩放 \_ 支持**](/windows-hardware/drivers/ddi/d3dkmdt/ns-d3dkmdt-_d3dkmdt_vidpn_present_path_scaling_support) 的成员，如下所示：
 
 <span id="________Identity_Scaling_______"></span><span id="________identity_scaling_______"></span><span id="________IDENTITY_SCALING_______"></span> 标识缩放   
-如果路径可以显示不带转换的内容，请将[**D3DKMDT \_ VIDPN \_ 显示 \_ 路径 \_ 缩放 \_ 支持**](/windows-hardware/drivers/ddi/d3dkmdt/ns-d3dkmdt-_d3dkmdt_vidpn_present_path_scaling_support)的**标识**成员设置为非零值。 调用[*DxgkDdiEnumVidPnCofuncModality*](/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_enumvidpncofuncmodality)时，请将[**D3DKMDT \_ vidpn \_ 显示 \_ 路径 \_ 转换**](/windows-hardware/drivers/ddi/d3dkmdt/ns-d3dkmdt-_d3dkmdt_vidpn_present_path_transformation)结构的**缩放**成员设置为**D3DKMDT \_ VPPS \_ 标识**。
+如果路径可以显示不带转换的内容，请将 [**D3DKMDT \_ VIDPN \_ 显示 \_ 路径 \_ 缩放 \_ 支持**](/windows-hardware/drivers/ddi/d3dkmdt/ns-d3dkmdt-_d3dkmdt_vidpn_present_path_scaling_support)的 **标识** 成员设置为非零值。 调用 [*DxgkDdiEnumVidPnCofuncModality*](/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_enumvidpncofuncmodality)时，请将 [**D3DKMDT \_ vidpn \_ 显示 \_ 路径 \_ 转换**](/windows-hardware/drivers/ddi/d3dkmdt/ns-d3dkmdt-_d3dkmdt_vidpn_present_path_transformation)结构的 **缩放** 成员设置为 **D3DKMDT \_ VPPS \_ 标识**。
 
 <span id="________Centered_Scaling_______"></span><span id="________centered_scaling_______"></span><span id="________CENTERED_SCALING_______"></span> 居中缩放   
 如果路径可以在目标上以无比例显示内容并居中显示，请设置 **D3DKMDT \_ VIDPN \_ 显示 \_ 路径 \_ 缩放 \_ 支持。居中**。 调用 [*DxgkDdiEnumVidPnCofuncModality*](/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_enumvidpncofuncmodality) 时，请设置 **D3DKMDT \_ VIDPN \_ 显示 \_ 路径 \_ 转换。缩放** 到 **D3DKMDT \_ VPPS \_ 居中**。
 
 <span id="________Stretched_Scaling_______"></span><span id="________stretched_scaling_______"></span><span id="________STRETCHED_SCALING_______"></span> 延伸缩放   
-如果路径可以显示缩放以适合目标的内容，而不保留源的纵横比，请设置 **D3DKMDT \_ VIDPN \_ 显示 \_ 路径 \_ 缩放 \_ 支持。拉伸**。 调用 [*DxgkDdiEnumVidPnCofuncModality*](/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_enumvidpncofuncmodality) 时，请设置 **D3DKMDT \_ VIDPN \_ 显示 \_ 路径 \_ 转换。横向扩展** 到 **D3DKMDT \_ VPPS \_ **。
+如果路径可以显示缩放以适合目标的内容，而不保留源的纵横比，请设置 **D3DKMDT \_ VIDPN \_ 显示 \_ 路径 \_ 缩放 \_ 支持。拉伸**。 调用 [*DxgkDdiEnumVidPnCofuncModality*](/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_enumvidpncofuncmodality) 时，请设置 **D3DKMDT \_ VIDPN \_ 显示 \_ 路径 \_ 转换。横向扩展** 到 **D3DKMDT \_ VPPS \_**。
 
 <span id="________Aspect-Ratio-Preserving_Stretched_Scaling_______"></span><span id="________aspect-ratio-preserving_stretched_scaling_______"></span><span id="________ASPECT-RATIO-PRESERVING_STRETCHED_SCALING_______"></span> 纵横比-保留延伸比例   
 如果路径可以缩放源内容以适合目标，同时保留源的纵横比，请设置 **D3DKMDT \_ VIDPN \_ 显示 \_ 路径 \_ 缩放 \_ 支持。AspectRatioCenteredMax**。 调用 [*DxgkDdiEnumVidPnCofuncModality*](/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_enumvidpncofuncmodality) 时，请设置 **D3DKMDT \_ VIDPN \_ 显示 \_ 路径 \_ 转换。缩放** 到 **D3DKMDT \_ VPPS \_ ASPECTRATIOCENTEREDMAX**。
@@ -103,7 +102,7 @@ ms.locfileid: "90717576"
 
 **DXGKDDI \_接口 \_ 版本** &lt; **DXGKDDI \_ 接口 \_ 版本 \_ WIN7**
 
-以及
+和
 
 &gt;= **DXGKDDI \_ 接口 \_ 版本 \_ VISTA**
 
@@ -113,19 +112,19 @@ Windows Vista
 
 驱动程序具有 Windows Vista 行为。
 
-驱动程序必须在初始化期间检查操作系统的版本，并且决不应公开或使用**D3DKMDT \_ VIDPN \_ 提供 \_ \_ \_ 支持**的**AspectRatioCenteredMax**和**自定义**成员。 如果驱动程序违反了此要求，则 CALL CENTER.DMM 将忽略 **AspectRatioCenteredMax** 和 **Custom** ，并仅识别 **标识**、 **居中**或 **延伸** 成员。 如果驱动程序尝试固定任何 VidPN 路径上的 **D3DKMDT \_ VPPS \_ ASPECTRATIOCENTEREDMAX** 缩放模式，call center.dmm 将返回状态代码 **状态 \_ 图形 \_ 无效 \_ 路径 \_ 内容 \_ 几何 \_ 转换** ，并将此缩放模式视为与全屏幕拉伸模式相同。
+驱动程序必须在初始化期间检查操作系统的版本，并且决不应公开或使用 **D3DKMDT \_ VIDPN \_ 提供 \_ \_ \_ 支持** 的 **AspectRatioCenteredMax** 和 **自定义** 成员。 如果驱动程序违反了此要求，则 CALL CENTER.DMM 将忽略 **AspectRatioCenteredMax** 和 **Custom** ，并仅识别 **标识**、 **居中** 或 **延伸** 成员。 如果驱动程序尝试固定任何 VidPN 路径上的 **D3DKMDT \_ VPPS \_ ASPECTRATIOCENTEREDMAX** 缩放模式，call center.dmm 将返回状态代码 **状态 \_ 图形 \_ 无效 \_ 路径 \_ 内容 \_ 几何 \_ 转换** ，并将此缩放模式视为与全屏幕拉伸模式相同。
 
 Windows 7
 
-操作系统将清除 **AspectRatioCenteredMax** 和 **自定义** 成员的值，并假定该驱动程序不支持纵横比-保留延伸缩放和自定义缩放模式。 CALL CENTER.DMM 只会设置缩放模式 **D3DKMDT \_ VPPS \_ IDENTITY**、 **D3DKMDT \_ VPPS \_ 伸展**或 **D3DKMDT \_ VPPS \_ 居中**。 驱动程序在 Windows Vista 上的行为类似。
+操作系统将清除 **AspectRatioCenteredMax** 和 **自定义** 成员的值，并假定该驱动程序不支持纵横比-保留延伸缩放和自定义缩放模式。 CALL CENTER.DMM 只会设置缩放模式 **D3DKMDT \_ VPPS \_ IDENTITY**、 **D3DKMDT \_ VPPS \_ 伸展** 或 **D3DKMDT \_ VPPS \_ 居中**。 驱动程序在 Windows Vista 上的行为类似。
 
 驱动程序应支持 **AspectRatioCenteredMax** 成员，并且操作系统从 "控制面板" 应用程序使用它。 驱动程序可以选择通过设置 **自定义** 成员来实现自定义功能。
 
  
 
-Call center.dmm 将始终确认驱动程序接口 &gt; =  **DXGKDDI \_ 接口 \_ 版本 \_ WIN7** ，然后再尝试检查并使用[**D3DKMDT \_ VIDPN \_ 提供 \_ \_ \_ 支持**](/windows-hardware/drivers/ddi/d3dkmdt/ns-d3dkmdt-_d3dkmdt_vidpn_present_path_scaling_support)的**AspectRatioCenteredMax**或**自定义**成员。
+Call center.dmm 将始终确认驱动程序接口 &gt; =  **DXGKDDI \_ 接口 \_ 版本 \_ WIN7** ，然后再尝试检查并使用 [**D3DKMDT \_ VIDPN \_ 提供 \_ \_ \_ 支持**](/windows-hardware/drivers/ddi/d3dkmdt/ns-d3dkmdt-_d3dkmdt_vidpn_present_path_scaling_support)的 **AspectRatioCenteredMax** 或 **自定义** 成员。
 
-**重要提示**   支持**D3DKMDT \_ VPPS \_ ASPECTRATIOCENTEREDMAX**或**D3DKMDT \_ VPPS \_ 自定义**值的显示微型端口驱动程序绝不应将值设置为**D3DKMDT \_ VPPS \_ NOTSPECIFIED**。
+**重要提示**   支持 **D3DKMDT \_ VPPS \_ ASPECTRATIOCENTEREDMAX** 或 **D3DKMDT \_ VPPS \_ 自定义** 值的显示微型端口驱动程序绝不应将值设置为 **D3DKMDT \_ VPPS \_ NOTSPECIFIED**。
 
  
 

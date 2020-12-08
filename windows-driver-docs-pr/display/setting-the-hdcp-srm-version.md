@@ -1,15 +1,14 @@
 ---
 title: 设置 HDCP SRM 版本
 description: 设置 HDCP SRM 版本
-ms.assetid: 23f99f8f-7d13-4868-84fb-49245a81958b
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c77cd4ab4eb17c4e0f0af600675523ea0b2ead33
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: cd64e1a01f2d0ce0243a3e9e828694f551a75fae
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89066630"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96828033"
 ---
 # <a name="setting-the-hdcp-srm-version"></a>设置 HDCP SRM 版本
 

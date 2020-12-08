@@ -1,22 +1,21 @@
 ---
 title: DeviceOverrides 注册表项
 description: DeviceOverrides 注册表项
-ms.assetid: 18f95848-71fe-4884-bcbe-d3cae90fc262
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c8c3a27abdc35f0a1dc711f94e2fda76ca324933
-ms.sourcegitcommit: a44ade167cdfb541cf1818e9f9e3726f23f90b66
+ms.openlocfilehash: 7837d7ca391b16e4bbd5d370962442217ced01fb
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94361444"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96827685"
 ---
 # <a name="deviceoverrides-registry-key"></a>DeviceOverrides 注册表项
 
 
 从 Windows 7 开始， **DeviceOverrides** 注册表项指定系统中存在一个或多个可移动设备功能重写。 有关可移动设备功能的详细信息，请参阅 [可移动设备功能的概述](overview-of-the-removable-device-capability.md)。
 
-即插即用 (PnP) 管理器使用 ( [容器 id](container-ids.md) 的新 *ID) 将* 源自于的一个或多个设备节点组合到计算机上安装的特定物理设备的每个实例。 对于旧设备，PnP 管理器通过可移动设备功能生成容器 Id。 有关 PnP 管理器如何生成容器 Id 的详细信息，请参阅 [如何生成容器 id](how-container-ids-are-generated.md)。
+即插即用 (PnP) 管理器使用 ([容器 id](container-ids.md) 的新 *ID) 将* 源自于的一个或多个设备节点组合到计算机上安装的特定物理设备的每个实例。 对于旧设备，PnP 管理器通过可移动设备功能生成容器 Id。 有关 PnP 管理器如何生成容器 Id 的详细信息，请参阅 [如何生成容器 id](how-container-ids-are-generated.md)。
 
 可移动设备功能替代允许独立硬件供应商 (IHV) 或原始设备制造商 (OEM) 更改 devnode 或 devnodes 的可移动设备功能的解释值。
 
@@ -47,8 +46,8 @@ ms.locfileid: "94361444"
 <tr class="odd">
 <td align="left"><p><strong>DeviceOverrides</strong></p></td>
 <td align="left"><p>可选</p></td>
-<td align="left"><p>None</p></td>
-<td align="left"><p>None</p></td>
+<td align="left"><p>无</p></td>
+<td align="left"><p>无</p></td>
 <td align="left"><p><a href="hardwareid-registry-subkey.md" data-raw-source="[HardwareID](hardwareid-registry-subkey.md)">HardwareID</a> 或 <a href="compatibleid-registry-subkey.md" data-raw-source="[CompatibleID](compatibleid-registry-subkey.md)">CompatibleID</a></p></td>
 </tr>
 </tbody>

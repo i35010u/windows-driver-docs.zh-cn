@@ -1,63 +1,62 @@
 ---
 title: 状态窗格
 description: 状态窗格
-ms.assetid: 20fb016e-249b-4d28-9fa8-5d2dd837109f
 keywords:
-- 窗格 WDK Static Driver Verifier
-- 静态驱动程序验证工具报表 WDK，状态窗格
-- 状态窗格 WDK Static Driver Verifier
-- 布尔表达式 WDK Static Driver Verifier
+- 面板静态驱动程序验证程序
+- 静态驱动程序验证器报表 WDK，状态窗格
+- 状态窗格 WDK 静态驱动程序验证程序
+- 布尔表达式 WDK 静态驱动程序验证程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cd6c43db50fb4a9a3c568fc4babcfaf9a021f260
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 78f8a11a276661106fee8c816e6b83ec4c76d86a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63343953"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96826643"
 ---
 # <a name="state-pane"></a>状态窗格
 
 
-**状态**窗格将显示变量的值的布尔表达式中的驱动程序、 操作系统模型和规则。 SDV 使用两个表达式来构造抽象的驱动程序、 操作系统模型和规则，并在验证中使用它们。
+" **状态** " 窗格显示驱动程序、操作系统模型和规则中变量的值的布尔表达式。 SDV 使用这些表达式来构造驱动程序、操作系统模型和规则的抽象，并在验证中使用它们。
 
-下面的屏幕截图显示了一个示例**状态**缺陷查看器中的窗格。
+以下屏幕截图显示了缺陷查看器中的一个示例 **状态** 窗格。
 
-![缺陷查看器中的状态窗格的屏幕截图](images/sdv-state.png)
+![缺陷查看器中的 "状态" 窗格的屏幕截图](images/sdv-state.png)
 
-**状态**窗格是缺陷查看器的组件。 中突出显示的代码元素时[跟踪树窗格](trace-tree-pane.md)，和中突出显示相应的源代码行[源代码窗格](source-code-pane.md)，则**状态**窗格将显示（从 SDV 跟踪驱动程序的表达式集） 的布尔表达式的计算结果为 **，则返回 TRUE**执行的代码行之前。
+" **状态** " 窗格是缺陷查看器的一个组件。 当在 " [跟踪树" 窗格](trace-tree-pane.md)中突出显示某个代码元素，并在 " [源代码" 窗格](source-code-pane.md)中突出显示相应的源代码行时，" **状态** " 窗格将显示在执行该代码行之前，SDV 为计算结果为 **TRUE** 的驱动程序) 的表达式集中 (的布尔表达式。
 
-### <a name="span-idtrackingbooleanexpressionsspanspan-idtrackingbooleanexpressionsspantracking-boolean-expressions"></a><span id="tracking_boolean_expressions"></span><span id="TRACKING_BOOLEAN_EXPRESSIONS"></span>跟踪的布尔表达式
+### <a name="span-idtracking_boolean_expressionsspanspan-idtracking_boolean_expressionsspantracking-boolean-expressions"></a><span id="tracking_boolean_expressions"></span><span id="TRACKING_BOOLEAN_EXPRESSIONS"></span>跟踪布尔表达式
 
-验证驱动程序的每个规则，时 SDV 跟踪一的组布尔表达式。 中显示的布尔表达式**状态**窗格中是表达式的计算结果为该集中**TRUE**。 如果中的元素**跟踪树**窗格将发生变化的内容的任何表达式的值**状态**窗格中更改显示的表达式的计算结果为新的一组**TRUE**.
+在验证驱动程序的每个规则时，SDV 将跟踪一组布尔表达式。 " **状态** " 窗格中显示的布尔表达式是该集合中计算结果为 **TRUE** 的表达式。 如果 **跟踪树** 窗格中的元素更改了任何表达式的值，则 " **状态** " 窗格的内容将发生变化，以显示一组计算结果为 **TRUE** 的新表达式。
 
-### <a name="span-idinterpretingexpressionsinthestatepanespanspan-idinterpretingexpressionsinthestatepanespaninterpreting-expressions-in-the-state-pane"></a><span id="interpreting_expressions_in_the_state_pane"></span><span id="INTERPRETING_EXPRESSIONS_IN_THE_STATE_PANE"></span>解释在状态窗格中的表达式
+### <a name="span-idinterpreting_expressions_in_the_state_panespanspan-idinterpreting_expressions_in_the_state_panespaninterpreting-expressions-in-the-state-pane"></a><span id="interpreting_expressions_in_the_state_pane"></span><span id="INTERPRETING_EXPRESSIONS_IN_THE_STATE_PANE"></span>在状态窗格中解释表达式
 
-中出现的大多数表达式**状态**窗格与规则代码中都显而易见的变量。 您可以使用源代码的规则 (在*RuleName*.slic 文件中的**源代码**窗格) 可帮助你解释表达式。
+" **状态** " 窗格中出现的大多数表达式都与规则代码中明显的变量相关。 可以在 "**源代码**" 窗格中的 *RuleName* slic 文件中使用规则 (的源代码，) 帮助您解释表达式。
 
-但是，某些表达式显示在**状态**而无需任何有关可能会帮助您将其解释其内部表示形式的详细信息窗格。 例如，
+但是，某些表达式在 " **状态** " 窗格中显示，没有任何可能有助于您解释它们的内部表示形式的详细信息。 例如，
 
 ```
 x!=x
 ```
 
-SDV，对此表达式表示在其中一个条件变量的值*x*在这种情况在跟踪中不在跟踪中的不同点相同的变量的值相等。 使用此驱动程序源代码，规则代码 (\*.slic)，和中的元素**跟踪树**窗格，以帮助您解释表达式。
+对于 SDV，此表达式表示在跟踪中此点处的此时变量 *x* 的值不等于同一变量在跟踪中的值的情况。 使用驱动程序源代码，规则代码 (的 \* slic) ，并使用 **跟踪树** 窗格中的元素来帮助解释表达式。
 
-### <a name="span-idsteptabsinthestatepanespanspan-idsteptabsinthestatepanespanstep-tabs-in-the-state-pane"></a><span id="step_tabs_in_the_state_pane"></span><span id="STEP_TABS_IN_THE_STATE_PANE"></span>在状态窗格中的步选项卡
+### <a name="span-idstep_tabs_in_the_state_panespanspan-idstep_tabs_in_the_state_panespanstep-tabs-in-the-state-pane"></a><span id="step_tabs_in_the_state_pane"></span><span id="STEP_TABS_IN_THE_STATE_PANE"></span>"状态" 窗格中的步骤选项卡
 
-中的布尔表达式**状态**选项卡上显示窗格。 每个选项卡表示通过所有验证中使用的源代码在跟踪中的步骤。 在步骤选项卡上的数字表示在跟踪中该步骤的顺序。
+" **状态** " 窗格中的布尔表达式显示在选项卡上。 每个选项卡均通过验证中使用的所有源代码表示跟踪中的一个步骤。 "步骤" 选项卡上的数字表示该步骤在跟踪中的顺序。
 
-通常情况下，由于源代码的每个行表示在跟踪中的只有一个步骤，将只有一个步骤中的选项卡**状态**窗格。 但是，复杂的代码可以生成多个步骤。
+通常情况下，因为源代码的每一行只表示跟踪中的一个步骤，所以 " **状态** " 窗格中将只有一个 "步骤" 选项卡。 但是，复杂代码可能会生成多个步骤。
 
-例如，下面的屏幕截图显示了状态窗格中显示的包含函数指针的代码行。 在这种情况下，每个步骤的选项卡表示的指针，指向的函数，其结果的调用解析中的步骤。 （步骤选项卡的数目将显示多少步骤花费的 SDV 若要解决的函数指针）。
+例如，以下屏幕截图显示了包含函数指针的代码行的状态窗格。 在这种情况下，每个 "步骤" 选项卡都表示指针解析的步骤、调用的函数的调用和结果。  ("步骤" 选项卡的数目将显示 SDV 解析函数指针所需的步骤数。 ) 
 
-![状态窗格中显示一行代码，其中包括函数指针的屏幕截图](images/sdv-statetab.png)
+![显示包含函数指针的代码行的 "状态" 窗格的屏幕截图](images/sdv-statetab.png)
 
-若要查看在每个步骤选项卡**状态**窗格中的顺序，选择关联的中的代码行**源代码**窗格。 然后，单击行中的代码**源代码**窗格重复。 每次单击所选的行代码，直到您已完成所有步骤的选项卡关闭并重新打开，SDV 显示下一步的步骤选项卡。 曲线的黄色箭头 (![黄色的曲线的箭头图标，指示所选的步骤](images/sdv-ico-steptab.png)) 指示所选的步骤。 您也可以单击任意选项卡**状态**窗格以查看其内容。
+若要按顺序查看 " **状态** " 窗格中的每个 "步骤" 选项卡，请在 " **源代码** " 窗格中选择关联的代码行。 然后，在 " **源代码** " 窗格中重复单击代码行。 每次单击所选的代码行时，SDV 将显示 "下一步" 选项卡，直到您遍历了所有 "步骤" 选项卡。 黄色黄色箭头 (![ 黄色箭头图标，指示所选步骤 ](images/sdv-ico-steptab.png)) 指示选定的步骤。 还可以单击 " **状态** " 窗格中的任何选项卡以查看其内容。
 
-### <a name="span-idcommentspanspan-idcommentspancomment"></a><span id="comment"></span><span id="COMMENT"></span>注释
+### <a name="span-idcommentspanspan-idcommentspancomment"></a><span id="comment"></span><span id="COMMENT"></span>条
 
-SDV 通常跟踪中的表达式**状态**窗格中，不会显示在规则中并不直接与该规则会出现。 这些表达式导致复杂试探法，SDV 使用在其尝试将不同的值和不同的规则冲突相关联。 在某些情况下，SDV 无法正确地计算表达式。 在这些情况下，SDV 提供一条消息，表示当前状态为未知的以及显示的最后已知状态的步骤中的表达式。 请参阅下面的代码示例的说明：
+SDV 经常会跟踪 " **状态** " 窗格中未出现在规则中的表达式，这些表达式似乎与规则直接无关。 这些表达式是通过复杂试探法得出的，SDV 在其尝试关联不同的值和不同规则冲突时使用。 在某些情况下，SDV 无法正确计算表达式。 在这些情况下，SDV 将提供一条消息，指出当前状态未知，并显示该步骤中具有上一已知状态的表达式。 有关说明，请参阅下面的代码示例：
 
 ```
 Unknown state. Last known state from step 120.

@@ -1,18 +1,17 @@
 ---
 title: 输入缓冲区顺序规则
 description: 输入缓冲区顺序规则
-ms.assetid: 2c588276-88c3-42e4-9f73-50a05e31c451
 keywords:
-- 输入缓冲区 WDK DirectX VA
-- 取消隔行扫描 WDK DirectX va，因此输入的缓冲区顺序
+- 输入缓冲 WDK DirectX VA
+- 取消隔行扫描 WDK DirectX VA，输入缓冲区顺序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bd66848fb10ff098da827566c1dd7e52e51f08ac
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5b9c38958b8cddd9eddd5de7e6d208ecf21e5b1c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63365507"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96827237"
 ---
 # <a name="input-buffer-order-rules"></a>输入缓冲区顺序规则
 
@@ -20,17 +19,17 @@ ms.locfileid: "63365507"
 ## <span id="ddk_input_buffer_order_rules_gg"></span><span id="DDK_INPUT_BUFFER_ORDER_RULES_GG"></span>
 
 
-**本部分仅适用于 Windows Server 2003 SP1 和更高版本和 Windows XP SP2 和更高版本。**
+**本部分仅适用于 Windows Server 2003 SP1 及更高版本以及 Windows XP SP2 及更高版本。**
 
-在应用层的顺序**lpBufferInfo**数组符合以下规则：
+**LpBufferInfo** 数组中的图面的顺序符合以下规则：
 
--   数组中的第一个面是目标图面。 该驱动程序只会写入到目标图面。
+-   数组中的第一个表面是目标图面。 驱动程序仅写入目标图面。
 
--   下一步一系列数组中的图面是任何以前的目标应用层的组，为其请求取消隔行扫描设备的临时顺序相反其取消隔行扫描算法。
+-   数组中的下一个图面序列是取消隔行扫描设备为其隔行扫描算法请求的任何先前目标面的组（反向时态顺序）。
 
--   下一步一系列数组中的图面是输入隔行扫描或渐进式图面，设备要求若要执行的集合及其取消隔行扫描操作。
+-   数组中的下一个图面的序列是设备在执行其取消隔行扫描操作时所需的输入交错或渐进式曲面的集合。
 
--   下一步一系列数组中的图面是视频的子流图面，Z 顺序中的集合。
+-   数组中的下一个图面的序列是按 Z 顺序排列的视频子流图面的集合。
 
  
 

@@ -1,18 +1,17 @@
 ---
 title: 调试间接显示驱动程序
 description: 介绍间接显示驱动程序的调试技术
-ms.assetid: a343812d-03d0-4a95-9c36-7e6b5a404088
 ms.date: 07/17/2020
 keywords:
 - 间接显示驱动程序，调试
 - IDDs，调试
 ms.localizationpriority: medium
-ms.openlocfilehash: 15f7503cff1f981590a4adb6b7e48b0e7862ce20
-ms.sourcegitcommit: 2aedb606f9f14e74687f0d3da60e14fc6ffffa7e
+ms.openlocfilehash: 6bc24226affc8d8c5912c7ebf35120d0a01c7c6e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91544382"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96827283"
 ---
 # <a name="debugging-indirect-display-drivers"></a>调试间接显示驱动程序
 
@@ -50,7 +49,7 @@ ms.locfileid: "91544382"
 
 > [!NOTE]
 >
-> 要使任何覆盖功能正常工作，必须使用**D3D11_CREATE_DEVICE_BGRA_SUPPORT**标志创建驱动程序创建的 Direct3D 设备并将其传递给[**IddCxSwapChainSetDevice**](/windows-hardware/drivers/ddi/iddcx/nf-iddcx-iddcxswapchainsetdevice) 。
+> 要使任何覆盖功能正常工作，必须使用 **D3D11_CREATE_DEVICE_BGRA_SUPPORT** 标志创建驱动程序创建的 Direct3D 设备并将其传递给 [**IddCxSwapChainSetDevice**](/windows-hardware/drivers/ddi/iddcx/nf-iddcx-iddcxswapchainsetdevice) 。
 
 ## <a name="iddcx-wpp-traces"></a>IddCx WPP 跟踪
 
@@ -121,13 +120,13 @@ logman -stop IddCx -ets
 
 > [!NOTE]
 >
-> 为此，需要使用内核调试器 (非用户模式调试器) 和 Windows 版本19560或更高版本，以便调试器获取包含 WPP 解码信息的*IddCx。*
+> 为此，需要使用内核调试器 (非用户模式调试器) 和 Windows 版本19560或更高版本，以便调试器获取包含 WPP 解码信息的 *IddCx。*
 
 在下面的示例中，间接显示驱动程序调用 [**IddCxMonitorArrival**](/windows-hardware/drivers/ddi/iddcx/nf-iddcx-iddcxmonitorarrival)。 作为处理的一部分，IddCx 调用驱动程序的 [**EvtIddCxMonitorQueryTargetModes**](/windows-hardware/drivers/ddi/iddcx/nc-iddcx-evt_idd_cx_monitor_query_target_modes) DDI。 在此示例中，驱动程序返回的模式 DISPLAYCONFIG_VIDEO_SIGNAL_INFO。AdditionalSignalInfo 设置为零，这是无效的，将导致错误。
 
 下面是所使用的调试程序命令列表：
 
-| Command                             | 含义  |
+| 命令                             | 含义  |
 |-------------------------------------|----------|
 | !wmitrace.bufdump                   | 列出所有日志记录缓冲区和名称，IddCx 是我们的名称，来自 logman.exe 命令行 |
 | ！ wmitrace. logdump *LogBufferName*   | 对指定日志记录缓冲区的内容进行解码，并显示以下示例中的 IddCx |

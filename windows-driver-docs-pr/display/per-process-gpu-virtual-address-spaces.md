@@ -1,15 +1,14 @@
 ---
 title: 每个进程的 GPU 虚拟地址空间
 description: 每个进程都与两个图形处理单元相关联 (GPU) 虚拟地址空间、应用程序 GPU 虚拟地址空间和特权虚拟地址空间。
-ms.assetid: 6C7BF67B-217D-4E21-B425-5683C99B63A8
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8b032e9b5f8b35e5e62106da1ed8fbc35154d856
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: c1343d4a23e3efeddfea54c4772cc77d211b247a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89064670"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96828063"
 ---
 # <a name="span-iddisplayper-process_gpu_virtual_address_spacesspanper-process-gpu-virtual-address-spaces"></a><span id="display.per-process_gpu_virtual_address_spaces"></span>每个进程的 GPU 虚拟地址空间
 

@@ -1,16 +1,15 @@
 ---
 title: OID_GEN_LINK_SPEED
 description: 作为查询，OID_GEN_LINK_SPEED OID 指定 NIC 的最大速度。
-ms.assetid: f8ee887a-969e-4167-9b39-9ee6ef8b1fbc
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_GEN_LINK_SPEED 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 8e83d5790e5cea17fc83b77ad5b4361d17df2dd4
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: aef4927b8e17784fa3fddca2a8672df14175d6da
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89217527"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96827567"
 ---
 # <a name="oid_gen_link_speed"></a>OID \_ GEN \_ LINK \_ 速度
 
@@ -57,7 +56,7 @@ ms.locfileid: "89217527"
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**NDIS \_ 状态 \_ 链接 \_ 状态**](./ndis-status-link-state.md)

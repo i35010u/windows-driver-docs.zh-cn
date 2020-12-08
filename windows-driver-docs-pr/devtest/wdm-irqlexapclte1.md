@@ -1,7 +1,6 @@
 ---
 title: 'IrqlExApcLte1 规则 (wdm) '
 description: IrqlExApcLte1 规则指定驱动程序仅调用 ExAcquireFastMutex 和 ExTryToAcquireFastMutex，APC_LEVEL。
-ms.assetid: c86aa593-03b5-4a65-9cef-3b64fcc3d5fd
 ms.date: 05/21/2018
 keywords:
 - 'IrqlExApcLte1 规则 (wdm) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 1e3502f71773bf3283ef814937ca0b71815bddaf
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 40d8824fec7d5d70b3d63558548bff3932e08211
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105568"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96828135"
 ---
 # <a name="irqlexapclte1-rule-wdm"></a>IrqlExApcLte1 规则 (wdm) 
 
 
-**IrqlExApcLte1**规则指定驱动程序只调用[**ExAcquireFastMutex**](/previous-versions/windows/hardware/drivers/ff544337(v=vs.85))和[**ExTryToAcquireFastMutex**](/previous-versions/windows/hardware/drivers/ff545647(v=vs.85)) ，而不是以 IRQL &lt; = APC \_ 级别。
+**IrqlExApcLte1** 规则指定驱动程序只调用 [**ExAcquireFastMutex**](/previous-versions/windows/hardware/drivers/ff544337(v=vs.85))和 [**ExTryToAcquireFastMutex**](/previous-versions/windows/hardware/drivers/ff545647(v=vs.85)) ，而不是以 IRQL &lt; = APC \_ 级别。
 
 **驱动程序模型： WDM**
 

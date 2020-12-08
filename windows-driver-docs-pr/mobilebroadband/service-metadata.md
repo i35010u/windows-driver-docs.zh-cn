@@ -1,15 +1,14 @@
 ---
 title: 服务元数据概述
 description: 服务元数据概述
-ms.assetid: daf5db05-cf39-4ff2-a2f1-0ffd718c638e
 ms.date: 07/05/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: f3ec74b8284d8c8591e6de1189230bf5b09a54db
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: d26b5276cfe5fe2b560df831170e08b48bdaa407
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89403200"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96827025"
 ---
 # <a name="service-metadata-overview"></a>服务元数据概述
 
@@ -85,9 +84,10 @@ ms.locfileid: "89403200"
 ## <a name="span-idservice_metadata_package_structurespanspan-idservice_metadata_package_structurespanspan-idservice_metadata_package_structurespanservice-metadata-package-structure"></a><span id="Service_Metadata_Package_Structure"></span><span id="service_metadata_package_structure"></span><span id="SERVICE_METADATA_PACKAGE_STRUCTURE"></span>服务元数据包结构
 
 
-服务元数据包的组件存储在压缩的 cab 文件中，并且其文件扩展名必须为 **devicemetadata-ms**。 服务元数据包使用此文件扩展名，因为它们使用与设备元数据包相同的基础平台。 在创建 **devicemetadata-ms** 文件之前，必须先为元数据包创建 (GUID) 的全局唯一标识符。 然后，在创建 devicemetadata-ms 文件时，必须使用以下命名约定： ** &lt; &gt; devicemetadata-ms**。
+服务元数据包的组件存储在压缩的 cab 文件中，并且其文件扩展名必须为 **devicemetadata-ms**。 服务元数据包使用此文件扩展名，因为它们使用与设备元数据包相同的基础平台。 在创建 **devicemetadata-ms** 文件之前，必须先为元数据包创建 (GUID) 的全局唯一标识符。 然后，在创建 devicemetadata-ms 文件时，必须使用以下命名约定： **&lt; &gt; devicemetadata-ms**。
 
-**注意**   尽管 cabinet 文件的常规文件扩展名为 **.cab**，但服务元数据包文件的文件扩展名必须是 **. devicemetadata-ms**。 这是为了使最终用户不能解压缩或修改这些包这一事实。
+**注意**  
+尽管 cabinet 文件的常规文件扩展名为 **.cab**，但服务元数据包文件的文件扩展名必须是 **. devicemetadata-ms**。 这是为了使最终用户不能解压缩或修改这些包这一事实。
 
 有两种类型的服务元数据包：单一区域设置服务元数据包和多区域设置服务元数据包。
 
@@ -101,13 +101,13 @@ ms.locfileid: "89403200"
 
 单个区域设置元数据包的一些注意事项：
 
-- 图标文件可以有任何文件名。 但是，必须将各个 XML 文档命名为 **PackageInfo.xml**、 **ServiceInfo.xml**、 **WindowsInfo.xml**和 **SoftwareInfo.xml**。
+- 图标文件可以有任何文件名。 但是，必须将各个 XML 文档命名为 **PackageInfo.xml**、 **ServiceInfo.xml**、 **WindowsInfo.xml** 和 **SoftwareInfo.xml**。
 
-- **MobileBroadbandInfo.xml**文件的名称是在**ServiceInfo.xml**中定义的。 应为该文件使用本文档中列出的名称。
+- **MobileBroadbandInfo.xml** 文件的名称是在 **ServiceInfo.xml** 中定义的。 应为该文件使用本文档中列出的名称。
 
-- **Devicemetadata-ms**文件不能在名称中包含 "{" 或 "}"。 每个元数据包文件名的 GUID 都必须是唯一的。 当你创建新的或已修改的服务元数据包时，你必须创建新的 GUID，即使这些更改很小。
+- **Devicemetadata-ms** 文件不能在名称中包含 "{" 或 "}"。 每个元数据包文件名的 GUID 都必须是唯一的。 当你创建新的或已修改的服务元数据包时，你必须创建新的 GUID，即使这些更改很小。
 
-- Windows 将识别文件扩展名为 **devicemetadata-ms**的服务元数据包。
+- Windows 将识别文件扩展名为 **devicemetadata-ms** 的服务元数据包。
 
 ### <a name="multiple-locale-service-metadata-package-structure"></a>多区域设置服务元数据包结构
 

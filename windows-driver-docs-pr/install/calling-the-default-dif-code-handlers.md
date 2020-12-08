@@ -1,15 +1,14 @@
 ---
 title: 调用默认 DIF 代码处理程序
 description: 调用默认 DIF 代码处理程序
-ms.assetid: bc168c30-2269-4760-bc0a-e3e6ee3ce720
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6f48532aa5acf3f30f412fff1f7ff1b00cdd251c
-ms.sourcegitcommit: a44ade167cdfb541cf1818e9f9e3726f23f90b66
+ms.openlocfilehash: d023e7e1dcda57671437ebbd39da1b13b53aab40
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94361349"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96827977"
 ---
 # <a name="calling-the-default-dif-code-handlers"></a>调用默认 DIF 代码处理程序
 

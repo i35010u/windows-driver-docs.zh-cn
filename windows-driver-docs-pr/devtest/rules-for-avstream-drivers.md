@@ -1,15 +1,14 @@
 ---
 title: AVStream 驱动程序的规则
 description: 'AVStream 微型端口驱动程序的 DDI 符合性规则验证内核流式处理驱动程序 ( # A0) 及其微型端口驱动程序之间的 DDI 接口协议。'
-ms.assetid: 0A104ADF-8607-4708-A0E3-1697F55B0CF5
 ms.date: 05/21/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: db18a3708a24e03a0c17df4ccc05220d5d070e5c
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: e690bb1310c87429c6b5ddd2eed092e4bfc9d2d3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106780"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96828163"
 ---
 # <a name="rules-for-avstream-drivers"></a>AVStream 驱动程序的规则
 
@@ -27,7 +26,7 @@ AVStream 微型端口驱动程序的 DDI 符合性规则验证内核流式处理
 <thead>
 <tr class="header">
 <th align="left">主题</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>

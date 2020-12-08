@@ -1,20 +1,19 @@
 ---
 title: 从可移动设备功能覆盖生成的容器 Id
 description: 通过可移动设备功能重写生成的容器 ID
-ms.assetid: 8b1bf9d4-1aea-4d82-b783-f6dc62b9f8f3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0fc94fc0756ca7ce542615a7a37010bc2c42b8c5
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: bd6f21da0ca45288124c72c2f1f97848111f7b5c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104928"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96827845"
 ---
 # <a name="container-ids-generated-from-a-removable-device-capability-override"></a>通过可移动设备功能重写生成的容器 ID
 
 
-从 Windows 7 开始，新设备应提供特定于总线的唯一 ID (如 [从特定于总线的唯一 Id 生成的容器 id](container-ids-generated-from-a-bus-specific-unique-id.md)) 所述。
+从 Windows 7 开始，新设备应提供特定于总线的唯一 ID (如 [Bus-Specific 唯一 id) 生成的容器 id](container-ids-generated-from-a-bus-specific-unique-id.md) 中所述。
 
 或者，设备和总线驱动程序必须正确设置可移动设备功能， (如 [从可移动设备功能) 生成的容器 id](container-ids-generated-from-the-removable-device-capability.md) 中所述。 有关可移动设备功能的详细信息，请参阅 [可移动设备功能的概述](overview-of-the-removable-device-capability.md)。
 
@@ -36,7 +35,7 @@ Windows 7 及更高版本的 Windows 还支持替代所报告的可移动设备�
 <tr class="header">
 <th align="left">表级别</th>
 <th align="left">注册表项/子项名称</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>

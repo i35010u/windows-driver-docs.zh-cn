@@ -1,19 +1,18 @@
 ---
 title: 使用驱动程序提供的自旋锁
 description: 使用驱动程序提供的自旋锁
-ms.assetid: e81d5c93-47d6-407c-80a2-b2d55f9eb717
 keywords:
 - 旋转锁定 WDK 内核
 - 驱动程序提供的旋转锁定 WDK 内核
 - 全局取消旋转锁定 WDK 内核
 ms.date: 05/09/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: edad6fc43e8e98327821bd0a51ac42f0766a5555
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: a038460375996a48d6e681a206b0609aacfee1a9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91733478"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96827589"
 ---
 # <a name="using-a-driver-supplied-spin-lock"></a>使用驱动程序提供的自旋锁
 
@@ -112,7 +111,7 @@ NTSTATUS QueueIrp(DEVICE_CONTEXT *deviceContext, PIRP Irp)
 
 -   如果 IRP 已被取消，但尚未调用 *取消* 例程，则当前例程取消排队 IRP 并完成，并已 \_ 取消状态。
 
--   如果已取消 IRP 并且已经调用了 *Cancel* 例程，则当前返回的会将 irp 标记为 "挂起" 并返回 " \_ 挂起" 状态。 *取消*例程将完成 IRP。
+-   如果已取消 IRP 并且已经调用了 *Cancel* 例程，则当前返回的会将 irp 标记为 "挂起" 并返回 " \_ 挂起" 状态。 *取消* 例程将完成 IRP。
 
 下面的示例演示如何从以前创建的队列中删除 IRP：
 
@@ -159,9 +158,9 @@ PIRP DequeueIrp(DEVICE_CONTEXT *deviceContext)
 }
 ```
 
-在此示例中，驱动程序在访问队列之前获取关联的自旋锁。 在持有自旋锁时，它会检查队列是否不为空，并从队列中获取下一个 IRP。 然后，它会调用 **IoSetCancelRoutine** 来重置 IRP 的 *取消* 例程。 由于可以在驱动程序取消排队 IRP 并重置 *取消* 例程时取消 irp，因此驱动程序必须检查 **IoSetCancelRoutine**返回的值。 如果 **IoSetCancelRoutine** 返回 **NULL**，表示 *取消* 例程已或即将被调用，则出列例程会使 *取消* 例程完成 IRP。 然后，它会释放保护队列并返回的锁。
+在此示例中，驱动程序在访问队列之前获取关联的自旋锁。 在持有自旋锁时，它会检查队列是否不为空，并从队列中获取下一个 IRP。 然后，它会调用 **IoSetCancelRoutine** 来重置 IRP 的 *取消* 例程。 由于可以在驱动程序取消排队 IRP 并重置 *取消* 例程时取消 irp，因此驱动程序必须检查 **IoSetCancelRoutine** 返回的值。 如果 **IoSetCancelRoutine** 返回 **NULL**，表示 *取消* 例程已或即将被调用，则出列例程会使 *取消* 例程完成 IRP。 然后，它会释放保护队列并返回的锁。
 
-请注意，在前面的例程中使用 [**InitializeListHead**](/windows-hardware/drivers/ddi/wdm/nf-wdm-initializelisthead) 。 驱动程序可以重新排队 IRP，以便取消操作可以将其 *取消* 排队，但调用 **InitializeListHead**更简单，后者会重新初始化 IRP 的 **ListEntry** 字段，使其指向 IRP 本身。 使用自引用指针非常重要，因为在 *取消* 例程获取旋转锁之前，列表的结构可能会更改。 如果列表结构发生更改，可能会使 **ListEntry** 的原始值无效，则 *取消* 例程在取消排队 IRP 时可能会损坏列表。 但如果 **ListEntry** 指向 IRP 本身，则 *Cancel* 例程将始终使用正确的 IRP。
+请注意，在前面的例程中使用 [**InitializeListHead**](/windows-hardware/drivers/ddi/wdm/nf-wdm-initializelisthead) 。 驱动程序可以重新排队 IRP，以便取消操作可以将其 *取消* 排队，但调用 **InitializeListHead** 更简单，后者会重新初始化 IRP 的 **ListEntry** 字段，使其指向 IRP 本身。 使用自引用指针非常重要，因为在 *取消* 例程获取旋转锁之前，列表的结构可能会更改。 如果列表结构发生更改，可能会使 **ListEntry** 的原始值无效，则 *取消* 例程在取消排队 IRP 时可能会损坏列表。 但如果 **ListEntry** 指向 IRP 本身，则 *Cancel* 例程将始终使用正确的 IRP。
 
 而 *取消* 例程则只需执行以下操作：
 

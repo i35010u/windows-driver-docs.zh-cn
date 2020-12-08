@@ -1,22 +1,21 @@
 ---
 title: PCI Express 设备的容器 ID
 description: PCI Express 设备的容器 ID
-ms.assetid: ff86def3-a278-4f7b-a394-42f608f8993d
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e234d54d0a83bd7e90ac1742fe851e09687421fd
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 063ce5f2a3213cf22f53f0a78eb93c114bed29d6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63344329"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96827849"
 ---
 # <a name="container-ids-for-pci-express-devices"></a>PCI Express 设备的容器 ID
 
 
-PCI Express (PCIe) 总线不能表达的容器 id。 PCI 总线驱动程序返回时确定 PCIe 设备分组的设备容器的可移动功能依赖于 Windows 操作系统。
+PCI Express (PCIe) 总线无法表示容器 ID。 Windows 操作系统依赖于 PCI bus 驱动程序在确定 PCIe 设备的设备容器分组时返回的可移动功能。
 
-PCI 总线驱动程序确定 PCIe 设备是通过阅读以下 PCIe 寄存器位可移动。
+PCI 总线驱动程序通过读取以下 PCIe 寄存器位来确定 PCIe 设备是否可移动。
 
 <table>
 <colgroup>
@@ -37,31 +36,31 @@ PCI 总线驱动程序确定 PCIe 设备是通过阅读以下 PCIe 寄存器位�
 <tr class="odd">
 <td align="left"><p>PCI Express 功能</p></td>
 <td align="left"><p>0x02</p></td>
-<td align="left"><p>8-slot 实现</p></td>
-<td align="left"><p>设置为 1 时，此位值指示与此端口相关联的 PCIe 链接已连接到物理槽，而不是连接到一个集成组件。</p></td>
+<td align="left"><p>已实现8槽</p></td>
+<td align="left"><p>设置为1时，此位值指示与此端口关联的 PCIe 链接连接到物理槽，而不是连接到集成组件。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>槽功能</p></td>
 <td align="left"><p>0x14</p></td>
-<td align="left"><p>6-热插拔支持</p></td>
-<td align="left"><p>设置为 1 时，此位值指示此槽可以支持热插拔操作。</p></td>
+<td align="left"><p>6-Hot-Plug 支持</p></td>
+<td align="left"><p>当设置为1时，此位值指示该槽可以支持热插操作。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-PCI 总线驱动程序将标记 PCIe 设备为可移动，如果满足两个以下条件：
+如果满足以下两个条件，PCI 总线驱动程序会将 PCIe 设备标记为可移动设备：
 
--   槽实现位设置为 1。
+-   槽实现的位设置为1。
 
--   热即插即用支持的位设置为 1:
+-   支持热插拔的位设置为1：
 
-用于设置这些机制注册位按 PCIe 芯片集版本和制造商而异。 例如，某些芯片集让程序这些位的固件，而其他芯片集需要物理插针，以将 strapped 电压费用连接 (Vcc) 或全新 (GND)。
+用于设置这些寄存器位的机制因 PCIe 芯片芯片版本和制造商的不同而异。 例如，某些芯片组使固件编程这些位，而其他芯片集需要将物理 pin 现金不足到 (Vcc) 或地面 (GND) 的电压收费连接。
 
-请注意，如果设备在 ACPI 名称空间中实现 _EJ0 方法，ACPI 驱动程序会将标记为可移动设备。 而不考虑槽实现或热即插即用支持 bits 的设置发生这种情况。 有关详细信息，请参阅[热插拔 PCI 和 Windows](https://go.microsoft.com/fwlink/p/?linkid=26278)白皮书。
+请注意，如果设备在 ACPI 命名空间中实现 _EJ0 方法，ACPI 驱动程序会将该设备标记为可移动设备。 无论实现的槽或 Hot-Plug 支持的位的设置如何都是如此。 有关详细信息，请参阅 [热插拔 PCI 和 Windows](https://go.microsoft.com/fwlink/p/?linkid=26278) 白皮书。
 
-PCIe 接口的详细信息，请参阅[PCIe 基本](https://go.microsoft.com/fwlink/p/?linkid=69486)规范。
+有关 PCIe 接口的详细信息，请参阅 [Pcie 基本](https://go.microsoft.com/fwlink/p/?linkid=69486) 规范。
 
  
 

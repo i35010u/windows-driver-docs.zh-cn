@@ -1,9 +1,8 @@
 ---
-title: ks.automation
-description: Ks.automation 扩展显示任何与给定对象关联的自动化项目。
-ms.assetid: a8fd790f-2793-4e6e-a500-f61646be2c89
+title: ks。自动化
+description: Ks 扩展显示与给定对象关联的任何自动化项。
 keywords:
-- ks.automation Windows 调试
+- ks。自动化 Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,29 +11,29 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 9f8a029c41e9f8c352ae6372d747580938837d96
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 69d5ff548829ee4e2fe138cccc2a34793824c61e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63336330"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96826749"
 ---
 # <a name="ksautomation"></a>!ks.automation
 
 
-**！ Ks.automation**扩展插件都会显示与给定对象关联的任何自动化项。
+**！ Ks** 扩展显示与给定对象关联的任何自动化项。
 
 ```dbgcmd
 !ks.automation Object
 ```
 
-## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>参数
+## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>Parameters
 
 
-<span id="_______Object______"></span><span id="_______object______"></span><span id="_______OBJECT______"></span> *Object*   
-指定指向要为其显示自动化项对象的指针。 （自动化项是属性、 方法和事件）。*对象*必须是以下类型之一：PKSPIN，PKSFILTER，CKsPin\*，CKsFilter\*，PIRP。 如果*对象*是指向自动化 IRP，命令返回属性信息和处理程序。
+<span id="_______Object______"></span><span id="_______object______"></span><span id="_______OBJECT______"></span>*对象*   
+指定指向要显示其自动化项的对象的指针。  (自动化项是属性、方法和事件。 ) *对象* 必须是以下类型之一： PKSPIN、PKSFILTER、CKsPin \* 、CKsFilter \* 、PIRP。 如果 *对象* 是指向自动化 IRP 的指针，则该命令返回属性信息和处理程序。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 <table>
 <colgroup>
@@ -55,16 +54,16 @@ ms.locfileid: "63336330"
 
  
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-有关详细信息，请参阅[流式处理的内核调试](kernel-streaming-debugging.md)。
+有关详细信息，请参阅 [内核流调试](kernel-streaming-debugging.md)。
 
 <a name="remarks"></a>备注
 -------
 
-您可以使用此命令使用筛选器地址从获取[ **！ ks.enumdevobj**](-ks-enumdevobj.md)。
+可以将此命令与从 [**！ enumdevobj**](-ks-enumdevobj.md)获取的筛选器地址一起使用。
 
-下面是举例 **！ ks.automation**显示。 参数是筛选器的地址：
+下面是 **！ ks** 显示的示例。 参数是筛选器的地址：
 
 ```dbgcmd
 kd> !automation 829493c4

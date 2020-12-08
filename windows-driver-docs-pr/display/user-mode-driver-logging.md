@@ -1,15 +1,14 @@
 ---
 title: 用户模式驱动程序日志记录
 description: 为了获得更具可操作性的视频内存细分，Windows 显示驱动程序模型 (WDDM) 驱动程序必须公开 Microsoft Direct3D 资源与视频内存分配之间的关系。
-ms.assetid: E850E148-821D-4544-A778-00B1B9D13964
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 056f309748bc4669ca2506697726e1400382f257
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 00a7f15a50c23662343314439a8e2527c84ef99a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89067156"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96826591"
 ---
 # <a name="span-iddisplayuser-mode_driver_loggingspanuser-mode-driver-logging"></a><span id="display.user-mode_driver_logging"></span>用户模式驱动程序日志记录
 
@@ -22,7 +21,7 @@ ms.locfileid: "89067156"
 
 **驱动程序实现-完整图形和仅呈现**：必需
 
-** [WHCK](/windows-hardware/test/hlk/windows-hardware-lab-kit)要求和测试**： **Device. Graphics ¦ UMDLogging**
+**[WHCK](/windows-hardware/test/hlk/windows-hardware-lab-kit)要求和测试**： **Device. Graphics ¦ UMDLogging**
 
 
  

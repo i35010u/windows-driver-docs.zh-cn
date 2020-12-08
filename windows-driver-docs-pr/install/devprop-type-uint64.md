@@ -1,7 +1,6 @@
 ---
 title: DEVPROP_TYPE_UINT64
-description: 在 Windows Vista 和更高版本的 Windows，DEVPROP_TYPE_INT64 标识符表示基本数据类型标识符，该值指示数据类型为 ULONG64 类型无符号的整数。
-ms.assetid: a6dfb90d-0cae-4b63-bc27-57d7b0f6b897
+description: 在 Windows Vista 和更高版本的 Windows 中，DEVPROP_TYPE_INT64 标识符表示数据类型为 ULONG64 的无符号整数。
 keywords:
 - DEVPROP_TYPE_UINT64 设备和驱动程序安装
 topic_type:
@@ -14,30 +13,30 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 3326d7a926b6598dfb70c1e681194cafe9320eed
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5a3cefd7217545d12f1a642dd4b025869eeb406a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331274"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96827653"
 ---
-# <a name="devproptypeuint64"></a>DEVPROP_TYPE_UINT64
+# <a name="devprop_type_uint64"></a>DEVPROP_TYPE_UINT64
 
 
-在 Windows Vista 和更高版本的 Windows，DEVPROP_TYPE_INT64 标识符表示基本数据类型标识符，该值指示数据类型为 ULONG64 类型无符号的整数。
+在 Windows Vista 和更高版本的 Windows 中，DEVPROP_TYPE_INT64 标识符表示数据类型为 ULONG64 的无符号整数。
 
 <a name="remarks"></a>备注
 -------
 
-可以仅与组合 DEVPROP_TYPE_UINT64 [ **DEVPROP_TYPEMOD_ARRAY** ](devprop-typemod-array.md)属性数据类型修饰符。
+DEVPROP_TYPE_UINT64 只能与 [**DEVPROP_TYPEMOD_ARRAY**](devprop-typemod-array.md) 的属性数据类型修饰符组合。
 
-**设置此属性类型**
+**设置此类型的属性**
 
-若要设置其基本数据类型为 DEVPROP_TYPE_UINT64 的属性，调用对应**SetupDiSet * Xxx*** 属性函数和集函数的输入参数，如下所示：
+若要设置其基本数据类型为 DEVPROP_TYPE_UINT64 的属性，请调用相应的 **SetupDiSet * Xxx*** 属性函数并按如下所示设置函数输入参数：
 
-- 设置*PropertyType* DEVPROP_TYPE_UINT64，参数设置*PropertyBuffer*参数指向的缓冲区可包含至少一个 ULONG64 值，并设置*PropertyBufferSize*参数<strong>sizeof (</strong>ULONG64<strong>)</strong>。
+- 将 *PropertyType* 参数设置为 DEVPROP_TYPE_UINT64，将 *PropertyBuffer* 参数设置为指向一个缓冲区的指针，该缓冲区可包含至少一个 ULONG64 值，并将 *PropertyBufferSize* 参数设置为 <strong>sizeof (</strong>ULONG64 <strong>)</strong>。
 
-- 根据需要设置其他函数输入的参数设置的属性。
+- 根据需要设置其他函数输入参数来设置属性。
 
 <a name="requirements"></a>要求
 ------------
@@ -49,8 +48,8 @@ ms.locfileid: "63331274"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>Header</p></td>
-<td align="left">Devpropdef.h （包括 Devpropdef.h）</td>
+<td align="left"><p>标头</p></td>
+<td align="left">Devpropdef (包含 Devpropdef) </td>
 </tr>
 </tbody>
 </table>

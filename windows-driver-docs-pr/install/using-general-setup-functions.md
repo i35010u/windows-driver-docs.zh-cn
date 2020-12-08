@@ -1,18 +1,17 @@
 ---
 title: 使用常规设置函数
 description: 使用常规设置函数
-ms.assetid: 08a7b585-7930-47a3-9fa0-a36625242e5d
 keywords:
 - Setupapi.log 函数 WDK，常规设置功能
 - 常规设置函数 WDK Setupapi.log
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 16554c4653d94b8281218ab3e463e6c54e6a8047
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 912f173e9707b1108cacb4e35085dff4e360437b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89096411"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96827035"
 ---
 # <a name="using-general-setup-functions"></a>使用常规设置函数
 

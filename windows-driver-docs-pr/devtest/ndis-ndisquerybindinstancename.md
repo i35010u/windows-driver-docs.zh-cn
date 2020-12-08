@@ -1,7 +1,6 @@
 ---
 title: 'NdisQueryBindInstanceName 规则 (ndis) '
 description: NdisQueryBindInstanceName 为指定友好名称的字符串分配内存。 调用方完成使用此内存后，调用方必须调用 NdisFreeMemory 函数以释放内存。
-ms.assetid: C332698F-8DA5-4A9A-AF2E-5D8B43815488
 ms.date: 05/21/2018
 keywords:
 - 'NdisQueryBindInstanceName 规则 (ndis) '
@@ -12,12 +11,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: b3b60010419fde80b736b964c0ee7b8387381840
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 0b0a26c45712a390e2e63485f2e707ede12c9875
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106224"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96828165"
 ---
 # <a name="ndisquerybindinstancename-rule-ndis"></a>NdisQueryBindInstanceName 规则 (ndis) 
 

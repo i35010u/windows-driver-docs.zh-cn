@@ -1,17 +1,16 @@
 ---
 title: 文件关闭当前窗口
 description: 文件关闭当前窗口
-ms.assetid: b0cdb6da-66f7-40fd-8a93-8890affc6104
 keywords:
 - 文件关闭当前窗口
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: db29a79467e8abc5a3b1721642632c2480eff3f3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b56d2accf9dcd32c3cce1ed0e29396264e4e7f97
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63361633"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96828225"
 ---
 # <a name="file--close-current-window"></a>文件 | 关闭当前窗口
 
@@ -19,11 +18,11 @@ ms.locfileid: "63361633"
 ## <span id="ddk_file_close_current_window_dbg"></span><span id="DDK_FILE_CLOSE_CURRENT_WINDOW_DBG"></span>
 
 
-单击**关闭当前窗口**上**文件**菜单关闭的活动的调试信息窗口。
+单击 "**文件**" 菜单上的 "**关闭当前窗口**" 以关闭 "活动调试信息" 窗口。
 
-此命令相当于按下 CTRL + F4。
+此命令等效于按 CTRL + F4。
 
-此外可以通过单击关闭调试的信息窗口**关闭**在 WinDbg 窗口中信息窗口的右上角的按钮。
+您还可以通过单击 "信息" 窗口右上角的 " **关闭** " 按钮来关闭 "调试信息" 窗口。
 
  
 

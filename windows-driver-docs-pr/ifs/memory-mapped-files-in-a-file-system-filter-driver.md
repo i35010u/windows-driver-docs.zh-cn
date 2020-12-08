@@ -1,18 +1,17 @@
 ---
 title: 文件系统筛选器驱动程序中的内存映射文件
 description: 文件系统筛选器驱动程序中的内存映射文件
-ms.assetid: 0915167a-f8ac-4222-bece-76d7fc8a3823
 keywords:
 - 安全 WDK 文件系统，内存映射文件
 - 内存映射文件 WDK 文件系统
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 066e20156d90aa25289971dbf7a84acb21a9c3c8
-ms.sourcegitcommit: 67efcd26f7be8f50c92b141ccd14c9c68f4412d8
+ms.openlocfilehash: 421fd58352b68053579f7529fd26e211a6f3dc1b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88902536"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96828011"
 ---
 # <a name="memory-mapped-files-in-a-file-system-filter-driver"></a>文件系统筛选器驱动程序中的内存映射文件
 

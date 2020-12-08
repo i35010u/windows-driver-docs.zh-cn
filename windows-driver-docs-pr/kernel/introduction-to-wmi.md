@@ -1,17 +1,16 @@
 ---
 title: WMI 简介
 description: WMI 简介
-ms.assetid: 9ee0ecbb-05fc-42ab-8bad-7c647f30c82c
 keywords:
-- WMI WDK 内核，有关 Windows Management Instrumentation
+- WMI WDK 内核，关于 Windows Management Instrumentation
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 178a4bd74e15662fd0ea36f53291b01351e0f3ea
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ef03a0d8429cb85caee03e183a7c1d16c708ca48
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63368531"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96827017"
 ---
 # <a name="introduction-to-wmi"></a>WMI 简介
 
@@ -19,17 +18,17 @@ ms.locfileid: "63368531"
 
 
 
-通过 WMI 提供程序使您的驱动程序，你可以：
+通过使你的驱动程序成为 WMI 提供程序，你可以：
 
--   使自定义数据对 WMI 使用者可用。
+-   使自定义数据可用于 WMI 使用者。
 
--   允许将设备配置为通过标准接口，而不是自定义控件面板应用程序的 WMI 使用者。
+-   允许 WMI 使用者通过标准接口而不是自定义控制面板应用程序来配置设备。
 
--   而无需使用者来轮询和 / 或将 Irp 发送通知驱动程序定义的事件的 WMI 使用的者。
+-   通知驱动程序定义事件的 WMI 使用者，无需使用者轮询或发送 Irp。
 
--   通过收集和发送到单一目标请求的数据减少驱动程序的开销。
+-   通过只收集请求的数据并将其发送到单个目标来减少驱动程序开销。
 
--   批注有描述性驱动程序定义的类名称和可选说明的 WMI 客户端然后可以枚举并向用户显示的数据和事件数据块。
+-   用描述性驱动程序定义的类名和可选说明注释数据和事件块，然后 WMI 客户端可以枚举并显示给用户。
 
  
 

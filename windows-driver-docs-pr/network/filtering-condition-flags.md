@@ -1,17 +1,16 @@
 ---
 title: 筛选条件标志
 description: 本部分介绍筛选条件标志。
-ms.assetid: a2493fc5-614f-47df-a818-cdec06dc9f4a
 keywords:
 - 筛选条件标志网络驱动程序
 ms.date: 01/07/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 0b7c49809f837caf9fe43b71f95552e873074ee0
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 5243b5ac56cd0b607539637c3ee6d42bc9a1f9c2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90715046"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96826761"
 ---
 # <a name="filtering-condition-flags"></a>筛选条件标志
 
@@ -23,7 +22,7 @@ ms.locfileid: "90715046"
 <table>
 <tr>
 <th>筛选条件标志</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 <tr>
 <td>
@@ -251,8 +250,8 @@ ms.locfileid: "90715046"
 <p>0x00000200</p>
 </td>
 <td>
-<p>指示未显式绑定套接字。 如果发送方调用 send 而不先调用 bind，Windows 套接字会执行隐式绑定。<div class="alert"><b>注意</b>   只有 Windows Server 2008 和 Windows Vista 支持此标志。 它在更高版本的 Windows 版本中已弃用。</div>
-<div> </div>
+<p>指示未显式绑定套接字。 如果发送方调用 send 而不先调用 bind，Windows 套接字会执行隐式绑定。<div class="alert"><b>注意</b>  只有 Windows Server 2008 和 Windows Vista 支持此标志。 它在更高版本的 Windows 版本中已弃用。</div>
+<div> </div>
 </p>
 <p>此标志适用于下列筛选层：<dl>
 <dd>FWPM_LAYER_ALE_RESOURCE_ASSIGNMENT_V4</dd>

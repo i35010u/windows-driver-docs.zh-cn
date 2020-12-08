@@ -1,15 +1,14 @@
 ---
 title: 图形内核性能改进
 description: 为帮助评估图形硬件性能，Windows 显示驱动程序模型 (WDDM) 1.3 及更高版本的驱动程序可以选择为 GPU 处理的 API 调用提供准确的计时信息。 此功能是从 Windows 8.1 开始的新功能。
-ms.assetid: 8A2E1392-F0B4-4F5F-AFD9-DE8C6F3C2147
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 59f94d67d7089360ceab63a5fded19c431532785
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 76bf61ba53e2939114ca58b5fbb2d12270c03307
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89064184"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96827303"
 ---
 # <a name="graphics-kernel-performance-improvements"></a>图形内核性能改进
 
@@ -28,7 +27,7 @@ ms.locfileid: "89064184"
 -   [**DXGKARG \_ CALIBRATEGPUCLOCK**](./index.md)
 -   [**DXGKARG \_ FORMATHISTORYBUFFER**](/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgkarg_formathistorybuffer)
 -   [**DXGKARG \_ HISTORYBUFFERPRECISION**](/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgkarg_historybufferprecision)
--   [**驱动程序 \_ (\_ **](/windows-hardware/drivers/ddi/dispmprt/ns-dispmprt-_driver_initialization_data) 新的 **DxgkDdiCalibrateGpuClock** 和 **DxgkDdiFormatHistoryBuffer** 成员的初始化数据) 
+-   [**驱动程序 \_ (\_**](/windows-hardware/drivers/ddi/dispmprt/ns-dispmprt-_driver_initialization_data) 新的 **DxgkDdiCalibrateGpuClock** 和 **DxgkDdiFormatHistoryBuffer** 成员的初始化数据) 
 -   [**DXGK \_ALLOCATIONINFOFLAGS**](/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgk_allocationinfoflags) (New **HistoryBuffer** 成员) 
 -   [**DXGK \_QUERYADAPTERINFOTYPE**](/windows-hardware/drivers/ddi/d3dkmddi/ne-d3dkmddi-_dxgk_queryadapterinfotype) (New **DXGKQAITYPE \_ HISTORYBUFFERPRECISION** 常数值) 
 -   [*DxgkDdiCreateAllocation*](/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_createallocation) (参阅 "备注" 中的 "分配历史缓冲区") 

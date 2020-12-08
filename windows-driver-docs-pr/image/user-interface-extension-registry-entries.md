@@ -1,15 +1,14 @@
 ---
 title: 用户界面扩展注册表项
 description: 用户界面扩展注册表项
-ms.assetid: 1ddf12a1-50e9-4f6e-9394-5bb1afb67798
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bc4c4acea8ef9c38149f4c2e93c51135ae29442b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3257bb7c0c7bd92cc54213b40428dd892f022744
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383699"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96827101"
 ---
 # <a name="user-interface-extension-registry-entries"></a>用户界面扩展注册表项
 
@@ -17,24 +16,24 @@ ms.locfileid: "63383699"
 
 
 
-必须为每个扩展来提供 COM 服务器类 ID。 请注意，作为 CLSID 下的注册表项 （而不是值） 列出的类 ID 的 COM 服务器的每个扩展\\{WIA\_DIP\_UI\_CLSID}\\shellex，其中 WIA\_DIP\_UI\_CLSID 是当应用程序请求此属性时，返回的实际 GUID。 应用程序使用它作为在注册表中查找项的一部分。 每个扩展性接口可以指不同的类 id。 没有相同的对象实现所有这些要求。 列出的实现的扩展。 它不需要列出所有四个。
+必须为每个扩展提供 COM 服务器类 ID。 请注意，每个扩展的 COM 服务器的类 ID 作为注册表项列出， (不是 CLSID \\ {WIA \_ DIP \_ ui clsid} shellex 下的值) \_ \\ ，其中，WIA \_ dip \_ ui \_ clsid 是应用程序请求此属性时返回的实际 GUID。 应用程序使用它作为注册表中的查找密钥的一部分。 每个扩展性接口都可以引用不同的类 ID。 不要求同一个对象全部实现它们。 仅列出已实现的扩展。 不需要列出所有四个。
 
-类 ID GUID 标识哪些驱动程序使用，如果你的设备的所有模型都使用相同的驱动程序，因为它们都可以有相同的类 ID GUID。 如果不同的模型使用不同的驱动程序，则必须具有不同的 Guid。
+由于类 ID GUID 标识要使用的驱动程序，如果设备的所有型号使用同一个驱动程序，则它们可以具有相同的类 ID GUID。 如果不同的模型使用不同的驱动程序，则它们必须具有不同的 Guid。
 
-<a href="" id="clsid--wia-dip-ui-clsid--shellex-contextmenuhandlers--clsid-of-com-in-process-server-"></a>CLSID\\{WIA\_DIP\_UI\_CLSID}\\shellex\\ContextMenuHandlers\\&lt;CLSID 的 COM 进程内服务器&gt;  
-供应商提供 COM DLL 实现上下文菜单 UI 扩展。
+<a href="" id="clsid--wia-dip-ui-clsid--shellex-contextmenuhandlers--clsid-of-com-in-process-server-"></a>CLSID \\ {WIA \_ DIP \_ UI \_ CLSID} \\ shellex \\ ContextMenuHandlers \\ &lt; COM 进程内服务器的 clsid&gt;  
+供应商提供的用于实现上下文菜单 UI 扩展的 COM DLL。
 
-<a href="" id="clsid--wia-dip-ui-clsid--shellex-propertysheethandlers--clsid-of-com-in-process-server-"></a>CLSID\\{WIA\_DIP\_UI\_CLSID}\\shellex\\PropertySheetHandlers\\&lt;CLSID 的 COM 进程内服务器&gt;  
-供应商提供 COM DLL 实现属性页 UI 扩展。
+<a href="" id="clsid--wia-dip-ui-clsid--shellex-propertysheethandlers--clsid-of-com-in-process-server-"></a>CLSID \\ {WIA \_ DIP \_ UI \_ CLSID} \\ shellex \\ PropertySheetHandlers \\ &lt; COM 进程内服务器的 clsid&gt;  
+供应商提供的用于实现属性表 UI 扩展的 COM DLL。
 
-<a href="" id="clsid--wia-dip-ui-clsid--shellex-wiadialogextensionhandlers--clsid-of-com-in-process-server-"></a>CLSID\\{WIA\_DIP\_UI\_CLSID}\\shellex\\WiaDialogExtensionHandlers\\&lt;CLSID 的 COM 进程内服务器&gt;  
-供应商提供 COM DLL 实现应用程序对话框 UI 扩展。
+<a href="" id="clsid--wia-dip-ui-clsid--shellex-wiadialogextensionhandlers--clsid-of-com-in-process-server-"></a>CLSID \\ {WIA \_ DIP \_ UI \_ CLSID} \\ shellex \\ WiaDialogExtensionHandlers \\ &lt; COM 进程内服务器的 clsid&gt;  
+供应商提供的用于实现应用程序对话框 UI 扩展的 COM DLL。
 
-<a href="" id="clsid--clsid-of-the-com-in-process-server--inprocserver32-default-value"></a>CLSID\\&lt;COM 进程内服务器的 CLSID&gt;\\InProcServer32\\默认值  
-REG\_SZ 类型包含的供应商提供的 COM 服务器实现扩展性接口的名称。
+<a href="" id="clsid--clsid-of-the-com-in-process-server--inprocserver32-default-value"></a>\\ &lt; COM 进程内服务器 &gt; \\ INPROCSERVER32 \\ 默认值的 clsid clsid  
+\_包含供应商提供的用于实现扩展性接口的 COM 服务器的名称的 REG SZ 类型。
 
-<a href="" id="clsid--clsid-of-the-com-in-process-server--inprocserver32-threadingmodel"></a>CLSID\\&lt;COM 进程内服务器的 CLSID&gt;\\InProcServer32\\ThreadingModel  
-REG\_SZ 类型包含的供应商提供 COM 服务器的线程模型的名称。 将此项设置为单元。
+<a href="" id="clsid--clsid-of-the-com-in-process-server--inprocserver32-threadingmodel"></a>\\ &lt; COM 进程内服务器 &gt; \\ InProcServer32 ThreadingModel 的 clsid clsid \\  
+\_包含供应商提供的 COM 服务器的线程模型名称的 REG SZ 类型。 将此项设置为单元。
 
  
 

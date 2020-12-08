@@ -1,22 +1,21 @@
 ---
 title: WDI_TLV_INTERFACE_ATTRIBUTES
-description: WDI_TLV_INTERFACE_ATTRIBUTES 是接口的 TLV 包含属性。
-ms.assetid: A36AC0A7-6F5B-4461-841D-3B4C19BD49EB
+description: WDI_TLV_INTERFACE_ATTRIBUTES 是包含接口特性的 TLV。
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_INTERFACE_ATTRIBUTES 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 553ea43355a1cec591f6a83d780b97369c93ca23
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b112780c93b008cb4d652972dcc5631105053c79
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63361742"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96828429"
 ---
-# <a name="wditlvinterfaceattributes"></a>WDI\_TLV\_接口\_属性
+# <a name="wdi_tlv_interface_attributes"></a>WDI \_ TLV \_ 接口 \_ 属性
 
 
-WDI\_TLV\_接口\_属性是包含属性的接口 TLV。
+WDI \_ tlv \_ 接口 \_ 特性是包含接口特性的 tlv。
 
 ## <a name="tlv-type"></a>TLV 类型
 
@@ -26,16 +25,16 @@ WDI\_TLV\_接口\_属性是包含属性的接口 TLV。
 ## <a name="length"></a>长度
 
 
-所有的大小 （以字节为单位） 总和包含 TLVs。
+Sum (包含所有 TLVs 的大小的) 字节。
 
 ## <a name="values"></a>值
 
 
-| 在任务栏的搜索框中键入                                                                         | 允许多个 TLV 实例 | 可选 | 描述                                                                                                                                                                                     |
+| 类型                                                                         | 允许多个 TLV 实例 | 可选 | 说明                                                                                                                                                                                     |
 |------------------------------------------------------------------------------|--------------------------------|----------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [**WDI\_TLV\_INTERFACE\_CAPABILITIES**](wdi-tlv-interface-capabilities.md)  |                                |          | 接口的功能。                                                                                                                                                              |
-| [**WDI\_TLV\_FIRMWARE\_VERSION**](wdi-tlv-firmware-version.md)              |                                |          | 指定的固件版本为 ASCII 字符串。                                                                                                                                            |
-| [**WDI\_TLV\_IHV\_NON\_WDI\_OIDS\_LIST**](wdi-tlv-ihv-non-wdi-oids-list.md) |                                | X        | 列表的非-WDI Oid 适配器要播发到操作系统。 适配器不应假定操作系统已筛选非-WDI Oid 以匹配此列表。 |
+| [**WDI \_ TLV \_ 接口 \_ 功能**](wdi-tlv-interface-capabilities.md)  |                                |          | 接口的功能。                                                                                                                                                              |
+| [**WDI \_ TLV \_ 固件 \_ 版本**](wdi-tlv-firmware-version.md)              |                                |          | 指定固件版本的 ASCII 字符串。                                                                                                                                            |
+| [**WDI \_ TLV \_ IHV \_ 非 \_ WDI \_ OID \_ LIST**](wdi-tlv-ihv-non-wdi-oids-list.md) |                                | X        | 适配器要播发到操作系统的非 WDI Oid 列表。 适配器不应假定操作系统已将非 WDI Oid 筛选为与此列表匹配。 |
 
  
 
@@ -54,10 +53,10 @@ WDI\_TLV\_接口\_属性是包含属性的接口 TLV。
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
-<td><p>Windows Server 2016</p></td>
+<td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Wditypes.hpp</td>
 </tr>
 </tbody>

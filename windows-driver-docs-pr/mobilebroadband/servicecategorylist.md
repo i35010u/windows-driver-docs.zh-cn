@@ -1,15 +1,14 @@
 ---
 title: ServiceCategoryList
 description: ServiceCategoryList
-ms.assetid: 69ea35aa-c658-49ed-86bd-815392d157f6
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8ced03056fecc1a74e284932164c67867eeed888
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: fa20bb73950bbd3d7de675b77c6a5c32ef6c66da
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89403196"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96827005"
 ---
 # <a name="servicecategorylist"></a>ServiceCategoryList
 
@@ -47,7 +46,7 @@ ServiceCategoryList 元素指定应用于服务的一个或多个功能类别。
 <thead>
 <tr class="header">
 <th>元素</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -71,7 +70,7 @@ ServiceCategoryList 元素指定应用于服务的一个或多个功能类别。
 <thead>
 <tr class="header">
 <th>元素</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>

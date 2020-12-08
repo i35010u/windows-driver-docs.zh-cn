@@ -1,7 +1,6 @@
 ---
 title: 创建安全的设备安装
 description: 创建安全的设备安装
-ms.assetid: e92488c4-1383-4493-b229-61c646546c82
 keywords:
 - 设备设置 WDK 设备安装，安全性
 - 设备安装 WDK，安全性
@@ -14,12 +13,12 @@ keywords:
 - WMI 安全 WDK 设备安装
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a8d9484ecd6992c8fd9aebb2f1b0e614adffc41e
-ms.sourcegitcommit: 5ff30ddae453c6439177acde0e2d32eaf234a2c0
+ms.openlocfilehash: 318097874adc47afd0c510a24932ddbc0d806859
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95030036"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96827793"
 ---
 # <a name="creating-secure-device-installations"></a>创建安全的设备安装
 

@@ -1,18 +1,17 @@
 ---
 title: SCSI 微型端口驱动程序的 HwScsiInterrupt 例程
 description: SCSI 微型端口驱动程序的 HwScsiInterrupt 例程
-ms.assetid: 8760e7e4-1721-4e55-99e6-c9e234368fa1
 keywords:
 - SCSI 微型端口驱动程序 WDK 存储，HwScsiInterrupt
 - HwScsiInterrupt
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e49652603bbb458c0dcf5b7c0324f3d3fb5c6291
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 33852447c15d23338942eb21304d088e27e641e6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89187793"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96828403"
 ---
 # <a name="scsi-miniport-drivers-hwscsiinterrupt-routine"></a>SCSI 微型端口驱动程序的 HwScsiInterrupt 例程
 
@@ -20,7 +19,7 @@ ms.locfileid: "89187793"
 ## <span id="ddk_scsi_miniport_drivers_hwscsiinterrupt_routine_kg"></span><span id="DDK_SCSI_MINIPORT_DRIVERS_HWSCSIINTERRUPT_ROUTINE_KG"></span>
 
 
-进入时， [**HwScsiInterrupt**](/previous-versions/windows/hardware/drivers/ff557312(v=vs.85)) 例程应确定其 HBA 是否确实生成了中断。 如果*HwScsiInterrupt*检测到虚假中断，则必须尽快返回**FALSE** ，以便可以快速调用实际产生中断的设备的 ISR。
+进入时， [**HwScsiInterrupt**](/previous-versions/windows/hardware/drivers/ff557312(v=vs.85)) 例程应确定其 HBA 是否确实生成了中断。 如果 *HwScsiInterrupt* 检测到虚假中断，则必须尽快返回 **FALSE** ，以便可以快速调用实际产生中断的设备的 ISR。
 
 否则，微型端口驱动程序的 *HwScsiInterrupt* 例程通常负责完成导致中断的 i/o 操作。 根据 HBA 和微型端口驱动程序的设计， *HwScsiInterrupt* 例程会执行以下部分或全部操作：
 
@@ -38,7 +37,7 @@ ms.locfileid: "89187793"
 
 2.  接下来，对于 * NotificationType ***NextRequest**，或者如果 HBA 支持标记队列或每个逻辑单元多个请求，则为 **NextLuRequest** 。
 
-为了获得更好的整体系统性能，微型端口驱动程序的 *HwScsiInterrupt* 例程只应执行处理 i/o 请求所需的最低要求。 也就是说，应将微型端口驱动程序设计为尽可能快地从 *HwScsiInterrupt* 例程返回控制权。 *HwScsiInterrupt*例程不能使用较大的间隔调用[**ScsiPortStallExecution**](/windows-hardware/drivers/ddi/srb/nf-srb-scsiportstallexecution) ，因此会使处理器独占，并阻止其他驱动程序为其设备中断提供服务。
+为了获得更好的整体系统性能，微型端口驱动程序的 *HwScsiInterrupt* 例程只应执行处理 i/o 请求所需的最低要求。 也就是说，应将微型端口驱动程序设计为尽可能快地从 *HwScsiInterrupt* 例程返回控制权。 *HwScsiInterrupt* 例程不能使用较大的间隔调用 [**ScsiPortStallExecution**](/windows-hardware/drivers/ddi/srb/nf-srb-scsiportstallexecution) ，因此会使处理器独占，并阻止其他驱动程序为其设备中断提供服务。
 
  
 

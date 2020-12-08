@@ -1,18 +1,17 @@
 ---
 title: 创建新的设备安装程序类
 description: 创建新的设备安装程序类
-ms.assetid: 3235d1e9-f6f7-4efe-a50c-5ea7a9956e7e
 keywords:
 - 设备安装程序类 WDK 设备安装
 - 安装类 WDK 设备安装
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 69e3d172bf64281bf2a5c1df8f4d101385f51886
-ms.sourcegitcommit: 5ff30ddae453c6439177acde0e2d32eaf234a2c0
+ms.openlocfilehash: 5c6dcf5617e7fd16917dc640bb135b6f9124cf9d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95030030"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96827825"
 ---
 # <a name="creating-a-new-device-setup-class"></a>创建新的设备安装程序类
 

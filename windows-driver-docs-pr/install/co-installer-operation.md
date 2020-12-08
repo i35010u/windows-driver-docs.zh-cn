@@ -1,7 +1,6 @@
 ---
 title: 辅助安装程序操作
 description: 辅助安装程序操作
-ms.assetid: a7f52125-b435-4963-85dc-712700ba9fe9
 keywords:
 - 共同安装程序的 WDK 设备安装，其工作原理
 - 共同安装程序 WDK 设备安装，示例
@@ -11,12 +10,12 @@ keywords:
 - 设备特定的共同安装程序 WDK 设备安装
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 56a1ae0e56072ad34b00e566e33574d44e46aa3c
-ms.sourcegitcommit: 5ff30ddae453c6439177acde0e2d32eaf234a2c0
+ms.openlocfilehash: 510681db637737ceee722733b667b72b7243aa93
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95030042"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96827959"
 ---
 # <a name="co-installer-operation"></a>辅助安装程序操作
 

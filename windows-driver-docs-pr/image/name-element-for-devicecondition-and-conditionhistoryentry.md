@@ -1,9 +1,8 @@
 ---
-title: 对于 DeviceCondition 和 ConditionHistoryEntry 元素的 name 元素
-description: 所需的 Name 元素命名当前 DeviceCondition 或 ConditionHistoryEntry 元素中指定的错误条件。
-ms.assetid: 1ac530ed-dc31-4af0-a89b-0860a36bbfeb
+title: DeviceCondition 和 ConditionHistoryEntry 元素的 Name 元素
+description: 必需的 Name 元素命名 DeviceCondition 或 ConditionHistoryEntry 元素中指定的当前错误条件。
 keywords:
-- DeviceCondition 和 ConditionHistoryEntry 元素图像处理设备的名称元素
+- DeviceCondition 和 ConditionHistoryEntry 元素图像处理设备的 Name 元素
 topic_type:
 - apiref
 api_name:
@@ -12,19 +11,19 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 56b1a0f33954c40a54e4db398b3a98533d244316
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b640e5e1e6b3f7b840d3fdacfd814e03cdebbe69
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379663"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96827119"
 ---
-# <a name="name-element-for-devicecondition-and-conditionhistoryentry-element"></a>对于 DeviceCondition 和 ConditionHistoryEntry 元素的 name 元素
+# <a name="name-element-for-devicecondition-and-conditionhistoryentry-element"></a>DeviceCondition 和 ConditionHistoryEntry 元素的 Name 元素
 
 
-所需**名称**元素名称中指定的当前错误条件[ **DeviceCondition** ](devicecondition.md)或者[ **ConditionHistoryEntry** ](conditionhistoryentry.md)元素。
+必需的 **Name** 元素命名 [**DeviceCondition**](devicecondition.md) 或 [**ConditionHistoryEntry**](conditionhistoryentry.md) 元素中指定的当前错误条件。
 
-<a name="usage"></a>用法
+<a name="usage"></a>使用情况
 -----
 
 ```xml
@@ -57,15 +56,15 @@ ms.locfileid: "63379663"
 <tbody>
 <tr class="odd">
 <td><p><span id="Calibrating"></span><span id="calibrating"></span><span id="CALIBRATING"></span>校准</p></td>
-<td><p>扫描设备校准及其内部组件进行准备，以便获取映像。</p></td>
+<td><p>扫描设备正在校准其内部组件，以便准备获取映像。</p></td>
 </tr>
 <tr class="even">
 <td><p><span id="CoverOpen"></span><span id="coveropen"></span><span id="COVEROPEN"></span>CoverOpen</p></td>
-<td><p>一个扫描设备上的多个后台处于打开状态。</p></td>
+<td><p>扫描设备中的一个或多个内容已打开。</p></td>
 </tr>
 <tr class="odd">
 <td><p><span id="InputTrayEmpty"></span><span id="inputtrayempty"></span><span id="INPUTTRAYEMPTY"></span>InputTrayEmpty</p></td>
-<td><p>自动文档送纸器 (ADF) 输入包含任何媒体。</p></td>
+<td><p>自动文档送纸器 (ADF) 输入没有介质。</p></td>
 </tr>
 <tr class="even">
 <td><p><span id="InterlockOpen"></span><span id="interlockopen"></span><span id="INTERLOCKOPEN"></span>InterlockOpen</p></td>
@@ -73,23 +72,23 @@ ms.locfileid: "63379663"
 </tr>
 <tr class="odd">
 <td><p><span id="InternalStorageFull"></span><span id="internalstoragefull"></span><span id="INTERNALSTORAGEFULL"></span>InternalStorageFull</p></td>
-<td><p>当前正在写入到的内部存储组件已满。</p></td>
+<td><p>当前写入的内部存储组件已满。</p></td>
 </tr>
 <tr class="even">
 <td><p><span id="LampError"></span><span id="lamperror"></span><span id="LAMPERROR"></span>LampError</p></td>
-<td><p>扫描程序 lamp 失败的原因和图像采集无法继续。</p></td>
+<td><p>扫描仪灯出现故障，无法继续进行图像采集。</p></td>
 </tr>
 <tr class="odd">
 <td><p><span id="LampWarming"></span><span id="lampwarming"></span><span id="LAMPWARMING"></span>LampWarming</p></td>
-<td><p>扫描程序 lamp 正在预热进行准备，以便获取映像。</p></td>
+<td><p>扫描仪灯正在预热，准备获取映像。</p></td>
 </tr>
 <tr class="even">
 <td><p><span id="MediaJam"></span><span id="mediajam"></span><span id="MEDIAJAM"></span>MediaJam</p></td>
-<td><p>媒体被印象中其中一个输入源，因此图像获取失败。</p></td>
+<td><p>媒体在一个输入源中卡住，因此图像采集失败。</p></td>
 </tr>
 <tr class="odd">
 <td><p><span id="MultipleFeedError"></span><span id="multiplefeederror"></span><span id="MULTIPLEFEEDERROR"></span>MultipleFeedError</p></td>
-<td><p>ADF 是同时提供多个的介质。</p></td>
+<td><p>ADF 同时送入了多片介质。</p></td>
 </tr>
 </tbody>
 </table>
@@ -99,7 +98,7 @@ ms.locfileid: "63379663"
 ## <a name="child-elements"></a>子元素
 
 
-没有子元素。
+没有任何子元素。
 
 ## <a name="parent-elements"></a>父元素
 
@@ -126,9 +125,9 @@ ms.locfileid: "63379663"
 <a name="remarks"></a>备注
 -------
 
-某些错误名称的有效值只有某些特定[**组件**](component.md)元素。
+某些错误名称仅对某些 [**组件**](component.md) 元素有效。
 
-您都可以扩展和子集的允许的值为此元素。
+可以扩展和子集化此元素的允许值。
 
 ## <a name="see-also"></a>请参阅
 

@@ -1,15 +1,14 @@
 ---
 title: GPIO 控制器驱动程序的中断同步
 description: GPIO 控制器驱动程序可以调用 GPIO_CLX_AcquireInterruptLock 和 GPIO_CLX_ReleaseInterruptLock 方法来获取和释放由 GPIO framework 扩展 (GpioClx) 内部实现的中断锁。
-ms.assetid: D9698A50-7CC2-463C-9E46-7FE428F3193E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3d9ee9acdcec7cde8fec464c83ed77f742975218
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 1087a854c05089a5d8aaa27d1fe095647b506419
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105298"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96827215"
 ---
 # <a name="interrupt-synchronization-for-gpio-controller-drivers"></a>GPIO 控制器驱动程序的中断同步
 
@@ -18,19 +17,19 @@ GPIO 控制器驱动程序可以调用 [**gpio \_ CLX \_ AcquireInterruptLock**]
 
 如果 GPIO 控制器的硬件注册是内存映射的，则 GpioClx 中的 ISR 将在 DIRQL 调用某些驱动程序实现的事件回调函数;GpioClx 在被动级别调用剩余的回调函数 \_ 。 访问寄存器银行的被动级别回调函数可能需要使用中断锁来同步到在 DIRQL 上运行并访问相同寄存器的回调函数。
 
-例如，被动级 [*客户端 \_ EnableInterrupt*](/windows-hardware/drivers/ddi/gpioclx/nc-gpioclx-gpio_client_enable_interrupt) 和 [*客户端 \_ DisableInterrupt*](/windows-hardware/drivers/ddi/gpioclx/nc-gpioclx-gpio_client_disable_interrupt) 回调函数修改硬件设置，这些设置会影响在 DIRQL 上运行的其他中断相关回调例程的操作。 *客户端 \_ EnableInterrupt*和*客户端 \_ DisableInterrupt*函数通常使用银行中断锁来同步其寄存器访问。
+例如，被动级 [*客户端 \_ EnableInterrupt*](/windows-hardware/drivers/ddi/gpioclx/nc-gpioclx-gpio_client_enable_interrupt) 和 [*客户端 \_ DisableInterrupt*](/windows-hardware/drivers/ddi/gpioclx/nc-gpioclx-gpio_client_disable_interrupt) 回调函数修改硬件设置，这些设置会影响在 DIRQL 上运行的其他中断相关回调例程的操作。 *客户端 \_ EnableInterrupt* 和 *客户端 \_ DisableInterrupt* 函数通常使用银行中断锁来同步其寄存器访问。
 
-GpioClx 会自动序列化发生在 DIRQL 上的与中断相关的和与 i/o 相关的回调。 GpioClx 在 DIRQL 调用回调函数之前获取目标 bank 的中断锁，并在函数返回后释放该锁。 调用 DIRQL 时调用的回调函数会出错，尝试通过调用 **GPIO \_ CLX \_ AcquireInterruptLock**重新获取银行中断锁。
+GpioClx 会自动序列化发生在 DIRQL 上的与中断相关的和与 i/o 相关的回调。 GpioClx 在 DIRQL 调用回调函数之前获取目标 bank 的中断锁，并在函数返回后释放该锁。 调用 DIRQL 时调用的回调函数会出错，尝试通过调用 **GPIO \_ CLX \_ AcquireInterruptLock** 重新获取银行中断锁。
 
 同样，GpioClx 会自动序列化在被动级别发生的回调 \_ 。 GpioClx 在内部实现每个银行的等待锁。 GpioClx 在被动级别调用回调函数之前获取目标 bank 的等待锁 \_ ，并在函数返回时释放该锁。 对于内存映射的 GPIO 控制器，GpioClx 代表驱动程序管理银行等待锁，但不允许驱动程序显式获取和释放锁。
 
 但是，对于非内存映射的 GPIO 控制器， **GPIO \_ CLX \_ AcquireInterruptLock** 和 **gpio \_ CLX \_ ReleaseInterruptLock** 获取并释放等待锁，而不是中断锁。 GpioClx 为 GPIO 控制器中的每个 pin bank 实现一个单独的等待锁。 因为寄存器不是内存映射的，所以所有与中断相关的回调函数和与 i/o 相关的回调函数都在被动级别调用， \_ 以便它们可以使用 i/o 请求通过串行总线（例如 I I i C）访问寄存器。 GpioClx 在调用其中一个回调函数之前获取目标 bank 的等待锁，并在函数返回后释放该锁。
 
-如果回调函数的回调函数尝试通过调用 **GPIO \_ CLX \_ AcquireInterruptLock**重新获取 bank wait 锁，则是错误的。 但是，回调函数之外的被动级驱动程序代码可以调用**GPIO \_ CLX \_ *Xxx*InterruptLock**方法以同步到回调函数。 由于 GpioClx 在被动级别调用所有中断相关和 i/o 相关的回调函数，因此 \_ ，bank wait 锁定会有效地取代非内存映射控制器的银行中断锁。
+如果回调函数的回调函数尝试通过调用 **GPIO \_ CLX \_ AcquireInterruptLock** 重新获取 bank wait 锁，则是错误的。 但是，回调函数之外的被动级驱动程序代码可以调用 **GPIO \_ CLX \_ *Xxx* InterruptLock** 方法以同步到回调函数。 由于 GpioClx 在被动级别调用所有中断相关和 i/o 相关的回调函数，因此 \_ ，bank wait 锁定会有效地取代非内存映射控制器的银行中断锁。
 
 非内存映射控制器的另一个选项是控制器驱动程序实现一组等待锁。 通过这些等待锁，回调例程可以对共享资源进行更精细的锁定和解锁，而不是使用 GpioClx 实现的等待锁。
 
-在调用 [*客户端 \_ QueryControllerBasicInformation*](/windows-hardware/drivers/ddi/gpioclx/nc-gpioclx-gpio_client_query_controller_basic_information) 回调例程期间，GPIO 控制器驱动程序会向 GpioClx 报告控制器寄存器是否为内存映射。 有关详细信息，请参阅[**客户端 \_ 控制器 \_ 基本 \_ 信息**](/windows-hardware/drivers/ddi/gpioclx/ns-gpioclx-_client_controller_basic_information)中的**MemoryMappedController**标志的说明。
+在调用 [*客户端 \_ QueryControllerBasicInformation*](/windows-hardware/drivers/ddi/gpioclx/nc-gpioclx-gpio_client_query_controller_basic_information) 回调例程期间，GPIO 控制器驱动程序会向 GpioClx 报告控制器寄存器是否为内存映射。 有关详细信息，请参阅 [**客户端 \_ 控制器 \_ 基本 \_ 信息**](/windows-hardware/drivers/ddi/gpioclx/ns-gpioclx-_client_controller_basic_information)中的 **MemoryMappedController** 标志的说明。
 
 有关中断锁和等待锁的详细信息，请参阅 [使用框架锁](../wdf/using-framework-locks.md)。
 
@@ -93,7 +92,7 @@ GpioClx 会自动序列化发生在 DIRQL 上的与中断相关的和与 i/o 相
 
  
 
-**备注**
+备注
 
 1.  在调用此回调函数之前，GpioClx 不会获取银行中断锁。 如果需要，回调函数可以获取银行中断锁，以同步与在 DIRQL 运行的回调函数共享的寄存器的访问。
 
@@ -149,7 +148,7 @@ GpioClx 会自动序列化发生在 DIRQL 上的与中断相关的和与 i/o 相
 
  
 
-**备注**
+备注
 
 1.  在调用此回调函数之前，GpioClx 不会获取银行中断锁。 如果需要，回调函数可以获取中断锁，以同步与在 DIRQL 运行的回调函数共享的寄存器的访问。
 
@@ -195,7 +194,7 @@ GpioClx 会自动序列化发生在 DIRQL 上的与中断相关的和与 i/o 相
 
  
 
-**备注**
+备注
 
 1.  当 GpioClx 调用这些回调函数中的任何一个时，银行中断锁将不可用。 因此，这些回调函数不应尝试获取银行中断锁。
 
@@ -232,7 +231,7 @@ GpioClx 会自动序列化发生在 DIRQL 上的与中断相关的和与 i/o 相
 
  
 
-**备注**
+备注
 
 -   对于常规 F 状态转换：使用在 DIRQL 上由 GpioClx 持有的银行中断锁调用保存/还原回调函数。 因此，两个回调函数都不应尝试获取银行中断锁。
 
@@ -273,7 +272,7 @@ GpioClx 会自动序列化发生在 DIRQL 上的与中断相关的和与 i/o 相
 
  
 
-**备注**
+备注
 
 1.  在调用此回调函数之前，GpioClx 不会获取银行中断锁。 如果需要，回调函数可以获取银行中断锁，以同步与在 DIRQL 运行的回调函数共享的寄存器的访问。
 

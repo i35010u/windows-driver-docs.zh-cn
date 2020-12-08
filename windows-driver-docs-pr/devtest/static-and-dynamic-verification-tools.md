@@ -1,18 +1,17 @@
 ---
 title: 静态和动态验证工具
 description: 静态和动态验证工具
-ms.assetid: 8bdf1f11-5deb-427b-b058-b9173e167f8d
 keywords:
 - 动态验证工具 WDK
 - 静态验证工具 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 21186c88b720e99e4d307bfb70fecbbab8e7be15
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 9d32e907897fb875f59100337602cc3c015cc430
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89384031"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96826634"
 ---
 # <a name="static-and-dynamic-verification-tools"></a>静态和动态验证工具
 

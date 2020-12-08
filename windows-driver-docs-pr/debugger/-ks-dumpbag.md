@@ -1,9 +1,8 @@
 ---
-title: ks.dumpbag
-description: Ks.dumpbag 扩展显示指定的对象的对象包的内容。
-ms.assetid: a97b4794-b5dc-45a8-b1e9-5a626959020e
+title: ks. dumpbag
+description: Dumpbag 扩展显示指定对象的对象包的内容。
 keywords:
-- ks.dumpbag Windows 调试
+- dumpbag Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,32 +11,32 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: fcedf397edb4a3f1fbfc529f87a23987b921620b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 927230657a54b1c251dafa123febfedd540de3cc
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63336324"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96826725"
 ---
 # <a name="ksdumpbag"></a>!ks.dumpbag
 
 
-**！ Ks.dumpbag**扩展将显示指定的对象的对象包的内容。
+**Dumpbag** 扩展显示指定对象的对象包的内容。
 
 ```dbgcmd
 !ks.dumpbag Object [Level]  
 ```
 
-## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>参数
+## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>Parameters
 
 
-<span id="_______Object______"></span><span id="_______object______"></span><span id="_______OBJECT______"></span> *Object*   
-指定为有效的客户端查看对象结构，或私有类对象的指针。
+<span id="_______Object______"></span><span id="_______object______"></span><span id="_______OBJECT______"></span>*对象*   
+指定指向有效客户端可视对象结构或私有类对象的指针。
 
-<span id="_______Level______"></span><span id="_______level______"></span><span id="_______LEVEL______"></span> *级别*   
-可选。 指定要显示在 0 到 7 的详细信息级别越来越多的信息显示为较高的值的小数位数。 若要显示所有可用的详细信息，请提供值为 7。
+<span id="_______Level______"></span><span id="_______level______"></span><span id="_______LEVEL______"></span>*级别*   
+可选。 指定要在0-7 刻度上显示的详细信息的级别，并为较高的值显示更多的信息。 若要显示所有可用的详细信息，请提供值7。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 <table>
 <colgroup>
@@ -58,14 +57,14 @@ ms.locfileid: "63336324"
 
  
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-有关详细信息，请参阅[流式处理的内核调试](kernel-streaming-debugging.md)。
+有关详细信息，请参阅 [内核流调试](kernel-streaming-debugging.md)。
 
 <a name="remarks"></a>备注
 -------
 
-下面是举例 **！ ks.dumpbag**显示筛选器：
+下面是一个用于筛选器的 **！ dumpbag** 显示示例：
 
 ```dbgcmd
 kd> !dumpbag 829493c4

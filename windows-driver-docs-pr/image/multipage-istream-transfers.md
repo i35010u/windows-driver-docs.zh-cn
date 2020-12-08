@@ -1,24 +1,23 @@
 ---
 title: 多页 IStream 传输
 description: 多页 IStream 传输
-ms.assetid: 0d17cfa8-f200-4d87-a2cb-cfd8dbc24e1e
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8d6da0a66408ede46f7e7adb6756df8b0d03abaf
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1cb31c7ec597e31ad13000bf9f90013d6a45bcbe
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379675"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96827131"
 ---
 # <a name="multipage-istream-transfers"></a>多页 IStream 传输
 
 
-通常情况下，数据传输请求时的项，该项目中的将数据传输，使用项目的属性指定的设置。 例如，如果应用程序在扫描程序的"平台"项，数据传输将导致从平板、 使用存储在"平台"项上的 WIA 属性中的设置扫描。
+通常，在对某一项请求数据传输时，将使用该项的属性指定的设置来传输该项中的数据。 例如，如果某个应用程序在扫描仪的 "平板" 项上，则数据传输将使用存储在 "平板" 项的 WIA 属性中的设置来扫描该平台。
 
-但是，在 Windows Vista 中，另一个类型的传输是可用： 多项传输，也称为*文件夹获取*。 在此类型的传输，应用程序请求传输从文件夹项目通过使用指定的标志 (WIA\_传输\_ACQUIRE\_子级)，并从每个叶节点，该文件夹中的传输中的传输结果项的子树。
+但是，在 Windows Vista 中，可以使用另一种传输类型：多项传输，也称为 *文件夹获取*。 在这种类型的传输中，应用程序通过使用指定的标志 (WIA 传输获取子项) 来请求从文件夹项传输， \_ \_ \_ 而传输会导致从该文件夹项的子树中的每个叶节点传输。
 
-本部分包括：
+本节包括：
 
 [在多页传输过程中的驱动程序行为](driver-behavior-during-multipage-transfers.md)
 

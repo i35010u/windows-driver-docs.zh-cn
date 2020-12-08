@@ -1,7 +1,6 @@
 ---
 title: 管理上下文
 description: 管理上下文
-ms.assetid: 1ad33c6c-a5dd-4b65-bfcc-a40453d3a6b5
 keywords:
 - 筛选器管理器 WDK 文件系统微筛选器，上下文
 - 文件系统微筛选器驱动程序 WDK，上下文
@@ -9,12 +8,12 @@ keywords:
 - 上下文 WDK 文件系统微筛选器
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8a5181fdf18b6235255d74d6273caa4de360d484
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 1cca7d46d6e1d88c618ae545642c14a79e5fbc66
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106498"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96828027"
 ---
 # <a name="managing-contexts"></a>管理上下文
 

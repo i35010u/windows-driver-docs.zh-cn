@@ -1,11 +1,10 @@
 ---
 title: .jdinfo（使用 JIT_DEBUG_INFO）
-description: .Jdinfo 命令使用 JIT_DEBUG_INFO 结构作为上下文只需在实时 (JIT) 调试异常的源。
-ms.assetid: C35A2A04-CF0E-475e-8471-2A8562BB3650
+description: Jdinfo 命令使用 JIT_DEBUG_INFO 结构作为异常的源，并使用 (JIT) 调试的实时上下文。
 keywords:
-- 使用 JIT_DEBUG_INFO (.jdinfo) 命令---附录
-- JIT_DEBUG_INFO ----- Appendix
-- .jdinfo （使用 JIT_DEBUG_INFO） Windows 调试
+- 使用 JIT_DEBUG_INFO () 命令-----附录
+- JIT_DEBUG_INFO-----附录
+- jdinfo (使用 JIT_DEBUG_INFO) Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -14,29 +13,29 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 42874c723d864c0596ac225a4166d4ac220f0eb4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 46c57f7c62641682275b64954bd5bceaae2f659f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63336344"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96827363"
 ---
-# <a name="jdinfo-use-jitdebuginfo"></a>.jdinfo (使用 JIT\_调试\_信息)
+# <a name="jdinfo-use-jit_debug_info"></a>jdinfo (使用 JIT \_ 调试 \_ 信息) 
 
 
-**.Jdinfo**命令使用 JIT\_调试\_作为上下文只需在实时 (JIT) 调试异常的源信息结构。 向结构的地址传递给 **.jdinfo**命令使用 AeDebug 注册表项中指定的 %p 参数。
+**Jdinfo** 命令使用 jit \_ 调试 \_ 信息结构作为异常的源，并使用 jit) 调试的实时 (上下文。 使用 AeDebug 注册表项中指定的% p 参数将结构的地址传递给 **jdinfo** 命令。
 
-有关使用的注册表项的详细信息，请参阅[启用事后调试](enabling-postmortem-debugging.md)。 有关注册上下文的详细信息，请参阅[更改上下文](changing-contexts.md)。
+有关使用的注册表项的详细信息，请参阅 [启用事后调试](enabling-postmortem-debugging.md)。 有关注册上下文的详细信息，请参阅 [更改上下文](changing-contexts.md)。
 
 ```dbgcmd
 .jdinfo Address 
 ```
 
-## <a name="span-idddkapcmetausejitdebuginfodbgspanspan-idddkapcmetausejitdebuginfodbgspanparameters"></a><span id="ddk_apc_meta_use_jit_debug_info_dbg"></span><span id="DDK_APC_META_USE_JIT_DEBUG_INFO_DBG"></span>参数
+## <a name="span-idddk_apc_meta_use_jit_debug_info_dbgspanspan-idddk_apc_meta_use_jit_debug_info_dbgspanparameters"></a><span id="ddk_apc_meta_use_jit_debug_info_dbg"></span><span id="DDK_APC_META_USE_JIT_DEBUG_INFO_DBG"></span>参数
 
 
-<span id="_______Address______"></span><span id="_______address______"></span><span id="_______ADDRESS______"></span> *Address*   
-指定的地址的 JIT\_调试\_信息结构。 向结构的地址传递给 **.jdinfo**命令使用 AeDebug 注册表项中指定的 %p 参数。
+<span id="_______Address______"></span><span id="_______address______"></span><span id="_______ADDRESS______"></span>*地址*   
+指定 JIT \_ 调试信息结构的地址 \_ 。 使用 AeDebug 注册表项中指定的% p 参数将结构的地址传递给 **jdinfo** 命令。
 
 ### <a name="span-idenvironmentspanspan-idenvironmentspanspan-idenvironmentspanenvironment"></a><span id="Environment"></span><span id="environment"></span><span id="ENVIRONMENT"></span>环境
 
@@ -47,12 +46,12 @@ ms.locfileid: "63336344"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>模式</strong></p></td>
+<td align="left"><p><strong>交货</strong></p></td>
 <td align="left"><p>用户模式</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>目标</strong></p></td>
-<td align="left"><p>实时、 崩溃转储</p></td>
+<td align="left"><p>实时，故障转储</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>平台</strong></p></td>
@@ -63,21 +62,21 @@ ms.locfileid: "63336344"
 
  
 
-### <a name="span-idexamplespanspan-idexamplespanspan-idexamplespanexample"></a><span id="Example"></span><span id="example"></span><span id="EXAMPLE"></span>示例
+### <a name="span-idexamplespanspan-idexamplespanspan-idexamplespanexample"></a><span id="Example"></span><span id="example"></span><span id="EXAMPLE"></span>实例
 
-此示例演示如何配置 AeDebug 注册表项以使用 WinDbg 可以用作 JIT 调试器。
+此示例演示如何将 AeDebug 注册表项配置为使用 WinDbg 作为 JIT 调试器。
 
 ```dbgcmd
 Debugger = "Path\WinDbg.EXE -p %ld -e %ld -c ".jdinfo 0x%p"
 ```
 
-然后，当发生故障时，调用配置的 JIT 调试器并 %p 参数用于传递 JIT 的地址\_调试\_信息结构 **.jdinfo**后调试器执行的命令已启动。
+然后，当发生崩溃时，将调用配置的 JIT 调试器，并使用% p 参数将 JIT 调试信息结构的地址传递给在 \_ \_ 启动调试器后执行的 **jdinfo** 命令。
 
 ```dbgcmd
 nMicrosoft (R) Windows Debugger Version 10.0.10240.9 AMD64
 Copyright (c) Microsoft Corporation. All rights reserved.
 
-*** wait with pending attach
+**_ wait with pending attach
 Executable search path is: 
 ...
 ModLoad: 00000000`68a20000 00000000`68ac3000   C:\WINDOWS\WinSxS\amd64_microsoft.vc90.crt_1fc8b3b9a1e18e3b_9.0.30729.9247_none_08e394a1a83e212f\MSVCR90.dll
@@ -115,51 +114,51 @@ CrashAV_x64!wmain+0x14:
 <a name="remarks"></a>备注
 -------
 
-**.Jdinfo**命令使用**AeDebug**在 Windows Vista 中引入的注册表信息。 有关使用的注册表项的详细信息，请参阅[启用事后调试](enabling-postmortem-debugging.md)。 **.Jdinfo**命令将 JIT 的地址\_调试\_信息的系统设置了**AeDebug**并将上下文设置到导致崩溃的原因的异常。
+*Jdinfo** 命令使用 Windows Vista 中引入的 **AeDebug** 注册表信息。 有关使用的注册表项的详细信息，请参阅 [启用事后调试](enabling-postmortem-debugging.md)。 **Jdinfo** 命令采用 \_ \_ 系统为 **AeDebug** 设置的 JIT 调试信息的地址，并将上下文设置为导致崩溃的异常。
 
-可以使用 **.jdinfo**命令而不是 **-g**中**AeDebug**具有您的调试器设置为**AeDebug**状态而无需执行。
+可以在 **AeDebug** 中使用 **jdinfo** 命令而不是 **-g** ，使调试器设置为 **AeDebug** 状态，而无需执行。
 
-此状态可以是有利的因为通常情况下，用户模式异常发生时，发生以下序列：
+此状态可能很有利，因为在通常情况下，出现用户模式异常时，将发生以下序列：
 
-1.  Microsoft Windows 操作系统将暂停执行应用程序。
+1.  Microsoft Windows 操作系统停止执行应用程序。
 
-2.  启动事后调试器。
+2.  已启动事后调试器。
 
-3.  将调试器附加到应用程序。
+3.  调试器附加到应用程序。
 
-4.  调试器将会发出"Go"命令。 (此命令引起 **-g**中**AeDebug**键。)
+4.  调试器发出 "中转" 命令。  (此命令的原因是 **AeDebug** 键中的 **-g** 。 ) 
 
-5.  目标会尝试执行并可能会或可能不会遇到相同的异常。
+5.  目标尝试执行，可能会也可能不会遇到相同的异常。
 
-6.  此异常中断到调试器。
+6.  此异常中断调试器。
 
-有可能发生这些事件发生的几个问题：
+由于以下事件，可能会出现几个问题：
 
--   异常不始终会重复，可能是由于临时性条件不再存在时重新启动该异常。
+-   异常并不总是重复，这可能是因为在异常重新启动时已不再存在暂时性的情况。
 
--   另一个事件，如其他异常，可能会出现。 没有无法知道它是否与相同原始事件。
+-   可能会发生另一个事件，例如不同的异常。 无法知道它是否与原始事件完全相同。
 
--   将调试器附加涉及到插入一个新线程，如果一个线程持有加载程序锁可以阻止。 插入新线程可以是过程的重要错误和干扰。
+-   附加调试器涉及注入新线程，如果线程持有加载程序锁，则可以阻止该线程。 注入新线程可能是此过程的重要干扰。
 
-如果您使用 **-c.jdinfo**而不是 **-g**在你**AeDebug**密钥，不会执行。 相反，异常信息检索从 JIT\_调试\_使用 %p 变量的信息结构。
+如果在 **AeDebug** 键中使用 **-jdinfo** 而不是 **-g** ，则不会执行任何操作。 相反，将 \_ \_ 使用% p 变量从 JIT 调试信息结构中检索异常信息。
 
-例如，请考虑以下**AeDebug**密钥。
+例如，请看下面的 **AeDebug** 键。
 
 ```dbgcmd
 ntsd -p %ld -e %ld -c ".jdinfo 0x%p"
 ```
 
-下面的示例是较低的侵入性。 **-Pv**开关将使调试器附加 noninvasively，这不会插入到目标中，任何新线程。
+下面的示例更不具侵害性。 **-Pv** 开关使调试器附加 noninvasively，而不会将任何新线程注入目标。
 
 ```dbgcmd
 ntsd -pv -p %ld -e %ld -c ".jdinfo 0x%p"
 ```
 
-如果使用此非侵入的选项，退出调试器不会结束该过程。 可以使用[ **.kill （终止进程）** ](-kill--kill-process-.md)命令以结束进程。
+如果使用此 noninvasive 选项，则退出调试器不会结束进程。 可以使用 [**kill (Kill 进程)**](-kill--kill-process-.md) 命令结束进程。
 
-如果你想要用于此转储文件调试，则应使用[ **.dump /j** ](-dump--create-dump-file-.md)若要添加 JIT\_调试\_转储文件，创建转储文件时的信息结构。
+如果要将此用于转储文件调试，则在创建转储文件时，应使用 [**. 转储/j**](-dump--create-dump-file-.md) 将 JIT \_ 调试 \_ 信息结构添加到转储文件。
 
-JIT\_调试\_信息结构定义，如下所示。
+JIT \_ 调试 \_ 信息结构的定义如下。
 
 ```dbgcmd
 typedef struct _JIT_DEBUG_INFO {
@@ -173,7 +172,7 @@ typedef struct _JIT_DEBUG_INFO {
 } JIT_DEBUG_INFO, *LPJIT_DEBUG_INFO;
 ```
 
-您可以使用 dt 命令显示 JIT\_调试\_信息结构。
+可以使用 dt 命令来显示 JIT \_ 调试 \_ 信息结构。
 
 ```dbgcmd
 0: kd> dt JIT_DEBUG_INFO
@@ -187,9 +186,9 @@ nt!JIT_DEBUG_INFO
    +0x020 lpContextRecord  : Uint8B
 ```
 
-**查看异常记录、 调用堆栈和 LastEvent 使用 WinDbg**
+**使用 WinDbg 查看异常记录、调用 Stack 和 LastEvent**
 
-.Jdinfo 命令已用于将上下文设置到失败的时间点后，可以查看.jdinfo、 调用堆栈和 lastevent，返回的异常记录，如下所示，若要调查原因。
+使用 jdinfo 命令将上下文设置为失败时间之后，可以查看由 jdinfo、调用堆栈和 lastevent 返回的异常记录，如以下所示，调查原因。
 
 ```dbgcmd
 0:000> .jdinfo  0x00000000003E0000

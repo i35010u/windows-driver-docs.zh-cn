@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ 横线 \_ 可以 \_ 路由
 description: KSPROPERTY \_ 纵横制 \_ CAN \_ 路由属性检索设备是否能够支持指定的路由。 必须实现此属性。
-ms.assetid: bb966d0a-6ecf-4bbb-a881-30d468abe220
 keywords:
 - KSPROPERTY_CROSSBAR_CAN_ROUTE 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b0be1d5c061e48452931079e07fbb901bcd6f537
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: fd93edfb46bc38c24f5839c69dfd740fdafe5ace
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102726"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96828395"
 ---
 # <a name="ksproperty_crossbar_can_route"></a>KSPROPERTY \_ 横线 \_ 可以 \_ 路由
 
@@ -84,7 +83,7 @@ KSPROPERTY **CanRoute** \_ 纵横制路由结构的 CanRoute \_ 成员 \_ 指示
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSPROPERTY**](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)

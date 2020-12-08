@@ -1,7 +1,6 @@
 ---
 title: icpleak
 description: Icpleak 扩展在系统中检查包含最多已排队条目的对象的所有 i/o 完成对象。
-ms.assetid: 8644a41a-44da-47bc-94ef-5024bb457c7d
 keywords:
 - I/o 完成
 - icpleak Windows 调试
@@ -13,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: ecdf6a8bb2f34d4647d3cadc30a54fcc3697d787
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: afa10f09f9bfc87394eaa9f52647dfbd9900fc11
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90716540"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96826765"
 ---
 # <a name="icpleak"></a>!icpleak
 
@@ -45,10 +44,10 @@ ms.locfileid: "90716540"
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>Windows 2000</strong></p></td>
-<td align="left"><p>Unavailable</p></td>
+<td align="left"><p>不可用</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>Windows XP 及更高版本</strong></p></td>
+<td align="left"><p><strong>Windows XP 及更高版本</strong></p></td>
 <td align="left"><p>Kdexts.dll</p></td>
 </tr>
 </tbody>

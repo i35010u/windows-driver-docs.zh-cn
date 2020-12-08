@@ -1,7 +1,6 @@
 ---
 title: CM_Set_HW_Prof_Ex
 description: CM_Set_HW_Prof_Ex
-ms.assetid: 2f35dec3-7b1e-4f1e-8807-22cafaf2fb2b
 keywords:
 - CM_Set_HW_Prof_Ex 设备和驱动程序安装
 topic_type:
@@ -12,13 +11,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 89d0f1737b7efe95b13756f3a8b84cf81de1b3de
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8cbf55716d7469c11fd3330c06f90e383f88127b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63377089"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96827921"
 ---
-# <a name="cmsethwprofex"></a>CM_Set_HW_Prof_Ex
+# <a name="cm_set_hw_prof_ex"></a>CM_Set_HW_Prof_Ex
 
 此函数保留供系统使用。

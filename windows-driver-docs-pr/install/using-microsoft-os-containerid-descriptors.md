@@ -1,32 +1,31 @@
 ---
 title: 使用 Microsoft OS ContainerID 描述符
 description: 使用 Microsoft OS ContainerID 描述符
-ms.assetid: e51b1bc8-fd9d-40f9-b2ae-9f5886f57c7b
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 194c94c2516d6083a40d6339d2626ef99f426b35
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a457d132e0b1e9eb141fac53d599d8a0691d3d2c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339412"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96827033"
 ---
 # <a name="using-microsoft-os-containerid-descriptors"></a>使用 Microsoft OS ContainerID 描述符
 
 
-Microsoft 操作系统 (OS) **ContainerID**描述符可用于支持通过多个系统总线的设备的同时连接的设备。 显式定义的 Microsoft 操作系统**ContainerID**描述符可以确保设备的所有节点 (*devnodes*) 枚举的 USB 总线上的设备分组到同一设备容器。
+可以在通过多个系统总线支持设备的同时连接的设备中使用 Microsoft 操作系统 (OS) **ContainerID** 描述符。 明确定义的 Microsoft 操作系统 **ContainerID** 描述符确保为 USB 总线上的设备 (*devnodes*) 的所有设备节点都分组到相同的设备容器。
 
-**请注意**  如果你决定实现 Microsoft 操作系统**ContainerID**描述符，描述符值必须是唯一以避免容器 ID 冲突的每个设备上。
+**注意**  如果决定实现 Microsoft 操作系统 **ContainerID** 描述符，则每个设备上的描述符值必须唯一，以避免容器 ID 冲突。
 
  
 
-Microsoft OS **ContainerID**描述符时，可以在设备支持同时连接多个总线通过向设备。 这样一来，设备支持的每个总线上使用相同的容器 ID。 这允许操作系统以确定每个总线上的函数是否是相同的设备容器的一部分。
+如果设备支持通过多个总线同时连接到设备，则可以使用 Microsoft 操作系统 **ContainerID** 描述符。 这样，就会在设备支持的每个总线上使用相同的容器 ID。 这允许操作系统确定每个总线上的函数是否属于同一设备容器。
 
-如果您决定使用 Microsoft OS **ContainerID**中您的 USB 设备，你应注意以下几点：
+如果决定使用 USB 设备中的 Microsoft 操作系统 **ContainerID** ，应注意以下几点：
 
--   对于未集成到计算机 （即，所有外部设备） 的设备，它是始终提供 Microsoft 操作系统的最佳做法**ContainerID**描述符和 USB 设备硬件序列号。 这将确保 Windows 即插即用和播放 (PnP) 基础结构能够正确组由设备公开的所有设备功能。 组件的操作系统从 Windows 7 开始，依赖于设备功能的适当的分组。 遵循此做法将提供在 Windows 平台上设备的最佳用户体验。
+-   对于未集成到计算机的设备 (即) 的所有外部设备，最佳做法是始终在 USB 设备硬件中提供 Microsoft 操作系统 **ContainerID** 描述符和序列号。 这将确保 Windows 即插即用 (PnP) 基础结构能够正确地将设备公开的所有设备功能组合在一起。 从 Windows 7 开始，操作系统的组件依赖于正确的设备功能分组。 按照此做法，可以为 Windows 平台上的设备提供最佳用户体验。
 
--   与计算机集成在一起的 USB 设备应永远不会提供 Microsoft OS **ContainerID**描述符。 若要确保集成的设备与计算机的设备容器进行正确分组，集成的设备应依赖 ACPI BIOS 设置或 USB 集线器描述符**DeviceRemovable**位的端口。
+-   与计算机集成的 USB 设备决不应提供 Microsoft 操作系统 **ContainerID** 描述符。 为了确保集成设备与计算机的设备容器正确组合，集成设备应依赖于 ACPI BIOS 设置，或适用于端口的 USB 集线器描述符 **DeviceRemovable** 位。
 
  
 

@@ -1,7 +1,6 @@
 ---
 title: TxtSetup.oem 文件的 Config.DriverKey 节
 description: DriverKey 部分指定要在注册表中为特定组件选项设置的值。
-ms.assetid: 0b9fe0ff-2b97-416e-8ced-62b59eabf94a
 keywords:
 - Txtsetup.oem 文件设备和驱动程序安装的 DriverKey 节
 topic_type:
@@ -12,17 +11,17 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 9149246d4f8a1d20167d14527d143f373d99f1d2
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: dead30b4626004d2bcb89fd261731f8fad20a953
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89094901"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96827869"
 ---
 # <a name="configdriverkey-section-of-a-txtsetupoem-file"></a>TxtSetup.oem 文件的 Config.DriverKey 节
 
 
-**Config。**<em>DriverKey</em>部分指定要在注册表中为特定组件选项设置的值。 Windows 自动在**Services \\ **<em>DriverKey</em>项中创建所需的值。 使用此部分来指定**要在 " \\ **<em>services</em> <em>DriverKey</em> " ** \\ 和 "services**subkey_name<em>DriverKey</em>" 下** \\ **的值下创建的其他密钥 \\ *subkey_name*。
+**Config。**<em>DriverKey</em>部分指定要在注册表中为特定组件选项设置的值。 Windows 自动在 **Services \\**<em>DriverKey</em>项中创建所需的值。 使用此部分来指定 **要在 " \\**<em>services</em> <em>DriverKey</em> " **\\ 和 "services** subkey_name <em>DriverKey</em>" 下 **\\** 的值下创建的其他密钥 \\ *subkey_name*。
 
 ``` syntax
 [Config.DriverKey]
@@ -31,17 +30,17 @@ value = subkey_name,value_name,value_type,value
 ```
 
 <a href="" id="subkey-name"></a>*subkey_name*  
-指定**服务 \\ **<em>DriverKey</em>树下的项的名称，Windows 将在其中放置指定的值。 如果该项不存在，则 Windows 将创建该项。
+指定 **服务 \\**<em>DriverKey</em>树下的项的名称，Windows 将在其中放置指定的值。 如果该项不存在，则 Windows 将创建该项。
 
-如果*subkey_name*为空字符串 ( "" ) ，则该值放置在<em>DriverKey</em>**服务 \\ **下。
+如果 *subkey_name* 为空字符串 ( "" ) ，则该值放置在 <em>DriverKey</em>**服务 \\** 下。
 
-*Subkey_name*可以指定多个级别的子项，如 "subkey1 \\ subkey2 \\ subkey3"。
+*Subkey_name* 可以指定多个级别的子项，如 "subkey1 \\ subkey2 \\ subkey3"。
 
 <a href="" id="value-name"></a>*value_name*  
 指定要设置的值的名称。
 
 <a href="" id="value-type"></a>*value_type*  
-指定注册表项的类型。 *Value_type*可以是以下项之一：
+指定注册表项的类型。 *Value_type* 可以是以下项之一：
 
 <a href="" id="reg-dword"></a>REG_DWORD  
 允许使用一个 *值* ;它必须是最多包含八个十六进制数字的字符串。

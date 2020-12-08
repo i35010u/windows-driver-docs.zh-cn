@@ -1,18 +1,17 @@
 ---
 title: 使用请求对象上下文
 description: 使用请求对象上下文
-ms.assetid: befb4a22-0640-45e3-890e-6ff17969b017
 keywords:
 - 请求对象 WDK KMDF，上下文空间
 - 上下文空间 WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 289705a5e069489846f16310df6e8976ff458aba
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 031e380d4bef2c1648e375dca19089e173f7635b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89185291"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96827401"
 ---
 # <a name="using-request-object-context"></a>使用请求对象上下文
 
@@ -24,7 +23,7 @@ ms.locfileid: "89185291"
 
 框架为请求对象分配上下文空间，如下所示：
 
--   当框架为驱动程序创建请求对象时，它会分配上下文空间，其中包含驱动程序在调用 **WdfDeviceInitSetRequestAttributes**时指定的大小。
+-   当框架为驱动程序创建请求对象时，它会分配上下文空间，其中包含驱动程序在调用 **WdfDeviceInitSetRequestAttributes** 时指定的大小。
 
 -   如果驱动程序通过调用 [**WdfRequestCreate**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcreate)来创建其他请求对象，则可以通过提供 WDF \_ 对象属性结构来指定上下文大小 \_ 。
 

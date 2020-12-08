@@ -1,15 +1,14 @@
 ---
 title: MSiSCSI \_ MANAGEMENTOPERATIONS WMI 类
 description: MSiSCSI \_ MANAGEMENTOPERATIONS WMI 类
-ms.assetid: 1037be46-6cae-458d-8549-927c7a053195
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 13c341e7f95db1eaff9034a21441c7934fbfbd01
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 0db38deff927fb7b38cb354b3453a08c24b92bd2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89190415"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96827445"
 ---
 # <a name="msiscsi_managementoperations-wmi-class"></a>MSiSCSI \_ MANAGEMENTOPERATIONS WMI 类
 

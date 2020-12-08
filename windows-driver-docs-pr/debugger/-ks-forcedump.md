@@ -1,9 +1,8 @@
 ---
-title: ks.forcedump
-description: Ks.forcedump 命令显示有关内存内容的信息，在调用方提供的地址。
-ms.assetid: 2829d324-a346-47af-a5f8-1808f329cadf
+title: ks. forcedump
+description: Forcedump 命令在调用方提供的地址上显示有关内存内容的信息。
 keywords:
-- ks.forcedump Windows 调试
+- forcedump Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,39 +11,39 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 9b423c675d4e5b9d5e50307eec9c0cafc5bc24c2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0c3abeaffb08ff8e152280ea84a6b4e4e74f1554
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63336315"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96828277"
 ---
 # <a name="ksforcedump"></a>!ks.forcedump
 
 
-**！ Ks.forcedump**命令显示有关内存内容的信息在调用方提供的地址。
+**Forcedump** 命令在调用方提供的地址上显示有关内存内容的信息。
 
 ```dbgcmd
 !ks.forcedump Object Type [Level] 
 ```
 
-## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>参数
+## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>Parameters
 
 
-<span id="_______Object______"></span><span id="_______object______"></span><span id="_______OBJECT______"></span> *Object*   
-指定要显示其信息的对象的指针。
+<span id="_______Object______"></span><span id="_______object______"></span><span id="_______OBJECT______"></span>*对象*   
+指定指向要显示其信息的对象的指针。
 
-<span id="_______Type______"></span><span id="_______type______"></span><span id="_______TYPE______"></span> *Type*   
-指定的对象的类型。
+<span id="_______Type______"></span><span id="_______type______"></span><span id="_______TYPE______"></span>*类型*   
+指定对象的类型。
 
-有关 AVStream/KS 对象*类型*必须是以下值之一：CKsQueue、 CKsDevice、 CKsFilterFactory、 CKsFilter、 CKsPin、 CKsRequestor、 CKsSplitter、 CKsSplitterBranch、 CKsPipeSection、 KSPIN、 KSFILTER、 KSFILTERFACTORY、 KSDEVICE、 KSSTREAM\_指针，KSPFRAME\_标头，KSIOBJECT\_标头、 KSPDO\_扩展，KSIDEVICE\_标头、 KSSTREAM\_标头、 KSPIN\_描述符\_EX、 CKsProxy、 CKsInputPin、 CKsOutputPin、 CasyncItemHandler。
+对于 AVStream/KS 对象， *Type* 必须是以下值之一： CKsQueue、CKsDevice、CKsFilterFactory、CKsFilter、CKsPin、CKsRequestor、CKsSplitter、CKsSplitterBranch、CKsPipeSection、KSPIN、KSFILTER、KSFILTERFACTORY、KSDEVICE、KSSTREAM 指针、KSPFRAME 标头、KSIOBJECT 标头、KSPDO \_ \_ \_ EXTENSION、KSIDEVICE 标头、KSSTREAM 标头、KSPIN 描述符（CKsProxy \_ \_ 、CKsInputPin \_ \_ \_ 、CKsOutputPin、CasyncItemHandler）。
 
-端口类对象*类型*必须是以下值之一：设备\_上下文、 CPortWaveCyclic、 CPortPinWaveCyclic、 CPortTopology、 CPortDMus、 CIrpStream、 CKsShellRequestor、 CPortFilterWaveCyclic、 CDmaChannel、 CPortWavePci、 CportPinWavePci。
+对于端口类对象， *Type* 必须是下列值之一： DEVICE \_ CONTEXT、CPortWaveCyclic、CPortPinWaveCyclic、CPortTopology、CPortDMus、CIrpStream、CKsShellRequestor、CPortFilterWaveCyclic、CDmaChannel、CPortWavePci、CportPinWavePci。
 
-<span id="_______Level______"></span><span id="_______level______"></span><span id="_______LEVEL______"></span> *级别*   
-可选。 指定要显示在 0 到 7 的详细信息级别越来越多的信息显示为较高的值的小数位数。 若要显示所有可用的详细信息，请提供值为 7。
+<span id="_______Level______"></span><span id="_______level______"></span><span id="_______LEVEL______"></span>*级别*   
+可选。 指定要在0-7 刻度上显示的详细信息的级别，并为较高的值显示更多的信息。 若要显示所有可用的详细信息，请提供值7。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 <table>
 <colgroup>
@@ -65,26 +64,26 @@ ms.locfileid: "63336315"
 
  
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-有关详细信息，请参阅[流式处理的内核调试](kernel-streaming-debugging.md)。
+有关详细信息，请参阅 [内核流调试](kernel-streaming-debugging.md)。
 
 <a name="remarks"></a>备注
 -------
 
-通常情况下，可以使用[ **！ ks.dump** ](-ks-dump.md)要显示的数据结构。
+通常，可以使用 [**！ ks**](-ks-dump.md) 显示数据结构。
 
-但是，如果未正确加载符号或过多信息调出中的类型标识逻辑[ **！ ks.dump** ](-ks-dump.md)命令可能会失败来标识在给定的地址结构的类型。
+但是，如果未正确加载符号或分页出了太多的信息，则 [**！ ks. dump**](-ks-dump.md) 命令中的类型标识逻辑可能无法识别给定地址处的结构类型。
 
-如果发生这种情况，请尝试使用 **！ ks.forcedump**命令。 此命令的工作方式类似[ **！ ks.dump** ](-ks-dump.md)只不过用户指定的对象类型。
+如果发生这种情况，请尝试使用 **forcedump** 命令。 此命令的工作方式与 [**！ ks**](-ks-dump.md) 相同，不同之处在于用户指定对象的类型。
 
-**请注意**   **！ ks.forcedump**命令不会验证*类型*是正确类型的结构中提供的地址处找到*对象*. 该命令假定这是一种结构，请参阅*对象*并相应地显示数据。
+**注意**  **Forcedump** 命令不会验证 *类型* 是否是在 *对象* 中提供的地址处找到的结构的正确类型。 命令假定这是在 *对象* 中找到的结构类型，并相应地显示数据。
 
  
 
-可以通过发出检索所有支持的对象的列表 **！ ks.forcedump**命令不带任何参数。
+可以通过发出不带参数的 **！ forcedump** 命令来检索所有支持的对象的列表。
 
-以下是两个示例的输出 **！ ks.forcedump**，使用的筛选器的地址*对象*参数但具有不同级别的详细信息：
+下面是使用 *对象* 参数的筛选器地址的两个 **forcedump** 输出的示例，但详细级别不同：
 
 ```dbgcmd
 kd> !forcedump 829493c4 KSFILTER

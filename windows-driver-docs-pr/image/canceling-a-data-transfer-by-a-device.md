@@ -1,15 +1,14 @@
 ---
 title: 取消设备的数据传输
 description: 取消设备的数据传输
-ms.assetid: e9d1bbee-64fa-43e2-a8c5-ff92461db65d
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a9055ba1a7bda0ad110da84784826e7608768a15
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5d1d5c63388bde21b007d152bc25f052f7464f74
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63373335"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96828001"
 ---
 # <a name="canceling-a-data-transfer-by-a-device"></a>取消设备的数据传输
 
@@ -17,7 +16,7 @@ ms.locfileid: "63373335"
 
 
 
-在 USB 仍图像捕获设备定义 (SICDD)，设备可以通过返回较少的数据不是主机接收取消在任何时间的操作。
+在 USB 静止映像捕获设备定义 (SICDD) 中，允许设备通过返回比主机预期更少的数据来取消操作。
 
  
 

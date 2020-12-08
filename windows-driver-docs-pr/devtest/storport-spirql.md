@@ -1,7 +1,6 @@
 ---
 title: 'SpIrql 规则 (storport) '
 description: 此规则验证例程 TdiRegisterPnPHandlers 和 TdiDeregisterPnPHandlers 仅在 IRQL 低于调度级别的情况下调用 \_ 。 但是，如果调用 ExFreeToNPagedLookasideList，则规则通过。
-ms.assetid: 895E3982-F50E-4B7A-9904-8D0D742A9B64
 ms.date: 05/21/2018
 keywords:
 - 'SpIrql 规则 (storport) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 4af721ba3ccc12e196a9958a95a6b1bcf128de0d
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: e16eaea33d94493f9ff38ad67a4fdff8ff3071ad
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107050"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96828153"
 ---
 # <a name="spirql-rule-storport"></a>SpIrql 规则 (storport) 
 
 
-此规则验证例程 **TdiRegisterPnPHandlers** 和 **TDIDEREGISTERPNPHANDLERS** 仅在 IRQL 低于 **调度 \_ 级别**的情况下调用。 但是，如果调用 **ExFreeToNPagedLookasideList** ，则规则通过。
+此规则验证例程 **TdiRegisterPnPHandlers** 和 **TDIDEREGISTERPNPHANDLERS** 仅在 IRQL 低于 **调度 \_ 级别** 的情况下调用。 但是，如果调用 **ExFreeToNPagedLookasideList** ，则规则通过。
 
 **驱动程序模型： Storport**
 

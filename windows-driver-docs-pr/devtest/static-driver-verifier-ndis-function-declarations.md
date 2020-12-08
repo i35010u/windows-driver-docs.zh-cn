@@ -1,19 +1,18 @@
 ---
 title: 静态驱动程序验证程序 NDIS 函数声明
 description: 静态驱动程序验证程序 NDIS 函数声明
-ms.assetid: f8d11a99-0fd0-45cf-b583-8f8833b21f79
 keywords:
 - SDV WDK，NDIS
 - SDV 的 NDIS 规则
 - SDV WDK，NDIS 规则
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3c76ba821d9bcb0471a54bc96058f93ce49d612a
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: c16b9e2ca0cd7e8727bc29b1f86a3c45d5c478ae
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103256"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96827341"
 ---
 # <a name="static-driver-verifier-ndis-function-declarations"></a>静态驱动程序验证程序 NDIS 函数声明
 

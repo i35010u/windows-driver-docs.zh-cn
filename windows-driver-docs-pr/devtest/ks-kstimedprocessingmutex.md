@@ -1,7 +1,6 @@
 ---
 title: 'KsTimedProcessingMutex 规则 ( # A1'
 description: KsTimedProcessingMutex 规则指定一个 KS 微型端口驱动程序不应将处理互斥体保留超过100毫秒。
-ms.assetid: 18246AAE-6328-4171-973E-4C762CF719AE
 ms.date: 05/21/2018
 keywords:
 - 'KsTimedProcessingMutex 规则 ( # A1'
@@ -12,12 +11,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 13f7e293f25771f22f5916f11a9c9b53244f9e66
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 0919366c7c560df30ad6367da46f24ccbdac716f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103410"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96826707"
 ---
 # <a name="kstimedprocessingmutex-rule-"></a>KsTimedProcessingMutex 规则 ( # A1
 
@@ -53,7 +52,7 @@ KsTimedProcessingMutex 规则指定一个 KS 微型端口驱动程序不应将�
 
  
 
-<a name="see-also"></a>另请参阅
+<a name="see-also"></a>请参阅
 --------
 
 [在 AVStream 中处理互斥](../stream/processing-mutex-in-avstream.md)

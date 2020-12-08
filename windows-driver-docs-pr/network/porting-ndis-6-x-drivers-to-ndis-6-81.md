@@ -1,21 +1,20 @@
 ---
 title: 将 NDIS 6.x 驱动程序移植到 NDIS 6.81
-description: NDIS 6.81 大体上是 NDIS 6.80 相同。 NDIS 6.81 的新功能的详细信息，请参阅 NDIS 6.81 简介。
-ms.assetid: 63E345CD-4445-45EA-AA62-824161C8573D
+description: NDIS 6.81 与 NDIS 6.80 完全相同。 有关 NDIS 6.81 的新增功能的详细信息，请参阅 NDIS 6.81 简介。
 ms.date: 05/14/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: b5cd5dc3e6a5a4886357e8f1dae5525f08209c69
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 07e229137fd8301ba6b2ccb3786145f9ab3bac97
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63358715"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96828447"
 ---
 # <a name="porting-ndis-6x-drivers-to-ndis-681"></a>将 NDIS 6.x 驱动程序移植到 NDIS 6.81
 
-NDIS 6.81 大体上是 NDIS 6.80 相同。 有关 NDIS 6.81 的新功能的详细信息，包括实现和编译的详细信息特定于此版本的 NDIS，请参阅[简介 NDIS 6.81](introduction-to-ndis-6-81.md)。
+NDIS 6.81 与 NDIS 6.80 完全相同。 有关 NDIS 6.81 的新增功能的详细信息，包括特定于此版本的 NDIS 的实现和编译详细信息，请参阅 [NDIS 6.81 简介](introduction-to-ndis-6-81.md)。
 
-如果要移植到 NDIS 6.81 NDIS 6.x 驱动程序，您应熟悉对您的驱动程序版本和 6.81 之间每个版本所做的更改。 有关以前 NDIS 6.x 版本的详细信息，请参阅以下主题：
+如果要将 NDIS 1.x 驱动程序移植到 NDIS 6.81，应熟悉驱动程序版本与6.81 之间对每个版本的更改。 有关以前的 NDIS 1.x 版本的详细信息，请参阅以下主题：
 
 - [NDIS 6.80 简介](introduction-to-ndis-6-80.md)
 - [NDIS 6.70 简介](introduction-to-ndis-6-70.md)

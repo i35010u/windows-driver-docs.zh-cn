@@ -1,15 +1,14 @@
 ---
 title: 创建自定义属性页
 description: 创建自定义属性页
-ms.assetid: 2481450f-ebb2-40e3-8a42-eabaecc1c7e4
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1b15f5437998cd6cdf76ae0699860605d3472306
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 8c24b273febd174cd5a3eda1ba3cb5a26ad1fc0e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90717442"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96827803"
 ---
 # <a name="creating-custom-property-pages"></a>创建自定义属性页
 
@@ -30,7 +29,7 @@ ms.locfileid: "90717442"
     ...
     ```
 
-    在此示例中，代码零初始化了设备的安装参数将返回到的结构，并根据**SetupDiGetClassInstallParams**的要求，在**cbSize**字段中设置类安装标头的大小。 Class install 标头是每个类安装参数结构的第一个成员。
+    在此示例中，代码零初始化了设备的安装参数将返回到的结构，并根据 **SetupDiGetClassInstallParams** 的要求，在 **cbSize** 字段中设置类安装标头的大小。 Class install 标头是每个类安装参数结构的第一个成员。
 
 2.  使用如下所示的语句，确保尚未满足设备的动态页面的最大数量：
 
@@ -44,7 +43,7 @@ ms.locfileid: "90717442"
 
 3.  分配用于保存任何特定于设备的数据的内存，稍后在对话框过程中将需要这些数据，并将该内存初始化为数据。 当销毁属性页时，提供程序必须在属性页回调中释放此内存。
 
-    对于作为[共同安装](writing-a-co-installer.md)程序的提供程序，此设备特定的数据必须包括与[**DIF_ADDPROPERTYPAGE_ADVANCED**](./dif-addpropertypage-advanced.md)设备安装函数 (DIF) 代码一起传递的*DeviceInfoSet*和*DeviceInfoData* 。
+    对于作为 [共同安装](writing-a-co-installer.md)程序的提供程序，此设备特定的数据必须包括与 [**DIF_ADDPROPERTYPAGE_ADVANCED**](./dif-addpropertypage-advanced.md)设备安装函数 (DIF) 代码一起传递的 *DeviceInfoSet* 和 *DeviceInfoData* 。
 
     例如，属性页提供程序可以定义并使用结构，如以下示例中所示：
 
@@ -61,10 +60,10 @@ ms.locfileid: "90717442"
 
 4.  使用有关自定义属性页的信息初始化 PROPSHEETPAGE 结构：
 
-    -   在 **dwFlags**中，设置自定义属性页所需的 PSP_USECALLBACK 标志和任何其他标志。 PSP_USECALLBACK 标志指示已提供回调函数。
-    -   在 **pfnCallback**中，设置指向属性页的回调函数的指针。 在回调中处理 PSPCB_RELEASE 消息，并释放在步骤3中分配的内存。
-    -   在 **pfnDlgProc**中，为属性页设置指向对话框过程的指针。
-    -   在 **lParam**中，将指针传递到在步骤3中分配和初始化的内存区域。
+    -   在 **dwFlags** 中，设置自定义属性页所需的 PSP_USECALLBACK 标志和任何其他标志。 PSP_USECALLBACK 标志指示已提供回调函数。
+    -   在 **pfnCallback** 中，设置指向属性页的回调函数的指针。 在回调中处理 PSPCB_RELEASE 消息，并释放在步骤3中分配的内存。
+    -   在 **pfnDlgProc** 中，为属性页设置指向对话框过程的指针。
+    -   在 **lParam** 中，将指针传递到在步骤3中分配和初始化的内存区域。
     -   将其他成员设置为适用于自定义属性页。 有关 PROPSHEETPAGE 结构的详细信息，请参阅 Microsoft Windows SDK 文档。
 
 5.  调用 **CreatePropertySheetPage** 创建新页。

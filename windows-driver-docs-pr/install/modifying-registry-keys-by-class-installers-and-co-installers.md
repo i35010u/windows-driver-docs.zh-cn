@@ -1,7 +1,6 @@
 ---
 title: 通过类安装程序和辅助安装程序修改注册表项
 description: 通过类安装程序和辅助安装程序修改注册表项
-ms.assetid: A7F41F97-5E06-41d8-B80F-DDBC41A62BB3
 keywords:
 - 注册表 WDK 设备安装，修改注册表项
 - 注册表 WDK 设备安装，修改注册表项，类安装程序
@@ -10,12 +9,12 @@ keywords:
 - 共同安装程序 WDK 设备安装，修改注册表项
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d4f634890b4a4b7678071a138c8f9c308ac3c1c8
-ms.sourcegitcommit: a44ade167cdfb541cf1818e9f9e3726f23f90b66
+ms.openlocfilehash: b54d740677bb7873b7706e10a66f7fbfd95b13a7
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94361527"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96827630"
 ---
 # <a name="modifying-registry-keys-by-class-installers-and-co-installers"></a>通过类安装程序和辅助安装程序修改注册表项
 

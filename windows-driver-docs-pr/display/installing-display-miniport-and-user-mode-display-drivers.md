@@ -1,7 +1,6 @@
 ---
-title: 安装显示微型端口和用户模式显示驱动程序
+title: 安装显示器微型端口和 User-Mode 显示器驱动程序
 description: 显示微型端口和用户模式显示驱动程序的安装要求
-ms.assetid: f813071d-897d-4100-bc46-326558de2e70
 keywords:
 - 显示驱动程序模型 WDK Windows Vista，驱动程序安装
 - Windows Vista 显示器驱动程序模型 WDK，驱动程序安装
@@ -14,12 +13,12 @@ keywords:
 ms.date: 12/06/2018
 ms.localizationpriority: medium
 ms.custom: seodec18
-ms.openlocfilehash: d5c14fcfeb15de461dd983fca3397d77ba243205
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: cc500cdce3654dd1446c2cd497185d723b62b60d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103068"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96827217"
 ---
 # <a name="installation-requirements-for-display-miniport-and-user-mode-display-drivers"></a>显示微型端口和用户模式显示驱动程序的安装要求
 
@@ -60,7 +59,7 @@ ms.locfileid: "90103068"
 
 有关创建显示微型端口驱动程序 INF 文件的常规帮助，请参阅 [Inf 文件](../install/overview-of-inf-files.md) 和 [inf 文件部分和指令](../install/index.md) 部分的概述。 有关注册表根标识符（如 **HKR**）的详细信息，请参阅 [**INF AddReg 指令**](../install/inf-addreg-directive.md)。
 
-**注意**   没有用于卸载特定于图形设备的显示驱动程序的 INF 部分和指令。
+**注意**   没有用于卸载特定于图形设备的显示驱动程序的 INF 部分和指令。
 
  
 

@@ -1,9 +1,8 @@
 ---
 title: IRP_MJ_RELEASE_FOR_SECTION_SYNCHRONIZATION 的 FLT_PARAMETERS
-description: FLT\_IRP 的参数\_MJ\_发行\_有关\_部分\_同步
-ms.assetid: 16e55cfe-c455-44dc-9377-f2453eb09c1b
+description: '\_ \_ \_ \_ 用于 \_ 节同步的 IRP MJ 版本的 FLT 参数 \_'
 keywords:
-- FLT_PARAMETERS IRP_MJ_RELEASE_FOR_SECTION_SYNCHRONIZATION 可安装的文件系统驱动程序
+- IRP_MJ_RELEASE_FOR_SECTION_SYNCHRONIZATION 可安装文件系统驱动程序的 FLT_PARAMETERS
 topic_type:
 - apiref
 api_name:
@@ -12,20 +11,20 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 371cbf39ee6215314d8e45cef63ae29108860ad0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 455b34bb1016dcd65401e47e3219293255ff36a1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63361203"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96826889"
 ---
-# <a name="fltparameters-for-irpmjreleaseforsectionsynchronization"></a>FLT\_IRP 的参数\_MJ\_发行\_有关\_部分\_同步
+# <a name="flt_parameters-for-irp_mj_release_for_section_synchronization"></a>\_ \_ \_ \_ 用于 \_ 节同步的 IRP MJ 版本的 FLT 参数 \_
 
 
 
 
 
-没有任何参数的 IRP\_MJ\_发行\_有关\_部分\_同步。
+IRP \_ MJ \_ 版本没有 \_ 用于节同步的参数 \_ \_ 。
 
  
 

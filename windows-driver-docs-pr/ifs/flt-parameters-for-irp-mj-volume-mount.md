@@ -1,7 +1,6 @@
 ---
 title: IRP_MJ_VOLUME_MOUNT 联合的 FLT_PARAMETERS
 description: 当操作的 FLT \_ IO \_ 参数块结构的 MajorFunction 字段 \_ 为 IRP \_ MJ \_ 卷 \_ 装入时，将使用以下联合组件。
-ms.assetid: 3fcc20da-b985-4d08-a0f7-9d95ddfb79d8
 keywords:
 - IRP_MJ_VOLUME_MOUNT 联合可安装文件系统驱动程序的 FLT_PARAMETERS
 - FLT_PARAMETERS 联合可安装文件系统驱动程序
@@ -16,28 +15,28 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d5b89ee1b65d5579c632f0539bcfbff14fbc0e4b
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 970e267825bbc80d5035821d0094ffe2f8bf8797
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89063410"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96826879"
 ---
 # <a name="flt_parameters-for-irp_mj_volume_mount-union"></a>\_IRP \_ MJ \_ 卷 \_ 装载联合的 FLT 参数
 
 
-当操作的[**FLT \_ IO \_ 参数 \_ 块**](/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_io_parameter_block)结构的**MajorFunction**字段为 IRP \_ MJ \_ 卷装入时，将使用以下联合组件 \_ 。
+当操作的 [**FLT \_ IO \_ 参数 \_ 块**](/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_io_parameter_block)结构的 **MajorFunction** 字段为 IRP \_ MJ \_ 卷装入时，将使用以下联合组件 \_ 。
 
 <a name="syntax"></a>语法
 ------
 
 ```ManagedCPlusPlus
 typedef union _FLT_PARAMETERS {
-  ...    ;
+  ...    ;
   struct {
     ULONG DeviceType;
-  } MountVolume;
-  ...    ;
+  } MountVolume;
+  ...    ;
 } FLT_PARAMETERS, *PFLT_PARAMETERS;
 ```
 
@@ -48,7 +47,7 @@ typedef union _FLT_PARAMETERS {
 包含以下成员的结构。
 
 **DeviceType**  
-新装入的卷的文件系统卷设备对象的设备类型。 下列类型作之一：
+新装入的卷的文件系统卷设备对象的设备类型。 下列情况之一：
 
 文件 \_ 设备 \_ CD \_ ROM \_ 文件 \_ 系统
 
@@ -79,7 +78,7 @@ IRP \_ MJ \_ 卷 \_ 装载是一种快速的 i/o 操作。
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**FLT \_ 回调 \_ 数据**](/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_callback_data)

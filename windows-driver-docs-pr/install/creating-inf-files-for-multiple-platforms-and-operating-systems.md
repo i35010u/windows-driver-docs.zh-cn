@@ -1,7 +1,6 @@
 ---
 title: 创建适用于多个平台和操作系统的 INF 文件
 description: 创建适用于多个平台和操作系统的 INF 文件
-ms.assetid: 61996c72-c5a7-4ff0-aeb3-6e77b77542c8
 keywords:
 - INF 文件 WDK 设备安装、多个平台和操作系统
 - 多个操作系统 WDK、INF 文件
@@ -9,12 +8,12 @@ keywords:
 - 操作系统 WDK，互操作系统 INF 文件
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6c365d259e495b192e0eed3f00016be991ca3619
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 3faa63d77379e5eb8830778fea69a4aa45326694
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103458"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96827797"
 ---
 # <a name="creating-inf-files-for-multiple-platforms-and-operating-systems"></a>创建适用于多个平台和操作系统的 INF 文件
 
@@ -73,7 +72,7 @@ ms.locfileid: "90103458"
 
  
 
-**重要提示**   从 Windows Server 2003 SP1 开始，INF 文件必须用来修饰 " [**Inf 模型" 部分**](inf-models-section.md)中的条目。**ntia64**、。**ntarm**、。**ntarm64**或。用于指定非 x86 目标操作系统版本的**ntamd64**平台扩展。 对于基于 x86 的目标操作系统版本或非 PnP 驱动程序 INF 文件，这些平台扩展在 INF 文件中不是必需的 (例如，基于 x64 的体系结构的文件系统驱动程序 INF 文件) 。
+**重要提示**  从 Windows Server 2003 SP1 开始，INF 文件必须用来修饰 " [**Inf 模型" 部分**](inf-models-section.md) 中的条目。**ntia64**、。**ntarm**、。**ntarm64** 或。用于指定非 x86 目标操作系统版本的 **ntamd64** 平台扩展。 对于基于 x86 的目标操作系统版本或非 PnP 驱动程序 INF 文件，这些平台扩展在 INF 文件中不是必需的 (例如，基于 x64 的体系结构的文件系统驱动程序 INF 文件) 。
 
  
 

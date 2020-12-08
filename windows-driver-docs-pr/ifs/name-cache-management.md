@@ -1,7 +1,6 @@
 ---
 title: 名称缓存管理
 description: 名称缓存管理
-ms.assetid: 3e1b1419-320e-44e0-a6c2-823517cf07c7
 keywords:
 - RDBSS WDK 文件系统，名称缓存
 - 重定向的驱动器缓冲子系统 WDK 文件系统，名称缓存
@@ -13,12 +12,12 @@ keywords:
 - NAME_CACHE_CONTROL 结构
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 19652ed62bd929213c7d458afc4568b65af915e3
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 65234c07c0c2239f1a6b26102b805b62edfda433
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107334"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96827161"
 ---
 # <a name="name-cache-management"></a>名称缓存管理
 
@@ -50,7 +49,7 @@ RDBSS 名称缓存管理例程包括：
 <thead>
 <tr class="header">
 <th align="left">例程所返回的值</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>

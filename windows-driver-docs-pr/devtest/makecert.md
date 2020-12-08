@@ -1,7 +1,6 @@
 ---
 title: MakeCert
 description: 'MakeCert ( # A0) 是一个命令行 CryptoAPI 工具，用于创建由系统测试根密钥或其他指定的密钥签名的 x.509 证书。'
-ms.assetid: 752aa806-5e8c-4519-bece-dcd91161b98a
 keywords:
 - MakeCert 驱动程序开发工具
 topic_type:
@@ -12,12 +11,12 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2ee9dae0c5da504d2ab8bb0820b936f3c59f639e
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 1f0a2f4ac3291c9ac87fd3f044c46957ebb3b6f1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89384825"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96826681"
 ---
 # <a name="makecert"></a>MakeCert
 
@@ -33,12 +32,12 @@ MakeCert 支持大量交换机，但本节仅介绍与创建 [测试证书](../i
 ### <a name="span-idpartial_list_of_switches_and_argumentsspanspan-idpartial_list_of_switches_and_argumentsspanpartial-list-of-switches-and-arguments"></a><span id="partial_list_of_switches_and_arguments"></span><span id="PARTIAL_LIST_OF_SWITCHES_AND_ARGUMENTS"></span>开关和参数的部分列表
 
 <span id="_b_DateStart"></span><span id="_b_datestart"></span><span id="_B_DATESTART"></span>**/B** *DateStart*  
-指定证书首次变为有效的起始日期。 *DateStart*的格式为 mm/dd/yyyy。
+指定证书首次变为有效的起始日期。 *DateStart* 的格式为 mm/dd/yyyy。
 
 如果未指定 **/b** 开关，则默认开始日期为创建证书的日期。
 
 <span id="_e_DateEnd"></span><span id="_e_dateend"></span><span id="_E_DATEEND"></span>**/E** *DateEnd*  
-指定证书有效期结束的结束日期。 *DateEnd*的格式为 mm/dd/yyyy。
+指定证书有效期结束的结束日期。 *DateEnd* 的格式为 mm/dd/yyyy。
 
 如果未指定 **/e** 交换机，则默认结束日期为12/31/2039。
 
@@ -68,7 +67,7 @@ MakeCert 支持大量交换机，但本节仅介绍与创建 [测试证书](../i
 指定保存私钥的主题密钥容器的名称。 如果密钥容器不存在，则将创建新的密钥容器。 如果未输入 **/sk** 和 **/sv** 交换机，则默认情况下会创建并使用默认的密钥容器。
 
 <span id="_sr_SubjectCertStoreLocation"></span><span id="_sr_subjectcertstorelocation"></span><span id="_SR_SUBJECTCERTSTORELOCATION"></span>**/Sr** *SubjectCertStoreLocation*  
-指定证书存储的注册表位置。 *SubjectCertStoreLocation*参数必须是以下内容之一：
+指定证书存储的注册表位置。 *SubjectCertStoreLocation* 参数必须是以下内容之一：
 
 <span id="currentUser"></span><span id="currentuser"></span><span id="CURRENTUSER"></span>*currentUser*  
 指定 HKEY 当前用户的注册表位置 \_ \_ 。

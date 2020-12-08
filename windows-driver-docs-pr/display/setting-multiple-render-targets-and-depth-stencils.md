@@ -1,19 +1,18 @@
 ---
 title: 设置多个渲染器目标和深度模具
 description: 设置多个渲染器目标和深度模具
-ms.assetid: 98acd448-0b65-4a3a-9e95-8e753729a7d7
 keywords:
 - 呈现目标 WDK DirectX 9.0，多个
 - 多个呈现目标 WDK DirectX 9。0
 - 深度模具 WDK DirectX 9。0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: adf1296028e2f553eb872c54171e813c5d409c3e
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 043a57a1e88d3b9772d200249639ba0e3a8b2c0f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89066644"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96826607"
 ---
 # <a name="setting-multiple-render-targets-and-depth-stencils"></a>设置多个渲染器目标和深度模具
 

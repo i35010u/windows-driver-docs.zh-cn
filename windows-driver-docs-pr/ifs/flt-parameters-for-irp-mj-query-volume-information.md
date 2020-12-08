@@ -1,7 +1,6 @@
 ---
 title: IRP_MJ_QUERY_VOLUME_INFORMATION 联合的 FLT_PARAMETERS
 description: 操作的 FLT \_ IO \_ 参数块结构的 MajorFunction 字段 \_ 为 IRP \_ MJ \_ 查询 \_ 卷 \_ 信息时使用的联合组件。
-ms.assetid: fc790885-a378-40dc-829d-94e75a7c6f13
 keywords:
 - IRP_MJ_QUERY_VOLUME_INFORMATION 联合可安装文件系统驱动程序的 FLT_PARAMETERS
 - FLT_PARAMETERS 联合可安装文件系统驱动程序
@@ -16,30 +15,30 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c5708a62e995258b7d77daa0459974dfc03256ab
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 4c1537b78dc3f9639371081ce80e0734c21d77bb
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107228"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96826895"
 ---
 # <a name="flt_parameters-for-irp_mj_query_volume_information-union"></a>\_IRP \_ MJ \_ 查询 \_ 卷 \_ 信息联合的 FLT 参数
 
 
-操作的[**FLT \_ IO \_ 参数 \_ 块**](/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_io_parameter_block)结构的**MajorFunction**字段为[**IRP \_ MJ \_ 查询 \_ 卷 \_ 信息**](irp-mj-query-volume-information.md)时使用的联合组件。
+操作的 [**FLT \_ IO \_ 参数 \_ 块**](/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_io_parameter_block)结构的 **MajorFunction** 字段为 [**IRP \_ MJ \_ 查询 \_ 卷 \_ 信息**](irp-mj-query-volume-information.md)时使用的联合组件。
 
 <a name="syntax"></a>语法
 ------
 
 ```ManagedCPlusPlus
 typedef union _FLT_PARAMETERS {
-  ...    ;
+  ...    ;
   struct {
-    ULONG                                  Length;
+    ULONG                                  Length;
     FS_INFORMATION_CLASS POINTER_ALIGNMENT FsInformationClass;
-  } QueryVolumeInformation;
-  PVOID  VolumeBuffer;
-  ...    ;
+  } QueryVolumeInformation;
+  PVOID  VolumeBuffer;
+  ...    ;
 } FLT_PARAMETERS, *PFLT_PARAMETERS;
 ```
 
@@ -50,7 +49,7 @@ typedef union _FLT_PARAMETERS {
 包含以下成员的结构。
 
 **长度**  
-**VolumeBuffer**缓冲区的长度（以字节为单位）。
+**VolumeBuffer** 缓冲区的长度（以字节为单位）。
 
 **FsInformationClass**  
 文件系统返回的卷信息的类型。 下列类型作之一：
@@ -123,7 +122,7 @@ typedef union _FLT_PARAMETERS {
 <a name="remarks"></a>备注
 -------
 
-IRP MJ 查询卷信息操作的 [**FLT \_ 参数**](/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_parameters) 结构 \_ \_ \_ \_ 包含由回调 (数据表示的基于 IRP 的查询-信息操作的参数) 结构 [** \_ \_ **](/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_callback_data) 。 它包含在 FLT \_ IO \_ 参数 \_ 块结构中。
+IRP MJ 查询卷信息操作的 [**FLT \_ 参数**](/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_parameters) 结构 \_ \_ \_ \_ 包含由回调 (数据表示的基于 IRP 的查询-信息操作的参数) 结构 [**\_ \_**](/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_callback_data) 。 它包含在 FLT \_ IO \_ 参数 \_ 块结构中。
 
 IRP \_ MJ \_ 查询 \_ 卷 \_ 信息是基于 IRP 的操作。
 
@@ -143,7 +142,7 @@ IRP \_ MJ \_ 查询 \_ 卷 \_ 信息是基于 IRP 的操作。
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**文件 \_ FS \_ 属性 \_ 信息**](/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_file_fs_attribute_information)

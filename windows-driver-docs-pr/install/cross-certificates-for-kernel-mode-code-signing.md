@@ -1,15 +1,14 @@
 ---
 title: 用于内核模式代码签名的交叉证书
 description: 此信息介绍如何获取和使用 Microsoft Windows 的代码签名内核模式二进制文件的交叉证书。
-ms.assetid: 0A1364BF-04DA-4F1C-803A-18FE2A5EF390
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c41a54a4393ccf3589b2bf593d14eafa206a3d45
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 106f9f08f6cf696eed7ed04b5708d4246765dc5c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89095983"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96827781"
 ---
 # <a name="cross-certificates-for-kernel-mode-code-signing"></a>用于内核模式代码签名的交叉证书
 
@@ -57,7 +56,7 @@ Microsoft 为每个 CA 提供了一个特定的交叉证书，用于为代码签
     -   本地计算机个人证书存储区
 
 3.  在 " **证书** " 对话框中，选择 " **证书路径** " 选项卡，然后在证书路径中选择最顶层的证书。 这是适用于 SPC 的根颁发机构的 CA。
-4.  选择 "**查看证书**" 按钮，然后选择 "新建**证书**" 对话框的 "**详细信息**" 选项卡，以查看根证书颁发机构证书。
+4.  选择 "**查看证书**" 按钮，然后选择 "新建 **证书**" 对话框的 "**详细信息**" 选项卡，以查看根证书颁发机构证书。
 5.  查找此证书的 **颁发者** 和 **指纹** 。 然后在下面的列表中找到此 CA 对应的条目。
 6.  下载 CA 的相关交叉证书，并在对内核模式代码进行数字签名时，将此跨证书与 SPC 一起使用
 

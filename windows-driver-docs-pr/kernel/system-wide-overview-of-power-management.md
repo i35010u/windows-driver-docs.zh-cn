@@ -1,7 +1,6 @@
 ---
 title: 电源管理的全系统概述
 description: 电源管理的全系统概述
-ms.assetid: 16313152-3fe2-49d7-8cf1-b369e39e4130
 keywords:
 - 电源管理 WDK 内核，关于电源管理
 - 电源管理 WDK 内核，系统范围的概述
@@ -12,12 +11,12 @@ keywords:
 - 保存电源 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b60e05dd77cde1926d9336bca14fc0e2fdcf210e
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: e8fe04ab8b99c81a2fb14f7aec28d7ecc30a96cc
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89185923"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96827021"
 ---
 # <a name="system-wide-overview-of-power-management"></a>电源管理的全系统概述
 

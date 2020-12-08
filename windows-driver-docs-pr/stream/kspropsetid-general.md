@@ -1,27 +1,26 @@
 ---
-title: KSPROPSETID\_常规
-description: KSPROPSETID\_常规
-ms.assetid: d95e0bdd-a2c8-4c4e-a20b-ddbb1776884d
+title: KSPROPSETID \_ 常规
+description: KSPROPSETID \_ 常规
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4e0bf77eca4285908b33451dbc39a350f72a247e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6d0af34acce04c7f00efd3168ebdf90fb178f604
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63365195"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96828328"
 ---
-# <a name="kspropsetidgeneral"></a>KSPROPSETID\_常规
+# <a name="kspropsetid_general"></a>KSPROPSETID \_ 常规
 
 
 ## <span id="ddk_kspropsetid_general_ks"></span><span id="DDK_KSPROPSETID_GENERAL_KS"></span>
 
 
-KSPROPSETID\_常规属性集指定常规筛选器特性，可查询。 筛选器 pin 可以支持部分或全部设置此属性。 属性将枚举在 KSPROPERTY\_常规。
+KSPROPSETID \_ General 属性集指定可查询的常规筛选器特征。 筛选器 pin 可以支持此属性集的部分或全部。 属性在 KSPROPERTY GENERAL 中枚举 \_ 。
 
-本部分包含以下主题：
+本节包含下列主题：
 
-[**KSPROPERTY\_常规\_COMPONENTID**](ksproperty-general-componentid.md)
+[**KSPROPERTY \_ 常规 \_ 组件 ID**](ksproperty-general-componentid.md)
 
  
 

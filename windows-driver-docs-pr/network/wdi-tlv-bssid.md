@@ -1,17 +1,16 @@
 ---
 title: WDI_TLV_BSSID
 description: WDI_TLV_BSSID 是包含 BSS BSSID 的 TLV。
-ms.assetid: 0B3AB317-D1E7-4E61-9F6E-C3134B5A3984
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_BSSID 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: ab79a721f5cd0e75f4a637d1fdc2f1c0eaa42d92
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 00ae14926e329b7325c105bec2178448d290ddb0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89208517"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96827473"
 ---
 # <a name="wdi_tlv_bssid"></a>WDI \_ TLV \_ BSSID
 
@@ -23,7 +22,7 @@ WDI \_ tlv \_ bssid 是包含 BSS BSSID 的 tlv。
 
 0x2
 
-## <a name="length"></a>Length
+## <a name="length"></a>长度
 
 
 [**WDI \_ MAC \_ 地址**](/windows-hardware/drivers/ddi/dot11wdi/ns-dot11wdi-_wdi_mac_address)结构的大小 (以字节为单位) 。
@@ -31,9 +30,9 @@ WDI \_ tlv \_ bssid 是包含 BSS BSSID 的 tlv。
 ## <a name="values"></a>值
 
 
-| 类型                                              | 说明                                 |
+| 类型                                              | 描述                                 |
 |---------------------------------------------------|---------------------------------------------|
-| [**WDI \_ MAC \_ 地址**](/windows-hardware/drivers/ddi/dot11wdi/ns-dot11wdi-_wdi_mac_address) | 指定 BSSID 的 Wi-fi MAC 地址。 |
+| [**WDI \_ MAC \_ 地址**](/windows-hardware/drivers/ddi/dot11wdi/ns-dot11wdi-_wdi_mac_address) | 指定 BSSID 的 Wi-Fi MAC 地址。 |
 
  
 
@@ -52,7 +51,7 @@ WDI \_ tlv \_ bssid 是包含 BSS BSSID 的 tlv。
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
-<td><p>Windows Server 2016</p></td>
+<td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
 <td><p>标头</p></td>

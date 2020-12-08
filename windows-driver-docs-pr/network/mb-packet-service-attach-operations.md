@@ -1,15 +1,14 @@
 ---
 title: MB 数据包服务附加操作
 description: MB 数据包服务附加操作
-ms.assetid: 1a04ad29-4aa1-45fb-b554-1e18a93e91af
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: df6bd1cb9cac2d86a0bc65ee16464e200340091e
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 97dbb64021c51ac439872d05bc200db2d9359b7e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89218040"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96827577"
 ---
 # <a name="mb-packet-service-attach-operations"></a>MB 数据包服务附加操作
 

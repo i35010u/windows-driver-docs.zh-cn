@@ -1,25 +1,24 @@
 ---
 title: OID_QOS_HARDWARE_CAPABILITIES
 description: 过量驱动程序发出 (OID 的对象标识符) 查询请求 OID_QOS_HARDWARE_CAPABILITIES，以获取网络适配器 (QoS) 硬件功能的 NDIS 服务质量。
-ms.assetid: 50D93F3F-DEA0-4D7D-8866-4155EED8D8BC
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_QOS_HARDWARE_CAPABILITIES 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 740a3b245b5a6a984141e9412cb5ec1788ce47cb
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: c8279264d32aa9c06d05dcae7eed0c93d1a16644
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103330"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96827507"
 ---
 # <a name="oid_qos_hardware_capabilities"></a>OID \_ QOS \_ 硬件 \_ 功能
 
 
 过量驱动程序) OID qos 硬件功能 (OID 发出对象标识符 \_ \_ \_ ，以获取网络适配器 (QOS) 硬件功能的 NDIS 服务质量。
 
-成功从 OID 查询请求返回后， [**ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的**InformationBuffer**成员包含指向[**ndis \_ QOS \_ 功能**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_qos_capabilities)结构的指针。
+成功从 OID 查询请求返回后， [**ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的 **InformationBuffer** 成员包含指向 [**ndis \_ QOS \_ 功能**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_qos_capabilities)结构的指针。
 
-**注意**   此 OID 查询请求由支持 IEEE 802.1 数据中心桥接 (DCB) 接口的微型端口驱动程序的 NDIS 处理。
+**注意**  此 OID 查询请求由支持 IEEE 802.1 数据中心桥接 (DCB) 接口的微型端口驱动程序的 NDIS 处理。
 
  
 
@@ -28,7 +27,7 @@ ms.locfileid: "90103330"
 
 [**Ndis \_ qos \_ 功能**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_qos_capabilities)结构包含有关网络适配器的 NDIS qos 硬件功能的信息。 这些功能可能包括 INF 文件设置或 **高级** 属性页当前禁用的硬件功能。
 
-**注意**   网络适配器的所有 NDIS QoS 硬件功能都通过 oid qos 硬件功能的 OID 查询请求返回 \_ \_ \_ ，不管是启用还是禁用功能。
+**注意**  网络适配器的所有 NDIS QoS 硬件功能都通过 oid qos 硬件功能的 OID 查询请求返回 \_ \_ \_ ，不管是启用还是禁用功能。
 
  
 
@@ -36,11 +35,11 @@ ms.locfileid: "90103330"
 
 1.  驱动程序使用 NDIS QoS 硬件功能初始化 [**ndis \_ qos \_ 功能**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_qos_capabilities) 结构。
 
-2.  驱动程序将[**ndis \_ 微型端口 \_ 适配器 \_ 硬件 \_ 辅助 \_ 属性**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_adapter_hardware_assist_attributes)结构的**HardwareQosCapabilities**成员设置为指向[**NDIS \_ QOS \_ 功能**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_qos_capabilities)结构的指针。
+2.  驱动程序将 [**ndis \_ 微型端口 \_ 适配器 \_ 硬件 \_ 辅助 \_ 属性**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_adapter_hardware_assist_attributes)结构的 **HardwareQosCapabilities** 成员设置为指向 [**NDIS \_ QOS \_ 功能**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_qos_capabilities)结构的指针。
 
 3.  然后，小型端口驱动程序将调用 [**NdisMSetMiniportAttributes**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsetminiportattributes) 函数，并将 *MiniportAttributes* 参数设置为指向 [**NDIS \_ 微型端口 \_ 适配器 \_ 硬件 \_ 协助 \_ 属性**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_adapter_hardware_assist_attributes) 结构的指针。
 
-**注意**   在绑定或附加操作期间，NDIS 不会报告网络适配器的 NDIS QoS 硬件功能，以覆盖其协议和筛选器驱动程序。
+**注意**  在绑定或附加操作期间，NDIS 不会报告网络适配器的 NDIS QoS 硬件功能，以覆盖其协议和筛选器驱动程序。
 
  
 
@@ -103,7 +102,7 @@ NDIS 处理 \_ \_ 对微型端口驱动程序的 oid QOS 硬件功能请求的 o
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 ****

@@ -1,18 +1,17 @@
 ---
 title: 设置裁切矩形
 description: 设置裁切矩形
-ms.assetid: e85b4987-26b7-4005-b8eb-81ca36a9a777
 keywords:
 - 剪刀矩形 WDK DirectX 9。0
 - 矩形剪辑区域 WDK DirectX 9。0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9f1a85dfa9b41d8a2b230a0d77f78e83eaf2e001
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: a7a615a0428c0393dd3e5937eae9877c685db08a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89063476"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96826588"
 ---
 # <a name="setting-scissor-rectangle"></a>设置裁切矩形
 

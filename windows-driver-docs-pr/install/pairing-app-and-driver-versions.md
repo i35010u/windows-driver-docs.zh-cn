@@ -1,15 +1,14 @@
 ---
 title: 将驱动程序与通用 Windows 平台 (UWP) 应用配对
 description: 本主题介绍如何指定通用 Windows 平台 (UWP) 应用程序只应在存在特定驱动程序时加载。
-ms.assetid: 50f981bb-e17b-4454-88f9-46b09eb05509
 ms.date: 08/24/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 028112a5eef9d32e392b47decefedf6ad4596e3d
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 3f9aafc10874729dca604f89f1508b1280892336
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89095809"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96827625"
 ---
 # <a name="pairing-a-driver-with-a-universal-windows-platform-uwp-app"></a>将驱动程序与通用 Windows 平台 (UWP) 应用配对
 
@@ -44,5 +43,5 @@ ms.locfileid: "89095809"
 * [uap5:DriverDependency](/uwp/schemas/appxpackage/uapmanifestschema/element-uap5-driverdependency)
 * [uap5:DriverConstraint](/uwp/schemas/appxpackage/uapmanifestschema/element-uap5-driverconstraint)
 * [INF AddSoftware 指令](inf-addsoftware-directive.md)
-* [硬件支持应用 (HSA) ：驱动程序开发人员的步骤](../devapps/hardware-support-app--hsa--steps-for-driver-developers.md)
-* [硬件支持应用 (HSA) ：适用于应用开发人员的步骤](../devapps/hardware-support-app--hsa--steps-for-app-developers.md)
+* [硬件支持应用 (HSA)：适用于驱动程序开发人员的步骤](../devapps/hardware-support-app--hsa--steps-for-driver-developers.md)
+* [硬件支持应用 (HSA)：适用于应用开发人员的步骤](../devapps/hardware-support-app--hsa--steps-for-app-developers.md)

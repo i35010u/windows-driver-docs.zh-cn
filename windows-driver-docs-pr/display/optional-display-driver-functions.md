@@ -1,17 +1,16 @@
 ---
 title: 可选的显示驱动程序函数
 description: 可选的显示驱动程序函数
-ms.assetid: 7c1489c9-40de-4b44-95b7-af227c7d8205
 keywords:
 - 图形 DDI 函数 WDK Windows 2000 显示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3a833ebd2b99899bbcdd89a4fc9475898e78527b
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 5c168e34101eaca1c91a643184e1fb5613c669ef
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90715456"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96828065"
 ---
 # <a name="optional-display-driver-functions"></a>可选的显示驱动程序函数
 
@@ -41,7 +40,7 @@ ms.locfileid: "90715456"
 <thead>
 <tr class="header">
 <th align="left">函数</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -68,7 +67,7 @@ ms.locfileid: "90715456"
 <thead>
 <tr class="header">
 <th align="left">函数</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -135,7 +134,7 @@ ms.locfileid: "90715456"
 <thead>
 <tr class="header">
 <th align="left">函数</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -170,7 +169,7 @@ ms.locfileid: "90715456"
 <thead>
 <tr class="header">
 <th align="left">函数</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -209,7 +208,7 @@ ms.locfileid: "90715456"
 <thead>
 <tr class="header">
 <th align="left">函数</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>

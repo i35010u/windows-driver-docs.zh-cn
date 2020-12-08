@@ -1,7 +1,6 @@
 ---
 title: FltReleaseResource 例程
 description: FltReleaseResource 例程释放由当前线程拥有的指定资源。
-ms.assetid: 2884c596-77ec-4cba-b6cb-000d96cc6342
 keywords:
 - FltReleaseResource 例程可安装文件系统驱动程序
 topic_type:
@@ -14,28 +13,28 @@ api_type:
 - DllExport
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8b15bd3ab9fcb49a8de32720a73441ffcb631594
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 44487c5d78bf5bfd2f6ad428a3262258a8e9b227
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89063614"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96826866"
 ---
 # <a name="fltreleaseresource-routine"></a>FltReleaseResource 例程
 
 
-**FltReleaseResource**例程释放由当前线程拥有的指定资源。
+**FltReleaseResource** 例程释放由当前线程拥有的指定资源。
 
 <a name="syntax"></a>语法
 ------
 
 ```ManagedCPlusPlus
 VOID FltReleaseResource(
-  _Inout_ PERESOURCE Resource
+  _Inout_ PERESOURCE Resource
 );
 ```
 
-<a name="parameters"></a>parameters
+<a name="parameters"></a>参数
 ----------
 
 *资源* \[in、out\]  
@@ -53,7 +52,7 @@ VOID FltReleaseResource(
 
 **FltReleaseResource** 是 [**ExReleaseResourceLite**](/windows-hardware/drivers/ddi/wdm/nf-wdm-exreleaseresourcelite) 的包装器，用于会标准内核 APC 交付。
 
-由于**FltReleaseResource**会正常内核 APC 传递，因此不需要在调用**FltReleaseResource**后调用[**KeLeaveCriticalRegion**](/windows-hardware/drivers/ddi/ntddk/nf-ntddk-keleavecriticalregion)或[**FsRtlExitFileSystem**](fsrtlexitfilesystem.md) 。
+由于 **FltReleaseResource** 会正常内核 APC 传递，因此不需要在调用 **FltReleaseResource** 后调用 [**KeLeaveCriticalRegion**](/windows-hardware/drivers/ddi/ntddk/nf-ntddk-keleavecriticalregion)或 [**FsRtlExitFileSystem**](fsrtlexitfilesystem.md) 。
 
 若要获取独占访问的资源，请调用 [**FltAcquireResourceExclusive**](fltacquireresourceexclusive.md)。
 
@@ -101,7 +100,7 @@ VOID FltReleaseResource(
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**ExDeleteResourceLite**](/windows-hardware/drivers/ddi/wdm/nf-wdm-exdeleteresourcelite)

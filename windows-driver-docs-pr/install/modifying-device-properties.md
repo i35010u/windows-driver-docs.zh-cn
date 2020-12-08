@@ -1,19 +1,18 @@
 ---
 title: 修改设备属性的规则
 description: 修改设备属性的规则
-ms.assetid: EB554B5C-310A-4b2c-A2D5-22A113415400
 keywords:
 - 设备属性 WDK 设备安装，修改规则
 - 设备属性 WDK 设备安装，修改
 - 修改设备属性 WDK 设备安装
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2e1fd6979576e2a33fd835ba5255328f15ba4f89
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 9b8a978072c2ffb5f95878e5aa3470be9a55ceb3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90715538"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96827629"
 ---
 # <a name="rules-for-modifying-device-properties"></a>修改设备属性的规则
 
@@ -58,7 +57,7 @@ ms.locfileid: "90715538"
 
 -   [**DEVPKEY_Device_Manufacturer**](./devpkey-device-manufacturer.md)
 
-**注意**  *类安装*程序和*共同安装*程序不得更改设备属性 ([**DEVPKEY_Device_FriendlyName**](./devpkey-device-friendlyname.md)) 的友好名称，以及设备 ([**DEVPKEY_Device_UpperFilters**](./devpkey-device-upperfilters.md)和 DEVPKEY_Device_LowerFilters) 和[**DEVPKEY_Device_LowerFilters**](./devpkey-device-lowerfilters.md)的筛选器驱动程序的上部和下部筛选器驱动程序。 有关详细信息，请参阅 [访问设备实例属性](accessing-device-instance-properties--windows-vista-and-later-.md)。
+**注意***类安装* 程序和 *共同安装* 程序不得更改设备属性 ([**DEVPKEY_Device_FriendlyName**](./devpkey-device-friendlyname.md)) 的友好名称，以及设备 ([**DEVPKEY_Device_UpperFilters**](./devpkey-device-upperfilters.md)和 DEVPKEY_Device_LowerFilters) 和 [**DEVPKEY_Device_LowerFilters**](./devpkey-device-lowerfilters.md)的筛选器驱动程序的上部和下部筛选器驱动程序。   有关详细信息，请参阅 [访问设备实例属性](accessing-device-instance-properties--windows-vista-and-later-.md)。
 
  
 

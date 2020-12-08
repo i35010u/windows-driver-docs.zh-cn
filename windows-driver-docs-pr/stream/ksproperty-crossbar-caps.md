@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ 横线 \_ 帽
 description: "\"KSPROPERTY\" \\_ 纵横制 \\_ 下沉属性检索设备上的横线功能 (纵横比) 上的输入和输出插针的数目。 必须实现此属性。"
-ms.assetid: f7dd806c-065d-48c7-ab58-3f5ef95451d5
 keywords:
 - KSPROPERTY_CROSSBAR_CAPS 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5d0e3e56d11a0afd9544f4ff0bfb45722ef37c60
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 8874adee4f17dda7bad3b72fcc9685e179396d05
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102720"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96828359"
 ---
 # <a name="ksproperty_crossbar_caps"></a>KSPROPERTY \_ 横线 \_ 帽
 
@@ -79,7 +78,7 @@ ms.locfileid: "90102720"
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSPROPERTY**](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)

@@ -1,18 +1,17 @@
 ---
 title: 驱动程序验证器中的特殊池内存损坏检测
 description: 若要检测内存损坏情况，驱动程序验证程序可以从特殊池分配驱动程序内存，并监视该池是否有不正确的访问权限。
-ms.assetid: b1381a75-279a-42b7-b18d-43aba796424b
 keywords:
 - 特殊池功能 WDK 驱动程序验证程序
 - 内存损坏 WDK 驱动程序验证程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c2dfbcb93fc0471d17963896c5d8da8c12fc4824
-ms.sourcegitcommit: 441900007a5c1c784fb7f426e0a2a570923e21a9
+ms.openlocfilehash: 371c107059d3dbceb58e9888d355310575c2c5b6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92499512"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96826677"
 ---
 # <a name="special-pool-memory-corruption-detection-in-driver-verifier"></a>驱动程序验证器中的特殊池内存损坏检测
 
@@ -24,8 +23,8 @@ ms.locfileid: "92499512"
 
 特殊池的两种对齐方式可用：
 
-* **验证开始**对齐更好于检测访问不足。
-* **验证结束**对齐更好于检测访问超限。
+* **验证开始** 对齐更好于检测访问不足。
+* **验证结束** 对齐更好于检测访问超限。
 
 有关如何使用 **验证开始** 和 **验证结束** 选项的详细信息，请参阅 [检测超支和不足](../debugger/detecting-overruns-and-underruns.md)。 请注意，绝大多数内存损坏都是由于 *溢出*，而不是不足。
 
@@ -39,7 +38,7 @@ ms.locfileid: "92499512"
 
 **验证 End** 是否为默认对齐方式，因为超限错误比不足错误更常见。
 
-单个内存分配可以覆盖这些设置，并通过在*优先级*参数设置为 XxxSpecialPoolOverrun 或 XxxSpecialPoolUnderrun 的情况调用[**ExAllocatePoolWithTagPriority**](/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepoolwithtagpriority)来选择其对齐方式。  (此例程无法激活或停用特殊池功能，或请求内存分配的特殊池，否则将从正常池进行分配。 只能从此例程控制对齐方式。 ) 
+单个内存分配可以覆盖这些设置，并通过在 *优先级* 参数设置为 XxxSpecialPoolOverrun 或 XxxSpecialPoolUnderrun 的情况调用 [**ExAllocatePoolWithTagPriority**](/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepoolwithtagpriority)来选择其对齐方式。  (此例程无法激活或停用特殊池功能，或请求内存分配的特殊池，否则将从正常池进行分配。 只能从此例程控制对齐方式。 ) 
 
 在 windows 7 和更高版本的 Windows 操作系统中，"特殊池" 选项支持使用以下内核 Api 分配的内存：
 
@@ -53,13 +52,13 @@ ms.locfileid: "92499512"
 
 ## <a name="special-pool-by-pool-tag-or-allocation-size"></a>按池标记或分配大小的特殊池
 
-除了使用驱动程序验证程序的特殊池功能（该功能请求由指定的 *驱动程序*分配的特殊池）之外，还有两种方法可以使用特殊池：
+除了使用驱动程序验证程序的特殊池功能（该功能请求由指定的 *驱动程序* 分配的特殊池）之外，还有两种方法可以使用特殊池：
 
 * **池标记。** 使用指定的池标记请求所有分配的特殊池。
 
 * **大小。** 请求指定大小范围内的所有分配的特殊池。
 
-若要为池标记或大小范围请求特殊的池，请使用 Gflags，它是 *Windows 调试工具*中包含的工具。 有关详细信息，请参阅 [使用全局标志实用程序](using-the-global-flags-utility.md)。
+若要为池标记或大小范围请求特殊的池，请使用 Gflags，它是 *Windows 调试工具* 中包含的工具。 有关详细信息，请参阅 [使用全局标志实用程序](using-the-global-flags-utility.md)。
 
 可以同时使用驱动程序验证程序的特殊池功能和 Gflags 的特殊池功能。 如果执行此操作，请记住，特殊池会受到限制，这并不是所有尝试从特殊池进行分配的操作都将成功，并且 Windows 将返回成功的失败尝试状态，尝试从常规内存池中的分配满足的特定池进行分配。
 
@@ -94,7 +93,7 @@ ms.locfileid: "92499512"
 
 * **在命令行中**
 
-    在命令行中，特殊池选项由 **位 0 (0x1) **表示。 若要激活特殊池，请使用 "0x1" 标志值或 "将0x1 添加到标志" 值。 例如：
+    在命令行中，特殊池选项由 **位 0 (0x1)** 表示。 若要激活特殊池，请使用 "0x1" 标志值或 "将0x1 添加到标志" 值。 例如：
 
     ``` console
     verifier /flags 0x1 /driver MyDriver.sys
@@ -118,7 +117,7 @@ ms.locfileid: "92499512"
 
 * **使用驱动程序验证器管理器**
 
-   1. 选择 " **为代码开发人员 (创建自定义设置") ** ，然后单击 " **下一步**"。
+   1. 选择 " **为代码开发人员 (创建自定义设置")** ，然后单击 " **下一步**"。
    2. 选择 " **从完整列表中选择单个设置**"。
    3. 选择 (检查) **特殊池**。
 

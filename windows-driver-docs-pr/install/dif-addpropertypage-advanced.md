@@ -1,7 +1,6 @@
 ---
 title: DIF_ADDPROPERTYPAGE_ADVANCED
 description: DIF_ADDPROPERTYPAGE_ADVANCED
-ms.assetid: d2b05c45-3536-4997-ac6f-a5b5c95a97da
 keywords:
 - DIF_ADDPROPERTYPAGE_ADVANCED 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 1bd2d17dd8975457d624e9aae7e82829dbec4f29
-ms.sourcegitcommit: 06581a21ca066ddfedab7f9bb7f2159cfac452fd
+ms.openlocfilehash: 34ccaf97c8f0dab9c5458784c47d286e2ecc44f6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91145467"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96827637"
 ---
 # <a name="dif_addpropertypage_advanced"></a>DIF_ADDPROPERTYPAGE_ADVANCED
 
@@ -64,10 +63,10 @@ DIF_ADDPROPERTYPAGE_ADVANCED 请求允许安装程序为设备提供一个或多
 还可以提供一个指向 [**SP_DEVINFO_DATA**](/windows/win32/api/setupapi/ns-setupapi-sp_devinfo_data) 结构的指针，该结构在设备信息集中标识设备。 如果 *DeviceInfoSet* 为 **NULL**，则 Windows 将请求 [设备安装程序类](./overview-of-device-setup-classes.md)的属性页。
 
 <a href="" id="device-installation-parameters-"></a>设备安装参数   
-[**SP_DEVINSTALL_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-sp_devinstall_params_a))  (设备安装参数与*DeviceInfoData*（如果已指定）或与*DeviceInfoSet*相关联。
+[**SP_DEVINSTALL_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-sp_devinstall_params_a))  (设备安装参数与 *DeviceInfoData*（如果已指定）或与 *DeviceInfoSet* 相关联。
 
 <a href="" id="class-installation-parameters"></a>类安装参数  
-[**SP_ADDPROPERTYPAGE_DATA**](/windows/win32/api/setupapi/ns-setupapi-sp_newdevicewizard_data)结构与*DeviceInfoData*（如果已指定）或*DeviceInfoSet*相关联。
+[**SP_ADDPROPERTYPAGE_DATA**](/windows/win32/api/setupapi/ns-setupapi-sp_newdevicewizard_data)结构与 *DeviceInfoData*（如果已指定）或 *DeviceInfoSet* 相关联。
 
 ### <a name="installer-output"></a>安装程序输出
 
@@ -134,7 +133,7 @@ Windows 只显示一个驱动程序页、一个资源页和一个设备的一个
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**SP_ADDPROPERTYPAGE_DATA**](/windows/win32/api/setupapi/ns-setupapi-sp_newdevicewizard_data)

@@ -1,9 +1,8 @@
 ---
-title: WIA\_IPS\_MIN\_VERTICAL\_SIZE
-description: WIA\_IPS\_MIN\_垂直\_大小属性包含可以扫描扫描程序的文档送纸器，以英寸为单位的千分之几秒的最小页的物理垂直尺寸 (。 001)。
-ms.assetid: 95cfd1a2-2968-4493-8fe1-514f86e10fdf
+title: WIA \_ IPS \_ 最小 \_ 垂直 \_ 大小
+description: "\"WIA \\_ IPS \\_ 最小 \\_ 垂直 \\_ 大小\" 属性包含扫描仪的文档送纸器可扫描的最小页面的物理垂直尺寸，以英寸 ( 001) 为单位。"
 keywords:
-- WIA_IPS_MIN_VERTICAL_SIZE 成像设备
+- WIA_IPS_MIN_VERTICAL_SIZE 图像设备
 topic_type:
 - apiref
 api_name:
@@ -14,21 +13,21 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 747859e6c21d95feea2af43f38821d7799868089
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 76384671586a45c2c56f8c3706413a74d88b2217
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520610"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96827997"
 ---
-# <a name="wiaipsminverticalsize"></a>WIA\_IPS\_MIN\_VERTICAL\_SIZE
+# <a name="wia_ips_min_vertical_size"></a>WIA \_ IPS \_ 最小 \_ 垂直 \_ 大小
 
 
-WIA\_IPS\_MIN\_垂直\_大小属性包含可以扫描扫描程序的文档送纸器，以英寸为单位的千分之几秒的最小页的物理垂直尺寸 (。 001)。 WIA 微型驱动程序创建并维护此属性
+"WIA \_ IPS \_ 最小 \_ 垂直 \_ 大小" 属性包含扫描仪的文档送纸器可扫描的最小页面的物理垂直尺寸，以英寸 ( 001) 为单位。 WIA 微型驱动程序创建并维护此属性
 
-属性类型：VT\_I4
+属性类型： VT \_ I4
 
-有效值：WIA\_PROP\_NONE
+有效值： WIA " \_ \_ 无"
 
 访问权限：只读
 
@@ -43,19 +42,19 @@ WIA\_IPS\_MIN\_垂直\_大小属性包含可以扫描扫描程序的文档送纸
 <tbody>
 <tr class="odd">
 <td><p>版本</p></td>
-<td><p>在 Windows Vista 和更高版本操作系统中可用。</p></td>
+<td><p>在 Windows Vista 和更高版本的操作系统中可用。</p></td>
 </tr>
 <tr class="even">
 <td><p>标头</p></td>
-<td>Wiadef.h （包括 Wiadef.h）</td>
+<td>Wiadef (包含 Wiadef) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
-[**WIA\_IPS\_MIN\_HORIZONTAL\_SIZE**](wia-ips-min-horizontal-size.md)
+[**WIA \_ IPS \_ 最小 \_ 水平 \_ 大小**](wia-ips-min-horizontal-size.md)
 
  
 

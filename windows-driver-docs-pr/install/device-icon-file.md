@@ -1,15 +1,14 @@
 ---
 title: 设备图标文件
 description: 设备图标文件
-ms.assetid: bd1272d5-f673-4138-887d-94653cf41829
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f0176beeae438a2294ea9f9da8e70eb3b8470ca7
-ms.sourcegitcommit: 73216293357f08eb00d8b154fa377a090644ca4f
+ms.openlocfilehash: 0a19eb8fefbb18537e9a72add4e18d2cb6d27f3e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94810119"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96827737"
 ---
 # <a name="device-icon-file"></a>设备图标文件
 

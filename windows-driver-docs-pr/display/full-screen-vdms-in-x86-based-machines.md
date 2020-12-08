@@ -1,7 +1,6 @@
 ---
 title: 基于 x86 的计算机中的全屏 VDM
 description: 基于 x86 的计算机中的全屏 VDM
-ms.assetid: 5be4919d-d46f-430f-9d4f-670134379268
 keywords:
 - 视频微型端口驱动程序-基于 x86 的计算机中的 WDK Windows 2000、VGA 和全屏幕 VDMs
 - 基于 x86 的计算机中的 VGA WDK 视频微型端口、全屏 VDMs
@@ -9,12 +8,12 @@ keywords:
 - 基于 x86 的计算机 WDK VGA 兼容视频微型端口
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8ba08795fd6ad96d6923fe71b18d04650234cdc3
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 8d3a59d44ce5b020e7af7c128bfa8c1804511b73
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89065852"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96828095"
 ---
 # <a name="full-screen-vdms-in-x86-based-machines"></a>基于 x86 的计算机中的全屏 VDM
 
@@ -22,7 +21,7 @@ ms.locfileid: "89065852"
 ## <span id="ddk_full_screen_vdms_in_x86_based_machines_gg"></span><span id="DDK_FULL_SCREEN_VDMS_IN_X86_BASED_MACHINES_GG"></span>
 
 
-出于性能原因，当用户在基于 x86 的计算机上将 MS-DOS 应用程序切换到全屏模式时，显示驱动程序会控制适配器。 然后，系统 VGA 或 VGA 兼容的微型端口驱动程序将从 V86 模拟器挂钩到视频 i/o 端口，如应用程序发出 **的 IN**、 **代表 INSB/INSW/INSD**、 **OUT**和 **代表 OUTSB/OUTSW** 说明中所述。 这些挂钩 i/o 操作将转发到与 VGA 兼容的微型端口驱动程序的 *SvgaHwIoPortXxx* 函数。
+出于性能原因，当用户在基于 x86 的计算机上将 MS-DOS 应用程序切换到全屏模式时，显示驱动程序会控制适配器。 然后，系统 VGA 或 VGA 兼容的微型端口驱动程序将从 V86 模拟器挂钩到视频 i/o 端口，如应用程序发出 **的 IN**、 **代表 INSB/INSW/INSD**、 **OUT** 和 **代表 OUTSB/OUTSW** 说明中所述。 这些挂钩 i/o 操作将转发到与 VGA 兼容的微型端口驱动程序的 *SvgaHwIoPortXxx* 函数。
 
 但是，为了提高性能，微型端口驱动程序可以调用 [**VideoPortSetTrappedEmulatorPorts**](/windows-hardware/drivers/ddi/video/nf-video-videoportsettrappedemulatorports) ，以允许应用程序直接访问某些 i/o 端口。 微型端口驱动程序继续将其他 i/o 端口与 *SvgaHwIoPortXxx* 挂钩，以将应用程序发出的指令流验证到这些端口。
 

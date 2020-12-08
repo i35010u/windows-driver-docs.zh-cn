@@ -1,18 +1,17 @@
 ---
 title: INF GeneralConfigData 节
 description: INF GeneralConfigData 节
-ms.assetid: 49b00396-479f-471a-8c79-bb8ef33ebcaa
 keywords:
 - GeneralConfigData 部分
 - INF 文件 WDK Windows 2000 显示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d374a91642d4eef7e36bd05e1b3472ef16735762
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 310147f6c166f6364cd0d6759cbe9876d7bc502f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63325047"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96827267"
 ---
 # <a name="inf-generalconfigdata-section"></a>INF GeneralConfigData 节
 
@@ -20,7 +19,7 @@ ms.locfileid: "63325047"
 ## <span id="ddk_inf_generalconfigdata_section_gg"></span><span id="DDK_INF_GENERALCONFIGDATA_SECTION_GG"></span>
 
 
-如果您的微型端口驱动程序映射多个 8 MB 中的设备内存，包括**GeneralConfigData** INF 文件中的部分。
+如果微型端口驱动程序映射的设备内存超过 8 MB，请在 INF 文件中包含 **GeneralConfigData** 部分。
 
 ```inf
 [GeneralConfigData]
@@ -29,15 +28,15 @@ ms.locfileid: "63325047"
 [MaximumNumberOfDevices = n]
 ```
 
-以下是**GeneralConfigData**条目和值：
+下面是 **GeneralConfigData** 项和值：
 
-<span id="MaximumDeviceMemoryConfiguration_n"></span><span id="maximumdevicememoryconfiguration_n"></span><span id="MAXIMUMDEVICEMEMORYCONFIGURATION_N"></span>**MaximumDeviceMemoryConfiguration**=*n*  
-指定的微型端口驱动程序将尝试将映射到枚举的 PCI 视频设备的系统地址空间的设备内存兆字节为单位的最大数目。 Windows 使用此值作为提示，以确定它映射为应分配多少系统页表项 (Pte)。 此项才会生效，可能需要重新启动。 您可以确定是否重新启动是必需的检查你的设备在设备管理器的状态。
+<span id="MaximumDeviceMemoryConfiguration_n"></span><span id="maximumdevicememoryconfiguration_n"></span><span id="MAXIMUMDEVICEMEMORYCONFIGURATION_N"></span>**MaximumDeviceMemoryConfiguration** =*n*  
+指定微型端口驱动程序将尝试映射到 PCI 所枚举的一个视频设备的系统地址空间的最大大小（mb）。 Windows 使用此值作为提示来确定应为映射分配 (Pte) 多少个系统页表项。 要使此项生效，可能需要重新启动。 可以通过在设备管理器中检查设备的状态来确定是否需要重新启动。
 
-<span id="MaximumNumberOfDevices_n"></span><span id="maximumnumberofdevices_n"></span><span id="MAXIMUMNUMBEROFDEVICES_N"></span>**MaximumNumberOfDevices**=*n*  
-指定多少个视频设备 （如 PCI 的枚举和取决于您的微型端口驱动程序） 都将是系统中。 如果指定此项，则还必须指定**MaximumDeviceMemoryConfiguration**条目。 此项才会生效，可能需要重新启动。 您可以确定是否重新启动是必需的检查你的设备在设备管理器的状态。
+<span id="MaximumNumberOfDevices_n"></span><span id="maximumnumberofdevices_n"></span><span id="MAXIMUMNUMBEROFDEVICES_N"></span>**MaximumNumberOfDevices** =*n*  
+指定由 PCI 枚举并由微型端口驱动程序驱动) 应在系统中出现的视频设备 (数量。 如果指定此项，则还必须指定 **MaximumDeviceMemoryConfiguration** 项。 要使此项生效，可能需要重新启动。 可以通过在设备管理器中检查设备的状态来确定是否需要重新启动。
 
-有关支持多个监视器的信息，请参阅[支持双视图 （Windows 2000 模式）](supporting-dualview--windows-2000-model-.md)并[显示器驱动程序中的多监视器支持](multiple-monitor-support-in-the-display-driver.md)。
+有关支持多个监视器的信息，请参阅[在显示驱动程序中](multiple-monitor-support-in-the-display-driver.md)[支持双屏 (Windows 2000 模型) ](supporting-dualview--windows-2000-model-.md)和多监视器支持。
 
 
 

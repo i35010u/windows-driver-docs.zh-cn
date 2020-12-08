@@ -1,7 +1,6 @@
 ---
 title: 文件系统筛选器加载顺序
 description: 介绍与加载文件系统筛选器驱动程序相关的概念
-ms.assetid: fe0f27e4-84d4-483e-8b4e-69c39ae332de
 keywords:
 - 筛选器驱动程序 WDK 文件系统，驱动程序加载
 - 文件系统筛选器驱动程序 WDK，驱动程序加载
@@ -19,12 +18,12 @@ keywords:
 - 启动驱动程序 WDK 文件系统
 ms.date: 08/31/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 96d1ce5ae4c4d782263a6bd8e596cb19ddcc2255
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 2dfdb0ee08c2783547e477a51278c035ae195a52
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106550"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96827151"
 ---
 # <a name="file-system-filter-load-order"></a>文件系统筛选器加载顺序
 
@@ -39,7 +38,7 @@ Windows 操作系统基于以下内容加载文件系统筛选器驱动程序：
 
 内核模式驱动程序的 *启动类型* 指定是在系统启动期间还是之后加载驱动程序。 有五种可能的启动类型：
 
-| 开始类型 | 说明 |
+| 开始类型 | 描述 |
 | ---------- | ----------- |
 | SERVICE_BOOT_START (0x00000000)  | 指示操作系统 (操作系统) 加载程序启动的驱动程序。 文件系统筛选器驱动程序通常使用此开始类型或 SERVICE_DEMAND_START。 旧文件系统筛选器必须使用此启动类型;有关详细信息，请参阅 [文件系统筛选器加载顺序组](load-order-groups-for-file-system-filter-drivers.md) 。 |
 |  (0x00000001) SERVICE_SYSTEM_START | 指示在 OS 初始化期间启动了驱动程序。 此启动类型由文件系统识别器使用。 除了下面列出的 "SERVICE_DISABLED" 文件系统外，文件系统 (包括网络文件系统组件) 通常使用此开始类型或 SERVICE_DEMAND_START。 此启动类型还由设备驱动程序使用，用于在系统初始化期间枚举的 PnP 设备，但不需要加载系统。 |
@@ -53,13 +52,13 @@ Windows 操作系统基于以下内容加载文件系统筛选器驱动程序：
 
 驱动程序编写器可以通过以下任一方式在安装时指定驱动程序的启动类型：
 
-- 通过在驱动程序的 INF 文件中，在[**AddService**](../install/inf-addservice-directive.md)指令所引用的*服务安装部分*中为**StartType**条目指定所需的启动类型。 此方法在[创建筛选器驱动程序的 INF 文件](creating-an-inf-file-for-a-minifilter-driver.md)的**ServiceInstall**部分中进行了介绍。
+- 通过在驱动程序的 INF 文件中，在 [**AddService**](../install/inf-addservice-directive.md)指令所引用的 *服务安装部分* 中为 **StartType** 条目指定所需的启动类型。 此方法在 [创建筛选器驱动程序的 INF 文件](creating-an-inf-file-for-a-minifilter-driver.md)的 **ServiceInstall** 部分中进行了介绍。
 
-- 通过用户模式安装程序调用**CreateService**或**ChangeServiceConfig**时，为*dwStartType*参数传递所需的启动类型。 Microsoft Windows SDK 文档中的 **CreateService** 和 **ChangeServiceConfig** 的参考条目中介绍了此方法。
+- 通过用户模式安装程序调用 **CreateService** 或 **ChangeServiceConfig** 时，为 *dwStartType* 参数传递所需的启动类型。 Microsoft Windows SDK 文档中的 **CreateService** 和 **ChangeServiceConfig** 的参考条目中介绍了此方法。
 
 ## <a name="driver-load-order-groups"></a>驱动程序加载顺序组
 
-在 SERVICE_BOOT_START 和 SERVICE_SYSTEM_START 启动类型中，每个驱动程序的 *加载顺序组*都指定了加载驱动程序的相对顺序。
+在 SERVICE_BOOT_START 和 SERVICE_SYSTEM_START 启动类型中，每个驱动程序的 *加载顺序组* 都指定了加载驱动程序的相对顺序。
 
 启动类型为 SERVICE_BOOT_START 的驱动程序称为 *启动 (或启动) 驱动程序*。 在 Microsoft Windows 2000 及更早版本的系统上，许多启动驱动程序的筛选器属于 "筛选器" 组。 在 Microsoft Windows XP 和更高版本的系统上，作为启动驱动程序的筛选器通常属于某个 FSFilter 加载顺序组。 [文件系统筛选器驱动程序的加载顺序组](load-order-groups-for-file-system-filter-drivers.md)中详细介绍了这些加载顺序组。
 
@@ -68,7 +67,7 @@ Windows 操作系统基于以下内容加载文件系统筛选器驱动程序：
 > [!NOTE]
 > 对于其启动类型为 SERVICE_AUTO_START、SERVICE_DEMAND_START 或 SERVICE_DISABLED 的驱动程序，将忽略加载顺序组。
 
-可在**HKEY_LOCAL_MACHINE \system\currentcontrolset\control**注册表项的**ServiceGroupOrder**子项下找到完整的、有序的加载顺序组列表。
+可以在 **HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control** 注册表项的 **ServiceGroupOrder** 子项下找到加载顺序组的完整、有序的列表。
 
 相同的负载组排序用于 SERVICE_BOOT_START 和 SERVICE_SYSTEM_START 驱动程序。 但是，在加载任何 SERVICE_SYSTEM_START 驱动程序之前，将加载并启动所有 SERVICE_BOOT_START 驱动程序。
 
@@ -76,9 +75,9 @@ Windows 操作系统基于以下内容加载文件系统筛选器驱动程序：
 
 在安装时，驱动程序编写器可以通过以下任一方式来指定驱动程序的加载顺序组：
 
-- 通过在驱动程序的 INF 文件中，为**AddService**指令所引用的*服务安装部分*中的**LoadOrderGroup**条目指定所需的加载顺序组。 此方法在[创建筛选器驱动程序的 INF 文件](creating-an-inf-file-for-a-minifilter-driver.md)的**ServiceInstall**部分中进行了介绍。
+- 通过在驱动程序的 INF 文件中，为 **AddService** 指令所引用的 *服务安装部分* 中的 **LoadOrderGroup** 条目指定所需的加载顺序组。 此方法在 [创建筛选器驱动程序的 INF 文件](creating-an-inf-file-for-a-minifilter-driver.md)的 **ServiceInstall** 部分中进行了介绍。
 
-- 通过用户模式安装程序调用**CreateService**或**ChangeServiceConfig**时，为*lpLoadOrderGroup*参数传递所需的启动类型。 Microsoft Windows SDK 文档中的 **CreateService** 和 **ChangeServiceConfig** 的参考条目中介绍了此方法。
+- 通过用户模式安装程序调用 **CreateService** 或 **ChangeServiceConfig** 时，为 *lpLoadOrderGroup* 参数传递所需的启动类型。 Microsoft Windows SDK 文档中的 **CreateService** 和 **ChangeServiceConfig** 的参考条目中介绍了此方法。
 
 有关驱动程序加载顺序和加载顺序组的更多常规信息，请参阅 [指定驱动程序加载顺序](../install/specifying-driver-load-order.md)。
 

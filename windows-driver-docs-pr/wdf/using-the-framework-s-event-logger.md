@@ -1,7 +1,6 @@
 ---
 title: 使用框架的事件记录器
 description: 使用框架的事件记录器
-ms.assetid: aa0a83c8-cd13-41d0-a619-d8793b2e2e80
 keywords:
 - 调试驱动程序 WDK KMDF，事件记录器
 - 事件记录器 WDK KMDF
@@ -11,17 +10,17 @@ keywords:
 - 错误 WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fbe7ba5400812e9c2744fc361605ddfcc72bff42
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: f927e04f250d09279d3ba43b9e9abfd7ceb06e26
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89191219"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96827397"
 ---
 # <a name="using-the-frameworks-event-logger"></a>使用框架的事件记录器
 
 
-WDF 包含内部跟踪记录器，有时称为框架的 *正在进行的记录器* (IFR) 。 WDF 记录器会创建一个跟踪日志，其中包含每个 WDF 驱动程序的最新事件历史记录。 跟踪日志跟踪 i/o 请求包的进度 (Irp) 通过通过驱动程序的框架和相应的请求。 每个内核模式驱动程序框架 (KMDF) 和用户模式驱动程序框架 (UMDF) 驱动程序都有自己的日志。
+WDF 包含内部跟踪记录器，有时称为框架的 *正在进行的记录器* (IFR) 。 WDF 记录器会创建一个跟踪日志，其中包含每个 WDF 驱动程序的最新事件历史记录。 跟踪日志跟踪 i/o 请求包的进度 (Irp) 通过通过驱动程序的框架和相应的请求。 每个 Kernel-Mode Driver Framework (KMDF) 和 User-Mode Driver Framework (UMDF) 驱动程序都有自己的日志。
 
 WDF 记录器始终处于启用状态。 对于每个跟踪日志，记录器将事件记录存储在循环内存缓冲区中。 或者，您可以打开详细级别，这会使事件记录器记录可帮助您调试驱动程序的其他信息，例如，输入到内部代码路径或从内部代码路径中退出。 默认情况下，缓冲区的大小为一个内存页，详细级别为关闭。 通过在 [您尚未 wdfverifier 应用程序](../devtest/wdf-verifier-control-application.md)中调整这些值，可以更改缓冲区的大小和详细级别。 请注意，启用详细级别可能会降低系统性能。
 
@@ -55,7 +54,7 @@ WDF 记录器始终处于启用状态。 对于每个跟踪日志，记录器将
 
     若要验证 framework 版本号，可从内核调试器运行 [**！ wdfldr**](../debugger/-wdfkd-wdfldr.md) 调试器扩展命令。
 
-4.  使用 [**！ wdflogdump**](../debugger/-wdfkd-wdflogdump.md) 扩展显示事件记录器的记录。 例如，WinDbg 命令窗口的以下屏幕截图显示了 **！ wdflogdump**的输出的典型示例：
+4.  使用 [**！ wdflogdump**](../debugger/-wdfkd-wdflogdump.md) 扩展显示事件记录器的记录。 例如，WinDbg 命令窗口的以下屏幕截图显示了 **！ wdflogdump** 的输出的典型示例：
 
     ![！ wdflogdump 扩展中的示例输出](images/kmdf-using-wdflogdump.png)
 

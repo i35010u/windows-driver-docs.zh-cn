@@ -1,15 +1,14 @@
 ---
 title: 创建测试证书
 description: 创建测试证书
-ms.assetid: 4e6daa96-029c-4e1c-b483-b900cb836858
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 346e01857827a4dee600256fd41104ddf080f30e
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: d7f59ae8f3ee3166fab00bdaa49af8072e926e2d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89097150"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96827791"
 ---
 # <a name="creating-test-certificates"></a>创建测试证书
 
@@ -20,13 +19,13 @@ ms.locfileid: "89097150"
 
 以下命令行示例使用 MakeCert 来完成以下任务：
 
--   * (测试) *中创建名为 "Contoso.com" 的自签名测试证书。 此证书对使用者名称和证书颁发机构 (CA) 使用相同的名称。
+-   *(测试)* 中创建名为 "Contoso.com" 的自签名测试证书。 此证书对使用者名称和证书颁发机构 (CA) 使用相同的名称。
 
--   将证书的副本放入名为 *ContosoTest*的输出文件中。
+-   将证书的副本放入名为 *ContosoTest* 的输出文件中。
 
--   将证书的副本放入名为 *PrivateCertStore*的证书存储中。 如果将测试证书放在 *PrivateCertStore* 中，则会将其与系统上的其他证书隔离开来。
+-   将证书的副本放入名为 *PrivateCertStore* 的证书存储中。 如果将测试证书放在 *PrivateCertStore* 中，则会将其与系统上的其他证书隔离开来。
 
-使用以下 MakeCert 命令创建 *Contoso.com (测试) * 证书：
+使用以下 MakeCert 命令创建 *Contoso.com (测试)* 证书：
 
 ```cmd
 makecert -r -pe -ss PrivateCertStore -n CN=Contoso.com(Test) -eku 1.3.6.1.5.5.7.3.3 ContosoTest.cer
@@ -34,11 +33,11 @@ makecert -r -pe -ss PrivateCertStore -n CN=Contoso.com(Test) -eku 1.3.6.1.5.5.7.
 
 其中：
 
--   **-R**选项创建一个自签名证书，该证书具有相同的颁发者和使用者名称。
+-   **-R** 选项创建一个自签名证书，该证书具有相同的颁发者和使用者名称。
 
--   **-Pe**选项指定可以导出与证书关联的私钥。
+-   **-Pe** 选项指定可以导出与证书关联的私钥。
 
--   **-Ss**选项指定包含测试证书 (*PrivateCertStore*) 的证书存储的名称。
+-   **-Ss** 选项指定包含测试证书 (*PrivateCertStore*) 的证书存储的名称。
 
 -   **-N CN =** option 指定证书的名称，Contoso.com (Test) 。 此名称与 [**SignTool**](../devtest/signtool.md) 工具一起用于标识证书。
 

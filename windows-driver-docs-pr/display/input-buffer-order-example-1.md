@@ -1,15 +1,14 @@
 ---
 title: 输入缓冲区顺序示例 1
 description: 输入缓冲区顺序示例 1
-ms.assetid: 1fd5f181-8bf7-4b16-adc9-ed751f9ad664
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5121bc7c489dceb4a4d6679c5c6fb88676d1f5d0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 872d4529f5abbd596c5b41e3823448e59020d021
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63350255"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96827249"
 ---
 # <a name="input-buffer-order-example-1"></a>输入缓冲区顺序示例 1
 
@@ -17,9 +16,9 @@ ms.locfileid: "63350255"
 ## <span id="ddk_input_buffer_order_example_1_gg"></span><span id="DDK_INPUT_BUFFER_ORDER_EXAMPLE_1_GG"></span>
 
 
-**本部分仅适用于 Windows Server 2003 SP1 和更高版本和 Windows XP SP2 和更高版本。**
+**本部分仅适用于 Windows Server 2003 SP1 及更高版本以及 Windows XP SP2 及更高版本。**
 
-请考虑不需要任何上一输出参考帧或旧或更新输入的参考帧来执行其取消隔行扫描操作的设备 (例如， [bob deinterlacer](bob-deinterlacing.md))。 序列中的图面**lpBufferInfo**此设备的数组：
+假设某个设备不需要任何以前的输出引用帧，或者以前或将来的输入引用帧来执行其取消隔行扫描操作 (例如， [bob deinterlacer](bob-deinterlacing.md)) 。 此设备的 **lpBufferInfo** 数组中的表面序列如下：
 
 <table>
 <colgroup>
@@ -30,19 +29,19 @@ ms.locfileid: "63350255"
 <thead>
 <tr class="header">
 <th align="left">索引位置</th>
-<th align="left">图面上的类型</th>
+<th align="left">Surface 类型</th>
 <th align="left">临时位置</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>lpBufferInfo[0]</p></td>
+<td align="left"><p>lpBufferInfo [0]</p></td>
 <td align="left"><p>目标</p></td>
 <td align="left"><p>T</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>lpBufferInfo[1]</p></td>
-<td align="left"><p>交错的输入</p></td>
+<td align="left"><p>lpBufferInfo [1]</p></td>
+<td align="left"><p>隔行扫描输入</p></td>
 <td align="left"><p>T</p></td>
 </tr>
 </tbody>

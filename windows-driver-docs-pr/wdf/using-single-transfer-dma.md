@@ -1,15 +1,14 @@
 ---
 title: 使用单一传输 DMA
 description: 本主题介绍 KMDF 驱动程序如何请求单一传输 DMA。
-ms.assetid: 57bf9988-6eed-42ca-a961-a6d16c5c19c1
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 419f7a5bd31713418b4292524936786444a2f6ec
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 713eb4a15a4c784b105d833cd532999cf748d6b6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89191201"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96827395"
 ---
 # <a name="using-single-transfer-dma"></a>使用单一传输 DMA
 
@@ -31,7 +30,7 @@ ms.locfileid: "89191201"
 
 ## <a name="setting-the-single-transfer-requirement-for-all-dma-transactions-created-with-a-particular-dma-enabler"></a>为使用特定 DMA 启用程序创建的所有 DMA 事务设置单一传输要求
 
-若要为使用给定启用程序创建的所有事务设置单个传输，请在调用[**WdfDmaEnablerCreate**](/previous-versions/jj619276(v=technet.10))时指定[**WDF_DMA_ENABLER_CONFIG_FLAGS**](/windows-hardware/drivers/ddi/wdfdmaenabler/ne-wdfdmaenabler-_wdf_dma_enabler_config_flags)中的**WDF_DMA_ENABLER_CONFIG_REQUIRE_SINGLE_TRANSFER**标志。  
+若要为使用给定启用程序创建的所有事务设置单个传输，请在调用 [**WdfDmaEnablerCreate**](/previous-versions/jj619276(v=technet.10))时指定 [**WDF_DMA_ENABLER_CONFIG_FLAGS**](/windows-hardware/drivers/ddi/wdfdmaenabler/ne-wdfdmaenabler-_wdf_dma_enabler_config_flags)中的 **WDF_DMA_ENABLER_CONFIG_REQUIRE_SINGLE_TRANSFER** 标志。  
 
 使用此标志的驱动程序不需要在每次创建或重新使用事务对象时调用 [**WdfDmaTransactionSetSingleTransferRequirement**](/windows-hardware/drivers/ddi/wdfdmatransaction/nf-wdfdmatransaction-wdfdmatransactionsetsingletransferrequirement) 。
 
@@ -39,4 +38,4 @@ ms.locfileid: "89191201"
 
 调试时，请使用 [**！ wdfkd. wdfdmaenabler**](../debugger/-wdfkd-wdfdmaenabler.md) 扩展来确定是否为给定 DMA 启用程序对象设置了单个传输。
 
-有关 WDF 调用驱动程序的 DMA 事件回调函数的顺序的信息，请参阅 [在 KMDF 驱动程序中处理 I/o 请求，获取总线主控计算机 DMA 设备](handling-i-o-requests-in-a-kmdf-driver-for-a-bus-master-dma-device.md)。
+有关 WDF 调用驱动程序的 DMA 事件回调函数的顺序的信息，请参阅 [处理 Bus-Master DMA 设备的 KMDF 驱动程序中的 I/o 请求](handling-i-o-requests-in-a-kmdf-driver-for-a-bus-master-dma-device.md)。

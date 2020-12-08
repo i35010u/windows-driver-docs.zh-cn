@@ -1,7 +1,6 @@
 ---
 title: DTrace 实时转储
 description: 'DTrace 支持使用 LKD ( # A1 创建实时转储文件。'
-ms.assetid: bbf23d76-423d-4d1e-afde-83739015bbf1
 keywords:
 - DTrace WDK
 - 软件跟踪 WDK，DTrace
@@ -13,12 +12,12 @@ keywords:
 - 跟踪消息格式化文件 WDK
 ms.date: 11/04/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 8690451f6ec3dd7de107941aa9fb0510a0924210
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 3b77298b9b8245ba88e03dc88cf3592223d355ef
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105048"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96828191"
 ---
 # <a name="dtrace-live-dump"></a>DTrace 实时转储
 
@@ -87,7 +86,7 @@ Triggering LiveDump
 
 如上所述，使用 WinDbg 处理转储文件。
 
-## <a name="troubleshooting"></a>疑难解答
+## <a name="troubleshooting"></a>故障排除
 
 ### <a name="viewing-live-dump-related-events"></a>查看实时转储相关事件
 

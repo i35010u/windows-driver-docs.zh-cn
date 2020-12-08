@@ -1,20 +1,19 @@
 ---
 title: 消息编译器任务
 description: 'Windows 驱动程序工具包 (WDK) 提供 MessageCompiler 任务，以便在使用 MSBuild 构建驱动程序时可以运行 MC.exe 工具。 有关使用 MC.exe 的信息，请参阅 Message 编译器 ( # A1) 。'
-ms.assetid: 77B2DBF4-64EB-4396-BAA5-80F23C9899CC
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7a498019fcd0e4cf1c08df93268ef4ebb5487f69
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 04df92bb513c90e8fc4743eb2c7d77624ef29751
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89384683"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96828177"
 ---
 # <a name="message-compiler-task"></a>消息编译器任务
 
 
-Windows 驱动程序工具包 (WDK) 提供 MessageCompiler 任务，以便在使用 MSBuild 构建驱动程序时可以运行 MC.exe 工具。 有关使用 MC.exe 的信息，请参阅 [**Message 编译器 ( # A1) **](/windows/desktop/WES/message-compiler--mc-exe-)。
+Windows 驱动程序工具包 (WDK) 提供 MessageCompiler 任务，以便在使用 MSBuild 构建驱动程序时可以运行 MC.exe 工具。 有关使用 MC.exe 的信息，请参阅 [**Message 编译器 ( # A1)**](/windows/desktop/WES/message-compiler--mc-exe-)。
 
 MSBuild 使用 MessageCompile 项来发送 MessageCompiler 任务的参数。 MessageCompile 项将访问项目文件中 mc.exe 的项元数据。
 

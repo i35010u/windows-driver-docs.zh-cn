@@ -1,31 +1,30 @@
 ---
 title: 验证覆盖支持
 description: 验证覆盖支持
-ms.assetid: cbc3f2c4-a22a-48dd-9a3e-9611aa8dd3c6
 keywords:
 - 验证覆盖支持 WDK Windows 7 显示
 - 验证覆盖支持 WDK Windows Server 2008 R2 显示
-- 覆盖层支持 WDK Windows 7 显示
-- 覆盖 WDK Windows 7 显示，请验证的支持
-- 覆盖层支持 WDK Windows Server 2008 R2 显示
-- 覆盖显示 WDK Windows Server 2008 R2，请验证的支持
+- 覆盖支持 WDK Windows 7 显示
+- 覆盖支持 WDK Windows 7 显示，验证
+- 覆盖支持 WDK Windows Server 2008 R2 显示
+- 覆盖支持 WDK Windows Server 2008 R2 显示，验证
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 98f8c50c4495560154deb1a048dd5a2bdfbf6c91
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: af9457808d69e382b12d58562364b326d764563b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390799"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96826595"
 ---
 # <a name="verifying-overlay-support"></a>验证覆盖支持
 
 
-本部分仅适用于 Windows 7 及更高版本、 和 Windows Server 2008 R2 和更高版本的 Windows 操作系统。
+本部分仅适用于 Windows 7 和更高版本，以及 windows Server 2008 R2 及更高版本的 Windows 操作系统。
 
-若要验证覆盖的支持，用户模式显示驱动程序应实现新覆盖 DDI 附带有 Windows 7。 以下各节介绍新的覆盖 DDI。
+若要验证覆盖支持，用户模式显示驱动程序应实现 Windows 7 随附的新的覆盖 DDI。 以下各节介绍了新的覆盖 DDI。
 
-[Overlay DDI](overlay-ddi.md)
+[覆盖 DDI](overlay-ddi.md)
 
 [覆盖 DDI 编程注意事项](overlay-ddi-programming-considerations.md)
 

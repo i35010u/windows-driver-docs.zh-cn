@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ CAMERACONTROL \_ 扩展 \_ 元数据
 description: 客户端使用此扩展属性控件查询驱动程序的元数据缓冲区要求。
-ms.assetid: 6196DFF6-050A-4916-A188-70A89B60B5EA
 keywords:
 - KSPROPERTY_CAMERACONTROL_EXTENDED_METADATA 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 09/10/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: b7105496d8892ab494fdd6de8ba0562285b0c650
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: e5f64a75460ca12fba8d7f9391c0eb1b3e32b94c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107366"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96828369"
 ---
 # <a name="ksproperty_cameracontrol_extended_metadata"></a>KSPROPERTY \_ CAMERACONTROL \_ 扩展 \_ 元数据
 
@@ -44,7 +43,7 @@ ms.locfileid: "90107366"
 <tr class="odd">
 <td><p>版本 1</p></td>
 <td><p>Pin</p></td>
-<td><p>同步</p></td>
+<td><p>Synchronous</p></td>
 </tr>
 </tbody>
 </table>

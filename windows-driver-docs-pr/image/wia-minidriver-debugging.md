@@ -1,15 +1,14 @@
 ---
 title: WIA 微型驱动程序调试
 description: WIA 微型驱动程序调试
-ms.assetid: 6466d0db-a2f9-4b3e-aa3e-8030b243f862
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c096784f6fd3f56cbe6c0e5dbb4f1db6568e59b3
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 0ec0262deae87c582cd3bc640d7294fde17be529
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89187965"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96826485"
 ---
 # <a name="wia-minidriver-debugging"></a>WIA 微型驱动程序调试
 
@@ -25,7 +24,7 @@ WIA 驱动程序在 WIA 服务进程内执行。 因此，为了执行这些驱�
 
 1. 如果需要从调试器中访问符号和其他文件的网络，则在调试器下自动启动 WIA 服务时，这些文件可能不可见。 WIA 作为 LocalSystem 服务在 Windows XP 和 Microsoft Windows Server 2003 及更高版本的操作系统版本中运行，并且没有访问网络的适当权限。 因此，即使您的计算机可以 "查看" 网络上的所有内容，运行该服务的调试器也可能无法运行。 有关 WIA 服务的更改权限级别的详细信息，请参阅 [Wia 驱动程序的安全问题](security-issues-for-wia-drivers.md)。
 
-1. 如果驱动程序的 STI 部分的驱动程序加载或初始化过程中出现问题 (例如，在 [**IStiUSD：： Initialize**](/windows-hardware/drivers/ddi/stiusd/nf-stiusd-istiusd-initialize)) 期间，然后在附加调试器时，此错误已经发生并且太晚，无法获取有用的信息。 此问题的常见症状是设备不*会显示在***我的电脑**文件夹中，而是显示在**设备管理器**文件夹中。
+1. 如果驱动程序的 STI 部分的驱动程序加载或初始化过程中出现问题 (例如，在 [**IStiUSD：： Initialize**](/windows-hardware/drivers/ddi/stiusd/nf-stiusd-istiusd-initialize)) 期间，然后在附加调试器时，此错误已经发生并且太晚，无法获取有用的信息。 此问题的常见症状是设备不 *会显示在***我的电脑** 文件夹中，而是显示在 **设备管理器** 文件夹中。
 
 ## <a name="starting-the-wia-service-under-a-debugger"></a>在调试器下启动 WIA 服务
 
@@ -47,13 +46,13 @@ WIA 服务启动后，服务控制管理器 (SCM) 查看服务控制数据库中
 
 **HKLM \\ System \\ CurrentControlSet \\ Services \\ StiSvc \\ 类型**
 
-**类型**键0x20 的初始值会阻止显示调试器窗口。 将 **类型** 键的值更改为 DWORD 值0X120。
+**类型** 键0x20 的初始值会阻止显示调试器窗口。 将 **类型** 键的值更改为 DWORD 值0X120。
 
 ### <a name="attaching-the-debugger-at-run-time"></a>在运行时附加调试器
 
-大多数调试器都需要正在运行的进程的 PID，才能在该进程已启动之后附加到该进程。 由于 WIA 在称为 *svchost.exe*的泛型宿主进程下运行，因此查找 *svchost.exe* 的正确实例是必不可少的。
+大多数调试器都需要正在运行的进程的 PID，才能在该进程已启动之后附加到该进程。 由于 WIA 在称为 *svchost.exe* 的泛型宿主进程下运行，因此查找 *svchost.exe* 的正确实例是必不可少的。
 
-如果从 Microsoft 站点下载了调试程序包，该程序包将包含一个名为 *tlist.exe*的实用程序。 *Tlist.exe* 显示所有正在运行的进程。 如果使用 s 开关执行 *tlist.exe* ，此实用工具还会显示哪些进程正在托管哪些服务。 例如，运行 *tlist.exe* 会生成类似于以下内容的输出：
+如果从 Microsoft 站点下载了调试程序包，该程序包将包含一个名为 *tlist.exe* 的实用程序。 *Tlist.exe* 显示所有正在运行的进程。 如果使用 s 开关执行 *tlist.exe* ，此实用工具还会显示哪些进程正在托管哪些服务。 例如，运行 *tlist.exe* 会生成类似于以下内容的输出：
 
 ```cmd
    0 System Process
@@ -86,4 +85,4 @@ WIA 服务启动后，服务控制管理器 (SCM) 查看服务控制数据库中
 
 **% SystemRoot% \\System32 \\stisvc.exe-k imgsvc**"
 
-WIA 服务启动时，它会在 *stisvc.exe* 而不是 *svchost.exe*下运行。 查找此过程更简单，因为只有一个 *stisvc.exe*的实例。 无需查找 PID 即可找到它。 例如，如果使用 Microsoft Visual Studio 开发驱动程序，则可以在 "**生成**" 菜单下，单击 "**开始调试**" 菜单项，单击 "**附加到进程 ...**"，然后在列表中选择 " *stisvc.exe* "。
+WIA 服务启动时，它会在 *stisvc.exe* 而不是 *svchost.exe* 下运行。 查找此过程更简单，因为只有一个 *stisvc.exe* 的实例。 无需查找 PID 即可找到它。 例如，如果使用 Microsoft Visual Studio 开发驱动程序，则可以在 "**生成**" 菜单下，单击 "**开始调试**" 菜单项，单击 "**附加到进程 ...**"，然后在列表中选择 " *stisvc.exe* "。

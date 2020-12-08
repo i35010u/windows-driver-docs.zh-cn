@@ -1,7 +1,6 @@
 ---
 title: 'IoAllocateIrpSignalEventInCompletionTimeout 规则 (wdm) '
 description: 如果 IoAllocateIrpSignalEventInCompletionTimeout 规则检测到此驱动程序将无限期等待，直到降低驱动程序返回，因为 IRP 的事件需要在完成例程中发出信号。
-ms.assetid: 7E00F7EC-3FB9-4BFB-AE10-D846282B37AA
 ms.date: 05/21/2018
 keywords:
 - 'IoAllocateIrpSignalEventInCompletionTimeout 规则 (wdm) '
@@ -12,12 +11,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 5626be3d1e36481c4f75a6f28ed734e7f056c03c
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 7c022ca18ef82ac36dc58bc80455e89d53837044
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105308"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96826631"
 ---
 # <a name="ioallocateirpsignaleventincompletiontimeout-rule-wdm"></a>IoAllocateIrpSignalEventInCompletionTimeout 规则 (wdm) 
 

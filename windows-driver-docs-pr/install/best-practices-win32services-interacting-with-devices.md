@@ -1,21 +1,20 @@
 ---
 title: Win32 服务与设备交互
 description: Win32 服务与设备交互
-ms.assetid: 0ecc6979-25b3-41eb-8d6f-9eee3b80a56f
 ms.date: 03/02/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 1afb05d9612a6b0439e1cfcdcf973cd574ee34e4
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: aa5e6caa47e6856c506eef5a8d6f646ec62df48e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90717550"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96827991"
 ---
 # <a name="win32-services-interacting-with-devices"></a>Win32 服务与设备交互
 
 ## <a name="motivation"></a>推动
 
-通过 [INF AddService](./inf-addservice-directive.md) 安装的理想 Win32 服务与设备进行交互的行为类似于 *驱动程序* 与 *设备*交互的方式。  将加载并卸载驱动程序，具体取决于设备是否存在，与设备交互的 Win32 服务应遵循与设备的状态相同的 **启动** 和 **停止** 模式。  
+通过 [INF AddService](./inf-addservice-directive.md) 安装的理想 Win32 服务与设备进行交互的行为类似于 *驱动程序* 与 *设备* 交互的方式。  将加载并卸载驱动程序，具体取决于设备是否存在，与设备交互的 Win32 服务应遵循与设备的状态相同的 **启动** 和 **停止** 模式。  
 
 仅当关联设备不再存在时，服务才会启动，以便交互和停止。  此设计模式可确保最大程度地减少不需要的和未定义的行为。  我们将逐步介绍如何将服务设计为遵循此模式。
 
@@ -56,7 +55,7 @@ AddTrigger    = UserSvc_AddTrigger
 注册通知后，可以在以下两个步骤中找到所需的设备接口：
 
 1. 从通知回调发现接口
-2. 查询现有设备接口的列表，并使用**CM_Get_Device_Interface_List**查找所需的接口
+2. 查询现有设备接口的列表，并使用 **CM_Get_Device_Interface_List** 查找所需的接口
 
 >[!NOTE] 
 >请注意，接口可能会在注册通知和查找所需设备接口之间出现。  在这种情况下，接口将在通知回调和接口列表中列出。
@@ -81,4 +80,4 @@ AddTrigger    = UserSvc_AddTrigger
 
 GitHub 上提供了一个示例，指导服务如何利用这一流事件。  可在以下位置找到该示例： [Win32 服务示例](https://github.com/microsoft/Windows-driver-samples/tree/master/general/DCHU/osrfx2_DCHU_base/osrfx2_DCHU_usersvc)。
 
-此外，还可以在[AddService](./inf-addservice-directive.md)页上找到有关**AddTrigger**的有用文档。
+此外，还可以在 [AddService](./inf-addservice-directive.md)页上找到有关 **AddTrigger** 的有用文档。

@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ BDA \_ 内 \_ FEC \_ 类型
 description: 客户端使用 KSPROPERTY \_ BDA \_ inner \_ FEC \_ 类型来控制内部正向纠错 (FEC) 类型的解调器节点。
-ms.assetid: e6640d89-cf75-4073-98fb-2a877d6c38d3
 keywords:
 - KSPROPERTY_BDA_INNER_FEC_TYPE 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0fc2f1d2d26dff187eda30a60f9a06a2dcdc4d6c
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: bfa16f099d6289cd3c283aabf8167342a7c66466
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89189753"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96828381"
 ---
 # <a name="ksproperty_bda_inner_fec_type"></a>KSPROPERTY \_ BDA \_ 内 \_ FEC \_ 类型
 
@@ -84,7 +83,7 @@ KSP **NodeId** \_ 节点的节点标识号指定了解调器节点的标识符�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**FECMethod**](/previous-versions/windows/desktop/mstv/fecmethod)

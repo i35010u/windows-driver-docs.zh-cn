@@ -1,9 +1,8 @@
 ---
 title: ScanRegion 元素
-description: 可选 ScanRegion 元素指定要扫描的输入的文档边界内的区域。
-ms.assetid: 29b94df7-503d-4bbd-99a8-9092140c6629
+description: 可选的 ScanRegion 元素指定要在输入文档边界内扫描的区域。
 keywords:
-- ScanRegion 元素成像设备
+- ScanRegion 元素图像设备
 topic_type:
 - apiref
 api_name:
@@ -12,19 +11,19 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c3978b3e780aa2a2b778819dceb42ec4dfdbc366
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1e41d86c09e946af32fb3e2a12a3a022a10b13cd
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63340088"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96826845"
 ---
 # <a name="scanregion-element"></a>ScanRegion 元素
 
 
-可选**ScanRegion**元素指定要扫描的输入的文档边界内的区域。
+可选的 **ScanRegion** 元素指定要在输入文档边界内扫描的区域。
 
-<a name="usage"></a>用法
+<a name="usage"></a>使用情况
 -----
 
 ```xml
@@ -91,15 +90,15 @@ ms.locfileid: "63340088"
 <a name="remarks"></a>备注
 -------
 
-所有**ScanRegion**值表示一个千分之几秒 (1/1000) 的英寸为单位。
+所有 **ScanRegion** 值都代表一 (1/1000) 英寸。
 
-如果扫描作业的请求的扫描区域会完全不属于扫描设备的受支持的获取区域，则应拒绝扫描操作。
+如果扫描作业的请求扫描区域完全超出了扫描设备支持的购置区域，则应拒绝扫描操作。
 
-[**ScanRegionXOffset**](scanregionxoffset.md) + [**ScanRegionWidth** ](scanregionwidth.md)必须等于或小于比[ **InputSize** ](inputsize.md)宽度。
+[**ScanRegionXOffset**](scanregionxoffset.md)  + [**ScanRegionWidth**](scanregionwidth.md)必须等于或小于 [**InputSize**](inputsize.md)宽度。
 
-[**ScanRegionYOffset**](scanregionyoffset.md) + [**ScanRegionHeight** ](scanregionheight.md)必须等于或小于比**InputSize**高度。
+[**ScanRegionYOffset**](scanregionyoffset.md)  + [**ScanRegionHeight**](scanregionheight.md)必须等于或小于 **InputSize** 高度。
 
-如果它不能满足指定的尺寸，WSD 扫描服务可以调整请求的扫描区域。 中应该报告对扫描区域的任何更改[ **DocumentFinalParameters** ](documentfinalparameters.md)扫描作业中的元素。
+如果 WSD 扫描服务无法满足指定的维度，则可以调整请求的扫描区域。 扫描区域中的任何更改都应在扫描作业的 [**DocumentFinalParameters**](documentfinalparameters.md) 元素中报告。
 
 ## <a name="see-also"></a>请参阅
 

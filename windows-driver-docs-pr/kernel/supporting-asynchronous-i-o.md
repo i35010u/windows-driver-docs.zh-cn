@@ -1,19 +1,18 @@
 ---
 title: 支持异步 I/O
 description: 支持异步 I/O
-ms.assetid: b4baf1a9-6156-4bbf-b4d9-7205924c637f
 keywords:
-- 异步 I/O WDK 内核
-- I/O WDK 内核，异步模式
-- WDK I/O 请求的状态信息
+- 异步 i/o WDK 内核
+- I/o WDK 内核，异步模式
+- 状态信息 WDK i/o 请求数
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0087723df0b61e2ee506d69325a44bbd530069f8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2ba925b10d116078e011574b79cb40eaa1c593c2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63330565"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96827643"
 ---
 # <a name="supporting-asynchronous-io"></a>支持异步 I/O
 
@@ -21,17 +20,17 @@ ms.locfileid: "63330565"
 
 
 
-I/O 管理器提供支持异步 I/O，使 （通常在用户模式应用程序，但有时其他驱动程序） 的 I/O 请求的发起方可以继续执行，而不是等待其 I/O 请求完成。 异步 I/O 支持提高了整体系统的吞吐量和发出的 I/O 请求的任何代码的性能。
+I/o 管理器提供异步 i/o 支持，以便 i/o 请求的发起方 (通常是用户模式的应用程序，但有时其他驱动程序) 可以继续执行，而不是等待其 i/o 请求完成。 异步 i/o 支持改善了整体系统吞吐量和发出 i/o 请求的任何代码的性能。
 
-利用异步 I/O 支持，内核模式驱动程序不一定处理 I/O 请求发送到 I/O 管理器的顺序相同。 I/O 管理器或更高级别的驱动程序，可以重新排序 I/O 请求，因为它们被接收。 驱动程序可以拆分为较小的传输请求的大型数据传输请求。 此外，驱动程序可以重叠 I/O 请求处理，尤其是在对称多处理器平台，如中所述[包含多个处理器安全](multiprocessor-safe.md)。
+利用异步 i/o 支持，内核模式驱动程序不一定按将 i/o 请求发送到 i/o 管理器的相同顺序处理这些请求。 I/o 管理器或更高级别的驱动程序可以在收到 i/o 请求时对其重新排序。 驱动程序可以将大型数据传输请求拆分为较小的传输请求。 而且，驱动程序可以重叠 i/o 请求处理，尤其是在对称多处理器平台中，如 [多处理器安全](multiprocessor-safe.md)中所述。
 
-此外，内核模式驱动程序处理单个 I/O 请求是不一定是序列化。 也就是说，驱动程序不一定处理完成每个 IRP 开始处理下一个传入的 I/O 请求之前。
+而且，不一定要对内核模式驱动程序处理单个 i/o 请求进行序列化。 也就是说，驱动程序在开始处理下一个传入 i/o 请求之前，不一定会处理每个 IRP 完成。
 
-当驱动程序接收 IRP 时，它响应通过尽可能特定于 IRP 的处理，因为它可以执行。 如果该驱动程序支持异步 IRP 处理，它可以将 IRP 发送到下一步的驱动程序，如有必要，并开始处理下一步 IRP，而无需等待完成的第一个。 该驱动程序可以注册"完成例程，"I/O 管理器调用时另一个驱动程序已完成处理 IRP。 驱动程序状态中提供值 IRP 的 I/O 状态块，可以访问其他驱动程序来确定的 I/O 请求的状态。
+当驱动程序收到 IRP 时，它会通过尽可能多地执行 IRP 特定的处理来做出响应。 如果驱动程序支持异步 IRP 处理，则它可以将 IRP 发送到下一个驱动程序（如有必要），并开始处理下一个 IRP，而不必等待第一个 IRP 完成。 该驱动程序可以注册一个 "完成例程"，当另一个驱动程序完成了 IRP 的处理时，i/o 管理器会调用它。 驱动程序在 IRP 的 i/o 状态块中提供状态值，其他驱动程序可以访问这些值来确定 i/o 请求的状态。
 
-驱动程序可以维护其当前的 I/O 操作在其设备对象，调用的特殊部分中的状态信息[设备扩展](device-extensions.md)。
+驱动程序可以在其设备对象（称为 [设备扩展](device-extensions.md)）的特殊部分中维护有关其当前 i/o 操作的状态信息。
 
-有关详细信息，请参阅[处理 Irp](handling-irps.md)并[输入/输出技术](i-o-programming-techniques.md)。
+有关详细信息，请参阅 [处理 irp](handling-irps.md) 和 [输入/输出技术](i-o-programming-techniques.md)。
 
  
 

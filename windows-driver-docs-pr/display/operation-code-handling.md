@@ -1,19 +1,18 @@
 ---
 title: 操作代码处理
 description: 操作代码处理
-ms.assetid: 97de8370-316e-41df-bf27-1985af47a4e0
 keywords:
 - Direct3D WDK Windows 2000 显示，操作代码
 - 操作代码 WDK Direct3D
 - D3dDrawPrimitives2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9570b04c502c05c05eaadc35def53c135d1109a7
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 4745feeca0413c0bae917653b332c506eeb22788
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89066008"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96828075"
 ---
 # <a name="operation-code-handling"></a>操作代码处理
 

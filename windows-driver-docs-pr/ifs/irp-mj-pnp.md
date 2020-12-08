@@ -1,7 +1,6 @@
 ---
 title: 'IRP_MJ_PNP (IFS) '
 description: IRP\_MJ\_PNP
-ms.assetid: aec2f309-02a1-460a-b674-33ad18286347
 keywords:
 - IRP_MJ_PNP 可安装的文件系统驱动程序
 topic_type:
@@ -12,12 +11,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c6415f5a4bd163b9458d252a3e54e18ff6e59ef3
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 78b6ca00388957efcfcb09c5f815fb8a8ac27a03
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91733584"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96826537"
 ---
 # <a name="irp_mj_pnp-ifs"></a>IRP \_ MJ \_ PNP (IFS) 
 
@@ -44,7 +43,7 @@ ms.locfileid: "91733584"
 <thead>
 <tr class="header">
 <th align="left">术语</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -81,7 +80,7 @@ ms.locfileid: "91733584"
 -   当用户要正常删除卷时，PnP 管理器会发送 IRP \_ MN \_ 查询 \_ 删除 \_ 设备请求。 接收到此 IRP 后，筛选器必须关闭卷上的所有打开的句柄，然后将 IRP 向下传递到堆栈上的下一个较低版本的驱动程序。 这一点非常重要。 如果驱动程序无法关闭所有打开的句柄，这会阻止卸载卷，进而阻止物理设备被弹出。
 
 > [!NOTE]
-> 收到 IRP \_ MN \_ 查询 \_ 删除 \_ 设备请求后，FAT 文件系统立即卸载可以安全删除的所有卷。 因此，附加到 FAT 卷的任何筛选器都应该在调用筛选器的完成例程之前释放其筛选器设备对象。 NTFS 文件系统不会执行此操作。 因此，附加到 NTFS 卷的筛选器会预计在调用筛选器的完成例程时，其设备对象仍将附加到该卷。
+> 收到 IRP \_ MN \_ 查询 \_ 删除 \_ 设备请求后，FAT 文件系统立即卸载可以安全删除的所有卷。 因此，附加到 FAT 卷的任何筛选器都应该在调用筛选器的完成例程之前释放其筛选器设备对象。 NTFS 文件系统不会执行此操作。 因此，附加到 NTFS 卷的筛选器会预计在调用筛选器的完成例程时，其设备对象仍将附加到该卷。
 
      
 
@@ -100,7 +99,7 @@ ms.locfileid: "91733584"
 ## <a name="parameters"></a>参数
 
 
-文件系统或筛选器驱动程序与给定的 IRP 一起调用[**IoGetCurrentIrpStackLocation**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetcurrentirpstacklocation) ，以获取指向其自己的*IrpSp*[**堆栈位置**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_stack_location)的指针，如以下列表所示。  (IRP 显示为 *irp*。 ) 驱动程序可以使用在处理即插即用请求中的以下 irp 成员和 irp 堆栈位置设置的信息：
+文件系统或筛选器驱动程序与给定的 IRP 一起调用 [**IoGetCurrentIrpStackLocation**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetcurrentirpstacklocation) ，以获取指向其自己的 *IrpSp*[**堆栈位置**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_stack_location)的指针，如以下列表所示。  (IRP 显示为 *irp*。 ) 驱动程序可以使用在处理即插即用请求中的以下 irp 成员和 irp 堆栈位置设置的信息：
 
 <a href="" id="deviceobject"></a>*DeviceObject*  
 指向目标设备对象的指针。
@@ -115,7 +114,7 @@ ms.locfileid: "91733584"
 指定 IRP \_ MJ \_ PNP。
 
 <a href="" id="irpsp--minorfunction"></a>*IrpSp- &gt; MinorFunction*  
-下列类型作之一：
+下列情况之一：
 
 -   IRP \_ MN \_ 取消 \_ 删除 \_ 设备
 -   IRP \_ MN \_ 查询 \_ 删除 \_ 设备
@@ -123,7 +122,7 @@ ms.locfileid: "91733584"
 -   IRP \_ MN \_ 启动 \_ 设备
 -   IRP \_ MN \_ 意外 \_ 删除
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**IO \_ 堆栈 \_ 位置**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_stack_location)
@@ -134,7 +133,7 @@ ms.locfileid: "91733584"
 
 [**IRP**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_irp)
 
-[**IRP \_ MJ \_ PNP (WDK 内核参考) **](../kernel/irp-mj-pnp.md)
+[**IRP \_ MJ \_ PNP (WDK 内核参考)**](../kernel/irp-mj-pnp.md)
 
 [**IRP \_ MN \_ 取消 \_ 删除 \_ 设备**](../kernel/irp-mn-cancel-remove-device.md)
 

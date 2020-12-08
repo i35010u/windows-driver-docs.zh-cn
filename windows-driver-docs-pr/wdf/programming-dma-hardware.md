@@ -1,7 +1,6 @@
 ---
 title: 对 DMA 硬件编程
 description: 本主题介绍了 KMDF 驱动程序的总线主控 DMA 设备的 EvtProgramDma 事件回调函数中通常提供的功能。
-ms.assetid: 5e74fe74-d38f-4cca-b0cf-8a6f170c4dc5
 keywords:
 - DMA 操作 WDK KMDF，传输
 - 总线主控 DMA WDK KMDF，传输
@@ -10,12 +9,12 @@ keywords:
 - 启动 DMA 传输 WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4362128247bc3156582bc59e8455341a5ee4289a
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 20065dc1e897c3e2be468258f53950938816ff11
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91732591"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96828309"
 ---
 # <a name="programming-dma-hardware"></a>对 DMA 硬件编程
 
@@ -29,7 +28,7 @@ ms.locfileid: "91732591"
 
 在 IRQL = 调度级别调用的 [*EvtProgramDma*](/windows-hardware/drivers/ddi/wdfdmatransaction/nc-wdfdmatransaction-evt_wdf_program_dma) 回调函数会使 \_ 设备启动 [DMA 传输](dma-transactions-and-dma-transfers.md)。 此回调函数的输入参数提供了传输方向 (输入或输出) 和散点/集合列表。 如果传输包含单个数据包，则散点/集合列表包含单个元素。
 
-[*EvtProgramDma*](/windows-hardware/drivers/ddi/wdfdmatransaction/nc-wdfdmatransaction-evt_wdf_program_dma)回调函数使用驱动程序的[*EvtDevicePrepareHardware*](/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware)回调函数接收的硬件资源来对设备进行计划。 如果 *EvtProgramDma* 回调函数成功对硬件进行了计划，它将返回 **TRUE**。
+[*EvtProgramDma*](/windows-hardware/drivers/ddi/wdfdmatransaction/nc-wdfdmatransaction-evt_wdf_program_dma)回调函数使用驱动程序的 [*EvtDevicePrepareHardware*](/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware)回调函数接收的硬件资源来对设备进行计划。 如果 *EvtProgramDma* 回调函数成功对硬件进行了计划，它将返回 **TRUE**。
 
 在硬件完成 DMA 传输后，通常情况下，硬件会发出中断，系统会调用驱动程序的 [*EvtInterruptIsr*](/windows-hardware/drivers/ddi/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_isr) 回调函数。 驱动程序的 *EvtInterruptIsr* 回调函数通常是：
 
@@ -39,7 +38,7 @@ ms.locfileid: "91732591"
 
 -   调用 [**WdfInterruptQueueDpcForIsr**](/windows-hardware/drivers/ddi/wdfinterrupt/nf-wdfinterrupt-wdfinterruptqueuedpcforisr) 来计划 [*EvtInterruptDpc*](/windows-hardware/drivers/ddi/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_dpc) 回调函数。
 
-[*EvtInterruptDpc*](/windows-hardware/drivers/ddi/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_dpc)回调函数通过使用[*EvtInterruptIsr*](/windows-hardware/drivers/ddi/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_isr)回调函数保存的上下文信息[完成 DMA 传输](completing-a-dma-transfer.md)。
+[*EvtInterruptDpc*](/windows-hardware/drivers/ddi/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_dpc)回调函数通过使用 [*EvtInterruptIsr*](/windows-hardware/drivers/ddi/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_isr)回调函数保存的上下文信息 [完成 DMA 传输](completing-a-dma-transfer.md)。
 
 如果 [*EvtProgramDma*](/windows-hardware/drivers/ddi/wdfdmatransaction/nc-wdfdmatransaction-evt_wdf_program_dma) 回调函数检测到错误，则驱动程序可以停止事务。
 
@@ -53,7 +52,7 @@ ms.locfileid: "91732591"
 
 4.  返回 **FALSE**。
 
-下面的代码示例演示了步骤1和步骤4，这些代码示例摘自*读取 .c*文件中读取请求的[PLX9x5x](/samples/browse/)示例的[*EvtProgramDma*](/windows-hardware/drivers/ddi/wdfdmatransaction/nc-wdfdmatransaction-evt_wdf_program_dma)回调函数。
+下面的代码示例演示了步骤1和步骤4，这些代码示例摘自 *读取 .c* 文件中读取请求的 [PLX9x5x](/samples/browse/)示例的 [*EvtProgramDma*](/windows-hardware/drivers/ddi/wdfdmatransaction/nc-wdfdmatransaction-evt_wdf_program_dma)回调函数。
 
 ```cpp
     // If errors occur in the EvtProgramDma callback,

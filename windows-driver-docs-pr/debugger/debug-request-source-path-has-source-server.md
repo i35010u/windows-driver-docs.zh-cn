@@ -1,7 +1,6 @@
 ---
-title: 调试\_请求\_源\_路径\_HAS\_源\_服务器
-description: 调试\_请求\_源\_路径\_HAS\_源\_服务器
-ms.assetid: 624e425f-c989-4278-9985-cd7b0b877d5c
+title: 调试 \_ 请求 \_ 源 \_ 路径 \_ 包含 \_ 源 \_ 服务器
+description: 调试 \_ 请求 \_ 源 \_ 路径 \_ 包含 \_ 源 \_ 服务器
 keywords:
 - DEBUG_REQUEST_SOURCE_PATH_HAS_SOURCE_SERVER Windows 调试
 topic_type:
@@ -12,38 +11,38 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fc2da8b54ae135b4a721acaa9c5f0e521c2212bd
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 740b00b55df752c40a5a389b9a1a5cdf65ff1f59
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63349047"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96828235"
 ---
-# <a name="debugrequestsourcepathhassourceserver"></a>调试\_请求\_源\_路径\_HAS\_源\_服务器
+# <a name="debug_request_source_path_has_source_server"></a>调试 \_ 请求 \_ 源 \_ 路径 \_ 包含 \_ 源 \_ 服务器
 
 
-调试\_请求\_源\_路径\_HAS\_源\_SERVER [**请求**](request.md)操作检查源服务器的源路径。
+调试 \_ 请求 \_ 源 \_ 路径 \_ 包含 \_ 源 \_ 服务器 [**请求**](request.md) 操作，用于检查源服务器的源路径。
 
 **Parameters**
 
 <span id="InBuffer"></span><span id="inbuffer"></span><span id="INBUFFER"></span>*InBuffer*  
-不使用。
+未使用。
 
 <span id="OutBuffer"></span><span id="outbuffer"></span><span id="OUTBUFFER"></span>*OutBuffer*  
-不使用。
+未使用。
 
-### <a name="span-idreturnvaluespanspan-idreturnvaluespanspan-idreturnvaluespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>返回值
+### <a name="span-idreturn_valuespanspan-idreturn_valuespanspan-idreturn_valuespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>返回值
 
-<span id="S_OK"></span><span id="s_ok"></span>S\_确定  
-源路径中包含的源服务器
+<span id="S_OK"></span><span id="s_ok"></span>S \_ 正常  
+源路径包含源服务器
 
-<span id="S_FALSE"></span><span id="s_false"></span>S\_FALSE  
+<span id="S_FALSE"></span><span id="s_false"></span>S \_ FALSE  
 源路径不包括源服务器。
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[**请求**](request.md)
+[**Request**](request.md)
 
  
 

@@ -1,7 +1,6 @@
 ---
 title: DEVPKEY_DeviceInterface_FriendlyName
 description: DEVPKEY_DeviceInterface_FriendlyName
-ms.assetid: 398618a2-621b-477f-b90b-127e8df24b3d
 keywords:
 - DEVPKEY_DeviceInterface_FriendlyName 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: b5a79fe1081a3b906338f248d86eb6c535289698
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: c4a5a3f39593d98271cb68d76bb84d8624b1be26
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90716364"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96826829"
 ---
 # <a name="devpkey_deviceinterface_friendlyname"></a>DEVPKEY_DeviceInterface_FriendlyName
 
@@ -66,7 +65,7 @@ DEVPKEY_DeviceInterface_FriendlyName 设备属性表示设备接口的友好名�
 <a name="remarks"></a>备注
 -------
 
-设备接口类的**FriendlyName**注册表值由 inf DDInstall 中包含的[**inf AddInterface 指令**](./inf-addinterface-directive.md)设置[**。 *DDInstall***](./inf-ddinstall-interfaces-section.md)INF 文件中安装设备接口的接口部分。
+设备接口类的 **FriendlyName** 注册表值由 inf DDInstall 中包含的 [**inf AddInterface 指令**](./inf-addinterface-directive.md)设置 [**。 *DDInstall***](./inf-ddinstall-interfaces-section.md)INF 文件中安装设备接口的接口部分。
 
 Windows 将接口的 [**DEVPKEY_NAME**](devpkey-name--device-interface-.md) 设备属性的值设置为 DEVPKEY_DeviceInterface_FriendlyName 的值。 若要在用户界面项中标识设备接口，请使用设备接口的 DEVPKEY_NAME 的值，而不是 DEVPKEY_DeviceInterface_FriendlyName 的值。
 

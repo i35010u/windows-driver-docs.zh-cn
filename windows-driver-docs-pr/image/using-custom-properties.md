@@ -1,15 +1,14 @@
 ---
 title: 使用自定义属性
 description: 使用自定义属性
-ms.assetid: cf4e728f-7900-4849-ab1c-135f9fec9713
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8a10eaf0b6cf35d73e8b3096970ebcbbc3500eb2
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 7917fbc81cd8a382b28e9efb735f6c191dd3eb94
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89189141"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96827083"
 ---
 # <a name="using-custom-properties"></a>使用自定义属性
 

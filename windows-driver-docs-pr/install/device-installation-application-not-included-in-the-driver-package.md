@@ -1,15 +1,14 @@
 ---
 title: 驱动程序包中未包含的设备安装应用程序
 description: 不包含在驱动程序包中的设备安装应用程序
-ms.assetid: 3c8fd504-50c9-4a61-9cca-cd8cee4e2bd7
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a4e38c5b480e7dde0be0d66ae398009abeeb20b8
-ms.sourcegitcommit: a44ade167cdfb541cf1818e9f9e3726f23f90b66
+ms.openlocfilehash: cc9b459f15b07f34218a00a5f6ea0852ad4bbb22
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94361497"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96827723"
 ---
 # <a name="device-installation-application-not-included-in-the-driver-package"></a>不包含在驱动程序包中的设备安装应用程序
 

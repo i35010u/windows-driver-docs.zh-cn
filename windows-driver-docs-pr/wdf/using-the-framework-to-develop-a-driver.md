@@ -1,33 +1,32 @@
 ---
 title: 使用 WDF 开发驱动程序
-description: 本主题提供了用于开发 (KMDF) 驱动程序的内核模式驱动程序框架的框架对象的高级概述。
-ms.assetid: 421b7eb8-11d3-4a37-8ae8-e2d3d216c9c7
+description: 本主题提供了用于开发 Kernel-Mode Driver Framework (KMDF) 驱动程序的框架对象的高级概述。
 keywords:
 - 内核模式驱动程序 WDK KMDF，开发步骤
 - KMDF WDK，开发步骤
-- 内核模式驱动程序框架 WDK，开发步骤
+- Kernel-Mode Driver Framework WDK，开发步骤
 - 基于框架的驱动程序 WDK KMDF，开发步骤
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ea42a056a26964a80e8166e4ff118596cec18fc3
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 11ae10b11905dda3dcdd99b27211d3e36b6fc986
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91732568"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96827387"
 ---
 # <a name="using-wdf-to-develop-a-driver"></a>使用 WDF 开发驱动程序
 
 
-本主题提供了用于开发 (KMDF) 驱动程序的内核模式驱动程序框架的框架对象的高级概述。 除了指出的情况外，你将使用相同的对象在 UMDF 版本2中从开始开发用户模式驱动程序框架 (UMDF) 驱动程序。
+本主题提供了用于开发 Kernel-Mode Driver Framework (KMDF) 驱动程序的框架对象的高级概述。 除非指明，否则在 UMDF 版本2中启动时，将使用相同的对象来开发 User-Mode Driver Framework (UMDF) 驱动程序。
 
-Windows 驱动程序框架 (WDF) 驱动程序由基于框架的驱动程序所使用的[Windows 驱动程序框架对象](./introduction-to-framework-objects.md)定义的[**DriverEntry 例程**](./driverentry-for-kmdf-drivers.md)和一组事件回调函数组成。 回调函数调用框架导出的对象方法。 Windows 驱动程序工具包 (WDK) 包含示例 WDF 驱动程序，用于演示如何实现驱动程序的事件回调函数。 你可以从 [Windows 开发人员中心-硬件](/samples/browse/)下载这些示例。 有关可用示例的详细信息，请参阅 [KMDF 驱动程序](sample-kmdf-drivers.md) 和 [示例 UMDF 驱动程序](sample-umdf-drivers.md)示例。
+Windows 驱动程序框架 (WDF) 驱动程序由基于框架的驱动程序所使用的 [Windows 驱动程序框架对象](./introduction-to-framework-objects.md)定义的 [**DriverEntry 例程**](./driverentry-for-kmdf-drivers.md)和一组事件回调函数组成。 回调函数调用框架导出的对象方法。 Windows 驱动程序工具包 (WDK) 包含示例 WDF 驱动程序，用于演示如何实现驱动程序的事件回调函数。 你可以从 [Windows 开发人员中心-硬件](/samples/browse/)下载这些示例。 有关可用示例的详细信息，请参阅 [KMDF 驱动程序](sample-kmdf-drivers.md) 和 [示例 UMDF 驱动程序](sample-umdf-drivers.md)示例。
 
 创建 WDF 驱动程序时，通常会执行以下操作：
 
 -   使用 *框架驱动程序对象* 来表示您的驱动程序。
 
-    驱动程序的 [**DriverEntry 例程**](./driverentry-for-kmdf-drivers.md) 必须调用 [**WdfDriverCreate**](/windows-hardware/drivers/ddi/wdfdriver/nf-wdfdriver-wdfdrivercreate) 以创建表示该驱动程序的框架驱动程序对象。 **WdfDriverCreate**方法还会注册驱动程序的[*EvtDriverDeviceAdd*](/windows-hardware/drivers/ddi/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)回调函数即插即用，该函数 (PnP) 管理器报告驱动程序支持的设备是否存在。
+    驱动程序的 [**DriverEntry 例程**](./driverentry-for-kmdf-drivers.md) 必须调用 [**WdfDriverCreate**](/windows-hardware/drivers/ddi/wdfdriver/nf-wdfdriver-wdfdrivercreate) 以创建表示该驱动程序的框架驱动程序对象。 **WdfDriverCreate** 方法还会注册驱动程序的 [*EvtDriverDeviceAdd*](/windows-hardware/drivers/ddi/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)回调函数即插即用，该函数 (PnP) 管理器报告驱动程序支持的设备是否存在。
 
 -   使用 *框架设备对象* 支持驱动程序中的 PnP 和电源管理。
 

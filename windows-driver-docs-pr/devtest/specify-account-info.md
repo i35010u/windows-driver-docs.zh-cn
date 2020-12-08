@@ -1,17 +1,16 @@
 ---
 title: 在移动宽带元数据创作向导中指定帐户信息
 description: 在移动宽带元数据创作向导中指定帐户信息
-ms.assetid: FFE19760-360F-482C-BBD8-7068D2DD34E5
 keywords:
 - 在移动宽带元数据创作向导中指定帐户信息
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e2bdc513e94b5f0a4c4daba005ffa2c6b7bd1055
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 920438ab485f7dfd0817e8dd3076ebe1afcde061
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91732650"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96826675"
 ---
 # <a name="specify-account-information-in-the-mobile-broadband-metadata-authoring-wizard"></a>在移动宽带元数据创作向导中指定帐户信息
 

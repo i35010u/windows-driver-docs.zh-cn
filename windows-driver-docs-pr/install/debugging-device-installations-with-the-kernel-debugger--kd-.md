@@ -1,15 +1,14 @@
 ---
 title: 使用内核调试程序 (KD) 调试设备安装
 description: 使用内核调试程序 (KD) 调试设备安装
-ms.assetid: 0967d375-2602-44d2-b4ac-8d1e112afc3f
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9d45ef0a76df81e698628b9b19db1ff40c671f51
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 4098bb387f27435cfbcba28329fc038bdc113c16
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90715598"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96827777"
 ---
 # <a name="debugging-device-installations-with-the-kernel-debugger-kd"></a>使用内核调试程序 (KD) 调试设备安装
 
@@ -26,7 +25,7 @@ ms.locfileid: "90715598"
 
 有关 KD 和其他调试工具的详细信息，请参阅 [Windows 调试](../debugger/index.md)。
 
-**DebugInstall**注册表值指定在系统上启用的设备安装调试支持的类型。 有关此注册表值的详细信息，请参阅 [启用对调试设备安装的支持](enabling-support-for-debugging-device-installations.md)。
+**DebugInstall** 注册表值指定在系统上启用的设备安装调试支持的类型。 有关此注册表值的详细信息，请参阅 [启用对调试设备安装的支持](enabling-support-for-debugging-device-installations.md)。
 
 将 **DebugInstall** 注册表值设置为1时， *DrvInst.exe* 将首先检查内核调试器是否已启用，当前是否已附加到调试器中。 在进行此中断后，可以在当前进程的用户模式模块中设置断点。 例如：
 
@@ -51,7 +50,7 @@ r $t1 = 0
 .if (not @$t1 = 0) {bp[0x20] /p @$proc mycoinst!CoInstallerProc } .else {bc[0x20]}
 ```
 
-执行时，调试器命令程序将检查加载到 *Mycoinst.dll*的当前进程中的模块列表。 加载此共同安装程序 DLL 后，调试器将使用 CoInstallerProc 入口点函数上的已知断点 ID) 设置断点 (。
+执行时，调试器命令程序将检查加载到 *Mycoinst.dll* 的当前进程中的模块列表。 加载此共同安装程序 DLL 后，调试器将使用 CoInstallerProc 入口点函数上的已知断点 ID) 设置断点 (。
 
 从 *DrvInst.exe* 主机进程启动的调试断点开始，你应该首先在调用的返回地址上设置一个断点，其中 *DrvInst.exe* 分解为内核调试器。 此断点将清除在设备安装过程中设置的所有断点，并继续执行：
 
@@ -76,7 +75,7 @@ kd> bp[0x10] /p @$proc kernel32!LoadLibraryExW "gu;$$><Z:\\bpcoinst.txt;g"
 
 \[ \] 开发人员可以将其限制为仅在将类安装程序和共同安装程序 dll 加载到进程中的每个 LoadLibraryEx 调用上执行程序，而不是在)  (过程中执行此程序。 由于 [**SetupDiCallClassInstaller**](/windows/win32/api/setupapi/nf-setupapi-setupdicallclassinstaller) 是调用为某个设备注册的类安装程序和共同安装程序的例程，因此这些 dll 将在该调用期间加载到进程中。
 
-因为在从*DrvInst.exe*主机进程中卸载这些 dll 时，不应进行任何假设，所以必须确保在从*DrvInst.exe*主机进程对**SetupDiCallClassInstaller**进行的任何调用期间，断点都可以处理定位 DLL 入口点。
+因为在从 *DrvInst.exe* 主机进程中卸载这些 dll 时，不应进行任何假设，所以必须确保在从 *DrvInst.exe* 主机进程对 **SetupDiCallClassInstaller** 进行的任何调用期间，断点都可以处理定位 DLL 入口点。
 
 ```cpp
 kd> bd[0x10]
@@ -84,7 +83,7 @@ kd> bp[0x11] /p @$proc setupapi!SetupDiCallClassInstaller "be[0x10];bp[0x12] /p 
 kd> g
 ```
 
-最初禁用 (bp 0x10) 执行调试器命令程序的断点 \[ \] 。 无论何时调用 [**SetupDiCallClassInstaller**](/windows/win32/api/setupapi/nf-setupapi-setupdicallclassinstaller) 都 (bp 0x11) ，都将启用此功能 \[ \] ，并且继续执行。 当 SetupDiCallClassInstaller 返回时，将再次禁用调试程序命令 (程序 \[ \]) ，方法是在该例程本身 (bp 0x12) 的返回地址上设置断点**SetupDiCallClassInstaller** \[ \] 。
+最初禁用 (bp 0x10) 执行调试器命令程序的断点 \[ \] 。 无论何时调用 [**SetupDiCallClassInstaller**](/windows/win32/api/setupapi/nf-setupapi-setupdicallclassinstaller) 都 (bp 0x11) ，都将启用此功能 \[ \] ，并且继续执行。 当 SetupDiCallClassInstaller 返回时，将再次禁用调试程序命令 (程序 \[ \]) ，方法是在该例程本身 (bp 0x12) 的返回地址上设置断点 **SetupDiCallClassInstaller** \[ \] 。
 
 请注意，禁用调试器命令程序的断点还会自行清除，并继续执行，直到再次调用 [**SetupDiCallClassInstaller**](/windows/win32/api/setupapi/nf-setupapi-setupdicallclassinstaller) 或直到安装程序完成，并 (bp 0x13) 中清除所有断点 \[ \] 。
 

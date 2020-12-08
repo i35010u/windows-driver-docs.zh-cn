@@ -1,18 +1,17 @@
 ---
 title: SCSI 微型端口驱动程序的 HwScsiInitialize 例程
 description: SCSI 微型端口驱动程序的 HwScsiInitialize 例程
-ms.assetid: 2a776c0a-1bac-4f8c-beab-fd53300f68c8
 keywords:
 - SCSI 微型端口驱动程序 WDK 存储，HwScsiInitialize
 - HwScsiInitialize
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0e0aa17f5493e2dad8d9e91c20793b2e42b92e72
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: ee4668fecde4eee34a307bdedcd063aaa443a2db
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89187803"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96828411"
 ---
 # <a name="scsi-miniport-drivers-hwscsiinitialize-routine"></a>SCSI 微型端口驱动程序的 HwScsiInitialize 例程
 
@@ -24,7 +23,7 @@ ms.locfileid: "89187803"
 
 如果 *HwScsiInitialize* 例程在 HBA 上启用中断，则将调用微型端口驱动程序的 [**HwScsiInterrupt**](/previous-versions/windows/hardware/drivers/ff557312(v=vs.85)) 例程来处理设备在初始化期间生成的任何中断。
 
-如果初始化 HBA 导致总线重置， *HwScsiInitialize*例程必须调用具有*NotificationType*值**ResetDetected**的[**ScsiPortNotification**](/windows-hardware/drivers/ddi/srb/nf-srb-scsiportnotification) 。
+如果初始化 HBA 导致总线重置， *HwScsiInitialize* 例程必须调用具有 *NotificationType* 值 **ResetDetected** 的 [**ScsiPortNotification**](/windows-hardware/drivers/ddi/srb/nf-srb-scsiportnotification) 。
 
  
 

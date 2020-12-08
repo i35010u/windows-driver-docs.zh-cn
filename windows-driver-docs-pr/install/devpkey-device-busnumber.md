@@ -1,7 +1,6 @@
 ---
 title: DEVPKEY_Device_BusNumber
 description: DEVPKEY_Device_BusNumber
-ms.assetid: 17cbe49a-e10b-4483-b030-c061ced065c3
 keywords:
 - DEVPKEY_Device_BusNumber 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 93cc2e4d9e4ceedb782fc1c80b0c91fe3467aed4
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: cb8c1f726e77ad5fa9e7df3bd6b8ae331e0ce8b3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90714704"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96827678"
 ---
 # <a name="devpkey_device_busnumber"></a>DEVPKEY_Device_BusNumber
 
@@ -66,7 +65,7 @@ DEVPKEY_Device_BusNumber 设备属性表示标识设备实例附加到的总线�
 <a name="remarks"></a>备注
 -------
 
-Windows 将 DEVPKEY_Device_BusNumber 的值设置为总线驱动程序为响应[**IRP_MN_QUERY_BUS_INFORMATION**](../kernel/irp-mn-query-bus-information.md)请求而返回的[**PNP_BUS_INFORMATION**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_pnp_bus_information)结构的 BusNumber 成员的值。
+Windows 将 DEVPKEY_Device_BusNumber 的值设置为总线驱动程序为响应 [**IRP_MN_QUERY_BUS_INFORMATION**](../kernel/irp-mn-query-bus-information.md)请求而返回的 [**PNP_BUS_INFORMATION**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_pnp_bus_information)结构的 BusNumber 成员的值。
 
 可以调用 [**SetupDiGetDeviceProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdigetdevicepropertyw) 来检索 DEVPKEY_Device_BusNumber 的值。
 

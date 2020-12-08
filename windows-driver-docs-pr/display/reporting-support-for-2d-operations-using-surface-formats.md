@@ -1,7 +1,6 @@
 ---
 title: 报告使用图面格式执行 2D 操作的支持
 description: 报告使用图面格式执行 2D 操作的支持
-ms.assetid: c7737daf-3342-48dc-a365-f789b7203013
 keywords:
 - 二维操作 WDK DirectX 9.0，表面格式
 - 2D 操作 WDK DirectX 9.0，表面格式
@@ -9,12 +8,12 @@ keywords:
 - surface 格式化 WDK DirectX 9.0，报告支持2D 操作
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c439bf6b41c61469faa4e2a8db03faafe17fccd8
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: cafa43885e92f7322541f2a570f2b6ed0ce7ece3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89067266"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96828045"
 ---
 # <a name="reporting-support-for-2d-operations-using-surface-formats"></a>报告使用图面格式执行 2D 操作的支持
 
@@ -22,7 +21,7 @@ ms.locfileid: "89067266"
 ## <span id="ddk_reporting_support_for_2d_operations_using_surface_formats_gg"></span><span id="DDK_REPORTING_SUPPORT_FOR_2D_OPERATIONS_USING_SURFACE_FORMATS_GG"></span>
 
 
-驱动程序在[**DDPIXELFORMAT**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-_ddpixelformat)结构的**dwOperations**成员中指定了图面的格式标志，以指示它可以使用该格式执行2d 操作。
+驱动程序在 [**DDPIXELFORMAT**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-_ddpixelformat)结构的 **dwOperations** 成员中指定了图面的格式标志，以指示它可以使用该格式执行2d 操作。
 
 例如，驱动程序可以通过设置 D3DFORMAT \_ OP OFFSCREENPLAIN 标志来指示它可以复制到图面上或从颜色填充到图面 \_ 。
 

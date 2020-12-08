@@ -1,9 +1,8 @@
 ---
-title: WIA\_IPS\_颜色\_DROP\_蓝色
-description: WIA\_IPS\_颜色\_DROP\_蓝色属性用于配置的蓝色颜色通道 (B 中 RGB) 颜色下拉扩展量从 0 (无 dropout) 到 100 (完整通道 dropout) 范围内的一个百分比。
-ms.assetid: AA3E633C-766A-4935-B942-6938D543F801
+title: WIA \_ IP \_ 颜色 \_ 下沉 \_
+description: WIA \_ ip \_ 颜色 \_ 删除 \_ 蓝色属性用于配置 RGB) 中的蓝色通道 (B 的颜色下沉量，作为范围为 0 (不) 到 100 (完全通道断开) 的百分比。
 keywords:
-- WIA_IPS_COLOR_DROP_BLUE 成像设备
+- WIA_IPS_COLOR_DROP_BLUE 图像设备
 topic_type:
 - apiref
 api_name:
@@ -14,30 +13,30 @@ api_type:
 - HeaderDef
 ms.date: 05/22/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: fc39aeaf77c365f957cb1494a2c33b33dfc20d6b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2a4208883a4055f52ba794a3808758f0b851e73b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63370805"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96826835"
 ---
-# <a name="wiaipscolordropblue"></a>WIA\_IPS\_颜色\_DROP\_蓝色
+# <a name="wia_ips_color_drop_blue"></a>WIA \_ IP \_ 颜色 \_ 下沉 \_
 
 
-**WIA\_IPS\_颜色\_DROP\_蓝色**属性用于以百分比表示从 0%（否区域中配置的蓝色颜色通道 (B 中 RGB) 颜色下拉扩展量退出） 到 100%(完全通道 dropout)。 WIA 微型驱动程序创建并维护此属性。
+**WIA \_ ip \_ 颜色 \_ 删除 \_ 蓝色** 属性用于配置 RGB) 中的蓝色通道 (B 的颜色下沉量，作为范围为 0% (不) 到 100% (完全通道重) 的百分比。 WIA 微型驱动程序创建并维护此属性。
 
 
 
-属性类型：VT\_I4 | VT\_VECTOR 
+属性类型： VT \_ I4 |VT \_ 矢量 
 
-有效值：WIA\_PROP\_NONE
+有效值： WIA " \_ \_ 无"
 
 访问权限：读/写
 
 <a name="remarks"></a>备注
 -------
 
-当[ **WIA\_IPS\_颜色\_DROP** ](wia-ips-color-drop.md)支持属性，此属性是有效的所有可编程图像数据源项，包括平板 (WIA\_类别\_平板) 和送纸器 (WIA\_类别\_送纸器)，并且需要。 此属性的有效值为 0 到 100 (含) 之间。
+支持 [**WIA \_ ip \_ 颜色 \_ DROP**](wia-ips-color-drop.md) 属性时，此属性对所有可编程的图像数据源项有效，包括平板 (Wia \_ 类别 \_ 平板) 和送纸器 (wia \_ 类别 \_ 送纸器) ，并且是必需的。 此属性的有效值介于0和100（含）之间。
 
 <a name="requirements"></a>要求
 ------------
@@ -49,8 +48,8 @@ ms.locfileid: "63370805"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Wiadef.h （包括 Wiadef.h）</td>
+<td><p>标头</p></td>
+<td>Wiadef (包含 Wiadef) </td>
 </tr>
 </tbody>
 </table>

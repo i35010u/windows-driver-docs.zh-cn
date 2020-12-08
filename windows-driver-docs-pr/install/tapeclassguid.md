@@ -1,7 +1,6 @@
 ---
 title: TapeClassGuid
 description: TapeClassGuid
-ms.assetid: 308dc968-6c6d-4beb-a8bf-2233e859389d
 keywords:
 - TapeClassGuid 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 9e82618dde1f11dfc22b423886efa8541e163c30
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 060a315d5241bd43960cb595b32bff5df4e9eb24
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89097231"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96826799"
 ---
 # <a name="tapeclassguid"></a>TapeClassGuid
 
@@ -46,7 +45,7 @@ TapeClassGuid 是磁带[存储设备](../storage/index.md)的[设备接口类](.
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**GUID_DEVINTERFACE_TAPE**](guid-devinterface-tape.md)

@@ -1,20 +1,19 @@
 ---
-title: ks.dhdr
-description: ks.dhdr
-ms.assetid: 891eff1f-8d1b-48fb-bfe4-8ff461c186cf
+title: ks. dhdr
+description: ks. dhdr
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cc3e0cebca721c987c4d83144dead2a89c0fc798
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1609e6fdbbd870d04f8503e7225704372f493972
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63336655"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96826745"
 ---
 # <a name="ksdhdr"></a>!ks.dhdr
 
 
-**！ Ks.dhdr**扩展命令是已过时; 请使用[ **！ ks.dump** ](-ks-dump.md)相反。
+**Dhdr** 扩展命令已过时;改为使用 [**！ ks。**](-ks-dump.md)
 
  
 

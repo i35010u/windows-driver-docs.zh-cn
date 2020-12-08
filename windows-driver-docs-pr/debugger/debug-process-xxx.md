@@ -1,7 +1,6 @@
 ---
 title: 调试 \_ 过程 \_ XXX
 description: 处理选项是控制调试器引擎如何处理 modeprocesses 的位集。 其中一些处理选项是全局的;其他特定于进程。
-ms.assetid: 5b485ae2-6d97-4cfc-b2bf-ad8ddca268a8
 ms.date: 12/07/2017
 topic_type:
 - apiref
@@ -13,12 +12,12 @@ api_location:
 api_type:
 - HeaderDef
 ms.localizationpriority: medium
-ms.openlocfilehash: 0026731c559f1814e12f28021c5c8909d86d173b
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 18bd4c053e30b17f5b1e061ea616a1ad6eb4c1ea
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89217080"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96828245"
 ---
 # <a name="debug_process_xxx"></a>调试 \_ 过程 \_ XXX
 
@@ -35,7 +34,7 @@ ms.locfileid: "89217080"
 <thead>
 <tr class="header">
 <th align="left">位标志</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>

@@ -1,22 +1,21 @@
 ---
 title: 为非 PnP 驱动程序包创建目录文件
 description: 为非 PnP 驱动程序包创建目录文件
-ms.assetid: b40a6f42-53a8-468f-abf1-335c5ead3cbd
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7e25c0d5d789076d046873cfc6d693a32daecbcf
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 6b8507b4c51fdc681f86f285448025238149258c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91733179"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96827837"
 ---
 # <a name="creating-a-catalog-file-for-a-non-pnp-driver-package"></a>为非 PnP 驱动程序包创建目录文件
 
 
 可以使用[MakeCat](/windows/win32/seccrypto/makecat)工具为非 PnP[驱动程序包](driver-packages.md)创建[编录文件](catalog-files.md)。
 
-**注意**   只有使用 MakeCat 工具才能为未使用 INF 文件安装的驱动程序包创建编录文件。 如果使用 INF 文件安装了驱动程序包，请使用 [**Inf2Cat**](../devtest/inf2cat.md) 工具创建编录文件。 Inf2Cat 自动包括在包的 INF 文件中引用的驱动程序包中的所有文件。 有关如何使用 Inf2Cat 工具的详细信息，请参阅 [使用 Inf2Cat 创建编录文件](using-inf2cat-to-create-a-catalog-file.md)。
+**注意**  只有使用 MakeCat 工具才能为未使用 INF 文件安装的驱动程序包创建编录文件。 如果使用 INF 文件安装了驱动程序包，请使用 [**Inf2Cat**](../devtest/inf2cat.md) 工具创建编录文件。 Inf2Cat 自动包括在包的 INF 文件中引用的驱动程序包中的所有文件。 有关如何使用 Inf2Cat 工具的详细信息，请参阅 [使用 Inf2Cat 创建编录文件](using-inf2cat-to-create-a-catalog-file.md)。
 
  
 
@@ -52,7 +51,7 @@ MakeCat -v CatalogDefinitionFileName..cdf
 
 其中：
 
--   **-V**选项将 MakeCat 配置为打印执行和警告消息。
+-   **-V** 选项将 MakeCat 配置为打印执行和警告消息。
 
 -   *CatalogDefinitionFileNamecdf* 是目录定义文件的名称。
 
@@ -102,17 +101,17 @@ OSAttr 特性指定其签名要求与 [驱动程序包](driver-packages.md)兼�
 -   值 *2* 指定目录文件与基于 NT Windows 操作系统的版本兼容。
 
 -   值 *6.0* 指定目录文件与 Windows Vista 兼容。
-    **注意**   如果[驱动程序包](driver-packages.md)与多个 windows 版本兼容，则必须使用单独的 CATATTR 选项来指定每个 windows 版本的 OSAttr 属性。
+    **注意**  如果 [驱动程序包](driver-packages.md) 与多个 windows 版本兼容，则必须使用单独的 CATATTR 选项来指定每个 windows 版本的 OSAttr 属性。
 
      
 
 <a href="" id="-hash-file1-file1"></a>&lt;哈希 &gt; File1 = file1  
-指定通过目录文件引用的文件 File1 的引用标记。 值* &lt; 哈希 &gt; * 1 将标记为文件的加密哈希或*指纹*。
+指定通过目录文件引用的文件 File1 的引用标记。 值 *&lt; 哈希 &gt;* 1 将标记为文件的加密哈希或 *指纹*。
 
 <a href="" id="-hash-file1-file2"></a>&lt;哈希 &gt; File1 = File2  
-指定通过目录文件引用的文件 File2 的引用标记。 值* &lt; 哈希 &gt; File2*会生成标记为文件的指纹。
+指定通过目录文件引用的文件 File2 的引用标记。 值 *&lt; 哈希 &gt; File2* 会生成标记为文件的指纹。
 
-下面的示例演示如何从相应的目录定义文件*Good.cat*生成[目录文件](catalog-files.md) *。cdf*。 Makecat 将 *Good.cat* 保存在 *File1* 和 *File2* 所在的同一文件夹中。
+下面的示例演示如何从相应的目录定义文件 *Good.cat* 生成 [目录文件](catalog-files.md) *。cdf*。 Makecat 将 *Good.cat* 保存在 *File1* 和 *File2* 所在的同一文件夹中。
 
 ```cpp
 MakeCat -v Good.cdf

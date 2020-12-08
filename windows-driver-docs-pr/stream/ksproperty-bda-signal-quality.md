@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ BDA \_ 信号 \_ 质量
 description: 客户端使用 KSPROPERTY \_ BDA \_ 信号 \_ 质量来确定从信号中成功提取的数据量（以百分比形式）。
-ms.assetid: 8967400d-3a10-475a-997a-d756837c3438
 keywords:
 - KSPROPERTY_BDA_SIGNAL_QUALITY 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e6ea11d5eafcab6c493a94d97382af4807a83276
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 06ab3f0a185c7c38f3aa9bc0849b863b45b9217a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89190565"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96828375"
 ---
 # <a name="ksproperty_bda_signal_quality"></a>KSPROPERTY \_ BDA \_ 信号 \_ 质量
 
@@ -61,7 +60,7 @@ ms.locfileid: "89190565"
 
  
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 KSP **NodeId** \_ 节点的节点1指定了控制节点的标识符，或设置为−1以指定 pin。
@@ -96,7 +95,7 @@ Demodulation 节点通常会报告信号质量，这表示可以从信号中提�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Bdamedia (包含 Bdamedia) </td>
 </tr>
 </tbody>

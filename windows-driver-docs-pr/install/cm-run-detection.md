@@ -1,7 +1,6 @@
 ---
 title: CM_Run_Detection
 description: CM_Run_Detection
-ms.assetid: c1e146a4-96ce-4e67-a585-0c51132ce7d5
 keywords:
 - CM_Run_Detection 设备和驱动程序安装
 topic_type:
@@ -12,14 +11,14 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 058d73891df214ae557f8a00b6b831c3122d2fdf
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b7d0f3d1eed998c947bc65adbeba247beba0a7f3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63377104"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96827923"
 ---
-# <a name="cmrundetection"></a>CM_Run_Detection
+# <a name="cm_run_detection"></a>CM_Run_Detection
 
 此函数保留供系统使用。
 

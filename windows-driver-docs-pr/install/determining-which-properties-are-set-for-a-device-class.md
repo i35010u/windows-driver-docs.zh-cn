@@ -1,15 +1,14 @@
 ---
 title: 确定为设备类设置哪些属性
 description: 确定为设备类设置哪些属性
-ms.assetid: a8016b04-ae52-47d9-b3ef-74e0896aa825
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c5e380f46cac9a2708562c4d756aa5031cef8b27
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 21a7d209537785cb793911f8c3827ec2efba96d4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91733185"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96827743"
 ---
 # <a name="determining-which-properties-are-set-for-a-device-class"></a>确定为设备类设置哪些属性
 
@@ -32,13 +31,13 @@ ms.locfileid: "91733185"
     -   将 *RequiredPropertyKeyCount* 设置为指向 DWORD 类型化变量的指针。
     -   如果设备类是设备安装程序类，请将 *Flags* 设置为 DICLASSPROP_INSTALLER;否则，如果设备类是设备接口类，请将 *Flags* 设置为 DICLASSPROP_INTERFACE。
 
-    在对[**SetupDiGetClassPropertyKeys**](/windows/win32/api/setupapi/nf-setupapi-setupdigetclasspropertykeys)的第一次调用时， **SetupDiGetClassPropertyKeys**将 \* *RequiredPropertyKeyCount*设置为设备安装程序类设置的属性数，将错误代码记录 ERROR_INSUFFICIENT_BUFFER，并返回**FALSE**。 对 [GetLastError](/windows/win32/api/errhandlingapi/nf-errhandlingapi-getlasterror) 的后续调用将返回最近记录的错误代码。
+    在对 [**SetupDiGetClassPropertyKeys**](/windows/win32/api/setupapi/nf-setupapi-setupdigetclasspropertykeys)的第一次调用时， **SetupDiGetClassPropertyKeys** 将 \* *RequiredPropertyKeyCount* 设置为设备安装程序类设置的属性数，将错误代码记录 ERROR_INSUFFICIENT_BUFFER，并返回 **FALSE**。 对 [GetLastError](/windows/win32/api/errhandlingapi/nf-errhandlingapi-getlasterror) 的后续调用将返回最近记录的错误代码。
 
 2.  再次调用 **SetupDiGetDevicePropertyKeys** ，并提供在第一次调用中提供的相同参数，但以下更改除外：
     -   将 *PropertyKeyArray* 设置为 [**DEVPROPKEY**](./devpropkey.md)类型的指针，该指针指向接收请求的属性键数组的缓冲区。
-    -   将 *PropertyKeyCount* 设置为 *PropertyKeyArray* 缓冲区的大小，采用 DEVPROPKEY 类型的值。 第一次调用**SetupDiGetClassPropertyKeys**时，返回 RequiredPropertyKeyCount 中*PropertyKeyArray*缓冲区的所需大小 \* *RequiredPropertyKeyCount*。
+    -   将 *PropertyKeyCount* 设置为 *PropertyKeyArray* 缓冲区的大小，采用 DEVPROPKEY 类型的值。 第一次调用 **SetupDiGetClassPropertyKeys** 时，返回 RequiredPropertyKeyCount 中 *PropertyKeyArray* 缓冲区的所需大小 \* *RequiredPropertyKeyCount*。
 
-如果对**SetupDiGetClassPropertyKeys**的第二次调用成功，则该函数将返回*PropertyKeyArray*缓冲区中请求的属性键数组，将 \* *RequiredPropertyKeyCount*设置为缓冲区中的属性键的数目，并返回**TRUE**。 如果函数调用失败， **SetupDiGetClassPropertyKeys** 将返回 **FALSE** ，并且对 [GetLastError](/windows/win32/api/errhandlingapi/nf-errhandlingapi-getlasterror) 的调用将返回记录的错误代码。
+如果对 **SetupDiGetClassPropertyKeys** 的第二次调用成功，则该函数将返回 *PropertyKeyArray* 缓冲区中请求的属性键数组，将 \* *RequiredPropertyKeyCount* 设置为缓冲区中的属性键的数目，并返回 **TRUE**。 如果函数调用失败， **SetupDiGetClassPropertyKeys** 将返回 **FALSE** ，并且对 [GetLastError](/windows/win32/api/errhandlingapi/nf-errhandlingapi-getlasterror) 的调用将返回记录的错误代码。
 
 ### <a name="determining-which-class-properties-are-set-for-a-device-class-on-a-remote-computer"></a><a href="" id="determining-which-class-properties-are-set-for-a-device-class-on-a-rem"></a> 确定为远程计算机上的设备类设置了哪些类属性
 
@@ -46,5 +45,5 @@ ms.locfileid: "91733185"
 
 -   调用 [**SetupDiGetClassPropertyKeysEx**](/windows/win32/api/setupapi/nf-setupapi-setupdigetclasspropertykeysexw) 而不是 [**SetupDiGetClassPropertyKeys**](/windows/win32/api/setupapi/nf-setupapi-setupdigetclasspropertykeys)。
 
--   除了提供[**SetupDiGetClassPropertyKeysEx**](/windows/win32/api/setupapi/nf-setupapi-setupdigetclasspropertykeysexw)和[**SetupDiGetClassPropertyKeys**](/windows/win32/api/setupapi/nf-setupapi-setupdigetclasspropertykeys)所需的参数值外，还需提供*MachineName*参数，该参数必须设置为指向以 NULL 结尾的字符串的指针，该字符串包含计算机的 UNC 名称，包括 \\ \\ 前缀。
+-   除了提供 [**SetupDiGetClassPropertyKeysEx**](/windows/win32/api/setupapi/nf-setupapi-setupdigetclasspropertykeysexw)和 [**SetupDiGetClassPropertyKeys**](/windows/win32/api/setupapi/nf-setupapi-setupdigetclasspropertykeys)所需的参数值外，还需提供 *MachineName* 参数，该参数必须设置为指向以 NULL 结尾的字符串的指针，该字符串包含计算机的 UNC 名称，包括 \\ \\ 前缀。
 

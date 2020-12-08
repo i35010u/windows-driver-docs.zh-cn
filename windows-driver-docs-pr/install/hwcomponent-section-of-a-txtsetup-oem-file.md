@@ -1,9 +1,8 @@
 ---
 title: TxtSetup.oem 文件的 HwComponent 节
-description: HwComponent 部分列出了可用于特定组件的驱动程序。 没有一个 HwComponent 节，用于每种类型的支持文件的组件。
-ms.assetid: 84ba057b-6699-4709-bee8-24cb555d4165
+description: HwComponent 部分列出了可用于特定组件的驱动程序。 文件支持的每种类型的组件都有一个 HwComponent 部分。
 keywords:
-- HwComponent 部分中的 TxtSetup.oem 文件的设备和驱动程序安装
+- Txtsetup.oem 文件设备和驱动程序安装的 HwComponent 部分
 topic_type:
 - apiref
 api_name:
@@ -12,17 +11,17 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 3f21243aee18b677491771bb518464148b2d7db4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: da6bef63fc3b0fadbd2900bfbf061cddc09d4d51
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63386918"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96826809"
 ---
 # <a name="hwcomponent-section-of-a-txtsetupoem-file"></a>TxtSetup.oem 文件的 HwComponent 节
 
 
-一个*HwComponent*部分列出了可用于特定组件的驱动程序。 没有*HwComponent*部分，了解每种类型的支持文件的组件。
+*HwComponent* 部分列出了可用于特定组件的驱动程序。 文件支持的每种类型的组件都有一个 *HwComponent* 部分。
 
 ``` syntax
 [HwComponent]
@@ -31,19 +30,19 @@ ID = description
 ```
 
 <a href="" id="hwcomponent"></a>*HwComponent*  
-节的名称必须是系统定义的以下值之一：**计算机**或**scsi**。
+节名称必须是以下系统定义的值之一： **计算机** 或 **scsi**。
 
-<a href="" id="id"></a>*ID*  
-指定在本部分中，标识选项中是唯一的字符串。
+<a href="" id="id"></a>*识别*  
+指定在此部分中唯一的字符串，用于标识选项。
 
-在本部分中的每个条目，必须具有相应**文件。**<em>HwComponent</em>**。**<em>ID</em>文件中的部分。
+对于本部分中的每个条目，都必须有一个对应的 **文件。**<em>HwComponent</em>**。** 文件中的 <em>ID</em>部分。
 
-有关**计算机**组件，该字符串的最后三个字符确定用于内核 Windows 复制的。 如果此字符串结尾"（_u）"中，Windows 将复制单处理器内核。 如果此字符串中"_mp"结尾，Windows 将复制的多处理器内核。 如果字符串不以"_Xp"结尾，Windows 将复制一个或其他内核，但不保证哪一个。
+对于 **计算机** 组件，字符串的最后三个字符确定哪些内核 Windows 副本。 如果此字符串以 "_up" 结尾，则 Windows 将复制单处理器内核。 如果此字符串以 "_mp" 结尾，则 Windows 将复制多处理器内核。 如果字符串不是以 "_Xp" 结尾，则 Windows 将复制一个或另一个内核，但不保证哪个内核。
 
-<a href="" id="description"></a>*description*  
-指定 Windows 驱动程序选项的菜单中向用户显示的字符串。
+<a href="" id="description"></a>*2008*  
+指定 Windows 在驱动程序选项菜单中向用户显示的字符串。
 
-下面的示例演示*HwComponent*部分，了解*TxtSetup.oem*支持一个组件的文件 (**scsi**) 并提供了两个选项：
+下面的示例演示了支持一个组件 (**scsi**) 的 *Txtsetup.oem* 文件的 *HwComponent* 部分，并提供两个选项：
 
 ``` syntax
 ; ...

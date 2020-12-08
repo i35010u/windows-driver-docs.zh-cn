@@ -1,15 +1,14 @@
 ---
 title: 更改 WIA 项树状结构
 description: 更改 WIA 项树状结构
-ms.assetid: fa6c9d25-4435-43ee-a262-9e267b9a0a69
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ea89988007d7f9d93b50b6f3eaef9f6cee130688
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: d9762e2b24d0c5be071086ebae65f2f8b41a88c5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89186499"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96828093"
 ---
 # <a name="changing-the-wia-item-tree-structure"></a>更改 WIA 项树状结构
 

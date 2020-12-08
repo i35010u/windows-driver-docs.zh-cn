@@ -1,16 +1,15 @@
 ---
 title: OID_PNP_ENABLE_WAKE_UP
 description: OID_PNP_ENABLE_WAKE_UP
-ms.assetid: 9afe774b-a429-413f-a7b6-3a3d79d2b95f
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_PNP_ENABLE_WAKE_UP 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 02f743acd89ff71fdb8a841da1cba8cf4863a972
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 6f40a406fe97238b72170253965a284489a1e5d9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89213345"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96827543"
 ---
 # <a name="oid_pnp_enable_wake_up"></a>OID \_ PNP \_ 启用 \_ 唤醒 \_
 
@@ -22,7 +21,7 @@ ms.locfileid: "89213345"
 
 作为查询，OID \_ PNP \_ ENABLE \_ 唤醒 \_ 获取为网络适配器启用的当前唤醒功能。
 
-[**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的**InformationBuffer**成员是可用于启用唤醒事件组合的标志的位掩码：
+[**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的 **InformationBuffer** 成员是可用于启用唤醒事件组合的标志的位掩码：
 
 <a href="" id="ndis-pnp-wake-up-magic-packet"></a>**NDIS \_ PNP \_ 唤醒 \_ \_ 幻 \_ 数据包**  
 如果设置，则指定微型端口驱动程序应该允许网络适配器在收到幻数据包时发出唤醒事件。  (*幻数据包* 是包含接收网络适配器的以太网地址的16个连续副本的数据包 ) 。如果清除此项，则表示微型端口驱动程序应禁止网络适配器发出此类唤醒事件的信号。
@@ -65,7 +64,7 @@ NDIS 不会立即启用协议驱动程序指定的唤醒功能。 相反，NDIS 
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**NDIS \_ 绑定 \_ 参数**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_bind_parameters)

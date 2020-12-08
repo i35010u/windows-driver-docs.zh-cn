@@ -1,7 +1,6 @@
 ---
 title: PartitionClassGuid
 description: PartitionClassGuid
-ms.assetid: 2f8ec440-5f52-41f6-b37b-a1bb030957b0
 keywords:
 - PartitionClassGuid 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: f00d72dccd1ef8353f43a6e2bd7d1a0a1a246df1
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: c108d028c6159e22e2bb11d6c6c7c2d770af769e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89096619"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96827069"
 ---
 # <a name="partitionclassguid"></a>PartitionClassGuid
 
@@ -46,7 +45,7 @@ PartitionClassGuid 是分区设备的 [设备接口类](./overview-of-device-int
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**GUID_DEVINTERFACE_PARTITION**](guid-devinterface-partition.md)

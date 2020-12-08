@@ -1,19 +1,18 @@
 ---
-title: Targets
-description: Targets
-ms.assetid: 103d9b0a-2d51-404e-b8b9-513465427f7b
+title: 目标
+description: 目标
 keywords:
 - 调试器引擎，目标
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ffd3f18bbf3e38c3e4278800035274f39052349b
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 6fa49f33ee55c8bc4bd31f9666ae3a4feda24104
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89217878"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96826925"
 ---
-# <a name="targets"></a>Targets
+# <a name="targets"></a>目标
 
 
 [调试器引擎](introduction.md#debugger-engine)支持调试不同类型的目标、[用户模式](#live--user-mode-targets)和[内核模式](#live--kernel-mode-targets)目标、实时目标和故障转储文件以及本地和远程目标。 可以通过不同的方法将引擎连接到这些不同类型的目标。
@@ -22,7 +21,7 @@ ms.locfileid: "89217878"
 
 用户模式和内核模式故障转储文件都是通过 [**OpenDumpFile**](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugclient5-opendumpfile)打开的。 引擎还可以使用 [**WriteDumpFile2**](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugclient5-writedumpfile2)从目标创建转储文件。
 
-### <a name="span-idlive--user-mode-targetsspanspan-idlive--user-mode-targetsspanlive-user-mode-targets"></a><span id="live--user-mode-targets"></span><span id="LIVE--USER-MODE-TARGETS"></span>实时，用户模式目标
+### <a name="span-idlive--user-mode-targetsspanspan-idlive--user-mode-targetsspanlive-user-mode-targets"></a><span id="live--user-mode-targets"></span><span id="LIVE--USER-MODE-TARGETS"></span>实时、User-Mode 目标
 
 调试器引擎可以创建并附加到用户模式进程。
 
@@ -32,7 +31,7 @@ ms.locfileid: "89217878"
 
 此引擎可以查询有关计算机上运行的所有用户模式进程的信息，包括用于启动进程的可执行映像的进程 ID 和名称。 此信息可用于帮助查找要调试的进程。
 
-### <a name="span-idlive--kernel-mode-targetsspanspan-idlive--kernel-mode-targetsspanlive-kernel-mode-targets"></a><span id="live--kernel-mode-targets"></span><span id="LIVE--KERNEL-MODE-TARGETS"></span>实时、内核模式目标
+### <a name="span-idlive--kernel-mode-targetsspanspan-idlive--kernel-mode-targetsspanlive-kernel-mode-targets"></a><span id="live--kernel-mode-targets"></span><span id="LIVE--KERNEL-MODE-TARGETS"></span>实时、Kernel-Mode 目标
 
 方法 [**AttachKernel**](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugclient5-attachkernel) 将调试器引擎连接到 Windows 内核。
 

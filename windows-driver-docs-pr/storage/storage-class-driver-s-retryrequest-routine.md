@@ -1,19 +1,18 @@
 ---
 title: 存储类驱动程序的 RetryRequest 例程
 description: 存储类驱动程序的 RetryRequest 例程
-ms.assetid: de1eea7d-88db-444c-a9f7-462ad4a5df27
 keywords:
 - RetryRequest
 - 正在重试 WDK 存储
 - 错误 WDK 存储
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c9df89e87b84590d1c4997bf8c04fe458ec0ddce
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 94146d8497cb4251e142b6c49dcc63db1cee143d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89187509"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96827469"
 ---
 # <a name="storage-class-drivers-retryrequest-routine"></a>存储类驱动程序的 RetryRequest 例程
 
@@ -37,7 +36,7 @@ ms.locfileid: "89187509"
 
 4.  设置 IRP 中端口驱动程序的 i/o 堆栈位置，如存储类驱动程序的 [调度例程](storage-class-driver-s-dispatch-routines.md) 通过 [存储类驱动程序的 SplitTransferRequest 例程](storage-class-driver-s-splittransferrequest-routine.md)所述。
 
-5.  为 IRP 调用 [**IoSetCompletionRoutine**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iosetcompletionroutine) ，因为在 irp 返回之前，驱动程序的 [**IoCompletion**](/windows-hardware/drivers/ddi/wdm/nc-wdm-io_completion_routine) 例程必须释放 SRB。 *IoCompletion*例程可能还需要多次重试请求，或调用驱动程序的*InterpretRequestSense*或*ReleaseQueue*例程。
+5.  为 IRP 调用 [**IoSetCompletionRoutine**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iosetcompletionroutine) ，因为在 irp 返回之前，驱动程序的 [**IoCompletion**](/windows-hardware/drivers/ddi/wdm/nc-wdm-io_completion_routine) 例程必须释放 SRB。 *IoCompletion* 例程可能还需要多次重试请求，或调用驱动程序的 *InterpretRequestSense* 或 *ReleaseQueue* 例程。
 
 6.  通过 [**IoCallDriver**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver)将请求传递到下一个较低版本的驱动程序。
 

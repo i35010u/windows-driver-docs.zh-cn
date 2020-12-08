@@ -1,7 +1,6 @@
 ---
 title: 'SpNoWait 规则 (storport) '
 description: 此规则验证是否在 StartIo 内不执行 "等待" 或 "数据分配"。
-ms.assetid: 4E1FABD1-AA6B-4EA1-BDD8-0C7A46AFF19B
 ms.date: 05/21/2018
 keywords:
 - 'SpNoWait 规则 (storport) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 2a95488041fad9dc77564046b3305ecd56404e02
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: b015df9e3dd4713beeab1c652eab6fd764c42f24
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105244"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96828150"
 ---
 # <a name="spnowait-rule-storport"></a>SpNoWait 规则 (storport) 
 
 
-此规则验证是否在 **StartIo**内不执行 "等待" 或 "数据分配"。
+此规则验证是否在 **StartIo** 内不执行 "等待" 或 "数据分配"。
 
 **驱动程序模型： Storport**
 

@@ -1,15 +1,14 @@
 ---
 title: 事件跟踪
 description: 可以使用 Windows 的事件跟踪 (ETW) 或 Windows 软件跟踪预处理器 (WPP) 跟踪 HID over i2c 中的操作。
-ms.assetid: F23E5516-36B9-478E-90D3-54D1C52CB467
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 340276608dfd017d5c06e7a3ddc79557d8404504
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 688c366a076db892223db5d2017ccf213b552fd8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91734079"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96828031"
 ---
 # <a name="event-tracing"></a>事件跟踪
 

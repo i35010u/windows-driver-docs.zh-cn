@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ BDA \_ 信号 \_ 强度
 description: '客户端使用 KSPROPERTY \_ BDA \_ 信号 \_ 强度来确定 1/1000 (mDb (DB) # A3 的中的信号的载波强度。'
-ms.assetid: b8b71135-cc0b-4a59-940a-dd766cab3305
 keywords:
 - KSPROPERTY_BDA_SIGNAL_STRENGTH 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4fb390a4410368bc98a0323369945be7baf2aab8
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: ddd288b0eec729f6ade2161ac3bfc8b8e2751d33
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89186597"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96828373"
 ---
 # <a name="ksproperty_bda_signal_strength"></a>KSPROPERTY \_ BDA \_ 信号 \_ 强度
 
@@ -86,7 +85,7 @@ KSP **NodeId** \_ 节点的节点1指定了控制节点的标识符，或设置�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSP \_ 节点**](/windows-hardware/drivers/ddi/ks/ns-ks-ksp_node)

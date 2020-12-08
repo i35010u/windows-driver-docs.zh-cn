@@ -1,15 +1,14 @@
 ---
 title: 将 GPIO 控制器分区为管脚库
 description: 作为选项，驱动程序开发人员可以将常规用途 i/o 分区 (GPIO) 控制器设备分为两个或多个 GPIO 端口块。
-ms.assetid: D9425459-E052-48D8-A4F3-91387AE7059A
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6f31d2559d4f1802b58e5ad259acc18a64a9f778
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 141c9a8ab2ab6b7788d29444da872bdf7d8bde7d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89064446"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96827209"
 ---
 # <a name="partitioning-a-gpio-controller-into-banks-of-pins"></a>将 GPIO 控制器分区为管脚库
 
@@ -27,7 +26,7 @@ GPIO framework 扩展 (GpioClx) 支持的最大银行大小为64个 pin。 包�
 
 GpioClx 从 **TotalPins** 和 **NumberOfPinsPerBank** 成员的值确定 GPIO 控制器中的银行总数。 GpioClx 使用以下整数公式来计算银行总数：
 
-**TotalPins**  +  在某些 GPIO 控制器设备中 (TotalPins**NumberOfPinsPerBank** – 1) / **NumberOfPinsPerBank**时，设备中的 pin bank 可以打开或切换到同一个设备中的其他插槽的低功耗状态。 因此，当某个银行处于空闲状态时，可以将此银行切换到低功耗状态，以降低功率消耗。 为了容纳此类设备，GpioClx 支持 [组件级电源管理](../kernel/component-level-power-management.md)。 GpioClx 定义了两个组件级别电源状态，F0 (完全按) 和 F1 (低功耗或关闭) 。
+**TotalPins**  +  在某些 GPIO 控制器设备中 (TotalPins **NumberOfPinsPerBank** – 1) / **NumberOfPinsPerBank** 时，设备中的 pin bank 可以打开或切换到同一个设备中的其他插槽的低功耗状态。 因此，当某个银行处于空闲状态时，可以将此银行切换到低功耗状态，以降低功率消耗。 为了容纳此类设备，GpioClx 支持 [组件级电源管理](../kernel/component-level-power-management.md)。 GpioClx 定义了两个组件级别电源状态，F0 (完全按) 和 F1 (低功耗或关闭) 。
 
 若要确定 GPIO pin bank 是否支持组件级电源管理，GpioClx 将调用 [*客户端 \_ QuerySetControllerInformation*](/windows-hardware/drivers/ddi/gpioclx/nc-gpioclx-gpio_client_query_set_controller_information) 事件回调函数。 此函数的 *InputBuffer* 参数是一个指向 [**客户端 \_ 控制器 \_ 查询 \_ 集 \_ 信息 \_ 输入**](/windows-hardware/drivers/ddi/gpioclx/ns-gpioclx-_client_controller_query_set_information_input) 结构的指针。 若要请求电源管理信息，调用方将此结构的 **RequestType** 成员设置为 **QueryBankPowerInformation**。
 

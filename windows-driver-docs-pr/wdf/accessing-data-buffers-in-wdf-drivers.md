@@ -1,7 +1,6 @@
 ---
 title: 在 WDF 驱动程序（KMDF 或 UMDF）中访问数据缓冲区
 description: 当 Windows 驱动程序框架 (WDF) 驱动程序收到读取、写入或设备 i/o 控制请求时，请求对象将包含输入缓冲区和/或输出缓冲区。
-ms.assetid: ceba2279-b0fb-4261-b439-723d5dad967b
 keywords:
 - 请求处理 WDK KMDF，数据缓冲区
 - 数据缓冲区 WDK KMDF
@@ -14,12 +13,12 @@ keywords:
 - I/o 请求 WDK KMDF，数据缓冲区
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2ea751f1b6b61febd3e8d72ae8b214ed6adc6d73
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: cf88b59ab1757b714d1d51c86e0817301f5ca406
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89192125"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96827419"
 ---
 # <a name="accessing-data-buffers-in-wdf-drivers-kmdf-or-umdf"></a>在 WDF 驱动程序（KMDF 或 UMDF）中访问数据缓冲区
 
@@ -36,7 +35,7 @@ ms.locfileid: "89192125"
 -   [直接 i/o](#direct)。 I/o 管理器会将缓冲区空间锁定为物理内存，并为该驱动程序提供对缓冲区空间的直接访问。
 -   [缓冲或直接](#neither)i/o。 I/o 管理器为驱动程序提供请求的缓冲区空间的虚拟地址。 I/o 管理器不会验证请求的缓冲区空间，因此驱动程序必须验证缓冲区空间是否可访问，并将缓冲区空间锁定为物理内存。
 
- (KMDF) 驱动程序的内核模式驱动程序框架可以使用三种访问方法中的任意一种。 用户模式驱动程序框架 (UMDF) 驱动程序可以对读、写和 IOCTL 请求使用缓冲的或直接 i/o，并可以 [转换指定 **方法这 \_ 两** 种方法的请求](managing-buffer-access-methods-in-umdf-drivers.md#using-neither-buffered-i-o-nor-direct-i-o-in-umdf-drivers)。
+Kernel-Mode Driver Framework (KMDF) 驱动程序可以使用三种访问方法中的任意一种。 User-Mode Driver Framework (UMDF) 驱动程序可以对读、写和 IOCTL 请求使用缓冲的或直接 i/o，并可以 [转换指定 **方法这 \_ 两** 种方法的请求](managing-buffer-access-methods-in-umdf-drivers.md#using-neither-buffered-i-o-nor-direct-i-o-in-umdf-drivers)。
 
 ## <a name="specifying-buffer-access-method"></a><a href="" id="ddk-preprocessing-i-o-requests-df"></a>指定缓冲区访问方法
 

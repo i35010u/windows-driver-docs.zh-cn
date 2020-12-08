@@ -1,7 +1,6 @@
 ---
 title: 'StorPortAllocatePool2 规则 (storport) '
 description: 此规则验证微型端口不能尝试对已分配的缓冲区调用 StorPortAllocatePool，而无需先将其解除分配。
-ms.assetid: 3ECEDFDA-AE04-4DAC-926C-FB19CD955A38
 ms.date: 05/21/2018
 keywords:
 - 'StorPortAllocatePool2 规则 (storport) '
@@ -12,12 +11,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 710bb3a110b23464c7c8ec2dc0238e35af3fcb0c
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 86f6ede2974a82f7e0068f8dae0f283aa36b682f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107046"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96828147"
 ---
 # <a name="storportallocatepool2-rule-storport"></a>StorPortAllocatePool2 规则 (storport) 
 

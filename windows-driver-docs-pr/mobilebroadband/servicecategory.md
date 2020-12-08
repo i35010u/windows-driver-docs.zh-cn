@@ -1,15 +1,14 @@
 ---
 title: ServiceCategory
 description: ServiceCategory
-ms.assetid: 770cb127-808f-4d77-905e-66064553d3d7
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4e6567997fc411d24e4dbe5636b5eb36bf9e5da4
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: 1adaf21b86a72eb69326bff083e73b75322a8c5d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89403450"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96827007"
 ---
 # <a name="servicecategory"></a>ServiceCategory
 
@@ -52,7 +51,7 @@ ServiceCategory 元素指定适用于服务的功能类别。
 <thead>
 <tr class="header">
 <th>元素</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>

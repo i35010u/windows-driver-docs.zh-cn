@@ -1,27 +1,26 @@
 ---
 title: 初始化与 Direct3D 版本 11 DDI 之间的通信
 description: 初始化与 Direct3D 版本 11 DDI 之间的通信
-ms.assetid: 3b383f78-da88-4979-b55f-8e234f230df7
 keywords:
 - Direct3D 版本 11 WDK Windows 7 显示，初始化 DDI 通信
 - Direct3D 版本 11 WDK Windows Server 2008 R2 显示，初始化 DDI 通信
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f86f4fa82ba2d8d179da9a5dd6426628b61bb299
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 532e4ce38d020bd13567592463d3138545ccf420
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89064071"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96827255"
 ---
 # <a name="initializing-communication-with-the-direct3d-version-11-ddi"></a>初始化与 Direct3D 版本 11 DDI 之间的通信
 
 
 本部分仅适用于 Windows 7 和更高版本，以及 windows Server 2008 R2 及更高版本的 Windows 操作系统。
 
-若要初始化与用户模式显示驱动程序 DLL 的版本 11 DDI 的通信，Direct3D 版本11运行时首先会加载 dll （如果尚未加载 DLL）。 接下来，Direct3D 运行时通过 DLL 的导出表调用用户模式显示驱动程序的 [**OpenAdapter10 \_ 2**](/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_openadapter) 函数，以打开图形适配器的实例。 **OpenAdapter10 \_ 2**函数是 DLL 的唯一导出函数。
+若要初始化与用户模式显示驱动程序 DLL 的版本 11 DDI 的通信，Direct3D 版本11运行时首先会加载 dll （如果尚未加载 DLL）。 接下来，Direct3D 运行时通过 DLL 的导出表调用用户模式显示驱动程序的 [**OpenAdapter10 \_ 2**](/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_openadapter) 函数，以打开图形适配器的实例。 **OpenAdapter10 \_ 2** 函数是 DLL 的唯一导出函数。
 
-**注意**   [**OpenAdapter10 \_ 2**](/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_openadapter)函数与[**OpenAdapter10**](/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_openadapter)函数相同，不同之处在于**OpenAdapter10 \_ 2**返回[**D3D10DDIARG \_ OPENADAPTER**](/windows-hardware/drivers/ddi/d3d10umddi/ns-d3d10umddi-d3d10ddiarg_openadapter)结构的**pAdapterFuncs \_ 2**成员中驱动程序的特定于适配器的函数表， **OpenAdapter10**返回 pAdapterFuncs D3D10DDIARG 成员的驱动程序适配器特定函数表 \_ 。 **pAdapterFuncs \_ 2** 指向 [**D3D10 \_ 2DDI \_ ADAPTERFUNCS**](/windows-hardware/drivers/ddi/d3d10umddi/ns-d3d10umddi-d3d10_2ddi_adapterfuncs) 结构; **pAdapterFuncs** 指向 [**D3D10DDI \_ ADAPTERFUNCS**](/windows-hardware/drivers/ddi/d3d10umddi/ns-d3d10umddi-d3d10ddi_adapterfuncs) 结构。
+**注意**  [**OpenAdapter10 \_ 2**](/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_openadapter)函数与 [**OpenAdapter10**](/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_openadapter)函数相同，不同之处在于 **OpenAdapter10 \_ 2** 返回 [**D3D10DDIARG \_ OPENADAPTER**](/windows-hardware/drivers/ddi/d3d10umddi/ns-d3d10umddi-d3d10ddiarg_openadapter)结构的 **pAdapterFuncs \_ 2** 成员中驱动程序的特定于适配器的函数表， **OpenAdapter10** 返回 pAdapterFuncs D3D10DDIARG 成员的驱动程序适配器特定函数表 \_ 。 **pAdapterFuncs \_ 2** 指向 [**D3D10 \_ 2DDI \_ ADAPTERFUNCS**](/windows-hardware/drivers/ddi/d3d10umddi/ns-d3d10umddi-d3d10_2ddi_adapterfuncs) 结构; **pAdapterFuncs** 指向 [**D3D10DDI \_ ADAPTERFUNCS**](/windows-hardware/drivers/ddi/d3d10umddi/ns-d3d10umddi-d3d10ddi_adapterfuncs) 结构。
 
  
 
@@ -62,9 +61,9 @@ ms.locfileid: "89064071"
 
 除了指定版本信息外，驱动程序的 [**OpenAdapter10 \_ 2**](/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_openadapter) 函数还在运行时与驱动程序之间交换其他信息。
 
-在调用驱动程序的[**OpenAdapter10 \_ 2**](/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_openadapter)函数时，运行时在[**D3D10DDIARG \_ OPENADAPTER**](/windows-hardware/drivers/ddi/d3d10umddi/ns-d3d10umddi-d3d10ddiarg_openadapter)结构的**pAdapterCallbacks**成员中提供[**pfnQueryAdapterInfoCb**](/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_queryadapterinfocb)适配器回调函数。 用户模式显示驱动程序应调用 **pfnQueryAdapterInfoCb** 适配器回调函数以从显示微型端口驱动程序查询图形硬件功能。
+在调用驱动程序的 [**OpenAdapter10 \_ 2**](/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_openadapter)函数时，运行时在 [**D3D10DDIARG \_ OPENADAPTER**](/windows-hardware/drivers/ddi/d3d10umddi/ns-d3d10umddi-d3d10ddiarg_openadapter)结构的 **pAdapterCallbacks** 成员中提供 [**pfnQueryAdapterInfoCb**](/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_queryadapterinfocb)适配器回调函数。 用户模式显示驱动程序应调用 **pfnQueryAdapterInfoCb** 适配器回调函数以从显示微型端口驱动程序查询图形硬件功能。
 
-运行时调用用户模式显示驱动程序的 [**CreateDevice (D3D10) **](/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_createdevice) 函数 (某个驱动程序的适配器特定函数) 来创建显示设备，用于处理呈现状态的集合并完成初始化。 初始化完成后，Direct3D 版本11运行时可以调用 [显示器驱动程序提供的 Direct3D 版本11函数](/windows-hardware/drivers/ddi/index)，用户模式显示驱动程序可以调用 [运行时提供的函数](/windows-hardware/drivers/ddi/index)。
+运行时调用用户模式显示驱动程序的 [**CreateDevice (D3D10)**](/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_createdevice) 函数 (某个驱动程序的适配器特定函数) 来创建显示设备，用于处理呈现状态的集合并完成初始化。 初始化完成后，Direct3D 版本11运行时可以调用 [显示器驱动程序提供的 Direct3D 版本11函数](/windows-hardware/drivers/ddi/index)，用户模式显示驱动程序可以调用 [运行时提供的函数](/windows-hardware/drivers/ddi/index)。
 
 用户模式显示驱动程序的 CreateDevice (D3D10) 函数使用一个 [**D3D10DDIARG \_ CreateDevice**](/windows-hardware/drivers/ddi/d3d10umddi/ns-d3d10umddi-d3d10ddiarg_createdevice) 结构调用，该结构的成员按以下方式设置，以初始化用户模式显示驱动程序的版本 11 DDI：
 
@@ -76,15 +75,15 @@ ms.locfileid: "89064071"
 
 -   运行时设置 **hDrvDevice** 以指定运行时在后续的驱动程序调用中使用的句柄。
 
--   运行时在**pKTCallbacks**点的[**D3DDDI \_ DEVICECALLBACKS**](/windows-hardware/drivers/ddi/d3dumddi/ns-d3dumddi-_d3dddi_devicecallbacks)结构中提供其特定于设备的回调函数的表。 用户模式显示驱动程序调用运行时提供的回调函数，以访问显示微型端口驱动程序中的内核模式服务。
+-   运行时在 **pKTCallbacks** 点的 [**D3DDDI \_ DEVICECALLBACKS**](/windows-hardware/drivers/ddi/d3dumddi/ns-d3dumddi-_d3dddi_devicecallbacks)结构中提供其特定于设备的回调函数的表。 用户模式显示驱动程序调用运行时提供的回调函数，以访问显示微型端口驱动程序中的内核模式服务。
 
--   用户模式显示驱动程序会将其设备特定函数的表返回到**p11DeviceFuncs**点的[**D3D11DDI \_ DEVICEFUNCS**](/windows-hardware/drivers/ddi/d3d10umddi/ns-d3d10umddi-d3d11ddi_devicefuncs)结构中。
+-   用户模式显示驱动程序会将其设备特定函数的表返回到 **p11DeviceFuncs** 点的 [**D3D11DDI \_ DEVICEFUNCS**](/windows-hardware/drivers/ddi/d3d10umddi/ns-d3d10umddi-d3d11ddi_devicefuncs)结构中。
 
--   运行时提供一个**DXGIBaseDDI**点的[**DXGI \_ DDI \_ 基 \_ 参数**](/windows-hardware/drivers/ddi/dxgiddi/ns-dxgiddi-dxgi_ddi_base_args)结构。 运行时和用户模式显示驱动程序将其 [DirectX 图形基础结构](directx-graphics-infrastructure-ddi.md) 提供到此结构中。
+-   运行时提供一个 **DXGIBaseDDI** 点的 [**DXGI \_ DDI \_ 基 \_ 参数**](/windows-hardware/drivers/ddi/dxgiddi/ns-dxgiddi-dxgi_ddi_base_args)结构。 运行时和用户模式显示驱动程序将其 [DirectX 图形基础结构](directx-graphics-infrastructure-ddi.md) 提供到此结构中。
 
 -   运行时将设置 **hRTCoreLayer** ，以指定当驱动程序回叫运行时以访问 core Direct3D 10 功能时，驱动程序应使用的句柄， (即，调用 **p11UMCallbacks** 成员指定的函数) 。
 
--   运行时在**p11UMCallbacks**指向的[**D3D11DDI \_ CORELAYER \_ DEVICECALLBACKS**](/windows-hardware/drivers/ddi/d3d10umddi/ns-d3d10umddi-d3d11ddi_corelayer_devicecallbacks)结构中提供其核心回调函数的表。 用户模式显示驱动程序调用运行时提供的核心回调函数以刷新状态。
+-   运行时在 **p11UMCallbacks** 指向的 [**D3D11DDI \_ CORELAYER \_ DEVICECALLBACKS**](/windows-hardware/drivers/ddi/d3d10umddi/ns-d3d10umddi-d3d11ddi_corelayer_devicecallbacks)结构中提供其核心回调函数的表。 用户模式显示驱动程序调用运行时提供的核心回调函数以刷新状态。
 
  
 

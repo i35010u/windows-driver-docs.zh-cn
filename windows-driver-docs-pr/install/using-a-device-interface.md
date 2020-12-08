@@ -1,18 +1,17 @@
 ---
 title: 使用设备接口
 description: 使用设备接口
-ms.assetid: a41f9ae2-6128-43e2-a6b5-4d0bd45371bd
 keywords:
 - 接口类 WDK 设备安装
 - 设备接口类 WDK 设备安装
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a11bde08e76039464611d2d774d6e18238c8ac12
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 28ac9d72148565daf960dfc3644a958edf790cf1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91733665"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96827053"
 ---
 # <a name="using-a-device-interface"></a>使用设备接口
 
@@ -20,7 +19,7 @@ ms.locfileid: "91733665"
 
 
 
-设备接口可用于内核模式组件和用户模式应用程序。 用户模式代码可以使用 **SetupDi * * Xxx* 函数来了解注册的已启用设备接口。 有关详细信息，请参阅 [SetupDi 设备接口功能](using-device-installation-functions.md#ddk-setupdi-device-interface-functions-dg) 。
+设备接口可用于内核模式组件和用户模式应用程序。 用户模式代码可以使用 **SetupDi**_Xxx_ 函数来了解注册的已启用设备接口。 有关详细信息，请参阅 [SetupDi 设备接口功能](using-device-installation-functions.md#ddk-setupdi-device-interface-functions-dg) 。
 
 在内核模式组件可以使用特定设备或文件对象之前，必须执行以下操作：
 

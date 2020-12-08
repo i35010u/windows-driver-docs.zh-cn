@@ -1,15 +1,14 @@
 ---
 title: 即插即用管理器
 description: 即插即用管理器
-ms.assetid: b1890b3c-fc7b-4a2e-b48a-8266f237c9b6
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a10826097a607398c9d9d9b46be37922771b6010
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 02bc4eb220a4d85eb1699a451cabcdda3219091a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89096419"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96827059"
 ---
 # <a name="plug-and-play-manager"></a>即插即用管理器
 

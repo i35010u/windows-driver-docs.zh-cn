@@ -1,15 +1,14 @@
 ---
 title: 获取软件发行者证书 (SPC)
 description: 获取软件发行者证书 (SPC)
-ms.assetid: 50546234-e98d-40ed-b9c6-7d78cf0419ca
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bac0efea6b3b7ce526e31f2927a1867b36b9d880
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 77c3efe7476eff61d8646951d68b2c46187d06ec
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89094993"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96826801"
 ---
 # <a name="obtaining-a-software-publisher-certificate-spc"></a>获取软件发行者证书 (SPC)
 

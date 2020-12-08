@@ -1,17 +1,16 @@
 ---
 title: PROPSETID \_ VIDCAP \_ CAMERACONTROL
 description: PROPSETID \_ VIDCAP \_ CAMERACONTROL
-ms.assetid: 8899a474-fa6f-4d5c-bd68-2433428bb5c5
 keywords:
 - KSPROPERTY_VIDCAP_CAMERACONTROL
 ms.date: 06/18/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: b60ea6e949c7ad352df2524f6d1125941219affa
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 10793cc28394987ae0401b5f58ff2170f6865f2f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89186757"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96827431"
 ---
 # <a name="propsetid_vidcap_cameracontrol"></a>PROPSETID \_ VIDCAP \_ CAMERACONTROL
 
@@ -67,7 +66,7 @@ PROPSETID \_ VIDCAP \_ CAMERACONTROL 属性集控制照相机设备设置。 它
 
 DirectShow **IAMCameraControl** 接口 (参阅 Windows 软件开发工具包中的 Microsoft DirectShow 文档 (SDK) # A3 提供对此集的属性的访问权限。
 
-## <a name="windows8-extended-camera-control-properties"></a>Windows 8 扩展相机控制属性
+## <a name="windows-8-extended-camera-control-properties"></a>Windows 8 扩展相机控制属性
 
 从 Windows 8 开始，用户模式客户端支持使用这些附加属性来获取或设置照相机的控制设置：
 

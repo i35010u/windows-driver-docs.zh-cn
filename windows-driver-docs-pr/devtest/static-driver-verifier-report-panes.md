@@ -1,20 +1,19 @@
 ---
 title: 静态驱动程序验证程序报告窗格
 description: 静态驱动程序验证程序报告窗格
-ms.assetid: 12487bd0-70f6-4d97-b1a5-c0e5ea055698
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6fa6d0409cba3340b523b4e928b2cd06f92dc5db
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 04789fae62c7639e3d49c0d73ea6de7931e2115d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63365169"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96827333"
 ---
 # <a name="static-driver-verifier-report-panes"></a>静态驱动程序验证程序报告窗格
 
 
-静态的驱动程序验证工具报告包含以下窗格：
+静态驱动程序验证程序报表包含以下窗格：
 
 -   [跟踪树窗格](trace-tree-pane.md)
 
@@ -22,9 +21,9 @@ ms.locfileid: "63365169"
 
 -   [状态窗格](state-pane.md)
 
-共同**跟踪树**窗格中，**源代码**窗格中，并**状态**窗格窗体[缺陷查看器](defect-viewer.md)窗口。
+" **跟踪树** " 窗格、" **源代码** " 窗格和 " **状态** " 窗格一起构成了 " [缺陷查看器](defect-viewer.md) " 窗口。
 
-仅当 SDV 已检测到一个缺陷 （规则冲突），您可以打开脱离查看器。
+仅当 SDV 检测到 "缺陷" (规则冲突) 时，才可以打开缺陷查看器。
 
  
 

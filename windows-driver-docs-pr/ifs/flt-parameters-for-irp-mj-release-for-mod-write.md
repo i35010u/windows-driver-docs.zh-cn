@@ -1,7 +1,6 @@
 ---
 title: IRP_MJ_RELEASE_FOR_MOD_WRITE 联合的 FLT_PARAMETERS
 description: 当操作的 FLT \_ IO \_ 参数块结构的 MajorFunction 字段 \_ 为 \_ \_ \_ 用于 \_ MOD 写入的 IRP MJ 版本 \_ 时，将使用以下联合组件。
-ms.assetid: 66b43d77-5e46-48b6-b86c-4ed21959ab49
 keywords:
 - IRP_MJ_RELEASE_FOR_MOD_WRITE 联合可安装文件系统驱动程序的 FLT_PARAMETERS
 - FLT_PARAMETERS 联合可安装文件系统驱动程序
@@ -16,28 +15,28 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8910a4c423e6ed0d00b368e892c486140e059703
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: df57469c3d5cbfcc7955380e4dd69f6ca6b098ba
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89065958"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96826891"
 ---
 # <a name="flt_parameters-for-irp_mj_release_for_mod_write-union"></a>用于 \_ \_ \_ \_ \_ MOD \_ 写入联合的 IRP MJ 版本的 FLT 参数
 
 
-当操作的[**FLT \_ IO \_ 参数 \_ 块**](/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_io_parameter_block)结构的**MajorFunction**字段为 \_ \_ \_ 用于 \_ MOD \_ 写入的 IRP MJ 版本时，将使用以下联合组件。
+当操作的 [**FLT \_ IO \_ 参数 \_ 块**](/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_io_parameter_block)结构的 **MajorFunction** 字段为 \_ \_ \_ 用于 \_ MOD \_ 写入的 IRP MJ 版本时，将使用以下联合组件。
 
 <a name="syntax"></a>语法
 ------
 
 ```ManagedCPlusPlus
 typedef union _FLT_PARAMETERS {
-  ...    ;
+  ...    ;
   struct {
     PERESOURCE ResourceToRelease;
-  } ReleaseForModifiedPageWriter;
-  ...    ;
+  } ReleaseForModifiedPageWriter;
+  ...    ;
 } FLT_PARAMETERS, *PFLT_PARAMETERS;
 ```
 
@@ -75,7 +74,7 @@ typedef union _FLT_PARAMETERS {
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**FLT \_ 回调 \_ 数据**](/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_callback_data)

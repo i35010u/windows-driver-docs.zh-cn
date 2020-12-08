@@ -1,7 +1,6 @@
 ---
 title: FltAcquireResourceExclusive 例程
 description: FltAcquireResourceExclusive 例程获取给定资源，以便通过调用线程进行独占访问。
-ms.assetid: 3736582e-33eb-4967-acfa-4b9d2b8cd87f
 keywords:
 - FltAcquireResourceExclusive 例程可安装文件系统驱动程序
 topic_type:
@@ -15,28 +14,28 @@ api_type:
 - LibDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8c7d5fc73e4059883029228724293ea49e2ad84f
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: cc33b9bb3009dd3c36e2209afd56bf9b8be043b7
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89065296"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96826875"
 ---
 # <a name="fltacquireresourceexclusive-routine"></a>FltAcquireResourceExclusive 例程
 
 
-**FltAcquireResourceExclusive**例程获取给定资源，以便通过调用线程进行独占访问。
+**FltAcquireResourceExclusive** 例程获取给定资源，以便通过调用线程进行独占访问。
 
 <a name="syntax"></a>语法
 ------
 
 ```ManagedCPlusPlus
 VOID FltAcquireResourceExclusive(
-  _Inout_ PERESOURCE Resource
+  _Inout_ PERESOURCE Resource
 );
 ```
 
-<a name="parameters"></a>parameters
+<a name="parameters"></a>参数
 ----------
 
 *资源* \[in、out\]  
@@ -65,15 +64,15 @@ VOID FltAcquireResourceExclusive(
 -   如果资源当前由另一个线程作为独占的，或者如果调用方仅具有对资源的共享访问权限，则在获取资源之前，当前线程将进入等待状态。
 
 > [!NOTE]
-> 如果两个线程分别持有同一资源上的共享锁，并且这两个线程都尝试单独获取锁定，而不释放其共享锁，它们会死锁。 这意味着，每个线程都将等待另一个线程释放锁定上的共享保留，并且两者都不会释放其共享的保留，直到另一个停止。
+> 如果两个线程分别持有同一资源上的共享锁，并且这两个线程都尝试单独获取锁定，而不释放其共享锁，它们会死锁。 这意味着，每个线程都将等待另一个线程释放锁定上的共享保留，并且两者都不会释放其共享的保留，直到另一个停止。
 
  
 
 **FltAcquireResourceExclusive** 是用于禁用正常内核 APC 传递的 [**ExAcquireResourceExclusiveLite**](/previous-versions/ff544351(v=vs.85)) 的包装。
 
-因为**FltAcquireResourceExclusive**禁用正常内核 APC 传递，所以在调用**FltAcquireResourceExclusive**之前无需调用[**KeEnterCriticalRegion**](/windows-hardware/drivers/ddi/ntddk/nf-ntddk-keentercriticalregion)或[**FsRtlEnterFileSystem**](fsrtlenterfilesystem.md) 。
+因为 **FltAcquireResourceExclusive** 禁用正常内核 APC 传递，所以在调用 **FltAcquireResourceExclusive** 之前无需调用 [**KeEnterCriticalRegion**](/windows-hardware/drivers/ddi/ntddk/nf-ntddk-keentercriticalregion)或 [**FsRtlEnterFileSystem**](fsrtlenterfilesystem.md) 。
 
-若要在获取资源后释放资源，请调用 [**FltReleaseResource**](fltreleaseresource.md)。 必须通过对**FltReleaseResource**的后续调用来匹配每个对**FltAcquireResourceExclusive**的成功调用。
+若要在获取资源后释放资源，请调用 [**FltReleaseResource**](fltreleaseresource.md)。 必须通过对 **FltReleaseResource** 的后续调用来匹配每个对 **FltAcquireResourceExclusive** 的成功调用。
 
 若要获取共享访问资源，请调用 [**FltAcquireResourceShared**](fltacquireresourceshared.md)。
 
@@ -115,7 +114,7 @@ VOID FltAcquireResourceExclusive(
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**ExAcquireResourceExclusiveLite**](/previous-versions/ff544351(v=vs.85))

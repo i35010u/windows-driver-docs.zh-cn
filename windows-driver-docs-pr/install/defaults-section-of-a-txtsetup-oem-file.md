@@ -1,9 +1,8 @@
 ---
 title: TxtSetup.oem 文件的 Defaults 节
-description: 默认值部分列出了支持此文件的每个硬件组件的默认驱动程序。 它向用户呈现的驱动程序列表时，Windows 会突出显示默认选择。
-ms.assetid: 5f7fc7c8-543d-442a-911d-320aa19c72f0
+description: "\"默认\" 部分列出了此文件支持的每个硬件组件) 的默认驱动程序 (。 当 Windows 向用户显示驱动程序列表时，它会突出显示默认选择。"
 keywords:
-- Defaults 节 TxtSetup.oem 文件的设备和驱动程序安装
+- Txtsetup.oem 文件设备和驱动程序安装的 "默认" 部分
 topic_type:
 - apiref
 api_name:
@@ -12,17 +11,17 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 7c98d6f4028da4a476219e87393a656d8e1e9603
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a53799792049fdd2c300bd30dbc87a6df73de9c3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63369496"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96827761"
 ---
 # <a name="defaults-section-of-a-txtsetupoem-file"></a>TxtSetup.oem 文件的 Defaults 节
 
 
-**默认情况下**部分列出了支持此文件的每个硬件组件的默认驱动程序。 它向用户呈现的驱动程序列表时，Windows 会突出显示默认选择。
+" **默认** " 部分列出了此文件支持的每个硬件组件) 的默认驱动程序 (。 当 Windows 向用户显示驱动程序列表时，它会突出显示默认选择。
 
 ``` syntax
 [Defaults]
@@ -31,14 +30,14 @@ component = ID
 ```
 
 <a href="" id="component"></a>*组件*  
-指定此文件支持的硬件组件。 *组件*必须是系统定义的以下值之一：**计算机**或**scsi**。
+指定此文件支持的硬件组件。 *组件* 必须是以下系统定义的值之一：**计算机** 或 **scsi**。
 
-<a href="" id="id"></a>*ID*  
-指定一个字符串，标识的默认选项。 此字符串中相应指定 ID 相匹配*HwComponent*部分。
+<a href="" id="id"></a>*识别*  
+指定标识默认选项的字符串。 此字符串与相应 *HwComponent* 部分中指定的 ID 匹配。
 
-如果*TxtSetup.oem*文件来定义一个受支持组件的默认驱动程序将失败，Windows 将使用中的第一个条目*HwComponent*部分。
+如果 *txtsetup.oem* 文件无法为受支持的组件定义默认驱动程序，则 Windows 将使用 *HwComponent* 部分中的第一项。
 
-下面的示例演示**默认情况下**部分 (并*HwComponent*部分) 对于*TxtSetup.oem*支持一个组件的文件 (**scsi**):
+下面的示例演示了一个 **默认** 节 (和一个 *Txtsetup.oem* 文件的 *HwComponent* 节) ，该文件支持一个组件 (**scsi**) ：
 
 ``` syntax
 ; ...

@@ -1,7 +1,6 @@
 ---
 title: CM_Remove_SubTree
 description: CM_Remove_SubTree
-ms.assetid: 49f477ba-c870-45be-945b-58065bf6b02e
 keywords:
 - CM_Remove_SubTree 设备和驱动程序安装
 topic_type:
@@ -12,12 +11,12 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 51c88a852136083d6b5fffa660f4e0548be9fe0f
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 71543a9266033d572657c6c9b1b7086aae18b3a2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90717444"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96827933"
 ---
 # <a name="cm_remove_subtree"></a>CM_Remove_SubTree
 

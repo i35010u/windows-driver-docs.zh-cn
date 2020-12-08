@@ -1,7 +1,6 @@
 ---
 title: CM_Set_HW_Prof_Flags
 description: CM_Set_HW_Prof_Flags
-ms.assetid: 52c3b9b8-6d0d-4b4d-9be4-5bd0d864d2fd
 keywords:
 - CM_Set_HW_Prof_FlagsA
 - CM_Set_HW_Prof_FlagsW
@@ -16,13 +15,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 5679367c5aef6a8c4df310f87cfb1ae06f0dab2f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 620f2d4462ef1c2cdc503c47441a10b4715e1c10
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63377102"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96827917"
 ---
-# <a name="cmsethwprofflags"></a>CM_Set_HW_Prof_Flags
+# <a name="cm_set_hw_prof_flags"></a>CM_Set_HW_Prof_Flags
 
 此函数保留供系统使用。

@@ -1,18 +1,17 @@
 ---
 title: 清理 SAN 的进程
 description: 清理 SAN 的进程
-ms.assetid: a6ae5882-4cde-43cf-8814-ea7ef5acee58
 keywords:
 - SAN process 清理 WDK
 - 清理 SAN 进程 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 48be718ccee19fe6aaa96c218a90f7ce12b4d1f5
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 05a5628d78606ffe207086fd37dee1cd381f15d1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89215256"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96826975"
 ---
 # <a name="cleaning-up-a-process-for-a-san"></a>清理 SAN 的进程
 

@@ -1,15 +1,14 @@
 ---
 title: WIA 驱动程序的文件系统访问权限
 description: WIA 驱动程序的文件系统访问权限
-ms.assetid: 7bdd116e-d58f-4c2e-a5ec-c9a8196cfd62
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: aa59a3155f22784ff36607c8c5715ca041e50bd2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5ce446842e4ea0f7082c74beb3bcb96129490e7a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63323443"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96827999"
 ---
 # <a name="file-system-access-for-wia-drivers"></a>WIA 驱动程序的文件系统访问权限
 
@@ -17,13 +16,13 @@ ms.locfileid: "63323443"
 
 
 
-如果驱动程序需要使用文件传输过程中提供的 WIA 服务以外的文件，该驱动程序必须小心对待这些文件的位置和访问方式。 具体而言，驱动程序编写人员应知道的目录和文件，它们将使用的访问权限。 一些示例的读取或写入其自己的文件包括日志记录，校准，可能需要的驱动程序并保存配置。
+如果驱动程序需要使用的文件不是 WIA 服务在文件传输过程中提供的文件，则驱动程序必须小心地了解这些文件的位置以及如何访问这些文件。 具体而言，驱动程序编写人员应该知道它们所使用的目录和文件的访问权限。 驱动程序可能需要读取或写入自己的文件的一些示例包括日志记录、校准和保存配置。
 
-例如，在 %*windir*%\\*System32*目录是只读的**LocalService**帐户，因此 WIA 驱动程序通常不能打开用于读取或写入访问权限的文件。 大多数目录是只读的**LocalService**帐户，因此有很少问题如果驱动程序只需从文件中读取。 但是，驱动程序尝试创建或受限制的目录中写入文件时，会出现文件问题。
+例如，%*windir* % \\ *System32* 目录对于 **LocalService** 帐户是只读的，因此 WIA 驱动程序通常无法打开文件以进行读写访问。 大多数目录对于 **LocalService** 帐户都是只读的，因此，如果驱动程序只需读取文件，就很少会出现问题。 但是，当驱动程序尝试在受限目录中创建或写入文件时，会发生文件问题。
 
-安全的位置来编写驱动程序仅使用的文件是在用户配置文件目录中。 请注意，用户在这种情况下指运行承载该驱动程序的进程的帐户。 在 Windows XP 中，这是**LocalSystem**帐户，并在 Microsoft Windows Server 2003 和更高版本，它是**LocalService**帐户。 为了使驱动程序中正常运行的所有版本的 Windows 支持 WIA，驱动程序应创建及其专用文件置于 **%** <em>userprofile</em> **%** 目录。
+用于写入只有驱动程序使用的文件的安全位置位于用户配置文件目录中。 请注意，在这种情况下，用户是指在其下运行承载驱动程序的进程的帐户。 在 Windows XP 中，这是 **LocalSystem** 帐户，在 Microsoft Windows Server 2003 及更高版本中，是 **LocalService** 帐户。 为了使驱动程序在所有支持 WIA 的 Windows 版本中正常工作，驱动程序应在 userprofile 目录中创建其专用文件 **%** <em>userprofile</em> **%** 。
 
-下面的代码示例演示如何 WIA 驱动程序可以使用 %*userprofile*%目录。
+下面的代码示例演示 WIA 驱动程序如何使用%*userprofile*% 目录。
 
 ```cpp
 #define MY_DRIVER_FILE_NAME_W L"%userprofile%\\MyDriverFile.ext";
@@ -68,11 +67,11 @@ if (ExpandEnvironmentStringsW(MY_DRIVER_FILE_NAME_W,
 }
 ```
 
-如果驱动程序需要写入文件的目录中而不包含 **%** <em>userprofile</em>%，应确保已为文件/目录设置的正确权限。 通常，这意味着确保授予适当的权限**LocalService**帐户。 在 Windows XP 上 WIA 服务在运行下**LocalSystem**帐户，这属于本地管理员组并且具有高很多访问级别。
+如果驱动程序需要写入包含在 userprofile% 之外的目录中的文件 **%** <em>userprofile</em>，则应确保已为文件/目录设置了正确的权限。 通常，这意味着确保已向 **LocalService** 帐户授予适当的权限。 在 Windows XP 上，WIA 服务在属于本地管理员组并且具有相当高的访问级别的 **LocalSystem** 帐户下运行。
 
-### <a name="wia-application-and-wia-driver-common-files"></a>WIA 应用程序和 WIA 驱动程序的常见文件
+### <a name="wia-application-and-wia-driver-common-files"></a>WIA 应用程序和 WIA 驱动程序公用文件
 
-如果该驱动程序和捆绑应用程序需要读/写访问的常见文件，则建议将文件放入应用程序数据目录的子目录中的所有用户配置文件 (CSIDL\_常见\_APPDATA)。 请确保在新的子目录上设置适当的 Acl。
+如果驱动程序和捆绑的应用程序都需要对公共文件的读/写访问权限，则建议将该文件放入 "所有用户" 配置文件中的应用程序数据目录的子目录中， (CSIDL \_ common \_ APPDATA) 。 请确保在新子目录上设置相应的 Acl。
 
  
 

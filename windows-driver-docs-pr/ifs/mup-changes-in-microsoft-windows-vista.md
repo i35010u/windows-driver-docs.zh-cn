@@ -1,7 +1,6 @@
 ---
 title: Microsoft Windows Vista 中的 MUP 更改
 description: Microsoft Windows Vista 中的 MUP 更改
-ms.assetid: 8ca2f9bc-14f1-45d3-a397-f3e5459cf8ec
 keywords:
 - 内核网络重定向 WDK，MUP
 - MUP WDK 网络重定向器
@@ -14,12 +13,12 @@ keywords:
 - 双重筛选 WDK 网络重定向器
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9fae078f8284c337c7f57d206be201148130fbb0
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 674e36ae20c4ce01a57c4a933b5393b32688be28
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105890"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96827167"
 ---
 # <a name="mup-changes-in-microsoft-windows-vista"></a>Microsoft Windows Vista 中的 MUP 更改
 
@@ -66,7 +65,7 @@ MUP 和分布式文件系统 (DFS) 客户端位于单独的二进制文件中。
 
 -   为使用 [**FsRtlRegisterUncProviderEx**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtlregisteruncproviderex)直接注册到 MUP 的 Windows Vista 编写的网络重定向程序。
 
-动态链接到 Windows Vista RDBSS 的网络微重定向器 ( # A0) 自动符合 Windows Vista 重定向程序模型，因为 RDBSS 使用 [*FsRtlRegisterUncProviderEx*](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtlregisteruncproviderex)注册了 MUP。 静态链接到 Windows Vista RDBSS (rdbsslib) 的网络微型重定向程序也自动符合 Windows Vista 重定向程序模型，因为 RDBSS 使用 **FsRtlRegisterUncProviderEx**注册了 MUP。
+动态链接到 Windows Vista RDBSS 的网络微重定向器 ( # A0) 自动符合 Windows Vista 重定向程序模型，因为 RDBSS 使用 [*FsRtlRegisterUncProviderEx*](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtlregisteruncproviderex)注册了 MUP。 静态链接到 Windows Vista RDBSS (rdbsslib) 的网络微型重定向程序也自动符合 Windows Vista 重定向程序模型，因为 RDBSS 使用 **FsRtlRegisterUncProviderEx** 注册了 MUP。
 
 为直接注册到 MUP 的 Windows Vista 编写的旧版网络重定向程序必须符合 Windows Vista 重定向程序模型。
 
@@ -116,7 +115,7 @@ HKLM\CurrentControlSet\Control\NetworkProvider\Order
 
 在 Windows Vista 上，MUP 执行前缀解析的方式不同，具体取决于是否通过调用 [**FsRtlRegisterUncProvider**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtlregisteruncprovider) 或 [**FsRtlRegisterUncProviderEx**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtlregisteruncproviderex)向 MUP 注册了网络重定向程序。 通过调用 **FsRtlRegisterUncProvider** 向 MUP 注册的旧网络重定向器将接收用于前缀解析的 [**IOCTL \_ REDIR \_ 查询 \_ 路径**](/windows-hardware/drivers/ddi/ntifs/ni-ntifs-ioctl_redir_query_path) 请求。 此方法与在 Windows Server 2003、Windows XP 和 Windows 2000 上使用的方法相同。
 
-如果网络重定向程序符合 Windows Vista 重定向程序模型并通过调用 [**FsRtlRegisterUncProviderEx**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtlregisteruncproviderex) 注册，则会收到 [**IOCTL \_ REDIR \_ 查询 \_ 路径 \_ **](/windows-hardware/drivers/ddi/ntifs/ni-ntifs-ioctl_redir_query_path_ex) ，例如前缀解析请求。 请注意，在 Windows Vista 上，使用 rdbsslib 静态链接的网络微型重定向程序或动态链接的 rdbss.sys 将通过 RDBSS 间接调用 **FsRtlRegisterUncProviderEx** 。
+如果网络重定向程序符合 Windows Vista 重定向程序模型并通过调用 [**FsRtlRegisterUncProviderEx**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtlregisteruncproviderex) 注册，则会收到 [**IOCTL \_ REDIR \_ 查询 \_ 路径 \_**](/windows-hardware/drivers/ddi/ntifs/ni-ntifs-ioctl_redir_query_path_ex) ，例如前缀解析请求。 请注意，在 Windows Vista 上，使用 rdbsslib 静态链接的网络微型重定向程序或动态链接的 rdbss.sys 将通过 RDBSS 间接调用 **FsRtlRegisterUncProviderEx** 。
 
 IOCTL REDIR 查询路径的输入和输出缓冲区 \_ \_ \_ \_ 如下所示：
 
@@ -170,7 +169,7 @@ typedef struct _QUERY_PATH_REQUEST_EX {
 <thead>
 <tr class="header">
 <th align="left">结构成员</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -211,7 +210,7 @@ typedef struct _QUERY_PATH_RESPONSE {
 <thead>
 <tr class="header">
 <th align="left">结构成员</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -226,26 +225,26 @@ typedef struct _QUERY_PATH_RESPONSE {
 
 请注意，IOCTL \_ REDIR \_ 查询 \_ 路径 \_ EX 是两种 ioctl 都不是 \_ 。 这意味着输入缓冲区和输出缓冲区可能不在同一地址。 UNC 提供程序的一个常见错误是假定输入缓冲区和输出缓冲区相同，并使用输入缓冲区指针来提供响应。
 
-当 UNC 提供程序收到 IOCTL \_ REDIR \_ 查询 \_ 路径 \_ （例如请求）时，必须确定它是否可以处理查询路径**PathName** \_ \_ 请求 EX 结构的 PathName 成员中指定的 UNC 路径 \_ 。 如果是这样，UNC 提供程序必须**LengthAccepted** \_ \_ 用它所声明的前缀的长度（以字节为单位）来更新查询路径响应结构的 LengthAccepted 成员，并完成 IRP 状态为 "成功" 的操作 \_ 。 如果提供程序无法处理指定的 UNC 路径，则它必须 \_ \_ 使用适当的 NTSTATUS 错误代码来使 IOCTL REDIR 查询 \_ 路径（例如请求）失败 \_ ， **LengthAccepted**并且不得更新查询 \_ 路径响应结构的 LengthAccepted 成员 \_ 。 在任何情况下，提供程序都不能修改任何其他成员或 **路径名** 字符串。
+当 UNC 提供程序收到 IOCTL \_ REDIR \_ 查询 \_ 路径 \_ （例如请求）时，必须确定它是否可以处理查询路径 **PathName** \_ \_ 请求 EX 结构的 PathName 成员中指定的 UNC 路径 \_ 。 如果是这样，UNC 提供程序必须 **LengthAccepted** \_ \_ 用它所声明的前缀的长度（以字节为单位）来更新查询路径响应结构的 LengthAccepted 成员，并完成 IRP 状态为 "成功" 的操作 \_ 。 如果提供程序无法处理指定的 UNC 路径，则它必须 \_ \_ 使用适当的 NTSTATUS 错误代码来使 IOCTL REDIR 查询 \_ 路径（例如请求）失败 \_ ， **LengthAccepted** 并且不得更新查询 \_ 路径响应结构的 LengthAccepted 成员 \_ 。 在任何情况下，提供程序都不能修改任何其他成员或 **路径名** 字符串。
 
-在 Windows Vista 上，基于使用 RDBSS 的网络微重定向程序将指示支持作为 UNC 提供程序将接收此前缀声明，就像它是常规的树连接创建一样，类似于使用文件 \_ 创建 \_ 树 \_ 连接标志设置的用户模式 Createfile 调用。 RDBSS 会将 [**MRxCreateSrvCall**](/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_create_srvcall) 请求发送到网络小型重定向程序，然后调用 [**MRxSrvCallWinnerNotify**](/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_srvcall_winner_notify) 和 [**MRxCreateVNetRoot**](/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_create_v_net_root)。 调用[**MRxLowIOSubmit \[ LOWIO \_ OP \_ IOCTL \] **](./mrxlowiosubmit-lowio-op-ioctl-.md)时，不会收到此前缀声明。 当网络微重定向器注册到 RDBSS 时，网络小型重定向器的驱动程序调度表将由 RDBSS 复制到指向内部 RDBSS 入口点。 然后，RDBSS 会接收此 IOCTL \_ REDIR \_ 查询 \_ 路径 \_ ，例如网络小型重定向器在内部接收，并调用 **MRxCreateSrvCall**、 **MRxSrvCallWinnerNotify**和 **MRxCreateVNetRoot**。 原始 IOCTL \_ REDIR \_ 查询路径 \_ ， \_ 例如 IRP 将包含在 \_ 传递到 **MRxCreateSrvCall** 例程的 RX 上下文中。 此外， \_ 将修改传递到 **MRXCREATESRVCALL** 的 RX 上下文中的以下成员：
+在 Windows Vista 上，基于使用 RDBSS 的网络微重定向程序将指示支持作为 UNC 提供程序将接收此前缀声明，就像它是常规的树连接创建一样，类似于使用文件 \_ 创建 \_ 树 \_ 连接标志设置的用户模式 Createfile 调用。 RDBSS 会将 [**MRxCreateSrvCall**](/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_create_srvcall) 请求发送到网络小型重定向程序，然后调用 [**MRxSrvCallWinnerNotify**](/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_srvcall_winner_notify) 和 [**MRxCreateVNetRoot**](/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_create_v_net_root)。 调用 [**MRxLowIOSubmit \[ LOWIO \_ OP \_ IOCTL \]**](./mrxlowiosubmit-lowio-op-ioctl-.md)时，不会收到此前缀声明。 当网络微重定向器注册到 RDBSS 时，网络小型重定向器的驱动程序调度表将由 RDBSS 复制到指向内部 RDBSS 入口点。 然后，RDBSS 会接收此 IOCTL \_ REDIR \_ 查询 \_ 路径 \_ ，例如网络小型重定向器在内部接收，并调用 **MRxCreateSrvCall**、 **MRxSrvCallWinnerNotify** 和 **MRxCreateVNetRoot**。 原始 IOCTL \_ REDIR \_ 查询路径 \_ ， \_ 例如 IRP 将包含在 \_ 传递到 **MRxCreateSrvCall** 例程的 RX 上下文中。 此外， \_ 将修改传递到 **MRXCREATESRVCALL** 的 RX 上下文中的以下成员：
 
 **MajorFunction** \_ \_ 即使原始 IRP 为 irp \_ mj \_ 设备 \_ 控制，MajorFunction 成员也会设置为 irp mj CREATE。
 
-将**PrefixClaim**成员设置为查询**PathName.Buffer** \_ 路径 \_ 请求 \_ EX 结构的 PathName 成员。
+将 **PrefixClaim** 成员设置为查询 **PathName.Buffer** \_ 路径 \_ 请求 \_ EX 结构的 PathName 成员。
 
-将**PrefixClaim**成员设置为查询**PathName.Length** \_ 路径 \_ 请求 \_ EX 结构的 PathName 成员。
+将 **PrefixClaim** 成员设置为查询 **PathName.Length** \_ 路径 \_ 请求 \_ EX 结构的 PathName 成员。
 
-**ThisIsATreeConnectOpen**成员设置为**TRUE**。
+**ThisIsATreeConnectOpen** 成员设置为 **TRUE**。
 
-**ThisIsAPrefixClaim**成员设置为**TRUE**。
+**ThisIsAPrefixClaim** 成员设置为 **TRUE**。
 
-**NtCreateParameters. SecurityContext**成员设置为查询**SecurityContext** \_ 路径 \_ 请求 EX 结构的 SecurityContext 成员 \_ 。
+**NtCreateParameters. SecurityContext** 成员设置为查询 **SecurityContext** \_ 路径 \_ 请求 EX 结构的 SecurityContext 成员 \_ 。
 
-**EaBuffer**成员设置为查询**pEaBuffer** \_ 路径 \_ 请求 EX 结构的 pEaBuffer 成员 \_ 。
+**EaBuffer** 成员设置为查询 **pEaBuffer** \_ 路径 \_ 请求 EX 结构的 pEaBuffer 成员 \_ 。
 
-**EaLength**成员设置为查询**EaLength** \_ 路径 \_ 请求 EX 结构的 EaLength 成员 \_ 。
+**EaLength** 成员设置为查询 **EaLength** \_ 路径 \_ 请求 EX 结构的 EaLength 成员 \_ 。
 
-**Create Flags**成员将具有 RX \_ 上下文 \_ 创建 \_ 标志 \_ UNC \_ 名称位集。
+**Create Flags** 成员将具有 RX \_ 上下文 \_ 创建 \_ 标志 \_ UNC \_ 名称位集。
 
 如果网络小型重定向程序想要查看前缀声明的详细信息，则可以读取 \_ 传递给 [**MRXCREATESRVCALL**](/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_create_srvcall)的 RX 上下文结构中的这些成员。 否则，它只会尝试连接到服务器共享，并 \_ 在 **MRxCreateSrvCall** 调用成功时返回状态 SUCCESS。 RDBSS 将代表网络小型重定向器发出前缀声明。

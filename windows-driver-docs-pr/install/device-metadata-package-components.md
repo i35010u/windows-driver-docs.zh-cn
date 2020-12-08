@@ -1,15 +1,14 @@
 ---
 title: 设备元数据包结构
 description: 设备元数据包结构
-ms.assetid: 37614100-0a56-4a32-8e45-3161994e503a
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 66573ed1808e9331f84cd3aec85ff1f41e772b8b
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: b48d01967095f9d511039e6ea60483ea99d948de
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91732873"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96827701"
 ---
 # <a name="device-metadata-package-structure"></a>设备元数据包结构
 
@@ -28,7 +27,7 @@ DeviceStage 创建设备元数据包时，XML 文档和图标文件存储在以�
 
 -   DeviceInformation 子目录包含 [DEVICEINFO XML 文档](deviceinfo-xml-document.md) 和可选的设备图标文件。 XML 文档的名称必须 DeviceInfo.xml。
 
-    如果设备元数据包包含设备图标文件，则它可以具有任何名称，但必须以 *.ico*后缀结尾。 有关详细信息，请参阅 [设备图标文件](device-icon-file.md)。
+    如果设备元数据包包含设备图标文件，则它可以具有任何名称，但必须以 *.ico* 后缀结尾。 有关详细信息，请参阅 [设备图标文件](device-icon-file.md)。
 
 -   WindowsInformation 子目录包含 [WINDOWSINFO XML 文档](windowsinfo-xml-document.md)。 XML 文档的名称必须 WindowsInfo.xml。
 

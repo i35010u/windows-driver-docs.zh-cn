@@ -1,22 +1,21 @@
 ---
 title: 控制异常和事件
 description: 控制异常和事件
-ms.assetid: cc8067f3-07de-4ee2-b028-94f9ac088891
 keywords:
 - exceptions
 - 异常，概述
 - 异常，处理
-- 活动
+- events
 - 事件，概述
 - 事件，处理
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6035e174ed62143b32ff63dfdd1c9151b807ad45
-ms.sourcegitcommit: f610410e1500f0b0a4ca008b52679688ab51033d
+ms.openlocfilehash: ab804f71b83ccf3dd2cd399204fbaf92ed40a150
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/15/2020
-ms.locfileid: "88252951"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96826715"
 ---
 # <a name="controlling-exceptions-and-events"></a>控制异常和事件
 
@@ -36,7 +35,7 @@ ms.locfileid: "88252951"
 
 当异常或事件中断调试器时，可以使用调试器来检查正在执行的代码和应用程序正在使用的内存。 通过更改应用程序中的特定数量或跳转到不同的点，你可以删除导致此异常的原因。
 
-可以通过发出 [**gh (在处理异常时发出异常) **](gh--go-with-exception-handled-.md) 或 [**gn (中转，但不会) 命令处理异常 **](gn--gn--go-with-exception-not-handled-.md) 来继续执行。
+可以通过发出 [**gh (在处理异常时发出异常)**](gh--go-with-exception-handled-.md) 或 [**gn (中转，但不会) 命令处理异常**](gn--gn--go-with-exception-not-handled-.md) 来继续执行。
 
 如果在调试器的第二个机会中发出 **gn** 命令来处理异常，则应用程序将结束。
 
@@ -64,19 +63,19 @@ ms.locfileid: "88252951"
 
 可以通过执行下列操作之一来控制中断状态和处理状态：
 
--   在[调试器命令窗口](debugger-command-window.md)中使用[**SXE**](sx--sxd--sxe--sxi--sxn--sxr--sx---set-exceptions-.md)、 **SXD**、 **SXN**或**SXI**命令。
+-   在 [调试器命令窗口](debugger-command-window.md)中使用 [**SXE**](sx--sxd--sxe--sxi--sxn--sxr--sx---set-exceptions-.md)、 **SXD**、 **SXN** 或 **SXI** 命令。
 
--    (CDB 和 NTSD) 使用[**命令行**](cdb-command-line-options.md)中的 **-x**、 **-xe**、 **-xd**、 **-xn**或 **-xi**选项。
+-    (CDB 和 NTSD) 使用 [**命令行**](cdb-command-line-options.md)中的 **-x**、 **-xe**、 **-xd**、 **-xn** 或 **-xi** 选项。
 
--    (CDB、NTSD 和 KD) 在[Tools.ini](configuring-tools-ini.md)文件中使用**sxe**或**sxd**关键字。
+-    (CDB、NTSD 和 KD) 在 [Tools.ini](configuring-tools-ini.md)文件中使用 **sxe** 或 **sxd** 关键字。
 
 -    (WinDbg 仅) 选择 "**调试**" 菜单上的 "[事件筛选器](debug---event-filters.md)" 以打开 "**事件筛选器**" 对话框，然后选择所需的选项。
 
-**Sx \\ *** 命令、 **-x \\ *** 命令行选项和** \\ sx*** Tools.ini 关键字通常设置指定事件的中断状态。 可以添加 **-h** 选项来改为设置处理状态。
+**Sx \\** _ 命令、 _*- \\ x* *_ 命令行选项和 _*sx \\* *_ Tools.ini 关键字通常设置指定事件的中断状态。 可以添加 _ *-h** 选项来改为设置处理状态。
 
-有四种特殊事件代码 (**cc**、 **hc**、 **bpec**和 **ssec**) ，始终指定处理状态而不是中断状态。
+有四种特殊事件代码 (**cc**、 **hc**、 **bpec** 和 **ssec**) ，始终指定处理状态而不是中断状态。
 
-可以使用 [**. lastevent (显示上一事件) **](-lastevent--display-last-event-.md) 命令显示最近的异常或事件。
+可以使用 [**. lastevent (显示上一事件)**](-lastevent--display-last-event-.md) 命令显示最近的异常或事件。
 
 ### <a name="span-idcontrolling_break_statusspanspan-idcontrolling_break_statusspancontrolling-break-status"></a><span id="controlling_break_status"></span><span id="CONTROLLING_BREAK_STATUS"></span>控制中断状态
 
@@ -90,7 +89,7 @@ ms.locfileid: "88252951"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Command</th>
+<th align="left">命令</th>
 <th align="left">状态名称</th>
 <th align="left">描述</th>
 </tr>
@@ -128,21 +127,21 @@ ms.locfileid: "88252951"
 
  
 
-如果按下的设置不**会出现异常** \* ，则目标应用程序会在第二次中断后进入调试器。 事件的默认状态在本主题的以下 "事件定义和默认值" 一节中列出。
+如果按下的设置不 **会出现异常** \* ，则目标应用程序会在第二次中断后进入调试器。 事件的默认状态在本主题的以下 "事件定义和默认值" 一节中列出。
 
-若要使用 WinDbg 图形界面设置中断状态，"**调试**" 菜单上的[事件筛选器](debug---event-filters.md)从 "**事件筛选器**" 对话框中的列表中选择所需的事件，然后选择 "**已启用**"、"**禁用**"、"**输出**" 或 "**忽略**"。
+若要使用 WinDbg 图形界面设置中断状态，"**调试**" 菜单上的 [事件筛选器](debug---event-filters.md)从 "**事件筛选器**" 对话框中的列表中选择所需的事件，然后选择 "**已启用**"、"**禁用**"、"**输出**" 或 "**忽略**"。
 
 ### <a name="span-idcontrolling_handling_statusspanspan-idcontrolling_handling_statusspancontrolling-handling-status"></a><span id="controlling_handling_status"></span><span id="CONTROLLING_HANDLING_STATUS"></span>控制处理状态
 
-所有事件都被视为未处理，除非使用 [**gh () 命令处理的异常 **](gh--go-with-exception-handled-.md) 。
+所有事件都被视为未处理，除非使用 [**gh () 命令处理的异常**](gh--go-with-exception-handled-.md) 。
 
-所有异常都被视为未处理，除非你将[ **sx \\ ** * ](sx--sxd--sxe--sxi--sxn--sxr--sx---set-exceptions-.md)命令与 **-h**选项一起使用。
+所有异常都被视为未处理，除非你将 [ **sx \\** _](sx--sxd--sxe--sxi--sxn--sxr--sx---set-exceptions-.md)命令与 _ *-h** 选项一起使用。
 
-此外， **SX** \* 选项可以配置无效句柄、状态 \_ 断点中断指令和单步例外的处理状态。 此配置 (与中断配置分开。 ) 配置其中断状态时，这些事件分别分别命名为 **ch**、 **bpe**和 **sse**。 在配置其处理状态时，这些事件分别分别命名为 **hc**、 **bpec**和 **ssec**。  (完整的事件列表，请参阅下面的 "事件定义和默认值" 一节。 ) 
+此外， **SX** \* 选项可以配置无效句柄、状态 \_ 断点中断指令和单步例外的处理状态。 此配置 (与中断配置分开。 ) 配置其中断状态时，这些事件分别分别命名为 **ch**、 **bpe** 和 **sse**。 在配置其处理状态时，这些事件分别分别命名为 **hc**、 **bpec** 和 **ssec**。  (完整的事件列表，请参阅下面的 "事件定义和默认值" 一节。 ) 
 
 您可以 (**cc**) （但不是其中断状态）配置 CTRL + C 事件的处理状态。 如果应用程序收到 CTRL + C 事件，应用程序始终中断到调试器。
 
-当**SX** \* 对**cc**、 **hc**、 **bpec**和**ssec**事件使用 sx 命令时，或在**SX** \* 异常中同时使用 sx 命令和 **-h**选项时，将发生以下操作。
+当 **SX** \* 对 **cc**、 **hc**、 **bpec** 和 **ssec** 事件使用 sx 命令时，或在 **SX** \* 异常中同时使用 sx 命令和 **-h** 选项时，将发生以下操作。
 
 <table>
 <colgroup>
@@ -152,7 +151,7 @@ ms.locfileid: "88252951"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Command</th>
+<th align="left">命令</th>
 <th align="left">状态名称</th>
 <th align="left">描述</th>
 </tr>
@@ -173,13 +172,13 @@ ms.locfileid: "88252951"
 
  
 
-若要使用 WinDbg 图形界面设置处理状态，请在 "**调试**" 菜单上选择 "[事件筛选器](debug---event-filters.md)"，从 "**事件筛选器**" 对话框中的列表中选择所需的事件，然后选择 "已**处理**" 或 "**未处理**"。
+若要使用 WinDbg 图形界面设置处理状态，请在 "**调试**" 菜单上选择 "[事件筛选器](debug---event-filters.md)"，从 "**事件筛选器**" 对话框中的列表中选择所需的事件，然后选择 "已 **处理**" 或 "**未处理**"。
 
 ### <a name="span-idautomatic_commandsspanspan-idautomatic_commandsspanautomatic-commands"></a><span id="automatic_commands"></span><span id="AUTOMATIC_COMMANDS"></span>自动命令
 
-调试器还允许您设置在事件或异常导致调试器中断时自动执行的命令。 可以为第一次中断设置命令字符串，为第二次中断设置命令字符串。 可以在[ **SX \\ ** * ](sx--sxd--sxe--sxi--sxn--sxr--sx---set-exceptions-.md)命令或[Debug |事件筛选器](debug---event-filters.md)命令。 每个命令字符串可以包含用分号分隔的多个命令。
+调试器还允许您设置在事件或异常导致调试器中断时自动执行的命令。 可以为第一次中断设置命令字符串，为第二次中断设置命令字符串。 可以用 [ **SX \\** _](sx--sxd--sxe--sxi--sxn--sxr--sx---set-exceptions-.md)命令或 [Debug |事件筛选器](debug---event-filters.md)命令。 每个命令字符串可以包含用分号分隔的多个命令。
 
-不管中断状态如何，都将执行这些命令。 也就是说，如果中断状态为 "忽略"，则仍会执行该命令。 如果中断状态为 "第二次中断"，则在涉及到任何其他异常处理程序之前，第一次发生异常时，将执行第一次命令。 命令字符串可以通过执行命令结束，如 [**g (中转) **](g--go-.md)， [**Gh (with 异常处理) **](gh--go-with-exception-handled-.md)，或 [**Gn (中转，但未处理) 的异常 **](gn--gn--go-with-exception-not-handled-.md)。
+不管中断状态如何，都将执行这些命令。 也就是说，如果中断状态为 "忽略"，则仍会执行该命令。 如果中断状态为 "第二次中断"，则在涉及到任何其他异常处理程序之前，第一次发生异常时，将执行第一次命令。 命令字符串可以通过执行命令结束，如 [_ *g (中转)* *](g--go-.md)、 [**gh (with exception 已处理)**](gh--go-with-exception-handled-.md)，或 [**gn (中转，但未处理) 的异常**](gn--gn--go-with-exception-not-handled-.md)。
 
 ### <a name="span-idevent_definitions_and_defaultsspanspan-idevent_definitions_and_defaultsspanevent-definitions-and-defaults"></a><span id="event_definitions_and_defaults"></span><span id="EVENT_DEFINITIONS_AND_DEFAULTS"></span>事件定义和默认值
 
@@ -302,7 +301,7 @@ ms.locfileid: "88252951"
 
  
 
-**注意**   通过使用[**ah (断言处理) **](ah--assertion-handling-.md)命令，可以覆盖特定地址的**asrt**中断状态。 **Ch**和**hc**事件代码引用相同的异常。 控制其中断状态时，请使用 **sx \* ch**。 控制其处理状态时，请使用 **sx \* hc**。
+**注意**  通过使用 [**ah (断言处理)**](ah--assertion-handling-.md)命令，可以覆盖特定地址的 **asrt** 中断状态。 **Ch** 和 **hc** 事件代码引用相同的异常。 控制其中断状态时，请使用 **sx \* ch**。 控制其处理状态时，请使用 **sx \* hc**。
 
  
 
@@ -310,7 +309,7 @@ ms.locfileid: "88252951"
 
 以下例外的默认处理状态始终是 "已处理"。 由于这些异常用于与调试器通信，因此通常不应将其状态更改为 "未处理"。 如果调试器忽略异常，则此状态将导致其他异常处理程序捕获异常。
 
-应用程序可以使用 DBG \_ 命令 \_ 异常 (**dbce**) 与调试器通信。 此异常与断点类似，但你可以在**SX** \* 发生此异常时使用 SX 命令以特定方式进行响应。
+应用程序可以使用 DBG \_ 命令 \_ 异常 (**dbce**) 与调试器通信。 此异常与断点类似，但你可以在 **SX** \* 发生此异常时使用 SX 命令以特定方式进行响应。
 
 <table>
 <colgroup>
@@ -357,7 +356,7 @@ ms.locfileid: "88252951"
 <td align="left"><p>中断</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>cce<br>字幕</strong></p></td>
+<td align="left"><p><strong>cce<br>cc</strong></p></td>
 <td align="left"><p>CTRL + C 或 CTRL + BREAK</p>
 <p>如果目标为控制台应用程序，并向其传递 CTRL + C 或 CTRL + BREAK，则会触发此异常。</p></td>
 <td align="left"><p>中断</p></td>
@@ -367,7 +366,7 @@ ms.locfileid: "88252951"
 
  
 
-**注意**   上表中的最后三个异常具有两个不同的事件代码。 控制其中断状态时，请使用 **sse**、 **bpe**和 **cce**。 控制其处理状态时，请使用 **ssec**、 **bpec**和 **cc**。
+**注意**   上表中的最后三个异常具有两个不同的事件代码。 控制其中断状态时，请使用 **sse**、 **bpe** 和 **cce**。 控制其处理状态时，请使用 **ssec**、 **bpec** 和 **cc**。
 
  
 

@@ -1,7 +1,6 @@
 ---
-title: pat
-description: Pat 扩展显示目标处理器的页面属性表 (PAT) 寄存器。
-ms.assetid: 41583410-08cc-49b5-96b2-b59d935f623e
+title: 吧
+description: Pat 扩展显示目标处理器 (PAT) 寄存器的页属性表。
 keywords:
 - PAT
 - pat Windows 调试
@@ -13,30 +12,30 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: db8e1964e526ac141d27418f1410ee514bdfa43c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6f4597947b72ab19dd5c1c098b5ae21f6c2f4fac
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63335826"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96828271"
 ---
 # <a name="pat"></a>!pat
 
 
-**！ Pat**扩展显示目标处理器的页面属性表 (PAT) 寄存器。
+**！ Pat** extension 显示了页属性表 (pat) 注册目标处理器。
 
 ```dbgcmd
 !pat Flag 
 !pat 
 ```
 
-## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>参数
+## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>Parameters
 
 
-<span id="_______Flag______"></span><span id="_______flag______"></span><span id="_______FLAG______"></span> *Flag*   
-如果*标志*，则调试器验证 PAT 功能是否显示 PAT 之前存在。
+<span id="_______Flag______"></span><span id="_______flag______"></span><span id="_______FLAG______"></span>*标志*   
+如果设置了 *标志* ，则调试器将验证在显示 pat 之前是否存在 pat 功能。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 <table>
 <colgroup>
@@ -57,7 +56,7 @@ ms.locfileid: "63335826"
 
  
 
-此扩展命令仅用于基于 x86 的目标计算机。
+此扩展命令只能与基于 x86 的目标计算机一起使用。
 
  
 

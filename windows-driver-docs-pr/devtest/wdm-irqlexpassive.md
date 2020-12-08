@@ -1,7 +1,6 @@
 ---
 title: 'IrqlExPassive 规则 (wdm) '
 description: IrqlExPassive 规则指定驱动程序只调用以下执行程序支持例程，PASSIVE_LEVEL。 IrqlExPassive 规则还指定驱动程序以 IRQL APC_LEVEL 调用 ExRaiseStatus。
-ms.assetid: 92d73bd9-ce79-4be8-9ea2-a5aef2ea6edb
 ms.date: 05/21/2018
 keywords:
 - 'IrqlExPassive 规则 (wdm) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 41c851d43b70fd2a52751c1e794663c444d89e80
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: cbd7a9714a2b1e9a37a5a79beba86c88b6301fda
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103192"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96828105"
 ---
 # <a name="irqlexpassive-rule-wdm"></a>IrqlExPassive 规则 (wdm) 
 
 
-**IrqlExPassive**规则指定驱动程序只调用以下执行程序支持例程 \_ ：
+**IrqlExPassive** 规则指定驱动程序只调用以下执行程序支持例程 \_ ：
 
 -   [**ExCreateCallback**](/windows-hardware/drivers/ddi/wdm/nf-wdm-excreatecallback)
 
@@ -36,7 +35,7 @@ ms.locfileid: "90103192"
 
 -   [**ExUuidCreate**](/windows-hardware/drivers/ddi/ntddk/nf-ntddk-exuuidcreate)
 
-**IrqlExPassive**规则还指定驱动程序调用[**ExRaiseStatus**](/windows-hardware/drivers/ddi/wdm/nf-wdm-exraisestatus)的 IRQL &lt; \_ 级别。
+**IrqlExPassive** 规则还指定驱动程序调用 [**ExRaiseStatus**](/windows-hardware/drivers/ddi/wdm/nf-wdm-exraisestatus)的 IRQL &lt; \_ 级别。
 
 **驱动程序模型： WDM**
 

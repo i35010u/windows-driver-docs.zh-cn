@@ -1,15 +1,14 @@
 ---
 title: UPnP 设备的容器 ID
 description: UPnP 设备的容器 ID
-ms.assetid: 29d2ed0e-e746-4f0a-88f3-bd07d5750485
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 668e6638aea1f962424e45ffbb064884dbc1a527
-ms.sourcegitcommit: 67efcd26f7be8f50c92b141ccd14c9c68f4412d8
+ms.openlocfilehash: bd9d3a08ec231e17ead67d0900972cac29fa8260
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88902605"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96827851"
 ---
 # <a name="container-ids-for-upnp-devices"></a>UPnP 设备的容器 ID
 

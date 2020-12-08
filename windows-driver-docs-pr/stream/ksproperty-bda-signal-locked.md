@@ -1,7 +1,6 @@
 ---
 title: 已 \_ 锁定 KSPROPERTY BDA \_ 信号 \_
 description: 客户端使用 KSPROPERTY \_ BDA \_ 信号 \_ 进行锁定，以确定是否可以锁定信号。
-ms.assetid: 98023f83-2e90-4649-8e85-3e7b7f26b01d
 keywords:
 - KSPROPERTY_BDA_SIGNAL_LOCKED 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: eab6d4137186a761a59f250f9402619f92e0a3d6
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 38726772d776c7fa750232ec0c4ca04ceca08143
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89186599"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96828377"
 ---
 # <a name="ksproperty_bda_signal_locked"></a>已 \_ 锁定 KSPROPERTY BDA \_ 信号 \_
 
@@ -88,7 +87,7 @@ KSP **NodeId** \_ 节点的节点1指定了控制节点的标识符，或设置�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSP \_ 节点**](/windows-hardware/drivers/ddi/ks/ns-ks-ksp_node)

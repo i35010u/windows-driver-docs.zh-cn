@@ -1,7 +1,6 @@
 ---
 title: package XML 元素
 description: Package XML 元素为驱动程序包指定 INF 文件。元素标记包 XML AttributespathThe 驱动程序包的 INF 文件的路径。
-ms.assetid: c7089e58-50c7-46ec-a9bf-c8e2d2bd354a
 keywords:
 - 包 XML 元素设备和驱动程序安装
 topic_type:
@@ -12,19 +11,19 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: ab8fb9ac426da31f19220867b8071941a2379175
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 1401c6981862d90afd572cffd5cf1efce61624c2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89095895"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96827071"
 ---
 # <a name="package-xml-element"></a>package XML 元素
 
 
 \[DIFx 已弃用，有关详细信息，请参阅 [DIFx 指导原则](./difx-guidelines.md)。\]
 
-**Package** XML 元素为[驱动程序包](./driver-packages.md)指定 INF 文件。
+**Package** XML 元素为 [驱动程序包](./driver-packages.md)指定 INF 文件。
 
 **元素标记**
 
@@ -59,7 +58,7 @@ ms.locfileid: "89095895"
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>父元素</strong></p></td>
-<td align="left"><p><a href="group-xml-element.md" data-raw-source="[&lt;strong&gt;group&lt;/strong&gt;](group-xml-element.md)"><strong>group</strong></a></p></td>
+<td align="left"><p><a href="group-xml-element.md" data-raw-source="[&lt;strong&gt;group&lt;/strong&gt;](group-xml-element.md)"><strong>组</strong></a></p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>子元素</strong></p></td>
@@ -78,7 +77,7 @@ ms.locfileid: "89095895"
 
  
 
-**注释**
+**备注**
 
 下面的代码示例演示了一个 **package** 元素，该元素将 DirAbc \\ Abc 指定为 [驱动程序包](./driver-packages.md)的 inf 文件。
 
@@ -92,10 +91,10 @@ ms.locfileid: "89095895"
 </dpinst>
 ```
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
-[**group**](group-xml-element.md)
+[**组**](group-xml-element.md)
 
  
 

@@ -1,7 +1,6 @@
 ---
 title: 访问设备配置空间
 description: 访问设备配置空间
-ms.assetid: 082500ae-9df2-4f8b-8be3-ff2b95067a12
 keywords:
 - I/o WDK 内核，设备配置空间
 - 设备配置空间 WDK i/o
@@ -11,12 +10,12 @@ keywords:
 - 驱动程序堆栈 WDK 配置信息
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fea847a5e770b9958ef4813929eeb016949c8f92
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 1ab216dd38eb730c8fc443fd793fbb7c749d3d10
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89189099"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96827618"
 ---
 # <a name="accessing-device-configuration-space"></a>访问设备配置空间
 

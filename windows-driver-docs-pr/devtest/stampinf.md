@@ -1,7 +1,6 @@
 ---
 title: Stampinf
 description: Stampinf
-ms.assetid: 5cab6adc-1511-42f2-a873-34cd10c638f5
 keywords:
 - Stampinf WDK
 - KMDF 驱动程序 WDK
@@ -10,12 +9,12 @@ keywords:
 - INX 文件 WDK UMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7dcfc013d37ef694254c9f9d011128257281e8a7
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: b67f243896f65e9e08d9ae3bb552fdac3e2b8c21
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89382851"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96826665"
 ---
 # <a name="stampinf"></a>Stampinf
 

@@ -1,7 +1,6 @@
 ---
 title: 'IrqlExApcLteInline 规则 (wdm) '
 description: IrqlExApcLteInline 规则指定仅在适当的 IRQL 级别调用 DDIs。
-ms.assetid: 9BE8633E-9390-40FA-8E2E-1FA130B6E638
 ms.date: 05/21/2018
 keywords:
 - 'IrqlExApcLteInline 规则 (wdm) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 10e7656db64d84b168647e782dffa7fd573a6162
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: a128df0f821b6916b1c39a1ad288086f0b420b49
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107476"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96828125"
 ---
 # <a name="irqlexapclteinline-rule-wdm"></a>IrqlExApcLteInline 规则 (wdm) 
 
 
-**IrqlExApcLteInline**规则指定仅在适当的 IRQL 级别调用 DDIs
+**IrqlExApcLteInline** 规则指定仅在适当的 IRQL 级别调用 DDIs
 
 **驱动程序模型： WDM**
 

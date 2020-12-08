@@ -1,9 +1,8 @@
 ---
-title: usbkd ehci_info_from_fdo
-description: Ehci_info_from_fdo usbkd 命令显示有关 USB 主机控制器的信息。
-ms.assetid: C7026EF3-F58D-45EB-83D5-8B4A3E661759
+title: usbkd.ehci_info_from_fdo
+description: Usbkd.ehci_info_from_fdo 命令显示有关 USB 主机控制器的信息。
 keywords:
-- usbkd ehci_info_from_fdo Windows 调试
+- usbkd.ehci_info_from_fdo Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 472159574b12ecdfe0a956cafd69858110afcc55
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 445985c062477e0c2886ec4eb4c64b5106804562
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89213582"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96826717"
 ---
 # <a name="usbkdehci_info_from_fdo"></a>！ usbkd \_ \_ fdo 中的信息 \_
 
 
-[**Fdo 命令中的！ \_ usbkd \_ INFO \_ **](-usbkd-ehci-info-from-fdo.md)显示有关 USB 主机控制器的信息。
+[**Fdo 命令中的！ \_ usbkd \_ INFO \_**](-usbkd-ehci-info-from-fdo.md)显示有关 USB 主机控制器的信息。
 
 ```dbgcmd
 !usbkd.ehci_info_from_fdo fdo

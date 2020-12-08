@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ 拓扑 \_ 名称
 description: KSPROPERTY \_ 拓扑 \_ 名称属性提供节点的本地化 Unicode 字符串名称。
-ms.assetid: ae12fe2f-9ccf-4949-b530-e7e33c846837
 keywords:
 - KSPROPERTY_TOPOLOGY_NAME 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e77c1bab884ab6ba97bf14bcac761bfe1873cb35
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: ad53341f772825d906f9ec3f253c99df996acad5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103368"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96828343"
 ---
 # <a name="ksproperty_topology_name"></a>KSPROPERTY \_ 拓扑 \_ 名称
 
@@ -61,7 +60,7 @@ KSPROPERTY \_ 拓扑 \_ 名称属性提供节点的本地化 Unicode 字符串�
 
  
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 KSP **NodeId** \_ 节点结构的节点 ID 指定要为其返回字符串名称的节点 ID。

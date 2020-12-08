@@ -1,26 +1,25 @@
 ---
 title: ACPI 描述符示例
-description: 本主题包含 ACPI 描述符的示例。
-ms.assetid: E091DF59-2E9F-4652-801C-3F55CBB910FE
+description: 本主题包含 ACPI 描述符示例。
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 9d1badd6c1aee7326d4584df13203f6bd0eb9d58
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e38807c6ab150ada66fd8a842e1028ab7f2437f4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63326119"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96827197"
 ---
 # <a name="acpi-descriptor-samples"></a>ACPI 描述符示例
 
 
-本主题包含 ACPI 描述符的示例。
+本主题包含 ACPI 描述符示例。
 
-**请注意**  使用仅有的 4 个字符长度 （如 CONV) 的设备定义的 ACPI 描述符。
+**注意**  对于设备定义 (（例如 ") "），ACPI 描述符使用的长度只有4个字符。
 
  
 
-## <a name="span-idacpidescriptionforbuttonarrayspanspan-idacpidescriptionforbuttonarrayspanspan-idacpidescriptionforbuttonarrayspanacpi-description-for-button-array"></a><span id="ACPI_description_for_button_array"></span><span id="acpi_description_for_button_array"></span><span id="ACPI_DESCRIPTION_FOR_BUTTON_ARRAY"></span>针对按钮阵列的 ACPI 描述
+## <a name="span-idacpi_description_for_button_arrayspanspan-idacpi_description_for_button_arrayspanspan-idacpi_description_for_button_arrayspanacpi-description-for-button-array"></a><span id="ACPI_description_for_button_array"></span><span id="acpi_description_for_button_array"></span><span id="ACPI_DESCRIPTION_FOR_BUTTON_ARRAY"></span>按钮数组的 ACPI 说明
 
 
 ``` syntax
@@ -77,7 +76,7 @@ Device(BTT00N)
 }
 ```
 
-## <a name="span-idacpidescriptionforlaptopslatemodeindicatorspanspan-idacpidescriptionforlaptopslatemodeindicatorspanspan-idacpidescriptionforlaptopslatemodeindicatorspanacpi-description-for-laptopslate-mode-indicator"></a><span id="ACPI_description_for_laptop_slate_mode_indicator"></span><span id="acpi_description_for_laptop_slate_mode_indicator"></span><span id="ACPI_DESCRIPTION_FOR_LAPTOP_SLATE_MODE_INDICATOR"></span>便携式计算机/盖板模式指示器的 ACPI 描述
+## <a name="span-idacpi_description_for_laptop_slate_mode_indicatorspanspan-idacpi_description_for_laptop_slate_mode_indicatorspanspan-idacpi_description_for_laptop_slate_mode_indicatorspanacpi-description-for-laptopslate-mode-indicator"></a><span id="ACPI_description_for_laptop_slate_mode_indicator"></span><span id="acpi_description_for_laptop_slate_mode_indicator"></span><span id="ACPI_DESCRIPTION_FOR_LAPTOP_SLATE_MODE_INDICATOR"></span>笔记本电脑/石板模式指示器的 ACPI 说明
 
 
 ``` syntax
@@ -91,7 +90,7 @@ Device(CONV)
 }
 ```
 
-## <a name="span-idacpidescriptionfordockingmodeindicatorspanspan-idacpidescriptionfordockingmodeindicatorspanspan-idacpidescriptionfordockingmodeindicatorspanacpi-description-for-docking-mode-indicator"></a><span id="ACPI_description_for_docking_mode_indicator"></span><span id="acpi_description_for_docking_mode_indicator"></span><span id="ACPI_DESCRIPTION_FOR_DOCKING_MODE_INDICATOR"></span>针对停靠模式指示器 ACPI 描述
+## <a name="span-idacpi_description_for_docking_mode_indicatorspanspan-idacpi_description_for_docking_mode_indicatorspanspan-idacpi_description_for_docking_mode_indicatorspanacpi-description-for-docking-mode-indicator"></a><span id="ACPI_description_for_docking_mode_indicator"></span><span id="acpi_description_for_docking_mode_indicator"></span><span id="ACPI_DESCRIPTION_FOR_DOCKING_MODE_INDICATOR"></span>停靠模式指示器的 ACPI 说明
 
 
 ``` syntax

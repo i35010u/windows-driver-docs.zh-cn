@@ -1,24 +1,23 @@
 ---
 title: 使用字符串对象
-description: 本主题介绍 Windows 驱动程序框架 (WDF) 为字符串对象提供的支持。 它同时适用于内核模式驱动程序框架 (KMDF) 。
-ms.assetid: b1d52a18-ebd5-4ba7-b5c7-3ef3d298c82e
+description: 本主题介绍 Windows 驱动程序框架 (WDF) 为字符串对象提供的支持。 它同时适用于 Kernel-Mode Driver Framework (KMDF) 。
 keywords:
 - 字符串对象 WDK KMDF
 - framework 对象 WDK KMDF，string 对象
 - Unicode 字符串 WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7a5a6895a2cca0cf05068b18f84603719a64df45
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 2e4802a7b51663811487f856d98ed98228651050
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89191197"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96827393"
 ---
 # <a name="using-string-objects"></a>使用字符串对象
 
 
-本主题介绍 Windows 驱动程序框架 (WDF) 为字符串对象提供的支持。 它同时适用于内核模式驱动程序框架 (KMDF) 驱动程序和用户模式驱动程序框架 (UMDF) 驱动程序，从版本2开始。
+本主题介绍 Windows 驱动程序框架 (WDF) 为字符串对象提供的支持。 它适用于从版本2开始 Kernel-Mode Driver Framework (KMDF) 驱动程序和 User-Mode Driver Framework (UMDF) 驱动程序。
 
 
 

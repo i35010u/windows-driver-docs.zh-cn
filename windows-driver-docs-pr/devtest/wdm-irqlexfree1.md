@@ -1,7 +1,6 @@
 ---
 title: 'IrqlExFree1 规则 (wdm) '
 description: IrqlExFree1 规则指定以正确的 IRQL 调用 ExFreePool 和 ExFreePoolWithTag。
-ms.assetid: D0ECF4C3-8207-4618-949E-D80DBC38DBE3
 ms.date: 05/21/2018
 keywords:
 - 'IrqlExFree1 规则 (wdm) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 67eeaf37a1b87c87c7b353af83d523073cfb6795
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: a7b6443073416c116e656a37cc48ee02c118ed63
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106304"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96828121"
 ---
 # <a name="irqlexfree1-rule-wdm"></a>IrqlExFree1 规则 (wdm) 
 
 
-**IrqlExFree1**规则指定以正确的 IRQL 调用[**ExFreePool**](/windows-hardware/drivers/ddi/ntddk/nf-ntddk-exfreepool)和[**ExFreePoolWithTag**](/windows-hardware/drivers/ddi/wdm/nf-wdm-exfreepoolwithtag) 。
+**IrqlExFree1** 规则指定以正确的 IRQL 调用 [**ExFreePool**](/windows-hardware/drivers/ddi/ntddk/nf-ntddk-exfreepool)和 [**ExFreePoolWithTag**](/windows-hardware/drivers/ddi/wdm/nf-wdm-exfreepoolwithtag) 。
 
 **驱动程序模型： WDM**
 

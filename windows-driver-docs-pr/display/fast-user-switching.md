@@ -1,7 +1,6 @@
 ---
 title: 快速用户切换
 description: 快速用户切换
-ms.assetid: 79e13d56-f71f-4a7d-9069-de4821d29d94
 keywords:
 - 显示驱动程序模型 WDK Windows 2000，快速用户切换
 - Windows 2000 显示器驱动程序模型 WDK，快速用户切换
@@ -12,12 +11,12 @@ keywords:
 - 显示驱动程序 WDK Windows 2000，快速用户切换
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c0e95c082c3fd1c1aa7215b5870212260bf3865c
-ms.sourcegitcommit: df7d6565a4cd2659c46d5fd83ef04a1672c60dbf
+ms.openlocfilehash: 45c8597356615a5e7750603eda39dd4707fc9305
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/26/2020
-ms.locfileid: "85382726"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96827313"
 ---
 # <a name="fast-user-switching"></a>快速用户切换
 

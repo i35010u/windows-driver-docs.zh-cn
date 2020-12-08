@@ -1,7 +1,6 @@
 ---
 title: 即插即用设备安装签名要求
 description: 即插即用设备安装签名要求
-ms.assetid: 92527b24-b29a-4a78-886d-fafd620090d1
 keywords:
 - 驱动程序签名 WDK，PnP 设备安装
 - 对驱动程序进行签名 WDK，PnP 设备安装
@@ -11,12 +10,12 @@ keywords:
 - 即插即用 WDK 驱动程序签名
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7d364570c0d13fd36abf8770a4c084342091d2b5
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 1986ce59eca43f7c9555c5d6b7ff6ed2b26cb970
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89094863"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96827061"
 ---
 # <a name="pnp-device-installation-signing-requirements"></a>即插即用设备安装签名要求
 

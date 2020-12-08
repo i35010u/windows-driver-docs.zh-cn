@@ -1,17 +1,16 @@
 ---
 title: 在移动宽带元数据创作向导中指定应用程序
 description: 在移动宽带元数据创作向导中指定应用程序
-ms.assetid: 58E95326-94C4-444F-BFE2-0E7DC8112119
 keywords:
 - 在移动宽带元数据创作向导中指定应用程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c303e70f76e80a236e66f754a9bf9192652b3b3d
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 2ab23061e4be4e020251074b75056050634ee301
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89384319"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96826673"
 ---
 # <a name="specify-applications-in-the-mobile-broadband-metadata-authoring-wizard"></a>在移动宽带元数据创作向导中指定应用程序
 
@@ -27,7 +26,7 @@ ms.locfileid: "89384319"
 - **发布者**。 在应用程序清单的 Package 元素中的 Identity 元素中输入 "发布服务器" 属性的值。 此值必须与计算机上安装的发布者证书匹配。
 - **应用 ID**。 在应用程序清单的应用程序元素中输入 ID 属性的值。
 
-**包名称**、**发布者**和**应用 ID**全部必须与应用程序包中的信息相匹配。 appxmanifest.xml。
+**包名称**、**发布者** 和 **应用 ID** 全部必须与应用程序包中的信息相匹配。 appxmanifest.xml。
 
 下面是应用程序清单的示例：
 
@@ -63,9 +62,9 @@ ms.locfileid: "89384319"
 
 ## <a name="privileged-applications"></a>特权应用程序
 
-要使 Microsoft Store 设备应用访问特权移动宽带接口，需要在 **特权应用程序**下指定它。
+要使 Microsoft Store 设备应用访问特权移动宽带接口，需要在 **特权应用程序** 下指定它。
 
-若要指定特权应用程序，请在 **特权应用程序**下填写以下字段：
+若要指定特权应用程序，请在 **特权应用程序** 下填写以下字段：
 
 >[!NOTE]
 >有关特权设备接口属性密钥的信息，请参阅 [DEVPKEY \_ DeviceInterface \_ 限制](../install/devpkey-deviceinterface-restricted.md)。

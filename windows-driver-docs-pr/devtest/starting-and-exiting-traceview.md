@@ -1,19 +1,18 @@
 ---
 title: 启动和退出 TraceView
 description: 启动和退出 TraceView
-ms.assetid: ebadf441-c28a-4d8e-ae83-444c8a68f62b
 keywords:
-- TraceView WDK 启动
-- TraceView WDK，正在退出
-- TraceView WDK，命令行接口
+- TraceView WDK，开始
+- TraceView WDK，退出
+- TraceView WDK，命令行界面
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2c97ae0ddd275c3988108ab32d72be4cd2b64ec7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a31431f6624dba04eaae9863c9530463a366d0df
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63387908"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96826641"
 ---
 # <a name="starting-and-exiting-traceview"></a>启动和退出 TraceView
 
@@ -21,27 +20,27 @@ ms.locfileid: "63387908"
 ## <span id="ddk_starting_traceview_tools"></span><span id="DDK_STARTING_TRACEVIEW_TOOLS"></span>
 
 
-本主题说明如何打开和关闭 TraceView 窗口。
+本主题说明如何打开和关闭 "TraceView" 窗口。
 
-### <a name="span-idstartingtraceviewspanspan-idstartingtraceviewspanstarting-traceview"></a><span id="starting_traceview"></span><span id="STARTING_TRACEVIEW"></span>起始 TraceView
+### <a name="span-idstarting_traceviewspanspan-idstarting_traceviewspanstarting-traceview"></a><span id="starting_traceview"></span><span id="STARTING_TRACEVIEW"></span>启动 TraceView
 
-若要启动 TraceView，在 Windows 资源管理器中，导航到\\工具\\跟踪\\i386 子目录的 WDK 和双击**TraceView.exe**图标。
+若要启动 TraceView，请在 Windows 资源管理器中，导航到 \\ WDK 的工具 \\ 跟踪 \\ i386 子目录，然后双击 **TraceView.exe** 图标。
 
-或者，在命令提示符窗口中，导航到\\工具\\跟踪\\WDK 和类型的 i386 子目录**traceview**。
+或者，在命令提示符窗口中，导航到 \\ WDK 的工具 \\ 跟踪 \\ i386 子目录，然后键入 **traceview**。
 
-### <a name="span-idexitingtraceviewspanspan-idexitingtraceviewspanexiting-traceview"></a><span id="exiting_traceview"></span><span id="EXITING_TRACEVIEW"></span>退出 TraceView
+### <a name="span-idexiting_traceviewspanspan-idexiting_traceviewspanexiting-traceview"></a><span id="exiting_traceview"></span><span id="EXITING_TRACEVIEW"></span>正在退出 TraceView
 
-若要在退出 TraceView，**文件**菜单上，单击**退出**，或单击 TraceView 窗口右上角的关闭按钮。
+若要退出 TraceView，请在 " **文件** " 菜单上，单击 " **退出**"，或单击 TraceView 窗口右上角的 "关闭" 按钮。
 
-退出时 TraceView，它禁用跟踪提供程序中运行的跟踪会话，它启动，停止在 TraceView 窗口中，运行的所有跟踪会话，然后关闭。 此过程可能需要几秒钟即可完成，在此期间，Windows 可能会通知你 TraceView 未响应。 不强制 TraceView 准备就绪之前关闭。
+退出 TraceView 时，它将禁用正在启动的跟踪会话中运行的跟踪提供程序，停止正在 TraceView 窗口中运行的所有跟踪会话，然后关闭。 此过程可能需要几秒钟才能完成，在此过程中，Windows 可能会通知你 TraceView 未响应。 不要强制 TraceView 在准备就绪之前关闭。
 
-退出 TraceView 不会停止跟踪会话通过其他方法，包括[TraceView 命令行界面](traceview-command-line-interface.md)。 这些会话将继续运行，直到你停止它们或关闭 Windows。
+退出 TraceView 不会停止由其他方法启动的跟踪会话，包括 [TraceView 命令行接口](traceview-command-line-interface.md)。 这些会话将继续运行，直到你停止它们或关闭 Windows。
 
-### <a name="span-idstartingthetraceviewcommandlineinterfacespanspan-idstartingthetraceviewcommandlineinterfacespanstarting-the-traceview-command-line-interface"></a><span id="starting_the_traceview_command_line_interface"></span><span id="STARTING_THE_TRACEVIEW_COMMAND_LINE_INTERFACE"></span>启动 TraceView 命令行接口
+### <a name="span-idstarting_the_traceview_command_line_interfacespanspan-idstarting_the_traceview_command_line_interfacespanstarting-the-traceview-command-line-interface"></a><span id="starting_the_traceview_command_line_interface"></span><span id="STARTING_THE_TRACEVIEW_COMMAND_LINE_INTERFACE"></span>启动 TraceView Command-Line 接口
 
-若要开始在命令行 TraceView，请打开命令提示符窗口，导航到\\工具\\跟踪\\i386 目录的 WDK，并键入 TraceView 命令，如**traceview /？**。 (如果键入**traceview**不带任何参数，TraceView 窗口随即打开。)
+若要在命令行中启动 TraceView，请打开命令提示符窗口，导航到 \\ WDK 的 tools \\ 跟踪 \\ i386 目录，然后键入 TraceView 命令，如 **TraceView/？**。  (如果键入 **traceview** 而不带参数，则 traceview 窗口打开。 ) 
 
-有关 TraceView 命令的信息，请参阅[TraceView 命令行界面](traceview-command-line-interface.md)。
+有关 TraceView 命令的信息，请参阅 [TraceView Command-Line Interface](traceview-command-line-interface.md)。
 
  
 

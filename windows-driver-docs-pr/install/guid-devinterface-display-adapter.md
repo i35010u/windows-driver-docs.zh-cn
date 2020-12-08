@@ -1,7 +1,6 @@
 ---
 title: GUID_DEVINTERFACE_DISPLAY_ADAPTER
 description: GUID_DEVINTERFACE_DISPLAY_ADAPTER
-ms.assetid: 22f705b0-bc79-43e8-8445-adf611ae1429
 keywords:
 - GUID_DEVINTERFACE_DISPLAY_ADAPTER 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: c4a41b086c7157184cefc7633014b35f3853e409
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 123e4ae01eca1f640b1ec300836eb13a793bb66b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89097199"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96827075"
 ---
 # <a name="guid_devinterface_display_adapter"></a>GUID_DEVINTERFACE_DISPLAY_ADAPTER
 
@@ -76,7 +75,7 @@ ms.locfileid: "89097199"
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**GUID_DISPLAY_DEVICE_ARRIVAL**](guid-display-device-arrival.md)

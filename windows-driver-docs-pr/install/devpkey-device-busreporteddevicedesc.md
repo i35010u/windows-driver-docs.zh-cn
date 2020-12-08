@@ -1,7 +1,6 @@
 ---
 title: DEVPKEY_Device_BusReportedDeviceDesc
 description: DEVPKEY_Device_BusReportedDeviceDesc
-ms.assetid: 3a03b4f0-728c-4a15-9c97-03d03f65afc7
 keywords:
 - DEVPKEY_Device_BusReportedDeviceDesc 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: b9d8c9990c1229721435cc4f02a3a11958777842
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 500126b8a3935037dfbd7ec110dd59b36dea498a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90717116"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96827673"
 ---
 # <a name="devpkey_device_busreporteddevicedesc"></a>DEVPKEY_Device_BusReportedDeviceDesc
 

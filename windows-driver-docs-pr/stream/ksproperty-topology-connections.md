@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ 拓扑 \_ 连接
 description: KSPROPERTY \_ 拓扑 \_ 连接属性查询 KS 筛选器节点之间的所有连接。
-ms.assetid: 8ea77244-14c1-4e27-9b96-e0f5a6c491e9
 keywords:
 - KSPROPERTY_TOPOLOGY_CONNECTIONS 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5ad911587d54c70811eeb07c9a0ce876cc1ce337
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 52b576fcf933278103a1bbd07e8d2da03cfcc608
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104367"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96828345"
 ---
 # <a name="ksproperty_topology_connections"></a>KSPROPERTY \_ 拓扑 \_ 连接
 
@@ -82,7 +81,7 @@ KSMULTIPLE \_ 项标头后跟一个 KSTOPOLOGY \_ 连接结构，该结构描述
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSPROPERTY**](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)

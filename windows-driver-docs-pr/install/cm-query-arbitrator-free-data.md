@@ -1,7 +1,6 @@
 ---
 title: CM_Query_Arbitrator_Free_Data
 description: CM_Query_Arbitrator_Free_Data
-ms.assetid: 868e5503-fd66-4455-851a-a40d518ddfe6
 keywords:
 - CM_Query_Arbitrator_Free_Data 设备和驱动程序安装
 topic_type:
@@ -12,13 +11,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 2eb18f5841fc33845f08ad405effe7afcf1603e3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 88a6106b8e91b25ba29530baa357cd73f8f297ef
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63354850"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96827951"
 ---
-# <a name="cmqueryarbitratorfreedata"></a>CM_Query_Arbitrator_Free_Data
+# <a name="cm_query_arbitrator_free_data"></a>CM_Query_Arbitrator_Free_Data
 
 此函数保留供系统使用。

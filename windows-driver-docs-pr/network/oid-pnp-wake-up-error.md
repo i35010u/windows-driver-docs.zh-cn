@@ -1,28 +1,27 @@
 ---
 title: OID_PNP_WAKE_UP_ERROR
 description: OID_PNP_WAKE_UP_ERROR
-ms.assetid: e6386a35-7077-45b3-bc0c-164477168a55
 ms.date: 08/08/2017
-keywords: -从 Windows Vista 开始 OID_PNP_WAKE_UP_ERROR 网络驱动程序
+keywords: -从 Windows Vista 开始 OID_PNP_WAKE_UP_ERROR 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 49e020892478c0c86c55a916ce53e836801b8bd7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 807329e2f8dd89311da555fc5103fe702ed11cb6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63364173"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96827525"
 ---
-# <a name="oidpnpwakeuperror"></a>OID\_PNP\_WAKE\_UP\_ERROR
+# <a name="oid_pnp_wake_up_error"></a>OID \_ PNP \_ 唤醒 \_ \_ 错误
 
 
 
 
 
-可选的 OID\_PNP\_唤醒\_向上\_错误 OID 指示 false 的唤醒 ups 微型端口驱动程序的网络适配器的发送信号的数目。 网络适配器时不应具有唤醒系统时，会发生 false 唤醒。 例如，网络适配器可能会错误地唤醒系统由于不精确的模式匹配。
+可选 OID \_ PNP \_ 唤醒 \_ \_ 错误 OID 指示微型端口驱动程序的网络适配器发出信号的虚假唤醒的数目。 如果网络适配器在不应安装时唤醒系统，则会发生虚假唤醒。 例如，由于模式匹配不精确，网络适配器可能会错误地唤醒系统。
 
-此 OID 的数据类型为 ULONG 值。
+此 OID 的数据类型是 ULONG 值。
 
-在其中收到此 OID 请求时的上边缘的中间驱动程序必须始终将对基础微型端口驱动程序的请求传播通过调用 Ndis (Co) 请求。
+在其中，上边缘接收此 OID 请求的中间驱动程序必须始终通过调用 Ndis (Co) 请求将请求传播到基础微型端口驱动程序。
 
 <a name="requirements"></a>要求
 ------------
@@ -34,12 +33,12 @@ ms.locfileid: "63364173"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Version</p></td>
-<td><p>NDIS 5.1 和 NDIS 6.0 及更高版本支持。</p></td>
+<td><p>版本</p></td>
+<td><p>支持 NDIS 5.1 和 NDIS 6.0 及更高版本。</p></td>
 </tr>
 <tr class="even">
-<td><p>Header</p></td>
-<td>Ntddndis.h （包括 Ndis.h）</td>
+<td><p>标头</p></td>
+<td>Ntddndis (包含 Ndis .h) </td>
 </tr>
 </tbody>
 </table>

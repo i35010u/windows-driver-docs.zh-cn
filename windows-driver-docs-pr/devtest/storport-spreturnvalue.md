@@ -1,7 +1,6 @@
 ---
 title: 'SpReturnValue 规则 (storport) '
 description: 此规则验证驱动程序的 HwStorFindAdapter 和 VirtualHwStorFindAdapter 实现是否返回有效状态。 有效状态为以下某个 SP \_ 返回 \_ ，sp \_ 返回 \_ 错误，sp \_ 返回错误 \_ \_ 配置，或者 \_ \_ 找不到 sp 返回 \_ 。
-ms.assetid: 4F9E0FE3-4B1B-4C06-9DA0-8307C43E0DBA
 ms.date: 05/21/2018
 keywords:
 - 'SpReturnValue 规则 (storport) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 7f601fe6455f7758ac91c4c732d6ed9ab90184a3
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 93ed6e980fe52c2c34293abb432598302befd665
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107048"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96828149"
 ---
 # <a name="spreturnvalue-rule-storport"></a>SpReturnValue 规则 (storport) 
 
 
-此规则验证驱动程序的 [**HwStorFindAdapter**](/windows-hardware/drivers/ddi/storport/nc-storport-hw_find_adapter) 和 [**VirtualHwStorFindAdapter**](/windows-hardware/drivers/ddi/storport/nc-storport-virtual_hw_find_adapter) 实现是否返回有效状态。 有效状态为以下状态之一：已 ** \_ \_ 找到 sp**，sp 返回 ** \_ \_ 错误**， **Sp 返回错误 \_ \_ \_ 配置**，或 ** \_ \_ \_ 找不到 sp 返回**。
+此规则验证驱动程序的 [**HwStorFindAdapter**](/windows-hardware/drivers/ddi/storport/nc-storport-hw_find_adapter) 和 [**VirtualHwStorFindAdapter**](/windows-hardware/drivers/ddi/storport/nc-storport-virtual_hw_find_adapter) 实现是否返回有效状态。 有效状态为以下状态之一：已 **\_ \_ 找到 sp**，sp 返回 **\_ \_ 错误**， **Sp 返回错误 \_ \_ \_ 配置**，或 **\_ \_ \_ 找不到 sp 返回**。
 
 **驱动程序模型： Storport**
 

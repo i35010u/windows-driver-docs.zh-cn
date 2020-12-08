@@ -1,7 +1,6 @@
 ---
 title: 使用 Winsock 内核函数与事件回调函数
 description: 使用 Winsock 内核函数与
-ms.assetid: 63a3f933-f74a-4cb8-a7a9-9498e1c17afa
 keywords:
 - Winsock 内核 WDK 网络，函数
 - WSK WDK 网络，函数
@@ -12,12 +11,12 @@ keywords:
 - 事件回调函数 WDK Winsock 内核
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 07f9e269c4b34560abd9f9d28f6ff65e520c3335
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 96b174b01d4ca10d4be18c851b00e2155f0184f1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89208523"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96828435"
 ---
 # <a name="using-winsock-kernel-functions-vs-event-callback-functions"></a>使用 Winsock 内核函数与事件回调函数
 
@@ -48,7 +47,7 @@ ms.locfileid: "89208523"
 
 -   WSK 子系统提供数据缓冲区用于数据传输操作。 WSK 应用程序必须立即或在合理的时间内将这些数据缓冲区释放回 WSK 子系统，以便 WSK 子系统不会用尽内存资源。 因此，WSK 应用程序可能需要将数据从 WSK 子系统拥有的数据缓冲区复制到其自己的数据缓冲区。
 
-**注意**   上述列表并不一定详尽。 选择哪种方法是特定 WSK 应用程序的最佳选择时，可能需要考虑其他一些事项。
+**注意**  上述列表并不一定详尽。 选择哪种方法是特定 WSK 应用程序的最佳选择时，可能需要考虑其他一些事项。
 
  
 
