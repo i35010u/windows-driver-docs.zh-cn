@@ -1,26 +1,25 @@
 ---
-title: KSPROPSETID\_TelephonyTopology
-description: KSPROPSETID\_TelephonyTopology 属性集是用于的访问终结点与以及移动电话呼叫量的移动电话音频路由相关联。
-ms.assetid: FB003065-7BC9-4DDD-88CA-4BFA98AAF61E
+title: KSPROPSETID \_ TelephonyTopology
+description: KSPROPSETID \_ TelephonyTopology 属性集用于访问与移动电话音频路由关联的终结点，以及移动电话呼叫量。
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: eece039789aa8c1073deb738dce076d99bbdc2f2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 06f50d325ca2e06a404fed378c1fc7823f9762a8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332447"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801063"
 ---
-# <a name="kspropsetidtelephonytopology"></a>KSPROPSETID\_TelephonyTopology
+# <a name="kspropsetid_telephonytopology"></a>KSPROPSETID \_ TelephonyTopology
 
 
-`KSPROPSETID_TelephonyTopology`属性集是用于的访问终结点与以及移动电话呼叫量的移动电话音频路由相关联。
+`KSPROPSETID_TelephonyTopology`使用属性集访问与移动电话音频路由关联的终结点，以及移动电话呼叫量。
 
 `KSPROPSETID_TelephonyTopology`属性集包含以下属性：
 
--   [**KSPROPERTY\_电话\_ENDPOINTIDPAIR**](ksproperty-telephony-endpointidpair.md)
+-   [**KSPROPERTY \_ 电话服务 \_ ENDPOINTIDPAIR**](ksproperty-telephony-endpointidpair.md)
 
--   [**KSPROPERTY\_电话\_卷**](ksproperty-telephony-volume.md)
+-   [**KSPROPERTY \_ 电话 \_ 卷**](ksproperty-telephony-volume.md)
 
  
 

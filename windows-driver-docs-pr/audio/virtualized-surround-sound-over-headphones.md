@@ -1,20 +1,19 @@
 ---
 title: 耳机的虚拟化环绕声
 description: 耳机的虚拟化环绕声
-ms.assetid: 9ed47254-413d-4efc-bfbf-929d0428e2c2
 ms.date: 11/07/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 1b742b86a2022e971a3499e64feff740e62f9f02
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 935cd8a2b4fa4a5a270035d2972d0f0ab9bd1df3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328501"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96800453"
 ---
 # <a name="virtualized-surround-sound-over-headphones"></a>耳机的虚拟化环绕声
 
 
-虚拟化的环绕声允许用户将戴耳机来区分从前到后也按从左到右的声音。 这是通过传输空间帮助大脑本地化声音并将它们集成到声音字段的提示。 发出的声音感觉像超越耳机，创建"外部 head"侦听体验效果。 使用先进的技术称为头相关传输函数 (HRTF) 可实现此效果。 HRTF 生成基于人机头的形状的声学提示。 这些提示不仅可帮助查找方向的侦听器和源的声音，但它还增强了围绕侦听器的声学环境的类型。
+通过虚拟化环绕声，戴耳机的用户可将声音从正面和背面区分开来。 这是通过传输空间提示来实现的，这些提示有助于大脑本地化声音并将声音集成到声音字段。 这使得声音看起来像是超越耳机，这就是创建 "外部" 收听体验。 这种效果是通过使用名为 Head 的高级技术 (HRTF) 来实现的。 HRTF 生成基于人体的声音提示。 这些提示不仅有助于侦听器找到声音的方向和来源，还增强了侦听器周围声音环境的类型。
 
  
 

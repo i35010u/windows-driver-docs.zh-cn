@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ SOUNDDETECTOR \_ 重置
 description: KSPROPERTY \_ SOUNDDETECTOR \_ RESET 属性将检测程序重置为不带模式集的 unarmed 状态。
-ms.assetid: 3B9B43C0-31EE-4490-AD29-98DA81D1664D
 keywords:
 - KSPROPERTY_SOUNDDETECTOR_RESET 音频设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 09/25/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: b11b0780ab99852b8571612c65666bc09a737de3
-ms.sourcegitcommit: cfd4d8ee889c6a3feed79ae112662f6c095b6a36
+ms.openlocfilehash: 11e141c421eb1d764f8c0f2d61f7b8110ae2fffa
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94417419"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801172"
 ---
 # <a name="ksproperty_sounddetector_reset"></a>KSPROPERTY \_ SOUNDDETECTOR \_ 重置
 
@@ -39,7 +38,7 @@ ms.locfileid: "94417419"
 <tr class="header">
 <th align="left">获取</th>
 <th align="left">设置</th>
-<th align="left">Target</th>
+<th align="left">目标</th>
 <th align="left">属性描述符类型</th>
 <th align="left">属性值类型</th>
 </tr>
@@ -59,7 +58,7 @@ ms.locfileid: "94417419"
 
 属性值为布尔值。 True 表示重置，忽略 false。
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 当操作系统要执行以下操作时，会调用 reset，并将值设置为 true：
@@ -67,7 +66,7 @@ ms.locfileid: "94417419"
 - Unarm 关键字检测器。
 - 清除任何已设置的 [**KSPROPERTY \_ SOUNDDETECTOR \_ 模式**](ksproperty-sounddetector-patterns.md) 。
 
-如果未设置关键字模式，则设置为 true ( [**KSPROPERTY \_ SOUNDDETECTOR \_ 模式**](ksproperty-sounddetector-patterns.md) 为空) 不起作用。
+如果未设置关键字模式，则设置为 true ([**KSPROPERTY \_ SOUNDDETECTOR \_ 模式**](ksproperty-sounddetector-patterns.md) 为空) 不起作用。
 
 <a name="requirements"></a>要求
 ------------

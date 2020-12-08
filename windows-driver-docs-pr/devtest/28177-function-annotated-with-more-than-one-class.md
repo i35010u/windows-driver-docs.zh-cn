@@ -1,24 +1,23 @@
 ---
 title: C28177
-description: 警告 C28177 函数将多个函数类批注。 除其中一个将被忽略。
-ms.assetid: 59692D14-9065-4662-B54C-BB618AAC0ED1
+description: 警告 C28177 函数用多个函数类进行批注。 除一个以外的所有项都将被忽略。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 f1_keywords:
 - C28177
-ms.openlocfilehash: bd28fb7c0e1f771c97a131cecfc8f6a3add389e4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a8a5e297006e810eb1da47d10c7c101d857e2673
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391819"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96799809"
 ---
 # <a name="c28177"></a>C28177
 
 
-警告 C28177:函数将多个函数类批注。 除其中一个将被忽略。
+警告 C28177：函数已用多个函数类进行批注。 除一个以外的所有项都将被忽略。
 
-Typedef 链时，可以生成此警告。
+如果有一个 typedef 链，则会生成此警告。
 
  
 

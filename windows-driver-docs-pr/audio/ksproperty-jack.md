@@ -1,7 +1,6 @@
 ---
-title: KSPROPERTY\_JACK 枚举
-description: KSPROPERTY\_JACK 枚举定义新属性的音频插孔结构使用的 Id。
-ms.assetid: d20a0b08-f20e-43a2-9ff5-eb0b9d1ea54e
+title: KSPROPERTY \_ 插座枚举
+description: KSPROPERTY \_ 插座枚举定义音频插孔结构使用的新属性 id。
 keywords:
 - KSPROPERTY_JACK 枚举音频设备
 topic_type:
@@ -14,26 +13,26 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a83cc08297fa57ff20ecc4c8a55edb2bc1b58c55
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 24126c7c32e371e85001e87a51d14ddcffa58e33
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332693"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801207"
 ---
-# <a name="kspropertyjack-enumeration"></a>KSPROPERTY\_JACK 枚举
+# <a name="ksproperty_jack-enumeration"></a>KSPROPERTY \_ 插座枚举
 
 
-`KSPROPERTY_JACK`枚举定义新属性的音频插孔结构使用的 Id。
+`KSPROPERTY_JACK`枚举定义音频插孔结构使用的新属性 id。
 
 <a name="syntax"></a>语法
 ------
 
 ```ManagedCPlusPlus
 typedef enum  { 
-  KSPROPERTY_JACK_DESCRIPTION   = 1,
-  KSPROPERTY_JACK_DESCRIPTION2  = 2,
-  KSPROPERTY_JACK_SINK_INFO     = 3,
+  KSPROPERTY_JACK_DESCRIPTION   = 1,
+  KSPROPERTY_JACK_DESCRIPTION2  = 2,
+  KSPROPERTY_JACK_SINK_INFO     = 3,
   KSPROPERTY_JACK_CONTAINERID
 } KSPROPERTY_JACK;
 ```
@@ -41,17 +40,17 @@ typedef enum  {
 <a name="constants"></a>常量
 ---------
 
-<span id="KSPROPERTY_JACK_DESCRIPTION"></span><span id="ksproperty_jack_description"></span>**KSPROPERTY\_JACK\_说明**  
-指定的 ID [ **KSPROPERTY\_JACK\_说明**](ksproperty-jack-description.md)属性。
+<span id="KSPROPERTY_JACK_DESCRIPTION"></span><span id="ksproperty_jack_description"></span>**KSPROPERTY \_ 插孔 \_ 说明**  
+指定 [**KSPROPERTY \_ 插座 \_ DESCRIPTION**](ksproperty-jack-description.md) 属性的 ID。
 
-<span id="KSPROPERTY_JACK_DESCRIPTION2"></span><span id="ksproperty_jack_description2"></span>**KSPROPERTY\_JACK\_DESCRIPTION2**  
-指定的 ID [ **KSPROPERTY\_JACK\_DESCRIPTION2** ](ksproperty-jack-description2.md)属性。
+<span id="KSPROPERTY_JACK_DESCRIPTION2"></span><span id="ksproperty_jack_description2"></span>**KSPROPERTY \_ 插座 \_ DESCRIPTION2**  
+指定 [**KSPROPERTY \_ 插座 \_ DESCRIPTION2**](ksproperty-jack-description2.md) 属性的 ID。
 
-<span id="KSPROPERTY_JACK_SINK_INFO"></span><span id="ksproperty_jack_sink_info"></span>**KSPROPERTY\_JACK\_接收器\_信息**  
-指定的 ID [ **KSPROPERTY\_JACK\_接收器\_信息**](ksproperty-jack-sink-info.md)属性。
+<span id="KSPROPERTY_JACK_SINK_INFO"></span><span id="ksproperty_jack_sink_info"></span>**KSPROPERTY \_ 插座 \_ \_ 信息**  
+指定 [**KSPROPERTY \_ 插座 \_ \_ 信息**](ksproperty-jack-sink-info.md) 属性的 ID。
 
-<span id="KSPROPERTY_JACK_CONTAINERID"></span><span id="ksproperty_jack_containerid"></span>**KSPROPERTY\_JACK\_CONTAINERID**  
-指定的 ID [ **KSPROPERTY\_JACK\_CONTAINERID** ](ksproperty-jack-containerid.md)属性。
+<span id="KSPROPERTY_JACK_CONTAINERID"></span><span id="ksproperty_jack_containerid"></span>**KSPROPERTY \_ 插座 \_ CONTAINERID**  
+指定 [**KSPROPERTY \_ 插座 \_ CONTAINERID**](ksproperty-jack-containerid.md) 属性的 ID。
 
 <a name="remarks"></a>备注
 -------
@@ -68,20 +67,20 @@ typedef enum  {
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>Version</p></td>
+<td align="left"><p>版本</p></td>
 <td align="left"><p>在 Windows 7 和更高版本的 Windows 操作系统中可用。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>Header</p></td>
-<td align="left">Ksmedia.h （包括 Ksmedia.h）</td>
+<td align="left"><p>标头</p></td>
+<td align="left">Ksmedia (包含 Ksmedia) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[**KSPROPERTY\_JACK\_说明**](ksproperty-jack-description.md)
+[**KSPROPERTY \_ 插孔 \_ 说明**](ksproperty-jack-description.md)
 
  
 

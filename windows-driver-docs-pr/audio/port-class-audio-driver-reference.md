@@ -1,15 +1,14 @@
 ---
 title: 端口类音频驱动程序参考
 description: 端口类音频驱动程序参考
-ms.assetid: ce68e3fd-9d7e-4d9e-b30a-09c07a3bb805
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6c8803a83102418747c7ae58adf10becd2bb6632
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: a7af569b5c07955eb57d6e0b710d13116d1b764a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89210485"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96800829"
 ---
 # <a name="port-class-audio-driver-reference"></a>端口类音频驱动程序参考
 

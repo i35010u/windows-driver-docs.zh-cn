@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ BDA \_ 控制 \_ PIN \_ ID
 description: 客户端使用 KSPROPERTY \_ BDA \_ 控制 \_ pin \_ ID 在 "BDA 模板连接" 列表中检索节点的控制 pin。
-ms.assetid: d40454a3-0938-4efb-8b06-06b599be8b20
 keywords:
 - KSPROPERTY_BDA_CONTROLLING_PIN_ID 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ddb3cba755f7fb6cf0f72baa5e4c65371bfeb3bb
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 4202ef8f04fc5cb3e23e08185ec9cb4c2a4df983
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89188145"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801231"
 ---
 # <a name="ksproperty_bda_controlling_pin_id"></a>KSPROPERTY \_ BDA \_ 控制 \_ PIN \_ ID
 
@@ -61,7 +60,7 @@ ms.locfileid: "89188145"
 
  
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 返回的值指定控制 pin ID。
@@ -78,7 +77,7 @@ ms.locfileid: "89188145"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Bdamedia (包含 Bdamedia) </td>
 </tr>
 </tbody>

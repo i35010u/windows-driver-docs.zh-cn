@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ SOUNDDETECTOR \_ MATCHRESULT
 description: KSPROPERTY \_ SOUNDDETECTOR \_ MATCHRESULT 属性包含匹配项的结果数据。
-ms.assetid: A4CDE539-3C99-4E66-B678-AF56BFFEE460
 keywords:
 - KSPROPERTY_SOUNDDETECTOR_MATCHRESULT 音频设备
 topic_type:
@@ -14,17 +13,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3027a7ab1901c528002250ef9ab9d74720d3ffc6
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 9e410c1a362659b70fc22239ddc80a9c52c2fcd7
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90101910"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801175"
 ---
 # <a name="ksproperty_sounddetector_matchresult"></a>KSPROPERTY \_ SOUNDDETECTOR \_ MATCHRESULT
 
 
-**KSPROPERTY \_ SOUNDDETECTOR \_ MATCHRESULT**属性包含匹配项的结果数据。
+**KSPROPERTY \_ SOUNDDETECTOR \_ MATCHRESULT** 属性包含匹配项的结果数据。
 
 ### <a name="span-idusage_summary_tablespanspan-idusage_summary_tablespanspan-idusage_summary_tablespanusage-summary-table"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用情况摘要表
 
@@ -82,7 +81,7 @@ ms.locfileid: "90101910"
 </tr>
 <tr class="even">
 <td align="left"><p>最低受支持的服务器</p></td>
-<td align="left"><p>Windows Server 2016</p></td>
+<td align="left"><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>标头</p></td>

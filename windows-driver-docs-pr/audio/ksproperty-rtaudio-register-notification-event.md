@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ RTAUDIO \_ 注册 \_ 通知 \_ 事件
 description: KSPROPERTY \_ RTAUDIO \_ REGISTER \_ notification \_ 事件属性为 DMA 驱动的事件通知注册用户模式事件。
-ms.assetid: 8fd5883a-ff86-4d27-af44-a82511c9e8eb
 keywords:
 - KSPROPERTY_RTAUDIO_REGISTER_NOTIFICATION_EVENT 音频设备
 topic_type:
@@ -14,17 +13,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a8ed6e00810c92523d5b2ac5e926a69b3de5ca8c
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 1d24130e46e20aa98dff30721d3c3cbef11457d1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90101930"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801183"
 ---
 # <a name="ksproperty_rtaudio_register_notification_event"></a>KSPROPERTY \_ RTAUDIO \_ 注册 \_ 通知 \_ 事件
 
 
-KSPROPERTY \_ RTAUDIO \_ REGISTER \_ notification \_ 事件属性为 DMA 驱动的事件通知注册用户模式事件。 成功调用 [** \_ \_ \_ 带有 \_ 通知的 KSPROPERTY RTAUDIO 缓冲区**](ksproperty-rtaudio-buffer-with-notification.md)后，必须注册事件。
+KSPROPERTY \_ RTAUDIO \_ REGISTER \_ notification \_ 事件属性为 DMA 驱动的事件通知注册用户模式事件。 成功调用 [**\_ \_ \_ 带有 \_ 通知的 KSPROPERTY RTAUDIO 缓冲区**](ksproperty-rtaudio-buffer-with-notification.md)后，必须注册事件。
 
 下表汇总了此属性的功能。
 

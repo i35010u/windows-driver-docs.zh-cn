@@ -1,7 +1,6 @@
 ---
 title: 资源列表对象
 description: 资源列表对象
-ms.assetid: a7f18d28-b78f-4b00-8cbb-9f62f5e88dfd
 keywords:
 - helper 对象 WDK 音频、资源列表对象
 - 资源列表对象 WDK 音频
@@ -13,12 +12,12 @@ keywords:
 - 启动-设备例程 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8ffac835ba6ed000b283f15d624dd02e91b89c1f
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: d7834111df56f2732c687fbf57c6a7d77edb772f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89210439"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96800703"
 ---
 # <a name="resource-list-objects"></a>资源列表对象
 
@@ -40,7 +39,7 @@ PortCls 系统驱动程序实现 [IResourceList](/windows-hardware/drivers/ddi/p
 
 有关资源类型的信息，请参阅 [硬件资源](../kernel/hardware-resources.md)。
 
-[IResourceList](/windows-hardware/drivers/ddi/portcls/nn-portcls-iresourcelist)对象封装资源列表的已翻译和未翻译的 (或 "原始" ) 版本。 有关转换和未转换资源的详细信息，请参阅 [将与总线相关的地址映射到虚拟地址](../kernel/mapping-bus-relative-addresses-to-virtual-addresses.md)。
+[IResourceList](/windows-hardware/drivers/ddi/portcls/nn-portcls-iresourcelist)对象封装资源列表的已翻译和未翻译的 (或 "原始" ) 版本。 有关转换和未转换资源的详细信息，请参阅 [将 Bus-Relative 地址映射到虚拟地址](../kernel/mapping-bus-relative-addresses-to-virtual-addresses.md)。
 
 [IResourceList](/windows-hardware/drivers/ddi/portcls/nn-portcls-iresourcelist)接口支持以下方法：
 
@@ -72,7 +71,7 @@ PortCls 系统驱动程序实现 [IResourceList](/windows-hardware/drivers/ddi/p
 
 在启动设备例程中，适配器驱动程序将启动所有适配器驱动程序的设备 (wave 设备、MIDI 设备等) 。 为了管理每个设备，适配器驱动程序会创建一个微型端口驱动程序对象及其关联的端口驱动程序对象。 适配器驱动程序将资源列表中不同设备的资源列表中的资源。 出于此目的，驱动程序通常会调用 [**PcNewResourceSublist**](/windows-hardware/drivers/ddi/portcls/nf-portcls-pcnewresourcesublist) 为每个设备创建一个资源列表对象。 然后，驱动程序从父列表中将所选资源复制到不同的子列表，并尽可能多地调用 [**IResourceList：： AddEntryFromParent**](/windows-hardware/drivers/ddi/portcls/nf-portcls-iresourcelist-addentryfromparent) 。 此外，适配器驱动程序可能会将某些资源分配给其自身。
 
-接下来，启动设备例程调用每个端口驱动程序的 [**IPort：： Init**](/windows-hardware/drivers/ddi/portcls/nf-portcls-iport-init) 方法，并传入设备的资源列表对象 (包含子列表的) 作为输入参数。 每个端口驱动程序的 **IPort：： init** 方法会调用相应的微型端口驱动程序的 IMiniport*Xxx*：： init 方法，这是以下内容之一：
+接下来，启动设备例程调用每个端口驱动程序的 [**IPort：： Init**](/windows-hardware/drivers/ddi/portcls/nf-portcls-iport-init) 方法，并传入设备的资源列表对象 (包含子列表的) 作为输入参数。 每个端口驱动程序的 **IPort：： init** 方法会调用相应的微型端口驱动程序的 IMiniport *Xxx*：： init 方法，这是以下内容之一：
 
 [**IMiniportDMus：： Init**](/windows-hardware/drivers/ddi/dmusicks/nf-dmusicks-iminiportdmus-init)
 
@@ -84,7 +83,7 @@ PortCls 系统驱动程序实现 [IResourceList](/windows-hardware/drivers/ddi/p
 
 [**IMiniportWavePci：： Init**](/windows-hardware/drivers/ddi/portcls/nf-portcls-iminiportwavepci-init)
 
-[**IPort：： init**](/windows-hardware/drivers/ddi/portcls/nf-portcls-iport-init)方法将其资源列表对象作为输入参数传递到 IMiniport*Xxx*：： init 方法。 然后，微型端口驱动程序可以使用资源列表中的 DMA 通道、中断和其他系统资源。
+[**IPort：： init**](/windows-hardware/drivers/ddi/portcls/nf-portcls-iport-init)方法将其资源列表对象作为输入参数传递到 IMiniport *Xxx*：： init 方法。 然后，微型端口驱动程序可以使用资源列表中的 DMA 通道、中断和其他系统资源。
 
 有关代码示例，请参阅 Microsoft Windows 驱动程序工具包 (WDK) 中的 Sb16 示例音频驱动程序。
 

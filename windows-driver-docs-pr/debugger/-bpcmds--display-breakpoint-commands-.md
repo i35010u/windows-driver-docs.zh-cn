@@ -1,9 +1,8 @@
 ---
 title: .bpcmds（显示断点命令）
-description: .Bpcmds 命令显示了用于设置每个当前断点的命令。
-ms.assetid: 96c13c54-8d85-414c-9775-a0373459dc7a
+description: Bpcmds 命令显示用于设置每个当前断点的命令。
 keywords:
-- .bpcmds （显示断点命令） Windows 调试
+- bpcmds (显示) Windows 调试的断点命令
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 8d77eebdf2b11279981f51560ab849f9ae985f4f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e6ad48f4d1c7a389f3f445252ef80ea82cfc1a62
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63336988"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96799971"
 ---
 # <a name="bpcmds-display-breakpoint-commands"></a>.bpcmds（显示断点命令）
 
 
-**.Bpcmds**命令显示了用于设置每个当前断点的命令。
+**Bpcmds** 命令显示用于设置每个当前断点的命令。
 
 ```dbgcmd
     .bpcmds
@@ -37,46 +36,46 @@ ms.locfileid: "63336988"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>模式</strong></p></td>
-<td align="left"><p>用户模式下，内核模式</p></td>
+<td align="left"><p><strong>交货</strong></p></td>
+<td align="left"><p>用户模式，内核模式</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>目标</strong></p></td>
-<td align="left"><p>实时、 崩溃转储</p></td>
+<td align="left"><p>实时，故障转储</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>平台</strong></p></td>
-<td align="left"><p>全部</p></td>
+<td align="left"><p>all</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-有关详细信息和如何使用断点、 其他断点的命令和控制断点的方法的示例，请参阅[使用断点](using-breakpoints.md)。
+有关如何使用断点的详细信息和示例，请参阅 [使用](using-breakpoints.md)断点和控制断点的方法。
 
 <a name="remarks"></a>备注
 -------
 
-如果不清楚一个地址、 的符号的引用，或一个符号是否设置了特定断点，使用 **.bpcmds**命令显示了哪个断点命令用于创建它。 用于创建断点的命令确定它的性质：
+如果不清楚是否在某个地址、符号引用或符号处设置了某个特定断点，请使用 **bpcmds** 命令显示用于创建该断点的命令。 用于创建断点的命令确定了其性质：
 
--   [**最佳实践 （设置断点）** ](bp--bu--bm--set-breakpoint-.md)命令的地址处设置断点。
+-   [**Bp (设置断点)**](bp--bu--bm--set-breakpoint-.md)命令在地址处设置断点。
 
--   [ **Bu （设置无法解析断点）** ](bp--bu--bm--set-breakpoint-.md)命令的符号引用上设置断点。
+-   [**Bu (设置未解析的断点)**](bp--bu--bm--set-breakpoint-.md)命令在符号引用上设置断点。
 
--   [ **Bm （设置符号断点）** ](bp--bu--bm--set-breakpoint-.md)命令与指定的模式匹配的符号上设置断点。 如果 **/d**包含开关，其地址 （如 bp) 上创建零个或多个断点，否则上 （如 bu 锁） 的符号引用创建零个或多个断点。
+-   [**Bm.exe (设置符号断点)**](bp--bu--bm--set-breakpoint-.md)命令在与指定模式匹配的符号上设置断点。 如果包含 **/d** 开关，则它会在 (如 bp) 上的地址中创建零个或多个断点，否则，将在 (如 bu) 上创建零个或多个断点。
 
--   [ **Ba （中断的访问权限）** ](ba--break-on-access-.md)命令设置数据断点所在的地址。
+-   当 [**Access)**](ba--break-on-access-.md) 命令在某个地址处设置数据断点时，ba (会中断。
 
-输出 **.bpcmds**反映每个断点的当前特性。 每一行 **.bpcmds**显示开头来创建它所使用的命令 (**bp**， **bu**，或**ba**) 的断点 ID 后, 跟和然后该断点的位置。
+**Bpcmds** 的输出反映每个断点的当前特性。 **Bpcmds** 显示的每一行都以用于创建它 (**bp**、 **bu** 或 **ba**) 后跟断点 ID 的命令开始，然后是断点的位置。
 
-如果通过创建断点**ba**，访问类型和大小也会显示。
+如果该断点是通过 **ba** 创建的，则也会显示访问类型和大小。
 
-如果通过创建断点**bm**而无需 **/d**开关，显示表示形式的断点类型**bu**后, 跟括起来计算符号 **@!""** （这表明它是一种文字符号并不是数值表达式或注册） 的标记。 如果通过创建断点**bm**与 **/d**开关，显示表示形式的断点类型**bp**。
+如果断点是由 **bm.exe** 创建的，而没有 **/d** 开关，则显示的断点类型为 **bu**，后跟 **@！ ""** 中包含的计算符号 标记 (指示它是一个文字符号，而不是数值表达式或寄存器) 。 如果断点是由 **bm.exe** 使用 **/d** 开关创建的，则显示将断点类型指示为 **bp**。
 
-下面是一个示例：
+以下是示例：
 
 ```dbgcmd
 0:000> bp notepad!winmain 
@@ -113,11 +112,11 @@ bp5 0x00421600 ;
 ba6 r2 0x0042cc2e ;
 ```
 
-在此示例中，可以看到的输出 **.bpcmds**开头跟断点数 （与没有干预空格） 的相关命令 （"bu"、"最佳实践"或"ba"）。
+在此示例中，请注意， **bpcmds** 的输出以相关命令开始， ( "bu"、"bp" 或 "ba" ) ，后跟 (没有干预空间) 的断点号。
 
-请注意，因为最初使用设置断点号 0 **bp**，然后重定义使用和**bu**，屏幕将显示"bu"作为其类型。
+请注意，由于断点号0最初是使用 **bp** 设置的，然后使用 **bu** 重新定义，因此显示的类型显示为 "bu"。
 
-另请注意 3、 4 和 5，创建的该断点**bm**此示例中所示的命令显示为任一类型"最佳实践"或键入"bu"，具体取决于是否 **/d**时切换已包括在内**bm**使用。
+另请注意，断点3、4和5（由本示例中所示的 **bm.exe** 命令创建）显示为 "最佳类型" 或 "bu" 类型，具体取决于使用 **bm.exe** 时是否包括 **/d** 开关。
 
  
 

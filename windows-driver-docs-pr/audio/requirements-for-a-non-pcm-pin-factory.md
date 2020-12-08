@@ -1,19 +1,18 @@
 ---
 title: 非 PCM 引脚工厂的要求
 description: 非 PCM 引脚工厂的要求
-ms.assetid: 3ba5da2e-f96f-4645-8a37-dd985287a9f2
 keywords:
 - 非 PCM 音频格式 WDK，固定工厂
 - 固定工厂的 WDK 音频
 - 数据交集处理程序 WDK 音频，非 PCM 波浪格式
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 046a41614b115bb1a3041256bb989e798c0f2413
-ms.sourcegitcommit: 20eac54e419a594f7cea766ee28f158559dfd79c
+ms.openlocfilehash: bc732d4fb0be645989f5358035aa16a0b1fe352a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91755002"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96800709"
 ---
 # <a name="requirements-for-a-non-pcm-pin-factory"></a>非 PCM 引脚工厂的要求
 
@@ -33,7 +32,7 @@ ms.locfileid: "91755002"
 
 -   微型端口驱动程序方法 **Init** 和 **newstream.ischecked** (例如，请参阅 [**IMiniportWavePci：： Init**](/windows-hardware/drivers/ddi/portcls/nf-portcls-iminiportwavepci-init) 和 [**IMiniportWavePci：： newstream.ischecked**](/windows-hardware/drivers/ddi/portcls/nf-portcls-iminiportwavepci-newstream)。 ) 
 
--   **SetFormat** (示例，请参阅[**IMiniportWavePciStream：： SetFormat**](/windows-hardware/drivers/ddi/portcls/nf-portcls-iminiportwavepcistream-setformat)。 ) 
+-   **SetFormat** (示例，请参阅 [**IMiniportWavePciStream：： SetFormat**](/windows-hardware/drivers/ddi/portcls/nf-portcls-iminiportwavepcistream-setformat)。 ) 
 
  
 

@@ -1,9 +1,8 @@
 ---
 title: blockeddrv
-description: Blockeddrv 扩展显示目标计算机上阻止驱动程序的列表。
-ms.assetid: 38331ff6-1957-4b28-90c0-10b2c77339fb
+description: Blockeddrv 扩展显示目标计算机上被阻止的驱动程序的列表。
 keywords:
-- 已阻止驱动程序
+- 阻止的驱动程序
 - blockeddrv Windows 调试
 ms.date: 05/23/2017
 topic_type:
@@ -13,17 +12,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 983ba99bba1c47e2e49cc1f3727cc155a2f5d138
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0e33586696c68d55858712fed3f8fd1303e1f545
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63334684"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96799977"
 ---
 # <a name="blockeddrv"></a>!blockeddrv
 
 
-**！ Blockeddrv**扩展插件都会显示在目标计算机上阻止驱动程序的列表。
+**！ Blockeddrv** extension 显示目标计算机上被阻止的驱动程序的列表。
 
 ```dbgcmd
     !blockeddrv
@@ -32,7 +31,7 @@ ms.locfileid: "63334684"
 ## <span id="ddk__blockeddrv_dbg"></span><span id="DDK__BLOCKEDDRV_DBG"></span>
 
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 <table>
 <colgroup>
@@ -56,7 +55,7 @@ ms.locfileid: "63334684"
 <a name="remarks"></a>备注
 -------
 
-下面是一个示例：
+以下是示例：
 
 ```dbgcmd
 kd> !blockeddrv

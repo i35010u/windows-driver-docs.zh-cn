@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ SYSAUDIO \_ 附加 \_ 虚拟 \_ 源
 description: KSPROPERTY \_ SYSAUDIO \_ 附加 \_ 虚拟 \_ 源属性将虚拟源附加到虚拟音频设备上的 pin 实例。
-ms.assetid: cb677eb2-b58d-4f36-b729-d0bfc06db07f
 keywords:
 - KSPROPERTY_SYSAUDIO_ATTACH_VIRTUAL_SOURCE 音频设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ace0d49309343e0b44b06aa01422e10165f610e3
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 41ff600f11920e6c96df135b462feee4d3e213e5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90101898"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801163"
 ---
 # <a name="ksproperty_sysaudio_attach_virtual_source"></a>KSPROPERTY \_ SYSAUDIO \_ 附加 \_ 虚拟 \_ 源
 
@@ -67,7 +66,7 @@ KSPROPERTY \_ SYSAUDIO \_ 附加 \_ 虚拟 \_ 源属性将虚拟源附加到虚�
 
 KSPROPERTY \_ SYSAUDIO \_ 附加 \_ 虚拟 \_ 源属性请求返回状态 \_ SUCCESS 以指示已成功完成。 否则，请求将返回相应的错误状态代码。
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 此属性将虚拟源附加到虚拟音频设备上的 pin 实例。 有关详细信息，请参阅 [**KSPROPERTY \_ SYSAUDIO \_ CREATE \_ VIRTUAL \_ SOURCE**](ksproperty-sysaudio-create-virtual-source.md)。

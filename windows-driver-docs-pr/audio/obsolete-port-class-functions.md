@@ -1,15 +1,14 @@
 ---
 title: 已过时端口类函数
 description: 已过时端口类函数
-ms.assetid: 6fcb5ae6-81bc-423e-9757-34955a2de522
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d98b5403374a560e5dbef2afe3ecb98adbf08fd3
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: bc15a24ae90c02c2981e2ae062369f0acc3406f8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90101798"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96800983"
 ---
 # <a name="obsolete-port-class-functions"></a>已过时端口类函数
 
@@ -40,7 +39,7 @@ ms.locfileid: "90101798"
 <tr class="odd">
 <td align="left"><p>AddAdapterDevice</p></td>
 <td align="left"><p><a href="/windows-hardware/drivers/ddi/portcls/nf-portcls-pcaddadapterdevice" data-raw-source="[&lt;strong&gt;PcAddAdapterDevice&lt;/strong&gt;](/windows-hardware/drivers/ddi/portcls/nf-portcls-pcaddadapterdevice)"><strong>PcAddAdapterDevice</strong></a></p></td>
-<td align="left"><p>YES</p></td>
+<td align="left"><p>是</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>CompletePendingPropertyRequest</p></td>
@@ -55,7 +54,7 @@ ms.locfileid: "90101798"
 <tr class="even">
 <td align="left"><p>InitializeAdapterDriver</p></td>
 <td align="left"><p><a href="/windows-hardware/drivers/ddi/portcls/nf-portcls-pcinitializeadapterdriver" data-raw-source="[&lt;strong&gt;PcInitializeAdapterDriver&lt;/strong&gt;](/windows-hardware/drivers/ddi/portcls/nf-portcls-pcinitializeadapterdriver)"><strong>PcInitializeAdapterDriver</strong></a></p></td>
-<td align="left"><p>YES</p></td>
+<td align="left"><p>是</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>NewDmaChannel</p></td>
@@ -90,22 +89,22 @@ ms.locfileid: "90101798"
 <tr class="odd">
 <td align="left"><p>RegisterPhysicalConnection</p></td>
 <td align="left"><p><a href="/windows-hardware/drivers/ddi/portcls/nf-portcls-pcregisterphysicalconnection" data-raw-source="[&lt;strong&gt;PcRegisterPhysicalConnection&lt;/strong&gt;](/windows-hardware/drivers/ddi/portcls/nf-portcls-pcregisterphysicalconnection)"><strong>PcRegisterPhysicalConnection</strong></a></p></td>
-<td align="left"><p>YES</p></td>
+<td align="left"><p>是</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>RegisterPhysicalConnectionFromExternal</p></td>
 <td align="left"><p><a href="/windows-hardware/drivers/ddi/portcls/nf-portcls-pcregisterphysicalconnectionfromexternal" data-raw-source="[&lt;strong&gt;PcRegisterPhysicalConnectionFromExternal&lt;/strong&gt;](/windows-hardware/drivers/ddi/portcls/nf-portcls-pcregisterphysicalconnectionfromexternal)"><strong>PcRegisterPhysicalConnectionFromExternal</strong></a></p></td>
-<td align="left"><p>YES</p></td>
+<td align="left"><p>是</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>RegisterPhysicalConnectionToExternal</p></td>
 <td align="left"><p><a href="/windows-hardware/drivers/ddi/portcls/nf-portcls-pcregisterphysicalconnectiontoexternal" data-raw-source="[&lt;strong&gt;PcRegisterPhysicalConnectionToExternal&lt;/strong&gt;](/windows-hardware/drivers/ddi/portcls/nf-portcls-pcregisterphysicalconnectiontoexternal)"><strong>PcRegisterPhysicalConnectionToExternal</strong></a></p></td>
-<td align="left"><p>YES</p></td>
+<td align="left"><p>是</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>RegisterSubdevice</p></td>
 <td align="left"><p><a href="/windows-hardware/drivers/ddi/portcls/nf-portcls-pcregistersubdevice" data-raw-source="[&lt;strong&gt;PcRegisterSubdevice&lt;/strong&gt;](/windows-hardware/drivers/ddi/portcls/nf-portcls-pcregistersubdevice)"><strong>PcRegisterSubdevice</strong></a></p></td>
-<td align="left"><p>YES</p></td>
+<td align="left"><p>是</p></td>
 </tr>
 </tbody>
 </table>

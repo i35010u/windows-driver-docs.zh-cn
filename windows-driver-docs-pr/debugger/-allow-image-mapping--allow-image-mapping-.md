@@ -1,9 +1,8 @@
 ---
 title: .allow_image_mapping（允许映像映射）
 description: .Allow_image_mapping 命令控制是否将映射图像文件。
-ms.assetid: 3d216d17-f2af-48f7-9d91-e12c3c305a67
 keywords:
-- .allow_image_mapping （允许图像映射） Windows 调试
+- .allow_image_mapping (允许) Windows 调试的图像映射
 ms.date: 09/17/2018
 topic_type:
 - apiref
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 7c1f0fe1fc270df9ee1212ce26848ecf37d139c0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 66299a1f4dde2385842857ba6e521c4240b9e258
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63334776"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96800135"
 ---
-# <a name="allowimagemapping-allow-image-mapping"></a>.allow\_图像\_映射 （允许图像映射）
+# <a name="allow_image_mapping-allow-image-mapping"></a>。允许 \_ 图像 \_ 映射 (允许图像映射) 
 
 
-**.Allow\_映像\_映射**将映射控件是否图像文件的命令。
+" **允许 \_ 图像 \_ 映射** " 命令控制是否将映射图像文件。
 
 ```dbgcmd
     .allow_image_mapping [/r] 0 
@@ -30,17 +29,17 @@ ms.locfileid: "63334776"
     .allow_image_mapping 
 ```
 
-## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>参数
+## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>Parameters
 
 
-<span id="________r______"></span><span id="________R______"></span> **/r**   
-重新加载所有模块的调试程序的模块列表中。 这相当于[ **.reload /d**](-reload--reload-module-.md)。
+<span id="________r______"></span><span id="________R______"></span>**/r**   
+重载调试器的模块列表中的所有模块。 这等效于 [**. reload.sql/d**](-reload--reload-module-.md)。
 
-<span id="_______0______"></span> **0**   
-防止图像文件正被映射。
+<span id="_______0______"></span>**0**   
+阻止图像文件被映射。
 
-<span id="_______1______"></span> **1**   
-允许图像文件映射。
+<span id="_______1______"></span>**1**   
+允许映射映像文件。
 
 ### <a name="span-idenvironmentspanspan-idenvironmentspanspan-idenvironmentspanenvironment"></a><span id="Environment"></span><span id="environment"></span><span id="ENVIRONMENT"></span>环境
 
@@ -51,16 +50,16 @@ ms.locfileid: "63334776"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>模式</strong></p></td>
+<td align="left"><p><strong>交货</strong></p></td>
 <td align="left"><p>用户模式和内核模式</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>目标</strong></p></td>
-<td align="left"><p>实时、 崩溃转储</p></td>
+<td align="left"><p>实时，故障转储</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>平台</strong></p></td>
-<td align="left"><p>全部</p></td>
+<td align="left"><p>all</p></td>
 </tr>
 </tbody>
 </table>
@@ -70,9 +69,9 @@ ms.locfileid: "63334776"
 <a name="remarks"></a>备注
 -------
 
-不带任何参数， **.allow\_映像\_映射**是否当前允许图像文件映射将显示。 默认情况下，允许此映射。
+如果没有参数，则 " **允许 \_ 映像 \_ 映射** " 将显示当前是否允许图像文件映射。 默认情况下，允许该映射。
 
-在调试小型转储时，图像映射是最常见。 如果 DbgHelp 无法调试记录 （例如，在期间访问内核调试时内存已调出），也可能会出现图像映射。
+调试小型转储时，图像映射最常见。 如果 Dbghelp.dll 无法访问调试记录，也可能会发生映像映射 (例如，在内存已) 的情况下进行内核调试。
 
  
 

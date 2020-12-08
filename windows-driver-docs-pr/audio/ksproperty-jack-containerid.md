@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ 插座 \_ CONTAINERID
 description: KSPROPERTY \_ 插座 \_ CONTAINERID 属性实现为使用筛选器句柄访问的基于 pin 的属性。
-ms.assetid: 01A157B0-41EE-4713-B5D3-B9BF9C2B80CE
 keywords:
 - KSPROPERTY_JACK_CONTAINERID 音频设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: eadae90a9c39b735a185d347173462c1dddb50f2
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 1b0f01c21755c10be9a1c4151af037908f7c6bc4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90101994"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801215"
 ---
 # <a name="ksproperty_jack_containerid"></a>KSPROPERTY \_ 插座 \_ CONTAINERID
 

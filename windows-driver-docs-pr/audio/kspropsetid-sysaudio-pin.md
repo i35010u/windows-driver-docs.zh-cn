@@ -1,17 +1,16 @@
 ---
 title: KSPROPSETID \_ Sysaudio \_ Pin
 description: KSPROPSETID \_ Sysaudio \_ Pin
-ms.assetid: 41777b45-2126-43f8-a514-53750f447231
 keywords:
 - KSPROPSETID_Sysaudio_Pin
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8d02cc16799ab5e6825436c6150ce27b279c55d2
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 5e9c122682887589cd46378ed0cf55ca865b1183
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89211451"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801069"
 ---
 # <a name="kspropsetid_sysaudio_pin"></a>KSPROPSETID \_ Sysaudio \_ Pin
 

@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ TOPOLOGYNODE \_ 重置
 description: KSPROPERTY \_ TOPOLOGYNODE \_ 重置属性完全重置节点，并将其还原到初始状态。
-ms.assetid: c7558518-53c5-43c6-94ac-107823e2a0ab
 keywords:
 - KSPROPERTY_TOPOLOGYNODE_RESET 音频设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 54c4f49fffb21f4f3a3111f3944f63540970ac28
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 2cebfbd7bf7ae8c840360ec4558e1b273711f9a9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90101818"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801127"
 ---
 # <a name="ksproperty_topologynode_reset"></a>KSPROPERTY \_ TOPOLOGYNODE \_ 重置
 

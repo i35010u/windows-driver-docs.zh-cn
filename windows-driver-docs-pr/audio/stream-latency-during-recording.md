@@ -1,15 +1,14 @@
 ---
 title: 录制期间的流延迟
 description: 录制期间的流延迟
-ms.assetid: b9391b34-acd8-4434-b00c-48bbbc0b6647
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c85098ac0001f2a7581a6f6e9b6a64301ca62f2b
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: ce3d338267be7411f7365ef94205f03cd1a25889
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89210361"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96800617"
 ---
 # <a name="stream-latency-during-recording"></a>录制期间的流延迟
 
@@ -20,7 +19,7 @@ ms.locfileid: "89210361"
 
 ![说明记录流的延迟的关系图](images/wavert-record.png)
 
-前面的关系图将 *记录位置* 标识为音频设备当前正在记录的示例的缓冲位置， (通过模拟到数字转换器或 ADC) 从麦克风捕获。 请注意，记录位置是音频设备经过 FIFO 后写入示例的未来缓冲区位置。 *读取位置*是音频引擎读取下一个样本的缓冲区位置。
+前面的关系图将 *记录位置* 标识为音频设备当前正在记录的示例的缓冲位置， (通过模拟到数字转换器或 ADC) 从麦克风捕获。 请注意，记录位置是音频设备经过 FIFO 后写入示例的未来缓冲区位置。 *读取位置* 是音频引擎读取下一个样本的缓冲区位置。
 
 音频设备在 ADC 中捕获音频采样的时间中的延迟，直到客户端读取它时，记录和读取位置之间只需分离。 此隔离是在关系图) 中标记为 A 和 B (的以下延迟源的总和：
 

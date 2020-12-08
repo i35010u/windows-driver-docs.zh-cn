@@ -1,17 +1,16 @@
 ---
 title: MIDI 流数据范围
 description: MIDI 流数据范围
-ms.assetid: 392eadf7-9c6e-4527-bc84-a2916623c154
 keywords:
 - MIDI 流数据范围 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 85630cb68323fb8c9f9b09e8292a2ecdb09d7970
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 9c9075d9d04c9fd806a2284d2a40be67463fb8bf
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89211389"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801015"
 ---
 # <a name="midi-stream-data-range"></a>MIDI 流数据范围
 

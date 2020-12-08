@@ -1,7 +1,6 @@
 ---
 title: smt
-description: Smt 扩展显示的同时进行多线程的处理器信息的摘要。
-ms.assetid: 28c07f89-6208-4b04-b7b9-825dda4f5f5a
+description: Smt 扩展显示同时多线程处理器信息的摘要。
 keywords:
 - smt Windows 调试
 ms.date: 05/23/2017
@@ -12,23 +11,23 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 803bdeef549c43d9932421871e25246706595c5f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e38feddc1cbcc394864c3cfb484dac9c1eeb1441
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339777"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96799843"
 ---
 # <a name="smt"></a>!smt
 
 
-**！ Smt**扩展显示的同时进行多线程的处理器信息的摘要。
+**！ Smt** 扩展显示同时多线程处理器信息的摘要。
 
 ```dbgcmd
 !smt
 ```
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 <table>
 <colgroup>
@@ -52,7 +51,7 @@ ms.locfileid: "63339777"
 <a name="remarks"></a>备注
 -------
 
-下面是一个示例：
+以下是示例：
 
 ```dbgcmd
 lkd> !smt 
@@ -68,15 +67,15 @@ Maximum cores per physical processor:   2
 Maximum logical processors per core:    1
 ```
 
-**否**列指示的处理器数。
+" **否** " 列指示处理器的数量。
 
-**PRCB**列指示处理器的处理器控制块的地址。 单独列出每个逻辑处理器。
+**PRCB** 列指示处理器的处理器控制块的地址。 每个逻辑处理器单独列出。
 
-每个物理处理器有且只有一个逻辑处理器列为**主**下**设置 Master**列。
+每个物理处理器都只有一个逻辑处理器作为主 **列下的****主服务器** 列出。
 
-**SMT 设置**列列出了处理器的同时进行多线程的处理器组信息。
+**SMT Set** 列列出了处理器的同时多线程处理器集信息。
 
-**IAID**列列出了初始高级可编程中断控制器标识符 (APIC ID)。 True x64 计算机上，每个处理器开头是硬编码的初始 APIC id。 可以通过 CPUID 指令检索此 ID 值。 某些其他计算机上初始 APIC ID 却不一定是唯一在所有处理器，因此可通过 APIC 的内存映射的输入/输出 (MMIO) 空间访问 APIC ID 可以在进行修改。 此技术使软件在计算机中的所有处理器分配唯一的 APIC Id。 具体取决于目标计算机的处理器**IAID**列可能会显示此 ID 或可能为空。
+**IAID** 列列出了初始高级可编程中断控制器标识符 (APIC ID) 。 在真正的 x64 计算机上，每个处理器都以硬编码初始 APIC ID 开头。 可以通过 CPUID 指令检索此 ID 值。 在某些其他计算机上，初始 APIC ID 不一定在所有处理器中是唯一的，因此可以修改通过 APIC 的内存映射输入/输出访问的 APIC ID (MMIO) 空间。 此方法使软件可以为计算机中的所有处理器分配唯一的 APIC Id。 根据目标计算机的处理器， **IAID** 列可能会显示此 ID 或为空。
 
  
 

@@ -1,15 +1,14 @@
 ---
 title: 数据包合并概述
 description: 数据包合并概述
-ms.assetid: E406E89C-247B-4DCB-B309-B742BF0A27E9
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 08e3f2a8dabe3f6439e43b9017cf10567d13b53b
-ms.sourcegitcommit: db9d058a9e592d4c47c67fc14f04f0ddc3aa92af
+ms.openlocfilehash: b535c5552e0a3a448976317c209a02310821faef
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91989811"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801331"
 ---
 # <a name="overview-of-packet-coalescing"></a>数据包合并概述
 
@@ -26,7 +25,7 @@ ms.locfileid: "91989811"
 
     有关这些筛选器的详细信息，请参阅 [数据包合并接收筛选器](packet-coalescing-receive-filters.md)。
 
-2.  在网络适配器上缓存或 *合并*与接收筛选器匹配的接收数据包。 适配器不会为合并的数据包生成接收中断。 而是在另一个硬件事件发生时，适配器将中断主机。
+2.  在网络适配器上缓存或 *合并* 与接收筛选器匹配的接收数据包。 适配器不会为合并的数据包生成接收中断。 而是在另一个硬件事件发生时，适配器将中断主机。
 
     生成此中断后，适配器必须指示带有中断的接收事件。 这允许网络适配器处理网络适配器接收的合并的数据包。
 

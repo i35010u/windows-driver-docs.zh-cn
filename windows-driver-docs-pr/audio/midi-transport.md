@@ -1,7 +1,6 @@
 ---
 title: MIDI 传输
 description: MIDI 传输
-ms.assetid: ce9ec589-0aea-4ed9-a60d-50f2ddfb0c13
 keywords:
 - 端口驱动程序 WDK 音频，合成程序
 - 微型端口驱动程序 WDK 音频，合成程序
@@ -10,12 +9,12 @@ keywords:
 - 合成 WDK 音频，MIDI 传输
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f1f7b0dc303198a528a7961cb37f8f652e0353e2
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: cfbd5e90a7d11f488e7d870f86d1c28cb6f4fcab
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89211385"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801011"
 ---
 # <a name="midi-transport"></a>MIDI 传输
 
@@ -37,13 +36,13 @@ Dmu 端口驱动程序使用输入插针实现内核流筛选器，该输入插�
 
 如果 Dmu 微型端口驱动程序可以向主机提供其输出，则会公开数据方向为 KSPIN 数据流的波形 pin \_ \_ (参阅 [**KSPIN**](/windows-hardware/drivers/ddi/ks/ns-ks-_kspin)) ，SysAudio 识别并连接到 KMixer。
 
-有关波形接收器的详细信息，请参阅 [内核模式软件合成程序的波形接收器](a-wave-sink-for-kernel-mode-software-synthesizers.md)。
+有关波形接收器的详细信息，请参阅 [Kernel-Mode 软件合成程序的波形接收器](a-wave-sink-for-kernel-mode-software-synthesizers.md)。
 
 本部分还包括：
 
 [IMXF 接口](imxf-interfaces.md)
 
-[器](allocator.md)
+[分配器](allocator.md)
 
  
 

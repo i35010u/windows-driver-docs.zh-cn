@@ -1,37 +1,36 @@
 ---
-title: PKEY\_AudioEndpoint\_Default\_VolumeInDb
-description: 在 Windows 10 版本 1605年及更高版本，主键\_AudioEndpoint\_默认\_VolumeInDb 属性注册表项配置软件卷节点的默认卷 （dB) 中。
-ms.assetid: 9BC8E0D1-F4F3-4FB4-A50F-E4C79317EC30
+title: PKEY \_ AudioEndpoint \_ 默认 \_ VolumeInDb
+description: 在 Windows 10 版本1605及更高版本中，PKEY \_ AudioEndpoint \_ default \_ VolumeInDb 属性键为软件卷节点配置 dB) 中的默认卷 (。
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ca015eef0f924bb780b7f8f2dfac97429384a688
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 48a10afd7dbb6fab0879838e8bc8b516993ab41d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332207"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96800917"
 ---
-# <a name="pkeyaudioendpointdefaultvolumeindb"></a>PKEY\_AudioEndpoint\_Default\_VolumeInDb
+# <a name="pkey_audioendpoint_default_volumeindb"></a>PKEY \_ AudioEndpoint \_ 默认 \_ VolumeInDb
 
 
-Windows 10 版本 1605年中及更高版本，**主键\_AudioEndpoint\_默认\_VolumeInDb**属性注册表项配置软件卷节点的默认卷 （dB) 中。 驱动程序开发人员应提供他们想要设置的默认 dB 值。
+在 Windows 10 版本1605及更高版本中， **PKEY \_ AudioEndpoint \_ default \_ VolumeInDb** 属性键为软件卷节点配置 dB) 中的默认卷 (。 驱动程序开发人员应提供要设置的默认 dB 值。
 
-如果音频驱动程序未实现的终结点的硬件卷节点，操作系统将插入软件卷节点来控制该终结点上的卷。 有些情况下，默认音量值是过低。 相应的收益或衰减应用到音频信号时，此 INF 密钥提供用户更好的体验。
+如果音频驱动程序未为终结点实现硬件卷节点，则 OS 将插入一个软件卷节点以控制该终结点上的卷。 有些情况下，默认的卷值太低。 此 INF 密钥向用户提供更好的体验，适用于向音频信号应用适当的增益或衰减。
 
 ## <a name="span-idremarksspanspan-idremarksspanspan-idremarksspanremarks"></a><span id="Remarks"></span><span id="remarks"></span><span id="REMARKS"></span>备注
 
 
-Ihv 和 Oem 可以通过设置主键替代终结点的默认软件卷值\_AudioEndpoint\_默认\_VolumeInDb 使用驱动程序 INF 文件对拓扑筛选器。 由参数指定的值是以数据库单位。
+Ihv 和 Oem 可以通过 \_ \_ \_ 使用驱动程序 INF 文件对拓扑筛选器设置 PKEY AudioEndpoint default VolumeInDb，来替代终结点的默认软件卷值。 该键指定的值以 dB 单位表示。
 
-此密钥将用于这两个呈现器，并捕获终结点。
+此密钥将用于呈现和捕获终结点。
 
-如果终结点已实现硬件卷节点，则忽略此密钥。
+如果终结点已实现硬件卷节点，则会忽略此项。
 
-可以设置任何值，但操作系统将确保值中的最小值和最大值设置。 例如，如果指定的值大于最大音量值，OS 将将默认值设置为最大音量值。
+可以设置任何值，但 OS 将确保其值在 "最小值" 和 "最大值" 设置中。 例如，如果指定的值大于最大卷值，则 OS 会将默认值设置为 "最大容量" 值。
 
-数据存储为 16.16 固定的点值。 较高的 16 位用于值的整数，低 16 位适用值的小数部分。
+数据存储为16.16 固定点值。 较高的16位用于值的整数，较低的16位用于值的小数部分。
 
-## <a name="span-idinffilesamplespanspan-idinffilesamplespanspan-idinffilesamplespaninf-file-sample"></a><span id="INF_File_Sample"></span><span id="inf_file_sample"></span><span id="INF_FILE_SAMPLE"></span>INF 文件示例
+## <a name="span-idinf_file_samplespanspan-idinf_file_samplespanspan-idinf_file_samplespaninf-file-sample"></a><span id="INF_File_Sample"></span><span id="inf_file_sample"></span><span id="INF_FILE_SAMPLE"></span>INF 文件示例
 
 
 ```inf
@@ -48,7 +47,7 @@ HKR,EP\0,%PKEY_AudioEndpoint_Default_VolumeInDb%,0x00010001,0xA0000
 ;HKR,EP\0,%PKEY_AudioEndpoint_Default_VolumeInDb%,0x00010001,0xFFF60000
 ```
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 [媒体类 INF 扩展](media-class-inf-extensions.md)

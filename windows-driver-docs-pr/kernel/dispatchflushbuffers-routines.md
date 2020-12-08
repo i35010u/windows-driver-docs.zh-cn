@@ -1,7 +1,6 @@
 ---
 title: DispatchFlushBuffers 例程
 description: DispatchFlushBuffers 例程
-ms.assetid: 091ce55c-e867-4ba4-aa25-5c20af45d9c2
 keywords:
 - 调度例程 WDK 内核，DispatchFlushBuffers 例程
 - DispatchFlushBuffers 例程
@@ -9,12 +8,12 @@ keywords:
 - 刷新缓冲区调度例程 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3052abc0d350c2b0f9a2d738de017f42ba42bf71
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: e1321730aeccc63394a0cfb33b85bf66c33f2449
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90717392"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96799467"
 ---
 # <a name="dispatchflushbuffers-routines"></a>DispatchFlushBuffers 例程
 

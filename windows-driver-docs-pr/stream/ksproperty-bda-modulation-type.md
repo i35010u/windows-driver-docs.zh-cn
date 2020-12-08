@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ BDA \_ 调制 \_ 类型
 description: 客户端使用 KSPROPERTY \_ BDA \_ 调制 \_ 类型来控制解调器类型，例如 QPSK 或8VSB。
-ms.assetid: 7c7dd8a4-4aa2-4e62-9b08-05c202df957d
 keywords:
 - KSPROPERTY_BDA_MODULATION_TYPE 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2c399b72141619dd75f7d478a629eba66dcfdee6
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: fb6ffe5cbb1048a9d08be2970d5b09fe00c30cd4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89193013"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801229"
 ---
 # <a name="ksproperty_bda_modulation_type"></a>KSPROPERTY \_ BDA \_ 调制 \_ 类型
 
@@ -61,7 +60,7 @@ ms.locfileid: "89193013"
 
  
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 ModulationType 枚举类型的返回值标识解调器类型。
@@ -78,7 +77,7 @@ KSP **NodeId** \_ 节点的节点标识号指定了解调器节点的标识符�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Bdamedia (包含 Bdamedia) </td>
 </tr>
 </tbody>

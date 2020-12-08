@@ -1,7 +1,6 @@
 ---
 title: 同步两个或多个流
 description: 同步两个或多个流
-ms.assetid: c25f4ca2-8a9f-43bc-a1bf-b71826b446ff
 keywords:
 - HD 音频，同步流
 - 高清晰音频 (HD 音频) ，同步流
@@ -9,12 +8,12 @@ keywords:
 - 流同步 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 88b80efbc3bf7700aa79792aca32505b2ffc4d92
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: ecf228ddb071e67c5d598dfa0027fe89da490f51
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89206681"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96800563"
 ---
 # <a name="synchronizing-two-or-more-streams"></a>同步两个或多个流
 

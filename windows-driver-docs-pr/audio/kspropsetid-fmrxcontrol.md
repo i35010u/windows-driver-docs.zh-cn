@@ -1,24 +1,23 @@
 ---
-title: KSPROPSETID\_FMRXControl
-description: KSPROPSETID\_FMRXControl 属性集是用于控制是否启用了 FM 单选接收。
-ms.assetid: AAFBCD7C-4862-42DC-9BBB-856BEAA1FA78
+title: KSPROPSETID \_ FMRXControl
+description: KSPROPSETID \_ FMRXControl 属性集用于控制是否启用调频无线电接收。
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 392b623d0ca4331527418dfdd687700f57685f86
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 262dfe8dd360cabe640007953dd62a10f3b7d449
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332501"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801091"
 ---
-# <a name="kspropsetidfmrxcontrol"></a>KSPROPSETID\_FMRXControl
+# <a name="kspropsetid_fmrxcontrol"></a>KSPROPSETID \_ FMRXControl
 
 
-KSPROPSETID\_FMRXControl 属性集是用于控制是否启用了 FM 单选接收。
+KSPROPSETID \_ FMRXControl 属性集用于控制是否启用调频无线电接收。
 
-KSPROPSETID\_FMRXControl 属性集包含以下属性：
+KSPROPSETID \_ FMRXControl 属性集包括以下属性：
 
--   [**KSPROPERTY\_FMRX\_STATE**](ksproperty-fmrx-state.md)
+-   [**KSPROPERTY \_ FMRX \_ 状态**](ksproperty-fmrx-state.md)
 
  
 

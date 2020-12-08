@@ -1,17 +1,16 @@
 ---
 title: KSPROPSETID \_ SynthClock
 description: KSPROPSETID \_ SynthClock
-ms.assetid: 8baad0d2-ea86-4d27-8fb0-03cdd9e978f0
 keywords:
 - KSPROPSETID_SynthClock
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c24994864f2655f8fd4060ed852801f3d2605600
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 6cb30c129843f395dea3cb083a263edf744c0815
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90101810"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801071"
 ---
 # <a name="kspropsetid_synthclock"></a>KSPROPSETID \_ SynthClock
 

@@ -1,7 +1,6 @@
 ---
 title: DispatchCleanup 例程
 description: DispatchCleanup 例程
-ms.assetid: 1ba001b8-92e0-453f-b9f6-6099cedf6439
 keywords:
 - 调度例程 WDK 内核，DispatchCleanup 例程
 - DispatchCleanup 例程
@@ -15,12 +14,12 @@ keywords:
 - 清理调度例程 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 20fe4a97a7d4b961f9486f51a0c2e89d84dfead7
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 839226e3b9a04787bfd94d03eb044b7162a50f5d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89185649"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96799469"
 ---
 # <a name="dispatchcleanup-routines"></a>DispatchCleanup 例程
 
@@ -40,7 +39,7 @@ ms.locfileid: "89185649"
 
 -   调用 [**IoCompleteRequest**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocompleterequest) 完成 IRP，并返回状态 " \_ 成功"。
 
-处理 **irp \_ mj \_ 清除** 请求时，驱动程序可能会收到其他请求，如 [**IRP \_ mj \_ 读取**](./irp-mj-read.md) 或 [**irp \_ mj \_ 写入**](./irp-mj-write.md)。 因此，必须解除分配资源的驱动程序还必须使用其他调度例程（如[*DispatchRead*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)和[*DispatchWrite*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)）同步其*DispatchCleanup*例程的执行。
+处理 **irp \_ mj \_ 清除** 请求时，驱动程序可能会收到其他请求，如 [**IRP \_ mj \_ 读取**](./irp-mj-read.md) 或 [**irp \_ mj \_ 写入**](./irp-mj-write.md)。 因此，必须解除分配资源的驱动程序还必须使用其他调度例程（如 [*DispatchRead*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)和 [*DispatchWrite*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)）同步其 *DispatchCleanup* 例程的执行。
 
  
 

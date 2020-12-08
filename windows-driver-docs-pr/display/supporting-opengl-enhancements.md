@@ -1,22 +1,21 @@
 ---
 title: 支持 OpenGL 增强
 description: 支持 OpenGL 增强
-ms.assetid: 5f8b7d96-7941-44ce-bd32-546ec0f32883
 keywords:
 - OpenGL 增强 WDK 显示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 61e6993964eb2e9fb5d537f57c4e78c3c60b5793
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: a584c99c5cbe10d83f8d0e066562ac2d690350d7
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89064574"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96799591"
 ---
 # <a name="supporting-opengl-enhancements"></a>支持 OpenGL 增强
 
 
-## <a name="span-idwindows_7_enhancementsspanspan-idwindows_7_enhancementsspanspan-idwindows_7_enhancementsspanwindows7-enhancements"></a><span id="Windows_7_Enhancements"></span><span id="windows_7_enhancements"></span><span id="WINDOWS_7_ENHANCEMENTS"></span>Windows 7 增强功能
+## <a name="span-idwindows_7_enhancementsspanspan-idwindows_7_enhancementsspanspan-idwindows_7_enhancementsspanwindows-7-enhancements"></a><span id="Windows_7_Enhancements"></span><span id="windows_7_enhancements"></span><span id="WINDOWS_7_ENHANCEMENTS"></span>Windows 7 增强功能
 
 
 本部分仅适用于 Windows 7 及更高版本、Windows Server 2008 R2 及更高版本。
@@ -61,7 +60,7 @@ ms.locfileid: "89064574"
 
 你可以使用以下 OpenGL 函数来监视当前操作的历史记录：
 
--   在[**D3DKMT \_ 存在**](/windows-hardware/drivers/ddi/d3dkmthk/ns-d3dkmthk-_d3dkmt_present)结构的**PRESENTHISTORYTOKEN**成员中填充了[**D3DKMT \_ PRESENTHISTORYTOKEN**](/windows-hardware/drivers/ddi/d3dkmthk/ns-d3dkmthk-_d3dkmt_presenthistorytoken)结构的[**D3DKMTPresent**](/windows-hardware/drivers/ddi/d3dkmthk/nf-d3dkmthk-d3dkmtpresent)
+-   在 [**D3DKMT \_ 存在**](/windows-hardware/drivers/ddi/d3dkmthk/ns-d3dkmthk-_d3dkmt_present)结构的 **PRESENTHISTORYTOKEN** 成员中填充了 [**D3DKMT \_ PRESENTHISTORYTOKEN**](/windows-hardware/drivers/ddi/d3dkmthk/ns-d3dkmthk-_d3dkmt_presenthistorytoken)结构的 [**D3DKMTPresent**](/windows-hardware/drivers/ddi/d3dkmthk/nf-d3dkmthk-d3dkmtpresent)
 
 -   [**D3DKMTGetPresentHistory**](/windows-hardware/drivers/ddi/d3dkmthk/nf-d3dkmthk-d3dkmtgetpresenthistory)
 
@@ -73,11 +72,11 @@ ms.locfileid: "89064574"
 
 -   [**D3DKMTGetOverlayState**](/windows-hardware/drivers/ddi/d3dkmthk/nf-d3dkmthk-d3dkmtgetoverlaystate)
 
--   [**D3DKMTSetDisplayMode**](/windows-hardware/drivers/ddi/d3dkmthk/nf-d3dkmthk-d3dkmtsetdisplaymode)在[**D3DKMT \_ SETDISPLAYMODE**](/windows-hardware/drivers/ddi/d3dkmthk/ns-d3dkmthk-_d3dkmt_setdisplaymode)结构的**FLAGS**成员中填充的[**D3DKMT \_ SETDISPLAYMODE \_ 标志**](/windows-hardware/drivers/ddi/d3dkmthk/ns-d3dkmthk-_d3dkmt_setdisplaymode_flags)结构
+-   [**D3DKMTSetDisplayMode**](/windows-hardware/drivers/ddi/d3dkmthk/nf-d3dkmthk-d3dkmtsetdisplaymode)在 [**D3DKMT \_ SETDISPLAYMODE**](/windows-hardware/drivers/ddi/d3dkmthk/ns-d3dkmthk-_d3dkmt_setdisplaymode)结构的 **FLAGS** 成员中填充的 [**D3DKMT \_ SETDISPLAYMODE \_ 标志**](/windows-hardware/drivers/ddi/d3dkmthk/ns-d3dkmthk-_d3dkmt_setdisplaymode_flags)结构
 
--   在[**D3DKMT \_ POLLDISPLAYCHILDREN**](/windows-hardware/drivers/ddi/d3dkmthk/ns-d3dkmthk-_d3dkmt_polldisplaychildren)结构中设置了新标志的[**D3DKMTPollDisplayChildren**](/windows-hardware/drivers/ddi/d3dkmthk/nf-d3dkmthk-d3dkmtpolldisplaychildren)
+-   在 [**D3DKMT \_ POLLDISPLAYCHILDREN**](/windows-hardware/drivers/ddi/d3dkmthk/ns-d3dkmthk-_d3dkmt_polldisplaychildren)结构中设置了新标志的 [**D3DKMTPollDisplayChildren**](/windows-hardware/drivers/ddi/d3dkmthk/nf-d3dkmthk-d3dkmtpolldisplaychildren)
 
-## <a name="span-idwindows_8_enhancementsspanspan-idwindows_8_enhancementsspanwindows8-enhancements"></a><span id="windows_8_enhancements"></span><span id="WINDOWS_8_ENHANCEMENTS"></span>Windows 8 增强功能
+## <a name="span-idwindows_8_enhancementsspanspan-idwindows_8_enhancementsspanwindows-8-enhancements"></a><span id="windows_8_enhancements"></span><span id="WINDOWS_8_ENHANCEMENTS"></span>Windows 8 增强功能
 
 
 本部分仅适用于 Windows 8 及更高版本以及 Windows Server 2012 及更高版本。

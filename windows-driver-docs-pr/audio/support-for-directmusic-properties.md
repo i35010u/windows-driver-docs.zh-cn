@@ -1,7 +1,6 @@
 ---
 title: 对 DirectMusic 属性的支持
 description: 对 DirectMusic 属性的支持
-ms.assetid: f44cf9a9-bdfc-4794-b064-4d1126fb83aa
 keywords:
 - 硬件加速 WDK 音频
 - 微型端口驱动程序 WDK 音频、内核模式硬件加速
@@ -11,12 +10,12 @@ keywords:
 - 属性集 Guid WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ed31942829f74c16b5c6ce0fb1dcecb5d56d96ec
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: a0b4091446364ec723a05e1503f41029f767ef4e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90716082"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96800589"
 ---
 # <a name="support-for-directmusic-properties"></a>对 DirectMusic 属性的支持
 
@@ -80,13 +79,13 @@ DirectMusic 定义了以下属性集 Guid：
 
 ### <a name="span-idikscontrol_interfacespanspan-idikscontrol_interfacespanikscontrol-interface"></a><span id="ikscontrol_interface"></span><span id="IKSCONTROL_INTERFACE"></span>IKsControl 接口
 
-[IKsControl](/windows-hardware/drivers/ddi/ksproxy/nn-ksproxy-ikscontrol)接口用于获取、设置或查询属性、事件和方法的基本支持。 此接口是 WDM 内核流式传输 (KS) 体系结构的一部分，但 DirectMusic 也使用它来公开 DirectMusic 端口的属性。 若要检索此接口，请调用 Windows SDK 文档) 中所述的 **IDirectMusicPort：： QueryInterface** (方法，其中 *riid* 参数设置为 ** \_ IKsControl**。
+[IKsControl](/windows-hardware/drivers/ddi/ksproxy/nn-ksproxy-ikscontrol)接口用于获取、设置或查询属性、事件和方法的基本支持。 此接口是 WDM 内核流式传输 (KS) 体系结构的一部分，但 DirectMusic 也使用它来公开 DirectMusic 端口的属性。 若要检索此接口，请调用 Windows SDK 文档) 中所述的 **IDirectMusicPort：： QueryInterface** (方法，其中 *riid* 参数设置为 **\_ IKsControl**。
 
-[IKsControl](/windows-hardware/drivers/ddi/ksproxy/nn-ksproxy-ikscontrol)接口有三种方法： [**KsProperty**](/windows-hardware/drivers/ddi/ksproxy/nf-ksproxy-ikscontrol-ksproperty)、 [**KsEvent**](/windows-hardware/drivers/ddi/ksproxy/nf-ksproxy-ikscontrol-ksevent)和[**KsMethod**](/windows-hardware/drivers/ddi/ksproxy/nf-ksproxy-ikscontrol-ksmethod)。 目前，DirectMusic 只支持 **KsProperty** 。
+[IKsControl](/windows-hardware/drivers/ddi/ksproxy/nn-ksproxy-ikscontrol)接口有三种方法： [**KsProperty**](/windows-hardware/drivers/ddi/ksproxy/nf-ksproxy-ikscontrol-ksproperty)、 [**KsEvent**](/windows-hardware/drivers/ddi/ksproxy/nf-ksproxy-ikscontrol-ksevent)和 [**KsMethod**](/windows-hardware/drivers/ddi/ksproxy/nf-ksproxy-ikscontrol-ksmethod)。 目前，DirectMusic 只支持 **KsProperty** 。
 
 [**IKsControl：： KsProperty**](/windows-hardware/drivers/ddi/ks/nf-ks-ikscontrol-ksproperty)方法获取或设置属性的值。 将属性项请求路由到特定 DirectMusic 端口的方式取决于端口的实现方式：
 
--   在 midiOut 和 midiIn Api)  (基于 Microsoft Win32 基于句柄的多媒体调用的端口不支持任何属性。 使用 **guid \_ dmu \_ \_ ** 属性集 guid 查询端口是否是使用 Win32 多媒体调用来实现的。
+-   在 midiOut 和 midiIn Api)  (基于 Microsoft Win32 基于句柄的多媒体调用的端口不支持任何属性。 使用 **guid \_ dmu \_ \_** 属性集 guid 查询端口是否是使用 Win32 多媒体调用来实现的。
 
 -   对表示可插接式软件合成器的端口的属性项请求将完全在用户模式下处理。 这种类型的端口的拓扑 [是一种](/windows/win32/api/dmusics/nn-dmusics-idirectmusicsynth) 合成器 (，) 连接到接收器节点 ([IDirectMusicSynthSink](/windows/win32/api/dmusics/nn-dmusics-idirectmusicsynthsink) 接口) 。 首先向合成器节点提供属性请求，然后将其提供给 "接收器" 节点（如果它无法被合成器识别）。
 

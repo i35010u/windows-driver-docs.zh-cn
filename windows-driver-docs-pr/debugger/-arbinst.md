@@ -1,9 +1,8 @@
 ---
 title: arbinst
 description: Arbinst 扩展显示有关指定仲裁器的信息。
-ms.assetid: 6aa06283-9cd7-4579-9e5d-40bbaf53f782
 keywords:
-- 仲裁器
+- 判
 - arbinst Windows 调试
 ms.date: 09/17/2018
 topic_type:
@@ -13,32 +12,32 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 2e4f4d1161fbfa5b167c0b82fb96274d44b158f0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 25860eea8eed629441784fcf663536e3b159e5e1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63334745"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96800025"
 ---
 # <a name="arbinst"></a>!arbinst
 
 
-**！ Arbinst**扩展显示有关指定仲裁器的信息。
+**！ Arbinst** 扩展显示有关指定仲裁器的信息。
 
 ```dbgcmd
     !arbinst Address [Flags]
 ```
 
-## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>参数
+## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>Parameters
 
 
-<span id="Address"></span><span id="address"></span><span id="ADDRESS"></span>*Address*  
-指定仲裁器要显示的十六进制地址。
+<span id="Address"></span><span id="address"></span><span id="ADDRESS"></span>*地址*  
+指定要显示的仲裁器的十六进制地址。
 
-<span id="Flags"></span><span id="flags"></span><span id="FLAGS"></span>*标志*  
-指定要为每个仲裁器显示多少信息。 目前，唯一标志是 0x100。 如果设置此标志，则会显示别名。
+<span id="Flags"></span><span id="flags"></span><span id="FLAGS"></span>*随意*  
+指定要为每个仲裁器显示的信息量。 目前，唯一标志是0x100。 如果设置了此标志，则会显示别名。
 
-## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 
 <table>
@@ -60,17 +59,17 @@ ms.locfileid: "63334745"
 
  
 
-## <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+## <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
 
-另请参阅[ **！ arbiter** ](-arbiter.md)扩展。
+另请参阅 [**！仲裁**](-arbiter.md) 器扩展。
 
 <a name="remarks"></a>备注
 -------
 
-仲裁器指定，对于 **！ arbinst**显示每个分配范围的系统资源，某些可选标志，PDO 附加到该范围 （即，该范围的所有者），并且此所有者的服务名称 （如果已知）。
+对于指定的仲裁程序， **！ arbinst** 显示系统资源的每个分配范围、一些可选标志、附加到该范围的 PDO (换言之，范围的所有者) ，以及此所有者 (（如果) 已知）的服务名称。
 
-下面是一个示例：
+以下是示例：
 
 ```console
 kd> !arbinst e0000106002ee8e8

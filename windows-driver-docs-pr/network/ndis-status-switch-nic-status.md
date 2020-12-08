@@ -1,24 +1,23 @@
 ---
 title: NDIS_STATUS_SWITCH_NIC_STATUS
 description: NDIS_STATUS_SWITCH_NIC_STATUS 状态指示用于从绑定到 Hyper-v 可扩展交换机的外部网络适配器的物理网络适配器封装状态指示。
-ms.assetid: 51A3BE6A-35F1-4AF0-91C0-94681640BD64
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 NDIS_STATUS_SWITCH_NIC_STATUS 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 646db0c57b58b7d9fc6209d7dd78b46f9ecf17c9
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: df40b2d82117b0f44c3029f24ac79af0fc9b7865
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89215526"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801459"
 ---
 # <a name="ndis_status_switch_nic_status"></a>NDIS \_ 状态 \_ 切换 \_ NIC \_ 状态
 
 
-**NDIS \_ 状态 \_ 切换 \_ NIC \_ 状态**状态指示用于从绑定到 hyper-v 可扩展交换机的外部网络适配器的物理网络适配器封装状态指示。 通过此封装，状态指示会向上转送可扩展交换机驱动程序堆栈。
+**NDIS \_ 状态 \_ 切换 \_ NIC \_ 状态** 状态指示用于从绑定到 hyper-v 可扩展交换机的外部网络适配器的物理网络适配器封装状态指示。 通过此封装，状态指示会向上转送可扩展交换机驱动程序堆栈。
 
-此指示的[**ndis \_ 状态 \_ 指示**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_status_indication)结构的**StatusBuffer**成员包含指向[**NDIS \_ 交换机 \_ NIC \_ 状态 \_ 指示**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_switch_nic_status_indication)结构的指针。
+此指示的 [**ndis \_ 状态 \_ 指示**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_status_indication)结构的 **StatusBuffer** 成员包含指向 [**NDIS \_ 交换机 \_ NIC \_ 状态 \_ 指示**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_switch_nic_status_indication)结构的指针。
 
 <a name="remarks"></a>备注
 -------
@@ -61,7 +60,7 @@ ms.locfileid: "89215526"
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 ****

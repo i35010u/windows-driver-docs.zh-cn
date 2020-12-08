@@ -1,22 +1,21 @@
 ---
 title: 将数据包处理驱动程序和应用移植到 WFP
 description: Windows 筛选平台 (WFP) 启用 TCP/IP 数据包筛选、检查和修改、连接监视或授权、IPsec 规则和处理以及 RPC 筛选。
-ms.assetid: 9BB77BB8-1382-4F65-A4E8-80E229F43425
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: feb4f909da0ec94da20640fea7f5ee0bdb1c3221
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 5bfd632a769a43014be20d811e8ae73a82f6ca61
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103908"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801319"
 ---
 # <a name="porting-packet-processing-drivers-and-apps-to-wfp"></a>将数据包处理驱动程序和应用移植到 WFP
 
 
 Windows 筛选平台 (WFP) 启用 TCP/IP 数据包筛选、检查和修改、连接监视或授权、IPsec 规则和处理以及 RPC 筛选。 通常，你必须将 Windows XP 和 Windows Server 2003 中的 TCP/IP 筛选或连接监视组件转换为对 Windows Vista 和 Windows Server 2008 及更高版本使用 WFP 用户模式应用程序或服务、WFP 内核模式标注驱动程序或同时使用这两者。 下表列出了 Windows XP 和 Windows Server 2003 中的包处理的现有方法，以及如何在 Windows Vista 和 Windows Server 2008 及更高版本中将其更改为使用 WFP。
 
-**注意**   在 Windows 8 中，传输驱动程序接口 (TDI) 功能和分层服务提供程序 (Lsp) 功能已弃用。
+**注意**  在 Windows 8 中，传输驱动程序接口 (TDI) 功能和分层服务提供程序 (Lsp) 功能已弃用。
 
  
 

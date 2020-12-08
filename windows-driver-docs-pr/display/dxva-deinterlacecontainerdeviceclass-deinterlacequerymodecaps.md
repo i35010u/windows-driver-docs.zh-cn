@@ -1,7 +1,6 @@
 ---
 title: DeinterlaceQueryModeCaps 方法
 description: 示例 DXVA \_ DeinterlaceContainerDeviceClass：:D einterlacequerymodecaps 函数查询驱动程序，以确定特定取消隔行扫描模式的输入功能以及该模式可能支持的任何其他视频处理。
-ms.assetid: 49070e57-2a93-447e-98d5-b98cded78b9c
 keywords:
 - DeinterlaceQueryModeCaps 方法显示设备
 - DeinterlaceQueryModeCaps 方法显示设备，DXVA_DeinterlaceContainerDeviceClass 接口
@@ -17,12 +16,12 @@ api_type:
 ms.date: 12/06/2018
 ms.localizationpriority: medium
 ms.custom: seodec18
-ms.openlocfilehash: 0449944eb3e5c0670202d2bcb568ff99e7981eb0
-ms.sourcegitcommit: f8619f20a0903dd64f8641a5266ecad6df5f1d57
+ms.openlocfilehash: 810dd9b885c357081a61de232978a4fad50f88c6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91423884"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96799739"
 ---
 # <a name="dxva_deinterlacecontainerdeviceclassdeinterlacequerymodecaps-method"></a>DXVA \_ DeinterlaceContainerDeviceClass：:D einterlacequerymodecaps 方法
 
@@ -34,13 +33,13 @@ ms.locfileid: "91423884"
 
 ```cpp
 HRESULT DeinterlaceQueryModeCaps(
-  [in]  LPGUID               pGuidDeinterlaceMode,
-  [in]  LPDXVA_VideoDesc     lpVideoDescription,
-  [out] DXVA_DeinterlaceCaps *lpDeinterlaceCaps
+  [in]  LPGUID               pGuidDeinterlaceMode,
+  [in]  LPDXVA_VideoDesc     lpVideoDescription,
+  [out] DXVA_DeinterlaceCaps *lpDeinterlaceCaps
 );
 ```
 
-<a name="parameters"></a>parameters
+<a name="parameters"></a>参数
 ----------
 
 *pGuidDeinterlaceMode* \[在中， \] 提供指向用于指定取消隔行扫描模式的 GUID 的指针。
@@ -52,24 +51,24 @@ HRESULT DeinterlaceQueryModeCaps(
 <a name="return-value"></a>返回值
 ------------
 
-如果成功，则返回零 (S \_ 正常或 DD \_ 确定) ; 否则返回错误代码。 有关错误代码的完整列表，请参阅*ddraw。*
+如果成功，则返回零 (S \_ 正常或 DD \_ 确定) ; 否则返回错误代码。 有关错误代码的完整列表，请参阅 *ddraw。*
 
 <a name="remarks"></a>备注
 -------
 
 在 VMR 确定了可用于特定视频格式的隔行扫描模式后， *VMR* 将查询该驱动程序的功能。 驱动程序从对其 [**DeinterlaceQueryAvailableModes**](dxva-deinterlacecontainerdeviceclass-deinterlacequeryavailablemodes.md) 函数的调用返回可用模式。
 
-**DeinterlaceQueryModeCaps**函数报告[**DXVA \_ DeinterlaceCaps**](/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_deinterlacecaps)结构中给定模式的功能。
+**DeinterlaceQueryModeCaps** 函数报告 [**DXVA \_ DeinterlaceCaps**](/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_deinterlacecaps)结构中给定模式的功能。
 
-将 *lpVideoDescription* 参数传递给驱动程序，以便驱动程序可以支持源视频的分辨率和格式。 例如，驱动程序可能能够对480i 的内容执行三字段自适应隔行扫描，但它可能只允许 bob 1080i 内容。 有关详细信息，请参阅 [视频内容进行取消隔行扫描和帧速率转换](./video-content-for-deinterlace-and-frame-rate-conversion.md)。
+将 *lpVideoDescription* 参数传递给驱动程序，以便驱动程序可以支持源视频的分辨率和格式。 例如，驱动程序可能能够对480i 的内容执行三字段自适应隔行扫描，但它可能只允许 bob 1080i 内容。 有关详细信息，请参阅 [用于取消隔行扫描和 Frame-Rate 转换的视频内容](./video-content-for-deinterlace-and-frame-rate-conversion.md)。
 
 所有驱动程序都应该能够使用现有的 *位块传输* 硬件支持 bob 模式。
 
 **将 RenderMoComp 映射到 *DeinterlaceQueryModeCaps***
 
-**DeinterlaceQueryModeCaps**函数直接映射到[**DD \_ MOTIONCOMPCALLBACKS**](/windows/win32/api/ddrawint/ns-ddrawint-dd_motioncompcallbacks)结构的**RenderMoComp**成员的调用。 **RenderMoComp**成员指向显示驱动程序提供的、引用[**DD \_ RENDERMOCOMPDATA**](/windows/win32/api/ddrawint/ns-ddrawint-dd_rendermocompdata)结构的函数。
+**DeinterlaceQueryModeCaps** 函数直接映射到 [**DD \_ MOTIONCOMPCALLBACKS**](/windows/win32/api/ddrawint/ns-ddrawint-dd_motioncompcallbacks)结构的 **RenderMoComp** 成员的调用。 **RenderMoComp** 成员指向显示驱动程序提供的、引用 [**DD \_ RENDERMOCOMPDATA**](/windows/win32/api/ddrawint/ns-ddrawint-dd_rendermocompdata)结构的函数。
 
-在未首先调用显示驱动程序提供的**BeginMoCompFrame**或**EndMoCompFrame**函数的情况下调用**RenderMoComp**回调。
+在未首先调用显示驱动程序提供的 **BeginMoCompFrame** 或 **EndMoCompFrame** 函数的情况下调用 **RenderMoComp** 回调。
 
 \_按如下所示填充 DD RENDERMOCOMPDATA 结构。
 
@@ -81,7 +80,7 @@ HRESULT DeinterlaceQueryModeCaps(
 <thead>
 <tr class="header">
 <th align="left">成员</th>
-<th align="left">Value</th>
+<th align="left">“值”</th>
 </tr>
 </thead>
 <tbody>
@@ -121,7 +120,7 @@ HRESULT DeinterlaceQueryModeCaps(
 <tbody>
 <tr class="odd">
 <td align="left"><p>目标平台</p></td>
-<td align="left">桌面型</td>
+<td align="left">台式机</td>
 </tr>
 <tr class="even">
 <td align="left"><p>标头</p></td>

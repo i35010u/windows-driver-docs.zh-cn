@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ RTAUDIO \_ 演示 \_ 位置
 description: KSPROPERTY \_ RTAUDIO \_ 演示 \_ 位置返回流演示信息。
-ms.assetid: 333A7432-B78A-4F61-B70D-D4F651F90AF7
 keywords:
 - KSPROPERTY_RTAUDIO_PRESENTATION_POSITION 音频设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 01/31/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: ef92f80fb2152f0d3fdb5408d3a531de23d97c3f
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 52d353e022eaf5c8ced47a2464c4ea563331a7cb
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90101938"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801185"
 ---
 # <a name="ksproperty_rtaudio_presentation_position"></a>KSPROPERTY \_ RTAUDIO \_ 演示 \_ 位置
 
@@ -65,7 +64,7 @@ KSPROPERTY \_ RTAUDIO \_ 演示 \_ 位置返回流演示信息。
 
 KSPROPERTY \_ RTAUDIO \_ 演示 \_ 位置属性请求返回状态 " \_ 成功" 以指示已成功完成。 否则，请求将返回相应的失败状态代码。
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 操作系统可能会定期从驱动程序获取此属性，以从驱动程序中检索最近的演示位置信息，以允许上层与音频流同步视频或其他活动。

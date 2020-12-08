@@ -1,15 +1,14 @@
 ---
 title: 已过时内核模式驱动程序支持函数
 description: 已过时内核模式驱动程序支持函数
-ms.assetid: 8bdfbd2e-a0d6-424f-9092-297e533efa33
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 97f89fd24058655615576ee98b7bca90844c341c
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 20973db9b910d9e54297345dd5ada9ae0eac99d5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102302"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96800987"
 ---
 # <a name="obsolete-kernel-mode-driver-support-functions"></a>已过时内核模式驱动程序支持函数
 

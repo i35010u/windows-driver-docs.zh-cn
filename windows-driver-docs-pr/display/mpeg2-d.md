@@ -1,29 +1,28 @@
 ---
 title: MPEG2_D
 description: MPEG2_D
-ms.assetid: f5cb5e49-c64c-46d2-92bb-68db1d9c5d18
 keywords:
-- MPEG2_D 受限制的配置文件 WDK DirectX VA
+- MPEG2_D 受限配置文件 WDK DirectX VA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 54578361f7883c035bf97bab3e315fe4ccfd0d25
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4fbbe9fe08eb88ea7c1060b06957b51dfad3a3d4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63345642"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96799651"
 ---
-# <a name="mpeg2d"></a>MPEG2\_D
+# <a name="mpeg2_d"></a>MPEG2 \_ D
 
 
 ## <span id="ddk_mpeg2_d_gg"></span><span id="DDK_MPEG2_D_GG"></span>
 
 
-MPEG2\_D 受限制的配置文件中包含的一组功能所需的 mpeg-2 视频主配置文件和使用后端硬件子画面值混合处理关联的 DVD 子画面的支持。
+MPEG2 \_ D 限制配置文件包含支持 mpeg-2 视频主配置文件所需的一组功能，以及使用后端硬件子画面混合的关联 DVD 子画面。
 
-因为 MPEG2\_D 受限制的配置文件定义的加速器要求是放宽了由[MPEG2\_B](mpeg2-b.md) （加速器不支持需要最小互操作性设置的配置文件有关 MPEG2\_B)，所有驱动程序的支持 MPEG2\_B 配置文件必须支持 MPEG2\_D 配置文件。 MPEG2 的限制\_MPEG2 为列出的限制由定义 D\_B 受限制的配置文件，但下面的其他限制除外。
+由于 MPEG2 \_ d 限制配置文件是由 [mpeg2 \_ b](mpeg2-b.md) 配置文件的加速器要求 relaxation 定义的 (因此，不需要加速器 b) 支持最低互操作性集 \_ ，所有支持 mpeg2 b 配置文件的驱动程序都 \_ 必须支持 mpeg2 \_ D 配置文件。 MPEG2 D 的限制 \_ 由 mpeg2 \_ B 限制配置文件中列出的限制定义，但以下附加限制除外。
 
-### <a name="span-idrestrictionsondxvaconnectmodespanspan-idrestrictionsondxvaconnectmodespanspan-idrestrictionsondxvaconnectmodespanrestrictions-on-dxvaconnectmode"></a><span id="Restrictions_on_DXVA_ConnectMode"></span><span id="restrictions_on_dxva_connectmode"></span><span id="RESTRICTIONS_ON_DXVA_CONNECTMODE"></span>DXVA 限制\_ConnectMode
+### <a name="span-idrestrictions_on_dxva_connectmodespanspan-idrestrictions_on_dxva_connectmodespanspan-idrestrictions_on_dxva_connectmodespanrestrictions-on-dxva_connectmode"></a><span id="Restrictions_on_DXVA_ConnectMode"></span><span id="restrictions_on_dxva_connectmode"></span><span id="RESTRICTIONS_ON_DXVA_CONNECTMODE"></span>DXVA ConnectMode 的限制 \_
 
 <table>
 <colgroup>
@@ -33,7 +32,7 @@ MPEG2\_D 受限制的配置文件中包含的一组功能所需的 mpeg-2 视频
 <thead>
 <tr class="header">
 <th align="left">结构成员</th>
-<th align="left">ReplTest1</th>
+<th align="left">“值”</th>
 </tr>
 </thead>
 <tbody>
@@ -46,9 +45,9 @@ MPEG2\_D 受限制的配置文件中包含的一组功能所需的 mpeg-2 视频
 
  
 
-### <a name="span-idrestrictionsondxvaconfigpicturedecodespanspan-idrestrictionsondxvaconfigpicturedecodespanspan-idrestrictionsondxvaconfigpicturedecodespanrestrictions-on-dxvaconfigpicturedecode"></a><span id="Restrictions_on_DXVA_ConfigPictureDecode"></span><span id="restrictions_on_dxva_configpicturedecode"></span><span id="RESTRICTIONS_ON_DXVA_CONFIGPICTUREDECODE"></span>DXVA 限制\_ConfigPictureDecode
+### <a name="span-idrestrictions_on_dxva_configpicturedecodespanspan-idrestrictions_on_dxva_configpicturedecodespanspan-idrestrictions_on_dxva_configpicturedecodespanrestrictions-on-dxva_configpicturedecode"></a><span id="Restrictions_on_DXVA_ConfigPictureDecode"></span><span id="restrictions_on_dxva_configpicturedecode"></span><span id="RESTRICTIONS_ON_DXVA_CONFIGPICTUREDECODE"></span>DXVA ConfigPictureDecode 的限制 \_
 
-这些限制将添加到配置的其他[最小互操作性集](minimal-interoperability-configuration-sets.md)用于解码图片 (bDXVA\_Func 等于 1)。 此附加配置由以下 DXVA\_ConfigPictureDecode 成员。
+这些限制将额外的配置添加到 [最小互操作集](minimal-interoperability-configuration-sets.md) ，以进行图片解码 (bDXVA \_ Func 等于 1) 。 此附加配置由以下 DXVA \_ ConfigPictureDecode 成员定义。
 
 <table>
 <colgroup>
@@ -58,7 +57,7 @@ MPEG2\_D 受限制的配置文件中包含的一组功能所需的 mpeg-2 视频
 <thead>
 <tr class="header">
 <th align="left">结构成员</th>
-<th align="left">ReplTest1</th>
+<th align="left">“值”</th>
 </tr>
 </thead>
 <tbody>
@@ -75,7 +74,7 @@ MPEG2\_D 受限制的配置文件中包含的一组功能所需的 mpeg-2 视频
 
  
 
-### <a name="span-idrestrictionsondxvaconfigalphacombinespanspan-idrestrictionsondxvaconfigalphacombinespanspan-idrestrictionsondxvaconfigalphacombinespanrestrictions-on-dxvaconfigalphacombine"></a><span id="Restrictions_on_DXVA_ConfigAlphaCombine"></span><span id="restrictions_on_dxva_configalphacombine"></span><span id="RESTRICTIONS_ON_DXVA_CONFIGALPHACOMBINE"></span>DXVA 限制\_ConfigAlphaCombine
+### <a name="span-idrestrictions_on_dxva_configalphacombinespanspan-idrestrictions_on_dxva_configalphacombinespanspan-idrestrictions_on_dxva_configalphacombinespanrestrictions-on-dxva_configalphacombine"></a><span id="Restrictions_on_DXVA_ConfigAlphaCombine"></span><span id="restrictions_on_dxva_configalphacombine"></span><span id="RESTRICTIONS_ON_DXVA_CONFIGALPHACOMBINE"></span>DXVA ConfigAlphaCombine 的限制 \_
 
 <table>
 <colgroup>
@@ -85,20 +84,20 @@ MPEG2\_D 受限制的配置文件中包含的一组功能所需的 mpeg-2 视频
 <thead>
 <tr class="header">
 <th align="left">结构成员</th>
-<th align="left">ReplTest1</th>
+<th align="left">“值”</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>bConfigBlendType</strong></p></td>
-<td align="left"><p>零个或 1 （在加速器的自行决定）。</p></td>
+<td align="left"><p>0或 1 (在加速器的) 。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-### <a name="span-idrestrictionsondxvaconfigalphaloadspanspan-idrestrictionsondxvaconfigalphaloadspanspan-idrestrictionsondxvaconfigalphaloadspanrestrictions-on-dxvaconfigalphaload"></a><span id="Restrictions_on_DXVA_ConfigAlphaLoad"></span><span id="restrictions_on_dxva_configalphaload"></span><span id="RESTRICTIONS_ON_DXVA_CONFIGALPHALOAD"></span>DXVA 限制\_ConfigAlphaLoad
+### <a name="span-idrestrictions_on_dxva_configalphaloadspanspan-idrestrictions_on_dxva_configalphaloadspanspan-idrestrictions_on_dxva_configalphaloadspanrestrictions-on-dxva_configalphaload"></a><span id="Restrictions_on_DXVA_ConfigAlphaLoad"></span><span id="restrictions_on_dxva_configalphaload"></span><span id="RESTRICTIONS_ON_DXVA_CONFIGALPHALOAD"></span>DXVA ConfigAlphaLoad 的限制 \_
 
 <table>
 <colgroup>
@@ -108,13 +107,13 @@ MPEG2\_D 受限制的配置文件中包含的一组功能所需的 mpeg-2 视频
 <thead>
 <tr class="header">
 <th align="left">结构成员</th>
-<th align="left">ReplTest1</th>
+<th align="left">“值”</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>bConfigDataType</strong></p></td>
-<td align="left"><p>（在加速器的自行决定） 的任何值。</p></td>
+<td align="left"><p> (在加速器的决定) 的任何值。</p></td>
 </tr>
 </tbody>
 </table>

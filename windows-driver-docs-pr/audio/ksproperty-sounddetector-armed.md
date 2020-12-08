@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ SOUNDDETECTOR \_
 description: SOUNDDETECTOR 的 \_ KSPROPERTY \_ 属性是探测器的当前武装状态。
-ms.assetid: 3B9B43C0-31EE-4490-AD29-98DA81D1664F
 keywords:
 - KSPROPERTY_SOUNDDETECTOR_ARMED 音频设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 09/26/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: b1d22c323f72b7e96926938343097e060261d733
-ms.sourcegitcommit: cfd4d8ee889c6a3feed79ae112662f6c095b6a36
+ms.openlocfilehash: 82fde38c536803a9db48aed2a74609afbcbbcdb3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94417429"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801177"
 ---
 # <a name="ksproperty_sounddetector_armed"></a>KSPROPERTY \_ SOUNDDETECTOR \_
 
@@ -42,7 +41,7 @@ ms.locfileid: "94417429"
 <tr class="header">
 <th align="left">获取</th>
 <th align="left">设置</th>
-<th align="left">Target</th>
+<th align="left">目标</th>
 <th align="left">属性描述符类型</th>
 <th align="left">属性值类型</th>
 </tr>
@@ -82,7 +81,7 @@ ms.locfileid: "94417429"
 <tr class="header">
 <th align="left">获取</th>
 <th align="left">设置</th>
-<th align="left">Target</th>
+<th align="left">目标</th>
 <th align="left">属性描述符类型</th>
 <th align="left">属性值类型</th>
 </tr>
@@ -109,12 +108,12 @@ ms.locfileid: "94417429"
 
 属性值为布尔值，指示检测到的武装状态。
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 OS 将此值设置为与检测探测器。
 
-如果未设置关键字模式，则设置为 true ( [**KSPROPERTY \_ SOUNDDETECTOR \_ 模式**](ksproperty-sounddetector-patterns.md) 为空) 不起作用。
+如果未设置关键字模式，则设置为 true ([**KSPROPERTY \_ SOUNDDETECTOR \_ 模式**](ksproperty-sounddetector-patterns.md) 为空) 不起作用。
 
 注意：如果此属性为 true，则将 [**KSPROPERTY \_ SOUNDDETECTOR \_ 模式**](ksproperty-sounddetector-patterns.md) 自动重置为 false （如上所述）。
 

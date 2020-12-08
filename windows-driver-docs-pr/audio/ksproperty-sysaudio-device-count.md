@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ SYSAUDIO \_ 设备 \_ 计数
 description: KSPROPERTY \_ SYSAUDIO \_ 设备 \_ 计数属性检索指定 DirectSound 应用程序必须从中选择的虚拟音频设备数的计数。
-ms.assetid: c70b6b5e-78fc-4f03-99cf-892297e592be
 keywords:
 - KSPROPERTY_SYSAUDIO_DEVICE_COUNT 音频设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 715d4165682ade532c1a438404c0615f456ac64b
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 791282d8ab11afb544783d7619073c524f75b30d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90101886"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801157"
 ---
 # <a name="ksproperty_sysaudio_device_count"></a>KSPROPERTY \_ SYSAUDIO \_ 设备 \_ 计数
 

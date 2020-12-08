@@ -1,7 +1,6 @@
 ---
 title: 延迟时钟
 description: 延迟时钟
-ms.assetid: 3cdd4c69-d99d-48bc-a1d9-9da2a2511e94
 keywords:
 - 合成 WDK 音频，延迟时钟
 - 延迟 WDK 音频，时钟
@@ -9,12 +8,12 @@ keywords:
 - 延迟 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1e37638061d42eca3ab60389bc6a80bf5ed2f6ee
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 7e393f82d4073adfbda7bc9a2ec12bc9c901ad8b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89208825"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801055"
 ---
 # <a name="latency-clocks"></a>延迟时钟
 
@@ -32,7 +31,7 @@ ms.locfileid: "89208825"
 
 -   允许 Dmu 微型端口驱动程序提前接收事件，以便能够按时播放事件，尽管设备滞后时间。 Dmu 端口驱动程序中的序列化引擎对小型端口驱动程序的事件进行排序。
 
-    在创建 pin 时，端口驱动程序会以100毫微秒为单位查询微型端口驱动程序的增量时间。 此增量时间是每个事件的显示时间比小型端口驱动程序要接收事件的时间。 端口驱动程序会尽力实现此功能。 为此增量 (指定一个非常大的值[**IMiniportDMus：：) newstream.ischecked**](/windows-hardware/drivers/ddi/dmusicks/nf-dmusicks-iminiportdmus-newstream)的*SchedulePreFetch*参数指定的值将使端口驱动程序在从用户模式传递到端口驱动程序后立即将这些事件传递给微型端口驱动程序。
+    在创建 pin 时，端口驱动程序会以100毫微秒为单位查询微型端口驱动程序的增量时间。 此增量时间是每个事件的显示时间比小型端口驱动程序要接收事件的时间。 端口驱动程序会尽力实现此功能。 为此增量 (指定一个非常大的值 [**IMiniportDMus：：) newstream.ischecked**](/windows-hardware/drivers/ddi/dmusicks/nf-dmusicks-iminiportdmus-newstream)的 *SchedulePreFetch* 参数指定的值将使端口驱动程序在从用户模式传递到端口驱动程序后立即将这些事件传递给微型端口驱动程序。
 
 -   向应用程序通知计划事件的进度。 在这种情况下，不需要使用最大延迟。 由于事件在提交后就无法取消，因此，可以将事件提交到其表示时间，从而使应用程序和合成可以交互的对象越多。 为了满足此要求，DirectMusic 已引入了延迟时钟的概念。
 

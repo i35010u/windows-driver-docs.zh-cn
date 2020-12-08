@@ -1,15 +1,14 @@
 ---
 title: 用于 Windows 容器的防病毒优化
 description: 本主题介绍防病毒产品在 Windows 容器中运行时可使用的优化。
-ms.assetid: 101BC08B-EE63-4468-8B12-C8C8B0E99FC5
 ms.date: 03/06/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: bce8bc15fae2580dea1a1b27c7934bbe7bf8b66b
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 546a880e0d50b99f8742ca78730239677d0415e9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89065410"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96799577"
 ---
 # <a name="anti-virus-optimization-for-windows-containers"></a>用于 Windows 容器的防病毒优化
 
@@ -56,7 +55,7 @@ AV 筛选器确实具有容器系统卷上所有操作的完整视图。 它会�
 
 AV 产品中需要进行以下更改：
 
-- **在容器卷上预先创建的过程中，将 ECP 附加到将接收占位符信息的创建 CallbackData。** 可以通过使用 **IoGetSiloParameters**从 fileobject 中查询接收器参数来识别这些创建。 请注意，筛选器必须在 **WCIFS_REDIRECTION_ECP_CONTEXT** 结构中指定大小。 如果已确认 ECP，则所有其他字段均设置为 out。
+- **在容器卷上预先创建的过程中，将 ECP 附加到将接收占位符信息的创建 CallbackData。** 可以通过使用 **IoGetSiloParameters** 从 fileobject 中查询接收器参数来识别这些创建。 请注意，筛选器必须在 **WCIFS_REDIRECTION_ECP_CONTEXT** 结构中指定大小。 如果已确认 ECP，则所有其他字段均设置为 out。
 
 - **在 "创建后" 中，如果已确认 ECP，请检查 ECP 重定向标志。** 标志将指示是从包层还是从暂存盘 (新文件或已修改的文件) 进行打开。 标志还会指示包层是否已注册以及它是否为远程。
 

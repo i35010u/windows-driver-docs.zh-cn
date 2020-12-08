@@ -1,21 +1,20 @@
 ---
-title: PKEY\_AudioDevice\_EnableEndpointByDefault
-description: PKEY\_AudioDevice\_EnableEndpointByDefault
-ms.assetid: bde2c06d-9418-4f6d-960a-0ebec83bf397
+title: PKEY \_ AudioDevice \_ EnableEndpointByDefault
+description: PKEY \_ AudioDevice \_ EnableEndpointByDefault
 ms.date: 01/15/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 27218a0a235286887158f16e273132fc6b1a6826
-ms.sourcegitcommit: 1addd14b2063aba321f5428a23393f22f59c02b8
+ms.openlocfilehash: d88c84dd09c7507fbf05e4d7debf451e81c84be5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76035723"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96800923"
 ---
-# <a name="pkey_audiodevice_enableendpointbydefault"></a>PKEY\_AudioDevice\_EnableEndpointByDefault
+# <a name="pkey_audiodevice_enableendpointbydefault"></a>PKEY \_ AudioDevice \_ EnableEndpointByDefault
 
-在 windows 7 和更高版本的 Windows 中，终结点生成器将终结点分为外形规格。 这些外形规格基于内核流式处理（KS）筛选器上连接到的终结点的 KSNODETYPE GUID。 当音频终结点生成器枚举某些终结点（例如，其形式因素类型如 UnknownFormFactor）时，终结点生成器会将这些终结点创建为禁用和隐藏状态。 因此，你必须使用控制面板中的声音程序来启用此类终结点，然后才能使用这些终结点。
+在 windows 7 和更高版本的 Windows 中，终结点生成器将终结点分为外形规格。 这些外形规格基于内核流式传输 (KS) 筛选器连接到的网络上的 pin 的 KSNODETYPE GUID。 当音频终结点生成器枚举某些终结点（例如，其形式因素类型如 UnknownFormFactor）时，终结点生成器会将这些终结点创建为禁用和隐藏状态。 因此，你必须使用控制面板中的声音程序来启用此类终结点，然后才能使用这些终结点。
 
-如果要重写此行为，以便在默认情况下将终结点创建为启用或禁用，Windows 7 将提供**PKEY\_AudioDevice\_EnableEndpointByDefault**注册表项，以便你可以执行此操作。
+如果要重写此行为，以便在默认情况下将终结点创建为已启用或已禁用，Windows 7 将提供 **PKEY \_ AudioDevice \_ EnableEndpointByDefault** 注册表项，以允许你执行此操作。
 
 终结点生成器会创建具有以下任意 KSNODETYPE 值的终结点，并将其禁用并隐藏。
 
@@ -27,7 +26,7 @@ ms.locfileid: "76035723"
 <thead>
 <tr class="header">
 <th align="left">KS 节点类型</th>
-<th align="left">外形尺寸</th>
+<th align="left">外形规格</th>
 </tr>
 </thead>
 <tbody>
@@ -74,7 +73,7 @@ ms.locfileid: "76035723"
 </tbody>
 </table>
 
-在 windows 7 和更高版本的 Windows 中，外观为 LineLevel 但 KSNODETYPE 不等于 KSNODETYPE\_LINE\_连接器的终结点也创建为禁用和隐藏。 以下终结点属于此类别。
+在 windows 7 和更高版本的 Windows 中，外观为 LineLevel 但 KSNODETYPE 不等于 KSNODETYPE 线条连接器的终结点 \_ \_ 也创建为禁用和隐藏。 以下终结点属于此类别。
 
 <table>
 <colgroup>
@@ -84,7 +83,7 @@ ms.locfileid: "76035723"
 <thead>
 <tr class="header">
 <th align="left">KS 节点类型</th>
-<th align="left">外形尺寸</th>
+<th align="left">外形规格</th>
 </tr>
 </thead>
 <tbody>
@@ -171,7 +170,7 @@ ms.locfileid: "76035723"
 </tbody>
 </table>
 
-以下 INF 文件片段演示了如何使用**PKEY\_AudioDevice\_EnableEndpointByDefault**默认启用或禁用终结点。
+以下 INF 文件片段演示了如何使用 **PKEY \_ AudioDevice \_ EnableEndpointByDefault** 默认启用或禁用终结点。
 
 ```inf
 [Version]
@@ -204,9 +203,9 @@ PKEY_AudioDevice_EnableEndpointByDefault="{F3E80BEF-1723-4FF2-BCC4-7F83DC5E46D4}
 ...
 ```
 
-在前面的示例中，EnableEndpointByDefaultMaskValue 表示 DWORD 掩码值，它是 "启用" 或 "禁用" 标志（标记\_"启用" 或 "标志"\_"禁用"）和 "数据流" 标志（FLOW\_掩码\_呈现或流\_掩码\_捕获）组合。
+在前面的示例中，EnableEndpointByDefaultMaskValue 表示 DWORD 掩码值，它是 "启用" 或 "禁用" 标志的组合 (标志 \_ 启用或标记 \_ 禁用) 并 (流 \_ 掩码 \_ 呈现或流 \_ 屏蔽 \_ 捕获) 。
 
-以下 INF 文件片段显示了如何设置 CD 播放机，以便在默认情况下启用它并将其配置为输入设备（FLOW\_掩码\_捕获）。
+以下 INF 文件片段显示了如何设置 CD 播放机，以便在默认情况下启用它并将其配置为输入设备 (FLOW \_ 掩码 \_ 捕获) 。
 
 ```inf
 [Version]
@@ -241,7 +240,7 @@ PKEY_AudioDevice_EnableEndpointByDefault="{F3E80BEF-1723-4FF2-BCC4-7F83DC5E46D4}
 …
 ```
 
-在前面的示例中，流\_掩码的按位 "或" 组合\_捕获和标志\_ENABLE 等效于0x00000201 的0x00000200 和0x00000001 的按位 OR 组合。 下表显示了可用于**PKEY\_AudioDevice\_EnableEndpointByDefault**的标志和掩码值。
+在前面的示例中，流掩码捕获和标记 ENABLE 的按位 "或" 组合 \_ \_ 等效于 \_ 0x00000200 和0x00000001 的按位 "或" 组合与 "0x00000201" 的结果。 下表显示了可以与 **PKEY \_ AudioDevice \_ EnableEndpointByDefault** 一起使用的标志和掩码值。
 
 <table>
 <colgroup>
@@ -251,7 +250,7 @@ PKEY_AudioDevice_EnableEndpointByDefault="{F3E80BEF-1723-4FF2-BCC4-7F83DC5E46D4}
 <thead>
 <tr class="header">
 <th align="left">标志或终结点掩码</th>
-<th align="left">Value</th>
+<th align="left">“值”</th>
 </tr>
 </thead>
 <tbody>

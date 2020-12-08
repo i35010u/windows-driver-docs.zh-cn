@@ -1,15 +1,14 @@
 ---
 title: 选择退出音量级别持久性
 description: 选择退出音量级别持久性
-ms.assetid: e96533be-25e8-49ae-8e56-7105dfa92b5a
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4be8ebbff3747c3d264bc19e4fb5e9835032397a
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 7a72a8e9d1eb33c36847986255c352cb101dff22
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89208793"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96800971"
 ---
 # <a name="opting-out-of-volume-level-persistence"></a>选择退出音量级别持久性
 
@@ -55,19 +54,19 @@ MfgName = "My Company Name Inc"
 DeviceDescription = "My WDM device driver"
 ```
 
-**注意**   上述 INF 文件片段只显示**版本**部分以及与[**AddProperty**](../install/inf-addproperty-directive.md)指令相关的部分。
+**注意**  上述 INF 文件片段只显示 **版本** 部分以及与 [**AddProperty**](../install/inf-addproperty-directive.md) 指令相关的部分。
 
  
 
-**制造商**部分中的 **% MfgName% = 公司名称**行条目引用了 "**公司名称**" 部分，其中提供了) 音频适配器的型号和硬件 id (。 此部分位于 INF 文件中，其中提供了模型和 hw id 信息，称为 "模型" *部分*。 部分的实际标题是用户定义的，在前面的示例中，它是 **公司名称**。 有关 INF 文件的型号部分的详细信息，请参阅 [**Inf 型号部分**](../install/inf-models-section.md)。
+**制造商** 部分中的 **% MfgName% = 公司名称** 行条目引用了 "**公司名称**" 部分，其中提供了) 音频适配器的型号和硬件 id (。 此部分位于 INF 文件中，其中提供了模型和 hw id 信息，称为 "模型" *部分*。 部分的实际标题是用户定义的，在前面的示例中，它是 **公司名称**。 有关 INF 文件的型号部分的详细信息，请参阅 [**Inf 型号部分**](../install/inf-models-section.md)。
 
 模型部分反过来引用设备驱动程序安装 (DDInstall) 部分，其中提供了有关安装程序必须复制的其他 INF 文件的信息。 本部分的实际标题是用户定义的，在前面的示例中，它是 **HdAudModel**。 **需求 = KS。注册 ...** 行条目提供有关 INF 文件中特定部分的信息，安装程序必须从这些部分中检索要安装的数据
 
-**HdAudModel**节还包含对 AddReg 和 AddProperty 部分的引用。 安装程序将从 AddReg 和 AddProperty 中检索数据，以便分别设置注册表项和设备属性。 此处引用的 AddProperty 节为 **HdAudModel. AddProperty** ，它使用以下格式来提供有关设备属性的信息：
+**HdAudModel** 节还包含对 AddReg 和 AddProperty 部分的引用。 安装程序将从 AddReg 和 AddProperty 中检索数据，以便分别设置注册表项和设备属性。 此处引用的 AddProperty 节为 **HdAudModel. AddProperty** ，它使用以下格式来提供有关设备属性的信息：
 
 {*property-category-guid*}，*属性-pid*， *type*， \[ *flags* \] ， *value*
 
-**HdAudModel**部分显示两个行条目，其中第一个条目已注释掉。注释掉的行条目会将设备属性的值设置为 "1"。 未注释掉的行项是安装程序读取的行项。 此行项使设备属性的值设置为 "0"。 如果此设备属性设置为 "0"，则音频设备将会退出卷暂留。
+**HdAudModel** 部分显示两个行条目，其中第一个条目已注释掉。注释掉的行条目会将设备属性的值设置为 "1"。 未注释掉的行项是安装程序读取的行项。 此行项使设备属性的值设置为 "0"。 如果此设备属性设置为 "0"，则音频设备将会退出卷暂留。
 
 有关 AddProperty 指令的详细信息，请参阅 [**INF AddProperty 指令**](../install/inf-addproperty-directive.md)。
 

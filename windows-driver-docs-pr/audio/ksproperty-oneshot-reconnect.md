@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ ONESHOT \_ 重新连接
 description: KSPROPERTY \_ ONESHOT \_ RECONNECT 属性用于提示音频驱动程序尝试连接到蓝牙音频设备。
-ms.assetid: 54122a02-87e9-4953-aa78-4b9b31447a26
 keywords:
 - KSPROPERTY_ONESHOT_RECONNECT 音频设备
 topic_type:
@@ -14,17 +13,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2aaa21e3b2042c7879d3de89312290e7ec29cc22
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 98127d299f9dd2bbf36264c41191d170d6b95d7d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90101968"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801203"
 ---
 # <a name="ksproperty_oneshot_reconnect"></a>KSPROPERTY \_ ONESHOT \_ 重新连接
 
 
-**KSPROPERTY \_ ONESHOT \_ RECONNECT**属性用于提示音频驱动程序尝试连接到蓝牙音频设备。
+**KSPROPERTY \_ ONESHOT \_ RECONNECT** 属性用于提示音频驱动程序尝试连接到蓝牙音频设备。
 
 ### <a name="span-idusage_summary_tablespanspan-idusage_summary_tablespanspan-idusage_summary_tablespanusage-summary-table"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用情况摘要表
 

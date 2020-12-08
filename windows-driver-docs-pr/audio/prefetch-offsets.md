@@ -1,7 +1,6 @@
 ---
 title: 预提取偏移量
 description: 预提取偏移量
-ms.assetid: 92a0163f-29b1-4e15-88ab-67e1097d015e
 keywords:
 - 硬件加速 WDK DirectSound，预提取偏移量
 - 预提取偏移 WDK 音频
@@ -10,12 +9,12 @@ keywords:
 - 偏移 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9ee6615fcf1a221035886da17755d2a5dd9defac
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: bc1e2cefeb6983f012303a3d8e275106ad2ef49b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89210453"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96800788"
 ---
 # <a name="prefetch-offsets"></a>预提取偏移量
 

@@ -1,9 +1,8 @@
 ---
 title: .apply_dbp（将数据断点应用到上下文）
-description: .Apply_dbp 命令适用于指定的寄存器上下文当前进程的现有数据断点。
-ms.assetid: c74fd4b3-3335-4e03-a57a-6a9aa883dd9f
+description: .Apply_dbp 命令将当前进程的现有数据断点应用到指定的寄存器上下文。
 keywords:
-- .apply_dbp （适用于上下文的数据断点） Windows 调试
+- .apply_dbp (将数据断点应用于上下文) Windows 调试
 ms.date: 09/17/2018
 topic_type:
 - apiref
@@ -12,27 +11,27 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 5b86c00a0c785ae6f52172f918b076148eb1ef6d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5d254b5e04dc647d6b824a98135fa43db39ed83f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63334742"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96800031"
 ---
-# <a name="applydbp-apply-data-breakpoint-to-context"></a>.apply\_dbp （到上下文应用数据断点）
+# <a name="apply_dbp-apply-data-breakpoint-to-context"></a>。应用 \_ .dbp (将数据断点应用于上下文) 
 
 
-**.Apply\_dbp**命令将当前进程的现有数据断点应用于指定的寄存器上下文。
+" **应用" \_ "应用** " "应用" "应用" "应用"。
 
 ```dbgcmd
     .apply_dbp [/m Context] 
 ```
 
-## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>参数
+## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>Parameters
 
 
-<span id="________m_______Context______"></span><span id="________m_______context______"></span><span id="________M_______CONTEXT______"></span> **/m** *上下文*   
-指定要对其应用当前进程的数据断点的内存中寄存器上下文 （CONTEXT 结构） 的地址。
+<span id="________m_______Context______"></span><span id="________m_______context______"></span><span id="________M_______CONTEXT______"></span>**/M** *上下文*   
+指定注册上下文的地址 (上下文结构) 在内存中，以便应用当前进程的数据断点。
 
 ### <a name="span-idenvironmentspanspan-idenvironmentspanspan-idenvironmentspanenvironment"></a><span id="Environment"></span><span id="environment"></span><span id="ENVIRONMENT"></span>环境
 
@@ -43,38 +42,38 @@ ms.locfileid: "63334742"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>模式</strong></p></td>
+<td align="left"><p><strong>交货</strong></p></td>
 <td align="left"><p>用户模式和内核模式</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>目标</strong></p></td>
-<td align="left"><p>仅限实时目标</p></td>
+<td align="left"><p>仅限活动目标</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>平台</strong></p></td>
-<td align="left"><p>全部</p></td>
+<td align="left"><p>all</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-有关控制处理器的断点的详细信息，请参阅[处理器断点 (ba 断点)](processor-breakpoints---ba-breakpoints-.md)。 有关寄存器上下文 （线程上下文） 的详细信息，请参阅[注册上下文](changing-contexts.md#register-context)。
+有关处理器控制的断点的详细信息，请参阅 [处理器断点 (Ba 断点) ](processor-breakpoints---ba-breakpoints-.md)。 有关注册上下文 (线程上下文) 的详细信息，请参阅 [注册上下文](changing-contexts.md#register-context)。
 
 <a name="remarks"></a>备注
 -------
 
-调用由处理器控制的断点*数据断点*或*处理器断点*。 创建这些断点[ **ba （中断的访问权限）** ](ba--break-on-access-.md)命令。
+由处理器控制的断点称为 *数据断点* 或 *处理器断点*。 这些断点由 [**ba (Access)**](ba--break-on-access-.md) 命令创建。
 
-遇到这些断点与相关联的特定进程的地址空间中的内存位置。 **.Apply\_dbp**命令将修改指定的寄存器上下文，以便使用此上下文时，这些数据断点将处于活动状态。
+这些断点与特定进程的地址空间中的内存位置相关联。 **. 应用 \_ .dbp** 命令修改指定的寄存器上下文，以便在使用此上下文时这些数据断点将处于活动状态。
 
-如果 **/m** *地址*未使用参数时，数据断点将应用于当前寄存器上下文。
+如果未使用 **/M** *Address* 参数，则数据断点将应用于当前的注册上下文。
 
-如果目标是在本机模式下，仅可以使用此命令。 例如，如果目标模拟 x86 的 64 位计算机上运行使用处理器*WOW64*，不能使用此命令。
+仅当目标为纯计算机模式时，才能使用此命令。 例如，如果目标是在使用 *WOW64* 模拟 x86 处理器的64位计算机上运行，则不能使用此命令。
 
-此命令很有用的一个示例是时间的在异常筛选器。 **.Apply\_dbp**命令可以更新异常筛选器的存储的上下文。 当异常筛选器退出，并恢复将存储的上下文，然后将应用数据断点。 如果没有这种修改很可能会丢失数据断点。
+此命令的一个示例就是在异常筛选器中。 **. 应用 \_ .dbp** 命令可以更新异常筛选器的存储上下文。 然后，在异常筛选器退出并恢复存储的上下文时，将应用数据断点。 如果没有此类修改，则可能会丢失数据断点。
 
  
 

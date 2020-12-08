@@ -1,7 +1,6 @@
 ---
 title: 用户模式与内核模式
 description: 用户模式与内核模式
-ms.assetid: ee506167-6b64-4e50-9988-102416bcb056
 keywords:
 - 软件合成程序 WDK 音频
 - 自定义 synths WDK 音频
@@ -14,12 +13,12 @@ keywords:
 - DirectMusic 内核模式 WDK 音频，与用户模式
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f634bd321333de15e5f47b187ec0cba37bb3bc8
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: b39f4d6af7de8bb26afed820a89c15f7e575ebd7
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90716314"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96800467"
 ---
 # <a name="user-mode-versus-kernel-mode"></a>用户模式与内核模式
 

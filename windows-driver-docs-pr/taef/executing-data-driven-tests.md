@@ -1,56 +1,55 @@
 ---
 title: 执行数据驱动的测试
 description: 执行数据驱动的测试
-ms.assetid: E8E7A66A-6E39-442d-A195-AE4633B817FE
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 745cc31388aa42be04e880c8e21e483d49b5a545
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3302e43e9b6240eaac05b370e52e3d301c893f3c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63378094"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801221"
 ---
-# <a name="span-idtaefexecutingdata-driventestsspanexecuting-data-driven-tests"></a><span id="taef.executing_data-driven_tests"></span>执行数据驱动的测试
+# <a name="span-idtaefexecuting_data-driven_testsspanexecuting-data-driven-tests"></a><span id="taef.executing_data-driven_tests"></span>执行数据驱动的测试
 
 
-请确保您已经知道如何创建数据驱动测试以及如何执行与测试[TAEF](index.md)开始提示和技巧的执行与 TAEF DataDrivenTests 之前。 它可能有助于以刷新您的内存如何[选择查询](selection.md)也适用于 TAEF。
+请确保你已了解如何创作数据驱动的测试，以及如何在开始执行 DataDrivenTests 与 TAEF 的提示和技巧之前，通过 [TAEF](index.md) 执行测试。 刷新有关 [选择查询](selection.md) 如何与 TAEF 一起工作的内存可能会很有帮助。
 
-本部分专门介绍执行基于的表数据驱动的测试，但同样的基本原则适用于基于 PICT 并基于 WMI 的数据驱动测试也。
+本部分专门介绍了如何执行基于表的数据驱动的测试，但相同的基本原则也适用于基于 PICT 和基于 WMI 的数据驱动的测试。
 
-如果只是想要运行所有测试，包括数据驱动的测试，则从如何将正常都运行与 TAEF 没有区别。 让我们运行的示例，请考虑我们**CPP\\DataDrivenExample**并**CSharp\\DataDrivenExample**一起使用 TAEF。 请记住，默认情况下 TAEF 运行测试扩展的过程 如果你想要运行这些进程内，使用"/ inproc"切换。
+如果只是想要运行所有测试（包括数据驱动的测试），则与 TAEF 运行它的方式没有什么不同。 我们来看一个示例，该示例使用 TAEF 将 **CPP \\ DataDrivenExample** 和 **CSharp \\ DataDrivenExample** 一起运行。 请记住，默认情况下，TAEF 在进程外运行测试。 如果要以 inproc 运行，请使用 "/inproc" 开关。
 
 ``` syntax
 TE.exe Examples\CPP.DataDriven.Example.dll Examples\CSharp.DataDriven.Example.dll
 ```
 
-看看的 xml 文件和指定的元数据的标头文件。 仅运行数据驱动的测试具有优先级 = 1，如下所示：
+查看指定元数据的 xml 文件和头文件。 仅运行优先级为1的 datadriven 测试，如下所示：
 
 ``` syntax
 TE.exe Examples\*.Tests.dll /select:"@DataSource=* And @Priority=1"
 ```
 
-请记住在行级别在创作级别 TestMethod 指定元数据 xml 文件重写中指定的元数据。
+请记住，在 xml 文件的行级别指定的元数据将覆盖在 TestMethod 创作级别指定的元数据。
 
-我们来探讨更多的数据驱动的测试执行 TAEF 强大功能。 例如，要重现仅 FirstTable() 函数中的第三行。 可以使用的行，这将是 2 （索引从 0 处开始） 的索引来执行此操作：
+让我们再来看一看使用 TAEF 的数据驱动的测试的强大功能。 例如，您只想在 FirstTable ( # A1 函数中重现第三行。 为此，可以使用行的索引，该索引将是 2 (索引从0开始) ：
 
 ``` syntax
 TE.exe Examples\CPP.DataDriven.Example.dll /select:"@Name='*FirstTable*' and @Data:index=2"
 ```
 
-请注意，选择标准现在包含新的命名空间"@Data:"可以专门使用该数据驱动测试。 运行时更高版本的测试，您将注意到，而非常规\#索引的测试名称，如果你有的数据驱动的测试，可附加\#黑色追加到测试名称-这是为指定的特殊 Name 元数据此行。 请参阅[指定在行级别的元数据](metadata-overriding-data-driven-test-example.md)有关详细信息。 尽管此特殊名称，仍可以选择使用的名称。 索引选择可能会很长选择的行的大型数据集的范围。 有关示例 （假设-未在示例中） 如果你有一种数据驱动测试 100 行 (最大索引 = 99) 和仅想要执行索引大于 10 的行和少于 20 个，现在可以轻松地指定为：
+请注意，选择条件现在具有新的命名空间 " @Data: "，可以专门用于数据驱动的测试。 当您运行上述测试时，您将注意到， \# 在进行数据驱动的测试的情况下，不会将追加到测试名称后面的常用 "索引" 改为 " \# 黑色"，这是为此行指定的特殊 "name" 元数据。 有关详细信息，请参阅 [在行级别指定元数据](metadata-overriding-data-driven-test-example.md) 。 尽管这是特殊名称，仍可以使用该名称进行选择。 索引选择可用于为真正大的数据集选择一定范围的行。 例如 (假设-not in example) 如果数据驱动的测试包含100行 (max index = 99) ，并且只想执行索引大于10且小于20的行，则现在可以轻松地将此值指定为：
 
 ``` syntax
 TE.exe Examples\*.Tests.dll /select:"@Name='*MyDataDrivenTest*' and @Data:index > 10 and @Data:index < 20"
 ```
 
-很多时候，将需要重现基于特定的数据值而无需费力查找其索引。 在这种情况下可以使用"@Data:"再次命名空间。 现在假设在本机的示例中的单元测试 (请参阅[创作数据驱动测试](data-driven-testing.md))，你想要运行仅这种情况下，当"主题"是"AeroBasic"。
+很多时候，您需要根据特定数据值重现，而不必经历查找其索引的问题。 在这种情况下，可以再次使用 " @Data: " 命名空间。 现在，在单元测试的本机示例中， (请参阅 [创作数据驱动的测试](data-driven-testing.md)) ，只需在 "主题" 为 "AeroBasic" 时才运行这些情况。
 
 ``` syntax
 TE.exe Examples\CPP.DataDriven.Example.dll Examples\CSharp.DataDriven.Example.dll /select:"@Data:Theme='AeroBasic'"
 ```
 
-这将按如下所示显示在控制台上：
+这会显示在控制台上，如下所示：
 
 ``` syntax
 StartGroup: WEX::TestExecution::Examples::DataDrivenTests::SecondTable#2 [Process: 3588; Thread: 4584]
@@ -60,15 +59,15 @@ EndGroup: WEX::TestExecution::Examples::DataDrivenTests::SecondTable#2 [Passed]
 Summary: Total=1, Passed=1, Failed=0, Blocked=0, Not Run=0, Skipped=0
 ```
 
-你还可以利用 /listproperties 对于数据驱动测试，若要查看的数据驱动测试的数据集和元数据 （在测试方法级别和行级别指定元数据的组合）。 因此，
+你还可以利用/listproperties 进行 datadriven 测试，以查看数据集和元数据 (在测试方法级别指定的元数据组合和数据驱动测试的行级) 。 因此，
 
 ``` syntax
 TE.exe Examples\CSharp.DataDriven.Examples.dll /listproperties
 ```
 
-将列出所有方法 (数据驱动，否则为) 随元数据和数据的值可用且指定在不同级别。
+将列出 (datadriven 的所有方法，否则) ，以及在不同级别提供和指定的元数据和数据值。
 
-看一看[行级别重写元数据](metadata-overriding-data-driven-test-example.md)，[指定数组参数类型](array-support-data-driven-test-example.md)并[数据驱动的简单示例](data-driven-testing.md)例如演练提供的详细信息见解。
+查看 [行级别的重写元数据](metadata-overriding-data-driven-test-example.md)， [指定数组参数类型](array-support-data-driven-test-example.md) 和简单的 [数据驱动示例](data-driven-testing.md) ，例如，演练提供更多见解。
 
  
 

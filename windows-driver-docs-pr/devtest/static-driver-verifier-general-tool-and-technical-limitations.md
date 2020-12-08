@@ -1,19 +1,18 @@
 ---
 title: 静态驱动程序验证程序常规工具和技术限制
 description: 静态驱动程序验证程序常规工具和技术限制
-ms.assetid: d263dee5-2408-4772-96d7-d1895a445fab
 keywords:
 - 静态驱动程序验证程序 WDK，限制
 - StaticDV WDK，限制
 - SDV WDK，限制
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8b39ebf0ee6fbb0e06f1bdf57836fe8d0fc33749
-ms.sourcegitcommit: 878a1cb0149dc18ccbd31774e12bad76084dfa24
+ms.openlocfilehash: 5101e57bf546312b77f4fb9f962b522900e27cf9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94937795"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96799751"
 ---
 # <a name="static-driver-verifier-general-tool-and-technical-limitations"></a>静态驱动程序验证程序常规工具和技术限制
 

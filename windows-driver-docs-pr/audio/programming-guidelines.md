@@ -1,15 +1,14 @@
 ---
 title: HD 音频 DDI 编程指南
 description: HD 音频 DDI 编程指南
-ms.assetid: 289bdf85-9138-4920-a61f-050c51077d3e
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d2d9f70471d19e658fce3945b94a0610abf41807
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 5cb710e2be9bf46bd44be803781223004054672a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89210451"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96800787"
 ---
 # <a name="hd-audio-ddi-programming-guidelines"></a>HD 音频 DDI 编程指南
 

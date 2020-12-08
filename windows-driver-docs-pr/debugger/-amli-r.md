@@ -1,9 +1,8 @@
 ---
 title: amli r
-description: Amli r 扩展显示有关当前上下文或指定的上下文信息。
-ms.assetid: 1a8977ed-a420-4f68-8580-8e7446075283
+description: Amli r 扩展显示有关当前上下文或指定上下文的信息。
 keywords:
-- Windows 调试 amli r
+- amli r Windows 调试
 ms.date: 09/17/2018
 topic_type:
 - apiref
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 28cb2523213a6987388c93c040a2f260ccb47a2f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 47b4ab82db5d2b4b1642ba0df527be608d94e2f2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63337004"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96800063"
 ---
 # <a name="amli-r"></a>!amli r
 
 
-**！ Amli r**扩展显示有关当前上下文或指定的上下文信息。
+**！ Amli r** 扩展显示有关当前上下文或指定上下文的信息。
 
 语法
 
@@ -30,26 +29,26 @@ ms.locfileid: "63337004"
    !amli r [ContextAddress]
 ```
 
-## <a name="span-idddkamlirdbgspanspan-idddkamlirdbgspanparameters"></a><span id="ddk__amli_r_dbg"></span><span id="DDK__AMLI_R_DBG"></span>参数
+## <a name="span-idddk__amli_r_dbgspanspan-idddk__amli_r_dbgspanparameters"></a><span id="ddk__amli_r_dbg"></span><span id="DDK__AMLI_R_DBG"></span>参数
 
 
-<span id="_______ContextAddress______"></span><span id="_______contextaddress______"></span><span id="_______CONTEXTADDRESS______"></span> *ContextAddress*   
-指定要显示的上下文块的地址。 可以根据上下文块的地址**Ctxt**字段中[ **！ amli lc** ](-amli-lc.md)显示。 如果*ContextAddress*前缀为两个百分号 (**%%**)，它被解释为物理地址。 否则，它被解释为一个虚拟地址。 如果省略此参数，则会显示当前上下文。
+<span id="_______ContextAddress______"></span><span id="_______contextaddress______"></span><span id="_______CONTEXTADDRESS______"></span>*ContextAddress*   
+指定要显示的上下文块的地址。 可以从 [**！ amli lc**](-amli-lc.md)显示的 " **Ctxt** " 字段确定上下文块的地址。 如果 *ContextAddress* 以两个百分号 (**%%**) ，则会将其解释为物理地址。 否则，会将其解释为虚拟地址。 如果省略此参数，则显示当前上下文。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 Kdexts.dll
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-有关相关的命令及其用途的信息，请参阅[AMLI 调试器](the-amli-debugger.md)。
+有关相关命令及其用法的信息，请参阅 [AMLI 调试器](the-amli-debugger.md)。
 
 <a name="remarks"></a>备注
 -------
 
-AMLI 调试器会突然显示提示，这是否有用的命令，以使用。
+如果 AMLI 调试器提示突然出现，则这是一个使用的有用命令。
 
-例如，以下命令将显示该解释器的当前上下文：
+例如，以下命令将显示解释器的当前上下文：
 
 ```console
 AMLI(? for help)-> r

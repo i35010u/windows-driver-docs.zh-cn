@@ -1,15 +1,14 @@
 ---
 title: 语音激活
 description: Cortana，Windows 语音平台用于为 Windows 10 中的所有语音体验（例如 Cortana 和听写）供电。
-ms.assetid: 0684EF32-AA76-418B-9027-1C067A8140E3
 ms.date: 05/15/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 595da9b6eaa8313e0eac0d58a5ba867f5277944d
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 315183541404930a344c8c22f430501ece80bc29
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89209905"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96800501"
 ---
 # <a name="voice-activation"></a>语音激活
 
@@ -25,7 +24,7 @@ Cortana，在2013中的 Microsoft BUILD 开发人员大会首次演示了个人�
 
 若要了解 Windows 中可用的语音交互体验，请查看以下主题。
 
-|主题|说明|
+|主题|描述|
 |----|----|
 | [什么是 Cortana？](https://support.microsoft.com/help/17214/cortana-what-is)      | 提供 Cortana 的概述和使用方向                 |
 | [使 Cortana 彰显你的个性](https://support.microsoft.com/help/17178/windows-10-make-cortana-yours) | 描述可通过 Cortana 的 "设置" 屏幕进行的自定义。 |
@@ -42,7 +41,7 @@ Cortana，在2013中的 Microsoft BUILD 开发人员大会首次演示了个人�
 
 *仅限关键字* 激活当只提到 cortana 关键字时，Cortana 会启动并播放 EarCon 声音，以指示它已进入侦听模式。
 
-*链式命令*描述了发出紧跟关键字 (如 "你好 Cortana，call John" ) 的命令的功能，并让 Cortana 启动 (（如果尚未启动）) 并遵循命令 (使用 John) 启动电话呼叫。
+*链式命令* 描述了发出紧跟关键字 (如 "你好 Cortana，call John" ) 的命令的功能，并让 Cortana 启动 (（如果尚未启动）) 并遵循命令 (使用 John) 启动电话呼叫。
 
 此图说明了链式和关键字的激活。
 
@@ -77,7 +76,7 @@ Microsoft 提供 OS default 关键字 spotter (software 关键字 spotter) ，�
 | HW KWS                | 硬件卸载关键字 spotter –在硬件上运行的 KWS 的实现。 |
 |突发缓冲区           | 一种用于存储在 KWS 检测时可以 "bursted" 的 PCM 数据的循环缓冲区，因此包括触发 KWS 检测的所有音频。 |
 |关键字检测器 OEM 适配器 |一种驱动程序级别填充程序，使支持 WoV 的 HW 能够与 Windows 和 Cortana 堆栈进行通信。 |
-|型号 | KWS 算法使用的声音模型数据文件。 数据文件为静态。 模型已本地化，每个区域设置一个。|
+|建模 | KWS 算法使用的声音模型数据文件。 数据文件为静态。 模型已本地化，每个区域设置一个。|
 
 ## <a name="integrating-a-hardware-keyword-spotter"></a>集成硬件关键字 Spotter
 
@@ -134,7 +133,7 @@ HW KWS 的 AEC 要求
 
 用于启用语音激活的音频堆栈外部接口用作语音平台和音频驱动程序的通信管道。 外部接口分为三部分。
 
-- *关键字检测器设备驱动程序接口 (DDI) *。 关键字检测器设备驱动程序接口负责配置和武装 HW 关键字 Spotter (KWS) 。  它还可由驱动程序用来通知系统检测事件。
+- *关键字检测器设备驱动程序接口 (DDI)*。 关键字检测器设备驱动程序接口负责配置和武装 HW 关键字 Spotter (KWS) 。  它还可由驱动程序用来通知系统检测事件。
 - *关键字检测器 OEM 适配器 DLL*。 此 DLL 实现了一个 COM 接口，用于改编驱动程序特定的不透明数据以供 OS 用于帮助进行关键字检测。
 - *WaveRT 流增强功能*。 增强功能使得音频驱动程序能够突发地流式传输来自关键字检测的缓冲音频数据。
 
@@ -150,7 +149,7 @@ HW KWS 的 AEC 要求
 
 - 支持的关键字类型- [**KSPROPERTY \_ SOUNDDETECTOR \_ 模式**](./ksproperty-sounddetector-patterns.md)。 此属性由操作系统设置，用于配置要检测的关键字。
 - 关键字模式 Guid 列表- [**KSPROPERTY \_ SOUNDDETECTOR \_ SUPPORTEDPATTERNS**](./ksproperty-sounddetector-supportedpatterns.md)。 此属性用于获取 Guid 列表，这些 Guid 用于标识支持模式的类型。
-- [**KSPROPERTY \_ SOUNDDETECTOR \_ **](./ksproperty-sounddetector-armed.md)。 此读取/写入属性是一个简单的布尔状态，它指示是否已确定探测器。 操作系统将此设置为参与关键字检测器。 操作系统可以清除此来脱开。 如果设置了关键字模式，并且在检测到了关键字之后，驱动程序会自动清除此设置。  (操作系统必须进行重置。 ) 
+- [**KSPROPERTY \_ SOUNDDETECTOR \_**](./ksproperty-sounddetector-armed.md)。 此读取/写入属性是一个简单的布尔状态，它指示是否已确定探测器。 操作系统将此设置为参与关键字检测器。 操作系统可以清除此来脱开。 如果设置了关键字模式，并且在检测到了关键字之后，驱动程序会自动清除此设置。  (操作系统必须进行重置。 ) 
 - Match result- [**KSPROPERTY \_ SOUNDDETECTOR \_ MATCHRESULT**](./ksproperty-sounddetector-matchresult.md)。 此 read 属性保存检测后的结果数据。
 
 检测到关键字时触发的事件是一个 [**KSEVENT \_ SOUNDDETECTOR \_ MATCHDETECTED**](./ksevent-sounddetector-matchdetected.md) 事件。
@@ -323,7 +322,7 @@ OEM DLL 开发人员决定如何管理独立于用户的数据和用户相关数
 
 ### <a name="iminiportwavertinputstream"></a>IMiniportWaveRTInputStream
 
-驱动程序实现此接口，以便更好地协调从驱动程序到操作系统的音频数据流。 如果此接口在捕获流中可用，则操作系统将使用此接口上的方法访问 WaveRT 缓冲区中的数据。 有关详细信息，请参阅[ **IMiniportWaveRTInputStream：： GetReadPacket**](/windows-hardware/drivers/ddi/portcls/nf-portcls-iminiportwavertinputstream-getreadpacket)
+驱动程序实现此接口，以便更好地协调从驱动程序到操作系统的音频数据流。 如果此接口在捕获流中可用，则操作系统将使用此接口上的方法访问 WaveRT 缓冲区中的数据。 有关详细信息，请参阅 [ **IMiniportWaveRTInputStream：： GetReadPacket**](/windows-hardware/drivers/ddi/portcls/nf-portcls-iminiportwavertinputstream-getreadpacket)
 
 ### <a name="iminiportwavertoutputstream"></a>IMiniportWaveRTOutputStream
 

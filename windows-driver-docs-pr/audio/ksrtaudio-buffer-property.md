@@ -1,7 +1,6 @@
 ---
 title: KSRTAUDIO \_ BUFFER \_ 属性结构
 description: KSRTAUDIO \_ buffer \_ 属性结构将缓冲区基址和请求的缓冲区大小追加到 KSPROPERTY 结构。 此结构由客户端用于请求通过 KSPROPERTY RTAUDIO 缓冲区分配音频缓冲区 \_ \_ 。
-ms.assetid: 6fc33d5d-5d7e-4d04-a9b0-864cba961077
 keywords:
 - KSRTAUDIO_BUFFER_PROPERTY 构造音频设备
 - PKSRTAUDIO_BUFFER_PROPERTY 结构指针音频设备
@@ -15,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ae13cedb48888d2ad101fe211f09b547336191d1
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 0fc6f9e80bf33bfcde667541bead58b71df19045
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89208829"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801059"
 ---
 # <a name="ksrtaudio_buffer_property-structure"></a>KSRTAUDIO \_ BUFFER \_ 属性结构
 
@@ -33,8 +32,8 @@ KSRTAUDIO \_ buffer \_ 属性结构将缓冲区基址和请求的缓冲区大小
 ```ManagedCPlusPlus
 typedef struct {
   KSPROPERTY Property;
-  PVOID      BaseAddress;
-  ULONG      RequestedBufferSize;
+  PVOID      BaseAddress;
+  ULONG      RequestedBufferSize;
 } KSRTAUDIO_BUFFER_PROPERTY, *PKSRTAUDIO_BUFFER_PROPERTY;
 ```
 

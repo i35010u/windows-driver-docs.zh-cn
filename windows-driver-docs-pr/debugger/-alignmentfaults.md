@@ -1,7 +1,6 @@
 ---
 title: alignmentfaults
 description: Alignmentfaults 扩展按位置和图像显示所有当前类型对齐错误，并按频率排序。
-ms.assetid: 6720a4de-ba75-4449-ab47-559bc7323002
 keywords:
 - alignmentfaults Windows 调试
 ms.date: 12/17/2019
@@ -12,12 +11,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 6e975becb6eb61b8691d00fac742bf8a1446c668
-ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
+ms.openlocfilehash: 481cfef5120bf45ba737886e3d47d780b1215cf0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "75209149"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96800143"
 ---
 # <a name="alignmentfaults"></a>!alignmentfaults
 
@@ -30,8 +29,8 @@ ms.locfileid: "75209149"
 
 ### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
-<p><strong>Windows XP 和更高版本</strong></p>
-<p>Kdexts</p>
+<p><strong>Windows XP 及更高版本</strong></p>
+<p>Kdexts.dll</p>
 
  
 ### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息

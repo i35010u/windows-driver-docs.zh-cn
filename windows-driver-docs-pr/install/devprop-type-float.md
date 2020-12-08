@@ -1,7 +1,6 @@
 ---
 title: DEVPROP_TYPE_FLOAT
-description: 在 Windows Vista 和更高版本的 Windows，DEVPROP_TYPE_INT64 标识符表示基本数据类型标识符，该值指示数据类型为 FLOAT 类型 IEEE 浮点数。
-ms.assetid: b83a0510-674e-4141-9d3f-25efcb08aea0
+description: 在 Windows Vista 和更高版本的 Windows 中，DEVPROP_TYPE_INT64 标识符表示表示数据类型为浮点类型 IEEE 浮点数的基本数据类型标识符。
 keywords:
 - DEVPROP_TYPE_FLOAT 设备和驱动程序安装
 topic_type:
@@ -14,30 +13,30 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 4ff72b81f72c49cbe699e3d9a39ceb7e7e2fae0c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 1904e7c68649678ef55c1ff198087f0167d331af
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547694"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96799507"
 ---
-# <a name="devproptypefloat"></a>DEVPROP_TYPE_FLOAT
+# <a name="devprop_type_float"></a>DEVPROP_TYPE_FLOAT
 
 
-在 Windows Vista 和更高版本的 Windows，DEVPROP_TYPE_INT64 标识符表示基本数据类型标识符，该值指示数据类型为 FLOAT 类型 IEEE 浮点数。
+在 Windows Vista 和更高版本的 Windows 中，DEVPROP_TYPE_INT64 标识符表示表示数据类型为浮点类型 IEEE 浮点数的基本数据类型标识符。
 
 <a name="remarks"></a>备注
 -------
 
-可以仅与组合 DEVPROP_TYPE_FLOAT [ **DEVPROP_TYPEMOD_ARRAY** ](devprop-typemod-array.md)属性数据类型修饰符。
+DEVPROP_TYPE_FLOAT 只能与 [**DEVPROP_TYPEMOD_ARRAY**](devprop-typemod-array.md) 的属性数据类型修饰符组合。
 
-**设置此属性类型**
+**设置此类型的属性**
 
-若要设置其基本数据类型为 DEVPROP_TYPE_FLOAT 的属性，调用相应 SetupDiSet*Xxx*属性函数，设置函数的输入的参数，如下所示：
+若要设置其基本数据类型为 DEVPROP_TYPE_FLOAT 的属性，请调用相应的 SetupDiSet *Xxx* 属性函数，并按如下所示设置函数输入参数：
 
--   设置*PropertyType* DEVPROP_TYPE_FLOAT，参数设置*PropertyBuffer*参数指向的缓冲区可包含至少一个浮点值，并设置*PropertyBufferSize*参数`sizeof(FLOAT)`。
+-   将 *PropertyType* 参数设置为 DEVPROP_TYPE_FLOAT，将 *PropertyBuffer* 参数设置为指向一个缓冲区的指针，该缓冲区可包含至少一个 FLOAT 值，并将 *PropertyBufferSize* 参数设置为 `sizeof(FLOAT)` 。
 
--   根据需要设置其他函数输入的参数设置的属性。
+-   根据需要设置其他函数输入参数来设置属性。
 
 <a name="requirements"></a>要求
 ------------
@@ -50,7 +49,7 @@ ms.locfileid: "56547694"
 <tbody>
 <tr class="odd">
 <td align="left"><p>标头</p></td>
-<td align="left">Devpropdef.h （包括 Devpropdef.h）</td>
+<td align="left">Devpropdef (包含 Devpropdef) </td>
 </tr>
 </tbody>
 </table>

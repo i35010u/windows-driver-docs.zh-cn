@@ -1,22 +1,21 @@
 ---
 title: NDIS QoS 参数概述
 description: NDIS QoS 参数概述
-ms.assetid: E9321805-2930-410A-81BC-F7978517E89E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7813d3d691c002077ecdd99c2d6f8a6ba9a76d3e
-ms.sourcegitcommit: db9d058a9e592d4c47c67fc14f04f0ddc3aa92af
+ms.openlocfilehash: 52937bf55c158414b945d60e1744c0b56aab86f4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91989855"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801355"
 ---
 # <a name="overview-of-ndis-qos-parameters"></a>NDIS QoS 参数概述
 
 
- (QoS) 参数的 NDIS 服务质量指定了网络适配器用于传输或 *传出*数据包传递的通信类的策略和设置。 NDIS QoS 参数包含以下设置：
+ (QoS) 参数的 NDIS 服务质量指定了网络适配器用于传输或 *传出* 数据包传递的通信类的策略和设置。 NDIS QoS 参数包含以下设置：
 
--   优先级别和流控制设置。 这些设置定义 IEEE 802.1 p 优先级以及用于传输或 *传出*流量的可选流控制算法。
+-   优先级别和流控制设置。 这些设置定义 IEEE 802.1 p 优先级以及用于传输或 *传出* 流量的可选流控制算法。
 
     有关详细信息，请参阅 [优先级别和流控制](ieee-802-1p-priority-levels.md)。
 
@@ -26,7 +25,7 @@ ms.locfileid: "91989855"
 
 -   指定为包含与分类条件匹配的数据（如 EtherType 或目标 TCP 端口）的数据包指定 IEEE 802.1 p 优先级别分配的流量分类。 有关详细信息，请参阅 [NDIS QoS 流量分类](ndis-qos-traffic-classifications.md)。
 
-    **注意**   流量分类也称为 IEEE 802.1 规范中的 "应用程序优先级"。
+    **注意**  流量分类也称为 IEEE 802.1 规范中的 "应用程序优先级"。
 
      
 

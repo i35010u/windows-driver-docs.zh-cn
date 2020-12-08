@@ -1,17 +1,16 @@
 ---
 title: KSPROPSETID \_ Sysaudio
 description: KSPROPSETID \_ Sysaudio
-ms.assetid: 817cbda5-9d37-4c12-8749-98a86540609f
 keywords:
 - KSPROPSETID_Sysaudio
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c3e67ed83823b390e9b46fa2ebeef8ef64ad717b
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 2aaa605f02f357386fa2db7277130f8d3967ea7d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89211449"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801067"
 ---
 # <a name="kspropsetid_sysaudio"></a>KSPROPSETID \_ Sysaudio
 

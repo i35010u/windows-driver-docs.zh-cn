@@ -1,18 +1,17 @@
 ---
 title: PCM 高位深度流数据范围
 description: PCM 高位深度流数据范围
-ms.assetid: 4f3d48ff-e01d-4c80-b493-253afdba6fd7
 keywords:
 - PCM bitdepth 流数据范围 WDK
 - 高 bitdepth 流数据范围 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9ab8662f746c0133d3528dae00c5e59e95c25a97
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: da889f352a391e9d0e1231cd610bd72d5351d21a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89210523"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96800962"
 ---
 # <a name="pcm-high-bitdepth-stream-data-range"></a>PCM 高位深度流数据范围
 

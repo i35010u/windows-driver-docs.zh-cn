@@ -1,17 +1,16 @@
 ---
 title: DirectSound 硬件加速概述
 description: DirectSound 硬件加速概述
-ms.assetid: 1f18f88a-2dd6-4b7a-b083-f43ab58571b3
 keywords:
 - 硬件加速 WDK DirectSound，关于 DirectSound 硬件加速
 ms.date: 10/27/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 320fbae1a1912471a89f773a4064a9bd1727b4ab
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 8c705b2bf0e757ef83573f00dda128d1ead9881f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89210533"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96800961"
 ---
 # <a name="overview-of-directsound-hardware-acceleration"></a>DirectSound 硬件加速概述
 

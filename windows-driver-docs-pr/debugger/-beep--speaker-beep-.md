@@ -1,9 +1,8 @@
 ---
 title: .beep（扬声器提示音）
-description: .Beep 命令计算机扬声器上进行干扰。
-ms.assetid: b7edc3a6-9d15-461b-bcc6-8f34807d1c0c
+description: 嘟嘟声命令在计算机扬声器上发出噪音。
 keywords:
-- .beep （扬声器提示音） Windows 调试
+- 。提示音 (扬声器) Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: a138ab2b92f902bde791cabab69c84589814a74f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b4bcbbb64abca5d17a2a1342e2394bfc0b7fbe22
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63336978"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96799989"
 ---
 # <a name="beep-speaker-beep"></a>.beep（扬声器提示音）
 
 
-**.Beep**命令计算机扬声器上进行干扰。
+**嘟嘟声** 命令在计算机扬声器上发出噪音。
 
 ```dbgcmd
     .beep
@@ -30,7 +29,7 @@ ms.locfileid: "63336978"
 
 ### <a name="span-idenvironmentspanspan-idenvironmentspanspan-idenvironmentspanenvironment"></a><span id="Environment"></span><span id="environment"></span><span id="ENVIRONMENT"></span>环境
 
-不能在脚本文件中使用此命令。
+无法在脚本文件中使用此命令。
 
 <table>
 <colgroup>
@@ -39,16 +38,16 @@ ms.locfileid: "63336978"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>模式</strong></p></td>
-<td align="left"><p>用户模式下，内核模式</p></td>
+<td align="left"><p><strong>交货</strong></p></td>
+<td align="left"><p>用户模式，内核模式</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>目标</strong></p></td>
-<td align="left"><p>实时、 崩溃转储</p></td>
+<td align="left"><p>实时，故障转储</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>平台</strong></p></td>
-<td align="left"><p>全部</p></td>
+<td align="left"><p>all</p></td>
 </tr>
 </tbody>
 </table>

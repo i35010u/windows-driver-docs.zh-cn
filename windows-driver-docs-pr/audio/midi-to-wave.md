@@ -1,7 +1,6 @@
 ---
 title: MIDI 到 Wave
 description: MIDI 到 Wave
-ms.assetid: 0c69ce48-ded0-44b8-9d34-20decb75058e
 keywords:
 - 合成 WDK 音频，MIDI 到 wave 转换
 - MIDI 到 wave 转换 WDK 音频
@@ -14,12 +13,12 @@ keywords:
 - DirectMusic 自定义呈现 WDK 音频，MIDI 到 wave 转换
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 56dcf67b1152d5b9a085e8791123e155df7b80b1
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 97df98e24ece593cc636fff2f429b75346ba8f2b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90715390"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801013"
 ---
 # <a name="midi-to-wave"></a>MIDI 到 Wave
 
@@ -41,7 +40,7 @@ ms.locfileid: "90715390"
 
 DirectSound 缓冲区是循环的。 由于环绕发生在缓冲区的末尾，因此必须将几乎连续区域拆分为两个部分。 通常，波形接收器通过两次调用 **Render** 来处理拆分，一次针对 DirectSound 缓冲区的锁定部分的每个部分，因此 **Render** 方法只需要处理连续的内存块。 波形接收器调用 DirectSound 缓冲区上的 **IDirectSoundBuffer：： Lock** 来请求对缓冲区内某个区域的写入权限。 例如，如果波形接收器在从缓冲区末尾开始 1 kb 的 2 kb 的数据上调用 **锁** ，则调用会将最后 1 kb 锁定到缓冲区的末尾，并从缓冲区的开头开始另一个 1 kb。 在这种情况下， **Lock** 实际上返回两个指针和相应的长度，它们共同描述锁定的缓冲区区域。 每个指针都一定指向连续的内存块。
 
-**Render**方法的实现负责确定必须执行哪些操作才能响应**PlayBuffer**中检索到的 MIDI 消息。 从连续调用到**Render**的*dwLength*参数值，方法可以跟踪采样时间，并对当前呈现期间内有效的消息执行操作。 处理注释消息时，可以在内部存储注释并在每次通过方法时再次呈现注释，直到收到相应的附注消息。
+**Render** 方法的实现负责确定必须执行哪些操作才能响应 **PlayBuffer** 中检索到的 MIDI 消息。 从连续调用到 **Render** 的 *dwLength* 参数值，方法可以跟踪采样时间，并对当前呈现期间内有效的消息执行操作。 处理注释消息时，可以在内部存储注释并在每次通过方法时再次呈现注释，直到收到相应的附注消息。
 
  
 

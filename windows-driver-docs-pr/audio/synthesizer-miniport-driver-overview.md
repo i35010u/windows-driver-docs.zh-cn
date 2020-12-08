@@ -1,7 +1,6 @@
 ---
 title: 合成器微型端口驱动程序概述
 description: 合成器微型端口驱动程序概述
-ms.assetid: dbd6b95e-f8c8-49f1-ad90-b34821772391
 keywords:
 - 微型端口驱动程序 WDK 音频，合成程序
 - 合成 WDK 音频，微型端口驱动程序
@@ -14,12 +13,12 @@ keywords:
 - 合成 WDK 音频，内核模式硬件加速
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8d0891c1e58b3a4bf24cd64001db781d1938b1ff
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 338e545cca1cdc191f058f3ebca95e3ca245e7a8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90716076"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96800551"
 ---
 # <a name="synthesizer-miniport-driver-overview"></a>合成器微型端口驱动程序概述
 

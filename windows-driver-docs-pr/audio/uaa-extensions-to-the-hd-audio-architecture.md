@@ -1,39 +1,38 @@
 ---
 title: 针对 HD 音频体系结构的 UAA 扩展
 description: 针对 HD 音频体系结构的 UAA 扩展
-ms.assetid: 895dc7b6-f484-4be2-8f43-112254d6ef4b
 keywords:
-- 高清晰度音频，通用音频体系结构
-- 高清晰度音频 （HD 音频） 通用音频体系结构
+- HD 音频，通用音频体系结构
+- 高清晰音频 (HD 音频) ，通用音频体系结构
 - UAA WDK
 - 通用音频体系结构 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1da9370a41fad1c787d476f6a0b96b0fcf52e242
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 63f01c0d5b6d830423fc8621ae3773ce1e14bb96
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328527"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96800485"
 ---
 # <a name="uaa-extensions-to-the-hd-audio-architecture"></a>针对 HD 音频体系结构的 UAA 扩展
 
 
-若要符合 UAA，硬件控制器必须实现以下更改*Intel 高定义音频规范*:
+若要符合 UAA，硬件控制器必须实现对 *Intel 高质音频规范* 的以下更改：
 
--   UAA 设备必须支持 256 条目命令输出环形缓冲区 (CORB) 和响应输入的环形缓冲区 (RIRB)。
+-   UAA 设备必须支持256项，每个 (CORB) 和响应输入环形缓冲区 (RIRB) 。
 
-此外，Intel HD Audio 体系结构包括多个不需要实现 HD Audio UAA 符合设备的功能。 作为一个选项，硬件供应商可忽略其高清晰度音频设备的下列功能，并保持 UAA 相容状态：
+此外，Intel HD 音频体系结构还包括实现 UAA 兼容的 HD 音频设备不需要的多个功能。 作为一个选项，硬件供应商可以从其 HD 音频设备中省略以下功能，并保持与 UAA 兼容：
 
--   DMA 位置较低的基址 (DPLBASE) 和 DMA 位置上部基址 (DPUBASE) 寄存器 （在偏移量 70 h 和 74 h）。
+-   DMA 位置下限基址 (DPLBASE) 和 DMA 位置上基址 (DPUBASE) 在偏移量70h 和 74h (注册) 。
 
--   即时命令输出，即时响应输入，并立即命令状态注册 （在偏移量 60 h、 64 h 和 68 h）。
+-   即时命令输出、立即响应输入和即时命令状态在偏移60h、64h 和 68h) 上注册 (。
 
--   刷新全局控制寄存器 （在偏移量 08 h) 中的控制位。
+-   全局控件寄存器中的 "刷新" 控制位 () 偏移量08h。
 
-总线控制器设计可以省略这些功能，仍可以使用 HD Audio 总线驱动程序完全兼容。 但是，硬件供应商应考虑这些功能是否可能所需的与其他特定于设备的软件的兼容性。 例如，BIOS 例程可以使用即时命令、 响应和状态寄存器。
+总线控制器设计可以省略这些功能，并且仍与 HD 音频总线驱动程序完全兼容。 但是，硬件供应商应该考虑是否需要这些功能才能与其他特定于设备的软件兼容。 例如，BIOS 例程可能使用即时命令、响应和状态寄存器。
 
-UAA 版本 1.0，HD Audio 硬件版本必须为 1.0。 （该版本的主版本号和次版本号的 00 h VMAJ 和 VMIN 寄存器即必须指定。）
+对于 UAA 版本1.0，HD 音频硬件版本必须为1.0。  (VMAJ 和 VMIN 寄存器必须指定第01h 版本号和次版本号为00h。 ) 
 
  
 

@@ -1,22 +1,21 @@
 ---
 title: 必需的 DXGI 格式
 description: 本主题介绍了 Microsoft Direct3D 功能级别在用户模式显示驱动程序上放置的要求。
-ms.assetid: 1CB419B9-DD5E-492F-AAAC-CFFFDE247F7F
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b94d6d081fb2e33a5994be48575aaccee63dcb12
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: d0968ac85d01489fa333fda48f4e0b7582d11d1e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90715992"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96799631"
 ---
 # <a name="required-dxgi-formats"></a>必需的 DXGI 格式
 
 
 本主题介绍了 Microsoft Direct3D 功能级别在用户模式显示驱动程序上放置的要求。
 
-第一个表的第一列和第二列显示驱动程序必须支持的所有 Direct3D 格式类型。 第三列显示 Direct3D [**D3D10 \_ format \_ 支持**](/windows/win32/api/d3d10/ne-d3d10-d3d10_format_support) 和/或 D3D11 格式的所有关联常量 [**值 \_ \_ 支持**](/windows/win32/api/d3d11/ne-d3d11-d3d11_format_support) 驱动程序必须支持的枚举。 第四列显示驱动程序必须支持每种格式的最小 Direct3D 功能级别。
+第一个表的第一列和第二列显示驱动程序必须支持的所有 Direct3D 格式类型。 第三列显示 Direct3D [**D3D10 \_ format \_ 支持**](/windows/win32/api/d3d10/ne-d3d10-d3d10_format_support) 和/或 D3D11 格式的所有关联常量 [**值 \_ \_ 支持**](/windows/win32/api/d3d11/ne-d3d11-d3d11_format_support) 驱动程序必须支持的枚举。 第四列显示驱动程序必须支持每种格式的最小 Direct3D 功能级别。
 
 第二个表显示每个枚举值的 Direct3D 10Level 9 支持算法。
 
@@ -616,7 +615,7 @@ ms.locfileid: "90715992"
 
  
 
-**注意**   下面更详细地介绍了在 Direct3D 10Level 9 中支持算法的要求：
+**注意**  下面更详细地介绍了在 Direct3D 10Level 9 中支持算法的要求：
 -   \_ \_ \_ \_ 如果没有 D3DDEVCAPS HWTRANSFORMANDLIGHT 功能，则软件顶点处理支持 ia 顶点缓冲区和/或 ia 索引缓冲区格式 \_ 。
 -   还可以通过将 TEXTURE2D 格式推断为深度模具格式。
 -   对于着色器 \_ 示例格式，驱动程序必须支持 FORMATOP \_ 纹理、FORMATOP \_ VOLUMETEXTURE 或 FORMATOP \_ CUBETEXTURE，并且它不能报告 FORMATOP \_ NOFILTER。

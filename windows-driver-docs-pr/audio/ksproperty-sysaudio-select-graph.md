@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ SYSAUDIO \_ 选择 \_ 图
 description: KSPROPERTY \_ SYSAUDIO \_ SELECT \_ GRAPH 属性用于在图形中显式包含一个可选节点，该节点 SYSAUDIO 为虚拟音频设备上的 pin 实例生成。
-ms.assetid: 1107e20e-9ba8-4fda-8457-c357426a9cda
 keywords:
 - KSPROPERTY_SYSAUDIO_SELECT_GRAPH 音频设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d6250132628fcc014da0216d587a81fc89dfbf67
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 3f4b7c1f7840f35c955a195688505eea17e9cab0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90101860"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801149"
 ---
 # <a name="ksproperty_sysaudio_select_graph"></a>KSPROPERTY \_ SYSAUDIO \_ 选择 \_ 图
 

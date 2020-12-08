@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ ITD3D \_ 参数
 description: KSPROPERTY \_ ITD3D \_ PARAMS 属性用于设置3d 节点的 ITD 算法使用的参数。
-ms.assetid: c6f87087-3c91-46a4-b40e-078d0a015c4c
 keywords:
 - KSPROPERTY_ITD3D_PARAMS 音频设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f0d4a4a5f76ed1d19849945f55574b660bc21a35
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 135ec6db49b4259ba0faa612ed097dd50feffc80
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102000"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801217"
 ---
 # <a name="ksproperty_itd3d_params"></a>KSPROPERTY \_ ITD3D \_ 参数
 

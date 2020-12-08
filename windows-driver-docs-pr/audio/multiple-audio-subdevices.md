@@ -1,18 +1,17 @@
 ---
 title: 多个音频子设备
 description: 多个音频子设备
-ms.assetid: 1654a2b3-7bec-4438-8cb5-b3136c8e66cc
 keywords:
 - 多功能音频设备 WDK，subdevices
 - 多 subdevices WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 635e35f55afa95679de0ce13566c02311a9ada7d
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 04b0080908924fa310ce4432577de09857bb4712
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89210561"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96800993"
 ---
 # <a name="multiple-audio-subdevices"></a>多个音频子设备
 
@@ -55,7 +54,7 @@ INF 文件应创建 **AddReg** 节 (参阅 [**INF AddReg 指令**](../install/in
   AddReg=Test.I.Wave2.AddReg
 ```
 
-**AddReg**节还应为每个 subdevice 指定注册表项：
+**AddReg** 节还应为每个 subdevice 指定注册表项：
 
 ```inf
   [Test.I.Wave1.AddReg]

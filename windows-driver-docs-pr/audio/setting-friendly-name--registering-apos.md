@@ -1,15 +1,14 @@
 ---
 title: 设置友好名称，注册 APO
 description: 本主题介绍 Port 类蓝牙 sideband audio 驱动程序如何设置设备接口的友好名称，以及如何注册蓝牙设备使用的任何 APO。
-ms.assetid: A3C4E04C-8F3B-49B4-8E46-CF37E1A4F5AF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: facdae3ed978f0cb68244cc24f1e37243186f4af
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 5a6ba43d847d11c8c66e8b76fb47f14ac6c04139
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89210407"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96800675"
 ---
 # <a name="setting-friendly-names-registering-apos"></a>设置友好名称，注册 APO
 
@@ -23,7 +22,7 @@ ms.locfileid: "89210407"
 ## <a name="span-iddevpkey_deviceinterface_friendlynamespanspan-iddevpkey_deviceinterface_friendlynamespanspan-iddevpkey_deviceinterface_friendlynamespandevpkey_deviceinterface_friendlyname"></a><span id="DEVPKEY_DeviceInterface_FriendlyName"></span><span id="devpkey_deviceinterface_friendlyname"></span><span id="DEVPKEY_DEVICEINTERFACE_FRIENDLYNAME"></span>DEVPKEY \_ DeviceInterface \_ FriendlyName
 
 
-音频驱动程序将 [**IOCTL \_ BTHHFP \_ 设备 \_ GET \_ 描述符**](/windows-hardware/drivers/ddi/bthhfpddi/ni-bthhfpddi-ioctl_bthhfp_device_get_descriptor) 请求发送到无人参与的配置文件 (HFP) 音频驱动程序。 请求的信息以 [**BTHHFP \_ 描述符**](/windows-hardware/drivers/ddi/bthhfpddi/ns-bthhfpddi-_bthhfp_descriptor) 结构的形式返回，以及结构引用的其他数据。 然后，音频驱动程序调用 IoSetDeviceInterfacePropertyData，将 DEVPKEY \_ DeviceInterface \_ friendlyname 设置为**BTHHFP \_ 描述符**结构的*FriendlyName*字段中的值。
+音频驱动程序将 [**IOCTL \_ BTHHFP \_ 设备 \_ GET \_ 描述符**](/windows-hardware/drivers/ddi/bthhfpddi/ni-bthhfpddi-ioctl_bthhfp_device_get_descriptor) 请求发送到无人参与的配置文件 (HFP) 音频驱动程序。 请求的信息以 [**BTHHFP \_ 描述符**](/windows-hardware/drivers/ddi/bthhfpddi/ns-bthhfpddi-_bthhfp_descriptor) 结构的形式返回，以及结构引用的其他数据。 然后，音频驱动程序调用 IoSetDeviceInterfacePropertyData，将 DEVPKEY \_ DeviceInterface \_ friendlyname 设置为 **BTHHFP \_ 描述符** 结构的 *FriendlyName* 字段中的值。
 
 音频驱动程序将参数设置为 IoSetDeviceInterfacePropertyData，如下所示：
 
@@ -53,7 +52,7 @@ HKR,"EPFX\\0",%PKEY_FX_Association%,,%KSNODETYPE_ANY%
 HKR,"EPFX\\0",%PKEY_FX_EndpointEffectClsid%,,%FX_DISCOVER_EFFECTS_APO_CLSID%
 ```
 
-**注意**   上述代码段中所示的语法不包含用于注册 APO 的 COM 服务器的说明。
+**注意**  上述代码段中所示的语法不包含用于注册 APO 的 COM 服务器的说明。
 
  
 

@@ -1,7 +1,6 @@
 ---
 title: COM 对象的引用计数约定
 description: COM 对象的引用计数约定
-ms.assetid: e6b19110-37e2-4d23-a528-6393c12ab650
 keywords:
 - COM 对象引用 WDK 音频
 - 对象引用 WDK 音频
@@ -11,12 +10,12 @@ keywords:
 - 输出参数引用统计 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 700df6fbefd7fe604fd5228a46e6420a110a3129
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 512e26282559a180dcc762497648c908eda8ca78
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90716102"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96800767"
 ---
 # <a name="reference-counting-conventions-for-com-objects"></a>COM 对象的引用计数约定
 
@@ -28,9 +27,9 @@ ms.locfileid: "90716102"
 
 ### <a name="span-idreference_counting_on_input_parametersspanspan-idreference_counting_on_input_parametersspanspan-idreference_counting_on_input_parametersspanreference-counting-on-input-parameters"></a><span id="Reference_Counting_on_Input_Parameters"></span><span id="reference_counting_on_input_parameters"></span><span id="REFERENCE_COUNTING_ON_INPUT_PARAMETERS"></span>输入参数上的引用计数
 
-在调用采用对象 *X* 引用作为输入参数的方法时，调用方必须在调用的持续时间内保留自己对对象的引用。 此行为是必需的，以确保方法的指针到对象 *X* 在返回前一直有效。 如果实现此方法的对象*Y*需要在从此方法返回之外保存对对象*x*的引用，则该方法应在返回之前在对象*x*上调用[**AddRef**](/windows/win32/api/unknwn/nf-unknwn-iunknown-addref) 。 当对象*Y*在以后使用对象*x*完成时，它应调用对象*x*上的[**Release**](/windows/win32/api/unknwn/nf-unknwn-iunknown-release) 。
+在调用采用对象 *X* 引用作为输入参数的方法时，调用方必须在调用的持续时间内保留自己对对象的引用。 此行为是必需的，以确保方法的指针到对象 *X* 在返回前一直有效。 如果实现此方法的对象 *Y* 需要在从此方法返回之外保存对对象 *x* 的引用，则该方法应在返回之前在对象 *x* 上调用 [**AddRef**](/windows/win32/api/unknwn/nf-unknwn-iunknown-addref) 。 当对象 *Y* 在以后使用对象 *x* 完成时，它应调用对象 *x* 上的 [**Release**](/windows/win32/api/unknwn/nf-unknwn-iunknown-release) 。
 
-例如， [**IServiceGroup：： AddMember**](/windows-hardware/drivers/ddi/portcls/nf-portcls-iservicegroup-addmember)方法对其添加到其服务组的[IServiceSink](/windows-hardware/drivers/ddi/portcls/nn-portcls-iservicesink)对象调用[**AddRef**](/windows/win32/api/unknwn/nf-unknwn-iunknown-addref) 。 若要对此行为进行补充， [**IServiceGroup：： RemoveMember**](/windows-hardware/drivers/ddi/portcls/nf-portcls-iservicegroup-removemember) 方法会对从服务组中移除的 IServiceSink 对象调用 [**Release**](/windows/win32/api/unknwn/nf-unknwn-iunknown-release) 。
+例如， [**IServiceGroup：： AddMember**](/windows-hardware/drivers/ddi/portcls/nf-portcls-iservicegroup-addmember)方法对其添加到其服务组的 [IServiceSink](/windows-hardware/drivers/ddi/portcls/nn-portcls-iservicesink)对象调用 [**AddRef**](/windows/win32/api/unknwn/nf-unknwn-iunknown-addref) 。 若要对此行为进行补充， [**IServiceGroup：： RemoveMember**](/windows-hardware/drivers/ddi/portcls/nf-portcls-iservicegroup-removemember) 方法会对从服务组中移除的 IServiceSink 对象调用 [**Release**](/windows/win32/api/unknwn/nf-unknwn-iunknown-release) 。
 
 ### <a name="span-idreference_counting_on_output_parametersspanspan-idreference_counting_on_output_parametersspanspan-idreference_counting_on_output_parametersspanreference-counting-on-output-parameters"></a><span id="Reference_Counting_on_Output_Parameters"></span><span id="reference_counting_on_output_parameters"></span><span id="REFERENCE_COUNTING_ON_OUTPUT_PARAMETERS"></span>输出参数上的引用计数
 

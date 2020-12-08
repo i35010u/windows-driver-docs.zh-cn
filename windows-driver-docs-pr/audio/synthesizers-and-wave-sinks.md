@@ -1,7 +1,6 @@
 ---
 title: 合成器和 Wave 接收器
 description: 合成器和 Wave 接收器
-ms.assetid: ddcb847e-d46e-4860-9be9-4480e5a6b710
 keywords:
 - DirectMusic 自定义呈现 WDK 音频，合成
 - 用户模式下的自定义呈现 WDK 音频，合成
@@ -20,12 +19,12 @@ keywords:
 - Dmu 端口驱动程序 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8a81320304b6e990b147e39b2e6ee9bcff7a1b3e
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: a751c22b598f433b0d1d4141fb9a71e485a77b7f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90716068"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96800541"
 ---
 # <a name="synthesizers-and-wave-sinks"></a>合成器和 Wave 接收器
 
@@ -51,7 +50,7 @@ ms.locfileid: "90716068"
 
 在上图中，应用程序将数据发送到用户模式 DirectMusic 端口，该端口将 (MIDI 或 DLS) 下的数据传递给软件合成器 ( # A0 默认情况下) ，使其能够将笔记呈现为波数据。 波形接收器管理计时，并向合成器发送缓冲区以便在准备好接收数据突发时进行填充。 在默认情况下，合成器会将缓冲区填满 (**IDirectSoundBuffer** 对象) ，以便可以将其传递给 DirectSound。 DirectSound 可以通过 [KMixer 系统驱动程序](kernel-mode-wdm-audio-components.md#kmixer_system_driver) 播放数据，也可以通过音频设备上 DirectSound 硬件加速的渲染插针播放数据（如果有） (参阅 [DirectSound 硬件加速) 概述](overview-of-directsound-hardware-acceleration.md) 。
 
-此相同的基本体系结构还适用于内核模式实现，但波形接收器直接将数据缓冲区直接传递到硬件或 KMixer 系统驱动程序例外。 Dmu 端口驱动程序实现内核模式软件合成器的波形接收器。 有关详细信息，请参阅 [内核模式软件合成程序的波形接收器](a-wave-sink-for-kernel-mode-software-synthesizers.md)。
+此相同的基本体系结构还适用于内核模式实现，但波形接收器直接将数据缓冲区直接传递到硬件或 KMixer 系统驱动程序例外。 Dmu 端口驱动程序实现内核模式软件合成器的波形接收器。 有关详细信息，请参阅 [Kernel-Mode 软件合成程序的波形接收器](a-wave-sink-for-kernel-mode-software-synthesizers.md)。
 
 完成这些步骤后，用户模式 DirectMusic 端口应打开并激活以供使用。 一旦这大部分驱动程序代码都在运行，就可以开始实现功能。 将用户模式 Microsoft 软件合成器的源代码用作模板并开始添加新功能。
 

@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ RTAUDIO \_ SETWRITEPACKET
 description: KSPROPERTY \_ RTAUDIO \_ SETWRITEPACKET 通知驱动程序操作系统已将有效数据写入 WaveRT 缓冲区。
-ms.assetid: 2827D6BC-B669-4AAC-967C-99B068DCC29B
 keywords:
 - KSPROPERTY_RTAUDIO_SETWRITEPACKET 音频设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 12/21/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: d082334516f22f6afef9c285edd6d11bebd0d90f
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: d18fc428bc23a9c70d01e70ec13e98478e91ef77
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89210913"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801181"
 ---
 # <a name="ksproperty_rtaudio_setwritepacket"></a>KSPROPERTY \_ RTAUDIO \_ SETWRITEPACKET
 

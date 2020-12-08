@@ -1,22 +1,21 @@
 ---
-title: KSPROPSETID\_AudioSignalProcessing
-description: KSPROPSETID\_音频驱动程序用 AudioSignalProcessing 属性集来检索 pin 工厂所支持的音频信号处理模式的列表。
-ms.assetid: D9EF0D65-4DCD-4936-B7AC-A17FA50D3AE7
+title: KSPROPSETID \_ AudioSignalProcessing
+description: '\_音频驱动程序使用 KSPROPSETID AudioSignalProcessing 属性集来检索 pin 工厂支持的音频信号处理模式的列表。'
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1acdb33d84430f41eccc4114f33b1421d3df4b3c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 303e74bfc59506cf97c1b9c2094139c46f12c8b2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332537"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801109"
 ---
-# <a name="kspropsetidaudiosignalprocessing"></a>KSPROPSETID\_AudioSignalProcessing
+# <a name="kspropsetid_audiosignalprocessing"></a>KSPROPSETID \_ AudioSignalProcessing
 
 
-**KSPROPSETID\_AudioSignalProcessing**音频驱动程序使用属性集来检索 pin 工厂所支持的音频信号处理模式的列表。
+音频驱动程序使用 **KSPROPSETID \_ AudioSignalProcessing** 属性集来检索 pin 工厂支持的音频信号处理模式的列表。
 
-*Ksmedia.h*标头文件定义**KSPROPSETID\_AudioSignalProcessing**属性设置，如下所示：
+*Ksmedia* 头文件定义 **KSPROPSETID \_ AudioSignalProcessing** 属性集，如下所示：
 
 ``` syntax
 #define STATIC_KSPROPSETID_AudioEffectsDiscovery\  
@@ -25,11 +24,11 @@ DEFINE_GUIDSTRUCT("0B217A72-16B8-4A4D-BDED-F9D6BBEDCD8F", KSPROPSETID_AudioEffec
 #define KSPROPSETID_AudioEffectsDiscovery DEFINE_GUIDNAMED(KSPROPSETID_AudioEffectsDiscovery)
 ```
 
-**KSPROPSETID\_AudioSignalProcessing**属性集包含以下 KS 属性。
+**KSPROPSETID \_ AudioSignalProcessing** 属性集包含以下 KS 属性。
 
-[**KSPROPERTY\_AUDIOSIGNALPROCESSING\_模式**](ksproperty-audiosignalprocessing-modes.md)
+[**KSPROPERTY \_ AUDIOSIGNALPROCESSING \_ 模式**](ksproperty-audiosignalprocessing-modes.md)
 
-此属性的名称中定义[ **KSPROPERTY\_AUDIOSIGNALPROCESSING** ](ksproperty-audiosignalprocessing.md)枚举。
+此属性名称是在 [**KSPROPERTY \_ AUDIOSIGNALPROCESSING**](ksproperty-audiosignalprocessing.md) 枚举中定义的。
 
  
 

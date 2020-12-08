@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ TOPOLOGYNODE \_ ENABLE
 description: KSPROPERTY \_ TOPOLOGYNODE \_ ENABLE 属性用于在已生成的拓扑中打开或关闭拓扑节点。
-ms.assetid: 6b9f7a92-97dc-476b-962a-40ccf1987154
 keywords:
 - KSPROPERTY_TOPOLOGYNODE_ENABLE 音频设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b9b336f11d4381eb78615eeb5abd9133f6aaa714
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 7491a7f8d0bfa4fa5535f923c90b07927d75905b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90101820"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801129"
 ---
 # <a name="ksproperty_topologynode_enable"></a>KSPROPERTY \_ TOPOLOGYNODE \_ ENABLE
 
@@ -67,12 +66,12 @@ KSPROPERTY \_ TOPOLOGYNODE \_ ENABLE 属性用于在已生成的拓扑中打开�
 
 KSPROPERTY \_ TOPOLOGYNODE \_ ENABLE 属性请求返回状态 \_ SUCCESS 以指示已成功完成。 否则，请求将返回相应的错误状态代码。
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 启用已启用的节点或禁用已禁用的节点不起作用，但不应将其视为错误。
 
-禁用节点会关闭该节点在通过该节点的流上执行的转换。 对于 AEC、AGC 或干扰关闭节点 ([**KSNODETYPE 声 \_ \_ 回声 \_ CANCEL**](ksnodetype-acoustic-echo-cancel.md)、 [**KSNODETYPE \_ AGC**](ksnodetype-agc.md)或 [**KSNODETYPE \_ 噪音 \_ **](ksnodetype-noise-suppress.md) 取消) ，例如，禁用的节点在传递模式下操作 (也就是说，它在流从节点的输入插针流动到其输出插针) 时不对该流执行任何操作。
+禁用节点会关闭该节点在通过该节点的流上执行的转换。 对于 AEC、AGC 或干扰关闭节点 ([**KSNODETYPE 声 \_ \_ 回声 \_ CANCEL**](ksnodetype-acoustic-echo-cancel.md)、 [**KSNODETYPE \_ AGC**](ksnodetype-agc.md)或 [**KSNODETYPE \_ 噪音 \_**](ksnodetype-noise-suppress.md) 取消) ，例如，禁用的节点在传递模式下操作 (也就是说，它在流从节点的输入插针流动到其输出插针) 时不对该流执行任何操作。
 
 <a name="requirements"></a>要求
 ------------

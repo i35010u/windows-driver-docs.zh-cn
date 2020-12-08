@@ -1,7 +1,6 @@
 ---
 title: 拓扑端口驱动程序
 description: 拓扑端口驱动程序
-ms.assetid: f671f557-552e-4575-babf-869c8c0b8f08
 keywords:
 - 拓扑端口驱动程序 WDK 音频
 - PortCls WDK 音频，端口驱动程序
@@ -9,12 +8,12 @@ keywords:
 - 微型端口驱动程序 WDK 音频、端口驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8891c2552ebdfe31e64b04fef23ae4faaa9f23f3
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 9d69cf86fe2a7a2984478535a242d5cbd9ad35db
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89208777"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96800499"
 ---
 # <a name="topology-port-driver"></a>拓扑端口驱动程序
 

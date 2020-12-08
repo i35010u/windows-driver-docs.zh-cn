@@ -1,22 +1,21 @@
 ---
 title: 修改的适用于 MSVAD Micarray 的 INF
 description: 修改的适用于 MSVAD Micarray 的 INF
-ms.assetid: 0bb57f16-3b32-45c8-aca1-4dc96cb7a744
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 623dc4f149a917f657b58fc35008a670628858fa
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 25d9237e3e74d8ed05c92fb878328cb8d617715b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332299"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96800999"
 ---
 # <a name="modified-inf-for-msvad-micarray"></a>修改的适用于 MSVAD Micarray 的 INF
 
 
-本主题说明如何修改 Micarray.inf 示例文件，以提供有关如何安装示例的麦克风阵列中所述的安装程序信息[麦克风阵列 Geometry 属性](microphone-array-geometry-property.md)。
+本主题说明如何修改 Micarray 示例文件，以提供有关如何安装 [麦克风阵列几何属性](microphone-array-geometry-property.md)中所述的示例麦克风阵列的设置信息。
 
-导航到 Src\\音频\\Msvad 查找 Micarray.inf。 制作一份原始文件以新名称，然后按如下所示编辑 Micarray.inf:
+导航到 "Src \\ 音频 \\ Msvad" 以找到 Micarray。 使用新名称创建原始文件的副本，然后编辑 Micarray，如下所示：
 
 ```inf
 // Modified micarray.inf file tailored for a microphone array
@@ -157,7 +156,7 @@ Simple.NameGuid="{946A7B1A-EBBC-422a-A81F-F07C8D40D3B4}"
 Simple.Name="MSVAD (Simple)"
 ```
 
-在前面的示例所示修改文件后，将其保存在其原始位置。 有关如何生成麦克风数组示例驱动程序的详细信息，请参阅[麦克风阵列 Geometry 属性](microphone-array-geometry-property.md)。
+如前面的示例中所示修改文件后，请将其保存在原位置。 有关如何生成麦克风阵列示例驱动程序的详细信息，请参阅 [麦克风阵列几何属性](microphone-array-geometry-property.md)。
 
  
 

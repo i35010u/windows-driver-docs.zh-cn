@@ -1,9 +1,8 @@
 ---
 title: JobCompletedStateReasons 元素
-description: 所需的 JobCompletedStateReasons 元素是有关如何以及为何扫描作业已完成的所有其他信息的集合。
-ms.assetid: 678384b4-a023-4c79-a68a-4a2cc3a04a0e
+description: 必需的 JobCompletedStateReasons 元素是有关扫描作业的完成方式和原因的所有其他信息的集合。
 keywords:
-- JobCompletedStateReasons 元素成像设备
+- JobCompletedStateReasons 元素图像设备
 topic_type:
 - apiref
 api_name:
@@ -12,19 +11,19 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0e1c9c8bc56daa957ae99bb762e863bd2ad16c24
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 14e7cd469bc7f6108e0f40eca0744eb07459f679
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63381642"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96799546"
 ---
 # <a name="jobcompletedstatereasons-element"></a>JobCompletedStateReasons 元素
 
 
-所需**JobCompletedStateReasons**元素是有关如何以及为何扫描作业已完成的所有其他信息的集合。
+必需的 **JobCompletedStateReasons** 元素是有关扫描作业的完成方式和原因的所有其他信息的集合。
 
-<a name="usage"></a>用法
+<a name="usage"></a>使用情况
 -----
 
 ```xml
@@ -79,7 +78,7 @@ ms.locfileid: "63381642"
 <a name="remarks"></a>备注
 -------
 
-**JobCompletedStateReasons**元素包含零个或多[ **JobStateReason** ](jobstatereason.md)元素，其中每个包含如何或为什么扫描作业已完成的原因。 WSD 扫描服务发送**JobCompletedStateReasons**通过客户端元素[ **JobEndStateEvent** ](jobendstateevent.md)事件元素。
+**JobCompletedStateReasons** 元素包含零个或多个 [**JobStateReason**](jobstatereason.md)元素，其中每个元素都包含扫描作业的完成方式或原因。 WSD 扫描服务通过 [**JobEndStateEvent**](jobendstateevent.md)事件元素将 **JobCompletedStateReasons** 元素发送到客户端。
 
 ## <a name="see-also"></a>请参阅
 

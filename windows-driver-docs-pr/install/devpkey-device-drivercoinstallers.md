@@ -1,7 +1,6 @@
 ---
 title: DEVPKEY_Device_DriverCoInstallers
 description: DEVPKEY_Device_DriverCoInstallers
-ms.assetid: ba85a906-adfa-42f9-b52a-e8a48c8d5076
 keywords:
 - DEVPKEY_Device_DriverCoInstallers 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 47a1b54b2471567bf3fe8b0d67913d720b329bb5
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: fb7c297bfa4f61f3e008f899f5e93240535171af
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90717066"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96799539"
 ---
 # <a name="devpkey_device_drivercoinstallers"></a>DEVPKEY_Device_DriverCoInstallers
 
@@ -71,7 +70,7 @@ DEVPKEY_Device_DriverCoInstallers 设备属性表示作为设备实例的 *共�
 <a name="remarks"></a>备注
 -------
 
-DEVPKEY_Device_DriverCoInstallers 的值由 [**INF *DDInstall*提供。**](./inf-ddinstall-coinstallers-section.md) 安装设备的 INF 文件中的 Coinstallers 部分。
+DEVPKEY_Device_DriverCoInstallers 的值由 [**INF *DDInstall* 提供。**](./inf-ddinstall-coinstallers-section.md) 安装设备的 INF 文件中的 Coinstallers 部分。
 
 可以调用 [**SetupDiGetDeviceProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdigetdevicepropertyw) 来检索 DEVPKEY_Device_DriverCoInstallers 的值。
 

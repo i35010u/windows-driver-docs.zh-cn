@@ -1,7 +1,6 @@
 ---
 title: amli 查找
-description: Amli 查找扩展查找 ACPI 命名空间对象。
-ms.assetid: bacb1be2-f079-49da-a8d2-1e9821b20ed3
+description: Amli 查找扩展可查找 ACPI 命名空间对象。
 keywords:
 - amli 查找 Windows 调试
 ms.date: 09/17/2018
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 446c2f36f94500054a4022649dffebc2cd697e07
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9ae27491645eb64d39c861677ec4f454165b69b7
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63334765"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96800079"
 ---
 # <a name="amli-find"></a>!amli find
 
 
-**！ Amli 查找**扩展查找 ACPI 命名空间对象。
+**！ Amli 查找** 扩展可查找 ACPI 命名空间对象。
 
 语法
 
@@ -30,26 +29,26 @@ ms.locfileid: "63334765"
     !amli find Name
 ```
 
-## <a name="span-idddkamlifinddbgspanspan-idddkamlifinddbgspanparameters"></a><span id="ddk__amli_find_dbg"></span><span id="DDK__AMLI_FIND_DBG"></span>参数
+## <a name="span-idddk__amli_find_dbgspanspan-idddk__amli_find_dbgspanparameters"></a><span id="ddk__amli_find_dbg"></span><span id="DDK__AMLI_FIND_DBG"></span>参数
 
 
-<span id="_______Name______"></span><span id="_______name______"></span><span id="_______NAME______"></span> *名称*   
-指定的命名空间对象 （不带路径） 的名称。
+<span id="_______Name______"></span><span id="_______name______"></span><span id="_______NAME______"></span>*名称*   
+指定不具有路径)  (命名空间对象的名称。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 Kdexts.dll
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-有关相关的命令及其用途的信息，请参阅[AMLI 调试器](the-amli-debugger.md)。
+有关相关命令及其用法的信息，请参阅 [AMLI 调试器](the-amli-debugger.md)。
 
 <a name="remarks"></a>备注
 -------
 
-**！ Amli 查找**命令将该对象的名称，并返回的完整路径和名称。 *名称*参数必须是最后一段的完整路径和名称。
+**！ Amli find** 命令使用对象的名称，并返回完整的路径和名称。 *Name* 参数必须是完整路径和名称的最后一个段。
 
-下面是一些示例。 以下命令将查找的对象的所有声明\_SRS:
+下面是一些示例。 以下命令将查找对象 SRS 的所有声明 \_ ：
 
 ```console
 kd> !amli find _srs
@@ -59,16 +58,16 @@ kd> !amli find _srs
 \_SB.LNKD._SRS
 ```
 
-这不是只需文本搜索。 该命令 **！ amli 查找 srs**不显示任何命中数，因为每个这些声明的最后一段是"\_SRS"，不是"SRS"。 该命令 **！ amli 查找 LNK**同样不会返回命中数。 该命令 **！ amli 查找 LNKB**将显示在"LNKB"中不显示在上一中此节点的四个子级终止单个节点：
+这不仅仅是文本搜索。 命令 **！ amli find srs** 不显示任何命中，因为其中每个声明的最后一段是 " \_ srs"，而不是 "srs"。 命令 **！ amli FIND .lnk** 类似地不返回命中。 命令 **！ amli FIND LNKB** 会显示以 "LNKB" 终止的单个节点，而不是显示在前面的显示中的此节点的四个子节点：
 
 ```console
 kd> !amli find lnkb
 \_SB.LNKB.
 ```
 
-如果需要查看节点的子级，请使用[ **！ amli dns** ](-amli-dns.md)命令 **/s**参数。
+如果需要查看节点的子节点，请使用带有 **/s** 参数的 [**！ amli dns**](-amli-dns.md)命令。
 
-下面是另一个示例中，从 AMLI 调试器发出提示。 这将显示对象的所有声明\_BST 的命名空间中：
+下面是另一个示例，通过 AMLI 调试器提示符发出。 这会显示 \_ 命名空间中对象 BST 的所有声明：
 
 ```console
 AMLI(? for help)-> find _bst

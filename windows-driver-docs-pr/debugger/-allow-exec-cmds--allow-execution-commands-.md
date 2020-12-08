@@ -1,9 +1,8 @@
 ---
 title: .allow_exec_cmds（允许执行命令）
 description: .Allow_exec_cmds 命令控制是否可以使用执行命令。
-ms.assetid: c6e37cf1-42cc-4f82-9eb8-d252f0b6e196
 keywords:
-- .allow_exec_cmds （允许执行命令） Windows 调试
+- .allow_exec_cmds (允许) Windows 调试执行命令
 ms.date: 09/17/2018
 topic_type:
 - apiref
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: b81c201ee4429b131c1e7f41f00814cae541f724
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b2344a84156f39709f0dea6e40be035c3b1d84a8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63337034"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96800137"
 ---
-# <a name="allowexeccmds-allow-execution-commands"></a>.allow\_exec\_传送的命令 （允许执行命令）
+# <a name="allow_exec_cmds-allow-execution-commands"></a>。允许 \_ Exec \_ 命令 (允许执行命令) 
 
 
-**.Allow\_exec\_传送的命令**命令控件是否可以使用执行命令。
+**Allow \_ exec \_** 命令控制是否可以使用执行命令。
 
 ```dbgcmd
 .allow_exec_cmds 0 
@@ -30,13 +29,13 @@ ms.locfileid: "63337034"
 .allow_exec_cmds 
 ```
 
-## <a name="span-idddkmetaallowexecutioncommandsdbgspanspan-idddkmetaallowexecutioncommandsdbgspanparameters"></a><span id="ddk_meta_allow_execution_commands_dbg"></span><span id="DDK_META_ALLOW_EXECUTION_COMMANDS_DBG"></span>参数
+## <a name="span-idddk_meta_allow_execution_commands_dbgspanspan-idddk_meta_allow_execution_commands_dbgspanparameters"></a><span id="ddk_meta_allow_execution_commands_dbg"></span><span id="DDK_META_ALLOW_EXECUTION_COMMANDS_DBG"></span>参数
 
 
-<span id="_______0______"></span> **0**   
+<span id="_______0______"></span>**0**   
 禁止使用执行命令。
 
-<span id="_______1______"></span> **1**   
+<span id="_______1______"></span>**1**   
 允许使用执行命令。
 
 ### <a name="span-idenvironmentspanspan-idenvironmentspanspan-idenvironmentspanenvironment"></a><span id="Environment"></span><span id="environment"></span><span id="ENVIRONMENT"></span>环境
@@ -48,32 +47,32 @@ ms.locfileid: "63337034"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>模式</strong></p></td>
+<td align="left"><p><strong>交货</strong></p></td>
 <td align="left"><p>用户模式和内核模式</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>目标</strong></p></td>
-<td align="left"><p>仅实时调试</p></td>
+<td align="left"><p>仅限实时调试</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>平台</strong></p></td>
-<td align="left"><p>全部</p></td>
+<td align="left"><p>all</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-执行命令的完整列表，请参阅[控制目标](controlling-the-target.md)。
+有关执行命令的完整列表，请参阅 [控制目标](controlling-the-target.md)。
 
 <a name="remarks"></a>备注
 -------
 
-不带任何参数， **.allow\_exec\_传送的命令**是否当前允许执行命令将显示。
+如果没有参数，则 **. 允许 \_ exec \_** 命令将显示当前是否允许执行命令。
 
-执行命令，包括[ **g （转向）**](g--go-.md)， [ **t (Trace)**](t--trace-.md)， [ **p （步骤）** ](p--step-.md)，和任何其他命令或 WinDbg 图形界面操作会导致要执行的目标。
+执行命令包括 [**g (中转)**](g--go-.md)， [**t (Trace)**](t--trace-.md)， [**p (步骤)**](p--step-.md)，以及将导致目标执行的任何其他命令或 WinDbg 图形界面操作。
 
  
 

@@ -1,7 +1,6 @@
 ---
 title: 音频设备的电源管理
 description: 音频设备的电源管理
-ms.assetid: 3d3d63af-5790-4760-9099-7116ed5a5446
 keywords:
 - 音频驱动程序 WDK，电源管理
 - 音频微型端口驱动程序 WDK，电源管理
@@ -11,12 +10,12 @@ keywords:
 - PortCls WDK 音频，电源管理
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1c98bd34b8ec6b927a4a15e6c8d0cac17c9d650f
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 38190f5cb6fc6d76370470f02d5e59690f860f5d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89210457"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96800797"
 ---
 # <a name="power-management-for-audio-devices"></a>音频设备的电源管理
 

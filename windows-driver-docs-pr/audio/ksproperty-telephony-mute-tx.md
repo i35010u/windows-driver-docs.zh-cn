@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ 电话服务 \_ 静音 \_ TX
 description: KSPROPERTY \_ 电话服务 \_ 静音 \_ TX 属性用于控制是否将从本地麦克风传输的数据静音到远程端。
-ms.assetid: FB59AFB8-A11D-4E8D-9C39-131F1D807D4A
 keywords:
 - KSPROPERTY_TELEPHONY_MUTE_TX 音频设备
 topic_type:
@@ -14,17 +13,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d065f68a884c2b63ace659cb2cb5cb14caaa41b7
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: fb5135dbba03a4c9b80c564111d53961afd284cc
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90101840"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801135"
 ---
 # <a name="ksproperty_telephony_mute_tx"></a>KSPROPERTY \_ 电话服务 \_ 静音 \_ TX
 
 
-**KSPROPERTY \_ 电话服务 \_ 静音 \_ TX**属性用于控制是否将从本地麦克风传输的数据静音到远程端。
+**KSPROPERTY \_ 电话服务 \_ 静音 \_ TX** 属性用于控制是否将从本地麦克风传输的数据静音到远程端。
 
 ### <a name="span-idusage_summary_tablespanspan-idusage_summary_tablespanspan-idusage_summary_tablespanusage-summary-table"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用情况摘要表
 

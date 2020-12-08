@@ -1,18 +1,17 @@
 ---
 title: 供应商音频驱动程序选项
 description: 供应商音频驱动程序选项
-ms.assetid: 4306c027-28ae-4299-83c0-29d892bf64ca
 keywords:
 - WDM 音频驱动程序 WDK，供应商选项
 - 音频驱动程序 WDK，供应商选项
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 36063783f6a798cd98368c4aac1609ee1153a498
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: bb2e841aaf768c7686c6593445efa1088eee0401
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89209915"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96800463"
 ---
 # <a name="vendor-audio-driver-options"></a>供应商音频驱动程序选项
 

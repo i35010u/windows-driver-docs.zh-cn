@@ -1,7 +1,6 @@
 ---
 title: MIDI 端口驱动程序
 description: MIDI 端口驱动程序
-ms.assetid: 4b403569-75c8-4cf4-bda1-efa9e004b529
 keywords:
 - MIDI 端口驱动程序 WDK 音频
 - PortCls WDK 音频，端口驱动程序
@@ -9,12 +8,12 @@ keywords:
 - 微型端口驱动程序 WDK 音频、端口驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2a45e573ecadab1d8d7ad2d096046d272942eb64
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 2efb85cd03cf670748ac6a3380429b906b73eb59
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89211403"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801017"
 ---
 # <a name="midi-port-driver"></a>MIDI 端口驱动程序
 
@@ -32,7 +31,7 @@ MIDI 端口驱动程序向微型端口驱动程序公开 [IPortMidi](/windows-ha
 [**IPortMidi::RegisterServiceGroup**](/windows-hardware/drivers/ddi/portcls/nf-portcls-iportmidi-registerservicegroup)
 
 使用端口驱动程序注册服务组对象。
-服务组包含一个或多个在微型端口驱动程序调用 **Notify**时要调用的服务例程的列表;有关详细信息，请参阅 [服务接收器和服务组对象](service-sink-and-service-group-objects.md)。
+服务组包含一个或多个在微型端口驱动程序调用 **Notify** 时要调用的服务例程的列表;有关详细信息，请参阅 [服务接收器和服务组对象](service-sink-and-service-group-objects.md)。
 
 MIDI 端口和微型端口驱动程序对象通过各自的 **IPortMidi** 和 [IMiniportMidi](/windows-hardware/drivers/ddi/portcls/nn-portcls-iminiportmidi) 接口相互通信。 微型端口驱动程序使用端口驱动程序的 **IPortMidi** 接口通知端口驱动程序的硬件中断。 此外，端口驱动程序通过其 [IMiniportMidiStream](/windows-hardware/drivers/ddi/portcls/nn-portcls-iminiportmidistream) 接口与微型端口驱动程序的流对象通信。
 

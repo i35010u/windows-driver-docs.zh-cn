@@ -1,22 +1,21 @@
 ---
 title: 在驱动程序中支持 D3cold
 description: 从 Windows 8 开始，D3 (关闭) 设备电源状态分成两个不同的 substates，D3hot 和 D3cold。
-ms.assetid: D085820E-EDAC-4353-8500-207F77D9CC1F
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: e4378efa9ed5245a7554236400e4c2263e0946f9
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: c4cdedef852c43051e448ab65baaa03d4515dd58
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107272"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96799465"
 ---
 # <a name="supporting-d3cold-in-a-driver"></a>在驱动程序中支持 D3cold
 
 
 从 Windows 8 开始，D3 (关闭) 设备电源状态分成两个不同的 substates，D3hot 和 D3cold。 D3 是最低功率的设备电源状态，D3cold 是 D3 的最低功率子状态。 将空闲设备移动到 D3cold 子状态可降低能耗，并延长移动硬件平台可在电池电量上运行的时间。
 
-在 D3hot 中，设备主要处于关闭状态。 不过，设备不会从其主电源断开连接，并且父总线控制器可以检测总线上的设备是否存在。 在 D3cold 中，将从设备中删除主电源，并且总线控制器无法检测到设备是否存在。 有关详细信息，请参阅 D3hot 和[D3cold 的说明。](device-sleeping-states.md)
+在 D3hot 中，设备主要处于关闭状态。 不过，设备不会从其主电源断开连接，并且父总线控制器可以检测总线上的设备是否存在。 在 D3cold 中，将从设备中删除主电源，并且总线控制器无法检测到设备是否存在。 有关详细信息，请参阅 D3hot 和 D3cold in [Device Low-Power 状态](device-sleeping-states.md)的说明。
 
 在较早版本的 Windows 中，D3 设备电源状态隐式划分为 D3hot 和 D3cold substates，但设备不能进入 D3cold，除非计算机正在准备退出 S0 系统电源状态，并进入一个睡眠状态 S1 到 S4。 在计算机处于 S0 状态时，设备可输入的低功耗 Dx 状态限制为 D1 到 D3hot。
 
@@ -41,7 +40,7 @@ Windows 8 是 Windows 的第一个版本，当计算机处于 S0 状态且未准
 <thead>
 <tr class="header">
 <th>主题</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>

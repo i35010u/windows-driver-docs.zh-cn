@@ -1,7 +1,6 @@
 ---
 title: 添加组件
 description: 添加组件
-ms.assetid: f8177904-77a2-4d1a-8c72-0b47a100bc37
 keywords:
 - 通知对象 WDK 网络，添加组件
 - 网络通知对象 WDK，添加组件
@@ -9,12 +8,12 @@ keywords:
 - 网络组件添加 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f675cede3b77ef458c11c93d17e5f6e9191513f1
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 74d6167ccf309de5fb07be921da2b4abf9274f98
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89210797"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96799449"
 ---
 # <a name="adding-a-component"></a>添加组件
 

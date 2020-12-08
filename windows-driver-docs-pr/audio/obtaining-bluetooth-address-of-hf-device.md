@@ -1,26 +1,25 @@
 ---
 title: 获取 HF 设备的蓝牙地址
-description: HF 设备主题的获取蓝牙地址演示音频驱动程序如何获取无 (HF) 配对设备的蓝牙地址。
-ms.assetid: A3A33459-869A-4F75-B1B9-A3D59863E82C
+description: "\"获取 HF 设备的蓝牙地址\" 主题演示了音频驱动程序如何获取配对的免提 (HF) 设备的蓝牙地址。"
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 87fd8e14ec3325145167ab48df43cde9e5c8953d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2241faf74969518564baefc0256a9dcf40309a35
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332261"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96800975"
 ---
 # <a name="obtaining-bluetooth-address-of-hf-device"></a>获取 HF 设备的蓝牙地址
 
 
-HF 设备主题的获取蓝牙地址演示音频驱动程序如何获取无 (HF) 配对设备的蓝牙地址。
+"获取 HF 设备的蓝牙地址" 主题演示了音频驱动程序如何获取配对的免提 (HF) 设备的蓝牙地址。
 
-地址字符串也可用于唯一标识特定的配对的 HF 设备。 例如，地址字符串可以用作*ReferenceString* IoRegisterDeviceInterface，到传递的参数*RefString*参数传递给 KsCreateFilterFactory，或*名称*PcRegisterSubdevice 到传递的参数。
+地址字符串可用于唯一标识特定的成对 HF 设备。 例如，地址字符串可以用作传递给 IoRegisterDeviceInterface 的 *ReferenceString* 参数、传递给 KsCreateFilterFactory 的 *RefString* 参数或传递给 PcRegisterSubdevice 的 *Name* 参数。
 
-请注意，GUID\_DEVINTERFACE\_蓝牙\_HFP\_SCO\_HCIBYPASS 设备接口符号链接也是唯一的每个配对 HF 设备，但出于某些目的可以是此字符串太长。
+请注意，GUID \_ DEVINTERFACE \_ BLUETOOTH \_ HFP \_ SCO \_ HCIBYPASS 设备接口符号链接对于每个配对 HF 设备也是唯一的，但对于某些用途，此字符串可能太长。
 
-下面的代码示例中所示的 IoHelperGetDevicePdo 例程是由 IoHelperGetDeviceBluetoothAddress 的实用工具函数。 音频驱动程序处理即插即用接口到达通知时，可以调用此类函数。 音频驱动程序从 IoGetDeviceObjectPointer 获取的设备对象并将其传递给 IoHelperGetDeviceBluetoothAddress。
+下面的代码示例中所示的 IoHelperGetDevicePdo 例程是 IoHelperGetDeviceBluetoothAddress 使用的实用函数。 在音频驱动程序处理 PnP 接口到达通知时，可以调用此类函数。 音频驱动程序从 Plxntb 获取设备对象并将其传递给 IoHelperGetDeviceBluetoothAddress。
 
 ```ManagedCPlusPlus
 _IRQL_requires_(PASSIVE_LEVEL)
@@ -206,8 +205,8 @@ Exit:
 }
 ```
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
-[相关的设计准则](related-design-guidelines.md)  
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
+[相关的设计指南](related-design-guidelines.md)  
 
 
 

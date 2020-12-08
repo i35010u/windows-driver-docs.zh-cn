@@ -1,7 +1,6 @@
 ---
 title: 典型的音频配置
 description: 典型的音频配置
-ms.assetid: 00e05a66-2830-4f68-baac-2244e1f66770
 keywords:
 - WDM 音频驱动程序 WDK，典型配置
 - 音频驱动程序 WDK，典型配置
@@ -11,12 +10,12 @@ keywords:
 - 呈现配置 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 073a714816668837da788150151b8e34e9629522
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 628fc005292ae8baaf8982f63d9b1c6ad81c9c39
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328534"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96800493"
 ---
 # <a name="typical-audio-configurations"></a>典型的音频配置
 
@@ -24,17 +23,17 @@ ms.locfileid: "63328534"
 ## <span id="typical_audio_configurations"></span><span id="TYPICAL_AUDIO_CONFIGURATIONS"></span>
 
 
-本部分提供用于呈现和捕获音频内容的典型音频配置的集合。 以下配置所示：
+本部分提供了用于呈现和捕获音频内容的典型音频配置的集合。 显示以下配置：
 
-[呈现和捕获批内容](rendering-and-capturing-wave-content.md)
+[呈现和捕获 Wave 内容](rendering-and-capturing-wave-content.md)
 
 [呈现和捕获 MIDI 内容](rendering-and-capturing-midi-content.md)
 
-[呈现，使用端口类音频适配器捕获音频内容](rendering-and-capturing-audio-content-by-using-a-port-class-audio-adap.md)
+[使用端口类音频适配器呈现和捕获音频内容](rendering-and-capturing-audio-content-by-using-a-port-class-audio-adap.md)
 
-[呈现和捕获音频内容使用 USBAudio 驱动程序](rendering-and-capturing-audio-content-by-using-the-usbaudio-driver.md)
+[使用 USBAudio 驱动程序呈现和捕获音频内容](rendering-and-capturing-audio-content-by-using-the-usbaudio-driver.md)
 
-[使用 DirectSound 软件和硬件缓冲区呈现批内容](rendering-wave-content-using-directsound-software-and-hardware-buffers.md)
+[使用 DirectSound 软件和硬件缓冲区呈现 Wave 内容](rendering-wave-content-using-directsound-software-and-hardware-buffers.md)
 
  
 

@@ -1,7 +1,6 @@
 ---
 title: DEVPKEY_Device_FirstInstallDate
 description: DEVPKEY_Device_FirstInstallDate
-ms.assetid: aedc4f18-51be-4c42-a172-c1fd88cc49b3
 keywords:
 - DEVPKEY_Device_FirstInstallDate 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 921824819e782776682daa0e9fffa575b0795134
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 0e53e21f0c0a3d2d4bc3715c25114484c0cf26aa
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90717040"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96799531"
 ---
 # <a name="devpkey_device_firstinstalldate"></a>DEVPKEY_Device_FirstInstallDate
 
@@ -64,7 +63,7 @@ DEVPKEY_Device_FirstInstallDate 设备属性指定设备实例首次安装到系
 
 Windows 将 DEVPKEY_Device_FirstInstallDate 的值设置为时间戳，该时间戳指定第一次在系统中安装设备实例的时间。
 
-**注意**   与[**DEVPKEY_Device_InstallDate**](devpkey-device-installdate.md)属性不同，每次更新设备驱动程序时，DEVPKEY_Device_FirstInstallDate 属性的值不会更改。 例如，通过 Windows 更新更新的驱动程序不会更改此属性的值。
+**注意**   与 [**DEVPKEY_Device_InstallDate**](devpkey-device-installdate.md) 属性不同，每次更新设备驱动程序时，DEVPKEY_Device_FirstInstallDate 属性的值不会更改。 例如，通过 Windows 更新更新的驱动程序不会更改此属性的值。
 
  
 

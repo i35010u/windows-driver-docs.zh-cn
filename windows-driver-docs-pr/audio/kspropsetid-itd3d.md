@@ -1,17 +1,16 @@
 ---
 title: KSPROPSETID \_ Itd3d
 description: KSPROPSETID \_ Itd3d
-ms.assetid: 87159be4-740e-47c9-b16f-16ca4d01c793
 keywords:
 - KSPROPSETID_Itd3d
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ce636759df41b90576437269b85e82d86d070c33
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 7101605781fe79591e849ba7a2231a54c3d412cc
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89208841"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801085"
 ---
 # <a name="kspropsetid_itd3d"></a>KSPROPSETID \_ Itd3d
 

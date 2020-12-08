@@ -1,7 +1,6 @@
 ---
 title: 指定 WMA Pro 数据范围
 description: 指定 WMA Pro 数据范围
-ms.assetid: c7e9bc68-cec2-4a34-9ef0-ce3c9a4cc987
 keywords:
 - S/PDIF 传递 WDK 音频
 - WMA Pro-S/PDIF 格式 WDK 音频
@@ -13,12 +12,12 @@ keywords:
 - 非 PCM 音频格式 WDK、WMA Pro
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4b9ff66e77c5d1688829ed83eef753e97edbe89d
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 8a950a7c92354dbbdc8717debd18288cac32b397
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89210383"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96800623"
 ---
 # <a name="specifying-wma-pro-data-ranges"></a>指定 WMA Pro 数据范围
 
@@ -102,7 +101,7 @@ static KSDATARANGE_AUDIO PinDataRangesSpdifOut[] =
 
 在此代码示例中，第一个和第二个数据区域以 48 kHz 和 44.1 kHz 的采样速率指定 WMA Pro-S/PDIF 数据格式。 使用这两个选项，音频应用程序可以播放在这两个采样速率中记录的 WMA Pro 音频流，假设外部解码器还可以处理采样速率。
 
-WMA Pro 同步帧大小在 48 kHz 和 44.1 kHz 均相同，并且这两个数据区域都使用相同的 PCM 参数值-两个通道和16位/通道。 若要了解如何使用 PCM 参数来指定 WMA Pro over S/PDIF 和 AC-3/PDIF 格式的数据范围，请参阅 [非 PCM 流的 S/Pdif 传递传输](s-pdif-pass-through-transmission-of-non-pcm-streams.md)。
+WMA Pro 同步帧大小在 48 kHz 和 44.1 kHz 均相同，并且这两个数据区域都使用相同的 PCM 参数值-两个通道和16位/通道。 若要了解如何使用 PCM 参数来指定 WMA Pro over S/PDIF 和 AC-3/PDIF 格式的数据范围，请参阅 [s/pdif Pass-Through 非 PCM 流传输](s-pdif-pass-through-transmission-of-non-pcm-streams.md)。
 
 第三个数据区域指定 AC-3-S/PDIF 数据格式。 有关详细信息，请参阅 [指定 AC 3 数据范围](specifying-ac-3-data-ranges.md)。
 

@@ -1,15 +1,14 @@
 ---
 title: PortCls 专用 PEP 上下文共享
 description: 从 Windows 8 开始，微型端口驱动程序可以使用 IPortClsRuntimePower （一个新接口）来与 Windows Power Engine 插件共享 (PEP) 的专用上下文共享。
-ms.assetid: 27A0DD72-8AD0-4F38-B17C-9BDD63C5E7E1
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3df55408225ee4caced32cad40933285ee9a1b2c
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 4e1102ee751cd384165eb9aedcedc06e36ede3fe
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89210461"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96800811"
 ---
 # <a name="portcls-private-pep-context-sharing"></a>PortCls 专用 PEP 上下文共享
 
@@ -29,9 +28,9 @@ ms.locfileid: "89210461"
 
 3. 然后，微型端口驱动程序会在新创建的 **IPortWaveRT** 端口接口中调用 QueryInterface，并将 IID \_ IPortClsRuntimePower 指定为接口 GUID。
 
-4. **IPortWaveRT**端口接口为微型端口驱动程序提供指向其[**IPortClsRuntimePower**](/windows-hardware/drivers/ddi/portcls/nn-portcls-iportclsruntimepower)接口的指针。
+4. **IPortWaveRT** 端口接口为微型端口驱动程序提供指向其 [**IPortClsRuntimePower**](/windows-hardware/drivers/ddi/portcls/nn-portcls-iportclsruntimepower)接口的指针。
 
-*Portcls*头文件定义 IPORTCLSRUNTIMEPOWER 的 GUID，如下所示：
+*Portcls* 头文件定义 IPORTCLSRUNTIMEPOWER 的 GUID，如下所示：
 
 ``` syntax
 // {E057C351-0430-4DBC-B172-C711D40A2373}

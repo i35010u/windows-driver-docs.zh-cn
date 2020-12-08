@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ RTAUDIO \_ CLOCKREGISTER
 description: KSPROPERTY \_ RTAUDIO \_ CLOCKREGISTER 属性将音频设备的墙壁时钟寄存器映射到客户端可以访问的虚拟内存位置。 下表汇总了此属性的功能。
-ms.assetid: a35b5830-55e4-4e92-a4f1-df9edcc2f5bb
 keywords:
 - KSPROPERTY_RTAUDIO_CLOCKREGISTER 音频设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 13224725a053a19b9353c6b64f9ed29631fb9099
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 56d5e85354b87961d6bf7db3a822bde9b58f28f0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90101944"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801195"
 ---
 # <a name="ksproperty_rtaudio_clockregister"></a>KSPROPERTY \_ RTAUDIO \_ CLOCKREGISTER
 

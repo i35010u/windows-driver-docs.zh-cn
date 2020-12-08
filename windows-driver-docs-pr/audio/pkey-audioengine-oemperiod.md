@@ -1,20 +1,19 @@
 ---
 title: PKEY \_ AudioEngine \_ OEMPeriod
 description: PKEY \_ AudioEngine \_ OEMPeriod
-ms.assetid: e0cefdbf-7016-4609-a898-592a40b5d430
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 62cb549069f7d7591e810eed50567487962c9b18
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: bf63970d5447f81cdb3af698bfa31b87249da6c7
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89211353"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96800915"
 ---
 # <a name="pkey_audioengine_oemperiod"></a>PKEY \_ AudioEngine \_ OEMPeriod
 
 
-Windows 音频引擎按预定的时间间隔运行，这称为音频引擎的 *周期* 。 在 windows 7 和更高版本的 Windows 中，默认情况下，音频引擎运行时的周期为10ms。 在 Windows 7 中，你可以使用一个 INF 文件和一个新的注册表项 **PKEY \_ AudioEngine \_ OEMPeriod**来自定义你的音频设备驱动程序的周期。 这是每个终结点的设置。
+Windows 音频引擎按预定的时间间隔运行，这称为音频引擎的 *周期* 。 在 windows 7 和更高版本的 Windows 中，默认情况下，音频引擎运行时的周期为10ms。 在 Windows 7 中，你可以使用一个 INF 文件和一个新的注册表项 **PKEY \_ AudioEngine \_ OEMPeriod** 来自定义你的音频设备驱动程序的周期。 这是每个终结点的设置。
 
 INF 文件中的以下摘录演示了如何使用 [**Inf AddReg 指令**](../install/inf-addreg-directive.md) 来自定义音频设备驱动程序的周期。
 

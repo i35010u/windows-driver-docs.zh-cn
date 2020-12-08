@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ SYSAUDIO \_ 创建 \_ 虚拟 \_ 源
 description: KSPROPERTY \_ SYSAUDIO \_ CREATE \_ virtual \_ source 属性创建新的虚拟源。
-ms.assetid: 771c4084-8007-4280-8451-946a26182740
 keywords:
 - KSPROPERTY_SYSAUDIO_CREATE_VIRTUAL_SOURCE 音频设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 41f5580fe9f5cffa3488181d88c39144ac5ccd29
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 5b6efc934e13bad1ff3b969cdadf420cd2926d91
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90101888"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801159"
 ---
 # <a name="ksproperty_sysaudio_create_virtual_source"></a>KSPROPERTY \_ SYSAUDIO \_ 创建 \_ 虚拟 \_ 源
 
@@ -78,9 +77,9 @@ KSPROPERTY \_ SYSAUDIO \_ CREATE \_ VIRTUAL \_ SOURCE property 请求返回状�
 
 在 SysAudio 为虚拟源分配索引后，可以使用 [**KSPROPERTY \_ SysAudio \_ 附加 \_ 虚拟 \_ 源**](ksproperty-sysaudio-attach-virtual-source.md)集-属性请求将该虚拟源附加到虚拟音频设备上的 pin 实例。
 
-用户通过 SndVol32 应用程序控制各种音频源的音量级别。 这些源包括波形输出设备、MIDI 合成器、CD 播放器和线路输入插孔。 SndVol32 使用 Windows 多媒体 **waveOut**_Xxx_、 **midiOut**_xxx_和 **aux**_Xxx_ 函数来控制这些源的卷级别。 有关 Windows 多媒体功能的详细信息，请参阅 Microsoft Windows SDK 文档。
+用户通过 SndVol32 应用程序控制各种音频源的音量级别。 这些源包括波形输出设备、MIDI 合成器、CD 播放器和线路输入插孔。 SndVol32 使用 Windows 多媒体 **waveOut**_Xxx_、 **midiOut**_xxx_ 和 **aux**_Xxx_ 函数来控制这些源的卷级别。 有关 Windows 多媒体功能的详细信息，请参阅 Microsoft Windows SDK 文档。
 
-SysAudio 截获对这些设备进行的卷更改，并将这些更改应用到其虚拟源。 例如，如果将 MIDI 文件转换为波形数据的软件 MIDI 合成器连接到某个虚拟音频设备的波形渲染插针，则 SysAudio 会将 midiOut*Xxx* 卷更改应用到 pin (而不是 **waveOut**_Xxx_ 的卷更改) 。 同样，如果将数字音频从 CD 播放机转换为波形数据的 [Redbook 系统驱动程序](./kernel-mode-wdm-audio-components.md#redbook-system-driver)已连接到某个虚拟音频设备的波形渲染插针，则 SysAudio 会将 AUXCAPS \_ CDAUDIO 批量更改应用到该 pin。 有关 AUXCAPS CDAUDIO 结构的详细信息 \_ ，请参阅 Windows SDK 文档。
+SysAudio 截获对这些设备进行的卷更改，并将这些更改应用到其虚拟源。 例如，如果将 MIDI 文件转换为波形数据的软件 MIDI 合成器连接到某个虚拟音频设备的波形渲染插针，则 SysAudio 会将 midiOut *Xxx* 卷更改应用到 pin (而不是 **waveOut**_Xxx_ 的卷更改) 。 同样，如果将数字音频从 CD 播放机转换为波形数据的 [Redbook 系统驱动程序](./kernel-mode-wdm-audio-components.md#redbook-system-driver)已连接到某个虚拟音频设备的波形渲染插针，则 SysAudio 会将 AUXCAPS \_ CDAUDIO 批量更改应用到该 pin。 有关 AUXCAPS CDAUDIO 结构的详细信息 \_ ，请参阅 Windows SDK 文档。
 
 <a name="requirements"></a>要求
 ------------

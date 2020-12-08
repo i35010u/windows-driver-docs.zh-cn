@@ -1,17 +1,16 @@
 ---
 title: KSPROPSETID \_ AudioGfx
 description: KSPROPSETID \_ AudioGfx
-ms.assetid: f872a5bb-6ab5-4f1e-b81b-86ba744b2d6e
 keywords:
 - KSPROPSETID_AudioGfx
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9210682dc8e6930494fc9a36a9bd92c975d1ed07
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 374191402d59097fda9f70888dda1fa68dcfcce8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89211473"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801115"
 ---
 # <a name="kspropsetid_audiogfx"></a>KSPROPSETID \_ AudioGfx
 

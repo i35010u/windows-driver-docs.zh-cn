@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ SOUNDDETECTOR \_ SUPPORTEDPATTERNS
 description: KSPROPERTY \_ SOUNDDETECTOR \_ SUPPORTEDPATTERNS 属性用于获取 guid 列表，这些 guid 用于标识支持模式的类型。
-ms.assetid: 8D840204-ADE8-4146-B88C-C0750B8FC33A
 keywords:
 - KSPROPERTY_SOUNDDETECTOR_SUPPORTEDPATTERNS 音频设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 09/25/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: c45db0e1cb1d90188b59c5f59c96572358ff86d1
-ms.sourcegitcommit: cfd4d8ee889c6a3feed79ae112662f6c095b6a36
+ms.openlocfilehash: 196428b6e463777d28799fcd03432fd585056164
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94417417"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801167"
 ---
 # <a name="ksproperty_sounddetector_supportedpatterns"></a>KSPROPERTY \_ SOUNDDETECTOR \_ SUPPORTEDPATTERNS
 
@@ -41,7 +40,7 @@ ms.locfileid: "94417417"
 <tr class="header">
 <th align="left">获取</th>
 <th align="left">设置</th>
-<th align="left">Target</th>
+<th align="left">目标</th>
 <th align="left">属性描述符类型</th>
 <th align="left">属性值类型</th>
 </tr>
@@ -73,7 +72,7 @@ ms.locfileid: "94417417"
 <tr class="header">
 <th align="left">获取</th>
 <th align="left">设置</th>
-<th align="left">Target</th>
+<th align="left">目标</th>
 <th align="left">属性描述符类型</th>
 <th align="left">属性值类型</th>
 </tr>
@@ -93,7 +92,7 @@ ms.locfileid: "94417417"
 
 属性值是 KSMULTIPLE 的 [**\_ 项**](/windows-hardware/drivers/ddi/ks/ns-ks-ksmultiple_item) 结构，后跟一系列 guid。
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 模式 GUID 具有以下特征：

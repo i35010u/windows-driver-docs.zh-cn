@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ SOUNDDETECTOR \_ STREAMINGSUPPORT
 description: KSPROPERTY \_ SOUNDDETECTOR \_ STREAMINGSUPPORT 属性指示流是否受支持。
-ms.assetid: 3B9B43C0-31EE-4490-AD29-98DA81D1664E
 keywords:
 - KSPROPERTY_SOUNDDETECTOR_STREAMINGSUPPORT 音频设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 09/24/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 6efc50c2170f37965aa8d3f649f6342b66173609
-ms.sourcegitcommit: cfd4d8ee889c6a3feed79ae112662f6c095b6a36
+ms.openlocfilehash: 029de1a03094df0a6038d45d0d3b91a153c9197b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94417431"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801169"
 ---
 # <a name="ksproperty_sounddetector_streamingsupport"></a>KSPROPERTY \_ SOUNDDETECTOR \_ STREAMINGSUPPORT
 
@@ -39,7 +38,7 @@ ms.locfileid: "94417431"
 <tr class="header">
 <th align="left">获取</th>
 <th align="left">设置</th>
-<th align="left">Target</th>
+<th align="left">目标</th>
 <th align="left">属性描述符类型</th>
 <th align="left">属性值类型</th>
 </tr>
@@ -67,7 +66,7 @@ ms.locfileid: "94417431"
 
 所有检测程序都必须支持缓冲和脉冲流式处理触发硬件关键字检测的音频数据，并使此请求失败，或将此值设置为 true。
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 此属性供将来使用。 目前没有对检测程序的操作系统支持，这只是语音开始。
 

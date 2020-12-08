@@ -1,7 +1,6 @@
 ---
 title: 合成器延迟
 description: 合成器延迟
-ms.assetid: a3134024-77b9-463b-959b-3c910f83014d
 keywords:
 - 合成 WDK 音频，延迟
 - 延迟 WDK 音频，合成
@@ -10,12 +9,12 @@ keywords:
 - 波形接收器音频，延迟时间
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 713ec4ab0605314ec9555f8ebd619dd53fa41748
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 8a51e256674efd262e6be520904be8a9ec989144
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90716078"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96800557"
 ---
 # <a name="synthesizer-latency"></a>合成器延迟
 

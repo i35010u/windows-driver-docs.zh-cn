@@ -1,15 +1,14 @@
 ---
 title: PortCls D3 退出延迟要求
 description: 本主题讨论 (PortCls) 的 Windows 端口类驱动程序如何使用新的 Windows 8 接口处理 D3 睡眠状态的退出延迟要求。
-ms.assetid: 3CEFF85B-5A2E-4F85-BCAC-00F1773A8F4D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9eb9ac2a67a95c0db4af7c77fa5d868e2f84480f
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 6edbce118269ce0961159adf88e9e0da03ee298a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89210471"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96800821"
 ---
 # <a name="portcls-d3-exit-latency-requirement"></a>PortCls D3 退出延迟要求
 
@@ -20,7 +19,7 @@ ms.locfileid: "89210471"
 
 PortCls 现在可以使用新的电源管理接口生成新的 D3 出口延迟，然后将其动态地传达给音频微型端口驱动程序。 这些公差表示为 [**PC \_ 出口 \_ 延迟**](/windows-hardware/drivers/ddi/portcls/ne-portcls-_pc_exit_latency) 枚举值。
 
-有关新电源管理接口的详细信息，请参阅[ **IAdapterPowerManagement3**](/windows-hardware/drivers/ddi/portcls/nn-portcls-iadapterpowermanagement3)
+有关新电源管理接口的详细信息，请参阅 [ **IAdapterPowerManagement3**](/windows-hardware/drivers/ddi/portcls/nn-portcls-iadapterpowermanagement3)
 
  
 

@@ -1,7 +1,6 @@
 ---
 title: ProcAmpControlBlt 方法
 description: 示例 DXVA \_ ProcAmpControlDeviceClass：:P rocampcontrolblt 函数通过将输出写入目标图面来执行 ProcAmp 调整操作。
-ms.assetid: bf86fd39-554d-4ef1-adb7-202bb70fd3b4
 keywords:
 - ProcAmpControlBlt 方法显示设备
 - ProcAmpControlBlt 方法显示设备，DXVA_ProcAmpControlDeviceClass 接口
@@ -14,12 +13,12 @@ api_type:
 - COM
 ms.date: 01/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 0503029be99ebcb9f5f8a6a13da9f0e1da7a8d71
-ms.sourcegitcommit: f8619f20a0903dd64f8641a5266ecad6df5f1d57
+ms.openlocfilehash: c84424bc4aca54c891b5db14796806d1f3013386
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91423866"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96799723"
 ---
 # <a name="dxva_procampcontroldeviceclassprocampcontrolblt-method"></a>DXVA \_ ProcAmpControlDeviceClass：:P rocampcontrolblt 方法
 
@@ -31,13 +30,13 @@ ms.locfileid: "91423866"
 
 ```cpp
 HRESULT ProcAmpControlBlt(
-  [in] LPDDSURFACE            lpDDSDstSurface,
-  [in] LPDDSURFACE            lpDDSSrcSurface,
-  [in] DXVA_ProcAmpControlBlt *ccBlt
+  [in] LPDDSURFACE            lpDDSDstSurface,
+  [in] LPDDSURFACE            lpDDSSrcSurface,
+  [in] DXVA_ProcAmpControlBlt *ccBlt
 );
 ```
 
-<a name="parameters"></a>parameters
+<a name="parameters"></a>参数
 ----------
 
 *lpDDSDstSurface* \[在中， \] 提供指向目标图面的指针。
@@ -49,16 +48,16 @@ HRESULT ProcAmpControlBlt(
 <a name="return-value"></a>返回值
 ------------
 
-如果成功，则返回零 (S \_ 正常或 DD \_ 确定) ; 否则返回错误代码。 有关错误代码的完整列表，请参阅*ddraw。*
+如果成功，则返回零 (S \_ 正常或 DD \_ 确定) ; 否则返回错误代码。 有关错误代码的完整列表，请参阅 *ddraw。*
 
 <a name="remarks"></a>备注
 -------
 
-源和目标矩形对于 subrectangle ProcAmp 调整或拉伸是必需的。 支持拉伸是可选的，由[**DXVA \_ ProcAmpControlCaps**](/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_procampcontrolcaps)结构的**VideoProcessingCaps**成员报告。 对 subrectangles 的支持也是可选的。
+源和目标矩形对于 subrectangle ProcAmp 调整或拉伸是必需的。 支持拉伸是可选的，由 [**DXVA \_ ProcAmpControlCaps**](/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_procampcontrolcaps)结构的 **VideoProcessingCaps** 成员报告。 对 subrectangles 的支持也是可选的。
 
 目标图面可以是离线平面、D3D 渲染器目标、D3D 纹理或同时也是渲染器目标的 D3D 纹理。 目标图面将始终在本地视频内存中分配。 \_除非在 ProcAmp 调整过程中执行了 YUV 到 RGB 的颜色空间转换，否则目标图面的像素格式将为 DXVA ProcAmpControlCaps 结构中所指示的格式。 在这种情况下，目标表面格式将为 RGB 格式，每个颜色组件的精度至少为8位。
 
-示例*ProcAmpControlBlt*函数直接映射到[**DD \_ MOTIONCOMPCALLBACKS**](/windows/win32/api/ddrawint/ns-ddrawint-dd_motioncompcallbacks)结构的**RenderMoComp**成员的调用。 **RenderMoComp**成员指向驱动程序提供的*DdMoCompRender*回调，该回调引用[**DD \_ RENDERMOCOMPDATA**](/windows/win32/api/ddrawint/ns-ddrawint-dd_rendermocompdata)结构。 \_按如下所示填充 DD RENDERMOCOMPDATA 结构。
+示例 *ProcAmpControlBlt* 函数直接映射到 [**DD \_ MOTIONCOMPCALLBACKS**](/windows/win32/api/ddrawint/ns-ddrawint-dd_motioncompcallbacks)结构的 **RenderMoComp** 成员的调用。 **RenderMoComp** 成员指向驱动程序提供的 *DdMoCompRender* 回调，该回调引用 [**DD \_ RENDERMOCOMPDATA**](/windows/win32/api/ddrawint/ns-ddrawint-dd_rendermocompdata)结构。 \_按如下所示填充 DD RENDERMOCOMPDATA 结构。
 
 <table>
 <colgroup>
@@ -68,7 +67,7 @@ HRESULT ProcAmpControlBlt(
 <thead>
 <tr class="header">
 <th align="left">成员</th>
-<th align="left">Value</th>
+<th align="left">“值”</th>
 </tr>
 </thead>
 <tbody>

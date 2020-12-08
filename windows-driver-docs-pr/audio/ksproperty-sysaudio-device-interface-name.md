@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ SYSAUDIO \_ 设备 \_ 接口 \_ 名称
 description: KSPROPERTY \_ SYSAUDIO \_ 设备 \_ 接口 \_ 名称属性检索包含指定虚拟音频设备即插即用设备接口名称的 Unicode 字符串。
-ms.assetid: 0541ebb3-ad9a-42c6-9cd6-ea7b056821df
 keywords:
 - KSPROPERTY_SYSAUDIO_DEVICE_INTERFACE_NAME 音频设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 26225afd95a4ffe5dd8b58be3c6430c315168d7f
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 42773d05ba7bd65481c18860a703b17a4658c323
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90101866"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801151"
 ---
 # <a name="ksproperty_sysaudio_device_interface_name"></a>KSPROPERTY \_ SYSAUDIO \_ 设备 \_ 接口 \_ 名称
 

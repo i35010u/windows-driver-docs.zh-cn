@@ -1,15 +1,14 @@
 ---
 title: 音频设备 DDI 引用
 description: 本部分包含音频驱动程序的参考页面，这些页面符合 Windows 驱动模型 (WDM) 和用于处理音频处理对象接口的参考页。
-ms.assetid: 41a45180-4635-4d5d-befa-3e57467d4e33
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b2220120761ad4a8fa30c7b74b2b9fee9cc698d4
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 0766fab1276c56dbbc3d2c1b94edc86b8bfaeeb4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89210487"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96800831"
 ---
 # <a name="audio-devices-ddi-reference"></a>音频设备 DDI 引用
 

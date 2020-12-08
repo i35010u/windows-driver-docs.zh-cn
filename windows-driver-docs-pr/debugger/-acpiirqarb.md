@@ -1,7 +1,6 @@
 ---
 title: acpiirqarb
-description: Acpiirqarb 扩展显示 ACPI IRQ 仲裁器结构，其中包含与系统中断控制器输入和处理器 IDT 条目的 I/O 设备的配置的内容。
-ms.assetid: c57884cd-c70c-4091-871d-c2a35db8d73f
+description: Acpiirqarb 扩展显示 ACPI IRQ 仲裁程序结构的内容，该结构包含对系统中断控制器输入和处理器 IDT 条目的 i/o 设备配置。
 keywords:
 - acpiirqarb Windows 调试
 ms.date: 09/17/2018
@@ -12,23 +11,23 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 2bfb321860cba101e77e6aa362002333bb56b08b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a43899959381914b798623fbf914b4fe622dd887
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63334811"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96800161"
 ---
 # <a name="acpiirqarb"></a>!acpiirqarb
 
 
-**！ Acpiirqarb**扩展显示的高级配置和电源接口 (ACPI) IRQ 仲裁器结构，其中包含与系统中断控制器输入和处理器的 I/O 设备的配置的内容中断调度表 (IDT) 条目。
+**！ Acpiirqarb** EXTENSION (ACPI) IRQ 仲裁器结构中显示高级配置和电源接口的内容，该结构包含将 i/o 设备到系统中断控制器输入的配置，以及处理器中断调度表 (IDT) 条目。
 
 ```dbgcmd
 !acpiirqarb
 ```
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 
 <p>Kdexts.dll</p>
@@ -36,9 +35,9 @@ ms.locfileid: "63334811"
 
  
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-ACPI 有关的信息，请参阅 Microsoft Windows Driver Kit (WDK) 文档，Windows SDK 文档中，并*Microsoft Windows Internals*由 Mark Russinovich 和 David solomon 合著。 （这些书籍和资源可能不可用在某些语言和国家/地区中。）另请参阅[ACPI 调试](acpi-debugging.md)ACPI 与相关联的其他扩展有关的信息。
+有关 ACPI 的信息，请参阅 Microsoft Windows 驱动程序工具包 (WDK) 文档、Windows SDK 文档和 *Microsoft Windows 内部* ，并将标记 Russinovich 和 David 所罗门群岛。  (在某些语言和国家/地区可能无法使用这些书籍和资源。 ) 还请参阅 [Acpi 调试](acpi-debugging.md) ，获取有关与 ACPI 关联的其他扩展的信息。
 
  
 

@@ -1,9 +1,8 @@
 ---
 title: al（列出别名）
 description: Al 命令显示所有当前定义的用户命名别名的列表。
-ms.assetid: 40e20edb-4545-4c5a-bb56-61e00b064efc
 keywords:
-- al （列表别名） Windows 调试
+- al (列出) Windows 调试的别名
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 7cac3302ab00f1c88cbf4a3e35d054b942ec36b8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f9ce2b7de744088b5f18f7568c5f0183bf220bc1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63355005"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96799821"
 ---
 # <a name="al-list-aliases"></a>al（列出别名）
 
 
-**Al**命令显示所有当前定义的用户命名别名的列表。
+**Al** 命令显示所有当前定义的用户命名别名的列表。
 
 ```dbgcmd
 al
@@ -40,12 +39,12 @@ al
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>模式</strong></p></td>
-<td align="left"><p>用户模式下，内核模式</p></td>
+<td align="left"><p><strong>交货</strong></p></td>
+<td align="left"><p>用户模式，内核模式</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>目标</strong></p></td>
-<td align="left"><p>实时、 崩溃转储</p></td>
+<td align="left"><p>实时，故障转储</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>平台</strong></p></td>
@@ -56,14 +55,14 @@ al
 
  
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-有关如何使用别名的详细信息，请参阅[Using 别名](using-aliases.md)。
+有关如何使用别名的详细信息，请参阅 [使用别名](using-aliases.md)。
 
 <a name="remarks"></a>备注
 -------
 
-**Al**命令将列出所有用户命名的别名。 但是，此命令不会列出固定名称的别名 ($u0 到 $u9)。
+**Al** 命令列出所有用户命名的别名。 但此命令不会列出 ($u 0 到 $u 9) 的固定名称别名。
 
  
 

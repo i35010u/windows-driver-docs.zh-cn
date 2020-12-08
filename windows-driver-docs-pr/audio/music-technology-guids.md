@@ -1,7 +1,6 @@
 ---
 title: 音乐技术 GUID
 description: 音乐技术 GUID
-ms.assetid: 3b7c2907-e67f-458e-809d-080dcc30be1a
 keywords:
 - WDM 音频扩展 WDK，音乐技术 Guid
 - 音乐技术 Guid WDK 音频
@@ -12,12 +11,12 @@ keywords:
 - Dmu 流数据格式 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6db15b4a05ebe5e55030b3e2dc144be852626aaa
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: c7a6fe8237541cfb4428adc89d78cc2f061e36df
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89210559"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96800991"
 ---
 # <a name="music-technology-guids"></a>音乐技术 GUID
 
@@ -81,7 +80,7 @@ MIDI 或 Dmu 微型端口驱动程序必须指定其每个插针都能够处理�
 
  
 
-**MidiOutGetDevCaps**函数将它从驱动程序接收的技术 GUID 转换为其将其输出到调用方的 MIDIOUTCAPS 结构的**wTechnology**成员写入的索引。 上表显示与每个技术 GUID 相对应 (居中列) 的 **wTechnology** 值。 有关 **midiOutGetDevCaps** 和 MIDIOUTCAPS 的详细信息，请参阅 Microsoft Windows SDK 文档。
+**MidiOutGetDevCaps** 函数将它从驱动程序接收的技术 GUID 转换为其将其输出到调用方的 MIDIOUTCAPS 结构的 **wTechnology** 成员写入的索引。 上表显示与每个技术 GUID 相对应 (居中列) 的 **wTechnology** 值。 有关 **midiOutGetDevCaps** 和 MIDIOUTCAPS 的详细信息，请参阅 Microsoft Windows SDK 文档。
 
 枚举设备时，使用 Windows 多媒体 midiOut 或 midiIn API 的 MIDI 应用程序可以看到 MIDI pin，而不是 DirectMusic pin。 DirectMusic 应用程序可以看到 MIDI 和 DirectMusic pin。 MIDI 或 Dmu 微型端口驱动程序通过将 pin 的数据范围内的子类型 GUID 设置为 KSDATAFORMAT 子类型 midi 来识别 MIDI pin \_ \_ 。 Dmu 微型端口驱动程序通过将子类型 GUID 设置为 KSDATAFORMAT 子类型 DirectMusic 来识别 DirectMusic pin \_ \_ 。 有关 MIDI 和 DirectMusic pin 的数据范围示例，请参阅 [Midi Stream 数据范围](midi-stream-data-range.md) 和 [DirectMusic 流数据范围](directmusic-stream-data-range.md)。
 

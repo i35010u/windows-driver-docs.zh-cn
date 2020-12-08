@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ 插孔 \_ 说明
 description: KSPROPERTY \_ 插座 \_ DESCRIPTION 属性作为多项、按固定的属性实现，该属性通过筛选器句柄进行访问。
-ms.assetid: 005c7edc-8eb2-4387-b818-edef9b9dd4ee
 keywords:
 - KSPROPERTY_JACK_DESCRIPTION 音频设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 374b63e8658492ffa982fefdf600dd7a031ccf2a
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 6614ac9111f74ee0680dd7e2252cbd2156e99273
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90101990"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801213"
 ---
 # <a name="ksproperty_jack_description"></a>KSPROPERTY \_ 插孔 \_ 说明
 
@@ -76,7 +75,7 @@ KSJACK \_ 说明 \[ 0\]
 
 KSJACK \_ 说明 \[ N-1\]
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 每个 KSJACK \_ 描述结构都必须包含一个插孔的相关信息。 例如，支持三个立体声插孔的5.1 音频的输出桥插针需要大小为的数据缓冲区
@@ -96,11 +95,11 @@ sizeof (KSMULTIPLE \_ 项) + 3 \* SIZEOF (KSJACK \_ 说明)
 <tbody>
 <tr class="odd">
 <td align="left"><p>最低受支持的客户端</p></td>
-<td align="left"><p>Windows Vista</p></td>
+<td align="left"><p>Windows Vista</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>最低受支持的服务器</p></td>
-<td align="left"><p>Windows Server 2003</p></td>
+<td align="left"><p>Windows Server 2003</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>标头</p></td>

@@ -1,17 +1,16 @@
 ---
 title: KSPROPSETID \_ 合成 \_ dl
 description: KSPROPSETID \_ 合成 \_ dl
-ms.assetid: 8d6038bf-1ec4-4120-9815-d1e6b7994f33
 keywords:
 - KSPROPSETID_Synth_Dls
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b95936a66b85abde244c328c5256cd041aa144c5
-ms.sourcegitcommit: 20eac54e419a594f7cea766ee28f158559dfd79c
+ms.openlocfilehash: d1b03d97a62cb4e5fa01a2e4313e8f46fbab4f90
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91755012"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801075"
 ---
 # <a name="kspropsetid_synth_dls"></a>KSPROPSETID \_ 合成 \_ dl
 
@@ -305,7 +304,7 @@ KSPROPERTY \_ 合成 \_ dl \_ UNLOAD 属性卸载之前下载的 dls 数据资�
 
  
 
-) 操作数据 (的属性值为 HANDLE 类型，并且包含要释放的已下载 DLS 数据资源的句柄。 这是微型端口驱动程序生成的用于标识先前 [**KSPROPERTY \_ 合成 \_ DL \_ **](/previous-versions/ff537396(v=vs.85))中的 dls 数据的句柄。
+) 操作数据 (的属性值为 HANDLE 类型，并且包含要释放的已下载 DLS 数据资源的句柄。 这是微型端口驱动程序生成的用于标识先前 [**KSPROPERTY \_ 合成 \_ DL \_**](/previous-versions/ff537396(v=vs.85))中的 dls 数据的句柄。
 
 ### <a name="span-idreturn_valuespanspan-idreturn_valuespanspan-idreturn_valuespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>返回值
 

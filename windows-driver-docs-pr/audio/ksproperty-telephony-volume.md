@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ 电话 \_ 卷
 description: "\"KSPROPERTY \\_ 电话\" \\_ 卷属性用于控制所有手机呼叫的卷。"
-ms.assetid: 3754A7A0-FA50-4831-B449-DED0D3D69418
 keywords:
 - KSPROPERTY_TELEPHONY_VOLUME 音频设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 392d6ee9b1b4ee00c73eabd93be97731e8d0aca6
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 270a370b7b8b7879bb61d5ba275c7432a5528dc8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90101824"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801131"
 ---
 # <a name="ksproperty_telephony_volume"></a>KSPROPERTY \_ 电话 \_ 卷
 
@@ -62,9 +61,9 @@ ms.locfileid: "90101824"
 
 ### <a name="span-idreturn_valuespanspan-idreturn_valuespanspan-idreturn_valuespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>返回值
 
-**KSPROPERTY \_ 电话服务 \_ 卷**属性请求返回手机网络呼叫量。
+**KSPROPERTY \_ 电话服务 \_ 卷** 属性请求返回手机网络呼叫量。
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 对于手机网络呼叫，只有此卷适用于手机网络数据，并且终结点卷不起作用。 即使系统中没有活动电话呼叫，也必须可以设置此属性。 此属性的基本支持应返回最小卷、最大卷和卷范围。

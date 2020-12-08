@@ -1,17 +1,16 @@
 ---
 title: SIO_WSK_QUERY_RECEIVE_BACKLOG
 description: SIO_WSK_QUERY_RECEIVE_BACKLOG
-ms.assetid: 5924c6ae-fa9d-4a8c-acbe-65ca0664ad74
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 SIO_WSK_QUERY_RECEIVE_BACKLOG 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: a31c8561fadfa10e9b0095cb20729fd67fac1465
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: d5970ac4a67c469ff65d5d80e1524cfac3f3c008
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89212757"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801299"
 ---
 # <a name="sio_wsk_query_receive_backlog"></a>SIO \_ WSK \_ 查询 \_ 接收 \_ 积压
 
@@ -30,7 +29,7 @@ SIO \_ WSK \_ 查询 \_ 接收 \_ 积压工作套接字 I/O 控制操作允许 W
 <thead>
 <tr class="header">
 <th>参数</th>
-<th>值</th>
+<th>“值”</th>
 </tr>
 </thead>
 <tbody>

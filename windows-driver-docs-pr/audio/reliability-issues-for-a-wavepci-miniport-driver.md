@@ -1,7 +1,6 @@
 ---
 title: WavePci 微型端口驱动程序的可靠性问题
 description: WavePci 微型端口驱动程序的可靠性问题
-ms.assetid: 329f28a8-5e99-4c25-8a88-1e634f7eeec8
 keywords:
 - WavePci 可靠性问题 WDK 音频
 - 旋转锁定 WDK 音频
@@ -11,12 +10,12 @@ keywords:
 - Isr WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b941b0259f71ce0e66e194648e0ea5919d9f8469
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: b1c5279f5515d73e32f19130ab172fa892ca517d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89210440"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96800744"
 ---
 # <a name="reliability-issues-for-a-wavepci-miniport-driver"></a>WavePci 微型端口驱动程序的可靠性问题
 

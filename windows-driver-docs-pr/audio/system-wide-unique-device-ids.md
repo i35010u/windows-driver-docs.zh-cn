@@ -1,7 +1,6 @@
 ---
 title: 系统范围内唯一的设备 ID
 description: 系统范围内唯一的设备 ID
-ms.assetid: 628577b6-05fe-4b63-929f-6d63e93c9266
 keywords:
 - 音频适配器 WDK，唯一设备 Id
 - 适配器驱动程序 WDK 音频，唯一的设备 Id
@@ -17,12 +16,12 @@ keywords:
 - 设备 ID 字符串 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1b8d8bec88ab337f74074e785a49161979688d1b
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 4f08245db44d0a933a96ca5380ca176d09e3d595
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89210329"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96800531"
 ---
 # <a name="system-wide-unique-device-ids"></a>系统范围内唯一的设备 ID
 
@@ -48,7 +47,7 @@ ms.locfileid: "89210329"
 
 如果为适配器提供自己的总线驱动程序，应确保总线驱动程序分配的设备 Id 在整个系统中是唯一的。
 
-总线驱动程序为其某个子项提供设备 ID，以响应即插即用 manager 中的 [**IRP \_ MN \_ 查询 \_ ID**](../kernel/irp-mn-query-id.md) 查询。 可以通过以下两种方式之一来指定 ID：总线驱动程序通过将[**设备 \_ 功能**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_device_capabilities)结构的**UniqueID**字段设置为**TRUE**或**FALSE**来指示其对[**IRP \_ MN \_ 查询 \_ 功能**](../kernel/irp-mn-query-capabilities.md)查询的响应：
+总线驱动程序为其某个子项提供设备 ID，以响应即插即用 manager 中的 [**IRP \_ MN \_ 查询 \_ ID**](../kernel/irp-mn-query-id.md) 查询。 可以通过以下两种方式之一来指定 ID：总线驱动程序通过将 [**设备 \_ 功能**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_device_capabilities)结构的 **UniqueID** 字段设置为 **TRUE** 或 **FALSE** 来指示其对 [**IRP \_ MN \_ 查询 \_ 功能**](../kernel/irp-mn-query-capabilities.md)查询的响应：
 
 -   **UniqueID**  = **TRUE**
 
@@ -58,7 +57,7 @@ ms.locfileid: "89210329"
 
     这意味着，子名称只对父对象唯一。 大多数设备使用这种标识。 在这种情况下，即插即用 manager 将扩展接收的设备 ID 字符串，使其在系统中是唯一的。 扩展字符串是父设备的唯一 ID 的函数。
 
-所有音频总线驱动程序都应为其子级设置**UniqueID**  =  **FALSE** 。 这会导致即插即用 manager 通过添加有关设备的父级的信息来扩展子的设备 ID 字符串，使 ID 在计算机上是唯一的。
+所有音频总线驱动程序都应为其子级设置 **UniqueID**  =  **FALSE** 。 这会导致即插即用 manager 通过添加有关设备的父级的信息来扩展子的设备 ID 字符串，使 ID 在计算机上是唯一的。
 
  
 

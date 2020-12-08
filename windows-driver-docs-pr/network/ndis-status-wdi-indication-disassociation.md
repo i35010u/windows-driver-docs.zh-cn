@@ -1,18 +1,17 @@
 ---
 title: NDIS_STATUS_WDI_INDICATION_DISASSOCIATION
 description: 微型端口驱动程序使用 NDIS_STATUS_WDI_INDICATION_DISASSOCIATION 指示端口与网络断开连接。
-ms.assetid: 4e3ed3ed-1b96-49ea-b60f-a36d2a3fc082
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 NDIS_STATUS_WDI_INDICATION_DISASSOCIATION 网络驱动程序
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 3b3aabeb608c4db3a6760340c696ffdc44210963
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 73f3d4ae5ea62f78417178a9d6b55690c5289216
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89217827"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801437"
 ---
 # <a name="ndis_status_wdi_indication_disassociation"></a>NDIS \_ 状态 \_ WDI \_ 指示 \_ 解除了
 
@@ -53,7 +52,7 @@ ms.locfileid: "89217827"
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
-<td><p>Windows Server 2016</p></td>
+<td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
 <td><p>标头</p></td>
@@ -62,7 +61,7 @@ ms.locfileid: "89217827"
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [OID \_ WDI \_ TASK \_ 断开连接](oid-wdi-task-disconnect.md)

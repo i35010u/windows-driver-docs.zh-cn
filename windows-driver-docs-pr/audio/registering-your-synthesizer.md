@@ -1,7 +1,6 @@
 ---
 title: 注册合成器
 description: 注册合成器
-ms.assetid: c8cb30ba-97ca-49ee-a6ef-2938a0ab780e
 keywords:
 - DirectMusic 自定义呈现 WDK 音频，合成
 - 用户模式下的自定义呈现 WDK 音频，合成
@@ -11,12 +10,12 @@ keywords:
 - 自定义 synths WDK 音频，合成器注册
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5ccc4f8fa0505d29d5183d7fdc314968091270f8
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 4778e41830e5cbeb17c34ca189593556cb433e13
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90716098"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96800755"
 ---
 # <a name="registering-your-synthesizer"></a>注册合成器
 

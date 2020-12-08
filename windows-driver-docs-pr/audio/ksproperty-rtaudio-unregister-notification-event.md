@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ RTAUDIO \_ 注销 \_ 通知 \_ 事件
 description: KSPROPERTY \_ RTAUDIO \_ 注销 \_ 通知 \_ 事件属性从 DMA 驱动的事件通知中注销用户模式事件。下表汇总了此属性的功能。
-ms.assetid: 76ed7dfe-465a-4fdf-97e6-7a65b8971aee
 keywords:
 - KSPROPERTY_RTAUDIO_UNREGISTER_NOTIFICATION_EVENT 音频设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5e99e001df7c78fcf42173406920e4aecb75eb6e
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 47192a49481f7a2b7bd15d9d06a7c086ec9e62a1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90101926"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801179"
 ---
 # <a name="ksproperty_rtaudio_unregister_notification_event"></a>KSPROPERTY \_ RTAUDIO \_ 注销 \_ 通知 \_ 事件
 
@@ -97,12 +96,12 @@ KSPROPERTY \_ RTAUDIO \_ 注销 \_ 通知 \_ 事件属性请求返回状态 " \_
 
  
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 此属性用于从 DMA 驱动的事件通知中注销用户模式事件。
 
-当将 pin 置于运行状态时 (KSSTATE \_ 运行) 已注册的事件每循环发出一次或每次循环音频缓冲区发出两次，具体取决于在调用 [**KSPROPERTY \_ RTAUDIO \_ 缓冲区 \_ \_ **](ksproperty-rtaudio-buffer-with-notification.md) 时请求的通知计数。 有关 KSSTATE 运行的详细信息 \_ ，请参阅 [状态转换](../stream/state-transitions.md) 主题。
+当将 pin 置于运行状态时 (KSSTATE \_ 运行) 已注册的事件每循环发出一次或每次循环音频缓冲区发出两次，具体取决于在调用 [**KSPROPERTY \_ RTAUDIO \_ 缓冲区 \_ \_**](ksproperty-rtaudio-buffer-with-notification.md) 时请求的通知计数。 有关 KSSTATE 运行的详细信息 \_ ，请参阅 [状态转换](../stream/state-transitions.md) 主题。
 
 停止 pin 后，在关闭它之前，必须通过调用 KSPROPERTY \_ RTAUDIO \_ 注销 \_ 通知事件取消注册每个注册事件 \_ 。
 

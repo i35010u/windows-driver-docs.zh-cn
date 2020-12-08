@@ -1,17 +1,16 @@
 ---
 title: MIDI 流数据格式
 description: MIDI 流数据格式
-ms.assetid: c179cf74-7493-4c27-97bd-5eb4d0dffbe6
 keywords:
 - MIDI 流数据格式 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2a83e61b2ae0dc6aba078bbf9f884f0506f471d2
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: e0bd9fe6a210f57848cffa13ba20683a2976b382
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89211401"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801019"
 ---
 # <a name="midi-stream-data-format"></a>MIDI 流数据格式
 

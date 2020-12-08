@@ -1,15 +1,14 @@
 ---
 title: 开发 WDM 音频驱动程序的路线图
 description: 开发 WDM 音频驱动程序的路线图
-ms.assetid: fa75ff65-32fe-4002-89fd-bf345502a9ac
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7a77992a79ebe2bc053431a7940f1995ca8dc665
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 16608b7dba46acb6ddfff0d4b8838bf9e4a705ea
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89210413"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96800705"
 ---
 # <a name="roadmap-for-developing-wdm-audio-drivers"></a>开发 WDM 音频驱动程序的路线图
 

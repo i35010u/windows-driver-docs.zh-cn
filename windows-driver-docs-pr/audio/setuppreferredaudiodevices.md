@@ -1,15 +1,14 @@
 ---
 title: SetupPreferredAudioDevices
 description: SetupPreferredAudioDevices
-ms.assetid: cc6b7da4-335d-4629-ba54-32aa32a1eb09
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 20a10a315a20ec141674df470685d76553c82e8b
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 1c9872b1ea5af6e6f68be86f6bc74904af0bd039
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89210403"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96800663"
 ---
 # <a name="setuppreferredaudiodevices"></a>SetupPreferredAudioDevices
 
@@ -29,7 +28,7 @@ SetupPreferredAudioDevices 关键字可以出现在注册表更新指令中的 "
 
 指令指示音频系统使用设备的音频功能作为播放声音、录音和 MIDI 音乐的默认值。 安装之后，这三个默认值将显示在 " **音频** " 选项卡下的 "声音和多媒体" 控制面板中。用户可以使用 "控制面板" 更改默认设备。
 
-指令的 *dword 值* 参数指定一个 dword 值，该值应为非零值才能启用指令。 如果此值为零，则指令不起作用。 由于 Windows Me/98 不支持 REG \_ DWORD 注册表数据类型，因此， *dword 值* 通常表示为4字节的注册表 \_ 二进制类型，而不是 dword (例如，如 "01，00，00，00" 而不是 "0x00000001" ) 。 可以通过将指令的*flags*参数设置为 "1" (FLG ADDREG BINVALUETYPE) ，以原始二进制格式指定*dword 值*参数 \_ \_ 。
+指令的 *dword 值* 参数指定一个 dword 值，该值应为非零值才能启用指令。 如果此值为零，则指令不起作用。 由于 Windows Me/98 不支持 REG \_ DWORD 注册表数据类型，因此， *dword 值* 通常表示为4字节的注册表 \_ 二进制类型，而不是 dword (例如，如 "01，00，00，00" 而不是 "0x00000001" ) 。 可以通过将指令的 *flags* 参数设置为 "1" (FLG ADDREG BINVALUETYPE) ，以原始二进制格式指定 *dword 值* 参数 \_ \_ 。
 
 此指令在设备驱动程序安装时生效。 如果在安装新设备时，另一台设备占用首选设备角色，则该指令会使新设备担任首选设备的角色，从而将其他设备从此角色中取代。
 
@@ -46,7 +45,7 @@ SetupPreferredAudioDevices 关键字可以出现在注册表更新指令中的 "
   HKR,,SetupPreferredAudioDevices,3,01,00,00,00
 ```
 
-该示例末尾的指令指定名为 "XYZ-Audio-Device" 的设备现在是首选音频设备。 HKR 是音频设备在注册表中的根密钥。 *Flags*参数设置为3，即 FLG \_ ADDREG \_ BINVALUETYPE 和 FLG \_ ADDREG NOCLOBBER 的按位 or \_ 。 如果设备已安装并且仅升级其驱动程序，则后者会阻止设备的现有首选设备注册表项被覆盖。 指令末尾的四个字节指定一个非零值，这是启用指令所必需的。
+该示例末尾的指令指定名为 "XYZ-Audio-Device" 的设备现在是首选音频设备。 HKR 是音频设备在注册表中的根密钥。 *Flags* 参数设置为3，即 FLG \_ ADDREG \_ BINVALUETYPE 和 FLG \_ ADDREG NOCLOBBER 的按位 or \_ 。 如果设备已安装并且仅升级其驱动程序，则后者会阻止设备的现有首选设备注册表项被覆盖。 指令末尾的四个字节指定一个非零值，这是启用指令所必需的。
 
 在 Windows Vista 中，使用 SetupPreferredAudioDevices 关键字的当前实现，将其 *dword 值* 设置为奇数的任何音频终结点都可以设置为默认设备。 若要确保将正确的终结点设置为默认设备，请确保最后公开包含相关终结点的 KS 筛选器。 由于 AudioEndpointBuilder 服务用来填充属性存储和设置默认设备的算法，必须执行此操作。
 

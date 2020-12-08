@@ -1,15 +1,14 @@
 ---
 title: 压缩的音频格式的子格式 GUID
 description: 压缩的音频格式的子格式 GUID
-ms.assetid: f9595d6c-952c-4266-8eb5-5c8581051d28
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 10f8b8e291276c3cb8986619b765a4d2dcdb2e6b
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: a49524cc5bbe3fd5788c4512fb560c3cdf856371
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89210351"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96800595"
 ---
 # <a name="subformat-guids-for-compressed-audio-formats"></a>压缩的音频格式的子格式 GUID
 
@@ -18,11 +17,11 @@ ms.locfileid: "89210351"
 
 由于 CEA-861-D 标准，你必须确保 CEA 设备不支持的音频格式不会传输到此类设备。 高清晰多媒体接口 (HDMI) ， [DisplayPort](https://www.displayport.org/) 是 CEA 设备的示例。
 
-对于用户模式访问，将在[WAVEFORMATEXTENSIBLE](/windows/win32/api/mmreg/ns-mmreg-waveformatextensible)的**SubFormat**成员和[WAVEFORMATEXTENSIBLE \_ IEC61937](/windows/win32/coreaudio/representing-formats-for-iec-61937-transmissions)的**FormatExt**成员中指定 guid。 对于音频驱动程序的内核模式访问，将在[**KSDATARANGE \_ 音频**](/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksdatarange_audio)结构的**DataRange**成员中指定 guid。
+对于用户模式访问，将在 [WAVEFORMATEXTENSIBLE](/windows/win32/api/mmreg/ns-mmreg-waveformatextensible)的 **SubFormat** 成员和 [WAVEFORMATEXTENSIBLE \_ IEC61937](/windows/win32/coreaudio/representing-formats-for-iec-61937-transmissions)的 **FormatExt** 成员中指定 guid。 对于音频驱动程序的内核模式访问，将在 [**KSDATARANGE \_ 音频**](/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksdatarange_audio)结构的 **DataRange** 成员中指定 guid。
 
 下表列出了可用压缩音频格式的 Guid。
 
-**注意**   Windows 7 HD 音频类驱动程序并不支持所有可用格式。 Windows 7 支持的格式在包含星号 () 的表中指定 \* 。
+**注意**   Windows 7 HD 音频类驱动程序并不支持所有可用格式。 Windows 7 支持的格式在包含星号 () 的表中指定 \* 。
 
  
 
@@ -36,7 +35,7 @@ ms.locfileid: "89210351"
 <tr class="header">
 <th align="left">CEA 861 类型</th>
 <th align="left">SubFormat GUID</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -115,7 +114,7 @@ ms.locfileid: "89210351"
 <tr class="header">
 <th align="left">CEA 861 类型</th>
 <th align="left">SubFormat GUID</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -154,7 +153,7 @@ ms.locfileid: "89210351"
 <tr class="header">
 <th align="left">CEA 861 类型</th>
 <th align="left">SubFormat GUID</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>

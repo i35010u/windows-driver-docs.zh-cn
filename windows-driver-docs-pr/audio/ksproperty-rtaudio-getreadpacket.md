@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ RTAUDIO \_ GETREADPACKET
 description: KSPROPERTY \_ RTAUDIO \_ GETREADPACKET 返回有关捕获的音频数据包的信息。
-ms.assetid: BA52CDCE-0178-4C90-A82C-15800DD3709E
 keywords:
 - KSPROPERTY_RTAUDIO_GETREADPACKET 音频设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 12/21/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: c16ff5987b8cbd06be8a0560064c955b052e4181
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 1adbcf467e62a11d59400f94e6aeb739980a7757
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89210949"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801193"
 ---
 # <a name="ksproperty_rtaudio_getreadpacket"></a>KSPROPERTY \_ RTAUDIO \_ GETREADPACKET
 

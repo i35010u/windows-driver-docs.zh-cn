@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ 电话服务 \_ CALLINFO
 description: KSPROPERTY \_ 电话服务 \_ CALLINFO 属性用于检索当前调用信息，如调用状态和调用类型。
-ms.assetid: EEBA38F6-86EC-4C2C-930C-A848153AD918
 keywords:
 - KSPROPERTY_TELEPHONY_CALLINFO 音频设备
 topic_type:
@@ -14,17 +13,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9b6cc03fd385b9476cb963a90960e864b246220c
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 4ce7d0be51a56195a573120b23cb6f21fe3162a0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90101852"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801141"
 ---
 # <a name="ksproperty_telephony_callinfo"></a>KSPROPERTY \_ 电话服务 \_ CALLINFO
 
 
-**KSPROPERTY \_ 电话服务 \_ CALLINFO**属性用于检索当前调用信息，如调用状态和调用类型。
+**KSPROPERTY \_ 电话服务 \_ CALLINFO** 属性用于检索当前调用信息，如调用状态和调用类型。
 
 ### <a name="span-idusage_summary_tablespanspan-idusage_summary_tablespanspan-idusage_summary_tablespanusage-summary-table"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用情况摘要表
 
@@ -62,7 +61,7 @@ ms.locfileid: "90101852"
 
 ### <a name="span-idreturn_valuespanspan-idreturn_valuespanspan-idreturn_valuespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>返回值
 
-**KSPROPERTY \_ 电话服务 \_ CALLINFO**属性请求返回[**KSTELEPHONY \_ CALLINFO**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-_tagkstelephony_callinfo)结构，该结构包含用于启用、禁用、保留或在提供程序转换)  (启用、禁用、保留或在提供程序转换中的呼叫类型)  (。
+**KSPROPERTY \_ 电话服务 \_ CALLINFO** 属性请求返回 [**KSTELEPHONY \_ CALLINFO**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-_tagkstelephony_callinfo)结构，该结构包含用于启用、禁用、保留或在提供程序转换)  (启用、禁用、保留或在提供程序转换中的呼叫类型)  (。
 
 <a name="requirements"></a>要求
 ------------

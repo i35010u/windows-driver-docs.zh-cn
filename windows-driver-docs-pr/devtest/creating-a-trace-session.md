@@ -1,24 +1,23 @@
 ---
 title: 创建跟踪会话
 description: 创建跟踪会话
-ms.assetid: 26f75b02-d830-4e3c-bbc9-03144d194e05
 keywords:
 - 实时跟踪会话 WDK
 - 跟踪日志会话 WDK
-- TraceView WDK，创建的会话
+- TraceView WDK，创建会话
 - 跟踪会话 WDK，创建
 - 会话 WDK 软件跟踪
-- 跟踪 WDK、 会话创建的软件
-- 跟踪 WDK、 会话创建
-- 跟踪日志 WDK TraceView 会话
+- 软件跟踪 WDK，会话创建
+- 跟踪 WDK，会话创建
+- 跟踪日志 WDK TraceView，会话
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2b16a8986a75df60548ef75b1d9cdf7efc2f18ed
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 498759d1e555d39234329fc81afe2388fb160731
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63381016"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96799779"
 ---
 # <a name="creating-a-trace-session"></a>创建跟踪会话
 
@@ -28,23 +27,23 @@ ms.locfileid: "63381016"
 
 本部分介绍如何使用 TraceView 创建实时跟踪会话或跟踪日志会话。
 
-当您*创建*[跟踪会话](trace-session.md)，TraceView 配置和启动跟踪会话，并使[跟踪提供程序](trace-provider.md)指定，如在提供程序事件跟踪进行检测的驱动程序。
+当你 *创建*[跟踪会话](trace-session.md)时，TraceView 将配置并启动跟踪会话，并启用指定的 [跟踪提供程序](trace-provider.md)，如检测到事件跟踪的驱动程序中的提供程序。
 
-TraceView 使用向导页以指导你完成创建跟踪会话的步骤。
+TraceView 使用向导页指导您完成创建跟踪会话的步骤。
 
-TraceView 要求创建跟踪会话时指定至少一个跟踪提供程序。 提供程序类型和文件可确定用于创建跟踪会话的方法。
+TraceView 要求在创建跟踪会话时至少指定一个跟踪提供程序。 提供程序类型和可用的文件决定了创建跟踪会话时使用的方法。
 
-本部分包括：
+本节包括：
 
 [使用 PDB 文件创建跟踪会话](creating-a-trace-session-with-a-pdb-file.md)
 
 [使用 CTL 文件创建跟踪会话](creating-a-trace-session-with-a-ctl-file.md)
 
-[使用控件的 GUID 创建跟踪会话](creating-a-trace-session-with-a-control-guid.md)
+[使用控件 GUID 创建跟踪会话](creating-a-trace-session-with-a-control-guid.md)
 
 [为注册的提供程序创建跟踪会话](creating-a-trace-session-for-a-registered-provider.md)
 
-[NT 内核记录器跟踪会话的创建](creating-an-nt-kernel-logger-trace-session.md)
+[创建 NT 内核记录器跟踪会话](creating-an-nt-kernel-logger-trace-session.md)
 
 [加入跟踪会话](joining-a-trace-session.md)
 
@@ -56,11 +55,11 @@ TraceView 要求创建跟踪会话时指定至少一个跟踪提供程序。 提
 
 [设置高级跟踪会话选项](setting-advanced-trace-session-options.md)
 
-### <a name="span-idcommentsspanspan-idcommentsspancomments"></a><span id="comments"></span><span id="COMMENTS"></span>注释
+### <a name="span-idcommentsspanspan-idcommentsspancomments"></a><span id="comments"></span><span id="COMMENTS"></span>提出
 
-需要 TraceView [PDB 符号文件](pdb-symbol-files.md)即[跟踪消息格式 (TMF) 文件](trace-message-format-file.md)，或 TMF 目录创建跟踪会话时。 TraceView 不使用 %跟踪\_格式\_搜索\_PATH %环境变量。
+创建跟踪会话时，TraceView 需要 [PDB 符号文件](pdb-symbol-files.md)、 [跟踪消息格式 (TMF) 文件](trace-message-format-file.md)或 TMF 目录。 TraceView 不使用% 跟踪 \_ 格式 \_ 搜索 \_ 路径% 环境变量。
 
-当使用 TraceView 窗口来创建跟踪会话，跟踪会话运行，只要该窗口保持打开状态。 无法关闭窗口和保留正在运行的会话。 若要启动独立于 TraceView 窗口运行跟踪会话，请使用[TraceView 命令行界面](traceview-command-line-interface.md)。
+当您使用 TraceView 窗口创建跟踪会话时，只要窗口保持打开状态，trace 会话就会运行。 您无法关闭窗口并使会话保持运行状态。 若要启动独立于 TraceView 窗口运行的跟踪会话，请使用 [TraceView 命令行接口](traceview-command-line-interface.md)。
 
  
 

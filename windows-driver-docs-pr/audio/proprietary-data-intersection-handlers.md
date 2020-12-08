@@ -1,18 +1,17 @@
 ---
 title: 专有数据交集处理程序
 description: 专有数据交集处理程序
-ms.assetid: 8ed497d3-2344-4979-9859-e66a4713e6c5
 keywords:
 - 数据交集处理程序 WDK 音频，专用
 - 专用数据交集处理程序 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3f1035189bf5e9c636c94477e3989f024a580034
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: e04cde38fde7326764f2fac59b425a51fa0d0d6a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89211347"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96800785"
 ---
 # <a name="proprietary-data-intersection-handlers"></a>专有数据交集处理程序
 

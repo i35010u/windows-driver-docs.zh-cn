@@ -1,7 +1,6 @@
 ---
 title: 拓扑微型端口驱动程序
 description: 拓扑微型端口驱动程序
-ms.assetid: 3e0b797e-2fa5-499b-a465-0f51f5433177
 keywords:
 - 音频微型端口驱动程序 WDK，拓扑
 - 微型端口驱动程序 WDK 音频、拓扑
@@ -14,12 +13,12 @@ keywords:
 - 混合音频 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: be3338095f308c3a6cc99692d8c191070cadf8a2
-ms.sourcegitcommit: 372464be981a39781c71049126f36891cb5d0cad
+ms.openlocfilehash: b7fe0cbbf4d1818e3188282927763efb874167d8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91646065"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96800511"
 ---
 # <a name="topology-miniport-driver"></a>拓扑微型端口驱动程序
 
@@ -37,7 +36,7 @@ ms.locfileid: "91646065"
 
 拓扑节点上的控制参数的查询和设置是通过属性请求来完成的。 每个节点类型都与一个特定的属性或一组属性相关联。 节点可能仅支持一个控制值。 例如，卷节点 ([**KSNODETYPE \_ 卷**](./ksnodetype-volume.md)) 的值指示其当前的音量设置。 其他节点可能支持多个控制值。 例如，3D 节点 ([**KSNODETYPE \_ 3d \_ 效果**](./ksnodetype-3d-effects.md)) 支持许多3d 缓冲区和3d 侦听器属性。 另一方面，sum 节点 ([**KSNODETYPE \_ 总和**](./ksnodetype-sum.md)) 而不是控制值。
 
-拓扑微型端口驱动程序使用 *连接描述符* ([**PCCONNECTION \_ 描述符**](/windows-hardware/drivers/ddi/portcls/ns-portcls-_pcconnection_descriptor)) 来描述两个拓扑节点之间的连接。 将定向每个连接，并同时指定 from 节点和 a 到节点。 一个节点可能有多个 pin，一个 pin 执行的函数可能不同于其他 pin。 为了区分不同的 pin，微型端口驱动程序对节点上的 pin 进行编号。 这些 pin 号显示在连接描述符中。 例如，状态变量筛选器可能有三个输出插针-每个输出插针为高、中和低频率编号1、2和3。 Pin 编号允许微型端口驱动程序的客户端确定哪些连接与哪些 pin 相关联。
+拓扑微型端口驱动程序使用 *连接描述符* ([**PCCONNECTION \_ 描述符**](/previous-versions/windows/hardware/drivers/ff537688(v=vs.85))) 来描述两个拓扑节点之间的连接。 将定向每个连接，并同时指定 from 节点和 a 到节点。 一个节点可能有多个 pin，一个 pin 执行的函数可能不同于其他 pin。 为了区分不同的 pin，微型端口驱动程序对节点上的 pin 进行编号。 这些 pin 号显示在连接描述符中。 例如，状态变量筛选器可能有三个输出插针-每个输出插针为高、中和低频率编号1、2和3。 Pin 编号允许微型端口驱动程序的客户端确定哪些连接与哪些 pin 相关联。
 
 连接描述符使用 *可分辨节点标识符* [**PCFILTER \_ 节点**](/previous-versions/ff537695(v=vs.85))来区分筛选器上的 pin 与筛选器中节点上的 pin。 混音器电路的每个硬编码连接到音频设备的音频呈现和捕获设备在拓扑过滤器上都表示为一个固定。 其他拓扑筛选器 pin 表示外部物理连接，例如适配器卡上的 lineout 插孔。 拓扑筛选器上的 pin 表示适配器硬件的物理硬编码连接。 因此，pin 无法显式控制连接是否已建立，并且不能用于管理该连接上的数据流。
 

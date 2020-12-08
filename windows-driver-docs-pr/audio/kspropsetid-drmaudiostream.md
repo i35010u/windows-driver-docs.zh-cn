@@ -1,17 +1,16 @@
 ---
 title: KSPROPSETID \_ DrmAudioStream
 description: KSPROPSETID \_ DrmAudioStream
-ms.assetid: 91c7b459-b52e-4340-8a3c-e92b73ebcd3d
 keywords:
 - KSPROPSETID_DrmAudioStream
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 20a036e5c2a3d4d038d76933d7e4058de80d91dc
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 2d61a327c240986aba1caf25bd56fa03f4e6b5a0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89208851"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801103"
 ---
 # <a name="kspropsetid_drmaudiostream"></a>KSPROPSETID \_ DrmAudioStream
 

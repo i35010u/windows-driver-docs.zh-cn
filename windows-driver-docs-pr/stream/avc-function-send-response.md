@@ -1,7 +1,6 @@
 ---
 title: AVC \_ 函数 \_ 发送 \_ 响应
 description: AVC \_ 函数 \_ 发送 \_ 响应
-ms.assetid: f04caed8-8521-4dfa-9bfa-cf71ec7a658e
 keywords:
 - AVC_FUNCTION_SEND_RESPONSE 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 77f261ea9a7711a6ea9c71e231a0b912861193a8
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: eed875f6cc45f5ec83cb2946b134710c07f1606c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89187473"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801239"
 ---
 # <a name="avc_function_send_response"></a>AVC \_ 函数 \_ 发送 \_ 响应
 
@@ -27,7 +26,7 @@ ms.locfileid: "89187473"
 ## <span id="ddk_avc_function_send_response_ks"></span><span id="DDK_AVC_FUNCTION_SEND_RESPONSE_KS"></span>
 
 
-**AVC \_ 函数 \_ SEND \_ RESPONSE**函数代码用于响应 AV/C 单元和子请求。
+**AVC \_ 函数 \_ SEND \_ RESPONSE** 函数代码用于响应 AV/C 单元和子请求。
 
 ### <a name="io-status-block"></a>I/o 状态块
 
@@ -35,7 +34,7 @@ ms.locfileid: "89187473"
 
 \_如果由于自原始请求以来发生了一个或多个总线重置而放弃响应，则状态成功;
 
-\_如果已成功将响应传递到*61883.sys* ，则状态为 "已挂起" (表示) 成功传递到请求发起方。
+\_如果已成功将响应传递到 *61883.sys* ，则状态为 "已挂起" (表示) 成功传递到请求发起方。
 
 可能的其他返回值包括：
 
@@ -47,7 +46,7 @@ ms.locfileid: "89187473"
 <thead>
 <tr class="header">
 <th>返回值</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -62,7 +61,7 @@ ms.locfileid: "89187473"
 
 ### <a name="span-idheadersspanspan-idheadersspanheaders"></a><span id="headers"></span><span id="HEADERS"></span>只要
 
-### <a name="comments"></a>说明
+### <a name="comments"></a>注释
 
 此函数使用 AVC \_ 命令 \_ IRB 结构，如下所示。
 
@@ -143,9 +142,9 @@ typedef struct _AVC_COMMAND_IRB {
 
 对于 *avc.sys* 的虚拟实例 (即， \_ 将 GUID virtual \_ AVC \_ 类设备接口注册) 的实例， **AVC \_ 函数 \_ 发送 \_ 响应** 函数代码用于响应 AV/C 单元 *和* 子发送请求。
 
-如果第一个响应使用 **AVC \_ 响应 \_ 过渡** 代码 (来自 **AvcResponseType** 枚举) ，则需要跟进处理。 在后续响应中，必须使用完成**AVC \_ 函数 \_ GET \_ 请求**原始函数时获得的**NodeAddress**和**生成**成员。 在任何情况下，都应在从初始**AVC \_ 函数 \_ 发送 \_ 响应**完成例程返回之前提交下一个**AVC \_ 函数 \_ GET \_ 请求**函数，以便可以收到下一个单位请求。
+如果第一个响应使用 **AVC \_ 响应 \_ 过渡** 代码 (来自 **AvcResponseType** 枚举) ，则需要跟进处理。 在后续响应中，必须使用完成 **AVC \_ 函数 \_ GET \_ 请求** 原始函数时获得的 **NodeAddress** 和 **生成** 成员。 在任何情况下，都应在从初始 **AVC \_ 函数 \_ 发送 \_ 响应** 完成例程返回之前提交下一个 **AVC \_ 函数 \_ GET \_ 请求** 函数，以便可以收到下一个单位请求。
 
-此结构的建议用法是使用原始请求的内容，并根据响应更新 **Opcode**、 **OperandLength**和 **操作数** 成员。
+此结构的建议用法是使用原始请求的内容，并根据响应更新 **Opcode**、 **OperandLength** 和 **操作数** 成员。
 
 可以在 IRQL &lt; = 调度级别调用此函数代码 \_ 。
 
@@ -163,7 +162,7 @@ typedef struct _AVC_COMMAND_IRB {
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Avc (包含 Avc) </td>
 </tr>
 </tbody>

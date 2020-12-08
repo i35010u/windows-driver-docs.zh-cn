@@ -1,15 +1,14 @@
 ---
 title: 网络直接内核提供程序接口 (NDKPI) 概述
 description: '本部分概述了网络直接内核提供程序接口 (NDKPI) '
-ms.assetid: D9667238-FD2E-44DE-920F-FA4CF3365D93
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2b5060716018b46de5dc2325a6e23fcf52735d02
-ms.sourcegitcommit: 3464f10ffa0727e38fbe225cfab52bb8c2bb1747
+ms.openlocfilehash: ec204ddb00e4d107cffbd6f3c2a8abdafeed19f4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93352980"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801335"
 ---
 # <a name="overview-of-network-direct-kernel-provider-interface-ndkpi"></a>网络直接内核提供程序接口 (NDKPI) 概述
 
@@ -50,7 +49,7 @@ NDK 使用者是内核模式的 Windows 组件，例如 SMB 服务器和客户�
 
  
 
-NDK 使用者调用提供程序的 *NdkOpenAdapter* ( [*打开 \_ NDK \_ 适配器 \_ 处理*](/windows-hardware/drivers/ddi/ndisndk/nc-ndisndk-open_ndk_adapter_handler) 程序) 回调函数创建适配器对象，并 *NdkCloseAdapter* ( [*NDK \_ FN \_ close \_ 对象*](/windows-hardware/drivers/ddi/ndkpi/nc-ndkpi-ndk_fn_close_object)) 关闭它。 在提供程序创建适配器对象之后，使用者将调用其他提供程序回调函数来创建其他 NDK 对象。
+NDK 使用者调用提供程序的 *NdkOpenAdapter* ([*打开 \_ NDK \_ 适配器 \_ 处理*](/windows-hardware/drivers/ddi/ndisndk/nc-ndisndk-open_ndk_adapter_handler) 程序) 回调函数创建适配器对象，并 *NdkCloseAdapter* ([*NDK \_ FN \_ close \_ 对象*](/windows-hardware/drivers/ddi/ndkpi/nc-ndkpi-ndk_fn_close_object)) 关闭它。 在提供程序创建适配器对象之后，使用者将调用其他提供程序回调函数来创建其他 NDK 对象。
 
 NDK 使用者实现了由 NDK 提供程序调用的 [NDKPI 使用者回调函数](/windows-hardware/drivers/ddi/_netvista/)。
 

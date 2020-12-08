@@ -1,15 +1,14 @@
 ---
 title: USB 音频类系统驱动程序 (Usbaudio.sys)
 description: 'USB 音频类系统驱动程序 ( # A0) 是一个 AVStream 微型驱动程序，它为符合通用串行总线 (音频设备的 USB) 设备类定义的音频设备提供驱动程序支持。'
-ms.assetid: 7ECE8006-3181-451C-B047-A3D767A7B98A
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 014faf18c0aec283574fe676b0177338a217d7e1
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 164ddc66b9f63a31649f752cf7df2934ff66ed83
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89210321"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96800489"
 ---
 # <a name="usb-audio-class-system-driver-usbaudiosys"></a>USB 音频类系统驱动程序 (Usbaudio.sys)
 

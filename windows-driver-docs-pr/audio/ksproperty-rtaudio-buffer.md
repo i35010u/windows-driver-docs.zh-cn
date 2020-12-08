@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ RTAUDIO \_ 缓冲区
 description: KSPROPERTY \_ RTAUDIO \_ BUFFER 属性指定用于音频数据的驱动程序分配的循环缓冲区。下表汇总了此属性的功能。
-ms.assetid: e2c78849-1a34-446c-9f44-012f36ddafa5
 keywords:
 - KSPROPERTY_RTAUDIO_BUFFER 音频设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7d63b43ff6b380d1fa504e67524f670bb6cb7e24
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 04bb5f27a4bc806cf91499137d30991a5885a3a5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90101958"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801197"
 ---
 # <a name="ksproperty_rtaudio_buffer"></a>KSPROPERTY \_ RTAUDIO \_ 缓冲区
 
@@ -97,7 +96,7 @@ KSPROPERTY \_ RTAUDIO \_ 缓冲区属性请求返回状态 " \_ 成功" 以指�
 
  
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 基址是循环缓冲区开头的虚拟内存地址。 客户端可以直接访问此地址处的缓冲区。 缓冲区在虚拟内存中是连续的。 在物理内存中使缓冲区连续的决定是否留给驱动程序。
@@ -110,7 +109,7 @@ KSPROPERTY \_ RTAUDIO \_ 缓冲区属性请求返回状态 " \_ 成功" 以指�
 
 关闭 pin 会自动释放通过此属性分配的缓冲区。
 
-如果需要事件通知，则必须 [** \_ \_ \_ 通过 \_ 通知**](ksproperty-rtaudio-buffer-with-notification.md) 而不是 KSPROPERTY RTAUDIO 缓冲区来调用 KSPROPERTY RTAUDIO 缓冲区 \_ \_ 。
+如果需要事件通知，则必须 [**\_ \_ \_ 通过 \_ 通知**](ksproperty-rtaudio-buffer-with-notification.md) 而不是 KSPROPERTY RTAUDIO 缓冲区来调用 KSPROPERTY RTAUDIO 缓冲区 \_ \_ 。
 
 <a name="requirements"></a>要求
 ------------

@@ -1,19 +1,18 @@
 ---
 title: 麦克风阵列几何属性
 description: 麦克风阵列几何属性
-ms.assetid: 7f280677-f86d-4687-b992-e2580046bd57
 keywords:
 - 麦克风阵列 WDK 音频
 - 几何描述符 WDK 音频
 - 麦克风阵列 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4f5f318901eb1b869cacc335bb742c5fae74aa52
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: b5c98629bf838eb61d159a46eda94835271d11d8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89211417"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801025"
 ---
 # <a name="microphone-array-geometry-property"></a>麦克风阵列几何属性
 
@@ -26,7 +25,7 @@ USB 麦克风阵列使用标准格式来提供几何信息。 Windows Vista USB 
 
 应用程序可以调用 [IPart：： GetSubType](/windows/win32/api/devicetopology/nf-devicetopology-ipart-getsubtype) 来检索有关插孔的信息，以确定插入插孔的设备是否为麦克风阵列。 **IPart：： GetSubType** 返回表示输入插孔类型的 PIN 类别 GUID。 如果插入的设备是麦克风阵列，则返回的 GUID 等于 KSNODETYPE \_ 麦克风 \_ 阵列。 该应用程序还可以帮助你确定是否已将麦克风阵列插入错误的插孔。 在后一种情况下，返回的 pin 类别 GUID 可用于其他设备，也可能表示没有设备插入麦克风插孔。 有关 pin 类别 Guid 的详细信息，请参阅 [固定类别属性](pin-category-property.md)。
 
-在应用程序发现插入正确输入插孔的麦克风阵列后，下一步是确定该阵列的几何。 有三种基本的几何图形： *线性*、 *平面*和三维 * (3-d) *。 几何信息还提供了每个麦克风的频率范围和 x y z 坐标等详细信息。
+在应用程序发现插入正确输入插孔的麦克风阵列后，下一步是确定该阵列的几何。 有三种基本的几何图形： *线性*、 *平面* 和三维 *(3-d)*。 几何信息还提供了每个麦克风的频率范围和 x y z 坐标等详细信息。
 
 下面的代码示例演示了 \_ \_ \_ 音频驱动程序用于描述外部 USB 麦克风阵列的 KSAUDIO MIC 数组几何结构：
 

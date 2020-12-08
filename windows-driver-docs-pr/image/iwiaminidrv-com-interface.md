@@ -1,15 +1,14 @@
 ---
 title: IWiaMiniDrv COM 接口
-ms.assetid: a4bd0dee-fb40-42d4-a235-9dab3bc84017
 description: 本主题提供有关使用 IWiaMiniDrv COM 接口的详细指导
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3ff004047668fda7983514fde3cd487cc2c67477
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 4ff32c46a2432147c5914c0e64492f7d475bc803
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90101470"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96799557"
 ---
 # <a name="iwiaminidrv-com-interface"></a>IWiaMiniDrv COM 接口
 
@@ -28,7 +27,7 @@ ms.locfileid: "90101470"
 
 应用程序通过 WIA 应用程序编程接口 (API) 向 WIA 服务发出请求。 有关此接口的详细信息，请参阅 Microsoft Windows SDK 文档。
 
-**IWiaMiniDrv**接口提供了下表中显示的用于控制设备的 WIA 服务的入口点。 WIA 微型驱动程序必须实现每个 **IWiaMiniDrv** 方法。 这些入口点是通过以下 **IWiaMiniDrv** 方法定义的。
+**IWiaMiniDrv** 接口提供了下表中显示的用于控制设备的 WIA 服务的入口点。 WIA 微型驱动程序必须实现每个 **IWiaMiniDrv** 方法。 这些入口点是通过以下 **IWiaMiniDrv** 方法定义的。
 
 ## <a name="creating-and-initializing-items"></a>创建和初始化项
 
@@ -40,7 +39,7 @@ ms.locfileid: "90101470"
 <thead>
 <tr class="header">
 <th>方法</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -69,7 +68,7 @@ ms.locfileid: "90101470"
 <thead>
 <tr class="header">
 <th>方法</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -98,7 +97,7 @@ ms.locfileid: "90101470"
 <thead>
 <tr class="header">
 <th>方法</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -119,7 +118,7 @@ ms.locfileid: "90101470"
 <thead>
 <tr class="header">
 <th>方法</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -140,7 +139,7 @@ ms.locfileid: "90101470"
 <thead>
 <tr class="header">
 <th>方法</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -161,7 +160,7 @@ ms.locfileid: "90101470"
 <thead>
 <tr class="header">
 <th>方法</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -186,7 +185,7 @@ ms.locfileid: "90101470"
 <thead>
 <tr class="header">
 <th>方法</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -207,7 +206,7 @@ ms.locfileid: "90101470"
 <thead>
 <tr class="header">
 <th>方法</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -228,7 +227,7 @@ ms.locfileid: "90101470"
 <thead>
 <tr class="header">
 <th>方法</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -257,7 +256,7 @@ ms.locfileid: "90101470"
 <thead>
 <tr class="header">
 <th>方法</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>

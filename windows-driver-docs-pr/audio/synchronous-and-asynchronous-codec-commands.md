@@ -1,7 +1,6 @@
 ---
 title: 同步和异步编解码器命令
 description: 同步和异步编解码器命令
-ms.assetid: c37cc94d-37eb-4a3e-b7ae-63fed8827d21
 keywords:
 - TransferCodecVerbs
 - 编解码器命令 WDK 音频
@@ -11,12 +10,12 @@ keywords:
 - 异步编解码器命令 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ba49163e08fda64b9dd9f4b5076e8dd22a580430
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 01a7bc9ec98f6be23f25a8e138956ee364221759
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89206675"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96800561"
 ---
 # <a name="synchronous-and-asynchronous-codec-commands"></a>同步和异步编解码器命令
 
@@ -53,9 +52,9 @@ ms.locfileid: "89206675"
 
 -   如果 **HasFifoOverrun** = 1，则该命令可能已到达编解码器，但由于 FIFO 溢出，响应丢失。
 
-在调用 *TransferCodecCommands*期间，调用方提供指向 [**HDAUDIO \_ 编解码器 \_ 传输**](/windows-hardware/drivers/ddi/hdaudio/ns-hdaudio-_hdaudio_codec_transfer) 结构的数组的指针。 每个结构都包含一个命令，并为响应提供空间。 总线驱动程序始终将每个响应写入结构中，该结构包含触发响应的命令。
+在调用 *TransferCodecCommands* 期间，调用方提供指向 [**HDAUDIO \_ 编解码器 \_ 传输**](/windows-hardware/drivers/ddi/hdaudio/ns-hdaudio-_hdaudio_codec_transfer) 结构的数组的指针。 每个结构都包含一个命令，并为响应提供空间。 总线驱动程序始终将每个响应写入结构中，该结构包含触发响应的命令。
 
-对于每个对 *TransferCodecCommands*的调用，处理命令的顺序取决于命令在数组中的顺序。 处理第一个命令之前，处理数组中的第一个命令始终完成，依此类推。
+对于每个对 *TransferCodecCommands* 的调用，处理命令的顺序取决于命令在数组中的顺序。 处理第一个命令之前，处理数组中的第一个命令始终完成，依此类推。
 
 此外，如果客户端对 *TransferCodecCommands* 进行异步调用，然后再次调用 *TransferCodecCommands* ，而无需等待第一次调用的回调例程，则会按客户端提交两组命令的顺序来定义处理两个调用的命令的相对顺序。 因此，在开始处理第二次调用中的命令之前，总线驱动程序会处理第一个调用中的所有命令。
 

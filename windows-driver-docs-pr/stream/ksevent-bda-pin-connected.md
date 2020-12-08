@@ -1,7 +1,6 @@
 ---
 title: '\_ \_ 已连接 KSEVENT BDA PIN \_'
 description: '\_ \_ 当 PIN 连接时，客户端使用连接的 KSEVENT BDA PIN \_ 来请求通知。'
-ms.assetid: f17df59d-8904-45a0-bb6b-795b343fd629
 keywords:
 - KSEVENT_BDA_PIN_CONNECTED 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: afc19ebf3c08857c04162629af889711e4adebc1
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 7c1e7c6e079c94b98dd230850733173342b9148c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89191597"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801235"
 ---
 # <a name="ksevent_bda_pin_connected"></a>\_ \_ 已连接 KSEVENT BDA PIN \_
 
@@ -47,7 +46,7 @@ KSEVENT
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Bdamedia (包含 Bdamedia) </td>
 </tr>
 </tbody>

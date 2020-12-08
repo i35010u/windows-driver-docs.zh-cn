@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ 电话服务 \_ PROVIDERID
 description: '\_ \_ 音频驱动程序使用 "KSPROPERTY 电话服务 PROVIDERID" 属性将提供程序标识符关联到波形筛选器。'
-ms.assetid: A2BE85E3-068B-41C1-9791-69A929ECEC5C
 keywords:
 - KSPROPERTY_TELEPHONY_PROVIDERID 音频设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7a31c84c15c226ba53b27f1fbd2bd5949cbda6fe
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: c1f7ebfe3cac33c596832a106dfdfdf47de3a634
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90101826"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801133"
 ---
 # <a name="ksproperty_telephony_providerid"></a>KSPROPERTY \_ 电话服务 \_ PROVIDERID
 
@@ -62,9 +61,9 @@ ms.locfileid: "90101826"
 
 ### <a name="span-idreturn_valuespanspan-idreturn_valuespanspan-idreturn_valuespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>返回值
 
-**KSPROPERTY \_ 电话服务 \_ PROVIDERID**属性请求返回表示音频驱动程序关联到波形筛选器的提供程序 ID 的 UINT 值。
+**KSPROPERTY \_ 电话服务 \_ PROVIDERID** 属性请求返回表示音频驱动程序关联到波形筛选器的提供程序 ID 的 UINT 值。
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 收音机堆栈具有提供程序 ID (执行器 ID) 和调用类型 (数据包或电路交换) ，以将电话呼叫实例连接到特定的硬件路径。 此概念将继续用于与音频驱动程序通信，以便使用硬件中的哪个路径。

@@ -1,22 +1,21 @@
 ---
-title: 如何将跟踪消息发送给用户模式下调试程序
-description: 如何将跟踪消息发送给用户模式下调试程序
-ms.assetid: d1a9df10-3339-4518-a42a-abd1123d5e21
+title: 如何实现将跟踪消息发送到用户模式调试器
+description: 如何实现将跟踪消息发送到用户模式调试器
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d2085f7643b12c3315855bcfa481c814b6164f38
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b3b2aeeefa73e28ae7041365f2455fa66d1da166
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63347675"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96799761"
 ---
 # <a name="how-do-i-send-trace-messages-to-a-user-mode-debugger"></a>如何将跟踪消息发送到用户模式调试器？
 
 
-若要将跟踪消息重定向到用户模式下调试程序，将添加 WPP\_源代码调试宏。 将宏的定义指令放在后面 WPP\_控制\_GUID 定义。
+若要将跟踪消息重定向到用户模式调试器，请将 WPP \_ 调试宏添加到源代码中。 将宏的定义指令放在 WPP \_ 控件 \_ guid 定义之后。
 
-WPP\_调试宏将添加代码，创建的跟踪消息，并将该消息重定向到在宏中指定的目标。 可以使用**DbgPrint**或使用该宏的帮助器例程。
+WPP \_ 调试宏添加创建跟踪消息的代码，并将消息重定向到宏中指定的目标。 可以将 **DbgPrint** 或 helper 例程与此宏一起使用。
 
 语句的格式如下所示：
 
@@ -24,7 +23,7 @@ WPP\_调试宏将添加代码，创建的跟踪消息，并将该消息重定向
 #define WPP_DEBUG(args) printf args , printf("\n");
 ```
 
-可以使用**DbgPrint**或**KdPrint**而不是**printf**，例如：
+你可以使用 **DbgPrint** 或 **KdPrint** ，而不是 **printf**，例如：
 
 ```
 #define WPP_DEBUG(a)   printf a   printf("/n");
@@ -42,7 +41,7 @@ WPP\_调试宏将添加代码，创建的跟踪消息，并将该消息重定向
 WPP_DEBUG((format, ...))
 ```
 
-您可以将大多数格式和自变量与 WPP\_调试。 但是，不能使用的特定于跟踪的格式规范，例如 %！IPADDR %。
+您可以将大多数格式和参数与 WPP \_ 调试配合使用。 但是，不能使用特定于跟踪的格式规范，例如%！IPADDR%.
 
  
 

@@ -1,7 +1,6 @@
 ---
 title: 检索设备安装程序信息
 description: 检索设备安装程序信息
-ms.assetid: 95e88e4a-5a31-4d82-99ea-c9a4d7766c0f
 keywords:
 - 音频适配器 WDK，检索安装信息
 - 适配器驱动程序 WDK 音频，检索安装信息
@@ -9,12 +8,12 @@ keywords:
 - 检索设备安装信息
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e093b15824168685da16d3f22b9c432887a69aa1
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: e8472738f4ce3fa5093fadcaab4e05a64cd30508
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89210415"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96800699"
 ---
 # <a name="retrieving-device-setup-information"></a>检索设备安装程序信息
 
@@ -66,7 +65,7 @@ ms.locfileid: "89210415"
 
 -   **DevicePropertyUINumber**
 
-有关上述 DeviceProperty*Xxx* 值的说明，请参阅 [**IoGetDeviceProperty**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetdeviceproperty)。
+有关上述 DeviceProperty *Xxx* 值的说明，请参阅 [**IoGetDeviceProperty**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetdeviceproperty)。
 
  
 

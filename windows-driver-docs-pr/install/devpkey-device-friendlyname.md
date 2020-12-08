@@ -1,7 +1,6 @@
 ---
 title: DEVPKEY_Device_FriendlyName
 description: DEVPKEY_Device_FriendlyName
-ms.assetid: 0acea25e-5068-441b-be6b-fa863d1bdba2
 keywords:
 - DEVPKEY_Device_FriendlyName 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: b12b66d9b80ba31d516c9f08637388bbb44323ce
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 19e0049d5adafbcb66ae5e3089735578cbfc6326
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90714696"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96799523"
 ---
 # <a name="devpkey_device_friendlyname"></a>DEVPKEY_Device_FriendlyName
 
@@ -68,7 +67,7 @@ DEVPKEY_Device_FriendlyName 设备属性表示设备实例的友好名称。
 
 您可以使用 [**DEVPKEY_NAME**](devpkey-name--device-instance-.md) 设备属性，而不是 DEVPKEY_Device_FriendlyName 在用户界面显示中显示用于标识设备实例的名称。
 
-您可以使用 Inf DDInstall 中包含的[**AddReg 指令**](./inf-addreg-directive.md)设置 DEVPKEY_Device_FriendlyName 的值[**。 *DDInstall***](./inf-ddinstall-hw-section.md)安装设备的 INF 文件中的 "硬件" 部分。
+您可以使用 Inf DDInstall 中包含的 [**AddReg 指令**](./inf-addreg-directive.md)设置 DEVPKEY_Device_FriendlyName 的值 [**。 *DDInstall***](./inf-ddinstall-hw-section.md)安装设备的 INF 文件中的 "硬件" 部分。
 
 可以通过调用 [**SetupDiGetDeviceProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdigetdevicepropertyw) 来检索 DEVPKEY_Device_FriendlyName 的值，也可以通过调用 [**SetupDiSetDeviceProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdisetdevicepropertyw)来设置此属性。
 

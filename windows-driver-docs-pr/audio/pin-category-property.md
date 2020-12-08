@@ -1,7 +1,6 @@
 ---
 title: 引脚类别属性
 description: 引脚类别属性
-ms.assetid: fd4a4afd-2c17-4002-87ae-21501b1d75c1
 keywords:
 - 音频属性 WDK，pin
 - WDM 音频属性 WDK，pin
@@ -17,12 +16,12 @@ keywords:
 - 类别 Guid WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2882de5830aa49df851ca1e8b01f49133441c1d8
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 707977c73486c44e39ed1a659b98f7170616e696
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89210491"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96800935"
 ---
 # <a name="pin-category-property"></a>引脚类别属性
 
@@ -338,9 +337,9 @@ USB 音频设备具有一定数量的终端，其中的数字流和模拟信号�
 
  
 
-有关 USB 终端类型标识符的详细信息，请参阅[Usb 实现论坛](https://www.usb.org/)网站上提供的终端类型 (版本 1.0) 的*通用串行总线设备类定义*。
+有关 USB 终端类型标识符的详细信息，请参阅 [Usb 实现论坛](https://www.usb.org/)网站上提供的终端类型 (版本 1.0) 的 *通用串行总线设备类定义*。
 
-前面的表中的所有 pin 类别 Guid 都具有形式为 KSNODETYPE XXX 的参数名称 \_ *XXX*。 请注意，KS 节点类型 Guid 还具有 KSNODETYPE \_ *XXX*参数名称。 此命名约定会导致在 pin 类别 Guid 与节点类型 Guid 之间产生混淆。 幸运的是，几乎每个 KSNODETYPE \_ *XXX*参数都标识了 pin 类别或节点类型，但不能同时标识这两者。 规则的一个例外是 [**KSNODETYPE \_ 合成**](./ksnodetype-synthesizer.md)器，它可以标识 pin 类别或节点类型，具体取决于上下文。 有关节点类型 Guid 的列表，请参阅 [音频拓扑节点](./audio-topology-nodes.md)。
+前面的表中的所有 pin 类别 Guid 都具有形式为 KSNODETYPE XXX 的参数名称 \_ *XXX*。 请注意，KS 节点类型 Guid 还具有 KSNODETYPE \_ *XXX* 参数名称。 此命名约定会导致在 pin 类别 Guid 与节点类型 Guid 之间产生混淆。 幸运的是，几乎每个 KSNODETYPE \_ *XXX* 参数都标识了 pin 类别或节点类型，但不能同时标识这两者。 规则的一个例外是 [**KSNODETYPE \_ 合成**](./ksnodetype-synthesizer.md)器，它可以标识 pin 类别或节点类型，具体取决于上下文。 有关节点类型 Guid 的列表，请参阅 [音频拓扑节点](./audio-topology-nodes.md)。
 
 在实例化 USB 音频设备时，USBAudio 类系统驱动程序会在设备中查询其内部拓扑，包括其终端。 使用此信息，USBAudio 驱动程序将构造一个用于表示设备的筛选器，并将每个终端转换为筛选器上的相应 pin。 在此过程中，驱动程序将每个 USB 终端类型标识符转换为相应的 KS pin 类别 GUID，这是上述表中的 Guid 之一。 驱动程序将构造一个 [**KSPIN \_ 描述符**](/windows-hardware/drivers/ddi/ks/ns-ks-kspin_descriptor) 结构来描述 pin，并将 pin 类别 GUID 写入结构中。
 
@@ -350,7 +349,7 @@ PortCls 微型端口驱动程序不一定只使用前面六个表中显示的类
 
 在 Windows Vista 和更高版本中，操作系统使用 pin 类别将友好名称与音频终结点设备关联起来。 有关如何将友好名称与音频终结点设备关联的详细信息，请参阅 [音频终结点设备的友好名称](friendly-names-for-audio-endpoint-devices.md)。
 
-在 Windows XP、Windows 2000 和 Windows Millennium Edition 中，操作系统仅限制使用 pin 类别。 [WDMAud 系统驱动程序](user-mode-wdm-audio-components.md#wdmaud_system_driver)代表混音器 API，将 Pin 类别 guid 转换为 MIXERLINE \_ COMPONENTTYPE \_ *XXX*值，供客户端应用程序使用。 WDMAud 仅识别在前六个表中出现的 pin 类别 Guid 的子集。 此外，由于历史原因，WDMAud 识别出两个 \_ \_ 不会出现在表中的 Pin 类别 GUID，KSCATEGORY 音频和 PINNAME 捕获。 有关将 pin 类别翻译成混音器的详细信息，请参阅 [拓扑 pin](topology-pins.md)。 有关混音器 API 的信息，请参阅 Windows SDK 文档。
+在 Windows XP、Windows 2000 和 Windows Millennium Edition 中，操作系统仅限制使用 pin 类别。 [WDMAud 系统驱动程序](user-mode-wdm-audio-components.md#wdmaud_system_driver)代表混音器 API，将 Pin 类别 guid 转换为 MIXERLINE \_ COMPONENTTYPE \_ *XXX* 值，供客户端应用程序使用。 WDMAud 仅识别在前六个表中出现的 pin 类别 Guid 的子集。 此外，由于历史原因，WDMAud 识别出两个 \_ \_ 不会出现在表中的 Pin 类别 GUID，KSCATEGORY 音频和 PINNAME 捕获。 有关将 pin 类别翻译成混音器的详细信息，请参阅 [拓扑 pin](topology-pins.md)。 有关混音器 API 的信息，请参阅 Windows SDK 文档。
 
  
 

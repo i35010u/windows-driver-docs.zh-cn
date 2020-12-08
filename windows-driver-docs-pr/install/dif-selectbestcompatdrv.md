@@ -1,7 +1,6 @@
 ---
 title: DIF_SELECTBESTCOMPATDRV
 description: DIF_SELECTBESTCOMPATDRV
-ms.assetid: aa10f39f-718b-4160-9cfa-668fb0349156
 keywords:
 - DIF_SELECTBESTCOMPATDRV 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 597a59e1e2a7978a2657a5376aed5ed0f57180a1
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 05f0888cbb680290f3300c3b77eb88789f5073e5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90716728"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96799491"
 ---
 # <a name="dif_selectbestcompatdrv"></a>DIF_SELECTBESTCOMPATDRV
 
@@ -68,7 +67,7 @@ DIF_SELECTBESTCOMPATDRV 请求允许安装程序从设备信息元素的兼容�
 提供一个指向 [**SP_DEVINFO_DATA**](/windows/win32/api/setupapi/ns-setupapi-sp_devinfo_data) 结构的指针，该结构在设备信息集中标识设备。
 
 <a href="" id="device-installation-parameters-"></a>设备安装参数   
-与*DeviceInfoData*关联的设备安装参数 ([**SP_DEVINSTALL_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-sp_devinstall_params_a)) 。
+与 *DeviceInfoData* 关联的设备安装参数 ([**SP_DEVINSTALL_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-sp_devinstall_params_a)) 。
 
 <a href="" id="class-installation-parameters"></a>类安装参数  
 无
@@ -79,7 +78,7 @@ DIF_SELECTBESTCOMPATDRV 请求允许安装程序从设备信息元素的兼容�
 安装程序可以修改设备安装参数。 但在处理此 DIF 请求时，它们通常不会。
 
 <a href="" id="deviceinfodata"></a>*DeviceInfoData*  
-作为副作用，安装程序可以修改与 *DeviceInfoData*关联的驱动程序列表，尤其是 SP_DRVINSTALL_PARAMS。
+作为副作用，安装程序可以修改与 *DeviceInfoData* 关联的驱动程序列表，尤其是 SP_DRVINSTALL_PARAMS。
 
 ### <a name="installer-return-value"></a>安装程序返回值
 
@@ -89,7 +88,7 @@ DIF_SELECTBESTCOMPATDRV 请求允许安装程序从设备信息元素的兼容�
 
 如果类安装程序成功处理此请求（包括直接调用默认处理程序），则类安装程序应返回 NO_ERROR 并且 **SetupDiCallClassInstaller** 将不会再次调用默认处理程序。
 
-**注意**   类安装程序可以直接调用默认处理程序，但类安装程序永远不会尝试取代默认处理程序的操作。
+**注意**   类安装程序可以直接调用默认处理程序，但类安装程序永远不会尝试取代默认处理程序的操作。
 
  
 

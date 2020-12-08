@@ -1,19 +1,18 @@
 ---
 title: 创建子设备
 description: 创建子设备
-ms.assetid: e4ba1209-adc6-48c3-9633-247e9e3849bc
 keywords:
 - 音频适配器 WDK，subdevices
 - 适配器驱动程序 WDK 音频，subdevices
 - subdevices WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 866436b758a9c65a790234ebd1cd990ed4996dae
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 1843b9ebd4fb4414685b44801e4307a2d4711a54
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89210353"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96800599"
 ---
 # <a name="subdevice-creation"></a>创建子设备
 
@@ -31,7 +30,7 @@ ms.locfileid: "89210353"
 <thead>
 <tr class="header">
 <th align="left">组件</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -56,7 +55,7 @@ ms.locfileid: "89210353"
 
  
 
-Subdevice 的 IMiniport*xxx* 和 IPort*xxx* 接口分别继承自基接口 [IMiniport](/windows-hardware/drivers/ddi/portcls/nn-portcls-iminiport) 和 [IPort](/windows-hardware/drivers/ddi/portcls/nn-portcls-iport)。
+Subdevice 的 IMiniport *xxx* 和 IPort *xxx* 接口分别继承自基接口 [IMiniport](/windows-hardware/drivers/ddi/portcls/nn-portcls-iminiport) 和 [IPort](/windows-hardware/drivers/ddi/portcls/nn-portcls-iport)。
 
 PortCls 系统驱动程序不区分端口驱动程序和微型端口驱动程序。 它只需要一个对象（例如端口对象）以及一个可以处理系统生成的请求的接口。
 

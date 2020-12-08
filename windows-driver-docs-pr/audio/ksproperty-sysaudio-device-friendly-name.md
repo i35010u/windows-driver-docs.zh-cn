@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ SYSAUDIO \_ 设备 \_ 友好 \_ 名称
 description: KSPROPERTY \_ SYSAUDIO \_ 设备 \_ 友好 \_ 名称属性检索包含虚拟音频设备友好名称的 Unicode 字符串。
-ms.assetid: 14e23bb3-f0af-486f-8e34-fe27b2db2849
 keywords:
 - KSPROPERTY_SYSAUDIO_DEVICE_FRIENDLY_NAME 音频设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 983a8dac5433b699d800b13b4544166ad6323c2e
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 471b4c162730bdf56a14c9f025347e7235f730d4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90101884"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801155"
 ---
 # <a name="ksproperty_sysaudio_device_friendly_name"></a>KSPROPERTY \_ SYSAUDIO \_ 设备 \_ 友好 \_ 名称
 

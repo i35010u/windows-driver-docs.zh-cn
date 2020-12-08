@@ -1,73 +1,72 @@
 ---
 title: 设置属性和注册表值
-description: 设置属性和注册表值本主题介绍如何端口类音频驱动程序可以设置属性和即插即用设备接口的注册表值。
-ms.assetid: EB6E9673-4A87-45D9-A334-8C2AE33A7581
+description: 设置属性和注册表值主题介绍了 Port 类音频驱动程序如何设置 PnP 设备接口的属性和注册表值。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 143c95f099afeb8b40c6df1e5c5d7eb7ab51fb2e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 88b4a2a19f65785d8af6e2029f00352f1b5bd526
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328641"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96800669"
 ---
 # <a name="setting-properties-and-registry-values"></a>设置属性和注册表值
 
 
-设置属性和注册表值本主题介绍如何端口类音频驱动程序可以设置属性和即插即用设备接口的注册表值。
+设置属性和注册表值主题介绍了 Port 类音频驱动程序如何设置 PnP 设备接口的属性和注册表值。
 
-端口类音频驱动程序，Portcls 必须执行以下步骤来正确地注册设备接口和设置所需的值。
+端口类音频驱动程序 Portcls 必须执行以下步骤以正确注册设备接口并设置所需的值。
 
-## <a name="span-id1registerthedeviceinterfacespanspan-id1registerthedeviceinterfacespan1-register-the-device-interface"></a><span id="1._register_the_device_interface"></span><span id="1._REGISTER_THE_DEVICE_INTERFACE"></span>1.注册设备接口
+## <a name="span-id1_register_the_device_interfacespanspan-id1_register_the_device_interfacespan1-register-the-device-interface"></a><span id="1._register_the_device_interface"></span><span id="1._REGISTER_THE_DEVICE_INTERFACE"></span>1. 注册设备接口
 
 
-在调用前 PcRegisterSubdevice 子设备，该驱动程序可以直接调用 IoRegisterDeviceInterface 注册 KSCATEGORY\_音频接口。 这使该驱动程序有机会 PcRegisterSubdevice 注册，并启用这些接口之前设置的设备接口的接口属性和注册表值。
+在为子设备调用 PcRegisterSubdevice 之前，驱动程序可以直接调用 IoRegisterDeviceInterface 来注册 KSCATEGORY \_ 音频接口。 这样，驱动程序便有机会在设备接口上设置接口属性和注册表值，然后 PcRegisterSubdevice 注册和启用接口。
 
-音频驱动程序设置的参数 IoRegisterDeviceInterface，如下所示。
+音频驱动程序设置 IoRegisterDeviceInterface 的参数，如下所示。
 
--   PhysicalDeviceObject 参数是 PDEVICE\_音频驱动程序可以检索从 PcGetPhysicalDeviceObject 函数的对象。
+-   PhysicalDeviceObject 参数是 \_ 音频驱动程序可从 PcGetPhysicalDeviceObject 函数检索的 PDEVICE 对象。
 
 -   InterfaceClassGuid 设置为接口的类 GUID。
 
--   ReferenceString 是与音频驱动程序将传递给 PcRegisterSubdevice 名称参数相同。
+-   ReferenceString 与音频驱动程序传递给 PcRegisterSubdevice 的 Name 参数相同。
 
-前面的任务已成功完成后，IoRegisterDeviceInterface 返回已注册的接口 SymbolicLinkName。
+成功完成上述任务后，IoRegisterDeviceInterface 将返回已注册接口的 SymbolicLinkName。
 
-## <a name="span-id2setregistryvaluesspanspan-id2setregistryvaluesspan2-set-registry-values"></a><span id="2._set_registry_values"></span><span id="2._SET_REGISTRY_VALUES"></span>2.设置注册表值
+## <a name="span-id2_set_registry_valuesspanspan-id2_set_registry_valuesspan2-set-registry-values"></a><span id="2._set_registry_values"></span><span id="2._SET_REGISTRY_VALUES"></span>2. 设置注册表值
 
 
-音频驱动程序调用 IoOpenDeviceInterfaceRegistryKey 若要获取的句柄设备接口注册表项。 音频驱动程序设置的参数 IoOpenDeviceInterfaceRegistryKey，如下所示。
+音频驱动程序调用 IoOpenDeviceInterfaceRegistryKey 来获取设备接口注册表项的句柄。 音频驱动程序将参数设置为 IoOpenDeviceInterfaceRegistryKey，如下所示。
 
-SymbolicLinkName 是 IoRegisterDeviceInterface 从上一步中返回的字符串。
+SymbolicLinkName 是在上一步中从 IoRegisterDeviceInterface 返回的字符串。
 
-DesiredAccess 设置为键\_写入 （或其他值，如果所需的驱动程序）。
+\_如果驱动程序) 需要，DesiredAccess 设置为密钥写入 (或其他值。
 
-已成功完成上述步骤后，DeviceInterfaceKey 返回打开的注册表项句柄。 音频驱动程序：
+成功完成上述步骤后，DeviceInterfaceKey 将返回已打开的注册表项句柄。 音频驱动程序：
 
--   调用 ZwSetValueKey 设置注册表值
+-   调用 ZwSetValueKey 以设置注册表值
 
 -   通过调用 ZwClose 关闭注册表项句柄
 
-**请注意**  驱动程序所需注册表子项中设置的值，如果该驱动程序调用 ZwCreateKey 若要创建子项。 当正在准备调用 ZwCreateKey，驱动程序：
--   调用 InitializeObjectAttributes，并将对象名称设置为子项路径
+**注意**  如果驱动程序需要在注册表子项中设置值，则驱动程序将调用 ZwCreateKey 来创建该子项。 准备调用 ZwCreateKey 时，驱动程序：
+-   调用 InitializeObjectAttributes，并将 ObjectName 设置为子项路径
 
--   将属性设置为 OBJ\_用例\_INSENSITIVE |OBJ\_内核\_处理
+-   将属性设置为不 \_ 区分大小写的属性 \_ |OBJ \_ 内核 \_ 句柄
 
--   设置 RootDirectory 为 IoOpenDeviceInterfaceRegistryKey 返回的句柄
+-   将 RootDirectory 设置为 IoOpenDeviceInterfaceRegistryKey 返回的句柄
 
--   调用 ZwClose 关闭任一句柄通过调用 ZwCreateKey 创建
+-   调用 ZwClose 以关闭通过调用 ZwCreateKey 创建的任何句柄
 
  
 
-## <a name="span-id3setpropertiesspanspan-id3setpropertiesspan3-set-properties"></a><span id="3._set_properties"></span><span id="3._SET_PROPERTIES"></span>3.设置属性
+## <a name="span-id3_set_propertiesspanspan-id3_set_propertiesspan3-set-properties"></a><span id="3._set_properties"></span><span id="3._SET_PROPERTIES"></span>3. 设置属性
 
 
-音频驱动程序调用 IoSetDeviceInterfacePropertyData 设置属性。 音频驱动程序设置的参数 IoSetDeviceInterfacePropertyData，如下所示： 
+音频驱动程序调用 IoSetDeviceInterfacePropertyData 来设置属性。 音频驱动程序将参数设置为 IoSetDeviceInterfacePropertyData，如下所示： 
 - SymbolicLinkName 是从 IoRegisterDeviceInterface 返回的字符串。 
-- 剩余的参数取决于要设置的特定属性。
+- 其余参数取决于所设置的特定属性。
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
-[相关的设计准则](related-design-guidelines.md)  
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
+[相关的设计指南](related-design-guidelines.md)  
 
 
 

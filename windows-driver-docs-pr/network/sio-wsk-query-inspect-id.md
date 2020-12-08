@@ -1,17 +1,16 @@
 ---
 title: SIO_WSK_QUERY_INSPECT_ID
 description: SIO_WSK_QUERY_INSPECT_ID
-ms.assetid: 6fc3e5ea-61df-47fc-8f79-f9ae272b3544
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 SIO_WSK_QUERY_INSPECT_ID 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 80987c9559c1fbecf5ad6e0245e9eeed41bc57f9
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 34e8c0beee49e79413be9f6ad4b3ffe858da8e6c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89212759"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801301"
 ---
 # <a name="sio_wsk_query_inspect_id"></a>SIO \_ WSK \_ 查询 \_ 检查 \_ ID
 
@@ -28,7 +27,7 @@ SIO \_ WSK \_ 查询 \_ 检查 \_ ID 套接字 I/O 控制操作允许 WSK 应用
 <thead>
 <tr class="header">
 <th>参数</th>
-<th>值</th>
+<th>“值”</th>
 </tr>
 </thead>
 <tbody>

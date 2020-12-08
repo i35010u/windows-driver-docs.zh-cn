@@ -1,7 +1,6 @@
 ---
 title: 指定引脚数据范围
 description: 指定引脚数据范围
-ms.assetid: bef74cd1-d2be-402d-be7f-acc7d8cbf392
 keywords:
 - 锁定 WDK 音频，数据范围
 - WDM 音频驱动程序 WDK，固定数据范围
@@ -12,12 +11,12 @@ keywords:
 - 与 WDK 音频驱动程序的交集
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1b17b2251c48209f411ba5a93e12f6c9f39f7466
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 7b6b29c726b410decd1685e5db7c47d4157a7b4d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89210395"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96800631"
 ---
 # <a name="specifying-pin-data-ranges"></a>指定引脚数据范围
 
@@ -58,6 +57,6 @@ static KSDATARANGE_AUDIO PinDataRangesPcm[] =
 
 请注意， `PinDataRangesPcm` 前面的示例中的数组包含类型为 [**KSDATARANGE \_ AUDIO**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksdatarange_audio)的单个数据范围说明符。 通常，数据范围数组可以包含任意数量的描述符。 例如，非 PCM 波形输出 pin 可能同时支持 AC-3 over S/PDIF 和 WMA Pro/PDIF 格式。 这两种格式中的每一种都是通过单独的数据范围说明符来指定的。 因此，pin 的数据范围数组包含至少两个 KSDATARANGE \_ 音频结构。
 
-支持从使用 DirectMusic 的应用程序或 Windows 多媒体 midiIn*xxx* 和 midiOut*Xxx* 函数的应用程序中使用音乐流格式的可配置 Pin 使用类型为 [**KSDATARANGE \_ 音乐**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksdatarange_music)的数据范围说明符。
+支持从使用 DirectMusic 的应用程序或 Windows 多媒体 midiIn *xxx* 和 midiOut *Xxx* 函数的应用程序中使用音乐流格式的可配置 Pin 使用类型为 [**KSDATARANGE \_ 音乐**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksdatarange_music)的数据范围说明符。
 
 端口驱动程序从微型端口驱动程序获取数据范围信息，并使用此信息来处理请求，以获取有关每个 pin 所能支持的数据格式的信息。 对于具有简单 PCM 数据范围的 pin，端口驱动程序能够处理该 pin 的交集请求。 在交集请求中，客户端提供一组表示流的可能数据格式的数据范围。 如果可能，端口驱动程序的交集处理程序将从请求中的数据范围中选择特定的数据格式，该数据范围也位于其 pin 的数据范围内。 此格式表示两组数据范围的交集。 因此，客户端和 pin 都可以使用此格式处理流。 对于更复杂的数据范围，微型端口驱动程序可以提供自己的交集处理程序，端口驱动程序将使用该处理程序而不是自己的默认处理程序。 微型端口驱动程序的交集处理程序可允许任何格式要求，这些要求可能难于将端口驱动程序表示为数据范围的数组。 有关详细信息，请参阅 [数据交集处理程序](data-intersection-handlers.md) 和 [多通道音频数据和波形文件](/previous-versions/windows/hardware/design/dn653308(v=vs.85))。

@@ -1,7 +1,6 @@
 ---
 title: IRP_MJ_PNP 联合的 FLT_PARAMETERS
 description: 操作的 FLT \_ IO \_ 参数块结构的 MajorFunction 字段 \_ 为 IRP \_ MJ \_ PNP 时使用的联合组件。
-ms.assetid: d3ce893b-f113-4c50-8f52-30c7ced25ae0
 keywords:
 - IRP_MJ_PNP 联合可安装文件系统驱动程序的 FLT_PARAMETERS
 - FLT_PARAMETERS 联合可安装文件系统驱动程序
@@ -16,37 +15,37 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 931418f3afb7aa2f269252d7c9e6d41652ea1c48
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 0ea9cb3d761831ffa814d244c0cb2d6940b9a366
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89063426"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96799563"
 ---
 # <a name="flt_parameters-for-irp_mj_pnp-union"></a>\_IRP \_ MJ \_ PNP 联合的 FLT 参数
 
 
-操作的[**FLT \_ IO \_ 参数 \_ 块**](/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_io_parameter_block)结构的**MajorFunction**字段为[**IRP \_ MJ \_ PNP**](irp-mj-pnp.md)时使用的联合组件。
+操作的 [**FLT \_ IO \_ 参数 \_ 块**](/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_io_parameter_block)结构的 **MajorFunction** 字段为 [**IRP \_ MJ \_ PNP**](irp-mj-pnp.md)时使用的联合组件。
 
 <a name="syntax"></a>语法
 ------
 
 ```ManagedCPlusPlus
 typedef union _FLT_PARAMETERS {
-  ...   ;
+  ...   ;
   union {
-    struct  StartDevice;
-    struct  QueryDeviceRelations;
-    struct  QueryInterface;
-    struct  DeviceCapabilities;
-    struct  FilterResourceRequirements;
-    struct  ReadWriteConfig;
-    struct  SetLock;
-    struct  QueryId;
-    struct  QueryDeviceText;
-    struct  UsageNotification;
-  } Pnp;
-  ...   ;
+    struct  StartDevice;
+    struct  QueryDeviceRelations;
+    struct  QueryInterface;
+    struct  DeviceCapabilities;
+    struct  FilterResourceRequirements;
+    struct  ReadWriteConfig;
+    struct  SetLock;
+    struct  QueryId;
+    struct  QueryDeviceText;
+    struct  UsageNotification;
+  } Pnp;
+  ...   ;
 } FLT_PARAMETERS, *PFLT_PARAMETERS;
 ```
 
@@ -87,7 +86,7 @@ typedef union _FLT_PARAMETERS {
 <a name="remarks"></a>备注
 -------
 
-[**Irp \_ MJ \_ Pnp**](irp-mj-pnp.md)操作的[**FLT \_ 参数**](/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_parameters)结构包含 (PNP) 操作所表示的基于 IRP 即插即用 PNP 操作的参数， ([**FLT \_ 回调 \_ 数据**](/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_callback_data)) 结构。 它包含在 [**FLT \_ IO \_ 参数 \_ 块**](/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_io_parameter_block) 结构中。
+[**Irp \_ MJ \_ Pnp**](irp-mj-pnp.md)操作的 [**FLT \_ 参数**](/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_parameters)结构包含 (PNP) 操作所表示的基于 IRP 即插即用 PNP 操作的参数， ([**FLT \_ 回调 \_ 数据**](/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_callback_data)) 结构。 它包含在 [**FLT \_ IO \_ 参数 \_ 块**](/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_io_parameter_block) 结构中。
 
 IRP \_ MJ \_ PNP 操作是基于 IRP 的操作。
 
@@ -124,7 +123,7 @@ IRP \_ MJ \_ PNP 操作是基于 IRP 的操作。
 
 [**IRP \_ MJ \_ PNP**](irp-mj-pnp.md)
 
-[**IRP \_ MJ \_ PNP (WDK 内核模式驱动程序体系结构参考) **](../kernel/irp-mj-pnp.md)
+[**IRP \_ MJ \_ PNP (WDK Kernel-Mode 驱动程序体系结构参考)**](../kernel/irp-mj-pnp.md)
 
 [**IRP \_ MN \_ 设备 \_ 使用 \_ 通知**](../kernel/irp-mn-device-usage-notification.md)
 

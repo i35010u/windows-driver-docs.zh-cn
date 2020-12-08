@@ -1,7 +1,6 @@
 ---
 title: bcb
 description: Bcb 扩展显示指定的缓冲区控制块。
-ms.assetid: 4e98e900-5e9d-40a4-9c39-4dc3611d8ea3
 keywords:
 - 缓存管理器
 - bcb Windows 调试
@@ -13,17 +12,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 01dc65c9f4f8860c5ca7e43e312373d7b848f176
-ms.sourcegitcommit: 424c435700d8f8a85bdaa83e8ddaab9568c8d347
+ms.openlocfilehash: f426d89f1b2ee0a71c5d8422a683066a36d61506
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/26/2019
-ms.locfileid: "70025287"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96799993"
 ---
 # <a name="bcb"></a>!bcb
 
 
-**! Bcb**扩展显示指定的缓冲区控制块。
+**！ Bcb** 扩展显示指定的缓冲区控制块。
 
 ```dbgcmd
 !bcb Address
@@ -45,11 +44,11 @@ ms.locfileid: "70025287"
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>Windows 2000</strong></p></td>
-<td align="left"><p>Kdextx86</p></td>
+<td align="left"><p>Kdextx86.dll</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>Windows XP 和更高版本</strong></p></td>
-<td align="left"><p>不可用 (请参阅 "备注" 部分)</p></td>
+<td align="left"><p><strong>Windows XP 及更高版本</strong></p></td>
+<td align="left"><p> (，请参阅 "备注" 部分) </p></td>
 </tr>
 </tbody>
 </table>
@@ -58,14 +57,14 @@ ms.locfileid: "70025287"
 
 ### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-有关缓存管理的信息, Microsoft Windows SDK 请参阅 Russinovich 文档和*Microsoft Windows 内部机制*, 并标记和 David 所罗门群岛。
+有关缓存管理的信息，Microsoft Windows SDK 请参阅 Russinovich 文档和 *Microsoft Windows 内部机制* ，并标记和 David 所罗门群岛。
 
-有关其他缓存管理扩展的信息, 请使用[ **! cchelp**](-cchelp.md)扩展。
+有关其他缓存管理扩展的信息，请使用 [**！ cchelp**](-cchelp.md) 扩展。
 
 <a name="remarks"></a>备注
 -------
 
-此扩展仅适用于 Windows 2000。 在 Windows XP 或更高版本中, 使用[**dt\_ nt!BCB Address**](dt--display-type-.md)命令可直接显示缓冲区控制块。
+此扩展仅适用于 Windows 2000。 在 Windows XP 或更高版本中，使用 [**dt nt！ \_BCB Address**](dt--display-type-.md) 命令可直接显示缓冲区控制块。
 
  
 

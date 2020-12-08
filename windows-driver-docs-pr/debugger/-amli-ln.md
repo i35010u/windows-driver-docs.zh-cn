@@ -1,7 +1,6 @@
 ---
 title: amli ln
-description: Amli ln 扩展显示指定的方法或包含给定的地址的方法。
-ms.assetid: f763f185-cce2-4bfb-948d-243acfb53aaa
+description: Amli ln 扩展显示指定的方法或包含给定地址的方法。
 keywords:
 - amli ln Windows 调试
 ms.date: 09/17/2018
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 34a302d69631437aa883d8c077aab7b516ce41ab
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: dcbf284de8a57c5a7d3054a88d387d8590b0f028
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63334756"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96800065"
 ---
 # <a name="amli-ln"></a>!amli ln
 
 
-**！ Amli ln**扩展显示指定的方法或包含给定的地址的方法。
+**！ Amli ln** 扩展显示指定的方法或包含给定地址的方法。
 
 语法
 
@@ -30,36 +29,36 @@ ms.locfileid: "63334756"
     !amli ln [ MethodName | CodeAddress ]
 ```
 
-## <a name="span-idddkamlilndbgspanspan-idddkamlilndbgspanparameters"></a><span id="ddk__amli_ln_dbg"></span><span id="DDK__AMLI_LN_DBG"></span>参数
+## <a name="span-idddk__amli_ln_dbgspanspan-idddk__amli_ln_dbgspanparameters"></a><span id="ddk__amli_ln_dbg"></span><span id="DDK__AMLI_LN_DBG"></span>参数
 
 
-<span id="_______MethodName______"></span><span id="_______methodname______"></span><span id="_______METHODNAME______"></span> *MethodName*   
-指定方法名称的完整路径。 如果*MethodName*指定不是实际的方法，产生错误的对象。
+<span id="_______MethodName______"></span><span id="_______methodname______"></span><span id="_______METHODNAME______"></span>*方法名称*   
+指定方法名称的完整路径。 如果 *方法名称* 指定的对象不是实际方法，则会产生错误。
 
-<span id="_______CodeAddress______"></span><span id="_______codeaddress______"></span><span id="_______CODEADDRESS______"></span> *CodeAddress*   
-指定所需的方法中包含的 AML 代码的地址。 如果*CodeAddress*前缀为两个百分号 (**%%**)，它被解释为物理地址。 否则，它被解释为一个虚拟地址。
+<span id="_______CodeAddress______"></span><span id="_______codeaddress______"></span><span id="_______CODEADDRESS______"></span>*CodeAddress*   
+指定所需方法中包含的 AML 代码的地址。 如果 *CodeAddress* 以两个百分号 (**%%**) ，则会将其解释为物理地址。 否则，会将其解释为虚拟地址。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 Kdexts.dll
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-有关相关的命令及其用途的信息，请参阅[AMLI 调试器](the-amli-debugger.md)。
+有关相关命令及其用法的信息，请参阅 [AMLI 调试器](the-amli-debugger.md)。
 
 <a name="remarks"></a>备注
 -------
 
-如果既没有*MethodName*也不*CodeAddress*指定，则会显示与当前上下文关联的方法。
+如果既没有指定方法 *名称* 也未指定 *CodeAddress* ，则将显示与当前上下文相关联的方法。
 
-下面的命令显示当前正在运行的方法：
+以下命令显示当前正在运行的方法：
 
 ```console
 kd> !amli ln
 c29accf5: \_WAK
 ```
 
-该方法\_WAK 所示，使用地址 0xC29ACCF5。
+\_显示 WAK 方法，地址为0xC29ACCF5。
 
  
 

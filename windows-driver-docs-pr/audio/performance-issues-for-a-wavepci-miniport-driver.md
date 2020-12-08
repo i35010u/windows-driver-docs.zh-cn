@@ -1,7 +1,6 @@
 ---
 title: WavePci 微型端口驱动程序的性能问题
 description: WavePci 微型端口驱动程序的性能问题
-ms.assetid: 785fd743-0c78-44cd-95bf-1f961aa414b5
 keywords:
 - WavePci 性能问题 WDK 音频
 - 流式处理服务机制 WDK 音频
@@ -15,12 +14,12 @@ keywords:
 - IPinCount
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d40e8d9ab37ad8e9f55acb9e94ee7f1697c09df5
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 09b48679e7a549c4b85c7a01324babed007a4eb4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89210493"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96800943"
 ---
 # <a name="performance-issues-for-a-wavepci-miniport-driver"></a>WavePci 微型端口驱动程序的性能问题
 
@@ -46,9 +45,9 @@ ms.locfileid: "89210493"
 
 处理波形渲染或捕获流时，音频设备需要通过微型端口驱动程序定期进行维护。 当新的映射可用于流时，驱动程序会将这些映射添加到流的 DMA 队列。 驱动程序还将从队列中删除已处理的任何映射。 有关映射的信息，请参阅 [WavePci 滞后时间](wavepci-latency.md)。
 
-若要执行该服务，微型端口驱动程序将 * (DPC) * 或中断服务例程 (ISR) 提供延迟的过程调用，具体取决于该间隔是由系统计时器还是由 DMA 驱动的中断设置的。 在后一种情况下，DMA 硬件通常会在每次完成传输一定量的流数据时触发中断。
+若要执行该服务，微型端口驱动程序将 *(DPC)* 或中断服务例程 (ISR) 提供延迟的过程调用，具体取决于该间隔是由系统计时器还是由 DMA 驱动的中断设置的。 在后一种情况下，DMA 硬件通常会在每次完成传输一定量的流数据时触发中断。
 
-每次执行 DPC 或 ISR 时，它将确定哪些流需要维护。 DPC 或 ISR 通过调用 [**IPortWavePci：： Notify**](/windows-hardware/drivers/ddi/portcls/nf-portcls-iportwavepci-notify) 方法来服务流。 此方法将流的服务组用作 [IServiceGroup](/windows-hardware/drivers/ddi/portcls/nn-portcls-iservicegroup)类型的对象作为调用参数。 **通知**方法调用服务组的[**RequestService**](/windows-hardware/drivers/ddi/portcls/nf-portcls-iservicesink-requestservice)方法 (参阅**IServiceSink：： RequestService**) 。
+每次执行 DPC 或 ISR 时，它将确定哪些流需要维护。 DPC 或 ISR 通过调用 [**IPortWavePci：： Notify**](/windows-hardware/drivers/ddi/portcls/nf-portcls-iportwavepci-notify) 方法来服务流。 此方法将流的服务组用作 [IServiceGroup](/windows-hardware/drivers/ddi/portcls/nn-portcls-iservicegroup)类型的对象作为调用参数。 **通知** 方法调用服务组的 [**RequestService**](/windows-hardware/drivers/ddi/portcls/nf-portcls-iservicesink-requestservice)方法 (参阅 **IServiceSink：： RequestService**) 。
 
 服务组对象包含一组服务接收器，服务接收器是 [IServiceSink](/windows-hardware/drivers/ddi/portcls/nn-portcls-iservicesink)类型的对象。 [IServiceGroup](/windows-hardware/drivers/ddi/portcls/nn-portcls-iservicegroup) 派生自 IServiceSink，这两个接口都具有 [**RequestService**](/windows-hardware/drivers/ddi/portcls/nf-portcls-iservicesink-requestservice) 方法。 当 [**通知**](/windows-hardware/drivers/ddi/portcls/nf-portcls-iportwavepci-notify) 方法调用服务组的 **RequestService** 方法时，服务组会通过对该组中的每个服务接收器调用 **RequestService** 方法来做出响应。
 
@@ -60,7 +59,7 @@ ms.locfileid: "89210493"
 
 如 [KS 事件](../stream/ks-events.md)中所述，当流到达特定位置或当时钟到达特定时间戳时，客户端可以注册以获得通知。 [**Newstream.ischecked**](/windows-hardware/drivers/ddi/portcls/nf-portcls-iminiportwavepci-newstream)方法具有未提供服务组的选项，在这种情况下，端口驱动程序将设置自己的计时器，以标记对其服务例程的调用之间的时间间隔。
 
-与 [**newstream.ischecked**](/windows-hardware/drivers/ddi/portcls/nf-portcls-iminiportwavepci-newstream) 方法一样，微型端口驱动程序的 [**IMiniportWavePci：： Init**](/windows-hardware/drivers/ddi/portcls/nf-portcls-iminiportwavepci-init) 方法还输出指向服务组的指针。 在 **Init** 调用之后，端口驱动程序会将其服务接收器添加到服务组。 此特定服务接收器包含整个筛选器的服务例程。  (上一段落介绍与筛选器上的某个 pin 关联的流的服务接收器。 ) 此服务例程调用微型端口驱动程序的 [**IMiniportWavePci：： service**](/windows-hardware/drivers/ddi/portcls/nf-portcls-iminiportwavepci-service) 方法。 每当 DPC 或 ISR 调用向筛选器的服务组 [**发出通知**](/windows-hardware/drivers/ddi/portcls/nf-portcls-iportwavepci-notify) 时，就会执行服务例程。 **Init**方法可以选择不提供服务组，在这种情况下，端口驱动程序永远不会调用其筛选器服务例程。
+与 [**newstream.ischecked**](/windows-hardware/drivers/ddi/portcls/nf-portcls-iminiportwavepci-newstream) 方法一样，微型端口驱动程序的 [**IMiniportWavePci：： Init**](/windows-hardware/drivers/ddi/portcls/nf-portcls-iminiportwavepci-init) 方法还输出指向服务组的指针。 在 **Init** 调用之后，端口驱动程序会将其服务接收器添加到服务组。 此特定服务接收器包含整个筛选器的服务例程。  (上一段落介绍与筛选器上的某个 pin 关联的流的服务接收器。 ) 此服务例程调用微型端口驱动程序的 [**IMiniportWavePci：： service**](/windows-hardware/drivers/ddi/portcls/nf-portcls-iminiportwavepci-service) 方法。 每当 DPC 或 ISR 调用向筛选器的服务组 [**发出通知**](/windows-hardware/drivers/ddi/portcls/nf-portcls-iportwavepci-notify) 时，就会执行服务例程。 **Init** 方法可以选择不提供服务组，在这种情况下，端口驱动程序永远不会调用其筛选器服务例程。
 
 ### <a name="span-idhardware_interruptsspanspan-idhardware_interruptsspanspan-idhardware_interruptsspanhardware-interrupts"></a><span id="Hardware_Interrupts"></span><span id="hardware_interrupts"></span><span id="HARDWARE_INTERRUPTS"></span>硬件中断
 
@@ -106,9 +105,9 @@ DirectSound 用户熟悉播放光标和写入光标的两个概念。 播放光�
 
 ### <a name="span-idsynchronization_primitivesspanspan-idsynchronization_primitivesspanspan-idsynchronization_primitivesspansynchronization-primitives"></a><span id="Synchronization_Primitives"></span><span id="synchronization_primitives"></span><span id="SYNCHRONIZATION_PRIMITIVES"></span>同步基元
 
-现在，如果驱动程序的代码被设计为尽可能避免被阻止，则该驱动程序不太可能会出现死锁或性能问题。 具体而言，驱动程序的执行线程应在等待其他线程或资源的同时，尝试运行到完成，而不会有停止的风险。 例如，驱动程序线程可以使用联锁*Xxx* 函数 (例如，请参阅 [**InterlockedIncrement**](/windows-hardware/drivers/ddi/wdm/nf-wdm-interlockedincrement)) ，协调它们对某些共享资源的访问，而不会受到阻止。
+现在，如果驱动程序的代码被设计为尽可能避免被阻止，则该驱动程序不太可能会出现死锁或性能问题。 具体而言，驱动程序的执行线程应在等待其他线程或资源的同时，尝试运行到完成，而不会有停止的风险。 例如，驱动程序线程可以使用联锁 *Xxx* 函数 (例如，请参阅 [**InterlockedIncrement**](/windows-hardware/drivers/ddi/wdm/nf-wdm-interlockedincrement)) ，协调它们对某些共享资源的访问，而不会受到阻止。
 
-尽管这些是功能强大的技术，但您可能无法安全地从执行路径中删除所有旋转锁、互斥体和其他阻止同步基元。 慎用互锁*Xxx* 功能，了解无限期等待可能导致数据不足的情况。
+尽管这些是功能强大的技术，但您可能无法安全地从执行路径中删除所有旋转锁、互斥体和其他阻止同步基元。 慎用互锁 *Xxx* 功能，了解无限期等待可能导致数据不足的情况。
 
 毕竟，不要创建自定义同步基元。 内置的 Windows 基元 (互斥体、旋转锁等) 可能会根据需要进行修改，以支持将来的新计划程序功能，而使用自定义构造的驱动程序在将来确实不能正常工作。
 

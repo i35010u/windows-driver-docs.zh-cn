@@ -1,15 +1,14 @@
 ---
 title: Windows UEFI 固件更新平台
 description: Windows 支持通过使用 UpdateCapsule 函数处理的驱动程序包来安装系统和设备固件更新。
-ms.assetid: 9F0D22FB-3C83-4F90-8E24-2205EEF9D5F7
 ms.date: 05/26/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: b26cc5dc218c71da67bf9eaf8df5b5c6cbd2938f
-ms.sourcegitcommit: 963ee193bbc704ac8c03edb3e0e26ef32587ce64
+ms.openlocfilehash: 935d6410fbd29a316c4a599e632c3a8d1ee244cc
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89559302"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96800427"
 ---
 # <a name="windows-uefi-firmware-update-platform"></a>Windows UEFI 固件更新平台
 
@@ -18,8 +17,8 @@ Windows 支持一个平台，用于通过使用 UEFI UpdateCapsule 函数处理�
 UEFI 固件更新平台指南适用于正在构建运行 Windows 的硬件平台的 SoC 供应商和 Oem。 以下操作系统版本支持 UEFI 固件更新平台：
 
 - Windows 8
-- Windows 8.1
-- Windows 10 桌面版（家庭版、专业版、企业版和教育版）
+- Windows 8.1
+- Windows 10 桌面版（家庭版、专业版、企业版和教育版）
 - Windows 10 移动版
 
 ## <a name="uefi-firmware-update-support-in-windows-10"></a>Windows 10 中的 UEFI 固件更新支持
@@ -55,7 +54,7 @@ Microsoft 强烈建议运行 Windows 10 移动版的设备应使用二进制更�
 
     建议使用离散固件更新驱动程序包更新设备固件，但也可以使用系统固件更新设备固件，作为单一固件更新驱动程序包的一部分。
 
-    **注意**   不应使用 UEFI 来更新外围设备。 UEFI 要求在重新启动过程中存在设备，以应用固件更新，但无法保证 (外部可移动) 外围设备的固件更新。
+    **注意**  不应使用 UEFI 来更新外围设备。 UEFI 要求在重新启动过程中存在设备，以应用固件更新，但无法保证 (外部可移动) 外围设备的固件更新。
 
 - 驱动程序可更新的设备固件。
 

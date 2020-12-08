@@ -1,7 +1,6 @@
 ---
 title: 服务接收器和服务组对象
 description: 服务接收器和服务组对象
-ms.assetid: 00e17e01-8889-4fae-a0ff-e110d7a9b21e
 keywords:
 - helper 对象 WDK 音频，服务接收器对象
 - helper 对象 WDK 音频，服务组对象
@@ -16,12 +15,12 @@ keywords:
 - Isr WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4577ae8735b01070969ebf3d6f9f16c3da4dcfb8
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: c58c42b7a9bc1fb876c639890fae34f5c303a53f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89210409"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96800683"
 ---
 # <a name="service-sink-and-service-group-objects"></a>服务接收器和服务组对象
 
@@ -83,7 +82,7 @@ PortCls 系统驱动程序实现了 [IServiceSink](/windows-hardware/drivers/ddi
 
 [**IPortDMus::RegisterServiceGroup**](/windows-hardware/drivers/ddi/dmusicks/nf-dmusicks-iportdmus-registerservicegroup)
 
-在其 **Init** 方法执行期间，MIDI 或 dmu 微型端口驱动程序通常会在启动合成器之前调用端口驱动程序的 **RegisterServiceGroup** 方法。 此调用的目的是允许端口驱动程序将包含其中断处理) 程序 (的服务接收器对象插入到服务组中，然后硬件开始生成中断。 虽然 **init** 方法会将服务组指针输出到端口驱动程序，但端口驱动程序只能在从 **Init**返回后使用此指针。
+在其 **Init** 方法执行期间，MIDI 或 dmu 微型端口驱动程序通常会在启动合成器之前调用端口驱动程序的 **RegisterServiceGroup** 方法。 此调用的目的是允许端口驱动程序将包含其中断处理) 程序 (的服务接收器对象插入到服务组中，然后硬件开始生成中断。 虽然 **init** 方法会将服务组指针输出到端口驱动程序，但端口驱动程序只能在从 **Init** 返回后使用此指针。
 
 对于 WavePci 端口驱动程序，port 对象会将其自己的 [IServiceSink](/windows-hardware/drivers/ddi/portcls/nn-portcls-iservicesink) 对象添加到它从 [**IMiniportWavePci：： newstream.ischecked**](/windows-hardware/drivers/ddi/portcls/nf-portcls-iminiportwavepci-newstream) 调用获取的服务组。 当微型端口驱动程序的 ISR 稍后调用 **通知** 将通知发送到该服务组时，服务组会将向该通知转发到端口驱动程序的 IServiceSink 对象的 DPC 进行排队，这反过来会执行以下操作：
 

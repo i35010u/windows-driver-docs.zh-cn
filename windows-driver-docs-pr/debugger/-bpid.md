@@ -1,7 +1,6 @@
 ---
 title: bpid
 description: Bpid 扩展请求目标计算机上的进程进入调试器或请求将用户模式调试器附加到目标计算机上的进程。
-ms.assetid: 47091651-3b39-4e3d-86cf-a8e95779a025
 keywords:
 - bpid Windows 调试
 ms.date: 05/23/2017
@@ -12,12 +11,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 08900dbe7fb4366c54ee94fdf802f4fb681ad9d4
-ms.sourcegitcommit: bb3b62a57ba3aea4a0adeefd2d81993367b7b334
+ms.openlocfilehash: f03e789304793d72f2535dd1519d53d94d10a4d3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88148420"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96799961"
 ---
 # <a name="bpid"></a>!bpid
 
@@ -72,10 +71,10 @@ ms.locfileid: "88148420"
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>Windows 2000</strong></p></td>
-<td align="left"><p>Unavailable</p></td>
+<td align="left"><p>不可用</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>Windows XP 及更高版本</strong></p></td>
+<td align="left"><p><strong>Windows XP 及更高版本</strong></p></td>
 <td align="left"><p>Kdexts.dll</p></td>
 </tr>
 </tbody>
@@ -88,17 +87,17 @@ ms.locfileid: "88148420"
 <a name="remarks"></a>备注
 -------
 
-将用户模式调试器的输入和输出重定向到内核调试器时，此命令特别有用。 这会使用户模式目标应用程序进入用户模式调试器，进而请求内核调试器输入。 有关详细信息，请参阅 [从内核调试器控制用户模式调试器](controlling-the-user-mode-debugger-from-the-kernel-debugger.md) 。
+将用户模式调试器的输入和输出重定向到内核调试器时，此命令特别有用。 这会使用户模式目标应用程序进入用户模式调试器，进而请求内核调试器输入。 有关详细信息，请参阅 [控制内核调试器中的 User-Mode 调试器](controlling-the-user-mode-debugger-from-the-kernel-debugger.md) 。
 
 如果在其他情况下使用此命令，则用户模式进程将调用 **DbgBreakPoint**。 这通常会直接中断到内核调试器中。
 
-**-S**选项将在指定进程中发生中断之前，在 WinLogon 中产生中断。 如果要在 WinLogon 的进程上下文中执行调试操作，这会很有用。 然后，可以使用 [**g (中转) **](g--go-.md) 命令移动到第二个断点。
+**-S** 选项将在指定进程中发生中断之前，在 WinLogon 中产生中断。 如果要在 WinLogon 的进程上下文中执行调试操作，这会很有用。 然后，可以使用 [**g (中转)**](g--go-.md) 命令移动到第二个断点。
 
 请注意，可以通过以下方式执行此扩展：
 
--   缺少资源。 **！ Bpid** extension 向目标进程中注入一个线程，因此系统必须具有足够的资源来创建线程。 使用 **-a**选项以后，还需要更多的系统资源，因为必须在目标计算机上运行完整的调试器实例。 **bpid**
+-   缺少资源。 **！ Bpid** extension 向目标进程中注入一个线程，因此系统必须具有足够的资源来创建线程。 使用 **-a** 选项以后，还需要更多的系统资源，因为必须在目标计算机上运行完整的调试器实例。 **bpid**
 
--   已持有加载程序锁。 **！ Bpid**和 **！ bpid**都需要一个线程在目标进程中运行，以便使其进入调试器。 如果其他线程正在持有加载程序锁，则 **！ bpid** 线程将无法运行，并且可能不会中断调试器。 因此，如果 **！ bpid** 在有足够的用户模式内存可用于目标进程时失败，则可能会保留加载程序锁。
+-   已持有加载程序锁。 **！ Bpid** 和 **！ bpid** 都需要一个线程在目标进程中运行，以便使其进入调试器。 如果其他线程正在持有加载程序锁，则 **！ bpid** 线程将无法运行，并且可能不会中断调试器。 因此，如果 **！ bpid** 在有足够的用户模式内存可用于目标进程时失败，则可能会保留加载程序锁。
 
 -   缺少权限。 Bpid 扩展的操作需要权限足以使 WinLogon 创建远程线程，并将调试器附加到给定进程。
 

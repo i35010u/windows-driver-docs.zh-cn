@@ -1,7 +1,6 @@
 ---
 title: 拓扑筛选器
 description: 拓扑筛选器
-ms.assetid: 1b3d35e9-5858-407c-9cd0-06307d82ce58
 keywords:
 - 音频筛选 WDK 音频，拓扑筛选器
 - 拓扑筛选 WDK 音频
@@ -20,12 +19,12 @@ keywords:
 - 数字连接器 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c63246b571b94dc2bd4376c7f6d9008c901874fe
-ms.sourcegitcommit: 372464be981a39781c71049126f36891cb5d0cad
+ms.openlocfilehash: 0bd995f6cf7d5ead46634ba42690f6eb967b4e3c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91646069"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96800517"
 ---
 # <a name="topology-filters"></a>拓扑筛选器
 
@@ -33,7 +32,7 @@ ms.locfileid: "91646069"
 ## <span id="topology_filters"></span><span id="TOPOLOGY_FILTERS"></span>
 
 
-*拓扑筛选器*表示音频适配器卡上电路的部分，用于处理在卡上管理的各种波形和 MIDI 流之间的交互。 此电路混合了捕获流的呈现流和多路复用。
+*拓扑筛选器* 表示音频适配器卡上电路的部分，用于处理在卡上管理的各种波形和 MIDI 流之间的交互。 此电路混合了捕获流的呈现流和多路复用。
 
 拓扑筛选器提供 *桥接* (参阅 [音频筛选器图](audio-filter-graphs.md)) ，它表示与外部设备的音频适配器物理连接。 这些连接通常携带模拟输出信号，可驱动扬声器和来自麦克风的模拟输入信号。 拓扑筛选器的桥接器还可能表示模拟 linein 和 lineout 插孔，甚至可能表示数字输入和输出连接器。
 
@@ -43,7 +42,7 @@ ms.locfileid: "91646069"
 
 -   它实例化拓扑微型端口驱动程序对象。
 
--   它通过使用 GUID 值**CLSID \_ PortTopology**调用[**PcNewPort**](/windows-hardware/drivers/ddi/portcls/nf-portcls-pcnewport)来实例化拓扑端口驱动程序对象。
+-   它通过使用 GUID 值 **CLSID \_ PortTopology** 调用 [**PcNewPort**](/windows-hardware/drivers/ddi/portcls/nf-portcls-pcnewport)来实例化拓扑端口驱动程序对象。
 
 -   它调用端口驱动程序的 [**IPort：： Init**](/windows-hardware/drivers/ddi/portcls/nf-portcls-iport-init) 方法将微型端口驱动程序绑定到端口驱动程序。
 
@@ -59,7 +58,7 @@ ms.locfileid: "91646069"
 
 与 wave、MIDI 或 DirectMusic 筛选器不同，拓扑筛选器不会实例化 pin。 因此，不能使用 pin 对象处理拓扑筛选器的 pin 属性的查询。 拓扑筛选器自行处理有关其 pin 的物理连接的所有查询。 有关详细信息，请参阅 [KSPROPSETID \_ Pin](../stream/kspropsetid-pin.md)。
 
-与其他类型的音频筛选器类似，拓扑筛选器使用 [**PCCONNECTION \_ 描述符**](/windows-hardware/drivers/ddi/portcls/ns-portcls-_pcconnection_descriptor) 结构的数组来描述其内部拓扑。 微型端口驱动程序在 [**PCFILTER \_ 描述符**](/windows-hardware/drivers/ddi/portcls/ns-portcls-pcfilter_descriptor) 结构中公开此数组，该数组是从 [**IMiniport：： GetDescription**](/windows-hardware/drivers/ddi/portcls/nf-portcls-iminiport-getdescription) 方法输出的。 数组将拓扑指定为拓扑筛选器节点和 pin 之间的连接列表 (参阅) 的 [节点和连接](nodes-and-connections.md) 。 [WDMAud 系统驱动程序](user-mode-wdm-audio-components.md#wdmaud_system_driver)将这些连接和节点转换为混音器 API 向应用程序公开的混合器线条和控件。 如 [音频筛选](audio-filters.md)器中所述，KS 筛选器上的输入插针映射到 SRC 混合器行，筛选器上的输出插针映射到 DST 混音器行。
+与其他类型的音频筛选器类似，拓扑筛选器使用 [**PCCONNECTION \_ 描述符**](/previous-versions/windows/hardware/drivers/ff537688(v=vs.85)) 结构的数组来描述其内部拓扑。 微型端口驱动程序在 [**PCFILTER \_ 描述符**](/windows-hardware/drivers/ddi/portcls/ns-portcls-pcfilter_descriptor) 结构中公开此数组，该数组是从 [**IMiniport：： GetDescription**](/windows-hardware/drivers/ddi/portcls/nf-portcls-iminiport-getdescription) 方法输出的。 数组将拓扑指定为拓扑筛选器节点和 pin 之间的连接列表 (参阅) 的 [节点和连接](nodes-and-connections.md) 。 [WDMAud 系统驱动程序](user-mode-wdm-audio-components.md#wdmaud_system_driver)将这些连接和节点转换为混音器 API 向应用程序公开的混合器线条和控件。 如 [音频筛选](audio-filters.md)器中所述，KS 筛选器上的输入插针映射到 SRC 混合器行，筛选器上的输出插针映射到 DST 混音器行。
 
 典型的音频适配器可以通过扬声器播放波形和 MIDI 文件，并且可以从麦克风和 MIDI 合成器捕获音频信号。 下面的代码示例包含 \_ 用于公开这些功能的拓扑筛选器的 PCCONNECTION 描述符数组：
 
@@ -114,7 +113,7 @@ ms.locfileid: "91646069"
     };
 ```
 
-前面的代码示例中的常量 [**PCFILTER \_ 节点**](/previous-versions/ff537695(v=vs.85)) 是 null 节点 ID，在头文件 Portcls 中定义。 有关如何使用此常量来区分某个节点上的逻辑 pin 的筛选器上的外部 pin 的说明，请参阅 [**PCCONNECTION \_ 描述符**](/windows-hardware/drivers/ddi/portcls/ns-portcls-_pcconnection_descriptor)。
+前面的代码示例中的常量 [**PCFILTER \_ 节点**](/previous-versions/ff537695(v=vs.85)) 是 null 节点 ID，在头文件 Portcls 中定义。 有关如何使用此常量来区分某个节点上的逻辑 pin 的筛选器上的外部 pin 的说明，请参阅 [**PCCONNECTION \_ 描述符**](/previous-versions/windows/hardware/drivers/ff537688(v=vs.85))。
 
 前面的代码示例中的每个 pin 名称都以 "SRC" 或 "DST" 结尾，具体取决于混音器 API 是否将 pin 映射到源或目标混音器行。 为避免混淆，请记住源和目标混音器行将分别映射到接收器 (输入) 和源 (输出) KS 筛选器 pin。 有关详细信息，请参阅 [音频筛选器](audio-filters.md)。
 

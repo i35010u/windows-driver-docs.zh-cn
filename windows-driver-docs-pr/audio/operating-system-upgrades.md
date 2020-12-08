@@ -1,7 +1,6 @@
 ---
 title: 操作系统升级
 description: 操作系统升级
-ms.assetid: f985967e-e6cf-431a-bb7e-7b6d8486709c
 keywords:
 - 音频适配器 WDK，操作系统升级
 - 适配器驱动程序 WDK 音频，操作系统升级
@@ -11,12 +10,12 @@ keywords:
 - 迁移设置 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 32cc7688da6b7c48e8bac8f4160c768753746faf
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 28fbac33ab98736817c99fbf1a0bacaa4b545571
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89208799"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96800973"
 ---
 # <a name="operating-system-upgrades"></a>操作系统升级
 

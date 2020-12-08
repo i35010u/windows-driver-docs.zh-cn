@@ -1,7 +1,6 @@
 ---
 title: 千兆以太网网络适配器的电源管理注意事项
 description: 千兆位以太网网络适配器的电源管理注意事项
-ms.assetid: f195d295-0a2a-4c44-a3b4-217dfad76826
 keywords:
 - 电源管理 WDK 网络，千兆以太网 Nic
 - 网络接口卡 WDK 网络，过渡电源状态
@@ -16,12 +15,12 @@ keywords:
 - 唤醒功能，WDK 网络，过渡电源状态
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c8f2a9c65b3178c899664c569b67c15003b85d9c
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 88c6ac13299eab423f7c6b0aaac3ed362c023288
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89212801"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801315"
 ---
 # <a name="power-management-considerations-for-gigabit-ethernet-network-adapters"></a>千兆位以太网网络适配器的电源管理注意事项
 

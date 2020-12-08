@@ -1,17 +1,16 @@
 ---
 title: KSPROPSETID \_ 合成
 description: KSPROPSETID \_ 合成
-ms.assetid: ff5efd85-0b4d-4625-b029-fecf325bcacb
 keywords:
 - KSPROPSETID_Synth
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b0081e74a9386cb20820f0ca2aff62913dcbf79e
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 4af1dffa6ff4c8fc18a6fa516c13401c6d5f44ee
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90101814"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801073"
 ---
 # <a name="kspropsetid_synth"></a>KSPROPSETID \_ 合成
 
@@ -225,7 +224,7 @@ KSPROPERTY \_ 合成 \_ LATENCYCLOCK get 属性请求应返回等于当前的主
 
 ### <a name="span-idusage_summary_tablespanspan-idusage_summary_tablespanspan-idusage_summary_tablespanusage-summary-table"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用情况摘要表
 
-KSPROPERTY \_ 合成 \_ PORTPARAMETERS 属性用于获取 DirectMusic *端口*的配置参数，它是用于发送或接收音乐数据的设备的 DirectMusic 术语。  (在 KS 术语中，DirectMusic 端口并不对应于 Dmu 端口驱动程序。 它对应于 DirectMusic 筛选器上的呈现或捕获 pin。 ) 
+KSPROPERTY \_ 合成 \_ PORTPARAMETERS 属性用于获取 DirectMusic *端口* 的配置参数，它是用于发送或接收音乐数据的设备的 DirectMusic 术语。  (在 KS 术语中，DirectMusic 端口并不对应于 Dmu 端口驱动程序。 它对应于 DirectMusic 筛选器上的呈现或捕获 pin。 ) 
 
 <table>
 <colgroup>

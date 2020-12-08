@@ -1,7 +1,6 @@
 ---
 title: ProcAmpControlQueryRange 方法
 description: 示例 DXVA \_ DeinterlaceContainerDeviceClass：:P rocampcontrolqueryrange 函数允许 VMR 查询驱动程序，以确定每个 ProcAmp 属性的最小值、最大值、步长大小和默认值。
-ms.assetid: 13fd5d4b-f753-4a2c-80e0-c9614d7ebd3d
 keywords:
 - ProcAmpControlQueryRange 方法显示设备
 - ProcAmpControlQueryRange 方法显示设备，DXVA_DeinterlaceContainerDeviceClass 接口
@@ -17,12 +16,12 @@ api_type:
 ms.date: 12/06/2018
 ms.localizationpriority: medium
 ms.custom: seodec18
-ms.openlocfilehash: 7f5c69c8668ff25fc7e3ad36c5e1d517bf2d5cb1
-ms.sourcegitcommit: f8619f20a0903dd64f8641a5266ecad6df5f1d57
+ms.openlocfilehash: 4fa18c4b948613f8390e61b3a210e6d296a9633a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91423872"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96799729"
 ---
 # <a name="dxva_deinterlacecontainerdeviceclassprocampcontrolqueryrange-method"></a>DXVA \_ DeinterlaceContainerDeviceClass：:P rocampcontrolqueryrange 方法
 
@@ -34,13 +33,13 @@ ms.locfileid: "91423872"
 
 ```cpp
 HRESULT ProcAmpControlQueryRange(
-  [in]  DWORD                   VideoProperty,
-  [in]  DXVA_VideoDes           *lpVideoDescription,
-  [out] DXVA_VideoPropertyRange *lpPropRange
+  [in]  DWORD                   VideoProperty,
+  [in]  DXVA_VideoDes           *lpVideoDescription,
+  [out] DXVA_VideoPropertyRange *lpPropRange
 );
 ```
 
-<a name="parameters"></a>parameters
+<a name="parameters"></a>参数
 ----------
 
 *VideoProperty* \[在中， \] 标识驱动程序应为其返回信息的 ProcAmp 控件属性。 下面是此参数的可能值。
@@ -52,8 +51,8 @@ HRESULT ProcAmpControlQueryRange(
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">值</th>
-<th align="left">说明</th>
+<th align="left">“值”</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -85,7 +84,7 @@ HRESULT ProcAmpControlQueryRange(
 <a name="return-value"></a>返回值
 ------------
 
-如果成功，则返回零 (S \_ 正常 \_) ; 否则返回一个错误代码 (例如，E \_ NOTIMPL) 。 有关错误代码的完整列表，请参阅*ddraw。*
+如果成功，则返回零 (S \_ 正常 \_) ; 否则返回一个错误代码 (例如，E \_ NOTIMPL) 。 有关错误代码的完整列表，请参阅 *ddraw。*
 
 <a name="remarks"></a>备注
 -------
@@ -94,7 +93,7 @@ HRESULT ProcAmpControlQueryRange(
 
 有关 ProcAmp 属性的详细信息，请参阅 [ProcAmp properties](./procamp-properties.md)。
 
-示例**ProcAmpControlQueryRange**函数直接映射到[**DD \_ MOTIONCOMPCALLBACKS**](/windows/win32/api/ddrawint/ns-ddrawint-dd_motioncompcallbacks)结构的**RenderMoComp**成员的调用。 **RenderMoComp**成员指向驱动程序提供的[**DdMoCompRender**](/windows/win32/api/ddrawint/nc-ddrawint-pdd_mocompcb_render)回调，该回调引用[**DD \_ RENDERMOCOMPDATA**](/windows/win32/api/ddrawint/ns-ddrawint-dd_rendermocompdata)结构。 \_按如下所示填充 DD RENDERMOCOMPDATA 结构。
+示例 **ProcAmpControlQueryRange** 函数直接映射到 [**DD \_ MOTIONCOMPCALLBACKS**](/windows/win32/api/ddrawint/ns-ddrawint-dd_motioncompcallbacks)结构的 **RenderMoComp** 成员的调用。 **RenderMoComp** 成员指向驱动程序提供的 [**DdMoCompRender**](/windows/win32/api/ddrawint/nc-ddrawint-pdd_mocompcb_render)回调，该回调引用 [**DD \_ RENDERMOCOMPDATA**](/windows/win32/api/ddrawint/ns-ddrawint-dd_rendermocompdata)结构。 \_按如下所示填充 DD RENDERMOCOMPDATA 结构。
 
 <table>
 <colgroup>
@@ -104,7 +103,7 @@ HRESULT ProcAmpControlQueryRange(
 <thead>
 <tr class="header">
 <th align="left">成员</th>
-<th align="left">Value</th>
+<th align="left">“值”</th>
 </tr>
 </thead>
 <tbody>
@@ -194,7 +193,7 @@ DXVA_DeinterlaceContainerDeviceClass::ProcAmpControlQueryRange(
 <tbody>
 <tr class="odd">
 <td align="left"><p>目标平台</p></td>
-<td align="left">桌面型</td>
+<td align="left">台式机</td>
 </tr>
 <tr class="even">
 <td align="left"><p>标头</p></td>

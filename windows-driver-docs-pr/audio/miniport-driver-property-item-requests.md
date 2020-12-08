@@ -1,18 +1,17 @@
 ---
 title: 微型端口驱动程序属性项请求
 description: 微型端口驱动程序属性项请求
-ms.assetid: 37baad27-539b-46ab-b300-175bc0c2b992
 keywords:
 - 属性项请求 WDK DirectMusic
 - 微型端口驱动程序 WDK 音频，属性项请求
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: adc7d851ce3e5bd3befe1ad008b4b13e94e4fdd1
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: b2d119831fd13c9fc82ad2b589b7caf32f6af788
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89211371"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801009"
 ---
 # <a name="miniport-driver-property-item-requests"></a>微型端口驱动程序属性项请求
 
@@ -28,7 +27,7 @@ KSPROPERTY 结构包含以下内容：
 
 -   指定集 (的预定义 GUID) 例如 [KSPROPSETID \_ 合成 \_ dl](./kspropsetid-synth-dls.md) 。
 
--   指定集合中的属性项的项 ID (例如 [**KSPROPERTY \_ 合成 \_ DLS \_ **](/previous-versions/ff537396(v=vs.85))) 。
+-   指定集合中的属性项的项 ID (例如 [**KSPROPERTY \_ 合成 \_ DLS \_**](/previous-versions/ff537396(v=vs.85))) 。
 
 -   指定所请求操作的标志。
 
@@ -41,7 +40,7 @@ KSPROPERTY 的 **flags** 成员可能只包含以下标志之一来指定微型�
 设置给定属性项的值。
 
 <span id="KSPROPERTY_TYPE_BASICSUPPORT"></span><span id="ksproperty_type_basicsupport"></span>KSPROPERTY \_ 类型 \_ BASICSUPPORT  
-确定属性集可用的支持类型。 * \* PvPropertyData*中返回的数据是一个 DWORD，其中包含一个或两个 KSPROPERTY \_ 类型 \_ GET 和 KSPROPERTY \_ 类型 \_ 集，指示可能的操作。
+确定属性集可用的支持类型。 *\* PvPropertyData* 中返回的数据是一个 DWORD，其中包含一个或两个 KSPROPERTY \_ 类型 \_ GET 和 KSPROPERTY \_ 类型 \_ 集，指示可能的操作。
 
 属性项请求的第二部分是实例数据，这是一个可用于向微型端口驱动程序传递数据的缓冲区。 使用此缓冲区的方式取决于请求是集还是 GET：
 

@@ -1,17 +1,16 @@
 ---
 title: MPEG2_A
 description: MPEG2_A
-ms.assetid: 4f9e2aad-4072-4a49-87df-dfc6b4bf5f56
 keywords:
 - MPEG2_A 受限配置文件 WDK DirectX VA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b4ae101a74bbc611fc6681ef986dedde833487bd
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 249f9fd73395c2ba9c1643424ea8eb7ad1875736
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106566"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96799665"
 ---
 # <a name="mpeg2_a"></a>MPEG2 \_ A
 
@@ -25,7 +24,7 @@ MPEG2 \_ ：配置文件由下列限制集定义：
 
 ### <a name="span-idrestrictions_on_dxva_connectmodespanspan-idrestrictions_on_dxva_connectmodespanspan-idrestrictions_on_dxva_connectmodespanrestrictions-on-dxva_connectmode"></a><span id="Restrictions_on_DXVA_ConnectMode"></span><span id="restrictions_on_dxva_connectmode"></span><span id="RESTRICTIONS_ON_DXVA_CONNECTMODE"></span>DXVA ConnectMode 的限制 \_
 
-当[**DXVA \_ ConfigPictureDecode**](/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_configpicturedecode)结构的**dwFunction**成员中定义的*bDXVA \_ Func*变量等于1时，适用于[**DXVA \_ ConnectMode**](/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_connectmode)结构的以下限制。
+当 [**DXVA \_ ConfigPictureDecode**](/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_configpicturedecode)结构的 **dwFunction** 成员中定义的 *bDXVA \_ Func* 变量等于1时，适用于 [**DXVA \_ ConnectMode**](/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_connectmode)结构的以下限制。
 
 <table>
 <colgroup>
@@ -35,7 +34,7 @@ MPEG2 \_ ：配置文件由下列限制集定义：
 <thead>
 <tr class="header">
 <th align="left">结构成员</th>
-<th align="left">值</th>
+<th align="left">“值”</th>
 </tr>
 </thead>
 <tbody>
@@ -58,7 +57,7 @@ MPEG2 \_ ：配置文件由下列限制集定义：
 <thead>
 <tr class="header">
 <th align="left">结构成员</th>
-<th align="left">值</th>
+<th align="left">“值”</th>
 </tr>
 </thead>
 <tbody>
@@ -145,7 +144,7 @@ MPEG2 \_ ：配置文件由下列限制集定义：
 <thead>
 <tr class="header">
 <th align="left">wMBtype 位</th>
-<th align="left">值</th>
+<th align="left">“值”</th>
 </tr>
 </thead>
 <tbody>
@@ -166,5 +165,5 @@ MPEG2 \_ ：配置文件由下列限制集定义：
 
 任何位流缓冲区的内容必须包含 MPEG-2 主要配置文件视频格式的数据。
 
-使用反量化矩阵时， [**DXVA \_ QmatrixData**](/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_qmatrixdata)的**bNewQmatrix**成员等于零，i = 2 和3。
+使用反量化矩阵时， [**DXVA \_ QmatrixData**](/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_qmatrixdata)的 **bNewQmatrix** 成员等于零，i = 2 和3。
 

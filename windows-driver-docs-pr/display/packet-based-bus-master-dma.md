@@ -1,7 +1,6 @@
 ---
 title: 基于数据包的总线主控 DMA
 description: 基于数据包的总线主控 DMA
-ms.assetid: f94b9ca9-6e29-4801-a092-30af19345f6d
 keywords:
 - 总线主控 DMA WDK 音频视频微型端口，基于数据包
 - DMA 总线-主 WDK 视频微型端口，基于数据包
@@ -9,12 +8,12 @@ keywords:
 - VideoPortStartDma
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3b6580185aa34e466bf68bb5f6187672b51fe42c
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 12e333fbbc918a5b1092b58681d056452f1ed966
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89064700"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96799641"
 ---
 # <a name="packet-based-bus-master-dma"></a>基于数据包的总线主控 DMA
 

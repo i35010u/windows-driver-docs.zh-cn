@@ -1,18 +1,17 @@
 ---
 title: 注册表项对象
 description: 注册表项对象
-ms.assetid: c666f0cc-5a8a-4df8-9c65-08e3b044a08f
 keywords:
 - helper 对象，WDK 音频，注册表项对象
 - 注册表项对象 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 32cb055fcf3ae581865d671eacb4dd8785cb683f
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 0608a30da41ee33f97bfdf2e803d67ef6affd20b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102300"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96800753"
 ---
 # <a name="registry-key-objects"></a>注册表项对象
 
@@ -38,7 +37,7 @@ PortCls 系统驱动程序实现 [IRegistryKey](/windows-hardware/drivers/ddi/po
 <thead>
 <tr class="header">
 <th align="left">KEY_INFORMATION_CLASS 值</th>
-<th align="left">键查询结构</th>
+<th align="left">Key-Query 结构</th>
 </tr>
 </thead>
 <tbody>

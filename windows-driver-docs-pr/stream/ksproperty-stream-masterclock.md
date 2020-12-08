@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ 流 \_ MASTERCLOCK
 description: KSPROPERTY \_ STREAM \_ MASTERCLOCK 属性是一个可选属性，如果 pin 使用或生成可用于同步的主时钟，则应该实现该属性。
-ms.assetid: b8fb4d7b-e2e3-498c-9f76-4075d3ae0cb2
 keywords:
 - KSPROPERTY_STREAM_MASTERCLOCK 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2f08345068708049a66cc7d597ce11ba0ea0892c
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 9154ae06ced369767c142690afcc2c83af0d840e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105264"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801227"
 ---
 # <a name="ksproperty_stream_masterclock"></a>KSPROPERTY \_ 流 \_ MASTERCLOCK
 
@@ -90,7 +89,7 @@ KSPROPERTY \_ STREAM \_ MASTERCLOCK 属性是一个可选属性，如果 pin 使
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSPROPERTY**](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)

@@ -1,17 +1,16 @@
 ---
 title: NDIS_STATUS_WAN_CO_MTULINKPARAMS
 description: NDIS_STATUS_WAN_CO_MTULINKPARAMS 状态表明对于在 CoNDIS 微型端口适配器上处于活动状态的特定 VC，链接速度和发送窗口参数已经发生了更改。
-ms.assetid: 1ba67087-08aa-4359-9884-e47bf634fda5
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 NDIS_STATUS_WAN_CO_MTULINKPARAMS 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 54d6b5c01a5f17c7b12f405b3821593894fcfc07
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 4139968109fbb354734ce53b039175fa71343aaf
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89211727"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801433"
 ---
 # <a name="ndis_status_wan_co_mtulinkparams"></a>NDIS \_ 状态 \_ WAN \_ CO \_ MTULINKPARAMS
 
@@ -21,7 +20,7 @@ NDIS \_ 状态 \_ WAN \_ CO \_ MTULINKPARAMS 状态指示对于在 CoNDIS 微型
 <a name="remarks"></a>备注
 -------
 
-[**NDIS \_ 状态 \_ 指示**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_status_indication)结构的**StatusBuffer**成员包含指向[**WAN \_ CO \_ MTULINKPARAMS**](/previous-versions/windows/hardware/network/ff565821(v=vs.85))结构的指针。 WAN \_ CO \_ MTULINKPARAMS 结构描述 VC 的新参数。
+[**NDIS \_ 状态 \_ 指示**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_status_indication)结构的 **StatusBuffer** 成员包含指向 [**WAN \_ CO \_ MTULINKPARAMS**](/previous-versions/windows/hardware/network/ff565821(v=vs.85))结构的指针。 WAN \_ CO \_ MTULINKPARAMS 结构描述 VC 的新参数。
 
 有关 NDIS \_ 状态 \_ WAN CO MTULINKPARAMS 的详细信息 \_ \_ ，请参阅 [指示 CoNDIS Wan 微型端口驱动程序状态](./indicating-condis-wan-miniport-driver-status.md)。 有关 CoNDIS WAN 接口的详细信息，请参阅 [实现 CONDIS Wan 微型端口驱动程序](./implementing-condis-wan-miniport-drivers.md)。
 
@@ -45,7 +44,7 @@ NDIS \_ 状态 \_ WAN \_ CO \_ MTULINKPARAMS 状态指示对于在 CoNDIS 微型
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**NDIS \_ 状态 \_ 指示**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_status_indication)

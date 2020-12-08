@@ -1,18 +1,17 @@
 ---
 title: 呈现和捕获 Wave 内容
 description: 呈现和捕获 Wave 内容
-ms.assetid: 575499a9-e572-4ccc-bcee-8f2843310b05
 keywords:
-- 批呈现 WDK 音频
-- 批捕获 WDK 音频
+- 波形渲染 WDK 音频
+- 波形捕获 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7d4466631153a102d59b373eebc2cba6984a7c59
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: bf9cd00075bd6f753cd3655e266e1a0665a679e7
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328727"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96800759"
 ---
 # <a name="rendering-and-capturing-wave-content"></a>呈现和捕获 Wave 内容
 
@@ -20,11 +19,11 @@ ms.locfileid: "63328727"
 ## <span id="rendering_and_capturing_wave_content"></span><span id="RENDERING_AND_CAPTURING_WAVE_CONTENT"></span>
 
 
-下图显示了 Microsoft Windows 驱动程序模型 (WDM) 的呈现和捕获批内容的音频组件的配置。
+下图显示了 Microsoft Windows 驱动模型 (WDM) 音频组件的配置，这些组件可呈现和捕获波内容。
 
-![说明呈现和捕获批内容的关系图](images/wave.png)
+![演示如何呈现和捕获波形内容的关系图](images/wave.png)
 
-请参阅以下有关 WDM 音频组件的说明：
+有关 WDM 音频组件的说明，请参阅以下内容：
 
 [DirectSound 系统组件](user-mode-wdm-audio-components.md#directsound_system_component)
 
@@ -32,23 +31,23 @@ ms.locfileid: "63328727"
 
 [SBEmul 系统驱动程序](kernel-mode-wdm-audio-components.md#sbemul_system_driver)
 
-[SysAudio System Driver](kernel-mode-wdm-audio-components.md#sysaudio_system_driver)
+[SysAudio 系统驱动程序](kernel-mode-wdm-audio-components.md#sysaudio_system_driver)
 
 [KMixer 系统驱动程序](kernel-mode-wdm-audio-components.md#kmixer_system_driver)
 
 [Redbook 系统驱动程序](kernel-mode-wdm-audio-components.md#redbook_system_driver)
 
-[拆分器系统驱动程序](kernel-mode-wdm-audio-components.md#splitter_system_driver)
+[拆分系统驱动程序](kernel-mode-wdm-audio-components.md#splitter_system_driver)
 
 [端口类适配器驱动程序和 PortCls 系统驱动程序](kernel-mode-wdm-audio-components.md#port_class_adapter_driver_and_portcls_system_driver)
 
 [USBAudio 类系统驱动程序](kernel-mode-wdm-audio-components.md#usbaudio_class_system_driver)
 
-请参阅以下有关配置的端口类适配器驱动程序和 USBAudio 驱动程序的详细信息：
+有关端口类适配器驱动程序和 USBAudio 驱动程序的配置的详细信息，请参阅以下内容：
 
-[呈现，使用端口类音频适配器捕获音频内容](rendering-and-capturing-audio-content-by-using-a-port-class-audio-adap.md)
+[使用端口类音频适配器呈现和捕获音频内容](rendering-and-capturing-audio-content-by-using-a-port-class-audio-adap.md)
 
-[呈现和捕获音频内容使用 USBAudio 驱动程序](rendering-and-capturing-audio-content-by-using-the-usbaudio-driver.md)
+[使用 USBAudio 驱动程序呈现和捕获音频内容](rendering-and-capturing-audio-content-by-using-the-usbaudio-driver.md)
 
  
 

@@ -1,7 +1,6 @@
 ---
 title: 微型端口接口
 description: 微型端口接口
-ms.assetid: 50b92adc-a63c-4242-9ec9-4d97151f0f91
 keywords:
 - 音频微型端口驱动程序 WDK，接口
 - 微型端口驱动程序 WDK 音频，接口
@@ -13,12 +12,12 @@ keywords:
 - 流接口 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 697eea92eed4b7c212716e684740c3a8e951950e
-ms.sourcegitcommit: 372464be981a39781c71049126f36891cb5d0cad
+ms.openlocfilehash: cac5273e2672a670ac84bbff7a4cc54abf6e15d9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91646053"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801003"
 ---
 # <a name="miniport-interfaces"></a>微型端口接口
 

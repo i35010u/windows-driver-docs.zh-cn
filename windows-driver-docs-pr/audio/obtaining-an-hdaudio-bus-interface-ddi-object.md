@@ -1,17 +1,16 @@
 ---
 title: 获取 HDAUDIO_BUS_INTERFACE DDI 对象
 description: 获取 HDAUDIO_BUS_INTERFACE DDI 对象
-ms.assetid: 78667254-62a6-41fe-af36-43dbdea63aa8
 keywords:
 - HDAUDIO_BUS_INTERFACE 结构
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c62656e8f651c90a6aae494751ea520a300513ac
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: efe75bda4f04141d1e8c86209c8b75e4109296d6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90101782"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96800979"
 ---
 # <a name="obtaining-an-hdaudio_bus_interface-ddi-object"></a>获取 HDAUDIO \_ 总线 \_ 接口 DDI 对象
 
@@ -26,7 +25,7 @@ ms.locfileid: "90101782"
 <thead>
 <tr class="header">
 <th align="left">参数</th>
-<th align="left">值</th>
+<th align="left">“值”</th>
 </tr>
 </thead>
 <tbody>
@@ -55,7 +54,7 @@ ms.locfileid: "90101782"
 
  
 
-函数驱动程序为 [**HDAUDIO \_ 总线 \_ 接口**](/windows-hardware/drivers/ddi/hdaudio/ns-hdaudio-_hdaudio_bus_interface) 结构分配存储，并在 IOCTL 中包含指向此结构的指针。 在上表中，指向 **HDAUDIO \_ 总线 \_ 接口** 结构的指针被强制转换为类型 **PINTERFACE**，这是指向类型 [**接口**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_interface)的结构的指针。 **HDAUDIO \_ 总线 \_ 接口**的前五个成员的名称和类型与**接口**的五个成员的名称和类型匹配。 **HDAUDIO \_总线 \_ 接口** 包含其他成员，这些成员是指向 DDI 例程的函数指针。 为了响应从函数驱动程序接收 IOCTL，HD 音频总线驱动程序将填充整个 **HDAUDIO \_ 总线 \_ 接口** 结构。
+函数驱动程序为 [**HDAUDIO \_ 总线 \_ 接口**](/windows-hardware/drivers/ddi/hdaudio/ns-hdaudio-_hdaudio_bus_interface) 结构分配存储，并在 IOCTL 中包含指向此结构的指针。 在上表中，指向 **HDAUDIO \_ 总线 \_ 接口** 结构的指针被强制转换为类型 **PINTERFACE**，这是指向类型 [**接口**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_interface)的结构的指针。 **HDAUDIO \_ 总线 \_ 接口** 的前五个成员的名称和类型与 **接口** 的五个成员的名称和类型匹配。 **HDAUDIO \_总线 \_ 接口** 包含其他成员，这些成员是指向 DDI 例程的函数指针。 为了响应从函数驱动程序接收 IOCTL，HD 音频总线驱动程序将填充整个 **HDAUDIO \_ 总线 \_ 接口** 结构。
 
 下表显示了高清音频总线驱动程序写入到 [**HDAUDIO \_ 总线 \_ 接口**](/windows-hardware/drivers/ddi/hdaudio/ns-hdaudio-_hdaudio_bus_interface) 结构的前五个成员的值。
 
@@ -67,7 +66,7 @@ ms.locfileid: "90101782"
 <thead>
 <tr class="header">
 <th align="left">成员</th>
-<th align="left">Value</th>
+<th align="left">“值”</th>
 </tr>
 </thead>
 <tbody>

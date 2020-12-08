@@ -1,7 +1,6 @@
 ---
 title: 操作系统提供的 PortCls 支持
 description: 操作系统提供的 PortCls 支持
-ms.assetid: 87291410-41fa-49d2-a1e2-6d5d9b90deaf
 keywords:
 - 音频微型端口驱动程序 WDK，端口类
 - 微型端口驱动程序 WDK 音频，端口类
@@ -18,12 +17,12 @@ keywords:
 - 预提取偏移
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2465e99c0e8b4d2610c4b456b933f758b2cac8d5
-ms.sourcegitcommit: 372464be981a39781c71049126f36891cb5d0cad
+ms.openlocfilehash: 98b82c2e4953398558924b269693fbb5b0b46b85
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91646039"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96800799"
 ---
 # <a name="portcls-support-by-operating-system"></a>操作系统提供的 PortCls 支持
 

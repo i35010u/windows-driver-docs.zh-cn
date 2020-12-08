@@ -1,7 +1,6 @@
 ---
 title: 指定音频适配器的版本信息
 description: 指定音频适配器的版本信息
-ms.assetid: 2d1fb5e7-84fe-451f-b53f-bf6017ae94ad
 keywords:
 - 音频适配器 WDK，版本信息
 - 适配器驱动程序 WDK 音频，版本信息
@@ -9,12 +8,12 @@ keywords:
 - 版本 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1811d2f12e0fbe758179b4fa9c77713bb752b849
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: fa87339601e59c3f117d7bfeb34d1f8751ddc3a5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89210385"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96800625"
 ---
 # <a name="specifying-version-information-for-an-audio-adapter"></a>指定音频适配器的版本信息
 

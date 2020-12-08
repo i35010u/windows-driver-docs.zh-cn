@@ -1,15 +1,14 @@
 ---
 title: 按操作系统划分的微型端口驱动程序类型
 description: 按操作系统划分的微型端口驱动程序类型
-ms.assetid: 6ab0e4e4-5118-4df5-ba4e-7da66ce5880d
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 20895e85c14ba771131e098bb1e1e6eb98c17377
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 6576cd0aa0fee944c4d6d9e05724d359cae8f2c4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89211369"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801007"
 ---
 # <a name="miniport-driver-types-by-operating-system"></a>按操作系统划分的微型端口驱动程序类型
 
@@ -81,7 +80,7 @@ PortCls 系统驱动程序 ( # A0) 提供多个内置的端口驱动程序来支
 
 每个端口驱动程序都实现一个接口，该接口提供给微型端口驱动程序。 若要与端口驱动程序通信，微型端口驱动程序还必须实现接口。 有关微型端口驱动程序实现的接口的详细信息，请参阅 [微型端口接口](miniport-interfaces.md)。
 
-**注意**   为 Windows Vista 和更高版本的操作系统开发音频驱动程序时，请注意以下事项：
+**注意**   为 Windows Vista 和更高版本的操作系统开发音频驱动程序时，请注意以下事项：
 -   不能为 WaveCyclic 或基于 WavePci 的音频驱动程序获得徽标资格。
 
 -   不支持 Dmu 的内核模式软件合成程序。 但是，提供对硬件 MIDI i/o 的支持。

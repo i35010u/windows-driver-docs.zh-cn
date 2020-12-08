@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ BDA \_ CA \_ 智能 \_ 卡 \_ 状态
 description: 客户端使用 KSPROPERTY \_ BDA \_ CA \_ 智能 \_ 卡 \_ 状态来确定与 ECM 映射节点关联的智能卡读卡器的状态。
-ms.assetid: a53cea17-0463-4909-839b-6e8ad67dac82
 keywords:
 - KSPROPERTY_BDA_CA_SMART_CARD_STATUS 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3a876ef24b2763907db53980d894b240dea39a78
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 28d4c75c19fbab6814f43b5410312670b44c6d43
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89188151"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801233"
 ---
 # <a name="ksproperty_bda_ca_smart_card_status"></a>KSPROPERTY \_ BDA \_ CA \_ 智能 \_ 卡 \_ 状态
 
@@ -82,7 +81,7 @@ ms.locfileid: "89188151"
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSEVENT \_ BDA \_ CA \_ 智能 \_ 卡 \_ 状态 \_ 已更改**](ksevent-bda-ca-smart-card-status-changed.md)

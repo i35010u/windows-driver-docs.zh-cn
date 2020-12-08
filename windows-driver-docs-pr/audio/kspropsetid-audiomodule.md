@@ -1,22 +1,21 @@
 ---
 title: KSPROPSETID \_ AudioModule
 description: '\_音频驱动程序使用 KSPROPSETID AudioModule 属性集来检索音频模块列表。'
-ms.assetid: 6F167E5E-CA11-45F3-BF21-6B9A3F90DB9F
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c15321545252a49f41793b03c08c7037ec5bf7b6
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 6e7a95002e9e3580936d8cbd9cd8706213a15fd7
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89211469"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801112"
 ---
 # <a name="kspropsetid_audiomodule"></a>KSPROPSETID \_ AudioModule
 
 
 音频驱动程序使用 **KSPROPSETID \_ AudioModule** 属性集来检索音频模块列表。
 
-*Ksmedia*头文件定义**KSPROPSETID \_ AudioModule**属性集，如下所示：
+*Ksmedia* 头文件定义 **KSPROPSETID \_ AudioModule** 属性集，如下所示：
 
 ``` syntax
 #define STATIC_KSPROPSETID_AudioModule \
@@ -25,7 +24,7 @@ DEFINE_GUIDSTRUCT("C034FDB0-FF75-47C8-AA3C-EE46716B50C6", KSPROPSETID_AudioModul
 #define KSPROPSETID_AudioModule DEFINE_GUIDNAMED(KSPROPSETID_AudioModule)
 ```
 
-**KSPROPSETID \_ AudioModule**属性集包含以下 KS 属性。
+**KSPROPSETID \_ AudioModule** 属性集包含以下 KS 属性。
 
 [**KSPROPERTY \_ AUDIOMODULE \_ 描述符**](ksproperty-audiomodule-descriptors.md)
 

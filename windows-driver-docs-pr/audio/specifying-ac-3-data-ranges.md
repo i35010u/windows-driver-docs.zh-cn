@@ -1,7 +1,6 @@
 ---
 title: 指定 AC-3 数据范围
 description: 指定 AC-3 数据范围
-ms.assetid: 87d59554-43fa-4d61-9829-c38691d0a525
 keywords:
 - S/PDIF 传递 WDK 音频
 - AC-3-S/PDIF 格式 WDK 音频
@@ -14,12 +13,12 @@ keywords:
 - 非 PCM 音频格式 WDK、AC 3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 148d6c89ae4837fbaac0bc4977e72c67d29df460
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: decdfd33fd845fa2744b4b09b66c985e241fe860
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89210397"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96800637"
 ---
 # <a name="specifying-ac-3-data-ranges"></a>指定 AC-3 数据范围
 
@@ -93,7 +92,7 @@ static KSDATARANGE_AUDIO PinDataRangesAC3Stream[] =
 
 对于微型端口驱动程序使用 KSDATAFORMAT 说明符 WAVEFORMATEX 指定的每个数据范围 \_ \_ ，端口驱动程序会自动添加另一个使用 KSDATAFORMAT 说明符 DSOUND 指定的数据范围， \_ 但与第一个数据范围 \_ 完全相同。  (可以通过使用 [KsStudio 实用程序](ksstudio-utility.md) 查看数据范围的列表来进行验证。 ) 在 windows 2000 和 Windows 98 中，端口驱动程序 \_ \_ 只为 KSDATAFORMAT 子类型 PCM 格式创建 KSDATAFORMAT 说明符 DSOUND 版本的数据范围， \_ 因为 DirectSound \_ 8 之前的 DirectSound 版本仅支持 PCM。 此限制在 Windows XP 和更高版本以及 Windows Me 中被删除。 但是，它不会在 Windows 2000 SP2 或 Windows 98 SE 的热修复包中删除，并且在这些 Windows 版本上支持 DirectSound 上的非 PCM，驱动程序应为每个非 PCM 数据格式显式列出两个数据范围-一个使用 KSDATAFORMAT \_ 说明符 \_ WAVEFORMATEX，另一个使用 KSDATAFORMAT \_ 说明符 \_ DSOUND。
 
-正如通过 [非 PCM 流的 S/PDIF 直通传输](s-pdif-pass-through-transmission-of-non-pcm-streams.md)中所述，两个 AC-3 个/PDIF 数据范围均使用以下 PCM 参数：两个通道，每个通道16位。
+如 [s/PDIF Pass-Through 传输非 PCM 流](s-pdif-pass-through-transmission-of-non-pcm-streams.md)中所述，两个 AC-3/PDIF 数据范围均使用以下 PCM 参数：2个通道，每个通道16位。
 
  
 

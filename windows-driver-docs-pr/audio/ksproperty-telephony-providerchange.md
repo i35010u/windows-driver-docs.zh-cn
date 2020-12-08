@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ 电话服务 \_ PROVIDERCHANGE
 description: KSPROPERTY \_ 电话服务 \_ PROVIDERCHANGE 属性用于与音频驱动程序通信，该驱动程序) 在开始或结束时 (SRVCC 的无线电语音呼叫连续性。
-ms.assetid: 9CEDAFE7-014F-4670-958D-6D3687D2D24A
 keywords:
 - KSPROPERTY_TELEPHONY_PROVIDERCHANGE 音频设备
 topic_type:
@@ -14,17 +13,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 61e7180f49ed19e9aa213ea020fb59ba754da213
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: d1ec7c144bb8e1eb09cd1a44ae01b5be1101ff24
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90101838"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801137"
 ---
 # <a name="ksproperty_telephony_providerchange"></a>KSPROPERTY \_ 电话服务 \_ PROVIDERCHANGE
 
 
-**KSPROPERTY \_ 电话服务 \_ PROVIDERCHANGE**属性用于与音频驱动程序通信，该驱动程序) 在开始或结束时 (SRVCC 的无线电语音呼叫连续性。
+**KSPROPERTY \_ 电话服务 \_ PROVIDERCHANGE** 属性用于与音频驱动程序通信，该驱动程序) 在开始或结束时 (SRVCC 的无线电语音呼叫连续性。
 
 ### <a name="span-idusage_summary_tablespanspan-idusage_summary_tablespanspan-idusage_summary_tablespanusage-summary-table"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用情况摘要表
 
@@ -62,14 +61,14 @@ ms.locfileid: "90101838"
 
 ### <a name="span-idreturn_valuespanspan-idreturn_valuespanspan-idreturn_valuespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>返回值
 
-**KSPROPERTY \_ 电话服务 \_ PROVIDERCHANGE**属性请求返回状态 " \_ 成功" 以指示它已成功完成。 否则，请求将返回相应的错误状态代码。
+**KSPROPERTY \_ 电话服务 \_ PROVIDERCHANGE** 属性请求返回状态 " \_ 成功" 以指示它已成功完成。 否则，请求将返回相应的错误状态代码。
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 音频堆栈使用 [**KSTELEPHONY \_ PROVIDERCHANGE**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-_tagkstelephony_providerchange) 属性指示 SRVCC 到音频驱动程序的开始和结束。 此属性将调用类型 (LTE 数据包交换、WLAN 数据包交换或线路交换) ，以及提供程序更改操作 (开始、结束或取消) 到驱动程序。 当提供程序操作用于结束 SRVCC 时，调用类型将被忽略。
 
-当提供程序更改操作为 **电话服务 \_ PROVIDERCHANGEOP \_ 开始**时，驱动程序会将该提供程序的调用状态更新为 **电话服务 \_ CALLSTATE \_ PROVIDERTRANSITION**。 当提供程序更改操作为 **电话服务 \_ PROVIDERCHANGEOP \_ 结束**时，驱动程序会将该提供程序的调用状态更新为 ** \_ \_ 启用电话服务 CALLSTATE**。 在 SRVCC 期间，驱动程序必须继续使用关联的 [**KSNODETYPE \_ 电话 \_ 双向**](ksnodetype-telephony-bidi.md) 终结点，并且不会更改此终结点的插孔状态。 当提供程序更改操作为 **电话服务 \_ PROVIDERCHANGEOP \_ CANCEL**时，SRVCC 将被取消，并且驱动程序应还原为预 SRVCC 调用。
+当提供程序更改操作为 **电话服务 \_ PROVIDERCHANGEOP \_ 开始** 时，驱动程序会将该提供程序的调用状态更新为 **电话服务 \_ CALLSTATE \_ PROVIDERTRANSITION**。 当提供程序更改操作为 **电话服务 \_ PROVIDERCHANGEOP \_ 结束** 时，驱动程序会将该提供程序的调用状态更新为 **\_ \_ 启用电话服务 CALLSTATE**。 在 SRVCC 期间，驱动程序必须继续使用关联的 [**KSNODETYPE \_ 电话 \_ 双向**](ksnodetype-telephony-bidi.md) 终结点，并且不会更改此终结点的插孔状态。 当提供程序更改操作为 **电话服务 \_ PROVIDERCHANGEOP \_ CANCEL** 时，SRVCC 将被取消，并且驱动程序应还原为预 SRVCC 调用。
 
 <a name="requirements"></a>要求
 ------------

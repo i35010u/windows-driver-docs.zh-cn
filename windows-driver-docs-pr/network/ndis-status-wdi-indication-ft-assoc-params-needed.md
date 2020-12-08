@@ -1,17 +1,16 @@
 ---
 title: NDIS_STATUS_WDI_INDICATION_FT_ASSOC_PARAMS_NEEDED
-description: 微型端口驱动程序使用 NDIS_STATUS_WDI_INDICATION_FT_ASSOC_PARAMS_NEEDED 来请求 802.11 r 漫游的参数。ObjectPort .
-ms.assetid: AB745908-AA7B-416A-9C97-B376293F3DEE
+description: 微型端口驱动程序使用 NDIS_STATUS_WDI_INDICATION_FT_ASSOC_PARAMS_NEEDED 来请求 802.11 r 漫游的参数。ObjectPort .
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 NDIS_STATUS_WDI_INDICATION_FT_ASSOC_PARAMS_NEEDED 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: be5fade433ae6d43843a4a628cf666a330df1e6b
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: c4224d277d14b5f9741ccbcd3dc74eabbc240e6a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89212357"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801393"
 ---
 # <a name="ndis_status_wdi_indication_ft_assoc_params_needed"></a>NDIS \_ 状态 \_ WDI \_ 指示 \_ \_ 需要 FT ASSOC \_ 参数 \_
 
@@ -54,7 +53,7 @@ ms.locfileid: "89212357"
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
-<td><p>Windows Server 2016</p></td>
+<td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
 <td><p>标头</p></td>
@@ -63,7 +62,7 @@ ms.locfileid: "89212357"
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [OID \_ WDI \_ 任务 \_ 漫游](oid-wdi-task-roam.md)

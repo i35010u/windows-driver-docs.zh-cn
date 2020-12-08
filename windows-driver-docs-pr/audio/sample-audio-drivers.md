@@ -1,7 +1,6 @@
 ---
 title: 示例音频驱动程序
 description: 示例音频驱动程序
-ms.assetid: bea50e70-e1ec-4a66-9bfc-8bd644b07ce7
 keywords:
 - WDM 音频驱动程序 WDK，示例驱动程序
 - 音频驱动程序 WDK，示例驱动程序
@@ -16,12 +15,12 @@ keywords:
 - Stdunk 示例音频驱动程序 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 62883d2e0a7f7b89eb744dc3e06260dd560c927f
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: cc8f029914c9053bbe8016f145dd3cfff262d3f1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89210411"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96800687"
 ---
 # <a name="sample-audio-drivers"></a>示例音频驱动程序
 
@@ -29,31 +28,31 @@ ms.locfileid: "89210411"
 ## <a name="span-idsysvad_audio_samplespanspan-idsysvad_audio_samplespanspan-idsysvad_audio_samplespansysvad-audio-sample"></a><span id="SYSVAD_Audio_Sample"></span><span id="sysvad_audio_sample"></span><span id="SYSVAD_AUDIO_SAMPLE"></span>SYSVAD 音频示例
 
 
-**系统虚拟音频设备驱动程序示例 (SYSVAD) **
+**系统虚拟音频设备驱动程序示例 (SYSVAD)**
 
 SYSVAD 驱动程序重点介绍了 WDM 音频体系结构的许多重要功能。 这些是使用源代码的工作实现，它们可作为为专有音频设备编写自定义驱动程序的起点。
 
-*Sysvad*解决方案文件包含以下项目。
+*Sysvad* 解决方案文件包含以下项目。
 
 -   **TabletAudioSample**
 
-    *TabletAudioSample*项目演示了如何开发公开支持多个音频设备的 WDM 音频驱动程序。 其中某些音频设备嵌入 (扬声器、麦克风阵列) 在系统中，而其他音频设备可插 (耳机扬声器/麦克风、蓝牙耳机扬声器/麦克风) 。 驱动程序为呈现设备使用 WaveRT 和音频卸载。 驱动程序使用 "虚拟音频设备" 而不是基于硬件的实际适配器，突出显示音频卸载 WDM 音频驱动程序体系结构的不同方面。 有关 Windows 音频引擎的详细信息，请参阅 [硬件卸载音频处理 (Windows 驱动程序) ](hardware-offloaded-audio-processing.md)。
+    *TabletAudioSample* 项目演示了如何开发公开支持多个音频设备的 WDM 音频驱动程序。 其中某些音频设备嵌入 (扬声器、麦克风阵列) 在系统中，而其他音频设备可插 (耳机扬声器/麦克风、蓝牙耳机扬声器/麦克风) 。 驱动程序为呈现设备使用 WaveRT 和音频卸载。 驱动程序使用 "虚拟音频设备" 而不是基于硬件的实际适配器，突出显示音频卸载 WDM 音频驱动程序体系结构的不同方面。 有关 Windows 音频引擎的详细信息，请参阅 [硬件卸载音频处理 (Windows 驱动程序) ](hardware-offloaded-audio-processing.md)。
 
 -   **PhoneAudioSample**
 
-    *PhoneAudioSample*项目与*TabletAudioSample*项目非常相似。 它包括移动设备的优化。
+    *PhoneAudioSample* 项目与 *TabletAudioSample* 项目非常相似。 它包括移动设备的优化。
 
 -   **EndpointsCommon**
 
-    *EndpointsCommon*项目包含平板电脑和手机的通用代码。 有关详细信息，请参阅 [适用于音频的通用 Windows 驱动程序](audio-universal-drivers.md)。
+    *EndpointsCommon* 项目包含平板电脑和手机的通用代码。 有关详细信息，请参阅 [适用于音频的通用 Windows 驱动程序](audio-universal-drivers.md)。
 
 -   **SwapAPO**
 
-    *SwapAPO*项目演示了如何开发音频处理对象。 它包括演示如何注册和注销音频处理对象的示例代码，还演示了如何自定义 "控制面板" 属性页以反映处理对象中的可用功能。 有关详细信息，请参阅 [Windows 音频处理对象](windows-audio-processing-objects.md)。
+    *SwapAPO* 项目演示了如何开发音频处理对象。 它包括演示如何注册和注销音频处理对象的示例代码，还演示了如何自定义 "控制面板" 属性页以反映处理对象中的可用功能。 有关详细信息，请参阅 [Windows 音频处理对象](windows-audio-processing-objects.md)。
 
 -   **KeywordDetectorAdapter**
 
-    *KeywordDetectorAdapter*项目演示如何开发关键字检测器适配器。 有关详细信息，请参阅 [语音激活](voice-activation.md)。
+    *KeywordDetectorAdapter* 项目演示如何开发关键字检测器适配器。 有关详细信息，请参阅 [语音激活](voice-activation.md)。
 
 **从 GitHub 下载并提取 Sysvad 音频示例**
 
@@ -71,7 +70,7 @@ a. 您可以使用 GitHub 工具来处理示例。 你还可以将通用驱动�
 
 b. 将 master.zip 文件下载到本地硬盘驱动器。
 
-c. 选择并按住 (或右键单击) *Windows-driver-samples-master.zip*，然后选择 " **全部提取**"。 指定一个新文件夹，或浏览到将存储所提取文件的现有文件夹。 例如，可以指定*C： \\ DriverSamples \\ *作为要将文件提取到的新文件夹。
+c. 选择并按住 (或右键单击) *Windows-driver-samples-master.zip*，然后选择 " **全部提取**"。 指定一个新文件夹，或浏览到将存储所提取文件的现有文件夹。 例如，可以指定 *C： \\ DriverSamples \\* 作为要将文件提取到的新文件夹。
 
 d. 提取文件后，导航到以下子文件夹。
 
@@ -88,23 +87,23 @@ d. 提取文件后，导航到以下子文件夹。
 
 这些音频示例支持以前版本的 Microsoft Windows 驱动程序工具包 (WDK) 。 它们作为 [zip 文件下载](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/master/Official%20Windows%20Driver%20Kit%20Sample/Windows%20Driver%20Kit%20(WDK)%208.1%20Samples)的一部分提供。
 
--   **Microsoft 虚拟音频设备驱动程序示例 (Msvad) **
+-   **Microsoft 虚拟音频设备驱动程序示例 (Msvad)**
 
--   **AC97 驱动程序 (Ac97) **
+-   **AC97 驱动程序 (Ac97)**
 
--   **DirectMusic UART 驱动程序示例 (Dmusuart) **
+-   **DirectMusic UART 驱动程序示例 (Dmusuart)**
 
--   **DirectMusic 软件合成器示例 (ddksynth) **
+-   **DirectMusic 软件合成器示例 (ddksynth)**
 
--   **FM 合成器 (Fmsynth) **
+-   **FM 合成器 (Fmsynth)**
 
 -   **音频适配器示例**
 
 **音频处理编解码器示例**
 
--   **Msfilter 示例编解码器 (MsFilter) **
+-   **Msfilter 示例编解码器 (MsFilter)**
 
--   **Msgsm610 示例编解码器 (gsm610) **
+-   **Msgsm610 示例编解码器 (gsm610)**
 
 有关详细信息，请参阅 WDK 中每个示例随附的自述文档。
 

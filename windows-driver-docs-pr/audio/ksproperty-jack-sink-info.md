@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ 插座 \_ \_ 信息
 description: KSPROPERTY \_ 插座 \_ \_ 信息属性实现为使用筛选器句柄访问的按位数属性。
-ms.assetid: a51c03fa-91e4-49f2-ad76-35133c3b09ba
 keywords:
 - KSPROPERTY_JACK_SINK_INFO 音频设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c1f20b9b78811335b47c1b499b3b2ecd37c8b12a
-ms.sourcegitcommit: 9b4760aae390b36dbdf9e0dd729a4a643c3f7831
+ms.openlocfilehash: 4897237e541a7842934093db8b0351de9a3aa864
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90565247"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801209"
 ---
 # <a name="ksproperty_jack_sink_info"></a>KSPROPERTY \_ 插座 \_ \_ 信息
 

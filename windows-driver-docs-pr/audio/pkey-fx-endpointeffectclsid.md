@@ -1,27 +1,26 @@
 ---
-title: PKEY\_FX\_EndpointEffectClsid
-description: 在 Windows 8.1 及更高版本，主键\_FX\_EndpointEffectClsid 属性键就地标识终结点生效 (EFX)。 驱动程序开发人员应指定其驱动程序支持的受支持的处理模式的列表。
-ms.assetid: 19E92978-12DE-4B0E-A386-024B88A64B39
+title: PKEY \_ FX \_ EndpointEffectClsid
+description: 在 Windows 8.1 和更高版本中，PKEY \_ FX \_ EndpointEffectClsid 属性键用于标识 (EFX) 位置的终结点效果。 驱动程序开发人员应指定其驱动程序支持的处理模式的列表。
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 22811ba13a6b449e237f939e087280b01887e20c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b909332a05ff11920a8683dc741b71155f35f149
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332141"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96800889"
 ---
-# <a name="pkeyfxendpointeffectclsid"></a>PKEY\_FX\_EndpointEffectClsid
+# <a name="pkey_fx_endpointeffectclsid"></a>PKEY \_ FX \_ EndpointEffectClsid
 
 
-Windows 8.1 及更高版本，**主键\_FX\_EndpointEffectClsid**属性键就地标识终结点生效 (EFX)。 驱动程序开发人员应指定其驱动程序支持的受支持的处理模式的列表。
+在 Windows 8.1 和更高版本中， **PKEY \_ FX \_ EndpointEffectClsid** 属性键用于标识 (EFX) 位置的终结点效果。 驱动程序开发人员应指定其驱动程序支持的处理模式的列表。
 
-INF 文件属性键指示音频终结点生成器 Clsid 为终结点未设置效果属性存储到。 此信息用于生成在音频图形的将用来通知哪些因素影响均已到位的上部级别应用。
+INF 文件属性键指示音频终结点生成器将终结点的 Clsid 设置为影响属性存储区。 此信息用于生成音频图形，该图形将用于通知高层应用程序的效果。
 
-## <a name="span-idinffilesamplespanspan-idinffilesamplespanspan-idinffilesamplespaninf-file-sample"></a><span id="INF_File_Sample"></span><span id="inf_file_sample"></span><span id="INF_FILE_SAMPLE"></span>INF 文件示例
+## <a name="span-idinf_file_samplespanspan-idinf_file_samplespanspan-idinf_file_samplespaninf-file-sample"></a><span id="INF_File_Sample"></span><span id="inf_file_sample"></span><span id="INF_FILE_SAMPLE"></span>INF 文件示例
 
 
-INF 文件在该设备，添加注册表部分中指定音频端点设备的默认格式。 下面的 INF 示例演示字符串并将终结点有效 APO 加载到注册表添加注册表部分。
+INF 文件在该设备的 "外接程序" 部分中指定音频终结点设备的默认格式。 以下 INF 示例显示了用于将终结点效果的 APO 加载到注册表中的字符串和添加注册表部分。
 
 ```inf
 [Strings]
@@ -34,7 +33,7 @@ FX_ENDPOINT_CLSID               = "{00000000-0000-0000-0000-000000000000}"
 HKR,"FX\\0",%PKEY_FX_EndpointEffectClsid%,,%FX_ENDPOINT_CLSID%
 ```
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 [媒体类 INF 扩展](media-class-inf-extensions.md)

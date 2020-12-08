@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ 电话服务 \_ CALLHOLD
 description: KSPROPERTY \_ \_ phone CALLHOLD 属性用于控制电话呼叫的保留状态。
-ms.assetid: C683A6AA-35E5-43D3-B882-B13B8A0A4043
 keywords:
 - KSPROPERTY_TELEPHONY_CALLHOLD 音频设备
 topic_type:
@@ -14,17 +13,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 89f12f3d54408db326df0930ece167d50defd1f0
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 57763a97c77d20689e77f7f1a3005291faf0d60d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90101856"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801143"
 ---
 # <a name="ksproperty_telephony_callhold"></a>KSPROPERTY \_ 电话服务 \_ CALLHOLD
 
 
-**KSPROPERTY phone \_ \_ CALLHOLD**属性用于控制电话呼叫的保留状态。
+**KSPROPERTY phone \_ \_ CALLHOLD** 属性用于控制电话呼叫的保留状态。
 
 ### <a name="span-idusage_summary_tablespanspan-idusage_summary_tablespanspan-idusage_summary_tablespanusage-summary-table"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用情况摘要表
 
@@ -67,7 +66,7 @@ ms.locfileid: "90101856"
 <a name="remarks"></a>备注
 -------
 
-如果将 KSPROPERTY phone ** \_ \_ CALLHOLD** 属性的值设置为 **TRUE**，则会将电话呼叫置于保持状态。 预期的行为是传输和接收都将静音。 在这种情况下，将不会发送或接收任何数据。 音频驱动程序会将电话 CALLSTATE)  ([**电话 \_ 服务**](/windows-hardware/drivers/ddi/ksmedia/ne-ksmedia-telephony_callstate) 更新为 **电话服务 \_ CALLSTATE \_ 暂**留。 如果将 " **KSPROPERTY" \_ 电话 \_ 服务** 的 "CALLHOLD" 属性设置为 " **FALSE**"，则会将电话设置为 "暂停" 状态，并将呼叫状态更新为 " ** \_ \_ 已启用电话服务 CALLSTATE**"。
+如果将 KSPROPERTY phone **\_ \_ CALLHOLD** 属性的值设置为 **TRUE**，则会将电话呼叫置于保持状态。 预期的行为是传输和接收都将静音。 在这种情况下，将不会发送或接收任何数据。 音频驱动程序会将电话 CALLSTATE)  ([**电话 \_ 服务**](/windows-hardware/drivers/ddi/ksmedia/ne-ksmedia-telephony_callstate) 更新为 **电话服务 \_ CALLSTATE \_ 暂** 留。 如果将 " **KSPROPERTY" \_ 电话 \_ 服务** 的 "CALLHOLD" 属性设置为 " **FALSE**"，则会将电话设置为 "暂停" 状态，并将呼叫状态更新为 " **\_ \_ 已启用电话服务 CALLSTATE**"。
 
 <a name="requirements"></a>要求
 ------------

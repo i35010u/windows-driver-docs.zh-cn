@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ SYSAUDIO \_ 实例 \_ 信息
 description: KSPROPERTY \_ SYSAUDIO \_ 实例 \_ 信息属性打开一个虚拟音频设备，并指定该设备的配置标志。
-ms.assetid: ef60c188-704f-4dbb-bf6d-cdf3152c209b
 keywords:
 - KSPROPERTY_SYSAUDIO_INSTANCE_INFO 音频设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0c0734df695ec4d3a3d20def6811356c061d3c46
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: b492988dbe59cfcacb197e3dfb771a3130ad8be9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90101864"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801147"
 ---
 # <a name="ksproperty_sysaudio_instance_info"></a>KSPROPERTY \_ SYSAUDIO \_ 实例 \_ 信息
 

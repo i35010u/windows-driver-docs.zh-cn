@@ -1,15 +1,14 @@
 ---
 title: KSPROPSETID \_ SoundDetector2
 description: KSPROPSETID_SoundDetector2 属性集包含用于为同时支持检测程序的音频捕获设备注册筛选器的属性。
-ms.assetid: FC4A354B-D42C-4199-B613-1E1B75A600C7
 ms.date: 09/25/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 462751efc73fe30d6646f750acbd94d1a3257425
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: eec6ec010458b7fa707d8e461ef56c43c67b5c83
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89211465"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801077"
 ---
 # <a name="kspropsetid_sounddetector2"></a>KSPROPSETID \_ SoundDetector2
 

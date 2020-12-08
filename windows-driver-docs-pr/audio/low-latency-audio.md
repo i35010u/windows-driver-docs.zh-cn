@@ -1,15 +1,14 @@
 ---
 title: 低延迟音频
 description: 本主题介绍 Windows 10 中的音频延迟更改。 它涵盖了应用程序开发人员的 API 选项，以及可用于支持低延迟音频的驱动程序中的更改。
-ms.assetid: 888AEF01-271D-41CD-8372-A47551348959
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9997a2ef1b99d54f012154146b4b10bad2688e8d
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 825c1bbcb9659dad9e689450972bd1b889aed81a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90715400"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801053"
 ---
 # <a name="low-latency-audio"></a>低延迟音频
 
@@ -36,7 +35,7 @@ Windows 10 包含更改以降低音频延迟。 本文档的目标是：
 
 ## <a name="definitions"></a>定义
 
-|术语|说明|
+|术语|描述|
 |--- |--- |
 |呈现延迟|应用程序将音频数据的缓冲区提交到呈现 Api 的时间之间的延迟，直到扬声器听到该时间。|
 |捕获延迟|从麦克风捕获声音到将其发送到应用程序正在使用的捕获 Api 的时间之间的延迟。|
@@ -124,7 +123,7 @@ AudioGraph 是 Windows 10 中新的通用 Windows 平台 API，旨在轻松实�
 
 为了面向低延迟方案，AudioGraph 提供了 [AudioGraphSettings：： QuantumSizeSelectionMode 属性](/uwp/api/Windows.Media.Audio.AudioGraphSettings#Windows_Media_Audio_AudioGraphSettings_QuantumSizeSelectionMode)。 此属性可以是下表中所示的以下任何值：
 
-|值|说明|
+|“值”|描述|
 |--- |--- |
 |SystemDefault|将缓冲区设置为默认缓冲区大小 (~ 10ms) |
 |LowestLatency|将缓冲区设置为驱动程序支持的最小值|
@@ -152,7 +151,7 @@ CreateAudioGraphResult result = await AudioGraph.CreateAsync(settings);
 
 [**IAudioClient3**](/windows/win32/api/audioclient/nn-audioclient-iaudioclient3) 定义以下3种方法：
 
-|方法|说明|
+|方法|描述|
 |--- |--- |
 |GetCurrentSharedModeEnginePeriod|返回音频引擎的当前格式和周期|
 |GetSharedModeEnginePeriod|返回引擎支持的指定流格式的周期范围|
@@ -526,7 +525,7 @@ Needs=WDMPORTCLS.CopyFilesOnly
 - 启动“设备管理器”。
 - 在 " **声音视频和游戏控制器**" 下，双击与内部扬声器相对应的设备。
 - 在下一个窗口中，请切换到 " **驱动程序** " 选项卡。
-- 选择 "**更新驱动**程序  - &gt; **" "浏览计算机以查找驱动程序软件"。**  - &gt; **从设备驱动程序列表中**  - &gt; **选择 "高清晰音频设备**"，然后选择 "**下一步**"。
+- 选择 "**更新驱动** 程序  - &gt; **" "浏览计算机以查找驱动程序软件"。**  - &gt; **从设备驱动程序列表中**  - &gt; **选择 "高清晰音频设备**"，然后选择 "**下一步**"。
 - 如果出现标题为 "更新驱动程序警告" 的窗口，请选择 **"是**"。
 - 选择 " **关闭**"。
 - 如果系统要求重新启动系统，请选择 **"是"** 重新启动。
@@ -546,7 +545,7 @@ Needs=WDMPORTCLS.CopyFilesOnly
 - AudioCreation 示例 (AudioGraph) ： <https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AudioCreation>
 - Sysvad 驱动程序示例： <https://github.com/Microsoft/Windows-driver-samples/tree/master/audio/sysvad>
 
-## <a name="faq"></a>FAQ
+## <a name="faq"></a>常见问题
 
 **1. 如果所有应用程序都使用新 Api 来实现低延迟，则不是更好？低延迟始终保证用户获得更好的用户体验吗？**
 

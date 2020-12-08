@@ -1,7 +1,6 @@
 ---
 title: 带时间戳的事件
 description: 带时间戳的事件
-ms.assetid: 8db89e31-bfd7-48cf-9eb2-12ac7784cc31
 keywords:
 - 合成 WDK 音频，时间戳
 - 时间戳 WDK 音频
@@ -11,12 +10,12 @@ keywords:
 - 延迟 WDK 音频，时钟
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0ed72f15f1c72d32d3d6e0134d18973fcd35c8d2
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: a3886dca0483ca6eb604f86d79aa7605e40f7ea2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90716066"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96800523"
 ---
 # <a name="time-stamped-events"></a>带时间戳的事件
 

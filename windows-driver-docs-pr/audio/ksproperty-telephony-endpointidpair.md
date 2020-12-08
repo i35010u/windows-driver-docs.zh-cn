@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ 电话服务 \_ ENDPOINTIDPAIR
 description: KSPROPERTY \_ 电话服务 \_ ENDPOINTIDPAIR 属性包含移动电话音频路由的呈现和捕获终结点。
-ms.assetid: 4F163A65-5572-41D0-80B2-493285E2B87B
 keywords:
 - KSPROPERTY_TELEPHONY_ENDPOINTIDPAIR 音频设备
 topic_type:
@@ -14,17 +13,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b22f76754b366b7e6ea5a0cc8a33b70c33d86108
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 8e06f9d58efa63a78deb90a0c8676f6c1bbd7bfe
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90101846"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801139"
 ---
 # <a name="ksproperty_telephony_endpointidpair"></a>KSPROPERTY \_ 电话服务 \_ ENDPOINTIDPAIR
 
 
-**KSPROPERTY \_ 电话服务 \_ ENDPOINTIDPAIR**属性包含移动电话音频路由的呈现和捕获终结点。
+**KSPROPERTY \_ 电话服务 \_ ENDPOINTIDPAIR** 属性包含移动电话音频路由的呈现和捕获终结点。
 
 ### <a name="span-idusage_summary_tablespanspan-idusage_summary_tablespanspan-idusage_summary_tablespanusage-summary-table"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用情况摘要表
 
@@ -62,9 +61,9 @@ ms.locfileid: "90101846"
 
 ### <a name="span-idreturn_valuespanspan-idreturn_valuespanspan-idreturn_valuespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>返回值
 
-**KSPROPERTY \_ 电话服务 \_ ENDPOINTIDPAIR**属性请求返回手机网络音频路由的呈现和捕获终结点。
+**KSPROPERTY \_ 电话服务 \_ ENDPOINTIDPAIR** 属性请求返回手机网络音频路由的呈现和捕获终结点。
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 通过拓扑筛选器上的 **KSPROPERTY \_ 电话服务 \_ ENDPOINTIDPAIR** 属性控制手机网络路由。 此属性为所请求的终结点组合使用一对 [**KSTOPOLOGY \_ ENDPOINTID**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-_tagkstopology_endpointid) 结构。 **KSTOPOLOGY \_ENDPOINTID** 包含终结点的拓扑筛选器的引用字符串，以及终结点连接到的拓扑筛选器 PIN ID。 驱动程序提供对此属性的基本支持，并返回可用于移动电话音频路由的所有有效的呈现对和捕获终结点。 驱动程序负责处理将移动电话和捕获移动电话音频移动到这个新的终结点组合，满足硬件所需的任何约束。 即使系统中没有活动电话呼叫，也必须可以设置此属性。

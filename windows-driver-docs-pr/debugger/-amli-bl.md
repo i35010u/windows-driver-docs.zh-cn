@@ -1,7 +1,6 @@
 ---
 title: amli bl
 description: Amli bl 扩展显示所有 AML 断点的列表。
-ms.assetid: 4ce52006-d44e-40ab-b669-2aa9509b6b21
 keywords:
 - amli bl Windows 调试
 ms.date: 09/17/2018
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: aeb69d43659916b55b6b9239733b167ba9e2f363
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a38fdc630e709d81d05af6c27d669a7baba209e6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63334781"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96800109"
 ---
 # <a name="amli-bl"></a>!amli bl
 
 
-**！ Amli bl**扩展插件都会显示所有 AML 断点的列表。
+**！ Amli bl** 扩展显示所有 AML 断点的列表。
 
 语法
 
@@ -33,20 +32,20 @@ ms.locfileid: "63334781"
 ## <span id="ddk__amli_bl_dbg"></span><span id="DDK__AMLI_BL_DBG"></span>
 
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 Kdexts.dll
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-有关相关的命令及其用途的信息，请参阅[AMLI 调试器](the-amli-debugger.md)。
+有关相关命令及其用法的信息，请参阅 [AMLI 调试器](the-amli-debugger.md)。
 
 <a name="remarks"></a>备注
 -------
 
-AMLI 调试器支持最多十个断点。
+AMLI 调试器最多支持10个断点。
 
-下面是举例 **！ amli bl**扩展：
+下面是 **！ amli bl** 扩展的一个示例：
 
 ```console
 kd> !amli bl
@@ -56,7 +55,7 @@ kd> !amli bl
  3: <e> ffffffff80e612c9:[\_SB.MBRD._CRS]
 ```
 
-第一列给出断点数。 **&lt;E&gt;** 并 **&lt;d&gt;** 标记指示是否启用或禁用断点。 在下一列中的断点的地址。 最后，包含该断点的方法被列出，如果该方法开始时未设置的断点的偏移量。
+第一列提供断点号。 **&lt; E &gt;** 和 **&lt; d &gt;** 标记指示是启用还是禁用断点。 断点的地址在下一列中。 最后，将列出包含该断点的方法，并在该方法启动时未设置断点偏移量。
 
  
 

@@ -1,27 +1,26 @@
 ---
-title: PKEY\_FX\_KeywordDetector\_StreamEffectClsid
-description: 在 Windows 10 及更高版本，主键\_FX\_KeywordDetector\_StreamEffectClsid 属性键标识流效果 (SFX) 支持关键字检测程序的驱动程序。
-ms.assetid: C4ED26A0-FDFB-499B-8A61-429E53CCAE6A
+title: PKEY \_ FX \_ KeywordDetector \_ StreamEffectClsid
+description: 在 Windows 10 及更高版本中，PKEY \_ FX \_ KeywordDetector \_ StreamEffectClsid 属性键标识驱动程序支持的关键字检测器) 的流效果 (。
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fee9f8ab71264773be7b1a970878db19afdd0d71
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 08685b9c4c5615393bd778e20be766cf345459e0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332123"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96800879"
 ---
-# <a name="pkeyfxkeyworddetectorstreameffectclsid"></a>PKEY\_FX\_KeywordDetector\_StreamEffectClsid
+# <a name="pkey_fx_keyworddetector_streameffectclsid"></a>PKEY \_ FX \_ KeywordDetector \_ StreamEffectClsid
 
 
-在 Windows 10 及更高版本，**主键\_FX\_KeywordDetector\_StreamEffectClsid**属性键标识流效果 (SFX) 支持关键字检测程序的驱动程序。 驱动程序开发人员应指定其驱动程序支持的关键字检测器 pin 的单个流效果。
+在 Windows 10 及更高版本中， **PKEY \_ FX \_ KeywordDetector \_ StreamEffectClsid** 属性键标识驱动程序支持的关键字检测器) 的流效果 (。 驱动程序开发人员应为关键字检测程序 pin 指定其驱动程序支持的单一流效果。
 
-INF 文件属性键指示设置效果属性存储到的终结点不 Clsid 的音频的终结点生成器。 此信息用于生成在音频图形的将用来通知哪些因素影响均已到位的上部级别应用。
+INF 文件属性键指示音频终结点生成器将终结点的 Clsid 设置到效果属性存储中。 此信息用于生成音频图形，该图形将用于通知高层应用程序的效果。
 
-## <a name="span-idinffilesamplespanspan-idinffilesamplespanspan-idinffilesamplespaninf-file-sample"></a><span id="INF_File_Sample"></span><span id="inf_file_sample"></span><span id="INF_FILE_SAMPLE"></span>INF 文件示例
+## <a name="span-idinf_file_samplespanspan-idinf_file_samplespanspan-idinf_file_samplespaninf-file-sample"></a><span id="INF_File_Sample"></span><span id="inf_file_sample"></span><span id="INF_FILE_SAMPLE"></span>INF 文件示例
 
 
-INF 文件在该设备的添加注册表部分中指定音频端点设备的设置。 下面的示例 INF 显示字符串和将关键字检测程序流效果 APO 加载到注册表添加注册表部分。
+INF 文件在该设备的 "添加注册表" 部分中指定音频终结点设备的设置。 以下 INF 示例显示了将关键字检测器流效果的 APO 加载到注册表中的字符串和添加注册表部分。
 
 ```inf
 [Strings]
@@ -34,7 +33,7 @@ FX_KEYWORD_STREAM_CLSID      = "{00000000-0000-0000-0000-000000000000}"
 HKR,"FX\\0",%PKEY_FX_KeywordDetector_StreamEffectClsid%,,%FX_KEYWORD_STREAM_CLSID%
 ```
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 [媒体类 INF 扩展](media-class-inf-extensions.md)

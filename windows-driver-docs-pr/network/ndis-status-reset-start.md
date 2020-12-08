@@ -1,17 +1,16 @@
 ---
 title: NDIS_STATUS_RESET_START
 description: NDIS_STATUS_RESET_START 状态表明正在重置微型端口适配器。
-ms.assetid: 8758652b-137b-43e3-a896-8360f2b5051c
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 NDIS_STATUS_RESET_START 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: ed698f8ee7cc9647fc7b861ac69be0bf3be6cb9e
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 2b211219503e7ffce249820b8e11937c06a0c15a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89206065"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801463"
 ---
 # <a name="ndis_status_reset_start"></a>NDIS \_ 状态 \_ 重置 \_ 启动
 
@@ -23,7 +22,7 @@ NDIS \_ 状态 \_ 重置 \_ 开始状态表明正在重置微型端口适配器�
 
 微型端口驱动程序不应调用 [**NdisMIndicateStatusEx**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismindicatestatusex) 函数来通知每个重置操作的开始和完成，因为当重置操作开始和结束时，NDIS 会通知过量驱动程序。
 
-当 NDIS 调用微型端口驱动程序的 [*MiniportResetEx*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_reset) 函数时，微型端口驱动程序会重置微型端口适配器。 NDIS 调用每个绑定协议和中间驱动程序的[*ProtocolStatusEx*](/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_status_ex)函数，并调用具有 NDIS [*FilterStatus*](/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_status) \_ 状态 \_ 重置启动状态的过量筛选器模块的 FilterStatus 函数 \_ 。 当微型端口驱动程序完成重置后，NDIS 会将状态 [**设置为 ndis \_ 状态 \_ 重置 \_ 结束**](ndis-status-reset-end.md)，并通知过量驱动程序。
+当 NDIS 调用微型端口驱动程序的 [*MiniportResetEx*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_reset) 函数时，微型端口驱动程序会重置微型端口适配器。 NDIS 调用每个绑定协议和中间驱动程序的 [*ProtocolStatusEx*](/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_status_ex)函数，并调用具有 NDIS [*FilterStatus*](/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_status) \_ 状态 \_ 重置启动状态的过量筛选器模块的 FilterStatus 函数 \_ 。 当微型端口驱动程序完成重置后，NDIS 会将状态 [**设置为 ndis \_ 状态 \_ 重置 \_ 结束**](ndis-status-reset-end.md)，并通知过量驱动程序。
 
 当协议驱动程序收到 NDIS \_ 状态 \_ 重置 \_ 开始状态指示时，应执行以下操作：
 
@@ -51,7 +50,7 @@ NDIS \_ 状态 \_ 重置 \_ 开始状态表明正在重置微型端口适配器�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [*FilterStatus*](/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_status)

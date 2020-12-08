@@ -1,7 +1,6 @@
 ---
 title: 系统截获的设备消息
 description: 系统截获的设备消息
-ms.assetid: 5cf1c9a6-e56f-4358-933f-e8aa2ad1b1da
 keywords:
 - 向旧设备发送的设备消息 WDK 音频
 - WDM 音频扩展 WDK，系统拦截的设备消息
@@ -10,12 +9,12 @@ keywords:
 - 截获的设备消息 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 66330a6b3cb4a8d4bfae7005591e6adb9af4a8ae
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 310687ae262edca6fc74e76efc2afb30a9316a6e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89210337"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96800533"
 ---
 # <a name="system-intercepted-device-messages"></a>系统截获的设备消息
 
@@ -55,7 +54,7 @@ ms.locfileid: "89210337"
 
 有关其他类型的设备消息的信息，请参阅 Windows SDK 文档。
 
-*Xxx*消息函数具有以下语法：
+*Xxx* 消息函数具有以下语法：
 
 ```cpp
 DWORD XxxMessage(
@@ -68,13 +67,13 @@ DWORD XxxMessage(
 
 第一个参数是设备 ID。 [**AuxOutMessage**](/previous-versions/dd756716(v=vs.85))函数定义将此参数指定为 UINT 类型（如预期）。 但对于 [**waveInMessage**](/previous-versions/dd743846(v=vs.85))、 [**waveOutMessage**](/previous-versions/dd743865(v=vs.85))、 [**midiInMessage**](/previous-versions/dd798457(v=vs.85))、 [**midiOutMessage**](/previous-versions/dd798475(v=vs.85))或 [**mixerMessage**](/previous-versions/dd757307(v=vs.85))，调用方必须将设备 ID 强制转换为分别处理类型 HWAVEIN、HWAVEOUT、HMIDIIN、HMIDIOUT 或 HMIXER。 请注意，如果调用方为此参数提供有效的句柄而不是设备 ID，则该函数将失败并返回错误代码 MMSYSERR \_ NOSUPPORT。
 
-*UMsg*参数指定消息值 (例如， [**winspool.drv \_ QUERYDEVICEINTERFACE**](/previous-versions/windows/hardware/drivers/ff536363(v=vs.85))) 。 有关驱动程序特定消息的列表，请参阅头文件 Mmddk。
+*UMsg* 参数指定消息值 (例如， [**winspool.drv \_ QUERYDEVICEINTERFACE**](/previous-versions/windows/hardware/drivers/ff536363(v=vs.85))) 。 有关驱动程序特定消息的列表，请参阅头文件 Mmddk。
 
 参数 *dwParam1* 和 *dwParam2* 的含义取决于消息。 例如，特定消息可能要求 *dwParam1* 是 ULONG 值;调用方必须将此值转换为类型 DWORD \_ PTR 才能满足函数定义。
 
 \_如果调用成功，则函数返回 MMERR NOERROR; 如果不是，则返回错误状态代码。
 
-有关 *Xxx*消息函数的详细信息，请参阅 Windows SDK 文档。
+有关 *Xxx* 消息函数的详细信息，请参阅 Windows SDK 文档。
 
 标头文件 Mmddk 定义以下系统截获的设备消息：
 
@@ -96,7 +95,7 @@ DWORD XxxMessage(
 
 [**DRVM \_ 映射器 \_ CONSOLEVOICECOM \_ 获取**](/previous-versions/windows/hardware/drivers/ff536361(v=vs.85))
 
-有关详细信息，请参阅 [首选语音通信设备 ID](preferred-voice-communications-device-id.md)。
+有关详细信息，请参阅 [首选 Voice-Communications 设备 ID](preferred-voice-communications-device-id.md)。
 
 [**DRVM \_ 映射器 \_ 首选 \_ GET**](/previous-versions/windows/hardware/drivers/ff536362(v=vs.85))
 

@@ -1,9 +1,8 @@
 ---
 title: .break
-description: .Break 令牌的行为类似于在 C 中 break 关键字
-ms.assetid: 577e74d1-824f-424a-b30e-a82fe2d682f1
+description: Break 标记在 C 中的行为类似于 break 关键字。
 keywords:
-- .break Windows 调试
+- 。中断 Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: dc0db0a953def999e02f40bfb1674503ecc33a1a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f6511327e2466a00e1ccff779d4e9d61f907ed4a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63334668"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96799955"
 ---
 # <a name="break"></a>.break
 
 
-**.Break**令牌的行为类似于**中断**在 C 中的关键字
+**Break** 标记在 C 中的行为类似于 **break** 关键字。
 
 ```dbgcmd
  .for (...) { ... ; .if (Condition) .break ; ...} 
@@ -35,16 +34,16 @@ ms.locfileid: "63334668"
 ## <span id="ddk_token_break_dbg"></span><span id="DDK_TOKEN_BREAK_DBG"></span>
 
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-有关其他控制流令牌在调试器命令程序及其用法的信息，请参阅[使用调试器命令程序](using-debugger-command-programs.md)。
+有关其他控制流令牌及其在调试器命令程序中的使用的信息，请参阅 [使用调试器命令程序](using-debugger-command-programs.md)。
 
 <a name="remarks"></a>备注
 -------
 
-**.Break**令牌可在任何[ **。 有关**](-for.md)， [ **.while**](-while.md)，或[ **执行**](-do.md)循环。
+可以在任何中使用 **break** 标记。 [**用于**](-for.md)、 [**. while**](-while.md)或 [**. do**](-do.md) 循环。
 
-由于没有控制流令牌等效于 C **goto**语句中，您通常使用 **.break**令牌内[**如果**](-if.md)条件，如上述语法示例中所示。 但是，这不是实际必需的。
+由于没有与 C **goto** 语句等效的控制流标记，因此通常会在中使用 **break** 标记 [**。如有**](-if.md) 条件，如上述语法示例中所示。 但是，这实际上并不是必需的。
 
  
 

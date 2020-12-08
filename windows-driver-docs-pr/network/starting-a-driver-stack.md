@@ -1,18 +1,17 @@
 ---
 title: 启动驱动程序堆栈
 description: 启动驱动程序堆栈
-ms.assetid: 316de69e-38e8-4ac6-83c5-5d13090ee6d5
 keywords:
 - 驱动程序堆栈 WDK 网络，开始
 - 启动驱动程序堆栈 WDK 网络
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 20a96455bda06a9fa4fea240f91c2fb72834e1b9
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 45f29de431354b886bb998537ff5cf98d1f71d2d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89214394"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801283"
 ---
 # <a name="starting-a-driver-stack"></a>启动驱动程序堆栈
 
@@ -28,7 +27,7 @@ ms.locfileid: "89214394"
 
 2.  系统调用每个驱动程序的 **DriverEntry** 函数。
 
-    **DriverEntry**返回后：
+    **DriverEntry** 返回后：
 
     -   设备的微型端口适配器处于暂停状态。
     -   筛选器模块处于分离状态。

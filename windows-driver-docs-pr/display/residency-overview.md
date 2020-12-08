@@ -1,15 +1,14 @@
 ---
 title: 驻留概述
 description: 驻留概述
-ms.assetid: E610C2B8-354C-4DF5-8B25-6472A9313B15
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7cfe669e9f87ab406534813c869328815287fe14
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: c216246900696134212fac993d129c46d8371026
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89066368"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96799609"
 ---
 # <a name="residency-overview"></a>驻留概述
 
@@ -30,7 +29,7 @@ ms.locfileid: "89066368"
 
 在新的常驻模型下，按命令缓冲分配和修补程序位置列表的速度缓慢。尽管这些列表在某些情况下会存在，但他们将不再拥有对派驻的任何控制。
 
-**重要提示**   WDDM v2 中的常驻是由设备派驻要求列表专门控制的。 对于 GPU 和每个 API 的所有引擎都是如此。
+**重要提示**  WDDM v2 中的常驻是由设备派驻要求列表专门控制的。 对于 GPU 和每个 API 的所有引擎都是如此。
 
  
 

@@ -1,15 +1,14 @@
 ---
 title: 旧版音频设备消息
 description: 旧版音频设备消息
-ms.assetid: d8b2807b-e72f-4f72-8a83-5700bc0239dc
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e22df91cafcc6a323b7b45e0e6dc18f0cd21fb9a
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 589251a97a80d537b07d0f471fa2cbd62648e264
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89208827"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801051"
 ---
 # <a name="legacy-audio-device-messages"></a>旧版音频设备消息
 
@@ -35,7 +34,7 @@ ms.locfileid: "89208827"
 
 本节仅介绍系统拦截的消息，并在不传递到设备驱动程序的情况下进行处理。 有关详细信息，请参阅 [系统拦截的设备消息](./system-intercepted-device-messages.md)。
 
-本节中所述的每条消息都有效，可用于前面列表中的六个 *xxx*消息函数中的一个或多个。
+本节中所述的每条消息都有效，可用于前面列表中的六个 *xxx* 消息函数中的一个或多个。
 
 本部分介绍以下消息：
 

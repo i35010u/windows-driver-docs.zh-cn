@@ -1,15 +1,14 @@
 ---
 title: 软件音量控制支持
 description: 软件音量控制支持
-ms.assetid: 2bdc7d01-9e47-4deb-b551-13e9cbc9c844
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a70106f7763684ed75c3d3779bb0af266bb3c479
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: b3a12bd520b61c5e7ebb9b8dbb11a1c388b078c4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90716100"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96800665"
 ---
 # <a name="software-volume-control-support"></a>软件音量控制支持
 

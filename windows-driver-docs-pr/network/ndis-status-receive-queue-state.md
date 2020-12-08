@@ -1,17 +1,16 @@
 ---
 title: NDIS_STATUS_RECEIVE_QUEUE_STATE
 description: NDIS_STATUS_RECEIVE_QUEUE_STATE 状态向过量驱动程序指出虚拟机队列 (VMQ) 接收队列的队列状态已更改。
-ms.assetid: 59b42de9-6aa5-445e-a39a-de2421c945ea
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 NDIS_STATUS_RECEIVE_QUEUE_STATE 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: cce0fd621277a535cadb31187fe44a15fa9a7c2b
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 1de1ba556a56ade4bceb94720f5cd030bc03c5ac
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89206077"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801471"
 ---
 # <a name="ndis_status_receive_queue_state"></a>NDIS \_ 状态 \_ 接收 \_ 队列 \_ 状态
 
@@ -23,9 +22,9 @@ ms.locfileid: "89206077"
 
 支持虚拟机队列接口的 NDIS 6.20 和更高的微型端口驱动程序会生成此状态指示。
 
-微型端口驱动程序在[**ndis \_ 状态 \_ 指示**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_status_indication)结构的**StatusBuffer**成员中提供[**ndis \_ 接收 \_ 队列 \_ 状态**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_receive_queue_state)结构。
+微型端口驱动程序在 [**ndis \_ 状态 \_ 指示**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_status_indication)结构的 **StatusBuffer** 成员中提供 [**ndis \_ 接收 \_ 队列 \_ 状态**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_receive_queue_state)结构。
 
-更改为 *DMA 停止* 状态是唯一需要的队列状态更改指示。 微型端口驱动程序必须在收到 [OID \_ 接收 \_ 筛选器 \_ 释放 \_ 队列](./oid-receive-filter-free-queue.md) 集请求并停止 DMA 之后指示此状态。 在这种情况下，微型端口驱动程序将[**NDIS \_ 接收 \_ 队列 \_ 状态**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_receive_queue_state)结构的**QueueState**成员设置为**NdisReceiveQueueOperationalStateDmaStopped**。
+更改为 *DMA 停止* 状态是唯一需要的队列状态更改指示。 微型端口驱动程序必须在收到 [OID \_ 接收 \_ 筛选器 \_ 释放 \_ 队列](./oid-receive-filter-free-queue.md) 集请求并停止 DMA 之后指示此状态。 在这种情况下，微型端口驱动程序将 [**NDIS \_ 接收 \_ 队列 \_ 状态**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_receive_queue_state)结构的 **QueueState** 成员设置为 **NdisReceiveQueueOperationalStateDmaStopped**。
 
 当微型端口驱动程序收到 [OID \_ 接收 \_ 筛选器 \_ 释放 \_ 队列](./oid-receive-filter-free-queue.md) 集请求后，必须将 DMA 停止到为指定队列分配的任何共享内存。
 
@@ -51,7 +50,7 @@ ms.locfileid: "89206077"
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**NDIS \_ 接收 \_ 队列 \_ 状态**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_receive_queue_state)

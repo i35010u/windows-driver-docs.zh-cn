@@ -1,7 +1,6 @@
 ---
 title: 通用音频体系结构
 description: Microsoft 通用音频体系结构 (UAA) 使符合体系结构的音频设备完全依赖于操作系统以提供驱动程序支持。
-ms.assetid: a42eff33-7952-4004-903d-9b202d1864b9
 keywords:
 - UAA WDK
 - 通用音频体系结构 WDK
@@ -15,12 +14,12 @@ keywords:
 - 1394 WDK 音频
 ms.date: 05/08/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 9326b3ad161c7fc0c6e68c53cc3efa3959bb48f2
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: e7bbaef03ca25d4b502883887ef487ae04ec4eb5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89210317"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96800483"
 ---
 # <a name="universal-audio-architecture"></a>通用音频体系结构
 

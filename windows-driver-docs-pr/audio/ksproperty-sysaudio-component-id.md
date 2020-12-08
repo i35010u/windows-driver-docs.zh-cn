@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ SYSAUDIO \_ 组件 \_ ID
 description: KSPROPERTY \_ SYSAUDIO \_ component \_ id 属性从指定的虚拟音频设备使用的声波渲染设备检索组件 id。
-ms.assetid: ef4a940f-dfef-43ed-8895-d318fb603e5c
 keywords:
 - KSPROPERTY_SYSAUDIO_COMPONENT_ID 音频设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3bb84c1f578e59324495373da4a7a99781008cb0
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: ec9951690fcc4cd12293f15c56cb7a71cbffd531
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90101894"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801161"
 ---
 # <a name="ksproperty_sysaudio_component_id"></a>KSPROPERTY \_ SYSAUDIO \_ 组件 \_ ID
 

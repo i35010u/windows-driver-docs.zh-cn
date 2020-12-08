@@ -1,7 +1,6 @@
 ---
 title: DEVPROP_TYPE_GUID
-description: 在 Windows Vista 和更高版本的 Windows，DEVPROP_TYPE_GUID 标识符表示基本数据类型标识符，以指示数据类型的 GUID 类型的全局唯一标识符 (GUID)。
-ms.assetid: 77080860-c2b3-4c7c-8ab8-e0b02582ffbb
+description: 在 Windows Vista 和更高版本的 Windows 中，DEVPROP_TYPE_GUID 标识符表示数据类型为 GUID 类型的全局唯一标识符 (GUID) 的基本数据类型标识符。
 keywords:
 - DEVPROP_TYPE_GUID 设备和驱动程序安装
 topic_type:
@@ -14,30 +13,30 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 07c3280dc99818f75223af4d6ef7415093b84933
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: ecbfb34218d84fd8cc7eff20d92b74393c2aa867
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56568062"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96799509"
 ---
-# <a name="devproptypeguid"></a>DEVPROP_TYPE_GUID
+# <a name="devprop_type_guid"></a>DEVPROP_TYPE_GUID
 
 
-在 Windows Vista 和更高版本的 Windows，DEVPROP_TYPE_GUID 标识符表示基本数据类型标识符，以指示数据类型的 GUID 类型的全局唯一标识符 (GUID)。
+在 Windows Vista 和更高版本的 Windows 中，DEVPROP_TYPE_GUID 标识符表示数据类型为 GUID 类型的全局唯一标识符 (GUID) 的基本数据类型标识符。
 
 <a name="remarks"></a>备注
 -------
 
-可以仅与组合 DEVPROP_TYPE_GUID [ **DEVPROP_TYPEMOD_ARRAY** ](devprop-typemod-array.md)属性数据类型修饰符。
+DEVPROP_TYPE_GUID 只能与 [**DEVPROP_TYPEMOD_ARRAY**](devprop-typemod-array.md) 的属性数据类型修饰符组合。
 
-### <a name="setting-a-property-of-this-type"></a>设置此属性类型
+### <a name="setting-a-property-of-this-type"></a>设置此类型的属性
 
-若要设置其基本数据类型为 DEVPROP_TYPE_GUID 的属性，调用相应 SetupDiSet*Xxx*属性函数和集函数的输入参数，如下所示：
+若要设置其基本数据类型为 DEVPROP_TYPE_GUID 的属性，请调用相应的 SetupDiSet *Xxx* 属性函数并按如下所示设置函数输入参数：
 
--   设置*PropertyType* DEVPROP_TYPE_GUID，参数设置*PropertyBuffer*参数指向的缓冲区包含 GUID 值，并设置*PropertyBufferSize*参数`sizeof(GUID)`。
+-   将 *PropertyType* 参数设置为 DEVPROP_TYPE_GUID，将 *PropertyBuffer* 参数设置为指向包含 GUID 值的缓冲区的指针，并将 *PropertyBufferSize* 参数设置为 `sizeof(GUID)` 。
 
--   根据需要设置其他函数输入的参数设置的属性。
+-   根据需要设置其他函数输入参数来设置属性。
 
 <a name="requirements"></a>要求
 ------------
@@ -49,8 +48,8 @@ ms.locfileid: "56568062"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>Header</p></td>
-<td align="left">Devpropdef.h （包括 Devpropdef.h）</td>
+<td align="left"><p>标头</p></td>
+<td align="left">Devpropdef (包含 Devpropdef) </td>
 </tr>
 </tbody>
 </table>

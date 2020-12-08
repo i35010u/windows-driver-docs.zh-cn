@@ -1,10 +1,9 @@
 ---
-title: 同时为
-description: 同时为扩展显示在指定的处理器的基于 Itanium 的分支跟踪历史记录。
-ms.assetid: e6bf1452-adb7-4b1d-8614-03fcf0306c70
+title: bth
+description: Bth 扩展为指定的处理器显示基于 Itanium 的分支跟踪历史记录。
 keywords:
 - 分支跟踪历史记录
-- 同时为 Windows 调试
+- bth Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -13,33 +12,33 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 8ebd4dcb2eacbf5d58fec19048bad1b912bd1267
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a291856f134df4bc2ff21d32f2a4ca9d417d7e55
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63334666"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96799943"
 ---
 # <a name="bth"></a>!bth
 
 
-**！ 同时为**扩展插件都会显示在指定的处理器的基于 Itanium 的分支跟踪历史记录。
+**！ Bth** extension 为指定的处理器显示基于 Itanium 的分支跟踪历史记录。
 
 ```dbgcmd
 !bth [Processor]
 ```
 
-**重要**  此命令已被 Windows 调试器版本 10.0.14257 中不推荐使用和更高版本，并不再可用。
+**重要提示**  此命令在 Windows 调试器版本10.0.14257 和更高版本中已弃用，不再可用。
 
  
 
-## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>参数
+## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>Parameters
 
 
-<span id="_______Processor______"></span><span id="_______processor______"></span><span id="_______PROCESSOR______"></span> *Processor*   
-指定一个处理器。 如果*处理器*省略，则显示所有处理器的分支跟踪历史记录。
+<span id="_______Processor______"></span><span id="_______processor______"></span><span id="_______PROCESSOR______"></span>*处理器*   
+指定处理器。 如果省略了 *Processor* ，则显示所有处理器的分支跟踪历史记录。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 <table>
 <colgroup>
@@ -60,7 +59,7 @@ ms.locfileid: "63334666"
 
  
 
-此扩展命令仅用于基于 Itanium 的目标计算机。
+此扩展命令只能与基于 Itanium 的目标计算机一起使用。
 
  
 

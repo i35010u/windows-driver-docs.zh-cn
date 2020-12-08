@@ -1,9 +1,8 @@
 ---
 title: .if
-description: 如果令牌的行为类似于 if 关键字在 C 中
-ms.assetid: ccd74461-759f-400d-90da-efba2e4498e6
+description: 如果标记在 C 中的行为类似于 if 关键字，则为。
 keywords:
-- 如果 Windows 调试
+- 。如果 Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 1dfb6195be3945914fd5d119c53c2607baac7e6f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 311b452d24a08cbd38215c1ffe0704803215e86a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63336475"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96799869"
 ---
 # <a name="if"></a>.if
 
 
-**.If**令牌的行为类似于**如果**在 C 中的关键字
+如果标记在 C 中的行为类似于 **if** 关键字，则为 **。**
 
 ```dbgcmd
 .if (Condition) { Commands } 
@@ -34,18 +33,18 @@ ms.locfileid: "63336475"
 .if (Condition) { Commands } .elsif (Condition) { Commands } .else { Commands } 
 ```
 
-## <a name="span-idddktokenifdbgspanspan-idddktokenifdbgspansyntax-elements"></a><span id="ddk_token_if_dbg"></span><span id="DDK_TOKEN_IF_DBG"></span>语法元素
+## <a name="span-idddk_token_if_dbgspanspan-idddk_token_if_dbgspansyntax-elements"></a><span id="ddk_token_if_dbg"></span><span id="DDK_TOKEN_IF_DBG"></span>语法元素
 
 
-<span id="_______Condition______"></span><span id="_______condition______"></span><span id="_______CONDITION______"></span> *Condition*   
-指定的条件。 如果此计算结果为零，则将其视为 false;否则为 true。 封闭*条件*在括号是可选的。 *条件*必须是一个表达式，而不是调试器命令。 默认表达式计算器将评估 (MASM 或C++)。 有关详细信息，请参阅[数值表达式语法](numerical-expression-syntax.md)。
+<span id="_______Condition______"></span><span id="_______condition______"></span><span id="_______CONDITION______"></span>*条件*   
+指定条件。 如果此值为零，则将其视为 false;否则为 true。 括号中的封闭 *条件* 是可选的。 *Condition* 必须是表达式，而不能是调试器命令。 它将通过默认表达式计算器 (MASM 或 c + +) 进行计算。 有关详细信息，请参阅 [数值表达式语法](numerical-expression-syntax.md)。
 
-<span id="_______Commands______"></span><span id="_______commands______"></span><span id="_______COMMANDS______"></span> *命令*   
-指定一个或多个命令将有条件地执行。 下面的命令块必须括在大括号，即使它包含单个命令。 之前的右大括号不需要后接分号，应由分号，但最后一个命令分隔的多个命令。
+<span id="_______Commands______"></span><span id="_______commands______"></span><span id="_______COMMANDS______"></span>*命令*   
+指定一个或多个将有条件执行的命令。 此命令块需要括在大括号中，即使它包含单个命令也是如此。 应该用分号分隔多个命令，但右大括号前的最后一个命令无需后跟分号。
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-有关其他控制流令牌在调试器命令程序及其用法的信息，请参阅[使用调试器命令程序](using-debugger-command-programs.md)。
+有关其他控制流令牌及其在调试器命令程序中的使用的信息，请参阅 [使用调试器命令程序](using-debugger-command-programs.md)。
 
  
 

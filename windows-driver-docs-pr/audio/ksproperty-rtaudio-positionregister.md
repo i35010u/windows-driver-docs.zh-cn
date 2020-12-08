@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ RTAUDIO \_ POSITIONREGISTER
 description: KSPROPERTY \_ RTAUDIO \_ POSITIONREGISTER 属性将特定流的音频设备位置注册映射到客户端可以访问的虚拟内存位置。下表汇总了此属性的功能。
-ms.assetid: 812072ec-d2a5-4e84-aebe-f24ca0d3cb21
 keywords:
 - KSPROPERTY_RTAUDIO_POSITIONREGISTER 音频设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f1d76bb19d63beb50586caa11422512bda1f9738
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 09c76e843b1c32c5bae44bd8399081294aea812d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90101942"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801187"
 ---
 # <a name="ksproperty_rtaudio_positionregister"></a>KSPROPERTY \_ RTAUDIO \_ POSITIONREGISTER
 
@@ -68,7 +67,7 @@ KSPROPERTY \_ RTAUDIO \_ POSITIONREGISTER 属性将特定流的音频设备位�
 
 KSPROPERTY \_ RTAUDIO \_ POSITIONREGISTER 属性请求返回状态 \_ SUCCESS 以指示该请求已成功完成。 否则，请求将返回相应的失败状态代码。
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 通常，音频应用程序必须监视音频流的当前位置。 此位置被指定为距流开头的字节偏移量：

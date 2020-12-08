@@ -1,7 +1,6 @@
 ---
 title: 适用于家庭影院系统的多声道格式
 description: 适用于家庭影院系统的多声道格式
-ms.assetid: b8bd1dc7-c9a8-4f4f-8014-d31f1ae5361a
 keywords:
 - 数据格式化 WDK 音频
 - 格式化 WDK 音频、数据
@@ -25,12 +24,12 @@ keywords:
 - 数据格式化 WDK 音频，多通道
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c9e3c3eedd0863b404dcd8655aadc08006e1f268
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: fb21250e2fe40085ebec2998c56486044460945b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89210575"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801005"
 ---
 # <a name="multichannel-formats-for-home-theater-systems"></a>适用于家庭影院系统的多声道格式
 

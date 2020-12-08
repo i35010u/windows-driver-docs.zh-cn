@@ -1,9 +1,8 @@
 ---
-title: '\# （搜索反汇编模式）'
-description: 数字符号 （#） 命令会在反汇编代码中的指定模式搜索。
-ms.assetid: 834dd432-94b8-4bf6-9318-09a118eab5ab
+title: '\# (搜索反汇编模式) '
+description: '数字符号 ( # ) 命令在反汇编代码中搜索指定的模式。'
 keywords:
-- （搜索反汇编模式）Windows 调试
+- " (搜索反汇编模式) Windows 调试"
 ms.date: 09/17/2018
 topic_type:
 - apiref
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 25968c3ee037e332a0d532a6da9988b96261cc57
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f139e61d04b342c32544afd940b06f88c7a76218
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63337058"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96800193"
 ---
-# <a name="-search-for-disassembly-pattern"></a>\# （搜索反汇编模式）
+# <a name="-search-for-disassembly-pattern"></a>\# (搜索反汇编模式) 
 
 
-数字符号 ( **\#** ) 命令搜索指定模式中的反汇编代码。
+数字符号 (**\#**) 命令在反汇编代码中搜索指定的模式。
 
 ```dbgcmd
      # [Pattern] [Address [ L Size ]] 
@@ -31,14 +30,14 @@ ms.locfileid: "63337058"
 ## <a name="span-idddk_cmd_search_for_disassembly_pattern_dbgspanspan-idddk_cmd_search_for_disassembly_pattern_dbgspanparameters"></a><span id="ddk_cmd_search_for_disassembly_pattern_dbg"></span><span id="DDK_CMD_SEARCH_FOR_DISASSEMBLY_PATTERN_DBG"></span>参数
 
 
-<span id="_______Pattern______"></span><span id="_______pattern______"></span><span id="_______PATTERN______"></span> *Pattern*   
-指定要搜索的反汇编代码中的模式。 *模式*可以包含各种通配符和说明符。 有关语法的详细信息，请参阅[字符串通配符语法](string-wildcard-syntax.md)。 如果你想要中包括空格*模式*，必须将模式括在引号中。 模式不是区分大小写的。 如果您曾经 **\#** 命令，可省略*模式*，命令重用最近使用模式。
+<span id="_______Pattern______"></span><span id="_______pattern______"></span><span id="_______PATTERN______"></span>*模式*   
+指定要在反汇编代码中搜索的模式。 *模式* 可以包含各种通配符和说明符。 有关语法的详细信息，请参阅 [字符串通配符语法](string-wildcard-syntax.md)。 如果要在 *模式* 中包含空格，则必须用引号将模式引起来。 此模式不区分大小写。 如果以前使用过该 **\#** 命令并且省略了 *模式*，则该命令将重用最近使用的模式。
 
-<span id="_______Address______"></span><span id="_______address______"></span><span id="_______ADDRESS______"></span> *Address*   
-指定搜索开始位置的地址。 有关语法的详细信息，请参阅[地址和地址范围语法](address-and-address-range-syntax.md)。
+<span id="_______Address______"></span><span id="_______address______"></span><span id="_______ADDRESS______"></span>*地址*   
+指定搜索开始处的地址。 有关语法的详细信息，请参阅 [address 和 Address Range 语法](address-and-address-range-syntax.md)。
 
-<span id="_______Size______"></span><span id="_______size______"></span><span id="_______SIZE______"></span> *大小*   
-指定要搜索指令的数。 如果省略*大小*，搜索继续，直到出现第一个匹配项。
+<span id="_______Size______"></span><span id="_______size______"></span><span id="_______SIZE______"></span>*大小*   
+指定要搜索的指令数。 如果省略 *大小*，搜索将继续，直到发生第一个匹配项。
 
 ### <a name="span-idenvironmentspanspan-idenvironmentspanspan-idenvironmentspanenvironment"></a><span id="Environment"></span><span id="environment"></span><span id="ENVIRONMENT"></span>环境
 
@@ -49,12 +48,12 @@ ms.locfileid: "63337058"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>模式</strong></p></td>
-<td align="left"><p>用户模式下，内核模式</p></td>
+<td align="left"><p><strong>交货</strong></p></td>
+<td align="left"><p>用户模式，内核模式</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>目标</strong></p></td>
-<td align="left"><p>实时、 崩溃转储</p></td>
+<td align="left"><p>实时，故障转储</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>平台</strong></p></td>
@@ -65,18 +64,18 @@ ms.locfileid: "63337058"
 
  
 
-### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-调试和相关命令，请参阅有关程序集的详细信息[在程序集模式下调试](debugging-in-assembly-mode.md)。
+有关程序集调试和相关命令的详细信息，请参阅 [程序集模式下的调试](debugging-in-assembly-mode.md)。
 
 <a name="remarks"></a>备注
 -------
 
-如果以前使用过 **\#** 命令，可省略*地址*上, 一次搜索结束的地方开始执行搜索。
+如果你以前使用过该 **\#** 命令并且省略了 *Address*，搜索将从上一个搜索结束的位置开始。
 
-此命令通过搜索指定模式的已拆分的文本有效。 可以使用此命令在反汇编输出中查找注册名称、 常量或出现的任何其他字符串。 您可以重复该命令而无需*地址*参数查找模式的后续匹配项。
+此命令通过搜索指定模式的反汇编文本来运行。 您可以使用此命令查找寄存器名称、常量或在反汇编输出中出现的任何其他字符串。 可以不带 *Address* 参数重复此命令，以便查找该模式的后续匹配项。
 
-可以通过查看反汇编说明[ **u （反汇编）** ](u--unassemble-.md)命令或使用[反汇编窗口](disassembly-window.md)在 WinDbg 中。 反汇编显示包含最多四个部分：地址偏移量、 二进制代码、 汇编语言助记键和程序集语言的详细信息。 下面的示例显示了可能的显示。
+您可以使用 [**u (Unassemble)**](u--unassemble-.md) 命令或使用 WinDbg 的 " [反汇编" 窗口](disassembly-window.md) 查看反汇编说明。 反汇编显示最多包含四个部分：地址偏移量、二进制代码、程序集语言助记键和程序集语言详细信息。 下面的示例演示了可能的显示。
 
 ```console
 0040116b    45          inc         ebp            
@@ -84,7 +83,7 @@ ms.locfileid: "63337058"
 0040116d    8945b0      mov         eax,[ebp-0x1c] 
 ```
 
-**\#** 命令可搜索的任何单个部分内的反汇编显示的文本。 例如，可以使用 **\# eax 0040116b**若要查找**mov eax\[ebp 0x1c\]** 地址 0040116 d 处的指令。 以下命令还可以找到此指令。
+**\#** 命令可以在反汇编显示的任何单个部分内搜索文本。 例如，可以使用 **\# eax 0040116b** 在 address 0040116d 上查找 **mov eax \[ 0x1c \]** 指令。 以下命令也会找到此指令。
 
 ```console
 #  [ebp?0x  0040116b 
@@ -93,23 +92,23 @@ ms.locfileid: "63337058"
 #  116d  0040116b 
 ```
 
-但是，你不能搜索**mov eax\\** * 作为单个单元，因为**mov**并**eax**出现在显示的不同部分。 请改用**mov\*eax**。
+但是，您不能将 **mov eax \\** _ 作为单个单元来搜索，因为 _ *mov** 和 **eax** 显示在显示的不同部分。 请改用 " **mov \* eax**"。
 
-又如，则可以发出以下命令以搜索到的第一个引用**strlen**函数的入口点之后**主要**。
+作为另一个示例，你可以发出以下命令，搜索 **入口点后** 首次对 **strlen** 函数的引用。
 
 ```console
 # strlen main
 ```
 
-同样，您可以发出以下两个命令，以找到第一个**jnz**之后指令寻址 0x779F9FBA，然后找到下一步**jnz**之后的指令。
+同样，你可以发出以下两个命令来查找地址0x779F9FBA 之后的第一个 **jnz** 指令，并在之后查找下一个 **jnz** 说明。
 
 ```console
 # jnz 779f9fba# 
 ```
 
-如果省略*模式*或*地址*，其值基于是因为先前使用 **\#** 命令。 如果您省略两个参数中第一次发出 **\#** 命令时，不执行任何搜索。 但是，值*模式*并*地址*即使在这种情况下初始化。
+省略 *模式* 或 *地址* 时，它们的值基于以前使用的 **\#** 命令。 如果首次发出命令时省略任一参数 **\#** ，则不会执行任何搜索。 但是，即使在这种情况下，也会初始化 *Pattern* 和 *Address* 的值。
 
-如果包括*模式*或*地址*，其值设置为输入的值。 如果省略*地址*，它将初始化为程序计数器的当前值。 如果省略*模式*，它将初始化为空的模式。
+如果包括 *模式* 或 *地址*，则将其值设置为输入的值。 如果省略 *Address*，则会将其初始化为程序计数器的当前值。 如果省略 *模式*，则将其初始化为空模式。
 
  
 

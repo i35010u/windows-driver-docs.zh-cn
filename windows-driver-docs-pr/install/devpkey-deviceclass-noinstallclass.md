@@ -1,7 +1,6 @@
 ---
 title: DEVPKEY_DeviceClass_NoInstallClass
 description: DEVPKEY_DeviceClass_NoInstallClass
-ms.assetid: 4b4f1187-570b-40e0-a96c-f3511f46a1be
 keywords:
 - DEVPKEY_DeviceClass_NoInstallClass 设备和驱动程序安装
 topic_type:
@@ -14,17 +13,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 78503a3dfa43eb4d27a085fb72d6eae4b587010d
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 13ac1837ec7915038a9000e4a055740cf24f6036
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90717406"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96799519"
 ---
 # <a name="devpkey_deviceclass_noinstallclass"></a>DEVPKEY_DeviceClass_NoInstallClass
 
 
-DEVPKEY_DeviceClass_NoInstallClass 设备安装程序类属性表示一个布尔型标志，该标志控制 [设备安装程序类](./overview-of-device-setup-classes.md) 中的设备是否显示在 **添加硬件向导**中。
+DEVPKEY_DeviceClass_NoInstallClass 设备安装程序类属性表示一个布尔型标志，该标志控制 [设备安装程序类](./overview-of-device-setup-classes.md) 中的设备是否显示在 **添加硬件向导** 中。
 
 <table>
 <colgroup>
@@ -68,7 +67,7 @@ DEVPKEY_DeviceClass_NoInstallClass 设备安装程序类属性表示一个布尔
 
 将 DEVPKEY_DeviceClass_NoInstallClass 的值设置为 DEVPROP_TRUE 指示类中设备的安装不需要最终用户交互。 如果此值未设置为 DEVPROP_TRUE，则添加硬件向导将显示设备安装程序类的设备。
 
-设备安装程序类的**NoInstallClass**注册表值可由安装类的 inf 文件的 inf [**ClassInstall32 部分**](./inf-classinstall32-section.md)中包含的[**inf AddReg 指令**](./inf-addreg-directive.md)设置。
+设备安装程序类的 **NoInstallClass** 注册表值可由安装类的 inf 文件的 inf [**ClassInstall32 部分**](./inf-classinstall32-section.md)中包含的 [**inf AddReg 指令**](./inf-addreg-directive.md)设置。
 
 可以调用 [**SetupDiGetClassProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdigetclasspropertyw) 或 [**SetupDiGetClassPropertyEx**](/windows/win32/api/setupapi/nf-setupapi-setupdigetclasspropertyexw) 来检索 DEVPKEY_DeviceClass_NoInstallClass 的值。
 

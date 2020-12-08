@@ -1,15 +1,14 @@
 ---
 title: 获取 HDAUDIO_BUS_INTERFACE_V2 DDI 对象
 description: 获取 HDAUDIO_BUS_INTERFACE_V2 DDI 对象
-ms.assetid: 3aad8c7a-8c89-499a-bfe8-e3facdffcd15
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3401ca614e4c18e9131842eec958a33c7d4e8016
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 547743a9e6a27dc914d8d4838b6f00f9ffe124dc
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90101784"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96800977"
 ---
 # <a name="obtaining-an-hdaudio_bus_interface_v2-ddi-object"></a>获取 HDAUDIO \_ BUS \_ 接口 \_ V2 DDI 对象
 
@@ -24,7 +23,7 @@ ms.locfileid: "90101784"
 <thead>
 <tr class="header">
 <th align="left">参数</th>
-<th align="left">值</th>
+<th align="left">“值”</th>
 </tr>
 </thead>
 <tbody>
@@ -53,7 +52,7 @@ ms.locfileid: "90101784"
 
  
 
-函数驱动程序为 [**HDAUDIO \_ 总线 \_ 接口 \_ V2**](/windows-hardware/drivers/ddi/hdaudio/ns-hdaudio-_hdaudio_bus_interface_v2) 结构分配存储，并在 IOCTL 中包含指向此结构的指针。 在上表中，指向 **HDAUDIO \_ 总线 \_ 接口 \_ V2** 结构的指针被强制转换为类型 **PINTERFACE**，这是指向类型 [**接口**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_interface)的结构的指针。 **HDAUDIO \_ 总线 \_ 接口 \_ V2**的前五个成员的名称和类型与**接口**的五个成员的名称和类型匹配。 **HDAUDIO \_总线 \_ 接口 \_ V2** 包含其他成员，这些成员是指向 DDI 例程的函数指针。 为了响应从函数驱动程序接收 IOCTL，HD 音频总线驱动程序会填充 **HDAUDIO \_ 总线 \_ 接口 \_ V2** 结构。
+函数驱动程序为 [**HDAUDIO \_ 总线 \_ 接口 \_ V2**](/windows-hardware/drivers/ddi/hdaudio/ns-hdaudio-_hdaudio_bus_interface_v2) 结构分配存储，并在 IOCTL 中包含指向此结构的指针。 在上表中，指向 **HDAUDIO \_ 总线 \_ 接口 \_ V2** 结构的指针被强制转换为类型 **PINTERFACE**，这是指向类型 [**接口**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_interface)的结构的指针。 **HDAUDIO \_ 总线 \_ 接口 \_ V2** 的前五个成员的名称和类型与 **接口** 的五个成员的名称和类型匹配。 **HDAUDIO \_总线 \_ 接口 \_ V2** 包含其他成员，这些成员是指向 DDI 例程的函数指针。 为了响应从函数驱动程序接收 IOCTL，HD 音频总线驱动程序会填充 **HDAUDIO \_ 总线 \_ 接口 \_ V2** 结构。
 
 下表显示了高清音频总线驱动程序写入到 [**HDAUDIO \_ 总线 \_ 接口 \_ V2**](/windows-hardware/drivers/ddi/hdaudio/ns-hdaudio-_hdaudio_bus_interface_v2) 结构的前5个成员的值。
 
@@ -65,7 +64,7 @@ ms.locfileid: "90101784"
 <thead>
 <tr class="header">
 <th align="left">成员</th>
-<th align="left">Value</th>
+<th align="left">“值”</th>
 </tr>
 </thead>
 <tbody>

@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ SOUNDDETECTOR \_ 模式
 description: KSPROPERTY \_ SOUNDDETECTOR \_ 模式属性由操作系统设置，用于配置要检测的关键字。
-ms.assetid: 7A6AF4F6-5F5F-4A3D-AF61-B3E4374B33AD
 keywords:
 - KSPROPERTY_SOUNDDETECTOR_PATTERNS 音频设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 09/25/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 7ab75f1ab954908286c2e2e2fb8d604775b397ae
-ms.sourcegitcommit: cfd4d8ee889c6a3feed79ae112662f6c095b6a36
+ms.openlocfilehash: f1d6f29cb0e0b11f2d7a1c6b5ecae7d09343a166
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94417421"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801171"
 ---
 # <a name="ksproperty_sounddetector_patterns"></a>KSPROPERTY \_ SOUNDDETECTOR \_ 模式
 
@@ -47,7 +46,7 @@ OS 设置关键字模式，或者可能将此值设置为空值。
 <tr class="header">
 <th align="left">获取</th>
 <th align="left">设置</th>
-<th align="left">Target</th>
+<th align="left">目标</th>
 <th align="left">属性描述符类型</th>
 <th align="left">属性值类型</th>
 </tr>
@@ -80,7 +79,7 @@ OS 设置关键字模式，或者可能将此值设置为空值。
 <tr class="header">
 <th align="left">获取</th>
 <th align="left">设置</th>
-<th align="left">Target</th>
+<th align="left">目标</th>
 <th align="left">属性描述符类型</th>
 <th align="left">属性值类型</th>
 </tr>
@@ -101,7 +100,7 @@ OS 设置关键字模式，或者可能将此值设置为空值。
 
 属性值为 [**KSMULTIPLE \_ 项**](/windows-hardware/drivers/ddi/ks/ns-ks-ksmultiple_item) 结构，后跟64位对齐检测模式的序列。 每个模式都以 [**SOUNDDETECTOR \_ PATTERNHEADER**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-sounddetector_patternheader) 开始，后跟模式负载。
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 在以下时间之前，驱动程序不应完成 "set" 请求：

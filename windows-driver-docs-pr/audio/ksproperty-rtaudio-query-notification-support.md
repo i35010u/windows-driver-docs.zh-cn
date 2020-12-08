@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ RTAUDIO \_ 查询 \_ 通知 \_ 支持
 description: 客户端应用程序使用 KSPROPERTY \_ RTAUDIO \_ 查询 \_ 通知 \_ 支持属性来确定音频驱动程序是否可以在提交的缓冲区上执行的进程完成时通知客户端应用程序。
-ms.assetid: 7e0910df-4b76-4e61-9f88-8953860f3abe
 keywords:
 - KSPROPERTY_RTAUDIO_QUERY_NOTIFICATION_SUPPORT 音频设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 38547c412c05f14139d9af4077ea070d3c4097e6
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 3120cbd7662b4a9bf0c24773f1ab3e61e2fc491a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90101936"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801201"
 ---
 # <a name="ksproperty_rtaudio_query_notification_support"></a>KSPROPERTY \_ RTAUDIO \_ 查询 \_ 通知 \_ 支持
 

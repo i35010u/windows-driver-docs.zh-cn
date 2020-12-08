@@ -1,7 +1,6 @@
 ---
 title: '\_ \_ \_ 带有通知的 KSPROPERTY RTAUDIO 缓冲区 \_'
 description: '\_ \_ 带有 NOTIFICATION 属性的 KSPROPERTY RTAUDIO 缓冲区 \_ \_ 指定用于音频数据的驱动程序分配的循环缓冲区，并标识事件通知要求。下表汇总了此属性的功能。'
-ms.assetid: a66727ae-03d6-41b5-b5c9-3b04352b3b83
 keywords:
 - KSPROPERTY_RTAUDIO_BUFFER_WITH_NOTIFICATION 音频设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 62878a453e6cfbd3a36daf1bcb24d7253bdaa06c
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 7ffe14de24cdee24164a2a5b308a1a239f8cc22b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90101966"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801199"
 ---
 # <a name="ksproperty_rtaudio_buffer_with_notification"></a>\_ \_ \_ 带有通知的 KSPROPERTY RTAUDIO 缓冲区 \_
 
@@ -99,7 +98,7 @@ ms.locfileid: "90101966"
 
  
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 基址是循环缓冲区开头的虚拟内存地址。 客户端可以直接访问此地址处的缓冲区。 缓冲区在虚拟内存中是连续的。 驱动程序确定缓冲区是否在物理内存中是连续的。

@@ -1,25 +1,24 @@
 ---
 title: IHV 可扩展性概述
 description: IHV 可扩展性概述
-ms.assetid: 446d91e9-3497-4b45-82a6-7f36dd136e08
 keywords:
 - IHV 扩展 WDK 本机802.11，关于 IHV 扩展性
 - 本机 802.11 IHV 扩展 WDK，关于 IHV 扩展性
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3a615a003db3c08845426aa13fbb388178f825e6
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 045b5310b6a8945ca8ddbfcffe8b59c9f70cae11
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91733637"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801371"
 ---
 # <a name="overview-of-ihv-extensibility"></a>IHV 可扩展性概述
 
 
 
 
- 
+ 
 
 本机802.11 框架为独立硬件供应商 (IHV 提供支持) 将功能添加到本机 802.11 framework。
 
@@ -53,6 +52,6 @@ ms.locfileid: "91733637"
 
 3.  将 [网络配置文件](/previous-versions/windows/hardware/wireless/configuration-through-a-network-profile) 的 IHV 扩展部分视为可能由攻击者操作的不受信任的数据。 配置文件的 IHV 扩展部分对于802.11 自动配置模块是不透明的， () 和媒体特定模块 (MSM) ，并且将不会进行验证。  (参阅 [本机802.11 软件体系结构](/previous-versions/windows/hardware/wireless/native-802-11-software-architecture) ，了解有关这些模块和配置控制路径的说明 ) 。应适当地分析此 IHV 扩展数据，以防止任何缓冲区溢出或可能导致本地升级权限的攻击。
 
- 
+ 
 
- 
+ 

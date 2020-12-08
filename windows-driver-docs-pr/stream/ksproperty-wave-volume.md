@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ 波形 \_ 音量
 description: KSPROPERTY \_ wave \_ volume 属性指定波形设备的音量设置。
-ms.assetid: c5725f7d-b965-43f3-9c49-faff82d99580
 keywords:
 - KSPROPERTY_WAVE_VOLUME 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0d5c33d84bc364086822abe8fe81e306c3f03d7c
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: af4486d9e9087ea94a5b910647be7f7c48ee9cf6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107484"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801225"
 ---
 # <a name="ksproperty_wave_volume"></a>KSPROPERTY \_ 波形 \_ 音量
 
@@ -79,7 +78,7 @@ KSPROPERTY \_ wave \_ volume 属性指定波形设备的音量设置。
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSPROPERTY**](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)

@@ -1,15 +1,14 @@
 ---
 title: HFP 设备启动
 description: HFP 设备启动主题讨论当) 设备在音频系统中出现时，蓝牙免提配置文件 (HFP 发生了什么情况。
-ms.assetid: C478BCBA-2A17-4604-AE2B-99B3445C741B
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e6a608dd4bb005051f077248fa95cab2799b6c62
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 1b2792d757c5fd866fb735bfd4cb2976672f8c21
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89210363"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96800611"
 ---
 # <a name="hfp-device-startup"></a>HFP 设备启动
 

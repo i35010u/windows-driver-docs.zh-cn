@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ RTAUDIO \_ PACKETCOUNT
 description: KSPROPERTY \_ RTAUDIO \_ PACKETCOUNT 返回从 WaveRT 缓冲区完全传输到硬件的) 基于 (1 的数据包数。
-ms.assetid: 904896DE-D135-43B6-AA1F-F49D0748952D
 keywords:
 - KSPROPERTY_RTAUDIO_PACKETCOUNT 音频设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 06/19/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: b3253d308bba8d733ad7b43c8a74e9467cc75dd4
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: df0b05d5814e4054284266147f46ffad4d394cc5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90101946"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801189"
 ---
 # <a name="ksproperty_rtaudio_packetcount"></a>KSPROPERTY \_ RTAUDIO \_ PACKETCOUNT
 
@@ -66,7 +65,7 @@ KSPROPERTY \_ RTAUDIO \_ PACKETCOUNT 返回从 WaveRT 缓冲区完全传输到�
 
 KSPROPERTY \_ RTAUDIO \_ PACKETCOUNT 属性请求返回状态 \_ SUCCESS 以指示该请求已成功完成。 否则，请求将返回相应的失败状态代码。
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 从数据包计数中，OS 可以派生出其写入到 WaveRT 缓冲区的数据包的流位置。 操作系统还可以派生下一个数据包的 WaveRT 缓冲区位置，以便在 WaveRT 缓冲区中写入。 对于 WaveRT 驱动程序，驱动程序会发出单个通知事件的信号，因为它会从每个 WaveRT 缓冲区包中传输数据。 因此，单独的事件无法指示正在传输 WaveRT 缓冲区中的数据包。 在正常操作中，这并不是问题，但在下溢情况下，通过查询 OS 可以确定要写入的数据包的数据包计数，可以更轻松地实现更正。

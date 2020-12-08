@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ SYSAUDIO \_ 设备 \_ 实例
 description: KSPROPERTY \_ SYSAUDIO \_ 设备 \_ 实例属性指定虚拟音频设备的当前实例。
-ms.assetid: 67cdc1ec-c696-454f-a3cc-1b50418c4056
 keywords:
 - KSPROPERTY_SYSAUDIO_DEVICE_INSTANCE 音频设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 66b1bfc54a7cd41a8ee3b0ff2342ec6bf055e71d
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 84c7fbe6425da33ddfc680ebd226a4b86019cd43
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90101868"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801153"
 ---
 # <a name="ksproperty_sysaudio_device_instance"></a>KSPROPERTY \_ SYSAUDIO \_ 设备 \_ 实例
 
@@ -67,7 +66,7 @@ KSPROPERTY \_ SYSAUDIO \_ 设备 \_ 实例属性指定虚拟音频设备的当�
 
 KSPROPERTY \_ SYSAUDIO \_ 设备 \_ 实例属性请求返回状态 " \_ 成功" 以指示已成功完成。 否则，请求将返回相应的错误状态代码。
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 KSPROPERTY \_ SYSAUDIO \_ 设备 \_ 实例集-属性请求打开由属性值中包含的设备 ID 指定的虚拟音频设备。 最后一个要打开的设备称为 "当前设备"。

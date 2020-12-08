@@ -1,9 +1,8 @@
 ---
-title: minipkd.lun
-description: Minipkd.lun 扩展显示有关指定的逻辑单元扩展 (LUN) 的详细的信息。
-ms.assetid: f78b2c15-ecfc-4138-b595-a6e3f0f7f93c
+title: minipkd
+description: Minipkd 扩展显示 (LUN) 的指定逻辑单元扩展的详细信息。
 keywords:
-- minipkd.lun Windows 调试
+- minipkd Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,33 +11,33 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 40bb448e3f0b7486be5406e984f2bd28355cdf21
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fa2e660230368003d3c7998af7d1d3608d52df88
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63336178"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96799867"
 ---
 # <a name="minipkdlun"></a>!minipkd.lun
 
 
-**！ Minipkd.lun**扩展显示有关指定的逻辑单元扩展 (LUN) 的详细的信息。
+**！ Minipkd** 扩展显示 (lun) 的指定逻辑单元扩展的详细信息。
 
 ```dbgcmd
 !minipkd.lun LUN 
 !minipkd.lun Device 
 ```
 
-## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>参数
+## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>Parameters
 
 
-<span id="_______LUN______"></span><span id="_______lun______"></span> *LUN*   
-指定的 LUN 的地址。
+<span id="_______LUN______"></span><span id="_______lun______"></span>*LUN*   
+指定 LUN 的地址。
 
-<span id="_______Device______"></span><span id="_______device______"></span><span id="_______DEVICE______"></span> *设备*   
-Lun 指定物理设备对象 (PDO)。
+<span id="_______Device______"></span><span id="_______device______"></span><span id="_______DEVICE______"></span>*设备*   
+指定 LUN (PDO) 的物理设备对象。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 <table>
 <colgroup>
@@ -59,16 +58,16 @@ Lun 指定物理设备对象 (PDO)。
 
  
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-有关详细信息，请参阅[SCSI 微型端口调试](scsi-miniport-debugging.md)。
+有关详细信息，请参阅 [SCSI 微型端口调试](scsi-miniport-debugging.md)。
 
 <a name="remarks"></a>备注
 -------
 
-LUN 通常称为*设备*。 因此，此扩展显示有关设备的信息的适配器上。
+LUN 通常称为 *设备*。 因此，此扩展显示有关适配器上设备的信息。
 
-LUN 可以是指定的地址 (这可在**LUN**字段[ **！ minipkd.adapters** ](-minipkd-adapters.md)显示)，或通过其物理设备对象 （可以是在中找到**DevObj**字段 **！ minipkd.adapters**显示)。
+可以通过 (的地址指定 LUN，该地址可以在 [**！ minipkd**](-minipkd-adapters.md)显示) 的 **LUN** 字段中找到，也可以通过其物理设备对象 (，可以在 **！ minipkd**) 显示的 **DevObj** 字段中找到该对象。
 
  
 

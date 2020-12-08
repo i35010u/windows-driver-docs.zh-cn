@@ -1,18 +1,17 @@
 ---
 title: 验证渲染器目标的有效性
 description: 验证渲染器目标的有效性
-ms.assetid: 316ecd58-996a-4277-b2dc-4424c96d8a56
 keywords:
-- 呈现器目标 WDK DirectX 9.0 中，验证有效性
-- 验证呈现器目标 WDK DirectX 9.0
+- 呈现目标 WDK DirectX 9.0，验证有效性
+- 验证呈现器目标 WDK DirectX 9。0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: af45a846922aa41edd4bfa375f5ca74359c37cb4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9847ff824d2af689f8d915f8f5ae46609fdf6103
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390783"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96799589"
 ---
 # <a name="verifying-validity-of-render-target"></a>验证渲染器目标的有效性
 
@@ -20,7 +19,7 @@ ms.locfileid: "63390783"
 ## <span id="ddk_verifying_validity_of_render_target_gg"></span><span id="DDK_VERIFYING_VALIDITY_OF_RENDER_TARGET_GG"></span>
 
 
-版本驱动程序必须验证其内部的呈现器目标之前使用呈现器目标，因为 DirectX 9.0 运行时允许应用程序设置是否有效 DirectX 9.0 呈现器目标的**NULL**。 与此相反，DirectX 8.1 和更早呈现器目标的运行时保证始终是 Direct3D 上下文有效。
+在使用呈现目标之前，DirectX 9.0 版本驱动程序必须验证其内部呈现目标是否有效，因为 DirectX 9.0 运行时允许应用程序将呈现目标设置为 **NULL**。 与此相反，DirectX 8.1 和更早版本的运行时保证呈现目标对于 Direct3D 上下文始终有效。
 
  
 

@@ -1,27 +1,26 @@
 ---
-title: PKEY\_MFX\_Offload\_ProcessingModes\_Supported\_For\_Streaming
-description: 在 Windows 10 版本 1511年及更高版本，主键\_MFX\_卸载\_ProcessingModes\_支持\_为\_流式处理属性键标识模式影响处理模式支持卸载流式处理驱动程序支持。
-ms.assetid: 48E12E69-5159-4483-9891-2B689B7C3DCE
+title: PKEY \_ MFX \_ 卸载 \_ ProcessingModes \_ 支持 \_ \_ 流式处理
+description: 在 Windows 10 版本1511及更高版本中， \_ \_ 支持流式处理属性键的 PKEY MFX 卸载 \_ ProcessingModes \_ \_ \_ 标识驱动程序支持的卸载流式处理模式的处理模式。
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7db274dbf1490b6b259a22676326bc4a6a3feda2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b1eff381ca7620ada79c600f365fea57865106a3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332105"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96800857"
 ---
-# <a name="pkeymfxoffloadprocessingmodessupportedforstreaming"></a>PKEY\_MFX\_Offload\_ProcessingModes\_Supported\_For\_Streaming
+# <a name="pkey_mfx_offload_processingmodes_supported_for_streaming"></a>PKEY \_ MFX \_ 卸载 \_ ProcessingModes \_ 支持 \_ \_ 流式处理
 
 
-在 Windows 10 版本 1511年及更高版本，**主键\_MFX\_卸载\_ProcessingModes\_支持\_有关\_流式处理**属性键标识处理模式下支持卸载流式处理驱动程序支持的模式影响。 驱动程序开发人员应列出处理模式下支持卸载流式处理其驱动程序支持的模式影响。
+在 Windows 10 版本1511及更高版本中，支持流式处理属性键的 **PKEY \_ MFX \_ 卸载 \_ ProcessingModes \_ \_ \_** 标识驱动程序支持的卸载流式处理模式的处理模式。 驱动程序开发人员应列出其驱动程序支持的卸载流式处理所支持的模式效果处理模式。
 
-INF 文件属性键指示音频终结点生成器 Clsid 为未设置效果属性存储到。 此信息用于生成在音频图形的将用来通知哪些因素影响均已到位的上部级别应用。
+INF 文件属性键指示音频终结点生成器为中的 Clsid 设置到效果属性存储中。 此信息用于生成音频图形，该图形将用于通知高层应用程序的效果。
 
-## <a name="span-idinffilesamplespanspan-idinffilesamplespanspan-idinffilesamplespaninf-file-sample"></a><span id="INF_File_Sample"></span><span id="inf_file_sample"></span><span id="INF_FILE_SAMPLE"></span>INF 文件示例
+## <a name="span-idinf_file_samplespanspan-idinf_file_samplespanspan-idinf_file_samplespaninf-file-sample"></a><span id="INF_File_Sample"></span><span id="inf_file_sample"></span><span id="INF_FILE_SAMPLE"></span>INF 文件示例
 
 
-INF 文件指定音频处理过程中为该设备的添加注册表部分模式效果设置。 下面的示例 INF 显示字符串和加载流处理模式支持到注册表卸载添加注册表部分。
+INF 文件指定该设备的 "外接程序" 部分中音频处理模式效果的设置。 以下 INF 示例显示了字符串和添加注册表部分，这些部分将支持的卸载流处理模式加载到注册表中。
 
 ```inf
 [Strings]
@@ -37,7 +36,7 @@ AUDIO_SIGNALPROCESSINGMODE_MEDIA   = "{4780004E-7133-41D8-8C74-660DADD2C0EE}"
 HKR,"FX\\0",%PKEY_MFX_Offload_ProcessingModes_For_Streaming%,%REG_MULTI_SZ%,%AUDIO_SIGNALPROCESSINGMODE_DEFAULT%,%AUDIO_SIGNALPROCESSINGMODE_MOVIE%,%AUDIO_SIGNALPROCESSINGMODE_MEDIA%
 ```
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 [媒体类 INF 扩展](media-class-inf-extensions.md)

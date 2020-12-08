@@ -1,7 +1,6 @@
 ---
 title: AVC \_ 函数 \_ 集 \_ CONNECTINFO
 description: AVC \_ 函数 \_ 集 \_ CONNECTINFO
-ms.assetid: e97b525a-2236-44a9-9d49-dc0df760f21e
 keywords:
 - AVC_FUNCTION_SET_CONNECTINFO 流媒体设备
 topic_type:
@@ -12,12 +11,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1ae7fb93aa19cb193de56d0cf57faa1a115b4ff9
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: f29bc564a2422ecc8a6a750850996e1edb781bf7
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89187475"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801237"
 ---
 # <a name="avc_function_set_connectinfo"></a>AVC \_ 函数 \_ 集 \_ CONNECTINFO
 
@@ -41,7 +40,7 @@ AVC \_ 函数 \_ 集 \_ 连接 \_ 信息函数代码为每个 pin ID 设置 AVCC
 <thead>
 <tr class="header">
 <th>返回值</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -62,7 +61,7 @@ AVC \_ 函数 \_ 集 \_ 连接 \_ 信息函数代码为每个 pin ID 设置 AVCC
 
  
 
-### <a name="comments"></a>说明
+### <a name="comments"></a>注释
 
 此函数使用 AVC **SetConnectInfo** \_ MULTIFUNC IRB 结构的 SetConnectInfo 成员 \_ ，如下所示。
 
@@ -83,7 +82,7 @@ typedef struct _AVC_MULTIFUNC_IRB {
 
 ### <a name="requirements"></a>要求
 
-**标头：** 在 *avc*中声明。 包括 *avc*。
+**标头：** 在 *avc* 中声明。 包括 *avc*。
 
 ### <a name="avc_multifunc_irb-input"></a>AVC \_ MULTIFUNC \_ IRB 输入
 
@@ -93,7 +92,7 @@ typedef struct _AVC_MULTIFUNC_IRB {
 <span id="SetConnectInfo"></span><span id="setconnectinfo"></span><span id="SETCONNECTINFO"></span>**SetConnectInfo**  
 指定 AV/C 设备的连接信息。
 
-*avc.sys*的虚拟实例不支持此函数代码。
+*avc.sys* 的虚拟实例不支持此函数代码。
 
 如果子单位驱动程序提供了交叉处理程序，则它必须使用此函数。 CONNECTINFO 结构中包含的 AVCCONNECTINFO 结构 (\_ \_) 派生自 AVCPRECONNECTINFO 结构，该结构追加到传递给交集处理程序的数据范围。
 

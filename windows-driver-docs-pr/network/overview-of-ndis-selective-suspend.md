@@ -1,15 +1,14 @@
 ---
 title: NDIS 选择性挂起概述
 description: NDIS 选择性挂起概述
-ms.assetid: D23E103E-893E-4B42-8EFD-0524846EF45F
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 02a20ba4b72b92060f2c9ed851872f61a8747c38
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: b432c0f111680959e549950a69c9f6bf7452dbfc
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89217979"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801341"
 ---
 # <a name="overview-of-ndis-selective-suspend"></a>NDIS 选择性挂起概述
 
@@ -18,7 +17,7 @@ ms.locfileid: "89217979"
 
 对于基于 USB v2.0 和 v2.0 接口的网络适配器，NDIS 选择性挂起特别有用。 这些适配器会持续轮询接收的数据包，而不管它们是处于活动状态还是空闲状态。 通过暂停闲置 USB 适配器，可以将 CPU 开销减少10%。
 
-NDIS 选择性挂起基于 [USB 选择性挂起](../usbcon/usb-selective-suspend.md) 技术。 但是，NDIS 选择性挂起旨在与总线无关。 通过这种方式，与总线无关的 i/o 请求数据包 (Irp 的 "选择性挂起") 。 这会使微型端口驱动程序负责发出在特定总线上选择性挂起所需的任何 Irp。 例如，USB 网络适配器的微型端口驱动程序发出特定于总线的 USB 空闲请求 IRP (IOCTL 在选择性挂起操作期间) 到 USB 总线驱动程序的 [** \_ 内部 \_ usb \_ 提交 \_ 空闲 \_ 通知**](/windows-hardware/drivers/ddi/usbioctl/ni-usbioctl-ioctl_internal_usb_submit_idle_notification) 。
+NDIS 选择性挂起基于 [USB 选择性挂起](../usbcon/usb-selective-suspend.md) 技术。 但是，NDIS 选择性挂起旨在与总线无关。 通过这种方式，与总线无关的 i/o 请求数据包 (Irp 的 "选择性挂起") 。 这会使微型端口驱动程序负责发出在特定总线上选择性挂起所需的任何 Irp。 例如，USB 网络适配器的微型端口驱动程序发出特定于总线的 USB 空闲请求 IRP (IOCTL 在选择性挂起操作期间) 到 USB 总线驱动程序的 [**\_ 内部 \_ usb \_ 提交 \_ 空闲 \_ 通知**](/windows-hardware/drivers/ddi/usbioctl/ni-usbioctl-ioctl_internal_usb_submit_idle_notification) 。
 
 NDIS 和微型端口驱动程序通过以下方式参与 NDIS 选择性挂起：
 
@@ -27,7 +26,7 @@ NDIS 和微型端口驱动程序通过以下方式参与 NDIS 选择性挂起：
 2.  如果网络适配器处于非活动状态的时间超过指定的空闲超时期限，NDIS 会将网络适配器视为空闲。 发生这种情况时，NDIS 会通过向微型端口驱动程序发出空闲通知来启动选择性挂起操作，以便将网络适配器转换为低功耗状态。
 
     > [!NOTE]
-    > 空闲超时期限的长度由** \* SSIDLETIMEOUT**标准化 INF 关键字的值指定。 有关此关键字的详细信息，请参阅 [用于 NDIS 选择性挂起的标准化 INF 关键字](standardized-inf-keywords-for-ndis-selective-suspend.md)。     
+    > 空闲超时期限的长度由 **\* SSIDLETIMEOUT** 标准化 INF 关键字的值指定。 有关此关键字的详细信息，请参阅 [用于 NDIS 选择性挂起的标准化 INF 关键字](standardized-inf-keywords-for-ndis-selective-suspend.md)。     
 
     有关 NDIS 如何确定网络适配器处于空闲状态的详细信息，请参阅 [Ndis 如何检测空闲网络适配器](how-ndis-detects-idle-network-adapters.md)。
 

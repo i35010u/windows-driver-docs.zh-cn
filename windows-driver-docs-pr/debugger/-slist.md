@@ -1,9 +1,8 @@
 ---
 title: slist
-description: Slist 扩展显示单向链接列表 (SList)。
-ms.assetid: 2ce6e941-eaa7-4850-9dd9-f4546659dbca
+description: Slist 扩展显示 (SList) 的单向链接列表。
 keywords:
-- SList （单向链接列表）
+- 'SList (单向链接列表) '
 - slist Windows 调试
 ms.date: 05/23/2017
 topic_type:
@@ -13,39 +12,39 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: ed758b0a7c6114129190248e884c9d77226502bc
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4f2f18e300019eaa8462ed6ad56d96901e9351bf
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63338820"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96799851"
 ---
 # <a name="slist"></a>!slist
 
 
-**！ Slist**扩展显示单向链接列表 (SList)。
+**！ Slist** 扩展显示 (slist) 的单向链接列表。
 
 ```dbgcmd
 !slist Address [ Symbol [Offset] ] 
 !slist -?
 ```
 
-## <a name="span-idddkslistdbgspanspan-idddkslistdbgspanparameters"></a><span id="ddk__slist_dbg"></span><span id="DDK__SLIST_DBG"></span>参数
+## <a name="span-idddk__slist_dbgspanspan-idddk__slist_dbgspanparameters"></a><span id="ddk__slist_dbg"></span><span id="DDK__SLIST_DBG"></span>参数
 
 
-<span id="_______Address______"></span><span id="_______address______"></span><span id="_______ADDRESS______"></span> *Address*   
-指定的地址 SLIST\_标头。
+<span id="_______Address______"></span><span id="_______address______"></span><span id="_______ADDRESS______"></span>*地址*   
+指定 SLIST 标头的地址 \_ 。
 
-<span id="_______Symbol______"></span><span id="_______symbol______"></span><span id="_______SYMBOL______"></span> *符号*   
-指定要用于显示的数据类型。 如果*符号*指定，则调试器将假定 SList 的每个节点时显示它是此数据类型的实例。
+<span id="_______Symbol______"></span><span id="_______symbol______"></span><span id="_______SYMBOL______"></span>*符号*   
+指定要用于显示的数据类型。 如果指定了 *符号* ，则在显示 SList 的每个节点时，调试器都将假定该数据类型的每个节点都是此数据类型的一个实例。
 
-<span id="_______Offset______"></span><span id="_______offset______"></span><span id="_______OFFSET______"></span> *Offset*   
-指定 SList 指针在结构中的字节偏移量。
+<span id="_______Offset______"></span><span id="_______offset______"></span><span id="_______OFFSET______"></span>*偏移量*   
+指定结构内 SList 指针的字节偏移量。
 
 <span id="_______-_______"></span> **-?**   
-在调试器命令窗口中显示此扩展的一些简要帮助文本。
+在调试器命令窗口中显示此扩展的一些简短帮助文本。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 <table>
 <colgroup>
@@ -69,7 +68,7 @@ ms.locfileid: "63338820"
 <a name="remarks"></a>备注
 -------
 
-如果您知道链接结构，性质*符号*并*偏移量*参数是非常有用。 若要查看不同之处，此处是两个示例;第一个省略*符号*并*偏移量*参数，而第二个包括它们。
+如果你知道链接结构的性质，则 *符号* 和 *偏移* 参数非常有用。 若要查看差别，请参阅以下两个示例：第一个省略 *符号* 和 *偏移量* 参数，第二个参数包含它们。
 
 ```dbgcmd
 0:000> !slist ListHead

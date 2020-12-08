@@ -1,9 +1,8 @@
 ---
 title: 作业元素
-description: 所需的作业元素包含与扫描作业相关联的所有元素。
-ms.assetid: c5622ea6-c57a-4c80-a6ef-e6b9014b2b59
+description: 必需的作业元素包含与扫描作业关联的所有元素。
 keywords:
-- 作业元素成像设备
+- 作业元素图像处理设备
 topic_type:
 - apiref
 api_name:
@@ -12,19 +11,19 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c1608d20448afa736b8c0f69f965776e423810ab
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d694b04ac5217b515d4582ed12f70a9467baa058
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63381645"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96799549"
 ---
 # <a name="job-element"></a>作业元素
 
 
-所需**作业**元素包含与扫描作业相关联的所有元素。
+必需的 **作业** 元素包含与扫描作业关联的所有元素。
 
-<a name="usage"></a>用法
+<a name="usage"></a>使用情况
 -----
 
 ```xml
@@ -85,7 +84,7 @@ ms.locfileid: "63381645"
 <a name="remarks"></a>备注
 -------
 
-扫描作业 (其**作业**元素表示) 可以包含一个或多个文档。 WSD 扫描服务的处理指令，两个作业，其文档在执行**作业**级别。
+**作业** 元素表示的扫描作业 () 可以包含一个或多个文档。 作业和其文档的 WSD 扫描服务的处理指令在 **作业** 级别执行。
 
 ## <a name="see-also"></a>请参阅
 

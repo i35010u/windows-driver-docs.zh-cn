@@ -1,7 +1,6 @@
 ---
 title: 引脚工厂
 description: 引脚工厂
-ms.assetid: 1399b8e1-bd73-4052-afa5-3e992be8789b
 keywords:
 - 音频筛选 WDK 音频，固定工厂
 - 固定工厂的 WDK 音频
@@ -15,12 +14,12 @@ keywords:
 - KSPIN_DESCRIPTOR 结构
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4734a713afe570eb2610a64dcd1951c1a55788bf
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: dcab43466eb8d3ffbfed213486cb9bf81d905888
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89208781"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96800925"
 ---
 # <a name="pin-factories"></a>引脚工厂
 

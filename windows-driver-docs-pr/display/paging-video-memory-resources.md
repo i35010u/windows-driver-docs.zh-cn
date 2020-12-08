@@ -1,7 +1,6 @@
 ---
 title: 分页视频内存资源
 description: 分页视频内存资源
-ms.assetid: e9734db6-3ad0-4c64-a9c6-15ba956b2dce
 keywords:
 - DMA 缓冲 WDK 显示，寻呼视频内存资源
 - 分页视频内存资源 WDK 显示
@@ -9,12 +8,12 @@ keywords:
 - 分页缓冲区 WDK 显示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5a81e45eae1b2307b73188e2703d6980346e7853
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 579765585f03723986e95c75d72a57cffeea2980
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89064690"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96799639"
 ---
 # <a name="paging-video-memory-resources"></a>分页视频内存资源
 

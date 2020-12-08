@@ -1,15 +1,14 @@
 ---
 title: VMQ 的标准化 INF 关键字
 description: VMQ 的标准化 INF 关键字
-ms.assetid: 5DA92019-D2E0-41D9-9C31-94E464B824BA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0092afb94b5c282cb584125b7a5d4db7287bb819
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 33a025b64708248b13bd7915fa5965925336a8d7
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89214398"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801287"
 ---
 # <a name="standardized-inf-keywords-for-vmq"></a>VMQ 的标准化 INF 关键字
 
@@ -20,14 +19,14 @@ ms.locfileid: "89214398"
 一个值，该值描述设备是否已启用或禁用 VMQ 功能。
 
 <a href="" id="-vmqlookaheadsplit"></a>**\*VMQLookaheadSplit**  
-一个值，该值描述设备是否已启用或禁用将接收缓冲区拆分为预测先行缓冲区和后期预测缓冲区的能力。 微型端口驱动程序在 \_ \_ \_ \_ \_ [**ndis \_ 接收 \_ 筛选器 \_ 功能**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_capabilities)结构的**SupportedQueueProperties**成员中报告此功能和 ndis 接收筛选器预测先行拆分支持的标志。 有关此功能的详细信息，请参阅 [接收缓冲区中的共享内存](shared-memory-in-receive-buffers.md)。
+一个值，该值描述设备是否已启用或禁用将接收缓冲区拆分为预测先行缓冲区和后期预测缓冲区的能力。 微型端口驱动程序在 \_ \_ \_ \_ \_ [**ndis \_ 接收 \_ 筛选器 \_ 功能**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_capabilities)结构的 **SupportedQueueProperties** 成员中报告此功能和 ndis 接收筛选器预测先行拆分支持的标志。 有关此功能的详细信息，请参阅 [接收缓冲区中的共享内存](shared-memory-in-receive-buffers.md)。
 
 **注意**  从 NDIS 6.30 开始，不再支持将数据包数据拆分为单独的预测先行缓冲区。 从 Windows Server 2012 开始，此 INF 关键字已过时。
 
 
 
 <a href="" id="-vmqvlanfiltering"></a>**\*VMQVlanFiltering**  
-一个值，该值描述设备是否已启用或禁用使用 media access control (MAC) 标头中的 VLAN 标识符来筛选网络数据包。 微型端口驱动程序 \_ \_ \_ \_ \_ \_ \_ 在[**ndis \_ 接收 \_ 筛选器 \_ 功能**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_capabilities)结构的**SupportedMacHeaderFields**成员中报告此功能和 ndis 接收筛选器 MAC 标头 VLAN ID 支持的标志。
+一个值，该值描述设备是否已启用或禁用使用 media access control (MAC) 标头中的 VLAN 标识符来筛选网络数据包。 微型端口驱动程序 \_ \_ \_ \_ \_ \_ \_ 在 [**ndis \_ 接收 \_ 筛选器 \_ 功能**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_capabilities)结构的 **SupportedMacHeaderFields** 成员中报告此功能和 ndis 接收筛选器 MAC 标头 VLAN ID 支持的标志。
 
 <a href="" id="-rssorvmqpreference"></a>**\*RssOrVmqPreference**  
 一个值，用于定义是否应启用 VMQ 功能，而不是接收方缩放 (RSS) 功能。
@@ -47,7 +46,7 @@ VMQ 标准化 INF 关键字是枚举关键字。 下表描述了 VMQ 标准化 I
 <tr class="header">
 <th align="left">SubkeyName</th>
 <th align="left">ParamDesc</th>
-<th align="left">值</th>
+<th align="left">“值”</th>
 <th align="left">EnumDesc</th>
 </tr>
 </thead>
@@ -124,7 +123,7 @@ VMQ 标准化 INF 关键字是枚举关键字。 下表描述了 VMQ 标准化 I
 此表中的列描述了用于枚举关键字的以下属性：
 
 <a href="" id="subkeyname"></a>SubkeyName  
-必须在 INF 文件中指定的关键字的名称。 此名称还会显示在注册表中网络适配器的**NDI** \\ **params**键下。
+必须在 INF 文件中指定的关键字的名称。 此名称还会显示在注册表中网络适配器的 **NDI** \\ **params** 键下。
 
 <a href="" id="paramdesc"></a>ParamDesc  
 与 SubkeyName INF 条目关联的显示文本。
@@ -133,7 +132,7 @@ VMQ 标准化 INF 关键字是枚举关键字。 下表描述了 VMQ 标准化 I
 
 
 
-<a href="" id="value"></a>负值  
+<a href="" id="value"></a>“值”  
 与列表中的每个 SubkeyName 相关联的枚举整数值。
 
 <a href="" id="enumdesc"></a>EnumDesc  
@@ -155,13 +154,13 @@ VMQ 标准化 INF 关键字是枚举关键字。 下表描述了 VMQ 标准化 I
 
 当 NDIS 调用 [*MiniportInitializeEx*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_initialize) 函数时，微型端口驱动程序会在向 NDIS 报告当前启用的 VMQ 或 RSS 功能之前执行以下步骤：
 
-1.  微型端口驱动程序在将其当前启用的功能报告给 NDIS 之前，读取** \* RssOrVmqPreference**关键字。
+1.  微型端口驱动程序在将其当前启用的功能报告给 NDIS 之前，读取 **\* RssOrVmqPreference** 关键字。
 
-    如果** \* RssOrVmqPreference**关键字的值为1，则为 VMQ 首选项配置微型端口驱动程序。
+    如果 **\* RssOrVmqPreference** 关键字的值为1，则为 VMQ 首选项配置微型端口驱动程序。
 
-    如果** \* RssOrVmqPreference**关键字的值为零，或者关键字不存在，则为 RSS 首选项配置微型端口驱动程序。
+    如果 **\* RssOrVmqPreference** 关键字的值为零，或者关键字不存在，则为 RSS 首选项配置微型端口驱动程序。
 
-2.  如果为 VMQ 首选项配置微型端口驱动程序，则必须读取** \* vmq**关键字，以确定网络适配器上是否已启用 vmq。 如果关键字设置为1，则驱动程序将报告当前启用的 VMQ 设置。 有关微型端口驱动程序如何报告 VMQ 设置的详细信息，请参阅 [确定网络适配器的 Vmq 功能](determining-the-vmq-capabilities-of-a-network-adapter.md)。
+2.  如果为 VMQ 首选项配置微型端口驱动程序，则必须读取 **\* vmq** 关键字，以确定网络适配器上是否已启用 vmq。 如果关键字设置为1，则驱动程序将报告当前启用的 VMQ 设置。 有关微型端口驱动程序如何报告 VMQ 设置的详细信息，请参阅 [确定网络适配器的 Vmq 功能](determining-the-vmq-capabilities-of-a-network-adapter.md)。
 
     有关 VMQ 关键字的详细信息，请参阅 VMQ 的标准化 INF 关键字。
 
@@ -169,7 +168,7 @@ VMQ 标准化 INF 关键字是枚举关键字。 下表描述了 VMQ 标准化 I
 
 
 
-3.  如果为 RSS 首选项配置微型端口驱动程序，则必须阅读** \* rss**关键字，以确定是否在网络适配器上启用了 rss。 如果关键字设置为1，则驱动程序将报告当前启用的 RSS 设置。 有关微型端口驱动程序如何报告 RSS 设置的详细信息，请参阅 [Rss 配置](rss-configuration.md)。
+3.  如果为 RSS 首选项配置微型端口驱动程序，则必须阅读 **\* rss** 关键字，以确定是否在网络适配器上启用了 rss。 如果关键字设置为1，则驱动程序将报告当前启用的 RSS 设置。 有关微型端口驱动程序如何报告 RSS 设置的详细信息，请参阅 [Rss 配置](rss-configuration.md)。
 
     有关 RSS 关键字的详细信息，请参阅 [rss 的标准化 INF 关键字](standardized-inf-keywords-for-rss.md)。
 
@@ -242,7 +241,7 @@ VMQ 标准化 INF 关键字是枚举关键字。 下表描述了 VMQ 标准化 I
 <tr class="header">
 <th align="left">SubkeyName</th>
 <th align="left">ParamDesc</th>
-<th align="left">值</th>
+<th align="left">“值”</th>
 </tr>
 </thead>
 <tbody>
@@ -263,7 +262,7 @@ VMQ 标准化 INF 关键字是枚举关键字。 下表描述了 VMQ 标准化 I
 
 
 
-支持 VMQ 的微型端口驱动程序不得读取**HKEY \_ LOCAL \_ MACHINE** \\ **SYSTEM** \\ **CurrentControlSet** \\ **services** \\ **VMSMP** \\ **Parameters**注册表项下的以下子项。
+支持 VMQ 的微型端口驱动程序不得读取 **HKEY \_ LOCAL \_ MACHINE** \\ **SYSTEM** \\ **CurrentControlSet** \\ **services** \\ **VMSMP** \\ **Parameters** 注册表项下的以下子项。
 
 <table>
 <colgroup>
@@ -275,7 +274,7 @@ VMQ 标准化 INF 关键字是枚举关键字。 下表描述了 VMQ 标准化 I
 <tr class="header">
 <th align="left">SubkeyName</th>
 <th align="left">ParamDesc</th>
-<th align="left">值</th>
+<th align="left">“值”</th>
 </tr>
 </thead>
 <tbody>

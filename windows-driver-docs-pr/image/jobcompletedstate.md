@@ -1,9 +1,8 @@
 ---
 title: JobCompletedState 元素
-description: 所需的 JobCompletedState 元素指定作业的最终作业状态。
-ms.assetid: 41dc029b-2315-465a-8490-1f4e50db0188
+description: 必需的 JobCompletedState 元素指定作业的最终作业状态。
 keywords:
-- JobCompletedState 元素成像设备
+- JobCompletedState 元素图像设备
 topic_type:
 - apiref
 api_name:
@@ -12,19 +11,19 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a3fe870e85fe31bd6689ae712e9732c11324cb17
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ad6ed5b1927b513286d13dac7ad9a294e12cb07c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63381646"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96799545"
 ---
 # <a name="jobcompletedstate-element"></a>JobCompletedState 元素
 
 
-所需**JobCompletedState**元素指定作业的最终作业状态。
+必需的 **JobCompletedState** 元素指定作业的最终作业状态。
 
-<a name="usage"></a>用法
+<a name="usage"></a>使用情况
 -----
 
 ```xml
@@ -41,17 +40,17 @@ ms.locfileid: "63381646"
 <a name="text-value"></a>文本值
 ----------
 
-必需。 以下值之一从[ **JobState** ](jobstate.md)元素：
+必需。 [**JobState**](jobstate.md)元素中的以下值之一：
 
--   已中止
--   Canceled
+-   Aborted
+-   已取消
 -   已完成
--   终止
+-   正在终止
 
 ## <a name="child-elements"></a>子元素
 
 
-没有子元素。
+没有任何子元素。
 
 ## <a name="parent-elements"></a>父元素
 
@@ -75,7 +74,7 @@ ms.locfileid: "63381646"
 <a name="remarks"></a>备注
 -------
 
-WSD 扫描服务发送**JobCompletedState**向客户端中的元素[ **JobEndStateEvent** ](jobendstateevent.md)事件元素。
+WSD 扫描服务将 **JobCompletedState** 元素发送到 [**JobEndStateEvent**](jobendstateevent.md) 事件元素中的客户端。
 
 ## <a name="see-also"></a>请参阅
 

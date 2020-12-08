@@ -1,7 +1,6 @@
 ---
 title: ProcAmpControlQueryCaps 方法
 description: 示例 DXVA \_ DeinterlaceContainerDeviceClass：:P rocampcontrolquerycaps 函数允许 VMR 查询驱动程序，以确定 ProcAmp 控制设备的输入要求以及可能支持的其他视频处理操作。
-ms.assetid: e89f9a01-e8b3-4311-ad3b-296021c9795e
 keywords:
 - ProcAmpControlQueryCaps 方法显示设备
 - ProcAmpControlQueryCaps 方法显示设备，DXVA_DeinterlaceContainerDeviceClass 接口
@@ -17,12 +16,12 @@ api_type:
 ms.date: 12/06/2018
 ms.localizationpriority: medium
 ms.custom: seodec18
-ms.openlocfilehash: abf86a1c6fce3cc5a1f7a3199f66f5637e518d18
-ms.sourcegitcommit: f8619f20a0903dd64f8641a5266ecad6df5f1d57
+ms.openlocfilehash: d6469156a6736dd0266179288c425b4eee7fdf1f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91423564"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96799735"
 ---
 # <a name="dxva_deinterlacecontainerdeviceclassprocampcontrolquerycaps-method"></a>DXVA \_ DeinterlaceContainerDeviceClass：:P rocampcontrolquerycaps 方法
 
@@ -34,12 +33,12 @@ ms.locfileid: "91423564"
 
 ```cpp
 HRESULT ProcAmpControlQueryCaps(
-  [in]  DXVA_VideoDesc          *lpVideoDescription,
-  [out] DXVA_ProcAmpControlCaps *lpProcAmpCaps
+  [in]  DXVA_VideoDesc          *lpVideoDescription,
+  [out] DXVA_ProcAmpControlCaps *lpProcAmpCaps
 );
 ```
 
-<a name="parameters"></a>parameters
+<a name="parameters"></a>参数
 ----------
 
 *lpVideoDescription* \[在中， \] 提供指向 [**DXVA \_ VideoDesc**](/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_videodesc) 结构的指针，该结构定义要处理的视频的 ProcAmp 控制参数。
@@ -49,14 +48,14 @@ HRESULT ProcAmpControlQueryCaps(
 <a name="return-value"></a>返回值
 ------------
 
-如果成功，则返回零 (S \_ 正常或 DD \_ 确定) ; 否则返回错误代码。 有关错误代码的完整列表，请参阅*ddraw。*
+如果成功，则返回零 (S \_ 正常或 DD \_ 确定) ; 否则返回错误代码。 有关错误代码的完整列表，请参阅 *ddraw。*
 
 <a name="remarks"></a>备注
 -------
 
-驱动程序将其功能报告给 ProcAmp 控件模式的用户模式组件，该组件位于*lpProcAmpCaps*指向的[**DXVA \_ ProcAmpControlCaps**](/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_procampcontrolcaps)结构中。
+驱动程序将其功能报告给 ProcAmp 控件模式的用户模式组件，该组件位于 *lpProcAmpCaps* 指向的 [**DXVA \_ ProcAmpControlCaps**](/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_procampcontrolcaps)结构中。
 
-示例*ProcAmpControlQueryCaps*函数直接映射到[**DD \_ MOTIONCOMPCALLBACKS**](/windows/win32/api/ddrawint/ns-ddrawint-dd_motioncompcallbacks)结构的**RenderMoComp**成员的调用。 **RenderMoComp**函数指向驱动程序提供的*DdMoCompRender*回调，该回调引用[**DD \_ RENDERMOCOMPDATA**](/windows/win32/api/ddrawint/ns-ddrawint-dd_rendermocompdata)结构。 \_按如下所示填充 DD RENDERMOCOMPDATA 结构。
+示例 *ProcAmpControlQueryCaps* 函数直接映射到 [**DD \_ MOTIONCOMPCALLBACKS**](/windows/win32/api/ddrawint/ns-ddrawint-dd_motioncompcallbacks)结构的 **RenderMoComp** 成员的调用。 **RenderMoComp** 函数指向驱动程序提供的 *DdMoCompRender* 回调，该回调引用 [**DD \_ RENDERMOCOMPDATA**](/windows/win32/api/ddrawint/ns-ddrawint-dd_rendermocompdata)结构。 \_按如下所示填充 DD RENDERMOCOMPDATA 结构。
 
 <table>
 <colgroup>
@@ -66,7 +65,7 @@ HRESULT ProcAmpControlQueryCaps(
 <thead>
 <tr class="header">
 <th align="left">成员</th>
-<th align="left">Value</th>
+<th align="left">“值”</th>
 </tr>
 </thead>
 <tbody>
@@ -136,7 +135,7 @@ DXVA_DeinterlaceContainerDeviceClass::ProcAmpControlQueryCaps(
 <tbody>
 <tr class="odd">
 <td align="left"><p>目标平台</p></td>
-<td align="left">桌面型</td>
+<td align="left">台式机</td>
 </tr>
 <tr class="even">
 <td align="left"><p>标头</p></td>

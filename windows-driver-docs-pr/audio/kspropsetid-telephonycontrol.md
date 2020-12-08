@@ -1,34 +1,33 @@
 ---
-title: KSPROPSETID\_TelephonyControl
-description: KSPROPSETID\_TelephonyControl 属性集用于处理电话控件属性。 这些属性可以用于确定调用的状态和执行某些操作，如将调用置于暂停状态或本地麦克风静音。
-ms.assetid: 77886C58-4881-4499-99DA-A9870481D4CF
+title: KSPROPSETID \_ TelephonyControl
+description: KSPROPSETID \_ TelephonyControl 属性集用于处理电话服务控件属性。 这些属性可用于确定调用的状态，并执行某些操作，如对本地麦克风进行保留或静音。
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 18b37b7678b1b8140622ebd442ae935775e99706
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6933c61d254f64603258050d80bb0abcd0444e66
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332450"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801065"
 ---
-# <a name="kspropsetidtelephonycontrol"></a>KSPROPSETID\_TelephonyControl
+# <a name="kspropsetid_telephonycontrol"></a>KSPROPSETID \_ TelephonyControl
 
 
-`KSPROPSETID_TelephonyControl`属性集用于处理电话控件属性。 这些属性可以用于确定调用的状态和执行某些操作，如将调用置于暂停状态或本地麦克风静音。
+`KSPROPSETID_TelephonyControl`属性集用于处理电话服务控件属性。 这些属性可用于确定调用的状态，并执行某些操作，如对本地麦克风进行保留或静音。
 
 `KSPROPSETID_TelephonyControl`属性集包含以下属性：
 
--   [**KSPROPERTY\_电话\_CALLCONTROL**](ksproperty-telephony-callcontrol.md)
+-   [**KSPROPERTY \_ 电话服务 \_ CALLCONTROL**](ksproperty-telephony-callcontrol.md)
 
--   [**KSPROPERTY\_电话\_CALLHOLD**](ksproperty-telephony-callhold.md)
+-   [**KSPROPERTY \_ 电话服务 \_ CALLHOLD**](ksproperty-telephony-callhold.md)
 
--   [**KSPROPERTY\_电话\_CALLINFO**](ksproperty-telephony-callinfo.md)
+-   [**KSPROPERTY \_ 电话服务 \_ CALLINFO**](ksproperty-telephony-callinfo.md)
 
--   [**KSPROPERTY\_TELEPHONY\_MUTE\_TX**](ksproperty-telephony-mute-tx.md)
+-   [**KSPROPERTY \_ 电话服务 \_ 静音 \_ TX**](ksproperty-telephony-mute-tx.md)
 
--   [**KSPROPERTY\_电话\_PROVIDERCHANGE**](ksproperty-telephony-providerchange.md)
+-   [**KSPROPERTY \_ 电话服务 \_ PROVIDERCHANGE**](ksproperty-telephony-providerchange.md)
 
--   [**KSPROPERTY\_电话\_PROVIDERID**](ksproperty-telephony-providerid.md)
+-   [**KSPROPERTY \_ 电话服务 \_ PROVIDERID**](ksproperty-telephony-providerid.md)
 
  
 

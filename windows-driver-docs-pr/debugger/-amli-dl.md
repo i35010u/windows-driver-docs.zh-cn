@@ -1,9 +1,8 @@
 ---
 title: amli dl
-description: Amli dl 扩展显示 AML 解释器的事件日志的一部分。
-ms.assetid: 06565760-d7f0-4f22-8670-7706d3b4b3a8
+description: Amli dl 扩展显示 AML 解释器事件日志的一部分。
 keywords:
-- Windows 调试 amli dl
+- amli dl Windows 调试
 ms.date: 09/17/2018
 topic_type:
 - apiref
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 56c2f0b89dec17c254db3b7ee04faee5f14586f9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2856eebdce51c1099c114d7276357829f311cba5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63334772"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96800089"
 ---
 # <a name="amli-dl"></a>!amli dl
 
 
-**！ Amli dl**扩展显示 AML 解释器的事件日志的一部分。
+**！ Amli dl** EXTENSION 显示 AML 解释器事件日志的一部分。
 
 语法
 
@@ -33,20 +32,20 @@ ms.locfileid: "63334772"
 ## <span id="ddk__amli_dl_dbg"></span><span id="DDK__AMLI_DL_DBG"></span>
 
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 Kdexts.dll
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-有关相关的命令及其用途的信息，请参阅[AMLI 调试器](the-amli-debugger.md)。
+有关相关命令及其用法的信息，请参阅 [AMLI 调试器](the-amli-debugger.md)。
 
 <a name="remarks"></a>备注
 -------
 
-事件日志记录了解释器中出现的最新 150 事件。
+事件日志 chronicles 解释器中发生的最近150事件。
 
-下面是显示日志的示例：
+下面是日志显示示例：
 
 ```console
 kd> !amli dl

@@ -1,9 +1,8 @@
 ---
 title: .abandon（丢弃进程）
-description: .Abandon 命令将结束调试会话，但使目标应用程序处于调试状态。 这将返回到休眠模式调试器。
-ms.assetid: e44ae9b8-b6a2-4648-911d-61ff3c94527c
+description: 弃用命令结束调试会话，但使目标应用程序处于调试状态。 这会将调试器返回到休眠模式。
 keywords:
-- .abandon （放弃进程） Windows 调试
+- 。 (放弃) Windows 调试的进程
 ms.date: 09/17/2018
 topic_type:
 - apiref
@@ -12,34 +11,34 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: f5227a6f1aaa507204ddf470c718241671895f07
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b55a9cd083ece4dc345a995de3e2106d4d7450f4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63334831"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96800177"
 ---
 # <a name="abandon-abandon-process"></a>.abandon（丢弃进程）
 
 
-**.Abandon**命令将结束调试会话，但使目标应用程序处于调试状态。 这将返回到休眠模式调试器。
+**弃用** 命令结束调试会话，但使目标应用程序处于调试状态。 这会将调试器返回到休眠模式。
 
 ```dbgcmd
 .abandon [/h|/n] 
 ```
 
-## <a name="span-idddkmetaabandonprocessdbgspanspan-idddkmetaabandonprocessdbgspanparameters"></a><span id="ddk_meta_abandon_process_dbg"></span><span id="DDK_META_ABANDON_PROCESS_DBG"></span>参数
+## <a name="span-idddk_meta_abandon_process_dbgspanspan-idddk_meta_abandon_process_dbgspanparameters"></a><span id="ddk_meta_abandon_process_dbg"></span><span id="DDK_META_ABANDON_PROCESS_DBG"></span>参数
 
 
-<span id="________h______"></span><span id="________H______"></span> **/h**   
-将继续并标记为已处理的任何未完成的调试事件。 这是默认设置。
+<span id="________h______"></span><span id="________H______"></span>**/h**   
+任何未完成的调试事件都将继续并标记为已处理。 这是默认值。
 
-<span id="________n______"></span><span id="________N______"></span> **/n**   
-任何未完成的调试事件将继续执行未处理。
+<span id="________n______"></span><span id="________N______"></span>**/n**   
+任何未完成的调试事件都将继续进行处理。
 
 ### <a name="span-idenvironmentspanspan-idenvironmentspanspan-idenvironmentspanenvironment"></a><span id="Environment"></span><span id="environment"></span><span id="ENVIRONMENT"></span>环境
 
-此命令仅支持 Windows XP 和更高版本的 Windows 中。
+只有 Windows XP 和更高版本的 Windows 支持此命令。
 
 <table>
 <colgroup>
@@ -48,25 +47,25 @@ ms.locfileid: "63334831"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>模式</strong></p></td>
-<td align="left"><p>仅限用户模式</p></td>
+<td align="left"><p><strong>交货</strong></p></td>
+<td align="left"><p>仅用户模式</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>目标</strong></p></td>
-<td align="left"><p>仅实时调试</p></td>
+<td align="left"><p>仅限实时调试</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>平台</strong></p></td>
-<td align="left"><p>全部</p></td>
+<td align="left"><p>all</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-如果目标处于调试状态，则新的调试器可以附加到它。 请参阅[重新连接到目标应用程序](reattaching-to-the-target-application.md)有关详细信息。 但是，一次已放弃进程之后，可以永远不会将它还原到运行状态不附加调试器的情况下。
+如果目标处于调试状态，则可以将新的调试器附加到该目标。 有关详细信息，请参阅 [重新附加到目标应用程序](reattaching-to-the-target-application.md) 。 但是，在放弃一次进程之后，就不能再将其还原到运行状态，而不会附加调试器。
 
  
 

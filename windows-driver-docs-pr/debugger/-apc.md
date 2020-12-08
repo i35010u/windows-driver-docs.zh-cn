@@ -1,7 +1,6 @@
 ---
 title: apc
-description: Apc 扩展设置格式并显示内容的一个或多个异步过程调用 (Apc)。
-ms.assetid: 0c5a9d1e-ab61-4b14-b06b-25cde582cc73
+description: Apc 扩展会格式化并显示一个或多个异步过程调用 (Apc) 的内容。
 keywords:
 - apc Windows 调试
 ms.date: 09/17/2018
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 636f12b3f84be54af06a550fff1ff84fa6d20ae7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8d07e06e497bd7571652278ae81c0ce28320894e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63334752"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96800041"
 ---
 # <a name="apc"></a>!apc
 
 
-**！ Apc**扩展设置格式并显示内容的一个或多个异步过程调用 (Apc)。
+**！ Apc** 扩展格式化并显示一个或多个异步过程调用 (apc) 的内容。
 
 ```dbgcmd
     !apc
@@ -31,19 +30,19 @@ ms.locfileid: "63334752"
     !apc KAPC
 ```
 
-## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>参数
+## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>Parameters
 
 
-<span id="Process"></span><span id="process"></span><span id="PROCESS"></span>*Process*  
-指定要显示其 Apc 过程的地址。
+<span id="Process"></span><span id="process"></span><span id="PROCESS"></span>*正在*  
+指定要显示其 Apc 的进程的地址。
 
-<span id="Thread"></span><span id="thread"></span><span id="THREAD"></span>*线程*  
+<span id="Thread"></span><span id="thread"></span><span id="THREAD"></span>*Thread*  
 指定要显示其 Apc 的线程的地址。
 
-<span id="_______KAPC______"></span><span id="_______kapc______"></span> *KAPC*   
-指定内核 APC 要显示的地址。
+<span id="_______KAPC______"></span><span id="_______kapc______"></span>*KAPC*   
+指定要显示的内核 APC 的地址。
 
-## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 
 <table>
@@ -65,17 +64,17 @@ ms.locfileid: "63334752"
 
  
 
-## <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+## <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
 
-有关 Apc 的信息，请参阅 Windows Driver Kit (WDK) 文档和 Mark Russinovich 和 David Solomon 的 Microsoft Windows 内部结构。
+有关 Apc 的信息，请参阅 Windows 驱动程序工具包 (WDK) 文档和 Microsoft Windows 内部机制，Mark Russinovich 和 David 所罗门群岛。
 
 <a name="remarks"></a>备注
 -------
 
-不带任何参数， **！ apc**显示所有的 Apc。
+如果没有任何参数， **！ apc** 将显示所有 apc。
 
-下面是一个示例：
+以下是示例：
 
 ```console
 kd> !apc

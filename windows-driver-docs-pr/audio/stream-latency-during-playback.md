@@ -1,15 +1,14 @@
 ---
 title: 播放期间的流延迟
 description: 播放期间的流延迟
-ms.assetid: 70b41245-f463-4225-b79c-0ee65d8a0132
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6dc37d586233184408242b5aed88616d2e423b49
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 0f57eb9820ab0cc2c3ec8e062e87a19f8dde2650
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89210365"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96800615"
 ---
 # <a name="stream-latency-during-playback"></a>播放期间的流延迟
 
@@ -22,7 +21,7 @@ ms.locfileid: "89210365"
 
 ![说明播放流的延迟的关系图](images/wavert-playback.png)
 
-在前面的关系图中， *写入位置* 就是客户端写入缓冲区的最后一个样本的位置。 *播放位置*是当前通过扬声器播放音频设备的示例。
+在前面的关系图中， *写入位置* 就是客户端写入缓冲区的最后一个样本的位置。 *播放位置* 是当前通过扬声器播放音频设备的示例。
 
 直到音频设备播放时，从客户端向缓冲区写入音频采样的时间的延迟只是写入位置与播放位置之间的分离。 此隔离是在关系图) 中标记为 A 和 B (延迟的以下两个源的总和：
 

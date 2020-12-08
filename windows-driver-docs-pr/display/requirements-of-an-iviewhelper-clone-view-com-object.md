@@ -1,18 +1,17 @@
 ---
 title: IViewHelper Clone-View COM 对象的要求
 description: IViewHelper Clone-View COM 对象的要求
-ms.assetid: ef599874-64c5-480e-a7bc-666ababd4d08
 keywords:
 - TMM WDK 显示，IViewHelper 要求
 - 监视配置 WDK 显示，IViewHelper 要求
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 33ace32fcf71b47d94f8cc7f2772c3833078f79e
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 683b2bf132102080c9cdfad262d99c6381b6ac56
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89066374"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96799619"
 ---
 # <a name="requirements-of-an-iviewhelper-clone-view-com-object"></a>IViewHelper Clone-View COM 对象的要求
 
@@ -27,9 +26,9 @@ ms.locfileid: "89066374"
 
 -   硬件供应商必须找到克隆视图的显示模式，以便显示显示在两个或多个监视器上。
 
--   如果对 COM 对象的 [**IViewHelper：： commit**](/previous-versions/windows/hardware/drivers/ff568167(v=vs.85)) 方法的调用不会生成模式更改，则 **Commit** 必须调用 Win32 **BroadcastSystemMessage** 函数，并且必须始终使用 BSF \_ POSTMESSAGE 广播选项) WM DISPLAYCHANGE 消息来 post (\_ 。 有关 **BroadcastSystemMessage**的详细信息，请参阅 Microsoft Windows SDK 文档。
+-   如果对 COM 对象的 [**IViewHelper：： commit**](/previous-versions/windows/hardware/drivers/ff568167(v=vs.85)) 方法的调用不会生成模式更改，则 **Commit** 必须调用 Win32 **BroadcastSystemMessage** 函数，并且必须始终使用 BSF \_ POSTMESSAGE 广播选项) WM DISPLAYCHANGE 消息来 post (\_ 。 有关 **BroadcastSystemMessage** 的详细信息，请参阅 Microsoft Windows SDK 文档。
 
--   不能使用 [**IViewHelper：： Commit**](/previous-versions/windows/hardware/drivers/ff568167(v=vs.85)) 方法代替对 Win32 **ChangeDisplaySettingsEx** 的调用 (**null**、 **null**、 **null**、0、 **null**) 函数与指示的参数。 有关 **ChangeDisplaySettingsEx**的详细信息，请参阅 Windows SDK 文档。
+-   不能使用 [**IViewHelper：： Commit**](/previous-versions/windows/hardware/drivers/ff568167(v=vs.85)) 方法代替对 Win32 **ChangeDisplaySettingsEx** 的调用 (**null**、 **null**、 **null**、0、 **null**) 函数与指示的参数。 有关 **ChangeDisplaySettingsEx** 的详细信息，请参阅 Windows SDK 文档。
 
  
 

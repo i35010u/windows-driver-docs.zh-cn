@@ -1,15 +1,14 @@
 ---
 title: NIC 交换机的静态创建
 description: NIC 交换机的静态创建
-ms.assetid: F325B1F8-7655-4044-AF04-32B434574082
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bde64b3d6479e3d4901b186f631bf93e3029d0fc
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 7306b4ba185dacd4509f1990335bd1acf3a7da93
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89214359"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801261"
 ---
 # <a name="static-creation-of-a-nic-switch"></a>NIC 交换机的静态创建
 
@@ -18,7 +17,7 @@ ms.locfileid: "89214359"
 
 只有 PCI Express (PCIe) 物理功能 (PF) 的微型端口驱动程序才能在适配器上创建 NIC 交换机。
 
-**注意**   从 Windows Server 2012 开始，SR-IOV 接口仅支持网络适配器上的一个 NIC 交换机。 此开关称为 *默认 NIC 交换机*，由 NDIS \_ 默认 \_ 交换机 \_ ID 标识符引用。
+**注意**  从 Windows Server 2012 开始，SR-IOV 接口仅支持网络适配器上的一个 NIC 交换机。 此开关称为 *默认 NIC 交换机*，由 NDIS \_ 默认 \_ 交换机 \_ ID 标识符引用。
 
  
 
@@ -30,7 +29,7 @@ ms.locfileid: "89214359"
 
 1.  PF 微型端口驱动程序必须读取 SR-IOV 标准化关键字，以确定是否已启用 SR-IOV 并获取 NIC 交换机配置参数。
 
-    **注意**   如果 PF 微型端口驱动程序已将入口点注册到[*MiniportSetOptions*](/windows-hardware/drivers/ddi/ndis/nc-ndis-set_options)函数，则当 NDIS 调用*MiniportSetOptions*时，驱动程序可能以前从注册表获取了这些参数。
+    **注意**  如果 PF 微型端口驱动程序已将入口点注册到 [*MiniportSetOptions*](/windows-hardware/drivers/ddi/ndis/nc-ndis-set_options) 函数，则当 NDIS 调用 *MiniportSetOptions* 时，驱动程序可能以前从注册表获取了这些参数。
 
      
 
@@ -38,7 +37,7 @@ ms.locfileid: "89214359"
 
 3.  微型端口驱动程序调用 [**NdisMEnableVirtualization**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismenablevirtualization) 以启用 sr-iov，并在网络适配器上设置 VFs 的数目。 此函数配置适配器 PCI 配置空间中的 SR-IOV 扩展功能。 如果此函数返回 NDIS \_ 状态 \_ 成功，则启用 sr-iov，并通过 PCIe 接口公开 VFs。
 
-**注意**   如果 PF 小型使用端口驱动程序以静态方式创建 NIC 交换机，则在 NDIS) 方法请求 (oid 发出对象标识符方法请求时，将无法使用该[开关 \_ \_ \_ \_ 。](./oid-nic-switch-create-switch.md) 如果 PF 端口驱动程序静态创建了 NIC 交换机，则必须验证是否在 OID 请求中指定了开关参数。 与 OID 请求关联的 [**NDIS \_ NIC \_ 交换机 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_parameters) 结构中包含的这些参数必须与用于创建开关的驱动程序的参数相同。
+**注意** 如果 PF 小型使用端口驱动程序以静态方式创建 NIC 交换机，则在 NDIS) 方法请求 (oid 发出对象标识符方法请求时，将无法使用该 [开关 \_ \_ \_ \_ 。](./oid-nic-switch-create-switch.md) 如果 PF 端口驱动程序静态创建了 NIC 交换机，则必须验证是否在 OID 请求中指定了开关参数。 与 OID 请求关联的 [**NDIS \_ NIC \_ 交换机 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_parameters) 结构中包含的这些参数必须与用于创建开关的驱动程序的参数相同。
 
  
 

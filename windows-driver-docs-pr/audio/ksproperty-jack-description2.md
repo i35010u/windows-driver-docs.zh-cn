@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ 插座 \_ DESCRIPTION2
 description: KSPROPERTY \_ 插座 \_ DESCRIPTION2 属性实现为使用筛选器句柄访问的基于 pin 的属性。
-ms.assetid: 6856060b-f735-4ed8-99bd-5896c87d581f
 keywords:
 - KSPROPERTY_JACK_DESCRIPTION2 音频设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3cc0cff46c145c8ac6a59f79423cb23ae425d908
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 4e1bab06328041326ac852403976f3ab59cad433
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90101980"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801211"
 ---
 # <a name="ksproperty_jack_description2"></a>KSPROPERTY \_ 插座 \_ DESCRIPTION2
 
@@ -76,7 +75,7 @@ KSJACK \_ DESCRIPTION2 \[ 0\]
 
 KSJACK \_ DESCRIPTION2 \[\]
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 每个 KSJACK \_ DESCRIPTION2 结构都必须只包含一个插孔的相关信息。

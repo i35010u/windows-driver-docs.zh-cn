@@ -1,15 +1,14 @@
 ---
 title: PKEY \_ AudioEngine \_ OEMFormat
 description: PKEY \_ AudioEngine \_ OEMFormat
-ms.assetid: a1587f46-1c21-4419-a1a4-81fe299c6871
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fbd035c10ce0666199b6460f950db3763ddbf30f
-ms.sourcegitcommit: 20eac54e419a594f7cea766ee28f158559dfd79c
+ms.openlocfilehash: 921565e68ce652b339ff3f227ff184decaf67c08
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91754954"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96800913"
 ---
 # <a name="pkey_audioengine_oemformat"></a>PKEY \_ AudioEngine \_ OEMFormat
 
@@ -44,9 +43,9 @@ PKEY_AudioEngine_OEMFormat              = "{E4870E26-3CC5-4CD2-BA46-CA0A9A70ED04
 
 在 INF 文件创建了三个属性键并将其关联值加载到注册表中后，应用程序可以通过获取终结点设备的 [IPropertyStore](/windows/win32/api/propsys/nn-propsys-ipropertystore) 接口访问这些属性。 Windows SDK 中的头文件 Mmdeviceapi 包含三个属性键的 C/c + + 定义。 有关获取 IPropertyStore 接口的详细信息，请参阅 Windows SDK 文档中的 [**IMMDevice：： OpenPropertyStore**](/windows/win32/api/mmdeviceapi/nf-mmdeviceapi-immdevice-openpropertystore) 方法说明。
 
-在上述 INF 示例中， **PKEY \_ AudioEndpoint \_ Association** 属性键用于标识终结点设备的 KS pin 类别 GUID。 **PKEY \_ AudioEndpoint \_ ControlPanelProvider**属性键标识 COM 接口对象的类 GUID，该对象向终结点设备 Mmsys.cpl 中的属性页提供属性值。 有关这些属性键的详细信息，请参阅 Windows SDK 文档。 有关 KS pin 类别 Guid 的详细信息，请参阅 [固定类别属性](./pin-category-property.md)。
+在上述 INF 示例中， **PKEY \_ AudioEndpoint \_ Association** 属性键用于标识终结点设备的 KS pin 类别 GUID。 **PKEY \_ AudioEndpoint \_ ControlPanelProvider** 属性键标识 COM 接口对象的类 GUID，该对象向终结点设备 Mmsys.cpl 中的属性页提供属性值。 有关这些属性键的详细信息，请参阅 Windows SDK 文档。 有关 KS pin 类别 Guid 的详细信息，请参阅 [固定类别属性](./pin-category-property.md)。
 
-在前面的 INF 示例中，与 **PKEY \_ AudioEngine \_ OEMFormat** 属性键关联的属性值是一个48字节的注册表 \_ 二进制值，其中包含描述格式的 [**WAVEFORMATEX**](/windows/win32/api/mmreg/ns-mmreg-waveformatex) 或 [**WAVEFORMATEXTENSIBLE**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-waveformatextensible) 结构的序列化表示形式。 若要计算 \_ 要与**PKEY \_ AudioEngine \_ OEMFormat**属性键关联的 REG BINARY 数据值，请将**WAVEFORMATEX**或**WAVEFORMATEXTENSIBLE**结构嵌入到**PropVariant**结构中，然后通过调用**PropVariant**函数序列化**StgSerializePropVariant**结构。 有关 **PropVariant** 结构和 **StgSerializePropVariant** 函数的详细信息，请参阅 Windows SDK 文档。
+在前面的 INF 示例中，与 **PKEY \_ AudioEngine \_ OEMFormat** 属性键关联的属性值是一个48字节的注册表 \_ 二进制值，其中包含描述格式的 [**WAVEFORMATEX**](/windows/win32/api/mmreg/ns-mmreg-waveformatex) 或 [**WAVEFORMATEXTENSIBLE**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-waveformatextensible) 结构的序列化表示形式。 若要计算 \_ 要与 **PKEY \_ AudioEngine \_ OEMFormat** 属性键关联的 REG BINARY 数据值，请将 **WAVEFORMATEX** 或 **WAVEFORMATEXTENSIBLE** 结构嵌入到 **PropVariant** 结构中，然后通过调用 **PropVariant** 函数序列化 **StgSerializePropVariant** 结构。 有关 **PropVariant** 结构和 **StgSerializePropVariant** 函数的详细信息，请参阅 Windows SDK 文档。
 
 下面的代码示例是一个控制台应用程序，它打印 \_ 前面的 INF 示例中显示的注册表项二进制数据。
 

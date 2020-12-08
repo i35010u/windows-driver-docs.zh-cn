@@ -1,19 +1,18 @@
 ---
 title: 查询 HD 音频 DDI
 description: 查询 HD 音频 DDI
-ms.assetid: 972bce92-0ecd-486a-a9a8-fcd434ad12a5
 keywords:
 - HD 音频，查询
 - 高清晰音频 (HD 音频) ，查询
 - 查询 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: eadfff50d944f0486dd6f8d0c2c487620dd323f3
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 904ab72bcfcd32a4bce9269f1ea87aa93887681b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89211335"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96800769"
 ---
 # <a name="querying-for-an-hd-audio-ddi"></a>查询 HD 音频 DDI
 

@@ -1,17 +1,16 @@
 ---
 title: NDIS_STATUS_WDI_INDICATION_ASSOCIATION_RESULT
 description: 微型端口驱动程序使用 NDIS_STATUS_WDI_INDICATION_ASSOCIATION_RESULT 来指示关联结果。
-ms.assetid: dc025aec-30f4-4a78-b449-acc49d13b507
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 NDIS_STATUS_WDI_INDICATION_ASSOCIATION_RESULT 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 92d6f86e5188b2e920a059638216d2993b1ce267
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 7ec033f2f28991e1b00c22d014319034bbc0e4b7
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89207437"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801425"
 ---
 # <a name="ndis_status_wdi_indication_association_result"></a>NDIS \_ 状态 \_ WDI \_ 指示 \_ 关联 \_ 结果
 
@@ -48,7 +47,7 @@ ms.locfileid: "89207437"
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
-<td><p>Windows Server 2016</p></td>
+<td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
 <td><p>标头</p></td>
@@ -57,7 +56,7 @@ ms.locfileid: "89207437"
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [OID \_ WDI \_ 任务 \_ 连接](oid-wdi-task-connect.md)

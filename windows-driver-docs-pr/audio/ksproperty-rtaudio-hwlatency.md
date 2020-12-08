@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ RTAUDIO \_ HWLATENCY
 description: KSPROPERTY \_ RTAUDIO \_ HWLATENCY 属性检索音频硬件的流延迟及其关联数据路径的说明。 下表汇总了此属性的功能。
-ms.assetid: 5083f281-853a-464e-95d3-0fe14fe00c1c
 keywords:
 - KSPROPERTY_RTAUDIO_HWLATENCY 音频设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 07/07/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 17335144b82a576c6fc06bf939237eb38ff655f9
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: fd2d8ae3d098897667396e282e8bdcf6db7df3a4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90101947"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801191"
 ---
 # <a name="ksproperty_rtaudio_hwlatency"></a>KSPROPERTY \_ RTAUDIO \_ HWLATENCY
 

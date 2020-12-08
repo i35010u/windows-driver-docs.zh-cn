@@ -1,7 +1,6 @@
 ---
 title: RSS 的标准化 INF 关键字
 description: RSS 的标准化 INF 关键字
-ms.assetid: 0ea0d6f7-0dc5-40dd-a706-4712e19dbfdb
 keywords:
 - 接收方缩放 WDK 网络，标准化 INF 关键字
 - RSS WDK 网络，标准化 INF 关键字
@@ -9,12 +8,12 @@ keywords:
 - INF 条目 WDK RSS
 ms.date: 02/01/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 4887f79e6ff38d20300b923dc4c11b0a2d8b37d9
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 016cbff954838bf4785f851a1c6dc66d29a886e3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89214410"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801296"
 ---
 # <a name="standardized-inf-keywords-for-rss"></a>RSS 的标准化 INF 关键字
 
@@ -22,13 +21,13 @@ RSS 接口支持显示在注册表中并在 INF 文件中指定的 [标准化 IN
 
 以下列表显示了 RSS 的枚举 [标准化 INF 关键字](standardized-inf-keywords-for-network-devices.md) ：
 
-<a href="" id="---------rss"></a>** \* RSS**  
+<a href="" id="---------rss"></a>**\* RSS**  
 启用或禁用微型端口适配器的 RSS 支持。
 
-<a href="" id="---------rssprofile"></a>** \* RSSProfile**  
+<a href="" id="---------rssprofile"></a>**\* RSSProfile**  
 处理器选择和负载平衡配置文件。
 
-**注意**   对** \* RSSProfile**设置的更改需要重新启动适配器。
+**注意** 对 **\* RSSProfile** 设置的更改需要重新启动适配器。
 
  
 
@@ -40,13 +39,13 @@ RSS 接口支持显示在注册表中并在 INF 文件中指定的 [标准化 IN
 <a href="" id="paramdesc"></a>ParamDesc  
 与 SubkeyName 关联的显示文本。
 
-<a href="" id="value"></a>负值  
-与列表中的每个选项关联的枚举整数值。 此值存储在 NDI \\ params \\ *SubkeyName* \\ *值*中。
+<a href="" id="value"></a>“值”  
+与列表中的每个选项关联的枚举整数值。 此值存储在 NDI \\ params \\ *SubkeyName* \\ *值* 中。
 
 <a href="" id="enumdesc"></a>EnumDesc  
 与菜单中显示的每个值相关联的显示文本。
 
-<a href="" id="default"></a>缺省值  
+<a href="" id="default"></a>默认  
 菜单的默认值。
 
 下表描述了 RSS 枚举关键字的可能的 INF 条目。
@@ -62,7 +61,7 @@ RSS 接口支持显示在注册表中并在 INF 文件中指定的 [标准化 IN
 <tr class="header">
 <th align="left">SubkeyName</th>
 <th align="left">ParamDesc</th>
-<th align="left">值</th>
+<th align="left">“值”</th>
 <th align="left">EnumDesc</th>
 </tr>
 </thead>
@@ -115,53 +114,53 @@ RSS 接口支持显示在注册表中并在 INF 文件中指定的 [标准化 IN
 
  
 
-NDIS 6.30 添加了对** \* RSSProfile**的支持。
+NDIS 6.30 添加了对 **\* RSSProfile** 的支持。
 
 以下列表显示了可编辑 RSS 的 [标准化 INF 关键字](standardized-inf-keywords-for-network-devices.md) ：
 
-<a href="" id="---------rssbaseprocgroup"></a>** \* RssBaseProcGroup**  
-在** \* RssBaseProcNumber**关键字中指定的处理器编号的处理器组的数目。
+<a href="" id="---------rssbaseprocgroup"></a>**\* RssBaseProcGroup**  
+在 **\* RssBaseProcNumber** 关键字中指定的处理器编号的处理器组的数目。
 
-<a href="" id="---------numanodeid"></a>** \* NumaNodeId**  
+<a href="" id="---------numanodeid"></a>**\* NumaNodeId**  
 用于网络适配器的内存分配的首选 NUMA 节点。 此外，操作系统会首先尝试使用首选 NUMA 节点中的 Cpu 进行 RSS。
 
-PCI 扩展卡的驱动程序不应在其 INF 中静态指定 NUMA 节点 ID，因为最近的节点取决于插入卡的 PCI 插槽。  仅当网络适配器已集成到系统中时，才指定** \* NumaNodeId** ，将提前知道 NUMA 节点，并且在运行时无法通过查询 ACPI 确定节点。
+PCI 扩展卡的驱动程序不应在其 INF 中静态指定 NUMA 节点 ID，因为最近的节点取决于插入卡的 PCI 插槽。  仅当网络适配器已集成到系统中时，才指定 **\* NumaNodeId** ，将提前知道 NUMA 节点，并且在运行时无法通过查询 ACPI 确定节点。
 
-**注意**   如果此关键字存在并且其值小于计算机中 NUMA 节点的数目，NDIS 将在[**ndis \_ RSS \_ 处理器 \_ 信息**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_rss_processor_info)结构的**PreferredNumaNode**成员中使用此值。
-
- 
-
-**注意**   在 Windows 8 中，如果 NIC RSS 配置文件设置为**NUMAScaling** (2) 或**NUMAScalingStatic** (3) ，则会忽略** \* NumaNodeId**值。
+**注意** 如果此关键字存在并且其值小于计算机中 NUMA 节点的数目，NDIS 将在 [**ndis \_ RSS \_ 处理器 \_ 信息**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_rss_processor_info)结构的 **PreferredNumaNode** 成员中使用此值。
 
  
 
-<a href="" id="---------rssbaseprocnumber"></a>** \* RssBaseProcNumber**  
+**注意** 在 Windows 8 中，如果 NIC RSS 配置文件设置为 **NUMAScaling** (2) 或 **NUMAScalingStatic** (3) ，则会忽略 **\* NumaNodeId** 值。
+
+ 
+
+<a href="" id="---------rssbaseprocnumber"></a>**\* RssBaseProcNumber**  
 指定组中基本 RSS 处理器的数目。
 
-<a href="" id="---------maxrssprocessors"></a>** \* MaxRssProcessors**  
+<a href="" id="---------maxrssprocessors"></a>**\* MaxRssProcessors**  
 RSS 处理器的最大数量。
 
-<a href="" id="---------rssmaxprocnumber"></a>** \* RssMaxProcNumber**  
+<a href="" id="---------rssmaxprocnumber"></a>**\* RssMaxProcNumber**  
 RSS 接口的最大处理器数目。
-如果指定了** \* RssMaxProcNumber** ，则还应指定** \* RssMaxProcGroup** 。
+如果指定了 **\* RssMaxProcNumber** ，则还应指定 **\* RssMaxProcGroup** 。
 
-<a href="" id="---------rssmaxprocnumber"></a>** \* NumRSSQueues**  
+<a href="" id="---------rssmaxprocnumber"></a>**\* NumRSSQueues**  
 RSS 队列的数量。
 
-<a href="" id="---------rssmaxprocgroup"></a>** \* RssMaxProcGroup** RSS 接口的最大处理器组。
+<a href="" id="---------rssmaxprocgroup"></a>**\* RssMaxProcGroup** RSS 接口的最大处理器组。
 
-** \* RssBaseProcGroup**和** \* RssBaseProcNumber**构成一个 PROCESSOR_NUMBER 结构，该结构标识可用于 RSS 的最小处理器数。
-** \* RssMaxProcGroup**和** \* RssMaxProcNumber**构成一个 PROCESSOR_NUMBER 的结构，该结构标识可与 RSS 一起使用的最大处理器数目。
+**\* RssBaseProcGroup** 和 **\* RssBaseProcNumber** 构成一个 PROCESSOR_NUMBER 结构，该结构标识可用于 RSS 的最小处理器数。
+**\* RssMaxProcGroup** 和 **\* RssMaxProcNumber** 构成一个 PROCESSOR_NUMBER 的结构，该结构标识可与 RSS 一起使用的最大处理器数目。
 
-例如，假设** \* RssBaseProcGroup**设置为1， ** \* RssBaseProcNumber**设置为16， ** \* RssMaxProcGroup**设置为3， ** \* RssMaxProcNumber**设置为8。
+例如，假设 **\* RssBaseProcGroup** 设置为1， **\* RssBaseProcNumber** 设置为16， **\* RssMaxProcGroup** 设置为3， **\* RssMaxProcNumber** 设置为8。
 使用 <group> ： <processor> notation，基本处理器为1:16，最大处理器为3:8。
 否则，不会将处理器0:0、0:32、1:0 和1:15 视为 RSS 的候选项，因为它们低于基本处理器编号。
 处理器1:16、1:31、2:0、2:63、3:0 和3:8 都将被视为 RSS 的候选项，因为它们的范围是从1:16 到3:8。
 处理器3:9、3:31 和4:0 不会被视为 RSS 的候选项，因为它们超过了最大处理器数目。
 
-NDIS 6.20 添加了对** \* RssBaseProcGroup**、 ** \* NumaNodeId**、 ** \* RssBaseProcNumber**和** \* MaxRssProcessors**关键字的支持。
+NDIS 6.20 添加了对 **\* RssBaseProcGroup**、 **\* NumaNodeId**、 **\* RssBaseProcNumber** 和 **\* MaxRssProcessors** 关键字的支持。
 
-NDIS 6.30 添加了对** \* RssMaxProcNumber**和** \* NumRSSQueues**关键字的支持。
+NDIS 6.30 添加了对 **\* RssMaxProcNumber** 和 **\* NumRSSQueues** 关键字的支持。
 
 可以编辑的[标准化 INF 关键字](standardized-inf-keywords-for-network-devices.md)具有以下属性：
 
@@ -270,12 +269,12 @@ NDIS 6.30 添加了对** \* RssMaxProcNumber**和** \* NumRSSQueues**关键字�
 
  
 
-**注意**   尽管** \* RssBaseProcGroup**的有效范围为0到最大 \_ 组-1，但在 Windows 7 中，它必须为零。 否则，TCP/IP 协议不会将任何处理器用于 RSS。
+**注意** 尽管 **\* RssBaseProcGroup** 的有效范围为0到最大 \_ 组-1，但在 Windows 7 中，它必须为零。 否则，TCP/IP 协议不会将任何处理器用于 RSS。
 
  
 
-**注意**   ** \* NumaNodeId** (65535) 的默认值表示网络适配器对于 NUMA 节点是不可知的，NDIS 不应尝试使用任何节点。
-如果未提供** \* NumaNodeId**关键字，NDIS 会根据 ACPI 中的提示自动选择最近的节点。
+**注意** **\* NumaNodeId** (65535) 的默认值表示网络适配器对于 NUMA 节点是不可知的，NDIS 不应尝试使用任何节点。
+如果未提供 **\* NumaNodeId** 关键字，NDIS 会根据 ACPI 中的提示自动选择最近的节点。
 
 
 有关标准化 INF 关键字的详细信息，请参阅 [网络设备的标准化 Inf 关键字](standardized-inf-keywords-for-network-devices.md)。

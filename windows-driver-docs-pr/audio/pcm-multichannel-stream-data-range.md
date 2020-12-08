@@ -1,17 +1,16 @@
 ---
 title: PCM 多声道流数据范围
 description: PCM 多声道流数据范围
-ms.assetid: b7e1a5d9-fb8a-46ed-932b-d667e470d4ab
 keywords:
 - PCM 多通道流数据范围 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ed23bf6749f4f9918e3471ce4c13cc42851c8a7c
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 7bd65cc6c81171723791a8a5d5c199235379b41e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89210507"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96800957"
 ---
 # <a name="pcm-multichannel-stream-data-range"></a>PCM 多声道流数据范围
 

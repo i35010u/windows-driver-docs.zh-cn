@@ -1,28 +1,27 @@
 ---
 title: 针对 SoC 的 PortCls 电源管理更新
-description: 以下主题讨论在 Windows 8 中引入端口类驱动程序 (PortCls) 以支持片系统 (SoC) 平台中的电源管理更新。
-ms.assetid: 48795B14-1D81-4C62-82A1-93DC676AF643
+description: 以下主题讨论端口类驱动程序中 Windows 8 中引入的电源管理更新 (PortCls) ，以支持系统芯片 (SoC) 平台。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6c9b2dae1de5fc9f5c1acec99ef4622321db8da6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 61ed92cec758466b07461f817e597359b087dc9d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328773"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96800835"
 ---
 # <a name="portcls-power-management-updates-for-soc"></a>针对 SoC 的 PortCls 电源管理更新
 
 
-以下主题讨论在 Windows 8 中引入端口类驱动程序 (PortCls) 以支持片系统 (SoC) 平台中的电源管理更新。
+以下主题讨论端口类驱动程序中 Windows 8 中引入的电源管理更新 (PortCls) ，以支持系统芯片 (SoC) 平台。
 
 [PortCls 注册表电源设置](portcls-registry-power-settings.md)
 
-[即时空闲超时参加](immediate-idle-timeout-opt-in.md)
+[选择加入即时空闲超时](immediate-idle-timeout-opt-in.md)
 
-[共享 PortCls 专用 PEP 上下文](portcls-private-pep-context-sharing.md)
+[PortCls 专用 PEP 上下文共享](portcls-private-pep-context-sharing.md)
 
-[PortCls D3 退出滞后时间要求](portcls-d3-exit-latency-requirement.md)
+[PortCls D3 退出延迟要求](portcls-d3-exit-latency-requirement.md)
 
  
 

@@ -1,19 +1,18 @@
 ---
 title: MIDI 微型端口驱动程序
 description: MIDI 微型端口驱动程序
-ms.assetid: 38aeba40-35da-4bfd-a8fe-cf8f7e96f286
 keywords:
 - 音频微型端口驱动程序 WDK、MIDI
 - 微型端口驱动程序 WDK 音频、MIDI
 - MIDI 微型端口驱动程序 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 54f6c6adf243f1281304a4ef43345439102a64b7
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 42739cfb6420d2d09f7191531674b65d7a5de688
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89211407"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801021"
 ---
 # <a name="midi-miniport-driver"></a>MIDI 微型端口驱动程序
 
@@ -25,9 +24,9 @@ MIDI 微型端口驱动程序管理简单 MIDI 设备的硬件相关功能，这
 
 MIDI 微型端口驱动程序应实现两个接口：
 
--   *微型端口接口*初始化微型端口对象并创建 MIDI 流。
+-   *微型端口接口* 初始化微型端口对象并创建 MIDI 流。
 
--   *流接口*管理 MIDI 流并公开大多数微型端口驱动程序的功能。
+-   *流接口* 管理 MIDI 流并公开大多数微型端口驱动程序的功能。
 
 微型端口接口 [IMiniportMidi](/windows-hardware/drivers/ddi/portcls/nn-portcls-iminiportmidi)继承了 [IMiniport](/windows-hardware/drivers/ddi/portcls/nn-portcls-iminiport) 接口中的方法。 **IMiniportMidi** 提供了以下附加方法：
 

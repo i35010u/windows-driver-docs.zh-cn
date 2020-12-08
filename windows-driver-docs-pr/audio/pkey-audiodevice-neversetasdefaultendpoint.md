@@ -1,22 +1,21 @@
 ---
-title: PKEY\_AudioDevice\_NeverSetAsDefaultEndpoint
-description: PKEY\_AudioDevice\_NeverSetAsDefaultEndpoint
-ms.assetid: cb619972-d9d9-4f33-bb4a-720bfc29e3e8
+title: PKEY \_ AudioDevice \_ NeverSetAsDefaultEndpoint
+description: PKEY \_ AudioDevice \_ NeverSetAsDefaultEndpoint
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2ebed7e76f697f3d42ea7291595fae9108162b23
-ms.sourcegitcommit: 1addd14b2063aba321f5428a23393f22f59c02b8
+ms.openlocfilehash: 24b87aebf83ee7ded44d62b3f2fa8bda0a0355d6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76035719"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96800921"
 ---
-# <a name="pkey_audiodevice_neversetasdefaultendpoint"></a>PKEY\_AudioDevice\_NeverSetAsDefaultEndpoint
+# <a name="pkey_audiodevice_neversetasdefaultendpoint"></a>PKEY \_ AudioDevice \_ NeverSetAsDefaultEndpoint
 
 
-您可以决定设置某些设备，以便永远不能将其选作默认设备。 例如，调制解调器线路和医疗音频设备。Windows 7 和更高版本的 Windows 提供了**PKEY\_AudioDevice\_NeverSetAsDefaultEndpoint**注册表项，以允许你阻止将设备终结点选作默认终结点。
+您可以决定设置某些设备，以便永远不能将其选作默认设备。 例如，调制解调器线路和医疗音频设备。Windows 7 和更高版本的 Windows 提供了 **PKEY \_ AudioDevice \_ NeverSetAsDefaultEndpoint** 注册表项，以允许你阻止将设备终结点选作默认终结点。
 
-以下 INF 文件摘录演示了如何使用**PKEY\_AudioDevice\_NeverSetAsDefaultEndpoint**设置终结点，以便永远不能将其选择为默认值。
+以下 INF 文件摘录演示了如何使用 **PKEY \_ AudioDevice \_ NeverSetAsDefaultEndpoint** 设置终结点，以便永远不能将其选为默认值。
 
 ```inf
 [Version]
@@ -52,7 +51,7 @@ PKEY_AudioDevice_NeverSetAsDefaultEndpoint = "{F3E80BEF-1723-4FF2-BCC4-7F83DC5E4
 
 在前面的示例中，NeverSetAsDefaultEndpointMaskValue 表示一个 DWORD 掩码值，它是设备角色标志和数据流标志的组合。
 
-以下 INF 文件片段显示了如何设置未定义的输出设备（KSNODETYPE\_输出\_未定义），以便不会将其终结点选为默认值，而不管设备角色和数据流方向。
+以下 INF 文件片段显示了如何设置未定义的输出设备 (未 \_ \_ 定义的) ，以便不将其终结点默认为默认值，而不管设备角色和数据流方向。
 
 ```inf
 [Version]
@@ -86,7 +85,7 @@ PKEY_AudioEndpoint_Association="{1DA5D803-D492-4EDD-8C23-E0C0FFEE7F0E},2"
 PKEY_AudioDevice_NeverSetAsDefaultEndpoint = "{F3E80BEF-1723-4FF2-BCC4-7F83DC5E46D4},3"
 ```
 
-在前面的示例中，0x00000305 是可用于**PKEY\_AudioDevice\_NeverSetAsDefaultEndpoint**的所有标志和掩码的按位 "或" 组合。 下表显示了标志和掩码及其值。
+在前面的示例中，0x00000305 是可用于 **PKEY \_ AudioDevice \_ NeverSetAsDefaultEndpoint** 的所有标志和掩码的按位 "或" 组合。 下表显示了标志和掩码及其值。
 
 <table>
 <colgroup>
@@ -96,7 +95,7 @@ PKEY_AudioDevice_NeverSetAsDefaultEndpoint = "{F3E80BEF-1723-4FF2-BCC4-7F83DC5E4
 <thead>
 <tr class="header">
 <th align="left">标志或终结点掩码</th>
-<th align="left">Value</th>
+<th align="left">“值”</th>
 </tr>
 </thead>
 <tbody>

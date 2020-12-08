@@ -1,7 +1,6 @@
 ---
 title: 拓扑节点
 description: 拓扑节点
-ms.assetid: 39827413-2b6b-4925-97bb-e0f3e3428b13
 keywords:
 - 拓扑节点 WDK 音频
 - 节点 WDK 音频，拓扑
@@ -15,12 +14,12 @@ keywords:
 - 中间频率属性 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ba8e416741f39944e84b048c06046153a247333f
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: e68c393eebbcb897c83b0662941f9e843a2e6310
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90101778"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96800503"
 ---
 # <a name="topology-nodes"></a>拓扑节点
 
@@ -41,8 +40,8 @@ WDMAud 将部分（而不是所有）拓扑节点转换为相应的混音器控�
 <thead>
 <tr class="header">
 <th align="left">节点类型</th>
-<th align="left">拓扑-节点类型名称</th>
-<th align="left">混合器控件类型名称</th>
+<th align="left">Topology-Node 类型名称</th>
+<th align="left">Mixer-Control 类型名称</th>
 </tr>
 </thead>
 <tbody>
@@ -69,7 +68,7 @@ WDMAud 将部分（而不是所有）拓扑节点转换为相应的混音器控�
 <p>MIXERCONTROL_CONTROLTYPE_TREBLE (是否受支持 KSPROPERTY_AUDIO_TREBLE) </p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>Volume</p></td>
+<td align="left"><p>数据量(Volume)</p></td>
 <td align="left"><p><a href="/windows-hardware/drivers/audio/ksnodetype-volume" data-raw-source="[&lt;strong&gt;KSNODETYPE_VOLUME&lt;/strong&gt;](./ksnodetype-volume.md)"><strong>KSNODETYPE_VOLUME</strong></a></p></td>
 <td align="left"><p>MIXERCONTROL_CONTROLTYPE_VOLUME</p></td>
 </tr>
@@ -113,7 +112,7 @@ WDMAud 将部分（而不是所有）拓扑节点转换为相应的混音器控�
 
 请注意， \_ \_ 表中缺少 MIXERCONTROL CONTROLTYPE CUSTOM。 这意味着 WDM 音频驱动程序不支持自定义混音器控件。
 
-[**声调节点**](./ksnodetype-tone.md)支持四个属性：[**低音**](./ksproperty-audio-bass.md)、[**高音**](./ksproperty-audio-treble.md)、[**中频率**](./ksproperty-audio-mid.md)和[**低音增强**](./ksproperty-audio-bass-boost.md)。 中间频率属性没有与混音器对应的行，但还有其他三个属性。 对于拓扑中发现的每个色调节点，会对每个支持的属性进行查询：
+[**声调节点**](./ksnodetype-tone.md)支持四个属性：[**低音**](./ksproperty-audio-bass.md)、[**高音**](./ksproperty-audio-treble.md)、[**中频率**](./ksproperty-audio-mid.md)和 [**低音增强**](./ksproperty-audio-bass-boost.md)。 中间频率属性没有与混音器对应的行，但还有其他三个属性。 对于拓扑中发现的每个色调节点，会对每个支持的属性进行查询：
 
 [**KSPROPERTY \_ 音频 \_ 低音**](./ksproperty-audio-bass.md)
 
@@ -125,9 +124,9 @@ WDMAud 将部分（而不是所有）拓扑节点转换为相应的混音器控�
 
 [**Supermix 节点**](./ksnodetype-supermix.md)最多支持两个控件：静音和音量。 当 supermix 节点满足 supermix 节点的 " [**功能" 表**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksaudio_mixcap_table)中的每个条目的至少两个条件之一时，可以将该节点用作静音控件：
 
--   该条目支持 "静音" 属性，由 **功能**指定。**静音** 标志。
+-   该条目支持 "静音" 属性，由 **功能** 指定。**静音** 标志。
 
--   该条目是完全衰减的， ( 无限大的分贝衰减) 并且无法打开，这是这两个 **功能**指定的。**最小** 和 **功能**。**最大** 值 \_ (0x80000000) 。
+-   该条目是完全衰减的， ( 无限大的分贝衰减) 并且无法打开，这是这两个 **功能** 指定的。**最小** 和 **功能**。**最大** 值 \_ (0x80000000) 。
 
 当 supermix 功能表中的每个项都有一个非零范围时，supermix 节点可以用作卷控件。 所有其他控件都转换为一对一。 当遇到识别的节点时，混音器驱动程序将查询该节点的相应属性。
 

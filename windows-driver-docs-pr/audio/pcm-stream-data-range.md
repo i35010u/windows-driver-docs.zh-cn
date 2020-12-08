@@ -1,17 +1,16 @@
 ---
 title: PCM 流数据范围
 description: PCM 流数据范围
-ms.assetid: e8a9b681-3bd2-46ed-970f-5217dbfb2e4e
 keywords:
 - PCM 流数据范围 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 57efb828b297900a4207cd0ec4d0e05e39a3c99b
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 770e2c4140f1b42abfd5d7a7ec44006ad0fdd3af
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89210499"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96800947"
 ---
 # <a name="pcm-stream-data-range"></a>PCM 流数据范围
 

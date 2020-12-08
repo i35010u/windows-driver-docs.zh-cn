@@ -1,7 +1,6 @@
 ---
 title: 引脚数据范围和交集属性
 description: 引脚数据范围和交集属性
-ms.assetid: 55a749b2-1f54-42f8-876c-f391112d7bab
 keywords:
 - 音频属性 WDK，pin
 - WDM 音频属性 WDK，pin
@@ -11,12 +10,12 @@ keywords:
 - 与 WDK 音频交叉
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 17602c83fb05cca112fc79bf3daccbb954e47123
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 0923bebb53dec9fde95a7888922145bf601e3b3e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89208783"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96800927"
 ---
 # <a name="pin-data-range-and-intersection-properties"></a>引脚数据范围和交集属性
 
@@ -26,7 +25,7 @@ ms.locfileid: "89208783"
 
 几个属性请求提供有关音频流的数据格式的信息，音频流可以在其输入和输出插针处处理音频流。
 
-Pin 支持的音频流数据格式在[**KSDATARANGE**](/previous-versions/ff561658(v=vs.85))派生结构的[**KSMULTIPLE \_ 项**](/windows-hardware/drivers/ddi/ks/ns-ks-ksmultiple_item)数组中表示。 Pin 数据范围支持通过筛选器上的以下三个 [KSPROPSETID \_ Pin](../stream/kspropsetid-pin.md) 属性公开：
+Pin 支持的音频流数据格式在 [**KSDATARANGE**](/previous-versions/ff561658(v=vs.85))派生结构的 [**KSMULTIPLE \_ 项**](/windows-hardware/drivers/ddi/ks/ns-ks-ksmultiple_item)数组中表示。 Pin 数据范围支持通过筛选器上的以下三个 [KSPROPSETID \_ Pin](../stream/kspropsetid-pin.md) 属性公开：
 
 [**KSPROPERTY \_固定 \_ DATARANGES**](../stream/ksproperty-pin-dataranges.md) 此属性报告静态数据范围并表示支持的所有可能格式。 通常，数据范围包含在适配器驱动程序的静态数组中。
 [**KSPROPERTY \_固定 \_ CONSTRAINEDDATARANGES**](../stream/ksproperty-pin-constraineddataranges.md) 此属性报告动态的数据范围，并表示属性请求时支持的格式子集。 属性处理程序应包含逻辑来确定 pin 在运行时能够支持的格式。 例如，硬件实现可能具有 DMA 约束，但在某些格式组合中不允许对全双工进行支持。
@@ -35,7 +34,8 @@ Pin 支持的音频流数据格式在[**KSDATARANGE**](/previous-versions/ff5616
 
 有关详细信息，请参阅 [音频数据格式和数据区域](audio-data-formats-and-data-ranges.md)。
 
-**注意**   KSPROPERTY \_ pin \_ DATARANGES 和 KSPROPERTY \_ pin \_ CONSTRAINEDDATARANGES 每个都是从一个8字节对齐地址开始。
+**注意**  
+KSPROPERTY \_ pin \_ DATARANGES 和 KSPROPERTY \_ pin \_ CONSTRAINEDDATARANGES 每个都是从一个8字节对齐地址开始。
 
  
 

@@ -1,18 +1,17 @@
 ---
 title: 激活 VC
 description: 激活 VC
-ms.assetid: 93bac975-3c9c-424b-a815-b1589b703fb5
 keywords:
 - 虚拟连接 WDK CoNDIS，激活
 - 激活虚拟连接
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 22c39f5c0f4ab02fcf7404cb6786a24d2ba15d1d
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 9d99750e6177b139bc6771a077eb8dde8e95c3ad
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89213999"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96799461"
 ---
 # <a name="activating-a-vc"></a>激活 VC
 
@@ -30,7 +29,7 @@ MCM 驱动程序通过调用 [**NdisMCmActivateVc**](/windows-hardware/drivers/d
 
 如果本地客户端或远程方成功协商了该 (VC 上调用参数的更改，则调用管理器或 MCM 驱动程序可以启动活动 VC 的重新激活，请参阅 [客户端启动的请求以关闭调用](client-initiated-request-to-close-a-call.md) ，并 [传入请求以更改调用参数](incoming-request-to-change-call-parameters.md)) 。 对于单个 VC，调用管理器或 MCM 驱动程序可以多次调用 **Ndis (M) CmActivateVc** ，以更改已经处于活动状态的调用的调用参数。
 
-对于客户端发起的传出呼叫，呼叫管理器或 MCM 驱动程序通常会立即调用 **Ndis (M) CmActivateVc** ，并在交换机上确认与调用的远程目标的协商协议或成功的调用设置。 调用管理器或 MCM 驱动程序调用**ndis (M) CmActivateVc** ，然后再通知 ndis (，并在客户端) 使用**ndis (M**) [Making a Call](making-a-call.md) 对于传入呼叫，调用管理器或 MCM 驱动程序通常会调用 **ndis (M) CmActivateVc** ，然后在调用 **NdisCo (MCM) CreateVc** 之前，并在调用 **ndis (M) CmDispatchIncomingCall** 之前， (请参阅 [指示传入调用](indicating-an-incoming-call.md)) 。
+对于客户端发起的传出呼叫，呼叫管理器或 MCM 驱动程序通常会立即调用 **Ndis (M) CmActivateVc** ，并在交换机上确认与调用的远程目标的协商协议或成功的调用设置。 调用管理器或 MCM 驱动程序调用 **ndis (M) CmActivateVc** ，然后再通知 ndis (，并在客户端) 使用 **ndis (M**) [Making a Call](making-a-call.md) 对于传入呼叫，调用管理器或 MCM 驱动程序通常会调用 **ndis (M) CmActivateVc** ，然后在调用 **NdisCo (MCM) CreateVc** 之前，并在调用 **ndis (M) CmDispatchIncomingCall** 之前， (请参阅 [指示传入调用](indicating-an-incoming-call.md)) 。
 
 调用管理器调用 **NdisCmActivateVc** 会导致 NDIS 调用基础微型端口驱动程序的 [**MiniportCoActivateVc**](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_co_activate_vc) 函数。 *MiniportCoActivateVc* 必须验证此 VC 的 call 参数，以验证适配器是否可以支持请求的调用。 如果调用参数是可接受的， *MiniportCoActivateVc* 会根据需要与其适配器进行通信，以便准备适配器，以便通过虚拟连接接收或传输数据 (例如，) 编程接收缓冲区。 如果不支持请求的调用参数，微型端口驱动程序将无法请求。
 

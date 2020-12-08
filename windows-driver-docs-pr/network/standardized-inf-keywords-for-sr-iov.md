@@ -1,15 +1,14 @@
 ---
 title: SR-IOV 的标准化 INF 关键字
 description: SR-IOV 的标准化 INF 关键字
-ms.assetid: 5CA33B4F-E43A-4EB6-BCAB-365CA1FD3EF2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e4620c09535f6b3f56d9931fe5239932bd3ed70d
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 30780179bf58a8668c0a1e9f50106a4db84d91e5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105790"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801295"
 ---
 # <a name="standardized-inf-keywords-for-sr-iov"></a>SR-IOV 的标准化 INF 关键字
 
@@ -30,9 +29,9 @@ ms.locfileid: "90105790"
 <a href="" id="-sriov"></a>**\*SRIOV**  
 描述设备是否已启用或禁用 SR-IOV 功能的值。
 
-安装驱动程序后，管理员可以在网络适配器的 "**高级**" 属性页中更新** \* SRIOV**关键字值。 有关高级属性的详细信息，请参阅 [指定高级属性页的配置参数](specifying-configuration-parameters-for-the-advanced-properties-page.md)。
+安装驱动程序后，管理员可以在网络适配器的 "**高级**" 属性页中更新 **\* SRIOV** 关键字值。 有关高级属性的详细信息，请参阅 [指定高级属性页的配置参数](specifying-configuration-parameters-for-the-advanced-properties-page.md)。
 
-**注意**   在适配器的 "**高级**" 属性页中进行更改后，会自动重新启动微型端口驱动程序。
+**注意**   在适配器的 " **高级** " 属性页中进行更改后，会自动重新启动微型端口驱动程序。
 
  
 
@@ -46,16 +45,16 @@ ms.locfileid: "90105790"
 SR-IOV 标准化 INF 关键字是枚举关键字，下表对此进行了说明。 此表中的列描述了用于枚举关键字的以下属性：
 
 <a href="" id="subkeyname"></a>SubkeyName  
-必须在 INF 文件中指定的关键字的名称。 此名称还会显示在注册表中网络适配器的**NDI \\ params \\ **键下。
+必须在 INF 文件中指定的关键字的名称。 此名称还会显示在注册表中网络适配器的 **NDI \\ params \\** 键下。
 
 <a href="" id="paramdesc"></a>ParamDesc  
-与**SubkeyName** 关键字关联的显示文本。
+与 **SubkeyName** 关键字关联的显示文本。
 
-**注意**   独立硬件供应商 (IHV) 可以定义 SubkeyName 的任何说明性文本。
+**注意**  独立硬件供应商 (IHV) 可以定义 SubkeyName 的任何说明性文本。
 
  
 
-<a href="" id="value"></a>值  
+<a href="" id="value"></a>“值”  
 与列表中的每个 **SubkeyName** 关键字关联的枚举整数值。
 
 <a href="" id="enumdesc"></a>EnumDesc  
@@ -72,7 +71,7 @@ SR-IOV 标准化 INF 关键字是枚举关键字，下表对此进行了说明�
 <tr class="header">
 <th align="left">SubkeyName</th>
 <th align="left">ParamDesc</th>
-<th align="left">值</th>
+<th align="left">“值”</th>
 <th align="left">EnumDesc</th>
 </tr>
 </thead>
@@ -116,7 +115,7 @@ SR-IOV 标准化 INF 关键字是枚举关键字，下表对此进行了说明�
 
 PF 微型端口驱动程序的 INF 文件必须指定 SR-IOV 网络适配器上默认 NIC 交换机的配置。 这使得网络安装程序可以将默认交换机配置信息从 INF 复制到默认交换机 (**NDI \\ params \\ NicSwitches \\ 0**) 的子项下的微型端口注册表配置。
 
-这些关键字不会显示在网络适配器的 " **高级** " 属性页中，用户不能对其进行配置。 使用 INF 文件的**DDInstall**部分中的**AddReg**指令指定这些关键字。 每个关键字都由单独的 **AddReg** 指令指定。
+这些关键字不会显示在网络适配器的 " **高级** " 属性页中，用户不能对其进行配置。 使用 INF 文件的 **DDInstall** 部分中的 **AddReg** 指令指定这些关键字。 每个关键字都由单独的 **AddReg** 指令指定。
 
 下表描述了 SR-IOV 网络适配器的默认 NIC 交换机配置的 INF 关键字。 此表中的列描述了这些关键字的以下属性：
 
@@ -141,7 +140,7 @@ PF 微型端口驱动程序的 INF 文件必须指定 SR-IOV 网络适配器上�
 <th align="left">SubkeyName</th>
 <th align="left">数据值</th>
 <th align="left">数据类型</th>
-<th align="left">备注</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>

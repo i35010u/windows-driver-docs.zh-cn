@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ 电话服务 \_ CALLCONTROL
 description: KSPROPERTY \_ \_ phone CALLCONTROL 属性用于启动和终止电话呼叫。
-ms.assetid: AAC2A218-9A2D-4EFE-B609-5078028B2426
 keywords:
 - KSPROPERTY_TELEPHONY_CALLCONTROL 音频设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a375f9e6e29173fee2c14384cceda8dba2136f02
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: b5510af1da85a866228009c2b688dac4b3874ca2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90101858"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801145"
 ---
 # <a name="ksproperty_telephony_callcontrol"></a>KSPROPERTY \_ 电话服务 \_ CALLCONTROL
 

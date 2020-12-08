@@ -1,7 +1,6 @@
 ---
 title: 支持某个设备
 description: 支持某个设备
-ms.assetid: 5f60d3aa-6061-40f7-8108-d752534b88ed
 keywords:
 - 音频微型端口驱动程序 WDK，设备支持
 - 微型端口驱动程序 WDK 音频，设备支持
@@ -11,12 +10,12 @@ keywords:
 - 端口驱动程序 WDK 音频，端口类
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3bd0920d662c39d412e21398828fc3b58e667d90
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 2291b8feaa7f35b782f36860d800658619d2b147
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89209929"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96800579"
 ---
 # <a name="supporting-a-device"></a>支持某个设备
 
@@ -26,7 +25,7 @@ ms.locfileid: "89209929"
 
 PortCls 系统驱动程序 (*Portcls.sys*) 提供了几个内置的端口驱动程序来支持呈现和捕获 WAVE 和 MIDI 流的音频设备。
 
-所有端口驱动程序都公开从基接口 [IPort](/windows-hardware/drivers/ddi/portcls/nn-portcls-iport)派生的接口。 **IPort** 继承基接口 **IUnknown**中的方法。 **IPort** 提供了以下附加方法：
+所有端口驱动程序都公开从基接口 [IPort](/windows-hardware/drivers/ddi/portcls/nn-portcls-iport)派生的接口。 **IPort** 继承基接口 **IUnknown** 中的方法。 **IPort** 提供了以下附加方法：
 
 [**IPort::GetDeviceProperty**](/windows-hardware/drivers/ddi/portcls/nf-portcls-iport-getdeviceproperty)
 

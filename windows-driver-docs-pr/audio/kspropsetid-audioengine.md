@@ -1,28 +1,27 @@
 ---
-title: KSPROPSETID\_AudioEngine
-description: KSPROPSETID\_AudioEngine 属性集包含的音频驱动程序可用于提供有关硬件音频引擎节点的详细信息的 KS 属性。
-ms.assetid: F3155DF6-0710-4941-94DC-478A8F5DE8D1
+title: KSPROPSETID \_ AudioEngine
+description: KSPROPSETID \_ AudioEngine 属性集包含 KS 属性，音频驱动程序可以使用这些属性来提供有关硬件音频引擎节点的详细信息。
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3eaf256d66414c9b410c0afff49867c50cbb221f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a4ec9637a1c823411aa0a88ee66e124a18a57eb3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332547"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801117"
 ---
-# <a name="kspropsetidaudioengine"></a>KSPROPSETID\_AudioEngine
+# <a name="kspropsetid_audioengine"></a>KSPROPSETID \_ AudioEngine
 
 
-**KSPROPSETID\_AudioEngine**属性集包含的音频驱动程序可用于提供有关硬件音频引擎节点的详细信息的 KS 属性。
+**KSPROPSETID \_ AudioEngine** 属性集包含 KS 属性，音频驱动程序可以使用这些属性来提供有关硬件音频引擎节点的详细信息。
 
-**KSPROPSETID\_AudioEngine**是可用于 Windows 8 和更高版本的 Windows 操作系统。
+**KSPROPSETID \_** Windows 8 及更高版本的 windows 操作系统中提供了 AudioEngine。
 
-时硬件解决方案支持音频卸载，硬件的音频驱动程序必须以特定方式公开其功能，以便在 Windows 8 用户模式音频堆栈可以发现这些功能并充分利用它们。
+当硬件解决方案支持音频卸载时，硬件的音频驱动程序必须以特定的方式公开其功能，以便 Windows 8 用户模式音频堆栈可以发现这些功能并利用这些功能。
 
-若要支持与 Windows 8 提供的音频卸载体系结构，硬件解决方案必须实现硬件音频引擎。 然后，此硬件的音频驱动程序必须将硬件音频引擎公开为流式处理 (KS) 节点中 KS 筛选器包含一个音频引擎内核。 目的就是新定义的节点类型[ **KSNODETYPE\_音频\_引擎**](ksnodetype-audio-engine.md)。 [ **KSPROPERTY\_AUDIOENGINE** ](ksproperty-audioengine.md)枚举用于表示新 KS 属性。
+若要支持 Windows 8 随附的音频卸载体系结构，硬件解决方案必须实现硬件音频引擎。 然后，此硬件的音频驱动程序必须将硬件音频引擎公开为包含在 KS 筛选器中的音频引擎内核流式处理 (KS) 节点。 为此目的新定义的节点类型为 [**KSNODETYPE \_ AUDIO \_ ENGINE**](ksnodetype-audio-engine.md)。 [**KSPROPERTY \_ AUDIOENGINE**](ksproperty-audioengine.md)枚举用于表示新的 KS 属性。
 
-*Ksmedia.h*标头文件定义**KSPROPSETID\_AudioEngine**属性设置，如下所示：
+*Ksmedia* 头文件定义 **KSPROPSETID \_ AudioEngine** 属性集，如下所示：
 
 ``` syntax
 #define STATIC_KSPROPSETID_AudioEngine\
@@ -31,30 +30,30 @@ DEFINE_GUIDSTRUCT("3A2F82DC-886F-4BAA-9EB4-082B9025C536", KSPROPSETID_AudioEngin
 #define KSPROPSETID_AudioEngine DEFINE_GUIDNAMED(KSPROPSETID_AudioEngine)
 ```
 
-**KSPROPSETID\_AudioEngine**属性集包含以下 KS 属性。
+**KSPROPSETID \_ AudioEngine** 属性集包含以下 KS 属性。
 
 ## <span id="wdk_kspropsetid_audioengine"></span><span id="WDK_KSPROPSETID_AUDIOENGINE"></span>
 
 
-[**KSPROPERTY\_AUDIOENGINE\_缓冲区\_大小\_范围**](ksproperty-audioengine-buffer-size-limits.md)
+[**KSPROPERTY \_ AUDIOENGINE \_ 缓冲区 \_ 大小 \_ 范围**](ksproperty-audioengine-buffer-size-limits.md)
 
-[**KSPROPERTY\_AUDIOENGINE\_描述符**](ksproperty-audioengine-descriptor.md)
+[**KSPROPERTY \_ AUDIOENGINE \_ 描述符**](ksproperty-audioengine-descriptor.md)
 
-[**KSPROPERTY\_AUDIOENGINE\_DEVICEFORMAT**](ksproperty-audioengine-deviceformat.md)
+[**KSPROPERTY \_ AUDIOENGINE \_ DEVICEFORMAT**](ksproperty-audioengine-deviceformat.md)
 
-[**KSPROPERTY\_AUDIOENGINE\_GFXENABLE**](ksproperty-audioengine-gfx-enable.md)
+[**KSPROPERTY \_ AUDIOENGINE \_ GFXENABLE**](ksproperty-audioengine-gfx-enable.md)
 
-[**KSPROPERTY\_AUDIOENGINE\_LFXENABLE**](ksproperty-audioengine-lfx-enable.md)
+[**KSPROPERTY \_ AUDIOENGINE \_ LFXENABLE**](ksproperty-audioengine-lfx-enable.md)
 
-[**KSPROPERTY\_AUDIOENGINE\_LOOPBACK\_PROTECTION**](ksproperty-audioengine-loopback-protection.md)
+[**KSPROPERTY \_ AUDIOENGINE \_ 环回 \_ 保护**](ksproperty-audioengine-loopback-protection.md)
 
-[**KSPROPERTY\_AUDIOENGINE\_MIXFORMAT**](ksproperty-audioengine-mixformat.md)
+[**KSPROPERTY \_ AUDIOENGINE \_ MIXFORMAT**](ksproperty-audioengine-mixformat.md)
 
-[**KSPROPERTY\_AUDIOENGINE\_SUPPORTEDDEVICEFORMATS**](ksproperty-audioengine-supporteddeviceformats.md)
+[**KSPROPERTY \_ AUDIOENGINE \_ SUPPORTEDDEVICEFORMATS**](ksproperty-audioengine-supporteddeviceformats.md)
 
-[**KSPROPERTY\_AUDIOENGINE\_VOLUMELEVEL**](ksproperty-audioengine-volumelevel.md)
+[**KSPROPERTY \_ AUDIOENGINE \_ VOLUMELEVEL**](ksproperty-audioengine-volumelevel.md)
 
-在中定义这些属性名称[ **KSPROPERTY\_AUDIOENGINE** ](ksproperty-audioengine.md)枚举。
+这些属性名称是在 [**KSPROPERTY \_ AUDIOENGINE**](ksproperty-audioengine.md) 枚举中定义的。
 
  
 
