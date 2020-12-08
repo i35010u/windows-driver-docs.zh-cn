@@ -1,17 +1,16 @@
 ---
 title: 处理器电源管理 (PPM) 通知
 description: 每个处理器电源管理 (PPM) 通知，PEP 的 AcceptProcessorNotification 回调例程收到的通知参数会附带指示通知类型的通知参数，以及指向包含指定通知类型信息的数据结构的数据参数。
-ms.assetid: 4BA89D0F-78F0-44DF-BC9B-0F9F3256CD59
 keywords:
 - AcceptProcessorNotification 回调
 ms.date: 01/17/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 0d8f9846ecf8561a4c8f23019e3c220fb66223e7
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: cd81f3c17a25d90f2e166034e6d3dfc0511161ee
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89184991"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96783871"
 ---
 # <a name="processor-power-management-ppm-notifications"></a>处理器电源管理 (PPM) 通知
 
@@ -31,7 +30,7 @@ ms.locfileid: "89184991"
 
 PEP_NOTIFY_PPM_QUERY_CAPABILITIES 的值。
 
-*数据*
+数据
 
 指向 PEP_PPM_QUERY_CAPABILITIES 结构的指针。
 
@@ -54,7 +53,7 @@ PEP_NOTIFY_PPM_QUERY_CAPABILITIES 的值。
 
 PEP_NOTIFY_PPM_QUERY_IDLE_STATES 的值。
 
-*数据*
+数据
 
 指向 PEP_PPM_QUERY_IDLE_STATES 结构的指针。
 
@@ -73,7 +72,7 @@ PEP_NOTIFY_PPM_QUERY_IDLE_STATES 的值。
 
 PEP_NOTIFY_PPM_IDLE_SELECT 的值。
 
-*数据*
+数据
 
 指向 PEP_PPM_IDLE_SELECT 结构的指针。
 
@@ -93,7 +92,7 @@ PEP_NOTIFY_PPM_IDLE_SELECT 的值。
 
 PEP_NOTIFY_PPM_IDLE_CANCEL 的值。
 
-*数据*
+数据
 
 指向 PEP_PPM_IDLE_CANCEL 结构的指针。
 
@@ -116,7 +115,7 @@ PEP_NOTIFY_PPM_IDLE_CANCEL 的值。
 
 PEP_NOTIFY_PPM_IDLE_EXECUTE 的值。
 
-*数据*
+数据
 
 指向 PEP_PPM_IDLE_EXECUTE 或 PEP_PPM_IDLE_EXECUTE_V2 结构的指针。
 
@@ -144,7 +143,7 @@ PEP 可以准备硬件来进入之前选择的空闲状态，包括通知核心�
 
 PEP_NOTIFY_PPM_IDLE_COMPLETE 的值。
 
-*数据*
+数据
 
 指向 PEP_PPM_IDLE_COMPLETE 或 PEP_PPM_IDLE_COMPLETE_V2 结构的指针。
 
@@ -172,7 +171,7 @@ PEP_NOTIFY_PPM_IDLE_COMPLETE 的值。
 
 PEP_NOTIFY_PPM_IS_PROCESSOR_HALTED 的值。
 
-*数据*
+数据
 
 指向 PEP_PPM_IS_PROCESSOR_HALTED 结构的指针。
 
@@ -198,7 +197,7 @@ PEP 可能会在 IDLE_SELECT 和 IDLE_COMPLETE 通知之间随时收到此通知
 
 PEP_NOTIFY_PPM_INITIATE_WAKE 的值。
 
-*数据*
+数据
 
 指向结构的指针。
 
@@ -226,7 +225,7 @@ Windows 电源管理框架 (PoFx) 将此通知发送到指定处理器的 PEP，
 
 PEP_NOTIFY_PPM_QUERY_FEEDBACK_COUNTERS 的值。
 
-*数据*
+数据
 
 指向 PEP_PPM_QUERY_FEEDBACK_COUNTERS 结构的指针。
 
@@ -250,7 +249,7 @@ Windows 电源管理框架 (PoFx) 将此通知发送到处理器初始化，以�
 
 PEP_NOTIFY_PPM_FEEDBACK_READ 的值。
 
-*数据*
+数据
 
 指向 PEP_PPM_FEEDBACK_READ 结构的指针。
 
@@ -275,7 +274,7 @@ Windows 电源管理框架 (PoFx) 在要查询反馈计数器的当前值时发�
 
 PEP_NOTIFY_PPM_QUERY_PERF_CAPABILITIES 的值。
 
-*数据*
+数据
 
 指向 PEP_PPM_QUERY_PERF_CAPABILITIES 结构的指针。
 
@@ -299,7 +298,7 @@ Windows 电源管理框架 (PoFx) 将此通知发送到处理器初始化，以�
 
 PEP_NOTIFY_PPM_PERF_CONSTRAINTS 的值。
 
-*数据*
+数据
 
 指向 PEP_PPM_PERF_CONSTRAINTS 结构的指针。
 
@@ -327,9 +326,9 @@ Windows 电源管理框架 (PoFx) 在要检查处理器的当前操作约束时�
 
 *通知*
 
-**PEP_NOTIFY_PPM_PERF_SET**的值。
+**PEP_NOTIFY_PPM_PERF_SET** 的值。
 
-*数据*
+数据
 
 指向 [**PEP_PPM_PERF_SET**](/windows-hardware/drivers/ddi/pep_x/ns-pep_x-_pep_ppm_perf_set) 结构的指针。
 
@@ -350,7 +349,7 @@ Windows 电源管理框架 (PoFx) 在要更改处理器的当前运行性能时�
 
 PEP_NOTIFY_PPM_PARK_SELECTION 的值。
 
-*数据*
+数据
 
 指向 PEP_PPM_PARK_SELECTION 结构的指针。
 
@@ -377,7 +376,7 @@ Windows 电源管理框架 (PoFx) 发送此通知以指示 PEP 选择要驻留�
 
 PEP_NOTIFY_PPM_CST_STATES 的值。
 
-*数据*
+数据
 
 指向 PEP_PPM_CST_STATES 结构的指针。
 
@@ -401,7 +400,7 @@ Windows 电源管理框架 (PoFx) 将此通知发送到 PEP，以指示由处理
 
 PEP_NOTIFY_PPM_QUERY_PLATFORM_STATES 的值。
 
-*数据*
+数据
 
 指向 PEP_PPM_QUERY_PLATFORM_STATES 结构的指针。
 
@@ -421,7 +420,7 @@ Windows 电源管理框架 (PoFx) 会将此通知发送到 PEP 的处理器初�
 
 PEP_NOTIFY_PPM_QUERY_LP_SETTINGS 的值。
 
-*数据*
+数据
 
 指向 PEP_PPM_QUERY_LP_SETTINGS 结构的指针。
 
@@ -443,7 +442,7 @@ PEP_NOTIFY_PPM_QUERY_LP_SETTINGS 的值。
 
 PEP_NOTIFY_PPM_QUERY_IDLE_STATES_V2 的值。
 
-*数据*
+数据
 
 指向 PEP_PPM_QUERY_IDLE_STATES_V2 结构的指针。
 
@@ -471,7 +470,7 @@ PEP 会在 IdleStates 阵列中填充它所支持的每个空闲状态的相关�
 
 PEP_NOTIFY_PPM_QUERY_PLATFORM_STATE 的值。
 
-*数据*
+数据
 
 指向 PEP_PPM_QUERY_PLATFORM_STATE 结构的指针。
 
@@ -499,7 +498,7 @@ PEP 用有关平台空闲状态的信息填充状态结构。 平台空闲状态
 
 PEP_NOTIFY_PPM_TEST_IDLE_STATE 的值。
 
-*数据*
+数据
 
 指向 PEP_PPM_TEST_IDLE_STATE 结构的指针。
 
@@ -528,7 +527,7 @@ Windows 电源管理框架 (PoFx) 发送此通知，以测试是否可以在指�
 
 PEP_NOTIFY_PPM_IDLE_PRE_EXECUTE 的值。
 
-*数据*
+数据
 
 指向 PEP_PPM_IDLE_EXECUTE 或 PEP_PPM_IDLE_EXECUTE_V2 结构的指针。
 
@@ -556,7 +555,7 @@ Windows 电源管理框架 (PoFx) 将此通知发送到 PEP，使系统能够转
 
 PEP_NOTIFY_PPM_UPDATE_PLATFORM_STATE 的值。
 
-*数据*
+数据
 
 指向 PEP_PPM_QUERY_PLATFORM_STATE 结构的指针。
 
@@ -582,7 +581,7 @@ PEP_NOTIFY_PPM_UPDATE_PLATFORM_STATE 的值。
 
 PEP_NOTIFY_PPM_QUERY_PLATFORM_STATE_RESIDENCIES 的值。
 
-*数据*
+数据
 
 指向 PEP_PPM_PLATFORM_STATE_RESIDENCIES 结构的指针。
 
@@ -610,7 +609,7 @@ Count 指定状态数组中的元素数，其中，元素索引对应于平台�
 
 PEP_NOTIFY_PPM_QUERY_VETO_REASONS 的值。
 
-*数据*
+数据
 
 指向 PEP_PPM_QUERY_VETO_REASONS 结构的指针。
 
@@ -638,7 +637,7 @@ Windows 电源管理框架 (PoFx) 将此通知发送到处理器初始化，以�
 
 PEP_NOTIFY_PPM_QUERY_VETO_REASON 的值。
 
-*数据*
+数据
 
 指向 PEP_PPM_QUERY_VETO_REASON 结构的指针。
 
@@ -662,7 +661,7 @@ Windows 电源管理框架 (PoFx) 将此通知发送到处理器初始化，以�
 
 PEP_NOTIFY_PPM_ENUMERATE_BOOT_VETOES 的值。
 
-*数据*
+数据
 
 NULL 指针值。
 
@@ -686,7 +685,7 @@ Windows 电源管理框架 (PoFx) 在初始化处理器之后但在第一次空�
 
 PEP_NOTIFY_PPM_PARK_MASK 的值。
 
-*数据*
+数据
 
 指向 PEP_PPM_PARK_MASK 结构的指针。
 
@@ -709,7 +708,7 @@ Windows 电源管理框架 (PoFx) 在运行时发送此通知以通知当前核�
 
 PEP_NOTIFY_PPM_PARK_SELECTION_V2 的值。
 
-*数据*
+数据
 
 指向 PEP_PPM_PARK_SELECTION_V2 结构的指针。
 
@@ -733,7 +732,7 @@ PEP_NOTIFY_PPM_PARK_SELECTION_V2 的值。
 
 PEP_NOTIFY_PPM_PERF_CHECK_COMPLETE 的值。
 
-*数据*
+数据
 
 指向 PEP_PPM_PERF_CHECK_COMPLETE 结构的指针。
 
@@ -756,7 +755,7 @@ Windows 电源管理框架 (PoFx) 在运行时发送此通知，以通知 PEP �
 
 PEP_NOTIFY_PPM_QUERY_COORDINATED_DEPENDENCY 的值。
 
-*数据*
+数据
 
 指向 PEP_PPM_QUERY_COORDINATED_DEPENDENCY 结构的指针。
 
@@ -786,7 +785,7 @@ Windows 电源管理框架 (PoFx) 将此通知发送到处理器初始化，以�
 
 PEP_NOTIFY_PPM_QUERY_COORDINATED_STATE_NAME 的值。
 
-*数据*
+数据
 
 指向 PEP_PPM_QUERY_STATE_NAME 结构的指针。
 
@@ -810,7 +809,7 @@ Windows 电源管理框架 (PoFx) 将此通知发送到处理器初始化，以�
 
 PEP_NOTIFY_PPM_QUERY_COORDINATED_STATES 的值。
 
-*数据*
+数据
 
 指向 PEP_PPM_QUERY_COORDINATED_STATES 结构的指针。
 
@@ -842,7 +841,7 @@ PEP 用有关协调空闲状态的信息填充状态结构。
 
 PEP_NOTIFY_PPM_QUERY_PROCESSOR_STATE_NAME 的值。
 
-*数据*
+数据
 
 指向 PEP_PPM_QUERY_STATE_NAME 结构的指针。
 
@@ -866,7 +865,7 @@ Windows 电源管理框架 (PoFx) 将此通知发送到处理器初始化，以�
 
 PEP_NOTIFY_PPM_ENTER_SYSTEM_STATE 的值。
 
-*数据*
+数据
 
 指向 PEP_PPM_ENTER_SYSTEM_STATE 结构的指针。
 
@@ -891,9 +890,9 @@ DISPATCH_LEVEL
 
 *通知*
 
-**PEP_NOTIFY_PPM_PERF_SET_STATE**的值。
+**PEP_NOTIFY_PPM_PERF_SET_STATE** 的值。
 
-*数据*
+数据
 
 指向 [**PEP_PPM_PERF_SET_STATE**](/windows-hardware/drivers/ddi/pep_x/ns-pep_x-_pep_ppm_perf_set_state) 结构的指针。
 
@@ -914,7 +913,7 @@ DISPATCH_LEVEL
 
 PEP_NOTIFY_PPM_QUERY_DISCRETE_PERF_STATES 的值。
 
-*数据*
+数据
 
 指向 PEP_PPM_QUERY_DISCRETE_PERF_STATES 结构的指针。
 如果 PEP_NOTIFY_PPM_QUERY_CAPABILITIES 通知指示对离散性能状态的支持，则在处理器初始化时使用它来查询 PEP 支持的离散性能状态的列表。  
@@ -933,7 +932,7 @@ PEP_NOTIFY_PPM_QUERY_DISCRETE_PERF_STATES 的值。
 
 PEP_NOTIFY_PPM_QUERY_DOMAIN_INFO 的值。
 
-*数据*
+数据
 
 指向 PEP_PPM_QUERY_DOMAIN_INFO 结构的指针。
 
@@ -954,7 +953,7 @@ PEP_NOTIFY_PPM_QUERY_DOMAIN_INFO 的值。
 
 PEP_NOTIFY_PPM_RESUME_FROM_SYSTEM_STATE 的值。
 
-*数据*
+数据
 
 指向 PEP_PPM_RESUME_FROM_SYSTEM_STATE 结构的指针。
 

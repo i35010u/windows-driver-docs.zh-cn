@@ -1,19 +1,18 @@
 ---
 title: 视频解码器属性
 description: 视频解码器属性
-ms.assetid: 671a310b-52a6-49f0-8848-e586a37c25ff
 keywords:
 - 视频解码器属性 WDK 视频捕获
 - 解码器属性 WDK 视频捕获
 - PROPSETID_VIDCAP_VIDEODECODER
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 47a1431ee9c426da366d6211a188add85642a15c
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: e03f2aa1a64a264d6394b056a2e0bb2763db17ec
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102908"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96781999"
 ---
 # <a name="video-decoder-properties"></a>视频解码器属性
 

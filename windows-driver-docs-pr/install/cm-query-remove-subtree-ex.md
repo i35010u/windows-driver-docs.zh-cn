@@ -1,7 +1,6 @@
 ---
 title: CM_Query_Remove_SubTree_Ex
 description: CM_Query_Remove_SubTree_Ex
-ms.assetid: cc8872c1-7e8d-4673-9f4d-91b529821724
 keywords:
 - CM_Query_Remove_SubTree_Ex 设备和驱动程序安装
 topic_type:
@@ -12,13 +11,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 21b908a8ee1afca5b1a4ba572961ebeae87ed538
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: dd21d1e3e6e1ac3c26b49827e5b2799bf41e1f44
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63377181"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96783045"
 ---
-# <a name="cmqueryremovesubtreeex"></a>CM_Query_Remove_SubTree_Ex
+# <a name="cm_query_remove_subtree_ex"></a>CM_Query_Remove_SubTree_Ex
 
 此函数保留供系统使用。

@@ -1,7 +1,6 @@
 ---
 title: DIF_NEWDEVICEWIZARD_SELECT
 description: DIF_NEWDEVICEWIZARD_SELECT
-ms.assetid: b6b2eaf7-c87f-45d6-8845-6d03bde9a802
 keywords:
 - DIF_NEWDEVICEWIZARD_SELECT 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 938eeeb52f375764e80e27f8895a5dfd0d96bbff
-ms.sourcegitcommit: 06581a21ca066ddfedab7f9bb7f2159cfac452fd
+ms.openlocfilehash: 8e63051e7e1382cc69e41d9f48e42db50f214a70
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91145479"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96782785"
 ---
 # <a name="dif_newdevicewizard_select"></a>DIF_NEWDEVICEWIZARD_SELECT
 
@@ -64,10 +63,10 @@ DIF_NEWDEVICEWIZARD_SELECT 请求允许安装程序提供 (s) 替换标准选择
 提供一个指向 [**SP_DEVINFO_DATA**](/windows/win32/api/setupapi/ns-setupapi-sp_devinfo_data) 结构的指针，该结构在设备信息集中标识设备。
 
 <a href="" id="device-installation-parameters-"></a>设备安装参数   
-与*DeviceInfoData*关联的设备安装参数 ([**SP_DEVINSTALL_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-sp_devinstall_params_a)) 。
+与 *DeviceInfoData* 关联的设备安装参数 ([**SP_DEVINSTALL_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-sp_devinstall_params_a)) 。
 
 <a href="" id="class-installation-parameters"></a>类安装参数  
-[**SP_NEWDEVICEWIZARD_DATA**](/windows/win32/api/setupapi/ns-setupapi-sp_newdevicewizard_data)结构与*DeviceInfoData*关联。
+[**SP_NEWDEVICEWIZARD_DATA**](/windows/win32/api/setupapi/ns-setupapi-sp_newdevicewizard_data)结构与 *DeviceInfoData* 关联。
 
 ### <a name="installer-output"></a>安装程序输出
 
@@ -121,7 +120,7 @@ DIF_NEWDEVICEWIZARD_SELECT 请求允许安装程序提供 (s) 替换标准选择
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**DIF_NEWDEVICEWIZARD_PREANALYZE**](dif-newdevicewizard-preanalyze.md)

@@ -1,7 +1,6 @@
 ---
 title: Bug 检查 0x6D SESSION1_INITIALIZATION_FAILED
-description: SESSION1_INITIALIZATION_FAILED bug 检查具有 0x0000006D 值。 此 bug 检查指示 Microsoft Windows 操作系统的初始化失败。
-ms.assetid: e4f9280b-1cdd-4536-88bf-b216cc70129f
+description: SESSION1_INITIALIZATION_FAILED bug 检查的值为0x0000006D。 此 bug 检查表明 Microsoft Windows 操作系统的初始化失败。
 keywords:
 - Bug 检查 0x6D SESSION1_INITIALIZATION_FAILED
 - SESSION1_INITIALIZATION_FAILED
@@ -13,23 +12,23 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 1812ab3af73a3d91018fa9d43a07a39d1cee05f9
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: 5e010f540baa3d75a6c376a36cabb8fa8b5caf25
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67519251"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96784169"
 ---
-# <a name="bug-check-0x6d-session1initializationfailed"></a>Bug 检查 0x6D：SESSION1\_初始化\_失败
+# <a name="bug-check-0x6d-session1_initialization_failed"></a>Bug 检查0x6D： SESSION1 \_ 初始化 \_ 失败
 
 
-SESSION1\_初始化\_失败错误检查的值为 0x0000006D。 此 bug 检查指示 Microsoft Windows 操作系统的初始化失败。
+SESSION1 \_ 初始化 \_ 失败 bug 检查的值为0x0000006D。 此 bug 检查表明 Microsoft Windows 操作系统的初始化失败。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题面向程序员。 如果您是在使用计算机时收到蓝屏错误代码的客户，请参阅[蓝屏错误疑难解答](https://www.windows.com/stopcode)。
 
 
-## <a name="session1initializationfailed-parameters"></a>SESSION1\_初始化\_失败参数
+## <a name="session1_initialization_failed-parameters"></a>SESSION1 \_ 初始化 \_ 失败参数
 
 
 <table>

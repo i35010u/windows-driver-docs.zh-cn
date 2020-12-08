@@ -1,15 +1,14 @@
 ---
 title: AllowTethering
 description: AllowTethering
-ms.assetid: f9b92c46-5e0e-447a-b571-bf549e9a749d
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fbd40bd5ab16af23cb2d33c7a55517144bfdfc56
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: 5e1c1f9efec37bc05de377983fe310e142913116
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89403326"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96782557"
 ---
 # <a name="allowtethering"></a>AllowTethering
 
@@ -17,7 +16,8 @@ ms.locfileid: "89403326"
 
 AllowTethering 元素指定是始终允许还是从不允许用户，或在权利检查后允许用户使用 Internet 共享。
 
-**注意**   如果此元素配置为在授权检查后允许，则必须在应用中指定将处理权限检查的[DeviceNotificationHandler](devicenotificationhandler.md) 。
+**注意**  
+如果此元素配置为在授权检查后允许，则必须在应用中指定将处理权限检查的 [DeviceNotificationHandler](devicenotificationhandler.md) 。
 
  
 
@@ -56,7 +56,7 @@ AllowTethering 元素指定是始终允许还是从不允许用户，或在权�
 <thead>
 <tr class="header">
 <th>元素</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>

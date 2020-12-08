@@ -1,18 +1,17 @@
 ---
 title: 编写 ControllerControl 例程
 description: 编写 ControllerControl 例程
-ms.assetid: 9330e0ff-c4bb-4aa6-985e-ef89791f74df
 keywords:
 - 控制器对象 WDK 内核，编写 ControllerControl 例程
 - ControllerControl 例程，编写
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 00344da760416537b673c45169546eaefc319463
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: f56b54127bbd52940c1dc75409dde23e63f75922
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89184095"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96782601"
 ---
 # <a name="writing-controllercontrol-routines"></a>编写 ControllerControl 例程
 
@@ -26,7 +25,7 @@ ms.locfileid: "89184095"
 
 当驱动程序调用 [**IoAllocateController**](/windows-hardware/drivers/ddi/ntddk/nf-ntddk-ioallocatecontroller)时，如果控制器对象表示的硬件可用于 i/o 操作，则其 *ControllerControl* 例程会立即运行。 否则， *ControllerControl* 例程会排入队列，直到控制器空闲。
 
-**注意**   WDM 驱动程序无法使用控制器对象和*ControllerControl*例程。
+**注意**  WDM 驱动程序无法使用控制器对象和 *ControllerControl* 例程。
 
  
 

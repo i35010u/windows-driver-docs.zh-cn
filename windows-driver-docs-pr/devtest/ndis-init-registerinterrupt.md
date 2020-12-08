@@ -1,7 +1,6 @@
 ---
 title: 'Init \_ RegisterInterrupt rule (ndis) '
 description: Init \_ RegisterInterrupt 规则指定如果在初始化过程中出现问题或在停止微型端口驱动程序的过程中出现问题，则必须撤消中断的注册，这通常发生在初始化过程中。如果在 MiniportInitializeEx 期间至少调用了一次 NdisMRegisterInterruptEx，则必须在 MiniportHaltEx 中至少调用一次 NdisMDeregisterInterruptEx 函数。
-ms.assetid: f12cc1b9-396b-4351-ad13-c1750b54b709
 ms.date: 05/21/2018
 keywords:
 - 'Init_RegisterInterrupt 规则 (ndis) '
@@ -12,19 +11,19 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: c62bac6f81c1a66f4fd311beb140e82a650bca0b
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 64f799bba8e5cef7ca5263799a2a3e684caf65f1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105582"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96783319"
 ---
 # <a name="init_registerinterrupt-rule-ndis"></a>Init \_ RegisterInterrupt rule (ndis) 
 
 
 Init \_ RegisterInterrupt 规则指定如果在初始化过程中出现问题或在停止微型端口驱动程序的过程中出现问题，则必须撤消中断的注册，这通常发生在初始化过程中。
 
-如果在**MiniportInitializeEx**期间至少调用了一次**NdisMRegisterInterruptEx** ，则必须在**MiniportHaltEx**中至少调用一次**NdisMDeregisterInterruptEx**函数。
+如果在 **MiniportInitializeEx** 期间至少调用了一次 **NdisMRegisterInterruptEx** ，则必须在 **MiniportHaltEx** 中至少调用一次 **NdisMDeregisterInterruptEx** 函数。
 
 **驱动程序模型： NDIS**
 

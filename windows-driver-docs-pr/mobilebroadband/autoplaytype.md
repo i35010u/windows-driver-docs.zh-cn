@@ -1,15 +1,14 @@
 ---
 title: AutoplayType
 description: AutoplayType
-ms.assetid: 06097d2a-7883-416e-a81d-3a8abccc620b
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9402524c8c792a57f3559e97410d19f3bad66893
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: c93fdc004e6b83cbf012b3840125ab07d188ad57
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89402892"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96782503"
 ---
 # <a name="autoplaytype"></a>AutoplayType
 
@@ -52,7 +51,7 @@ AutoplayType 元素指定自动播放事件是设备事件还是内容事件。 
 <thead>
 <tr class="header">
 <th>元素</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>

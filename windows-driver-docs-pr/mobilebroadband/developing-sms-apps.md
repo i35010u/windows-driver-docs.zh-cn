@@ -1,22 +1,22 @@
 ---
 title: 开发短信应用程序的简介
 description: 开发短信应用程序的简介
-ms.assetid: 052eb3cc-4a39-4667-8678-b18650f3b5c9
 ms.date: 07/05/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: b89acf58b507e39fd6468279d973b1e9c93d8d28
-ms.sourcegitcommit: 7e4d9508198a30bdc1cb6eda83852dda4e42213e
+ms.openlocfilehash: ddcdd0a39d7371f3c309c26bf589022dde2e4d3d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89304286"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96782375"
 ---
 # <a name="introduction-to-developing-sms-apps"></a>开发短信应用程序的简介
 
 
 Windows 8、Windows 8.1 和 Windows 10 提供短消息服务， (SMS) 文本消息传递平台，用于移动网络操作员、移动宽带适配器 Ihv、Oem 以及其合作软件供应商的应用，并将 SMS 访问到 UWP 应用。
 
-**注意**   移动宽带应用要求在收到短信时向最终用户显示通知。 还可能需要 SMS 来符合特定市场的法规要求或最佳做法。
+**注意**  
+移动宽带应用要求在收到短信时向最终用户显示通知。 还可能需要 SMS 来符合特定市场的法规要求或最佳做法。
 
  
 
@@ -98,7 +98,8 @@ Windows 8、Windows 8.1 和 Windows 10 提供短消息服务， (SMS) 文本消�
 
 运行 Windows 8、Windows 8.1 或 Windows 10 的用户可以通过使用 "设置" 超级按钮，在应用级别控制对 SMS 功能的访问。
 
-**注意**   与用户许可一起使用时，应用程序还必须通过在设备或服务元数据中添加应用程序名称来授予访问权限。
+**注意**  
+与用户许可一起使用时，应用程序还必须通过在设备或服务元数据中添加应用程序名称来授予访问权限。
 
  
 
@@ -116,7 +117,8 @@ Mno 为 Windows 预配平台中的管理短信通知指定自定义筛选规则�
 
 您可以编写使用 [**Windows. Sms**](/uwp/api/Windows.Devices.Sms) API 发送、读取和删除消息的 JavaScript、c # 或 c + + 应用程序。
 
-**注意**   Windows 7 Mobile 宽带 SMS API 只为 SMS 提供低级别的调制解调器接口。 Windows 8、Windows 8.1 和 Windows 10 提供适用于常规应用程序开发的备用文本模式接口。
+**注意**  
+Windows 7 Mobile 宽带 SMS API 只为 SMS 提供低级别的调制解调器接口。 Windows 8、Windows 8.1 和 Windows 10 提供适用于常规应用程序开发的备用文本模式接口。
 
  
 

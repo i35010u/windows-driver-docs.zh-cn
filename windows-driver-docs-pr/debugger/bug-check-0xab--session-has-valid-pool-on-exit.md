@@ -1,7 +1,6 @@
 ---
 title: Bug 检查 0xAB SESSION_HAS_VALID_POOL_ON_EXIT
-description: SESSION_HAS_VALID_POOL_ON_EXIT bug 检查具有 0x000000AB 值。 此 bug 检查指示会话卸载时发生会话驱动程序仍保留内存中。
-ms.assetid: fe4587cc-2567-4452-a3e7-22a53def76b2
+description: SESSION_HAS_VALID_POOL_ON_EXIT bug 检查的值为0x000000AB。 此 bug 检查表明会话驱动程序仍保留内存时，发生了会话卸载。
 keywords:
 - Bug 检查 0xAB SESSION_HAS_VALID_POOL_ON_EXIT
 - SESSION_HAS_VALID_POOL_ON_EXIT
@@ -13,23 +12,23 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: de1e75bfbad6f23a82c649f8192d11ccb055947f
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: c32d1bb66edfa99b9bf28fe7d984f42c86377fc7
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67519038"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96784153"
 ---
-# <a name="bug-check-0xab-sessionhasvalidpoolonexit"></a>Bug 检查 0xAB：会话\_HAS\_有效\_池\_ON\_退出
+# <a name="bug-check-0xab-session_has_valid_pool_on_exit"></a>Bug 检查0xAB：会话 \_ \_ \_ \_ 在退出时具有有效的池 \_
 
 
-会话\_HAS\_有效\_池\_ON\_退出 bug 检查的值为 0x000000AB。 此 bug 检查指示会话卸载时发生会话驱动程序仍保留内存中。
+会话 \_ 具有 \_ 无效 \_ \_ \_ 的退出 bug 检查池，其值为0x000000AB。 此 bug 检查表明会话驱动程序仍保留内存时，发生了会话卸载。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题面向程序员。 如果您是在使用计算机时收到蓝屏错误代码的客户，请参阅[蓝屏错误疑难解答](https://www.windows.com/stopcode)。
 
 
-## <a name="sessionhasvalidpoolonexit-parameters"></a>会话\_HAS\_有效\_池\_ON\_退出参数
+## <a name="session_has_valid_pool_on_exit-parameters"></a>会话 \_ 具有 \_ 无效 \_ \_ 的 \_ 退出参数池
 
 
 <table>
@@ -46,19 +45,19 @@ ms.locfileid: "67519038"
 <tbody>
 <tr class="odd">
 <td align="left"><p>1</p></td>
-<td align="left"><p>会话 id。</p></td>
+<td align="left"><p>会话 ID。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>2</p></td>
-<td align="left"><p>泄漏的分页的池字节数。</p></td>
+<td align="left"><p>正在泄漏的分页池字节数。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>3</p></td>
-<td align="left"><p>泄漏的非分页的池字节数。</p></td>
+<td align="left"><p>正在泄漏的非分页缓冲池字节数。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>4</p></td>
-<td align="left"><p>泄漏的分页和非分页分配的总数。 （非分页的分配数是此词的上半部分和分页的分配是该单词的下半部分。）</p></td>
+<td align="left"><p>正在泄漏的分页和非分页分配的总数。  (此词上半部分的非分页分配数，分页分配在此词的下半部分。 ) </p></td>
 </tr>
 </tbody>
 </table>
@@ -68,7 +67,7 @@ ms.locfileid: "67519038"
 <a name="cause"></a>原因
 -----
 
-会话\_HAS\_有效\_池\_ON\_退出 bug 检查出现的原因会话驱动程序不会释放会话卸载前的其池分配。 此 bug 检查可以指示 Win32k.sys、 Atmfd.dll、 Rdpdd.dll 或视频或其他驱动程序中的 bug。
+由于会话 \_ \_ \_ \_ \_ 驱动程序在会话卸载之前不释放其池分配，因此会话具有有效的退出 bug 检查池。 此 bug 检查可指示 Win32k.sys、Atmfd.dll、Rdpdd.dll 或视频或其他驱动程序中的 bug。
 
  
 

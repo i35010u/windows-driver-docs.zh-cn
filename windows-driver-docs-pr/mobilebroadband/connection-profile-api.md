@@ -1,15 +1,14 @@
 ---
 title: 连接配置文件 API
 description: 连接配置文件 API
-ms.assetid: 671b0df6-4f4b-4867-86dd-5eb832d86b4b
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ac31b3d2ea9b740a4a4d6b082d10e99b0b46327e
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: d8595fc21cc314d91f6683acf6a0955e39fcbf7b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91732719"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96782476"
 ---
 # <a name="connection-profile-api"></a>连接配置文件 API
 

@@ -1,7 +1,6 @@
 ---
 title: 编写 Dispatch 例程
 description: 编写 Dispatch 例程
-ms.assetid: 84eb9372-2ef7-4cc2-94af-97e3399e69e0
 keywords:
 - 调度例程 WDK 内核
 - 标准驱动程序例程 WDK 内核，调度例程
@@ -18,12 +17,12 @@ keywords:
 - 函数代码 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e719c800b0ca9fb9162b10a0f9c9e764ac87cd66
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: bad81ce6d7cbfb58a7f6915c7e7eefa01058e3a2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89183981"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96782591"
 ---
 # <a name="writing-dispatch-routines"></a>编写 Dispatch 例程
 
@@ -31,7 +30,7 @@ ms.locfileid: "89183981"
 
 
 
-处理 (IRP) 的任何 i/o 请求包都在调度例程中开始，驱动程序将注册该调度例程来处理[irp 主功能代码](./irp-major-function-codes.md) (<strong>irp \_ MJ \_ * XXX</strong> <em>) 。驱动程序的 [</em> *DriverEntry* <em>](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_initialize) 例程在驱动 [</em> *程序的驱动程序 \_ 对象* * 结构中的调度表中导出调度例程的入口点](/windows-hardware/drivers/ddi/wdm/ns-wdm-_driver_object)。
+处理 (IRP) 的任何 i/o 请求包都在调度例程中开始，驱动程序将注册该调度例程来处理 [irp 主功能代码](./irp-major-function-codes.md) (<strong>irp \_ MJ \_ * XXX</strong> <em>) 。驱动程序的 [</em> *DriverEntry* <em>](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_initialize) 例程在驱动 [</em> *程序的驱动程序 \_ 对象* * 结构中的调度表中导出调度例程的入口点](/windows-hardware/drivers/ddi/wdm/ns-wdm-_driver_object)。
 
 驱动程序可以为其处理的每个主要 i/o 函数代码提供单独的调度例程。 或者，可以编写调度例程来处理多个 i/o 函数代码。
 

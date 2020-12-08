@@ -1,15 +1,14 @@
 ---
 title: 管理物理网络适配器连接状态
 description: 管理物理网络适配器连接状态
-ms.assetid: B8C6EB48-59D7-469B-87C8-57E60CB5C5D2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0a3fe43016c873817e1f43a94dd59d1f41577ecc
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: e43ea16d94557c095e65f0ed282a729b17fc3397
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89213951"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96782249"
 ---
 # <a name="managing-physical-network-adapter-connection-status"></a>管理物理网络适配器连接状态
 

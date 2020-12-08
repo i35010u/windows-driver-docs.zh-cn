@@ -1,15 +1,14 @@
 ---
 title: EnableAutoPlayForRegisteredApps
 description: EnableAutoPlayForRegisteredApps
-ms.assetid: 8f4b1a6a-262a-4ebc-808b-8e998fd78f99
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 61d0f1f4d34d8e8db8634047df69f4575d001ceb
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: 96cd9080c9a1926f27e14270202c0df30c6227cc
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89403404"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96782365"
 ---
 # <a name="enableautoplayforregisteredapps"></a>EnableAutoPlayForRegisteredApps
 
@@ -52,7 +51,7 @@ EnableAutoPlayForRegisteredApps 元素指定是否为已注册的应用启用自
 <thead>
 <tr class="header">
 <th>元素</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>

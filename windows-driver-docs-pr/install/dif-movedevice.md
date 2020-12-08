@@ -1,7 +1,6 @@
 ---
 title: DIF_MOVEDEVICE
 description: DIF_MOVEDEVICE
-ms.assetid: 422bb944-2ca8-417e-8a3c-454345761bd3
 keywords:
 - DIF_MOVEDEVICE 设备和驱动程序安装
 topic_type:
@@ -12,17 +11,17 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: b8f97554fa4b0a44f21e960ae5c2551abc5c488b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f19c7b04655bea33549537e3d7ff9494dda09b00
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63342750"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96782809"
 ---
-# <a name="difmovedevice"></a>DIF_MOVEDEVICE
+# <a name="dif_movedevice"></a>DIF_MOVEDEVICE
 
 
-此差异代码已过时，并在 Microsoft Windows 2000 和更高版本的 Windows 中不再受支持。
+此 DIF 代码已过时，并且在 Microsoft Windows 2000 和更高版本的 Windows 中不再受支持。
 
  
 

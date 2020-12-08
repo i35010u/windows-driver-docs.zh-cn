@@ -1,7 +1,6 @@
 ---
 title: GDI 硬件加速
 description: GDI 硬件加速
-ms.assetid: 03db58e6-a6d5-4b6f-ba71-d22a985f9c57
 keywords:
 - 微型端口驱动程序 WDK 显示
 - GDI 硬件加速 WDK 显示
@@ -9,12 +8,12 @@ keywords:
 - 带有 GDI WDK 显示的硬件加速
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ec953a79fa7f39ab17a2617636fc973ddcaecd8b
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 17ebf28e81b0ab16004c0fc20b0f489a896b73f4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89065828"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96783275"
 ---
 # <a name="gdi-hardware-acceleration"></a>GDI 硬件加速
 
@@ -23,7 +22,7 @@ Windows 7 中引入的 GDI 硬件加速功能提供了加速核心图形设备�
 
 为了指示 GPU 和驱动程序支持此功能，显示微型端口驱动程序必须将 DXGKDDI \_ 接口 \_ 版本设置为 &gt; = DXGKDDI \_ 接口 \_ 版本 \_ WIN7。
 
-显示微型端口驱动程序还应将[**DXGK \_ PRESENTATIONCAPS**](/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgk_presentationcaps) - &gt; **SupportKernelModeCommandBuffer**设置为**TRUE** ，以指示它支持 GDI 硬件加速命令缓冲区处理。 仅当存在缓存连贯的 GPU 口径段，并且 CPU 访问 GPU 内存时，驱动程序才应报告此类型的支持。
+显示微型端口驱动程序还应将 [**DXGK \_ PRESENTATIONCAPS**](/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgk_presentationcaps) - &gt; **SupportKernelModeCommandBuffer** 设置为 **TRUE** ，以指示它支持 GDI 硬件加速命令缓冲区处理。 仅当存在缓存连贯的 GPU 口径段，并且 CPU 访问 GPU 内存时，驱动程序才应报告此类型的支持。
 
 以下参考主题介绍了如何使用此功能：
 

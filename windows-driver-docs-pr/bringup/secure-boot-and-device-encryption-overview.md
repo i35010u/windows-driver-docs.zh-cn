@@ -1,15 +1,14 @@
 ---
 title: 安全启动和设备加密概述
 description: 本主题概述了安全引导和设备加密功能，重点介绍了重要的 OEM 要求和注意事项。
-ms.assetid: 4e206bd2-7bb4-48c2-9e01-8da041e798ef
 ms.date: 05/02/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9ee1b3c59a3e0bd11a35c0628fcc09abf23d0376
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: c52a6a12ddc96aa69cc93167e810da4b1d0c3222
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89189407"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96784181"
 ---
 # <a name="secure-boot-and-device-encryption-overview"></a>安全启动和设备加密概述
 

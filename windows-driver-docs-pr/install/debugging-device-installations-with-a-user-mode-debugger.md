@@ -1,15 +1,14 @@
 ---
 title: 使用用户模式调试程序调试设备安装
 description: 使用用户模式调试程序调试设备安装
-ms.assetid: 34427afb-3303-44ec-a3a7-72f247c5506d
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 60b598798519d55b344f4f3da516dce81ac0ffc4
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 045818edd43f53c192ca3c6869d7f01663011876
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89095977"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96782927"
 ---
 # <a name="debugging-device-installations-with-a-user-mode-debugger"></a>使用用户模式调试程序调试设备安装
 
@@ -20,7 +19,7 @@ ms.locfileid: "89095977"
 
 有关用户模式调试器和其他调试工具的详细信息，请参阅 [Windows 调试](../debugger/index.md)。
 
-**DebugInstall**注册表值指定在系统上启用的设备安装调试支持的类型。 有关此注册表值的详细信息，请参阅 [启用对调试设备安装的支持](enabling-support-for-debugging-device-installations.md)。
+**DebugInstall** 注册表值指定在系统上启用的设备安装调试支持的类型。 有关此注册表值的详细信息，请参阅 [启用对调试设备安装的支持](enabling-support-for-debugging-device-installations.md)。
 
 如果将 **DebugInstall** 注册表值设置为2，则在继续安装之前， *DrvInst.exe* 将等待用户模式调试器附加到其进程。 附加调试器后，进程将中断调试器本身。 应附加和配置调试器，以便它不会在要调试的目标系统中启动自己的初始断点。
 

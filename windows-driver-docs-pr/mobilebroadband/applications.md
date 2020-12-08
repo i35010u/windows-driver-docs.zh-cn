@@ -1,15 +1,14 @@
 ---
 title: 应用程序
 description: 应用程序
-ms.assetid: 40d73650-556e-4221-a679-0b8e9ead4df5
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ac5570bb76b9d90ba1a0877d4d16f162f19f08d1
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: 937c1f56aaef0a99c7be2439099c4b725f5a5286
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89402896"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96782507"
 ---
 # <a name="applications"></a>应用程序
 
@@ -42,12 +41,12 @@ ms.locfileid: "89402896"
 <thead>
 <tr class="header">
 <th>元素</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><a href="application-softwareinfo-schema.md" data-raw-source="[Application](application-softwareinfo-schema.md)">应用程序</a></p></td>
+<td><p>应用程序</p></td>
 <td><p>指定在计算机上检测到操作员的移动宽带硬件时要下载的应用。</p></td>
 </tr>
 </tbody>
@@ -66,7 +65,7 @@ ms.locfileid: "89402896"
 <thead>
 <tr class="header">
 <th>元素</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>

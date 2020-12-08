@@ -1,15 +1,14 @@
 ---
 title: DeviceNotificationHandlers
 description: DeviceNotificationHandlers
-ms.assetid: 94661e6a-97ed-4dbf-ab09-b39545ee2e40
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4f28c5ac35e9a48587041136567f6b014dc8ee19
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: 0c9d881efa44426cf5bc9a3900dcb15d049aed49
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89403406"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96782367"
 ---
 # <a name="devicenotificationhandlers"></a>DeviceNotificationHandlers
 
@@ -42,7 +41,7 @@ DeviceNotificationHandlers 元素指定设备通知处理程序。
 <thead>
 <tr class="header">
 <th>元素</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -66,12 +65,12 @@ DeviceNotificationHandlers 元素指定设备通知处理程序。
 <thead>
 <tr class="header">
 <th>元素</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><a href="application-softwareinfo-schema.md" data-raw-source="[Application](application-softwareinfo-schema.md)">应用程序</a></p></td>
+<td><p>应用程序</p></td>
 <td><p>指定在计算机上检测到操作员的移动宽带硬件时要下载的应用。</p></td>
 </tr>
 </tbody>

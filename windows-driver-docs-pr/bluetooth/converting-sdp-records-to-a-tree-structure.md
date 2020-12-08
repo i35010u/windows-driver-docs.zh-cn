@@ -1,7 +1,6 @@
 ---
 title: 将 SDP 记录转换为树状结构
 description: 将 SDP 记录转换为树状结构
-ms.assetid: 762cf68b-0082-4b9e-8f24-ff19ecf6f8bd
 keywords:
 - 蓝牙 WDK、SDP 服务器通信
 - SDP WDK 蓝牙
@@ -14,12 +13,12 @@ keywords:
 - SdpConvertStreamToTree
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5d7176d7eaebebe95d360daf32a965d260ed5f83
-ms.sourcegitcommit: 68d0aec4c282c9c1e1ab54509c8f4575dd273d56
+ms.openlocfilehash: a49a114b56592f2106390d70e98dfb678e4ddf0c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91221939"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96784215"
 ---
 # <a name="converting-sdp-records-to-a-tree-structure"></a>将 SDP 记录转换为树状结构
 

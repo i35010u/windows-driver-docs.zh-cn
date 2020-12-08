@@ -1,15 +1,14 @@
 ---
 title: SR-IOV 虚拟功能 (VF)
 description: SR-IOV 虚拟功能 (VF)
-ms.assetid: 92EFC8C3-A610-46EB-A1BC-750715378077
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0f7d99080175b24b1e807cfc4a0c85d82d02a910
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 726f38a861a5a523a1f2d38343440cf6de7377a5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89216578"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96782131"
 ---
 # <a name="sr-iov-virtual-functions-vfs"></a>SR-IOV 虚拟功能 (VF)
 
@@ -20,7 +19,7 @@ VF 不是完备的 PCIe 设备。 但是，它提供了在 Hyper-v 子分区和�
 
 VF 作为虚拟网络适配器 (*vf 网络适配器*) 在 hyper-v 子分区中运行的来宾操作系统中。 VF 与 SR-IOV 网络适配器的 NIC 交换机上的虚拟端口 (VPort) 相关联后，在 VM 中运行的虚拟 PCI (VPCI) 驱动程序将公开 VF 网络适配器。 公开后，来宾操作系统中的 PnP 管理器会加载 VF 微型端口驱动程序。
 
-**注意**   Hyper-v 子分区也称为*虚拟机 (VM) *。
+**注意**  Hyper-v 子分区也称为 *虚拟机 (VM)*。
 
  
 
@@ -38,7 +37,7 @@ VF 微型端口驱动程序可以像任何 PCI 设备驱动程序一样工作。
 
 VF 微型端口驱动程序也可能与 PF 微型端口驱动程序通信。 此通信路径位于 backchannel 接口上。 有关详细信息，请参阅 [SR-IOV PF/VF Backchannel 通信](sr-iov-pf-vf-backchannel-communication.md)。
 
-**注意**   VF 微型端口驱动程序必须知道它正在虚拟化环境中运行，以便它可以与 PF 小型传输驱动程序通信以执行特定操作。 有关驱动程序如何执行此操作的详细信息，请参阅 [初始化 VF 微型端口驱动程序](initializing-a-vf-miniport-driver.md)。
+**注意**  VF 微型端口驱动程序必须知道它正在虚拟化环境中运行，以便它可以与 PF 小型传输驱动程序通信以执行特定操作。 有关驱动程序如何执行此操作的详细信息，请参阅 [初始化 VF 微型端口驱动程序](initializing-a-vf-miniport-driver.md)。
 
  
 

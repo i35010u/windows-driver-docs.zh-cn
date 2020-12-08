@@ -1,16 +1,15 @@
 ---
 title: OID_802_3_DELETE_MULTICAST_ADDRESS
 description: 作为设置请求，NDIS 和过量协议驱动程序使用 OID_802_3_DELETE_MULTICAST_ADDRESS OID 从微型端口适配器的多播地址列表中删除以前添加的多播地址。
-ms.assetid: 5efaa724-80b4-4721-a1b0-8ba67c03bb32
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_802_3_DELETE_MULTICAST_ADDRESS 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: a320b3d4147ac878336a12dd5a6394073f8a0b0b
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 255219886adf061ad4aec051ec083c94c2b760bc
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107326"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96783817"
 ---
 # <a name="oid_802_3_delete_multicast_address"></a>OID \_ 802 \_ 3 \_ 删除 \_ 多播 \_ 地址
 
@@ -20,15 +19,15 @@ ms.locfileid: "90107326"
 **版本信息**
 
 <a href="" id="windows-vista"></a>Windows Vista  
-。
+支持。
 
 <a href="" id="ndis-6-0-and-later-miniport-drivers"></a>NDIS 6.0 和更高版本的微型端口驱动程序  
 未请求。
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
-[**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的**InformationBuffer**成员包含要从多播地址列表中删除的6个字节的地址。
+[**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的 **InformationBuffer** 成员包含要从多播地址列表中删除的6个字节的地址。
 
 OID \_ 802 \_ 3 \_ 删除 \_ 多播 \_ 地址 OID 请求只能删除一个地址。 若要删除多个地址，协议驱动程序必须发出多个 OID \_ 802 \_ 3 \_ 删除 \_ 多播 \_ 地址 OID 请求。
 
@@ -52,7 +51,7 @@ NDIS 微型端口驱动程序不会直接接收此 OID 请求。 相反，NDIS �
 <thead>
 <tr class="header">
 <th>术语</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -93,7 +92,7 @@ NDIS 微型端口驱动程序不会直接接收此 OID 请求。 相反，NDIS �
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [OID \_ 802 \_ 3 \_ 添加 \_ 多播 \_ 地址](oid-802-3-add-multicast-address.md)

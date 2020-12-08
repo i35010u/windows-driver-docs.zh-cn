@@ -1,7 +1,6 @@
 ---
 title: 查询系统事件日志中的硬件错误事件
 description: 查询系统事件日志中的硬件错误事件
-ms.assetid: e2290a1b-6fde-4843-9c52-17279f93a887
 keywords:
 - 事件 WDK WHEA，查询系统事件日志
 - 查询系统事件日志 WDK WHEA
@@ -11,12 +10,12 @@ keywords:
 - 事件日志 WDK WHEA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1dd6a23e29452131b43355b87426b2e52538e650
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 7be26b754dd0fefcf5ae418d3ecdf59b286619da
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91733601"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96783671"
 ---
 # <a name="querying-the-system-event-log-for-hardware-error-events"></a>查询系统事件日志中的硬件错误事件
 
@@ -121,7 +120,7 @@ VOID QueryHwErrorEvents(VOID) {
 }
 ```
 
-**注意**   **Evt_Xxx_** \_ Microsoft Windows SDK 文档中的[Windows 事件日志](/windows/win32/wes/windows-event-log)部分介绍了前面的示例中使用的所有 Evt_Xxx_ 函数和 .evt*Xxx*数据类型。
+**注意** **Evt_Xxx_** \_ Microsoft Windows SDK 文档中的 [Windows 事件日志](/windows/win32/wes/windows-event-log)部分介绍了前面的示例中使用的所有 Evt_Xxx_ 函数和 .evt *Xxx* 数据类型。
 
  
 

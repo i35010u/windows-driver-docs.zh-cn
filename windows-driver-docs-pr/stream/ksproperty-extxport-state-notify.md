@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ EXTXPORT \_ 状态 \_ 通知
 description: KSPROPERTY \_ EXTXPORT \_ 状态 \_ 通知属性设置或获取传输模式和状态更改的通知。
-ms.assetid: 3ebf3806-bdec-4ea2-8f2a-e75314ee020a
 keywords:
 - KSPROPERTY_EXTXPORT_STATE_NOTIFY 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 18e261df1bc15269150f5c77508380a28ffba9b8
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 00247a5da2a7bef4ad529a8e1a2ca3700b6e4a16
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102906"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96782024"
 ---
 # <a name="ksproperty_extxport_state_notify"></a>KSPROPERTY \_ EXTXPORT \_ 状态 \_ 通知
 
@@ -86,7 +85,7 @@ KSPROPERTY \_ EXTXPORT \_ 状态 \_ 通知属性设置或获取传输模式和�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSPROPERTY**](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)

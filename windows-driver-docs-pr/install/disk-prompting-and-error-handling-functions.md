@@ -1,7 +1,6 @@
 ---
 title: 磁盘提示和错误处理函数
 description: 磁盘提示和错误处理函数
-ms.assetid: e1afeeb3-02f0-4570-9910-f948646f07bf
 keywords:
 - Setupapi.log 函数 WDK，磁盘提示
 - Setupapi.log 函数 WDK，错误处理
@@ -11,12 +10,12 @@ keywords:
 - 媒体提示 WDK Setupapi.log
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d9ba62da595b910ec5d7fa15b406f6658f99b566
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 2dbb1c32f29920e1f276e0224fad305385fd5c84
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90715924"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96782749"
 ---
 # <a name="disk-prompting-and-error-handling-functions"></a>磁盘提示和错误处理函数
 
@@ -36,7 +35,7 @@ ms.locfileid: "90715924"
 <thead>
 <tr class="header">
 <th align="left">函数</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>

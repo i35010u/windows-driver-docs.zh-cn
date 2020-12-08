@@ -1,15 +1,14 @@
 ---
 title: COSA 概述
 description: COSA 概述
-ms.assetid: 45D69B8D-69C1-488B-AC52-D8DEB337F878
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 93f4f1c9387d957d222e9d38cae7a54f5051fc0f
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: f3b9f5e6c56be552322c44ea0ef2a971f6876c86
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89207331"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96782463"
 ---
 # <a name="cosa-overview"></a>COSA 概述
 
@@ -27,7 +26,7 @@ ms.locfileid: "89207331"
 - [是否有可使最大 APN 匹配的算法？](#APNmatch)
 - [COSA 数据库存储在何处，可以在视觉上进行检查（如 apndatabase.xml）？](#location)
 - [如果设备从 Windows 10、版本 1607 (或更早版本) 更新到 Windows 10，版本1703，会发生什么情况？自定义或手动创建的 APNs 是否已迁移？它们是否仍具有数据库中默认值的优先级？](#update)
-- [为什么 **设置为按流量计费的连接** 设置有时会从 **Off** 改为 **打开**状态？](#metered)
+- [为什么 **设置为按流量计费的连接** 设置有时会从 **Off** 改为 **打开** 状态？](#metered)
 
 ### <a name="what-are-the-settings-that-mos-can-specify-in-cosa"></a><a href="" id="settings"></a> MOs 可以在 COSA 中指定哪些设置？
 

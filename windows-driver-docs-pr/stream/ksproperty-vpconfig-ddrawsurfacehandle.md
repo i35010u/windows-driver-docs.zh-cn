@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ VPCONFIG \_ DDRAWSURFACEHANDLE
 description: KSPROPERTY \_ VPCONFIG \_ DDRAWSURFACEHANDLE 属性返回 Microsoft DirectDraw surface handle 属性信息。
-ms.assetid: 8fb85c4f-bd1f-4fb9-a8e5-541d6c5fcdac
 keywords:
 - KSPROPERTY_VPCONFIG_DDRAWSURFACEHANDLE 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b002ba50e591cb51c9c05d836fe81d660813634e
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 9fa7d86962450a3cadc143dade78a3e6b50d6b08
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102164"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96782016"
 ---
 # <a name="ksproperty_vpconfig_ddrawsurfacehandle"></a>KSPROPERTY \_ VPCONFIG \_ DDRAWSURFACEHANDLE
 
@@ -79,7 +78,7 @@ KSPROPERTY \_ VPCONFIG \_ DDRAWSURFACEHANDLE 属性返回 Microsoft DirectDraw s
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSPROPERTY**](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)

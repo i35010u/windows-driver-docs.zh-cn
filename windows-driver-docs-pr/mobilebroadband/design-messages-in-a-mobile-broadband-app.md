@@ -1,15 +1,14 @@
 ---
 title: 设计移动宽带应用中的消息
 description: 设计移动宽带应用中的消息
-ms.assetid: 314fd479-7dcf-4559-a195-26e4c020446c
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0ac9a96684415f23ae03364b6b4de5234c36a5e0
-ms.sourcegitcommit: b3e38d06762246c77cedd8e82d740ebea104c538
+ms.openlocfilehash: e7ff5ab0d1a96971314122d9478b47bc5fffe884
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91662423"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96782420"
 ---
 # <a name="design-messages-in-a-mobile-broadband-app"></a>设计移动宽带应用中的消息
 

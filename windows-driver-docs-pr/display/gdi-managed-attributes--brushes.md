@@ -1,26 +1,25 @@
 ---
-title: GDI 托管属性画笔
-description: GDI 托管属性画笔
-ms.assetid: 8ca38ba1-824d-45be-9039-13222d3400c3
+title: GDI-Managed 属性画笔
+description: GDI-Managed 属性画笔
 keywords:
 - GDI WDK Windows 2000 显示，呈现引擎
 - 图形驱动程序 WDK Windows 2000 显示，呈现引擎
 - 绘制 WDK GDI，呈现引擎
-- 呈现引擎 WDK GDI
-- GDI WDK Windows 2000 显示模式
-- 图形驱动程序 WDK Windows 2000 显示模式
-- WDK GDI 模式
+- 渲染引擎 WDK GDI
+- GDI WDK Windows 2000 显示，模式
+- 图形驱动程序 WDK Windows 2000 显示，模式
+- 模式 WDK GDI
 - 画笔 WDK GDI
-- 意识到 WDK GDI 画笔
+- 实现画笔 WDK GDI
 - 绘制 WDK GDI，画笔
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 57544d900f40aaf1a09b69a958edcd86ae9b04e2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d16a7e38feb0734ca00526ff4e344e8898492058
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63363795"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96783263"
 ---
 # <a name="gdi-managed-attributes-brushes"></a>GDI 管理的属性：画笔
 
@@ -28,9 +27,9 @@ ms.locfileid: "63363795"
 ## <span id="ddk_gdi_managed_attributes_brushes_gg"></span><span id="DDK_GDI_MANAGED_ATTRIBUTES_BRUSHES_GG"></span>
 
 
-GDI 还可管理的所有属性。 GDI 将属性传递给驱动程序用作画笔;该驱动程序*意识到*这些画笔通过将它们转换为有用的内部格式。 GDI 维护驱动程序的此转换的信息。 GDI 还维护的所有状态的画笔，包括边界、 关联、 当前的位置和线条样式。 驱动程序可以缓存的信息，但未假定维护任何状态。 初始化和画笔实现，除了 GDI 调用驱动程序仅在设备上进行绘制。 GDI 负责的转换，区域锁定，并*指针排除*调用驱动程序之前。
+GDI 还管理所有属性。 GDI 将属性作为画笔传递给驱动程序; *驱动程序* 通过将这些画笔转换为有用的内部形式来将其识别出来。 GDI 将为驱动程序保留这一转换后的信息。 GDI 还会保留画笔的所有状态，包括边界、相关、当前位置和线条样式。 驱动程序可以缓存信息，但不会将其视为维护任何状态。 除初始化和画笔实现外，GDI 仅调用驱动程序以在设备上进行绘制。 GDI 在调用驱动程序之前，会对转换、区域锁定和 *指针排除* 进行处理。
 
-每当一个驱动程序需要使用画笔尚未意识到，它可以回拨到 GDI。 GDI 画笔分配内存，并调用要意识到这一点，如有必要，抖动它的驱动程序。
+每当驱动程序需要使用尚未实现的画笔时，它都会回调到 GDI。 GDI 为画笔分配内存，并调用驱动程序来实现它，如有必要，请仿色。
 
  
 

@@ -1,17 +1,16 @@
 ---
 title: AML 调试示例
 description: AML 调试示例
-ms.assetid: 3a9f760f-f511-412f-aca0-3c415b3e5dc2
 keywords:
 - AMLI 调试器，调试示例
 ms.date: 11/07/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: e090547a65b599eb1f778d7a012f17a0b8ffd853
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 65dbfbbc0576849b554b429381847d81c60c0876
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63355006"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96783571"
 ---
 # <a name="aml-debugging-examples"></a>AML 调试示例
 
@@ -19,24 +18,24 @@ ms.locfileid: "63355006"
 ## <span id="ddk_aml_debugging_examples_dbg"></span><span id="DDK_AML_DEBUGGING_EXAMPLES_DBG"></span>
 
 
-下面是示例，展示了如何开始使用 AML 调试。
+下面是演示如何开始 AML 调试的示例。
 
-### <a name="span-idinvestigatingafrozencomputerspanspan-idinvestigatingafrozencomputerspaninvestigating-a-frozen-computer"></a><span id="investigating_a_frozen_computer"></span><span id="INVESTIGATING_A_FROZEN_COMPUTER"></span>调查已冻结的计算机
+### <a name="span-idinvestigating_a_frozen_computerspanspan-idinvestigating_a_frozen_computerspaninvestigating-a-frozen-computer"></a><span id="investigating_a_frozen_computer"></span><span id="INVESTIGATING_A_FROZEN_COMPUTER"></span>调查冻结计算机
 
-如果目标计算机已冻结，并且怀疑它可能是 ACPI 问题，应首先使用[ **！ amli lc** ](-amli-lc.md)扩展以显示所有活动的上下文：
+如果目标计算机已冻结，但您怀疑这可能是一个 ACPI 问题，请首先使用 [**！ amli lc**](-amli-lc.md) 扩展显示所有活动上下文：
 
 ```dbgcmd
 kd> !amli lc
 *Ctxt=ffffffff8128d000, ThID=ffffffff81277880, Flgs=----R----, pbOp=ffffffff8124206c, Obj=\_SB.PCI0.ISA0.FDC0._CRS
 ```
 
-如果未不显示任何上下文，错误可能不是 ACPI 相关。
+如果未显示上下文，则该错误可能不是 ACPI 相关的。
 
-如果上下文所示，寻找标有星号的一个。 这是*当前上下文*（正在执行的解释器目前存在一个）。
+如果显示了上下文，请查找用星号标记的上下文。 这是 *当前上下文* (在当前时刻由解释器执行的上下文) 。
 
-在此示例中，目标计算机运行 Windows 32 位处理器上。 因此所有地址都强制都转换为 64 位，生成的高 32 位中剔除 FFFFFFFF。 缩写**pbOp**指示指令指针 （"指向二元运算符代码"）。 **Obj**字段提供的完整路径和方法的名称显示在 ACPI 表中。 有关的标志的说明，请参阅[ **！ amli lc**](-amli-lc.md)。
+在此示例中，目标计算机在32位处理器上运行 Windows。 因此，所有地址都强制转换为64位，从而产生了高32位的免费 FFFFFFFF。 缩写 **pbOp** 指示指令指针 ( "指向二进制操作代码的指针" ) 。 **Obj** 字段提供了方法在 ACPI 表中的完整路径和名称。 有关标志的说明，请参阅 [**！ amli lc**](-amli-lc.md)。
 
-可以使用[ **！ amli u** ](-amli-u.md)命令反汇编\_CRS 方法，如下所示：
+可以使用 [**！ amli u**](-amli-u.md) 命令来拆装 \_ CRS 方法，如下所示：
 
 ```dbgcmd
 kd> !amli u \_SB.PCI0.ISA0.FDC0._CRS
@@ -48,11 +47,11 @@ ffffffff80e4a559 : Subtract(0xffe00000, RAMT, PCIT)
 ffffffff80e4a567 : Return(CRES)
 ```
 
-### <a name="span-idbreakingintotheamlidebuggerspanspan-idbreakingintotheamlidebuggerspanbreaking-into-the-amli-debugger"></a><span id="breaking_into_the_amli_debugger"></span><span id="BREAKING_INTO_THE_AMLI_DEBUGGER"></span>中断到 AMLI 调试器
+### <a name="span-idbreaking_into_the_amli_debuggerspanspan-idbreaking_into_the_amli_debuggerspanbreaking-into-the-amli-debugger"></a><span id="breaking_into_the_amli_debugger"></span><span id="BREAKING_INTO_THE_AMLI_DEBUGGER"></span>中断 AMLI 调试器
 
-[ **！ Amli 调试器**](-amli-debugger.md)命令将导致 AML 解释器在中断 AMLI 调试器在下次执行任何 AML 代码。
+[**！ Amli 调试器**](-amli-debugger.md)命令使 aml 解释器在下一次执行任何 AML 代码时中断到 amli 调试器。
 
-AMLI 调试器后会出现提示，您可以使用任何 AMLI 调试器命令。 此外可以使用 **！ amli**扩展命令不使用前缀"！ amli":
+显示 AMLI 调试器提示后，可以使用任何 AMLI 调试器命令。 你还可以使用 **！ amli** extension 命令，而无需使用 "！ amli" 作为前缀：
 
 ```dbgcmd
 kd> !amli debugger
@@ -84,11 +83,11 @@ ffffffff80e4a559 : Subtract(0xffe00000, RAMT, PCIT)
 ffffffff80e4a567 : Return(CRES)
 ```
 
-### <a name="span-idusingbreakpointsspanspan-idusingbreakpointsspanusing-breakpoints"></a><span id="using_breakpoints"></span><span id="USING_BREAKPOINTS"></span>使用断点
+### <a name="span-idusing_breakpointsspanspan-idusing_breakpointsspanusing-breakpoints"></a><span id="using_breakpoints"></span><span id="USING_BREAKPOINTS"></span>使用断点
 
-在以下示例中，将进入该方法之前 AMLI 调试器\_BST 执行。
+在下面的示例中，将在执行方法 BST 之前中断 AMLI 调试器 \_ 。
 
-即使您位于\_BST 对象时，应验证它确实是一个方法。 可以使用[ **！ amli dns** ](-amli-dns.md)扩展来执行此操作。
+即使您找到了 \_ BST 对象，也应该验证它确实是一种方法。 可以使用 [**！ amli dns**](-amli-dns.md) 扩展来执行此操作。
 
 ```dbgcmd
 kd> !amli dns /s \_sb.pci0.isa.bat1._bst
@@ -97,13 +96,13 @@ ACPI Name Space: \_SB.PCI0.ISA.BAT1._BST (c29c2044)
 Method(_BST:Flags=0x0,CodeBuff=c29c20a5,Len=103)
 ```
 
-现在，可以使用[ **！ amli bp** ](-amli-bp.md)放置断点的命令：
+现在，可以使用 [**！ amli bp**](-amli-bp.md) 命令放置断点：
 
 ```dbgcmd
 kd> !amli bp \_sb.pci0.isa.bat1._bst
 ```
 
-您可能想要放置在方法中的断点。 可以使用[ **！ amli u** ](-amli-u.md)命令反汇编\_BST，然后将断点放在其步骤之一：
+你可能还需要在方法中放置断点。 可以使用 [**！ amli u**](-amli-u.md) 命令来反汇编 \_ BST，然后在其中一个步骤中放置断点：
 
 ```dbgcmd
 kd> !amli u _sb.pci0.isa.bat1._bst
@@ -117,23 +116,23 @@ ffffffffc29c2107: Return(PBST)
 kd> !amli bp c29c20ee
 ```
 
-### <a name="span-idrespondingtoatriggeredbreakpointspanspan-idrespondingtoatriggeredbreakpointspanresponding-to-a-triggered-breakpoint"></a><span id="responding_to_a_triggered_breakpoint"></span><span id="RESPONDING_TO_A_TRIGGERED_BREAKPOINT"></span>响应触发断点
+### <a name="span-idresponding_to_a_triggered_breakpointspanspan-idresponding_to_a_triggered_breakpointspanresponding-to-a-triggered-breakpoint"></a><span id="responding_to_a_triggered_breakpoint"></span><span id="RESPONDING_TO_A_TRIGGERED_BREAKPOINT"></span>响应触发的断点
 
-在下面的示例中，该方法\_WAK 正在运行，并且然后遇到断点：
+在下面的示例中，方法 \_ WAK 正在运行，然后遇到断点：
 
 ```dbgcmd
 Running \_WAK method
 Hit Breakpoint 0.
 ```
 
-使用[ **！ amli ln** ](-amli-ln.md)扩展以查看当前的程序计数器最近的方法。 下面的示例在 32 位窗体中显示地址：
+使用 [**！ amli ln**](-amli-ln.md) 扩展查看当前程序计数器的最近方法。 下面的示例显示了32位格式的地址：
 
 ```dbgcmd
 kd> !amli ln
 c29accf5: \_WAK
 ```
 
-[ **！ Amli lc** ](-amli-lc.md)扩展插件都会显示所有活动的上下文：
+[**！ Amli lc**](-amli-lc.md)扩展显示所有活动上下文：
 
 ```dbgcmd
 kd> !amli lc
@@ -141,9 +140,9 @@ kd> !amli lc
 *Ctxt=c18b4000, ThID=c15a6618, Flgs=----R-----, pbOp=c29accf5, Obj=\_WAK
 ```
 
-这将显示活动的上下文相关联的方法\_Q09 和\_WAK。 当前上下文是\_WAK。
+这表明活动上下文与 Q09-ft-sye 和 WAK 方法相关联 \_ \_ 。 当前上下文为 \_ WAK。
 
-现在，可以使用[ **！ amli r** ](-amli-r.md)命令以显示有关当前上下文的更多详细信息。 可以从此看到线程和堆栈的有用信息，以及自变量传递给\_WAK 和本地数据对象。
+现在，可以使用 [**！ amli r**](-amli-r.md) 命令显示有关当前上下文的更多详细信息。 从此，可以看到有用的线程和堆栈信息，以及传递到 \_ WAK 和本地数据对象的参数。
 
 ```dbgcmd
 kd> !amli r
@@ -167,15 +166,15 @@ c18b5fe4: Local7=Unknown()
 c18b4040: RetObj=Unknown()
 ```
 
-### <a name="span-idtracingsteppingandrunningamlcodespanspan-idtracingsteppingandrunningamlcodespantracing-stepping-and-running-aml-code"></a><span id="tracing__stepping__and_running_aml_code"></span><span id="TRACING__STEPPING__AND_RUNNING_AML_CODE"></span>跟踪、 单步执行，以及运行 AML 代码
+### <a name="span-idtracing__stepping__and_running_aml_codespanspan-idtracing__stepping__and_running_aml_codespantracing-stepping-and-running-aml-code"></a><span id="tracing__stepping__and_running_aml_code"></span><span id="TRACING__STEPPING__AND_RUNNING_AML_CODE"></span>跟踪、单步执行和运行 AML 代码
 
-如果你要跟踪通过代码，您可以使用来启用完整的跟踪信息[ **！ amli 集**](-amli-set.md)扩展，如下所示：
+如果要跟踪代码，可以使用 [**！ amli set**](-amli-set.md) extension 来打开完整的跟踪信息，如下所示：
 
 ```dbgcmd
 kd> !amli set spewon verboseon traceon
 ```
 
-现在逐句通过 AML 代码，并监视执行的行的行的代码。 **P**通过任何函数调用命令的步骤。 **T**命令将单步执行函数调用。
+现在，您可以单步执行 AML 代码，并逐行执行代码。 **P** 命令执行任何函数调用的步骤。 **T** 命令将单步执行函数调用。
 
 ```dbgcmd
 AMLI(? for help)-> p
@@ -199,7 +198,7 @@ c29c293d: {
 c29c293d: | Store("CMBatt - CHBP.BAT1",Debug)String(:Str="CMBatt - CHBP.BAT1")="CMBatt - CHBP.BAT1"
 ```
 
-如果愿意，还可能会运行从 AMLI 调试器中的方法。 例如，可能通过运行其控件方法评估 LNKA 设备的状态\_STA:
+你还可以在 AMLI 调试器中运行方法（如果你选择）。 例如，你可以通过运行其控制方法 STA 来评估 LNKA 设备的状态 \_ ：
 
 ```dbgcmd
 AMLI(? for help)-> run \_sb.lnka._sta
@@ -209,9 +208,9 @@ PCI OpRegion Access on region c29b2268 device c29b2120
 Integer(:Value=0x0000000b[11])
 ```
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
- [AMLI 调试器](the-amli-debugger.md)
+ [AMLI 调试器](the-amli-debugger.md)
 
  
 

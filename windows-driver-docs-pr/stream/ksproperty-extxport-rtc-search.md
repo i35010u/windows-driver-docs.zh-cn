@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ EXTXPORT \_ RTC \_ 搜索
 description: "\"KSPROPERTY \\_ EXTXPORT \\_ rtc \\_ 搜索\" 属性搜索磁带上 (RTC) 的相对时间计数器。"
-ms.assetid: 4a5b76fc-46f3-44f7-8548-34125df777f5
 keywords:
 - KSPROPERTY_EXTXPORT_RTC_SEARCH 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b4273b8f1d00cc9be2c1800abf04f55240ec86c3
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: e220558798daab842fe1418f5b19c6da3e19d9b4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104966"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96782034"
 ---
 # <a name="ksproperty_extxport_rtc_search"></a>KSPROPERTY \_ EXTXPORT \_ RTC \_ 搜索
 
@@ -86,7 +85,7 @@ KSPROPERTY **dwTimecode** \_ EXTXPORT S 结构的 dwTimecode 成员 \_ 指定要
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSPROPERTY**](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)

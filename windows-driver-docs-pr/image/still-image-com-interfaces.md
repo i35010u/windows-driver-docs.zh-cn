@@ -1,31 +1,30 @@
 ---
-title: 静止图像的 COM 接口
-description: 静止图像的 COM 接口
-ms.assetid: 2fd0e340-fbb2-4871-aee8-60008880423f
+title: 静态图像 COM 接口
+description: 静态图像 COM 接口
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0a5147a3460700a981b5b6ee2ba967519b43ea6a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: ca1b56802b6bd1bfb51633657aabbf18867aeaab
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545562"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96783217"
 ---
-# <a name="still-image-com-interfaces"></a>静止图像的 COM 接口
+# <a name="still-image-com-interfaces"></a>静态图像 COM 接口
 
 
 
 
 
-Microsoft STI 定义以下四个 COM 接口：
+Microsoft STI 定义了以下四个 COM 接口：
 
-[IStillImage COM 接口](istillimage-com-interface.md)− 静止图像事件监视器可用于访问。
+[ISTILLIMAGE COM Interface](istillimage-com-interface.md) −提供对静止图像事件监视器的访问。
 
-[IStiDevice COM 接口](istidevice-com-interface.md)静止图像的数据流和设备事件 − 提供的访问权限。
+[ISTIDEVICE COM Interface](istidevice-com-interface.md) −提供对静止图像数据流和设备事件的访问。
 
-[IStiUSD COM 接口](istiusd-com-interface.md)− 用户模式可用于访问静止图像微型驱动程序。
+[ISTIUSD COM Interface](istiusd-com-interface.md) −提供对用户模式静止图像微型驱动程序的访问。
 
-[IStiDeviceControl COM 接口](istidevicecontrol-com-interface.md)− 微型驱动程序提供实用工具操作。
+[ISTIDEVICECONTROL COM Interface](istidevicecontrol-com-interface.md) −向微型驱动程序提供实用工具操作。
 
  
 

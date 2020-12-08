@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ BDA \_ LNB \_ LOF \_ LOW \_
 description: 客户端使用 KSPROPERTY \_ BDA \_ LNB \_ LOF \_ LOW \_ 来通知 RF 调谐器节点 (LOF) ，这是低噪音块 (LNB) 设备，以便改变传入的带外 RF 信号的频率。
-ms.assetid: 96880a70-5c3f-4391-a613-a6a90d1605b4
 keywords:
 - KSPROPERTY_BDA_LNB_LOF_LOW_BAND 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d046b2b5b7e3fcc8cbef00b0441d6e029987030f
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 10bc782848105ae4c832f485985785c210a3a98a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89193035"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96783745"
 ---
 # <a name="ksproperty_bda_lnb_lof_low_band"></a>KSPROPERTY \_ BDA \_ LNB \_ LOF \_ LOW \_
 
@@ -86,7 +85,7 @@ LNB 收集由卫星 dish 反射的射频信号，将 RF 信号的频率向下移
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSP \_ 节点**](/windows-hardware/drivers/ddi/ks/ns-ks-ksp_node)

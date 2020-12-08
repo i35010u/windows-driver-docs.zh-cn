@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ VPCONFIG \_ NUMCONNECTINFO
 description: KSPROPERTY \_ VPCONFIG \_ NUMCONNECTINFO 属性获取电源连接配置的最大数目。
-ms.assetid: 8ffab85d-cf0d-44d7-ba37-692c3adfa1e5
 keywords:
 - KSPROPERTY_VPCONFIG_NUMCONNECTINFO 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a26c81e3e3568af58d8b2441b797bbb69c2234d3
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 6ce5cb01079cf3639e7f2bb930794d13b7c7bec1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105924"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96782004"
 ---
 # <a name="ksproperty_vpconfig_numconnectinfo"></a>KSPROPERTY \_ VPCONFIG \_ NUMCONNECTINFO
 

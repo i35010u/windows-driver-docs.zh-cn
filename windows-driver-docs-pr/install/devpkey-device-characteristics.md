@@ -1,7 +1,6 @@
 ---
 title: DEVPKEY_Device_Characteristics
 description: DEVPKEY_Device_Characteristics
-ms.assetid: 148557aa-2246-4cd9-9008-d920ffb64845
 keywords:
 - DEVPKEY_Device_Characteristics 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: e31955d5d07af4490adb48db92dc769d1a65f9f3
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 8ef4bd7a212ac5920f381deea0fcd96b175e0d83
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90715590"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96782813"
 ---
 # <a name="devpkey_device_characteristics"></a>DEVPKEY_Device_Characteristics
 
@@ -66,9 +65,9 @@ DEVPKEY_Device_Characteristics 设备属性表示设备实例的特征。
 <a name="remarks"></a>备注
 -------
 
-DEVPKEY_Device_Characteristics 的值是在 Ntddk 和中定义的 FILE_*Xxx* 文件特征标志的按位 "或"。 有关设备特征标志的详细信息，请参阅[**IoCreateDevice**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocreatedevice)的*DeviceCharacteristics*参数和[指定设备特征](../kernel/specifying-device-characteristics.md)。
+DEVPKEY_Device_Characteristics 的值是在 Ntddk 和中定义的 FILE_ *Xxx* 文件特征标志的按位 "或"。 有关设备特征标志的详细信息，请参阅 [**IoCreateDevice**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocreatedevice)的 *DeviceCharacteristics* 参数和 [指定设备特征](../kernel/specifying-device-characteristics.md)。
 
-你可以使用在安装设备的[**Inf DDInstall 部分**](./inf-ddinstall-hw-section.md)中包含的[**inf AddReg 指令**](./inf-addreg-directive.md)来设置 DEVPKEY_Device_Characteristics 的值。
+你可以使用在安装设备的 [**Inf DDInstall 部分**](./inf-ddinstall-hw-section.md)中包含的 [**inf AddReg 指令**](./inf-addreg-directive.md)来设置 DEVPKEY_Device_Characteristics 的值。
 
 可以通过调用 [**SetupDiGetDeviceProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)来检索 DEVPKEY_Device_Characteristics 的值。
 

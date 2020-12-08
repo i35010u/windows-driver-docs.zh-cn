@@ -1,7 +1,6 @@
 ---
 title: Bug 检查 0xBFE BC_BLUETOOTH_VERIFIER_FAULT
 description: BC_BLUETOOTH_VERIFIER_FAULT bug 检查的值为0x00000BFE。 这表明驱动程序导致了冲突。
-ms.assetid: EC1368CE-46A2-4B69-8405-3118503D35C2
 keywords:
 - Bug 检查 0xBFE BC_BLUETOOTH_VERIFIER_FAULT
 - BC_BLUETOOTH_VERIFIER_FAULT
@@ -13,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 4c4f1cae3054da3da996647354e4d82a9ef7f474
-ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
+ms.openlocfilehash: 070973d3f9dfa5d0346cfada1d515401321348ab
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84534794"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96783541"
 ---
 # <a name="bug-check-0xbfe-bc_bluetooth_verifier_fault"></a>Bug 检查0xBFE： BC \_ 蓝牙 \_ 验证程序 \_ 错误
 
@@ -26,7 +25,7 @@ ms.locfileid: "84534794"
 BC \_ 蓝牙 \_ 验证程序 \_ 错误检查的值为0x00000BFE。 这表明驱动程序导致了冲突。
 
 > [!IMPORTANT]
-> 本主题适用于程序员。 如果你是在使用计算机时收到蓝屏错误代码的客户，请参阅[排查蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题面向程序员。 如果您是在使用计算机时收到蓝屏错误代码的客户，请参阅[蓝屏错误疑难解答](https://www.windows.com/stopcode)。
 
 
 ## <a name="bc_bluetooth_verifier_fault-parameters"></a>BC \_ 蓝牙 \_ 验证程序 \_ 错误参数
@@ -40,7 +39,7 @@ BC \_ 蓝牙 \_ 验证程序 \_ 错误检查的值为0x00000BFE。 这表明驱�
 <thead>
 <tr class="header">
 <th align="left">参数</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>

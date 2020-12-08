@@ -1,15 +1,14 @@
 ---
 title: 创建 MobileBroadbandAccount 对象
 description: 创建 MobileBroadbandAccount 对象
-ms.assetid: 631e885f-67bb-4c30-a82f-352c23cc973a
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6c4caed0a4ad55149b809badcdb047dd5ece3fcf
-ms.sourcegitcommit: 3464f10ffa0727e38fbe225cfab52bb8c2bb1747
+ms.openlocfilehash: 0dd2ce72a241ad5aaa794337084ff761f8118d1d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93352976"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96782455"
 ---
 # <a name="create-a-mobilebroadbandaccount-object"></a>创建 MobileBroadbandAccount 对象
 

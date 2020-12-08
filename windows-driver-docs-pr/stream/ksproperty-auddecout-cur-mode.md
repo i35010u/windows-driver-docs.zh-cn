@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ AUDDECOUT \_ 当前 \_ 模式
 description: KSPROPERTY \_ AUDDECOUT \_ \_ current mode 属性指示当前音频输出模式。
-ms.assetid: 4ac6d181-f532-4ac6-b8fd-2975214a3618
 keywords:
 - KSPROPERTY_AUDDECOUT_CUR_MODE 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b823e525d9902e5c95ac46ad4f2fd55f49e590cb
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: b1cccdd7366c7432c99e1df7881d243305a3dd0d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105062"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96783747"
 ---
 # <a name="ksproperty_auddecout_cur_mode"></a>KSPROPERTY \_ AUDDECOUT \_ 当前 \_ 模式
 
@@ -63,10 +62,10 @@ KSPROPERTY \_ AUDDECOUT \_ \_ current mode 属性指示当前音频输出模式�
 
 ) 操作数据 (的属性值是表示音频解码器当前输出模式的 DWORD 值。
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
-属性值可以是头文件 *ksmedia*中定义的以下模式常量之一：
+属性值可以是头文件 *ksmedia* 中定义的以下模式常量之一：
 
 <span id="KSAUDDECOUTMODE_STEREO_ANALOG"></span><span id="ksauddecoutmode_stereo_analog"></span>**KSAUDDECOUTMODE \_ 立体声 \_ 模拟**  
 指示输出为模拟立体声。

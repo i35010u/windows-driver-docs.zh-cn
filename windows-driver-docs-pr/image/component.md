@@ -1,9 +1,8 @@
 ---
-title: 组件元素
-description: 所需的组件元素标识当前 DeviceCondition 或 ConditionHistoryEntry 元素描述的组件。
-ms.assetid: 1204d8c6-40a2-4b0b-bf86-a739ae96f54a
+title: Component 元素
+description: 必需的组件元素标识当前 DeviceCondition 或 ConditionHistoryEntry 元素描述的组件。
 keywords:
-- 组件元素成像设备
+- 组件元素图像处理设备
 topic_type:
 - apiref
 api_name:
@@ -12,19 +11,19 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 08304753deae656990fe1fb629758695a4152a42
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4ca2893c6b74ca1f3ef06dce290420ffe2fc1d54
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63373213"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96783921"
 ---
-# <a name="component-element"></a>组件元素
+# <a name="component-element"></a>Component 元素
 
 
-所需**组件**元素标识的组件的当前[ **DeviceCondition** ](devicecondition.md)或者[ **ConditionHistoryEntry** ](conditionhistoryentry.md)元素描述。
+必需的 **组件** 元素标识当前 [**DeviceCondition**](devicecondition.md) 或 [**ConditionHistoryEntry**](conditionhistoryentry.md) 元素描述的组件。
 
-<a name="usage"></a>用法
+<a name="usage"></a>使用情况
 -----
 
 ```xml
@@ -44,14 +43,14 @@ ms.locfileid: "63373213"
 必需。 以下值之一：
 
 -   ADF
--   Film
+-   胶片
 -   MediaPath
 -   Platen
 
 ## <a name="child-elements"></a>子元素
 
 
-没有子元素。
+没有任何子元素。
 
 ## <a name="parent-elements"></a>父元素
 
@@ -78,7 +77,7 @@ ms.locfileid: "63373213"
 <a name="remarks"></a>备注
 -------
 
-您都可以扩展和子集的允许的值为此元素。
+可以扩展和子集化此元素的允许值。
 
 ## <a name="see-also"></a>请参阅
 

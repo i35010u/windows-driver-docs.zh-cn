@@ -1,20 +1,19 @@
 ---
 title: WMI 类名和基类
 description: WMI 类名和基类
-ms.assetid: 6c3f74a3-e596-4694-8619-db38d67e030c
 keywords:
 - 基类 WDK WMI
-- 名称 WDK WMI
-- WDK WMI 类
-- WMI WDK 内核类
+- 命名 WDK WMI
+- 类 WDK WMI
+- WMI WDK 内核，类
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6ff351f5606a65786c69fb4b635229e30dd5c581
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: bef12b7a39515ab2ef616510578aa5e4ec44ef84
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380927"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96782681"
 ---
 # <a name="wmi-class-names-and-base-classes"></a>WMI 类名和基类
 
@@ -22,13 +21,13 @@ ms.locfileid: "63380927"
 
 
 
-WMI 类名不区分大小写，必须以字母开头并且不能开始或结尾下划线。 所有剩余的字符必须是字母、 数字或下划线。
+WMI 类名称不区分大小写，必须以字母开头，并且不能以下划线开头或结尾。 剩余的所有字符都必须是字母、数字或下划线。
 
-WMI 客户端应用程序可以访问驱动程序的 WMI 类名，并向用户显示它们。 描述性类名称可帮助使类使用更加直观。
+WMI 客户端应用程序可以访问驱动程序的 WMI 类名称并将其显示给用户。 描述性类名称有助于使类更直观地使用。
 
-WMI 类名称必须是唯一的 WMI 命名空间中。 因此驱动程序的 WMI 类名不能重复那些由另一个驱动程序定义。
+WMI 类名在 WMI 命名空间中必须是唯一的。 因此，驱动程序的 WMI 类名称不能重复由其他驱动程序定义的名称。
 
-若要防止名称冲突，驱动程序编写器可以定义特定于驱动程序的基类，并从该基类派生的所有驱动程序的 WMI 类。 类名和基类名称一起构成了更有可能产生的唯一名称。 例如，下面显示了串行驱动程序的数据块的抽象基类：
+为了帮助防止名称冲突，驱动程序编写器可以定义驱动程序特定的基类，并从该基类派生驱动程序的所有 WMI 类。 类名称和基类名称一起使用更有可能生成唯一名称。 例如，下面显示了串行驱动程序数据块的抽象基类：
 
 ```cpp
 // Serial driver's base class for data blocks
@@ -46,7 +45,7 @@ class MSSerial_StandardSerialInformation : MSSerial
 }
 ```
 
-特定于设备的自定义数据块应包括制造商、 型号和类型的驱动程序或设备中的基类名称。 例如：
+特定于设备的自定义数据块应在基类名称中包含制造商、型号和驱动程序或设备的类型。 例如：
 
 ```cpp
 [abstract]
@@ -62,7 +61,7 @@ class Adaptec1542_Speed : Adaptec1542 {
 }
 ```
 
-WMI 允许给定的类层次结构中只有一个抽象基类。 定义事件块的类必须派生自**WmiEvent**，这是一个抽象基类，因此**抽象**限定符不能在中使用的驱动程序定义的基类的事件块。 相反，派生从非抽象基类**WmiEvent**，然后从该基类派生单个事件的类。 例如：
+WMI 只允许在给定的类层次结构中使用一个抽象基类。 定义事件块的类必须从 **register-wmievent** 派生而来，这是一个抽象基类，因此不能在事件块的驱动程序定义基类中使用 **抽象** 限定符。 相反，从 **register-wmievent** 派生一个非抽象基类，然后从该基类派生单个事件类。 例如：
 
 ```cpp
 //Serial driver's base class for event blocks
@@ -80,7 +79,7 @@ class MSSerial_SendEvent : MSSerialEvent
 }
 ```
 
-有关 MOF 格式定义基类，这些类的详细信息，请参阅 Microsoft Windows SDK。
+有关以 MOF 格式定义基类的详细信息，请参阅 Microsoft Windows SDK。
 
  
 

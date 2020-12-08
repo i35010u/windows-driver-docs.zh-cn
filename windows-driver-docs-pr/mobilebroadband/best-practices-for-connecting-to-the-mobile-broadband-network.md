@@ -1,15 +1,14 @@
 ---
 title: 连接到移动宽带网络的最佳做法
 description: 连接到移动宽带网络的最佳做法
-ms.assetid: 6106d026-1c5f-4990-8ef2-467c1a77a38e
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: edb0ad2eb8ab0139197dc3deb84ffdcc3d7ddf61
-ms.sourcegitcommit: 7e4d9508198a30bdc1cb6eda83852dda4e42213e
+ms.openlocfilehash: 29236614ed09643db7e1b5c73798a7956699d832
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89304304"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96782499"
 ---
 # <a name="best-practices-for-connecting-to-the-mobile-broadband-network"></a>连接到移动宽带网络的最佳做法
 

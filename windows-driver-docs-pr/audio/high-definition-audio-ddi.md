@@ -1,7 +1,6 @@
 ---
 title: 高清音频 DDI
 description: 高清音频 DDI
-ms.assetid: d471777c-0002-4caa-a06e-c58e449b7678
 keywords:
 - HD 音频
 - '高清晰音频 (HD 音频) '
@@ -10,12 +9,12 @@ keywords:
 - Intel 高质音频规范
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5a2e4aeb238022f4d2ff4133446f36459e5de0da
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 793f524ecd63beeea830b0f90f81b1e63fdd7891
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89209157"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96783611"
 ---
 # <a name="high-definition-audio-ddi"></a>高清音频 DDI
 

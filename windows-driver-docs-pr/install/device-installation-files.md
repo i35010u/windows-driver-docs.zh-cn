@@ -1,7 +1,6 @@
 ---
 title: 设备安装文件
 description: 设备安装文件
-ms.assetid: a4a53040-ff53-49ba-a4a5-aba5f13119ef
 keywords:
 - 设备设置 WDK 设备安装，文件
 - 设备安装 WDK，文件
@@ -9,12 +8,12 @@ keywords:
 - 文件 WDK 设备安装
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8c288ff188db6a1f514f1e581580e17c1bc31c1a
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 2fcfb374c51b2f9ec8b4b1fd4eedda0b77ab6aaa
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102192"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96782867"
 ---
 # <a name="device-installation-files"></a>设备安装文件
 
@@ -25,7 +24,7 @@ ms.locfileid: "90102192"
 支持特定设备所需的软件取决于设备的类型和使用设备的方式。 通常，供应商在 [驱动程序包](driver-packages.md) 中提供以下软件，以支持设备：
 
 * <a href="" id="a-device-setup-information-file--inf-file-"></a>设备安装信息文件 (INF 文件)   
-    INF 文件包含系统 Windows 组件用于安装设备支持的信息。 Windows*SystemRoot* % \\ 在安装驱动程序时将此文件复制到% SystemRoot*inf*目录。 此文件是必需的。
+    INF 文件包含系统 Windows 组件用于安装设备支持的信息。 Windows *SystemRoot* % \\ 在安装驱动程序时将此文件复制到% SystemRoot *inf* 目录。 此文件是必需的。
 
     有关详细信息，请参阅 [创建 INF 文件](overview-of-inf-files.md)。
 

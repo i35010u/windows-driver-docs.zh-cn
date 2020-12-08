@@ -1,9 +1,8 @@
 ---
-title: WIA\_IPS\_打印机\_印记签署器\_正文
-description: WIA\_IPS\_打印机\_印记签署器\_正文属性用于配置算的垂直坐标，以英寸为单位的千分之几秒 (0.001 \ 0034;)，认可 imprinting/区域的左上角的相对于要进行扫描的物理文档的左上角和印刷/认可中。 WIA 微型驱动程序创建并维护此属性。
-ms.assetid: C04A4EAC-237A-44D6-AB05-CD561DA72CE8
+title: WIA \_ IPS \_ PRINTER \_ ENDORSER \_ YOFFSET
+description: WIA \_ IPS \_ PRINTER \_ ENDORSER \_ YOFFSET 属性用于配置垂直坐标，范围为 imprinting/认可区域左上角 (0.001 \ 0034; ) ，相对于要扫描和 imprinted/认可的物理文档的左上角，以秒为单位。 WIA 微型驱动程序创建并维护此属性。
 keywords:
-- WIA_IPS_PRINTER_ENDORSER_YOFFSET 成像设备
+- WIA_IPS_PRINTER_ENDORSER_YOFFSET 图像设备
 topic_type:
 - apiref
 api_name:
@@ -14,33 +13,33 @@ api_type:
 - HeaderDef
 ms.date: 05/22/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 1e873d5c7b8dedb085479e9a3ae7ac5b6f3542e0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 16a2a6c8c4e982c8a499bc1610860f71cfc9e898
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63353321"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96783207"
 ---
-# <a name="wiaipsprinterendorseryoffset"></a>WIA\_IPS\_打印机\_印记签署器\_正文
+# <a name="wia_ips_printer_endorser_yoffset"></a>WIA \_ IPS \_ PRINTER \_ ENDORSER \_ YOFFSET
 
 
-**WIA\_IPS\_打印机\_印记签署器\_正文**属性用于配置的垂直坐标中的一英寸 （0.001"），千分之几秒的左上角认可 imprinting/区域，相对于物理要扫描的文档和印刷/认可的左上角。 WIA 微型驱动程序创建并维护此属性。
+**WIA \_ IPS \_ PRINTER \_ ENDORSER \_ YOFFSET** 属性用于配置相对于要扫描和 imprinted/认可的物理文档的左上角的 imprinting/认可区域左上角 (0.001 ") 中的纵向坐标（以英寸为单位）。 WIA 微型驱动程序创建并维护此属性。
 
 
 
 
-属性类型：VT\_UI4
+属性类型： VT \_ UI4
 
-有效值：WIA\_PROP\_RANGE
+有效值： WIA 内容 \_ \_ 范围
 
 访问权限：读/写
 
 <a name="remarks"></a>备注
 -------
 
-WIA 微型驱动程序可以更新值和当前值的有效范围 （如果它变得超出范围） 到最接近的可用位置时[ **WIA\_IPS\_打印机\_印记签署器**](wia-ips-printer-endorser.md)属性 （即，从到送纸器平板） 更改为新的特定输入源。
+当 Wia IPS PRINTER ENDORSER 属性更改为新的特定输入源时，WIA 微型驱动程序可以更新有效的值范围和当前值)  (，当 [**WIA \_ IPS \_ PRINTER \_**](wia-ips-printer-endorser.md) 属性更改为新的特定输入源 (也就是说，从平板到进纸机) 。
 
-此属性是可选的所有印刷器/印记签署器数据源项。
+对于所有 Imprinter/Endorser 数据源项，此属性是可选的。
 
 <a name="requirements"></a>要求
 ------------
@@ -52,8 +51,8 @@ WIA 微型驱动程序可以更新值和当前值的有效范围 （如果它变
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Wiadef.h （包括 Wiadef.h）</td>
+<td><p>标头</p></td>
+<td>Wiadef (包含 Wiadef) </td>
 </tr>
 </tbody>
 </table>

@@ -1,18 +1,17 @@
 ---
 title: 修改资源要求列表
 description: 修改资源要求列表
-ms.assetid: 75391dd2-5ae1-4562-97a0-4de21a08b61c
 keywords:
 - 硬件资源 WDK KMDF，修改资源需求列表
 - 资源要求列出了 WDK KMDF，修改
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 96fbe944c5dd1604e92844d940d6d6ab918dd422
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: c07d90e8eef89856353faee32a4bc9134913ef2f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89187203"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96783679"
 ---
 # <a name="modifying-a-resource-requirements-list"></a>修改资源要求列表
 

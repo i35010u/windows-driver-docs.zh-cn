@@ -1,15 +1,14 @@
 ---
 title: 设计移动宽带应用中的品牌
 description: 设计移动宽带应用中的品牌
-ms.assetid: 0badd121-ce1d-4be2-a9f0-e062631c00c8
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bdb6d15614b1179b2b7319551c50074be4b1231f
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 0afdf368cf360876c34edb3c518efbe6acd96e81
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89215351"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96782433"
 ---
 # <a name="design-branding-in-a-mobile-broadband-app"></a>设计移动宽带应用中的品牌
 

@@ -1,15 +1,14 @@
 ---
 title: 全局导航卫星系统 (GNSS) 驱动程序设计
 description: 讨论开发全局导航卫星系统时要考虑的设计原则， (适用于 Windows 10 的 GNSS) 驱动程序，包括数据结构、错误报告和驱动程序版本控制。
-ms.assetid: E10B1149-CC8B-438D-B537-258F7FCFA0E7
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: eb86364c5e8168fdef190f88cfd589b10a6ceba1
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: a9ddea859f556de589b1c00d9715a882dcfee8c1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89188909"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96783951"
 ---
 # <a name="global-navigation-satellite-system-gnss-driver-design"></a>全局导航卫星系统 (GNSS) 驱动程序设计
 
@@ -24,7 +23,7 @@ ms.locfileid: "89188909"
 | 参数 | 单元 |
 | --- | --- |
 | 距离、阈值或级别 | 进度表 |
-| 超时或间隔 | 第 2 个 |
+| 超时或间隔 | second |
 | Speed | 计量/秒 |
 
 ## <a name="error-reporting"></a>错误报告

@@ -2,16 +2,15 @@
 title: IRP_MN_EJECT
 description: 总线驱动程序通常会为其子设备处理此请求， (支持设备弹出的子 PDOs) 。 函数和筛选器驱动程序不会收到此请求。
 ms.date: 08/12/2017
-ms.assetid: 2807eeca-c614-469a-baeb-3d2d65416c57
 keywords:
-- IRP_MN_EJECT 内核模式驱动程序体系结构
+- IRP_MN_EJECT Kernel-Mode 驱动程序体系结构
 ms.localizationpriority: medium
-ms.openlocfilehash: 976ddbf8ca1775cf34fd15a7c03036ecef59c28e
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 52291545550cbac2900b27a524d5071e07536db3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105532"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96783883"
 ---
 # <a name="irp_mn_eject"></a>IRP \_ MN \_ 弹出
 
@@ -84,7 +83,7 @@ PnP 管理器在 \_ 任意线程上下文中以 IRQL 被动级别发送此 IRP�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**IoRequestDeviceEject**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iorequestdeviceeject)

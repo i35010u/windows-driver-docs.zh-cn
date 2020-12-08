@@ -1,15 +1,14 @@
 ---
 title: 强制网络门户
 description: 强制网络门户
-ms.assetid: 6f710440-3012-4bf4-92cc-3743b0f4fd34
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c117d4da083567f93289d40a2b5be69f3cf9973e
-ms.sourcegitcommit: 7e4d9508198a30bdc1cb6eda83852dda4e42213e
+ms.openlocfilehash: 772e9fbb0f2e8b7192663287ccebfc26c1a17f00
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89304298"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96782485"
 ---
 # <a name="captive-portals"></a>强制网络门户
 
@@ -62,7 +61,8 @@ Windows 8、Windows 8.1 和 Windows 10 体验旨在首先接触。 这将扩展�
 
 可应用于应用的同一预配文件也可由网站应用。 在网页的 JavaScript 中，检查 [**msProvisionNetworks**](/previous-versions/windows/internet-explorer/ie-developer/platform-apis/dn529170(v=vs.85)) 方法的可用性。 如果存在，浏览器可以将设置文件中继到操作系统。 有关如何生成此设置文件的详细信息，请参阅 [使用元数据配置移动宽带体验](using-metadata-to-configure-mobile-broadband-experiences.md) 。
 
-**注意**   此设置文件在网站或不是移动宽带应用程序提供的应用程序提供时必须进行签名。
+**注意**  
+此设置文件在网站或不是移动宽带应用程序提供的应用程序提供时必须进行签名。
 
  
 

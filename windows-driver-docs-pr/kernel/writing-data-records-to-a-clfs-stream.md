@@ -1,7 +1,6 @@
 ---
 title: 将数据记录写入 CLFS 流
 description: 将数据记录写入 CLFS 流
-ms.assetid: 22bd6d39-b777-4a62-85b1-3d03a7144f7a
 keywords:
 - 公用日志文件系统 WDK 内核，数据记录
 - CLFS WDK 内核，数据记录
@@ -12,12 +11,12 @@ keywords:
 - 缓冲区 WDK CLFS
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e291d85bd99b3acd01d29d5f048190d22e18bfe0
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: a0860aec911c19529becc0cdac46cf54d1fb5aaf
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104424"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96782599"
 ---
 # <a name="writing-data-records-to-a-clfs-stream"></a>将数据记录写入 CLFS 流
 
@@ -41,7 +40,7 @@ ms.locfileid: "90104424"
 
 ### <a name="writing-a-single-data-buffer-to-a-stream"></a>将单个数据缓冲区写入流
 
-假设您有一个要写入到封送处理区域的数据缓冲区。 你愿意根据 CLFS 策略将记录刷新到稳定存储，并且不希望该记录成为任何记录链的一部分。 下表显示了在调用 **ClfsReserveAndAppendLog**时如何设置参数。
+假设您有一个要写入到封送处理区域的数据缓冲区。 你愿意根据 CLFS 策略将记录刷新到稳定存储，并且不希望该记录成为任何记录链的一部分。 下表显示了在调用 **ClfsReserveAndAppendLog** 时如何设置参数。
 
 <table>
 <colgroup>
@@ -153,7 +152,7 @@ ms.locfileid: "90104424"
 
  
 
-**注意**   在封送处理区域中保留空间的另一种方法是调用[**ClfsAlignReservedLog**](/windows-hardware/drivers/ddi/wdm/nf-wdm-clfsalignreservedlog)后跟[**ClfsAllocReservedLog**](/windows-hardware/drivers/ddi/wdm/nf-wdm-clfsallocreservedlog)。
+**注意**   在封送处理区域中保留空间的另一种方法是调用 [**ClfsAlignReservedLog**](/windows-hardware/drivers/ddi/wdm/nf-wdm-clfsalignreservedlog) 后跟 [**ClfsAllocReservedLog**](/windows-hardware/drivers/ddi/wdm/nf-wdm-clfsallocreservedlog)。
 
  
 
@@ -161,7 +160,7 @@ ms.locfileid: "90104424"
 
 假设您已经为三个记录保留了空间，这些记录的大小（以字节为单位）为100、200和300。 "封送处理" 区域的保留记录计数为3，保留空间足以保存600字节的记录数据、记录标头和对齐所需的任何填充。
 
-现在，假设您想要将这些记录中的一个记录写入到 "封送" 区域中的保留空间。 将减少可用的保留空间，并且保留的记录计数将从3减少到2。 下表显示了在调用 **ClfsReserveAndAppendLog**时如何设置参数。
+现在，假设您想要将这些记录中的一个记录写入到 "封送" 区域中的保留空间。 将减少可用的保留空间，并且保留的记录计数将从3减少到2。 下表显示了在调用 **ClfsReserveAndAppendLog** 时如何设置参数。
 
 <table>
 <colgroup>

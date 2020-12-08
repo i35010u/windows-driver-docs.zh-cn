@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ 分配器 \_ 控件 \_ 表面 \_ 大小
 description: KSPROPERTY \_ 分配 \_ 器控制 \_ 面 \_ 大小属性通知提供 DirectDraw SURFACE 分配器 (的客户端筛选器，例如覆盖混音) 正在进行捕获操作，并且必须以固定大小分配 Microsoft DirectDraw 表面，而不考虑覆盖的当前大小。 此属性是可选的。
-ms.assetid: fc759013-9dd7-44fc-a0d7-fd2585975966
 keywords:
 - KSPROPERTY_ALLOCATOR_CONTROL_SURFACE_SIZE 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7973d53c0cecc5048f052fb4aae3bdfefc41ec85
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: ac7f4bbdd5fea4254066852e5c8310cbb53e69cc
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106568"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96783749"
 ---
 # <a name="ksproperty_allocator_control_surface_size"></a>KSPROPERTY \_ 分配器 \_ 控件 \_ 表面 \_ 大小
 
@@ -86,7 +85,7 @@ KSPROPERTY \_ 分配 \_ 器控制 \_ 面 \_ 大小属性通知提供 DirectDraw 
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSPROPERTY**](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)

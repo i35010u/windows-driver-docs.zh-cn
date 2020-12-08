@@ -1,15 +1,14 @@
 ---
 title: 设计移动宽带应用中的计费页面
 description: 设计移动宽带应用中的计费页面
-ms.assetid: 44c5a273-1dd4-4ff5-90aa-9d1f4f855439
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 57b9e8f91366ee7d0f28738f34476ea864a72a42
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 585929fca29242add777d17826dfc326904735ba
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89215349"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96782429"
 ---
 # <a name="design-billing-pages-in-a-mobile-broadband-app"></a>设计移动宽带应用中的计费页面
 

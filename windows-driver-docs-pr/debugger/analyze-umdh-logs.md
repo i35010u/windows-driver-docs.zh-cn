@@ -1,7 +1,6 @@
 ---
 title: 分析 UMDH 日志
-description: 使用以下命令，以分析通过运行 UMDH 语法创建的用户模式转储堆 (UMDH) 日志中所述分析运行中的进程。
-ms.assetid: 66e559b2-0335-4a1d-ba6c-dde6b826dc5f
+description: 使用以下命令分析通过使用分析正在运行的进程中所述语法运行 UMDH 创建的 User-Mode 转储堆 (UMDH) 日志。
 keywords:
 - 分析 UMDH 日志 Windows 调试
 ms.date: 05/23/2017
@@ -12,49 +11,49 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 3300e26ed433a558d2590c973d67501bf4276731
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: aa3157d4a0840a0d3b7e3e028f9da9f7be9991c3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63355000"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96783561"
 ---
 # <a name="analyze-umdh-logs"></a>分析 UMDH 日志
 
 
-使用以下命令来分析用户模式转储堆 (UMDH) 日志创建的运行中所述的语法与 UMDH [**分析运行中的进程**](analyze-a-running-process.md)。 此分析专注于分配，而不是堆栈跟踪。
+使用以下命令分析通过使用 [**分析正在运行的进程**](analyze-a-running-process.md)中所述语法运行 UMDH 创建的 User-Mode 转储堆 (UMDH) 日志。 此分析侧重于分配，而不是堆栈跟踪。
 
-可以分析单个日志文件，也可以比较不同的运行中的程序或驱动程序的内存转储分配随着时间的推移检测所做的更改的日志。
+你可以分析单个日志文件或比较不同运行的日志，以检测程序或驱动程序在一段时间内的内存转储分配中的更改。
 
 ```dbgcmd
 umdh [-d] [-v] [-l] File1 [File2] [-h | ?]
 ```
 
-## <a name="span-idddkanalyzeumdhlogsdtoolsspanspan-idddkanalyzeumdhlogsdtoolsspanparameters"></a><span id="ddk_analyze_umdh_logs_dtools"></span><span id="DDK_ANALYZE_UMDH_LOGS_DTOOLS"></span>参数
+## <a name="span-idddk_analyze_umdh_logs_dtoolsspanspan-idddk_analyze_umdh_logs_dtoolsspanparameters"></a><span id="ddk_analyze_umdh_logs_dtools"></span><span id="DDK_ANALYZE_UMDH_LOGS_DTOOLS"></span>参数
 
 
-<span id="_______-d______"></span><span id="_______-D______"></span> **-d**   
-十进制数字中显示数值数据。 默认值为十六进制。
+<span id="_______-d______"></span><span id="_______-D______"></span>**-d**   
+以十进制数字显示数值数据。 默认值为十六进制。
 
-<span id="_______-v______"></span><span id="_______-V______"></span> **-v**   
-详细模式。 包括跟踪，以及摘要信息。 分析单个日志文件时，跟踪是最有帮助。
+<span id="_______-v______"></span><span id="_______-V______"></span>**-v**   
+详细模式。 包括跟踪和摘要信息。 分析单个日志文件时，这些跟踪非常有用。
 
-<span id="_______-l______"></span><span id="_______-L______"></span> **-l**   
-在日志中包含文件的名称和行号。 （请注意，参数是小写的字母"L"(这是不是第一个。）
+<span id="_______-l______"></span><span id="_______-L______"></span>**-l**   
+在日志中包括文件名和行号。  (请注意，参数是 lowercased 字母 "L" 而不是数字一。 ) 
 
-<span id="_______File1__File2_"></span><span id="_______file1__file2_"></span><span id="_______FILE1__FILE2_"></span> *File1* \[*File2*\]  
+<span id="_______File1__File2_"></span><span id="_______file1__file2_"></span><span id="_______FILE1__FILE2_"></span>*File1* \[*File2*\]  
 指定要分析的 UMDH 日志文件。
 
-UMDH 创建日志文件中运行时[**分析正在运行的进程**](analyze-a-running-process.md)模式并在文本文件中保存的日志内容 (**-f**)。
+当你在 " [**分析正在运行的进程**](analyze-a-running-process.md) " 模式下运行日志文件并将日志内容保存到 (**-f**) 的文本文件中时，UMDH 将创建日志文件。
 
-当指定一个日志文件时，UMDH 分析该文件并显示每个跟踪分配的字节数的降序顺序中的函数调用。
+指定一个日志文件时，UMDH 将分析文件，并按分配的字节数降序显示每个跟踪中的函数调用。
 
-当你指定两个日志文件时，UMDH 比较文件，并且按降序顺序显示其分配一代代产品的两个试用版之间最多的函数调用。
+当你指定两个日志文件时，UMDH 将对文件进行比较，并按降序顺序显示其分配在两次试验之间增长最多的函数调用。
 
-<span id="_______-h____"></span><span id="_______-H____"></span> **-h | ?**  
+<span id="_______-h____"></span><span id="_______-H____"></span>**-h |？**  
 显示帮助。
 
-### <a name="span-idsampleusagespanspan-idsampleusagespansample-usage"></a><span id="sample_usage"></span><span id="SAMPLE_USAGE"></span>示例用法
+### <a name="span-idsample_usagespanspan-idsample_usagespansample-usage"></a><span id="sample_usage"></span><span id="SAMPLE_USAGE"></span>示例用法
 
 ```dbgcmd
 umdh dump.txt
@@ -65,7 +64,7 @@ umdh dump1.txt dump2.txt
 <a name="remarks"></a>备注
 -------
 
-假设您有两台计算机：*记录计算机*创建 UMDH 日志以及一个*分析计算机*分析 UMDH 日志的位置。 分析计算机上的符号路径必须指向日志时间在加载日志记录计算机的 Windows 版本的符号。 未指向符号路径分析计算机上的符号服务器。 如果这样做，UMDH 将检索分析计算机运行的 Windows 版本的符号和 UMDH 将不会显示有意义的结果。
+假设您有两台计算机：一 *台日志记录计算机* ，您可以在其中创建 UMDH 日志以及分析 UMDH 日志的 *分析计算机* 。 分析计算机上的符号路径必须指向在日志记录时日志记录计算机上加载的 Windows 版本的符号。 不要将分析计算机上的符号路径指向符号服务器。 如果这样做，UMDH 将检索分析计算机上运行的 Windows 版本的符号，UMDH 将不会显示有意义的结果。
 
  
 

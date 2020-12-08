@@ -1,19 +1,18 @@
 ---
 title: 驱动程序的代码分析警告
 description: 驱动程序的代码分析警告
-ms.assetid: 61dba158-7e1b-42ee-9882-0ba9cef77b3c
 keywords:
 - PREfast for 驱动程序 WDK，警告
 - 警告 WDK PREfast 驱动程序
 - 错误 WDK PREfast 驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ec673ca34c5376cc90b75cb2d1f2776aa545a75f
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 518c7eeeb8bdbe3fe08a96f4b9f55892ef618116
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90101498"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96783317"
 ---
 # <a name="code-analysis-for-drivers-warnings"></a>驱动程序的代码分析警告
 
@@ -43,7 +42,7 @@ ms.locfileid: "90101498"
 <thead>
 <tr class="header">
 <th align="left">主题</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>

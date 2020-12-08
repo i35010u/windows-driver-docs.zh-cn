@@ -1,9 +1,8 @@
 ---
-title: KSEVENTSETID\_连接
-description: KSEVENTSETID\_连接事件集指定筛选器和 pin 可以启用的常规事件。
-ms.assetid: 69c7b947-97b9-4c38-a2c8-00a8550b7b39
+title: KSEVENTSETID \_ 连接
+description: KSEVENTSETID \_ 连接事件集指定可以对筛选器和 pin 启用的常规事件。
 keywords:
-- KSEVENTSETID_Connection 流式处理媒体设备
+- KSEVENTSETID_Connection 流媒体设备
 topic_type:
 - apiref
 api_name:
@@ -12,27 +11,27 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c6c3ca08cfb1fd23f1ff2b95688b5048747ec03d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5b78045d528b180ee1ac29c51da2ebe93ddd9473
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63329601"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96782049"
 ---
-# <a name="kseventsetidconnection"></a>KSEVENTSETID\_连接
+# <a name="kseventsetid_connection"></a>KSEVENTSETID \_ 连接
 
 
-KSEVENTSETID\_连接事件集指定筛选器和 pin 可以启用的常规事件。 一组包含以下事件：
+KSEVENTSETID \_ 连接事件集指定可以对筛选器和 pin 启用的常规事件。 该集包含以下事件：
 
-[**KSEVENT\_连接\_POSITIONUPDATE**](ksevent-connection-positionupdate.md)****
+[**KSEVENT \_ 连接 \_ POSITIONUPDATE**](ksevent-connection-positionupdate.md)****
 
-[**KSEVENT\_连接\_DATADISCONTINUITY**](ksevent-connection-datadiscontinuity.md)****
+[**KSEVENT \_ 连接 \_ DATADISCONTINUITY**](ksevent-connection-datadiscontinuity.md)****
 
-[**KSEVENT\_连接\_TIMEDISCONTINUITY**](ksevent-connection-timediscontinuity.md)****
+[**KSEVENT \_ 连接 \_ TIMEDISCONTINUITY**](ksevent-connection-timediscontinuity.md)****
 
-[**KSEVENT\_连接\_优先级**](ksevent-connection-priority.md)****
+[**KSEVENT \_ 连接 \_ 优先级**](ksevent-connection-priority.md)****
 
-[**KSEVENT\_连接\_ENDOFSTREAM**](ksevent-connection-endofstream.md)****
+[**KSEVENT \_ 连接 \_ ENDOFSTREAM**](ksevent-connection-endofstream.md)****
 
  
 

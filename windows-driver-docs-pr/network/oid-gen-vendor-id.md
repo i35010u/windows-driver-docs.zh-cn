@@ -1,21 +1,20 @@
 ---
 title: OID_GEN_VENDOR_ID
-description: 为查询，OID_GEN_VENDOR_ID OID 指定三个字节 IEEE 注册供应商代码后, 跟一个字节的供应商用来标识特定的 nic。
-ms.assetid: dce0a2e4-5d34-417f-9764-85644fe2ce46
+description: 作为查询，OID_GEN_VENDOR_ID OID 指定三字节 IEEE 注册供应商代码，后跟供应商分配的单个字节来识别特定的 NIC。
 ms.date: 08/08/2017
-keywords: -从 Windows Vista 开始 OID_GEN_VENDOR_ID 网络驱动程序
+keywords: -从 Windows Vista 开始 OID_GEN_VENDOR_ID 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 21524157a2a2cb38f8c8b5b84f734b5ed2db16c7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: eb34849b121f3e66a9a773162289850882b39bc7
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63387896"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96782217"
 ---
-# <a name="oidgenvendorid"></a>OID\_GEN\_供应商\_ID
+# <a name="oid_gen_vendor_id"></a>OID \_ 生成 \_ 供应商 \_ ID
 
 
-为查询，OID\_GEN\_供应商\_ID OID 指定三个字节 IEEE 注册供应商代码后, 跟一个字节的供应商用来标识特定的 nic。
+作为查询，OID 生成 \_ \_ 供应商 \_ ID OID 指定三字节 IEEE 注册供应商代码，后跟供应商分配用于标识特定 NIC 的单个字节。
 
 **版本信息**
 
@@ -37,11 +36,11 @@ ms.locfileid: "63387896"
 <a name="remarks"></a>备注
 -------
 
-IEEE 代码唯一标识供应商并等同于使其不显示在 NIC 硬件地址开头的三个字节。
+IEEE 代码唯一地标识供应商，与显示在 NIC 硬件地址开头的三个字节相同。
 
-未使用 IEEE 注册的代码的供应商应使用 0xFFFFFF 的值。
+没有 IEEE 注册代码的供应商应该使用值0xFFFFFF。
 
-独立硬件供应商的筛选器驱动程序或中间驱动程序可以查询此 OID。
+独立硬件供应商的筛选器驱动程序或中间驱动程序可能会查询此 OID。
 
 <a name="requirements"></a>要求
 ------------
@@ -53,8 +52,8 @@ IEEE 代码唯一标识供应商并等同于使其不显示在 NIC 硬件地址�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Ntddndis.h （包括 Ndis.h）</td>
+<td><p>标头</p></td>
+<td>Ntddndis (包含 Ndis .h) </td>
 </tr>
 </tbody>
 </table>

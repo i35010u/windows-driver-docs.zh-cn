@@ -2,16 +2,15 @@
 title: IRP_MN_DISABLE_COLLECTION
 description: 注册一个或多个数据块的任何 WMI 驱动程序都必须处理此 IRP。
 ms.date: 08/12/2017
-ms.assetid: de375d56-880e-4534-acab-8d0685f45ebe
 keywords:
-- IRP_MN_DISABLE_COLLECTION 内核模式驱动程序体系结构
+- IRP_MN_DISABLE_COLLECTION Kernel-Mode 驱动程序体系结构
 ms.localizationpriority: medium
-ms.openlocfilehash: bd4def459caab6d3e1bfee0cb132fb48352adcff
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: db703d35d3738b622ccebe7505a8994998c88a18
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89185179"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96783897"
 ---
 # <a name="irp_mn_disable_collection"></a>IRP \_ MN \_ 禁用 \_ 收集
 
@@ -47,7 +46,7 @@ WMI \_ 在任意线程上下文中以 IRQL = 被动级别发送此 IRP。
 ## <a name="io-status-block"></a>I/o 状态块
 
 
-如果驱动程序通过调用[**WmiSystemControl**](/windows-hardware/drivers/ddi/wmilib/nf-wmilib-wmisystemcontrol)来处理 IRP，WMI 将在 i/o 状态块中设置**irp- &gt; IoStatus**和**irp- &gt; IoStatus。**
+如果驱动程序通过调用 [**WmiSystemControl**](/windows-hardware/drivers/ddi/wmilib/nf-wmilib-wmisystemcontrol)来处理 IRP，WMI 将在 i/o 状态块中设置 **irp- &gt; IoStatus** 和 **irp- &gt; IoStatus。**
 
 否则，驱动程序会将 **Irp- &gt; IoStatus** 设置为状态 \_ 成功，或设置为适当的错误状态，如下所示：
 
@@ -60,7 +59,7 @@ WMI \_ 在任意线程上下文中以 IRQL = 被动级别发送此 IRP。
 <a name="operation"></a>操作
 ---------
 
-驱动程序通过在 \_ \_ [**WMIREGGUID**](/windows-hardware/drivers/ddi/wmistr/ns-wmistr-wmiregguidw)或[**WMIGUIDREGINFO**](/windows-hardware/drivers/ddi/wmilib/ns-wmilib-_wmiguidreginfo)结构（当驱动程序在注册或更新数据块时将其传递到 WMI）的**Flags**成员中设置 WMIREG 标志来注册数据块，从而导致收集成本高昂。 驱动程序无需为此类块累积数据，直到收到显式请求来启用收集。
+驱动程序通过在 \_ \_ [**WMIREGGUID**](/windows-hardware/drivers/ddi/wmistr/ns-wmistr-wmiregguidw)或 [**WMIGUIDREGINFO**](/windows-hardware/drivers/ddi/wmilib/ns-wmilib-_wmiguidreginfo)结构（当驱动程序在注册或更新数据块时将其传递到 WMI）的 **Flags** 成员中设置 WMIREG 标志来注册数据块，从而导致收集成本高昂。 驱动程序无需为此类块累积数据，直到收到显式请求来启用收集。
 
 如果驱动程序通过调用 [**WmiSystemControl**](/windows-hardware/drivers/ddi/wmilib/nf-wmilib-wmisystemcontrol)来处理 WMI irp，则该例程将调用驱动程序的 [*DpWmiFunctionControl*](/windows-hardware/drivers/ddi/wmilib/nc-wmilib-wmi_function_control_callback) 例程，或在 \_ 驱动程序未定义例程时返回状态 SUCCESS。
 
@@ -86,7 +85,7 @@ WMI \_ 在任意线程上下文中以 IRQL = 被动级别发送此 IRP。
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [*DpWmiFunctionControl*](/windows-hardware/drivers/ddi/wmilib/nc-wmilib-wmi_function_control_callback)

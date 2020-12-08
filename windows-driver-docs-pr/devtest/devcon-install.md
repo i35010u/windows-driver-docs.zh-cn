@@ -1,7 +1,6 @@
 ---
 title: DevCon Install
 description: 为非即插即用设备创建一个新的根枚举 devnode，并安装其支持的软件。 仅在本地计算机上有效。
-ms.assetid: d31007dd-6f20-460d-8561-d1639c69aa09
 keywords:
 - DevCon 安装驱动程序开发工具
 topic_type:
@@ -12,12 +11,12 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1a64931a6da1fb95d2d87abc5aac4b825c79fabf
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: c462cbf900aacb1395f0fc6ae6f2e63f52d96216
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89384953"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96783389"
 ---
 # <a name="devcon-install"></a>DevCon Install
 
@@ -48,7 +47,7 @@ ms.locfileid: "89384953"
 
 不能对即插即用设备使用 **DevCon 安装** 操作。
 
-**DevCon 安装**操作会创建新的非即插即用设备节点。 然后，它使用 [**DevCon Update**](devcon-update.md) 操作来为新添加的设备安装驱动程序。 因此， **Devcon 安装** 操作的成功消息会报告 devcon 已创建设备节点，并且已更新设备的驱动程序。
+**DevCon 安装** 操作会创建新的非即插即用设备节点。 然后，它使用 [**DevCon Update**](devcon-update.md) 操作来为新添加的设备安装驱动程序。 因此， **Devcon 安装** 操作的成功消息会报告 devcon 已创建设备节点，并且已更新设备的驱动程序。
 
 如果 **Devcon 安装** 操作的任何步骤失败，则 devcon 会显示失败消息，不会继续安装驱动程序。
 

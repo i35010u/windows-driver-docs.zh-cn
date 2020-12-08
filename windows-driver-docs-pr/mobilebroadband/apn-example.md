@@ -1,15 +1,14 @@
 ---
 title: APN 示例
 description: APN 示例
-ms.assetid: 3cf74bc4-a334-4213-8138-ebfc91b459e8
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5b844b35ea0e5aa34e93c111f28b5d4ee2a32784
-ms.sourcegitcommit: 7e4d9508198a30bdc1cb6eda83852dda4e42213e
+ms.openlocfilehash: d61f9389f012b81bbe5522a2c770e94f6c6fe546
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89304306"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96782535"
 ---
 # <a name="apn-example"></a>APN 示例
 

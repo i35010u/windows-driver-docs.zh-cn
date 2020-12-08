@@ -1,7 +1,6 @@
 ---
 title: 设备标识字符串
 description: 即插即用 (PnP) 管理器和其他设备安装组件使用设备标识字符串来识别安装在计算机上的设备。
-ms.assetid: dae23185-63d9-4a0f-9786-c7fa66368826
 keywords:
 - 兼容 Id WDK 设备安装
 - 设备 Id WDK 设备安装
@@ -14,12 +13,12 @@ keywords:
 - 安装设备 WDK，设备标识字符串
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4d1159c2436e7a518819287869cd595dd92968d7
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 5bb42f14f13fbf52ef23e6bbfb2471abad3febfb
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90101460"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96782871"
 ---
 # <a name="device-identification-strings"></a>设备标识字符串
 

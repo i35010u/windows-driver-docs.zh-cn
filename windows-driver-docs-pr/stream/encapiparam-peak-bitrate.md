@@ -1,15 +1,14 @@
 ---
 title: ENCAPIPARAM \_ 峰值 \_ 比特率
 description: ENCAPIPARAM \_ 峰值 \_ 比特率
-ms.assetid: 444a20e0-f3af-4dbc-9272-44e992e059e8
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4e77586dabcf8f45f8251dec29d4c4ca53233c42
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 77cc90c7cb9fea470d84a2d8a41967fb41fd15f9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89187419"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96782057"
 ---
 # <a name="encapiparam_peak_bitrate"></a>ENCAPIPARAM \_ 峰值 \_ 比特率
 
@@ -49,7 +48,7 @@ ENCAPIPARAM \_ 比特率属性用于描述设备的受支持的高峰比特率 (
 
  
 
- (操作数据) 的属性值是 \_ 在[**KSPROPERTY \_ 集**](/windows-hardware/drivers/ddi/ks/ns-ks-ksproperty_set)结构的**PropertyItem**成员中指定的设备的高峰比特率 UI4。
+ (操作数据) 的属性值是 \_ 在 [**KSPROPERTY \_ 集**](/windows-hardware/drivers/ddi/ks/ns-ks-ksproperty_set)结构的 **PropertyItem** 成员中指定的设备的高峰比特率 UI4。
 
 ### <a name="comments"></a>注释
 
@@ -57,7 +56,7 @@ ENCAPIPARAM \_ 比特率属性用于描述设备的受支持的高峰比特率 (
 
 ### <a name="requirements"></a>要求
 
-**标头：** 在 *ksmedia*中声明。 包括 *ksmedia*。
+**标头：** 在 *ksmedia* 中声明。 包括 *ksmedia*。
 
 ### <a name="see-also"></a>另请参阅
 

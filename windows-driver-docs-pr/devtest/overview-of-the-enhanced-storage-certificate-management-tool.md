@@ -1,15 +1,14 @@
 ---
 title: 增强的存储证书管理工具概述
 description: 增强的存储证书管理工具概述
-ms.assetid: 963e6510-d62f-421f-9c3d-781092f98969
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 55806dc984d885816ad6b103b2d2b60c0639d8f6
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 9ef026987afefdbe33c9ce1dc2a355dcff42a735
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89381539"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96784013"
 ---
 # <a name="overview-of-the-enhanced-storage-certificate-management-tool"></a>增强的存储证书管理工具概述
 
@@ -40,7 +39,7 @@ ms.locfileid: "89381539"
 
 -   列出 ASC 存储区中的证书。
 
-**注意**   使用此工具无法添加、删除或删除 ASCm 证书。
+**注意**  使用此工具无法添加、删除或删除 ASCm 证书。
 
  
 
@@ -62,7 +61,7 @@ ms.locfileid: "89381539"
 \\?\usbstor#ieee1667control&ven_&prod_&rev_#123456789&0&control#{4f40006f-b933-4550-b532-2b58cee614d3}
 ```
 
-**注意**   要生成当前连接到计算机的符合 IEEE 1667 的 USB 存储设备的卷名称列表，请在命令行中键入**EhStorCertMgrCmd/list** 。
+**注意**  要生成当前连接到计算机的符合 IEEE 1667 的 USB 存储设备的卷名称列表，请在命令行中键入 **EhStorCertMgrCmd/list** 。
 
  
 

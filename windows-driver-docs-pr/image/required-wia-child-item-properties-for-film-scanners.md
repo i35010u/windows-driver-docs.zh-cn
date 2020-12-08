@@ -1,15 +1,14 @@
 ---
 title: 底片扫描仪的必需 WIA 子项属性
 description: 底片扫描仪的必需 WIA 子项属性
-ms.assetid: 3b12299a-0b01-492c-a79d-45ddc3c193bb
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2e9f82f0ac493ca16d195bd250cbc45ecc2dfa94
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: b34a113eaa24d9326786fae11bd523abf4aabfa8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89191503"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96783231"
 ---
 # <a name="required-wia-child-item-properties-for-film-scanners"></a>底片扫描仪的必需 WIA 子项属性
 

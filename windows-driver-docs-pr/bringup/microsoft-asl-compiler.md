@@ -1,15 +1,14 @@
 ---
 title: Microsoft ASL 编译器
 description: Microsoft ASL 编译器版本5.0 支持 ACPI 5.0 规范中的功能。
-ms.assetid: E6EC168F-DB4B-461A-874A-F5278E8F9200
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 47b94ee669bfd44deb2c5c59c89d27c2e05544f1
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 2cde773f5964cbbd950b5cd1557d67ad5ec71ba6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89189693"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96783609"
 ---
 # <a name="microsoft-asl-compiler"></a>Microsoft ASL 编译器
 
@@ -33,7 +32,7 @@ asl [/nologo] /tab=<TabSig> [/c] [/Fa=<ASMfile>] [/Fl=<LSTFile>] [/Fn=<NSDFile>]
 asl [/nologo] [/Fo=<AMLFile>] [/Fa=<ASMFile>] [/Fl=<LSTFile>] [/Fn=<NSDFile>] <ASLFile>
 ```
 
-| 选项             | 说明                                                                   |
+| 选项             | 描述                                                                   |
 |--------------------|-------------------------------------------------------------------------------|
 | ?                  | 打印此帮助消息。                                                      |
 | nologo             | 禁止显示徽标横幅。                                                     |
@@ -71,7 +70,7 @@ asl.exe /loadtable [-v] [-d] <AMLFile>
 
 其中，AMLFile 是已编译的 AML 文件的名称，其中包含要加载到注册表中的表。
 
-| 选项  | 说明                                                                                              |
+| 选项  | 描述                                                                                              |
 |---------|----------------------------------------------------------------------------------------------------------|
 | -v      | 详细模式。 启用实用工具的额外调试输出。                                          |
 | -d      | 删除。 从注册表中删除以前加载的 AML 文件，并删除所有关联的注册表项。|

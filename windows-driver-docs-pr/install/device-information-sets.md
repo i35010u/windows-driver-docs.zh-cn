@@ -1,7 +1,6 @@
 ---
 title: 设备信息集
 description: 设备信息集
-ms.assetid: 20539c63-10b1-408a-8c60-da444f54b64e
 keywords:
 - 设备信息元素 WDK 设备安装
 - 设备信息设置 WDK 设备安装
@@ -10,18 +9,18 @@ keywords:
 - SetupDiEnumDeviceInfo
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: abf15daf1df5c9e938a64877f5caabd0a9205c18
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: ac4b6d3426f3755bf2e859a835faff119226ecd3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90715604"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96782879"
 ---
 # <a name="device-information-sets"></a>设备信息集
 
-在用户模式下，属于[设备安装程序类](./overview-of-device-setup-classes.md)或[设备接口类](./overview-of-device-interface-classes.md)的设备使用*设备信息元素*和*设备信息集*进行管理。 设备信息集包含属于某些设备安装程序类或设备接口类的所有设备的设备信息元素。
+在用户模式下，属于 [设备安装程序类](./overview-of-device-setup-classes.md)或 [设备接口类](./overview-of-device-interface-classes.md)的设备使用 *设备信息元素* 和 *设备信息集* 进行管理。 设备信息集包含属于某些设备安装程序类或设备接口类的所有设备的设备信息元素。
 
-每个设备信息元素都包含设备的 *devnode*的句柄，并包含指向与该元素描述的设备关联的所有设备接口的链接列表的指针。 如果设备信息集描述了安装类的成员，则该元素可能不指向任何设备接口，因为安装程序类成员不一定与接口相关联。
+每个设备信息元素都包含设备的 *devnode* 的句柄，并包含指向与该元素描述的设备关联的所有设备接口的链接列表的指针。 如果设备信息集描述了安装类的成员，则该元素可能不指向任何设备接口，因为安装程序类成员不一定与接口相关联。
 
 下图显示了设备信息集的内部结构。
 

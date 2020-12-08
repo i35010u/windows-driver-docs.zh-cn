@@ -1,17 +1,16 @@
 ---
 title: 处理 IRP_MN_CANCEL_STOP_DEVICE 请求（Windows 2000 和更高版本）
 description: 处理 IRP_MN_CANCEL_STOP_DEVICE 请求（Windows 2000 和更高版本）
-ms.assetid: 2e5e835f-d327-4bde-bdfd-8a71a47b0ac0
 keywords:
 - IRP_MN_CANCEL_STOP_DEVICE
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c0a53bfd2d1ead199d10ae004fc874c946f35775
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 3d97bd19ca0bfb1b25e849634e0271006012f4fd
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89183857"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96782707"
 ---
 # <a name="handling-an-irp_mn_cancel_stop_device-request-windows-2000-and-later"></a>处理 IRP \_ MN \_ CANCEL \_ 停止 \_ 设备请求 (Windows 2000 和更高版本) 
 

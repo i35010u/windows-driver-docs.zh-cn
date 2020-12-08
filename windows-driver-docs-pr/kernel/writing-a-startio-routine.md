@@ -1,7 +1,6 @@
 ---
 title: 编写 StartIo 例程
 description: 编写 StartIo 例程
-ms.assetid: b2a380ae-549c-4ca2-9c69-1e20c17ed2e6
 keywords:
 - StartIo 例程，关于 StartIo 例程
 - StartIo 例程，编写
@@ -12,12 +11,12 @@ keywords:
 - 出列的 Irp
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 67eaa9e76b622da0ad58b47bf01596027f659ae8
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 5ef668b52a55ef9cf796f8175b2d68af14b4fd4a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89190957"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96782615"
 ---
 # <a name="writing-a-startio-routine"></a>编写 StartIo 例程
 

@@ -1,7 +1,6 @@
 ---
 title: DevCon UpdateNI
-description: 强制将当前的设备驱动程序替换而不提示用户输入信息或进行确认指定的 INF 文件中列出的驱动程序。 仅在本地计算机上有效。
-ms.assetid: 436a9731-1c61-4b38-b145-7012da55b699
+description: 强制将当前设备驱动程序替换为指定 INF 文件中列出的驱动程序，而不提示用户提供信息或进行确认。 仅在本地计算机上有效。
 keywords:
 - DevCon UpdateNI 驱动程序开发工具
 topic_type:
@@ -12,47 +11,47 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d059242dd4129a38c7052712e0c32fb08de9bc12
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 71f73f398fc100d05567744b94b0c72b2916dbbc
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63346999"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96783331"
 ---
 # <a name="devcon-updateni"></a>DevCon UpdateNI
 
 
-强制将当前的设备驱动程序替换而不提示用户输入信息或进行确认指定的 INF 文件中列出的驱动程序。 仅在本地计算机上有效。
+强制将当前设备驱动程序替换为指定 INF 文件中列出的驱动程序，而不提示用户提供信息或进行确认。 仅在本地计算机上有效。
 
 ```
     devcon [/r] updateni INFfile HardwareID 
 ```
 
-## <a name="span-idddkdevconupdatenitoolsspanspan-idddkdevconupdatenitoolsspanparameters"></a><span id="ddk_devcon_updateni_tools"></span><span id="DDK_DEVCON_UPDATENI_TOOLS"></span>参数
+## <a name="span-idddk_devcon_updateni_toolsspanspan-idddk_devcon_updateni_toolsspanparameters"></a><span id="ddk_devcon_updateni_tools"></span><span id="DDK_DEVCON_UPDATENI_TOOLS"></span>参数
 
 
-<span id="________r______"></span><span id="________R______"></span> **/r**   
-条件性重新启动。 完成操作，仅当必须重新启动，以使更改生效后，会重新启动系统。
+<span id="________r______"></span><span id="________R______"></span>**/r**   
+条件重启。 仅当需要重新启动才能使更改生效时，才能在完成操作后重新启动系统。
 
-<span id="_______INFfile______"></span><span id="_______inffile______"></span><span id="_______INFFILE______"></span> *INFfile*   
-指定设备 INF （信息） 文件的完整路径和文件名。 如果省略路径，DevCon 假定该文件位于当前目录。
+<span id="_______INFfile______"></span><span id="_______inffile______"></span><span id="_______INFFILE______"></span>*INFfile*   
+为设备指定 INF (信息) 的完整路径和文件名。 如果省略路径，则 DevCon 会假定文件位于当前目录中。
 
-<span id="_______HardwareID______"></span><span id="_______hardwareid______"></span><span id="_______HARDWAREID______"></span> *HardwareID*   
+<span id="_______HardwareID______"></span><span id="_______hardwareid______"></span><span id="_______HARDWAREID______"></span>*HardwareID*   
 指定设备的硬件 ID。
 
-指定的硬件 ID 必须完全符合设备的硬件 ID。 模式不是有效的。 请不要键入一个单引号字符 () 以指示文本值。
+指定的硬件 ID 必须与设备的硬件 ID 完全匹配。 模式无效。 不要键入单引号字符 (**"**) 来指示文本值。
 
-### <a name="span-idcommentsspanspan-idcommentsspancomments"></a><span id="comments"></span><span id="COMMENTS"></span>注释
+### <a name="span-idcommentsspanspan-idcommentsspancomments"></a><span id="comments"></span><span id="COMMENTS"></span>提出
 
-**DevCon UpdateNI**操作取消需要响应的所有用户提示，并假定默认响应。 因此，此操作不能用于安装未签名驱动程序。 若要在更新期间显示用户提示，请使用[ **DevCon 更新**](devcon-update.md)。
+**DevCon UpdateNI** 操作取消了需要响应的所有用户提示，并假定默认响应。 因此，不能使用此操作来安装未签名的驱动程序。 若要在更新过程中显示用户提示，请使用 [**DevCon update**](devcon-update.md)。
 
-**DevCon UpdateNI**操作强制更新，即使指定的 INF 文件中的驱动程序是较旧或比当前驱动程序不太合适。
+**DevCon UpdateNI** 操作会强制进行更新，即使指定 INF 文件中的驱动程序比当前驱动程序更旧或更低。
 
-在更新之前，在任何设备的驱动程序确定哪些设备将受到 update 命令。 若要执行此操作，使用硬件 ID 在显示命令中，如[ **DevCon HwIDs** ](devcon-hwids.md)或[ **DevCon DriverFiles**](devcon-driverfiles.md)。 这一点尤其重要**DevCon UpdateNI**操作因为 DevCon 不会列出它更新的设备驱动程序。
+更新任何设备的驱动程序之前，请确定将受更新命令影响的设备。 为此，请在显示命令中使用硬件 ID，如 [**DevCon hwid**](devcon-hwids.md) 或 [**devcon DriverFiles**](devcon-driverfiles.md)。 这在 **Devcon UpdateNI** 操作中尤其重要，因为 devcon 不会列出它所更新的设备驱动程序。
 
-系统可能需要重新启动才能使此更改生效。 若要让 DevCon 重新启动系统，添加条件的重新启动参数 (/ r) 命令。
+系统可能需要重新启动才能使此更改生效。 若要让 DevCon 重新启动系统，请将 (/r) 的条件重新启动参数添加到命令中。
 
-### <a name="span-idsampleusagespanspan-idsampleusagespansample-usage"></a><span id="sample_usage"></span><span id="SAMPLE_USAGE"></span>示例用法
+### <a name="span-idsample_usagespanspan-idsample_usagespansample-usage"></a><span id="sample_usage"></span><span id="SAMPLE_USAGE"></span>示例用法
 
 ```
 devcon updateni c:\windows\inf\newdvc.inf ISAPNP\CSC4324\0
@@ -61,7 +60,7 @@ devcon /r updateni c:\windows\inf\newdvc.inf *PNP030b
 
 ### <a name="span-idexamplespanspan-idexamplespanexample"></a><span id="example"></span><span id="EXAMPLE"></span>示例
 
-[示例 32:通信端口的驱动程序更新](devcon-examples.md#ddk_example_32_update_the_driver_for_communication_ports_tools)
+[示例32：更新通信端口的驱动程序](devcon-examples.md#ddk_example_32_update_the_driver_for_communication_ports_tools)
 
 
 

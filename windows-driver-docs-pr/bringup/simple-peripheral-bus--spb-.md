@@ -1,41 +1,40 @@
 ---
 title: 简单外设总线 (SPB)
-description: SoC 集成电路充分利用简单，低-pin-计数，和低功耗序列互连设备连接到外围设备平台。
-ms.assetid: E85BDD36-7ECE-47DB-A770-E28DA8383BA2
+description: SoC 集成线路广泛使用简单、低 pin 计数和低功耗串行互连，以便连接到平台外围设备。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5df6feb0afeb28f71b737e9600d527a680947aa5
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 989fb0c80bd1eccfde23647fbfb671625faaff25
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67353953"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96783585"
 ---
 # <a name="simple-peripheral-bus-spb"></a>简单外设总线 (SPB)
 
 
-简单的芯片 (SoC) 集成电路进行广泛使用的系统，用于连接到平台外围设备互连低 pin 计数和低功耗的序列。 I²C、 SPI 和 UARTs 是示例。 对于基于 SoC 的平台，Windows 提供了常规的简单外围总线 （存储） 硬件抽象和这种抽象形式需要高级配置和电源接口 (ACPI) 命名空间的新支持。
+芯片上的系统 (SoC) 集成线路广泛使用简单、低 pin 计数和低功耗串行互连，以便连接到平台外围设备。 例如，UARTs。 对于基于 SoC 的平台，Windows 为简单的外围总线 (SPB) 硬件提供常规抽象，此抽象需要高级配置和电源接口 (ACPI) 命名空间中的新支持。
 
-## <a name="spb-controller-devices"></a>存储控制器设备
+## <a name="spb-controller-devices"></a>SPB 控制器设备
 
 
-存储控制器设备标识以及分配供应商的硬件 ID 的命名空间中 (\_HID) 和一组使用的资源 (\_CRS)。
+在命名空间中标识一个 SPB 控制器设备，其中包含供应商分配的硬件 ID (\_ HID) 和 (CRS) 使用的一组资源 \_ 。
 
-### <a name="spb-namespace-objects"></a>存储命名空间对象
+### <a name="spb-namespace-objects"></a>SPB 命名空间对象
 
-存储控制器和外围设备连接到它们，通过 ACPI 枚举。 使用串行总线连接资源描述符描述它们之间的连接。 详细信息，请参阅部分 6.4.3.8，"连接描述符"的[ACPI 5.0 规范](https://uefi.org/specifications)。
+通过 ACPI 枚举 SPB 控制器和连接到它们的外围设备。 使用串行总线连接资源描述符描述它们之间的连接。 有关详细信息，请参阅 [ACPI 5.0 规范](https://uefi.org/specifications)的 "连接描述符" 一节。
 
-### <a name="spb-resource-descriptors"></a>存储资源描述符
+### <a name="spb-resource-descriptors"></a>SPB 资源描述符
 
-与 GPIO 连接情况一样，存储连接均由正在使用的设备，通过新的资源描述符操作系统描述。 通用串行总线资源描述符用于声明 I²C 连接、 SPI 连接和 UART 连接，并且可以扩展以在将来支持其他串行总线类型。
+与 GPIO 连接情况一样，通过使用新的资源描述符，使用设备将 SPB 连接介绍给操作系统。 通用串行总线资源描述符用于声明 I e 连接、SPI 连接和 UART 连接，并且可以进行扩展以支持将来的其他串行总线类型。
 
-用于这些描述符的资源模板宏 19.5.55，部分所述"I2CSerialBus （I2C 串行总线连接资源描述符宏）"的[ACPI 5.0 规范](https://uefi.org/specifications)。
+有关这些描述符的资源模板宏，请参阅 [ACPI 5.0 规范](https://uefi.org/specifications)的 "I2CSERIALBUS (I2C 串行总线连接资源描述符宏) " 一节。
 
 ### <a name="genericserialbus-opregions"></a>GenericSerialBus OpRegions
 
-此外与 GPIO 类似，ACPI 5.0 定义 OpRegion 用于存储控制器，GenericSerialBus （部分 5.5.2.4.5 ACPI 5.0 规范）。 由于 SPBs 通信总线，GenericSerialBus OpRegions 支持各种协议用于访问存储的目标设备。 有关详细信息，请参阅 》 的部分 5.5.2.4.5.3，"使用 GenericSerialBus 协议"， [ACPI 5.0 规范](https://uefi.org/specifications)。
+与 GPIO 类似，ACPI 5.0 定义了 OpRegion 以与 SPB 控制器一起使用，GenericSerialBus (5.5.2.4.5 的 ACPI 5.0 规范) 。 由于 SPBs 是通信总线，因此 GenericSerialBus OpRegions 支持用于访问 SPB 目标设备的各种协议。 有关详细信息，请参阅 [ACPI 5.0 规范](https://uefi.org/specifications)的 "使用 GenericSerialBus 协议" 部分。
 
-通常使用 SPBs，是 ASL 控制方法，以与设备操作系统的驱动程序共享到的存储目标设备的访问权限的必要条件。 若要确保这些访问的同步，ACPI 5.0 定义设备锁定互斥体 (\_DLM) 对象。 有关详细信息，请参阅部分 5.7.5 [ACPI 5.0 规范](https://uefi.org/specifications)。
+通常使用 SPBs，ASL 控制方法需要使用该设备的操作系统驱动程序来共享对 SPB 目标设备的访问。 为了确保这些访问的同步，ACPI 5.0 (DLM) 对象定义设备锁互斥体 \_ 。 有关详细信息，请参阅 [ACPI 5.0 规范](https://uefi.org/specifications)的5.7.5 部分。
 
  
 

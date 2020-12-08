@@ -1,7 +1,6 @@
 ---
 title: 编写 ISR
 description: 编写 ISR
-ms.assetid: d696d683-e010-4a5c-ba2d-f536ab5f38b2
 keywords:
 - 中断服务例程 WDK 内核，写入
 - Isr WDK 内核，写入
@@ -10,12 +9,12 @@ keywords:
 - I/o WDK 内核，中断
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b9cf6ba1ee0b51c50d19a8fc9218846ab4e29fb0
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: 510cacff42ab6f248d6fe0fd3526b5641351c3d3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89402840"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96782607"
 ---
 # <a name="writing-an-isr"></a>编写 ISR
 
@@ -25,7 +24,7 @@ ms.locfileid: "89402840"
 
 生成中断的物理设备的驱动程序必须具有至少一个中断服务例程 (ISR) 。 ISR 必须执行适用于设备的任何操作，以消除中断，其中可能包括阻止设备中断。 然后，只应执行保存状态并将 DPC 排队以按优先级 (IRQL) 完成 i/o 操作所需的操作，而不是 ISR 执行的操作。
 
-驱动程序的 ISR 在中断上下文中执行，在某个系统分配的 *DIRQL*中，由 *SynchronizeIrql* 参数指定给 [**IoConnectInterruptEx**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioconnectinterruptex)。
+驱动程序的 ISR 在中断上下文中执行，在某个系统分配的 *DIRQL* 中，由 *SynchronizeIrql* 参数指定给 [**IoConnectInterruptEx**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioconnectinterruptex)。
 
 Isr 会被中断。 系统分配的 DIRQL 较高的其他设备可能会中断，或者可能会在任何时间中断高 IRQL 系统中断。
 
@@ -61,7 +60,7 @@ Isr 会被中断。 系统分配的 DIRQL 较高的其他设备可能会中断�
 
 对于可能的最短间隔，ISR 必须在 DIRQL 上运行。 按照此指导原则增加了计算机中每台设备的 i/o 吞吐量，因为在 DIRQL 中运行时，会屏蔽系统为其分配了一个较低或相等 IRQL 值的所有中断。
 
-驱动程序中断对象的 *SynchronizeIrql* ，当驱动程序调用 **IoConnectInterrupt**时指定，它确定驱动程序的 ISR 的执行 DIRQL。 有关详细信息，请参阅 [同步对设备数据的访问](synchronizing-access-to-device-data.md)。
+驱动程序中断对象的 *SynchronizeIrql* ，当驱动程序调用 **IoConnectInterrupt** 时指定，它确定驱动程序的 ISR 的执行 DIRQL。 有关详细信息，请参阅 [同步对设备数据的访问](synchronizing-access-to-device-data.md)。
 
  
 

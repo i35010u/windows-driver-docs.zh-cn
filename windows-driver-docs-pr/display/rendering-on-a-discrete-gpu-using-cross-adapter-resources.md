@@ -1,15 +1,14 @@
 ---
 title: 使用跨适配器资源在独立的 GPU 中进行渲染
 description: 从 Windows 8.1 开始，离散 GPU 使用跨适配器资源作为位块传输的目标 (bitblt) 或呈现操作，但不使用拉伸或颜色转换。操作系统请求用户模式显示驱动程序在其上执行 bitblt 或当前操作的资源。集成的 GPU 使用跨适配器资源作为桌面窗口管理器 (DWM) 进行组合时的纹理。GDI 硬件加速的呈现目标。显示主。不作为三维操作的呈现目标。
-ms.assetid: 88CE2D2F-BBD8-4CE4-9183-BBFB0659990E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3c1838c34b093d5c7a646fd1ac2b2dab2434cb55
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 7e864b28e32a99bf2248a5b428659ca502feb8aa
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89067272"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96783997"
 ---
 # <a name="span-iddisplayrendering_on_a_discrete_gpu_using_cross-adapter_resourcesspanrendering-on-a-discrete-gpu-using-cross-adapter-resources"></a><span id="display.rendering_on_a_discrete_gpu_using_cross-adapter_resources"></span>使用跨适配器资源在独立的 GPU 中进行渲染
 
@@ -47,7 +46,7 @@ ms.locfileid: "89067272"
 ![应用用于在离散 gpu 上呈现的混合图形直接翻转模型。](images/hybrid-graphics-arch-flip.png)
 
 1.  Direct3D 运行时指示离散 GPU 的用户模式显示驱动程序为每个交换链图面创建一个跨适配器资源。
-2.  在离散 GPU 上，如果直接翻转模式可用，Direct3D 运行时可能会设置[**D3DDDI \_ ALLOCATIONINFO**](/windows-hardware/drivers/ddi/d3dukmdt/ns-d3dukmdt-_d3dddi_allocationinfo)结构的**主**成员和**VidPnSourceId**成员。 调用 [*pfnAllocateCb*](/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_allocatecb) 函数时，应传递这些成员值。
+2.  在离散 GPU 上，如果直接翻转模式可用，Direct3D 运行时可能会设置 [**D3DDDI \_ ALLOCATIONINFO**](/windows-hardware/drivers/ddi/d3dukmdt/ns-d3dukmdt-_d3dddi_allocationinfo)结构的 **主** 成员和 **VidPnSourceId** 成员。 调用 [*pfnAllocateCb*](/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_allocatecb) 函数时，应传递这些成员值。
 3.  Direct3D 运行时指示集成 GPU 的用户模式显示驱动程序打开将由 DWM 管理的跨适配器资源。
 4.  使用呈现目标纹理作为目标，在离散 GPU 上呈现应用程序。 请参阅图中的 "Render" 操作。
 5.  当应用程序调用 **当前** 方法时，Direct3D 运行时将调用离散 GPU 的用户模式驱动程序的 [*BltDXGI*](/windows-hardware/drivers/ddi/dxgiddi/ns-dxgiddi-dxgi_ddi_base_functions) (或 *pfnBlt*) 函数，以对跨适配器资源执行复制。 然后，运行时调用离散 GPU 的用户模式驱动程序的 [*PresentDXGI*](/windows-hardware/drivers/ddi/dxgiddi/ns-dxgiddi-dxgi_ddi_base_functions) (或 *pfnPresent*) 函数，并将 source 设置为跨适配器资源，并将目标分配设置为 **NULL**。 请参阅图中的 "复制" 操作。

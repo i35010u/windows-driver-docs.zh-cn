@@ -1,15 +1,14 @@
 ---
 title: 标识（SoftwareInfo - 特权应用程序）
 description: 标识（SoftwareInfo - 特权应用程序）
-ms.assetid: 405ec2ee-ea4a-468b-b75b-365ffce03cdb
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f9d4be123822b4894563b5630c359a47cb656abc
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: c164559e396f61021ed00d63677cbf992985b904
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89403472"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96782314"
 ---
 # <a name="identity-softwareinfo---priviliged-applications"></a>标识（SoftwareInfo - 特权应用程序）
 
@@ -38,19 +37,19 @@ ms.locfileid: "89403472"
 <tr class="header">
 <th>Attribute</th>
 <th>类型</th>
-<th>必选</th>
-<th>说明</th>
+<th>必须</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>名称</p></td>
+<td><p>“属性”</p></td>
 <td><p>tns： AsciiIdentifierType</p></td>
 <td><p>是</p></td>
 <td><p>应用程序清单文件中指定的应用程序的名称。</p></td>
 </tr>
 <tr class="even">
-<td><p>发布者</p></td>
+<td><p>Publisher</p></td>
 <td><p>tns： DistinguishedNameType</p></td>
 <td><p>是</p></td>
 <td><p>应用程序的发布者标识。</p></td>
@@ -82,7 +81,7 @@ ms.locfileid: "89403472"
 <thead>
 <tr class="header">
 <th>元素</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>

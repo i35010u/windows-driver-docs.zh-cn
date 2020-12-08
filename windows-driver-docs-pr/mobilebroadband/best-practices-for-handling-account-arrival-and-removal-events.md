@@ -1,15 +1,14 @@
 ---
 title: 处理帐户到达和删除事件的最佳做法
 description: 处理帐户到达和删除事件的最佳做法
-ms.assetid: e299a920-a27e-4832-b81d-1562f86f37e2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 17a0dd62e69650d95c39d07392247a2695e39b8f
-ms.sourcegitcommit: 7e4d9508198a30bdc1cb6eda83852dda4e42213e
+ms.openlocfilehash: c64d13ebea9b058d632d41c030c9bcb78eabe23e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89304302"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96782495"
 ---
 # <a name="best-practices-for-handling-account-arrival-and-removal-events"></a>处理帐户到达和删除事件的最佳做法
 

@@ -1,20 +1,19 @@
 ---
 title: ConnectionInfo
 description: ConnectionInfo
-ms.assetid: bbdba286-4d28-46b6-bafa-83cbddd883ae
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 464350735044c190486fe9b18d9b944d59fb957d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c1af7880bbc08debe3962f0c737b2c9947afbe67
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63387877"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96782473"
 ---
 # <a name="connectioninfo"></a>ConnectionInfo
 
 
-ConnectionInfo 元素指定对于指定的运算符连接的列表。
+ConnectionInfo 元素为指定的运算符指定连接列表。
 
 ## <a name="span-idusagespanspan-idusagespanspan-idusagespanusage"></a><span id="Usage"></span><span id="usage"></span><span id="USAGE"></span>使用情况
 
@@ -36,9 +35,9 @@ ConnectionInfo 元素指定对于指定的运算符连接的列表。
 </colgroup>
 <thead>
 <tr class="header">
-<th>特性</th>
-<th>在任务栏的搜索框中键入</th>
-<th>必需</th>
+<th>Attribute</th>
+<th>类型</th>
+<th>必须</th>
 <th>描述</th>
 </tr>
 </thead>
@@ -47,11 +46,11 @@ ConnectionInfo 元素指定对于指定的运算符连接的列表。
 <td><p>AccessString</p></td>
 <td><p>xs:string</p></td>
 <td><p>否</p></td>
-<td><p>名称和国家/地区的运算符。</p>
-<p>例如：Contoso （阿根廷）</p></td>
+<td><p>操作员的名称和国家/地区。</p>
+<p>示例： Contoso (阿根廷) </p></td>
 </tr>
 <tr class="even">
-<td><p>Username</p></td>
+<td><p>用户名</p></td>
 <td><p>xs:string</p></td>
 <td><p>否</p></td>
 <td><p>用户名用于连接到 Internet。</p></td>
@@ -66,31 +65,31 @@ ConnectionInfo 元素指定对于指定的运算符连接的列表。
 <td><p>FriendlyName</p></td>
 <td><p>xs:string</p></td>
 <td><p>否</p></td>
-<td><p>显示 Windows 连接管理器中的 APN 下拉列表框中的值。</p></td>
+<td><p>"接入点" 下拉框中的 "Windows 连接管理器" 中显示的值。</p></td>
 </tr>
 <tr class="odd">
 <td><p>购买</p></td>
 <td><p>xs:boolean</p></td>
 <td><p>是</p></td>
-<td><p>表示是否应为采购或 Internet 使用访问字符串。</p></td>
+<td><p>指示是否应将访问字符串用于购买或 Internet。</p></td>
 </tr>
 <tr class="even">
 <td><p>Internet</p></td>
 <td><p>xs:boolean</p></td>
 <td><p>是</p></td>
-<td><p>表示是否应为采购或 Internet 使用访问字符串。</p></td>
+<td><p>指示是否应将访问字符串用于购买或 Internet。</p></td>
 </tr>
 <tr class="odd">
 <td><p>AutoConnectOrder</p></td>
-<td><p>xs:positiveinteger</p></td>
+<td><p>xs： positiveinteger</p></td>
 <td><p>否</p></td>
-<td><p>确定 Windows 尝试连接到每个中 APNs 的顺序<a href="connectioninfolist.md" data-raw-source="[ConnectionInfoList](connectioninfolist.md)">ConnectionInfoList</a>元素。</p></td>
+<td><p>确定 Windows 尝试连接到 <a href="connectioninfolist.md" data-raw-source="[ConnectionInfoList](connectioninfolist.md)">ConnectionInfoList</a> 元素中的每个 APNs 的顺序。</p></td>
 </tr>
 <tr class="even">
 <td><p>压缩</p></td>
 <td><p>xs:token</p></td>
 <td><p>否</p></td>
-<td><p>指定是否将标头和数据传输使用的数据链接压缩。</p>
+<td><p>指定是否在数据链路上使用压缩来标头和数据传输。</p>
 <p>值：启用或禁用</p></td>
 </tr>
 <tr class="odd">
@@ -98,19 +97,19 @@ ConnectionInfo 元素指定对于指定的运算符连接的列表。
 <td><p>xs:token</p></td>
 <td><p>否</p></td>
 <td><p>指定用于激活 PDP 上下文的身份验证协议。</p>
-<p>值：无、 PAP、 CHAP 中或 MsCHAPv2</p></td>
+<p>值： NONE、PAP、CHAP 或 Eap-mschapv2</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-## <a name="span-idchildelementsspanspan-idchildelementsspanspan-idchildelementsspanchild-elements"></a><span id="Child_elements"></span><span id="child_elements"></span><span id="CHILD_ELEMENTS"></span>子元素
+## <a name="span-idchild_elementsspanspan-idchild_elementsspanspan-idchild_elementsspanchild-elements"></a><span id="Child_elements"></span><span id="child_elements"></span><span id="CHILD_ELEMENTS"></span>子元素
 
 
-没有子元素。
+没有任何子元素。
 
-## <a name="span-idparentelementsspanspan-idparentelementsspanspan-idparentelementsspanparent-elements"></a><span id="Parent_elements"></span><span id="parent_elements"></span><span id="PARENT_ELEMENTS"></span>父元素
+## <a name="span-idparent_elementsspanspan-idparent_elementsspanspan-idparent_elementsspanparent-elements"></a><span id="Parent_elements"></span><span id="parent_elements"></span><span id="PARENT_ELEMENTS"></span>父元素
 
 
 <table>
@@ -127,14 +126,14 @@ ConnectionInfo 元素指定对于指定的运算符连接的列表。
 <tbody>
 <tr class="odd">
 <td><p><a href="connectioninfolist.md" data-raw-source="[ConnectionInfoList](connectioninfolist.md)">ConnectionInfoList</a></p></td>
-<td><p>APN 数据库中的运算符指定的详细信息。</p></td>
+<td><p>指定 APN 数据库中操作员的详细信息。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-## <a name="span-idxsdspanspan-idxsdspanxsd"></a><span id="XSD"></span><span id="xsd"></span>XSD
+## <a name="span-idxsdspanspan-idxsdspanxsd"></a><span id="XSD"></span><span id="xsd"></span>XSD.EXE
 
 
 ``` syntax

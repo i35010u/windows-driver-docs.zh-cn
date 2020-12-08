@@ -1,17 +1,16 @@
 ---
 title: 宏块控制命令结构的第一部分
 description: 宏块控制命令结构的第一部分
-ms.assetid: b282adac-3bf3-4477-a817-371d37b174a5
 keywords:
 - macroblocks WDK DirectX VA，通用命令结构
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cd89397e833bd63136de0ce82bf183255b56c3e4
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 2c53ca2feee6906b5b4340953be96eebe66d6db7
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89065450"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96783291"
 ---
 # <a name="first-part-of-macroblock-control-command-structure"></a>宏块控制命令结构的第一部分
 
@@ -29,7 +28,7 @@ ms.locfileid: "89065450"
 <thead>
 <tr class="header">
 <th align="left">成员</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -58,7 +57,7 @@ ms.locfileid: "89065450"
 
 ### <a name="span-idwmbaddressspanspan-idwmbaddressspanspan-idwmbaddressspanwmbaddress"></a><span id="wMBaddress"></span><span id="wmbaddress"></span><span id="WMBADDRESS"></span>wMBaddress
 
-**WMBaddress**结构成员指定当前宏块在光栅扫描顺序中的宏块地址。 下表显示了宏块地址的示例。
+**WMBaddress** 结构成员指定当前宏块在光栅扫描顺序中的宏块地址。 下表显示了宏块地址的示例。
 
 <table>
 <colgroup>
@@ -93,11 +92,11 @@ ms.locfileid: "89065450"
 
  
 
-**WPicWidthInMBminus1**和**WPicHeightInMBminus1**地址是[**DXVA \_ PictureParameters**](/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_pictureparameters)结构的成员。
+**WPicWidthInMBminus1** 和 **WPicHeightInMBminus1** 地址是 [**DXVA \_ PictureParameters**](/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_pictureparameters)结构的成员。
 
 ### <a name="span-idwmbtypespanspan-idwmbtypespanspan-idwmbtypespanwmbtype"></a><span id="wMBtype"></span><span id="wmbtype"></span><span id="WMBTYPE"></span>wMBtype
 
-**WMBtype**结构成员指定正在处理的宏块类型。 此成员包含一组定义 macroblocks 和运动向量处理方式的位。 **BPic4MVallowed**、 **bPicScanMethod**、 **bPicBackwardPrediction**、 **bPicStructure**和**bPicScanFixed**地址都是[**DXVA \_ PictureParameters**](/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_pictureparameters)结构的成员。 **BConfigHostInverseScan**地址是[**DXVA \_ ConfigPictureDecode**](/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_configpicturedecode)结构的成员。
+**WMBtype** 结构成员指定正在处理的宏块类型。 此成员包含一组定义 macroblocks 和运动向量处理方式的位。 **BPic4MVallowed**、 **bPicScanMethod**、 **bPicBackwardPrediction**、 **bPicStructure** 和 **bPicScanFixed** 地址都是 [**DXVA \_ PictureParameters**](/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_pictureparameters)结构的成员。 **BConfigHostInverseScan** 地址是 [**DXVA \_ ConfigPictureDecode**](/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_configpicturedecode)结构的成员。
 
 <table>
 <colgroup>
@@ -107,7 +106,7 @@ ms.locfileid: "89065450"
 <thead>
 <tr class="header">
 <th align="left">Bits</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -185,15 +184,15 @@ ms.locfileid: "89065450"
 
 如果 macroblocks 是预先编码的，则它们具有关联的运动矢量值。 这些值基于是否将 macroblocks 用于字段编码或框架编码图片而生成。 任何实现都应正确地考虑每个使用的宏块类型 (尤其是对于字段结构化图片或双重质数运动) 。
 
-本部分中的以下两个表说明了 *IntraMacroblock*、 *MotionForward*、 *MotionBackward*、 *MotionType*、 *MvertFieldSel*和 **MVector** 的有效组合。 **MVector** 包含运动向量的水平和垂直分量。 其余的变量和标志指定运动矢量运算。 这取决于处理的宏块类型，以及是否将 macroblocks 用于框架编码或字段编码图片。
+本部分中的以下两个表说明了 *IntraMacroblock*、 *MotionForward*、 *MotionBackward*、 *MotionType*、 *MvertFieldSel* 和 **MVector** 的有效组合。 **MVector** 包含运动向量的水平和垂直分量。 其余的变量和标志指定运动矢量运算。 这取决于处理的宏块类型，以及是否将 macroblocks 用于框架编码或字段编码图片。
 
 此部分中 (的下表中显示的值) 在下列情况下发生：
 
--   *H261LoopFilter*、 *Motion4MV*和 **bPicOBMC** 为零。
+-   *H261LoopFilter*、 *Motion4MV* 和 **bPicOBMC** 为零。
 
--   除非**bPicStructure**为 2 (底部字段) ，否则*PicCurrentField*标志为零。 在这种情况下， *PicCurrentField* 为1。
+-   除非 **bPicStructure** 为 2 (底部字段) ，否则 *PicCurrentField* 标志为零。 在这种情况下， *PicCurrentField* 为1。
 
-**MVector** 是 [**DXVA \_ MBctrl \_ p \_ HostResidDiff \_ 1**](/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_mbctrl_p_hostresiddiff_1) 和 [**DXVA \_ MBctrl \_ p \_ OffHostIDCT \_ 1**](/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_mbctrl_p_offhostidct_1) 结构的成员。 *IntraMacroblock*、 *MotionForward*、 *MotionBackward*、 *MotionType*、 *MvertFieldSel*、 *H261LoopFilter*和*MOTION4MV*标志和变量都包含在位域**wMBtype** \_ wMBtype \_ p \_ DXVA \_ 1 和 MBctrl \_ HostResidDiff \_ p \_ DXVA \_ 1 结构的 MBctrl 成员中。 **bPicOBMC** 是 [**DXVA \_ PictureParameters**](/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_pictureparameters) 结构的成员。 *PicCurrentField*标志派生自 DXVA PictureParameters 的**bPicStructure**成员 \_ 。
+**MVector** 是 [**DXVA \_ MBctrl \_ p \_ HostResidDiff \_ 1**](/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_mbctrl_p_hostresiddiff_1) 和 [**DXVA \_ MBctrl \_ p \_ OffHostIDCT \_ 1**](/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_mbctrl_p_offhostidct_1) 结构的成员。 *IntraMacroblock*、 *MotionForward*、 *MotionBackward*、 *MotionType*、 *MvertFieldSel*、 *H261LoopFilter* 和 *MOTION4MV* 标志和变量都包含在位域 **wMBtype** \_ wMBtype \_ p \_ DXVA \_ 1 和 MBctrl \_ HostResidDiff \_ p \_ DXVA \_ 1 结构的 MBctrl 成员中。 **bPicOBMC** 是 [**DXVA \_ PictureParameters**](/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_pictureparameters) 结构的成员。 *PicCurrentField* 标志派生自 DXVA PictureParameters 的 **bPicStructure** 成员 \_ 。
 
 查看本部分中的下表时，请注意以下事项：
 
@@ -209,7 +208,7 @@ ms.locfileid: "89065450"
 
 ### <a name="span-idframe-structured_picturesspanspan-idframe-structured_picturesspanspan-idframe-structured_picturesspanframe-structured-pictures"></a><span id="Frame-Structured_Pictures"></span><span id="frame-structured_pictures"></span><span id="FRAME-STRUCTURED_PICTURES"></span>框架结构化图片
 
-下表显示了在[**DXVA \_ PictureParameters**](/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_pictureparameters)结构的**bPicStructure**成员等于 3) 时 (框架结构化图片的元素设置的有效组合。
+下表显示了在 [**DXVA \_ PictureParameters**](/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_pictureparameters)结构的 **bPicStructure** 成员等于 3) 时 (框架结构化图片的元素设置的有效组合。
 
 <table>
 <colgroup>
@@ -360,7 +359,7 @@ vector "[3] [0] [1] &lt; &lt; 1
 
 ### <a name="span-idfield-structured_picturesspanspan-idfield-structured_picturesspanspan-idfield-structured_picturesspanfield-structured-pictures"></a><span id="Field-Structured_Pictures"></span><span id="field-structured_pictures"></span><span id="FIELD-STRUCTURED_PICTURES"></span>字段结构化图片
 
-下表显示了当[**DXVA \_ PictureParameters**](/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_pictureparameters)结构的**bPicStructure**成员等于1或 2) 时，字段结构化图片的元素设置的有效组合 (。
+下表显示了当 [**DXVA \_ PictureParameters**](/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_pictureparameters)结构的 **bPicStructure** 成员等于1或 2) 时，字段结构化图片的元素设置的有效组合 (。
 
 <table>
 <colgroup>
@@ -507,7 +506,7 @@ vector "[3] [0] [1] &lt; &lt; 1
 <thead>
 <tr class="header">
 <th align="left">值</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -541,7 +540,7 @@ vector "[3] [0] [1] &lt; &lt; 1
 
  
 
-**注意**   Average 运算符 ( # B1 s1 + s2 + 1) &gt; &gt; 1) 用于 MPEG-2、mpeg-2 半样本预测筛选、双向平均和双质数与组合的双质数相同。 在右移位之前，H-p 双向平均运算符不会增加 + 1 的偏移量。 [**DXVA \_ PictureParameters**](/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_pictureparameters)的**bBidirectionalAveragingMode**成员确定使用哪些方法。
+**注意**  Average 运算符 ( # B1 s1 + s2 + 1) &gt; &gt; 1) 用于 MPEG-2、mpeg-2 半样本预测筛选、双向平均和双质数与组合的双质数相同。 在右移位之前，H-p 双向平均运算符不会增加 + 1 的偏移量。 [**DXVA \_ PictureParameters**](/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_pictureparameters)的 **bBidirectionalAveragingMode** 成员确定使用哪些方法。
 
  
 

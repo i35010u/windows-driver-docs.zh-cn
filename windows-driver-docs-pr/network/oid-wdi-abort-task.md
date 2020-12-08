@@ -1,24 +1,23 @@
 ---
 title: OID_WDI_ABORT_TASK
 description: OID_WDI_ABORT_TASK 是向下发送以取消特定挂起任务的属性。
-ms.assetid: 0E454DC9-1CED-497F-90A8-7065883BB945
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 OID_WDI_ABORT_TASK 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 069564197a72c3fb41c7df42fa5630c70756d87d
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: d0a6022ff99eaffc2bcf3f8293fd4c6461ac364d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89213307"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96783793"
 ---
 # <a name="oid_wdi_abort_task"></a>OID \_ WDI \_ 中止 \_ 任务
 
 
 OID \_ WDI \_ 中止 \_ 任务是向下发送以取消特定挂起任务的属性。
 
-| 作用域 | 设置序列化任务 | 正常执行时间 (秒)  |
+| 范围 | 设置序列化任务 | 正常执行时间 (秒)  |
 |-------|--------------------------|---------------------------------|
 | 端口  | 否                       | 1                               |
 
@@ -72,7 +71,7 @@ OID \_ WDI \_ 中止 \_ 任务是向下发送以取消特定挂起任务的属�
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
-<td><p>Windows Server 2016</p></td>
+<td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
 <td><p>标头</p></td>

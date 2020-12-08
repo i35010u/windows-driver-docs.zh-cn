@@ -1,19 +1,18 @@
 ---
 title: 编写 AdapterControl 例程
 description: 编写 AdapterControl 例程
-ms.assetid: a5a7501f-ba4f-441e-be07-6a1b7fac9938
 keywords:
 - AdapterControl 例程，编写
 - 适配器对象 WDK 内核，编写 AdapterControl 例程
 - DMA 传输 WDK 内核，编写 AdapterControl 例程
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c06ffe8526d4c96bc5e50215aa05d0cfa32d0d94
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 81046eff209fa433c147365aeaccd69fb1305feb
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89190229"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96782613"
 ---
 # <a name="writing-adaptercontrol-routines"></a>编写 AdapterControl 例程
 

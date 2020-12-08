@@ -1,18 +1,17 @@
 ---
 title: 报告 DirectX 8.0 样式 Direct3D 功能
 description: 报告 DirectX 8.0 样式 Direct3D 功能
-ms.assetid: a03a7cbc-95be-4251-8e3a-bef4a093f03d
 keywords:
 - DirectX 8.0 发行说明 WDK Windows 2000 显示，报告功能
 - D3DCAPS8
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 856d96728a415e003a91c8c74e49dd07dd6d9891
-ms.sourcegitcommit: eba1bbec165d56f64d4c1ab5c3f7465dcd299ae3
+ms.openlocfilehash: b04a0d899f2e23381fd651507c8f18e83111c8cf
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91510599"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96783963"
 ---
 # <a name="reporting-directx-80-style-direct3d-capabilities"></a>报告 DirectX 8.0 样式 Direct3D 功能
 
@@ -20,7 +19,7 @@ ms.locfileid: "91510599"
 ## <span id="ddk_reporting_directx_8_0_style_direct3d_capabilities_gg"></span><span id="DDK_REPORTING_DIRECTX_8_0_STYLE_DIRECT3D_CAPABILITIES_GG"></span>
 
 
-为了响应 D3DGDI2 类型 GETD3DCAPS8 类型的**GetDriverInfo2**查询 \_ \_ ，驱动程序应将已初始化的 D3DCAPS8 结构复制到[**DD \_ lpvData**](/windows/win32/api/ddrawint/ns-ddrawint-dd_getdriverinfodata)结构的**GETDRIVERINFODATA**字段。 此结构是 DirectX 8.0 的新增功能，并用于从驱动程序到运行时以及从运行时到应用程序的报告功能。
+为了响应 D3DGDI2 类型 GETD3DCAPS8 类型的 **GetDriverInfo2** 查询 \_ \_ ，驱动程序应将已初始化的 D3DCAPS8 结构复制到 [**DD \_ lpvData**](/windows/win32/api/ddrawint/ns-ddrawint-dd_getdriverinfodata)结构的 **GETDRIVERINFODATA** 字段。 此结构是 DirectX 8.0 的新增功能，并用于从驱动程序到运行时以及从运行时到应用程序的报告功能。
 
 D3DCAPS8 提供了一些字段，这些字段介绍了 DirectX 8.0 的新增功能和从 DirectX 7.0 中的功能。 D3DCAPS8 不是现有功能的完整替换。 尽管此结构与受支持的图面格式的信息 () 是从 API 角度来看设备功能的完整说明，但并不适合于 DDI。 运行时使用驱动程序报告的 DirectDraw 功能作为支持的 surface 功能 (DDSCAPS) ，即使这些信息不是直接通过 DirectX 8.0 API 公开的。
 

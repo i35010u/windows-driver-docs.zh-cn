@@ -1,15 +1,14 @@
 ---
 title: 获取当前已注册网络的信息
 description: 获取当前已注册网络的信息
-ms.assetid: 94321933-fc93-4203-8de1-e715d66fd1e3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f0f1ccc9c78dab551124193b7387ebd3900448c5
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: badea3030798b599732e3e864c5c5be8249e93b2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89217313"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96782341"
 ---
 # <a name="get-information-about-the-currently-registered-network"></a>获取当前已注册网络的信息
 

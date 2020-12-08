@@ -1,7 +1,6 @@
 ---
 title: 编写 Reinitialize 例程
 description: 编写 Reinitialize 例程
-ms.assetid: 47a7dd3f-e474-49c7-adf2-11f6e788c261
 keywords:
 - 标准驱动程序例程 WDK 内核，重新初始化例程
 - 驱动程序例程 WDK 内核，重新初始化例程
@@ -13,12 +12,12 @@ keywords:
 - 初始化驱动程序 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6ccff2b413c19870a453f18903ace8e049278c08
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 59c286e0d5c9057c90602ce09abc5c2204a932e1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89190959"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96782621"
 ---
 # <a name="writing-a-reinitialize-routine"></a>编写 Reinitialize 例程
 
@@ -28,13 +27,13 @@ ms.locfileid: "89190959"
 
 需要在各个阶段初始化自身的任何驱动程序都可以包含一个重新 [*初始化*](/windows-hardware/drivers/ddi/ntddk/nc-ntddk-driver_reinitialize) 例程。 重新 *初始化* 例程将在 [**DriverEntry**](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_initialize) 例程返回控件和其他驱动程序自行初始化之后调用。 通常，重新 *初始化* 例程执行必须在另一个驱动程序启动之后完成的任务。
 
-例如，系统的键盘类驱动程序 **kbdclass**支持 PnP 和旧键盘端口。 如果系统包含一个或多个 PnP 管理器无法检测到的旧版端口，则键盘类驱动程序必须为每个端口创建一个设备对象，并在端口的较低级别驱动程序上创建层级。 因此，在调用**DriverEntry**和[*AddDevice*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_add_device)例程并加载其他驱动程序之后，该类驱动程序具有要调用的*初始化*例程。 重新 *初始化* 例程将检测端口，为其创建一个设备对象，并将该驱动程序与该设备的其他较低级驱动程序进行分层。
+例如，系统的键盘类驱动程序 **kbdclass** 支持 PnP 和旧键盘端口。 如果系统包含一个或多个 PnP 管理器无法检测到的旧版端口，则键盘类驱动程序必须为每个端口创建一个设备对象，并在端口的较低级别驱动程序上创建层级。 因此，在调用 **DriverEntry** 和 [*AddDevice*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_add_device)例程并加载其他驱动程序之后，该类驱动程序具有要调用的 *初始化* 例程。 重新 *初始化* 例程将检测端口，为其创建一个设备对象，并将该驱动程序与该设备的其他较低级驱动程序进行分层。
 
 驱动程序的 [**DriverEntry**](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_initialize) 例程调用 [**IoRegisterDriverReinitialization**](/windows-hardware/drivers/ddi/ntddk/nf-ntddk-ioregisterdriverreinitialization) 将重新 *初始化* 例程排队等待执行。 重新 *初始化* 例程还可以调用 **IoRegisterDriverReinitialization** 本身，这将导致例程被重新排队。 要重新 *初始化* 的参数之一指示它被调用的次数。
 
-对 **IoRegisterDriverReinitialization** 的调用可以包含指向驱动程序定义的上下文数据的指针，系统会将该指针作为输入提供给进行重新 *初始化*。 如果重新*初始化*例程使用注册表，则上下文数据应包括传递到**DriverEntry**例程的*RegistryPath*指针，因为此指针不是重新*初始化*例程的输入参数。
+对 **IoRegisterDriverReinitialization** 的调用可以包含指向驱动程序定义的上下文数据的指针，系统会将该指针作为输入提供给进行重新 *初始化*。 如果重新 *初始化* 例程使用注册表，则上下文数据应包括传递到 **DriverEntry** 例程的 *RegistryPath* 指针，因为此指针不是重新 *初始化* 例程的输入参数。
 
-如果**DriverEntry**未返回状态成功，则不会调用重新*初始化*例程 \_ 。
+如果 **DriverEntry** 未返回状态成功，则不会调用重新 *初始化* 例程 \_ 。
 
 通常，具有重新 *初始化* 例程的驱动程序是控制 PnP 和旧设备的更高级别的驱动程序。 除了为 pnp 管理器检测 (的设备创建设备对象外，PnP 管理器还会调用驱动程序的 *AddDevice* 例程) ，驱动程序还必须为 pnp 管理器不枚举的旧设备创建设备对象。 重新 *初始化* 例程将创建这些设备对象，并通过基础设备的下一个较低驱动程序对驱动程序进行分层。
 

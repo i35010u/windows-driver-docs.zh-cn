@@ -1,7 +1,6 @@
 ---
 title: Windows 中的 DVD 解码器支持
 description: Windows 中的 DVD 解码器支持
-ms.assetid: 3a77b6d1-6095-4cf8-8cd4-2e6d80d171c8
 keywords:
 - DVD 解码器微型驱动程序 WDK，Windows 支持
 - 解码器微型驱动程序 WDK DVD，Windows 支持
@@ -9,12 +8,12 @@ keywords:
 - 解码器微型驱动程序 WDK DVD，写入
 ms.date: 06/16/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f598d34f8e141ce2a4ffd367354f3b6ee1cfb21
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: a76205ce9d224af8ceff7ac87e98b84a8126ce69
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89186355"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96782069"
 ---
 # <a name="dvd-decoder-support-in-windows"></a>Windows 中的 DVD 解码器支持
 
@@ -23,7 +22,7 @@ ms.locfileid: "89186355"
 
 Windows 98/Me 和更高版本以及 Windows 2000 及更高版本支持 DVD 解码器。
 
-若要编写 DVD 解码器微型驱动程序，微型驱动程序必须包含 WDK 中提供的 *ksmedia* 和 *ntddcdvd* 标头文件。 微型驱动程序还必须链接到*stream .lib*、 *ksguid*、dxapi *ks.lib*库和*dxapi.lib*库。
+若要编写 DVD 解码器微型驱动程序，微型驱动程序必须包含 WDK 中提供的 *ksmedia* 和 *ntddcdvd* 标头文件。 微型驱动程序还必须链接到 *stream .lib*、 *ksguid*、dxapi *ks.lib* 库和 *dxapi.lib* 库。
 
 在 Windows XP 下，以下组件支持 DVD 解码和播放：
 
@@ -54,7 +53,7 @@ Windows 98/Me 和更高版本以及 Windows 2000 及更高版本支持 DVD 解�
 
     此筛选器将 DirectShow 接口转换为 WDM 连接和流体系结构属性。 它创建 (也就是说，实例化) 每个要在硬件中解码的数据类型的设备对象，如音频和视频数据类型。 此筛选器支持允许扩展新接口的插件。
 
-  - DirectShow 关闭标题解码筛选器
+  - DirectShow Closed-Caption 解码筛选器
 
     此筛选器将 DVD 视频流中的隐藏式字幕数据转换为文本图像。
 

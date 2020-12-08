@@ -1,15 +1,14 @@
 ---
 title: PrintCapabilities 文档示例
 description: 下面的示例中使用的关键字仅用于说明，不过它们通常符合3D 制造的打印架构关键字。
-ms.assetid: 0FCEFC25-C22F-44BD-9693-B3DBE6F6D314
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4d17fcf00c019f7240648a1188b1328cc95a8ab5
-ms.sourcegitcommit: ab64169b631da4db3f0b895600f1c38a22cb7e2e
+ms.openlocfilehash: 44b76cc1e4317fb9b0470577fe61ca8de65662f4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75652751"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96783621"
 ---
 # <a name="printcapabilities-document-example"></a>PrintCapabilities 文档示例
 

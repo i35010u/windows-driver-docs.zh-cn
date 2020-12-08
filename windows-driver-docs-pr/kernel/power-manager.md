@@ -1,7 +1,6 @@
 ---
 title: 电源管理器
 description: 电源管理器
-ms.assetid: f7727368-6edd-427b-9fb3-02f80538807b
 keywords:
 - power manager WDK 内核
 - 使用情况管理器 WDK 电源管理
@@ -13,12 +12,12 @@ keywords:
 - 关闭电源管理 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 358d949e02f2cd44391844e17aa4b838b4978aac
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: c8f82737b3950f2a1bfcd9c0bec9a755f91f82e4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89184437"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96783877"
 ---
 # <a name="power-manager"></a>电源管理器
 
@@ -42,7 +41,7 @@ ms.locfileid: "89184437"
 
 -   控制面板设置
 
-有关详细信息，请参阅 [Windows 内核模式电源管理器](windows-kernel-mode-power-manager.md)。
+有关详细信息，请参阅 [Windows Kernel-Mode 电源管理器](windows-kernel-mode-power-manager.md)。
 
  
 

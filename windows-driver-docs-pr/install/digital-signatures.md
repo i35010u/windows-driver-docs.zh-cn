@@ -1,7 +1,6 @@
 ---
 title: 数字签名
 description: 数字签名
-ms.assetid: 637212b2-bc57-414b-9a06-07f79d9264f9
 keywords:
 - 驱动程序包数字签名 WDK
 - 包数字签名 WDK
@@ -14,17 +13,17 @@ keywords:
 - 证书 WDK，关于数字签名
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7b3db6ceb0bd00145d815e02ffe8be1eddb0e3bf
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: d74a66deb4b7e856dc617663fcbd40eee3df31e2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91733525"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96782751"
 ---
 # <a name="digital-signatures"></a>数字签名
 
 
-数字签名基于 microsoft 公钥基础结构技术，它基于 Microsoft [Authenticode](authenticode.md) 与受信任证书颁发机构的基础结构的基础结构)  (CAs。 验证码（基于行业标准）允许供应商或*软件发布者*使用 CA 颁发的代码签名[数字证书](digital-certificates.md)对文件或文件集合进行签名 (如[驱动程序包](driver-packages.md)) 中。
+数字签名基于 microsoft 公钥基础结构技术，它基于 Microsoft [Authenticode](authenticode.md) 与受信任证书颁发机构的基础结构的基础结构)  (CAs。 验证码（基于行业标准）允许供应商或 *软件发布者* 使用 CA 颁发的代码签名 [数字证书](digital-certificates.md)对文件或文件集合进行签名 (如 [驱动程序包](driver-packages.md)) 中。
 
 Windows 使用有效的数字签名来验证以下各项：
 
@@ -56,7 +55,7 @@ Windows 使用有效的数字签名来验证以下各项：
     -   发行者的证书安装在 " [受信任的发行者" 证书存储](trusted-publishers-certificate-store.md)中。
     -   颁发发行者证书的 CA 的根证书安装在 " [受信任的根证书颁发机构" 证书存储](trusted-root-certification-authorities-certificate-store.md)中。
 
-有关即插即用 (PnP) 设备安装如何使用[驱动程序包](driver-packages.md)的 [目录文件](catalog-files.md)的数字签名的详细信息，请参阅[数字签名和 PnP 设备安装](digital-signatures-and-pnp-device-installation--windows-vista-and-late.md)。
+有关即插即用 (PnP) 设备安装如何使用 [驱动程序包](driver-packages.md)的 [目录文件](catalog-files.md)的数字签名的详细信息，请参阅 [数字签名和 PnP 设备安装](digital-signatures-and-pnp-device-installation--windows-vista-and-late.md)。
 
 有关 Microsoft 公钥基础结构技术、代码签名和数字签名的详细信息，请参阅 [代码签名简介](/previous-versions/windows/internet-explorer/ie-developer/platform-apis/ms537361(v=vs.85)) 和 [代码签名最佳做法](/windows-hardware/test/hlk/)。
 

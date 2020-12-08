@@ -1,7 +1,6 @@
 ---
 title: Bug 检查 0xBD INVALID_HIBERNATED_STATE
-description: INVALID_HIBERNATED_STATE bug 检查具有 0x000000BD 值。
-ms.assetid: DB386A20-EE6F-4E2B-8FFD-51CCE0A8AEAC
+description: INVALID_HIBERNATED_STATE bug 检查的值为0x000000BD。
 keywords:
 - Bug 检查 0xBD INVALID_HIBERNATED_STATE
 - INVALID_HIBERNATED_STATE
@@ -13,23 +12,23 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 12e2743bf42e9c928065623e17d743cf9fbea02b
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: a29fef9b23558a77b31c1f0ebc3f95a32a490869
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67518998"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96783547"
 ---
-# <a name="bug-check-0xbd-invalidhibernatedstate"></a>Bug 检查 0xBD：INVALID\_HIBERNATED\_STATE
+# <a name="bug-check-0xbd-invalid_hibernated_state"></a>Bug 检查0xBD：无效的 \_ 休眠 \_ 状态
 
 
-无效\_HIBERNATED\_状态 bug 检查的值为 0x000000BD。 这表示休眠的内存映像与当前的硬件配置不匹配。 当系统从休眠状态恢复，并且发现硬件时系统已休眠已发生更改，将发生此错误检查。
+无效的 \_ 休眠 \_ 状态 bug 检查的值为0x000000BD。 这表明休眠的内存映像与当前硬件配置不匹配。 当系统从休眠状态恢复，并发现在系统休眠时硬件发生了更改时，会发生此错误检测。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题面向程序员。 如果您是在使用计算机时收到蓝屏错误代码的客户，请参阅[蓝屏错误疑难解答](https://www.windows.com/stopcode)。
 
 
-## <a name="invalidhibernatedstate-parameters"></a>无效\_HIBERNATED\_状态参数
+## <a name="invalid_hibernated_state-parameters"></a>无效的 \_ 休眠 \_ 状态参数
 
 
 <table>
@@ -46,22 +45,22 @@ ms.locfileid: "67518998"
 <tbody>
 <tr class="odd">
 <td align="left">1</td>
-<td align="left"><p>无效的硬件。</p>
-<p>1 :已安装的处理器数比以前少是休眠</p>
-<p>参数 2 中的值：休眠状态前的处理器数</p>
-<p>Param 3 中的值：后休眠的处理器数</p></td>
+<td align="left"><p>硬件无效。</p>
+<p>1：已安装的处理器数小于休眠之前</p>
+<p>Param 2 中的值：休眠之前的处理器数</p>
+<p>参数3中的值：休眠后的处理器数</p></td>
 </tr>
 <tr class="even">
 <td align="left">2</td>
-<td align="left">每个参数 1</td>
+<td align="left">每个参数1</td>
 </tr>
 <tr class="odd">
 <td align="left">3</td>
-<td align="left">每个参数 1</td>
+<td align="left">每个参数1</td>
 </tr>
 <tr class="even">
 <td align="left">4</td>
-<td align="left">保留</td>
+<td align="left">预留</td>
 </tr>
 </tbody>
 </table>

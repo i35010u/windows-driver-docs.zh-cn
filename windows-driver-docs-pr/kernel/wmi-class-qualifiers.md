@@ -1,7 +1,6 @@
 ---
 title: WMI 类限定符
 description: WMI 类限定符
-ms.assetid: 62a00184-59b7-496d-b523-f4adb879d402
 keywords:
 - 类限定符 WDK WMI
 - MOF 类限定符 WDK WMI
@@ -12,12 +11,12 @@ keywords:
 - WMI WDK 内核，类
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e56dc0101b4ba123a51f9ed1636cd1f0a034e6a5
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 91c544926406a24eb804983c2f5c3c5f9b42e603
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102856"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96782679"
 ---
 # <a name="wmi-class-qualifiers"></a>WMI 类限定符
 
@@ -27,7 +26,7 @@ ms.locfileid: "90102856"
 
 下表列出了必需的和可选的 MOF 类限定符，它们可用于描述驱动程序的 WMI 数据块和事件块。
 
-*嵌入类*（作为另一个类中的数据项单独使用，不作为 WMI 数据块公开）只需要**WMI**和**Guid**限定符。 其他限定符与嵌入的类无关，将被忽略。 有关嵌入类的详细信息，请参阅 [驱动程序定义的 WMI 数据项](driver-defined-wmi-data-items.md)。
+*嵌入类*（作为另一个类中的数据项单独使用，不作为 WMI 数据块公开）只需要 **WMI** 和 **Guid** 限定符。 其他限定符与嵌入的类无关，将被忽略。 有关嵌入类的详细信息，请参阅 [驱动程序定义的 WMI 数据项](driver-defined-wmi-data-items.md)。
 
 **动态** 和 **静态** 是标准 MOF 限定符。 有关其他标准 MOF 限定符的信息，请参阅 Microsoft Windows SDK。
 
@@ -39,16 +38,16 @@ ms.locfileid: "90102856"
 <thead>
 <tr class="header">
 <th>限定符</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><strong>Dynamic</strong></p></td>
+<td><p><strong>动态</strong></p></td>
 <td><p>指示数据访问接口在运行时提供数据块的实例，而不是在 MOF 文件中提供静态数据的实例。 驱动程序向 WMI 注册的所有数据和事件块必须使用 <strong>动态</strong> 限定符定义。</p></td>
 </tr>
 <tr class="even">
-<td><p><strong>Static</strong></p></td>
+<td><p><strong>静态</strong></p></td>
 <td><p>指示数据访问接口在 MOF 文件中提供静态数据的实例，而不是在运行时提供数据块的实例。 由于静态数据驻留在 WMI 数据库中，驱动程序不会将静态数据块注册到 WMI。 MOF 文件中标记为 <strong>静态</strong> 的类不应由驱动程序的 <a href="/windows-hardware/drivers/kernel/irp-mn-reginfo" data-raw-source="[&lt;strong&gt;IRP_MN_REGINFO&lt;/strong&gt;](./irp-mn-reginfo.md)"><strong>IRP_MN_REGINFO</strong></a> 或 <a href="/windows-hardware/drivers/kernel/irp-mn-reginfo-ex" data-raw-source="[&lt;strong&gt;IRP_MN_REGINFO_EX&lt;/strong&gt;](./irp-mn-reginfo-ex.md)"><strong>IRP_MN_REGINFO_EX</strong></a> 处理程序注册。</p></td>
 </tr>
 <tr class="odd">

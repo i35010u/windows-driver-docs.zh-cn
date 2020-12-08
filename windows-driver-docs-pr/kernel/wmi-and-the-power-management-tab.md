@@ -1,7 +1,6 @@
 ---
 title: WMI 和电源管理选项卡
 description: WMI 和电源管理选项卡
-ms.assetid: ff270fc0-806b-4014-ba9c-9c321a10c893
 keywords:
 - WMI WDK 内核，属性表
 - 属性表 WDK WMI
@@ -10,12 +9,12 @@ keywords:
 - 属性页 WDK WMI
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: eac78d6879bac2515781680ed78ee2b15ec48925
-ms.sourcegitcommit: 255ecc7bee00df8bee1f097f6ba3e4179aba0251
+ms.openlocfilehash: ae3f60261074a5bc3ddd95b52797dcd76ef80bf9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93328142"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96782695"
 ---
 # <a name="wmi-and-the-power-management-tab"></a>WMI 和电源管理选项卡
 

@@ -1,15 +1,14 @@
 ---
 title: 接收 Hyper-v 可扩展交换机配置更改 OID 请求
 description: 接收有关 Hyper-V 可扩展交换机配置更改的 OID 请求
-ms.assetid: 9149BFF3-59B3-4563-A1A1-34FDD115964E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 49897bccaf8add625e0de53085785a530b632d95
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 481758612ad9a80c006bf77ce28fdde231e58059
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89216940"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96782181"
 ---
 # <a name="receiving-oid-requests-about-hyper-v-extensible-switch-configuration-changes"></a>接收有关 Hyper-V 可扩展交换机配置更改的 OID 请求
 
@@ -51,7 +50,7 @@ ms.locfileid: "89216940"
 
     例如，协议驱动程序会发出 [OID \_ 交换机 \_ NIC \_ save](./oid-switch-property-add.md) ，通知底层扩展插件为可扩展交换机上的指定端口保存运行时数据。 在将 Hyper-v 状态保存或迁移到另一台主机时，会发出这些 Oid。 同样，协议驱动程序会发出 [OID \_ 交换机 \_ NIC \_ RESTORE](./oid-switch-nic-restore.md) ，以通知扩展运行时端口数据正在可扩展交换机上还原。
 
-    有关此类型 OID 通知的详细信息，请参阅 [管理 Hyper-v 可扩展交换机运行时数据](managing-hyper-v-extensible-switch-run-time-data.md)。
+    有关此类型 OID 通知的详细信息，请参阅 [管理 Hyper-v 可扩展交换机 Run-Time 数据](managing-hyper-v-extensible-switch-run-time-data.md)。
 
 可扩展交换机扩展微型端口驱动程序负责完成这些 OID 请求。 但是，对于某些可扩展的开关 OID 请求，基础扩展可能会失败，从而导致拒绝通知。 例如，当可扩展交换机协议驱动程序向筛选器驱动程序通知有关将在可扩展交换机上创建的新端口时，它会发出 oid [ \_ 交换机 \_ 端口 \_ CREATE](./oid-switch-port-create.md)的 oid 设置请求。 基础筛选或转发扩展可以通过完成 OID 请求来拒绝端口创建，状态 \_ 数据 \_ 不 \_ 接受。
 

@@ -1,7 +1,6 @@
 ---
 title: DIF_POWERMESSAGEWAKE
 description: DIF_POWERMESSAGEWAKE
-ms.assetid: 73f6e763-0900-4297-ac88-20bbb3ac424d
 keywords:
 - DIF_POWERMESSAGEWAKE 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 42aab82e7030e2bad0e529bb417f4690a6489e52
-ms.sourcegitcommit: 06581a21ca066ddfedab7f9bb7f2159cfac452fd
+ms.openlocfilehash: bbdcf8b86de0a81f62b8b49b1c50835f6cc1922c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91145470"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96782783"
 ---
 # <a name="dif_powermessagewake"></a>DIF_POWERMESSAGEWAKE
 
@@ -66,10 +65,10 @@ DIF_POWERMESSAGEWAKE 请求允许安装程序提供 Windows 在设备属性的 "
 提供一个指向 [**SP_DEVINFO_DATA**](/windows/win32/api/setupapi/ns-setupapi-sp_devinfo_data) 结构的指针，该结构在设备信息集中标识设备。
 
 <a href="" id="device-installation-parameters-"></a>设备安装参数   
-与*DeviceInfoData*关联的设备安装参数 ([**SP_DEVINSTALL_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-sp_devinstall_params_a)) 。
+与 *DeviceInfoData* 关联的设备安装参数 ([**SP_DEVINSTALL_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-sp_devinstall_params_a)) 。
 
 <a href="" id="class-installation-parameters"></a>类安装参数  
-[**SP_POWERMESSAGEWAKE_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-sp_powermessagewake_params_a)结构与*DeviceInfoData*关联。
+[**SP_POWERMESSAGEWAKE_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-sp_powermessagewake_params_a)结构与 *DeviceInfoData* 关联。
 
 ### <a name="installer-output"></a>安装程序输出
 
@@ -114,7 +113,7 @@ DIF_POWERMESSAGEWAKE 请求允许安装程序提供 Windows 在设备的电源�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**SP_DEVINFO_DATA**](/windows/win32/api/setupapi/ns-setupapi-sp_devinfo_data)

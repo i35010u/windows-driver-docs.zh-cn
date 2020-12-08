@@ -1,7 +1,6 @@
 ---
 title: 信息泄露
 description: 信息泄露
-ms.assetid: e5794acb-44f7-4775-854b-69884f60658a
 keywords:
 - 系统威胁模型 WDK 文件系统，信息泄露
 - 安全威胁模型 WDK 文件系统，信息泄露
@@ -11,12 +10,12 @@ keywords:
 - 泄露 WDK 文件系统
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3863a7f8b1c01dd9943dba8767f6c48c8e011c7b
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 8016ec69c4af18b4bdba723d4ac9873ad3cada35
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89065041"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96783257"
 ---
 # <a name="information-disclosure"></a>信息泄露
 
@@ -24,15 +23,15 @@ ms.locfileid: "89065041"
 ## <span id="ddk_information_disclosure_if"></span><span id="DDK_INFORMATION_DISCLOSURE_IF"></span>
 
 
-对于驱动程序，信息泄露通常涉及到通过不良缓冲区处理向应用程序公开信息。 例如，具有缓冲 i/o 请求的驱动程序通常通过设置*IOStatus*块结构的**信息**成员，指示要返回的数据量。 然后，i/o 管理器使用该信息将结果复制回应用程序的缓冲区。
+对于驱动程序，信息泄露通常涉及到通过不良缓冲区处理向应用程序公开信息。 例如，具有缓冲 i/o 请求的驱动程序通常通过设置 *IOStatus* 块结构的 **信息** 成员，指示要返回的数据量。 然后，i/o 管理器使用该信息将结果复制回应用程序的缓冲区。
 
-如果驱动程序指示返回的数据越多，i/o 管理器将从 *SystemBuffer*复制其他数据。 但是，如果驱动程序未填充 *SystemBuffer*，则该内存中的任何内容都将返回到应用程序，这可能会向应用程序公开敏感数据。 见证网络驱动程序的问题，其中可能会向其他系统发送额外信息，因为未清除使用的数据缓冲区。 例如，ICMP ping 响应可能包含附加信息。 无意间公开数据的这一问题非常真实，并发生在各种系统中。
+如果驱动程序指示返回的数据越多，i/o 管理器将从 *SystemBuffer* 复制其他数据。 但是，如果驱动程序未填充 *SystemBuffer*，则该内存中的任何内容都将返回到应用程序，这可能会向应用程序公开敏感数据。 见证网络驱动程序的问题，其中可能会向其他系统发送额外信息，因为未清除使用的数据缓冲区。 例如，ICMP ping 响应可能包含附加信息。 无意间公开数据的这一问题非常真实，并发生在各种系统中。
 
 对于文件系统或文件系统筛选器驱动程序，增加了向不允许访问数据的用户泄露文件信息的风险。 可以通过多种不同的方式实现此目的：
 
 -   使用 [**ZwCreateFile**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntcreatefile) 打开文件的筛选器驱动程序，然后通过其中间句柄提供对数据的访问。 默认情况下， **ZwCreateFile** 函数将打开文件并绕过安全检查，因为请求来自内核模式。 因此，使用此句柄的访问可能会泄露通常不适用于应用程序的信息。
 
-    如果筛选器驱动程序要强制执行访问检查以确保它不会公开不应公开的数据，则筛选器驱动程序应 \_ \_ \_ 在[**ZwCreateFile**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntcreatefile)函数的*ObjectAttributes*参数中指定 OBJ 强制访问检查。
+    如果筛选器驱动程序要强制执行访问检查以确保它不会公开不应公开的数据，则筛选器驱动程序应 \_ \_ \_ 在 [**ZwCreateFile**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntcreatefile)函数的 *ObjectAttributes* 参数中指定 OBJ 强制访问检查。
 
 -   一种筛选器驱动程序，用于打开内核模式下的句柄 (绕过访问检查) 但不指定 OBJ \_ 内核 \_ 句柄。 因此，创建的句柄会置于当前进程的句柄表中。 此句柄具有对数据的完全访问权限，然后在用户模式下可见。 恶意应用程序可能会监视此类句柄，并尝试使用它们来访问数据。
 

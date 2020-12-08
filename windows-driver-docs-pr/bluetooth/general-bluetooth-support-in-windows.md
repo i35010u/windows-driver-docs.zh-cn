@@ -1,28 +1,29 @@
 ---
 title: Windows 10 中的蓝牙版本和配置文件支持
 description: 提供有关 Windows 10 中的蓝牙版本和配置文件支持的信息
-ms.assetid: F43DA802-37D0-4527-AA51-DA3C0AEF6914
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8e0ecbd64c5bf08e8caaffffd6c31dd8c6b995bd
-ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
+ms.openlocfilehash: 4703bf191f7d311845c01962291d17f4e78ba8b9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90010481"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96784195"
 ---
 # <a name="bluetooth-version-and-profile-support-in-windows-10"></a>Windows 10 中的蓝牙版本和配置文件支持
 
 
-**注意**   正在查找蓝牙音频设备的驱动程序？ 请参阅 [修复与蓝牙音频设备的连接和无线显示器](https://go.microsoft.com/fwlink/p/?LinkID=623629)。
+**注意**  
+正在查找蓝牙音频设备的驱动程序？ 请参阅 [修复与蓝牙音频设备的连接和无线显示器](https://go.microsoft.com/fwlink/p/?LinkID=623629)。
 
  
 
-**注意**   有关 Windows 10 之前的蓝牙支持的信息，请参阅[以前的 Windows 版本中的蓝牙支持](bluetooth-support-in-previous-windows-versions.md)。
+**注意**  
+有关 Windows 10 之前的蓝牙支持的信息，请参阅 [以前的 Windows 版本中的蓝牙支持](bluetooth-support-in-previous-windows-versions.md)。
 
  
 
-## <a name="span-idwhich_bluetooth_versions_does_windows_10_support_spanspan-idwhich_bluetooth_versions_does_windows_10_support_spanspan-idwhich_bluetooth_versions_does_windows_10_support_spanwhich-bluetooth-versions-does-windows10-support"></a><span id="Which_Bluetooth_versions_does_Windows_10_support_"></span><span id="which_bluetooth_versions_does_windows_10_support_"></span><span id="WHICH_BLUETOOTH_VERSIONS_DOES_WINDOWS_10_SUPPORT_"></span>Windows 10 支持哪些蓝牙版本？
+## <a name="span-idwhich_bluetooth_versions_does_windows_10_support_spanspan-idwhich_bluetooth_versions_does_windows_10_support_spanspan-idwhich_bluetooth_versions_does_windows_10_support_spanwhich-bluetooth-versions-does-windows-10-support"></a><span id="Which_Bluetooth_versions_does_Windows_10_support_"></span><span id="which_bluetooth_versions_does_windows_10_support_"></span><span id="WHICH_BLUETOOTH_VERSIONS_DOES_WINDOWS_10_SUPPORT_"></span>Windows 10 支持哪些蓝牙版本？
 
 
 适用于桌面版的 Windows 10 (家庭版、专业版、企业版和教育版) 和 Windows 10 移动版支持以下蓝牙版本：
@@ -38,7 +39,7 @@ ms.locfileid: "90010481"
 
 Windows Server 2016 不支持蓝牙。
 
-## <a name="span-idwhich_bluetooth_profiles_have_in-box_support_in_windows_10_spanspan-idwhich_bluetooth_profiles_have_in-box_support_in_windows_10_spanspan-idwhich_bluetooth_profiles_have_in-box_support_in_windows_10_spanwhich-bluetooth-profiles-have-in-box-support-in-windows10"></a><span id="Which_Bluetooth_profiles_have_in-box_support_in_Windows_10_"></span><span id="which_bluetooth_profiles_have_in-box_support_in_windows_10_"></span><span id="WHICH_BLUETOOTH_PROFILES_HAVE_IN-BOX_SUPPORT_IN_WINDOWS_10_"></span>Windows 10 中支持哪些蓝牙配置文件？
+## <a name="span-idwhich_bluetooth_profiles_have_in-box_support_in_windows_10_spanspan-idwhich_bluetooth_profiles_have_in-box_support_in_windows_10_spanspan-idwhich_bluetooth_profiles_have_in-box_support_in_windows_10_spanwhich-bluetooth-profiles-have-in-box-support-in-windows-10"></a><span id="Which_Bluetooth_profiles_have_in-box_support_in_Windows_10_"></span><span id="which_bluetooth_profiles_have_in-box_support_in_windows_10_"></span><span id="WHICH_BLUETOOTH_PROFILES_HAVE_IN-BOX_SUPPORT_IN_WINDOWS_10_"></span>Windows 10 中支持哪些蓝牙配置文件？
 
 ### <a name="windows-10-for-desktop-editions-in-box-bluetooth-profiles"></a>适用于桌面版的 Windows 10 内置蓝牙配置文件：
 
@@ -56,7 +57,7 @@ Windows 10 (版本 1803) 支持蓝牙版本5.0 和以下蓝牙用户配置文件
 - 拨号网络配置文件 (DUN 1.1) 
 - 一般访问配置文件 (间距) 
 - 一般音频/视频分发配置文件 (GAVDP 1.2) 
-- 无人参与的配置文件 (HFP 1.6)  
+- Hands-Free 配置文件 (HFP 1.6)  
 - 硬拷贝电缆更换配置文件 (HCRP 1.2) 
 - GATT 配置文件中的 HID (HOGP 1.0)  
 - 人体学接口设备 (HID 1.1) 
@@ -77,7 +78,7 @@ Windows 10 (版本 1803) 支持蓝牙版本5.0 和以下蓝牙用户配置文件
 - 音频/视频远程控制配置文件 (AVRCP 1.3) 
 - 蓝牙 LE 泛型属性 (GATT) 客户端
 - 设备 ID 配置文件 (已 1.3) 
-- 无人参与的配置文件 (HFP 1.6)  
+- Hands-Free 配置文件 (HFP 1.6)  
 - GATT 配置文件中的 HID (HOGP 1.0)  
 - 人体学接口设备 (HID 1.1) 
 - 消息访问配置文件 (1.1) 
@@ -126,7 +127,7 @@ Windows 10 (版本 1803) 支持蓝牙版本5.0 和以下蓝牙用户配置文件
 </tr>
 <tr class="odd">
 <td align="left"><p>HFP 1。5</p></td>
-<td align="left"><p>无人参与的配置文件</p></td>
+<td align="left"><p>Hands-Free 配置文件</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>HID 1。1</p></td>
@@ -185,7 +186,7 @@ Windows 10 (版本 1803) 支持蓝牙版本5.0 和以下蓝牙用户配置文件
 </tr>
 <tr class="odd">
 <td align="left"><p>HFP 1。6</p></td>
-<td align="left"><p>无人参与的配置文件</p></td>
+<td align="left"><p>Hands-Free 配置文件</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>HID 1。1</p></td>
@@ -220,7 +221,7 @@ Windows 10 (版本 1803) 支持蓝牙版本5.0 和以下蓝牙用户配置文件
 
  
 
-## <a name="span-idnew_features_and_recommendations_for_windows_10_and_laterspanspan-idnew_features_and_recommendations_for_windows_10_and_laterspanspan-idnew_features_and_recommendations_for_windows_10_and_laterspannew-features-and-recommendations-for-windows10-and-later"></a><span id="New_features_and_recommendations_for_Windows_10_and_later"></span><span id="new_features_and_recommendations_for_windows_10_and_later"></span><span id="NEW_FEATURES_AND_RECOMMENDATIONS_FOR_WINDOWS_10_AND_LATER"></span>适用于 Windows 10 及更高版本的新功能和建议
+## <a name="span-idnew_features_and_recommendations_for_windows_10_and_laterspanspan-idnew_features_and_recommendations_for_windows_10_and_laterspanspan-idnew_features_and_recommendations_for_windows_10_and_laterspannew-features-and-recommendations-for-windows-10-and-later"></a><span id="New_features_and_recommendations_for_Windows_10_and_later"></span><span id="new_features_and_recommendations_for_windows_10_and_later"></span><span id="NEW_FEATURES_AND_RECOMMENDATIONS_FOR_WINDOWS_10_AND_LATER"></span>适用于 Windows 10 及更高版本的新功能和建议
 
 
 若要详细了解不同版本的 Windows 10 的新功能和硬件开发人员建议，请参阅[硬件组件指南](/windows-hardware/design/component-guidelines/components)部分中的[蓝牙](/windows-hardware/design/component-guidelines/bluetooth)。

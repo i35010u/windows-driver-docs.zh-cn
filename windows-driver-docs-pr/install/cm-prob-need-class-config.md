@@ -1,17 +1,16 @@
 ---
 title: CM_PROB_NEED_CLASS_CONFIG
 description: CM_PROB_NEED_CLASS_CONFIG
-ms.assetid: e9604fcb-61c2-4b94-af53-c9278bc05dd0
 keywords:
 - CM_PROB_NEED_CLASS_CONFIG
 ms.date: 02/28/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 28860c16bee71e2045790b780d2511060cbb63a0
-ms.sourcegitcommit: f63852446e614c985a65f599cdfe788bdb0c6089
+ms.openlocfilehash: 2b6c8b42aa2580042d86ace25ce8e0ef332a4954
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87425736"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96783109"
 ---
 # <a name="code-56---cm_prob_need_class_config"></a>代码 56 - CM_PROB_NEED_CLASS_CONFIG
 
@@ -24,7 +23,7 @@ ms.locfileid: "87425736"
 
 ### <a name="display-message"></a>显示消息
 
-"Windows 仍在为此设备设置类配置。 （代码56） "
+"Windows 仍在为此设备设置类配置。  (代码 56) "
 
 
 ## <a name="for-driver-developers"></a>面向驱动程序开发人员

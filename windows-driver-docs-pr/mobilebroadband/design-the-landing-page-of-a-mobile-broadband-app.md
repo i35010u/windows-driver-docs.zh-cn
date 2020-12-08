@@ -1,15 +1,14 @@
 ---
 title: 设计移动宽带应用的登陆页面
 description: 设计移动宽带应用的登陆页面
-ms.assetid: 3a42886f-8a32-4576-af31-65443bb718ca
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2a861764fd6a17a4c750c8cccfcc2e982d3780b2
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 1cd2aa1c884761ac8f2b869542cbf1872344023f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89215329"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96782397"
 ---
 # <a name="design-the-landing-page-of-a-mobile-broadband-app"></a>设计移动宽带应用的登陆页面
 

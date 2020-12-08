@@ -1,15 +1,14 @@
 ---
 title: 分区布局
 description: 分区布局
-ms.assetid: 59ac7ec7-1b96-4fe1-a221-d8422e60072d
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 006a7789ce3815c95ba1727b15789a00fff71d4e
-ms.sourcegitcommit: ea3215e9d5afe073ed6d01fb6dddf31d95ef3b63
+ms.openlocfilehash: fd5575bf6d3207c77260831ab8aec43d8e81eb27
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94673775"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96784185"
 ---
 # <a name="windows-10-mobile-partition-layout"></a>Windows 10 移动版分区布局
 
@@ -61,17 +60,17 @@ ms.locfileid: "94673775"
 <td align="left"><p>C:\DPP</p></td>
 <td align="left"><p>否</p></td>
 <td align="left"><p>8 MB</p></td>
-<td align="left"><p>不适用</p></td>
+<td align="left"><p>空值</p></td>
 <td align="left"><p>Microsoft</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>SV 分区</p></td>
 <td align="left"><p>UEFI 固件和其他 SV 特定的分区</p></td>
-<td align="left"><p>不适用</p></td>
+<td align="left"><p>空值</p></td>
 <td align="left"><p>无装入点</p></td>
 <td align="left"><p>可能</p></td>
 <td align="left"><p>变量</p></td>
-<td align="left"><p>不适用</p></td>
+<td align="left"><p>空值</p></td>
 <td align="left"><p>SV/OEM</p></td>
 </tr>
 <tr class="odd">
@@ -81,7 +80,7 @@ ms.locfileid: "94673775"
 <td align="left"><p>C:\ESP</p></td>
 <td align="left"><p>否</p></td>
 <td align="left"><p>32 MB (最小) </p></td>
-<td align="left"><p>不适用</p></td>
+<td align="left"><p>空值</p></td>
 <td align="left"><p>Microsoft</p></td>
 </tr>
 <tr class="even">
@@ -91,7 +90,7 @@ ms.locfileid: "94673775"
 <td align="left"><p>C:\CrashDump</p></td>
 <td align="left"><p>是</p></td>
 <td align="left"><p>变量-此分区的大小取决于用于生成映像的 OEMInput 文件中的 <strong>SOC</strong> 元素的值。</p></td>
-<td align="left"><p>不适用</p></td>
+<td align="left"><p>空值</p></td>
 <td align="left"><p>Microsoft</p></td>
 </tr>
 <tr class="odd">
@@ -113,7 +112,7 @@ ms.locfileid: "94673775"
 <td align="left"><p>C：\Data</p></td>
 <td align="left"><p>是</p></td>
 <td align="left"><p>其他分区未使用 eMMC 存储空间的剩余部分。 页面文件使用约 256 MB。</p></td>
-<td align="left"><p>不适用</p></td>
+<td align="left"><p>空值</p></td>
 <td align="left"><p>Microsoft</p></td>
 </tr>
 <tr class="odd">
@@ -123,7 +122,7 @@ ms.locfileid: "94673775"
 <td align="left"><p>变量</p></td>
 <td align="left"><p>否</p></td>
 <td align="left"><p>变量</p></td>
-<td align="left"><p>不适用</p></td>
+<td align="left"><p>空值</p></td>
 <td align="left"><p>Microsoft</p></td>
 </tr>
 </tbody>

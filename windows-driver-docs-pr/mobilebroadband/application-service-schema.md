@@ -1,15 +1,14 @@
 ---
 title: 应用程序
 description: 应用程序
-ms.assetid: 8dd55438-8097-4177-a4ad-94b0ee8d3616
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2e4e66eb04cbbb6fab7051b23433b72586e36a62
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: b8c5b7a0d2b51c580ddedcbe17232ca72330fb3c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89402914"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96782531"
 ---
 # <a name="application"></a>应用程序
 
@@ -52,7 +51,7 @@ Application 元素指定创建设备元数据包的应用程序软件的名称�
 <thead>
 <tr class="header">
 <th>元素</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>

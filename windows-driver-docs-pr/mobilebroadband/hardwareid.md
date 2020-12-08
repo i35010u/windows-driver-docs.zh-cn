@@ -1,15 +1,14 @@
 ---
 title: HardwareId (PackageInfo)
 description: HardwareId (PackageInfo)
-ms.assetid: edd05106-1bbc-45da-80cc-792d7fcce192
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0d50220f1475058fb25990244505764a67766d70
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: 2b86d2d54cf0450e34f97d5f87b7498bf0f9e4c9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89403458"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96782331"
 ---
 # <a name="hardwareid-packageinfo"></a>HardwareId (PackageInfo)
 
@@ -60,7 +59,7 @@ ms.locfileid: "89403458"
 <thead>
 <tr class="header">
 <th>元素</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>

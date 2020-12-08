@@ -1,16 +1,15 @@
 ---
 title: OID_GEN_MULTICAST_FRAMES_RCV
 description: 作为查询，OID_GEN_MULTICAST_FRAMES_RCV OID 指定接收的没有错误的多播/函数数据包的数目。
-ms.assetid: 6001dc07-43ab-420d-b29b-1138485ce218
 ms.date: 11/01/2019
 keywords: -从 Windows Vista 开始 OID_GEN_MULTICAST_FRAMES_RCV 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 5341cc1dd703e82dc7dc3eacb6a295a6bda3aa9f
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 5f9e11bbaa4b9ddec6edb746443325bfb70019cc
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89207199"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96782231"
 ---
 # <a name="oid_gen_multicast_frames_rcv"></a>OID \_ 生成 \_ 多播 \_ 帧 \_ RCV
 
@@ -57,7 +56,7 @@ ms.locfileid: "89207199"
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [OID \_ 生成 \_ 统计信息](oid-gen-statistics.md)

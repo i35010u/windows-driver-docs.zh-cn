@@ -1,18 +1,17 @@
 ---
 title: Winsock 内核简介
 description: Winsock 内核简介
-ms.assetid: 52c65b9f-e3b3-4b0d-8334-7db1abb2c971
 keywords:
 - Winsock 内核 WDK 网络，关于 Winsock 内核
 - WSK WDK 网络，关于 Winsock 内核
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d13f655dfc074f1d5a5445f0ba7c09f57bf964e2
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 04c36c2b6551bdbfa2a1b01afc35cbc415cbbb1a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89212893"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96783837"
 ---
 # <a name="introduction-to-winsock-kernel"></a>Winsock 内核简介
 
@@ -21,7 +20,7 @@ Winsock 内核 (WSK) 是 [ (NPI) 的内核模式网络编程接口 ](network-pro
 
 面向 Windows Vista 和更高版本 Microsoft Windows 的内核模式网络模块应该使用 WSK，而不是 [TDI](/previous-versions/windows/hardware/network/ff565094(v=vs.85)) ，因为 WSK 提供改进的性能和编程。 筛选器驱动程序应在 Windows Vista 上实现 [Windows 筛选平台](introduction-to-windows-filtering-platform-callout-drivers.md) ，而 TDI 客户端应实现 WSK。
 
-**注意**   Windows Vista 之后的 Microsoft Windows 版本不支持 TDI。 请改用 [Windows 筛选平台](windows-filtering-platform-callout-drivers2.md) 或 [Winsock 内核](/windows-hardware/drivers/ddi/_netvista/) 。
+**注意**  Windows Vista 之后的 Microsoft Windows 版本不支持 TDI。 请改用 [Windows 筛选平台](windows-filtering-platform-callout-drivers2.md) 或 [Winsock 内核](/windows-hardware/drivers/ddi/_netvista/) 。
 
  
 

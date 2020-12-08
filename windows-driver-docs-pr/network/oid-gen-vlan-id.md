@@ -1,16 +1,15 @@
 ---
 title: OID_GEN_VLAN_ID
 description: 作为查询，OID_GEN_VLAN_ID OID (ID) 为 NIC 报告配置的 VLAN 标识符。
-ms.assetid: 4e024951-a578-4f69-873d-879aecc96e68
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_GEN_VLAN_ID 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 6f563c6bf01e6462b24d643fe485d92c132d5557
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 844ed36e7b7872f94eb619a3918e1ba2b54a7ded
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89206727"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96782215"
 ---
 # <a name="oid_gen_vlan_id"></a>OID \_ GEN \_ VLAN \_ ID
 
@@ -65,7 +64,7 @@ VlanId, REG_DWORD
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [*MiniportInitializeEx*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_initialize)

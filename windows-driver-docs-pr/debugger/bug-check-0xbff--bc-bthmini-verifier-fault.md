@@ -1,7 +1,6 @@
 ---
 title: Bug 检查 0xBFF BC_BTHMINI_VERIFIER_FAULT
 description: BC_BTHMINI_VERIFIER_FAULT bug 检查的值为0x00000BFF。 这表明蓝牙微型端口可扩展驱动程序验证程序已捕获到冲突。
-ms.assetid: 4BB54209-89EA-455D-B850-CC2A96A43C87
 keywords:
 - Bug 检查 0xBFF BC_BTHMINI_VERIFIER_FAULT
 - BC_BTHMINI_VERIFIER_FAULT
@@ -13,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: f4eff575430c3a5375aa4bac160a5031216ad6b1
-ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
+ms.openlocfilehash: f2ba7bb612c975e619dc3019027a4d135ffb20b2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84534792"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96783533"
 ---
 # <a name="bug-check-0xbff-bc_bthmini_verifier_fault"></a>Bug 检查0xBFF： BC \_ BTHMINI \_ 验证程序 \_ 错误
 
@@ -26,7 +25,7 @@ ms.locfileid: "84534792"
 BC \_ BTHMINI \_ VERIFIER \_ 错误检查的值为0x00000BFF。 这表明蓝牙微型端口可扩展驱动程序验证程序已捕获到冲突。
 
 > [!IMPORTANT]
-> 本主题适用于程序员。 如果你是在使用计算机时收到蓝屏错误代码的客户，请参阅[排查蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题面向程序员。 如果您是在使用计算机时收到蓝屏错误代码的客户，请参阅[蓝屏错误疑难解答](https://www.windows.com/stopcode)。
 
 
 ## <a name="bc_bthmini_verifier_fault-parameters"></a>BC \_ BTHMINI \_ 验证程序 \_ 错误参数
@@ -40,7 +39,7 @@ BC \_ BTHMINI \_ VERIFIER \_ 错误检查的值为0x00000BFF。 这表明蓝牙�
 <thead>
 <tr class="header">
 <th align="left">参数</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>

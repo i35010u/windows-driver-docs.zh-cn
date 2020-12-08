@@ -1,15 +1,14 @@
 ---
 title: IssuerName
 description: IssuerName
-ms.assetid: 189c9b8f-11de-4ef2-9474-b0068b8178bc
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ff9b671a3d5ebc37a0418ce321c187f92574f451
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: 6df29742f7ab5334baeffc6fe66777cb3f81f15b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89403392"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96782311"
 ---
 # <a name="issuername"></a>IssuerName
 
@@ -52,7 +51,7 @@ IssuerName 元素指定受信任证书的颁发者名称。
 <thead>
 <tr class="header">
 <th>元素</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>

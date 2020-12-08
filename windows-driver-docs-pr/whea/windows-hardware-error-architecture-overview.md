@@ -1,16 +1,15 @@
 ---
 title: Windows 硬件错误体系结构概述
 description: Windows 硬件错误体系结构概述
-ms.assetid: 859caa70-371c-4191-baf9-52a38411164a
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 41854d10418336761aa43f5c0ef5a4659e37643f
-ms.sourcegitcommit: 1535a9ac3ec390340bb3c7e7bed9ac08ba1d2bdb
+ms.openlocfilehash: 23453b7d7a4d280f32d3ef9e43f41e247c0f455e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "91007424"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96783647"
 ---
 # <a name="windows-hardware-error-architecture-overview"></a>Windows 硬件错误体系结构概述
 

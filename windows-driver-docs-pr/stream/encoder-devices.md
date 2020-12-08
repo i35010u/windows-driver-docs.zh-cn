@@ -1,7 +1,6 @@
 ---
 title: 编码器设备
 description: 编码器设备
-ms.assetid: 156b1d6d-c6f6-4ab3-a91e-3124351c6ae5
 keywords:
 - 编码器设备 WDK AVStream
 - AVStream WDK，编码器设备
@@ -15,12 +14,12 @@ keywords:
 - 独立编码器 WDK AVStream
 ms.date: 06/16/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 6f57269629b04d9800c14798eaf03dc02f1aa305
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 692fd88f20c3ef86d98b9c32adc23212d076711f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89183828"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96782055"
 ---
 # <a name="encoder-devices"></a>编码器设备
 

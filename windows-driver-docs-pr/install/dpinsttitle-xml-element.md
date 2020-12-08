@@ -1,7 +1,6 @@
 ---
 title: dpinstTitle XML 元素
 description: dpinstTitle XML 元素
-ms.assetid: a6867874-436b-414f-9610-aea585822a91
 keywords:
 - dpinstTitle XML 元素设备和驱动程序安装
 topic_type:
@@ -12,12 +11,12 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 8c354e6d5d6cd6e4011fb5fdd82c1d3d6db5de48
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: c1d193089e7a8243b0a3b3bf9e31f687d5f9655e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89096167"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96782737"
 ---
 # <a name="dpinsttitle-xml-element"></a>dpinstTitle XML 元素
 
@@ -83,7 +82,7 @@ ms.locfileid: "89096167"
 
 如果未指定 **dpinstTitle** 元素，则 DPInst 将显示默认的 "欢迎使用" 页上显示的默认标题栏文本。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**语言**](language-xml-element.md)

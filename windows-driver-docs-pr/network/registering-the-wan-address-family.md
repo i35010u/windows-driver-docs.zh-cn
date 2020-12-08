@@ -1,7 +1,6 @@
 ---
 title: 注册 WAN 地址系列
 description: 注册 WAN 地址系列
-ms.assetid: 31443e99-24d8-4276-8345-004b0eeb05d7
 keywords:
 - CoNDIS WAN 驱动程序 WDK 网络，TAPI 地址系列
 - NdisCmRegisterAddressFamilyEx
@@ -11,12 +10,12 @@ keywords:
 - 地址系列 WDK 网络
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cb99e2d0ef05e6e03c47f7a568186b1bdb92d77b
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: c33148c9d59ffdfd1bd1062caf371432da9c17da
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89211971"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96782157"
 ---
 # <a name="registering-the-wan-address-family"></a>注册 WAN 地址系列
 

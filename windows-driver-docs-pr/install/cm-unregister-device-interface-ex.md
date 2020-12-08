@@ -1,7 +1,6 @@
 ---
 title: CM_Unregister_Device_Interface_Ex
 description: CM_Unregister_Device_Interface_Ex
-ms.assetid: d19b1377-02cc-4014-a330-7a95c98230cc
 keywords:
 - CM_Unregister_Device_Interface_ExA
 - CM_Unregister_Device_Interface_ExW
@@ -15,13 +14,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: b225df525a9847934632189eb83b00402b9b68c0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 50b7dee3a0d698b41e138cb5f670878807734886
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63385550"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96783009"
 ---
-# <a name="cmunregisterdeviceinterfaceex"></a>CM_Unregister_Device_Interface_Ex
+# <a name="cm_unregister_device_interface_ex"></a>CM_Unregister_Device_Interface_Ex
 
 此函数保留供系统使用。

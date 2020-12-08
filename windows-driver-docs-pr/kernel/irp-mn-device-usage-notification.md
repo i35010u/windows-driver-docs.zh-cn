@@ -2,16 +2,15 @@
 title: IRP_MN_DEVICE_USAGE_NOTIFICATION
 description: 系统组件发送此 IRP 来询问设备的驱动程序是否可以支持特殊文件。
 ms.date: 08/12/2017
-ms.assetid: d8287ba2-ac0a-4407-b587-a5aa5b3617a2
 keywords:
-- IRP_MN_DEVICE_USAGE_NOTIFICATION 内核模式驱动程序体系结构
+- IRP_MN_DEVICE_USAGE_NOTIFICATION Kernel-Mode 驱动程序体系结构
 ms.localizationpriority: medium
-ms.openlocfilehash: 5ff4f1211803ebc1ebd5ed40ce24d6b17042d640
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 718bd894cc818f08be30dbd5f8f5c74abc55718c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105534"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96783899"
 ---
 # <a name="irp_mn_device_usage_notification"></a>IRP \_ MN \_ 设备 \_ 使用 \_ 通知
 
@@ -32,16 +31,16 @@ ms.locfileid: "90105534"
 <a name="when-sent"></a>发送时间
 ---------
 
-系统在创建或删除页面文件、转储文件或休眠文件时发送此 IRP。 如果设备的电源管理关系超出了常规父子关系，则驱动程序可以发送此 IRP 将设备使用情况信息传播到另一个设备堆栈。 有关详细信息，请参阅[**IRP \_ MN \_ 查询 \_ 设备 \_ 关系**](irp-mn-query-device-relations.md)中的**PowerRelations**请求说明。
+系统在创建或删除页面文件、转储文件或休眠文件时发送此 IRP。 如果设备的电源管理关系超出了常规父子关系，则驱动程序可以发送此 IRP 将设备使用情况信息传播到另一个设备堆栈。 有关详细信息，请参阅 [**IRP \_ MN \_ 查询 \_ 设备 \_ 关系**](irp-mn-query-device-relations.md)中的 **PowerRelations** 请求说明。
 
 系统组件和驱动程序 \_ 在任意线程上下文中以 IRQL 被动级别发送此 IRP。
 
 ## <a name="input-parameters"></a>输入参数
 
 
-[**IO \_ 堆栈 \_ 位置**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_stack_location)结构的**UsageNotification. INPATH**成员是一个布尔值。 如果此参数为 **TRUE**，则系统将在设备上创建分页、崩溃转储或休眠文件。 当 **InPath** 为 **FALSE**时，将从设备中删除此类文件。
+[**IO \_ 堆栈 \_ 位置**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_stack_location)结构的 **UsageNotification. INPATH** 成员是一个布尔值。 如果此参数为 **TRUE**，则系统将在设备上创建分页、崩溃转储或休眠文件。 当 **InPath** 为 **FALSE** 时，将从设备中删除此类文件。
 
-**UsageNotification** 是指示文件类型的枚举。 此参数具有以下值之一： **DeviceUsageTypePaging**、 **DeviceUsageTypeDumpFile**或 **DeviceUsageTypeHibernation**。
+**UsageNotification** 是指示文件类型的枚举。 此参数具有以下值之一： **DeviceUsageTypePaging**、 **DeviceUsageTypeDumpFile** 或 **DeviceUsageTypeHibernation**。
 
 ## <a name="output-parameters"></a>输出参数
 
@@ -53,7 +52,7 @@ ms.locfileid: "90105534"
 
 驱动程序将 **Irp- &gt; IoStatus** 状态设置为 " \_ 成功" 或相应的 "错误" 状态。
 
-驱动程序不会修改 ** &gt; IoStatus** 字段; 它保持为零，由发送 Irp 的组件设置。
+驱动程序不会修改 **&gt; IoStatus** 字段; 它保持为零，由发送 Irp 的组件设置。
 
 <a name="operation"></a>操作
 ---------
@@ -90,7 +89,7 @@ ms.locfileid: "90105534"
 
     3.  在函数或筛选器驱动程序中，设置 [*IoCompletion*](/windows-hardware/drivers/ddi/wdm/nc-wdm-io_completion_routine) 例程。
 
-    4.  在函数或筛选器驱动程序中，将 " ** &gt; IoStatus** " 设置为 " \_ 成功" 状态，设置下一个堆栈位置，并将 Irp 传递到下一个较低的驱动程序和 [**IoCallDriver**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver)。 不要完成 IRP。
+    4.  在函数或筛选器驱动程序中，将 " **&gt; IoStatus** " 设置为 " \_ 成功" 状态，设置下一个堆栈位置，并将 Irp 传递到下一个较低的驱动程序和 [**IoCallDriver**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver)。 不要完成 IRP。
 
         在处理子 PDO 的 IRP 的总线驱动程序中：设置 **irp- &gt; IoStatus** 并完成 IRP ([**IoCompleteRequest**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocompleterequest)) 。
 
@@ -112,11 +111,11 @@ ms.locfileid: "90105534"
 
 -   清除设备堆栈) 上的 "在设备上 (的设备" 对象中的 "DO \_ POWER \_ PAGABLE" 位。
 
--   失败 **IRP \_ MN \_ 查询 \_ 停止 \_ 设备** 和 **IRP \_ MN \_ 查询 \_ 删除 \_ ** 设备请求。
+-   失败 **IRP \_ MN \_ 查询 \_ 停止 \_ 设备** 和 **IRP \_ MN \_ 查询 \_ 删除 \_** 设备请求。
 
 对于其设备上的 **DeviceUsageTypeDumpFile** 文件，驱动程序必须执行以下操作：
 
--   为 *DispatchRead*、 *DispatchWrite*、 *DispatchDeviceControl*和 *DispatchPower* 例程锁定内存中的代码。
+-   为 *DispatchRead*、 *DispatchWrite*、 *DispatchDeviceControl* 和 *DispatchPower* 例程锁定内存中的代码。
 
 -   请勿使设备退出 D0 状态。
 
@@ -124,11 +123,11 @@ ms.locfileid: "90105534"
 
 -   清除设备堆栈) 上的 "在设备上 (的设备" 对象中的 "DO \_ POWER \_ PAGABLE" 位。
 
--   失败 [**IRP \_ MN \_ 查询 \_ 停止 \_ 设备**](irp-mn-query-stop-device.md) 和 [**IRP \_ MN \_ 查询 \_ 删除 \_ **](irp-mn-query-remove-device.md) 设备请求。
+-   失败 [**IRP \_ MN \_ 查询 \_ 停止 \_ 设备**](irp-mn-query-stop-device.md) 和 [**IRP \_ MN \_ 查询 \_ 删除 \_**](irp-mn-query-remove-device.md) 设备请求。
 
 对于其设备上的 **DeviceUsageTypeHibernation** 文件，驱动程序必须执行以下操作：
 
--   为 *DispatchRead*、 *DispatchWrite*、 *DispatchDeviceControl*和 *DispatchPower* 例程锁定内存中的代码。
+-   为 *DispatchRead*、 *DispatchWrite*、 *DispatchDeviceControl* 和 *DispatchPower* 例程锁定内存中的代码。
 
 -   当驱动程序收到一个 S4 系统电源 IRP，指示系统即将进入休眠状态时，请确保设备处于 D0 状态。
 
@@ -138,7 +137,7 @@ ms.locfileid: "90105534"
 
 -   清除设备堆栈) 上的 "在设备上 (的设备" 对象中的 "DO \_ POWER \_ PAGABLE" 位。
 
--   失败 [**IRP \_ MN \_ 查询 \_ 停止 \_ 设备**](irp-mn-query-stop-device.md) 和 [**IRP \_ MN \_ 查询 \_ 删除 \_ **](irp-mn-query-remove-device.md) 设备请求。
+-   失败 [**IRP \_ MN \_ 查询 \_ 停止 \_ 设备**](irp-mn-query-stop-device.md) 和 [**IRP \_ MN \_ 查询 \_ 删除 \_**](irp-mn-query-remove-device.md) 设备请求。
 
 有关设备电源状态、电源 Irp 和驱动程序中的电源管理的详细信息，请参阅 [电源管理](./introduction-to-power-management.md) 。
 
@@ -162,7 +161,7 @@ ms.locfileid: "90105534"
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [*DispatchDeviceControl*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)

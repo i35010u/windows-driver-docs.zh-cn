@@ -1,15 +1,14 @@
 ---
 title: 内存缓冲区生命周期
 description: 内存缓冲区生命周期
-ms.assetid: abf43bf5-a4a3-4aeb-9ec5-3458252933d5
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 43f1c4245044babf93efccbe70810ec21c110f9f
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 0537a774c0ebf4fbed5f8c181cd3757ff6c8c7b6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91734315"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96783687"
 ---
 # <a name="memory-buffer-life-cycle"></a>内存缓冲区生命周期
 
@@ -36,7 +35,7 @@ ms.locfileid: "91734315"
 
 ## <a name="scenario-1-driver-receives-an-io-request-from-kmdf-handles-it-and-completes-it"></a>方案1：驱动程序接收来自 KMDF 的 i/o 请求，处理该请求并完成该请求。
 
-在最简单的方案中，KMDF 将请求发送到驱动程序，该驱动程序将执行 i/o 并完成请求。 在这种情况下，可能已由用户模式应用程序、其他驱动程序或操作系统本身创建了基础缓冲区。 有关如何访问缓冲区的信息，请参阅 [在基于框架的驱动程序中访问数据缓冲区](./accessing-data-buffers-in-wdf-drivers.md)。
+在最简单的方案中，KMDF 将请求发送到驱动程序，该驱动程序将执行 i/o 并完成请求。 在这种情况下，可能已由用户模式应用程序、其他驱动程序或操作系统本身创建了基础缓冲区。 有关如何访问缓冲区的信息，请参阅 [访问 Framework-Based 驱动程序中的数据缓冲区](./accessing-data-buffers-in-wdf-drivers.md)。
 
 当驱动程序 [完成请求](completing-i-o-requests.md)时，框架会删除内存对象。 然后，该缓冲区指针无效。
 

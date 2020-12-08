@@ -1,15 +1,14 @@
 ---
 title: APN 架构定义
 description: APN 架构定义
-ms.assetid: ae552bb5-702e-443f-8a97-c143859b127d
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c317459a407fea164a2c5b9bc444003ea02bafd5
-ms.sourcegitcommit: 67efcd26f7be8f50c92b141ccd14c9c68f4412d8
+ms.openlocfilehash: 22b1276de1e86ed75fba60932cb7d6159196896d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88902404"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96782533"
 ---
 # <a name="apn-schema-definition"></a>APN 架构定义
 

@@ -1,15 +1,14 @@
 ---
 title: '应用程序 (WindowsInfo) '
 description: '应用程序 (WindowsInfo) '
-ms.assetid: e76ede51-e494-47b4-b30a-e354799f66e7
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d4c29a32e3d68a5b290518be975d1771705fcbbb
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: a4a8ac808009072a4cf5bf62100aa8064b44a4f6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89402906"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96782509"
 ---
 # <a name="application-windowsinfo"></a>应用程序 (WindowsInfo) 
 
@@ -38,7 +37,7 @@ ms.locfileid: "89402906"
 <tr class="header">
 <th>Attribute</th>
 <th>类型</th>
-<th>必选</th>
+<th>必须</th>
 <th>说明</th>
 </tr>
 </thead>
@@ -70,7 +69,7 @@ ms.locfileid: "89402906"
 <thead>
 <tr class="header">
 <th>元素</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>

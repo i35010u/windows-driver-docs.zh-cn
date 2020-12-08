@@ -1,19 +1,18 @@
 ---
 title: 更改启动参数
 description: 更改启动参数
-ms.assetid: e835e1e9-ad80-462b-b55f-2fa0e55009a5
 keywords:
 - 启动项参数 WDK
 - 启动参数 WDK
 - 启动选项 WDK，启动参数
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3ac8b21863cfbe59ac30cda8fdd5b0ae59377e83
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: c8408f32f5735cd1f3d409cbbd918b40ab439d5b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89385063"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96784077"
 ---
 # <a name="changing-boot-parameters"></a>更改启动参数
 

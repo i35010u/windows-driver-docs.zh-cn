@@ -1,15 +1,14 @@
 ---
 title: 常规统计信息 OID
 description: 常规统计信息 OID
-ms.assetid: ebdd5723-d913-4c1a-8b1f-f70e4b0080ad
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fb52ac22eee4f01cbc61a145d0624274efff6126
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 8906ccf79f953d27b7282fa6a5e2f8f5a8027bcd
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104626"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96782267"
 ---
 # <a name="general-statistic-oids"></a>常规统计信息 OID
 
@@ -29,32 +28,32 @@ ms.locfileid: "90104626"
 <tr class="header">
 <th align="left">支持</th>
 <th align="left">OID</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>必需</p></td>
+<td align="left"><p>必须</p></td>
 <td align="left"><p><a href="/windows-hardware/drivers/network/oid-gen-xmit-ok" data-raw-source="[OID_GEN_XMIT_OK](./oid-gen-xmit-ok.md)">OID_GEN_XMIT_OK</a></p></td>
 <td align="left"><p>传输的帧没有错误</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>必需</p></td>
+<td align="left"><p>必须</p></td>
 <td align="left"><p><a href="/windows-hardware/drivers/network/oid-gen-rcv-ok" data-raw-source="[OID_GEN_RCV_OK](./oid-gen-rcv-ok.md)">OID_GEN_RCV_OK</a></p></td>
 <td align="left"><p>接收的帧没有错误</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>必需</p></td>
+<td align="left"><p>必须</p></td>
 <td align="left"><p><a href="/windows-hardware/drivers/network/oid-gen-xmit-error" data-raw-source="[OID_GEN_XMIT_ERROR](./oid-gen-xmit-error.md)">OID_GEN_XMIT_ERROR</a></p></td>
 <td align="left"><p>传输的帧出现错误</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>必需</p></td>
+<td align="left"><p>必须</p></td>
 <td align="left"><p><a href="/windows-hardware/drivers/network/oid-gen-rcv-error" data-raw-source="[OID_GEN_RCV_ERROR](./oid-gen-rcv-error.md)">OID_GEN_RCV_ERROR</a></p></td>
 <td align="left"><p>接收的帧出现错误</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>必需</p></td>
+<td align="left"><p>必须</p></td>
 <td align="left"><p><a href="/windows-hardware/drivers/network/oid-gen-rcv-no-buffer" data-raw-source="[OID_GEN_RCV_NO_BUFFER](./oid-gen-rcv-no-buffer.md)">OID_GEN_RCV_NO_BUFFER</a></p></td>
 <td align="left"><p>缺少帧，无缓冲区</p></td>
 </tr>

@@ -1,15 +1,14 @@
 ---
 title: MSiSCSI \_ SESSIONSTATISTICS WMI 类
 description: MSiSCSI \_ SESSIONSTATISTICS WMI 类
-ms.assetid: fc9afa1b-dad3-4f3d-9fe2-e37d402f7bef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: e725ad3141f8dee057f30555c60b6a5f7ce8abac
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 51c07cf82b90bc3985fba0fd7a64328ad9a7c5e9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89190407"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96783783"
 ---
 # <a name="msiscsi_sessionstatistics-wmi-class"></a>MSiSCSI \_ SESSIONSTATISTICS WMI 类
 

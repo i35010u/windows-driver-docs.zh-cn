@@ -1,9 +1,8 @@
 ---
-title: WIA\_IP\_旋转
-description: WIA\_IP\_旋转属性包含图像旋转的当前旋转设置，如果它实现的。 WIA 微型驱动程序创建并维护此属性。
-ms.assetid: 5d117d55-b7e4-46eb-aeb5-54636749081f
+title: WIA \_ IP \_ 轮换
+description: '\_ \_ 如果已实现，WIA IPS 旋转属性包含图像旋转的当前旋转设置。 WIA 微型驱动程序创建并维护此属性。'
 keywords:
-- WIA_IPS_ROTATION 成像设备
+- WIA_IPS_ROTATION 图像设备
 topic_type:
 - apiref
 api_name:
@@ -14,33 +13,33 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f2641acc7ce0367701a9759383d74babcfe4e0c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 42b070234f9fdb468902ff5899e3d7e42ee37ac5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63343897"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96783205"
 ---
-# <a name="wiaipsrotation"></a>WIA\_IP\_旋转
+# <a name="wia_ips_rotation"></a>WIA \_ IP \_ 轮换
 
 
-WIA\_IP\_旋转属性包含图像旋转的当前旋转设置，如果它实现的。 WIA 微型驱动程序创建并维护此属性。
+\_ \_ 如果已实现，WIA IPS 旋转属性包含图像旋转的当前旋转设置。 WIA 微型驱动程序创建并维护此属性。
 
 ## <span id="ddk_wia_ips_rotation_si"></span><span id="DDK_WIA_IPS_ROTATION_SI"></span>
 
 
-属性类型：VT\_I4
+属性类型： VT \_ I4
 
-有效值：WIA\_PROP\_列表
+有效值： WIA 内容 \_ \_ 列表
 
-访问权限：读取/写入
+访问权限：读/写
 
 <a name="remarks"></a>备注
 -------
 
-应用程序设置 WIA\_IP\_旋转属性，以通知多少 （如果在所有） 的驱动程序以将图像旋转之前驱动程序将其返回给应用程序。
+应用程序设置 WIA \_ IPS \_ 旋转属性，以便在驱动程序将图像返回到应用程序之前，如果所有) 都要旋转图像，则通知驱动程序 (量。
 
-下表描述了为 WIA 定义的旋转常量\_IP\_旋转。
+下表介绍为 WIA ip 轮换定义的旋转常量 \_ \_ 。
 
 <table>
 <colgroup>
@@ -49,41 +48,41 @@ WIA\_IP\_旋转属性包含图像旋转的当前旋转设置，如果它实现�
 </colgroup>
 <thead>
 <tr class="header">
-<th>Constant</th>
+<th>返回的常量</th>
 <th>定义</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>纵向</p></td>
-<td><p>该驱动程序将不会旋转图像。</p></td>
+<td><p>沿</p></td>
+<td><p>驱动程序将不会旋转图像。</p></td>
 </tr>
 <tr class="even">
 <td><p>LANSCAPE</p></td>
-<td><p>该驱动程序将图像旋转逆时针旋转 90 度。</p></td>
+<td><p>驱动程序逆时针旋转图像90度。</p></td>
 </tr>
 <tr class="odd">
 <td><p>ROT180</p></td>
-<td><p>该驱动程序将图像旋转逆时针旋转 180 度。</p></td>
+<td><p>驱动程序逆时针旋转图像180度。</p></td>
 </tr>
 <tr class="even">
 <td><p>ROT270</p></td>
-<td><p>该驱动程序将图像旋转逆时针旋转 270 度。</p></td>
+<td><p>驱动程序逆时针旋转图像270度。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-WIA 微型驱动程序负责将其发送回应用程序前旋转图像数据。 应用程序负责检查映像标头，以查看新旋转的值。
+WIA 微型驱动程序负责旋转图像数据，然后再将其发送回应用程序。 应用程序负责检查图像标头以查看新旋转的值。
 
-它可能很难了解当前图像的所选内容区域的旋转效果 (其定义[ **WIA\_IPS\_XPOS**](wia-ips-xpos.md)， [ **WIA\_IPS\_YPOS**](wia-ips-ypos.md)， [ **WIA\_IP\_大 XEXTENT**](wia-ips-xextent.md)，和[**WIA\_IPS\_YEXTENT** ](wia-ips-yextent.md)属性)。
+由于 [**wia \_ ips \_ XPOS**](wia-ips-xpos.md)、 [**wia \_ ip \_ YPOS**](wia-ips-ypos.md)、 [**wia \_ ips \_ XEXTENT**](wia-ips-xextent.md)和 [**wia \_ ip \_ YEXTENT**](wia-ips-yextent.md) 属性) 定义的，因此，可能很难了解当前图像选择区域的旋转效果 (。
 
-*选择区域*指的从获取图像在物理扫描程序平台上的所选区域。 WIA\_IPS\_旋转属性*不*修改所选内容区域。 该驱动程序应用根据 WIA 开始沿逆时针方向旋转\_IP\_驱动程序已获得适当的选择区域后将只旋转。 WIA\_IPS\_旋转*does*影响输出图像尺寸，因此必须在生成的图像数据标头中反映这些维度。
+*选择区域* 指的是物理扫描仪平台上从其获取图像的选定区域。 WIA \_ ip \_ 轮换属性不会 *not* 修改选择区域。 \_ \_ 仅当驱动程序获得了适当的选择区域后，该驱动程序才会根据 WIA IPS 旋转应用逆时针旋转。 WIA \_ ip \_ 轮换 *确实* 会影响输出图像的尺寸，因此这些维度必须反映在生成的映像的数据标头中。
 
-[**WIA\_IPS\_YEXTENT** ](wia-ips-yextent.md)无关[ **WIA\_IP\_方向**](wia-ips-orientation.md)。 WIA\_IPS\_方向描述要相对于扫描的; 相反，WIA 的方向进行扫描的文档的方向\_IP\_旋转描述要应用到图像的旋转角度扫描后。
+[**WIA \_IPS \_ YEXTENT**](wia-ips-yextent.md) 与 [**WIA \_ ip \_ 方向**](wia-ips-orientation.md)无关。 WIA \_ ips \_ 方向说明了相对于扫描方向要扫描的文档方向; 相反，wia \_ ips \_ 旋转描述了在扫描图像后要应用于该图像的旋转。
 
-WIA\_IP\_方向可能会影响要扫描的区域。 并非所有的页大小为横向和纵向和从 WIA 中更改映像的扩展盘区中提供\_IP\_方向可以裁剪图像。 WIA\_IP\_轮换不会影响映像区和要扫描的文档的方向无关。
+WIA \_ ip \_ 方向可能会影响要扫描的区域。 并非所有页面大小都在横向和纵向都可用，因此，来自 WIA IPS 方向的更改中的图像 \_ 范围 \_ 可能会裁剪映像。 WIA \_ ip \_ 轮换不会影响图像区，并且与要扫描的文档的方向无关。
 
 <a name="requirements"></a>要求
 ------------
@@ -95,8 +94,8 @@ WIA\_IP\_方向可能会影响要扫描的区域。 并非所有的页大小为�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Wiadef.h （包括 Wiadef.h）</td>
+<td><p>标头</p></td>
+<td>Wiadef (包含 Wiadef) </td>
 </tr>
 </tbody>
 </table>
@@ -104,15 +103,15 @@ WIA\_IP\_方向可能会影响要扫描的区域。 并非所有的页大小为�
 ## <a name="see-also"></a>请参阅
 
 
-[**WIA\_IP\_方向**](wia-ips-orientation.md)
+[**WIA \_ IP \_ 方向**](wia-ips-orientation.md)
 
-[**WIA\_IPS\_XEXTENT**](wia-ips-xextent.md)
+[**WIA \_ IP \_ XEXTENT**](wia-ips-xextent.md)
 
-[**WIA\_IPS\_XPOS**](wia-ips-xpos.md)
+[**WIA \_ IP \_ XPOS**](wia-ips-xpos.md)
 
-[**WIA\_IPS\_YEXTENT**](wia-ips-yextent.md)
+[**WIA \_ IP \_ YEXTENT**](wia-ips-yextent.md)
 
-[**WIA\_IPS\_YPOS**](wia-ips-ypos.md)
+[**WIA \_ IP \_ YPOS**](wia-ips-ypos.md)
 
  
 

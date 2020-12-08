@@ -1,21 +1,20 @@
 ---
 title: Windows 中的 ACPI 支持摘要
 description: 本主题概述了支持基于 SoC 的平台上的 Windows 所需的 ACPI 5.0 功能的子集。
-ms.assetid: BECFB30B-541B-420E-85F3-773292066A90
 ms.date: 05/22/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 2a17ce61398af2f4ebe54e87e47d31e23f6ab210
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: a3e5183fcb110fcb06c5117bbd838ce4f0b6678c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89189913"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96783583"
 ---
 # <a name="summary-of-acpi-support-in-windows"></a>Windows 中的 ACPI 支持摘要
 
 本主题概述了支持基于 SoC 的平台上的 Windows 所需的高级配置和电源接口 (ACPI) 5.0 功能的子集。
 
-| 功能 | "ACPI 5.0 规范" 部分 | 备注 |
+| 功能 | "ACPI 5.0 规范" 部分 | 说明 |
 | --- | --- | --- |
 | 系统说明表 | 5.2.5 | 根系统说明指针 (RSDP)  |
 | | 5.2.7、5.2。8 | 根 (RSDT) 或扩展 (XSDT) 系统说明表 |
@@ -43,7 +42,7 @@ ms.locfileid: "89189913"
 | | 10.2 | 控制方法电池设备 |
 | | 9.18 | 控制方法时间和警报设备 |
 | | 11 | 热量区域 |
-| 特定于设备的支持 | 8.4 | 处理器 |
+| 特定于设备的支持 | 8.4 | Processors |
 | | 附录 B | 显示 |
 | | 6.1.8，9.13 | USB |
 | | | SD 总线 |

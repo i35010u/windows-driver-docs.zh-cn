@@ -1,15 +1,14 @@
 ---
 title: 设计移动宽带应用中的帮助和支持页面
 description: 设计移动宽带应用中的帮助和支持页面
-ms.assetid: bac8987e-e801-4488-b204-5532fb3ced1b
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9718a0b3b7d07881dcc24f01b0707837ba82ff67
-ms.sourcegitcommit: 7e4d9508198a30bdc1cb6eda83852dda4e42213e
+ms.openlocfilehash: bd0fab1d86393f84d434db26f716fe349bc15451
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89304238"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96782419"
 ---
 # <a name="design-help-and-support-pages-in-a-mobile-broadband-app"></a>设计移动宽带应用中的帮助和支持页面
 

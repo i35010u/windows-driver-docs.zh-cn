@@ -1,15 +1,14 @@
 ---
 title: 获取用于 MB 设备的 IMEI、ICCID、IMSI 和电话号码
 description: 获取移动宽带设备的 IMEI、ICCID、IMSI 和电话号码
-ms.assetid: b604d08c-7e6f-4dad-9e1d-3f24a0da5760
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0e5de2df0a82ca033624a578004d08903fdd12d6
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: f4164c3b78471162377810edbded8014a14bf7eb
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89216618"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96782337"
 ---
 # <a name="get-the-imei-iccid-imsi-and-telephone-numbers-for-the-mobile-broadband-device"></a>获取移动宽带设备的 IMEI、ICCID、IMSI 和电话号码
 
@@ -23,7 +22,7 @@ ms.locfileid: "89216618"
 </colgroup>
 <thead>
 <tr class="header">
-<th>值</th>
+<th>“值”</th>
 <th>要使用的 MobileBroadbandDeviceInformation 的属性</th>
 </tr>
 </thead>

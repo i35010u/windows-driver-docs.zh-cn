@@ -1,15 +1,14 @@
 ---
 title: AutoplayHandler
 description: AutoplayHandler
-ms.assetid: 0ee7ac9b-7c1a-4267-b718-ba110ef5b12d
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cace5cb820535a93ed575479e54f72ba12812966
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: 23fa4dd1353855a0c5de37f09cc033eb175880a8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89402890"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96782505"
 ---
 # <a name="autoplayhandler"></a>AutoplayHandler
 
@@ -42,7 +41,7 @@ AutoplayHandler 元素指定在用户插入设备时应显示为建议的自动�
 <thead>
 <tr class="header">
 <th>元素</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -51,7 +50,7 @@ AutoplayHandler 元素指定在用户插入设备时应显示为建议的自动�
 <td><p>指定应用的包标识 (名称和发布服务器) 。</p></td>
 </tr>
 <tr class="even">
-<td><p><a href="application-windowsinfo-v2.md" data-raw-source="[Application](application-windowsinfo-v2.md)">应用程序</a></p></td>
+<td><p>应用程序</p></td>
 <td><p>指定应用程序的应用程序 ID。</p></td>
 </tr>
 <tr class="odd">
@@ -82,7 +81,7 @@ AutoplayHandler 元素指定在用户插入设备时应显示为建议的自动�
 <thead>
 <tr class="header">
 <th>元素</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>

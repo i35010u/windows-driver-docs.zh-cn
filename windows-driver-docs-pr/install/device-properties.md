@@ -1,18 +1,17 @@
 ---
 title: 设备属性
 description: 设备属性
-ms.assetid: 87a43865-74bc-412c-9ae2-3ba38589c8f8
 keywords:
 - 设备安装 WDK，设备属性
 - 设备属性 WDK 设备安装
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 51e289eb9541284192fa55a07507ca5e58ac41bd
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: e91a9963271e5bfab50203b77786269b217d1f57
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89096499"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96782837"
 ---
 # <a name="device-properties"></a>设备属性
 

@@ -1,16 +1,15 @@
 ---
 title: OID_GEN_MULTICAST_FRAMES_XMIT
 description: 作为查询，OID_GEN_MULTICAST_FRAMES_XMIT OID 指定了在不出错的情况下传输的多播/函数数据包的数量。
-ms.assetid: 780763a5-6220-44ad-a6e7-ed63e89baaed
 ms.date: 11/01/2019
 keywords: -从 Windows Vista 开始 OID_GEN_MULTICAST_FRAMES_XMIT 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 5d39b622dda26cd84a3cd51936b95aac4a5f3ae4
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 492299467cf98bdffc6c646acf52cbd586b06725
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89214589"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96782227"
 ---
 # <a name="oid_gen_multicast_frames_xmit"></a>OID \_ 生成 \_ 多播 \_ 帧 \_ XMIT
 
@@ -57,7 +56,7 @@ ms.locfileid: "89214589"
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [OID \_ 生成 \_ 统计信息](oid-gen-statistics.md)

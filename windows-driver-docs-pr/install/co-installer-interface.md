@@ -1,18 +1,17 @@
 ---
 title: 辅助安装程序界面
 description: 辅助安装程序界面
-ms.assetid: affcf2a5-5dbb-49bd-916c-bc99302b5bd8
 keywords:
 - 共同安装程序 WDK 设备安装，接口
 - 接口 WDK 共同安装程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 62e316ed03fe1bda5d1223416e3692b50469fc88
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 5d668ec4dcf86f498846dfb0f8ba8b5d2f0d8cd0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90717128"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96783001"
 ---
 # <a name="co-installer-interface"></a>辅助安装程序界面
 
@@ -40,7 +39,7 @@ typedef DWORD
 提供 [设备信息集](device-information-sets.md)的句柄。
 
 <a href="" id="deviceinfodata"></a>*DeviceInfoData*  
-（可选）确定作为设备安装请求的目标的设备。 如果此参数为非**NULL**，则它将标识设备信息集中的设备信息元素。 当[**SetupDiCallClassInstaller**](/windows/win32/api/setupapi/nf-setupapi-setupdicallclassinstaller)调用设备特定的共同安装程序时， *DeviceInfoData*为非**NULL** 。 可以通过具有 **NULL *** * DeviceInfoData （如 DIF_DETECT 或 DIF_FIRSTTIMESETUP）的 DIF 请求来调用特定于类的共同安装程序。
+（可选）确定作为设备安装请求的目标的设备。 如果此参数为非 **NULL**，则它将标识设备信息集中的设备信息元素。 当 [**SetupDiCallClassInstaller**](/windows/win32/api/setupapi/nf-setupapi-setupdicallclassinstaller)调用设备特定的共同安装程序时， *DeviceInfoData* 为非 **NULL** 。 使用具有 **NULL**_DeviceInfoData_（如 DIF_DETECT 或 DIF_FIRSTTIMESETUP）的 DIF 请求可以调用类特定的共同安装程序。
 
 <a href="" id="context"></a>*快捷*  
 指向 [**COINSTALLER_CONTEXT_DATA**](#coinstaller-context-data) 结构。
@@ -48,7 +47,7 @@ typedef DWORD
 设备共同安装程序返回下列值之一：
 
 <a href="" id="no-error"></a>NO_ERROR  
-共同安装程序针对指定的 *InstallFunction*执行了相应的操作，或共同安装程序确定无需对请求执行任何操作。
+共同安装程序针对指定的 *InstallFunction* 执行了相应的操作，或共同安装程序确定无需对请求执行任何操作。
 
 如果辅助安装程序收到无法识别的 DIF 代码，还必须返回 NO_ERROR。  (请注意，类安装程序为无法识别的 DIF 代码返回 ERROR_DI_DO_DEFAULT。 ) 
 
@@ -58,7 +57,7 @@ typedef DWORD
 <a href="" id="a-win32-error"></a>*Win32 错误*  
 共同安装程序遇到错误。
 
-共同安装程序不会将返回状态设置为 ERROR_DI_DO_DEFAULT。 此状态只能由类安装程序使用。 如果共同安装程序返回此状态， **SetupDiCallClassInstaller** 将不会正确处理 DIF_*Xxx* 请求。 共同安装程序可能会将 ERROR_DI_DO_DEFAULT 的返回状态 *传播* 到其后处理过程中，但它永远不会 *设置* 此值。
+共同安装程序不会将返回状态设置为 ERROR_DI_DO_DEFAULT。 此状态只能由类安装程序使用。 如果共同安装程序返回此状态， **SetupDiCallClassInstaller** 将不会正确处理 DIF_ *Xxx* 请求。 共同安装程序可能会将 ERROR_DI_DO_DEFAULT 的返回状态 *传播* 到其后处理过程中，但它永远不会 *设置* 此值。
 
 ### <a name="coinstaller_context_data"></a><a href="" id="coinstaller-context-data"></a> COINSTALLER_CONTEXT_DATA
 
@@ -75,7 +74,7 @@ typedef struct
 
 以下列表描述了此结构的成员：
 
--   如果在适当的类安装程序（如果有）处理了*InstallFunction*所指定的 DIF 代码，则在适当的类安装程序调用后，**后处理**为**TRUE** 。 **后处理** 对于共同安装程序是只读的。
+-   如果在适当的类安装程序（如果有）处理了 *InstallFunction* 所指定的 DIF 代码，则在适当的类安装程序调用后，**后处理** 为 **TRUE** 。 **后处理** 对于共同安装程序是只读的。
 
 -   如果 **后处理** 为 **FALSE**，则 **InstallResult** 不相关。 如果 **后处理** 为 **TRUE**，则 **InstallResult** 是安装请求的当前状态。 此值为 NO_ERROR 或以前的组件为此安装请求返回的错误状态。 共同安装程序可以通过为其函数返回返回此值来传播状态，也可以返回其他状态。 **InstallResult** 对共同安装程序是只读的。
 

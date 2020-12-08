@@ -1,15 +1,14 @@
 ---
 title: DeviceCompanionApplications
 description: DeviceCompanionApplications
-ms.assetid: 3e0b21a8-aa1f-4f7a-84fc-447bba172794
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1583f729f03ab7f3d3e35f04fe48c2243c1eff6a
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: 7b11ca73b78213ceac71004200ee1d040377f053
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89403308"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96782373"
 ---
 # <a name="devicecompanionapplications"></a>DeviceCompanionApplications
 
@@ -42,7 +41,7 @@ DeviceCompanionApplications 元素指定在计算机上检测到操作员的移�
 <thead>
 <tr class="header">
 <th>元素</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -66,7 +65,7 @@ DeviceCompanionApplications 元素指定在计算机上检测到操作员的移�
 <thead>
 <tr class="header">
 <th>元素</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>

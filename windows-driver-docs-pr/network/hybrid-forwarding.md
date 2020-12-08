@@ -1,15 +1,14 @@
 ---
 title: Hyper-v 可扩展交换机混合转发
 description: 本部分介绍如何使用 Hyper-v 可扩展交换机进行混合转发
-ms.assetid: 135CA734-1C92-4EEA-81DC-96A6A68ABBE8
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a0a9e054d3b6e6199a9da3504d41ddd5bf4be604
-ms.sourcegitcommit: ec7bebe3f94536455e62b372c2a28fe69d1717f7
+ms.openlocfilehash: 23142c6d25137fa3df1b9ab8ebd9905eab8daebf
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93349791"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96782253"
 ---
 # <a name="hybrid-forwarding"></a>混合转发
 
@@ -46,7 +45,7 @@ NVGRE 和非 NVGRE 数据包的处理方式如下：
 
 ## <a name="support-for-third-party-network-virtualization"></a>支持第三方网络虚拟化
 
-可以在 VM 网络适配器端口上将 **VirtualSubnetId** 配置为外部虚拟子网。 此功能已添加到启用转发扩展以提供第三方网络虚拟化解决方案。 在入口中，Hyper-v 可扩展交换机不会在这些数据包的 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)结构中设置 **NativeForwardingRequired** 标志。 转发扩展之后，可以根据需要修改数据包标头。 必须克隆正在修改的数据包，并将其 **ParentNetBufferList** 指针设置为原始 **网络 \_ 缓冲区 \_ 列表** 。  (参阅 [克隆数据包流量](cloning-or-duplicating-packet-traffic.md)。 ) 
+可以在 VM 网络适配器端口上将 **VirtualSubnetId** 配置为外部虚拟子网。 此功能已添加到启用转发扩展以提供第三方网络虚拟化解决方案。 在入口中，Hyper-v 可扩展交换机不会在这些数据包的 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)结构中设置 **NativeForwardingRequired** 标志。 转发扩展之后，可以根据需要修改数据包标头。 必须克隆正在修改的数据包，并将其 **ParentNetBufferList** 指针设置为原始 **网络 \_ 缓冲区 \_ 列表**。  (参阅 [克隆数据包流量](cloning-or-duplicating-packet-traffic.md)。 ) 
 
 ## <a name="related-topics"></a>相关主题
 

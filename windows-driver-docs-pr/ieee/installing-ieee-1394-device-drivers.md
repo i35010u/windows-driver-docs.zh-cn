@@ -1,18 +1,17 @@
 ---
 title: 安装 IEEE 1394 设备驱动程序
 description: 安装 IEEE 1394 设备驱动程序
-ms.assetid: 3f99bec7-e657-4de7-bce4-36a779cc0442
 keywords:
 - IEEE 1394 WDK 总线，驱动程序安装
 - 1394 WDK 总线，驱动程序安装
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e8b2c61dee7d73d6db33949be7a5418ef0a7ebbd
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 9cf2ecb07ace6b50c875c73a10c5373042318d49
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89382217"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96783937"
 ---
 # <a name="installing-ieee-1394-device-drivers"></a>安装 IEEE 1394 设备驱动程序
 

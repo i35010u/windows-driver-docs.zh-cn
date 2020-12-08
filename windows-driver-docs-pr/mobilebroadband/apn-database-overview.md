@@ -1,15 +1,14 @@
 ---
 title: APN 数据库概述
 description: APN 数据库概述
-ms.assetid: 699b797e-c225-47ba-96a5-26b15c91a759
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 535e2292503dcc8d518dc1134a1d6c43cce5c562
-ms.sourcegitcommit: 7e4d9508198a30bdc1cb6eda83852dda4e42213e
+ms.openlocfilehash: 520e101d39529135cb643dbc5803576c3229df9a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89304310"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96782549"
 ---
 # <a name="apn-database-overview"></a>APN 数据库概述
 
@@ -26,9 +25,9 @@ APN 数据库或 apndatabase.xml 是移动运营商 (MOs) 用来为其网络配�
 
 若要连接到移动宽带网络，用户通常提供以下信息：
 
-- 在移动通信的全球系统中 (GSM) 网络、 **data.contoso.com**等接入点。
+- 在移动通信的全球系统中 (GSM) 网络、 **data.contoso.com** 等接入点。
 
-- 在 CDMA 网络中，包含特殊拨号代码（如** \# 777**）的访问字符串，或 (NAI) 的网络访问标识符（如） <strong>ann@contoso.com</strong> 。
+- 在 CDMA 网络中，包含特殊拨号代码（如 **\# 777**）的访问字符串，或 (NAI) 的网络访问标识符（如） <strong>ann@contoso.com</strong> 。
 
 - 用户的凭据 (网络连接的用户名和密码) 。
 

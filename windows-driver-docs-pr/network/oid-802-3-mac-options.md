@@ -1,28 +1,27 @@
 ---
 title: OID_802_3_MAC_OPTIONS
 description: OID_802_3_MAC_OPTIONS
-ms.assetid: 9c1f29ad-6a2c-4cb4-b402-bd86e851dc2d
 ms.date: 08/08/2017
-keywords: -OID_802_3_MAC_OPTIONS 网络与 Windows Vista 一起启动的驱动程序
+keywords: -从 Windows Vista 开始 OID_802_3_MAC_OPTIONS 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 8001bcdaf35abf4023417a173bbd51bdc918df60
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6241dc9e3a7422967591116bed28349000719c34
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63350985"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96783813"
 ---
-# <a name="oid8023macoptions"></a>OID\_802\_3\_MAC\_选项
+# <a name="oid_802_3_mac_options"></a>OID \_ 802 \_ 3 \_ MAC \_ 选项
 
 
 
 
 
-一种协议可以使用此 OID 以确定由无法模拟以太网基础驱动程序支持的功能。
+协议可以使用此 OID 确定底层驱动程序支持的功能，这可能会模拟以太网。
 
-基础驱动程序将返回零，表明它支持任何选项。
+基础驱动程序返回零，指示它不支持任何选项。
 
-**请注意**  此 OID 已过时的 NDIS 6 驱动程序。
+**注意**  此 OID 对于 NDIS 6 驱动程序已过时。
 
  
 
@@ -36,8 +35,8 @@ ms.locfileid: "63350985"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Ntddndis.h （包括 Ndis.h）</td>
+<td><p>标头</p></td>
+<td>Ntddndis (包含 Ndis .h) </td>
 </tr>
 </tbody>
 </table>

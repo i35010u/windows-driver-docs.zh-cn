@@ -1,7 +1,6 @@
 ---
 title: 注册网络接口
 description: 注册网络接口
-ms.assetid: 7e3c3b0f-2013-4133-8b52-fa9e66f963cb
 keywords:
 - NDIS 网络接口 WDK，注册
 - 网络接口 WDK，注册
@@ -9,12 +8,12 @@ keywords:
 - NdisIfRegisterInterface
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a5f80e0a3c803b38e27c20aeaee182331439cdb7
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 04c7b8dd4e37036ba18c25660ef991ca972a2568
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90715886"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96782175"
 ---
 # <a name="registering-a-network-interface"></a>注册网络接口
 
@@ -26,7 +25,7 @@ ms.locfileid: "90715886"
 
 **NdisIfRegisterInterface** \_ \_ 仅当 ndis 将指定接口成功添加到计算机上的已知接口列表中时，NDISIFREGISTERINTERFACE 才会返回 ndis 状态成功。 在这种情况下， **NdisIfRegisterInterface** 将在 *pIfIndex* 参数处返回一个接口索引。 但是，对 **NdisIfRegisterInterface** 的调用并不意味着接口处于活动状态;此调用仅保证接口存在。 **NdisIfRegisterInterface** \_ \_ 如果 ndis 没有足够的资源可用于注册接口，则 NdisIfRegisterInterface 将返回 ndis 状态资源。 **NdisIfRegisterInterface** 还可以返回其他 NDIS 状态值。
 
-**NdisIfRegisterInterface**的*ProviderIfContext*参数包含调用方的接口上下文区域的句柄，此句柄传递给调用方的 OID 查询并设置函数。 *PIfInfo*参数包含指向包含接口相关信息的[**NET \_ IF \_ 信息**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_if_information)结构的指针。
+**NdisIfRegisterInterface** 的 *ProviderIfContext* 参数包含调用方的接口上下文区域的句柄，此句柄传递给调用方的 OID 查询并设置函数。 *PIfInfo* 参数包含指向包含接口相关信息的 [**NET \_ IF \_ 信息**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_if_information)结构的指针。
 
 以下主题提供了有关 **NdisIfRegisterInterface** 成功注册的网络接口的详细信息：
 

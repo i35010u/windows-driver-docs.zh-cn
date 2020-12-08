@@ -1,20 +1,19 @@
 ---
 title: Windows 按钮示例代码
-description: 本主题包含的代码示例切换标识的 Windows 按钮，向下和乃至更高版本。
-ms.assetid: DB43A64C-66A0-43BD-A657-D4EE11159543
+description: 本主题包含一个代码示例，该示例将已标识的 Windows 按钮向下和向上切换。
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 9f355aa60dcea66d6567ac732cea6034a08af18e
-ms.sourcegitcommit: 6dff49ca5880466c396be5b889c44481dfed44ec
+ms.openlocfilehash: 33b808965a2298a6fb0f8e8c99d9d300503edcb4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67161458"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96783941"
 ---
 # <a name="windows-button-sample-code"></a>Windows 按钮示例代码
 
 
-本主题包含的代码示例切换标识的 Windows 按钮，向下和乃至更高版本。
+本主题包含一个代码示例，该示例将已标识的 Windows 按钮向下和向上切换。
 
 ```cpp
 int __cdecl InjectButtonPress(

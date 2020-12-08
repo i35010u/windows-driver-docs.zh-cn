@@ -1,19 +1,18 @@
 ---
 title: 卸载大型 TCP 数据包的段
 description: 卸载大型 TCP 数据包的段
-ms.assetid: 6ae162fb-a8fc-47b8-80ae-ff39f3059d53
 keywords:
 - 任务卸载 WDK TCP/IP 传输、大数据包分段
 - 大型 TCP 数据包分段 WDK 网络
 - 大 TCP 数据包的分段 WDK 网络
 ms.date: 10/24/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: a00fca691f54fd42d850694e45c4c41552565fb7
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 95bd076be4427f93ea2d97018323f62a299e1924
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89217532"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96783831"
 ---
 # <a name="offloading-the-segmentation-of-large-tcp-packets"></a>卸载大型 TCP 数据包的段
 
@@ -25,9 +24,9 @@ NDIS 微型端口驱动程序可以卸载大于网络媒体 (MTU) 的大 TCP 数
 
 NDIS 版本6.0 及更高版本支持大型发送卸载版本 1 (LSOv1) ，这类似于在 NDIS 5 中 (LSO) 进行大量发送卸载。*x*。 NDIS 版本6.0 及更高版本还支持大型发送卸载版本 2 (LSOv2) ，它提供了增强的大型数据包分段服务，包括对 IPv6 的支持。
 
-支持 LSOv2 和 LSOv1 的微型端口驱动程序必须从 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list) 结构 OOB 信息确定卸载类型。 驱动程序可以使用[**NDIS \_ TCP \_ 大规模发送卸载的类型成员 \_ \_ \_ 网络 \_ 缓冲区 \_ 列表 \_ 信息**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_tcp_large_send_offload_net_buffer_list_info)结构来确定驱动程序堆栈是使用 LSOv2 还是 LSOv1，并执行适当的卸载服务。 **Type** \_ \_ 包含 LSOv1 或 LSOv2 OOB 数据的任何网络缓冲区列表结构还包含单一[**网络 \_ 缓冲区**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer)结构。 有关 NDIS \_ TCP \_ 大规模 \_ 发送 \_ 卸载 \_ 网络 \_ 缓冲区列表信息的详细信息 \_ \_ ，请参阅 [访问 tcp/ip 卸载网络 \_ 缓冲区 \_ 列表信息](accessing-tcp-ip-offload-net-buffer-list-information.md)。
+支持 LSOv2 和 LSOv1 的微型端口驱动程序必须从 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list) 结构 OOB 信息确定卸载类型。 驱动程序可以使用 [**NDIS \_ TCP \_ 大规模发送卸载的类型成员 \_ \_ \_ 网络 \_ 缓冲区 \_ 列表 \_ 信息**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_tcp_large_send_offload_net_buffer_list_info)结构来确定驱动程序堆栈是使用 LSOv2 还是 LSOv1，并执行适当的卸载服务。 **Type** \_ \_ 包含 LSOv1 或 LSOv2 OOB 数据的任何网络缓冲区列表结构还包含单一 [**网络 \_ 缓冲区**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer)结构。 有关 NDIS \_ TCP \_ 大规模 \_ 发送 \_ 卸载 \_ 网络 \_ 缓冲区列表信息的详细信息 \_ \_ ，请参阅 [访问 tcp/ip 卸载网络 \_ 缓冲区 \_ 列表信息](accessing-tcp-ip-offload-net-buffer-list-information.md)。
 
-但是，在这种情况下，微型端口已收到[**OID \_ tcp \_ 卸载 \_ 参数**](./oid-tcp-offload-parameters.md)，可在微型端口上关闭 LSO 功能，并且在微型端口成功完成 OID 后，小型端口将删除包含任何非零 LSOv1 或 LSOv2 OOB 数据 ([**NDIS \_ TCP \_ 大规模 \_ 发送 \_ 卸载 \_ 网络 \_ 缓冲区 \_ 列表 \_ 信息**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_tcp_large_send_offload_net_buffer_list_info)) 。 [** \_ \_ **](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list) 
+但是，在这种情况下，微型端口已收到 [**OID \_ tcp \_ 卸载 \_ 参数**](./oid-tcp-offload-parameters.md)，可在微型端口上关闭 LSO 功能，并且在微型端口成功完成 OID 后，小型端口将删除包含任何非零 LSOv1 或 LSOv2 OOB 数据 ([**NDIS \_ TCP \_ 大规模 \_ 发送 \_ 卸载 \_ 网络 \_ 缓冲区 \_ 列表 \_ 信息**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_tcp_large_send_offload_net_buffer_list_info)) 。 [**\_ \_**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list) 
 
 TCP/IP 传输仅卸载满足以下条件的那些大型 TCP 数据包：
 
@@ -41,7 +40,7 @@ TCP/IP 传输仅卸载满足以下条件的那些大型 TCP 数据包：
 
 在为分段卸载大的 TCP 数据包之前，TCP/IP 传输：
 
--   更新与 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list) 结构关联的大数据包分段信息。 此信息是一个[**NDIS \_ TCP \_ 大型 \_ 发送 \_ 卸载 \_ 网络 \_ 缓冲区 \_ 列表 \_ 信息**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_tcp_large_send_offload_net_buffer_list_info)结构，它是与**网络 \_ 缓冲区 \_ 列表**结构关联的**网络 \_ 缓冲区 \_ 列表**信息的一部分。 有关 **网络 \_ 缓冲区 \_ 列表** 信息的详细信息，请参阅 [访问 Tcp/ip 卸载网络 \_ 缓冲区 \_ 列表信息](accessing-tcp-ip-offload-net-buffer-list-information.md)。 TCP/IP 传输将 **mss** 值设置为 (mss) 的最大段大小。
+-   更新与 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list) 结构关联的大数据包分段信息。 此信息是一个 [**NDIS \_ TCP \_ 大型 \_ 发送 \_ 卸载 \_ 网络 \_ 缓冲区 \_ 列表 \_ 信息**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_tcp_large_send_offload_net_buffer_list_info)结构，它是与 **网络 \_ 缓冲区 \_ 列表** 结构关联的 **网络 \_ 缓冲区 \_ 列表** 信息的一部分。 有关 **网络 \_ 缓冲区 \_ 列表** 信息的详细信息，请参阅 [访问 Tcp/ip 卸载网络 \_ 缓冲区 \_ 列表信息](accessing-tcp-ip-offload-net-buffer-list-information.md)。 TCP/IP 传输将 **mss** 值设置为 (mss) 的最大段大小。
 
 <a name="lsov1lengthrequirements"></a>
 
@@ -51,7 +50,7 @@ TCP/IP 传输仅卸载满足以下条件的那些大型 TCP 数据包：
 
 -   将正确的序列号写入 TCP 标头的序列号字段。 序列号标识 TCP 有效负载的第一个字节。
 
-当微型端口驱动程序在其[*MiniportSendNetBufferLists*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_send_net_buffer_lists)或[**MiniportCoSendNetBufferLists**](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_co_send_net_buffer_lists)函数中获取[**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)结构后，它可以调用* \_ Id*为**TcpLargeSendNetBufferListInfo**的[**网络 \_ 缓冲区 \_ 列表 \_ 信息**](/windows-hardware/drivers/ddi/ndis/nf-ndis-net_buffer_list_info)宏，以获取由 tcp/ip 传输写入的 MSS 值。
+当微型端口驱动程序在其 [*MiniportSendNetBufferLists*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_send_net_buffer_lists)或 [**MiniportCoSendNetBufferLists**](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_co_send_net_buffer_lists)函数中获取 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)结构后，它可以调用 *\_ Id* 为 **TcpLargeSendNetBufferListInfo** 的 [**网络 \_ 缓冲区 \_ 列表 \_ 信息**](/windows-hardware/drivers/ddi/ndis/nf-ndis-net_buffer_list_info)宏，以获取由 tcp/ip 传输写入的 MSS 值。
 
 微型端口驱动程序从数据包的 IP 标头中获取大数据包的总长度，并使用 MSS 值将大 TCP 数据包分割为较小的数据包。 每个较小的数据包都包含 MSS 或更少的用户数据字节。 请注意，只有从分段大数据包创建的最后一个数据包应包含少于 MSS 用户数据字节。 通过分段数据包创建的所有其他数据包都应包含 MSS 用户数据字节。 如果不遵循此规则，创建和传输不必要的额外数据包可能会降低性能。
 
@@ -112,9 +111,9 @@ TCP/IP 传输仅卸载满足以下条件的那些大型 TCP 数据包：
 
 -   使用0x0000 到0x7FFF 范围内的 ip ID (IP ID) 值。  (为支持 TCP 烟囱卸载的设备保留的范围介于0x8000 到0xFFFF 之间。 ) 例如，如果模板 IP 标头以0x7FFE 的标识字段开头，则第一个 TCP 段数据包的 IP ID 值必须为0x7FFE，后跟0x7FFF、0x0000、0x0001 等。
 
--   使用 NDIS TCP 的 **TcpHeaderOffset** 成员中的字节偏移量 [** \_ \_ \_ 发送 \_ \_ 网络 \_ 缓冲区 \_ 列表 \_ 信息**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_tcp_large_send_offload_net_buffer_list_info) ，以从数据包的第一个字节开始确定 TCP 标头的位置。
+-   使用 NDIS TCP 的 **TcpHeaderOffset** 成员中的字节偏移量 [**\_ \_ \_ 发送 \_ \_ 网络 \_ 缓冲区 \_ 列表 \_ 信息**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_tcp_large_send_offload_net_buffer_list_info) ，以从数据包的第一个字节开始确定 TCP 标头的位置。
 
--   将与每个 LSOv2[**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)结构关联的[**网络 \_ 缓冲区**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer)结构的数目限制为一个。
+-   将与每个 LSOv2 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)结构关联的 [**网络 \_ 缓冲区**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer)结构的数目限制为一个。
     > [!NOTE]
     > 这是支持 LSOv2 的微型端口驱动程序的新要求。 此规则不会显式强制用于 LSOv1 微型端口驱动程序，尽管建议这样做。
 
@@ -122,4 +121,4 @@ TCP/IP 传输仅卸载满足以下条件的那些大型 TCP 数据包：
 
 -   支持 TCP 选项、IP 选项和 IP 扩展标头。
 
--   发送操作完成后，微型端口驱动程序必须将[**NDIS_TCP_LARGE_SEND_OFFLOAD_NET_BUFFER_LIST_INFO**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_tcp_large_send_offload_net_buffer_list_info)结构的**LsoV2TransmitComplete**成员设置为零，并将**LsoV2TransmitComplete**成员设置为 NDIS_TCP_LARGE_SEND_OFFLOAD_V2_TYPE。
+-   发送操作完成后，微型端口驱动程序必须将 [**NDIS_TCP_LARGE_SEND_OFFLOAD_NET_BUFFER_LIST_INFO**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_tcp_large_send_offload_net_buffer_list_info)结构的 **LsoV2TransmitComplete** 成员设置为零，并将 **LsoV2TransmitComplete** 成员设置为 NDIS_TCP_LARGE_SEND_OFFLOAD_V2_TYPE。

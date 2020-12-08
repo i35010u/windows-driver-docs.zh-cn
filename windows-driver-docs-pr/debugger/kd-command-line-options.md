@@ -1,9 +1,8 @@
 ---
 title: KD 命令行选项
 description: 首次使用 KD 时，应使用 KD 和 NTKD 部分的调试开始。
-ms.assetid: 76c11b45-8469-4f27-840d-06477d8922b8
 keywords:
-- KD 命令行选项 Windows 调试
+- KD Command-Line 选项 Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,12 +11,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 79071c0e6f840389c8ccee3eb84b7e8c3f8f213a
-ms.sourcegitcommit: bc3d8a2a01dbe2074d3581bf687f003b3849b647
+ms.openlocfilehash: 18c5ba528ba71ca29163966fe6048ebd684d698e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89285407"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96783493"
 ---
 # <a name="kd-command-line-options"></a>KD 命令行选项
 
@@ -55,7 +54,7 @@ KD 命令行选项的说明如下。 只有 **-remote** 和 **-server** 选项�
 
 
 <span id="_______-server_______ServerTransport______"></span><span id="_______-server_______servertransport______"></span><span id="_______-SERVER_______SERVERTRANSPORT______"></span>**-server** *ServerTransport*   
-创建可由其他调试器访问的调试服务器。 有关可能的 *ServerTransport*的说明，请参阅 [**激活调试服务器**](activating-a-debugging-server.md)。 使用此参数时，该参数必须是命令行中的第一个参数。
+创建可由其他调试器访问的调试服务器。 有关可能的 *ServerTransport* 的说明，请参阅 [**激活调试服务器**](activating-a-debugging-server.md)。 使用此参数时，该参数必须是命令行中的第一个参数。
 
 <span id="_______-remote_______ClientTransport______"></span><span id="_______-remote_______clienttransport______"></span><span id="_______-REMOTE_______CLIENTTRANSPORT______"></span>**-remote** *ClientTransport*   
 创建调试客户端，并连接到已在运行的调试服务器。 有关可能的 *ClientTransport* 值的说明，请参阅 [**激活调试客户端**](activating-a-debugging-client.md)。 使用此参数时，该参数必须是命令行中的第一个参数。
@@ -70,7 +69,7 @@ KD 命令行选项的说明如下。 只有 **-remote** 和 **-server** 选项�
 如果指定此选项，则调试器将在会话开始时立即进入目标。 这在连接到可能当前未分解到目标的调试服务器时特别有用。
 
 <span id="_______-c__command_______"></span><span id="_______-C__COMMAND_______"></span>**-c "**<em>command</em>**"**   
-指定要在启动时运行的初始调试器命令。 此命令必须用引号引起来。 可以用分号分隔多个命令。  (如果你有一个长命令列表，则可以更容易地将其放入脚本，然后将 **-c**选项与[** $ &lt; 、$ &gt; &lt; 、$ &gt; &lt; 、$ $ &gt; &lt; (运行脚本文件) **](-----------------------a---run-script-file-.md)命令一起使用。 ) 
+指定要在启动时运行的初始调试器命令。 此命令必须用引号引起来。 可以用分号分隔多个命令。  (如果你有一个长命令列表，则可以更容易地将其放入脚本，然后将 **-c** 选项与 [**$ &lt; 、$ &gt; &lt; 、$ &gt; &lt; 、$ $ &gt; &lt; (运行脚本文件)**](-----------------------a---run-script-file-.md)命令一起使用。 ) 
 
 如果要启动调试客户端，则必须将此命令用于调试服务器。 不允许使用客户端特定的命令（如 **lsrcpath**）。
 
@@ -98,7 +97,7 @@ KD 命令行选项的说明如下。 只有 **-remote** 和 **-server** 选项�
 <span id="_______-iu________KeyString______"></span><span id="_______-iu________keystring______"></span><span id="_______-IU________KEYSTRING______"></span>**-iu** *KeyString*   
 将调试器远程处理注册为 URL 类型，以便用户可以使用 URL 自动启动调试器远程客户端。 *KeyString* 的格式为 `remdbgeng://RemotingOption` 。 *RemotingOption* 是一个字符串，它定义在 [**激活调试客户端**](activating-a-debugging-client.md)主题中定义的传输协议。 如果此操作成功，则不会显示任何消息;如果失败，将显示一条错误消息。
 
-**-Iu**参数不得与任何其他参数一起使用。 此命令实际上不会启动 KD。
+**-Iu** 参数不得与任何其他参数一起使用。 此命令实际上不会启动 KD。
 
 <span id="_______-k_______ConnectType______"></span><span id="_______-k_______connecttype______"></span><span id="_______-K_______CONNECTTYPE______"></span>**-k** *ConnectType*   
 告诉调试器如何连接到目标。 有关详细信息，请参阅 [使用 KD 和 NTKD 进行调试](debugging-using-kd-and-ntkd.md)。
@@ -113,10 +112,10 @@ KD 命令行选项的说明如下。 只有 **-remote** 和 **-server** 选项�
 使用 EXDI 驱动程序启动内核调试会话。 本文档未介绍 EXDI 驱动程序。 如果你的硬件探测或硬件模拟器具有 EXDI 接口，请联系 Microsoft 以获取调试信息。
 
 <span id="_______-lines______"></span><span id="_______-LINES______"></span>**-线条**   
-启用源代码行调试。 如果省略此选项，则在允许进行源调试之前，将必须使用 [** (开关源行支持) **](-lines--toggle-source-line-support-.md) 命令。 有关控制此情况的其他方法，请参阅 [SYMOPT \_ LOAD \_ LINES](symbol-options.md#symopt-load-lines)。
+启用源代码行调试。 如果省略此选项，则在允许进行源调试之前，将必须使用 [**(开关源行支持)**](-lines--toggle-source-line-support-.md) 命令。 有关控制此情况的其他方法，请参阅 [SYMOPT \_ LOAD \_ LINES](symbol-options.md#symopt-load-lines)。
 
-<span id="_______-log_a_au_o_ou__LogFile"></span><span id="_______-log_a_au_o_ou__logfile"></span><span id="_______-LOG_A_AU_O_OU__LOGFILE"></span>**-log**{**a \| au \| o \| ou**} 日志*文件*  
-开始将信息记录到日志文件。 如果 *日志文件* 已存在，则会在使用 **-徽标** 时被覆盖，否则，如果使用 **-loga** ，则输出将追加到该文件。 **-Logau**和 **-logou**选项分别与 **-loga**和 **-徽标**分别操作，只不过日志文件是 Unicode 文件。 有关更多详细信息，请参阅 [在 KD 中保留日志文件](keeping-a-log-file-in-kd.md)。
+<span id="_______-log_a_au_o_ou__LogFile"></span><span id="_______-log_a_au_o_ou__logfile"></span><span id="_______-LOG_A_AU_O_OU__LOGFILE"></span>**-log**{**a \| au \| o \| ou**} 日志 *文件*  
+开始将信息记录到日志文件。 如果 *日志文件* 已存在，则会在使用 **-徽标** 时被覆盖，否则，如果使用 **-loga** ，则输出将追加到该文件。 **-Logau** 和 **-logou** 选项分别与 **-loga** 和 **-徽标** 分别操作，只不过日志文件是 Unicode 文件。 有关更多详细信息，请参阅 [在 KD 中保留日志文件](keeping-a-log-file-in-kd.md)。
 
 <span id="_______-m______"></span><span id="_______-M______"></span>**-m**   
 指示串行端口已连接到调制解调器。 指示调试器监视运营商检测信号。
@@ -138,9 +137,9 @@ KD 命令行选项的说明如下。 只有 **-remote** 和 **-server** 选项�
 禁止全部 **shell** 命令。 即使启动了新的调试会话，此禁止仍将在调试器运行的时间结束。 有关详细信息，以及其他禁用 shell 命令的方法，请参阅 [使用 Shell 命令](using-shell-commands.md)。
 
 <span id="_______-QR_______Server______"></span><span id="_______-qr_______server______"></span><span id="_______-QR_______SERVER______"></span>**-QR** *服务器*   
-列出在指定的网络服务器上运行的所有调试服务器。 **\\\\**前面*服务器*)  (双反斜杠是可选的。 有关详细信息，请参阅 [**搜索调试服务器**](searching-for-debugging-servers.md) 。
+列出在指定的网络服务器上运行的所有调试服务器。 **\\\\** 前面 *服务器*)  (双反斜杠是可选的。 有关详细信息，请参阅 [**搜索调试服务器**](searching-for-debugging-servers.md) 。
 
-**-QR**参数不得与任何其他参数一起使用。 此命令实际上不会启动 KD。
+**-QR** 参数不得与任何其他参数一起使用。 此命令实际上不会启动 KD。
 
 <span id="_______-r______"></span><span id="_______-R______"></span>**-r**   
 显示寄存器。
@@ -157,7 +156,7 @@ KD 命令行选项的说明如下。 只有 **-remote** 和 **-server** 选项�
 <span id="_______-ses______"></span><span id="_______-SES______"></span>**-ses**   
 使调试器对所有符号文件执行严格的评估，并忽略任何有问题的符号。 有关详细信息和控制此方法的其他方法，请参阅 [SYMOPT \_ EXACT \_ 符号](symbol-options.md#symopt-exact-symbols)。
 
-<span id="_______-sflags_0xNumber"></span><span id="_______-sflags_0xnumber"></span><span id="_______-SFLAGS_0XNUMBER"></span> **-sflags 0x * * * Number*  
+<span id="_______-sflags_0xNumber"></span><span id="_______-sflags_0xnumber"></span><span id="_______-SFLAGS_0XNUMBER"></span>**-sflags 0x**_Number_  
 同时设置所有符号处理程序选项。 *Number* 应为以 **0x** 开头的十六进制数字，不允许使用 **0x** ，但符号选项是二进制标志，因此建议使用十六进制。 应谨慎使用此选项，因为它将覆盖所有符号处理程序默认值。 有关详细信息，请参阅 [设置符号选项](symbol-options.md)。
 
 <span id="_______-sicv______"></span><span id="_______-SICV______"></span>**-sicv**   
@@ -189,7 +188,7 @@ KD 命令行选项的说明如下。 只有 **-remote** 和 **-server** 选项�
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">值</th>
+<th align="left">“值”</th>
 <th align="left">返回的常量</th>
 <th align="left">含义</th>
 </tr>
@@ -229,21 +228,21 @@ KD 命令行选项的说明如下。 只有 **-remote** 和 **-server** 选项�
 打印调试器版本字符串。
 
 <span id="_______-wake_______PID______"></span><span id="_______-wake_______pid______"></span><span id="_______-WAKE_______PID______"></span>**-唤醒** *PID*   
-使睡眠模式对于其进程 ID 由 *PID*指定的用户模式调试器结束。 在睡眠模式下，必须在目标计算机上发出此命令。 有关详细信息，请参阅 [从内核调试器控制用户模式调试器](controlling-the-user-mode-debugger-from-the-kernel-debugger.md) 。
+使睡眠模式对于其进程 ID 由 *PID* 指定的用户模式调试器结束。 在睡眠模式下，必须在目标计算机上发出此命令。 有关详细信息，请参阅 [控制内核调试器中的 User-Mode 调试器](controlling-the-user-mode-debugger-from-the-kernel-debugger.md) 。
 
-**-唤醒**参数不得与任何其他参数一起使用。 此命令实际上不会启动 KD。
+**-唤醒** 参数不得与任何其他参数一起使用。 此命令实际上不会启动 KD。
 
 <span id="_______-x______"></span><span id="_______-X______"></span>**-x**   
-导致调试器在第一次发生异常时中断，而不是让引发异常的应用程序或模块进行处理。 与 **-b**相同 (，但初始 **eb nt 除外！NtGlobalFlag 9; g** command. ) 
+导致调试器在第一次发生异常时中断，而不是让引发异常的应用程序或模块进行处理。 与 **-b** 相同 (，但初始 **eb nt 除外！NtGlobalFlag 9; g** command. ) 
 
 <span id="_______-y_______SymbolPath______"></span><span id="_______-y_______symbolpath______"></span><span id="_______-Y_______SYMBOLPATH______"></span>**-y** *SymbolPath*   
 指定符号搜索路径。 使用分号 (**;**) 分隔多个路径。 如果路径包含空格，则应该用引号将其引起来。 有关详细信息和更改此路径的其他方式，请参阅 [符号路径](symbol-path.md)。
 
 <span id="_______-z_______DumpFile______"></span><span id="_______-z_______dumpfile______"></span><span id="_______-Z_______DUMPFILE______"></span>**-z** *DumpFile*   
-指定要调试的故障转储文件的名称。 如果路径和文件名包含空格，则必须用引号将其引起来。 可以通过包含多个 **z** 选项来一次打开多个转储文件，每个转储文件后跟不同的 *DumpFile* 值。 有关详细信息，请参阅 [使用 KD 分析内核模式转储文件](analyzing-a-kernel-mode-dump-file-with-kd.md)。
+指定要调试的故障转储文件的名称。 如果路径和文件名包含空格，则必须用引号将其引起来。 可以通过包含多个 **z** 选项来一次打开多个转储文件，每个转储文件后跟不同的 *DumpFile* 值。 有关详细信息，请参阅 [使用 KD 分析 Kernel-Mode 转储文件](analyzing-a-kernel-mode-dump-file-with-kd.md)。
 
 <span id="_______-zp_______PageFile______"></span><span id="_______-zp_______pagefile______"></span><span id="_______-ZP_______PAGEFILE______"></span>**-zp** *页面文件*   
-指定已修改的页面文件的名称。 如果正在调试转储文件，并且想要 [**在内存) 命令中使用 pagein (页 **](-pagein--page-in-memory-.md) ，这会很有用。 不能将 **-zp** 与标准的 Windows 页面文件一起使用，只能使用经过特别修改的页面文件。
+指定已修改的页面文件的名称。 如果正在调试转储文件，并且想要 [**在内存) 命令中使用 pagein (页**](-pagein--page-in-memory-.md) ，这会很有用。 不能将 **-zp** 与标准的 Windows 页面文件一起使用，只能使用经过特别修改的页面文件。
 
 <span id="_______-_______"></span> **-?**   
 显示命令行帮助文本。

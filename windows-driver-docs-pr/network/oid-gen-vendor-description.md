@@ -1,21 +1,20 @@
 ---
 title: OID_GEN_VENDOR_DESCRIPTION
-description: 作为查询，OID_GEN_VENDOR_DESCRIPTION OID 指向以 null 结尾的字符串，该字符串描述网络接口控制器（NIC）。
-ms.assetid: FBC0F548-9769-4DD8-9821-3F3EC29CCB77
+description: 作为查询，OID_GEN_VENDOR_DESCRIPTION OID 指向以 null 结尾的字符串，该字符串描述了网络接口控制器 (NIC) 。
 keywords:
 - OID_GEN_VENDOR_DESCRIPTION
 ms.date: 11/01/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8e1f9b2d0319aa587452632a011bc69cb5c95f66
-ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
+ms.openlocfilehash: 94bfe53dc9e416fc061963803037f928605df261
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85918031"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96782220"
 ---
 # <a name="oid_gen_vendor_description"></a>OID_GEN_VENDOR_DESCRIPTION
 
-作为查询，OID_GEN_VENDOR_DESCRIPTION OID 指向以 null 结尾的 Unicode 字符串，其中描述了网络接口控制器（NIC）。 
+作为查询，OID_GEN_VENDOR_DESCRIPTION OID 指向以 null 结尾的 Unicode 字符串，描述网络接口控制器 (NIC) 。 
 
 不支持设置请求。
 
@@ -25,5 +24,5 @@ ms.locfileid: "85918031"
 
 ## <a name="requirements"></a>要求
 
-**版本**： Windows Vista 和更高版本的**标头**： Ntddndis （包括 Ndis .h）
+**版本**： Windows Vista 和更高版本的 **标头**： Ntddndis (包括 Ndis .h) 
 

@@ -1,9 +1,8 @@
 ---
 title: lsc（列出当前源）
-description: Lsc 命令显示当前的源代码文件名称和行号。
-ms.assetid: 5c500974-c405-4335-94bd-a36e7389667b
+description: Lsc 命令显示当前的源文件名和行号。
 keywords:
-- lsc （列表当前源） Windows 调试
+- lsc (列出当前源) Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: a44a461e64cb25c9c681099a4461abf48b5fcbbe
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4409d94e6beb752f4fc28113d2cd05e6a4393bc5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383319"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96783457"
 ---
 # <a name="lsc-list-current-source"></a>lsc（列出当前源）
 
 
-**Lsc**命令显示当前的源代码文件名称和行号。
+**Lsc** 命令显示当前的源文件名和行号。
 
 ```dbgcmd
 lsc 
@@ -40,12 +39,12 @@ lsc
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>模式</strong></p></td>
-<td align="left"><p>用户模式下，内核模式</p></td>
+<td align="left"><p><strong>交货</strong></p></td>
+<td align="left"><p>用户模式，内核模式</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>目标</strong></p></td>
-<td align="left"><p>实时、 崩溃转储</p></td>
+<td align="left"><p>实时，故障转储</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>平台</strong></p></td>
@@ -56,12 +55,12 @@ lsc
 
  
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[**ls，lsa （列表源行）**](ls--lsa--list-source-lines-.md)
+[**ls、lsa（列出源行）**](ls--lsa--list-source-lines-.md)
 
-[**lsf，lsf-（加载或卸载源文件）**](lsf--lsf---load-or-unload-source-file-.md)
+[**lsf、lsf-（加载或卸载源文件）**](lsf--lsf---load-or-unload-source-file-.md)
 
  
 

@@ -1,19 +1,18 @@
 ---
 title: 在 WinDbg 中查看和编辑寄存器
 description: 在 WinDbg 中，可以通过输入命令、使用 "寄存器" 窗口或使用 "监视" 窗口来查看和编辑寄存器。
-ms.assetid: bd7ced3b-7f71-4ea5-a45b-38339dc3e87c
 keywords:
 - 调试信息窗口，"寄存器" 窗口
 - “寄存器”窗口
 - 寄存器，"寄存器" 窗口
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cba6fb78dbb273b1c7c08b879061ccb79110af86
-ms.sourcegitcommit: f610410e1500f0b0a4ca008b52679688ab51033d
+ms.openlocfilehash: e39cb18ceb9fccb47760f88c1226df1003efe282
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/15/2020
-ms.locfileid: "88253103"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96783459"
 ---
 # <a name="viewing-and-editing-registers-in-windbg"></a>在 WinDbg 中查看和编辑寄存器
 
@@ -25,9 +24,9 @@ ms.locfileid: "88253103"
 ## <a name="span-idcommandsspanspan-idcommandsspanspan-idcommandsspancommands"></a><span id="Commands"></span><span id="commands"></span><span id="COMMANDS"></span>命令
 
 
-可以通过在调试器命令窗口中输入 [**r (寄存器) **](r--registers-.md) 命令来查看和编辑寄存器。 您可以使用多个选项或通过使用 [**rm (注册掩码) **](rm--register-mask-.md) 命令自定义显示。
+可以通过在调试器命令窗口中输入 [**r (寄存器)**](r--registers-.md) 命令来查看和编辑寄存器。 您可以使用多个选项或通过使用 [**rm (注册掩码)**](rm--register-mask-.md) 命令自定义显示。
 
-每次目标停止时，也会自动显示寄存器。 如果你使用 [**p (步骤) **](p--step-.md) 或 [**t (Trace) **](t--trace-.md) 命令单步执行代码，则会看到每个步骤的寄存器显示。 若要停止此显示，请在使用这些命令时使用 **r** 选项。
+每次目标停止时，也会自动显示寄存器。 如果你使用 [**p (步骤)**](p--step-.md) 或 [**t (Trace)**](t--trace-.md) 命令单步执行代码，则会看到每个步骤的寄存器显示。 若要停止此显示，请在使用这些命令时使用 **r** 选项。
 
 在基于 x86 的处理器上， **r** 选项还控制多个称为标志的一位寄存器。 若要更改这些标志，使用的语法略有不同。 有关这些标志的详细信息以及此语法的说明，请参阅 [X86 标志](x86-architecture.md#x86-flags)。
 
@@ -36,13 +35,13 @@ ms.locfileid: "88253103"
 
 ### <a name="span-idopening_the_registers_windowspanspan-idopening_the_registers_windowspanspan-idopening_the_registers_windowspanopening-the-registers-window"></a><span id="Opening_the_Registers_Window"></span><span id="opening_the_registers_window"></span><span id="OPENING_THE_REGISTERS_WINDOW"></span>打开 "寄存器" 窗口
 
-若要打开或切换到 "寄存器" 窗口，请从 "**视图**" 菜单中选择 "**注册**"。  (你还可以按 ALT + 4，或在**Registers** ![ ](images/tbreg.png) 工具栏上) "寄存器" 按钮的屏幕截图 (选择 "注册" 按钮。 ALT + SHIFT + 4 关闭 "寄存器" 窗口。 ) 
+若要打开或切换到 "寄存器" 窗口，请从 "**视图**" 菜单中选择 "**注册**"。  (你还可以按 ALT + 4，或在 **Registers** ![ ](images/tbreg.png) 工具栏上) "寄存器" 按钮的屏幕截图 (选择 "注册" 按钮。 ALT + SHIFT + 4 关闭 "寄存器" 窗口。 ) 
 
 以下屏幕截图显示了 "寄存器" 窗口的示例。
 
 !["寄存器" 窗口的屏幕截图](images/window-registers.png)
 
-"寄存器" 窗口包含两列。 **Reg**列列出了目标处理器的所有寄存器。 " **值** " 列显示每个寄存器的当前值。 此窗口还包含工具栏上的 " **自定义** " 按钮，用于打开 " **自定义注册列表** " 对话框。
+"寄存器" 窗口包含两列。 **Reg** 列列出了目标处理器的所有寄存器。 " **值** " 列显示每个寄存器的当前值。 此窗口还包含工具栏上的 " **自定义** " 按钮，用于打开 " **自定义注册列表** " 对话框。
 
 ### <a name="span-idusing_the_registers_windowspanspan-idusing_the_registers_windowspanspan-idusing_the_registers_windowspanusing-the-registers-window"></a><span id="Using_the_Registers_Window"></span><span id="using_the_registers_window"></span><span id="USING_THE_REGISTERS_WINDOW"></span>使用 "寄存器" 窗口
 
@@ -53,7 +52,7 @@ ms.locfileid: "88253103"
     -   若要保存新值，请按 ENTER。
     -   若要放弃新值，请按 ESC。
     -   如果键入的值无效，则按 ENTER 时，旧值将再次出现。
--   注册值显示在当前基数内，必须在同一基数内键入新值。 若要更改当前基数，请使用调试器命令窗口中的 [**n (Set Number Base) **](n--set-number-base-.md) 命令。
+-   注册值显示在当前基数内，必须在同一基数内键入新值。 若要更改当前基数，请使用调试器命令窗口中的 [**n (Set Number Base)**](n--set-number-base-.md) 命令。
 
 -   在用户模式下，"寄存器" 窗口显示与当前线程关联的寄存器。 有关当前线程的详细信息，请参阅 [控制进程和线程](controlling-processes-and-threads.md)。
 
@@ -87,7 +86,7 @@ ms.locfileid: "88253103"
 
 如果选中了 " **首先显示已修改的寄存器值** " 复选框，则其值最近更改过的寄存器会出现在顶部。
 
-如果选中 " **不显示 subregisters** " 复选框，则不会显示 subregisters。 例如，将显示 **eax** ，而不是 **ax**、 **ah**或 **al**。
+如果选中 " **不显示 subregisters** " 复选框，则不会显示 subregisters。 例如，将显示 **eax** ，而不是 **ax**、 **ah** 或 **al**。
 
 选择 **"确定"** 以保存更改，或选择 " **取消** " 放弃更改。
 

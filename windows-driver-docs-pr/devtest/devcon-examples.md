@@ -1,7 +1,6 @@
 ---
 title: 设备控制台 (DevCon.exe) 示例
 description: 设备控制台 (DevCon.exe) 示例
-ms.assetid: 5af1e777-04ba-4e83-b239-f568a02a9460
 keywords:
 - DevCon WDK，示例
 - 设备控制台 WDK，示例
@@ -13,12 +12,12 @@ keywords:
 - HAL 更新示例
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: adddda477ce4018135bb0dde516679151df1e68e
-ms.sourcegitcommit: 9e5a99dc75dfee3caa9a242adc0ed22ae4df9f29
+ms.openlocfilehash: 7a3962a136710751dfcead6ecb9d12511514fe97
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89043129"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96783405"
 ---
 # <a name="device-console-devconexe-examples"></a>设备控制台 (DevCon.exe) 示例
 
@@ -166,15 +165,15 @@ ms.locfileid: "89043129"
 
 由于 DevCon 操作使用 Id 和 ID 模式来标识设备，因此使用 DevCon 的常见第一步是为计算机上的设备创建硬件 ID 引用文件。
 
-以下命令使用 [**DevCon hwid**](devcon-hwids.md) 操作，该操作将返回 id 和设备描述。 它使用通配符 (**\***) 来表示本地计算机上的所有设备。
+以下命令使用 [**DevCon hwid**](devcon-hwids.md) 操作，该操作将返回 id 和设备描述。 它使用通配符 ( * *\** _) 来表示本地计算机上的所有设备。
 
 ```
-devcon hwids *
+devcon hwids _
 ```
 
 由于输出很长并重复使用，因此将输出保存在文本文件中以供参考。
 
-以下命令使用通配符 (**\***) 来表示计算机上的所有设备。 它使用重定向字符 (*<em>&gt;</em>*) 将命令输出保存到 hwids.txt 文件中。
+以下命令使用通配符 ( * *\** _) 来表示计算机上的所有设备。它使用重定向字符 (_ <em>&gt;</em> * ) 将命令输出保存到 hwids.txt 文件中。
 
 ```
 devcon hwids * > hwids.txt
@@ -182,7 +181,7 @@ devcon hwids * > hwids.txt
 
 以下命令查找远程计算机（Server01）上的设备的硬件 Id。 它使用 **/m** 参数指定远程计算机的名称。 此命令会将输出重定向到 server01 \_hwids.txt 文件，供以后参考。
 
-**注意**   此命令会失败，除非用户在远程计算机上具有所需的权限。 若要在远程计算机上运行 DevCon 命令，组策略设置必须允许即插即用服务在远程计算机上运行。 在运行 Windows Vista 和 Windows 7 的计算机上，默认情况下组策略禁用对服务的远程访问。 在运行 Windows 驱动程序工具包 (WDK) 8.1 和 Windows 驱动程序工具包 (WDK) 8 的计算机上，远程访问不可用。
+**注意**   此命令会失败，除非用户在远程计算机上具有所需的权限。 若要在远程计算机上运行 DevCon 命令，组策略设置必须允许即插即用服务在远程计算机上运行。 在运行 Windows Vista 和 Windows 7 的计算机上，默认情况下组策略禁用对服务的远程访问。 在运行 Windows 驱动程序工具包 (WDK) 8.1 和 Windows 驱动程序工具包 (WDK) 8 的计算机上，远程访问不可用。
 
  
 
@@ -194,10 +193,10 @@ devcon /m:\\server01 hwids * > server01_hwids.txt
 
 若要查找特定设备的硬件 Id，请输入硬件 ID 或模式、兼容 ID 或模式、设备实例 ID 或模式或设备安装程序类的名称。
 
-以下命令使用 **DevCon hwid** 操作和模式来查找计算机上软盘驱动器的硬件 id。  (用户假定模式显示在设备标识符之一中。 ) 此命令使用通配符 (**\***) 来表示任何 id 中的单词 "软盘" 之前或之后的所有字符。
+以下命令使用 **DevCon hwid** 操作和模式来查找计算机上软盘驱动器的硬件 id。  (用户假定模式显示在设备标识符之一中。 ) 此命令使用通配符 ( * *\** _) 来表示任何 id 中的单词 "软盘" 之前或之后的所有字符。
 
 ```
-devcon hwids *floppy*
+devcon hwids _floppy*
 ```
 
 在响应中，DevCon 显示计算机上软盘驱动器的设备实例 ID、硬件 ID 和兼容 ID。 可以在后续的 DevCon 命令中使用这些 Id。
@@ -364,7 +363,7 @@ No devices for setup class "TapeDrive" (Tape drives) on \\server01.
 
 ### <a name="span-idddk_example_8_list_all_driver_files_toolsspanspan-idddk_example_8_list_all_driver_files_toolsspanexample-8-list-all-driver-files"></a><span id="ddk_example_8_list_all_driver_files_tools"></span><span id="DDK_EXAMPLE_8_LIST_ALL_DRIVER_FILES_TOOLS"></span><a name="ddk_example_8_list_all_driver_files_tools"></a>示例8：列出所有驱动程序文件
 
-以下命令使用 [**DevCon DriverFiles**](devcon-driverfiles.md) 操作列出系统上设备使用的驱动程序的文件名。 该命令使用通配符 (**\***) 来指示系统上的所有设备。 由于输出范围很大，因此该命令使用重定向字符 (*<em>&gt;</em>*) 将输出重定向到引用文件，driverfiles.txt。
+以下命令使用 [**DevCon DriverFiles**](devcon-driverfiles.md) 操作列出系统上设备使用的驱动程序的文件名。 该命令使用通配符 ( * *\** _) 来指示系统上的所有设备。由于输出范围很大，因此该命令使用重定向字符 (_ <em>&gt;</em> * ) 将输出重定向到引用文件，driverfiles.txt。
 
 ```
 devcon driverfiles * > driverfiles.txt
@@ -394,10 +393,10 @@ HID\VID_045E&PID_0039\6&DC36FDE&0&0000
 
 以下命令使用 [**DevCon DriverNodes**](devcon-drivernodes.md) 命令和 ID 模式列出软件枚举设备的驱动程序节点。 模式适用于查找有关可能不在同一安装程序类中的类似设备的信息。
 
-以下命令使用 ID 模式**sw \\ *** 来指定硬件 Id 或兼容 id 以 "sw" 开头的设备，即软件枚举设备。
+以下命令使用 ID 模式 **sw \\** _ 来指定硬件 Id 或兼容 id 以 "sw" 开头的设备，即软件枚举设备。
 
 ```
-devcon drivernodes sw*
+devcon drivernodes sw_
 ```
 
 在响应中，DevCon 显示系统上软件枚举设备的驱动程序节点。
@@ -692,7 +691,7 @@ ROOT\MS_PTIMINIPORT\0000
 
 ### <a name="span-idddk_example_17_display_the_status_of_all_devices_on_the_local_computerspanspan-idddk_example_17_display_the_status_of_all_devices_on_the_local_computerspanexample-17-display-the-status-of-all-devices-on-the-local-computer"></a><span id="ddk_example_17_display_the_status_of_all_devices_on_the_local_computer"></span><span id="DDK_EXAMPLE_17_DISPLAY_THE_STATUS_OF_ALL_DEVICES_ON_THE_LOCAL_COMPUTER"></span><a name="ddk_example_17_display_the_status_of_all_devices_on_the_local_computer"></a>示例17：显示本地计算机上所有设备的状态
 
-以下命令使用 [**DevCon 状态**](devcon-status.md) 操作来查找本地计算机上所有设备的状态。 然后，它将状态保存在 status.txt 文件中，以便进行日志记录或以后查看。 该命令使用通配符 (**\***) 来表示所有设备，并使用重定向字符 (*<em>&gt;</em>*) 将输出重定向到 status.txt 文件。
+以下命令使用 [**DevCon 状态**](devcon-status.md) 操作来查找本地计算机上所有设备的状态。 然后，它将状态保存在 status.txt 文件中，以便进行日志记录或以后查看。 该命令使用通配符 ( * *\** _) 来表示所有设备，并使用重定向字符 (_ <em>&gt;</em> * ) 将输出重定向到 status.txt 文件。
 
 ```
 devcon status * > status.txt
@@ -819,10 +818,10 @@ ROOT\RDP_MOU\0000
 
 以下命令使用 [**DevCon Find**](devcon-find.md) 操作来显示本地计算机上的所有旧设备。 由于旧版设备没有硬件 ID，你必须按其设备实例 ID 搜索它们 (注册表路径) 、根 \\ 旧版或其安装程序类 LegacyDriver。
 
-第一个命令按设备实例 ID 模式查找旧驱动程序。 ID 模式前面是一个字符 (**@**) ，用于指示设备实例 ID，后跟通配符 (**\***) 以查找根旧子项中的所有设备 \\ 。
+第一个命令按设备实例 ID 模式查找旧驱动程序。 ID 模式前面是一个字符 (**@**) ，用于指示设备实例 ID，后跟通配符 ( * *\** _) 以查找根旧子项中的所有设备 \\ 。
 
 ```
-devcon find @root\legacy*
+devcon find @root\legacy_
 ```
 
 第二个命令通过搜索 LegacyDriver 类中的所有设备，查找旧版设备。
@@ -886,7 +885,7 @@ SW\{EEAB7790-C514-11D1-B42B-00805FC1270E}\ASYNCMAC          : RAS Async Adapter
 7 matching device(s) found.
 ```
 
-下面的命令通过运行与上一个**Devcon FindAll**命令具有相同参数的**devcon find**命令来比较[**devcon find**](devcon-find.md)和**DevCon FindAll**操作。
+下面的命令通过运行与上一个 **Devcon FindAll** 命令具有相同参数的 **devcon find** 命令来比较 [**devcon find**](devcon-find.md)和 **DevCon FindAll** 操作。
 
 ```
 devcon find =net
@@ -983,7 +982,7 @@ Class filters changed. Class devices must be restarted for changes to take effec
     Disklog
 ```
 
-你还可以使用以下命令添加 MyFilter 驱动程序并将其放置在 PartMgr 和 Disklog 之间。 在此示例中，第一个子命令将 <strong>@PartMgr</strong> 虚拟游标定位到 PartMgr 筛选器驱动程序。 第二个子命令 **+ MyFilter**使用 "外接程序" 运算符 (+) 在 PartMgr 后添加 MyFilter.sys。
+你还可以使用以下命令添加 MyFilter 驱动程序并将其放置在 PartMgr 和 Disklog 之间。 在此示例中，第一个子命令将 <strong>@PartMgr</strong> 虚拟游标定位到 PartMgr 筛选器驱动程序。 第二个子命令 **+ MyFilter** 使用 "外接程序" 运算符 (+) 在 PartMgr 后添加 MyFilter.sys。
 
 ```
 devcon /r classfilter DiskDrive upper @PartMgr +MyFilter
@@ -1059,7 +1058,7 @@ devcon /r classfilter DiskDrive upper !Disklog =@PartMgr +Disklog
 
  
 
-第一个子命令使用 delete 运算符 (**！ ) ** 从列表中删除 Disklog。 第二个子命令使用 start 运算符 (**=) ** 将虚拟光标移回起始位置，然后使用定位运算符 (**@ ) ** 将光标放在 PartMgr 驱动程序中。 启动运算符是必需的，因为虚拟游标仅在列表中向前移动。 最后一个子命令使用 "外接程序" 运算符 (**+) ** 在 PartMgr 之后添加 Disklog。
+第一个子命令使用 delete 运算符 (**！ )** 从列表中删除 Disklog。 第二个子命令使用 start 运算符 (**=)** 将虚拟光标移回起始位置，然后使用定位运算符 (**@ )** 将光标放在 PartMgr 驱动程序中。 启动运算符是必需的，因为虚拟游标仅在列表中向前移动。 最后一个子命令使用 "外接程序" 运算符 (**+)** 在 PartMgr 之后添加 Disklog。
 
 在响应中，DevCon 显示了 DiskDrive 类的新类筛选器配置。
 
@@ -1087,7 +1086,7 @@ Not all of 1 device(s) enabled, at least one requires reboot to complete the ope
 
 可以通过以下方式进行响应：手动重启系统，或使用 [**DevCon Reboot**](devcon-reboot.md) 操作进行响应。
 
-以下命令将 **/r** 参数添加到前一个命令。 **/R**参数仅在需要重新启动才能完成操作时重新启动系统。
+以下命令将 **/r** 参数添加到前一个命令。 **/R** 参数仅在需要重新启动才能完成操作时重新启动系统。
 
 ```
 devcon /r enable '*PNP0000
@@ -1124,12 +1123,12 @@ LPTENUM\HEWLETT-PACKARDDESKJET_1120C\1&7530F08&0&LPT1.4        : Enabled
 
 以下命令使用 [**DevCon disable**](devcon-disable.md) 操作来禁用本地计算机上的 USB 设备。 它通过硬件 ID 模式 (USB) 来确定设备 \* 。 此模式将匹配其硬件 ID 或兼容 ID 以 "USB" 开头的任何设备。 该命令包括 **/r** 参数，如果有必要使禁用生效，则会重新启动系统。
 
-**注意**   使用 ID 模式禁用设备之前，请确定哪些设备将受到影响。 为此，请在显示命令中使用模式，如**devcon STATUS usb \\ *** 或 * * devcon hwid USB * * \\ *。
+**注意**   使用 ID 模式禁用设备之前，请确定哪些设备将受到影响。 若要执行此操作，请在显示命令中使用模式，如 **devcon STATUS \\ usb** _ 或 _*devcon hwid \\ USB* *_。
 
  
 
 ```
-devcon /r disable USB*
+devcon /r disable USB_
 ```
 
 在响应中，DevCon 显示 USB 设备的设备实例 Id，并报告它们处于禁用状态。 尽管该命令包含 **/r** 参数，但系统不会重新启动，因为禁用设备不需要重新启动。
@@ -1185,7 +1184,7 @@ Updating drivers for *PNP0501 from c:\windows\inf\test.inf.
 Drivers updated successfully.
 ```
 
-你还可以使用 [**Devcon UpdateNI**](devcon-updateni.md) 操作（ **devcon 更新** 操作的非交互式版本）更新驱动程序。 **Devcon UpdateNI**操作与**DevCon 更新**操作相同，不同之处在于，它取消了需要响应的所有用户提示，并假定默认响应提示。
+你还可以使用 [**Devcon UpdateNI**](devcon-updateni.md) 操作（ **devcon 更新** 操作的非交互式版本）更新驱动程序。 **Devcon UpdateNI** 操作与 **DevCon 更新** 操作相同，不同之处在于，它取消了需要响应的所有用户提示，并假定默认响应提示。
 
 以下命令使用 **DevCon UpdateNI** 操作安装测试驱动程序。
 
@@ -1222,7 +1221,7 @@ Drivers updated successfully.
 
 若要在无人参与的安装过程中安装此设备，请首先将以下文件添加到软盘： devcon.exe 和 netloop (C： \\ Windows \\ inf \\ netloop) 。
 
-然后，若要添加到无人参与安装文件的** \[ GUIRunOnce \] **部分，请添加以下 DevCon 命令：
+然后，若要添加到无人参与安装文件的 **\[ GUIRunOnce \]** 部分，请添加以下 DevCon 命令：
 
 ```
 a:\devcon /r install a:\Netloop.inf '*MSLOOP
@@ -1230,7 +1229,7 @@ a:\devcon /r install a:\Netloop.inf '*MSLOOP
 
 此命令通过使用环回适配器的硬件 ID MSLOOP 来识别它 \* 。 "MSLOOP" 前面的单引号字符 \* 告知 DevCon 按原义解释字符串，即，将星号解释为硬件 ID 的一部分，而不是通配符。
 
-此命令还指定在安装的软盘) 上，DevCon 使用 Netloop 文件 (。 **/R**参数仅在需要重新启动才能完成安装时重新启动计算机。
+此命令还指定在安装的软盘) 上，DevCon 使用 Netloop 文件 (。 **/R** 参数仅在需要重新启动才能完成安装时重新启动计算机。
 
 最后，将网络配置设置添加到无人参与安装文件，并运行无人参与安装。
 
@@ -1259,7 +1258,7 @@ USB\VID_045E&PID_0039\5&29F428A4&0&2                  : Removed
 
 以下命令使用 [**DevCon Remove**](devcon-remove.md) 操作从本地计算机中卸载 NDISWAN 微型端口驱动程序。 命令指定 Net 类，然后通过在类中指定设备的硬件 ID 或兼容 ID 包含 "ndiswan" 来精炼搜索。 此命令还包括 **/r** 参数，如果需要重新启动才能使删除过程生效，则会重新启动系统。
 
-**警告**   在使用模式删除任何设备之前，请确定哪些设备将受到影响。 为此，请在显示命令中使用模式，如**devcon status = net \* ndiswan \\ *** 或 * * devcon hwid = net \* ndiswan \\ * * *。
+**警告**   在使用模式删除任何设备之前，请确定哪些设备将受到影响。 为此，请在显示命令中使用模式，如 **devcon status = net \* ndiswan \\*** 或 * * devcon hwid = net \* ndiswan \\ * * *。
 
  
 
@@ -1288,7 +1287,7 @@ Scanning for new hardware.
 Scanning completed.
 ```
 
-你还可以在远程计算机上使用 **DevCon 重新扫描** 命令。 下面的命令通过将 **/m**参数添加到命令，在 Server01 （远程计算机）上运行**DevCon 重新扫描**操作。
+你还可以在远程计算机上使用 **DevCon 重新扫描** 命令。 下面的命令通过将 **/m** 参数添加到命令，在 Server01 （远程计算机）上运行 **DevCon 重新扫描** 操作。
 
 ```
 devcon /m:\\server01 rescan
@@ -1377,9 +1376,9 @@ devcon status legacy
 
 ### <a name="span-idddk_example_42_delete_a_hardware_id_from_all_legacy_devices_on_a_remotspanspan-idddk_example_42_delete_a_hardware_id_from_all_legacy_devices_on_a_remotspanexample-42-delete-a-hardware-id-from-all-legacy-devices-on-a-remote-computer"></a><span id="ddk_example_42_delete_a_hardware_id_from_all_legacy_devices_on_a_remot"></span><span id="DDK_EXAMPLE_42_DELETE_A_HARDWARE_ID_FROM_ALL_LEGACY_DEVICES_ON_A_REMOT"></span><a name="ddk_example_42_delete_a_hardware_id_from_all_legacy_devices_on_a_remot"></a>示例42：从远程计算机上的所有旧设备中删除硬件 ID
 
-以下命令使用 [**DevCon SetHwID**](devcon-sethwid.md) 操作从 Server1 远程计算机上所有旧设备的硬件 id 列表中删除 **旧**的硬件 id。
+以下命令使用 [**DevCon SetHwID**](devcon-sethwid.md) 操作从 Server1 远程计算机上所有旧设备的硬件 id 列表中删除 **旧** 的硬件 id。
 
-该命令使用 **/m** 参数来指定远程计算机。 它使用 **旧**硬件 id 来标识具有该硬件 id 的所有设备。 然后，它使用 **！** 用于删除 **旧** 硬件 ID 的符号参数。
+该命令使用 **/m** 参数来指定远程计算机。 它使用 **旧** 硬件 id 来标识具有该硬件 id 的所有设备。 然后，它使用 **！** 用于删除 **旧** 硬件 ID 的符号参数。
 
 ```
 devcon /m:\\Server1 sethwid legacy := !legacy
@@ -1458,11 +1457,11 @@ Modified 1 hardware ID(s).
 
 下面的示例演示如何使用 DevCon 更新计算机上的 HAL。 在此示例中，测试人员需要将最适合于具有多处理器 APCI APIC HAL 的计算机的单处理器 APCI APIC HAL 替换为测试目的。
 
-第一个命令使用[**DevCon SetHwID**](devcon-sethwid.md)操作将 HAL 的硬件 id 从 acpiapic （即，单处理器 hal 的硬件 id）更改为**acpiapic \_ Mp**（多处理器 hal 的硬件 id）。 ** \_ **
+第一个命令使用 [**DevCon SetHwID**](devcon-sethwid.md)操作将 HAL 的硬件 id 从 acpiapic （即，单处理器 hal 的硬件 id）更改为 **acpiapic \_ Mp**（多处理器 hal 的硬件 id）。 **\_**
 
 必须更改硬件 ID，因为 HAL 的 INF 文件包含用于单处理器和多处理器 Hal 的驱动程序。 系统根据设备的硬件 ID 从 INF 文件中选择最适合的驱动程序。 如果不更改硬件 ID，则 **DevCon Update** 命令只需重新安装单处理器 HAL 驱动程序。
 
-在下面的命令中，该命令通过 ID 前面的字符所指示的实例 ID （ **根 \\ ACPI \_ HAL \\ 0000**）来标识 HAL **@** 。 该命令使用 **+** 字符使 **acpiapic \_ mp** 成为 HAL 列表中的第一个硬件 ID。 然后，它使用 **！** 要从 HAL 的 Id 列表中删除 **acpiapic \_ ** 的硬件 ID 的字符。
+在下面的命令中，该命令通过 ID 前面的字符所指示的实例 ID （ **根 \\ ACPI \_ HAL \\ 0000**）来标识 HAL **@** 。 该命令使用 **+** 字符使 **acpiapic \_ mp** 成为 HAL 列表中的第一个硬件 ID。 然后，它使用 **！** 要从 HAL 的 Id 列表中删除 **acpiapic \_** 的硬件 ID 的字符。
 
 ```
 devcon sethwid @ROOT\ACPI_HAL\0000 := +acpiapic_mp !acpiapic_up

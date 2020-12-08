@@ -1,17 +1,16 @@
 ---
 title: CM_PROB_FAILED_START
 description: CM_PROB_FAILED_START
-ms.assetid: a7759bcd-1806-4d7a-8ff0-3b03abcae08b
 keywords:
 - CM_PROB_FAILED_START
 ms.date: 02/28/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 39b9c7d450fa28bc3655b1332f15a90280a983f3
-ms.sourcegitcommit: 29c2e6dd8a3de3c11822d990adf1edd774f8a136
+ms.openlocfilehash: 3ffec0f9e1ca30f3332eb10bbee05d42cc9470e6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91230047"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96783137"
 ---
 # <a name="code-10---cm_prob_failed_start"></a>代码 10 - CM_PROB_FAILED_START
 

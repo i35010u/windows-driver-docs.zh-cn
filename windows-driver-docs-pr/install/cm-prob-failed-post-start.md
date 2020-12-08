@@ -1,17 +1,16 @@
 ---
 title: CM_PROB_FAILED_POST_START
 description: CM_PROB_FAILED_POST_START
-ms.assetid: 82d43c8b-d5de-4395-9ca0-34d2258b9772
 keywords:
 - CM_PROB_FAILED_POST_START
 ms.date: 02/28/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 0623d67bd814e64c0c0fb7ecb5b259c4426e1735
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 3343e180659540d1caf8a1237b60d3d83bd64f3d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89096371"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96783148"
 ---
 # <a name="code-43---cm_prob_failed_post_start"></a>代码 43 - CM_PROB_FAILED_POST_START
 

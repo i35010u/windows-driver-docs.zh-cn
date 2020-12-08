@@ -1,7 +1,6 @@
 ---
 title: 视频解码器更改事件
 description: 视频解码器更改事件
-ms.assetid: 94269541-49e5-4273-874a-c6c2643ec2ae
 keywords:
 - 视频解码器更改了事件 WDK 视频捕获
 - 解码器更改事件 WDK 视频捕获
@@ -9,12 +8,12 @@ keywords:
 - EVENTSETID_VIDEODECODER
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 92f4f669afd53384f6a349ebd6071bf829dcd608
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: fb9724c0ed368e29e98650ee2e37719d910c3852
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103524"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96783715"
 ---
 # <a name="video-decoder-change-event"></a>视频解码器更改事件
 

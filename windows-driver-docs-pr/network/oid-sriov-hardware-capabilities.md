@@ -1,34 +1,33 @@
 ---
 title: OID_SRIOV_HARDWARE_CAPABILITIES
 description: 过量驱动程序发出对象标识符 (OID) 查询请求 OID_SRIOV_HARDWARE_CAPABILITIES 获取网络适配器的单个根 i/o 虚拟化 (SR-IOV) 硬件功能。
-ms.assetid: EEF99105-BBDC-4093-8B11-D27F13B1A3D0
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_SRIOV_HARDWARE_CAPABILITIES 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: b42eb5b902ec12b7908b5a21a903d10c22ec0580
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 0d4d583a0f211fb425607eccf84fd138eb711835
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105182"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96782207"
 ---
 # <a name="oid_sriov_hardware_capabilities"></a>OID \_ SRIOV \_ 硬件 \_ 功能
 
 
 过量驱动程序发出 (OID 的对象标识符) 查询 OID \_ SRIOV \_ 硬件功能的请求 \_ ，以获取网络适配器) 硬件功能 (sr-iov 的单个根 i/o 虚拟化。
 
-[**Ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的**InformationBuffer**成员包含指向[**NDIS \_ SRIOV \_ 功能**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_capabilities)结构的指针。
+[**Ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的 **InformationBuffer** 成员包含指向 [**NDIS \_ SRIOV \_ 功能**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_capabilities)结构的指针。
 
 <a name="remarks"></a>备注
 -------
 
 [**NDIS \_ SRIOV \_ 功能**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_capabilities)结构包含有关网络适配器的硬件功能的信息，例如适配器是否支持 sr-iov，以及微型端口驱动程序是否正在管理适配器的 PCI Express (PCIe) 物理功能 (PF) 或虚拟函数 (VF) 。 这些功能可能包括 INF 文件设置当前禁用的硬件功能，或通过 " **高级** 属性" 页当前禁用的硬件功能。
 
-**注意**   网络适配器的所有 SR-IOV 功能都通过 oid SRIOV 硬件功能的 OID 查询请求返回 \_ \_ \_ ，不管是启用还是禁用功能。
+**注意**  网络适配器的所有 SR-IOV 功能都通过 oid SRIOV 硬件功能的 OID 查询请求返回 \_ \_ \_ ，不管是启用还是禁用功能。
 
  
 
-从 NDIS 6.30 开始，微型端口驱动程序会在调用 [*MiniportInitializeEx*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_initialize) 函数时提供 sr-iov 硬件功能。 驱动程序使用 SR-IOV 硬件功能初始化[**ndis \_ SRIOV \_ 功能**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_capabilities)结构，并将[**ndis \_ 微型端口 \_ 适配器 \_ 硬件 \_ 协助 \_ 属性**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_adapter_hardware_assist_attributes)结构的**HardwareSriovCapabilities**成员设置为指向**NDIS \_ SRIOV \_ 功能**结构的指针。 然后，小型端口驱动程序将调用 [**NdisMSetMiniportAttributes**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsetminiportattributes) 函数，并将 *MiniportAttributes* 参数设置为指向 **NDIS \_ 微型端口 \_ 适配器 \_ 硬件 \_ 协助 \_ 属性** 结构的指针。
+从 NDIS 6.30 开始，微型端口驱动程序会在调用 [*MiniportInitializeEx*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_initialize) 函数时提供 sr-iov 硬件功能。 驱动程序使用 SR-IOV 硬件功能初始化 [**ndis \_ SRIOV \_ 功能**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_capabilities)结构，并将 [**ndis \_ 微型端口 \_ 适配器 \_ 硬件 \_ 协助 \_ 属性**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_adapter_hardware_assist_attributes)结构的 **HardwareSriovCapabilities** 成员设置为指向 **NDIS \_ SRIOV \_ 功能** 结构的指针。 然后，小型端口驱动程序将调用 [**NdisMSetMiniportAttributes**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsetminiportattributes) 函数，并将 *MiniportAttributes* 参数设置为指向 **NDIS \_ 微型端口 \_ 适配器 \_ 硬件 \_ 协助 \_ 属性** 结构的指针。
 
 ### <a name="return-status-codes"></a>返回状态代码
 
@@ -89,7 +88,7 @@ NDIS 处理对 \_ \_ 微型端口驱动程序的 oid SRIOV 硬件功能请求的
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 ****

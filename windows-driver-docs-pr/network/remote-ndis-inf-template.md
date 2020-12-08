@@ -1,17 +1,16 @@
 ---
 title: 远程 NDIS INF 模板
 description: 远程 NDIS INF 模板
-ms.assetid: bbbd3aef-230f-4286-bea2-bb583789865e
 keywords:
 - 远程 NDIS WDK 网络，INF 模板
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5eaa1c0da5e057c006ff3bf4636f301a1fcf2e52
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 2ae7fd4f3fc9b0f27ea53b7f1a6c0cdafc4ee47b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89207807"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96782133"
 ---
 # <a name="remote-ndis-inf-template"></a>远程 NDIS INF 模板
 

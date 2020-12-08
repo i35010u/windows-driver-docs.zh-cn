@@ -1,18 +1,17 @@
 ---
-title: 代码示例完成-在类安装程序中安装操作
-description: 代码示例完成-在类安装程序中安装操作
-ms.assetid: 394f321c-2ce4-4773-b5df-e30ce23b7207
+title: 类安装程序中的代码示例 Finish-Install 操作
+description: 类安装程序中的代码示例 Finish-Install 操作
 keywords:
 - 完成-安装操作 WDK 设备安装
 - 类安装程序 WDK 设备安装，完成-安装操作
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1a4a15fc035d48bf43034069c4568bfa31658f48
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: a4bdf4a0ab32adb6fa4ea3de1f7c49739d868b5d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90715610"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96782997"
 ---
 # <a name="code-example-finish-install-actions-in-a-class-installer"></a>代码示例：类安装程序中的 Finish-Install 操作
 
@@ -21,7 +20,7 @@ ms.locfileid: "90715610"
 
 -   当类安装程序收到 [**DIF_NEWDEVICEWIZARD_FINISHINSTALL**](./dif-newdevicewizard-finishinstall.md) 请求时，它会调用安装程序提供的函数 *FinishInstallActionsNeeded* 来确定是否有完成安装操作。  (此示例中未显示 *FinishInstallActionsNeeded* 函数的代码。 ) 
 
-    如果 *FinishInstallActionsNeeded* 返回 **TRUE**，则类安装程序将调用 [**SetupDiGetDeviceInstallParams**](/windows/win32/api/setupapi/nf-setupapi-setupdigetdeviceinstallparamsa) 来检索设备的设备安装参数。 然后，它调用[**SetupDiSetDeviceInstallParams**](/windows/win32/api/setupapi/nf-setupapi-setupdisetdeviceinstallparamsa)来设置具有 DI_FLAGSEX_FINISHINSTALL_ACTION 标志的设备的[**SP_DEVINSTALL_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-sp_devinstall_params_a)结构的**FlagsEx**成员。 通过设置此标志，Windows 将向所有类安装程序、类共同安装程序和安装此设备的设备共同安装程序发送 [**DIF_FINISHINSTALL_ACTION**](./dif-finishinstall-action.md) 请求。 此请求在除完成安装操作完成之外的所有安装操作后发送。
+    如果 *FinishInstallActionsNeeded* 返回 **TRUE**，则类安装程序将调用 [**SetupDiGetDeviceInstallParams**](/windows/win32/api/setupapi/nf-setupapi-setupdigetdeviceinstallparamsa) 来检索设备的设备安装参数。 然后，它调用 [**SetupDiSetDeviceInstallParams**](/windows/win32/api/setupapi/nf-setupapi-setupdisetdeviceinstallparamsa)来设置具有 DI_FLAGSEX_FINISHINSTALL_ACTION 标志的设备的 [**SP_DEVINSTALL_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-sp_devinstall_params_a)结构的 **FlagsEx** 成员。 通过设置此标志，Windows 将向所有类安装程序、类共同安装程序和安装此设备的设备共同安装程序发送 [**DIF_FINISHINSTALL_ACTION**](./dif-finishinstall-action.md) 请求。 此请求在除完成安装操作完成之外的所有安装操作后发送。
 
 -   当类安装程序收到 DIF_FINISHINSTALL_ACTION 请求时，它会再次调用 *FinishInstallActionsNeeded* 来确定它是否有完成安装操作，如果是，则执行完成安装操作。 类安装程序向用户通知完成安装操作正在进行，并等待完成安装操作完成，然后再从处理 DIF_FINISHINSTALL_ACTION 请求。
 
@@ -31,7 +30,7 @@ ms.locfileid: "90715610"
 
 -   如果完成安装操作失败，但在下次枚举设备时应再次尝试完成安装操作，则类安装程序会将此情况的用户通知给用户。
 
-    **注意**   从 Windows 8 开始，"完成-安装" 操作只运行一次。 Windows 不会再次自动运行它，特别是在下次枚举设备时不会自动运行，因为这不是在运行时执行的。
+    **注意**  从 Windows 8 开始，"完成-安装" 操作只运行一次。 Windows 不会再次自动运行它，特别是在下次枚举设备时不会自动运行，因为这不是在运行时执行的。
 
      
 
@@ -39,7 +38,7 @@ ms.locfileid: "90715610"
 
 -   默认情况下，如果完成安装操作成功或完成安装操作失败，并且安装程序确定不应再次尝试执行安装操作，则类安装程序将为响应 DIF_FINISHINSTALL_ACTION 请求返回 ERROR_DI_DO_DEFAULT。 仅当完成安装操作失败，并且在下一次在管理员上下文中枚举设备时应再次尝试完成安装操作时，安装程序才返回 Win32 错误代码。
 
-    **注意**   从 Windows 8 开始，"完成-安装" 操作只运行一次。 Windows 不会再次自动运行它，特别是在下次枚举设备时不会自动运行，因为这不是在运行时执行的。
+    **注意**  从 Windows 8 开始，"完成-安装" 操作只运行一次。 Windows 不会再次自动运行它，特别是在下次枚举设备时不会自动运行，因为这不是在运行时执行的。
 
      
 

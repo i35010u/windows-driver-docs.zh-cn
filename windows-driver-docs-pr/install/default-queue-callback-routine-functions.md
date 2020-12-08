@@ -1,7 +1,6 @@
 ---
 title: 默认的队列回调常规函数
 description: 默认的队列回调常规函数
-ms.assetid: 46d767ed-cfeb-4bd0-8792-08781a1335d6
 keywords:
 - Setupapi.log 函数 WDK，默认队列回调例程
 - 默认队列回调例程
@@ -11,12 +10,12 @@ keywords:
 - 文件队列 WDK Setupapi.log
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 41c0043bad0ddbe461b2f671a6f30aca5dc2e47a
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 614cf3d39b52882eb736d2b4e9e7f1b67992d890
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90717502"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96782909"
 ---
 # <a name="default-queue-callback-routine-functions"></a>默认的队列回调常规函数
 
@@ -36,7 +35,7 @@ ms.locfileid: "90717502"
 <thead>
 <tr class="header">
 <th align="left">函数</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>

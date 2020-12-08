@@ -1,22 +1,21 @@
 ---
 title: WDI_TLV_HESSID_INFO
-description: WDI_TLV_HESSID_INFO 是 TLV 包含 HESSID 信息，其中包括 HESSIDs、 访问网络类型和热点指示元素的列表。
-ms.assetid: 60D130AC-8249-4B60-B46C-8B83FDDB148F
+description: WDI_TLV_HESSID_INFO 是包含 HESSID 信息的 TLV，其中包括 HESSIDs 列表、访问网络类型和热点指示元素。
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_HESSID_INFO 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 097f074b8be8f68614e6b760bb7e987d0f34fd5d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1814937f05bf577f4d360f7e2c864c11e110884d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63324410"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96783789"
 ---
-# <a name="wditlvhessidinfo"></a>WDI\_TLV\_HESSID\_信息
+# <a name="wdi_tlv_hessid_info"></a>WDI \_ TLV \_ HESSID \_ 信息
 
 
-WDI\_TLV\_HESSID\_信息是包含 HESSID 信息，其中包括一系列 HESSIDs、 访问网络类型和热点指示元素 TLV。
+WDI \_ tlv \_ HESSID \_ INFO 是包含 HESSID 信息的 tlv，其中包括 HESSIDs 的列表、访问网络类型和热点指示元素。
 
 ## <a name="tlv-type"></a>TLV 类型
 
@@ -26,16 +25,16 @@ WDI\_TLV\_HESSID\_信息是包含 HESSID 信息，其中包括一系列 HESSIDs�
 ## <a name="length"></a>长度
 
 
-所有的大小 （以字节为单位） 总和包含 TLVs。
+Sum (包含所有 TLVs 的大小的) 字节。
 
 ## <a name="values"></a>值
 
 
-| 在任务栏的搜索框中键入                                                                                 | 允许多个 TLV 实例 | 可选 | 描述                                                                              |
+| 类型                                                                                 | 允许多个 TLV 实例 | 可选 | 说明                                                                              |
 |--------------------------------------------------------------------------------------|--------------------------------|----------|------------------------------------------------------------------------------------------|
-| [**WDI\_TLV\_ACCESS\_NETWORK\_TYPE**](wdi-tlv-access-network-type.md)               |                                |          | 若要在探测请求中使用的连接到的网络访问网络类型。 |
-| [**WDI\_TLV\_HESSID**](wdi-tlv-hessid.md)                                           |                                |          | 端口允许连接到的 HESSIDs 的列表。                              |
-| [**WDI\_TLV\_热点\_指示\_元素**](wdi-tlv-hotspot-indication-element.md) |                                |          | 要关联请求中使用的热点指示元素。                    |
+| [**WDI \_ TLV \_ 访问 \_ 网络 \_ 类型**](wdi-tlv-access-network-type.md)               |                                |          | 要用于连接到的网络的探测请求中的访问网络类型。 |
+| [**WDI \_ TLV \_ HESSID**](wdi-tlv-hessid.md)                                           |                                |          | 允许端口连接到的 HESSIDs 的列表。                              |
+| [**WDI \_ TLV \_ 热点 \_ 指示 \_ 元素**](wdi-tlv-hotspot-indication-element.md) |                                |          | 要在关联请求中使用的热点指示元素。                    |
 
  
 
@@ -54,10 +53,10 @@ WDI\_TLV\_HESSID\_信息是包含 HESSID 信息，其中包括一系列 HESSIDs�
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
-<td><p>Windows Server 2016</p></td>
+<td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Wditypes.hpp</td>
 </tr>
 </tbody>

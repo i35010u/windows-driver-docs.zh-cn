@@ -1,7 +1,6 @@
 ---
 title: Windows 事件跟踪 (ETW)
 description: Windows 事件跟踪 (ETW)
-ms.assetid: 9b30132a-2bf7-42c0-b316-551a4bdfed32
 keywords:
 - Windows WDK 事件跟踪
 - ETW WDK
@@ -9,12 +8,12 @@ keywords:
 - 软件跟踪 WDK，ETW
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f330392abb967a6d14e0a62e7cee941fa52803b8
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: f08afece572ed06e2f12395847677334010f1880
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89384839"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96784049"
 ---
 # <a name="event-tracing-for-windows-etw"></a>Windows 事件跟踪 (ETW)
 

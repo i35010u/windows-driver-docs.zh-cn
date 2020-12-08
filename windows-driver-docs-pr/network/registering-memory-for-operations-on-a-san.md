@@ -1,7 +1,6 @@
 ---
 title: 为 SAN 上的操作注册内存
 description: 为 SAN 上的操作注册内存
-ms.assetid: 5492466e-4765-4d43-b6bc-1d5bc74996ba
 keywords:
 - SAN 连接设置 WDK，注册内存
 - 为 San 注册内存
@@ -12,12 +11,12 @@ keywords:
 - 已注册内存 WDK San
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4503fe1ae7cf13522978780c42c32976330b8951
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 8ce1b215ea47e59a4985bcf0f2291fb45af4e512
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89211993"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96782169"
 ---
 # <a name="registering-memory-for-operations-on-a-san"></a>为 SAN 上的操作注册内存
 
@@ -29,9 +28,9 @@ Windows 套接字交换机调用 SAN 服务提供程序的扩展功能，以注�
 
 ### <a name="registering-data-buffers"></a>正在注册数据缓冲区
 
-开关代表在本地进程中运行的应用程序调用 SAN 服务提供程序的 [**WSPRegisterMemory**](/previous-versions/windows/hardware/network/ff566311(v=vs.85)) extension 函数，以注册只能由该进程访问的数据缓冲区。 缓冲区处理 **WSPRegisterMemory** 返回仅在执行注册的本地进程的上下文中有效。 开关调用 **WSPRegisterMemory** 来注册在对 [**WSPRecv**](/previous-versions/windows/hardware/network/ff566309(v=vs.85)) 函数的调用中充当消息接收缓冲区的缓冲区，或调用对 [**WSPSend**](/previous-versions/windows/hardware/network/ff566316(v=vs.85)) 函数的调用中的消息发送缓冲区。 开关还会调用**WSPRegisterMemory** ，以便在调用[**WSPRdmaWrite**](/previous-versions/windows/hardware/network/ff566306(v=vs.85))扩展函数时，将用作本地接收 rdma 缓冲区的缓冲区注册到[**WSPRDMAREAD**](/previous-versions/windows/hardware/network/ff566304(v=vs.85))扩展函数或本地 RDMA 源。 在本地进程完成使用向 **WSPRegisterMemory**注册的缓冲区后，开关会调用 [**WSPDeregisterMemory**](/previous-versions/windows/hardware/network/ff566279(v=vs.85)) 扩展函数以释放这些缓冲区。
+开关代表在本地进程中运行的应用程序调用 SAN 服务提供程序的 [**WSPRegisterMemory**](/previous-versions/windows/hardware/network/ff566311(v=vs.85)) extension 函数，以注册只能由该进程访问的数据缓冲区。 缓冲区处理 **WSPRegisterMemory** 返回仅在执行注册的本地进程的上下文中有效。 开关调用 **WSPRegisterMemory** 来注册在对 [**WSPRecv**](/previous-versions/windows/hardware/network/ff566309(v=vs.85)) 函数的调用中充当消息接收缓冲区的缓冲区，或调用对 [**WSPSend**](/previous-versions/windows/hardware/network/ff566316(v=vs.85)) 函数的调用中的消息发送缓冲区。 开关还会调用 **WSPRegisterMemory** ，以便在调用 [**WSPRdmaWrite**](/previous-versions/windows/hardware/network/ff566306(v=vs.85))扩展函数时，将用作本地接收 rdma 缓冲区的缓冲区注册到 [**WSPRDMAREAD**](/previous-versions/windows/hardware/network/ff566304(v=vs.85))扩展函数或本地 RDMA 源。 在本地进程完成使用向 **WSPRegisterMemory** 注册的缓冲区后，开关会调用 [**WSPDeregisterMemory**](/previous-versions/windows/hardware/network/ff566279(v=vs.85)) 扩展函数以释放这些缓冲区。
 
-开关代表在本地进程中运行的应用程序调用 SAN 服务提供程序的 [**WSPRegisterRdmaMemory**](/previous-versions/windows/hardware/network/ff566313(v=vs.85)) extension 函数，以注册本地和远程进程都可以访问的 RDMA 缓冲区。 **WSPRegisterRdmaMemory**返回的缓冲区说明符仅对远程对等节点在对等连接到在其上执行注册的 SAN 套接字的连接上下文中启动的 RDMA 数据传输操作有效。 远程对等连接上的开关使用这些 RDMA 缓冲区作为对 **WSPRdmaWrite** 扩展函数或调用 **WSPRdmaRead** 扩展函数的源中的目标。 在本地和远程进程完成使用向 **WSPRegisterRdmaMemory**注册的缓冲区后，开关会调用 [**WSPDeregisterRdmaMemory**](/previous-versions/windows/hardware/network/ff566281(v=vs.85)) 扩展函数以释放这些缓冲区。
+开关代表在本地进程中运行的应用程序调用 SAN 服务提供程序的 [**WSPRegisterRdmaMemory**](/previous-versions/windows/hardware/network/ff566313(v=vs.85)) extension 函数，以注册本地和远程进程都可以访问的 RDMA 缓冲区。 **WSPRegisterRdmaMemory** 返回的缓冲区说明符仅对远程对等节点在对等连接到在其上执行注册的 SAN 套接字的连接上下文中启动的 RDMA 数据传输操作有效。 远程对等连接上的开关使用这些 RDMA 缓冲区作为对 **WSPRdmaWrite** 扩展函数或调用 **WSPRdmaRead** 扩展函数的源中的目标。 在本地和远程进程完成使用向 **WSPRegisterRdmaMemory** 注册的缓冲区后，开关会调用 [**WSPDeregisterRdmaMemory**](/previous-versions/windows/hardware/network/ff566281(v=vs.85)) 扩展函数以释放这些缓冲区。
 
 ### <a name="managing-memory-access"></a>管理内存访问
 
@@ -39,7 +38,7 @@ SAN 服务提供程序必须阻止对已注册内存的未经授权的访问。
 
 必须按如下所示注册和访问内存：
 
-为本地访问注册的内存应仅适用于在其中调用 **WSPRegisterMemory**的进程。
+为本地访问注册的内存应仅适用于在其中调用 **WSPRegisterMemory** 的进程。
 
 为本地和远程访问注册的内存可以通过调用 **WSPRegisterRdmaMemory** 来注册内存的进程或连接到已注册内存的 SAN 套接字的远程对等方访问。
 

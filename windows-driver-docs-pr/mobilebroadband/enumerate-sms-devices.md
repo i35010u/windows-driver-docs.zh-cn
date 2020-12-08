@@ -1,22 +1,22 @@
 ---
 title: 枚举短信设备
 description: 枚举短信设备
-ms.assetid: d0d57a4f-df83-4f3b-b7b4-417ad4e11350
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: afe2b3b75d707d015a4c8a90af335c5df112c8af
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 2d8e01a5dfc0fb2782d5a6813216003b3b1f08fd
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89216620"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96782349"
 ---
 # <a name="enumerate-sms-devices"></a>枚举短信设备
 
 
 移动宽带 SMS 平台提供了获取第一个支持 SMS 的移动宽带设备的功能，或获取所有支持 SMS 的移动宽带设备的列表。 下面的示例代码演示如何使用默认的 SMS 设备和特定设备来实例化 SMS 对象。
 
-**注意**   在 Windows 8、Windows 8.1 或 Windows 10 中使用 c # 或 c + + 的应用程序中，第一次使用[**SmsDevice**](/uwp/api/Windows.Devices.Sms.SmsDevice)对象调用[**GetDefaultAsync**](/uwp/api/Windows.Devices.Sms.SmsDevice#Windows_Devices_Sms_SmsDevice_GetDefaultAsync)或[**FROMIDASYNC**](/uwp/api/Windows.Devices.Sms.SmsDevice#Windows_Devices_Sms_SmsDevice_FromIdAsync_System_String_)时，应在 STA 线程上。 MTA 线程中的调用可能会导致未定义的行为。
+**注意**  
+在 Windows 8、Windows 8.1 或 Windows 10 中使用 c # 或 c + + 的应用程序中，第一次使用 [**SmsDevice**](/uwp/api/Windows.Devices.Sms.SmsDevice) 对象调用 [**GetDefaultAsync**](/uwp/api/Windows.Devices.Sms.SmsDevice#Windows_Devices_Sms_SmsDevice_GetDefaultAsync) 或 [**FROMIDASYNC**](/uwp/api/Windows.Devices.Sms.SmsDevice#Windows_Devices_Sms_SmsDevice_FromIdAsync_System_String_) 时，应在 STA 线程上。 MTA 线程中的调用可能会导致未定义的行为。
 
  
 

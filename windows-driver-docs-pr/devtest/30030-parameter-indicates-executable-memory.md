@@ -1,17 +1,16 @@
 ---
 title: C30030
 description: 警告 C30030 调用内存分配函数并传递指示可执行文件内存的参数。
-ms.assetid: D1C8B316-DC04-4B18-A0EB-40833D50B843
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 f1_keywords:
 - C30030
-ms.openlocfilehash: 97ecc847974a57d6c69ec302b97be5c4689da3e4
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: ec62ba56aadee043386afe7d188c24e70551fe9f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89381647"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96783421"
 ---
 # <a name="c30030"></a>C30030
 
@@ -22,20 +21,20 @@ ms.locfileid: "89381647"
 
 某些 Api 有一些参数，可用于配置内存是否可执行。 此错误表示使用的参数会导致分配可执行文件非分页池。 你应使用一个可用的选项来请求不可执行的内存。
 
-## <a name="span-idfor_defects_involving_the_parameter_types_mm_page_priority_and_pool_typespanspan-idfor_defects_involving_the_parameter_types_mm_page_priority_and_pool_typespanspan-idfor_defects_involving_the_parameter_types_mm_page_priority_and_pool_typespanfor-defects-involving-the-parameter-types-mm_page_priority-and-pool_type"></a><span id="For_defects_involving_the_parameter_types_MM_PAGE_PRIORITY_and_POOL_TYPE"></span><span id="for_defects_involving_the_parameter_types_mm_page_priority_and_pool_type"></span><span id="FOR_DEFECTS_INVOLVING_THE_PARAMETER_TYPES_MM_PAGE_PRIORITY_AND_POOL_TYPE"></span>对于涉及参数类型**MM \_ 页面 \_ 优先级**和**池 \_ 类型**的缺陷
+## <a name="span-idfor_defects_involving_the_parameter_types_mm_page_priority_and_pool_typespanspan-idfor_defects_involving_the_parameter_types_mm_page_priority_and_pool_typespanspan-idfor_defects_involving_the_parameter_types_mm_page_priority_and_pool_typespanfor-defects-involving-the-parameter-types-mm_page_priority-and-pool_type"></a><span id="For_defects_involving_the_parameter_types_MM_PAGE_PRIORITY_and_POOL_TYPE"></span><span id="for_defects_involving_the_parameter_types_mm_page_priority_and_pool_type"></span><span id="FOR_DEFECTS_INVOLVING_THE_PARAMETER_TYPES_MM_PAGE_PRIORITY_AND_POOL_TYPE"></span>对于涉及参数类型 **MM \_ 页面 \_ 优先级** 和 **池 \_ 类型** 的缺陷
 
 
 使用以下选项之一：
 
 -   在源/项目设置中指定预处理器定义 [池 \_ NX \_ OPTIN \_ AUTO](../kernel/multiple-binary-opt-in-pool-nx-optin-auto.md) 。
--   在源/项目设置中指定预处理器定义[池 \_ NX \_ OPTIN](../kernel/single-binary-opt-in-pool-nx-optin.md) ，并从驱动程序初始化函数 (**DriverEntry**或**DllInitialize**) 调用**ExInitializeDriverRuntime (*DrvRtPoolNxOptIn*) ** 。
+-   在源/项目设置中指定预处理器定义 [池 \_ NX \_ OPTIN](../kernel/single-binary-opt-in-pool-nx-optin.md) ，并从驱动程序初始化函数 (**DriverEntry** 或 **DllInitialize**) 调用 **ExInitializeDriverRuntime (*DrvRtPoolNxOptIn*)** 。
 
 **注意**  选择是使用 [池 \_ nx \_ OPTIN \_ 自动](../kernel/multiple-binary-opt-in-pool-nx-optin-auto.md) 还是 [池 \_ nx \_ OPTIN](../kernel/single-binary-opt-in-pool-nx-optin.md) 主要取决于你所面向的平台和要进行的二进制文件的数量。 这两个选项都会导致两种类型的更改 (编译器或运行时，) 到其 NX 等效项。 有关详细信息，请参阅主题链接。
 
 
 
 **注意**  如果满足以下条件之一，则可能会出现误报警告：
--   驱动程序初始化函数调用另一个调用**ExInitializeDriverRuntime (*DrvRtPoolNxOptIn* **的函数) 
+-   驱动程序初始化函数调用另一个调用 **ExInitializeDriverRuntime (*DrvRtPoolNxOptIn*** 的函数) 
 -   正在创建 **驱动程序 \_ 库** ，但指定了 [池 \_ NX \_ OPTIN](../kernel/single-binary-opt-in-pool-nx-optin.md) ，但没有初始化函数。
 
 
@@ -70,7 +69,7 @@ C_DEFINES=$(C_DEFINES)
 C_DEFINES=$(C_DEFINES) -DPOOL_NX_OPTIN=1
 ```
 
-在执行任何内存分配之前，在 **DriverEntry ( # B1 **：
+在执行任何内存分配之前，在 **DriverEntry ( # B1**：
 
 ```
 NTSTATUS
@@ -101,7 +100,7 @@ pPtr = MmGetSystemAddressForMdlSafe( pMdl, NormalPagePriority);
 pPtr = MmGetSystemAddressForMdlSafe( pMdl, NormalPagePriority | MdlMappingNoExecute);
 ```
 
-** (池类型的示例 \_) **
+**(池类型的示例 \_)**
 
 对于 **池 \_ 类型** 类型，可以通过将请求类型更改为类型的不可执行版本来解决此问题。 只有 Windows 8 及更高版本支持此版本。
 

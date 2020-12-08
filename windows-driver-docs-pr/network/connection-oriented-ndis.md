@@ -1,7 +1,6 @@
 ---
 title: “面向连接的 NDIS”简介
 description: “面向连接的 NDIS”简介
-ms.assetid: c74f8e60-c041-48e9-8aa1-98a9cb9eb869
 keywords:
 - 面向连接的 NDIS WDK
 - CoNDIS WDK 网络
@@ -9,12 +8,12 @@ keywords:
 - NDIS WDK，CoNDIS
 ms.date: 01/09/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 63018f6cf2dcc56b7a1ebf23672c4626b3ccb877
-ms.sourcegitcommit: 366a15d68eb58d01a8ca6de7b982f62ac8b7deaf
+ms.openlocfilehash: db163cb9c6ed06a58818ed89c34f8defc5757b58
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/19/2020
-ms.locfileid: "90811978"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96783843"
 ---
 # <a name="connection-oriented-ndis"></a>面向连接的 NDIS
 

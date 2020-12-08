@@ -1,18 +1,17 @@
 ---
 title: 设备元数据检索客户端
 description: 设备元数据检索客户端
-ms.assetid: fdcf3459-0fd4-4cf6-a9f5-13337fbd604b
 keywords:
 - DMRC WDK
 - 设备元数据检索客户端 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a474379a07eae448c6365b7b0cd114a980d70533
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: c955104f3fc10b74983e4d2af4419f6af83ac124
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89096507"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96782841"
 ---
 # <a name="device-metadata-retrieval-client"></a>设备元数据检索客户端
 

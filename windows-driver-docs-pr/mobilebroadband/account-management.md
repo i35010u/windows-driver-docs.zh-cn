@@ -1,15 +1,14 @@
 ---
 title: 帐户管理
 description: 帐户管理
-ms.assetid: 8201a4ac-1344-4a96-b0d5-d4ba8123c4dd
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0a5a0b490f5dc1ddd40595d2e340679c8a53d3ca
-ms.sourcegitcommit: 3464f10ffa0727e38fbe225cfab52bb8c2bb1747
+ms.openlocfilehash: 3466b035c0de7cf1427a18c0cfca40455c40892f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93352972"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96782569"
 ---
 # <a name="account-management"></a>帐户管理
 

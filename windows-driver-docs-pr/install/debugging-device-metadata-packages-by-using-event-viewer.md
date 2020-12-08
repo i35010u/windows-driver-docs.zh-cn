@@ -1,15 +1,14 @@
 ---
 title: 使用事件查看器调试设备元数据包
 description: 使用事件查看器调试设备元数据包
-ms.assetid: 168a9dd1-aab2-4497-a59d-b8fe52d8cde2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 597fe712e89c3d88d2813faad3ae532671520c40
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 080b56e2139832f59a7bc2d00f013b57ed7e780f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91734185"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96782925"
 ---
 # <a name="debugging-device-metadata-packages-by-using-event-viewer"></a>使用事件查看器调试设备元数据包
 
@@ -40,7 +39,7 @@ DeviceMetadata/调试通道存储在下载或处理设备元数据包期间发�
 
 9.  单击 " **DeviceMetadata"/"调试** " 节点。
 
-    **注意**   必须先在 DeviceMetadata/Debug ETW 通道上启用日志记录才能接收和查看事件。 为此，请右键单击 " **DeviceMetadata"/"调试** " 节点，然后选择 " **属性**"。 然后单击 " **启用日志**"。
+    **注意**  必须先在 DeviceMetadata/Debug ETW 通道上启用日志记录才能接收和查看事件。 为此，请右键单击 " **DeviceMetadata"/"调试** " 节点，然后选择 " **属性**"。 然后单击 " **启用日志**"。
 
      
 
@@ -75,7 +74,7 @@ DeviceMetadata/调试通道存储在下载或处理设备元数据包期间发�
 <a href="" id="event-id--7902-error--device-metadata-package-not-signed--"></a>事件 ID：7902错误：设备元数据包未签名。   
 已安装的设备元数据包不是由 [Windows Quality Online Services (Winqual) ](../dashboard/winqual-submission-tool--winqualexe-.md)签名的。
 
-**注意**   仅当从 WMIS 下载设备元数据包时，才会验证该签名。
+**注意**  仅当从 WMIS 下载设备元数据包时，才会验证该签名。
 
  
 
@@ -109,14 +108,14 @@ DMRC 查询特定设备的已安装设备元数据包。
 
 -   设备查找密钥，如设备的硬件 ID 或型号 ID。 有关详细信息，请参阅 [**HardwareID**](/previous-versions/windows/hardware/metadata/ff546114(v=vs.85)) 和 [**ModelID**](/previous-versions/windows/hardware/metadata/ff549295(v=vs.85))。
 
-    **注意**   当硬件 Id 列表作为参数传递时，仅记录最特定的硬件 ID。
+    **注意**   当硬件 Id 列表作为参数传递时，仅记录最特定的硬件 ID。
 
      
 
 <a href="" id="event-id--7952-warning--network-related-errors-"></a>事件 ID：7952警告：网络相关错误。  
 DMRC 在下载从 WMIS 打包的设备元数据时遇到网络错误。
 
-**注意**   网络不可用时，不会生成此警告。
+**注意**   网络不可用时，不会生成此警告。
 
  
 

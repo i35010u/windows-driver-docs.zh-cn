@@ -1,7 +1,6 @@
 ---
 title: 设备控制方案
 description: 设备控制方案
-ms.assetid: 9effc192-77ef-40fd-9ab6-564637019576
 keywords:
 - WSDBIT 工具 WDK，测试方案
 - WSDAPI 基本互操作性工具 WDK，测试方案
@@ -10,81 +9,81 @@ keywords:
 - 设备控制方案 WDK WSDBIT
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b7b65200abae6c0a230bc3333e8d37b8105aa7bf
-ms.sourcegitcommit: 289b5f97aff1b9ea1fefc9a8731e0fc16533073b
+ms.openlocfilehash: 95bb346c0fd97134b05323f82018bf79a12d3926
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67492517"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96783321"
 ---
 # <a name="device-control-scenarios"></a>设备控制方案
 
 
-设备控制方案测试简单 SOAP 消息交换。
+设备控制方案测试简单的 SOAP 消息交换。
 
-此方案的目标不是承载的服务终结点的发现。 此方案假设已发现或在此方案之前提供这些终结点。 对于此方案中，这些终结点必须是可寻址物理网络上。 有关详细信息，请参阅中的初始测试设备安装程序关系图[WSDBIT 测试环境](wsdbit-testing-environment.md)。
+此方案的目标是不会发现所承载的服务终结点。 此方案假定在此方案之前发现或提供了这些终结点。 对于这种情况，必须在物理网络上对这些终结点寻址。 有关详细信息，请参阅 [WSDBIT 测试环境](wsdbit-testing-environment.md)中的初始测试设备安装程序关系图。
 
-本例中客户端操作服务器操作启用通过/失败条件**2.1**
+Case Client action Server action Pass-Fail 条件 **2.1**
 
 **单向方法**
 
 2.1.1
 
-调用**OneWay**与 SimpleService 方法：
+调用 SimpleService 的 **单向** 方法：
 
--   **wsa:Action == http:\//schemas.example.org/SimpleService/OneWay**
+-   **wsa： Action = = http： \/ /schemas.example.org/SimpleService/OneWay**
 
--   Http:\//testdevice.interop/SimpleService1 服务将使用。
+-   \/将使用 http：/testdevice.interop/SimpleService1 服务。
 
 -   提供整数输入。
 
-显示从收到的整数**OneWay**方法。
+显示从 **单向** 方法接收的整数。
 
-已发送的整数是显示的整数。
+发送的整数是显示的整数。
 
 **2.2**
 
-**TwoWay 方法**
+**双向方法**
 
 2.2.1
 
-调用**TwoWay**与 SimpleService 方法：
+调用 SimpleService 的 **双向** 方法：
 
--   **wsa:Action == http:\//schemas.example.org/SimpleService/TwoWayRequest**
+-   **wsa： Action = = http： \/ /schemas.example.org/SimpleService/TwoWayRequest**
 
--   Http:\//testdevice.interop/SimpleService1 服务将使用。
+-   \/将使用 http：/testdevice.interop/SimpleService1 服务。
 
--   提供两个整数输入。
+-   提供了两个整数输入。
 
-通过响应客户端**TwoWayResponse**方法：
+通过将 **TwoWayResponse** 方法与结合使用来响应客户端：
 
--   **wsa:Action == http:\//schemas.example.org/SimpleService/TwoWayResponse**
+-   **wsa： Action = = http： \/ /schemas.example.org/SimpleService/TwoWayResponse**
 
--   Sum 参数会计算从两个输入参数的总和。
+-   Sum 参数是从两个输入参数的总和计算得出的。
 
-客户端收到的总和参数实际上是发送的整数值的总和**TwoWay**方法。
+客户端收到的 sum 参数确实是在 **双向** 方法中发送的整数值的总和。
 
 **2.3**
 
-**一次方法**
+**TypeCheck 方法**
 
 2.3.1
 
-调用**一次**与 SimpleService 方法：
+调用 SimpleService 的 **TypeCheck** 方法：
 
--   **wsa:Action == http:\//schemas.example.org/SimpleService/TypeCheckRequest**
+-   **wsa： Action = = http： \/ /schemas.example.org/SimpleService/TypeCheckRequest**
 
--   Http:\//testdevice.interop/SimpleService1 服务将使用。
+-   \/将使用 http：/testdevice.interop/SimpleService1 服务。
 
--   一个布尔值，decimal、 float、 和的列表**xs: anyuri**提供参数。
+-   提供了 **xs： anyURI** 参数的 boolean、decimal、float 和 list。
 
-通过响应客户端**TypeCheckResponse**方法：
+通过将 **TypeCheckResponse** 方法与结合使用来响应客户端：
 
--   **wsa:Action == http:\//schemas.example.org/SimpleService/TypeCheckResponse**
+-   **wsa： Action = = http： \/ /schemas.example.org/SimpleService/TypeCheckResponse**
 
--   一个布尔值，decimal、 float、 和的列表**xs: anyuri**参数返回并回显给客户端。
+-   返回 **xs： anyURI** 参数的 boolean、decimal、float 和 list，并回显到客户端。
 
-一个布尔值，decimal、 float、 和的列表**xs: anyuri**参数正确显示在设备上之前它们回显给客户端。 这些参数会再次显示在客户端接收正确。
+在将设备回送到客户端之前，在设备上正确显示了 **xs： anyURI** 参数的布尔值、decimal、float 和 list。 在客户端接收参数时，它们会再次正确显示。
 
 **2.4**
 
@@ -92,21 +91,21 @@ ms.locfileid: "67492517"
 
 2.4.1
 
-调用**AnyCheck**与 SimpleService 方法：
+调用 SimpleService 的 **AnyCheck** 方法：
 
--   **wsa:Action == http:\//schemas.example.org/SimpleService/AnyCheckRequest**
+-   **wsa： Action = = http： \/ /schemas.example.org/SimpleService/AnyCheckRequest**
 
--   Http:\//testdevice.interop/SimpleService1 服务将使用
+-   \/将使用 http：/testdevice.interop/SimpleService1 服务
 
 -   任意 XML 片段用作参数。
 
-通过响应客户端**TypeCheckResponse**方法：
+通过将 **TypeCheckResponse** 方法与结合使用来响应客户端：
 
--   **wsa:Action == http:\//schemas.example.org/SimpleService/AnyCheckResponse**
+-   **wsa： Action = = http： \/ /schemas.example.org/SimpleService/AnyCheckResponse**
 
--   返回任意 XML 片断并将其发送回客户端。
+-   返回任意 XML 片段并回显到客户端。
 
-从客户端发送的 XML 片段是在设备上正确显示之前回显给客户端。 在客户端接收时，XML 片段是再次正确显示。
+向客户端回送到客户端之前，从客户端发送的 XML 片段会正确显示在设备上。 当在客户端收到 XML 片段时，它会再次正确显示。
 
  
 

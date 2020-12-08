@@ -1,9 +1,8 @@
 ---
 title: lse（启动源编辑器）
-description: Lse 命令将打开用于当前源文件的编辑器。
-ms.assetid: 2f66b5c3-1cd6-4641-8dea-5e3a11c87db0
+description: Lse 命令为当前源文件打开编辑器。
 keywords:
-- lse （启动源编辑器） Windows 调试
+- lse (启动源编辑器) Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: de740909aff1b6575cbec845a74e75ff2a053f89
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7fdf44a60e31c4fb4a4174697e73ae309c5396d5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383317"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96783444"
 ---
 # <a name="lse-launch-source-editor"></a>lse（启动源编辑器）
 
 
-**Lse**命令将打开用于当前源文件的编辑器。
+**Lse** 命令为当前源文件打开编辑器。
 
 ```dbgcmd
 lse 
@@ -37,12 +36,12 @@ lse
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>模式</strong></p></td>
-<td align="left"><p>用户模式下，内核模式</p></td>
+<td align="left"><p><strong>交货</strong></p></td>
+<td align="left"><p>用户模式，内核模式</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>目标</strong></p></td>
-<td align="left"><p>实时、 崩溃转储</p></td>
+<td align="left"><p>实时，故障转储</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>平台</strong></p></td>
@@ -56,17 +55,17 @@ lse
 <a name="remarks"></a>备注
 -------
 
-**Lse**命令将打开用于当前源文件的编辑器。 此命令是等效于单击**编辑此文件**中的快捷菜单[源窗口](source-window.md)在 WinDbg 中。
+**Lse** 命令为当前源文件打开编辑器。 此命令等效于在 WinDbg 的 [源窗口](source-window.md)的快捷菜单中单击 "**编辑此文件**"。
 
-因此不能使用在编辑器，运行目标计算机上打开**lse**命令从远程客户端。
+编辑器将在运行目标的计算机上打开，因此不能从远程客户端使用 **lse** 命令。
 
-WinDiff 编辑器注册表信息或值的 WINDBG\_INVOKE\_编辑器环境变量确定打开的编辑器。 例如，考虑以下值的 WINDBG\_INVOKE\_编辑器。
+WinDiff 编辑器注册表信息或 WINDBG \_ INVOKE \_ editor 环境变量的值确定打开的编辑器。 例如，请考虑 WINDBG 调用编辑器的以下 \_ 值 \_ 。
 
 ```reg
 c:\my\path\myeditor.exe -file %f -line %l
 ```
 
-此值指示 Myeditor.exe 将打开到当前源文件的基于 1 的行号。 **%L**选项指示该行应为一个基于，读取数字并 **%f**指示应使用当前的源文件。 此外可以包括 **%L**指示的行号是从零开始或 **%p**若要指示应使用当前的源文件。
+此值指示 Myeditor.exe 将打开到当前源文件的从1开始的行号。 **% L** 选项指示行号应作为一开始读取， **% f** 指示应使用当前源文件。 您还可以包含 **% L** ，以指示行号是从零开始的，或者是 **% p** 以指示应使用当前源文件。
 
  
 

@@ -1,7 +1,6 @@
 ---
 title: 编码器实现和支持
 description: 编码器实现和支持
-ms.assetid: 6ba97ff8-815b-490f-920b-6ede4f730e98
 keywords:
 - 编码器设备 WDK AVStream
 - AVStream WDK，编码器设备
@@ -15,16 +14,16 @@ keywords:
 - ENCAPIPARAM_PEAK_BITRATE
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1aaca2906f09e83ddb428333a7e445920906aa87
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 322168f40506ffbceec6c9e928bf52c1987d081b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105944"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96782045"
 ---
 # <a name="encoder-implementation-and-support"></a>编码器实现和支持
 
-在 Windows XP Service Pack 1 中，Microsoft 在 *ksmedia* 中定义了三个内核流式处理属性集和一个枚举，以支持仅视频编码器设备。 每个属性集都包含一个属性。 换言之，每个属性都接收其自己的属性集。 如果你的驱动程序进行了*get*属性或*设置*属性调用，则在设置调用时，请在[**KSPROPERTY**](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)结构的**Set**成员中指定*ksmedia*) 中定义的属性集的 GUID (，并在**Id**成员中指定零：
+在 Windows XP Service Pack 1 中，Microsoft 在 *ksmedia* 中定义了三个内核流式处理属性集和一个枚举，以支持仅视频编码器设备。 每个属性集都包含一个属性。 换言之，每个属性都接收其自己的属性集。 如果你的驱动程序进行了 *get* 属性或 *设置* 属性调用，则在设置调用时，请在 [**KSPROPERTY**](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)结构的 **Set** 成员中指定 *ksmedia*) 中定义的属性集的 GUID (，并在 **Id** 成员中指定零：
 
 <table>
 <colgroup>
@@ -34,7 +33,7 @@ ms.locfileid: "90105944"
 <thead>
 <tr class="header">
 <th>属性 Set</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -53,11 +52,11 @@ ms.locfileid: "90105944"
 </tbody>
 </table>
 
-客户端通过从 Windows 软件开发包 (SDK) 文档) 中描述的 " **IEncoderAPI** com (接口" 派生**IVideoEncoder** com 接口，来访问这些属性。
+客户端通过从 Windows 软件开发包 (SDK) 文档) 中描述的 " **IEncoderAPI** com (接口" 派生 **IVideoEncoder** com 接口，来访问这些属性。
 
 微型驱动程序必须为每个 ENCAPIPARAM Xxx 属性指定默认值 \_ *Xxx* 。 主题 [编码器代码示例](encoder-code-examples.md) 演示如何指定默认属性值。 在开发和调试编码器筛选器的过程中，可以从支持 ENCAPIPARAM \_ 比特率属性集的微型驱动程序触发当前属性页。
 
-在 DirectX 9.0 中，在 *ksmedia* 中定义了六个附加属性集和一个事件集，以更好地支持更多种编码器，包括仅音频编码器。 与 ENCAPIPARAM \_ *Xxx*属性一样，每个属性都接收其自己的属性集：
+在 DirectX 9.0 中，在 *ksmedia* 中定义了六个附加属性集和一个事件集，以更好地支持更多种编码器，包括仅音频编码器。 与 ENCAPIPARAM \_ *Xxx* 属性一样，每个属性都接收其自己的属性集：
 
 <table>
 <colgroup>
@@ -67,7 +66,7 @@ ms.locfileid: "90105944"
 <thead>
 <tr class="header">
 <th>属性 Set</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -106,7 +105,7 @@ ms.locfileid: "90105944"
 <thead>
 <tr class="header">
 <th>事件集</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -119,7 +118,7 @@ ms.locfileid: "90105944"
 
 客户端通过 **ICodecAPI** COM 接口访问这些属性 (Windows SDK 文档) 中所述。 有关 COM 接口的详细信息，请参阅 [编码器安装和注册](encoder-installation-and-registration.md) ，其中包括如何指定 KsProxy 应公开的接口。
 
-微型驱动程序应实现对基本 *get*属性查询的支持。 主题 [编码器代码示例](encoder-code-examples.md) 演示如何支持 *获取*-属性查询。
+微型驱动程序应实现对基本 *get* 属性查询的支持。 主题 [编码器代码示例](encoder-code-examples.md) 演示如何支持 *获取*-属性查询。
 
 开发编码器筛选器时，将编码功能从视频捕获筛选器移动到单独的筛选器中。 定义自己的专用媒体，使图形生成器能够正确地连接编码器和捕获筛选器。 如果硬件能够控制非编码内容，则可能还会公开公共媒介。 如果同时实现公共和专用媒体，请首先列出专用媒体，因为它可以减少图形构建时间;生成筛选器图时查找正确的筛选器。
 

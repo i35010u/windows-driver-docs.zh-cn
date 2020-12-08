@@ -1,7 +1,6 @@
 ---
 title: DIF_NEWDEVICEWIZARD_POSTANALYZE
 description: DIF_NEWDEVICEWIZARD_POSTANALYZE
-ms.assetid: 81d609e6-9562-4738-b3ba-c29b24612f91
 keywords:
 - DIF_NEWDEVICEWIZARD_POSTANALYZE 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 3d5e599b27a2103f8e745eb0b3b4a5878e2ff351
-ms.sourcegitcommit: 06581a21ca066ddfedab7f9bb7f2159cfac452fd
+ms.openlocfilehash: f80d7f552409d97d36042d26f42cfee305b6b4f0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91145485"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96782795"
 ---
 # <a name="dif_newdevicewizard_postanalyze"></a>DIF_NEWDEVICEWIZARD_POSTANALYZE
 
@@ -64,10 +63,10 @@ Windows 注册设备后，使 devnode "实时"，但在 Windows 安装设备驱�
 提供一个指向 [**SP_DEVINFO_DATA**](/windows/win32/api/setupapi/ns-setupapi-sp_devinfo_data) 结构的指针，该结构在设备信息集中标识设备。
 
 <a href="" id="device-installation-parameters-"></a>设备安装参数   
-与*DeviceInfoData*关联的设备安装参数 ([**SP_DEVINSTALL_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-sp_devinstall_params_a)) 。
+与 *DeviceInfoData* 关联的设备安装参数 ([**SP_DEVINSTALL_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-sp_devinstall_params_a)) 。
 
 <a href="" id="class-installation-parameters"></a>类安装参数  
-[**SP_NEWDEVICEWIZARD_DATA**](/windows/win32/api/setupapi/ns-setupapi-sp_newdevicewizard_data)结构与*DeviceInfoData*关联。
+[**SP_NEWDEVICEWIZARD_DATA**](/windows/win32/api/setupapi/ns-setupapi-sp_newdevicewizard_data)结构与 *DeviceInfoData* 关联。
 
 ### <a name="installer-output"></a>安装程序输出
 
@@ -119,7 +118,7 @@ DIF_NEWDEVICEWIZARD_POSTANALYZE 请求使安装程序能够提供 Windows 在 de
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**DIF_NEWDEVICEWIZARD_PREANALYZE**](dif-newdevicewizard-preanalyze.md)

@@ -1,17 +1,16 @@
 ---
 title: GUID_NDIS_STATUS_OFFLOAD_HW_CAPABILITIES
 description: 本主题描述了 NDIS WMI 接口的 GUID_NDIS_STATUS_OFFLOAD_HW_CAPABILITIES GUID。
-ms.assetid: 6f5e11c1-4fa0-4a9b-90f3-85a3cb8b8878
 keywords:
 - GUID_NDIS_STATUS_OFFLOAD_HW_CAPABILITIES，WDK GUID_NDIS_STATUS_OFFLOAD_HW_CAPABILITIES 网络驱动程序
 ms.date: 11/22/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 42abf49aa2d3c38270d2cc1aea4af5ce596f3b7d
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 0b20131458eec149af4328119590cf15a428e84b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89218095"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96782269"
 ---
 # <a name="guid_ndis_status_offload_hw_capabilities"></a>GUID_NDIS_STATUS_OFFLOAD_HW_CAPABILITIES
 

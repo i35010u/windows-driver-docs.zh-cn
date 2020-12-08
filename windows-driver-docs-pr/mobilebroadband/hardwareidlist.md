@@ -1,15 +1,14 @@
 ---
 title: HardwareIdList (PackageInfo)
 description: HardwareIdList (PackageInfo)
-ms.assetid: 32bd11f8-767f-4082-b753-efa9debf23cc
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 93e22ba011911e4592292f17827fa965da2db72d
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: ae2459bd49b5e206f976db8fc4a6980442187b8e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89403550"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96782326"
 ---
 # <a name="hardwareidlist-packageinfo"></a>HardwareIdList (PackageInfo)
 
@@ -47,7 +46,7 @@ HardwareIDList 元素指定服务元数据包的一个或多个硬件标识字�
 <thead>
 <tr class="header">
 <th>元素</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -71,13 +70,13 @@ HardwareIDList 元素指定服务元数据包的一个或多个硬件标识字�
 <thead>
 <tr class="header">
 <th>元素</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><p><a href="metadatakey.md" data-raw-source="[MetadataKey](metadatakey.md)">MetadataKey</a></p></td>
-<td><p><a href="metadatakey.md" data-raw-source="[MetadataKey](metadatakey.md)">MetadataKey</a>元素指定设备元数据包的属性。 其中包括：</p>
+<td><p><a href="metadatakey.md" data-raw-source="[MetadataKey](metadatakey.md)">MetadataKey</a>元素指定设备元数据包的属性。 这些功能包括以下这些：</p>
 <ul>
 <li><p>设备支持的每个硬件功能的标识符。</p></li>
 <li><p>包中的文本字符串的语言特定区域设置。</p></li>

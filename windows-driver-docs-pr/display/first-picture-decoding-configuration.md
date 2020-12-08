@@ -1,18 +1,17 @@
 ---
 title: 第一个图片解码配置
 description: 第一个图片解码配置
-ms.assetid: 5888b2d3-42e8-4145-90f7-025b66a4d6e9
 keywords:
-- 压缩解码集 WDK DirectX VA 的图片
+- 压缩的图片解码设置 WDK DirectX VA
 - 图片解码设置 WDK DirectX VA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 66af0e802bfa3ec9248506bd8676692aec3e883a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f151d69381643cdeb54db57c3c7dc1fda03c3eee
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327918"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96783285"
 ---
 # <a name="first-picture-decoding-configuration"></a>第一个图片解码配置
 
@@ -20,7 +19,7 @@ ms.locfileid: "63327918"
 ## <span id="ddk_first_picture_decoding_configuration_gg"></span><span id="DDK_FIRST_PICTURE_DECODING_CONFIGURATION_GG"></span>
 
 
-在此集 （通过此集中的第二个和第三个配置首选的配置） 中的第一个配置定义，如下所示。
+此集合中的第一个配置 (此组中第二个和第三个配置的首选配置) 定义如下：
 
 <table>
 <colgroup>
@@ -30,7 +29,7 @@ ms.locfileid: "63327918"
 <thead>
 <tr class="header">
 <th align="left">成员</th>
-<th align="left">值</th>
+<th align="left">“值”</th>
 </tr>
 </thead>
 <tbody>

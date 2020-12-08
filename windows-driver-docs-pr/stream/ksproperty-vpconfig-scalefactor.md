@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ VPCONFIG \_ SCALEFACTOR
 description: KSPROPERTY \_ VPCONFIG \_ SCALEFACTOR 属性将视频端口尺寸设置为用户定义的规范。
-ms.assetid: 0fbfedc8-9dff-4c7c-910f-507b84614e47
 keywords:
 - KSPROPERTY_VPCONFIG_SCALEFACTOR 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cb9a66578ea8faa297a95d332c392e5bd9b162ff
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 54f863f21568a2b35147c6f4feeeed7e776f2970
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104538"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96783733"
 ---
 # <a name="ksproperty_vpconfig_scalefactor"></a>KSPROPERTY \_ VPCONFIG \_ SCALEFACTOR
 
@@ -63,7 +62,7 @@ KSPROPERTY \_ VPCONFIG \_ SCALEFACTOR 属性将视频端口尺寸设置为用户
 
  (操作数据) 的属性值是一个 KS \_ AMVPSIZE 结构，它指定视频端口的宽度和高度。
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 当 KSPROPSETID VPVBIConfig 使用此属性时 \_ ，所有属性请求都必须返回 \_ 未实现的状态 \_ 。
@@ -84,7 +83,7 @@ KSPROPERTY \_ VPCONFIG \_ SCALEFACTOR 属性将视频端口尺寸设置为用户
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSPROPERTY**](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)

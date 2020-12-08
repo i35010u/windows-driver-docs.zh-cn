@@ -1,22 +1,22 @@
 ---
 title: 设计移动宽带应用中的购买流
 description: 设计移动宽带应用中的购买流
-ms.assetid: 1243b255-aac6-4d75-826a-e42482f5ac1b
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 16993d87f4f663d1a1d71c61a515d9ce9fcd502d
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 92892a4d3e657bf73edb79a590544db223f4c424
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89215337"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96782411"
 ---
 # <a name="design-purchase-flows-in-a-mobile-broadband-app"></a>设计移动宽带应用中的购买流
 
 
 你的移动宽带应用可以包含供用户用来购买计划的购买流程。 第一次购买时，支持通过 web 的购买流程。 下面是有关采购流的一些标准建议。
 
-**注意**   不要使用 iframe 来托管应用中的这些流。
+**注意**  
+不要使用 iframe 来托管应用中的这些流。
 
  
 

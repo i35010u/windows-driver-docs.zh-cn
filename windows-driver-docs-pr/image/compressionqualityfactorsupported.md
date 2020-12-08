@@ -1,9 +1,8 @@
 ---
 title: CompressionQualityFactorSupported 元素
-description: 所需的 CompressionQualityFactorSupported 元素指定扫描设备支持的压缩质量因素的范围。
-ms.assetid: f82ae450-b948-463e-a6a8-aaea0575ddb9
+description: 必需的 CompressionQualityFactorSupported 元素指定扫描设备支持的压缩质量系数的范围。
 keywords:
-- CompressionQualityFactorSupported 元素成像设备
+- CompressionQualityFactorSupported 元素图像设备
 topic_type:
 - apiref
 api_name:
@@ -12,19 +11,19 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ad865665dd74739d47577916b8ad33eb228fa393
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5833e9ab1ada001fcd39d796b102cedab7639633
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63354651"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96783915"
 ---
 # <a name="compressionqualityfactorsupported-element"></a>CompressionQualityFactorSupported 元素
 
 
-所需**CompressionQualityFactorSupported**元素指定扫描设备支持的压缩质量因素的范围。
+必需的 **CompressionQualityFactorSupported** 元素指定扫描设备支持的压缩质量系数的范围。
 
-<a name="usage"></a>用法
+<a name="usage"></a>使用情况
 -----
 
 ```xml
@@ -52,7 +51,7 @@ ms.locfileid: "63354651"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><a href="maxvalue.md" data-raw-source="[&lt;strong&gt;MaxValue&lt;/strong&gt;](maxvalue.md)"><strong>MaxValue</strong></a></p></td>
+<td><p><a href="maxvalue.md" data-raw-source="[&lt;strong&gt;MaxValue&lt;/strong&gt;](maxvalue.md)"><strong>Timespan.maxvalue</strong></a></p></td>
 </tr>
 <tr class="even">
 <td><p><a href="minvalue.md" data-raw-source="[&lt;strong&gt;MinValue&lt;/strong&gt;](minvalue.md)"><strong>MinValue</strong></a></p></td>
@@ -82,18 +81,18 @@ ms.locfileid: "63354651"
 <a name="remarks"></a>备注
 -------
 
-压缩质量因素是一个整数值，用于有损压缩类型，以在压缩过程确定可接受映像丢失量。 越大生成的文件大小将为请求的保真度更高版本。
+压缩质量因素是一个整数值，用于有损压缩类型，以确定压缩期间可接受的图像丢失量。 请求的保真度越大，生成的文件大小就越大。
 
 [**MinValue**](minvalue.md)[**MaxValue**](maxvalue.md)
 
-中指定扫描设备支持的最小值和最大的压缩质量因素[ **MinValue** ](minvalue.md)并[ **MaxValue** ](maxvalue.md)元素，分别。 **MinValue**并**MaxValue**必须是 1 到 100 之间的整数。 值为 100 表示设备应使用最少量的压缩该解决方案还支持以生成最高质量的图像。 目前，JPEG 压缩是唯一受支持的有损压缩类型。
+扫描设备支持的最小和最大压缩质量因素分别在 MinValue 和 [**MinValue**](minvalue.md)元素 [**中**](maxvalue.md)指定。 **MinValue** 和 **MaxValue** 必须是从1到100的整数。 值100表示设备应该使用它所支持的最小压缩量来生成最高质量的映像。 目前，JPEG 压缩是唯一受支持的有损压缩类型。
 
 ## <a name="see-also"></a>请参阅
 
 
 [**DeviceSettings**](devicesettings.md)
 
-[**MaxValue**](maxvalue.md)
+[**Timespan.maxvalue**](maxvalue.md)
 
 [**MinValue**](minvalue.md)
 

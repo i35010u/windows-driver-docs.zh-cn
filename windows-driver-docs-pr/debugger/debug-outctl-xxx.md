@@ -1,7 +1,6 @@
 ---
 title: 调试 \_ OUTCTL \_ XXX
 description: DEBUG \_ OUTCTL \_ XXX 常量用于输出控制。 常量构成一个位域，该字段指定发送输出的目标的当前策略。 位域分为两部分。
-ms.assetid: 94d3416a-082e-488b-adc2-8b837bb1c1cb
 ms.date: 12/07/2017
 keywords:
 - DEBUG_OUTCTL_XXX Windows 调试
@@ -14,17 +13,17 @@ api_location:
 api_type:
 - HeaderDef
 ms.localizationpriority: medium
-ms.openlocfilehash: b11cea884064d6adcc1c46c560ebd2678f23dc7b
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 95bd47674d52be7e4e8c1eafa512e0a572ac4c80
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103854"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96783495"
 ---
 # <a name="debug_outctl_xxx"></a>调试 \_ OUTCTL \_ XXX
 
 
-DEBUG \_ OUTCTL \_ *XXX*常量用于输出控制。 常量构成一个位域，该字段指定发送输出的目标的当前策略。 位域分为两部分。
+DEBUG \_ OUTCTL \_ *XXX* 常量用于输出控制。 常量构成一个位域，该字段指定发送输出的目标的当前策略。 位域分为两部分。
 
 ## <span id="ddk_debug_outctl_xxx_dbx"></span><span id="DDK_DEBUG_OUTCTL_XXX_DBX"></span>
 
@@ -38,8 +37,8 @@ DEBUG \_ OUTCTL \_ *XXX*常量用于输出控制。 常量构成一个位域，�
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">值</th>
-<th align="left">说明</th>
+<th align="left">“值”</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -77,8 +76,8 @@ DEBUG \_ OUTCTL \_ *XXX*常量用于输出控制。 常量构成一个位域，�
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">值</th>
-<th align="left">说明</th>
+<th align="left">“值”</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -112,8 +111,8 @@ DEBUG \_ OUTCTL \_ *XXX*常量用于输出控制。 常量构成一个位域，�
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">值</th>
-<th align="left">说明</th>
+<th align="left">“值”</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>

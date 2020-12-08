@@ -1,15 +1,14 @@
 ---
 title: 适用于 MVNO 的传送体验
 description: 适用于 MVNO 的传送体验
-ms.assetid: fcb2a3d4-bc19-4fa5-b81d-b0df287404a8
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 819ddb44a1d0c77f2ba69d3fda597ad83955dcd5
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: 0d4ec5906707a950a4c05fa08c46c490a9707f37
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89402912"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96782443"
 ---
 # <a name="delivering-experiences-for-mvnos"></a>适用于 MVNO 的传送体验
 
@@ -52,7 +51,8 @@ ms.locfileid: "89402912"
 
 如果 ICCID 和 IMSI 均不与客户端计算机的请求匹配，则不匹配。
 
-**注意**   IMSI 范围必须具有100粒度。 起始范围值必须以00结束，并且结束范围值必须以99结束。
+**注意**  
+IMSI 范围必须具有100粒度。 起始范围值必须以00结束，并且结束范围值必须以99结束。
 
  
 
@@ -76,15 +76,16 @@ ms.locfileid: "89402912"
 
 如果 ICCID 与 IMSI 都不匹配来自客户端计算机的请求，则不匹配。
 
-**注意**   IMSI 范围必须具有100粒度。 起始范围值必须以00结束，并且结束范围值必须以99结束。
+**注意**  
+IMSI 范围必须具有100粒度。 起始范围值必须以00结束，并且结束范围值必须以99结束。
 
  
 
-*图2分段 ICCID 范围 (在 o 的 ICCID 颁发者标识号内) * 显示了从 WMIS 请求服务元数据的客户端计算机的示例，以及如何将来自客户端的每个匹配请求与体验相匹配。
+*图2分段 ICCID 范围 (在 o 的 ICCID 颁发者标识号内)* 显示了从 WMIS 请求服务元数据的客户端计算机的示例，以及如何将来自客户端的每个匹配请求与体验相匹配。
 
 ![分段 iccid 范围](images/hck-winb-fig2-segmenting-iccid-ranges-matchingservicemetadata.jpg)
 
-**图2在 o 的 ICCID 颁发者标识号 (划分 ICCID 范围) **
+**图2在 o 的 ICCID 颁发者标识号 (划分 ICCID 范围)**
 
 -   中的计算机 \# 1 的匹配请求包含在由 o 定义的 ICCID 范围内。 O 服务元数据将下载到该计算机。
 
@@ -98,7 +99,8 @@ ms.locfileid: "89402912"
 
 此选项需要 o 或 MVNO，以确保将 ICCID 范围保持为最新状态，并将该 Mvno 分配到可预测 ICCID 数块的未来范围。 如果在 SIM 制造过程中将大块的 Iccid 分配给 Sim，这可能是 o 及其 Mvno 的理想匹配策略。 这意味着 o 的维护更少，因为其包跨越所有基于 IMSI 的范围。 在这种情况下，确保 MVNO 保持其 ICCID 范围保持最新状态非常重要;否则，MVNO 的客户可以与 o 体验相匹配。
 
-**注意**   IMSI 范围必须具有100粒度。 起始范围值必须以00结束，并且结束范围值必须以99结束。
+**注意**  
+IMSI 范围必须具有100粒度。 起始范围值必须以00结束，并且结束范围值必须以99结束。
 
  
 
@@ -120,7 +122,8 @@ ms.locfileid: "89402912"
 
 可以混合使用 ICCID 范围和 IMSI 范围来描述 o 和 MVNO 网络。
 
-**注意**   ICCID 范围获取第一个匹配的优先级。
+**注意**  
+ICCID 范围获取第一个匹配的优先级。
 
  
 
@@ -154,7 +157,8 @@ ms.locfileid: "89402912"
 
 如果 Home 提供程序名称与来自客户端计算机的请求不匹配，则不匹配。
 
-**注意**   家庭提供商名称必须是全局唯一的，以确保用户获得正确的体验。 服务元数据将只允许使用给定的主提供程序名称的单个服务元数据包。
+**注意**  
+家庭提供商名称必须是全局唯一的，以确保用户获得正确的体验。 服务元数据将只允许使用给定的主提供程序名称的单个服务元数据包。
 
  
 
@@ -222,7 +226,8 @@ ms.locfileid: "89402912"
 
 如果必须更新服务元数据包，请确保移动宽带应用可以启动其他基于操作员提供的后端逻辑的帐户预配元数据操作。 通过这种方式，您可以指定在后端更新服务元数据的时间，并让应用程序定期检查后端，并根据需要应用帐户设置元数据信息。
 
-**注意**   由于未对服务元数据进行版本控制，因此应用程序无法查询元数据的本地副本，以确定是否已通过使用帐户预配元数据进行的自定义更新或应用。 应用程序无法唤醒和响应应用于计算机的服务元数据更新。
+**注意**  
+由于未对服务元数据进行版本控制，因此应用程序无法查询元数据的本地副本，以确定是否已通过使用帐户预配元数据进行的自定义更新或应用。 应用程序无法唤醒和响应应用于计算机的服务元数据更新。
 
 通过 Windows 开发人员中心硬件仪表板和计算机接收更新的元数据的时间之间可能会出现延迟。
 
@@ -265,7 +270,8 @@ ms.locfileid: "89402912"
 
 对于 CDMA 网络 (3GPP2) ，Windows 会将设备报告的 SID 和提供程序名称值读取到 WMIS 中的相应服务元数据包。 如果未找到匹配项，则不会下载任何服务元数据包。 Windows 大约每隔8天检查一次，查看是否存在新的设备元数据。 如果存在 SID 的服务元数据，并且提供程序名称存在单独的服务元数据包，并且这两个值都与设备所报告的 SID 和提供程序名称值匹配，则将匹配首选项提供给 SID。 在这种情况下，提供程序名称包不匹配。
 
-**重要提示**   提供程序名称值区分大小写，并且必须与设备向 Windows 报告的访问接口名称完全匹配。 如果要使用提供程序名称进行匹配，则必须确保已在通过 Windows 开发人员中心硬件仪表板提交的服务元数据包中指定 CDMA 设备向 Windows 报告的提供程序名称的所有拼写和大小写形式。
+**重要说明**  
+提供程序名称值区分大小写，并且必须与设备向 Windows 报告的访问接口名称完全匹配。 如果要使用提供程序名称进行匹配，则必须确保已在通过 Windows 开发人员中心硬件仪表板提交的服务元数据包中指定 CDMA 设备向 Windows 报告的提供程序名称的所有拼写和大小写形式。
 
  
 
@@ -324,13 +330,13 @@ ms.locfileid: "89402912"
 
 您可以预期以下匹配行为，具体取决于无线电类型。
 
-### <a name="span-idsingle-mode_single-subscription_devicespanspan-idsingle-mode_single-subscription_devicespanspan-idsingle-mode_single-subscription_devicespansingle-mode-single-subscription-device"></a><span id="Single-Mode_Single-Subscription_Device"></span><span id="single-mode_single-subscription_device"></span><span id="SINGLE-MODE_SINGLE-SUBSCRIPTION_DEVICE"></span>单模式单一订阅设备
+### <a name="span-idsingle-mode_single-subscription_devicespanspan-idsingle-mode_single-subscription_devicespanspan-idsingle-mode_single-subscription_devicespansingle-mode-single-subscription-device"></a><span id="Single-Mode_Single-Subscription_Device"></span><span id="single-mode_single-subscription_device"></span><span id="SINGLE-MODE_SINGLE-SUBSCRIPTION_DEVICE"></span>单模式 Single-Subscription 设备
 
 单模式单一订阅设备是仅限 GSM 或仅 CDMA 的设备。 这些是通常可用的设备，只提供对 GSM 或 CDMA 网络的访问。
 
 此设备向 Windows 报告 GSM 或 CDMA 模式。 上述匹配逻辑适用，并且设备与相应的服务元数据匹配。
 
-### <a name="span-idmulti-mode_single-subscription_devicespanspan-idmulti-mode_single-subscription_devicespanspan-idmulti-mode_single-subscription_devicespanmulti-mode-single-subscription-device"></a><span id="Multi-Mode_Single-Subscription_Device"></span><span id="multi-mode_single-subscription_device"></span><span id="MULTI-MODE_SINGLE-SUBSCRIPTION_DEVICE"></span>多模式单一订阅设备
+### <a name="span-idmulti-mode_single-subscription_devicespanspan-idmulti-mode_single-subscription_devicespanspan-idmulti-mode_single-subscription_devicespanmulti-mode-single-subscription-device"></a><span id="Multi-Mode_Single-Subscription_Device"></span><span id="multi-mode_single-subscription_device"></span><span id="MULTI-MODE_SINGLE-SUBSCRIPTION_DEVICE"></span>多模式 Single-Subscription 设备
 
 多模式单一订阅设备具有 GSM 和 CDMA 功能。 例如，可以通过对该操作员使用单个订阅者订阅来连接到 GSM LTE 网络或 CDMA 网络。
 

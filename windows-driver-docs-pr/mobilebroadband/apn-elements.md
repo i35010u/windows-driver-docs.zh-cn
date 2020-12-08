@@ -1,15 +1,14 @@
 ---
 title: APN 元素概述
 description: APN 元素概述
-ms.assetid: 551e713e-7ac9-477f-966e-214b63f94507
 ms.date: 07/05/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 41a9c01040053ac7595d4137c53643e2fca77bc8
-ms.sourcegitcommit: 7e4d9508198a30bdc1cb6eda83852dda4e42213e
+ms.openlocfilehash: fd76d159a5cf14fc861371d9d7d7a9920b206cfc
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89304308"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96782541"
 ---
 # <a name="apn-elements-overview"></a>APN 元素概述
 
@@ -18,7 +17,7 @@ ms.locfileid: "89304308"
 
 -   [OperatorList](operatorlist.md)
 
-    -   [运算符](operator.md)
+    -   [“运算符”](operator.md)
 
         -   [HardwareIdList](hardwareidlist-apnxml.md)
 

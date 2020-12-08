@@ -1,7 +1,6 @@
 ---
 title: DIF_NEWDEVICEWIZARD_FINISHINSTALL
 description: DIF_NEWDEVICEWIZARD_FINISHINSTALL
-ms.assetid: 5d27316b-4e47-4e18-95fe-fd4a63a76626
 keywords:
 - DIF_NEWDEVICEWIZARD_FINISHINSTALL 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 4d8723a71e735d13f76663e4684333cc50422292
-ms.sourcegitcommit: 06581a21ca066ddfedab7f9bb7f2159cfac452fd
+ms.openlocfilehash: 47f6e26603b939f87cc1b315e0c6163b8ffff22f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91145451"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96782797"
 ---
 # <a name="dif_newdevicewizard_finishinstall"></a>DIF_NEWDEVICEWIZARD_FINISHINSTALL
 
@@ -64,10 +63,10 @@ Windows 安装设备后 ([**DIF_INSTALLDEVICE**](dif-installdevice.md) 处理) �
 一个指针，指向用于在设备信息集中标识设备的 [**SP_DEVINFO_DATA**](/windows/win32/api/setupapi/ns-setupapi-sp_devinfo_data) 结构。
 
 <a href="" id="device-installation-parameters-"></a>设备安装参数   
-与*DeviceInfoData*关联的设备安装参数 ([**SP_DEVINSTALL_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-sp_devinstall_params_a)) 。
+与 *DeviceInfoData* 关联的设备安装参数 ([**SP_DEVINSTALL_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-sp_devinstall_params_a)) 。
 
 <a href="" id="class-installation-parameters"></a>类安装参数  
-[**SP_NEWDEVICEWIZARD_DATA**](/windows/win32/api/setupapi/ns-setupapi-sp_newdevicewizard_data)结构与*DeviceInfoData*关联。
+[**SP_NEWDEVICEWIZARD_DATA**](/windows/win32/api/setupapi/ns-setupapi-sp_newdevicewizard_data)结构与 *DeviceInfoData* 关联。
 
 ### <a name="installer-output"></a>安装程序输出
 
@@ -111,7 +110,7 @@ Windows 安装设备后 ([**DIF_INSTALLDEVICE**](dif-installdevice.md) 处理) �
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**DIF_FINISHINSTALL_ACTION**](dif-finishinstall-action.md)

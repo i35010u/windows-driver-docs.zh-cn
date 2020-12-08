@@ -1,9 +1,8 @@
 ---
 title: TxtSetup.oem 文件的 Disks 节
 description: 磁盘部分标识设备安装工具包中的磁盘。
-ms.assetid: 0a1c0bf1-b4b9-45bc-af48-26f19bc72061
 keywords:
-- TxtSetup.oem 文件的设备和驱动程序安装的磁盘部分
+- Txtsetup.oem 文件设备和驱动程序安装的磁盘部分
 topic_type:
 - apiref
 api_name:
@@ -12,17 +11,17 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: d7cec3698511bae82b4047404dcf2fe63f1ff236
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 112c5ebe672643f28ce13f5796fdba5f80a9ba3c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63356057"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96782745"
 ---
 # <a name="disks-section-of-a-txtsetupoem-file"></a>TxtSetup.oem 文件的 Disks 节
 
 
-**磁盘**部分标识设备安装工具包中的磁盘。 本部分的格式如下：
+**磁盘** 部分标识设备安装工具包中的磁盘。 此部分具有以下格式：
 
 ``` syntax
 [Disks]
@@ -31,18 +30,18 @@ diskN = "description",tagfile,directory
 ```
 
 <a href="" id="diskn"></a>*diskN*  
-指定可以在后续部分中用于标识磁盘的项。
+指定可在后续部分中用于标识磁盘的密钥。
 
-<a href="" id="description"></a>*description*  
-指定包含磁盘名称的字符串。 Windows 使用说明来提示用户插入磁盘。
+<a href="" id="description"></a>*2008*  
+指定包含磁盘名称的字符串。 Windows 使用描述来提示用户插入磁盘。
 
 <a href="" id="tagfile"></a>*tagfile*  
-指定磁盘上的验证文件的名称。 文件名必须被指定为从根的完整路径，也不能指定一个驱动器。 Windows 将检查此文件以确保用户插入正确的磁盘。
+指定磁盘上验证文件的名称。 必须将 filename 指定为根的完整路径，并且不得指定驱动器。 Windows 将检查此文件以确保用户插入了正确的磁盘。
 
-<a href="" id="directory"></a>*directory*  
-安装文件的位置在磁盘上指定的目录。 该目录必须指定为从根的完整路径，而且不能指定一个驱动器。
+<a href="" id="directory"></a>*文件夹*  
+指定安装文件所在磁盘上的目录。 目录必须指定为根目录的完整路径，并且不得指定驱动器。
 
-下面的示例演示**磁盘**安装套件，其中包含两个磁盘的部分：
+以下示例显示了包含两个磁盘的安装工具包的 **磁盘** 部分：
 
 ``` syntax
 [Disks]

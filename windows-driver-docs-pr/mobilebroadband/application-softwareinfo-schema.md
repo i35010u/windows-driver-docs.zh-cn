@@ -1,15 +1,14 @@
 ---
 title: '应用程序 (SoftwareInfo) '
 description: '应用程序 (SoftwareInfo) '
-ms.assetid: 1f16a690-4453-4563-a4b1-44bbd5d02f47
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 168e8df35bacf4497361a38843c840165127855d
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: 92adc74b8fbb4425f33cc73d5eb7bcd85c961177
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89402958"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96782518"
 ---
 # <a name="application-softwareinfo"></a>应用程序 (SoftwareInfo) 
 
@@ -40,7 +39,7 @@ ms.locfileid: "89402958"
 <tr class="header">
 <th>Attribute</th>
 <th>类型</th>
-<th>必选</th>
+<th>必须</th>
 <th>说明</th>
 </tr>
 </thead>
@@ -67,7 +66,7 @@ ms.locfileid: "89402958"
 <thead>
 <tr class="header">
 <th>元素</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -91,7 +90,7 @@ ms.locfileid: "89402958"
 <thead>
 <tr class="header">
 <th>元素</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>

@@ -1,25 +1,24 @@
 ---
 title: SetupAPI 日志中的驱动程序分级信息
 description: SetupAPI 日志中的驱动程序分级信息
-ms.assetid: 169a1963-3fb3-4254-9634-78034cda2924
 keywords:
-- SetupAPI 日志记录 WDK Windows Vista 中，驱动程序排名的信息
+- Setupapi.log 日志记录 WDK Windows Vista，驱动程序排名信息
 - 签名指示器 WDK 设备安装
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 88a0583922123f50ba3b33c08e5f01eb5fe62402
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a13392dd7fb5b5604f89187b53b51c696932ec17
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63356020"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96782719"
 ---
 # <a name="driver-rank-information-in-the-setupapi-log"></a>SetupAPI 日志中的驱动程序分级信息
 
 
-Windows 使用签名指示器来表示签名类型。 Windows 将在此信息保存[驱动程序存储区](driver-store.md)供内部使用的数据库。
+Windows 使用签名指示器来表示签名类型。 Windows 将此信息保存在 [驱动程序存储区](driver-store.md) 数据库中供内部使用。
 
-当 Windows 安装的驱动程序时，将添加 SetupAPI*排名*十六进制格式和记录签名类型的签名者分数条目中记录驱动程序级别的条目。 以下是粗体的字体样式、 排名条目示例和签名者分数条目的示例中所示，SetupAPI 设备日志的摘录。 在此摘录中，排名条目指示驱动程序的"0x0dff0000"的排名和签名者分数条目指示驱动程序将收件箱驱动程序。
+当 Windows 安装驱动程序时，Setupapi.log 会添加一个 *排名* 条目，该条目将以十六进制格式记录驱动程序排名和记录签名类型的签名者评分条目。 下面是一个 Setupapi.log 设备日志的摘录，该日志以粗体字显示，其中显示了一个排名条目示例和一个签名人评分条目示例。 在此摘录中，排名条目指示驱动程序的排名为 "0x0dff0000"，而签名者评分条目表示该驱动程序是收件箱驱动程序。
 
 ```cpp
      dvi:      Created Driver Node:
@@ -38,30 +37,30 @@ Windows 使用签名指示器来表示签名类型。 Windows 将在此信息保
      dvi:           Version      - 6.0.5270.8
 ```
 
-以下是签名的 Windows 中每种类型 SetupAPI 设备日志的日志签名者分数条目的列表：
+以下是 Windows 在 Setupapi.log 设备日志中为每种类型的签名记录的签名者评分条目列表：
 
 <a href="" id="premium-whql-signature"></a>高级 WHQL 签名  
-"签名者 Score-WHQL 徽标金牌"
+"签署人评分-WHQL 徽标黄金"
 
 <a href="" id="standard-whql-signature"></a>标准 WHQL 签名  
-"签名者 Score-WHQL 徽标 Silver"
+"签署人评分-WHQL 徽标银"
 
 <a href="" id="an-unspecified-microsoft-signature"></a>未指定的 Microsoft 签名  
-"签名者 Score-WHQL 未分类"
+"签署人评分-WHQL 未分类"
 
-<a href="" id="a-whql-signature-for-a-windows-version-earlier-than-windows-vista-and-equal-to-or-later-than-the-lowerlogoversion-value-of-the-driver-s-device-setup-class-"></a>Windows 版本早于 Windows Vista 且等于或晚于 WHQL 签名[LowerLogoVersion](lowerlogoversion.md)驱动程序的设备安装程序类的值。  
-"签名者 Score-WHQL"
+<a href="" id="a-whql-signature-for-a-windows-version-earlier-than-windows-vista-and-equal-to-or-later-than-the-lowerlogoversion-value-of-the-driver-s-device-setup-class-"></a>早于 Windows Vista 的 Windows 版本的 WHQL 签名，并且等于或晚于驱动程序的设备安装程序类的 [LowerLogoVersion](lowerlogoversion.md) 值。  
+"签署人评分-WHQL"
 
-<a href="" id="a-microsoft-signature-for-an-inbox-driver"></a>用于收件箱驱动程序的 Microsoft 签名  
-"签名者 Score 的收件箱"
+<a href="" id="a-microsoft-signature-for-an-inbox-driver"></a>收件箱驱动程序的 Microsoft 签名  
+"签署人评分-收件箱"
 
-<a href="" id="an-authenticode-signature-or-whql-signature-for-a-windows-version-earlier-than-the-version-that-is-specified-by-lowerlogoversion-for-the-device-setup-class-of-the-driver"></a>Authenticode 签名或早于由指定的版本的 Windows 版本的 WHQL 签名**LowerLogoVersion**设备安装程序类的驱动程序  
-"签名者 Score 的验证码"
+<a href="" id="an-authenticode-signature-or-whql-signature-for-a-windows-version-earlier-than-the-version-that-is-specified-by-lowerlogoversion-for-the-device-setup-class-of-the-driver"></a>早于 **LowerLogoVersion** 为驱动程序的设备安装程序类指定的版本的 Windows 版本的 Authenticode 签名或 WHQL 签名  
+"签署人评分-Authenticode"
 
 <a href="" id="unsigned-driver"></a>未签名驱动程序  
-"签名者 Score-未经过数字签名"
+"签署人评分-未经过数字签名"
 
-有关驱动程序分级的详细信息，请参阅[如何 Windows Ranks Drivers （Windows Vista 和更高版本）](how-setup-ranks-drivers--windows-vista-and-later-.md)。
+有关驱动程序排名的详细信息，请参阅 [windows (Windows Vista 和更高版本) 的驱动程序的方式 ](how-setup-ranks-drivers--windows-vista-and-later-.md)。
 
  
 

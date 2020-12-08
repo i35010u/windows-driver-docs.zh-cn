@@ -1,15 +1,14 @@
 ---
 title: 兼容 ID
 description: 兼容 ID 是供应商定义的标识字符串，Windows 使用它将设备与 INF 文件匹配。
-ms.assetid: 3d20b43a-9e2b-4a8d-9a1a-eb9217233405
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 136578baabfce1335eb5d0a29a6e7f3822f6f947
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 3710190fbb286f8ae5b6b8fea529f25d63d18133
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89094917"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96782979"
 ---
 # <a name="compatible-id"></a>兼容 ID
 

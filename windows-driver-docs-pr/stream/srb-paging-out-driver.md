@@ -1,9 +1,8 @@
 ---
-title: SRB\_PAGING\_OUT\_DRIVER
-description: SRB\_PAGING\_OUT\_DRIVER
-ms.assetid: 9bcb9f07-6fea-427b-9ae8-afdc6aec540f
+title: SRB \_ 分页 \_ 输出 \_ 驱动程序
+description: SRB \_ 分页 \_ 输出 \_ 驱动程序
 keywords:
-- SRB_PAGING_OUT_DRIVER 流式处理媒体设备
+- SRB_PAGING_OUT_DRIVER 流媒体设备
 topic_type:
 - apiref
 api_name:
@@ -12,33 +11,33 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1282416ab7aeab03e4e8bf2fe1ab44a906cc8110
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: a1a4dada8579525822d962ae659234b92ce2c3af
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524207"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96782019"
 ---
-# <a name="srbpagingoutdriver"></a>SRB\_PAGING\_OUT\_DRIVER
+# <a name="srb_paging_out_driver"></a>SRB \_ 分页 \_ 输出 \_ 驱动程序
 
 
 ## <span id="ddk_srb_paging_out_driver_ks"></span><span id="DDK_SRB_PAGING_OUT_DRIVER_KS"></span>
 
 
-在类驱动程序将发出信号，它是有关此请求发送到页面输出微型驱动程序。
+类驱动程序将发送此请求，通知它即将微型驱动程序。
 
-### <a name="span-idreturnvaluespanspan-idreturnvaluespanreturn-value"></a><span id="return_value"></span><span id="RETURN_VALUE"></span>返回值
+### <a name="span-idreturn_valuespanspan-idreturn_valuespanreturn-value"></a><span id="return_value"></span><span id="RETURN_VALUE"></span>返回值
 
-微型驱动程序应设置以下项之一为 SRB 中的状态：
+微型驱动程序应将以下内容之一设置为 SRB 中的状态：
 
-<span id="STATUS_SUCCESS"></span><span id="status_success"></span>状态\_成功  
+<span id="STATUS_SUCCESS"></span><span id="status_success"></span>状态 \_ 成功  
 指示命令成功完成。
 
-### <a name="comments"></a>备注
+### <a name="comments"></a>注释
 
-在类驱动程序才会尝试进行分页出微型驱动程序，如果它没有打开的流或设备。 尽管可能性很小，微型驱动程序具有挂起的回调在此状态，微型驱动程序应取消在收到此 SRB 时任何未完成的回调。 微型驱动程序应禁用适配器中断，并返回状态\_成功。
+如果类驱动程序没有打开的流或设备，则仅尝试对微型驱动程序进行分页。 尽管微型驱动程序不太可能在此状态下有挂起的回调，但在收到此 SRB 后，微型驱动程序应取消所有未完成的回调。 微型驱动程序应禁用适配器中断，然后返回状态 " \_ 成功"。
 
-类驱动程序的页面出微型驱动程序仅当微型驱动程序将启用此功能。 微型驱动程序启用此功能通过在设备的 INF 文件中将注册表变量 PageOutWhenUnopened 设置为 1。 查看流式处理的详细信息的微型驱动程序的 Inf 的示例。
+仅当微型驱动程序启用此功能时，类驱动程序才会对微型驱动程序进行分页。 微型驱动程序通过将设备 INF 文件中的注册表变量 PageOutWhenUnopened 设置为1来启用此功能。 有关详细信息，请参阅示例流式处理微型驱动程序。
 
  
 

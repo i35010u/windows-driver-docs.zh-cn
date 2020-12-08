@@ -1,7 +1,6 @@
 ---
 title: 确定设备是否已插入
 description: 确定设备是否已插入
-ms.assetid: 26dc3c2b-49a6-4bba-b86b-2c93a1914f87
 keywords:
 - 重新安装拔出的设备
 - 拔下设备重新安装 WDK
@@ -11,12 +10,12 @@ keywords:
 - 确定是否已接通设备 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 542245d83d4893dce3005e6bd97289e9940420a7
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: b5bc5c70e6b52aea0cc496f6e3d841d6ca3fb4bc
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91733181"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96782893"
 ---
 # <a name="determining-whether-a-device-is-plugged-in"></a>确定设备是否已插入
 
@@ -39,7 +38,7 @@ ms.locfileid: "91733181"
 
 1.  调用 [SetupCopyOEMInf](/windows/win32/api/setupapi/nf-setupapi-setupcopyoeminfa) 函数。
 
-    [SetupCopyOEMInf](/windows/win32/api/setupapi/nf-setupapi-setupcopyoeminfa)函数可确保 *% SystemRoot% \\ INF*目录中存在正确的 INF 文件。
+    [SetupCopyOEMInf](/windows/win32/api/setupapi/nf-setupapi-setupcopyoeminfa)函数可确保 *% SystemRoot% \\ INF* 目录中存在正确的 INF 文件。
 
 2.  找到拔出的设备。
 
@@ -47,13 +46,13 @@ ms.locfileid: "91733181"
 
 3.  查找设备的硬件 Id 和兼容 Id。
 
-    如果设备类 (假设你在第一) 步中指定了设备类，则**SetupDiGetClassDevs**将返回设备[信息集](device-information-sets.md)的句柄，其中包含已安装的所有设备（无论是否插入）。 通过对 [**SetupDiEnumDeviceInfo**](/windows/win32/api/setupapi/nf-setupapi-setupdienumdeviceinfo) 函数进行连续调用，你可以使用此句柄枚举设备信息集中的所有设备。 每次调用都提供设备的 [**SP_DEVINFO_DATA**](/windows/win32/api/setupapi/ns-setupapi-sp_devinfo_data) 结构。 若要获取硬件 Id 列表，请调用 [**SetupDiGetDeviceRegistryProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdigetdeviceregistrypropertya) 函数，并将 *属性* 参数设置为 SPDRP_HARDWAREID。 若要获取兼容 Id 的列表，请调用相同的函数，但将 *属性* 参数设置为 SPDRP_COMPATIBLEIDS。 这两个列表都是多 SZ 字符串。
+    如果设备类 (假设你在第一) 步中指定了设备类，则 **SetupDiGetClassDevs** 将返回设备 [信息集](device-information-sets.md)的句柄，其中包含已安装的所有设备（无论是否插入）。 通过对 [**SetupDiEnumDeviceInfo**](/windows/win32/api/setupapi/nf-setupapi-setupdienumdeviceinfo) 函数进行连续调用，你可以使用此句柄枚举设备信息集中的所有设备。 每次调用都提供设备的 [**SP_DEVINFO_DATA**](/windows/win32/api/setupapi/ns-setupapi-sp_devinfo_data) 结构。 若要获取硬件 Id 列表，请调用 [**SetupDiGetDeviceRegistryProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdigetdeviceregistrypropertya) 函数，并将 *属性* 参数设置为 SPDRP_HARDWAREID。 若要获取兼容 Id 的列表，请调用相同的函数，但将 *属性* 参数设置为 SPDRP_COMPATIBLEIDS。 这两个列表都是多 SZ 字符串。
 
 4.  查找你的设备 ID 与上一步的硬件 id (或兼容 Id) 之间的匹配。
 
     请确保对设备的硬件 ID/兼容 ID 与 ID 执行完整的字符串比较。 部分比较可能导致不正确的匹配项。
 
-    找到匹配项后，调用[**CM_Get_DevNode_Status**](/windows/win32/api/cfgmgr32/nf-cfgmgr32-cm_get_devnode_status)函数，同时传递 SP_DRVINFO_DATA。*DnDevInst*参数中的**DevInst** 。 如果此函数返回 CR_NO_SUCH_DEVINST，则该函数将确定设备是否为未附加 (，即具有一个虚拟 devnode) 。
+    找到匹配项后，调用 [**CM_Get_DevNode_Status**](/windows/win32/api/cfgmgr32/nf-cfgmgr32-cm_get_devnode_status)函数，同时传递 SP_DRVINFO_DATA。*DnDevInst* 参数中的 **DevInst** 。 如果此函数返回 CR_NO_SUCH_DEVINST，则该函数将确定设备是否为未附加 (，即具有一个虚拟 devnode) 。
 
 5.  将设备标记为。
 

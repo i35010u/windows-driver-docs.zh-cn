@@ -1,15 +1,14 @@
 ---
 title: 远程 NDIS 通信
 description: 远程 NDIS 通信
-ms.assetid: abaa4434-4043-4265-92b9-81383c2080ce
 ms.date: 07/31/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 64ae2e91e9427772d93426aa82e73898f91c7bdd
-ms.sourcegitcommit: db9d058a9e592d4c47c67fc14f04f0ddc3aa92af
+ms.openlocfilehash: 1387a6c22c96267f3bc3bfe3b7fcfd09132b9986
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91989829"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96782141"
 ---
 # <a name="remote-ndis-communication"></a>远程 NDIS 通信
 

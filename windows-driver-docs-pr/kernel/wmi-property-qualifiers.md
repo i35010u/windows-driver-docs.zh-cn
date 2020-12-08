@@ -1,7 +1,6 @@
 ---
 title: WMI 属性限定符
 description: WMI 属性限定符
-ms.assetid: e2d281b3-913c-43ad-921c-80dc8be09aa0
 keywords:
 - MOF 属性限定符 WDK WMI
 - 属性限定符 WDK WMI
@@ -9,12 +8,12 @@ keywords:
 - 标准 MOF 限定符 WDK WMI
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9ecbcca893c55a64ca0c7f04c28c687e540c0097
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 6b4fee1e63adbf5eba3c1a0b5a020ec139e0ab6e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89187021"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96782655"
 ---
 # <a name="wmi-property-qualifiers"></a>WMI 属性限定符
 
@@ -24,7 +23,7 @@ ms.locfileid: "89187021"
 
 下表列出了可用于在 WMI 数据或事件块中定义项目的必需和可选 MOF 属性限定符。
 
-下面是标准 MOF 限定符： **key**、 **read**、 **write**、 **ValueMap**和 **Values**。 有关这些和其他标准 MOF 限定符的详细信息，请参阅 [MOF 数据类型](/windows/desktop/WmiSdk/mof-data-types)。
+下面是标准 MOF 限定符： **key**、 **read**、 **write**、 **ValueMap** 和 **Values**。 有关这些和其他标准 MOF 限定符的详细信息，请参阅 [MOF 数据类型](/windows/desktop/WmiSdk/mof-data-types)。
 
 <table>
 <colgroup>
@@ -39,7 +38,7 @@ ms.locfileid: "89187021"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><strong>键</strong></p></td>
+<td><p>key </p></td>
 <td><p>指示数据项是唯一标识类的每个实例的键属性。 只有 InstanceName 属性才能声明为密钥。</p></td>
 </tr>
 <tr class="even">

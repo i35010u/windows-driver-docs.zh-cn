@@ -1,7 +1,6 @@
 ---
 title: DIF_PROPERTYCHANGE
 description: DIF_PROPERTYCHANGE
-ms.assetid: 62f3380d-8cd1-4f4c-a727-1285de081b9e
 keywords:
 - DIF_PROPERTYCHANGE 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 1a39952a47a50e6d8842e26a30511809a96cfb1b
-ms.sourcegitcommit: 06581a21ca066ddfedab7f9bb7f2159cfac452fd
+ms.openlocfilehash: a66080d44eadd4b1cab6ec9f9fd0382995b43c99
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91145477"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96782773"
 ---
 # <a name="dif_propertychange"></a>DIF_PROPERTYCHANGE
 
@@ -30,7 +29,7 @@ DIF_PROPERTYCHANGE 请求通知安装程序设备的属性正在更改。 设备
 
 设备启用、禁用、重新启动、停止或其属性已更改时。
 
-例如，当属性页提供程序在设备的[**SP_DEVINSTALL_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-sp_devinstall_params_a)结构的**FLAGSEX**字段中设置 DI_FLAGSEX_PROPCHANGE_PENDING 标志时，Windows 将发送此请求。
+例如，当属性页提供程序在设备的 [**SP_DEVINSTALL_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-sp_devinstall_params_a)结构的 **FLAGSEX** 字段中设置 DI_FLAGSEX_PROPCHANGE_PENDING 标志时，Windows 将发送此请求。
 
 有关在第一次启动或重新启动设备时检测到设备的详细信息，请参阅安装程序操作部分。
 
@@ -68,14 +67,14 @@ DIF_PROPERTYCHANGE 请求通知安装程序设备的属性正在更改。 设备
 在设备信息集中提供设备的 [**SP_DEVINFO_DATA**](/windows/win32/api/setupapi/ns-setupapi-sp_devinfo_data) 结构的指针。
 
 <a href="" id="device-installation-parameters-"></a>设备安装参数   
-与*DeviceInfoData*关联的设备安装参数 ([**SP_DEVINSTALL_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-sp_devinstall_params_a)) 。
+与 *DeviceInfoData* 关联的设备安装参数 ([**SP_DEVINSTALL_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-sp_devinstall_params_a)) 。
 
 <a href="" id="class-installation-parameters"></a>类安装参数  
-[**SP_PROPCHANGE_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-sp_propchange_params)结构与*DeviceInfoData*关联。
+[**SP_PROPCHANGE_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-sp_propchange_params)结构与 *DeviceInfoData* 关联。
 
 ### <a name="installer-output"></a>安装程序输出
 
-<a href="" id="none"></a>无  
+<a href="" id="none"></a>内容  
 
 ### <a name="installer-return-value"></a>安装程序返回值
 
@@ -85,7 +84,7 @@ DIF_PROPERTYCHANGE 请求通知安装程序设备的属性正在更改。 设备
 
 如果类安装程序成功处理此请求（包括直接调用默认处理程序），则类安装程序应返回 NO_ERROR 并且 **SetupDiCallClassInstaller** 将不会再次调用默认处理程序。
 
-**注意**   类安装程序可以直接调用默认处理程序，但类安装程序永远不会尝试取代默认处理程序的操作。
+**注意**   类安装程序可以直接调用默认处理程序，但类安装程序永远不会尝试取代默认处理程序的操作。
 
  
 
@@ -127,7 +126,7 @@ DIF_PROPERTYCHANGE 请求通知安装程序设备的属性正在更改。 设备
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**SetupDiChangeState**](/windows/win32/api/setupapi/nf-setupapi-setupdichangestate)

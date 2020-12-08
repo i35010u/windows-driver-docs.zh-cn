@@ -1,7 +1,6 @@
 ---
 title: 自动检查
 description: 自动检查
-ms.assetid: ec3cb6a4-d990-4830-914c-064f6c79371a
 keywords:
 - 自动检查 WDK 驱动程序验证程序
 - IRQL 监视 WDK 驱动程序验证程序
@@ -17,12 +16,12 @@ keywords:
 - 驱动程序验证程序选项，监视内存调度列表 (MDL) 使用情况
 ms.date: 10/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 003c02c698e063feeba0f7765dea5e9e0e3a29fc
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: ff126a375263e7c6a411b7dbc81cee10c696350a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90714772"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96784085"
 ---
 # <a name="automatic-checks"></a>自动检查
 
@@ -36,9 +35,9 @@ ms.locfileid: "90714772"
 
 驱动程序验证器监视所选的驱动程序以了解以下禁止的操作：
 
--   通过调用**KeLowerIrql**引发 IRQL
+-   通过调用 **KeLowerIrql** 引发 IRQL
 
--   通过调用**KeRaiseIrql**降低 IRQL
+-   通过调用 **KeRaiseIrql** 降低 IRQL
 
 -   请求大小为零的内存分配
 
@@ -89,11 +88,11 @@ ms.locfileid: "90714772"
 
 在 Windows Vista 中，驱动程序验证器还会监视选定的驱动程序是否有以下禁止的操作：
 
--   在没有相应标志的 MDL 上调用 [**MmProbeAndLockPages**](/windows-hardware/drivers/ddi/wdm/nf-wdm-mmprobeandlockpages) 或 MmProbeAndLockProcessPages。 例如，对使用[**MmBuildMdlForNonPagedPool**](/windows-hardware/drivers/ddi/wdm/nf-wdm-mmbuildmdlfornonpagedpool)创建的 MDL 调用**MmProbeAndLockPages**是不正确的。
+-   在没有相应标志的 MDL 上调用 [**MmProbeAndLockPages**](/windows-hardware/drivers/ddi/wdm/nf-wdm-mmprobeandlockpages) 或 MmProbeAndLockProcessPages。 例如，对使用 [**MmBuildMdlForNonPagedPool**](/windows-hardware/drivers/ddi/wdm/nf-wdm-mmbuildmdlfornonpagedpool)创建的 MDL 调用 **MmProbeAndLockPages** 是不正确的。
 
 -   在没有相应标志的 MDL 上调用 [**MmMapLockedPages**](/windows-hardware/drivers/ddi/wdm/nf-wdm-mmmaplockedpages) 。 例如，对于已映射到系统地址或未锁定的 MDL 的 MDL，调用 **MmMapLockedPages** 是不正确的。
 
--   对使用[**IoBuildPartialMdl**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iobuildpartialmdl)创建的部分 MDL 调用[**MmUnlockPages**](/windows-hardware/drivers/ddi/wdm/nf-wdm-mmunlockpages)或[**MmUnmapLockedPages**](/windows-hardware/drivers/ddi/wdm/nf-wdm-mmunmaplockedpages) 。
+-   对使用 [**IoBuildPartialMdl**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iobuildpartialmdl)创建的部分 MDL 调用 [**MmUnlockPages**](/windows-hardware/drivers/ddi/wdm/nf-wdm-mmunlockpages)或 [**MmUnmapLockedPages**](/windows-hardware/drivers/ddi/wdm/nf-wdm-mmunmaplockedpages) 。
 
 -   对未映射到系统地址的 MDL 调用 **MmUnmapLockedPages** 。
 

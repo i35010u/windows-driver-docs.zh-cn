@@ -1,7 +1,6 @@
 ---
 title: dpinst XML 元素
 description: dpinst XML 元素
-ms.assetid: d825afb4-a459-4b69-93cb-db57adab3c80
 keywords:
 - dpinst XML 元素设备和驱动程序安装
 topic_type:
@@ -12,12 +11,12 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 355b86cd16aa0899967d30d7153bbf653b9f4cbb
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: dd080e91b1f93d67bbfd1999449d51545515501b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89097209"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96782743"
 ---
 # <a name="dpinst-xml-element"></a>dpinst XML 元素
 
@@ -90,11 +89,11 @@ ms.locfileid: "89097209"
 </dpinst>
 ```
 
-**注意**   由于不允许使用重复的子元素，因此**dpinst**元素的每个**搜索**子元素和**language**元素都必须是唯一的。
+**注意** 由于不允许使用重复的子元素，因此 **dpinst** 元素的每个 **搜索** 子元素和 **language** 元素都必须是唯一的。
 
  
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**deleteBinaries**](deletebinaries-xml-element.md)
@@ -103,7 +102,7 @@ ms.locfileid: "89097209"
 
 [**forceIfDriverIsNotBetter**](forceifdriverisnotbetter-xml-element.md)
 
-[**group**](group-xml-element.md)
+[**组**](group-xml-element.md)
 
 [**headerPath**](headerpath-xml-element.md)
 

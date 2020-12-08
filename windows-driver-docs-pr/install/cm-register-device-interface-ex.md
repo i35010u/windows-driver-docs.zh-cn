@@ -1,7 +1,6 @@
 ---
 title: CM_Register_Device_Interface_Ex
 description: CM_Register_Device_Interface_Ex
-ms.assetid: 8a3f3eae-6af5-45ca-a399-844a6f121a1c
 keywords:
 - CM_Register_Device_Interface_ExA
 - CM_Register_Device_Interface_ExW
@@ -15,13 +14,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 5cba0ebfafb951011c651586c662fb22de14fd0c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b63aa1ebec68da9aeec5c22e4000dfa39e7d4775
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63353849"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96783037"
 ---
-# <a name="cmregisterdeviceinterfaceex"></a>CM_Register_Device_Interface_Ex
+# <a name="cm_register_device_interface_ex"></a>CM_Register_Device_Interface_Ex
 
 此函数保留供系统使用。

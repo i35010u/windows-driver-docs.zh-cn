@@ -1,7 +1,6 @@
 ---
 title: 编写 DriverEntry 例程
 description: 编写 DriverEntry 例程
-ms.assetid: c33bc82b-6181-4e31-b272-aaadb2d9b058
 keywords:
 - 标准驱动程序例程 WDK 内核，DriverEntry 例程
 - 驱动程序例程 WDK 内核，DriverEntry 例程
@@ -12,12 +11,12 @@ keywords:
 - 初始化驱动程序
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0d3eff8e3173559bab22c986e9df1b5a327c28cd
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 5a03400e0d06f01eb4a54780813c42bfb3921771
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89190429"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96782633"
 ---
 # <a name="writing-a-driverentry-routine"></a>编写 DriverEntry 例程
 
@@ -31,7 +30,7 @@ ms.locfileid: "89190429"
 
 **DriverEntry** 例程在系统线程的上下文中以 IRQL = 被动级别进行调用 \_ 。
 
-**DriverEntry**例程可以是可分页的，并且应在 INIT 段中，因此将被丢弃。 使用 " **分配 \_ 文本** 杂注指令"，如随 Windows 驱动程序工具包一起提供的示例驱动程序 (WDK) 中所示。
+**DriverEntry** 例程可以是可分页的，并且应在 INIT 段中，因此将被丢弃。 使用 " **分配 \_ 文本** 杂注指令"，如随 Windows 驱动程序工具包一起提供的示例驱动程序 (WDK) 中所示。
 
 本节包含下列主题：
 

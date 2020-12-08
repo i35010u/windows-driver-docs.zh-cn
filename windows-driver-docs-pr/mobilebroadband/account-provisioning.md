@@ -1,15 +1,14 @@
 ---
 title: 帐户预配
 description: 帐户预配
-ms.assetid: 3ffcd769-253f-4918-8095-a9206445a201
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 18d90c86107bbd3d55964e841406dcceac33bf0e
-ms.sourcegitcommit: 0c3cab853b0b75149b7604eef03275f997792a84
+ms.openlocfilehash: ebdd1fcf7402138b6d5e4bbad68b0e3364e94344
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96157343"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96782563"
 ---
 # <a name="account-provisioning"></a>帐户预配
 
@@ -71,13 +70,13 @@ ms.locfileid: "96157343"
 
 - [刷新](#refresh)
 
-- [信号](#signature)
+- [Signature](#signature)
 
 - [允许的组合](#permitted-combinations)
 
 有关这些部分的详细信息，请参阅 [CarrierControlSchema 架构](/uwp/schemas/mobilebroadbandschema/carriercontrolschema/schema-root)。
 
-### <a name="global"></a>全球
+### <a name="global"></a>全局
 
 每个设置文件中都需要全局部分。 本节中所需的元素如下所示：
 
@@ -367,7 +366,7 @@ ms.locfileid: "96157343"
 
 此信息用于直接影响 Windows 的行为，并提供给应用程序，以便为网络自适应其行为。 此信息可通过网络信息 Api 提供给第三方应用程序。
 
-### <a name="description"></a>说明
+### <a name="description"></a>描述
 
 通常在客户的订阅期间使用低频率更改的元素，包括：
 
@@ -721,7 +720,7 @@ XSD 架构在运行 Windows 8、Windows 8.1 或 Windows 10 的任何计算机上
 
 - 指定具有有效的使用字段组合的操作员消息规则，并直接在短信中提供更新的使用情况。
 
-## <a name="troubleshooting"></a>疑难解答
+## <a name="troubleshooting"></a>故障排除
 
 如果遇到预配问题，你可以使用以下部分来帮助你解决问题。
 

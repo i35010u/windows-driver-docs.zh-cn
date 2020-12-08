@@ -1,20 +1,19 @@
 ---
 title: 底片扫描仪的必需根项属性
 description: 底片扫描仪的必需根项属性
-ms.assetid: bd0f2fa6-a7fd-4f05-87fe-bfc4175aacea
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5a84800337505dc892708bea82837e884bad2e03
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8b79b1da0ef0361bf802317e0d2c7915759f2981
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63375859"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96783241"
 ---
 # <a name="required-root-item-properties-for-film-scanners"></a>底片扫描仪的必需根项属性
 
 
-支持相同的属性需要 WIA 扫描程序的所有项树的根项目。 有关必需的根项属性的详细信息，请参阅[WIA 扫描程序所必需的根项属性](required-root-item-properties-for-wia-scanners.md)。
+为了支持相同的属性，所有 WIA 扫描器项树的根项都是必需的。 有关必需的根项属性的详细信息，请参阅 [WIA 扫描器的必需的根项属性](required-root-item-properties-for-wia-scanners.md)。
 
  
 

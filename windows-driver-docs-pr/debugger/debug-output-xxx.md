@@ -1,7 +1,6 @@
 ---
-title: 调试\_输出\_XXX
-description: 调试\_输出\_XXX 常量是输出标记。 输出标记窗体指示之伴随的输出类型的位字段。
-ms.assetid: 0c500a2e-0817-45de-8607-4cd4a29d5813
+title: 调试 \_ 输出 \_ XXX
+description: 调试 \_ 输出 \_ XXX 常量是输出标志。 输出标志构成一个位域，该字段指示附带输出的输出类型。
 ms.date: 11/13/2018
 topic_type:
 - apiref
@@ -22,19 +21,19 @@ api_location:
 api_type:
 - HeaderDef
 ms.localizationpriority: medium
-ms.openlocfilehash: fd52f1179291e48b61466c1c1d653e6838e68cd1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ec28faedce40bf66a5e0882396af7b51af1843e2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63349083"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96783490"
 ---
-# <a name="debugoutputxxx"></a>调试\_输出\_XXX
+# <a name="debug_output_xxx"></a>调试 \_ 输出 \_ XXX
 
 
-调试\_输出\_*XXX*常量是输出标记。 输出标记窗体指示之伴随的输出类型的位字段。
+调试 \_ 输出 \_ *XXX* 常量是输出标志。 输出标志构成一个位域，该字段指示附带输出的输出类型。
 
-可能的值包括以下内容。
+可能的值包括以下各项。
 
 <table>
 <colgroup>
@@ -43,7 +42,7 @@ ms.locfileid: "63349083"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Constant</th>
+<th align="left">返回的常量</th>
 <th align="left">描述</th>
 </tr>
 </thead>
@@ -76,7 +75,7 @@ ms.locfileid: "63349083"
 <tr class="even">
 <td align="left"><span id="DEBUG_OUTPUT_PROMPT_REGISTERS"></span><span id="debug_output_prompt_registers"></span>
 <strong>DEBUG_OUTPUT_PROMPT_REGISTERS</strong></td>
-<td align="left"><p>注册之前提示的转储。</p></td>
+<td align="left"><p>在 prompt 之前注册转储。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><span id="DEBUG_OUTPUT_EXTENSION_WARNING"></span><span id="debug_output_extension_warning"></span>
@@ -86,22 +85,22 @@ ms.locfileid: "63349083"
 <tr class="even">
 <td align="left"><span id="DEBUG_OUTPUT_DEBUGGEE"></span><span id="debug_output_debuggee"></span>
 <strong>DEBUG_OUTPUT_DEBUGGEE</strong></td>
-<td align="left"><p>调试目标输出 (例如， <strong>OutputDebugString</strong>或<strong>DbgPrint</strong>)。</p></td>
+<td align="left"><p>调试目标 (的输出，例如， <strong>OutputDebugString</strong> 或 <strong>DbgPrint</strong>) 。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><span id="DEBUG_OUTPUT_DEBUGGEE_PROMPT"></span><span id="debug_output_debuggee_prompt"></span>
 <strong>DEBUG_OUTPUT_DEBUGGEE_PROMPT</strong></td>
-<td align="left"><p>调试目标所需的输入 (例如， <strong>DbgPrompt</strong>)。</p></td>
+<td align="left"><p>调试目标 (所需的输入，例如， <strong>DbgPrompt</strong>) 。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><span id="DEBUG_OUTPUT_SYMBOLS"></span><span id="debug_output_symbols"></span>
 <strong>DEBUG_OUTPUT_SYMBOLS</strong></td>
-<td align="left"><p>符号的消息 (例如， <strong>！ 符号干扰</strong>)。</p></td>
+<td align="left"><p>符号消息 (例如， <strong>！符号干扰</strong>) 。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><span id="DEBUG_OUTPUT_STATUS "></span><span id="debug_output_status"></span>
 <strong>DEBUG_OUTPUT_STATUS </strong></td>
-<td align="left"><p>修改状态栏的输出。</p></td>
+<td align="left"><p>用于修改状态栏的输出。</p></td>
 </tr>
 </tbody>
 </table>
@@ -116,8 +115,8 @@ ms.locfileid: "63349083"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>Header</p></td>
-<td align="left">DbgEng.h （包括 DbgEng.h）</td>
+<td align="left"><p>标头</p></td>
+<td align="left">DbgEng (包含 DbgEng) </td>
 </tr>
 </tbody>
 </table>

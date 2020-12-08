@@ -1,7 +1,6 @@
 ---
 title: 使用自旋锁时防止错误和死锁
 description: 使用自旋锁时防止错误和死锁
-ms.assetid: 1df563e6-7ad2-4684-9778-ffa1b845ac31
 keywords:
 - 死锁 WDK 内核
 - 递归 WDK 内核
@@ -10,12 +9,12 @@ keywords:
 - 旋转锁定 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4bb8b6a7915524154c07aff25e1bb4be23022f31
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: e9f5b0dc5ae7cf77db9347adc1aa7b3d4644d610
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91734365"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96783865"
 ---
 # <a name="preventing-errors-and-deadlocks-while-using-spin-locks"></a>使用自旋锁时防止错误和死锁
 
@@ -23,7 +22,7 @@ ms.locfileid: "91734365"
 
 
 
-尽管驱动程序例程持有自旋锁，但它在不关闭系统的情况下不会导致硬件例外或引发软件异常。 换句话说，驱动程序的 ISR 和驱动程序在对[**KeSynchronizeExecution**](/windows-hardware/drivers/ddi/wdm/nf-wdm-kesynchronizeexecution)的调用中提供的任何*SynchCritSection*例程不得导致错误或陷阱（如页面错误或算术异常），并且无法引发软件异常。 调用 [**KeAcquireSpinLock**](/windows-hardware/drivers/ddi/wdm/nf-wdm-keacquirespinlock) 或 [**KeAcquireInStackQueuedSpinLock**](/previous-versions/windows/hardware/drivers/ff551899(v=vs.85)) 的例程也不会导致硬件异常或引发软件异常，直到它释放了其 executive 旋转锁，并且不再以 IRQL = 调度 \_ 级别运行。
+尽管驱动程序例程持有自旋锁，但它在不关闭系统的情况下不会导致硬件例外或引发软件异常。 换句话说，驱动程序的 ISR 和驱动程序在对 [**KeSynchronizeExecution**](/windows-hardware/drivers/ddi/wdm/nf-wdm-kesynchronizeexecution)的调用中提供的任何 *SynchCritSection* 例程不得导致错误或陷阱（如页面错误或算术异常），并且无法引发软件异常。 调用 [**KeAcquireSpinLock**](/windows-hardware/drivers/ddi/wdm/nf-wdm-keacquirespinlock) 或 [**KeAcquireInStackQueuedSpinLock**](/previous-versions/windows/hardware/drivers/ff551899(v=vs.85)) 的例程也不会导致硬件异常或引发软件异常，直到它释放了其 executive 旋转锁，并且不再以 IRQL = 调度 \_ 级别运行。
 
 ### <a name="pageable-data-and-support-routines"></a>可分页的数据和支持例程
 

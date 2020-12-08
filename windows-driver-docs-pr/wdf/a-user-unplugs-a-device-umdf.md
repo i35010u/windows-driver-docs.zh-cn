@@ -1,18 +1,17 @@
 ---
 title: 用户将设备断开)  (
 description: 用户拔出设备
-ms.assetid: d0c8fd6d-b356-4048-aa97-ebe331d23361
 keywords:
 - 电源管理方案 WDK UMDF，拔出设备
 - 拔出设备方案 WDK UMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cc8fc8b6e03c71f1b85bbb4f4929107643d49d19
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: ef5c8358babddb89caf9c0a8caeff6d3a5ee5db2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89189193"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96783723"
 ---
 # <a name="a-user-unplugs-a-device-umdf-1"></a>用户将设备断开)  (
 

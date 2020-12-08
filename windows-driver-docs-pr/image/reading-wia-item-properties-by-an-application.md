@@ -1,15 +1,14 @@
 ---
 title: 通过应用程序读取 WIA 项属性
 description: 通过应用程序读取 WIA 项属性
-ms.assetid: e09f604e-451e-40dc-bc12-a077d4d263ee
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a429df96f7eaf749d71bacbb1e2c842f3e53fd50
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 27e96f5e7fc3e48eeea54bf262f6b98004a9807e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89188963"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96783249"
 ---
 # <a name="reading-wia-item-properties-by-an-application"></a>通过应用程序读取 WIA 项属性
 
@@ -19,7 +18,7 @@ ms.locfileid: "89188963"
 
 当应用程序请求读取 WIA 项属性时，WIA 服务将调用 [**IWiaMiniDrv：:D rvreaditemproperties**](/windows-hardware/drivers/ddi/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvreaditemproperties) 方法。
 
-**IWiaMiniDrv：:D rvreaditemproperties**方法应执行以下任务：
+**IWiaMiniDrv：:D rvreaditemproperties** 方法应执行以下任务：
 
 1.  确定要读取的属性是否需要运行时更新。 若要确定所读取的 WIA 属性，WIA 微型驱动程序可以使用 Microsoft Windows SDK 文档) 中定义 (。 建议 WIA 微型驱动程序在处理 PROPSPEC 数组之前确定项类型。 这减少了在每个 IWiaMiniDrv 上遍历数组的需要 **：:D rvreaditemproperties** 调用。 如果此设备的子项目上没有运行时属性，则只会处理根项属性读取请求。
 

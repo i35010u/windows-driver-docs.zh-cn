@@ -1,15 +1,14 @@
 ---
 title: 确定 SPC 的交叉证书
 description: 确定 SPC 的交叉证书
-ms.assetid: e54c6c69-6b80-4a03-b4ff-e46d565a56d9
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e90e7984a3d9653fb1676294eccbe77f004b40fc
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: cb79fb9efa2c53de17c579aaaa66ce1ae03d5945
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91733975"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96782901"
 ---
 # <a name="determining-an-spcs-cross-certificate"></a>确定 SPC 的交叉证书
 

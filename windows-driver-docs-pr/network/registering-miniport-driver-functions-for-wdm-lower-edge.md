@@ -1,7 +1,6 @@
 ---
 title: 注册 WDM 下边缘的微型端口驱动程序函数
 description: 注册 WDM 下边缘的微型端口驱动程序函数
-ms.assetid: 68048d36-d57c-4ad9-a15e-92b1d7866d4a
 keywords:
 - NDIS-WDM 微型端口驱动程序 WDK 网络，注册函数
 - NDIS-WDM 微型端口驱动程序 WDK 网络，入口点函数
@@ -9,12 +8,12 @@ keywords:
 - WDM 低边缘 WDK 网络，入口点函数
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9e4141766977cabce2e774f919fc022b1ed53028
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: a902033d1edd28ccc76427e0f2a65fa35cc32c99
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89211991"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96782165"
 ---
 # <a name="registering-miniport-driver-functions-for-wdm-lower-edge"></a>注册 WDM 下边缘的微型端口驱动程序函数
 
@@ -22,7 +21,7 @@ ms.locfileid: "89211991"
 
 
 
-具有 WDM 下边缘的微型端口驱动程序必须调用其**DriverEntry**例程中的[**NdisMRegisterMiniportDriver**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismregisterminiportdriver)函数，才能向 NDIS 库注册某些入口点函数。 这些入口点函数组成微型端口驱动程序的上边缘，在 [初始化微型端口驱动程序](initializing-a-miniport-driver.md)中进行了介绍。 但是，如果设置某些入口点函数，则无需使用 WDM 低边缘的微型端口驱动程序。 例如，以下入口点函数未设置，原因如下：
+具有 WDM 下边缘的微型端口驱动程序必须调用其 **DriverEntry** 例程中的 [**NdisMRegisterMiniportDriver**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismregisterminiportdriver)函数，才能向 NDIS 库注册某些入口点函数。 这些入口点函数组成微型端口驱动程序的上边缘，在 [初始化微型端口驱动程序](initializing-a-miniport-driver.md)中进行了介绍。 但是，如果设置某些入口点函数，则无需使用 WDM 低边缘的微型端口驱动程序。 例如，以下入口点函数未设置，原因如下：
 
 -   [*MiniportInterrupt*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_isr)、 [*MiniportInterruptDPC*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_interrupt_dpc)、 [*MiniportEnableInterruptEx*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_enable_interrupt)和 [*MiniportDisableInterruptEx*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_disable_interrupt)
 

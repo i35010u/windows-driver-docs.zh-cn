@@ -1,7 +1,6 @@
 ---
 title: 编写 Unload 例程
 description: 编写 Unload 例程
-ms.assetid: 578f3499-28fc-412b-bbb7-75f8023fa7c1
 keywords:
 - 标准驱动程序例程 WDK 内核，卸载例程
 - 驱动程序例程 WDK 内核，卸载例程
@@ -16,12 +15,12 @@ keywords:
 - 重新加载 WDK 内核的驱动程序
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dc05fad7f57bf8dda46eed8aad5bb968a857562f
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: b7e21d71afc58e54450c3a3b668457d87e268876
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89184943"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96782605"
 ---
 # <a name="writing-an-unload-routine"></a>编写 Unload 例程
 

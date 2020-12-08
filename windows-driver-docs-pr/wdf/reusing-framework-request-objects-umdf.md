@@ -1,22 +1,21 @@
 ---
 title: 在 UMDF 中重复使用 Framework 请求对象
 description: 在 UMDF 中重复使用 Framework 请求对象
-ms.assetid: 804efc94-a7df-4ebd-a42e-82d1c5376e19
 keywords:
 - I/o 请求 WDK UMDF，重复使用对象
 - 请求处理 WDK UMDF，并重复使用 i/o 请求对象
-- 用户模式驱动程序框架 WDK，重用 i/o 请求对象
+- User-Mode Driver Framework WDK，重用 i/o 请求对象
 - UMDF WDK，重复使用 i/o 请求对象
 - 用户模式驱动程序 WDK UMDF，重用 i/o 请求对象
 - 重复使用 i/o 请求对象 WDK UMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3c35df8b46d5e19ea9a20d4075744d58ee34e5fe
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 6dd35032f3ef31126ed6b0e63cbea3d935b753cc
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89186507"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96783683"
 ---
 # <a name="reusing-framework-request-objects-in-umdf"></a>在 UMDF 中重复使用 Framework 请求对象
 
@@ -27,7 +26,7 @@ ms.locfileid: "89186507"
 
 如果驱动程序已通过调用 [**IWDFDevice：： CreateRequest**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdevice-createrequest)创建了 request 对象，则它可以通过调用 [**IWDFIoRequest2：：重用**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest2-reuse)来重复使用该请求。 驱动程序还可以重用从其 i/o 队列中的框架收到的请求对象。
 
-如果驱动程序为其重用的请求对象提供[**IRequestCallbackRequestCompletion：： OnCompletion**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-irequestcallbackrequestcompletion-oncompletion)回调函数，则驱动程序必须在调用[**重新使用**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest2-reuse)后调用[**IWDFIoRequest：： SetCompletionCallback**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest-setcompletioncallback) 。
+如果驱动程序为其重用的请求对象提供 [**IRequestCallbackRequestCompletion：： OnCompletion**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-irequestcallbackrequestcompletion-oncompletion)回调函数，则驱动程序必须在调用 [**重新使用**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest2-reuse)后调用 [**IWDFIoRequest：： SetCompletionCallback**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest-setcompletioncallback) 。
 
  
 

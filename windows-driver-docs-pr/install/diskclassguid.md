@@ -1,7 +1,6 @@
 ---
 title: DiskClassGuid
 description: DiskClassGuid
-ms.assetid: eeefc86c-caff-4d1c-b2c1-aefde3bd21ed
 keywords:
 - DiskClassGuid 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 506214195909441c483eb889e2631163c7fc692e
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 147bc19dc4cce864182a041d9809ff434ef64172
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91733523"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96782747"
 ---
 # <a name="diskclassguid"></a>DiskClassGuid
 
@@ -51,7 +50,7 @@ WDK 中的存储 [示例](https://go.microsoft.com/fwlink/p/?LinkId=618052) 包�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**GUID_DEVINTERFACE_DISK**](guid-devinterface-disk.md)

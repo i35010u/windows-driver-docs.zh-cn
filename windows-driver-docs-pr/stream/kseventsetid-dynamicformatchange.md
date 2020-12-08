@@ -1,9 +1,8 @@
 ---
-title: KSEVENTSETID\_DynamicFormatChange
-description: KSEVENTSETID\_DynamicFormatChange 事件集中包含单个事件 KSEVENT\_动态\_格式\_更改
-ms.assetid: 3d7e665b-8aed-49b5-9b26-10c20126a5d6
+title: KSEVENTSETID \_ DynamicFormatChange
+description: KSEVENTSETID \_ DynamicFormatChange 事件集包括单个事件 KSEVENT \_ 动态 \_ 格式 \_ 更改
 keywords:
-- KSEVENTSETID_DynamicFormatChange 流式处理媒体设备
+- KSEVENTSETID_DynamicFormatChange 流媒体设备
 topic_type:
 - apiref
 api_name:
@@ -12,19 +11,19 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8e17e7aae3084fffc311bfba77c19cef26c93f63
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 06372584ff59a7aa69b7857081c824138dca1a2a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63334036"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96782053"
 ---
-# <a name="kseventsetiddynamicformatchange"></a>KSEVENTSETID\_DynamicFormatChange
+# <a name="kseventsetid_dynamicformatchange"></a>KSEVENTSETID \_ DynamicFormatChange
 
 
-KSEVENTSETID\_DynamicFormatChange 事件集中包含单个事件：
+KSEVENTSETID \_ DynamicFormatChange 事件集包括一个事件：
 
-[**KSEVENT\_DYNAMIC\_FORMAT\_CHANGE**](ksevent-dynamic-format-change.md)
+[**KSEVENT \_ 动态 \_ 格式 \_ 更改**](ksevent-dynamic-format-change.md)
 
  
 

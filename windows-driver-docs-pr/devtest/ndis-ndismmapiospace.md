@@ -1,7 +1,6 @@
 ---
 title: 'NdisMMapIoSpace 规则 (ndis) '
 description: 只应在 MiniportInitializeEx 的上下文中调用 NdisMMapIoSpace 函数。
-ms.assetid: C93420DB-ADB3-4C99-8D57-059B4650308D
 ms.date: 05/21/2018
 keywords:
 - 'NdisMMapIoSpace 规则 (ndis) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 2307d11476ca164e98c6f31132cf24d8172e7bf2
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: f8efa1f9abd4fecd66500975e5a71c217fa47f0b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106356"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96784021"
 ---
 # <a name="ndismmapiospace-rule-ndis"></a>NdisMMapIoSpace 规则 (ndis) 
 
 
-只应在[*MiniportInitializeEx*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_initialize)的上下文中调用[**NdisMMapIoSpace**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismmapiospace)函数。
+只应在 [*MiniportInitializeEx*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_initialize)的上下文中调用 [**NdisMMapIoSpace**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismmapiospace)函数。
 
 **驱动程序模型： NDIS**
 

@@ -1,7 +1,6 @@
 ---
 title: 'NdisMNetPnPEventInOIDRequest 规则 (ndis) '
 description: 此规则检查 OID 请求的上下文中是否未调用 NdisMNetPnPEvent。
-ms.assetid: BC069325-FFC4-452D-9B07-C39C2F942B64
 ms.date: 05/21/2018
 keywords:
 - 'NdisMNetPnPEventInOIDRequest 规则 (ndis) '
@@ -12,12 +11,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: fdbbbeffafde81af6ae234b12290c470bdf23f76
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 7c98fcecf83cd10eebb6c3f47a266bd53f82d841
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106350"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96784023"
 ---
 # <a name="ndismnetpnpeventinoidrequest-rule-ndis"></a>NdisMNetPnPEventInOIDRequest 规则 (ndis) 
 

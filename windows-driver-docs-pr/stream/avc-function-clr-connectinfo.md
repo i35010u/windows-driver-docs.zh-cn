@@ -1,7 +1,6 @@
 ---
 title: AVC \_ 函数 \_ CLR \_ CONNECTINFO
 description: AVC \_ 函数 \_ CLR \_ CONNECTINFO
-ms.assetid: 035555c7-4668-4eda-aed1-44b2b5794ff5
 keywords:
 - AVC_FUNCTION_CLR_CONNECTINFO 流媒体设备
 topic_type:
@@ -12,12 +11,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0acc933dcf88fab45df6dad9a69ffd59e74f7c86
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: bc21d4df9a509ef10dbe448004a6638686cb47e7
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89186807"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96783771"
 ---
 # <a name="avc_function_clr_connectinfo"></a>AVC \_ 函数 \_ CLR \_ CONNECTINFO
 
@@ -41,7 +40,7 @@ AVC \_ 函数 \_ CLR \_ 连接 \_ 信息函数代码会导致 *avc.sys* 删除�
 <thead>
 <tr class="header">
 <th>返回值</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -62,7 +61,7 @@ AVC \_ 函数 \_ CLR \_ 连接 \_ 信息函数代码会导致 *avc.sys* 删除�
 
  
 
-### <a name="comments"></a>说明
+### <a name="comments"></a>注释
 
 此函数使用 AVC **PinId** \_ MULTIFUNC IRB 结构的 PinId 成员 \_ ，如下所示。
 
@@ -83,7 +82,7 @@ typedef struct _AVC_MULTIFUNC_IRB {
 
 ### <a name="requirements"></a>要求
 
-**标头：** 在 *avc*中声明。 包括 *avc*。
+**标头：** 在 *avc* 中声明。 包括 *avc*。
 
 ### <a name="avc_multifunc_irb-input"></a>AVC \_ MULTIFUNC \_ IRB 输入
 
@@ -93,7 +92,7 @@ typedef struct _AVC_MULTIFUNC_IRB {
 **PinId**  
 指定要为其释放连接的 pin (或 ID) 。
 
-*avc.sys*的虚拟实例不支持此函数代码。
+*avc.sys* 的虚拟实例不支持此函数代码。
 
 当不应再进行插入连接时，子单位驱动程序必须使用此函数，即使 pin 再次变为 "活动"。
 

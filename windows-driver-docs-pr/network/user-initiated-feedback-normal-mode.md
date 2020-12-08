@@ -1,39 +1,38 @@
 ---
 title: 用户发起的反馈 - 正常模式
-description: 本主题介绍 IHV 跟踪 WDI 驱动程序中的日志记录与标准用户启动反馈的模式。
-ms.assetid: 723732A3-4B24-4FE5-B338-B8443F287FDE
+description: 本主题介绍在 WDI 驱动程序中通过 IHV 跟踪日志记录执行用户启动的反馈的正常模式。
 ms.date: 06/15/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 7d27dd6793cc76611243ba7a6745e3f05d49be3f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7628408048b0aac9e667efed65724c89351168db
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63384994"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96783791"
 ---
 # <a name="user-initiated-feedback---normal-mode"></a>用户发起的反馈 - 正常模式
 
-在正常用户启动反馈 (UIF) 方案中，用户体验问题的 Wi-fi 和提交反馈报表。 此报表收集的 Wi-fi 子系统，包括 Wi-fi WMI 自动记录器、 网络统计信息等的快照。若要收集 IHV 特定的日志，Microsoft 提供了与没有初始的 ETW 提供程序的 WMI 自动记录器会话。 每个 IHV 将他们的 ETW 提供程序由 Microsoft 提供的 WMI 自动记录器会话注册表项之下。 当提交 UIF 报表时，IHV 自动-记录器 ETL 收集并发送给 Microsoft 进行分析。 此日志文件实现使用一个循环缓冲区，以及相当有限大小 (\<= 1 MB)。 在此日志文件中保存的事件应适当地通过标志/级别/关键字来确保至少 30 分钟的日志事件始终保存在过去受到限制。
+在普通用户启动的反馈 (UIF) 情况下，用户遇到 Wi-Fi 的问题并提交反馈报告。 此报表收集 Wi-Fi 子系统的快照，包括 Wi-Fi WMI 自动记录器和网络统计信息等。为了收集特定于 IHV 的日志，Microsoft 提供了不带初始 ETW 提供程序的 WMI 自动记录器会话。 每个 IHV 都将其 ETW 提供程序集添加到 Microsoft 提供的 WMI 自动记录器会话注册表项下。 提交 UIF 报表后，将收集 IHV 自动记录器 ETL，并将其发送给 Microsoft 进行分析。 此日志文件是使用循环缓冲区实现的，该缓冲区的大小 (\< = 1mb) 。 应通过标志/级别/关键字适当地限制保存在此日志文件中的事件，以确保始终保存最近30分钟的日志事件。
 
-## <a name="microsoft-provided-wmi-auto-logger-session"></a>Microsoft 提供 WMI 自动记录器会话
+## <a name="microsoft-provided-wmi-auto-logger-session"></a>Microsoft 提供的 WMI 自动记录器会话
 
-Microsoft 提供了与没有初始的 ETW 提供程序的 WMI 自动记录器会话。 IHV 的驱动程序安装时，它们必须添加的所需的 WMI 提供程序注册表项下由 Microsoft 提供的 WMI 自动记录器会话密钥。 IHV 不应更改任何自动记录器会话注册表值。 但是，所有 ETW 提供程序选项都可供包括启用级别 IHV、 与任何匹配、 匹配所有，等等。此日志记录会话应始终运行，并具有有限的循环缓冲区，因此 Ihv 应适当地设置 EnableLevels 的提供程序。
+Microsoft 提供了不带初始 ETW 提供程序的 WMI 自动记录器会话。 安装 IHV 的驱动程序时，必须在 Microsoft 提供的 WMI 自动记录器会话密钥下添加所需的 WMI 提供程序注册表项。 IHV 不应更改任何自动记录器会话注册表值。 但是，所有 ETW 提供程序选项都可用于 IHV，包括 enable level、match any、match all 等。此日志记录会话始终运行并且具有有限的循环缓冲区，因此 Ihv 应正确设置提供程序 EnableLevels。
 
-WMI 自动记录器会话添加到具有以下路径的 HKLM 注册表配置单元：
+WMI 自动记录器会话已添加到具有以下路径的 HKLM 注册表配置单元：
 
 `HKLM\SYSTEM\CurrentControlSet\Control\WMI\Autologger\WifiDriverIHVSession`
 
-生成的 ETL 日志文件的位置如下：
+生成的 ETL 日志文件位于以下位置：
 
 `%SystemDrive%\System32\LogFiles\WMI\WifiDriverIHVSession.etl`
 
 ## <a name="ihv-driver-inf-changes"></a>IHV 驱动程序 INF 更改
 
-Ihv 需要更新其驱动程序 INF 文件，添加以下注册表项值，以便他们可以在 UIF 正常模式期间获取详细 IHV 日志。 以下代码片段将单个 ETW 提供程序添加到自动记录器会话提供的模板。 IHV 可以添加任意多个提供商，他们认为适合。 此外，启用级别值 IHV 特定于每个 ETW 提供程序，因此，他们就不需要一定会 （TRACE_LEVEL_CRITICAL、 TRACE_LEVEL_ERROR 等） 的 Microsoft 定义的值相同。
+Ihv 需要更新其驱动程序 INF 文件来添加以下注册表项值，以便它们可以在 UIF 正常模式下获取详细的 IHV 日志。 以下代码片段提供了用于将单个 ETW 提供程序添加到自动记录器会话的模板。 IHV 可以添加尽可能多的提供程序。 此外，每个 ETW 提供程序的启用级别值都是特定于 IHV 的，因此它们不必与 Microsoft 定义的值相同 (TRACE_LEVEL_CRITICAL、TRACE_LEVEL_ERROR 等 ) 。
 
 ### <a name="enable-the-ihv-auto-logger-session"></a>启用 IHV 自动记录器会话
 
-与任何 ETW 提供程序初始化 IHV 自动记录器会话，因为默认情况下禁用。 通过更新到"开始"值来启用此会话所需的 Ihv **1**在其驱动程序的 INF 文件中，在此示例中所示：
+由于 IHV 自动记录器会话在没有 ETW 提供程序的情况下初始化，因此默认情况下禁用它。 需要使用 Ihv 来启用此会话，方法是将其驱动程序的 INF 文件中的 "Start" 值更新为 **1** ，如以下示例中所示：
 
 ```INF
 HKLM,SYSTEM\CurrentControlSet\Control\WMI\Autologger\WifiDriverIHVSession,Start,%REG_DWORD%,1
@@ -58,7 +57,7 @@ REG_QWORD = 0x000B0001
 
 ### <a name="example-values"></a>示例值
 
-此示例说明了与所有本机 Wi-fi 关键字的本机 Wi-fi 自定义级设置 （启用所有）：
+此示例阐释了本机 Wi-Fi 自定义级别设置 (启用所有) 所有本机 Wi-Fi 关键字：
 
 ```INF
 HKLM,SYSTEM\CurrentControlSet\Control\WMI\Autologger\WifiDriverIHVSession\{0BD3506A-9030-4f76-9B88-3E8FE1F7CFB6},Enabled,%REG_DWORD%,1
@@ -76,6 +75,6 @@ Standard EnableLevel values:
 
 ## <a name="related-links"></a>相关链接
 
-[用户启动使用 IHV 跟踪日志记录的反馈](user-initiated-feedback-with-ihv-trace-logging.md)
+[用户使用 IHV 跟踪日志记录发起的反馈](user-initiated-feedback-with-ihv-trace-logging.md)
 
-[用户启动的反馈-重现模式](user-initiated-feedback-repro-mode.md)
+[用户发起的反馈 - 再现模式](user-initiated-feedback-repro-mode.md)

@@ -1,20 +1,19 @@
 ---
 title: 渲染点精灵
 description: 渲染点精灵
-ms.assetid: f2bdfd93-5b79-4f48-87b6-a76847892f5e
 keywords:
-- DirectX 8.0 发行说明 WDK Windows 2000 显示，点 sprite
-- 点 sprite WDK DirectX 8.0
-- 大小 WDK 点 sprite
-- 点大小 WDK DirectX 8.0
+- DirectX 8.0 发行说明 WDK Windows 2000 显示，点子画面
+- point sprite WDK DirectX 8。0
+- 大小 WDK 点子画面
+- 点大小 WDK DirectX 8。0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9430c504da0b70079b6f613fa2222d1a58ca7a38
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0551f3ff193e866dedd9ce7594bec69b496e2172
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63350241"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96783987"
 ---
 # <a name="rendering-point-sprites"></a>渲染点精灵
 
@@ -22,7 +21,7 @@ ms.locfileid: "63350241"
 ## <span id="ddk_rendering_point_sprites_gg"></span><span id="DDK_RENDERING_POINT_SPRITES_GG"></span>
 
 
-屏幕空间点**P = （X、 Y、 Z、 W）** 的屏幕空间大小**S**作为具有以下 4 个顶点四边形是光栅化：
+屏幕空间的 **P = (X，Y，Z，W)** 的屏幕 **空间大小将作为带有** 以下4个顶点的四边形进行光栅化：
 
 ```cpp
 (Xâˆ’S/2, Yâˆ’S/2, Z, W)
@@ -31,9 +30,9 @@ ms.locfileid: "63350241"
 (X+S/2, Y+S/2, Z, W)
 ```
 
-重复每 4 个顶点的顶点颜色属性，因此每个点都呈现使用常量的颜色。
+顶点颜色属性在4个顶点的每个顶点上重复，因此，每个点总是用固定颜色呈现。
 
-纹理坐标的分配受 D3DRS\_POINTSPRITEENABLE 设置。 如果 D3DRS\_POINTSPRITEENABLE 设置为**FALSE**，然后在每个 4 顶点重复的顶点的纹理坐标。 如果没有纹理坐标都位于顶点 （0.0f，0.0f，0.0f，1.0f） 的默认值用于点子画面的角。 如果 D3DRS\_POINTSPRITEENABLE 设置为**TRUE**，然后从左上角开始的纹理坐标处的 4 个顶点，角并沿顺时针方向，出现在缠绕都设置为：
+纹理坐标的分配由 D3DRS \_ POINTSPRITEENABLE 设置控制。 如果 \_ "D3DRS POINTSPRITEENABLE" 设置为 " **FALSE**"，则顶点的纹理坐标会在4个顶点的每个顶点上重复。 如果顶点中不存在纹理坐标，则 (0.0 f，0.0 f，0.0 f，1.0 f) 的默认值用于点 sprite 的角。 如果将 D3DRS \_ POINTSPRITEENABLE 设置为 **TRUE**，则在4个顶点处从左上角开始，在顺时针方向上的纹理坐标设置为：
 
 ```cpp
 (0.0f, 0.0f)
@@ -42,15 +41,15 @@ ms.locfileid: "63350241"
 (1.0f, 1.0f)
 ```
 
-启用剪辑后，点剪裁，如下所示：如果顶点 Z （近或远） 中的视图截锥之外，则不会呈现该点。 如果该点，点大小，考虑到完全 x 在视区外或 y，然后在点则不会呈现。 呈现其余的点。 请注意，则可能要在视区外的点位置 (在 x 或 y)，仍可以部分可见。
+启用剪辑后，将按如下所示剪切点：如果顶点位于 Z 的视图中， (接近或远) ，则不会呈现该点。 如果将点大小考虑到点大小，则完全在 x 或 y 的视区的外部，则不会呈现该点。 将呈现剩余点。 请注意，点位置可能在 x 或 y) 的视区外 (，但仍部分可见。
 
-点可能会或可能不会正确剪裁到用户定义的剪辑平面。 如果 D3DDEVCAPS\_CLIPPLANESCALEDPOINTS 不设置，则点剪辑到用户定义的剪辑平面仅基于顶点位置忽略点大小。 在这种情况下，缩放的点完全呈现时的顶点位置位于剪辑平面，外部剪裁平面的顶点位置时将被丢弃。 应用程序可能会阻止潜在弹出项目，通过将边框几何图形添加到的最大点大小一样大的剪辑平面。
+可能会也可能不会将点正确剪裁到用户定义的剪辑平面。 如果 \_ 未设置 D3DDEVCAPS CLIPPLANESCALEDPOINTS，则仅根据顶点位置将点剪辑到用户定义的剪辑平面，并忽略点大小。 在这种情况下，当顶点位置位于剪辑平面内时，将完全呈现刻度点，并且当顶点位置位于剪辑平面之外时，将被丢弃。 应用程序可以通过将边框几何添加到最大点大小的剪辑平面来防止潜在的 "弹出" 项目。
 
-如果 D3DDEVCAPS\_CLIPPLANESCALEDPOINTS 位未设置，则缩放的点正确剪辑到用户定义的剪辑平面。
+如果设置了 D3DDEVCAPS \_ CLIPPLANESCALEDPOINTS 位，则缩放后的点将正确剪裁到用户定义的剪辑平面。
 
-请务必记住点 sprite，应消除或填充模式没有任何依赖关系。 始终应在点 sprite 呈现而不考虑剔除或填充模式。
+请记住，点 sprite 应不依赖于剔除模式或填充模式，这一点很重要。 不管是否有精选或填充模式，都应始终呈现 Point sprite。
 
-也很重要，使用平面明暗度基元类型的规则来编译使用的平面着色入点填充模式。 这意味着第一个顶点的基元类型决定了该基元的颜色，因此基元的每个顶点的颜色。 这是什么不使用参考光栅器或示例驱动程序的 8.0 版时出现和版本 8.1 中修复。
+此外，在使用平面底纹的点填充模式下，对基元的平面深浅规则进行编译非常重要。 这意味着，基元的第一个顶点会指示该基元的颜色，从而为基元的每个顶点提供颜色。 参考光栅或示例驱动程序的8.0 版不会出现这种情况，它是在版本8.1 中修复的。
 
  
 

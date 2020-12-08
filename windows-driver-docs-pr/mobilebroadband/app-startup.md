@@ -1,15 +1,14 @@
 ---
 title: 应用启动
 description: 应用启动
-ms.assetid: 0aca0d3c-9865-4a11-a9c5-e77cc735ba21
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6a2ce9b1b3051e27a6c6c70f2b3da29ed14c3c4b
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 3cd661490cf25abcf4c80b80856922cc9aa8b32a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89216242"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96782529"
 ---
 # <a name="app-startup"></a>应用启动
 

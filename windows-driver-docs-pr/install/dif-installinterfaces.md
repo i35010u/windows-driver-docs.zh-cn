@@ -1,7 +1,6 @@
 ---
 title: DIF_INSTALLINTERFACES
 description: DIF_INSTALLINTERFACES
-ms.assetid: fd3eb56b-f73e-4699-accf-6bf70e2e54f8
 keywords:
 - DIF_INSTALLINTERFACES 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: c28d078252234bd512eee52d662e77818334211e
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: dffa933e1d1dfc96d60b75424ea8eacbf095e9aa
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90717538"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96782811"
 ---
 # <a name="dif_installinterfaces"></a>DIF_INSTALLINTERFACES
 
@@ -64,7 +63,7 @@ DIF_INSTALLINTERFACES 请求允许安装程序参与设备的设备接口注册�
 提供一个指向 [**SP_DEVINFO_DATA**](/windows/win32/api/setupapi/ns-setupapi-sp_devinfo_data) 结构的指针，该结构在设备信息集中标识设备。
 
 <a href="" id="device-installation-parameters-"></a>设备安装参数   
-与*DeviceInfoData*关联的设备安装参数 ([**SP_DEVINSTALL_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-sp_devinstall_params_a)) 。
+与 *DeviceInfoData* 关联的设备安装参数 ([**SP_DEVINSTALL_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-sp_devinstall_params_a)) 。
 
 <a href="" id="class-installation-parameters"></a>类安装参数  
 无
@@ -82,7 +81,7 @@ DIF_INSTALLINTERFACES 请求允许安装程序参与设备的设备接口注册�
 
 如果类安装程序成功处理此请求（包括直接调用默认处理程序），则类安装程序应返回 NO_ERROR 并且 **SetupDiCallClassInstaller** 将不会再次调用默认处理程序。
 
-**注意**   类安装程序可以直接调用默认处理程序，但类安装程序永远不会尝试取代默认处理程序的操作。
+**注意**  类安装程序可以直接调用默认处理程序，但类安装程序永远不会尝试取代默认处理程序的操作。
 
  
 

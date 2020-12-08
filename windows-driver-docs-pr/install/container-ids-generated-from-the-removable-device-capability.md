@@ -1,15 +1,14 @@
 ---
 title: 通过可移动设备功能生成的容器 ID
 description: 通过可移动设备功能生成的容器 ID
-ms.assetid: e09b1ee5-9ccd-428a-8af3-79f138eb07f9
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ebe6d6cd6d3bbda1406866fd73f8ec6d7817d246
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 231924f06a38f5837f3b27949da073fcc73014ff
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89096435"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96782943"
 ---
 # <a name="container-ids-generated-from-the-removable-device-capability"></a>通过可移动设备功能生成的容器 ID
 

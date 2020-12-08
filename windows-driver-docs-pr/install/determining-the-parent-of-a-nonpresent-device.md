@@ -1,7 +1,6 @@
 ---
 title: 确定虚幻设备的父设备
 description: 确定虚幻设备的父设备
-ms.assetid: 2d5948db-5844-4f78-b3a6-2f9f88ee1b24
 keywords:
 - Setupapi.log 函数 WDK，确定父项
 - nonpresent 设备 WDK
@@ -14,12 +13,12 @@ keywords:
 - 祖先 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 979ac009671c300ceeefbf5f1791d05c9be630b1
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 3222104b7c0f069098727405ab2a9a41645814c4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90717308"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96782891"
 ---
 # <a name="determining-the-parent-of-a-nonpresent-device"></a>确定虚幻设备的父设备
 
@@ -43,9 +42,9 @@ ms.locfileid: "90717308"
 
 若要保存设备的父/子关系，请提供 *设备共同安装程序* ，将设备的父级的设备实例 ID 保存在设备的硬件注册表项下的用户创建的条目值中。 应使用设备实例 ID，因为它在系统重启和系统进程之间保持不变，而设备实例句柄不会。 当你在共同安装程序中处理 [**DIF_INSTALLDEVICE**](./dif-installdevice.md) 请求时，请按照以下步骤保存设备实例 ID。
 
-***<em>将直接父项的设备实例 ID 保存在注册表中</em>***
+**_<em>将直接父项的设备实例 ID 保存到注册表中</em>_*
 
-1.  调用 [**CM_Get_Parent**](/windows/win32/api/cfgmgr32/nf-cfgmgr32-cm_get_parent) 获取设备父设备的设备实例句柄。
+1.  调用 [_ *CM_Get_Parent* *](/windows/win32/api/cfgmgr32/nf-cfgmgr32-cm_get_parent)获取设备父设备的设备实例句柄。
 
 2.  使用父设备的设备实例句柄，调用 [**CM_Get_Device_ID**](/windows/win32/api/cfgmgr32/nf-cfgmgr32-cm_get_device_idw) 获取父设备的设备实例 ID。
 
@@ -57,9 +56,9 @@ ms.locfileid: "90717308"
 
 设备共同安装程序将父设备的设备实例 ID 保存在设备硬件注册表项下的条目值中后，你可以检索设备实例 ID。
 
-***<em>从注册表检索父项的设备实例 ID</em>***
+**_<em>从注册表检索父项的设备实例 ID</em>_* _
 
-1.  使用 DIREG_DEV 标志调用 **SetupDiOpenDevRegKey** ，以获取设备的硬件注册表项的句柄。
+1.  调用 _ *SetupDiOpenDevRegKey**，使用 DIREG_DEV 标志获取设备的硬件注册表项的句柄。
 
 2.  调用 **RegQueryValueEx** ，以检索在设备共同安装程序中设置的输入值中保存的父设备的设备实例 ID。
 

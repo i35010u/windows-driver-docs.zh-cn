@@ -1,7 +1,6 @@
 ---
 title: 用于启用 EMS 重定向的启动参数
 description: 用于启用 EMS 重定向的启动参数
-ms.assetid: b93fd580-0e1d-4b1e-8358-1c6ce7e2eb5e
 keywords:
 - 启动参数 WDK
 - 启动项参数 WDK
@@ -10,12 +9,12 @@ keywords:
 - 远程管理 WDK 启动参数
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 490e1b00f550164e9640149b80f5e52c27874a43
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: f85634440dccf0c7034ea9b6bb1cb16a447b6f45
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89384357"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96783408"
 ---
 # <a name="boot-parameters-to-enable-ems-redirection"></a>用于启用 EMS 重定向的启动参数
 
@@ -29,7 +28,7 @@ ms.locfileid: "89384357"
 
 ## <a name="enabling-ems-on-a-computer-without-an-acpi-spcr-table-in-operating-systems-prior-to-windows-server-2008"></a>在 Windows Server 2008 之前的操作系统中不使用 ACPI SPCR 表在计算机上启用 EMS
 
-若要在装有 BIOS 固件但没有 ACPI 串行端口控制台重定向 (SPCR) 表的计算机上启用 EMS 控制台重定向，请将 **重定向 = COM * * * x* ，并将 **redirectbaudrate =** 参数添加到 \[ Boot.ini 文件的启动加载器 \] 部分。 这些参数设置 EMS 控制台重定向的端口和传输速率。 使用为 BIOS 中的带外通信建立的相同端口和传输速率。 然后，将 [**/redirect**](https://support.microsoft.com/help/833721/available-switch-options-for-the-windows-xp-and-the-windows-server-200) 参数添加到启动项。
+若要在装有 BIOS 固件但没有 ACPI 串行端口控制台重定向 (SPCR) 表的计算机上启用 EMS 控制台重定向，请将 **重定向 = COM**_x_ ，将 **redirectbaudrate =** 参数添加到 \[ Boot.ini 文件的启动加载器 \] 部分。 这些参数设置 EMS 控制台重定向的端口和传输速率。 使用为 BIOS 中的带外通信建立的相同端口和传输速率。 然后，将 [**/redirect**](https://support.microsoft.com/help/833721/available-switch-options-for-the-windows-xp-and-the-windows-server-200) 参数添加到启动项。
 
 以下 Bootcfg 命令在列表中的第一个启动条目上启用 EMS 控制台重定向。 它为 COM2 设置端口，并将传输速率设置为每秒 115200 kb (Kbps) 。 这是管理员在 BIOS 中为带外端口设置的相同端口和波特率设置。
 
@@ -87,7 +86,7 @@ bcdedit /ems {18b123cd-2bf6-11db-bfae-00e018e2b8db} on
 
 ## <a name="enabling-ems-on-a-computer-with-an-spcr-table-in-operating-systems-prior-to-windows-server-2008"></a>在 Windows Server 2008 之前的操作系统中使用 SPCR 表在计算机上启用 EMS
 
-若要在具有 ACPI BIOS 固件和 ACPI SPCR 表的计算机上启用 EMS，可以使用 **重定向 = USEBIOSSETTINGS** 参数或 **重定向 = COM * * * x* 和 **redirectbaudrate =** 参数。 然后，可以将 [**/redirect**](https://support.microsoft.com/help/833721/available-switch-options-for-the-windows-xp-and-the-windows-server-200) 参数添加到启动项。
+若要在具有 ACPI BIOS 固件和 ACPI SPCR 表的计算机上启用 EMS，可以使用 **重定向 = USEBIOSSETTINGS** 参数或 **重定向 = COM**_x_ 和 **redirectbaudrate =** 参数。 然后，可以将 [**/redirect**](https://support.microsoft.com/help/833721/available-switch-options-for-the-windows-xp-and-the-windows-server-200) 参数添加到启动项。
 
 下面的示例演示了 **重定向 = USEBIOSSETTINGS** 参数的用法。 以下 Bootcfg 命令在列表中的第一个启动条目上启用 EMS 控制台重定向。
 
@@ -143,7 +142,7 @@ bcdedit /ems on
 
 若要在具有 EFI 固件的计算机上启用 EMS，请使用 Bootcfg 将 [**/redirect**](https://support.microsoft.com/help/833721/available-switch-options-for-the-windows-xp-and-the-windows-server-200) 参数添加到启动项。 Windows 通过读取 SPCR 表在固件中查找带外端口及其设置，并为 EMS 控制台重定向使用相同的端口和速率。
 
-以下 Bootcfg 命令在基于 Itanium 的计算机上启用 EMS 重定向。 它使用 Bootcfg **/ems** 开关和 ON 参数将 **/redirect** 参数添加到启动项。 **/Id**开关标识启动项。
+以下 Bootcfg 命令在基于 Itanium 的计算机上启用 EMS 重定向。 它使用 Bootcfg **/ems** 开关和 ON 参数将 **/redirect** 参数添加到启动项。 **/Id** 开关标识启动项。
 
 ```command
 bootcfg /ems ON /id 1
@@ -179,7 +178,7 @@ bcdedit /ems {18b123cd-2bf6-11db-bfae-00e018e2b8db} on
 
 ## <a name="changing-ems-settings-on-a-computer-with-bios-firmware-in-operating-systems-prior-to-windows-server-2008"></a>在 Windows Server 2008 之前的操作系统中使用 BIOS 固件的计算机上更改 EMS 设置
 
-在单个启动条目上配置 EMS 时，请将 " **重定向 =** " 参数添加到 \[ Boot.ini 文件的 "启动加载程序" \] 部分。 但是，如果对其他启动条目启用 EMS，则无需再次添加 **重定向 =** 参数。 与启动加载器部分中的所有项一样 \[ \] ， **重定向 =** (和 **redirectbaudrate =) ** 适用于计算机上的所有启动项。
+在单个启动条目上配置 EMS 时，请将 " **重定向 =** " 参数添加到 \[ Boot.ini 文件的 "启动加载程序" \] 部分。 但是，如果对其他启动条目启用 EMS，则无需再次添加 **重定向 =** 参数。 与启动加载器部分中的所有项一样 \[ \] ， **重定向 =** (和 **redirectbaudrate =)** 适用于计算机上的所有启动项。
 
 以下 Bootcfg 命令在第二个启动条目上启用 EMS。 由于端口和波特率已经设置，命令中没有 **/port** 或 **/baud** 开关。
 
@@ -207,7 +206,7 @@ bootcfg /ems OFF /id 1
 
 当你在具有 EFI 固件的计算机上配置 EMS，或使用 ACPI BIOS 固件而不使用 ACPI SPCR 表在计算机上配置 EMS 时，可以使用 **BCDEdit/emssettings** 命令并指定 **emsport** 和 **emsbaudrate** 选项。
 
-**Emsport**和**EMSBAUDRATE**选项设置 EMS 控制台重定向的串行端口和传输速率。 这些设置适用于计算机上的所有启动项。 若要使用 **emsbaudrate**，还必须设置 **emsport** 选项。 默认情况下，传输速率设置为 9600 (9600 Kbps) 。
+**Emsport** 和 **EMSBAUDRATE** 选项设置 EMS 控制台重定向的串行端口和传输速率。 这些设置适用于计算机上的所有启动项。 若要使用 **emsbaudrate**，还必须设置 **emsport** 选项。 默认情况下，传输速率设置为 9600 (9600 Kbps) 。
 
 例如，以下命令将 EMS 端口更改为 COM2 并将波特更改为 57600 Kbps。
 

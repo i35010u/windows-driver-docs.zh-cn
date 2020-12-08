@@ -1,7 +1,6 @@
 ---
 title: 磁盘空间列表函数
 description: 磁盘空间列表函数
-ms.assetid: 850e9f41-b534-49f3-891d-c12c1126e52f
 keywords:
 - Setupapi.log 函数 WDK，磁盘空间列表
 - 磁盘空间列表 WDK Setupapi.log
@@ -11,12 +10,12 @@ keywords:
 - 总磁盘空间计算 WDK Setupapi.log
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6c833920d95e6ea8453ebf72ba5b57ea0d0ee8e6
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: d8c3bc11193e81c989923001f0d620682306ca4d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90717030"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96782753"
 ---
 # <a name="disk-space-list-functions"></a>磁盘空间列表函数
 
@@ -36,7 +35,7 @@ ms.locfileid: "90717030"
 <thead>
 <tr class="header">
 <th align="left">函数</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>

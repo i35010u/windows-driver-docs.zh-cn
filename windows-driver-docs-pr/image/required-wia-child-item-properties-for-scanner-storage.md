@@ -1,15 +1,14 @@
 ---
 title: 扫描仪存储的必需 WIA 子项属性
 description: 扫描仪存储的必需 WIA 子项属性
-ms.assetid: 47640b56-d6d9-4ad6-b973-be9fd8992a2c
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bdb55245d5b6e1f831f43a1730aa1a19aa18f56b
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 479ec3c261dbf898d8a1f12900006c616ed90f22
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89191497"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96783229"
 ---
 # <a name="required-wia-child-item-properties-for-scanner-storage"></a>扫描仪存储的必需 WIA 子项属性
 

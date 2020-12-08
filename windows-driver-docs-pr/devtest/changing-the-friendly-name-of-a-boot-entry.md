@@ -1,7 +1,6 @@
 ---
 title: 更改启动项的友好名称
 description: 更改启动项的友好名称
-ms.assetid: 28f4f449-9027-453e-877a-d656539296c0
 keywords:
 - 命名 WDK 启动选项
 - 友好名称 WDK 启动选项
@@ -10,12 +9,12 @@ keywords:
 - 启动选项 WDK，友好名称
 ms.date: 01/02/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 7369536f74b9cd0ee7340c2dabd94de4421044cb
-ms.sourcegitcommit: 878a1cb0149dc18ccbd31774e12bad76084dfa24
+ms.openlocfilehash: 50a351daf1460eb40c2c5190044e537d1b40da69
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94937787"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96784069"
 ---
 # <a name="changing-the-friendly-name-of-a-boot-entry"></a>更改启动项的友好名称
 

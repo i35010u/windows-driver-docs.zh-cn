@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ EXTXPORT \_ 状态
 description: KSPROPERTY \_ EXTXPORT \_ 状态属性设置或获取外部设备的传输模式和状态。
-ms.assetid: c508b6ce-2a37-4fca-9edf-66700d9cbd15
 keywords:
 - KSPROPERTY_EXTXPORT_STATE 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a8097ca9d62f19dbae96c80d499763cd35d5db68
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 37f08fbf9e53a8811de0ea10fff8f2f2cce347ca
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102738"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96782021"
 ---
 # <a name="ksproperty_extxport_state"></a>KSPROPERTY \_ EXTXPORT \_ 状态
 
@@ -84,7 +83,7 @@ KSPROPERTY **XPrtState** \_ EXTXPORT S 结构的 XPrtState 成员 \_ 指定模�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSPROPERTY**](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)

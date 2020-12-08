@@ -1,18 +1,17 @@
 ---
 title: 准备使用 TraceView
 description: 准备使用 TraceView
-ms.assetid: 724e3c8a-7760-4e53-8d44-1927e5ad1efd
 keywords:
 - TraceView WDK，准备使用
 - 文件 WDK TraceView
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2792bb9da5106646bdc418898df45293949593a4
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 0dfd55095d1685309cf2221a298e763ad05f17bf
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89382985"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96783309"
 ---
 # <a name="preparing-to-use-traceview"></a>准备使用 TraceView
 
@@ -22,9 +21,9 @@ ms.locfileid: "89382985"
 
 使用 TraceView 之前，需要收集有关事件跟踪以及要跟踪的 [跟踪提供程序](trace-provider.md) 的信息。 本主题介绍这些先决条件。
 
-**注意**   如果在 Windows Vista 之前的 Windows 操作系统版本上运行 TraceView，则必须将 Dbghelp.dll 文件复制到 TraceView 可执行文件所在的子目录中，TraceView.exe。 
+**注意**   如果在 Windows Vista 之前的 Windows 操作系统版本上运行 TraceView，则必须将 Dbghelp.dll 文件复制到 TraceView 可执行文件所在的子目录中，TraceView.exe。 
 
-默认情况下，TraceView.exe 位于 \\ Windows 驱动程序工具包的工具* &lt; 平台 &gt; *子目录中 (WDK) ，其中* &lt; &gt; Platform*为 i386、amd64 或 ia64。 默认情况下，在 \\ bin x86 子目录中安装 Dbghelp.dll \\ 。
+默认情况下，TraceView.exe 位于 \\ Windows 驱动程序工具包的工具 *&lt; 平台 &gt;* 子目录中 (WDK) ，其中 *&lt; &gt; Platform* 为 i386、amd64 或 ia64。 默认情况下，在 \\ bin x86 子目录中安装 Dbghelp.dll \\ 。
 
  
 

@@ -1,9 +1,8 @@
 ---
-title: Bug Check 0xBF MUTEX_ALREADY_OWNED
-description: MUTEX_ALREADY_OWNED bug 检查具有 0x000000BF 值。 这指示线程尝试获取 mutex 的所有权它已经拥有。
-ms.assetid: 0008c6eb-3add-4169-b29a-6fe4d77c5c9e
+title: Bug 检查 0xBF MUTEX_ALREADY_OWNED
+description: MUTEX_ALREADY_OWNED bug 检查的值为0x000000BF。 这表示线程试图获取已拥有的 mutex 的所有权。
 keywords:
-- Bug Check 0xBF MUTEX_ALREADY_OWNED
+- Bug 检查 0xBF MUTEX_ALREADY_OWNED
 - MUTEX_ALREADY_OWNED
 ms.date: 05/23/2017
 topic_type:
@@ -13,23 +12,23 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: d9a5e33a175cc4745dcaa96cb1411ce2ddba8e1e
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: d7606d55057ce00ea04d6eeb1c3bee1172824a3d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67518974"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96783537"
 ---
-# <a name="bug-check-0xbf-mutexalreadyowned"></a>Bug 检查 0xBF：MUTEX\_ALREADY\_拥有的
+# <a name="bug-check-0xbf-mutex_already_owned"></a>Bug 检查0xBF： \_ 已 \_ 拥有互斥体
 
 
-MUTEX\_ALREADY\_拥有的 bug 检查的值为 0x000000BF。 这指示线程尝试获取 mutex 的所有权它已经拥有。
+\_已拥有的 MUTEX \_ bug 检查的值为0x000000BF。 这表示线程试图获取已拥有的 mutex 的所有权。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题面向程序员。 如果您是在使用计算机时收到蓝屏错误代码的客户，请参阅[蓝屏错误疑难解答](https://www.windows.com/stopcode)。
 
 
-## <a name="mutexalreadyowned-parameters"></a>MUTEX\_ALREADY\_拥有的参数
+## <a name="mutex_already_owned-parameters"></a>MUTEX \_ 已经 \_ 拥有参数
 
 
 <table>
@@ -50,7 +49,7 @@ MUTEX\_ALREADY\_拥有的 bug 检查的值为 0x000000BF。 这指示线程尝�
 </tr>
 <tr class="even">
 <td align="left"><p>2</p></td>
-<td align="left"><p>导致了错误的线程</p></td>
+<td align="left"><p>导致错误的线程</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>3</p></td>
@@ -58,7 +57,7 @@ MUTEX\_ALREADY\_拥有的 bug 检查的值为 0x000000BF。 这指示线程尝�
 </tr>
 <tr class="even">
 <td align="left"><p>4</p></td>
-<td align="left"><p>保留</p></td>
+<td align="left"><p>预留</p></td>
 </tr>
 </tbody>
 </table>

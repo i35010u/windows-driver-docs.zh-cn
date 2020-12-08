@@ -1,15 +1,14 @@
 ---
 title: 'GUIDType (ServiceInfo) '
 description: 'GUIDType (ServiceInfo) '
-ms.assetid: a08d4c7c-c282-4870-b836-6788ffa2d088
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 50b6179569ef2616125bd1cdb1ff3e980a44a1f4
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: 607807d71edb6713dbb8165e6bac99da29b946e2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89402950"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96782335"
 ---
 # <a name="guidtype-serviceinfo"></a>GUIDType (ServiceInfo) 
 

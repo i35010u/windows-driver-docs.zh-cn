@@ -1,17 +1,16 @@
 ---
 title: CM_PROB_GUEST_ASSIGNMENT_FAILED
 description: CM_PROB_GUEST_ASSIGNMENT_FAILED
-ms.assetid: 9b4b0b7d-4b37-42b0-bba6-06251e53bcfa
 keywords:
 - CM_PROB_GUEST_ASSIGNMENT_FAILED
 ms.date: 02/28/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: c0526cea3cc6696a9f30224b0156912dc1bd477b
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 4a8d6a55fc62acfb29371082eabac3d0336374ec
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89096373"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96783135"
 ---
 # <a name="code-57---cm_prob_guest_assignment_failed"></a>代码 57 - CM_PROB_GUEST_ASSIGNMENT_FAILED
 

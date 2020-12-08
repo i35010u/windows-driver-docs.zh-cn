@@ -1,15 +1,14 @@
 ---
 title: USB 规则集 (KMDF)
 description: 使用这些规则验证驱动程序是否正确处理 USB 设备的一些专用 KMDF 方法。
-ms.assetid: E07F4E18-CE93-43A8-AAB4-C3CF8CC790CC
 ms.date: 05/21/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 5868ece2ab011b30336256e70d53acb390e3cc89
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: f9a278b96cd1d7ef84341796beb5bfdb3f5e5c35
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103206"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96783289"
 ---
 # <a name="usb-rule-set-kmdf"></a>USB 规则集 (KMDF)
 
@@ -27,7 +26,7 @@ ms.locfileid: "90103206"
 <thead>
 <tr class="header">
 <th align="left">主题</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -62,7 +61,7 @@ ms.locfileid: "90103206"
 
 2.  单击 " **规则** " 选项卡。在 " **规则集**" 下，选择 " **Usb**"。
 
-    若要从 Visual Studio 开发人员命令提示符窗口中选择默认规则集，请使用 **/check**选项指定**sdv** 。 例如：
+    若要从 Visual Studio 开发人员命令提示符窗口中选择默认规则集，请使用 **/check** 选项指定 **sdv** 。 例如：
 
     ```
     msbuild /t:sdv /p:Inputs="/check:Usb.sdv" mydriver.VcxProj /p:Configuration="Win8 Release" /p:Platform=Win32

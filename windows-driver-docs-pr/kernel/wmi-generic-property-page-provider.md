@@ -1,7 +1,6 @@
 ---
 title: WMI 通用属性页提供程序
 description: WMI 通用属性页提供程序
-ms.assetid: 44cfafdf-c8e2-4175-95e5-3c5d03dc206d
 keywords:
 - WMI WDK 内核，属性表
 - 属性表 WDK WMI
@@ -11,12 +10,12 @@ keywords:
 - 设备属性表 WDK WMI
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f1b9a5cf7ff02035adaeb59f64cdb01e1060206f
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: a73ed9f4c938ba2d63172e43a1b68feb1c725d50
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89190027"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96782665"
 ---
 # <a name="wmi-generic-property-page-provider"></a>WMI 通用属性页提供程序
 
@@ -54,7 +53,7 @@ WMI 泛型属性页提供程序使用的控件适用于类中每个属性的数�
 
 ### <a name="enabling-the-generic-property-page-provider"></a>启用泛型属性页提供程序
 
-公开 Wmiprop.dll 要使用的类的每个设备都必须启用 Wmiprop.dll 作为共同安装程序。 为此，请在 " **HKLM \\ System \\ CurrentControlSet \\ Control \\ CoDeviceInstallers** " 注册表项下，为类 GUID 添加一个值项，并添加到 "共同安装程序*外接*程序" 部分。 值项的值为 "WmiProp.dll，WmiPropCoInstaller"。
+公开 Wmiprop.dll 要使用的类的每个设备都必须启用 Wmiprop.dll 作为共同安装程序。 为此，请在 " **HKLM \\ System \\ CurrentControlSet \\ Control \\ CoDeviceInstallers** " 注册表项下，为类 GUID 添加一个值项，并添加到 "共同安装程序 *外接* 程序" 部分。 值项的值为 "WmiProp.dll，WmiPropCoInstaller"。
 
 例如：
 
@@ -82,7 +81,7 @@ HKR,,"WmiConfigClasses",0x00000000,"class1,class2"
 HKR,,"WmiConfigClasses",0x00000000,"class3"
 ```
 
-有关 INF 文件中的 "*添加注册表" 部分*的说明，请参阅[**inf AddReg 指令**](../install/inf-addreg-directive.md)。
+有关 INF 文件中的 "*添加注册表" 部分* 的说明，请参阅 [**inf AddReg 指令**](../install/inf-addreg-directive.md)。
 
 Wmiprop.dll 假设每个类只有一个实例。 每个类由属性表上的一个选项卡表示。 使用 **DisplayName** 属性限定符设置选项卡的标题文本。仅当当前存在类的实例时，才会显示类的属性页。 因此，如果设备已删除或未启动，则不会显示这些页面。
 

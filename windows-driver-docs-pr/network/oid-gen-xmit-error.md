@@ -1,16 +1,15 @@
 ---
 title: OID_GEN_XMIT_ERROR
 description: 作为查询，OID_GEN_XMIT_ERROR OID 指定了 NIC 无法传输的帧数。
-ms.assetid: c4f42271-812b-4da9-8280-79d3bddc5164
 ms.date: 11/01/2019
 keywords: -从 Windows Vista 开始 OID_GEN_XMIT_ERROR 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 2a1a2bcdf2183c422b6d209d0e8966d1d282266d
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 2fe3489338e19e22dd81e8fd9428bbd367745063
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89208647"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96782213"
 ---
 # <a name="oid_gen_xmit_error"></a>OID \_ 生成 \_ XMIT \_ 错误
 
@@ -57,7 +56,7 @@ ms.locfileid: "89208647"
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [OID \_ 生成 \_ 统计信息](oid-gen-statistics.md)

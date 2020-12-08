@@ -1,15 +1,14 @@
 ---
 title: 处理热点身份验证事件
 description: 处理热点身份验证事件
-ms.assetid: e293757e-de4b-4669-a6c4-a57fff157cf4
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a576fb1eceebf26dab32d0dc53bc432c5d81857c
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 6c24a5a4a755dc865c12d1b0e4494cdae798b3a6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89216616"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96782323"
 ---
 # <a name="handling-the-hotspot-authentication-event"></a>处理热点身份验证事件
 
@@ -53,7 +52,7 @@ Windows 8、Windows 8.1 和 Windows 10 在检测到支持无线 Internet 服务�
 
 在最简单的情况下，应用将根据其具有或可检索到的信息生成凭据。 例如，使用 WISPr 有效负载中的信息生成用户名和密码以及有关网络适配器的信息。
 
-执行任何必要的操作来生成或获取凭据后，应用程序将对[**HotspotAuthenticationContext**](/uwp/api/Windows.Networking.NetworkOperators.HotspotAuthenticationContext)对象调用[**IssueCredentials**](/uwp/api/Windows.Networking.NetworkOperators.HotspotAuthenticationContext#Windows_Networking_NetworkOperators_HotspotAuthenticationContext_IssueCredentials_System_String_System_String_System_String_System_Boolean_)方法。 此方法允许应用提供以下内容：
+执行任何必要的操作来生成或获取凭据后，应用程序将对 [**HotspotAuthenticationContext**](/uwp/api/Windows.Networking.NetworkOperators.HotspotAuthenticationContext)对象调用 [**IssueCredentials**](/uwp/api/Windows.Networking.NetworkOperators.HotspotAuthenticationContext#Windows_Networking_NetworkOperators_HotspotAuthenticationContext_IssueCredentials_System_String_System_String_System_String_System_Boolean_)方法。 此方法允许应用提供以下内容：
 
 -   WISPr *用户名* 参数
 
@@ -70,27 +69,29 @@ Windows 8、Windows 8.1 和 Windows 10 在检测到支持无线 Internet 服务�
 ## <a name="span-idabortauthspanspan-idabortauthspanabort-authentication"></a><span id="abortauth"></span><span id="ABORTAUTH"></span>中止身份验证
 
 
-如果应用发现无法为当前网络生成凭据 (因为漫游协议已更改、信息不可用，或者出于其他原因) ，则它必须对[**HotspotAuthenticationContext**](/uwp/api/Windows.Networking.NetworkOperators.HotspotAuthenticationContext)对象调用[**AbortAuthentication**](/uwp/api/Windows.Networking.NetworkOperators.HotspotAuthenticationContext#Windows_Networking_NetworkOperators_HotspotAuthenticationContext_AbortAuthentication_System_Boolean_)方法。
+如果应用发现无法为当前网络生成凭据 (因为漫游协议已更改、信息不可用，或者出于其他原因) ，则它必须对 [**HotspotAuthenticationContext**](/uwp/api/Windows.Networking.NetworkOperators.HotspotAuthenticationContext)对象调用 [**AbortAuthentication**](/uwp/api/Windows.Networking.NetworkOperators.HotspotAuthenticationContext#Windows_Networking_NetworkOperators_HotspotAuthenticationContext_AbortAuthentication_System_Boolean_)方法。
 
 Windows 断开与网络的连接，并且不会重新尝试当前用户会话中的连接。 此函数接受一个标志，该标志指示 Windows 绝不应使用此配置文件自动重试连接。
 
-**注意**   此方法不会从系统中删除配置文件，如果用户手动尝试连接到网络，则可能会再次要求该应用提供凭据。 如果已完全删除该配置文件，则该应用必须提供一个新的预配文件，该文件将删除相关的配置文件。
+**注意**  
+此方法不会从系统中删除配置文件，如果用户手动尝试连接到网络，则可能会再次要求该应用提供凭据。 如果已完全删除该配置文件，则该应用必须提供一个新的预配文件，该文件将删除相关的配置文件。
 
  
 
 ## <a name="span-idaltauthspanspan-idaltauthspanuse-alternate-authentication-methods"></a><span id="altauth"></span><span id="ALTAUTH"></span>使用备用身份验证方法
 
 
-如果应用可以使用 WISPr 以外的方法进行身份验证，则可能需要这样做。 使用备用方法成功向网络进行身份验证后，必须通过对[**HotspotAuthenticationContext**](/uwp/api/Windows.Networking.NetworkOperators.HotspotAuthenticationContext)对象调用[**SkipAuthentication**](/uwp/api/Windows.Networking.NetworkOperators.HotspotAuthenticationContext#Windows_Networking_NetworkOperators_HotspotAuthenticationContext_SkipAuthentication)方法来完成连接。 调用此方法时，Windows 将重新检测与 Internet 的连接，从而帮助用户界面 (UI) 正确反映身份验证状态。
+如果应用可以使用 WISPr 以外的方法进行身份验证，则可能需要这样做。 使用备用方法成功向网络进行身份验证后，必须通过对 [**HotspotAuthenticationContext**](/uwp/api/Windows.Networking.NetworkOperators.HotspotAuthenticationContext)对象调用 [**SkipAuthentication**](/uwp/api/Windows.Networking.NetworkOperators.HotspotAuthenticationContext#Windows_Networking_NetworkOperators_HotspotAuthenticationContext_SkipAuthentication)方法来完成连接。 调用此方法时，Windows 将重新检测与 Internet 的连接，从而帮助用户界面 (UI) 正确反映身份验证状态。
 
-**注意**   对于不为 WISPr 协议提供支持的热点，不会调用 HotspotAuthentication 事件。 但是，这允许应用程序选择要在响应中使用的其他协议，或在需要时使用自定义的 WISPr 版本。
+**注意**  
+对于不为 WISPr 协议提供支持的热点，不会调用 HotspotAuthentication 事件。 但是，这允许应用程序选择要在响应中使用的其他协议，或在需要时使用自定义的 WISPr 版本。
 
  
 
 ## <a name="span-iduserintspanspan-iduserintspaninteract-with-the-user"></a><span id="userint"></span><span id="USERINT"></span>与用户交互
 
 
-如果在进行身份验证之前需要用户交互，则应用必须对[**HotspotAuthenticationContext**](/uwp/api/Windows.Networking.NetworkOperators.HotspotAuthenticationContext)对象调用[**TriggerAttentionRequired**](/uwp/api/Windows.Networking.NetworkOperators.HotspotAuthenticationContext#Windows_Networking_NetworkOperators_HotspotAuthenticationContext_TriggerAttentionRequired_System_String_System_String_)方法。 此方法在以下情况下很有用：
+如果在进行身份验证之前需要用户交互，则应用必须对 [**HotspotAuthenticationContext**](/uwp/api/Windows.Networking.NetworkOperators.HotspotAuthenticationContext)对象调用 [**TriggerAttentionRequired**](/uwp/api/Windows.Networking.NetworkOperators.HotspotAuthenticationContext#Windows_Networking_NetworkOperators_HotspotAuthenticationContext_TriggerAttentionRequired_System_String_System_String_)方法。 此方法在以下情况下很有用：
 
 -   用户选择不在应用中存储凭据，必须登录。
 

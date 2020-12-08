@@ -1,19 +1,18 @@
 ---
 title: 报告着色器 2 支持功能
 description: 报告着色器 2 支持功能
-ms.assetid: 27397e32-cdc0-47b5-b9b5-a4b22ed971f3
 keywords:
 - 着色器 WDK DirectX 9.0，着色器2.0 支持
 - 顶点着色器 WDK DirectX 9.0，着色器2.0 支持
 - 象素着色器 WDK DirectX 9.0，着色器2.0 支持
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fe9f9163e04092a7ea207f435986c3a08aa9ebea
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: a7ea4197e966d8c478a9219036a0b699525d9580
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89066002"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96783979"
 ---
 # <a name="reporting-capabilities-for-shader-2-support"></a>报告着色器 2 支持功能
 

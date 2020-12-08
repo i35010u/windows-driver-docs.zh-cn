@@ -1,15 +1,14 @@
 ---
 title: 驱动程序安装
 description: 此 SDK 中提供的打印驱动程序是一个仍在开发中的实验性三维打印机设备驱动程序。
-ms.assetid: 8A13CD6F-DF82-4353-ADE9-06989F83BC87
 ms.date: 05/15/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 2fefe1a1e24ab445f2c58964ef03995cfb012e88
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 3e3d28555aafe1a6fbaf668227c7b3cf7aa6f1a9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89184547"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96783649"
 ---
 # <a name="driver-installation"></a>驱动程序安装
 
@@ -22,7 +21,7 @@ ms.locfileid: "89184547"
 
 若要安装打印机，请使用以下安装说明：
 
-- 如果3D 打印机实现了 Microsoft OS 描述符 3DPRINT ( "MS \_ COMP \_ 3DPRINT" ) 或者是受支持的供应商 ID 之一 (VID) /product 文件中的 ID (PID) 组合，请按照下面的 " *通过 PnP 自动安装驱动程序* " 部分中的步骤进行操作。
+- 如果3D 打印机实现了 Microsoft OS 描述符 3DPRINT ( "MS \_ COMP \_ 3DPRINT" ) 或者是受支持的供应商 ID 之一 (VID) /Product 文件中的 ID (PID) 组合，请按照下面的 " *通过 PnP 自动安装驱动程序* " 部分中的步骤进行操作。
 
 - 如果3D 打印机是实验性或正在开发，请按照下面的 " *手动安装驱动程序"* 部分中的步骤进行操作，以打印到现有的 COM 端口或将 G 代码打印到文件。
 
@@ -41,11 +40,11 @@ ms.locfileid: "89184547"
     pnputil -a {PathToSDK}\Bin\RenderFilters_{architecture}\MS3DPrinter.inf
     ```
 
-3.  插入 USB 串行设备。 应该在 "**设备和打印机**" 下安装新的**一般3d 打印机**设备。
+3.  插入 USB 串行设备。 应该在 "**设备和打印机**" 下安装新的 **一般3d 打印机** 设备。
 
 ### <a name="install-the-driver-manually"></a>手动安装驱动程序
 
-1.  搜索 **Cortana**中的 printmanagement.msc。
+1.  搜索 **Cortana** 中的 printmanagement.msc。
 
     ![打印管理](images/g-code-1.png)
 
@@ -53,7 +52,7 @@ ms.locfileid: "89184547"
 
     !["打印管理" 对话框](images/g-code-2.png)
 
-3.  单击 "**下一步**"，选择** (x64) **，单击 "**下一步**"，然后单击 "**从磁盘安装**
+3.  单击 "**下一步**"，选择 **(x64)**，单击 "**下一步**"，然后单击 "**从磁盘安装**
 
 4.  导航到 RenderFiltersV4 \_ x64 文件夹，选择 "MS3DPrinter"，然后单击 **"确定"**。
 
@@ -87,7 +86,7 @@ ms.locfileid: "89184547"
 
 13. 从 SDK 浏览到一般3D 打印驱动程序二进制包，并单击 **"确定"**。
 
-14. 单击“配置目录分区”  。
+14. 单击 **“下一步”** 。
 
     ![安装打印机驱动程序](images/g-code-9.png)
 

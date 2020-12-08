@@ -1,15 +1,14 @@
 ---
 title: 从特定于总线的唯一 ID 生成的容器 ID
 description: 从特定于总线的唯一 ID 生成的容器 ID
-ms.assetid: 06bd4f06-51f2-4983-9ddc-bff27eaa367e
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f12639eb66e06a4333743f75ed4f39ec2631b55d
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: d3ede6c0db590cf1f3e08cc643f21589ef92b01f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103780"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96782951"
 ---
 # <a name="container-ids-generated-from-a-bus-specific-unique-id"></a>从特定于总线的唯一 ID 生成的容器 ID
 
@@ -22,7 +21,7 @@ ms.locfileid: "90103780"
 
 -   设备的总线驱动程序将此唯一 ID 识别为存在并且格式正确。
 
--   总线驱动程序可以将唯一 ID 可靠地散列到全局唯一标识符 (*GUID*) ，并在[**IO_STACK_LOCATION**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_stack_location)结构的**IdType**成员设置为**BusQueryContainerID**时返回此 GUID 以响应[**IRP_MN_QUERY_ID**](../kernel/irp-mn-query-id.md)函数代码。
+-   总线驱动程序可以将唯一 ID 可靠地散列到全局唯一标识符 (*GUID*) ，并在 [**IO_STACK_LOCATION**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_stack_location)结构的 **IdType** 成员设置为 **BusQueryContainerID** 时返回此 GUID 以响应 [**IRP_MN_QUERY_ID**](../kernel/irp-mn-query-id.md)函数代码。
 
 Windows 7 和更高版本的 Windows 为多个最常见的总线类型提供了收件箱驱动程序。 这包括 USB、蓝牙和 Pnp-x。 对于这些总线类型，只需将设备包含特定于总线的唯一 ID。 然后，提供的 Windows bus 驱动程序将从设备读取唯一 ID 并创建容器 ID。
 

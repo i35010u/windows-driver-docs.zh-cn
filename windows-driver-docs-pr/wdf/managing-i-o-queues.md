@@ -1,7 +1,6 @@
 ---
 title: 管理 I/O 队列
 description: 管理 I/O 队列
-ms.assetid: 83cc87c8-7e2d-4f79-a580-0519d327e7ba
 keywords:
 - I/o 队列 WDK KMDF，开始
 - I/o 队列 WDK KMDF，停止
@@ -25,12 +24,12 @@ keywords:
 - 调度方法 WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e4962c2baf44edbf8621015de75e8fe7ef33b35e
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: a6b311f328109237fea06539e161409204927689
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89191517"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96783689"
 ---
 # <a name="managing-io-queues"></a>管理 I/O 队列
 
@@ -40,7 +39,7 @@ ms.locfileid: "89191517"
 
 当驱动程序调用 [**WdfIoQueueCreate**](/windows-hardware/drivers/ddi/wdfio/nf-wdfio-wdfioqueuecreate) 来创建 i/o 队列时，框架会自动使队列接收 i/o 请求并将其传递给驱动程序。
 
-驱动程序通常从[*EvtDriverDeviceAdd*](/windows-hardware/drivers/ddi/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)回调函数中调用[**WdfIoQueueCreate**](/windows-hardware/drivers/ddi/wdfio/nf-wdfio-wdfioqueuecreate) 。 当驱动程序的 *EvtDriverDeviceAdd* 回调函数返回后，框架可以开始向驱动程序提供 i/o 请求。
+驱动程序通常从 [*EvtDriverDeviceAdd*](/windows-hardware/drivers/ddi/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)回调函数中调用 [**WdfIoQueueCreate**](/windows-hardware/drivers/ddi/wdfio/nf-wdfio-wdfioqueuecreate) 。 当驱动程序的 *EvtDriverDeviceAdd* 回调函数返回后，框架可以开始向驱动程序提供 i/o 请求。
 
 如果你的驱动程序使用 [电源管理](using-power-managed-i-o-queues.md) 的 i/o 队列，则在设备进入其工作状态并且框架已调用驱动程序的 [*EvtDeviceD0Entry*](/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_d0_entry) 回调函数之前，框架无法开始向你的驱动程序提供请求。
 
@@ -107,7 +106,7 @@ ms.locfileid: "89191517"
 
 通常，当 [*EvtIoInCallerContext*](/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_io_in_caller_context) 回调函数收到请求时，它将为请求执行一些初步处理。 接下来，回调函数调用 [**WdfDeviceEnqueueRequest**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceenqueuerequest)，后者向框架返回请求。 然后，框架可以将请求置于正确的 i/o 队列中，就像它未调用 *EvtIoInCallerContext* 回调函数一样。
 
-驱动程序提供 [*EvtIoInCallerContext*](/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_io_in_caller_context) 回调函数的主要原因是，驱动程序必须处理支持非缓冲的 i/o 方法 [和直接 i/o](./accessing-data-buffers-in-wdf-drivers.md#neither)的 i/o 操作。 对于此 i/o 方法，驱动程序必须在 i/o 请求的发起方的进程上下文中访问接收的缓冲区。 有关详细信息，请参阅 [在基于框架的驱动程序中访问数据缓冲区](./accessing-data-buffers-in-wdf-drivers.md)。
+驱动程序提供 [*EvtIoInCallerContext*](/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_io_in_caller_context) 回调函数的主要原因是，驱动程序必须处理支持非缓冲的 i/o 方法 [和直接 i/o](./accessing-data-buffers-in-wdf-drivers.md#neither)的 i/o 操作。 对于此 i/o 方法，驱动程序必须在 i/o 请求的发起方的进程上下文中访问接收的缓冲区。 有关详细信息，请参阅 [访问 Framework-Based 驱动程序中的数据缓冲区](./accessing-data-buffers-in-wdf-drivers.md)。
 
 ## <a name="obtaining-io-queue-properties"></a><a href="" id="obtaining-i-o-queue-properties"></a> 获取 i/o 队列属性
 

@@ -1,46 +1,45 @@
 ---
 title: 跨平台 INF 文件
 description: 跨平台 INF 文件
-ms.assetid: 5f7e80d2-b8b5-4ce9-9e70-cacc51223deb
 keywords:
 - 跨平台 INF 文件 WDK
 - INF 文件 WDK 设备安装，跨平台
-- 操作系统 WDK，跨操作系统系统 INF 文件
+- 操作系统 WDK，互操作系统 INF 文件
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ee9118a88cd58d5a3219f906d879d34da5175083
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b1876f0ddaebfdae7fc69099c40f2c57a922d4a5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63352078"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96782929"
 ---
 # <a name="cross-platform-inf-files"></a>跨平台 INF 文件
 
 
-跨平台 INF 文件的最简单的策略是创建单独的 INF 文件为每个平台类型，因为这种方法是最简单的方法来创建和维护。 有关如何创建特定于平台的 INF 文件的详细信息，请参阅以下主题：
+对于跨平台 INF 文件，最简单的策略是为每个平台类型创建单独的 INF 文件，因为这种方法是创建和维护的最简单方法。 有关如何创建特定于平台的 INF 文件的详细信息，请参阅以下主题：
 
-[创建基于 x64 的系统的 INF 文件 (Windows XP 及更高版本)](inf-file-platform-extensions-and-x64-based-systems.md#creating-inf-files-for-x64-based-systems--windows-xp-and-later-)
+[为基于 x64 的系统创建 INF 文件 (Windows XP 和更高版本) ](inf-file-platform-extensions-and-x64-based-systems.md#creating-inf-files-for-x64-based-systems--windows-xp-and-later-)
 
-[创建基于 x86 的系统 (Windows 2000 及更高版本) 的 INF 文件](inf-file-platform-extensions-and-x86-based-systems.md#creating-inf-files-for-x86-based-systems--windows-2000-and-later-)
+[为基于 x86 的系统创建 INF 文件 (Windows 2000 和更高版本) ](inf-file-platform-extensions-and-x86-based-systems.md#creating-inf-files-for-x86-based-systems--windows-2000-and-later-)
 
-如果设备不具有特定于操作系统的安装要求，可以创建单个跨操作系统和设备的跨平台 INF 文件。 例如，如果给定平台的操作系统版本之间存在差异的文件或注册表设置的支持的设备，一般情况下，不能请创建一个 INF 文件由所有操作系统版本支持该平台类型。
+如果设备没有特定于操作系统的安装要求，则可以为设备创建一个跨操作系统和跨平台 INF 文件。 例如，如果某个给定平台的操作系统版本中支持某个设备的文件或注册表设置不同，则通常不能为该平台类型创建一个 INF 文件，该文件是所有操作系统版本都支持的。
 
-若要创建单个跨操作系统和 Windows 2000 和更高版本的 Windows 的跨平台 INF 文件，最简单的方法如下所示：
+若要为 Windows 2000 和更高版本的 Windows 创建单个跨操作系统和跨平台 INF 文件，最简单的方法如下所示：
 
--   使用 **.ntia64**平台上的基于 Itanium 的系统上安装组件，并使用所需的部分名称的扩展 **.ntamd64**平台扩展上的各节的名称所需组件安装在基于 x64 的系统上。
+-   对于在基于 Itanium 的系统上安装组件所需的节的名称，请使用 **ntia64** 平台扩展，并使用 **。 ntamd64** 平台扩展用于在基于 x64 的系统上安装组件所需的部分名称。
 
--   因为 **.nt**并 **.ntx86**平台扩展支持的平台扩展的所有部分都是可选，则不要使用 **.nt**或 **.ntx86**平台扩展上的组件安装在基于 x86 的系统的部分的名称。
+-   由于 **在** 支持平台扩展的所有部分中， **ntx86** 平台扩展是可选的，因此在基于 x86 的系统上安装组件的部分的名称上不要使用 **nt** 或 **. ntx86** 平台扩展。
 
-若要创建单个跨操作系统和 Microsoft Windows 2000 和更高版本的 Windows 的跨平台 INF 文件，请使用以下过程：
+若要为 Microsoft Windows 2000 和更高版本的 Windows 创建单个跨操作系统和跨平台 INF 文件，请使用以下过程：
 
--   使用 **.ntia64**平台上的基于 Itanium 的系统上安装组件，并使用所需的部分名称的扩展 **.ntamd64**平台扩展上的各节的名称所需组件安装在基于 x64 的系统上。
+-   对于在基于 Itanium 的系统上安装组件所需的节的名称，请使用 **ntia64** 平台扩展，并使用 **。 ntamd64** 平台扩展用于在基于 x64 的系统上安装组件所需的部分名称。
 
-创建单个跨操作系统和跨平台 INF 文件不具有特定于操作系统的要求的设备支持所有平台类型，并都支持 Windows 2000 和更高版本的 Windows，执行以下操作：
+若要为没有特定于操作系统的要求的设备创建单个跨操作系统和跨平台 INF 文件，支持所有平台类型，并且支持 Windows 2000 及更高版本的 Windows，请执行以下操作：
 
-1. 创建有效的 INF 文件包含所有的 INF 文件中所需的通用项，如中所述[INF 文件的一般准则](general-guidelines-for-inf-files.md)。
+1. 创建一个有效的 INF 文件，其中包含所有 INF 文件中所需的通用条目，如 [Inf 文件的一般原则](general-guidelines-for-inf-files.md)中所述。
 
-2. 包括 INF**制造商**包含的部分*制造商标识符*，它指定*模型*设备和平台扩展条目的节名称为每个设备支持的平台。 例如，以下的制造商部分指定*模型*"AbcModelSection"和平台扩展的节名称 **.ntia64**并 **.ntamd64**。 (未指定 **.ntx86**平台扩展。)
+2. 包括一个 "INF **制造商** " 部分，其中包含 *制造商标识符* ，该标识符指定设备的 *型号* 部分名称，以及设备支持的每个平台的平台扩展条目。 例如，以下 "制造商" 部分指定了 *模型* 部分名称 "AbcModelSection" 和平台扩展名 **ntia64** 和 **ntamd64**。  (不指定 **ntx86** 平台扩展。 ) 
 
    ```cpp
    [Manufacturer]
@@ -48,28 +47,28 @@ ms.locfileid: "63352078"
    %ManufacturerName%=AbcModelSection,ntia64,ntamd64
    ```
 
-3. 包括*模型*部分其名称不包含平台扩展。 操作系统从 Windows 2000 开始，处理此部分针对基于 x86 的系统。 例如，以下 AbcModelSection 部分指定*安装的部分名称*的"AbcInstallSection"Abc 设备。
+3. 包含名称不包含平台扩展的 *模型* 部分。 从 Windows 2000 开始，操作系统为基于 x86 的系统处理此部分。 例如，以下 AbcModelSection 部分为 Abc 设备指定了 "AbcInstallSection" 的 *安装节名称* 。
 
    ```cpp
    [AbcModelSection]
    %AbcDeviceName%=AbcInstallSection,Abc-hw-id
    ```
 
-4. 包括<em>模型</em>**.ntia64**部分。 Windows Server 2003 SP1 和更高版本需要<em>模型</em>**.ntia64**用于基于 Itanium 的系统部分。 如果<em>模型</em>**.ntia64**部分存在，则 Windows Server 2003 和 Windows XP 还使用此部分用于基于 Itanium 的系统。 例如，以下 AbcModelSection<strong>.ntia64</strong>部分指定*安装部分名称*的"AbcInstallSection.ntia64"Abc 设备。
+4. 包括 ntia64 <em>部分。</em>**.ntia64** Windows Server 2003 SP1 及更高版本需要用于基于 Itanium 的 <em>系统的</em>**ntia64** 部分。 如果存在 <em>Models</em>**Ntia64** 节，Windows SERVER 2003 和 windows XP 还会将此部分用于基于 Itanium 的系统。 例如，以下 AbcModelSection：<strong>ntia64</strong> 部分指定 Abc 设备的 *安装--Name* 为 "AbcInstallSection"。
 
    ```cpp
    [AbcModelSection.ntia64]
    %AbcDeviceName%=AbcInstallSection.ntia64,Abc-hw-id
    ```
 
-5. 包括<em>模型</em>**.ntamd64**部分。 Windows Server 2003 SP1 和更高版本需要<em>模型</em>**.ntamd64**针对基于 x64 的系统部分。 如果<em>模型</em>**.ntamd64**部分存在，则 Windows Server 2003 和 Windows XP 还使用此部分用于基于 x64 的系统。 例如，以下 AbcModelSection<strong>.ntamd64</strong>部分指定*安装部分名称*的"AbcInstallSection.ntamd64"Abc 设备。
+5. 包括 ntamd64 <em>部分。</em>**.ntamd64** Windows Server 2003 SP1 及更高版本需要 <em>一个</em>**ntamd64** 部分，适用于基于 x64 的系统。 如果存在 <em>Models</em>**Ntamd64** 节，Windows SERVER 2003 和 windows XP 还会将此部分用于基于 x64 的系统。 例如，以下 AbcModelSection：<strong>ntamd64</strong> 部分指定 Abc 设备的 *安装--Name* 为 "AbcInstallSection"。
 
    ```cpp
    AbcModelSectionName.ntamd64
    %AbcDeviceName%=AbcInstallSection.ntamd64,Abc-hw-id
    ```
 
-6. 包括*DDInstall*其名称是相同的部分作为*安装部分名称*由指定*模型*部分，其中不包含平台扩展。 例如，AbcModelSection 部分指定以下 AbcInstallSection 部分。 Windows 处理此部分以在运行 Windows 2000 或更高版本的 Windows 的基于 x86 的系统上安装 Abc 设备。
+6. 包含一个 *DDInstall* 节，其名称与不包含平台扩展的 *模型* 部分指定的 *安装节名称* 相同。 例如，AbcModelSection 节指定下面的 AbcInstallSection 节。 Windows 将处理此部分，以在运行 Windows 2000 或更高版本的 Windows 的基于 x86 的系统上安装 Abc 设备。
 
    ```cpp
    [AbcInstallSection]
@@ -77,7 +76,7 @@ ms.locfileid: "63352078"
    ...
    ```
 
-7. 包括<em>DDInstall</em>**.ntia64**其名称是相同的部分作为*安装的部分名称*由指定<em>模型</em>**.ntia64**部分。 例如，AbcModelSection<strong>.ntia64</strong>部分指定以下 AbcInstallSection<strong>.ntia64</strong>部分。 Windows 处理此部分以在运行 Windows XP 或更高版本的 Windows 的基于 Itanium 的系统上安装 Abc 设备。
+7. 包括 <em>DDInstall</em>**. ntia64** 节，其名称与 **ntia64** 节 <em>指定的</em>*安装节名称* 相同。 例如，AbcModelSection<strong>. ntia64</strong> 部分指定以下 AbcInstallSection<strong>. ntia64</strong> 节。 Windows 将处理此部分，以便在运行 Windows XP 或更高版本的 Windows 的基于 Itanium 的系统上安装 Abc 设备。
 
    ```cpp
    [AbcInstallSection.ntia64]
@@ -85,7 +84,7 @@ ms.locfileid: "63352078"
    ...
    ```
 
-8. 包括<em>DDInstall</em>**.ntamd64**其名称是相同的部分作为*安装的部分名称*由指定<em>模型</em>**.ntamd64**部分。 例如，AbcModelSection<strong>.ntamd64</strong>部分指定以下 AbcInstallSection<strong>.ntamd64</strong>部分。 Windows 处理此部分以在运行 Windows XP 或更高版本的 Windows 的基于 x64 的系统上安装 Abc 设备。
+8. 包括 <em>DDInstall</em>**. ntamd64** 节，其名称与 **ntamd64** 节 <em>指定的</em>*安装节名称* 相同。 例如，AbcModelSection<strong>. ntamd64</strong> 部分指定以下 AbcInstallSection<strong>. ntamd64</strong> 节。 Windows 将处理此部分，以便在运行 Windows XP 或更高版本的 Windows 的基于 x64 的系统上安装 Abc 设备。
 
    ```cpp
    [AbcInstallSection.ntamd64]
@@ -93,13 +92,13 @@ ms.locfileid: "63352078"
    ...
    ```
 
-9. 包括基于 x86 的安装所需的其他特定于设备的部分。 不包括 **.ntx86**平台扩展上的这些部分的名称。 默认情况下运行 Windows 2000 或更高版本的 Windows 的基于 x86 的系统上安装该设备，Windows 处理这些部分。
+9. 包括基于 x86 的安装所需的其他特定于设备的部分。 请勿在这些部分的名称中包含 **ntx86** 平台扩展。 默认情况下，Windows 将处理这些部分，以在运行 Windows 2000 或更高版本的 Windows 的基于 x86 的系统上安装设备。
 
-10. 包括所需的运行 Windows XP 或更高版本的 Windows 的基于 Itanium 的系统的其他特定于设备的部分。 包括 **.ntia64**上这些部分名称的扩展。
+10. 包括运行 Windows XP 或更高版本的 Windows 的基于 Itanium 的系统所需的其他特定于设备的部分。 对这些节名称包含 **ntia64** 扩展名。
 
-11. 包括所需的运行 Windows XP 或更高版本的 Windows 的基于 x64 的系统的其他特定于设备的部分。 包括 **.ntamd64**上这些部分名称的扩展。
+11. 包括运行 Windows XP 或更高版本的 Windows 的基于 x64 的系统所需的其他特定于设备的部分。 对这些节名称包含 **ntamd64** 扩展名。
 
-有关 INF 文件的部分和指令的详细信息，请参阅[INF 部分摘要](summary-of-inf-sections.md)并[INF 指令摘要](summary-of-inf-directives.md)。
+有关 INF 文件部分和指令的详细信息，请参阅 [Inf 部分摘要](summary-of-inf-sections.md) 和 [inf 指令摘要](summary-of-inf-directives.md)。
 
  
 

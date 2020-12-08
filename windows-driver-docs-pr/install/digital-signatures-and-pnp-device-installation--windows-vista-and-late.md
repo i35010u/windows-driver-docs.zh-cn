@@ -1,7 +1,6 @@
 ---
 title: " (Vista 和更高版本的数字签名和 PnP 设备安装) "
 description: 'Windows Vista 和更高版本 (的数字签名和 PnP 设备安装) '
-ms.assetid: 38d3e8c9-0be1-4fea-9128-15834c0c4e2e
 keywords:
 - 驱动程序签名 WDK，PnP 设备安装
 - 对驱动程序进行签名 WDK，PnP 设备安装
@@ -13,17 +12,17 @@ keywords:
 - 包数字签名 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0a2d60aaaa644893e329d57e0f51cff984a713da
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 5ffdbf58f177eafd30bb8c0d03ef7b71b4489eac
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89095227"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96782763"
 ---
 # <a name="digital-signatures-and-pnp-device-installation-windows-vista-and-later"></a>Windows Vista 和更高版本 (的数字签名和 PnP 设备安装) 
 
 
-在 Windows Vista 和更高版本的 Windows 上，即插即用 (PnP) 设备安装使用[驱动程序包](driver-packages.md)的 [目录文件](catalog-files.md)的[数字签名](digital-signatures.md)来执行以下操作：
+在 Windows Vista 和更高版本的 Windows 上，即插即用 (PnP) 设备安装使用[驱动程序包](driver-packages.md)的[目录文件](catalog-files.md)的[数字签名](digital-signatures.md)来执行以下操作：
 
 -   验证驱动程序包的发行者的标识。 Windows 使用标识来允许用户选择是否信任驱动程序的发布者。
 
@@ -61,7 +60,7 @@ Windows Vista 和更高版本的 Windows 包含以下功能，这些功能为第
 
 -   驱动程序签名策略始终设置为 " *警告*"。 这消除了 Windows Server 2003、Windows XP 和 Windows 2000 中提供的 *忽略* 和 *阻止* 选项。 管理员必须始终向尚未受信任的发布者授权安装未签名的驱动程序或驱动程序。
 
--   所有 [设备安装程序类](./overview-of-device-setup-classes.md) 都平等对待。 在 Windows Server 2003、Windows XP 和 Windows 2000 上，WHQL 签署的驱动程序包必须有一个 INF 文件，该文件指定在 *% SystemRoot%/inf/Certclas.inf*中定义的设备安装程序类。 否则，Windows 会将驱动程序包视为无符号。
+-   所有 [设备安装程序类](./overview-of-device-setup-classes.md) 都平等对待。 在 Windows Server 2003、Windows XP 和 Windows 2000 上，WHQL 签署的驱动程序包必须有一个 INF 文件，该文件指定在 *% SystemRoot%/inf/Certclas.inf* 中定义的设备安装程序类。 否则，Windows 会将驱动程序包视为无符号。
 
 -   从 Windows Vista 开始，当有多个兼容的驱动程序可供选择时，操作系统用于选择最佳驱动程序的排名算法包括具有第三方签名的驱动程序。
 
@@ -70,7 +69,7 @@ Windows Vista 和更高版本的 Windows 包含以下功能，这些功能为第
     -   如果禁用了 [AllSignersEqual 组策略](./allsigningequal-group-policy.md) ，则会将使用 Microsoft 签名进行签名的驱动程序的操作系统排名高于使用第三方签名进行签名的驱动程序。 即使使用第三方签名进行签名的驱动程序是以更好的方式匹配设备，也会出现此排名。
     -   如果启用了 [AllSignersEqual 组策略](./allsigningequal-group-policy.md) ，则操作系统将对所有数字签名的驱动程序进行平均排名。
 
-    **注意**   从 Windows 7 开始，默认情况下会启用[AllSignersEqual 组策略](./allsigningequal-group-policy.md)。 在 Windows Vista 和 Windows Server 2008 中， **AllSignersEqual** 组策略默认情况下处于禁用状态。 IT 部门可以通过启用或禁用 **AllSignersEqual** 组策略来覆盖默认排名行为。
+    **注意**  从 Windows 7 开始，默认情况下会启用 [AllSignersEqual 组策略](./allsigningequal-group-policy.md) 。 在 Windows Vista 和 Windows Server 2008 中， **AllSignersEqual** 组策略默认情况下处于禁用状态。 IT 部门可以通过启用或禁用 **AllSignersEqual** 组策略来覆盖默认排名行为。
 
      
 

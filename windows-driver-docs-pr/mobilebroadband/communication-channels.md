@@ -1,34 +1,33 @@
 ---
 title: 个人热点通信通道
 description: 个人热点通信通道
-ms.assetid: e26e22a2-4cc2-46a2-9d6c-02ab5df35041
 ms.date: 07/05/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: a0b1a03effd7924eb1cc5eb1fadf66dd8cf8f37f
-ms.sourcegitcommit: 6f74454e7ed5e703e4e4b363b6816652950e6a51
+ms.openlocfilehash: 49ea02aead129236b6992afa0d1e3e942ba2a65b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/06/2019
-ms.locfileid: "67608536"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96782493"
 ---
 # <a name="peronal-hotspot-communication-channels"></a>个人热点通信通道
 
 
-移动宽带接口不直接连接到计算机，因为我们必须在下图中所示通过使用个人热点设备中，交换运算符中的信息：
+由于移动宽带接口未直接连接到计算机，因此必须使用个人热点设备交换操作员的信息，如下图所示：
 
 ![通信通道](images/fig1-mb-commchannels.jpg)
 
-有两个机会来影响由设备提供的数据： 在时的安装程序，并通过使用专有反向通道 （通常为 web 服务） 在其操作的生存期内使用的设备的固件中。 这些协议是设计的 Microsoft 范围之外。
+你有两个机会影响设备提供的数据：在安装过程中，在固件中，使用专用的后端通道 (通常是设备在其操作生存期内使用的 web 服务) 。 这些协议超出了 Microsoft 设计的范围。
 
-所有必需的功能可以通过使用固件或初始配置的一部分提供的运营商的数据实现按设备制造商。 可选的功能可能需要实时更新的可用性。
+所有所需的功能都可以通过使用由电信公司提供的数据作为固件或初始配置的一部分来实现。 可选功能可能需要实时更新的可用性。
 
-本部分中提供了以下主题：
+本部分提供了以下主题：
 
 -   [网络成本信息元素](network-cost-information-element.md)
 
--   [移动宽带应用程序 PnP X](pnp-x-for-mobile-broadband-apps.md)
+-   [适合移动宽带应用的 PnP-X](pnp-x-for-mobile-broadband-apps.md)
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 [使用便携式热点设备启用移动宽带体验](enabling-mobile-broadband-experiences-using-portable-hotspot-devices.md)

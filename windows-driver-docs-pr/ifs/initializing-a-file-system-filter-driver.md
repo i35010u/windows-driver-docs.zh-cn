@@ -1,7 +1,6 @@
 ---
 title: 初始化文件系统筛选器驱动程序
 description: 初始化文件系统筛选器驱动程序
-ms.assetid: 8a487665-0210-49f5-af91-de78de982506
 keywords:
 - 初始化筛选器驱动程序
 - 筛选器驱动程序 WDK 文件系统，初始化
@@ -9,12 +8,12 @@ keywords:
 - DriverEntry WDK 文件系统
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 429020b16e6636b3da79e2be7930dac7243cb1c8
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 1a20e0abf7876601739aac6e74b4c477bbb66823
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89065042"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96783247"
 ---
 # <a name="initializing-a-file-system-filter-driver"></a>初始化文件系统筛选器驱动程序
 
@@ -36,7 +35,7 @@ NTSTATUS
     ); 
 ```
 
-此例程有两个输入参数。 第一个是 *DriverObject*，它是在加载文件系统筛选器驱动程序时创建的驱动程序对象。 第二个 *RegistryPath*是一个指针，指向包含驱动程序注册表项路径的计数 Unicode 字符串。
+此例程有两个输入参数。 第一个是 *DriverObject*，它是在加载文件系统筛选器驱动程序时创建的驱动程序对象。 第二个 *RegistryPath* 是一个指针，指向包含驱动程序注册表项路径的计数 Unicode 字符串。
 
 文件系统筛选器驱动程序的 [**DriverEntry**](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_initialize) 例程执行以下步骤：
 

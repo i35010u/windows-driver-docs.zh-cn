@@ -1,7 +1,6 @@
 ---
 title: 编写 DPC 例程
 description: 编写 DPC 例程
-ms.assetid: a0b93b71-7ee3-4626-b0b8-5dd6e19fba0d
 keywords:
 - 延迟的过程调用 WDK 内核
 - Dpc WDK 内核
@@ -9,12 +8,12 @@ keywords:
 - CustomDpc
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8c8393809d9db98fe874cff49a9297bb8cc2db5c
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 23931438ed2e9d152e3c3be1a45378279a0a3c7b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89188210"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96782577"
 ---
 # <a name="writing-dpc-routines"></a>编写 DPC 例程
 
@@ -22,7 +21,7 @@ ms.locfileid: "89188210"
 
 
 
-[*DpcForIsr*](/windows-hardware/drivers/ddi/wdm/nc-wdm-io_dpc_routine)和[*CustomDpc*](/windows-hardware/drivers/ddi/wdm/nc-wdm-kdeferred_routine)例程的主要职责是确保接下来的设备 i/o 操作立即启动并完成当前 IRP。
+[*DpcForIsr*](/windows-hardware/drivers/ddi/wdm/nc-wdm-io_dpc_routine)和 [*CustomDpc*](/windows-hardware/drivers/ddi/wdm/nc-wdm-kdeferred_routine)例程的主要职责是确保接下来的设备 i/o 操作立即启动并完成当前 IRP。
 
 任何 *DpcForIsr* 或 *CustomDpc* 例程执行的其他工作取决于驱动程序的设计和设备的特性。 例如， *DpcForIsr* 或 *CustomDpc* 例程还可以执行以下任一操作：
 
@@ -32,7 +31,7 @@ ms.locfileid: "89188210"
 
     有关处理 i/o 错误的详细信息，请参阅 [日志记录错误](logging-errors.md)。
 
--   如果驱动程序使用 [缓冲 i/o](methods-for-accessing-data-buffers.md)，或者 irp 指定设备控制操作，请在完成 irp 之前，传输从设备到系统缓冲区的数据从设备读入 ** &gt;AssociatedIrp.SystemBuffer** 。
+-   如果驱动程序使用 [缓冲 i/o](methods-for-accessing-data-buffers.md)，或者 irp 指定设备控制操作，请在完成 irp 之前，传输从设备到系统缓冲区的数据从设备读入 **&gt;AssociatedIrp.SystemBuffer** 。
 
 -   如果驱动程序使用 [直接 i/o](methods-for-accessing-data-buffers.md) 并且必须将大型传输拆分为较小的部分，请保存有关每个刚完成的部分传输操作的状态，计算下一个部分传输范围，并使用驱动程序提供的 [*SynchCritSection*](/windows-hardware/drivers/ddi/wdm/nc-wdm-ksynchronize_routine) 例程对设备进行下一次部分传输操作。
 
@@ -60,7 +59,7 @@ ms.locfileid: "89188210"
 
 -   如果驱动程序管理自己的 Irp 队列，则它的 *DpcForIsr* 或 *CustomDpc* 例程应立即通知驱动程序，因为可以安全地取消下一个 IRP 的排队并为下一个请求设置设备。
 
-*DpcForIsr*或*CustomDpc*例程必须调用**IoStartNextPacket**，否则，在可以启动下一个请求的设备 i/o 处理时，通知相应的驱动程序例程。 根据驱动程序及其设备，这可能会在 *DpcForIsr* 或 *CustomDpc* 例程完成当前 irp with [**IoCompleteRequest**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocompleterequest)之前发生，也可以在此例程完成当前 irp 并返回控制权之前立即发生。
+*DpcForIsr* 或 *CustomDpc* 例程必须调用 **IoStartNextPacket**，否则，在可以启动下一个请求的设备 i/o 处理时，通知相应的驱动程序例程。 根据驱动程序及其设备，这可能会在 *DpcForIsr* 或 *CustomDpc* 例程完成当前 irp with [**IoCompleteRequest**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocompleterequest)之前发生，也可以在此例程完成当前 irp 并返回控制权之前立即发生。
 
  
 

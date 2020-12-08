@@ -1,25 +1,24 @@
 ---
 title: KMDF 版本历史记录
-description: 本主题列出了 (KMDF) 的内核模式驱动程序框架版本、相应版本的 Windows 操作系统以及在每个版本中所做的更改。
-ms.assetid: b920937c-2e5d-48cc-81b5-1462f5d03d75
+description: 本主题列出了 Kernel-Mode Driver Framework 的版本 (KMDF) 、相应版本的 Windows 操作系统以及在每个版本中所做的更改。
 keywords:
 - 内核模式驱动程序 WDK KMDF、修订历史记录
 - KMDF WDK，修订历史记录
-- 内核模式驱动程序框架 WDK，修订历史记录
+- Kernel-Mode Driver Framework WDK，修订历史记录
 ms.date: 04/28/2020
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 1e31a4e5160c09f327d0f3db4ca5e01606128925
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 0049ecdc316bc405d9e31169f667c4564b79be18
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91734317"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96783709"
 ---
 # <a name="kmdf-version-history"></a>KMDF 版本历史记录
 
 
-本主题列出了 (KMDF) 的内核模式驱动程序框架版本、相应版本的 Windows 操作系统以及在每个版本中所做的更改。
+本主题列出了 Kernel-Mode Driver Framework 的版本 (KMDF) 、相应版本的 Windows 操作系统以及在每个版本中所做的更改。
 
 下表显示了 KMDF 库的发行历史记录：
 
@@ -34,13 +33,13 @@ ms.locfileid: "91734317"
 |1.19|Windows 10，版本 1607 WDK|Windows 10 版本 1607 (周年更新，Redstone 1) |Windows 10 版本1607、Windows Server 2016 和更高版本|
 |1.17|Windows 10，版本 1511 WDK|Windows 10 版本 1511 (11 月更新，阈值 2) |Windows 10 版本1511、Windows Server 2016 和更高版本|
 |1.15|Windows 10 WDK|Windows 10，版本 1507 (阈值 1) |Windows 10，版本1507，Windows Server 2016 及更高版本|
-|1.13|Windows 8.1 WDK|Windows 8.1|Windows 8.1 及更高版本|
-|1.11|Windows 8 WDK|Windows 8|Windows Vista 及更高版本|
-|1.9|Windows 7 WDK|Windows 7|Windows XP 及更高版本|
+|1.13|Windows 8.1 WDK|Windows 8.1|Windows 8.1 及更高版本|
+|1.11|Windows 8 WDK|Windows 8|Windows Vista 及更高版本|
+|1.9|Windows 7 WDK|Windows 7|Windows XP 及更高版本|
 |1.7|Windows Server 2008 WDK|Windows Vista Service Pack 1 (SP1) 、Windows Server 2008|Windows 2000 及更高版本|
-|1.5|Windows Vista WDK|Windows Vista|Windows 2000 及更高版本|
+|1.5|Windows Vista WDK|Windows Vista|Windows 2000 及更高版本|
 |1.1|仅下载|无|Windows 2000 及更高版本|
-|1.0|仅下载|无|Windows XP 及更高版本|
+|1.0|仅下载|无|Windows XP 及更高版本|
 
 可以将 Windows 驱动程序工具包与 Microsoft Visual Studio 2017 (WDK) 一起使用，以生成在 Windows 7 和更高版本上运行的驱动程序。
 
@@ -82,15 +81,15 @@ ms.locfileid: "91734317"
 
 ## <a name="kmdf-version-119"></a>KMDF 版本1.19
 
-* 添加的[ **WdfDmaTransactionSetSingleTransferRequirement**](/windows-hardware/drivers/ddi/wdfdmatransaction/nf-wdfdmatransaction-wdfdmatransactionsetsingletransferrequirement)
-* 已在[**WDF_DMA_ENABLER_CONFIG_FLAGS**](/windows-hardware/drivers/ddi/wdfdmaenabler/ne-wdfdmaenabler-_wdf_dma_enabler_config_flags)中添加**WDF_DMA_ENABLER_CONFIG_REQUIRE_SINGLE_TRANSFER**标志
-* 添加了**STATUS_WDF_TOO_MANY_TRANSFERS** [**WdfDmaTransactionInitialize**](/windows-hardware/drivers/ddi/wdfdmatransaction/nf-wdfdmatransaction-wdfdmatransactioninitialize)和[**WdfDmaTransactionDmaCompleted**](/windows-hardware/drivers/ddi/wdfdmatransaction/nf-wdfdmatransaction-wdfdmatransactiondmacompleted)的返回值
+* 添加的 [ **WdfDmaTransactionSetSingleTransferRequirement**](/windows-hardware/drivers/ddi/wdfdmatransaction/nf-wdfdmatransaction-wdfdmatransactionsetsingletransferrequirement)
+* 已在 [**WDF_DMA_ENABLER_CONFIG_FLAGS**](/windows-hardware/drivers/ddi/wdfdmaenabler/ne-wdfdmaenabler-_wdf_dma_enabler_config_flags)中添加 **WDF_DMA_ENABLER_CONFIG_REQUIRE_SINGLE_TRANSFER** 标志
+* 添加了 **STATUS_WDF_TOO_MANY_TRANSFERS** [**WdfDmaTransactionInitialize**](/windows-hardware/drivers/ddi/wdfdmatransaction/nf-wdfdmatransaction-wdfdmatransactioninitialize)和 [**WdfDmaTransactionDmaCompleted**](/windows-hardware/drivers/ddi/wdfdmatransaction/nf-wdfdmatransaction-wdfdmatransactiondmacompleted)的返回值
 * 已将单个传输输出的输出消息添加到 [**！ wdfkd. wdfdmatransaction**](../debugger/-wdfkd-wdfdmatransaction.md) 和 [**！ wdfkd。 wdfdmaenabler**](../debugger/-wdfkd-wdfdmaenabler.md)
 * 有关单个传输 DMA 的详细信息，请参阅 [使用单个传输 dma](using-single-transfer-dma.md)。
 
 ## <a name="kmdf-version-115"></a>KMDF 版本1.15
 
--   使用新的 [**WdfDeviceOpenDevicemapKey**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceopendevicemapkey) 方法，驱动程序可以访问 **HKEY \_ 本地 \_ 计算机 \\ 硬件 \\ DEVICEMAP**下的子项和值。
+-   使用新的 [**WdfDeviceOpenDevicemapKey**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceopendevicemapkey) 方法，驱动程序可以访问 **HKEY \_ 本地 \_ 计算机 \\ 硬件 \\ DEVICEMAP** 下的子项和值。
 
 ## <a name="kmdf-version-113"></a>KMDF 版本1.13
 
@@ -194,7 +193,7 @@ KMDF 版本1.13 添加了以下功能：
 ## <a name="kmdf-version-17"></a>KMDF 版本1。7
 
 
--   可以[**WdfDeviceEnqueueRequest**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceenqueuerequest)在 IRQL &lt; = 调度级别调用 WdfDeviceEnqueueRequest 方法 \_ 。
+-   可以 [**WdfDeviceEnqueueRequest**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceenqueuerequest)在 IRQL &lt; = 调度级别调用 WdfDeviceEnqueueRequest 方法 \_ 。
 
 -   如果指定的工作项已在工作项队列上，则可以调用 [**WdfWorkItemEnqueue**](/windows-hardware/drivers/ddi/wdfworkitem/nf-wdfworkitem-wdfworkitemenqueue) 方法。
 

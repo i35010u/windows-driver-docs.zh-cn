@@ -1,35 +1,34 @@
 ---
 title: 处理库
 description: 处理库
-ms.assetid: 8ae9ae3b-885d-4eb5-b55b-415edcfc041a
 keywords:
-- 库 WDK Static Driver Verifier、 处理
+- 库 WDK 静态驱动程序验证程序，处理
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c6b9e0aa920c28489b4638685868800fb29a5c35
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b4d668b243d63f0924cec0889d2faacf636934f6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327357"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96783301"
 ---
 # <a name="processing-a-library"></a>处理库
 
 
-在运行之前验证，处理驱动程序需要的库。
+在运行验证之前，请处理驱动程序所需的库。
 
- **若要处理库**
+ **处理库**
 
-1.  启动的 Static Driver Verifier。 从**驱动程序**Visual Studio 菜单中的单击**启动 Static Driver Verifier...**.
-2.  单击**库**选项卡，单击**添加库**添加库。
+1.  启动 "静态驱动程序验证程序"。 在 Visual Studio 中的 " **驱动程序** " 菜单中，单击 " **启动静态驱动程序验证程序 ...**"。
+2.  单击 " **库** " 选项卡，然后单击 " **添加库** " 以添加库。
 3.  导航到存储库的项目文件的目录。
-4.  对于您的驱动程序使用每个库重复这些步骤。
+4.  为驱动程序使用的每个库重复这些步骤。
 
-Static Driver Verifier 保存的缓存，您将添加的库。 库所需驱动程序和缓存中将用于验证。 库会处理具有相同的驱动程序使用的配置和平台设置。
+静态驱动程序验证程序保留你添加的库的缓存。 只有驱动程序所需的库和缓存中提供的库才会用于验证。 使用驱动程序使用的相同配置和平台设置来处理库。
 
-此外可以处理来自 Visual Studio 命令提示符窗口中使用的库**msbuild /t: / sdv p:"/ 输入 = / lib"** *libraryproject.vcxproj*选项。 有关命令选项的信息，请参阅[Static Driver Verifier 命令 (MSBuild)](-static-driver-verifier-commands--msbuild-.md)。
+还可以使用 **msbuild t：/sdv p： "/Inputs =/lib"** *libraryproject .Vcxproj* 选项处理 Visual Studio 命令提示符窗口中的库。 有关命令选项的信息，请参阅 [静态驱动程序验证程序命令 (MSBuild) ](-static-driver-verifier-commands--msbuild-.md)。
 
-如果您不能出于任何原因处理所需的库，您仍可以验证驱动程序使用它。 但是，结果是不太可靠的。
+如果出于任何原因无法处理所需的库，仍可以验证使用它的驱动程序。 但是，结果不太可靠。
 
  
 

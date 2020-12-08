@@ -1,7 +1,6 @@
 ---
 title: Bug 检查 0xA7 BAD_EXHANDLE
-description: BAD_EXHANDLE bug 检查具有 0x000000A7 值。 此 bug 检查表示内核模式句柄表检测到不一致的句柄表项状态。
-ms.assetid: 9f485894-2653-40d2-b5fe-56e46ba26c1b
+description: BAD_EXHANDLE bug 检查的值为0x000000A7。 此 bug 检查指示内核模式句柄表检测到不一致的句柄表项状态。
 keywords:
 - Bug 检查 0xA7 BAD_EXHANDLE
 - BAD_EXHANDLE
@@ -13,23 +12,23 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: fa61c47419f457a091fbd2659442aa285664c38f
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: f7d9fb6af9f22d9e4fbfd46004227d3e4e2ac06e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67519040"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96784155"
 ---
-# <a name="bug-check-0xa7-badexhandle"></a>Bug 检查 0xA7：错误\_EXHANDLE
+# <a name="bug-check-0xa7-bad_exhandle"></a>Bug 检查0xA7：错误的 \_ EXHANDLE
 
 
-错误\_EXHANDLE bug 检查的值为 0x000000A7。 此 bug 检查表示内核模式句柄表检测到不一致的句柄表项状态。
+错误的 \_ EXHANDLE bug 检查的值为0x000000A7。 此 bug 检查指示内核模式句柄表检测到不一致的句柄表项状态。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题面向程序员。 如果您是在使用计算机时收到蓝屏错误代码的客户，请参阅[蓝屏错误疑难解答](https://www.windows.com/stopcode)。
 
 
-## <a name="badexhandle-parameters"></a>错误\_EXHANDLE 参数
+## <a name="bad_exhandle-parameters"></a>错误的 \_ EXHANDLE 参数
 
 
 无

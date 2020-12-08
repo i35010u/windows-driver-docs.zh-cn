@@ -1,22 +1,21 @@
 ---
 title: 使用文本模式界面读取收到的短信
 description: 使用文本模式界面读取收到的短信
-ms.assetid: 5e095fc0-59bf-4ec4-96a3-efe6f4ae054f
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 640cafd6eecf72b8d19e1380389ed1f7a6bce780
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1df8a55532c24171696e1c631b12645314fd40ea
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63335334"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96782301"
 ---
 # <a name="read-received-sms-by-using-the-text-mode-interface"></a>使用文本模式界面读取收到的短信
 
 
-您可以选择是使用文本模式下读取接口，这是适用于简单纯文本短信，或 PDU 模式模式读取接口，这是适用于解码短信的高级控制。
+你可以选择使用文本模式读取界面，该界面适用于简单的纯文本短信，或 PDU 模式的 "读取接口"，它适用于对 SMS 消息解码的高级控制。
 
-收到的消息存储在移动宽带设备上的编码格式。 移动宽带短信平台支持解码纯文本形式收到的消息。 支持用于解码已收到的消息的字符集不支持对于发送的消息编码的字符集相同。
+在移动宽带设备上以编码格式存储接收的消息。 移动宽带 SMS 平台支持将收到的消息解码为纯文本。 支持对接收的消息进行解码的字符集与发送的编码消息所支持的字符集相同。
 
 下表列出了文本模式 API 支持的字符编码：
 
@@ -31,27 +30,27 @@ ms.locfileid: "63335334"
 <tr class="header">
 <th>网络类型</th>
 <th>字符集</th>
-<th>单个 SMS 段的字符数限制</th>
-<th>多个部分组成的 SMS 段的字符数限制</th>
+<th>单个短信段的字符限制</th>
+<th>多部分 SMS 段的字符限制</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><p>GSM</p></td>
-<td><p>GSM 7 位默认字母表和 GSM 7 位默认字母表扩展表</p></td>
+<td><p>GSM 7 位默认字母和 GSM 7 位默认字母表扩展表</p></td>
 <td><p>160</p></td>
 <td><p>142</p></td>
 </tr>
 <tr class="even">
 <td><p>CDMA</p></td>
-<td><p>7 位 ASCII</p></td>
-<td><p>160 （可能因网络）</p></td>
+<td><p>7位 ASCII</p></td>
+<td><p>160 (可能因网络) </p></td>
 <td><p></p></td>
 </tr>
 <tr class="odd">
 <td><p>CDMA</p></td>
 <td><p>Unicode</p></td>
-<td><p>70 （可能因网络）</p></td>
+<td><p>70 (可能因网络) </p></td>
 <td><p></p></td>
 </tr>
 </tbody>
@@ -59,7 +58,7 @@ ms.locfileid: "63335334"
 
  
 
-**JavaScript 代码示例读取已接收 SMS 消息使用文本模式界面**
+**用于读取使用文本模式接口接收到的 SMS 消息的 JavaScript 代码示例**
 
 ``` syntax
 try
@@ -92,14 +91,15 @@ catch (err)
 }
 ```
 
-**请注意**   SMS 客户端应用程序可以使用多个段的长时间消息并重新构造完整的消息的连接的 Windows 提供的已解码的细分信息。 有关已分段的 SMS 消息的详细信息，请参阅[Windows 自动段长消息](windows-automatically-segments-long-messages.md)。
+**注意**  
+SMS 客户端应用程序可以使用 Windows 提供的已解码分段信息连接长消息的多个段，并重新构造完整的消息。 有关分段短信消息的详细信息，请参阅 [Windows 自动段长消息](windows-automatically-segments-long-messages.md)。
 
  
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
-[开发 SMS 应用程序](developing-sms-apps.md)
+[开发短信应用](developing-sms-apps.md)
 
  
 

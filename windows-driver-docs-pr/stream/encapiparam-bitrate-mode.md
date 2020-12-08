@@ -1,15 +1,14 @@
 ---
 title: ENCAPIPARAM \_ 比特率 \_ 模式
 description: ENCAPIPARAM \_ 比特率 \_ 模式
-ms.assetid: d7e82483-bee3-44bd-9066-c2877130a1f9
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ebddf4615ac29b94238df4001106b0804be8cac0
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 1a6d754b5ab2234c279325378213b350538ba4f0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89187416"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96782059"
 ---
 # <a name="encapiparam_bitrate_mode"></a>ENCAPIPARAM \_ 比特率 \_ 模式
 
@@ -49,7 +48,7 @@ ENCAPIPARAM \_ 比特率属性用于描述设备的编码模式。
 
  
 
- (操作数据) 的属性值是 \_ 在[**KSPROPERTY \_ 集**](/windows-hardware/drivers/ddi/ks/ns-ks-ksproperty_set)结构的**PROPERTYITEM**成员中指定的 VT I4 值，其中包含来自[**VIDEOENCODER \_ 比特率 \_ 模式**](/windows-hardware/drivers/ddi/ksmedia/ne-ksmedia-videoencoder_bitrate_mode)枚举的不同支持值列表。
+ (操作数据) 的属性值是 \_ 在 [**KSPROPERTY \_ 集**](/windows-hardware/drivers/ddi/ks/ns-ks-ksproperty_set)结构的 **PROPERTYITEM** 成员中指定的 VT I4 值，其中包含来自 [**VIDEOENCODER \_ 比特率 \_ 模式**](/windows-hardware/drivers/ddi/ksmedia/ne-ksmedia-videoencoder_bitrate_mode)枚举的不同支持值列表。
 
 ### <a name="comments"></a>注释
 
@@ -59,7 +58,7 @@ ENCAPIPARAM \_ 比特率属性用于描述设备的编码模式。
 
 ### <a name="requirements"></a>要求
 
-**标头：** 在 *ksmedia*中声明。 包括 *ksmedia*。
+**标头：** 在 *ksmedia* 中声明。 包括 *ksmedia*。
 
 ### <a name="see-also"></a>另请参阅
 

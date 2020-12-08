@@ -1,15 +1,14 @@
 ---
 title: 设备元数据错误代码
 description: 设备元数据错误代码
-ms.assetid: 7ca3b9d3-8e7d-4421-affa-bddea2d4c262
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cf8e4e50e173b91a1c9f7fc584b675fb1ecd26ae
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: ddb1e9a66c38f22219136393789725dcf825f3d7
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107300"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96782851"
 ---
 # <a name="device-metadata-error-codes"></a>设备元数据错误代码
 

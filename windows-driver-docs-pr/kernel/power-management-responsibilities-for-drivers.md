@@ -1,7 +1,6 @@
 ---
 title: 驱动程序的电源管理责任
 description: 驱动程序的电源管理责任
-ms.assetid: c42a5b95-76f3-4975-b452-4858bbbe532e
 keywords:
 - 电源管理 WDK 内核，驱动程序职责
 - 驱动程序电源责任 WDk 内核
@@ -13,12 +12,12 @@ keywords:
 - 设备电源状态 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 45628a53230b61b6d639f88ae13c8f18bb897dba
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 0c7befc81bb7b00d85cad699b2f844c1483b8cf4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89184427"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96783879"
 ---
 # <a name="power-management-responsibilities-for-drivers"></a>驱动程序的电源管理责任
 

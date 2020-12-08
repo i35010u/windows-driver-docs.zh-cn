@@ -1,7 +1,6 @@
 ---
 title: 管理对象的生存期
 description: 管理对象的生存期
-ms.assetid: 55ad8133-a70a-462f-87cd-6aeaffb0aec8
 keywords:
 - UMDF 对象 WDK，生存期
 - framework 对象 WDK UMDF，生存期
@@ -9,12 +8,12 @@ keywords:
 - 回叫对象 WDK UMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ce70bb5cb20ece7bfa36e6a5468befe46614309a
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 1d9b27384180fde879bc85719b499f3b416981c1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89187205"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96783695"
 ---
 # <a name="managing-the-lifetime-of-objects"></a>管理对象的生存期
 
@@ -23,7 +22,7 @@ ms.locfileid: "89187205"
 
 UMDF 使用引用计数方案来管理 [回调对象](creating-callback-objects.md) 和 [框架对象](framework-objects.md)的生存期。
 
-## <a name="managing-references-to-driver-supplied-callback-objects"></a>管理对驱动程序提供的回调对象的引用
+## <a name="managing-references-to-driver-supplied-callback-objects"></a>管理对 Driver-Supplied 回调对象的引用
 
 
 在大多数情况下，驱动程序不需要保留对回调对象的引用。 如果回调对象接口的方法只由框架以及其生存期依赖于回调对象和回调对象的成对框架对象的对象调用，则驱动程序不必保留引用。 换句话说，驱动程序或框架可以安全地调用对象层次结构中较高的对象接口的方法。

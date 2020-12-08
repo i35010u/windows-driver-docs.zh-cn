@@ -1,19 +1,18 @@
 ---
 title: 无法验证对象句柄
 description: 无法验证对象句柄
-ms.assetid: 67d52ca8-4e86-4fe2-a541-f7a0e4040b93
 keywords:
 - 可靠性 WDK 内核，对象句柄验证
 - 验证失败的 WDK 内核
 - 对象处理 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 455210e773615cb844cac4ab95a14f02d1b00bb6
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: f3b13d56b8c4f54a74a5bdde37307bd2052deeaa
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89189059"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96783903"
 ---
 # <a name="failure-to-validate-object-handles"></a>无法验证对象句柄
 
@@ -64,7 +63,7 @@ ms.locfileid: "89189059"
    if ( AcpEndpoint->Type != BlockTypeEndpoint ) 
 ```
 
-尽管 **ObReferenceObjectByHandle** 返回指向文件对象的指针，但驱动程序无法保证指针引用它所需的文件对象。 在这种情况下，驱动程序应在访问 **AcpEndpointFileObject- &gt; FsContext**上的特定于驱动程序的数据之前验证指针。
+尽管 **ObReferenceObjectByHandle** 返回指向文件对象的指针，但驱动程序无法保证指针引用它所需的文件对象。 在这种情况下，驱动程序应在访问 **AcpEndpointFileObject- &gt; FsContext** 上的特定于驱动程序的数据之前验证指针。
 
 若要避免此类问题，驱动程序应检查是否存在有效数据，如下所示：
 

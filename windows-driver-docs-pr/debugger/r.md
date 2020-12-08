@@ -1,15 +1,14 @@
 ---
-title: R （Windows 调试器术语表）
+title: 'R (Windows 调试器词汇表) '
 description: 词汇表 page-R
-ms.assetid: 77bd1a66-39b3-4990-801e-4192a6e9cf47
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ee55b85f9cb6a48a95cd8c0ac63d599c4de9c1f2
-ms.sourcegitcommit: 48c4b6d3a504583d2f588ed892a4a281d4b58301
+ms.openlocfilehash: bfb95e5139c1acc1e33ad47f7dec87068c95f106
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70387074"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96784147"
 ---
 # <a name="r"></a>R
 
@@ -31,7 +30,7 @@ CPU 中速度非常快的临时内存位置。
 <span id="register_context"></span><span id="REGISTER_CONTEXT"></span>**注册上下文**  
 包含处理器所有寄存器的完整处理器状态。
 
-有关详细信息，请参阅[**注册上下文**](-thread--set-register-context-.md)。
+有关详细信息，请参阅 [**注册上下文**](-thread--set-register-context-.md)。
 
 <span id="retail_build"></span><span id="RETAIL_BUILD"></span>**零售版本**  
 请参阅免费构建。

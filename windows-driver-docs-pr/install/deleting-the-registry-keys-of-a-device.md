@@ -1,25 +1,24 @@
 ---
 title: 删除设备的注册表项
 description: 删除设备的注册表项
-ms.assetid: BA7AB3B4-9751-4e53-98AD-2B920F7223A1
 keywords:
 - 注册表 WDK 设备安装，删除设备的注册表项
 - 删除注册表项 WDK 设备安装
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b55dd231517909a9a2bff4adcc59e8620fbe7164
-ms.sourcegitcommit: a44ade167cdfb541cf1818e9f9e3726f23f90b66
+ms.openlocfilehash: 38d80362f4a27a20e9bd1b30b63261a9792880e6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94361491"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96782905"
 ---
 # <a name="deleting-the-registry-keys-of-a-device"></a>删除设备的注册表项
 
 
 由于以下原因，不应使用 [**SetupDiDeleteDevRegKey**](/windows/win32/api/setupapi/nf-setupapi-setupdideletedevregkey) 来删除设备的 *软件密钥* 或 *硬件密钥* ：
 
--   [**SetupDiDeleteDevRegKey**](/windows/win32/api/setupapi/nf-setupapi-setupdideletedevregkey) 删除注册表项中的所有自定义设置。 这包括：
+-   [**SetupDiDeleteDevRegKey**](/windows/win32/api/setupapi/nf-setupapi-setupdideletedevregkey) 删除注册表项中的所有自定义设置。 其中包括：
 
     -   在安装过程中指定的设置。
 

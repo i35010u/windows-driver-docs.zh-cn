@@ -1,7 +1,6 @@
 ---
 title: 编写 Bug 检查原因回调例程
 description: 编写 Bug 检查回调例程
-ms.assetid: 62aefe67-e197-4c45-b994-19bd7369dbc1
 keywords:
 - bug 检查回调例程 WDK 内核
 - 回调例程 WDK bug 检查
@@ -10,12 +9,12 @@ keywords:
 - BugCheckCallback
 ms.date: 05/02/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 588118983d2573ef90b6bc1013ac52a0723e09fd
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 5de8c356cd0e2e9d5a06570a185dc677c6208091
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103778"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96782639"
 ---
 # <a name="writing-a-bug-check-reason-callback-routine"></a>编写 Bug 检查原因回调例程
 
@@ -51,11 +50,11 @@ Bug 检查回调例程不能：
 
 Bug 检查回调例程保证在不中断的情况下运行，因此无需同步。  (如果 bug 检查例程确实使用任何同步机制，则系统会死锁。 ) 
 
-驱动程序的 bug 检查回调例程可以安全地使用**读取 \_ 端口 \_ <em>xxx</em>**，**读取 \_ register \_ <em>xxx</em>**，**写入 \_ 端口 \_ <em>xxx</em>**，并**写入 \_ register \_ <em>xxx</em> **例程以与驱动程序的设备进行通信。 有关这些例程的信息 (，请参阅 [硬件抽象层例程](/previous-versions/windows/hardware/drivers/ff546644(v=vs.85))。 ) 
+驱动程序的 bug 检查回调例程可以安全地使用 **读取 \_ 端口 \_ <em>xxx</em>**，**读取 \_ register \_ <em>xxx</em>**，**写入 \_ 端口 \_ <em>xxx</em>**，并 **写入 \_ register \_ <em>xxx</em>** 例程以与驱动程序的设备进行通信。 有关这些例程的信息 (，请参阅 [硬件抽象层例程](/previous-versions/windows/hardware/drivers/ff546644(v=vs.85))。 ) 
 
 ## <a name="implementing-a-kbcallbackaddpages-callback-routine"></a>实现 KbCallbackAddPages 回调例程
 
-内核模式驱动程序可以实现<i>KbCallbackAddPages</i>类型的[*KBUGCHECK_REASON_CALLBACK_ROUTINE*](/windows-hardware/drivers/ddi/wdm/nc-wdm-kbugcheck_reason_callback_routine)回调函数，以便在发生 bug 检查时将一个或多个数据页添加到故障转储文件中。 若要在操作系统中注册此例程，驱动程序将调用 <b><a href="/windows-hardware/drivers/ddi/wdm/nf-wdm-keregisterbugcheckreasoncallback">KeRegisterBugCheckReasonCallback</a></b> 例程。 卸载驱动程序之前，必须调用 <b><a href="/windows-hardware/drivers/ddi/wdm/nf-wdm-kederegisterbugcheckreasoncallback">KeDeregisterBugCheckReasonCallback</a></b> 例程以删除注册。
+内核模式驱动程序可以实现 <i>KbCallbackAddPages</i>类型的 [*KBUGCHECK_REASON_CALLBACK_ROUTINE*](/windows-hardware/drivers/ddi/wdm/nc-wdm-kbugcheck_reason_callback_routine)回调函数，以便在发生 bug 检查时将一个或多个数据页添加到故障转储文件中。 若要在操作系统中注册此例程，驱动程序将调用 <b><a href="/windows-hardware/drivers/ddi/wdm/nf-wdm-keregisterbugcheckreasoncallback">KeRegisterBugCheckReasonCallback</a></b> 例程。 卸载驱动程序之前，必须调用 <b><a href="/windows-hardware/drivers/ddi/wdm/nf-wdm-kederegisterbugcheckreasoncallback">KeDeregisterBugCheckReasonCallback</a></b> 例程以删除注册。
 
 从 Windows 8 开始，在<a href="/windows-hardware/drivers/debugger/kernel-memory-dump">内核内存转储</a>或<a href="/windows-hardware/drivers/debugger/complete-memory-dump">完整内存转储</a>期间调用已注册的<i>KbCallbackAddPages</i>例程。 在较早版本的 Windows 中，在内核内存转储期间调用已注册的 <i>KbCallbackAddPages</i> 例程，而不是在完整内存转储过程中调用。 默认情况下，内核内存转储只包含 Windows 内核在发生 bug 检查时使用的物理页面，而完整的内存转储包含 Windows 使用的所有物理内存。 默认情况下，完全内存转储不包括平台固件使用的物理内存。
 
@@ -73,7 +72,7 @@ Bug 检查回调例程保证在不中断的情况下运行，因此无需同步�
 
 ## <a name="implementing-a-kbcallbackdumpio-callback-routine"></a>实现 KbCallbackDumpIo 回调例程
 
-内核模式驱动程序可以实现<i>KbCallbackDumpIo</i>类型的[*KBUGCHECK_REASON_CALLBACK_ROUTINE*](/windows-hardware/drivers/ddi/wdm/nc-wdm-kbugcheck_reason_callback_routine)回调函数，以便在每次将数据写入故障转储文件时执行工作。 系统将在 <i>ReasonSpecificData</i> 参数中传递一个指向 [**KBUGCHECK_DUMP_IO**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_kbugcheck_dump_io) 结构的指针。 <b>缓冲区</b>成员指向当前数据， <b>BufferLength</b>成员指定其长度。 <b>类型</b>成员指示当前写入的数据类型，例如转储文件头信息、内存状态或驱动程序提供的数据。 有关可能的信息类型的说明，请参阅 <b><a href="/windows-hardware/drivers/ddi/wdm/ne-wdm-_kbugcheck_dump_io_type">KBUGCHECK_DUMP_IO_TYPE</a></b> 枚举。
+内核模式驱动程序可以实现 <i>KbCallbackDumpIo</i>类型的 [*KBUGCHECK_REASON_CALLBACK_ROUTINE*](/windows-hardware/drivers/ddi/wdm/nc-wdm-kbugcheck_reason_callback_routine)回调函数，以便在每次将数据写入故障转储文件时执行工作。 系统将在 <i>ReasonSpecificData</i> 参数中传递一个指向 [**KBUGCHECK_DUMP_IO**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_kbugcheck_dump_io) 结构的指针。 <b>缓冲区</b>成员指向当前数据， <b>BufferLength</b>成员指定其长度。 <b>类型</b>成员指示当前写入的数据类型，例如转储文件头信息、内存状态或驱动程序提供的数据。 有关可能的信息类型的说明，请参阅 <b><a href="/windows-hardware/drivers/ddi/wdm/ne-wdm-_kbugcheck_dump_io_type">KBUGCHECK_DUMP_IO_TYPE</a></b> 枚举。
 
 系统可以按顺序或按顺序写入故障转储文件。 如果系统按顺序写入故障转储文件，则<i>ReasonSpecificData</i>的<b>Offset</b>成员为-1;否则，<b>偏移量</b>设置为故障转储文件中的当前偏移量（以字节为单位）。
 
@@ -87,7 +86,7 @@ Bug 检查回调例程保证在不中断的情况下运行，因此无需同步�
 
 ## <a name="implementing-a-kbcallbacksecondarydumpdata-callback-routine"></a>实现 KbCallbackSecondaryDumpData 回调例程
 
-内核模式驱动程序可以实现<i>KbCallbackSecondaryDumpData</i>类型的[*KBUGCHECK_REASON_CALLBACK_ROUTINE*](/windows-hardware/drivers/ddi/wdm/nc-wdm-kbugcheck_reason_callback_routine)回调函数，以提供要追加到故障转储文件的数据。
+内核模式驱动程序可以实现 <i>KbCallbackSecondaryDumpData</i>类型的 [*KBUGCHECK_REASON_CALLBACK_ROUTINE*](/windows-hardware/drivers/ddi/wdm/nc-wdm-kbugcheck_reason_callback_routine)回调函数，以提供要追加到故障转储文件的数据。
 
 系统将设置<b>InBuffer</b>、 <b>InBufferLength</b>、 <b>OutBuffer</b>和<b>MaximumAllowed</b>成员作为<i>ReasonSpecificData</i>指向的<b><a href="/windows-hardware/drivers/ddi/wdm/ns-wdm-_kbugcheck_secondary_dump_data">KBUGCHECK_SECONDARY_DUMP_DATA</a></b>结构。 <b>MaximumAllowed</b>成员指定例程可以提供的最大转储数据量。
 
@@ -110,7 +109,7 @@ KBUGCHECK_SECONDARY_DUMP_DATA 的 <b>InBuffer</b> 成员指向用于例程的小
 
 ## <a name="implementing-a-kbcallbacktriagedumpdata-callback-routine"></a>实现 KbCallbackTriageDumpData 回调例程
 
-从 Windows 10 版本1809和 Windows Server 2019 开始，内核模式驱动程序可以实现*KbCallbackTriageDumpData*类型的[*KBUGCHECK_REASON_CALLBACK_ROUTINE*](/windows-hardware/drivers/ddi/wdm/nc-wdm-kbugcheck_reason_callback_routine)回调函数，将虚拟内存范围添加到划分小型转储文件。 系统将在 <i>ReasonSpecificData</i> 参数中传递一个指向描述转储数据的 [**KBUGCHECK_TRIAGE_DUMP_DATA**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_kbugcheck_triage_dump_data) 结构的指针。
+从 Windows 10 版本1809和 Windows Server 2019 开始，内核模式驱动程序可以实现 *KbCallbackTriageDumpData* 类型的 [*KBUGCHECK_REASON_CALLBACK_ROUTINE*](/windows-hardware/drivers/ddi/wdm/nc-wdm-kbugcheck_reason_callback_routine)回调函数，将虚拟内存范围添加到划分小型转储文件。 系统将在 <i>ReasonSpecificData</i> 参数中传递一个指向描述转储数据的 [**KBUGCHECK_TRIAGE_DUMP_DATA**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_kbugcheck_triage_dump_data) 结构的指针。
 
 在下面的示例中，驱动程序配置会审转储数组，然后注册回调的最小实现：
 

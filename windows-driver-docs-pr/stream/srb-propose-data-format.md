@@ -1,7 +1,6 @@
 ---
 title: SRB \_ 建议 \_ 数据 \_ 格式
 description: SRB \_ 建议 \_ 数据 \_ 格式
-ms.assetid: a15ec7cc-7351-4a63-ad35-e59610205913
 keywords:
 - SRB_PROPOSE_DATA_FORMAT 流媒体设备
 topic_type:
@@ -12,12 +11,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fad0273f50ae027ef163df5c9132a7f5a34d8147
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 92cdaf4602545497ddf67704dbee78715d6380da
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89186321"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96782013"
 ---
 # <a name="srb_propose_data_format"></a>SRB \_ 建议 \_ 数据 \_ 格式
 
@@ -43,13 +42,13 @@ ms.locfileid: "89186321"
 <span id="STATUS_IO_DEVICE_ERROR"></span><span id="status_io_device_error"></span>状态 \_ IO \_ 设备 \_ 错误  
 指示出现硬件故障。
 
-### <a name="comments"></a>说明
+### <a name="comments"></a>注释
 
-当类驱动程序收到 [**KSPROPERTY \_ 连接 \_ PROPOSEDATAFORMAT**](ksproperty-connection-proposedataformat.md) 请求时，它将使用此 SRB 代码来确定是否支持所建议的格式。 类驱动程序在**CommandData**中传递建议的数据格式。*PSrb*指向的**OpenFormat**成员。 *PSrb*指针指向[**HW \_ 流 \_ 请求 \_ 块**](/windows-hardware/drivers/ddi/strmini/ns-strmini-_hw_stream_request_block)结构。
+当类驱动程序收到 [**KSPROPERTY \_ 连接 \_ PROPOSEDATAFORMAT**](ksproperty-connection-proposedataformat.md) 请求时，它将使用此 SRB 代码来确定是否支持所建议的格式。 类驱动程序在 **CommandData** 中传递建议的数据格式。*PSrb* 指向的 **OpenFormat** 成员。 *PSrb* 指针指向 [**HW \_ 流 \_ 请求 \_ 块**](/windows-hardware/drivers/ddi/strmini/ns-strmini-_hw_stream_request_block)结构。
 
-如果微型驱动程序不支持数据格式，则会将*pSrb* - &gt; **状态**设置为 \_ 不支持的状态 \_ 。 如果微型驱动程序能够将流转换为指定的格式，则会将此字段设置为状态 " \_ 成功"。
+如果微型驱动程序不支持数据格式，则会将 *pSrb* - &gt; **状态** 设置为 \_ 不支持的状态 \_ 。 如果微型驱动程序能够将流转换为指定的格式，则会将此字段设置为状态 " \_ 成功"。
 
-如果微型驱动程序能够接受新格式，则稍后的类驱动程序可以将微型驱动程序设置为格式更改，该更改由[**KSSTREAM \_ 标头**](/windows-hardware/drivers/ddi/ks/ns-ks-ksstream_header)结构中的**OptionsFlags**成员指示。
+如果微型驱动程序能够接受新格式，则稍后的类驱动程序可以将微型驱动程序设置为格式更改，该更改由 [**KSSTREAM \_ 标头**](/windows-hardware/drivers/ddi/ks/ns-ks-ksstream_header)结构中的 **OptionsFlags** 成员指示。
 
 ## <a name="see-also"></a>请参阅
 

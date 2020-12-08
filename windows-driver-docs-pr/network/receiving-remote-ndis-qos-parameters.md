@@ -1,15 +1,14 @@
 ---
 title: 接收远程 NDIS QoS 参数
 description: 接收远程 NDIS QoS 参数
-ms.assetid: 775FA8D7-ECF7-4F94-8958-C51D74243C3A
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1b49d2423a3fc605d46f74ca5e24f2cb87a4b57d
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: b0cc5e23bf791cf264690fb7161783a39be37917
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89216934"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96782173"
 ---
 # <a name="receiving-remote-ndis-qos-parameters"></a>接收远程 NDIS QoS 参数
 

@@ -1,7 +1,6 @@
 ---
 title: DEVPKEY_Device_BusTypeGuid
 description: DEVPKEY_Device_BusTypeGuid
-ms.assetid: a68e7ff2-9afa-48d5-9764-3c400561024e
 keywords:
 - DEVPKEY_Device_BusTypeGuid 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: b2beb90cfd7c717862ae13a4a97f8165d1204511
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: bd8ebd9cb26c82f94275868c10258800043c2cc8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90715932"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96782817"
 ---
 # <a name="devpkey_device_bustypeguid"></a>DEVPKEY_Device_BusTypeGuid
 
@@ -66,7 +65,7 @@ DEVPKEY_Device_BusTypeGuid 设备属性表示标识设备实例的总线类型�
 <a name="remarks"></a>备注
 -------
 
-Windows 将 DEVPKEY_Device_BusTypeGuid 的值设置为总线驱动程序为响应[**IRP_MN_QUERY_BUS_INFORMATION**](../kernel/irp-mn-query-bus-information.md)请求而返回的[**PNP_BUS_INFORMATION**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_pnp_bus_information)结构的 BusTypeGuid 成员的值。
+Windows 将 DEVPKEY_Device_BusTypeGuid 的值设置为总线驱动程序为响应 [**IRP_MN_QUERY_BUS_INFORMATION**](../kernel/irp-mn-query-bus-information.md)请求而返回的 [**PNP_BUS_INFORMATION**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_pnp_bus_information)结构的 BusTypeGuid 成员的值。
 
 可以调用 [**SetupDiGetDeviceProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdigetdevicepropertyw) 来检索 DEVPKEY_Device_BusTypeGuid 的值。
 

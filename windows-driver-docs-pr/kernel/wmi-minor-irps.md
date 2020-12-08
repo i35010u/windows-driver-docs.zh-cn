@@ -2,14 +2,13 @@
 title: WMI 次要 IRP
 description: WMI 次要 IRP
 ms.date: 08/12/2017
-ms.assetid: 5788294f-2145-4381-9b06-3b138b2d26df
 ms.localizationpriority: medium
-ms.openlocfilehash: d998ab77e905138e15ba83c6a32862a3b205b8c2
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 6f31cb86a28295099645fd53758eca02080c9ce9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89190021"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96782663"
 ---
 # <a name="wmi-minor-irps"></a>WMI 次要 IRP
 

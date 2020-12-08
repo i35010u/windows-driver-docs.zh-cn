@@ -1,15 +1,14 @@
 ---
 title: Windows 内核模式 WMI 库
 description: Windows 内核模式 WMI 库
-ms.assetid: ca981f38-8f3b-48cc-969f-ce53b85bba20
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 75c2219afc56dec639e6fa0b5a24de535dc7ee54
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 089ceb9527cc6a2209d0713c09c11cb923fa7840
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89193069"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96782699"
 ---
 # <a name="windows-kernel-mode-wmi-library"></a>Windows 内核模式 WMI 库
 

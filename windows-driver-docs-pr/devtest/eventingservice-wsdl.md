@@ -1,7 +1,6 @@
 ---
 title: EventingService WSDL
 description: EventingService WSDL
-ms.assetid: 2071f4db-6a5a-4e9f-b53f-f50d4d99772a
 keywords:
 - WSDBIT 工具 WDK，WSDL
 - WSDAPI 基本互操作性工具 WDK、WSDL
@@ -10,12 +9,12 @@ keywords:
 - WSDAPI 基本互操作性工具 WDK，服务
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5652534dff1eb8fa45c6ef86b3689845f738cdf5
-ms.sourcegitcommit: 80e40a2d0434c0c2904e6fe31626ca643de3ea00
+ms.openlocfilehash: bb8d4c092b03acee3fdf599bcf8f0b1fbe78cf73
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/21/2020
-ms.locfileid: "88714595"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96784043"
 ---
 # <a name="eventingservice-wsdl"></a>EventingService WSDL
 

@@ -1,22 +1,21 @@
 ---
 title: 编写 WDM 驱动程序
 description: 编写 WDM 驱动程序
-ms.assetid: 379305f0-3caa-4c8d-add5-17e8c83f2429
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 84642d32a9220e62628736963bad272d8b3b9f87
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: 7731ed91094f84ad08f29edf5cbae6e85d2a03da
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89403430"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96782567"
 ---
 # <a name="writing-wdm-drivers"></a>编写 WDM 驱动程序
 
 
 本部分讨论 Microsoft Windows 驱动模型 (WDM) 体系结构。 此体系结构在 Windows 2000 中启动，作为对以前的 Windows NT 设备驱动程序的增强功能。
 
-**注意**   不支持 Windows 2000 之前版本的基于 Windows NT 的操作系统的驱动程序，你应该更新这些驱动程序。 对于非基于 Windows NT 的操作系统 (（如 Windows 98) ），WDM 体系结构不支持驱动程序，应重写此类驱动程序。
+**注意**  不支持 Windows 2000 之前版本的基于 Windows NT 的操作系统的驱动程序，你应该更新这些驱动程序。 对于非基于 Windows NT 的操作系统 (（如 Windows 98) ），WDM 体系结构不支持驱动程序，应重写此类驱动程序。
 
  
 
@@ -28,9 +27,9 @@ ms.locfileid: "89403430"
 
 -   [内核模式驱动程序组件](kernel-mode-driver-components.md) 描述必须实现哪些例程才能具有功能驱动程序，哪些例程是可选的。
 
-    *设备驱动程序*是必须集成到操作系统中的一组软件代码。 若要完成此集成，必须在驱动程序中编写一组处理程序例程来处理来自操作系统的调用。 这些例程可以是简单的函数调用，但其中的许多例程实现 (Irp) 处理 *i/o 请求数据包* ，从而促进驱动程序和操作系统之间的通信。
+    *设备驱动程序* 是必须集成到操作系统中的一组软件代码。 若要完成此集成，必须在驱动程序中编写一组处理程序例程来处理来自操作系统的调用。 这些例程可以是简单的函数调用，但其中的许多例程实现 (Irp) 处理 *i/o 请求数据包* ，从而促进驱动程序和操作系统之间的通信。
 
-**注意**   WDM 驱动程序还可以使用 Windows 驱动程序框架 (WDF) 库，使设备驱动程序的某些部分更易于编写。 具体而言，内核模式驱动程序可以使用内核模式驱动程序框架 (KMDF) ，这是 WDF 的一部分。 有关内核模式驱动程序的 KMDF 的详细信息，请参阅 [内核模式驱动程序框架概述](../wdf/index.md)。 请注意，KMDF 不会替换 WDM。 你仍必须了解 WDM 的许多部分，以编写 KMDF 驱动程序。
+**注意**  WDM 驱动程序还可以使用 Windows 驱动程序框架 (WDF) 库，使设备驱动程序的某些部分更易于编写。 具体而言，内核模式驱动程序可以使用 Kernel-Mode Driver Framework (KMDF) ，这是一个 WDF 的组成部分。 有关内核模式驱动程序的 KMDF 的详细信息，请参阅 [内核模式驱动程序框架概述](../wdf/index.md)。 请注意，KMDF 不会替换 WDM。 你仍必须了解 WDM 的许多部分，以编写 KMDF 驱动程序。
 
  
 

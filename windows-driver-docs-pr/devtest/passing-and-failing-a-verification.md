@@ -1,46 +1,45 @@
 ---
 title: 通过和未通过验证
 description: 通过和未通过验证
-ms.assetid: 2639358b-eb6a-49b7-b23a-877a452917dc
 keywords:
 - 静态驱动程序验证程序 WDK，验证结果
 - StaticDV WDK，验证结果
 - SDV WDK，验证结果
-- 结果 WDK Static Driver Verifier
-- 已通过的验证 WDK Static Driver Verifier
-- 验证失败的 WDK Static Driver Verifier
-- 无结论验证 WDK Static Driver Verifier
+- 结果 WDK 静态驱动程序验证程序
+- 已通过验证 WDK 静态驱动程序验证程序
+- 验证失败的 WDK 静态驱动程序验证程序
+- 无结论验证 WDK 静态驱动程序验证程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a840d3ddf31d7fa1ee33a997ce09e196eb6d9d3a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 211db7d4794f899cad33849f8d45bf2100fa5727
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63356344"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96784005"
 ---
 # <a name="passing-and-failing-a-verification"></a>通过和未通过验证
 
 
-SDV 验证规则的具有三个基本的结果：
+规则的 SDV 验证具有三个基本结果：
 
--   该驱动程序*传递*验证。
+-   驱动程序 *通过* 验证。
 
--   该驱动程序*失败*验证。
+-   驱动程序 *无法* 验证。
 
--   结果是*无结论*。
+-   结果没有 *结论*。
 
-之前得出任何结论根据这些结果，应了解每个结果，并注意它们所需要的许多限制。 不应判断为驱动程序的最终还是已完成评估任何结果。
+根据这些结果绘制任何结论之前，您应了解每个结果，并注意它们所需要的众多资格。 不应将任何结果判断为驱动程序的最终或完整的计算结果。
 
-### <a name="span-idverificationresultsspanspan-idverificationresultsspanverification-results"></a><span id="verification_results"></span><span id="VERIFICATION_RESULTS"></span>验证结果
+### <a name="span-idverification_resultsspanspan-idverification_resultsspanverification-results"></a><span id="verification_results"></span><span id="VERIFICATION_RESULTS"></span>验证结果
 
-驱动程序*传递*SDV 验证时，浏览在驱动程序中的所有相关的执行路径之后的代码，SDV[验证引擎](verification-engine.md)不能证明该驱动程序违反了所选的规则以进行验证。
+当探索驱动程序代码中的所有相关执行路径之后，驱动程序将 *传递* SDV 验证，SDV [验证引擎](verification-engine.md) 无法证明驱动程序违反了所选的验证规则。
 
-驱动程序*失败*SDV 验证引擎证明该驱动程序至少一次违反规则时验证。 冲突被称为*脱离*。 如果该驱动程序不止一次违反规则，SDV 报告*多个缺陷*。
+当 SDV 验证引擎证实驱动程序违反规则至少一次时，驱动程序将 *无法* 验证。 冲突称为 " *缺陷*"。 如果驱动程序多次违反了规则，SDV 会报告 *多个缺陷*。
 
-验证是*无结论*如果因超时而在完成之前终止 (**超时**结果) 或内存不足 ( **Spaceout**结果)，或当 SDV无法访问一个通过或失败的结论 (**不确定**结果)。 此外，SDV 可能遇到了阻止其完成其任务的内部工具错误。 (有关结果的详细信息，请参阅[解释静态驱动程序验证工具结果](interpreting-static-driver-verifier-results.md)。)
+如果验证在完成前终止，因为超时 (**超时** 结果) 或内存不足 (**Spaceout** 结果) ，或 SDV 未能达到不 **确定** 的结果 (，则验证没有 *结论*。 此外，SDV 可能遇到了阻止其完成其任务的内部工具错误。  (有关结果的详细信息，请参阅 [解释静态驱动程序验证程序结果](interpreting-static-driver-verifier-results.md)。 ) 
 
-当规则不适用于该驱动程序，例如，如果该驱动程序不会使验证规则的设备驱动程序接口的使用，SDV 报告的规则是**不适用**。
+当规则不适用于驱动程序时，例如，如果驱动程序未使用该规则验证的设备驱动程序接口，则 SDV 将报告该规则 **不适用**。
 
  
 

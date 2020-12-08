@@ -1,15 +1,14 @@
 ---
 title: DeviceInfo XML 文档
 description: DeviceInfo XML 文档
-ms.assetid: b6b859cf-de30-4df0-bec1-0cd7d8c55ea6
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 56a4f8ab861d8ea182375b49135f089af9cc65a1
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: f62e35f632e6ea7471455c069e62f8ce04a0730d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89096481"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96782831"
 ---
 # <a name="deviceinfo-xml-document"></a>DeviceInfo XML 文档
 
@@ -18,9 +17,9 @@ ms.locfileid: "89096481"
 
 -   设备的功能类别。 此信息由 [**Device.devicecategory**](/previous-versions/windows/hardware/metadata/ff541101(v=vs.85)) xml 元素指定，该元素是 DeviceInfo xml 文档内 [**DeviceCategoryList**](/previous-versions/windows/hardware/metadata/ff541102(v=vs.85)) xml 元素的子元素。
 
-    [**DeviceCategoryList**](/previous-versions/windows/hardware/metadata/ff541102(v=vs.85)) xml 元素中的第一个[**device.devicecategory**](/previous-versions/windows/hardware/metadata/ff541101(v=vs.85)) xml 元素被视为设备的*主要功能类别*。 当 "设备和打印机" 用户界面首先显示连接到计算机的设备的 "库" 视图时，或者，如果最终用户已按类别筛选设备，则将基于其主要功能类别显示设备。
+    [**DeviceCategoryList**](/previous-versions/windows/hardware/metadata/ff541102(v=vs.85)) xml 元素中的第一个 [**device.devicecategory**](/previous-versions/windows/hardware/metadata/ff541101(v=vs.85)) xml 元素被视为设备的 *主要功能类别*。 当 "设备和打印机" 用户界面首先显示连接到计算机的设备的 "库" 视图时，或者，如果最终用户已按类别筛选设备，则将基于其主要功能类别显示设备。
 
-    对于多功能设备，附加功能类别由单独的[**Device.devicecategory**](/previous-versions/windows/hardware/metadata/ff541101(v=vs.85)) xml 子元素指定，该元素遵循[**DeviceCategoryList**](/previous-versions/windows/hardware/metadata/ff541102(v=vs.85)) XML 元素中的第一个**device.devicecategory**元素。 同样，如果最终用户在 "设备和打印机" 用户界面中基于设备类别筛选设备，则将基于其主要和其他功能类别显示设备。
+    对于多功能设备，附加功能类别由单独的 [**Device.devicecategory**](/previous-versions/windows/hardware/metadata/ff541101(v=vs.85)) xml 子元素指定，该元素遵循 [**DeviceCategoryList**](/previous-versions/windows/hardware/metadata/ff541102(v=vs.85)) XML 元素中的第一个 **device.devicecategory** 元素。 同样，如果最终用户在 "设备和打印机" 用户界面中基于设备类别筛选设备，则将基于其主要和其他功能类别显示设备。
 
 -   设备的型号名称。 此信息由 DeviceInfo XML 文档中的 [**ModelName**](/previous-versions/windows/hardware/metadata/ff549311(v=vs.85)) XML 元素指定。
 

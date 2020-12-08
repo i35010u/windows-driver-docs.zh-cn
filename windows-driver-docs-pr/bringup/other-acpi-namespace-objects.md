@@ -1,15 +1,14 @@
 ---
 title: 其他 ACPI 命名空间对象
 description: 对于某些特定类别的设备，需要在命名空间中的这些设备下显示其他 ACPI 命名空间对象。
-ms.assetid: 41EA8C3D-F2C9-4BA9-A839-FCB66F271E3C
 ms.date: 05/22/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 4644cf66d4069738c2b6fbc5bec2fc61ee85a2d9
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 1ff3791197f7aae5ac6a96dce7a4794ab498f487
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89187617"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96784183"
 ---
 # <a name="other-acpi-namespace-objects"></a>其他 ACPI 命名空间对象
 
@@ -26,7 +25,7 @@ ms.locfileid: "89187617"
 
 有关显示特定对象的详细信息，请参阅 [ACPI 5.0 规范](https://uefi.org/specifications)的附录 B "视频扩展"。
 
-### <a name="display-specific-object-requirements"></a>特定于显示的对象要求
+### <a name="display-specific-object-requirements"></a>Display-Specific 对象要求
 
 | 方法 | 说明                                        | 要求                                                                      |
 |--------|----------------------------------------------------|----------------------------------------------------------------------------------|
@@ -58,9 +57,9 @@ USB 主机控制器用于连接内部和外部设备的 SoC 平台。 Windows �
 
 - \_分配到 USB 控制器 (CRS) 的当前资源设置。 控制器的资源在适当的硬件接口规范 (EHCI 或 XHCI) 中进行了介绍。
 
-### <a name="usb-device-specific-method-_dsm"></a> (DSM) 的 USB 特定于设备的方法 \_
+### <a name="usb-device-specific-method-_dsm"></a> (DSM) 的 USB Device-Specific 方法 \_
 
-Windows 定义 (DSM) 的设备特定方法 \_ ，以支持 USB 子系统的设备特定于设备的配置。 有关详细信息，请参阅 [USB 特定于设备的方法](usb-device-specific-method---dsm-.md)。
+Windows 定义了一个 Device-Specific 方法 (\_ DSM) ，以支持 USB 子系统的设备特定于设备的配置。 有关详细信息，请参阅 [USB Device-Specific 方法](usb-device-specific-method---dsm-.md)。
 
 ### <a name="usb-integrated-transaction-translator-tt-support-_hrv"></a>USB 集成事务转换器 (TT) 支持 (\_ HRV) 
 
@@ -265,7 +264,7 @@ Windows 包括一个类驱动程序，用于 (HID) 的人机接口设备。 此�
 
   - 中断 (的 GpioInt 资源) 
 
-- 用于在 \_ 设备中返回 HID 描述符注册地址的 HIDI2C DSM 方法。 有关详细信息，请参阅 [HIDI2C (\_ DSM) 的特定于设备的方法 ](hidi2c-device-specific-method---dsm-.md)。
+- 用于在 \_ 设备中返回 HID 描述符注册地址的 HIDI2C DSM 方法。 有关详细信息，请参阅 [HIDI2C Device-Specific 方法 (\_ DSM) ](hidi2c-device-specific-method---dsm-.md)。
 
 ## <a name="button-devices"></a>按钮设备
 
@@ -277,7 +276,7 @@ Windows 包括一个类驱动程序，用于 (HID) 的人机接口设备。 此�
 
 ### <a name="control-method-power-button"></a>Control 方法电源按钮
 
-使用内置或连接的键盘的 Clamshell 设计和其他系统，实现 acpi 5.0 规范的 acpi 定义控制方法电源按钮 (部分4.8.2.2.1.2， (acpi 5.0 规范) 的5.6.5 部分中的 acpi) 标准。 若要支持电源按钮设备，命名空间为：
+使用内置或连接键盘的 Clamshell 设计和其他系统，使用 acpi 5.0 规范) 的 GPIO-Signaled ACPI 事件 (部分5.6.5，实现 acpi 5.0) 规范的 acpi 定义控制方法电源按钮 (部分4.8.2.2.1.2。 若要支持电源按钮设备，命名空间为：
 
 - 描述电源按钮的 GPIO 中断 pin 作为非共享 (独占) GPIO 中断资源。
 
@@ -321,7 +320,7 @@ Windows 包括一个类驱动程序，用于 (HID) 的人机接口设备。 此�
 
 有关详细信息，请参阅 [适用于 Windows 8 平板电脑和可转换设备的硬件按钮](/previous-versions/windows/hardware/design/dn613928(v=vs.85))。
 
-为了支持 Windows 按钮 UI 的演变，Windows 为 \_ Windows 按钮阵列设备 (DSM) 中定义了特定于设备的方法。 有关详细信息，请参阅 [ (\_ DSM) 的 Windows 按钮阵列特定于设备的方法 ](windows-button-array-device-specific-method---dsm-.md)。
+为了支持 Windows 按钮 UI 的演变，Windows 为 \_ Windows 按钮阵列设备定义了 (DSM) 的 Device-Specific 方法。 有关详细信息，请参阅 [ (\_ DSM) Device-Specific 方法的 Windows 按钮数组 ](windows-button-array-device-specific-method---dsm-.md)。
 
 ## <a name="dock-and-convertible-pc-sensing-devices"></a>停靠和可转换 PC 感知设备
 
@@ -333,7 +332,7 @@ Windows 通过使用 ACPI 命名空间中的两个感应设备，支持改装 cl
 
 - GPIO 控制器驱动程序必须使用 [GPIO framework 扩展](../gpio/gpioclx-i-o-and-interrupt-interfaces.md) 所提供的 ActiveBoth 仿真 (**GpioClx**) 。
 
-- 如果断言状态 ( "固定" 或 "已转换" ) 不是断言逻辑级别 low，则需要 GPIO 控制器 \_ DSM 方法来重写 gpio 驱动程序堆栈的默认行为。 有关详细信息，请参阅[常规用途 i/o (gpio) ](general-purpose-i-o--gpio-.md)主题中的**GPIO 控制器设备**部分。
+- 如果断言状态 ( "固定" 或 "已转换" ) 不是断言逻辑级别 low，则需要 GPIO 控制器 \_ DSM 方法来重写 gpio 驱动程序堆栈的默认行为。 有关详细信息，请参阅 [常规用途 i/o (gpio)](general-purpose-i-o--gpio-.md)主题中的 **GPIO 控制器设备** 部分。
 
 有关详细信息，请参阅 [适用于 Windows 8 平板电脑和可转换设备的硬件按钮](/previous-versions/windows/hardware/design/dn613928(v=vs.85))。
 

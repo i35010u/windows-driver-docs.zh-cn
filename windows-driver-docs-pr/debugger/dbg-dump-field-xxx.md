@@ -1,7 +1,6 @@
 ---
 title: DBG \_ 转储 \_ 字段 \_ XXX
 description: DBG \_ 转储 \_ 字段 \_ XXX
-ms.assetid: c168c1b7-c4ef-4a70-9060-611b86120635
 ms.date: 12/07/2017
 keywords:
 - DBG_DUMP_FIELD_XXX Windows 调试
@@ -14,12 +13,12 @@ api_location:
 api_type:
 - HeaderDef
 ms.localizationpriority: medium
-ms.openlocfilehash: 8e5f4cfc7451f64752878d417ee7de1546108789
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: cdff9d5f876c9aa26ddc23c4017f6a81c258f384
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89210867"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96783503"
 ---
 # <a name="dbg_dump_field_xxx"></a>DBG \_ 转储 \_ 字段 \_ XXX
 
@@ -27,7 +26,7 @@ ms.locfileid: "89210867"
 ## <span id="ddk_dbg_dump_xxx_dbx"></span><span id="DDK_DBG_DUMP_XXX_DBX"></span>
 
 
-\_ \_ \_ [**字段 \_ 信息**](/windows-hardware/drivers/ddi/wdbgexts/ns-wdbgexts-_field_info)结构的**用于**成员使用 DBG 转储字段*XXX*位标志来控制[**IG \_ 转储 \_ 符号 \_ 信息**](/windows-hardware/drivers/ddi/wdbgexts/ns-wdbgexts-_sym_dump_param)[**Ioctl**](/windows-hardware/drivers/ddi/wdbgexts/nc-wdbgexts-pwindbg_ioctl_routine)操作的行为。
+\_ \_ \_ [**字段 \_ 信息**](/windows-hardware/drivers/ddi/wdbgexts/ns-wdbgexts-_field_info)结构的 **用于** 成员使用 DBG 转储字段 *XXX* 位标志来控制 [**IG \_ 转储 \_ 符号 \_ 信息**](/windows-hardware/drivers/ddi/wdbgexts/ns-wdbgexts-_sym_dump_param)[**Ioctl**](/windows-hardware/drivers/ddi/wdbgexts/nc-wdbgexts-pwindbg_ioctl_routine)操作的行为。
 
 可以存在以下标志。
 

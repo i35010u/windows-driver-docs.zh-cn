@@ -1,17 +1,16 @@
 ---
 title: C30032
 description: 警告 C30032 调用内存分配函数，并通过使用 POOL_NX_OPTOUT 指令强制执行可执行内存请求。
-ms.assetid: 7C6F9ACE-DD02-45A7-A601-C5C7A5C89256
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 f1_keywords:
 - C30032
-ms.openlocfilehash: 3f8eae0b25bf202e07fda5f10ff6406520e6396f
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 2cb6870f13640da2ce92bbf1c3d9667b6a35694b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89381639"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96783413"
 ---
 # <a name="c30032"></a>C30032
 

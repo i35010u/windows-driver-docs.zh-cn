@@ -1,7 +1,6 @@
 ---
 title: 设备管理器错误消息
 description: 设备管理器错误消息
-ms.assetid: 38958790-6b60-48ff-a341-fc39a16602ab
 keywords:
 - 设备管理器 WDK，错误
 - 错误 WDK 设备管理器
@@ -9,12 +8,12 @@ keywords:
 - 消息 WDK 设备管理器
 ms.date: 03/04/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 64860e5c5c0c53c8d723be5738243b61ab92df18
-ms.sourcegitcommit: 1c9663adcbcb23167c5f2a10b36963e5d5c25c99
+ms.openlocfilehash: 60f6bf7b6f9bdb38e582cb796d4fc96ca72d10f9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78289778"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96782853"
 ---
 # <a name="device-manager-error-messages"></a>设备管理器错误消息
 
@@ -26,7 +25,7 @@ ms.locfileid: "78289778"
 
 下表列出了设备管理器报告的错误。 这些错误代码在 Cfg 中定义。
  
-有关相关信息，请参阅[检索设备实例的状态和问题代码](retrieving-the-status-and-problem-code-for-a-device-instance.md)。
+有关相关信息，请参阅 [检索设备实例的状态和问题代码](retrieving-the-status-and-problem-code-for-a-device-instance.md)。
 
 
 <table>

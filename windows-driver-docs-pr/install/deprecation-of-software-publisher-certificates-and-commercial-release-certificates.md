@@ -1,18 +1,17 @@
 ---
 title: 弃用软件发行者证书、商业发布证书和商业测试证书
 description: 弃用软件发行者证书、商业发布证书和商业测试证书
-ms.assetid: eafa4e20-94c5-49d6-a192-2fc7c9f1e64g
 keywords:
 - 受信任的根证书颁发机构证书存储 WDK
 - 受信任的发布者证书存储 WDK
 ms.date: 08/01/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 21694a70545153b5fec44ef296509304ffafc32b
-ms.sourcegitcommit: c9d9f28cc1090cf0205c9c3cdba905b82ab5aeae
+ms.openlocfilehash: d1219485fa7cf63b167ad5752efc68b4aab3aaf2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/14/2020
-ms.locfileid: "94631250"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96782911"
 ---
 # <a name="deprecation-of-software-publisher-certificates-commercial-release-certificates-and-commercial-test-certificates"></a>弃用软件发行者证书、商业发布证书和商业测试证书
 
@@ -115,7 +114,7 @@ ms.locfileid: "94631250"
 
 ### <a name="starting-in-2021-will-microsoft-be-the-sole-provider-of-production-kernel-mode-code-signatures"></a>从2021开始，Microsoft 是否是生产内核模式代码签名的唯一提供程序？ 
 
-是。
+是的。
 
 ### <a name="hardware-dev-center-doesnt-provide-driver-signing-for-windows-xp-how-can-i-have-my-drivers-run-in-xp"></a>硬件开发人员中心不提供适用于 Windows XP 的驱动程序签名，如何让我的驱动程序在 XP 中运行？
 
@@ -131,7 +130,7 @@ ms.locfileid: "94631250"
 如果你在使用 WHQL 对驱动程序进行签名时遇到困难，请使用以下其中一项来报告详细信息：
 
 * 使用 microsoft [合作伙伴中心仪表板](https://partner.microsoft.com/dashboard/collaborate)提供的 microsoft 协作门户来创建反馈 bug。
-* 请访问 [Windows 硬件工程支持](https://developer.microsoft.com/windows/hardware/support)，选择 "联系我们 **" 选项卡** ，然后在 " **开发人员支持" 主题** 下拉列表中，选择 " **HLK/HCK** "。 然后选择 " **提交事件** "。
+* 请访问 [Windows 硬件工程支持](https://developer.microsoft.com/windows/hardware/support)，选择 "联系我们 **" 选项卡** ，然后在 " **开发人员支持" 主题** 下拉列表中，选择 " **HLK/HCK**"。 然后选择 " **提交事件**"。
 
 
 ## <a name="related-information"></a>相关信息

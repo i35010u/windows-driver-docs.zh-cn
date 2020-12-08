@@ -1,18 +1,17 @@
 ---
 title: WMI 类示例
 description: WMI 类示例
-ms.assetid: 5b0ef39a-32bd-4f62-ad8f-fdab74409294
 keywords:
-- WDK WMI 类
-- WMI WDK 内核类
+- 类 WDK WMI
+- WMI WDK 内核，类
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2933c5a30884e963066789a5e5013a5809918ee0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 62e03ec51d8b7beb2e10661d26ddd201e6fb85ee
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380929"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96782683"
 ---
 # <a name="wmi-class-examples"></a>WMI 类示例
 
@@ -20,7 +19,7 @@ ms.locfileid: "63380929"
 
 
 
-以下示例演示从架构的串行端口驱动程序的类定义。 请注意， **guid**在这些示例中所示的值是占位符。 每个类定义必须由 guidgen.exe 或 uuidgen.exe （这包括在 Microsoft Windows SDK 中） 生成的唯一 GUID。
+以下示例显示了串行端口驱动程序的架构中的类定义。 请注意，这些示例中所示的 **guid** 值为占位符。 每个类定义必须具有由 guidgen.exe 或 uuidgen.exe (生成的唯一 GUID，包含在 Microsoft Windows SDK) 中。
 
 ```cpp
 // Standard class for reporting serial port information
@@ -91,7 +90,7 @@ class Vendor_SerialInfo {
 }
 ```
 
-下面是上一示例中所示的嵌入类的类定义。 请注意，此类不包含**InstanceName**或**Active**项。
+下面是前面的示例中所示的嵌入类的类定义。 请注意，此类不包含 **InstanceName** 或 **活动** 项。
 
 ```cpp
 // Example of an embedded class 
@@ -102,7 +101,7 @@ class Vendor_XmitDescriptor {
 }
 ```
 
-下面是一个事件块的类定义。 类派生自**WmiEvent**。
+下面是事件块的类定义。 该类派生自 **register-wmievent**。
 
 ```cpp
 // Example of an event

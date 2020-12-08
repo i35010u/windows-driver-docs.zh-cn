@@ -1,7 +1,6 @@
 ---
 title: Windows Server 2008 和 Windows Vista SP1 的 WHEA 更改
 description: Windows Server 2008 和 Windows Vista SP1 的 WHEA 更改
-ms.assetid: fd66ee01-e262-45c2-bced-549192b0eca3
 keywords:
 - Windows 硬件错误体系结构 WDK，Windows Server 2008 更改
 - Windows 硬件错误体系结构 WDK，Windows Vista SP1 更改
@@ -13,12 +12,12 @@ keywords:
 - Windows Vista SP1 WDK WHEA，WHEA 更改
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6df83f480ad9c4f697b34f17b774bd770eb9b8f3
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 746e001733e00b4cf3ff735aa81854e776391f91
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89209467"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96783663"
 ---
 # <a name="whea-changes-for-windows-server-2008-and-windows-vista-sp1"></a>Windows Server 2008 和 Windows Vista SP1 的 WHEA 更改
 

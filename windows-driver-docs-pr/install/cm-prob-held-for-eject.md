@@ -1,17 +1,16 @@
 ---
 title: CM_PROB_HELD_FOR_EJECT
 description: CM_PROB_HELD_FOR_EJECT
-ms.assetid: 8d67ad71-276d-4dea-b3fb-61fedcfba789
 keywords:
 - CM_PROB_HELD_FOR_EJECT
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f3cc92ec38314adb8b790cf09a825151e8e997ff
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: d6c43a1e21d87b0bf9e314901d3174852412e0ba
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90717152"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96783123"
 ---
 # <a name="code-47---cm_prob_held_for_eject"></a>代码 47 - CM_PROB_HELD_FOR_EJECT
 

@@ -1,15 +1,14 @@
 ---
 title: COSA/APN 数据库简介
 description: COSA/APN 数据库简介
-ms.assetid: 0E3DA610-090D-4D1E-B67E-A4747252E8BE
 ms.date: 07/05/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: e0938cc8ccad492a78fc9d79caf1b7dd245b3f46
-ms.sourcegitcommit: 7e4d9508198a30bdc1cb6eda83852dda4e42213e
+ms.openlocfilehash: 3716127692d68a5d84a970e30e89d6fe0f5a6474
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89304296"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96782465"
 ---
 # <a name="introduction-to-cosaapn-database"></a>COSA/APN 数据库简介
 

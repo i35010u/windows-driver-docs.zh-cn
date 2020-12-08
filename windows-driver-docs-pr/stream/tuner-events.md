@@ -1,19 +1,18 @@
 ---
 title: 调谐器事件
 description: 调谐器事件
-ms.assetid: eb5e0698-2641-4d47-9fa3-d1969a03c795
 keywords:
 - 调谐器事件 WDK 视频捕获
 - 事件 WDK 视频捕获
 - EVENTSETID_TUNER
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8ccf7ca429b12add6d89294b0e5820f758860102
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: e340b2ba0c89b1d0268008cadd0ae67be4c94baf
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104404"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96783721"
 ---
 # <a name="tuner-events"></a>调谐器事件
 

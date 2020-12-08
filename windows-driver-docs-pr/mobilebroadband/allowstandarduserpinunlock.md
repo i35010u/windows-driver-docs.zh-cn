@@ -1,15 +1,14 @@
 ---
 title: AllowStandardUserPinUnlock
 description: AllowStandardUserPinUnlock
-ms.assetid: 3fb6de78-662b-46d0-bf0c-9efde15b0861
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 610c96eacaea3500761143fa9b3157fd7e3093cd
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: 751a320a013e0ddb2a3bdbf466810039a1929f19
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89403334"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96782560"
 ---
 # <a name="allowstandarduserpinunlock"></a>AllowStandardUserPinUnlock
 
@@ -37,7 +36,7 @@ AllowStandardUserPinUnlock 元素指定是否允许标准用户执行 PIN 解锁
 ## <a name="span-idtext_valuespanspan-idtext_valuespanspan-idtext_valuespantext-value"></a><span id="Text_value"></span><span id="text_value"></span><span id="TEXT_VALUE"></span>文本值
 
 
-一个布尔值，其中 true 允许标准用户执行 PIN 解锁操作，而**false** **则**不允许。
+一个布尔值，其中 true 允许标准用户执行 PIN 解锁操作，而 **false** **则** 不允许。
 
 ## <a name="span-idchild_elementsspanspan-idchild_elementsspanspan-idchild_elementsspanchild-elements"></a><span id="Child_elements"></span><span id="child_elements"></span><span id="CHILD_ELEMENTS"></span>子元素
 
@@ -55,7 +54,7 @@ AllowStandardUserPinUnlock 元素指定是否允许标准用户执行 PIN 解锁
 <thead>
 <tr class="header">
 <th>元素</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>

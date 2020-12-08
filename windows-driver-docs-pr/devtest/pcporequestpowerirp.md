@@ -1,7 +1,6 @@
 ---
 title: 'PcPoRequestPowerIrp 规则 (音频) '
 description: 此规则验证 PortCls 微型端口驱动程序不应使用 IRP \_ MN 设置电源来调用 PoRequestPowerIrp \_ \_ 。
-ms.assetid: 9AF26E98-CB8A-41F1-BF40-1B5FBFD04550
 ms.date: 05/21/2018
 keywords:
 - 'PcPoRequestPowerIrp 规则 (音频) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 5224af4511362aae47cb60db928ff8f3363d6d79
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 5c4ab207ec49165302fd58779da599534a418be9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107098"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96784007"
 ---
 # <a name="pcporequestpowerirp-rule-audio"></a>PcPoRequestPowerIrp 规则 (音频) 
 
 
-此规则验证 PortCls 微型端口驱动程序不应使用[**IRP \_ MN \_ 设置 \_ 电源**](../kernel/irp-mn-set-power.md)来调用[**PoRequestPowerIrp**](/windows-hardware/drivers/ddi/wdm/nf-wdm-porequestpowerirp) 。
+此规则验证 PortCls 微型端口驱动程序不应使用 [**IRP \_ MN \_ 设置 \_ 电源**](../kernel/irp-mn-set-power.md)来调用 [**PoRequestPowerIrp**](/windows-hardware/drivers/ddi/wdm/nf-wdm-porequestpowerirp) 。
 
 **驱动程序模型：音频**
 

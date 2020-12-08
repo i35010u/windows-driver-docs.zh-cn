@@ -1,20 +1,19 @@
 ---
 title: PrintTicket 文档示例
 description: 本示例中的关键字仅用于说明，尽管它们反映了用于3D 制造的打印架构关键字。
-ms.assetid: 139CF759-0A94-44A5-97BD-4EFD072220EF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b75e6028281368e589fa3f3aa5670848c96e6174
-ms.sourcegitcommit: ab64169b631da4db3f0b895600f1c38a22cb7e2e
+ms.openlocfilehash: 8a5a81129e09e4559b0c490bc42ae273bc56f31d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75652753"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96783615"
 ---
 # <a name="printticket-document-example"></a>PrintTicket 文档示例
 
 
-本示例中的关键字仅用于说明，尽管它们反映了用于3D 制造的打印架构关键字。 此 PrintTicket 专门针对[PrintCapabilities 文档示例](example-printcapabilities-document.md)所表示的假设设备进行构造。
+本示例中的关键字仅用于说明，尽管它们反映了用于3D 制造的打印架构关键字。 此 PrintTicket 专门针对 [PrintCapabilities 文档示例](example-printcapabilities-document.md)所表示的假设设备进行构造。
 
 ```xml
 <?xml version="1.0" encoding="UTF-8" ?>

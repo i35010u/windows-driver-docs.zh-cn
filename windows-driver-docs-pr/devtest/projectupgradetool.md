@@ -1,15 +1,14 @@
 ---
 title: ProjectUpgradeTool
 description: ProjectUpgradeTool 采用 Microsoft Visual Studio 2012 项目 (*) 和解决方案文件 (*.sln) 使用 Windows 驱动程序工具包在 windows 8 中创建，并将其升级为适用于 (和) 2013 的 wdk。
-ms.assetid: DEB7799C-D505-40E6-B2B0-CF774A99B1BE
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f7a310184100fe474394fc42f5cdbf152109b4cb
-ms.sourcegitcommit: 68c99026bf38b864867ee3751d05459743ea8e11
+ms.openlocfilehash: 39c0456f0cd30b83db131998bcfe142283966ab7
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92434675"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96783303"
 ---
 # <a name="projectupgradetool"></a>ProjectUpgradeTool
 

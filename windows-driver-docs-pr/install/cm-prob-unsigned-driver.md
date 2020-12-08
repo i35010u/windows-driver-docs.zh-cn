@@ -1,15 +1,14 @@
 ---
 title: CM_PROB_UNSIGNED_DRIVER
 description: CM_PROB_UNSIGNED_DRIVER
-ms.assetid: 91d37d25-ca0d-413f-9e6f-5a22a0406714
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ce48e1fcdc094619f590651ce6b9ab37e80a0f3d
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 81942ed1726b92b53589cb9eea4f124fcb12c77d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89096521"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96783063"
 ---
 # <a name="code-52---cm_prob_unsigned_driver"></a>代码 52 - CM_PROB_UNSIGNED_DRIVER
 

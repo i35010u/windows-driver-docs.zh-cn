@@ -1,15 +1,14 @@
 ---
 title: CM_PROB_WAITING_ON_DEPENDENCY
 description: CM_PROB_WAITING_ON_DEPENDENCY
-ms.assetid: 2f45c507-1926-47f4-aca8-f8b834c58601
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f03c6cfb485a1b22d5fc09e1b5a9bc5e7a12faa
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 22c5cf18612e0aab05990037dee4d5ef01af892f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89097383"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96783055"
 ---
 # <a name="code-51---cm_prob_waiting_on_dependency"></a>代码 51 - CM_PROB_WAITING_ON_DEPENDENCY
 

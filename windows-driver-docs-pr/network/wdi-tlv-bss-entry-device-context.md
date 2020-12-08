@@ -1,22 +1,21 @@
 ---
 title: WDI_TLV_BSS_ENTRY_DEVICE_CONTEXT
-description: WDI_TLV_BSS_ENTRY_DEVICE_CONTEXT 是包含 BSS 条目的设备上下文 TLV。
-ms.assetid: 5672294B-C6C0-43A3-9553-D6309F64F4A6
+description: WDI_TLV_BSS_ENTRY_DEVICE_CONTEXT 是一个 TLV，其中包含 BSS 条目的设备上下文。
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_BSS_ENTRY_DEVICE_CONTEXT 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: bb67a5d4108599a2389da46c3bf3ad339d9ae10a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 800ef70d8216eef03b70f02be3fee0b0238e227e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63343216"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96782126"
 ---
-# <a name="wditlvbssentrydevicecontext"></a>WDI\_TLV\_BSS\_条目\_设备\_上下文
+# <a name="wdi_tlv_bss_entry_device_context"></a>WDI \_ TLV \_ BSS \_ 条目 \_ 设备 \_ 上下文
 
 
-WDI\_TLV\_BSS\_条目\_设备\_上下文是包含 BSS 条目的设备上下文 TLV。
+WDI \_ tlv \_ bss \_ 进入 \_ 设备 \_ 上下文是包含 BSS 条目的设备上下文的 tlv。
 
 ## <a name="tlv-type"></a>TLV 类型
 
@@ -26,14 +25,14 @@ WDI\_TLV\_BSS\_条目\_设备\_上下文是包含 BSS 条目的设备上下文 T
 ## <a name="length"></a>长度
 
 
-UINT8 元素的数组大小 （以字节为单位）。 该数组必须包含一个或多个元素。
+UINT8 元素数组的大小 (以字节为单位) 。 数组必须包含1个或多个元素。
 
 ## <a name="values"></a>值
 
 
-| 在任务栏的搜索框中键入      | 描述                                                                                                                                                                                                                                                                                |
+| 类型      | 描述                                                                                                                                                                                                                                                                                |
 |-----------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| UINT8\[\] | 指定的上下文数据 UINT8 元素的数组。 此上下文由 IHV 组件提供，可用于存储 IHV 组件想要维护的每个 BSS 入口状态。 若要避免生存期管理问题，IHV 组件必须在此 TLV 中不使用指针。 |
+| UINT8\[\] | 指定上下文数据的 UINT8 元素的数组。 此上下文由 IHV 组件提供，可用于存储 IHV 组件要维护的每个 BSS 进入状态。 为了避免生存期管理问题，IHV 组件不能使用此 TLV 中的指针。 |
 
  
 
@@ -52,10 +51,10 @@ UINT8 元素的数组大小 （以字节为单位）。 该数组必须包含一
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
-<td><p>Windows Server 2016</p></td>
+<td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Wditypes.hpp</td>
 </tr>
 </tbody>

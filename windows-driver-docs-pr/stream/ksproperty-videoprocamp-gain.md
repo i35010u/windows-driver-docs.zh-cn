@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ VIDEOPROCAMP \_ 增益
 description: KSPROPERTY \_ VIDEOPROCAMP \_ 增益属性设置或获取相机增益。 此属性是可选的。
-ms.assetid: 46ed6ba1-1413-4466-9125-2d0a3fd51def
 keywords:
 - KSPROPERTY_VIDEOPROCAMP_GAIN 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7f767b59a20b5f4d8c986342a9eceec4577c3c03
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: d535120cbf63ade3c19d06df5ce3cffade949eb9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103990"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96782007"
 ---
 # <a name="ksproperty_videoprocamp_gain"></a>KSPROPERTY \_ VIDEOPROCAMP \_ 增益
 
@@ -66,7 +65,7 @@ KSPROPERTY \_ VIDEOPROCAMP \_ 增益属性设置或获取相机增益。 此属�
 <a name="remarks"></a>备注
 -------
 
-KSPROPERTY **Value** \_ VIDEOPROCAMP S 结构的值成员 \_ 指定请求的或当前增益，具体取决于此请求是*get*还是*Set*请求。
+KSPROPERTY **Value** \_ VIDEOPROCAMP S 结构的值成员 \_ 指定请求的或当前增益，具体取决于此请求是 *get* 还是 *Set* 请求。
 
 收益范围是由供应商定义的;默认分辨率为1。
 
@@ -86,7 +85,7 @@ KSPROPERTY **Value** \_ VIDEOPROCAMP S 结构的值成员 \_ 指定请求的或�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSPROPERTY**](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)
