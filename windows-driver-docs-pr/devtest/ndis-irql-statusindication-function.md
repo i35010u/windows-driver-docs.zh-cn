@@ -1,7 +1,6 @@
 ---
 title: 'Irql \_ StatusIndication \_ 函数规则 (ndis) '
 description: Irql \_ StatusIndication \_ 函数规则指定必须在正确的 Irql 级别调用微型端口和筛选器驱动程序的 NDIS 状态指示函数。
-ms.assetid: 0e0630f7-3f7b-455f-9763-f0cd5128ef69
 ms.date: 05/21/2018
 keywords:
 - 'Irql_StatusIndication_Function 规则 (ndis) '
@@ -12,12 +11,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 7187e3945f435fb91a979d7a5b6eacd04f185757
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: e4707feb07bd92bb01dfff87e67e47079eab117b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103208"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96830167"
 ---
 # <a name="irql_statusindication_function-rule-ndis"></a>Irql \_ StatusIndication \_ 函数规则 (ndis) 
 

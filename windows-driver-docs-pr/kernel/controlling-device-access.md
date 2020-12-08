@@ -1,7 +1,6 @@
 ---
 title: " (WDM) 控制设备访问"
 description: 了解如何为 WDM 驱动程序、WDM 总线驱动程序和非 WDM 驱动程序控制设备访问。 对设备的访问由安全描述符控制。
-ms.assetid: b5e562ad-573b-4b0f-9d85-2410fda16e4e
 keywords:
 - 设备对象 WDK 内核，安全性
 - 安全 WDK 设备对象
@@ -10,12 +9,12 @@ keywords:
 - 安全描述符 WDK 设备对象
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 384d8baaa8d4543185580633d4fe4f456611a576
-ms.sourcegitcommit: f1d6c2d0cdbecdc69ba65ed3b530755fc73c8e5e
+ms.openlocfilehash: d126cd41d557340b0b7a0ff1f9ac4c29d0d9f2d2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91590375"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96830415"
 ---
 # <a name="controlling-device-access-wdm"></a> (WDM) 控制设备访问
 

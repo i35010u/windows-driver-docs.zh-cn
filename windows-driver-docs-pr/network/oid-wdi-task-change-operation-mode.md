@@ -1,18 +1,17 @@
 ---
 title: OID_WDI_TASK_CHANGE_OPERATION_MODE
 description: OID_WDI_TASK_CHANGE_OPERATION_MODE 配置端口的操作模式。
-ms.assetid: 84be0658-104d-4336-bc2f-6f2624f33857
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 OID_WDI_TASK_CHANGE_OPERATION_MODE 网络驱动程序
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 92d465f001d72aaa2aae80f06edc6aa110af5b2c
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: d636365e7b878edad102735470fa9b7411275cc3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89213231"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96829311"
 ---
 # <a name="oid_wdi_task_change_operation_mode"></a>OID \_ WDI \_ 任务 \_ 更改 \_ 操作 \_ 模式
 
@@ -54,7 +53,7 @@ OID \_ WDI \_ 任务 \_ 更改 \_ 操作 \_ 模式配置端口的操作模式。
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
-<td><p>Windows Server 2016</p></td>
+<td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
 <td><p>标头</p></td>

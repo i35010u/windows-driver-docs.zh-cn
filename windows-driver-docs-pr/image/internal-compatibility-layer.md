@@ -1,34 +1,33 @@
 ---
-title: 内部的兼容性层
-description: 内部的兼容性层
-ms.assetid: 6cfb3842-751e-4f4c-9fac-daba70245b81
+title: 内部兼容性层
+description: 内部兼容性层
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6d6d97c48d5501223d35caddc281b5cc740fafd2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 22f8e1bdc91075a7068de2a36c5639b6556b3435
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520456"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96828701"
 ---
-# <a name="internal-compatibility-layer"></a>内部的兼容性层
+# <a name="internal-compatibility-layer"></a>内部兼容性层
 
 
-开发驱动程序在 Windows Vista 上运行时，您必须考虑兼容性的两个的方面：
+开发要在 Windows Vista 上运行的驱动程序时，必须考虑兼容性的两个方面：
 
--   适用于 Windows XP 或更早的操作系统的应用程序与 Windows Vista 驱动程序的通信时
+-   适用于 Windows XP 或更早版本的操作系统的应用程序与 Windows Vista 驱动程序通信时
 
--   Windows Vista 应用程序与 Windows XP 驱动程序的通信时 (即*旧式驱动程序*)
+-   如果 Windows Vista 应用程序与 Windows XP 驱动程序通信 (即 *旧驱动* 程序) 
 
-不需要考虑其他情况下，如 Windows Vista 应用程序与 Windows Vista 驱动程序的通信时或当 Windows XP 应用程序与 Windows XP 驱动程序，因为这种情况下不需要任何兼容性组件。
+您无需考虑其他情况，例如，当 Windows Vista 应用程序与 Windows Vista 驱动程序通信时，或 Windows XP 应用程序与 Windows XP 驱动程序通信时，因为这些情况不需要任何兼容组件。
 
-WIA 提供了一个内部的兼容性层，用于执行所有必要的转换。 因此，在 Windows Vista 运行的 Windows XP 应用程序将能够与 Windows Vista 驱动程序进行通信和 Windows Vista 应用程序将能够与在 Windows Vista 运行的 Windows XP 驱动程序进行通信。
+WIA 提供了执行所有必需转换的内部兼容层。 因此，在 Windows Vista 上运行的 Windows XP 应用程序将能够与 Windows Vista 驱动程序通信，Windows Vista 应用程序将能够与 windows Vista 上运行的 Windows XP 驱动程序通信。
 
-有几个限制的兼容性层：
+兼容性层有几个限制：
 
--   旧驱动程序将转换为 Windows Vista WIA 应用程序。
+-   对于 Windows Vista WIA 应用程序，只翻译旧驱动程序。
 
--   仅 Windows Vista 扫描仪的驱动程序实现平板和送纸器作为其基项 (WIA\_类别\_平板和 WIA\_类别\_送纸器) 将转换为旧版 WIA 应用程序。
+-   对于旧的 WIA 应用程序，仅将实现平板和送纸器的 Windows Vista 扫描仪驱动程序作为其基础项 (WIA \_ 类别 \_ 平板和 wia \_ 类别 \_ 进纸器) 。
 
  
 

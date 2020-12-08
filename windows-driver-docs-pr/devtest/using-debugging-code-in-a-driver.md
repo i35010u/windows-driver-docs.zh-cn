@@ -1,15 +1,14 @@
 ---
 title: 在驱动程序中使用调试代码
 description: 在驱动程序中使用调试代码
-ms.assetid: 6ed74bcc-290c-44e3-943e-4169527dfa18
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a18f13defb11066d5a690ecf6ad44eb56ffb6993
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: c678c6a0ec74a55721d862b7bc6820c557dc8e1b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89382269"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96830095"
 ---
 # <a name="using-debugging-code-in-a-driver"></a>在驱动程序中使用调试代码
 

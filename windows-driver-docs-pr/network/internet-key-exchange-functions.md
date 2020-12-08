@@ -1,17 +1,16 @@
 ---
 title: Internet 密钥交换函数
 description: 本部分介绍 Internet 密钥交换函数。
-ms.assetid: 993a6db0-018c-4529-bccc-46b522e74c79
 keywords:
 - Internet 密钥交换功能网络驱动程序
 ms.date: 11/07/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b46ece8761dc12f9c11177dea0a28a05caf9d15b
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: dfb3f3bf5e37bfcbc058fd568b03e73a6ccd4794
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91733397"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96829489"
 ---
 # <a name="internet-key-exchange-functions"></a>Internet 密钥交换函数
 

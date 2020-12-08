@@ -1,15 +1,14 @@
 ---
 title: 提供了 IStiUSD 界面
 description: 提供了 IStiUSD 界面
-ms.assetid: ed15b56b-0b63-4983-a4ff-df379a2b9de9
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a23ce2bf358f5466c1fb88f4151d160fd83e515b
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 183805e1ef9ada07c0aef6a71fc610ebc7a0fe7f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102194"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96829623"
 ---
 # <a name="providing-an-istiusd-interface"></a>提供了 IStiUSD 界面
 
@@ -17,11 +16,11 @@ ms.locfileid: "90102194"
 
 
 
-WIA 在 STI 上生成。 为了确保 WIA 微型驱动程序与 STI 的集成，微型驱动程序必须实现从 [IStiUSD 接口方法](/windows-hardware/drivers/ddi/_image/index)派生的接口。 此接口必须存在于 WIA 微型驱动程序中。 **IStiUSD**接口用于管理设备 (例如加载驱动程序) ，这是[IStiDevice 接口方法](/windows-hardware/drivers/ddi/_image/index)与静态图像设备通信的方式。 微型驱动程序必须完全实现从 [**IStiUSD：： Initialize**](/windows-hardware/drivers/ddi/stiusd/nf-stiusd-istiusd-initialize) 方法派生的接口，才能由 WIA 服务加载。
+WIA 在 STI 上生成。 为了确保 WIA 微型驱动程序与 STI 的集成，微型驱动程序必须实现从 [IStiUSD 接口方法](/windows-hardware/drivers/ddi/_image/index)派生的接口。 此接口必须存在于 WIA 微型驱动程序中。 **IStiUSD** 接口用于管理设备 (例如加载驱动程序) ，这是 [IStiDevice 接口方法](/windows-hardware/drivers/ddi/_image/index)与静态图像设备通信的方式。 微型驱动程序必须完全实现从 [**IStiUSD：： Initialize**](/windows-hardware/drivers/ddi/stiusd/nf-stiusd-istiusd-initialize) 方法派生的接口，才能由 WIA 服务加载。
 
 通常， **IStiUSD** 接口方法由 **IStiDevice** 接口定义的类似命名方法调用。 微型驱动程序通常通过调用相应的内核模式驱动程序来实现 **IStiUSD** 接口方法。 每个微型驱动程序都必须定义所有接口方法，但如果不需要方法，则只需返回 \_ 不受支持的 STIERR。
 
-有关微型驱动程序如何实现**IStiUSD**接口的示例，请参阅*wiacam*照相机示例微型驱动程序文件*IStiUSD。*
+有关微型驱动程序如何实现 **IStiUSD** 接口的示例，请参阅 *wiacam* 照相机示例微型驱动程序文件 *IStiUSD。*
 
 下表列出并描述了 **IStiUSD** 接口定义的所有方法。 标识必须实现或由 WIA 微型驱动程序有条件地实现的方法。
 
@@ -33,7 +32,7 @@ WIA 在 STI 上生成。 为了确保 WIA 微型驱动程序与 STI 的集成，
 <thead>
 <tr class="header">
 <th>方法</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>

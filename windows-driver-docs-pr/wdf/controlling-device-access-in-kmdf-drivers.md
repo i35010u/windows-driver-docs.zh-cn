@@ -1,7 +1,6 @@
 ---
 title: 在 KMDF 驱动程序中控制设备访问权限
 description: 在 KMDF 驱动程序中控制设备访问权限
-ms.assetid: 62bbc69f-0754-4d37-a476-dd2ac3d70de6
 keywords:
 - 设备访问控制 WDK KMDF
 - 命名 WDK 设备对象
@@ -10,12 +9,12 @@ keywords:
 - 安全描述符 WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 141639edf2d173a99cc5251c6f019f979761c372
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: f245e52266d940b4c9b3147fdf286dc67d6d6922
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89185321"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96829075"
 ---
 # <a name="controlling-device-access-in-kmdf-drivers"></a>在 KMDF 驱动程序中控制设备访问权限
 
@@ -52,11 +51,11 @@ WDM 驱动程序和基于框架的驱动程序应该提供应用程序可以访�
 
 默认情况下，操作系统还使用设备 PDO 的安全描述符来确定驱动程序提供的设备接口的访问权限。
 
-驱动程序包可以提供一个 INF 文件，该文件使用 inf [**DDInstall 部分**](../install/inf-ddinstall-hw-section.md)中的[**inf AddReg 指令**](../install/inf-addreg-directive.md)指定设备的安全描述符。
+驱动程序包可以提供一个 INF 文件，该文件使用 inf [**DDInstall 部分**](../install/inf-ddinstall-hw-section.md)中的 [**inf AddReg 指令**](../install/inf-addreg-directive.md)指定设备的安全描述符。
 
 有关在 INF 文件中指定安全描述符的详细信息，请参阅 [创建安全设备安装](../install/creating-secure-device-installations.md)。
 
-如果驱动程序为以 raw 模式运行的设备创建 PDOs，则驱动程序在调用[**WdfPdoInitAssignRawDevice**](/windows-hardware/drivers/ddi/wdfpdo/nf-wdfpdo-wdfpdoinitassignrawdevice)时必须指定[设备安装程序类](../install/overview-of-device-setup-classes.md)。 此外，如果你的驱动程序创建控制设备，它可以调用 [**WdfDeviceInitSetDeviceClass**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceinitsetdeviceclass) 来指定设备安装程序类。 在这两种情况下，系统管理员都可以使用指定安装程序类的注册表项来存储设备的安全描述符。
+如果驱动程序为以 raw 模式运行的设备创建 PDOs，则驱动程序在调用 [**WdfPdoInitAssignRawDevice**](/windows-hardware/drivers/ddi/wdfpdo/nf-wdfpdo-wdfpdoinitassignrawdevice)时必须指定 [设备安装程序类](../install/overview-of-device-setup-classes.md)。 此外，如果你的驱动程序创建控制设备，它可以调用 [**WdfDeviceInitSetDeviceClass**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceinitsetdeviceclass) 来指定设备安装程序类。 在这两种情况下，系统管理员都可以使用指定安装程序类的注册表项来存储设备的安全描述符。
 
 有关操作系统如何确定要用于设备的安全描述符的信息，请参阅 [控制设备访问](../kernel/controlling-device-access.md)。
 

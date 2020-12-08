@@ -1,20 +1,19 @@
 ---
 title: 排查驱动程序签名安装问题
-description: 安装版本签名驱动程序与在测试签名中安装、卸载和加载测试签名驱动程序包中所述的相同，只是安装时需要执行两个额外步骤，使用此处所述的任何一种方法来安装。
-ms.assetid: 36624611-1FE6-4B88-B785-44D6A81F61FF
+description: 安装版本签名驱动程序与在测试签名中安装、卸载和加载 Test-Signed 驱动程序包中所述相同，只是安装时需要执行两个额外步骤，使用此处所述的任何一种方法来安装。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c282d633e828a71d15e49f229e210d2bb7f4a036
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 1a3bb4825ed6d49fdce2a37a4530a3844dd1bf41
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89097205"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96828599"
 ---
 # <a name="troubleshooting-driver-signing-installation"></a>排查驱动程序签名安装问题
 
 
-安装版本签名驱动程序与在[测试签名](test-signing.md)中**安装、卸载和加载测试签名驱动程序包**中所述的相同，只是安装时需要执行两个额外步骤，使用此处所述的任何一种方法来安装。 使用 "添加硬件向导" 安装版本签名的驱动程序会显示其他两个步骤，其中包括一些常见安装问题。
+安装版本签名驱动程序与在 [测试签名](test-signing.md)中 **安装、卸载和加载 Test-Signed 驱动程序包** 中所述相同，只是安装时需要执行两个额外步骤，使用此处所述的任何一种方法来安装。 使用 "添加硬件向导" 安装版本签名的驱动程序会显示其他两个步骤，其中包括一些常见安装问题。
 
 1.  打开提升的命令窗口
 2.  运行 hdwwiz.cpl 以启动添加硬件向导，然后选择 "下一步" 以前往第二页
@@ -34,7 +33,7 @@ ms.locfileid: "89097205"
 
 如果再次安装了驱动程序，或者如果出于任何原因删除了驱动程序，则选中该复选框将不再在计算机上显示此对话框。
 
-**注意**   系统会根据用于对目录进行签名的 SPC 验证发行者信息是否准确。 如果发布服务器信任级别是未知的，则对于 Contoso .com，系统将显示该对话框。 要继续安装，用户必须选择 "安装"。 有关信任和驱动程序安装的详细信息，请参阅 [代码签名最佳做法](/previous-versions/windows/hardware/design/dn653556(v=vs.85))。
+**注意**  系统会根据用于对目录进行签名的 SPC 验证发行者信息是否准确。 如果发布服务器信任级别是未知的，则对于 Contoso .com，系统将显示该对话框。 要继续安装，用户必须选择 "安装"。 有关信任和驱动程序安装的详细信息，请参阅 [代码签名最佳做法](/previous-versions/windows/hardware/design/dn653556(v=vs.85))。
 
  
 
@@ -42,19 +41,19 @@ ms.locfileid: "89097205"
 
 ![显示 "windows 安全警告" 对话框的屏幕截图](images/tutorialwindowssecurityinstallwarning.png)
 
-## <a name="verify-that-the-release-signed-driver-is-operating-correctly"></a>验证 Release 签名驱动程序是否正常运行
+## <a name="verify-that-the-release-signed-driver-is-operating-correctly"></a>验证 Release-Signed 驱动程序是否正常运行
 
 
 使用设备管理器查看 (测试签名驱动程序) 前面介绍的驱动程序属性。 下面是屏幕截图，显示驱动程序是否正常运行。
 
 ![在设备管理器中显示 toaster 设备的屏幕截图](images/tutorialtoasterpackageindevicemgr.png)
 
-## <a name="troubleshoot-release-signed-drivers"></a>排除版本签名驱动程序的故障
+## <a name="troubleshoot-release-signed-drivers"></a>Release-Signed 驱动程序故障排除
 
 
 下面列出了用于排查加载已签名或测试签名驱动程序的问题的几种常见方法：
 
--   使用 "添加硬件向导" 或设备管理器来检查是否已加载并签署了驱动程序，如**验证测试签名的驱动程序是否正常运行**[测试签名](test-signing.md)中所述。
+-   使用 "添加硬件向导" 或设备管理器来检查是否已加载并签署了驱动程序，如 **验证 Test-Signed 驱动程序是否正常运行**[测试签名](test-signing.md)中所述。
 -   打开 \\ 驱动程序安装后在 Windows inf 目录中创建的 setupapi.log 文件。 请参阅设置注册表项和重命名 setupapi.log 文件部分，然后再安装驱动程序。
 -   检查 Windows 安全审核日志和代码完整性事件日志。
 
@@ -145,7 +144,7 @@ flq:           {_commit_file_queue} 14:54:56.711
 
 如果由于缺少有效的签名而导致驱动程序无法加载，则会将其记录为审核失败事件。 审核失败事件记录在 Windows 安全日志中，指示代码完整性无法验证驱动程序文件的映像哈希。 日志项包含驱动程序文件的完整路径名称。 仅当本地安全审核策略启用了系统失败事件的日志记录时，才会生成安全日志审核事件。
 
-**注意**   必须显式启用安全审核日志。 有关详细信息，请参阅 [附录3：启用代码完整性事件日志记录和系统审核](appendix-3--enable-code-integrity-event-logging-and-system-auditing.md)。
+**注意**  必须显式启用安全审核日志。 有关详细信息，请参阅 [附录3：启用代码完整性事件日志记录和系统审核](appendix-3--enable-code-integrity-event-logging-and-system-auditing.md)。
 
  
 

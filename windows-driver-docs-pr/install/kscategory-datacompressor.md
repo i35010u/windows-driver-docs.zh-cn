@@ -1,7 +1,6 @@
 ---
 title: KSCATEGORY_DATACOMPRESSOR
 description: KSCATEGORY_DATACOMPRESSOR
-ms.assetid: 7e4bf7b3-b3be-4a76-bc9e-0b1b020a7044
 keywords:
 - KSCATEGORY_DATACOMPRESSOR 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: a45c8b7aff6f3c3711a72e143575272aea3155a2
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: b89af4c79285dcfa8b450ecf9772edffc0ade06d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89097253"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96829881"
 ---
 # <a name="kscategory_datacompressor"></a>KSCATEGORY_DATACOMPRESSOR
 
@@ -76,7 +75,7 @@ KSCATEGORY_DATACOMPRESSOR 功能类别是 [**KSPROPERTY_TOPOLOGY_CATEGORIES**](.
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSCATEGORY_DATADECOMPRESSOR**](kscategory-datadecompressor.md)

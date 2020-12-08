@@ -1,15 +1,14 @@
 ---
 title: ALE 终结点生存期管理
 description: ALE 终结点生存期管理
-ms.assetid: cbf54062-4ced-4cf6-babf-e9e4e1ddf302
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 10ab06aed792bd3e66663bb703aed6fc959767cc
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 7a583ff329185a73d14a0b54cc1c4251e876ce58
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89212975"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96830353"
 ---
 # <a name="ale-endpoint-lifetime-management"></a>ALE 终结点生存期管理
 

@@ -1,15 +1,14 @@
 ---
 title: 服务标识符所有权更新
 description: 服务标识符所有权更新
-ms.assetid: 6cb03631-def6-44d4-a73a-0e6124e3b1f2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8f344524bee86e1661b1509d2c587a97f4c99dcc
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: e82df9742abe4155b2f01df0d7c461b75142d087
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89403202"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96828509"
 ---
 # <a name="service-identifier-ownership-updates"></a>服务标识符所有权更新
 

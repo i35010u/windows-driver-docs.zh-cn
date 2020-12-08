@@ -1,22 +1,21 @@
 ---
 title: OID_WDI_TASK_SET_RADIO_STATE
-description: OID_WDI_TASK_SET_RADIO_STATE 用于设置适配器的 Wi-fi 无线电状态。
-ms.assetid: d7981df2-d3e5-49fd-8414-ca350775828b
+description: OID_WDI_TASK_SET_RADIO_STATE 用于设置适配器的 Wi-Fi 无线电状态。
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 OID_WDI_TASK_SET_RADIO_STATE 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: d34786ca8575ca47372980191f9a456880dd3689
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 80bc8e4647d6f386e8b7404b1dcc2f0cdc6b0412
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89205975"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96829219"
 ---
 # <a name="oid_wdi_task_set_radio_state"></a>OID \_ WDI \_ 任务 \_ 集 \_ 无线电 \_ 状态
 
 
-OID \_ WDI \_ 任务 \_ 集 \_ 无线电 \_ 状态用于设置适配器的 wi-fi 无线电状态。
+OID \_ WDI \_ 任务 \_ 集 \_ 收音机 \_ 状态用于设置适配器的 Wi-Fi 无线电状态。
 
 | 对象  | 支持中止 | 主机驱动程序策略 (默认优先级)  | 正常执行时间 (秒)  |
 |---------|---------------|---------------------------------------|---------------------------------|
@@ -63,7 +62,7 @@ IHV 组件还可以向主机发送有关无线电状态更改的未经请求的�
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
-<td><p>Windows Server 2016</p></td>
+<td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
 <td><p>标头</p></td>

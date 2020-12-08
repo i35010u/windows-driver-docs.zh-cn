@@ -1,9 +1,8 @@
 ---
 title: logexts.logm
-description: Logexts.logm 扩展创建或显示模块包含列表或模块的排除列表。
-ms.assetid: 1037ba25-ffa6-4edd-99fd-bd0e249f4b37
+description: Logexts. logm 扩展创建或显示模块包含列表或模块排除列表。
 keywords:
-- logexts.logm Windows 调试
+- logexts logm Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 5b0d75d3eda156570b2ddfec2a11544465382ca8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7c56a36578d0b861fe768c6f0a3ffc60d2f6b67d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63336124"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96829783"
 ---
 # <a name="logextslogm"></a>!logexts.logm
 
 
-**！ Logexts.logm**扩展创建或显示模块包含列表或模块的排除列表。
+**！ Logexts logm** 扩展创建或显示模块包含列表或模块排除列表。
 
 ```dbgcmd
 !logexts.logm i Modules 
@@ -30,19 +29,19 @@ ms.locfileid: "63336124"
 !logexts.logm 
 ```
 
-## <a name="span-idddklogextslogmdbgspanspan-idddklogextslogmdbgspanparameters"></a><span id="ddk__logexts_logm_dbg"></span><span id="DDK__LOGEXTS_LOGM_DBG"></span>参数
+## <a name="span-idddk__logexts_logm_dbgspanspan-idddk__logexts_logm_dbgspanparameters"></a><span id="ddk__logexts_logm_dbg"></span><span id="DDK__LOGEXTS_LOGM_DBG"></span>参数
 
 
-<span id="_______i______"></span><span id="_______I______"></span> **i**   
-会导致记录器要使用模块包含列表。 它将包含的指定*模块*。
+<span id="_______i______"></span><span id="_______I______"></span>**i**   
+使记录器使用模块包含列表。 它将包含指定的 *模块*。
 
-<span id="_______x______"></span><span id="_______X______"></span> **x**   
-会导致记录器要使用模块的排除列表。 它将包含 Logexts.dll、 kernel32.dll，以及指定*模块*。
+<span id="_______x______"></span><span id="_______X______"></span>**x**   
+导致记录器使用模块排除列表。 它将包含 Logexts.dll、kernel32.dll 和指定的 *模块*。
 
-<span id="_______Modules______"></span><span id="_______modules______"></span><span id="_______MODULES______"></span> *模块*   
-指定要包括或排除的模块。 此列表不是累积计数器;每次使用此命令创建一个全新的列表。 如果列出多个模块，请用空格分隔它们。 一个星号 (\*) 能用来表示所有模块。
+<span id="_______Modules______"></span><span id="_______modules______"></span><span id="_______MODULES______"></span>*模块*   
+指定要包括或排除的模块。 此列表不是累积性的;使用此命令时，将创建一个全新的列表。 如果列出了多个模块，请将它们与空格分隔开。 \*可以使用星号 () 来指示所有模块。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 <table>
 <colgroup>
@@ -63,20 +62,20 @@ ms.locfileid: "63336124"
 
  
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-有关详细信息，请参阅[记录器和日志查看器](logger-and-logviewer.md)。
+有关详细信息，请参阅 [记录器和 LogViewer](logger-and-logviewer.md)。
 
 <a name="remarks"></a>备注
 -------
 
-不带任何参数， **！ logexts.logm**扩展显示当前的包含列表或排除列表。
+如果没有参数，则 **！ logexts. logm** 扩展将显示当前包含列表或排除列表。
 
-扩展 **！ logexts.logm x \\** * 和 **！ logexts.logm 我**是等效的： 它们会导致完全为空的包含列表。
+Extension **！ logexts; logm \\ x** _ 和 _ *！ logexts* 等效：它们会导致完全空的包含列表。
 
-扩展 **！ logexts.logm 我\\** * 和 **！ logexts.logm x**是等效的： 它们会导致包含仅 Logexts.dll 和 kernel32.dll 的排除列表。 这两个模块始终为排除，因为不允许使用记录器以记录本身。
+Extension **！ logexts; logm \\ i** _ 和 _ *！ logexts* 等效：它们会生成一个排除列表，其中仅包含 Logexts.dll 和 kernel32.dll。 始终会排除这两个模块，因为记录器不允许记录自身。
 
-下面是一些可能的恶意活动：
+下面是一些示例：
 
 ```dbgcmd
 0:001> !logm

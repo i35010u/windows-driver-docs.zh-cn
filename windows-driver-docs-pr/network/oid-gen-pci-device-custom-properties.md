@@ -1,16 +1,15 @@
 ---
 title: OID_GEN_PCI_DEVICE_CUSTOM_PROPERTIES
 description: 作为查询，过量驱动程序使用 OID_GEN_PCI_DEVICE_CUSTOM_PROPERTIES OID 获取设备的 PCI 自定义属性。
-ms.assetid: fe94884b-f5e3-4c60-8f52-e61d0df81a2a
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_GEN_PCI_DEVICE_CUSTOM_PROPERTIES 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 589d1e549e7aa2b3cc4787ea39c39022da2de302
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 185226a27c21a519ae2434539152c08c1de9d3de
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89206041"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96829457"
 ---
 # <a name="oid_gen_pci_device_custom_properties"></a>OID \_ 生成 \_ PCI \_ 设备 \_ 自定义 \_ 属性
 
@@ -48,7 +47,7 @@ NDIS 返回了包含 PCI 自定义属性的 [**ndis \_ PCI \_ 设备 \_ 自定�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**NDIS \_ PCI \_ 设备 \_ 自定义 \_ 属性**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pci_device_custom_properties)

@@ -1,15 +1,14 @@
 ---
 title: 应用程序项和驱动程序项
 description: 应用程序项和驱动程序项
-ms.assetid: 33b602dc-4a0b-47e1-90e2-b77ecc05f66d
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e2ebdd07cf11971a0e79dd6fd7ca668b19a01c01
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 61095bdc8420702935f307d7ef93ae58a67fff5c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89189893"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96828751"
 ---
 # <a name="application-items-and-driver-items"></a>应用程序项和驱动程序项
 
@@ -23,7 +22,7 @@ WIA 项表示设备属性和设备数据。 图像处理应用程序将 WIA 设�
 
 1.  微型驱动程序使用[IWiaMiniDrv 接口](/windows-hardware/drivers/ddi/wiamindr_lh/nn-wiamindr_lh-iwiaminidrv)和[WIA 驱动程序服务库函数](/windows-hardware/drivers/ddi/wiamdef/index)创建[IWiaDrvItem 接口](/windows-hardware/drivers/ddi/wiamindr_lh/nn-wiamindr_lh-iwiadrvitem)对象的项树。 此驱动程序项树中的项是全局对象，微型驱动程序使用它们来表示设备的项。
 
-2.  当映像应用程序请求访问树中的某一项时，WIA 服务将返回一个项对象，该对象是驱动程序项的副本。 当应用程序获取应用程序**IWiaItem** (Microsoft Windows SDK 文档) item 对象 (应用程序) 项中所述）时，WIA 服务会将此对象链接到*驱动程序项树*中微型驱动程序的相应**IWiaDrvItem**对象。
+2.  当映像应用程序请求访问树中的某一项时，WIA 服务将返回一个项对象，该对象是驱动程序项的副本。 当应用程序获取应用程序 **IWiaItem** (Microsoft Windows SDK 文档) item 对象 (应用程序) 项中所述）时，WIA 服务会将此对象链接到 *驱动程序项树* 中微型驱动程序的相应 **IWiaDrvItem** 对象。
 
 3.  WIA 为每个应用程序创建一个单独的 *应用程序项树* ，每个应用程序项树都是驱动程序项树的副本。
 

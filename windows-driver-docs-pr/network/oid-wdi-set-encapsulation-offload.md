@@ -1,25 +1,24 @@
 ---
 title: OID_WDI_SET_ENCAPSULATION_OFFLOAD
 description: 操作系统将发送 OID_WDI_SET_ENCAPSULATION_OFFLOAD，以指示下边缘驱动程序 (LE) 应开始执行 TCP 校验和/LSO 卸载。
-ms.assetid: 1095DBE0-2C6B-40F4-8E01-39F4BBA2FDBC
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 OID_WDI_SET_ENCAPSULATION_OFFLOAD 网络驱动程序
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: e8b8b69b1a5a4a86b364aee4a2d1b65a4cb4f155
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 414d5cfa43599b5623e0e73ac0475937401c8064
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89213253"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96829385"
 ---
 # <a name="oid_wdi_set_encapsulation_offload"></a>OID \_ WDI \_ 集 \_ 封装 \_ 卸载
 
 
 OID \_ WDI \_ 将 \_ \_ 由 OS 发送封装卸载，以指示 (LE) 下边缘驱动程序应开始执行 TCP 校验和/LSO 卸载。
 
-| 作用域 | 设置序列化任务 | 正常执行时间 (秒)  |
+| 范围 | 设置序列化任务 | 正常执行时间 (秒)  |
 |-------|--------------------------|---------------------------------|
 | 端口  | 是                      | 1                               |
 
@@ -57,7 +56,7 @@ OID \_ WDI \_ 将 \_ \_ 由 OS 发送封装卸载，以指示 (LE) 下边缘驱�
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
-<td><p>Windows Server 2016</p></td>
+<td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
 <td><p>标头</p></td>

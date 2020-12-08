@@ -1,7 +1,6 @@
 ---
 title: 'SpinLockRelease 规则 (storport) '
 description: 此规则验证驱动程序不会尝试通过 KeReleaseSpinLock 释放锁定，无需先通过 KeAquireSpinlock 或 KeAcquireSpinLockRaiseToDpc 获取锁定。 当释放获取的旋转锁时，规则通过。
-ms.assetid: CD4287CB-EF0C-476C-BF10-B46B96AB7D11
 ms.date: 05/21/2018
 keywords:
 - 'SpinLockRelease 规则 (storport) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 116bbe9b00ffdd6a115d38d5f255d9fdc044b00b
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: e50ef4268dbf8500ada26d7b1f309db24685389c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107054"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96830141"
 ---
 # <a name="spinlockrelease-rule-storport"></a>SpinLockRelease 规则 (storport) 
 
 
-此规则验证驱动程序不会尝试通过 **KeReleaseSpinLock** 释放锁定，无需先通过 **KeAquireSpinlock** 或 **KeAcquireSpinLockRaiseToDpc**获取锁定。 当释放获取的旋转锁时，规则通过。
+此规则验证驱动程序不会尝试通过 **KeReleaseSpinLock** 释放锁定，无需先通过 **KeAquireSpinlock** 或 **KeAcquireSpinLockRaiseToDpc** 获取锁定。 当释放获取的旋转锁时，规则通过。
 
 **驱动程序模型： Storport**
 

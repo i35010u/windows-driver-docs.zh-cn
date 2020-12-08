@@ -1,25 +1,24 @@
 ---
 title: HS_PLUGIN_PROFILE 结构
 description: HS_PLUGIN_PROFILE 结构提供有关插件的信息。 此结构的成员由插件在执行由主机调用的 HSPluginInitPlugin 函数期间进行设置。
-ms.assetid: 0c4f7088-737e-479a-b46e-a55e96719775
 keywords:
 - 从 Windows Vista 开始 HS_PLUGIN_PROFILE 结构网络驱动程序
 - 从 Windows Vista 开始 PHS_PLUGIN_PROFILE 结构指针网络驱动程序
 ms.date: 07/31/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b8e913ef165accaeaac3fd9658e1f66d4abf76de
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: 9cc35f14a16581b61fd8a2c30955aec53c077cbd
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89403026"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96829499"
 ---
 # <a name="hs_plugin_profile-structure"></a>HS \_ 插件 \_ 配置文件结构
 
 [!include[Wi-Fi Hotspot Offloading deprecation](../includes/wi-fi-hotspot-offloading-deprecation.md)]
 
 
-**HS \_ 插件 \_ 配置文件**结构提供有关插件的信息。 此结构的成员由插件在执行由主机调用的 [**HSPluginInitPlugin**](hsplugininitplugin.md) 函数期间进行设置。
+**HS \_ 插件 \_ 配置文件** 结构提供有关插件的信息。 此结构的成员由插件在执行由主机调用的 [**HSPluginInitPlugin**](hsplugininitplugin.md) 函数期间进行设置。
 
 <a name="syntax"></a>语法
 ------
@@ -43,7 +42,7 @@ typedef struct _HS_PLUGIN_PROFILE {
 **dwPluginCapabilities**  
 必需。
 
-可能的**HS \_ 标志 \_ 功能 \_ NETWORK \_ \\ *** 值的子集。 有关热点主机功能的详细信息，请参阅 [**Wi-fi 热点卸载常数**](wi-fi-hotspot-offloading-constants.md)。
+可能的 **HS \_ 标志 \_ 功能 \_ 网络 \_ \\** _ 值的子集。 有关热点主机功能的详细信息，请参阅 [_ *Wi-fi 热点卸载常数* *](wi-fi-hotspot-offloading-constants.md)。
 
 **dwNumNetworksSupported**  
 必需。
@@ -76,7 +75,7 @@ typedef struct _HS_PLUGIN_PROFILE {
 特定于网络的领域值。
 
 **dwSupportedSIMCount**  
-**PSupported sim**指向的列表的大小。
+**PSupported sim** 指向的列表的大小。
 
 <a name="requirements"></a>要求
 ------------
@@ -88,13 +87,13 @@ typedef struct _HS_PLUGIN_PROFILE {
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Hotspotoffloadplugin (包含 Hotspotoffloadplugin) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**HSPluginInitPlugin**](hsplugininitplugin.md)

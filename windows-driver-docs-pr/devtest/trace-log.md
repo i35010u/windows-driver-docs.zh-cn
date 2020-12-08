@@ -1,7 +1,6 @@
 ---
 title: 跟踪日志
 description: 跟踪日志
-ms.assetid: c15fcfec-b584-4cb8-bc48-9ff122f5a8fc
 keywords:
 - 事件跟踪日志 WDK
 - 日志文件 WDK 跟踪
@@ -11,12 +10,12 @@ keywords:
 - 存储跟踪消息
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e137a16351f1412ea941a2221e245826220e9191
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 37201b304a4e3b008453005b60f04cecddad7d65
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89383335"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96830133"
 ---
 # <a name="trace-log"></a>跟踪日志
 

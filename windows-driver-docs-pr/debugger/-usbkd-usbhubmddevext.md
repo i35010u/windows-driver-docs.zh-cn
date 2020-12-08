@@ -1,7 +1,6 @@
 ---
 title: usbkd.usbhubmddevext
 description: 如果在由于 Bug 检查0xFE 生成的故障转储中存在一个 usbkd，则 usbhubmddevext 命令将显示 usbhub _DEVICE_EXTENSION_HUB 结构。
-ms.assetid: 2A3C1AD4-0537-43B1-BD87-734047D242B9
 keywords:
 - usbkd usbhubmddevext Windows 调试
 ms.date: 05/23/2017
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: b3ca8a4f1f9bc6382992b5d5268e020e4b994925
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: c88ad6f5dc147fd24d46c258544398b016d9e9ea
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89210873"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96829761"
 ---
 # <a name="usbkdusbhubmddevext"></a>!usbkd.usbhubmddevext
 
 
-**！ Usbkd. usbhubmddevext**命令显示**usbhub！ \_如果 \_ \_ **在由于[**Bug 检查 0xFE**](bug-check-0xfe--bugcode-usb-driver.md)而生成的故障转储中存在一个，则为设备扩展中心结构。
+**！ Usbkd. usbhubmddevext** 命令显示 **usbhub！ \_如果 \_ \_** 在由于 [**Bug 检查 0xFE**](bug-check-0xfe--bugcode-usb-driver.md)而生成的故障转储中存在一个，则为设备扩展中心结构。
 
 ```dbgcmd
 !usbkd.usbhubmddevext

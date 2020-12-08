@@ -1,18 +1,17 @@
 ---
 title: OID_WDI_SET_SAE_AUTH_PARAMS
 description: OID_WDI_SET_SAE_AUTH_PARAMS 由 WDI 发送以响应来自驱动程序的 NDIS_STATUS_WDI_INDICATION_SAE_AUTH_PARAMS_NEEDED 指示。 它包含 (SAE) Commit 或 Confirm 请求发送同时进行的身份验证所需的参数，或指示无法使用 BSSID 执行 SAE 的错误消息。
-ms.assetid: D20F92F9-8AEF-456C-B27A-20E61F75B3B7
 ms.date: 02/15/2019
 keywords:
 - 从 Windows Vista 开始 OID_WDI_SET_SAE_AUTH_PARAMS 网络驱动程序
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: afd9e5c1d008f34bb2f37dc9822ec4753c548949
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: bd4f9f252ea02fa057b1881a4608674b9ab4acea
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89213239"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96829307"
 ---
 # <a name="oid_wdi_set_sae_auth_params"></a>OID_WDI_SET_SAE_AUTH_PARAMS
 

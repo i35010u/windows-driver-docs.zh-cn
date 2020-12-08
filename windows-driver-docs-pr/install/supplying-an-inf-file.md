@@ -1,7 +1,6 @@
 ---
 title: 提供 INF 文件
 description: 提供 INF 文件
-ms.assetid: 208726d9-6f62-46a4-84a1-6fab3895bbe3
 keywords:
 - 驱动程序包 WDK、INF 文件
 - 包 WDK、INF 文件
@@ -14,12 +13,12 @@ keywords:
 - INF 文件
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 44c37f5e8338ef8e0dbef6db6f9c590f112990a0
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 9ed95388be59d55cb1fd26a5a361067a3053a175
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89094821"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96829837"
 ---
 # <a name="supplying-an-inf-file"></a>提供 INF 文件
 
@@ -31,7 +30,7 @@ ms.locfileid: "89094821"
 
 INF 文件的确切内容和格式取决于 [设备安装程序类](./overview-of-device-setup-classes.md)。 [Inf 部分摘要](summary-of-inf-sections.md) 介绍了每种类型的 INF 中所需的信息。 通常，每个制造商的信息位于 [**INF *模型* 部分**](inf-models-section.md)。 " **模型** " 部分中的条目引用包含特定于模型的详细信息的 [**INF *DDInstall* 部分**](inf-ddinstall-section.md) 。
 
-[InfVerif](../devtest/infverif.md)工具在 Microsoft Windows 驱动程序工具包 (WDK) 的* \\ 工具*目录中提供，用于检查所有跨类 INF 节和指令的语法和结构，以及除打印机之外的所有安装程序类的类特定扩展。
+[InfVerif](../devtest/infverif.md)工具在 Microsoft Windows 驱动程序工具包 (WDK) 的 *\\ 工具* 目录中提供，用于检查所有跨类 INF 节和指令的语法和结构，以及除打印机之外的所有安装程序类的类特定扩展。
 
 从 Windows 2000 开始，你可以使用单个 INF 文件在所有版本的 Windows 操作系统上安装。 有关详细信息，请参阅 [为多个平台和操作系统创建 INF 文件](creating-inf-files-for-multiple-platforms-and-operating-systems.md)。 如果你的设备将出售到国际市场，你应 [创建一个国际 INF 文件](creating-international-inf-files.md)。 根据所涉及的位置，国际 INF 文件可能必须是 Unicode 文件而不是 ASCII。
 

@@ -1,7 +1,6 @@
 ---
 title: StoragePortClassGuid
 description: StoragePortClassGuid
-ms.assetid: 62175051-2453-411a-b033-f750376a703c
 keywords:
 - StoragePortClassGuid 设备和驱动程序安装
 topic_type:
@@ -14,17 +13,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: c7339abf85a76556e20b46007760f0c61d8a51c0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ff5f46e2ca7439c219fbe1c67e20a93943f5e360
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63369349"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96829845"
 ---
 # <a name="storageportclassguid"></a>StoragePortClassGuid
 
 
-StoragePortClassGuid 是存储端口的设备接口类的已过时标识符。 从 Microsoft Windows 2000 开始，使用[ **GUID_DEVINTERFACE_STORAGEPORT** ](guid-devinterface-storageport.md)此类的新实例的类标识符。
+StoragePortClassGuid 是用于存储端口的设备接口类的过时标识符。 从 Microsoft Windows 2000 开始，使用此类的新实例 [**GUID_DEVINTERFACE_STORAGEPORT**](guid-devinterface-storageport.md) 类标识符。
 
 <a name="requirements"></a>要求
 ------------
@@ -36,12 +35,12 @@ StoragePortClassGuid 是存储端口的设备接口类的已过时标识符。 �
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>Version</p></td>
-<td align="left"><p>已过时。 从 Windows 2000 开始，请改用 GUID_DEVINTERFACE_STORAGEPORT。</p></td>
+<td align="left"><p>版本</p></td>
+<td align="left"><p>已过时。 从 Windows 2000 开始，改用 GUID_DEVINTERFACE_STORAGEPORT。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>Header</p></td>
-<td align="left">Ntddstor.h （包括 Ntddstor.h）</td>
+<td align="left"><p>标头</p></td>
+<td align="left">Ntddstor (包含 Ntddstor) </td>
 </tr>
 </tbody>
 </table>

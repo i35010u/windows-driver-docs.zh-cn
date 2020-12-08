@@ -1,7 +1,6 @@
 ---
 title: 'Irql \_ 协议 \_ 驱动程序 \_ 函数规则 (ndis) '
 description: Irql \_ 协议 \_ 驱动程序 \_ 函数规则指定 CoNDIS 客户端的 NDIS 函数必须以正确的 Irql 级别进行调用。
-ms.assetid: 9461c3d9-cb31-4ffd-b057-fd9978808c2f
 ms.date: 05/21/2018
 keywords:
 - 'Irql_Protocol_Driver_Function 规则 (ndis) '
@@ -12,12 +11,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 7586b977f699532a8b6db9cfb218003ed812112f
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 9627f982581e7ce7b6243f68f515e974955b2c76
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105840"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96830173"
 ---
 # <a name="irql_protocol_driver_function-rule-ndis"></a>Irql \_ 协议 \_ 驱动程序 \_ 函数规则 (ndis) 
 

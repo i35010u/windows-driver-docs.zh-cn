@@ -1,29 +1,28 @@
 ---
 title: 在 WDF 中调试电源参考漏孔
 description: 当 Windows 驱动程序框架 (WDF) 驱动程序调用 WdfDeviceStopIdle 时，框架会递增设备的电源引用计数。
-ms.assetid: 25F4EEBB-4733-498C-8704-8E015F81FE06
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 29727e6f982f2c1a61ed3ed21cd206de81b23582
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: a2b5a5dfff88b059773984dcf82c76299ed118ce
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89191599"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96828987"
 ---
 # <a name="debugging-power-reference-leaks-in-wdf"></a>在 WDF 中调试电源参考漏孔
 
 
 当 Windows 驱动程序框架 (WDF) 驱动程序调用 [**WdfDeviceStopIdle**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicestopidle)时，框架会递增设备的电源引用计数。 对 **WdfDeviceStopIdle** 的每次成功调用都必须通过调用 [**WdfDeviceResumeIdle**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceresumeidle) 进行匹配，以减小电源引用计数。
 
-从内核模式驱动程序框架开始 (KMDF) 1.15 和用户模式驱动程序框架 (UMDF) 2.15，你可以通过使用 [**！ wdfkd**](../debugger/-wdfkd-wdfdevice.md) 和 [**wdfkd**](../debugger/-wdfkd-wdftagtracker.md) 调试器扩展来监视 power reference 的使用情况。 由于性能原因，此功能默认处于禁用状态，因此，你需要使用您尚未 wdfverifier 应用程序或手动编辑驱动程序的服务密钥来启用此功能。
+从 Kernel-Mode Driver Framework (KMDF) 1.15 和 User-Mode Driver Framework (UMDF) 2.15 开始，你可以通过使用 [**！ wdfkd**](../debugger/-wdfkd-wdfdevice.md) 和 [**wdfkd**](../debugger/-wdfkd-wdftagtracker.md) 调试器扩展来监视 power reference 的使用情况。 由于性能原因，此功能默认处于禁用状态，因此，你需要使用您尚未 wdfverifier 应用程序或手动编辑驱动程序的服务密钥来启用此功能。
 
 ## <a name="wdfverifier"></a>您尚未 wdfverifier
 
 
 打开驱动程序的 "设置" 列表，然后右键单击 " **TrackPower** " 设置。 选择适用于你的方案的选项。
 
-**提示**   避免在性能关键代码路径中捕获堆栈跟踪。
+**提示**  避免在性能关键代码路径中捕获堆栈跟踪。
 
  
 

@@ -1,18 +1,17 @@
 ---
 title: 检测可分页的代码
 description: 检测可分页的代码
-ms.assetid: 5e8a021d-09c3-4e63-b5a8-7559c384ae3d
 keywords:
 - 可分页驱动程序 WDK 内核，代码检测
 - 检测可分页代码
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 14ef84a6ec9a667e441856fc16697fd03a79a4f3
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: e7afcb496dce0f66b93f993c36cb13389a29359c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89189079"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96829563"
 ---
 # <a name="detecting-code-that-can-be-pageable"></a>检测可分页的代码
 
@@ -38,7 +37,7 @@ MyDriverXxx(
 } 
 ```
 
-若要确保正确执行此操作，请在启用了 "**强制 IRQL 检查**" 选项的情况下针对完成的驱动程序运行[驱动程序验证程序](../devtest/driver-verifier.md)。 此选项使系统在每次驱动程序将 IRQL 提升为调度 \_ 级别或更高级别时，自动将所有可分页的代码分页。 使用驱动程序验证程序，可以快速找到此区域中的任何驱动程序错误。 否则，这些 bug 通常仅由客户发现，它们可能会很难重现。
+若要确保正确执行此操作，请在启用了 "**强制 IRQL 检查**" 选项的情况下针对完成的驱动程序运行 [驱动程序验证程序](../devtest/driver-verifier.md)。 此选项使系统在每次驱动程序将 IRQL 提升为调度 \_ 级别或更高级别时，自动将所有可分页的代码分页。 使用驱动程序验证程序，可以快速找到此区域中的任何驱动程序错误。 否则，这些 bug 通常仅由客户发现，它们可能会很难重现。
 
  
 

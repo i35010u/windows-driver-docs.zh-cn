@@ -1,7 +1,6 @@
 ---
 title: 范围和符号组
 description: 范围和符号组
-ms.assetid: f14b6361-9962-4fa3-bb1a-dfde066754b9
 keywords:
 - 调试器引擎 API，符号，符号组
 - 符号组，范围
@@ -9,12 +8,12 @@ keywords:
 - 范围
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 786e7e38a5b166258e324d237fc579b03aa67e82
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: aa23609888562d09f5ae4137c99cb86a3681e4d5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89217880"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96830241"
 ---
 # <a name="scopes-and-symbol-groups"></a>范围和符号组
 
@@ -22,29 +21,29 @@ ms.locfileid: "89217880"
 ## <span id="ddk_scopes_and_symbol_groups_dbx"></span><span id="DDK_SCOPES_AND_SYMBOL_GROUPS_DBX"></span>
 
 
-*符号组*包含一组用于有效操作的符号，作为一个组。 可以手动创建和填充符号组，也可以基于词法范围中的符号（如局部变量和函数参数）自动生成和更新符号组。 Interface [IDebugSymbolGroup](/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebugsymbolgroup) 用于表示符号组。
+*符号组* 包含一组用于有效操作的符号，作为一个组。 可以手动创建和填充符号组，也可以基于词法范围中的符号（如局部变量和函数参数）自动生成和更新符号组。 Interface [IDebugSymbolGroup](/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebugsymbolgroup) 用于表示符号组。
 
 可以通过两种方法创建符号组。 空符号组由 [**CreateSymbolGroup**](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugsymbols3-createsymbolgroup)返回，而当前词法范围的符号组由 [**GetScopeSymbolGroup**](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugsymbols3-getscopesymbolgroup)返回。
 
-**注意**   从当前作用域生成的符号组是本地变量的快照。 如果目标中发生了任何执行，则符号可能不再准确。 此外，如果当前范围发生更改，则符号组将不再表示 *当前* 范围 (因为它将继续表示为其创建) 的作用域。
+**注意**   从当前作用域生成的符号组是本地变量的快照。 如果目标中发生了任何执行，则符号可能不再准确。 此外，如果当前范围发生更改，则符号组将不再表示 *当前* 范围 (因为它将继续表示为其创建) 的作用域。
 
  
 
 可以使用 [**AddSymbol**](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugsymbolgroup2-addsymbol)将符号添加到符号组，并使用 [**RemoveSymbolByIndex**](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugsymbolgroup2-removesymbolbyindex) 或 [**RemoveSymbolByName**](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugsymbolgroup2-removesymbolbyname)将其删除。 方法 [**OutputAsType**](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugsymbolgroup2-outputastype) 通知调试器在处理符号的数据时使用不同的符号类型。
 
-**注意**   作用域符号的值可能不准确。 具体而言，计算机体系结构和编译器优化可能会阻止调试器准确确定符号的值。
+**注意**   作用域符号的值可能不准确。 具体而言，计算机体系结构和编译器优化可能会阻止调试器准确确定符号的值。
 
  
 
-*符号输入信息*是符号的说明，包括符号的位置和类型。 若要在模块中查找符号的此信息，请使用 [**IDebugSymbols3：： GetSymbolEntryInformation**](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugsymbols3-getsymbolentryinformation)。 若要在符号组中查找符号的此信息，请使用 [**IDebugSymbolGroup2：： GetSymbolEntryInformation**](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugsymbolgroup2-getsymbolentryinformation)。 有关符号输入信息的详细信息，请参阅 [**调试 \_ 符号 \_ 项**](/windows-hardware/drivers/ddi/dbgeng/ns-dbgeng-_debug_symbol_entry) 。
+*符号输入信息* 是符号的说明，包括符号的位置和类型。 若要在模块中查找符号的此信息，请使用 [**IDebugSymbols3：： GetSymbolEntryInformation**](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugsymbols3-getsymbolentryinformation)。 若要在符号组中查找符号的此信息，请使用 [**IDebugSymbolGroup2：： GetSymbolEntryInformation**](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugsymbolgroup2-getsymbolentryinformation)。 有关符号输入信息的详细信息，请参阅 [**调试 \_ 符号 \_ 项**](/windows-hardware/drivers/ddi/dbgeng/ns-dbgeng-_debug_symbol_entry) 。
 
 以下方法返回有关符号组中符号的信息：
 
 -   [**GetSymbolName**](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugsymbolgroup2-getsymbolname) 返回符号的名称。
 
--   如果符号具有绝对地址，则[**GetSymbolOffset**](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugsymbolgroup2-getsymboloffset)将返回该符号目标的虚拟地址空间中的绝对地址。
+-   如果符号具有绝对地址，则 [**GetSymbolOffset**](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugsymbolgroup2-getsymboloffset)将返回该符号目标的虚拟地址空间中的绝对地址。
 
--   如果符号包含在寄存器中，则[**GetSymbolRegister**](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugsymbolgroup2-getsymbolregister)将返回包含符号的寄存器。
+-   如果符号包含在寄存器中，则 [**GetSymbolRegister**](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugsymbolgroup2-getsymbolregister)将返回包含符号的寄存器。
 
 -   [**GetSymbolSize**](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugsymbolgroup2-getsymbolsize) 返回符号的数据大小。
 
@@ -64,7 +63,7 @@ ms.locfileid: "89217880"
 
 ### <a name="span-idscopesspanspan-idscopesspanscopes"></a><span id="scopes"></span><span id="SCOPES"></span>作用
 
-*当前作用域*或*当前本地上下文*确定调试器引擎公开的局部变量。 作用域包含三个组件：
+*当前作用域* 或 *当前本地上下文* 确定调试器引擎公开的局部变量。 作用域包含三个组件：
 
 1.  堆栈帧。
 
@@ -74,13 +73,13 @@ ms.locfileid: "89217880"
 
 如果堆栈帧位于调用堆栈的顶部，则当前指令为导致最后一个事件的指令。 否则，当前指令为函数调用，导致下一个更高的堆栈帧。
 
-[**GetScope**](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugsymbols3-getscope)和[**SetScope**](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugsymbols3-setscope)方法可用于获取和设置当前范围。 事件发生时，当前作用域设置为事件的作用域。 可以使用 [**ResetScope**](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugsymbols3-resetscope)将当前作用域重置为最后一个事件的作用域。
+[**GetScope**](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugsymbols3-getscope)和 [**SetScope**](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugsymbols3-setscope)方法可用于获取和设置当前范围。 事件发生时，当前作用域设置为事件的作用域。 可以使用 [**ResetScope**](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugsymbols3-resetscope)将当前作用域重置为最后一个事件的作用域。
 
 ### <a name="span-idthread-contextspanspan-idthread_contextspanthread-context"></a><span id="thread-context"></span><span id="THREAD_CONTEXT"></span>线程上下文
 
-*线程上下文*是在切换线程时由 Windows 保留的状态。 这与寄存器上下文类似，只是某些仅限内核的处理器状态是寄存器上下文的一部分，而不是线程上下文。 在内核模式调试过程中，此额外状态作为寄存器提供。
+*线程上下文* 是在切换线程时由 Windows 保留的状态。 这与寄存器上下文类似，只是某些仅限内核的处理器状态是寄存器上下文的一部分，而不是线程上下文。 在内核模式调试过程中，此额外状态作为寄存器提供。
 
-线程上下文由 ntddk 中定义的上下文结构表示。 此结构依赖于平台，它的解释取决于有效的处理器类型。 [**GetThreadContext**](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugadvanced3-getthreadcontext)和[**SetThreadContext**](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugadvanced3-setthreadcontext)方法可用于获取和设置线程上下文。
+线程上下文由 ntddk 中定义的上下文结构表示。 此结构依赖于平台，它的解释取决于有效的处理器类型。 [**GetThreadContext**](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugadvanced3-getthreadcontext)和 [**SetThreadContext**](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugadvanced3-setthreadcontext)方法可用于获取和设置线程上下文。
 
  
 

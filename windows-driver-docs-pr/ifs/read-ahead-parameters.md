@@ -1,7 +1,6 @@
 ---
 title: 预读参数
 description: 预读粒度和管线预读参数。
-ms.assetid: ''
 keywords:
 - 预读参数
 topic_type:
@@ -14,16 +13,16 @@ api_type:
 - DllExport
 ms.date: 09/14/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 04d3d9d17612161bdb67be01a35f61cc723d1671
-ms.sourcegitcommit: acef3c512676aad3aed1934cbe3d0f16e6d37619
+ms.openlocfilehash: 512bcfdf2c21e27207730c3eb15b867228023051
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91372936"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96829669"
 ---
 # <a name="read_ahead_parameters-structure"></a>READ_AHEAD_PARAMETERS 结构
 
-**READ_AHEAD_PARAMETERS**结构包含公开读取的预读参数。
+**READ_AHEAD_PARAMETERS** 结构包含公开读取的预读参数。
 
 <a name="syntax"></a>语法
 ------
@@ -95,7 +94,7 @@ typedef struct _READ_AHEAD_PARAMETERS {
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**CcSetReadAheadGranularityEx**](CcSetReadAheadGranularityEx.md)

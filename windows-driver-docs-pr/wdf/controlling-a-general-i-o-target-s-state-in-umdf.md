@@ -1,7 +1,6 @@
 ---
 title: 在 UMDF 中控制常规 I/O 目标的状态
 description: 在 UMDF 中控制常规 I/O 目标的状态
-ms.assetid: 479487b2-5ce5-4522-b195-58ee50d210b6
 keywords:
 - 一般 i/o 目标是 WDK UMDF，状态
 - 已启动 i/o 目标状态 WDK UMDF
@@ -15,12 +14,12 @@ keywords:
 - 重新启动 i/o 目标
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9e89d287bcdb67ccc16144b6a9e640af8b3c7809
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: a99cee4dfe597eb216a0f3380ba676c771a4d0b6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89185539"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96829087"
 ---
 # <a name="controlling-a-general-io-targets-state-in-umdf"></a>在 UMDF 中控制常规 I/O 目标的状态
 
@@ -33,7 +32,7 @@ ms.locfileid: "89185539"
 I/o 目标是开放 (即，可用于 UMDF 驱动程序) 并且驱动程序可以向其发送 i/o 请求。 框架将请求传递给相应的驱动程序。
 
 <a href="" id="stopped"></a>**停下**  
-I/o 目标处于打开状态，但是 UMDF 驱动程序无法向 i/o 目标发送 i/o 请求，除非该驱动程序 \_ \_ 在对 \_ IWDFIoRequest：： send 方法的调用中通过了 WDF 请求发送选项 " \_ 忽略 \_ 目标 \_ 状态" 标志到*Flags*参数。 [**IWDFIoRequest::Send**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest-send)
+I/o 目标处于打开状态，但是 UMDF 驱动程序无法向 i/o 目标发送 i/o 请求，除非该驱动程序 \_ \_ 在对 \_ IWDFIoRequest：： send 方法的调用中通过了 WDF 请求发送选项 " \_ 忽略 \_ 目标 \_ 状态" 标志到 *Flags* 参数。 [**IWDFIoRequest::Send**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest-send)
 
 框架停止向相应的驱动程序传递请求。
 
@@ -73,7 +72,7 @@ I/o 目标已关闭，无法启动或停止。
 通知驱动程序远程 i/o 目标的设备已被删除。 此回调函数必须调用 [**IWDFRemoteTarget：： Close**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfremotetarget-close)。
 
 <a href="" id="---------iremotetargetcallbackremoval--onremotetargetremovecanceled--------"></a>[**IRemoteTargetCallbackRemoval::OnRemoteTargetRemoveCanceled**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iremotetargetcallbackremoval-onremotetargetremovecanceled)  
-通知驱动程序删除远程 i/o 目标设备的尝试已被取消。 如果希望驱动程序继续使用目标，则驱动程序必须调用 [**IWDFRemoteTarget：：重新打开**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfremotetarget-reopen)。 通常，驱动程序调用从**OnRemoteTargetRemoveCanceled**回调函数中**重新打开**，但**重新打开**可以在**OnRemoteTargetRemoveCanceled**返回后调用。
+通知驱动程序删除远程 i/o 目标设备的尝试已被取消。 如果希望驱动程序继续使用目标，则驱动程序必须调用 [**IWDFRemoteTarget：：重新打开**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfremotetarget-reopen)。 通常，驱动程序调用从 **OnRemoteTargetRemoveCanceled** 回调函数中 **重新打开**，但 **重新打开** 可以在 **OnRemoteTargetRemoveCanceled** 返回后调用。
 
 驱动程序可以调用 [**IWDFRemoteTarget：： GetState**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfremotetarget-getstate) 以获取远程 i/o 目标的当前状态。
 

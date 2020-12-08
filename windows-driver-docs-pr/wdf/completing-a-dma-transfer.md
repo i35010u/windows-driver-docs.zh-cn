@@ -1,7 +1,6 @@
 ---
 title: 完成 DMA 传输
 description: 完成 DMA 传输
-ms.assetid: 86383b9f-9b82-4afa-81ac-2ab09bd8778b
 keywords:
 - DMA 操作 WDK KMDF，传输
 - 总线主控 DMA WDK KMDF，传输
@@ -9,12 +8,12 @@ keywords:
 - 完成 DMA 传输 WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c3dee160ea14261821186516e23216f1a8a43e5a
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: efa04353e182e55ff45f53e0fc8e3dde9240b45c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91733091"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96829109"
 ---
 # <a name="completing-a-dma-transfer"></a>完成 DMA 传输
 
@@ -49,7 +48,7 @@ dmaTransaction = devExt->WriteDmaTransaction;
 
 -   [**WdfDmaTransactionDmaCompletedWithLength**](/windows-hardware/drivers/ddi/wdfdmatransaction/nf-wdfdmatransaction-wdfdmatransactiondmacompletedwithlength)，如果传输已成功完成，并且硬件报告传输的字节计数 (或未) 传输的字节数，或者如果驱动程序检测到错误并指定传输计数为零，则重试传输。 如果驱动程序指定的传输计数为零，则框架将从剩余的字节数中减去零，从而将同一传输发送到 [*EvtProgramDma*](/windows-hardware/drivers/ddi/wdfdmatransaction/nc-wdfdmatransaction-evt_wdf_program_dma) 回调函数。
 
--   如果硬件报告不足或失败的情况，则为[**WdfDmaTransactionDmaCompletedFinal**](/windows-hardware/drivers/ddi/wdfdmatransaction/nf-wdfdmatransaction-wdfdmatransactiondmacompletedfinal)。
+-   如果硬件报告不足或失败的情况，则为 [**WdfDmaTransactionDmaCompletedFinal**](/windows-hardware/drivers/ddi/wdfdmatransaction/nf-wdfdmatransaction-wdfdmatransactiondmacompletedfinal)。
 
 你的驱动程序可以调用 [**WdfDmaTransactionGetCurrentDmaTransferLength**](/windows-hardware/drivers/ddi/wdfdmatransaction/nf-wdfdmatransaction-wdfdmatransactiongetcurrentdmatransferlength) 来获取已完成传输的原始长度。 如果设备报告未传输的字节数，则此调用非常有用，因为驱动程序可以从原始传输长度中减去非传输字节数，然后调用 **WdfDmaTransactionGetCurrentDmaTransferLength** 来报告实际传输大小。
 

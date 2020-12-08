@@ -1,7 +1,6 @@
 ---
 title: usbkd.usbhubmdpd
 description: 如果在由于 Bug 检查0xFE 生成的故障转储中存在一个 usbkd，则 usbhubmdpd 命令将显示 usbhub _HUB_PORT_DATA 结构。
-ms.assetid: 128D45A2-A891-42BC-9E3E-FCDC5B4504A2
 keywords:
 - usbkd usbhubmdpd Windows 调试
 ms.date: 05/23/2017
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 0eb2f1572c5b535fb40786743292f1b803a404c2
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: f8c4b28ffcd4bc7743b07199559c15c77fb746e9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89207375"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96829755"
 ---
 # <a name="usbkdusbhubmdpd"></a>!usbkd.usbhubmdpd
 
 
-**！ Usbkd. usbhubmdpd**命令显示**usbhub！ \_集线器 \_ 端口 \_ 数据**结构（如果存在于[**Bug 检查 0xFE**](bug-check-0xfe--bugcode-usb-driver.md)中生成的故障转储中）。
+**！ Usbkd. usbhubmdpd** 命令显示 **usbhub！ \_集线器 \_ 端口 \_ 数据** 结构（如果存在于 [**Bug 检查 0xFE**](bug-check-0xfe--bugcode-usb-driver.md)中生成的故障转储中）。
 
 ```dbgcmd
 !usbkd.usbhubmdpd [PortNum]

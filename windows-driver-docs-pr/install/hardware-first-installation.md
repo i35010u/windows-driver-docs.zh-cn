@@ -1,30 +1,29 @@
 ---
 title: 硬件优先安装
 description: 硬件优先安装
-ms.assetid: 42e47250-3600-4479-8e49-483c7470935d
 keywords:
-- 安装应用程序 WDK，第一个的硬件安装
-- 设备安装应用程序 WDK，第一个的硬件安装
-- 硬件第一个安装 WDK 设备安装
-- 分发中等 WDK 设备安装，第一个的硬件安装
+- 安装应用程序 WDK，硬件优先安装
+- 设备安装应用程序 WDK，硬件优先安装
+- 硬件-首次安装 WDK 设备安装
+- 分发媒体 WDK 设备安装，硬件优先安装
 - 设备安装 WDK，类型
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4ccfdd1bb1bb1092567c56d4c7da2ea0cd1dba70
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6c10216ca53dcaf914cb2ef7a472af452099ed1f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383665"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96830003"
 ---
 # <a name="hardware-first-installation"></a>硬件优先安装
 
 
-硬件第一个安装涉及到通过插入新的硬件设备到系统触发的设备驱动程序安装。 在这种情况下，你[驱动程序包](driver-packages.md)的设备不在系统中已预安装了。
+硬件优先安装涉及到通过将新的硬件设备插入系统而触发的设备驱动程序的安装。 在这种情况下，尚未在系统中预先安装设备的 [驱动程序包](driver-packages.md) 。
 
-如果用户插入新的硬件分发介质插入驱动器之前，Windows 安装的驱动程序的方式取决于适用于设备的驱动程序的类型。 以下各节中介绍了不同的安装类型：
+如果用户在将分发介质插入驱动器之前插入新硬件，则 Windows 安装驱动程序的方式取决于设备的可用驱动程序类型。 以下部分介绍了不同的安装类型：
 
--   [安装内置驱动程序或预安装的驱动程序](installing-an-in-box-driver-or-a-preinstalled-driver.md)
+-   [安装随机驱动程序或预安装的驱动程序](installing-an-in-box-driver-or-a-preinstalled-driver.md)
 
  
 

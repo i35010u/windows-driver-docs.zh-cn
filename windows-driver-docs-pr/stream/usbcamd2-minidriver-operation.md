@@ -1,7 +1,6 @@
 ---
 title: USBCAMD2 微型驱动程序操作
 description: USBCAMD2 微型驱动程序操作
-ms.assetid: 395612cd-3407-4b42-b3a5-0afa838e73d9
 keywords:
 - Windows 2000 内核流式处理模型 WDK，USBCAMD2 微型驱动程序库
 - 流式处理模型 WDK Windows 2000 内核，USBCAMD2 微型驱动程序库
@@ -12,18 +11,18 @@ keywords:
 - SRBs WDK USBCAMD2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9a5779be49a1bcd47a4e10075e1cea49dd9e9fde
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: a850f7bd55a3c873b961c8af8d580bbc97f93b95
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89190139"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96829833"
 ---
 # <a name="usbcamd2-minidriver-operation"></a>USBCAMD2 微型驱动程序操作
 
 USBCAMD2 相机微型驱动程序通常按如下方式操作：
 
-- 照相机微型驱动程序从其[**DriverEntry**](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_initialize)例程调用[**USBCAMD \_ DriverEntry**](/windows-hardware/drivers/ddi/usbcamdi/nf-usbcamdi-usbcamd_driverentry) 。 当微型驱动程序调用 **USBCAMD \_ DriverEntry**时，它将传递到 USBCAMD2 微型驱动程序的 [**AdapterReceivePacket**](/windows-hardware/drivers/ddi/usbcamdi/nc-usbcamdi-padapter_receive_packet_routine) 回调函数。 然后，USBCAMD2 会将微型驱动程序注册到 *stream.sys* 类驱动程序。
+- 照相机微型驱动程序从其 [**DriverEntry**](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_initialize)例程调用 [**USBCAMD \_ DriverEntry**](/windows-hardware/drivers/ddi/usbcamdi/nf-usbcamdi-usbcamd_driverentry) 。 当微型驱动程序调用 **USBCAMD \_ DriverEntry** 时，它将传递到 USBCAMD2 微型驱动程序的 [**AdapterReceivePacket**](/windows-hardware/drivers/ddi/usbcamdi/nc-usbcamdi-padapter_receive_packet_routine) 回调函数。 然后，USBCAMD2 会将微型驱动程序注册到 *stream.sys* 类驱动程序。
 
 - 然后，照相机微型驱动程序可以接收 (SRBs) 在其 *AdapterReceivePacket* 回调函数中处理的各种流请求块，包括：
   - [**SRB \_ 初始化 \_ 设备**](./srb-initialize-device.md)
@@ -33,7 +32,7 @@ USBCAMD2 相机微型驱动程序通常按如下方式操作：
   - [**SRB \_ 设置 \_ 设备 \_ 属性**](./srb-set-device-property.md)
   - [**SRB \_ 获取 \_ 数据 \_ 交集**](./srb-get-data-intersection.md)
   - [**SRB \_ 打开 \_ 流**](./srb-open-stream.md)
-- 相机微型驱动程序确定其必须如何处理每个 SRB。 微型驱动程序可以调用 USBCAMD2 微型驱动程序库中的例程来帮助处理 SRBs。 这些例程通常以*USBCAMD \_ *前缀开头。
+- 相机微型驱动程序确定其必须如何处理每个 SRB。 微型驱动程序可以调用 USBCAMD2 微型驱动程序库中的例程来帮助处理 SRBs。 这些例程通常以 *USBCAMD \_* 前缀开头。
 
 例如，若要使用 USBCAMD2 指定相机微型驱动程序的其他回调函数，照相机微型驱动程序将在 [**USBCAMD \_ 设备 \_ DATA2**](/windows-hardware/drivers/ddi/usbcamdi/ns-usbcamdi-_usbcamd_device_data2) 结构中指定其入口点。 然后，微型驱动程序调用 [**USBCAMD \_ InitializeNewInterface**](/windows-hardware/drivers/ddi/usbcamdi/nf-usbcamdi-usbcamd_initializenewinterface) 将已初始化的 USBCAMD \_ 设备 \_ DATA2 结构传递到 USBCAMD2。 然后，USBCAMD2 会在必要时调用微型驱动程序的回调函数。
 
@@ -64,7 +63,7 @@ USBCAMD2 相机微型驱动程序通常按如下方式操作：
 
 | 组件 | 操作 |
 | --- | --- |
-| 照相机微型驱动程序 | 向**stream.sys**类驱动程序提供[**HW_STREAM_INFORMATION**](/windows-hardware/drivers/ddi/strmini/ns-strmini-_hw_stream_information)流信息结构。 |
+| 照相机微型驱动程序 | 向 **stream.sys** 类驱动程序提供 [**HW_STREAM_INFORMATION**](/windows-hardware/drivers/ddi/strmini/ns-strmini-_hw_stream_information)流信息结构。 |
 | 照相机微型驱动程序 | 填写指向 **stream.sys** 类驱动程序 [**HW_STREAM_HEADER**](/windows-hardware/drivers/ddi/strmini/ns-strmini-_hw_stream_header) 结构中设备属性集的数组的指针。 |
 | 照相机微型驱动程序 | 调用 [**USBCAMD_AdapterReceivePacket**](/windows-hardware/drivers/ddi/usbcamdi/nf-usbcamdi-usbcamd_adapterreceivepacket)。 |
 | USBCAMD2 | 填写流标头中的 pin 数目。 |
@@ -94,8 +93,8 @@ USBCAMD2 相机微型驱动程序通常按如下方式操作：
 
 | 组件 | 操作 |
 | --- | --- |
-| 照相机微型驱动程序 | 返回[**KSDATARANGE**](/previous-versions/ff561658(v=vs.85))结构中的[**KSDATAFORMAT**](/windows-hardware/drivers/ddi/ks/ns-ks-ksdataformat)结构。 |
-| 照相机微型驱动程序 | 检查所请求的帧速率是否在请求的视频格式的上限和**下限)  (。** 如果超过限制，微型驱动程序应更正 pSrb->CommandData IntersectInfo->Datarange： VideoInfoHeader，AvgTimePerFrame 中的以下值。 |
+| 照相机微型驱动程序 | 返回 [**KSDATARANGE**](/previous-versions/ff561658(v=vs.85))结构中的 [**KSDATAFORMAT**](/windows-hardware/drivers/ddi/ks/ns-ks-ksdataformat)结构。 |
+| 照相机微型驱动程序 | 检查所请求的帧速率是否在请求的视频格式的上限和 **下限)  (。** 如果超过限制，微型驱动程序应更正 pSrb->CommandData IntersectInfo->Datarange： VideoInfoHeader，AvgTimePerFrame 中的以下值。 |
 
 ## <a name="minidrivers-srb_open_stream-handler"></a>微型驱动程序的 SRB \_ 打开 \_ 流处理程序
 

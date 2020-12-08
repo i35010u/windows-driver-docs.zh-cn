@@ -1,18 +1,17 @@
 ---
 title: OID_WDI_TASK_ROAM
 description: OID_WDI_TASK_ROAM 适配器尝试从当前连接的 AP 漫游到新的 AP 的请求。
-ms.assetid: 22976d21-9212-4915-ab7a-fcc15d228db1
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 OID_WDI_TASK_ROAM 网络驱动程序
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: f5fea26a73a4f07707b45a50494ff69f69047583
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 9c7c492537346cc866a58c31ecc2966f483ea47a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89215214"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96829237"
 ---
 # <a name="oid_wdi_task_roam"></a>OID \_ WDI \_ 任务 \_ 漫游
 
@@ -21,7 +20,7 @@ OID \_ WDI \_ 任务 \_ 漫游请求适配器尝试从当前连接的 AP 漫游�
 
 | 对象 | 支持中止                                                               | 主机驱动程序策略 (默认优先级)  | 正常执行时间 (秒)  |
 |--------|-----------------------------------------------------------------------------|---------------------------------------|---------------------------------|
-| 端口   | 是。 如果在解除解除后中止，则必须后跟 dot11 reset。 | 4                                     | 10                              |
+| 端口   | 是的。 如果在解除解除后中止，则必须后跟 dot11 reset。 | 4                                     | 10                              |
 
  
 
@@ -70,7 +69,7 @@ Microsoft 组件提供适配器应考虑漫游的首选 BSS 条目列表。
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
-<td><p>Windows Server 2016</p></td>
+<td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
 <td><p>标头</p></td>

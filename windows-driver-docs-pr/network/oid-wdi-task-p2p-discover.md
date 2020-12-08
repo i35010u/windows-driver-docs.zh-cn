@@ -1,35 +1,34 @@
 ---
 title: OID_WDI_TASK_P2P_DISCOVER
-description: 将 OID_WDI_TASK_P2P_DISCOVER 颁发给设备，以执行 Wi-fi 直接发现。
-ms.assetid: 9425a8d1-af68-488c-8a1e-a9b759f102cc
+description: OID_WDI_TASK_P2P_DISCOVER 将颁发给设备以执行 Wi-Fi 直接发现。
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 OID_WDI_TASK_P2P_DISCOVER 网络驱动程序
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 58a4d84dde50d0cfe386d087429e3f2b3a34b50c
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 8fba1b679caef67113fda8743821b3f7e41e2a22
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104570"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96829255"
 ---
 # <a name="oid_wdi_task_p2p_discover"></a>OID \_ WDI \_ 任务 \_ P2P \_ 发现
 
 
-已将 OID \_ WDI \_ 任务 \_ P2P \_ 发现发送到设备，以便执行 wi-fi 直接发现。
+已将 OID \_ WDI \_ 任务 \_ P2P \_ 发现发送到设备，以便执行 Wi-Fi 直接发现。
 
 | 对象 | 支持中止                                           | 主机驱动程序策略 (默认优先级)  | 正常执行时间 (秒)  |
 |--------|---------------------------------------------------------|---------------------------------------|---------------------------------|
-| Port   | 可以。 中止后，端口必须处于干净状态。 | 6                                     | 15                              |
+| 端口   | 是的。 中止后，端口必须处于干净状态。 | 6                                     | 15                              |
 
  
 
-此命令包含一些属性，这些属性定义要搜索的一组特定 Wi-fi Direct 设备，或通配符发现。
+此命令包含一些属性，这些属性定义要搜索的一组特定 Wi-Fi 直接设备，或通配符发现。
 
-Wi-fi 直接发现与标准 Wi-fi 扫描相互排斥。 此任务正在运行时，不应发送广播探测请求，不应使用 "DIRECT" SSID 或特定的中转 SSID。 这些探测请求还必须包含所有必需的 Wi-fi Direct。
+Wi-Fi 直接发现与标准 Wi-Fi 扫描是互斥的。 此任务正在运行时，不应发送广播探测请求，不应使用 "DIRECT" SSID 或特定的中转 SSID。 这些探测请求还必须包含所有必需的 Wi-Fi。
 
-主机可能包含未作为任务参数的一部分提供给设备的搜索条件。 如果主机已满足所需的条件，则它可能会使用任务中止机制，因此，设备可以快速中止 Wi-fi 直接发现任务，以免降低方案性能。
+主机可能包含未作为任务参数的一部分提供给设备的搜索条件。 如果主机已满足所需的条件，则它可能会使用任务中止机制，因此，设备可以快速中止 Wi-Fi 直接发现任务，以免降低方案性能。
 
 如果任务已完成， (正常或由于中止) ，则端口应处于良好状态，以便可以在该端口上发出另一个发现请求。
 
@@ -137,7 +136,7 @@ Wi-fi 直接发现与标准 Wi-fi 扫描相互排斥。 此任务正在运行时
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
-<td><p>Windows Server 2016</p></td>
+<td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
 <td><p>标头</p></td>

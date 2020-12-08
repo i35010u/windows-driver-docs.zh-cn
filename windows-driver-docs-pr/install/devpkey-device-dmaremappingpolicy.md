@@ -1,7 +1,6 @@
 ---
 title: DEVPKEY_Device_DmaRemappingPolicy
 description: DEVPKEY_Device_DmaRemappingPolicy
-ms.assetid: 3553debf-dec8-4135-9bd7-6ce2941afa52
 keywords:
 - DEVPKEY_Device_DmaRemappingPolicy 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 07/15/2020
-ms.openlocfilehash: db8b9131e0fd2b8afb45895ce555584af2ceb03e
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 9ecf372d9b1e035f3275fb81f89018a3a1b826e8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90717070"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96829929"
 ---
 # <a name="devpkey_device_dmaremappingpolicy"></a>DEVPKEY_Device_DmaRemappingPolicy
 
@@ -28,13 +27,13 @@ DEVPKEY_Device_DmaRemappingPolicy 设备属性的值指示设备的 DMA 重新�
 **属性键**： DEVPKEY_Device_DmaRemappingPolicy  
 **属性数据类型标识符**： [ **DEVPROP_TYPE_INT32**](devprop-type-int32.md)  
 **属性访问**：应用程序和服务的只读访问。  
-已**本地化？**：否  
+已 **本地化？**：否  
 
  
 <a name="remarks"></a>备注
 -------
 
-| 值 | 含义 |
+| “值” | 含义 |
 | ----- | ------- |
 | 2     | 此设备上的驱动程序可以使用 DMA 重新映射。 |
 | 1     | 此设备上至少有一个驱动程序选择退出 DMA 重新映射。 |

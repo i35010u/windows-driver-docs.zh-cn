@@ -1,15 +1,14 @@
 ---
 title: 自动生成的对象名称
 description: 自动生成的对象名称
-ms.assetid: bbedfb17-9e71-4253-9e37-0a81d4c91b6b
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 551f89ba8a17e6a18e1cb42b0181f378cd8222ff
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6423b79d1595c6426b3297caf8af97f94a02add2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63373345"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96828703"
 ---
 # <a name="automatically-generated-object-names"></a>自动生成的对象名称
 
@@ -17,7 +16,7 @@ ms.locfileid: "63373345"
 
 
 
-如果**文件名**ObjectInfo 数据集的字段为空白，Microsoft PTP WIA 微型驱动程序将创建基于 ObjectFormat 和 ObjectHandle 字段的名称。 例如，具有 ObjectHandle 值 5 的映像称为 Image5 Windows 的英语版本上。
+如果 ObjectInfo 数据集的 **Filename** 字段为空，则 MICROSOFT PTP WIA 微型驱动程序将根据 ObjectFormat 和 ObjectHandle 字段创建一个名称。 例如，在英语版本的 Windows 上，ObjectHandle 值为5的图像称为 Image5。
 
  
 

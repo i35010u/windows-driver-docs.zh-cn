@@ -1,7 +1,6 @@
 ---
 title: 文件系统筛选器驱动程序的加载顺序组
 description: 文件系统筛选器驱动程序的加载顺序组
-ms.assetid: 57c9e4c6-186c-464f-ac83-c0669d46b189
 keywords:
 - 筛选器驱动程序 WDK 文件系统，驱动程序加载
 - 文件系统筛选器驱动程序 WDK，驱动程序加载
@@ -10,12 +9,12 @@ keywords:
 - 加载顺序组 WDK 文件系统
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: febc66fcb80d008de5b0cec0795198f296bbac54
-ms.sourcegitcommit: 2dd8e4262c30e3f8570e35da7b9485139b216ac8
+ms.openlocfilehash: f3254ea48a7dc2d93f67427a591b68da88840e38
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90027558"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96828789"
 ---
 # <a name="load-order-groups-for-file-system-filter-drivers"></a>文件系统筛选器驱动程序的加载顺序组
 
@@ -35,7 +34,7 @@ Microsoft Windows XP 和更高版本的操作系统为在系统启动时加载�
 
 -   如果文件系统筛选器驱动程序未指定加载顺序组，则将其加载到指定了加载顺序组的同一启动类型的所有其他驱动程序之后。
 
-下表列出了文件系统筛选器驱动程序的系统定义的加载顺序组。 对于每个加载顺序组，"加载顺序组" 列包含应在筛选器 INF 文件的 "[**版本" 部分**](../install/inf-version-section.md)中的**LoadOrderGroup**条目中为该组指定的值。
+下表列出了文件系统筛选器驱动程序的系统定义的加载顺序组。 对于每个加载顺序组，"加载顺序组" 列包含应在筛选器 INF 文件的 "[**版本" 部分**](../install/inf-version-section.md)中的 **LoadOrderGroup** 条目中为该组指定的值。
 
 请注意，加载顺序组显示在堆栈上，因为它们的加载顺序相反。
 

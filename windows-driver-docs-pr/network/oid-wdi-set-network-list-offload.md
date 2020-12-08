@@ -1,31 +1,30 @@
 ---
 title: OID_WDI_SET_NETWORK_LIST_OFFLOAD
 description: OID_WDI_SET_NETWORK_LIST_OFFLOAD 设置固件的首选 Ssid 列表，以扫描 Ap。
-ms.assetid: 2df9ee2b-78df-4f92-9b40-5945ecc81c7e
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 OID_WDI_SET_NETWORK_LIST_OFFLOAD 网络驱动程序
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 4ef78275ee5ccbf1ec1b99909a9ea9a2fd31a429
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 686f063c6062ecb3a6bb22cff4a3987763447134
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89206311"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96829363"
 ---
 # <a name="oid_wdi_set_network_list_offload"></a>OID \_ WDI \_ SET \_ 网络 \_ 列表 \_ 卸载
 
 
 OID \_ WDI \_ SET \_ 网络 \_ 列表 \_ 卸载设置用于扫描 Ap 的固件的首选 ssid 列表。
 
-| 作用域        | 设置序列化任务 | 正常执行时间 (秒)  |
+| 范围        | 设置序列化任务 | 正常执行时间 (秒)  |
 |--------------|--------------------------|---------------------------------|
 | 主端口 | 是                      | 1                               |
 
  
 
-有两种类型的网络列表卸载 (NLO) 。 一种类型会卸载到 Always On 始终连接 (AOAC) 系统上的 Nic。 另一种是即时连接 NLO，在 Windows 8 和 Windows 8.1 中，仅用于非 AOAC 系统，以便在从休眠恢复时快速重新连接 Wi-fi。 对于 "即时连接"，将在系统进入休眠状态之前发送列表。 接下来，即时连接用于在支持它的 AOAC 系统上从休眠中恢复。
+有两种类型的网络列表卸载 (NLO) 。 一种类型会卸载到 Always On 始终连接 (AOAC) 系统上的 Nic。 另一种是即时连接 NLO，在 Windows 8 和 Windows 8.1 中，仅用于非 AOAC 系统，以便在从休眠状态恢复时快速重新连接 Wi-Fi。 对于 "即时连接"，将在系统进入休眠状态之前发送列表。 接下来，即时连接用于在支持它的 AOAC 系统上从休眠中恢复。
 
 ## <a name="instant-connect"></a>即时连接
 
@@ -87,7 +86,7 @@ NLO 的默认扫描类型为 WDI \_ scan \_ type \_ AUTO。 主动扫描通道�
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
-<td><p>Windows Server 2016</p></td>
+<td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
 <td><p>标头</p></td>

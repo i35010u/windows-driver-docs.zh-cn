@@ -1,7 +1,6 @@
 ---
 title: KSCATEGORY_DATATRANSFORM
 description: KSCATEGORY_DATATRANSFORM
-ms.assetid: 2e5ff89a-6ec4-4bdf-b935-675c2a337efb
 keywords:
 - KSCATEGORY_DATATRANSFORM 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 6d505e6cba7cde8a5c5aa89bedf090a77aa1a1e9
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: d86f48a574ef3635bcb3b58dca0138871e84072f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89097249"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96829877"
 ---
 # <a name="kscategory_datatransform"></a>KSCATEGORY_DATATRANSFORM
 
@@ -56,7 +55,7 @@ ms.locfileid: "89097249"
 
 KS 设备的驱动程序将注册 KSCATEGORY_DATATRANSFORM 的实例，以向操作系统指示设备支持 KSCATEGORY_DATATRANSFORM 功能类别。
 
-有关如何在 INF 文件中注册此功能类别的示例，请参阅 WDK 的*src \\ 音频 \\ Ddksynth*目录中的软件合成器示例附带的*Ddksynth* inf 文件。
+有关如何在 INF 文件中注册此功能类别的示例，请参阅 WDK 的 *src \\ 音频 \\ Ddksynth* 目录中的软件合成器示例附带的 *Ddksynth* inf 文件。
 
 有关此功能类别的详细信息，请参阅 [安装音频适配器的设备接口](../audio/installing-device-interfaces-for-an-audio-adapter.md)、 [**KSPROPERTY_TOPOLOGY_CATEGORIES**](../stream/ksproperty-topology-categories.md)以及 [GFX 筛选器工厂的要求](../audio/index.md)。
 

@@ -1,15 +1,14 @@
 ---
 title: PrivilegedApplications
 description: PrivilegedApplications
-ms.assetid: fb0c4a7e-173e-4768-b1ba-a6c5149d61aa
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9caacb068bb226060a07e91725e84d65c941c67a
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: 20b86a591ec62c7cafdd8d2cfb6f619888aec3bc
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89403454"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96828529"
 ---
 # <a name="privilegedapplications"></a>PrivilegedApplications
 
@@ -42,7 +41,7 @@ PrivilegedApplications 元素指定将允许访问特权移动宽带接口的应
 <thead>
 <tr class="header">
 <th>元素</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -66,7 +65,7 @@ PrivilegedApplications 元素指定将允许访问特权移动宽带接口的应
 <thead>
 <tr class="header">
 <th>元素</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>

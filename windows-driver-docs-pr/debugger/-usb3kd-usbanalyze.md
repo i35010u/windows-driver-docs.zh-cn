@@ -1,7 +1,6 @@
 ---
 title: usb3kd.usbanalyze
 description: Usb3kd. usbanalyze 扩展会分析 USB 3.0 错误检查。
-ms.assetid: 4BC5687B-D8C8-4E5E-B9AD-ECDC63858345
 keywords:
 - usb3kd usbanalyze Windows 调试
 ms.date: 05/23/2017
@@ -12,12 +11,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 686007165ce30fefe2a8294c41ffdb0bbbebb5ab
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: feed4311b7233a5beacafad1ee34a71cba68c185
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89212267"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96828923"
 ---
 # <a name="usb3kdusbanalyze"></a>!usb3kd.usbanalyze
 

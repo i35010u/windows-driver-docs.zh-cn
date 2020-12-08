@@ -1,16 +1,15 @@
 ---
 title: OID_GEN_PHYSICAL_MEDIUM
 description: 作为查询，OID_GEN_PHYSICAL_MEDIUM OID 指定了 NIC 支持的物理介质的类型。
-ms.assetid: 84d7231b-8af2-4bdb-8df5-37088767f708
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_GEN_PHYSICAL_MEDIUM 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: de851e3ca66105a50d80d7f94a69787b068473e5
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 04d9f5d452cf14ad726189bbd71ef390c39ff25c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89213389"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96829453"
 ---
 # <a name="oid_gen_physical_medium"></a>OID \_ 代 \_ 物理 \_ 中型
 
@@ -18,7 +17,7 @@ ms.locfileid: "89213389"
 
 ## <a name="version-information"></a>版本信息
 
-**注意**   此 OID 在 NDIS 6.0 和6.1 中受支持。 对于 NDIS 6.20 和更高版本，请使用[OID \_ GEN \_ 物理 \_ 媒体 \_ EX](oid-gen-physical-medium-ex.md)
+**注意**  此 OID 在 NDIS 6.0 和6.1 中受支持。 对于 NDIS 6.20 和更高版本，请使用[OID \_ GEN \_ 物理 \_ 媒体 \_ EX](oid-gen-physical-medium-ex.md)
 
 ### <a name="remarks"></a>备注
 
@@ -46,7 +45,7 @@ NDIS 处理微型端口驱动程序的此 OID。 微型端口驱动程序在初�
 
 <a href="" id="ndisphysicalmediumnative802-11"></a>**NdisPhysicalMediumNative802 \_ 11** 数据包通过符合本机802.11 接口的微型端口驱动程序通过无线 LAN 网络传输。 有关此接口的详细信息，请参阅 [本机802.11 无线 LAN 微型端口驱动程序](/previous-versions/windows/hardware/wireless/ff560648(v=vs.85))。
 
-**注意**   NDIS 6.0 和更高版本支持本机802.11 接口。
+**注意**  NDIS 6.0 和更高版本支持本机802.11 接口。
 
 **NdisPhysicalMediumBluetooth** 数据包通过蓝牙网络传输。 蓝牙是一种使用 2.4 GHz 频谱的短距离无线技术。
 
@@ -91,7 +90,7 @@ NDIS 处理微型端口驱动程序的此 OID。 微型端口驱动程序在初�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [支持 OID 生成 \_ \_ 媒体 \_](oid-gen-media-supported.md)
 

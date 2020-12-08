@@ -1,35 +1,34 @@
 ---
 title: OID_WDI_TASK_START_AP
-description: OID_WDI_TASK_START_AP 请求 IHV 组件配置一个端口，以便在指定的端口上启动 Wi-fi Direct 组所有者。
-ms.assetid: 647b039b-eb9a-43e7-9027-15a55df62c79
+description: OID_WDI_TASK_START_AP 请求 IHV 组件配置一个端口，以便在指定的端口上启动 Wi-Fi 的直接组所有者。
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 OID_WDI_TASK_START_AP 网络驱动程序
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: f2d0c8e1aec77d3e6c3d37109d6045cf0683ee58
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 17cfe25213584990ddc756d789f180aece62f09c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104862"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96829251"
 ---
 # <a name="oid_wdi_task_start_ap"></a>OID \_ WDI \_ 任务 \_ 启动 \_ AP
 
 
-OID \_ WDI \_ 任务 \_ 启动 \_ AP 请求 IHV 组件配置一个端口，以便在指定的端口上启动 wi-fi Direct 组所有者。
+OID \_ WDI \_ 任务 \_ 启动 \_ AP 请求 IHV 组件配置一个端口，以便在指定的端口上启动 Wi-Fi 的直接组所有者。
 
 | 对象 | 支持中止                                     | 主机驱动程序策略 (默认优先级)  | 正常执行时间 (秒)  |
 |--------|---------------------------------------------------|---------------------------------------|---------------------------------|
-| Port   | 可以。 中止必须后接 dot11 重置。 | 4                                     | 1                               |
+| 端口   | 是的。 中止必须后接 dot11 重置。 | 4                                     | 1                               |
 
  
 
 在初始化期间，驱动程序会在 [**WDI \_ TLV \_ P2P \_ 功能**](./wdi-tlv-p2p-capabilities.md) 中设置 "使用5ghz 波段" 功能，以指示它是否可以在 5 GHz 波段上启动访问点。
 
-如果设置了 5 GHz 波段支持，适配器应在播发的操作通道上启动 AP，如果失败，则应尝试在 "AP 带区通道列表" 参数中指定的列表。 操作系统将向驱动程序提供提示，指出此 AP 是否可以通过在[**WDI \_ TLV \_ P2P \_ 组 \_ 所有者 \_ 功能**](./wdi-tlv-p2p-group-owner-capability.md)中设置**DOT11 \_ WFD \_ 组 \_ 功能 \_ 交叉 \_ 连接 \_ 支持**的标志来提供 internet 连接。
+如果设置了 5 GHz 波段支持，适配器应在播发的操作通道上启动 AP，如果失败，则应尝试在 "AP 带区通道列表" 参数中指定的列表。 操作系统将向驱动程序提供提示，指出此 AP 是否可以通过在 [**WDI \_ TLV \_ P2P \_ 组 \_ 所有者 \_ 功能**](./wdi-tlv-p2p-group-owner-capability.md)中设置 **DOT11 \_ WFD \_ 组 \_ 功能 \_ 交叉 \_ 连接 \_ 支持** 的标志来提供 internet 连接。
 
-如果在[**WDI \_ TLV \_ 启动 \_ ap \_ 参数**](./wdi-tlv-start-ap-parameters.md)中指定了**MustUseSpecifiedChannel** ，则当 ap 无法在指定的带 () 上启动 ap 时，它可能会返回以下错误之一。
+如果在 [**WDI \_ TLV \_ 启动 \_ ap \_ 参数**](./wdi-tlv-start-ap-parameters.md)中指定了 **MustUseSpecifiedChannel** ，则当 ap 无法在指定的带 () 上启动 ap 时，它可能会返回以下错误之一。
 
 NDIS \_ 状态 \_ DOT11 \_ AP \_ 通道 \_ 目前 \_ 不可 \_ 用 * * * *：目前无法) 指定通道上启动 ap (s。 稍后在指定的通道上重试 () 。
 
@@ -95,7 +94,7 @@ NDIS \_ 状态 \_ DOT11 \_ \_ 当前不可用 ap 波段 \_ * * * * \_ \_ ：目�
 <td><a href="/windows-hardware/drivers/network/wdi-tlv-p2p-channel-number" data-raw-source="[&lt;strong&gt;WDI_TLV_P2P_CHANNEL_NUMBER&lt;/strong&gt;](./wdi-tlv-p2p-channel-number.md)"><strong>WDI_TLV_P2P_CHANNEL_NUMBER</strong></a></td>
 <td></td>
 <td>X</td>
-<td>如果已指定，则定义组构成中确定的操作通道。 仅当运行模式为 Wi-fi Direct 中转时，才可以指定此项。</td>
+<td>如果已指定，则定义组构成中确定的操作通道。 这只能在运行模式 Wi-Fi Direct 中转时指定。</td>
 </tr>
 <tr class="odd">
 <td><a href="/windows-hardware/drivers/network/wdi-tlv-ap-band-channel" data-raw-source="[&lt;strong&gt;WDI_TLV_AP_BAND_CHANNEL&lt;/strong&gt;](./wdi-tlv-ap-band-channel.md)"><strong>WDI_TLV_AP_BAND_CHANNEL</strong></a></td>
@@ -129,7 +128,7 @@ NDIS \_ 状态 \_ DOT11 \_ \_ 当前不可用 ap 波段 \_ * * * * \_ \_ ：目�
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
-<td><p>Windows Server 2016</p></td>
+<td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
 <td><p>标头</p></td>

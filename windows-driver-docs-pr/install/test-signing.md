@@ -1,15 +1,14 @@
 ---
 title: 测试签名
 description: Windows 64 位版本要求在内核模式（包括驱动程序）中运行的所有软件都必须进行数字签名才能加载。
-ms.assetid: 52F309E4-9553-456B-BBD6-217318FC7222
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 68b979d3e1c44ea3420fef092a57837637dd0f8c
-ms.sourcegitcommit: a44ade167cdfb541cf1818e9f9e3726f23f90b66
+ms.openlocfilehash: 5c1ee1de26028b37d6f7708dd261efc4f36e440b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94361393"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96828619"
 ---
 # <a name="test-signing"></a>测试签名
 
@@ -17,7 +16,7 @@ ms.locfileid: "94361393"
 
 ## <a name="installing-an-unsigned-driver-during-development-and-test"></a>在开发和测试期间安装未签名驱动程序
 
-在 [开发和测试过程中安装未签名驱动程序](installing-an-unsigned-driver-during-development-and-test.md)*的摘录* ：
+在 [开发和测试过程中安装未签名驱动程序](installing-an-unsigned-driver-during-development-and-test.md)*的摘录*：
 
 默认情况下，仅当内核可以验证驱动程序签名时，Windows Vista 和更高版本的 windows 的64位版本才会加载内核模式驱动程序。 但是，在早期的驱动程序开发和非自动测试期间，可以禁用此默认行为。 开发人员可以使用以下机制之一来暂时禁用有效驱动程序签名的加载时间强制。 但是，若要完全自动测试即插即用 (PnP) 安装的驱动程序，则必须对该驱动程序的 [编录文件](catalog-files.md) 进行签名。 需要对驱动程序进行签名的原因是 Windows Vista 和更高版本的 Windows 将为需要系统管理员授权安装驱动程序的无符号驱动程序显示 "驱动程序签名" 对话框，这可能会阻止没有必要权限的用户安装驱动程序和使用设备。 无法在 Windows Vista 和更高版本的 Windows 上禁用此 PnP 驱动程序安装行为。
 
@@ -37,7 +36,7 @@ Windows Vista 和更高版本的 Windows 支持 F8 高级启动选项--"禁用�
 bcdedit -debug on
 ```
 
-若要使用 BCDEdit，用户必须是系统上 Administrators 组的成员，并从提升的命令提示符运行该命令。 若要打开提升的命令提示符窗口，请创建 *Cmd.exe* 的桌面快捷方式，选择并按住 (或右键单击该快捷方式) ，然后选择 " **以管理员身份运行** "。
+若要使用 BCDEdit，用户必须是系统上 Administrators 组的成员，并从提升的命令提示符运行该命令。 若要打开提升的命令提示符窗口，请创建 *Cmd.exe* 的桌面快捷方式，选择并按住 (或右键单击该快捷方式) ，然后选择 " **以管理员身份运行**"。
 
 但请注意，在某些情况下，开发人员可能必须附加内核调试器，还需要维护加载时签名强制。 有关如何实现此目的，请参阅 [附录1：在内核调试模式下强制 Kernel-Mode 签名验证](appendix-1--enforcing-kernel-mode-signature-verification-in-kernel-debugging-mode.md) 。
 
@@ -99,7 +98,7 @@ bcdedit -debug on
 
    - **-Pe** 选项指定可以导出与证书关联的私钥。
 
-   - **-Ss** 选项指定包含测试证书 ( *PrivateCertStore* ) 的证书存储的名称。
+   - **-Ss** 选项指定包含测试证书 (*PrivateCertStore*) 的证书存储的名称。
 
    - **-N CN =** option 指定证书的名称，Contoso.com (Test) 。 此名称与 [**SignTool**](../devtest/signtool.md) 工具一起用于标识证书。
 
@@ -185,7 +184,7 @@ bcdedit -debug on
 
     建议检查 cat 文件以验证是否包含驱动程序文件和所选操作系统。 如果添加或删除了任何驱动程序文件，则已修改 INF 文件，必须重新创建并重新签名该 cat 文件。 此处的任何省略都将导致安装错误，这些错误将报告在 Vista 和更高版本上的安装日志文件 (setupapi.log 或 XP) 的 setupapi.log 文件中。
 
-6. 针对 [驱动程序包的目录文件的测试签名](test-signing-a-driver-package-s-catalog-file.md)*摘录* ：
+6. 针对 [驱动程序包的目录文件的测试签名](test-signing-a-driver-package-s-catalog-file.md)*摘录*：
 
     以下命令行说明了如何运行 SignTool 来执行以下操作：
 
@@ -207,9 +206,9 @@ bcdedit -debug on
 
    - **/V** 选项启用详细操作，其中，SignTool 显示成功执行和警告消息。
 
-   - **/S** 选项指定包含测试证书的证书存储 ( *PrivateCertStore)* 的名称。
+   - **/S** 选项指定包含测试证书的证书存储 (*PrivateCertStore)* 的名称。
 
-   - **/N** 选项指定在指定的证书存储中安装的 ( *Contoso.com (测试) # B3* 的证书的名称。
+   - **/N** 选项指定在指定的证书存储中安装的 (*Contoso.com (测试) # B3* 的证书的名称。
 
    - **/T** 选项指定了 `http://timestamp.digicert.com` 用于对数字签名进行时间戳的 TSA () 的 URL。
 
@@ -220,7 +219,7 @@ bcdedit -debug on
 
 tstamd64.cat 指定将进行数字签名的目录文件的名称。 如前面所述，你可以打开 cat 文件
 
-7. *修改后的摘录* ： [通过嵌入的签名对驱动程序进行测试签名](test-signing-a-driver-through-an-embedded-signature.md)：
+7. *修改后的摘录*： [通过嵌入的签名对驱动程序进行测试签名](test-signing-a-driver-through-an-embedded-signature.md)：
 
     -   在 Windows Vista 和更高版本的 windows 的64位版本中，内核模式代码签名要求表明 *启动启动驱动程序* 必须具有嵌入签名。 无论驱动程序的驱动程序包是否有经过数字签名的目录文件，此项都是必需的。
 
@@ -256,9 +255,9 @@ tstamd64.cat 指定将进行数字签名的目录文件的名称。 如前面所
 
     重新启动计算机。
 
-2. [使用 certmgr.msc 在测试计算机上安装测试证书](using-certmgr-to-install-test-certificates-on-a-test-computer.md)*所选的摘录* ：
+2. [使用 certmgr.msc 在测试计算机上安装测试证书](using-certmgr-to-install-test-certificates-on-a-test-computer.md)*所选的摘录*：
 
-    将证书 ( *.cer* ) 文件（用于对驱动程序进行 [测试签名](test-signing-driver-packages.md) ）复制到测试计算机。 可以将证书文件复制到测试计算机上的任何目录中。
+    将证书 (*.cer*) 文件（用于对驱动程序进行 [测试签名](test-signing-driver-packages.md) ）复制到测试计算机。 可以将证书文件复制到测试计算机上的任何目录中。
 
     以下 Certmgr.msc 命令将证书文件 *CertificateFileName* 中的证书添加到测试计算机上受信任的根证书颁发机构证书存储：
 
@@ -272,7 +271,7 @@ tstamd64.cat 指定将进行数字签名的目录文件的名称。 如前面所
     CertMgr.exe /add CertificateFileName.cer /s /r localMachine trustedpublisher
     ```
 
-    其中 ( *从* [**certmgr.msc**](../devtest/certmgr.md)) 摘录：
+    其中 (*从* [**certmgr.msc**](../devtest/certmgr.md)) 摘录：
 
     /add CertificateName
 

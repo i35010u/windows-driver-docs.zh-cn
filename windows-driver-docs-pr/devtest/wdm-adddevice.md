@@ -1,7 +1,6 @@
 ---
 title: 'AddDevice 规则 (wdm) '
 description: AddDevice 规则指定驱动程序的 AddDevice 例程仅在调用 IoCreateDevice 后才调用 IoAttachDeviceToDeviceStack。
-ms.assetid: 6379633a-194f-45b8-8c21-85eecf300aeb
 ms.date: 05/21/2018
 keywords:
 - 'AddDevice 规则 (wdm) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: f96e9d158def3e30f03bb35b9582c496720df1f7
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 58a596fd7da0bc3160851e67e27dea611c72ced5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104940"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96830091"
 ---
 # <a name="adddevice-rule-wdm"></a>AddDevice 规则 (wdm) 
 
 
-**AddDevice**规则指定驱动程序的[**AddDevice**](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_add_device)例程仅在调用[**IoCreateDevice**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocreatedevice)后才调用[**IoAttachDeviceToDeviceStack**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioattachdevicetodevicestack) 。
+**AddDevice** 规则指定驱动程序的 [**AddDevice**](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_add_device)例程仅在调用 [**IoCreateDevice**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocreatedevice)后才调用 [**IoAttachDeviceToDeviceStack**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioattachdevicetodevicestack) 。
 
 此规则仅适用于具有 [*AddDevice*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_add_device) 例程的驱动程序。
 

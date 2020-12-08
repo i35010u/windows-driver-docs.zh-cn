@@ -1,19 +1,18 @@
 ---
 title: 受信任的发布者证书存储
 description: 受信任的发布者证书存储
-ms.assetid: e2fcb0ce-82e3-499a-85b9-76e4e742190e
 keywords:
 - 驱动程序签名 WDK，受信任的发行者证书存储
 - 受信任的发布者证书存储 WDK
 - 证书存储 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ee2c1ee8b3427dedfbb2ad900f4917154578c93a
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: d92d90b156b253de9d73bce85da0d2c475735455
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91732609"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96828587"
 ---
 # <a name="trusted-publishers-certificate-store"></a>受信任的发布者证书存储
 
@@ -22,7 +21,7 @@ ms.locfileid: "91732609"
 
 如果发行者的 Authenticode 证书位于 "受信任的发行者" 证书存储区中，则 Windows 将安装由证书进行数字签名的 [驱动程序包](driver-packages.md) ，而不会提示用户 (*无提示安装*) 。 通过在 "受信任的发行者" 证书存储中安装 Authenticode 证书，你可以在用于内部测试和调试的各种系统上自动安装驱动程序包。
 
-**重要提示**   仅建议你的内部系统对驱动程序包的安装执行这种做法。 对于在组织外部分发的任何驱动程序包，都不应遵循这种做法。
+**重要提示**  仅建议你的内部系统对驱动程序包的安装执行这种做法。 对于在组织外部分发的任何驱动程序包，都不应遵循这种做法。
 
  
 
@@ -36,13 +35,13 @@ ms.locfileid: "91732609"
 
 可以使用 [**certmgr.msc**](../devtest/certmgr.md) 工具将 Authenticode 证书手动安装到计算机上的 "受信任的发行者" 证书存储中。
 
-**注意**   即插即用使用的驱动程序签名验证策略要求 CA 的验证码证书以前已安装在 "受信任的发布者" 证书存储的 "本地计算机" 版本中。 有关详细信息，请参阅 [Local Machine and Current User Certificate Stores](local-machine-and-current-user-certificate-stores.md)（本地计算机和当前用户证书存储）。
+**注意**  即插即用使用的驱动程序签名验证策略要求 CA 的验证码证书以前已安装在 "受信任的发布者" 证书存储的 "本地计算机" 版本中。 有关详细信息，请参阅 [Local Machine and Current User Certificate Stores](local-machine-and-current-user-certificate-stores.md)（本地计算机和当前用户证书存储）。
 
  
 
 有关软件限制策略和使用证书规则的详细信息，请参阅 Windows 帮助和支持中心中的信息。 
 
-有关如何使用组策略在企业中部署 Authenticode 证书证书的详细信息，请参阅自述文件*Selfsign_readme.htm**中的自述 \\ \\ \\ *文件。
+有关如何使用组策略在企业中部署 Authenticode 证书证书的详细信息，请参阅自述文件 *Selfsign_readme.htm**中的自述 \\ \\ \\* 文件。
 
 有关证书存储的详细信息，请参阅 [代码签名最佳做法](/windows-hardware/test/hlk/) 网站。
 

@@ -1,16 +1,15 @@
 ---
 title: 如何卸载设备和驱动程序包
 description: 如何卸载设备和驱动程序包
-ms.assetid: 0f4f0bbf-ca8f-47ef-b70b-d023bba9b842
 ms.date: 10/07/2020
 ms.localizationpriority: medium
 ms.custom: contperfq2
-ms.openlocfilehash: a7f4a1cda686437f0de372c72986e8aef80cd797
-ms.sourcegitcommit: 62c81d88b03bd311d1cdfef5b138d579faceb304
+ms.openlocfilehash: 8a0be6b889016b95aa7a97eb4c38764fc1ac289d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92113546"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96828665"
 ---
 # <a name="how-devices-and-driver-packages-are-uninstalled"></a>如何卸载设备和驱动程序包
 
@@ -20,7 +19,7 @@ ms.locfileid: "92113546"
 
 若要删除设备节点 (表示物理设备的 *devnode*) ，请使用以下操作之一：
 
-* 若要仅卸载指定的设备，请使用设备安装应用程序，该应用程序使用 DIF_REMOVE 的请求来调用[setupapi.log](setupapi.md)   函数[**SetupDiCallClassInstaller**](/windows/win32/api/setupapi/nf-setupapi-setupdicallclassinstaller) 。 [**DIF_REMOVE**](./dif-remove.md)
+* 若要仅卸载指定的设备，请使用设备安装应用程序，该应用程序使用 [**DIF_REMOVE**](./dif-remove.md)的请求来调用 [setupapi.log](setupapi.md)函数 [**SetupDiCallClassInstaller**](/windows/win32/api/setupapi/nf-setupapi-setupdicallclassinstaller) 。
 
 * 若要在设备树中卸载指定设备及其下面的任何设备，请使用调用 [**DiUninstallDevice**](/windows/win32/api/newdev/nf-newdev-diuninstalldevice) 函数的设备安装应用程序。
 

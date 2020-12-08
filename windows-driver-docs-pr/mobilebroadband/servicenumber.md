@@ -1,15 +1,14 @@
 ---
 title: ServiceNumber
 description: ServiceNumber
-ms.assetid: 7e02557a-34e5-41f2-9a27-122a144c2ab9
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5569d0a1a6e715938a7e76af80c8696f95ed8087
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: dedd7c8107fd575cc5cacd9cc40bb96cd114075b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89403176"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96828499"
 ---
 # <a name="servicenumber"></a>ServiceNumber
 
@@ -52,7 +51,7 @@ ServiceNumber 元素指定代表移动运营商的唯一自行生成的 GUID。 
 <thead>
 <tr class="header">
 <th>元素</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>

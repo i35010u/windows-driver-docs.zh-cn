@@ -1,9 +1,8 @@
 ---
-title: usbkd _ehcitfer
-description: _Ehcitfer usbkd 命令显示 usbehci _HCD_TRANSFER_DESCRIPTOR 结构中的信息。
-ms.assetid: 745B8891-150C-4E25-8814-E8F35FB939F5
+title: usbkd._ehcitfer
+description: Usbkd._ehcitfer 命令显示 usbehci _HCD_TRANSFER_DESCRIPTOR 结构中的信息。
 keywords:
-- usbkd _ehcitfer Windows 调试
+- usbkd._ehcitfer Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 6db175f869ce90008fedebb0a3e2827daaa9c7c7
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: f04da557a24964596305a756dfafd737c64f4ef4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89213578"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96829979"
 ---
 # <a name="usbkd_ehcitfer"></a>！ usbkd。 \_ehcitfer
 
 
-**！ Usbkd。 \_ehcitfer**命令显示 usbehci 中的信息 **！ \_HCD \_ 传输 \_ 描述符**结构。
+**！ Usbkd。 \_ehcitfer** 命令显示 usbehci 中的信息 **！ \_HCD \_ 传输 \_ 描述符** 结构。
 
 ```dbgcmd
 !usbkd._ehcitfer StructAddr

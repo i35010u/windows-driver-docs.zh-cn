@@ -1,7 +1,6 @@
 ---
 title: 'Irql \_ 微型端口 \_ 驱动程序 \_ 函数规则 (ndis) '
 description: Irql \_ 微型端口 \_ 驱动程序 \_ 函数规则指定必须在正确的 Irql 级别调用微型端口驱动程序的 NDIS 函数。
-ms.assetid: b82627db-63bd-413f-9d7f-dbb611cf2c50
 ms.date: 05/21/2018
 keywords:
 - 'Irql_Miniport_Driver_Function 规则 (ndis) '
@@ -12,12 +11,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 3fd344c792c27b9262e4c440541eb532b86e71a1
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: f961ee8c58e66a7b965dda2d607f855e30c01551
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104344"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96830191"
 ---
 # <a name="irql_miniport_driver_function-rule-ndis"></a>Irql \_ 微型端口 \_ 驱动程序 \_ 函数规则 (ndis) 
 

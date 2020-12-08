@@ -1,19 +1,18 @@
 ---
 title: 确定正确的设备电源状态
 description: 确定正确的设备电源状态
-ms.assetid: 4acefe93-1d7a-4c12-8701-03c2a8929591
 keywords:
 - DEVICE_CAPABILITIES 结构
 - 更正设备电源状态 WDK 电源管理
 - 设备电源状态 WDK 电源管理
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b834439ab610a239626a38c18fccb38c297869cf
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: bd8c98f8f40ca47049acb31764c318b2de4b3e8f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89189077"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96829557"
 ---
 # <a name="determining-the-correct-device-power-state"></a>确定正确的设备电源状态
 
@@ -21,7 +20,7 @@ ms.locfileid: "89189077"
 
 
 
-电源策略所有者检查[**设备 \_ 功能**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_device_capabilities)结构中的[**DeviceState**](devicestate.md)阵列，以确定每个系统电源状态的设备电源状态的有效范围。 阵列列出了基础设备可以支持的每个系统电源状态的最高设备电源状态。
+电源策略所有者检查 [**设备 \_ 功能**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_device_capabilities)结构中的 [**DeviceState**](devicestate.md)阵列，以确定每个系统电源状态的设备电源状态的有效范围。 阵列列出了基础设备可以支持的每个系统电源状态的最高设备电源状态。
 
 从此范围选择特定状态时，请考虑以下事项：
 

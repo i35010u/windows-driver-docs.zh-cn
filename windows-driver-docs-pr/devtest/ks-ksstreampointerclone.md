@@ -1,7 +1,6 @@
 ---
 title: 'KsStreamPointerClone 规则 ( # A1'
 description: KsStreamPointerClone 规则指定内核流 (KS) 微型端口驱动程序正确使用 KsStreamPointerClone 和 KsStreamPointerDelete 函数。
-ms.assetid: 5ECF0070-0E36-4A91-B9FA-AA0DB7636B0E
 ms.date: 05/21/2018
 keywords:
 - 'KsStreamPointerClone 规则 ( # A1'
@@ -12,12 +11,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 153f2bcc1e34df0800dd72e2803db53df2e1b95b
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 1bdfc24f1c1c1452f0fffefcf02d0e344943cef0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105636"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96830207"
 ---
 # <a name="ksstreampointerclone-rule-"></a>KsStreamPointerClone 规则 ( # A1
 

@@ -1,15 +1,14 @@
 ---
 title: WIA 驱动程序事件支持
 description: WIA 驱动程序事件支持
-ms.assetid: 544c756b-4222-4d59-8393-924d3691e0f8
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b09ce9ffcf2543dd93d447647a11e6bf19bc182e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 892e8bb07dc8c0688190bb60520665fbed8ea43d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63366895"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96830025"
 ---
 # <a name="wia-driver-event-support"></a>WIA 驱动程序事件支持
 
@@ -17,25 +16,25 @@ ms.locfileid: "63366895"
 
 
 
-有两种类型的可支持 WIA 微型驱动程序的事件机制：
+WIA 微型驱动程序可以支持两种类型的事件机制：
 
 <a href="" id="interrupt-events"></a>中断事件  
-每次操作发生在设备上时，设备会将未经请求的异步通知发送到微型驱动程序。
+当设备上发生操作时，设备将向微型驱动程序发送未经请求的异步通知。
 
 <a href="" id="polling-events"></a>轮询事件  
-WIA 服务会定期询问微型驱动程序来查询该设备以确定是否发生了任何新的事件。 默认情况下，WIA 服务每隔一秒轮询该驱动程序。 此值是可配置设备的 INF 文件中 (请参阅[WIA 设备 INF 文件](inf-files-for-wia-devices.md)有关详细信息)。
+WIA 服务会定期请求微型驱动程序查询设备，以确定是否有任何新事件发生。 默认情况下，WIA 服务每秒轮询驱动程序。 此值可在设备的 INF 文件中配置 (参阅用于 [WIA 设备的 Inf 文件](inf-files-for-wia-devices.md) 了解详细信息) 。
 
-可以在 WIA 微型驱动程序中使用这些事件机制之一。 中断事件机制被建议，因为更高的可靠性和性能。
+WIA 微型驱动程序中只能使用其中一种事件机制。 由于可靠性和性能提高，因此建议使用中断事件机制。
 
-有三种支持的事件机制。
+有三种受支持的事件机制。
 
-1.  在 Windows Me，STI 事件启动已注册的 STI 事件的应用程序。 此应用程序打开设备的 TWAIN 数据源。
+1.  在 Windows Me 中，STI 事件会启动已注册 STI 事件的应用程序。 此应用程序打开设备的 TWAIN 数据源。
 
-2.  Windows Me 中，Windows XP 和更高版本，WIA 事件启动已注册的 WIA 事件的应用程序。 此应用程序使用 WIA 服务来访问设备。
+2.  在 Windows Me、Windows XP 和更高版本中，WIA 事件会启动已为 WIA 事件注册的应用程序。 此应用程序使用 WIA 服务来访问设备。
 
-3.  在 Windows XP 及更高版本，WIA 服务将 WIA 事件转换成 STI STI 事件已注册的应用程序的事件。 此应用程序使用了 TWAIN WIA TWAIN 通过访问设备的兼容性层。
+3.  在 Windows XP 和更高版本中，WIA 服务会将 WIA 事件转换为已注册为 STI 事件的应用程序的 STI 事件。 此应用程序使用 TWAIN 到 WIA 兼容性层通过 TWAIN 访问设备。
 
-本部分包含以下主题：
+本节包含下列主题：
 
 [添加中断事件支持](adding-interrupt-event-support.md)
 

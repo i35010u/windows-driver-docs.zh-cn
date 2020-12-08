@@ -1,28 +1,27 @@
 ---
-title: 使用增强的存储证书管理工具的导入证书
+title: 通过增强的存储证书管理工具导入证书
 description: 使用增强的存储证书管理工具导入证书
-ms.assetid: de1174c2-453c-44ab-8c80-89b40510179c
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b613e63f014363cfbd61318e3ceb809741bf77e3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 33ca9028fc41f6a92c639fa5bc693399bbbb83af
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63358090"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96829953"
 ---
 # <a name="importing-certificates-by-using-the-enhanced-storage-certificate-management-tool"></a>使用增强的存储证书管理工具导入证书
 
 
-本部分介绍的增强存储证书管理工具可以添加或从计算机的证书替换 IEEE 1667 合规 USB 存储设备上的证书的方式。
+本部分介绍了增强的存储证书管理工具可以在符合 IEEE 1667 的 USB 存储设备上使用计算机中的证书添加或替换证书的方式。
 
-本部分包括以下主题：
+本节包括下列主题：
 
-[从 Windows 证书存储中导入证书](importing-certificates-from-a-windows-certificate-store.md)
+[从 Windows 证书存储导入证书](importing-certificates-from-a-windows-certificate-store.md)
 
 [从文件导入证书](importing-certificates-from-a-file.md)
 
-[**创建 USB 存储设备的证书**](creating-certificates-for-usb-storage-devices.md)
+[**为 USB 存储设备创建证书**](creating-certificates-for-usb-storage-devices.md)
 
  
 

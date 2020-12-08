@@ -1,7 +1,6 @@
 ---
 title: eulaNoButton XML 元素
 description: eulaNoButton XML 元素
-ms.assetid: d3e47943-10c6-4a87-b39e-d13fc49aadd4
 keywords:
 - eulaNoButton XML 元素设备和驱动程序安装
 topic_type:
@@ -12,12 +11,12 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: d7cbbb684d651f18def374e117f2911d92ebc21c
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: d5940f2be7418e91304fd08bba5dd1ebe84a068d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89095367"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96830019"
 ---
 # <a name="eulanobutton-xml-element"></a>eulaNoButton XML 元素
 
@@ -83,7 +82,7 @@ ms.locfileid: "89095367"
 
 如果未指定 **eulaNoButton** 元素，则 DPInst 将显示默认 DPInst EULA 页面上显示的默认按钮文本。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**协议**](eula-xml-element.md)

@@ -1,7 +1,6 @@
 ---
 title: 加载和卸载
 description: 加载和卸载
-ms.assetid: e7a4e405-5361-4217-a279-2b54a10ebce2
 keywords:
 - 筛选器管理器 WDK 文件系统微筛选器，加载/卸载驱动程序
 - 微筛选器驱动程序 WDK，驱动程序加载
@@ -11,12 +10,12 @@ keywords:
 - 卸载驱动程序
 ms.date: 10/16/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: c67fbb5bb3521ca95e694a429fca5ca84e2e81de
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 3f079dc6ebd7c1b086aea1740b20728077426404
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90714962"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96828785"
 ---
 # <a name="loading-and-unloading"></a>加载和卸载
 
@@ -30,7 +29,7 @@ ms.locfileid: "90714962"
 
 筛选器管理器会自动向微筛选器驱动程序发出有关可用卷的通知，方法是在装入卷后，在第一次创建操作上调用其 [*InstanceSetupCallback*](/windows-hardware/drivers/ddi/fltkernel/nc-fltkernel-pflt_instance_setup_callback) 例程。 当筛选器管理器在系统启动时枚举现有的卷时， [**FltStartFiltering**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltstartfiltering) 返回之前，会发生这种情况。 它还可以在运行时、在装入卷时或 (fltmc attach、 [**FltAttachVolume**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltattachvolume)或 [**FilterAttach**](/windows/win32/api/fltuser/nf-fltuser-filterattach)) 的显式附件请求的结果中发生。
 
-当卸载微筛选器驱动程序、实例所附加到的卷正在卸除，或由于显式分离请求 (fltmc 分离、 [**FltDetachVolume**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltdetachvolume)或 [**FilterDetach**](/windows/win32/api/fltuser/nf-fltuser-filterdetach)) 导致筛选器驱动程序实例被取消。 如果微筛选器驱动程序注册 [*InstanceQueryTeardownCallback*](/windows-hardware/drivers/ddi/fltkernel/nc-fltkernel-pflt_instance_query_teardown_callback) 例程，则可以通过调用 **FilterDetach** 或 **FltDetachVolume**来使显式分离请求失败。 拆卸过程如下所示：
+当卸载微筛选器驱动程序、实例所附加到的卷正在卸除，或由于显式分离请求 (fltmc 分离、 [**FltDetachVolume**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltdetachvolume)或 [**FilterDetach**](/windows/win32/api/fltuser/nf-fltuser-filterdetach)) 导致筛选器驱动程序实例被取消。 如果微筛选器驱动程序注册 [*InstanceQueryTeardownCallback*](/windows-hardware/drivers/ddi/fltkernel/nc-fltkernel-pflt_instance_query_teardown_callback) 例程，则可以通过调用 **FilterDetach** 或 **FltDetachVolume** 来使显式分离请求失败。 拆卸过程如下所示：
 
 - 如果微筛选器驱动程序注册了 [*InstanceTeardownStartCallback*](/windows-hardware/drivers/ddi/fltkernel/nc-fltkernel-pflt_instance_teardown_callback) 回调例程，则筛选器管理器将在拆卸过程开始时调用它。 在这种情况下，微筛选器驱动程序应完成所有挂起的操作，取消或完成其他工作，如微筛选器驱动程序生成的 i/o 请求，并停止对新工作项进行排队。
 
@@ -66,7 +65,7 @@ ms.locfileid: "90714962"
 
 ## <a name="minifilter-driver-callback-routines-for-instance-setup-teardown-and-unload"></a>用于实例设置、拆卸和卸载的微筛选器驱动程序回调例程
 
-以下微筛选器驱动程序回调例程存储为作为参数传递给[**FltRegisterFilter**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltregisterfilter)的[**FLT_REGISTRATION**](/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_registration)结构的成员：
+以下微筛选器驱动程序回调例程存储为作为参数传递给 [**FltRegisterFilter**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltregisterfilter)的 [**FLT_REGISTRATION**](/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_registration)结构的成员：
 
 | 回调例程成员名称 | 回调例程类型 |
 | --------------------- | --------------------- |

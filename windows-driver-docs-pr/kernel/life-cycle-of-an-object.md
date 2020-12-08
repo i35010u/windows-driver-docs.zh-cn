@@ -1,7 +1,6 @@
 ---
 title: 对象的生命周期
 description: 对象的生命周期
-ms.assetid: e81bfce6-27c4-4916-adc8-9c014d02bee7
 keywords:
 - 对象生命周期 WDK 内核
 - 生命周期 WDK 对象
@@ -19,12 +18,12 @@ keywords:
 - 统计引用 WDK 对象
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8a1cdcf34fb50166c7e48dec05445f7e87318274
-ms.sourcegitcommit: f8619f20a0903dd64f8641a5266ecad6df5f1d57
+ms.openlocfilehash: 28451492903d427fa2798b7c399d851d285d0388
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91423500"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96828543"
 ---
 # <a name="life-cycle-of-an-object"></a>对象的生命周期
 
@@ -60,19 +59,19 @@ ms.locfileid: "91423500"
 
 [**ObReferenceObjectByPointer**](/windows-hardware/drivers/ddi/wdm/nf-wdm-obreferenceobjectbypointer)
 
-对上述任何例程进行的每个调用都必须与相应的 **ObDereferenceObject**调用匹配。
+对上述任何例程进行的每个调用都必须与相应的 **ObDereferenceObject** 调用匹配。
 
-提供了 **ObReferenceObject** 和 **ObReferenceObjectByPointer** 例程，以便驱动程序可以将已知对象指针的引用计数增加一。 **ObReferenceObject** 只会增加引用计数。 在增大引用计数之前， **ObReferenceObjectByPointer**执行访问检查。
+提供了 **ObReferenceObject** 和 **ObReferenceObjectByPointer** 例程，以便驱动程序可以将已知对象指针的引用计数增加一。 **ObReferenceObject** 只会增加引用计数。 在增大引用计数之前， **ObReferenceObjectByPointer** 执行访问检查。
 
-**ObReferenceObjectByHandle**例程接收对象句柄，并提供指向基础对象的指针。 它也会将引用计数增加一。
+**ObReferenceObjectByHandle** 例程接收对象句柄，并提供指向基础对象的指针。 它也会将引用计数增加一。
 
 ### <a name="temporary-and-permanent-objects"></a>临时和永久对象
 
-大多数对象都是 *临时*的;它们存在，只要它们处于使用中，就会被对象管理器释放。 可以创建 *永久*的对象。 如果对象是永久性的，则对象管理器本身将保留对该对象的引用。 因此，其引用计数保持大于零，并且对象在不再使用时不会被释放。
+大多数对象都是 *临时* 的;它们存在，只要它们处于使用中，就会被对象管理器释放。 可以创建 *永久* 的对象。 如果对象是永久性的，则对象管理器本身将保留对该对象的引用。 因此，其引用计数保持大于零，并且对象在不再使用时不会被释放。
 
 临时对象只能通过名称进行访问，只要其句柄计数不为零。 句柄计数减为零时，会从对象管理器的命名空间中删除该对象的名称。 此类对象的引用计数保持大于零时，仍然可以通过指针访问此类对象。 可以通过名称访问永久对象，只要这些对象存在。
 
-在创建对象时，可以通过在对象 \_ 的 [**对象 \_ 属性**](/windows/win32/api/ntdef/ns-ntdef-object_attributes) 结构中指定 OBJ 永久属性，使该对象成为永久属性。 有关详细信息，请参阅 [**InitializeObjectAttributes**](/windows/win32/api/ntdef/nf-ntdef-initializeobjectattributes)。
+在创建对象时，可以通过在对象 \_ 的 [**对象 \_ 属性**](/windows/win32/api/ntdef/ns-ntdef-_object_attributes) 结构中指定 OBJ 永久属性，使该对象成为永久属性。 有关详细信息，请参阅 [**InitializeObjectAttributes**](/windows/win32/api/ntdef/nf-ntdef-initializeobjectattributes)。
 
 若要使永久对象成为临时对象，请使用 [**ZwMakeTemporaryObject**](/windows-hardware/drivers/ddi/wdm/nf-wdm-zwmaketemporaryobject) 例程。 此例程会使对象在不再使用后被自动删除。  (如果对象没有打开的句柄，则会立即从对象管理器的命名空间中删除该对象的名称。 对象本身仍保留，直到引用计数降为零。 ) 
 

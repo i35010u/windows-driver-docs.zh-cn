@@ -1,18 +1,17 @@
 ---
 title: 创建框架请求对象
 description: 创建框架请求对象
-ms.assetid: 4bd668ec-14fb-4999-9535-a49712a26ba6
 keywords:
 - 请求对象 WDK KMDF，创建
 - 请求对象 WDK KMDF，读取操作
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 482d85d1225bd4acdb459d1c4e4dc9d757ef2b1c
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: fad2d3e81a7e2b04f3c7ddf2440d5c2b66e4a6ea
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89185857"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96829009"
 ---
 # <a name="creating-framework-request-objects"></a>创建框架请求对象
 
@@ -34,11 +33,11 @@ ms.locfileid: "89185857"
 
 1.  用户模式应用程序通过调用 Microsoft Win32 **ReadFile** 函数读取文件。
 
-2.  **ReadFile**函数调用以内核模式运行的 i/o 管理器。
+2.  **ReadFile** 函数调用以内核模式运行的 i/o 管理器。
 
 3.  I/o 管理器分配 IRP 结构，并将 [**irp \_ MJ \_ 读取**](../kernel/irp-mj-read.md) 函数代码存储在结构中。
 
-4.  I/o 管理器将为驱动程序*x*调用[**DispatchRead**](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)标准驱动程序例程，并向 IRP 结构传递指针。 由于驱动程序 *x* 是基于框架的驱动程序，因此框架提供驱动程序的 *DispatchRead* 例程。
+4.  I/o 管理器将为驱动程序 *x* 调用 [**DispatchRead**](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)标准驱动程序例程，并向 IRP 结构传递指针。 由于驱动程序 *x* 是基于框架的驱动程序，因此框架提供驱动程序的 *DispatchRead* 例程。
 
 5.  框架创建表示 IRP 结构的 request 对象。 框架将请求对象添加到驱动程序的某个队列对象。
 

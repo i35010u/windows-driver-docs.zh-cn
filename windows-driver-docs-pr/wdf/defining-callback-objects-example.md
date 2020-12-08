@@ -1,17 +1,16 @@
 ---
 title: 定义回调对象示例
 description: 定义回调对象示例
-ms.assetid: d987bb95-cbee-46aa-beaf-167572ca4a80
 keywords:
 - 回叫对象 WDK UMDF，定义示例
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: aba8ea2b27ce426a5eb19f68b5b2061accef4b09
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 0afd1d33e3247a524713daf72af9beb3834c76fa
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89191581"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96828979"
 ---
 # <a name="defining-callback-objects-example"></a>定义回调对象示例
 

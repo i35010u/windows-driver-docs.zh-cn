@@ -1,21 +1,20 @@
 ---
 title: OID_GEN_NDIS_RESERVED_5
-description: Ndis 保留 OID_GEN_NDIS_RESERVED_5 OID。 NDIS 驱动程序不使用此 OID。
-ms.assetid: 100e20a6-54f5-4454-baf9-d0cbe8c9c7b7
+description: 为 NDIS 保留 OID_GEN_NDIS_RESERVED_5 OID。 NDIS 驱动程序不使用此 OID。
 ms.date: 08/08/2017
-keywords: -从 Windows Vista 开始 OID_GEN_NDIS_RESERVED_5 网络驱动程序
+keywords: -从 Windows Vista 开始 OID_GEN_NDIS_RESERVED_5 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: ae3b44c30c42f72dc73ab274105d2d404e9c76d5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b2c0f3585de724a59d4c586cdbad33750eae6e9d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63324571"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96829467"
 ---
-# <a name="oidgenndisreserved5"></a>OID\_GEN\_NDIS\_RESERVED\_5
+# <a name="oid_gen_ndis_reserved_5"></a>OID \_ GEN \_ NDIS \_ RESERVED \_ 5
 
 
-OID\_GEN\_NDIS\_保留\_ndis 保留 5 个 OID。 NDIS 驱动程序不使用此 OID。
+为 \_ NDIS 保留了 OID GEN \_ NDIS \_ RESERVED \_ 5 OID。 NDIS 驱动程序不使用此 OID。
 
 <a name="requirements"></a>要求
 ------------
@@ -27,12 +26,12 @@ OID\_GEN\_NDIS\_保留\_ndis 保留 5 个 OID。 NDIS 驱动程序不使用此 O
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Version</p></td>
-<td><p>NDIS 为保留。</p></td>
+<td><p>版本</p></td>
+<td><p>为 NDIS 预留。</p></td>
 </tr>
 <tr class="even">
-<td><p>Header</p></td>
-<td>Ntddndis.h （包括 Ndis.h）</td>
+<td><p>标头</p></td>
+<td>Ntddndis (包含 Ndis .h) </td>
 </tr>
 </tbody>
 </table>

@@ -1,15 +1,14 @@
 ---
 title: Nmake2MsBuild
 description: Nmake2MsBuild 实用程序会为驱动程序生成 Visual Studio 项目，该驱动程序是使用您的驱动程序的源代码文件、源、目录和生成文件. inc. 文件中以前版本的 WDK 生成的。
-ms.assetid: D6E1C124-9A5F-486B-865E-45A0BC58A5A3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6b02edb665b46e14a37d4ca583ac2656de671f0b
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 98915de0b11f5f31ee490c7e0dcfb0caba92c0ca
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89381545"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96828825"
 ---
 # <a name="nmake2msbuild"></a>Nmake2MsBuild
 
@@ -18,7 +17,7 @@ ms.locfileid: "89381545"
 
 
 
-Nmake2MsBuild 实用程序会为驱动程序生成 Visual Studio 项目，该驱动程序是使用您的驱动程序的源代码文件、 *源*、 *目录*和 *生成文件. inc.* 文件中以前版本的 WDK 生成的。 实用工具在现有源文件所在的同一目录中创建 Visual Studio*项目文件。* 实用工具不会改变您的源代码或您之前的生成文件。
+Nmake2MsBuild 实用程序会为驱动程序生成 Visual Studio 项目，该驱动程序是使用您的驱动程序的源代码文件、 *源*、 *目录* 和 *生成文件. inc.* 文件中以前版本的 WDK 生成的。 实用工具在现有源文件所在的同一目录中创建 Visual Studio *项目文件。* 实用工具不会改变您的源代码或您之前的生成文件。
 
 有关使用此实用工具的信息，请参阅将 [WDK 源文件转换为 Visual Studio 项目](converting-a-wdk-sources-file-to-a-visual-studio-project.md)。
 
@@ -101,7 +100,7 @@ NMake2MSBuild.exe  < sources [<sources>...] | dirs >
 
 若要生成使用以前版本的 WDK 构建的驱动程序项目 (使用 Build.exe 和源和目录文件) ，必须首先将其转换为。使用 Nmake2MsBuild.exe 转换实用程序的 .Vcxproj 项目。
 
-例如，若要转换以前使用 Windows 7 WDK （称为 MyDriver）生成的驱动程序，请先打开 **Visual Studio 命令提示符** 窗口。 浏览到目录 *，或者提供*包含*源*或目录生成配置文件的目录的路径。 例如，以下命令将在 *源文件* 所在的文件夹中生成 MyDriver. .vcxproj 文件。
+例如，若要转换以前使用 Windows 7 WDK （称为 MyDriver）生成的驱动程序，请先打开 **Visual Studio 命令提示符** 窗口。 浏览到目录 *，或者提供* 包含 *源* 或目录生成配置文件的目录的路径。 例如，以下命令将在 *源文件* 所在的文件夹中生成 MyDriver. .vcxproj 文件。
 
 ```
 nmake2msbuild.exe  .\myDriver\sources

@@ -1,15 +1,14 @@
 ---
 title: MSBuild 的 WDK 任务
 description: Windows 驱动程序工具包 (WDK) 包含通常在生成过程中使用的工具，但通常不会与 Visual Studio 一起分发。
-ms.assetid: 53A5AAC2-A608-4153-9482-D8EF3D05EF04
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 453805d35314a6957802daeffb14957fa92104e9
-ms.sourcegitcommit: 251b2c6ca3a4a158ad2ef62e6519a86cf7bb3206
+ms.openlocfilehash: 37587b5140be70417caa045d97f2ad9bd80ca651
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96035924"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96830093"
 ---
 # <a name="wdk-tasks-for-msbuild"></a>MSBuild 的 WDK 任务
 
@@ -48,7 +47,7 @@ WDK 命令行工具支持大量选项。 每个选项都作为任务参数公开
 
 ## <a name="in-this-section"></a>在本节中
 
-|主题|说明|
+|主题|描述|
 |----|----|
 |[TraceWPP 任务](tracewpp-task.md)|WDK 提供 TraceWPP 任务，以便在使用 MSBuild 构建驱动程序时可以运行 tracewpp.exe 工具。 tracewpp.exe 工具用于实现 [WPP 软件跟踪](wpp-software-tracing.md)|
 |[Stampinf 任务](stampinf-task.md)|WDK 提供 StampInf 任务，以便在使用 MSBuild 构建驱动程序时可以运行 stampinf.exe 工具。 有关 stampinf.exe 工具的信息，请参阅 [Stampinf](stampinf.md)|

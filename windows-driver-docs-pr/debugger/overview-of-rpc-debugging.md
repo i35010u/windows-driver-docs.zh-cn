@@ -1,18 +1,17 @@
 ---
 title: RPC 调试概述
 description: RPC 调试概述
-ms.assetid: 21db61fe-a4a1-45d3-9026-f58aecd3a3bc
 keywords:
-- RPC 调试概述
-- 远程过程调用 (RPC)
+- RPC 调试，概述
+- '远程过程调用 (RPC) '
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b2106b1eff5fcfcbc93884d7f61b513e8329dad1
-ms.sourcegitcommit: b25275c2662bfdbddd97718f47be9bd79e6f08df
+ms.openlocfilehash: be3925bc5e119652fafe79f9ed3aa7ba320d298d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/13/2019
-ms.locfileid: "67866502"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96828861"
 ---
 # <a name="overview-of-rpc-debugging"></a>RPC 调试概述
 
@@ -20,19 +19,19 @@ ms.locfileid: "67866502"
 ## <span id="ddk_overview_of_rpc_debugging_dbg"></span><span id="DDK_OVERVIEW_OF_RPC_DEBUGGING_DBG"></span>
 
 
-Microsoft 远程过程调用 (RPC) 轻松跨进程和计算机边界和实施周围的数据。 此网络编程标准是，与 Microsoft Windows 的网络是如此强大的原因之一。
+通过 Microsoft 远程过程调用 (RPC) 可以轻松地跨进程和计算机边界并携带数据。 这种网络编程标准是 Microsoft Windows 的网络功能非常强大的一个原因。
 
-但是，因为 RPC 隐藏从单个进程的网络调用，它会遮盖的计算机之间的交互的详细信息。 这会使硬确保为什么线程在做他们正在做-或操作是将要执行失败。 因此，调试和故障排除 RPC 错误可能很困难。 此外，大多数似乎是 RPC 错误的问题是实际配置问题，或网络连接问题或其他组件问题。
+但是，由于 RPC 会隐藏单个进程的网络调用，因此它掩盖了计算机之间的交互的详细信息。 这可能很难确保线程执行操作的原因，或者无法执行应执行的操作。 因此，对 RPC 错误进行调试和故障排除可能比较困难。 此外，大多数出现 RPC 错误的问题都是配置问题、网络连接问题或其他组件问题。
 
-调试工具的 Windows 包含一个称为 DbgRpc，作为也为 RPC 相关的调试器扩展的工具。 这些可用于分析各种 Windows XP 上的 RPC 问题和更高版本的 Windows。
+适用于 Windows 的调试工具包含一个名为 DbgRpc 的工具，以及与 RPC 相关的调试器扩展。 这些问题可用于分析 Windows XP 和更高版本的 Windows 上的各种 RPC 问题。
 
-这些 Windows 版本可以配置为保存 RPC 运行时状态信息。 可以保存不同数量的状态信息;这样，你可以获取所需而无需带来沉重的负担置于您的计算机的信息。 请参阅[启用 RPC 状态信息](enabling-rpc-state-information.md)有关详细信息。
+可以将这些 Windows 版本配置为保存 RPC 运行时状态信息。 可以保存不同数量的状态信息;这样您就可以获得所需的信息，而不会给您的计算机带来很大的负担。 有关详细信息，请参阅 [启用 RPC 状态信息](enabling-rpc-state-information.md) 。
 
-然后可以通过调试器或 DbgRpc 工具访问此信息。 在每种情况下，查询的集合是可用的。 请参阅[显示 RPC 状态信息](displaying-rpc-state-information.md)有关详细信息。
+然后，可以通过调试器或 DbgRpc 工具访问此信息。 在每种情况下，都可以使用查询的集合。 有关详细信息，请参阅 [显示 RPC 状态信息](displaying-rpc-state-information.md) 。
 
-在许多情况下，可以通过使用中所述的技术排查问题[常见 RPC 调试技术](common-rpc-debugging-techniques.md)。
+在许多情况下，你可以通过使用 [常见 RPC 调试技术](common-rpc-debugging-techniques.md)中所述的技术对问题进行故障排除。
 
-如果你想要浏览此信息的存储方式的机制，或如果你想要设计您自己的状态信息分析的技术，请参阅[RPC 状态信息内部](rpc-state-information-internals.md)。
+如果你想要了解如何存储此信息，或者如果你想要设计自己的状态信息分析方法，请参阅 [RPC 状态信息内部](rpc-state-information-internals.md)。
 
  
 

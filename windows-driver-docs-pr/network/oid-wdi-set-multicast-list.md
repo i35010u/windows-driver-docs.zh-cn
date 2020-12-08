@@ -1,25 +1,24 @@
 ---
 title: OID_WDI_SET_MULTICAST_LIST
 description: OID_WDI_SET_MULTICAST_LIST 指定给定端口的多播地址列表。 此命令可随时设置。
-ms.assetid: dee41a49-2be2-4364-877c-b2b3bf29e78d
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 OID_WDI_SET_MULTICAST_LIST 网络驱动程序
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: fe69e20bd68de9babd77c962f224ea1d06c02d70
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: e5925b484eda4c97815b041e1e402aa5cd7ecb60
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89206315"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96829367"
 ---
 # <a name="oid_wdi_set_multicast_list"></a>OID \_ WDI \_ SET \_ 多播 \_ 列表
 
 
 OID \_ WDI \_ SET \_ 多播 \_ list 指定给定端口的多播地址列表。 此命令可随时设置。
 
-| 作用域 | 设置序列化任务 | 正常执行时间 (秒)  |
+| 范围 | 设置序列化任务 | 正常执行时间 (秒)  |
 |-------|--------------------------|---------------------------------|
 | 端口  | 是                      | 1                               |
 
@@ -58,7 +57,7 @@ OID \_ WDI \_ SET \_ 多播 \_ list 指定给定端口的多播地址列表。 �
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
-<td><p>Windows Server 2016</p></td>
+<td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
 <td><p>标头</p></td>

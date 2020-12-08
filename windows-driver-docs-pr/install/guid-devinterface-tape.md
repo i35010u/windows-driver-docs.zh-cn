@@ -1,7 +1,6 @@
 ---
 title: GUID_DEVINTERFACE_TAPE
 description: GUID_DEVINTERFACE_TAPE
-ms.assetid: af19bdf6-5205-4fc1-842f-081e34ea2337
 keywords:
 - GUID_DEVINTERFACE_TAPE 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: dd3253dd3896bec9ceb58d2cf638d35303a7564d
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 89bc6f304a9a59fc536f9dd2bd3974ed2a3b89ff
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91732547"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96830421"
 ---
 # <a name="guid_devinterface_tape"></a>GUID_DEVINTERFACE_TAPE
 
@@ -33,7 +32,7 @@ ms.locfileid: "91732547"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">属性</th>
+<th align="left">Attribute</th>
 <th align="left">设置</th>
 </tr>
 </thead>
@@ -74,7 +73,7 @@ ms.locfileid: "91732547"
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**TapeClassGuid**](tapeclassguid.md)

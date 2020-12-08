@@ -1,16 +1,15 @@
 ---
 title: 元命令
-description: 引用的此部分讨论了各种调试器元命令，可以使用 CDB、 KD 和 WinDbg 中。
-ms.assetid: 8aa960d4-834c-46f5-aa9f-b528402ad52c
-keywords: 调试，Windbg 中，元命令命令
+description: 参考的此部分讨论了可用于 CDB、KD 和 WinDbg 的各种调试器元命令。
+keywords: 调试，Windbg，元命令，命令
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5c2b4a9e1aa4597adbd6a0a02c5afaceb5af8671
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f5d9c8a29770e4f2206f540bcfa3b835660f007c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63386444"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96828871"
 ---
 # <a name="meta-commands"></a>元命令
 
@@ -18,7 +17,7 @@ ms.locfileid: "63386444"
 ## <span id="ddk_meta_commands_dbg"></span><span id="DDK_META_COMMANDS_DBG"></span>
 
 
-引用的此部分讨论了各种调试器*元命令*，可以使用 CDB、 KD 和 WinDbg 中。 这些命令是前面有一个句点 （.）。
+参考的此部分讨论了可用于 CDB、KD 和 WinDbg 的各种调试器 *元命令* 。 这些命令前面有一个句点 (。 ) 。
 
  
 

@@ -1,9 +1,8 @@
 ---
 title: AutoExposure 元素
-description: 所需的 AutoExposure 元素指定 WSD 扫描服务应自动确定文档的曝光度设置。
-ms.assetid: ccc2b246-cfa1-4d79-b968-7b4bbaad17ee
+description: 必需的 AutoExposure 元素指定 WSD 扫描服务应自动确定文档的曝光设置。
 keywords:
-- AutoExposure 元素成像设备
+- AutoExposure 元素图像设备
 topic_type:
 - apiref
 api_name:
@@ -12,19 +11,19 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ecfd7d6adfa3eea0602ad04e93ef464e973c1eb9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9960e5652606502af6052ab165518ad9532af2fb
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63373364"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96828723"
 ---
 # <a name="autoexposure-element"></a>AutoExposure 元素
 
 
-所需**AutoExposure**元素指定 WSD 扫描服务应自动确定文档的曝光度设置。
+必需的 **AutoExposure** 元素指定 WSD 扫描服务应自动确定文档的曝光设置。
 
-<a name="usage"></a>用法
+<a name="usage"></a>使用情况
 -----
 
 ```xml
@@ -41,12 +40,12 @@ ms.locfileid: "63373364"
 <a name="text-value"></a>文本值
 ----------
 
-必需。 一个布尔值，必须为 0，为 false，1 或 true。**falsetrue**
+必需。 必须为0、false、1或 true 的布尔值。**falsetrue**
 
 ## <a name="child-elements"></a>子元素
 
 
-没有子元素。
+没有任何子元素。
 
 ## <a name="parent-elements"></a>父元素
 
@@ -62,7 +61,7 @@ ms.locfileid: "63373364"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><a href="exposure.md" data-raw-source="[&lt;strong&gt;Exposure&lt;/strong&gt;](exposure.md)"><strong>风险</strong></a></p></td>
+<td><p><a href="exposure.md" data-raw-source="[&lt;strong&gt;Exposure&lt;/strong&gt;](exposure.md)"><strong>隐患</strong></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -70,14 +69,14 @@ ms.locfileid: "63373364"
 <a name="remarks"></a>备注
 -------
 
-时的布尔值**AutoExposure**元素是 1 或**true**，扫描设备将使用图像处理技术来减少该文档的背景为白色。
+当 **AutoExposure** 元素的布尔值为1或 **true** 时，扫描设备将使用图像处理技术将文档的背景减少到白色。
 
-当该值为 0 或**false**，设备应使用默认设置为每个的曝光度设置。
+如果该值为0或 **false**，设备应使用每个曝光度设置的默认设置。
 
 ## <a name="see-also"></a>请参阅
 
 
-[**风险**](exposure.md)
+[**隐患**](exposure.md)
 
  
 

@@ -1,7 +1,6 @@
 ---
 title: 'Irql \_ 杂项 \_ 函数规则 (ndis) '
 description: Irql \_ 杂项 \_ 函数规则指定必须在正确的 Irql 级别调用 NDIS 函数。
-ms.assetid: ae1d0243-1db9-428f-a112-f438e2322ff2
 ms.date: 05/21/2018
 keywords:
 - 'Irql_Miscellaneous_Function 规则 (ndis) '
@@ -12,12 +11,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: beaa7b9bc8261f9ed13d0312036f63b9e4a7971f
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: fb38a69fc06efd46cc477fbef2204a6af7331295
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107100"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96830179"
 ---
 # <a name="irql_miscellaneous_function-rule-ndis"></a>Irql \_ 杂项 \_ 函数规则 (ndis) 
 

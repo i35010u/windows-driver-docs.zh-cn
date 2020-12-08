@@ -1,7 +1,6 @@
 ---
 title: 处理回滚操作
 description: 处理回滚操作
-ms.assetid: d36bfac8-47dc-4fcd-a6e2-feb27d244630
 keywords:
 - 事务 WDK KTM，回滚事务
 - 回滚事务 WDK KTM
@@ -9,12 +8,12 @@ keywords:
 - 事务性客户端 WDK KTM，回滚事务
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7395682c01cab742f8fdf02d70d7b77a7a338143
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: d4d1572149a599ca6c7660dd39f72746af9b65a6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89185261"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96830391"
 ---
 # <a name="handling-rollback-operations"></a>处理回滚操作
 
@@ -37,7 +36,7 @@ ms.locfileid: "89185261"
 
 2.  调用 [**ZwRollbackComplete**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ntrollbackcomplete)。
 
-调用 **ZwRollbackComplete**后，资源管理器应调用 [**ZwClose**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntclose) 以关闭登记句柄。
+调用 **ZwRollbackComplete** 后，资源管理器应调用 [**ZwClose**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntclose) 以关闭登记句柄。
 
 如果资源管理器启动了回滚操作，它必须使用其客户端接口来通知客户端事务失败。
 

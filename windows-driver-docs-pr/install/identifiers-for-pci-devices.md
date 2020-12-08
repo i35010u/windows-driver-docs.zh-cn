@@ -1,7 +1,6 @@
 ---
 title: PCI 设备的标识符
 description: PCI 设备的标识符
-ms.assetid: 58d52af8-9afd-441f-9ed9-92f9e2775226
 keywords:
 - 设备标识字符串 WDK，PCI 设备
 - 标识字符串 WDK 设备，PCI 设备
@@ -11,12 +10,12 @@ keywords:
 - 兼容 Id WDK 设备安装
 ms.date: 05/29/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 3092212e8753f8ce27203d79b5ff9c098e0ade1a
-ms.sourcegitcommit: ccc02001d4fb018e1da01616c98e9fa1dd0878e3
+ms.openlocfilehash: e728932ebaf38d75167e14e0f1d9e72008da6f47
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "93415624"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96829919"
 ---
 # <a name="identifiers-for-pci-devices"></a>PCI 设备的标识符
 
@@ -41,7 +40,7 @@ PCI\\VEN_v(4)&DEV_d(4)&CC_c(2)s(2)
 
 其中：
 
--  (4) 是由四个字符组成的 PCI SIG 为设备供应商指定的标识符，其中，术语 " *设备* " （遵循 PCI SIG 使用）指的是特定 pci 芯片。 如 [发布限制](../dashboard/publishing-restrictions.md)中所指定， `0000` 和 `FFFF` 对于此标识符无效。
+-  (4) 是由四个字符组成的 PCI SIG 为设备供应商指定的标识符，其中，术语 " *设备*" （遵循 PCI SIG 使用）指的是特定 pci 芯片。 如 [发布限制](../dashboard/publishing-restrictions.md)中所指定， `0000` 和 `FFFF` 对于此标识符无效。
 
 - d (4) 是设备的由四个字符提供商定义的标识符。
 
@@ -99,7 +98,7 @@ PCI\\CC_c(2)s(2)\`
 
 其中：
 
-- 兼容 ID 中的以下字段的定义与硬件 ID 中使用的相应字段的定义相同： *v (4)* ， *r (2)* ， *c (2)* ， *s (2)* ， *p ()* 。
+- 兼容 ID 中的以下字段的定义与硬件 ID 中使用的相应字段的定义相同： *v (4)*， *r (2)*， *c (2)*， *s (2)*， *p ()*。
 
 - *d (4)* 在 DEV_ *d (4)* 字段是设备的由四个字符供应商定义的标识符。
 

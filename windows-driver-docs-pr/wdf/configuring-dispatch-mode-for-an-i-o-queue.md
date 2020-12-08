@@ -1,7 +1,6 @@
 ---
 title: 为 I/O 队列配置调度模式
 description: 为 I/O 队列配置调度模式
-ms.assetid: 7603c3fd-a4cb-4174-ad14-f57efedfe9de
 keywords:
 - 同步 WDK UMDF
 - 队列调度模式 WDK UMDF
@@ -13,12 +12,12 @@ keywords:
 - 手动调度模式 WDK UMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b3fd9e917206bfc09092e71157f6c927f6c1f1d5
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 2e47e387d406e48289728ac1ba551f7c66afc8a2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89189187"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96829091"
 ---
 # <a name="configuring-dispatch-mode-for-an-io-queue"></a>为 I/O 队列配置调度模式
 
@@ -27,11 +26,11 @@ ms.locfileid: "89189187"
 
 当应用程序的 i/o 请求到达时，框架会将每个请求放入相应的 i/o 队列。 请求传递到驱动程序的方式和时间取决于驱动程序如何为 i/o 队列配置调度以及驱动程序如何 [指定回叫功能同步](specifying-a-callback-synchronization-mode.md)。 I/o 队列还与 UMDF 的 PnP 和电源管理子系统交互，以便在设备达到正确状态之前在队列中保存 i/o 请求。
 
-**注意**   I/o 队列的调度模式与[同步模式](specifying-a-callback-synchronization-mode.md)无关。 I/o 队列的调度配置控制驱动程序可在任何给定时间处理的请求数，同时同步控制呈现或取消请求的事件回调函数的同时执行。 但是，多个操作模式是通过 [组合调度和同步模式](combining-dispatch-and-synchronization-modes.md)来创建的。
+**注意**   I/o 队列的调度模式与 [同步模式](specifying-a-callback-synchronization-mode.md)无关。 I/o 队列的调度配置控制驱动程序可在任何给定时间处理的请求数，同时同步控制呈现或取消请求的事件回调函数的同时执行。 但是，多个操作模式是通过 [组合调度和同步模式](combining-dispatch-and-synchronization-modes.md)来创建的。
 
  
 
-当驱动程序调用 [**IWDFDevice：： CreateIoQueue**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdevice-createioqueue) 方法来配置默认队列或创建辅助队列时，驱动程序会为 i/o 队列配置调度。 驱动程序可以在**IWDFDevice：： CreateIoQueue**的*DispatchType*参数中指定[**WDF \_ IO \_ QUEUE \_ 调度 \_ 类型**](/windows-hardware/drivers/ddi/wdfio/ne-wdfio-_wdf_io_queue_dispatch_type)枚举类型的值之一，以标识调度模式。 [I/o 队列对象](framework-i-o-queue-object.md)可支持以下调度模式：
+当驱动程序调用 [**IWDFDevice：： CreateIoQueue**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdevice-createioqueue) 方法来配置默认队列或创建辅助队列时，驱动程序会为 i/o 队列配置调度。 驱动程序可以在 **IWDFDevice：： CreateIoQueue** 的 *DispatchType* 参数中指定 [**WDF \_ IO \_ QUEUE \_ 调度 \_ 类型**](/windows-hardware/drivers/ddi/wdfio/ne-wdfio-_wdf_io_queue_dispatch_type)枚举类型的值之一，以标识调度模式。 [I/o 队列对象](framework-i-o-queue-object.md)可支持以下调度模式：
 
 -   顺序程序
 
@@ -48,7 +47,7 @@ ms.locfileid: "89189187"
 
     手动调度模式使用 **WdfIoQueueDispatchManual** 值指定。 在此调度模式下，当请求到达队列时，i/o 队列不会自动通知驱动程序。 驱动程序必须调用 [**IWDFIoQueue：： RetrieveNextRequest**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfioqueue-retrievenextrequest) 方法，以便从队列中手动检索请求。 这是一个轮询模型。
 
-    在 UMDF 版本1.9 及更高版本中，如果驱动程序使用手动调度模式，则它可以调用 [**IWDFIoRequest2：：重新排队**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest2-requeue) 将 i/o 请求返回到从中获取驱动程序的 i/o 队列的开头。 调用 **IWDFIoRequest2：：重新排队**之后，驱动程序对 [**IWDFIoQueue：： RetrieveNextRequest**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfioqueue-retrievenextrequest) 的下一次调用将检索重新排队的请求。
+    在 UMDF 版本1.9 及更高版本中，如果驱动程序使用手动调度模式，则它可以调用 [**IWDFIoRequest2：：重新排队**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest2-requeue) 将 i/o 请求返回到从中获取驱动程序的 i/o 队列的开头。 调用 **IWDFIoRequest2：：重新排队** 之后，驱动程序对 [**IWDFIoQueue：： RetrieveNextRequest**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfioqueue-retrievenextrequest) 的下一次调用将检索重新排队的请求。
 
 对于所有调度模式， [i/o 队列对象](framework-i-o-queue-object.md) 会接收并跟踪请求，直到驱动程序处理请求或取消请求。
 

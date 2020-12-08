@@ -1,7 +1,6 @@
 ---
 title: 'KsTimedFilterCallbacks 规则 ( # A1'
 description: KsTimedFilterCallbacks 规则指定内核流式处理 (KS) 微型端口驱动程序在500毫秒内从筛选器回调函数返回。
-ms.assetid: 5F631D49-405F-4F1A-A280-FEFB4ADA460D
 ms.date: 05/21/2018
 keywords:
 - 'KsTimedFilterCallbacks 规则 ( # A1'
@@ -12,12 +11,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: e85d70910f4a39f60d3e60cd784295ff2432524c
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: c8593ea3a6125b1dfd01a93611466512d477dbdd
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106278"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96829949"
 ---
 # <a name="kstimedfiltercallbacks-rule-"></a>KsTimedFilterCallbacks 规则 ( # A1
 

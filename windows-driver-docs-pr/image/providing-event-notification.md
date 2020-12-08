@@ -1,15 +1,14 @@
 ---
 title: 提供事件通知
 description: 提供事件通知
-ms.assetid: 53ca7ef0-fa8b-4ae1-9b5e-b145c2d02db2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: de12f74604ee0a9682761b2aa57e1a3d31227c34
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 9756dbfa7e715d665e188d8192690c3ecf702c25
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89187603"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96829621"
 ---
 # <a name="providing-event-notification"></a>提供事件通知
 
@@ -17,7 +16,7 @@ ms.locfileid: "89187603"
 
 
 
-WIA 服务通过调用 [**IWiaMiniDrv：:D rvnotifypnpevent**](/windows-hardware/drivers/ddi/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvnotifypnpevent) 方法，将支持的设备事件的 wia 微型驱动程序通知。 在此方法中，微型驱动程序实现响应事件所需的特定于设备的功能。 WIA 服务仅对微型驱动程序表明设备可以在[**IWiaMiniDrv：:D rvgetcapabilities**](/windows-hardware/drivers/ddi/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvgetcapabilities)方法中支持的事件调用**IWiaMiniDrv：:d rvnotifypnpevent**方法。
+WIA 服务通过调用 [**IWiaMiniDrv：:D rvnotifypnpevent**](/windows-hardware/drivers/ddi/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvnotifypnpevent) 方法，将支持的设备事件的 wia 微型驱动程序通知。 在此方法中，微型驱动程序实现响应事件所需的特定于设备的功能。 WIA 服务仅对微型驱动程序表明设备可以在 [**IWiaMiniDrv：:D rvgetcapabilities**](/windows-hardware/drivers/ddi/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvgetcapabilities)方法中支持的事件调用 **IWiaMiniDrv：:d rvnotifypnpevent** 方法。
 
 微型驱动程序通过 STI 事件机制启动事件，或使用 [**wiasQueueEvent**](/windows-hardware/drivers/ddi/wiamdef/nf-wiamdef-wiasqueueevent) 将事件通知从此设备添加到事件队列。
 

@@ -1,23 +1,22 @@
 ---
 title: OID_SWITCH_PROPERTY_DELETE
 description: Hyper-v 可扩展交换机的协议边缘 (OID 发出对象标识符) 设置 OID_SWITCH_PROPERTY_DELETE 请求，通知有关删除交换机策略属性的可扩展交换机扩展。
-ms.assetid: 55291392-C018-4578-9767-DC5621F75D44
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_SWITCH_PROPERTY_DELETE 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 4b22da91adc9e285732890dce767aa31e7801a5e
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: d21f440224d7e7477fabf315f8be07272e349038
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89215218"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96829422"
 ---
 # <a name="oid_switch_property_delete"></a>OID \_ 开关 \_ 属性 \_ 删除
 
 
 Hyper-v 可扩展交换机的协议边缘 (OID 发出对象标识符) 设置 OID \_ 交换机 \_ 属性 DELETE 的请求 \_ ，以通知有关删除交换机策略属性的可扩展交换机扩展。
 
-[**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的**InformationBuffer**成员包含一个指向缓冲区的指针，该缓冲区包含[**NDIS \_ 交换机 \_ 属性 \_ 删除 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_property_delete_parameters)结构。
+[**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的 **InformationBuffer** 成员包含一个指向缓冲区的指针，该缓冲区包含 [**NDIS \_ 交换机 \_ 属性 \_ 删除 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_property_delete_parameters)结构。
 
 <a name="remarks"></a>备注
 -------
@@ -102,7 +101,7 @@ Hyper-v 可扩展交换机的协议边缘 (OID 发出对象标识符) 设置 OID
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 ****

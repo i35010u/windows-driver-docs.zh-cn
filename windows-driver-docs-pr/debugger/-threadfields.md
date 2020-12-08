@@ -1,7 +1,6 @@
 ---
 title: threadfields
-description: Threadfields 扩展显示名称和 executive 线程 (ETHREAD) 块中的字段的偏移量。
-ms.assetid: 1b36e922-9079-4dc5-911a-f635ec026084
+description: Threadfields 扩展在 ETHREAD) 块 (的执行线程中显示字段的名称和偏移量。
 keywords:
 - threadfields Windows 调试
 ms.date: 05/23/2017
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 83e496d76ee22a7b2cdb1743aaaf3f7a1079701f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3ac9f3bf9440f781d01d60dddd6860def12ab957
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63334214"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96830301"
 ---
 # <a name="threadfields"></a>!threadfields
 
 
-**！ Threadfields**扩展显示名称和 executive 线程 (ETHREAD) 块中的字段的偏移量。
+**！ Threadfields** 扩展显示 (ETHREAD) 块的执行线程中的字段的名称和偏移量。
 
 ```dbgcmd
 !threadfields
@@ -31,7 +30,7 @@ ms.locfileid: "63334214"
 ## <span id="ddk__threadfields_dbg"></span><span id="DDK__THREADFIELDS_DBG"></span>
 
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 <table>
 <colgroup>
@@ -45,27 +44,27 @@ ms.locfileid: "63334214"
 </tr>
 <tr class="even">
 <td align="left"><p><strong>Windows XP 及更高版本</strong></p></td>
-<td align="left"><p>不可用 （请参阅备注部分）</p></td>
+<td align="left"><p> (，请参阅 "备注" 部分) </p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-ETHREAD 块有关的信息，请参阅*Microsoft Windows Internals*、 Mark Russinovich 和 David solomon 合著的。 
+有关 ETHREAD 块的信息，请参阅 *Microsoft Windows 内部机制*，并将 Russinovich 和 David 所罗门群岛标记为。 
 
 <a name="remarks"></a>备注
 -------
 
-此扩展命令不可在 Windows XP 或更高版本的 Windows 中可用。 请改用[ **dt （显示类型）** ](dt--display-type-.md)命令直接显示 ETHREAD 结构：
+此扩展命令在 Windows XP 或更高版本的 Windows 中不可用。 请改用 [**dt (显示类型)**](dt--display-type-.md) 命令，直接显示 ETHREAD 结构：
 
 ```dbgcmd
 kd> dt nt!_ETHREAD 
 ```
 
-下面是举例 **！ threadfields**从 Windows 2000 系统：
+下面是 Windows 2000 系统中 **！ threadfields** 的示例：
 
 ```dbgcmd
 kd> !threadfields

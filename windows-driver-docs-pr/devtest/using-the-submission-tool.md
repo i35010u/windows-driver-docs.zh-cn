@@ -1,17 +1,16 @@
 ---
 title: 在 Visual Studio 中创建设备元数据提交包
 description: 在 Visual Studio 中创建设备元数据提交包
-ms.assetid: 17CF8185-C9EE-4B25-BEE7-A1FFB8C92EE0
 keywords:
 - 在 Visual Studio 中创建设备元数据提交包
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2f752cc81b8b0d81c09ca276dcebe2f9596c47b5
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 7769ab4c891e761fadc156c32315705b849f9dfa
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89383585"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96828801"
 ---
 # <a name="creating-a-device-metadata-submission-package-in-visual-studio"></a>在 Visual Studio 中创建设备元数据提交包
 
@@ -21,9 +20,9 @@ ms.locfileid: "89383585"
 1.  在 Visual Studio 中，单击 " **驱动程序** " 菜单，选择 " **设备元数据**"，然后选择 " **提交**"。
 2.  单击 " **添加元数据包**"，选择包，然后单击 " **打开**"。
 3.  确认 **包名称** 和 **型号名称**，选择 " **预览** " （如果要预览包），然后单击 " **下一步** "。
-4.  查看 **模型名称**、 **硬件 ID**和 **体验 ID**。
+4.  查看 **模型名称**、 **硬件 ID** 和 **体验 ID**。
 5.  在 " **体验名称**" 旁边，键入体验的名称。
-    **注意**   所有包提交都需要执行此步骤。
+    **注意**  所有包提交都需要执行此步骤。
 
      
 
@@ -33,7 +32,7 @@ ms.locfileid: "89383585"
     -   **此设备仅使用收件箱驱动程序，并且没有关联的徽标提交**
 
 7.  如果之前已提交了包，请选择 " **更新体验**"。
-8.  单击“配置目录分区”  。
+8.  单击 **“下一步”** 。
 9.  如果尚未对包进行签名，请在签名向导中完成以下步骤对其进行签名：
 
     1.  找到证书文件，然后双击该文件进行安装。
@@ -41,7 +40,7 @@ ms.locfileid: "89383585"
     3.  单击 " **启动签名向导**"。
     4.  单击 " **选择存储**"。
     5.  从对话框中选择证书。
-        **注意**   签名向导中的文件名是完成提交元数据向导后收到的内容。 因此，除非有特定原因，否则请不要更改文件名或路径。
+        **注意**   签名向导中的文件名是完成提交元数据向导后收到的内容。 因此，除非有特定原因，否则请不要更改文件名或路径。
 
          
 

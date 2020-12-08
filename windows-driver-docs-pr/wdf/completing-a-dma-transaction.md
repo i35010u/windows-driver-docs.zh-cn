@@ -1,7 +1,6 @@
 ---
 title: 完成 DMA 事务
 description: 完成 DMA 事务
-ms.assetid: 90531b72-e51d-451e-ae84-a9bbf0245665
 keywords:
 - DMA 事务 WDK KMDF，完成
 - DMA 操作 WDK KMDF，事务
@@ -9,12 +8,12 @@ keywords:
 - 完成 DMA 事务 WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 21dae202d245d2c9063f51c9adb0505287ce933f
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 383b4c04a0e0f82fa33d704ee4a96abc245a7af5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91733099"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96829113"
 ---
 # <a name="completing-a-dma-transaction"></a>完成 DMA 事务
 
@@ -34,7 +33,7 @@ ms.locfileid: "91733099"
 
 如果驱动程序调用 [**WdfRequestCompleteWithInformation**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcompletewithinformation)，则它通常首先调用 [**WdfDmaTransactionGetBytesTransferred**](/windows-hardware/drivers/ddi/wdfdmatransaction/nf-wdfdmatransaction-wdfdmatransactiongetbytestransferred) 来获取事务的所有传输) 的总长度 (字节数。
 
-下面的代码示例阐释了这些步骤，这些步骤取自*Isrdpc*文件中的[PLX9x5x](/samples/browse/)示例的[*EvtInterruptDpc*](/windows-hardware/drivers/ddi/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_dpc)回调函数：
+下面的代码示例阐释了这些步骤，这些步骤取自 *Isrdpc* 文件中的 [PLX9x5x](/samples/browse/)示例的 [*EvtInterruptDpc*](/windows-hardware/drivers/ddi/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_dpc)回调函数：
 
 ```cpp
 if (readComplete) {

@@ -1,25 +1,24 @@
 ---
 title: OID_WDI_SET_RECEIVE_PACKET_FILTER
 description: OID_WDI_SET_RECEIVE_PACKET_FILTER 为指定的虚拟化端口指定要显示的数据包的位掩码筛选器。
-ms.assetid: 180efda5-3ca2-40f8-89d1-098a53f33844
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 OID_WDI_SET_RECEIVE_PACKET_FILTER 网络驱动程序
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: b56423d880cf770498e3826db15b118d0920bd80
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: a330483de444b1e58336e26a98804cc6fa8eb116
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89206299"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96829323"
 ---
 # <a name="oid_wdi_set_receive_packet_filter"></a>OID \_ WDI \_ SET \_ 接收 \_ 数据包 \_ 筛选器
 
 
 OID \_ WDI \_ SET \_ 接收 \_ 数据包 \_ 筛选器定义一个位掩码筛选器，用于指示给定虚拟化端口的数据包。
 
-| 作用域 | 设置序列化任务 | 正常执行时间 (秒)  |
+| 范围 | 设置序列化任务 | 正常执行时间 (秒)  |
 |-------|--------------------------|---------------------------------|
 | 端口  | 是                      | 1                               |
 
@@ -56,7 +55,7 @@ OID \_ WDI \_ SET \_ 接收 \_ 数据包 \_ 筛选器定义一个位掩码筛选
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
-<td><p>Windows Server 2016</p></td>
+<td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
 <td><p>标头</p></td>

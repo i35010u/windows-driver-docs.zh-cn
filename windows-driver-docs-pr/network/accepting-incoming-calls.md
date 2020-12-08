@@ -1,7 +1,6 @@
 ---
 title: 接受来电
 description: 接受来电
-ms.assetid: bca837dc-b3de-4aca-9fc2-aed2faab1377
 keywords:
 - CoNDIS WAN 驱动程序 WDK 网络，传入呼叫
 - telephonic services WDK WAN，传入呼叫
@@ -11,12 +10,12 @@ keywords:
 - 调用 WDK CoNDIS WAN
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 76a5820c60faef9cf29e123ac7d473c952c33635
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 7bb8f82d3cc842e81b5987222dcc6f206ef66611
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89214038"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96829541"
 ---
 # <a name="accepting-incoming-calls"></a>接受来电
 
@@ -27,31 +26,31 @@ ms.locfileid: "89214038"
 在应用程序可以接受传入呼叫之前，必须先打开一行。 调用 TAPI **lineOpen** 函数的应用程序会打开一条线。 此 TAPI 功能调用会导致基础驱动程序在 NDIS 结构中封装 TAPI 参数，以便准备接收传入呼叫。 CoNDIS WAN 微型端口驱动程序收到传入呼叫后，微型端口驱动程序必须首先使用 NDPROXY 驱动程序创建 (VC) 的虚拟连接，并通知 NDPROXY 传入呼叫。 NDPROXY 反过来会通过 TAPI 通知应用程序。 以下列表描述了如何设置、连接和进行传入呼叫：
 
 -   NDPROXY 指定 [**联合 \_ AF \_ tapi \_ SAP**](/previous-versions/windows/hardware/network/ff545376(v=vs.85)) 结构中传入连接的 TAPI 参数。 NDPROXY 用 TAPI **lineOpen** 函数中传递的以下信息填充此结构的成员：
-    -   **UlLineID**成员中的换行标识符
-    -   **UlAddressID**成员中传入连接的地址
-    -   **UlMediaModes**成员中传入连接的信息流的媒体模式
--   NDPROXY 覆盖了 \_ \_ \_ [**共同 \_ sap**](/previous-versions/windows/hardware/network/ff545392(v=vs.85))结构的**sap**成员上的联合 af TAPI Sap 结构，并将 co sap 的**SapLength**成员设置 \_ 为 co \_ af \_ tapi sap 的大小 \_ 。 NDPROXY 还必须将共同 SAP 的 **SapType** 成员设置 \_ 为 AF \_ TAPI \_ SAP \_ 类型。
+    -   **UlLineID** 成员中的换行标识符
+    -   **UlAddressID** 成员中传入连接的地址
+    -   **UlMediaModes** 成员中传入连接的信息流的媒体模式
+-   NDPROXY 覆盖了 \_ \_ \_ [**共同 \_ sap**](/previous-versions/windows/hardware/network/ff545392(v=vs.85))结构的 **sap** 成员上的联合 af TAPI Sap 结构，并将 co sap 的 **SapLength** 成员设置 \_ 为 co \_ af \_ tapi sap 的大小 \_ 。 NDPROXY 还必须将共同 SAP 的 **SapType** 成员设置 \_ 为 AF \_ TAPI \_ SAP \_ 类型。
 
--   NDPROXY 封装 TAPI 参数后，NDPROXY 会调用 [**NdisClRegisterSap**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisclregistersap) 函数，使其能够接收传入调用。 在此函数调用中，NDPROXY 将传递一个指向已填充 CO \_ SAP 结构的指针，该结构指定了 NDPROXY 可在其上接收传入呼叫 (SAP) 的服务访问点。 NDIS 将共同 \_ SAP 结构转发到 CONDIS WAN 微型端口呼叫管理器的 *ProtocolCmRegisterSap* 函数 (MCM) 驱动程序。 如有必要， *ProtocolCmRegisterSap*会与网络控制设备或其他特定于介质的代理通信，以便在网络上为 NDPROXY 注册 SAP。 小型端口驱动程序注册了 SAP 后，可接受定向到该 SAP 的传入呼叫提议。
+-   NDPROXY 封装 TAPI 参数后，NDPROXY 会调用 [**NdisClRegisterSap**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisclregistersap) 函数，使其能够接收传入调用。 在此函数调用中，NDPROXY 将传递一个指向已填充 CO \_ SAP 结构的指针，该结构指定了 NDPROXY 可在其上接收传入呼叫 (SAP) 的服务访问点。 NDIS 将共同 \_ SAP 结构转发到 CONDIS WAN 微型端口呼叫管理器的 *ProtocolCmRegisterSap* 函数 (MCM) 驱动程序。 如有必要， *ProtocolCmRegisterSap* 会与网络控制设备或其他特定于介质的代理通信，以便在网络上为 NDPROXY 注册 SAP。 小型端口驱动程序注册了 SAP 后，可接受定向到该 SAP 的传入呼叫提议。
 
 -   CoNDIS WAN 微型端口驱动程序通过从网络发出消息通知传入呼叫。 通过这些信号消息，微型端口驱动程序会提取调用的调用参数，包括传入调用的目标 SAP。
 
 -   在指示对 NDPROXY 的传入调用之前，微型端口驱动程序调用 [**NdisMCmCreateVc**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismcmcreatevc) 函数来启动使用 NDPROXY 创建 VC。 NDPROXY 分配和初始化 VC 所需的资源，并将句柄存储到 VC。
 
 -   CoNDIS WAN 微型端口驱动程序为 [**联合 \_ AF \_ TAPI \_ 传入 \_ 调用 \_ 参数**](/previous-versions/windows/hardware/network/ff545372(v=vs.85)) 结构中的传入调用设置 TAPI 参数。 微型端口驱动程序用从信号消息中提取的以下信息填充此结构的成员：
-    -   **UlLineID**成员中的行标识符
-    -   **UlAddressID**成员中传入调用的地址
-    -   联合 \_ TAPI \_ 标志 \_ \_ **ulFlags** 成员中的传入调用位。 **UlFlags**的所有其他位均保留，并且必须设置为0。
-    -   **LineCallInfo**成员中的 LINECALLPARAMS 结构。 LINECALLPARAMS 的成员为传入呼叫指定 TAPI 调用参数。
--   微型端口驱动程序 \_ 将 co af \_ TAPI \_ 传入 \_ 调用参数覆盖 \_ 在[**co \_ 特定 \_ 参数**](/previous-versions/windows/hardware/network/ff545396(v=vs.85))结构的**Parameters**成员上，并将 co 特定参数的**长度**成员设置 \_ \_ 为 co \_ af \_ TAPI \_ 传入 \_ 呼叫 \_ 参数的大小。
+    -   **UlLineID** 成员中的行标识符
+    -   **UlAddressID** 成员中传入调用的地址
+    -   联合 \_ TAPI \_ 标志 \_ \_ **ulFlags** 成员中的传入调用位。 **UlFlags** 的所有其他位均保留，并且必须设置为0。
+    -   **LineCallInfo** 成员中的 LINECALLPARAMS 结构。 LINECALLPARAMS 的成员为传入呼叫指定 TAPI 调用参数。
+-   微型端口驱动程序 \_ 将 co af \_ TAPI \_ 传入 \_ 调用参数覆盖 \_ 在 [**co \_ 特定 \_ 参数**](/previous-versions/windows/hardware/network/ff545396(v=vs.85))结构的 **Parameters** 成员上，并将 co 特定参数的 **长度** 成员设置 \_ \_ 为 co \_ af \_ TAPI \_ 传入 \_ 呼叫 \_ 参数的大小。
 
--   微型端口驱动程序将 CO \_ 特定的 \_ 参数结构设置为[**co \_ MEDIA \_ parameters**](/previous-versions/windows/hardware/network/ff545388(v=vs.85))结构的**MediaSpecific**成员。
+-   微型端口驱动程序将 CO \_ 特定的 \_ 参数结构设置为 [**co \_ MEDIA \_ parameters**](/previous-versions/windows/hardware/network/ff545388(v=vs.85))结构的 **MediaSpecific** 成员。
 
--   微型端口驱动程序将指向 co \_ MEDIA parameters 结构的指针设置 \_ 为[**co \_ CALL \_ parameters**](/previous-versions/windows/hardware/network/ff545384(v=vs.85))结构的**MediaParameters**成员。
+-   微型端口驱动程序将指向 co \_ MEDIA parameters 结构的指针设置 \_ 为 [**co \_ CALL \_ parameters**](/previous-versions/windows/hardware/network/ff545384(v=vs.85))结构的 **MediaParameters** 成员。
 
--   微型端口驱动程序还必须设置 CO 调用参数结构的 **CallMgrParameters** 成员， \_ \_ 以指定传输数据包的服务质量 (QoS) ，如带宽。 若要设置此 **CallMgrParameters** 成员，微型端口驱动程序将填充 [**CO \_ 调用 \_ 管理器 \_ 参数**](/previous-versions/windows/hardware/network/ff545381(v=vs.85)) 结构的成员，并将此结构指向 **CallMgrParameters**。 例如，若要确定 VC 的传输和接收速度（以每秒字节数为单位），微型端口驱动**PeakBandwidth**程序必须设置 CO **Transmit** **Receive** \_ 调用 \_ 管理器参数的传输和接收成员的 PeakBandwidth 成员 \_ 。 **传输**和**接收**成员是 FLOWSPEC 结构。 有关 FLOWSPEC 结构的详细信息，请参阅 Microsoft Windows SDK。
+-   微型端口驱动程序还必须设置 CO 调用参数结构的 **CallMgrParameters** 成员， \_ \_ 以指定传输数据包的服务质量 (QoS) ，如带宽。 若要设置此 **CallMgrParameters** 成员，微型端口驱动程序将填充 [**CO \_ 调用 \_ 管理器 \_ 参数**](/previous-versions/windows/hardware/network/ff545381(v=vs.85)) 结构的成员，并将此结构指向 **CallMgrParameters**。 例如，若要确定 VC 的传输和接收速度（以每秒字节数为单位），微型端口驱动 **PeakBandwidth** 程序必须设置 CO **Transmit** **Receive** \_ 调用 \_ 管理器参数的传输和接收成员的 PeakBandwidth 成员 \_ 。 **传输** 和 **接收** 成员是 FLOWSPEC 结构。 有关 FLOWSPEC 结构的详细信息，请参阅 Microsoft Windows SDK。
 
--   在微型端口驱动程序封装 TAPI 参数并填充**CallMgrParameters** CO \_ 调用管理器参数的 CallMgrParameters 成员后 \_ \_ ，它将调用[**NdisMCmDispatchIncomingCall**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismcmdispatchincomingcall)函数以指示对 NDPROXY 的传入调用。 在此调用中，微型端口驱动程序将传递以下内容：
+-   在微型端口驱动程序封装 TAPI 参数并填充 **CallMgrParameters** CO \_ 调用管理器参数的 CallMgrParameters 成员后 \_ \_ ，它将调用 [**NdisMCmDispatchIncomingCall**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismcmdispatchincomingcall)函数以指示对 NDPROXY 的传入调用。 在此调用中，微型端口驱动程序将传递以下内容：
     -   用于标识传入呼叫的目标 SAP 的句柄
     -   用于标识传入调用的 VC 的句柄
     -   指向已填充 CO \_ 调用 \_ 参数结构的指针
@@ -73,7 +72,7 @@ ms.locfileid: "89214038"
 
 -   在决定是否接受连接之后以及在可能更改调用参数之后，NDISWAN 会调用 **NdisClIncomingCallComplete** 函数。 NDIS 又调用微型端口驱动程序的 *ProtocolCmIncomingCallComplete* 函数。 根据 NDISWAN 是否接受传入呼叫以及微型端口驱动程序是接受还是拒绝 NDISWAN 对调用参数的建议更改，微型端口驱动程序会调用 **NdisCmDispatchCallConnected** 或 **NdisCmDispatchIncomingCloseCall** 函数。 **NdisCmDispatchCallConnected** 通知 NDISWAN，数据传输可以在 VC 上开始，该 VC 是为传入调用创建的微型端口驱动程序。 **NdisCmDispatchIncomingCloseCall** 通知 NDISWAN 和 NDPROXY 解除传入呼叫。
 
--   NDISWAN 接受传入调用后，NDPROXY 将调用 [**NdisCoGetTapiCallId**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscogettapicallid) 函数以检索用于标识 VC 的 NDISWAN 上下文的字符串。 NDPROXY 将此字符串传递回 TAPI 应用程序。 TAPI 应用程序使用此 VC 上下文字符串来完成对 **lineGetID**的调用。
+-   NDISWAN 接受传入调用后，NDPROXY 将调用 [**NdisCoGetTapiCallId**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscogettapicallid) 函数以检索用于标识 VC 的 NDISWAN 上下文的字符串。 NDPROXY 将此字符串传递回 TAPI 应用程序。 TAPI 应用程序使用此 VC 上下文字符串来完成对 **lineGetID** 的调用。
 
  
 

@@ -1,15 +1,14 @@
 ---
 title: 共享内存资源分配
 description: 共享内存资源分配
-ms.assetid: cf030a0f-1202-4d10-b9a1-58d031345678
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3c2737f7333a64dae7d2c1c8ed2743ac48b046a2
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: bfb284d893d10f49aff6b8dd86e7ff62c32b9d75
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89207787"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96829163"
 ---
 # <a name="shared-memory-resource-allocation"></a>共享内存资源分配
 
@@ -31,7 +30,7 @@ ms.locfileid: "89207787"
 
 -   共享内存的使用方式。 例如，如果共享内存将用于接收缓冲区，则微型端口驱动程序将指定 **NdisSharedMemoryUsageReceive** 。
 
-如果在 \_ \_ \_ Flags 成员中未设置 NDIS SHARED MEM PARAMETERS \_ CONTIGOUS 标志**Flags** ，则可以在非连续内存中包含的分散收集列表中指定共享内存。
+如果在 \_ \_ \_ Flags 成员中未设置 NDIS SHARED MEM PARAMETERS \_ CONTIGOUS 标志 **Flags** ，则可以在非连续内存中包含的分散收集列表中指定共享内存。
 
 [**NDIS \_ shared \_ memory \_ 用量**](/windows-hardware/drivers/ddi/ndis/ne-ndis-_ndis_shared_memory_usage)枚举指定如何使用共享内存。 Ndis shared \_ memory \_ \_ 用量枚举用于 [**ndis \_ shared \_ memory \_ 参数**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_shared_memory_parameters) 和 [**ndis \_ 散播 \_ 聚集 \_ 列表 \_ 参数**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_scatter_gather_list_parameters) 结构。 有关 VMQ 中的共享内存参数接收数据缓冲区的信息，请参阅 [接收缓冲区中的共享内存](shared-memory-in-receive-buffers.md)。
 

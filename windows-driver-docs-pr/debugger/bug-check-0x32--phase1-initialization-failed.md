@@ -1,7 +1,6 @@
 ---
 title: Bug 检查 0x32 PHASE1_INITIALIZATION_FAILED
-description: PHASE1_INITIALIZATION_FAILED bug 检查具有 0x00000032 值。 这表示该系统初始化失败。
-ms.assetid: 91437523-35f4-4715-bced-01961aefadce
+description: PHASE1_INITIALIZATION_FAILED bug 检查的值为0x00000032。 这表明系统初始化失败。
 keywords:
 - Bug 检查 0x32 PHASE1_INITIALIZATION_FAILED
 - PHASE1_INITIALIZATION_FAILED
@@ -13,23 +12,23 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 2f67fa1021afc11c2382d5c6845cdc7d70514c09
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: 828a1deab5ca9545d0fe924357ace00360e045b9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67519520"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96830285"
 ---
-# <a name="bug-check-0x32-phase1initializationfailed"></a>Bug 检查 0x32：阶段 1\_初始化\_失败
+# <a name="bug-check-0x32-phase1_initialization_failed"></a>Bug 检查0x32：阶段 1 \_ 初始化 \_ 失败
 
 
-阶段 1\_初始化\_失败错误检查的值为 0x00000032。 这表示该系统初始化失败。
+阶段 1 \_ 初始化 \_ 失败 bug 检查的值为0x00000032。 这表明系统初始化失败。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题面向程序员。 如果您是在使用计算机时收到蓝屏错误代码的客户，请参阅[蓝屏错误疑难解答](https://www.windows.com/stopcode)。
 
 
-## <a name="phase1initializationfailed-parameters"></a>阶段 1\_初始化\_失败参数
+## <a name="phase1_initialization_failed-parameters"></a>阶段 1 \_ 初始化 \_ 失败参数
 
 
 <table>
@@ -50,15 +49,15 @@ ms.locfileid: "67519520"
 </tr>
 <tr class="even">
 <td align="left"><p>2</p></td>
-<td align="left"><p>保留</p></td>
+<td align="left"><p>预留</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>3</p></td>
-<td align="left"><p>保留</p></td>
+<td align="left"><p>预留</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>4</p></td>
-<td align="left"><p>保留</p></td>
+<td align="left"><p>预留</p></td>
 </tr>
 </tbody>
 </table>

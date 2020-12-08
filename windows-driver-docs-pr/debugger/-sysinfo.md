@@ -1,7 +1,6 @@
 ---
 title: sysinfo
 description: Sysinfo 扩展读取并显示指定的 SMBIOS、高级配置和电源接口 (ACPI) 以及转储文件或实时系统中的 CPU 信息。
-ms.assetid: 1637fcc8-54ff-46a4-94f4-0b2df38507d1
 keywords:
 - sysinfo Windows 调试
 ms.date: 05/23/2017
@@ -12,12 +11,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 133bc6ef1bd20fdb7583bf8f986cfa8c60c94c35
-ms.sourcegitcommit: bb3b62a57ba3aea4a0adeefd2d81993367b7b334
+ms.openlocfilehash: 58484bb004ddefd9e88c4333da27f237adf945e7
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88148509"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96830319"
 ---
 # <a name="sysinfo"></a>!sysinfo
 
@@ -99,12 +98,12 @@ ms.locfileid: "88148509"
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>Windows 2000</strong></p></td>
-<td align="left"><p>Unavailable</p></td>
+<td align="left"><p>不可用</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>Windows XP 基本系统</strong></p>
 <p><strong>Windows 2003 基本系统</strong></p></td>
-<td align="left"><p>Unavailable</p></td>
+<td align="left"><p>不可用</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>Windows XP Service Pack 2 及更高版本</strong></p>
@@ -119,7 +118,7 @@ ms.locfileid: "88148509"
 
 仅当转储文件是系统崩溃文件 ( dmp) ，该文件尚未从内核或完整转储文件转换为小型转储文件，或者实时系统已开始启动并且处于联机 (状态时（例如，在登录提示) 时），此扩展插件非常有用。
 
-可以在单个扩展命令中使用 **-debug**、 **-devices**、 **-memory**、 **-power**、 **-processor**、- **system**和 **-v** 参数的任意组合。
+可以在单个扩展命令中使用 **-debug**、 **-devices**、 **-memory**、 **-power**、 **-processor**、- **system** 和 **-v** 参数的任意组合。
 
 仅在特定系统上支持以下参数：
 
@@ -129,4 +128,4 @@ ms.locfileid: "88148509"
 
 Microsoft 将从这些记录中 (PII) 删除个人身份信息。 将从转储文件中删除所有 PII。 但是，在实时系统上，某些 PII 可能尚未删除。 因此，PII 字段将报告为0或空，即使它们确实包含信息。
 
-若要在任何时候停止执行包含 **cpuinfo**、 **gbl**、 **寄存器**或 **Smbios** 参数的命令，请在 WinDbg) 中按 ctrl + BREAK (或在 KD) 中按 ctrl + C (。
+若要在任何时候停止执行包含 **cpuinfo**、 **gbl**、 **寄存器** 或 **Smbios** 参数的命令，请在 WinDbg) 中按 ctrl + BREAK (或在 KD) 中按 ctrl + C (。

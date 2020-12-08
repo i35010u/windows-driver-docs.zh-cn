@@ -1,24 +1,23 @@
 ---
 title: 确定驱动程序是否泄漏框架对象
-description: 本主题介绍了如何查找由未发布引用引起的驱动程序内存泄漏。 它适用于用户模式驱动程序框架 (UMDF) 第1版和第2版驱动程序。
-ms.assetid: 617cc678-e0db-4d2f-9d19-34b6cedad234
+description: 本主题介绍了如何查找由未发布引用引起的驱动程序内存泄漏。 它适用于 User-Mode Driver Framework (UMDF) 第1版和第2版驱动程序。
 keywords:
 - 调试方案 WDK UMDF，确定驱动程序是否泄漏框架对象
 - UMDF WDK，调试方案，确定驱动程序是否泄漏框架对象
 - UMDF WDK，确定驱动程序是否泄漏框架对象
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9dc246468087c3051deecdd6ae9fcf7717e511fb
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: a99c761428087fc45e7e64caf03cb2830ce712c0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89191569"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96828975"
 ---
 # <a name="determining-if-a-driver-leaks-framework-objects"></a>确定驱动程序是否泄漏框架对象
 
 
-本主题介绍了如何查找由未发布引用引起的驱动程序内存泄漏。 它适用于用户模式驱动程序框架 (UMDF) 第1版和第2版驱动程序。
+本主题介绍了如何查找由未发布引用引起的驱动程序内存泄漏。 它适用于 User-Mode Driver Framework (UMDF) 第1版和第2版驱动程序。
 
 ## <a name="umdf-1"></a>UMDF 1
 
@@ -47,7 +46,7 @@ ms.locfileid: "89191569"
 若要测试 UMDF 版本2驱动程序是否泄漏框架对象，请使用以下过程：
 
 1.  按照 [最佳做法](enabling-a-debugger.md#bp) 中所述的步骤配置计算机以进行 UMDF 调试。
-2.  若要使用标记跟踪，请在注册表中同时启用 UMDF 验证程序和句柄跟踪。 这两个设置都存储在**HKEY \_ 本地 \_ 计算机 \\ SOFTWARE \\ Microsoft \\ Windows NT \\ CurrentVersion \\ WUDF \\ Services \\ &lt; 驱动程序名称 &gt; **密钥的驱动程序的**参数 \\ Wdf**子项中。
+2.  若要使用标记跟踪，请在注册表中同时启用 UMDF 验证程序和句柄跟踪。 这两个设置都存储在 **HKEY \_ 本地 \_ 计算机 \\ SOFTWARE \\ Microsoft \\ Windows NT \\ CurrentVersion \\ WUDF \\ Services \\ &lt; 驱动程序名称 &gt;** 密钥的驱动程序的 **参数 \\ Wdf** 子项中。
 
     若要启用 UMDF 验证程序，请为 VerifierOn 设置非零值 **。**
 

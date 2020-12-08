@@ -1,17 +1,16 @@
 ---
 title: 排查元数据创作向导的问题
 description: 排查元数据创作向导的问题
-ms.assetid: EBAF4289-DA23-4FFE-8CC0-DD21021CBA86
 keywords:
 - 元数据创作向导疑难解答
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1c5eadd24c7c2168ede39f69bf6a943fa28d808f
-ms.sourcegitcommit: e2de6b9ffb5c7356deb864f9da879533f49b25bf
+ms.openlocfilehash: 271980567d2e383e48d34d8b0fe1b8925424b8b5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/03/2020
-ms.locfileid: "91702670"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96830123"
 ---
 # <a name="troubleshooting-the-metadata-authoring-wizards"></a>排查元数据创作向导的问题
 

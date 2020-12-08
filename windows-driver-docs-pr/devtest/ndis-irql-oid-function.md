@@ -1,7 +1,6 @@
 ---
 title: 'Irql \_ OID \_ 函数规则 (ndis) '
 description: Irql \_ oid \_ 函数规则指定必须在正确的 Irql 级别调用 NDIS Oid 请求 DDIs。
-ms.assetid: 450afd4e-ba01-45e8-a866-6cd9b3190bb7
 ms.date: 05/21/2018
 keywords:
 - 'Irql_OID_Function 规则 (ndis) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: a49227ff054ae9edfebcd3b7a7eecbe2f6aac153
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: dd12dad727c1272aa32ab0939ebba6824ea610ce
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104342"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96830175"
 ---
 # <a name="irql_oid_function-rule-ndis"></a>Irql \_ OID \_ 函数规则 (ndis) 
 
 
-**Irql \_ oid \_ 函数**规则指定必须在正确的 IRQL 级别调用 NDIS oid 请求 DDIs。
+**Irql \_ oid \_ 函数** 规则指定必须在正确的 IRQL 级别调用 NDIS oid 请求 DDIs。
 
 **驱动程序模型： NDIS**
 

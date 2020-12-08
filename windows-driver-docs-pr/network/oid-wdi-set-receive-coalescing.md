@@ -1,25 +1,24 @@
 ---
 title: OID_WDI_SET_RECEIVE_COALESCING
 description: 主机使用 OID_WDI_SET_RECEIVE_COALESCING 来为数据包合并添加数据包筛选器。
-ms.assetid: c8856813-0d81-4735-95cc-d9b5dc6ede87
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 OID_WDI_SET_RECEIVE_COALESCING 网络驱动程序
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 62e6aa2e841d757ed7657961056570e8d12131cd
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 17ca2eebb6fedc6b8d1d79105679985b98bd269d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89215817"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96829329"
 ---
 # <a name="oid_wdi_set_receive_coalescing"></a>OID \_ WDI \_ 设置 \_ 接收 \_ 合并
 
 
 OID \_ WDI \_ SET \_ 接收 \_ 合并由主机用于为数据包合并添加数据包筛选器。
 
-| 作用域 | 设置序列化任务 | 正常执行时间 (秒)  |
+| 范围 | 设置序列化任务 | 正常执行时间 (秒)  |
 |-------|--------------------------|---------------------------------|
 | 端口  | 是                      | 1                               |
 
@@ -56,7 +55,7 @@ OID \_ WDI \_ SET \_ 接收 \_ 合并由主机用于为数据包合并添加数�
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
-<td><p>Windows Server 2016</p></td>
+<td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
 <td><p>标头</p></td>
@@ -65,7 +64,7 @@ OID \_ WDI \_ SET \_ 接收 \_ 合并由主机用于为数据包合并添加数�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [OID \_ WDI \_ 设置 \_ 清除 \_ 接收 \_ 合并](oid-wdi-set-clear-receive-coalescing.md)

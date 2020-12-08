@@ -1,9 +1,8 @@
 ---
 title: .logfile（显示日志文件状态）
-description: .Logfile 命令确定是否存在日志文件，并显示文件的状态。
-ms.assetid: 30aaa2bc-2ae5-474f-871b-3e3a164b2dee
+description: Logfile 命令确定日志文件是否存在，并显示该文件的状态。
 keywords:
-- .logfile （显示日志文件状态） Windows 调试
+- 。 logfile (显示 Windows 调试) 的日志文件状态
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 251c841f29888c60dcff90401c647442dffe289d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d9ee389ed4a1739adef7b8fe854f417f6b0338fb
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63336131"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96828935"
 ---
 # <a name="logfile-display-log-file-status"></a>.logfile（显示日志文件状态）
 
 
-**.Logfile**命令确定是否存在日志文件，并显示文件的状态。
+**Logfile** 命令确定日志文件是否存在，并显示该文件的状态。
 
 ```dbgcmd
     .logfile 
@@ -40,12 +39,12 @@ ms.locfileid: "63336131"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>模式</strong></p></td>
-<td align="left"><p>用户模式下，内核模式</p></td>
+<td align="left"><p><strong>交货</strong></p></td>
+<td align="left"><p>用户模式，内核模式</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>目标</strong></p></td>
-<td align="left"><p>实时、 崩溃转储</p></td>
+<td align="left"><p>实时，故障转储</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>平台</strong></p></td>

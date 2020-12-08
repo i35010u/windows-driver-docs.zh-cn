@@ -1,19 +1,18 @@
 ---
 title: RDBSS 定义的宏
 description: RDBSS 定义的宏
-ms.assetid: 11add885-ecd9-4b43-be42-ef060e847183
 keywords:
 - RDBSS WDK 文件系统，宏
 - 重定向驱动器缓冲子系统 WDK 文件系统，宏
 - 宏 WDK RDBSS
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 068375a4bd64b336934f3a635e9cf4a2f6a706ca
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 4a0ee0265e866971ea7b5d44553fab69f2555fff
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106504"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96828765"
 ---
 # <a name="macros-defined-by-rdbss"></a>RDBSS 定义的宏
 

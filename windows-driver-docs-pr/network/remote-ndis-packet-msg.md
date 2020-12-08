@@ -1,15 +1,14 @@
 ---
 title: REMOTE_NDIS_PACKET_MSG
 description: REMOTE_NDIS_PACKET_MSG 封装 NDIS 数据包以构成单个数据消息。
-ms.assetid: cc4efe94-6e2c-4201-b251-10e76cf5a553
 ms.date: 07/31/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 74713b788a2a14fee5bedff3f7c7148d1a8e6a16
-ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
+ms.openlocfilehash: 01e728339898e20f0fbd3aefe5291fc8da06d2b9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88968640"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96829173"
 ---
 # <a name="remote_ndis_packet_msg"></a>远程 \_ NDIS \_ 数据包 \_ 消息
 
@@ -32,7 +31,7 @@ ms.locfileid: "88968640"
 <th>Offset</th>
 <th>大小</th>
 <th>字段</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -121,7 +120,7 @@ ms.locfileid: "88968640"
 <th>Offset</th>
 <th>大小</th>
 <th>字段</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -154,7 +153,8 @@ ms.locfileid: "88968640"
 
  
 
-**注意**    (N) 等于*ClassInformationOffset*的值。
+**注意**  
+ (N) 等于 *ClassInformationOffset* 的值。
 
  
 
@@ -172,7 +172,7 @@ ms.locfileid: "88968640"
 <th>Offset</th>
 <th>大小</th>
 <th>字段</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -197,34 +197,35 @@ ms.locfileid: "88968640"
 <tr class="even">
 <td><p> (N) </p></td>
 <td><p>...</p></td>
-<td><p>每个数据包的数据</p></td>
-<td><p>每个数据包的数据;有关详细信息，请参阅 Windows 2000 DDK 文档。</p></td>
+<td><p>Per-Packet 数据</p></td>
+<td><p>Per-Packet 的数据;有关详细信息，请参阅 Windows 2000 DDK 文档。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-**注意**    (N) 等于*PerPacketInformationOffset*的值。
+**注意**  
+ (N) 等于 *PerPacketInformationOffset* 的值。
 
  
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
-每个远程 \_ NDIS \_ 数据包 \_ 消息可能包含一个或多个 OOB 数据记录。 *NumOOBDataElements* 指示此消息中的 OOB 数据记录数。 OOB 数据记录必须按顺序显示。 *OOBDataLength*字段指示整个 OOB 数据块的长度（以字节为单位）。 *OOBDataOffset*字段指示从*数据偏移量*字段开头到 OOB 数据块开始的字节偏移量。 有关 OOB 数据包数据的详细信息，请参阅 Windows 2000 DDK 中的 NDIS 规范。
+每个远程 \_ NDIS \_ 数据包 \_ 消息可能包含一个或多个 OOB 数据记录。 *NumOOBDataElements* 指示此消息中的 OOB 数据记录数。 OOB 数据记录必须按顺序显示。 *OOBDataLength* 字段指示整个 OOB 数据块的长度（以字节为单位）。 *OOBDataOffset* 字段指示从 *数据偏移量* 字段开头到 OOB 数据块开始的字节偏移量。 有关 OOB 数据包数据的详细信息，请参阅 Windows 2000 DDK 中的 NDIS 规范。
 
 如果将多个 OOB 数据块附加到远程 \_ NDIS \_ 数据包消息 \_ 消息，则每个后续 oob 数据记录必须紧跟上一个 oob 记录的数据。
 
 当前没有为802.3 设备定义 OOB 信息。
 
-每个远程 \_ NDIS \_ 数据包 \_ 消息可能包含一个或多个每个数据包信息的数据记录。 每个数据包的信息用于传递包元数据，例如 TCP 校验和。 *PerPacketInfoOffset*字段指示从*数据偏移量*字段开头到每个数据包信息数据记录开始的字节偏移量。 *OOBDataLength*字段指示每个数据包的信息数据记录的字节长度。 有关每个数据包的信息数据的详细信息，请参阅 Windows 2000 DDK。
+每个远程 \_ NDIS \_ 数据包 \_ 消息可能包含一个或多个每个数据包信息的数据记录。 每个数据包的信息用于传递包元数据，例如 TCP 校验和。 *PerPacketInfoOffset* 字段指示从 *数据偏移量* 字段开头到每个数据包信息数据记录开始的字节偏移量。 *OOBDataLength* 字段指示每个数据包的信息数据记录的字节长度。 有关每个数据包的信息数据的详细信息，请参阅 Windows 2000 DDK。
 
 如果有多个每个数据包的信息数据块，则每个数据包的后续信息数据记录必须紧跟在上一个每个数据包信息记录的数据中。
 
 远程 NDIS 设备必须通过 NDIS 数据包发送和接收数据。 设备使用的总线确定如何将这些数据包从主机传递到设备和设备到主机。 它可以是共享内存，也可以是 USB、Isoch 和大容量管道。 NDIS 数据包也可能包含带外 (OOB) 数据以及跨网络的数据。
 
-远程 NDIS 设备传输 NDIS 数据包，这些数据包封装为数据通道中的 **远程 \_ NDIS \_ 数据包 \_ 消息** 。 无连接 (（例如 802.3) 和面向连接的 (，例如 ATM) 设备）使用相同的数据包消息结构来简化包处理的通用代码。 每个 **远程 \_ NDIS \_ 数据包 \_ ** 消息消息都包含一个网络数据单元的相关信息 (例如，) 以太网802.3 帧。
+远程 NDIS 设备传输 NDIS 数据包，这些数据包封装为数据通道中的 **远程 \_ NDIS \_ 数据包 \_ 消息** 。 无连接 (（例如 802.3) 和面向连接的 (，例如 ATM) 设备）使用相同的数据包消息结构来简化包处理的通用代码。 每个 **远程 \_ NDIS \_ 数据包 \_** 消息消息都包含一个网络数据单元的相关信息 (例如，) 以太网802.3 帧。
 
 有关带外数据包数据或每个数据包信息数据的详细信息，请参阅 Windows 2000 DDK NDIS 部分。
 
@@ -238,7 +239,7 @@ ms.locfileid: "88968640"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Version</p></td>
+<td><p>版本</p></td>
 <td><p>在 Microsoft Windows XP 和更高版本的 Windows 操作系统中可用。 在 Windows 2000 中也可以作为可再发行二进制文件。</p></td>
 </tr>
 <tr class="even">

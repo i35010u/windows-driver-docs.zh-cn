@@ -1,7 +1,6 @@
 ---
 title: 使用静态驱动程序验证程序报告
 description: 使用静态驱动程序验证程序报告
-ms.assetid: ca6eaa53-cee5-4caf-b1e1-035ea800779b
 keywords:
 - 静态驱动程序验证程序 WDK，验证结果
 - StaticDV WDK，验证结果
@@ -23,12 +22,12 @@ keywords:
 - SDV WDK，静态驱动程序验证程序报告
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2426d159be1a58a2f9eb654bc92475cd138a0d28
-ms.sourcegitcommit: b3e38d06762246c77cedd8e82d740ebea104c538
+ms.openlocfilehash: 45005d2100d59711aa788e55a239ec9ed0148436
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91662429"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96828833"
 ---
 # <a name="using-the-static-driver-verifier-report"></a>使用静态驱动程序验证程序报告
 
@@ -41,7 +40,7 @@ SDV 报表是验证结果的交互式显示。 本部分介绍如何使用 SDV �
 
 打开缺陷查看器窗口以获取缺陷：
 
--   从 " **缺陷 (s) ** " 节点下的列表中选择一个规则 (![ 红色圆圈图标 ](images/sdv-ico-defect.png) ，并在 **结果** 窗格中指示缺陷) ，然后双击规则名称。
+-   从 " **缺陷 (s)** " 节点下的列表中选择一个规则 (![ 红色圆圈图标 ](images/sdv-ico-defect.png) ，并在 **结果** 窗格中指示缺陷) ，然后双击规则名称。
 
 此过程仅适用于缺陷。 如果验证结果不是缺陷，如 pass、超时、spaceouts、不适用或其他任何非缺陷结果，SDV 不会生成 **缺陷查看器** 窗口。
 
@@ -57,13 +56,13 @@ SDV 报表是验证结果的交互式显示。 本部分介绍如何使用 SDV �
 
 若要查看规则的代码，请在 "静态驱动程序验证程序" 报表的 " **源代码** " 窗格中，单击包含规则代码的选项卡，例如 CancelSpinLock. slic。
 
-例如，如果驱动程序按顺序调用[**IoAcquireCancelSpinLock**](/previous-versions/windows/hardware/drivers/ff548196(v=vs.85))或[**IoReleaseCancelSpinLock**](/previous-versions/windows/hardware/drivers/ff549550(v=vs.85)) ，或者驱动程序在释放旋转锁之前退出了例程，则会违反**CancelSpinLock**规则。
+例如，如果驱动程序按顺序调用 [**IoAcquireCancelSpinLock**](/previous-versions/windows/hardware/drivers/ff548196(v=vs.85))或 [**IoReleaseCancelSpinLock**](/previous-versions/windows/hardware/drivers/ff549550(v=vs.85)) ，或者驱动程序在释放旋转锁之前退出了例程，则会违反 **CancelSpinLock** 规则。
 
 ### <a name="span-idtrace_the_defect_pathspanspan-idtrace_the_defect_pathspantrace-the-defect-path"></a><span id="trace_the_defect_path"></span><span id="TRACE_THE_DEFECT_PATH"></span>跟踪缺陷路径
 
 当 " **缺陷查看器** " 窗口打开时，" **跟踪树** " 窗格中的元素表示 "缺陷路径" 中的第一个关键驱动程序调用。 在 " **源代码** " 窗格中，以蓝色突出显示源代码的相关行。
 
-下面的屏幕截图显示**静态驱动程序验证程序缺陷查看器**窗口的打开视图，以使 Fail [CancelSpinLock](./wdm-cancelspinlock.md) \_ Driver1 示例驱动程序违反 CancelSpinLock 规则。 在此示例中，CancelSpinLock 规则的冲突路径中的第一个驱动程序调用是对驱动程序的**DispatchSystemControl**例程中的[**IoAcquireCancelSpinLock**](/previous-versions/windows/hardware/drivers/ff548196(v=vs.85))的调用。
+下面的屏幕截图显示 **静态驱动程序验证程序缺陷查看器** 窗口的打开视图，以使 Fail [CancelSpinLock](./wdm-cancelspinlock.md) \_ Driver1 示例驱动程序违反 CancelSpinLock 规则。 在此示例中，CancelSpinLock 规则的冲突路径中的第一个驱动程序调用是对驱动程序的 **DispatchSystemControl** 例程中的 [**IoAcquireCancelSpinLock**](/previous-versions/windows/hardware/drivers/ff548196(v=vs.85))的调用。
 
 ![用于违反 cancelspinlock 规则的静态驱动程序验证程序缺陷查看器窗口的打开视图的屏幕截图](images/sdv-tracetree.png)
 
@@ -93,7 +92,7 @@ SDV 报表是验证结果的交互式显示。 本部分介绍如何使用 SDV �
 
 您可以使用 " [状态" 窗格](state-pane.md) 查看表示 SDV 在验证期间跟踪的变量值的布尔表达式集。
 
-" **状态** " 窗格中显示的布尔表达式是该集合中计算结果为 **TRUE**的表达式。 如果跟踪树窗格中的元素更改了任何表达式的值，则 " **状态** " 窗格的内容将发生变化，以显示一组计算结果为 **TRUE**的新表达式。
+" **状态** " 窗格中显示的布尔表达式是该集合中计算结果为 **TRUE** 的表达式。 如果跟踪树窗格中的元素更改了任何表达式的值，则 " **状态** " 窗格的内容将发生变化，以显示一组计算结果为 **TRUE** 的新表达式。
 
 在单步执行 **跟踪树** 窗格时，可以观察 SDV 如何使用这些变量的值来计算 rules (文件中使用的表达式 \*) 。
 

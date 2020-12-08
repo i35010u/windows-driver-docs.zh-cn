@@ -1,26 +1,25 @@
 ---
 title: 筛选条件数据类型
-description: 本部分介绍筛选条件的数据类型。
-ms.assetid: 43810fc0-f386-4a21-9229-c8c8f8d6710f
+description: 本部分介绍筛选条件数据类型。
 keywords:
-- 筛选条件的数据类型的网络驱动程序
+- 筛选条件数据类型网络驱动程序
 ms.date: 11/08/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fa3f6d1796ea469cd3849cde750a6fc9b7709d21
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 403853ac6a54cba7919a0a8f590c49a62bfdc269
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63350001"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96828479"
 ---
 # <a name="filtering-condition-data-types"></a>筛选条件数据类型
 
-每个筛选条件的条件值的数据类型指定为 FWP_DATA_TYPE 值，如下所示。
+每个筛选条件的条件值的数据类型被指定为 FWP_DATA_TYPE 值，如下所示。
 
 <table>
 <tr>
 <th>筛选条件标识符</th>
-<th>条件值的数据类型</th>
+<th>Condition 值数据类型</th>
 </tr>
 <tr>
 <td>
@@ -30,13 +29,13 @@ ms.locfileid: "63350001"
 <p>对于 IPv4 地址：</p>
 <dl>
 <dd>
-FWP_V4_ADDR_MASK or FWP_UINT32
+FWP_V4_ADDR_MASK 或 FWP_UINT32
 </dd>
 </dl>
 <p>对于 IPv6 地址：</p>
 <dl>
 <dd>
-FWP_V6_ADDR_MASK or FWP_BYTE_ARRAY16_TYPE
+FWP_V6_ADDR_MASK 或 FWP_BYTE_ARRAY16_TYPE
 </dd>
 </dl>
 </td>
@@ -49,13 +48,13 @@ FWP_V6_ADDR_MASK or FWP_BYTE_ARRAY16_TYPE
 <p>对于 IPv4 地址：</p>
 <dl>
 <dd>
-FWP_V4_ADDR_MASK or FWP_UINT32
+FWP_V4_ADDR_MASK 或 FWP_UINT32
 </dd>
 </dl>
 <p>对于 IPv6 地址：</p>
 <dl>
 <dd>
-FWP_V6_ADDR_MASK or FWP_BYTE_ARRAY16_TYPE
+FWP_V6_ADDR_MASK 或 FWP_BYTE_ARRAY16_TYPE
 </dd>
 </dl>
 </td>
@@ -68,13 +67,13 @@ FWP_V6_ADDR_MASK or FWP_BYTE_ARRAY16_TYPE
 <p>对于 IPv4 地址：</p>
 <dl>
 <dd>
-FWP_V4_ADDR_MASK or FWP_UINT32
+FWP_V4_ADDR_MASK 或 FWP_UINT32
 </dd>
 </dl>
 <p>对于 IPv6 地址：</p>
 <dl>
 <dd>
-FWP_V6_ADDR_MASK or FWP_BYTE_ARRAY16_TYPE
+FWP_V6_ADDR_MASK 或 FWP_BYTE_ARRAY16_TYPE
 </dd>
 </dl>
 </td>
@@ -87,13 +86,13 @@ FWP_V6_ADDR_MASK or FWP_BYTE_ARRAY16_TYPE
 <p>对于 IPv4 地址：</p>
 <dl>
 <dd>
-FWP_V4_ADDR_MASK or FWP_UINT32
+FWP_V4_ADDR_MASK 或 FWP_UINT32
 </dd>
 </dl>
 <p>对于 IPv6 地址：</p>
 <dl>
 <dd>
-FWP_V6_ADDR_MASK or FWP_BYTE_ARRAY16_TYPE
+FWP_V6_ADDR_MASK 或 FWP_BYTE_ARRAY16_TYPE
 </dd>
 </dl>
 </td>
@@ -186,13 +185,13 @@ FWP_V6_ADDR_MASK or FWP_BYTE_ARRAY16_TYPE
 <p>对于 IPv4 地址：</p>
 <dl>
 <dd>
-FWP_V4_ADDR_MASK or FWP_UINT32
+FWP_V4_ADDR_MASK 或 FWP_UINT32
 </dd>
 </dl>
 <p>对于 IPv6 地址：</p>
 <dl>
 <dd>
-FWP_V6_ADDR_MASK or FWP_BYTE_ARRAY16_TYPE
+FWP_V6_ADDR_MASK 或 FWP_BYTE_ARRAY16_TYPE
 </dd>
 </dl>
 </td>
@@ -434,7 +433,7 @@ FWP_V6_ADDR_MASK or FWP_BYTE_ARRAY16_TYPE
 <p>FWPM_CONDITION_IP_LOCAL_ADDRESS_V4</p>
 </td>
 <td>
-<p>FWP_V4_ADDR_MASK or FWP_UINT32</p>
+<p>FWP_V4_ADDR_MASK 或 FWP_UINT32</p>
 </td>
 </tr>
 <tr>
@@ -442,7 +441,7 @@ FWP_V6_ADDR_MASK or FWP_BYTE_ARRAY16_TYPE
 <p>FWPM_CONDITION_IP_LOCAL_ADDRESS_V6</p>
 </td>
 <td>
-<p>FWP_V6_ADDR_MASK or FWP_BYTE_ARRAY16_TYPE</p>
+<p>FWP_V6_ADDR_MASK 或 FWP_BYTE_ARRAY16_TYPE</p>
 </td>
 </tr>
 <tr>
@@ -458,7 +457,7 @@ FWP_V6_ADDR_MASK or FWP_BYTE_ARRAY16_TYPE
 <p>FWPM_CONDITION_IP_REMOTE_ADDRESS_V4</p>
 </td>
 <td>
-<p>FWP_V4_ADDR_MASK or FWP_UINT32</p>
+<p>FWP_V4_ADDR_MASK 或 FWP_UINT32</p>
 </td>
 </tr>
 <tr>
@@ -466,7 +465,7 @@ FWP_V6_ADDR_MASK or FWP_BYTE_ARRAY16_TYPE
 <p>FWPM_CONDITION_IP_REMOTE_ADDRESS_V6</p>
 </td>
 <td>
-<p>FWP_V6_ADDR_MASK or FWP_BYTE_ARRAY16_TYPE</p>
+<p>FWP_V6_ADDR_MASK 或 FWP_BYTE_ARRAY16_TYPE</p>
 </td>
 </tr>
 <tr>

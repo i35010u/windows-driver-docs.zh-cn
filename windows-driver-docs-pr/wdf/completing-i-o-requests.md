@@ -1,7 +1,6 @@
 ---
 title: 完成 I/O 请求
 description: 完成 I/O 请求
-ms.assetid: ec5aef7a-110e-430c-902d-669ccc7095ac
 keywords:
 - I/o 请求 WDK KMDF，完成
 - 完成 i/o 请求 WDK KMDF
@@ -9,12 +8,12 @@ keywords:
 - 状态信息 WDK KMDF，完成 i/o 请求
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bef20e53d385ec983f13073fd056b77f1981ff64
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: d2f446aa70818eea5c2d93fa1489ebeef381e4cc
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89188731"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96829081"
 ---
 # <a name="completing-io-requests"></a>完成 I/O 请求
 
@@ -36,21 +35,21 @@ ms.locfileid: "89188731"
 
 -   已取消请求的 i/o 操作。
 
-如果驱动程序通过在设备上创建 i/o 活动来服务 i/o 请求，驱动程序通常会从其[*EvtInterruptDpc*](/windows-hardware/drivers/ddi/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_dpc)或[*EvtDpcFunc*](/windows-hardware/drivers/ddi/wdfdpc/nc-wdfdpc-evt_wdf_dpc)回调函数调用[**WdfRequestComplete**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcomplete) 。
+如果驱动程序通过在设备上创建 i/o 活动来服务 i/o 请求，驱动程序通常会从其 [*EvtInterruptDpc*](/windows-hardware/drivers/ddi/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_dpc)或 [*EvtDpcFunc*](/windows-hardware/drivers/ddi/wdfdpc/nc-wdfdpc-evt_wdf_dpc)回调函数调用 [**WdfRequestComplete**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcomplete) 。
 
-如果驱动程序收到不受支持或无效的请求，通常会从收到请求的[请求处理程序](request-handlers.md)中调用[**WdfRequestComplete**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcomplete) 。
+如果驱动程序收到不受支持或无效的请求，通常会从收到请求的 [请求处理程序](request-handlers.md)中调用 [**WdfRequestComplete**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcomplete) 。
 
-如果已[取消](canceling-i-o-requests.md)i/o 操作，驱动程序通常会从其[*EvtRequestCancel*](/windows-hardware/drivers/ddi/wdfrequest/nc-wdfrequest-evt_wdf_request_cancel)回调函数调用[**WdfRequestComplete**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcomplete) 。
+如果已 [取消](canceling-i-o-requests.md)i/o 操作，驱动程序通常会从其 [*EvtRequestCancel*](/windows-hardware/drivers/ddi/wdfrequest/nc-wdfrequest-evt_wdf_request_cancel)回调函数调用 [**WdfRequestComplete**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcomplete) 。
 
 如果驱动程序将 i/o 请求 [转发](forwarding-i-o-requests.md) 到 [i/o 目标](using-i-o-targets.md)，则驱动程序将在 i/o 目标完成请求之后完成请求，如下所示：
 
 -   如果你的驱动程序以 [同步](sending-i-o-requests-synchronously.md) 方式将 i/o 请求转发到 i/o 目标，则仅在较低级别的驱动程序完成请求之后，驱动程序对 i/o 目标的调用才会返回 (除非) 出现错误。 I/o 目标返回后，你的驱动程序必须调用 [**WdfRequestComplete**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcomplete)。
 
--   如果你的驱动程序以 [异步方式](sending-i-o-requests-asynchronously.md)转发 i/o 请求，则你将希望在较低级别的驱动程序完成请求时通知你的驱动程序。 如果驱动程序注册了一个 [*CompletionRoutine*](/windows-hardware/drivers/ddi/wdfrequest/nc-wdfrequest-evt_wdf_request_completion_routine) 回调函数，则在 i/o 目标完成该请求后，框架将调用此回调函数。 *CompletionRoutine*回调函数通常会调用[**WdfRequestComplete**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcomplete)。
+-   如果你的驱动程序以 [异步方式](sending-i-o-requests-asynchronously.md)转发 i/o 请求，则你将希望在较低级别的驱动程序完成请求时通知你的驱动程序。 如果驱动程序注册了一个 [*CompletionRoutine*](/windows-hardware/drivers/ddi/wdfrequest/nc-wdfrequest-evt_wdf_request_completion_routine) 回调函数，则在 i/o 目标完成该请求后，框架将调用此回调函数。 *CompletionRoutine* 回调函数通常会调用 [**WdfRequestComplete**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcomplete)。
 
 若要注册 [*CompletionRoutine*](/windows-hardware/drivers/ddi/wdfrequest/nc-wdfrequest-evt_wdf_request_completion_routine) 回调函数，驱动程序必须先调用 [**WdfRequestSetCompletionRoutine**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestsetcompletionroutine) ，然后再将 i/o 请求转发到 i/o 目标。
 
-如果在 i/o 目标完成异步转发的 i/o 请求时，驱动程序无需收到通知，则驱动程序无需注册 [*CompletionRoutine*](/windows-hardware/drivers/ddi/wdfrequest/nc-wdfrequest-evt_wdf_request_completion_routine) 回调函数。 相反，在调用[**WdfRequestSend**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestsend)时，驱动程序可以设置[**WDF \_ 请求 \_ 发送 \_ 选项 \_ 发送 \_ 和 \_ 忘记**](/windows-hardware/drivers/ddi/wdfrequest/ne-wdfrequest-_wdf_request_send_options_flags)标志。 在这种情况下，驱动程序不会调用 [**WdfRequestComplete**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcomplete)。
+如果在 i/o 目标完成异步转发的 i/o 请求时，驱动程序无需收到通知，则驱动程序无需注册 [*CompletionRoutine*](/windows-hardware/drivers/ddi/wdfrequest/nc-wdfrequest-evt_wdf_request_completion_routine) 回调函数。 相反，在调用 [**WdfRequestSend**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestsend)时，驱动程序可以设置 [**WDF \_ 请求 \_ 发送 \_ 选项 \_ 发送 \_ 和 \_ 忘记**](/windows-hardware/drivers/ddi/wdfrequest/ne-wdfrequest-_wdf_request_send_options_flags)标志。 在这种情况下，驱动程序不会调用 [**WdfRequestComplete**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcomplete)。
 
 驱动程序不会完成通过调用 [**WdfRequestCreate**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcreate) 或 [**WdfRequestCreateFromIrp**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcreatefromirp)创建的 i/o 请求。 相反，驱动程序必须调用 [**WdfObjectDelete**](/windows-hardware/drivers/ddi/wdfobject/nf-wdfobject-wdfobjectdelete) 来删除请求对象，通常是在 i/o 目标完成请求后。
 
@@ -68,7 +67,7 @@ ms.locfileid: "89188731"
 
 当驱动程序完成请求时，它可以根据需要提供其他驱动程序可以访问的其他信息。 例如，驱动程序可能提供为读取或写入请求传输的字节数。 为提供此信息，驱动程序可以执行以下任一操作：
 
--   在调用[**WdfRequestComplete**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcomplete)之前调用[**WdfRequestSetInformation**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestsetinformation) 。
+-   在调用 [**WdfRequestComplete**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcomplete)之前调用 [**WdfRequestSetInformation**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestsetinformation) 。
 
 -   调用 [**WdfRequestCompleteWithInformation**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcompletewithinformation)。
 
@@ -80,7 +79,7 @@ ms.locfileid: "89188731"
 
 -   调用 [**WdfRequestGetCompletionParams**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestgetcompletionparams) 可获取一个 [**WDF \_ 请求 \_ 完成 \_ 参数**](/windows-hardware/drivers/ddi/wdfrequest/ns-wdfrequest-_wdf_request_completion_params) 结构，其中包含有关已完成请求的其他信息，例如表示请求的缓冲区的内存对象的句柄，或特定于总线的信息。
 
-    仅当驱动程序调用[**WdfRequestSend**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestsend)以同步或异步方式将 i/o 请求发送到 i/o 目标后，才能调用[**WdfRequestGetCompletionParams**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestgetcompletionparams) 。 驱动程序在调用将 i/o 请求发送到 i/o 目标的一种方法时，不能调用 **WdfRequestGetCompletionParams** ，这种方法仅同步 (如 [**WdfIoTargetSendReadSynchronously**](/windows-hardware/drivers/ddi/wdfiotarget/nf-wdfiotarget-wdfiotargetsendreadsynchronously)) 。
+    仅当驱动程序调用 [**WdfRequestSend**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestsend)以同步或异步方式将 i/o 请求发送到 i/o 目标后，才能调用 [**WdfRequestGetCompletionParams**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestgetcompletionparams) 。 驱动程序在调用将 i/o 请求发送到 i/o 目标的一种方法时，不能调用 **WdfRequestGetCompletionParams** ，这种方法仅同步 (如 [**WdfIoTargetSendReadSynchronously**](/windows-hardware/drivers/ddi/wdfiotarget/nf-wdfiotarget-wdfiotargetsendreadsynchronously)) 。
 
 -   如果驱动程序堆栈中的驱动程序提供了此类信息，请调用 [**WdfRequestGetInformation**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestgetinformation) 来获取更低级别的驱动程序在调用 [**WdfRequestSetInformation**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestsetinformation) 或 [**WdfRequestCompleteWithInformation**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcompletewithinformation)时指定的其他 i/o 完成信息。
 

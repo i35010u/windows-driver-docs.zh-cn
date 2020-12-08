@@ -1,15 +1,14 @@
 ---
 title: 自动配置的扫描
 description: 自动配置的扫描
-ms.assetid: 6904e216-3eb7-419f-a6ca-198defaeebe0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 44466c24f58cf03df34b806ea93a796edf1a9df5
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 8403fc20ad9fcc45a0091b7f1d47891d906da04c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89189887"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96828727"
 ---
 # <a name="auto-configured-scanning"></a>自动配置的扫描
 

@@ -1,7 +1,6 @@
 ---
 title: CLFS 日志序列号
 description: CLFS 日志序列号
-ms.assetid: 4637fa0c-2f19-4f0c-bf13-f4ccac2e7284
 keywords:
 - 公用日志文件系统 WDK 内核，日志序列号
 - CLFS WDK 内核，日志序列号
@@ -16,12 +15,12 @@ keywords:
 - 流 WDK CLFS
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e03db46f4fc173b45e7b5d3564366f2b5ec9b7d3
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: ea0a3038e9d497e92306256eed3f46b69a79a257
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89189873"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96830425"
 ---
 # <a name="clfs-log-sequence-numbers"></a>CLFS 日志序列号
 
@@ -59,7 +58,7 @@ ms.locfileid: "89189873"
 
 ![阐释 clfs 流的活动部分的示意图](images/clfsactivelog.gif)
 
-**注意**   如果流具有存档尾部，则流的活动部分将从基本 LSN 或存档尾所指向的记录开始，以较小者为准。 有关存档的详细信息，请参阅 [CLFS 支持存档](clfs-support-for-archiving.md)。
+**注意**   如果流具有存档尾部，则流的活动部分将从基本 LSN 或存档尾所指向的记录开始，以较小者为准。 有关存档的详细信息，请参阅 [CLFS 支持存档](clfs-support-for-archiving.md)。
 
  
 

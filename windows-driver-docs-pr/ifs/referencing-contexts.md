@@ -1,18 +1,17 @@
 ---
 title: 引用上下文
 description: 引用上下文
-ms.assetid: 9ac3aedb-e057-4e19-9de5-709311072b09
 keywords:
 - 上下文 WDK 文件系统微筛选器，引用
 - 引用上下文
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 030285400293dbd0cff98daf2ef4f2de0c954597
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: fb078d60f0d22e3abc66ae876586ad10fd433ec2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89063256"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96829667"
 ---
 # <a name="referencing-contexts"></a>引用上下文
 

@@ -1,18 +1,17 @@
 ---
-title: 调试运行到光标处
-description: 调试运行到光标处
-ms.assetid: 3d3d017b-e106-4eec-be0a-46c0db658744
+title: 调试运行到游标
+description: 调试运行到游标
 keywords:
-- 调试运行到光标处
-- 控制目标，调试运行到光标处
+- 调试运行到游标
+- 控制目标，调试 "运行到光标处"
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 48fab34990917ef5468dd1a2a53f739cc785869a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 26c9ec052a141600ff31faf06fa63677ea69aa66
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63374865"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96830267"
 ---
 # <a name="debug--run-to-cursor"></a>调试 | 运行到光标处
 
@@ -20,13 +19,13 @@ ms.locfileid: "63374865"
 ## <span id="ddk_debug_run_to_cursor_dbg"></span><span id="DDK_DEBUG_RUN_TO_CURSOR_DBG"></span>
 
 
-单击**运行到光标处**上**调试**菜单以继续在目标系统上运行。 如果不插入中的指令上光标[反汇编窗口](disassembly-window.md)或[源窗口](source-window.md)，然后执行此操作，WinDbg 从当前由指令指令执行的所有说明你已选择。
+单击 "**调试**" 菜单上的 "**运行到光标处**"，恢复在目标上运行的。 如果在 " [反汇编" 窗口](disassembly-window.md) 或 " [源](source-window.md) " 窗口中的指令上插入游标，然后执行此操作，则 WinDbg 会执行当前指令中的所有指令，直至所选的指令。
 
-此命令是等效于按 f7 键或 CTRL + F10 键或单击**运行到光标处 （Ctrl + F10 或 F7）** 按钮 (![运行到光标按钮的屏幕截图](images/tbcursor.png)) 工具栏上。
+此命令等效于按 F7 或 CTRL + F10，或者单击 " **运行到光标处 (" ctrl + F10 或 F7)** 按钮 (![ 工具栏上的 "运行到光标处" 按钮) 屏幕截图 ](images/tbcursor.png) 。
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-发出此命令，并控制程序执行的其他方法的其他方法的此操作的效果的详细信息，请参阅[控制目标](controlling-the-target.md)。
+有关此操作的效果、发出此命令的其他方法以及用于控制程序执行的其他方法的详细信息，请参阅 [控制目标](controlling-the-target.md)。
 
  
 

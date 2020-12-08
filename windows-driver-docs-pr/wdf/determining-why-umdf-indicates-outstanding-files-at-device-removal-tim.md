@@ -1,24 +1,23 @@
 ---
 title: UMDF 指示在设备删除时未完成的文件
 description: 介绍如何使用 Wudfext.dll 来确定在删除设备时，该文件的原因会表明存在未完成的文件。
-ms.assetid: 9a8b3b69-1192-40c1-895b-4abfc01c1ca7
 keywords:
 - 调试方案 WDK UMDF，UMDF 指示在设备删除时未完成的文件
 - UMDF WDK，调试方案，UMDF 指示在设备删除时未完成的文件
 - UMDF WDK，UMDF 指示在设备删除时未完成的文件
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6f0f63321c3105ced90c29da0a5620f046ae7d27
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 3908a6fb5b75e187c9fe670c7c496c8581eac58a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89191565"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96828945"
 ---
 # <a name="determining-why-umdf-indicates-outstanding-files-at-device-removal-time"></a>确定 UMDF 在删除设备时指示文件未完成的原因
 
 
-本主题介绍了如何将 Wudfext.dll 调试程序扩展与用户模式驱动程序框架结合使用， (UMDF) 第1版或第2版驱动程序，以确定在删除设备时，UMDF 指示存在未完成文件的原因。
+本主题介绍了如何将 Wudfext.dll 调试程序扩展与 User-Mode Driver Framework (UMDF) 版本1或2驱动程序一起使用，以确定在删除设备时，UMDF 指示存在未完成文件的原因。
 
 对于 UMDF 版本1，你将使用在 wudfext.dll 中实现的扩展命令。 从 UMDF 版本2开始，你将使用在 wdfkd.dll 中实现的扩展命令。
 

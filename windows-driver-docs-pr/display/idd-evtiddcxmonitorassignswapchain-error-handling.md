@@ -1,19 +1,18 @@
 ---
 title: EvtIddCxMonitorAssignSwapChain 错误处理
 description: 与 EvtIddCxMonitorAssignSwapChain 关联的错误处理
-ms.assetid: 68e5f3cd-2551-4e36-85dc-5bc42e0e48a6
 ms.date: 09/28/2020
 keywords:
 - EvtIddCxMonitorAssignSwapChain，错误处理
 - EvtIddCxMonitorAssignSwapChain 错误处理，间接显示驱动程序
 - EvtIddCxMonitorAssignSwapChain 错误处理，IDD
 ms.localizationpriority: medium
-ms.openlocfilehash: 4e97f5629c62da65627aa41a9de8d60503385ec7
-ms.sourcegitcommit: a32079f3cc5d564d3b12576f832ed442a6b1a918
+ms.openlocfilehash: 5c17f9ad93e4a22c2f69a7bb0bbdb2d0bb2e058a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92793484"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96830083"
 ---
 # <a name="evtiddcxmonitorassignswapchain-error-handling"></a>EvtIddCxMonitorAssignSwapChain 错误处理
 

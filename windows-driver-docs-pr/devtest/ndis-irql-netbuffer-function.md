@@ -1,7 +1,6 @@
 ---
 title: 'Irql \_ NetBuffer \_ 函数规则 (ndis) '
 description: Irql \_ NetBuffer \_ 函数规则指定 \_ 必须在正确的 Irql 级别调用与网络缓冲区相关的函数。
-ms.assetid: e3b43ba1-3b58-4bc8-9d90-7be31c9e0a09
 ms.date: 05/21/2018
 keywords:
 - 'Irql_NetBuffer_Function 规则 (ndis) '
@@ -12,12 +11,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 25d8d74446b49360cd81c50f4d369dd035ad8e0d
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 21be361afcbc95506b6d1cc4d1fa25c588ea60b6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104714"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96830177"
 ---
 # <a name="irql_netbuffer_function-rule-ndis"></a>Irql \_ NetBuffer \_ 函数规则 (ndis) 
 

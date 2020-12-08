@@ -1,15 +1,14 @@
 ---
 title: 对象句柄和事件顺序
 description: 对象句柄和事件顺序
-ms.assetid: 5abbcda2-66cc-4460-99b6-e7796e65af68
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d5ecfa4de9f6cdf0670d56d197662a0ab8a32497
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 74f94d139914e19fd9fc88ba949b71bfcd1bd19c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379657"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96829635"
 ---
 # <a name="object-handle-and-event-order"></a>对象句柄和事件顺序
 
@@ -17,17 +16,17 @@ ms.locfileid: "63379657"
 
 
 
-当 Microsoft PTP WIA 微型驱动程序发出**GetObjectHandles**命令 （请参阅 PIMA 15740 标准），照相机必须 WIA 微型驱动程序才能正确生成 WIA 项树以特定顺序返回对象句柄。
+当 Microsoft PTP WIA 微型驱动程序发出 **GetObjectHandles** 命令时 (参阅 pima indian diabetes 15740 标准) ，照相机必须按特定顺序返回对象句柄，以便 wia 微型驱动程序正确生成 wia 项树。
 
--   具有子对象的对象必须出现在前面及其子级的列表。
+-   具有子对象的对象在其子级之前必须出现在列表中。
 
-    句柄的数字顺序不重要。 例如，如果对象 5 有 4、 6 和 7 中，子对象列表应订购 5、 4、 6、 7。 排序 4、 5、 6、 7 不起作用。
+    句柄的数值顺序并不重要。 例如，如果 object 5 具有子对象4、6和7，则列表应按5、4、6、7进行排序。 顺序4、5、6、7将不起作用。
 
--   对于辅助关联图像对象必须位于领先于其他对象的关联中的对象句柄列表。
+-   对于辅助关联，图像对象必须位于关联中其他对象之前的对象句柄列表中。
 
--   ObjectRemoved 事件 （请参阅 PIMA 15740 标准） 必须按下向上的顺序出现。
+-   ObjectRemoved 事件 (参阅 PIMA INDIAN DIABETES 15740 standard) 必须按下向上的顺序出现。
 
-    换而言之，直到由于 ObjectRemoved 事件已删除的所有子级，不应发生 ObjectRemoved 事件的对象。 如果内的辅助关联的图像将被删除，必须以响应 ObjectRemoved 事件中移除图像本身之前删除关联中的其他对象。
+    换句话说，对象的 ObjectRemoved 事件不会发生，除非 ObjectRemoved 事件已删除所有子级。 如果要删除辅助关联中的映像，则必须删除关联中的其他对象，以响应 ObjectRemoved 事件，然后再删除图像本身。
 
  
 

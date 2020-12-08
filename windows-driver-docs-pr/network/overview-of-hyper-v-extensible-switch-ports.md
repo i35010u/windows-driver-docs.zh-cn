@@ -1,15 +1,14 @@
 ---
 title: Hyper-V 可扩展交换机端口概述
 description: Hyper-V 可扩展交换机端口概述
-ms.assetid: FD6B6014-B840-4EC8-96F4-34C08EC303EA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0384a784b24785ff33a124c2d292c2ccc5cc362d
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 19f2bb53a0673c706dc2fb8e5016bdaac9b2f854
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89206293"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96829203"
 ---
 # <a name="overview-of-hyper-v-extensible-switch-ports"></a>Hyper-V 可扩展交换机端口概述
 
@@ -50,7 +49,7 @@ ms.locfileid: "89206293"
 
 当之前到端口的网络连接已断开并且端口的所有 OID 请求均已完成时，可扩展交换机的协议边缘会发出此 OID 请求。
 
-**注意**   如果之前未对端口进行网络适配器连接，则可能发出此 OID 请求。
+**注意**  如果之前未对端口进行网络适配器连接，则可能发出此 OID 请求。
 
  
 
@@ -59,7 +58,7 @@ ms.locfileid: "89206293"
 <a href="" id="oid-switch-port-teardown"></a>[OID \_ 交换机 \_ 端口 \_ 拆卸](./oid-switch-port-teardown.md)  
 可扩展交换机的协议边缘发出 oid [ \_ 交换机 \_ 端口 \_ 拆卸](./oid-switch-port-teardown.md) 请求，以通知可扩展交换机扩展正在删除的可扩展交换机端口。 当之前到端口的网络连接已断开并且端口的所有 OID 请求均已完成时，可扩展交换机的协议边缘会发出此 OID 请求。
 
-**注意**   如果之前未对端口进行网络适配器连接，则可能发出此 OID 请求。
+**注意**  如果之前未对端口进行网络适配器连接，则可能发出此 OID 请求。
 
  
 
@@ -72,9 +71,9 @@ ms.locfileid: "89206293"
 
 扩展必须始终按可扩展交换机驱动程序堆栈转发此 OID 设置请求。 此扩展不能导致请求失败。
 
-为网络连接创建的所有可扩展交换机端口都被分配一个大于 **NDIS \_ 交换机 \_ 默认 \_ 端口 \_ ID**的标识符。 **NDIS \_ 交换机 \_ 默认 \_ 端口 \_ ID**标识符被保留，并按以下方式使用：
+为网络连接创建的所有可扩展交换机端口都被分配一个大于 **NDIS \_ 交换机 \_ 默认 \_ 端口 \_ ID** 的标识符。 **NDIS \_ 交换机 \_ 默认 \_ 端口 \_ ID** 标识符被保留，并按以下方式使用：
 
--   数据包的源端口标识符存储在数据包的带外 (OOB) 转发上下文与其 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list) 结构关联。 **NDIS \_ 交换机 \_ 默认 \_ 端口 \_ ID**的源端口标识符指定数据包源自可扩展交换机扩展，而不是来自可扩展交换机端口。 具有 **NDIS \_ 交换机 \_ 默认 \_ 端口 \_ ID** 的源端口标识符的数据包是受信任的，并且绕过可扩展交换机端口策略，如访问控制列表 (Acl) 和服务质量 (QoS) 。
+-   数据包的源端口标识符存储在数据包的带外 (OOB) 转发上下文与其 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list) 结构关联。 **NDIS \_ 交换机 \_ 默认 \_ 端口 \_ ID** 的源端口标识符指定数据包源自可扩展交换机扩展，而不是来自可扩展交换机端口。 具有 **NDIS \_ 交换机 \_ 默认 \_ 端口 \_ ID** 的源端口标识符的数据包是受信任的，并且绕过可扩展交换机端口策略，如访问控制列表 (Acl) 和服务质量 (QoS) 。
 
     扩展可能需要将数据包视为来自特定端口。 这允许将该端口的策略应用到该数据包。 该扩展调用 [*SetNetBufferListSource*](/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_set_net_buffer_list_source) 来更改数据包的源端口。
 
@@ -86,7 +85,7 @@ ms.locfileid: "89206293"
 
     扩展还可以发出封装的 OID 请求，以便向下转发请求的可扩展交换机控制路径。 这允许扩展插件查询或配置基础物理网络适配器的功能。
 
-    此 OID 请求的**ndis \_ OID \_ 请求**结构的**InformationBuffer**成员包含指向[**NDIS \_ 交换机 \_ NIC \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_nic_oid_request)结构的指针。 如果将 **SourcePortId** 成员设置为 **NDIS \_ 切换 \_ 默认 \_ 端口 \_ ID**，则这将指定 OID 请求是由可扩展交换机接口发出的。 如果将 " **DestinationPortId** " 设置为 " **NDIS \_ 切换 \_ 默认 \_ 端口 \_ ID**"，则此选项指定 OID 请求将由可扩展交换机驱动程序堆栈中的扩展进行处理。
+    此 OID 请求的 **ndis \_ OID \_ 请求** 结构的 **InformationBuffer** 成员包含指向 [**NDIS \_ 交换机 \_ NIC \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_nic_oid_request)结构的指针。 如果将 **SourcePortId** 成员设置为 **NDIS \_ 切换 \_ 默认 \_ 端口 \_ ID**，则这将指定 OID 请求是由可扩展交换机接口发出的。 如果将 " **DestinationPortId** " 设置为 " **NDIS \_ 切换 \_ 默认 \_ 端口 \_ ID**"，则此选项指定 OID 请求将由可扩展交换机驱动程序堆栈中的扩展进行处理。
 
     有关 OID 请求的控制路径的详细信息，请参阅 [Oid 请求的 Hyper-v 可扩展交换机控制路径](hyper-v-extensible-switch-control-path-for-oid-requests.md)。
 
@@ -94,7 +93,7 @@ ms.locfileid: "89206293"
 
     扩展还可以发出封装的 NDIS 状态指示，以便向前指示可扩展交换机控制路径。 这允许扩展更改基础物理网络适配器的已报告功能。
 
-    此指示的[**ndis \_ 状态 \_ 指示**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_status_indication)结构的**StatusBuffer**成员包含指向[**NDIS \_ 交换机 \_ NIC \_ 状态 \_ 指示**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_switch_nic_status_indication)结构的指针。 如果将 **SourcePortId** 成员设置为 **NDIS \_ 切换 \_ 默认 \_ 端口 \_ ID**，这将指定状态指示是由可扩展交换机接口发出的。 如果将 " **DestinationPortId** " 设置为 " **NDIS \_ 切换 \_ 默认 \_ 端口 \_ ID**"，则此选项指定 OID 请求将由可扩展交换机驱动程序堆栈中的扩展进行处理。
+    此指示的 [**ndis \_ 状态 \_ 指示**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_status_indication)结构的 **StatusBuffer** 成员包含指向 [**NDIS \_ 交换机 \_ NIC \_ 状态 \_ 指示**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_switch_nic_status_indication)结构的指针。 如果将 **SourcePortId** 成员设置为 **NDIS \_ 切换 \_ 默认 \_ 端口 \_ ID**，这将指定状态指示是由可扩展交换机接口发出的。 如果将 " **DestinationPortId** " 设置为 " **NDIS \_ 切换 \_ 默认 \_ 端口 \_ ID**"，则此选项指定 OID 请求将由可扩展交换机驱动程序堆栈中的扩展进行处理。
 
     有关 NDIS 状态指示的控制路径的详细信息，请参阅 [适用于 Ndis 状态指示的 Hyper-v 可扩展交换机控制路径](hyper-v-extensible-switch-control-path-for-ndis-status-indications.md)。
 
@@ -105,16 +104,16 @@ ms.locfileid: "89206293"
 
 扩展必须在执行任何需要端口处于活动状态的操作之前调用 [*ReferenceSwitchPort*](/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_reference_switch_port) 。 例如，扩展必须先调用 *ReferenceSwitchPort* ，然后才会发出 [oid \_ 交换机 \_ 端口 \_ 属性 \_ 枚举](./oid-switch-port-property-enum.md)的 oid 方法请求。
 
-**注意**   当某个端口收到 oid 设置的 oid [ \_ 交换机 \_ 端口 \_ 拆卸](./oid-switch-port-teardown.md)请求时，它不能为该端口调用[*ReferenceSwitchPort*](/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_reference_switch_port) 。
+**注意** 当某个端口收到 oid 设置的 oid [ \_ 交换机 \_ 端口 \_ 拆卸](./oid-switch-port-teardown.md)请求时，它不能为该端口调用 [*ReferenceSwitchPort*](/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_reference_switch_port) 。
 
  
 
 <a href="" id="dereferenceswitchport"></a>[*DereferenceSwitchPort*](/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_reference_switch_port)  
 可扩展交换机扩展调用此函数来减小端口的引用计数器。
 
-在对端口执行的操作完成后，扩展必须调用 [*DereferenceSwitchPort*](/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_reference_switch_port) 。 例如，如果在发出[oid \_ 交换 \_ 端口 \_ 属性 \_ 枚举](./oid-switch-port-property-enum.md)请求之前调用了*ReferenceSwitchPort*的扩展，则扩展必须在完成 oid 请求后调用*DereferenceSwitchPort* 。
+在对端口执行的操作完成后，扩展必须调用 [*DereferenceSwitchPort*](/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_reference_switch_port) 。 例如，如果在发出 [oid \_ 交换 \_ 端口 \_ 属性 \_ 枚举](./oid-switch-port-property-enum.md)请求之前调用了 *ReferenceSwitchPort* 的扩展，则扩展必须在完成 oid 请求后调用 *DereferenceSwitchPort* 。
 
-**注意**   NDIS 端口和可扩展交换机端口都是不同的对象。 在可扩展交换机数据路径间移动的数据包始终分配给 ndis 端口号 **ndis \_ 默认 \_ 端口 \_ 号**。 但是，数据包的源和目标可扩展交换机端口号可以是 **NDIS \_ 交换机 \_ 默认 \_ 端口 \_ ID** 或更高的值。 有关详细信息，请参阅 [Hyper-v 可扩展交换机数据路径](hyper-v-extensible-switch-data-path.md)。
+**注意**  NDIS 端口和可扩展交换机端口都是不同的对象。 在可扩展交换机数据路径间移动的数据包始终分配给 ndis 端口号 **ndis \_ 默认 \_ 端口 \_ 号**。 但是，数据包的源和目标可扩展交换机端口号可以是 **NDIS \_ 交换机 \_ 默认 \_ 端口 \_ ID** 或更高的值。 有关详细信息，请参阅 [Hyper-v 可扩展交换机数据路径](hyper-v-extensible-switch-data-path.md)。
 
  
 

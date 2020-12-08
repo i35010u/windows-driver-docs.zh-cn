@@ -1,15 +1,14 @@
 ---
 title: 正在加载测试签名代码
 description: 介绍如何使用 TESTSIGNING 选项和 BCDEdit 工具来启用测试签名驱动程序的加载
-ms.assetid: 4898595e-20c9-4607-aad7-792f7d1074e4
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 16b2c74976d68a9c8b3c59d44365307e1244935e
-ms.sourcegitcommit: ec7bebe3f94536455e62b372c2a28fe69d1717f7
+ms.openlocfilehash: b0f5d4e7bf19276fd052d8982e93a9629aa8632d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93349745"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96828603"
 ---
 # <a name="enable-loading-of-test-signed-drivers"></a>允许加载已进行测试签名的驱动程序
 
@@ -21,7 +20,7 @@ ms.locfileid: "93349745"
 
 ## <a name="administrator-rights-required"></a>需要管理员权限
 
-若要使用 BCDEdit，你必须是系统上 Administrators 组的成员，并从提升的命令提示符运行该命令。 若要打开提升的命令提示符窗口，请在 Windows 任务栏的搜索框中键入 **cmd** ，选择并按住 (或右键单击搜索结果中) **命令提示符** ，然后选择 " **以管理员身份运行** "。
+若要使用 BCDEdit，你必须是系统上 Administrators 组的成员，并从提升的命令提示符运行该命令。 若要打开提升的命令提示符窗口，请在 Windows 任务栏的搜索框中键入 **cmd** ，选择并按住 (或右键单击搜索结果中) **命令提示符** ，然后选择 " **以管理员身份运行**"。
 
 > [!Warning]
 > 使用 BCDEdit 修改启动配置数据需要管理权限。 使用 **BCDEdit/set** 更改某些启动项选项可能导致计算机无法操作。 作为替代方法，请使用系统配置实用工具 ( # A0) 更改启动设置。

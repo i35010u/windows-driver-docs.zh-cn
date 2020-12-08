@@ -1,19 +1,18 @@
 ---
 title: 针对热点身份验证的预配
 description: 针对热点身份验证的预配
-ms.assetid: bfb4e1ec-9887-4b25-bfcc-be642b1a0101
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ba902f2f0edcabf737275fba02fdbc1889a87c8e
-ms.sourcegitcommit: 67efcd26f7be8f50c92b141ccd14c9c68f4412d8
+ms.openlocfilehash: 7b484638a6c165c367e3ad7bbaefa3fb26fd655d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88902568"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96828521"
 ---
 # <a name="provisioning-for-hotspot-authentication"></a>针对热点身份验证的预配
 
-要使应用参与热点身份验证过程，必须先为 Wi-fi 热点创建一个或多个配置文件。 这是通过使用 [元数据配置移动宽带体验](using-metadata-to-configure-mobile-broadband-experiences.md)中讨论的预配代理界面来实现的。 热点必须使用开放式身份验证，并且必须包含 **HotspotProfile** 元素。 以下预配文件示例显示了如何将 SSID 与应用关联：
+要使应用参与热点身份验证过程，必须先为 Wi-Fi 热点创建一个或多个配置文件。 这是通过使用 [元数据配置移动宽带体验](using-metadata-to-configure-mobile-broadband-experiences.md)中讨论的预配代理界面来实现的。 热点必须使用开放式身份验证，并且必须包含 **HotspotProfile** 元素。 以下预配文件示例显示了如何将 SSID 与应用关联：
 
 ``` syntax
 <WLANProfile xmlns="http://www.microsoft.com/networking/CarrierControl/WLAN/v1">
@@ -56,7 +55,7 @@ ExtensionId 字段包含生成热点凭据的应用的包系列名称。 包系�
 |----|----|----|----|
 |是，MB 提供程序|移动宽带应用|无|无|
 |是，MB 提供程序|Operator 网站|证书必须：</br>-链式返回到受信任的根 CA</br>-与 APN 数据库中的移动宽带硬件或体验元数据关联|无|
-|否，Wi-fi 提供程序|移动宽带应用或网站|证书必须：</br>-链式返回到受信任的根 CA</br>-已标记为进行扩展验证|首次使用证书时，系统会提示用户确认;无。|
+|不，Wi-Fi 提供程序|移动宽带应用或网站|证书必须：</br>-链式返回到受信任的根 CA</br>-已标记为进行扩展验证|首次使用证书时，系统会提示用户确认;无。|
 
 ## <a name="related-topics"></a>相关主题
 

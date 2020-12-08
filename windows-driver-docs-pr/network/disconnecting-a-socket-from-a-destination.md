@@ -1,7 +1,6 @@
 ---
 title: 断开套接字与目标的连接
 description: 断开套接字与目标的连接
-ms.assetid: 83755eb4-a24e-4fef-858d-d58318227dc0
 keywords:
 - Winsock 内核 WDK 网络，断开连接
 - WSK WDK 网络，断开连接
@@ -11,12 +10,12 @@ keywords:
 - 目标连接 WDK Winsock 内核
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d5080da6f440fb26803bfd0e74459972aa1a7b2d
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: dc8603ad054e29c09e24fca82e0947efdf4bc98d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89212517"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96828487"
 ---
 # <a name="disconnecting-a-socket-from-a-destination"></a>断开套接字与目标的连接
 

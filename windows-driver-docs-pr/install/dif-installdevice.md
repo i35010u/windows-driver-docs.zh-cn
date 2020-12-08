@@ -1,7 +1,6 @@
 ---
 title: DIF_INSTALLDEVICE
 description: DIF_INSTALLDEVICE
-ms.assetid: 2d369086-c2b6-45a4-a87e-51ff5725938f
 keywords:
 - DIF_INSTALLDEVICE 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: fd855b8253a0c0e4b642bd7155b622fa48c870dd
-ms.sourcegitcommit: a44ade167cdfb541cf1818e9f9e3726f23f90b66
+ms.openlocfilehash: 8bbe786fe83c96d814eb9e0a611085e06cdc52bc
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94361567"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96830427"
 ---
 # <a name="dif_installdevice"></a>DIF_INSTALLDEVICE
 
@@ -64,10 +63,10 @@ DIF_INSTALLDEVICE 请求允许安装程序在安装设备之前和/或之后执�
 在设备信息集中提供设备的 [**SP_DEVINFO_DATA**](/windows/win32/api/setupapi/ns-setupapi-sp_devinfo_data) 结构的指针。
 
 <a href="" id="device-installation-parameters-"></a>设备安装参数   
-与 *DeviceInfoData* 关联的设备安装参数 ( [**SP_DEVINSTALL_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-sp_devinstall_params_a)) 。
+与 *DeviceInfoData* 关联的设备安装参数 ([**SP_DEVINSTALL_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-sp_devinstall_params_a)) 。
 
 <a href="" id="class-installation-parameters"></a>类安装参数  
-None
+无
 
 ### <a name="installer-output"></a>安装程序输出
 
@@ -106,7 +105,7 @@ None
 
 如果安装程序返回 Win32 错误代码，Windows 会放弃安装。
 
-如果 Windows 无法找到新设备的 INF 文件，则会发送 DIF_INSTALLDEVICE，尝试安装 *null 驱动程序* 。  ( [**SetupDiInstallDevice**](/windows/win32/api/setupapi/nf-setupapi-setupdiinstalldevice) 的默认处理程序) 检查设备是否支持 *raw 模式* ，或是 [**IoReportDetectedDevice**](/windows-hardware/drivers/ddi/ntddk/nf-ntddk-ioreportdetecteddevice)) 报告的非 PnP 设备 (，在后一种情况下，Windows 将为设备安装 null 驱动程序。
+如果 Windows 无法找到新设备的 INF 文件，则会发送 DIF_INSTALLDEVICE，尝试安装 *null 驱动程序*。  ([**SetupDiInstallDevice**](/windows/win32/api/setupapi/nf-setupapi-setupdiinstalldevice) 的默认处理程序) 检查设备是否支持 *raw 模式* ，或是 [**IoReportDetectedDevice**](/windows-hardware/drivers/ddi/ntddk/nf-ntddk-ioreportdetecteddevice)) 报告的非 PnP 设备 (，在后一种情况下，Windows 将为设备安装 null 驱动程序。
 
 如果此尝试失败，则 Windows 将再次发送 DIF_INSTALLDEVICE，这次在 [**SP_DEVINSTALL_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-sp_devinstall_params_a) 结构中设置了 DI_FLAGSEX_SETFAILEDINSTALL 标志。 在这种情况下，默认处理程序只是在设备的 **ConfigFlags** 注册表值中设置 FAILEDINSTALL 标志。 如果设置了 DI_FLAGSEX_SETFAILEDINSTALL 标志，则类安装程序必须返回 NO_ERROR 或 ERROR_DI_DO_DEFAULT 并且共同安装程序必须返回 NO_ERROR。
 

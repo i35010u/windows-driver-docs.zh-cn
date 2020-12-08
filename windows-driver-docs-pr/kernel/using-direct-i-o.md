@@ -1,7 +1,6 @@
 ---
 title: 使用直接 I/O
 description: 使用直接 I/O
-ms.assetid: e40b4657-833f-404c-8472-2e33564129a5
 keywords:
 - 直接 i/o WDK 内核
 - 缓冲 WDK i/o，直接 i/o
@@ -9,12 +8,12 @@ keywords:
 - I/o WDK 内核，直接 i/o
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b9bceba8434b4ab8ca4c04672d9c840c84425090
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: ef131e5219386d24dc1350a8a40403a7b5dcee66
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89190671"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96830381"
 ---
 # <a name="using-direct-io"></a>使用直接 I/O
 
@@ -28,7 +27,7 @@ ms.locfileid: "89190671"
 
 I/o 管理器按如下方式确定 i/o 操作使用的是直接 i/o：
 
--   对于[**IRP \_ mj \_ 读取**](./irp-mj-read.md)和[**irp \_ Mj \_ 写入**](./irp-mj-write.md)请求，请 \_ \_ 在[**设备 \_ 对象**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_device_object)结构的**Flags**成员中设置直接 IO。 有关详细信息，请参阅 [初始化设备对象](initializing-a-device-object.md)。
+-   对于 [**IRP \_ mj \_ 读取**](./irp-mj-read.md)和 [**irp \_ Mj \_ 写入**](./irp-mj-write.md)请求，请 \_ \_ 在 [**设备 \_ 对象**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_device_object)结构的 **Flags** 成员中设置直接 IO。 有关详细信息，请参阅 [初始化设备对象](initializing-a-device-object.md)。
 
 -   对于 [**IRP \_ mj \_ 设备 \_ 控制**](./irp-mj-device-control.md) 和 [**irp \_ mj \_ 内部 \_ 设备 \_ 控制**](./irp-mj-internal-device-control.md) 请求，ioctl 代码的值将直接包含 \_ 方法 \_ 或方法 \_ OUT \_ 作为 IOCTL 值中的 *TransferType* 值。 有关详细信息，请参阅 [定义 I/o 控制代码](defining-i-o-control-codes.md)。
 

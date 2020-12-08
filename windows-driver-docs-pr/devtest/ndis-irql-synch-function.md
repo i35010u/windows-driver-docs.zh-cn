@@ -1,7 +1,6 @@
 ---
 title: 'Irql \_ 同步 \_ 函数规则 (ndis) '
 description: Irql \_ 同步 \_ 函数规则指定必须在正确的 Irql 级别调用 NDIS 中断和同步 DDIs。
-ms.assetid: 5d0e862a-89e6-493d-a102-83430c5140e4
 ms.date: 05/21/2018
 keywords:
 - 'Irql_Synch_Function 规则 (ndis) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: cc5edd2cc1ba82e39a76d9198a1d7bf9a64b7c72
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 20c94508fb9fc302ade590665a85d041f4d05b43
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105474"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96830165"
 ---
 # <a name="irql_synch_function-rule-ndis"></a>Irql \_ 同步 \_ 函数规则 (ndis) 
 
 
-**Irql \_ 同步 \_ 函数**规则指定必须在正确的 Irql 级别调用 NDIS 中断和同步 DDIs。
+**Irql \_ 同步 \_ 函数** 规则指定必须在正确的 Irql 级别调用 NDIS 中断和同步 DDIs。
 
 **驱动程序模型： NDIS**
 
@@ -56,7 +55,7 @@ ms.locfileid: "90105474"
 ----------
 
 [**NDIS \_RELEASE \_ mutex**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndis_release_mutex) 
- [**NDIS \_ WAIT \_ \_ **](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndis_wait_for_mutex) 
+ [**NDIS \_ WAIT \_ \_**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndis_wait_for_mutex) 
  [**NdisAcquireReadWriteLock**](/previous-versions/ff560696(v=vs.85)) 
  [**NdisAcquireSpinLock**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisacquirespinlock) 
  [**NdisDprAcquireSpinLock**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisdpracquirespinlock) 

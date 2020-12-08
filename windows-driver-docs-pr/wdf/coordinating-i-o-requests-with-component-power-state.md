@@ -1,15 +1,14 @@
 ---
 title: 对 I/O 请求与组件电源状态进行协调
 description: 对 I/O 请求与组件电源状态进行协调
-ms.assetid: CF74B946-BF62-481A-B8AA-DD106DDB94CA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3ffb5478a9cf17d8929fa5cdfa137a0e6a7f08fe
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: b1c94e718321e6829b371be3896fb0543b5ef250
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89184323"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96829077"
 ---
 # <a name="coordinating-io-requests-with-component-power-state"></a>对 I/O 请求与组件电源状态进行协调
 

@@ -1,19 +1,18 @@
 ---
 title: 在 UMDF 中完成 i/o 请求
 description: 在 UMDF 中完成 i/o 请求
-ms.assetid: 3f8c7030-7c5d-4f65-8001-592af0b1d2de
 keywords:
 - I/o 请求 WDK UMDF，完成
 - 请求处理 WDK UMDF，完成请求
 - 完成 i/o 请求 WDK UMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9f3eed1286802e005d9d753006d691ede08e40eb
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: e198186fa07edbd7cf05a22ce4ea5714983f357a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89185319"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96829097"
 ---
 # <a name="completing-io-requests-in-umdf"></a>在 UMDF 中完成 i/o 请求
 
@@ -32,7 +31,7 @@ ms.locfileid: "89185319"
 
 驱动程序调用 [**IWDFIoRequest：： CompleteWithInformation**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest-completewithinformation) 方法以传递有关请求操作的其他信息。 例如，对于读取操作，驱动程序应提供读取的字节数。
 
-若要完成 i/o 请求，驱动程序必须在对[**IWDFIoRequest：： complete**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest-complete)或[**IWDFIoRequest：： CompleteWithInformation**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest-completewithinformation)的调用中，将相应的完成状态传递到*CompletionStatus*参数。 驱动程序使用 HRESULT 代码来传达完成的请求的状态。
+若要完成 i/o 请求，驱动程序必须在对 [**IWDFIoRequest：： complete**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest-complete)或 [**IWDFIoRequest：： CompleteWithInformation**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest-completewithinformation)的调用中，将相应的完成状态传递到 *CompletionStatus* 参数。 驱动程序使用 HRESULT 代码来传达完成的请求的状态。
 
 在将已完成的请求传递到反射器 ( # A0) 之前， [UMDF 驱动程序主机进程](umdf-driver-host-process.md) 将 HRESULT 代码转换为 NTSTATUS 代码。 反射器将 NTSTATUS 代码传递到操作系统。 在向调用应用程序显示结果之前，操作系统会将 NTSTATUS 代码转换为 Microsoft Win32 错误代码。
 
@@ -68,7 +67,7 @@ CMyQueue::OnWrite(
 
 如果为反射器启用了 [驱动程序验证程序](../devtest/driver-verifier.md) ，则它将标识无效的状态代码并导致系统错误检查。
 
-**注意**   适用于 Windows XP 的驱动程序验证程序不正确导致 Win32 错误代码的系统错误检查，其值超过小数点 1024 (1024L) 。 如果你的驱动程序在 Windows XP 上运行，请注意此问题（如果你为反射器启用了驱动程序验证程序）。
+**注意**   适用于 Windows XP 的驱动程序验证程序不正确导致 Win32 错误代码的系统错误检查，其值超过小数点 1024 (1024L) 。 如果你的驱动程序在 Windows XP 上运行，请注意此问题（如果你为反射器启用了驱动程序验证程序）。
 
  
 

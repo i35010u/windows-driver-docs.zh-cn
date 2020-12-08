@@ -1,17 +1,16 @@
 ---
 title: OID_WDI_TASK_DISCONNECT
 description: OID_WDI_TASK_DISCONNECT 用于终止与对等方的连接。
-ms.assetid: 03566fbd-5043-4166-bd33-0ed48f85f370
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 OID_WDI_TASK_DISCONNECT 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: d7a12839d5a16d6e5d8cfd0e3cf3a1348f51a117
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: e52b9f58699be505102f5193e968ddc783d7fa20
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89213205"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96829277"
 ---
 # <a name="oid_wdi_task_disconnect"></a>OID \_ WDI \_ TASK \_ 断开连接
 
@@ -24,7 +23,7 @@ OID \_ WDI \_ TASK \_ DISCONNECT 用于终止与对等方的连接。
 
  
 
-此命令用于从接入点或 Wi-fi Direct 中转断开连接，还用于断开端口的客户端的连接。 接收到断开连接后，端口必须与对等节点解除关联和 deauthenticate，并清除与该对等方关联的状态。 但是，它不能重置不特定于此对等方的任何连接参数。 只有在断开连接活动完成后，才能完成该任务。
+此命令用于断开与接入点或 Wi-Fi 直接连接的连接，还用于断开端口的客户端的连接。 接收到断开连接后，端口必须与对等节点解除关联和 deauthenticate，并清除与该对等方关联的状态。 但是，它不能重置不特定于此对等方的任何连接参数。 只有在断开连接活动完成后，才能完成该任务。
 
 ## <a name="task-parameters"></a>任务参数
 
@@ -61,7 +60,7 @@ OID \_ WDI \_ TASK \_ DISCONNECT 用于终止与对等方的连接。
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
-<td><p>Windows Server 2016</p></td>
+<td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
 <td><p>标头</p></td>

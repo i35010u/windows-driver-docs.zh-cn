@@ -1,16 +1,15 @@
 ---
 title: OID_GEN_PROMISCUOUS_MODE
 description: 作为查询，请使用 OID_GEN_PROMISCUOUS_MODE OID 来确定是否 (ifPromiscuousMode 从 RFC 2863) 混合了网络接口。
-ms.assetid: c3ba0908-724c-4149-a66f-5c3d41751165
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_GEN_PROMISCUOUS_MODE 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: b19805d30979f5657370c3df5e7c3e164d3b9d1a
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 1eb97f872140a05b656a2496261631a6f56bad30
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89213383"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96829437"
 ---
 # <a name="oid_gen_promiscuous_mode"></a>OID \_ 代 \_ 混合 \_ 模式
 
@@ -48,7 +47,7 @@ ms.locfileid: "89213383"
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [NDIS 网络接口 Oid](./ndis-network-interface-oids.md)

@@ -1,54 +1,53 @@
 ---
 title: 控制设备访问权限
 description: 控制设备访问权限
-ms.assetid: E4FF73B3-87D0-458E-A042-E5A8F3DB1677
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e6a8c24d0b41308fe5fec4f530ec04ac382ce89b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2bf9cc283191679089c1c20a77a43dbcd5994f04
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63337853"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96829073"
 ---
 # <a name="controlling-device-access"></a>控制设备访问权限
 
 
-UMDF 驱动程序主机进程在本地服务帐户的上下文中运行。 您的驱动程序可能需要访问其他设备或不允许组件通用化本地服务帐户的访问权限。
+UMDF 驱动程序主机进程在本地服务帐户的上下文中运行。 你的驱动程序可能需要访问不允许通用化访问本地服务帐户的其他设备或组件。
 
-操作系统从 Windows 8 中，包括标识 UMDF 驱动程序的安全标识符 (SID)。 通过在其设备的安全要求中包括此 SID，设备或组件可以允许访问 UMDF 驱动程序同时阻止与其他请求来自本地服务帐户的访问权限。
+从 Windows 8 开始，操作系统包含一个安全标识符 (SID) ，用于标识 UMDF 驱动程序。 通过在其设备安全要求中包含此 SID，设备或组件可以允许访问 UMDF 驱动程序，同时阻止来自本地服务帐户的其他请求的访问。
 
-UMDF 驱动程序的 SID 是 SDDL\_用户\_模式\_驱动程序和定义是 sddl.h 中。 此 SID 的完整表示形式是：
+UMDF 驱动程序的 SID 为 SDDL \_ 用户 \_ 模式 \_ 驱动程序，并且该定义位于 sddl. h 中。 此 SID 的完整表示形式为：
 
 ```cpp
 S-1-5-84-0-0-0-0-0
 ```
 
-此 SID 的缩写形式是 UD。 可在 Windows 8 中启动此缩写。
+此 SID 的缩写为 UD。 此缩写在 Windows 8 中开始可用。
 
-其 INF 文件中或在驱动程序中创建设备对象之前的驱动程序属于 UMDF 驱动程序可以指定 SID。
+UMDF 驱动程序的外部驱动程序可以在创建设备对象之前，在其 INF 文件或驱动程序中指定该 SID。
 
-## <a name="specifying-device-security-in-an-inf-file"></a>INF 文件中指定设备安全
+## <a name="specifying-device-security-in-an-inf-file"></a>在 INF 文件中指定设备安全性
 
 
-在 INF 文件中，您可以使用缩写的形式或完全指定的窗体的 SID。
+在 INF 文件中，可以使用缩写形式或完全指定的 SID 形式。
 
-缩写的形式是从 Windows 8 开始，提供：
+从 Windows 8 开始可以使用缩写形式：
 
 ```cpp
 HKR,,Security,,"D:P(A;;GA;;;BA)(A;;GA;;;SY)(A;;GA;;;UD)"   
 ```
 
-上的操作系统早于 Windows 8 中，您必须使用完全指定的窗体：
+在 Windows 8 之前的操作系统上，必须使用完全指定的格式：
 
 ```cpp
 HKR,,Security,,"D:P(A;;GA;;;BA)(A;;GA;;;SY)(A;;GA;;;S-1-5-84-0-0-0-0-0)"       
 ```
 
-## <a name="specifying-device-security-in-a-kmdf-driver"></a>KMDF 驱动程序中指定设备安全
+## <a name="specifying-device-security-in-a-kmdf-driver"></a>在 KMDF 驱动程序中指定设备安全性
 
 
-若要指定驱动程序中的安全要求，必须使用简写的形式，仅可在 Windows 8 中启动。 例如，KMDF 驱动程序可以通过访问其设备 UMDF 驱动程序使用以下方法：
+若要在驱动程序中指定安全要求，必须使用缩写形式，该格式仅在 Windows 8 中开始使用。 例如，KMDF 驱动程序可以通过使用以下内容，从 UMDF 驱动程序启用对其设备的访问：
 
 ```cpp
 RtlInitUnicodeString(&sddlString, L"D:P(A;;GA;;;BA)(A;;GA;;;SY)(A;;GA;;;UD)");

@@ -1,7 +1,6 @@
 ---
 title: 创建框架设备对象
 description: 创建框架设备对象
-ms.assetid: 25023c19-a153-4bd4-9fb6-3a1bf85860aa
 keywords:
 - PnP WDK KMDF，设备对象
 - 即插即用 WDK KMDF，设备对象
@@ -10,12 +9,12 @@ keywords:
 - framework 对象 WDK KMDF，设备对象
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3272f6e7d81c1881dded015e3ae7f5b271f71147
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 20347ad7946f53c3620b18fa81dd3a5d71dea55f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89184317"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96829065"
 ---
 # <a name="creating-a-framework-device-object"></a>创建框架设备对象
 

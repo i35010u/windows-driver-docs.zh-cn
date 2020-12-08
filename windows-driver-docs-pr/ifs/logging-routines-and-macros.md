@@ -1,7 +1,6 @@
 ---
 title: 日志记录例程和宏
 description: 日志记录例程和宏
-ms.assetid: 343605bc-7992-4e9c-a9af-f57bb958a38b
 keywords:
 - RDBSS WDK 文件系统，日志记录
 - 重定向驱动器缓冲子系统 WDK 文件系统，日志记录
@@ -9,12 +8,12 @@ keywords:
 - RDBSSLOG 宏
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 21026d5e215b0e16c343d0fa24fa0c243e247627
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 7c3fcf246a517f964224dc5fb7077434193d96da
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104788"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96828767"
 ---
 # <a name="logging-routines-and-macros"></a>日志记录例程和宏
 
@@ -36,7 +35,7 @@ RDBSS 提供了许多用于日志记录的例程。 这些日志记录功能始�
 <thead>
 <tr class="header">
 <th align="left">例程所返回的值</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>

@@ -1,9 +1,8 @@
 ---
-title: WIA\_IPS\_颜色\_删除
-description: WIA\_IPS\_颜色\_下拉属性用于配置筛选从硬件设备获取的图像数据的颜色。 WIA 微型驱动程序创建并维护此属性。
-ms.assetid: A0F14FDF-194D-4948-B9D8-F3E0C2E34618
+title: WIA \_ IP \_ 颜色 \_ 放置
+description: WIA \_ ip \_ 颜色 \_ DROP 属性用于配置从硬件设备获取的图像数据的颜色筛选。 WIA 微型驱动程序创建并维护此属性。
 keywords:
-- WIA_IPS_COLOR_DROP 成像设备
+- WIA_IPS_COLOR_DROP 图像设备
 topic_type:
 - apiref
 api_name:
@@ -14,30 +13,30 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4186e43792528d14a3629ae1c76cb5cfb1f09379
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d054366f58a08357d286c9754771d8702c8d2f1f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63370711"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96828685"
 ---
-# <a name="wiaipscolordrop"></a>WIA\_IPS\_颜色\_删除
+# <a name="wia_ips_color_drop"></a>WIA \_ IP \_ 颜色 \_ 放置
 
 
-**WIA\_IPS\_颜色\_删除**属性用于配置筛选从硬件设备获取的图像数据的颜色。 WIA 微型驱动程序创建并维护此属性。
+**WIA \_ ip \_ 颜色 \_ DROP** 属性用于配置从硬件设备获取的图像数据的颜色筛选。 WIA 微型驱动程序创建并维护此属性。
 
 
 
-属性类型：VT\_I4 
+属性类型： VT \_ I4 
 
-有效值：WIA\_PROP\_列表
+有效值： WIA 内容 \_ \_ 列表
 
 访问权限：读/写
 
 <a name="remarks"></a>备注
 -------
 
-下表描述了的有效值**WIA\_IPS\_颜色\_删除**属性。
+下表描述了 **WIA \_ ip \_ 颜色 \_ DROP** 属性的有效值。
 
 <table>
 <colgroup>
@@ -46,37 +45,37 @@ ms.locfileid: "63370711"
 </colgroup>
 <thead>
 <tr class="header">
-<th>ReplTest1</th>
+<th>值</th>
 <th>定义</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><p>WIA_COLOR_DROP_DISABLED</p></td>
-<td><p>颜色放置处于禁用状态。 如果支持该属性，这是所需的默认值。</p></td>
+<td><p>禁用颜色删除。 如果支持该属性，则这是所需的默认值。</p></td>
 </tr>
 <tr class="even">
 <td><p>WIA_COLOR_DROP_RED</p></td>
-<td><p>红色通道放入所描述的金额<a href="wia-ips-color-drop-red.md" data-raw-source="[&lt;strong&gt;WIA_IPS_COLOR_DROP_RED&lt;/strong&gt;](wia-ips-color-drop-red.md)"> <strong>WIA_IPS_COLOR_DROP_RED</strong></a>。</p></td>
+<td><p>红色通道按 <a href="wia-ips-color-drop-red.md" data-raw-source="[&lt;strong&gt;WIA_IPS_COLOR_DROP_RED&lt;/strong&gt;](wia-ips-color-drop-red.md)"><strong>WIA_IPS_COLOR_DROP_RED</strong></a>所述的数量被丢弃。</p></td>
 </tr>
 <tr class="odd">
 <td><p>WIA_COLOR_DROP_GREEN</p></td>
-<td><p>绿色通道放入所描述的金额<a href="wia-ips-color-drop-green.md" data-raw-source="[&lt;strong&gt;WIA_IPS_COLOR_DROP_GREEN&lt;/strong&gt;](wia-ips-color-drop-green.md)"> <strong>WIA_IPS_COLOR_DROP_GREEN</strong></a>。</p></td>
+<td><p>绿色频道会按 <a href="wia-ips-color-drop-green.md" data-raw-source="[&lt;strong&gt;WIA_IPS_COLOR_DROP_GREEN&lt;/strong&gt;](wia-ips-color-drop-green.md)"><strong>WIA_IPS_COLOR_DROP_GREEN</strong></a>所述的数量进行下降。</p></td>
 </tr>
 <tr class="even">
 <td><p>WIA_COLOR_DROP_BLUE</p></td>
-<td><p>蓝色通道放入所描述的金额<a href="wia-ips-color-drop-blue.md" data-raw-source="[&lt;strong&gt;WIA_IPS_COLOR_DROP_BLUE&lt;/strong&gt;](wia-ips-color-drop-blue.md)"> <strong>WIA_IPS_COLOR_DROP_BLUE</strong></a>。</p></td>
+<td><p>蓝色通道按 <a href="wia-ips-color-drop-blue.md" data-raw-source="[&lt;strong&gt;WIA_IPS_COLOR_DROP_BLUE&lt;/strong&gt;](wia-ips-color-drop-blue.md)"><strong>WIA_IPS_COLOR_DROP_BLUE</strong></a>所述的数量被丢弃。</p></td>
 </tr>
 <tr class="odd">
 <td><p>WIA_COLOR_DROP_RGB</p></td>
-<td><p>在指定的金额中将被删除的红色、 绿色和/或蓝色通道<a href="wia-ips-color-drop-red.md" data-raw-source="[&lt;strong&gt;WIA_IPS_COLOR_DROP_RED&lt;/strong&gt;](wia-ips-color-drop-red.md)"> <strong>WIA_IPS_COLOR_DROP_RED</strong></a>， <a href="wia-ips-color-drop-green.md" data-raw-source="[&lt;strong&gt;WIA_IPS_COLOR_DROP_GREEN&lt;/strong&gt;](wia-ips-color-drop-green.md)"> <strong>WIA_IPS_COLOR_DROP_GREEN</strong> </a>，并<a href="wia-ips-color-drop-blue.md" data-raw-source="[&lt;strong&gt;WIA_IPS_COLOR_DROP_BLUE&lt;/strong&gt;](wia-ips-color-drop-blue.md)"> <strong>WIA_IPS_COLOR_DROP_BLUE</strong></a>。</p></td>
+<td><p>红色、绿色和/或蓝色通道按照 <a href="wia-ips-color-drop-red.md" data-raw-source="[&lt;strong&gt;WIA_IPS_COLOR_DROP_RED&lt;/strong&gt;](wia-ips-color-drop-red.md)"><strong>WIA_IPS_COLOR_DROP_RED</strong></a>、 <a href="wia-ips-color-drop-green.md" data-raw-source="[&lt;strong&gt;WIA_IPS_COLOR_DROP_GREEN&lt;/strong&gt;](wia-ips-color-drop-green.md)"><strong>WIA_IPS_COLOR_DROP_GREEN</strong></a>和 <a href="wia-ips-color-drop-blue.md" data-raw-source="[&lt;strong&gt;WIA_IPS_COLOR_DROP_BLUE&lt;/strong&gt;](wia-ips-color-drop-blue.md)"><strong>WIA_IPS_COLOR_DROP_BLUE</strong></a>指定的数量删除。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-此属性仅适用于所有可编程图像数据源项，包括平板 (WIA\_类别\_平板) 和送纸器 (WIA\_类别\_送纸器) 和是可选的。 支持的属性，当 WIA\_颜色\_DROP\_禁用是所需的默认值。
+此属性对所有可编程的图像数据源项有效，包括平板 (WIA \_ 类别 \_ 平板) 和送纸器 (wia \_ 类别 \_ 进纸器) ，并且是可选的。 如果支持该属性，则 \_ 禁用 WIA 颜色 \_ 删除 \_ 是所需的默认值。
 
 <a name="requirements"></a>要求
 ------------
@@ -88,8 +87,8 @@ ms.locfileid: "63370711"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Wiadef.h （包括 Wiadef.h）</td>
+<td><p>标头</p></td>
+<td>Wiadef (包含 Wiadef) </td>
 </tr>
 </tbody>
 </table>

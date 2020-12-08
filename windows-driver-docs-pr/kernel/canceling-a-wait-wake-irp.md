@@ -1,7 +1,6 @@
 ---
 title: 取消等待/唤醒 IRP
 description: 取消等待/唤醒 IRP
-ms.assetid: 08e1d11a-91a3-496a-b3ad-f99456e4ce1d
 keywords:
 - 电源管理 WDK 内核，唤醒功能
 - 外部唤醒信号 WDK
@@ -14,12 +13,12 @@ keywords:
 - 取消例程，等待/唤醒 Irp
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8a941437538a4c94333056e4804048acc470c463
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 8d6e0eb498b68562cdfe26f41856c52d95ec91a1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89188631"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96828567"
 ---
 # <a name="canceling-a-waitwake-irp"></a>取消等待/唤醒 IRP
 
@@ -37,11 +36,11 @@ ms.locfileid: "89188631"
 
     例如，USB 集线器驱动程序可能会在设备启动时发送 **IRP \_ MN \_ 等待 \_ 唤醒** 请求，以防以后将其中一项输入设备置于睡眠状态。 当系统处于工作状态时，设备的唤醒信号会将设备恢复到工作状态 (但不会影响系统电源状态) 。 当系统准备关闭时，如果不应允许设备唤醒系统，则 USB 集线器驱动程序会取消此 IRP。
 
--   系统正在进入睡眠状态，设备无法唤醒该状态。 也就是说，其输入的状态小于其[**设备 \_ 功能**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_device_capabilities)结构中指定的[**SystemWake**](systemwake.md)值。
+-   系统正在进入睡眠状态，设备无法唤醒该状态。 也就是说，其输入的状态小于其 [**设备 \_ 功能**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_device_capabilities)结构中指定的 [**SystemWake**](systemwake.md)值。
 
--   设备进入电源状态，它无法响应唤醒信号。 也就是说，它所输入的状态小于其**设备 \_ 功能**结构中指定的[**DeviceWake**](devicewake.md)值。
+-   设备进入电源状态，它无法响应唤醒信号。 也就是说，它所输入的状态小于其 **设备 \_ 功能** 结构中指定的 [**DeviceWake**](devicewake.md)值。
 
-若要取消等待/唤醒 IRP，发送 IRP 的驱动程序将调用 [**IoCancelIrp**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocancelirp)，并将指针传递到以前在驱动程序调用 **PoRequestPowerIrp**时返回的 IRP。
+若要取消等待/唤醒 IRP，发送 IRP 的驱动程序将调用 [**IoCancelIrp**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocancelirp)，并将指针传递到以前在驱动程序调用 **PoRequestPowerIrp** 时返回的 IRP。
 
 驱动程序不得取消未发送的等待/唤醒 IRP。
 

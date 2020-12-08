@@ -1,30 +1,29 @@
 ---
 title: 确定网络适配器的 RSC 功能
 description: 接收段合并 (RSC) 功能的微型端口驱动程序通过它传递给 NdisMSetMiniportAttributes 的 NDIS_OFFLOAD 结构报告其 RSC 功能。
-ms.assetid: 043A09F9-7D5D-4401-9645-19FDBD614659
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b01d3bbf6f3b06c871475871f31d5793b220cdca
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 33dd81ce924b764402a9455a9670c303e2ab37f7
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89209787"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96830347"
 ---
 # <a name="determining-the-rsc-capabilities-of-a-network-adapter"></a>确定网络适配器的 RSC 功能
 
 
-接收段合并 (RSC) 功能的微型端口驱动程序通过它传递给[**NdisMSetMiniportAttributes**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsetminiportattributes)的[**NDIS \_ 卸载**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_offload)结构报告其 RSC 功能。
+接收段合并 (RSC) 功能的微型端口驱动程序通过它传递给 [**NdisMSetMiniportAttributes**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsetminiportattributes)的 [**NDIS \_ 卸载**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_offload)结构报告其 RSC 功能。
 
 ## <a name="reporting-rsc-capability"></a>报告 RSC 功能
 
 
 在 [**NDIS \_ 卸载**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_offload) 结构中，必须按如下所示设置 **标头** 成员：
 
--   **修订**成员必须设置为**NDIS \_ 卸载 \_ 修订版本 \_ 3**。
--   **Size**成员必须设置为**ndis \_ SIZEOF \_ ndis \_ 卸载 \_ 修订版 \_ 3**。
+-   **修订** 成员必须设置为 **NDIS \_ 卸载 \_ 修订版本 \_ 3**。
+-   **Size** 成员必须设置为 **ndis \_ SIZEOF \_ ndis \_ 卸载 \_ 修订版 \_ 3**。
 
-若要报告其对 RSC 的支持，小型端口驱动程序可以在[**ndis \_ TCP \_ 接收 \_ SEG \_ 合并 \_ 卸载**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_tcp_recv_seg_coalesce_offload)结构中设置以下成员，该结构存储在[**ndis \_ 卸载**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_offload)结构的**RSC**成员中：
+若要报告其对 RSC 的支持，小型端口驱动程序可以在 [**ndis \_ TCP \_ 接收 \_ SEG \_ 合并 \_ 卸载**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_tcp_recv_seg_coalesce_offload)结构中设置以下成员，该结构存储在 [**ndis \_ 卸载**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_offload)结构的 **RSC** 成员中：
 
 -   将 " **已启用** " 成员设置为 **TRUE** ，以指示支持适用于 RSC 的 ipv4。
 

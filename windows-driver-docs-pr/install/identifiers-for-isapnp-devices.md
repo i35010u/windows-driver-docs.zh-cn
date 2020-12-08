@@ -1,21 +1,20 @@
 ---
 title: ISAPNP 设备的标识符
 description: ISAPNP 设备的标识符
-ms.assetid: 67337bd6-3b5f-41a7-b50d-bf3587f243e8
 keywords:
-- 设备标识字符串 WDK、 ISAPNP 设备
-- ISAPNP 设备-设备标识字符串 WDK
+- 设备标识字符串 WDK，ISAPNP 设备
+- 标识字符串 WDK 设备，ISAPNP 设备
 - 标识符 WDK 设备，ISAPNP 设备
 - ISAPNP 设备标识符 WDK 设备安装
 - 硬件 Id WDK 设备安装
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 341d5ef9ae7a5337e0b241f8ede14847e3ec0174
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3f8f6d0d3108163036d89c8d905169978079efd1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63388759"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96829923"
 ---
 # <a name="identifiers-for-isapnp-devices"></a>ISAPNP 设备的标识符
 
@@ -23,27 +22,27 @@ ms.locfileid: "63388759"
 
 
 
-每个 ISAPNP 卡支持可读的资源数据结构，描述支持的资源和所请求的卡。 此结构支持多个函数 （或"逻辑设备"） 的概念适用于 ISA 卡片。 一组单独的"tags"或"描述符"与相关联的卡的每个函数。 使用此标记信息，ISAPNP 枚举器构造两个硬件标识符，格式为：
+每个 ISAPNP 卡都支持可读的资源数据结构，该结构描述了支持的资源和卡所请求的资源。 此结构支持 (或 "逻辑设备" ) ISA 卡的多个函数的概念。 一组单独的 "标记" 或 "描述符" 与卡片的每个函数相关联。 ISAPNP 枚举器使用此标记信息构造两个硬件标识符，格式为：
 
-ISAPNP\\m(3)d(4)
+ISAPNP \\ m (3) d (4) 
 
-\*m(3)n(4)
+\*m (3) n (4) 
 
-其中*m(3)d(4)* 两者共同构成设备--三个字母来标识特定的设备进行标识的制造商和 4 个十六进制数字的 EISA 样式标识符。
+其中， *m (3) d (4)* 一起构成设备的 EISA 样式的标识符，三个字母用于标识制造商，4个十六进制数字用于标识特定设备。
 
-以下两个硬件 Id 可能生成的多功能卡上的特定函数：
+以下硬件 Id 对可能由多功能卡上的特定功能生成：
 
-ISAPNP\\CSC6835_DEV0000
+ISAPNP \\ CSC6835_DEV0000
 
 \*CSC0000
 
-这两个硬件 Id 的第一个是设备 id。 如果该设备是多功能卡的一个函数，则设备 ID 采用如下格式：
+这两个硬件 Id 中的第一种是设备 ID。 如果相关设备是多功能卡的一个功能，则设备 ID 采用以下格式：
 
-ISAPNP\\m(3)d(4)_DEVn(4)
+ISAPNP \\ m (3) d (4) _DEVn (4) 
 
-其中*n(4)* 是十进制索引 （使用前导零） 的函数。
+其中， *n (4)* 是 (具有函数前导零) 的十进制索引。
 
-两个硬件标识符的第二个也是一个兼容的 id。 ISAPNP 枚举器将生成一个或多个兼容 Id 其中第一个始终是第二个硬件 id。 前三个字符， *m(3)*，后面"\*"在 ISAPNP 兼容 ID 都是经常"PNP。" 例如，串行端口的兼容 ID 可能是这样：
+这两个硬件标识符中的第二个也是兼容的 ID。 ISAPNP 枚举器生成一个或多个兼容 Id，其中第一个 Id 始终是第二个硬件 ID。 ISAPNP 兼容 ID 中为 "" 的前三个字符（ *m (3)*） \* 通常是 "PNP"。 例如，串行端口的兼容 ID 可能是：
 
 PNP0501
 

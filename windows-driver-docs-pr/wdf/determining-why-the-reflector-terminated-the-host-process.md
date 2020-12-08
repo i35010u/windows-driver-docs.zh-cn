@@ -1,19 +1,18 @@
 ---
 title: 确定反射器终止主机进程的原因
 description: '本主题介绍如何分析反射器为什么 ( # A0) 终止了驱动程序主机进程。'
-ms.assetid: c80b117b-597a-494a-bc28-5a918d2a9279
 keywords:
 - 调试方案 WDK UMDF，反射器终止宿主进程
 - UMDF WDK，调试方案，反射器终止宿主进程
 - UMDF WDK，反射器终止宿主进程
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 36a19405d2d7b7ec36c8a4805b84c0d0abbd7419
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 00b3dffddebd2bebb034cdb24707c056001bf92e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89189715"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96828953"
 ---
 # <a name="determining-why-the-reflector-terminated-the-host-process"></a>确定反射器终止主机进程的原因
 
@@ -54,13 +53,13 @@ reg add "HKLM\Software\Microsoft\windows NT\CurrentVersion\Wudf" /v LogEnable /t
 
 在其他情况下，可能需要附加到实时内核模式目标来确定反射器终止宿主进程的原因。 若要设置调试会话，请按照 [如何启用 UMDF 驱动程序调试](enabling-a-debugger.md#kd)中所述的步骤进行操作。
 
-建立连接后，请使用！ wdfkd 来检查 UMDF 驱动程序，使用[**！ wdfkd wdfumirps**](../debugger/-wdfkd-wdfumirps.md) umdf 调试程序 (扩展显示未完成的 irp，并使用) [**的 umdf 版本1。**](../debugger/-wudfext-umirps.md)
+建立连接后，请使用！ wdfkd 来检查 UMDF 驱动程序，使用 [**！ wdfkd wdfumirps**](../debugger/-wdfkd-wdfumirps.md) umdf 调试程序 (扩展显示未完成的 irp，并使用) [**的 umdf 版本1。**](../debugger/-wudfext-umirps.md)
 
 -   如果 PnP IRP 或 power IRP 处于挂起状态，请通过检查主机进程中的线程来确定驱动程序导致 IRP 挂起的原因。
 
     您可以使用 [**！进程**](../debugger/-process.md) 扩展来检查在宿主进程中运行的线程。 **0x1f** flags 值显示每个线程的堆栈跟踪。
 
-    **！进程** * &lt; 进程地址 &gt; * **0x1f**
+    **！进程** *&lt; 进程地址 &gt;* **0x1f**
 
 -   如果你的驱动程序未快速完成已取消的 IRP，请确定取消了哪个 IRP 以及它未完成的原因。
 -   如果清理或关闭 IRP 处于挂起状态，则确定 IRP 需要很长时间才能处理。

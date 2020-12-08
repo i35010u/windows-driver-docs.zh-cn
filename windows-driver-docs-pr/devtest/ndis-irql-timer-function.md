@@ -1,7 +1,6 @@
 ---
 title: 'Irql \_ 计时器 \_ 函数规则 (ndis) '
 description: Irql \_ timer \_ 函数规则指定必须在正确的 Irql 级别调用 NDIS 计时器服务函数。
-ms.assetid: 4c946f79-7661-4ff6-b2a3-1a5851c9e215
 ms.date: 05/21/2018
 keywords:
 - 'Irql_Timer_Function 规则 (ndis) '
@@ -12,12 +11,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: c43e4f28a0edffdb5f803dee62998b920e041571
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 4eb553b665aa31b5ceffc26bc52778548d651c84
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105466"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96830161"
 ---
 # <a name="irql_timer_function-rule-ndis"></a>Irql \_ 计时器 \_ 函数规则 (ndis) 
 

@@ -1,7 +1,6 @@
 ---
-title: BCDEdit/toolsdisplayorder
+title: BCDEdit /toolsdisplayorder
 description: BCDEdit/toolsdisplayorder 命令设置启动管理器在显示 "工具" 菜单时使用的显示顺序。
-ms.assetid: a849ce02-c392-4982-9b93-7a1d70a77b9d
 ms.date: 09/23/2020
 keywords:
 - BCDEdit/toolsdisplayorder 驱动程序开发工具
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: d6c7720306d32217cba3e4f41f5707bc5129ddb4
-ms.sourcegitcommit: f2fbb6e54e085e9329288cee49860fe380be9c4c
+ms.openlocfilehash: 90b0cb70eb1215c69e8ba47a90588cf43d1ca5e8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91778967"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96829703"
 ---
-<a name="bcdedit-toolsdisplayorder"></a>BCDEdit/toolsdisplayorder
+<a name="bcdedit-toolsdisplayorder"></a>BCDEdit /toolsdisplayorder
 ============
 
-**BCDEdit/toolsdisplayorder**命令设置启动管理器在显示 "工具" 菜单时使用的显示顺序。
+**BCDEdit/toolsdisplayorder** 命令设置启动管理器在显示 "工具" 菜单时使用的显示顺序。
 
 ```syntax
 bcdedit /toolsdisplayorder <id> [...] [ /addfirst | /addlast | /remove ]

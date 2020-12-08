@@ -1,15 +1,14 @@
 ---
 title: ProvisioningEngine
 description: ProvisioningEngine
-ms.assetid: b6b10145-d554-43be-8682-1355145b3241
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4657100c4c81d2b3d6c8225ab8cc40558c72fdb2
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: 137e41f50a550426a464e221bb830cc5e76220d3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89403226"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96828519"
 ---
 # <a name="provisioningengine"></a>ProvisioningEngine
 
@@ -44,7 +43,7 @@ ProvisioningEngine 元素指定受信任的证书。 这允许操作员使用由
 <thead>
 <tr class="header">
 <th>元素</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -68,7 +67,7 @@ ProvisioningEngine 元素指定受信任的证书。 这允许操作员使用由
 <thead>
 <tr class="header">
 <th>元素</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>

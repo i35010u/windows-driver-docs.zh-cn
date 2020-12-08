@@ -1,7 +1,6 @@
 ---
 title: 在总线驱动程序中创建设备对象
 description: 在总线驱动程序中创建设备对象
-ms.assetid: 36b4d24c-9f5e-4853-bf70-c94613e01f2b
 keywords:
 - PnP WDK KMDF，总线驱动程序
 - 即插即用 WDK KMDF、总线驱动程序
@@ -13,12 +12,12 @@ keywords:
 - 枚举 WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8d841ac0185df67fe05a1bae021424cee2f7ca7e
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 1dd38139723ed164a25181d10e4feff319df145a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89191749"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96829013"
 ---
 # <a name="creating-device-objects-in-a-bus-driver"></a>在总线驱动程序中创建设备对象
 
@@ -39,7 +38,7 @@ ms.locfileid: "89191749"
 
 -   注册特定于总线驱动程序的回调函数。
 
-    大多数总线驱动程序调用 [**WdfPdoInitSetEventCallbacks**](/windows-hardware/drivers/ddi/wdfpdo/nf-wdfpdo-wdfpdoinitseteventcallbacks)，因为它们必须指定设备需要的系统硬件资源。 有关指定硬件资源的详细信息，请参阅 [基于框架的驱动程序的硬件资源](hardware-resources-for-kmdf-drivers.md)。 如果设备和驱动程序支持弹出，则可以注册其他回调函数。
+    大多数总线驱动程序调用 [**WdfPdoInitSetEventCallbacks**](/windows-hardware/drivers/ddi/wdfpdo/nf-wdfpdo-wdfpdoinitseteventcallbacks)，因为它们必须指定设备需要的系统硬件资源。 有关指定硬件资源的详细信息，请参阅 [Framework-Based 驱动程序的硬件资源](hardware-resources-for-kmdf-drivers.md)。 如果设备和驱动程序支持弹出，则可以注册其他回调函数。
 
 -   报告 [设备标识字符串](../install/device-identification-strings.md)。
 

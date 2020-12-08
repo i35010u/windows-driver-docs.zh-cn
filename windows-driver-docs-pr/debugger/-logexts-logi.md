@@ -1,9 +1,8 @@
 ---
-title: logexts.logi
-description: Logexts.logi 扩展通过将记录器注入到目标应用程序初始化日志记录。
-ms.assetid: c02d2799-c83a-455d-90c0-401244062365
+title: logexts. logi
+description: Logexts logi 扩展通过将记录器注入到目标应用程序来初始化日志记录。
 keywords:
-- logexts.logi Windows 调试
+- logexts logi Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,29 +11,29 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 45875b0a663aeb83581401216469f04e57bdc800
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3bb9e3d90a276a6cc780509c449ad6561cc79db4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63336151"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96829781"
 ---
 # <a name="logextslogi"></a>!logexts.logi
 
 
-**！ Logexts.logi**扩展通过将记录器注入到目标应用程序初始化日志记录。
+**！ Logexts logi** 扩展通过将记录器注入目标应用程序来初始化日志记录。
 
 ```dbgcmd
     !logexts.logi [OutputDirectory] 
 ```
 
-## <a name="span-idddklogextslogidbgspanspan-idddklogextslogidbgspanparameters"></a><span id="ddk__logexts_logi_dbg"></span><span id="DDK__LOGEXTS_LOGI_DBG"></span>参数
+## <a name="span-idddk__logexts_logi_dbgspanspan-idddk__logexts_logi_dbgspanparameters"></a><span id="ddk__logexts_logi_dbg"></span><span id="DDK__LOGEXTS_LOGI_DBG"></span>参数
 
 
-<span id="_______OutputDirectory______"></span><span id="_______outputdirectory______"></span><span id="_______OUTPUTDIRECTORY______"></span> *OutputDirectory*   
-指定要用于输出的目录。 如果*OutputDirectory*指定，则它必须存在-调试器不会创建它。 如果指定了相对路径，则它将相对于从中启动调试器的目录。 如果*OutputDirectory*是省略，就会使用到桌面的路径。 调试器将创建的 LogExts 子目录*OutputDirectory*，并将所有记录器输出将都置于此子目录。
+<span id="_______OutputDirectory______"></span><span id="_______outputdirectory______"></span><span id="_______OUTPUTDIRECTORY______"></span>*OutputDirectory*   
+指定要用于输出的目录。 如果指定了 *OutputDirectory* ，则它必须存在--调试器将不会创建它。 如果指定了相对路径，则该路径将是相对于启动调试器的目录的相对路径。 如果省略 *OutputDirectory* ，则使用桌面路径。 调试器将创建 *OutputDirectory* 的 LogExts 子目录，并将所有记录器输出放置在此子目录中。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 <table>
 <colgroup>
@@ -55,14 +54,14 @@ ms.locfileid: "63336151"
 
  
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-有关详细信息，请参阅[记录器和日志查看器](logger-and-logviewer.md)。
+有关详细信息，请参阅 [记录器和 LogViewer](logger-and-logviewer.md)。
 
 <a name="remarks"></a>备注
 -------
 
-此命令初始化日志记录，但不会实际启用它。 可以使用启用日志记录[ **！ logexts.loge** ](-logexts-loge.md)命令。
+此命令初始化日志记录，但并不真正启用日志记录。 可以通过 [**！ logexts. loge**](-logexts-loge.md) 命令启用日志记录。
 
  
 

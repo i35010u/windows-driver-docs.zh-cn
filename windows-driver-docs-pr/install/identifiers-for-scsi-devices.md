@@ -1,7 +1,6 @@
 ---
 title: SCSI 设备的标识符
 description: SCSI 设备的标识符
-ms.assetid: 8bc68813-5096-40b2-bbd1-0aebb5a3326d
 keywords:
 - 设备标识字符串 WDK，SCSI 设备
 - 标识字符串 WDK 设备，SCSI 设备
@@ -12,12 +11,12 @@ keywords:
 - 兼容 Id WDK 设备安装
 ms.date: 09/01/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: b20aec34fbec45de21f09228d2b64e4f7817c8a8
-ms.sourcegitcommit: eefc6ae6d9621d0735b3c63e718ee5838d57a6bc
+ms.openlocfilehash: bbff2100312ee471bd57e404c698584781575413
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92886072"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96829915"
 ---
 # <a name="identifiers-for-scsi-devices"></a>SCSI 设备的标识符
 

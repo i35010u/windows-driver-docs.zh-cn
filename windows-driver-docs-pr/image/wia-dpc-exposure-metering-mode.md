@@ -1,9 +1,8 @@
 ---
-title: WIA\_DPC\_暴露\_计量\_模式
-description: WIA\_DPC\_暴露\_计量\_模式属性指定用于自动调整曝光度设置照相机的模式。
-ms.assetid: f1340ba2-984e-41a1-a6f2-56639f60d94a
+title: WIA \_ DPC \_ 公开 \_ 计数 \_ 模式
+description: WIA \_ DPC \_ 曝露 \_ 计数 \_ 模式属性指定相机用来自动调整曝光度设置的模式。
 keywords:
-- WIA_DPC_EXPOSURE_METERING_MODE 成像设备
+- WIA_DPC_EXPOSURE_METERING_MODE 图像设备
 topic_type:
 - apiref
 api_name:
@@ -14,31 +13,31 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 518ad08cb786126c1554001f8e877418932169dc
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8d6f4c20dfc3631fb9850291193df8eb0e28f4fb
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379604"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96830463"
 ---
-# <a name="wiadpcexposuremeteringmode"></a>WIA\_DPC\_暴露\_计量\_模式
+# <a name="wia_dpc_exposure_metering_mode"></a>WIA \_ DPC \_ 公开 \_ 计数 \_ 模式
 
 
-WIA\_DPC\_暴露\_计量\_模式属性指定用于自动调整曝光度设置照相机的模式。
+WIA \_ DPC \_ 曝露 \_ 计数 \_ 模式属性指定相机用来自动调整曝光度设置的模式。
 
 ## <span id="ddk_wia_dpc_exposure_metering_mode_si"></span><span id="DDK_WIA_DPC_EXPOSURE_METERING_MODE_SI"></span>
 
 
-属性类型：VT\_I4
+属性类型： VT \_ I4
 
-有效值：WIA\_PROP\_列表
+有效值： WIA 内容 \_ \_ 列表
 
-访问权限：读取/写入
+访问权限：读/写
 
 <a name="remarks"></a>备注
 -------
 
-下表描述了有效使用 WIA 的常量\_DPC\_暴露\_计量\_模式属性。
+下表介绍了在 WIA \_ DPC \_ 曝光度 \_ 计量 \_ 模式属性中有效的常量。
 
 <table>
 <colgroup>
@@ -54,19 +53,19 @@ WIA\_DPC\_暴露\_计量\_模式属性指定用于自动调整曝光度设置照
 <tbody>
 <tr class="odd">
 <td><p>EXPOSUREMETERING_AVERAGE</p></td>
-<td><p>设置基于整个场景的平均数的风险。</p></td>
+<td><p>基于整个场景的平均值设置曝光度。</p></td>
 </tr>
 <tr class="even">
 <td><p>EXPOSUREMETERING_CENTERSPOT</p></td>
-<td><p>设置基于中心点的风险。</p></td>
+<td><p>基于中心点设置曝光。</p></td>
 </tr>
 <tr class="odd">
 <td><p>EXPOSUREMETERING_CENTERWEIGHT</p></td>
-<td><p>设置基于中心加权平均数的风险。</p></td>
+<td><p>基于中心加权平均值设置曝光度。</p></td>
 </tr>
 <tr class="even">
 <td><p>EXPOSUREMETERING_MULTISPOT</p></td>
-<td><p>设置基于 multispot 模式的风险。</p></td>
+<td><p>基于 multispot 模式设置公开。</p></td>
 </tr>
 </tbody>
 </table>
@@ -83,12 +82,12 @@ WIA\_DPC\_暴露\_计量\_模式属性指定用于自动调整曝光度设置照
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Version</p></td>
-<td><p>在 Windows Vista 和更高版本操作系统中已过时，并应不再使用。 但是，此属性仍定义 Windows Vista 中与应用程序和用于 Windows Server 2003、 Windows XP 和早期版本的 Windows 设备的兼容性。</p></td>
+<td><p>版本</p></td>
+<td><p>在 Windows Vista 和更高版本的操作系统中已过时，不应再使用。 但是，在 Windows Vista 中仍定义此属性，以与为 Windows Server 2003、Windows XP 和 windows 的早期版本设计的应用程序和设备兼容。</p></td>
 </tr>
 <tr class="even">
-<td><p>Header</p></td>
-<td>Wiadef.h （包括 Wiadef.h）</td>
+<td><p>标头</p></td>
+<td>Wiadef (包含 Wiadef) </td>
 </tr>
 </tbody>
 </table>

@@ -1,22 +1,21 @@
 ---
 title: 事件信息
 description: 事件信息
-ms.assetid: e6621b5d-f1af-4021-8832-43f79835a6c1
 keywords:
 - 目标，事件
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b053de7fc305ace42e37e2b8de3aa35cbe35d0de
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: d12bfa913decfac9a3f2c006610823559395dd89
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89213027"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96829741"
 ---
 # <a name="event-information"></a>事件信息
 
 
-只要调试会话可访问，就会出现 *最后一个事件*。 这是导致会话变为可访问的事件。 *事件目标*是生成最后一个事件的目标。 当会话变为可访问时，当前目标设置为事件目标。 最后一个事件的详细信息由 [**GetLastEventInformation**](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugcontrol3-getlasteventinformation)返回。 事件发生时，最后一个事件的指令指针和指令指针处的内存由 [**请求**](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugadvanced3-request) 操作 [**调试 \_ 请求 \_ 获取 \_ 捕获的 \_ 事件 \_ 代码 \_ 偏移量**](./debug-request-get-captured-event-code-offset.md) 和 [**调试 \_ 请求 \_ 读取 \_ 捕获的 \_ 事件 \_ 代码 \_ 流**](./debug-request-read-captured-event-code-stream.md)返回。
+只要调试会话可访问，就会出现 *最后一个事件*。 这是导致会话变为可访问的事件。 *事件目标* 是生成最后一个事件的目标。 当会话变为可访问时，当前目标设置为事件目标。 最后一个事件的详细信息由 [**GetLastEventInformation**](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugcontrol3-getlasteventinformation)返回。 事件发生时，最后一个事件的指令指针和指令指针处的内存由 [**请求**](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugadvanced3-request) 操作 [**调试 \_ 请求 \_ 获取 \_ 捕获的 \_ 事件 \_ 代码 \_ 偏移量**](./debug-request-get-captured-event-code-offset.md) 和 [**调试 \_ 请求 \_ 读取 \_ 捕获的 \_ 事件 \_ 代码 \_ 流**](./debug-request-read-captured-event-code-stream.md)返回。
 
 如果目标是故障转储文件，则 *最后一个事件* 是在创建转储文件之前发生的最后一个事件。 此事件存储在转储文件中，当转储文件作为调试目标获取时，引擎将为事件回调生成该事件。
 

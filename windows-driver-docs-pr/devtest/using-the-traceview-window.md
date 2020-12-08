@@ -1,9 +1,8 @@
 ---
 title: 使用 TraceView 窗口
 description: 使用 TraceView 窗口
-ms.assetid: 398cdbb7-d540-4348-91b0-59af5f656b6f
 keywords:
-- TraceView WDK、 窗口
+- TraceView WDK，窗口
 - 跟踪会话 WDK，显示
 - 显示跟踪会话
 - 跟踪日志 WDK TraceView，显示
@@ -12,21 +11,21 @@ keywords:
 - 日志文件 WDK TraceView，显示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9593c5f7a8aac92ee9e8a13da69537fc4bf306b4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4a94e4b88d6398b85568250cf4f1c37eb2ee0824
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63326199"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96828803"
 ---
 # <a name="using-the-traceview-window"></a>使用 TraceView 窗口
 
 
 本部分介绍 TraceView 窗口，并说明如何使用它。
 
-TraceView 窗口可以包含一个**跟踪会话列表**和多个**跟踪消息列出了**。 列表会出现在独立的窗格，您可以移动和排列方式抓取上每个窗格的左边缘双竖线并将它移动到新位置。
+TraceView 窗口可以包含一个 **跟踪会话列表** 和多个 **跟踪消息列表**。 列表显示在独立的窗格中，你可以通过在每个窗格的左边缘抓取双竖线栏并将其拖动到新位置来移动和排列这些列表。
 
-本部分包括：
+本节包括：
 
 [初始视图](initial-view.md)
 

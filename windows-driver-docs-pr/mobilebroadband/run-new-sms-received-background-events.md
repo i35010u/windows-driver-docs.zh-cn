@@ -1,26 +1,25 @@
 ---
 title: 运行收到短信后的新后台事件
 description: 运行收到短信后的新后台事件
-ms.assetid: 57534569-3678-4e2c-b55a-7dc6f057fb7d
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e3196d69f70e3e044915a21d30c0bfa076e9e372
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 31fbe81bc040405090d44c0fe36df8a0ce950cf3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63345325"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96828501"
 ---
 # <a name="run-new-sms-received-background-events"></a>运行收到短信后的新后台事件
 
 
-移动宽带短信平台的新接收，具体取决于是否管理短信通知从移动网络运营商或常规短信的短信数据提供单独的系统事件。 新的管理短信通知从移动网络运营商收到的后台系统事件才可由移动宽带应用访问。
+移动宽带 SMS 平台为收到的新 SMS 数据提供单独的系统事件，具体取决于它是来自移动网络操作员的管理 SMS 通知还是常规 SMS 消息。 从移动网络操作员收到的新的管理短信通知的后台系统事件只能由移动宽带应用程序访问。
 
-应用必须已获得用户同意的情况下使用短信以进行读取后台任务中的新接收的 SMS 消息。 应用无法读取后台任务，如果他们正在首次访问 SMS，因为该应用无法触发系统 SMS 设备从新的接收 SMS 消息的内容通过后台任务的同意提示。
+应用必须已收到用户同意才能使用 SMS 在后台任务中读取新接收的 SMS 消息。 如果应用程序第一次访问 SMS，则不能从后台任务读取新收到的短信消息的内容，因为应用无法从后台任务触发系统 SMS 设备同意提示。
 
-下面的代码示例演示了专为运行接收新的 SMS 消息时的后台任务。
+下面的代码示例演示了一个设计为在收到新的短信时运行的后台任务。
 
-**C#后台任务代码**
+**C # 后台任务代码**
 
 ``` syntax
 namespace SmsBackgroundSample
@@ -70,7 +69,7 @@ namespace SmsBackgroundSample
 }
 ```
 
-**JavaScript 应用程序代码以注册后台任务**
+**用于注册后台任务的 JavaScript 应用代码**
 
 ``` syntax
 var triggerAway = new Windows.ApplicationModel.Background.SystemTrigger(Windows.ApplicationModel.Background.SystemTriggerType.smsReceived, false);
@@ -85,10 +84,10 @@ taskAway.addEventListener("progress", new ProgressHandler(taskAway).onProgress);
 taskAway.addEventListener("completed", new CompleteHandler(taskAway).onCompleted);
 ```
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
-[开发 SMS 应用程序](developing-sms-apps.md)
+[开发短信应用](developing-sms-apps.md)
 
  
 

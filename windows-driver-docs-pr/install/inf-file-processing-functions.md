@@ -1,7 +1,6 @@
 ---
 title: INF 文件处理函数
 description: INF 文件处理函数
-ms.assetid: df769d05-9843-44d2-971d-13f1a81755c2
 keywords:
 - Setupapi.log 函数 WDK，INF 文件
 - INF 文件 WDK Setupapi.log
@@ -10,12 +9,12 @@ keywords:
 - 处理函数 WDK INF 文件
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 07148ef7d58733c592d4c6fd06c1b9ad5e952d4e
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 5a11262b5509b73c466795a25ca76ba59b89b25e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90715548"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96829900"
 ---
 # <a name="inf-file-processing-functions"></a>INF 文件处理函数
 
@@ -43,7 +42,7 @@ INF 文件处理函数提供了如下所示的设置和安装功能：
 <thead>
 <tr class="header">
 <th align="left">函数</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>

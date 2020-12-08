@@ -1,19 +1,18 @@
 ---
 title: 注册上下文类型
 description: 注册上下文类型
-ms.assetid: ddf03426-5c49-4621-b81d-59d1cb002ae9
 keywords:
 - 上下文 WDK 文件系统微筛选器，注册类型
 - 注册上下文类型
 - FLT_CONTEXT_REGISTRATION
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8a2ebcdc23577edb5026aef43462f96138b67fd6
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 2dd083e591f447fd1cf7e94075f3244cba22142d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89066112"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96829661"
 ---
 # <a name="registering-context-types"></a>注册上下文类型
 
@@ -21,13 +20,13 @@ ms.locfileid: "89066112"
 ## <span id="ddk_registering_the_minifilter_if"></span><span id="DDK_REGISTERING_THE_MINIFILTER_IF"></span>
 
 
-当微筛选器驱动程序从其[**DriverEntry**](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_initialize)例程调用[**FltRegisterFilter**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltregisterfilter)时，它必须注册其使用的每种类型的上下文。
+当微筛选器驱动程序从其 [**DriverEntry**](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_initialize)例程调用 [**FltRegisterFilter**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltregisterfilter)时，它必须注册其使用的每种类型的上下文。
 
-若要注册上下文类型，微筛选器驱动程序将创建[**FLT \_ 上下文 \_ 注册**](/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_context_registration)结构的可变长度数组，并将指向该数组的指针存储在[**FLT \_ 注册**](/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_registration)结构的**ContextRegistration**成员中，微筛选器驱动程序在[**FltRegisterFilter**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltregisterfilter)的*注册*参数中传递。 此数组中的元素顺序并不重要。 但是，数组中的最后一个元素必须是 {FLT \_ CONTEXT \_ END}。
+若要注册上下文类型，微筛选器驱动程序将创建 [**FLT \_ 上下文 \_ 注册**](/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_context_registration)结构的可变长度数组，并将指向该数组的指针存储在 [**FLT \_ 注册**](/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_registration)结构的 **ContextRegistration** 成员中，微筛选器驱动程序在 [**FltRegisterFilter**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltregisterfilter)的 *注册* 参数中传递。 此数组中的元素顺序并不重要。 但是，数组中的最后一个元素必须是 {FLT \_ CONTEXT \_ END}。
 
 对于微筛选器驱动程序使用的每个上下文类型，必须至少提供一个 FLT \_ 上下文注册结构形式的上下文定义 \_ 。 每个 FLT \_ 上下文 \_ 注册结构都定义了上下文的类型、大小和其他信息。
 
-当微筛选器驱动程序通过调用[**FltAllocateContext**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltallocatecontext)创建新上下文时，筛选器管理器将使用**FltAllocateContext**例程的*size*参数，以及 FLT 上下文注册结构的**大小**和**标志**成员 \_ \_ ，以选择要使用的上下文定义。
+当微筛选器驱动程序通过调用 [**FltAllocateContext**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltallocatecontext)创建新上下文时，筛选器管理器将使用 **FltAllocateContext** 例程的 *size* 参数，以及 FLT 上下文注册结构的 **大小** 和 **标志** 成员 \_ \_ ，以选择要使用的上下文定义。
 
 对于固定大小的上下文，FLT **Size** \_ 上下文注册结构的 size 成员 \_ 指定由微筛选器驱动程序定义的上下文结构部分的大小（以字节为单位）。 上下文的最大大小为 MAXUSHORT (64 KB) 。 零是有效的大小值。 筛选器管理器使用后备链表列表实现固定大小的上下文。 筛选器管理器为每个大小值创建两个后备链表列表：一个分页和一个非分页。
 

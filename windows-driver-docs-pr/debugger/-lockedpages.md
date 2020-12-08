@@ -1,9 +1,8 @@
 ---
 title: lockedpages
-description: Lockedpages 扩展显示指定进程的驱动程序锁定页。
-ms.assetid: a3f70b5f-350c-482f-a172-3abb2b22f408
+description: Lockedpages 扩展显示指定进程的驱动程序锁定页面。
 keywords:
-- 驱动程序锁定页
+- 驱动程序-锁定页面
 - lockedpages Windows 调试
 ms.date: 05/23/2017
 topic_type:
@@ -13,17 +12,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 3716e6cfe9eae4d17759c226a1c5147cb2affb4d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 661ca7a9f99e03fc2cc898d99a04b69f0d3b6eb6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63336166"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96828941"
 ---
 # <a name="lockedpages"></a>!lockedpages
 
 
-**！ Lockedpages**扩展显示指定进程的驱动程序锁定页。
+**！ Lockedpages** extension 显示指定进程的驱动程序锁定页面。
 
 语法
 
@@ -31,20 +30,20 @@ ms.locfileid: "63336166"
 !lockedpages [Process]
 ```
 
-## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>参数
+## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>Parameters
 
 
-<span id="_______Process______"></span><span id="_______process______"></span><span id="_______PROCESS______"></span> *Process*   
-指定进程。 如果*进程*是省略，使用当前进程。
+<span id="_______Process______"></span><span id="_______process______"></span><span id="_______PROCESS______"></span>*处理*   
+指定进程。 如果省略 *进程* ，则使用当前进程。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 Kdexts.dll
 
 <a name="remarks"></a>备注
 -------
 
-可以通过按 CTRL + BREAK （在 WinDbg) 或 CTRL + C （中 KD) 来停止执行任何时候。
+您可以通过在 WinDbg) 中按 CTRL + BREAK (或在 KD) 中按 CTRL + C (，随时停止执行。
 
  
 

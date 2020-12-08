@@ -1,15 +1,14 @@
 ---
 title: IoSpy
 description: IoSpy 是一个筛选器驱动程序，用于记录有关 IOCTL 的数据以及对设备的内核模式驱动程序发出的 WMI 请求。
-ms.assetid: 5fe52fe6-97b4-477a-9450-727c5bf9bd72
 ms.date: 07/09/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: ec0134f8d1b51932a9899634a0410116eb68240a
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: ad9cd8dd810f8bc53ff26abc32a703f842702955
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104610"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96829689"
 ---
 # <a name="iospy"></a>IoSpy
 
@@ -33,9 +32,9 @@ ms.locfileid: "90104610"
 
 IoSpy 是一个筛选器驱动程序，用于记录有关 IOCTL 的数据以及对设备的内核模式驱动程序发出的 WMI 请求。
 
-你可以使用 [渗透测试 (设备基础) ](coverage-tests--device-fundamentals-.md) 测试、 **启用 I/o spy** 和 **禁用 i/o spy**，来安装和删除 IoSpy。 *DQ*参数控制安装 IoSpy 筛选器驱动程序的设备。 IoSpy 记录有关 [IoSpy 数据文件](#iospy-data-file)中的 IOCTL 和 WMI 请求的详细信息， [IoAttack](ioattack.md) 使用此文件执行模糊测试。
+你可以使用 [渗透测试 (设备基础)](coverage-tests--device-fundamentals-.md) 测试、 **启用 I/o spy** 和 **禁用 i/o spy**，来安装和删除 IoSpy。 *DQ* 参数控制安装 IoSpy 筛选器驱动程序的设备。 IoSpy 记录有关 [IoSpy 数据文件](#iospy-data-file)中的 IOCTL 和 WMI 请求的详细信息， [IoAttack](ioattack.md) 使用此文件执行模糊测试。
 
-**重要提示**   在运行 IoAttack 之前，必须先运行 IoSpy，然后将其从测试系统中删除。 有关详细信息，请参阅 [如何通过 IoSpy 和 IoAttack 执行模糊测试](how-to-perform-fuzz-tests-with-iospy-and-ioattack.md)。
+**重要提示**  在运行 IoAttack 之前，必须先运行 IoSpy，然后将其从测试系统中删除。 有关详细信息，请参阅 [如何通过 IoSpy 和 IoAttack 执行模糊测试](how-to-perform-fuzz-tests-with-iospy-and-ioattack.md)。
 
  
 
@@ -47,7 +46,7 @@ IoSpy 是一个筛选器驱动程序，用于记录有关 IOCTL 的数据以及�
 <thead>
 <tr class="header">
 <th align="left">术语</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -83,5 +82,5 @@ IoSpy 是一个筛选器驱动程序，用于记录有关 IOCTL 的数据以及�
 
 在测试系统中安装 IoSpy 后，它将通过 IOCTL 和 WMI 请求发送的数据记录到为模糊测试启用的设备驱动程序的驱动程序中。 尽管 IoSpy 不分析这些请求的负载，但它确实记录了请求的详细信息，例如负载缓冲区的长度。
 
-**启用 I/o 监视**测试的*DFD*参数指定 IoSpy 数据文件的路径。 默认位置为% SystemDrive% \\ DriverTest \\ IoSpy
+**启用 I/o 监视** 测试的 *DFD* 参数指定 IoSpy 数据文件的路径。 默认位置为% SystemDrive% \\ DriverTest \\ IoSpy
 

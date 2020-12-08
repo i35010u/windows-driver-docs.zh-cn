@@ -1,7 +1,6 @@
 ---
 title: '处理器断点 (ba 断点) '
 description: '处理器断点 (ba 断点) '
-ms.assetid: 2681cebd-dce2-48f1-8953-9af65d15f378
 keywords:
 - 断点，处理器断点
 - 断点，数据断点
@@ -14,19 +13,19 @@ keywords:
 - 处理器断点，概述
 ms.date: 05/13/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: b69a277ee9f335b48296eb8f5ea7bcf506fd6d26
-ms.sourcegitcommit: bb3b62a57ba3aea4a0adeefd2d81993367b7b334
+ms.openlocfilehash: edcfa2ac5fd3bd362d5d89bdabdbf25a6bbae289
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88148400"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96828847"
 ---
 # <a name="processor-breakpoints-ba-breakpoints"></a>处理器断点 (ba 断点) 
 
 
 由处理器在调试器请求控制的断点称为 *处理器断点* 或 *数据断点*。 由调试器直接控制的断点称为 " *软件断点*"。
 
-**注意**   尽管术语*数据断点*通常用作*处理器断点*的同义词，但这一术语可能会产生误导。 有两种基本类型的断点：处理器断点由处理器控制，软件断点由调试器控制。 处理器断点通常是在程序数据上设置的，这就是所谓的 "数据断点"，但也可以在可执行代码上设置。 软件断点通常设置为可执行代码，但也可以在程序数据上进行设置。 遗憾的是，调试文献通常会将处理器断点称为 "数据断点"，即使它们是在可执行代码上设置的也是如此。
+**注意**   尽管术语 *数据断点* 通常用作 *处理器断点* 的同义词，但这一术语可能会产生误导。 有两种基本类型的断点：处理器断点由处理器控制，软件断点由调试器控制。 处理器断点通常是在程序数据上设置的，这就是所谓的 "数据断点"，但也可以在可执行代码上设置。 软件断点通常设置为可执行代码，但也可以在程序数据上进行设置。 遗憾的是，调试文献通常会将处理器断点称为 "数据断点"，即使它们是在可执行代码上设置的也是如此。
 
  
 
@@ -75,9 +74,9 @@ ms.locfileid: "88148400"
 
 处理器区分用户模式调试器设置的断点和内核模式调试器设置的断点。 用户模式处理器断点不会影响任何内核模式进程。 内核模式处理器断点可能会也可能不会影响用户模式进程，具体取决于用户模式代码是否使用调试寄存器状态以及是否已附加用户模式调试器。
 
-若要将当前进程的现有数据断点应用于其他寄存器上下文，请使用 [**。应用 \_ .Dbp (将数据断点应用于上下文) **](-apply-dbp--apply-data-breakpoint-to-context-.md) 命令。
+若要将当前进程的现有数据断点应用于其他寄存器上下文，请使用 [**。应用 \_ .Dbp (将数据断点应用于上下文)**](-apply-dbp--apply-data-breakpoint-to-context-.md) 命令。
 
-在多处理器计算机上，每个处理器断点都适用于所有处理器。 例如，如果当前处理器为3，并且使用命令 `ba e1 MyAddress` 在 **MyAddress**中放置一个断点，则在该地址执行的任何处理器（不仅是处理器3）都将触发断点。 这也适用于软件断点。
+在多处理器计算机上，每个处理器断点都适用于所有处理器。 例如，如果当前处理器为3，并且使用命令 `ba e1 MyAddress` 在 **MyAddress** 中放置一个断点，则在该地址执行的任何处理器（不仅是处理器3）都将触发断点。 这也适用于软件断点。
 
 ### <a name="span-idsoftware_breakpointsspanspan-idsoftware_breakpointsspansoftware-breakpoints"></a><span id="software_breakpoints"></span><span id="SOFTWARE_BREAKPOINTS"></span>软件断点
 
@@ -87,15 +86,15 @@ ms.locfileid: "88148400"
 
 只有在内核模式调试期间，才能使用在基于 x86 的处理器上运行 Windows XP 或更高版本的 Windows 的目标计算机， **i** (i/o) 选项可用。
 
-并非所有数据大小都可用于所有处理器断点类型。 允许的大小取决于目标计算机的处理器。 有关详细信息，请参阅 [**ba (访问) 时中断 **](ba--break-on-access-.md)。
+并非所有数据大小都可用于所有处理器断点类型。 允许的大小取决于目标计算机的处理器。 有关详细信息，请参阅 [**ba (访问) 时中断**](ba--break-on-access-.md)。
 
 ### <a name="span-idlimitations_of_software_breakpoints_and_processor_breakpointsspanspan-idlimitations_of_software_breakpoints_and_processor_breakpointsspanlimitations-of-software-breakpoints-and-processor-breakpoints"></a><span id="limitations_of_software_breakpoints_and_processor_breakpoints"></span><span id="LIMITATIONS_OF_SOFTWARE_BREAKPOINTS_AND_PROCESSOR_BREAKPOINTS"></span>软件断点和处理器断点的限制
 
 使用 [**bp**](bp--bu--bm--set-breakpoint-.md) 或 bm.exe/a 命令时，可以指定数据地址而不是程序地址。 但是，即使指定了数据位置，这些命令也会创建软件断点，而不是处理器断点。 当调试器在某个位置放置软件断点时，它会使用中断指令暂时替换该内存位置的内容。 这不会损坏可执行的映像，因为调试器会记住此位置的原始内容，并且当目标进程尝试执行此代码时，调试器可以相应地做出响应。 但在数据位置设置软件断点时，生成的覆盖可能会导致数据损坏。 因此，仅当你确定仅将此位置用作可执行代码时，才可以安全地在数据位置设置软件断点。
 
-**Bp**、 **bu**和**bm.exe**命令通过用 break 指令替换处理器指令来设置软件断点。 因此，它们不能用于只读代码或无法覆盖的任何其他代码。 若要在此类代码中设置断点，必须使用 " [**ba (在 Access) 上中断 **](ba--break-on-access-.md) ，并使用 **e** (execute) 选项。
+**Bp**、 **bu** 和 **bm.exe** 命令通过用 break 指令替换处理器指令来设置软件断点。 因此，它们不能用于只读代码或无法覆盖的任何其他代码。 若要在此类代码中设置断点，必须使用 " [**ba (在 Access) 上中断**](ba--break-on-access-.md) ，并使用 **e** (execute) 选项。
 
-不能在同一地址上创建多个处理器断点，该地址仅在触发断点时自动执行的命令中有所不同。 但是，你可以在不同于其他限制的同一地址创建多个断点 (例如，你可以通过使用带有 **/p**、 **/t**、 **/c**和 **/c**) 选项的不同值的**ba**命令，在同一地址创建多个断点。
+不能在同一地址上创建多个处理器断点，该地址仅在触发断点时自动执行的命令中有所不同。 但是，你可以在不同于其他限制的同一地址创建多个断点 (例如，你可以通过使用带有 **/p**、 **/t**、 **/c** 和 **/c**) 选项的不同值的 **ba** 命令，在同一地址创建多个断点。
 
 用户模式进程中的初始断点 (通常在 **main** 函数或其等效) 上设置，而不能是处理器断点。
 
@@ -103,7 +102,7 @@ ms.locfileid: "88148400"
 
 ### <a name="span-idcontrolling_software_breakpoints_and_processor_breakpointsspanspan-idcontrolling_software_breakpoints_and_processor_breakpointsspancontrolling-software-breakpoints-and-processor-breakpoints"></a><span id="controlling_software_breakpoints_and_processor_breakpoints"></span><span id="CONTROLLING_SOFTWARE_BREAKPOINTS_AND_PROCESSOR_BREAKPOINTS"></span>控制软件断点和处理器断点
 
-可以通过 [**最佳实践 (设置断点 **](bp--bu--bm--set-breakpoint-.md)来创建软件断点) 、 **Bm.exe (设置符号断点) **和 **Bu () 命令设置未解析的断点 ** 。 可以使用 [**ba (Access) **](ba--break-on-access-.md) 命令创建处理器断点。 禁用、启用和修改断点的命令适用于所有类型的断点。 显示断点列表的命令包括所有断点，并指示每个断点的类型。 有关这些命令的列表，请参阅 [控制断点的方法](methods-of-controlling-breakpoints.md)。
+可以通过 [**最佳实践 (设置断点**](bp--bu--bm--set-breakpoint-.md)来创建软件断点) 、 **Bm.exe (设置符号断点)** 和 **Bu () 命令设置未解析的断点** 。 可以使用 [**ba (Access)**](ba--break-on-access-.md) 命令创建处理器断点。 禁用、启用和修改断点的命令适用于所有类型的断点。 显示断点列表的命令包括所有断点，并指示每个断点的类型。 有关这些命令的列表，请参阅 [控制断点的方法](methods-of-controlling-breakpoints.md)。
 
 "WinDbg **断点** " 对话框显示所有断点，指出带有 "e"、"r"、"w"、"w"、"i" 和块大小的处理器断点。 此对话框可用于修改任何断点。 此对话框上的 " **命令** " 文本框可用于创建任何类型的断点。如果需要处理器断点，则使用 "ba" 开始输入。 有关详细信息，请参阅 [编辑 |断点](edit---breakpoints.md)。 当你在 "WinDbg [反汇编" 窗口](disassembly-window.md) 或 " [源](source-window.md)" 窗口中使用鼠标设置断点时，调试器将创建一个未解析的软件断点。
 

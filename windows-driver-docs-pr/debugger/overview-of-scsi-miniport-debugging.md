@@ -1,17 +1,16 @@
 ---
 title: SCSI 微型端口调试概述
 description: SCSI 微型端口调试概述
-ms.assetid: 9d05d416-aae4-453a-bdb0-2ac9148ad81d
 keywords:
 - SCSI 微型端口调试，概述
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8395c720211b73cd3f7e1e733a9448d509ba6100
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 7e91ef437ed39611064916eb4e18fee460cf9ad8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89206807"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96828859"
 ---
 # <a name="overview-of-scsi-miniport-debugging"></a>SCSI 微型端口调试概述
 

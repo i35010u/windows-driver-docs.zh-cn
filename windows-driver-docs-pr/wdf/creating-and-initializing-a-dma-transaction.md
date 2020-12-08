@@ -1,7 +1,6 @@
 ---
 title: 创建并初始化 DMA 事务
 description: 创建并初始化 DMA 事务
-ms.assetid: 1982c3fa-9e4a-4b26-8902-321223d9159f
 keywords:
 - DMA 事务 WDK KMDF，初始化
 - DMA 操作 WDK KMDF，事务
@@ -10,12 +9,12 @@ keywords:
 - 初始化 DMA 事务 WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 034ea43bae1ea671486518355782cb4458315689
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: cd17976fa428194cb7932aa00d9912318377db9e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89193111"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96829031"
 ---
 # <a name="creating-and-initializing-a-dma-transaction"></a>创建并初始化 DMA 事务
 

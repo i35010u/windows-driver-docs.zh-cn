@@ -1,19 +1,18 @@
 ---
 title: 确定何时发送等待/唤醒 IRP
 description: 确定何时发送等待/唤醒 IRP
-ms.assetid: a56cfccc-b44b-4ec5-836b-3a9711ef5f1f
 keywords:
 - 计时等待/唤醒 Irp WDK 电源管理
 - 正在发送等待/唤醒 Irp
 - 等待/唤醒 Irp WDK 电源管理，发送
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 403de2462abfdba5281f022406c5e64e9e589b89
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 01f1b0e9a07342b8885c6ba8f8f17098dcab2dbf
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89189087"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96829551"
 ---
 # <a name="determining-when-to-send-a-waitwake-irp"></a>确定何时发送等待/唤醒 IRP
 

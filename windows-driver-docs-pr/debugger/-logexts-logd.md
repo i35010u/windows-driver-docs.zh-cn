@@ -1,9 +1,8 @@
 ---
 title: logexts.logd
-description: Logexts.logd 扩展禁用日志记录。
-ms.assetid: d3c3403d-f86b-4f2a-a261-c00eb0b2b756
+description: Logexts. logd extension 禁用日志记录。
 keywords:
-- logexts.logd Windows 调试
+- logexts logd Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 1ee01792b89f84b6e777337e842425fb32f01b69
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4b556390affe4e1ba3567ba12394f490adeba4ac
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63336134"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96829801"
 ---
 # <a name="logextslogd"></a>!logexts.logd
 
 
-**！ Logexts.logd**扩展禁用日志记录。
+**！ Logexts logd** 扩展禁用日志记录。
 
 ```dbgcmd
     !logexts.logd 
@@ -31,7 +30,7 @@ ms.locfileid: "63336134"
 ## <span id="ddk__logexts_logd_dbg"></span><span id="DDK__LOGEXTS_LOGD_DBG"></span>
 
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 <table>
 <colgroup>
@@ -52,14 +51,14 @@ ms.locfileid: "63336134"
 
  
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-有关详细信息，请参阅[记录器和日志查看器](logger-and-logviewer.md)。
+有关详细信息，请参阅 [记录器和 LogViewer](logger-and-logviewer.md)。
 
 <a name="remarks"></a>备注
 -------
 
-这将导致所有 API 挂钩，为了允许自由地运行应用程序中删除。 COM 挂钩不会删除，因为它们不能在重新启用。
+这将导致删除所有 API 挂钩，以使程序可以自由运行。 不会删除 COM 挂钩，因为它们不能在需要时重新启用。
 
  
 

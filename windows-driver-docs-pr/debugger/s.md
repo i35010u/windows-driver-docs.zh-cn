@@ -1,18 +1,17 @@
 ---
 title: 'S (Windows 调试器词汇表) '
 description: 词汇表页-S
-ms.assetid: 94cbf33b-e975-49eb-a266-774798955a48
 keywords:
 - 挂起的线程
 - 挂起的进程
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e1d384bf0990053202368ac1c7ebd70ca10e601e
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 40c0ebcac8694403da8dc37f3283c6cf4432db43
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89207985"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96830247"
 ---
 # <a name="s"></a>S
 

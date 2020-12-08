@@ -1,7 +1,6 @@
 ---
 title: IddCx 对象
 description: IddCx 使用可扩展的 UMDF 对象模型来表示图形对象。
-ms.assetid: B4D40C6B-DCEF-4661-9DF2-411326870014
 ms.date: 07/17/2020
 keywords:
 - 间接显示驱动程序对象
@@ -9,12 +8,12 @@ keywords:
 - 间接显示驱动程序，UMDF 对象
 - IDD 对象
 ms.localizationpriority: medium
-ms.openlocfilehash: cd8d6d5d1f13f5c994ed61f435bff94528b990e8
-ms.sourcegitcommit: 2aedb606f9f14e74687f0d3da60e14fc6ffffa7e
+ms.openlocfilehash: f9821ae165d3d8b64928896a7590b8c368582cd4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91544416"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96830069"
 ---
 # <a name="iddcx-objects"></a>IddCx 对象
 
@@ -56,13 +55,13 @@ IDD 模型没有显式销毁适配器回调。 成功完成适配器初始化序
 * 它首先调用 [**IddCxMonitorCreate**](/windows-hardware/drivers/ddi/iddcx/nf-iddcx-iddcxmonitorcreate) 回调来创建 **IDDCX_MONITOR** 对象。
 * 然后，它调用 [**IddCxMonitorArrival**](/windows-hardware/drivers/ddi/iddcx/nf-iddcx-iddcxmonitorarrival) 回调来完成监视器到达。
 
-当拔出监视器时，驱动程序将调用 [**IddCxMonitorDeparture**](/windows-hardware/drivers/ddi/iddcx/nf-iddcx-iddcxmonitordeparture) 回调来报告监视器已拔出，这会导致 **IDDCX_MONITOR** 的对象被销毁。 即使已重新连接同一监视器，也**IddCxMonitorDeparture** / 需再次调用 IddCxMonitorDeparture**IddCxMonitorArrival**序列。
+当拔出监视器时，驱动程序将调用 [**IddCxMonitorDeparture**](/windows-hardware/drivers/ddi/iddcx/nf-iddcx-iddcxmonitordeparture) 回调来报告监视器已拔出，这会导致 **IDDCX_MONITOR** 的对象被销毁。 即使已重新连接同一监视器，也 **IddCxMonitorDeparture** / 需再次调用 IddCxMonitorDeparture **IddCxMonitorArrival** 序列。
 
-**IDDCX_MONITOR**是**IDDCX_ADAPTER**对象的子对象。
+**IDDCX_MONITOR** 是 **IDDCX_ADAPTER** 对象的子对象。
 
 ## <a name="iddcx_swapchain"></a>IDDCX_SWAPCHAIN
 
-此对象表示一个 [存在](/windows/win32/direct3d12/swap-chains) ，该对象将提供要在连接的监视器上显示的桌面映像。 存在有多个缓冲区，可让 OS 在一个缓冲区中组合下一个桌面映像，同时 IDD 会访问另一个缓冲区。 **IDDCX_SWAPCHAIN**是**IDDCX_MONITOR**的子级，因此，在任何时候都只有一个分配给给定监视器的存在。
+此对象表示一个 [存在](/windows/win32/direct3d12/swap-chains) ，该对象将提供要在连接的监视器上显示的桌面映像。 存在有多个缓冲区，可让 OS 在一个缓冲区中组合下一个桌面映像，同时 IDD 会访问另一个缓冲区。 **IDDCX_SWAPCHAIN** 是 **IDDCX_MONITOR** 的子级，因此，在任何时候都只有一个分配给给定监视器的存在。
 
 OS 创建并销毁 **IDDCX_SWAPCHAIN** 对象，并使用 [**EvtIddCxMonitorAssignSwapChain**](/windows-hardware/drivers/ddi/iddcx/nc-iddcx-evt_idd_cx_monitor_assign_swapchain) 和 [**EvtIddCxMonitorUnassignSwapChain**](/windows-hardware/drivers/ddi/iddcx/nc-iddcx-evt_idd_cx_monitor_unassign_swapchain) Ddi 调用将它们分配/其分配到监视器。
 

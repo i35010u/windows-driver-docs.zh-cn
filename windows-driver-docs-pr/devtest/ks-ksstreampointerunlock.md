@@ -1,7 +1,6 @@
 ---
 title: 'KsStreamPointerUnlock 规则 ( # A1'
 description: KsStreamPointerUnlock 规则指定内核流式处理 (KS) 微型端口驱动程序在卸载驱动程序之前解锁所有流指针 (或) 设备停止。
-ms.assetid: 74742111-85C2-44D2-ACDB-BE1D2D468ED5
 ms.date: 05/21/2018
 keywords:
 - 'KsStreamPointerUnlock 规则 ( # A1'
@@ -12,12 +11,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 6f47f0dad765887e85895c22ebbef98afc231425
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: af3d82560d1be0ac25af4a153dda6109880b95a0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105618"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96830205"
 ---
 # <a name="ksstreampointerunlock-rule-"></a>KsStreamPointerUnlock 规则 ( # A1
 

@@ -1,7 +1,6 @@
 ---
 title: 在筛选器驱动程序中创建设备对象
 description: 在筛选器驱动程序中创建设备对象
-ms.assetid: f5a4851d-7caf-467d-9500-11f341fdf680
 keywords:
 - PnP WDK KMDF，筛选器驱动程序
 - 即插即用 WDK KMDF，筛选器驱动程序
@@ -10,12 +9,12 @@ keywords:
 - 筛选 DOs WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ba1b3c53a79ca4b5ae87086c8ff075950783ae46
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: aadf5df123ae1ce92b722fdfb285c70006043386
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89191593"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96829001"
 ---
 # <a name="creating-device-objects-in-a-filter-driver"></a>在筛选器驱动程序中创建设备对象
 

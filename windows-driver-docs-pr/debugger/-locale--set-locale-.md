@@ -1,9 +1,8 @@
 ---
 title: .locale（指定区域设置）
-description: .Locale 命令会将区域设置，或显示当前区域设置。
-ms.assetid: 66c2a522-886f-41ef-ab90-176a3e0b7d88
+description: Locale 命令设置区域设置或显示当前区域设置。
 keywords:
-- .locale （设置区域设置） Windows 调试
+- 。 (设置区域设置的区域设置) Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,27 +11,27 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 39cc03ebcdc74b86e7d471cccc62583a55d20186
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 806aa0855ae775652662b3e93ec1bb8755a2dc97
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63336210"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96829815"
 ---
 # <a name="locale-set-locale"></a>.locale（指定区域设置）
 
 
-**.Locale**命令会将区域设置或显示当前区域设置。
+**Locale** 命令设置区域设置或显示当前区域设置。
 
 ```dbgcmd
 .locale [Locale] 
 ```
 
-## <a name="span-idddkmetasetlocaledbgspanspan-idddkmetasetlocaledbgspanparameters"></a><span id="ddk_meta_set_locale_dbg"></span><span id="DDK_META_SET_LOCALE_DBG"></span>参数
+## <a name="span-idddk_meta_set_locale_dbgspanspan-idddk_meta_set_locale_dbgspanparameters"></a><span id="ddk_meta_set_locale_dbg"></span><span id="DDK_META_SET_LOCALE_DBG"></span>参数
 
 
-<span id="_______Locale______"></span><span id="_______locale______"></span><span id="_______LOCALE______"></span> *区域设置*   
-指定所需的区域设置。 如果省略此参数时，调试器将显示当前区域设置。
+<span id="_______Locale______"></span><span id="_______locale______"></span><span id="_______LOCALE______"></span>*区域设置*   
+指定所需的区域设置。 如果省略此参数，则调试器将显示当前区域设置。
 
 ### <a name="span-idenvironmentspanspan-idenvironmentspanspan-idenvironmentspanenvironment"></a><span id="Environment"></span><span id="environment"></span><span id="ENVIRONMENT"></span>环境
 
@@ -43,12 +42,12 @@ ms.locfileid: "63336210"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>模式</strong></p></td>
-<td align="left"><p>用户模式下，内核模式</p></td>
+<td align="left"><p><strong>交货</strong></p></td>
+<td align="left"><p>用户模式，内核模式</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>目标</strong></p></td>
-<td align="left"><p>实时、 崩溃转储</p></td>
+<td align="left"><p>实时，故障转储</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>平台</strong></p></td>
@@ -59,16 +58,16 @@ ms.locfileid: "63336210"
 
  
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-有关区域设置的详细信息，请参阅**setlocale**日常参考页。
+有关区域设置的详细信息，请参阅 **setlocale** 例程参考页。
 
 <a name="remarks"></a>备注
 -------
 
-区域设置控制如何显示 Unicode 字符串。
+区域设置控制 Unicode 字符串的显示方式。
 
-下面的示例演示 **.locale**命令。
+下面的示例演示了 **. locale** 命令。
 
 ```dbgcmd
 kd> .locale

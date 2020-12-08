@@ -1,7 +1,6 @@
 ---
 title: 'MiniportPause \_ 返回规则 (ndis) '
 description: MiniportPause \_ 返回规则指定，如果暂停操作完成，则 MiniportPause 回调函数应仅返回 ndis \_ 状态 \_ 成功; \_ \_ 如果微型端口驱动程序处于暂停状态，则为 ndis 状态。
-ms.assetid: f3751636-6ba2-4126-88e2-1f347bd7dd45
 ms.date: 05/21/2018
 keywords:
 - 'MiniportPause_Return 规则 (ndis) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 6494b3c64cc5ea84acdc74057f6181f67a922b0c
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 808c138107a4868bf9c3bfddbe9eca4cae1d2624
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105464"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96830151"
 ---
 # <a name="miniportpause_return-rule-ndis"></a>MiniportPause \_ 返回规则 (ndis) 
 
 
-**MiniportPause \_ 返回**规则指定，如果暂停操作完成，则[*MiniportPause*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_pause)回调函数应仅返回 ndis \_ 状态 \_ 成功; \_ \_ 如果微型端口驱动程序处于暂停状态，则为 ndis 状态。 任何其他返回的状态均无效。
+**MiniportPause \_ 返回** 规则指定，如果暂停操作完成，则 [*MiniportPause*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_pause)回调函数应仅返回 ndis \_ 状态 \_ 成功; \_ \_ 如果微型端口驱动程序处于暂停状态，则为 ndis 状态。 任何其他返回的状态均无效。
 
 **驱动程序模型： NDIS**
 

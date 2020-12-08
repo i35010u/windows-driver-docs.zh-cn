@@ -1,7 +1,6 @@
 ---
 title: usbkd.usbhubinfo
 description: Usbkd. hubinfo.h 命令显示有关 USB 集线器的信息。
-ms.assetid: 01FF5822-0FCF-420F-AFF7-C91448DCBB98
 keywords:
 - usbkd usbhubinfo Windows 调试
 ms.date: 05/23/2017
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: e186efd7e75fb02e4f05d4859ba02cfb7b41b238
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: f50cff3a178f003992724b848f24520a7cf26097
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89210875"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96829767"
 ---
 # <a name="usbkdusbhubinfo"></a>!usbkd.usbhubinfo
 
 
-**！ Usbkd. hubinfo.h**命令显示有关 USB 集线器的信息。
+**！ Usbkd. hubinfo.h** 命令显示有关 USB 集线器的信息。
 
 ```dbgcmd
 !usbkd.hubinfo FDO
@@ -51,7 +50,7 @@ Usbkd.dll
     RootHub !hub2_info ffffe000023201a0 !devstack ffffe00002320050
 ```
 
-在上面的输出中，中心的 FDO 地址显示为建议的命令 **！ devstack ffffe00002320050**的参数。
+在上面的输出中，中心的 FDO 地址显示为建议的命令 **！ devstack ffffe00002320050** 的参数。
 
 现在，将 FDO 的地址传递给 **！ usbhubinfo** 命令。
 

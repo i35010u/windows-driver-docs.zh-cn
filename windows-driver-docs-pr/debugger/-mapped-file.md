@@ -1,7 +1,6 @@
 ---
 title: mapped_file
 description: Mapped_file 扩展显示文件映射的文件名称，该文件映射包含指定的地址。
-ms.assetid: 1d6d4d14-01ca-47ce-a044-778c9a56e9a5
 keywords:
 - mapped_file Windows 调试
 ms.date: 05/23/2017
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 577d87c98432bcbfb2b1a712b2a5f108876ad489
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 63724d22d019baa0d7006c15cc81ea8b70086da7
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89212623"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96830333"
 ---
 # <a name="mapped_file"></a>！映射 \_ 文件
 
 
-**！映射的 \_ 文件**扩展名显示文件映射的文件的名称，该文件映射包含指定的地址。
+**！映射的 \_ 文件** 扩展名显示文件映射的文件的名称，该文件映射包含指定的地址。
 
 ```dbgcmd
 !mapped_file Address
@@ -47,7 +46,7 @@ ms.locfileid: "89212623"
 <td align="left"><p>Uext.dll</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>Windows XP 及更高版本</strong></p></td>
+<td align="left"><p><strong>Windows XP 及更高版本</strong></p></td>
 <td align="left"><p>Uext.dll</p></td>
 </tr>
 </tbody>
@@ -55,7 +54,7 @@ ms.locfileid: "89212623"
 
  
 
-**！映射的 \_ 文件**扩展名只能在实时 nonremote 调试过程中使用。
+**！映射的 \_ 文件** 扩展名只能在实时 nonremote 调试过程中使用。
 
 ### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 

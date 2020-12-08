@@ -1,16 +1,15 @@
 ---
 title: 接收端缩放版本 2 (RSSv2)
 description: '本主题描述接收方缩放版本 2 (RSSv2) '
-ms.assetid: 192CAA41-0D17-4C06-8F13-68EA7C26D023
 keywords: 接收方缩放版本2，RSSv2，接收方缩放版本 2 WDK，RSSv2 网络驱动程序
 ms.date: 10/12/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1436546ec67eb04cb392f4cdb2ccdf19919f0b68
-ms.sourcegitcommit: 3464f10ffa0727e38fbe225cfab52bb8c2bb1747
+ms.openlocfilehash: 6e51f462c961eacf03adeaba731e419917f9a282
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93352992"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96829179"
 ---
 # <a name="receive-side-scaling-version-2-rssv2"></a>接收端缩放版本 2 (RSSv2)
 
@@ -67,9 +66,9 @@ RSSv2 中引入了两个 Oid （ [OID_GEN_RECEIVE_SCALE_PARAMETERS_V2](oid-gen-r
 
 | NDIS 驱动程序类型 | 同步 OID 处理程序 (s)  | 用于发起同步 Oid 的函数 |
 | --- | --- | --- |
-| 小型 | [*MiniportSynchronousOidRequest*](/windows-hardware/drivers/ddi/ndis/nf-ndis-miniport_synchronous_oid_request) | 不适用 |
+| 小型 | [*MiniportSynchronousOidRequest*](/windows-hardware/drivers/ddi/ndis/nf-ndis-miniport_synchronous_oid_request) | 空值 |
 | 筛选器 | <ul><li>[*FilterSynchronousOidRequest*](/windows-hardware/drivers/ddi/ndis/nf-ndis-filter_synchronous_oid_request)</li><li>[*FilterSynchronousOidRequestComplete*](/windows-hardware/drivers/ddi/ndis/nf-ndis-filter_synchronous_oid_request_complete)</li></ul> | [**NdisFSynchronousOidRequest**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfsynchronousoidrequest) |
-| 协议 | 不适用 | [**NdisSynchronousOidRequest**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndissynchronousoidrequest) |
+| 协议 | 空值 | [**NdisSynchronousOidRequest**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndissynchronousoidrequest) |
 
 ## <a name="rss-state-transitions-ite-updates-and-primarydefault-processors"></a>RSS 状态转换、I) 更新和主/默认处理器
 
@@ -97,7 +96,7 @@ RSSv2 中引入了两个 Oid （ [OID_GEN_RECEIVE_SCALE_PARAMETERS_V2](oid-gen-r
 | --- | --- |
 | 主处理器 | <ul><li>用 VPort 创建期间指定的 **关联** 处理器进行了初始化。</li><li>可以使用 [OID_GEN_RSS_SET_INDIRECTION_TABLE_ENTRIES](oid-gen-rss-set-indirection-table-entries.md) OID，并设置 **NDIS_RSS_SET_INDIRECTION_ENTRY_FLAG_PRIMARY_PROCESSOR** 标志。</li><li>可以使用 [OID_NIC_SWITCH_VPORT_PARAMETERS](oid-nic-switch-vport-parameters.md) OID 进行更新，并设置 **NDIS_NIC_SWITCH_VPORT_PARAMS_PROCESSOR_AFFINITY_CHANGED** 标志， (这是现有 cmdlet 的) 的兼容路径。</li><li>可使用带有 **NDIS_NIC_SWITCH_VPORT_PARAMS_PROCESSOR_AFFINITY_CHANGED** 标志的 [OID_NIC_SWITCH_VPORT_PARAMETERS](oid-nic-switch-vport-parameters.md) OID 读取， (这是现有 cmdlet 的) 的兼容路径。</li><li>主处理器的初始化后移动不会影响默认处理器或间接表的内容。</li></ul> |
 | 默认处理器 | <ul><li>用 VPort 创建期间指定的 **关联** 处理器进行了初始化。</li><li>可以使用 [OID_GEN_RSS_SET_INDIRECTION_TABLE_ENTRIES](oid-gen-rss-set-indirection-table-entries.md) OID，并设置 **NDIS_RSS_SET_INDIRECTION_ENTRY_FLAG_DEFAULT_PROCESSOR** 标志。</li></ul> |
-| 间接寻址表 | <ul><li>**NumberOfIndirectionTableEntries** 设置为 **1** 。</li><li>只有在创建 VPort 的过程中指定的 **关联** 处理器才会初始化该条目。</li><li>可以使用 [OID_GEN_RSS_SET_INDIRECTION_TABLE_ENTRIES](oid-gen-rss-set-indirection-table-entries.md) OID 进行更新。</li></ul> |
+| 间接寻址表 | <ul><li>**NumberOfIndirectionTableEntries** 设置为 **1**。</li><li>只有在创建 VPort 的过程中指定的 **关联** 处理器才会初始化该条目。</li><li>可以使用 [OID_GEN_RSS_SET_INDIRECTION_TABLE_ENTRIES](oid-gen-rss-set-indirection-table-entries.md) OID 进行更新。</li></ul> |
 
 使用 OID_GEN_RSS_SET_INDIRECTION_TABLE_ENTRIES) 进行的 ITEs 更新和主/默认处理器 (从相应条目当前指向的处理器调用。 对于给定的 VPort，上层确保在这些情况下不会发出用于移动 ITEs 或设置主/默认处理器的 OID_GEN_RSS_SET_INDIRECTION_TABLE_ENTRIES Oid：
 

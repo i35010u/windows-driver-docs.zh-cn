@@ -1,7 +1,6 @@
 ---
 title: 注册和打开地址系列
 description: 注册和打开地址系列
-ms.assetid: 2249adf9-2876-4442-be94-1a966d3f1c88
 keywords:
 - 地址系列 WDK 网络
 - AFs WDK 网络
@@ -9,12 +8,12 @@ keywords:
 - 打开地址系列
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ca8ee35060d940744c2814854ca495dc1325a1b3
-ms.sourcegitcommit: 366a15d68eb58d01a8ca6de7b982f62ac8b7deaf
+ms.openlocfilehash: c861ffe77a9914e3b76de79c8cbdf4f2d71c2268
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/19/2020
-ms.locfileid: "90812000"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96829185"
 ---
 # <a name="registering-and-opening-an-address-family"></a>注册和打开地址系列
 
@@ -30,7 +29,7 @@ ms.locfileid: "90812000"
 
 ### <a name="registering-an-address-family-from-a-call-manager"></a>从调用管理器注册地址族
 
-[*ProtocolBindAdapterEx*](/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_bind_adapter_ex)函数将绑定到带有[**NdisOpenAdapterEx**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisopenadapterex)的基础微型端口驱动程序后，调用管理器会调用[**NdisCmRegisterAddressFamilyEx**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscmregisteraddressfamilyex)来注册绑定的地址族 (参阅下图) 。
+[*ProtocolBindAdapterEx*](/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_bind_adapter_ex)函数将绑定到带有 [**NdisOpenAdapterEx**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisopenadapterex)的基础微型端口驱动程序后，调用管理器会调用 [**NdisCmRegisterAddressFamilyEx**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscmregisteraddressfamilyex)来注册绑定的地址族 (参阅下图) 。
 
 ![说明如何使用呼叫管理器注册和打开地址族的示意图](images/cm-01.png)
 
@@ -40,7 +39,7 @@ ms.locfileid: "90812000"
 
 ### <a name="registering-an-address-family-from-an-mcm-driver"></a>从 MCM 驱动程序注册地址族
 
-MCM 驱动程序在向[**NdisMRegisterMiniportDriver**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismregisterminiportdriver)注册其微型端口驱动程序入口点后从其[*MiniportInitializeEx*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_initialize)函数调用**NdisMCmRegisterAddressFamilyEx** 。 有关 regsitering 入口点的详细信息，请参阅 [CoNDIS Registration](condis-miniport-driver-registration.md)。 MCM 驱动程序调用 [**NdisMCmRegisterAddressFamilyEx**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismcmregisteraddressfamilyex) 一次，将其服务播发到面向连接的客户端 (参阅下图) 。
+MCM 驱动程序在向 [**NdisMRegisterMiniportDriver**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismregisterminiportdriver)注册其微型端口驱动程序入口点后从其 [*MiniportInitializeEx*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_initialize)函数调用 **NdisMCmRegisterAddressFamilyEx** 。 有关 regsitering 入口点的详细信息，请参阅 [CoNDIS Registration](condis-miniport-driver-registration.md)。 MCM 驱动程序调用 [**NdisMCmRegisterAddressFamilyEx**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismcmregisteraddressfamilyex) 一次，将其服务播发到面向连接的客户端 (参阅下图) 。
 
 ![演示如何使用 mcm 驱动程序注册和打开地址族的示意图](images/fig1-01.png)
 
@@ -56,13 +55,13 @@ MCM 驱动程序在向[**NdisMRegisterMiniportDriver**](/windows-hardware/driver
 
 对 **NdisClOpenAddressFamilyEx** 的调用会使 NDIS 调用调用管理器或 MCM 驱动程序的 [**ProtocolCmOpenAf**](/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_cm_open_af) 函数 (如之前) 的两个图形中所示。 *ProtocolCmOpenAf* 确保客户端传递到有效的地址族，并分配和初始化代表打开此地址族实例的客户端所需的资源。 *ProtocolCmOpenAf* 还存储 NDIS 提供的 *NdisAfHandle* ，表示呼叫管理器与打开地址系列的客户端之间的关联。
 
-*ProtocolCmOpenAf* 可以同步或异步完成。 若要异步完成，调用管理器的 *ProtocolCmOpenAf* 函数将调用 [**NdisCmOpenAddressFamilyComplete**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscmopenaddressfamilycomplete);MCM 驱动程序的 *ProtocolCmOpenAf* 函数将调用 [**NdisMCmOpenAddressFamilyComplete**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismcmopenaddressfamilycomplete)。 调用**ndis (M) CmOpenAddressFamilyComplete**导致 ndis 调用最初称为**NdisClOpenAddressFamilyEx**的客户端的*ProtocolOpenAfComplete*函数。
+*ProtocolCmOpenAf* 可以同步或异步完成。 若要异步完成，调用管理器的 *ProtocolCmOpenAf* 函数将调用 [**NdisCmOpenAddressFamilyComplete**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscmopenaddressfamilycomplete);MCM 驱动程序的 *ProtocolCmOpenAf* 函数将调用 [**NdisMCmOpenAddressFamilyComplete**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismcmopenaddressfamilycomplete)。 调用 **ndis (M) CmOpenAddressFamilyComplete** 导致 ndis 调用最初称为 **NdisClOpenAddressFamilyEx** 的客户端的 *ProtocolOpenAfComplete* 函数。
 
 如果客户端对 **NdisClOpenAddressFamilyEx** 的调用成功，NDIS 会将 *NdisAfHandle* 返回给客户端，表示呼叫管理器和客户端之间的关联。
 
-如果客户端接受传入调用，则它通常会在其*ProtocolClOpenAfCompleteEx*函数中[注册一个或多个 sap](registering-a-sap.md) ，方法是在成功调用[**NdisClOpenAddressFamilyEx**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisclopenaddressfamilyex)后调用[**NdisClRegisterSap**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisclregistersap) 。
+如果客户端接受传入调用，则它通常会在其 *ProtocolClOpenAfCompleteEx* 函数中 [注册一个或多个 sap](registering-a-sap.md) ，方法是在成功调用 [**NdisClOpenAddressFamilyEx**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisclopenaddressfamilyex)后调用 [**NdisClRegisterSap**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisclregistersap) 。
 
-如果客户端发出传出呼叫，则它可以在其*ProtocolClOpenAfCompleteEx*函数中[创建一个或多个 VCs](creating-a-vc.md) ，以便通过一个或多个客户端发出传出呼叫的请求。
+如果客户端发出传出呼叫，则它可以在其 *ProtocolClOpenAfCompleteEx* 函数中 [创建一个或多个 VCs](creating-a-vc.md) ，以便通过一个或多个客户端发出传出呼叫的请求。
 
  
 

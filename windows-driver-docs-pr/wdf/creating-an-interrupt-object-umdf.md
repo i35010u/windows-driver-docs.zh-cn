@@ -1,15 +1,14 @@
 ---
 title: " (UMDF 1) 创建中断对象"
 description: 创建中断对象
-ms.assetid: D281F2E8-3ADA-4F4E-B345-CE72FA3C69EC
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: aaeed554b71828852ec81ca3009677f842e04185
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: ba18098fe4ee7607cf4879010af788653b5bc4d0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89185540"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96829045"
 ---
 # <a name="creating-an-interrupt-object-umdf-1"></a> (UMDF 1) 创建中断对象
 
@@ -38,7 +37,7 @@ ms.locfileid: "89185540"
 
 在即插即用 (PnP) manager 将系统资源（如中断向量）分配给设备之前，框架将调用驱动程序的 [**IDriverEntry：： OnDeviceAdd**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-idriverentry-ondeviceadd) 回调函数。 PnP 管理器分配资源后，框架会在设备的中断对象中存储中断资源。  (不支持即插即用的驱动程序无法使用中断对象。 ) 
 
-在 Windows Vista 和更高版本的操作系统中， (Msi) 支持消息信号中断。 若要使操作系统支持设备的 Msi，驱动程序的 INF 文件必须在注册表中设置一些值。 有关如何设置这些值的信息，请参阅 [启用注册表中的消息终止中断](../kernel/enabling-message-signaled-interrupts-in-the-registry.md)。
+在 Windows Vista 和更高版本的操作系统中， (Msi) 支持消息信号中断。 若要使操作系统支持设备的 Msi，驱动程序的 INF 文件必须在注册表中设置一些值。 有关如何设置这些值的信息，请参阅 [启用注册表中的 Message-Signaled 中断](../kernel/enabling-message-signaled-interrupts-in-the-registry.md)。
 
 如果设备可以支持特定数量的 MSI 消息，则 PnP 管理器会尝试将该数量的消息分配到设备。 如果 PnP 管理器无法分配设备可以支持的所有消息，它将仅向设备分配一条消息。
 

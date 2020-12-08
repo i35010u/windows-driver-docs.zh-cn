@@ -1,7 +1,6 @@
 ---
 title: DEVPKEY_Device_ProblemCode
 description: DEVPKEY_Device_ProblemCode
-ms.assetid: 545fb6f7-660e-4df8-80cd-48b36910a518
 keywords:
 - DEVPKEY_Device_ProblemCode 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 02/28/2020
-ms.openlocfilehash: 49999f4e602ce3a8efe693627b152fedff45417e
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 0056e88ded56693538fc7785614fd563ee7145eb
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90716764"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96828681"
 ---
 # <a name="devpkey_device_problemcode"></a>DEVPKEY_Device_ProblemCode
 
@@ -62,7 +61,7 @@ DEVPKEY_Device_ProblemCode 设备属性表示设备实例的问题代码。
 <a name="remarks"></a>备注
 -------
 
-DEVPKEY_Device_ProblemCode 的值是在 Cfg 中定义的 CM_PROB_*Xxx* 的问题代码之一。
+DEVPKEY_Device_ProblemCode 的值是在 Cfg 中定义的 CM_PROB_ *Xxx* 的问题代码之一。
 
 可以调用 [**SetupDiGetDeviceProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdigetdevicepropertyw) 来检索 DEVPKEY_Device_ProblemCode 的值。
 

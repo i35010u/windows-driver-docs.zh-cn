@@ -1,15 +1,14 @@
 ---
 title: KSPROPSETID \_ BdaTopology
 description: KSPROPSETID \_ BdaTopology
-ms.assetid: 26d67e68-56a9-4d36-9e33-6fb4486d7cd9
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9b99851bce9bea25fb3b66de1c26fe15e2003c15
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 276c0df5b8136ab6182e998fc58b7dd43a5f1532
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89192512"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96829137"
 ---
 # <a name="kspropsetid_bdatopology"></a>KSPROPSETID \_ BdaTopology
 
@@ -45,7 +44,7 @@ KSPROPSETID \_ BdaTopology 为 BDA 拓扑属性集。 它用于查询有关其�
 <span id="KSPROPERTY_BDA_NODE_DESCRIPTORS"></span><span id="ksproperty_bda_node_descriptors"></span>[**KSPROPERTY \_ BDA \_ 节点 \_ 描述符**](ksproperty-bda-node-descriptors.md)  
 返回节点的列表。
 
-### <a name="comments"></a>说明
+### <a name="comments"></a>注释
 
 BDA 支持库提供了处理此属性集的默认方法。 网络提供程序筛选器使用此属性集来确定筛选器的模板拓扑，以及每个节点和 pin 支持的方法、属性和事件。 网络提供程序筛选器使用此节点和固定信息来确定筛选器可以对信号执行的操作类型，以及是否向图形添加筛选器。 筛选器的实际拓扑是指由网络提供程序实际在筛选器上进行的固定和节点连接。
 

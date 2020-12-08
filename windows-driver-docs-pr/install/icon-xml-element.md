@@ -1,7 +1,6 @@
 ---
 title: icon XML 元素
 description: icon XML 元素
-ms.assetid: 1d5acaf7-ef90-40f7-a2f9-f1002207f3fb
 keywords:
 - 图标 XML 元素设备和驱动程序安装
 topic_type:
@@ -12,12 +11,12 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: a53fb5e15c9b0e43282f28a65b00560f6fb60329
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: b8262c847ed74f1446b91fa359ca4fe19f953c18
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89095243"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96828625"
 ---
 # <a name="icon-xml-element"></a>icon XML 元素
 
@@ -26,7 +25,7 @@ ms.locfileid: "89095243"
 
 **Icon** XML 元素指定 DPInst 在 DPInst EULA 页上显示的自定义图标的源文件。 DPInst 使用此图标在 Microsoft Windows 任务栏和桌面上表示 DPInst。 DPInst 还为代表 [驱动程序包](./driver-packages.md)的条目使用此图标，DPInst 将其添加到控制面板中的 " **程序和功能** "
 
-**注意**   在 Windows Vista 之前，DPInst 将驱动程序包条目添加到控制面板中的 "**添加或删除程序**"。
+**注意**  在 Windows Vista 之前，DPInst 将驱动程序包条目添加到控制面板中的 " **添加或删除程序** "。
 
  
 
@@ -85,7 +84,7 @@ ms.locfileid: "89095243"
 
 如果未指定 **icon** 元素，DPInst 将显示默认图标。 不能更改此图标的位置。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**dpinst**](dpinst-xml-element.md)

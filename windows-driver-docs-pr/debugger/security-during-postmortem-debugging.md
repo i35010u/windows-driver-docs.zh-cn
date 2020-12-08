@@ -1,18 +1,17 @@
 ---
 title: 事后调试期间的安全性
 description: 事后调试期间的安全性
-ms.assetid: 59c411c4-d829-4d1c-9820-e58188f0656c
 keywords:
 - 安全注意事项，事后调试
-- 事后调试、 安全注意事项
+- 事后调试，安全注意事项
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7ea002c275df1969aa466579345bb3c543ca95b4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fd93d8ee97c1b47d3768c9e94e05a857c787d6c9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63381993"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96829725"
 ---
 # <a name="security-during-postmortem-debugging"></a>事后调试期间的安全性
 
@@ -20,13 +19,13 @@ ms.locfileid: "63381993"
 ## <span id="ddk_security_during_postmortem_debugging_dbg"></span><span id="DDK_SECURITY_DURING_POSTMORTEM_DEBUGGING_DBG"></span>
 
 
-只有管理员可以启用[事后调试](enabling-postmortem-debugging.md)。
+只有管理员才能启用 [事后调试](enabling-postmortem-debugging.md)。
 
-但是，事后调试可用于整个系统，而不仅仅是为一个用户。 因此，已启用后，任何应用程序故障，都将激活的调试程序已被选-即使当前用户不具有管理权限。
+但是，会对整个系统启用事后调试，而不只是为一个用户启用。 因此，在启用后，任何应用程序崩溃都将激活已选择的调试器（即使当前用户没有管理权限）。
 
-此外，事后调试器继承相同的权限的应用程序的崩溃。 因此，如果发生故障，如 CSRSS 和 LSASS 的 Windows 服务，调试器将具有极高级别权限。
+此外，事后调试器继承与崩溃的应用程序相同的特权。 因此，如果 Windows 服务（如 CSRSS 和 LSASS）崩溃，则调试器将具有非常高的权限。
 
-选择要启用事后调试时，应考虑到帐户这种情况。
+选择启用事后调试时，应考虑到这一点。
 
  
 

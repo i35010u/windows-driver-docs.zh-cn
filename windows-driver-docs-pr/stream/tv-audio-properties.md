@@ -1,19 +1,18 @@
 ---
 title: 电视音频属性
 description: 电视音频属性
-ms.assetid: 0eed4007-9fd9-4927-8ac7-2e23fd082dec
 keywords:
 - TV 音频属性 WDK 视频捕获
 - 音频属性 WDK 视频捕获
 - PROPSETID_VIDCAP_TVAUDIO
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 88b2cea738c45906d5660d3bb5c3211cd922e530
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 483d5ea5f55bb4e2c5b446ed82d692d0e9ae9fa6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105700"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96829117"
 ---
 # <a name="tv-audio-properties"></a>电视音频属性
 

@@ -1,18 +1,17 @@
 ---
 title: OID_WDI_TASK_SEND_REQUEST_ACTION_FRAME
 description: OID_WDI_TASK_SEND_REQUEST_ACTION_FRAME 请求设备将操作帧请求发送到另一台设备。
-ms.assetid: CAC86B50-BE85-4650-B6D3-738B4E960587
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 OID_WDI_TASK_SEND_REQUEST_ACTION_FRAME 网络驱动程序
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: ccdf9aa027ecbd16a7981d6d3b719ef5cdca9470
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 9698c95e4942e39e607568a55e3b96d8e6da2805
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89217247"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96829229"
 ---
 # <a name="oid_wdi_task_send_request_action_frame"></a>OID \_ WDI \_ TASK \_ 发送 \_ 请求 \_ 操作 \_ 框架
 
@@ -21,7 +20,7 @@ OID \_ WDI \_ TASK \_ 发送 \_ 请求 \_ 操作 \_ 帧请求设备向另一台�
 
 | 对象 | 支持中止                                           | 主机驱动程序策略 (默认优先级)  | 正常执行时间 (秒)  |
 |--------|---------------------------------------------------------|---------------------------------------|---------------------------------|
-| 端口   | 是。 中止后，端口必须处于干净状态。 | 3                                     | 5                               |
+| 端口   | 是的。 中止后，端口必须处于干净状态。 | 3                                     | 5                               |
 
  
 
@@ -65,7 +64,7 @@ OID \_ WDI \_ TASK \_ 发送 \_ 请求 \_ 操作 \_ 帧请求设备向另一台�
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
-<td><p>Windows Server 2016</p></td>
+<td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
 <td><p>标头</p></td>

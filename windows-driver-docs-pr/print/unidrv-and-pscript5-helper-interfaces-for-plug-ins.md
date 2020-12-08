@@ -1,7 +1,6 @@
 ---
 title: 插件的 Unidrv 和 Pscript5 帮助程序接口
 description: 插件的 Unidrv 和 Pscript5 帮助程序接口
-ms.assetid: 043a38f7-200c-4f1d-b937-4ddd6e2045dd
 keywords:
 - IPrintCoreHelperPS
 - IPrintCoreHelperUni
@@ -9,12 +8,12 @@ keywords:
 - helper 接口 WDK 打印机接口 DLL
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b97a74a881c70048f70c9258da209475e61d2a7c
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: c2dcb7507a0f15635590b130bef39d67b3949d4c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89213085"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96829147"
 ---
 # <a name="unidrv-and-pscript5-helper-interfaces-for-plug-ins"></a>插件的 Unidrv 和 Pscript5 帮助程序接口
 

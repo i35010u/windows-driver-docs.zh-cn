@@ -1,27 +1,26 @@
 ---
 title: OID_WDI_TASK_CONNECT
-description: OID_WDI_TASK_CONNECT IHV 组件连接到访问点或 Wi-fi Direct 中转的请求。
-ms.assetid: 63ba3979-6b30-49bf-91a9-fa01f0ef4922
+description: OID_WDI_TASK_CONNECT 请求 IHV 组件连接到访问点或 Wi-Fi 直接执行。
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 OID_WDI_TASK_CONNECT 网络驱动程序
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: fc8a2b2ed275e552b57748efea4dae5a8bea3db8
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 71b7fa22e2472f727388764e00d4ef0a2ad17230
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89213219"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96829287"
 ---
 # <a name="oid_wdi_task_connect"></a>OID \_ WDI \_ 任务 \_ 连接
 
 
-OID \_ WDI \_ 任务 \_ CONNECT： IHV 组件连接到访问点或 wi-fi Direct 中转的请求。
+OID \_ WDI \_ TASK \_ CONNECT 请求： IHV 组件连接到访问点或 Wi-Fi 的直接访问。
 
 | 对象 | 支持中止                                     | 主机驱动程序策略 (默认优先级)  | 正常执行时间 (秒)  |
 |--------|---------------------------------------------------|---------------------------------------|---------------------------------|
-| 端口   | 是。 中止必须后接 dot11 重置。 | 4                                     | 10                              |
+| 端口   | 是的。 中止必须后接 dot11 重置。 | 4                                     | 10                              |
 
  
 
@@ -33,9 +32,9 @@ IHV 组件不需要执行扫描即可查找候选 BSS 条目。 它可以使用�
 
 如果连接失败或被中止，则端口不应重置任何可能已在 connect 命令之外配置的设置。 它必须支持对同一端口发出第二次连接调用的主机。
 
-在关联尝试结束时，必须由端口报告每个 BSS 条目的连接尝试的状态。 这包括成功的尝试以及任何失败的尝试。 无论何时，该端口都必须与不多个访问点或 Wi-fi Direct 中转关联。
+在关联尝试结束时，必须由端口报告每个 BSS 条目的连接尝试的状态。 这包括成功的尝试以及任何失败的尝试。 无论何时，该端口都必须与不多个访问点或 Wi-Fi 直接连接关联。
 
-当连接正在进行时，端口必须维护在其他端口上建立的任何连接 (例如，基础结构或 Wi-fi Direct) 。 但是，端口可能会减少向其他端口提供的中值访问以完成连接。 在连接期间，主机可以在其他端口上提交数据包发送请求。
+当连接正在进行时，该端口必须保持在其他端口上建立的任何连接 (例如，基础结构或 Wi-Fi 直接) 。 但是，端口可能会减少向其他端口提供的中值访问以完成连接。 在连接期间，主机可以在其他端口上提交数据包发送请求。
 
 如果用于连接的身份验证算法需要 802.1 x 端口授权才能进行网络访问，则主机会在关联操作成功完成后授权端口。
 
@@ -88,7 +87,7 @@ IHV 组件不需要执行扫描即可查找候选 BSS 条目。 它可以使用�
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
-<td><p>Windows Server 2016</p></td>
+<td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
 <td><p>标头</p></td>

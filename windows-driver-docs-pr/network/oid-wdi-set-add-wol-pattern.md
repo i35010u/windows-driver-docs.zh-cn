@@ -1,25 +1,24 @@
 ---
 title: OID_WDI_SET_ADD_WOL_PATTERN
 description: OID_WDI_SET_ADD_WOL_PATTERN 将 LAN 唤醒 (WOL) 模式添加到固件。
-ms.assetid: 96fb71fd-412b-4013-b3bc-c31a43516f55
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 OID_WDI_SET_ADD_WOL_PATTERN 网络驱动程序
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 0c7f35e6fe6eae02a539810ae7f1e0d7918d044a
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: ba2ec62bdd0636ac1f283c5e2fe9c66c3f0dfc94
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89215841"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96829419"
 ---
 # <a name="oid_wdi_set_add_wol_pattern"></a>OID \_ WDI \_ 设置 \_ 添加 \_ WOL \_ 模式
 
 
 OID \_ WDI \_ SET \_ 添加 \_ WOL \_ 模式向固件添加 LAN 唤醒 (WOL) 模式。
 
-| 作用域 | 设置序列化任务 | 正常执行时间 (秒)  |
+| 范围 | 设置序列化任务 | 正常执行时间 (秒)  |
 |-------|--------------------------|---------------------------------|
 | 端口  | 是                      | 1                               |
 
@@ -60,7 +59,7 @@ OID \_ WDI \_ SET \_ 添加 \_ WOL \_ 模式向固件添加 LAN 唤醒 (WOL) 模
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
-<td><p>Windows Server 2016</p></td>
+<td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
 <td><p>标头</p></td>
@@ -69,7 +68,7 @@ OID \_ WDI \_ SET \_ 添加 \_ WOL \_ 模式向固件添加 LAN 唤醒 (WOL) 模
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [OID \_ WDI \_ SET \_ 删除 \_ WOL \_ 模式](oid-wdi-set-remove-wol-pattern.md)

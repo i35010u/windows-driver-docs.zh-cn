@@ -1,15 +1,14 @@
 ---
 title: 步骤2选择设备的驱动程序
 description: 步骤2选择设备的驱动程序
-ms.assetid: 2134cab6-58ea-4258-9a45-09bf54156e0a
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ebc4b780fd310cd0cfe5cc24df6511b9462c5412
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 25de1f66ec92ada6c7c3541064cff97b9d7452f8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107496"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96829849"
 ---
 # <a name="step-2-a-driver-for-the-device-is-selected"></a>步骤 2：选择设备的驱动程序
 
@@ -21,7 +20,7 @@ ms.locfileid: "90107496"
 
 ### <a name="searching-for-the-driver-package"></a><a href="" id="searching-for-the-driver"></a>搜索驱动程序包
 
-使用由总线或集线器驱动程序报告的 [硬件标识符 (ID) ](hardware-ids.md) ，Windows 会搜索与设备匹配的 [驱动程序包](driver-packages.md) 。 如果硬件 ID 与驱动程序包的[inf 文件](overview-of-inf-files.md)的 " [**INF*模型*" 部分**](inf-models-section.md)条目中的硬件 id 或[兼容 ID](compatible-ids.md)相匹配，则驱动程序包与设备匹配。
+使用由总线或集线器驱动程序报告的 [硬件标识符 (ID) ](hardware-ids.md) ，Windows 会搜索与设备匹配的 [驱动程序包](driver-packages.md) 。 如果硬件 ID 与驱动程序包的 [inf 文件](overview-of-inf-files.md)的 " [**INF *模型*" 部分**](inf-models-section.md)条目中的硬件 id 或 [兼容 ID](compatible-ids.md)相匹配，则驱动程序包与设备匹配。
 
 根据操作系统版本，Windows 会在不同位置中搜索匹配的驱动程序包，如下表所述。
 
@@ -63,7 +62,7 @@ ms.locfileid: "90107496"
 
 -   设备安装过程从下列位置之一搜索匹配的驱动程序包：
 
-    -   通用命名约定 (*UNC*) 路径，由**HKEY_LOCAL_MACHINE \\ Software \\ Microsoft \\ Windows \\ CurrentVersion**的**DevicePath**注册表值标识。
+    -   通用命名约定 (*UNC*) 路径，由 **HKEY_LOCAL_MACHINE \\ Software \\ Microsoft \\ Windows \\ CurrentVersion** 的 **DevicePath** 注册表值标识。
 
     -   Windows 更新
 
@@ -71,7 +70,7 @@ ms.locfileid: "90107496"
 
     如果找到了驱动程序包，Windows 会将包暂存到驱动程序存储区中，将在该驱动程序存储区中安装设备驱动程序。
 
-**注意**   从 Windows Vista 开始，操作系统始终从[驱动程序存储区](driver-store.md)安装[驱动程序包](driver-packages.md)。 如果在其他位置找到了匹配的驱动程序包，则 Windows 首先会将包安装到驱动程序存储区，然后再安装设备驱动程序。
+**注意** 从 Windows Vista 开始，操作系统始终从 [驱动程序存储区](driver-store.md)安装 [驱动程序包](driver-packages.md)。 如果在其他位置找到了匹配的驱动程序包，则 Windows 首先会将包安装到驱动程序存储区，然后再安装设备驱动程序。
 
  
 
@@ -97,7 +96,7 @@ ms.locfileid: "90107496"
 
     -   驱动程序是否已进行数字签名。 从 Windows Vista 开始，无论其他选择条件如何，Windows 始终会选择签名的驱动程序而不是未签名的驱动程序。 有关驱动程序的数字签名的详细信息，请参阅 [驱动程序签名](driver-signing.md)。
 
-    -   驱动程序日期和版本，其中的日期和版本由驱动程序包的[inf 文件](overview-of-inf-files.md)中包含的[**INF DriverVer 指令**](inf-driverver-directive.md)指定。
+    -   驱动程序日期和版本，其中的日期和版本由驱动程序包的 [inf 文件](overview-of-inf-files.md)中包含的 [**INF DriverVer 指令**](inf-driverver-directive.md)指定。
 
 Windows 选择设备驱动程序后，Windows [会按照步骤3：安装设备驱动程序](step-3--the-driver-for-the-device-is-installed.md)中所述安装驱动程序。
 

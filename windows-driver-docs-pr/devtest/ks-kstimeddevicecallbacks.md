@@ -1,7 +1,6 @@
 ---
 title: 'KsTimedDeviceCallbacks 规则 ( # A1'
 description: KsTimedDeviceCallbacks 规则指定内核流式处理 (KS) 微型端口驱动程序在 500 ms 内从设备回调函数返回。
-ms.assetid: 05393761-9018-4DAA-B8B5-EFEBBCDAB955
 ms.date: 05/21/2018
 keywords:
 - 'KsTimedDeviceCallbacks 规则 ( # A1'
@@ -12,12 +11,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: ff54046601e8bf5fc92a19fedcf5b683cefd3041
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: f95e2a5aa6da59df47c346cb250c2ef7072c0fcd
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104128"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96830203"
 ---
 # <a name="kstimeddevicecallbacks-rule-"></a>KsTimedDeviceCallbacks 规则 ( # A1
 
@@ -53,7 +52,7 @@ KsTimedDeviceCallbacks 规则指定内核流式处理 (KS) 微型端口驱动程
 
  
 
-<a name="see-also"></a>另请参阅
+<a name="see-also"></a>请参阅
 --------
 
 [锁定和解锁流指针](../stream/locking-and-unlocking-stream-pointers.md)

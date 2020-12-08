@@ -1,7 +1,6 @@
 ---
 title: usbkd.usbhublog
 description: Usbkd. usbhublog 命令显示 USB 集线器的调试日志。
-ms.assetid: DFDF595E-3452-40C2-A6C7-94FB8954002C
 keywords:
 - usbkd usbhublog Windows 调试
 ms.date: 05/23/2017
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 407e2719087e56bc5860f223884eae73c7292632
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 02d2ebb305833347b5f9ce134d4402cfaeb34de1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89207369"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96829763"
 ---
 # <a name="usbkdusbhublog"></a>!usbkd.usbhublog
 
 
-**！ Usbkd. usbhublog**命令显示 USB 集线器的调试日志。
+**！ Usbkd. usbhublog** 命令显示 USB 集线器的调试日志。
 
 ```dbgcmd
 !usbkd.usbhublog DeviceExtension[, NumberOfEntries]

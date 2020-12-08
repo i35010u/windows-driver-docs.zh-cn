@@ -1,18 +1,17 @@
 ---
 title: OID_WDI_TASK_DOT11_RESET
 description: OID_WDI_TASK_DOT11_RESET 请求 IHV 组件将 MAC 和 PHY 状态重置为指定端口。
-ms.assetid: 5fcac1da-0776-47a5-87b7-8e831f968f7c
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 OID_WDI_TASK_DOT11_RESET 网络驱动程序
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 9d135778b4c96e1f69a6655103440195358146b6
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 94e80c3016643a9c5fa998e7df780e27c626b13b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89213199"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96829275"
 ---
 # <a name="oid_wdi_task_dot11_reset"></a>OID \_ WDI \_ TASK \_ DOT11 \_ RESET
 
@@ -36,7 +35,7 @@ Dot11 reset 结合了 802.11 MLME 和 PLME reset 基元的语义。 当 IHV 组�
 -   如果 MAC 地址参数存在，则将该端口的 MAC 地址重置为指定的值。
 -   在完成 dot11 reset 操作之前，请将端口状态设置为 INIT。
 
-如果要重置的端口是作为 STA、AP 或 Wi-fi 直接客户端或执行的操作，主机会触发断开连接任务，请求 IHV 组件在重置前发送到对等节点。 因此，IHV 组件不需要再次执行此操作。
+如果要重置的端口是作为 STA、AP 或 Wi-Fi 直接客户端进行操作，则主机会触发断开连接任务，请求 IHV 组件在重置前发送到对等节点。 因此，IHV 组件不需要再次执行此操作。
 
 ## <a name="task-parameters"></a>任务参数
 
@@ -68,7 +67,7 @@ Dot11 reset 结合了 802.11 MLME 和 PLME reset 基元的语义。 当 IHV 组�
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
-<td><p>Windows Server 2016</p></td>
+<td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
 <td><p>标头</p></td>

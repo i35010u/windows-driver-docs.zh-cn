@@ -1,25 +1,24 @@
 ---
 title: C28123
-description: 警告 C28123 函数不允许在较高的 IRQ 级别调用。 以前的函数调用是与此约束不一致。
-ms.assetid: 6b40a485-f4f7-4c68-8575-960faa8cb87b
+description: 警告 C28123 不允许在高 IRQ 级别调用此函数。 以前的函数调用与此约束不一致。
 keywords:
-- 警告列出 WDK PREfast for Drivers
-- 错误列出 WDK PREfast for Drivers
+- 列出用于驱动程序的 WDK PREfast 的警告
+- 为驱动程序列出的 WDK PREfast 的错误
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 f1_keywords:
 - C28123
-ms.openlocfilehash: 65a46c21162db7e0fd3fc49cc800c3a17638732c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 25333b385432c9ebd1edced04422e58a415e9526
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63361401"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96829957"
 ---
 # <a name="c28123"></a>C28123
 
 
-警告 C28123:不允许在较高的 IRQ 级别调用该函数。 以前的函数调用是与此约束不一致。
+警告 C28123：不允许在高 IRQ 级别调用此函数。 以前的函数调用与此约束不一致。
 
 <table>
 <colgroup>
@@ -28,19 +27,19 @@ ms.locfileid: "63361401"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>其他信息</strong></p></td>
-<td align="left"><p>可能会错误实际上是一些范围有限的先前调用中。</p></td>
+<td align="left"><p>其他信息</p></td>
+<td align="left"><p>这可能是因为此错误实际上是某些以前的调用限制范围。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-在它所调用函数过高的 IRQL 执行驱动程序和先前调用的函数中最小允许 IRQL 大于最大的 IRQL 所需的此调用。
+该驱动程序在其所调用的函数的值太高，并且函数内之前调用的最小允许 IRQL 大于此调用所需的最大 IRQL。
 
-当代码分析工具将报告此警告时，参考 WDK 文档以了解函数序列，并验证每个函数可调用的 IRQL。
+当代码分析工具报告此警告时，请查看函数序列的 WDK 文档，并验证可调用每个函数的 IRQL。
 
-代码分析工具推断当前 IRQL，并且仅当其已推断足够有关 IRQL 来检测错误时将报告此警告。 可能会根据此推断*函数签名*（参数和结果类型） 所分析函数或从先前调用的执行路径中。
+代码分析工具将推断当前的 IRQL，并仅当它已推断出足够多的 IRQL 来检测错误时才报告此警告。 此推理可能基于 *函数签名* (要分析的函数的参数和结果类型) ，或从执行路径中的先前调用开始。
 
  
 

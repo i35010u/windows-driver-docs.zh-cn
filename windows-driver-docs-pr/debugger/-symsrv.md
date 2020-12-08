@@ -1,7 +1,6 @@
 ---
 title: symsrv 扩展命令
 description: Symsrv 扩展关闭符号服务器客户端。
-ms.assetid: 666fa9d7-f723-4745-95fc-17aa20993b42
 keywords:
 - symsrv Windows 调试
 ms.date: 05/23/2017
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 329178bf873560d7064569d0c5148f2c0d4770fb
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1baeb3d71ed6c014cafeddc9b099982bc37e50c8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63334210"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96830321"
 ---
 # <a name="symsrv"></a>!symsrv
 
 
-**！ Symsrv**扩展关闭符号服务器客户端。
+**！ Symsrv** extension 关闭符号服务器客户端。
 
 ```dbgcmd
 !symsrv close
@@ -31,7 +30,7 @@ ms.locfileid: "63334210"
 ## <span id="ddk__symsrv_dbg"></span><span id="DDK__SYMSRV_DBG"></span>
 
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 <table>
 <colgroup>
@@ -55,11 +54,11 @@ ms.locfileid: "63334210"
 <a name="remarks"></a>备注
 -------
 
-**！ Symsrv 关闭**扩展将会关闭任何活动的符号服务器客户端。
+**！ Symsrv close** extension 将关闭任何活动的符号服务器客户端。
 
-这很有用，如果你需要重新同步你的连接。
+如果需要重新同步连接，这会很有用。
 
-如果以前已被拒绝的 internet 身份验证请求，你将需要使用 **！ symsrv 关闭**重新连接到符号存储区。 请参阅[防火墙和代理服务器](firewalls-and-proxy-servers.md)有关详细信息。
+如果你之前拒绝了 internet 身份验证请求，则需要使用 **！ symsrv close** 重新连接到符号存储区。 有关详细信息，请参阅 [防火墙和代理服务器](firewalls-and-proxy-servers.md) 。
 
  
 

@@ -1,26 +1,25 @@
 ---
 title: OID_GEN_OPERATIONAL_STATUS
 description: 作为查询，使用 OID_GEN_OPERATIONAL_STATUS OID 确定 (ifOperStatus 从 RFC 2863) 的网络接口的当前操作状态。
-ms.assetid: fa00d449-6ec0-4e72-8d9c-a453a0b1f3e9
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_GEN_OPERATIONAL_STATUS 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 331bf89e091be2224d9d23bb76a8bf5b5e98c379
-ms.sourcegitcommit: f8619f20a0903dd64f8641a5266ecad6df5f1d57
+ms.openlocfilehash: a79eef11eb7d97ee90286a917b33f073900be374
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91423664"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96829459"
 ---
 # <a name="oid_gen_operational_status"></a>OID \_ 生成 \_ 操作 \_ 状态
 
 
-作为查询，使用 OID 生成 \_ \_ 操作 \_ 状态 OID 从[RFC 2863](https://go.microsoft.com/fwlink/p/?linkid=84054)) 中 (*ifOperStatus*来确定网络接口的当前操作状态。
+作为查询，使用 OID 生成 \_ \_ 操作 \_ 状态 OID 从 [RFC 2863](https://go.microsoft.com/fwlink/p/?linkid=84054)) 中 (*ifOperStatus* 来确定网络接口的当前操作状态。
 
 **版本信息**
 
 <a href="" id="windows-vista-and-later"></a>Windows Vista 和更高版本  
-。
+支持。
 
 <a href="" id="ndis-6-0-and-later-miniport-drivers"></a>NDIS 6.0 和更高版本的微型端口驱动程序  
 未请求。 仅适用于 NDIS 接口提供程序。
@@ -48,7 +47,7 @@ NDIS 处理微型端口适配器和筛选器模块的此 OID，仅 [ndis 网络�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**NET \_ IF \_ 操作系统 \_**](/windows/win32/api/ifdef/ne-ifdef-net_if_oper_status)

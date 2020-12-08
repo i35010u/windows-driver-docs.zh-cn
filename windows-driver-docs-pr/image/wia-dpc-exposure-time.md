@@ -1,9 +1,8 @@
 ---
-title: WIA\_DPC\_暴露\_时间
-description: WIA\_DPC\_暴露\_时间属性对应于快门速度，以秒为单位，按 10,000 缩放。
-ms.assetid: 78f12aaa-4b7b-4ba3-a6af-791e97581d26
+title: WIA \_ DPC \_ 曝光 \_ 时间
+description: "\"WIA \\_ DPC \\_ 曝光 \\_ 时间\" 属性对应于10000缩放的快门速度，以秒为单位。"
 keywords:
-- WIA_DPC_EXPOSURE_TIME 成像设备
+- WIA_DPC_EXPOSURE_TIME 图像设备
 topic_type:
 - apiref
 api_name:
@@ -14,31 +13,31 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 63bd9173546332a2e795d2d7f79aea59d0c27f50
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1a7d5b336a2ef75f7a245351ce11712cf8492cf4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379598"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96830457"
 ---
-# <a name="wiadpcexposuretime"></a>WIA\_DPC\_暴露\_时间
+# <a name="wia_dpc_exposure_time"></a>WIA \_ DPC \_ 曝光 \_ 时间
 
 
-WIA\_DPC\_暴露\_时间属性对应于快门速度，以秒为单位，按 10,000 缩放。
+"WIA \_ DPC \_ 曝光 \_ 时间" 属性对应于10000缩放的快门速度，以秒为单位。
 
 ## <span id="ddk_wia_dpc_exposure_time_si"></span><span id="DDK_WIA_DPC_EXPOSURE_TIME_SI"></span>
 
 
-属性类型：VT\_I4
+属性类型： VT \_ I4
 
-有效值：WIA\_PROP\_范围或 WIA\_PROP\_列表
+有效值： WIA "内容范围" 或 "WIA 内容" \_ \_ \_ \_ 列表
 
-访问权限：读取/写入
+访问权限：读/写
 
 <a name="remarks"></a>备注
 -------
 
-通常情况下，设备使用 WIA\_DPC\_暴露\_时间属性时，才[ **WIA\_DPC\_暴露\_模式**](wia-dpc-exposure-mode.md)属性设置为 EXPOSUREMODE\_手动或 EXPOSUREMODE\_快门\_优先级。
+通常， \_ \_ \_ 仅当 [**WIA \_ dpc \_ 曝露 \_ 模式**](wia-dpc-exposure-mode.md) 属性设置为 "EXPOSUREMODE \_ 手动" 或 "EXPOSUREMODE \_ 快门优先级" 时 \_ ，设备才使用 "wia dpc 曝光时间" 属性。
 
 <a name="requirements"></a>要求
 ------------
@@ -50,12 +49,12 @@ WIA\_DPC\_暴露\_时间属性对应于快门速度，以秒为单位，按 10,0
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Version</p></td>
-<td><p>在 Windows Vista 和更高版本操作系统中已过时，并应不再使用。 但是，此属性仍定义 Windows Vista 中与应用程序和用于 Windows Server 2003、 Windows XP 和早期版本的 Windows 设备的兼容性。</p></td>
+<td><p>版本</p></td>
+<td><p>在 Windows Vista 和更高版本的操作系统中已过时，不应再使用。 但是，在 Windows Vista 中仍定义此属性，以与为 Windows Server 2003、Windows XP 和 windows 的早期版本设计的应用程序和设备兼容。</p></td>
 </tr>
 <tr class="even">
-<td><p>Header</p></td>
-<td>Wiadef.h （包括 Wiadef.h）</td>
+<td><p>标头</p></td>
+<td>Wiadef (包含 Wiadef) </td>
 </tr>
 </tbody>
 </table>
@@ -63,7 +62,7 @@ WIA\_DPC\_暴露\_时间属性对应于快门速度，以秒为单位，按 10,0
 ## <a name="see-also"></a>请参阅
 
 
-[**WIA\_DPC\_EXPOSURE\_MODE**](wia-dpc-exposure-mode.md)
+[**WIA \_ DPC \_ 曝光 \_ 模式**](wia-dpc-exposure-mode.md)
 
  
 

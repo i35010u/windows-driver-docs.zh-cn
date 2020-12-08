@@ -1,17 +1,16 @@
 ---
 title: 排查容器 ID 实现问题
 description: 排查容器 ID 实现问题
-ms.assetid: 9c992f5a-73b6-4567-977f-1cd92862bf60
 keywords:
 - 容器 Id WDK，故障排除
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 068123d60c577e1f707ec6a3cd8a09b5dbb72dbe
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: c790ece414b1cb44da5a6760e42ed3f9cfb84400
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89095883"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96828585"
 ---
 # <a name="troubleshooting-the-implementation-of-container-ids"></a>排查容器 ID 实现问题
 
@@ -22,7 +21,7 @@ ms.locfileid: "89095883"
 
 -   为设备枚举的每个 devnode 是否正确设置了可移动设备功能？
 
-    这是 "设备和打印机" UI 中多个设备实例的最常见原因。 请确保设备的每个 devnode 都有相应的可移动设备功能设置。 应将设备的最顶层或 *父*devnode 报告为可移动，并且应将其所有子项报告为不可删除。 自定义总线驱动程序实现必须正确分配其所枚举的 devnodes 的可移动关系。
+    这是 "设备和打印机" UI 中多个设备实例的最常见原因。 请确保设备的每个 devnode 都有相应的可移动设备功能设置。 应将设备的最顶层或 *父* devnode 报告为可移动，并且应将其所有子项报告为不可删除。 自定义总线驱动程序实现必须正确分配其所枚举的 devnodes 的可移动关系。
 
     设备管理器是一种很有用的工具来诊断这些问题。 可以通过执行以下步骤来查看完整的 devnode 层次结构：
 
@@ -39,9 +38,9 @@ ms.locfileid: "89095883"
 
 -   设备是否在硬件中包含容器 ID 或其他唯一标识符？
 
-    请确保硬件中的容器 ID 或唯一标识符的格式符合给定总线的格式要求。 有关详细信息，请参阅 [从特定于总线的唯一 ID 生成的容器 id](container-ids-generated-from-a-bus-specific-unique-id.md)。
+    请确保硬件中的容器 ID 或唯一标识符的格式符合给定总线的格式要求。 有关详细信息，请参阅 [从 Bus-Specific 唯一 ID 生成的容器 id](container-ids-generated-from-a-bus-specific-unique-id.md)。
 
-    如果自定义总线驱动程序枚举了设备的 devnodes，请检查总线驱动程序是否正确响应针对**BusQueryContainerID**的[**IRP_MN_QUERY_ID**](../kernel/irp-mn-query-id.md)请求。
+    如果自定义总线驱动程序枚举了设备的 devnodes，请检查总线驱动程序是否正确响应针对 **BusQueryContainerID** 的 [**IRP_MN_QUERY_ID**](../kernel/irp-mn-query-id.md)请求。
 
 -   设备是否通过多个总线并发连接到计算机？
 

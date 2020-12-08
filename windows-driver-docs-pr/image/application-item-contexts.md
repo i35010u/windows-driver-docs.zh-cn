@@ -1,15 +1,14 @@
 ---
 title: 应用程序项上下文
 description: 应用程序项上下文
-ms.assetid: d11b1750-999f-411c-9e83-6d2b20ce65db
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9b105e67d54415c4345899709cec646c07fc1651
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 62e31a334da765e475be03ae1ccc4f04749eccb7
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89193101"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96828747"
 ---
 # <a name="application-item-contexts"></a>应用程序项上下文
 

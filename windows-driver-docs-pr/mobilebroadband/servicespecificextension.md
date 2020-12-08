@@ -1,15 +1,14 @@
 ---
 title: ServiceSpecificExtension
 description: ServiceSpecificExtension
-ms.assetid: 49c8e902-d943-4884-96e4-c5472a82b568
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bd7b740ca855430e6667fc7341bd5b93e8e6a3e1
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: c34ac5c0dedde29453d103bf71b5bf8439554213
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89403170"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96828489"
 ---
 # <a name="servicespecificextension"></a>ServiceSpecificExtension
 
@@ -41,7 +40,7 @@ ServiceSpecificExtension 元素指定 MobileBroadbandInfo.xml 文件的相对位
 <tr class="header">
 <th>Attribute</th>
 <th>类型</th>
-<th>必选</th>
+<th>必须</th>
 <th>说明</th>
 </tr>
 </thead>
@@ -78,7 +77,7 @@ ServiceSpecificExtension 元素指定 MobileBroadbandInfo.xml 文件的相对位
 <thead>
 <tr class="header">
 <th>元素</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>

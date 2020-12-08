@@ -1,9 +1,8 @@
 ---
 title: .logclose（关闭日志文件）
-description: .Logclose 命令关闭任何打开的日志文件。
-ms.assetid: 730cfab3-5529-4054-ba62-8a780572603d
+description: Logclose 命令将关闭任何打开的日志文件。
 keywords:
-- .logclose （关闭日志文件） Windows 调试
+- logclose (关闭) Windows 调试的日志文件
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 5025fb1613ad6d9ad32b316f3b35578d6c72c434
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 902121ea2f1bc4eab1f85e8d4826b9a5aad89eac
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63336142"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96829807"
 ---
 # <a name="logclose-close-log-file"></a>.logclose（关闭日志文件）
 
 
-**.Logclose**命令关闭任何打开的日志文件。
+**Logclose** 命令将关闭任何打开的日志文件。
 
 ```dbgcmd
     .logclose 
@@ -40,12 +39,12 @@ ms.locfileid: "63336142"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>模式</strong></p></td>
-<td align="left"><p>用户模式下，内核模式</p></td>
+<td align="left"><p><strong>交货</strong></p></td>
+<td align="left"><p>用户模式，内核模式</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>目标</strong></p></td>
-<td align="left"><p>实时、 崩溃转储</p></td>
+<td align="left"><p>实时，故障转储</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>平台</strong></p></td>

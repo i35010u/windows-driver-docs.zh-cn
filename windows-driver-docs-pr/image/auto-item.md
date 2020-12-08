@@ -1,20 +1,19 @@
 ---
 title: 自动项
 description: 自动项
-ms.assetid: 59f9b71b-e4bd-44a3-a4f2-dfea9f1045e2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4d60a610973b3d26188450284ee50d6b2102797c
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 4a4c563e407ded75ba9564a87ba20cbb93ff62e4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89189885"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96828731"
 ---
 # <a name="auto-item"></a>自动项
 
 
-若要在 Windows 7 和更高版本中实现[自动配置的扫描](auto-configured-scanning.md)，wia 微型驱动程序必须在扫描仪设备的[WIA 项树](wia-item-trees.md)中包含一个*自动项*。 自动项属于 WIA \_ 类别 \_ 自动分类。 有关此类别的详细信息，请参阅 [WIA 项类别](wia-item-categories.md)。
+若要在 Windows 7 和更高版本中实现 [自动配置的扫描](auto-configured-scanning.md)，wia 微型驱动程序必须在扫描仪设备的 [WIA 项树](wia-item-trees.md)中包含一个 *自动项*。 自动项属于 WIA \_ 类别 \_ 自动分类。 有关此类别的详细信息，请参阅 [WIA 项类别](wia-item-categories.md)。
 
 下图显示了一个包含自动项的 WIA 项的示例。 自动项是树中根项的子项。
 

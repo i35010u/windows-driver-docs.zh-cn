@@ -1,15 +1,14 @@
 ---
 title: DMRC 如何确定何时搜索 WMIS 服务器
 description: DMRC 如何确定何时搜索 WMIS 服务器
-ms.assetid: dc68045e-85c2-443d-9e4d-099bbd21590d
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: df13f3e0cddbd17b5d5d1ccf3a00eb9f9b9415d0
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 9e1208af53e881ffdb240e9a291b7a0ebfb6cd92
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89095271"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96828657"
 ---
 # <a name="how-the-dmrc-determines-when-to-search-the-wmis-server"></a>DMRC 如何确定何时搜索 WMIS 服务器
 
@@ -25,12 +24,12 @@ ms.locfileid: "89095271"
 <a href="" id="lastcheckeddate"></a>**LastCheckedDate**  
 此值指示 DMRC 在 WMIS 服务器中查询设备的元数据时的最近日期。 此日期不会反映 DMRC 是否已成功下载元数据包。
 
-DMRC 管理包含系统中每个 [设备 ID](device-ids.md) 的设备元数据包的属性的索引表。 **LastCheckedDate**值是此索引表中每行的一个字段。
+DMRC 管理包含系统中每个 [设备 ID](device-ids.md) 的设备元数据包的属性的索引表。 **LastCheckedDate** 值是此索引表中每行的一个字段。
 
 <a href="" id="checkbackmdnotretrieved"></a>**CheckBackMDNotRetrieved**  
 此注册表值指示 DMRC 在对设备元数据包重复 WMIS 服务器的查询之前等待的天数。 此值适用于 DMRC 尚未下载 WMIS 的元数据的设备。
 
-**CheckBackMDNotRetrieved**值位于以下注册表项下：
+**CheckBackMDNotRetrieved** 值位于以下注册表项下：
 
 ```cpp
 HKLM\Software\Microsoft\Windows\CurrentVersion\Device Metadata
@@ -47,7 +46,7 @@ HKLM\Software\Microsoft\Windows\CurrentVersion\Device Metadata
 <a href="" id="checkbackmdretrieved"></a>**CheckBackMDRetrieved**  
 此注册表值指示 DMRC 在查询已更新设备元数据包之前等待的天数。 此值适用于 DMRC 先前已下载元数据包的设备。
 
-**CheckBackMDRetrieved**值位于以下注册表项下：
+**CheckBackMDRetrieved** 值位于以下注册表项下：
 
 ```cpp
 HKLM\Software\Microsoft\Windows\CurrentVersion\Device Metadata
@@ -61,7 +60,7 @@ HKLM\Software\Microsoft\Windows\CurrentVersion\Device Metadata
 
  
 
-**注意**   WMIS 服务器与 DMRC 合作，设置客户端系统上的**CheckBackMDRetrieved**和**CheckBackMDNotRetrieved**注册表值的值。 这些值是基于网络条件和负载平衡设置的。 来自 WMIS 服务器的每个响应都包含客户端配置数据并控制 DMRC 行为。
+**注意**  WMIS 服务器与 DMRC 合作，设置客户端系统上的 **CheckBackMDRetrieved** 和 **CheckBackMDNotRetrieved** 注册表值的值。 这些值是基于网络条件和负载平衡设置的。 来自 WMIS 服务器的每个响应都包含客户端配置数据并控制 DMRC 行为。
 
  
 

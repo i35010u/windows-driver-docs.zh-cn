@@ -1,18 +1,17 @@
 ---
 title: 将普通 DPC 转换为线程 DPC
 description: 将普通 DPC 转换为线程 DPC
-ms.assetid: 89a7a408-e01b-4543-9775-5ef542d05b75
 keywords:
 - 线程 Dpc WDK 内核
 - 转换 Dpc
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ec842338943b897973d77c95ea4b334835c59146
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 09dda222ff563bccf9b0080b0b12701eac79272a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90101564"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96830405"
 ---
 # <a name="converting-an-ordinary-dpc-to-a-threaded-dpc"></a>将普通 DPC 转换为线程 DPC
 

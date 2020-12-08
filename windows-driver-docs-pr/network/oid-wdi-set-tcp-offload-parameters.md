@@ -1,25 +1,24 @@
 ---
 title: OID_WDI_SET_TCP_OFFLOAD_PARAMETERS
 description: 将 OID_WDI_SET_TCP_OFFLOAD_PARAMETERS 从操作系统发送到设备，以设置 TCP 卸载参数。
-ms.assetid: B615066B-3871-4445-8397-B41CB66EEF35
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 OID_WDI_SET_TCP_OFFLOAD_PARAMETERS 网络驱动程序
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 370c86026e6698462a5be178da8453f99a0adaea
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 4c88bc2fbf225fa301a97760c7c6d969560f8aeb
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89213237"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96829297"
 ---
 # <a name="oid_wdi_set_tcp_offload_parameters"></a>OID \_ WDI \_ 设置 \_ TCP \_ 卸载 \_ 参数
 
 
 OID \_ WDI \_ 将 \_ tcp \_ 卸载 \_ 参数从操作系统发送到设备，以设置 tcp 卸载参数。
 
-| 作用域 | 设置序列化任务 | 正常执行时间 (秒)  |
+| 范围 | 设置序列化任务 | 正常执行时间 (秒)  |
 |-------|--------------------------|---------------------------------|
 | 端口  | 是                      | 1                               |
 
@@ -58,7 +57,7 @@ OID \_ WDI \_ 将 \_ tcp \_ 卸载 \_ 参数从操作系统发送到设备，以
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
-<td><p>Windows Server 2016</p></td>
+<td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
 <td><p>标头</p></td>

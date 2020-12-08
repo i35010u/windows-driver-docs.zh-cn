@@ -1,25 +1,24 @@
 ---
 title: OID_WDI_SET_NEIGHBOR_REPORT_ENTRIES
 description: OID_WDI_SET_NEIGHBOR_REPORT_ENTRIES 将从 AP 收到的邻居报告列表发送到 LE。 当 UE 接收到来自当前连接的 AP 的邻居报表时，就会立即发送此。
-ms.assetid: F77FDA4A-3029-4F6E-A82E-B318543484FF
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 OID_WDI_SET_NEIGHBOR_REPORT_ENTRIES 网络驱动程序
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 783f8c71540257ccafb3ffdf6e3d921280867add
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 5c9d893ecf9bb5c0769ef4ea93f0bc7c8651aba3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89206317"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96829365"
 ---
 # <a name="oid_wdi_set_neighbor_report_entries"></a>OID \_ WDI \_ 设置 \_ 邻居 \_ 报表 \_ 条目
 
 
 OID \_ WDI \_ SET \_ 邻居 \_ 报表 \_ 条目将从 AP 收到的邻居报告列表发送到 LE。 当 UE 接收到来自当前连接的 AP 的邻居报表时，就会立即发送此。
 
-| 作用域 | 设置序列化任务 | 正常执行时间 (秒)  |
+| 范围 | 设置序列化任务 | 正常执行时间 (秒)  |
 |-------|--------------------------|---------------------------------|
 | 端口  | 否                       | 1                               |
 
@@ -54,7 +53,7 @@ OID \_ WDI \_ SET \_ 邻居 \_ 报表 \_ 条目将从 AP 收到的邻居报告�
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
-<td><p>Windows Server 2016</p></td>
+<td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
 <td><p>标头</p></td>

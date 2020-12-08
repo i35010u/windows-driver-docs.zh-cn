@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ 连接 \_ ALLOCATORFRAMING \_ EX
 description: AVStream 客户端使用 KSPROPERTY \_ 连接 \_ ALLOCATORFRAMING \_ EX 属性来确定 pin 的帧需求。
-ms.assetid: 7ff1462f-959b-413e-a888-bcf7d251edee
 keywords:
 - KSPROPERTY_CONNECTION_ALLOCATORFRAMING_EX 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: be19d780c781eeb4591f48643c58a1ad5bed6634
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 54a2462a2e9a496fab1214acabc484778ae92ec1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105938"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96829139"
 ---
 # <a name="ksproperty_connection_allocatorframing_ex"></a>KSPROPERTY \_ 连接 \_ ALLOCATORFRAMING \_ EX
 
@@ -86,7 +85,7 @@ AVStream 客户端使用 KSPROPERTY \_ 连接 \_ ALLOCATORFRAMING \_ EX 属性�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSALLOCATOR \_ 组帧 \_ EX**](/windows-hardware/drivers/ddi/ks/ns-ks-ksallocator_framing_ex)

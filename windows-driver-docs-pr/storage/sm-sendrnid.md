@@ -1,7 +1,6 @@
 ---
 title: SM \_ SendRNID 函数
 description: SM \_ SENDRNID WMI 方法将请求节点标识数据 (RNID) 命令发送到指定的端口。
-ms.assetid: 160e2dc7-8195-4f8a-bc59-854e5283cf6f
 keywords:
 - SM_SendRNID 函数存储设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: bd2641eeef9725d42ba5b63f0c6707b183f5cdc8
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 7fb0b7ff32df039391b3d707af0fee984478d5b1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89191645"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96829167"
 ---
 # <a name="sm_sendrnid-function"></a>SM \_ SendRNID 函数
 
@@ -31,14 +30,14 @@ SM \_ SENDRNID WMI 方法将请求节点标识数据 (RNID) 命令发送到指�
 
 ```ManagedCPlusPlus
 void SM_SendRNID(
-   [in, HBAType("HBA_WWN")] uint8              PortWWN[8],
-   [in, HBAType("HBA_WWN")] uint8              DestWWN[8],
-   [in] uint32                                 DestFCID,
-   [in] uint32                                 NodeIdDataFormat,
-   [in] uint32                                 InRespBufferMaxSize,
-   [out, HBA_STATUS_QUALIFIERS] HBA_STATUS     HBAStatus,
-   [out] uint32                                TotalRespBufferSize,
-   [out] uint32                                ResponseBufferSize,
+   [in, HBAType("HBA_WWN")] uint8              PortWWN[8],
+   [in, HBAType("HBA_WWN")] uint8              DestWWN[8],
+   [in] uint32                                 DestFCID,
+   [in] uint32                                 NodeIdDataFormat,
+   [in] uint32                                 InRespBufferMaxSize,
+   [out, HBA_STATUS_QUALIFIERS] HBA_STATUS     HBAStatus,
+   [out] uint32                                TotalRespBufferSize,
+   [out] uint32                                ResponseBufferSize,
    [out, WmiSizeIs("OutRespBufferSize")] uint8 ResponseBuffer[]
 );
 ```
@@ -78,7 +77,7 @@ RNID 命令的结果。 微型端口驱动程序在 SM \_ SendRNID OUT 结构的
 
 不适用于 WMI 方法。
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 此 WMI 方法属于 MS \_ SM \_ FabricAndDomainManagementMethods WMI 类。
@@ -97,7 +96,7 @@ RNID 命令的结果。 微型端口驱动程序在 SM \_ SendRNID OUT 结构的
 <td align="left">台式机</td>
 </tr>
 <tr class="even">
-<td align="left"><p>Header</p></td>
+<td align="left"><p>标头</p></td>
 <td align="left">Hbapiwmi</td>
 </tr>
 </tbody>

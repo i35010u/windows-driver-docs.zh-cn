@@ -1,15 +1,14 @@
 ---
 title: 如何为 USB 设备分配容器 ID
 description: 如何为 USB 设备分配容器 ID
-ms.assetid: 769f9486-d179-44f0-9fd1-b3e737143ced
 ms.date: 05/09/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 4018693ac368c14f6c951ad4b3e7b9befc425704
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 439ad4dcf03fa994c92fd7c0cd3817b1a32baee8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91733266"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96828635"
 ---
 # <a name="how-usb-devices-are-assigned-container-ids"></a>如何为 USB 设备分配容器 ID
 
@@ -42,11 +41,11 @@ USB 设备的容器 ID 通过多种方式生成。 此决定基于设备中包�
 
     -   查询 (**_UPC**) 对象的 USB 端口功能，并选中 **PortIsConnectable** 值。 如果 **PortIsConnectable** 的值为非零值，则可以使用端口来连接外部设备。 因此，连接到此端口的任何设备都必须在计算机外部。
 
-    -   如果计算机实现了 ACPI 3.0，并且 **PortIsConnectable** 字节为非零，则操作系统将另外查询物理位置说明 (**_PLD**) 对象。 操作系统检查是否在 **_PLD**对象上设置了**UserVisible**位 (位 64) 。 它将执行此项检查以确保端口既可连接，又可在外部对用户可见。
+    -   如果计算机实现了 ACPI 3.0，并且 **PortIsConnectable** 字节为非零，则操作系统将另外查询物理位置说明 (**_PLD**) 对象。 操作系统检查是否在 **_PLD** 对象上设置了 **UserVisible** 位 (位 64) 。 它将执行此项检查以确保端口既可连接，又可在外部对用户可见。
 
-    如果从 ACPI 收集的信息指示设备为外部设备，则 PnP 管理器将为设备生成容器 ID。 **ContainedID**值可以是设备的 USB 序列号或随机生成的值的哈希值。 已为 devnode 分配此容器 ID。
+    如果从 ACPI 收集的信息指示设备为外部设备，则 PnP 管理器将为设备生成容器 ID。 **ContainedID** 值可以是设备的 USB 序列号或随机生成的值的哈希值。 已为 devnode 分配此容器 ID。
 
-    **注意**   如果操作系统确定设备在计算机内部运行，则 devnode 将继承父 devnode 的容器 ID，在这种情况下 (，) 是计算机本身的容器 ID。
+    **注意**  如果操作系统确定设备在计算机内部运行，则 devnode 将继承父 devnode 的容器 ID，在这种情况下 (，) 是计算机本身的容器 ID。
 
      
 

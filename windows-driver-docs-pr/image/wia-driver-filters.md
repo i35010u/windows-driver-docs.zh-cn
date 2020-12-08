@@ -1,26 +1,25 @@
 ---
 title: WIA 驱动程序筛选器
 description: WIA 驱动程序筛选器
-ms.assetid: e7e239b5-aaa5-4d7a-a872-2ad37af3d1a9
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9853f0bcf37143fc40596db914d4857b2789012d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 775cc6a437f87cd6a3029cb16c2cf0b30420e94d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63366877"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96830027"
 ---
 # <a name="wia-driver-filters"></a>WIA 驱动程序筛选器
 
 
-以下部分包含有关 WIA 图像处理筛选器和 WIA 分段的筛选器适用于 Windows Vista 和更高版本操作系统的信息。 有关在 Microsoft Windows Me 和 Windows XP 上的图像处理的信息，请参阅[图像处理](image-processing.md)。
+以下各节包含有关 Windows Vista 和更高版本操作系统的 WIA 图像处理筛选器和 WIA 分段筛选器的信息。 有关 Microsoft Windows Me 和 Windows XP 上的图像处理的信息，请参阅 [图像处理](image-processing.md)。
 
-本部分包括：
+本节包括：
 
 [WIA 图像处理筛选器](wia-image-processing-filter.md)
 
-[WIA 分段的筛选器](wia-segmentation-filter.md)
+[WIA 分段筛选器](wia-segmentation-filter.md)
 
  
 

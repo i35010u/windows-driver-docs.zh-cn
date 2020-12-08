@@ -1,7 +1,6 @@
 ---
 title: WIA \_ IPS \_ 多 \_ 源
 description: WIA \_ IPS \_ 多 \_ 源属性用于配置当在设备上检测到多个源条件时，wia 微型驱动程序要执行的操作。 WIA 微型驱动程序创建并维护此属性。
-ms.assetid: 8BD92273-218B-4381-BCAF-ED9D227B6B94
 keywords:
 - WIA_IPS_MULTI_FEED 图像设备
 topic_type:
@@ -14,17 +13,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4cef608b54c28115b3c5b7f9704ee5b5ad99d71a
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 0a3a669a09a0026f128ed7bddda5a2cf621d68ba
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105150"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96830453"
 ---
 # <a name="wia_ips_multi_feed"></a>WIA \_ IPS \_ 多 \_ 源
 
 
-**Wia \_ IPS \_ 多 \_ 源**属性用于配置当在设备上检测到多个源条件时，wia 微型驱动程序要执行的操作。 WIA 微型驱动程序创建并维护此属性。
+**Wia \_ IPS \_ 多 \_ 源** 属性用于配置当在设备上检测到多个源条件时，wia 微型驱动程序要执行的操作。 WIA 微型驱动程序创建并维护此属性。
 
 
 

@@ -1,7 +1,6 @@
 ---
 title: 显示和更改属性
 description: 显示和更改属性
-ms.assetid: 657b687d-b0c0-46e0-a948-242509590a4b
 keywords:
 - 通知对象 WDK 网络，属性页
 - 网络通知对象 WDK，属性页
@@ -10,12 +9,12 @@ keywords:
 - 显示网络配置属性
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 59623c055d7e215ae00bafe6975cebe208b85b23
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 35826aebd83d5adc88fcb6f98f615efcbb4cddde
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89212515"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96828485"
 ---
 # <a name="displaying-and-changing-properties"></a>显示和更改属性
 

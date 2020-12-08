@@ -1,7 +1,6 @@
 ---
 title: KSCATEGORY_COMMUNICATIONSTRANSFORM
 description: KSCATEGORY_COMMUNICATIONSTRANSFORM
-ms.assetid: a958c5a6-18a3-43e0-a6ac-84a879a981da
 keywords:
 - KSCATEGORY_COMMUNICATIONSTRANSFORM 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 67064e4ced6fe4f3b44636e9c82afbb7b7d026c2
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: a4dd9f5e54156e488e40a1392e80e60045447547
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89097259"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96829888"
 ---
 # <a name="kscategory_communicationstransform"></a>KSCATEGORY_COMMUNICATIONSTRANSFORM
 
@@ -74,7 +73,7 @@ KSCATEGORY_COMMUNICATIONSTRANSFORM 功能类别是 [**KSPROPERTY_TOPOLOGY_CATEGO
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSPROPERTY_TOPOLOGY_CATEGORIES**](../stream/ksproperty-topology-categories.md)

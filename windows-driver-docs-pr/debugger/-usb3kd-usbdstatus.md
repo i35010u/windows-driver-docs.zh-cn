@@ -1,7 +1,6 @@
 ---
 title: usb3kd.usbdstatus
 description: Usb3kd. usbdstatus 扩展显示 USBD 状态代码的名称。
-ms.assetid: B79B4E6E-7281-4BB0-9708-23F1462171BB
 keywords:
 - usb3kd usbdstatus Windows 调试
 ms.date: 05/23/2017
@@ -12,12 +11,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: aa6ddf453d1f363bad6f877ac8289f91af719d5c
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 65aba7eb5dac8a492a9a0cb7a29ee27a27887496
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89212263"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96828911"
 ---
 # <a name="usb3kdusbdstatus"></a>!usb3kd.usbdstatus
 

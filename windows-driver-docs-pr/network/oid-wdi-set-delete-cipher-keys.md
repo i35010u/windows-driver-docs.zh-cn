@@ -1,25 +1,24 @@
 ---
 title: OID_WDI_SET_DELETE_CIPHER_KEYS
 description: OID_WDI_SET_DELETE_CIPHER_KEYS 从设备的密码密钥表中删除密码密钥。
-ms.assetid: 0a8d4625-382b-4976-aa3f-a8fea0976a00
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 OID_WDI_SET_DELETE_CIPHER_KEYS 网络驱动程序
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 30f9f4c8fb7e5d6aeeda0e348824605de7ecf80a
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 4df139e7626b8d7b93ce5fc900675f48e67c6156
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89212115"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96829391"
 ---
 # <a name="oid_wdi_set_delete_cipher_keys"></a>OID \_ WDI \_ 设置 \_ 删除 \_ 密码 \_ 密钥
 
 
 OID \_ WDI \_ 设置 \_ 删除 \_ 密码 \_ 密钥从设备的密码密钥表中删除密码密钥。
 
-| 作用域 | 设置序列化任务 | 正常执行时间 (秒)  |
+| 范围 | 设置序列化任务 | 正常执行时间 (秒)  |
 |-------|--------------------------|---------------------------------|
 | 端口  | 是                      | 1                               |
 
@@ -54,7 +53,7 @@ OID \_ WDI \_ 设置 \_ 删除 \_ 密码 \_ 密钥从设备的密码密钥表中
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
-<td><p>Windows Server 2016</p></td>
+<td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
 <td><p>标头</p></td>
@@ -63,7 +62,7 @@ OID \_ WDI \_ 设置 \_ 删除 \_ 密码 \_ 密钥从设备的密码密钥表中
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [OID \_ WDI \_ 设置 \_ 添加 \_ 密码 \_ 密钥](oid-wdi-set-add-cipher-keys.md)

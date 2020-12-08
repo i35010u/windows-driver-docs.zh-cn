@@ -1,7 +1,6 @@
 ---
 title: DEVPKEY_Device_RemovalRelations
 description: DEVPKEY_Device_RemovalRelations
-ms.assetid: c88e2545-0c7b-4f8f-93f2-b9de1ec0444c
 keywords:
 - DEVPKEY_Device_RemovalRelations 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 48beb4cb7dcbc53301894265ae3f0aff369f6fef
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 557b0ebac0870ee283d714f4919f2d15b90c9bfd
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90715930"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96830439"
 ---
 # <a name="devpkey_device_removalrelations"></a>DEVPKEY_Device_RemovalRelations
 

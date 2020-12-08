@@ -1,16 +1,15 @@
 ---
 title: OID_GEN_PORT_AUTHENTICATION_PARAMETERS
 description: 作为集，NDIS 和过量驱动程序使用 OID_GEN_PORT_AUTHENTICATION_PARAMETERS OID 设置 NDIS 端口的当前状态。
-ms.assetid: 676601c1-2647-4341-9a5c-cee895d2dbf7
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_GEN_PORT_AUTHENTICATION_PARAMETERS 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: f1635bdf650756bb45393b2628e8f6963ff6f3bf
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 67002ae168b8bbc8576834cab9fca7a1fe0020f9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89213387"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96829445"
 ---
 # <a name="oid_gen_port_authentication_parameters"></a>OID \_ GEN \_ 端口 \_ 身份验证 \_ 参数
 
@@ -50,7 +49,7 @@ ms.locfileid: "89213387"
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**NDIS \_ 端口 \_ 身份验证 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_port_authentication_parameters)

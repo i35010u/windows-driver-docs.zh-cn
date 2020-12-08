@@ -1,7 +1,6 @@
 ---
 title: usbkd.usbhubext
 description: Usbkd. usbhubext 命令显示有关 USB 集线器的信息。
-ms.assetid: 1EC75753-3743-4384-8068-E796083D8239
 keywords:
 - usbkd usbhubext Windows 调试
 ms.date: 05/23/2017
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 4b38b5cd45ebf1e762ae347e29566f03ebdef15b
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: e24ddc093d97121760545eb56c70ee6200133a1c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89217945"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96829771"
 ---
 # <a name="usbkdusbhubext"></a>!usbkd.usbhubext
 
 
-**！ Usbkd. usbhubext**命令显示有关 USB 集线器的信息。
+**！ Usbkd. usbhubext** 命令显示有关 USB 集线器的信息。
 
 ```dbgcmd
 !usbkd.usbhubext DeviceExtension

@@ -1,7 +1,6 @@
 ---
 title: usbkd.usbhubpd
 description: Usbkd. usbhubpd 命令显示有关 USB 端口的信息。
-ms.assetid: 41D5E65D-76C2-45E0-9AC7-C2B50D806935
 keywords:
 - usbkd usbhubpd Windows 调试
 ms.date: 05/23/2017
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 6d4a3ef3bbc144748ecdea168c2ca7a655f20378
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 1ff857d46cf97c7c66a07d29628ec4f29ea42e32
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89207367"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96829745"
 ---
 # <a name="usbkdusbhubpd"></a>!usbkd.usbhubpd
 
 
-**！ Usbkd. usbhubpd**命令显示有关 USB 端口的信息。
+**！ Usbkd. usbhubpd** 命令显示有关 USB 端口的信息。
 
 ```dbgcmd
 !usbkd.usbhubpd StructAddr
@@ -85,7 +84,7 @@ PortData 1: !port2_info ffffe000021bf000 Port State = PS_WAIT_CONNECT PortChange
 ....
 ```
 
-在上面的输出中， `ffffe000021bf000` 是** \_ 集线器 \_ 端口 \_ 数据**结构的地址。 将此地址传递给 **！ usbhubpd**。
+在上面的输出中， `ffffe000021bf000` 是 **\_ 集线器 \_ 端口 \_ 数据** 结构的地址。 将此地址传递给 **！ usbhubpd**。
 
 ```dbgcmd
 0: kd> !usbkd.usbhubpd ffffe000021bf000

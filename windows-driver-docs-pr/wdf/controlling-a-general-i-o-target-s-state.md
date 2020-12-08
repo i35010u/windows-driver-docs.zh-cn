@@ -1,7 +1,6 @@
 ---
 title: 控制常规 I/O 目标的状态
 description: 控制常规 I/O 目标的状态
-ms.assetid: 37f756bf-b655-428e-b72c-f86c71f1a2db
 keywords:
 - 一般 i/o 目标 WDK KMDF，州
 - 已启动 i/o 目标状态 WDK KMDF
@@ -15,12 +14,12 @@ keywords:
 - 重新启动 i/o 目标 WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fdcadf0f945ee9060efc11caafc0c7a6f4105b45
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 63072e32834afdc1286c48f3ec303d63798f1f47
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89184321"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96829078"
 ---
 # <a name="controlling-a-general-io-targets-state"></a>控制常规 I/O 目标的状态
 
@@ -33,7 +32,7 @@ ms.locfileid: "89184321"
 I/o 目标对象的两个入口都处于打开状态。 驱动程序可以将 i/o 请求发送到 i/o 目标队列，框架将请求传递给相应的驱动程序。
 
 <a href="" id="stopped"></a>*停下*  
-I/o 目标的输入处于打开状态，但已关闭入口。 框架停止向相应的驱动程序传递请求。 若要向 i/o 目标发送 i/o 请求，驱动程序必须在每个请求的[**wdf \_ 请求 \_ 发送 \_ 选项**](/windows-hardware/drivers/ddi/wdfrequest/ns-wdfrequest-_wdf_request_send_options)结构中设置**WDF \_ 请求 \_ 发送 \_ 选项 " \_ 忽略 \_ 目标 \_ 状态**" 或 " **wdf \_ 请求 \_ 发送 \_ 选项 \_ \_ \_ ** "。
+I/o 目标的输入处于打开状态，但已关闭入口。 框架停止向相应的驱动程序传递请求。 若要向 i/o 目标发送 i/o 请求，驱动程序必须在每个请求的 [**wdf \_ 请求 \_ 发送 \_ 选项**](/windows-hardware/drivers/ddi/wdfrequest/ns-wdfrequest-_wdf_request_send_options)结构中设置 **WDF \_ 请求 \_ 发送 \_ 选项 " \_ 忽略 \_ 目标 \_ 状态**" 或 " **wdf \_ 请求 \_ 发送 \_ 选项 \_ \_ \_** "。
 
 <a href="" id="purged"></a>*清除*  
 I/o 目标对象的两个入口都已关闭。 驱动程序无法向 i/o 目标发送 i/o 请求，除非它设置 **wdf \_ 请求 \_ 发送 \_ 选项 " \_ 忽略 \_ 目标 \_ 状态** " 或 " **WDF \_ 请求发送" 选项 " \_ \_ \_ 发送 \_ 并 \_ 忘记**"。 此外，该框架还会取消 i/o 目标对象的内部队列中未处理的请求。 从 KMDF 版本1.11 开始，此状态可用。

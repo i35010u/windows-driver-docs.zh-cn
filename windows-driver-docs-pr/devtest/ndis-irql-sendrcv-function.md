@@ -1,7 +1,6 @@
 ---
 title: 'Irql \_ SendRcv \_ 函数规则 (ndis) '
 description: Irql \_ SendRcv \_ 函数规则指定必须在正确的 Irql 级别调用 NDIS 驱动程序的发送和接收功能。
-ms.assetid: adca6ebf-aa78-4fd6-b75b-4a6d856d03ca
 ms.date: 05/21/2018
 keywords:
 - 'Irql_SendRcv_Function 规则 (ndis) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 558530bd4eab8cacd0f8634f435124d7feb9d134
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 594ce48559f5e06e5e227f98783f5869aaccd4e9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103214"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96830169"
 ---
 # <a name="irql_sendrcv_function-rule-ndis"></a>Irql \_ SendRcv \_ 函数规则 (ndis) 
 
 
-**Irql \_ SendRcv \_ 函数**规则指定必须在正确的 Irql 级别调用 NDIS 驱动程序的发送和接收功能。
+**Irql \_ SendRcv \_ 函数** 规则指定必须在正确的 Irql 级别调用 NDIS 驱动程序的发送和接收功能。
 
 **驱动程序模型： NDIS**
 

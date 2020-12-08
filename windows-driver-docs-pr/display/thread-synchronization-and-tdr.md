@@ -1,19 +1,18 @@
 ---
 title: 线程同步和 TDR
 description: 线程同步和 TDR
-ms.assetid: 3690ad06-002a-4939-9b04-b87245678464
 keywords:
 - 线程 WDK 显示，TDR
 - 同步 WDK 显示，TDR
 - TDR (超时检测和恢复) WDK 显示和线程同步
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cb57758d6949aa624725ef15e979b6987f933255
-ms.sourcegitcommit: f2fbb6e54e085e9329288cee49860fe380be9c4c
+ms.openlocfilehash: 580904673b9e9f4d873acbafc713942da2760f32
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91778788"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96830043"
 ---
 # <a name="thread-synchronization-and-tdr"></a>线程同步和 TDR
 
@@ -21,7 +20,7 @@ ms.locfileid: "91778788"
 
 ![阐释 windows vista 线程同步的关系图](images/lddmsync.png)
 
-如果发生硬件超时， [TDR) 进程 (会启动超时检测和恢复 ](timeout-detection-and-recovery.md) 。 GPU 计划程序将调用驱动程序的 [*DxgkDdiResetFromTimeout*](/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_resetfromtimeout) 函数，该函数将重置 GPU。 *DxgkDdiResetFromTimeout* 与任何其他显示微型端口驱动程序函数同步调用，而运行时电源管理功能 [*DxgkDdiSetPowerComponentFState*](/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddisetpowercomponentfstate) 和 [*DxgkDdiPowerRuntimeControlRequest*](/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddipowerruntimecontrolrequest)除外。 也就是说，当 *DxgkDdiResetFromTimeout* 线程运行时，驱动程序中不会运行任何其他线程。 操作系统还保证在调用 *DxgkDdiResetFromTimeout*期间，不能从任何应用程序访问帧缓冲区。因此，驱动程序可以重置内存控制器阶段锁定循环 (PLL) 等。
+如果发生硬件超时， [TDR) 进程 (会启动超时检测和恢复 ](timeout-detection-and-recovery.md) 。 GPU 计划程序将调用驱动程序的 [*DxgkDdiResetFromTimeout*](/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_resetfromtimeout) 函数，该函数将重置 GPU。 *DxgkDdiResetFromTimeout* 与任何其他显示微型端口驱动程序函数同步调用，而运行时电源管理功能 [*DxgkDdiSetPowerComponentFState*](/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddisetpowercomponentfstate) 和 [*DxgkDdiPowerRuntimeControlRequest*](/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddipowerruntimecontrolrequest)除外。 也就是说，当 *DxgkDdiResetFromTimeout* 线程运行时，驱动程序中不会运行任何其他线程。 操作系统还保证在调用 *DxgkDdiResetFromTimeout* 期间，不能从任何应用程序访问帧缓冲区。因此，驱动程序可以重置内存控制器阶段锁定循环 (PLL) 等。
 
 当恢复线程执行 [*DxgkDdiResetFromTimeout*](/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_resetfromtimeout)时，可以继续调用 (dpc) 的中断和延迟过程调用。 [**KeSynchronizeExecution**](/windows-hardware/drivers/ddi/wdm/nf-wdm-kesynchronizeexecution)函数可用于通过设备中断来同步重置过程的部分。
 
@@ -29,7 +28,7 @@ ms.locfileid: "91778788"
 
 - 调用该驱动程序，通知即将逐出分配。
 
-  例如，如果分配在内存段中分页，则会调用驱动程序的[*DxgkDdiBuildPagingBuffer*](/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_buildpagingbuffer)函数，并将[**DXGKARG_BUILDPAGINGBUFFER**](/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgkarg_buildpagingbuffer)结构集的**Operation**成员设置为 DXGK_OPERATION_TRANSFER 并将**传输. Size**成员设置为零，以通知驱动程序逐出。 请注意，不涉及任何内容传输，因为内容在重置过程中丢失。
+  例如，如果分配在内存段中分页，则会调用驱动程序的 [*DxgkDdiBuildPagingBuffer*](/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_buildpagingbuffer)函数，并将 [**DXGKARG_BUILDPAGINGBUFFER**](/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgkarg_buildpagingbuffer)结构集的 **Operation** 成员设置为 DXGK_OPERATION_TRANSFER 并将 **传输. Size** 成员设置为零，以通知驱动程序逐出。 请注意，不涉及任何内容传输，因为内容在重置过程中丢失。
 
   如果分配在口径段内分页，则会调用驱动程序的 [*DxgkDdiBuildPagingBuffer*](/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_buildpagingbuffer) 函数，并将 DXGKARG_BUILDPAGINGBUFFER 设置为 DXGK_OPERATION_UNMAP_APERTURE_SEGMENT 的 **操作** 成员通知驱动程序将分配从口径取消映射。
 

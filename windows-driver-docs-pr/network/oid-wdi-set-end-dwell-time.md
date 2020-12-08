@@ -1,40 +1,39 @@
 ---
 title: OID_WDI_SET_END_DWELL_TIME
-description: WDI 必须等待一段时间发送跟进操作帧之前或协议序列完成后，通常会操作帧交换期间发送 OID_WDI_SET_END_DWELL_TIME。
-ms.assetid: 8ED1FDB1-BFDB-4522-8FF8-00D3B59EE43C
+description: OID_WDI_SET_END_DWELL_TIME 通常在操作帧交换期间发送，无论 WDI 在发送跟进操作帧之前必须等待一段时间，还是在协议序列完成后发送。
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 OID_WDI_SET_END_DWELL_TIME 网络驱动程序
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: e1b3eef35841dd69c645649235edaf76516825d0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 61818931da964daeaa3f82ba9d587938a07e38ca
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63330173"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96829381"
 ---
-# <a name="oidwdisetenddwelltime"></a>OID\_WDI\_SET\_END\_DWELL\_TIME
+# <a name="oid_wdi_set_end_dwell_time"></a>OID \_ WDI \_ SET \_ 结束 \_ 停留 \_ 时间
 
 
-OID\_WDI\_设置\_最终\_会仔细斟酌\_时间期间操作帧交换，通常会进行发送，WDI 必须等待一段时间之前发送跟进操作帧，或者当协议序列是完成。 可以在设备端口或站端口上发送此命令。
+OID \_ WDI \_ 设置 \_ 结束 \_ 停留 \_ 时间通常在操作帧交换期间发送（当 WDI 必须等待一段时间才能发送跟进操作框架或协议序列完成时）。 可以在设备端口或工作站端口上发送此命令。
 
-| 范围 | 设置与任务序列化 | 正常执行时间 （秒） |
+| 范围 | 设置序列化任务 | 正常执行时间 (秒)  |
 |-------|--------------------------|---------------------------------|
 | 端口  | 否                       | 1                               |
 
  
 
-在此命令的回执，固件可以选择停止抛开 WDI 发送命令以发送操作帧时假定已指定的通道。 如果在此再次详述时间已过期，则固件应忽略此命令。
+收到此命令后，固件可以选择在 WDI 发送命令发送操作帧时，停止已指定的通道上的 dwelling。 如果停留时间已过期，则固件应忽略此命令。
 
 ## <a name="set-property-parameters"></a>设置属性参数
 
 
-任何其他参数。 标头中的数据就足够了。
+无其他参数。 标头中的数据足够了。
 ## <a name="set-property-results"></a>设置属性结果
 
 
-没有其他数据。 标头中的数据就足够了。
+无其他数据。 标头中的数据足够了。
 
 <a name="requirements"></a>要求
 ------------
@@ -51,11 +50,11 @@ OID\_WDI\_设置\_最终\_会仔细斟酌\_时间期间操作帧交换，通常�
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
-<td><p>Windows Server 2016</p></td>
+<td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Dot11wdi.h</td>
+<td><p>标头</p></td>
+<td>Dot11wdi</td>
 </tr>
 </tbody>
 </table>

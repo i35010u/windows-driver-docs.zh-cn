@@ -1,15 +1,14 @@
 ---
 title: 测试桌面 COSA/APN 数据库提交
 description: 测试桌面 COSA/APN 数据库提交
-ms.assetid: 8f45dbf0-4f96-4d11-b2a2-41b9e75b5e9b
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8eafafe17dd40dba9591758b7ed5b27fbf7a8a8c
-ms.sourcegitcommit: 7e4d9508198a30bdc1cb6eda83852dda4e42213e
+ms.openlocfilehash: 9f3431779b496e49a1586a4c7277797462a0c779
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89304274"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96829997"
 ---
 # <a name="testing-your-desktop-cosaapn-database-submission"></a>测试桌面 COSA/APN 数据库提交
 
@@ -90,7 +89,7 @@ ms.locfileid: "89304274"
 测试 APN 能否连接到网络的一种简单方法是编辑当前配置文件，并将该 APN 插入到配置文件中。 若要执行此测试，请执行以下步骤：
 
 > [!NOTE]
-> 此测试不模拟完整的体验，如 [修改本地 APN 数据库](#modifydatabase) 部分中所述。 
+> 此测试不模拟完整的体验，如 [修改本地 APN 数据库](#modifydatabase) 部分中所述。 
 
 1.  将一个 SIM 卡插入到使用你要测试的 APN 值的 PC 中。
 
@@ -130,21 +129,21 @@ ms.locfileid: "89304274"
 
    1. 通过运行以下命令确保不存在任何现有移动宽带配置文件： **netsh mb show** profile
 
-   2. 如果移动宽带配置文件存在，则键入**netsh mb profile interface = &lt; interface name &gt; name = &lt; profile &gt; name**
+   2. 如果移动宽带配置文件存在，则键入 **netsh mb profile interface = &lt; interface name &gt; name = &lt; profile &gt; name**
 
-   3. 通过运行以下命令，确保设备没有预配的上下文： **netsh mb show provisionedcontext interface = &lt; interface name &gt; **
+   3. 通过运行以下命令，确保设备没有预配的上下文： **netsh mb show provisionedcontext interface = &lt; interface name &gt;**
 
-      **注意** 如果设备提供了预配的上下文，则 Windows 将使用该预配的上下文（而不是本地 APN 数据库）中的 APN，你将无法测试 APNs。 如果设备具有预配的上下文，则需要获取不提供预配上下文的另一台设备。    
+      **注意** 如果设备提供了预配的上下文，则 Windows 将使用该预配的上下文（而不是本地 APN 数据库）中的 APN，你将无法测试 APNs。 如果设备具有预配的上下文，则需要获取不提供预配上下文的另一台设备。    
 
-   4. 打开 Windows 连接管理器。 它将显示范围内的 Wi-fi 和移动宽带网络。
+   4. 打开 Windows 连接管理器。 它将显示范围内的 Wi-Fi 和移动宽带网络。
 
    5. 选择移动网络，然后单击 " **连接**"。
 
    6. 如果有多个 APNs 与 SIM 属性匹配，则在成功连接之前，Windows 连接管理器将尝试每个匹配的 APNs。 如果没有 APNs connect，Windows 连接管理器会显示错误或显示自定义接入点输入屏幕，允许用户输入自定义接入点。
 
-      **注意** 在 APN 数据库中指定的自动连接顺序用于确定尝试 APNs 的顺序。         
+      **注意** 在 APN 数据库中指定的自动连接顺序用于确定尝试 APNs 的顺序。         
 
    7. 如果 APN 数据库中只有一个 APN，Windows 将自动连接到操作员网络。
 
 > [!NOTE]
-> 通过打开 Windows 连接管理器，右键单击网络的移动宽带条目，然后单击 " **属性**"，可以查看哪些 APN 应用到了连接配置文件。 
+> 通过打开 Windows 连接管理器，右键单击网络的移动宽带条目，然后单击 " **属性**"，可以查看哪些 APN 应用到了连接配置文件。 

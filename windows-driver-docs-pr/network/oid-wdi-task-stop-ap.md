@@ -1,25 +1,24 @@
 ---
 title: OID_WDI_TASK_STOP_AP
-description: OID_WDI_TASK_STOP_AP 请求 IHV 组件断开连接指定端口上的所有连接的客户端，并停止信标和响应探测请求。 亚太配置和 MIB 属性会保留。
-ms.assetid: b7df1d2f-fed4-4079-8a2d-3f691a52ad52
+description: OID_WDI_TASK_STOP_AP 请求 IHV 组件断开指定端口上所有连接的客户端的连接，并停止引导并响应探测请求。 将保留 AP 配置和 MIB 属性。
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 OID_WDI_TASK_STOP_AP 网络驱动程序
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: efae7d2c8c681ab42c1aeaeb02466677a9f67368
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: df3054fe5a9cc015119699ad4bdddb86599745c7
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63365707"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96829211"
 ---
-# <a name="oidwditaskstopap"></a>OID\_WDI\_TASK\_STOP\_AP
+# <a name="oid_wdi_task_stop_ap"></a>OID \_ WDI \_ TASK \_ 停止 \_ AP
 
 
-OID\_WDI\_任务\_停止\_AP 请求 IHV 组件断开连接指定端口上的所有已连接客户端，并停止信标和响应探测请求。 亚太配置和 MIB 属性会保留。
+OID \_ WDI \_ TASK \_ 停止 \_ AP 请求 IHV 组件断开指定端口上的所有已连接客户端，并停止信标并响应探测请求。 将保留 AP 配置和 MIB 属性。
 
-| Object | 中止支持 | 默认优先级 （主机驱动程序策略） | 正常执行时间 （秒） |
+| 对象 | 支持中止 | 主机驱动程序策略 (默认优先级)  | 正常执行时间 (秒)  |
 |--------|---------------|---------------------------------------|---------------------------------|
 | 端口   | 否            | 2                                     | 1                               |
 
@@ -29,10 +28,10 @@ OID\_WDI\_任务\_停止\_AP 请求 IHV 组件断开连接指定端口上的所�
 
 
 无
-## <a name="task-completion-indication"></a>指示任务完成
+## <a name="task-completion-indication"></a>任务完成指示
 
 
-[NDIS\_状态\_WDI\_指示\_停止\_AP\_完成](ndis-status-wdi-indication-stop-ap-complete.md)
+[NDIS \_ 状态 \_ WDI \_ 指示 \_ 停止 \_ AP \_ 完成](ndis-status-wdi-indication-stop-ap-complete.md)
 
 <a name="requirements"></a>要求
 ------------
@@ -49,11 +48,11 @@ OID\_WDI\_任务\_停止\_AP 请求 IHV 组件断开连接指定端口上的所�
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
-<td><p>Windows Server 2016</p></td>
+<td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Dot11wdi.h</td>
+<td><p>标头</p></td>
+<td>Dot11wdi</td>
 </tr>
 </tbody>
 </table>

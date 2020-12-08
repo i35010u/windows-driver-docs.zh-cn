@@ -1,18 +1,17 @@
 ---
 title: 跟踪标志
 description: 跟踪标志
-ms.assetid: a94159ab-ce21-4604-beb8-ee01e333505e
 keywords:
 - 跟踪标志 WDK
 - 标志 WDK 软件跟踪
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f2d42309c449b06f2e82e047c5d91968bc4efc1e
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 6c3530e41e151bd29fc8ebfecd9a0d01f09aea5a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89384143"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96830137"
 ---
 # <a name="trace-flags"></a>跟踪标志
 

@@ -1,7 +1,6 @@
 ---
 title: 为启动配置创建资源列表
 description: 为启动配置创建资源列表
-ms.assetid: 8b78cbac-b547-45a1-a49c-f5543bf5ffed
 keywords:
 - 硬件资源 WDK KMDF，启动配置资源列表
 - 启动配置资源列表 WDK KMDF
@@ -10,12 +9,12 @@ keywords:
 - 资源列表 WDK KMDF，创建
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 02cd24fc646a68a6ce9b45c793f8a1619216e54b
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: d94d83bb095cc281fcf0203932439b8d4443f36d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89187069"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96829049"
 ---
 # <a name="creating-a-resource-list-for-a-boot-configuration"></a>为启动配置创建资源列表
 

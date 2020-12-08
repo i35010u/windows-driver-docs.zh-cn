@@ -1,16 +1,15 @@
 ---
 title: OID_GEN_PHYSICAL_MEDIUM_EX
 description: 作为查询，OID_GEN_PHYSICAL_MEDIUM_EX OID 指定了微型端口适配器支持的物理介质的类型。
-ms.assetid: cbac8c9b-d7fe-4588-8a64-599d04a77a72
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_GEN_PHYSICAL_MEDIUM_EX 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 5393898f1653d38db763f8fb3b3d664dc411634b
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 04a265006fca9ecc3f47d4107380d293277230f6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89213399"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96829455"
 ---
 # <a name="oid_gen_physical_medium_ex"></a>OID \_ 代 \_ 物理 \_ 介质（ \_ EX）
 
@@ -22,9 +21,9 @@ ms.locfileid: "89213399"
 
 NDIS 处理 NDIS 6.0 和更高版本的小型小型驱动程序的此 OID。 微型端口驱动程序在初始化过程中提供了物理媒体值。
 
-[**Ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的**InformationBuffer**成员包含 ndis \_ 物理 \_ 媒体枚举值。
+[**Ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的 **InformationBuffer** 成员包含 ndis \_ 物理 \_ 媒体枚举值。
 
-**注意**   OID 生成 \_ \_ 物理 \_ 媒体 \_ ex 和[oid \_ 代 \_ 物理 \_ 介质](oid-gen-physical-medium.md)之间的区别在于，Oid 生成 \_ \_ 物理 \_ 介质的 \_ 版本不会将**NdisPhysicalMedium802 \_ 3**类型重写为**NdisPhysicalMediumUnspecified** ，而 oid \_ gen \_ 实地 \_ medium 仍会。 建议所有的1.x 驱动程序使用 EX 版本。 OID \_ 代 \_ 物理 \_ 介质（ \_ EX）通过 WMI GUID 公开。
+**注意**  OID 生成 \_ \_ 物理 \_ 媒体 \_ ex 和 [oid \_ 代 \_ 物理 \_ 介质](oid-gen-physical-medium.md) 之间的区别在于，Oid 生成 \_ \_ 物理 \_ 介质的 \_ 版本不会将 **NdisPhysicalMedium802 \_ 3** 类型重写为 **NdisPhysicalMediumUnspecified** ，而 oid \_ gen \_ 实地 \_ medium 仍会。 建议所有的1.x 驱动程序使用 EX 版本。 OID \_ 代 \_ 物理 \_ 介质（ \_ EX）通过 WMI GUID 公开。
 
  
 
@@ -56,7 +55,7 @@ NDIS 处理 NDIS 6.0 和更高版本的小型小型驱动程序的此 OID。 微
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)

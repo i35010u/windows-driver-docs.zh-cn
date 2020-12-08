@@ -1,11 +1,10 @@
 ---
 title: .logappend（追加日志文件）
-description: .Logappend 命令将附加事件和调试器命令窗口中指定的日志文件的命令的副本。
-ms.assetid: e1c58c34-1fc5-4ec3-bd37-6c7816735aec
+description: Logpath 命令将事件和命令的副本从调试器命令窗口追加到指定的日志文件。
 keywords:
-- 追加日志文件 (.logappend) 命令
-- 日志文件，追加日志文件 (.logappend) 命令
-- .logappend （追加日志文件） Windows 调试
+- 将日志文件 ( 追加) 命令
+- 日志文件，将日志文件 ( 追加) 命令
+- logpath (追加日志文件) Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -14,34 +13,34 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 2355ff00e776403108f1f480b2b04a6965927956
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ed209fffa0965c68d5b2382676bb78ab9296d992
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63336180"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96829809"
 ---
 # <a name="logappend-append-log-file"></a>.logappend（追加日志文件）
 
 
-**.Logappend**命令将附加事件的副本，并从命令[调试器命令窗口](debugger-command-window.md)到指定的日志文件。
+**Logpath** 命令将事件和命令的副本从 [调试器命令窗口](debugger-command-window.md)追加到指定的日志文件。
 
 ```dbgcmd
 .logappend [/u] [FileName]
 ```
 
-## <a name="span-idddkmetaappendlogfiledbgspanspan-idddkmetaappendlogfiledbgspanparameters"></a><span id="ddk_meta_append_log_file_dbg"></span><span id="DDK_META_APPEND_LOG_FILE_DBG"></span>参数
+## <a name="span-idddk_meta_append_log_file_dbgspanspan-idddk_meta_append_log_file_dbgspanparameters"></a><span id="ddk_meta_append_log_file_dbg"></span><span id="DDK_META_APPEND_LOG_FILE_DBG"></span>参数
 
 
-<span id="________u______"></span><span id="________U______"></span> **/u**   
-以 Unicode 格式写入日志文件。 如果省略此参数，则调试器以 ASCII (ANSI) 格式写入日志文件。
+<span id="________u______"></span><span id="________U______"></span>**/u**   
+写入 Unicode 格式的日志文件。 如果省略此参数，则调试器会以 ASCII (ANSI) 格式写入日志文件。
 
-**请注意**  时将追加到现有日志文件，应使用 **/u**参数仅当使用创建日志文件 **/u**选项。 否则，日志文件将包含 ASCII 和 Unicode 字符，这可能会使更难以阅读。
+**注意**  追加到现有日志文件时，仅当使用 **/u** 选项创建了日志文件时，才应使用 **/u** 参数。 否则，日志文件将包含 ASCII 字符和 Unicode 字符，这可能会导致更难阅读。
 
  
 
-<span id="_______FileName______"></span><span id="_______filename______"></span><span id="_______FILENAME______"></span> *FileName*   
-指定日志文件的名称。 您可以指定完整路径或文件名。 如果文件名包含空格，则将*文件名*引号引起来。 如果不指定路径，调试器将使用当前目录。 如果省略*文件名*，调试器命名 Dbgeng.log 的文件。
+<span id="_______FileName______"></span><span id="_______filename______"></span><span id="_______FILENAME______"></span>*FileName*   
+指定日志文件的名称。 可以指定完整路径或仅指定文件名。 如果文件名包含空格，请将 *文件名* 用引号引起来。 如果未指定路径，则调试器将使用当前目录。 如果省略 *FileName*，则调试器会将文件命名为 Dbgeng。
 
 ### <a name="span-idenvironmentspanspan-idenvironmentspanspan-idenvironmentspanenvironment"></a><span id="Environment"></span><span id="environment"></span><span id="ENVIRONMENT"></span>环境
 
@@ -52,12 +51,12 @@ ms.locfileid: "63336180"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>模式</strong></p></td>
-<td align="left"><p>用户模式下，内核模式</p></td>
+<td align="left"><p><strong>交货</strong></p></td>
+<td align="left"><p>用户模式，内核模式</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>目标</strong></p></td>
-<td align="left"><p>实时、 崩溃转储</p></td>
+<td align="left"><p>实时，故障转储</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>平台</strong></p></td>
@@ -71,7 +70,7 @@ ms.locfileid: "63336180"
 <a name="remarks"></a>备注
 -------
 
-如果已有一个日志文件打开运行时 **.logappend**命令时，调试器将关闭日志文件。 如果指定的名称已存在的文件，调试器将追加到文件的新信息。 如果该文件不存在，则调试器将创建它。
+如果在运行 **logpath** 命令时已有一个打开的日志文件，则调试器将关闭该日志文件。 如果指定已存在的文件的名称，调试器会将新信息追加到该文件。 如果该文件不存在，调试器将创建该文件。
 
  
 

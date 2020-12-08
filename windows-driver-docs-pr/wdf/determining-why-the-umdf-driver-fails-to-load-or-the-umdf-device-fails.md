@@ -1,7 +1,6 @@
 ---
 title: 确定无法加载 UMDF 驱动程序或设备启动失败的原因
 description: 本主题介绍在 UMDF 驱动程序无法加载或相关设备无法启动时可以使用的故障排除步骤。
-ms.assetid: 366c0ab4-8d06-4dac-a301-f433cf7978bd
 keywords:
 - 调试方案 WDK UMDF，UMDF 驱动程序加载失败
 - 调试方案 WDK UMDF，UMDF 设备无法启动
@@ -11,12 +10,12 @@ keywords:
 - UMDF WDK，设备未启动方案
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ec883f82e925593a98b35bee9cf781f51127a442
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 9ad171743f64783ea27edfba93cbe50e49c8025c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89187247"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96828949"
 ---
 # <a name="determining-why-the-umdf-driver-fails-to-load-or-the-umdf-device-fails-to-start"></a>确定 UMDF 驱动程序无法加载或 UMDF 设备无法启动的原因
 
@@ -32,7 +31,7 @@ ms.locfileid: "89187247"
 
     -   % windir% \\ inf \\ Setupapi.log 在 Windows XP) 、% windir% \\ setupact.log 和% windir% \\ temp \\ wudf \_ 更新日志中 (setupapi.log。
 
-2.  如果未找到任何安装问题，请通过使用[WDF 验证器控件应用程序](../devtest/wdf-verifier-control-application.md) ( # A0) 来启用**HostProcessDbgBreakOnStart**注册表项。 通过启用 **HostProcessDbgBreakOnStart**，你可以将设备的驱动程序主机进程 ( # A0) 在 WUDFHost.exe 启动之后、驱动程序 DLL 加载之前立即进入调试器。
+2.  如果未找到任何安装问题，请通过使用 [WDF 验证器控件应用程序](../devtest/wdf-verifier-control-application.md) ( # A0) 来启用 **HostProcessDbgBreakOnStart** 注册表项。 通过启用 **HostProcessDbgBreakOnStart**，你可以将设备的驱动程序主机进程 ( # A0) 在 WUDFHost.exe 启动之后、驱动程序 DLL 加载之前立即进入调试器。
 
     应使用用户模式调试器而不是内核模式调试器来启用 **HostProcessDbgBreakOnStart** 。 默认情况下，内核模式调试器不接收用户模式模块加载和卸载通知。 因此，您将无法设置延迟断点。
 

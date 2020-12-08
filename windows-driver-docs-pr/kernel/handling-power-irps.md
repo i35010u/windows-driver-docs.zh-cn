@@ -1,7 +1,6 @@
 ---
 title: 处理电源 IRP
 description: 处理电源 IRP
-ms.assetid: 0fe4f27a-101d-41af-8f00-fb36da5dc793
 keywords:
 - 电源管理 WDK 内核，Irp
 - Irp WDK 电源管理
@@ -21,12 +20,12 @@ keywords:
 - I/o 请求数据包 WDK 电源管理
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 17ffa8b2c3266b9b86f57872fcaefbeab8b81663
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 2243e65379cb146ec99b7fb4ae708970c9ba2fd1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89189361"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96830395"
 ---
 # <a name="handling-power-irps"></a>处理电源 IRP
 
@@ -34,15 +33,15 @@ ms.locfileid: "89189361"
 
 
 
-驱动程序在 [*DispatchPower*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch) 例程中处理电源 irp。 所有电源管理请求都具有主要 IRP 代码 [**irp \_ MJ \_ **](./irp-mj-power.md) ，并具有以下次要代码之一：
+驱动程序在 [*DispatchPower*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch) 例程中处理电源 irp。 所有电源管理请求都具有主要 IRP 代码 [**irp \_ MJ \_**](./irp-mj-power.md) ，并具有以下次要代码之一：
 
-[**IRP \_MN \_ QUERY \_ power**](./irp-mn-query-power.md)   -用于确定更改电源状态是否可行的查询
+[**IRP \_MN \_ QUERY \_ power**](./irp-mn-query-power.md) -用于确定更改电源状态是否可行的查询
 
-[**IRP \_MN \_ 设置 \_ 电源**](./irp-mn-set-power.md)   -请求从一个电源状态更改为另一个电源状态
+[**IRP \_MN \_ 设置 \_ 电源**](./irp-mn-set-power.md) -请求从一个电源状态更改为另一个电源状态
 
-[**IRP \_MN \_ 等待 \_ 唤醒**](./irp-mn-wait-wake.md)   -请求启用设备以唤醒自身或系统
+[**IRP \_MN \_ 等待 \_ 唤醒**](./irp-mn-wait-wake.md) -请求启用设备以唤醒自身或系统
 
-[**IRP \_MN \_ 幂 \_ 序列**](./irp-mn-power-sequence.md)   -请求信息以优化到特定设备的电源恢复
+[**IRP \_MN \_ 幂 \_ 序列**](./irp-mn-power-sequence.md) -请求信息以优化到特定设备的电源恢复
 
 需要对 **IRP \_ MN \_ SET \_ power** 和 **IRP \_ MN \_ 查询 \_ 能力** 进行支持。 所有驱动程序必须准备好处理这些 Irp。
 

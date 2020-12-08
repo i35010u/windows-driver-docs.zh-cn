@@ -1,14 +1,13 @@
 ---
 title: 如何安装 Windows 安装程序和启动所需的测试签名的驱动程序
 description: 描述如何在运行 Windows Server 的计算机上或在 Windows 安装程序
-ms.assetid: 533d1ccb-412b-4e49-aa56-45e6df3f6f66
 ms.date: 10/06/2020
-ms.openlocfilehash: 49c206e1c2873d3598a5d5e01d03248739a5b4d3
-ms.sourcegitcommit: 62c81d88b03bd311d1cdfef5b138d579faceb304
+ms.openlocfilehash: 66c9370cbe2475a3cbc4d54ec841a853a943bc62
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92113500"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96828653"
 ---
 # <a name="how-to-install-a-test-signed-driver-required-for-windows-setup-and-boot"></a>如何安装 Windows 安装程序和启动所需的测试签名的驱动程序
 

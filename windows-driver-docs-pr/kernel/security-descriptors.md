@@ -1,7 +1,6 @@
 ---
 title: 安全描述符
 description: 安全描述符
-ms.assetid: a5edd5e8-6fc7-4ab0-aebc-f0cd8e9299b6
 keywords:
 - 安全描述符 WDK 对象
 - 系统 ACL WDK 对象
@@ -12,12 +11,12 @@ keywords:
 - ACL WDK 对象
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 65a0e6e7a05dab3a0d64db039ca47ed0a3ccbb8c
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: 8077d3316cc316791258b393cd967c4b9b9ae4bd
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89402832"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96829531"
 ---
 # <a name="security-descriptors"></a>安全描述符
 

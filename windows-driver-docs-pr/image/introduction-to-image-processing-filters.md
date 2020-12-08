@@ -1,15 +1,14 @@
 ---
 title: 图像处理筛选器简介
 description: 图像处理筛选器简介
-ms.assetid: 59fc1bc1-c783-43df-9778-ea4306f6dd50
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cc57cc4afe844134cdca48b7dabd886efc5486c1
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 1b1c5ea84ccf1f15eff4314a9f39d22d9c11ae54
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89189595"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96828693"
 ---
 # <a name="introduction-to-image-processing-filters"></a>图像处理筛选器简介
 
@@ -29,7 +28,7 @@ ms.locfileid: "89189595"
 
 Microsoft 提供了 WIA 预览组件，用于缓存从扫描仪获取的原始未筛选的预览图像。 使用 "预览" 组件，可以将筛选器多次应用于映像，而无需从扫描程序中重新获取映像。 当应用程序允许用户更改设置（如对比度和亮度）时，WIA 预览组件通常将用于预览图像。 当用户更改设置时，应用程序可以在预览窗格中持续显示生成的图像，而不必重新扫描映像。
 
-图像处理筛选器是一个 WIA 扩展，作为进程内 COM 组件运行。 与分段筛选器不同，应用程序通常不会通过调用 Windows SDK 文档) 中所述的 **IWiaItem2：： path.getextension 对** (来创建图像处理筛选器的实例。 相反，应用程序将创建 WIA 预览组件的实例，然后使用 **IWiaItem2：： path.getextension 对** 方法加载实际图像处理筛选器。 当应用程序调用 IWiaTransfer 时，也会自动调用图像处理筛选器 **：:D o) **。
+图像处理筛选器是一个 WIA 扩展，作为进程内 COM 组件运行。 与分段筛选器不同，应用程序通常不会通过调用 Windows SDK 文档) 中所述的 **IWiaItem2：： path.getextension 对** (来创建图像处理筛选器的实例。 相反，应用程序将创建 WIA 预览组件的实例，然后使用 **IWiaItem2：： path.getextension 对** 方法加载实际图像处理筛选器。 当应用程序调用 IWiaTransfer 时，也会自动调用图像处理筛选器 **：:D o)**。
 
 图像处理筛选器与驱动程序相关联，通常与驱动程序一起分发。 WIA 预览组件在 sti.dll 提供，并随操作系统提供。
 

@@ -1,7 +1,6 @@
 ---
 title: 'KsTimedPinCallbacks 规则 ( # A1'
 description: KsTimedPinCallbacks 规则指定内核流式处理 (KS) 微型端口驱动程序在 500 ms 内从 pin 回调函数返回。
-ms.assetid: 7B8FF078-118F-465C-BF2F-FECF6EAC3568
 ms.date: 05/21/2018
 keywords:
 - 'KsTimedPinCallbacks 规则 ( # A1'
@@ -12,12 +11,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: e4980b34b6492ca88c8c0804089e5f62c5990934
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: b06fd60c2a65e7bb4e2a7b6181ca2bd8ea9d7b8a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107540"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96830199"
 ---
 # <a name="kstimedpincallbacks-rule-"></a>KsTimedPinCallbacks 规则 ( # A1
 

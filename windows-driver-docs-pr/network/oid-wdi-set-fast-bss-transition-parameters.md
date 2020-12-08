@@ -1,25 +1,24 @@
 ---
 title: OID_WDI_SET_FAST_BSS_TRANSITION_PARAMETERS
 description: 为了响应 NDIS_STATUS_WDI_INDICATION_FT_ASSOC_PARAMS_NEEDED，将发送 OID_WDI_SET_FAST_BSS_TRANSITION_PARAMETERS。 它具有) 关联请求发送 (所需的参数。 命令作为直接 OID 发送到驱动程序。
-ms.assetid: D769E49D-C565-41CD-9C91-195B1223AE66
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 OID_WDI_SET_FAST_BSS_TRANSITION_PARAMETERS 网络驱动程序
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 2b707885b689661b09ada9810d02c5913ade0d27
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: c6d8a89ed6b7d2f292d0c812c4914d97cb4bb885
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89206325"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96829379"
 ---
 # <a name="oid_wdi_set_fast_bss_transition_parameters"></a>OID \_ WDI \_ 设置 \_ 快速 \_ BSS \_ 转换 \_ 参数
 
 
 OID \_ WDI \_ 设置 \_ 快速 \_ BSS \_ 转换 \_ 参数是为了响应 [NDIS \_ 状态 \_ WDI \_ 指示 \_ \_ \_ \_ 需要 FT ASSOC](ndis-status-wdi-indication-ft-assoc-params-needed.md)参数而发送的。 它具有) 关联请求发送 (所需的参数。 命令作为直接 OID 发送到驱动程序。
 
-| 作用域 | 设置序列化任务 | 正常执行时间 (秒)  |
+| 范围 | 设置序列化任务 | 正常执行时间 (秒)  |
 |-------|--------------------------|---------------------------------|
 | 端口  | 否                       | 1                               |
 
@@ -57,7 +56,7 @@ OID \_ WDI \_ 设置 \_ 快速 \_ BSS \_ 转换 \_ 参数是为了响应 [NDIS \
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
-<td><p>Windows Server 2016</p></td>
+<td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
 <td><p>标头</p></td>

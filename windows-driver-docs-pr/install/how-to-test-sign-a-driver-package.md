@@ -1,15 +1,14 @@
 ---
 title: 如何对驱动程序包进行测试签名
 description: 如何对驱动程序包进行测试签名
-ms.assetid: 992f0974-0b0e-4c96-ad16-c5894067896c
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 370242ed2976478394474f4183b97841755a5c7b
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: dd81064fc1265efe26c2b7d602364cc41c74200a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89095247"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96828647"
 ---
 # <a name="how-to-test-sign-a-driver-package"></a>如何对驱动程序包进行测试签名
 
@@ -22,15 +21,15 @@ Windows 只支持用于开发和测试目的的测试签名驱动程序。 测�
 
 本部分包含的主题介绍了这些步骤，并提供了示例，如下所示：
 
--   创建用于签署驱动程序包的测试证书。 本部分介绍如何创建并使用名为 Contoso.com 的自签名测试证书 * (测试) *。 此证书用于此部分中讨论的许多示例。
+-   创建用于签署驱动程序包的测试证书。 本部分介绍如何创建并使用名为 Contoso.com 的自签名测试证书 *(测试)*。 此证书用于此部分中讨论的许多示例。
 
 -   正在为测试签名准备 [驱动程序包](driver-packages.md) 。 这包括创建包含数字签名的 [目录文件](catalog-files.md) 。
 
--   使用 *Contoso.com (测试) * 证书对驱动程序包的目录文件进行测试签名。
+-   使用 *Contoso.com (测试)* 证书对驱动程序包的目录文件进行测试签名。
 
--   通过嵌入签名对驱动程序进行测试签名，方法是使用 *Contoso.com (测试) * 证书。
+-   通过嵌入签名对驱动程序进行测试签名，方法是使用 *Contoso.com (测试)* 证书。
 
-    **注意**   如果驱动程序是*启动启动驱动*程序，则必须在驱动程序中嵌入数字签名。
+    **注意**  如果驱动程序是 *启动启动驱动* 程序，则必须在驱动程序中嵌入数字签名。
 
      
 
@@ -46,7 +45,7 @@ Windows 只支持用于开发和测试目的的测试签名驱动程序。 测�
 
 本节中的主题使用 *toastpkg.inf* 示例驱动程序包来引入测试签名过程。 在 WDK 安装目录中， *toastpkg.inf* 驱动程序包位于 *src \\ general \\ toaster \\ toastpkg.inf* 目录中。
 
-**注意**   WDK 包含一个示例命令脚本，其中显示了对*toastpkg.inf*示例[驱动程序包](driver-packages.md)进行正确测试的分步过程。 您可以修改此脚本以对您自己的驱动程序包进行测试签名。 在 WDK 安装目录中，该示例位于 *src \\ general \\ build \\ driversigning \\ selfsign_example .cmd*中。 *Src \\ general \\ build \\ driversigning \\selfsign_readme.htm*中介绍了有关测试签名的其他说明。
+**注意**  WDK 包含一个示例命令脚本，其中显示了对 *toastpkg.inf* 示例 [驱动程序包](driver-packages.md)进行正确测试的分步过程。 您可以修改此脚本以对您自己的驱动程序包进行测试签名。 在 WDK 安装目录中，该示例位于 *src \\ general \\ build \\ driversigning \\ selfsign_example .cmd* 中。 *Src \\ general \\ build \\ driversigning \\selfsign_readme.htm* 中介绍了有关测试签名的其他说明。
 
  
 

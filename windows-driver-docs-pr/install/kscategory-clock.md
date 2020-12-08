@@ -1,7 +1,6 @@
 ---
 title: KSCATEGORY_CLOCK
 description: KSCATEGORY_CLOCK
-ms.assetid: 1a5afadd-f76f-4184-a93e-af82769ecc1b
 keywords:
 - KSCATEGORY_CLOCK 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: adc09d8cf65195f8628b551fa2c856847b22804d
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: c468073cd7aae60d73217ed12911ea5dfecb7d61
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89097257"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96829893"
 ---
 # <a name="kscategory_clock"></a>KSCATEGORY_CLOCK
 

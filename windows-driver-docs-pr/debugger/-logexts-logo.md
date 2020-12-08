@@ -1,9 +1,8 @@
 ---
-title: logexts.logo
-description: Logexts.logo 扩展设置，或显示记录器输出选项。
-ms.assetid: b094cf4b-1d01-4b84-9032-aa865d680df4
+title: logexts 徽标
+description: Logexts 扩展会设置或显示记录器输出选项。
 keywords:
-- logexts.logo Windows 调试
+- logexts Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,33 +11,33 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 686db814fb70116f5c10a04621c4df263aaa058d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ed838eccbcb77f2140dcc2b7db86c00d9fbe7b57
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63336192"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96829777"
 ---
 # <a name="logextslogo"></a>!logexts.logo
 
 
-**！ Logexts.logo**扩展插件设置，或显示记录器输出选项。
+**！ Logexts** 扩展设置或显示记录器输出选项。
 
 ```dbgcmd
 !logexts.logo {e|d} {d|t|v} 
 !logexts.logo 
 ```
 
-## <a name="span-idddklogextslogodbgspanspan-idddklogextslogodbgspanparameters"></a><span id="ddk__logexts_logo_dbg"></span><span id="DDK__LOGEXTS_LOGO_DBG"></span>参数
+## <a name="span-idddk__logexts_logo_dbgspanspan-idddk__logexts_logo_dbgspanparameters"></a><span id="ddk__logexts_logo_dbg"></span><span id="DDK__LOGEXTS_LOGO_DBG"></span>参数
 
 
-<span id="_______e_d"></span><span id="_______E_D"></span> **e|d**  
-指定是启用 (e) 还是禁用 (d) 所指示的输出类型。
+<span id="_______e_d"></span><span id="_______E_D"></span>**e | d**  
+指定是启用 (e) 还是禁用 (d) 指定的输出类型。
 
-<span id="_______d_t_v"></span><span id="_______D_T_V"></span> **d|t|v**  
-指定输出类型。 可使用三种类型的记录器输出： 消息直接发送到调试器 (d)，一个文本文件 (t) 或详细.lgv 文件 (v)。
+<span id="_______d_t_v"></span><span id="_______D_T_V"></span>**d | t | v**  
+指定输出类型。 可以使用三种类型的记录器输出：直接发送到调试器的消息 (d) ，文本文件 (t) ，或 (v) 的 lgv 文件。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 <table>
 <colgroup>
@@ -59,14 +58,14 @@ ms.locfileid: "63336192"
 
  
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-有关详细信息，请参阅[记录器和日志查看器](logger-and-logviewer.md)。
+有关详细信息，请参阅 [记录器和 LogViewer](logger-and-logviewer.md)。
 
 <a name="remarks"></a>备注
 -------
 
-如果 **！ logexts.logo**使用不带任何参数，则将显示当前的日志记录状态、 输出目录和调试器、 文本文件和详细日志的当前设置：
+如果在没有任何参数的情况下使用 **！ logexts** ，则会显示当前日志记录状态、输出目录和调试器、文本文件和详细日志的当前设置：
 
 ```dbgcmd
 0:000> !logo
@@ -80,9 +79,9 @@ Output settings:
   Verbose log         Enabled
 ```
 
-在上一示例中，输出目录是相对路径，因此它位于相对于在其中启动调试程序的目录。
+在上面的示例中，输出目录是相对路径，因此它相对于启动调试器的目录进行定位。
 
-若要禁用详细日志记录，将使用以下命令：
+若要禁用详细日志记录，请使用以下命令：
 
 ```dbgcmd
 0:000> !logo d v
@@ -91,7 +90,7 @@ Output settings:
   Verbose log         Disabled
 ```
 
-文本文件和.lgv 文件将位于当前的输出目录。 若要读取的.lgv 文件，使用日志查看器。
+文本文件和 lgv 文件将放在当前的输出目录中。 若要读取 lgv 文件，请使用 LogViewer。
 
  
 

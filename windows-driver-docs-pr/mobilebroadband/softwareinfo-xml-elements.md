@@ -1,15 +1,14 @@
 ---
 title: SoftwareInfo XML 元素列表
 description: SoftwareInfo XML 元素列表
-ms.assetid: a8e8401d-456a-4c0a-976c-3802061a2bf6
 ms.date: 07/05/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 7b4b9dba5c545d1eaefa959c866c0599c08cbdf3
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: 2a7e70e411bb58975a54022baa4244b1fb7d4a5d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89403164"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96830357"
 ---
 # <a name="softwareinfo-xml-elements-list"></a>SoftwareInfo XML 元素列表
 
@@ -27,7 +26,7 @@ ms.locfileid: "89403164"
 
             -   [应用程序](applications.md)
 
-                -   [应用程序](application-softwareinfo-schema.md)
+                -   应用程序
 
                     -   [DeviceNotificationHandlers](devicenotificationhandlers.md)
 

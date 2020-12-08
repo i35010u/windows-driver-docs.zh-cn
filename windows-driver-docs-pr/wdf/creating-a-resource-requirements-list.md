@@ -1,7 +1,6 @@
 ---
 title: 创建资源要求列表
 description: 创建资源要求列表
-ms.assetid: 1254aa21-c64b-4c62-93dc-6758cef382f9
 keywords:
 - 硬件资源 WDK KMDF，创建资源需求列表
 - 资源要求列出了 WDK KMDF
@@ -10,12 +9,12 @@ keywords:
 - 框架资源需求-列表对象 WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: be088cc2f2a63e774df577887798b4ef340bbc67
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 8c34934ceda273ac14f07015100ab01833397899
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89185071"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96829041"
 ---
 # <a name="creating-a-resource-requirements-list"></a>创建资源要求列表
 

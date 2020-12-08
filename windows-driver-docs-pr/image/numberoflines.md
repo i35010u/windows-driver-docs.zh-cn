@@ -1,9 +1,8 @@
 ---
 title: NumberOfLines 元素
-description: 所需的 NumberOfLines 元素描述的确切的高度，以像素为单位，最终输出图像。
-ms.assetid: 9f7f96d4-fd88-4d14-b000-7abefe96775f
+description: 必需的 NumberOfLines 元素描述最终输出图像的准确高度（以像素为单位）。
 keywords:
-- NumberOfLines 元素成像设备
+- NumberOfLines 元素图像设备
 topic_type:
 - apiref
 api_name:
@@ -12,19 +11,19 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 519cacdacbfc62c1c8bbb7be60111b5ddb47d53a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: fc56d5e0a82eeadecb0bb91b4acd80fb79f45748
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542526"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96829639"
 ---
 # <a name="numberoflines-element"></a>NumberOfLines 元素
 
 
-所需**NumberOfLines**元素描述的确切的高度，以像素为单位，最终输出图像。
+必需的 **NumberOfLines** 元素描述最终输出图像的准确高度（以像素为单位）。
 
-<a name="usage"></a>用法
+<a name="usage"></a>使用情况
 -----
 
 ```xml
@@ -33,7 +32,7 @@ ms.locfileid: "56542526"
 </wscn:NumberOfLines>
 ```
 
-<a name="attributes"></a>属性
+<a name="attributes"></a>特性
 ----------
 
 没有特性。
@@ -41,12 +40,12 @@ ms.locfileid: "56542526"
 <a name="text-value"></a>文本值
 ----------
 
-必需。 一个从 1 到 2147483647 范围内的整数值。
+必需。 介于1到2147483647之间的整数值。
 
 ## <a name="child-elements"></a>子元素
 
 
-没有子元素。
+没有任何子元素。
 
 ## <a name="parent-elements"></a>父元素
 
@@ -73,9 +72,9 @@ ms.locfileid: "56542526"
 <a name="remarks"></a>备注
 -------
 
-指定的值说明了确切的高度，以像素为单位或行，将为当前生成的最终输出映像数[ **ScanTicket** ](scanticket.md)要验证的设置。 此高度包括旋转和扫描程序可能再传输到客户端扫描图像执行任何调整。
+指定的值描述最终输出图像的准确高度（以像素为单位）或行数，将为正在验证的当前 [**ScanTicket**](scanticket.md) 设置生成该输出图像。 此高度包括旋转以及扫描程序在将扫描图像传输到客户端之前可能会对其执行的任何调整。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**MediaBackImageInfo**](mediabackimageinfo.md)

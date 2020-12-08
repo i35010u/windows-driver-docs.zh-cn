@@ -1,18 +1,17 @@
 ---
 title: OID_WDI_TASK_CREATE_PORT
 description: OID_WDI_TASK_CREATE_PORT 请求由 IHV 组件创建新的802.11 实体。
-ms.assetid: e1a03a97-608f-42af-bd39-37a7eb9ad5b7
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 OID_WDI_TASK_CREATE_PORT 网络驱动程序
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: c387114f5dc9f666ed078f2e2db41a854622cff6
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 81d9ecdb96287b666c3f25f8d773ac659c8cb9c7
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104170"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96829289"
 ---
 # <a name="oid_wdi_task_create_port"></a>OID \_ WDI \_ 任务 \_ 创建 \_ 端口
 
@@ -27,7 +26,7 @@ OID \_ WDI \_ TASK \_ CREATE \_ PORT 请求由 IHV 组件创建新的802.11 实�
 
 创建的端口的操作模式设置为 **WDI \_ 操作 \_ 模式 \_ STA** ，除非它已在任务参数中指定。
 
-如果 MAC 充当 Wi-fi Direct 设备端口， **uOpmodeMask** 将包含 **WDI \_ 操作 \_ 模式 \_ P2P \_ 设备**。 在这种情况下，IHV 组件驱动程序必须将为 Wi-fi Direct 设备保留的 MAC 地址分配到此端口，并在请求完成指示中返回。
+如果 MAC 充当 Wi-Fi Direct 设备端口， **uOpmodeMask** 将包含 **WDI \_ 操作 \_ 模式 \_ P2P \_ 设备**。 在这种情况下，IHV 组件驱动程序必须将为 Wi-Fi Direct 设备保留的 MAC 地址分配到此端口，并在请求完成指示中返回。
 
 ## <a name="task-parameters"></a>任务参数
 
@@ -86,7 +85,7 @@ OID \_ WDI \_ TASK \_ CREATE \_ PORT 请求由 IHV 组件创建新的802.11 实�
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
-<td><p>Windows Server 2016</p></td>
+<td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
 <td><p>标头</p></td>

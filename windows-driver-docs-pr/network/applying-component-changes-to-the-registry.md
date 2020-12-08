@@ -1,19 +1,18 @@
 ---
 title: 将组件更改应用到注册表
 description: 将组件更改应用到注册表
-ms.assetid: f844a693-cf26-407c-b182-b652a4c585b4
 keywords:
 - 通知对象 WDK 网络，注册表值
 - 网络通知对象 WDK，注册表值
 - 注册表 WDK 通知对象
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7ff19740d08c805ec91c7b3525fde2893b2a0aa4
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: f97ff7d73ce844eacc06552aa9953449ea79f148
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89206507"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96829991"
 ---
 # <a name="applying-component-changes-to-the-registry"></a>将组件更改应用到注册表
 

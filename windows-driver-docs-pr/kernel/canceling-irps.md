@@ -1,7 +1,6 @@
 ---
 title: 取消 IRP
 description: 取消 IRP
-ms.assetid: da199435-f6c3-44f4-b1ed-0280f39ee452
 keywords:
 - Irp WDK 内核，取消
 - 正在取消 Irp
@@ -11,12 +10,12 @@ keywords:
 - 未处理的 IRP 取消 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1d43acedb9e736973bd0875f6e2b2ff1b0836cbe
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 537c989b3ce77f8c6e73a044cbfcd205ad5d2eba
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89191675"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96828559"
 ---
 # <a name="canceling-irps"></a>取消 IRP
 
@@ -30,7 +29,7 @@ Irp 可能会保持排队等候无限间隔的驱动程序， (这样用户就�
 
 若要 "取消 IRP"，请尽可能快地完成 IRP，同时仍保持系统的完整性。 有关 IRP 完成的一般讨论，请参阅 [完成 irp](completing-irps.md)。
 
-当系统或驱动程序调用 [**IoCancelIrp**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocancelirp)时，取消过程开始。 对于与尚未完全完成的线程关联的每个 IRP，将调用此例程。 如果启动 i/o 请求的线程退出，系统会取消未处理的 Irp。 驱动程序只能取消已创建的 Irp (请参阅 [为低级驱动程序创建 irp](creating-irps-for-lower-level-drivers.md)。 ) 
+当系统或驱动程序调用 [**IoCancelIrp**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocancelirp)时，取消过程开始。 对于与尚未完全完成的线程关联的每个 IRP，将调用此例程。 如果启动 i/o 请求的线程退出，系统会取消未处理的 Irp。 驱动程序只能取消已创建的 Irp (请参阅 [为 Lower-Level 驱动程序创建 irp](creating-irps-for-lower-level-drivers.md)。 ) 
 
 如果在5分钟内未完成 IRP，i/o 管理器会将 IRP 视为超时。此类 Irp 与线程解除关联，并为当前拥有 IRP 的设备记录错误。 你应确保在你的驱动程序中可能需要很长时间才能完成的任何请求都是可取消的。 若要确保可能的长时间请求可取消，可以使用 " [取消安全 IRP 队列](cancel-safe-irp-queues.md) " 或 " [内核模式驱动程序框架](../wdf/index.md)"，它将取消从驱动程序开发人员中取消。
 

@@ -1,35 +1,34 @@
 ---
 title: 短信设备存储限制
 description: 短信设备存储限制
-ms.assetid: b2491562-352e-4881-99c7-98d43aeec64b
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 976c7b48b996848c3cdfa9bac7292e56724dbe1b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: aca894688deabd6303ebc96f7a436489111b83a5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63323665"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96830355"
 ---
 # <a name="sms-device-storage-limits"></a>短信设备存储限制
 
 
-SMS 客户端应用程序应使用短信设备存储为消息队列。 在设备上的总 SMS 存储各不相同，但设备存储空间通常限制为 30 的消息。
+SMS 客户端应用应使用 SMS 设备存储作为消息队列。 设备上的 SMS 存储总数有所不同，但设备存储通常限制为30条消息。
 
-移动宽带短信平台旨在仍然能够通过释放 SMS 设备存储空间，同时最大程度的用户数据删除接收新传入的 SMS 消息。
+移动宽带 SMS 平台旨在维持在最大程度减少用户数据删除的情况下，通过释放 SMS 设备存储空间来接收新的传入 SMS 消息的功能。
 
-如果 SMS 存储已满，则设备无法接收新的 SMS 消息。 Windows 会自动从设备存储空间来确保能够接收新传入的 SMS 数据，例如重要移动网络运营商通知中删除旧的 SMS 消息。
+如果 SMS 存储已满，则设备无法接收新的 SMS 消息。 Windows 将自动从设备存储中删除旧的 SMS 消息，以确保能够接收新的传入 SMS 数据，如重要的移动网络操作员通知。
 
-我们的建议如下：
+建议如下：
 
--   SMS 客户端应用程序应使用本地应用程序存储维护而不是依靠 SMS 存储设备的消息历史记录。
+-   SMS 客户端应用应使用本地应用存储来维护消息历史记录，而不是依赖于设备 SMS 存储。
 
--   SMS 客户端应用程序不应在读取上删除消息。 SMS 客户端应用程序，应让 Windows 设备的存储已满时自动删除旧的消息。
+-   SMS 客户端应用程序不应在读取时删除消息。 当设备存储已满时，SMS 客户端应用应允许 Windows 自动删除旧的消息。
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
-[开发 SMS 应用程序](developing-sms-apps.md)
+[开发短信应用](developing-sms-apps.md)
 
  
 

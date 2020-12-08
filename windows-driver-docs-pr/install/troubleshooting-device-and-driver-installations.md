@@ -1,7 +1,6 @@
 ---
 title: 排查设备和驱动程序安装问题
 description: 排查设备和驱动程序安装问题
-ms.assetid: 1ffad62b-140d-4a0a-9174-245e0344e605
 keywords:
 - 设备设置 WDK 设备安装，故障排除
 - 设备安装 WDK，故障排除
@@ -11,12 +10,12 @@ keywords:
 - 安装设备 WDK，Setupapi.log
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b76c34fa36ae16b5567b6bf5b08dc72ff64fc8f4
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 7390439deb204a17ebc5d2a7f8a9b43b2483e4c8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89097195"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96828589"
 ---
 # <a name="troubleshooting-device-and-driver-installations"></a>排查设备和驱动程序安装问题
 

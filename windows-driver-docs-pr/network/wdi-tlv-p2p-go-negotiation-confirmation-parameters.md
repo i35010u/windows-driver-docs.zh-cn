@@ -1,22 +1,21 @@
 ---
 title: WDI_TLV_P2P_GO_NEGOTIATION_CONFIRMATION_PARAMETERS
-description: WDI_TLV_P2P_GO_NEGOTIATION_CONFIRMATION_PARAMETERS 是包含传入转协商确认参数 TLV。
-ms.assetid: 69A20B64-C2B9-4C96-8119-EE64E80201EB
+description: WDI_TLV_P2P_GO_NEGOTIATION_CONFIRMATION_PARAMETERS 是包含传入的中转协商确认参数的 TLV。
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_P2P_GO_NEGOTIATION_CONFIRMATION_PARAMETERS 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 47fd457168544483d2c25da2cfe1c38b02a4d0ff
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ce455804c35bc134d73238bde33106811cf8f350
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63362464"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96829149"
 ---
-# <a name="wditlvp2pgonegotiationconfirmationparameters"></a>WDI\_TLV\_P2P\_转\_协商\_确认\_参数
+# <a name="wdi_tlv_p2p_go_negotiation_confirmation_parameters"></a>WDI \_ TLV \_ P2P \_ 中转 \_ 协商 \_ 确认 \_ 参数
 
 
-WDI\_TLV\_P2P\_转\_协商\_确认\_参数是包含传入转协商确认参数 TLV。
+WDI \_ tlv \_ P2P \_ 中转 \_ 协商 \_ 确认 \_ 参数是包含传入的中转协商确认参数的 tlv。
 
 ## <a name="tlv-type"></a>TLV 类型
 
@@ -26,16 +25,16 @@ WDI\_TLV\_P2P\_转\_协商\_确认\_参数是包含传入转协商确认参数 T
 ## <a name="length"></a>长度
 
 
-所有包含的元素的大小的总和 （以字节为单位）。
+Sum (所有包含的元素的大小) 。
 
 ## <a name="values"></a>值
 
 
-| 在任务栏的搜索框中键入  | 描述                                                                                                                                                          |
+| 类型  | 描述                                                                                                                                                          |
 |-------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| UINT8 | Wi-Fi Direct 状态代码，如 Wi-Fi Direct 规范所定义。                                                                                          |
-| UINT8 | Wi-Fi Direct 组功能位掩码。 位掩码匹配那些在 Wi-Fi Direct 技术规范的表 13 组功能位图定义中定义。 |
-| UINT8 | 在上面的组功能位图位将设置由操作系统中。                                                                                  |
+| UINT8 | Wi-Fi 直接状态代码，如 Wi-Fi 直接规范所定义。                                                                                          |
+| UINT8 | Wi-Fi 直接分组功能位掩码。 位掩码与 Wi-Fi 直接技术规范的表13组功能位图定义中定义的位掩码匹配。 |
+| UINT8 | 上面的组功能位图中的位由操作系统设置。                                                                                  |
 
  
 
@@ -54,10 +53,10 @@ WDI\_TLV\_P2P\_转\_协商\_确认\_参数是包含传入转协商确认参数 T
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
-<td><p>Windows Server 2016</p></td>
+<td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Wditypes.hpp</td>
 </tr>
 </tbody>

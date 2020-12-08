@@ -1,7 +1,6 @@
 ---
 title: 如何对驱动程序包进行发布签名
 description: 如何对驱动程序包进行发布签名
-ms.assetid: f02c0a50-01f1-456c-b432-c4d9e8cbc566
 keywords:
 - 版本签名驱动程序 WDK
 - 驱动程序签名 WDK，发布签名包
@@ -14,17 +13,17 @@ keywords:
 - 版本签名驱动程序包 WDK，关于测试签名驱动程序包
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bec9c276103f6a56298752d733736bc18aaa44d8
-ms.sourcegitcommit: ec7bebe3f94536455e62b372c2a28fe69d1717f7
+ms.openlocfilehash: e967808709fbb8ff24033dd1d8442ecbdb767780
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93349797"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96828649"
 ---
 # <a name="how-to-release-sign-a-driver-package"></a>如何对驱动程序包进行发布签名
 
 
-本部分提供对 [驱动程序包](driver-packages.md)进行发布签名时必须遵循的基本步骤。 这包括：
+本部分提供对 [驱动程序包](driver-packages.md)进行发布签名时必须遵循的基本步骤。 其中包括：
 
 -   从商业证书颁发机构 (CA) 获取 [软件发行者证书 (SPC) ](software-publisher-certificate.md) 。
 

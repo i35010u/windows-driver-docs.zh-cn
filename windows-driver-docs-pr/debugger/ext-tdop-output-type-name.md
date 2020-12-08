@@ -1,7 +1,6 @@
 ---
 title: EXT \_ TDOP \_ 输出 \_ 类型 \_ 名称
 description: "\"调试请求\" 的 \"EXT \\_ TDOP \\_ OUTPUT \\_ 类型 \\_ 名称\" 子操作 \" \\_ Ext 类型 \\_ \\_ 化 \\_ 数据 \\_ ANSI 请求\" 操作会打印指定类型化数据的类型名称。"
-ms.assetid: eb0a9026-92fd-4b3e-b513-b691221b3196
 keywords:
 - EXT_TDOP_OUTPUT_TYPE_NAME Windows 调试
 topic_type:
@@ -12,19 +11,19 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dab8ded27471392a9190a6a9dc62f1afd0c38b98
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: dff05a69eb552d7d1c577a9028b719ca9f3caa3d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89212581"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96829973"
 ---
 # <a name="ext_tdop_output_type_name"></a>EXT \_ TDOP \_ 输出 \_ 类型 \_ 名称
 
 
 "调试请求" 的 "EXT \_ TDOP \_ OUTPUT \_ 类型 \_ 名称" 子操作 " [**ext 类型 \_ \_ \_ 化 \_ 数据 \_ ANSI**](debug-request-ext-typed-data-ansi.md)[**请求**](request.md) " 操作会打印指定类型化数据的类型名称。
 
-**参数**
+**Parameters**
 
 <span id="Operation"></span><span id="operation"></span><span id="OPERATION"></span>**运作**  
 设置为 EXT \_ TDOP \_ \_ \_ 此子操作的输出类型名称。

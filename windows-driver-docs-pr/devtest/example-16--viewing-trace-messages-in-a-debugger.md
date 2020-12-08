@@ -1,18 +1,17 @@
 ---
 title: 示例16在调试器中查看跟踪消息
 description: 示例16在调试器中查看跟踪消息
-ms.assetid: c548643c-ae0c-47e7-af0a-0d89ed78f281
 keywords:
 - 显示 WDK 的跟踪消息
 - 显示跟踪消息
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 95eb49b026ed98bd88e4be979507f562d5dd54b5
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 4af23f47ad48476e9c1c55a5b607d5d057705bbd
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89383455"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96830211"
 ---
 # <a name="example-16-viewing-trace-messages-in-a-debugger"></a>示例 16：在调试器中查看跟踪消息
 
@@ -40,7 +39,7 @@ set TRACE_FORMAT_SEARCH_PATH=c:\tracing
 tracelog -start MyTrace -guid MyProvider.ctl -rt -kd
 ```
 
-**Tracelog**命令包含用于启动跟踪会话的会话名称。 它使用 **-guid** 参数标识提供程序文件。 它还使用 **-rt** 参数启动实时跟踪会话，以便将跟踪消息发送到调试器，而不是发送到日志文件。
+**Tracelog** 命令包含用于启动跟踪会话的会话名称。 它使用 **-guid** 参数标识提供程序文件。 它还使用 **-rt** 参数启动实时跟踪会话，以便将跟踪消息发送到调试器，而不是发送到日志文件。
 
 在响应中，Tracelog 报告它已启动了会话。 当跟踪提供程序生成消息时，消息将出现在调试器中。
 

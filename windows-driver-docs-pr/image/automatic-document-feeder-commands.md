@@ -1,15 +1,14 @@
 ---
 title: 自动文档送纸器命令
 description: 自动文档送纸器命令
-ms.assetid: dd6664d6-4853-4f97-85cc-39a7879d523e
 ms.date: 11/09/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: bbb46d113f7da9117ba0bfa94203604620ba2ed5
-ms.sourcegitcommit: ea3215e9d5afe073ed6d01fb6dddf31d95ef3b63
+ms.openlocfilehash: a136dbc09620c82e9dcfb7e49fae9e005f3f2df3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94673765"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96828709"
 ---
 # <a name="automatic-document-feeder-commands"></a>自动文档送纸器命令
 

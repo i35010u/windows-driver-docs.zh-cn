@@ -1,18 +1,17 @@
 ---
 title: SCSI 验证
 description: SCSI 验证
-ms.assetid: dba63137-ff92-480a-bca4-ab651a6bda85
 keywords:
 - SCSI 验证功能 WDK 驱动程序验证程序
 - 微型端口驱动程序 WDK 驱动程序验证程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 764b7004e21a30b0b9a094a7299ed10b131fb144
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 66af10d000b193bed672306433527c0816a128c8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89384437"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96829675"
 ---
 # <a name="scsi-verification"></a>SCSI 验证
 
@@ -48,7 +47,7 @@ SCSI 验证选项可以检测到多个误用了的 SCSI 例程。 还可以单�
 
 有关错误检查参数的完整列表，请参阅 [**Bug 检查 0xF1**](../debugger/bug-check-0xf1--scsi-verifier-detected-violation.md) (SCSI \_ 验证器 \_ 检测到 \_ 冲突) 。
 
-除了这些违规情况外，SCSI 验证还会监视微型端口驱动程序的内存访问，以不正确地使用。 在请求完成后，小型端口驱动程序所做的两个常见内存冲突将在访问 SRB 扩展，并在**未指定微型**端口驱动程序时访问 SRB 的**DataBuffer** 。
+除了这些违规情况外，SCSI 验证还会监视微型端口驱动程序的内存访问，以不正确地使用。 在请求完成后，小型端口驱动程序所做的两个常见内存冲突将在访问 SRB 扩展，并在 **未指定微型** 端口驱动程序时访问 SRB 的 **DataBuffer** 。
 
 此排序的内存冲突通常会导致 [**Bug 检查 0xD1**](../debugger/bug-check-0xd1--driver-irql-not-less-or-equal.md) (驱动程序 \_ IRQL \_ 不 \_ 小于 \_ 或 \_ 等于发出) 。
 
@@ -60,7 +59,7 @@ SCSI 验证选项可以检测到多个误用了的 SCSI 例程。 还可以单�
 
 1.  使用驱动程序验证器管理器或 Verifier.exe 命令行开始验证微型端口驱动程序。 由于 SCSI 验证将不可用作选项，因此必须至少选择一个 "驱动程序验证程序" 选项。 请参阅 [选择驱动程序验证程序选项](selecting-driver-verifier-options.md) 和 [选择要验证的驱动程序](selecting-drivers-to-be-verified.md) 以获取详细信息。
 
-2.  使用 regedit.exe 打开注册表。 在 **HKEY \_ LOCAL \_ MACHINE \\ SYSTEM \\ CurrentControlSet \\ Control \\ ScsiPort** 项中，添加一个名为 **Verifier**的子项。 在该密钥中，添加一个 \_ 名为 **VERIFYLEVEL**的 REG DWORD 条目。 分配给此项的值将确定哪些 SCSI 验证测试将处于活动状态。 值0x1 会获得最大验证。
+2.  使用 regedit.exe 打开注册表。 在 **HKEY \_ LOCAL \_ MACHINE \\ SYSTEM \\ CurrentControlSet \\ Control \\ ScsiPort** 项中，添加一个名为 **Verifier** 的子项。 在该密钥中，添加一个 \_ 名为 **VERIFYLEVEL** 的 REG DWORD 条目。 分配给此项的值将确定哪些 SCSI 验证测试将处于活动状态。 值0x1 会获得最大验证。
 
 3.  重新启动计算机。
 
@@ -79,7 +78,7 @@ SCSI 验证选项可以检测到多个误用了的 SCSI 例程。 还可以单�
 <thead>
 <tr class="header">
 <th align="left">bit</th>
-<th align="left">值</th>
+<th align="left">“值”</th>
 <th align="left">效果</th>
 </tr>
 </thead>
@@ -114,7 +113,7 @@ SCSI 验证选项可以检测到多个误用了的 SCSI 例程。 还可以单�
 
  
 
-在大多数情况下，建议的设置为0xD0000001。 这将启用除**HwAdapterControl**上的时间限制之外的所有**SCSI 验证**程序测试、对**HwInitialize**的时间限制以及对逻辑单元的多个请求上的 "禁止"。 这三项测试通常过于严格。
+在大多数情况下，建议的设置为0xD0000001。 这将启用除 **HwAdapterControl** 上的时间限制之外的所有 **SCSI 验证** 程序测试、对 **HwInitialize** 的时间限制以及对逻辑单元的多个请求上的 "禁止"。 这三项测试通常过于严格。
 
 如果附加了内核调试程序，则可以在启动周期后更改 SCSI 验证级别。 为此，请使用调试器命令：
 
@@ -122,11 +121,11 @@ SCSI 验证选项可以检测到多个误用了的 SCSI 例程。 还可以单�
 kd> ed scsiport!SpVrfyLevel Level 
 ```
 
-使用此命令可以为 *级别*设置新值。 使用此方法，你可以随时更改0x10000000 到 0x8000000) 的高位 (。 但是，如果你想要更改低位 (0x1) ，则必须在启动过程中 (，在内核调试器的初始断点) 执行此操作。
+使用此命令可以为 *级别* 设置新值。 使用此方法，你可以随时更改0x10000000 到 0x8000000) 的高位 (。 但是，如果你想要更改低位 (0x1) ，则必须在启动过程中 (，在内核调试器的初始断点) 执行此操作。
 
 同样，如果要完全停用 SCSI 验证，则需要在初始断点处将 *Level* 设置为0xffffffff。
 
-**注意**   值0xF0000000 将禁用所有测试，但仍会加载 SCSI 验证模块。 如果希望禁用验证，但要在以后启用高位测试，请使用此值。 另一方面，值0xFFFFFFFF 会阻止完全加载模块;如果在启动过程中使用此值，则不能在不重启的情况下启用 SCSI 验证。
+**注意**   值0xF0000000 将禁用所有测试，但仍会加载 SCSI 验证模块。 如果希望禁用验证，但要在以后启用高位测试，请使用此值。 另一方面，值0xFFFFFFFF 会阻止完全加载模块;如果在启动过程中使用此值，则不能在不重启的情况下启用 SCSI 验证。
 
  
 

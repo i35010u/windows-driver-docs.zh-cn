@@ -1,17 +1,16 @@
 ---
 title: 创建回调对象示例
 description: 创建回调对象示例
-ms.assetid: 4476c2f0-12ba-4678-b20e-bde7e81df01d
 keywords:
 - 回叫对象 WDK UMDF，示例
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 007819ea908899d616e46daa84d398f00a11beb2
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: d8805b565f1c6c2389c858810d67f29aa37c788c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89192118"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96829015"
 ---
 # <a name="creating-callback-objects-example"></a>创建回调对象示例
 

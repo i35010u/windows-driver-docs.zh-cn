@@ -1,15 +1,14 @@
 ---
 title: 将 WIA 属性设置应用到硬件
 description: 将 WIA 属性设置应用到硬件
-ms.assetid: adb85f77-1814-427b-8b75-0bfce4c8ca06
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c124c048fc2d9abdb06a3ca1f16ccd015cb856bc
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 06d2480ca17c2645e4f7efe068c2d15721c276cb
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89192735"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96828737"
 ---
 # <a name="applying-wia-property-settings-to-the-hardware"></a>将 WIA 属性设置应用到硬件
 
@@ -17,7 +16,7 @@ ms.locfileid: "89192735"
 
 
 
-当 WIA 应用程序启动数据传输时，WIA 服务会为 WIA 微型驱动程序提供应用当前 WIA 属性设置的机会，并向硬件应用任何特定于设备的设置。 WIA 服务在调用[**IWiaMiniDrv：:D rvacquireitemdata**](/windows-hardware/drivers/ddi/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvacquireitemdata)方法之前，先调用[**IWiaMiniDrv：:d rvwriteitemproperties**](/windows-hardware/drivers/ddi/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvwriteitemproperties)方法。 仅当 WIA 应用程序启动数据传输时，才会调用后一种方法。 WIA 微型驱动程序应使用 WIA 服务函数读取其自己的驱动程序项树中的属性。
+当 WIA 应用程序启动数据传输时，WIA 服务会为 WIA 微型驱动程序提供应用当前 WIA 属性设置的机会，并向硬件应用任何特定于设备的设置。 WIA 服务在调用 [**IWiaMiniDrv：:D rvacquireitemdata**](/windows-hardware/drivers/ddi/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvacquireitemdata)方法之前，先调用 [**IWiaMiniDrv：:d rvwriteitemproperties**](/windows-hardware/drivers/ddi/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvwriteitemproperties)方法。 仅当 WIA 应用程序启动数据传输时，才会调用后一种方法。 WIA 微型驱动程序应使用 WIA 服务函数读取其自己的驱动程序项树中的属性。
 
 ### <a name="implementing-iwiaminidrvdrvwriteitemproperties"></a><a href="" id="implementing-iwiaminidrv-drvwriteitemproperties"></a>实现 IWiaMiniDrv：:d rvWriteItemProperties
 
