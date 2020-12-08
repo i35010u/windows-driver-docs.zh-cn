@@ -1,15 +1,14 @@
 ---
 title: 驱动程序的代码分析
 description: 驱动程序的代码分析是一种编译时静态验证工具，用于检测 C 和 c + + 程序中的基本编码错误。
-ms.assetid: 2F3549EF-B50F-455A-BDC7-1F67782B8DCA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1873d9ce0e3c0ceecf4c3008b0e81f3523852de7
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: b4aed03d23891310122e39e28e1c186dc5638535
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89384435"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96841349"
 ---
 # <a name="code-analysis-for-drivers"></a>驱动程序的代码分析
 

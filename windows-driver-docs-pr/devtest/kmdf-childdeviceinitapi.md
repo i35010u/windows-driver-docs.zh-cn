@@ -1,7 +1,6 @@
 ---
 title: 'ChildDeviceInitApi 规则 (kmdf) '
 description: ChildDeviceInitApi 规则指定对于子设备，必须在驱动程序为子设备对象调用 WdfDeviceCreate 方法之前调用框架设备对象初始化方法。
-ms.assetid: 6F00884D-5A7B-4149-9018-2F32008CAFC1
 ms.date: 05/21/2018
 keywords:
 - 'ChildDeviceInitApi 规则 (kmdf) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 08645ff4cb9c56589e57b10ab2195f6794def229
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: a5b66d2cb7227527f03b470e19194ea4aae55291
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106900"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96841335"
 ---
 # <a name="childdeviceinitapi-rule-kmdf"></a>ChildDeviceInitApi 规则 (kmdf) 
 
 
-**ChildDeviceInitApi**规则指定对于子设备，必须在驱动程序为子设备对象调用[**WdfDeviceCreate**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicecreate)方法之前调用框架设备对象初始化方法。
+**ChildDeviceInitApi** 规则指定对于子设备，必须在驱动程序为子设备对象调用 [**WdfDeviceCreate**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicecreate)方法之前调用框架设备对象初始化方法。
 
 **驱动程序模型： KMDF**
 

@@ -1,7 +1,6 @@
 ---
 title: 'ControlDeviceDeleted 规则 (kmdf) '
 description: ControDeviceDeleted 规则指定如果 PnP 驱动程序创建控制设备对象，则驱动程序必须在卸载该驱动程序之前，在某个清除回调函数中删除该控制设备对象。
-ms.assetid: 869f1c1c-8a9f-4e0b-bcbb-386e93663567
 ms.date: 05/21/2018
 keywords:
 - 'ControlDeviceDeleted 规则 (kmdf) '
@@ -12,19 +11,19 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: de770f0932c2b92c2c4f6fdd1224554044d7a6e8
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 8a473ecdeb0861791c5c68da7e4f8ce86d88e1b0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106172"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96841327"
 ---
 # <a name="controldevicedeleted-rule-kmdf"></a>ControlDeviceDeleted 规则 (kmdf) 
 
 
 ControDeviceDeleted 规则指定如果 PnP 驱动程序创建控制设备对象，则驱动程序必须在卸载该驱动程序之前，在某个清除回调函数中删除该控制设备对象。
 
-如果 FDO 或筛选器驱动程序为控制设备对象调用[**WdfDeviceCreate**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicecreate) ，则驱动程序必须从 WDFDEVICE 对象的驱动程序清理回调函数、WDFDEVICE 对象的销毁回调函数或[*EvtDeviceSelfManagedIoCleanup*](/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_self_managed_io_cleanup)事件回调函数调用[**WdfObjectDelete**](/windows-hardware/drivers/ddi/wdfobject/nf-wdfobject-wdfobjectdelete) 。
+如果 FDO 或筛选器驱动程序为控制设备对象调用 [**WdfDeviceCreate**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicecreate) ，则驱动程序必须从 WDFDEVICE 对象的驱动程序清理回调函数、WDFDEVICE 对象的销毁回调函数或 [*EvtDeviceSelfManagedIoCleanup*](/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_self_managed_io_cleanup)事件回调函数调用 [**WdfObjectDelete**](/windows-hardware/drivers/ddi/wdfobject/nf-wdfobject-wdfobjectdelete) 。
 
 **驱动程序模型： KMDF**
 

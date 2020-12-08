@@ -1,17 +1,16 @@
 ---
 title: C28725
 description: 警告 C28725 使用 Watson 而不是此 SetUnhandledExceptionFilter。
-ms.assetid: 826B4BD2-226C-4986-86B3-E9DFD62DB225
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 f1_keywords:
 - C28725
-ms.openlocfilehash: 51aafa60b3f7bb023a749ba306ecc29e7c2c9af3
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 026defdf4dbec3512f1f80f96a0ea9565f4d6b29
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90716848"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96841353"
 ---
 # <a name="c28725"></a>C28725
 

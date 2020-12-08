@@ -1,7 +1,6 @@
 ---
 title: 'CtlDeviceFinishInitDeviceAdd 规则 (kmdf) '
 description: CtlDeviceFinishInitDeviceAdd 规则指定如果驱动程序在 EvtDriverDeviceAdd 回调函数中创建控制设备对象，则它必须在创建设备后、从 EvtDriverDeviceAdd 回调函数退出之前调用 WdfControlFinishInitializing。 此规则不适用于非 PnP 驱动程序。
-ms.assetid: 162a0013-1215-487c-af72-05e75ef0bdbd
 ms.date: 05/21/2018
 keywords:
 - 'CtlDeviceFinishInitDeviceAdd 规则 (kmdf) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: bce9419db2cc24eba708953488f87cfc58433ee1
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 11a0d95288f9c173905bf86edfd0b4af1663a1b3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103520"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96841321"
 ---
 # <a name="ctldevicefinishinitdeviceadd-rule-kmdf"></a>CtlDeviceFinishInitDeviceAdd 规则 (kmdf) 
 
 
-**CtlDeviceFinishInitDeviceAdd**规则指定如果驱动程序在[*EvtDriverDeviceAdd*](/windows-hardware/drivers/ddi/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)回调函数中创建控制设备对象，则它必须在创建设备后、从**EvtDriverDeviceAdd**回调函数退出之前调用[**WdfControlFinishInitializing**](/windows-hardware/drivers/ddi/wdfcontrol/nf-wdfcontrol-wdfcontrolfinishinitializing) 。 此规则不适用于非 PnP 驱动程序。
+**CtlDeviceFinishInitDeviceAdd** 规则指定如果驱动程序在 [*EvtDriverDeviceAdd*](/windows-hardware/drivers/ddi/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)回调函数中创建控制设备对象，则它必须在创建设备后、从 **EvtDriverDeviceAdd** 回调函数退出之前调用 [**WdfControlFinishInitializing**](/windows-hardware/drivers/ddi/wdfcontrol/nf-wdfcontrol-wdfcontrolfinishinitializing) 。 此规则不适用于非 PnP 驱动程序。
 
 **驱动程序模型： KMDF**
 

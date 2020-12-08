@@ -1,7 +1,6 @@
 ---
 title: 'CompleteCanceledReq 规则 (kmdf) '
 description: CompleteCanceledReq 规则指定如果请求已取消，请求将不再有效，驱动程序不应完成该请求。
-ms.assetid: 8c7b10d1-a273-4831-b5c2-dbb44a600142
 ms.date: 05/21/2018
 keywords:
 - 'CompleteCanceledReq 规则 (kmdf) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 4d941ac28824868cf1e70a43b554a7568307bb59
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 70905d376f974181d198fb87484dffcd51b3302f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104514"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96841329"
 ---
 # <a name="completecanceledreq-rule-kmdf"></a>CompleteCanceledReq 规则 (kmdf) 
 
 
-**CompleteCanceledReq**规则指定如果请求已取消，请求将不再有效，驱动程序不应完成该请求。 尽管驱动程序取消了之前标记为可取消的请求，但它必须检查请求是否已取消。 如果驱动程序没有进行此检查，驱动程序可能会完成已释放的请求。
+**CompleteCanceledReq** 规则指定如果请求已取消，请求将不再有效，驱动程序不应完成该请求。 尽管驱动程序取消了之前标记为可取消的请求，但它必须检查请求是否已取消。 如果驱动程序没有进行此检查，驱动程序可能会完成已释放的请求。
 
 **驱动程序模型： KMDF**
 

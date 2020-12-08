@@ -3,20 +3,16 @@ title: USB 音频类系统驱动程序 (Usbaudio.sys)
 description: 'USB 音频类系统驱动程序 ( # A0) 是一个 AVStream 微型驱动程序，它为符合通用串行总线 (音频设备的 USB) 设备类定义的音频设备提供驱动程序支持。'
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 164ddc66b9f63a31649f752cf7df2934ff66ed83
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: f7e455715510b86e430a12796be3cb92982bb0ec
+ms.sourcegitcommit: 66edcff6f7a975bf086fa9223fea02370436e21b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96800489"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96842416"
 ---
 # <a name="usb-audio-class-system-driver-usbaudiosys"></a>USB 音频类系统驱动程序 (Usbaudio.sys)
 
-
 USB 音频类系统驱动程序 ( # A0) 是一个 AVStream 微型驱动程序，它为符合通用串行总线 (音频设备的 USB) 设备类定义的音频设备提供驱动程序支持。
-
-## <span id="usbaudio_class_system_driver"></span><span id="USBAUDIO_CLASS_SYSTEM_DRIVER"></span>
-
 
 Usb 设备类定义音频设备规范 (版本 1.0) 可在 [USB 实现论坛](https://www.usb.org/) 网站上找到。 Usbaudio.sys 支持 USB 音频规范中所述的功能的子集。 除了 Usbaudio.sys 之外，Windows 驱动模型 (WDM) 还有其他几个内核模式音频组件。 有关详细信息，请参阅 [内核模式 WDM 音频组件](kernel-mode-wdm-audio-components.md)。
 
@@ -28,25 +24,25 @@ Microsoft 建议硬件供应商对其 USB 音频设备使用 USBAudio 驱动程�
 
 在 Windows 98 中，USBAudio 驱动程序支持以下功能：
 
--   除了8位有符号 PCM 外，所有类型的类型都 () 
+- 除了8位有符号 PCM 外，所有类型的类型都 () 
 
--   AC 3 类型 II 格式
+- AC 3 类型 II 格式
 
--   同步和自适应同步类型
+- 同步和自适应同步类型
 
--   多通道设备
+- 多通道设备
 
 但是，Windows 98 中的 USBAudio 不支持：
 
--   8位有符号 PCM 格式
+- 8位有符号 PCM 格式
 
--   MPEG 类型 II 格式
+- MPEG 类型 II 格式
 
--   类型 III 格式
+- 类型 III 格式
 
--   USB MIDI
+- USB MIDI
 
--   [**WAVEFORMATEXTENSIBLE**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-waveformatextensible) 波形格式 (USBAudio \_ \_ 改为使用适用于24位数据的压缩波形格式 PCM。 ) 
+- [**WAVEFORMATEXTENSIBLE**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-waveformatextensible) 波形格式 (USBAudio \_ \_ 改为使用适用于24位数据的压缩波形格式 PCM。 ) 
 
 在 Windows 98 Second Edition (SE) 、Windows Me 和 Windows 2000 及更高版本中，USBAudio 支持 Windows 98 的所有相同功能，但有一个例外： USBAudio 支持 WAVEFORMATEXTENSIBLE，但 \_ 对于24位数据不支持打包波形格式 \_ PCM。
 
@@ -60,7 +56,4 @@ Microsoft 建议硬件供应商对其 USB 音频设备使用 USBAudio 驱动程�
 
 [AVStream 概述](../stream/avstream-overview.md)
 
-[系统提供的 USB 驱动程序](/windows-hardware/drivers/ddi/index)
-
- 
-
+[Windows 中的 USB 宿主端驱动程序](../usbcon/usb-3-0-driver-stack-architecture.md)

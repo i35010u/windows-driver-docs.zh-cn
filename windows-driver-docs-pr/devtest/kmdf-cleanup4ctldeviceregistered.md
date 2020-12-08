@@ -1,7 +1,6 @@
 ---
 title: 'Cleanup4CtlDeviceRegistered 规则 (kmdf) '
 description: Cleanup4CtlDeviceRegistered 规则指定如果即插即用 (PnP) 驱动程序为控制设备对象调用 WdfDeviceCreate，则驱动程序必须注册某个必需的事件回调函数。
-ms.assetid: f439ec36-f7af-46e5-8ddd-11e444bf36da
 ms.date: 05/21/2018
 keywords:
 - 'Cleanup4CtlDeviceRegistered 规则 (kmdf) '
@@ -12,21 +11,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: c793cdb8914936ffab2ee64932945ee34cb1e037
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: c9592f276feb45386270b728ed08f1af6732341f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104602"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96841333"
 ---
 # <a name="cleanup4ctldeviceregistered-rule-kmdf"></a>Cleanup4CtlDeviceRegistered 规则 (kmdf) 
 
 
-**Cleanup4CtlDeviceRegistered**规则指定如果即插即用 (PnP) 驱动程序为控制设备对象调用[**WdfDeviceCreate**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicecreate) ，则驱动程序必须注册某个必需的事件回调函数。
+**Cleanup4CtlDeviceRegistered** 规则指定如果即插即用 (PnP) 驱动程序为控制设备对象调用 [**WdfDeviceCreate**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicecreate) ，则驱动程序必须注册某个必需的事件回调函数。
 
 事件回调函数可以是下列其中一项：
 
-[**Wdf \_ PNPPOWER \_ 事件 \_ 回调**](/windows-hardware/drivers/ddi/wdfdevice/ns-wdfdevice-_wdf_pnppower_event_callbacks)结构中控件设备或- [*EvtDeviceSelfManagedIoCleanup*](/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_self_managed_io_cleanup)的[**WDF \_ 对象 \_ 属性**](/windows-hardware/drivers/ddi/wdfobject/ns-wdfobject-_wdf_object_attributes)结构中的[*EvtCleanupCallback*](/windows-hardware/drivers/ddi/wdfobject/nc-wdfobject-evt_wdf_object_context_cleanup)或[*EvtDestroyCallback*](/windows-hardware/drivers/ddi/wdfobject/nc-wdfobject-evt_wdf_object_context_destroy)
+[**Wdf \_ PNPPOWER \_ 事件 \_ 回调**](/windows-hardware/drivers/ddi/wdfdevice/ns-wdfdevice-_wdf_pnppower_event_callbacks)结构中控件设备或- [*EvtDeviceSelfManagedIoCleanup*](/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_self_managed_io_cleanup)的 [**WDF \_ 对象 \_ 属性**](/windows-hardware/drivers/ddi/wdfobject/ns-wdfobject-_wdf_object_attributes)结构中的 [*EvtCleanupCallback*](/windows-hardware/drivers/ddi/wdfobject/nc-wdfobject-evt_wdf_object_context_cleanup)或 [*EvtDestroyCallback*](/windows-hardware/drivers/ddi/wdfobject/nc-wdfobject-evt_wdf_object_context_destroy)
 
 **驱动程序模型： KMDF**
 

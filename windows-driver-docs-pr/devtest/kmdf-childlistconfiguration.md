@@ -1,7 +1,6 @@
 ---
 title: 'ChildListConfiguration 规则 (kmdf) '
 description: ChildListConfiguration 规则指定支持动态枚举的驱动程序必须先调用 WdfFdoInitSetDefaultChildListConfig，然后才能调用 WdfDeviceCreate 函数。
-ms.assetid: B6A6A775-F2FC-4E73-9B4A-D29BF8CCB649
 ms.date: 05/21/2018
 keywords:
 - 'ChildListConfiguration 规则 (kmdf) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 1fb98aec55127b8fd2353bef09f87d1ffc931dec
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: f342dd9525833ba3092ffe6b46289890bd8c730b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103848"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96841331"
 ---
 # <a name="childlistconfiguration-rule-kmdf"></a>ChildListConfiguration 规则 (kmdf) 
 
 
-**ChildListConfiguration**规则指定支持[动态枚举](../wdf/dynamic-enumeration.md)的驱动程序必须先调用[**WdfFdoInitSetDefaultChildListConfig**](/windows-hardware/drivers/ddi/wdffdo/nf-wdffdo-wdffdoinitsetdefaultchildlistconfig) ，然后才能调用[**WdfDeviceCreate**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicecreate)函数。
+**ChildListConfiguration** 规则指定支持 [动态枚举](../wdf/dynamic-enumeration.md)的驱动程序必须先调用 [**WdfFdoInitSetDefaultChildListConfig**](/windows-hardware/drivers/ddi/wdffdo/nf-wdffdo-wdffdoinitsetdefaultchildlistconfig) ，然后才能调用 [**WdfDeviceCreate**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicecreate)函数。
 
 **驱动程序模型： KMDF**
 

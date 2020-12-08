@@ -1,17 +1,16 @@
 ---
 title: C28726
 description: 警告 C28726 禁止使用的 API。
-ms.assetid: 37b30183-6eda-4a12-83e5-e74832ddef8a
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 f1_keywords:
 - C28726
-ms.openlocfilehash: c9288a078508fb9576c0b7bb93dbfeec4076aa49
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: b32da1f5a5afadf005e7da69c70db88f7e3bf331
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89384425"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96841351"
 ---
 # <a name="c28726"></a>C28726
 

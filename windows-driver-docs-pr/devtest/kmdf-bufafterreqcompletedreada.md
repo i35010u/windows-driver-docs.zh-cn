@@ -1,7 +1,6 @@
 ---
 title: 'BufAfterReqCompletedReadA 规则 (kmdf) '
 description: BufAfterReqCompletedReadA 规则指定在 EvtIoRead 回调函数中，在 i/o 请求完成后，无法访问检索到的 i/o 请求缓冲区。 有14个 DDIs 充当可能的缓冲区访问方法。
-ms.assetid: 37b5e86e-79fe-496a-99a1-d8071c788f4d
 ms.date: 05/21/2018
 keywords:
 - 'BufAfterReqCompletedReadA 规则 (kmdf) '
@@ -12,19 +11,19 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 78ec6e2e47811ef2b3f129203035622cb81976dc
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: afc2ac269ee726adce1ea69e72dc041d69cfd367
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102992"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96841341"
 ---
 # <a name="bufafterreqcompletedreada-rule-kmdf"></a>BufAfterReqCompletedReadA 规则 (kmdf) 
 
 
 BufAfterReqCompletedReadA 规则指定在 [*EvtIoRead*](/windows-hardware/drivers/ddi/wdfio/nc-wdfio-evt_wdf_io_queue_io_read) 回调函数中，在 i/o 请求完成后，无法访问检索到的 i/o 请求缓冲区。 有14个 DDIs 充当可能的缓冲区访问方法。
 
-在驱动程序的**EvtIoRead**回调函数中，无法在对 i/o 请求调用[**WdfRequestComplete**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcomplete)、 [**WdfRequestCompleteWithInformation**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcompletewithinformation)或[**WdfRequestCompleteWithPriorityBoost**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcompletewithpriorityboost)后访问通过调用[**WdfRequestRetrieveOutputBuffer**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestretrieveoutputbuffer)或[**WdfRequestRetrieveUnsafeUserOutputBuffer**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestretrieveunsafeuseroutputbuffer)检索到的请求缓冲区。
+在驱动程序的 **EvtIoRead** 回调函数中，无法在对 i/o 请求调用 [**WdfRequestComplete**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcomplete)、 [**WdfRequestCompleteWithInformation**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcompletewithinformation)或 [**WdfRequestCompleteWithPriorityBoost**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcompletewithpriorityboost)后访问通过调用 [**WdfRequestRetrieveOutputBuffer**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestretrieveoutputbuffer)或 [**WdfRequestRetrieveUnsafeUserOutputBuffer**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestretrieveunsafeuseroutputbuffer)检索到的请求缓冲区。
 
 **驱动程序模型： KMDF**
 

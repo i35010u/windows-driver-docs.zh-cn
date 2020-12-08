@@ -1,7 +1,6 @@
 ---
 title: Bug 检查 0xE6 DRIVER_VERIFIER_DMA_VIOLATION
 description: DRIVER_VERIFIER_DMA_VIOLATION bug 检查的值为0x000000E6。 这是所有驱动程序验证程序 DMA 验证冲突的 bug 检查代码。
-ms.assetid: badf8948-356c-4728-b34e-02f1638630a6
 keywords:
 - Bug 检查 0xE6 DRIVER_VERIFIER_DMA_VIOLATION
 - DRIVER_VERIFIER_DMA_VIOLATION
@@ -13,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: ee96819efb33ce1bfa6eefa56ffd57f150c5188e
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 22477f83e8adfac46febc860d044be3ee7eec27d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89217386"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96841363"
 ---
 # <a name="bug-check-0xe6-driver_verifier_dma_violation"></a>Bug 检查0xE6：驱动程序 \_ 验证程序 \_ DMA \_ 冲突
 

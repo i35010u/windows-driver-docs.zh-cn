@@ -1,7 +1,6 @@
 ---
 title: 'ControlDeviceInitAPI 规则 (kmdf) '
 description: ControlDeviceInitAPI 规则指定在 \_ WdfDeviceCreate for control 设备之前，必须先调用为控制设备设置 WDFDEVICE INIT 结构的 WdfControlDeviceInitAllocate 和所有其他设备对象初始化 DDIs。
-ms.assetid: 136ee6d8-d104-4ae8-a3f7-d93179808e29
 ms.date: 05/21/2018
 keywords:
 - 'ControlDeviceInitAPI 规则 (kmdf) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 307413c41f63ae349e5d3fd8b6765bde5610b3b7
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: bd80210f52857d12c282ed5e837aab6fa0f04dc6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104962"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96841319"
 ---
 # <a name="controldeviceinitapi-rule-kmdf"></a>ControlDeviceInitAPI 规则 (kmdf) 
 
 
-ControlDeviceInitAPI 规则指定在[**WdfDeviceCreate**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicecreate) for control 设备之前，必须先调用为控制设备设置[**WDFDEVICE \_ INIT**](../wdf/wdfdevice_init.md)结构的[**WdfControlDeviceInitAllocate**](/windows-hardware/drivers/ddi/wdfcontrol/nf-wdfcontrol-wdfcontroldeviceinitallocate)和所有其他设备对象初始化 DDIs。
+ControlDeviceInitAPI 规则指定在 [**WdfDeviceCreate**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicecreate) for control 设备之前，必须先调用为控制设备设置 [**WDFDEVICE \_ INIT**](../wdf/wdfdevice_init.md)结构的 [**WdfControlDeviceInitAllocate**](/windows-hardware/drivers/ddi/wdfcontrol/nf-wdfcontrol-wdfcontroldeviceinitallocate)和所有其他设备对象初始化 DDIs。
 
 **驱动程序模型： KMDF**
 

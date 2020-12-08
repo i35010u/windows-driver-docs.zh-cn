@@ -1,7 +1,6 @@
 ---
 title: 'ControlDeviceInitAllocate 规则 (kmdf) '
 description: ControlDeviceInitAllocate 规则指定对于控制设备对象，驱动程序必须先调用框架设备对象初始化方法 WdfControlDeviceInitAllocate，然后才能调用 WdfDeviceCreate。
-ms.assetid: 0309DA1E-C173-412E-ADF5-720B09338DA5
 ms.date: 05/21/2018
 keywords:
 - 'ControlDeviceInitAllocate 规则 (kmdf) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 978d4efb3c83f7186d1697fe6f68d7248a9bed55
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 45488836ad9d3cd46c17c59bf0260d971edefbb9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105388"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96841325"
 ---
 # <a name="controldeviceinitallocate-rule-kmdf"></a>ControlDeviceInitAllocate 规则 (kmdf) 
 
 
-**ControlDeviceInitAllocate**规则指定对于控制设备对象，驱动程序必须先调用框架设备对象初始化方法[**WdfControlDeviceInitAllocate**](/windows-hardware/drivers/ddi/wdfcontrol/nf-wdfcontrol-wdfcontroldeviceinitallocate) ，然后才能调用[**WdfDeviceCreate**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicecreate)。
+**ControlDeviceInitAllocate** 规则指定对于控制设备对象，驱动程序必须先调用框架设备对象初始化方法 [**WdfControlDeviceInitAllocate**](/windows-hardware/drivers/ddi/wdfcontrol/nf-wdfcontrol-wdfcontroldeviceinitallocate) ，然后才能调用 [**WdfDeviceCreate**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicecreate)。
 
 **驱动程序模型： KMDF**
 

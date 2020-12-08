@@ -1,7 +1,6 @@
 ---
 title: 'BufAfterReqCompletedWriteA 规则 (kmdf) '
 description: BufAfterReqCompletedWriteA 规则指定在 EvtIoWrite 回调函数中，在 i/o 请求完成后，无法访问检索到的 i/o 请求缓冲区。
-ms.assetid: 4b7cd08f-8280-4bb6-be00-955ad8d2d015
 ms.date: 05/21/2018
 keywords:
 - 'BufAfterReqCompletedWriteA 规则 (kmdf) '
@@ -12,12 +11,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 3cfdca43ca859874541b83421bdcb43bd326e8c7
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: c1d9ab05be4b70c39804f95dc8cea1ea44012c3a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104718"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96841339"
 ---
 # <a name="bufafterreqcompletedwritea-rule-kmdf"></a>BufAfterReqCompletedWriteA 规则 (kmdf) 
 
@@ -26,7 +25,7 @@ BufAfterReqCompletedWriteA 规则指定在 [*EvtIoWrite*](/windows-hardware/driv
 
 在驱动程序的 **EvtIoWrite** 回调函数中，通过调用检索到的请求缓冲区
 
-在 i/o 请求上调用[**WdfRequestComplete**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcomplete)、 [**WdfRequestCompleteWithInformation**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcompletewithinformation)或[**WdfRequestCompleteWithPriorityBoost**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcompletewithpriorityboost)后，无法访问[**WdfRequestRetrieveInputBuffer**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestretrieveinputbuffer)或[**WdfRequestRetrieveUnsafeUserInputBuffer**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestretrieveunsafeuserinputbuffer) 。
+在 i/o 请求上调用 [**WdfRequestComplete**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcomplete)、 [**WdfRequestCompleteWithInformation**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcompletewithinformation)或 [**WdfRequestCompleteWithPriorityBoost**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcompletewithpriorityboost)后，无法访问 [**WdfRequestRetrieveInputBuffer**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestretrieveinputbuffer)或 [**WdfRequestRetrieveUnsafeUserInputBuffer**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestretrieveunsafeuserinputbuffer) 。
 
 **驱动程序模型： KMDF**
 

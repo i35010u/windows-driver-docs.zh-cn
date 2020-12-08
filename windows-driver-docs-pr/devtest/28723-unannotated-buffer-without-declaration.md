@@ -1,28 +1,27 @@
 ---
 title: C28723
-description: 警告 C28723 未批注缓冲区中有没有相应的声明的函数定义。
-ms.assetid: FE481A48-F4C1-4C25-8CE6-3802D57B8F68
+description: 警告 C28723 函数定义中没有相应声明的批注缓冲区。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 f1_keywords:
 - C28723
-ms.openlocfilehash: 00ab9831c34b4aed7f7ec81c31fa67cdab60402a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9368d7479f4d8093fa5a9a9a44dc0587cd6888a8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63323825"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96841355"
 ---
 # <a name="c28723"></a>C28723
 
 
-警告 C28723:有没有相应的声明的函数定义中的一个未批注的缓冲区
+警告 C28723：在函数定义中没有相应声明的批注缓冲区
 
-此警告指示作为函数参数传递或由函数返回的缓冲区应使用 Microsoft 源代码批注语言 (SAL) 进行批注。 静态分析工具可以使用此类批注检测缓冲区溢出。
+此警告表明，作为函数参数传递或由函数返回的缓冲区应使用 Microsoft 源代码批注语言 (SAL) 进行批注。 静态分析工具可使用此类注释来检测缓冲区溢出。
 
-目前，仅非常量缓冲区诊断并发出以下警告。
+目前，此警告只诊断了非常量的缓冲区。
 
-## <a name="span-idexamplespanspan-idexamplespanspan-idexamplespanexample"></a><span id="Example"></span><span id="example"></span><span id="EXAMPLE"></span>示例
+## <a name="span-idexamplespanspan-idexamplespanspan-idexamplespanexample"></a><span id="Example"></span><span id="example"></span><span id="EXAMPLE"></span>实例
 
 
 下面的代码示例将生成此警告。

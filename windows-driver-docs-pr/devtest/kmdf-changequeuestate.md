@@ -1,7 +1,6 @@
 ---
 title: 'ChangeQueueState 规则 (kmdf) '
 description: ChangeQueueState 规则指定 WDF 驱动程序不会尝试更改并发线程的队列状态，也不会从同一线程内的另一次调用状态更改 DDIs。
-ms.assetid: C05A04E8-F8F2-4339-AAB7-FD62BE1DAAA2
 ms.date: 05/21/2018
 keywords:
 - 'ChangeQueueState 规则 (kmdf) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: ce1e7f1f4ddff294000fd251a11d1fc30eb5a732
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 26fba6a522c8008d3247bc58f293104603449338
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103350"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96841337"
 ---
 # <a name="changequeuestate-rule-kmdf"></a>ChangeQueueState 规则 (kmdf) 
 
 
-**ChangeQueueState**规则指定 WDF 驱动程序不会尝试更改并发线程的队列状态，也不会从同一线程内的另一次调用状态更改 DDIs。 队列状态更改回调函数为 [**WdfIoQueueStop**](/windows-hardware/drivers/ddi/wdfio/nf-wdfio-wdfioqueuestop)、 [**WdfIoQueueStopSynchronously**](/windows-hardware/drivers/ddi/wdfio/nf-wdfio-wdfioqueuestopsynchronously)、[**WdfIoQueuePurge**](/windows-hardware/drivers/ddi/wdfio/nf-wdfio-wdfioqueuepurge)、[**WdfIoQueuePurgeSynchronously**](/windows-hardware/drivers/ddi/wdfio/nf-wdfio-wdfioqueuepurgesynchronously)、 [**WdfIoQueueDrain**](/windows-hardware/drivers/ddi/wdfio/nf-wdfio-wdfioqueuedrain)、 [**WdfIoQueueDrainSynchronously**](/windows-hardware/drivers/ddi/wdfio/nf-wdfio-wdfioqueuedrainsynchronously)、 [**WdfIoQueueStopAndPurge**](/windows-hardware/drivers/ddi/wdfio/nf-wdfio-wdfioqueuestopandpurge) 和 [**WdfIoQueueStopAndPurgeSynchronously**](/windows-hardware/drivers/ddi/wdfio/nf-wdfio-wdfioqueuestopandpurgesynchronously)。 如果在队列状态更改已经正在进行时调用这些 DDIs，将导致计算机崩溃或停止响应。
+**ChangeQueueState** 规则指定 WDF 驱动程序不会尝试更改并发线程的队列状态，也不会从同一线程内的另一次调用状态更改 DDIs。 队列状态更改回调函数为 [**WdfIoQueueStop**](/windows-hardware/drivers/ddi/wdfio/nf-wdfio-wdfioqueuestop)、 [**WdfIoQueueStopSynchronously**](/windows-hardware/drivers/ddi/wdfio/nf-wdfio-wdfioqueuestopsynchronously)、[**WdfIoQueuePurge**](/windows-hardware/drivers/ddi/wdfio/nf-wdfio-wdfioqueuepurge)、[**WdfIoQueuePurgeSynchronously**](/windows-hardware/drivers/ddi/wdfio/nf-wdfio-wdfioqueuepurgesynchronously)、 [**WdfIoQueueDrain**](/windows-hardware/drivers/ddi/wdfio/nf-wdfio-wdfioqueuedrain)、 [**WdfIoQueueDrainSynchronously**](/windows-hardware/drivers/ddi/wdfio/nf-wdfio-wdfioqueuedrainsynchronously)、 [**WdfIoQueueStopAndPurge**](/windows-hardware/drivers/ddi/wdfio/nf-wdfio-wdfioqueuestopandpurge) 和 [**WdfIoQueueStopAndPurgeSynchronously**](/windows-hardware/drivers/ddi/wdfio/nf-wdfio-wdfioqueuestopandpurgesynchronously)。 如果在队列状态更改已经正在进行时调用这些 DDIs，将导致计算机崩溃或停止响应。
 
 **驱动程序模型： KMDF**
 
