@@ -1,9 +1,8 @@
 ---
 title: z（执行 While）
-description: 给定的条件为 true 时，z 命令执行的命令。
-ms.assetid: 075dc012-68c2-4172-9d37-57bc8358297c
+description: 当给定的条件为 true 时，z 命令执行命令。
 keywords:
-- z （执行时） Windows 调试
+- ) Windows 调试时执行 z (
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 24447078209a4c97c2d359c9ccf1b3c9c1974d93
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b89f6028dc72423462d4a863dd20bc9c0532403b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63381896"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96802709"
 ---
 # <a name="z-execute-while"></a>z（执行 While）
 
 
-**Z**命令在给定的条件为 true 时执行的命令。
+当给定的条件为 true 时， **z** 命令执行命令。
 
 User-Mode
 
@@ -36,17 +35,17 @@ Kernel-Mode
 Command ; [Processor] z( Expression )
 ```
 
-## <a name="span-idddkcmdexecutewhiledbgspanspan-idddkcmdexecutewhiledbgspanparameters"></a><span id="ddk_cmd_execute_while_dbg"></span><span id="DDK_CMD_EXECUTE_WHILE_DBG"></span>参数
+## <a name="span-idddk_cmd_execute_while_dbgspanspan-idddk_cmd_execute_while_dbgspanparameters"></a><span id="ddk_cmd_execute_while_dbg"></span><span id="DDK_CMD_EXECUTE_WHILE_DBG"></span>参数
 
 
-<span id="_______Command______"></span><span id="_______command______"></span><span id="_______COMMAND______"></span> *命令*   
-指定要执行的命令时*表达式*条件的计算结果为非零值。 始终至少一次执行此命令。
+<span id="_______Command______"></span><span id="_______command______"></span><span id="_______COMMAND______"></span>*命令*   
+指定在 *表达式* 条件的计算结果为非零值时要执行的命令。 此命令始终执行至少一次。
 
-<span id="_______Processor______"></span><span id="_______processor______"></span><span id="_______PROCESSOR______"></span> *Processor*   
-指定适用于测试的处理器。 有关语法的详细信息，请参阅[包含多个处理器语法](multiprocessor-syntax.md)。 仅在内核模式下，可以指定处理器。
+<span id="_______Processor______"></span><span id="_______processor______"></span><span id="_______PROCESSOR______"></span>*处理器*   
+指定适用于测试的处理器。 有关语法的详细信息，请参阅 [多处理器语法](multiprocessor-syntax.md)。 只能在内核模式下指定处理器。
 
-<span id="_______Expression______"></span><span id="_______expression______"></span><span id="_______EXPRESSION______"></span> *表达式*   
-指定要测试的条件。 如果此条件计算结果为非零值，*命令*再次执行命令，然后*表达式*再次测试。 有关语法的详细信息，请参阅[数值表达式语法](numerical-expression-syntax.md)。
+<span id="_______Expression______"></span><span id="_______expression______"></span><span id="_______EXPRESSION______"></span>*表达式*   
+指定要测试的条件。 如果此条件的计算结果为非零值，则会再次执行 *命令* 命令，然后再次测试 *表达式* 。 有关语法的详细信息，请参阅 [数值表达式语法](numerical-expression-syntax.md)。
 
 ### <a name="span-idenvironmentspanspan-idenvironmentspanspan-idenvironmentspanenvironment"></a><span id="Environment"></span><span id="environment"></span><span id="ENVIRONMENT"></span>环境
 
@@ -57,12 +56,12 @@ Command ; [Processor] z( Expression )
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>模式</strong></p></td>
-<td align="left"><p>用户模式下，内核模式</p></td>
+<td align="left"><p><strong>交货</strong></p></td>
+<td align="left"><p>用户模式，内核模式</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>目标</strong></p></td>
-<td align="left"><p>实时、 崩溃转储</p></td>
+<td align="left"><p>实时，故障转储</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>平台</strong></p></td>
@@ -76,29 +75,29 @@ Command ; [Processor] z( Expression )
 <a name="remarks"></a>备注
 -------
 
-在许多调试器命令中，分号用于分隔不相关的命令。 但是，在**z**命令，以分号分隔，"z"从*命令*参数。
+在许多调试器命令中，分号用于分隔不相关的命令。 但是，在 **z** 命令中，分号将 "z" 与 *命令* 参数隔开。
 
-*命令*始终至少一次，执行命令，然后*表达式*进行测试。 如果条件为非零值，再次执行该命令，然后*表达式*再次测试。 (此行为是类似于 C 语言**do-** 循环，不是简单**虽然**循环。)
+*命令* 命令始终执行至少一次，然后对 *表达式* 进行测试。 如果条件为非零值，则再次执行该命令，然后再次测试 *表达式* 。  (此行为类似于 C 语言的 **do while** 循环，而不是简单的 **while** 循环。 ) 
 
-如果有多个分号"z"的左侧，所有命令到"z"的重复为 long 类型的值作为左*表达式*条件为 true。 此类命令可以是任何允许终端分号的调试器命令。
+如果 "z" 的左侧有几个分号，则只要 *表达式* 条件为 true，就会重复 "z" 左侧的所有命令。 此类命令可以是任何允许终端分号的调试器命令。
 
-如果您添加另一个分号和其他命令后的**z**命令时，该循环完成后执行以下附加命令。 我们通常不建议以"z"开头，因为它会生成不相关的输出永远除非条件变为 false 由于某些其他操作的行。 请注意，您可以嵌套**z**命令。
+如果在 **z** 命令后面添加另一个分号和其他命令，则在循环完成后，将执行这些附加命令。 通常不建议以 "z" 开头的行，因为它会永久生成不需要的输出，除非由于其他操作而导致条件变为 false。 请注意，可以嵌套 **z** 命令。
 
-若要中断循环继续的时间太长，请使用[ **CTRL + C** ](ctrl-c--break-.md) CDB 或 KD，或使用[调试 |中断](debug---break.md)或 CTRL + BREAK 在 WinDbg 中。
+若要中断持续时间太长的循环，请在 CDB 或 KD 中使用 [**CTRL + C**](ctrl-c--break-.md) ，或使用 " [调试" |](debug---break.md) 在 WinDbg 中中断或 CTRL + break。
 
-下面的代码示例显示了不必要地复杂的方式为零**eax**注册。
+下面的代码示例演示了一种不太复杂的非 **eax** 注册方法。
 
 ```dbgcmd
 0:000> reax = eax - 1 ; z(eax)
 ```
 
-下面的示例递增**eax**并**ebx**注册直到其中一个为至少 8，并且然后递增**ecx**注册一次。
+下面的示例将递增 **eax** 和 **ebx** 寄存器，直到其中一个寄存器至少为8，然后将 **ecx** 寄存器递增一次。
 
 ```dbgcmd
 0:000> reax=eax+1; rebx=ebx+1; z((eax<8)|(ebx<8)); recx=ecx+1
 ```
 
-下面的示例使用C++表达式语法，并使用伪寄存器**美元 t0**作为循环变量。
+下面的示例使用 c + + 表达式语法，并使用伪寄存器 **$t 0** 作为循环变量。
 
 ```dbgcmd
 0:000> .expr /s c++
@@ -107,10 +106,10 @@ Current expression evaluator: C++ - C++ source expressions
 0:000> db pindexcreate[@$t0].szKey; r$t0=@t0+1; z( @$t0 < cIndexCreate )
 ```
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[**j （执行 If Else）**](j--execute-if---else-.md)
+[**j (执行 If-Else)**](j--execute-if---else-.md)
 
  
 

@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ CAMERACONTROL \_ 扩展 \_ ISO \_ 高级
 description: KSPROPERTY \_ CAMERACONTROL \_ extended \_ iso \_ ADVANCED 是一种扩展属性控件，允许更高粒度的更多全局 ISO 控制。
-ms.assetid: A9327DB8-422B-410C-8766-D70811BA5C73
 keywords:
 - KSPROPERTY_CAMERACONTROL_EXTENDED_ISO_ADVANCED 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 09/10/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: ce4fcd14dc092b97fe1deecd06bc29a849ad8c84
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 09c14f580aa6b8ab34f27ed9298d278064e0e615
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89192857"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803465"
 ---
 # <a name="ksproperty_cameracontrol_extended_iso_advanced"></a>KSPROPERTY \_ CAMERACONTROL \_ 扩展 \_ ISO \_ 高级
 
@@ -189,7 +188,7 @@ KSCAMERA \_ EXTENDEDPROP \_ VIDEOPROCSETTING。如果 \_ \_ \_ 在 KSCAMERA \_ E
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Ksmedia.h</td>
 </tr>
 </tbody>

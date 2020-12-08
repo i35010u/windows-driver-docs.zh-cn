@@ -1,17 +1,16 @@
 ---
 title: 使用内核调试程序查找内核模式内存泄漏
 description: 使用内核调试程序查找内核模式内存泄漏
-ms.assetid: eeadd505-b887-498d-9369-877156526355
 keywords:
 - 内存泄漏，内核模式，内核调试器
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dd01e2913286432f9364dc8495738aa2473b102c
-ms.sourcegitcommit: 17c1bbc5ea0bef3bbc87794b030a073f905dc942
+ms.openlocfilehash: c079cb858fa5320b3e1217f67c84bea05f576cae
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88802374"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803020"
 ---
 # <a name="using-the-kernel-debugger-to-find-a-kernel-mode-memory-leak"></a>使用内核调试程序查找内核模式内存泄漏
 
@@ -26,11 +25,11 @@ ms.locfileid: "88802374"
 
 ### <a name="span-iddetermining_the_pool_tag_of_the_leakspanspan-iddetermining_the_pool_tag_of_the_leakspandetermining-the-pool-tag-of-the-leak"></a><span id="determining_the_pool_tag_of_the_leak"></span><span id="DETERMINING_THE_POOL_TAG_OF_THE_LEAK"></span>确定泄漏的池标记
 
-若要确定与该泄漏关联的池标记，通常使用 PoolMon 工具执行此步骤。 有关详细信息，请参阅 [使用 PoolMon 查找内核模式的内存泄漏](using-poolmon-to-find-a-kernel-mode-memory-leak.md)。
+若要确定与该泄漏关联的池标记，通常使用 PoolMon 工具执行此步骤。 有关详细信息，请参阅 [使用 PoolMon 查找内存泄漏 Kernel-Mode](using-poolmon-to-find-a-kernel-mode-memory-leak.md)。
 
 此外，还可以使用内核调试器查找与大型池分配关联的标记。 为此，请执行此过程：
 
-1.  使用重新加载所有模块 [**。 (重载模块) **](-reload--reload-module-.md) 命令。
+1.  使用重新加载所有模块 [**。 (重载模块)**](-reload--reload-module-.md) 命令。
 
 2.  使用 [**！ poolused**](-poolused.md) 扩展。 包含标记 "4"，以通过分页内存使用对输出进行排序：
     ```dbgcmd
@@ -53,22 +52,22 @@ ms.locfileid: "88802374"
 
 确定与泄漏关联的池标记后，请按照此过程来查找泄漏本身：
 
-1.  使用 [**ed () 命令输入值 **](e--ea--eb--ed--ed--ef--ep--eq--eu--ew--eza--ezu--enter-values-.md) 以修改 global 系统变量 **PoolHitTag**的值。 当使用与值匹配的池标记时，此全局变量使调试器中断。
+1.  使用 [**ed () 命令输入值**](e--ea--eb--ed--ed--ef--ep--eq--eu--ew--eza--ezu--enter-values-.md) 以修改 global 系统变量 **PoolHitTag** 的值。 当使用与值匹配的池标记时，此全局变量使调试器中断。
 
 2.  将 **PoolHitTag** 设置为您怀疑是内存泄漏的源的标记。 为了加快符号解析，应指定模块名称 "nt"。 标记值必须以小字节序格式输入 (也就是说，向后) 。 由于池标记始终为四个字符，因此此标记实际上是一个-b-c--空间，而不只是 A-b-c。 因此，请使用以下命令：
     ```dbgcmd
     kd> ed nt!poolhittag ' cbA' 
     ```
 
-3.  若要验证 **PoolHitTag**的当前值，请使用 [**Db (显示内存) **](d--da--db--dc--dd--dd--df--dp--dq--du--dw--dw--dyb--dyd--display-memor.md) 命令：
+3.  若要验证 **PoolHitTag** 的当前值，请使用 [**Db (显示内存)**](d--da--db--dc--dd--dd--df--dp--dq--du--dw--dw--dyb--dyd--display-memor.md) 命令：
     ```dbgcmd
     kd> db nt!poolhittag L4 
     820f2ba4  41 62 63 20           Abc  
     ```
 
-4.  每次分配或释放带有标记 **Abc**的池时，调试器都会中断。 每次调试器在其中一项分配或自由操作上中断时，使用 [**kb (显示 Stack Backtrace) **](k--kb--kc--kd--kp--kp--kv--display-stack-backtrace-.md) 调试器命令查看堆栈跟踪。
+4.  每次分配或释放带有标记 **Abc** 的池时，调试器都会中断。 每次调试器在其中一项分配或自由操作上中断时，使用 [**kb (显示 Stack Backtrace)**](k--kb--kc--kd--kp--kp--kv--display-stack-backtrace-.md) 调试器命令查看堆栈跟踪。
 
-使用此过程，可以确定驻留在内存中的代码是带有标记 **Abc**的 overallocating 池。
+使用此过程，可以确定驻留在内存中的代码是带有标记 **Abc** 的 overallocating 池。
 
 若要清除断点，请将 **PoolHitTag** 设置为零：
 

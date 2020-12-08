@@ -1,7 +1,6 @@
 ---
 title: 对存储驱动程序中的可分页代码的限制
 description: 对存储驱动程序中的可分页代码的限制
-ms.assetid: 1958f22f-5563-41e9-9c3f-dec8a4ac80c0
 keywords:
 - 存储驱动程序 WDK，可分页代码限制
 - 可分页代码限制 WDK 存储
@@ -9,12 +8,12 @@ keywords:
 - 分页路径 WDK 存储
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 19975b687116a1a5f7ea1f53f46c3f94ee699a0a
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: dd273399919d4899b3698bc928cbe211dfc6172e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91732765"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96802213"
 ---
 # <a name="restrictions-on-pageable-code-in-storage-drivers"></a>对存储驱动程序中的可分页代码的限制
 
@@ -28,7 +27,7 @@ ms.locfileid: "91732765"
 
 但是，Microsoft 要求在被动级别提交所有 *存储* IOCTL 请求 \_ ，因此，尽管调度例程本身并不可以分页，但它可以调用可分页的子例程来处理存储的 IOCTL 请求。 这些子例程还可以访问可分页内存。
 
-[**DriverEntry**](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_initialize)、重新[**初始化**](/windows-hardware/drivers/ddi/ntddk/nc-ntddk-driver_reinitialize)和[**卸载**](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_unload)这样的例程（不执行 i/o 操作，并以 IRQL = 被动级别运行） \_ 也可以有可分页的代码。
+[**DriverEntry**](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_initialize)、重新 [**初始化**](/windows-hardware/drivers/ddi/ntddk/nc-ntddk-driver_reinitialize)和 [**卸载**](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_unload)这样的例程（不执行 i/o 操作，并以 IRQL = 被动级别运行） \_ 也可以有可分页的代码。
 
 特别注意事项适用于在寻呼路径中管理存储设备的驱动程序。 如果驱动程序参与了页面文件的 i/o 操作，则该驱动程序位于 "分页路径" 中。 当存储驱动程序在分页路径中时，IRP [**DispatchPower**](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch) \_ MJ 电源请求的 DispatchPower 例程 \_ 不得是可分页的。
 

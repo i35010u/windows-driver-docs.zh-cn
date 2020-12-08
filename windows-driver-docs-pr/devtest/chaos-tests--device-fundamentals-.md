@@ -1,15 +1,14 @@
 ---
 title: CHAOS 测试（设备基础功能）
 description: " (并发硬件和操作系统的混乱) 测试会同时运行各种 PnP 驱动程序测试、设备驱动程序模糊测试和电源系统测试。"
-ms.assetid: FA0D73DC-B0B8-4CA7-8DDC-A2C3EC106C3F
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f316f52efee5b55b14bb329668f54e5da784b89d
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: ae74d9473c9c511eb8680e88050e30de6b92ebad
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104612"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801857"
 ---
 # <a name="chaos-tests-device-fundamentals"></a>CHAOS 测试（设备基础功能）
 

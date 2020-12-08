@@ -1,7 +1,6 @@
 ---
 title: SRB \_ 关闭 \_ 流
 description: SRB \_ 关闭 \_ 流
-ms.assetid: e118ddd7-fe0e-4834-9ae6-19eef0348b2c
 keywords:
 - SRB_CLOSE_STREAM 流媒体设备
 topic_type:
@@ -12,12 +11,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e6ca00b52f236ebe7c436ee46f57935d748437e2
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: ec7102861ae41b571c81906d9b4264360fae6ffa
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89186097"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96802143"
 ---
 # <a name="srb_close_stream"></a>SRB \_ 关闭 \_ 流
 
@@ -42,7 +41,7 @@ ms.locfileid: "89186097"
 
 ### <a name="comments"></a>注释
 
-类驱动程序在*pSrb*StreamObject 中提供了[**HW \_ 流 \_ 对象**](/windows-hardware/drivers/ddi/strmini/ns-strmini-_hw_stream_object)缓冲区 - &gt; **StreamObject**， *pSrb* - &gt; **StreamObject** - &gt; **StreamNumber**设置为要关闭的流的数目。 *PSrb*指针指向[**HW \_ 流 \_ 请求 \_ 块**](/windows-hardware/drivers/ddi/strmini/ns-strmini-_hw_stream_request_block)结构。 **StreamNumber**对应于微型驱动程序提供的、响应[**SRB \_ 获取 \_ 流 \_ 信息**](srb-get-stream-info.md)请求的[**HW \_ 流 \_ 描述符**](/windows-hardware/drivers/ddi/strmini/ns-strmini-_hw_stream_descriptor)结构内的流偏移量。
+类驱动程序在 *pSrb* StreamObject 中提供了 [**HW \_ 流 \_ 对象**](/windows-hardware/drivers/ddi/strmini/ns-strmini-_hw_stream_object)缓冲区 - &gt; **StreamObject**， *pSrb* - &gt; **StreamObject** - &gt; **StreamNumber** 设置为要关闭的流的数目。 *PSrb* 指针指向 [**HW \_ 流 \_ 请求 \_ 块**](/windows-hardware/drivers/ddi/strmini/ns-strmini-_hw_stream_request_block)结构。 **StreamNumber** 对应于微型驱动程序提供的、响应 [**SRB \_ 获取 \_ 流 \_ 信息**](srb-get-stream-info.md)请求的 [**HW \_ 流 \_ 描述符**](/windows-hardware/drivers/ddi/strmini/ns-strmini-_hw_stream_descriptor)结构内的流偏移量。
 
 如果微型驱动程序成功关闭了流，则微型驱动程序返回状态 " \_ 成功"。 否则，它将返回相应的错误状态。
 

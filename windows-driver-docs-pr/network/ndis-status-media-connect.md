@@ -1,17 +1,16 @@
 ---
 title: NDIS_STATUS_MEDIA_CONNECT
 description: NDIS_STATUS_MEDIA_CONNECT 状态表明设备的网络连接的状态已从 "断开连接" 更改为 "已连接"。
-ms.assetid: de03d265-c8bf-4b7d-bfff-f583fcf08904
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 NDIS_STATUS_MEDIA_CONNECT 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 6979d4acc2f55d4d6ebff4d1a69fe92835647eac
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 5166f0953f09c284539713ed5c4cb0e93a86b0b5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89211739"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801513"
 ---
 # <a name="ndis_status_media_connect"></a>NDIS \_ 状态 \_ 媒体 \_ 连接
 
@@ -21,7 +20,7 @@ NDIS \_ 状态 \_ 媒体 \_ 连接状态表明设备的网络连接的状态已�
 <a name="remarks"></a>备注
 -------
 
-\_ \_ \_ 对于过量的 ndis 6.0 驱动程序，ndis 将 ndis 状态媒体连接状态指示转换为[**ndis \_ 状态 \_ 链接 \_ 状态**](ndis-status-link-state.md)指示。
+\_ \_ \_ 对于过量的 ndis 6.0 驱动程序，ndis 将 ndis 状态媒体连接状态指示转换为 [**ndis \_ 状态 \_ 链接 \_ 状态**](ndis-status-link-state.md)指示。
 
 NDIS 5。*x* 和更早的微型端口驱动程序指示当微型端口驱动程序确定网络连接已丢失时， [**NDIS \_ 状态 \_ 媒体 \_ 断开连接**](ndis-status-media-disconnect.md) 状态。 在恢复连接时，驱动程序指示 NDIS \_ 状态 \_ 媒体 \_ 连接状态。
 
@@ -47,7 +46,7 @@ NDIS 5。*x* 和更早的微型端口驱动程序指示当微型端口驱动程�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**NDIS \_ 状态 \_ 链接 \_ 状态**](ndis-status-link-state.md)

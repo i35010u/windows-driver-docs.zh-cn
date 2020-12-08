@@ -1,15 +1,14 @@
 ---
 title: 支持简单双工的文档送纸器
 description: 支持简单双工的文档送纸器
-ms.assetid: 0807f02a-5bbf-4ed1-b381-63e1f37a0e2e
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 140b1faf414c8d7f52ba14be368e1d518967f079
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 3ab8ce030de605b73274f9c386d27e82edd66304
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89189163"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96802459"
 ---
 # <a name="simple-duplex-capable-document-feeder"></a>支持简单双工的文档送纸器
 
@@ -31,7 +30,7 @@ ms.locfileid: "89189163"
 
 ### <a name="image-acquisition"></a>图像采集
 
-在标准获取和文件夹获取中，WIA 进纸器项属性设置用于前后页面。 有关标准获取和获取文件夹的详细信息，请参阅 [支持高级双工的文档送纸器](advanced-duplex-capable-document-feeder.md)。
+在标准获取和文件夹获取中，WIA 进纸器项属性设置用于前后页面。 有关标准获取和获取文件夹的详细信息，请参阅 [高级 Duplex-Capable 文档送纸器](advanced-duplex-capable-document-feeder.md)。
 
  
 

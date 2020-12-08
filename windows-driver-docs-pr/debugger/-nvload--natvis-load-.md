@@ -1,7 +1,6 @@
 ---
 title: .nvload（NatVis 加载）
 description: Nvload 命令将 NatVis 文件加载到调试器环境中。 在可视化效果加载后，它将用于呈现可视化对象中定义的数据。
-ms.assetid: 9B14B3B4-EA90-426E-8555-0E5B8F63E0A9
 keywords:
 - nvload (NatVis) Windows 调试的负载
 ms.date: 05/23/2017
@@ -12,12 +11,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 6dc22de05ac2dae4e974ef3b55602bb24c021417
-ms.sourcegitcommit: 878a1cb0149dc18ccbd31774e12bad76084dfa24
+ms.openlocfilehash: 98f4cbcd33add62877f3e448a0206a1a10424178
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94937771"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803297"
 ---
 # <a name="nvload-natvis-load"></a>.nvload（NatVis 加载）
 

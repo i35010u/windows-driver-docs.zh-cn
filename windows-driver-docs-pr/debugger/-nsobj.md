@@ -1,7 +1,6 @@
 ---
 title: nsobj
 description: Nsobj 扩展显示 ACPI 命名空间对象。
-ms.assetid: 348aeb42-41c6-42de-bb43-b075f55076c4
 keywords:
 - nsobj Windows 调试
 ms.date: 05/23/2017
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 6fa7464ca3cd5439aad8367189283e02f8f27d4d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2de9d87913adaad9a2679f3cefa56bbba5d84c11
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63335852"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803301"
 ---
 # <a name="nsobj"></a>!nsobj
 
 
-**！ Nsobj**扩展显示 ACPI 命名空间对象。
+**！ Nsobj** 扩展显示 ACPI 命名空间对象。
 
 语法
 
@@ -30,24 +29,24 @@ ms.locfileid: "63335852"
 !nsobj [Address]
 ```
 
-## <a name="span-idddknsobjdbgspanspan-idddknsobjdbgspanparameters"></a><span id="ddk__nsobj_dbg"></span><span id="DDK__NSOBJ_DBG"></span>参数
+## <a name="span-idddk__nsobj_dbgspanspan-idddk__nsobj_dbgspanparameters"></a><span id="ddk__nsobj_dbg"></span><span id="DDK__NSOBJ_DBG"></span>参数
 
 
-<span id="_______Address______"></span><span id="_______address______"></span><span id="_______ADDRESS______"></span> *Address*   
-指定的命名空间对象的地址。 如果省略此属性，则使用命名空间树的根。
+<span id="_______Address______"></span><span id="_______address______"></span><span id="_______ADDRESS______"></span>*地址*   
+指定命名空间对象的地址。 如果省略此，则使用命名空间树的根。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 Kdexts.dll
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-有关详细信息，请参阅[ACPI 调试](acpi-debugging.md)。
+有关详细信息，请参阅 [ACPI 调试](acpi-debugging.md)。
 
 <a name="remarks"></a>备注
 -------
 
-此扩展等同于[ **！ amli dns**](-amli-dns.md)。
+此扩展等效于 [**！ amli dns**](-amli-dns.md)。
 
  
 

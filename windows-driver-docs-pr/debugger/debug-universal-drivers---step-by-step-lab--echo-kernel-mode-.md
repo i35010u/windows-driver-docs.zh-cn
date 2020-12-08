@@ -1,19 +1,18 @@
 ---
 title: '调试 Windows 驱动程序-分步实验室 (Echo 内核模式) '
 description: 此实验室引入了 WinDbg 内核调试器。 WinDbg 用于调试回显内核模式示例驱动程序代码。
-ms.assetid: 3FBC3693-4288-42BA-B1E8-84DC2A9AFFD9
 keywords:
 - 调试实验室
 - 循序渐进
 - ECHO
 ms.date: 07/20/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 2710d3030912959f3a5e4fe20d113261ec160eb1
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 36c6cce5e6d91923b56b9e24f123c7871715850d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89208767"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96802027"
 ---
 # <a name="debug-windows-drivers---step-by-step-lab-echo-kernel-mode"></a>调试 Windows 驱动程序 - 分步实验室（Echo 内核模式）
 
@@ -263,13 +262,13 @@ DML versions of commands on by default
 0: kd> .hh .prefer_dml
 ```
 
-调试器帮助文件将显示的帮助 **。 \_ **
+调试器帮助文件将显示的帮助 **。 \_**
 
 ![调试器帮助应用程序，显示的帮助。首选 \- dml 命令](images/debuglab-image-prefer-dml-help.png)
 
 **显示目标系统上的 Windows 版本**
 
-5. 通过在 WinDbg 窗口中键入 [**vertarget (显示目标计算机版本) **](vertarget--show-target-computer-version-.md) 命令，在目标系统上显示详细的版本信息。
+5. 通过在 WinDbg 窗口中键入 [**vertarget (显示目标计算机版本)**](vertarget--show-target-computer-version-.md) 命令，在目标系统上显示详细的版本信息。
 
 ```dbgcmd
 0: kd> vertarget
@@ -284,7 +283,7 @@ System Uptime: 0 days 01:31:58.931
 
 **列出已加载的模块**
 
-6. 可以通过在 WinDbg 窗口中键入 " [**lm (List **](lm--list-loaded-modules-.md) " 已加载的模块 ") 命令来验证是否正在使用正确的内核模式进程。
+6. 可以通过在 WinDbg 窗口中键入 " [**lm (List**](lm--list-loaded-modules-.md) " 已加载的模块 ") 命令来验证是否正在使用正确的内核模式进程。
 
 ```dbgcmd
 0: Kd> lm
@@ -359,7 +358,7 @@ Unable to enumerate user-mode unloaded modules, Win32 error 0n30
 
     b. 将 master.zip 文件下载到本地硬盘驱动器。
 
-    c. 选择并按住 (或右键单击) *Windows-driver-samples-master.zip*，然后选择 " **全部提取**"。 指定一个新文件夹，或浏览到将存储所提取文件的现有文件夹。 例如，你可以将*C： \\ DriverSamples \\ *指定为要将文件提取到的新文件夹。
+    c. 选择并按住 (或右键单击) *Windows-driver-samples-master.zip*，然后选择 " **全部提取**"。 指定一个新文件夹，或浏览到将存储所提取文件的现有文件夹。 例如，你可以将 *C： \\ DriverSamples \\* 指定为要将文件提取到的新文件夹。
 
     d. 提取文件后，导航到以下子文件夹。
 
@@ -375,7 +374,7 @@ Unable to enumerate user-mode unloaded modules, Win32 error 0n30
 
 3.  **设置示例的配置和平台**
 
-    在解决方案资源管理器中，选择并按住 (或右键单击) **解决方案 "kmdfecho" (3 项目) **，然后选择 " **Configuration Manager**"。 请确保三个项目的配置和平台设置相同。 默认情况下，将配置设置为 "Win10 调试"，并将所有项目的平台设置为 "Win64"。 如果对一个项目进行任何配置和/或平台更改，则必须为其余三个项目进行相同的更改。
+    在解决方案资源管理器中，选择并按住 (或右键单击) **解决方案 "kmdfecho" (3 项目)**，然后选择 " **Configuration Manager**"。 请确保三个项目的配置和平台设置相同。 默认情况下，将配置设置为 "Win10 调试"，并将所有项目的平台设置为 "Win64"。 如果对一个项目进行任何配置和/或平台更改，则必须为其余三个项目进行相同的更改。
 
 4.  **设置运行时库**
 
@@ -397,7 +396,7 @@ Unable to enumerate user-mode unloaded modules, Win32 error 0n30
 
 7.  **找到生成的驱动程序文件**
 
-    在 "文件资源管理器" 中，导航到包含示例提取的文件的文件夹。 例如，如果是前面指定的文件夹，请导航到 *C： \\ DriverSamples \\ 常规 \\ echo \\ kmdf*。 在该文件夹中，编译的驱动程序文件的位置根据你在 **Configuration Manager**中选择的配置和平台设置而有所不同。 例如，如果将默认设置保持不变，则已编译的驱动程序文件将保存到一个名为* \\ x64 \\ 调试*的名为 "64 位，调试生成" 的文件夹中。
+    在 "文件资源管理器" 中，导航到包含示例提取的文件的文件夹。 例如，如果是前面指定的文件夹，请导航到 *C： \\ DriverSamples \\ 常规 \\ echo \\ kmdf*。 在该文件夹中，编译的驱动程序文件的位置根据你在 **Configuration Manager** 中选择的配置和平台设置而有所不同。 例如，如果将默认设置保持不变，则已编译的驱动程序文件将保存到一个名为 *\\ x64 \\ 调试* 的名为 "64 位，调试生成" 的文件夹中。
 
     导航到包含 Autosync 驱动程序的生成文件的文件夹：
 
@@ -405,14 +404,14 @@ Unable to enumerate user-mode unloaded modules, Win32 error 0n30
 
     该文件夹应包含以下文件：
 
-    | 文件     | 说明                                                                       |
+    | 文件     | 描述                                                                       |
     |----------|-----------------------------------------------------------------------------------|
     | Echo.sys | 驱动程序文件。                                                                  |
     | 回显 .inf |  (INF) 包含安装驱动程序所需的信息的信息。 |
 
     此外，还生成 echoapp.exe 文件，该文件应位于以下位置： *C： \\ DriverSamples \\ 常规 \\ echo \\ kmdf \\ exe \\ x64 \\ 调试*
 
-    | 文件        | 说明                                                                       |
+    | 文件        | 描述                                                                       |
     |-------------|-----------------------------------------------------------------------------------|
     | EchoApp.exe | 与 echo.sys 驱动程序通信的命令提示符可执行文件测试文件。 |     
 
@@ -444,7 +443,7 @@ b. 在 "更新和安全性" 中，选择 " **恢复**"。
 
 c. 在 "高级启动" 下，选择 " **立即重新启动**"。
 
-d. 重新启动计算机时，请选择 " **启动选项**"。 在 Windows 10 中， **Troubleshoot**选择 "  >  **高级选项**  >  " "**启动设置**疑难解答"，然后选择 "重新启动" 按钮。
+d. 重新启动计算机时，请选择 " **启动选项**"。 在 Windows 10 中， **Troubleshoot** 选择 "  >  **高级选项**  >  " "**启动设置** 疑难解答"，然后选择 "重新启动" 按钮。
 
 e. 按 **F7** 键，选择 "禁用驱动程序签名强制"。
 
@@ -472,18 +471,18 @@ f. 重新启动目标计算机。
 
 devcon install &lt;INF 文件&gt; &lt;硬件 ID&gt;
 
-安装此驱动程序所需的 INF 文件为 " *echo*"。 Inf 文件包含用于安装 *echo.sys*的硬件 ID。 对于 echo 示例，硬件 ID 是 **根 \\ echo**。
+安装此驱动程序所需的 INF 文件为 " *echo*"。 Inf 文件包含用于安装 *echo.sys* 的硬件 ID。 对于 echo 示例，硬件 ID 是 **根 \\ echo**。
 
 在目标计算机上，以管理员身份打开“命令提示符”窗口。 导航到驱动程序包文件夹，然后输入以下命令：
 
-**devcon 安装 echo 根目录 \\回显** 如果收到有关无法识别 *devcon* 的错误消息，请尝试将路径添加到 *devcon* 工具。 例如，如果将该文件复制到名为 *C： \\ Tools*的文件夹，请尝试使用以下命令：
+**devcon 安装 echo 根目录 \\回显** 如果收到有关无法识别 *devcon* 的错误消息，请尝试将路径添加到 *devcon* 工具。 例如，如果将该文件复制到名为 *C： \\ Tools* 的文件夹，请尝试使用以下命令：
 
-**c： \\ 工具 \\ devcon install echo root \\ echo** 将出现一个对话框，指示测试驱动程序是未签名的驱动程序。 选择 "仍要继续 **安装此驱动程序** "。
+**c： \\ 工具 \\ devcon install echo root \\ echo** 将出现一个对话框，指示测试驱动程序是未签名的驱动程序。 选择“仍然安装此驱动程序”以继续。
 
 ![windows 安全警告-windows 无法验证此驱动程序软件的发布者](images/debuglab-image-install-security-warning.png)
 
 >[!TIP]
-> 如果安装有任何问题，请查看以下文件以了解详细信息。
+> 如果安装有任何问题，请查看以下文件以了解详细信息。
 `%windir%\inf\setupapi.dev.log`
 
 成功安装示例驱动程序后，就可以对其进行测试了。
@@ -534,14 +533,14 @@ Pattern Verified successfully
     0: kd> .symfix
     ```
 
-2.  若要添加您的本地符号位置以使用您的本地符号，请使用 **. sympath +** 和 then **/f**添加该路径。
+2.  若要添加您的本地符号位置以使用您的本地符号，请使用 **. sympath +** 和 then **/f** 添加该路径。
 
     ```dbgcmd
     0: kd> .sympath+ C:\DriverSamples\general\echo\kmdf
     0: kd> .reload /f
     ```
 
-    **注意** 带有 **/f** force 选项的**reload.sql**命令将删除指定模块的所有符号信息，并重新加载符号。 在某些情况下，此命令还会重新加载或卸载模块本身。
+    **注意** 带有 **/f** force 选项的 **reload.sql** 命令将删除指定模块的所有符号信息，并重新加载符号。 在某些情况下，此命令还会重新加载或卸载模块本身。
 
 
 
@@ -609,9 +608,9 @@ set ENABLE_OPTIMIZER=0
    ...
    ```
 
-   有关信息，请参阅 [**x (检查符号) **](x--examine-symbols-.md)。
+   有关信息，请参阅 [**x (检查符号)**](x--examine-symbols-.md)。
 
-4. **！ Lmi**扩展显示有关模块的详细信息。 键入 **！ lmi echo**。 输出应类似于下面所示的文本。
+4. **！ Lmi** 扩展显示有关模块的详细信息。 键入 **！ lmi echo**。 输出应类似于下面所示的文本。
 
    ```dbgcmd
    0: kd> !lmi echo
@@ -709,7 +708,7 @@ set ENABLE_OPTIMIZER=0
    …
    ```
 
-4. 前一个命令中显示的输出包含与驱动程序的正在运行的实例关联的 PDO，在此示例中为 *0xffffe0007b71a960*。 输入 **！ devobj**<em> &lt; PDO address &gt; </em>命令以显示与 echo 设备驱动程序关联即插即用信息。 使用 **！ devnode** 在你的电脑上显示的 PDO 地址，而不是此处显示的地址。
+4. 前一个命令中显示的输出包含与驱动程序的正在运行的实例关联的 PDO，在此示例中为 *0xffffe0007b71a960*。 输入 **！ devobj**<em> &lt; PDO address &gt;</em>命令以显示与 echo 设备驱动程序关联即插即用信息。 使用 **！ devnode** 在你的电脑上显示的 PDO 地址，而不是此处显示的地址。
 
    ```dbgcmd
    0: kd> !devobj 0xffffe0007b71a960
@@ -723,7 +722,7 @@ set ENABLE_OPTIMIZER=0
    Device queue is not busy.
    ```
 
-5. **！ Devnode 0 1**命令中显示的输出包含与驱动程序的正在运行的实例关联的 PDO 地址，在此示例中为*0xffffe0007b71a960*。 输入 **！ devstack**<em> &lt; PDO address &gt; </em>命令以显示与设备驱动程序相关即插即用信息。 使用 **！ devnode** 在你的电脑上显示的 PDO 地址，而不是以下显示的地址。
+5. **！ Devnode 0 1** 命令中显示的输出包含与驱动程序的正在运行的实例关联的 PDO 地址，在此示例中为 *0xffffe0007b71a960*。 输入 **！ devstack**<em> &lt; PDO address &gt;</em>命令以显示与设备驱动程序相关即插即用信息。 使用 **！ devnode** 在你的电脑上显示的 PDO 地址，而不是以下显示的地址。
 
    ```dbgcmd
    0: kd> !devstack 0xffffe0007b71a960
@@ -785,7 +784,7 @@ set ENABLE_OPTIMIZER=0
 
 **&lt;-在主机系统上**
 
-1.  使用 WinDbg UI 确认**Debug** &gt; 在当前 WinDbg 会话中启用了 "调试**源" 模式**。
+1.  使用 WinDbg UI 确认 **Debug** &gt; 在当前 WinDbg 会话中启用了 "调试 **源" 模式**。
 
 2.  键入以下命令，将本地代码位置添加到源路径。
 
@@ -841,7 +840,7 @@ set ENABLE_OPTIMIZER=0
 
 8.  **-&gt; 在目标系统上**
 
-    在 Windows 中，使用图标或输入**mmc devmgmt.msc**打开**设备管理器**。 在设备管理器中，展开 " **示例** " 节点。
+    在 Windows 中，使用图标或输入 **mmc devmgmt.msc** 打开 **设备管理器**。 在设备管理器中，展开 " **示例** " 节点。
 
 9.  选择并按住 (或右键单击) KMDF Echo 驱动程序条目，然后从菜单中选择 " **禁用** "。
 
@@ -891,7 +890,7 @@ set ENABLE_OPTIMIZER=0
 
 
 
-此外，还可以通过选择 " **edit** &gt; 在 WinDbg 中编辑**断点**" 来修改断点。 请注意，"断点" 对话框仅适用于现有的断点。 必须从命令行设置新断点。
+此外，还可以通过选择 " **edit** &gt; 在 WinDbg 中编辑 **断点**" 来修改断点。 请注意，"断点" 对话框仅适用于现有的断点。 必须从命令行设置新断点。
 
 
 
@@ -912,12 +911,12 @@ ba <access> <size> <address> {options}
 <thead>
 <tr class="header">
 <th align="left">选项</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>e</p></td>
+<td align="left"><p>E</p></td>
 <td align="left"><p>CPU 从地址提取指令时执行 () </p></td>
 </tr>
 <tr class="even">
@@ -954,7 +953,7 @@ ba r 4 0x0003f7bf0
 
 -   运行 (F5) –运行，直到遇到断点或发生错误检查之类的事件。
 
--   逐过程执行 (F10) –此命令会导致代码执行一次执行一个语句或一个指令。 如果遇到调用，代码执行将通过调用而不输入被调用的例程。  (如果编程语言为 c 或 c + + 并且 WinDbg 处于源模式，则可以使用**调试** &gt; **源模式**) 打开或关闭源模式。
+-   逐过程执行 (F10) –此命令会导致代码执行一次执行一个语句或一个指令。 如果遇到调用，代码执行将通过调用而不输入被调用的例程。  (如果编程语言为 c 或 c + + 并且 WinDbg 处于源模式，则可以使用 **调试** &gt; **源模式**) 打开或关闭源模式。
 
 -    (F11) 中的步骤–此命令类似于 "逐过程"，不同之处在于执行调用会进入被调用例程。
 
@@ -980,7 +979,7 @@ ba r 4 0x0003f7bf0
 
 **全局变量**
 
-您可以通过键入来找到全局变量地址的位置 *？ &lt;变量名称 &gt; *。
+您可以通过键入来找到全局变量地址的位置 *？ &lt;变量名称 &gt;*。
 
 **局部变量**
 
@@ -1069,10 +1068,10 @@ ba r 4 0x0003f7bf0
    ECHO!EchoEvtIoRead         
    ```
 
-2. 使用**bc \* **清除以前的断点。
+2. 使用 **bc \** _ 清除前面的断点。
 
    ```dbgcmd
-   0: kd> bc *  
+   0: kd> bc _  
    ```
 
 3. 3. 使用以下命令在 **EchoEvtIo** 例程上设置符号断点。
@@ -1225,7 +1224,7 @@ ba r 4 0x0003f7bf0
     ...
     ```
 
-    记下 *echoapp.exe*的图像名称，这表示我们正在查看与测试应用程序关联的线程。
+    记下 *echoapp.exe* 的图像名称，这表示我们正在查看与测试应用程序关联的线程。
 
 5.  4. 使用 **！ process** 命令确定这是否是在与 echoapp.exe 关联的进程中运行的唯一线程。 请注意，进程中正在运行的线程的线程号就是运行的、！ thread 命令所运行的线程数。
 
@@ -1407,7 +1406,7 @@ ba r 4 0x0003f7bf0
 
     ```dbgcmd
     0: kd> k
-      *** Stack trace for last set context - .thread/.cxr resets it
+      **_ Stack trace for last set context - .thread/.cxr resets it
     # Child-SP          RetAddr           Call Site
     00 ffffd001`5551d7a0 fffff801`eed184fe nt!KiSwapContext+0x76 [d:\9142\minkernel\ntos\ke\amd64\ctxswap.asm @ 109]
     01 ffffd001`5551d8e0 fffff801`eed17f79 nt!KiSwapThread+0x14e [d:\9142\minkernel\ntos\ke\thredsup.c @ 6347]
@@ -1416,7 +1415,7 @@ ba r 4 0x0003f7bf0
     ...
     ```
 
-    调用 stack 元素（例如 **KiCommitThreadWait** ）指示此线程未按预期运行。
+    调用 stack 元素（如 _ *KiCommitThreadWait**）指示此线程未按预期运行。
 
 **注意**  
 有关线程和进程的详细信息，请参阅以下参考资料：
@@ -1435,7 +1434,7 @@ ba r 4 0x0003f7bf0
 
 **&lt;-在主机系统上**
 
-中断请求级别 (IRQL) 用于管理中断服务的优先级。 每个处理器都有一个可以提高或降低线程的 IRQL 设置。 在处理器的 IRQL 设置下或之下发生的中断会被屏蔽，并且不会影响当前操作。 超出处理器的 IRQL 设置的中断优先于当前操作。 在调试程序发生中断之前，在目标计算机的当前处理器上，此 [**！ irql**](-irql.md) 扩展显示中断请求级别 (irql) 。 当目标计算机中断到调试器时，IRQL 会发生更改，但在调试器中断之前有效的 IRQL 会被保存，并由 **！ IRQL**显示。
+中断请求级别 (IRQL) 用于管理中断服务的优先级。 每个处理器都有一个可以提高或降低线程的 IRQL 设置。 在处理器的 IRQL 设置下或之下发生的中断会被屏蔽，并且不会影响当前操作。 超出处理器的 IRQL 设置的中断优先于当前操作。 在调试程序发生中断之前，在目标计算机的当前处理器上，此 [**！ irql**](-irql.md) 扩展显示中断请求级别 (irql) 。 当目标计算机中断到调试器时，IRQL 会发生更改，但在调试器中断之前有效的 IRQL 会被保存，并由 **！ IRQL** 显示。
 
 ```dbgcmd
 0: kd> !irql
@@ -1446,7 +1445,7 @@ Debugger saved IRQL for processor 0x0 -- 2 (DISPATCH_LEVEL)
 
 **&lt;-在主机系统上**
 
-使用 [**r (寄存器) **](r--registers-.md) 命令在当前处理器上显示当前线程的注册内容。
+使用 [**r (寄存器)**](r--registers-.md) 命令在当前处理器上显示当前线程的注册内容。
 
 ```dbgcmd
 0: kd> r
@@ -1462,7 +1461,7 @@ nt!DbgBreakPointWithStatus:
 fffff803`bb757020 cc              int     3
 ```
 
-或者，您可以通过选择 "**查看**寄存器" 来显示寄存器内容 &gt; **registers**。 有关详细信息，请参阅 [**r (寄存器) **](r--registers-.md)。
+或者，您可以通过选择 "**查看** 寄存器" 来显示寄存器内容 &gt; **registers**。 有关详细信息，请参阅 [**r (寄存器)**](r--registers-.md)。
 
 在单步执行汇编语言代码执行和其他情况时，查看寄存器的内容会很有帮助。 有关汇编语言反汇编的详细信息，请参阅 [带批注的 X86 反汇编](annotated-x86-disassembly.md) 和 [带批注的 x64 反汇编](annotated-x64-disassembly.md)。
 
@@ -1474,7 +1473,7 @@ fffff803`bb757020 cc              int     3
 
 若要结束用户模式调试会话，请将调试器返回到休眠模式，然后将目标应用程序设置为再次运行，请输入 **qd** (Quit 并分离) 命令。
 
-请确保并使用 **g** 命令让目标计算机运行代码，使其可以使用。 使用**bc \* **清除任何中断点也是一个不错的主意，这样一来，目标计算机将不会中断，而会尝试连接到主机计算机调试器。
+请确保并使用 **g** 命令让目标计算机运行代码，使其可以使用。 使用 **bc \** _ 清除任何断点也是一种很好的做法，这样，目标计算机将不会中断，尝试连接到主机计算机调试器。
 
 ```dbgcmd
 0: kd> qd
@@ -1487,7 +1486,7 @@ fffff803`bb757020 cc              int     3
 
 有关其他信息，请访问 Windows 调试。 请注意，其中的一些书籍将使用旧版 Windows （如 Windows Vista）的示例，但讨论的概念适用于大多数 Windows 版本。
 
-**书籍**
+_ *书籍**
 
 -   Mario Hewardt 和 Daniel Pravat 的高级 Windows 调试
 

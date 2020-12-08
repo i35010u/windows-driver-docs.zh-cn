@@ -1,15 +1,14 @@
 ---
 title: MB 微型端口驱动程序性能要求
 description: MB 微型端口驱动程序性能要求
-ms.assetid: 16986208-7572-412d-8839-71f1a66b074f
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: eed09e66ee4a4c85f00e6c05deefa21e584be0fb
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 167e406222ea257bb3659212cecffec4e1ee9760
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105584"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801615"
 ---
 # <a name="mb-miniport-driver-performance-requirements"></a>MB 微型端口驱动程序性能要求
 

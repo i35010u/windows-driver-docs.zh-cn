@@ -1,15 +1,14 @@
 ---
 title: 数据中心桥接的 NDIS QoS 要求
 description: 数据中心桥接的 NDIS QoS 要求
-ms.assetid: 09BEFF6C-6887-42BA-A44B-5BFE65DBD69E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4fbc3341bee2c04bd85b4747cd8b20b87fcc8579
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 0c6fcd36077736206df410df617c52d34d3b9063
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89213909"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801547"
 ---
 # <a name="ndis-qos-requirements-for-data-center-bridging"></a>数据中心桥接的 NDIS QoS 要求
 
@@ -34,7 +33,7 @@ ms.locfileid: "89213909"
 
 -   微型端口驱动程序必须支持 [oid \_ qos \_ 参数](./oid-qos-parameters.md) (oid) 方法请求的对象标识符才能设置 NDIS qos 参数。 有关详细信息，请参阅 [设置本地 NDIS QoS 参数](setting-local-ndis-qos-parameters.md)。
 
-    **注意**   NDIS 处理微型端口驱动程序的大多数 NDIS QoS OID 请求（ [OID \_ qos \_ 参数](./oid-qos-parameters.md)除外）。
+    **注意**  NDIS 处理微型端口驱动程序的大多数 NDIS QoS OID 请求（ [OID \_ qos \_ 参数](./oid-qos-parameters.md)除外）。
 
      
 

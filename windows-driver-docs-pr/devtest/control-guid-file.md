@@ -1,25 +1,24 @@
 ---
 title: 控制 GUID 文件
 description: 控制 GUID 文件
-ms.assetid: cf5dd9bf-c9db-4324-abd3-ee0e1b15e14d
 keywords:
 - 控制 Guid WDK
 - ctl 文件
 - ctl 文件
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e89ca91fd29ed7a5c3c157e0f9f46f209cda2152
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: becdbcf267f3a04bc1b840246ab95cc27f66e3e2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89383995"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801853"
 ---
 # <a name="control-guid-file"></a>控制 GUID 文件
 
 ## <span id="ddk_control_guid_file_tools"></span><span id="DDK_CONTROL_GUID_FILE_TOOLS"></span>
 
-*控件 guid 文件* ( 扩展名) 是一个文本文件，该文件指定跟踪提供程序的[控件 GUID](control-guid.md)和 GUID 的友好名称，格式为：
+*控件 guid 文件* ( 扩展名) 是一个文本文件，该文件指定跟踪提供程序的 [控件 GUID](control-guid.md)和 GUID 的友好名称，格式为：
 
 ```
 ControlGUID GUIDFriendlyName

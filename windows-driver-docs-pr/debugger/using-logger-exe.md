@@ -1,19 +1,18 @@
 ---
 title: 使用 Logger.exe
 description: 使用 Logger.exe
-ms.assetid: da2ec999-4529-49dc-855e-a7d3b15583f7
 keywords:
 - 记录器，logger.exe
 - logger.exe
 - 记录器，独立
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c1492794d9fe07e388851f5cba27c02724742e65
-ms.sourcegitcommit: 17c1bbc5ea0bef3bbc87794b030a073f905dc942
+ms.openlocfilehash: e1fe548aabf0003e60deabdfef016a7423f12ba8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88802797"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803109"
 ---
 # <a name="using-loggerexe"></a>使用 Logger.exe
 
@@ -31,7 +30,7 @@ logger Target
 
 Logger.exe 实用工具和 Logexts.dll 模块是此记录器车辆的两个组件。 它们通过内存的共享部分进行通信，其中包括输出文件句柄、当前类别掩码和指向日志输出缓冲区的指针。
 
-将出现标题为 **记录器 (调试器) ** 的窗口。 此窗口将显示记录器的进度。
+将出现标题为 **记录器 (调试器)** 的窗口。 此窗口将显示记录器的进度。
 
 ### <a name="span-idchange_settings_dialog_boxspanspan-idchange_settings_dialog_boxspanchange-settings-dialog-box"></a><span id="change_settings_dialog_box"></span><span id="CHANGE_SETTINGS_DIALOG_BOX"></span>"更改设置" 对话框
 

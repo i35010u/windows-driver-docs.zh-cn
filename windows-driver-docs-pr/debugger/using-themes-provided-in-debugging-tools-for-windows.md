@@ -1,17 +1,16 @@
 ---
 title: 使用 Windows 调试工具中提供的主题
 description: 使用 Windows 调试工具中提供的主题
-ms.assetid: d3571a7a-cdab-4a17-b4e0-ffb1690de642
 keywords:
-- 提供的主题
+- 主题，已提供
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f8469e0ad441e7f3c67763e4a5d9330f11c475aa
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 70d84291fd5b4fbbb6c5836dc9daa2b99e39f8e0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390575"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803023"
 ---
 # <a name="using-themes-provided-in-debugging-tools-for-windows"></a>使用 Windows 调试工具中提供的主题
 
@@ -19,39 +18,39 @@ ms.locfileid: "63390575"
 ## <span id="ddk_creating_and_opening_a_workspace_dbg"></span><span id="DDK_CREATING_AND_OPENING_A_WORKSPACE_DBG"></span>
 
 
-本主题说明从四个主题中的 Windows 调试工具提供的每个配置的屏幕快照。 这些主题是 Standard.reg、 Standardvs.reg、 Srcdisassembly.reg 和 Multimon.reg。
+本主题介绍 Windows 调试工具中提供的四个主题中的每个配置的屏幕截图。 这些主题为标准 .reg、Standardvs、Srcdisassembly 和 Multimon。
 
-### <a name="span-idstandardregspanspan-idstandardregspanstandardreg"></a><span id="standard_reg"></span><span id="STANDARD_REG"></span>Standard.reg
+### <a name="span-idstandard_regspanspan-idstandard_regspanstandardreg"></a><span id="standard_reg"></span><span id="STANDARD_REG"></span>标准 .reg
 
-Standard.reg 主题可用于大多数调试目的。 在这种配置，WinDbg 窗口的较低的第三个均由调试器命令窗口。 上部的三分之二分为大约一半。 指示源窗口在其中打开选项卡式的集合中的占位符窗口的左半部分所占用。 右半部分又进一步分为部分垂直。 上半部分包含一个选项卡式的集合，其中包含监视、 局部变量、 寄存器和反汇编窗口。 下半部分包含一个选项卡式的集合，其中包括调用和进程和线程窗口。
+标准 .reg 主题可用于大多数调试目的。 在这种排列中，将由调试器命令窗口来执行 WinDbg 窗口的第三方。 上部三分之二除以半部分。 左半部分由占位符窗口占用，后者指示源窗口在选项卡式集合中的打开位置。 右半部分将进一步分为半部分。 上半部分包含一个选项卡式集合，其中包含 "监视"、"局部变量"、"寄存器" 和 "反汇编" 窗口。 下半部分包含选项卡式集合，其中包括调用和进程和线程窗口。
 
-在每个停靠位置的占位符窗口，还包含为在其他窗口的参考点。 占位符 windows 应不会关闭，因为将其关闭，则可能会更改 windows 的配置。 停靠所有的窗口中查看这种排列方式。下面的屏幕截图显示了 Standard.reg 主题。
+在每个停靠位置，还包含一个占位符窗口作为其他窗口的引用点。 占位符窗口不应关闭，因为关闭它们可能会更改 windows 的配置。 此排列中的所有窗口都是固定的。下面的屏幕截图显示了标准 .reg 主题。
 
-![standard.reg 主题的屏幕截图](images/theme-standard.jpg)
+![标准 .reg 主题的屏幕截图](images/theme-standard.jpg)
 
-### <a name="span-idstandardvsregspanspan-idstandardvsregspanstandardvsreg"></a><span id="standardvs_reg"></span><span id="STANDARDVS_REG"></span>Standardvs.reg
+### <a name="span-idstandardvs_regspanspan-idstandardvs_regspanstandardvsreg"></a><span id="standardvs_reg"></span><span id="STANDARDVS_REG"></span>Standardvs
 
-Standardvs.reg 主题可用于大多数调试情况下，但在布局中更类似于 Visual Studio。 在这种配置，WinDbg 窗口划分为水平折。 上面第三个又进一步分为垂直部分。 右上的左半部分第三个包含一个选项卡式的集合，其中包括监视、 局部变量、 寄存器、 内存、 反汇编、 和便签簿窗口。 上面的右半部分第三个包含一个选项卡式的集合，其中包括调用和进程和线程 windows。 WinDbg 窗口的较低的第三个均由调试器命令窗口。 第三个中间通过指示源窗口选项卡式的集合中的打开其中一个占位符窗口来填充。
+Standardvs 主题可用于大多数调试目的，但更类似于布局到 Visual Studio。 在这种排列中，WinDbg 窗口水平分为三分之二。 将上半部分进一步划分为半部分。 上半部分的左半部分包含一个选项卡式集合，其中包括监视、局部变量、寄存器、内存、反汇编和便笺簿窗口。 上半部分的右半部分包含一个选项卡式集合，其中包括调用和进程和线程窗口。 WinDbg 窗口的第三个部分由调试器命令窗口执行。 中间的第三个由占位符窗口填充，后者指示在选项卡式集合中打开源窗口的位置。
 
-在每个停靠位置的占位符窗口，还包含为在其他窗口的参考点。 占位符 windows 应不会关闭，因为将其关闭，则可能会更改 windows 的配置。 停靠所有的窗口中查看这种排列方式。 下面的屏幕截图显示了 Standardvs.reg 主题。
+在每个停靠位置，还包含一个占位符窗口作为其他窗口的引用点。 占位符窗口不应关闭，因为关闭它们可能会更改 windows 的配置。 此排列中的所有窗口都是固定的。 以下屏幕截图显示了 Standardvs 主题。
 
-![standardvs.reg 主题的屏幕截图](images/theme-standardvs.jpg)
+![standardvs 主题的屏幕截图](images/theme-standardvs.jpg)
 
-### <a name="span-idsrcdisassemblyregspanspan-idsrcdisassemblyregspansrcdisassemblyreg"></a><span id="srcdisassembly_reg"></span><span id="SRCDISASSEMBLY_REG"></span>Srcdisassembly.reg
+### <a name="span-idsrcdisassembly_regspanspan-idsrcdisassembly_regspansrcdisassemblyreg"></a><span id="srcdisassembly_reg"></span><span id="SRCDISASSEMBLY_REG"></span>Srcdisassembly
 
-Srcdisassembly.reg 主题包括一个反汇编窗口中的，在程序集模式中进行调试。 在这种配置，WinDbg 窗口分为两半竖向，和每个格式正确的后半部分进一步划分为三水平。 右半部分，右上第三个是局部变量选项卡式的集合和监视窗口，中间第三个调试器命令窗口中，，越低第三个选项卡式的进程、 线程和调用 windows 集合。 指示源窗口打开选项卡式的集合; 中的其中一个占位符窗口的左半部分，执行上部的三分之二越低第三个是占用反汇编窗口。
+Srcdisassembly 主题包含一个 "反汇编" 窗口，用于在程序集模式下进行调试。 在这种排列中，WinDbg 窗口以半角分为半角，而每一半形成的都是以水平方式划分为三分之二。 在右半部分，第三个是 "局部变量" 和 "监视" 窗口的选项卡式集合，中间第三个是调试器命令窗口，下半部分是进程和线程的选项卡式集合并调用窗口。 在左半部分，用一个占位符窗口来表示上三分之二，该窗口指示源窗口在选项卡式集合中的打开位置;第三个是 "反汇编" 窗口。
 
-在每个停靠位置的占位符窗口，还包含为在其他窗口的参考点。 占位符 windows 应不会关闭，因为将其关闭，则可能会更改 windows 的配置。 停靠所有的窗口中查看这种排列方式。 下面的屏幕截图显示了 Srcdisassembly.reg 主题。
+在每个停靠位置，还包含一个占位符窗口作为其他窗口的引用点。 占位符窗口不应关闭，因为关闭它们可能会更改 windows 的配置。 此排列中的所有窗口都是固定的。 以下屏幕截图显示了 Srcdisassembly 主题。
 
-![srcdisassembly.reg 主题的屏幕截图](images/theme-srcdisassembly.jpg)
+![srcdisassembly 主题的屏幕截图](images/theme-srcdisassembly.jpg)
 
-### <a name="span-idmultimonregspanspan-idmultimonregspanmultimonreg"></a><span id="multimon_reg"></span><span id="MULTIMON_REG"></span>Multimon.reg
+### <a name="span-idmultimon_regspanspan-idmultimon_regspanmultimonreg"></a><span id="multimon_reg"></span><span id="MULTIMON_REG"></span>Multimon
 
-使用多个监视器进行调试设置 Multimon.reg 主题。 在这种配置，创建新的停靠，因此 WinDbg 窗口可以查看一个监视器上，并可以在其他监视器上查看新的停靠。 指示源窗口在其中打开选项卡式的集合中的占位符窗口的情况下，WinDbg 窗口都会填满。 新的停靠分为 fourths。 左上角包含一个选项卡式的集合，其中包括监视和局部变量窗口。 右上角包含一个选项卡式的集合，其中包含寄存器、 内存、 反汇编、 便签簿，并且进程和线程窗口。 左下方包含调试器命令窗口。 右下方包含调用窗口。
+Multimon 主题设置为可通过多个监视器进行调试。 在这种排列中，将创建一个新的停靠，以便可以在一个监视器上查看 WinDbg 窗口，并可以在另一个监视器上查看新的停靠。 WinDbg 窗口由占位符窗口填充，该窗口指示在选项卡式集合中打开源窗口的位置。 新的停靠划分为四分之三。 左上方包含一个选项卡式集合，其中包含 "监视" 和 "局部变量" 窗口。 右上方包含一个选项卡式集合，其中包括寄存器、内存、反汇编、便笺簿、进程和线程窗口。 左下方包含调试器命令窗口。 右下方包含 "调用" 窗口。
 
-在每个停靠位置的占位符窗口，还包含为在其他窗口的参考点。 占位符 windows 应不会关闭，因为将其关闭，则可能会更改 windows 的配置。 停靠所有的窗口中查看这种排列方式。 下面的屏幕截图显示了 Multimon.reg 主题。
+在每个停靠位置，还包含一个占位符窗口作为其他窗口的引用点。 占位符窗口不应关闭，因为关闭它们可能会更改 windows 的配置。 此排列中的所有窗口都是固定的。 以下屏幕截图显示了 Multimon 主题。
 
-![multimon.reg 主题的屏幕截图](images/theme-multimon.jpg)
+![multimon 主题的屏幕截图](images/theme-multimon.jpg)
 
  
 

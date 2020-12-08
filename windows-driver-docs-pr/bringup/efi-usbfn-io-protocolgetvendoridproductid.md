@@ -1,20 +1,19 @@
 ---
 title: EFI_USBFN_IO_PROTOCOL.GetVendorIdProductId
 description: EFI_USBFN_IO_PROTOCOL.GetVendorIdProductId
-ms.assetid: 78dbc589-3ffd-4ee2-9d80-4570b3b20b2f
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9cc95119621882735c518b36e23b6c1b4affd20a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d7a86b3cf07484eef564bba800e957b2e6e2bfda
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63337695"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803366"
 ---
-# <a name="efiusbfnioprotocolgetvendoridproductid"></a>EFI\_USBFN\_IO\_PROTOCOL.GetVendorIdProductId
+# <a name="efi_usbfn_io_protocolgetvendoridproductid"></a>EFI \_ USBFN \_ IO \_ 协议。GetVendorIdProductId
 
 
-**GetVendorIdProductId**函数返回的供应商 id 和设备的产品 id。
+**GetVendorIdProductId** 函数返回设备的供应商 id 和产品 id。
 
 ## <a name="syntax"></a>语法
 
@@ -29,17 +28,17 @@ EFI_STATUS
   );
 ```
 
-## <a name="parameters"></a>Parameters
+## <a name="parameters"></a>参数
 
 
 <a href="" id="this"></a>*此*  
-指向 EFI\_USBFN\_IO\_协议实例。
+指向 EFI \_ USBFN \_ IO \_ 协议实例的指针。
 
 <a href="" id="vid"></a>*Vid*  
-返回供应商的设备的 id。 供应商 Id (Vid) 是由供应商公司拥有的 16 位数字和分配和维护的 USB-如果。
+返回的设备的供应商 id。  (VIDs) 的供应商 Id 是供应商公司拥有的16位数字，由 USB-IF 分配和维护。
 
-<a href="" id="pid"></a>*pid*  
-设备的返回的产品 id。 产品 Id (Pid) 是由每个供应商，他们认为适合的 16 位数字。
+<a href="" id="pid"></a>*P&id*  
+返回的设备的产品 id。 产品 Id (Pid) 为每个供应商分配的16位数字。
 
 ## <a name="return-values"></a>返回值
 
@@ -58,7 +57,7 @@ EFI_STATUS
 <tbody>
 <tr class="odd">
 <td><p><strong>EFI_SUCCESS</strong></p></td>
-<td><p>成功返回的函数</p></td>
+<td><p>函数已成功返回</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>EFI_INVALID_PARAMETER</strong></p></td>

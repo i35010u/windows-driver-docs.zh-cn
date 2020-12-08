@@ -1,7 +1,6 @@
 ---
 title: 设备回到工作状态
 description: 了解设备返回到其工作状态时会发生什么情况。 例如，当外部事件触发唤醒信号时。
-ms.assetid: 0a5bdaf5-ed9e-44d0-bc8a-876ceb342520
 keywords:
 - 设备电源状态 WDK KMDF
 - 工作状态 WDK KMDF
@@ -12,12 +11,12 @@ keywords:
 - 睡眠电源管理 WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d9ac9f42171fd70cd7c7e71bee135beb1c541527
-ms.sourcegitcommit: 2aedb606f9f14e74687f0d3da60e14fc6ffffa7e
+ms.openlocfilehash: d682b032126e6845bb779b5a44c2a6314d625e4e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91544394"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803447"
 ---
 # <a name="a-device-returns-to-its-working-state"></a>设备回到工作状态
 

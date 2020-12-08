@@ -1,15 +1,14 @@
 ---
 title: WdbgExts 内存访问
 description: WdbgExts 内存访问
-ms.assetid: 7b600d18-343e-4c22-b1e9-5dcc83d88695
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 30896c34a24274d6c0962b9c34a31ce07182bc86
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: bcbc367fbe6ff58804748aedc18c9dc0e8119569
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89216002"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96802845"
 ---
 # <a name="wdbgexts-memory-access"></a>WdbgExts 内存访问
 
@@ -50,7 +49,7 @@ ms.locfileid: "89216002"
 函数 [**ReadMsr**](/windows-hardware/drivers/ddi/wdbgexts/nf-wdbgexts-readmsr) 和 [**WriteMsr**](/windows-hardware/drivers/ddi/wdbgexts/nf-wdbgexts-writemsr) 读取和写入 MSRs。
 
 <span id="System_Bus"></span><span id="system_bus"></span><span id="SYSTEM_BUS"></span>系统总线  
-[**Ioctl**](/windows-hardware/drivers/ddi/wdbgexts/nc-wdbgexts-pwindbg_ioctl_routine)操作[**IG \_ 获取 \_ 总线 \_ 数据**](/windows-hardware/drivers/ddi/wdbgexts/ns-wdbgexts-_getsetbusdata)，并**IG \_ 设置 \_ 总线 \_ 数据**读取和写入系统总线数据。
+[**Ioctl**](/windows-hardware/drivers/ddi/wdbgexts/nc-wdbgexts-pwindbg_ioctl_routine)操作 [**IG \_ 获取 \_ 总线 \_ 数据**](/windows-hardware/drivers/ddi/wdbgexts/ns-wdbgexts-_getsetbusdata)，并 **IG \_ 设置 \_ 总线 \_ 数据** 读取和写入系统总线数据。
 
 ### <a name="span-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 

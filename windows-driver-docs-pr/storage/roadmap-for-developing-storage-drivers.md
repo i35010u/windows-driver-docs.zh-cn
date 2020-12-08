@@ -1,15 +1,14 @@
 ---
 title: 开发 Windows 存储驱动程序的路线图
 description: 开发 Windows 存储驱动程序的路线图
-ms.assetid: 67627ff9-588c-492f-861f-c592f7f92b51
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d2c87d967840f9bdf1da34ae3b104c8926feffdb
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: f798208397175298dbc559964be3144340438a06
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89188010"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96802195"
 ---
 # <a name="roadmap-for-developing-windows-storage-drivers"></a>开发 Windows 存储驱动程序的路线图
 

@@ -1,15 +1,14 @@
 ---
 title: Windows 8.1 中存储设备应用的设备同步和更新
 description: 在 Windows 8.1 中，UWP 应用可以使用设备后台任务来同步外围设备上的数据。
-ms.assetid: AA6E0760-F048-4BDC-8429-D119A531CED6
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 320aed46577fb32b9594ddfeb85cef068f85499b
-ms.sourcegitcommit: ec7bebe3f94536455e62b372c2a28fe69d1717f7
+ms.openlocfilehash: d597cf756ca11cff0c70b2d08fe67793f1975db3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93349755"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96802695"
 ---
 # <a name="device-sync-and-update-for-store-device-apps-in-windows-81"></a>Windows 8.1 中存储设备应用的设备同步和更新
 

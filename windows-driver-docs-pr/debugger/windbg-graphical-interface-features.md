@@ -1,18 +1,17 @@
 ---
 title: WinDbg 图形界面功能
 description: WinDbg 图形界面功能
-ms.assetid: 715b0502-6915-402c-aecb-0b762eb7b846
 keywords:
-- WinDbg 中，图形界面 （参考）
+- 'WinDbg，图形界面 (引用) '
 - 图形界面，详细信息
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fe8ce0a0903013b6c07af5bc001312e67e4edbca
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 53db4340a7ae9a14bcc340469ee2ad00da7af99a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533214"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96802828"
 ---
 # <a name="windbg-graphical-interface-features"></a>WinDbg 图形界面功能
 
@@ -36,7 +35,7 @@ ms.locfileid: "56533214"
 
 [工具栏按钮](toolbar-buttons.md)
 
-[键盘快捷方式](keyboard-shortcuts.md)
+[快捷键](keyboard-shortcuts.md)
 
  
 

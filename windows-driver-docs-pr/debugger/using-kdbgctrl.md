@@ -1,7 +1,6 @@
 ---
 title: 使用 KDbgCtrl
 description: 使用 KDbgCtrl
-ms.assetid: 386e8861-dd55-440c-9309-7e8cf6c27690
 keywords:
 - KDbgCtrl
 - KDbgCtrl，基本用法
@@ -9,12 +8,12 @@ keywords:
 - DbgPrint buffer，KDbgCtrl 实用工具
 ms.date: 05/17/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: e5a77d00141176382dfe83af47855a1b6f502533
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: c225d18b098032d4561211c9068d091d5aa09563
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89215662"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803099"
 ---
 # <a name="using-kdbgctrl"></a>使用 KDbgCtrl
 
@@ -23,7 +22,7 @@ KDbgCtrl (内核调试控件，kdbgctrl.exe) 工具可用于从目标计算机�
 
 若要使用此工具，目标计算机必须运行 Windows Server 2003 或更高版本的 Windows。
 
-KDbgCtrl 可以控制五个不同的设置：完整内核调试、自动内核调试、用户模式错误处理、阻止内核调试，以及 DbgPrint 缓冲区的大小。
+KDbgCtrl 可以控制五个不同的设置：完全内核调试、自动内核调试、User-Mode 错误处理、阻止内核调试，以及 DbgPrint 缓冲区的大小。
 
 若要使用 KDbgCtrl，必须先在目标计算机的启动设置中启用了内核调试，然后才能进行上一次启动。 如果未执行此操作，则不能使用 KDbgCtrl 来启用内核调试。 有关这些启动设置的详细信息，请参阅 [启动参数以启用调试](../devtest/boot-parameters-to-enable-debugging.md) 。
 
@@ -35,7 +34,7 @@ KDbgCtrl 可以控制五个不同的设置：完整内核调试、自动内核�
 
 默认情况下启用完全内核调试。 若要检查当前设置值，请使用 **kdbgctrl-c**。 若要禁用此设置，请使用 **kdbgctrl-d**。 若要启用此设置，请使用 **kdbgctrl-e**。
 
-如果希望检查当前设置，并使用它来控制批处理文件中的执行，则可以使用 **kdbgctrl-cx** 命令。 有关此命令的详细信息，请参阅 [**KDbgCtrl 命令行选项**](kdbgctrl-command-line-options.md)。
+如果希望检查当前设置，并使用它来控制批处理文件中的执行，则可以使用 **kdbgctrl-cx** 命令。 有关此命令的详细信息，请参阅 [**KDbgCtrl Command-Line Options**](kdbgctrl-command-line-options.md)。
 
 ### <a name="span-idautomatic_kernel_debuggingspanspan-idautomatic_kernel_debuggingspanautomatic-kernel-debugging"></a><span id="automatic_kernel_debugging"></span><span id="AUTOMATIC_KERNEL_DEBUGGING"></span>自动内核调试
 
@@ -45,21 +44,21 @@ KDbgCtrl 可以控制五个不同的设置：完整内核调试、自动内核�
 
 在这种情况下，只有内核模式异常、断点或其他内核模式事件将导致建立连接。 不会为 **DbgPrint** 输出、符号加载消息、重定向用户模式调试器输入和输出或其他类似消息建立连接，它们将存储在 DbgPrint 缓冲区中，而不是发送到内核调试器。
 
-如果异常或事件导致目标进入内核调试器，则会自动打开完整内核调试，就像您已执行 **kdbgctrl-e**一样。
+如果异常或事件导致目标进入内核调试器，则会自动打开完整内核调试，就像您已执行 **kdbgctrl-e** 一样。
 
 默认情况下，默认情况下禁用自动内核调试 (虽然这是重要，除非同时禁用了完全内核调试) 。 若要检查当前设置值，请使用 **kdbgctrl**。 若要禁用此设置，请使用 **kdbgctrl**。 若要启用此设置，请使用 **kdbgctrl-ea**。
 
 ### <a name="span-iduser_mode_error_handlingspanspan-iduser_mode_error_handlingspanuser-mode-error-handling"></a><span id="user_mode_error_handling"></span><span id="USER_MODE_ERROR_HANDLING"></span>用户模式错误处理
 
-当启用用户模式的错误处理时，某些用户模式事件将导致目标计算机进入内核调试器。
+启用 User-Mode 错误处理后，某些用户模式事件将导致目标计算机进入内核调试器。
 
 具体而言，所有 **int 3** 中断（例如由调试器或调用 **DbgBreakPoint** 插入到代码中的断点）都将导致内核调试器中断。 不过，通常不会将标准异常（如访问冲突和被零除）发送到内核调试器。
 
 如果用户模式调试器已附加到进程，此调试器将捕获所有用户模式错误，并且不会 alterted 内核调试器。 有关各种用户模式错误处理程序的优先排名，请参阅 [启用事后调试](enabling-postmortem-debugging.md)。
 
-要使用户模式错误处理正常工作，还必须启用完全内核调试或自动内核调试。
+要使 User-Mode 错误处理正常工作，还必须启用完全内核调试或自动内核调试。
 
-默认情况下，将启用用户模式错误处理。 若要检查当前设置值，请使用 **kdbgctrl**。 若要禁用此设置，请使用 **kdbgctrl**。 若要启用此设置，请使用 **kdbgctrl-eu**。
+默认情况下，将启用 User-Mode 错误处理。 若要检查当前设置值，请使用 **kdbgctrl**。 若要禁用此设置，请使用 **kdbgctrl**。 若要启用此设置，请使用 **kdbgctrl-eu**。
 
 ### <a name="span-idblocking_kernel_debuggingspanspan-idblocking_kernel_debuggingspanblocking-kernel-debugging"></a><span id="blocking_kernel_debugging"></span><span id="BLOCKING_KERNEL_DEBUGGING"></span>阻止内核调试
 
@@ -76,7 +75,7 @@ bcdedit /debug on
 bcdedit /dbgsettings 1394 channel:32 /start DISABLE /noumex
 ```
 
-当你重新启动目标计算机时，它将为内核调试做好准备，但会禁用内核调试和用户模式错误处理。 此时，主计算机将无法连接到目标计算机，并且内核调试器将不会捕获 bug 检查，用户模式异常将不会导致内核调试器中断。
+当你重新启动目标计算机时，它将为内核调试做好准备，但会禁用内核调试和 User-Mode 错误处理。 此时，主计算机将无法连接到目标计算机，并且内核调试器将不会捕获 bug 检查，用户模式异常将不会导致内核调试器中断。
 
 准备就绪后，可以通过输入以下命令来启用内核调试 (无需重新启动目标计算机) 。
 
@@ -100,7 +99,7 @@ DbgPrint 缓冲区存储目标计算机已发送到内核调试器的消息。
 
 如果启用了完全内核调试，则这些消息将自动显示在内核调试器中。 但如果禁用此选项，则这些消息将存储在缓冲区中。 在稍后的时间点，你可以启用内核调试，连接到内核调试器，并使用 [**！ dbgprint**](-dbgprint.md) 扩展来查看此缓冲区的内容。 有关此缓冲区的详细信息，请参阅 DbgPrint 缓冲区。
 
-DbgPrint 缓冲区的默认大小在 Windows 的免费版本中为 4 KB。 若要确定当前的缓冲区大小，请使用 **kdbgctrl-cdb**。 若要更改缓冲区大小，请使用 **kdbgctrl * * * size*，其中 *size* 指定新的缓冲区大小。 有关语法的详细信息，请参阅 [**KDbgCtrl 命令行选项**](kdbgctrl-command-line-options.md)。
+DbgPrint 缓冲区的默认大小在 Windows 的免费版本中为 4 KB。 若要确定当前的缓冲区大小，请使用 **kdbgctrl-cdb**。 若要更改缓冲区大小，请使用 **kdbgctrl-sdb**_Size_，其中 *size* 指定新的缓冲区大小。 有关语法的详细信息，请参阅 [**KDbgCtrl Command-Line 选项**](kdbgctrl-command-line-options.md)。
 
 ### <a name="span-idexamplesspanspan-idexamplesspanexamples"></a><span id="examples"></span><span id="EXAMPLES"></span>示例
 

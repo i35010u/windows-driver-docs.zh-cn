@@ -1,9 +1,8 @@
 ---
-title: usbkd _ehciregs
-description: _Ehciregs usbkd 命令显示 USB EHCI 主机控制器的操作端口和根集线器端口状态寄存器。
-ms.assetid: BFD58E6B-BC51-4F2F-B597-8C815826F931
+title: usbkd._ehciregs
+description: Usbkd._ehciregs 命令显示 USB EHCI 主机控制器的操作端口和根集线器端口状态寄存器。
 keywords:
-- usbkd _ehciregs Windows 调试
+- usbkd._ehciregs Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: d56a83db0dd9ed806a3de70752ef54a00b05a519
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: c92b904165547bccb736cc562ee45c4d99531773
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89213631"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96802043"
 ---
 # <a name="usbkd_ehciregs"></a>！ usbkd。 \_ehciregs
 
 
-**！ Usbkd。 \_ehciregs**命令显示 USB EHCI 主机控制器的操作端口和根集线器端口状态寄存器。
+**！ Usbkd。 \_ehciregs** 命令显示 USB EHCI 主机控制器的操作端口和根集线器端口状态寄存器。
 
 ```dbgcmd
 !usbkd._ehciregs StructAddr[, NumPorts]
@@ -61,7 +60,7 @@ MINIPORT List @ fffff80001e5bbd0
     Operational Registers ffffd000228bf020
 ```
 
-在上面的输出中， ` ffffd000228bf020` 是** \_ HC \_ 操作 \_ 寄存器**结构的地址。
+在上面的输出中， ` ffffd000228bf020` 是 **\_ HC \_ 操作 \_ 寄存器** 结构的地址。
 
 现在，将结构地址传递给 **！ \_ehciregs**。 在此示例中，第二个参数将显示限制为两个根集线器端口状态寄存器。
 

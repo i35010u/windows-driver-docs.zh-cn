@@ -1,15 +1,14 @@
 ---
 title: 在 Visual Studio 中控制线程和进程
 description: 这些过程涉及控制 Visual Studio 中的线程和进程。
-ms.assetid: 5A1F9A59-EFCD-4BC9-BDEC-DED11A184651
 ms.date: 05/11/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: cc34dd7181773c2dc2179cbf9871b753785fdd87
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 0dd217e77a226db78e0362941ebd03170fe8f72e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89206777"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96802861"
 ---
 # <a name="controlling-threads-and-processes-in-visual-studio"></a>在 Visual Studio 中控制线程和进程
 

@@ -1,17 +1,16 @@
 ---
 title: KD 连接服务器示例
 description: KD 连接服务器示例
-ms.assetid: 5e54dda7-4f79-40e3-bcc5-248a3a047e31
 keywords:
 - KD 连接服务器，示例
 ms.date: 06/08/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: e615d9467209b489b2e9be503318401ef71817e2
-ms.sourcegitcommit: 8097a09d2f989a9b3dca250c4e2ffd4cec2172e3
+ms.openlocfilehash: 4114a202a558524170a827a48afc5cb9995bbb60
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84563173"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801931"
 ---
 # <a name="kd-connection-server-examples"></a>KD 连接服务器示例
 
@@ -35,7 +34,7 @@ G:\Debugging Tools> windbg -k kdsrv:server=@{tcp:server=127.0.0.42,port=1027},tr
 
 符号路径将相对于运行智能客户端的计算机。
 
-以下是另一个示例。 在这种情况下，将选择 NPIPE 协议，并使用 KD 而不是 WinDbg。 第一个用户选择一个管道名称。 这可以是任何字母数字字符串，在此示例中为 "KernelPipe"。 第一个用户打开提升的命令提示符窗口（以管理员身份运行），并通过输入以下命令启动调试服务器：
+以下是另一个示例。 在这种情况下，将选择 NPIPE 协议，并使用 KD 而不是 WinDbg。 第一个用户选择一个管道名称。 这可以是任何字母数字字符串，在此示例中为 "KernelPipe"。 第一个用户打开提升的命令提示符窗口 (以管理员身份运行) 并通过输入以下命令启动调试服务器：
 
 ```console
 E:\Debugging Tools for Windows> set _NT_DEBUG_PORT=com1

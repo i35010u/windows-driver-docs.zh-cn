@@ -1,7 +1,6 @@
 ---
 title: 网络接口更改对 IPsec 卸载造成的影响
 description: 网络接口更改对 IPsec 卸载造成的影响
-ms.assetid: 7d1b2bf9-31a9-4fc4-92f3-dc7b5e0277e3
 keywords:
 - 受 ESP 保护的数据包 WDK IPsec 卸载，路由接口已更改
 - 受 AH 保护的数据包 WDK IPsec 卸载，路由接口已更改
@@ -9,12 +8,12 @@ keywords:
 - 受 AH 保护的数据包，WDK IPsec 卸载，NIC 被删除，
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 479752e4245b602c25b82e83357aa5a1d97d7b79
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 1dca97317b6a0c2609f34e515442d24f776e0dfc
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89210735"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801651"
 ---
 # <a name="impact-of-network-interface-changes-on-ipsec-offloads"></a>网络接口更改对 IPsec 卸载造成的影响
 

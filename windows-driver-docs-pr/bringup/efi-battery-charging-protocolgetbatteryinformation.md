@@ -1,20 +1,19 @@
 ---
 title: EFI_BATTERY_CHARGING_PROTOCOL.GetBatteryInformation
 description: EFI_BATTERY_CHARGING_PROTOCOL.GetBatteryInformation
-ms.assetid: 497cd001-5180-4dee-a070-ccf8c987bd71
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: de0470ff8a3f6dc41c366d6a4d04f30102edb0e9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: cae893d791dbd6c3240bb2e792ab9358a7229531
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328045"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803411"
 ---
-# <a name="efibatterychargingprotocolgetbatteryinformation"></a>EFI\_BATTERY\_CHARGING\_PROTOCOL.GetBatteryInformation
+# <a name="efi_battery_charging_protocolgetbatteryinformation"></a>EFI \_ 电池 \_ 充电 \_ 协议。GetBatteryInformation
 
 
-返回有关主电池包括充电，耗电量被传递到或从电池，电池的终端、 电池温度、 通过 USB 电缆电压电压绘制的当前状态的当前状态的信息并通过 USB 电缆当前。
+返回有关主电池的当前状态的信息，包括电量状态、当前正在传送到电池的电流量、电池的终端温度、电池温度、USB 电缆上的电压以及通过 USB 电缆的电流。
 
 ## <a name="syntax"></a>语法
 
@@ -30,17 +29,17 @@ typedef EFI_STATUS (EFIAPI * EFI_BATTERY_CHARGING_GET_BATTERY_INFORMATION) (
     OUT UINT32 *USBCableCurrent );
 ```
 
-## <a name="parameters"></a>Parameters
+## <a name="parameters"></a>参数
 
 
 <a href="" id="this"></a>*此*  
-\[在中\]指向 EFI\_电池\_正在充电\_协议实例。
+\[位于 \] EFI \_ 电池 \_ 充电协议实例的指针中 \_ 。
 
 <a href="" id="stateofcharge"></a>*StateOfCharge*  
-\[out\]返回主电池的电量 (SOC) 的当前状态。 SOC 以百分比表示，其中 100%表示完全充电表示。
+\[out \] 返回主电池 (SOC) 的当前充电状态。 SOC 以百分比表示，其中100% 表示完全充电。
 
 <a href="" id="currentintobattery"></a>*CurrentIntoBattery*  
-\[out\]返回下表中所列出的值之一。
+\[out \] 返回下表中列出的值之一。
 
 <table>
 <colgroup>
@@ -49,26 +48,26 @@ typedef EFI_STATUS (EFIAPI * EFI_BATTERY_CHARGING_GET_BATTERY_INFORMATION) (
 </colgroup>
 <thead>
 <tr class="header">
-<th>ReplTest1</th>
+<th>“值”</th>
 <th>描述</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><p>正数</p></td>
-<td><p>电池是收费的过程中。 值表示当前传递到 mA 上的电池。</p></td>
+<td><p>电池正在充电。 值指示当前通过 mA 传递到电池的电流。</p></td>
 </tr>
 <tr class="even">
 <td><p>负数</p></td>
-<td><p>电池正在放电的过程中为。 值指示当前所绘制从 mA 上的电池。</p></td>
+<td><p>电池正在放电。 值指示当前正在使用 mA 中的电池进行绘制。</p></td>
 </tr>
 <tr class="odd">
 <td><p>0</p></td>
-<td><p>未被电池放电或收费。</p></td>
+<td><p>电池未充电或电量不足。</p></td>
 </tr>
 <tr class="even">
-<td><p>EFI_BATTERY_CHARGE_CURRENT_NOT_SUPPORTED (0X80000000)</p></td>
-<td><p>硬件不能提供此信息。</p></td>
+<td><p>EFI_BATTERY_CHARGE_CURRENT_NOT_SUPPORTED (0x80000000) </p></td>
+<td><p>硬件无法提供此信息。</p></td>
 </tr>
 </tbody>
 </table>
@@ -76,21 +75,21 @@ typedef EFI_STATUS (EFIAPI * EFI_BATTERY_CHARGING_GET_BATTERY_INFORMATION) (
  
 
 <a href="" id="batteryterminalvoltage"></a>*BatteryTerminalVoltage*  
-\[out\] mV 中的电池终端使跨电压。
+\[每 \] 个电池电量在 mV 中的电压。
 
 <a href="" id="batterytemperature"></a>*BatteryTemperature*  
-\[out\] 10ths Kelvin 在某种程度上的电池温度。
+\[\]10ths 的电池电量不足。
 
 <a href="" id="usbcablevoltage"></a>*USBCableVoltage*  
-\[out\] mV 中的 USB 电缆通过电压。
+\[\]在 mV 中通过 USB 电缆的电压。
 
 <a href="" id="usbcablecurrent"></a>*USBCableCurrent*  
-\[out\]在 mA 的 USB 电缆通过当前。
+\[\]通过 mA 中的 USB 电缆来确定当前的。
 
 ## <a name="return-value"></a>返回值
 
 
-返回一个下面的状态代码。
+返回以下状态代码之一。
 
 <table>
 <colgroup>
@@ -100,13 +99,13 @@ typedef EFI_STATUS (EFIAPI * EFI_BATTERY_CHARGING_GET_BATTERY_INFORMATION) (
 <thead>
 <tr class="header">
 <th>状态代码</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><p>EFI_SUCCESS</p></td>
-<td><p>该函数返回成功。</p></td>
+<td><p>函数已成功返回。</p></td>
 </tr>
 <tr class="even">
 <td><p>EFI_INVALID_PARAMETER</p></td>
@@ -114,11 +113,11 @@ typedef EFI_STATUS (EFIAPI * EFI_BATTERY_CHARGING_GET_BATTERY_INFORMATION) (
 </tr>
 <tr class="odd">
 <td><p>EFI_DEVICE_ERROR</p></td>
-<td><p>物理设备报告了错误。</p></td>
+<td><p>物理设备报告了一个错误。</p></td>
 </tr>
 <tr class="even">
 <td><p>EFI_NOT_READY</p></td>
-<td><p>物理设备是正忙还是未准备好处理此请求。</p></td>
+<td><p>物理设备处于繁忙状态或尚未准备好处理此请求。</p></td>
 </tr>
 </tbody>
 </table>
@@ -128,9 +127,10 @@ typedef EFI_STATUS (EFIAPI * EFI_BATTERY_CHARGING_GET_BATTERY_INFORMATION) (
 ## <a name="remarks"></a>备注
 
 
-UEFI 电池充电应用程序可以检索有关电池的信息定期调用此函数。 应用程序使用此信息来帮助监视电池的状态和诊断错误。
+此函数由 UEFI 电池充电应用程序定期调用，以检索有关电池的信息。 应用程序使用此信息来帮助监视电池的状态，并诊断错误。
 
-**请注意**  此函数是可以开始于 EFI 的修订 0x00010002\_电池\_正在充电\_协议。 如果 UEFI 电池充电应用程序检测到，只有修订 0x00010001 的协议，则它将调用[EFI\_电池\_正在充电\_协议。GetBatteryStatus](efi-battery-charging-protocolgetbatterystatus.md)相反。
+**注意**  
+此函数可从 EFI \_ 电池充电协议的修订版0x00010002 开始 \_ \_ 。 如果 UEFI 电池充电应用程序检测到仅提供协议的修订版0x00010001，它将调用 [EFI \_ 电池 \_ 充电 \_ 协议。GetBatteryStatus](efi-battery-charging-protocolgetbatterystatus.md) 。
 
  
 
@@ -140,7 +140,7 @@ UEFI 电池充电应用程序可以检索有关电池的信息定期调用此函
 **标头：** 用户生成
 
 ## <a name="related-topics"></a>相关主题
-[EFI\_电池\_正在充电\_协议](efi-battery-charging-protocol.md)  
+[EFI \_ 电池 \_ 充电 \_ 协议](efi-battery-charging-protocol.md)  
 
 
 

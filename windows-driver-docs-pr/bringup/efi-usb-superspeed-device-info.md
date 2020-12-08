@@ -1,19 +1,18 @@
 ---
 title: EFI_USB_SUPERSPEED_DEVICE_INFO
 description: EFI_USB_SUPERSPEED_DEVICE_INFO
-ms.assetid: 7861BA16-7499-48A1-9D6A-9BB8F5AA36CE
 ms.date: 05/21/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: a059ff06fc2359c2a9ae62a0e3d25fae6476039f
-ms.sourcegitcommit: 34a06eda78c8d935f3900b86fa0f620027bc6577
+ms.openlocfilehash: b2f36d9bb3bc7e3da54dd19256d5e7b6e15348ae
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83778330"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803387"
 ---
 # <a name="efi_usb_superspeed_device_info"></a>EFI \_ USB \_ SUPERSPEED \_ 设备 \_ 信息
 
-**EFI \_ usb \_ SUPERSPEED \_ 设备 \_ 信息**结构用于定义 USB SUPERSPEED 函数设备。
+**EFI \_ usb \_ SUPERSPEED \_ 设备 \_ 信息** 结构用于定义 USB SUPERSPEED 函数设备。
 
 ## <a name="syntax"></a>语法
 
@@ -40,9 +39,9 @@ EFI \_ usb \_ 设备 \_ 描述符结构，其中包含 USB 设备的配置信息
 
 [EFI \_ usb \_ BOS \_ 描述符](efi-usb-bos-descriptor.md)结构，其中包含有关二进制对象存储到 USB 函数驱动程序的信息。
 
-## <a name="remarks"></a>注解
+## <a name="remarks"></a>备注
 
-在 UEFI 规范版本2.3 及更高版本中定义了**EFI \_ USB \_ 配置 \_ 描述符**结构。 有关详细信息，请访问[UEFI.org](https://uefi.org/specifications)网站。
+在 UEFI 规范版本2.3 及更高版本中定义了 **EFI \_ USB \_ 配置 \_ 描述符** 结构。 有关详细信息，请访问 [UEFI.org](https://uefi.org/specifications) 网站。
 
 ## <a name="requirements"></a>要求
 

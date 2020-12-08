@@ -1,7 +1,6 @@
 ---
 title: ndiskd.wdiadapter
 description: Ndiskd. wdiadapter 扩展显示有关 WDIWiFi CAdapter 结构的信息。 如果运行不带任何参数的扩展，ndiskd 将显示所有 WDIWiFi CAdapter 结构的列表。
-ms.assetid: 1AC069E8-CF87-459B-9C56-DDC1A6F765A8
 keywords:
 - ndiskd wdiadapter Windows 调试
 ms.date: 06/26/2020
@@ -12,16 +11,16 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 68eb7bbc2f38448ed34d978e414b2916f3e12f22
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: c6d43bfeaf58b13f1f9c2b89a750444d580abab5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89214866"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803317"
 ---
 # <a name="ndiskdwdiadapter"></a>!ndiskd.wdiadapter
 
-**！ Ndiskd wdiadapter**扩展显示有关 WDIWiFi 的信息！CAdapter 结构。 如果运行不带参数的扩展，！ ndiskd 将显示所有 WDIWiFi 的列表！CAdapter 结构。
+**！ Ndiskd wdiadapter** 扩展显示有关 WDIWiFi 的信息！CAdapter 结构。 如果运行不带参数的扩展，！ ndiskd 将显示所有 WDIWiFi 的列表！CAdapter 结构。
 
 有关 WDI 微型端口驱动程序的详细信息，请参阅 [WDI 微型端口驱动程序设计指南](../network/wdi-miniport-driver-design-guide.md)。
 
@@ -105,7 +104,7 @@ MORE INFORMATION
     Power management                       Receive filtering
 ```
 
-现在，你可以单击 CAdapter 结构说明底部的 "电源管理" 和 "接收筛选" 链接，或者可以输入包含 *-pm*或 *-rcvfilter*选项的 **！ ndiskd**命令。 下面的示例显示了 *-rcvfilter* 选项的输出。
+现在，你可以单击 CAdapter 结构说明底部的 "电源管理" 和 "接收筛选" 链接，或者可以输入包含 *-pm* 或 *-rcvfilter* 选项的 **！ ndiskd** 命令。 下面的示例显示了 *-rcvfilter* 选项的输出。
 
 ```console
 1: kd> !ndiskd.wdiadapter ffffc804af396000 -rcvfilter
@@ -131,7 +130,7 @@ RECEIVE FILTER
     Max lookahead split size               0
 ```
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [网络驱动程序设计指南](../network/index.md)
 
@@ -139,7 +138,7 @@ RECEIVE FILTER
 
 [调试网络堆栈](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-175-Debugging-the-Network-Stack)
 
-[**NDIS 扩展 ( # A0) **](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 扩展 ( # A0)**](ndis-extensions--ndiskd-dll-.md)
 
 [**!ndiskd.help**](-ndiskd-help.md)
 

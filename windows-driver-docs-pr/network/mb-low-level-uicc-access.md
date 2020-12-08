@@ -1,18 +1,17 @@
 ---
 title: MB 低级别 UICC 访问
 description: MB 低级别 UICC 访问
-ms.assetid: AD0E9F20-9C95-4102-94EF-054D45E2C597
 keywords:
 - MB 低级别 UICC 访问，移动宽带低级别 UICC 访问，移动宽带微型端口驱动程序低级 UICC，MB UICC ATR，MB UICC 重置答案，MB UICC 打开通道，MB UICC 关闭通道，MB UICC APDU，MB UICC 终端功能，MB UICC 重置
 ms.date: 12/05/2017
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 7b15c31f1c910233c62b4dd96cf1ebaff473a428
-ms.sourcegitcommit: 20eac54e419a594f7cea766ee28f158559dfd79c
+ms.openlocfilehash: d2b020bb604322492d24c206ba916a9f771cc722
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91754963"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801625"
 ---
 # <a name="mb-low-level-uicc-access"></a>MB 低级别 UICC 访问
 
@@ -30,7 +29,7 @@ Microsoft 扩展包含一组设备服务命令 (集和查询) 和通知。 这�
 
 | 服务名称 | UUID | UUID 值 |
 | --- | --- | --- |
-| Microsoft 低级别 UICC 访问 | UUID_MS_UICC_LOW_LEVEL | C2F6588E-F037-4BC9-8665-F4D44BD09367 |
+| Microsoft Low-Level UICC 访问 | UUID_MS_UICC_LOW_LEVEL | C2F6588E-F037-4BC9-8665-F4D44BD09367 |
 
 下表指定了每个 CID 的命令代码，以及 CID 是否支持 Set、Query 或 Event (通知) 请求。 有关其参数、数据结构和通知的详细信息，请参阅本主题中的每个 CID 的各个部分。 
 
@@ -47,7 +46,7 @@ Microsoft 扩展包含一组设备服务命令 (集和查询) 和通知。 这�
 
 MBIM 状态代码在 [MBIM 标准](https://www.usb.org/document-library/mobile-broadband-interface-model-v10-errata-1-and-adopters-agreement)的9.4.5 节中定义。 此外，还定义了下列附加的失败状态代码：
 
-| 状态代码 | 值 (hex)  | 说明 |
+| 状态代码 | 值 (hex)  | 描述 |
 | --- | --- | --- |
 | MBIM_STATUS_MS_NO_LOGICAL_CHANNELS | 87430001 | 逻辑通道打开失败，因为 UICC 上没有可用的逻辑通道， (该通道不支持这些逻辑通道，或者所有逻辑通道均) 使用。 |
 | MBIM_STATUS_MS_SELECT_FAILED | 87430002 | 由于选择失败，逻辑通道打开失败。 |
@@ -55,7 +54,7 @@ MBIM 状态代码在 [MBIM 标准](https://www.usb.org/document-library/mobile-b
 
 ### <a name="mbim_subscriber_ready_state"></a>MBIM_SUBSCRIBER_READY_STATE
 
-| 类型 | 值 | 说明 |
+| 类型 | 值 | 描述 |
 | --- | --- | --- |
 | MBIMSubscriberReadyStateNoEsimProfile | 7 | 该卡已准备就绪，但没有任何已启用的配置文件。 |
 
@@ -101,11 +100,11 @@ MBIM_COMMAND_DONE 的 InformationBuffer 包含以下 MBIM_MS_ATR_INFO 结构，�
 
 #### <a name="mbim_ms_atr_info"></a>MBIM_MS_ATR_INFO
 
-| Offset | 大小 | 字段 | 类型 | 说明 |
+| Offset | 大小 | 字段 | 类型 | 描述 |
 | --- | --- | --- | --- | --- |
-| 0 | 4 | AtrSize | 大小 (0 ... 33)  | **AtrData**的长度。 |
+| 0 | 4 | AtrSize | 大小 (0 ... 33)  | **AtrData** 的长度。 |
 | 4 | 4 | AtrOffset | OFFSET | 从该结构的开头算起的偏移量（以字节为单位），该偏移量是一个名为 **AtrData** 的字节数组，其中包含 ATR 数据。 |
-| 8 | AtrSize | DataBuffer | DATABUFFER | **AtrData**字节数组。 |
+| 8 | AtrSize | DataBuffer | DATABUFFER | **AtrData** 字节数组。 |
 
 ### <a name="unsolicited-events"></a>未经请求的事件
 
@@ -152,13 +151,13 @@ MBIM_COMMAND_MSG 的 InformationBuffer 包含以下 MBIM_MS_SET_UICC_OPEN_CHANNE
 
 #### <a name="mbim_ms_set_uicc_open_channel"></a>MBIM_MS_SET_UICC_OPEN_CHANNEL
 
-| Offset | 大小 | 字段 | 类型 | 说明 |
+| Offset | 大小 | 字段 | 类型 | 描述 |
 | --- | --- | --- | --- | --- |
 | 0 | 4 | AppIdSize | 大小 (0 .0)  | 应用程序 ID (AppId) 的大小。 |
 | 4 | 4 | AppIdOffset | OFFSET | 从该结构的开头算起的偏移量（以字节为单位），该偏移量是一个名为 **appid** 的字节数组，用于定义要选择的 appid。 |
 | 8 | 4 | SelectP2Arg | UINT32 (0 .0)  | 选择命令的 *P2* 参数。 |
 | 12 | 4 | ChannelGroup | UINT32 | 标识此通道的通道组的标记值。 |
-| 16 | AppIdSize | DataBuffer | DATABUFFER | **AppId**字节数组。 |
+| 16 | AppIdSize | DataBuffer | DATABUFFER | **AppId** 字节数组。 |
 
 ### <a name="response"></a>响应
 
@@ -166,13 +165,13 @@ MBIM_COMMAND_DONE 的 InformationBuffer 包含以下 MBIM_MS_UICC_OPEN_CHANNEL_I
 
 #### <a name="mbim_ms_uicc_open_channel_info"></a>MBIM_MS_UICC_OPEN_CHANNEL_INFO
 
-| Offset | 大小 | 字段 | 类型 | 说明 |
+| Offset | 大小 | 字段 | 类型 | 描述 |
 | --- | --- | --- | --- | --- |
 | 0 | 4 | 状态 | BYTE [2] | SW1 和 SW2，以字节顺序排列。 有关详细信息，请参阅此表后面的说明。 |
 | 4 | 4 | 通道 | UINT32 (0. 19)  | 逻辑通道标识符。 如果此成员是0，则操作失败。 |
 | 8 | 4 | ResponseLength | 大小 (0 .0)  | 响应长度（以字节为单位）。 |
 | 12 | 4 | ResponseOffset | OFFSET | 从该结构的开头算起的偏移量（以字节为单位），该偏移量是一个名为 **response** 的字节数组，其中包含来自 SELECT 的响应。 |
-| 16 | - | DataBuffer | DATABUFFER | **响应**字节数组数据。 |
+| 16 | - | DataBuffer | DATABUFFER | **响应** 字节数组数据。 |
 
 如果命令返回 MBIM_STATUS_MS_NO_LOGICAL_CHANNELS，则 " **状态** " 字段应包含 "管理通道" 命令中的 "UICC 状态字词 SW1" 和 "SW2"，其余字段将为零。 如果命令返回 MBIM_STATUS_MS_SELECT_FAILED，则 " **状态** " 字段应包含 "SELECT" 命令中的 "UICC 状态 SW1" 和 "SW2"，其余字段将为零。 对于任何其他状态，InformationBuffer 应为空。
 
@@ -221,7 +220,7 @@ MBIM_COMMAND_MSG 的 InformationBuffer 包含以下 MBIM_MS_SET_UICC_CLOSE_CHANN
 
 #### <a name="mbim_ms_set_uicc_close_channel"></a>MBIM_MS_SET_UICC_CLOSE_CHANNEL
 
-| Offset | 大小 | 字段 | 类型 | 说明 |
+| Offset | 大小 | 字段 | 类型 | 描述 |
 | --- | --- | --- | --- | --- |
 | 0 | 4 | 通道 | UINT32 (0. 19)  | 如果为非零，则指定要关闭的通道。 如果为零，则指定与 **ChannelGroup** 关联的信道 (s) 将关闭。 |
 | 4 | 4 | ChannelGroup | UINT32 | 如果 **通道** 为零，此值将指定一个标记值，并关闭带有此标记的所有通道。 如果 **通道** 为非零，则忽略此字段。
@@ -232,7 +231,7 @@ MBIM_COMMAND_DONE 的 InformationBuffer 包含以下 MBIM_MS_UICC_CLOSE_CHANNEL_
 
 #### <a name="mbim_ms_uicc_close_channel_info"></a>MBIM_MS_UICC_CLOSE_CHANNEL_INFO
 
-| Offset | 大小 | 字段 | 类型 | 说明 |
+| Offset | 大小 | 字段 | 类型 | 描述 |
 | --- | --- | --- | --- | --- |
 | 0 | 4 | 状态 | BYTE [2] | 由函数代表此命令执行的最后一个管理通道的 SW1 和 SW2。 |
 
@@ -261,7 +260,7 @@ MBIM_COMMAND_DONE 的 InformationBuffer 包含以下 MBIM_MS_UICC_CLOSE_CHANNEL_
 
 Command APDU 的第一个字节是类 byte，编码为由 [ISO/IEC 7816-4:2013 标准](https://go.microsoft.com/fwlink/p/?linkid=864596) 或 [ETSI TS 102 221 技术规范](https://go.microsoft.com/fwlink/p/?linkid=864594)的节10.1.1 的第4部分定义。 主机可以发送0X、4X、6倍、8X、CX 或 EX 类字节。 但是，此函数不会将此字节直接传递到 UICC。 相反，在将 APDU 发送到 UICC 之前，该函数会将主机中的第一个字节替换为新的类字节， (按照由主机指定的类型、通道和 SecureMessaging 值的[ETSI TS 102 221 技术规范](https://go.microsoft.com/fwlink/p/?linkid=864594)) 的第[7816-4:2013](https://go.microsoft.com/fwlink/p/?linkid=864596) 4 部分的规定进行编码：
 
-| Byte 类 | 说明 |
+| Byte 类 | 描述 |
 | --- | --- |
 | 0X | 7816-4 interindustry，1 <= 通道 <= 3，则编码低位字节的安全性（如果相关） |
 | 4X | 7816-4 interindustry，4 <= 通道 <= 19，无安全消息 |
@@ -289,27 +288,27 @@ MBIM_COMMAND_MSG 的 InformationBuffer 包含以下 MBIM_MS_SET_UICC_APDU 结构
 
 #### <a name="mbim_ms_set_uicc_apdu"></a>MBIM_MS_SET_UICC_APDU
 
-| Offset | 大小 | 字段 | 类型 | 说明 |
+| Offset | 大小 | 字段 | 类型 | 描述 |
 | --- | --- | --- | --- | --- |
 | 0 | 4 | 通道 | UINT32 (1. 19)  | 指定要将 APDU 发送到的通道。 |
 | 4 | 4 | SecureMessaging | MBIM_MS_UICC_SECURE_MESSAGING | 指定是否使用安全消息交换 APDU。 |
 | 8 | 4 | 类型 | MBIM_MS_UICC_CLASS_BYTE_TYPE | 指定类字节定义的类型。 |
-| 12 | 4 | CommandSize | UINT32 (261)  | **命令**长度（字节）。 |
+| 12 | 4 | CommandSize | UINT32 (261)  | **命令** 长度（字节）。 |
 | 16 | 4 | CommandOffset | OFFSET | 从该结构的开头算起的偏移量（以字节为单位），该偏移量为一个名为的 **命令** ，该数组包含 APDU。 |
-| 20 | - | DataBuffer | DATABUFFER | **命令**字节数组。 |
+| 20 | - | DataBuffer | DATABUFFER | **命令** 字节数组。 |
 
 MBIM_MS_SET_UICC_APDU 结构使用以下 MBIM_MS_UICC_SECURE_MESSAGING 和 MBIM_MS_UICC_CLASS_BYTE_TYPE 的数据结构。
 
 ##### <a name="mbim_ms_uicc_secure_messaging"></a>MBIM_MS_UICC_SECURE_MESSAGING
 
-| 类型 | 值 | 说明 |
+| 类型 | 值 | 描述 |
 | --- | --- | --- |
 | MBIMMsUiccSecureMessagingNone | 0 | 无安全消息。 |
 | MBIMMsUiccSecureMessagingNoHdrAuth | 1 | 安全消息传送，未对命令头进行身份验证。 |
 
 ##### <a name="mbim_ms_uicc_class_byte_type"></a>MBIM_MS_UICC_CLASS_BYTE_TYPE
 
-| 类型 | 值 | 说明 |
+| 类型 | 值 | 描述 |
 | --- | --- | --- |
 | MBIMMsUiccInterindustry | 0 | 根据 ISO 7816-4 中的第一个 interindustry 定义定义。 |
 | MBIMMsUiccExtended | 1 | 根据 ETSI 102 221 中的扩展定义定义。 |
@@ -320,12 +319,12 @@ MBIM_COMMAND_DONE 的 InformationBuffer 包含以下 MBIM_MS_UICC_APDU_INFO 结�
 
 #### <a name="mbim_ms_uicc_apdu_info"></a>MBIM_MS_UICC_APDU_INFO
 
-| Offset | 大小 | 字段 | 类型 | 说明 |
+| Offset | 大小 | 字段 | 类型 | 描述 |
 | --- | --- | --- | --- | --- |
 | 0 | 4 | 状态 | BYTE [2] | 命令生成的 SW1 和 SW2 状态字词。 |
 | 4 | 4 | ResponseLength | SIZE | 响应长度（以字节为单位）。 |
 | 8 | 4 | ResponseOffset | OFFSET | 从该结构的开头算起的偏移量（以字节为单位），该偏移量是一个名为 **response** 的字节数组，其中包含来自 SELECT 的响应。 |
-| 12 | - | DataBuffer | DATABUFFER | **响应**字节数组。 |
+| 12 | - | DataBuffer | DATABUFFER | **响应** 字节数组。 |
 
 ### <a name="unsolicited-events"></a>未经请求的事件
 
@@ -369,7 +368,7 @@ MBIM_COMMAND_MSG 的 InformationBuffer 包含以下 MBIM_MS_SET_UICC_TERMINAL_CA
 
 #### <a name="mbim_ms_set_uicc_terminal_capability"></a>MBIM_MS_SET_UICC_TERMINAL_CAPABILITY
 
-| Offset | 大小 | 字段 | 类型 | 说明 |
+| Offset | 大小 | 字段 | 类型 | 描述 |
 | --- | --- | --- | --- | --- |
 | 0 | 4 | Elementcount 多于 | UINT32 | 终端功能对象的元素计数。 |
 | 4 | 8 * EC | CapabilityList OL_PAIR_LIST| 每个终端功能对象 TLV 的偏移长度对列表。 |
@@ -381,7 +380,7 @@ MBIM_COMMAND_MSG 的 InformationBuffer 包含以下 MBIM_MS_SET_UICC_TERMINAL_CA
 
 #### <a name="mbim_ms_terminal_capability_info"></a>MBIM_MS_TERMINAL_CAPABILITY_INFO
 
-| Offset | 大小 | 字段 | 类型 | 说明 |
+| Offset | 大小 | 字段 | 类型 | 描述 |
 | --- | --- | --- | --- | --- |
 | 0 | 4 | Elementcount 多于 | UINT32 | 终端功能对象的元素计数。 |
 | 4 | 8 * EC | CapabilityList OL_PAIR_LIST| 每个终端功能对象 TLV 的偏移长度对列表。 |
@@ -433,7 +432,7 @@ InformationBuffer 应为 null，而 *InformationBufferLength* 应为零。
 
 MBIM_SET_MS_UICC_RESET 结构包含由主机指定的通过操作。
 
-| Offset | 大小 | 字段 | 类型 | 说明 |
+| Offset | 大小 | 字段 | 类型 | 描述 |
 | --- | --- | --- | --- | --- |
 | 0 | 4 | PassThroughAction | MBIM_MS_UICC_PASSTHROUGH_ACTION | 有关详细信息，请参阅 [MBIM_MS_UICC_PASSTHROUGH_ACTION](#mbim_ms_uicc_passthrough_action)。 |
 
@@ -441,7 +440,7 @@ MBIM_SET_MS_UICC_RESET 结构包含由主机指定的通过操作。
 
 MBIM_MS_UICC_PASSTHROUGH_ACTION 枚举定义宿主可以指定给 MBIM 函数的传递操作的类型。
 
-| 类型 | 值 |
+| 类型 | “值” |
 | --- | --- |
 | MBIMMsUiccPassThroughDisable | 0 |
 | MBIMMsUiccPassThroughEnable | 1 |
@@ -452,7 +451,7 @@ MBIM_MS_UICC_PASSTHROUGH_ACTION 枚举定义宿主可以指定给 MBIM 函数的
 
 MBIM_MS_UICC_RESET_INFO 结构包含 MBIM 函数的传递状态。
 
-| Offset | 大小 | 字段 | 类型 | 说明 |
+| Offset | 大小 | 字段 | 类型 | 描述 |
 | --- | --- | --- | --- | --- |
 | 0 | 4 | PassThroughStatus | MBIM_MS_UICC_PASSTHROUGH_STATUS | 有关详细信息，请参阅 [MBIM_MS_UICC_PASSTHROUGH_STATUS](#mbim_ms_uicc_passthrough_status)。 |
 
@@ -460,7 +459,7 @@ MBIM_MS_UICC_RESET_INFO 结构包含 MBIM 函数的传递状态。
 
 MBIM_MS_UICC_PASSTHROUGH_STATUS 枚举定义 MBIM 函数指定给主机的传递状态的类型。
 
-| 类型 | 值 |
+| 类型 | “值” |
 | --- | --- |
 | MBIMMsUiccPassThroughDisabled | 0 |
 | MBIMMsUiccPassThroughEnabled | 1 |

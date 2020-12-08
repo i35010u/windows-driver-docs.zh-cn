@@ -1,7 +1,6 @@
 ---
 title: 卸载视频硬件
 description: 卸载视频硬件
-ms.assetid: 31bea975-1c4b-4157-aec9-49bb7ad69cd0
 keywords:
 - 显示驱动程序 WDK Windows 2000，视频硬件卸载
 - 视频硬件卸载 WDK Windows 2000 显示器
@@ -9,12 +8,12 @@ keywords:
 - 卸载视频硬件
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d6a0ce3d99e0c689472024ee8f0bef3a3a3216ef
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: a3ca1b87ae0c8bdd3519bd9496e77b658f896028
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90717580"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96802555"
 ---
 # <a name="unloading-video-hardware"></a>卸载视频硬件
 

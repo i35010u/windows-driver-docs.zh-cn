@@ -1,7 +1,6 @@
 ---
 title: ndiskd.wdiminidriver
 description: Ndiskd. wdiminidriver 扩展显示有关一个或多个 CMiniportDriver 结构的信息。
-ms.assetid: C7022CD7-6F3A-485B-8686-A686A5305DA5
 keywords:
 - ndiskd wdiminidriver Windows 调试
 ms.date: 05/23/2017
@@ -12,16 +11,16 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 8924671a93429006c15d7377f71ddff4dfdb6a5c
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: dfb92e63f420c22cde957a923b59039340ee71ad
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89209881"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803315"
 ---
 # <a name="ndiskdwdiminidriver"></a>!ndiskd.wdiminidriver
 
-**！ Ndiskd wdiminidriver**扩展显示有关一个或多个 CMiniportDriver 结构的信息。 如果运行不带参数的此扩展，！ ndiskd 将显示所有 CMiniportDriver 结构的列表。
+**！ Ndiskd wdiminidriver** 扩展显示有关一个或多个 CMiniportDriver 结构的信息。 如果运行不带参数的此扩展，！ ndiskd 将显示所有 CMiniportDriver 结构的列表。
 
 有关 WDI 微型端口驱动程序的详细信息，请参阅 [WDI 微型端口驱动程序设计指南](../network/wdi-miniport-driver-design-guide.md)。
 
@@ -122,7 +121,7 @@ HANDLERS
     CloseAdapterCompleteHandler            fffff80965fface0   wdiwifi!WDICloseAdapterCompleteHandler
 ```
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [网络驱动程序设计指南](../network/index.md)
 
@@ -130,7 +129,7 @@ HANDLERS
 
 [调试网络堆栈](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-175-Debugging-the-Network-Stack)
 
-[**NDIS 扩展 ( # A0) **](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 扩展 ( # A0)**](ndis-extensions--ndiskd-dll-.md)
 
 [**!ndiskd.help**](-ndiskd-help.md)
 

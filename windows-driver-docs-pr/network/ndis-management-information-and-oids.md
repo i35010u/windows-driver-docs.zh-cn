@@ -1,7 +1,6 @@
 ---
 title: NDIS 管理信息和 OID
 description: NDIS 管理信息和 OID
-ms.assetid: 5737634e-ee80-44d4-9dc8-c2ef97670809
 keywords:
 - WMI WDK 网络，管理信息库
 - 管理信息基本 WDK 网络
@@ -14,12 +13,12 @@ keywords:
 - 操作特征 WDK 网络
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ce24a70748baa1ecdac2e87492abda91ab817554
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: e804a258d5205d556ed866cee0485780f032bc29
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89213917"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801603"
 ---
 # <a name="ndis-management-information-and-oids"></a>NDIS 管理信息和 OID
 
@@ -27,7 +26,7 @@ ms.locfileid: "89213917"
 
 
 
-每个微型端口驱动程序都包含自己的 *管理信息基础 (MIB) *，这是一个信息块，驱动程序将在其中存储管理实体可查询或设置的动态配置信息和统计信息。 "以太网多播地址列表" 是配置信息的示例。 收到的广播数据包的数目是统计信息的示例。 MIB 中的每个信息元素称为 *对象*。 为了引用每个此类托管对象，NDIS *)  (定义对象标识符 *。 因此，如果管理实体要查询或设置特定的托管对象，则必须为该对象提供特定 OID。
+每个微型端口驱动程序都包含自己的 *管理信息基础 (MIB)*，这是一个信息块，驱动程序将在其中存储管理实体可查询或设置的动态配置信息和统计信息。 "以太网多播地址列表" 是配置信息的示例。 收到的广播数据包的数目是统计信息的示例。 MIB 中的每个信息元素称为 *对象*。 为了引用每个此类托管对象，NDIS *)  (定义对象标识符*。 因此，如果管理实体要查询或设置特定的托管对象，则必须为该对象提供特定 OID。
 
 MIB 跟踪三类对象：
 

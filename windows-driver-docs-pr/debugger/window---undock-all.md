@@ -1,18 +1,17 @@
 ---
-title: 全部浮动窗口
-description: 全部浮动窗口
-ms.assetid: 6d3b4704-7681-4b07-a8c6-335660a01ad9
+title: 全部移除窗口
+description: 全部移除窗口
 keywords:
-- 全部浮动窗口
-- 停靠的窗口，窗口中取消停靠所有
+- 全部移除窗口
+- 未停靠窗口，窗口全部脱开
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9fa2221f24ad76c25d2234897f9c2ccd3c1885dc
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5dc4d25dd073c81de484073ee197ba90a08caf8c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63385037"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96802799"
 ---
 # <a name="window--undock-all"></a>窗口 | 全部取消停靠
 
@@ -20,13 +19,13 @@ ms.locfileid: "63385037"
 ## <span id="ddk_window_undock_all_dbg"></span><span id="DDK_WINDOW_UNDOCK_ALL_DBG"></span>
 
 
-单击**取消停靠所有**上**窗口**菜单可将所有停靠窗口更改为浮动窗口。
+单击 "**窗口**" 菜单上的 "**全部移除**"，将所有停靠的窗口更改为浮动窗口。
 
-WinDbg 返回到它所占据的最后一个时间，它是浮动窗口的位置的每个停靠的窗口。
+WinDbg 将每个停靠窗口返回到它上次成为浮动窗口时的位置。
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-停靠和浮动的选项卡式，windows 的详细信息，请参阅[定位 Windows](positioning-the-windows.md)。
+有关停靠窗口、选项卡式窗口和浮动窗口的详细信息，请参阅 [定位窗口](positioning-the-windows.md)。
 
  
 

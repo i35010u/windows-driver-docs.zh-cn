@@ -1,7 +1,6 @@
 ---
 title: net_send
-description: Net_send 扩展本地网络上发送消息。
-ms.assetid: 13d5fe3f-6477-4610-8928-020726ccb3c8
+description: Net_send 扩展通过本地网络发送消息。
 keywords:
 - 网络消息
 - net_send Windows 调试
@@ -13,38 +12,38 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: be6e30c5a3abe6024ac5edefc6dc383d86d7873a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: cb299a78db4edb12360af4ef8b1cafeb89db9cf2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63335863"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803311"
 ---
-# <a name="netsend"></a>!net\_send
+# <a name="net_send"></a>！ net \_ send
 
 
-**！ Net\_发送**扩展本地网络上发送一条消息。
+**！ Net \_ 发送** 扩展通过本地网络发送消息。
 
 ```dbgcmd
 !net_send SendingMachine TargetMachine Sender Message
 ```
 
-## <a name="span-idddknetsenddbgspanspan-idddknetsenddbgspanparameters"></a><span id="ddk__net_send_dbg"></span><span id="DDK__NET_SEND_DBG"></span>参数
+## <a name="span-idddk__net_send_dbgspanspan-idddk__net_send_dbgspanparameters"></a><span id="ddk__net_send_dbg"></span><span id="DDK__NET_SEND_DBG"></span>参数
 
 
-<span id="_______SendingMachine______"></span><span id="_______sendingmachine______"></span><span id="_______SENDINGMACHINE______"></span> *SendingMachine*   
-指定将处理该命令的计算机。 建议这是调试器运行，因为你的网络配置可能会拒绝否则发送消息的计算机的名称。 *SendingMachine*不应包括前导反斜杠 (\\\)。
+<span id="_______SendingMachine______"></span><span id="_______sendingmachine______"></span><span id="_______SENDINGMACHINE______"></span>*SendingMachine*   
+指定将处理命令的计算机。 建议将此名称设置为运行调试器的计算机的名称，因为网络配置可能会拒绝发送消息。 *SendingMachine* 不应 (中包含前导反斜杠 \\ \) 。
 
-<span id="_______TargetMachine______"></span><span id="_______targetmachine______"></span><span id="_______TARGETMACHINE______"></span> *TargetMachine*   
-指定将向其发送消息的计算机。 *TargetMachine*不应包括前导反斜杠 (\\\)。
+<span id="_______TargetMachine______"></span><span id="_______targetmachine______"></span><span id="_______TARGETMACHINE______"></span>*TargetMachine*   
+指定将消息发送到的计算机。 *TargetMachine* 不应 (中包含前导反斜杠 \\ \) 。
 
-<span id="_______Sender______"></span><span id="_______sender______"></span><span id="_______SENDER______"></span> *Sender*   
-指定消息的发件人。 建议*发件人*应该与相同*SendingMachine*，因为你的网络配置可能会拒绝否则发送消息。 当显示消息时，此字符串将被标识为消息的发件人。
+<span id="_______Sender______"></span><span id="_______sender______"></span><span id="_______SENDER______"></span>*发件人*   
+指定邮件的发件人。 建议 *发送方* 与 *SendingMachine* 相同，因为网络配置可能拒绝发送消息。 显示消息时，此字符串将被标识为消息的发件人。
 
-<span id="_______Message______"></span><span id="_______message______"></span><span id="_______MESSAGE______"></span> *消息*   
-指定消息本身。 之后的所有文本*发件人*参数将被视为属于*消息*，其中包括空格和引号，尽管[**分号**](----command-separator-.md)将终止*消息*并开始新的命令。
+<span id="_______Message______"></span><span id="_______message______"></span><span id="_______MESSAGE______"></span>*消息*   
+指定消息本身。 *发件人* 参数后的所有文本都将被视为 *消息* 的一部分，包括空格和引号，尽管 [**分号**](----command-separator-.md)将终止 *消息* 并开始新的命令。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 <table>
 <colgroup>

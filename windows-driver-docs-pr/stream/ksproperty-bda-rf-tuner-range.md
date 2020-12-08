@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ BDA \_ RF \_ 调谐器 \_ 范围
 description: 客户端使用 KSPROPERTY \_ BDA \_ RF \_ 调谐器 \_ 范围控制调谐器范围，即，查找特定载波频率的域。
-ms.assetid: 2f2aa515-3f3c-419f-a817-0d597466ec85
 keywords:
 - KSPROPERTY_BDA_RF_TUNER_RANGE 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3c23c870a4a0da37dfec7e250bf8d879b74c9e40
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 41d1bd3d2e26124320d3571f9665072154726b0c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89191077"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803471"
 ---
 # <a name="ksproperty_bda_rf_tuner_range"></a>KSPROPERTY \_ BDA \_ RF \_ 调谐器 \_ 范围
 
@@ -92,7 +91,7 @@ KSP **NodeId** \_ 节点的节点标识号指定调谐器节点的标识符。
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSP \_ 节点**](/windows-hardware/drivers/ddi/ks/ns-ks-ksp_node)

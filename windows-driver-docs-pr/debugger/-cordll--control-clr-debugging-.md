@@ -1,7 +1,6 @@
 ---
 title: .cordll（控制 CLR 调试）
 description: Cordll 命令控制托管代码调试和 (CLR) Microsoft .NET 公共语言运行时。
-ms.assetid: d46965b3-4f20-4e25-82e6-79e7fb9b4838
 keywords:
 - 控制 CLR 调试 ( cordll) 命令
 - 'CLR (公共语言运行时) '
@@ -14,16 +13,16 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 7fd076ce4a35071479adc0353f280a7b09ab65fa
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 0454d1bc322ed02efb11e9e6209bc2abf6b8c79d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89215722"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803339"
 ---
 # <a name="cordll-control-clr-debugging"></a>.cordll（控制 CLR 调试）
 
-**Cordll**命令控制托管代码调试和 (CLR) Microsoft .NET 公共语言运行时。
+**Cordll** 命令控制托管代码调试和 (CLR) Microsoft .NET 公共语言运行时。
 
 ```dbgsyntax
 .cordll [Options]
@@ -111,11 +110,11 @@ ms.locfileid: "89215722"
 .cordll -I clr -lp c:\dacFolder
 ```
 
-Sos.dll 是用于调试托管代码的组件。 当前版本的 Windows 调试工具不包括任何 sos.dll 版本。 有关如何获取 sos.dll 的信息，请参阅[使用 Windows 调试器调试托管代码](debugging-managed-code.md)中* ( # A1) 获取 SOS 调试扩展*。
+Sos.dll 是用于调试托管代码的组件。 当前版本的 Windows 调试工具不包括任何 sos.dll 版本。 有关如何获取 sos.dll 的信息，请参阅 [使用 Windows 调试器调试托管代码](debugging-managed-code.md)中 *( # A1) 获取 SOS 调试扩展*。
 
 内核模式调试支持 **cordll** 命令。 但是，除非在中分页了所需的内存，否则此命令可能不起作用。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [使用 Windows 调试器调试托管代码](debugging-managed-code.md)
 

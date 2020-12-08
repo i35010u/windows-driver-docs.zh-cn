@@ -1,19 +1,18 @@
 ---
 title: 使用输入和输出
 description: 使用输入和输出
-ms.assetid: 7a23ee09-0314-400a-8152-eef49a225427
 keywords:
 - 调试器引擎、输入和输出
 - 输入和输出
 - 输出
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7b23133c8a322395879aab09b2d336df91f33e56
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: b6439a2087c59986f603964f46fffbd6a95cd1ce
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89215666"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803100"
 ---
 # <a name="using-input-and-output"></a>使用输入和输出
 
@@ -25,11 +24,11 @@ ms.locfileid: "89215666"
 
 ### <a name="span-idinputspanspan-idinputspaninput"></a><span id="input"></span><span id="INPUT"></span>送
 
-如果在客户端调用了 [**输入**](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugcontrol-input) 法，则引擎将要求其所有客户端提供输入。 输入将返回到 **输入**的调用方。
+如果在客户端调用了 [**输入**](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugcontrol-input) 法，则引擎将要求其所有客户端提供输入。 输入将返回到 **输入** 的调用方。
 
 ### <a name="span-idinput-callbacksspanspan-idinput_callbacksspaninput-callbacks"></a><span id="input-callbacks"></span><span id="INPUT_CALLBACKS"></span>输入回调
 
-当引擎要求客户端提供输入时，它将使用已注册到该客户端的 [IDebugInputCallbacks](/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebuginputcallbacks) 对象。 可以使用[*SetInputCallbacks*](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugclient5-setinputcallbacks)将**IDebugInputCallbacks**对象注册到客户端。 每个客户端最多只能向其中注册一个 **IDebugInputCallbacks** 对象。
+当引擎要求客户端提供输入时，它将使用已注册到该客户端的 [IDebugInputCallbacks](/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebuginputcallbacks) 对象。 可以使用 [*SetInputCallbacks*](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugclient5-setinputcallbacks)将 **IDebugInputCallbacks** 对象注册到客户端。 每个客户端最多只能向其中注册一个 **IDebugInputCallbacks** 对象。
 
 输入请求从引擎开始，调用 [**IDebugInputCallbacks：： StartInput**](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebuginputcallbacks-startinput) 方法。 这会通知 **IDebugInputCallbacks** 对象引擎现在正在等待输入。
 
@@ -45,7 +44,7 @@ ms.locfileid: "89215666"
 
 客户端使用 *输出掩码* 来指示它们感兴趣的输出类型。 只要引擎生成输出，就会附带指定其输出类型的掩码。 如果输出的类型与客户端的输出掩码匹配，则客户端将接收输出。 可以通过调用 [**SetOutputMask**](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugclient5-setoutputmask) 来设置输出掩码，并使用 [**GetOutputMask**](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugclient5-getoutputmask)进行查询。 有关输出掩码值的详细信息，请参阅 [**调试 \_ 输出 \_ XXX**](debug-output-xxx.md) 。
 
-引擎将向其发送输出的客户端列表由 *输出控件*控制。 通常，输出控件设置为将输出发送到所有客户端;但是，可以使用 [*ControlledOutput*](/previous-versions/ff539248(v=vs.85)) 和 [*ControlledOutputVaList*](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugcontrol3-controlledoutputvalist)临时更改此方法。 有关输出控制值的详细信息，请参阅 [**DEBUG \_ OUTCTL \_ XXX**](debug-outctl-xxx.md) 。
+引擎将向其发送输出的客户端列表由 *输出控件* 控制。 通常，输出控件设置为将输出发送到所有客户端;但是，可以使用 [*ControlledOutput*](/previous-versions/ff539248(v=vs.85)) 和 [*ControlledOutputVaList*](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugcontrol3-controlledoutputvalist)临时更改此方法。 有关输出控制值的详细信息，请参阅 [**DEBUG \_ OUTCTL \_ XXX**](debug-outctl-xxx.md) 。
 
 引擎可以缓冲输出。 如果将多个输出传递到引擎，则可以收集这些输出，并将其发送到一个大块的客户端。 若要刷新此缓冲区，请使用 [**FlushCallbacks**](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugclient5-flushcallbacks)。
 
@@ -53,7 +52,7 @@ ms.locfileid: "89215666"
 
 ### <a name="span-idoutput-callbacksspanspan-idoutput_callbacksspanoutput-callbacks"></a><span id="output-callbacks"></span><span id="OUTPUT_CALLBACKS"></span>输出回调
 
-当引擎将输出发送到客户端时，它将使用已注册到客户端的 [IDebugOutputCallbacks](/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebugoutputcallbacks) 对象。 可以使用[*SetOutputCallbacks*](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugclient5-setoutputcallbacks)将**IDebugOutputCallbacks**对象注册到客户端。 每个客户端最多只能向其中注册一个 **IDebugInputCallbacks** 对象。
+当引擎将输出发送到客户端时，它将使用已注册到客户端的 [IDebugOutputCallbacks](/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebugoutputcallbacks) 对象。 可以使用 [*SetOutputCallbacks*](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugclient5-setoutputcallbacks)将 **IDebugOutputCallbacks** 对象注册到客户端。 每个客户端最多只能向其中注册一个 **IDebugInputCallbacks** 对象。
 
 为了发送输出，引擎将调用 [**IDebugOutputCallbacks：： output**](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugoutputcallbacks-output) 方法。
 

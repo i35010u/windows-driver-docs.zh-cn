@@ -1,20 +1,19 @@
 ---
 title: EFI_USBFN_IO_PROTOCOL.DetectPort
 description: EFI_USBFN_IO_PROTOCOL.DetectPort
-ms.assetid: 66f7500e-e075-495b-9ce0-aed2aa11f66a
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 815b857212f225c7da8e9a87880d5333829a85ec
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: bfe85ec74f49ae9a6fa5d71239eb910f8ed939e6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63337689"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803377"
 ---
-# <a name="efiusbfnioprotocoldetectport"></a>EFI\_USBFN\_IO\_PROTOCOL.DetectPort
+# <a name="efi_usbfn_io_protocoldetectport"></a>EFI \_ USBFN \_ IO \_ 协议。DetectPort
 
 
-**DetectPort**函数返回的设备连接到 USB 端口类型。
+**DetectPort** 函数将返回连接到 USB 端口的设备的类型。
 
 ## <a name="syntax"></a>语法
 
@@ -28,19 +27,19 @@ EFI_STATUS
   );
 ```
 
-## <a name="parameters"></a>Parameters
+## <a name="parameters"></a>参数
 
 
 <a href="" id="this"></a>*此*  
-指向 EFI\_USBFN\_IO\_协议实例。
+指向 EFI \_ USBFN \_ IO \_ 协议实例的指针。
 
 <a href="" id="porttype"></a>*PortType*  
-一个[EFI\_USBFN\_端口\_类型](efi-usbfn-port-type.md)枚举，指示 USB 端口类型。
+一个 [EFI \_ USBFN \_ 端口 \_ 类型](efi-usbfn-port-type.md) 枚举，用于指示 USB 端口类型。
 
 ## <a name="return-values"></a>返回值
 
 
-此函数将返回以下值：
+此函数返回以下值：
 
 <table>
 <colgroup>
@@ -56,7 +55,7 @@ EFI_STATUS
 <tbody>
 <tr class="odd">
 <td><p><strong>EFI_SUCCESS</strong></p></td>
-<td><p>成功返回的函数</p></td>
+<td><p>函数已成功返回</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>EFI_INVALID_PARAMETER</strong></p></td>
@@ -64,11 +63,11 @@ EFI_STATUS
 </tr>
 <tr class="odd">
 <td><p><strong>EFI_DEVICE_ERROR</strong></p></td>
-<td><p>物理设备报告了错误。</p></td>
+<td><p>物理设备报告了一个错误。</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>EFI_NOT_READY</strong></p></td>
-<td><p>物理设备是正忙还是未准备好处理此请求</p></td>
+<td><p>物理设备处于繁忙状态或尚未准备好处理此请求</p></td>
 </tr>
 </tbody>
 </table>

@@ -1,26 +1,25 @@
 ---
 title: 使用 DECLARE_API 宏
 description: 使用 DECLARE_API 宏
-ms.assetid: 469f5ae4-2da8-4bbe-b5c0-75fcef227ba5
 keywords:
 - WdbgExts 扩展，DECLARE_API 宏
-- DECLARE_API 宏 (WdbgExts)
+- 'DECLARE_API 宏 (WdbgExts) '
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0bef24f2a95008024f023fb1f89fa18f4b8ffffd
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: bdc6c55825b7befb6aeb81ad748e95140b71a8fe
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63340487"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803027"
 ---
-# <a name="using-the-declareapi-macro"></a>使用 DECLARE\_API 宏
+# <a name="using-the-declare_api-macro"></a>使用 DECLARE \_ API 宏
 
 
 ## <span id="ddk_using_the_declare_api_macro_dbwx"></span><span id="DDK_USING_THE_DECLARE_API_MACRO_DBWX"></span>
 
 
-使用 DECLARE 声明 WdbgExts 扩展 DLL 中的每个扩展命令\_API 宏。 Wdbgexts.h 中定义此宏。
+WdbgExts 扩展 DLL 中的每个扩展命令都是使用 DECLARE \_ API 宏声明的。 此宏是在 wdbgexts 中定义的。
 
 扩展命令的代码的基本格式为：
 
@@ -31,9 +30,9 @@ DECLARE_API( myextension )
 }
 ```
 
-DECLARE\_API 宏设置扩展命令的标准接口。 例如，如果用户向扩展命令传递任何自变量，会将整个参数字符串存储为字符串，并指向此字符串 (作为 PCSTR) 的指针将传递给扩展函数作为**args**。
+DECLARE \_ API 宏为扩展命令设置标准接口。 例如，如果用户将任何自变量传递给 extension 命令，则整个参数字符串将存储为字符串，并将指向此字符串)  (的指针作为 **参数** 传递给扩展函数。
 
-如果您使用的 64 位指针，DECLARE\_API 宏的定义如下：
+如果使用的是64位指针，则按 \_ 如下方式定义 DECLARE API 宏：
 
 ```cpp
 #define DECLARE_API(s)                             \
@@ -47,7 +46,7 @@ DECLARE\_API 宏设置扩展命令的标准接口。 例如，如果用户向扩
      )
 ```
 
-如果您使用的 32 位指针，DECLARE\_API 将保持不变，不同之处在于**dwCurrentPc**的类型而不是 ULONG64 ULONG 将为。 但是，64 位指针建议对于任何扩展写入。 请参阅[32 位指针和 64 位指针](32-bit-pointers-and-64-bit-pointers.md)有关详细信息。
+如果你使用的是32位指针，则声明 \_ API 保持不变，只不过 **dwCurrentPc** 将为 ULONG 类型而不是 ULONG64。 但是，建议为正在编写的任何扩展名使用64位指针。 有关详细信息，请参阅 [32 位指针和64位指针](32-bit-pointers-and-64-bit-pointers.md) 。
 
  
 

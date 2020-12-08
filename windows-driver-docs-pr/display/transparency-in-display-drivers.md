@@ -1,18 +1,17 @@
 ---
 title: 显示驱动程序中的透明度
 description: 显示驱动程序中的透明度
-ms.assetid: 566706fb-66bd-44f5-b98c-23ed60e27970
 keywords:
 - 显示驱动程序 WDK Windows 2000，透明度
 - 透明 WDK Windows 2000 显示器
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fcdc513d3d8ddd8015c58558240e33cfdb7fd0a9
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: e0d4bebc3d979245aa68906163ccfe2b161966f3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90717586"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96802579"
 ---
 # <a name="transparency-in-display-drivers"></a>显示驱动程序中的透明度
 

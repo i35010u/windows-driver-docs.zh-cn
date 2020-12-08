@@ -1,21 +1,20 @@
 ---
 title: 调试停止调试
 description: 调试停止调试
-ms.assetid: 40c8a266-ffea-488e-ac10-89e61c5c9781
 keywords:
 - 调试停止调试
-- 控制目标，调试停止调试
+- 控制目标、调试停止调试
 - 退出调试器，调试停止调试
 - 退出调试器，调试停止调试
 - 结束调试会话，调试停止调试
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cfe962e05de857a24f47cfa4199fd6aab807c081
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 850b24057b0155762afe44e99f68a273bddd8fe4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63365533"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801969"
 ---
 # <a name="debug--stop-debugging"></a>调试 | 停止调试
 
@@ -23,13 +22,13 @@ ms.locfileid: "63365533"
 ## <span id="ddk_debug_stop_debugging_dbg"></span><span id="DDK_DEBUG_STOP_DEBUGGING_DBG"></span>
 
 
-单击**停止调试**上**调试**菜单可停止目标的执行和最终目标进程和所有线程。 此操作，可以启动不同的目标应用程序进行调试。
+单击 "**调试**" 菜单上的 "**停止调试**"，停止目标的执行并结束目标进程及其所有线程。 此操作可让你开始调试其他目标应用程序。
 
-此命令相当于按 SHIFT + F5 或单击**停止调试 (Shift + F5)** 按钮 (![停止调试按钮的屏幕截图](images/tbstop.png)) 工具栏上。
+此命令等效于按下 SHIFT + F5 或单击 " **停止调试" (SHIFT + f5)** 按钮 (![ 工具栏上的 "停止调试" 按钮) 屏幕截图 ](images/tbstop.png) 。
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-发出此命令，并控制程序执行的其他方法的其他方法的此操作的效果的详细信息，请参阅[控制目标](controlling-the-target.md)。
+有关此操作的效果、发出此命令的其他方法以及用于控制程序执行的其他方法的详细信息，请参阅 [控制目标](controlling-the-target.md)。
 
  
 

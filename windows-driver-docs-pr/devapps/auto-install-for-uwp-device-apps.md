@@ -1,26 +1,25 @@
 ---
 title: UWP 设备应用的自动安装
 description: 本主题介绍如何进行自动安装，以及如何更新和卸载应用、元数据和驱动程序。
-ms.assetid: ED9C7A63-5D2A-45D3-AD62-32C6876142FC
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2ce96ebd1c0bd6e0e4da8ca8f76b975563ac2a4e
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 8e175d5de7ca467dc432bc926895e8d0c56d2171
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91734483"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96802707"
 ---
 # <a name="automatic-installation-for-uwp-device-apps"></a>UWP 设备应用的自动安装
 
 
 在 Windows 8.1 中，设备制造商可以将其 UWP 设备应用配置为在用户将其设备连接到电脑时自动安装。 本主题介绍如何进行自动安装，以及如何更新和卸载应用、元数据和驱动程序。 有关设备应用的详细信息，请参阅 " [满足 UWP 设备应用](meet-uwp-device-apps.md)"。
 
-**注意**   请注意，在安装应用时，自动安装功能不会向用户提供通知。 某些用户可能会发现这种体验令人费解，并使应用程序成为不良评级。
+**注意**  请注意，在安装应用时，自动安装功能不会向用户提供通知。 某些用户可能会发现这种体验令人费解，并使应用程序成为不良评级。
 
  
 
-当你在**设备元数据创作向导**的 "**应用程序信息**" 页的**UWP 设备应用**部分中指定设备应用包详细信息时，将启用自动安装。 有关详细信息，请参阅 [步骤2：创建设备元数据](step-2--create-device-metadata.md)。
+当你在 **设备元数据创作向导** 的 "**应用程序信息**" 页的 **UWP 设备应用** 部分中指定设备应用包详细信息时，将启用自动安装。 有关详细信息，请参阅 [步骤2：创建设备元数据](step-2--create-device-metadata.md)。
 
 ## <a name="span-idacquisition_overviewspanspan-idacquisition_overviewspanspan-idacquisition_overviewspanacquisition-overview"></a><span id="Acquisition_overview"></span><span id="acquisition_overview"></span><span id="ACQUISITION_OVERVIEW"></span>购置概述
 
@@ -31,7 +30,7 @@ ms.locfileid: "91734483"
 -   **手动安装**：用户查找 Microsoft Store 中的应用并从该应用中安装应用。 这通常是应用更新和其他 UWP 应用的安装方式。
 -   **Oem 预安装**：适用于电脑内部设备或系统组件的应用可由 OEM 预安装为新 pc 的一部分。 有关详细信息，请参阅 [使用 DISM 预安装应用](/previous-versions/windows/it-pro/windows-8.1-and-8/dn387084(v=win.10))。
 
-**注意**   适用于电脑内部设备的 UWP 设备应用无法进行自动安装。 仅可通过手动安装和 OEM 预安装获取它们。
+**注意**  适用于电脑内部设备的 UWP 设备应用无法进行自动安装。 仅可通过手动安装和 OEM 预安装获取它们。
 
  
 

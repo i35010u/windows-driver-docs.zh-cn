@@ -1,15 +1,14 @@
 ---
 title: NDIS 选择性挂起简介
 description: NDIS 选择性挂起简介
-ms.assetid: B0D44AE3-5197-4264-9838-83FB5EFEB0B0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 516c2649e37a6c82cd63f13878ae6425ddf32ce7
-ms.sourcegitcommit: 62c81d88b03bd311d1cdfef5b138d579faceb304
+ms.openlocfilehash: cd5489b5308877bf50e90a5a8984f785e14e5fe9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92113536"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801523"
 ---
 # <a name="introduction-to-ndis-selective-suspend"></a>NDIS 选择性挂起简介
 
@@ -30,7 +29,7 @@ ms.locfileid: "92113536"
 
 [NDIS 选择性挂起实施指导](managing-irp-resources-for-ndis-selective-suspend.md)
 
-**注意**   虽然 NDIS 选择性挂起接口特别适用于 USB 网络适配器，但接口与总线无关。 因此，小型端口驱动程序可以使用其他总线类型上的网络适配器接口来降低 CPU 和电源开销。
+**注意**  虽然 NDIS 选择性挂起接口特别适用于 USB 网络适配器，但接口与总线无关。 因此，小型端口驱动程序可以使用其他总线类型上的网络适配器接口来降低 CPU 和电源开销。
 
  
 

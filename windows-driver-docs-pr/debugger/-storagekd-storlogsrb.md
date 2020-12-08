@@ -1,9 +1,8 @@
 ---
 title: storagekd.storlogsrb
-description: Storagekd.storlogsrb 扩展显示为筛选的存储 （或 SCSI） 适配器 Storport 的内部日志项请求块 (SRB) 提供。
-ms.assetid: 9E742636-DD19-4D8D-BDA1-C9BB8C293D8C
+description: Storagekd. storlogsrb 扩展显示为存储 (或 SCSI) 请求块 (提供的 SRB) 筛选的适配器的 Storport 内部日志条目。
 keywords:
-- storagekd.storlogsrb Windows 调试
+- storagekd storlogsrb Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,41 +11,41 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 4ce1d0a0624552e02bc9231615a02d4925848b8e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d1d35a7c56e30d72709e94cf0e0b29a638090ca9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63338778"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96802061"
 ---
 # <a name="storagekdstorlogsrb"></a>!storagekd.storlogsrb
 
 
-**！ Storagekd.storlogsrb**扩展显示为筛选的存储 （或 SCSI） 适配器 Storport 的内部日志项请求块 (SRB) 提供。
+**！ Storagekd storlogsrb** 扩展显示已为存储 (或 SCSI) 请求块筛选的适配器的 Storport 内部日志条目 () 提供 SRB。
 
 ```dbgcmd
 !storagekd.storlogsrb <Address> <srb> [<starting_entry> [<ending_entry>]] [L <count>]
 ```
 
-## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>参数
+## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>Parameters
 
 
-<span id="_______Address______"></span><span id="_______address______"></span><span id="_______ADDRESS______"></span> *Address*   
+<span id="_______Address______"></span><span id="_______address______"></span><span id="_______ADDRESS______"></span>*地址*   
 指定 Storport 适配器设备扩展或设备对象的地址。
 
-<span id="_______SRB______"></span><span id="_______srb______"></span> *SRB*   
-若要找到 SRB。
+<span id="_______SRB______"></span><span id="_______srb______"></span>*SRB*   
+要查找的 SRB。
 
-<span id="_______starting_entry______"></span><span id="_______STARTING_ENTRY______"></span> *启动\_条目*   
-要显示的区域中的开始条目中。 如果未指定，上次*计数*不会显示条目。
+<span id="_______starting_entry______"></span><span id="_______STARTING_ENTRY______"></span>*正在启动 \_ 条目*   
+范围中要显示的开始项。 如果未指定，则将显示最后一个 *计数* 条目。
 
-<span id="_______ending_entry______"></span><span id="_______ENDING_ENTRY______"></span> *ending\_entry*   
-中要显示的范围的结束条目。 如果未指定，*计数*将显示条目，从指定的项目开始*启动\_条目*。
+<span id="_______ending_entry______"></span><span id="_______ENDING_ENTRY______"></span>*结束 \_ 项*   
+要显示的范围中的结束条目。 如果未指定，则将显示 " *计数* " 条目，从 "开始" *\_ 条目* 指定的项目开始。
 
-<span id="_______count______"></span><span id="_______COUNT______"></span> *count*   
-若要显示的项计数。 如果未指定，使用值为 50。
+<span id="_______count______"></span><span id="_______COUNT______"></span>*计数*   
+要显示的项的计数。 如果未指定，则使用值50。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 <table>
 <colgroup>
@@ -55,7 +54,7 @@ ms.locfileid: "63338778"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>Windows 8 及更高版本</strong></p></td>
+<td align="left"><p><strong>Windows 8 及更高版本</strong></p></td>
 <td align="left"><p>Storagekd.dll</p></td>
 </tr>
 </tbody>

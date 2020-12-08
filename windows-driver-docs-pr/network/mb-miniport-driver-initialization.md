@@ -1,15 +1,14 @@
 ---
 title: MB 微型端口驱动程序初始化
 description: MB 微型端口驱动程序初始化
-ms.assetid: cf332eb4-faea-40e3-b313-512f81718267
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f5bd44f978644a08ce3f9f16c18a5372d3901ad7
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 0d1a81e25dec68654616dc5c3eb2abfa71d431af
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89207465"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801623"
 ---
 # <a name="mb-miniport-driver-initialization"></a>MB 微型端口驱动程序初始化
 
@@ -28,7 +27,7 @@ ms.locfileid: "89207465"
 
 4.  MB 服务向微型端口驱动程序发送异步 (非阻塞) [OID \_ WWAN \_ 设备 \_ cap](./oid-wwan-device-caps.md) 查询请求，以确定 MB 设备的功能。 微型端口驱动程序使用其收到请求的临时确认进行响应，并且它将在将来发送包含所需信息的通知。
 
-5.  微型端口驱动程序将 [**NDIS \_ 状态 \_ WWAN \_ 设备 \_ Cap**](./ndis-status-wwan-device-caps.md) 通知发送到 mb 服务，该服务指示微型端口驱动程序支持的 mb 设备的功能。 例如，如果微型端口驱动程序支持基于 GSM 的设备，则它应在[**NDIS \_ WWAN \_ 设备 \_ cap**](/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_device_caps)结构的**DeviceCaps. WwanCellularClass**成员中指定**WwanCellularClassGsm**值。 如果微型端口驱动程序支持基于 CDMA 的设备，则应指定 **WwanCellularClassCdma**。
+5.  微型端口驱动程序将 [**NDIS \_ 状态 \_ WWAN \_ 设备 \_ Cap**](./ndis-status-wwan-device-caps.md) 通知发送到 mb 服务，该服务指示微型端口驱动程序支持的 mb 设备的功能。 例如，如果微型端口驱动程序支持基于 GSM 的设备，则它应在 [**NDIS \_ WWAN \_ 设备 \_ cap**](/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_device_caps)结构的 **DeviceCaps. WwanCellularClass** 成员中指定 **WwanCellularClassGsm** 值。 如果微型端口驱动程序支持基于 CDMA 的设备，则应指定 **WwanCellularClassCdma**。
 
  
 

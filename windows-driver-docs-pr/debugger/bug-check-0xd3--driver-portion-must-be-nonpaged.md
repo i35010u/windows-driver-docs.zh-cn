@@ -1,7 +1,6 @@
 ---
 title: Bug 检查 0xD3 DRIVER_PORTION_MUST_BE_NONPAGED
 description: DRIVER_PORTION_MUST_BE_NONPAGED bug 检查的值为0x000000D3。 这表示系统尝试在进程 IRQL 上访问分页内存过高的情况。
-ms.assetid: 8b33dd20-9faa-4c02-96b7-89f55e69aeec
 keywords:
 - Bug 检查 0xD3 DRIVER_PORTION_MUST_BE_NONPAGED
 - DRIVER_PORTION_MUST_BE_NONPAGED
@@ -13,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: f6e2ee24a40f27a4e5142cce1cbdc754d29845b2
-ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
+ms.openlocfilehash: 2f094d50ee423f637d5f14684fe1b214f38ea81a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84534574"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96802001"
 ---
 # <a name="bug-check-0xd3-driver_portion_must_be_nonpaged"></a>Bug 检查0xD3：驱动程序 \_ 部分 \_ 必须未 \_ \_ 分页
 
@@ -26,7 +25,7 @@ ms.locfileid: "84534574"
 驱动程序 \_ 部分 \_ 必须 \_ 为 " \_ 非分页 bug 检查" 的值为 "0x000000D3"。 这表示系统尝试在进程 IRQL 上访问分页内存过高的情况。
 
 > [!IMPORTANT]
-> 本主题适用于程序员。 如果你是在使用计算机时收到蓝屏错误代码的客户，请参阅[排查蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题面向程序员。 如果您是在使用计算机时收到蓝屏错误代码的客户，请参阅[蓝屏错误疑难解答](https://www.windows.com/stopcode)。
 
 
 ## <a name="driver_portion_must_be_nonpaged-parameters"></a>驱动程序 \_ 部分 \_ 必须 \_ 为 \_ 非分页参数
@@ -40,7 +39,7 @@ ms.locfileid: "84534574"
 <thead>
 <tr class="header">
 <th align="left">参数</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -54,8 +53,8 @@ ms.locfileid: "84534574"
 </tr>
 <tr class="odd">
 <td align="left"><p>3</p></td>
-<td align="left"><p><strong>0：</strong>读取</p>
-<p><strong>1：</strong>写入</p></td>
+<td align="left"><p><strong>0：</strong> 读取</p>
+<p><strong>1：</strong> 写入</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>4</p></td>
@@ -66,7 +65,7 @@ ms.locfileid: "84534574"
 
  
 
-如果可以识别负责错误的驱动程序，则会在蓝色屏幕上打印其名称，并将其存储在内存中的位置（PUNICODE \_ 字符串） **KiBugCheckDriver**。
+如果能够识别出导致错误的驱动程序，则其名称将打印在蓝屏上，并存储在内存中的 (PUNICODE\_STRING) KiBugCheckDriver  位置。
 
 <a name="cause"></a>原因
 -----
@@ -76,7 +75,7 @@ ms.locfileid: "84534574"
 <a name="resolution"></a>解决方法
 ----------
 
-若要开始调试，请使用内核调试器获取堆栈跟踪： [**！分析**](-analyze.md)调试扩展显示有关 bug 检查的信息，可帮助确定根本原因，然后使用[**Kb （显示 stack Backtrace）**](k--kb--kc--kd--kp--kp--kv--display-stack-backtrace-.md)命令获取堆栈跟踪。
+若要开始调试，请使用内核调试器获取堆栈跟踪： [**！分析**](-analyze.md) 调试扩展显示有关 bug 检查的信息，可帮助确定根本原因，然后使用 [**Kb (显示 stack Backtrace)**](k--kb--kc--kd--kp--kp--kv--display-stack-backtrace-.md)  命令获取堆栈跟踪。
 
  
 

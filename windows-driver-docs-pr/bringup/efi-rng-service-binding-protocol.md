@@ -1,22 +1,21 @@
 ---
 title: EFI_RNG_SERVICE_BINDING_PROTOCOL
-description: 用于查找 RNG 服务提供的驱动程序，以及创建和销毁实例，以便多个驱动程序可以使用基础 RNG 服务。
-ms.assetid: 3CAD0FD8-DD26-4D26-A9E9-4B2750985E00
+description: 用于查找驱动程序提供的 RNG 服务，以及创建和销毁实例，使多个驱动程序可以使用基础 RNG 服务。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5ffb9e550304f102452a6ab2368548b04450310b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 57956b58888a1631848fb88564b0e1c492d507bd
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63335042"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803399"
 ---
-# <a name="efirngservicebindingprotocol"></a>EFI\_RNG\_SERVICE\_BINDING\_PROTOCOL
+# <a name="efi_rng_service_binding_protocol"></a>EFI \_ RNG \_ 服务 \_ 绑定 \_ 协议
 
 
-EFI\_RNG\_服务\_绑定\_使用协议来查找驱动程序，提供的随机数字生成 (RNG) 服务，还可以创建和销毁实例 EFI\_RNG\_协议，以便多个驱动程序可以使用基础 RNG 服务。
+EFI \_ RNG \_ SERVICE \_ 绑定 \_ 协议用于定位由驱动程序提供) 的随机数字生成 (，以及创建和销毁 EFI RNG 协议的实例， \_ \_ 使多个驱动程序可以使用基础 RNG 服务。
 
-泛型 EFI\_服务\_绑定\_协议 2.5.8 和 10.6 UEFI 规范的部分中所述。 本部分提供特定于信息 EFI\_RNG\_服务\_绑定\_协议。
+\_ \_ \_ UEFI 规范的2.5.8 和10.6 部分介绍了一般 EFI 服务绑定协议。 本节提供特定于 EFI \_ RNG \_ SERVICE \_ 绑定 \_ 协议的信息。
 
 ## <a name="guid"></a>GUID
 
@@ -30,11 +29,11 @@ EFI\_RNG\_服务\_绑定\_使用协议来查找驱动程序，提供的随机数
 ## <a name="remarks"></a>备注
 
 
-应用程序或驱动程序需要 RNG 服务可以使用一个协议处理程序服务，例如 EFI\_引导\_服务-&gt;LocateHandleBuffer()，搜索设备发布 EFI\_RNG\_服务\_绑定\_协议。 每个设备提供已发布的 EFI\_RNG\_服务\_绑定\_协议应支持 EFI\_RNG\_协议并使其可供使用。
+需要 RNG services 的应用程序或驱动程序可以使用一种协议处理程序服务（例如 EFI \_ BOOT \_ services- &gt; LocateHandleBuffer ( # A1）来搜索发布 EFI \_ RNG \_ SERVICE \_ 绑定协议的设备 \_ 。 每个使用已发布的 EFI \_ RNG \_ SERVICE 绑定协议的设备 \_ \_ 都应支持 EFI \_ RNG \_ 协议，并使其可供使用。
 
-在成功调用了 EFI\_RNG\_服务\_绑定\_协议。CreateChild() 函数，子 EFI\_RNG\_协议驱动程序实例已准备好进行使用。
+成功调用 EFI \_ RNG \_ 服务 \_ 绑定 \_ 协议后。CreateChild ( # A1 函数，子 EFI \_ RNG \_ 协议驱动程序实例可供使用。
 
-应用程序终止执行，EFI 的每个成功调用之前\_RNG\_服务\_绑定\_协议。必须匹配 CreateChild() 函数通过调用 EFI\_RNG\_服务\_绑定\_协议。DestroyChild() 函数。
+在应用程序终止执行之前，每次成功调用 EFI \_ RNG \_ SERVICE \_ 绑定 \_ 协议。CreateChild ( # A1 函数必须与对 EFI \_ RNG \_ 服务 \_ 绑定协议的调用匹配 \_ 。DestroyChild ( # A3 函数。
 
 ## <a name="requirements"></a>要求
 

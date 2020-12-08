@@ -1,9 +1,8 @@
 ---
-title: WIA\_DPC\_上传\_URL
-description: WIA\_DPC\_上传\_URL 属性描述标准的 Internet URL。
-ms.assetid: 5fc36640-32e3-4e51-845f-dabaecd39472
+title: WIA \_ DPC \_ 上传 \_ URL
+description: WIA \_ DPC \_ 上传 \_ url 属性描述标准 Internet URL。
 keywords:
-- WIA_DPC_UPLOAD_URL 成像设备
+- WIA_DPC_UPLOAD_URL 图像设备
 topic_type:
 - apiref
 api_name:
@@ -14,35 +13,35 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 64803dd2ad6fbb3e113fde4c2f852b1f7449aefd
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9dcf81e1382f63d5b12afa9b1b13eb239a178ca8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391709"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96802413"
 ---
-# <a name="wiadpcuploadurl"></a>WIA\_DPC\_上传\_URL
+# <a name="wia_dpc_upload_url"></a>WIA \_ DPC \_ 上传 \_ URL
 
 
-WIA\_DPC\_上传\_URL 属性描述标准的 Internet URL。
+WIA \_ DPC \_ 上传 \_ url 属性描述标准 Internet URL。
 
 ## <span id="ddk_wia_dpc_upload_url_si"></span><span id="DDK_WIA_DPC_UPLOAD_URL_SI"></span>
 
 
-属性类型：VT\_BSTR
+属性类型： VT \_ BSTR
 
-有效值：WIA\_PROP\_NONE
+有效值： WIA " \_ \_ 无"
 
-访问权限：读取/写入
+访问权限：读/写
 
 <a name="remarks"></a>备注
 -------
 
-WIA\_DPC\_上传\_URL 属性描述图像或对象后从一台设备，获得, 可上载到以下方案之一中的 URL:
+WIA \_ DPC \_ 上传 \_ url 属性介绍了从设备获取图像或对象后，可以将其上传到的 url：
 
--   WIA 应用程序读取 WIA\_DPC\_上传\_URL，并允许用户以自动将图像上载到的 URL。
+-   WIA 应用程序将读取 WIA \_ DPC \_ 上传 \_ url，并允许用户自动将图像上传到 URL。
 
--   应用程序设置的 URL，而其他设备 （例如，网亭） 使用 WIA\_DPC\_上传\_URL。
+-   应用程序设置 URL 和其他设备 (例如，网亭) 使用 WIA \_ DPC \_ 上载 \_ URL。
 
 Microsoft Windows 操作系统不上传图像。
 
@@ -56,12 +55,12 @@ Microsoft Windows 操作系统不上传图像。
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Version</p></td>
-<td><p>在 Windows Vista 和更高版本操作系统中已过时，并应不再使用。 但是，此属性仍定义 Windows Vista 中与应用程序和用于 Windows Server 2003、 Windows XP 和早期版本的 Windows 设备的兼容性。</p></td>
+<td><p>版本</p></td>
+<td><p>在 Windows Vista 和更高版本的操作系统中已过时，不应再使用。 但是，在 Windows Vista 中仍定义此属性，以与为 Windows Server 2003、Windows XP 和 windows 的早期版本设计的应用程序和设备兼容。</p></td>
 </tr>
 <tr class="even">
-<td><p>Header</p></td>
-<td>Wiadef.h （包括 Wiadef.h）</td>
+<td><p>标头</p></td>
+<td>Wiadef (包含 Wiadef) </td>
 </tr>
 </tbody>
 </table>

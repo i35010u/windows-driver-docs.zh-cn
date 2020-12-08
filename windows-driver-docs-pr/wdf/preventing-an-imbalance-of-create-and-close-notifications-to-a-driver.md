@@ -1,7 +1,6 @@
 ---
 title: 防止创建和关闭通知对驱动程序造成的不平衡
 description: 防止创建和关闭通知对驱动程序造成的不平衡
-ms.assetid: e6678226-44d3-4b1d-a296-2017bc9c7c37
 keywords:
 - 创建文件通知 WDK UMDF
 - 清除-文件通知 WDK UMDF
@@ -10,12 +9,12 @@ keywords:
 - 通知 WDK UMDF，阻止创建和关闭不平衡
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a452b217286e4b29edfd1e6f99a046bcd9c8886d
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: c0792400861e0cfcedc012eef65a53e706a66b71
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89190321"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96802125"
 ---
 # <a name="preventing-an-imbalance-of-create-and-close-notifications-to-a-driver"></a>防止创建和关闭通知对驱动程序造成的不平衡
 

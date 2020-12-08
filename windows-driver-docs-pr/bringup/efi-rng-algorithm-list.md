@@ -1,7 +1,6 @@
 ---
 title: EFI_RNG_ALGORITHM_LIST 结构
-description: 此数据结构包含受支持的随机数字生成 (RNG) 算法的列表。
-ms.assetid: 1481330F-78F3-4C18-BD19-3B4984E0138F
+description: 此数据结构包含一个列表，其中列出了支持的随机数生成 (RNG) 算法。
 keywords:
 - EFI_RNG_ALGORITHM_LIST 结构
 - PEFI_RNG_ALGORITHM_LIST 结构指针
@@ -13,24 +12,24 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8437c21fd7e2895330f60f09798eedcb4fc55026
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a89c25ce26ea5dbc6170a4f9a2102baaea353b9f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328009"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803403"
 ---
-# <a name="efirngalgorithmlist-structure"></a>EFI\_RNG\_算法\_列表结构
+# <a name="efi_rng_algorithm_list-structure"></a>EFI \_ RNG \_ 算法 \_ 列表结构
 
 
-此数据结构包含受支持的随机数字生成 (RNG) 算法的列表。
+此数据结构包含一个列表，其中列出了支持的随机数生成 (RNG) 算法。
 
 <a name="syntax"></a>语法
 ------
 
 ```cpp
 typedef struct _EFI_RNG_ALGORITHM_LIST {
-  UINT32     AlgorithmsCount;
+  UINT32     AlgorithmsCount;
   EFI_GUID * Algorithms;
 } EFI_RNG_ALGORITHM_LIST, *PEFI_RNG_ALGORITHM_LIST;
 ```
@@ -39,17 +38,17 @@ typedef struct _EFI_RNG_ALGORITHM_LIST {
 -------
 
 **AlgorithmsCount**  
-列表中的算法的数。
+列表中算法的数目。
 
 **算法**  
-指向 RNG 算法的列表。 每种算法是`sizeof(EFI_GUID)`字节长。 它是调用方负责释放此内存通过使用 EFI\_引导\_服务-&gt;FreePool()。
+指向 RNG 算法列表的指针。 每个算法的 `sizeof(EFI_GUID)` 长度为个字节。 调用方负责通过使用 EFI \_ BOOT \_ SERVICES- &gt; FreePool ( # A1 来释放此内存。
 
 <a name="remarks"></a>备注
 -------
 
-实现可能支持一个或多个方法提供 RNG 值。 在此结构中表示支持 RNG 算法的列表。
+实现可支持一种或多种方法来提供 RNG 值。 此结构中表示受支持的 RNG 算法的列表。
 
-以下列表提供了 EFI GUID 值的一系列 EFI\_RNG\_协议算法。 此列表并不详尽，而且可能会通过供应商或其他行业标准来进行扩充。
+以下列表提供了可选的 EFI \_ RNG 协议算法的 EFI GUID 值 \_ 。 此列表并不完整，并且可能会被供应商或其他行业标准所增强。
 
 ```cpp
 #define EFI_RNG_ALGORITHM_SP800_90_HASH_256_GUID   \

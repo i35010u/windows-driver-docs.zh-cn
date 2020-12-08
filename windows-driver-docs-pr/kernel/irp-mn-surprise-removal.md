@@ -2,23 +2,22 @@
 title: IRP_MN_SURPRISE_REMOVAL
 description: 所有 PnP 驱动程序都必须处理此 IRP。
 ms.date: 08/12/2017
-ms.assetid: 19d6847c-6b64-4552-b8b8-fef1d9b13fc7
 keywords:
-- IRP_MN_SURPRISE_REMOVAL 内核模式驱动程序体系结构
+- IRP_MN_SURPRISE_REMOVAL Kernel-Mode 驱动程序体系结构
 ms.localizationpriority: medium
-ms.openlocfilehash: 07570dc16b8143138f3a6b582ded61c2a0a044a7
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 85a6b210a4c7ebe42bb4333386add31d1cdcb61b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91733485"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801687"
 ---
 # <a name="irp_mn_surprise_removal"></a>IRP \_ MN \_ 意外 \_ 删除
 
 
 所有 PnP 驱动程序都必须处理此 IRP。
 
-## <a name="value"></a>值
+## <a name="value"></a>“值”
 
 0x17
 
@@ -82,7 +81,7 @@ PnP 管理器在 \_ 系统线程的上下文中以 IRQL = 被动级别发送此 
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**IRP \_ MN \_ 删除 \_ 设备**](irp-mn-remove-device.md)

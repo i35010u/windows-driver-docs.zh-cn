@@ -1,25 +1,24 @@
 ---
 title: I/O 目标简介
 description: I/O 目标简介
-ms.assetid: 06ab7b3e-6b3e-4cfe-a7a6-17292300c472
 keywords:
-- I/O 面向 WDK KMDF 有关 I/O 目标
-- I/O 目标对象 WDK KMDF
-- 远程 I/O 面向 WDK KMDF
-- 本地 I/O 面向 WDK KMDF
-- 函数的 WDK KMDF 驱动程序
+- I/o 目标 WDK KMDF，关于 i/o 目标
+- I/o 目标对象 WDK KMDF
+- 远程 i/o 目标 WDK KMDF
+- 本地 i/o 目标 WDK KMDF
+- 函数驱动程序 WDK KMDF
 - 筛选器驱动程序 WDK KMDF
 - 微型端口驱动程序 WDK KMDF
-- 专用的 I/O 面向 WDK KMDF
-- I/O 面向 WDK KMDF，类型
+- 专用 i/o 目标 WDK KMDF
+- I/o 目标 WDK KMDF，类型
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1e7bae4b2e03d1253c6162b6c83efe435a2c7a18
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: bdd0a966a1ddaa15cfbf3fc74621f098c131490a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63366238"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803445"
 ---
 # <a name="introduction-to-io-targets"></a>I/O 目标简介
 
@@ -27,22 +26,22 @@ ms.locfileid: "63366238"
 
 
 
-当[功能驱动程序](wdm-concepts-for-kmdf-drivers.md)，筛选器驱动程序，或[微型端口驱动程序](creating-kmdf-miniport-drivers.md)接收的 I/O 请求，该驱动程序可能能够处理该请求本身或它可能需要其他驱动程序的帮助。 如果驱动程序需要协助，它可以将请求转发到另一个驱动程序，或者它可以创建一个或多个新的请求并将其发送到另一个驱动程序。
+当 [函数驱动程序](wdm-concepts-for-kmdf-drivers.md)、筛选器驱动程序或 [微型端口驱动程序](creating-kmdf-miniport-drivers.md) 收到 i/o 请求时，驱动程序可能会自行处理请求，或者可能需要其他驱动程序的帮助。 如果驱动程序需要帮助，则可以将请求转发到其他驱动程序，也可以创建一个或多个新的请求并将其发送到另一个驱动程序。
 
-在内核模式驱动程序框架中， *I/O 目标*表示目标的 I/O 请求的设备对象。 函数、 筛选器或微型端口驱动程序可以使用 I/O 目标将 I/O 请求发送到另一个驱动程序。 这些驱动程序通常将其 I/O 请求发送到驱动程序堆栈中的下一步低驱动程序。 因此，每个基于框架的函数、 筛选和微型端口驱动程序都有*本地 I/O 目标*为每个设备，这是设备的下一步低驱动程序。
+在 Kernel-Mode Driver Framework 中， *i/o 目标* 表示作为 i/o 请求目标的设备对象。 函数、筛选器或微型端口驱动程序可以使用 i/o 目标将 i/o 请求发送到另一个驱动程序。 这些驱动程序通常会将其 i/o 请求发送到驱动程序堆栈中的下一个较低版本的驱动程序。 因此，每个基于框架的函数、筛选器和微型端口驱动程序都具有每个设备的 *本地 i/o 目标* ，这是设备的下一个较低驱动程序。
 
-有时，驱动程序必须将 I/O 请求发送到不同目标-或顶部的不同驱动程序堆栈，很少，一些其他驱动程序中发送驱动程序堆栈。 因此，该框架还提供*远程 I/O 目标*，其中包含的所有 I/O 目标只是本地的 I/O 目标。
+有时，驱动程序必须将 i/o 请求发送到另一个目标--其他驱动程序堆栈的顶部，或者很少是发送驱动程序堆栈中的其他驱动程序。 因此，该框架还提供 *远程 i/o 目标*，这些目标包含除本地 i/o 目标外的所有 i/o 目标。
 
-表示每个 I/O 目标*I/O 目标对象*。 每个 I/O 目标对象是主要的队列，可以控制何时进行请求传递到目标设备对象。 当驱动程序将请求发送到的 I/O 目标时，该框架存储在队列中请求，直到它可以将请求传递到目标设备对象。
+每个 i/o 目标都由 *i/o 目标对象* 表示。 每个 i/o 目标对象主要是一个队列，用于控制向目标设备对象发送请求的时间。 当驱动程序向 i/o 目标发送请求时，框架会将请求存储在队列中，直到它能够将请求传递给目标设备对象。
 
-框架支持同时*常规 I/O 目标*并*专用 I/O 目标*:
+该框架支持 *一般 i/o* 目标和 *专用 i/o 目标*：
 
--   [常规 I/O 目标](general-i-o-targets.md)可以由所有函数、 筛选和微型端口驱动程序，但它们不支持任何特殊的、 特定于设备的数据格式。
+-   所有函数、筛选器和微型端口驱动程序都可以使用[一般 i/o 目标](general-i-o-targets.md)，但它们不支持任何特定于设备的特定数据格式。
 
--   专用的 I/O 目标启用方便地发送需要特殊的、 特定于目标的数据格式设置的 I/O 请求的函数、 筛选和微型端口驱动程序。 目前，框架将为以下专用 I/O 目标提供支持：
-    -   [USB I/O 目标](usb-i-o-targets.md)
+-   专用 i/o 目标使函数、筛选器和微型端口驱动程序能够轻松发送需要特定于目标的特定数据格式的 i/o 请求。 目前，该框架为以下专用 i/o 目标提供支持：
+    -   [USB i/o 目标](usb-i-o-targets.md)
 
-如果该框架提供了专门支持你的设备的数据格式的 I/O 目标，您的驱动程序应使用专用的 I/O 目标。 否则，该驱动程序应使用常规 I/O 目标。
+如果框架提供的专用 i/o 目标支持设备的数据格式，则驱动程序应使用专用 i/o 目标。 否则，驱动程序应使用一般 i/o 目标。
 
  
 

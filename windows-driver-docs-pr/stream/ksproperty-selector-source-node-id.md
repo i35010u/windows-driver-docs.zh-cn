@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ 选择器 \_ 源 \_ 节点 \_ ID
 description: KSPROPERTY \_ 选择器 \_ 源 \_ 节点 \_ ID 属性指定特定节点的源 pin 的 pin 标识符。
-ms.assetid: 7616e834-462c-4e2c-8a4f-ec20db042e3b
 keywords:
 - KSPROPERTY_SELECTOR_SOURCE_NODE_ID 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 20a6bee0e8bf8bb77ecec62f0751379a17e953f2
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 0b8ea3936f073015353d24a842213e62f7c013d6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103038"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803455"
 ---
 # <a name="ksproperty_selector_source_node_id"></a>KSPROPERTY \_ 选择器 \_ 源 \_ 节点 \_ ID
 

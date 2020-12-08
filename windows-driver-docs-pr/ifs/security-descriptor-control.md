@@ -1,20 +1,19 @@
 ---
 title: 安全 \_ 描述符 \_ 控件
 description: 安全 \_ 描述符 \_ 控件
-ms.assetid: 6a7fe617-156d-4eb0-83f7-df78104acbde
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dae3b3c899181db3cde720df943218270ae76b39
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: ed1e8d0c4a53a6503cdd4bcd1df6e3122bbb5453
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105016"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801757"
 ---
 # <a name="security_descriptor_control"></a>安全 \_ 描述符 \_ 控件
 
 
-**安全 \_ 描述符 \_ 控件**类型是一组限制[**安全 \_ 描述符**](/previous-versions/windows/hardware/drivers/ff556610(v=vs.85))结构或其组件含义的位标志。 每个安全描述符都有一个存储**安全 \_ 描述符 \_ 控制**位的**控件**成员。
+**安全 \_ 描述符 \_ 控件** 类型是一组限制 [**安全 \_ 描述符**](/previous-versions/windows/hardware/drivers/ff556610(v=vs.85))结构或其组件含义的位标志。 每个安全描述符都有一个存储 **安全 \_ 描述符 \_ 控制** 位的 **控件** 成员。
 
 安全 \_ 描述符 \_ 控件
 
@@ -31,7 +30,7 @@ typedef USHORT SECURITY_DESCRIPTOR_CONTROL, *PSECURITY_DESCRIPTOR_CONTROL;
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">值</th>
+<th align="left">“值”</th>
 <th align="left">含义</th>
 </tr>
 </thead>
@@ -101,7 +100,7 @@ typedef USHORT SECURITY_DESCRIPTOR_CONTROL, *PSECURITY_DESCRIPTOR_CONTROL;
 </tr>
 <tr class="odd">
 <td align="left"><p>SE_SELF_RELATIVE</p></td>
-<td align="left"><p>指示一个自相关格式的安全描述符，其中的所有安全信息在一个连续的内存块中。 如果未设置此标志，则安全描述符为绝对格式。 有关详细信息，请参阅 Windows SDK 文档中的 "绝对和自相关安全描述符"。</p></td>
+<td align="left"><p>指示一个自相关格式的安全描述符，其中的所有安全信息在一个连续的内存块中。 如果未设置此标志，则安全描述符为绝对格式。 有关详细信息，请参阅 Windows SDK 文档中的 "绝对和 Self-Relative 安全描述符"。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>SE_SERVER_SECURITY</p></td>

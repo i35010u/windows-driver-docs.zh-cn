@@ -1,17 +1,16 @@
 ---
 title: 使用客户端对象
 description: 使用客户端对象
-ms.assetid: 07311a2e-86a7-4985-9dfa-55a876cd7899
 keywords:
 - 调试器引擎，COM 接口
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e87762b500748df3f6884df79eed5a21522783bb
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: b892f5d12a794bcc058b036714581e44770b8782
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89215682"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803153"
 ---
 # <a name="using-client-objects"></a>使用客户端对象
 
@@ -34,14 +33,14 @@ ms.locfileid: "89215682"
 
 有关何时应增加和减少引用计数的详细信息，请参阅平台 SDK。
 
-**IUnknown：： QueryInterface**、 **DebugCreate**和 **DebugConnect** ，每个都采用接口 ID 作为其参数之一。 可使用** \_ \_ uuidof**运算符获取此接口 ID。 例如：
+**IUnknown：： QueryInterface**、 **DebugCreate** 和 **DebugConnect** ，每个都采用接口 ID 作为其参数之一。 可使用 **\_ \_ uuidof** 运算符获取此接口 ID。 例如：
 
 ```cpp
 IDebugClient * debugClient;
 HRESULT Hr = DebugCreate( __uuidof(IDebugClient), (void **)&debugClient );
 ```
 
-**重要提示**   IDebug \* 接口（如 COM like）不是正确的 Com api，如[**IDebugEventCallbacks**](/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebugeventcallbacks)接口。 从托管代码调用这些接口是不受支持的方案。 当通过托管代码调用这些接口时，会导致系统不稳定的问题，例如垃圾回收和线程所有权。
+**重要提示**  IDebug \* 接口（如 COM like）不是正确的 Com api，如 [**IDebugEventCallbacks**](/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebugeventcallbacks) 接口。 从托管代码调用这些接口是不受支持的方案。 当通过托管代码调用这些接口时，会导致系统不稳定的问题，例如垃圾回收和线程所有权。
 
  
 

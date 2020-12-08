@@ -1,7 +1,6 @@
 ---
 title: 要进行反交错和帧速率转换的视频内容
 description: 要进行反交错和帧速率转换的视频内容
-ms.assetid: 627b394e-c2e1-4327-adaa-0c3436ba3d1a
 keywords:
 - 取消隔行扫描 WDK DirectX VA，接收视频内容
 - 帧速率转换 WDK DirectX VA
@@ -10,12 +9,12 @@ keywords:
 - 帧速率转换的视频内容 WDK DirectX VA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 91ef1c8aabe1b997f19612335da4b3d736137e44
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 620fc87cebfe84bea728b9c2688c27a6617bcff9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107524"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96802533"
 ---
 # <a name="video-content-for-deinterlace-and-frame-rate-conversion"></a>要进行反交错和帧速率转换的视频内容
 
@@ -45,7 +44,7 @@ DXVA \_ VideoDesc 结构按如下方式进行填充，以将驱动程序定向�
 <thead>
 <tr class="header">
 <th align="left">成员</th>
-<th align="left">Value</th>
+<th align="left">“值”</th>
 </tr>
 </thead>
 <tbody>
@@ -86,7 +85,7 @@ DXVA \_ VideoDesc 结构按如下方式进行填充，以将驱动程序定向�
 
  
 
-### <a name="span-iddeinterlacing_and_frame-rate_conversion_of_720_x_480i_content_examplespanspan-iddeinterlacing_and_frame-rate_conversion_of_720_x_480i_content_examplespanspan-iddeinterlacing_and_frame-rate_conversion_of_720_x_480i_content_examplespandeinterlacing-and-frame-rate-conversion-of-720-x-480i-content-example"></a><span id="Deinterlacing_and_Frame-Rate_Conversion_of_720_x_480i_Content_Example"></span><span id="deinterlacing_and_frame-rate_conversion_of_720_x_480i_content_example"></span><span id="DEINTERLACING_AND_FRAME-RATE_CONVERSION_OF_720_X_480I_CONTENT_EXAMPLE"></span>720 x 480i 内容示例的取消隔行扫描和帧速率转换
+### <a name="span-iddeinterlacing_and_frame-rate_conversion_of_720_x_480i_content_examplespanspan-iddeinterlacing_and_frame-rate_conversion_of_720_x_480i_content_examplespanspan-iddeinterlacing_and_frame-rate_conversion_of_720_x_480i_content_examplespandeinterlacing-and-frame-rate-conversion-of-720-x-480i-content-example"></a><span id="Deinterlacing_and_Frame-Rate_Conversion_of_720_x_480i_Content_Example"></span><span id="deinterlacing_and_frame-rate_conversion_of_720_x_480i_content_example"></span><span id="DEINTERLACING_AND_FRAME-RATE_CONVERSION_OF_720_X_480I_CONTENT_EXAMPLE"></span>取消隔行扫描和 Frame-Rate 转换 720 x 480i 内容示例
 
 DXVA VideoDesc 结构的 **OutputFrameFreq** 成员 \_ 按如下方式进行填充，以将驱动程序定向到隔行扫描和帧速率转换 720 x 480i 内容。
 
@@ -98,7 +97,7 @@ DXVA VideoDesc 结构的 **OutputFrameFreq** 成员 \_ 按如下方式进行填�
 <thead>
 <tr class="header">
 <th align="left">成员</th>
-<th align="left">Value</th>
+<th align="left">“值”</th>
 </tr>
 </thead>
 <tbody>
@@ -127,7 +126,7 @@ DXVA VideoDesc 结构的 **OutputFrameFreq** 成员 \_ 按如下方式进行填�
 <thead>
 <tr class="header">
 <th align="left">成员</th>
-<th align="left">Value</th>
+<th align="left">“值”</th>
 </tr>
 </thead>
 <tbody>
@@ -156,7 +155,7 @@ DXVA \_ VideoDesc 结构的填充方式如下，指示驱动程序对480p 内容
 <thead>
 <tr class="header">
 <th align="left">成员</th>
-<th align="left">Value</th>
+<th align="left">“值”</th>
 </tr>
 </thead>
 <tbody>

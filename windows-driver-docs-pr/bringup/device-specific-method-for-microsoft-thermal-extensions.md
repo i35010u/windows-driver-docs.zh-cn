@@ -1,15 +1,14 @@
 ---
 title: Microsoft 热量扩展的特定于设备的方法
 description: 为了支持更灵活的热区域和热传感器设计，Windows 支持向 ACPI 热区模型扩展。
-ms.assetid: A8D90493-EE4A-40EC-BE8D-54B1C9EE94AD
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3373759f185d1e98149df9271d85869999c8a1e8
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 74a9a7dfd8cb92d0167a667fe15dce837b9bae96
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90101526"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803413"
 ---
 # <a name="device-specific-method-for-microsoft-thermal-extensions"></a>Microsoft 热量扩展的特定于设备的方法
 
@@ -18,14 +17,14 @@ ms.locfileid: "90101526"
 
 有关 MTL 的详细信息，请参阅 [Microsoft Connect 网站](/collaborate/connect-redirect?DownloadID=48106)上标题为 "Windows 中的热量管理" 的文档。
 
-若要使用这些功能，Oem 可以 \_ 在任何热区的命名空间中 (DSM) 包含以下特定于设备的方法。
+若要使用这些功能，Oem 可以 \_ 在任何热区的命名空间中包含以下 Device-Specific 方法 (DSM) 。
 
 ## <a name="function-1-minimum-throttle-limit"></a>函数1：最小限制限制
 
 
 \_热量最小限制限制的 DSM 控制方法参数如下：
 
-### <a name="arguments"></a>参数
+### <a name="arguments"></a>自变量
 
 -   **Arg0：** UUID = 14d399cd-7a27-4b18-8fb4-7cb7b9f4e500
 -   **Arg1：** 修订版 ID = 0
@@ -40,7 +39,7 @@ ms.locfileid: "90101526"
 
 \_温度传感器设备的 DSM 控制方法参数如下：
 
-### <a name="arguments"></a>参数
+### <a name="arguments"></a>自变量
 
 -   **Arg0：** UUID = 14d399cd-7a27-4b18-8fb4-7cb7b9f4e500
 -   **Arg1：** 修订版 ID = 0
@@ -55,7 +54,7 @@ ms.locfileid: "90101526"
 
 如果温度传感器设备是通过 \_ DSM 函数索引2报告的，则该热区还需要包含一个用于 \_ 标识温度传感器设备上的热区依赖的 DEP 对象。
 
-**注意**   每个 DSM 的函数索引 0 \_ 是一个查询函数，它返回支持的函数索引集，并且始终是必需的。 有关详细信息，请参阅 \_ ACPI 5.0 规范的 "DSM (设备特定方法) " 部分。
+**注意**  每个 DSM 的函数索引 0 \_ 是一个查询函数，它返回支持的函数索引集，并且始终是必需的。 有关详细信息，请参阅 \_ ACPI 5.0 规范的 "DSM (设备特定方法) " 部分。
 
  
 

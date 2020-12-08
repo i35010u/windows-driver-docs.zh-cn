@@ -1,9 +1,8 @@
 ---
-title: usbkd _ehcitd
-description: _Ehcitd usbkd 命令显示 usbehci _TRANSFER_CONTEXT 结构中的信息。
-ms.assetid: C0EE04CF-E059-4064-9791-3500E66B24FA
+title: usbkd._ehcitd
+description: Usbkd._ehcitd 命令显示 usbehci _TRANSFER_CONTEXT 结构中的信息。
 keywords:
-- usbkd _ehcitd Windows 调试
+- usbkd._ehcitd Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 7bb28247db34d55f36f4992c852b8ba1f7ddd8fe
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 7bf1aadf9fdc642b9edfbda5ac435fb6d6619ec7
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89213584"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96802035"
 ---
 # <a name="usbkd_ehcitd"></a>！ usbkd。 \_ehcitd
 
 
-**！ Usbkd。 \_ehcitd**命令显示 usbehci 中的信息 **！ \_传输 \_ 上下文**结构。 使用此命令显示 (的异步终结点的相关信息，) 控制和批量终结点。
+**！ Usbkd。 \_ehcitd** 命令显示 usbehci 中的信息 **！ \_传输 \_ 上下文** 结构。 使用此命令显示 (的异步终结点的相关信息，) 控制和批量终结点。
 
 ```dbgcmd
 !usbkd._ehcitd StructAddr

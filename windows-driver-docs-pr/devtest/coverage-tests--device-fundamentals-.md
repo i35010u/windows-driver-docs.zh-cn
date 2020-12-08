@@ -1,15 +1,14 @@
 ---
 title: 覆盖范围测试（设备基础功能）
 description: 设备基础覆盖率测试监视和报告各种 i/o 请求数据包 (Irp) 为指定设备进入或离开驱动程序堆栈。
-ms.assetid: 950B124B-8B2D-4A54-AFC3-E90BBDD8D1AF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b2c4497a3b5b458c6c767233e9eca46ec17fb5b6
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: bc2abbe49d9fc2751a817ae48c806c7912d43f5b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106178"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801839"
 ---
 # <a name="coverage-tests-device-fundamentals"></a>覆盖范围测试（设备基础功能）
 

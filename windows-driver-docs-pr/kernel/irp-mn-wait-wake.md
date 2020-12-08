@@ -2,16 +2,15 @@
 title: IRP_MN_WAIT_WAKE
 description: 此 IRP 使驱动程序能够唤醒睡眠系统或唤醒睡眠设备。
 ms.date: 08/12/2017
-ms.assetid: b79fd057-bf95-457e-882a-42221789e6e6
 keywords:
-- IRP_MN_WAIT_WAKE 内核模式驱动程序体系结构
+- IRP_MN_WAIT_WAKE Kernel-Mode 驱动程序体系结构
 ms.localizationpriority: medium
-ms.openlocfilehash: 6f59d8dfaeb329ffeea58b6247cb45f21813aa54
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 5188e72a7082b4f4831d9a2aad6d67c0639a691c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89189321"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801685"
 ---
 # <a name="irp_mn_wait_wake"></a>IRP \_ MN \_ 等待 \_ 唤醒
 
@@ -55,13 +54,13 @@ ms.locfileid: "89189321"
 驱动程序收到 IRP，正在等待设备进入唤醒状态。
 
 <a href="" id="status-invalid-device-state-"></a>状态 \_ 无效的 \_ 设备 \_ 状态   
-设备的状态小于设备的[**设备 \_ 功能**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_device_capabilities)结构中指定的**DeviceWake**状态，或者设备无法唤醒系统在 IRP 中传递的**SystemWake**状态。
+设备的状态小于设备的 [**设备 \_ 功能**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_device_capabilities)结构中指定的 **DeviceWake** 状态，或者设备无法唤醒系统在 IRP 中传递的 **SystemWake** 状态。
 
 <a href="" id="status-not-supported-"></a>\_不 \_ 支持的状态   
 设备不支持唤醒。
 
 <a href="" id="status-device-busy-"></a>状态 \_ 设备 \_ 忙   
-**Irp \_ MN \_ 等待 \_ 唤醒**请求已挂起，必须先完成或取消，然后才能发出其他 IRP \_ MN \_ wait \_ 唤醒请求。
+**Irp \_ MN \_ 等待 \_ 唤醒** 请求已挂起，必须先完成或取消，然后才能发出其他 IRP \_ MN \_ wait \_ 唤醒请求。
 
 <a href="" id="status-success"></a>状态 \_ 成功  
 设备已终止唤醒事件。
@@ -88,7 +87,7 @@ IRP 必须按设备堆栈向下传递到设备的总线驱动程序，这将调�
 
 当驱动程序发送 wait/唤醒 IRP 时，它应在 **PoRequestPowerIrp** 调用中指定一个回调例程。 在回调例程中，驱动程序通常会为设备服务。 例如，设备的电源策略所有者必须调用 **PoRequestPowerIrp** ，以便为设备状态 D0 发送 [**IRP \_ MN \_ 设置 \_ 电源**](irp-mn-set-power.md) 。
 
-作为一个设备的总线驱动程序的驱动程序和父设备的策略所有者在从子 PDO 收到**irp \_ MN \_ 等待 \_ 唤醒**请求时，将为父设备的策略所有者请求**irp \_ MN \_ 等待 \_ 唤醒**IRP。 如果驱动程序枚举了多个子 PDO，无论有多少个子 PDOs 发送等待/唤醒请求，它都应该只为父设备堆栈请求一个等待/唤醒 IRP。 相反，此类驱动程序应保留等待/唤醒 Irp 的内部计数，每次收到请求时递增计数，并在每次完成请求时递减计数。 如果在完成等待/唤醒 IRP 后，计数为非零，则驱动程序应将另一个等待/唤醒 IRP 发送到其设备堆栈，以便 "重置" 自身进行唤醒。 有关详细信息，请参阅 [通过设备树了解等待/唤醒 irp 的路径](./understanding-the-path-of-wait-wake-irps-through-a-device-tree.md)。
+作为一个设备的总线驱动程序的驱动程序和父设备的策略所有者在从子 PDO 收到 **irp \_ MN \_ 等待 \_ 唤醒** 请求时，将为父设备的策略所有者请求 **irp \_ MN \_ 等待 \_ 唤醒** IRP。 如果驱动程序枚举了多个子 PDO，无论有多少个子 PDOs 发送等待/唤醒请求，它都应该只为父设备堆栈请求一个等待/唤醒 IRP。 相反，此类驱动程序应保留等待/唤醒 Irp 的内部计数，每次收到请求时递增计数，并在每次完成请求时递减计数。 如果在完成等待/唤醒 IRP 后，计数为非零，则驱动程序应将另一个等待/唤醒 IRP 发送到其设备堆栈，以便 "重置" 自身进行唤醒。 有关详细信息，请参阅 [通过设备树了解等待/唤醒 irp 的路径](./understanding-the-path-of-wait-wake-irps-through-a-device-tree.md)。
 
 若要取消 **IRP \_ MN \_ 等待 \_ 唤醒**，驱动程序将调用 [**IoCancelIrp**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocancelirp)。 只有源自 IRP 的驱动程序才能取消它。 如果发生以下任何情况，驱动程序将取消挂起的 **IRP \_ MN \_ 等待 \_ 唤醒** ：
 
@@ -106,7 +105,7 @@ IRP 必须按设备堆栈向下传递到设备的总线驱动程序，这将调�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Wdm.h（包括 Wdm.h、Ntddk.h 或 Ntifs.h）</td>
 </tr>
 </tbody>

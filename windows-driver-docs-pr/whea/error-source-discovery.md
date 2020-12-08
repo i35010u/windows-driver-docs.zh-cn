@@ -1,7 +1,6 @@
 ---
 title: 错误源发现
 description: 错误源发现
-ms.assetid: 58b7501d-b51a-436f-ac29-8d03161d0956
 keywords:
 - Windows 硬件错误体系结构 WDK，错误源发现
 - WHEA WDK，错误源发现
@@ -12,12 +11,12 @@ keywords:
 - 错误源发现 WDK WHEA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5734d6087adf84b3a6afadfc3ff791a8cd511019
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 15b6913d7cd200212fca254a50f6564190d387b4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89206157"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96802107"
 ---
 # <a name="error-source-discovery"></a>错误源发现
 

@@ -1,17 +1,16 @@
 ---
 title: 编写 WdbgExts 扩展
 description: 编写 WdbgExts 扩展
-ms.assetid: ac1711d9-66f8-4f6b-89e6-08370c1cdc12
 keywords:
 - WdbgExts 扩展，编写
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 375d861af00792bc38d7c936e83c98d59143063b
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 3f77727507fdb7e7937d1388ee21adcbe30cf967
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89210829"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96802743"
 ---
 # <a name="writing-wdbgexts-extensions"></a>编写 WdbgExts 扩展
 

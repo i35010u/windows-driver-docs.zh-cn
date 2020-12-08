@@ -1,17 +1,16 @@
 ---
 title: 使用会话协议
 description: 使用会话协议
-ms.assetid: 355286f9-ef85-4ba6-b21a-fc51e0b93fed
 keywords:
 - 会话协议 WDK San
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6e4c013bb99a321b3967ab13a2bb80b783ef44f5
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 12e5289c9e4419b1476d666d7e62a6a533f82f8c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89215457"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803493"
 ---
 # <a name="using-session-protocol"></a>使用会话协议
 
@@ -23,7 +22,7 @@ Windows 套接字交换机使用其会话协议在 SAN 连接上传输数据。 
 
 本部分介绍如何设置和执行数据传输。
 
-**注意**   根据加载交换机的应用程序的行为，交换机会优化其会话协议以降低传输应用程序数据所需的开销。
+**注意**  根据加载交换机的应用程序的行为，交换机会优化其会话协议以降低传输应用程序数据所需的开销。
 
  
 

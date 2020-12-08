@@ -1,15 +1,14 @@
 ---
 title: MB 接口型号补充
 description: '本部分提供了 MB 接口型号 (MBIM 的补充信息) '
-ms.assetid: 577BCF39-868B-44F5-A5C0-75E28689C2B6
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 847c234ac592d38de3fd650bd03a459ce04420b3
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: c54449ab155ed16fa59ba55acf6077b104586f99
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91733927"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801645"
 ---
 # <a name="mb-interface-model-supplement"></a>MB 接口模型补充
 
@@ -48,8 +47,8 @@ Microsoft OS 字符串描述符用于实现以下目标
 <tr class="header">
 <th align="left">字段</th>
 <th align="left">长度 (字节) </th>
-<th align="left">值</th>
-<th align="left">说明</th>
+<th align="left">“值”</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -129,13 +128,13 @@ Microsoft 操作系统字符串描述符的结构在版本1.00 中是固定的�
 
  
 
-**BmRequestType**字段是由三个部分组成的位图：数据传输方向、描述符类型和接收方。 根据 USB 规范， **bmRequestType** 的值设置为 1000 0000b (0x80) 。
+**BmRequestType** 字段是由三个部分组成的位图：数据传输方向、描述符类型和接收方。 根据 USB 规范， **bmRequestType** 的值设置为 1000 0000b (0x80) 。
 
 对于 GET \_ 描述符请求， **wValue** 字段分为两部分。 高字节存储描述符类型并且低字节存储描述符索引。 若要检索 Microsoft OS 字符串描述符，应将高位字节设置为检索字符串描述符（0x03）。 由于 Microsoft 操作系统字符串描述符始终存储在索引0xEE 上，因此，此字符串索引应存储在 **wValue** 字段的下一个字节。
 
-**WIndex**用于存储语言 ID，但对于 Microsoft OS 字符串描述符，它必须设置为零。
+**WIndex** 用于存储语言 ID，但对于 Microsoft OS 字符串描述符，它必须设置为零。
 
-**WLength**字段用于指示要检索的字符串描述符的长度。 设备应响应0x02 –0xFF 中的任何有效范围。
+**WLength** 字段用于指示要检索的字符串描述符的长度。 设备应响应0x02 –0xFF 中的任何有效范围。
 
 如果设备在相应的地址上没有有效的描述符 (0xEE) ，则它将响应请求错误或停止。 如果设备未使用延迟进行响应，则会将单结束的零重置发送到设备 (进行恢复，如果它应进入未知状态) 。
 
@@ -196,15 +195,15 @@ Microsoft 操作系统字符串描述符的结构在版本1.00 中是固定的�
 
  
 
-**BmRequestType**字段是由三个部分组成的位图（数据传输方向、描述符类型和接收方），并且符合 USB 规范。 Microsoft OS 功能描述符是特定于供应商的描述符，数据传输方向是从设备到主机。 因此， **bmRequestType** 的值设置为 1100 0000B (0xC0) 。
+**BmRequestType** 字段是由三个部分组成的位图（数据传输方向、描述符类型和接收方），并且符合 USB 规范。 Microsoft OS 功能描述符是特定于供应商的描述符，数据传输方向是从设备到主机。 因此， **bmRequestType** 的值设置为 1100 0000B (0xC0) 。
 
-**BRequest**字段用于指示请求的格式。 若要检索 Microsoft OS 功能描述符，应**bRequest**使用特殊的 GET \_ MS 描述符字节填充 "bRequest" 字段 \_ 。 此字节的值由从 Microsoft 字符串说明符中检索的 **bMS \_ VendorCode**表示。 有关检索 Microsoft OS 字符串描述符的详细信息，请参阅 **检索 OS 字符串描述符**。
+**BRequest** 字段用于指示请求的格式。 若要检索 Microsoft OS 功能描述符，应 **bRequest** 使用特殊的 GET \_ MS 描述符字节填充 "bRequest" 字段 \_ 。 此字节的值由从 Microsoft 字符串说明符中检索的 **bMS \_ VendorCode** 表示。 有关检索 Microsoft OS 字符串描述符的详细信息，请参阅 **检索 OS 字符串描述符**。
 
 " **WValue** " 字段设置为 "特殊用途"，并被分解为高字节和低字节。 高字节用于存储接口号。 这对于基于每个接口存储功能描述符至关重要，特别是对于复合设备或具有 [多个接口](/windows-hardware/drivers/ddi/index)的设备。 在大多数情况下，将使用 interface 0。 低字节用于存储页码。 此功能可防止描述符的大小边界为 64 KB (**wLength** 字段大小设置的限制) 。 将使用初始设置为零的页面值提取描述符。 如果收到 (大小为 64 KB) 的完整描述符，则页面值将以1递增，此时将再次发送对描述符的请求 (，并) 增加的页面值。 此过程将重复，直至收到大小小于 64 KB 的描述符。 请注意，最大页数为255，表示描述符大小限制为 16 MB。
 
-**WIndex**字段存储正在检索的 Microsoft OS 功能描述符的功能索引号。 Microsoft 将维护此 Microsoft OS 功能描述符和索引列表。 若要了解有关 Microsoft OS 功能描述符的详细信息，请参阅 [MICROSOFT Os 描述符](/previous-versions/gg463179(v=msdn.10))。
+**WIndex** 字段存储正在检索的 Microsoft OS 功能描述符的功能索引号。 Microsoft 将维护此 Microsoft OS 功能描述符和索引列表。 若要了解有关 Microsoft OS 功能描述符的详细信息，请参阅 [MICROSOFT Os 描述符](/previous-versions/gg463179(v=msdn.10))。
 
-**WLength**字段指定要提取的描述符的长度。 如果描述符的长度超过了在 **wLength** 字段中指定的字节数，则仅返回描述符的初始字节数。 如果其短于在 **wLength** 字段中指定的值，则返回短的数据包。
+**WLength** 字段指定要提取的描述符的长度。 如果描述符的长度超过了在 **wLength** 字段中指定的字节数，则仅返回描述符的初始字节数。 如果其短于在 **wLength** 字段中指定的值，则返回短的数据包。
 
 如果不存在特定的操作系统描述符，则设备将发出请求错误或停止。
 
@@ -223,7 +222,7 @@ Microsoft 操作系统字符串描述符的结构在版本1.00 中是固定的�
 
 **标头部分**
 
-标头部分存储有关扩展配置描述符的其余部分的信息。 **DwLength**字段包含整个扩展配置描述符的长度。 标头部分还包含版本号，该版本号最初设置为 1.00 (0100H) 。 此描述符的将来版本可能会在以后发布。 请注意，扩展配置描述符的未来版本可能还需要增加 "标头" 部分中的条目数，因此请验证此数字是否准确存储在设备中，并由操作系统读取。
+标头部分存储有关扩展配置描述符的其余部分的信息。 **DwLength** 字段包含整个扩展配置描述符的长度。 标头部分还包含版本号，该版本号最初设置为 1.00 (0100H) 。 此描述符的将来版本可能会在以后发布。 请注意，扩展配置描述符的未来版本可能还需要增加 "标头" 部分中的条目数，因此请验证此数字是否准确存储在设备中，并由操作系统读取。
 
 *扩展配置描述符标头部分*
 
@@ -241,7 +240,7 @@ Microsoft 操作系统字符串描述符的结构在版本1.00 中是固定的�
 <th align="left">字段</th>
 <th align="left">大小</th>
 <th align="left">值</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -307,7 +306,7 @@ Microsoft 操作系统字符串描述符的结构在版本1.00 中是固定的�
 <th align="left">字段</th>
 <th align="left">大小</th>
 <th align="left">值</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -430,7 +429,7 @@ Microsoft 操作系统字符串描述符的结构在版本1.00 中是固定的�
 <p>SD</p>
 <p>NCM 1。0</p>
 <p>调制解调器</p>
-<p>电视</p>
+<p>TV</p>
 <p>GPS</p>
 <p>FP</p>
 <p>PC/SC 智能卡</p>
@@ -443,7 +442,7 @@ Microsoft 操作系统字符串描述符的结构在版本1.00 中是固定的�
 <p>SD</p>
 <p>NCM 2。0</p>
 <p>调制解调器</p>
-<p>电视</p>
+<p>TV</p>
 <p>GPS</p>
 <p>FP</p>
 <p>PC/SC 智能卡</p>
@@ -469,7 +468,7 @@ Microsoft 操作系统字符串描述符的结构在版本1.00 中是固定的�
 <tr class="header">
 <th align="left">字段</th>
 <th align="left">长度 (字节) </th>
-<th align="left">值</th>
+<th align="left">“值”</th>
 </tr>
 </thead>
 <tbody>

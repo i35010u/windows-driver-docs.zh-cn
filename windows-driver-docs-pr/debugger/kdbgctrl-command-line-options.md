@@ -1,9 +1,8 @@
 ---
 title: KDbgCtrl 命令行选项
 description: KDbgCtrl 命令行使用以下语法
-ms.assetid: 0367a09d-c475-4aeb-8f88-47d51ec7e9d5
 keywords:
-- KDbgCtrl 命令行选项 Windows 调试
+- KDbgCtrl Command-Line 选项 Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,12 +11,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: b0866454ddb7d3d0629add9c4ba9f8e5851edc2a
-ms.sourcegitcommit: bc3d8a2a01dbe2074d3581bf687f003b3849b647
+ms.openlocfilehash: 299dc57e750c45762a33cdcd017cc15b1b8cf3b1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89285409"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801925"
 ---
 # <a name="kdbgctrl-command-line-options"></a>KDbgCtrl 命令行选项
 
@@ -58,13 +57,13 @@ kdbgctrl -?
 检查是否启用了自动内核调试。 如果启用了自动内核 Deubugging，则显示 true; 如果禁用自动内核调试，则显示 false。
 
 <span id="_______-eu______"></span><span id="_______-EU______"></span>**-欧盟**   
-启用用户模式错误处理。
+启用 User-Mode 错误处理。
 
 <span id="_______-du______"></span><span id="_______-DU______"></span>**-du**   
-禁用用户模式错误处理。
+禁用 User-Mode 错误处理。
 
 <span id="_______-cu______"></span><span id="_______-CU______"></span>**-cu**   
-检查是否启用了用户模式错误处理。 如果启用了用户模式错误处理，则显示 true; 如果禁用用户模式错误处理，则显示 false。
+检查是否启用 User-Mode 错误处理。 如果启用 User-Mode 错误处理，则显示 true; 如果禁用 User-Mode 错误处理，则显示 false。
 
 <span id="-eb"></span><span id="-EB"></span>**-eb**  
 启用内核调试阻止。
@@ -91,7 +90,7 @@ kdbgctrl -?
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">值</th>
+<th align="left">“值”</th>
 <th align="left">含义</th>
 </tr>
 </thead>
@@ -117,7 +116,7 @@ kdbgctrl -?
 获取内核会审转储文件。 输入转储文件的进程 ID 和名称。
 
 <span id="-sd_Type"></span>**-sd {active \| 自动 \| 完整 \| 内核 \| 迷你**   
-设置要在发生系统崩溃时收集的转储类型，并重新加载故障转储堆栈。 有关转储类型的详细信息，请参阅 [各种内核模式转储文件](varieties-of-kernel-mode-dump-files.md) 。
+设置要在发生系统崩溃时收集的转储类型，并重新加载故障转储堆栈。 有关转储类型的详细信息，请参阅多种 [Kernel-Mode 转储文件](varieties-of-kernel-mode-dump-files.md) 。
 
 <span id="_______-_______"></span> **-?**   
 显示 KDbgCtrl 的命令行帮助。

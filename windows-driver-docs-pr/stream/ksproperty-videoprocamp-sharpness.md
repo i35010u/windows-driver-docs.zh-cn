@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ VIDEOPROCAMP \_ 锐度
 description: KSPROPERTY \_ VIDEOPROCAMP \_ 锐度属性控制照相机的清晰度设置。 此属性是可选的。
-ms.assetid: d6b10876-313b-420a-9d81-348030e580dd
 keywords:
 - KSPROPERTY_VIDEOPROCAMP_SHARPNESS 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6ef67e73c64af74d04a2d2740dc5330db0826f16
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: fe1d51fbdd7f8240edf81ac2add440f348f9b887
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106928"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803453"
 ---
 # <a name="ksproperty_videoprocamp_sharpness"></a>KSPROPERTY \_ VIDEOPROCAMP \_ 锐度
 

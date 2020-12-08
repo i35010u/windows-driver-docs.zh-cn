@@ -1,7 +1,6 @@
 ---
 title: NDIS 端口发送和接收操作
 description: NDIS 端口发送和接收操作
-ms.assetid: f9a22b7b-5565-4d56-a9b9-22562b6bf0da
 keywords:
 - 端口 WDK NDIS、发送和接收操作
 - NDIS 端口 WDK、发送和接收操作
@@ -11,12 +10,12 @@ keywords:
 - 源端口 WDK NDIS
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5e057767a0d9ae86b0d27d1e304cfe23a6b99126
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 91fa919ff4d354ffefa242cc542ea0f7289462f2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89206097"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801557"
 ---
 # <a name="ndis-port-send-and-receive-operations"></a>NDIS 端口发送和接收操作
 
@@ -28,7 +27,7 @@ NDIS 驱动程序可以将发送和接收操作与 NDIS 端口关联起来。NDI
 
 如果微型端口驱动程序分配端口，则过量驱动程序可以使用这些端口来发送和接收关联微型端口适配器的相应 subinterfaces 上的数据。 但是，过量驱动程序必须确保端口处于活动状态，然后再发送任何数据。 当关联的 subinterfaces 可用时，微型端口驱动程序会激活端口。 有关激活微型端口驱动程序中的端口的详细信息，请参阅 [激活 NDIS 端口](activating-an-ndis-port.md)。
 
-当 NDIS 调用协议驱动程序的[*ProtocolBindAdapterEx*](/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_bind_adapter_ex)函数时，ndis 会提供*BindParameters*参数指向的[**NDIS \_ 绑定 \_ 参数**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_bind_parameters)结构的**ActivePorts**成员中所有当前活动端口的列表。 激活和停用端口时，NDIS 还会通知协议驱动程序具有 PnP 事件。 有关 PnP 端口激活和停用通知的详细信息，请参阅 [处理 NDIS 端口 PnP 通知](handling-ndis-ports-pnp-event-notifications.md)。 有关发送和接收操作的更多常规信息，请参阅 [发送和接收操作](send-and-receive-operations.md)。
+当 NDIS 调用协议驱动程序的 [*ProtocolBindAdapterEx*](/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_bind_adapter_ex)函数时，ndis 会提供 *BindParameters* 参数指向的 [**NDIS \_ 绑定 \_ 参数**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_bind_parameters)结构的 **ActivePorts** 成员中所有当前活动端口的列表。 激活和停用端口时，NDIS 还会通知协议驱动程序具有 PnP 事件。 有关 PnP 端口激活和停用通知的详细信息，请参阅 [处理 NDIS 端口 PnP 通知](handling-ndis-ports-pnp-event-notifications.md)。 有关发送和接收操作的更多常规信息，请参阅 [发送和接收操作](send-and-receive-operations.md)。
 
  
 

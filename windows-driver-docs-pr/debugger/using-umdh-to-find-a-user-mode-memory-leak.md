@@ -1,18 +1,17 @@
 ---
 title: 使用 UMDH 查找用户模式内存泄漏
 description: 使用 UMDH 查找用户模式内存泄漏
-ms.assetid: b15ed695-3f35-4a72-93ab-3cbfd2e33980
 keywords:
 - 内存泄漏，用户模式，UMDH
 - UMDH，内存泄漏检测
 ms.date: 08/16/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 0ac7321372535f4c232724e42f4f30976ac847ec
-ms.sourcegitcommit: 17c1bbc5ea0bef3bbc87794b030a073f905dc942
+ms.openlocfilehash: b7cc0e921dd9df6ccddc3634687593b8a1de376d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88802379"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803011"
 ---
 # <a name="using-umdh-to-find-a-user-mode-memory-leak"></a>使用 UMDH 查找用户模式内存泄漏
 
@@ -23,7 +22,7 @@ UMDH 包含在 Windows 调试工具中。 有关完整详细信息，请参阅 [
 
 ### <a name="span-idpreparing_to_use_umdhspanspan-idpreparing_to_use_umdhspanpreparing-to-use-umdh"></a><span id="preparing_to_use_umdh"></span><span id="PREPARING_TO_USE_UMDH"></span>准备使用 UMDH
 
-如果尚未确定哪个进程正在泄漏内存，请先执行该操作。 有关详细信息，请参阅 [使用性能监视器查找用户模式的内存泄漏](using-performance-monitor-to-find-a-user-mode-memory-leak.md)。
+如果尚未确定哪个进程正在泄漏内存，请先执行该操作。 有关详细信息，请参阅 [使用性能监视器查找内存泄漏 User-Mode](using-performance-monitor-to-find-a-user-mode-memory-leak.md)。
 
 UMDH 日志中最重要的数据是堆分配的堆栈跟踪。 若要确定进程是否正在泄漏堆内存，请分析这些堆栈跟踪。
 
@@ -45,7 +44,7 @@ UMDH 日志中最重要的数据是堆分配的堆栈跟踪。 若要确定进�
     ```
     
 
--   默认情况下，在 x86 处理器上 Windows 收集的堆栈跟踪数据量限制为 32 MB，在 x64 处理器上限制为 64 MB。 如果必须增加此数据库的大小，请选择 "GFlags" 图形界面中的 " **映像文件** " 选项卡，键入进程名称，按 tab 键，选中 " **Stack Backtrace (Megs) ** " 复选框，在 "关联" 文本框中键入值 (，以) MB 为单位），然后选择 " **应用**"。 仅在必要时增加此数据库，因为它可能会耗尽有限的 Windows 资源。 如果不再需要更大的大小，则将此设置返回到其原始值。
+-   默认情况下，在 x86 处理器上 Windows 收集的堆栈跟踪数据量限制为 32 MB，在 x64 处理器上限制为 64 MB。 如果必须增加此数据库的大小，请选择 "GFlags" 图形界面中的 " **映像文件** " 选项卡，键入进程名称，按 tab 键，选中 " **Stack Backtrace (Megs)** " 复选框，在 "关联" 文本框中键入值 (，以) MB 为单位），然后选择 " **应用**"。 仅在必要时增加此数据库，因为它可能会耗尽有限的 Windows 资源。 如果不再需要更大的大小，则将此设置返回到其原始值。
 
 -   如果更改了 " **系统注册表** " 选项卡上的任何标志，则必须重新启动 Windows 才能使这些更改生效。 如果更改了 " **图像文件** " 选项卡上的任何标志，则必须重新启动该过程才能使更改生效。 对 **内核标志** 选项卡所做的更改将立即生效，但在下次重新启动 Windows 时，它们会丢失。
 
@@ -115,7 +114,7 @@ set _NT_SYMBOL_PATH=c:\mysymbols;srv*c:\mycache*https://msdl.microsoft.com/downl
 
     将为调用堆栈提供 "BackTrace00B53" 的标识符，并显示此堆栈中的调用。 在检查调用堆栈时，可以看到 **DisplayMyGraphics** 例程正在通过 **new** 运算符分配内存，该运算符调用例程 *malloc*，后者使用 Visual C++ 运行时库从堆中获取内存。
 
-    确定要在源代码中显式显示的最后一个调用。 在这种情况下，它可能是 **new** 运算符，因为调用 *malloc* 是作为 **新** 的实现的一部分而不是作为单独的分配。 因此， **DisplayMyGraphics**例程中**new**运算符的此实例会重复分配未释放的内存。
+    确定要在源代码中显式显示的最后一个调用。 在这种情况下，它可能是 **new** 运算符，因为调用 *malloc* 是作为 **新** 的实现的一部分而不是作为单独的分配。 因此， **DisplayMyGraphics** 例程中 **new** 运算符的此实例会重复分配未释放的内存。
 
  
 

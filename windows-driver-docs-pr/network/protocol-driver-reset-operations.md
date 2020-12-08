@@ -1,19 +1,18 @@
 ---
 title: 协议驱动程序重置操作
 description: 协议驱动程序重置操作
-ms.assetid: 862029e5-8c46-4889-80f5-15c463f228a3
 keywords:
 - 协议驱动程序 WDK 网络，重置操作
 - NDIS 协议驱动程序 WDK，重置操作
 - 重置操作 WDK NDIS 协议
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d413198d64b1b141a31470d3b24f514cf27c7c8e
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: cf70058736eabe1079493599aff19cfa205cddd5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89215166"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96802279"
 ---
 # <a name="protocol-driver-reset-operations"></a>协议驱动程序重置操作
 
@@ -35,7 +34,7 @@ ms.locfileid: "89215166"
 
 -   不要执行定向到基础微型端口驱动程序的任何 NDIS 调用，只需调用即可返回资源，例如，通过 [**NdisReturnNetBufferLists**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisreturnnetbufferlists)返回网络数据。
 
-*ProtocolStatusEx* (或*PROTOCOLCOSTATUSEX*) 收到 NDIS \_ 状态 \_ 重置 \_ 结束消息后，协议驱动程序可以继续发送网络数据和 OID 请求。
+*ProtocolStatusEx* (或 *PROTOCOLCOSTATUSEX*) 收到 NDIS \_ 状态 \_ 重置 \_ 结束消息后，协议驱动程序可以继续发送网络数据和 OID 请求。
 
  
 

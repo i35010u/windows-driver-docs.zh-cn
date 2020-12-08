@@ -1,7 +1,6 @@
 ---
 title: DEVPKEY_NAME（设备接口）
 description: DEVPKEY_NAME（设备接口）
-ms.assetid: 276862d0-8ab9-4914-9e57-834cc17d0e59
 keywords:
 - ) 设备和驱动程序安装 DEVPKEY_NAME (设备接口
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: b3e963053ed7bc7d8e28f52b6d7641a74dcb0e9c
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 1d9a32c31b79db5de54f0b3d6467e2601233b6d1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90716896"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801743"
 ---
 # <a name="devpkey_name-device-interface"></a>DEVPKEY_NAME（设备接口）
 

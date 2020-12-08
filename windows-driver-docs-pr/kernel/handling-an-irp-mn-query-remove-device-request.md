@@ -1,17 +1,16 @@
 ---
 title: 处理 IRP_MN_QUERY_REMOVE_DEVICE 请求
 description: 处理 IRP_MN_QUERY_REMOVE_DEVICE 请求
-ms.assetid: 30177e51-5312-4a24-972e-0c1c2d183d18
 keywords:
 - IRP_MN_QUERY_REMOVE_DEVICE
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9f8fbf87cda6c7814a7fe8c10cfb83878ce766e9
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 0983bb4869fd3d45fef67515f549aee032e5aa5f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89191665"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801723"
 ---
 # <a name="handling-an-irp_mn_query_remove_device-request"></a>处理 IRP \_ MN \_ 查询 \_ 删除 \_ 设备请求
 
@@ -27,13 +26,13 @@ PnP 管理器在 \_ 系统线程的上下文中以 IRQL 被动级别发送此 IR
 
 -   通知所有用户模式应用程序，这些应用程序在设备 (或相关设备) 上注册了通知。
 
-    这包括在设备上注册了通知的应用程序、设备的一个子代 (子设备、子的子项等等) 或某个设备的删除关系。 应用程序通过调用 **RegisterDeviceNotification**注册此类通知。
+    这包括在设备上注册了通知的应用程序、设备的一个子代 (子设备、子的子项等等) 或某个设备的删除关系。 应用程序通过调用 **RegisterDeviceNotification** 注册此类通知。
 
     为响应此通知，应用程序准备设备删除 (关闭设备的句柄) 或查询失败。
 
 -   通知所有已注册到设备上的通知的内核模式驱动程序 (或相关设备) 。
 
-    这包括在设备上注册了通知的驱动程序、设备的一个子代或某个设备的删除关系。 驱动程序通过调用事件类别为**EventCategoryTargetDeviceChange**的[**IoRegisterPlugPlayNotification**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioregisterplugplaynotification)注册此通知。
+    这包括在设备上注册了通知的驱动程序、设备的一个子代或某个设备的删除关系。 驱动程序通过调用事件类别为 **EventCategoryTargetDeviceChange** 的 [**IoRegisterPlugPlayNotification**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioregisterplugplaynotification)注册此通知。
 
     为响应此通知，驱动程序将准备设备删除 (关闭设备的句柄) 或查询失败。
 
@@ -43,7 +42,7 @@ PnP 管理器在 \_ 系统线程的上下文中以 IRQL 被动级别发送此 IR
 
 如果上述所有步骤都成功，则 PnP 管理器会将 **IRP \_ MN \_ 查询 \_ 删除 \_ 设备** 发送到设备的驱动程序。
 
-**IRP \_ MN \_ 查询 \_ 删除 \_ 设备**请求首先由设备堆栈中的顶层驱动程序处理，然后再由下一个较低的驱动程序处理。 驱动程序会在其 [*DispatchPnP*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch) 例程中处理删除 irp。
+**IRP \_ MN \_ 查询 \_ 删除 \_ 设备** 请求首先由设备堆栈中的顶层驱动程序处理，然后再由下一个较低的驱动程序处理。 驱动程序会在其 [*DispatchPnP*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch) 例程中处理删除 irp。
 
 为了响应 **IRP \_ MN \_ 查询 \_ 删除 \_ 设备**，驱动程序必须执行以下操作：
 
@@ -69,7 +68,7 @@ PnP 管理器在 \_ 系统线程的上下文中以 IRQL 被动级别发送此 IR
 
     当驱动程序收到 [**IRP \_ MN \_ query \_ REMOVE \_ device**](./irp-mn-query-remove-device.md) 请求时，驱动程序应记录设备所在的 PnP 状态，因为如果删除该查询，则该驱动程序必须将该设备返回到该状态 ([**IRP \_ MN \_ CANCEL \_ REMOVE \_ device**](./irp-mn-cancel-remove-device.md)) 。 以前的状态通常为 "已启动"，即设备在驱动程序成功完成 [**IRP \_ MN \_ 启动 \_ 设备**](./irp-mn-start-device.md) 请求时输入的状态。
 
-    但是，其他以前的状态是可能的。 例如，用户可能已通过设备管理器禁用了该设备。 或者，为响应 **IRP \_ MN \_ 查询 \_ 功能** 请求， (或总线驱动程序上的筛选器驱动程序) 可能报告设备的硬件已禁用。 在任一情况下，已禁用设备的驱动程序都可以在收到**irp \_ MN \_ START \_ 设备**请求之前接收**irp \_ MN \_ 查询 \_ 删除 \_ 设备**请求。
+    但是，其他以前的状态是可能的。 例如，用户可能已通过设备管理器禁用了该设备。 或者，为响应 **IRP \_ MN \_ 查询 \_ 功能** 请求， (或总线驱动程序上的筛选器驱动程序) 可能报告设备的硬件已禁用。 在任一情况下，已禁用设备的驱动程序都可以在收到 **irp \_ MN \_ START \_ 设备** 请求之前接收 **irp \_ MN \_ 查询 \_ 删除 \_ 设备** 请求。
 
 5.  完成 IRP：
 

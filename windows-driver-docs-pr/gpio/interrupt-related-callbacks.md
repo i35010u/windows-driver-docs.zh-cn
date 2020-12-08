@@ -1,15 +1,14 @@
 ---
 title: 与中断相关的回调
 description: 作为一个选项，用于常规用途 i/o (GPIO) 控制器的驱动程序可以为 GPIO 中断提供支持。
-ms.assetid: 638B52A0-CB8D-4A79-B7D1-ED2474E46DAE
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 80dadc282969322632b5a98dd187d27237ac2aaf
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 097ec3dfc20973fccf30719d0c6c51f5e5d35484
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89064468"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801785"
 ---
 # <a name="interrupt-related-callbacks"></a>与中断相关的回调
 
@@ -34,14 +33,14 @@ GpioClx 实现 (ISR) 服务中断请求的中断服务例程。 此 ISR 调用�
  [*client \_ QueryEnabledInterrupts*](/windows-hardware/drivers/ddi/gpioclx/nc-gpioclx-gpio_client_query_enabled_interrupts) 
  [*client \_ UnmaskInterrupt*](/windows-hardware/drivers/ddi/gpioclx/nc-gpioclx-gpio_client_unmask_interrupt)这些函数是在 DIRQL 或被动级别调用的 \_ ，具体取决于 GpioClx 中的 ISR 是在 DIRQL 还是被动 \_ 级别运行。 如果 **MemoryMappedController** = 1，则 ISR 会在 DIRQL 中调用这些函数， \_ 如果 **MemoryMappedController** = 0，则在被动级别调用这些函数。 在这两种情况下，ISR 会自动序列化其回调，以便调用其中一个函数不会在调用这些函数的另一个过程中发生。
 
-仅在被动级别调用以下与中断相关的回调函数 \_ ，无论是否设置了**MemoryMappedController**   标志：
+仅在被动级别调用以下与中断相关的回调函数 \_ ，无论是否设置了 **MemoryMappedController** 标志：
 
 [*客户端 \_DisableInterrupt*](/windows-hardware/drivers/ddi/gpioclx/nc-gpioclx-gpio_client_disable_interrupt) 
- [*客户端 \_ EnableInterrupt*](/windows-hardware/drivers/ddi/gpioclx/nc-gpioclx-gpio_client_enable_interrupt)如果未设置**MemoryMappedController**标志，则在被动级别调用所有与中断相关的回调函数 \_ 。 GpioClx 会自动序列化对这些函数的调用，以便在调用这些函数中的另一个函数时不会发生对其中某个函数的调用。
+ [*客户端 \_ EnableInterrupt*](/windows-hardware/drivers/ddi/gpioclx/nc-gpioclx-gpio_client_enable_interrupt)如果未设置 **MemoryMappedController** 标志，则在被动级别调用所有与中断相关的回调函数 \_ 。 GpioClx 会自动序列化对这些函数的调用，以便在调用这些函数中的另一个函数时不会发生对其中某个函数的调用。
 
 但是，如果设置了 **MemoryMappedController** 标志，则 *客户端 \_ EnableInterrupt* 和 *客户端 \_ DisableInterrupt* 函数必须将其中断启用和禁用操作显式同步到 GpioClx ISR，后者会在 DIRQL 调用其他四个中断相关的回调函数。
 
-通常，其他<em>客户端 \_ </em>Xxx 回调函数 (其名称不包含 "*中断*" ) 不会执行与中断相关的处理，因此不需要同步到 GpioClx ISR。 但是，如果在被动级别调用了这些函数中的任何一种， \_ 并且包含访问中断设置（在 DIRQL 中由中断相关函数访问）的代码，则必须将此代码同步到 ISR。
+通常，其他 <em>客户端 \_</em>Xxx 回调函数 (其名称不包含 "*中断*" ) 不会执行与中断相关的处理，因此不需要同步到 GpioClx ISR。 但是，如果在被动级别调用了这些函数中的任何一种， \_ 并且包含访问中断设置（在 DIRQL 中由中断相关函数访问）的代码，则必须将此代码同步到 ISR。
 
 为了支持中断同步，GpioClx 实现了一组中断锁。 在被动级别运行的回调函数 \_ 可以调用 [**gpio \_ CLX \_ AcquireInterruptLock**](/windows-hardware/drivers/ddi/gpioclx/nf-gpioclx-gpio_clx_acquireinterruptlock) 方法来获取中断锁，并调用 [**gpio \_ CLX \_ ReleaseInterruptLock**](/windows-hardware/drivers/ddi/gpioclx/nf-gpioclx-gpio_clx_releaseinterruptlock) 方法来释放该锁。 当函数包含中断锁时，GpioClx ISR 无法运行，并且此 ISR 无法调用任何中断相关的回调函数。 为了能够及时处理 GPIO 中断，驱动程序应保持中断锁，使其不再是必需的。
 

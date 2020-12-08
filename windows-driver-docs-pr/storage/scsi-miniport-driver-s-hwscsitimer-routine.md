@@ -1,19 +1,18 @@
 ---
 title: SCSI 微型端口驱动程序的 HwScsiTimer 例程
 description: SCSI 微型端口驱动程序的 HwScsiTimer 例程
-ms.assetid: 57ac7a6e-ada5-4185-89cf-b6c5ef9006d4
 keywords:
 - SCSI 微型端口驱动程序 WDK 存储，HwScsiTimer
 - HwScsiTimer
 - 计时器，WDK SCSI
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3af0b2972fc7180673f323aba5106c3218c0bf27
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: e39e4bab8ea19006cc45d32d28f631beca0b2e00
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89187783"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96802177"
 ---
 # <a name="scsi-miniport-drivers-hwscsitimer-routine"></a>SCSI 微型端口驱动程序的 HwScsiTimer 例程
 
@@ -25,13 +24,13 @@ ms.locfileid: "89187783"
 
 当微型端口驱动程序可以调用 [**ScsiPortStallExecution**](/windows-hardware/drivers/ddi/srb/nf-srb-scsiportstallexecution) 来等待 HBA 上的状态更改时，微型端口驱动程序 *不* 应调用此例程等待超过一毫秒，只是在初始化微型端口驱动程序时执行的操作除外。 **ScsiPortStallExecution** 在给定的时间间隔内建立处理器的联系，阻止系统中的其他代码执行有用的工作。
 
-微型端口驱动程序应具有*HwScsiTimer*例程，而不是在输入间隔较大的情况下调用**ScsiPortStallExecution**并浪费许多 CPU 周期。 如果 HBA 不会为每个操作生成完成中断，或者任何常请求的操作（如总线重置）所需的时间超过毫秒，则一个或多个 *HwScsiTimer* 例程特别有用。
+微型端口驱动程序应具有 *HwScsiTimer* 例程，而不是在输入间隔较大的情况下调用 **ScsiPortStallExecution** 并浪费许多 CPU 周期。 如果 HBA 不会为每个操作生成完成中断，或者任何常请求的操作（如总线重置）所需的时间超过毫秒，则一个或多个 *HwScsiTimer* 例程特别有用。
 
-为此类操作对 HBA 进行编程后，微型端口驱动程序将使用 * NotificationType ***RequestTimerCall**调用[**ScsiPortNotification**](/windows-hardware/drivers/ddi/srb/nf-srb-scsiportnotification) ，该指针指向包含操作上下文的特定于 HBA 的设备扩展，其*HwScsiTimer*入口点和驱动程序确定的间隔。
+为此类操作对 HBA 进行编程后，微型端口驱动程序将使用 * NotificationType ***RequestTimerCall** 调用 [**ScsiPortNotification**](/windows-hardware/drivers/ddi/srb/nf-srb-scsiportnotification) ，该指针指向包含操作上下文的特定于 HBA 的设备扩展，其 *HwScsiTimer* 入口点和驱动程序确定的间隔。
 
 **ScsiPortNotification** 会将对 *HwScsiTimer* 例程的调用与 *HwScsiInterrupt* 例程同步，以使 *HwScsiTimer* 例程运行时无法并发执行。
 
-对于调用**ScsiPortNotification**的每个调用，将调用*HwScsiTimer*一次，该调用可从*HwScsiTimer*例程本身调用。 但是，使用*NotificationType * * * RequestTimerCall** 对**ScsiPortNotification**进行的任何调用会替代前面的调用，指定的间隔尚未过期。 也就是说，在任何给定时刻，都只有一个未完成的请求可调用微型端口驱动程序的 *HwScsiTimer* 例程。
+对于调用 **ScsiPortNotification** 的每个调用，将调用 *HwScsiTimer* 一次，该调用可从 *HwScsiTimer* 例程本身调用。 但是，使用 *NotificationType * * * RequestTimerCall** 对 **ScsiPortNotification** 进行的任何调用会替代前面的调用，指定的间隔尚未过期。 也就是说，在任何给定时刻，都只有一个未完成的请求可调用微型端口驱动程序的 *HwScsiTimer* 例程。
 
 传递给 **ScsiPortNotification** 的时间间隔以微秒为单位，每次调用 *HwScsiTimer* 例程的最小开销大约为10微秒。 如果输入间隔为零，则会取消上述请求调用 *HwScsiTimer* 例程，前提是未调用或分派在基于 NT 的 SMP 计算机的另一个处理器上执行。
 

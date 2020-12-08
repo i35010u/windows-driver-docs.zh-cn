@@ -1,7 +1,6 @@
 ---
 title: TCP/IP 任务卸载概述
 description: TCP/IP 任务卸载概述
-ms.assetid: e73cc4e8-574b-438b-acd2-f0aaf5c20589
 keywords:
 - TCP/IP 卸载 WDK 网络，任务卸载
 - 卸载 WDK TCP/IP 传输，任务卸载
@@ -10,12 +9,12 @@ keywords:
 - 功能 WDK TCP/IP 卸载
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d614d6eafdb2eb3a0d2cf87a1435a88a904fa5d2
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: ce85c610462907acbbad3ffbf173e82241da88fa
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90717390"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803487"
 ---
 # <a name="tcpip-task-offload-overview"></a>TCP/IP 任务卸载概述
 

@@ -1,15 +1,14 @@
 ---
 title: 适用于相机的 UWP 设备应用
 description: 此部分介绍相机的 UWP 设备应用。
-ms.assetid: 6CF13679-BCF3-443C-A864-4BBC54B8DA1C
 ms.date: 09/14/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: e74bb70cedfa1e5723cb3658b5309b324bd68125
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 63433ff7abc3dede4389aea009a43adce47ac3e7
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91733350"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96802647"
 ---
 # <a name="uwp-device-apps-for-cameras"></a>适用于相机的 UWP 设备应用
 
@@ -19,7 +18,7 @@ ms.locfileid: "91733350"
 ## <a name="in-this-section"></a>在本节中
 
 
-| 主题 | 说明 |
+| 主题 | 描述 |
 | ----- | ----------- |
 | [如何自定义相机选项](how-to-customize-camera-options.md) | 在 Windows 8.1 中，UWP 设备应用允许设备制造商自定义在某些照相机应用中显示更多相机选项的弹出窗口。 本主题介绍了 CameraCatureUI API 显示的 " <strong>更多选项</strong> " 弹出窗口，并演示了 c # 版本的 [UWP 设备应用程序](/samples/browse/) 示例如何使用自定义浮出控件替换默认浮出控件。 |
 | [创建相机驱动程序 MFT](creating-a-camera-driver-mft.md) | 在 Windows 8.1 中，UWP 设备应用允许设备制造商通过相机驱动程序 MFT 将自定义设置和特殊效果应用于照相机的视频流， (media foundation 转换) 。 本主题介绍了驱动程序 MFTs，并使用了 [驱动程序 MFT](/samples/browse/) 示例演示如何创建一个。<br><br> **重要提示：** 本主题已弃用。 请参阅 [设备 MFT 设计指南](../stream/dmft-design.md) 了解更新的指南。
@@ -27,7 +26,7 @@ ms.locfileid: "91733350"
 | [识别内部相机的位置](identifying-the-location-of-internal-cameras.md) | 本主题提供有关在 Windows 8.1 中的系统上支持内部相机的信息。 它介绍如何识别内置相机的物理位置，使其能够正常使用 UWP 应用。 它还介绍了如何设置模型 ID，以便相机与 UWP 设备应用程序一起工作。 |
 
 
-## <a name="windows81-samples"></a>Windows 8.1 示例
+## <a name="windows-81-samples"></a>Windows 8.1 示例
 
 
 -   [适用于照相机的 uwp 设备应用](/samples/browse/)示例提供了一个 UWP 设备应用，该应用控制驱动程序 MFT 实现的效果。

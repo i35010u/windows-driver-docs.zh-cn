@@ -1,7 +1,6 @@
 ---
 title: 可选的图形驱动程序函数
 description: 可选的图形驱动程序函数
-ms.assetid: 3cdef152-4bcc-426a-9aa7-fd94acf2331f
 keywords:
 - GDI WDK Windows 2000 显示、功能、可选
 - 图形驱动程序 WDK Windows 2000 显示、功能、可选
@@ -12,12 +11,12 @@ keywords:
 - DDI WDK 图形，可选功能
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4da6a3f1cafdd9cb7be52ab6eb50d2313e85498e
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: e396509afc6a4ca892549b668d5b8356e744ae52
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90714745"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96802625"
 ---
 # <a name="optional-graphics-driver-functions"></a>可选的图形驱动程序函数
 
@@ -37,7 +36,7 @@ ms.locfileid: "90714745"
 <thead>
 <tr class="header">
 <th align="left">入口点</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -136,7 +135,7 @@ ms.locfileid: "90714745"
 <thead>
 <tr class="header">
 <th align="left">入口点</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -167,7 +166,7 @@ ms.locfileid: "90714745"
 <thead>
 <tr class="header">
 <th align="left">入口点</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -202,7 +201,7 @@ ms.locfileid: "90714745"
 <thead>
 <tr class="header">
 <th align="left">入口点</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -257,7 +256,7 @@ ms.locfileid: "90714745"
 <thead>
 <tr class="header">
 <th align="left">入口点</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>

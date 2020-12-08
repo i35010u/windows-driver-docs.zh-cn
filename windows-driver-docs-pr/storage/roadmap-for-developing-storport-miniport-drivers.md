@@ -1,15 +1,14 @@
 ---
 title: Storport 微型端口驱动程序开发路线图
 description: Storport 微型端口驱动程序开发路线图
-ms.assetid: 43a8f1ee-b2d3-4f97-b7e5-d59790ca6754
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 46738101edbb22f5e9a50b51cc56d88d65badd97
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 7c3a9315dd95210ace44015af0c00a8206c9323f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89186421"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96802193"
 ---
 # <a name="roadmap-for-developing-storport-miniport-drivers"></a>Storport 微型端口驱动程序开发路线图
 

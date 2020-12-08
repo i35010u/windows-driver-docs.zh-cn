@@ -1,15 +1,14 @@
 ---
 title: 保留供系统使用的 Windows 内核例程
 description: 保留供系统使用的 Windows 内核例程
-ms.assetid: 78b0562a-903a-467d-9bf0-f5499ae47063
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 54c5afb5de5a115a01c6cd46262af346099b38a8
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 8ec6fb7c4bd3ffacbb1db05e372821b9eaf3af2e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102188"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801703"
 ---
 # <a name="windows-kernel-routines-reserved-for-system-use"></a>保留供系统使用的 Windows 内核例程
 
@@ -24,7 +23,7 @@ ms.locfileid: "90102188"
 <thead>
 <tr class="header">
 <th>例程所返回的值</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>

@@ -1,15 +1,14 @@
 ---
 title: USB 2.0 扩展
 description: 本部分介绍了 USB 2.0 调试程序扩展命令。 这些命令显示由 USB 2.0 驱动程序堆栈中的驱动程序所维护的数据结构的信息。
-ms.assetid: 42A78738-CE0D-42EA-9E3D-04CDC2060266
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 491f61ab730ec76033d021eb228100fe41f3db0d
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 489100b4cd7db67a36bee0b7622b0bc5cc7b6c41
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89215718"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803245"
 ---
 # <a name="usb-20-extensions"></a>USB 2.0 扩展
 
@@ -30,9 +29,9 @@ USB 2.0 树包含代表 EHCI 主机控制器设备上执行单元的设备节点
 ## <a name="getting-started-with-usb-20-debugging"></a>USB 2.0 调试入门
 
 
-若要开始调试 USB 2.0 问题，请输入 [**！ usb2tree**](-usbkd-usb2tree.md) 命令。 **！ Usb2tree**命令显示可用于调查主机控制器、集线器、端口、设备、终结点和 USB 2.0 树的其他元素的命令和地址列表。
+若要开始调试 USB 2.0 问题，请输入 [**！ usb2tree**](-usbkd-usb2tree.md) 命令。 **！ Usb2tree** 命令显示可用于调查主机控制器、集线器、端口、设备、终结点和 USB 2.0 树的其他元素的命令和地址列表。
 
-## <a name="in-this-section"></a>本节内容
+## <a name="in-this-section"></a>在本节中
 
 
 -   [**!usbkd.usbhelp**](-usbkd-usbhelp.md)

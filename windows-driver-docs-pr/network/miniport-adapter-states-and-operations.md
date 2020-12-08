@@ -1,7 +1,6 @@
 ---
 title: 微型端口适配器状态和操作
 description: 微型端口适配器状态和操作
-ms.assetid: b47e2cbe-9da3-4600-9afe-b082e60b87fb
 keywords:
 - 微型端口适配器 WDK 网络，状态
 - 适配器 WDK 网络，状态
@@ -12,12 +11,12 @@ keywords:
 - 正在初始化状态 WDK ne
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b5094a62843a7d077cea65b48ac6df3c217ce331
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 58354afdbd2b58368993816bb59b5f7f16a2c291
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102168"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96802327"
 ---
 # <a name="miniport-adapter-states-and-operations"></a>微型端口适配器状态和操作
 
@@ -39,10 +38,10 @@ ms.locfileid: "90102168"
 <a href="" id="paused"></a>悬停  
 在暂停状态下，适配器不指示接收的网络数据或接受发送请求。
 
-<a href="" id="restarting"></a>重新启动  
+<a href="" id="restarting"></a>重新  
 在重新启动状态下，微型端口驱动程序完成了重新启动适配器的发送和接收操作所需的任何操作。
 
-<a href="" id="running"></a>耗尽  
+<a href="" id="running"></a>正在运行  
 在运行状态下，微型端口驱动程序对适配器执行发送和接收处理。
 
 <a href="" id="pausing"></a>暂停  
@@ -65,11 +64,11 @@ ms.locfileid: "90102168"
 <tr class="header">
 <th align="left">事件 \ 状态</th>
 <th align="left">中断</th>
-<th align="left">Shutdown</th>
+<th align="left">关机</th>
 <th align="left">正在初始化</th>
 <th align="left">已暂停</th>
 <th align="left">重新启动</th>
-<th align="left">运行</th>
+<th align="left">正在运行</th>
 <th align="left">正在暂停</th>
 </tr>
 </thead>
@@ -99,10 +98,10 @@ ms.locfileid: "90102168"
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left"><p>Shutdown</p></td>
-<td align="left"><p>Shutdown</p></td>
-<td align="left"><p>Shutdown</p></td>
-<td align="left"><p>Shutdown</p></td>
+<td align="left"><p>关机</p></td>
+<td align="left"><p>关机</p></td>
+<td align="left"><p>关机</p></td>
+<td align="left"><p>关机</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_halt" data-raw-source="[&lt;em&gt;MiniportHaltEx&lt;/em&gt;](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_halt)"><em>MiniportHaltEx</em></a></p></td>
@@ -130,7 +129,7 @@ ms.locfileid: "90102168"
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left"><p>运行</p></td>
+<td align="left"><p>正在运行</p></td>
 <td align="left"></td>
 <td align="left"></td>
 </tr>
@@ -181,7 +180,7 @@ ms.locfileid: "90102168"
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left"><p>运行</p></td>
+<td align="left"><p>正在运行</p></td>
 <td align="left"><p>正在暂停</p></td>
 </tr>
 <tr class="even">
@@ -191,7 +190,7 @@ ms.locfileid: "90102168"
 <td align="left"></td>
 <td align="left"><p>已暂停</p></td>
 <td align="left"><p>重新启动</p></td>
-<td align="left"><p>运行</p></td>
+<td align="left"><p>正在运行</p></td>
 <td align="left"><p>正在暂停</p></td>
 </tr>
 </tbody>
@@ -199,11 +198,11 @@ ms.locfileid: "90102168"
 
  
 
-**注意**   上表中列出的事件是 NDIS 6.0 或更高版本适配器的主要事件。
+**注意**  上表中列出的事件是 NDIS 6.0 或更高版本适配器的主要事件。
 
  
 
-**注意**   Reset 操作不会影响微型端口适配器操作状态。 正在执行重置操作时，适配器的状态可能会发生变化。 例如，当正在进行重置操作时，NDIS 可能会调用驱动程序的暂停处理程序。 在这种情况下，驱动程序可以按任意顺序完成重置或暂停操作，同时满足每个操作的一般要求。 对于 reset 操作，驱动程序可能会导致传输请求数据包失败，或者可以将它们保留在队列中，稍后再完成。 但是，你应注意，如果某个过量驱动程序的传输数据包处于挂起状态，则无法完成暂停操作。
+**注意**  Reset 操作不会影响微型端口适配器操作状态。 正在执行重置操作时，适配器的状态可能会发生变化。 例如，当正在进行重置操作时，NDIS 可能会调用驱动程序的暂停处理程序。 在这种情况下，驱动程序可以按任意顺序完成重置或暂停操作，同时满足每个操作的一般要求。 对于 reset 操作，驱动程序可能会导致传输请求数据包失败，或者可以将它们保留在队列中，稍后再完成。 但是，你应注意，如果某个过量驱动程序的传输数据包处于挂起状态，则无法完成暂停操作。
 
  
 
@@ -233,7 +232,7 @@ NDIS 调用驱动程序的 [*MiniportPause*](/windows-hardware/drivers/ddi/ndis/
 <a href="" id="pause-is-complete"></a>暂停完成  
 驱动程序完成停止发送和接收操作所需的所有操作后，暂停操作完成，并且适配器处于暂停状态。
 
-**注意**   在暂停操作完成之前，驱动程序必须等待 NDIS 返回所有未完成的接收指示。
+**注意**  在暂停操作完成之前，驱动程序必须等待 NDIS 返回所有未完成的接收指示。
 
  
 

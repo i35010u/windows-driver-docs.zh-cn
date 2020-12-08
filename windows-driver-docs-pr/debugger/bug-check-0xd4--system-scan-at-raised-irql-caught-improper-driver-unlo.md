@@ -1,7 +1,6 @@
 ---
 title: Bug 检查 0xD4 SYSTEM_SCAN_AT_RAISED_IRQL_CAUGHT_IMPROPER_DRIVER_UNLOAD
 description: SYSTEM_SCAN_AT_RAISED_IRQL_CAUGHT_IMPROPER_DRIVER_UNLOAD bug 检查的值为0x000000D4。 这表明驱动程序在卸载之前未取消挂起的操作。
-ms.assetid: 4c0e69d1-737c-4dd7-b52a-4cd5eeadcbb9
 keywords:
 - Bug 检查 0xD4 SYSTEM_SCAN_AT_RAISED_IRQL_CAUGHT_IMPROPER_DRIVER_UNLOAD
 - SYSTEM_SCAN_AT_RAISED_IRQL_CAUGHT_IMPROPER_DRIVER_UNLOAD
@@ -13,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 63f7f1c26e696d41f1bfd2327d7cc719f267074e
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 1c30b28887fd9ff6fa972e1eee206552edf9ef7e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89211819"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801999"
 ---
 # <a name="bug-check-0xd4-system_scan_at_raised_irql_caught_improper_driver_unload"></a>Bug 检查0xD4： \_ \_ 引发的 IRQL 系统扫描 \_ \_ \_ 捕获到不 \_ 正确的 \_ 驱动程序 \_ 卸载
 
@@ -40,7 +39,7 @@ ms.locfileid: "89211819"
 <thead>
 <tr class="header">
 <th align="left">参数</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -76,7 +75,7 @@ ms.locfileid: "89211819"
 <a name="resolution"></a>解决方法
 ----------
 
-若要开始调试，请使用内核调试器获取堆栈跟踪： [**！分析**](-analyze.md) 调试扩展显示有关 bug 检查的信息，可帮助确定根本原因，然后使用 [**Kb (显示 stack Backtrace) **](k--kb--kc--kd--kp--kp--kv--display-stack-backtrace-.md)  命令获取堆栈跟踪。 如果已确定导致错误的驱动程序，请激活驱动程序验证程序并尝试复制此 bug。
+若要开始调试，请使用内核调试器获取堆栈跟踪： [**！分析**](-analyze.md) 调试扩展显示有关 bug 检查的信息，可帮助确定根本原因，然后使用 [**Kb (显示 stack Backtrace)**](k--kb--kc--kd--kp--kp--kv--display-stack-backtrace-.md)  命令获取堆栈跟踪。 如果已确定导致错误的驱动程序，请激活驱动程序验证程序并尝试复制此 bug。
 
 有关 [驱动程序验证程序](../devtest/driver-verifier.md)的完整详细信息，请参阅 Windows 驱动程序工具包。
 

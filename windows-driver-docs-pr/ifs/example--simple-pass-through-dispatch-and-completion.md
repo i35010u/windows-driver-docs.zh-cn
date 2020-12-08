@@ -1,19 +1,18 @@
 ---
-title: 简单的传递调度和完成示例
-description: 简单的传递调度和完成示例
-ms.assetid: dae3a450-37b1-470b-a0f3-4108075e06ac
+title: 简单 Pass-Through 调度和完成的示例
+description: 简单 Pass-Through 调度和完成的示例
 keywords:
 - IRP 完成例程 WDK 文件系统，示例
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 183a1eeef95417ba81ce738839c22536b3e3815d
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 7247c591a9ca743351cefbd1105eba934ee7e3e6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89063694"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96802455"
 ---
-# <a name="example-simple-pass-through-dispatch-and-completion"></a>示例：简单的传递调度和完成
+# <a name="example-simple-pass-through-dispatch-and-completion"></a>示例：简单 Pass-Through 调度和完成
 
 
 ## <span id="ddk_example_simple_pass_through_dispatch_and_completion_if"></span><span id="DDK_EXAMPLE_SIMPLE_PASS_THROUGH_DISPATCH_AND_COMPLETION_IF"></span>

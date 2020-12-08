@@ -1,19 +1,18 @@
 ---
 title: x64 体系结构
 description: x64 体系结构
-ms.assetid: 6c0d92d5-cb16-4909-bae5-39fc5c15f736
 keywords:
 - x64 处理器，体系结构
-- 寄存器中的，在 x64 处理器
-- x64 处理器，注册
+- 在 x64 处理器上注册
+- x64 处理器，寄存器
 ms.date: 03/16/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: c0b3f92c2864a6d855d545934d7d35439d1653ce
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8f4dc95e0b63eb3d776a19f622808a3f635e2eb3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63381912"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96802721"
 ---
 # <a name="x64-architecture"></a>x64 体系结构
 
@@ -21,15 +20,15 @@ ms.locfileid: "63381912"
 ## <span id="ddk_x64_architecture_dbg"></span><span id="DDK_X64_ARCHITECTURE_DBG"></span>
 
 
-X64 体系结构是 x86 的向后兼容的扩展。 它提供旧的 32 位模式，这就相当于 x86，以及新的 64 位模式。
+X64 体系结构是一个向后兼容的 x86 扩展。 它提供了与 x86 相同的旧式32位模式和新的64位模式。
 
-术语"x64"包括 AMD 64 和 Intel64。 指令集即将于完全相同。
+术语 "x64" 包括 AMD 64 和 Intel64。 指令集接近相同。
 
-### <a name="span-idregistersspanspan-idregistersspanspan-idregistersspanregisters"></a><span id="Registers"></span><span id="registers"></span><span id="REGISTERS"></span>注册
+### <a name="span-idregistersspanspan-idregistersspanspan-idregistersspanregisters"></a><span id="Registers"></span><span id="registers"></span><span id="REGISTERS"></span>寄存器
 
-x64 扩展 x86 的 8 通用寄存器是 64 位，并添加 8 新的 64 位寄存器。 64 位寄存器具有名称，使用"r"，因此，例如 64 位扩展的起始**eax**称为**rax**。 命名新寄存器**r8**通过**r15**。
+x64 将 x86's 8 通用寄存器扩展为64位，并添加8个新的64位寄存器。 64位寄存器的名称以 "r" 开头，例如， **eax** 的64位扩展称为 **rax**。 新寄存器通过 **r15** 名为 **r8** 。
 
-较低的 32 位、 16 位和每个寄存器的 8 位进行直接寻址操作数。 这包括寄存器，如**esi**，其低 8 位未以前寻址。 下表指定 64 位寄存器的下半部分的程序集语言的名称。
+每个寄存器的最低32位、16位和8位可直接在操作数中寻址。 这包括诸如 **esi** 的寄存器，此类 下表指定了64位寄存器下半部分的程序集语言名称。
 
 <table>
 <colgroup>
@@ -40,10 +39,10 @@ x64 扩展 x86 的 8 通用寄存器是 64 位，并添加 8 新的 64 位寄存
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">64 位寄存器</th>
-<th align="left">较低的 32 位</th>
-<th align="left">低 16 位</th>
-<th align="left">低 8 位</th>
+<th align="left">64位寄存器</th>
+<th align="left">低32位</th>
+<th align="left">低16位</th>
+<th align="left">低8位</th>
 </tr>
 </thead>
 <tbody>
@@ -51,7 +50,7 @@ x64 扩展 x86 的 8 通用寄存器是 64 位，并添加 8 新的 64 位寄存
 <td align="left"><p><strong>rax</strong></p></td>
 <td align="left"><p><strong>eax</strong></p></td>
 <td align="left"><p><strong>ax</strong></p></td>
-<td align="left"><p><strong>al</strong></p></td>
+<td align="left"><p><strong>fc-al</strong></p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>rbx</strong></p></td>
@@ -69,7 +68,7 @@ x64 扩展 x86 的 8 通用寄存器是 64 位，并添加 8 新的 64 位寄存
 <td align="left"><p><strong>rdx</strong></p></td>
 <td align="left"><p><strong>edx</strong></p></td>
 <td align="left"><p><strong>dx</strong></p></td>
-<td align="left"><p><strong>dl</strong></p></td>
+<td align="left"><p><strong>磁盘</strong></p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>rsi</strong></p></td>
@@ -78,7 +77,7 @@ x64 扩展 x86 的 8 通用寄存器是 64 位，并添加 8 新的 64 位寄存
 <td align="left"><p><strong>sil</strong></p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>rdi</strong></p></td>
+<td align="left"><p><strong>rdi.tpl</strong></p></td>
 <td align="left"><p><strong>edi</strong></p></td>
 <td align="left"><p><strong>di</strong></p></td>
 <td align="left"><p><strong>dil</strong></p></td>
@@ -90,8 +89,8 @@ x64 扩展 x86 的 8 通用寄存器是 64 位，并添加 8 新的 64 位寄存
 <td align="left"><p><strong>bpl</strong></p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>rsp</strong></p></td>
-<td align="left"><p><strong>esp</strong></p></td>
+<td align="left"><p><strong>.rsp</strong></p></td>
+<td align="left"><p><strong>能力</strong></p></td>
 <td align="left"><p><strong>sp</strong></p></td>
 <td align="left"><p><strong>spl</strong></p></td>
 </tr>
@@ -148,56 +147,56 @@ x64 扩展 x86 的 8 通用寄存器是 64 位，并添加 8 新的 64 位寄存
 
  
 
-输出到 32 位 subregister 是自动零扩展到整个的 64 位寄存器的操作。 操作输出到 8 位或 16 位 subregisters*不*零扩展 (这是兼容的 x86 行为)。
+输出到32位 subregister 的操作会自动零扩展到整个64位寄存器。 输出到8位或16位 subregisters 的操作 *不* 会进行零扩展 (这是兼容的 x86 行为) 。
 
-高的 8 位**ax**， **bx**， **cx**，以及**dx**仍可访问作为**ah**， **bh**， **ch**， **dh**，但不能用于所有类型的操作数。
+高8位的 **ax**、 **bx**、 **cx** 和 **dx** 仍可作为 **ah**、 **bh**、 **ch**、 **dh** 进行寻址，但不能与所有类型的操作数一起使用。
 
-指令指针**eip**，并**标志**注册已扩展为 64 位 (**rip**并**rflags**分别) 也。
+指令指针、 **eip** 和 **标志** 寄存器已扩展为64位 (**rip** 和) **rflags**。
 
-X64 处理器还提供了多个的浮点寄存器集：
+X64 处理器还提供多组浮点寄存器：
 
--   8 个 80 位 x87 注册。
+-   8 80 位 x87 寄存器。
 
--   8 个 64 位 MMX 寄存器。 (这些与 x87 重叠注册。)
+-   8 64 位 MMX 寄存器。  (这些与 x87 寄存器重叠。 ) 
 
--   原始的一组 8 个 128 位 SSE 寄存器增加到十六个。
+-   原始的 8 128 位 SSE 寄存器集将增加到十六位。
 
-### <a name="span-idcallingconventionsspanspan-idcallingconventionsspanspan-idcallingconventionsspancalling-conventions"></a><span id="Calling_Conventions"></span><span id="calling_conventions"></span><span id="CALLING_CONVENTIONS"></span>调用约定
+### <a name="span-idcalling_conventionsspanspan-idcalling_conventionsspanspan-idcalling_conventionsspancalling-conventions"></a><span id="Calling_Conventions"></span><span id="calling_conventions"></span><span id="CALLING_CONVENTIONS"></span>调用约定
 
-与不同的是 x86，C /C++编译器仅支持在 x64 上一个调用约定。 此调用约定在 x64 上充分利用可用的寄存器增加：
+与 x86 不同，C/c + + 编译器仅支持 x64 上的一个调用约定。 此调用约定利用了 x64 上可用寄存器数量的增加：
 
--   前四个整数或指针参数中传递**rcx**， **rdx**， **r8**，以及**r9**注册。
+-   在 **rcx**、 **rdx**、 **r8** 和 **r9** 寄存器中传递前四个整数或指针参数。
 
--   传递的前四个浮点参数中的前四个的 SSE 寄存器**xmm0**-**xmm3**。
+-   前四个浮点参数传递在前四个 SSE 寄存器 **xmm0** - **xmm3** 中。
 
--   调用方保留在寄存器中传递的参数在堆栈上的空间。 所调用的函数可以使用此空间溢出到堆栈寄存器的内容。
+-   调用方在堆栈上为注册中传递的参数保留空间。 被调用的函数可使用此空间将寄存器内容溢出到堆栈中。
 
--   在堆栈上传递的任何其他参数。
+-   任何其他参数将在堆栈上传递。
 
--   中返回整数或指针的返回值**rax**注册，而在返回浮点值**xmm0**。
+-   **Rax** 寄存器中返回一个整数或指针返回值，而浮点返回值则在 **xmm0** 中返回。
 
--   **到 rax**， **rcx**， **rdx**， **r8**-**r11**是易失性。
+-   **rax**、 **rcx**、 **rdx**、 **r8** - **r11** 是可变的。
 
--   **rbx**， **rbp**， **rdi**， **rsi**， **r12**-**r15**将非易失性.
+-   **rbx**、 **rbp**、 **rdi.tpl**、 **rsi**、 **r12** - **r15** 是非易失性。
 
-调用约定C++非常类似：**这**指针作为隐式的第一个参数传递。 接下来三个参数将传入寄存器，而其余部分传递到堆栈上。
+C + + 调用约定非常类似： **此** 指针作为隐式第一个参数传递。 接下来的三个参数在寄存器中传递，而其余的参数在堆栈上传递。
 
-### <a name="span-idaddressingmodesspanspan-idaddressingmodesspanspan-idaddressingmodesspanaddressing-modes"></a><span id="Addressing_Modes"></span><span id="addressing_modes"></span><span id="ADDRESSING_MODES"></span>寻址模式
+### <a name="span-idaddressing_modesspanspan-idaddressing_modesspanspan-idaddressing_modesspanaddressing-modes"></a><span id="Addressing_Modes"></span><span id="addressing_modes"></span><span id="ADDRESSING_MODES"></span>寻址模式
 
-在 64 位模式下的寻址模式是类似，但并不完全相同，x86。
+64位模式下的寻址模式类似于 x86，但并不完全相同。
 
-- 64 位寄存器是指的说明将自动执行具有 64 位精度。 (例如**mov rax \[rbx\]** 移 8 个字节开始**rbx**到**rax**。)
+- 引用64位寄存器的指令自动以64位精度执行。  (例如 **mov rax， \[ rbx \]** 将8个字节从 **rbx** 开始移动到 **rax**。 ) 
 
-- 一种特殊形式**mov**指令已添加了对 64 位即时常量或常量地址。 有关其他说明，即时常量或常量地址仍为 32 位。
+- 添加了一种特殊形式的 **mov** 说明，适用于64位即时常量或常量地址。 对于所有其他说明，即时常量或常量地址仍然为32位。
 
-- x64 提供了一个新**rip**-相对寻址模式。 引用单个常量地址的说明编码为从偏移量**rip**。 例如， **mov rax \[**  <em>addr</em> **\]** 指令将 8 个字节开始*addr*  + **rip**到**rax**。
+- x64 提供了新的 **rip** 相对寻址模式。 引用单个常量地址的指令被编码为来自 **rip** 的偏移量。 例如， **mov rax， \[** <em>addr</em> **\]** 指令将从 *地址*  +  **rip** 开始到 **rax** 的8个字节。
 
-说明，如**jmp**，**调用**，**推送**，以及**pop**的隐式引用指令指针和堆栈指针64 位 x64 上注册方式来处理它们。
+**跳转**、 **call**、 **push** 和 **pop** 等说明隐式引用指令指针，堆栈指针将它们视为 x64 上的64位寄存器。
 
  
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
-[X86-64 Wikipedia](https://en.wikipedia.org/wiki/X86-64)
+[X86-64 维基百科](https://en.wikipedia.org/wiki/X86-64)
 
-[AMD 64 的开发人员资源](https://developer.amd.com/resources/)
+[AMD 64 开发人员资源](https://developer.amd.com/resources/)
 

@@ -1,17 +1,16 @@
 ---
 title: 使用调试信息窗口
 description: 使用调试信息窗口
-ms.assetid: b7dab453-24ac-4ef4-a48b-e734989b87bf
 keywords:
 - 调试信息窗口
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5bc0a01695a5b1a7791b6b1f3405612a9154811b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: af8d44c6691f5c56d14ad77de7e0c79ec0c2f353
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63378815"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803111"
 ---
 # <a name="using-debugging-information-windows"></a>使用调试信息窗口
 
@@ -19,9 +18,9 @@ ms.locfileid: "63378815"
 ## <span id="ddk_using_debugging_information_windows_dbg"></span><span id="DDK_USING_DEBUGGING_INFORMATION_WINDOWS_DBG"></span>
 
 
-WinDbg 具有十个类型的调试信息窗口。 你可以同时打开以下窗口的一个实例：[调试器命令窗口](debugger-command-window.md)，监视窗口[局部变量窗口](locals-window.md)，则[寄存器窗口](registers-window.md)[调用窗口](calls-window.md)，则[反汇编窗口](disassembly-window.md)，则[进程和线程窗口](processes-and-threads-window.md)，和便笺。 除了这些八个单独的窗口，WinDbg 可以显示多个[源 windows](source-window.md)并[内存 windows](memory-window.md)在同一时间。
+WinDbg 有十种调试信息窗口。 您可以同时打开以下窗口的一个实例： " [调试器" 命令窗口](debugger-command-window.md)、"监视窗口"、" [局部变量](locals-window.md)" 窗口、" [寄存器" 窗口](registers-window.md)、"调用" [窗口](calls-window.md)、"反汇编" [窗口](disassembly-window.md)、" [进程" 和 "线程" 窗口](processes-and-threads-window.md)以及 "暂存" 面板。 除了这八个单独的窗口，WinDbg 还可以同时显示多个 [源窗口](source-window.md) 和 [内存窗口](memory-window.md) 。
 
-本部分介绍所有这些 windows 共有的功能：
+本部分介绍所有这些窗口共有的功能：
 
 [打开窗口](opening-a-window.md)
 
@@ -35,7 +34,7 @@ WinDbg 具有十个类型的调试信息窗口。 你可以同时打开以下窗
 
 [更改文本属性](changing-text-properties.md)
 
-[定位 Windows](positioning-the-windows.md)
+[定位窗口](positioning-the-windows.md)
 
  
 

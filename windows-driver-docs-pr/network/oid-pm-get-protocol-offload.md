@@ -1,30 +1,29 @@
 ---
 title: OID_PM_GET_PROTOCOL_OFFLOAD
 description: 过量驱动程序发出 OID_PM_GET_PROTOCOL_OFFLOAD 的 OID 方法请求，以获取来自网络适配器的低功率协议卸载的参数设置。
-ms.assetid: c14b9278-6f24-41a1-bc2e-536a75460ecd
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_PM_GET_PROTOCOL_OFFLOAD 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 9fc89ad2d71c87022773c3fc8085f9ff52828ffa
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: ffd97b520a808d3e9a7ca4575417420d93e68057
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89208633"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96802291"
 ---
 # <a name="oid_pm_get_protocol_offload"></a>OID \_ PM \_ 获取 \_ 协议 \_ 卸载
 
 
 过量驱动程序发出 OID \_ PM 获取协议卸载的 oid 方法请求 \_ \_ \_ ，以便从网络适配器中获取低功率协议卸载的参数设置。
 
-[**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的**INFORMATIONBUFFER**成员最初包含指向 ULONG 协议卸载标识符的指针。 成功从 OID 方法请求返回后， **ndis \_ OID \_ 请求**结构的**InformationBuffer**成员包含指向[**NDIS \_ PM \_ 协议 \_ 卸载**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_protocol_offload)结构的指针。
+[**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的 **INFORMATIONBUFFER** 成员最初包含指向 ULONG 协议卸载标识符的指针。 成功从 OID 方法请求返回后， **ndis \_ OID \_ 请求** 结构的 **InformationBuffer** 成员包含指向 [**NDIS \_ PM \_ 协议 \_ 卸载**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_protocol_offload)结构的指针。
 
 <a name="remarks"></a>备注
 -------
 
 NDIS 6.20 和更高版本的协议驱动程序使用 OID \_ PM \_ 获取 \_ 协议 \_ 卸载方法 OID 来检索来自网络适配器的低功率协议卸载的参数设置。
 
-信息缓冲区必须指向 ULONG 类型协议卸载标识符。 当 NDIS 发送之前的[OID \_ pm \_ 将 \_ 协议 \_ 卸载](oid-pm-add-protocol-offload.md)OID 请求添加到基础网络适配器时，ndis 在[**ndis \_ PM \_ 协议 \_ 卸载**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_protocol_offload)结构的**ProtocolOffloadId**成员中设置此协议卸载标识符。
+信息缓冲区必须指向 ULONG 类型协议卸载标识符。 当 NDIS 发送之前的 [OID \_ pm \_ 将 \_ 协议 \_ 卸载](oid-pm-add-protocol-offload.md)OID 请求添加到基础网络适配器时，ndis 在 [**ndis \_ PM \_ 协议 \_ 卸载**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_protocol_offload)结构的 **ProtocolOffloadId** 成员中设置此协议卸载标识符。
 
 微型端口驱动程序为请求返回以下状态代码之一：
 
@@ -66,7 +65,7 @@ NDIS 6.20 和更高版本的协议驱动程序使用 OID \_ PM \_ 获取 \_ 协�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**NDIS \_ PM \_ 协议 \_ 卸载**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_protocol_offload)

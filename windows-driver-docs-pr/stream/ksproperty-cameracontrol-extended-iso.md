@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ CAMERACONTROL \_ 扩展 \_ ISO
 description: 此属性选择相机的 ISO 设置。 ISO 设置是从一组预置中选择的，或者设置为 "自动"。
-ms.assetid: 8BA03479-2AB8-4390-83F0-84C3519DB991
 keywords:
 - KSPROPERTY_CAMERACONTROL_EXTENDED_ISO 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 09/10/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: fc79290e5a6a75b5563fa0b359069ed66e22a3df
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: c47b5a4b4327b788ead251a42370bd472a068c66
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107368"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803463"
 ---
 # <a name="ksproperty_cameracontrol_extended_iso"></a>KSPROPERTY \_ CAMERACONTROL \_ 扩展 \_ ISO
 
@@ -58,13 +57,13 @@ ms.locfileid: "90107368"
 
  
 
-属性值 (操作数据) 包含 [**KSCAMERA \_ EXTENDEDPROP \_ 标头**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header) 结构和 [**KSCAMERA \_ EXTENDEDPROP \_ 值**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_photomode) 结构。 **KSCAMERA \_ EXTENDEDPROP \_ 值**是必需的，但未使用。
+属性值 (操作数据) 包含 [**KSCAMERA \_ EXTENDEDPROP \_ 标头**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header) 结构和 [**KSCAMERA \_ EXTENDEDPROP \_ 值**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_photomode) 结构。 **KSCAMERA \_ EXTENDEDPROP \_ 值** 是必需的，但未使用。
 
-总的属性数据大小为 **sizeof** (KSCAMERA \_ EXTENDEDPROP \_ 标头) + **sizeof** (KSCAMERA \_ EXTENDEDPROP \_ VALUE) 。 [**KSCAMERA \_ EXTENDEDPROP \_ 标头**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)的**Size**成员设置为此总属性数据大小。
+总的属性数据大小为 **sizeof** (KSCAMERA \_ EXTENDEDPROP \_ 标头) + **sizeof** (KSCAMERA \_ EXTENDEDPROP \_ VALUE) 。 [**KSCAMERA \_ EXTENDEDPROP \_ 标头**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)的 **Size** 成员设置为此总属性数据大小。
 
-[**KSCAMERA \_ EXTENDEDPROP \_ 标头**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)的**功能**成员包含以下一个或多个 ISO 设置的按位 "或" 组合。
+[**KSCAMERA \_ EXTENDEDPROP \_ 标头**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)的 **功能** 成员包含以下一个或多个 ISO 设置的按位 "或" 组合。
 
-| ISO                                | 说明                   |
+| ISO                                | 描述                   |
 |------------------------------------|-------------------------------|
 | KSCAMERA \_ EXTENDEDPROP \_ ISO \_ AUTO  | ISO 设置为自动。 |
 | KSCAMERA \_ EXTENDEDPROP \_ ISO \_ 50    | ISO 50                        |
@@ -81,7 +80,7 @@ ms.locfileid: "90107368"
 
  
 
-[**KSCAMERA \_ EXTENDEDPROP \_ 标头**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)的**Flags**成员包含照相机的当前 ISO 设置。 照相机驱动程序可能支持 ISO 设置的一个子集。 如果支持此属性控制，则驱动程序必须支持 KSCAMERA \_ EXTENDEDPROP \_ ISO \_ AUTO。
+[**KSCAMERA \_ EXTENDEDPROP \_ 标头**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)的 **Flags** 成员包含照相机的当前 ISO 设置。 照相机驱动程序可能支持 ISO 设置的一个子集。 如果支持此属性控制，则驱动程序必须支持 KSCAMERA \_ EXTENDEDPROP \_ ISO \_ AUTO。
 
 此属性控件是异步的，不可取消。
 
@@ -99,7 +98,7 @@ ms.locfileid: "90107368"
 <thead>
 <tr class="header">
 <th>成员</th>
-<th>Value</th>
+<th>“值”</th>
 </tr>
 </thead>
 <tbody>
@@ -136,7 +135,7 @@ ms.locfileid: "90107368"
 
 ### <a name="setting-the-property"></a>设置属性
 
-设置属性时，KSPROPERTY \_ 类型 \_ 集请求， [**KSCAMERA \_ EXTENDEDPROP \_ 标头**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)的**FLAGS**成员将包含要启用的 ISO 设置。
+设置属性时，KSPROPERTY \_ 类型 \_ 集请求， [**KSCAMERA \_ EXTENDEDPROP \_ 标头**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)的 **FLAGS** 成员将包含要启用的 ISO 设置。
 
 ## <a name="requirements"></a>要求
 
@@ -157,7 +156,7 @@ ms.locfileid: "90107368"
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [KSCAMERA \_ EXTENDEDPROP \_ 标头](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)
 

@@ -1,17 +1,16 @@
 ---
 title: 编写 DbgEng 扩展代码
 description: 本部分介绍如何编写 DbgEng 扩展代码
-ms.assetid: b1ee686b-986e-46eb-a4bf-93e2de6d1aeb
 keywords:
 - DbgEng 扩展，编写
 ms.date: 10/24/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: ef72dec052f5ca41c18e39af8a9742d4c701169b
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 21c0bbf40056622f7fec37c6c8cbb31c6d489498
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89211793"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96802761"
 ---
 # <a name="writing-dbgeng-extension-code"></a>编写 DbgEng 扩展代码
 
@@ -33,4 +32,4 @@ ms.locfileid: "89211793"
 
 如果你在 DbgEng 扩展中包括 wdbgexts，则应在初始化扩展 DLL 时调用 [**GetWindbgExtensionApis64**](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugcontrol3-getwindbgextensionapis64) (参阅 [*DebugExtensionInitialize*](/windows-hardware/drivers/ddi/dbgeng/nc-dbgeng-pdebug_extension_initialize)) 。
 
-**注意**   不得尝试从任何调试器扩展调用任何 Dbghelp.dll 或 Imagehlp.dll 例程。 不支持调用这些例程，这可能会导致各种问题。
+**注意**   不得尝试从任何调试器扩展调用任何 Dbghelp.dll 或 Imagehlp.dll 例程。 不支持调用这些例程，这可能会导致各种问题。

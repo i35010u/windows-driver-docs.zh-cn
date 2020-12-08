@@ -1,15 +1,14 @@
 ---
 title: NDIS 数据包合并简介
 description: NDIS 数据包合并简介
-ms.assetid: 500FBF0F-54D9-4675-8E2D-447387DA8798
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 42dae0ca3b916684b78303348cba3f6d2fa982f8
-ms.sourcegitcommit: 366a15d68eb58d01a8ca6de7b982f62ac8b7deaf
+ms.openlocfilehash: aac1ee836b30a5cf5d6609cd875e56612b8a6f9d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/19/2020
-ms.locfileid: "90811982"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801559"
 ---
 # <a name="introduction-to-ndis-packet-coalescing"></a>NDIS 数据包合并简介
 

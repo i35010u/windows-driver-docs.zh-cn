@@ -1,16 +1,15 @@
 ---
 title: OID_GEN_DIRECTED_FRAMES_RCV
 description: 作为查询，OID_GEN_DIRECTED_FRAMES_RCV OID 指定接收的没有错误的定向数据包的数量。
-ms.assetid: 6f8b84d3-19d6-4a2a-a2eb-8961614fbba4
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_GEN_DIRECTED_FRAMES_RCV 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 4a4aca15e92052018525dcc077bf5c57c74a1c1e
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 74022410253a61bdcbcdad64545250206f77b58d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89215488"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96802295"
 ---
 # <a name="oid_gen_directed_frames_rcv"></a>OID \_ 生成 \_ 定向 \_ 帧 \_ RCV
 
@@ -55,7 +54,7 @@ ms.locfileid: "89215488"
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [OID \_ 生成 \_ 统计信息](oid-gen-statistics.md)

@@ -1,18 +1,17 @@
 ---
 title: 示例将 IRP 向下传递而不设置完成例程
 description: 示例将 IRP 向下传递而不设置完成例程
-ms.assetid: d18d3ead-2cec-4ea6-ac4c-b809ba985f23
 keywords:
 - IRP 调度例程 WDK 文件系统，并将 IRP 向下传递
 - 将 Irp 向下传递设备堆栈 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bcee941ad7c16bbab2af4671ba8b12c8f651919e
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 3b540c7558d06f0a5002fe6d3621776df79c83b9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89063692"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96802467"
 ---
 # <a name="example-passing-the-irp-down-without-setting-a-completion-routine"></a>示例：将 IRP 向下传递而不设置完成例程
 

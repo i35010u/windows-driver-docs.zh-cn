@@ -1,15 +1,14 @@
 ---
 title: 虚拟功能初始化序列
 description: 虚拟功能初始化序列
-ms.assetid: 352E12EC-FAF0-4566-8632-B6DA97ACCAD9
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 79700f399aaf318747ddf74f6ab57ed1beda6518
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 0ddf418e9b4550ec8352a49f38fff023dabb2f17
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89218302"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96802270"
 ---
 # <a name="virtual-function-initialization-sequence"></a>虚拟功能初始化序列
 

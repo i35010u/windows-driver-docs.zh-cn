@@ -1,17 +1,16 @@
 ---
 title: 视频微型端口驱动程序要求（Windows 2000 模型）
 description: 视频微型端口驱动程序要求（Windows 2000 模型）
-ms.assetid: f6ae5b71-97d5-4fd8-bd3d-7ee83f34581e
 keywords:
 - 视频微型端口驱动程序 WDK Windows 2000，要求
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3771910256907c2ac2407fb766b7fa540114494e
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 630834b8d469305ba4f4da189ea827595e4703ae
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89066302"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96802493"
 ---
 # <a name="video-miniport-driver-requirements-windows-2000-model"></a>视频微型端口驱动程序要求（Windows 2000 模型）
 
@@ -21,11 +20,11 @@ ms.locfileid: "89066302"
 
 下面是视频微型端口驱动程序的一些要求。
 
--   **基于 NT 的操作系统视频微型端口驱动程序必须是单个** ***sys.databases*** **文件。**
+-   **基于 NT 的操作系统视频微型端口驱动程序必须是单个** **_.sys_*_ _* 文件。**
 
     微型端口驱动程序由单个二进制文件组成。 微型端口驱动程序的主要用途是检测、初始化和配置同一类型的一个或多个图形适配器。
 
--   **小型小型驱动程序只能使调用导出**  ***videoprt.sys *。**
+-   **微型端口驱动程序只能使调用** **_videoprt.sys_ 导出。**
 
     微型端口驱动程序只能调用由系统提供的视频端口驱动程序导出的那些函数。  (导出的视频端口函数在 [视频端口驱动程序函数](/windows-hardware/drivers/ddi/index)后面的参考页面上列出。 ) 驱动程序编写者还可以使用以下内容来确定微型端口驱动程序调用的函数：
 

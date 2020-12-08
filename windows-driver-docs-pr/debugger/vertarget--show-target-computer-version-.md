@@ -1,9 +1,8 @@
 ---
 title: vertarget（显示目标计算机版本）
 description: Vertarget 命令显示目标计算机的 Microsoft Windows 操作系统的当前版本。
-ms.assetid: 27aa26ac-6343-412f-a0ed-6d5e3546827b
 keywords:
-- vertarget （显示目标计算机版本） Windows 调试
+- vertarget (显示) Windows 调试的目标计算机版本
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 0e67a23a69ce81d08da03f3a2a78a9c3c4bf9fd2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: dab5c05e7f0c3ecf771514a3a123c096528e4d87
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63325930"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96802943"
 ---
 # <a name="vertarget-show-target-computer-version"></a>vertarget（显示目标计算机版本）
 
 
-**Vertarget**命令将显示目标计算机的 Microsoft Windows 操作系统的当前版本。
+**Vertarget** 命令显示目标计算机的 Microsoft Windows 操作系统的当前版本。
 
 `vertarget`
 
@@ -38,12 +37,12 @@ ms.locfileid: "63325930"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>模式</strong></p></td>
-<td align="left"><p>用户模式下，内核模式</p></td>
+<td align="left"><p><strong>交货</strong></p></td>
+<td align="left"><p>用户模式，内核模式</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>目标</strong></p></td>
-<td align="left"><p>实时、 崩溃转储</p></td>
+<td align="left"><p>实时，故障转储</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>平台</strong></p></td>
@@ -54,12 +53,12 @@ ms.locfileid: "63325930"
 
  
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[**CTRL + W （显示调试器版本）**](ctrl-w--show-debugger-version-.md)
+[**CTRL+W（显示调试器版本）**](ctrl-w--show-debugger-version-.md)
 
-[**版本 （显示调试器版本）**](version--show-debugger-version-.md)
+[**version（显示调试器版本）**](version--show-debugger-version-.md)
 
  
 

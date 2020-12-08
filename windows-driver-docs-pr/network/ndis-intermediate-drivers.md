@@ -1,18 +1,17 @@
 ---
 title: 中间驱动程序
 description: 中间驱动程序
-ms.assetid: 0c0516b0-1fc4-43b5-8c7c-58255c72a4e7
 keywords:
 - 中间驱动程序 WDK 网络，体系结构
 - NDIS 中间驱动程序 WDK，体系结构
 ms.date: 11/26/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 954df9ac5b164fbbb1c90c4a97cbbb6f0057d889
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: fed6dd3eecbd3299744b743cf8f16862d4bd5f42
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89207461"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801607"
 ---
 # <a name="intermediate-drivers"></a>中间驱动程序
 

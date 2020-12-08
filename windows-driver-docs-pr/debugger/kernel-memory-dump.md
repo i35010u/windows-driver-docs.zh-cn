@@ -1,18 +1,17 @@
 ---
 title: 内核内存转储
 description: 内核内存转储
-ms.assetid: 466f5b92-c9bd-4050-9ef8-469979ba0cbe
 keywords:
 - 转储文件，内核内存转储
 - 内核内存转储
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0b96b0bc168538d7d0cea8b3facaaeac226ba571
-ms.sourcegitcommit: e0bec5347825e04fb3b2309d04156b01a83fa593
+ms.openlocfilehash: 4cac742353c1eaa73cfb604a75387f822f5aacec
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88090129"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801917"
 ---
 # <a name="kernel-memory-dump"></a>内核内存转储
 
@@ -20,7 +19,7 @@ ms.locfileid: "88090129"
 ## <span id="ddk_kernel_memory_dump_dbg"></span><span id="DDK_KERNEL_MEMORY_DUMP_DBG"></span>
 
 
-*内核内存转储*包含发生崩溃时内核使用的所有内存。
+*内核内存转储* 包含发生崩溃时内核使用的所有内存。
 
 此类转储文件明显小于完整内存转储。 通常，转储文件的大小为系统物理内存大小的三分之一。 此数量会因情况而异。
 
@@ -34,7 +33,7 @@ ms.locfileid: "88090129"
 
 如果发生第二次错误检查，并创建了另一个内核内存转储 (或完成内存转储) ，则将覆盖以前的文件。
 
-若要在调试内核内存转储时取消丢失页错误消息，请使用 "[**忽略 \_ 缺少的 \_ 页**](-ignore-missing-pages--suppress-missing-page-errors-.md)" 命令。
+若要在调试内核内存转储时取消丢失页错误消息，请使用 " [**忽略 \_ 缺少的 \_ 页**](-ignore-missing-pages--suppress-missing-page-errors-.md) " 命令。
 
 ## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 

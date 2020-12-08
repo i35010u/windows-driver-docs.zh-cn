@@ -1,17 +1,16 @@
 ---
 title: TList 示例
 description: TList 示例
-ms.assetid: 9c9a1e81-03c2-4b7c-b0da-b25942548aa9
 keywords:
-- TList，TList 示例
+- Tlist.exe，Tlist.exe 示例
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8d1f614e364bd4a576e2df44c825a2aa1713b8d3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 535c04d76d5aeb6e14261ff71f328e40aa0e9481
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63357003"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801877"
 ---
 # <a name="tlist-examples"></a>TList 示例
 
@@ -19,11 +18,11 @@ ms.locfileid: "63357003"
 ## <span id="ddk_tlist_examples_dtools"></span><span id="DDK_TLIST_EXAMPLES_DTOOLS"></span>
 
 
-以下示例演示如何使用 TList。
+下面的示例演示如何使用 Tlist.exe。
 
-### <a name="span-idsimplesttlistcommandtlistspanspan-idsimplesttlistcommandtlistspansimplest-tlist-command-tlist"></a><span id="simplest_tlist_command__tlist_"></span><span id="SIMPLEST_TLIST_COMMAND__TLIST_"></span>最简单 TList 命令 (tlist)
+### <a name="span-idsimplest_tlist_command__tlist_spanspan-idsimplest_tlist_command__tlist_spansimplest-tlist-command-tlist"></a><span id="simplest_tlist_command__tlist_"></span><span id="SIMPLEST_TLIST_COMMAND__TLIST_"></span>最简单的 Tlist.exe 命令 (tlist.exe) 
 
-键入**tlist**没有其他参数显示如果任何正在运行进程、 其进程 Id (Pid)，并在其中运行它们，窗口的标题的列表。
+键入不带其他参数的 **tlist.exe** 将显示正在运行的进程的列表、其进程 Id (pid) ，以及运行它们的窗口的标题（如果有）。
 
 ```console
 c:\>tlist
@@ -52,42 +51,42 @@ c:\>tlist
 4068 tlist.exe   
 ```
 
-### <a name="span-idfindaprocessidpspanspan-idfindaprocessidpspanfind-a-process-id--p"></a><span id="find_a_process_id___p_"></span><span id="FIND_A_PROCESS_ID___P_"></span>查找进程 ID (-p)
+### <a name="span-idfind_a_process_id___p_spanspan-idfind_a_process_id___p_spanfind-a-process-id--p"></a><span id="find_a_process_id___p_"></span><span id="FIND_A_PROCESS_ID___P_"></span>查找进程 ID (-p) 
 
-下面的命令使用 **-p**参数和进程名称，用于确定 Explorer.exe （资源管理器） 进程的进程 ID。
+以下命令使用 **-p** 参数和进程名称查找 Explorer.exe (资源管理器) 进程的进程 ID。
 
-在响应中，TList 显示资源管理器的进程，328 的进程 ID。
+在响应中，Tlist.exe 显示资源管理器进程的进程 ID 328。
 
 ```console
 c:\>tlist -p explorer
 328
 ```
 
-### <a name="span-idfindprocessdetailsusingpidspanspan-idfindprocessdetailsusingpidspanfind-process-details-using-pid"></a><span id="find_process_details_using_pid"></span><span id="FIND_PROCESS_DETAILS_USING_PID"></span>查找使用 PID 的进程详细信息
+### <a name="span-idfind_process_details_using_pidspanspan-idfind_process_details_using_pidspanfind-process-details-using-pid"></a><span id="find_process_details_using_pid"></span><span id="FIND_PROCESS_DETAILS_USING_PID"></span>使用 PID 查找进程详细信息
 
-以下命令使用资源管理器正在运行，查找有关资源管理器过程的详细的信息的进程的进程 ID。
+以下命令使用资源管理器运行的进程的进程 ID 查找有关资源管理器进程的详细信息。
 
 ```console
 c:\>tlist 328
 ```
 
-在响应中，TList 显示资源管理器过程包括以下元素的详细信息：
+在响应中，Tlist.exe 显示资源管理器进程的详细信息，包括以下元素：
 
--   进程 ID，可执行文件名称、 程序友好名称。
+-   进程 ID、可执行文件名称、程序友好名称。
 
--   当前工作目录 (CWD)。
+-   当前工作目录 (CWD) 。
 
--   命令行启动进程 （命令行）。
+-   启动进程的命令行 (CmdLine) 。
 
 -   当前虚拟地址空间值。
 
 -   线程数。
 
--   在进程中运行的线程的列表。 对于每个线程，TList 显示线程 ID (TID)，运行该线程的函数、 入口点的地址、 地址 （如果有） 的最后一个报告的错误，以及线程状态。
+-   进程中运行的线程的列表。 对于每个线程，Tlist.exe 将显示线程 ID (TID) 、线程正在运行的函数、入口点的地址、上次报告的错误的地址 (if 任何) 和线程状态。
 
--   为进程加载的模块的列表。 对于每个模块，TList 显示版本号、 特性、 模块和模块名称的虚拟地址。
+-   为进程加载的模块的列表。 对于每个模块，Tlist.exe 将显示模块的版本号、属性、虚拟地址和模块名称。
 
-下面是输出的从此命令产生的摘录。
+下面是此命令生成的输出摘录。
 
 ```console
  328 explorer.exe      Program Manager
@@ -116,25 +115,25 @@ c:\>tlist 328
   ....  (module data deleted here)
 ```
 
-### <a name="span-idfindmultipleprocessespatternspanspan-idfindmultipleprocessespatternspanfind-multiple-processes-pattern"></a><span id="find_multiple_processes__pattern_"></span><span id="FIND_MULTIPLE_PROCESSES__PATTERN_"></span>找到多个进程 （模式）
+### <a name="span-idfind_multiple_processes__pattern_spanspan-idfind_multiple_processes__pattern_spanfind-multiple-processes-pattern"></a><span id="find_multiple_processes__pattern_"></span><span id="FIND_MULTIPLE_PROCESSES__PATTERN_"></span> (模式找到多个进程) 
 
-以下命令搜索正则表达式，表示进程名称或窗口名称的一个或多个进程的进程。 在此示例中，该命令将为进程搜索其进程名称或窗口名称开头"到"。
+下面的命令通过表示一个或多个进程的进程名称或窗口名称的正则表达式搜索进程。 在此示例中，该命令将搜索进程名称或窗口名称以 "app.ino" 开头的进程。
 
 ```console
 c:\>tlist ino*
 ```
 
-在响应中，TList Inorpc.exe、 Inort.exe，和 Inotask.exe 显示进程详细信息。 有关输出的说明，请参阅"查找进程详细信息使用 PID"子节上面。
+在响应中，Tlist.exe 显示 Inorpc.exe、Inort.exe 和 Inotask.exe 的进程详细信息。 有关输出的说明，请参阅上面的 "使用 PID 查找进程详细信息" 小节。
 
-### <a name="span-iddisplayaprocesstreetspanspan-iddisplayaprocesstreetspandisplay-a-process-tree-t"></a><span id="display_a_process_tree___t_"></span><span id="DISPLAY_A_PROCESS_TREE___T_"></span>显示进程树 (/ t)
+### <a name="span-iddisplay_a_process_tree___t_spanspan-iddisplay_a_process_tree___t_spandisplay-a-process-tree-t"></a><span id="display_a_process_tree___t_"></span><span id="DISPLAY_A_PROCESS_TREE___T_"></span>显示进程树 (/t) 
 
-下面的命令显示一个树，它表示在计算机上运行的进程。 进程显示为的创建它们的进程的子级。
+以下命令显示一个树，该树表示在计算机上运行的进程。 进程显示为创建它们的进程的子项。
 
 ```console
 c:\>tlist /t
 ```
 
-生成的进程树遵循。 此树在等显示系统 (4) 进程创建创建 Csrss.exe、 Winlogon.exe、 Lsass.exe 和 Rundll32.exe 的 Smss.exe 进程。 此外，Winlogon.exe 创建 Services.exe，创建了所有与服务相关的进程。
+生成的进程树如下所示。 此树显示了系统 (4) 进程创建的 Smss.exe 进程，该进程创建 Csrss.exe、Winlogon.exe、Lsass.exe 和 Rundll32.exe。 此外，Winlogon.exe 创建 Services.exe，这会创建与服务相关的所有过程。
 
 ```console
 System Process (0)
@@ -166,15 +165,15 @@ explorer.exe (328) Program Manager
   dexplore.exe (2096) Platform SDK - CreateThread
 ```
 
-### <a name="span-idfindprocessbymodulemspanspan-idfindprocessbymodulemspanfind-process-by-module-m"></a><span id="find_process_by_module___m_"></span><span id="FIND_PROCESS_BY_MODULE___M_"></span>查找进程的模块 (/ m)
+### <a name="span-idfind_process_by_module___m_spanspan-idfind_process_by_module___m_spanfind-process-by-module-m"></a><span id="find_process_by_module___m_"></span><span id="FIND_PROCESS_BY_MODULE___M_"></span>按模块 (/m 查找进程) 
 
-以下命令查找所有加载特定 DLL 的进程在计算机上运行。
+以下命令将查找在加载特定 DLL 的计算机上运行的所有进程。
 
 ```console
 c:\>tlist /m 
 ```
 
-在响应中，TList Inorpc.exe、 Inort.exe，和 Inotask.exe 显示进程详细信息。 有关输出的说明，请参阅"查找进程详细信息使用 PID"子节上面。
+在响应中，Tlist.exe 显示 Inorpc.exe、Inort.exe 和 Inotask.exe 的进程详细信息。 有关输出的说明，请参阅上面的 "使用 PID 查找进程详细信息" 小节。
 
  
 

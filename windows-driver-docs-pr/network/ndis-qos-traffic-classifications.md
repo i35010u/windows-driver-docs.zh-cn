@@ -1,20 +1,19 @@
 ---
 title: NDIS QoS 流量分类
 description: NDIS QoS 流量分类
-ms.assetid: 62D7B69F-A64E-4E3C-9AEA-8C56495E3FF5
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e3472d7ea5fa03ad23dabae223613cd3c20f6a8c
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: fabc0dfb54e6f1aacd26b540ac603e7ceb8ea73a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89213905"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801543"
 ---
 # <a name="ndis-qos-traffic-classifications"></a>NDIS QoS 流量分类
 
 
-NDIS 服务质量 (QoS) 为网络适配器按优先级排列的传递来分类传输（或 *传出*数据包）。 每个流量分类均指定以下各项：
+NDIS 服务质量 (QoS) 为网络适配器按优先级排列的传递来分类传输（或 *传出* 数据包）。 每个流量分类均指定以下各项：
 
 -   基于出口数据包数据中的数据模式的分类 *条件* 。
 
@@ -24,7 +23,7 @@ NDIS 服务质量 (QoS) 为网络适配器按优先级排列的传递来分类�
 
     从 NDIS 6.30 开始，分类操作指定 802.1 p 优先级别。
 
-**注意**   流量分类也称为 IEEE 802.1 规范中的 "应用程序优先级"。
+**注意**  流量分类也称为 IEEE 802.1 规范中的 "应用程序优先级"。
 
  
 

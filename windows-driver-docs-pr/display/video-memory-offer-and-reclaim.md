@@ -1,15 +1,14 @@
 ---
 title: 视频内存供应和回收
 description: Windows 显示驱动程序模型 (WDDM) 1.2 及更高版本的用户模式显示驱动程序必须使用从 Windows 8 开始提供的内存提供和回收功能，以减少本地和系统内存中的临时表面所需的内存开销。
-ms.assetid: 8BB6A7A3-E102-4069-BFC2-9605DDE9F020
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9ac470d363909f80a34b8440fccafb3c713183d7
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 42fe110b62b4976a83562c77283803530c6a2dc8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89063726"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96802503"
 ---
 # <a name="video-memory-offer-and-reclaim"></a>视频内存供应和回收
 
@@ -22,7 +21,7 @@ Windows 显示驱动程序模型 (WDDM) 1.2 及更高版本的用户模式显示
 
 **驱动程序实现-完整图形和仅呈现**：必需
 
-** [WHCK](/windows-hardware/test/hlk/windows-hardware-lab-kit)要求和测试**：**设备 .。。OfferReclaim**
+**[WHCK](/windows-hardware/test/hlk/windows-hardware-lab-kit)要求和测试**：**设备 .。。OfferReclaim**
 
 
  

@@ -1,17 +1,16 @@
 ---
 title: 使用客户端和引擎
 description: 使用客户端和引擎
-ms.assetid: 899184f5-334b-4fd1-98ce-64475650ace5
 keywords:
 - DbgEng 扩展，引擎客户端对象
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 01c9392cbf197d3e6b3e849f67eab4628d0c8525
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 5eefcb3775379cb5a21863410945dd8d0e54fa00
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89215674"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803161"
 ---
 # <a name="using-clients-and-the-engine"></a>使用客户端和引擎
 
@@ -25,7 +24,7 @@ DbgEng 扩展通过客户端对象与 [调试器引擎](introduction.md#debugger
 
 在初始化时，扩展库可能会使用 [**DebugCreate**](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-debugcreate)创建自己的客户端对象。 此客户端可用于注册 DLL 中的回调对象。
 
-**注意**   修改传递到扩展函数的客户端时应小心谨慎。 特别是，向此客户端注册回调可能会中断调试器的输入、输出或事件处理。 建议创建新的客户端以注册回调。
+**注意**   修改传递到扩展函数的客户端时应小心谨慎。 特别是，向此客户端注册回调可能会中断调试器的输入、输出或事件处理。 建议创建新的客户端以注册回调。
 
  
 

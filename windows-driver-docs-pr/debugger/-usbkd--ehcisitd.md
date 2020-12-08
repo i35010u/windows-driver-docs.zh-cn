@@ -1,9 +1,8 @@
 ---
-title: usbkd _ehcisitd
-description: _Ehcisitd usbkd 命令显示 usbehci 中的信息 _HCD_SI_TRANSFER_DESCRIPTOR
-ms.assetid: FA1F61AE-A9D4-429E-97BC-0CCC3A9AF33E
+title: usbkd._ehcisitd
+description: Usbkd._ehcisitd 命令显示 usbehci 中的信息 _HCD_SI_TRANSFER_DESCRIPTOR
 keywords:
-- usbkd _ehcisitd Windows 调试
+- usbkd._ehcisitd Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 03941ce1554bbf6555741b03fcc4f2524ae6ef84
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 5add789bb563cb53725d8dbf3803be2610019dca
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89213629"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96802039"
 ---
 # <a name="usbkd_ehcisitd"></a>！ usbkd。 \_ehcisitd
 
 
-**！ Usbkd。 \_ehcisitd**命令显示 usbehci 中的信息 **！ \_HCD \_ SI \_ 传输 \_ 描述符**
+**！ Usbkd。 \_ehcisitd** 命令显示 usbehci 中的信息 **！ \_HCD \_ SI \_ 传输 \_ 描述符**
 
 ```dbgcmd
 !usbkd._ehcisitd StructAddr

@@ -1,7 +1,6 @@
 ---
 title: NDIS MSI-X 概述
 description: NDIS MSI-X 概述
-ms.assetid: 5bb374c8-9354-42d3-9754-42e8ff42bdb9
 keywords:
 - 微型端口驱动程序 WDK 网络，MSI-X
 - NDIS 微型端口驱动程序 WDK、MSI-X
@@ -13,12 +12,12 @@ keywords:
 - 中断 WDK 网络
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b831274a733ec4a0944d25c85ef1fdafcd0c4e8c
-ms.sourcegitcommit: 29c2e6dd8a3de3c11822d990adf1edd774f8a136
+ms.openlocfilehash: e6865f52ffa35e2b1c989eb52806fd0c66507976
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91230031"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801583"
 ---
 # <a name="overview-of-ndis-msi-x"></a>NDIS MSI-X 概述
 

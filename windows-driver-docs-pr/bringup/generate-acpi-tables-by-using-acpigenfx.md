@@ -1,15 +1,14 @@
 ---
 title: 使用 AcpiGenFx 生成 ACPI 表
 description: 使用 ACPI 生成框架 (AcpiGenFx) 库来编写用于生成 ACPI 表的应用程序。
-ms.assetid: 46A725C3-609E-45B9-A4BD-033656208E92
 ms.date: 09/23/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 6ead097afd361468c88a4ff0b4ad7b00c0502192
-ms.sourcegitcommit: 0c34101a0eed9f187fec03026021fff89bd233e3
+ms.openlocfilehash: 3f40144b1f1287f9d474e02ccf8044b1bded7ba1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91135168"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803349"
 ---
 # <a name="generate-acpi-tables-by-using-acpigenfx"></a>使用 AcpiGenFx 生成 ACPI 表
 
@@ -40,7 +39,7 @@ ms.locfileid: "91135168"
 
 AcpiGenFx 在本质上是声明性的：其输出仅为静态数据，而不是用于生成动态运行时方法的。 如果框架未涵盖用例，如先进的外部设备电源管理，则这些方法必须在 Windows 平台扩展驱动程序中实现，或手动添加到 AcpiGenFx 生成的 ASL 代码。
 
-## <a name="before-you-begin"></a>开始之前
+## <a name="before-you-begin"></a>在开始之前
 
 在 WDK 安装的 **AcpiGenFx** 文件夹中找到以下文件。
 
@@ -71,15 +70,15 @@ AcpiGenFx 在本质上是声明性的：其输出仅为静态数据，而不是�
 
 1. 在 Visual Studio 中，打开一个新的 c # 控制台项目。
 
-1. 向 AutoAcpi.dll 程序集添加引用。 在 " **项目** " 菜单下，单击 " **添加引用**"。 单击 " **浏览** " 并导航到 AutoAcpi.dll 的位置。 单击“确定”。
+1. 向 AutoAcpi.dll 程序集添加引用。 在 " **项目** " 菜单下，单击 " **添加引用**"。 单击 " **浏览** " 并导航到 AutoAcpi.dll 的位置。 单击 **“确定”** 。
 
-1. 在 **解决方案资源管理器**中，展开 " **引用** " 并选择 " **acpigenfx**"。 查看对象浏览器 (**视图 &gt; 对象浏览器**) 中的对象。
+1. 在 **解决方案资源管理器** 中，展开 " **引用** " 并选择 " **acpigenfx**"。 查看对象浏览器 (**视图 &gt; 对象浏览器**) 中的对象。
 
 1. 目标 .NET Framework 4.5 或更高版本。 打开项目属性。 在 " **应用程序** " 页上，确保 " **目标框架** " 设置为 **.NET Framework 4.5**。
 
 1. `Using`在应用程序的代码开头添加 AutoAcpi 对象的指令。
 
-1. 创建平台对象。 根据你的体系结构，通过调用**CreateArmPlatform**或**Createx86Platform**实例化**平台**对象。 指定 *OEMID*、 *OEMTableID*、 *Creator*、 *Revision*和 *FileName*。
+1. 创建平台对象。 根据你的体系结构，通过调用 **CreateArmPlatform** 或 **Createx86Platform** 实例化 **平台** 对象。 指定 *OEMID*、 *OEMTableID*、 *Creator*、 *Revision* 和 *FileName*。
 
 1. 调用 **WriteAsl** 以写入文件。
 
@@ -109,7 +108,7 @@ AcpiGenFx 在本质上是声明性的：其输出仅为静态数据，而不是�
 
 1. 单击 " **开始** " 生成并运行应用。 Visual Studio 会在 " **输出** " 窗口中显示生成进度。  (如果 "**输出**" 窗口不可见，请从 "**视图**" 菜单中选择 "**输出**"。 ) 。
 
-1. 打开名为 "*项目* \\ bin \\ *调试" 或 "发布*输出" 的文件夹 \\ 。 Output 文件夹包含由应用程序生成的文件。 查看 SSDT. asl 的内容。
+1. 打开名为 "*项目* \\ bin \\ *调试" 或 "发布* 输出" 的文件夹 \\ 。 Output 文件夹包含由应用程序生成的文件。 查看 SSDT. asl 的内容。
 
     下面是前面示例的输出。
 
@@ -247,7 +246,7 @@ AcpiGenFx 在本质上是声明性的：其输出仅为静态数据，而不是�
 </tbody>
 </table>
 
-若要查看完整列表，请在 **对象浏览器**中打开 AcpiGenFx。 使用 IntelliSense 确定 (的方法和这些对象公开的参数) 和属性。 有关演示如何添加类并设置上表中列出的属性的示例代码，请参阅 DSDTSamples 项目。
+若要查看完整列表，请在 **对象浏览器** 中打开 AcpiGenFx。 使用 IntelliSense 确定 (的方法和这些对象公开的参数) 和属性。 有关演示如何添加类并设置上表中列出的属性的示例代码，请参阅 DSDTSamples 项目。
 
 ## <a name="add-debug-support"></a>添加调试支持
 
@@ -370,7 +369,7 @@ void * ReferenceDBG2Table(void) {
 
 ## <a name="add-an-acpi-description-for-a-peripheral-device-in-the-ssdt"></a>为 SSDT 中的外围设备添加 ACPI 说明
 
-1. 通过调用 **CreateArmPlatform** 或 **Createx86Platform**创建平台对象。
+1. 通过调用 **CreateArmPlatform** 或 **Createx86Platform** 创建平台对象。
 
 1. 将 **SSDT** 属性设置为 true。 这向框架表明，此表是 SSDT。
 

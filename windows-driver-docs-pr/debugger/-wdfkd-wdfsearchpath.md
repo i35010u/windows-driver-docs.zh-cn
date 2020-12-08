@@ -1,9 +1,8 @@
 ---
 title: wdfkd.wdfsearchpath
-description: Wdfkd.wdfsearchpath 扩展设置格式设置为内核模式驱动程序框架 (KMDF) 错误日志记录的文件的搜索路径。
-ms.assetid: cb52dc07-00b3-47d3-8636-4a6cd5ff3e29
+description: Wdfkd wdfsearchpath 扩展设置 Kernel-Mode Driver Framework (KMDF) 错误日志记录的格式设置文件的搜索路径。
 keywords:
-- wdfkd.wdfsearchpath Windows 调试
+- wdfkd wdfsearchpath Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -14,53 +13,53 @@ api_location:
 api_type:
 - DllExport
 ms.localizationpriority: medium
-ms.openlocfilehash: ccf2ce7ca4ac573a2fd419ef2ae9630f7226983b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c2e6bc35e6d05ed775827362037c0acfe0e3dfbd
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63323469"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96802025"
 ---
 # <a name="wdfkdwdfsearchpath"></a>!wdfkd.wdfsearchpath
 
 
-**！ Wdfkd.wdfsearchpath**扩展格式设置为内核模式驱动程序框架 (KMDF) 错误日志记录的文件设置的搜索路径。
+**！ Wdfkd wdfsearchpath** 将 Kernel-Mode Driver FRAMEWORK (KMDF) 错误日志记录的格式设置文件的搜索路径。
 
 ```dbgcmd
 !wdfkd.wdfsearchpath Path
 ```
 
-## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>参数
+## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>Parameters
 
 
-<span id="_______Path______"></span><span id="_______path______"></span><span id="_______PATH______"></span> *路径*   
+<span id="_______Path______"></span><span id="_______path______"></span><span id="_______PATH______"></span>*路径*   
 包含 KMDF 格式设置文件的目录的路径。
 
-## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 
 Wdfkd.dll
 
-## <a name="span-idframeworksspanspan-idframeworksspanspan-idframeworksspanframeworks"></a><span id="Frameworks"></span><span id="frameworks"></span><span id="FRAMEWORKS"></span>框架
+## <a name="span-idframeworksspanspan-idframeworksspanspan-idframeworksspanframeworks"></a><span id="Frameworks"></span><span id="frameworks"></span><span id="FRAMEWORKS"></span>协作
 
 
 KMDF 1，UMDF 2
 
-## <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+## <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
 
-有关详细信息，请参阅[内核模式驱动程序框架调试](kernel-mode-driver-framework-debugging.md)。
+有关详细信息，请参阅 [内核模式驱动程序框架调试](kernel-mode-driver-framework-debugging.md)。
 
 <a name="remarks"></a>备注
 -------
 
-KMDF 格式设置文件包含 Windows Driver Kit (WDK) 中。 格式设置文件的路径取决于你 WDK 的安装目录和已安装 WDK 的版本。 KMDF 格式设置文件具有扩展名 tmf （跟踪消息格式）。 若要确定搜索路径，请浏览或搜索 WDK 安装的文件名称的窗体 Wdf*VersionNumber*.tmf。 下面的示例演示如何使用 **！ wdfkd.wdfsearchpath**扩展。
+KMDF 格式设置文件包含在 (WDK) 的 Windows 驱动程序工具包中。 格式设置文件的路径取决于 WDK 的安装目录以及已安装的 WDK 版本。 KMDF 格式设置文件具有扩展名 tmf (跟踪消息格式) 。 若要确定搜索路径，请浏览或搜索你的 WDK 安装，查找格式为 Wdf *VersionNumber*. tmf 的文件名。 下面的示例演示如何使用 **！ wdfkd. wdfsearchpath** 扩展。
 
 ```dbgcmd
 kd> !wdfsearchpath C:\WinDDK\7600\tools\tracing\amd64
 ```
 
-跟踪\_格式\_搜索\_PATH 环境变量还可以控制搜索路径中，但 **！ wdfkd.wdfsearchpath**扩展的优先级高于搜索路径的跟踪\_格式\_搜索\_路径指定。
+跟踪 \_ 格式 \_ 搜索 \_ 路径环境变量还控制搜索路径，但 **！ wdfkd wdfsearchpath** 扩展的优先级高于跟踪 \_ 格式 \_ 搜索路径指定的搜索路径 \_ 。
 
 <a name="requirements"></a>要求
 ------------

@@ -1,7 +1,6 @@
 ---
 title: 微型端口驱动程序发送和接收操作
 description: 微型端口驱动程序发送和接收操作
-ms.assetid: f495cf1f-9896-4259-b885-cff4a0112d17
 keywords:
 - 微型端口驱动程序 WDK 网络，发送数据
 - NDIS 微型端口驱动程序 WDK，发送数据
@@ -11,12 +10,12 @@ keywords:
 - 接收数据 WDK 网络
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 39af3a3c9ad2ab72098d0d4e3ac9d7763d8db6f8
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 8e33f682184025834fb50c6e68b5e03627514178
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89215562"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96802323"
 ---
 # <a name="miniport-driver-send-and-receive-operations"></a>微型端口驱动程序发送和接收操作
 

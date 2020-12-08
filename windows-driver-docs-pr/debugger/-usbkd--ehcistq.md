@@ -1,9 +1,8 @@
 ---
-title: usbkd _ehcistq
-description: _Ehcistq usbkd 命令显示 usbehci _HCD_QUEUEHEAD_DESCRIPTOR 结构。
-ms.assetid: 282206D2-7F4A-4EBA-A874-F1744F218194
+title: usbkd._ehcistq
+description: Usbkd._ehcistq 命令显示 usbehci _HCD_QUEUEHEAD_DESCRIPTOR 结构。
 keywords:
-- usbkd _ehcistq Windows 调试
+- usbkd._ehcistq Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 0345782260de603cba32210372d39717638540c8
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 35eb7b99c0a6f50a8491a3de890d4ae602292f98
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89213592"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96802037"
 ---
 # <a name="usbkd_ehcistq"></a>！ usbkd。 \_ehcistq
 
 
-**！ Usbkd。 \_ehcistq**命令显示**usbehci！ \_HCD \_ QUEUEHEAD \_ 描述符**结构。
+**！ Usbkd。 \_ehcistq** 命令显示 **usbehci！ \_HCD \_ QUEUEHEAD \_ 描述符** 结构。
 
 ```dbgcmd
 !usbkd._ehciep StructAddr

@@ -2,23 +2,22 @@
 title: IRP_MN_WRITE_CONFIG
 description: 具有配置空间的总线的总线驱动程序必须为其子设备处理此请求 (子 PDOs) 。 函数和筛选器驱动程序不处理此请求。
 ms.date: 08/12/2017
-ms.assetid: d57c30b8-83bd-41c9-906d-b8c95f8ca54e
 keywords:
-- IRP_MN_WRITE_CONFIG 内核模式驱动程序体系结构
+- IRP_MN_WRITE_CONFIG Kernel-Mode 驱动程序体系结构
 ms.localizationpriority: medium
-ms.openlocfilehash: dee3c3f8e00f8cd6fe66cb65b2a118c033229aae
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: c12a65994088188a4ab23bf31439cac3d2756071
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107286"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801683"
 ---
 # <a name="irp_mn_write_config"></a>IRP \_ MN \_ 写入 \_ 配置
 
 
 具有配置空间的总线的总线驱动程序必须为其子设备处理此请求 (子 PDOs) 。 函数和筛选器驱动程序不处理此请求。
 
-## <a name="value"></a>值
+## <a name="value"></a>“值”
 
 0x10
 
@@ -49,7 +48,7 @@ ULONG Length
 不同的总线驱动程序可以采用不同的方式解释结构成员，但成员通常定义如下：
 
 <a href="" id="whichspace"></a>**WhichSpace**  
-指定配置空间。 有关可以为 **WhichSpace**指定的值的信息，请参阅 [**IRP \_ MN \_ READ \_ CONFIG**](irp-mn-read-config.md)。
+指定配置空间。 有关可以为 **WhichSpace** 指定的值的信息，请参阅 [**IRP \_ MN \_ READ \_ CONFIG**](irp-mn-read-config.md)。
 
 <a href="" id="buffer"></a>**宽限**  
 指向包含要写入的数据的缓冲区。 缓冲区的格式是特定于总线的。
@@ -68,7 +67,7 @@ ULONG Length
 ## <a name="io-status-block"></a>I/o 状态块
 
 
-总线驱动程序将**Irp- &gt; IoStatus**设置为状态 \_ 成功，或设置为适当的错误状态，如 \_ 状态 \_ 无效 \_ 的参数*n*、状态 " \_ 没有 \_ 此类 \_ 设备" 或 "状态 \_ 设备 \_ 未就绪" \_ 。
+总线驱动程序将 **Irp- &gt; IoStatus** 设置为状态 \_ 成功，或设置为适当的错误状态，如 \_ 状态 \_ 无效 \_ 的参数 *n*、状态 " \_ 没有 \_ 此类 \_ 设备" 或 "状态 \_ 设备 \_ 未就绪" \_ 。
 
 成功时，总线驱动程序会将 **Irp- &gt; IoStatus** 设置为写入的字节数。
 
@@ -79,7 +78,7 @@ ULONG Length
 
 总线驱动程序为其子设备处理此 IRP (子 PDOs) 。
 
-函数和筛选器驱动程序不处理此 IRP;它们将其传递到下一个较低的驱动程序，而不会更改 ** &gt; IoStatus** ，并且不会设置 [*IoCompletion*](/windows-hardware/drivers/ddi/wdm/nc-wdm-io_completion_routine) 例程。
+函数和筛选器驱动程序不处理此 IRP;它们将其传递到下一个较低的驱动程序，而不会更改 **&gt; IoStatus** ，并且不会设置 [*IoCompletion*](/windows-hardware/drivers/ddi/wdm/nc-wdm-io_completion_routine) 例程。
 
 请参阅 [即插即用](./introduction-to-plug-and-play.md) ，了解用于处理 [即插即用次要 irp](plug-and-play-minor-irps.md)的一般规则。
 
@@ -91,7 +90,7 @@ ULONG Length
 
 -   从分页池分配一个缓冲区，并使用要写入的数据对其进行初始化。
 
--   在 IRP 的下一个 i/o 堆栈位置设置值：将 **MajorFunction** 设置为 [**irp \_ MJ \_ PNP**](irp-mj-pnp.md)，将 **MinorFunction** 设置为 **irp \_ MN \_ 写入 \_ CONFIG**，并在 **ReadWriteConfig**中设置相应的值。
+-   在 IRP 的下一个 i/o 堆栈位置设置值：将 **MajorFunction** 设置为 [**irp \_ MJ \_ PNP**](irp-mj-pnp.md)，将 **MinorFunction** 设置为 **irp \_ MN \_ 写入 \_ CONFIG**，并在 **ReadWriteConfig** 中设置相应的值。
 
 -   将 **IoStatus** 初始化为 \_ 不 \_ 受支持的状态。
 

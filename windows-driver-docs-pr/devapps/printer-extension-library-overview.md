@@ -1,15 +1,14 @@
 ---
 title: UWP 设备应用的打印机扩展库概述
 description: 本主题介绍了打印机扩展库，这是一个可帮助设备制造商为其打印机写入 UWP 设备应用程序的库。
-ms.assetid: A47B17CE-BF5A-4C02-807C-890F315A13E0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6d304e031c9c06fb28c0211cf93545145e8ca040
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 7fd52e323711542eff63cb84b14dd79c81743d57
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91734201"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96802671"
 ---
 # <a name="printer-extension-library-overview-for-uwp-device-apps"></a>UWP 设备应用的打印机扩展库概述
 
@@ -50,7 +49,7 @@ ms.locfileid: "91734201"
 
 -   **PrinterNotificationHelper.cs** 演示如何显示通知的 toast UI。
 
-**注意**   PrinterExtensionHelperLibrary 程序集的**输出类型**是在 "项目属性" 窗口的 "**应用程序**" 页上指定的。
+**注意**  PrinterExtensionHelperLibrary 程序集的 **输出类型** 是在 "项目属性" 窗口的 " **应用程序** " 页上指定的。
 
  
 

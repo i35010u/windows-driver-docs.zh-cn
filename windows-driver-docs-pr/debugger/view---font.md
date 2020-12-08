@@ -1,17 +1,16 @@
 ---
-title: 视图字体
-description: 视图字体
-ms.assetid: 808cd0e5-5433-4705-830e-acf1087a6df5
+title: 查看字体
+description: 查看字体
 keywords:
-- 视图字体
+- 查看字体
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3b985a1dff12f1ffe5f727a72375930fa70d2978
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 77af2baceb67079a7d5e1790134ab5c982e88725
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63378563"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96802929"
 ---
 # <a name="view--font"></a>视图 | 字体
 
@@ -19,19 +18,19 @@ ms.locfileid: "63378563"
 ## <span id="ddk_view_font_dbg"></span><span id="DDK_VIEW_FONT_DBG"></span>
 
 
-单击**字体**上**视图**菜单更改显示在调试窗口中的信息的字体。
+在 "**视图**" 菜单上单击 "**字体**" 可更改 "调试信息" 窗口中显示的字体。
 
-此命令是等效于单击**字体**按钮 (![字体按钮的屏幕截图](images/tbfont.png)) 工具栏上。
+此命令等效于在工具栏上 **Font** 单击 " ![ 字体" 按钮 (屏幕截图) 的 "字体" 按钮 ](images/tbfont.png) 。
 
-### <a name="span-iddialogboxspanspan-iddialogboxspandialog-box"></a><span id="dialog_box"></span><span id="DIALOG_BOX"></span>对话框
+### <a name="span-iddialog_boxspanspan-iddialog_boxspandialog-box"></a><span id="dialog_box"></span><span id="DIALOG_BOX"></span>对话框
 
-当您单击**字体**，则**字体**对话框随即出现。 在此对话框中，您可以对从适当的列表中，选择字体、 样式和大小。 此外可以从下拉列表菜单，以获取相应的字母表中选择的脚本。 若要接受所做的更改，请单击**确定**。
+单击 " **字体**" 时，将显示 " **字体** " 对话框。 在此对话框中，可以从适当的列表中选择字体、样式和大小。 您还可以从下拉菜单中选择该脚本以获取适当的字母表。 若要接受更改，请单击 **"确定"**。
 
-单击**取消**可取消对字体更改。
+单击 " **取消** " 可取消对字体的更改。
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-有关如何将调试信息窗口中的字符显示更改的详细信息，请参阅[更改文本属性](changing-text-properties.md)。
+有关如何更改 "调试信息" 窗口中的字符显示的详细信息，请参阅 [更改文本属性](changing-text-properties.md)。
 
  
 

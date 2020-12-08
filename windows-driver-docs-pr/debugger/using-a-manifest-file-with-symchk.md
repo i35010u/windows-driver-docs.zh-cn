@@ -1,15 +1,14 @@
 ---
 title: 将清单文件与 SymChk 配合使用
 description: 将清单文件与 SymChk 配合使用
-ms.assetid: ee5d0c39-1838-4595-adf4-6cd1261a57c8
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e7db76f75ecab5769c2ce33554f3c5500b247fdc
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6867a05e345451abd5669ea932edf61814cb5a55
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63367969"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803203"
 ---
 # <a name="using-a-manifest-file-with-symchk"></a>将清单文件与 SymChk 配合使用
 
@@ -17,19 +16,19 @@ ms.locfileid: "63367969"
 ## <span id="ddk_using_symchk_dtoolq"></span><span id="DDK_USING_SYMCHK_DTOOLQ"></span>
 
 
-在某些情况下，您可能需要检索位于独立的计算机; 的文件的符号即，计算机不在任何网络上或位于具有无符号存储区的网络。 在这种情况下，可以使用以下过程来检索的符号。
+在某些情况下，可能需要检索位于独立计算机上的文件的符号;也就是说，计算机不在任何网络上，或位于没有符号存储的网络上。 在这种情况下，可以使用以下过程来检索符号。
 
-1.  运行与 SymChk **/om**参数来创建描述您想要检索的符号的文件的清单文件。
+1.  使用 **/om** 参数运行 SymChk，以创建描述要检索其符号的文件的清单文件。
 
 2.  将清单文件移动到具有符号存储区的网络。
 
-3.  运行与 SymChk **/im**参数，检索在清单文件中所述的文件的符号。
+3.  运行带有 **/im** 参数的 SymChk，以检索清单文件中所描述文件的符号。
 
-4.  将符号文件移回的独立计算机。
+4.  将符号文件移回独立计算机。
 
 ### <a name="span-idexamplespanspan-idexamplespanexample"></a><span id="example"></span><span id="EXAMPLE"></span>示例
 
-假设 yourApp.exe 独立计算机上运行。 以下命令创建描述调试 yourApp.exe pocess 所需的所有符号的清单文件。
+假设 yourApp.exe 在独立的计算机上运行。 下面的命令创建一个清单文件，用于描述调试 yourApp.exe pocess 所需的所有符号。
 
 ```dbgcmd
 C:\>SymChk /om c:\Manifest\man.txt /ie yourApp.exe
@@ -38,7 +37,7 @@ SYMCHK: FAILED files = 0
 SYMCHK: PASSED + IGNORED files = 28
 ```
 
-现在假定您已移到符号存储区中有权访问的网络上的其他计算机的清单文件。 以下命令检索在清单文件中所述的符号，并将其置于 mySymbols 文件夹中。
+现在假设已将清单文件移动到可访问符号存储区的网络上的另一台计算机。 下面的命令检索清单文件中描述的符号，并将其放在 mySymbols 文件夹中。
 
 ```dbgcmd
 C:\>SymChk /im c:\FolderOnOtherComputer\man.txt /s srv*c:\mysymbols*\\aServer\symbols
@@ -49,7 +48,7 @@ SYMCHK: FAILED files = 28
 SYMCHK: PASSED + IGNORED files = 28
 ```
 
-现在可以将这些符号移动到独立的计算机，并将它们用于调试。
+现在，你可以将符号移到隔离的计算机并将其用于调试。
 
  
 

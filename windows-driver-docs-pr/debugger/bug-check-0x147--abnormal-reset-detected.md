@@ -1,9 +1,8 @@
 ---
-title: Bug Check 0x147 ABNORMAL_RESET_DETECTED
-description: ABNORMAL_RESET_DETECTED bug 检查具有 0x00000147 值。 这表示 Windows 发生了异常的重置。
-ms.assetid: 83D537CD-AEDA-466F-A150-411131DE54B0
+title: Bug 检查 0x147 ABNORMAL_RESET_DETECTED
+description: ABNORMAL_RESET_DETECTED bug 检查的值为0x00000147。 这表明 Windows 耗费了异常重置。
 keywords:
-- Bug Check 0x147 ABNORMAL_RESET_DETECTED
+- Bug 检查 0x147 ABNORMAL_RESET_DETECTED
 - ABNORMAL_RESET_DETECTED
 ms.date: 05/23/2017
 topic_type:
@@ -13,23 +12,23 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 7f890edba01df04f849094beb15fd186761426df
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: 8b8c7b17761ae253a5eb862ba7e1a65725531f01
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67520125"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96802019"
 ---
-# <a name="bug-check-0x147-abnormalresetdetected"></a>Bug 检查 0x147：异常\_重置\_检测到
+# <a name="bug-check-0x147-abnormal_reset_detected"></a>Bug 检查0x147： \_ 检测到异常重置 \_
 
 
-异常\_重置\_检测到错误检查的值为 0x00000147。 这表示 Windows 发生了异常的重置。 已保存任何上下文或异常记录，并检测错误回调函数不调用。
+\_检测到的异常重置 \_ bug 检查的值为0x00000147。 这表明 Windows 耗费了异常重置。 未保存上下文或异常记录，并且未调用错误检查回调。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题面向程序员。 如果您是在使用计算机时收到蓝屏错误代码的客户，请参阅[蓝屏错误疑难解答](https://www.windows.com/stopcode)。
 
 
-## <a name="abnormalresetdetected-parameters"></a>异常\_重置\_检测到参数
+## <a name="abnormal_reset_detected-parameters"></a>\_检测到异常重置 \_ 参数
 
 
 无

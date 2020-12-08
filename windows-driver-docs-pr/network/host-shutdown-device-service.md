@@ -1,27 +1,26 @@
 ---
 title: HOST 关闭设备服务
-description: 本主题提供适用于移动宽带接口模型（MBIM）的设备的指南，以便在 CID_MBIM_DEVICE_SERVICES 查询时实现和报告所述的设备服务。
-ms.assetid: 62BFC796-EDB2-489E-B487-65E2DD7C4256
+description: 本主题提供适用于移动宽带接口模型 (MBIM) 兼容设备在 CID_MBIM_DEVICE_SERVICES 查询时实现和报告所述设备服务的指南。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 46de4fa87a5b0731f114e4ff80583e457db8b80e
-ms.sourcegitcommit: ca5045a739eefd6ed14b9dbd9249b335e090c4e9
+ms.openlocfilehash: 7c0b7b52c2eaf59ab199e111cfcf6d61cf127ac8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/06/2020
-ms.locfileid: "85968251"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801653"
 ---
 # <a name="host-shutdown-device-service"></a>HOST 关闭设备服务
 
 
-本主题提供适用于移动宽带接口模型（MBIM）的设备在由 CID \_ MBIM 设备服务查询时实现和报告所述设备服务的指南 \_ \_ 。
+本主题提供适用于移动宽带接口模型 (MBIM) 兼容设备在由 CID \_ MBIM 设备服务查询时实现和报告所述设备服务的指南 \_ \_ 。
 
 本主题中的信息适用于 Windows 8 及更高版本。
 
 ## <a name="microsoft-host-shutdown"></a>Microsoft 主机关闭
 
 
-MBIM 兼容设备在由 CID \_ MBIM 设备服务查询时实现并报告以下设备服务 \_ \_ 。 在[USB NCM 移动宽带接口模型（MBIM） v1.0 规范](https://go.microsoft.com/fwlink/p/?linkid=320791)的第10.1 节中定义了现有的已知服务。 Microsoft 对此进行了扩展，定义了以下服务。
+MBIM 兼容设备在由 CID \_ MBIM 设备服务查询时实现并报告以下设备服务 \_ \_ 。 在 [USB NCM Mobile 宽带接口模型](https://go.microsoft.com/fwlink/p/?linkid=320791)第10.1 节中定义了现有的已知服务 (MBIM) v1.0 规范。 Microsoft 对此进行了扩展，定义了以下服务。
 
 服务名称 = **Microsoft 主机关闭**
 
@@ -35,7 +34,7 @@ UUID 值 = **883b7c26-985f-43fa-9804-27d7fb80959c**
 | CID                          | 最低操作系统版本       |
 |------------------------------|--------------------------|
 | CID \_ MBIM \_ MSHOSTSHUTDOWN    | Windows 8                |
-| CID \_ MBIM \_ MSHOSTPRESHUTDOWN | Windows 10 版本1511 |
+| CID \_ MBIM \_ MSHOSTPRESHUTDOWN | Windows 10 版本 1511 |
 
  
 

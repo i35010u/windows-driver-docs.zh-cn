@@ -1,15 +1,14 @@
 ---
 title: Microsoft 蓝牙测试平台-支持音频的外设无线电
 description: 蓝牙测试平台 (BTP) 支持的硬件 (音频) 。
-ms.assetid: a6beeecb-5967-4e08-bfe2-b8aae26861ad
 ms.date: 2/14/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 305635c8eb8503e516d5491f0b60894d0260850f
-ms.sourcegitcommit: 6e6189e3b7f2b376607b507220bd538a296f5b4e
+ms.openlocfilehash: 7c636240686ebd92f8af03e54002df7839624677
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/18/2020
-ms.locfileid: "90799794"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803433"
 ---
 # <a name="audio-capable-peripheral-radios"></a>支持音频的外设无线收发器
 

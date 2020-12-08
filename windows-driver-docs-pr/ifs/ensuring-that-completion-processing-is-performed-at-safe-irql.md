@@ -1,18 +1,17 @@
 ---
 title: 确保在安全的 IRQL 上执行完成处理
 description: 确保在安全的 IRQL 上执行完成处理
-ms.assetid: 54487fba-2ced-4bcd-afa6-d56b351aa7d6
 keywords:
 - postoperation 回调例程 WDK 文件系统微筛选器，完成处理
 - 完成 i/o 请求 WDK 文件系统
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 02727b7837f1ada0766263fadfe2fbc110e0f66d
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: b97d4e4b61d8553bc1bfe3e5bcef680ee79dcb60
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89065250"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96802471"
 ---
 # <a name="ensuring-that-completion-processing-is-performed-at-safe-irql"></a>确保在安全的 IRQL 上执行完成处理
 
@@ -26,7 +25,7 @@ ms.locfileid: "89065250"
 
 第一种方法是，postoperation 回调例程挂起 i/o 操作，直到完成处理才能以 IRQL &lt; = APC \_ 级别执行。 此方法在 [Postoperation 回调例程中挂起 I/o 操作](pending-an-i-o-operation-in-a-postoperation-callback-routine.md)中进行了介绍。
 
-第二种方法是让微微筛选器驱动程序的 postoperation 回调例程来调用 [**FltDoCompletionProcessingWhenSafe**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltdocompletionprocessingwhensafe)。 仅当当前 IRQL 为 = 调度级别时， **FltDoCompletionProcessingWhenSafe** pends i/o 操作 &gt; \_ 。 否则，此例程会立即执行微筛选器驱动程序的 **SafePostCallback** 例程。 此方法在 **FltDoCompletionProcessingWhenSafe**中进行了介绍。
+第二种方法是让微微筛选器驱动程序的 postoperation 回调例程来调用 [**FltDoCompletionProcessingWhenSafe**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltdocompletionprocessingwhensafe)。 仅当当前 IRQL 为 = 调度级别时， **FltDoCompletionProcessingWhenSafe** pends i/o 操作 &gt; \_ 。 否则，此例程会立即执行微筛选器驱动程序的 **SafePostCallback** 例程。 此方法在 **FltDoCompletionProcessingWhenSafe** 中进行了介绍。
 
  
 

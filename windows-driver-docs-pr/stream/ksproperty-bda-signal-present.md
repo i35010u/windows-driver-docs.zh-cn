@@ -1,7 +1,6 @@
 ---
 title: '\_存在 KSPROPERTY BDA \_ 信号 \_'
 description: 客户端使用 KSPROPERTY \_ BDA \_ 信号 \_ 来确定是否存在信号载波。
-ms.assetid: d3dbe0f7-a308-48e2-9751-0131fa2b512d
 keywords:
 - KSPROPERTY_BDA_SIGNAL_PRESENT 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e5f97ab88f480c9ccb8e276d0f6d9fd3b5c36df5
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 709a909b8a0945c388ba28cd104062d773bd7360
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89192155"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803467"
 ---
 # <a name="ksproperty_bda_signal_present"></a>\_存在 KSPROPERTY BDA \_ 信号 \_
 
@@ -61,7 +60,7 @@ ms.locfileid: "89192155"
 
  
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 KSP **NodeId** \_ 节点的节点1指定了控制节点的标识符，或设置为−1以指定 pin。
@@ -78,7 +77,7 @@ KSP **NodeId** \_ 节点的节点1指定了控制节点的标识符，或设置�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Bdamedia (包含 Bdamedia) </td>
 </tr>
 </tbody>

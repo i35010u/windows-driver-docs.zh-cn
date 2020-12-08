@@ -1,7 +1,6 @@
 ---
 title: 电视音频更改事件
 description: 电视音频更改事件
-ms.assetid: 85ba81f0-9443-42c7-9886-15b6b702f287
 keywords:
 - TV 音频更改事件 WDK 视频捕获
 - 事件 WDK 视频捕获
@@ -9,12 +8,12 @@ keywords:
 - 音频更改事件 WDK 视频捕获
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 36af44765d9e0656a5075f374ee8595ac37e613a
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 2715877ab5d12b58a1476c161643aac95491f689
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107482"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96802141"
 ---
 # <a name="tv-audio-change-event"></a>电视音频更改事件
 

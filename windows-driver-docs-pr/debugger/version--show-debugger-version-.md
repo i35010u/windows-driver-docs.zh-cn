@@ -1,9 +1,8 @@
 ---
 title: version（显示调试器版本）
-description: 版本命令显示调试器和所有已加载的扩展 Dll 的版本信息。
-ms.assetid: 51819d56-c24f-41f2-9090-5787e24ea773
+description: 版本命令显示有关调试器和所有加载的扩展 Dll 的版本信息。
 keywords:
-- 版本 （显示调试器版本） Windows 调试
+- 版本 (显示调试器版本) Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,19 +11,19 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: ab081d7851337dd356c45254b8db9e517d431d9d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ff3b7c23cb1cfcc54d763e8fbd98159b4142a913
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63386430"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96802951"
 ---
 # <a name="version-show-debugger-version"></a>version（显示调试器版本）
 
 
-**版本**命令显示有关调试程序和所有已加载的扩展 Dll 的版本信息。 此命令还显示目标计算机的操作系统的当前版本。
+**版本** 命令显示有关调试器和所有加载的扩展 dll 的版本信息。 此命令还显示目标计算机操作系统的当前版本。
 
-不要将使用此命令相混淆[ **！ 版本 （显示 DLL 版本）** ](-version.md)扩展命令。
+请勿将此命令与 [**！ version (显示 DLL 版本)**](-version.md) extension 命令混淆。
 
 `version`
 
@@ -40,12 +39,12 @@ ms.locfileid: "63386430"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>模式</strong></p></td>
-<td align="left"><p>用户模式下，内核模式</p></td>
+<td align="left"><p><strong>交货</strong></p></td>
+<td align="left"><p>用户模式，内核模式</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>目标</strong></p></td>
-<td align="left"><p>实时、 崩溃转储</p></td>
+<td align="left"><p>实时，故障转储</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>平台</strong></p></td>
@@ -56,12 +55,12 @@ ms.locfileid: "63386430"
 
  
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[**CTRL + W （显示调试器版本）**](ctrl-w--show-debugger-version-.md)
+[**CTRL+W（显示调试器版本）**](ctrl-w--show-debugger-version-.md)
 
-[**vertarget （显示目标计算机版本）**](vertarget--show-target-computer-version-.md)
+[**vertarget（显示目标计算机版本）**](vertarget--show-target-computer-version-.md)
 
  
 

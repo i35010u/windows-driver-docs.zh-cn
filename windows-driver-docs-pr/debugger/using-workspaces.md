@@ -1,19 +1,18 @@
 ---
 title: 使用工作区
 description: 使用工作区
-ms.assetid: 2d729db2-a7c9-4905-a913-85d9b2a94e95
 keywords:
-- 工作区
-- 工作区概述
-- WinDbg 中，工作区
+- workspaces
+- 工作区，概述
+- WinDbg，工作区
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f3c0ba17a6f30b24e16ee422419e9f67028b5210
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ef6b8224b068815129109a6238d73724d1504fe9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63364720"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96802985"
 ---
 # <a name="using-workspaces"></a>使用工作区
 
@@ -21,9 +20,9 @@ ms.locfileid: "63364720"
 ## <span id="ddk_using_workspaces_dbg"></span><span id="DDK_USING_WORKSPACES_DBG"></span>
 
 
-当您退出 WinDbg 时，从而节省了中的会话配置*工作区*。 工作区，可轻松地保留您的设置从一个会话到另一个。 可以还将保存或手动清除工作区或甚至使用工作区保存仍在进行调试会话。
+退出 WinDbg 时，它会将会话配置保存在 *工作区* 中。 通过工作区，你可以轻松地将你的设置从一个会话保存到另一个会话。 您还可以手动保存或清除工作区，甚至使用工作区保存仍在进行中的调试会话。
 
-本部分包括以下主题：
+本节包括下列主题：
 
 [创建和打开工作区](creating-and-opening-a-workspace.md)
 

@@ -1,22 +1,21 @@
 ---
 title: 使用源文件
 description: 使用源文件
-ms.assetid: c6dfcb37-140f-43d8-aa15-14f0317b5e19
 keywords:
 - 调试器引擎 API，源
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 17241033ca0737b867016604a3b8cb941fcd16a9
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 86471aa513e2ab79feebb8859521380bcf1776ea
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89207341"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803065"
 ---
 # <a name="using-source-files"></a>使用源文件
 
 
-[调试器引擎](introduction.md#debugger-engine)维护*源路径*，该路径是包含与当前目标关联的源代码文件的目录和源服务器的列表。 调试器引擎可以在这些目录和源服务器中搜索源文件。 在符号文件的帮助下，调试器引擎可以将源文件中的行与目标内存中的位置匹配。
+[调试器引擎](introduction.md#debugger-engine)维护 *源路径*，该路径是包含与当前目标关联的源代码文件的目录和源服务器的列表。 调试器引擎可以在这些目录和源服务器中搜索源文件。 在符号文件的帮助下，调试器引擎可以将源文件中的行与目标内存中的位置匹配。
 
 有关将源文件用于调试器的概述，请参阅 [在源模式下进行调试](debugging-in-source-mode.md)。 有关源路径的概述，请参阅 [源路径](source-path.md)。 有关从调试器引擎使用源服务器的概述，请参阅 [使用源服务器](using-a-source-server.md)。
 
@@ -32,7 +31,7 @@ ms.locfileid: "89207341"
 
 若要执行相反的操作并查找与目标内存中某个位置相匹配的源文件的行，请使用 [**GetLineByOffset**](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugsymbols3-getlinebyoffset)。
 
-**注意**   源文件中的内存位置与行之间的关系不一定是一对一关系。 单行源代码可以与多个内存位置对应，而单个内存位置则对应于多行源代码。
+**注意**  源文件中的内存位置与行之间的关系不一定是一对一关系。 单行源代码可以与多个内存位置对应，而单个内存位置则对应于多行源代码。
 
  
 

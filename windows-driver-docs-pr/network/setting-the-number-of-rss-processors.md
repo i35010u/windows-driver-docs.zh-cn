@@ -1,19 +1,18 @@
 ---
 title: 设置 RSS 处理器数目
 description: 设置 RSS 处理器数目
-ms.assetid: c13db4a1-e345-4368-9bcd-afbd2fd8db7a
 keywords:
 - 处理器 WDK RSS
 - CPU 配置 WDK RSS
 ms.date: 09/21/2020
 ms.localizationpriority: medium
 ms.custom: contperfq1
-ms.openlocfilehash: c133152c10b25cb3bcb4b38e24c6dfd6362a4a33
-ms.sourcegitcommit: c8e2e10f99c015ea98a6cb8f2028638298af1e4f
+ms.openlocfilehash: 90a69c79a0df7c9cfc81da17473d62c0d8768ef1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90843466"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803499"
 ---
 # <a name="setting-the-number-of-rss-processors"></a>设置 RSS 处理器数目
 
@@ -30,9 +29,9 @@ ms.locfileid: "90843466"
 
 有关网络适配器 cmdlet 的完整列表，请参阅 [Windows PowerShell 中的网络适配器 cmdlet](/powershell/module/netadapter/)。
 
-在带有可伸缩网络包的 Microsoft Windows Server 2003 中，管理员可以在**HKEY \_ 本地 \_ 计算机 \\ \\ 系统 \\ CurrentControlSet \\ Services \\ Tcpip \\ 参数**中设置包含**MaxNumRssCpus**注册表关键字的 RSS cpu 的最大数目。 **MaxNumRssCpus**值是一个 DWORD 类型，如果不存在，NDIS 将使用默认值4。
+在带有可伸缩网络包的 Microsoft Windows Server 2003 中，管理员可以在 **HKEY \_ 本地 \_ 计算机 \\ \\ 系统 \\ CurrentControlSet \\ Services \\ Tcpip \\ 参数** 中设置包含 **MaxNumRssCpus** 注册表关键字的 RSS cpu 的最大数目。 **MaxNumRssCpus** 值是一个 DWORD 类型，如果不存在，NDIS 将使用默认值4。
 
-在 Windows Server 2008 中，管理员可在**HKEY \_ 本地 \_ 计算机 \\ \\ 系统 \\ CurrentControlSet \\ SERVICES \\ Ndis \\ 参数**中设置最大 RSS cpu 数量，其中包含**MaxNumRssCpus**注册表关键字。 **MaxNumRssCpus**值是一个 DWORD 类型，如果不存在，NDIS 将使用默认值4。 此注册表关键字还适用于 Windows Server 的更高版本。
+在 Windows Server 2008 中，管理员可在 **HKEY \_ 本地 \_ 计算机 \\ \\ 系统 \\ CurrentControlSet \\ SERVICES \\ Ndis \\ 参数** 中设置最大 RSS cpu 数量，其中包含 **MaxNumRssCpus** 注册表关键字。 **MaxNumRssCpus** 值是一个 DWORD 类型，如果不存在，NDIS 将使用默认值4。 此注册表关键字还适用于 Windows Server 的更高版本。
 
 若要避免复杂情况 (和未在实际硬件中实现的非现实情况) （其中可用硬件接收队列数量小于 RSS Cpu 数量），管理员不得将 **MaxNumRssCpus** 值设置为大于16的值。
 

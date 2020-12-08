@@ -1,7 +1,6 @@
 ---
 title: DEVPKEY_DrvPkg_DetailedDescription
 description: DEVPKEY_DrvPkg_DetailedDescription
-ms.assetid: ee9080d1-8c66-42b3-af48-cb1fbfc332e2
 keywords:
 - DEVPKEY_DrvPkg_DetailedDescription 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: b7e241cbd531ab9f38378ce8e4ecdab3284bfeda
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 9111b630613eff7bd7bb7074af88cd9670cdcb30
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90715558"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801745"
 ---
 # <a name="devpkey_drvpkg_detaileddescription"></a>DEVPKEY_DrvPkg_DetailedDescription
 

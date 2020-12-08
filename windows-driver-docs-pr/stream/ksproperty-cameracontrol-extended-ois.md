@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ CAMERACONTROL \_ 扩展 \_ OIS
 description: KSPROPERTY \_ CAMERACONTROL \_ EXTENDED \_ OIS 是一个属性 ID，用于控制驱动程序上 (OIS) 的视觉图像稳定性。
-ms.assetid: CF4F1283-1517-4F93-8554-FBD4B068A655
 keywords:
 - KSPROPERTY_CAMERACONTROL_EXTENDED_OIS 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 09/11/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: a632cdfcce2d71a67289a09d739d4fecad0a9254
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: e107bc595638c80e2d79e6fec67ae2da9c7a6ef1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89186591"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803461"
 ---
 # <a name="ksproperty_cameracontrol_extended_ois"></a>KSPROPERTY \_ CAMERACONTROL \_ 扩展 \_ OIS
 
@@ -44,7 +43,7 @@ ms.locfileid: "89186591"
 <tr class="odd">
 <td><p>版本 1</p></td>
 <td><p>筛选器</p></td>
-<td><p>同步</p></td>
+<td><p>Synchronous</p></td>
 </tr>
 </tbody>
 </table>
@@ -142,7 +141,7 @@ ms.locfileid: "89186591"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Ksmedia.h</td>
 </tr>
 </tbody>

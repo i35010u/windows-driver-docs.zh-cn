@@ -1,7 +1,6 @@
 ---
 title: cs
 description: Cs 扩展显示一个或多个关键部分或整个关键部分树。
-ms.assetid: 767ad508-013b-4cf7-808d-38ff64418879
 keywords:
 - cs Windows 调试
 ms.date: 11/15/2018
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 4a87d50f1bc945e2dd387c6b37bc02ad5bde044a
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: d0cc0b30872d6301ee077c41a920debc536d7434
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89216780"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803325"
 ---
 # <a name="cs"></a>!cs
 
 
-**！ Cs**扩展显示一个或多个关键部分或整个关键部分树。
+**！ Cs** 扩展显示一个或多个关键部分或整个关键部分树。
 
 ```dbgsyntax
 !cs [-s] [-l] [-o] 
@@ -35,7 +34,7 @@ ms.locfileid: "89216780"
 
 ## <a name="parameters"></a>参数
 
-参数 | 说明
+参数 | 描述
 |---------|-------------|
 **-s**  | 如果此信息可用，则显示每个关键节的初始化堆栈跟踪。
 **-l**  |仅显示锁定的关键部分。
@@ -45,7 +44,7 @@ ms.locfileid: "89216780"
 *EndAddress*   | 指定要在关键部分中搜索的地址范围的结尾。
 **-d**    | 显示与 DebugInfo 相关联的关键部分。
 *InfoAddress*   | 指定 DebugInfo 的地址。
-**-t**    | 显示临界区树。 必须先激活目标进程[应用程序验证工具](../devtest/application-verifier.md)，然后选择 "**检查锁使用情况**" 选项，然后才能使用 **-t**选项。
+**-t**    | 显示临界区树。 必须先激活目标进程 [应用程序验证工具](../devtest/application-verifier.md)，然后选择 "**检查锁使用情况**" 选项，然后才能使用 **-t** 选项。
 *TreeAddress*    | 指定临界区树的根地址。 如果省略此参数或指定零，则调试器将显示当前进程的关键部分树。
 **-?**    | 在 [调试器命令窗口](debugger-command-window.md)中显示此扩展的一些帮助文本。
 
@@ -60,7 +59,7 @@ Exts.dll
 
 #### <a name="remarks"></a>备注
 
-**！ Cs**扩展需要完整符号 (包括要调试的进程的类型信息) 和 Ntdll.dll。 如果没有 Ntdll.dll 的符号，请参阅 [安装 Windows 符号文件](installing-windows-symbol-files.md)。
+**！ Cs** 扩展需要完整符号 (包括要调试的进程的类型信息) 和 Ntdll.dll。 如果没有 Ntdll.dll 的符号，请参阅 [安装 Windows 符号文件](installing-windows-symbol-files.md)。
 
 下面的示例演示如何使用 **！ cs**。 下面的命令显示有关地址0x7803B0F8 的关键部分的信息并显示其初始化堆栈跟踪。
 
@@ -167,7 +166,7 @@ Level     Node       CS    Debug  InitThr EnterThr  WaitThr TryEnThr LeaveThr En
 
 -   **LeaveThr** 是上次调用 **LeaveCriticalSection** 的线程的 ID
 
--   **EnterCnt** 是 **EnterCriticalSection**的计数。
+-   **EnterCnt** 是 **EnterCriticalSection** 的计数。
 
 -   **WaitCnt** 是争用计数。
 

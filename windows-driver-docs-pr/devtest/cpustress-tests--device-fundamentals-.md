@@ -1,15 +1,14 @@
 ---
 title: CPU 压力测试（设备基础功能）
 description: CpuStress 测试将执行具有不同处理器利用率级别的设备 i/o 测试。
-ms.assetid: E546C3A3-89E6-450B-90D3-4F349A3EC495
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 630a0fbbdaaff2de4db35d714d062843faf3229a
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: d088cbdbfd8c5ddba1e48f9918cea71a6b9f2880
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104352"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801837"
 ---
 # <a name="cpustress-tests-device-fundamentals"></a>CPU 压力测试（设备基础功能）
 

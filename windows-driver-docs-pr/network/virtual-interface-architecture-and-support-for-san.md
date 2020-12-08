@@ -1,20 +1,19 @@
 ---
 title: 虚拟接口体系结构和 SAN 支持
 description: 虚拟接口体系结构和 SAN 支持
-ms.assetid: 83d28f33-7354-4f59-8b01-4842286f12fb
 keywords:
-- 系统区域网络 WDK、 VI 体系结构
-- SAN WDK、 VI 体系结构
+- 系统区域网络 WDK，VI 体系结构
+- SAN WDK，VI 体系结构
 - VI 体系结构 WDK San
 - 虚拟接口体系结构 WDK San
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b6448456a819ba9501651ad91bdcde40e85d7e01
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8abf5731f159c837e71ed2b13d79c202a5b65d74
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63345957"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96802257"
 ---
 # <a name="virtual-interface-architecture-and-support-for-san"></a>虚拟接口体系结构和 SAN 支持
 
@@ -22,11 +21,11 @@ ms.locfileid: "63345957"
 
 
 
-虚拟接口 (VI) 体系结构，建议的 Compaq、 Intel 和 Microsoft，是 SAN NIC 和主机计算机系统之间的接口的设计。 此体系结构表示系统区域网络 (SAN) 方面的设计仅一个的方面。 有共享相同的基本特征的备选设计。
+虚拟接口 (由 Compaq、Intel 和 Microsoft 推荐的 VI) 体系结构，是 SAN NIC 与主计算机系统之间的接口设计。 此体系结构只代表了一种与系统区域网络 (SAN) 相关的设计方面。 有一些其他设计共享相同的基本特征。
 
-VI 体系结构定义的功能和特征的一组互连 SAN 设备。 例如，VI 体系结构包括支持远程直接内存访问 (RDMA) 操作。 VI 体系结构还介绍了与 SAN NIC 管理终结点和连接，并处理数据传输请求进行交互的特定机制。
+VI 体系结构为 SAN 互连定义一组功能和特性。 例如，VI 体系结构支持 (RDMA) 操作的远程直接内存访问。 VI 体系结构还介绍了与 SAN NIC 交互以管理终结点和连接以及处理数据传输请求的特定机制。
 
-Windows 套接字开关适用于广泛的一类 SAN 互连之外使用 VI 体系结构。 Windows 套接字的 SAN 扩展为特定的 SAN nic。 以下服务提供程序接口 (SPI) 防护罩将开关由硬件接口 该硬件接口封装在 SAN 服务提供程序 DLL 和其内核模式代理驱动程序。 由 SAN 供应商提供，这些组件。 SAN 扩展的详细信息，请参阅[Windows 套接字的 SPI 扩展 San](windows-sockets-spi-extensions-for-sans.md)。
+Windows 套接字交换机与使用 VI 体系结构的更广泛的 SAN 互连类配合使用。  (SPI) 为 Windows 套接字服务提供程序接口提供的 SAN 扩展屏蔽了特定 SAN NIC 的硬件接口中的开关。 该硬件接口封装在 SAN 服务提供程序 DLL 及其内核模式代理驱动程序中。 这些组件由 SAN 供应商提供。 有关 SAN 扩展的详细信息，请参阅 [适用于 san 的 Windows 套接 SPI 扩展](windows-sockets-spi-extensions-for-sans.md)。
 
  
 

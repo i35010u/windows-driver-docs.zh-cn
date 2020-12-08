@@ -1,15 +1,14 @@
 ---
 title: 如何使用 UWP 设备应用自定义相机选项
 description: 在 Windows 8.1 中，UWP 设备应用允许设备制造商自定义在某些照相机应用中显示更多相机选项的弹出窗口。
-ms.assetid: 4BA34A3F-3C0D-4DDC-BA0A-E62AE9A6A93A
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ae77300c18c19746fddb2729c2293001fbc42844
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: c4b793e1cc26994af7b0cfa8f0421ca48b73c176
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91732967"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96802691"
 ---
 # <a name="how-to-customize-camera-options-with-a-uwp-device-app"></a>如何使用 UWP 设备应用自定义相机选项
 
@@ -58,9 +57,9 @@ ms.locfileid: "91732967"
 
 为了使 Windows 能够识别应用程序可以为更多相机选项提供自定义浮出控件，它必须注册照相机设置扩展。 此扩展在元素中声明 `Extension` ， `Category` 特性设置为的值 `windows.cameraSettings` 。 在 c # 和 c + + 示例中， `Executable` 特性设置为 `DeviceAppForWebcam.exe` ， `EntryPoint` 特性设置为 `DeviceAppForWebcam.App` 。
 
-可以在 Microsoft Visual Studio 中的清单设计器的 " **声明** " 选项卡上添加 "相机设置" 扩展。 你还可以使用 XML (文本) 编辑器手动编辑应用包清单 XML。 右键单击**解决方案资源管理器**中的**appxmanifest.xml**文件以编辑选项。
+可以在 Microsoft Visual Studio 中的清单设计器的 " **声明** " 选项卡上添加 "相机设置" 扩展。 你还可以使用 XML (文本) 编辑器手动编辑应用包清单 XML。 右键单击 **解决方案资源管理器** 中的 **appxmanifest.xml** 文件以编辑选项。
 
-此示例显示元素中的相机设置扩展 `Extension` ，因为它显示在应用包清单文件 **appxmanifest.xml**中。
+此示例显示元素中的相机设置扩展 `Extension` ，因为它显示在应用包清单文件 **appxmanifest.xml** 中。
 
 ```XML
 <?xml version="1.0" encoding="utf-8"?>
@@ -141,7 +140,7 @@ ms.locfileid: "91732967"
 
 如果你的应用已声明照相机设置扩展，则它必须实现一个 `OnActivated` 方法来处理应用激活事件。 当 UWP 应用使用 [CameraCaptureUI](/uwp/api/Windows.Media.Capture.CameraCaptureUI) 类调用 [CameraOptionsUI](/uwp/api/Windows.Media.Capture.CameraOptionsUI) 方法时，将触发此事件。 应用程序激活是指当应用程序启动时，应用程序可以选择要启动的页面。 对于声明了照相机设置扩展的应用程序，Windows 会将视频设备传递到激活的事件参数： Windows.applicationmodel.resources.core. IActivatedEventArgs。
 
-UWP 设备应用可以确定激活适用于照相机设置 (如果某个人只是在 "**相机选项**" 对话框) 了**更多选项**，则当事件参数的 `kind` 属性等于 windows.applicationmodel.resources.core. CameraSettings。
+UWP 设备应用可以确定激活适用于照相机设置 (如果某个人只是在 "**相机选项**" 对话框) 了 **更多选项**，则当事件参数的 `kind` 属性等于 windows.applicationmodel.resources.core. CameraSettings。
 
 此示例显示方法中的激活事件处理程序 `OnActivated` ，如 **App.xaml.cs** 文件中所示。 然后，将事件参数强制转换为 CameraSettingsActivatedEventArgs，并将其发送到 `Initialize` 自定义浮出控件 (**DeviceAppPage.xaml.cs**) 的方法。
 
@@ -164,8 +163,8 @@ protected override void OnActivated(IActivatedEventArgs args)
 
 在 `Initialize` 调用自定义弹出窗口 (**DeviceAppPage.xaml.cs**) 的方法时，视频设备将通过事件参数传递到浮出控件。 这些参数公开用于控制照相机的属性：
 
-- **参数。VideoDeviceController**属性提供 VideoDeviceController 类型的对象。 此对象提供用于调整标准设置的方法。
-- **参数。VideoDeviceExtension**属性是指向照相机驱动程序 MFT 的指针。 如果未公开任何驱动程序 MFT 接口，此属性将为 null。 有关相机驱动程序 MFTs 的详细信息，请参阅 [创建照相机驱动程序 MFT](creating-a-camera-driver-mft.md)。
+- **参数。VideoDeviceController** 属性提供 VideoDeviceController 类型的对象。 此对象提供用于调整标准设置的方法。
+- **参数。VideoDeviceExtension** 属性是指向照相机驱动程序 MFT 的指针。 如果未公开任何驱动程序 MFT 接口，此属性将为 null。 有关相机驱动程序 MFTs 的详细信息，请参阅 [创建照相机驱动程序 MFT](creating-a-camera-driver-mft.md)。
 
 此示例显示方法的一部分 `Initialize` ，如 **DeviceAppPage.xaml.cs** 文件中所示。 在这里，视频设备控制器 (videoDevController 对象) ，并且创建了照相机驱动程序 MFT (lcWrapper 对象) ，并填充了当前相机设置。
 
@@ -320,10 +319,10 @@ protected void OnEffectSliderValueChanged(object sender, RoutedEventArgs e)
     > [!NOTE]
     > 如果尚未创建设备元数据，请参阅 [为 UWP 设备应用创建设备元数据](./step-2--create-device-metadata.md)。
 
-    1. 如果**设备元数据创作向导**尚未打开，请通过双击 "DeviceMetadataWizard.exe" 从 *% ProgramFiles (x86) %* \\ Windows 工具包 \\ 8.1 \\ bin \\ x86 **DeviceMetadataWizard.exe**启动它。
+    1. 如果 **设备元数据创作向导** 尚未打开，请通过双击 "DeviceMetadataWizard.exe" 从 *% ProgramFiles (x86) %* \\ Windows 工具包 \\ 8.1 \\ bin \\ x86 **DeviceMetadataWizard.exe** 启动它。
     2. 单击 " **编辑设备元数据**"。 这将允许你编辑现有的设备元数据包。
     3. 在 " **打开** " 对话框中，找到与 UWP 设备应用关联的设备元数据包。  (其文件扩展名为 **devicemetadata** 。 ) 
-    4. 在 " **指定 uwp 设备应用信息** " 页上，在 " **UWP 设备应用** " 框中输入 Microsoft Store 应用信息。 单击 " **导入 UWP 应用程序清单文件** " 以自动输入 **包名称**、 **发布者名称**和 **UWP 应用 ID**。
+    4. 在 " **指定 uwp 设备应用信息** " 页上，在 " **UWP 设备应用** " 框中输入 Microsoft Store 应用信息。 单击 " **导入 UWP 应用程序清单文件** " 以自动输入 **包名称**、 **发布者名称** 和 **UWP 应用 ID**。
     5. 完成后，单击 " **下一步** "，直到到达 " **完成** " 页。
     6. 在 " **查看设备元数据包** " 页上，确保所有设置均正确，并选中 "将 **设备元数据包复制到本地计算机上的元数据存储区** " 复选框。 然后单击“保存”  。
 

@@ -1,17 +1,16 @@
 ---
 title: 处理 IRP_MN_REMOVE_DEVICE 请求
 description: 处理 IRP_MN_REMOVE_DEVICE 请求
-ms.assetid: 1e0c8b41-5375-41dd-80eb-e48c0f513e01
 keywords:
 - IRP_MN_REMOVE_DEVICE
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8b829d3181f6315857f784e67ae79cf6ba9fdc8f
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 33d3accf148b14912bc2f439b68d164e9ccb520e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89186009"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801709"
 ---
 # <a name="handling-an-irp_mn_remove_device-request"></a>处理 IRP \_ MN \_ 删除 \_ 设备请求
 
@@ -27,7 +26,7 @@ PnP 管理器使用此 IRP 来指示驱动程序删除设备的软件表示形�
 
 -   将 **IRP \_ MN \_ 删除 \_ 设备** 请求发送到设备的子节点（如果有）。
 
--   通知所有用户模式组件和内核模式驱动程序，这些驱动程序已注册为通知删除设备。 PnP 管理器会调用在设备的句柄上注册目标设备通知的任何用户模式组件，并调用任何为 **EventCategoryTargetDeviceChange**注册的内核模式驱动程序。
+-   通知所有用户模式组件和内核模式驱动程序，这些驱动程序已注册为通知删除设备。 PnP 管理器会调用在设备的句柄上注册目标设备通知的任何用户模式组件，并调用任何为 **EventCategoryTargetDeviceChange** 注册的内核模式驱动程序。
 
 -    (在 Windows 2000 和更高版本的系统上) 如果在设备上装入了文件系统，则 PnP 管理器会将删除请求发送到文件系统和任何文件系统筛选器。 作为响应，文件系统通常会卸除卷。
 

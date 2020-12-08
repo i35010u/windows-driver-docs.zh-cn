@@ -1,7 +1,6 @@
 ---
 title: critsec
 description: Critsec 扩展显示关键部分。
-ms.assetid: 7e30efd5-2bdc-420c-b3ed-504280ddd8f7
 keywords:
 - critsec Windows 调试
 ms.date: 05/23/2017
@@ -12,29 +11,29 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 37171ddd8dc73228f783bb2966c85a0858718336
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 736b4e6e0a4c2ce9366323c7181b3d7151322bd7
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63336872"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803327"
 ---
 # <a name="critsec"></a>!critsec
 
 
-**！ Critsec**扩展显示关键部分。
+**！ Critsec** 扩展显示关键部分。
 
 ```dbgsyntax
 !critsec Address 
 ```
 
-## <a name="span-idddkcritsecdbgspanspan-idddkcritsecdbgspanparameters"></a><span id="ddk__critsec_dbg"></span><span id="DDK__CRITSEC_DBG"></span>参数
+## <a name="span-idddk__critsec_dbgspanspan-idddk__critsec_dbgspanparameters"></a><span id="ddk__critsec_dbg"></span><span id="DDK__CRITSEC_DBG"></span>参数
 
 
-<span id="_______Address______"></span><span id="_______address______"></span><span id="_______ADDRESS______"></span> *Address*   
-指定关键部分的十六进制的地址。
+<span id="_______Address______"></span><span id="_______address______"></span><span id="_______ADDRESS______"></span>*地址*   
+指定临界区的十六进制地址。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 <table>
 <colgroup>
@@ -55,16 +54,16 @@ ms.locfileid: "63336872"
 
  
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-有关其他命令和扩展，可以显示关键部分的信息，请参阅[显示关键节](displaying-a-critical-section.md)。 有关关键部分的信息，请参阅 Microsoft Windows SDK 文档，Windows Driver Kit (WDK) 文档，并*Microsoft Windows Internals*由 Mark Russinovich 和 David solomon 合著。
+有关可显示关键部分信息的其他命令和扩展，请参阅 [显示关键部分](displaying-a-critical-section.md)。 有关关键部分的信息，请参阅 Microsoft Windows SDK 文档、Windows 驱动程序工具包 (WDK) 文档和 *Microsoft Windows 内部机制* ，并将标记 Russinovich 和 David 所罗门群岛。
 
 <a name="remarks"></a>备注
 -------
 
-如果不知道的关键部分地址，则应使用[ **！ ntsdexts.locks** ](-locks---ntsdexts-locks-.md)扩展。 这将显示所有已通过调用来初始化的关键部分**RtlInitializeCriticalSection**。
+如果你不知道关键部分的地址，则应使用 [**！ ntsdexts**](-locks---ntsdexts-locks-.md) 扩展名。 这将显示已通过调用 **RtlInitializeCriticalSection** 初始化的所有关键部分。
 
-下面是一个示例：
+以下是示例：
 
 ```dbgcmd
 0:000> !critsec 3a8c0e9c

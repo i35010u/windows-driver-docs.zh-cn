@@ -1,7 +1,6 @@
 ---
 title: 透明 Blt
 description: 透明 Blt
-ms.assetid: bc2f4159-cd5d-43db-8bc3-e6fbf1e594fb
 keywords:
 - surface DirectDraw，blitting
 - 绘制 blt WDK DirectDraw，透明 blt
@@ -12,12 +11,12 @@ keywords:
 - 透明 blts WDK DirectDraw
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bb8c81c03499ff311e6bb00860822057cf0aeb59
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 4f9bb7b302af615a0a8887ea694540c8042172e4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90717584"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96802575"
 ---
 # <a name="transparent-blt"></a>透明 Blt
 
@@ -25,7 +24,7 @@ ms.locfileid: "90717584"
 ## <span id="ddk_transparent_blt_gg"></span><span id="DDK_TRANSPARENT_BLT_GG"></span>
 
 
-在 *透明的 blt*中，颜色键通常指定将不移动的颜色。 源颜色键类似于动作图片中使用的蓝屏。 颜色将与每个像素进行比较，如果匹配，则不会复制该像素。 如果二者不匹配，则复制该像素。 DirectDraw 还支持范围为的颜色键。
+在 *透明的 blt* 中，颜色键通常指定将不移动的颜色。 源颜色键类似于动作图片中使用的蓝屏。 颜色将与每个像素进行比较，如果匹配，则不会复制该像素。 如果二者不匹配，则复制该像素。 DirectDraw 还支持范围为的颜色键。
 
 在某些情况下，可能仅部分硬件支持透明 blt。 这可能仍比在软件中执行此操作的速度更快。 \_在这些情况下，应设置 DDCAPS COLORKEYHWASSIST 标志。
 

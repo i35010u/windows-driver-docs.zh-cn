@@ -1,16 +1,15 @@
 ---
 title: 使用调试器命令
 description: 本部分介绍如何使用调试器命令。 在窗口底部的提示符下输入命令。
-ms.assetid: 64dcc364-53b5-41d3-9266-abcfe4b328f4
 keywords: 命令，调试器命令，元命令
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: eda0b83310158a373655ec71425b87e20e72c683
-ms.sourcegitcommit: 17c1bbc5ea0bef3bbc87794b030a073f905dc942
+ms.openlocfilehash: 33150a31dc2bd3835b948380e75fca69bdf50de6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88802499"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803117"
 ---
 # <a name="using-debugger-commands"></a>使用调试器命令
 
@@ -32,7 +31,7 @@ ms.locfileid: "88802499"
 
 -   在大、上部窗格中，你可以查看命令输出。
 
-此窗口始终在调试会话开始时打开。 通过选择 "**视图**" 菜单上的 "**命令**"，按 ALT + 1，或在工具栏上的 "调试器命令窗口" 按钮)  (屏幕截图** (alt + 1) ** "按钮，可以重新打开或切换到此窗口 ![ ](images/tbcmd.png) 。
+此窗口始终在调试会话开始时打开。 通过选择 "**视图**" 菜单上的 "**命令**"，按 ALT + 1，或在工具栏上的 "调试器命令窗口" 按钮)  (屏幕截图 **(alt + 1)** "按钮，可以重新打开或切换到此窗口 ![ ](images/tbcmd.png) 。
 
 您可以使用向上键和向下键在命令历史记录中滚动。 出现上一个命令后，可以编辑它，然后按 ENTER 执行上一个命令 (或) 的上一个命令的编辑版本。 光标不一定要位于行的末尾，此过程才能正常工作。
 
@@ -62,7 +61,7 @@ ms.locfileid: "88802499"
 
 `*BUSY* `
 
-你可以使用 [**. pcmd (Set Prompt 命令) **](-pcmd--set-prompt-command-.md) 命令向此提示符中添加文本。
+你可以使用 [**. pcmd (Set Prompt 命令)**](-pcmd--set-prompt-command-.md) 命令向此提示符中添加文本。
 
 ### <a name="span-idkinds_of_commandsspanspan-idkinds_of_commandsspankinds-of-commands"></a><span id="kinds_of_commands"></span><span id="KINDS_OF_COMMANDS"></span>命令种类
 
@@ -92,13 +91,13 @@ WinDbg、KD 和 CDB 支持多种命令。 某些命令在调试器之间共享�
 
 最大命令长度为4096个字符。 但是，如果要 [从内核调试器控制用户模式调试器](controlling-the-user-mode-debugger-from-the-kernel-debugger.md)，则最大行长度为512个字符。
 
-在 CDB 和 KD 中，按 ENTER 键以重复上一个命令。 在 WinDbg 中，可以启用或禁用此行为。 有关此行为的详细信息，请参阅 [**ENTER (重复最后一个命令) **](enter--repeat-last-command-.md)。
+在 CDB 和 KD 中，按 ENTER 键以重复上一个命令。 在 WinDbg 中，可以启用或禁用此行为。 有关此行为的详细信息，请参阅 [**ENTER (重复最后一个命令)**](enter--repeat-last-command-.md)。
 
 如果你发出的最后一个命令显示长时间，并且你想要将其剪切掉，请在 CDB 或 KD 中使用 [**CTRL + C**](ctrl-c--break-.md) 键。 在 WinDbg 中，使用 " [调试" |中断](debug---break.md) 或按 CTRL + break。
 
 在内核模式调试中，可以通过按 [**CTRL + C**](ctrl-c--break-.md)从目标计算机的键盘取消命令。
 
-您可以使用 [**. cls (Clear Screen) **](-cls--clear-screen-.md) 命令从 [调试器命令窗口](debugger-command-window.md)中清除所有文本。 此命令清除整个命令历史记录。 在 WinDbg 中，可以通过使用 " [编辑" |清除 "命令输出](edit---clear-command-output.md) " 命令，或选择调试器的快捷菜单上的 " **清除命令输出** " 命令窗口。
+您可以使用 [**. cls (Clear Screen)**](-cls--clear-screen-.md) 命令从 [调试器命令窗口](debugger-command-window.md)中清除所有文本。 此命令清除整个命令历史记录。 在 WinDbg 中，可以通过使用 " [编辑" |清除 "命令输出](edit---clear-command-output.md) " 命令，或选择调试器的快捷菜单上的 " **清除命令输出** " 命令窗口。
 
 ### <a name="span-idexpression_syntaxspanspan-idexpression_syntaxspanexpression-syntax"></a><span id="expression_syntax"></span><span id="EXPRESSION_SYNTAX"></span>表达式语法
 
@@ -116,7 +115,7 @@ WinDbg、KD 和 CDB 支持多种命令。 某些命令在调试器之间共享�
 
 -   [**当) 条件命令时，z (执行**](z--execute-while-.md)
 
--   [**~ E (线程特定的命令) **](-e--thread-specific-command-.md)命令限定符
+-   [**~ E (线程特定的命令)**](-e--thread-specific-command-.md)命令限定符
 
 -   [**！ List**](-list.md) extension 命令
 
@@ -128,7 +127,7 @@ WinDbg、KD 和 CDB 支持多种命令。 某些命令在调试器之间共享�
 
 使用 CDB 或 KD 时，任何键盘输入都将自动向下滚动调试器命令窗口向下滚动。
 
-在 WinDbg 中，每当命令生成输出或按下 ENTER 键时，显示都会自动向下滚动到底部。 如果要禁用此自动滚动，请在 "**视图**" 菜单上选择[选项](view---options.md)，然后清除 "**自动滚动**" 复选框。
+在 WinDbg 中，每当命令生成输出或按下 ENTER 键时，显示都会自动向下滚动到底部。 如果要禁用此自动滚动，请在 "**视图**" 菜单上选择 [选项](view---options.md)，然后清除 "**自动滚动**" 复选框。
 
 ### <a name="span-idwindbg_text_featuresspanspan-idwindbg_text_featuresspanwindbg-text-features"></a><span id="windbg_text_features"></span><span id="WINDBG_TEXT_FEATURES"></span>WinDbg 文本功能
 

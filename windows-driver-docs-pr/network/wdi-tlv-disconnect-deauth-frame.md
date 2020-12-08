@@ -1,22 +1,21 @@
 ---
 title: WDI_TLV_DISCONNECT_DEAUTH_FRAME
-description: WDI_TLV_DISCONNECT_DEAUTH_FRAME 是包含接收的 deauthentication 帧 TLV。
-ms.assetid: 394B83C7-D001-4816-BC38-42325469863C
+description: WDI_TLV_DISCONNECT_DEAUTH_FRAME 是包含收到的 deauthentication 帧的 TLV。
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_DISCONNECT_DEAUTH_FRAME 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: df28846ec9b8025079dfb1bde63eb7dfa2000f16
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5c634e5382c8adc19c6fa9910c77511dd5779298
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380877"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803475"
 ---
-# <a name="wditlvdisconnectdeauthframe"></a>WDI\_TLV\_断开连接\_DEAUTH\_帧
+# <a name="wdi_tlv_disconnect_deauth_frame"></a>WDI \_ TLV \_ 断开 \_ DEAUTH \_ 帧
 
 
-WDI\_TLV\_断开连接\_DEAUTH\_帧是包含接收的 deauthentication 帧 TLV。
+WDI \_ tlv \_ DISCONNECT \_ DEAUTH \_ frame 是包含收到的 deauthentication 帧的 tlv。
 
 ## <a name="tlv-type"></a>TLV 类型
 
@@ -26,14 +25,14 @@ WDI\_TLV\_断开连接\_DEAUTH\_帧是包含接收的 deauthentication 帧 TLV�
 ## <a name="length"></a>长度
 
 
-UINT8 元素的数组大小 （以字节为单位）。 该数组必须包含一个或多个元素。
+UINT8 元素数组的大小 (以字节为单位) 。 数组必须包含1个或多个元素。
 
 ## <a name="values"></a>值
 
 
-| 在任务栏的搜索框中键入      | 描述                                                                   |
+| 类型      | 描述                                                                   |
 |-----------|-------------------------------------------------------------------------------|
-| UINT8\[\] | 包含接收的 deauthentication 帧 UINT8 元素的数组。 |
+| UINT8\[\] | UINT8 元素的数组，这些元素包含接收到的 deauthentication 帧。 |
 
  
 
@@ -52,10 +51,10 @@ UINT8 元素的数组大小 （以字节为单位）。 该数组必须包含一
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
-<td><p>Windows Server 2016</p></td>
+<td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Wditypes.hpp</td>
 </tr>
 </tbody>

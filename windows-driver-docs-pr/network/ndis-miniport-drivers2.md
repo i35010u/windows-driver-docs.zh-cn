@@ -1,23 +1,22 @@
 ---
 title: 微型端口驱动程序
 description: 微型端口驱动程序
-ms.assetid: d0b8f143-2966-4338-9d2f-96e7e9216b3a
 keywords:
 - 微型端口驱动程序 WDK 网络，体系结构
 - NDIS 微型端口驱动程序 WDK、体系结构
 - 无连接驱动程序 WDK 网络
 ms.date: 11/26/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 1e72f7defeeb4623f625724ee07a69351a0b009c
-ms.sourcegitcommit: 20eac54e419a594f7cea766ee28f158559dfd79c
+ms.openlocfilehash: 9b33cfc1daf03ecf281a7066265e32ceb7e8be9e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91754850"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801595"
 ---
 # <a name="miniport-drivers"></a>微型端口驱动程序
 
-*NDIS 微型端口驱动程序*有两个基本功能：
+*NDIS 微型端口驱动程序* 有两个基本功能：
 
 -   管理网络接口卡 (NIC) ，包括通过 NIC 发送和接收数据。
 
@@ -34,13 +33,13 @@ ms.locfileid: "91754850"
 
 - 当 NIC 接收到其自身寻址的数据包时，它可以发布由 NDIS 或 NIC 的微型端口驱动程序处理的硬件中断。 NDIS 通过调用相应的 *MiniportXxx* 函数通知 NIC 的微型端口驱动程序。 微型端口驱动程序设置从 NIC 传输数据，然后通过调用相应的 **Ndis * Xxx*** 函数指示接收到的数据包是否存在。
 
-## <a name="connectionless-and-connection-oriented-miniport-drivers"></a>无连接和面向连接的微型端口驱动程序
+## <a name="connectionless-and-connection-oriented-miniport-drivers"></a>无连接和 Connection-Oriented 微型端口驱动程序
 
 NDIS 支持无连接环境和面向连接的环境的微型端口驱动程序。
 
 *无连接微型端口驱动程序* 控制无连接网络媒体（如以太网）的 nic。 无连接微型端口驱动程序进一步分为反序列化和序列化驱动程序：
 
-**注意**   所有 NDIS 6.0 和更高版本的驱动程序均已反序列化。 
+**注意**  所有 NDIS 6.0 和更高版本的驱动程序均已反序列化。 
 
 -   *反序列化的驱动程序* 序列化其自己的 *MiniportXxx* 函数的操作，并在内部将所有传入的发送数据包排队。 由于驱动程序的关键部分 (代码，一次只能有一个线程可以运行) ，这会大大提高全双工性能。
 

@@ -1,18 +1,17 @@
 ---
 title: WaveCyclic 延迟
 description: WaveCyclic 延迟
-ms.assetid: 6de639c6-ddd5-4013-8d67-00731c328f47
 keywords:
 - WaveCyclic 延迟 WDK 音频
 - 静默间隔 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 066636c794e29c2663652849719e4baa42a00b49
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: d36a507dfa4956f4b3aaebccd599b27b26019abc
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89210281"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96802093"
 ---
 # <a name="wavecyclic-latency"></a>WaveCyclic 延迟
 

@@ -1,39 +1,38 @@
 ---
 title: 使用断点-调试技术
-description: 使用 Windows 调试器 （调试技术） 中使用断点的概述
-ms.assetid: 93c46047-ab04-41ca-ad13-89741735c055
+description: '在 Windows 调试器中使用断点的概述 (调试技术) '
 keywords:
-- breakpoints
-- 断点概述
+- 断点
+- 断点，概述
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d2883f51d620d2e21e7cec9b8aea158d014cf469
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 74156399de25b8b68c6d60773aff77b9e64fb6be
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63371619"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803163"
 ---
 # <a name="using-breakpoints---debugging-techniques"></a>使用断点-调试技术
 
 
-一个*断点*是可执行代码的操作系统将停止执行并进入调试器中的位置。 这允许您分析目标并发出调试器命令。
+*断点* 是可执行代码中的位置，操作系统会在该位置停止执行并中断到调试器。 这允许您分析目标并发出调试程序命令。
 
-本部分包括以下主题：
+本节包括下列主题：
 
-[控制断点的方法](methods-of-controlling-breakpoints.md)
+[断点控制方法](methods-of-controlling-breakpoints.md)
 
 [断点语法](breakpoint-syntax.md)
 
-[无法解析的断点 （bu 断点）](unresolved-breakpoints---bu-breakpoints-.md)
+[ (bu 断点的未解析断点) ](unresolved-breakpoints---bu-breakpoints-.md)
 
-[处理器断点 (ba 断点)](processor-breakpoints---ba-breakpoints-.md)
+[处理器断点 (ba 断点) ](processor-breakpoints---ba-breakpoints-.md)
 
 [初始断点](initial-breakpoint.md)
 
 [用户空间和系统空间](user-space-and-system-space.md)
 
-[设置断点时需要执行的风险](risks-entailed-when-setting-breakpoints.md)
+[设置断点造成的风险](risks-entailed-when-setting-breakpoints.md)
 
  
 

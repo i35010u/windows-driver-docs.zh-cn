@@ -1,15 +1,14 @@
 ---
 title: 在 WinDbg 中查看和编辑全局变量
 description: 在 WinDbg 中查看和编辑全局变量
-ms.assetid: 4273F6D8-A2A1-43FA-80BF-97E5673FAF05
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a559fb816042a272e0430f58ec02c96828799448
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b7f8e6cf10ca5dd7bc44544c3fc24e77104e7019
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63348943"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96802893"
 ---
 # <a name="viewing-and-editing-global-variables-in-windbg"></a>在 WinDbg 中查看和编辑全局变量
 
@@ -17,19 +16,19 @@ ms.locfileid: "63348943"
 ## <span id="ddk_debugging_bios_code_dbg"></span><span id="DDK_DEBUGGING_BIOS_CODE_DBG"></span>
 
 
-调试器将解释为一个虚拟地址的全局变量的名称。 因此，可以使用的所有命令中所述[访问内存的虚拟地址](accessing-memory-by-virtual-address.md)读取或写入全局变量。
+调试器将全局变量的名称解释为虚拟地址。 因此，你可以使用 " [按虚拟地址访问内存](accessing-memory-by-virtual-address.md) " 中所述的所有命令来读取或写入全局变量。
 
-此外，还可以使用[ **？（计算表达式）** ](---evaluate-expression-.md)命令以显示与任何符号相关联的地址。
+此外，还可以使用 [**？ (计算 Expression)**](---evaluate-expression-.md) 命令来显示与任何符号关联的地址。
 
-在 WinDbg 中，您还可以使用监视窗口可显示和更改全局和本地变量。 监视窗口可以显示任何所需的变量的列表。 这些变量可以包含全局变量和局部变量从任何函数。 在任何时候，监视窗口显示与当前函数的作用域匹配这些变量的值。 此外可以更改通过监视窗口的这些变量的值。
+在 WinDbg 中，还可以使用监视窗口显示和更改全局变量和局部变量。 监视窗口可以显示所需的任何变量列表。 这些变量可以包含来自任何函数的全局变量和局部变量。 在任何时候，监视窗口都将显示与当前函数的作用域匹配的那些变量的值。 还可以通过监视窗口更改这些变量的值。
 
-若要打开监视窗口，请选择**Watch**从**视图**菜单。 此外可以按 ALT + 2，或单击**Watch**工具栏上的按钮：![监视按钮的屏幕截图](images/tbwatch.png)。 ALT + SHIFT + 2 将关闭监视窗口。
+若要打开监视窗口，请从 "**视图**" 菜单中选择 "**监视**"。 还可以按 ALT + 2，或单击工具栏上 **的 "监视** " 按钮： ![ "监视" 按钮的屏幕截图 ](images/tbwatch.png) 。 ALT + SHIFT + 2 关闭监视窗口。
 
-下面的屏幕截图显示了监视窗口的示例。
+下面的屏幕截图显示了一个监视窗口的示例。
 
-![监视窗口的屏幕截图 ](images/window-watch.png)
+!["监视" 窗口的屏幕截图 ](images/window-watch.png)
 
-监视窗口可以包含四个列。 **名称**并**值**始终显示列，并**类型**并**位置**列是可选的。 若要显示**类型**并**位置**列，单击**Typecast**并**位置**按钮，分别在工具栏上。
+监视窗口可以包含四列。 " **名称** " 和 " **值** " 列始终显示，" **类型** " 和 " **位置** " 列是可选的。 若要显示 " **类型** " 和 " **位置** " 列，请分别单击工具栏上的 " **转换** " 和 " **位置** " 按钮。
 
  
 

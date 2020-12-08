@@ -1,19 +1,18 @@
 ---
 title: 控制驱动程序验证程序
 description: 控制驱动程序验证程序
-ms.assetid: c829023c-725a-4e55-9844-5cdb6ef222e0
 keywords:
-- 驱动程序验证程序 WDK 控制
-- 驱动程序验证程序管理器
+- 驱动程序验证程序 WDK，控制
+- 驱动程序验证器管理器
 - 验证程序实用工具
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 71cb1cb82bcf1fcea2ef2307a40a777718e790fd
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2832e4c85edf4685a0a6ee6eaf6ee5b19cdff4d0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63343087"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801843"
 ---
 # <a name="controlling-driver-verifier"></a>控制驱动程序验证程序
 
@@ -21,17 +20,17 @@ ms.locfileid: "63343087"
 ## <span id="ddk_controlling_driver_verifier_tools"></span><span id="DDK_CONTROLLING_DRIVER_VERIFIER_TOOLS"></span>
 
 
-本部分包括：
+本节包括：
 
-[选择驱动程序验证工具选项](selecting-driver-verifier-options.md)
+[选择驱动程序验证程序选项](selecting-driver-verifier-options.md)
 
-[选择要验证驱动程序](selecting-drivers-to-be-verified.md)
+[选择要验证的驱动程序](selecting-drivers-to-be-verified.md)
 
-[查看驱动程序验证器设置](viewing-driver-verifier-settings.md)
+[查看驱动程序验证程序设置](viewing-driver-verifier-settings.md)
 
 [使用易失性设置](using-volatile-settings.md)
 
-[使用全局标志实用程序](using-the-global-flags-utility.md)
+[使用全局标志实用工具](using-the-global-flags-utility.md)
 
  
 

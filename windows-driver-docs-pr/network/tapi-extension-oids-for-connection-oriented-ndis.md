@@ -1,17 +1,16 @@
 ---
 title: 面向连接的 NDIS 的 TAPI 扩展 OID
 description: 本主题介绍面向连接的 NDIS 的 TAPI 扩展 Oid。
-ms.assetid: 06f7e2d0-b890-468e-8177-d3c28d0e9cd0
 keywords:
 - TAPI 扩展 Oid 面向连接的 NDIS
 ms.date: 11/03/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b9fe3c95edfde862bb5029991880b15d4ff473e1
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 997927a5eddac26b771411d94d0a60628ce3d744
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89212727"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803495"
 ---
 # <a name="tapi-extension-oids-for-connection-oriented-ndis"></a>面向连接的 NDIS 的 TAPI 扩展 OID
 
@@ -19,7 +18,7 @@ ms.locfileid: "89212727"
 
 在此表中，M 指示 OID 是必需的，而 O 指示它是可选的。
 
-| Length | 查询 | 设置 | 名称 |
+| 长度 | 查询 | 设置 | “属性” |
 | --- | --- | --- | --- |
 | 多种多样 | O |   | [OID_CO_TAPI_ADDRESS_CAPS](oid-co-tapi-address-caps.md) |
 | Sizeof (CO_TAPI_CM_CAPS)  | O |   | [OID_CO_TAPI_CM_CAPS](oid-co-tapi-cm-caps.md) |

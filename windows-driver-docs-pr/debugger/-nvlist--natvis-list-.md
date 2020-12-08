@@ -1,7 +1,6 @@
 ---
 title: .nvlist（NatVis 列出）
 description: Nvllist 命令列出加载到调试器环境中的 NatVis 文件。
-ms.assetid: 90974599-6F8E-4898-B8B6-F9502659AD77
 keywords:
 - nvlist (NatVis 列表) Windows 调试
 ms.date: 05/23/2017
@@ -12,12 +11,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 2b16662e176e02bac6534ef1333f02924cba5e61
-ms.sourcegitcommit: 878a1cb0149dc18ccbd31774e12bad76084dfa24
+ms.openlocfilehash: 37c7e949f9a2480955579585c96bb8fb6a9b7f78
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94937785"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803295"
 ---
 # <a name="nvlist-natvis-list"></a>.nvlist（NatVis 列出）
 

@@ -1,22 +1,21 @@
 ---
 title: 虚拟机网络适配器
 description: 虚拟机网络适配器
-ms.assetid: 8A2A708C-AB43-4D9F-A7CB-2AC4438BCD54
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f3e4cb71006bbedd70d1633607f929fbca2abc0c
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 9cda9dc7feff3451bdf2c1b09551d44d31152f60
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89216920"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96802261"
 ---
 # <a name="virtual-machine-network-adapters"></a>虚拟机网络适配器
 
 
 虚拟机 (VM) 网络适配器在 Hyper-v 子分区中运行的来宾操作系统中公开。
 
-**注意**   在 Hyper-v 中，子分区也称为 VM。
+**注意**  在 Hyper-v 中，子分区也称为 VM。
 
  
 

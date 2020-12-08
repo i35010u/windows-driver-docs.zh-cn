@@ -1,18 +1,17 @@
 ---
 title: 使用调试器引擎 API
 description: 使用调试器引擎 API
-ms.assetid: 64785cb6-819c-4a27-b2be-71cc489418ab
 keywords:
 - 调试器引擎，API
 - 调试器引擎 API
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cf4ed2a0e507955f2a0333d1c89da1d563712f8b
-ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
+ms.openlocfilehash: d451dd6db8099ba7908b48c747dff3f06d58f61e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84534746"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803033"
 ---
 # <a name="using-the-debugger-engine-api"></a>使用调试器引擎 API
 

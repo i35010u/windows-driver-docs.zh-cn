@@ -1,19 +1,18 @@
 ---
 title: 使用 PoolMon 查找内核模式内存泄漏
 description: 使用 PoolMon 查找内核模式内存泄漏
-ms.assetid: 383b5d9a-3e99-4dc5-bce9-bd44f2ef1dc0
 keywords:
 - 内存泄漏，内核模式，PoolMon
 - PoolMon
 - PoolMon，查找内存泄漏
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b5697c8bfa0a707ed84e0e2ca0c90d006c106bb0
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 45a9e4fbf95f005d673ac4df6e4928ff6c3389ef
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89207337"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803075"
 ---
 # <a name="using-poolmon-to-find-a-kernel-mode-memory-leak"></a>使用 PoolMon 查找内核模式内存泄漏
 
@@ -78,7 +77,7 @@ PoolMon 具有根据各种条件对输出进行排序的命令键。 按下与�
 <td align="left"><p>按标记名的字母顺序对标记排序。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>电邮</strong></p></td>
+<td align="left"><p><strong>E</strong></p></td>
 <td align="left"><p>使显示器在底部包含分页和非分页的总计。</p></td>
 </tr>
 <tr class="even">
@@ -86,7 +85,7 @@ PoolMon 具有根据各种条件对输出进行排序的命令键。 按下与�
 <td align="left"><p>按分配大小对标记排序。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>果</strong></p></td>
+<td align="left"><p><strong>F</strong></p></td>
 <td align="left"><p>按自由操作对标记排序。</p></td>
 </tr>
 <tr class="even">
@@ -94,7 +93,7 @@ PoolMon 具有根据各种条件对输出进行排序的命令键。 按下与�
 <td align="left"><p>按分配和释放之间的差异对标记排序。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>：</strong></p></td>
+<td align="left"><p><strong>Q</strong></p></td>
 <td align="left"><p>退出 PoolMon。</p></td>
 </tr>
 </tbody>
@@ -122,7 +121,7 @@ PoolMon 具有根据各种条件对输出进行排序的命令键。 按下与�
 
 ### <a name="span-idaddressing_the_leakspanspan-idaddressing_the_leakspanaddressing-the-leak"></a><span id="addressing_the_leak"></span><span id="ADDRESSING_THE_LEAK"></span>解决泄漏
 
-确定与该泄漏关联的池标记后，这可能会显示你需要了解的有关泄露的全部信息。 如果需要确定分配例程的哪个特定实例导致了泄漏，请参阅 [使用内核调试器查找内核模式的内存泄漏](using-the-kernel-debugger-to-find-a-kernel-mode-memory-leak.md)。
+确定与该泄漏关联的池标记后，这可能会显示你需要了解的有关泄露的全部信息。 如果需要确定分配例程的哪个特定实例导致了泄漏，请参阅 [使用内核调试器查找内存泄漏 Kernel-Mode](using-the-kernel-debugger-to-find-a-kernel-mode-memory-leak.md)。
 
  
 

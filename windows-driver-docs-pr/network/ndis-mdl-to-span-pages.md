@@ -1,17 +1,16 @@
 ---
 title: NDIS_MDL_TO_SPAN_PAGES 宏
 description: NDIS_MDL_TO_SPAN_PAGES 宏检索正在用来返回给定 MDL 的内存物理页数。
-ms.assetid: 8c9df989-4a5f-4ec1-9544-29b59517a502
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 NDIS_MDL_TO_SPAN_PAGES 宏网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 99162199fbbc0a1b4431e71de4b2e7b958778ccc
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 736987011d6d61b8c47c86cf6db0637a5579f979
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89213911"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801631"
 ---
 # <a name="ndis_mdl_to_span_pages-macro"></a>\_ \_ 用于跨页面的 NDIS MDL \_ \_ 宏
 
@@ -54,7 +53,7 @@ int NDIS_MDL_TO_SPAN_PAGES(
 <tbody>
 <tr class="odd">
 <td><p>目标平台</p></td>
-<td>“桌面”</td>
+<td>台式机</td>
 </tr>
 <tr class="even">
 <td><p>版本</p></td>
@@ -71,7 +70,7 @@ int NDIS_MDL_TO_SPAN_PAGES(
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**\_ \_ 用于 \_ 跨页的 \_ NDIS 缓冲区**](/previous-versions/windows/hardware/network/ff556922(v=vs.85))

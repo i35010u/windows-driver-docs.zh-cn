@@ -1,15 +1,14 @@
 ---
 title: SCSI \_ 地址 WMI 类
 description: SCSI \_ 地址 WMI 类
-ms.assetid: 720cf803-b004-4c63-8884-66b0e07d82c0
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: dc634fa7f62a98b53dba5276b21fc467b1f14362
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 6024fc079ef54f16bc2273f055a723c305ca95e2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89184927"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96802185"
 ---
 # <a name="scsi_addr-wmi-class"></a>SCSI \_ 地址 WMI 类
 

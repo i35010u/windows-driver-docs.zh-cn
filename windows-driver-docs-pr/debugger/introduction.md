@@ -1,15 +1,14 @@
 ---
 title: 调试器引擎简介
 description: 调试器引擎简介
-ms.assetid: fa52a1f0-9397-48a5-acbd-ce5347c0baef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 962d70e30e6e843c40916419dd84cb0707815546
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 1fb5cc04629908034ad4207944fcf60ec13b924d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89217376"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801943"
 ---
 # <a name="debugger-engine-introduction"></a>调试器引擎简介
 
@@ -21,7 +20,7 @@ ms.locfileid: "89217376"
 
 调试器引擎可以获取目标、设置断点、监视事件、查询符号、读取和写入内存，以及控制目标中的线程和进程。
 
-您可以使用调试器引擎来编写调试器扩展库和独立应用程序。 此类应用程序是 *调试器引擎应用*程序。 使用调试器引擎全部功能的调试器引擎应用程序是一个 *调试器*。 例如，WinDbg、CDB、NTSD 和 KD 都是调试器;调试器引擎提供其功能的核心。
+您可以使用调试器引擎来编写调试器扩展库和独立应用程序。 此类应用程序是 *调试器引擎应用* 程序。 使用调试器引擎全部功能的调试器引擎应用程序是一个 *调试器*。 例如，WinDbg、CDB、NTSD 和 KD 都是调试器;调试器引擎提供其功能的核心。
 
 调试器引擎 API 由头文件 dbgeng 中的原型指定。
 

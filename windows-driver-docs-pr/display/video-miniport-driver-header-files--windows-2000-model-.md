@@ -1,18 +1,17 @@
 ---
 title: 视频微型端口驱动程序标头文件（Windows 2000 模型）
 description: 视频微型端口驱动程序标头文件（Windows 2000 模型）
-ms.assetid: 7ce0df41-ce1e-4d76-b7e8-6d0a3576a58d
 keywords:
 - 视频微型端口驱动程序 WDK Windows 2000，头文件
 - 标头文件 WDK 视频微型端口
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e7294bb5d17b1d29091eaf99c0ff58102109afc2
-ms.sourcegitcommit: f8619f20a0903dd64f8641a5266ecad6df5f1d57
+ms.openlocfilehash: 70fb4b76baba17215251f24ee99766bcc4ca9801
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91423930"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96802497"
 ---
 # <a name="video-miniport-driver-header-files-windows-2000-model"></a>视频微型端口驱动程序标头文件（Windows 2000 模型）
 

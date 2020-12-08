@@ -1,22 +1,21 @@
 ---
 title: 适用于打印机的 UWP 设备应用
 description: 此部分介绍打印机的 UWP 设备应用。
-ms.assetid: 3325B492-2A70-4EB7-99B0-3FE3E24CE398
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ba39c4000e5d8520eaae0bf656f578342d6f539e
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: bf16a6120e2014e9ac2206aa53f7266c9455dc6b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91733354"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96802659"
 ---
 # <a name="uwp-device-apps-for-printers"></a>适用于打印机的 UWP 设备应用
 
 
 此部分介绍打印机的 UWP 设备应用。 UWP 设备应用可以通过自定义的打印设置浮出控件和通知支持突出显示打印机的特殊功能。 UWP 设备应用还可以显示打印机状态、管理打印作业和执行打印机维护任务。 若要详细了解 UWP 设备应用的详细信息，请参阅了解 [uwp 设备应用](meet-uwp-device-apps.md)。
 
-**重要提示**   若要使用 UWP 设备应用功能，打印机必须支持 v4 打印驱动程序模型。 有关详细信息，请参阅 [开发 v4 打印驱动程序](../print/v4-printer-driver.md)。
+**重要提示**  若要使用 UWP 设备应用功能，打印机必须支持 v4 打印驱动程序模型。 有关详细信息，请参阅 [开发 v4 打印驱动程序](../print/v4-printer-driver.md)。
 
  
 
@@ -31,7 +30,7 @@ ms.locfileid: "91733354"
 <thead>
 <tr class="header">
 <th align="left">主题</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>

@@ -1,7 +1,6 @@
 ---
 title: 设备进入低功耗状态
 description: 了解设备进入低功耗状态时将发生的情况。 例如，当设备处于空闲状态时，系统仍处于正常工作状态。
-ms.assetid: 07d7c460-4316-40a9-b502-f7c1bd1182c2
 keywords:
 - 电源管理 WDK KMDF、低功耗状态
 - 低功耗状态 WDK KMDF
@@ -13,12 +12,12 @@ keywords:
 - 系统睡眠状态 WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e2d85a90fce4de7b289af43205e588aa783d2c03
-ms.sourcegitcommit: 2aedb606f9f14e74687f0d3da60e14fc6ffffa7e
+ms.openlocfilehash: f79842336895f2ddeb430615d038ee543813ab43
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91544426"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96802123"
 ---
 # <a name="a-device-enters-a-low-power-state"></a>设备进入低功耗状态
 

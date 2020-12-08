@@ -1,15 +1,14 @@
 ---
 title: 用于 Windows Vista 和 Windows XP 的单一驱动程序
 description: 用于 Windows Vista 和 Windows XP 的单一驱动程序
-ms.assetid: 3fa9c044-ab9d-4bed-b5fc-89396e1269ce
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2d0ceb556e2cd9ed03cba42a023e3d1daee873f6
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 35dc068001e43de0f72ff7e9aef16530e903202f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89189137"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96802445"
 ---
 # <a name="single-driver-for-windows-vista-and-windows-xp"></a>用于 Windows Vista 和 Windows XP 的单一驱动程序
 

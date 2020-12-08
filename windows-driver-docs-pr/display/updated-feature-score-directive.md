@@ -1,49 +1,48 @@
 ---
 title: Windows 8 中已更新的功能评分指令
-description: 更新的功能分数指令是以遵循 Windows 显示器驱动程序模型 (WDDM) 的所有 Windows 8 驱动程序所需的常规安装设置。
-ms.assetid: E50E132A-DEC8-42F4-AAF8-05F658990CF5
+description: 更新的功能分数指令是常规安装设置，该设置是所有遵循 Windows 显示驱动程序模型 (WDDM) 的 Windows 8 驱动程序所必需的。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f23be96576ac2d2328f7a8e6cf45a7d83e56607e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 94cd68f44f9f5900c55d8edb34917d9cbe2e3448
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63389804"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96802551"
 ---
 # <a name="updated-feature-score-directive-in-windows-8"></a>Windows 8 中已更新的功能评分指令
 
 
-更新的功能分数指令是以遵循 Windows 显示器驱动程序模型 (WDDM) 的所有 Windows 8 驱动程序所需的常规安装设置。
+更新的功能分数指令是常规安装设置，该设置是所有遵循 Windows 显示驱动程序模型 (WDDM) 的 Windows 8 驱动程序所必需的。
 
-此表显示适用于 Windows 8 的值。 密钥更改为斜体。
+下表显示了适用于 Windows 8 的值。 关键更改是斜体。
 
-**WDDM 版本的特征分数**
+**WDDM 版本的功能分数**
 
-| 驱动程序模型                     | 特征评分                |
+| 驱动程序型号                     | 功能分数                |
 |----------------------------------|------------------------------|
-| *Windows 8 WHQL*                 | *E0*                         |
-| *预发行版的 Windows 8 驱动程序*   | *E3*                         |
+| *Windows 8 WHQL*                 | *步进*                         |
+| *Windows 8 预发行版驱动程序*   | *E3*                         |
 | Windows 7 WHQL                   | E6                           |
 | Windows 7 收件箱                  | EC                           |
 | Windows Vista WHQL               | F6                           |
 | Windows Vista 收件箱              | F8                           |
 | *Microsoft 基本显示驱动程序* | *FB*                         |
-| XDDM 第三方                 | FC *（未在 Windows 8 中使用）* |
-| Windows Vista 中的 XDDM 收件箱      | FD *（未在 Windows 8 中使用）* |
-| VGA                              | FE *（未在 Windows 8 中使用）* |
-| 默认值或任何得分              | FF                           |
-| 未签名驱动程序                 | 任何功能得分 = FF        |
+| XDDM 第三方                 | *Windows 8) 不使用 FC (* |
+| Windows Vista 中的 XDDM 收件箱      | FD *(在 Windows 8 中不使用)* |
+| VGA                              | *在 Windows 8 中不使用 FE ()* |
+| 默认或没有评分              | FF                           |
+| 未签名驱动程序                 | 没有功能分数 = FF        |
 
  
 
-每个操作系统版本引入了新功能得分值。 这是针对 Windows 8 *E3*中框和预发布版本的驱动程序，并*E0* WHQL 驱动程序。 特征评分是 Windows 用于确定要安装多个可能的驱动程序存在时的驱动程序。 选择的驱动程序有较高的排名的功能得分。
+每个操作系统版本引入了一个新的功能分数值。 对于 Windows 8，这是用于内置和预发行驱动程序的 *E3* ，适用于 WHQL 驱动程序的 *E0* 。 Windows 使用功能分数来确定存在多个可能的驱动程序时要安装的驱动程序。 选择了排名较高的功能分数的驱动程序。
 
-所有 Windows 8 中现成驱动程序设备都具有较高的排名的功能得分比所有现有的 Windows 7 驱动程序，因为现成驱动程序测试在 Windows 8 中，并且现有 Windows 7Windows 7 驱动程序尚未。 这会导致现成 Windows 8 驱动程序以替换现有的 Windows 7 驱动程序。 如果满足下列条件时，独立硬件供应商 (IHV) 可以通过 Windows 7 驱动程序使用 E0 特征评分：
+由于在 Windows 8 上测试了内置驱动程序，并且现有的 Windows 7Windows 7 驱动程序尚未安装，因此，所有 Windows 8 内置驱动程序设备都具有比所有现有 Windows 7 驱动程序更高的排名。 这将导致替换现有 Windows 7 驱动程序的内置 Windows 8 驱动程序。 独立硬件供应商 (IHV) 如果满足以下条件，则可以将 E0 功能分数与 Windows 7 驱动程序结合使用：
 
--   已针对 Windows 8 中测试驱动程序。
--   该驱动程序有使其优于现成驱动程序的修补程序。
--   该驱动程序旨在保留在升级到 Windows 8 上。
+-   已针对 Windows 8 对驱动程序进行了测试。
+-   驱动程序提供的修补程序使其优于内置驱动程序。
+-   驱动程序应在升级到 Windows 8 时保留。
 
  
 

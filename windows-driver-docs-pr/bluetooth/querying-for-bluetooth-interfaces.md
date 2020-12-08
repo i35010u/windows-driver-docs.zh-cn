@@ -1,19 +1,18 @@
 ---
 title: 查询蓝牙接口
 description: 查询蓝牙接口
-ms.assetid: 56db29cd-26ab-4262-9b9f-40d46372ffe9
 keywords:
 - 蓝牙 WDK，接口查询
 - 查询蓝牙接口
 - 接口 WDK 蓝牙
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0c5e0585701f242b62396f03326ea644065f16ff
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: ac9aea0774fc866982640b23506978d07d39aed0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90101540"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803435"
 ---
 # <a name="querying-for-bluetooth-interfaces"></a>查询蓝牙接口
 
@@ -28,7 +27,7 @@ ms.locfileid: "90101540"
 <thead>
 <tr class="header">
 <th align="left">接口</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -70,7 +69,7 @@ ms.locfileid: "90101540"
 
 下面的伪代码示例演示如何设置 IRP \_ MN \_ 查询 \_ 接口 irp，以查询 GUID \_ BTHDDI \_ 配置文件 \_ 驱动程序接口的蓝牙驱动程序堆栈 \_ 。
 
-**注意**   为方便起见，下面的伪代码示例不演示错误处理。
+**注意**  为方便起见，下面的伪代码示例不演示错误处理。
 
  
 

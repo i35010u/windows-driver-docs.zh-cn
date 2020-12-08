@@ -1,7 +1,6 @@
 ---
 title: 对管理启动驱动器的微型端口驱动程序的限制
 description: 对管理启动驱动器的微型端口驱动程序的限制
-ms.assetid: 78375e9b-8be9-4e64-b90e-cc8c4ab1751b
 keywords:
 - 存储微型端口驱动程序 WDK、启动驱动器
 - 微型端口驱动程序 WDK 存储，启动驱动器
@@ -10,12 +9,12 @@ keywords:
 - 转储模式 WDK 存储
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ea71d529fa02e5afd4f2e44952ce295f1fde450b
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 15971be98f737dc2c48a47e1b889682e0d6624c4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91733717"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96802221"
 ---
 # <a name="restrictions-on-miniport-drivers-that-manage-the-boot-drive"></a>对管理启动驱动器的微型端口驱动程序的限制
 
@@ -40,11 +39,11 @@ ms.locfileid: "91733717"
 
 ### <a name="span-iddpcsspanspan-iddpcsspandeferred-procedure-calls-dpcs"></a><span id="dpcs"></span><span id="DPCS"></span>Dpc)  (延迟的过程调用
 
-StorPort 微型端口驱动程序不得尝试使用[**StorPortInitializeDpc**](/windows-hardware/drivers/ddi/storport/nf-storport-storportinitializedpc)初始化 ([**HWSTORDPCROUTINE**](/windows-hardware/drivers/ddi/storport/nc-storport-hw_dpc_routine)) 的 DPC 例程。 在中断请求期间，通常排队等待执行到 DPC 例程的任何处理都必须在该请求的上下文中发生。
+StorPort 微型端口驱动程序不得尝试使用 [**StorPortInitializeDpc**](/windows-hardware/drivers/ddi/storport/nf-storport-storportinitializedpc)初始化 ([**HWSTORDPCROUTINE**](/windows-hardware/drivers/ddi/storport/nc-storport-hw_dpc_routine)) 的 DPC 例程。 在中断请求期间，通常排队等待执行到 DPC 例程的任何处理都必须在该请求的上下文中发生。
 
 ### <a name="span-idmultiple_requestsspanspan-idmultiple_requestsspanmultiple-requests-per-logical-unit"></a><span id="multiple_requests"></span><span id="MULTIPLE_REQUESTS"></span>每个逻辑单元的多个请求
 
-磁盘转储端口驱动程序不会为每个逻辑单元发送多个请求。 因此，微型端口驱动程序分配给[**端口 \_ 配置 \_ 信息**](/previous-versions/windows/hardware/drivers/ff563901(v=vs.85))的**MultipleRequestPerLu**成员的值并不重要。
+磁盘转储端口驱动程序不会为每个逻辑单元发送多个请求。 因此，微型端口驱动程序分配给 [**端口 \_ 配置 \_ 信息**](/previous-versions/windows/hardware/drivers/ff563901(v=vs.85))的 **MultipleRequestPerLu** 成员的值并不重要。
 
 ### <a name="span-idpollingspanspan-idpollingspanpolling-and-time-checking"></a><span id="polling"></span><span id="POLLING"></span>轮询和时间检查
 
@@ -62,7 +61,7 @@ StorPort 微型端口驱动程序不得尝试使用[**StorPortInitializeDpc**](/
 
 -   操作系统将 **空** 参数传递到微型端口驱动程序的 *DriverEntry* 例程。
 
--   在调用[**HwStorFindAdapter**](/windows-hardware/drivers/ddi/storport/nc-storport-hw_find_adapter)或[*HwScsiFindAdapter*](/previous-versions/windows/hardware/drivers/ff557300(v=vs.85))例程时，磁盘转储端口驱动程序会在*ArgumentString*参数中传递字符串 "dump = 1"。
+-   在调用 [**HwStorFindAdapter**](/windows-hardware/drivers/ddi/storport/nc-storport-hw_find_adapter)或 [*HwScsiFindAdapter*](/previous-versions/windows/hardware/drivers/ff557300(v=vs.85))例程时，磁盘转储端口驱动程序会在 *ArgumentString* 参数中传递字符串 "dump = 1"。
 
 在调试程序中查看处于转储模式的存储微型端口驱动程序的映像时，驱动程序名称将具有 "dump \_ " 前缀。 如果微型端口驱动程序处于休眠模式，则驱动程序名称将具有前缀 "hiber \_ "。
 

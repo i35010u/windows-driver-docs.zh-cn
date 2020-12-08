@@ -1,18 +1,17 @@
 ---
 title: 外部设备属性
 description: 外部设备属性
-ms.assetid: 633b24c7-a1da-4748-aaa2-864a01a3fd98
 keywords:
 - 外部设备属性 WDK 视频捕获
 - PROPSETID_EXT_DEVICE
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3a750dd6e740128846e65afb737082893c97e402
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 24b5227402cbc13881c8d99f88e70f2991522692
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107126"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96802171"
 ---
 # <a name="external-device-properties"></a>外部设备属性
 

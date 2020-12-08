@@ -1,15 +1,14 @@
 ---
 title: 修改已取消的请求逻辑
 description: 修改已取消的请求逻辑
-ms.assetid: 8246826A-BDBD-4A9B-9FFC-B813033E0FDC
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 688a6eb7499507215b6978004873e2d756b82de1
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 66033c48c1968d29ed47c36332ebcec7ccda1efd
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89189663"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803441"
 ---
 # <a name="revise-canceled-request-logic"></a>修改已取消的请求逻辑
 

@@ -1,20 +1,19 @@
 ---
 title: EFI_BATTERY_CHARGING_PROTOCOL
 description: EFI_BATTERY_CHARGING_PROTOCOL
-ms.assetid: 978d063e-f864-44be-9f58-4e4c6b2193b8
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ff284993c68a58ac7635225fbdb32148f5ab7758
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f04948ddf39b6597e487e1bbf3b5a0b97ac59f32
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328050"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803415"
 ---
-# <a name="efibatterychargingprotocol"></a>EFI\_电池\_正在充电\_协议
+# <a name="efi_battery_charging_protocol"></a>EFI \_ 电池 \_ 充电 \_ 协议
 
 
-此协议允许 UEFI 驱动程序支持的主电池充电。
+此协议允许 UEFI 驱动程序支持对主电池充电。
 
 ## <a name="syntax"></a>语法
 
@@ -39,20 +38,20 @@ typedef struct _EFI_BATTERY_CHARGING_PROTOCOL {
 返回有关主电池的当前状态的信息。
 
 <a href="" id="chargebattery"></a>**ChargeBattery**  
-为指定的级别使用指定的最大当前为主电池充电。
+使用指定的最大电流向指定级别的主电池收费。
 
-<a href="" id="revision"></a>**修订版本**  
-修订了 EFI\_电池\_正在充电\_协议遵循。 所有未来的版本必须是向后兼容。 如果将来的版本不是向后兼容，必须使用不同的 GUID。
+<a href="" id="revision"></a>**A01**  
+EFI \_ 电池 \_ 充电协议遵从的修订版本 \_ 。 所有将来的修订版都必须是向后兼容。 如果未来版本不是向后兼容的，则必须使用不同的 GUID。
 
-当前的修订版本是 0x00010002，但也支持修订 0x00010001。 有关哪些函数中每个版本的协议支持的详细信息，请参阅下面的备注部分。
+当前修订版本为0x00010002，但也支持修订版0x00010001。 有关每个协议版本支持的功能的详细信息，请参阅下面的 "备注" 部分。
 
 <a href="" id="getbatteryinformation"></a>**GetBatteryInformation**  
-返回有关主电池的当前状态的信息。 此函数是类似于**GetBatteryStatus**，但它提供的信息多于**GetBatteryStatus**。
+返回有关主电池的当前状态的信息。 此函数类似于 **GetBatteryStatus**，但它提供了比 **GetBatteryStatus** 更多的信息。
 
 ## <a name="remarks"></a>备注
 
 
-下表列出了 EFI 的每个版本中支持的函数\_电池\_正在充电\_协议协议。
+下表列出了 EFI \_ 电池 \_ 充电协议协议的每个版本支持的功能 \_ 。
 
 <table>
 <colgroup>
@@ -61,8 +60,8 @@ typedef struct _EFI_BATTERY_CHARGING_PROTOCOL {
 </colgroup>
 <thead>
 <tr class="header">
-<th>修订 0x00010002</th>
-<th>修订 0x00010001</th>
+<th>修订0x00010002</th>
+<th>修订0x00010001</th>
 </tr>
 </thead>
 <tbody>
@@ -87,8 +86,8 @@ typedef struct _EFI_BATTERY_CHARGING_PROTOCOL {
 
 [UEFI 电池充电协议](uefi-battery-charging-protocol.md)  
 
-[EFI\_BATTERY\_CHARGING\_PROTOCOL.GetBatteryInformation](efi-battery-charging-protocolgetbatteryinformation.md)  
+[EFI \_ 电池 \_ 充电 \_ 协议。GetBatteryInformation](efi-battery-charging-protocolgetbatteryinformation.md)  
 
-[EFI\_BATTERY\_CHARGING\_PROTOCOL.GetBatteryStatus](efi-battery-charging-protocolgetbatterystatus.md)  
+[EFI \_ 电池 \_ 充电 \_ 协议。GetBatteryStatus](efi-battery-charging-protocolgetbatterystatus.md)  
 
-[EFI\_BATTERY\_CHARGING\_PROTOCOL.ChargeBattery](efi-battery-charging-protocolchargebattery.md)  
+[EFI \_ 电池 \_ 充电 \_ 协议。ChargeBattery](efi-battery-charging-protocolchargebattery.md)  

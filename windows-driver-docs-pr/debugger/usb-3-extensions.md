@@ -1,15 +1,14 @@
 ---
 title: USB 3.0 扩展
 description: 本部分介绍了 USB 3.0 调试程序扩展命令。
-ms.assetid: 7CE2B9F8-50EF-41C0-B306-B7B7A6DA1636
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a8a7c344a314fdb35bdbb57b83f9bc69392204eb
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 3088fc1b1f0014bca7ee347f8d47641ff4a6f0be
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89215692"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803241"
 ---
 # <a name="usb-30-extensions"></a>USB 3.0 扩展
 
@@ -25,11 +24,11 @@ USB 3.0 树包含所有 USB 3.0 主机控制器以及连接到 USB 3.0 主机控
 
 图中所示的树有两个 USB 3.0 主机控制器。 请注意，图中所示的每个设备并不是 USB 3.0 设备。 但 (包括集线器) 所示的所有设备都是 USB 3.0 树的一部分，因为每个设备都在源自 USB 3.0 主机控制器的分支上。
 
-可以将该关系图视为两个树，每个树对应一个主机控制器。 但是，当我们使用术语 " *usb 3.0" 树*时，我们将引用所有 USB 3.0 主机控制器及其连接的集线器和设备的集合。
+可以将该关系图视为两个树，每个树对应一个主机控制器。 但是，当我们使用术语 " *usb 3.0" 树* 时，我们将引用所有 USB 3.0 主机控制器及其连接的集线器和设备的集合。
 
 ## <a name="getting-started-with-usb-30-debugging"></a>USB 3.0 调试入门
 
-若要开始调试 USB 3.0 问题，请输入 [**！ usb \_ tree**](-usb3kd-usb-tree.md) 命令。 **！ Usb \_ tree**命令显示可用于调查主机控制器、集线器、端口、设备、终结点和 usb 3.0 树的其他元素的命令和地址列表。
+若要开始调试 USB 3.0 问题，请输入 [**！ usb \_ tree**](-usb3kd-usb-tree.md) 命令。 **！ Usb \_ tree** 命令显示可用于调查主机控制器、集线器、端口、设备、终结点和 usb 3.0 树的其他元素的命令和地址列表。
 
 ## <a name="hub-commands"></a>中心命令
 

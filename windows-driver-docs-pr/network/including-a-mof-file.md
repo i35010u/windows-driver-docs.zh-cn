@@ -1,7 +1,6 @@
 ---
 title: 包含 MOF 文件
 description: 包含 MOF 文件
-ms.assetid: 87ef7156-d204-4797-b805-a50d9a4c509d
 keywords:
 - 自定义 Guid WDK 网络
 - WMI WDK 网络，Guid
@@ -11,12 +10,12 @@ keywords:
 - MOF 文件 WDK 网络
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 126e0dcfece6516e7392d034174c3efc2184a172
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 7c372d72b4132f0e22d5bc71fee194130169d474
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89217598"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801649"
 ---
 # <a name="including-a-mof-file"></a>包含 MOF 文件
 

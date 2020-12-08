@@ -1,17 +1,16 @@
 ---
 title: OID_CO_TAPI_TRANSLATE_NDIS_CALLPARAMS
 description: 本主题介绍) OID_CO_TAPI_TRANSLATE_NDIS_CALLPARAMS 对象标识符 (OID。
-ms.assetid: a56affc9-4118-4322-85bc-f979b70e0dad
 keywords:
 - OID_CO_TAPI_TRANSLATE_NDIS_CALLPARAMS
 ms.date: 11/03/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 55f7cabd42c8eaef591b8a32c680e1b83204ff55
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 0c14c536a890d5906fea7f3be96e75a2d4dbbea1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89206365"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96802317"
 ---
 # <a name="oid_co_tapi_translate_ndis_callparams"></a>OID_CO_TAPI_TRANSLATE_NDIS_CALLPARAMS
 
@@ -30,7 +29,7 @@ typedef struct _CO_TAPI_TRANSLATE_NDIS_CALLPARAMS {
 此结构的成员包含以下信息：
 
 **ulFlags**  
-客户端必须在 **ulFlags**中设置 CO_TAPI_FLAG_INCOMING_CALL 位。
+客户端必须在 **ulFlags** 中设置 CO_TAPI_FLAG_INCOMING_CALL 位。
 
 **NdisCallParams**  
 指定一个 [NDIS_VAR_DATA_DESC](/previous-versions/windows/hardware/network/ff559020(v=vs.85)) 结构，该结构包含从 NDIS_VAR_DATA_DESC 结构开始到 [CO_CALL_PARAMETERS](/previous-versions/windows/hardware/network/ff545384(v=vs.85)) 结构的偏移量。 NDIS_VAR_DATA_DESC 结构还包含 CO_CALL_PARAMETERS 结构的长度。 客户端用要转换为 TAPI 调用参数的 NDIS 调用参数填充 CO_CALL_PARAMETERS 结构。
@@ -40,7 +39,7 @@ typedef struct _CO_TAPI_TRANSLATE_NDIS_CALLPARAMS {
 
 ## <a name="remarks"></a>备注
 
-如果请求成功，则调用管理器或 MCM 驱动程序将使用转换后的 TAPI 调用参数填充由 **LineCallInfo** 引用的 LINE_CALL_PARAMS 结构。 调用管理器或 MCM 驱动程序必须在 **LineCallInfo**所引用的平面内存部分中分配 LINE_CALL_INFO 结构。 客户端将 LINE_CALL_INFO 结构的总长度写入 **LineCallInfo**。
+如果请求成功，则调用管理器或 MCM 驱动程序将使用转换后的 TAPI 调用参数填充由 **LineCallInfo** 引用的 LINE_CALL_PARAMS 结构。 调用管理器或 MCM 驱动程序必须在 **LineCallInfo** 所引用的平面内存部分中分配 LINE_CALL_INFO 结构。 客户端将 LINE_CALL_INFO 结构的总长度写入 **LineCallInfo**。
 
 ## <a name="requirements"></a>要求
 

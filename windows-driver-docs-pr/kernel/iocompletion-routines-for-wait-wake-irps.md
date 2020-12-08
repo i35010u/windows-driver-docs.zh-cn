@@ -1,19 +1,18 @@
 ---
 title: 等待/唤醒 IRP 的 IoCompletion 例程
 description: 等待/唤醒 IRP 的 IoCompletion 例程
-ms.assetid: 61239398-2d37-4163-8128-7a4a0916a262
 keywords:
 - 正在接收等待/唤醒 Irp
 - 等待/唤醒 Irp WDK 电源管理，接收
 - IoCompletion 例程
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3e3c07ca69a1cbca23f852e71363b0f2b105548c
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 7e74e3913fd9afe4ffdaecdb0fe387f6a028e7ff
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89183989"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801699"
 ---
 # <a name="iocompletion-routines-for-waitwake-irps"></a>等待/唤醒 IRP 的 IoCompletion 例程
 
@@ -29,7 +28,7 @@ Wait/唤醒 *IoCompletion* 例程所需的操作取决于设备和驱动程序�
 
 1.  重置设备扩展中的所有相关字段。 例如，等待/唤醒 IRP 处于挂起状态时，大多数驱动程序会设置一个标志，并在设备扩展中保留一个指向 IRP 的指针。
 
-2.  通过调用[**IoSetCancelRoutine**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iosetcancelroutine)为 IRP 重置[*取消*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_cancel)例程（如果有），并指定例程的**NULL**指针。
+2.  通过调用 [**IoSetCancelRoutine**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iosetcancelroutine)为 IRP 重置 [*取消*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_cancel)例程（如果有），并指定例程的 **NULL** 指针。
 
 3.  调用 **IoCompleteRequest**，指定 IO \_ 无 \_ 增量，以完成 IRP。
 

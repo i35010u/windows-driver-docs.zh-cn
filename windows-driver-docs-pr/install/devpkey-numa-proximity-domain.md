@@ -1,7 +1,6 @@
 ---
 title: DEVPKEY_Numa_Proximity_Domain
 description: DEVPKEY_Numa_Proximity_Domain
-ms.assetid: 384e167b-cb08-4264-a7b1-3cea2dda0d46
 keywords:
 - DEVPKEY_Numa_Proximity_Domain 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 308f5b4981aeab8b58a1246d8087c1de163fc42e
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 008321a6a4be919b5adcc1d854d96bc6a0066412
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90716741"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801735"
 ---
 # <a name="devpkey_numa_proximity_domain"></a>DEVPKEY_Numa_Proximity_Domain
 

@@ -1,45 +1,44 @@
 ---
 title: PICT 数据源
 description: PICT 数据源
-ms.assetid: 75D3E086-C277-410d-B474-742A47ABB6AC
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: eb421c98d19598f40c31d140e2039b6271636666
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3dae98e42830e433b726ffab25fbda3e161549fb
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63355471"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96802137"
 ---
 # <a name="pict-data-source"></a>PICT 数据源
 
 
-请确保您熟悉基本的 TAEF 执行，并且知道如何使用它，然后继续进行本部分中创建测试。
+请确保熟悉 TAEF 的基本执行，并知道如何使用它创作测试，然后再继续此部分。
 
-## <a name="span-idpictbackgroundandreferencesspanspan-idpictbackgroundandreferencesspanspan-idpictbackgroundandreferencesspanpict-background-and-references"></a><span id="PICT_Background_and_References"></span><span id="pict_background_and_references"></span><span id="PICT_BACKGROUND_AND_REFERENCES"></span>PICT 背景和引用
-
-
-PICT 代表成对独立组合测试。 **PICT，可分别指定为每个参数的变体。** 例如，如果 API 测试取决于两个参数：文件名和文件扩展名，您能想到的可能的变体，以将分别传递文件名和 FileExtensions 如下所示：
-
--   文件名： a、 z12390，Realllyreallyreallylonglonglonglonglonglonglonglonglonglong，normallength
--   文件扩展名： txt、 png、 bat、 文档、 exe、 bmp、 wav
-
-现在，您可以看到**暴力破解组合扩展**的更高版本 (4 X 7 = 28)**无法轻松地获取超出界限**您想象的更多的变体，以将添加到列表。 在此类测试用例方案中， **PICT 可以添加了许多值，通过生成一组精简参数结果以输入参数获取全面的组合覆盖率。**
-
-## <a name="span-idpictsupportintaefspanspan-idpictsupportintaefspanspan-idpictsupportintaefspanpict-support-in-taef"></a><span id="PICT_Support_in_TAEF"></span><span id="pict_support_in_taef"></span><span id="PICT_SUPPORT_IN_TAEF"></span>在 TAEF PICT 支持
+## <a name="span-idpict_background_and_referencesspanspan-idpict_background_and_referencesspanspan-idpict_background_and_referencesspanpict-background-and-references"></a><span id="PICT_Background_and_References"></span><span id="pict_background_and_references"></span><span id="PICT_BACKGROUND_AND_REFERENCES"></span>PICT 背景和引用
 
 
-TAEF 提供 PICT 基于测试的内置支持。
+PICT 代表成对的独立组合测试。 **PICT 允许单独指定每个参数的变体。** 例如，如果 API 测试依赖于两个参数： FileName 和 FileExtension，可以考虑将可能的变体分别传递给 FileName 和 for FileExtensions，如下所示：
 
-若要这样做的优点，编写 pict.exe 你输入的模型文件便可正常。 请参阅\*上面提到的示例文件夹中的.txt 文件。 它可能有助于如果 PICT 执行，因此尝试在命令提示符下的第一个类似于按预期对您的模型文件，请尝试：
+-   FileName： a、z12390、Realllyreallyreallylonglonglonglonglonglonglonglonglonglong、normallength
+-   FileExtension： txt，png，bat，doc，exe，bmp，wav
+
+现在，你可以看到上述 (4 X 7 = 28) 的 **强制组合扩展** 可以在你认为要添加到列表中的更多变体时 **轻松地超出界限** 。 在这种测试用例方案中， **PICT 可以通过生成一组精简的参数结果来添加大量值，以获取针对输入参数的全面组合覆盖。**
+
+## <a name="span-idpict_support_in_taefspanspan-idpict_support_in_taefspanspan-idpict_support_in_taefspanpict-support-in-taef"></a><span id="PICT_Support_in_TAEF"></span><span id="pict_support_in_taef"></span><span id="PICT_SUPPORT_IN_TAEF"></span>TAEF 中的 PICT 支持
+
+
+TAEF 为基于 PICT 的测试提供内置支持。
+
+若要利用此方法，请像往常一样为 pict.exe 编写输入模型文件。 请参阅 \* 上面提到的示例文件夹中的 .txt 文件。 如果在你的模型文件上通过在命令提示符下首先尝试使用 PICT 来尝试 PICT，则可能会很有用，如下所示：
 
 ``` syntax
 pict.exe <model file> [/e:<seed file>]
 ```
 
-Pict.exe 现 TAEF 的最新版本共享上的二进制文件的其余部分了。
+TAEF 的最新版本共享上的其余二进制文件提供 Pict.exe。
 
-一个完成的 PICT 创作您的模型文件 （和种子文件） 和已验证它针对 pict.exe 在命令提示符下，您可以现在标记测试，以便让 TAEF 了解它们是 PICT 驱动测试。 如果您熟悉基于表的数据驱动的测试 TAEF 中可用，您将发现这非常类似。
+您已经完成了创作您的模型文件 (和 seed file) 以获取 PICT，并已在命令提示符处验证了 pict.exe 该文件，您现在可以标记您的测试，让 TAEF 知道它们是 PICT 驱动的测试。 如果你熟悉 TAEF 中提供的基于表的数据驱动测试，你会发现这非常类似。
 
 本机代码：
 
@@ -64,7 +63,7 @@ Pict.exe 现 TAEF 的最新版本共享上的二进制文件的其余部分了�
 18    };
 ```
 
-托管的代码：
+托管代码：
 
 ```cpp
 1     [TestClass]
@@ -95,41 +94,41 @@ Pict.exe 现 TAEF 的最新版本共享上的二进制文件的其余部分了�
 26    }
 ```
 
-上面的示例中所示，您需要指定为数据源的模型文件的名称。 **你必须将模型文件的名称前缀"pict:"** ，并提供此数据源作为为你的测试方法。 对于托管测试时，就像使用任何其他数据驱动测试的 TAEF，必须提供的 TestContext 属性获取和设置方法，并在类中具有相同的专用实例。
+如上面的示例所示，您需要指定模型文件的名称作为数据源。 **必须在模型文件的名称前面加上 "pict：" 前缀** ，并为测试方法提供此数据源。 对于托管测试，与任何其他使用 TAEF 的数据驱动的测试一样，必须提供 TestContext 属性 get 和 set 方法，并在类中具有相同的私有实例。
 
-如果你想要将命令选项传递给 PICT，您可以实现此目的使用元数据。 使用下表将 Pict.exe 的命令选项映射到 TAEF 元数据。
+如果要将命令选项传递到 PICT，可以使用元数据来实现此目的。 使用下表将 Pict.exe 的命令选项映射到 TAEF 元数据。
 
 
-| pict.exe 命令语法 |                本机 TAEF 元数据语法                |           TAEF 元数据的托管的语法            |
+| pict.exe 命令语法 |                本机 TAEF 元数据语法                |           托管的 TAEF 元数据语法            |
 |-------------------------|-----------------------------------------------------------|---------------------------------------------------|
-|          /o:3           |        TEST\_METHOD\_PROPERTY(L"Pict:Order", L"3")        |        \[TestProperty("Pict:Order", "3")\]        |
-|          /d:，           |   TEST\_METHOD\_PROPERTY(L"Pict:ValueSeparator", L",")    |   \[TestProperty("Pict:ValueSeparator", ",")\]    |
-|           /a:           |                                                           | TEST\_METHOD\_PROPERTY(L"Pict:AliasSeparator", L" |
-|          /n:~           | TEST\_METHOD\_PROPERTY(L"Pict:NegativeValuePrefix", L"~") | \[TestProperty("Pict:NegativeValuePrefix", "~")\] |
-|      /e:test.seed       | TEST\_METHOD\_PROPERTY(L"Pict:SeedingFile", L"test.seed") | \[TestProperty("Pict:SeedingFile", "test.seed")\] |
-|           /r            |      TEST\_METHOD\_PROPERTY(L"Pict:Random", L"true")      |      \[TestProperty("Pict:Random", "true")\]      |
-|          /r:33          |     TEST\_METHOD\_PROPERTY(L"Pict:RandomSeed", L"33")     |     \[TestProperty("Pict:RandomSeed", "33")\]     |
-|           /c            |  TEST\_METHOD\_PROPERTY(L"Pict:CaseSensitive", L"true")   |  \[TestProperty("Pict:CaseSensitive", "true")\]   |
+|          /o：3           |        测试 \_ 方法 \_ 属性 (L "Pict： Order"，L "3" )         |        \[TestProperty ( "Pict： Order"，"3" ) \]        |
+|          /d：，           |   测试 \_ 方法 \_ 属性 (L "Pict： ValueSeparator"，L "，" )     |   \[TestProperty ( "Pict： ValueSeparator"，"，" ) \]    |
+|           /a:           |                                                           | 测试 \_ 方法 \_ 属性 (L "Pict： AliasSeparator"，L " |
+|          /n： ~           | 测试 \_ 方法 \_ 属性 (l "Pict： NegativeValuePrefix"，L "~" )  | \[TestProperty ( "Pict： NegativeValuePrefix"，"~" ) \] |
+|      /e：测试种子       | 测试 \_ 方法 \_ 属性 (l "Pict： SeedingFile"，L "test. seed" )  | \[TestProperty ( "Pict： SeedingFile"，"test" ) \] |
+|           /r            |      测试 \_ 方法 \_ 属性 (L "Pict： Random"，L "true" )       |      \[TestProperty ( "Pict： Random"，"true" ) \]      |
+|          /r：33          |     测试 \_ 方法 \_ 属性 (l "Pict： RandomSeed"，L "33" )      |     \[TestProperty ( "Pict： RandomSeed"，"33" ) \]     |
+|           /c            |  测试 \_ 方法 \_ 属性 (l "Pict： CaseSensitive"，L "true" )    |  \[TestProperty ( "Pict： CaseSensitive"，"true" ) \]   |
 
-按此顺序的优先级，可以在命令提示符下，在数据源属性中，或作为测试、 类或模块级别的元数据，设置的任何更高版本的元数据。 若要将其设置的命令提示符处，使用语法：
+可在命令提示符处、DataSource 属性中设置上述任何元数据，也可将其设置为测试、类或模块级元数据，其优先级按顺序排列。 若要在命令提示符下设置，请使用以下语法：
 
 ``` syntax
 te.exe <test dll> /Pict:Order=3 /Pict:SeedingFile=test.seed
 ```
 
-若要设置元数据的数据源属性中，追加问号字符 （？） 然后与符号分隔的元数据名称的一组使用的模型文件名称 = 元数据值对。 使用此方法时"Pict:"元数据名称的前缀是可选的。 下面是一个示例：
+若要设置 DataSource 属性中的元数据，请在 (？ ) 中追加一个带问号字符的模型文件名，然后使用一组与符号分隔的元数据名称 = 元数据值对。 使用此方法时，元数据名称的 "Pict：" 前缀是可选的。 以下是示例：
 
 ```cpp
 TEST_METHOD_PROPERTY(L"DataSource", L"Pict:model.txt?Order=3&CaseSensitive=true&Random=true")
 ```
 
-在幕后 TAEF 将提供到 PICT 所输入的模型文件和命令选项，并获取结果。 如果 PICT 生成任何错误或警告，你将看到这些记录按 TAEF 警告。 对于 PICT 生成每个生成输出行，TAEF 重新调用问题中的测试。
+在幕后，TAEF 会将输入模型文件和命令选项提供给 PICT 并获取结果。 如果 PICT 产生任何错误或警告，则会看到，TAEF 会记录为警告。 对于 PICT 产生的每个结果输出行，TAEF 将重新调用该测试。
 
-设置"Pict: RandomSeed"值将更改的默认值为"Pict： 随机"从 false 到 true。 这样一来，你可以显式设置"Pict： 随机"为 false，以获取 TAEF 忽略"Pict: RandomSeed"。
+设置 "Pict： RandomSeed" 值会将 "Pict： Random" 的默认值从 false 更改为 true。 这样，便可以将 "Pict： Random" 显式设置为 false，以使 TAEF 忽略 "Pict： RandomSeed"。
 
-**允许使用 PICT.exe 在模型文件上执行并设定种子文件输入指定的默认超时值为 5 分钟。** 如果模型文件更为复杂，并且需要更多的时间超过 5 分钟的 PICT.exe 返回的结果，如指定，在上面的 CPP 示例所示，您可以重写此超时 **"Pict： 超时"** 元数据。 在示例中，1.5 分钟超时指定通过标准[TAEF 超时](taef-timeouts.md)格式。 其他 PICT 元数据，如"Pict： 超时"元数据继承，并因此可以指定对整个类或模块。
+**允许对模型文件执行 PICT.exe 的默认超时值为5分钟。** 如果您 PICT.exe 的模型文件更多并且需要超过5分钟的时间才能返回结果，则可以通过指定 **"Pict： Timeout"** 元数据来覆盖此超时，如上面的 CPP 示例中所示。 在此示例中，通过标准 [TAEF](taef-timeouts.md) 超时格式指定1.5 分钟超时。 与其他 PICT 元数据类似，"Pict： Timeout" 元数据会被继承，因此可以为整个类或模块指定。
 
-期间可以访问的数据值的给定调用从你的测试方法及其关联的设置和清理方法相同的方式一样的基于表 TAEF-对于本机代码使用 TestData 类和的 TestContext 数据驱动测试托管的代码如下所示：
+你可以从测试方法及其关联的安装和清理方法中访问数据值，方法与使用 TAEF 对基于表的数据驱动测试相同，使用 TestData 类作为本机代码，并将 TestContext 用于托管代码，如下所示：
 
 本机代码：
 
@@ -162,7 +161,7 @@ TEST_METHOD_PROPERTY(L"DataSource", L"Pict:model.txt?Order=3&CaseSensitive=true&
 26    }
 ```
 
-托管的代码：
+托管代码：
 
 ```cpp
 1      [TestClass]
@@ -202,13 +201,13 @@ TEST_METHOD_PROPERTY(L"DataSource", L"Pict:model.txt?Order=3&CaseSensitive=true&
 35    }
 ```
 
-就像一样 TAEF 中的任何数据驱动测试与"索引"被保留并且不应作为参数名称。 索引隐式引用测试方法调用的索引，如果你的测试需要它，则可从测试方法进行访问。
+与 TAEF 中任何数据驱动的测试一样，"Index" 是保留的，不应用作参数名。 索引隐式引用测试方法调用的索引，如果你的测试需要，它可从测试方法访问。
 
-**还有一点需要注意发生 PICT 时基于测试，所有参数的数据类型被假定为 WEX::Common::String （本机） String(managed) 或 VT\_BSTR(script)。** 转换和解释是留给用户。
+**另外，请务必注意，对于基于 PICT 的测试，所有参数的数据类型假定为 WEX：： Common：： String (本机) 、String (托管) 或 VT \_ BSTR (script) 。** 转换和解释留给用户。
 
-完成创作使用 TAEF PICT 基于测试，现在可以从命令提示符下调用它，将所有 TAEF 提供的命令功能应用于它： 像 **/list**获取获取生成的所有测试方法的列表使用输出数据，为 PICT **/listproperties**以获取测试的列表以及它们是与等相关联的元数据和数据值的方法名称。对关键的一点**注意在开始之前，确保该 pict.exe 是在你的路径。**
+现在，你已完成使用 TAEF 创作基于 PICT 的测试，你可以从命令提示符调用它，并应用 TAEF 提供给它的所有命令功能：例如 **/list** 若要获取将使用 PICT 输出作为数据生成的所有测试方法的列表，请 **/listproperties** 获取测试方法名称及其关联的元数据和数据值的列表。开始之前要注意的关键事项 **是确保 pict.exe 在你的路径中。**
 
-以下是几个示例：
+以下是一些示例：
 
 ``` syntax
 te Examples\CPP.Pict.Example.dll /list /name:*SimpleTest*
@@ -241,7 +240,7 @@ Test Authoring and Execution Framework v2.9.3k for x86
                 WEX::TestExecution::Examples::PictExample::SimpleTest#23
 ```
 
-若要了解有关选择条件 (/ 选择和 /name) 请参阅选择 wiki 页面。
+若要详细了解选择条件 (/select 和/name) ，请参阅选择 wiki 页。
 
 ``` syntax
 te Examples\Csharp.Pict.Example.dll /listproperties /select:"@Name='*SumofSquare*'
@@ -259,7 +258,7 @@ Test Authoring and Execution Framework v2.9.3k for x86
                         Data[b] = ~-1
 ```
 
-上面的示例显示如何选择使用索引。 您还可选择基于数据值。
+上面的示例演示如何使用索引进行选择。 您还可以选择基于数据值进行选择。
 
 ``` syntax
 te Examples\Csharp.Pict.Example.dll /listproperties /select:"@Name='*SumofSquare*'
@@ -273,29 +272,29 @@ Test Authoring and Execution Framework v2.9.3k for x86
                         Data[b] = 1
 ```
 
-## <a name="span-idpictresultcachingspanspan-idpictresultcachingspanspan-idpictresultcachingspanpict-result-caching"></a><span id="PICT_Result_Caching"></span><span id="pict_result_caching"></span><span id="PICT_RESULT_CACHING"></span>PICT 结果缓存
+## <a name="span-idpict_result_cachingspanspan-idpict_result_cachingspanspan-idpict_result_cachingspanpict-result-caching"></a><span id="PICT_Result_Caching"></span><span id="pict_result_caching"></span><span id="PICT_RESULT_CACHING"></span>PICT 结果缓存
 
 
-一些模型文件可能会非常复杂，并且可能需要更长时间才能 Pict.exe 得到处理。 TAEF 尝试通过 Te.exe 给定的执行过程中的缓存结果来缓解结果的处理时间。 如果运行在同一个执行后续测试引用相同的模型和种子文件组合，TAEF 将使用缓存的结果。 默认情况下，每次执行结束时缓存的结果会删除。
+某些模型文件可能非常复杂，可能需要更长的时间才能 Pict.exe 处理。 TAEF 尝试通过在 Te.exe 的给定执行期间缓存结果来减少结果的处理时间。 如果在同一执行运行中的后续测试引用相同的模型和 seed 文件组合，则 TAEF 将使用缓存的结果。 默认情况下，在每次执行结束时，将删除缓存的结果。
 
-如果想要继续利用后续运行中的缓存的结果，可以指定"/ persistPictResults"命令提示符处执行期间的选项。 每当指定"/ persistPictResults"为你的命令，第一次执行实际执行 pict.exe，可能需要很长时间，但所有的后续运行将在其中的模型和播种文件都被未修改的情况下使用缓存的结果。 **注意：您将需要继续指定"/ persistPictResults"后续运行。未指定任何后续运行将删除该运行结束时缓存的结果。**
+如果要继续在后续运行中利用缓存的结果，可以在执行期间在命令提示符下指定 "/persistPictResults" 选项。 每当你为命令指定 "/persistPictResults" 时，第一次执行 pict.exe 将实际执行并且可能需要很长时间，但在未修改模型和 seed 文件的情况下，所有后续运行将使用缓存的结果。 **注意：对于后续运行，你将需要继续指定 "/persistPictResults"。如果未指定任何后续运行，则在运行时将删除缓存的结果。**
 
-如果保留 PICT 结果，并使用缓存的数据是你想要默认情况下进行，可能会将其设置为你测试的一部分\_cmd 环境变量，如下所示，从而无需指定它在每次运行。 请参阅[执行测试](executing-tests.md)有关详细信息 te\_cmd。
+如果保持 PICT 结果，并且使用缓存的数据是你在默认情况下要执行的操作，则可以将其设置为 te \_ cmd 环境变量的一部分，如下所示，无需在每次运行时都对其进行指定。 有关 te cmd 的详细信息，请参阅 [执行测试](executing-tests.md) \_ 。
 
 ``` syntax
 set te_cmd = /persistPictResults
 ```
 
-缓存的结果文件存储在名为"TAEF PICT"在 %temp%目录中，如果 Te.exe 有权访问它，或当前的执行目录中从 Te.exe 程序启动时所在的文件夹。 结果可能处于不一致状态的唯一情况是如果您按 Ctrl + C 在执行过程。 在这种情况下，TAEF 将尝试删除缓存的结果，但如果无法执行此操作，将看到一个错误，效果。 错误将提示您若要删除缓存的结果位置。 如果不做可能会导致在后续的测试中未定义或错误行为。
+缓存的结果文件存储在% temp% 目录中名为 "TAEF" 的文件夹中，如果 Te.exe 有权访问它，或在从其启动 Te.exe 的当前执行目录中。 如果在执行过程中按 Ctrl + C，则唯一可能会导致不一致的状态。 在这种情况下，TAEF 将尝试删除缓存的结果，但如果无法执行此操作，则会在效果中看到错误。 此错误将提示您删除缓存的结果位置。 如果未执行此操作，可能会导致后续测试中发生未定义或错误的行为。
 
-使用 TAEF 中内置 PICT 支持，您现在可以充分利用这种，PICT 中的功能以及在 TAEF 中您的测试自动化的功能。
+通过 TAEF 中的内置 PICT 支持，你现在可以在测试自动化中充分利用图像中的功能和 TAEF 中的功能。
 
-## <a name="span-iddatasourceasaresourcespanspan-iddatasourceasaresourcespanspan-iddatasourceasaresourcespandatasource-as-a-resource"></a><span id="DataSource_as_a_Resource"></span><span id="datasource_as_a_resource"></span><span id="DATASOURCE_AS_A_RESOURCE"></span>为资源的数据源
+## <a name="span-iddatasource_as_a_resourcespanspan-iddatasource_as_a_resourcespanspan-iddatasource_as_a_resourcespandatasource-as-a-resource"></a><span id="DataSource_as_a_Resource"></span><span id="datasource_as_a_resource"></span><span id="DATASOURCE_AS_A_RESOURCE"></span>作为资源的数据源
 
 
-测试模块中，可以作为资源添加 PICT 模型和种子设定的文件。
+您可以在测试模块中添加 PICT 模型并播种文件作为资源。
 
-在本机代码中，这可通过在数据源元数据中指定的资源名称而不是文件名称。 下面是一个示例：
+在本机代码中，这是通过在数据源元数据中指定资源名称而不是文件名来完成的。 以下是示例：
 
 ```cpp
 BEGIN_TEST_METHOD(ResourceNameDataSource)
@@ -303,14 +302,14 @@ BEGIN_TEST_METHOD(ResourceNameDataSource)
 END_TEST_METHOD()
 ```
 
-"MyModelResourceName"和"MySeedingResourceName".rc 文件中定义的资源名称。 资源类型必须位于数据文件，与不同[表的数据源](table-data-source.md)的资源类型需要为数据源\_XML。
+"MyModelResourceName" 和 "MySeedingResourceName" 是 .rc 文件中定义的资源名称。 资源类型需要是数据文件，这与资源类型需要为数据源 XML 的 [表数据源](table-data-source.md) 不同 \_ 。
 
 ```cpp
 MyModelResourceName DATAFILE "model.txt"
 MySeedingResourceName DATAFILE "seed.txt"
 ```
 
-数据源的元数据值时该模型是一个文件将保持不变。 同样在本机代码中，您可以制作资源名称是相同的作为文件的名称。 TAEF 将首先查看存在具有数据源名称的实际文件。 如果找不到该文件，它将继续通过在测试模块的资源中查找。 由于更改存储在资源中的数据源需要重新编译，因此可以通过覆盖数据源的文件与测试 dll 相同的位置复制在开发时利用这种设计 （和命名的文件的名称相同的资源名称）。 完成后测试 （而不是副本） 将文件移回到到代码目录和嵌入资源的重新编译。
+数据源元数据的值将保持不变，这与模型为文件时的值相同。 同样，在本机代码中，你可以使资源名称与文件名相同。 TAEF 将首先查找包含数据源名称的实际文件。 如果找不到该文件，则通过查看测试模块的资源来继续操作。 由于更改存储在资源中的数据源需要进行重新编译，因此，您可以通过将数据源文件复制到与测试 dll 相同的位置来利用这一设计，同时开发 (和命名资源名称，使其与文件名) 相同。 完成测试后，请移动 (不将文件) 复制回代码目录中，然后重新编译以嵌入资源。
 
 
 

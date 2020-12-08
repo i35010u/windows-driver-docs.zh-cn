@@ -1,7 +1,6 @@
 ---
 title: DEVPKEY_NAME（设备安装程序类）
 description: DEVPKEY_NAME（设备安装程序类）
-ms.assetid: cc953918-f11a-464c-95cc-ee2a9aa68b7a
 keywords:
 - DEVPKEY_NAME (设备安装程序类) 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 1b61bd7d4148aa764acd0040e50b31e87c6121de
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 0f600a7f49738bcfb20f347ae2304bb9fa514c2a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90717032"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801741"
 ---
 # <a name="devpkey_name-device-setup-class"></a>DEVPKEY_NAME（设备安装程序类）
 

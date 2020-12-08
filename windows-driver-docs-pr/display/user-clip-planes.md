@@ -1,18 +1,17 @@
 ---
 title: 用户裁剪平面
 description: 用户裁剪平面
-ms.assetid: ea0a7b3b-b850-46bd-b39d-927f28e8de2a
 keywords:
 - 剪辑飞机 WDK Direct3D
 - 用户定义的剪辑平面 WDK Direct3D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9778f7aaf41fb50f6c9131aeeee24736372de139
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 3028efc28a431e68d9ef94c11531c44b7ffe85f6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89067160"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96802531"
 ---
 # <a name="user-clip-planes"></a>用户裁剪平面
 

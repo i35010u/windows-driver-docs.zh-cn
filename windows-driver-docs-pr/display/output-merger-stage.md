@@ -1,15 +1,14 @@
 ---
 title: 输出合并器阶段
 description: 输出合并器阶段
-ms.assetid: 9b549614-0f51-4c79-a6c4-ba907a5f9068
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 95f386fd84fb09508e5d247176a803b76de8c6f1
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 94ee5c093e8f5c8ce59dd9016567a87f8bd49221
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89064720"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96802623"
 ---
 # <a name="output-merger-stage"></a>输出合并器阶段
 

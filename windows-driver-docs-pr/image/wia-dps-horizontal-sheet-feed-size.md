@@ -1,9 +1,8 @@
 ---
-title: WIA\_DPS\_水平\_工作表\_馈送\_大小
-description: WIA\_DPS\_水平\_工作表\_馈送\_SIZE 属性包含文档送纸器扫描程序的但在一英寸的千分之几秒的物理的水平尺寸 (。 001)。 WIA 微型驱动程序创建并维护此属性。
-ms.assetid: e5c43028-5f2f-4e06-8f74-acd7cbb84755
+title: WIA \_ DPS \_ 水平 \_ 工作 \_ 源 \_ 大小
+description: WIA \_ DPS \_ 横坐标 \_ SHEET \_ FEED \_ SIZE 属性包含扫描仪文档送纸器的物理水平尺寸，以英寸的分之几分之)  (。 WIA 微型驱动程序创建并维护此属性。
 keywords:
-- WIA_DPS_HORIZONTAL_SHEET_FEED_SIZE 成像设备
+- WIA_DPS_HORIZONTAL_SHEET_FEED_SIZE 图像设备
 topic_type:
 - apiref
 api_name:
@@ -14,24 +13,24 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d36013bca95fd55a2bbadf4532fe1904f3380f1d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fb674517a7feaacce7b0b43e6ee75e9fb5a4413a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63352803"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96802405"
 ---
-# <a name="wiadpshorizontalsheetfeedsize"></a>WIA\_DPS\_水平\_工作表\_馈送\_大小
+# <a name="wia_dps_horizontal_sheet_feed_size"></a>WIA \_ DPS \_ 水平 \_ 工作 \_ 源 \_ 大小
 
 
-WIA\_DPS\_水平\_工作表\_馈送\_SIZE 属性包含文档送纸器扫描程序的但在一英寸的千分之几秒的物理的水平尺寸 (。 001)。 WIA 微型驱动程序创建并维护此属性。
+WIA \_ DPS \_ 横坐标 \_ SHEET \_ FEED \_ SIZE 属性包含扫描仪文档送纸器的物理水平尺寸，以英寸的分之几分之)  (。 WIA 微型驱动程序创建并维护此属性。
 
 ## <span id="ddk_wia_dps_horizontal_sheet_feed_size_si"></span><span id="DDK_WIA_DPS_HORIZONTAL_SHEET_FEED_SIZE_SI"></span>
 
 
-属性类型：VT\_I4
+属性类型： VT \_ I4
 
-有效值：WIA\_PROP\_NONE
+有效值： WIA " \_ \_ 无"
 
 访问权限：只读
 
@@ -45,12 +44,12 @@ WIA\_DPS\_水平\_工作表\_馈送\_SIZE 属性包含文档送纸器扫描程�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Version</p></td>
-<td><p>从 Windows Vista 开始，WIA_DPS_HORIZONTAL_SHEET_FEED_SIZE 属性仍可在根级别的 WIA 驱动程序，但它已被取代 WIA_IPS_MAX_HORIZONTAL_SIZE 属性，因此您应该将其视为可选。</p></td>
+<td><p>版本</p></td>
+<td><p>从 Windows Vista 开始，WIA_DPS_HORIZONTAL_SHEET_FEED_SIZE 属性在 WIA 驱动程序的根级别仍可用，但已被 WIA_IPS_MAX_HORIZONTAL_SIZE 属性替换，因此应将其视为可选。</p></td>
 </tr>
 <tr class="even">
-<td><p>Header</p></td>
-<td>Wiadef.h （包括 Wiadef.h）</td>
+<td><p>标头</p></td>
+<td>Wiadef (包含 Wiadef) </td>
 </tr>
 </tbody>
 </table>
@@ -58,9 +57,9 @@ WIA\_DPS\_水平\_工作表\_馈送\_SIZE 属性包含文档送纸器扫描程�
 ## <a name="see-also"></a>请参阅
 
 
-[**WIA\_DPS\_VERTICAL\_SHEET\_FEED\_SIZE**](wia-dps-vertical-sheet-feed-size.md)
+[**WIA \_ DPS \_ 垂直 \_ 工作 \_ 源 \_ 大小**](wia-dps-vertical-sheet-feed-size.md)
 
-[**WIA\_IPS\_MAX\_HORIZONTAL\_SIZE**](wia-ips-max-horizontal-size.md)
+[**WIA \_ IPS \_ 最大 \_ 水平 \_ 大小**](wia-ips-max-horizontal-size.md)
 
  
 

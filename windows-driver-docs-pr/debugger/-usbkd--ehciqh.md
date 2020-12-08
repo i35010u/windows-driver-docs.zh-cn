@@ -1,9 +1,8 @@
 ---
-title: usbkd _ehciqh
-description: _Ehciqh usbkd 命令显示 usbehci _HCD_QUEUEHEAD_DESCRIPTOR 结构中的信息。
-ms.assetid: 52A1CF03-3B1D-4CC6-A4DD-3E73A7AB2F00
+title: usbkd._ehciqh
+description: Usbkd._ehciqh 命令显示 usbehci _HCD_QUEUEHEAD_DESCRIPTOR 结构中的信息。
 keywords:
-- usbkd _ehciqh Windows 调试
+- usbkd._ehciqh Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 209e0d6dd6580b43d4d7d1780c588f9a60a4ff9a
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 568baf4c3c36529e80891cbf679990c614fad0c0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89207679"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96802051"
 ---
 # <a name="usbkd_ehciqh"></a>！ usbkd。 \_ehciqh
 
 
-**！ Usbkd。 \_ehciqh**命令显示 usbehci 中的信息 **！ \_HCD \_ QUEUEHEAD \_ 描述符**结构。 使用此命令显示 (的异步终结点的相关信息，) 控制和批量终结点。
+**！ Usbkd。 \_ehciqh** 命令显示 usbehci 中的信息 **！ \_HCD \_ QUEUEHEAD \_ 描述符** 结构。 使用此命令显示 (的异步终结点的相关信息，) 控制和批量终结点。
 
 ```dbgcmd
 !usbkd._ehciqh StructAddr

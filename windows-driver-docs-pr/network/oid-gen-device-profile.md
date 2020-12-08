@@ -1,21 +1,20 @@
 ---
 title: OID_GEN_DEVICE_PROFILE
 description: OID_GEN_DEVICE_PROFILE OID 已过时。 NDIS 和 NDIS 驱动程序不使用此 OID。
-ms.assetid: 0c95bbce-235a-4827-b935-137b9ee983b6
 ms.date: 08/08/2017
-keywords: -从 Windows Vista 开始 OID_GEN_DEVICE_PROFILE 网络驱动程序
+keywords: -从 Windows Vista 开始 OID_GEN_DEVICE_PROFILE 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 3f66944a4cebf1f4306d695b3832b46500172abc
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9f6f44eb82c9154f3780047bcbcfd2848bc35cac
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63368940"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96802303"
 ---
-# <a name="oidgendeviceprofile"></a>OID\_GEN\_DEVICE\_PROFILE
+# <a name="oid_gen_device_profile"></a>OID \_ 生成 \_ 设备 \_ 配置文件
 
 
-OID\_GEN\_设备\_配置文件 OID 已过时。 NDIS 和 NDIS 驱动程序不使用此 OID。
+OID 生成 \_ \_ 设备 \_ 配置文件 oid 已过时。 NDIS 和 NDIS 驱动程序不使用此 OID。
 
 <a name="requirements"></a>要求
 ------------
@@ -27,12 +26,12 @@ OID\_GEN\_设备\_配置文件 OID 已过时。 NDIS 和 NDIS 驱动程序不使
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Version</p></td>
+<td><p>版本</p></td>
 <td><p>不支持。</p></td>
 </tr>
 <tr class="even">
-<td><p>Header</p></td>
-<td>Ntddndis.h （包括 Ndis.h）</td>
+<td><p>标头</p></td>
+<td>Ntddndis (包含 Ndis .h) </td>
 </tr>
 </tbody>
 </table>

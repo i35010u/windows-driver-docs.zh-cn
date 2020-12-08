@@ -1,7 +1,6 @@
 ---
 title: 获取错误注入功能
 description: 获取错误注入功能
-ms.assetid: d4ff0d9c-bb17-4dff-8008-bf8d59e44621
 keywords:
 - 错误注入功能 WDK WHEA
 - 检索错误注入功能 WDK WHEA
@@ -11,12 +10,12 @@ keywords:
 - 注入硬件错误 WDK WHEA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 095a28be9fba7ae37558aed654375f7e675a58cf
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: cc4e1325519c498f7d943852677ce1eb41799dca
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89206150"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96802099"
 ---
 # <a name="getting-error-injection-capabilities"></a>获取错误注入功能
 

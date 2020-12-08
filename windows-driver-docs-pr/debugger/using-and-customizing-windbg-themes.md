@@ -1,35 +1,34 @@
 ---
 title: 使用和自定义 WinDbg 主题
 description: 使用和自定义 WinDbg 主题
-ms.assetid: ad1fb350-dfad-48a1-8374-609f5f82494b
 keywords:
 - 主题
-- 工作区主题
+- 工作区，主题
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5987146ea74a241397d68411c19d72eb75348674
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 33a6b2ddbedb678b267c31759bd34186f1265049
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383739"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803165"
 ---
 # <a name="using-and-customizing-windbg-themes"></a>使用和自定义 WinDbg 主题
 
 
-主题是预配置的 WinDbg 工作区包含一个有用的配置的调试信息窗口。
+主题是预配置的 WinDbg 工作区，其中包含调试信息窗口的有用配置。
 
-任何主题可以另存为基的工作区。 作为一组注册表文件 （扩展名为.reg） 提供有关 Windows 调试工具包中的主题。 因为会累积多个调试会话时，会自动设置各种默认工作区。 这些默认工作区使用的基本工作区作为起始点。 默认工作区的详细信息，请参阅[创建和打开工作区](creating-and-opening-a-workspace.md)。
+可以将任何主题保存为基本工作区。 "Windows 调试工具" 包中的主题作为一组注册表文件提供， (带有 .reg 扩展名) 。 当您累积更多调试会话时，将自动设置各个默认工作区。 这些默认工作区使用基本工作区作为起始点。 有关默认工作区的详细信息，请参阅 [创建和打开工作区](creating-and-opening-a-workspace.md)。
 
-为获得最佳的用户体验，我们建议在启动调试会话之前请按照本主题中的说明进行操作。
+为了获得最佳的用户体验，建议你在开始调试会话之前，按照本主题中的说明进行操作。
 
-本部分包括以下主题：
+本节包括下列主题：
 
-[正在加载主题](loading-a-theme.md)
+[加载主题](loading-a-theme.md)
 
 [自定义主题](customizing-a-theme.md)
 
-[使用的 Windows 调试工具中提供的主题](using-themes-provided-in-debugging-tools-for-windows.md)
+[使用 Windows 调试工具中提供的主题](using-themes-provided-in-debugging-tools-for-windows.md)
 
  
 

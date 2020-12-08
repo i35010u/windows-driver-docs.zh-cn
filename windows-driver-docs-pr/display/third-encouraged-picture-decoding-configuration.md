@@ -1,18 +1,17 @@
 ---
 title: 第三个建议的图片解码配置
 description: 第三个建议的图片解码配置
-ms.assetid: 9f905030-9fc9-4a5f-8cf5-a36c7861be52
 keywords:
-- 压缩解码集 WDK DirectX VA 的图片
+- 压缩的图片解码设置 WDK DirectX VA
 - 图片解码设置 WDK DirectX VA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e5e5c5ed5e55cc7efd9f3e86c4cf1fbce0bce12a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 63fce5a74aac9469bcc1a36ff6483ef2dd624fb8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63389888"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801801"
 ---
 # <a name="third-encouraged-picture-decoding-configuration"></a>第三个建议的图片解码配置
 
@@ -20,9 +19,9 @@ ms.locfileid: "63389888"
 ## <span id="ddk_third_encouraged_picture_decoding_configuration_gg"></span><span id="DDK_THIRD_ENCOURAGED_PICTURE_DECODING_CONFIGURATION_GG"></span>
 
 
-第三个建议的配置提供了对预期在某些实现中的非主机 IDCT 的支持。 对于解码器鼓励，此配置。 但是，第二个配置是首选的加速器。
+第三种建议配置提供对在某些实现中预期的非托管 IDCT 的支持。 建议将此配置用于解码器。 但是，第二个配置是加速器的首选。
 
-此配置定义一样[解码配置的第一张图](first-picture-decoding-configuration.md)有以下例外。
+此配置的定义方式与 [第一个图片解码配置](first-picture-decoding-configuration.md) 相同，但有以下例外情况。
 
 <table>
 <colgroup>
@@ -32,7 +31,7 @@ ms.locfileid: "63389888"
 <thead>
 <tr class="header">
 <th align="left">成员</th>
-<th align="left">ReplTest1</th>
+<th align="left">“值”</th>
 </tr>
 </thead>
 <tbody>

@@ -1,28 +1,27 @@
 ---
-title: 调试器引擎 API 中使用断点
+title: 将断点用于调试器引擎 API
 description: 使用断点调试器引擎 API-设置和控制
-ms.assetid: d1880895-dc01-429b-af48-762cb24539f1
 keywords:
-- 调试器引擎断点
-- breakpoints
+- 调试器引擎，断点
+- 断点
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0937c06b35e2c1ec52629958fd9acf194d8a2a04
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2ac32cf9e28081b6078653dc8d539bc259bbbeb6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63371695"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803155"
 ---
-# <a name="using-breakpoints-with-the-debugger-engine-api"></a>调试器引擎 API 中使用断点
+# <a name="using-breakpoints-with-the-debugger-engine-api"></a>将断点用于调试器引擎 API
 
 
 ## <span id="ddk_breakpoints_dbx"></span><span id="DDK_BREAKPOINTS_DBX"></span>
 
 
-断点是目标的事件触发器，在满足断点的条件时，将暂停执行，并进入调试器。 断点允许用户分析，并可能修改目标，当执行到达某一时间点或访问某些内存位置时。
+断点是事件触发器，当满足断点的条件时，将暂停目标的执行并中断到调试器。 断点允许用户在执行达到某个点或访问某个内存位置时，分析和修改目标。
 
-调试器引擎将插入*软件断点*此修改为通过修改断点的位置; 的处理器指令的目标是看不到引擎的客户端。 当目标执行断点位置处的指令时，会触发软件断点。 一个*处理器断点*由调试器引擎; 插入到目标的处理器其功能是特定于处理器的。 访问断点位置处的内存; 时触发的处理器创建断点时，指定哪种类型的访问将触发此断点。
+调试器引擎通过修改断点位置上的处理器指令，将 *软件断点* 插入目标中;此修改对引擎的客户端不可见。 当目标在断点位置执行指令时，将触发软件断点。 调试器引擎会将 *处理器断点* 插入目标的处理器;它的功能特定于处理器。 当访问断点位置的内存时，处理器会触发此方法;创建断点时，将触发此断点的访问类型。
 
 本主题包括以下内容：
 

@@ -1,7 +1,6 @@
 ---
 title: 锁定 kdext
-description: Kdextx86 和 Kdexts 中的锁扩展显示有关内核 ERESOURCE 锁的信息。
-ms.assetid: c1be6c6c-0028-459f-9c92-61df52cbc4b6
+description: Kdextx86.dll 和 Kdexts.dll 中的锁扩展显示有关内核 ERESOURCE 锁的信息。
 keywords:
 - kdext 锁扩展
 - ERESOURCE 锁
@@ -15,41 +14,41 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 9292368e6a9b374518c6c260a75db387836c646f
-ms.sourcegitcommit: 73a693bf52f07169f38e6a2a68bccaa8db8faf2a
+ms.openlocfilehash: 048b0258c1f1813742bf595efb6ac7d3de7c66ad
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68341192"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803321"
 ---
-# <a name="locks-kdextlocks"></a>! 锁 (! kdext\*)
+# <a name="locks-kdextlocks"></a>！锁 (！ kdext \*) 
 
 
-Kdextx86 和 Kdexts 中的 **! 锁**扩展显示有关内核 ERESOURCE 锁的信息。
+Kdextx86.dll 和 Kdexts.dll 中的 **！锁** 扩展显示有关内核 ERESOURCE 锁的信息。
 
-此扩展命令不应与[ **! ntsdexts**](-locks---ntsdexts-locks-.md) extension 命令混淆。
+此扩展命令不应与 [**！ ntsdexts**](-locks---ntsdexts-locks-.md) extension 命令混淆。
 
 ```dbgcmd
 !locks [Options] [Address]
 ```
 
-## <a name="span-idddkkdextlocksdbgspanspan-idddkkdextlocksdbgspanparameters"></a><span id="ddk__kdext__locks_dbg"></span><span id="DDK__KDEXT__LOCKS_DBG"></span>Parameters
+## <a name="span-idddk__kdext__locks_dbgspanspan-idddk__kdext__locks_dbgspanparameters"></a><span id="ddk__kdext__locks_dbg"></span><span id="DDK__KDEXT__LOCKS_DBG"></span>参数
 
 
 <span id="_______Options______"></span><span id="_______options______"></span><span id="_______OPTIONS______"></span>*选项*   
-指定要显示的信息量。 可以使用下列选项的任意组合:
+指定要显示的信息量。 可以使用下列选项的任意组合：
 
-<span id="-v"></span><span id="-V"></span> **-v**  
+<span id="-v"></span><span id="-V"></span>**-v**  
 显示有关每个锁定的详细信息。
 
-<span id="-p"></span><span id="-P"></span> **-p**  
-显示有关锁的所有可用信息, 包括性能统计信息。
+<span id="-p"></span><span id="-P"></span>**-p**  
+显示有关锁的所有可用信息，包括性能统计信息。
 
-<span id="-d"></span><span id="-D"></span> **-d.ddd...e**  
-显示有关所有锁的信息。 否则, 只显示具有争用的锁。)
+<span id="-d"></span><span id="-D"></span>**-d.ddd...e**  
+显示有关所有锁的信息。 否则，只显示具有争用的锁。 ) 
 
 <span id="_______Address______"></span><span id="_______address______"></span><span id="_______ADDRESS______"></span>*地址*   
-指定要显示的 ERESOURCE 锁的十六进制地址。 如果*Address*为0或省略, 将显示系统中所有 ERESOURCE 锁的相关信息。
+指定要显示的 ERESOURCE 锁的十六进制地址。 如果 *Address* 为0或省略，将显示系统中所有 ERESOURCE 锁的相关信息。
 
 ### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
@@ -61,11 +60,11 @@ Kdextx86 和 Kdexts 中的 **! 锁**扩展显示有关内核 ERESOURCE 锁的信
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>Windows 2000</strong></p></td>
-<td align="left"><p>Kdextx86</p></td>
+<td align="left"><p>Kdextx86.dll</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>Windows XP 和更高版本</strong></p></td>
-<td align="left"><p>Kdexts</p></td>
+<td align="left"><p><strong>Windows XP 及更高版本</strong></p></td>
+<td align="left"><p>Kdexts.dll</p></td>
 </tr>
 </tbody>
 </table>
@@ -75,11 +74,11 @@ Kdextx86 和 Kdexts 中的 **! 锁**扩展显示有关内核 ERESOURCE 锁的信
 <a name="remarks"></a>备注
 -------
 
-**! 锁**扩展显示按线程保存在资源上的所有锁。 锁定可以是共享的, 也可以是独占的, 这意味着没有其他线程可以获取对该资源的访问权限。 当系统上发生死锁时, 此信息很有用。 死锁是指在执行线程所需的资源上持有排他锁的非执行线程。
+**！锁** 扩展显示按线程保存在资源上的所有锁。 锁定可以是共享的，也可以是独占的，这意味着没有其他线程可以获取对该资源的访问权限。 当系统上发生死锁时，此信息很有用。 死锁是指在执行线程所需的资源上持有排他锁的非执行线程。
 
-通常可以通过查找一个在执行线程所需的资源上持有排他锁的非执行线程, 来找出 Microsoft Windows 2000 中的死锁。 大多数锁都是共享的。
+通常可以通过查找一个在执行线程所需的资源上持有排他锁的非执行线程，来找出 Microsoft Windows 2000 中的死锁。 大多数锁都是共享的。
 
-下面是基本 **! 锁**输出的示例:
+下面是基本 **！锁** 输出的示例：
 
 ```dbgcmd
 kd> !locks
@@ -99,9 +98,9 @@ Resource @ 0x80d8b0b0    Shared 1 owning threads
 2263 total locks, 3 locks currently held
 ```
 
-请注意, 显示的每个线程的地址后跟其线程计数 (例如, "-01")。 如果某个线程后跟 "&lt;\*&gt;", 则该线程是该锁的所有者之一。 在某些情况下, 初始线程地址包含偏移量。 在这种情况下, 也会显示实际的线程地址。
+请注意，显示的每个线程的地址后跟其线程计数 (例如，"-01" ) 。 如果某个线程后跟 " &lt; \* &gt; "，则该线程是该锁的所有者之一。 在某些情况下，初始线程地址包含偏移量。 在这种情况下，也会显示实际的线程地址。
 
-如果要查找有关这些资源对象之一的详细信息, 请使用后面的 "资源\@" 地址作为自变量, 以供将来的命令使用。 若要调查中前面的示例中所示的第二个资源，可以使用 [**dt ERESOURCE 80d8b0b0**](dt--display-type-.md) 或 [ **!线程 80ed0020**](-thread.md) . 或者, 可以使用 **-v**选项再次使用 **! 锁**扩展:
+如果要查找有关这些资源对象之一的详细信息，请使用后面的 "资源 \@ " 地址作为自变量，以供将来的命令使用。 若要调查上一个示例中显示的第二个资源，可以使用 [**DT ERESOURCE 80d8b0b0**](dt--display-type-.md) 或 [**！ thread 80ed0020**](-thread.md)。 或者，可以使用 **-v** 选项再次使用 **！锁** 扩展：
 
 ```dbgcmd
 kd> !locks -v 80d8b0b0

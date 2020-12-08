@@ -1,7 +1,6 @@
 ---
 title: tokenfields
-description: Tokenfields 扩展显示名称和访问令牌对象 （标记结构） 中的字段的偏移量。
-ms.assetid: dfadfdb0-1ed8-4c21-9207-dc02d7435475
+description: Tokenfields 扩展显示 (令牌结构) 的访问令牌对象中的字段的名称和偏移量。
 keywords:
 - 令牌
 - tokenfields Windows 调试
@@ -13,17 +12,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 1d0e0e7574e229e8edb9b26fc7f9d0eea43628b7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d5193f1e11aa3113e64aa1b57905f139ce5299f6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339820"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803285"
 ---
 # <a name="tokenfields"></a>!tokenfields
 
 
-**！ Tokenfields**扩展显示名称和访问令牌对象 （标记结构） 中的字段的偏移量。
+**！ Tokenfields** 扩展显示 (令牌结构) 的访问令牌对象中的字段的名称和偏移量。
 
 ```dbgcmd
 !tokenfields
@@ -32,7 +31,7 @@ ms.locfileid: "63339820"
 ## <span id="ddk__tokenfields_dbg"></span><span id="DDK__TOKENFIELDS_DBG"></span>
 
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 <table>
 <colgroup>
@@ -46,29 +45,29 @@ ms.locfileid: "63339820"
 </tr>
 <tr class="even">
 <td align="left"><p><strong>Windows XP 及更高版本</strong></p></td>
-<td align="left"><p>不可用 （请参阅备注部分）</p></td>
+<td align="left"><p> (，请参阅 "备注" 部分) </p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-标记结构有关的信息，请参阅*Microsoft Windows Internals*、 Mark Russinovich 和 David solomon 合著的。 本书可能在某些语言和国家/地区中可用。（Microsoft Windows SDK 文档中所述的用户模式下令牌结构稍有不同。）
+有关令牌结构的信息，请参阅 Russinovich 和 David 所罗门群岛中的 *Microsoft Windows 内部机制*。 本书在某些语言和国家/地区可能不可用。 (Microsoft Windows SDK 文档中所述的用户模式令牌结构略有不同。 ) 
 
 <a name="remarks"></a>备注
 -------
 
-此扩展命令不可在 Windows XP 或更高版本的 Windows 中可用。 请改用[ **dt （显示类型）** ](dt--display-type-.md)命令直接显示标记结构：
+此扩展命令在 Windows XP 或更高版本的 Windows 中不可用。 请改用 [**dt (显示类型)**](dt--display-type-.md) 命令，直接显示标记结构：
 
 ```dbgcmd
 kd> dt nt!_TOKEN 
 ```
 
-若要查看标记结构的特定实例，请使用[ **！ 令牌**](-token.md)扩展。
+若要查看令牌结构的特定实例，请使用 [**！令牌**](-token.md) 扩展。
 
-下面是举例 **！ tokenfields**从 Windows 2000 系统：
+下面是 Windows 2000 系统中 **！ tokenfields** 的示例：
 
 ```dbgcmd
 kd> !tokenfields

@@ -1,7 +1,6 @@
 ---
 title: ppmperfpolicy
 description: Ppmperfpolicy 命令
-ms.assetid: D81DDC0B-703D-402A-B823-AE5097CE7CDB
 keywords:
 - ppmperfpolicy Windows 调试
 ms.date: 05/23/2017
@@ -12,27 +11,27 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 64949919ee637b5ba42595012408b0ea7f73d247
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 22d1c9876fc1cce7285d98d19b7f46b0aa02323f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63335764"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803289"
 ---
 # <a name="ppmperfpolicy"></a>!ppmperfpolicy
 
 
-**！ Ppmperfpolicy**命令不再受支持，请使用[！ ppmsettings](-ppmsettings.md)命令。
+不再支持 **！ ppmperfpolicy** 命令，请改为使用 [！ ppmsettings](-ppmsettings.md) 命令。
 
 ```dbgcmd
 !ppmperfpolicy
 ```
 
-## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>参数
+## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>Parameters
 
 无
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 Kdexts.dll
   

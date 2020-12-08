@@ -1,19 +1,18 @@
 ---
 title: 控制 GUID
 description: 控制 GUID
-ms.assetid: a85a5e1a-c4c1-40d4-a0ef-d8e552590f03
 keywords:
 - 控制 Guid WDK
 - Guid WDK 软件跟踪
 - 标识符 WDK 软件跟踪
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 24b9b442acc4074e75ba3db0528c6554e7fc8739
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: b97f58fac786444d6df532cf7489bc5476851ca1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89383985"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801851"
 ---
 # <a name="control-guid"></a>控制 GUID
 

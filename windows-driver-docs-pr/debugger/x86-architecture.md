@@ -1,7 +1,6 @@
 ---
 title: x86 体系结构
 description: x86 体系结构
-ms.assetid: 42c62647-7c9a-496e-839f-91283db73a29
 keywords:
 - x86 处理器，体系结构
 - 在 x86 处理器上注册
@@ -10,12 +9,12 @@ keywords:
 - x86 处理器，数据类型
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7da158a055960451e60d2275f2b26333db1fadc5
-ms.sourcegitcommit: 89b8a43480246dd726e3632aab2db9cf2eb7505d
+ms.openlocfilehash: 6d88421f95873d44921471e59ce36812b8a02c89
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92254052"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96802717"
 ---
 # <a name="x86-architecture"></a>x86 体系结构
 
@@ -27,7 +26,7 @@ Intel x86 处理器使用 (CISC) 体系结构的复杂指令集计算机，这�
 
 X86 处理器至少以8位 Intel 8080 处理器的速度跟踪其遗产。 X86 指令集中的许多 peculiarities 是由于与该处理器的向后兼容性 (及其 Zilog Z-80 变体) 。
 
-Microsoft Win32 在 *32 位平面模式下*使用 x86 处理器。 本文档将仅重点介绍平面模式。
+Microsoft Win32 在 *32 位平面模式下* 使用 x86 处理器。 本文档将仅重点介绍平面模式。
 
 ### <a name="span-idregistersspanspan-idregistersspanspan-idregistersspanregisters"></a><span id="Registers"></span><span id="registers"></span><span id="REGISTERS"></span>寄存器
 
@@ -137,7 +136,7 @@ X86 体系结构由以下非特权整数寄存器组成。
 <td align="left"><p>低8位 <strong>ecx</strong></p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>48</strong></p></td>
+<td align="left"><p><strong>ch</strong></p></td>
 <td align="left"><p>8位 <strong>cx</strong></p></td>
 </tr>
 <tr class="odd">
@@ -155,9 +154,9 @@ X86 体系结构由以下非特权整数寄存器组成。
 
 对 subregister 的操作只会影响 subregister，而不会影响 subregister 以外的部分。 例如，存储到 **ax** 寄存器会使 **eax** 寄存器的高16位保持不变。
 
-使用 [**？ (计算 Expression) **](---evaluate-expression-.md) 命令时，寄存器应以 "at" 符号 ( ) 为前缀 **@** 。 例如，你应该使用<strong> @ax ？</strong>而不是 **？ ax**。 这可确保调试器将 **ax** 识别为寄存器，而不是符号。
+使用 [**？ (计算 Expression)**](---evaluate-expression-.md) 命令时，寄存器应以 "at" 符号 ( ) 为前缀 **@** 。 例如，你应该使用 <strong> @ax ？</strong>而不是 **？ ax**。 这可确保调试器将 **ax** 识别为寄存器，而不是符号。
 
-但是， [**r (寄存器) **](r--registers-.md) 命令中不需要 ( @ ) 。 例如， **r ax = 5** 将始终正确解释。
+但是， [**r (寄存器)**](r--registers-.md) 命令中不需要 ( @ ) 。 例如， **r ax = 5** 将始终正确解释。
 
 其他两个寄存器对于处理器的当前状态很重要。
 
@@ -188,13 +187,13 @@ X86 体系结构由以下非特权整数寄存器组成。
 
 X86 体系结构具有多个不同的调用约定。 幸运的是，它们都遵循相同的寄存器保留和函数返回规则：
 
--   函数必须保留所有寄存器， **eax**、 **ecx**和 **edx**除外，可以在函数调用中更改这些寄存器 **，并且必须**根据调用约定对其进行更新。
+-   函数必须保留所有寄存器， **eax**、 **ecx** 和 **edx** 除外，可以在函数调用中更改这些寄存器 **，并且必须** 根据调用约定对其进行更新。
 
 -   如果结果为32位或更小，则 **eax** 寄存器接收函数返回值。 如果结果为64位，则结果存储在 **edx： eax** 对中。
 
 下面是用于 x86 体系结构的调用约定的列表：
 
--   Win32 (** \_ \_ stdcall**) 
+-   Win32 (**\_ \_ stdcall**) 
 
     函数参数在堆栈上传递，从右到左推送，被调用方清理堆栈。
 
@@ -202,7 +201,7 @@ X86 体系结构具有多个不同的调用约定。 幸运的是，它们都遵
 
     函数参数将在堆栈上传递，从右到左推送，在 **ecx** 寄存器中传递 "this" 指针，被调用方清理堆栈。
 
--   C + + 方法调用的 COM (** \_ \_ stdcall**) 
+-   C + + 方法调用的 COM (**\_ \_ stdcall**) 
 
     函数参数在堆栈上传递，从右到左，然后将 "this" 指针推送到堆栈上，然后调用函数。 被调用方清理堆栈。
 
@@ -212,7 +211,7 @@ X86 体系结构具有多个不同的调用约定。 幸运的是，它们都遵
 
 -   **\_\_cdecl**
 
-    函数参数在堆栈上传递，从右到左推送，并且调用方清理堆栈。 ** \_ \_ Cdecl**调用约定用于具有可变长度参数的所有函数。
+    函数参数在堆栈上传递，从右到左推送，并且调用方清理堆栈。 **\_ \_ Cdecl** 调用约定用于具有可变长度参数的所有函数。
 
 ### <a name="span-iddebugger_display_of_registers_and_flagsspanspan-iddebugger_display_of_registers_and_flagsspanspan-iddebugger_display_of_registers_and_flagsspandebugger-display-of-registers-and-flags"></a><span id="Debugger_Display_of_Registers_and_Flags"></span><span id="debugger_display_of_registers_and_flags"></span><span id="DEBUGGER_DISPLAY_OF_REGISTERS_AND_FLAGS"></span>调试器显示寄存器和标志
 
@@ -294,7 +293,7 @@ I/o 特权级别
 
  
 
-当寄存器作为某些命令在调试器命令窗口中显示时，将显示 " *标记状态* "。 但是，如果想要使用 [**r (寄存器) **](r--registers-.md) 命令更改标志，则应通过 *标记代码*对其进行引用。
+当寄存器作为某些命令在调试器命令窗口中显示时，将显示 " *标记状态* "。 但是，如果想要使用 [**r (寄存器)**](r--registers-.md) 命令更改标志，则应通过 *标记代码* 对其进行引用。
 
 在 WinDbg 的 "寄存器" 窗口中，标志代码用于查看或更改标志。 不支持标志状态。
 
@@ -373,7 +372,7 @@ r sf=0
 
  
 
-还可以使用条件来比较两个值。 **Cmp**指令比较了两个操作数，然后设置了标志，就像从另一个操作数中减去一个操作数一样。 以下条件可用于检查 **cmp** *value1*， *value2*的结果。
+还可以使用条件来比较两个值。 **Cmp** 指令比较了两个操作数，然后设置了标志，就像从另一个操作数中减去一个操作数一样。 以下条件可用于检查 **cmp** *value1*， *value2* 的结果。
 
 <table>
 <colgroup>
@@ -461,7 +460,7 @@ cmp eax, 5
 jz equal
 ```
 
-通过计算 (**eax** -5) 的表达式并根据结果设置标志来比较**eax**寄存器是否为数字5。 如果减法的结果为零，则将设置 **zr** 标志，并且 **jz** 条件将为 true，因此将执行跳转。
+通过计算 (**eax** -5) 的表达式并根据结果设置标志来比较 **eax** 寄存器是否为数字5。 如果减法的结果为零，则将设置 **zr** 标志，并且 **jz** 条件将为 true，因此将执行跳转。
 
 ### <a name="span-iddata_typesspanspan-iddata_typesspanspan-iddata_typesspandata-types"></a><span id="Data_Types"></span><span id="data_types"></span><span id="DATA_TYPES"></span>数据类型
 
@@ -536,9 +535,9 @@ jz equal
 
 ### <a name="span-idaddressing_modesspanspan-idaddressing_modesspanspan-idaddressing_modesspanaddressing-modes"></a><span id="Addressing_Modes"></span><span id="addressing_modes"></span><span id="ADDRESSING_MODES"></span>寻址模式
 
-有几种不同的寻址模式，但它们都采用**t ptr \[ expr \] **格式，其中**t**是某些数据类型 (请参阅前面的数据类型部分) 而**expr**是涉及常量和寄存器的表达式。
+有几种不同的寻址模式，但它们都采用 **t ptr \[ expr \]** 格式，其中 **t** 是某些数据类型 (请参阅前面的数据类型部分) 而 **expr** 是涉及常量和寄存器的表达式。
 
-大多数模式的表示法可能不太困难。 例如，**字节 PTR \[ esi + edx \* 8 + 3 \] **表示 "获取**esi**寄存器的值，将**edx**寄存器值的8倍添加到该寄存器中，添加三个，然后访问生成的地址处的字节。"
+大多数模式的表示法可能不太困难。 例如，**字节 PTR \[ esi + edx \* 8 + 3 \]** 表示 "获取 **esi** 寄存器的值，将 **edx** 寄存器值的8倍添加到该寄存器中，添加三个，然后访问生成的地址处的字节。"
 
 ### <a name="span-idpipeliningspanspan-idpipeliningspanspan-idpipeliningspanpipelining"></a><span id="Pipelining"></span><span id="pipelining"></span><span id="PIPELINING"></span>传送
 
@@ -554,7 +553,7 @@ Pentium 是双重问题，这意味着它可以在一个时钟周期内最多执
 
 2.  发出指令时，CPU 将具有对总线的独占访问权限。 这可确保加载/修改/存储操作的原子性。
 
-**Xchg**指令会在它与内存交换值时自动服从前面的规则。
+**Xchg** 指令会在它与内存交换值时自动服从前面的规则。
 
 所有其他说明默认为 nonlocking。
 

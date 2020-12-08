@@ -1,19 +1,18 @@
 ---
 title: 处理 I/O 请求
 description: 了解处理 i/o 请求。 例如，当驱动程序收到 i/o 请求时，它可以重新排队、完成或取消请求。
-ms.assetid: 90b1cc51-da40-45c1-9d6c-57f637f474d9
 keywords:
 - I/o 请求 WDK KMDF，处理
 - 请求对象 WDK KMDF，处理 i/o 请求
 - 请求处理 WDK KMDF，选项
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e5db04d2ce265d39e86a54dec4e2df3b55f408b6
-ms.sourcegitcommit: f1d6c2d0cdbecdc69ba65ed3b530755fc73c8e5e
+ms.openlocfilehash: 77c565f8d3e9cacaa2d8d80a5e5eb1bbaaca9942
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91590401"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96802121"
 ---
 # <a name="processing-io-requests"></a>处理 I/O 请求
 

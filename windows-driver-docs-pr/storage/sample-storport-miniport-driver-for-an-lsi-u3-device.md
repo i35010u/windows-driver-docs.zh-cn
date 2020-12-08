@@ -1,15 +1,14 @@
 ---
 title: 关于 LSI_U3 设备的示例 Storport 微型端口驱动程序
 description: LSI_U3 设备的示例 Storport 微型端口驱动程序
-ms.assetid: 1ac63d07-f85c-492b-9886-f40a19d7c0b2
 ms.date: 12/15/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: d53a0ce35f9bfcb698198b6430cb81d16c9f893c
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 7c148b7a2c6c7bb25685183ae620c10c754290cb
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89184925"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96802181"
 ---
 # <a name="about-the-sample-storport-miniport-driver-for-an-lsi_u3-device"></a>关于 LSI_U3 设备的示例 Storport 微型端口驱动程序
 

@@ -1,20 +1,19 @@
 ---
 title: EFI_USBFN_POLICY_TYPE
 description: EFI_USBFN_POLICY_TYPE
-ms.assetid: 51f615d4-a226-45d5-b5e9-fea4859640a9
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0fba94c165161fe8a6131cd74ed5402d5e322552
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a36964f26dd4bad3013eade48f5296e7b40ae355
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63337667"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803357"
 ---
-# <a name="efiusbfnpolicytype"></a>EFI\_USBFN\_策略\_类型
+# <a name="efi_usbfn_policy_type"></a>EFI \_ USBFN \_ 策略 \_ 类型
 
 
-**EFI\_USBFN\_策略\_类型**枚举包含用来指示终结点的类型的值。
+**EFI \_ USBFN \_ 策略 \_ 类型** 枚举包含用来指示终结点类型的值。
 
 ## <a name="syntax"></a>语法
 
@@ -32,10 +31,10 @@ typedef enum _EFI_USBFN_POLICY_TYPE{
 
 
 <a href="" id="efiusbpolicyundefined"></a>**EfiUsbPolicyUndefined**  
-无效的策略必须永远不会使用跨驱动程序边界的值。 如果使用，被调用方函数必须永远不会返回成功状态代码。
+不能跨驱动程序边界使用的策略值无效。 如果使用，则被调用方函数绝不能返回成功状态代码。
 
 <a href="" id="efiusbpolicymaxtransactionsize"></a>**EfiUsbPolicyMaxTransactionSize**  
-此策略是只读的。 与一起使用时[EFI\_USBFN\_IO\_协议。GetEndpointPolicy](efi-usbfn-io-protocolgetendpointpolicy.md)，返回由控制器支持的最大的单个事务 （交付服务的终结点） 的大小。 它必须是详细或等于最大传输大小，可以通过调用来检索[EFI\_USBFN\_IO\_协议。GetMaxTransferSize](efi-usbfn-io-protocolgetmaxtransfersize.md)。
+此策略为只读。 与 [EFI \_ USBFN \_ IO 协议一起使用时 \_ 。GetEndpointPolicy](efi-usbfn-io-protocolgetendpointpolicy.md)，将返回 (服务传递到) 控制器支持的终结点的最大单个事务大小。 它必须大于或等于可通过调用 [EFI \_ USBFN \_ IO 协议检索的最大传输大小 \_ 。GetMaxTransferSize](efi-usbfn-io-protocolgetmaxtransfersize.md)。
 
 <table>
 <colgroup>
@@ -53,7 +52,7 @@ typedef enum _EFI_USBFN_POLICY_TYPE{
 <tbody>
 <tr class="odd">
 <td><p><em>BufferSize</em></p></td>
-<td><p>4 bytes, sizeof(UINT32)</p></td>
+<td><p>4个字节，sizeof (UINT32) </p></td>
 <td><p>不适用</p></td>
 </tr>
 <tr class="even">
@@ -67,7 +66,7 @@ typedef enum _EFI_USBFN_POLICY_TYPE{
  
 
 <a href="" id="efiusbpolicyzerolengthterminationsupport"></a>**EfiUsbPolicyZeroLengthTerminationSupport**  
-此策略是只读的。 与一起使用时[EFI\_USBFN\_IO\_协议。GetEndpointPolicy](efi-usbfn-io-protocolgetendpointpolicy.md)，如果 USB 控制器硬件能够支持的传输大小的倍数 USB 最大数据包大小; 时自动处理零长度的数据包，则返回 TRUE如果控制器硬件不支持此类方案，则返回 FALSE。
+此策略为只读。 与 [EFI \_ USBFN \_ IO 协议一起使用时 \_ 。GetEndpointPolicy](efi-usbfn-io-protocolgetendpointpolicy.md)，如果 usb 控制器硬件能够在传输大小为 USB 最大数据包大小的倍数时自动处理长度为零的数据包，则返回 TRUE;如果控制器硬件不支持此类方案，则返回 FALSE。
 
 <table>
 <colgroup>
@@ -85,7 +84,7 @@ typedef enum _EFI_USBFN_POLICY_TYPE{
 <tbody>
 <tr class="odd">
 <td><p><em>BufferSize</em></p></td>
-<td><p>1 个字节、 sizeof(BOOLEAN)</p></td>
+<td><p>1个字节，sizeof (布尔) </p></td>
 <td><p>不适用</p></td>
 </tr>
 <tr class="even">
@@ -99,11 +98,11 @@ typedef enum _EFI_USBFN_POLICY_TYPE{
  
 
 <a href="" id="efiusbpolicyzerolengthtermination"></a>**EfiUsbPolicyZeroLengthTermination**  
-与一起使用时[EFI\_USBFN\_IO\_协议。GetEndpointPolicy](efi-usbfn-io-protocolgetendpointpolicy.md)，如果 USB 控制器硬件配置为自动处理零长度的数据包的传输大小是 USB 最大数据包大小; 的倍数时，则返回 TRUE如果控制器硬件未配置为支持这种方案，则返回 FALSE。
+与 [EFI \_ USBFN \_ IO 协议一起使用时 \_ 。GetEndpointPolicy](efi-usbfn-io-protocolgetendpointpolicy.md)，如果 usb 控制器硬件配置为在传输大小为 USB 最大数据包大小的倍数时自动处理长度为零的数据包，则返回 TRUE;如果控制器硬件未配置为支持这种情况，则返回 FALSE。
 
-[EFI\_USBFN\_IO\_协议。SetEndpointPolicy](efi-usbfn-io-protocolsetendpointpolicy.md) USB 控制器硬件能够支持自动长度为零的数据包终止是否只能接受此策略类型。 当此值设置为 TRUE 时，必须配置控制器来处理指定的终结点; 的长度为零终止FALSE 值不会以这种方式配置控制器。
+[EFI \_USBFN \_ IO \_ 协议。](efi-usbfn-io-protocolsetendpointpolicy.md) 如果 USB 控制器硬件能够支持自动零长度数据包终止，SetEndpointPolicy 只能接受此策略类型。 如果此值设置为 TRUE，则必须将控制器配置为处理指定终结点的零长度终止;如果值为 FALSE，则不会以这种方式配置控制器。
 
-即使控制器硬件能够支持自动长度为零终止，它必须不是默认配置。
+即使控制器硬件能够支持自动零长度终止，它也不能是默认配置。
 
 <table>
 <colgroup>
@@ -121,8 +120,8 @@ typedef enum _EFI_USBFN_POLICY_TYPE{
 <tbody>
 <tr class="odd">
 <td><p><em>BufferSize</em></p></td>
-<td><p>1 个字节、 sizeof(BOOLEAN)</p></td>
-<td><p>1 个字节、 sizeof(BOOLEAN)</p></td>
+<td><p>1个字节，sizeof (布尔) </p></td>
+<td><p>1个字节，sizeof (布尔) </p></td>
 </tr>
 <tr class="even">
 <td><p>返回状态</p></td>

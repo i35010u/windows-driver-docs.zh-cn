@@ -1,9 +1,8 @@
 ---
-title: usbkd _ehciitd
-description: _Ehciitd usbkd 命令显示 usbehci _HCD_HSISO_TRANSFER_DESCRIPTOR 结构中的信息。
-ms.assetid: 0878695D-E7ED-498D-AD37-994371C319C4
+title: usbkd._ehciitd
+description: Usbkd._ehciitd 命令显示 usbehci _HCD_HSISO_TRANSFER_DESCRIPTOR 结构中的信息。
 keywords:
-- usbkd _ehciitd Windows 调试
+- usbkd._ehciitd Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 16a24c515f0836e3592c206f6e147f05443fbb73
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 7d652bbbfd23444b467e6a9fb378a1239994efff
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89207681"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96802059"
 ---
 # <a name="usbkd_ehciitd"></a>！ usbkd。 \_ehciitd
 
 
-**！ Usbkd。 \_ehciitd**命令显示 usbehci 中的信息 **！ \_HCD \_ HSISO \_ 传输 \_ 描述符**结构。
+**！ Usbkd。 \_ehciitd** 命令显示 usbehci 中的信息 **！ \_HCD \_ HSISO \_ 传输 \_ 描述符** 结构。
 
 ```dbgcmd
 !usbkd._ehciitd StructAddr

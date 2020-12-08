@@ -1,7 +1,6 @@
 ---
 title: cpuinfo
 description: Cpuinfo 扩展显示有关目标计算机 CPU 的详细信息。
-ms.assetid: 1e7c348b-0de8-4925-b0a9-300391b6064e
 keywords:
 - cpuinfo Windows 调试
 ms.date: 05/23/2017
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: ca90928f81f30719bd38589878ee43ec9672b4b3
-ms.sourcegitcommit: bb3b62a57ba3aea4a0adeefd2d81993367b7b334
+ms.openlocfilehash: 96a9e2cb19df3c905f2b4d6c64eeee191f05c3ed
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88148418"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803333"
 ---
 # <a name="cpuinfo"></a>!cpuinfo
 
 
-**！ Cpuinfo**扩展显示有关目标计算机 CPU 的详细信息。
+**！ Cpuinfo** 扩展显示有关目标计算机 CPU 的详细信息。
 
 语法
 
@@ -47,7 +46,7 @@ Kdexts.dll
 <a name="remarks"></a>备注
 -------
 
-执行[本地内核调试](performing-local-kernel-debugging.md)时，可以使用 **！ cpuinfo** extension 命令。
+执行 [本地内核调试](performing-local-kernel-debugging.md)时，可以使用 **！ cpuinfo** extension 命令。
 
 下面是一个基于 x86 的处理器生成的示例：
 
@@ -57,7 +56,7 @@ CP F/M/S Manufacturer  MHz Update Signature Features
  0 6,1,9 GenuineIntel  198 000000d200000000 000000ff 
 ```
 
-**CP**列指示处理器数目。 **制造商**列指定处理器制造商。 " **Mhz** " 或 " **速度** " 列指定处理器的速度（以 MHz 为单位）（如果可用）。
+**CP** 列指示处理器数目。 **制造商** 列指定处理器制造商。 " **Mhz** " 或 " **速度** " 列指定处理器的速度（以 MHz 为单位）（如果可用）。
 
 对于基于 x86 的处理器或基于 x64 的处理器， **F** 列显示处理器家族号， **M** 列显示处理器型号， **S** 列显示单步大小。
 

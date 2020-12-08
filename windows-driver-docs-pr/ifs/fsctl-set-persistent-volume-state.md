@@ -1,7 +1,6 @@
 ---
 title: FSCTL_SET_PERSISTENT_VOLUME_STATE 控制代码
 description: FSCTL \_ SET \_ 永久性 \_ 卷 \_ 状态控制代码设置文件系统卷的持久设置。 持久设置在计算机重新启动之间保留在文件系统卷上。
-ms.assetid: 1670f3e9-c2f4-4696-a76e-bcf1bad5dc43
 keywords:
 - FSCTL_SET_PERSISTENT_VOLUME_STATE 控制代码可安装的文件系统驱动程序
 topic_type:
@@ -14,36 +13,36 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e1c93ad796d999428af0ebd5447025637fe2cd24
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: ac41fde6dc56537d92a9ee596f3185f2b80dacdc
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105428"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801767"
 ---
 # <a name="fsctl_set_persistent_volume_state-control-code"></a>FSCTL \_ 设置 \_ 永久性 \_ 卷 \_ 状态控制代码
 
 
-**FSCTL \_ SET \_ 永久性 \_ 卷 \_ 状态**控制代码设置文件系统卷的持久设置。 持久设置在计算机重新启动之间保留在文件系统卷上。
+**FSCTL \_ SET \_ 永久性 \_ 卷 \_ 状态** 控制代码设置文件系统卷的持久设置。 持久设置在计算机重新启动之间保留在文件系统卷上。
 
 若要执行此操作，请调用具有以下参数的 [**FltFsControlFile**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltfscontrolfile) 或 [**ZwFsControlFile**](/previous-versions/ff566462(v=vs.85)) 。
 
-**参数**
+**Parameters**
 
 <a href="" id="fileobject"></a>*FileObject*  
-仅[**FltFsControlFile**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltfscontrolfile) 。 文件系统卷的文件对象指针。 此参数是必需的，不能为 **NULL**。
+仅 [**FltFsControlFile**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltfscontrolfile) 。 文件系统卷的文件对象指针。 此参数是必需的，不能为 **NULL**。
 
 <a href="" id="filehandle"></a>*FileHandle*  
-仅[**ZwFsControlFile**](/previous-versions/ff566462(v=vs.85)) 。 文件系统卷的文件句柄。 此参数是必需的，不能为 **NULL**。
+仅 [**ZwFsControlFile**](/previous-versions/ff566462(v=vs.85)) 。 文件系统卷的文件句柄。 此参数是必需的，不能为 **NULL**。
 
 <a href="" id="fscontrolcode"></a>*FsControlCode*  
-操作的控制代码。 使用 FSCTL 为此操作 ** \_ 设置 \_ 永久 \_ 卷 \_ 状态** 。
+操作的控制代码。 使用 FSCTL 为此操作 **\_ 设置 \_ 永久 \_ 卷 \_ 状态** 。
 
 <a href="" id="inputbuffer"></a>*InputBuffer*  
 一个指针，指向分配给调用方的 [**文件 \_ FS \_ 永久性 \_ 卷 \_ 信息**](/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_file_fs_persistent_volume_information) 结构，该结构包含文件系统卷的持久设置。
 
 <a href="" id="inputbufferlength"></a>*InputBufferLength*  
-*InputBuffer*参数指向的缓冲区的大小（以字节为单位）。
+*InputBuffer* 参数指向的缓冲区的大小（以字节为单位）。
 
 <a href="" id="outputbuffer"></a>*OutputBuffer*  
 不与此操作一起使用;设置为 **NULL**。
@@ -64,7 +63,7 @@ ms.locfileid: "90105428"
 <thead>
 <tr class="header">
 <th align="left">术语</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>

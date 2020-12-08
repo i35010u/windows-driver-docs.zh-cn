@@ -1,7 +1,6 @@
 ---
 title: 将每像素 8 位半色调索引转换为墨位
 description: 将每像素 8 位半色调索引转换为墨位
-ms.assetid: 5859b379-4e03-4cd8-836d-9a0b068b47c0
 keywords:
 - GDI WDK Windows 2000 显示，半色调
 - 图形驱动程序 WDK Windows 2000 显示，半色调
@@ -13,12 +12,12 @@ keywords:
 - 转换每像素8位半色调索引 WDK GDI
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4310c8fbf0e103bfbffd06f7a250b2bc25d752bc
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 903b57ac582592c6464b92f7c85cfeab7c047891
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90717588"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96802583"
 ---
 # <a name="translating-8-bit-per-pixel-halftone-indexes-to-ink-levels"></a>将每像素 8 位半色调索引转换为墨位
 
@@ -43,7 +42,7 @@ typedef struct _INKLEVELS {
 
 ### <a name="span-idexample_generateinklevels_functionspanspan-idexample_generateinklevels_functionspanexample-generateinklevels-function"></a><span id="example_generateinklevels_function"></span><span id="EXAMPLE_GENERATEINKLEVELS_FUNCTION"></span>GenerateInkLevels 函数示例
 
-**GenerateInkLevels**函数根据*CMYMask*和*CMYInverted 参数*中的值计算 INKLEVELS 结构的8位每像素转换表。 此函数为介于0到255范围内的有效 *CMYMask* 值生成 INKLEVELS 转换表。
+**GenerateInkLevels** 函数根据 *CMYMask* 和 *CMYInverted 参数* 中的值计算 INKLEVELS 结构的8位每像素转换表。 此函数为介于0到255范围内的有效 *CMYMask* 值生成 INKLEVELS 转换表。
 
 调用此函数时， *pInkLevels* 参数必须指向 256 INKLEVELS 条目的有效内存位置。 如果函数返回 **TRUE**，则可以使用 *pInkLevels* 将每像素8位索引转换为墨迹级别，或映射到较旧的 CMY332 索引。 如果调用函数时将 *CMYMask* 设置为无效值 (从3到255的值，其中任何蓝绿色、品红或黄色级别为零) ，则函数返回 **FALSE**。
 

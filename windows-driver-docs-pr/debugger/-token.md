@@ -1,7 +1,6 @@
 ---
 title: 令牌
-description: 令牌的扩展插件都会显示一个安全令牌对象的格式化的视图。
-ms.assetid: 3df89255-5e8c-4a09-9fe9-6977b26f5631
+description: 标记扩展显示安全令牌对象的格式化视图。
 keywords:
 - 令牌
 - 安全令牌
@@ -14,65 +13,65 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 09edfc0884edb0742ef62acd871cdf9c88634b95
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 244bd4391907be201c5f75ab9a302ae687e45b67
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63334179"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803283"
 ---
 # <a name="token"></a>!token
 
 
-**！ 令牌**扩展插件都会显示一个安全令牌对象的格式化的视图。
+**！令牌** 扩展显示安全令牌对象的格式化视图。
 
-内核模式语法：
+Kernel-Mode 语法：
 
 ```dbgcmd
 !token [-n] [Address] 
 !token -?
 ```
 
-用户模式语法：
+User-Mode 语法：
 
 ```dbgcmd
 !token [-n] [Handle] 
 !token -?
 ```
 
-## <a name="span-idddktokendbgspanspan-idddktokendbgspanparameters"></a><span id="ddk__token_dbg"></span><span id="DDK__TOKEN_DBG"></span>参数
+## <a name="span-idddk__token_dbgspanspan-idddk__token_dbgspanparameters"></a><span id="ddk__token_dbg"></span><span id="DDK__TOKEN_DBG"></span>参数
 
 
-<span id="_______Address______"></span><span id="_______address______"></span><span id="_______ADDRESS______"></span> *Address*   
-（仅适用于内核模式）指定要显示的标记的地址。 如果这是 0 或被省略，将显示在活动线程的标记。
+<span id="_______Address______"></span><span id="_______address______"></span><span id="_______ADDRESS______"></span>*地址*   
+仅 (内核模式) 指定要显示的令牌的地址。 如果此为0或省略，则显示活动线程的标记。
 
-<span id="_______Handle______"></span><span id="_______handle______"></span><span id="_______HANDLE______"></span> *句柄*   
-（仅限用户模式）指定要显示的令牌的句柄。 如果这是 0 或被省略，将显示与目标线程关联的标记。
+<span id="_______Handle______"></span><span id="_______handle______"></span><span id="_______HANDLE______"></span>*句柄*   
+ (用户模式仅) 指定要显示的令牌的句柄。 如果此为0或省略，则显示与目标线程关联的标记。
 
-<span id="_______-n______"></span><span id="_______-N______"></span> **-n**   
-（仅限用户模式）将导致显示以包括的友好名称。 这包括安全标识符 (SID) 类型，以及域和用户名称的 sid。 调试 LSASS 时，不能使用此选项。
+<span id="_______-n______"></span><span id="_______-N______"></span>**-n**   
+ (用户模式仅) 导致显示包含友好名称。 这包括 sid) 类型 (安全标识符，以及 SID 的域和用户名。 调试 LSASS 时不能使用此选项。
 
 <span id="_______-_______"></span> **-?**   
-显示帮助文本对此扩展。
+显示此扩展的帮助文本。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 Exts.dll
 
-**！ 令牌**命令将出现在内核模式和实时用户模式下调试。 它不能用于用户模式转储文件。
+在内核模式和实时用户模式调试中可以使用 **！ token** 命令。 它不能用于用户模式转储文件。
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-内核模式标记结构有关的信息，请参阅*Microsoft Windows Internals*由 Mark Russinovich 和 David solomon 合著。 用户模式下标记结构有关的信息，请参阅 Microsoft Windows SDK 文档。
+有关内核模式令牌结构的详细信息，请参阅 Russinovich 和 David 所罗门群岛的 *Microsoft Windows 内部机制* 。 有关用户模式令牌结构的信息，请参阅 Microsoft Windows SDK 文档。
 
 <a name="remarks"></a>备注
 -------
 
-令牌结构是表示经过身份验证的用户进程的安全对象类型。 每个进程都已分配的令牌，则将其转换为该过程的每个线程的默认标记。 但是，可以重写此默认值的令牌分配单个线程。
+令牌结构是表示已进行身份验证的用户进程的安全对象类型。 每个进程都具有分配的标记，该标记将成为该进程的每个线程的默认标记。 但是，可以为单个线程分配一个重写此默认值的令牌。
 
-您可以从的输出中获取的令牌的地址[ **！ 过程**](-process.md)。 若要显示令牌结构的各个字段的列表，请使用**dt nt ！\_令牌**命令。
+可以从 [**！进程**](-process.md)的输出中获取令牌地址。 若要显示令牌结构的各个字段的列表，请使用 **dt nt！ \_标记** 命令。
 
-下面是一个示例：
+以下是示例：
 
 ```dbgcmd
 kd> !process 81464da8 1

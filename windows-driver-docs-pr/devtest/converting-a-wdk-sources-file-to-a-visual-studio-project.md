@@ -1,15 +1,14 @@
 ---
 title: 将 WDK 源文件转换为 Visual Studio 项目
 description: 使用 Nmake2msBuild 将 WDK 源文件转换为 Visual Studio 项目。
-ms.assetid: 6030317B-5068-40FD-8C9A-0B7A48C82B31
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 266648b845d8b4744c2ce2eb391e447b6277c76d
-ms.sourcegitcommit: 878a1cb0149dc18ccbd31774e12bad76084dfa24
+ms.openlocfilehash: 7484ddf782955f8bb21245ca1ad8fa8ece4a253c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94937811"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801845"
 ---
 # <a name="converting-a-wdk-sources-file-to-a-visual-studio-project"></a>将 WDK 源文件转换为 Visual Studio 项目
 

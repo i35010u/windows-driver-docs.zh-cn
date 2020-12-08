@@ -1,15 +1,14 @@
 ---
 title: 在 CDB 中保存日志文件
 description: 在 CDB 中保存日志文件
-ms.assetid: 02164ABF-BF57-4E1D-BD4B-CEEE60E0D7D0
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ee27f6ba992270564fd65c37c4397a5213143895
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 605fddea8e15deb7022494b87d11497477bea4e1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63367199"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801921"
 ---
 # <a name="keeping-a-log-file-in-cdb"></a>在 CDB 中保存日志文件
 
@@ -17,39 +16,39 @@ ms.locfileid: "63367199"
 ## <span id="ddk_keeping_a_log_file_dbg"></span><span id="DDK_KEEPING_A_LOG_FILE_DBG"></span>
 
 
-CDB 可以编写一个日志文件，用于记录调试会话。 此日志文件包含所有的您键入的命令以及在调试器中的响应。
+CDB 可以编写记录调试会话的日志文件。 此日志文件包含你键入的所有命令和来自调试器的响应。
 
-### <a name="span-idopeninganewlogfilespanspan-idopeninganewlogfilespanopening-a-new-log-file"></a><span id="opening_a_new_log_file"></span><span id="OPENING_A_NEW_LOG_FILE"></span>打开新的日志文件
+### <a name="span-idopening_a_new_log_filespanspan-idopening_a_new_log_filespanopening-a-new-log-file"></a><span id="opening_a_new_log_file"></span><span id="OPENING_A_NEW_LOG_FILE"></span>打开新的日志文件
 
-若要打开一个新的日志文件，或覆盖以前的日志文件，请执行以下操作：
+若要打开新的日志文件，或覆盖以前的日志文件，请执行以下操作之一：
 
--   启动调试器之前，设置\_NT\_调试\_日志\_文件\_打开[环境变量](environment-variables.md)。
+-   在启动调试器之前，请设置 \_ NT \_ 调试 \_ 日志 \_ 文件 \_ 打开 [环境变量](environment-variables.md)。
 
--   当您启动调试器时，使用 **-徽标**命令行选项。
+-   启动调试器时，请使用 **-徽标** 命令行选项。
 
--   输入[ **.logopen （打开日志文件）** ](-logopen--open-log-file-.md)命令。 如果您使用 **/t**选项，日期和时间追加到你指定的文件的名称。 如果您使用 **/u**选项，以 unicode 格式而不是 ASCII 中写入日志文件。
+-   输入 " [**logopen (打开" 日志文件)**](-logopen--open-log-file-.md) "命令。 如果你使用 **/t** 选项，则日期和时间将追加到指定的文件名。 如果使用 **/u** 选项，则以 Unicode 而不是 ASCII 编写日志文件。
 
-### <a name="span-idappendingtoanexistinglogfilespanspan-idappendingtoanexistinglogfilespanappending-to-an-existing-log-file"></a><span id="appending_to_an_existing_log_file"></span><span id="APPENDING_TO_AN_EXISTING_LOG_FILE"></span>将追加到现有日志文件
+### <a name="span-idappending_to_an_existing_log_filespanspan-idappending_to_an_existing_log_filespanappending-to-an-existing-log-file"></a><span id="appending_to_an_existing_log_file"></span><span id="APPENDING_TO_AN_EXISTING_LOG_FILE"></span>追加到现有日志文件
 
-要将命令窗口文本追加到日志文件，请执行以下操作：
+若要将命令窗口文本追加到日志文件，请执行以下操作之一：
 
--   启动调试器之前，设置\_NT\_调试\_日志\_文件\_追加[环境变量](environment-variables.md)。
+-   在启动调试器之前，请设置 \_ NT \_ 调试 \_ 日志 \_ 文件 \_ 追加 [环境变量](environment-variables.md)。
 
--   当您启动调试器时，使用 **-loga**命令行选项。
+-   启动调试器时，请使用 **-loga** 命令行选项。
 
--   输入[ **.logappend （追加的日志文件）** ](-logappend--append-log-file-.md)命令。 如果将追加到 Unicode 日志文件，则必须使用 **/u**选项。
+-   输入 " [**logpath (追加日志文件)**](-logappend--append-log-file-.md) " 命令。 如果要追加到 Unicode 日志文件，必须使用 **/u** 选项。
 
-### <a name="span-idclosingalogfilespanspan-idclosingalogfilespanclosing-a-log-file"></a><span id="closing_a_log_file"></span><span id="CLOSING_A_LOG_FILE"></span>关闭日志文件
+### <a name="span-idclosing_a_log_filespanspan-idclosing_a_log_filespanclosing-a-log-file"></a><span id="closing_a_log_file"></span><span id="CLOSING_A_LOG_FILE"></span>关闭日志文件
 
 若要关闭打开的日志文件，请执行以下操作：
 
--   输入[ **.logclose （关闭日志文件）** ](-logclose--close-log-file-.md)命令。
+-   输入 [**logclose (关闭日志文件)**](-logclose--close-log-file-.md) 命令。
 
-### <a name="span-idcheckinglogfilestatusspanspan-idcheckinglogfilestatusspanchecking-log-file-status"></a><span id="checking_log_file_status"></span><span id="CHECKING_LOG_FILE_STATUS"></span>检查日志文件状态
+### <a name="span-idchecking_log_file_statusspanspan-idchecking_log_file_statusspanchecking-log-file-status"></a><span id="checking_log_file_status"></span><span id="CHECKING_LOG_FILE_STATUS"></span>正在检查日志文件状态
 
-若要确定日志文件状态，请执行以下操作：
+若要确定日志文件的状态，请执行以下操作：
 
--   输入[ **.logfile （显示日志文件状态）** ](-logfile--display-log-file-status-.md)命令。
+-   输入 [**logfile (显示 "日志文件状态")**](-logfile--display-log-file-status-.md) 命令。
 
  
 

@@ -1,18 +1,17 @@
 ---
 title: 类型
 description: 类型
-ms.assetid: 234f4f36-ccd3-426a-a361-33727e9ece5a
 keywords:
 - 符号，类型
 - types
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2b445242eb4b21bcb3685cf9eef2956f8f816072
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 3bbc650f824fbcd6fe2b707f9ccf36936a27ebc9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89209839"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803259"
 ---
 # <a name="types"></a>类型
 
@@ -54,7 +53,7 @@ ms.locfileid: "89209839"
 
 调试器引擎 API 支持解释类型化数据。 这提供了一种方法来遍历目标上的对象层次结构，包括查找结构的成员、取消引用指针以及查找数组元素。
 
-类型化的数据由 [**调试 \_ 类型化 \_ 数据**](/windows-hardware/drivers/ddi/wdbgexts/ns-wdbgexts-_debug_typed_data) 结构的实例描述，表示目标强制转换为特定类型的内存区域。 [**调试 \_ 请求 \_ EXT \_ 类型化 \_ 数据 \_ ANSI**](debug-request-ext-typed-data-ansi.md)**请求**操作用于操作这些实例。 可以将它们初始化为表达式的结果，或将内存的区域强制转换为指定类型。 有关调试 \_ 请求 \_ EXT \_ 类型化数据 ANSI 请求操作支持的所有子操作的列表 \_ \_ ，请参阅[**EXT \_ TDOP**](/windows-hardware/drivers/ddi/wdbgexts/ne-wdbgexts-_ext_tdop)。 **Request**
+类型化的数据由 [**调试 \_ 类型化 \_ 数据**](/windows-hardware/drivers/ddi/wdbgexts/ns-wdbgexts-_debug_typed_data) 结构的实例描述，表示目标强制转换为特定类型的内存区域。 [**调试 \_ 请求 \_ EXT \_ 类型化 \_ 数据 \_ ANSI**](debug-request-ext-typed-data-ansi.md)**请求** 操作用于操作这些实例。 可以将它们初始化为表达式的结果，或将内存的区域强制转换为指定类型。 有关调试 \_ 请求 \_ EXT \_ 类型化数据 ANSI 请求操作支持的所有子操作的列表 \_ \_ ，请参阅 [**EXT \_ TDOP**](/windows-hardware/drivers/ddi/wdbgexts/ne-wdbgexts-_ext_tdop)。 **Request**
 
 ### <a name="span-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 

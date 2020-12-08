@@ -1,7 +1,6 @@
 ---
 title: OUTPUTDUPL \_ 上下文 \_ 调试 \_ 状态枚举
 description: 了解 OUTPUTDUPL \_ 上下文 \_ 调试 \_ 状态枚举，该枚举保留供系统使用。 请勿在您的驱动程序中使用。
-ms.assetid: 3720b101-cac4-4f81-ae71-088ab03f8756
 keywords:
 - OUTPUTDUPL_CONTEXT_DEBUG_STATUS 枚举显示设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 01/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 6ff47e380a83d6fd4e1352d0671715b440fbe52c
-ms.sourcegitcommit: fc94eb0d5a41ef81c1b3ab91ad725386db0be0c2
+ms.openlocfilehash: 137b0aae2bb7271d1b834d181ed65ca17686e440
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91603698"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96802617"
 ---
 # <a name="outputdupl_context_debug_status-enumeration"></a>OUTPUTDUPL \_ 上下文 \_ 调试 \_ 状态枚举
 
@@ -31,10 +30,10 @@ ms.locfileid: "91603698"
 
 ```ManagedCPlusPlus
 typedef enum _OUTPUTDUPL_CONTEXT_DEBUG_STATUS {
-  OUTPUTDUPL_CONTEXT_DEBUG_STATUS_INACTIVE         = 0,
-  OUTPUTDUPL_CONTEXT_DEBUG_STATUS_ACTIVE           = 1,
-  OUTPUTDUPL_CONTEXT_DEBUG_STATUS_PENDING_DESTROY  = 2,
-  OUTPUTDUPL_CONTEXT_DEBUG_STATUS_FORCE_UINT32     = 0xffffffff
+  OUTPUTDUPL_CONTEXT_DEBUG_STATUS_INACTIVE         = 0,
+  OUTPUTDUPL_CONTEXT_DEBUG_STATUS_ACTIVE           = 1,
+  OUTPUTDUPL_CONTEXT_DEBUG_STATUS_PENDING_DESTROY  = 2,
+  OUTPUTDUPL_CONTEXT_DEBUG_STATUS_FORCE_UINT32     = 0xffffffff
 } OUTPUTDUPL_CONTEXT_DEBUG_STATUS;
 ```
 

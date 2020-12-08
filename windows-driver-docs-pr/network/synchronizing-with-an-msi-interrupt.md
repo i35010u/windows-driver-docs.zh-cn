@@ -1,7 +1,6 @@
 ---
 title: 与 MSI 中断同步
 description: 与 MSI 中断同步
-ms.assetid: 61745a93-79dc-49ac-9ace-3ecb647b7b9a
 keywords:
 - MSI-X WDK 网络，同步中断
 - 消息-已发出信号中断 WDK 网络，同步中断
@@ -10,12 +9,12 @@ keywords:
 - 同步 WDK MSI-X
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 78e7ca83159814c4df73a630fe8392287f674348
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 06b3b838ab5e95065e2670d6c2e502df5db45efd
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89207157"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96802275"
 ---
 # <a name="synchronizing-with-an-msi-interrupt"></a>与 MSI 中断同步
 

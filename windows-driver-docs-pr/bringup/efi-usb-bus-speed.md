@@ -1,20 +1,19 @@
 ---
 title: EFI_USB_BUS_SPEED
 description: EFI_USB_BUS_SPEED
-ms.assetid: 2888cff6-db12-47ea-866f-de218e2b08e5
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 179b6a0befdecc81e05d2fae07352396251f1d3f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 492a432837146de0ab183beb6995297edd337793
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63337794"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803393"
 ---
-# <a name="efiusbbusspeed"></a>EFI\_USB\_BUS\_SPEED
+# <a name="efi_usb_bus_speed"></a>EFI \_ USB \_ 总线 \_ 速度
 
 
-枚举包含用来指示总线速度的值。
+Is 枚举包含用于指示总线速度的值。
 
 ## <a name="syntax"></a>语法
 
@@ -35,19 +34,19 @@ typedef enum _EFI_USB_BUS_SPEED
 
 
 <a href="" id="usbbusspeedunknown"></a>**UsbBusSpeedUnknown**  
-未知的总线速度。
+总线速度未知。
 
 <a href="" id="usbbusspeedlow"></a>**UsbBusSpeedLow**  
-低速度。
+低速。
 
 <a href="" id="usbbusspeedfull"></a>**UsbBusSpeedFull**  
-完整的速度。
+全速。
 
 <a href="" id="usbbusspeedhigh"></a>**UsbBusSpeedHigh**  
-高速度。
+高速。
 
 <a href="" id="usbbusspeedsuper"></a>**UsbBusSpeedSuper**  
-超级速度。
+速度非常快。
 
 ## <a name="requirements"></a>要求
 

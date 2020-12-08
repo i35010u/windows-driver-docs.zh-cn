@@ -1,20 +1,19 @@
 ---
 title: EFI_USBFN_IO_PROTOCOL.GetEndpointMaxPacketSize
 description: EFI_USBFN_IO_PROTOCOL.GetEndpointMaxPacketSize
-ms.assetid: 0af72372-7c58-490d-8eec-bd38bce09b0d
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d0571eb866c0566b0e82ca390fbfb9ba3b64aed7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d454eb475012face06414009a4fb704f33a600ad
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63337706"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803371"
 ---
-# <a name="efiusbfnioprotocolgetendpointmaxpacketsize"></a>EFI\_USBFN\_IO\_PROTOCOL.GetEndpointMaxPacketSize
+# <a name="efi_usbfn_io_protocolgetendpointmaxpacketsize"></a>EFI \_ USBFN \_ IO \_ 协议。GetEndpointMaxPacketSize
 
 
-**GetEndpointMaxPacketSize**函数返回提供的总线速度的指定的终结点类型的最大数据包大小...
+**GetEndpointMaxPacketSize** 函数为所提供的总线速度返回指定终结点类型的最大数据包大小。
 
 ## <a name="syntax"></a>语法
 
@@ -30,25 +29,25 @@ EFI_STATUS
   );
 ```
 
-## <a name="parameters"></a>Parameters
+## <a name="parameters"></a>参数
 
 
 <a href="" id="this"></a>*此*  
-指向 EFI\_USBFN\_IO\_协议实例。
+指向 EFI \_ USBFN \_ IO \_ 协议实例的指针。
 
 <a href="" id="endpointtype"></a>*EndpointType*  
-中定义的终结点类型[EFI\_USB\_终结点\_类型](efi-usb-endpoint-type.md)。 枚举
+在 [EFI \_ USB \_ 终结点 \_ 类型](efi-usb-endpoint-type.md)中定义的终结点类型。 枚举
 
 <a href="" id="busspeed"></a>*BusSpeed*  
-[EFI\_USB\_总线\_速度](efi-usb-bus-speed.md)枚举值，该值指示当前的总线速度，因为调用方已知。
+一个 [EFI \_ USB \_ 总线 \_ 速度](efi-usb-bus-speed.md) 枚举值，指示调用方已知的当前总线速度。
 
 <a href="" id="maxpacketsize"></a>*MaxPacketSize*  
-最大数据包大小，以字节为单位指定的终结点类型。
+指定终结点类型的最大数据包大小（以字节为单位）。
 
 ## <a name="return-values"></a>返回值
 
 
-此函数将返回以下值：
+此函数返回以下值：
 
 <table>
 <colgroup>
@@ -64,7 +63,7 @@ EFI_STATUS
 <tbody>
 <tr class="odd">
 <td><p><strong>EFI_SUCCESS</strong></p></td>
-<td><p>成功返回的函数</p></td>
+<td><p>函数已成功返回</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>EFI_INVALID_PARAMETER</strong></p></td>
@@ -72,11 +71,11 @@ EFI_STATUS
 </tr>
 <tr class="odd">
 <td><p><strong>EFI_DEVICE_ERROR</strong></p></td>
-<td><p>物理设备报告了错误。</p></td>
+<td><p>物理设备报告了一个错误。</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>EFI_NOT_READY</strong></p></td>
-<td><p>物理设备是正忙还是未准备好处理此请求</p></td>
+<td><p>物理设备处于繁忙状态或尚未准备好处理此请求</p></td>
 </tr>
 </tbody>
 </table>

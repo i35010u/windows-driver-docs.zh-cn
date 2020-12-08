@@ -1,17 +1,16 @@
 ---
 title: 使用 WdbgExts 扩展回调
 description: 使用 WdbgExts 扩展回调
-ms.assetid: b9a2f30a-b09c-43eb-b105-a6b0ffdb1342
 keywords:
 - WdbgExts 扩展，回调，使用
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c343ab0f7f84df8f0634de971d736d7e9b8a3b62
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 2825736aaa8dc83248dddaceedf03b150df6b77a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89206565"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96802991"
 ---
 # <a name="using-wdbgexts-extension-callbacks"></a>使用 WdbgExts 扩展回调
 

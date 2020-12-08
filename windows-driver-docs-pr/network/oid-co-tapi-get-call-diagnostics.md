@@ -1,17 +1,16 @@
 ---
 title: OID_CO_TAPI_GET_CALL_DIAGNOSTICS
 description: 本主题介绍) OID_CO_TAPI_GET_CALL_DIAGNOSTICS 对象标识符 (OID。
-ms.assetid: 5b0b1a96-9d66-4ee3-9b9a-3341ca3a4b5c
 keywords:
 - OID_CO_TAPI_GET_CALL_DIAGNOSTICS
 ms.date: 11/03/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5e133591b29980972788e789d010a93ff8168707
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: e6bc528365559a2bdab12315f24843451893fe45
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89206405"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96802315"
 ---
 # <a name="oid_co_tapi_get_call_diagnostics"></a>OID_CO_TAPI_GET_CALL_DIAGNOSTICS
 

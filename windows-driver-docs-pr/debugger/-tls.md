@@ -1,9 +1,8 @@
 ---
 title: tls
-description: Tls 扩展显示线程本地存储 (TLS) 槽。
-ms.assetid: 43325322-8e6e-47fc-b1ec-8b1c304bb1e9
+description: Tls 扩展显示 (TLS) 槽的线程本地存储。
 keywords:
-- TLS （线程本地存储区）
+- TLS（线程本地存储）
 - 线程本地存储 (TLS)
 - tls Windows 调试
 ms.date: 05/23/2017
@@ -14,32 +13,32 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: bac89887b4586dcee99d1bec67589a58bec0c984
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 48298d791ef1116f198b985a9d8ab93fd447e710
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63334224"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803287"
 ---
 # <a name="tls"></a>!tls
 
 
-**！ Tls**扩展显示线程本地存储 (TLS) 槽。
+**！ Tls** 扩展显示 (tls) 槽的线程本地存储。
 
 ```dbgcmd
 !tls Slot [TEB]
 ```
 
-## <a name="span-idddktlsdbgspanspan-idddktlsdbgspanparameters"></a><span id="ddk__tls_dbg"></span><span id="DDK__TLS_DBG"></span>参数
+## <a name="span-idddk__tls_dbgspanspan-idddk__tls_dbgspanparameters"></a><span id="ddk__tls_dbg"></span><span id="DDK__TLS_DBG"></span>参数
 
 
-<span id="_______Slot______"></span><span id="_______slot______"></span><span id="_______SLOT______"></span> *Slot*   
-指定 TLS 槽。 这可以是介于 0 和 1088 （十进制） 之间的任何值。 如果*槽*为-1，将显示所有槽。
+<span id="_______Slot______"></span><span id="_______slot______"></span><span id="_______SLOT______"></span>*槽*   
+指定 TLS 槽。 该值可以是0到1088之间的任何值 (decimal) 。 如果 *槽* 为-1，则显示所有槽。
 
-<span id="_______TEB______"></span><span id="_______teb______"></span> *TEB*   
-指定的线程环境块 (TEB)。 如果这是 0 或省略，则使用当前线程。
+<span id="_______TEB______"></span><span id="_______teb______"></span>*TEB*   
+指定线程环境块 (TEB) 。 如果此为0或省略，则使用当前线程。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 <table>
 <colgroup>
@@ -63,7 +62,7 @@ ms.locfileid: "63334224"
 <a name="remarks"></a>备注
 -------
 
-下面是一个示例：
+以下是示例：
 
 ```dbgcmd
 0:000> !tls -1

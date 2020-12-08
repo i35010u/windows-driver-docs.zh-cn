@@ -1,19 +1,18 @@
 ---
 title: 隔离可分页代码
 description: 隔离可分页代码
-ms.assetid: 86189154-606a-4df8-b3a9-040bbaffaa2f
 keywords:
 - 可分页驱动程序 WDK 内核，隔离代码
 - 隔离可分页代码
 - 旋转锁定 WDK 内存
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 71a44630b0616d6888c61dcd1ad48576df19e2fa
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 89c3485240071c76f3e15f1d5ea7d51bcfb536d6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89189317"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801675"
 ---
 # <a name="isolating-pageable-code"></a>隔离可分页代码
 

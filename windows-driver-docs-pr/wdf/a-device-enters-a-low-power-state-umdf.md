@@ -1,20 +1,19 @@
 ---
-title: '设备进入低功耗状态 (UMDF 1) '
+title: '设备进入 Low-Power 状态 (UMDF 1) '
 description: 设备进入低功耗状态
-ms.assetid: c3697272-75ec-4de5-b123-3d1c68d2044e
 keywords:
 - 电源管理方案 WDK UMDF，进入低功耗状态
 - 低功耗状态方案 WDK UMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 83f933733a842a26f74c4ee341b8dfbff8052d7f
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 58fdf2e8ee3c32990e11c5933ce6f83013c4efa3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89190147"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96802133"
 ---
-# <a name="a-device-enters-a-low-power-state-umdf-1"></a>设备进入低功耗状态 (UMDF 1) 
+# <a name="a-device-enters-a-low-power-state-umdf-1"></a>设备进入 Low-Power 状态 (UMDF 1) 
 
 
 [!include[UMDF 1 Deprecation](../includes/umdf-1-deprecation.md)]

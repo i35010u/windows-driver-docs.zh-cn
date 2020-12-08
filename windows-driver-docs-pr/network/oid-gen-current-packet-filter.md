@@ -1,16 +1,15 @@
 ---
 title: OID_GEN_CURRENT_PACKET_FILTER
 description: 作为查询，OID_GEN_CURRENT_PACKET_FILTER OID 报告来自微型端口驱动程序的接收指示的网络数据包类型。
-ms.assetid: d5a32626-caff-4708-a134-d80a845dee91
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_GEN_CURRENT_PACKET_FILTER 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: adee25ece0078bf1e891653df64fe606356edf60
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 5bf95243b2d0d8e1e2088ef1abe2a106125d77a7
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89217014"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96802309"
 ---
 # <a name="oid_gen_current_packet_filter"></a>OID \_ GEN \_ 当前 \_ 数据包 \_ 筛选器
 
@@ -81,7 +80,7 @@ SMT FDDI NIC 接收的数据包。
 <a href="" id="ndis-packet-type-source-routing"></a>NDIS \_ 数据包 \_ 类型 \_ 源 \_ 路由  
 所有源路由数据包。 如果协议驱动程序设置此位，NDIS 库将尝试充当源路由桥。
 
-对于其媒体类型为 **NdisMedium802 \_ 3** 或 **NdisMedium802 \_ 5**的微型端口适配器，NDIS 在调用 [**NdisOpenAdapterEx**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisopenadapterex) 函数期间禁用数据包接收，以及多播和功能地址。
+对于其媒体类型为 **NdisMedium802 \_ 3** 或 **NdisMedium802 \_ 5** 的微型端口适配器，NDIS 在调用 [**NdisOpenAdapterEx**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisopenadapterex) 函数期间禁用数据包接收，以及多播和功能地址。
 
 对于具有所有其他媒体类型的微型端口适配器，协议驱动程序可在 [**NdisOpenAdapterEx**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisopenadapterex) 调用期间随时开始接收数据包。 请注意，该协议甚至可以在 **NdisOpenAdapterEx** 返回之前接收数据包。 通常，数据包筛选是最重要的，即使数据包筛选器为零，协议驱动程序也必须准备好处理接收指示。
 
@@ -89,7 +88,7 @@ SMT FDDI NIC 接收的数据包。
 
 对于集，指定的数据包筛选器将替换绑定的以前的数据包筛选器。 如果微型端口驱动程序以前启用了数据包类型，但协议驱动程序未在新筛选器中指定该类型，则协议驱动程序将不会接收此类型的数据包。
 
-对于媒体类型为 **NdisMedium802 \_ 3** 或 **NdisMedium802 \_ 5**的微型端口适配器，如果小型端口驱动程序没有为特定数据包类型设置位来响应此查询，则协议驱动程序将不会接收该类型的数据包。 因此，协议驱动程序可以通过使用零筛选器调用 [**NdisOidRequest**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisoidrequest) 或 [**NdisCoOidRequest**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscooidrequest) 函数来禁用数据包接收。
+对于媒体类型为 **NdisMedium802 \_ 3** 或 **NdisMedium802 \_ 5** 的微型端口适配器，如果小型端口驱动程序没有为特定数据包类型设置位来响应此查询，则协议驱动程序将不会接收该类型的数据包。 因此，协议驱动程序可以通过使用零筛选器调用 [**NdisOidRequest**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisoidrequest) 或 [**NdisCoOidRequest**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscooidrequest) 函数来禁用数据包接收。
 
 对于包含所有其他媒体类型的微型端口适配器，NDIS 不检查数据包类型。 对于这些媒体类型，协议驱动程序无法通过指定筛选器来禁用数据包接收。
 
@@ -169,7 +168,7 @@ SMT FDDI NIC 接收的数据包。
 
 除 NetMon 以外的其他本机802.11 模式下操作的微型端口驱动程序必须启用这些数据包筛选器设置，但 NDIS \_ 数据包 \_ 类型 \_ 802 \_ 11 \_ 混杂 CTRL 除外 \_ 。 未在 NetMon 模式下操作的微型端口驱动程序可以选择启用 NDIS \_ 包 \_ 类型 \_ 802 \_ 11 混杂 CTRL，然后 \_ \_ 执行 OID 生成 \_ \_ 当前 \_ 数据包 \_ 筛选器的设置请求。
 
-**注意**   如果微型端口驱动程序处于 NetMon 以外的本机802.11 模式下，并且设置了 OID 生成 \_ \_ 当前 \_ 数据包 \_ 筛选器，则当 oid 数据中启用了任何混杂或原始筛选器设置时，驱动程序不得使集请求失败。
+**注意**  如果微型端口驱动程序处于 NetMon 以外的本机802.11 模式下，并且设置了 OID 生成 \_ \_ 当前 \_ 数据包 \_ 筛选器，则当 oid 数据中启用了任何混杂或原始筛选器设置时，驱动程序不得使集请求失败。
 
  
 
@@ -195,7 +194,7 @@ SMT FDDI NIC 接收的数据包。
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [*MiniportInitializeEx*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_initialize)

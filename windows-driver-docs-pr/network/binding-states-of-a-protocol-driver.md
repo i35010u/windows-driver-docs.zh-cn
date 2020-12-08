@@ -1,7 +1,6 @@
 ---
 title: 协议驱动程序的绑定状态
 description: 协议驱动程序的绑定状态
-ms.assetid: 15bc6217-e258-4e07-abc8-6c46fd01d85b
 keywords:
 - 协议驱动程序 WDK 网络，绑定状态
 - NDIS 协议驱动程序 WDK，绑定状态
@@ -11,12 +10,12 @@ keywords:
 - NDIS 协议驱动程序 WDK，协议
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9085bd5269f34177d563f1d1b1e042d8ab6f05db
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: c8ea49fd41c3db399ecf9258f9867215b7903cdf
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89206477"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96802379"
 ---
 # <a name="binding-states-of-a-protocol-driver"></a>协议驱动程序的绑定状态
 
@@ -47,15 +46,15 @@ ms.locfileid: "89206477"
 下面定义了协议驱动程序绑定状态：
 
 <a href="" id="unbound"></a>未绑定  
-*未绑定*状态是绑定的初始状态。 在此状态下，协议驱动程序将等待 NDIS 调用 [*ProtocolBindAdapterEx*](/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_bind_adapter_ex) 函数。 在 NDIS 调用 *ProtocolBindAdapterEx*后，绑定进入 "正在打开" 状态。 解除绑定操作完成后，绑定将从关闭状态返回到未绑定状态。
+*未绑定* 状态是绑定的初始状态。 在此状态下，协议驱动程序将等待 NDIS 调用 [*ProtocolBindAdapterEx*](/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_bind_adapter_ex) 函数。 在 NDIS 调用 *ProtocolBindAdapterEx* 后，绑定进入 "正在打开" 状态。 解除绑定操作完成后，绑定将从关闭状态返回到未绑定状态。
 
 <a href="" id="opening"></a>打开  
 在 " *正在打开* " 状态下，协议驱动程序为绑定分配资源，并尝试打开微型端口适配器。 在 NDIS 调用驱动程序的 *ProtocolBindAdapterEx* 函数后，绑定将进入打开状态。 如果协议驱动程序未能绑定到微型端口适配器，则绑定将返回到未绑定状态。 如果驱动程序成功绑定到微型端口适配器，则绑定进入暂停状态。
 
-<a href="" id="running"></a>耗尽  
+<a href="" id="running"></a>正在运行  
 在 " *正在运行* " 状态下，协议驱动程序为绑定执行发送和接收处理的常规处理。 当绑定处于重启状态并且驱动程序已准备好执行发送和接收操作时，绑定将进入正在运行状态。
 
-<a href="" id="closing"></a>结束语  
+<a href="" id="closing"></a>关闭  
 在 *关闭* 状态下，协议驱动程序会关闭到微型端口适配器的绑定，然后释放绑定的资源。 在 NDIS 调用了协议驱动程序的 [*ProtocolUnbindAdapterEx*](/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_unbind_adapter_ex) 函数后，绑定将进入关闭状态。 协议驱动程序完成解除绑定操作后，绑定将进入未绑定状态。
 
 <a href="" id="pausing"></a>暂停  
@@ -64,7 +63,7 @@ ms.locfileid: "89206477"
 <a href="" id="paused"></a>悬停  
 在 *暂停* 状态下，协议驱动程序不会对绑定执行发送或接收操作。 绑定处于暂停状态并且暂停操作完成后，绑定进入暂停状态。 当绑定处于打开状态并且打开操作成功完成时，绑定进入暂停状态。 如果 NDIS 发送了协议驱动程序，则绑定的 PnP 重启通知将进入重新启动状态。 如果 NDIS 调用驱动程序的 [*ProtocolUnbindAdapterEx*](/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_unbind_adapter_ex) 函数，则绑定进入关闭状态。
 
-<a href="" id="restarting"></a>重新启动  
+<a href="" id="restarting"></a>重新  
 在 *重新启动* 状态下，协议驱动程序将完成为绑定重新启动发送和接收操作所需的任何操作。 当绑定处于暂停状态，并且 NDIS 向协议驱动程序发送 PnP 重启通知时，绑定将进入重新启动状态。 如果重启失败，绑定将恢复到暂停状态。 如果重新启动成功，绑定将进入 "正在运行" 状态。
 
 ## <a name="related-topics"></a>相关主题

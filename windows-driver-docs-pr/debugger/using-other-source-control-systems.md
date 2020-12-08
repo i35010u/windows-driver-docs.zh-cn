@@ -1,32 +1,31 @@
 ---
 title: 使用其他源代码管理系统
 description: 使用其他源代码管理系统
-ms.assetid: c8ce0bec-7218-486e-8600-c217f2e6c069
 keywords:
 - 版本控制系统
-- 版本控制系统 Subversion
-- 编写你自己的版本控制系统的源服务器
-- 提供程序的模块
-- 创建你自己的提供程序模块
+- 版本控制系统，Subversion
+- 源服务器，编写自己的版本控制系统
+- 提供程序模块
+- 提供商模块，自行创建
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 91e8a02a09e9d35e0b1230d8d70396af292adb17
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 64900887a97d3de514ff05c461e8dc272ae3deae
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63376321"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803101"
 ---
 # <a name="using-other-source-control-systems"></a>使用其他源代码管理系统
 
 
-此包中包含的是 Svn.pm。 深入研究此文件显示了如何修改一个现有的脚本，以支持 Subversion 版本控制系统。 可以通过创建你自己的提供程序模块来支持其他控制系统，甚至您自己，创建一个控制系统。
+此包中包括 Svn.pm。 此文件的详细介绍如何修改某个现有脚本以支持 Subversion 版本控制系统。 其他控制系统，甚至是自己创建的控制系统，都可以通过创建自己的提供程序模块来支持。
 
-本部分包括：
+本节包括：
 
-[创建你自己的提供程序模块](creating-your-own-provider-module.md)
+[创建自己的提供程序模块](creating-your-own-provider-module.md)
 
-[创建源代码管理系统](creating-your-own-source-control-system.md)
+[创建自己的源代码管理系统](creating-your-own-source-control-system.md)
 
  
 

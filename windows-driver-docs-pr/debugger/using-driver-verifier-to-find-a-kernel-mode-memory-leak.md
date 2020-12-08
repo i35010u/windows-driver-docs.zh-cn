@@ -1,15 +1,14 @@
 ---
 title: 使用驱动程序验证程序查找内核模式内存泄漏
 description: 使用驱动程序验证程序查找内核模式内存泄漏
-ms.assetid: d81a8b72-91d3-4132-9cc2-1cf1b597306a
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e505f8367455db96a8762d8bd22f8701a1f99932
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: bcee1aa79926e95b7367a1c49ff787e940911632
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89215672"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803113"
 ---
 # <a name="using-driver-verifier-to-find-a-kernel-mode-memory-leak"></a>使用驱动程序验证程序查找内核模式内存泄漏
 

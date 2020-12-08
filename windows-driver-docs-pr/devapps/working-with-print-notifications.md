@@ -1,21 +1,20 @@
 ---
 title: 在 UWP 设备应用中使用打印通知
 description: '本主题介绍打印通知，并演示 c # 版本的打印设置和打印通知示例如何使用后台任务来响应打印通知。'
-ms.assetid: 39A06A8A-5603-44AB-8884-C12B8E2F1A45
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e912b20b88b394848f430453be6b73c8e58e901e
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: e359866711c5af2e41014104fc13368863d3222b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91732915"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96802649"
 ---
 # <a name="working-with-print-notifications-in-a-uwp-device-app"></a>在 UWP 设备应用中使用打印通知
 
 在 Windows 8.1 中，UWP 设备应用可以响应从 v4 打印驱动程序发送的双向通信 (双向通信) 事件。 本主题介绍打印通知，并演示 c # 版本的 [打印设置和打印通知](https://go.microsoft.com/fwlink/p/?LinkID=242862) 示例如何使用后台任务来响应打印通知。 后台任务演示了如何将通知详细信息保存在本地应用程序数据存储区中，发送 toast 并更新磁贴和徽章。 若要详细了解 UWP 设备应用的详细信息，请参阅了解 [uwp 设备应用](meet-uwp-device-apps.md)。
 
-"[打印设置" 和 "打印通知](https://go.microsoft.com/fwlink/p/?LinkID=242862)" 示例的 c # 版本演示了**BackgroundTask**项目中*后台任务*) 的 (应用的背景部分。 后台任务的代码位于 **PrintBackgroundTask.cs** 文件中。 *前台应用*（可从开始启动的全屏应用）位于**DeviceAppForPrinters**项目中。 **InkLevel.xaml.cs**文件显示了一种可从前台应用程序访问通知详细信息的方法。 若要使用打印通知，示例将在 **PrinterExtensionLibrary** 项目中使用打印机扩展库。 打印机扩展库提供了一种便捷的方式来访问 v4 打印驱动程序的打印机扩展接口。 有关详细信息，请参阅 [打印机扩展库概述](printer-extension-library-overview.md)。
+"[打印设置" 和 "打印通知](https://go.microsoft.com/fwlink/p/?LinkID=242862)" 示例的 c # 版本演示了 **BackgroundTask** 项目中 *后台任务*) 的 (应用的背景部分。 后台任务的代码位于 **PrintBackgroundTask.cs** 文件中。 *前台应用*（可从开始启动的全屏应用）位于 **DeviceAppForPrinters** 项目中。 **InkLevel.xaml.cs** 文件显示了一种可从前台应用程序访问通知详细信息的方法。 若要使用打印通知，示例将在 **PrinterExtensionLibrary** 项目中使用打印机扩展库。 打印机扩展库提供了一种便捷的方式来访问 v4 打印驱动程序的打印机扩展接口。 有关详细信息，请参阅 [打印机扩展库概述](printer-extension-library-overview.md)。
 
 >[!NOTE]
 >本主题中所示的代码示例基于 c # 版本的 [打印设置和打印通知](https://go.microsoft.com/fwlink/p/?LinkID=242862) 示例。 此示例在 JavaScript 和 c + + 中也可用。 请注意，由于 c + + 可以直接访问 COM，因此该示例的 c + + 版本不包括代码库项目。 下载示例以查看最新版本的代码。
@@ -57,9 +56,9 @@ ms.locfileid: "91732915"
 
 为了使 Windows 能够识别应用程序可以处理打印通知，它必须注册打印通知的后台任务扩展。 此扩展在元素中声明 `Extension` ， `Category` 并将特性设置为， `windows.backgroundTasks` 并将 `EntryPoint` 特性设置为 `BackgroundTask.PrintBackgroundTask` 。 该扩展插件还包括一个 `Task` 元素，用于指示它支持 `systemEvent` 任务类型。
 
-可以在 Microsoft Visual Studio 中的清单设计器的 " **声明** " 选项卡上添加 "打印后台任务" 扩展。 你还可以使用 XML (文本) 编辑器手动编辑应用包清单 XML。 右键单击**解决方案资源管理器**中的**appxmanifest.xml**文件以编辑选项。
+可以在 Microsoft Visual Studio 中的清单设计器的 " **声明** " 选项卡上添加 "打印后台任务" 扩展。 你还可以使用 XML (文本) 编辑器手动编辑应用包清单 XML。 右键单击 **解决方案资源管理器** 中的 **appxmanifest.xml** 文件以编辑选项。
 
-此示例显示元素中的后台任务扩展 `Extension` ，因为它显示在应用包清单文件 **appxmanifest.xml**中。
+此示例显示元素中的后台任务扩展 `Extension` ，因为它显示在应用包清单文件 **appxmanifest.xml** 中。
 
 ```XML
 <?xml version="1.0" encoding="utf-8"?>
@@ -100,7 +99,7 @@ ms.locfileid: "91732915"
 
 ## <a name="step-2-configure-device-metadata"></a>步骤2：配置设备元数据
 
-当你使用**设备元数据创作向导**将你的应用程序与设备关联时，请确保完成 "**指定 UWP 设备应用信息**" 页上的 "**通知处理程序**" 框。 这有助于确保在打印通知期间调用应用的后台任务。
+当你使用 **设备元数据创作向导** 将你的应用程序与设备关联时，请确保完成 "**指定 UWP 设备应用信息**" 页上的 "**通知处理程序**" 框。 这有助于确保在打印通知期间调用应用的后台任务。
 
 有关如何编辑设备元数据的分步说明，请参阅 [测试](#testing) 部分。
 
@@ -210,7 +209,7 @@ Toast 通知是用户的一条暂时性消息，其中包含相关的、区分�
 >[!IMPORTANT]
 >建议不要始终显示 toast，尤其是对于无法操作的事件。 这可能会给用户带来麻烦，导致用户无法从应用中关闭所有 toast。 对于不需要用户立即关注的事件，我们建议仅更新磁贴和徽章，而不显示 toast。
 
-此示例显示元素中的 `ToastCapable` 属性 `VisualElements` ，因为它显示在应用包清单文件 **appxmanifest.xml**中。
+此示例显示元素中的 `ToastCapable` 属性 `VisualElements` ，因为它显示在应用包清单文件 **appxmanifest.xml** 中。
 
 ```XML
 <VisualElements DisplayName="Device App For Printers C# sample" Logo="Assets\squareTile-sdk.png"
@@ -312,7 +311,7 @@ protected override async void OnLaunched(LaunchActivatedEventArgs args)
 
 由于后台任务不能直接启动前景应用，因此需要将打印通知详细信息保存到应用的设置，以便前景应用可以访问它们。 有关使用本地存储的详细信息，请参阅 [快速入门：本地应用数据](/previous-versions/windows/apps/hh700361(v=win.10))。
 
-此示例显示如何从 " [打印设置" 和 "打印通知](https://go.microsoft.com/fwlink/p/?LinkID=242862) " 示例的 "应用设置" 中检索打印机名称和双向消息。 此代码来自 `DisplayBackgroundTaskTriggerDetails` **InkLevel.xaml.cs** 文件的方法。 请注意，键索引值 `keyPrinterName` 和 `keyAsyncUIXML` 是在后台任务 **PrintBackgroundTask.cs**中使用的字符串常量。
+此示例显示如何从 " [打印设置" 和 "打印通知](https://go.microsoft.com/fwlink/p/?LinkID=242862) " 示例的 "应用设置" 中检索打印机名称和双向消息。 此代码来自 `DisplayBackgroundTaskTriggerDetails` **InkLevel.xaml.cs** 文件的方法。 请注意，键索引值 `keyPrinterName` 和 `keyAsyncUIXML` 是在后台任务 **PrintBackgroundTask.cs** 中使用的字符串常量。
 
 ```CSharp
 void DisplayBackgroundTaskTriggerDetails()
@@ -344,7 +343,7 @@ void DisplayBackgroundTaskTriggerDetails()
 }
 ```
 
-## <a name="testing"></a>测试
+## <a name="testing"></a>正在测试
 
 在可以测试 UWP 设备应用之前，必须使用设备元数据将其链接到您的打印机。
 
@@ -367,10 +366,10 @@ void DisplayBackgroundTaskTriggerDetails()
     >[!NOTE]
     >如果尚未创建设备元数据，请参阅 [为 UWP 设备应用创建设备元数据](./step-2--create-device-metadata.md)。
 
-    1. 如果**设备元数据创作向导**尚未打开，请通过双击 "DeviceMetadataWizard.exe" 从 *% ProgramFiles (x86) %* \\ Windows 工具包 \\ 8.1 \\ bin \\ x86 **DeviceMetadataWizard.exe**启动它。
+    1. 如果 **设备元数据创作向导** 尚未打开，请通过双击 "DeviceMetadataWizard.exe" 从 *% ProgramFiles (x86) %* \\ Windows 工具包 \\ 8.1 \\ bin \\ x86 **DeviceMetadataWizard.exe** 启动它。
     2. 单击 " **编辑设备元数据**"。 这将允许你编辑现有的设备元数据包。
     3. 在 " **打开** " 对话框中，找到与 UWP 设备应用关联的设备元数据包。  (其文件扩展名为 **devicemetadata** 。 ) 
-    4. 在 " **指定 uwp 设备应用信息** " 页上，在 " **UWP 设备应用** " 框中输入 Microsoft Store 应用信息。 单击 " **导入 UWP 应用程序清单文件** " 以自动输入 **包名称**、 **发布者名称**和 **UWP 应用 ID**。
+    4. 在 " **指定 uwp 设备应用信息** " 页上，在 " **UWP 设备应用** " 框中输入 Microsoft Store 应用信息。 单击 " **导入 UWP 应用程序清单文件** " 以自动输入 **包名称**、 **发布者名称** 和 **UWP 应用 ID**。
     5. 如果你的应用正在注册打印机通知，请填写 **通知处理程序** 框。 在 " **事件 ID**" 中，输入打印事件处理程序的名称。 在 " **事件资产**" 中，输入代码所在的文件的名称。
 
     6. 完成后，单击 " **下一步** "，直到到达 " **完成** " 页。
@@ -378,7 +377,7 @@ void DisplayBackgroundTaskTriggerDetails()
 
 6. 重新连接打印机，以便 Windows 在连接设备时读取更新的设备元数据。
 
-## <a name="troubleshooting"></a>疑难解答
+## <a name="troubleshooting"></a>故障排除
 
 ### <a name="issue-no-default-toast-notification-appears"></a>问题：未显示默认 toast 通知
 
@@ -394,7 +393,7 @@ void DisplayBackgroundTaskTriggerDetails()
 
 - **可能的原因：** 后台任务 () 的入口点 `IBackgroundTask` 与前台应用在同一项目中。 这是不允许的。 分离出用于后台任务处理程序的一个全新的类。
 
-- **可能的原因：** 作为应用中的通知入口点的类在清单或设备元数据中不正确地给定，导致应用在 backgroundhost 内崩溃，而不显示任何 toast。 检查下列项目：
+- **可能的原因：** 作为应用中的通知入口点的类在清单或设备元数据中不正确地给定，导致应用在 backgroundhost 内崩溃，而不显示任何 toast。 查看以下内容：
 
   - 请确保在清单设计器的 " **声明** " 选项卡中正确地提供了入口点。 它应采用命名空间. 类的形式，适用于 c # 和 c + +。 对于 JavaScript，它应为 .js 文件的相对目录路径。
   - JavaScript 应用在完成后应调用 close ( # A1。

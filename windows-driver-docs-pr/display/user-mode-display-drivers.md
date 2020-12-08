@@ -1,7 +1,6 @@
 ---
 title: 用户模式显示驱动程序
 description: 用户模式显示驱动程序
-ms.assetid: cb4e8fb9-a2f0-43b2-ae9e-ccffa850ccd7
 keywords:
 - 显示驱动程序模型 WDK Windows Vista，用户模式显示驱动程序
 - Windows Vista 显示器驱动程序模型 WDK，用户模式显示驱动程序
@@ -10,12 +9,12 @@ keywords:
 - Direct3D WDK 显示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9cb3555b1ab291e53e3c3521eb4b82c9ecec2151
-ms.sourcegitcommit: ee3e2259aafc844cc43cce62299a72649cf89212
+ms.openlocfilehash: 6f5891609a665f416307f04bf48370b29f1dac93
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91353592"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96802529"
 ---
 # <a name="user-mode-display-drivers"></a>用户模式显示驱动程序
 

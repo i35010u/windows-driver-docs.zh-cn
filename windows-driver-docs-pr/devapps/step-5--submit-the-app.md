@@ -1,15 +1,14 @@
 ---
 title: 步骤5提交 Microsoft Store 设备应用
 description: 本主题介绍如何将 UWP 设备应用提交到 Microsoft Store 仪表板。
-ms.assetid: B25F9953-6EFD-4A08-AFD6-B334C46E910F
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d0477185fd95e790ed5c81fa785d7debb9722478
-ms.sourcegitcommit: ec7bebe3f94536455e62b372c2a28fe69d1717f7
+ms.openlocfilehash: 28c20d0f9c15fe48f782b156d3f774d43fb31ce3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93349789"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96802665"
 ---
 # <a name="step-5-submit-the-microsoft-store-device-app"></a>步骤5：提交 Microsoft Store 设备应用
 
@@ -32,7 +31,7 @@ UWP 设备应用是一种特殊类型的 UWP 应用，设备制造商可以创�
 ## <a name="span-idstart_app_submissionspanspan-idstart_app_submissionspanspan-idstart_app_submissionspanstart-app-submission"></a><span id="Start_app_submission"></span><span id="start_app_submission"></span><span id="START_APP_SUBMISSION"></span>开始应用提交
 
 
-中转到 [Microsoft Store 仪表板](https://go.microsoft.com/fwlink/p/?LinkId=273050) ，并单击 " **提交新应用** "。
+中转到 [Microsoft Store 仪表板](https://go.microsoft.com/fwlink/p/?LinkId=273050) ，并单击 " **提交新应用**"。
 
 ## <a name="span-idadd_instructions_for_testersspanspan-idadd_instructions_for_testersspanspan-idadd_instructions_for_testersspanadd-instructions-for-testers"></a><span id="Add_instructions_for_testers"></span><span id="add_instructions_for_testers"></span><span id="ADD_INSTRUCTIONS_FOR_TESTERS"></span>为测试人员添加说明
 
@@ -48,7 +47,7 @@ UWP 设备应用是一种特殊类型的 UWP 应用，设备制造商可以创�
 
 -   必须将 StoreManifest.xml 文件包含在应用包中，Microsoft Store 才能将应用识别为 UWP 设备应用。
 
--   当应用程序启动时，如果应用程序要求在应用程序运行之前连接设备，则它必须明确说明 "请连接 &lt; *特定品牌的设备名称* " 之类的内容 &gt; 。
+-   当应用程序启动时，如果应用程序要求在应用程序运行之前连接设备，则它必须明确说明 "请连接 &lt; *特定品牌的设备名称*" 之类的内容 &gt; 。
 
 -   **包名称** 应与在 [步骤 1](step-1--create-a-uwp-device-app.md)中创建应用时指定的名称相同。 请注意，如果应用在一年内未提交，包名称将过期。
 

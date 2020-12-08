@@ -1,9 +1,8 @@
 ---
 title: ux（取消汇编 x86 BIOS）
 description: Ux 命令显示基于 x86 的 BIOS 代码的指令集。
-ms.assetid: d3616255-1a07-4a5d-8171-c8316179a7dc
 keywords:
-- 用户体验 (反汇编 x86 BIOS) Windows 调试
+- ux (Unassemble x86 BIOS) Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,25 +11,25 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: b75f50578d869c83b2a5b22357d4a1ed41c477b5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ee67e47e46801815660f077defc7ae2101dc359f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390028"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96802987"
 ---
 # <a name="ux-unassemble-x86-bios"></a>ux（取消汇编 x86 BIOS）
 
 
-**Ux**命令显示基于 x86 的 BIOS 代码的指令集。
+**Ux** 命令显示基于 X86 的 BIOS 代码的指令集。
 
 `ux [Address]`
 
-## <a name="span-idddkcmdunassemblex86biosdbgspanspan-idddkcmdunassemblex86biosdbgspanparameters"></a><span id="ddk_cmd_unassemble_x86_bios_dbg"></span><span id="DDK_CMD_UNASSEMBLE_X86_BIOS_DBG"></span>参数
+## <a name="span-idddk_cmd_unassemble_x86_bios_dbgspanspan-idddk_cmd_unassemble_x86_bios_dbgspanparameters"></a><span id="ddk_cmd_unassemble_x86_bios_dbg"></span><span id="DDK_CMD_UNASSEMBLE_X86_BIOS_DBG"></span>参数
 
 
-<span id="_______Address______"></span><span id="_______address______"></span><span id="_______ADDRESS______"></span> *Address*   
-指定的基于 x86 的 BIOS 代码中的内存偏移量。 如果省略此参数或指定为零，则默认偏移量是个开始的 bios。
+<span id="_______Address______"></span><span id="_______address______"></span><span id="_______ADDRESS______"></span>*地址*   
+指定基于 x86 的 BIOS 代码内的内存偏移量。 如果省略此参数或指定零，则默认偏移量为 BIOS 开始。
 
 ### <a name="span-idenvironmentspanspan-idenvironmentspanspan-idenvironmentspanenvironment"></a><span id="Environment"></span><span id="environment"></span><span id="ENVIRONMENT"></span>环境
 
@@ -41,32 +40,32 @@ ms.locfileid: "63390028"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>模式</strong></p></td>
-<td align="left"><p>内核模式下</p></td>
+<td align="left"><p><strong>交货</strong></p></td>
+<td align="left"><p>仅限内核模式</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>目标</strong></p></td>
-<td align="left"><p>仅实时调试</p></td>
+<td align="left"><p>仅限实时调试</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>平台</strong></p></td>
-<td align="left"><p>基于 x86 的仅</p></td>
+<td align="left"><p>仅基于 x86</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-有关如何调试 BIOS 代码的详细信息，请参阅[调试 BIOS 代码](debugging-bios-code.md)。
+有关如何调试 BIOS 代码的详细信息，请参阅 [调试 Bios 代码](debugging-bios-code.md)。
 
 <a name="remarks"></a>备注
 -------
 
-调试器将显示从前八行代码，生成的说明开始*地址*偏移量。
+调试器显示从 *地址* 偏移量开始的前八行代码生成的指令。
 
-若要使**ux**命令工作正常，HAL 符号必须可供调试器。 如果调试器无法找到这些符号，调试器会显示"无法解析"错误。
+若要使 **ux** 命令正常工作，调试器必须提供 HAL 符号。 如果调试器找不到这些符号，调试器将显示 "无法解决" 错误。
 
  
 

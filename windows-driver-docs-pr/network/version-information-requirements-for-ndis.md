@@ -1,15 +1,14 @@
 ---
 title: NDIS 的版本信息要求
 description: NDIS 的版本信息要求
-ms.assetid: b2850077-271f-4bb6-8710-ae9415ad5eda
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 18ed9eff0905c027d684da02ecd5c5da23d7f878
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7fbcccdc4783a4383a0ebd48bc6c7ddc2c923669
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63387331"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96802273"
 ---
 # <a name="version-information-requirements-for-ndis"></a>NDIS 的版本信息要求
 
@@ -17,16 +16,16 @@ ms.locfileid: "63387331"
 
 
 
-NDIS 支持保证 NDIS 版本之间一致的行为的各种标头版本信息要求。 若要支持标头版本信息，NDIS 具有下列职责：
+NDIS 支持各种标头版本信息要求，确保 NDIS 版本之间的行为一致。 为了支持标头版本信息，NDIS 具有以下职责：
 
--   处理具有较低的修订的结构。 即 NDIS 检查标头信息和解释基于标头中的修订版本信息的结构。
+-   处理较低修订版本的结构。 也就是说，NDIS 检查标头信息，并基于标头中的修订信息解释结构。
 
--   函数调用将失败并返回相应的错误代码，如果驱动程序使用不正确的结构修订版本。 例如，如果 NDIS 6.30 驱动程序使用 Xxx NDIS 失败的函数调用\_修订\_1 结构时 NDIS 6.30 Xxx\_修订\_2 结构。
+-   如果驱动程序使用不正确的结构修订，则函数调用失败，并返回相应的错误代码。 例如，如果 ndis 6.30 的驱动程序在 \_ \_ 有 Ndis 6.30 Xxx 版本2的结构时使用 Xxx 版本1结构，则 ndis 将无法调用函数 \_ \_ 。
 
 ## <a name="related-topics"></a>相关主题
 
 
-[NDIS 版本的概述](overview-of-ndis-versions.md)
+[NDIS 版本概述](overview-of-ndis-versions.md)
 
 [指定 NDIS 版本信息](specifying-ndis-version-information.md)
 

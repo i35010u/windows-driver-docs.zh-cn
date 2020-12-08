@@ -1,18 +1,17 @@
 ---
 title: 视频微型端口驱动程序初始化（Windows 2000 模型）
 description: 视频微型端口驱动程序初始化（Windows 2000 模型）
-ms.assetid: b18b5483-f11f-4533-9434-a3a4a30fb4b2
 keywords:
 - 视频微型端口驱动程序 WDK Windows 2000，初始化
 - 初始化视频微型端口驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f0e74ad37415c7ac9946c83b9937e3671b3a3e8c
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: e9b576928c9c9850939b1ef15fd3064f9783a73d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89063718"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96802495"
 ---
 # <a name="video-miniport-driver-initialization-windows-2000-model"></a>视频微型端口驱动程序初始化（Windows 2000 模型）
 
@@ -20,7 +19,7 @@ ms.locfileid: "89063718"
 ## <span id="ddk_video_miniport_driver_initialization_windows_2000_model__gg"></span><span id="DDK_VIDEO_MINIPORT_DRIVER_INITIALIZATION_WINDOWS_2000_MODEL__GG"></span>
 
 
-在加载并初始化 NT 内核、 *HAL*和核心驱动程序（如 PCI 总线驱动程序）之后，会发生视频微型端口驱动程序初始化。 基本系统初始化顺序如下所示：
+在加载并初始化 NT 内核、 *HAL* 和核心驱动程序（如 PCI 总线驱动程序）之后，会发生视频微型端口驱动程序初始化。 基本系统初始化顺序如下所示：
 
 1.  加载并初始化 NT 内核和 HAL。
 
@@ -34,7 +33,7 @@ ms.locfileid: "89063718"
 
 6.  微型端口驱动程序的 **DriverEntry** 函数调用 [**VideoPortInitialize**](/windows-hardware/drivers/ddi/video/nf-video-videoportinitialize)。 **VideoPortInitialize** 对所有微型端口驱动程序都通用的微型端口驱动程序初始化执行这些方面。 例如，对于非 PnP 驱动程序， **VideoPortInitialize** 将验证微型端口驱动程序初始化视频 \_ HW \_ 初始化数据结构的部分、 \_ 初始化系统创建的设备对象的一些公共成员、为设备对象的设备扩展分配内存，以及收集和存储设备扩展中的相关信息。 有关设备扩展的更多详细信息，请参阅 [视频微型端口驱动程序的设备扩展 (Windows 2000 模型) ](video-miniport-driver-s-device-extension--windows-2000-model-.md) 。 对于 PnP 驱动程序，将在稍后发生与设备对象相关的操作。
 
-7.  当 **VideoPortInitialize** 返回时， **DriverEntry** 将 **VideoPortInitialize** 的返回值传播回调用方。 小型小型驱动程序编写器不应假设 **VideoPortInitialize**返回的值。
+7.  当 **VideoPortInitialize** 返回时， **DriverEntry** 将 **VideoPortInitialize** 的返回值传播回调用方。 小型小型驱动程序编写器不应假设 **VideoPortInitialize** 返回的值。
 
 此时，系统已加载并初始化了视频微型端口驱动程序。 下一步是 PnP 管理器启动设备。 有关详细信息，请参阅 [启动视频微型端口驱动程序的设备](starting-the-device-of-the-video-miniport-driver.md) 。
 

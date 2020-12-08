@@ -1,15 +1,14 @@
 ---
 title: 安全 MOR 实现
 description: 描述 MemoryOverwriteRequestControlLock UEFI 变量的行为和用法，版本2。
-ms.assetid: 94F42629-3B76-4EB1-A5FA-4FA13C932CED
 ms.date: 08/13/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 6135c9924d7bac1e2bdd8e5c2b47b0e3ead42788
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: f7000a8e27c564691e5a1b89a95b5e7518451003
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89188095"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803423"
 ---
 # <a name="secure-mor-implementation"></a>安全 MOR 实现
 
@@ -65,19 +64,19 @@ ms.locfileid: "89188095"
 
 **属性：** NV + BS.1770 + RT
 
-*数据*参数中的**GetVariable**值： 0x0 (未锁定) ;0x1 (锁定，没有密钥) ;0x2 (用密钥) 锁定
+*数据* 参数中的 **GetVariable** 值： 0x0 (未锁定) ;0x1 (锁定，没有密钥) ;0x2 (用密钥) 锁定
 
-*数据*参数中的**SetVariable**值： 0x0 (未锁定) ;0x1 (锁定) 
+*数据* 参数中的 **SetVariable** 值： 0x0 (未锁定) ;0x1 (锁定) 
 
 ## <a name="locking-with-setvariable"></a>用 SetVariable 锁定
 
-在每次启动时，BIOS 都应初始化 `MemoryOverwriteRequestControlLock` 为 0x00 (的单字节值*unlocked* ，在启动设备选择 (BDS) 阶段 (驱动程序 \# \# \# \# 、SYSPREP \# \# \# \# 、启动 \# \# \# \# 、 \* 恢复 \* 、... ) 之前，此值指示未锁定) 。 对于 `MemoryOverwriteRequestControlLock` (和 `MemoryOverwriteRequestControl`) ，BIOS 应禁止删除变量，并且必须将属性固定到 NV + BS.1770 + RT。
+在每次启动时，BIOS 都应初始化 `MemoryOverwriteRequestControlLock` 为 0x00 (的单字节值 *unlocked* ，在启动设备选择 (BDS) 阶段 (驱动程序 \# \# \# \# 、SYSPREP \# \# \# \# 、启动 \# \# \# \# 、 \* 恢复 \* 、... ) 之前，此值指示未锁定) 。 对于 `MemoryOverwriteRequestControlLock` (和 `MemoryOverwriteRequestControl`) ，BIOS 应禁止删除变量，并且必须将属性固定到 NV + BS.1770 + RT。
 
-当**SetVariable** `MemoryOverwriteRequestControlLock` 第一次调用 SetVariable 时，如果在*数据*中传递有效的非零值，则和的访问模式 `MemoryOverwriteRequestControlLock` `MemoryOverwriteRequestControl` 将更改为只读，指示它们已锁定。
+当 **SetVariable** `MemoryOverwriteRequestControlLock` 第一次调用 SetVariable 时，如果在 *数据* 中传递有效的非零值，则和的访问模式 `MemoryOverwriteRequestControlLock` `MemoryOverwriteRequestControl` 将更改为只读，指示它们已锁定。
 
 修订版1实现仅接受的单个字节为0x00 或 0x01 `MemoryOverwriteRequestControlLock` 。
 
-修订版本2还接受表示共享机密密钥的8字节值。 如果在 **SetVariable**中指定了其他任何值，则调用失败，状态为 "EFI \_ 无效 \_ 参数"。 若要生成该密钥，请使用高质量熵源，例如受信任的平台模块或硬件随机数生成器。
+修订版本2还接受表示共享机密密钥的8字节值。 如果在 **SetVariable** 中指定了其他任何值，则调用失败，状态为 "EFI \_ 无效 \_ 参数"。 若要生成该密钥，请使用高质量熵源，例如受信任的平台模块或硬件随机数生成器。
 
 设置密钥后，调用方和固件应将此密钥的副本保存在一个机密性保护的位置，例如 IA32/X64 上的 SMRAM 或具有受保护存储的服务处理器。
 
@@ -85,7 +84,7 @@ ms.locfileid: "89188095"
 
 在修订版本2中，当 `MemoryOverwriteRequestControlLock` 和 `MemoryOverwriteRequestControl` 变量锁定时，将首先使用固定时间算法针对注册的密钥检查对这些变量) 的 **SetVariable** (调用。 如果两个键都存在并且匹配，则变量将转换回未锁定状态。 在第一次尝试或未注册任何密钥后，尝试设置此变量的后续尝试将失败，并 \_ 拒绝 EFI 访问， \_ 以防止强力攻击。 在这种情况下，系统重新启动应该是解锁变量的唯一方法。
 
-操作系统 `MemoryOverwriteRequestControlLock` 通过调用 **GetVariable**检测是否存在及其状态。 然后，系统可以 `MemoryOverwriteRequestControl` 通过将值设置为0x1 来锁定的当前值 `MemoryOverwriteRequestControlLock` 。 另外，它还可以指定一个密钥，以便在将来安全地从内存中清除机密数据后，启用解锁。
+操作系统 `MemoryOverwriteRequestControlLock` 通过调用 **GetVariable** 检测是否存在及其状态。 然后，系统可以 `MemoryOverwriteRequestControl` 通过将值设置为0x1 来锁定的当前值 `MemoryOverwriteRequestControlLock` 。 另外，它还可以指定一个密钥，以便在将来安全地从内存中清除机密数据后，启用解锁。
 
 调用 **GetVariable** 以 `MemoryOverwriteRequestControlLock` 返回0x0、0x1 或0x2，以指示未锁定、已锁定但没有密钥，或锁定为密钥状态。
 

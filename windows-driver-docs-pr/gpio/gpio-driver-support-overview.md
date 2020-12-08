@@ -1,15 +1,14 @@
 ---
 title: GPIO 驱动程序支持概述
 description: 从 Windows 8 开始，GPIO 框架扩展 (GpioClx) 简化了为 GPIO 控制器设备编写驱动程序的任务。
-ms.assetid: 450E7F80-D9AC-4F52-8062-2DA5343C8D0F
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5747478ff8ce6a5f7c2fce4914232d294f92f35d
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: d2dbacbe4dd2e4eb3e543751ce7016ae6d299b94
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89064490"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801795"
 ---
 # <a name="gpio-driver-support-overview"></a>GPIO 驱动程序支持概述
 

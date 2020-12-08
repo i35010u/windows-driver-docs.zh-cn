@@ -1,7 +1,6 @@
 ---
 title: TrueType 字体驱动程序函数
 description: TrueType 字体驱动程序函数
-ms.assetid: 9ed59393-c4a6-4d3f-9a18-c9e5493c2dc9
 keywords:
 - 字体 WDK 图形，TrueType 驱动程序函数
 - GDI WDK Windows 2000 显示、字体、TrueType 驱动程序函数
@@ -9,12 +8,12 @@ keywords:
 - TrueType 字体驱动程序 WDK GDI
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0275d1abe8faa04093dc46f4e1dfc592f04d1dff
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 071e200b3e643733d7fe973cea90034abd9261dd
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90717582"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96802571"
 ---
 # <a name="truetype-font-driver-functions"></a>TrueType 字体驱动程序函数
 
@@ -32,7 +31,7 @@ TrueType 字体驱动程序必须支持下表中列出的函数。
 <thead>
 <tr class="header">
 <th align="left">函数</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>

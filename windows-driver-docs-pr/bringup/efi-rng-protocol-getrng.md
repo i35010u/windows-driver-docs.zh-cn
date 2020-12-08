@@ -1,20 +1,19 @@
 ---
 title: EFI_RNG_PROTOCOL.GetRNG
 description: EFI_RNG_PROTOCOL.GetRNG
-ms.assetid: 5C2E0C8F-FF3A-4F57-BC28-3BC540852CB0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0654078e31d852be913d2325104884fe1fd7f708
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7a7d2084af331ec61ea1b7ffe83c731617e59337
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327997"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803401"
 ---
-# <a name="efirngprotocolgetrng"></a>EFI\_RNG\_PROTOCOL.GetRNG
+# <a name="efi_rng_protocolgetrng"></a>EFI \_ RNG \_ 协议。GetRNG
 
 
-检索一个随机数生成 (RNG) 值。
+ (RNG) 值检索随机数生成。
 
 ## <a name="syntax"></a>语法
 
@@ -28,30 +27,30 @@ typedef EFI_STATUS (EFIAPI *EFI_RNG_GET_RNG) (
     );
 ```
 
-## <a name="parameters"></a>Parameters
+## <a name="parameters"></a>参数
 
 
 <a href="" id="this"></a>*此*  
-\[在中\]指向的指针[EFI\_RNG\_协议](efi-rng-protocol.md)实例。
+\[位于 \] [EFI \_ RNG \_ 协议](efi-rng-protocol.md) 实例的指针中。
 
 <a href="" id="rngalgorithm"></a>*RNGAlgorithm*  
-\[在中\]指向 EFI\_RNG\_标识要使用的 RNG 算法的算法。 如果此参数为 NULL，则将使用默认驱动程序支持的算法。
+\[\]用于 \_ \_ 标识要使用的 RNG 算法的 EFI RNG 算法的指针。 如果此参数为 NULL，则将使用该驱动程序支持的默认算法。
 
 <a href="" id="rngvaluelength"></a>*RNGValueLength*  
-\[在中\]返回的缓冲区的长度，以字节为单位， *RNGValue*。
+\[\] *RNGValue* 返回的缓冲区的长度（以字节为单位）。
 
 <a href="" id="rngvalue"></a>*RNGValue*  
-\[在\]将包含 RNG 值的缓冲区的指针。 通过使用 EFI 此函数分配值\_引导\_服务-&gt;AllocatePool()，并且它是调用方负责释放此内存通过使用 EFI\_启动\_服务&gt;FreePool()。
+\[\]指向将包含 RNG 值的缓冲区的指针。 此函数使用 EFI \_ boot \_ services-AllocatePool ( # A1 为此函数分配该值 &gt; ，并且调用方负责使用 efi \_ 启动 \_ 服务 &gt; FreePool ( # A3 来释放此内存。
 
 ## <a name="remarks"></a>备注
 
 
-最小大小*RNGValue*为 32 个字节。
+*RNGValue* 的最小大小为32个字节。
 
 ## <a name="return-value"></a>返回值
 
 
-返回一个下面的状态代码。
+返回以下状态代码之一。
 
 <table>
 <colgroup>
@@ -61,33 +60,33 @@ typedef EFI_STATUS (EFIAPI *EFI_RNG_GET_RNG) (
 <thead>
 <tr class="header">
 <th>状态代码</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><p>EFI_SUCCESS</p></td>
-<td><p>该函数成功返回了 RNG 值。</p></td>
+<td><p>函数已成功返回 RNG 值。</p></td>
 </tr>
 <tr class="even">
 <td><p>EFI_INVALID_PARAMETER</p></td>
-<td><p><em>RNGAlgorithm</em>时可使用多种算法为 NULL。</p></td>
+<td><p>如果有多种算法， <em>RNGAlgorithm</em>为 NULL。</p></td>
 </tr>
 <tr class="odd">
 <td><p>EFI_UNSUPPORTED</p></td>
-<td><p>指定的算法<em>RNGAlgorithm</em>不支持此驱动程序。</p></td>
+<td><p>此驱动程序不支持 <em>RNGAlgorithm</em> 指定的算法。</p></td>
 </tr>
 <tr class="even">
 <td><p>EFI_DEVICE_ERROR</p></td>
-<td><p>由于硬件或固件错误，无法检索 RNG 值。</p></td>
+<td><p>由于硬件或固件错误，无法检索到 RNG 的值。</p></td>
 </tr>
 <tr class="odd">
 <td><p>EFI_NOT_READY</p></td>
-<td><p>没有足够的平均信息量数据可用。</p></td>
+<td><p>没有足够的熵数据可用。</p></td>
 </tr>
 <tr class="even">
 <td><p>EFI_OUT_OF_RESOURCES</p></td>
-<td><p>该驱动程序不能为 RNG 值分配内存。</p></td>
+<td><p>驱动程序无法为 RNG 值分配内存。</p></td>
 </tr>
 </tbody>
 </table>

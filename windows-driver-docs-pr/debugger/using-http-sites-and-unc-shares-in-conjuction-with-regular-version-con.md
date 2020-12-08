@@ -1,24 +1,23 @@
 ---
 title: 结合常规版本控制使用 HTTP 站点和 UNC 共享
 description: 结合常规版本控制使用 HTTP 站点和 UNC 共享
-ms.assetid: 1b045a00-45e7-47e8-9447-7d94f70253fe
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0332d15c5fc349d86c63882fa5e84a4a90d8ef63
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 91b82704ccb4ea44451311191d8cf4c8f5aa2185
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63378797"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803106"
 ---
 # <a name="using-http-sites-and-unc-shares-in-conjuction-with-regular-version-control"></a>结合常规版本控制使用 HTTP 站点和 UNC 共享
 
 
-您可能会发现，必须支持您的开发人员使用的标准 SrcSrv 功能，从版本控制中提取文件，但还必须使源文件可通过网站或 UNC 共享。 如果已经设置了测试实验室不能访问到版本控制的则可能发生这种情况。 它是可以支持这两个用户使用同一组.pdb 文件。
+你可能会发现，你必须支持开发人员使用标准的 Srcsrv.ini 功能，该功能可从版本控制中提取文件，但还必须通过网站或 UNC 共享来提供源文件。 如果您设置了一个无法访问版本控制的测试实验室，则可能会发生这种情况。 可以使用同一组 .pdb 文件来支持这两个用户。
 
-首先，提取使用 SrcTool; 在源代码文件请参阅[提取源文件](extracting-source-files.md)有关详细信息。 使该共享可为网站或 UNC 共享。 对于当前目的，你不应转换使用 Cv2http.cmd 脚本的.pdb 文件。
+首先，使用 Srctool.exe 提取源文件;有关详细信息，请参阅 [提取源文件](extracting-source-files.md) 。 将共享作为网站或 UNC 共享提供。 对于当前目的，不应使用 Cv2http 脚本转换 .pdb 文件。
 
-现在将使用 HTTP/UNC 共享的计算机，在编辑[Srcsrv.ini](the-srcsrv-ini-file.md)调试器目录中的文件。 在文件的变量部分中，添加以下三个语句：
+现在，在将使用 HTTP/UNC 共享的计算机上，编辑调试器目录中的 [Srcsrv.ini](the-srcsrv-ini-file.md) 文件。 在该文件的 variables 节中，添加以下三个语句：
 
 ```ini
 MY_SOURCE_ROOT=\\server\share
@@ -26,9 +25,9 @@ MY_SOURCE_ROOT=\\server\share
  SRCSRVTRG=%MY_SOURCE_ROOT%\%var2%\%var3%\%var4%\%fnfile%(%var1%)
 ```
 
-应替换\\ \\server\\共享与你要提供的 UNC 共享的根目录或包含源文件的网站的 URL。 您还可以更改 MY\_源\_根是您想要描述此位置的任何别名。 这些例外情况之外，其他所有内容应输入严格按照所述。
+应将 \\ \\ 服务器共享替换为 \\ 您提供的 UNC 共享的根目录或包含源文件的网站的 URL。 你还可以将 \_ 源 \_ 根目录更改为你要描述此位置的任何别名。 有了这些例外，应严格按照所述输入所有其他内容。
 
-在这种方式中设置的所有调试器忽略标准版本控制的提取指令，并改为从指定的位置访问源文件。 同时，而无需在 Srcsrv.ini 中包含这些项的所有调试器都使用正常的版本控制机制来提取源文件。
+以这种方式设置的所有调试器都将忽略标准版本控制提取说明，并改为从指定的位置访问源文件。 同时，Srcsrv.ini 中不包含这些项的所有调试器都使用常规版本控制机制来提取源文件。
 
  
 

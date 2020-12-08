@@ -1,7 +1,6 @@
 ---
 title: 调试 \_ 请求 \_ 集 \_ 本地 \_ 隐式 \_ 命令 \_ 行
 description: 调试 \_ 请求 \_ 集 \_ 本地 \_ 隐式 \_ 命令 \_ 行
-ms.assetid: c54fc9f3-2805-4411-8162-18d4f9983795
 keywords:
 - DEBUG_REQUEST_SET_LOCAL_IMPLICIT_COMMAND_LINE Windows 调试
 topic_type:
@@ -12,22 +11,22 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1bc6d71cbcbbfd62b471ec4d44f69172a905ba36
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 70f9f9ebc9a1b5fe6678069187cb67805b768267
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89209851"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803281"
 ---
 # <a name="debug_request_set_local_implicit_command_line"></a>调试 \_ 请求 \_ 集 \_ 本地 \_ 隐式 \_ 命令 \_ 行
 
 
 "调试 \_ 请求 \_ 集 \_ 本地 \_ 隐式 \_ 命令 \_ 行 [**请求**](request.md) " 操作设置 [调试器引擎](./introduction.md#debugger-engine)的隐式命令行。
 
-**参数**
+**Parameters**
 
 <span id="InBuffer"></span><span id="inbuffer"></span><span id="INBUFFER"></span>*InBuffer*  
-新的隐式命令行。 *InBuffer*的类型为指向 Unicode 字符串 (PWSTR) 的指针。 将复制指针，但不会复制它指向的字符串。
+新的隐式命令行。 *InBuffer* 的类型为指向 Unicode 字符串 (PWSTR) 的指针。 将复制指针，但不会复制它指向的字符串。
 
 <span id="OutBuffer"></span><span id="outbuffer"></span><span id="OUTBUFFER"></span>*OutBuffer*  
 未使用。

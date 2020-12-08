@@ -1,15 +1,14 @@
 ---
 title: 设备管理命名空间对象
 description: ACPI 5.0 规范定义了几种可用于管理设备的命名空间对象类型。
-ms.assetid: 26C3312D-B1B0-4843-BF4E-1B03630C0BDD
 ms.date: 06/26/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: b999109038eb59a54b91a2438fe96da832c19f28
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: cda3bbc70c6f103edaa4fccf84e3679a7fd4ee83
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90101534"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803417"
 ---
 # <a name="device-management-namespace-objects"></a>设备管理命名空间对象
 
@@ -37,7 +36,7 @@ ACPI\vvv[v]dddd
 
 ### <a name="hardware-id-_hid"></a> (HID) 的硬件 ID \_
 
-在 ACPI 中标识设备的最低要求是 (\_ HID) 对象的硬件 ID。 \_HID 返回格式为 "ABC \[ d \] *xxxx*" 的字符串，其中 "abc \[ d \] " 是一个由三个或四个字符组成的字符串，用于标识设备制造商 ("供应商 id" ) ， *xxxx*是一个十六进制数字，用于标识由该供应商生产的特定设备 ("设备 ID" ) 。 供应商 Id 在整个行业中必须是唯一的。 Microsoft 会分配这些字符串以确保它们是唯一的。 可以从 [即插即用 ID-PNPID 请求](../install/plug-and-play-id---pnpid-request.md)中获取供应商 id。
+在 ACPI 中标识设备的最低要求是 (\_ HID) 对象的硬件 ID。 \_HID 返回格式为 "ABC \[ d \] *xxxx*" 的字符串，其中 "abc \[ d \] " 是一个由三个或四个字符组成的字符串，用于标识设备制造商 ("供应商 id" ) ， *xxxx* 是一个十六进制数字，用于标识由该供应商生产的特定设备 ("设备 ID" ) 。 供应商 Id 在整个行业中必须是唯一的。 Microsoft 会分配这些字符串以确保它们是唯一的。 可以从 [即插即用 ID-PNPID 请求](../install/plug-and-play-id---pnpid-request.md)中获取供应商 id。
 
 > [!NOTE]
 > ACPI 5.0 还支持在 HID 和其他标识对象中使用 PCI 分配的供应商 Id \_ ，因此你可能不需要从 Microsoft 获取供应商 id。 有关硬件标识要求的详细信息，请参阅 \_ [ACPI 5.0 规范](https://uefi.org/specifications)的 "HID (硬件 ID) " 部分。
@@ -46,7 +45,7 @@ ACPI\vvv[v]dddd
 
 对于与 Windows 附带的收件箱驱动程序兼容的设备，Microsoft 保留了供应商 ID "PNP"。 Windows 定义了多个与此供应商 ID 结合使用的设备 Id，该 ID 可用于为设备加载 Windows 提供的驱动程序。 一个单独的对象， (\_ CID) 对象的兼容 ID，用于返回这些标识符。 Windows 始终首选硬件 Id (由 \_ HID) 通过兼容 id 返回， (由 \_ CID) 在 INF 匹配和驱动程序选择中返回。 如果供应商提供的特定于设备的驱动程序不可用，则此首选项允许将 Windows 提供的驱动程序视为默认驱动程序。 下表中的兼容 Id 是新创建的，用于 SoC 平台。
 
-| 兼容 ID | 说明 |
+| 兼容 ID | 描述 |
 | --- | --- |
 | PNP0C40  | 与 Windows 兼容的按钮数组 |
 | PNP0C50  | HID-基于 I i2c 的设备 |
@@ -65,9 +64,9 @@ ACPI 5.0 定义了 \_ SUB、 \_ HRV 和 \_ CLS 对象，这些对象可与 HID �
 
 为实现可维护性，有一个 Windows 硬件认证工具包 (HCK) 要求 OEM 系统上的设备 Id 是 "四部分" Id。 这四个部分分别为供应商 ID、设备 ID、子系统供应商 (OEM) ID 和子系统 (OEM) 设备 ID。 因此， \_ 对于 OEM 平台，需要子系统 ID (SUB) 对象。
 
-### <a name="device-specific-method-_dsm"></a> (DSM) 特定于设备的方法 \_
+### <a name="device-specific-method-_dsm"></a> (\_ DSM) Device-Specific 方法
 
-在 \_ \_ [ACPI 5.0 规范](https://uefi.org/specifications)的 "Dsm (设备特定方法) " 部分中定义 DSM 方法。 此方法提供了特定于设备的数据和控制函数，可由设备驱动程序调用，而不会与其他此类特定于设备的方法发生冲突。 \_特定设备或设备类的 DSM 定义一个 UUID (GUID) ，保证其不会与其他 uuid 冲突。 对于每个 UUID，可通过 DSM 方法实现一组定义的函数 \_ 来提供数据或为驱动程序执行控制功能。 类特定的数据和数据格式以单独的设备类规范提供，还在 [ACPI 设备特定的方法](acpi-device-specific-methods.md)中进行了介绍。
+在 \_ \_ [ACPI 5.0 规范](https://uefi.org/specifications)的 "Dsm (设备特定方法) " 部分中定义 DSM 方法。 此方法提供了特定于设备的数据和控制函数，可由设备驱动程序调用，而不会与其他此类特定于设备的方法发生冲突。 \_特定设备或设备类的 DSM 定义一个 UUID (GUID) ，保证其不会与其他 uuid 冲突。 对于每个 UUID，可通过 DSM 方法实现一组定义的函数 \_ 来提供数据或为驱动程序执行控制功能。 类特定的数据和数据格式以单独的设备类规范提供，也在 [ACPI Device-Specific 方法](acpi-device-specific-methods.md)中进行了介绍。
 
 ### <a name="address-_adr-and-unique-id-_uid"></a>Address (\_ ADR) 和 UNIQUE ID (\_ UID) 
 
@@ -122,7 +121,7 @@ SoC 设备集成到 SoC 芯片，无法删除。 可从启用和禁用的要求�
 
 - 有关电源关系的依赖项，请参阅：
 
-  - [IoInvalidateDeviceRelations](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioinvalidatedevicerelations) (若要触发建立电源关系，请调用**设备 \_ 关系 \_ 类型**为 enum 值为**PowerRelations**的**IoInvalidateDeviceRelations**例程。 ) 
+  - [IoInvalidateDeviceRelations](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioinvalidatedevicerelations) (若要触发建立电源关系，请调用 **设备 \_ 关系 \_ 类型** 为 enum 值为 **PowerRelations** 的 **IoInvalidateDeviceRelations** 例程。 ) 
   
   - [IRP \_ MN \_ 查询 \_ 设备 \_ 关系](../kernel/irp-mn-query-device-relations.md)
 

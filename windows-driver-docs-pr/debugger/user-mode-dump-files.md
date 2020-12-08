@@ -1,59 +1,58 @@
 ---
 title: 用户模式转储文件
 description: 用户模式转储文件
-ms.assetid: bef29d75-6620-4219-b402-36fbddc4fe1f
 keywords:
 - 转储文件，用户模式
 ms.date: 12/03/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 5803e913b3ccd4fd91044d67565545002426d154
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 9156cea2b35e4a190e6d4b9c3e46866a471c4f9d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89215686"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803229"
 ---
 # <a name="user-mode-dump-files"></a>用户模式转储文件
 
 本节包括：
 
-- [各种用户模式转储文件](#varieties)
+- [各种 User-Mode 转储文件](#varieties)
 
-- [创建用户模式转储文件](#creating)
+- [创建 User-Mode 转储文件](#creating)
 
-有关分析转储文件的信息，请参阅 [分析用户模式转储文件](analyzing-a-user-mode-dump-file.md)。
+有关分析转储文件的信息，请参阅 [分析 User-Mode 转储文件](analyzing-a-user-mode-dump-file.md)。
 
-## <a name="span-idvarietiesspanspan-idvarietiesspan-varieties-of-user-mode-dump-files"></a><span id="varieties"></span><span id="VARIETIES"></span> 各种用户模式转储文件
+## <a name="span-idvarietiesspanspan-idvarietiesspan-varieties-of-user-mode-dump-files"></a><span id="varieties"></span><span id="VARIETIES"></span> 各种 User-Mode 转储文件
 
 用户模式故障转储文件有多种，但分为两类：
 
-[完全用户模式转储](#full)
+[完全 User-Mode 转储](#full)
 
 [小型转储](#minidumps)
 
 这些转储文件之间的差异是大小之一。 小型转储通常更紧凑，可轻松发送到分析师。
 
-**注意**   可以通过分析转储文件来获取很多信息。 但是，任何转储文件都不能提供与实际使用调试器直接调试故障一样多的信息。
+**注意**   可以通过分析转储文件来获取很多信息。 但是，任何转储文件都不能提供与实际使用调试器直接调试故障一样多的信息。
 
-## <a name="span-idfullspanspan-idfullspanfull-user-mode-dumps"></a><span id="full"></span><span id="FULL"></span>完全用户模式转储
+## <a name="span-idfullspanspan-idfullspanfull-user-mode-dumps"></a><span id="full"></span><span id="FULL"></span>完全 User-Mode 转储
 
 完整的用户 *模式转储* 是基本用户模式转储文件。
 
 此转储文件包括进程的整个内存空间、程序的可执行文件映像本身、句柄表以及在重新构建转储时使用的内存时对调试器有用的其他信息。
 
-可以将完整的用户模式转储文件 "收缩" 到小型转储。 只需将转储文件加载到调试器中，然后使用 [**. dump (创建转储文件) **](-dump--create-dump-file-.md) 命令，以小型转储格式保存新转储文件。
+可以将完整的用户模式转储文件 "收缩" 到小型转储。 只需将转储文件加载到调试器中，然后使用 [**. dump (创建转储文件)**](-dump--create-dump-file-.md) 命令，以小型转储格式保存新转储文件。
 
-**注意**   尽管名称相同，但最大的 "小型转储" 文件实际上包含了比完整用户模式转储更多的信息。 例如， **dump/mf** 或 **/ma** 将创建比 **dump/f**更大、更完整的文件。
+**注意**   尽管名称相同，但最大的 "小型转储" 文件实际上包含了比完整用户模式转储更多的信息。 例如， **dump/mf** 或 **/ma** 将创建比 **dump/f** 更大、更完整的文件。
 
-在用户模式下，**转储/m \[ **<em>MiniOptions</em> **\]** 是最佳选择。 用此开关创建的转储文件的大小可能会很小到非常大。 通过指定正确的 *MiniOptions* ，你可以精确控制所包含的信息。
+在用户模式下，**转储/m \[**<em>MiniOptions</em> **\]** 是最佳选择。 用此开关创建的转储文件的大小可能会很小到非常大。 通过指定正确的 *MiniOptions* ，你可以精确控制所包含的信息。
 
 ## <a name="span-idminidumpsspanspan-idminidumpsspanminidumps"></a><span id="minidumps"></span><span id="MINIDUMPS"></span>小型转储
 
-仅包含与进程关联的内存的选定部分的用户模式转储文件称为 *小型*转储。
+仅包含与进程关联的内存的选定部分的用户模式转储文件称为 *小型* 转储。
 
 小型转储文件的大小和内容因正在转储的程序和执行转储的应用程序而异。 通常，小型转储文件相当大，并且包括完整的内存和句柄表。 其他情况下，它会小得多，例如，它可能只包含单个线程的相关信息，或者只包含有关堆栈中实际引用的模块的信息。
 
-名称 "小型转储" 会产生误导性，因为最大的小型转储文件实际包含的信息比 "完全" 用户模式转储多。 例如， **dump/mf** 或 **/ma** 将创建比 **dump/f**更大、更完整的文件。 出于此原因， **.dump /m**为 \[ *MiniOptions* \] 所有用户模式转储文件 **.dump /f**创建建议使用转储/m MiniOptions。
+名称 "小型转储" 会产生误导性，因为最大的小型转储文件实际包含的信息比 "完全" 用户模式转储多。 例如， **dump/mf** 或 **/ma** 将创建比 **dump/f** 更大、更完整的文件。 出于此原因， **.dump /m** 为 \[ *MiniOptions* \] 所有用户模式转储文件 **.dump /f** 创建建议使用转储/m MiniOptions。
 
 如果要使用调试器创建小型转储文件，则可以准确选择要包括的信息。 简单的 " **转储"/m** 命令将包含有关构成目标进程、线程信息和堆栈信息的已加载模块的基本信息。 这可以使用以下任一选项进行修改：
 
@@ -128,9 +127,9 @@ ms.locfileid: "89215686"
 </tbody>
 </table>
 
-这些选项可以组合在一起。 例如， **/mfiu** 可用于创建相当大的小型转储，或命令 **。转储/mrR** 可用于创建保留用户隐私的小型转储。 有关完整的语法详细信息，请参阅 [**。 dump (创建转储文件) **](-dump--create-dump-file-.md)。
+这些选项可以组合在一起。 例如， **/mfiu** 可用于创建相当大的小型转储，或命令 **。转储/mrR** 可用于创建保留用户隐私的小型转储。 有关完整的语法详细信息，请参阅 [**。 dump (创建转储文件)**](-dump--create-dump-file-.md)。
 
-## <a name="span-idcreatingspanspan-idcreatingspancreating-a-user-mode-dump-file"></a><span id="creating"></span><span id="CREATING"></span>创建用户模式转储文件
+## <a name="span-idcreatingspanspan-idcreatingspancreating-a-user-mode-dump-file"></a><span id="creating"></span><span id="CREATING"></span>创建 User-Mode 转储文件
 
 有多种不同的工具可用于创建用户模式转储文件： CDB、WinDbg 和 Procdump。
 
@@ -150,7 +149,7 @@ CDB 和 WinDbg 可以通过多种方式创建用户模式转储文件。
 
 ### <a name="span-idcreating_dump_files_while_debuggingspanspan-idcreating_dump_files_while_debuggingspancreating-dump-files-while-debugging"></a><span id="creating_dump_files_while_debugging"></span><span id="CREATING_DUMP_FILES_WHILE_DEBUGGING"></span>在调试时创建转储文件
 
-当 CDB 或 WinDbg 正在调试用户模式应用程序时，还可以使用 [**dump (创建转储文件) **](-dump--create-dump-file-.md) 命令创建转储文件。
+当 CDB 或 WinDbg 正在调试用户模式应用程序时，还可以使用 [**dump (创建转储文件)**](-dump--create-dump-file-.md) 命令创建转储文件。
 
 此命令不会导致目标应用程序终止。 通过选择适当的命令选项，你可以创建包含所需信息的完全相同的小型转储文件。
 

@@ -1,18 +1,17 @@
 ---
 title: DeinterlaceBltEx 概述
 description: DeinterlaceBltEx 概述
-ms.assetid: ff487508-eb04-4d4d-9057-ed2d9ea273e0
 keywords:
 - DeinterlaceBltEx，关于 DeinterlaceBltEx
 - VMR WDK DirectX VA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e731cc35014459ddbab52418ebb7b5b4507df1c1
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 54714383e0909c0b0ad2e28ee56e956bf75e65ed
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89066466"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96802591"
 ---
 # <a name="overview-of-deinterlacebltex"></a>DeinterlaceBltEx 概述
 

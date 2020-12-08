@@ -1,17 +1,16 @@
 ---
 title: WdbgExts 函数
 description: WdbgExts 函数
-ms.assetid: 1b070b0c-575d-4104-af66-e0a2c2f2c1b6
 keywords:
 - WdbgExts 扩展，函数
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8ec003c0cd4b6125ab3a33696894de683735a71f
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 6c1f364abe21a9e586b457d6c2c692a24f20c42e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89216004"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96802847"
 ---
 # <a name="wdbgexts-functions"></a>WdbgExts 函数
 
@@ -41,7 +40,7 @@ Wdbgexts 头文件包含以下函数的原型。 这些函数对32位和64位扩
 
 [**dprintf**](/windows-hardware/drivers/ddi/wdbgexts/nc-wdbgexts-pwindbg_output_routine)
 
-[**System.componentmodel.design.serialization.codedomserializerbase.getexpression**](/windows-hardware/drivers/ddi/wdbgexts/nc-wdbgexts-pwindbg_get_expression)
+[**GetExpression**](/windows-hardware/drivers/ddi/wdbgexts/nc-wdbgexts-pwindbg_get_expression)
 
 [**GetExpressionEx**](/windows-hardware/drivers/ddi/wdbgexts/nf-wdbgexts-getexpressionex)
 

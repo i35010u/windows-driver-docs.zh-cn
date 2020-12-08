@@ -1,18 +1,17 @@
 ---
 title: 使用 SrcSrv
 description: 使用 SrcSrv
-ms.assetid: 2696e5e9-343f-49a2-bdab-23a54f8c9e5c
 keywords:
 - '源服务器，Srcsrv.ini ( # A0) '
 - Srcsrv.ini，概述
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6db71c431d8b8ce513a42dc0a1e431ba153885fb
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: be820d365ea9bb55dca31b0d9670ac30eb2b3f28
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89207329"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803067"
 ---
 # <a name="using-srcsrv"></a>使用 SrcSrv
 
@@ -35,7 +34,7 @@ ms.locfileid: "89207329"
 
 ### <a name="span-idretrieving_source_filesspanspan-idretrieving_source_filesspanretrieving-source-files"></a><span id="retrieving_source_files"></span><span id="RETRIEVING_SOURCE_FILES"></span>检索源文件
 
-如果使用 " [**打开 (打开源文件") **](-open--open-source-file-.md) 命令，通过 [srcsrv.ini](srcsrv.md)打开一个新的源文件，则必须包含-m Address 参数。
+如果使用 " [**打开 (打开源文件")**](-open--open-source-file-.md) 命令，通过 [srcsrv.ini](srcsrv.md)打开一个新的源文件，则必须包含-m Address 参数。
 
 为了便于使用之前所列调试器之外的工具中的 [srcsrv.ini](srcsrv.md) ，dbghelp.dll API 通过 **SymGetSourceFile** 函数提供对 srcsrv.ini 功能的访问权限。 若要检索要检索的源文件的名称，请调用 **SymEnumSourceFiles** 或 **SymGetLineFromAddr64** 函数。 有关 Dbghelp.dll API 的更多详细信息，请参阅 dbghelp.dll 文档，该文档可在适用于 Windows 的调试工具安装目录的 sdk/help 子目录中找到，或参阅 [调试帮助库](/windows/win32/debug/debug-help-library)。
 

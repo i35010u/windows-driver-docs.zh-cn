@@ -1,30 +1,29 @@
 ---
 title: 在 KD 中查看和编辑内存
 description: 在 KD 中查看和编辑内存
-ms.assetid: 7E40F32F-C7B4-44A2-B3F9-84D673013EB2
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5e5f10729960d63ee57d570f4ead32ab083cc2a8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6ab28b4e17faa845e7279cb3a2e4947bed02b31f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63325923"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96802877"
 ---
 # <a name="viewing-and-editing-memory-in-kd"></a>在 KD 中查看和编辑内存
 
 
-## <a name="span-idviewingandeditingmemoryspanspan-idviewingandeditingmemoryspanspan-idviewingandeditingmemoryspanviewing-and-editing-memory"></a><span id="Viewing_and_Editing_Memory"></span><span id="viewing_and_editing_memory"></span><span id="VIEWING_AND_EDITING_MEMORY"></span>查看和编辑内存
+## <a name="span-idviewing_and_editing_memoryspanspan-idviewing_and_editing_memoryspanspan-idviewing_and_editing_memoryspanviewing-and-editing-memory"></a><span id="Viewing_and_Editing_Memory"></span><span id="viewing_and_editing_memory"></span><span id="VIEWING_AND_EDITING_MEMORY"></span>查看和编辑内存
 
 
-KD，您可以查看和编辑通过输入的一个内存[**显示内存**](d--da--db--dc--dd--dd--df--dp--dq--du--dw--dw--dyb--dyd--display-memor.md)命令，并且您可以通过输入之一来编辑内存[**输入值**](e--ea--eb--ed--ed--ef--ep--eq--eu--ew--eza--ezu--enter-values-.md)命令。 这些命令的详细讨论，请参阅[访问虚拟地址的内存](accessing-memory-by-virtual-address.md)并[访问内存的物理地址](accessing-memory-by-physical-address.md)。
+在 KD 中，可以通过输入 " [**显示内存**](d--da--db--dc--dd--dd--df--dp--dq--du--dw--dw--dyb--dyd--display-memor.md) " 命令来查看和编辑内存，还可以通过输入 " [**输入值**](e--ea--eb--ed--ed--ef--ep--eq--eu--ew--eza--ezu--enter-values-.md) " 命令之一来编辑内存。 有关这些命令的详细讨论，请参阅 [按虚拟地址访问内存](accessing-memory-by-virtual-address.md) 和 [通过物理地址访问内存](accessing-memory-by-physical-address.md)。
 
-## <a name="span-idviewingandeditingvariablesspanspan-idviewingandeditingvariablesspanspan-idviewingandeditingvariablesspanviewing-and-editing-variables"></a><span id="Viewing_and_Editing_Variables"></span><span id="viewing_and_editing_variables"></span><span id="VIEWING_AND_EDITING_VARIABLES"></span>查看和编辑变量
+## <a name="span-idviewing_and_editing_variablesspanspan-idviewing_and_editing_variablesspanspan-idviewing_and_editing_variablesspanviewing-and-editing-variables"></a><span id="Viewing_and_Editing_Variables"></span><span id="viewing_and_editing_variables"></span><span id="VIEWING_AND_EDITING_VARIABLES"></span>查看和编辑变量
 
 
-KD，可以查看和编辑通过输入命令的全局变量。 调试器将解释为一个虚拟地址的全局变量的名称。 因此，所有命令中所述[访问内存的虚拟地址](accessing-memory-by-virtual-address.md)可用于读取或写入全局变量。 有关查看和编辑全局变量的其他信息，请参阅[访问全局变量](accessing-global-variables.md)。
+在 KD 中，可以通过输入命令来查看和编辑全局变量。 调试器将全局变量的名称解释为虚拟地址。 因此，在 [按虚拟地址访问内存](accessing-memory-by-virtual-address.md) 中所述的所有命令都可用于读取或写入全局变量。 有关查看和编辑全局变量的其他信息，请参阅 [访问全局变量](accessing-global-variables.md)。
 
-KD 可以查看和编辑通过输入命令的本地变量。 调试器将解释为一个地址的本地变量的名称。 因此，所有命令中所述[访问内存的虚拟地址](accessing-memory-by-virtual-address.md)可用于读取或写入本地变量。 但是，如果有必要向符号是本地命令指示前, 加上美元符号 （$） 和符号感叹号 （！ )，如`$!var`。 有关查看和编辑本地变量的其他信息，请参阅[访问本地变量](accessing-local-variables.md)。
+在 KD 中，可以通过输入命令来查看和编辑局部变量。 调试器将本地变量的名称解释为地址。 因此，在 [按虚拟地址访问内存](accessing-memory-by-virtual-address.md) 中所述的所有命令都可用于读取或写入局部变量。 但是，如果需要指出某个符号为本地的命令，则在该符号前面加上一个美元符号 ( $ ) 并 ( 惊叹号！ ) ，如中所示 `$!var` 。 有关查看和编辑局部变量的其他信息，请参阅 [访问局部变量](accessing-local-variables.md)。
 
  
 

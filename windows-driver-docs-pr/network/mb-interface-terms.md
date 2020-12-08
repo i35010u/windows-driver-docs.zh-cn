@@ -1,22 +1,21 @@
 ---
 title: MB 接口条款
-ms.assetid: 627F7C95-96E5-43C4-B8AB-DDA5A4392B38
 description: 提供在 MB 接口中使用的移动宽带术语列表
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9b83606647b70912ccccc380c9d26c5c359e2852
-ms.sourcegitcommit: 20eac54e419a594f7cea766ee28f158559dfd79c
+ms.openlocfilehash: bd022faa569fb20dab0f7f9f65ea509c7fe67b36
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91754994"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801635"
 ---
 # <a name="mb-interface-terms"></a>MB 接口术语
 
 
 在移动宽带 (MB) 文档中使用以下术语：
 
-|术语|说明|
+|术语|描述|
 |--- |--- |
 |MBIM|移动宽带接口模型，USB 设备工作组 (用于移动宽带设备的 DWG) 规范。|
 |MBIM 函数|USB 设备中与 MBIM 规范兼容的 USB 函数。|

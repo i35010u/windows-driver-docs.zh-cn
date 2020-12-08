@@ -1,20 +1,19 @@
 ---
 title: EFI_USBFN_IO_PROTOCOL.GetEndpointPolicy
 description: EFI_USBFN_IO_PROTOCOL.GetEndpointPolicy
-ms.assetid: 143ee448-2c29-46f4-b62c-6429a4a1d890
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3ad5c2af7349738995cb17a4ff1e25b754ff831b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e3a6f01e94ade20ecd89a8a756462761dc9bde7f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63337700"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803369"
 ---
-# <a name="efiusbfnioprotocolgetendpointpolicy"></a>EFI\_USBFN\_IO\_PROTOCOL.GetEndpointPolicy
+# <a name="efi_usbfn_io_protocolgetendpointpolicy"></a>EFI \_ USBFN \_ IO \_ 协议。GetEndpointPolicy
 
 
-**GetEndpointPolicy**函数检索指定非控制终结点的配置策略。
+**GetEndpointPolicy** 函数检索指定的非控制终结点的配置策略。
 
 ## <a name="syntax"></a>语法
 
@@ -32,26 +31,26 @@ EFI_STATUS
   );
 ```
 
-## <a name="parameters"></a>Parameters
+## <a name="parameters"></a>参数
 
 
 <a href="" id="this"></a>*此*  
-指向 EFI\_USBFN\_IO\_协议实例。
+指向 EFI \_ USBFN \_ IO \_ 协议实例的指针。
 
 <a href="" id="endpointindex"></a>*EndpointIndex*  
-指示策略需要设置非控制终结点。
+指示需要为其设置策略的非控制终结点。
 
-<a href="" id="direction"></a>*方向*  
-终结点的方向。 有关详细信息，请参阅[EFI\_USBFN\_终结点\_方向](efi-usbfn-endpoint-direction.md)。
+<a href="" id="direction"></a>*方向键*  
+终结点的方向。 有关详细信息，请参阅 [EFI \_ USBFN \_ 终结点 \_ 方向](efi-usbfn-endpoint-direction.md)。
 
 <a href="" id="policytype"></a>*PolicyType*  
-策略类型用户尝试检索指定非控制终结点。 有关详细信息，请参阅[EFI\_USBFN\_策略\_类型](efi-usbfn-policy-type.md)。
+用户尝试为指定的非控制终结点检索的策略类型。 有关详细信息，请参阅 [EFI \_ USBFN \_ 策略 \_ 类型](efi-usbfn-policy-type.md)。
 
 <a href="" id="buffersize"></a>*BufferSize*  
-在输入的大小*缓冲区*以字节为单位。 在输出中，通过返回的数据量*缓冲区*以字节为单位。
+输入时， *缓冲区* 的大小（以字节为单位）。 输出时， *缓冲区* 返回的数据量（以字节为单位）。
 
-<a href="" id="buffer"></a>*缓冲区*  
-指向用于返回请求的终结点策略值的缓冲区的指针。 策略类型的大小要求的详细信息，请参阅[EFI\_USBFN\_策略\_类型](efi-usbfn-policy-type.md)。
+<a href="" id="buffer"></a>*宽限*  
+指向缓冲区的指针，该缓冲区返回所请求的终结点策略值。 有关策略类型的大小要求的详细信息，请参阅 [EFI \_ USBFN \_ 策略 \_ 类型](efi-usbfn-policy-type.md)。
 
 ## <a name="return-values"></a>返回值
 
@@ -70,7 +69,7 @@ EFI_STATUS
 <tbody>
 <tr class="odd">
 <td><p><strong>EFI_SUCCESS</strong></p></td>
-<td><p>该函数返回成功。</p></td>
+<td><p>函数已成功返回。</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>EFI_INVALID_PARAMETER</strong></p></td>
@@ -78,7 +77,7 @@ EFI_STATUS
 </tr>
 <tr class="odd">
 <td><p><strong>EFI_DEVICE_ERROR</strong></p></td>
-<td><p>物理设备报告了错误。</p></td>
+<td><p>物理设备报告了一个错误。</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>EFI_UNSUPPORTED</strong></p></td>
@@ -86,7 +85,7 @@ EFI_STATUS
 </tr>
 <tr class="odd">
 <td><p><strong>EFI_BUFFER_TOO_SMALL</strong></p></td>
-<td><p>所提供的缓冲区不足够大以保存请求的策略值。</p></td>
+<td><p>提供的缓冲区不够大，无法容纳请求的策略值。</p></td>
 </tr>
 </tbody>
 </table>
@@ -96,7 +95,7 @@ EFI_STATUS
 ## <a name="remarks"></a>备注
 
 
-没有为此函数调用关联的限制。 此函数是可以开始于的修订 0x00010001 **EFI\_USBFN\_IO\_协议**。
+此函数没有关联的调用限制。 此函数可从 **EFI \_ USBFN \_ IO \_ 协议** 的修订版0x00010001 开始。
 
 ## <a name="requirements"></a>要求
 

@@ -1,7 +1,6 @@
 ---
 title: 视频解码
 description: 视频解码
-ms.assetid: 4e8bf7e9-7a3c-4732-9ac0-4f6f5ef07552
 keywords:
 - DirectX 视频加速 WDK Windows 2000 显示，视频解码
 - 视频加速 WDK DirectX，视频解码
@@ -10,12 +9,12 @@ keywords:
 - 视频解码 WDK DirectX VA，关于解码视频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 530d114f3a7298e0f16c6a8c7d78f0154c783954
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: c46995fa8f737131b28b89087ed1097c9ee7bdf4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89063728"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96802515"
 ---
 # <a name="video-decoding"></a>视频解码
 

@@ -1,7 +1,6 @@
 ---
 title: 使用回调对象
 description: 使用回调对象
-ms.assetid: 9090a465-b6ab-4e99-8155-b0abdb729468
 keywords:
 - 调试器引擎 API，回调对象
 - 回调对象
@@ -13,12 +12,12 @@ keywords:
 - 输出回调
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b1e2b0cbc0be9f6da6a8eac9d9e0cbda1ec2dee7
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: b16eb340487152d8ee8f3aefb345e141b5f99e11
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89215684"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803159"
 ---
 # <a name="using-callback-objects"></a>使用回调对象
 
@@ -33,23 +32,23 @@ ms.locfileid: "89215684"
 
 ### <a name="span-idevent_callbacksspanspan-idevent_callbacksspanevent-callback-objects"></a><span id="event_callbacks"></span><span id="EVENT_CALLBACKS"></span>事件回调对象
 
-[IDebugEventCallbacks](/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebugeventcallbacks)接口由引擎用来通知调试器扩展以及[事件](events.md#events)的应用程序和目标的更改。 可以使用[*SetEventCallbacks*](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugclient5-seteventcallbacks)将**IDebugEventCallbacks**的实现注册到客户端。 使用 [*GetEventCallbacks*](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugclient5-geteventcallbacks)可以找到向客户端注册的当前实现。 使用 [*GetNumberEventCallbacks*](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugclient5-getnumbereventcallbacks)可以找到在所有客户端上注册的事件回调的数目。
+[IDebugEventCallbacks](/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebugeventcallbacks)接口由引擎用来通知调试器扩展以及[事件](events.md#events)的应用程序和目标的更改。 可以使用 [*SetEventCallbacks*](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugclient5-seteventcallbacks)将 **IDebugEventCallbacks** 的实现注册到客户端。 使用 [*GetEventCallbacks*](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugclient5-geteventcallbacks)可以找到向客户端注册的当前实现。 使用 [*GetNumberEventCallbacks*](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugclient5-getnumbereventcallbacks)可以找到在所有客户端上注册的事件回调的数目。
 
 有关引擎如何管理事件的详细信息，请参阅 [监视事件](monitoring-events.md)。
 
 ### <a name="span-idinput_callbacksspanspan-idinput_callbacksspaninput-callback-objects"></a><span id="input_callbacks"></span><span id="INPUT_CALLBACKS"></span>输入回调对象
 
-引擎使用 [IDebugInputCallbacks](/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebuginputcallbacks) 接口来请求调试器扩展和应用程序中的输入。 可以使用[*SetInputCallbacks*](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugclient5-setinputcallbacks)将**IDebugInputCallbacks**的实现注册到客户端。 使用 [*GetInputCallbacks*](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugclient5-getinputcallbacks)可以找到向客户端注册的当前实现。 使用 [*GetNumberInputCallbacks*](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugclient5-getnumberinputcallbacks)可以找到在所有客户端上注册的输入回调的数目。
+引擎使用 [IDebugInputCallbacks](/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebuginputcallbacks) 接口来请求调试器扩展和应用程序中的输入。 可以使用 [*SetInputCallbacks*](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugclient5-setinputcallbacks)将 **IDebugInputCallbacks** 的实现注册到客户端。 使用 [*GetInputCallbacks*](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugclient5-getinputcallbacks)可以找到向客户端注册的当前实现。 使用 [*GetNumberInputCallbacks*](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugclient5-getnumberinputcallbacks)可以找到在所有客户端上注册的输入回调的数目。
 
 有关引擎如何管理输入的详细信息，请参阅 [输入和输出](using-input-and-output.md)。
 
 ### <a name="span-idoutput_callbacksspanspan-idoutput_callbacksspanoutput-callback-objects"></a><span id="output_callbacks"></span><span id="OUTPUT_CALLBACKS"></span>输出回调对象
 
-**IDebugOutputCallbacks**接口由引擎用来将输出发送到调试器扩展和应用程序。 可以使用[*SetOutputCallbacks*](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugclient5-setoutputcallbacks)将**IDebugOutputCallbacks**的实现注册到客户端。 使用 [*GetOutputCallbacks*](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugclient5-getoutputcallbacks)可以找到向客户端注册的当前实现。 使用 [*GetNumberOutputCallbacks*](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugclient5-getnumberoutputcallbacks)可以找到在所有客户端上注册的输出回调的数目。
+**IDebugOutputCallbacks** 接口由引擎用来将输出发送到调试器扩展和应用程序。 可以使用 [*SetOutputCallbacks*](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugclient5-setoutputcallbacks)将 **IDebugOutputCallbacks** 的实现注册到客户端。 使用 [*GetOutputCallbacks*](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugclient5-getoutputcallbacks)可以找到向客户端注册的当前实现。 使用 [*GetNumberOutputCallbacks*](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugclient5-getnumberoutputcallbacks)可以找到在所有客户端上注册的输出回调的数目。
 
 有关引擎如何管理输出的详细信息，请参阅 [输入和输出](using-input-and-output.md)。
 
-**注意**   与 COM 对象的典型一样，在向客户端注册时，引擎将在回调 COM 对象上调用**IUnknown：： AddRef** ，并且在对象被替换或删除客户端时， **Iunknown：： Release** 。
+**注意**   与 COM 对象的典型一样，在向客户端注册时，引擎将在回调 COM 对象上调用 **IUnknown：： AddRef** ，并且在对象被替换或删除客户端时， **Iunknown：： Release** 。
 
  
 

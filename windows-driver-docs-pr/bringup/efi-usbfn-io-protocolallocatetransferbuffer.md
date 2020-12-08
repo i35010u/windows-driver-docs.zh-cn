@@ -1,22 +1,21 @@
 ---
 title: EFI_USBFN_IO_PROTOCOL.AllocateTransferBuffer
 description: EFI_USBFN_IO_PROTOCOL.AllocateTransferBuffer
-ms.assetid: dbaa4f18-97b5-4867-9e03-de19b2253722
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4a2123eb4e494cc8b9362d96b34d8c7822e94442
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 784268879b01e6adb40dc91986697ea38a2ac6c9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63337720"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803379"
 ---
-# <a name="efiusbfnioprotocolallocatetransferbuffer"></a>EFI\_USBFN\_IO\_PROTOCOL.AllocateTransferBuffer
+# <a name="efi_usbfn_io_protocolallocatetransferbuffer"></a>EFI \_ USBFN \_ IO \_ 协议。AllocateTransferBuffer
 
 
-**AllocateTransferBuffer**函数分配满足控制器要求指定大小的传输缓冲区。
+**AllocateTransferBuffer** 函数分配指定大小的传输缓冲区，该缓冲区满足控制器要求。
 
-必须使用匹配调用释放已分配的传输缓冲区**FreeTransferBuffer**函数。
+必须使用对 **FreeTransferBuffer** 函数的匹配调用来释放已分配的传输缓冲区。
 
 ## <a name="syntax"></a>语法
 
@@ -31,22 +30,22 @@ EFI_STATUS
   );
 ```
 
-## <a name="parameters"></a>Parameters
+## <a name="parameters"></a>参数
 
 
 <a href="" id="this"></a>*此*  
-指向 EFI\_USBFN\_IO\_协议实例。
+指向 EFI \_ USBFN \_ IO \_ 协议实例的指针。
 
-<a href="" id="size"></a>*大小*  
+<a href="" id="size"></a>*规格*  
 要为传输缓冲区分配的字节数。
 
-<a href="" id="buffer"></a>*缓冲区*  
-指针到指向分配的缓冲区，如果调用成功;否则未定义。
+<a href="" id="buffer"></a>*宽限*  
+如果调用成功，则为指向已分配缓冲区的指针的指针;否则未定义。
 
 ## <a name="return-values"></a>返回值
 
 
-此函数将返回以下值：
+此函数返回以下值：
 
 <table>
 <colgroup>
@@ -62,7 +61,7 @@ EFI_STATUS
 <tbody>
 <tr class="odd">
 <td><p><strong>EFI_SUCCESS</strong></p></td>
-<td><p>成功返回的函数</p></td>
+<td><p>函数已成功返回</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>EFI_INVALID_PARAMETER</strong></p></td>

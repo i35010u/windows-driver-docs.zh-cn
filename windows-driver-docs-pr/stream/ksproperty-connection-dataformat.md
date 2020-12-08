@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ 连接 \_ DATAFORMAT
 description: 客户端使用 KSPROPERTY \_ 连接 \_ DATAFORMAT 属性设置当前数据格式。
-ms.assetid: c5f37f1b-7dc6-46d2-aba2-b6c03f07228d
 keywords:
 - KSPROPERTY_CONNECTION_DATAFORMAT 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d5378b61f85f627b0a6d275862cb3e9b6f091670
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 587fbc89d79c2b2cbb59d6cab4454f4f8180dec7
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107120"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803457"
 ---
 # <a name="ksproperty_connection_dataformat"></a>KSPROPERTY \_ 连接 \_ DATAFORMAT
 
@@ -86,7 +85,7 @@ ms.locfileid: "90107120"
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSSTREAM \_ 标头**](/windows-hardware/drivers/ddi/ks/ns-ks-ksstream_header)

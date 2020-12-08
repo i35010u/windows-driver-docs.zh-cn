@@ -1,9 +1,8 @@
 ---
 title: WinDbg 命令行选项
 description: WinDbg 的首次用户应从使用 WinDbg 的调试开始。
-ms.assetid: bd169c73-0a46-41b5-bd7b-71adf7747069
 keywords:
-- WinDbg 命令行选项 Windows 调试
+- WinDbg Command-Line 选项 Windows 调试
 ms.date: 08/10/2018
 ms.topic: article
 ms.prod: windows-hardware
@@ -15,12 +14,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 9bf4f199e1de3d6a6638073078c053c1db979035
-ms.sourcegitcommit: 17c1bbc5ea0bef3bbc87794b030a073f905dc942
+ms.openlocfilehash: bba178086eaf7f1013e8e585e4264570fa10fe28
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88802643"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96802837"
 ---
 # <a name="windbg-command-line-options"></a>WinDbg 命令行选项
 
@@ -49,7 +48,7 @@ windbg -IU KeyString
 windbg -IA[S] 
 ```
 
-有关 WinDbg 命令行选项的说明，请参阅。 所有命令行选项都区分大小写，但 **j**除外。 初始连字符可以替换为正斜杠 (/) 。
+有关 WinDbg 命令行选项的说明，请参阅。 所有命令行选项都区分大小写，但 **j** 除外。 初始连字符可以替换为正斜杠 (/) 。
 
 如果使用了 **-remote** 或 **-server** 选项，则它必须出现在命令行上的任何其他选项之前。 如果指定了 *可执行文件* ，则它必须出现在命令行的最后; *可执行文件* 名称后的任何文本都作为其自身的命令行参数传递给可执行程序。
 
@@ -72,7 +71,7 @@ windbg -IA[S]
 不再支持此选项。
 
 <span id="_______-c_________command______________"></span><span id="_______-C_________COMMAND______________"></span>**-c "** *command* **"**   
-指定要在启动时运行的初始调试器命令。 此命令必须用引号引起来。 可以用分号分隔多个命令。  (如果你有一个长命令列表，则可以更容易地将其放入脚本，然后将 **-c**选项与[** $ &lt; 、$ &gt; &lt; 、$ &gt; &lt; 、$ $ &gt; &lt; (运行脚本文件) **](-----------------------a---run-script-file-.md)命令一起使用。 ) 
+指定要在启动时运行的初始调试器命令。 此命令必须用引号引起来。 可以用分号分隔多个命令。  (如果你有一个长命令列表，则可以更容易地将其放入脚本，然后将 **-c** 选项与 [**$ &lt; 、$ &gt; &lt; 、$ &gt; &lt; 、$ $ &gt; &lt; (运行脚本文件)**](-----------------------a---run-script-file-.md)命令一起使用。 ) 
 
 如果要启动调试客户端，则必须将此命令用于调试服务器。 不允许使用客户端特定的命令（如 **lsrcpath**）。
 
@@ -92,7 +91,7 @@ windbg -IA[S]
  (用户模式仅) 忽略目标应用程序中的初始断点。 如果已设置了另一个断点，则此选项将导致目标应用程序在启动后继续运行或将 WinDbg 附加到该应用程序。 有关详细信息，请参阅 [初始断点](initial-breakpoint.md) 。
 
 <span id="_______-G______"></span><span id="_______-g______"></span>**-G**   
- (用户模式仅) 在进程终止时忽略最终断点。 通常，调试会话在映像运行过程中结束。 此选项将导致调试会话在子项终止时立即结束。 这与输入命令 **sxd epr**相同。 有关详细信息，请参阅 [控制异常和事件](controlling-exceptions-and-events.md)。
+ (用户模式仅) 在进程终止时忽略最终断点。 通常，调试会话在映像运行过程中结束。 此选项将导致调试会话在子项终止时立即结束。 这与输入命令 **sxd epr** 相同。 有关详细信息，请参阅 [控制异常和事件](controlling-exceptions-and-events.md)。
 
 <span id="_______-hd______"></span><span id="_______-HD______"></span>**-hd**   
  (用户模式仅) 指定不应使用调试堆。
@@ -102,17 +101,17 @@ windbg -IA[S]
 
 尝试执行此操作后，会显示成功或失败消息。 如果包含，则此过程将以无提示方式完成 **，如果成功** ，则为;仅显示失败消息。
 
-**-I**参数不得与任何其他参数一起使用。 此命令实际上不会启动 WinDbg，但此时可能会出现一个 WinDbg 窗口。
+**-I** 参数不得与任何其他参数一起使用。 此命令实际上不会启动 WinDbg，但此时可能会出现一个 WinDbg 窗口。
 
 <span id="_______-IA_S_"></span><span id="_______-ia_s_"></span>**-IA** \[**S**\]  
 将 WinDbg 与注册表中的文件扩展名 dmp、.mdmp 和 wew 相关联。 尝试执行此操作后，会显示成功或失败消息。 如果包含，则此过程将以无提示方式完成 **，如果成功** ，则为;仅显示失败消息。 建立此关联后，选择并按住 (或右键单击) 带有其中一种扩展的文件将启动 WinDbg。
 
-**-IA**参数不得与任何其他参数一起使用。 此命令实际上不会启动 WinDbg，但此时可能会出现一个 WinDbg 窗口。
+**-IA** 参数不得与任何其他参数一起使用。 此命令实际上不会启动 WinDbg，但此时可能会出现一个 WinDbg 窗口。
 
 <span id="_______-IU________KeyString______"></span><span id="_______-iu________keystring______"></span><span id="_______-IU________KEYSTRING______"></span>**-IU** *KeyString*   
 将调试器远程处理注册为 URL 类型，以便用户可以使用 URL 自动启动调试器远程客户端。 *KeyString* 的格式为 `remdbgeng://RemotingOption` 。 *RemotingOption* 是一个字符串，它定义在 [**激活调试客户端**](activating-a-debugging-client.md)主题中定义的传输协议。 如果此操作成功，则不会显示任何消息;如果失败，将显示一条错误消息。
 
-**-IU**参数不得与任何其他参数一起使用。 尽管某个 WinDbg 窗口可能会显示一段时间，但此命令实际上不会启动 WinDbg。
+**-IU** 参数不得与任何其他参数一起使用。 尽管某个 WinDbg 窗口可能会显示一段时间，但此命令实际上不会启动 WinDbg。
 
 <span id="_______-i_______ImagePath______"></span><span id="_______-i_______imagepath______"></span><span id="_______-I_______IMAGEPATH______"></span>**-i** *ImagePath*   
 指定生成错误的可执行文件的位置。 如果路径包含空格，则应该用引号将其引起来。
@@ -121,7 +120,7 @@ windbg -IA[S]
 允许日志记录。
 
 <span id="_______-k__ConnectType_"></span><span id="_______-k__connecttype_"></span><span id="_______-K__CONNECTTYPE_"></span>**-k** \[*ConnectType*\]  
-仅) 启动内核调试会话 (内核模式。 有关详细信息，请参阅 [使用 WinDbg 进行实时内核模式调试](performing-kernel-mode-debugging-using-windbg.md)。 如果使用 **-k** 而没有任何 *ConnectType* 选项，则它必须是命令行中的最后一个条目。
+仅) 启动内核调试会话 (内核模式。 有关详细信息，请参阅 [使用 WinDbg 进行实时 Kernel-Mode 调试](performing-kernel-mode-debugging-using-windbg.md)。 如果使用 **-k** 而没有任何 *ConnectType* 选项，则它必须是命令行中的最后一个条目。
 
 <span id="_______-kl______"></span><span id="_______-KL______"></span>**-kl**   
 仅 (内核模式) 在调试器所在的同一台计算机上启动内核调试会话。
@@ -129,7 +128,7 @@ windbg -IA[S]
 <span id="_______-kx_______ExdiOptions______"></span><span id="_______-kx_______exdioptions______"></span><span id="_______-KX_______EXDIOPTIONS______"></span>**-kx** *ExdiOptions*   
 仅) 使用 EXDI 驱动程序启动内核调试会话 (内核模式。 本文档未介绍 EXDI 驱动程序。 如果你的硬件探测或硬件模拟器具有 EXDI 接口，请联系 Microsoft 以获取调试信息。
 
-<span id="_______-log_o_a__LogFile"></span><span id="_______-log_o_a__logfile"></span><span id="_______-LOG_O_A__LOGFILE"></span>**-log**{**o** | **a**} 日志*文件*  
+<span id="_______-log_o_a__LogFile"></span><span id="_______-log_o_a__logfile"></span><span id="_______-LOG_O_A__LOGFILE"></span>**-log**{**o** | **a**} 日志 *文件*  
 开始将信息记录到日志文件。 如果指定的日志文件已存在，则在使用 **徽标** 时将覆盖它。 如果使用了 **loga** ，则输出将追加到该文件。 有关更多详细信息，请参阅 [在 WinDbg 中保留日志文件](keeping-a-log-file-in-windbg.md)。
 
 <span id="_______-lsrcpath______"></span><span id="_______-LSRCPATH______"></span>**-lsrcpath**   
@@ -139,7 +138,7 @@ windbg -IA[S]
 *干扰符号加载*：从符号处理程序启用详细输出。 有关详细信息和控制此方法的其他方法，请参阅 [SYMOPT \_ 调试](symbol-options.md#symopt-debug)。
 
 <span id="_______-noinh______"></span><span id="_______-NOINH______"></span>**-noinh**   
- (用户模式仅) 阻止调试器创建的进程从调试器继承句柄。 有关控制此操作的其他方法，请参阅 [使用 WinDbg 调试用户模式进程](debugging-a-user-mode-process-using-windbg.md)。
+ (用户模式仅) 阻止调试器创建的进程从调试器继承句柄。 有关控制此操作的其他方法，请参阅 [使用 WinDbg 调试 User-Mode 进程](debugging-a-user-mode-process-using-windbg.md)。
 
 <span id="_______-noprio______"></span><span id="_______-NOPRIO______"></span>**-noprio**   
 禁止任何优先级更改。 此参数将阻止 WinDbg 在活动期间为 CPU 时间取优先级。
@@ -244,13 +243,13 @@ windbg -IA[S]
 指定符号搜索路径。 使用分号 (**;**) 分隔多个路径。 如果路径包含空格，则应该用引号将其引起来。 有关详细信息和更改此路径的其他方式，请参阅 [符号路径](symbol-path.md)。
 
 <span id="_______-z_______DumpFile______"></span><span id="_______-z_______dumpfile______"></span><span id="_______-Z_______DUMPFILE______"></span>**-z** *DumpFile*   
-指定要调试的故障转储文件的名称。 如果路径和文件名包含空格，则必须用引号将其引起来。 可以通过包含多个 **z** 选项来一次打开多个转储文件，每个转储文件后跟不同的 *DumpFile* 值。 有关详细信息，请参阅 [分析用户模式转储文件](analyzing-a-user-mode-dump-file.md) 或 [使用 WinDbg 分析内核模式转储文件](analyzing-a-kernel-mode-dump-file-with-windbg.md)。
+指定要调试的故障转储文件的名称。 如果路径和文件名包含空格，则必须用引号将其引起来。 可以通过包含多个 **z** 选项来一次打开多个转储文件，每个转储文件后跟不同的 *DumpFile* 值。 有关详细信息，请参阅 [分析 User-Mode 转储文件](analyzing-a-user-mode-dump-file.md) 或 [使用 WinDbg 分析 Kernel-Mode 转储文件](analyzing-a-kernel-mode-dump-file-with-windbg.md)。
 
 <span id="_______-zp_______PageFile______"></span><span id="_______-zp_______pagefile______"></span><span id="_______-ZP_______PAGEFILE______"></span>**-zp** *页面文件*   
-指定已修改的页面文件的名称。 如果正在调试转储文件，并且想要 [**在内存) 命令中使用 pagein (页 **](-pagein--page-in-memory-.md) ，这会很有用。 不能将 **-zp** 与标准 Windows 页面文件一起使用，只能使用经过特别修改的页面文件。
+指定已修改的页面文件的名称。 如果正在调试转储文件，并且想要 [**在内存) 命令中使用 pagein (页**](-pagein--page-in-memory-.md) ，这会很有用。 不能将 **-zp** 与标准 Windows 页面文件一起使用，只能使用经过特别修改的页面文件。
 
 <span id="_______executable______"></span><span id="_______EXECUTABLE______"></span>*可执行文件*   
-指定可执行进程的命令行。 此操作用于启动新进程并对其进行调试。 这必须是命令行上的最后一项。 可执行文件名称后的所有文本都作为其参数字符串传递到可执行文件。 有关详细信息，请参阅 [使用 WinDbg 调试用户模式进程](debugging-a-user-mode-process-using-windbg.md)。
+指定可执行进程的命令行。 此操作用于启动新进程并对其进行调试。 这必须是命令行上的最后一项。 可执行文件名称后的所有文本都作为其参数字符串传递到可执行文件。 有关详细信息，请参阅 [使用 WinDbg 调试 User-Mode 进程](debugging-a-user-mode-process-using-windbg.md)。
 
 <span id="_______-_______"></span> **-?**   
 弹出此 HTML 帮助窗口。

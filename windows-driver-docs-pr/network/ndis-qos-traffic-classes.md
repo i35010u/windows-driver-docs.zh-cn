@@ -1,15 +1,14 @@
 ---
 title: NDIS QoS 流量类
 description: NDIS QoS 流量类
-ms.assetid: 0DE61F97-7173-4D91-90F3-20EAFB810251
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e2cff6df35ed398dca3b43d910903869b90151b2
-ms.sourcegitcommit: 62c81d88b03bd311d1cdfef5b138d579faceb304
+ms.openlocfilehash: 4e1d75e31433eaa114beeddaa9d08e5329db28e4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92113508"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801545"
 ---
 # <a name="ndis-qos-traffic-classes"></a>NDIS QoS 流量类
 
@@ -26,7 +25,7 @@ ms.locfileid: "92113508"
 
 有关详细信息，请参阅 [传输选择算法 (TSAs) ](transmission-selection-algorithms--tsas-.md)。
 
-**注意**   仅 (ETS) TSA 的增强传输选择支持带宽分配。 有关详细信息，请参阅 [ (ETS) 算法的增强传输选择](enhanced-transmission-selection--ets--algorithm.md)。
+**注意**  仅 (ETS) TSA 的增强传输选择支持带宽分配。 有关详细信息，请参阅 [ (ETS) 算法的增强传输选择](enhanced-transmission-selection--ets--algorithm.md)。
 
  
 
@@ -34,7 +33,7 @@ ms.locfileid: "92113508"
 
 -   要在网络适配器上配置的流量类的数目。 每个交通类都由零到 (**NumTrafficClasses**– 1) 的范围内的一个值标识，其中 **NumTrafficClasses** 是 [**NDIS \_ QOS \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_qos_parameters) 结构的成员。
 
-    **注意**   从 NDIS 6.30 开始，NDIS QoS 最多支持 NDIS \_ qos \_ 最大 \_ 流量 \_ 类 (8) 通信类。 网络适配器必须支持至少三个通信类。
+    **注意**  从 NDIS 6.30 开始，NDIS QoS 最多支持 NDIS \_ qos \_ 最大 \_ 流量 \_ 类 (8) 通信类。 网络适配器必须支持至少三个通信类。
 
      
 

@@ -1,28 +1,27 @@
 ---
 title: 使用日志记录跟踪重要事件
 description: 使用日志记录跟踪重要事件
-ms.assetid: 297336c2-85fb-4235-a7ab-0bbf571b8b98
 keywords:
 - 内核流调试，视频流停止，日志记录
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 17df257f45cbef6f833d66ae35d990221ee80064
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 8aaad3d808fca3969d4d93d24a467f3af3a7a8a2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89207338"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803105"
 ---
 # <a name="using-logging-to-track-important-events"></a>使用日志记录跟踪重要事件
 
 
 通常，仅通过触发事件、微型驱动程序的处理和缓冲区完成来移动数据。 确定挂起或延迟的原因：
 
-- 检查不匹配的**KsGate<em>Xxx</em> **调用。
+- 检查不匹配的 **KsGate <em>Xxx</em>** 调用。
 
-- 检查是否省略了 **Ks*Xxx*AttemptProcessing** 调用。
+- 检查是否省略了 **Ks *Xxx* AttemptProcessing** 调用。
 
-- 查找与触发事件相关的代码中的问题，包括引用问题流的 pin 标志或调用 **KsPinAttemptProcessing**的代码。
+- 查找与触发事件相关的代码中的问题，包括引用问题流的 pin 标志或调用 **KsPinAttemptProcessing** 的代码。
 
 - 查找与处理调度相关的代码中的问题，特别是在它排队到硬件和创建克隆指针的位置。
 
@@ -63,7 +62,7 @@ LOGENTRY g_Log [LOGSIZE];
 <thead>
 <tr class="header">
 <th align="left">缩写</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -111,7 +110,7 @@ f9494c00  3c637250 819c1f00 00000000 00000000  Prc<............
 f9494c10  42646441 819c1f00 ffa3d9b8 00000000  AddB............
 ```
 
-此第一个日志摘录代表正常流式处理状态。 在第一行中，将调用微型驱动程序的*CallOnDPC* (*DPC &lt; *) 完成缓冲区。 缓冲区 (*Dele*) 中删除，如果队列中有任何未处理的缓冲区 (*Atmp*) ，将调用**KsPinAttemptProcessing**来向前移动前导边缘。 在这种情况下，可以通过调用 (*Prc &lt; *) 的进程调度来查看。  (*AddB*) 中添加了更多缓冲区，并重复整个方案。
+此第一个日志摘录代表正常流式处理状态。 在第一行中，将调用微型驱动程序的 *CallOnDPC* (*DPC &lt;*) 完成缓冲区。 缓冲区 (*Dele*) 中删除，如果队列中有任何未处理的缓冲区 (*Atmp*) ，将调用 **KsPinAttemptProcessing** 来向前移动前导边缘。 在这种情况下，可以通过调用 (*Prc &lt;*) 的进程调度来查看。  (*AddB*) 中添加了更多缓冲区，并重复整个方案。
 
 下一摘录包括日志中的最后一项，出现延迟之前。
 
@@ -130,9 +129,9 @@ f949b4d0  656c6544 816e2c90 8174e1c0 00000000  Dele.,n...t.....
 f949b4e0  706d7441 816e2c90 ffa4d418 00000000  Atmp.,n.........
 ```
 
-在此示例中，多个缓冲区 (由*DPC &lt; *的重复实例指示) 完成，但在队列中没有未处理的缓冲区，因此没有*Prc &lt; *) ，就不会调用进程调度 (指示。 事实上，队列中所有已处理的缓冲区已完成，显然在添加任何新的未处理缓冲区之前已完成。 由于该应用程序已在运行 (因此不会) *启动* ，也不会对 *CallOnDPC* 进行调用 (因为没有准备好完成的已处理的缓冲区) ，所以，任何新缓冲区都将在开头边缘之前累积，等待处理，无需任何启动处理。
+在此示例中，多个缓冲区 (由 *DPC &lt;* 的重复实例指示) 完成，但在队列中没有未处理的缓冲区，因此没有 *Prc &lt;*) ，就不会调用进程调度 (指示。 事实上，队列中所有已处理的缓冲区已完成，显然在添加任何新的未处理缓冲区之前已完成。 由于该应用程序已在运行 (因此不会) *启动* ，也不会对 *CallOnDPC* 进行调用 (因为没有准备好完成的已处理的缓冲区) ，所以，任何新缓冲区都将在开头边缘之前累积，等待处理，无需任何启动处理。
 
-问题在于，KSPIN \_ 标志 \_ \_ 未 \_ 启动 \_ 处理标志。 设置此标志后，仅通过调用 *Start* 或 *CallOnDPC*进行处理。 如果未设置此标志，则每当向队列中添加新缓冲区时都会启动处理。
+问题在于，KSPIN \_ 标志 \_ \_ 未 \_ 启动 \_ 处理标志。 设置此标志后，仅通过调用 *Start* 或 *CallOnDPC* 进行处理。 如果未设置此标志，则每当向队列中添加新缓冲区时都会启动处理。
 
  
 

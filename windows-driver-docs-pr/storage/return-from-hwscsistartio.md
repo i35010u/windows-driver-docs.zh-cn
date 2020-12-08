@@ -1,7 +1,6 @@
 ---
 title: 从 HwScsiStartIo 返回
 description: 从 HwScsiStartIo 返回
-ms.assetid: e3d5e21a-4dc2-41bf-97a2-9ac2aa5a1af2
 keywords:
 - SCSI 微型端口驱动程序 WDK 存储，HwScsiStartIo
 - HwScsiStartIo
@@ -9,12 +8,12 @@ keywords:
 - status 值 WDK SCSI
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 81e7d96887b97e8312dc13e28ddf5c6015c7516c
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 6a6ce7685e89bdffe5f6b0cbfd0e40254e8de326
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89184179"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96802205"
 ---
 # <a name="return-from-hwscsistartio"></a>从 HwScsiStartIo 返回
 
@@ -30,15 +29,15 @@ ms.locfileid: "89184179"
 
 2.  将 [**ScsiPortNotification**](/windows-hardware/drivers/ddi/srb/nf-srb-scsiportnotification) 与 *NotificationType * * * RequestComplete** 和输入 SRB 一起调用。
 
-3.  如果驱动程序可以接受与刚完成的 SRB 中的目标逻辑单元不同的目标逻辑单元的请求，请使用*NotificationType * * * NextRequest** 调用**ScsiPortNotification** 。
+3.  如果驱动程序可以接受与刚完成的 SRB 中的目标逻辑单元不同的目标逻辑单元的请求，请使用 *NotificationType * * * NextRequest** 调用 **ScsiPortNotification** 。
 
 4.  返回 **TRUE**。
 
 端口驱动程序稍后重新提交 **SrbStatus** 值 SRB \_ 状态 \_ 为 "忙碌" *的任何* 请求。
 
-最终，每个微型端口驱动程序必须为每个 SRB 输入对其*HwScsiStartIo*例程调用两次**ScsiPortNotification** ：第一次是 (*NotificationType ***RequestComplete**) 第二次调用，然后告诉端口驱动程序再次调用*HwScsiStartIo*例程， (* NotificationType ***SRB**或**NextRequest**) 。
+最终，每个微型端口驱动程序必须为每个 SRB 输入对其 *HwScsiStartIo* 例程调用两次 **ScsiPortNotification** ：第一次是 (*NotificationType ***RequestComplete**) 第二次调用，然后告诉端口驱动程序再次调用 *HwScsiStartIo* 例程， (* NotificationType ***SRB** 或 **NextRequest**) 。
 
-小型端口驱动程序的*HwScsiStartIo*例程，该例程通过使用*NotificationType * * * RequestTimerCall** 和指向其*HwScsiTimer*例程的指针轮询调用**ScsiPortNotification**来专门管理其 HBA。 有关 *HwScsiTimer* 例程的详细信息，请参阅 [SCSI 微型端口驱动程序的 HwScsiTimer 例程](scsi-miniport-driver-s-hwscsitimer-routine.md)。
+小型端口驱动程序的 *HwScsiStartIo* 例程，该例程通过使用 *NotificationType * * * RequestTimerCall** 和指向其 *HwScsiTimer* 例程的指针轮询调用 **ScsiPortNotification** 来专门管理其 HBA。 有关 *HwScsiTimer* 例程的详细信息，请参阅 [SCSI 微型端口驱动程序的 HwScsiTimer 例程](scsi-miniport-driver-s-hwscsitimer-routine.md)。
 
  
 

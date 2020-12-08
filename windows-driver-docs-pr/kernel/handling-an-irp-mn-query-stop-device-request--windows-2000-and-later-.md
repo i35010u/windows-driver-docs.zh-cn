@@ -1,17 +1,16 @@
 ---
 title: " (Windows 2000 和更高版本处理 IRP_MN_QUERY_STOP_DEVICE 请求) "
 description: " (Windows 2000 和更高版本处理 IRP_MN_QUERY_STOP_DEVICE 请求) "
-ms.assetid: 668a920c-aadb-405a-9a1d-091982ca2c04
 keywords:
 - IRP_MN_QUERY_STOP_DEVICE
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b5168c52e89a995e0a04f27ed02d4fdd4ce1db3e
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: b0268d7dcef1716799736a055c2c36620b2cd52a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89186007"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801717"
 ---
 # <a name="handling-an-irp_mn_query_stop_device-request-windows-2000-and-later"></a>处理 IRP \_ MN \_ 查询 \_ 停止 \_ 设备请求 (Windows 2000 和更高版本) 
 
@@ -59,14 +58,14 @@ ms.locfileid: "89186007"
 
     -   在其 [*AddDevice*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_add_device) 例程中，驱动程序在设备扩展中定义一个 i/o 引用计数，并将该计数初始化为一个。
 
-    -   此外，在其 *AddDevice* 例程中，驱动程序使用 [**KeInitializeEvent**](/windows-hardware/drivers/ddi/wdm/nf-wdm-keinitializeevent) 创建一个事件，并使用 [**KeClearEvent**](/windows-hardware/drivers/ddi/wdm/nf-wdm-keclearevent)将该事件初始化为未终止状态。
+    -   此外，在其 *AddDevice* 例程中，驱动程序使用 [**KeInitializeEvent**](/windows-hardware/drivers/ddi/wdm/nf-wdm-keinitializeevent) 创建一个事件，并使用 [**KeClearEvent**](/windows-hardware/drivers/ddi/wdm/nf-wdm-keclearevent)将该事件初始化为 Not-Signaled 状态。
     -   每次处理 IRP 时，驱动程序将使用 [**InterlockedIncrement**](/windows-hardware/drivers/ddi/wdm/nf-wdm-interlockedincrement)来递增引用计数。
 
     -   每次完成请求时，驱动程序都会将引用计数减为 [**InterlockedDecrement**](/windows-hardware/drivers/ddi/wdm/nf-wdm-interlockeddecrement)。
 
-        如果请求有一个，则驱动程序将在[*IoCompletion*](/windows-hardware/drivers/ddi/wdm/nc-wdm-io_completion_routine)例程中递减引用计数，如果该驱动程序对该请求不使用*IoCompletion*例程，则会在调用[**IoCallDriver**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver)后立即递减引用计数。
+        如果请求有一个，则驱动程序将在 [*IoCompletion*](/windows-hardware/drivers/ddi/wdm/nc-wdm-io_completion_routine)例程中递减引用计数，如果该驱动程序对该请求不使用 *IoCompletion* 例程，则会在调用 [**IoCallDriver**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver)后立即递减引用计数。
 
-    -   当驱动程序收到 **IRP \_ MN \_ 查询 \_ 停止 \_ 设备**时，它会将引用计数减为 **InterlockedDecrement**。 如果没有未完成的请求，则这会将引用计数减少到零。
+    -   当驱动程序收到 **IRP \_ MN \_ 查询 \_ 停止 \_ 设备** 时，它会将引用计数减为 **InterlockedDecrement**。 如果没有未完成的请求，则这会将引用计数减少到零。
 
     -   当引用计数达到零时，驱动程序会将事件设置为 [**KeSetEvent**](/windows-hardware/drivers/ddi/wdm/nf-wdm-kesetevent) 信号，指示查询停止代码可以继续。
 
@@ -74,7 +73,7 @@ ms.locfileid: "89186007"
 
 5.  执行将设备置于停止挂起状态所需的任何其他步骤。
 
-    当驱动程序成功执行查询停止 IRP 后，它必须已准备就绪，使 **irp \_ MN \_ 停止 \_ 设备**成功。
+    当驱动程序成功执行查询停止 IRP 后，它必须已准备就绪，使 **irp \_ MN \_ 停止 \_ 设备** 成功。
 
 6.  完成 IRP。
 

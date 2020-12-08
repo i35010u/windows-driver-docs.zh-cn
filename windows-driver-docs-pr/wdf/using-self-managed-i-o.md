@@ -1,7 +1,6 @@
 ---
 title: 使用自我管理的 I/O
 description: 使用自我管理的 I/O
-ms.assetid: 539b3618-44bb-41fd-a9f2-ed6a377c94e2
 keywords:
 - PnP WDK KMDF，自我托管 i/o
 - 即插即用 WDK KMDF，自我托管 i/o
@@ -12,12 +11,12 @@ keywords:
 - 意外的设备删除 WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 27052acf08255ba1ea85cdd1c93341c1c7dcd6e5
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: c377cb8e9ceb4bbc12f58ee3e480b16812b7d004
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89191203"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96802109"
 ---
 # <a name="using-self-managed-io"></a>使用自我管理的 I/O
 
@@ -70,7 +69,7 @@ ms.locfileid: "89191203"
 
     如果设备总线的驱动程序确定设备不再存在，或者堆栈中的另一个驱动程序确定设备未响应，则发现此问题的驱动程序将通知 PnP 管理器。 然后，PnP 管理器通知其他驱动程序设备丢失。 对于基于框架的驱动程序，该框架会接收 PnP 管理器的消息，并调用驱动程序的 [*EvtDeviceSelfManagedIoSuspend*](/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_self_managed_io_suspend)、 [*EvtDeviceSelfManagedIoFlush*](/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_self_managed_io_flush)和 [*EvtDeviceSelfManagedIoCleanup*](/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_self_managed_io_cleanup) 回调函数。
 
-     (驱动程序还可以注册一个 [*EvtDeviceSurpriseRemoval*](/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_surprise_removal) 回调函数。 如果设备处于工作状态 (D0) 在删除时，该框架会在调用自行托管 i/o 回调函数之前调用 *EvtDeviceSurpriseRemoval* 。 如果设备在删除时处于低功耗状态，则在[*EvtDeviceSelfManagedIoSuspend*](/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_self_managed_io_suspend)之后调用*EvtDeviceSurpriseRemoval*) 
+     (驱动程序还可以注册一个 [*EvtDeviceSurpriseRemoval*](/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_surprise_removal) 回调函数。 如果设备处于工作状态 (D0) 在删除时，该框架会在调用自行托管 i/o 回调函数之前调用 *EvtDeviceSurpriseRemoval* 。 如果设备在删除时处于低功耗状态，则在 [*EvtDeviceSelfManagedIoSuspend*](/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_self_managed_io_suspend)之后调用 *EvtDeviceSurpriseRemoval*) 
 
 有关框架调用驱动程序的事件回调函数的顺序的详细信息，请参阅 [PnP 和电源管理方案](pnp-and-power-management-scenarios.md)。
 

@@ -1,7 +1,6 @@
 ---
 title: 与筛选器引擎建立会话
 description: 与筛选器引擎建立会话
-ms.assetid: 23db0e2d-7f27-4323-801c-346e14f0f83e
 keywords:
 - Windows 筛选平台标注驱动程序 WDK，打开会话
 - 标注驱动程序 WDK Windows 筛选平台，打开会话
@@ -9,12 +8,12 @@ keywords:
 - 打开筛选器引擎会话 WDK Windows 筛选平台
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d159e5b33c1764732a497addfd1c0aedabbb11e3
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 714009021fd0c6a488e8e1d48de5065f8c20363c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89215813"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96802281"
 ---
 # <a name="opening-a-session-to-the-filter-engine"></a>与筛选器引擎建立会话
 

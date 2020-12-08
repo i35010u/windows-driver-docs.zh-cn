@@ -1,15 +1,14 @@
 ---
 title: MB 接口模型概述
 description: 本部分提供基于移动宽带接口模型（ (MBIM) 规范）实现的移动宽带设备的信息。
-ms.assetid: B1C6D5F4-63E2-4C46-8038-71B8144AB474
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3ea41c6e010784316f6c7315e066019077eaf10d
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: b71a22d20ed67e4ad3ead009123ec639a758dcae
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91733909"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801639"
 ---
 # <a name="mb-interface-model-overview"></a>MB 接口模型概述
 

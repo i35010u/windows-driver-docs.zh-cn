@@ -1,17 +1,16 @@
 ---
 title: 查看显示版本
 description: 查看显示版本
-ms.assetid: d4a61e8a-600e-4dd5-a0dc-0da05923f3f1
 keywords:
 - 查看显示版本
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7cee7a995938908287631112d6174cab1877654d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9dec15a6273f94c2facda8ee93fee0ba90e95ee3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63386426"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96802905"
 ---
 # <a name="view--show-version"></a>视图 | 显示版本
 
@@ -19,11 +18,11 @@ ms.locfileid: "63386426"
 ## <span id="ddk_view_show_version_dbg"></span><span id="DDK_VIEW_SHOW_VERSION_DBG"></span>
 
 
-单击**显示版本**上**视图**菜单可显示的调试器和所有已加载的扩展 Dll 的版本信息。 此信息显示在[调试器命令窗口](debugger-command-window.md)。
+在 "**视图**" 菜单上单击 "**显示版本**"，以显示有关调试器和所有加载的扩展 dll 的版本信息。 此信息显示在 [调试器命令窗口](debugger-command-window.md)中。
 
-此命令相当于按下 CTRL + ALT + W （并按 CTRL + W 中 KD）。
+此命令等效于按下 CTRL + ALT + W (并在 KD) 中按 CTRL + W。
 
-此命令具有相同的效果[**版本 （显示调试器版本）** ](version--show-debugger-version-.md)命令，只不过后一种命令还会显示 Microsoft Windows 操作系统的版本。
+此命令与 [**版本 (Show 调试器版本)**](version--show-debugger-version-.md) 命令相同，不同之处在于后一条命令还显示 Microsoft Windows 操作系统的版本。
 
  
 

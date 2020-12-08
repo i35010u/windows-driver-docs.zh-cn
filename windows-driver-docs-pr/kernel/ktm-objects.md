@@ -1,26 +1,25 @@
 ---
 title: KTM 对象
 description: KTM 对象
-ms.assetid: 927a417b-35f5-49b8-85f3-7e6b1f5c0225
 keywords:
 - 内核事务管理器 WDK，对象
 - KTM WDK，对象
 - 对象 WDK KTM
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 86beb12f5e0d3e6403cc8b78f0648cce201e929d
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: db3368375752a32bb606719dbe288ae972de2240
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89189318"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801671"
 ---
 # <a name="ktm-objects"></a>KTM 对象
 
 
 内核事务管理器 (KTM) 定义以下四种对象类型：
 
--   [事务管理器对象](transaction-manager-objects.md)，KTM 使用该对象维护有关[*事务处理系统*](transaction-processing-terms.md#ktm-term-transaction-processing-system) (TPS) 的[*日志流*](transaction-processing-terms.md#ktm-term-log-stream)的内存驻留信息。
+-   [事务管理器对象](transaction-manager-objects.md)，KTM 使用该对象维护有关 [*事务处理系统*](transaction-processing-terms.md#ktm-term-transaction-processing-system) (TPS) 的 [*日志流*](transaction-processing-terms.md#ktm-term-log-stream)的内存驻留信息。
 
 -   [资源管理器对象](resource-manager-objects.md)，表示 TPS 内的 [*资源管理*](transaction-processing-terms.md#ktm-term-resource-manager) 器。
 

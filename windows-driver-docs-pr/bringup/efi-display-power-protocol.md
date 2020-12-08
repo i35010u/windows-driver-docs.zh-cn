@@ -1,20 +1,19 @@
 ---
 title: EFI_DISPLAY_POWER_PROTOCOL
 description: EFI_DISPLAY_POWER_PROTOCOL
-ms.assetid: 61ccf856-7e0b-4f1b-9be9-7b8a31339a6b
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 646406e0af3a813e986c3d804f64f279bff9f668
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 496cd5f53bec1579522d8b5b56ed44e0860268b7
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328015"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803405"
 ---
-# <a name="efidisplaypowerprotocol"></a>EFI\_DISPLAY\_电源\_协议
+# <a name="efi_display_power_protocol"></a>EFI \_ 显示 \_ 电源 \_ 协议
 
 
-此协议允许 UEFI 电池充电时充电 UEFI 环境中指定的空闲时间后关闭屏幕的应用程序。
+此协议允许在 UEFI 环境中进行充电时，UEFI 电池充电应用程序在指定的空闲持续时间关闭屏幕。
 
 ## <a name="syntax"></a>语法
 
@@ -33,16 +32,16 @@ typedef struct _EFI_DISPLAY_POWER_PROTOCOL {
 ## <a name="members"></a>成员
 
 
-<a href="" id="revision"></a>**修订版本**  
-修订**EFI\_显示\_POWER\_协议**遵循。 所有未来的版本必须是向后兼容。 如果将来的版本不是向后兼容，必须使用不同的 GUID。
+<a href="" id="revision"></a>**A01**  
+**EFI \_ 显示 \_ 电源 \_ 协议** 遵循的修订版本。 所有将来的修订版都必须是向后兼容。 如果未来版本不是向后兼容的，则必须使用不同的 GUID。
 
-当前的修订版本是 0x00010000。 修订版本应设置为 0x00010000 固件如果此的修订版**EFI\_电池\_正在充电\_协议**固件支持。
+当前修订版本为0x00010000。 如果固件支持此版本的 **EFI \_ 电池 \_ 充电 \_ 协议** ，则修订号应设置为0x00010000。
 
 <a href="" id="setdisplaypowerstate"></a>**SetDisplayPowerState**  
-修改显示和背景光电源的状态。 有关详细信息，请参阅[EFI\_显示\_POWER\_协议。SetDisplayPowerState](efi-display-power-protocolsetdisplaypowerstate.md)。
+修改显示器和背光的电源状态。 有关详细信息，请参阅 [EFI \_ 显示 \_ 电源 \_ 协议。SetDisplayPowerState](efi-display-power-protocolsetdisplaypowerstate.md)。
 
 <a href="" id="getdisplaypowerstate"></a>**GetDisplayPowerState**  
-返回当前的显示和背景光电源状态。 有关详细信息，请参阅[EFI\_显示\_POWER\_协议。GetDisplayPowerState](efi-display-power-protocolgetdisplaypowerstate.md)。
+返回显示器和背景光的当前电源状态。 有关详细信息，请参阅 [EFI \_ 显示 \_ 电源 \_ 协议。GetDisplayPowerState](efi-display-power-protocolgetdisplaypowerstate.md)。
 
 ## <a name="requirements"></a>要求
 

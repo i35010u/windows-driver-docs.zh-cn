@@ -1,15 +1,14 @@
 ---
 title: GpioClx DDI
 description: 常规用途 I/O (GPIO) 控制器驱动程序通过 GpioClx 设备驱动程序接口 (DDI) 与 GPIO 框架扩展 (GpioClx) 通信。
-ms.assetid: AE8883C3-178F-44AB-AB1D-65DEC1472929
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ee0c0a2462ade347c0ee8be458437e4d452c87f4
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 52077e6fd8606521a6f9bceddc5cc2e5e329f263
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106408"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96801793"
 ---
 # <a name="gpioclx-ddi"></a>GpioClx DDI
 
@@ -27,7 +26,7 @@ ms.locfileid: "90106408"
 <thead>
 <tr class="header">
 <th>主题</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>

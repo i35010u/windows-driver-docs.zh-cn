@@ -1,7 +1,6 @@
 ---
 title: 条带化
 description: 条带化
-ms.assetid: 29ab650c-0c3b-4693-a277-4d9ba63b7b66
 keywords:
 - 带化 WDK 音频
 - HD 音频，条带化
@@ -13,12 +12,12 @@ keywords:
 - 分配带宽
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 753f7a0c96ec6df54dbfdbc60baf1bf5465c3630
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 5813aa424a6a64624590b722a2862a85fb93620b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89210355"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96802097"
 ---
 # <a name="striping"></a>条带化
 
@@ -27,7 +26,7 @@ HD 音频体系结构支持一种称为 *条带化* 技术，可减少呈现流�
 
 函数驱动程序通过 [**AllocateRenderDmaEngine**](/windows-hardware/drivers/ddi/hdaudio/nc-hdaudio-pallocate_render_dma_engine) 例程的 *条带* 调用参数启用条带化。
 
-有关条带化的详细信息，请参阅[INTEL HD 音频](https://www.intel.com/content/www/us/en/standards/intel-standards-and-initiatives.html)网站上的*Intel 高质音频规范*。
+有关条带化的详细信息，请参阅 [INTEL HD 音频](https://www.intel.com/content/www/us/en/standards/intel-standards-and-initiatives.html)网站上的 *Intel 高质音频规范*。
 
  
 

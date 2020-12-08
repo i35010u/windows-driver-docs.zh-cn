@@ -1,18 +1,17 @@
 ---
 title: 使用符号
 description: 使用符号
-ms.assetid: 1de1441f-b4d7-49e9-87ad-392a75b3d4be
 keywords:
 - 调试器引擎，符号
 - symbols
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1801c93e38d849d7127e23402379392783704930
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 62daa89325d29bf1584d1332613eeb9bcc674f78
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89207333"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803063"
 ---
 # <a name="using-symbols"></a>使用符号
 
@@ -30,7 +29,7 @@ ms.locfileid: "89207333"
 
 若要在给定位置的位置查找符号名称，请使用 [**GetNameByOffset**](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugsymbols3-getnamebyoffset)。 若要在给定位置附近的模块中查找符号名称，请使用 [**GetNearNamebyOffset**](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugsymbols3-getnearnamebyoffset)。
 
-**注意**   请尽可能用模块名称（例如**mymodule！ main**）限定符号。 否则，如果符号不存在 (例如，由于键入错误) ，引擎将必须为每个模块加载和搜索符号;这可能是一个慢速进程，特别是对于内核模式调试。 如果使用模块名称限定符号名称，则引擎只需搜索该模块的符号。
+**注意**   请尽可能用模块名称（例如 **mymodule！ main**）限定符号。 否则，如果符号不存在 (例如，由于键入错误) ，引擎将必须为每个模块加载和搜索符号;这可能是一个慢速进程，特别是对于内核模式调试。 如果使用模块名称限定符号名称，则引擎只需搜索该模块的符号。
 
  
 

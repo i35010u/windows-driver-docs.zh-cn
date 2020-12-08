@@ -1,18 +1,17 @@
 ---
 title: NDIS 6.1 中的直接 OID 请求接口
 description: NDIS 6.1 中的直接 OID 请求接口
-ms.assetid: 1a24dec6-f16a-45f5-857b-c6e0df4ce261
 keywords:
 - 直接 OID 请求接口 WDK 网络
 - 直接 OID 请求路径 WDK 网络
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2f2a58bc5e86c1c361cabc4f940208fe273f5070
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: aeb5790e2361aa0dd3f471060cdb7d2da70f1a89
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89217646"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96802365"
 ---
 # <a name="direct-oid-request-interface-in-ndis-61"></a>NDIS 6.1 中的直接 OID 请求接口
 
@@ -20,11 +19,11 @@ ms.locfileid: "89217646"
 
 
 
-NDIS 为 NDIS 6.1 和更高版本的驱动程序提供直接 OID 请求接口。 *直接 OID 请求路径*支持经常查询或设置的 OID 请求。 例如，IPsec 卸载版本 2 (IPsecOV2) 接口为 [OID \_ TCP \_ 任务 \_ IPsec \_ 卸载 \_ V2 \_ 添加 \_ ](./oid-tcp-task-ipsec-offload-v2-add-sa.md) 了用于直接 OID 请求的 SA OID。
+NDIS 为 NDIS 6.1 和更高版本的驱动程序提供直接 OID 请求接口。 *直接 OID 请求路径* 支持经常查询或设置的 OID 请求。 例如，IPsec 卸载版本 2 (IPsecOV2) 接口为 [OID \_ TCP \_ 任务 \_ IPsec \_ 卸载 \_ V2 \_ 添加 \_ ](./oid-tcp-task-ipsec-offload-v2-add-sa.md) 了用于直接 OID 请求的 SA OID。
 
 直接 OID 请求接口对于 NDIS 驱动程序是可选的。 为了支持直接 OID 路径，驱动程序提供入口点，NDIS 为协议、筛选器和微型端口驱动程序提供 **ndis * Xxx*** 函数。
 
-**注意**   NDIS 支持用于直接 OID 请求接口的特定 Oid。 若要确定驱动程序是否可以在直接 Oid 接口中使用 OID，请参阅 "OID 引用" 页中的说明。
+**注意**  NDIS 支持用于直接 OID 请求接口的特定 Oid。 若要确定驱动程序是否可以在直接 Oid 接口中使用 OID，请参阅 "OID 引用" 页中的说明。
 
  
 

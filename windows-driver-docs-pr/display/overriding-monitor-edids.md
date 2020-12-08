@@ -1,15 +1,14 @@
 ---
 title: 使用 INF 替代监视器 Edid
 description: 使用 INF 文件，可以覆盖任何监视器 (EDID) 的扩展显示标识数据。
-ms.assetid: AA7DC29B-54D5-461A-8252-600D84F0F581
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dbb434f84d4dd4a453bf047cef2de5cdb57ba063
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 0fa3ffe94b7589179b506a1dd45c35bf5cd196d3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89064702"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96802593"
 ---
 # <a name="overriding-monitor-edids-with-an-inf"></a>使用 INF 替代监视器 Edid
 

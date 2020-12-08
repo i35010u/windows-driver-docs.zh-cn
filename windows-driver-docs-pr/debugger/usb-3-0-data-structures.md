@@ -1,15 +1,14 @@
 ---
 title: USB 3.0 数据结构
 description: 本主题介绍 USB 3.0 主机控制器驱动程序使用的数据结构。
-ms.assetid: 39BD7413-48A5-4199-BA8E-D2A77E4D23F1
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 796991bd4a053321bf6055564668df1988997b7e
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 538ad0ca0b8d584157d5e4cf3d0fbe187a42777e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89215698"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803247"
 ---
 # <a name="usb-30-data-structures"></a>USB 3.0 数据结构
 

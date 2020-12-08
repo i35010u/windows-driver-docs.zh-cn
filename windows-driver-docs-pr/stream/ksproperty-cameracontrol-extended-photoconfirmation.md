@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ CAMERACONTROL \_ 扩展 \_ PHOTOCONFIRMATION
 description: '\_ \_ \_ KSPROPERTY CAMERACONTROL 扩展属性枚举中定义的 KSPROPERTY CAMERACONTROL 扩展 PHOTOCONFIRMATION 属性 \_ ID \_ \_ 用于设置和获取驱动程序中的照片确认设置。'
-ms.assetid: 3EF6FF15-6805-4D91-B053-1BF6C5D5BEF2
 keywords:
 - KSPROPERTY_CAMERACONTROL_EXTENDED_PHOTOCONFIRMATION 流媒体设备
 topic_type:
@@ -14,16 +13,16 @@ api_type:
 - HeaderDef
 ms.date: 09/11/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 578f885b59f61499e333dc5e4569eeac88cd3994
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: accfe836755369a824c13d9fc75c69d52b53063e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104674"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96802145"
 ---
 # <a name="ksproperty_cameracontrol_extended_photoconfirmation"></a>KSPROPERTY \_ CAMERACONTROL \_ 扩展 \_ PHOTOCONFIRMATION
 
-[**KSPROPERTY \_ CAMERACONTROL \_ 扩展 \_ 属性**](/windows-hardware/drivers/ddi/ksmedia/ne-ksmedia-ksproperty_cameracontrol_extended_property)枚举中定义的**KSPROPERTY \_ CAMERACONTROL \_ 扩展 \_ PHOTOCONFIRMATION**属性 ID 用于设置和获取驱动程序中的照片确认设置。
+[**KSPROPERTY \_ CAMERACONTROL \_ 扩展 \_ 属性**](/windows-hardware/drivers/ddi/ksmedia/ne-ksmedia-ksproperty_cameracontrol_extended_property)枚举中定义的 **KSPROPERTY \_ CAMERACONTROL \_ 扩展 \_ PHOTOCONFIRMATION** 属性 ID 用于设置和获取驱动程序中的照片确认设置。
 
 ## <a name="usage-summary-table"></a>使用情况摘要表
 
@@ -44,7 +43,7 @@ ms.locfileid: "90104674"
 <tr class="odd">
 <td><p>版本 1</p></td>
 <td><p>筛选器</p></td>
-<td><p>同步</p></td>
+<td><p>Synchronous</p></td>
 </tr>
 </tbody>
 </table>
@@ -56,9 +55,9 @@ ms.locfileid: "90104674"
 #define KSCAMERA_EXTENDEDPROP_PHOTOCONFIRMATION_ON      0x0000000000000001
 ```
 
-如果照片确认设置为 **KSCAMERA \_ EXTENDEDPROP \_ PHOTOCONFIRMATION \_ OFF**，则驱动程序预览 pin 不得生成 photo 帧或生成包含照片确认元数据的 [**KSCAMERA \_ metadata \_ PHOTOCONFIRMATION**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_metadata_photoconfirmation) 结构。 如果照片确认设置为 ** \_ "KSCAMERA EXTENDEDPROP \_ PHOTOCONFIRMATION \_ ON**"，则驱动程序预览 pin 必须生成一个照片帧，并生成包含照片确认元数据的 **KSCAMERA \_ metadata \_ PHOTOCONFIRMATION** 结构。
+如果照片确认设置为 **KSCAMERA \_ EXTENDEDPROP \_ PHOTOCONFIRMATION \_ OFF**，则驱动程序预览 pin 不得生成 photo 帧或生成包含照片确认元数据的 [**KSCAMERA \_ metadata \_ PHOTOCONFIRMATION**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_metadata_photoconfirmation) 结构。 如果照片确认设置为 **\_ "KSCAMERA EXTENDEDPROP \_ PHOTOCONFIRMATION \_ ON**"，则驱动程序预览 pin 必须生成一个照片帧，并生成包含照片确认元数据的 **KSCAMERA \_ metadata \_ PHOTOCONFIRMATION** 结构。
 
-下表包含使用**KSPROPERTY \_ CAMERACONTROL \_ EXTENDED \_ PHOTOCONFIRMATION**属性时**KSCAMERA \_ EXTENDEDPROP \_ 标头**结构字段的说明和要求。
+下表包含使用 **KSPROPERTY \_ CAMERACONTROL \_ EXTENDED \_ PHOTOCONFIRMATION** 属性时 **KSCAMERA \_ EXTENDEDPROP \_ 标头** 结构字段的说明和要求。
 
 <table>
 <colgroup>

@@ -1,15 +1,14 @@
 ---
 title: 虚拟机队列 (VMQ) 概述
 description: 虚拟机队列 (VMQ) 概述
-ms.assetid: c502c7d6-bdf1-4656-b5a5-339250910f08
 ms.date: 05/29/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 26cfe7faf82868527baacba11f79d0112b3c2b7e
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 4c304360803533f27dbb8cfc38109f8abab4a6fa
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89216906"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96802235"
 ---
 # <a name="virtual-machine-queue-vmq-overview"></a>虚拟机队列 (VMQ) 概述
 
@@ -30,7 +29,7 @@ VMQ 接口支持：
 
 - 通过处理不同处理器上不同虚拟机的数据包，缩放到多个处理器。
 
-## <a name="related-topics"></a>“相关主题”
+## <a name="related-topics"></a>相关主题
 
 - [虚拟机队列体系结构](virtual-machine-queue-architecture.md)
 - [编写 VMQ 驱动程序](writing-vmq-drivers.md)

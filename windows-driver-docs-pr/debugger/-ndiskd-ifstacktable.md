@@ -1,7 +1,6 @@
 ---
 title: ndiskd.ifstacktable
 description: Ifstacktable 扩展 (ifStackTable) 中显示网络接口堆栈。
-ms.assetid: 8166C088-9366-49C4-9C3A-0089807352A9
 keywords:
 - ndiskd ifstacktable Windows 调试
 ms.date: 05/23/2017
@@ -12,12 +11,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 98c384fdc4322470498d30d932af1bc36c618535
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 28186ba1bf7c67d81f103fed320291c595080f1b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89216774"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803319"
 ---
 # <a name="ndiskdifstacktable"></a>!ndiskd.ifstacktable
 
@@ -171,7 +170,7 @@ STATE
 
 [调试网络堆栈](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-175-Debugging-the-Network-Stack)
 
-[**NDIS 扩展 ( # A0) **](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 扩展 ( # A0)**](ndis-extensions--ndiskd-dll-.md)
 
 [**!ndiskd.help**](-ndiskd-help.md)
 

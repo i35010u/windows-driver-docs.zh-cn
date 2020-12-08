@@ -1,24 +1,23 @@
 ---
-title: 使用 ks.graph
-description: 使用 ks.graph
-ms.assetid: 05dcd5d3-fac6-4af5-8149-955435fb016f
+title: 使用 ks
+description: 使用 ks
 keywords:
-- 内核调试，显示一个图形流式处理
+- 内核流调试，显示图形
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ea6be6966026bc039c0ffbf3706da9c247b305f0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2a0d6894c3557b3d71649527837fead6d5dbf0d7
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63367975"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803205"
 ---
 # <a name="using-ksgraph"></a>使用 !ks.graph
 
 
-[ **！ Ks.graph** ](-ks-graph.md)命令是一个流式处理扩展插件模块的内核中功能最强大的扩展命令。 此命令显示整个关系图的图片在内核模式下从任何给定的起始点。
+[**！ Ks**](-ks-graph.md)命令是内核流式处理扩展模块中功能最强大的扩展命令之一。 此命令以内核模式从任何给定的起点显示整个关系图。
 
-在运行前[ **！ ks.graph**](-ks-graph.md)，可能想要启用能够处于活动状态的所有库扩展。 若要执行此操作，请发出[ **！ ks.libexts enableall** ](-ks-libexts.md)命令。 输出 **！ ks.graph**按拓扑结构上排序顺序将内核模式关系图的文本说明。 下面是一个示例：
+在运行 [**！ ks**](-ks-graph.md)之前，您可能需要启用所有能够激活的库扩展。 为此，请发出 [**libexts enableall**](-ks-libexts.md) 命令。 **！ Ks** 的输出将是以界定闭合排序顺序排列的内核模式图的文本说明。 以下是示例：
 
 ```dbgcmd
 kd> !graph ffa0c6d4 7
@@ -29,11 +28,11 @@ Graph With Starting Point ffa0c6d4:
         Pin ffb1caf0 (File 811deeb8, -> "splitter" ffa8b008) Irps(q/p) = 7, 1
 ```
 
-此示例显示在其中两个 Sndrec32.exe 捕获来自电报 USB 麦克风捕获图形。 每个单独的记录开始 (在上面的部分 usbaudio) 的名称和筛选器上显示的筛选器地址 (0xFFAAA768) 和子 pin 工厂 (2) 的数量。
+此示例将显示一个捕获图形，其中两个 Sndrec32.exe 正在从电传 u 麦克风捕获。 每个单独的记录都以 (usbaudio 的名称开头，在上面的部分中) 并在筛选器上显示筛选器地址 (0xFFAAA768) 和子 pin 工厂的数量 (2) 。
 
-下面每个条目，每个工厂枚举并列出的每个 pin 实例 (0xFFB1CAF0)、 文件对象 (0x811DEEB8) 相对应的每个实例、 连接的方向，该连接的目标的地址和地址目标 pin (0xFFA8B008)。 此外会显示每个固定数量的排队 (7) 和挂起的 Irp (1)。
+在每个条目下，会枚举每个工厂实例的地址，并列出每个 (0xFFB1CAF0) 的每个 pin 实例的地址、对应于每个实例的文件对象 (0x811DEEB8) 、连接方向、该连接的目标和目标 pin 的地址 (0xFFA8B008) 。 同时还会显示每个 pin 的排队 (7) 和挂起的 Irp (1) 。
 
-建立连接，具有正向符号 (-&gt;) 指示 pin 是输出插针，连接到输入插针。 具有反方向符号的连接 (&lt;-)，但是，输入插针，并且显示连接的来源。 输出将继续，如下所示：
+ ( 的前向方向符号的连接（ &gt;) ）指示 pin 是输出插针并且连接到输入插针。 另一方面，具有反向方向符号 (&lt; ) 的连接是输入插针，并显示连接的源。 输出如下所示：
 
 ```dbgcmd
 "splitter" Filter ffa0c660, Child Factories 2
@@ -54,19 +53,19 @@ Graph With Starting Point ffa0c6d4:
         Pin ffa1e9c0 (File 81253468) Irps(q/p) = 10, 0
 ```
 
-若要理解关系图，请按下列步骤：
+为了跟随图形，请使用以下过程：
 
-**若要按照此关系图中：**
+**若要遵循此图：**
 
-1.  找到感兴趣的 pin。 请考虑 0xFFB1CAF0，usbaudio 的输出插针 （工厂 0）。
+1.  查找感兴趣的 pin。 请考虑0xFFB1CAF0，usbaudio 的输出插针 (出厂 0) 。
 
-2.  找到已连接的 pin。 在此示例中，这是拆分器 pin 0xFFA8B008。
+2.  找到连接的 pin。 在此示例中，这是拆分器 pin 0xFFA8B008。
 
-3.  查看连接方向，并以可视方式移动这样一来查找筛选器名称。 （请记住，对列表排序时拓扑结构上。）在此示例中，向右箭头指示我们需要先看下面要查找的相应图钉的列表中的此条目。 下面的拆分器筛选器 0xFFA0C660 是立即。
+3.  查看连接方向，并以可视方式移动以查找筛选器名称。  (记住，列表界定闭合排序。 ) 在此示例中，向右箭头指示我们需要在列表中的此条目下面查找相应的 pin。 下面是拆分筛选器的0xFFA0C660。
 
-4.  在筛选器 pin 实例列表中查找目标 pin 地址。 在这种情况下，此地址是 0xFFA8B008。
+4.  在筛选器 pin 实例列表中查找目标 pin 地址。 在这种情况下，此地址为0xFFA8B008。
 
-收件人遵循此关系图： 命令还可用于分析来自任何给定的起始点已停止的图形。 若要执行此操作，指定 4 英寸*标志*参数：
+要按照此图执行的操作：还可以使用命令来分析任何给定起始点的已停止关系图。 为此，请在 *Flags* 参数中指定4：
 
 ```dbgcmd
 kd> !graph 812567c0 7 4
@@ -100,9 +99,9 @@ NOTE: The above is based on heuristic analysis.  It is not designed to be a
       stall!
 ```
 
-对于此类输出，查看"怀疑"列表。 这些可疑的筛选器是指那些处于向前运行的关系图中的关键路径中。 开始调试从该点基于在分析器生成的停止的原因。
+对于此类输出，请查看 "可疑" 列表。 这些可疑筛选器是指图形中正在进行的关键路径。 根据分析器为延迟生成的原因，从该点开始调试。
 
-**请注意**  应仅使用此功能已停止的关系图上 ！ 分析器还具有无法知道如何在关系图已处于此状态。 中断到调试器和分析正在运行的图形为已停止的关系图仍然显示可疑的筛选器。
+**注意**   此功能只能用于已停止的图形！ 分析器无法知道图形处于此状态的时间。 进入调试器并分析正在运行的图形作为停止关系图仍会显示可疑筛选器。
 
  
 
