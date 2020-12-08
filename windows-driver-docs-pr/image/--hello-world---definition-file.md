@@ -1,19 +1,18 @@
 ---
-title: Hello World 定义文件
-description: Hello World 定义文件
-ms.assetid: 50c38eea-7826-44bb-9048-ce8e07ce3478
+title: Hello World "定义文件
+description: Hello World "定义文件
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9d0e5b40bbfd32d4f8f469ff249e3078c33bc967
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2762c28227593b1b6753cee6fa0d11268e802983
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63358429"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96832983"
 ---
-# <a name="hello-world-definition-file"></a>Hello World 定义文件
+# <a name="hello-world-definition-file"></a>"Hello World" 定义文件
 
-定义文件用于导出入口点函数。 *Hellowld.def*文件应包含两个以下的 COM 导出**DllGetClassObject**并**DllCanUnloadNow**，Microsoft Windows SDK 中描述这些文档。
+定义文件用于导出入口点函数。 *Hellowld* 文件应包含以下两个 COM 导出： **DllGetClassObject** 和 **DllCanUnloadNow**，如 Microsoft Windows SDK 文档中所述。
 
 ```make
 LIBRARY HELLOWLD

@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ BDA \_ AUTODEMODULATE \_ STOP
 description: 客户端使用 KSPROPERTY \_ BDA \_ AUTODEMODULATE \_ 停止 demodulating 将信号流式传输到一个解调器节点。
-ms.assetid: 4e937d5c-e43f-44cb-b3bb-fa1f8d496c5e
 keywords:
 - KSPROPERTY_BDA_AUTODEMODULATE_STOP 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ca3eda40c5f7750debc223276a91a4815cb59888
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 0affb66ff9c4164e5ab7bfe4ade9d6c2f1ecbb5c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89186141"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96832575"
 ---
 # <a name="ksproperty_bda_autodemodulate_stop"></a>KSPROPERTY \_ BDA \_ AUTODEMODULATE \_ STOP
 
@@ -77,7 +76,7 @@ ms.locfileid: "89186141"
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSP \_ 节点**](/windows-hardware/drivers/ddi/ks/ns-ks-ksp_node)

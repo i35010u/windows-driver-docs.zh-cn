@@ -1,15 +1,14 @@
 ---
 title: MB 操作语义
 description: MB 操作语义
-ms.assetid: 5f04b7fd-3df3-4efa-bb26-c7f4cd3c9ebd
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: baba14dbb23e37f203afcdda5e634c547b9c808c
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 7a364c5629e1210bb126b86439fd9f08632ad5bb
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89215580"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96832623"
 ---
 # <a name="mb-operational-semantics"></a>MB 操作语义
 
@@ -34,7 +33,7 @@ MB 服务使用的许多 *设置* 和 *查询* OID 请求都是异步处理的�
 
 -   小型端口驱动程序应立即对任何错误条件（如无效的 OID 请求）进行 OID 请求失败。
 
--   微型端口驱动程序必须返回任何特定于 WWAN 的错误条件，其中包含正确的错误代码 (例如， \_ \_ 在事件通知结构的 **uStatus** 成员中指定的 wwan 状态 XXX) 。 如果需要，微型端口驱动程序还应根据需要在 **uStatus** 成员后面的成员中进行适当填充。 例如，微型端口驱动程序应填写[**NDIS \_ WWAN \_ 上下文 \_ 状态**](/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_context_state)结构的**ContextState. uNwError**成员（如果可用）。 但是，如果在处理与 Pin 相关的 Oid 时出现故障，微型端口驱动程序可能不一定具有在[**NDIS \_ WWAN \_ PIN \_ 信息**](/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_pin_info)的**PinInfo. PINSTATE**成员中指定的当前 PIN 状态信息。
+-   微型端口驱动程序必须返回任何特定于 WWAN 的错误条件，其中包含正确的错误代码 (例如， \_ \_ 在事件通知结构的 **uStatus** 成员中指定的 wwan 状态 XXX) 。 如果需要，微型端口驱动程序还应根据需要在 **uStatus** 成员后面的成员中进行适当填充。 例如，微型端口驱动程序应填写 [**NDIS \_ WWAN \_ 上下文 \_ 状态**](/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_context_state)结构的 **ContextState. uNwError** 成员（如果可用）。 但是，如果在处理与 Pin 相关的 Oid 时出现故障，微型端口驱动程序可能不一定具有在 [**NDIS \_ WWAN \_ PIN \_ 信息**](/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_pin_info)的 **PinInfo. PINSTATE** 成员中指定的当前 PIN 状态信息。
 
 -   小型端口驱动程序应返回 NDIS \_ 状态 \_ 指示， \_ 作为所有异步 OID 请求的临时响应。
 
@@ -60,7 +59,7 @@ MB 服务使用的许多 *设置* 和 *查询* OID 请求都是异步处理的�
 
 1.  在内核模式下分配内存以复制与 OID 请求关联的 [**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request) 数据结构的内容。
 
-2.  在请求的参数中，确保还复制 OID 请求结构的 **RequestId** 和 **RequestHandle** 成员。 稍后将在事务 *指示*中使用这些成员。
+2.  在请求的参数中，确保还复制 OID 请求结构的 **RequestId** 和 **RequestHandle** 成员。 稍后将在事务 *指示* 中使用这些成员。
 
 3.  返回临时的 NDIS \_ 状态 \_ 指示 \_ 所需的状态响应，通知 MB 服务微型端口驱动程序将异步完成该请求。
 
@@ -68,7 +67,7 @@ MB 服务使用的许多 *设置* 和 *查询* OID 请求都是异步处理的�
 
 5.  调用 [**NdisMIndicateStatusEx**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismindicatestatusex) 函数以通知 MB 服务，未完成的操作已完成。 小型端口驱动程序应填写 NDIS \_ 状态 \_ 指示结构的成员，如下所示：
     1.  将 **StatusCode** 成员设置为状态通知的类型。 例如，NDIS \_ 状态 \_ WWAN \_ XXX。
-    2.  将**DestinationHandle**成员设置为在**RequestHandle** \_ \_ 微型端口驱动程序收到相应 OID 请求时在 NDIS OID 请求数据结构中收到的 RequestHandle 成员。
+    2.  将 **DestinationHandle** 成员设置为在 **RequestHandle** \_ \_ 微型端口驱动程序收到相应 OID 请求时在 NDIS OID 请求数据结构中收到的 RequestHandle 成员。
     3.  **RequestId** **RequestId** \_ \_ 当微型端口驱动程序收到相应的 OID 请求时，将 requestid 成员设置为与 NDIS OID 请求状态结构的 RequestId 成员匹配。
     4.  将 **StatusBuffer** 和 **StatusBufferSize** 成员设置为分别指向微型端口驱动程序分配的内存和内存缓冲区的大小。 此内存缓冲区包含已完成操作的结果。
     5.  如果操作成功完成，则将 **uStatus** 成员设置为 WWAN \_ 状态 " \_ 成功"。 否则，请将 **uStatus** 成员设置为合适的 WWAN \_ 状态 \_ XXX 值，以指示失败类型。
@@ -103,7 +102,7 @@ MB 服务使用以下过程处理异步事务：
 
 事件通知未经许可，因为微型端口驱动程序将指示作为状态更改事件主动发送到 MB 服务。 状态更改是由除 MB 服务以外的其他实体中的操作引起的。 MB 服务假定微型端口驱动程序能够检测到发生更改的原因。
 
-对于任何特定于 WWAN 的事件通知，微型端口驱动程序必须将 NDIS 状态指示结构的 **RequestId** 成员设置 \_ \_ 为零。 **StatusCode**成员指定 MB 设备中已更改的对象。 微型端口驱动程序可以将此对象设置为以下任何值：
+对于任何特定于 WWAN 的事件通知，微型端口驱动程序必须将 NDIS 状态指示结构的 **RequestId** 成员设置 \_ \_ 为零。 **StatusCode** 成员指定 MB 设备中已更改的对象。 微型端口驱动程序可以将此对象设置为以下任何值：
 
 [**NDIS \_ 状态 \_ WWAN \_ 设备 \_ CAP**](./ndis-status-wwan-device-caps.md)
 
@@ -153,11 +152,11 @@ MB 服务还可以处理 NDIS 发出的其他事件通知。 这些非 MB 事件
 
 MB 服务需要事务性通知，以便它可以关闭打开的事务。 它是异步事务中的 MB 服务和微型端口驱动程序之间的三向握手的最终交换。 任何事务通知中的 NDIS 状态指示的 **RequestId** 成员的值 \_ \_ 必须为非零值，这是从同一事务中的相应请求复制的。
 
-必须正确设置 NDIS **RequestId** \_ 状态指示结构的 RequestId 成员 \_ ，异步机制才能正常运行。 MB 服务确保 **RequestId** 值在所有未完成的请求中是唯一的，非零。 小型端口驱动程序必须在相应的*指示*中返回相同的**RequestId**值，以便 MB 服务将指示与打开的事务关联起来。
+必须正确设置 NDIS **RequestId** \_ 状态指示结构的 RequestId 成员 \_ ，异步机制才能正常运行。 MB 服务确保 **RequestId** 值在所有未完成的请求中是唯一的，非零。 小型端口驱动程序必须在相应的 *指示* 中返回相同的 **RequestId** 值，以便 MB 服务将指示与打开的事务关联起来。
 
 ### <a name="status-indication-structure"></a>状态指示结构
 
-给定 OID 请求和未经请求的事件通知结构的异步响应会将*StatusIndication*参数的**StatusBuffer**成员指向的以下结构成员共享到[**NdisMIndicateStatusEx**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismindicatestatusex)：
+给定 OID 请求和未经请求的事件通知结构的异步响应会将 *StatusIndication* 参数的 **StatusBuffer** 成员指向的以下结构成员共享到 [**NdisMIndicateStatusEx**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismindicatestatusex)：
 
 ```C++
 typedef struct _NDIS_WWAN_XXX {
@@ -170,7 +169,7 @@ typedef struct _NDIS_WWAN_XXX {
 
 NDIS 状态指示结构的 **RequestId** 成员中的值为 \_ 0 \_ 表示它是一个未经请求的事件通知，可以随时进行。
 
-如果任何*set*或*query* OID 请求的返回指示中的**uStatus**成员不等于 WWAN \_ 状态 \_ 成功，则关联的 NDIS \_ WWAN XXX 结构的成员 \_ 不需要有效。
+如果任何 *set* 或 *query* OID 请求的返回指示中的 **uStatus** 成员不等于 WWAN \_ 状态 \_ 成功，则关联的 NDIS \_ WWAN XXX 结构的成员 \_ 不需要有效。
 
 如果基于网络事件的未经请求的事件通知，微型端口驱动程序必须根据需要填写 **uNwError** 成员（如果适用）。
 
@@ -245,7 +244,7 @@ NDIS 状态指示结构的 **RequestId** 成员中的值为 \_ 0 \_ 表示它是
 
 类似的逻辑也应该应用于基于 CDMA 的网络。 但是，基于 CDMA 的网络错误代码没有标准。 基于 CDMA 的设备应使用特定于网络或特定于设备的错误代码。
 
-在微型端口驱动程序对 OID 请求的异步响应的情况下， **RequestId** NDIS \_ 状态指示结构的 RequestId 成员 \_ 是一个非零数字，作为*集*或*查询*请求的一部分传递给微型端口驱动程序。 微型端口驱动程序必须根据需要填充 **uStatus** 成员。 例如， \_ \_ 在以下部分中列出的 "WWAN 状态成功" 或任何适当的错误值。 除此之外，微型端口驱动程序必须在适当的和可用的位置填写 **uNwError** 成员。
+在微型端口驱动程序对 OID 请求的异步响应的情况下， **RequestId** NDIS \_ 状态指示结构的 RequestId 成员 \_ 是一个非零数字，作为 *集* 或 *查询* 请求的一部分传递给微型端口驱动程序。 微型端口驱动程序必须根据需要填充 **uStatus** 成员。 例如， \_ \_ 在以下部分中列出的 "WWAN 状态成功" 或任何适当的错误值。 除此之外，微型端口驱动程序必须在适当的和可用的位置填写 **uNwError** 成员。
 
 ### <a name="event-notification-status"></a>事件通知状态
 
@@ -258,7 +257,7 @@ NDIS 状态指示结构的 **RequestId** 成员中的值为 \_ 0 \_ 表示它是
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">值</th>
+<th align="left">“值”</th>
 <th align="left">含义</th>
 </tr>
 </thead>
@@ -373,7 +372,7 @@ NDIS 状态指示结构的 **RequestId** 成员中的值为 \_ 0 \_ 表示它是
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">值</th>
+<th align="left">“值”</th>
 <th align="left">含义</th>
 </tr>
 </thead>
@@ -431,7 +430,7 @@ NDIS 状态指示结构的 **RequestId** 成员中的值为 \_ 0 \_ 表示它是
 
  
 
-**注意**   这些特定于 WWAN 的状态代码仅用于 NDIS **uStatus** \_ WWAN XXX 结构的 uStatus 成员中的异步事务 \_ 。
+**注意** 这些特定于 WWAN 的状态代码仅用于 NDIS **uStatus** \_ WWAN XXX 结构的 uStatus 成员中的异步事务 \_ 。
 
  
 

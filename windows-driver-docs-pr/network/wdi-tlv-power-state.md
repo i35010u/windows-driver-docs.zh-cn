@@ -1,22 +1,21 @@
 ---
 title: WDI_TLV_POWER_STATE
-description: WDI_TLV_POWER_STATE 是包含电源状态 TLV。
-ms.assetid: EC65FE08-ABF0-488A-A6FA-21B1794418B3
+description: WDI_TLV_POWER_STATE 是包含电源状态的 TLV。
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_POWER_STATE 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 1f1b24240693da7075c8a90ebc5dc4986e79cfe4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 422b6be846cf785be6761c8d88995fb988c2cdce
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63342229"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96834269"
 ---
-# <a name="wditlvpowerstate"></a>WDI\_TLV\_POWER\_STATE
+# <a name="wdi_tlv_power_state"></a>WDI \_ TLV \_ 电源 \_ 状态
 
 
-WDI\_TLV\_电源\_状态是包含电源状态 TLV。
+WDI \_ tlv \_ 电源 \_ 状态是包含电源状态的 tlv。
 
 ## <a name="tlv-type"></a>TLV 类型
 
@@ -26,7 +25,7 @@ WDI\_TLV\_电源\_状态是包含电源状态 TLV。
 ## <a name="length"></a>长度
 
 
-UINT32 大小 （以字节为单位）。
+UINT32) 的大小 (以字节为单位）。
 
 ## <a name="values"></a>值
 
@@ -38,19 +37,19 @@ UINT32 大小 （以字节为单位）。
 </colgroup>
 <thead>
 <tr class="header">
-<th>在任务栏的搜索框中键入</th>
+<th>类型</th>
 <th>描述</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td>UINT32</td>
-<td>指定的电源状态。
-<p>有效值包括：</p>
+<td>指定电源状态。
+<p>有效值是：</p>
 <ul>
-<li>0x0001:退出低能耗 (D0)</li>
-<li>0x0003:输入低能耗 (D2)</li>
-<li>0x0004:输入关闭电源 （D3，可能不实际进行电源已关闭在某些平台上）</li>
+<li>0x0001：退出低功耗 (D0) </li>
+<li>0x0003：输入低功耗 (D2) </li>
+<li>0x0004： (D3 进入关机状态，在某些平台上实际可能没有断电) </li>
 </ul></td>
 </tr>
 </tbody>
@@ -73,10 +72,10 @@ UINT32 大小 （以字节为单位）。
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
-<td><p>Windows Server 2016</p></td>
+<td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Wditypes.hpp</td>
 </tr>
 </tbody>

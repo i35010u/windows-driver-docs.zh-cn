@@ -1,7 +1,6 @@
 ---
 title: 枚举显示适配器的子设备
 description: 枚举显示适配器的子设备
-ms.assetid: 3bec2117-aef4-41fc-b88a-0081c7c9fe3d
 keywords:
 - 视频显示网络 WDK 显示，显示适配器子设备
 - VidPN WDK 显示，显示适配器子设备
@@ -10,12 +9,12 @@ keywords:
 - 枚举子设备 WDK 视频呈现网络
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5a8037ee4a16d440bb5d2a358445f770694ab671
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 464b12ef935b9fb124196cc61b7a51b82aff4b98
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89065868"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96832765"
 ---
 # <a name="enumerating-child-devices-of-a-display-adapter"></a>枚举显示适配器的子设备
 
@@ -38,11 +37,11 @@ ms.locfileid: "89065868"
     -   假定子设备已连接外部设备。
     -   子设备的类型为 **TypeOther**。
 
-    如果连接的监视器 (或其他显示设备) 支持 EDID 描述符， *DxgkDdiQueryDeviceDescriptor*将返回扩展的显示信息数据 (EDID) 块。
+    如果连接的监视器 (或其他显示设备) 支持 EDID 描述符， *DxgkDdiQueryDeviceDescriptor* 将返回扩展的显示信息数据 (EDID) 块。
 
     注意：在初始化期间，显示端口驱动程序对每个监视器调用 *DxgkDdiQueryDeviceDescriptor* ，以获取监视器 EDID 的第一个128字节块。 这为显示端口驱动程序在初始化时所需的内容： PnP 硬件 ID、实例 ID、兼容 Id 和设备文本。 稍后，monitor 类函数驱动程序 ( # A0) 为每个监视器调用 *DxgkDdiQueryDeviceDescriptor* ，以获取第一个128字节的 edid 块和额外的128字节 edid 扩展块。 这意味着将调用显示微型端口驱动程序两次，以提供每个监视器 EDID 的第一个128字节块。
 
-6.  VidPN 管理器会为显示适配器支持的所有视频源和视频提供目标获取标识符。 视频显示源由数字0，1，.。。N-1，其中 N 是显示微型端口驱动程序的 *DxgkDdiStartDevice* 函数返回的源的数目。 视频显示目标具有唯一的整数标识符，这些标识符之前是在 *DxgkDdiQueryChildRelations*过程中由显示微型端口驱动程序创建的。 **TypeVideoOutput**类型的每个子设备都与视频显示目标相关联，子设备的 DXGK 子描述符结构的**ChildUid**成员 \_ \_ 将用作视频显示目标的标识符。
+6.  VidPN 管理器会为显示适配器支持的所有视频源和视频提供目标获取标识符。 视频显示源由数字0，1，.。。N-1，其中 N 是显示微型端口驱动程序的 *DxgkDdiStartDevice* 函数返回的源的数目。 视频显示目标具有唯一的整数标识符，这些标识符之前是在 *DxgkDdiQueryChildRelations* 过程中由显示微型端口驱动程序创建的。 **TypeVideoOutput** 类型的每个子设备都与视频显示目标相关联，子设备的 DXGK 子描述符结构的 **ChildUid** 成员 \_ \_ 将用作视频显示目标的标识符。
 
 7.  VidPN 管理器使用以下过程来生成初始 VidPN。
     -   如果在注册表中记录了最后一个已知良好的 VidPN，请将其用作初始 VidPN。

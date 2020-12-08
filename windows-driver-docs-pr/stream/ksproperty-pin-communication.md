@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ PIN \_ 通信
 description: KSPROPERTY \_ pin \_ 通信属性指定由 pin 工厂实例化的引脚上的 IRP 流的方向。
-ms.assetid: d5f62731-39de-4ec4-83d5-f4253373aaa4
 keywords:
 - KSPROPERTY_PIN_COMMUNICATION 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0ab50495c814e735a10e1ddee0d352ec903dcd27
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: d300475b3b1b4b3b139776156843666a00339ba0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103742"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96833969"
 ---
 # <a name="ksproperty_pin_communication"></a>KSPROPERTY \_ PIN \_ 通信
 
@@ -101,7 +100,7 @@ Stream 微型驱动程序不需要直接处理此属性;流类驱动程序使用
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSPROPERTY \_ PIN \_ 数据流**](ksproperty-pin-dataflow.md)

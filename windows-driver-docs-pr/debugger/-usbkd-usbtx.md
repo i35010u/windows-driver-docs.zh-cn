@@ -1,7 +1,6 @@
 ---
 title: usbkd.usbtx
 description: Usbkd. usbtx 命令显示 usbport _HCD_TRANSFER_CONTEXT 结构中的信息。
-ms.assetid: 603AD207-69D5-4DED-80B5-ADA21E191D47
 keywords:
 - usbkd usbtx Windows 调试
 ms.date: 05/23/2017
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: f3af4e1d26bb40b002b4965f97993af40faaf747
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 8c7ed5e0929a0d8f5fff15455b4d88fa380fde8b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89217929"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96833863"
 ---
 # <a name="usbkdusbtx"></a>!usbkd.usbtx
 
 
-**！ Usbkd. usbtx**命令显示 usbport 中的信息 **！ \_HCD \_ 传输 \_ 上下文**结构。
+**！ Usbkd. usbtx** 命令显示 usbport 中的信息 **！ \_HCD \_ 传输 \_ 上下文** 结构。
 
 ```dbgcmd
 !usbkd.usbtx StructAddr
@@ -51,7 +50,7 @@ Usbkd.dll
 ...
 ```
 
-在上面的输出中，FDO 的设备扩展的地址显示为 [DML](debugger-markup-language-commands.md) command **！ uhci \_ info ffffe00001c8f1a0**的参数。
+在上面的输出中，FDO 的设备扩展的地址显示为 [DML](debugger-markup-language-commands.md) command **！ uhci \_ info ffffe00001c8f1a0** 的参数。
 
 单击 DML 命令或将设备扩展的地址传递给 [**！ usbhcdext**](-usbkd-usbhcdext.md) 以获取传输列表。
 
@@ -68,7 +67,7 @@ Usbkd.dll
     ...
 ```
 
-在上面的输出中， `ffffe0000653401c` 是** \_ HCD \_ 传输 \_ 上下文**结构的地址。 将此地址传递给 **！ usbtx**。
+在上面的输出中， `ffffe0000653401c` 是 **\_ HCD \_ 传输 \_ 上下文** 结构的地址。 将此地址传递给 **！ usbtx**。
 
 ```dbgcmd
 0: kd> !usbkd.usbtx ffffe0000653401c

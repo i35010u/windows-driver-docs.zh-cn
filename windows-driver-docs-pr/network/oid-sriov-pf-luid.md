@@ -1,30 +1,29 @@
 ---
 title: OID_SRIOV_PF_LUID
 description: 过量驱动程序发出 (OID 的对象标识符) 查询请求，OID_SRIOV_PF_LUID 接收本地唯一标识符 (LUID) 关联到网络适配器的 PCI Express (PCIe) 物理函数 (。
-ms.assetid: 363D308D-CE88-4F3B-81FF-37A2D86CB7BC
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_SRIOV_PF_LUID 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: d7e962b391c483ef5f62873ede9eedf93a54390b
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 6a70fdcbf26f7743ac12a474ea48fe00b8ee9724
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104980"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96834343"
 ---
 # <a name="oid_sriov_pf_luid"></a>OID \_ SRIOV \_ PF \_ LUID
 
 
 过量驱动程序发出 (oid 的对象标识符) 查询 OID 请求， \_ \_ \_ 以接收与 PCI Express (PCIe 关联的本地唯一标识符 (LUID) 与网络适配器) PF (。
 
-[**Ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的**InformationBuffer**成员包含指向[**NDIS \_ SRIOV \_ PF \_ LUID \_ INFO**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_pf_luid_info)结构的指针。
+[**Ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的 **InformationBuffer** 成员包含指向 [**NDIS \_ SRIOV \_ PF \_ LUID \_ INFO**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_pf_luid_info)结构的指针。
 
 <a name="remarks"></a>备注
 -------
 
 在 NDIS 为 pf 调用微型端口驱动程序的 [*MiniportInitializeEx*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_initialize) 函数之前，NDIS 为 PF 生成 LUID。 在 NDIS 调用驱动程序的 [*MiniportHaltEx*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_halt) 函数之前，此 LUID 是有效的。
 
-**注意**   **Luid**成员的值不同于[**NDIS \_ 微型端口 \_ 初始 \_ 参数**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_init_parameters)结构的**NetLuid**成员。 通过[*MiniportInitializeEx*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_initialize)的*MiniportInitParameters*参数将此结构传递给微型端口驱动程序。
+**注意** **Luid** 成员的值不同于 [**NDIS \_ 微型端口 \_ 初始 \_ 参数**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_init_parameters)结构的 **NetLuid** 成员。 通过 [*MiniportInitializeEx*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_initialize)的 *MiniportInitParameters* 参数将此结构传递给微型端口驱动程序。
 
  
 
@@ -87,7 +86,7 @@ NDIS 处理 \_ \_ \_ 对微型端口驱动程序执行 oid SRIOV PF LUID 请求�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 ****

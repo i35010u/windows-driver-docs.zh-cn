@@ -1,7 +1,6 @@
 ---
 title: 'CheckDeviceObjectFlags 规则 (wdm) '
 description: CheckDeviceObjectFlags 规则指定总线驱动程序必须检查用于 DO power PAGABLE 的设备对象标志 \_ \_ ，并 \_ \_ 为 FDO 和子 PDOs 一致地设置电源浪涌。 此规则仅适用于总线驱动程序。
-ms.assetid: E229D3A2-30CE-433A-9889-F762CA923803
 ms.date: 05/21/2018
 keywords:
 - 'CheckDeviceObjectFlags 规则 (wdm) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 652484d153bcaa829f38e31c970011b83e519d06
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: a3cf75677a872801cde6c772b98b8bd13d4bf59b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104932"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96832507"
 ---
 # <a name="checkdeviceobjectflags-rule-wdm"></a>CheckDeviceObjectFlags 规则 (wdm) 
 
 
-**CheckDeviceObjectFlags**规则指定总线驱动程序必须检查用于 do power PAGABLE 的设备对象标志 \_ \_ ，并 \_ \_ 为 FDO 和子 PDOs 一致地设置电源浪涌。 此规则仅适用于总线驱动程序。
+**CheckDeviceObjectFlags** 规则指定总线驱动程序必须检查用于 do power PAGABLE 的设备对象标志 \_ \_ ，并 \_ \_ 为 FDO 和子 PDOs 一致地设置电源浪涌。 此规则仅适用于总线驱动程序。
 
 **驱动程序模型： WDM**
 

@@ -1,7 +1,6 @@
 ---
 title: '视频微型端口驱动程序中的电源管理和 PnP (XDDM) '
 description: 视频微型端口驱动程序中的电源管理和即插即用（Windows 2000 模型）
-ms.assetid: e5b2ac53-e492-43de-91a3-5b02c26ee9a3
 keywords:
 - 视频微型端口驱动程序 WDK Windows 2000，即插即用
 - 视频微型端口驱动程序 WDK Windows 2000，电源管理
@@ -11,12 +10,12 @@ keywords:
 ms.date: 12/06/2018
 ms.localizationpriority: medium
 ms.custom: seodec18
-ms.openlocfilehash: 2064bfe6d56e9a51405f9fbedf208a741fe2c96c
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: f0e9d2f00a3ad1754250230b0ec9f041e9a2686f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91734077"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96832723"
 ---
 # <a name="power-management-and-plug-and-play-in-video-miniport-drivers-windows-2000-model"></a>视频微型端口驱动程序中的电源管理和即插即用（Windows 2000 模型）
 

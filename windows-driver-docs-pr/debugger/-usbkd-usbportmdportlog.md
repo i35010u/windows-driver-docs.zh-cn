@@ -1,7 +1,6 @@
 ---
 title: usbkd.usbportmdportlog
 description: 如果 USBPORT 调试日志存在于 Bug 检查0xFE 所生成的故障转储中，则该命令将显示调试日志。
-ms.assetid: C0E32BDE-8186-4477-AB57-530B0AF6F27F
 keywords:
 - usbkd usbportmdportlog Windows 调试
 ms.date: 05/23/2017
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: ba8faedb383b2f4312fb4e1adb29a78f168f724f
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: de05cfdd5c46d41ac6b605f1ad83fbe3a524e9fc
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89217931"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96833885"
 ---
 # <a name="usbkdusbportmdportlog"></a>!usbkd.usbportmdportlog
 
 
-如果 USBPORT 调试日志存在于因[**Bug 检查 0xFE**](bug-check-0xfe--bugcode-usb-driver.md)生成的故障转储中 **，则该命令将**显示调试日志。
+如果 USBPORT 调试日志存在于因 [**Bug 检查 0xFE**](bug-check-0xfe--bugcode-usb-driver.md)生成的故障转储中 **，则该命令将** 显示调试日志。
 
 ```dbgcmd
 !usbkd.usbportmdportlog
@@ -41,16 +40,16 @@ Usbkd.dll
 <a name="examples"></a>示例
 --------
 
-下面是 **！ usbportmdportlog**的输出部分的示例。
+下面是 **！ usbportmdportlog** 的输出部分的示例。
 
 ```dbgcmd
 1: kd> !analyze -v
-*** ...
+**_ ...
 BUGCODE_USB_DRIVER (fe) 
 ...
 1: kd> !usbkd.usbportmdportlog
 Minidump USBPORT DEBUG_LOG buffer size 32768, entries 1024, index 400
-*LOG: 0000000113be9600  LOGSTART: 0000000113be6400 *LOGEND: 0000000113bee3e0 # 1024 
+_LOG: 0000000113be9600  LOGSTART: 0000000113be6400 *LOGEND: 0000000113bee3e0 # 1024 
 [ 000] 0000000113be9600 Bfe2 ffffe0001416802c ffffe000020a44f0 ffffe0001416801c 
 [ 001] 0000000113be9620 Bfe0 0000000000000000 ffffe000039f4720 ffffe00000b76cb0 
 [ 002] 0000000113be9640 epr+ ffffe000043ee010 ffffe000008f5b80 ffffe00002820a0c 

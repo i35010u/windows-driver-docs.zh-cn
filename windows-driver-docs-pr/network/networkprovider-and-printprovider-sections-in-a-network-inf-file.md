@@ -1,22 +1,21 @@
 ---
 title: 网络 INF 文件中的 NetworkProvider 和 PrintProvider 节
 description: 网络 INF 文件中的 NetworkProvider 和 PrintProvider 节
-ms.assetid: 9ce32644-2b11-4c03-9743-d678ff8de229
 keywords:
-- INF 文件 WDK 网络，PrintProvider 部分
-- 可使用网络 INF 文件 WDK，PrintProvider 部分
-- INF 文件 WDK 网络，NetworkProvider 部分
-- 可使用网络 INF 文件 WDK，NetworkProvider 部分
+- INF 文件 WDK network，PrintProvider 部分
+- 网络 INF 文件 WDK，PrintProvider 部分
+- INF 文件 WDK network，NetworkProvider 部分
+- 网络 INF 文件 WDK，NetworkProvider 部分
 - PrintProvider 部分 WDK 网络
 - NetworkProvider 部分 WDK 网络
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 23e57b7f747f1ca25cd5c0c8738febc77dbc5b0d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 08b6dc7ddee99d4cb245a950c08cd78bccaa4eb1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380595"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96834363"
 ---
 # <a name="networkprovider-and-printprovider-sections-in-a-network-inf-file"></a>网络 INF 文件中的 NetworkProvider 和 PrintProvider 节
 
@@ -24,23 +23,23 @@ ms.locfileid: "63380595"
 
 
 
-**NetClient**组件被视为要网络提供商，因为它们提供网络服务添加到用户应用程序。 网络和 NetWare 客户端的 Microsoft 客户端都属于**NetClient**组件。
+**NetClient** 组件被视为网络提供程序，因为它们向用户应用程序提供网络服务。 适用于网络的 Microsoft 客户端和 NetWare 客户端是 **NetClient** 组件的示例。
 
-**请注意**  **NetClient**组件在 Windows 8.1，Windows Server 2012 R2 中已弃用及更高版本。
+**请注意**，**NetClient** 组件在 Windows 8.1、Windows Server 2012 R2 和更高版本中已弃用。  
 
  
 
-网络提供商，除了**NetClient**组件还可以打印提供程序。 打印提供程序通过网络提供打印服务添加到用户应用程序。
+除了作为网络提供程序外， **NetClient** 组件还可以是打印提供程序。 打印提供程序通过网络将打印服务提供给用户应用程序。
 
-一个**NetClient**组件始终安装为网络提供商。 安装一个 INF 文件**NetClient**组件除非至少一个以下，则返回 true，否则不要求 NetworkProvider 部分对该组件：
+**NetClient** 组件始终作为网络提供程序安装。 除非至少满足以下条件之一，否则安装 **NetClient** 组件的 INF 文件不需要该组件的 NetworkProvider 部分：
 
--   为组件指定了可选设备名称。
+-   为组件指定了备用设备名称。
 
--   用于指定该组件的短名称**net 视图**命令。 有关详细信息，请参阅[包括 NetworkProvider 部分](including-a-networkprovider-section.md)。
+-   指定组件的短名称用于 **net view** 命令。 有关详细信息，请参阅 [包含 NetworkProvider 部分](including-a-networkprovider-section.md)。
 
-安装 INF **NetClient**组件，它是打印提供程序必须包含**PrintProvider**组件的部分。 有关详细信息，请参阅[包括 PrintProvider 部分](including-a-printprovider-section.md)。
+安装作为打印提供程序的 **NetClient** 组件的 INF 必须包含该组件的 **PrintProvider** 部分。 有关详细信息，请参阅 [包含 PrintProvider 部分](including-a-printprovider-section.md)。
 
-安装一个 INF 文件**NetClient**组件还必须包含*添加注册表部分*(通过引用**AddReg**指令*服务安装部分*组件)，它将**NetworkProvider**到组件的关键**服务**密钥。 有关详细信息，请参阅[NetClient 组件的指定名称和提供程序路径](specifying-the-name-and-provider-path-for-a-netclient-component.md)。
+安装 **NetClient** 组件的 INF 文件还必须包含 "" 部分中的 **AddReg** 指令引用的 "*添加注册表" 部分* (*，该组件*) 将 **NetworkProvider** 项添加到组件的 **服务** 密钥。 有关详细信息，请参阅 [指定 NetClient 组件的名称和提供程序路径](specifying-the-name-and-provider-path-for-a-netclient-component.md)。
 
  
 

@@ -1,18 +1,17 @@
 ---
 title: WDI_TLV_SAE_INDICATION_TYPE
 description: WDI_TLV_SAE_INDICATION_TYPE 是一种 TLV，其中包含继续使用目标 BSSID 进行 SAE 身份验证所需的信息的类型，或者表明身份验证无法继续的通知。
-ms.assetid: F505CA27-4B2F-4210-8BE4-F3B931B86DDC
 ms.date: 02/15/2019
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_SAE_INDICATION_TYPE 网络驱动程序
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 29646ceaf3aef332ed4dcf07f3a71dfcae447a66
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 10f7946bc49530b078d9612778058522f29b09d8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89213700"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96834209"
 ---
 # <a name="wdi_tlv_sae_indication_type"></a>WDI_TLV_SAE_INDICATION_TYPE
 
@@ -24,13 +23,13 @@ ms.locfileid: "89213700"
 
 0x14B
 
-## <a name="length"></a>Length
+## <a name="length"></a>长度
 
 UINT32) 的大小 (以字节为单位）。
 
 ## <a name="values"></a>值
 
-| 类型 | 说明 |
+| 类型 | 描述 |
 | --- | --- |
 | [**WDI_SAE_INDICATION_TYPE**](/windows-hardware/drivers/ddi/wditypes/ne-wditypes-_wdi_sae_indication_type) | 继续使用目标 BSSID 进行 SAE 身份验证所需的信息的类型，或者无法继续进行身份验证的通知。 |
 

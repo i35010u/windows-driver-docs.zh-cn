@@ -1,20 +1,19 @@
 ---
 title: 可以移植的具体驱动程序以及移植位置
-description: 本主题介绍了哪些 WDM 驱动程序可以移植到 Windows 驱动程序框架 (WDF) ，以及如何确定是否 (KMDF) 或用户模式驱动程序框架 (UMDF) 移植到内核模式驱动程序框架。
-ms.assetid: 53E34B9C-8C0A-4F15-951B-7AB133DE0C5A
+description: 本主题介绍了哪些 WDM 驱动程序可以移植到 Windows 驱动程序框架 (WDF) ，以及如何确定是否要移植到 Kernel-Mode Driver Framework (KMDF) 或 User-Mode Driver Framework (UMDF) 。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9873e2f8684eaec726fe130039a7eaaeeb052ef6
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 2ca089397a14254cfb6a90d75ad6bbcd8c608d17
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89185841"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96833941"
 ---
 # <a name="which-drivers-can-be-ported-and-where"></a>可以移植的具体驱动程序以及移植位置
 
 
-本主题介绍了哪些 WDM 驱动程序可以移植到 Windows 驱动程序框架 (WDF) ，以及如何确定是否 (KMDF) 或用户模式驱动程序框架 (UMDF) 移植到内核模式驱动程序框架。
+本主题介绍了哪些 WDM 驱动程序可以移植到 Windows 驱动程序框架 (WDF) ，以及如何确定是否要移植到 Kernel-Mode Driver Framework (KMDF) 或 User-Mode Driver Framework (UMDF) 。
 
 ## <a name="which-wdm-drivers-can-i-port-to-wdf"></a>我可以将哪些 WDM 驱动程序移植到 WDF？
 

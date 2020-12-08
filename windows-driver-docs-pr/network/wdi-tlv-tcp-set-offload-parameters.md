@@ -1,17 +1,16 @@
 ---
 title: WDI_TLV_TCP_SET_OFFLOAD_PARAMETERS
 description: WDI_TLV_TCP_SET_OFFLOAD_PARAMETERS 是一种 TLV，其中包含用于 OID_WDI_SET_TCP_OFFLOAD_PARAMETERS 的微型端口适配器的 TCP 卸载功能。
-ms.assetid: 1DE1114A-E718-473F-B0EB-92AEFA4E7F13
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_TCP_SET_OFFLOAD_PARAMETERS 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 33f1ea687acc8d66f01ea42fd3a22312ce6da01c
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: bc8afbed597f588f805b2b52638b25936b0efba8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89208472"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96834137"
 ---
 # <a name="wdi_tlv_tcp_set_offload_parameters"></a>WDI \_ TLV \_ TCP \_ 设置 \_ 卸载 \_ 参数
 
@@ -23,7 +22,7 @@ WDI \_ tlv \_ TCP \_ 设置 \_ 卸载 \_ 参数是一个 TLV，其中包含用�
 
 0xF2
 
-## <a name="length"></a>Length
+## <a name="length"></a>长度
 
 
 Sum (所有包含的元素的大小) 。
@@ -39,7 +38,7 @@ Sum (所有包含的元素的大小) 。
 <thead>
 <tr class="header">
 <th>类型</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -247,7 +246,7 @@ Sum (所有包含的元素的大小) 。
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
-<td><p>Windows Server 2016</p></td>
+<td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
 <td><p>标头</p></td>
@@ -256,7 +255,7 @@ Sum (所有包含的元素的大小) 。
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**NDIS \_ 卸载 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_offload_parameters)

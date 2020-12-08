@@ -1,7 +1,6 @@
 ---
 title: 呈现和 GetBltStatus
 description: 呈现和 GetBltStatus
-ms.assetid: 76fd88df-18a9-4f00-834d-6683788fc2f6
 keywords:
 - DirectX 8.0 发行说明 WDK Windows 2000 显示，演示
 - 演示文稿 WDK DirectX 8。0
@@ -10,12 +9,12 @@ keywords:
 - DdGetBltStatus
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9cab0515b0926b3757a557a3303ff03781042523
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 66f142a04a9980b3d092e4cc1884b809c768abef
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90715156"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96833061"
 ---
 # <a name="present-and-getbltstatus"></a>呈现和 GetBltStatus
 

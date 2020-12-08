@@ -1,7 +1,6 @@
 ---
 title: 连接和文件控制块管理例程
 description: 连接和文件控制块管理例程
-ms.assetid: e56c0cba-7352-4964-b067-57bc90c7f911
 keywords:
 - 阻止 WDK RDBSS
 - 数据结构 WDK 文件系统
@@ -13,12 +12,12 @@ keywords:
 - 连接信息 WDK RDBSS
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: aea494db3597072f7701425aa75905e1d331b79d
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 30f35b689e4bfc02435886fdbf387afee0b7216c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104218"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96834587"
 ---
 # <a name="connection-and-file-control-block-management-routines"></a>连接和文件控制块管理例程
 
@@ -35,7 +34,7 @@ RDBSS 提供以下例程用于连接和文件控制块管理，这些例程可�
 <thead>
 <tr class="header">
 <th align="left">例程所返回的值</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>

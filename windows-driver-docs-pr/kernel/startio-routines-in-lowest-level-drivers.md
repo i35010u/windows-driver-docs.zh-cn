@@ -1,7 +1,6 @@
 ---
 title: 最低级驱动程序中的 StartIo 例程
 description: 最低级驱动程序中的 StartIo 例程
-ms.assetid: f79f8929-bcf4-46a2-bf0e-0f8fb0720dd9
 keywords:
 - StartIo 例程，最低级别驱动程序
 - I/o 控制请求 WDK 内核
@@ -10,12 +9,12 @@ keywords:
 - 同步 WDK Irp
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c3b3bb4d63e759cf02487ea4fabe180c209e69d9
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: ea105cf1c8f6b620dd4ffee0ad8f1e05967abf8a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89184729"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96834396"
 ---
 # <a name="startio-routines-in-lowest-level-drivers"></a>最低级驱动程序中的 StartIo 例程
 
@@ -23,13 +22,13 @@ ms.locfileid: "89184729"
 
 
 
-I/o 管理器对驱动程序的调度例程的调用是满足设备 i/o 请求的第一阶段。 [*StartIo*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_startio)例程为第二个阶段。 每个使用*StartIo*例程的设备驱动程序都可能从其[*DispatchRead*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)和[*DispatchWrite*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)例程调用[**IoStartPacket**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-iostartpacket) ，并且通常用于其[*DispatchDeviceControl*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)例程中支持的 i/o 控制代码子集。 **IoStartPacket**例程将 IRP 添加到设备的系统提供的设备队列中; 如果队列为空，则立即调用驱动程序的*StartIo*例程来处理 IRP。
+I/o 管理器对驱动程序的调度例程的调用是满足设备 i/o 请求的第一阶段。 [*StartIo*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_startio)例程为第二个阶段。 每个使用 *StartIo* 例程的设备驱动程序都可能从其 [*DispatchRead*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)和 [*DispatchWrite*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)例程调用 [**IoStartPacket**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-iostartpacket) ，并且通常用于其 [*DispatchDeviceControl*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)例程中支持的 i/o 控制代码子集。 **IoStartPacket** 例程将 IRP 添加到设备的系统提供的设备队列中; 如果队列为空，则立即调用驱动程序的 *StartIo* 例程来处理 IRP。
 
 可以假设在调用驱动程序的 *StartIo* 例程时，目标设备不忙。 这是因为，i/o 管理器在两个情况下调用 *StartIo* ;其中一个驱动程序的调度例程刚刚称为 **IoStartPacket** ，而设备队列为空，或者该驱动程序的 [*DpcForIsr*](/windows-hardware/drivers/ddi/wdm/nc-wdm-io_dpc_routine) 例程正在完成另一个请求，并且刚刚调用 [**IOSTARTNEXTPACKET**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-iostartnextpacket) 来取消下一个 IRP 的排队。
 
 在调用高级设备驱动程序中的 *StartIo* 例程之前，该驱动程序的调度例程应已探测并锁定用户缓冲区（如有必要），以便在已排队到其 *STARTIO* 例程的 IRP 中设置有效的映射缓冲区地址。 如果最高级别的设备驱动程序为直接 i/o (设置其设备对象，或者既不是缓冲的，也不是直接 i/o) ，则驱动程序无法将用户缓冲区锁定到其 *StartIo* 例程;每个 *StartIo* 例程都在任意线程上下文中以 IRQL = 调度 \_ 级别进行调用。
 
-**注意**   要由驱动程序的*StartIo*例程访问的任何缓冲区内存都必须被锁定或从常驻的系统空间内存中分配，并且必须可在任意线程上下文中访问。
+**注意**   要由驱动程序的 *StartIo* 例程访问的任何缓冲区内存都必须被锁定或从常驻的系统空间内存中分配，并且必须可在任意线程上下文中访问。
 
  
 
@@ -57,11 +56,11 @@ I/o 管理器对驱动程序的调度例程的调用是满足设备 i/o 请求�
 
 -   如果设备使用 DMA，请检查是否应将所请求的 **长度** (要传输的字节数（在 IRP) 的驱动程序 i/o 堆栈位置中）是否应拆分为部分传输操作，如 [输入/输出方法](i-o-programming-techniques.md)中所述，假设更高级别的驱动程序不 presplit 设备驱动程序的大型传输。
 
-    此类设备驱动程序的*StartIo*例程还可以负责调用[**KeFlushIoBuffers**](/windows-hardware/drivers/ddi/wdm/nf-wdm-keflushiobuffers) ，如果驱动程序使用基于数据包的 DMA，则使用驱动程序的[*AdapterControl*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_control)例程调用[**AllocateAdapterChannel**](/windows-hardware/drivers/ddi/wdm/nc-wdm-pallocate_adapter_channel) 。
+    此类设备驱动程序的 *StartIo* 例程还可以负责调用 [**KeFlushIoBuffers**](/windows-hardware/drivers/ddi/wdm/nf-wdm-keflushiobuffers) ，如果驱动程序使用基于数据包的 DMA，则使用驱动程序的 [*AdapterControl*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_control)例程调用 [**AllocateAdapterChannel**](/windows-hardware/drivers/ddi/wdm/nc-wdm-pallocate_adapter_channel) 。
 
     有关更多详细信息，请参阅 [适配器对象和 DMA](./introduction-to-adapter-objects.md)并 [维护缓存一致性](maintaining-cache-coherency.md)。
 
--   如果设备使用 PIO，则使用[**MmGetSystemAddressForMdlSafe**](./mm-bad-pointer.md)将** &gt; MdlAddress**的基本虚拟地址（irp 中的 irp）映射到系统空间地址。
+-   如果设备使用 PIO，则使用 [**MmGetSystemAddressForMdlSafe**](./mm-bad-pointer.md)将 **&gt; MdlAddress** 的基本虚拟地址（irp 中的 irp）映射到系统空间地址。
 
     对于读取请求，设备驱动程序的 *StartIo* 例程可负责在 PIO 操作开始之前调用 [**KeFlushIoBuffers**](/windows-hardware/drivers/ddi/wdm/nf-wdm-keflushiobuffers) 。 有关详细信息，请参阅 [维护缓存一致性](maintaining-cache-coherency.md) 。
 
@@ -69,7 +68,7 @@ I/o 管理器对驱动程序的调度例程的调用是满足设备 i/o 请求�
 
 -   如果驱动程序处理可取消的 Irp，请检查输入 IRP 是否已被取消。
 
--   如果在将输入 IRP 处理为完成前可以将其取消，则*StartIo*例程必须使用 IRP 和驱动程序[*取消*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_cancel)例程的入口点调用[**IoSetCancelRoutine**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iosetcancelroutine) 。 *StartIo*例程必须获取取消自旋锁，才能调用**IoSetCancelRoutine**。 或者，驱动程序可以使用[**IoSetStartIoAttributes**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-iosetstartioattributes)将*StartIo*例程的*NonCancelable*属性设置为**TRUE**。 这会阻止系统尝试取消通过调用[**IoStartPacket**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-iostartpacket)传递给*StartIo*的 IRP。
+-   如果在将输入 IRP 处理为完成前可以将其取消，则 *StartIo* 例程必须使用 IRP 和驱动程序 [*取消*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_cancel)例程的入口点调用 [**IoSetCancelRoutine**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iosetcancelroutine) 。 *StartIo* 例程必须获取取消自旋锁，才能调用 **IoSetCancelRoutine**。 或者，驱动程序可以使用 [**IoSetStartIoAttributes**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-iosetstartioattributes)将 *StartIo* 例程的 *NonCancelable* 属性设置为 **TRUE**。 这会阻止系统尝试取消通过调用 [**IoStartPacket**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-iostartpacket)传递给 *StartIo* 的 IRP。
 
 作为一般规则，使用缓冲 i/o 的驱动程序比使用直接 i/o 的驱动 *程序更简单* 。 对于每个传输请求，使用缓冲 i/o 传输少量数据的驱动程序，而使用直接 i/o 的驱动程序 (DMA 或 PIO) 将大量数据传输到可跨系统内存中的物理页面边界的锁定缓冲区。
 
@@ -79,25 +78,25 @@ I/o 管理器对驱动程序的调度例程的调用是满足设备 i/o 请求�
 
 ### <a name="using-buffered-io-in-startio-routines"></a>在 StartIo 例程中使用缓冲 i/o
 
-如果驱动程序的 [*DispatchRead*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)、 [*DispatchWrite*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)或 [*DispatchDeviceControl*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch) 例程确定请求有效并且调用 [**IoStartPacket**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-iostartpacket)，则当设备队列为空时，I/o 管理器将调用驱动程序的 [*StartIo*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_startio) 例程来立即处理 IRP。 如果队列不为空，则 **IoStartPacket** 会将 IRP 排队。 最终，从驱动程序的[*DpcForIsr*](/windows-hardware/drivers/ddi/wdm/nc-wdm-io_dpc_routine)或[*CustomDpc*](/windows-hardware/drivers/ddi/wdm/nc-wdm-kdeferred_routine)例程调用[**IoStartNextPacket**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-iostartnextpacket)会导致 i/o 管理器取消对 IRP 的排队并调用驱动程序的*StartIo*例程。
+如果驱动程序的 [*DispatchRead*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)、 [*DispatchWrite*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)或 [*DispatchDeviceControl*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch) 例程确定请求有效并且调用 [**IoStartPacket**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-iostartpacket)，则当设备队列为空时，I/o 管理器将调用驱动程序的 [*StartIo*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_startio) 例程来立即处理 IRP。 如果队列不为空，则 **IoStartPacket** 会将 IRP 排队。 最终，从驱动程序的 [*DpcForIsr*](/windows-hardware/drivers/ddi/wdm/nc-wdm-io_dpc_routine)或 [*CustomDpc*](/windows-hardware/drivers/ddi/wdm/nc-wdm-kdeferred_routine)例程调用 [**IoStartNextPacket**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-iostartnextpacket)会导致 i/o 管理器取消对 IRP 的排队并调用驱动程序的 *StartIo* 例程。
 
-*StartIo*例程调用[**IoGetCurrentIrpStackLocation**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetcurrentirpstacklocation) ，并确定必须执行哪个操作才能满足请求。 它在对物理设备进行编程以执行 i/o 请求之前，以任何必要的方式预处理 IRP。
+*StartIo* 例程调用 [**IoGetCurrentIrpStackLocation**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetcurrentirpstacklocation) ，并确定必须执行哪个操作才能满足请求。 它在对物理设备进行编程以执行 i/o 请求之前，以任何必要的方式预处理 IRP。
 
 如果访问物理设备 (或设备扩展) 必须与 [*InterruptService*](/windows-hardware/drivers/ddi/wdm/nc-wdm-kservice_routine) 例程同步，则 *StartIo* 例程必须调用 [*SynchCritSection*](/windows-hardware/drivers/ddi/wdm/nc-wdm-ksynchronize_routine) 例程来执行必要的设备编程。 有关详细信息，请参阅 [使用关键部分](using-critical-sections.md)。
 
-使用缓冲 i/o 的物理设备驱动程序会将数据传入或传出由 i/o 管理器分配的系统空间缓冲区，驱动程序将在 temBuffer 的每个 ** &gt;AssociatedIrp.Sys**irp 中查找。
+使用缓冲 i/o 的物理设备驱动程序会将数据传入或传出由 i/o 管理器分配的系统空间缓冲区，驱动程序将在 temBuffer 的每个 **&gt;AssociatedIrp.Sys** irp 中查找。
 
 ### <a name="using-direct-io-in-startio-routines"></a>在 StartIo 例程中使用直接 i/o
 
-如果驱动程序的 [*DispatchRead*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)、 [*DispatchWrite*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)或 [*DispatchDeviceControl*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch) 例程确定请求有效并且调用 [**IoStartPacket**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-iostartpacket)，则当设备队列为空时，I/o 管理器将调用驱动程序的 *StartIo* 例程来立即处理 IRP。 如果队列不为空，则 **IoStartPacket** 会将 IRP 排队。 最终，从驱动程序的[*DpcForIsr*](/windows-hardware/drivers/ddi/wdm/nc-wdm-io_dpc_routine)或[*CustomDpc*](/windows-hardware/drivers/ddi/wdm/nc-wdm-kdeferred_routine)例程调用[**IoStartNextPacket**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-iostartnextpacket)会导致 i/o 管理器取消对 IRP 的排队并调用驱动程序的*StartIo*例程。
+如果驱动程序的 [*DispatchRead*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)、 [*DispatchWrite*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)或 [*DispatchDeviceControl*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch) 例程确定请求有效并且调用 [**IoStartPacket**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-iostartpacket)，则当设备队列为空时，I/o 管理器将调用驱动程序的 *StartIo* 例程来立即处理 IRP。 如果队列不为空，则 **IoStartPacket** 会将 IRP 排队。 最终，从驱动程序的 [*DpcForIsr*](/windows-hardware/drivers/ddi/wdm/nc-wdm-io_dpc_routine)或 [*CustomDpc*](/windows-hardware/drivers/ddi/wdm/nc-wdm-kdeferred_routine)例程调用 [**IoStartNextPacket**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-iostartnextpacket)会导致 i/o 管理器取消对 IRP 的排队并调用驱动程序的 *StartIo* 例程。
 
-*StartIo*例程调用[**IoGetCurrentIrpStackLocation**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetcurrentirpstacklocation) ，并确定必须执行哪个操作才能满足请求。 它以任何必要的方式预处理 IRP，如将大型 DMA 传输请求拆分为部分传输范围，并保存与必须拆分的传入传输请求的 **长度** 有关的状态。 然后，它会对物理设备进行计划，以执行 i/o 请求。
+*StartIo* 例程调用 [**IoGetCurrentIrpStackLocation**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetcurrentirpstacklocation) ，并确定必须执行哪个操作才能满足请求。 它以任何必要的方式预处理 IRP，如将大型 DMA 传输请求拆分为部分传输范围，并保存与必须拆分的传入传输请求的 **长度** 有关的状态。 然后，它会对物理设备进行计划，以执行 i/o 请求。
 
 如果访问物理设备 (或设备扩展) 必须与驱动程序的 ISR 同步，则 *StartIo* 例程必须使用驱动程序提供的 *SynchCritSection* 例程来执行必要的编程。 有关详细信息，请参阅 [使用关键部分](using-critical-sections.md)。
 
-使用直接 i/o 的任何驱动程序都可以将数据读入或写入锁定缓冲区中的数据，这些数据由驱动程序在 ** &gt; MdlAddress**中的 IRP)  (MDL 的内存描述符列表中找到。 此类驱动程序通常使用缓冲 i/o 处理设备控制请求。 有关详细信息，请参阅 [处理 StartIo 例程中的 I/o 控制请求](#ddk-handling-i-o-control-requests-in-startio-routines-kg)。
+使用直接 i/o 的任何驱动程序都可以将数据读入或写入锁定缓冲区中的数据，这些数据由驱动程序在 **&gt; MdlAddress** 中的 IRP)  (MDL 的内存描述符列表中找到。 此类驱动程序通常使用缓冲 i/o 处理设备控制请求。 有关详细信息，请参阅 [处理 StartIo 例程中的 I/o 控制请求](#ddk-handling-i-o-control-requests-in-startio-routines-kg)。
 
-MDL 类型是驱动程序无法直接访问的不透明类型。 相反，使用 PIO 的驱动程序通过使用**Irp- &gt; MdlAddress**作为参数调用[**MmGetSystemAddressForMdlSafe**](./mm-bad-pointer.md)来重新映射用户空间缓冲区。 使用 DMA 的驱动程序还会通过 ** &gt; MdlAddress** 来支持在其传输操作中使用的例程，从而将缓冲区地址重新映射到其设备的逻辑范围。
+MDL 类型是驱动程序无法直接访问的不透明类型。 相反，使用 PIO 的驱动程序通过使用 **Irp- &gt; MdlAddress** 作为参数调用 [**MmGetSystemAddressForMdlSafe**](./mm-bad-pointer.md)来重新映射用户空间缓冲区。 使用 DMA 的驱动程序还会通过 **&gt; MdlAddress** 来支持在其传输操作中使用的例程，从而将缓冲区地址重新映射到其设备的逻辑范围。
 
 除非紧密耦合的高级驱动程序拆分了对基础设备驱动程序的大型 DMA 传输请求，否则最低级别的设备驱动程序的 *StartIo* 例程必须拆分大于其设备可以在单个传输操作中进行管理的每个传输请求。 需要使用系统 DMA 的驱动程序拆分传输请求，这些请求对于系统 DMA 控制器而言太大或其设备无法在单个传输操作中进行处理。
 
@@ -113,7 +112,7 @@ MDL 类型是驱动程序无法直接访问的不透明类型。 相反，使用
 
 对于同一种类的设备，每个新驱动程序必须支持同一组公共 i/o 控制代码，作为其他所有驱动程序。 系统为 [**IRP \_ MJ \_ 设备 \_ 控制**](./irp-mj-device-control.md) 请求（作为缓冲请求）定义特定于设备类型的特定 i/o 控制代码。
 
-因此，物理设备驱动程序将数据传输到系统空间缓冲区中，每个驱动程序在 irp 的 irp 中查找AssociatedIrp.Sys设备控制请求 ** &gt; temBuffer** 。 即使是为直接 i/o 设置设备对象的驱动程序，也会使用缓冲 i/o 来满足使用公共 i/o 控制代码的设备控制请求。
+因此，物理设备驱动程序将数据传输到系统空间缓冲区中，每个驱动程序在 irp 的 irp 中查找AssociatedIrp.Sys设备控制请求 **&gt; temBuffer** 。 即使是为直接 i/o 设置设备对象的驱动程序，也会使用缓冲 i/o 来满足使用公共 i/o 控制代码的设备控制请求。
 
 每个 i/o 控制代码的定义确定是否对为该请求传输的数据进行缓冲处理。 在成对驱动程序之间，对于特定于驱动程序的 [**IRP \_ MJ \_ 内部 \_ 设备 \_ 控制**](./irp-mj-internal-device-control.md) 请求，任何私下定义的 i/o 控制代码都可以定义具有缓冲方法、方法直接或方法的代码。 作为一般规则，如果紧耦合的更高级别驱动程序必须为该请求分配一个缓冲区，则应使用方法定义任何私下定义的 i/o 控制代码。
 
@@ -121,9 +120,9 @@ MDL 类型是驱动程序无法直接访问的不透明类型。 相反，使用
 
 通常，最低级别设备驱动程序中的 *StartIo* 例程必须通过使用 [**KeSynchronizeExecution**](/windows-hardware/drivers/ddi/wdm/nf-wdm-kesynchronizeexecution) 调用驱动程序提供的 [*SynchCritSection*](/windows-hardware/drivers/ddi/wdm/nc-wdm-ksynchronize_routine) 例程来同步对它与驱动程序的 ISR 共享的任何内存或设备寄存器的访问。 驱动程序的 *StartIo* 例程使用 *SYNCHCRITSECTION* 例程在 DIRQL 处实际对物理设备进行 i/o 编程。 有关详细信息，请参阅 [使用关键部分](using-critical-sections.md)。
 
-在调用 **KeSynchronizeExecution**之前， *StartIo* 例程必须执行请求所需的任何预处理。 预处理可能包括计算初始部分传输范围并保存与其他驱动程序例程的原始请求有关的任何状态信息。
+在调用 **KeSynchronizeExecution** 之前， *StartIo* 例程必须执行请求所需的任何预处理。 预处理可能包括计算初始部分传输范围并保存与其他驱动程序例程的原始请求有关的任何状态信息。
 
-如果设备驱动程序使用 DMA，则其*StartIo*例程通常使用驱动程序提供的[*AdapterControl*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_control)例程调用[**AllocateAdapterChannel**](/windows-hardware/drivers/ddi/wdm/nc-wdm-pallocate_adapter_channel) 。 在这些情况下， *StartIo* 例程推迟了将物理设备编程到 *AdapterControl* 例程的责任。 然后，它可以调用 **KeSynchronizeExecution** ，使驱动程序提供的 *SynchCritSection* 例程对设备进行 DMA 传输。
+如果设备驱动程序使用 DMA，则其 *StartIo* 例程通常使用驱动程序提供的 [*AdapterControl*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_control)例程调用 [**AllocateAdapterChannel**](/windows-hardware/drivers/ddi/wdm/nc-wdm-pallocate_adapter_channel) 。 在这些情况下， *StartIo* 例程推迟了将物理设备编程到 *AdapterControl* 例程的责任。 然后，它可以调用 **KeSynchronizeExecution** ，使驱动程序提供的 *SynchCritSection* 例程对设备进行 DMA 传输。
 
  
 

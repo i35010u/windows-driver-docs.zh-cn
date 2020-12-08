@@ -1,26 +1,25 @@
 ---
 title: 针对套接字执行控制操作
 description: 针对套接字执行控制操作
-ms.assetid: 5d6ff02a-dc50-4818-9d0d-ba741fe7dfd8
 keywords:
 - Winsock 内核 WDK 网络，控制操作
 - WSK WDK 网络，控制操作
 - 控制操作 WDK Winsock 内核
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 00326d2e381bcb5c8a8eec710cd1a893394c76ab
-ms.sourcegitcommit: db9d058a9e592d4c47c67fc14f04f0ddc3aa92af
+ms.openlocfilehash: dbe07dd1991be3e13ddac4e0e5e7a0ce6ad41819
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91989853"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96832601"
 ---
 # <a name="performing-control-operations-on-a-socket"></a>针对套接字执行控制操作
 
 
 Winsock 内核 (WSK) 应用程序成功创建套接字后，它可以在套接字上执行控制操作。 可对套接字执行的控制操作包括设置和检索套接字选项和执行套接字 IOCTL 操作。
 
-WSK 应用程序通过调用 [**WskControlSocket**](/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_control_socket) 函数在套接字上执行控制操作。 **WskControlSocket**函数由套接字提供程序调度结构的**WskControlSocket**成员指向。 套接字的提供程序调度结构由套接字对象结构的 **调度** 成员指向， ( [**WSK \_ 套**](/windows-hardware/drivers/ddi/wsk/ns-wsk-_wsk_socket) 接字) 在创建套接字期间由 WSK 子系统返回。
+WSK 应用程序通过调用 [**WskControlSocket**](/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_control_socket) 函数在套接字上执行控制操作。 **WskControlSocket** 函数由套接字提供程序调度结构的 **WskControlSocket** 成员指向。 套接字的提供程序调度结构由套接字对象结构的 **调度** 成员指向， ( [**WSK \_ 套**](/windows-hardware/drivers/ddi/wsk/ns-wsk-_wsk_socket) 接字) 在创建套接字期间由 WSK 子系统返回。
 
 下面的代码示例演示 WSK 应用程序如何在数据报套接字上设置 [**SO \_ EXCLUSIVEADDRUSE**](./so-exclusiveaddruse.md) 套接字选项。
 

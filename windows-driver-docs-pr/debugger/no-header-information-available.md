@@ -1,18 +1,17 @@
 ---
 title: 没有可用的标头信息
 description: 没有可用的标头信息
-ms.assetid: cafc98c0-cae7-4140-8be7-6a535523f0e3
 keywords:
-- 标头信息可用 （警告）
-- 标头信息不可用 （警告）
+- '没有可用的标头信息 (警告) '
+- '标头信息不可用 (警告) '
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f923c4ab920dacf08ae6f1749f7480e281614203
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 945831087c02b8697cca49f9509761019f79d029
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331022"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96833663"
 ---
 # <a name="no-header-information-available"></a>没有可用的标头信息
 
@@ -20,9 +19,9 @@ ms.locfileid: "63331022"
 ## <span id="ddk_no_header_information_available_dbg"></span><span id="DDK_NO_HEADER_INFORMATION_AVAILABLE_DBG"></span>
 
 
-调试器通过检查相关模块的标头标识正确的符号。 如果这些模块标头都分页出来，调试器 （和符号服务器） 不能找到正确的符号。 此操作时，"无标头信息可用"中显示的符号错误消息。
+调试器通过检查相关模块的标头来标识适当的符号。 如果这些模块标头已分页，则调试器 (，并且符号服务器) 找不到正确的符号。 出现这种情况时，符号错误消息中会显示 "没有可用的标头信息"。
 
-有关如何调试目标时模块标头调出的信息，请参阅[Paged-Out 标头中读取符号](reading-symbols-from-paged-out-headers.md)。
+有关如何在对模块标头进行分页时调试目标的信息，请参阅 [从 Paged-Out 标题读取符号](reading-symbols-from-paged-out-headers.md)。
 
  
 

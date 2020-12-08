@@ -1,31 +1,30 @@
 ---
-title: PROPSETID\_VIDCAP\_DROPPEDFRAMES
-description: PROPSETID\_VIDCAP\_DROPPEDFRAMES
-ms.assetid: 0c968ff2-b0da-4416-857a-e185e58429e9
+title: PROPSETID \_ VIDCAP \_ DROPPEDFRAMES
+description: PROPSETID \_ VIDCAP \_ DROPPEDFRAMES
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f0747f7875afd8db96dba314aed1e663aa9ea2ab
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e70434dbe33a45b7eb29a7cb10e7a43e963e39b8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379951"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96833967"
 ---
-# <a name="propsetidvidcapdroppedframes"></a>PROPSETID\_VIDCAP\_DROPPEDFRAMES
+# <a name="propsetid_vidcap_droppedframes"></a>PROPSETID \_ VIDCAP \_ DROPPEDFRAMES
 
 
 ## <span id="ddk_propsetid_vidcap_droppedframes_ks"></span><span id="DDK_PROPSETID_VIDCAP_DROPPEDFRAMES_KS"></span>
 
 
-KSPROPERTY\_VIDCAP\_中的 DROPPEDFRAMES 枚举*ksmedia.h*指定此集的属性。
+\_Ksmedia 中的 KSPROPERTY VIDCAP \_ DROPPEDFRAMES *ksmedia.h* 枚举指定此集的属性。
 
-视频捕获微型驱动程序需要实现以下属性：
+需要视频捕获微型驱动程序来实现以下属性：
 
-[**KSPROPERTY\_DROPPEDFRAMES\_当前**](ksproperty-droppedframes-current.md)
+[**KSPROPERTY \_ DROPPEDFRAMES \_ CURRENT**](ksproperty-droppedframes-current.md)
 
-### <a name="span-iddirectshowinterfacespanspan-iddirectshowinterfacespandirectshow-interface"></a><span id="directshow_interface"></span><span id="DIRECTSHOW_INTERFACE"></span>DirectShow 接口
+### <a name="span-iddirectshow_interfacespanspan-iddirectshow_interfacespandirectshow-interface"></a><span id="directshow_interface"></span><span id="DIRECTSHOW_INTERFACE"></span>DirectShow 接口
 
-没有 DirectShow 界面提供访问此属性集。
+没有可提供对此属性集的访问的 DirectShow 接口。
 
  
 

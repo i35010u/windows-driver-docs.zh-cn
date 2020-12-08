@@ -1,15 +1,14 @@
 ---
 title: MobileBroadbandInfo XML 元素列表
 description: MobileBroadbandInfo XML 元素列表
-ms.assetid: 399a0d58-5464-49b2-a6da-8c645016cc1e
 ms.date: 07/05/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: effad461d542b6ece64f891826c9ab1dd38968b9
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: d4bb46e4f19f7abc1742cc36231581b8fb1468b8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89402806"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96832927"
 ---
 # <a name="mobilebroadbandinfo-xml-elements-list"></a>MobileBroadbandInfo XML 元素列表
 
@@ -39,7 +38,7 @@ ms.locfileid: "89402806"
 
                 -   [](subjectname.md)  SubjectName
 
-                -   [IssuerName](issuername.md)
+                -   [](issuername.md)  IssuerName
 
  
 

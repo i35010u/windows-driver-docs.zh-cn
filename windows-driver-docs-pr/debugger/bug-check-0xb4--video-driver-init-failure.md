@@ -1,7 +1,6 @@
 ---
 title: Bug 检查 0xB4 VIDEO_DRIVER_INIT_FAILURE
-description: VIDEO_DRIVER_INIT_FAILURE bug 检查具有 0x000000B4 值。 这表示 Windows 无法进入图形模式。
-ms.assetid: 37c2d07d-f351-42d0-ba88-9b9a2a3d19f8
+description: VIDEO_DRIVER_INIT_FAILURE bug 检查的值为0x000000B4。 这表明 Windows 无法进入图形模式。
 keywords:
 - Bug 检查 0xB4 VIDEO_DRIVER_INIT_FAILURE
 - VIDEO_DRIVER_INIT_FAILURE
@@ -13,23 +12,23 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 20ea652b025a52b4049c0a64bdafb1a728cbc9d1
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: f77cf43fd1a2479544180d0fb1a12a35255d6628
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67519013"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96832845"
 ---
-# <a name="bug-check-0xb4-videodriverinitfailure"></a>Bug 检查 0xB4：视频\_驱动程序\_INIT\_失败
+# <a name="bug-check-0xb4-video_driver_init_failure"></a>Bug 检查0xB4：视频 \_ 驱动程序 \_ 初始化 \_ 失败
 
 
-视频\_驱动程序\_INIT\_故障错误检查的值为 0x000000B4。 这表示 Windows 无法进入图形模式。
+视频 \_ 驱动程序 \_ 初始化 \_ 失败 bug 检查的值为0x000000B4。 这表明 Windows 无法进入图形模式。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题面向程序员。 如果您是在使用计算机时收到蓝屏错误代码的客户，请参阅[蓝屏错误疑难解答](https://www.windows.com/stopcode)。
 
 
-## <a name="videodriverinitfailure-parameters"></a>视频\_驱动程序\_INIT\_失败参数
+## <a name="video_driver_init_failure-parameters"></a>视频 \_ 驱动程序 \_ 初始化 \_ 失败参数
 
 
 无
@@ -37,9 +36,9 @@ ms.locfileid: "67519013"
 <a name="cause"></a>原因
 -----
 
-系统无法进入图形模式，因为没有显示器驱动程序已启动。
+系统无法进入图形模式，因为没有显示驱动程序可以启动。
 
-这通常发生在任何微型端口驱动程序不都能够成功加载。
+如果没有视频微型端口驱动程序无法成功加载，通常会发生这种情况。
 
  
 

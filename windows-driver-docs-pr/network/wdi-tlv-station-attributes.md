@@ -1,23 +1,22 @@
 ---
 title: WDI_TLV_STATION_ATTRIBUTES
-description: WDI_TLV_STATION_ATTRIBUTES 是工作站的包含特性 TLV。
-ms.assetid: CB15D3A4-5B42-44ED-A8A8-3E7F09B65F8B
+description: WDI_TLV_STATION_ATTRIBUTES 是包含工作站属性的 TLV。
 ms.date: 02/14/2019
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_STATION_ATTRIBUTES 网络驱动程序
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 078cb0e1b477d5ac64b6b0df6a016f4f93a69bca
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: edaacef09803a50bb33b1a70a54c491fe4572169
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63330397"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96834149"
 ---
-# <a name="wditlvstationattributes"></a>WDI\_TLV\_工作站\_属性
+# <a name="wdi_tlv_station_attributes"></a>WDI \_ TLV \_ 工作站 \_ 属性
 
 
-WDI\_TLV\_工作站\_属性是包含特性的工作站 TLV。
+WDI \_ tlv \_ 工作站 \_ 属性是包含工作站属性的 tlv。
 
 ## <a name="tlv-type"></a>TLV 类型
 
@@ -26,17 +25,17 @@ WDI\_TLV\_工作站\_属性是包含特性的工作站 TLV。
 ## <a name="length"></a>长度
 
 
-所有的大小 （以字节为单位） 总和包含 TLVs。
+Sum (包含所有 TLVs 的大小的) 字节。
 
 ## <a name="values"></a>值
 
 
-| 在任务栏的搜索框中键入 | 允许多个 TLV 实例 | 可选 | 描述 |
+| 类型 | 允许多个 TLV 实例 | 可选 | 说明 |
 |--- | --- | --- | --- |
-| [**WDI\_TLV\_工作站\_功能**](wdi-tlv-station-capabilities.md) |   |   | 工作站的功能。 |
-| [**WDI\_TLV\_UNICAST\_ALGORITHM\_LIST**](wdi-tlv-unicast-algorithm-list.md) |   | X | 支持的单播算法中。 |
-| [**WDI\_TLV\_MULTICAST\_DATA\_ALGORITHM\_LIST**](wdi-tlv-multicast-data-algorithm-list.md) |   | X  | 支持多播的数据的算法。 |
-| [**WDI\_TLV\_MULTICAST\_MGMT\_ALGORITHM\_LIST**](wdi-tlv-multicast-mgmt-algorithm-list.md) |   | X  | 支持多播的管理算法中。 |
+| [**WDI \_ TLV \_ 工作站 \_ 功能**](wdi-tlv-station-capabilities.md) |   |   | 工作站功能。 |
+| [**WDI \_ TLV \_ 单播 \_ 算法 \_ 列表**](wdi-tlv-unicast-algorithm-list.md) |   | X | 支持的单播算法。 |
+| [**WDI \_ TLV \_ 多播 \_ 数据 \_ 算法 \_ 列表**](wdi-tlv-multicast-data-algorithm-list.md) |   | X  | 支持的多播数据算法。 |
+| [**WDI \_ TLV \_ 多播 \_ 管理 \_ 算法 \_ 列表**](wdi-tlv-multicast-mgmt-algorithm-list.md) |   | X  | 支持的多播管理算法。 |
 
 <a name="requirements"></a>要求
 ------------
@@ -53,10 +52,10 @@ WDI\_TLV\_工作站\_属性是包含特性的工作站 TLV。
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
-<td><p>Windows Server 2016</p></td>
+<td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Wditypes.hpp</td>
 </tr>
 </tbody>

@@ -1,7 +1,6 @@
 ---
 title: 'CompleteRequest 规则 (wdm) '
 description: CompleteRequest 规则验证在完成例程运行后不调用 IoCompleteRequest 例程，并且它不会返回 " \_ 需要更多的处理" 状态 \_ \_ 。
-ms.assetid: 2F6BA5D9-EC31-4C5D-8C98-EE33CE487498
 ms.date: 05/21/2018
 keywords:
 - 'CompleteRequest 规则 (wdm) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 6954b855abeeabcf7062fa13369a69522b83e010
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 6fe332f38f7131a048d64f402e2a20f5e0ba1d1f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104926"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96832505"
 ---
 # <a name="completerequest-rule-wdm"></a>CompleteRequest 规则 (wdm) 
 
 
-**CompleteRequest**规则验证在完成例程运行后不调用[**IoCompleteRequest**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocompleterequest)例程，并且它不会返回 " \_ 需要更多的处理" 状态 \_ \_ 。
+**CompleteRequest** 规则验证在完成例程运行后不调用 [**IoCompleteRequest**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocompleterequest)例程，并且它不会返回 " \_ 需要更多的处理" 状态 \_ \_ 。
 
 此规则将在以下情况下报告缺陷：
 

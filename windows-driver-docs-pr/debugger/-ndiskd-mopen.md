@@ -1,7 +1,6 @@
 ---
 title: ndiskd.mopen
 description: Ndiskd. mopen 扩展显示有关微型端口和协议之间的绑定的信息。
-ms.assetid: 439c4647-8f3e-4473-aca8-364b5d2206e9
 keywords:
 - ndiskd mopen Windows 调试
 ms.date: 06/15/2020
@@ -12,16 +11,16 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 1c88d4c5b74d303311a4e10c8ec56dee8a7a6fd5
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 9341062cd295543de3c5e4a364039b6b18d4770f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89216764"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96832867"
 ---
 # <a name="ndiskdmopen"></a>!ndiskd.mopen
 
-**！ Ndiskd mopen**扩展显示有关微型端口和协议之间的绑定的信息。 如果运行不带参数的此扩展，！ ndiskd 将显示 NDIS 微型端口驱动程序和协议驱动程序之间所有打开的绑定的列表。
+**！ Ndiskd mopen** 扩展显示有关微型端口和协议之间的绑定的信息。 如果运行不带参数的此扩展，！ ndiskd 将显示 NDIS 微型端口驱动程序和协议驱动程序之间所有打开的绑定的列表。
 
 ```console
 !ndiskd.mopen [-handle <x>] [-ref] 
@@ -101,7 +100,7 @@ RECEIVE PATH
     Frame Type(s)      0x86dd
 ```
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [网络驱动程序设计指南](../network/index.md)
 
@@ -109,6 +108,6 @@ RECEIVE PATH
 
 [调试网络堆栈](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-175-Debugging-the-Network-Stack)
 
-[**NDIS 扩展 ( # A0) **](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 扩展 ( # A0)**](ndis-extensions--ndiskd-dll-.md)
 
 [**!ndiskd.help**](-ndiskd-help.md)

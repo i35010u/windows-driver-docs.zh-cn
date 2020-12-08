@@ -1,7 +1,6 @@
 ---
 title: 连接和文件结构管理
 description: 连接和文件结构管理
-ms.assetid: 3695cab3-6751-48ee-8b11-e70c2bceab29
 keywords:
 - 数据结构 WDK 文件系统
 - RDBSS WDK 文件系统、连接和文件结构
@@ -12,12 +11,12 @@ keywords:
 - 连接信息 WDK RDBSS
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 28202caead2926a71b164fe078f0d68a9deb0973
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: aff579534bc0aa53efed72a0bdb4b04125735d12
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89065124"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96834583"
 ---
 # <a name="connection-and-file-structure-management"></a>连接和文件结构管理
 

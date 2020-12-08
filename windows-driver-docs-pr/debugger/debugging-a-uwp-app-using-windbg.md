@@ -1,15 +1,14 @@
 ---
 title: 使用 WinDbg 调试 UWP 应用
 description: 您可以使用 WinDbg 调试通用 Windows 平台 (UWP) 应用程序。
-ms.assetid: 1CE337AC-54C0-4EF5-A374-3ECF1D72BA60
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 41522043b6fc8d7e83b4fdde98d9049fb30fe553
-ms.sourcegitcommit: 878a1cb0149dc18ccbd31774e12bad76084dfa24
+ms.openlocfilehash: 8e00f93e13bc79911da281385d953afb6d80ab25
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94937819"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96833187"
 ---
 # <a name="debugging-a-uwp-app-using-windbg"></a>使用 WinDbg 调试 UWP 应用
 
@@ -72,7 +71,7 @@ windbg.exe -plmPackage <PLMPackageName> -plmApp <ApplicationId> [<parameters>]
 
 使用 querypackages 命令可找到完整的包名称和 AppId。 键入 querypackages，然后按 user CRTL + F 在应用程序名称的输出中向上搜索，例如 HelloWorld。 当使用 CTRL + F 定位项时，它将显示包的完整名称，例如 *e24caf14-8483-4743-b80c-ca46c28c75df \_ 1.0.0.0 \_ X86 \_ \_ 97Ghe447vaan8* 和 *应用程序* 的 AppId。
 
-例如：
+示例：
 
 ```dbgcmd
 0:000>  .querypackages 
@@ -223,7 +222,7 @@ Querypackage 显示 UWP 应用程序的状态。 例如，如果应用程序正�
 .querypackage <PLMPackageName>
 ```
 
-例如：
+示例：
 
 ```dbgcmd
 0:000> .querypackage e24caf14-8483-4743-b80c-ca46c28c75df_1.0.0.0_x86__97ghe447vaan8
@@ -247,7 +246,7 @@ Querypackages 命令将列出所有已安装的 UWP 应用程序及其当前状�
 .querypackages
 ```
 
-例如：
+示例：
 
 ```dbgcmd
 0:000> .querypackages
@@ -326,7 +325,7 @@ Createpackageapp 命令启用调试并启动 UWP 应用程序。
 
  
 
-例如：
+示例：
 
 ```dbgcmd
 .createpackageapp e24caf14-8483-4743-b80c-ca46c28c75df_1.0.0.0_x86__97ghe447vaan8 App
@@ -344,7 +343,7 @@ Enablepackagedebug 命令启用 UWP 应用程序调试。 在调用任何挂起�
 .enablepackagedebug <PLMPackageName>
 ```
 
-例如：
+示例：
 
 ```dbgcmd
 .enablepackagedebug e24caf14-8483-4743-b80c-ca46c28c75df_1.0.0.0_x86__97ghe447vaan8
@@ -358,7 +357,7 @@ Disablepackagedebug 命令禁用 UWP 应用程序调试。
 .disablepackagedebug <PLMPackageName>
 ```
 
-例如：
+示例：
 
 ```dbgcmd
 .disablepackagedebug e24caf14-8483-4743-b80c-ca46c28c75df_1.0.0.0_x86__97ghe447vaan8
@@ -376,7 +375,7 @@ Suspendpackage 命令挂起 UWP 应用程序。
 .suspendpackage <PLMPackageName> 
 ```
 
-例如：
+示例：
 
 ```dbgcmd
 0:024> .suspendpackage e24caf14-8483-4743-b80c-ca46c28c75df_1.0.0.0_x86__97ghe447vaan8
@@ -390,7 +389,7 @@ Resumepackage 命令恢复 UWP 应用程序。
 .resumepackage <PLMPackageName> 
 ```
 
-例如：
+示例：
 
 ```dbgcmd
 .resumepackage e24caf14-8483-4743-b80c-ca46c28c75df_1.0.0.0_x86__97ghe447vaan8
@@ -404,7 +403,7 @@ Terminatepackageapp 命令终止包中的所有 UWP 应用程序。
 .terminatepackageapp <PLMPackageName> 
 ```
 
-例如：
+示例：
 
 ```dbgcmd
 .terminatepackageapp e24caf14-8483-4743-b80c-ca46c28c75df_1.0.0.0_x86__97ghe447vaan8
@@ -420,7 +419,7 @@ Activatepackagebgtask 命令启用调试，并启动 UWP 后台任务。
  .activatepackagebgtask <PLMPackageName> <bgTaskId>
 ```
 
-例如：
+示例：
 
 ```dbgcmd
 .activatepackagebgtask Microsoft.SDKSamples.BackgroundTask.CPP_1.0.0.0_x64__8wekyb3d8bbwe {C05806B1-9647-4765-9A0F-97182CEA5AAD}

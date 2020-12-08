@@ -1,15 +1,14 @@
 ---
 title: ComputerHardwareIds
 description: ComputerHardwareIds
-ms.assetid: ee2c53d3-680d-4988-8eb9-a3713ea47ca4
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 90b1650f5320c1192f96977e9468048a73ed2c87
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: fc49a950f2795b8bd0ee375c06d095355fb5f3d3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91733582"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96833569"
 ---
 # <a name="computerhardwareids"></a>ComputerHardwareIds
 

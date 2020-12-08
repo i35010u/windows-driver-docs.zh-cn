@@ -1,15 +1,14 @@
 ---
 title: 'O (Windows 调试器词汇表) '
 description: 词汇表页-O
-ms.assetid: b7510a3d-61f3-4eeb-8781-be3eb27ba27d
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f44caacb60d794ab41c4aae2d38a84fc5468f4c
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 0c970476394b77d38c1f3d06644f57ee093d4c19
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89210861"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96833639"
 ---
 # <a name="o"></a>O
 

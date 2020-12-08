@@ -1,7 +1,6 @@
 ---
 title: GUID_BTHPORT_DEVICE_INTERFACE
 description: GUID_BTHPORT_DEVICE_INTERFACE
-ms.assetid: 2e23912c-ab5b-4c4d-94c7-e763544cc2f5
 keywords:
 - GUID_BTHPORT_DEVICE_INTERFACE 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 9f288f533d662c5a114c0a62177513214aa8f249
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: a352dd8d51e557b16ccb7e6f0aca8bd2461589c3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89095711"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96833494"
 ---
 # <a name="guid_bthport_device_interface"></a>GUID_BTHPORT_DEVICE_INTERFACE
 

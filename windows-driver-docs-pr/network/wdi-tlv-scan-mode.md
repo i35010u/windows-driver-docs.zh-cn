@@ -1,17 +1,16 @@
 ---
 title: WDI_TLV_SCAN_MODE
 description: WDI_TLV_SCAN_MODE 是包含扫描模式参数的 TLV。
-ms.assetid: 9F954B66-4F1D-48F2-9316-BE623DF0CAE6
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_SCAN_MODE 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: dcceed528fa29ba8ac1b68791d2992805522bd2e
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 82be0d69af13f23ee5f5e76145a146a7a96cdf36
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89208471"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96834177"
 ---
 # <a name="wdi_tlv_scan_mode"></a>WDI \_ TLV \_ 扫描 \_ 模式
 
@@ -23,7 +22,7 @@ WDI \_ tlv \_ 扫描 \_ 模式是包含扫描模式参数的 tlv。
 
 0x6
 
-## <a name="length"></a>Length
+## <a name="length"></a>长度
 
 
 Sum (所有包含的元素的大小) 。
@@ -31,7 +30,7 @@ Sum (所有包含的元素的大小) 。
 ## <a name="values"></a>值
 
 
-| 类型                                                | 说明                                                                                                                                                                                                                       |
+| 类型                                                | 描述                                                                                                                                                                                                                       |
 |-----------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | UINT8                                               | 完整扫描过程应重复的次数。 如果此值设置为0，则在主机中止任务之前，应重复扫描。                                                                     |
 | [**WDI \_ 扫描 \_ 类型**](/windows-hardware/drivers/ddi/wditypes/ne-wditypes-_wdi_scan_type)       | 指定应执行的扫描的类型。 如果 \_ \_ 设置了 WDI 扫描类型 \_ "活动"，则设备必须只扫描活动通道。                                                                                                |
@@ -55,7 +54,7 @@ Sum (所有包含的元素的大小) 。
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
-<td><p>Windows Server 2016</p></td>
+<td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
 <td><p>标头</p></td>

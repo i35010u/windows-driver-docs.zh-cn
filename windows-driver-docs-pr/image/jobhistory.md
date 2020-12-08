@@ -1,7 +1,6 @@
 ---
-title: JobHistory 元素（必需）
+title: 'JobHistory 元素 (必需的) '
 description: 必需的 JobHistory 元素包含一个 JobSummary 元素列表，这些元素描述扫描设备中最近完成的作业。
-ms.assetid: d1439e56-b2fe-4db8-b063-56537a3346c6
 keywords:
 - JobHistory 元素图像设备
 topic_type:
@@ -12,15 +11,16 @@ api_type:
 - Schema
 ms.date: 07/06/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 4f16fcbeec046dbeabc8af1d81ce4f83fb749a90
-ms.sourcegitcommit: 40d7d538756767d26bbda636589f614f85a6fab3
+ms.openlocfilehash: e8f799386d18204072a699dbafe89cd975e72ea3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/06/2020
-ms.locfileid: "86020048"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96834537"
 ---
-# <a name="jobhistory-element-required"></a>JobHistory 元素（必需）
+# <a name="jobhistory-element-required"></a>JobHistory 元素 (必需的) 
 
-必需的**JobHistory**元素包含一个[**JobSummary**](jobsummary.md)元素列表，这些元素描述扫描设备中最近完成的作业。
+必需的 **JobHistory** 元素包含一个 [**JobSummary**](jobsummary.md) 元素列表，这些元素描述扫描设备中最近完成的作业。
 
 ## <a name="usage"></a>使用情况
 
@@ -30,7 +30,7 @@ ms.locfileid: "86020048"
 </wscn:JobHistory>
 ```
 
-## <a name="attributes"></a>属性
+## <a name="attributes"></a>特性
 
 没有特性。
 
@@ -46,13 +46,13 @@ ms.locfileid: "86020048"
 |--|
 | [**GetJobHistoryResponse**](getjobhistoryresponse.md) |
 
-## <a name="remarks"></a>注解
+## <a name="remarks"></a>备注
 
-对于扫描仪最近完成的每个作业， **JobHistory**元素都包含一个[**JobSummary**](jobsummary.md)元素。 如果 WSD 扫描服务没有最近完成的作业的记录，则**JobHistory**为空。 扫描服务从[**GetJobHistoryResponse**](getjobhistoryresponse.md)返回此列表。
+对于扫描仪最近完成的每个作业， **JobHistory** 元素都包含一个 [**JobSummary**](jobsummary.md) 元素。 如果 WSD 扫描服务没有最近完成的作业的记录，则 **JobHistory** 为空。 扫描服务从 [**GetJobHistoryResponse**](getjobhistoryresponse.md)返回此列表。
 
 WSD 扫描服务存储和返回的作业历史记录量是特定于实现的。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [**GetJobHistoryResponse**](getjobhistoryresponse.md)
 

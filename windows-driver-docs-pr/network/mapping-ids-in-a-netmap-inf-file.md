@@ -1,23 +1,22 @@
 ---
 title: Netmap.inf 文件中的映射 ID
 description: Netmap.inf 文件中的映射 ID
-ms.assetid: 7cab4aa1-8b0b-4cdc-a093-b91be6170961
 keywords:
-- 网络组件升级，WDK，netmap.inf 文件
-- 升级网络组件 WDK，netmap.inf 文件
-- netmap.inf 文件 WDK
+- 网络组件升级 WDK，netmap .inf 文件
+- 升级网络组件 WDK，netmap .inf 文件
+- netmap 文件 WDK
 - 映射网络组件 Id
-- ID 映射 WDK netmap.inf
-- 设备 Id WDK netmap.inf
-- 供应商提供的文件 WDK netmap.inf 文件
+- ID 映射 WDK netmap
+- 设备 Id WDK netmap
+- 供应商提供的文件 WDK netmap 文件
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d3a4342a2285ad86a97619b78b68baee07ee2a14
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 41c204c12dbce3332186ea9d68b72dc094bec829
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63343473"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96833355"
 ---
 # <a name="mapping-ids-in-a-netmapinf-file"></a>Netmap.inf 文件中的映射 ID
 
@@ -25,11 +24,11 @@ ms.locfileid: "63343473"
 
 
 
-**请注意**  供应商提供网络升级不支持在 Microsoft Windows XP (SP1 和更高版本)，Microsoft Windows Server 2003 和更高版本操作系统。
+**注意**  Microsoft Windows XP (SP1 及更高版本) 、Microsoft Windows Server 2003 和更高版本的操作系统不支持供应商提供的网络升级。
 
  
 
-Netmap.inf 文件包含一个或多个以下顶级部分。 每个部分包含中列出的组件的 ID 映射**映射**列。
+Netmap 文件包含一个或多个以下顶级部分。 每个部分都包含 " **映射** " 列中列出的组件的 ID 映射。
 
 <table>
 <colgroup>
@@ -68,9 +67,9 @@ Netmap.inf 文件包含一个或多个以下顶级部分。 每个部分包含�
 
  
 
-部分中的每个条目映射网络组件的升级前的设备，硬件或兼容 ID 到其相应的 Windows 2000 或更高版本 id。 每个条目指定任一配置文件*一对一*ID 映射或*一个多*ID 映射。 介绍了以下的这些映射策略。
+部分中的每个条目将网络组件的 preupgrade 设备、硬件或兼容 ID 映射到其对应的 Windows 2000 或更高版本的 ID。 每个条目均指定 *一对一* *id 映射或一对多* id 映射。 下面介绍了这些映射策略。
 
-网络客户端未在 Windows NT 3.51 和 Windows NT 4.0; 这种情况下定义因此，如果前面的网络服务变得的网络客户端在 Windows 2000 或更高版本，其设备 ID 映射必须列在**OemNetClients**部分中，不能在**OemNetServices**部分。
+网络客户端未在 Windows NT 3.51 和 Windows NT 4.0 中进行定义，因此，如果早期的网络服务成为 Windows 2000 或更高版本下的网络客户端，则其设备 ID 映射必须在 **OemNetClients** 节中列出，而不是在 **OemNetServices** 节中列出。
 
  
 

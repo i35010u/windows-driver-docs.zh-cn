@@ -1,17 +1,16 @@
 ---
 title: WDI_TLV_SET_CIPHER_KEY_INFO
 description: WDI_TLV_SET_CIPHER_KEY_INFO 是一种 TLV，其中包含 OID_WDI_SET_ADD_CIPHER_KEYS 的密码密钥映射关键信息。
-ms.assetid: 6352284A-73CD-4B15-A057-80D0C8518CD5
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_SET_CIPHER_KEY_INFO 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 53fc44038057b810948fd84b76102bb71bdb0423
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 87a39d6ebbaf7be52bbff52c65037c7540c26cfd
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89212683"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96834171"
 ---
 # <a name="wdi_tlv_set_cipher_key_info"></a>WDI \_ TLV \_ 设置 \_ 密码 \_ 密钥 \_ 信息
 
@@ -23,7 +22,7 @@ WDI \_ tlv \_ 设置 \_ 密码 \_ 密钥 \_ 信息是一个 TLV，其中包含 O
 
 0x52
 
-## <a name="length"></a>Length
+## <a name="length"></a>长度
 
 
 Sum (包含所有 TLVs 的大小的) 字节。
@@ -60,7 +59,7 @@ Sum (包含所有 TLVs 的大小的) 字节。
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
-<td><p>Windows Server 2016</p></td>
+<td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
 <td><p>标头</p></td>

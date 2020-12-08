@@ -1,19 +1,18 @@
 ---
 title: 非 RSS 接收处理
 description: 非 RSS 接收处理
-ms.assetid: 9fe262c3-9ce5-4625-8d29-ff7dc4ccb90a
 keywords:
 - 接收方缩放 WDK 网络，非 RSS 接收处理
 - RSS WDK 网络，非 RSS 接收处理
 - 非 RSS 接收处理 WDK RSS
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 72baa6df0ab71bf044b0af4bd52b492105701514
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 8a508bdec70459d560d4163e640e394affc8c4c3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89206079"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96834361"
 ---
 # <a name="non-rss-receive-processing"></a>非 RSS 接收处理
 

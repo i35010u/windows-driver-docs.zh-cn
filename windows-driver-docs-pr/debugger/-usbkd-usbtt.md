@@ -1,7 +1,6 @@
 ---
 title: usbkd.usbtt
 description: Usbkd. usbtt 命令显示 USBPORT _TRANSACTION_TRANSLATOR 结构中的信息。
-ms.assetid: 4D599BCE-C6C3-42B3-BDCE-EE9E47FA6AB7
 keywords:
 - usbkd usbtt Windows 调试
 ms.date: 05/23/2017
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 2e8baa90ae6cb985cd6c1f93f3e2c7826e9d7c3a
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: ea8d4e90e448ab7126ea5117d3b309b7b8ccd80e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89217923"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96833875"
 ---
 # <a name="usbkdusbtt"></a>!usbkd.usbtt
 
 
-**！ Usbkd. usbtt**命令显示 USBPORT 中的信息 **！ \_事务 \_ 转换器**结构。
+**！ Usbkd. usbtt** 命令显示 USBPORT 中的信息 **！ \_事务 \_ 转换器** 结构。
 
 ```dbgcmd
 !usbkd.usbtt StructAddr
@@ -51,9 +50,9 @@ Usbkd.dll
 ...
 ```
 
-在上面的输出中，FDO 的设备扩展的地址显示为 [DML](debugger-markup-language-commands.md) 命令 **！ ehci \_ info ffffe00001ca11a0**的参数。
+在上面的输出中，FDO 的设备扩展的地址显示为 [DML](debugger-markup-language-commands.md) 命令 **！ ehci \_ info ffffe00001ca11a0** 的参数。
 
-单击 DML 命令或将设备扩展的地址传递给 [**！ usbhcdext**](-usbkd-usbhcdext.md) ，以获取的地址 `GlobalTtListHead` 。 将该地址传递给[**！ usbkd. usblist**](-usbkd-usblist.md)，这将显示** \_ 事务 \_ 转换器**结构的地址。
+单击 DML 命令或将设备扩展的地址传递给 [**！ usbhcdext**](-usbkd-usbhcdext.md) ，以获取的地址 `GlobalTtListHead` 。 将该地址传递给 [**！ usbkd. usblist**](-usbkd-usblist.md)，这将显示 **\_ 事务 \_ 转换器** 结构的地址。
 
 ## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 

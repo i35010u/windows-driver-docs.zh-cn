@@ -1,9 +1,8 @@
 ---
 title: JobEndState 元素
-description: 所需的 JobEndState 元素描述当前扫描作业的最终状态。
-ms.assetid: c69b5988-ca0d-441f-9b65-e5692a17ccb3
+description: 必需的 JobEndState 元素描述当前扫描作业的最终状态。
 keywords:
-- JobEndState 元素成像设备
+- JobEndState 元素图像设备
 topic_type:
 - apiref
 api_name:
@@ -12,19 +11,19 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1137667a5f0640aad6510bd540ea05545f278bfe
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 522a40f309b3c727e97420331aa7b0b7489e29a0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63348835"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96834539"
 ---
 # <a name="jobendstate-element"></a>JobEndState 元素
 
 
-所需**JobEndState**元素描述当前扫描作业的最终状态。
+必需的 **JobEndState** 元素描述当前扫描作业的最终状态。
 
-<a name="usage"></a>用法
+<a name="usage"></a>使用情况
 -----
 
 ```xml
@@ -97,7 +96,7 @@ ms.locfileid: "63348835"
 <a name="remarks"></a>备注
 -------
 
-**JobEndState**元素包含子元素的描述信息的最终状态的扫描作业的各个方面。 WSD 扫描服务发送**JobEndState**通过在客户端元素[ **JobEndStateEvent** ](jobendstateevent.md)元素。
+**JobEndState** 元素包含一些子元素，这些子元素描述有关扫描作业的结束状态的各个方面。 WSD 扫描服务通过 [**JobEndStateEvent**](jobendstateevent.md)元素将 **JobEndState** 元素发送到客户端。
 
 ## <a name="see-also"></a>请参阅
 

@@ -1,7 +1,6 @@
 ---
 title: AVStream 中的流控制门
 description: AVStream 中的流控制门
-ms.assetid: c5592f92-a432-44e3-afe0-60fcf917a443
 keywords:
 - AVStream 逻辑关口 WDK
 - 逻辑门 WDK AVStream
@@ -12,12 +11,12 @@ keywords:
 - 处理控制入口 WDK AVStream
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f436129ad01c176d4f714c829f275e195e926289
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 24c8afc91c854af47ca2d2705cad9823f46b164f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89191437"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96832579"
 ---
 # <a name="flow-control-gates-in-avstream"></a>AVStream 中的流控制门
 
@@ -35,9 +34,9 @@ AVStream 使用单和门初始化每个筛选器或 pin。 然后，微型驱动
 
 同样，可以调用 [**KsGateTurnInputOn**](/windows-hardware/drivers/ddi/ks/nf-ks-ksgateturninputon) 来打开现有的特定入口输入。
 
-当线程准备好进行处理时，它会尝试捕获控制处理对象处理的和*入口的。* 为此，微型驱动程序调用了 [**KsGateCaptureThreshold**](/windows-hardware/drivers/ddi/ks/nf-ks-ksgatecapturethreshold)。
+当线程准备好进行处理时，它会尝试捕获控制处理对象处理的和 *入口的。* 为此，微型驱动程序调用了 [**KsGateCaptureThreshold**](/windows-hardware/drivers/ddi/ks/nf-ks-ksgatecapturethreshold)。
 
-如果和入口为打开状态，则 AVStream 会关闭入口的输入，并且处理开始。 由于入口在处理过程中已关闭，因此没有其他线程可以捕获入口*的输入。* 一次只能有一个线程可以处理数据。
+如果和入口为打开状态，则 AVStream 会关闭入口的输入，并且处理开始。 由于入口在处理过程中已关闭，因此没有其他线程可以捕获入口 *的输入。* 一次只能有一个线程可以处理数据。
 
 若要在不进行修改的情况下检查入口的状态，微型驱动程序可以调用 [**KsGateGetStateUnsafe**](/windows-hardware/drivers/ddi/ks/nf-ks-ksgategetstateunsafe)。 但请注意，此函数不会处理同步。
 
@@ -55,7 +54,7 @@ Count = 1- (*关* 输入数量)
 
 对于或入口，KSGATE 的 **Count** 成员的值 *是输入到入口的数目* ：
 
-计数 = * (输入数量*) 
+计数 = *(输入数量*) 
 
 如果此值等于零，则关闭入口。 如果 **Count** 大于零，则门处于打开状态。
 

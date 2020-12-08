@@ -1,15 +1,14 @@
 ---
 title: UE 挂起检测步骤1-14
 description: 下面介绍了 UE 挂检测的步骤1到14。 这些步骤对应于 UE 挂起检测和恢复流中显示的关系图。
-ms.assetid: 0F6F9B31-27FB-44B1-8C0E-A270E8BAF295
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 07a62991e3dc4f24282c3bb64436a05f1799a842
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: a2a3381a3eb3fd6b89f42b1102da2c4c678967d1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89216074"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96834095"
 ---
 # <a name="ue-hang-detection-steps-1-14"></a>UE 挂起检测：步骤1-14
 
@@ -42,7 +41,7 @@ ms.locfileid: "89216074"
 
 在此之后，NDIS 会调用总线来意外删除并重新枚举我们。 务必要注意的是，WDI 双缓冲 NDIS 命令，使其不必等待 WDI 命令返回完成 NDIS 命令。 这样，便无需执行 "取消逻辑" 这一操作。
 
-\_ \_ 为了避免 PnP 操作发生死锁，NDIS OID 设置能力的完成是必需的。 序列化所有 PnP 和电源状态变化事件。 这意味着，如果已设置的电源 OID 未返回，NDIS 将无法返回 Set power IRP，这意味着重置恢复会锁定并返回 "意外删除" IRP。
+\_ \_ 为了避免 PnP 操作发生死锁，NDIS OID 设置能力的完成是必需的。 序列化所有 PnP 和电源状态变化事件。 这意味着，如果已设置的电源 OID 未返回，NDIS 将无法返回 Set power IRP，这意味着重置恢复会与 Surprise-Remove IRP 进行锁定。
 
 ## <a name="related-topics"></a>相关主题
 

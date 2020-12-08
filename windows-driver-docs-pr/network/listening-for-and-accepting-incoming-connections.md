@@ -1,7 +1,6 @@
 ---
 title: 侦听和接受传入连接
 description: 侦听和接受传入连接
-ms.assetid: 3ec7d6d0-8b8c-4d98-9e2a-e42b52dcd544
 keywords:
 - Winsock 内核 WDK 网络，传入连接
 - WSK WDK 网络，传入连接
@@ -14,12 +13,12 @@ keywords:
 - WskAccept
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2a35d155aba9475cd390f3b37e605ba910c2a1af
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 5e2ce2551958537e385d01edc96ec07a0e0b4a5a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89214065"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96833405"
 ---
 # <a name="listening-for-and-accepting-incoming-connections"></a>侦听和接受传入连接
 

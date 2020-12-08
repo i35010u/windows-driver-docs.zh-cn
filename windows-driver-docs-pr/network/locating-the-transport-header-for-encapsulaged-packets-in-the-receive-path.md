@@ -1,21 +1,20 @@
 ---
 title: 正在为接收的封装的数据包定位传输标头
 description: 在接收路径中查找已封装数据包的传输标头
-ms.assetid: D3BDE575-C9EB-49E3-9B61-FDB99B68ED8E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 49d2d1cd8f4a65d1882596e1a57dbb051f0efa6f
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: bc3870f5ab6e76c6818c533a5c991c1717731a3d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89211037"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96833397"
 ---
 # <a name="locating-the-transport-header-for-encapsulated-packets-in-the-receive-path"></a>在接收路径中查找已封装数据包的传输标头
 
 接收数据包时，支持 [使用通用路由封装的网络虚拟化的 NIC (NVGRE) ](network-virtualization-using-generic-routing-encapsulation--nvgre--task-offload.md) 必须首先确定数据包是否被封装，如果是，还必须确定封装类型。
 
-**注意**   在发送路径中，如果[**NDIS \_ TCP \_ 发送 \_ 卸载 \_ 补充的 \_ 网络 \_ 缓冲区 \_ 列表 \_ 信息**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_tcp_send_offloads_supplemental_net_buffer_list_info)，则封装数据包。**IsEncapsulatedPacket**为**TRUE**。
+**注意**  在发送路径中，如果 [**NDIS \_ TCP \_ 发送 \_ 卸载 \_ 补充的 \_ 网络 \_ 缓冲区 \_ 列表 \_ 信息**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_tcp_send_offloads_supplemental_net_buffer_list_info)，则封装数据包。**IsEncapsulatedPacket** 为 **TRUE**。
  
 
 在接收路径中，NIC 必须通过检查 IPv4 隧道 (外部) 标头的 **协议** 字段中的协议号或 IPv6 隧道 (外部) 标头的 **NextHeader** 字段，来确定数据包是否已封装。 可以在中找到分配的协议编号的列表 <https://www.iana.org/assignments/protocol-numbers/protocol-numbers.xml> 。

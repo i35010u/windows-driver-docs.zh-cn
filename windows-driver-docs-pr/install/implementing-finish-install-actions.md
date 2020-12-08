@@ -1,7 +1,6 @@
 ---
 title: 实施 Finish-Install 操作
 description: 实施 Finish-Install 操作
-ms.assetid: accdf2f5-f324-41dc-afc1-18e03b422fcc
 keywords:
 - 完成-安装操作 WDK 设备安装
 - 操作 WDK 完成-安装
@@ -9,12 +8,12 @@ keywords:
 - DIF_FINISHINSTALL_ACTION
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c6e22a74db4668c7e278c91e56fa828eb5afb65b
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: e593b3831789d548d6943339c83b4d9773e011e7
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89097103"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96832661"
 ---
 # <a name="implementing-finish-install-actions"></a>实施 Finish-Install 操作
 
@@ -68,7 +67,7 @@ ms.locfileid: "89097103"
 
 
 
-有关如何开发 "完成-安装" 操作的信息，请参阅为演示如何实现完成-安装操作的示例代码 [实现完成安装操作的准则](guidelines-for-implementing-finish-install-actions.md) ，请参阅以下主题：
+有关如何开发 "完成-安装" 操作的信息，请参阅如何实现 [Finish-Install 操作的指南](guidelines-for-implementing-finish-install-actions.md) ，以了解如何实现完成安装操作的示例代码，请参阅以下主题：
 
 [代码示例：类安装程序中的 Finish-Install 操作](code-example--finish-install-actions-in-a-class-installer.md)
 

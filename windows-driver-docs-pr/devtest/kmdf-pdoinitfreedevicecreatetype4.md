@@ -1,7 +1,6 @@
 ---
 title: 'PdoInitFreeDeviceCreateType4 规则 (kmdf) '
 description: PdoInitFreeDeviceCreateType4 规则指定如果驱动程序调用 WdfDeviceCreate 时出现错误，驱动程序必须调用 WdfDeviceInitFree。
-ms.assetid: 9293f293-7de6-476a-ab35-09174b7b3480
 ms.date: 05/21/2018
 keywords:
 - 'PdoInitFreeDeviceCreateType4 规则 (kmdf) '
@@ -12,19 +11,19 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: b5f17fba6131fbfbcc6fb67aea40fec2f94c68c4
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 173c4cc37ed2d32e768bbcbbbb0786a444d1e9d5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90101600"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96833535"
 ---
 # <a name="pdoinitfreedevicecreatetype4-rule-kmdf"></a>PdoInitFreeDeviceCreateType4 规则 (kmdf) 
 
 
-PdoInitFreeDeviceCreateType4 规则指定如果驱动程序调用[**WdfDeviceCreate**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicecreate)时出现错误，驱动程序必须调用[**WdfDeviceInitFree**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceinitfree) 。
+PdoInitFreeDeviceCreateType4 规则指定如果驱动程序调用 [**WdfDeviceCreate**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicecreate)时出现错误，驱动程序必须调用 [**WdfDeviceInitFree**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceinitfree) 。
 
-如果驱动程序在调用[**WdfDriverCreate**](/windows-hardware/drivers/ddi/wdfdriver/nf-wdfdriver-wdfdrivercreate)时遇到错误，并且驱动程序从调用[**WdfPdoInitAllocate**](/windows-hardware/drivers/ddi/wdfpdo/nf-wdfpdo-wdfpdoinitallocate)接收到[WDFDEVICE \_ INIT](../wdf/wdfdevice_init.md)结构，则驱动程序必须调用[**WdfDeviceInitFree**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceinitfree)。
+如果驱动程序在调用 [**WdfDriverCreate**](/windows-hardware/drivers/ddi/wdfdriver/nf-wdfdriver-wdfdrivercreate)时遇到错误，并且驱动程序从调用 [**WdfPdoInitAllocate**](/windows-hardware/drivers/ddi/wdfpdo/nf-wdfpdo-wdfpdoinitallocate)接收到 [WDFDEVICE \_ INIT](../wdf/wdfdevice_init.md)结构，则驱动程序必须调用 [**WdfDeviceInitFree**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceinitfree)。
 
 **驱动程序模型： KMDF**
 

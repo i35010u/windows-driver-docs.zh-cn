@@ -1,7 +1,6 @@
 ---
 title: KSEVENT \_ 时钟 \_ 间隔 \_ 标记
 description: '\_ \_ \_ 当到达初始时间值时，客户端启用 KSEVENT 时钟间隔标记事件，然后在该时间之后的固定时间增量发出通知。'
-ms.assetid: 5292606e-d0b3-4e64-a236-c1cecf3fd53a
 keywords:
 - KSEVENT_CLOCK_INTERVAL_MARK 流媒体设备
 topic_type:
@@ -12,12 +11,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4562add4237ddfd0fe8f929b2732eee7d6d71db4
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 34319ad124e6b5c02e2700f0a93c77e24b5d14b8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89190177"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96832577"
 ---
 # <a name="ksevent_clock_interval_mark"></a>KSEVENT \_ 时钟 \_ 间隔 \_ 标记
 
@@ -29,7 +28,7 @@ ms.locfileid: "89190177"
 
 ### <a name="span-idevent_dataspanspan-idevent_dataspanevent-data"></a><span id="event_data"></span><span id="EVENT_DATA"></span>事件数据
 
-调用[**KsSynchronousDeviceControl**](/windows-hardware/drivers/ddi/ksproxy/nf-ksproxy-kssynchronousdevicecontrol)注册此事件时，请使用[**KSEVENT \_ 时间 \_ 间隔**](/windows-hardware/drivers/ddi/ks/ns-ks-ksevent_time_interval)类型的结构作为*OutBuffer*参数。
+调用 [**KsSynchronousDeviceControl**](/windows-hardware/drivers/ddi/ksproxy/nf-ksproxy-kssynchronousdevicecontrol)注册此事件时，请使用 [**KSEVENT \_ 时间 \_ 间隔**](/windows-hardware/drivers/ddi/ks/ns-ks-ksevent_time_interval)类型的结构作为 *OutBuffer* 参数。
 
 <a name="remarks"></a>备注
 -------

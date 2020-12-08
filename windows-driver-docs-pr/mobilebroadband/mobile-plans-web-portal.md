@@ -1,17 +1,16 @@
 ---
 title: 移动计划 Web 门户
 description: 本主题介绍 Mobile plan 计划的实现步骤。
-ms.assetid: 283E45EF-D421-429B-A9AF-BED64BB670B0
 keywords:
 - Windows Mobile 计划 Web 门户，移动计划实现移动运营商
 ms.date: 03/25/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 7af4a15c8c985c632437be152e0ccf63bfec8954
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 43035c0ca0d3b7fce550ef3f7b136118af924aee
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89207309"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96832929"
 ---
 # <a name="mobile-operator-web-portal"></a>移动运营商 Web 门户
 
@@ -54,9 +53,9 @@ MyWebView.Navigate(“https://moportal.com?market=US&location=US&transactionId=%
 | transactionId  | 用于调试会话的事务 ID。 提供程序应记录此项并将其发送到通知负载。 最大大小为64个字符。                                     | `transactionId=waoigFfX00yGH3Vb.1`               |
 | market         | PC 中区域设置的双字母 ISO 代码。                                                                                                                                | `market=us`                                      |
 
-使用下表中所述的 "接受语言" 标头发送用户的语言首选项。
+用户的语言首选项使用下表中所述的 Accept-Language 标头进行发送。
 
-| 标头名称     | 说明  | 示例 |
+| 标头名称     | 描述  | 示例 |
 | --- | --- | --- |
 | Accept-Language | 用户的当前语言设置。 如果可能，MO 门户应以指定的语言呈现内容。 有关详细信息，请参阅 [RFC 7231 5.3.5： Accept-Language 部分](https://tools.ietf.org/html/rfc7231#section-5.3.5)。 | `Accept-Language: en-us` |
 
@@ -77,9 +76,9 @@ MyWebView.Navigate(“https://moportal.com?iccid=8988247000100003319&imei=001102
 | transactionId  | 用于调试会话的事务 ID。 提供程序应记录此项并将其发送到通知负载。 最大大小为64个字符。                                     | `transactionId=waoigFfX00yGH3Vb.1`               |
 | market         | PC 中区域设置的双字母 ISO 代码。                                                                                                                                | `market=us`                                      |
 
-使用下表中所述的 "接受语言" 标头发送用户的语言首选项。
+用户的语言首选项使用下表中所述的 Accept-Language 标头进行发送。
 
-| 标头名称     | 说明                                                                                                                                                                                                                                     | 示例                  |
+| 标头名称     | 描述                                                                                                                                                                                                                                     | 示例                  |
 | --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------ |
 | Accept-Language | 用户的当前语言设置。 如果可能，MO 门户应以指定的语言呈现内容。 有关详细信息，请参阅 [RFC 7231 5.3.5： Accept-Language 部分](https://tools.ietf.org/html/rfc7231#section-5.3.5)。 | `Accept-Language: en-us` |
 
@@ -120,7 +119,7 @@ MyWebView.Navigate(“https://moportal.com?iccid=8988247000100003319&imei=001102
 | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------- |
 | Web 门户体验所需的最小功能是使用户能够使用注册了移动运营商的帐户购买数据计划。 | 必须 |
 | 在用户退出 web 门户体验之前，web 门户必须立即启动并保持对用户输入的响应。 | 必须 |
-| 调用后，web 门户必须具有和保留用户焦点，直到： <ul><li>激活流已完成，并且 web 门户已将焦点返回到移动计划应用程序。</li></ul><p>或</p><ul><li>用户已取消流并返回到移动计划应用。</li></ul> | 必须 |
+| 调用后，web 门户必须具有和保留用户焦点，直到： <ul><li>激活流已完成，并且 web 门户已将焦点返回到移动计划应用程序。</li></ul><p>OR</p><ul><li>用户已取消流并返回到移动计划应用。</li></ul> | 必须 |
 | Web 门户不能显示任何弹出窗口、打开任何其他窗口，或者将用户重定向到任何其他网站或应用程序，除非需要完成激活流。 | 必须 |
 | Web 门户必须处理所有合法的错误和异常，例如拒绝支付方法、后端失败，等等。处理错误或异常后，web 门户必须保持响应状态，以便用户退出并返回到移动计划应用。 | 必须 |
 | 如果用户遇到可通过用户操作解决的错误，建议使用错误消息显示移动运营商的客户支持信息。 | 建议 |

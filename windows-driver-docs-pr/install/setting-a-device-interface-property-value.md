@@ -1,15 +1,14 @@
 ---
 title: 设置设备接口属性值
 description: 设置设备接口属性值
-ms.assetid: 44cef4e1-9fda-44fb-b37f-342099b5f7a0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 045ff297d88adc152a00d541e5a29ef488e9e62d
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 574c654fd5bfd9afb5914ab14ccace022455b08c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91733675"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96834497"
 ---
 # <a name="setting-a-device-interface-property-value"></a>设置设备接口属性值
 

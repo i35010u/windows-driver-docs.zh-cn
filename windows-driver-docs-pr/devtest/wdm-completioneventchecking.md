@@ -1,7 +1,6 @@
 ---
 title: 'CompletionEventChecking 规则 (wdm) '
 description: CompletionEventChecking 规则指定，驱动程序不会在同一 IRP 的完成例程中调用也和 KeSetEvent。
-ms.assetid: C319C472-4715-4703-8F8D-4C769615A3BD
 ms.date: 05/21/2018
 keywords:
 - 'CompletionEventChecking 规则 (wdm) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 3a338e8b77f1c61b3b028307169fa29f49ea08bf
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 69f679df3b36bf7bd801ce485a910857d15a7180
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105222"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96832493"
 ---
 # <a name="completioneventchecking-rule-wdm"></a>CompletionEventChecking 规则 (wdm) 
 
 
-**CompletionEventChecking**规则指定，驱动程序不会在同一 IRP 的完成例程中调用[**也**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iomarkirppending)和[**KeSetEvent**](/windows-hardware/drivers/ddi/wdm/nf-wdm-kesetevent) 。
+**CompletionEventChecking** 规则指定，驱动程序不会在同一 IRP 的完成例程中调用 [**也**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iomarkirppending)和 [**KeSetEvent**](/windows-hardware/drivers/ddi/wdm/nf-wdm-kesetevent) 。
 
 **驱动程序模型： WDM**
 

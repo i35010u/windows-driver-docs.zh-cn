@@ -1,17 +1,16 @@
 ---
 title: 设备元数据包概述
 description: 设备元数据包概述
-ms.assetid: 1b17bdab-44e4-498b-ab80-f28fa94d9821
 keywords:
 - 设备元数据包 WDK，关于
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 396705b8d94f86efe396728d3a8fea43d5eacb99
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 7aa7ca799d974c01e089d2e8ee4da4a741662010
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91733497"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96832657"
 ---
 # <a name="overview-of-device-metadata-packages"></a>设备元数据包概述
 
@@ -57,7 +56,7 @@ ms.locfileid: "91733497"
 <GUID>.devicemetadata-ms
 ```
 
-* &lt; Guid &gt; *文件前缀是为设备元数据包创建 (guid) 的全局唯一标识符。 每个元数据包文件名的 GUID 都必须是唯一的。 当你创建新的或已修改的元数据包时，你必须创建新的 GUID，即使更改很小。
+*&lt; Guid &gt;* 文件前缀是为设备元数据包创建 (guid) 的全局唯一标识符。 每个元数据包文件名的 GUID 都必须是唯一的。 当你创建新的或已修改的元数据包时，你必须创建新的 GUID，即使更改很小。
 
 有关详细信息，请参阅 [构建设备元数据包](building-device-metadata-packages.md)。
 

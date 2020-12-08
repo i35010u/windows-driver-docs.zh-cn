@@ -1,7 +1,6 @@
 ---
 title: 'PdoDeviceInitAPI 规则 (kmdf) '
 description: PdoDeviceInitAPI 规则指定 WdfPdoInitAllocate 和所有其他设备对象初始化 DDIs 为 \_ 物理设备对象设置 WDFDEVICE INIT 结构 (PDO) 必须在驱动程序为 pdo 调用 WdfDeviceCreate 之前调用它。
-ms.assetid: 6a2e6e82-7fac-4366-a46d-1bd80d3bf92e
 ms.date: 05/21/2018
 keywords:
 - 'PdoDeviceInitAPI 规则 (kmdf) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: e6170e33957d2744587b8382028d3d67e7902769
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: a27330fa927ab1af1deb6a4b3594acf880e68ad8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103820"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96833555"
 ---
 # <a name="pdodeviceinitapi-rule-kmdf"></a>PdoDeviceInitAPI 规则 (kmdf) 
 
 
-**PdoDeviceInitAPI**规则指定[**WdfPdoInitAllocate**](/windows-hardware/drivers/ddi/wdfpdo/nf-wdfpdo-wdfpdoinitallocate)和所有其他设备对象初始化 DDIs 为物理设备对象设置[**WDFDEVICE \_ INIT**](../wdf/wdfdevice_init.md)结构 (PDO) 必须在驱动程序为 pdo 调用[**WdfDeviceCreate**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicecreate)之前调用它。
+**PdoDeviceInitAPI** 规则指定 [**WdfPdoInitAllocate**](/windows-hardware/drivers/ddi/wdfpdo/nf-wdfpdo-wdfpdoinitallocate)和所有其他设备对象初始化 DDIs 为物理设备对象设置 [**WDFDEVICE \_ INIT**](../wdf/wdfdevice_init.md)结构 (PDO) 必须在驱动程序为 pdo 调用 [**WdfDeviceCreate**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicecreate)之前调用它。
 
 **驱动程序模型： KMDF**
 

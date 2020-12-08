@@ -1,18 +1,17 @@
 ---
 title: SAN 所需的 Windows Sockets SPI 函数
 description: SAN 所需的 Windows Sockets SPI 函数
-ms.assetid: b41bd7e0-bb6c-4933-a5d0-18e4d067601b
 keywords:
 - SAN 服务提供商 WDK，必需的功能
 - 函数 WDK San
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 02f7b11cb9d35bc98d90a0e15b6799bf06b35302
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 0f5b75dacbce6461305b6610e2c3e55a98e039c7
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89217475"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96834029"
 ---
 # <a name="windows-sockets-spi-functions-required-for-sans"></a>SAN 所需的 Windows Sockets SPI 函数
 

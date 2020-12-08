@@ -1,7 +1,6 @@
 ---
 title: vad_reload
-description: Vad_reload 扩展重新指定进程的用户模式模块加载使用该过程的虚拟地址说明符 (Vad)。
-ms.assetid: B5500227-DDC5-43aa-987B-EB02C59B3AC6
+description: Vad_reload 扩展使用该进程 (Vad) 的虚拟地址描述符为指定的进程重载用户模式模块。
 keywords:
 - vad_reload Windows 调试
 ms.date: 05/23/2017
@@ -15,38 +14,38 @@ api_location:
 api_type:
 - DllExport
 ms.localizationpriority: medium
-ms.openlocfilehash: a613455ad75bd32ac60561ae7f4005fc8b45df18
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8b88baf7ce22ae643238e37124469dc945acb6d9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63325941"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96833847"
 ---
-# <a name="vadreload"></a>！ vad\_重新加载
+# <a name="vad_reload"></a>！ vad \_ 重载
 
 
-**！ Vad\_重新加载**扩展使用该过程的虚拟地址说明符 (Vad)，则重新加载指定的进程的用户模式模块。
+**！ Vad \_ reload** extension 使用该进程的虚拟地址描述符 (vad) 为指定的进程重新加载用户模式模块。
 
 ```dbgcmd
 !vad_reload Process
 ```
 
-## <a name="span-idddkvaddbgspanspan-idddkvaddbgspanparameters"></a><span id="ddk__vad_dbg"></span><span id="DDK__VAD_DBG"></span>参数
+## <a name="span-idddk__vad_dbgspanspan-idddk__vad_dbgspanparameters"></a><span id="ddk__vad_dbg"></span><span id="DDK__VAD_DBG"></span>参数
 
 
-<span id="_______Process______"></span><span id="_______process______"></span><span id="_______PROCESS______"></span> *Process*   
-指定将为其加载模块的过程的十六进制地址。
+<span id="_______Process______"></span><span id="_______process______"></span><span id="_______PROCESS______"></span>*处理*   
+指定将为其加载模块的进程的十六进制地址。
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-Vad 有关的信息，请参阅*Microsoft Windows Internals*、 Mark Russinovich 和 David solomon 合著的。 
+有关 Vad 的信息，请参阅 Russinovich 和 David 所罗门群岛的 *Microsoft Windows 内部机制*。 
 
 <a name="remarks"></a>备注
 -------
 
-可以使用[ **！ 过程**](-process.md)扩展，若要查找进程的地址。
+您可以使用 [**！进程**](-process.md) 扩展查找进程的地址。
 
-下面是举例说明如何查找地址，并将其 **！ vad\_重新加载**命令。
+下面是一个示例，演示如何查找地址并将其用于 **！ vad \_ reload.sql** 命令。
 
 ```dbgcmd
 3: kd> !process 0 0
@@ -69,14 +68,14 @@ fffffa80`04fd2e70: VAD maps 00000000`72a50000 - 00000000`72a6cfff, file userenv.
 <a name="requirements"></a>要求
 ------------
 
-**DLL**
+**.DLL**
 
 Kdexts.dll
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[**!process**](-process.md)
+[**！进程**](-process.md)
 
 [**!vad**](-vad.md)
 

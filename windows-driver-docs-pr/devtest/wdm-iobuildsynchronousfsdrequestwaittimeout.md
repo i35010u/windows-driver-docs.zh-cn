@@ -1,7 +1,6 @@
 ---
 title: 'IoBuildSynchronousFsdRequestWaitTimeout 规则 (wdm) '
 description: 如果 IoBuildSynchronousFsdRequestWaitTimeout 规则检测到此驱动程序将无限期等待，直到降低驱动程序返回，因为 IRP 的事件需要在完成例程中发出信号。
-ms.assetid: 8344C597-BD71-4953-95F0-F912C31EF52A
 ms.date: 05/21/2018
 keywords:
 - 'IoBuildSynchronousFsdRequestWaitTimeout 规则 (wdm) '
@@ -12,12 +11,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 53fbd01c36621555299a63bab878ab672a73ac09
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 0c7968e3132b64d4527ef140efe6d333728c612a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104248"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96833073"
 ---
 # <a name="iobuildsynchronousfsdrequestwaittimeout-rule-wdm"></a>IoBuildSynchronousFsdRequestWaitTimeout 规则 (wdm) 
 

@@ -1,15 +1,14 @@
 ---
 title: 管理本地 DCBX 意愿状态
 description: 管理本地 DCBX 意愿状态
-ms.assetid: B37CA18B-FCCD-414D-95AB-0C54B9F1F421
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8dd3b618442401faf9cb906e6ee2f9ad05fd7d96
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 7fa43688ac587c2c9e57dc836d4ccaa8508d7898
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89207527"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96833379"
 ---
 # <a name="managing-the-local-dcbx-willing-state"></a>管理本地 DCBX 意愿状态
 
@@ -32,7 +31,7 @@ ETS 和 PFC 的 TLVs 定义了一个称为 " *愿意* 位" 的位。 如果网�
 
 -   如果启用了本地 DCBX "愿意" 状态，则必须在 DCBX TLVs 中将本地的 "愿意" 位设置为1。 在这种情况下，必须从远程 QoS 参数解析操作 QoS 参数。 有关这些参数的详细信息，请参阅 [接收远程 NDIS QoS 参数](receiving-remote-ndis-qos-parameters.md)。
 
-    **注意**   如果启用了本地 DCBX，则微型端口驱动程序还可以根据独立硬件供应商 (IHV) 定义的任何专有 QoS 设置来解析其操作 QoS 参数。 对于不是由对等方进行远程配置或由操作系统本地配置的 QoS 参数，驱动程序只能执行此操作。
+    **注意**  如果启用了本地 DCBX，则微型端口驱动程序还可以根据独立硬件供应商 (IHV) 定义的任何专有 QoS 设置来解析其操作 QoS 参数。 对于不是由对等方进行远程配置或由操作系统本地配置的 QoS 参数，驱动程序只能执行此操作。
 
      
 
@@ -40,15 +39,15 @@ ETS 和 PFC 的 TLVs 定义了一个称为 " *愿意* 位" 的位。 如果网�
 
 -   当通过对 [*MiniportInitializeEx*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_initialize) 函数的调用来初始化微型端口驱动程序时，它应基于由 IHV 定义的专有 QoS 设置来启用 "适用于本地 DCBX" 的状态。
 
--    ( # A0) 的 DCB 组件发出对象标识符 (OID) 方法请求 [oid \_ qos \_ 参数](./oid-qos-parameters.md) ，以便在网络适配器上配置本地 QOS 参数。 此 OID 请求的[**ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的**InformationBuffer**成员包含指向[**NDIS \_ QOS \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_qos_parameters)结构的指针。
+-    ( # A0) 的 DCB 组件发出对象标识符 (OID) 方法请求 [oid \_ qos \_ 参数](./oid-qos-parameters.md) ，以便在网络适配器上配置本地 QOS 参数。 此 OID 请求的 [**ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的 **InformationBuffer** 成员包含指向 [**NDIS \_ QOS \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_qos_parameters)结构的指针。
 
-    如果在此结构的**Flags**成员中设置了 "要识别的**NDIS \_ QOS \_ 参数 \_ ** " 标志，则微型端口驱动程序将启用 DCBX。 如果未设置此位，微型端口驱动程序将禁用 DCBX。
+    如果在此结构的 **Flags** 成员中设置了 "要识别的 **NDIS \_ QOS \_ 参数 \_** " 标志，则微型端口驱动程序将启用 DCBX。 如果未设置此位，微型端口驱动程序将禁用 DCBX。
 
 有关 LLDP 的详细信息，请参阅 IEEE 802.1 AB-2005 标准。
 
 有关本地 DCBX 适用于 bits 和 TLVs 的详细信息，请参阅 IEEE 802.1 Qaz 草案标准。
 
-**注意**   从 Windows Server 2012 开始，可以通过 PowerShell cmdlet 配置 DCB 组件，以设置或清除在颁发[OID \_ qos \_ 参数](./oid-qos-parameters.md)请求时的**NDIS \_ qos \_ 参数 \_ ** （如果有）。 这会导致微型端口驱动程序分别启用或禁用本地 DCBX。
+**注意** 从 Windows Server 2012 开始，可以通过 PowerShell cmdlet 配置 DCB 组件，以设置或清除在颁发 [OID \_ qos \_ 参数](./oid-qos-parameters.md)请求时的 **NDIS \_ qos \_ 参数 \_** （如果有）。 这会导致微型端口驱动程序分别启用或禁用本地 DCBX。
 
  
 

@@ -1,7 +1,6 @@
 ---
 title: 电源策略所有权
 description: 电源策略所有权
-ms.assetid: 8e44eedd-6afe-45c6-bbe8-42cfb6f6a644
 keywords:
 - 电源管理 WDK KMDF，所有权
 - 所有权 WDK KMDF
@@ -15,12 +14,12 @@ keywords:
 - 电源状态 WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 40bee4f1284dc702cab39d5b2e153be4903a8cd8
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: a52f6b1183b6ff245fcb16cdfc69cf0c258386b7
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89190345"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96832887"
 ---
 # <a name="power-policy-ownership"></a>电源策略所有权
 

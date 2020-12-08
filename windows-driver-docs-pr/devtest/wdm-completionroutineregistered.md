@@ -1,7 +1,6 @@
 ---
 title: 'CompletionRoutineRegistered 规则 (wdm) '
 description: CompletionRoutineRegistered 规则指定如果调度例程使用 IoSetCompletionRoutineEx 注册了 IoCompletion 例程，则调度例程之后必须调用 IoCallDriver 或 PoCallDriver。
-ms.assetid: ee0d813c-3bcc-4688-902c-1a2d15ddfd09
 ms.date: 05/21/2018
 keywords:
 - 'CompletionRoutineRegistered 规则 (wdm) '
@@ -12,19 +11,19 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 4939b7460215bebff26ee52381f29935db8f3430
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 6f6bef40d5f19c535e4b6a5aa04b603d74ad72ea
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105218"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96832487"
 ---
 # <a name="completionroutineregistered-rule-wdm"></a>CompletionRoutineRegistered 规则 (wdm) 
 
 
-**CompletionRoutineRegistered**规则指定如果调度例程使用[**IoSetCompletionRoutineEx**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iosetcompletionroutineex)注册了[**IoCompletion**](/windows-hardware/drivers/ddi/wdm/nc-wdm-io_completion_routine)例程，则调度例程之后必须调用[**IoCallDriver**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver)或[**PoCallDriver**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-pocalldriver)。
+**CompletionRoutineRegistered** 规则指定如果调度例程使用 [**IoSetCompletionRoutineEx**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iosetcompletionroutineex)注册了 [**IoCompletion**](/windows-hardware/drivers/ddi/wdm/nc-wdm-io_completion_routine)例程，则调度例程之后必须调用 [**IoCallDriver**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver)或 [**PoCallDriver**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-pocalldriver)。
 
-在**IoCompletion**例程执行之前， **IoSetCompletionRoutineEx**例程会分配保留分配的内存。 驱动程序必须确保 **IoCompletion** 例程通过调用 **IoCallDriver** 或 **PoCallDriver**来执行;否则，内核将泄漏内存。
+在 **IoCompletion** 例程执行之前， **IoSetCompletionRoutineEx** 例程会分配保留分配的内存。 驱动程序必须确保 **IoCompletion** 例程通过调用 **IoCallDriver** 或 **PoCallDriver** 来执行;否则，内核将泄漏内存。
 
 **驱动程序模型： WDM**
 

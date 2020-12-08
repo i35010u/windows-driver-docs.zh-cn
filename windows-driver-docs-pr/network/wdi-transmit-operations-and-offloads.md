@@ -1,15 +1,14 @@
 ---
 title: WDI 传输操作和卸载
 description: WDI 在两个 Tx 模式下的端口队列和 PeerTID 队列之一中运行。
-ms.assetid: 9ADBDAD5-4AFA-4AFA-A829-96EB28CEBAA1
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 955276cba436e3f0323b92c3966583dabd8b25e8
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: bb2bec7274c9e9e76a45ddfe58df681324390ae6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104856"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96834097"
 ---
 # <a name="wdi-transmit-operations-and-offloads"></a>WDI 传输操作和卸载
 
@@ -21,7 +20,7 @@ WDI 以两种 Tx 模式之一运行：端口队列和 PeerTID 队列。 目标�
 -   仅当 **TargetPriorityQueueing** = false 时才 (TX 分类) 
 -   在端口级别或 PeerTID 级别 (TX 队列) 
 -   传输计划 (将帧下载计划到目标) 
--   主机-目标 TX 流控制
+-   Host-Target TX flow 控制
 
 下面是 TX 操作和卸载的列表。
 
@@ -35,9 +34,9 @@ WDI 以两种 Tx 模式之一运行：端口队列和 PeerTID 队列。 目标�
 <thead>
 <tr class="header">
 <th align="left">处理步骤</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 <th align="left">所有者/适用的卸载</th>
-<th align="left">备注</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>
@@ -72,7 +71,7 @@ WDI 以两种 Tx 模式之一运行：端口队列和 PeerTID 队列。 目标�
 <td align="left"><p>TX flow 控制</p></td>
 <td align="left"><p>阻止 overrunning 和 TX 帧的等到或目标缓冲区。</p></td>
 <td align="left"><p>WDI/等到/Target</p></td>
-<td align="left"><p>请参阅 "主机-目标流控制" 部分。</p></td>
+<td align="left"><p>请参阅 Host-Target flow 控制部分。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>传输计划</p></td>
@@ -121,7 +120,7 @@ WDI 以两种 Tx 模式之一运行：端口队列和 PeerTID 队列。 目标�
 
  
 
-## <a name="operation-in-host-implemented-fips-mode"></a>宿主实现的 FIPS 模式下的操作
+## <a name="operation-in-host-implemented-fips-mode"></a>Host-Implemented FIPS 模式下的操作
 
 
 如果主机为给定的连接提供 FIPS (则在 [**WDI \_ TLV \_ 连接 \_ 设置**](./wdi-tlv-connection-settings.md)) 中，主机 FIPS 模式设置为 true，则在将数据包提交到目标之前，主机会对其进行加密。 目标会传输数据包，而不会影响数据包的数据完整性的其他更改。 例如，目标不能在此模式下执行传输 MSDU 聚合。

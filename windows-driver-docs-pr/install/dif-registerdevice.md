@@ -1,7 +1,6 @@
 ---
 title: DIF_REGISTERDEVICE
 description: DIF_REGISTERDEVICE
-ms.assetid: cb5f12f4-d429-4f02-b560-08807ffa3793
 keywords:
 - DIF_REGISTERDEVICE 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: cd7467f92c85635f25a8251cadca4cca36f957c2
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 8294b77f9201e2d008eb4d998f32d472494640c5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90715098"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96834515"
 ---
 # <a name="dif_registerdevice"></a>DIF_REGISTERDEVICE
 
@@ -64,7 +63,7 @@ DIF_REGISTERDEVICE 请求允许安装程序参与使用 PnP 管理器注册新�
 提供一个指向 [**SP_DEVINFO_DATA**](/windows/win32/api/setupapi/ns-setupapi-sp_devinfo_data) 结构的指针，该结构在设备信息集中标识设备。
 
 <a href="" id="device-installation-parameters-"></a>设备安装参数   
-与*DeviceInfoData*关联的设备安装参数 ([**SP_DEVINSTALL_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-sp_devinstall_params_a)) 。
+与 *DeviceInfoData* 关联的设备安装参数 ([**SP_DEVINSTALL_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-sp_devinstall_params_a)) 。
 
 <a href="" id="class-installation-parameters-"></a>类安装参数   
 无
@@ -83,7 +82,7 @@ DIF_REGISTERDEVICE 请求允许安装程序参与使用 PnP 管理器注册新�
 
 如果类安装程序成功处理此请求（包括直接调用默认处理程序），则类安装程序应返回 NO_ERROR 并且 **SetupDiCallClassInstaller** 将不会再次调用默认处理程序。
 
-**注意**   类安装程序可以直接调用默认处理程序，但类安装程序永远不会尝试取代默认处理程序的操作。
+**注意**  类安装程序可以直接调用默认处理程序，但类安装程序永远不会尝试取代默认处理程序的操作。
 
  
 
@@ -99,7 +98,7 @@ DIF_REGISTERDEVICE 请求允许安装程序参与使用 PnP 管理器注册新�
 
 ### <a name="installer-operation"></a>安装程序操作
 
-*设备安装应用程序*通常发送此 DIF 请求以便向 pnp 管理器注册非 PnP 设备。 从 Microsoft Windows 2000 开始，必须先注册非 PnP 设备，然后才能安装它们。
+*设备安装应用程序* 通常发送此 DIF 请求以便向 pnp 管理器注册非 PnP 设备。 从 Microsoft Windows 2000 开始，必须先注册非 PnP 设备，然后才能安装它们。
 
 安装程序通常会处理此 DIF 请求，以进行重复检测。 此类安装程序通常 ([**SetupDiRegisterDeviceInfo**](/windows/win32/api/setupapi/nf-setupapi-setupdiregisterdeviceinfo)) 调用默认处理程序，并指定其检测例程。 如果注册成功且安装程序确定设备不是重复设备，安装程序将返回 NO_ERROR。
 

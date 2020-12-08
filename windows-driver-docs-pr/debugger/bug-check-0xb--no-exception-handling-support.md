@@ -1,7 +1,6 @@
 ---
 title: Bug 检查 0xB NO_EXCEPTION_HANDLING_SUPPORT
 description: NO_EXCEPTION_HANDLING_SUPPORT bug 检查的值为0x0000000B。此 bug 检查很少出现。
-ms.assetid: 0f48aef9-b2e4-421e-bb78-dca74033d3c3
 keywords:
 - Bug 检查 0xB NO_EXCEPTION_HANDLING_SUPPORT
 - NO_EXCEPTION_HANDLING_SUPPORT
@@ -13,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 07b9d91b9aa653507eaef0d0b91a5f0ae31ab223
-ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
+ms.openlocfilehash: 60c7939829e9220ba0bcc4ad220a4494dd6fb1dd
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84534800"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96832853"
 ---
 # <a name="bug-check-0xb-no_exception_handling_support"></a>Bug 检查0xB：无 \_ 异常 \_ 处理 \_ 支持
 
@@ -33,7 +32,7 @@ ms.locfileid: "84534800"
 
 
 > [!IMPORTANT]
-> 本主题适用于程序员。 如果你是在使用计算机时收到蓝屏错误代码的客户，请参阅[排查蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题面向程序员。 如果您是在使用计算机时收到蓝屏错误代码的客户，请参阅[蓝屏错误疑难解答](https://www.windows.com/stopcode)。
 
 
  

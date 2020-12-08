@@ -1,7 +1,6 @@
 ---
 title: SM \_ GetBindingSupport 函数
 description: SM \_ GetBindingSupport 方法检索当前为指定端口启用的绑定功能。
-ms.assetid: 0ca24cdf-b589-4096-a490-2acfdd576a91
 keywords:
 - SM_GetBindingSupport 函数存储设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 9f7f435c70725d6889c400ed1710d3eebab17e93
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 7f33752d12de2d4be0b27a1b1202b7deba242784
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89188483"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96832583"
 ---
 # <a name="sm_getbindingsupport-function"></a>SM \_ GetBindingSupport 函数
 
@@ -31,9 +30,9 @@ SM \_ GetBindingSupport 方法检索当前为指定端口启用的绑定功能�
 
 ```ManagedCPlusPlus
 void SM_GetBindingSupport(
-   [in, HBAType("HBA_WWN")] uint8                 HbaPortWWN[8],
-   [in, HBAType("HBA_WWN")] uint8                 DomainPortWWN[8],
-   [out, HBA_STATUS_QUALIFIERS] HBA_STATUS        HBAStatus,
+   [in, HBAType("HBA_WWN")] uint8                 HbaPortWWN[8],
+   [in, HBAType("HBA_WWN")] uint8                 DomainPortWWN[8],
+   [out, HBA_STATUS_QUALIFIERS] HBA_STATUS        HBAStatus,
    [out, HBAType("SMHBA_BIND_CAPABILITY")] uint32 Flags
 );
 ```
@@ -58,7 +57,7 @@ void SM_GetBindingSupport(
 
 不适用于 WMI 方法。
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 此 WMI 方法属于 MS \_ SM \_ TargetInformationMethods WMI 类。
@@ -77,7 +76,7 @@ void SM_GetBindingSupport(
 <td align="left">台式机</td>
 </tr>
 <tr class="even">
-<td align="left"><p>Header</p></td>
+<td align="left"><p>标头</p></td>
 <td align="left">Hbapiwmi</td>
 </tr>
 </tbody>

@@ -1,17 +1,16 @@
 ---
 title: 移动计划通知
 description: 本主题介绍如何在移动计划中配置 toast 通知。
-ms.assetid: 20A59FB6-9EEF-4B55-940C-79B6FB2C99CA
 keywords:
 - Windows Mobile 计划 toast 通知
 ms.date: 06/11/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 5ec0c8a22ed1c91e08210cc6c3ee56a3bb6595bf
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: c397ba7c4d508f17a27a396a6f91dacc7c8601e6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89207349"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96832953"
 ---
 # <a name="mobile-plans-notifications"></a>移动计划通知
 
@@ -39,8 +38,8 @@ ms.locfileid: "89207349"
 字段名称 | 说明 | 示例
 ---------- | ----------- | -------
 通知类型 | 支持几种预定义的 SMS 通知类型。 每种类型的行为相同。 只有和按钮显示的字符串会根据 <accept> <decline> 类型的不同而变化。 | 低余额、零余额、新产品/服务、试用产品/服务、试用版、试用版
-标题 | 调用操作的一行 | "您的数据即将用完"
-Body | 将产品/服务值突出显示给最终用户的简短消息 | "当前数据计划的剩余时间小于5MB。 请立即采取措施以确保保持连接状态。 "
+Title | 调用操作的一行 | "您的数据即将用完"
+正文 | 将产品/服务值突出显示给最终用户的简短消息 | "当前数据计划的剩余时间小于5MB。 请立即采取措施以确保保持连接状态。 "
 映像 | 使用 PC 作为成为的生活方式照片。 图像尺寸在 100% 缩放时为 364x180 像素。 | https://picsum.photos/id/1/364/180
 徽标 | 这是在载入过程中提供的资产的一部分 | 
 
@@ -70,8 +69,8 @@ GET https://{notificationUri}sims/{simmri}/notifications
 
 终结点有三个查询参数：
 - "*限制*" 是必需的，指定要返回的通知数。
-- *imei*是可选的，它指定客户端的 imei。
-- *notificationType*，这是必需的，它指定要返回的通知的类型。 *NotificationType*参数始终是移动计划的 GET 通知请求所接受的枚举字符串之一。
+- *imei* 是可选的，它指定客户端的 imei。
+- *notificationType*，这是必需的，它指定要返回的通知的类型。 *NotificationType* 参数始终是移动计划的 GET 通知请求所接受的枚举字符串之一。
 
 响应是一个 JSON 对象，其中包含一个名为 " *通知* " 的属性，其中包含一系列通知。 此列表中的通知数最多 *限制* 请求。 此列表中的每个通知都是一个对象，该对象具有单个属性 *notificationId*，该属性必须标识移动运营商的服务配置中的现有通知。
 
@@ -106,8 +105,8 @@ X-MS-DM-TransactionId: "MSFT-12345678-1234-1234-1234-123456789abc"
 
 字段名称 | 说明 | 示例
 ---------- | ----------- | -------
-标题 | 调用操作的一行 | "激活免费试用版"
-Body | 将产品/服务值突出显示给最终用户的简短消息 | "获取30GB 的可用数据，因此您可以保持与任何地方的连接。"
+Title | 调用操作的一行 | "激活免费试用版"
+正文 | 将产品/服务值突出显示给最终用户的简短消息 | "获取30GB 的可用数据，因此您可以保持与任何地方的连接。"
 映像 | 使用 PC 作为成为的生活方式照片。 图像尺寸为100% 缩放时的360x243 像素。 | https://picsum.photos/id/1/360/234
 徽标 | 这是在载入过程中提供的资产的一部分 | 
 

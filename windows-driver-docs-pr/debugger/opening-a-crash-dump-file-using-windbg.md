@@ -1,15 +1,14 @@
 ---
 title: 使用 WinDbg 打开转储文件
 description: 可以通过多种方式来使用 WinDbg 打开转储文件。
-ms.assetid: DE2EABE7-2B7A-4DF9-82FD-EF19D69E31A7
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 655fa4a2f401fe09f6ae1e2db255f6a72d203240
-ms.sourcegitcommit: f610410e1500f0b0a4ca008b52679688ab51033d
+ms.openlocfilehash: 5950be8f1a394bc82ebc5135efc3a02c07571f3e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/15/2020
-ms.locfileid: "88252837"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96833625"
 ---
 # <a name="opening-a-dump-file-using-windbg"></a>使用 WinDbg 打开转储文件
 
@@ -26,11 +25,11 @@ ms.locfileid: "88252837"
 
 **windbg-y** *SymbolPath* **-i** *ImagePath* **-z** *DumpFileName*
 
-**-V**选项 (详细模式) 也很有用。 有关命令行语法的详细信息，请参阅 [**WinDbg 命令行选项**](windbg-command-line-options.md)。
+**-V** 选项 (详细模式) 也很有用。 有关命令行语法的详细信息，请参阅 [**WinDbg Command-Line 选项**](windbg-command-line-options.md)。
 
 ### <a name="span-iddebugger_command_windowspanspan-iddebugger_command_windowspanspan-iddebugger_command_windowspandebugger-command-window"></a><span id="Debugger_Command_Window"></span><span id="debugger_command_window"></span><span id="DEBUGGER_COMMAND_WINDOW"></span>调试器命令窗口
 
-如果 WinDbg 已经在内核模式调试会话中，则可以使用 [**. opendump (打开转储文件) **](-opendump--open-dump-file-.md) 命令打开转储文件，后跟 [**g (") **](g--go-.md)"。
+如果 WinDbg 已经在内核模式调试会话中，则可以使用 [**. opendump (打开转储文件)**](-opendump--open-dump-file-.md) 命令打开转储文件，后跟 [**g (")**](g--go-.md)"。
 
  
 

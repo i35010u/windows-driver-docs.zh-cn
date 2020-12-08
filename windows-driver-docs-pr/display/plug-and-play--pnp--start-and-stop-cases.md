@@ -1,17 +1,16 @@
 ---
 title: WDDM 1.2 和更高版本中的即插即用 (PnP)
 description: 所有 Windows 显示驱动程序模型 (WDDM) 1.2 和更高版本的显示微型端口驱动程序必须支持以下行为，以响应启动和停止请求。
-ms.assetid: A95DCFEA-BC1B-4A13-9850-13814725D53E
 keywords:
 - 显示驱动程序中的即插即用 WDK 显示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 81ca4d6b16ad80f8e9907bf94d6ab9e34e35ff35
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 86395a30a1c27051f4089f6412f4d69c50bd1824
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105440"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96832725"
 ---
 # <a name="plug-and-play-pnp-in-wddm-12-and-later"></a>WDDM 1.2 和更高版本中的即插即用 (PnP)
 
@@ -64,7 +63,7 @@ ms.locfileid: "90105440"
 
 显示设备上的即插即用 (PnP) 启动进程在启动期间或从一个显示驱动程序升级到另一个显示器驱动程序的过程中发生。 在这种情况下，驱动程序必须调用 [*DxgkCbAcquirePostDisplayOwnership*](/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgkcb_acquire_post_display_ownership) 函数以获取有关帧缓冲区的信息并维护显示同步。 帧缓冲区信息是从固件或系统上加载的以前的 WDDM 1.2 和更高版本的驱动程序提供的。
 
-在调用期间，操作系统使[*DxgkDdiSetPowerState*](/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgkddi_set_power_state)函数返回到 D0 电源状态，在[*DxgkDdiStartDevice*](/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgkddi_start_device)函数中，WDDM 1.2 和更高版本的驱动程序必须将源可见性设置为 false ([**DXGKARG \_ SETVIDPNSOURCEVISIBILITY**](/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgkarg_setvidpnsourcevisibility)。**Visible**  =  对于所有活动视频呈现网络 (VidPN) 目标，将显示为 "**FALSE**) 。 在这种情况下，显示管道硬件必须与监视器保持同步信号，但不管当前正在扫描的图面中存在哪些像素数据，管道都必须继续将黑色像素数据发送到监视器。这意味着，像素管道保证能用所有黑色像素来遮蔽显示器。 稍后，当第一个帧呈现到帧缓冲区时，操作系统将源可见性设置为 true。
+在调用期间，操作系统使 [*DxgkDdiSetPowerState*](/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgkddi_set_power_state)函数返回到 D0 电源状态，在 [*DxgkDdiStartDevice*](/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgkddi_start_device)函数中，WDDM 1.2 和更高版本的驱动程序必须将源可见性设置为 false ([**DXGKARG \_ SETVIDPNSOURCEVISIBILITY**](/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgkarg_setvidpnsourcevisibility)。**Visible**  =  对于所有活动视频呈现网络 (VidPN) 目标，将显示为 "**FALSE**) 。 在这种情况下，显示管道硬件必须与监视器保持同步信号，但不管当前正在扫描的图面中存在哪些像素数据，管道都必须继续将黑色像素数据发送到监视器。这意味着，像素管道保证能用所有黑色像素来遮蔽显示器。 稍后，当第一个帧呈现到帧缓冲区时，操作系统将源可见性设置为 true。
 
 所有这些过程都使监视器保持同步，并确保用户在屏幕上看不到闪烁或闪烁。
 
@@ -78,7 +77,7 @@ ms.locfileid: "90105440"
 <thead>
 <tr class="header">
 <th align="left">驱动程序返回代码</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -102,7 +101,7 @@ ms.locfileid: "90105440"
 
 在将驱动程序升级到新版本时，通常会发生显示设备上的即插即用 (PnP) 停止进程。 在这种情况下，操作系统会调用驱动程序的 [*DxgkDdiStopDeviceAndReleasePostDisplayOwnership*](/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgkddi_stop_device_and_release_post_display_ownership) 函数，这需要驱动程序提供准确的帧缓冲区信息。
 
-在[*DxgkDdiStopDeviceAndReleasePostDisplayOwnership*](/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgkddi_stop_device_and_release_post_display_ownership)调用中，驱动程序必须确保活动 VidPn 目标的源可见性为 True ([**DXGKARG \_ SETVIDPNSOURCEVISIBILITY**](/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgkarg_setvidpnsourcevisibility)。**可见**  =  **TRUE**) 。 此外，从 WDDM 1.2 开始，驱动程序需要确保用黑色像素填充像素管道进行编程以进行扫描的图面。 在将源可见性设置为 true 之前，驱动程序应填写包含黑色像素的图面。
+在 [*DxgkDdiStopDeviceAndReleasePostDisplayOwnership*](/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgkddi_stop_device_and_release_post_display_ownership)调用中，驱动程序必须确保活动 VidPn 目标的源可见性为 True ([**DXGKARG \_ SETVIDPNSOURCEVISIBILITY**](/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgkarg_setvidpnsourcevisibility)。**可见**  =  **TRUE**) 。 此外，从 WDDM 1.2 开始，驱动程序需要确保用黑色像素填充像素管道进行编程以进行扫描的图面。 在将源可见性设置为 true 之前，驱动程序应填写包含黑色像素的图面。
 
 确保还在驱动程序中实现 [*DxgkDdiStopDevice*](/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgkddi_stop_device) 。 在某些情况下，操作系统可能会调用 *DxgkDdiStopDevice* 而不是 [*DxgkDdiStopDeviceAndReleasePostDisplayOwnership*](/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgkddi_stop_device_and_release_post_display_ownership)，或者在对 *DxgkDdiStopDeviceAndReleasePostDisplayOwnership* 的调用失败之后。
 
@@ -116,7 +115,7 @@ ms.locfileid: "90105440"
 <thead>
 <tr class="header">
 <th align="left">驱动程序返回代码</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>

@@ -1,15 +1,14 @@
 ---
 title: InfVerif
 description: '了解 InfVerif ( # A0) 工具。 你可以使用此工具来测试驱动程序 INF 文件，或查明 INF 文件是否是通用的。'
-ms.assetid: 6F565E1C-C6FC-4637-B476-FE4E4672CCC3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4aea0f0827614e5e4b2cd44ae182e73142d005fe
-ms.sourcegitcommit: f1d6c2d0cdbecdc69ba65ed3b530755fc73c8e5e
+ms.openlocfilehash: 503c102667641cb3378b001e03c7227fda7993fd
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91590377"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96833115"
 ---
 # <a name="infverif"></a>InfVerif
 
@@ -42,7 +41,7 @@ InfVerif 工具将报告以下类型的错误/警告：
 <thead>
 <tr class="header">
 <th align="left">主题</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>

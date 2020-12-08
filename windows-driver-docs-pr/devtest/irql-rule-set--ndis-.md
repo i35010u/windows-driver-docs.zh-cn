@@ -1,15 +1,14 @@
 ---
 title: IRQL 规则集 (NDIS)
 description: 了解如何使用规则 (NDIS) 来验证驱动程序是否在所需的 IRQL 上进行 DDI 调用。 此外，还将了解如何选择 IRQL 规则集。
-ms.assetid: EEFEF8E3-8AB8-46AD-A3BD-DA676F8FA786
 ms.date: 05/21/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 9fd653a72a1e7398e5fe284116ffacef94acd127
-ms.sourcegitcommit: 372464be981a39781c71049126f36891cb5d0cad
+ms.openlocfilehash: c72746920d37b4eff4f5d826024fcbac70b0a3a3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91646133"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96833107"
 ---
 # <a name="irql-rule-set-ndis"></a>IRQL 规则集 (NDIS)
 
@@ -29,7 +28,7 @@ ms.locfileid: "91646133"
 <thead>
 <tr class="header">
 <th align="left">主题</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>

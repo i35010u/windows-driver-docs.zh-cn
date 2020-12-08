@@ -1,15 +1,14 @@
 ---
 title: 检索设备接口属性值
 description: 检索设备接口属性值
-ms.assetid: 2a845adc-6965-420d-9e0a-20935d20577a
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 116dbbba7187295c48409ea5829dffdc10150549
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: a0956bdcbbed9c741ecb74dab21e6ba88a60847c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91732517"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96832949"
 ---
 # <a name="retrieving-a-device-interface-property-value"></a>检索设备接口属性值
 
@@ -27,11 +26,11 @@ ms.locfileid: "91732517"
     -   将 *RequiredSize* 设置为 DWORD 类型化变量。
     -   将标志设置为零。
 
-    在对[**SetupDiGetDeviceInterfaceProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdigetdeviceinterfacepropertyw)的第一次调用时， **SetupDiGetDeviceInterfaceProperty**将 \* *RequiredSize*设置为检索属性值所需的缓冲区大小（以字节为单位），记录错误代码 ERROR_INSUFFICIENT_BUFFER 并返回**FALSE**。 对 [GetLastError](/windows/win32/api/errhandlingapi/nf-errhandlingapi-getlasterror) 的后续调用将返回最近记录的错误代码。
+    在对 [**SetupDiGetDeviceInterfaceProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdigetdeviceinterfacepropertyw)的第一次调用时， **SetupDiGetDeviceInterfaceProperty** 将 \* *RequiredSize* 设置为检索属性值所需的缓冲区大小（以字节为单位），记录错误代码 ERROR_INSUFFICIENT_BUFFER 并返回 **FALSE**。 对 [GetLastError](/windows/win32/api/errhandlingapi/nf-errhandlingapi-getlasterror) 的后续调用将返回最近记录的错误代码。
 
 2.  再次调用 **SetupDiGetDeviceInterfaceProperty** ，并提供与第一次调用提供的参数值相同的参数值，如下所示：
     -   将 *PropertyBuffer* 设置为指向接收属性值的缓冲区的指针。
-    -   将 *PropertyBufferSize* 设置为 *PropertyBuffer* 缓冲区的所需大小（以字节为单位）。 第一次调用**SetupDiGetDeviceInterfaceProperty**时，检索到 RequiredSize 中的*PropertyBuffer*缓冲区的所需大小 \* *RequiredSize*。
+    -   将 *PropertyBufferSize* 设置为 *PropertyBuffer* 缓冲区的所需大小（以字节为单位）。 第一次调用 **SetupDiGetDeviceInterfaceProperty** 时，检索到 RequiredSize 中的 *PropertyBuffer* 缓冲区的所需大小 \* *RequiredSize*。
 
-如果对**SetupDiGetDeviceInterfaceProperty**的第二次调用成功，则**SetupDiGetDeviceInterfaceProperty**将 \* *PropertyType*设置为属性的属性数据类型标识符，将*PropertyBuffer*缓冲区设置为属性值，将 \* *RequiredSize*设置为检索到的属性值的大小（以字节为单位），并返回**TRUE**。 如果函数调用失败， **SetupDiGetDeviceInterfaceProperty** 将返回 **FALSE** ，并且对 [GetLastError](/windows/win32/api/errhandlingapi/nf-errhandlingapi-getlasterror) 的调用将返回记录的错误代码。
+如果对 **SetupDiGetDeviceInterfaceProperty** 的第二次调用成功，则 **SetupDiGetDeviceInterfaceProperty** 将 \* *PropertyType* 设置为属性的属性数据类型标识符，将 *PropertyBuffer* 缓冲区设置为属性值，将 \* *RequiredSize* 设置为检索到的属性值的大小（以字节为单位），并返回 **TRUE**。 如果函数调用失败， **SetupDiGetDeviceInterfaceProperty** 将返回 **FALSE** ，并且对 [GetLastError](/windows/win32/api/errhandlingapi/nf-errhandlingapi-getlasterror) 的调用将返回记录的错误代码。
 

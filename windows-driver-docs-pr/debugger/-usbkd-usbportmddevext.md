@@ -1,7 +1,6 @@
 ---
 title: usbkd.usbportmddevext
 description: Usbkd usbportmddevext 命令显示 usbport _DEVICE_EXTENSION 结构（如果在作为结果 Bug 检查0xFE 生成的故障转储中存在）。
-ms.assetid: 07DE5D4A-E909-4D9B-B906-B74C9CC8AE49
 keywords:
 - usbkd usbportmddevext Windows 调试
 ms.date: 05/23/2017
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 4a058e81555a2b30dbb3cb1892729bd3f862a128
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 5fe307ecc4294273b75eafb9edf661c448bf1e8f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89217921"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96833889"
 ---
 # <a name="usbkdusbportmddevext"></a>!usbkd.usbportmddevext
 
 
-**！ Usbkd. usbportmddevext**命令显示**usbport！ \_设备 \_ 扩展**结构（如果在作为结果[**Bug 检查 0xFE**](bug-check-0xfe--bugcode-usb-driver.md)生成的故障转储中存在）。
+**！ Usbkd. usbportmddevext** 命令显示 **usbport！ \_设备 \_ 扩展** 结构（如果在作为结果 [**Bug 检查 0xFE**](bug-check-0xfe--bugcode-usb-driver.md)生成的故障转储中存在）。
 
 ```dbgcmd
 !usbkd.usbportmddevext
@@ -41,11 +40,11 @@ Usbkd.dll
 <a name="examples"></a>示例
 --------
 
-下面是 **！ usbportmddevext**的输出示例。
+下面是 **！ usbportmddevext** 的输出示例。
 
 ```dbgcmd
 1: kd> !analyze -v
-*** ...
+**_ ...
 BUGCODE_USB_DRIVER (fe) 
 ...
 1: kd> !usbkd.usbportmddevext
@@ -67,7 +66,7 @@ Pnp Func History (idx 13)
 Power Func History (idx 0)
 [01] pnp 255 (ff) ??? (x0) PowerDeviceUnspecified
 ...
-    **Power and Wake -----------------------------------------------
+    _*Power and Wake -----------------------------------------------
     selective suspend:on (1)
     PowerFlags (00000080):
 *---FDO---*

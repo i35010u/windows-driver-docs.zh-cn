@@ -1,15 +1,14 @@
 ---
 title: 仅安装已检查的操作系统和 HAL
 description: 只安装已检验的操作系统和 HAL（适用于 Windows Vista 和更高版本）
-ms.assetid: 1203b7cd-50b9-4174-8bec-112019444fac
 ms.date: 05/08/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 7ea193c8724b09360ff17cfcdf1a1d08e030bc62
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 86d843dbaadbd36762704f28cb4746035fa1de16
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89382917"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96833113"
 ---
 # <a name="installing-just-the-checked-operating-system-and-hal-for-windows-vista-and-later"></a>只安装已检验的操作系统和 HAL（适用于 Windows Vista 和更高版本）
 
@@ -23,7 +22,7 @@ ms.locfileid: "89382917"
 
 在安装部分检查版本之前，必须确定用于在系统上安装免费版本的操作系统映像和 HAL 文件的版本。
 
-**提示**   对于64位版本的 Windows Vista 和更高版本，此过程非常简单。 如果使用 [Windows 驱动程序工具包 (wdk) ](../index.yml)，则可以使用 wdk 的 "调试" 目录中的操作系统映像和 HAL 文件 \\ 。 请参阅 [安装检查的生成](installing-the-checked-build.md)。 对于 amd64 或 ia64，每个只有一个版本。 文件的名称是 ntkrnlmp.exe 和 Hal.dll。 如果你使用的是适用于你的 Windows 版本的 WDK，则可以跳到 [步骤2：复制已检查的文件](#step-2---copying-the-checked-files)。
+**提示**   对于64位版本的 Windows Vista 和更高版本，此过程非常简单。 如果使用 [Windows 驱动程序工具包 (wdk) ](../index.yml)，则可以使用 wdk 的 "调试" 目录中的操作系统映像和 HAL 文件 \\ 。 请参阅 [安装检查的生成](installing-the-checked-build.md)。 对于 amd64 或 ia64，每个只有一个版本。 文件的名称是 ntkrnlmp.exe 和 Hal.dll。 如果你使用的是适用于你的 Windows 版本的 WDK，则可以跳到 [步骤2：复制已检查的文件](#step-2---copying-the-checked-files)。
 
  
 
@@ -35,7 +34,7 @@ ms.locfileid: "89382917"
 
     应该会看到一条类似于 TargetFilename 的行-' hal.dll
 
-2.  在日志文件的同一节中，查找相应的 *SourceFilename*。 *SourceFilename*右侧的名称是需要从所选版本复制的 HAL 文件的名称。
+2.  在日志文件的同一节中，查找相应的 *SourceFilename*。 *SourceFilename* 右侧的名称是需要从所选版本复制的 HAL 文件的名称。
 
 下面的示例来自 setupapi.log 文件。 *SourceFilename* halmacpi.dll：
 
@@ -123,10 +122,10 @@ Microsoft (R) Windows (R) 6.00. 6001 Service Pack 1 Multiprocessor Free.
 
 将检查的文件复制到% SystemRoot% \\ system32 目录之后，必须创建一个启动时条目，以便系统可以开始使用这些已检查的文件。 您可以使用 BCDEdit 来创建此。
 
-**提示**   你可以复制现有启动条目以创建新的启动条目，你可以修改该条目以使用已检查的操作系统映像和 HAL。 例如，若要创建当前启动项的副本，请使用以下命令： **bcdedit/copy {current}/d "Windows 8.1 部分检查版本"**。
+**提示**   你可以复制现有启动条目以创建新的启动条目，你可以修改该条目以使用已检查的操作系统映像和 HAL。 例如，若要创建当前启动项的副本，请使用以下命令： **bcdedit/copy {current}/d "Windows 8.1 部分检查版本"**。
 有关使用 BCDEdit 的一般说明，请参阅用于 [更改驱动程序测试和调试的启动选项](boot-options-for-driver-testing-and-debugging.md) 和 [编辑启动选项](editing-boot-options.md)的工具。
 
-**注意**   设置 BCDEdit 选项之前，你可能需要在计算机上禁用或暂停 BitLocker 和安全启动。
+**注意**  设置 BCDEdit 选项之前，你可能需要在计算机上禁用或暂停 BitLocker 和安全启动。
 
  
 若要在 Windows Vista 和更高版本上配置部分检查的生成，请使用 [**BCDEdit/set**](./bcdedit--set.md) 命令和 **内核** 和 **hal** 选项。
@@ -147,7 +146,7 @@ bcdedit /set {44a942bf-d6ee-11e3-baf8-000ffee4f6cd} hal hal.chk
 bcdedit /bootdebug {44a942bf-d6ee-11e3-baf8-000ffee4f6cd} on
 ```
 
-若要查看命令的结果，请键入 **bcdedit/enum**。 **/Enum**选项列出所有启动项。 例如，已将以下启动条目修改为使用所选版本的内核和 HAL。 还必须在) 上启用启动调试 (bcdedit/bootdebug {ID} 的启动项。
+若要查看命令的结果，请键入 **bcdedit/enum**。 **/Enum** 选项列出所有启动项。 例如，已将以下启动条目修改为使用所选版本的内核和 HAL。 还必须在) 上启用启动调试 (bcdedit/bootdebug {ID} 的启动项。
 
 ```
 ## Windows Boot Loader

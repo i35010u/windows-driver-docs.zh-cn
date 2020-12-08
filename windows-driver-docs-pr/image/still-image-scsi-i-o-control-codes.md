@@ -1,15 +1,14 @@
 ---
 title: 静态图像 SCSI I/O 控制代码
 description: 静态图像 SCSI I/O 控制代码
-ms.assetid: 8db15071-61ac-4bb3-9193-da854a15f376
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7efc98753ab8b6cf7dcb752c0f7c75d00feb49e1
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 524da59facd54d8fec9bee3eae1f557c2e44cfc3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105152"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96834533"
 ---
 # <a name="still-image-scsi-io-control-codes"></a>静态图像 SCSI I/O 控制代码
 
@@ -27,7 +26,7 @@ ms.locfileid: "90105152"
 <thead>
 <tr class="header">
 <th>I/o 控制代码</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -56,5 +55,5 @@ ms.locfileid: "90105152"
 
  
 
-这些代码在 *scsiscan*中定义。
+这些代码在 *scsiscan* 中定义。
 

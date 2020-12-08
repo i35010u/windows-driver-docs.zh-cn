@@ -1,7 +1,6 @@
 ---
 title: 编译驱动程序的 MOF 文件
 description: 编译驱动程序的 MOF 文件
-ms.assetid: 0a4ab163-3e2c-48e9-9659-756d35ad445f
 keywords:
 - WMI WDK 内核，发布架构
 - 发布 WMI 架构 WDK
@@ -10,12 +9,12 @@ keywords:
 - 编译 MOF 文件
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6b8be865cedad4939d9cde313f75db3a76e98c5b
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: eb263bc14c0bb5b435e8ad07d026f7a6b9045c5f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91733672"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96833503"
 ---
 # <a name="compiling-a-drivers-mof-file"></a>编译驱动程序的 MOF 文件
 
@@ -32,7 +31,7 @@ ms.locfileid: "91733672"
 以下各项显示在前面的语法中：
 
 <a href="" id="-wmi"></a>**-WMI**  
-验证 *filename* 中的所有类，以便与 WMI 一起使用。 如果任何类定义无效，Mofcomp.exe 会删除输出文件 *bmf*。 如果省略 **-WMI** ，则应在*Bmf*上运行[Wmimofck](using-wmimofck-exe.md)来验证类。 驱动程序必须使用 WMI 开关或运行 Wmimofck 来验证 MOF。 如果不这样做，可能会导致 MOF 文件未正确加载到 WMI 架构。
+验证 *filename* 中的所有类，以便与 WMI 一起使用。 如果任何类定义无效，Mofcomp.exe 会删除输出文件 *bmf*。 如果省略 **-WMI** ，则应在 *Bmf* 上运行 [Wmimofck](using-wmimofck-exe.md)来验证类。 驱动程序必须使用 WMI 开关或运行 Wmimofck 来验证 MOF。 如果不这样做，可能会导致 MOF 文件未正确加载到 WMI 架构。
 
 <a href="" id="-b-filename-bmf"></a>**-B：**<em>bmf</em>  
 请求编译器在 *bmf* 中创建一个独立于平台的二进制版本的 MOF 文件，而不会对 CIMOM 对象存储库进行任何修改。

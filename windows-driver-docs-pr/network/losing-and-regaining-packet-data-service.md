@@ -1,15 +1,14 @@
 ---
 title: 丢失和重新获取数据包数据服务
 description: 丢失和重新获取数据包数据服务
-ms.assetid: 1e9d6c34-f7fc-47e9-aa52-409b9e9ff4f4
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: be110007a9fa1cc0dd6854253bf234ec31b50aa4
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 0ffbbe85e4748d8f963c1cb172a8e9fd6d2b4801
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89218079"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96832625"
 ---
 # <a name="losing-and-regaining-packet-data-service"></a>丢失和重新获取数据包数据服务
 

@@ -1,7 +1,6 @@
 ---
 title: Windows 筛选平台体系结构概述
 description: Windows 筛选平台体系结构概述
-ms.assetid: a20efbe1-f98c-452d-a134-9f65eb6dbc04
 keywords:
 - Windows 筛选平台体系结构 WDK
 - 体系结构 WDK Windows 筛选平台
@@ -9,12 +8,12 @@ keywords:
 - 标注驱动程序 WDK Windows 筛选平台，平台体系结构
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 670354bb487bb10cbe558be4b52ce0114cc7d70b
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 523bba141bae1551d6545b81b19109c9b8eb617e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91734159"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96834061"
 ---
 # <a name="windows-filtering-platform-architecture-overview"></a>Windows 筛选平台体系结构概述
 

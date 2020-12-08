@@ -1,7 +1,6 @@
 ---
 title: ndiskd. 微型驱动程序
 description: Ndiskd. 微型驱动程序命令显示有关 NDIS 微型端口驱动程序的信息。
-ms.assetid: CD349B10-8363-4D48-A830-CC9EF5EA75BF
 keywords:
 - ndiskd 微型驱动程序 Windows 调试
 ms.date: 06/15/2020
@@ -12,16 +11,16 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: fa6f9606df8c01bf0da63ea8272d966bf2c878de
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 9a792123d058df8e5af42005516fd6bb2c9b7c26
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89216768"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96832869"
 ---
 # <a name="ndiskdminidriver"></a>!ndiskd.minidriver
 
-**！ Ndiskd. 微型驱动程序**命令显示有关 NDIS 微型端口驱动程序的信息。 如果运行不带参数的此扩展，！ ndiskd 将显示系统上处于活动状态的 NDIS 微型端口驱动程序的列表。
+**！ Ndiskd. 微型驱动程序** 命令显示有关 NDIS 微型端口驱动程序的信息。 如果运行不带参数的此扩展，！ ndiskd 将显示系统上处于活动状态的 NDIS 微型端口驱动程序的列表。
 
 ```console
 !ndiskd.minidriver [-handle <x>] [-basic] [-miniports] [-devices] [-handlers]
@@ -86,7 +85,7 @@ MINIPORTS
     Device objects
 ```
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [网络驱动程序设计指南](../network/index.md)
 
@@ -94,6 +93,6 @@ MINIPORTS
 
 [调试网络堆栈](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-175-Debugging-the-Network-Stack)
 
-[**NDIS 扩展 ( # A0) **](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 扩展 ( # A0)**](ndis-extensions--ndiskd-dll-.md)
 
 [**!ndiskd.help**](-ndiskd-help.md)

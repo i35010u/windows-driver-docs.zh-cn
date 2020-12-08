@@ -1,7 +1,6 @@
 ---
 title: 微型驱动程序同步
 description: 微型驱动程序同步
-ms.assetid: 2f560e7a-4717-4b3f-9513-e34fcb2b5e6c
 keywords:
 - Stream.sys 类驱动程序 WDK Windows 2000 内核，同步
 - 流式处理微型驱动程序 WDK Windows 2000 内核，同步
@@ -9,12 +8,12 @@ keywords:
 - 同步 WDK 流式处理微型驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2663121ca0b044c69199b1904baa9713e36e6fb6
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 6f91535264d4a972e42a84552ff43a3fdd60c859
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89191233"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96833265"
 ---
 # <a name="minidriver-synchronization"></a>微型驱动程序同步
 
@@ -22,7 +21,7 @@ ms.locfileid: "89191233"
 
 
 
-流式处理微型驱动程序开发人员可以选择允许类驱动程序处理同步。 当微型驱动程序向类驱动程序注册自身时，它们可以通过将[**HW \_ 初始化 \_ 数据**](/windows-hardware/drivers/ddi/strmini/ns-strmini-_hw_initialization_data)的**TurnOffSynchronization**成员设置为**FALSE**来选择提供类驱动程序同步。
+流式处理微型驱动程序开发人员可以选择允许类驱动程序处理同步。 当微型驱动程序向类驱动程序注册自身时，它们可以通过将 [**HW \_ 初始化 \_ 数据**](/windows-hardware/drivers/ddi/strmini/ns-strmini-_hw_initialization_data)的 **TurnOffSynchronization** 成员设置为 **FALSE** 来选择提供类驱动程序同步。
 
 当类驱动程序处理同步时，它将确保两个微型驱动程序代码段永远不会同时执行。 类驱动程序将所有流请求排队，并一次将这些请求传递给微型驱动程序。
 

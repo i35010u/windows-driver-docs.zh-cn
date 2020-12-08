@@ -1,7 +1,6 @@
 ---
 title: DispatchDeviceControl 和 DispatchInternalDeviceControl 例程
 description: DispatchDeviceControl 和 DispatchInternalDeviceControl 例程
-ms.assetid: 0bf8868e-bc5a-4fa7-9ff6-270f7a7bc850
 keywords:
 - 调度例程 WDK 内核，DispatchDeviceControl 例程
 - 调度例程 WDK 内核，DispatchInternalDeviceControl 例程
@@ -13,12 +12,12 @@ keywords:
 - 设备控制调度例程 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ba48ea056877215bcd8ea7b9445658552c57bce1
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 2e533d0ad4c9b3527d110575a9dfc608808f5a78
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90715258"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96832641"
 ---
 # <a name="dispatchdevicecontrol-and-dispatchinternaldevicecontrol-routines"></a>DispatchDeviceControl 和 DispatchInternalDeviceControl 例程
 
@@ -34,7 +33,7 @@ ms.locfileid: "90715258"
 
 例如，系统提供的并行驱动程序支持供应商提供的驱动程序在 **IRP \_ MJ \_ 内部 \_ 设备 \_ 控制** 请求中发送的一组内部 i/o 控制代码。 有关详细信息，请参阅 [内部设备控制对并行端口的请求](/windows-hardware/drivers/ddi/index) 和 [对并行设备的内部设备控制请求](/windows-hardware/drivers/ddi/index)。
 
-几乎通过系统定义的 i/o 控制代码请求的所有操作都使用缓冲 i/o，因为这种类型的请求很少需要传输大量的数据。 也就是说，即使是为直接 i/o 设置其设备对象的驱动程序，也会为设备控制请求发送 Irp，并将数据传输到缓冲区中的数据，并将数据传输到 ** &gt;AssociatedIrp.SystemBuffer** (，但具有紧密耦合的 Win32 多媒体驱动) 程序的特定类型的高级设备驱动程序除外。
+几乎通过系统定义的 i/o 控制代码请求的所有操作都使用缓冲 i/o，因为这种类型的请求很少需要传输大量的数据。 也就是说，即使是为直接 i/o 设置其设备对象的驱动程序，也会为设备控制请求发送 Irp，并将数据传输到缓冲区中的数据，并将数据传输到 **&gt;AssociatedIrp.SystemBuffer** (，但具有紧密耦合的 Win32 多媒体驱动) 程序的特定类型的高级设备驱动程序除外。
 
 此外，驱动程序还可以定义一组专用 i/o 控制代码，其他驱动程序可以使用这些代码与之通信。 只能将新的公共 i/o 控制代码添加到系统中，这是因为公共 i/o 控制代码内置于操作系统本身中。
 

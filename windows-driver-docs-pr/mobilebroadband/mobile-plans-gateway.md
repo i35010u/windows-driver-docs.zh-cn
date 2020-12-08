@@ -1,19 +1,18 @@
 ---
 title: "\"移动计划网关\" 页"
 description: "\"移动计划网关\" 页"
-ms.assetid: de4c7ae1-c0fc-4e6c-996c-e10f16b62d7e
 keywords:
 - Windows Mobile 计划移动运营商
 ms.date: 07/31/2019
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
-ms.openlocfilehash: c1931e7412445dd9da41ae305443d88f67deacdb
-ms.sourcegitcommit: e6247811ff9a07070547af3d89705dae33a2f465
+ms.openlocfilehash: 8ce9d5406937fc94e1d08aac84bf979411e53f08
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/23/2020
-ms.locfileid: "91026440"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96832961"
 ---
 # <a name="mobile-plans-gateway-page"></a>"移动计划网关" 页
 
@@ -105,9 +104,9 @@ GET https://{offerUri}sims/{simmri}/offers?limit=1&imei=1234
 
 终结点有两个查询参数：
 - *限制*，这是必需的，它指定要返回的产品/服务的数量。
-- *imei*是可选的，它指定客户端的 imei。
+- *imei* 是可选的，它指定客户端的 imei。
 
-响应是一个 JSON 对象，其中包含一个名为 " *产品/服务* " 的属性，其中包含一个产品/服务列表。 此列表中的产品/服务数最多 *限制* 请求。 此列表中的每个产品/服务都是一个具有单个属性 *gatewayId*的对象，该对象必须标识移动运营商的服务配置中的现有网关。
+响应是一个 JSON 对象，其中包含一个名为 " *产品/服务* " 的属性，其中包含一个产品/服务列表。 此列表中的产品/服务数最多 *限制* 请求。 此列表中的每个产品/服务都是一个具有单个属性 *gatewayId* 的对象，该对象必须标识移动运营商的服务配置中的现有网关。
 
 下面是使用此终结点进行交互的示例：
 

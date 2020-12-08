@@ -1,20 +1,19 @@
 ---
 title: 在 UMDF 1.x 驱动程序中使用 USB 设备
 description: 在 UMDF 1.x 驱动程序中使用 USB 设备
-ms.assetid: 144898a2-c4e1-495f-a6ca-72d9f09bda90
 keywords:
 - UMDF WDK，USB 设备
-- 用户模式驱动程序框架 WDK，USB 设备
+- User-Mode Driver Framework WDK，USB 设备
 - 用户模式驱动程序 WDK UMDF、USB 设备
 - USB 设备 WDK UMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3a068eb485dbf61ac5dddfbce20d2ce67bb5d1b5
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: db5e4e43c10edf6fc6b59b9822cd1915b36dfbe4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89185845"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96833939"
 ---
 # <a name="working-with-usb-devices-in-umdf-1x-drivers"></a>在 UMDF 1.x 驱动程序中使用 USB 设备
 
@@ -33,15 +32,15 @@ ms.locfileid: "89185845"
 
 ### <a name="creating-a-umdf-usb-device-object"></a>创建 UMDF-USB 设备对象
 
-若要使用框架的 USB i/o 目标功能，UMDF 驱动程序必须首先获取指向 [IWDFUsbTargetFactory](/windows-hardware/drivers/ddi/wudfusb/nn-wudfusb-iwdfusbtargetfactory) 接口的指针。 若要获取指针，驱动程序必须调用设备的[IWDFDevice](/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iwdfdevice)接口的**QueryInterface**方法。 下面的代码示例演示如何调用 **QueryInterface** 以获取指针：
+若要使用框架的 USB i/o 目标功能，UMDF 驱动程序必须首先获取指向 [IWDFUsbTargetFactory](/windows-hardware/drivers/ddi/wudfusb/nn-wudfusb-iwdfusbtargetfactory) 接口的指针。 若要获取指针，驱动程序必须调用设备的 [IWDFDevice](/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iwdfdevice)接口的 **QueryInterface** 方法。 下面的代码示例演示如何调用 **QueryInterface** 以获取指针：
 
 ```cpp
 hr = pdevice->QueryInterface(IID_IWDFUsbTargetFactory, (LPVOID*)&ppUsbTargetFactory);
 ```
 
-接下来，驱动程序必须调用 [**IWDFUsbTargetFactory：： CreateUsbTargetDevice**](/windows-hardware/drivers/ddi/wudfusb/nf-wudfusb-iwdfusbtargetfactory-createusbtargetdevice) 方法为设备创建 USB i/o 目标对象。 驱动程序创建 USB i/o 目标后，该驱动程序可以向 i/o 目标发送请求。 通常，驱动程序从[**IPnpCallbackHardware：： OnPrepareHardware**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-ipnpcallbackhardware-onpreparehardware)回调函数中调用**IWDFUsbTargetFactory：： CreateUsbTargetDevice** 。
+接下来，驱动程序必须调用 [**IWDFUsbTargetFactory：： CreateUsbTargetDevice**](/windows-hardware/drivers/ddi/wudfusb/nf-wudfusb-iwdfusbtargetfactory-createusbtargetdevice) 方法为设备创建 USB i/o 目标对象。 驱动程序创建 USB i/o 目标后，该驱动程序可以向 i/o 目标发送请求。 通常，驱动程序从 [**IPnpCallbackHardware：： OnPrepareHardware**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-ipnpcallbackhardware-onpreparehardware)回调函数中调用 **IWDFUsbTargetFactory：： CreateUsbTargetDevice** 。
 
-驱动程序调用 **IWDFUsbTargetFactory：： CreateUsbTargetDevice**后，驱动程序可以 [获取 usb 设备信息](#obtaining-umdf-usb-device-information) (例如，设备、usb 接口和接口终结点) 的 usb 描述符。 Usb 规范中介绍了 USB 描述符。
+驱动程序调用 **IWDFUsbTargetFactory：： CreateUsbTargetDevice** 后，驱动程序可以 [获取 usb 设备信息](#obtaining-umdf-usb-device-information) (例如，设备、usb 接口和接口终结点) 的 usb 描述符。 Usb 规范中介绍了 USB 描述符。
 
 ### <a name="obtaining-umdf-usb-device-information"></a>获取 UMDF-USB 设备信息
 

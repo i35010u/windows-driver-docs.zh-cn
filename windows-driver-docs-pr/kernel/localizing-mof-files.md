@@ -1,18 +1,17 @@
 ---
 title: 本地化 MOF 文件
 description: 本地化 MOF 文件
-ms.assetid: 9ca27901-04aa-47b4-a2a7-aee071f7312a
 keywords:
 - MOF 文件 WDK WMI
 - 本地化 MOF 文件
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3ced262c26a1cc637518f5efb78311c7349d1a1b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8c00cc304a6244a71b36db6d6b22e4ecf967012b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63381371"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96834455"
 ---
 # <a name="localizing-mof-files"></a>本地化 MOF 文件
 
@@ -20,7 +19,7 @@ ms.locfileid: "63381371"
 
 
 
-由于 WMI 属性限定符通常都可显示字符串，Windows XP 和更高版本的操作系统将提供一种机制用于本地化这些限定符。
+由于 WMI 属性限定符通常是可显示的字符串，因此 Windows XP 和更高版本的操作系统提供了一种用于本地化这些限定符的机制。
 
  
 

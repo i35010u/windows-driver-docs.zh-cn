@@ -1,18 +1,17 @@
 ---
 title: 实现 Cancel 例程
 description: 实现 Cancel 例程
-ms.assetid: 243b623b-317c-4084-a753-940c91c4cc50
 keywords:
 - 取消 Irp，指导原则
 - 取消例程，指导原则
 ms.date: 05/09/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: a4440dc005d137caa54c2b1359d48fe7d0bda89d
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: b8a6c757307a5aeef035e81d9b2542f1a784498f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89189359"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96833421"
 ---
 # <a name="implementing-a-cancel-routine"></a>实现 Cancel 例程
 

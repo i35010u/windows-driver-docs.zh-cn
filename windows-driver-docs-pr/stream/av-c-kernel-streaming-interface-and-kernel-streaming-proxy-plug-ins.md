@@ -1,7 +1,6 @@
 ---
 title: AV/C 内核接口和流式处理代理插件
 description: 提供有关 AV/C 内核流式处理接口和内核流式处理代理插件的信息
-ms.assetid: 0831d917-5afc-4c0c-832a-c2b2669b8c22
 keywords:
 - 内核流接口 WDK AV/C
 - 内核流式处理代理插件 WDK AV/C
@@ -12,12 +11,12 @@ keywords:
 - KS 代理 WDK AVStream
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 372fe0412619fe4e5b77e6ea33ad95916b80f6dc
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: bb6d9d5e03711a860904062bf6273fb4197abd22
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89186835"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96834007"
 ---
 # <a name="avc-kernel-streaming-interface-and-kernel-streaming-proxy-plug-ins"></a>AV/C 内核-流式处理接口和内核流式处理代理插件
 

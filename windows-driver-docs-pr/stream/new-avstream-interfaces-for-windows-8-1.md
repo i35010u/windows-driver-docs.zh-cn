@@ -1,15 +1,14 @@
 ---
 title: Windows 8.1 的新 AVStream 接口
 description: AVStream 流媒体驱动程序接口已扩展为支持从 Windows 8.1 开始的新相机平台功能。
-ms.assetid: 1D06A754-236B-441D-A0BB-A78B419270E9
 ms.date: 05/15/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: d814eb3d66b3b344915a074fbde1147d250e5f23
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 9bd0058e9b28a3301cfe430e03e7e29257f2c364
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89192147"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96833249"
 ---
 # <a name="new-avstream-interfaces-for-windows-81"></a>Windows 8.1 的新 AVStream 接口
 
@@ -53,7 +52,7 @@ AVStream 流媒体驱动程序接口已扩展为支持从 Windows 8.1 开始的�
     -   [**KSPROPERTY \_ CAMERACONTROL \_ 扩展 \_ WARMSTART**](./ksproperty-cameracontrol-extended-warmstart.md)
     -   [**KSPROPERTY \_ CAMERACONTROL \_ 扩展 \_ WHITEBALANCEMODE**](./ksproperty-cameracontrol-extended-whitebalancemode.md)
 -   [**KSPROPERTY \_ PIN \_ PROPOSEDATAFORMAT2**](./ksproperty-pin-proposedataformat2.md)
--   [**KSPROPERTY \_CAMERACONTROL \_ 图像 \_ pin \_ 功能 \_ **](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_cameracontrol_image_pin_capability_s) (新 **的 KSPROPERTY \_ CAMERACONTROL \_ 图像 \_ pin \_ 功能 \_ 序列 \_ \_ 与 \_ 记录** 成员) 
+-   [**KSPROPERTY \_CAMERACONTROL \_ 图像 \_ pin \_ 功能 \_**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_cameracontrol_image_pin_capability_s) (新 **的 KSPROPERTY \_ CAMERACONTROL \_ 图像 \_ pin \_ 功能 \_ 序列 \_ \_ 与 \_ 记录** 成员) 
 -   [**KSP \_固定**](/windows-hardware/drivers/ddi/ks/ns-ks-ksp_pin) (新 **标志** 成员) 
 -   [**KSPROPERTY \_CAMERACONTROL \_ \_ \_ 感兴趣的 \_ 区域**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_cameracontrol_region_of_interest_s) (新的 **配置** 成员) 
 -   [**KS \_VideoControlFlags**](/windows-hardware/drivers/ddi/ksmedia/ne-ksmedia-ks_videocontrolflags) (New **KS \_ VideoControlFlag \_ StartPhotoSequenceCapture** 和 **KS \_ VideoControlFlag \_ StopPhotoSequenceCapture** 常量值) 

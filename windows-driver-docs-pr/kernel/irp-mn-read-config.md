@@ -2,23 +2,22 @@
 title: IRP_MN_READ_CONFIG
 description: 具有配置空间的总线的总线驱动程序必须为其子设备处理此请求 (子 PDOs) 。 Filter 和 function 驱动程序不处理此请求。
 ms.date: 08/12/2017
-ms.assetid: cbc5b959-0aae-4c86-b490-296965a7f158
 keywords:
-- IRP_MN_READ_CONFIG 内核模式驱动程序体系结构
+- IRP_MN_READ_CONFIG Kernel-Mode 驱动程序体系结构
 ms.localizationpriority: medium
-ms.openlocfilehash: d8d2359b79fe60c98289bfb1511b621e0c0ab4ae
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 05cfd78686a57206c8a1ae92963624f28c888bd6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104636"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96834469"
 ---
 # <a name="irp_mn_read_config"></a>IRP \_ MN \_ 读取 \_ 配置
 
 
 具有配置空间的总线的总线驱动程序必须为其子设备处理此请求 (子 PDOs) 。 Filter 和 function 驱动程序不处理此请求。
 
-## <a name="value"></a>值
+## <a name="value"></a>“值”
 
 0x0F
 
@@ -37,7 +36,7 @@ ms.locfileid: "90104636"
 ## <a name="input-parameters"></a>输入参数
 
 
-[**IO \_ 堆栈 \_ 位置**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_stack_location)结构的**ReadWriteConfig**成员本身是包含以下信息的结构：
+[**IO \_ 堆栈 \_ 位置**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_stack_location)结构的 **ReadWriteConfig** 成员本身是包含以下信息的结构：
 
 ```cpp
 ULONG WhichSpace;
@@ -59,7 +58,7 @@ ULONG Length
 </colgroup>
 <thead>
 <tr class="header">
-<th>值</th>
+<th>“值”</th>
 <th>总线</th>
 <th>含义</th>
 </tr>
@@ -97,7 +96,7 @@ ULONG Length
 
  
 
-\_在 Wdm .h 中定义了 PCI*XXX*值。 PCCARD \_ *XXX*值是在 Ntddpcm 中定义的。
+\_在 Wdm .h 中定义了 PCI *XXX* 值。 PCCARD \_ *XXX* 值是在 Ntddpcm 中定义的。
 
 <a href="" id="buffer"></a>**宽限**  
 指向要返回所请求信息的缓冲区。 发送 IRP 的组件会从分页内存中分配此结构。 缓冲区的格式是特定于总线的。
@@ -116,7 +115,7 @@ ULONG Length
 ## <a name="io-status-block"></a>I/o 状态块
 
 
-总线驱动程序将**Irp- &gt; IoStatus**设置为状态 \_ 成功，或设置为适当的错误状态，如 \_ 状态 \_ 无效 \_ 的参数*n*、状态 " \_ 没有 \_ 此类 \_ 设备" 或 "状态 \_ 设备 \_ 未就绪" \_ 。
+总线驱动程序将 **Irp- &gt; IoStatus** 设置为状态 \_ 成功，或设置为适当的错误状态，如 \_ 状态 \_ 无效 \_ 的参数 *n*、状态 " \_ 没有 \_ 此类 \_ 设备" 或 "状态 \_ 设备 \_ 未就绪" \_ 。
 
 成功时，总线驱动程序将 **Irp- &gt; IoStatus** 设置为返回的字节数。
 
@@ -127,7 +126,7 @@ ULONG Length
 
 总线驱动程序为其子设备处理此 IRP (子 PDOs) 。
 
-函数和筛选器驱动程序不处理此 IRP;它们将其传递到下一个较低的驱动程序，并且不会更改 ** &gt; IoStatus**。状态，并且不会设置 [*IoCompletion*](/windows-hardware/drivers/ddi/wdm/nc-wdm-io_completion_routine) 例程。
+函数和筛选器驱动程序不处理此 IRP;它们将其传递到下一个较低的驱动程序，并且不会更改 **&gt; IoStatus**。状态，并且不会设置 [*IoCompletion*](/windows-hardware/drivers/ddi/wdm/nc-wdm-io_completion_routine) 例程。
 
 处理此请求的总线驱动程序应检查 WhichSpace 参数，以确保它包含驱动程序支持的值。
 
@@ -141,7 +140,7 @@ ULONG Length
 
 -   从分页池分配一个缓冲区，并将其初始化为零。
 
--   在 IRP 的下一个 i/o 堆栈位置设置值：将 **MajorFunction** 设置为 [**irp \_ MJ \_ PNP**](irp-mj-pnp.md)，将 **MinorFunction** 设置为 **irp \_ MN \_ READ \_ CONFIG**，并在 **ReadWriteConfig**中设置相应的值。
+-   在 IRP 的下一个 i/o 堆栈位置设置值：将 **MajorFunction** 设置为 [**irp \_ MJ \_ PNP**](irp-mj-pnp.md)，将 **MinorFunction** 设置为 **irp \_ MN \_ READ \_ CONFIG**，并在 **ReadWriteConfig** 中设置相应的值。
 
 -   将 **IoStatus** 初始化为 \_ 不 \_ 受支持的状态。
 

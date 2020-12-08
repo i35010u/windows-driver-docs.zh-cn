@@ -1,9 +1,8 @@
 ---
 title: ConditionId 元素
-description: 所需的 ConditionId 元素唯一地标识只是清除设备条件。
-ms.assetid: 4b154fb3-625e-478d-9bb4-92fd7cae0530
+description: 所需的 ConditionId 元素唯一标识刚刚清除的设备条件。
 keywords:
-- ConditionId 元素成像设备
+- ConditionId 元素图像设备
 topic_type:
 - apiref
 api_name:
@@ -12,19 +11,19 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4e49396c39e20c72640ae8d1be573bc0f6184856
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d9b26358325614705446849f2e47533e5b63efb1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63368589"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96833513"
 ---
 # <a name="conditionid-element"></a>ConditionId 元素
 
 
-所需**ConditionId**元素唯一地标识只是清除设备条件。
+所需的 **ConditionId** 元素唯一标识刚刚清除的设备条件。
 
-<a name="usage"></a>用法
+<a name="usage"></a>使用情况
 -----
 
 ```xml
@@ -41,12 +40,12 @@ ms.locfileid: "63368589"
 <a name="text-value"></a>文本值
 ----------
 
-必需。 一个整数值，它等效于先前报告 DeviceCondition 元素的 Id 属性。
+必需。 一个整数值，它等效于先前报告的 DeviceCondition 元素的 Id 属性。
 
 ## <a name="child-elements"></a>子元素
 
 
-没有子元素。
+没有任何子元素。
 
 ## <a name="parent-elements"></a>父元素
 
@@ -70,7 +69,7 @@ ms.locfileid: "63368589"
 <a name="remarks"></a>备注
 -------
 
-**ConditionId**元素必须**Id**的属性**DeviceCondition** WSD 扫描服务通过以前报告的元素[ **ScannerStatusConditionEvent**](scannerstatusconditionevent.md)。
+**ConditionId** 元素必须是 WSD 扫描服务先前通过 [**ScannerStatusConditionEvent**](scannerstatusconditionevent.md)报告的 **DeviceCondition** 元素的 **Id** 属性。
 
 ## <a name="see-also"></a>请参阅
 

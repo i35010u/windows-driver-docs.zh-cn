@@ -1,18 +1,17 @@
 ---
 title: 对驱动程序文件进行发布签名
 description: 对驱动程序文件进行发布签名
-ms.assetid: 3da0377d-57cf-4bd4-b3ce-6ba4ebbc3ceb
 keywords:
 - 公共版本驱动程序签名 WDK，驱动程序文件
 - 驱动程序文件版本签名 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dd1229a2a0980002519f004afbf4e2b0ff347e25
-ms.sourcegitcommit: a44ade167cdfb541cf1818e9f9e3726f23f90b66
+ms.openlocfilehash: 7c9a5b2e49ac42cce2d44da2e0932fcb6e82e1db
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94361513"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96833485"
 ---
 # <a name="release-signing-a-driver-file"></a>对驱动程序文件进行发布签名
 

@@ -1,9 +1,8 @@
 ---
-title: usb3kd xhci_deviceslots
-description: Xhci_deviceslots usb3kd 扩展显示有关连接到 USB 3.0 主机控制器的设备的信息。
-ms.assetid: 471167EA-F7F8-470D-B09C-8627C5BE9566
+title: usb3kd.xhci_deviceslots
+description: Usb3kd.xhci_deviceslots 扩展显示有关连接到 USB 3.0 主机控制器的设备的信息。
 keywords:
-- usb3kd xhci_deviceslots Windows 调试
+- usb3kd.xhci_deviceslots Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,12 +11,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: d2407d07f38389024277d8d0c8517dca2a531172
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 02bb3bde032830baec83e755cdfd0a8637815fcc
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89216294"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96832541"
 ---
 # <a name="usb3kdxhci_deviceslots"></a>！ usb3kd. xhci \_ deviceslots
 

@@ -1,15 +1,14 @@
 ---
 title: InfVerif 错误 1330
 description: 'InfVerif ( # A0) 是可用于测试驱动程序 INF 文件的工具。 除了报告 INF 语法问题外，该工具还报告 INF 文件是否是通用的。'
-ms.assetid: 6F565E1C-C6FC-4637-B476-FE4E4672CCC3
 ms.date: 03/05/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 9d6edd2cc03d2c616031a8af4bb2b11cfc8c032d
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 0b2370ca820e6856697d2323f604462c3a5971c2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90716966"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96833137"
 ---
 # <a name="infverif-error-1330---1333"></a>InfVerif 错误 1330-1333
 
@@ -23,7 +22,7 @@ DesiredFileName1,SourceFile1A ; Used by DDInstallSection A
 DesiredFileName1,SourceFile1B ; Used by DDInstallSection B
 ```
 
-当多个[DDInstall 部分](../install/inf-ddinstall-section.md)使用[CopyFiles](../install/inf-copyfiles-directive.md)指令将不同的源文件复制到单个目标文件时，如果**DDInstall 部分**都在同一系统上得到处理，则这些**CopyFiles**可能会冲突。 例如，如果两个不同的设备使用的是相同的驱动程序，但安装部分不同，或者在某些脱机驱动程序映像和部署方案中使用。 由于不同 **DDInstall 部分** 的多个源文件将复制到同一个单个目标文件，不同 **DDInstall 部分** 中的不同源文件将彼此覆盖，以使最后一个文件复制到目标中，这可能不是预期的结果。
+当多个 [DDInstall 部分](../install/inf-ddinstall-section.md)使用 [CopyFiles](../install/inf-copyfiles-directive.md)指令将不同的源文件复制到单个目标文件时，如果 **DDInstall 部分** 都在同一系统上得到处理，则这些 **CopyFiles** 可能会冲突。 例如，如果两个不同的设备使用的是相同的驱动程序，但安装部分不同，或者在某些脱机驱动程序映像和部署方案中使用。 由于不同 **DDInstall 部分** 的多个源文件将复制到同一个单个目标文件，不同 **DDInstall 部分** 中的不同源文件将彼此覆盖，以使最后一个文件复制到目标中，这可能不是预期的结果。
 
 ## <a name="cases"></a>案例
 
@@ -113,7 +112,7 @@ HKR,, FileName1Path, "%13%\SourceFile1B"
 
 可以从设备上的设置中检索目标文件的位置，而不是访问固定文件位置。 目标文件位置由 INF 存储在注册表值中，并通过驱动程序中的 API 调用来检索。
 
-若要通过 INF 预配这些值，请在[Inf DDInstall 部分](../install/inf-ddinstall-section.md)或*reg-root* [inf DDInstall 部分](../install/inf-ddinstall-hw-section.md)引用的*添加注册表部分*中使用[inf AddReg 指令](../install/inf-addreg-directive.md)。
+若要通过 INF 预配这些值，请在 [Inf DDInstall 部分](../install/inf-ddinstall-section.md)或 *reg-root* [inf DDInstall 部分](../install/inf-ddinstall-hw-section.md)引用的 *添加注册表部分* 中使用 [inf AddReg 指令](../install/inf-addreg-directive.md)。
 
 由于注册表值跟踪目标文件而不是单个目标文件位置，因此驱动程序必须以不同的方式访问这些文件。 若要访问目标文件，驱动程序现在需要调用以下 Api 之一来打开注册表值并使其返回源文件的位置：
 

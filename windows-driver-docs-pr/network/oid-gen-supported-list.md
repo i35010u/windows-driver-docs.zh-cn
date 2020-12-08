@@ -1,16 +1,15 @@
 ---
 title: OID_GEN_SUPPORTED_LIST
 description: 作为查询，OID_GEN_SUPPORTED_LIST OID 为微型端口驱动程序或 NIC 支持的对象指定 Oid 数组。
-ms.assetid: 4e663204-eee0-4732-83c9-ec1dacd41034
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_GEN_SUPPORTED_LIST 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: fe14a9c7bc535f4ab8becd3ea7ddbdad51ffe38f
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 3da6d7f8ed2ce6b70e6a29dff6082a87b767f78b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89217993"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96834349"
 ---
 # <a name="oid_gen_supported_list"></a>OID \_ 生成 \_ 支持的 \_ 列表
 
@@ -39,7 +38,7 @@ ms.locfileid: "89217993"
 
 NDIS 6.0 和更高版本的微型端口驱动程序不会收到此 OID 请求。 NDIS 使用小型端口驱动程序在初始化期间提供的缓存值处理此 OID。
 
-若要在初始化期间指定支持的 Oid 列表，微型端口驱动程序将设置[**NDIS_MINIPORT_ADAPTER_GENERAL_ATTRIBUTES**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_adapter_general_attributes)结构的**SupportedOidList**成员，并将该结构传递给[**NdisMSetMiniportAttributes**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsetminiportattributes)函数。
+若要在初始化期间指定支持的 Oid 列表，微型端口驱动程序将设置 [**NDIS_MINIPORT_ADAPTER_GENERAL_ATTRIBUTES**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_adapter_general_attributes)结构的 **SupportedOidList** 成员，并将该结构传递给 [**NdisMSetMiniportAttributes**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsetminiportattributes)函数。
 
 NDIS 将提供的列表的一个子集转发到执行此查询的协议驱动程序。 也就是说，NDIS 筛选出列表中任何受支持的统计信息 Oid，因为协议驱动程序从不进行统计查询。
 
@@ -63,7 +62,7 @@ NDIS 将提供的列表的一个子集转发到执行此查询的协议驱动程
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [OID \_ 生成 \_ 统计信息](oid-gen-statistics.md)

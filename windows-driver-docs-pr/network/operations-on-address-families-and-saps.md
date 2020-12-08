@@ -1,7 +1,6 @@
 ---
 title: 针对地址系列和 SAP 的操作
 description: 针对地址系列和 SAP 的操作
-ms.assetid: 0fc821bb-49a2-4631-8735-ef5217073ba9
 keywords:
 - 面向连接的 NDIS WDK，地址系列
 - CoNDIS WDK 网络，地址系列
@@ -9,12 +8,12 @@ keywords:
 - CoNDIS WDK 网络，服务接入点
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 944a9760e7cdd3ae4ab43b4bf636b3adbbd9c719
-ms.sourcegitcommit: 366a15d68eb58d01a8ca6de7b982f62ac8b7deaf
+ms.openlocfilehash: dd60bf9c7a9d13ce8e570ce99a47b39d7a2a52ee
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/19/2020
-ms.locfileid: "90812020"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96832609"
 ---
 # <a name="operations-on-address-families-and-saps"></a>针对地址系列和 SAP 的操作
 

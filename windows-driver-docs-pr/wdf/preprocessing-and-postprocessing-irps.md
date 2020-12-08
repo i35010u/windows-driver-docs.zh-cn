@@ -1,7 +1,6 @@
 ---
 title: 对 IRP 进行预处理和后处理
 description: 对 IRP 进行预处理和后处理
-ms.assetid: a0e14ae6-a06e-4c24-8b64-b56f485cf9ff
 keywords:
 - 预处理 Irp WDK KMDF
 - 后处理 Irp WDK KMDF
@@ -9,12 +8,12 @@ keywords:
 - Irp WDK KMDF、预处理和后处理
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fd7a80090de6af88b0ad0ed208c8473a97f25747
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: ca9e9e4a14d6a02c47c01eb41cc4d339433019b8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89190319"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96832881"
 ---
 # <a name="preprocessing-and-postprocessing-irps"></a>对 IRP 进行预处理和后处理
 
@@ -23,7 +22,7 @@ ms.locfileid: "89190319"
 
 如果你的驱动程序必须在框架处理 IRP 之前或之后拦截 (IRP) 的 i/o 请求包，则驱动程序可以调用 [**WdfDeviceInitAssignWdmIrpPreprocessCallback**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceinitassignwdmirppreprocesscallback) 为主要 i/o 函数代码注册 [*EvtDeviceWdmIrpPreprocess*](/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdfdevice_wdm_irp_preprocess) 事件回调函数，并根据需要为与主要代码相关联的特定小的 i/o 函数代码注册该函数。 随后，只要驱动程序收到包含指定的主要和次要函数代码的 IRP，框架就会调用驱动程序的 *EvtDeviceWdmIrpPreprocess* 回调函数。
 
-[*EvtDeviceWdmIrpPreprocess*](/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdfdevice_wdm_irp_preprocess)回调函数可执行对 irp 进行预处理所需的任何操作，然后必须调用[**WdfDeviceWdmDispatchPreprocessedIrp**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicewdmdispatchpreprocessedirp)将 irp 返回到框架，除非该驱动程序正在[处理该框架不支持的 irp](handling-an-irp-that-the-framework-does-not-support.md)。
+[*EvtDeviceWdmIrpPreprocess*](/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdfdevice_wdm_irp_preprocess)回调函数可执行对 irp 进行预处理所需的任何操作，然后必须调用 [**WdfDeviceWdmDispatchPreprocessedIrp**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicewdmdispatchpreprocessedirp)将 irp 返回到框架，除非该驱动程序正在 [处理该框架不支持的 irp](handling-an-irp-that-the-framework-does-not-support.md)。
 
 驱动程序调用 [**WdfDeviceWdmDispatchPreprocessedIrp**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicewdmdispatchpreprocessedirp)后，框架将处理 IRP，其方式与驱动程序未提供 [*EvtDeviceWdmIrpPreprocess*](/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdfdevice_wdm_irp_preprocess) 回调函数时相同。 如果 IRP 的 i/o 函数代码是框架传递给驱动程序的代码，则驱动程序将再次接收 IRP 作为请求对象。
 

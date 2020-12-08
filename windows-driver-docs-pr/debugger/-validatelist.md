@@ -1,7 +1,6 @@
 ---
 title: validatelist
-description: Validatelist 扩展验证双向链接列表中的向后和向前链接有效。
-ms.assetid: 3d90d21a-8f86-4047-9313-7205ec1b53a3
+description: Validatelist 扩展将验证双向链接列表中的后向链接是否有效。
 keywords:
 - 双向链接列表
 - validatelist Windows 调试
@@ -13,29 +12,29 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: a9f672dba6c762f7dcfc20c9d1e8cf322cca4a6a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0cb2b7ec3b6eafa1983dc3acec98e80ed32adaf9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327971"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96833729"
 ---
 # <a name="validatelist"></a>!validatelist
 
 
-**！ Validatelist**扩展验证的双向链接列表中的向后和向前链接是否有效。
+**！ Validatelist** extension 验证双向链接列表中的向后和向前链接是否有效。
 
 ```dbgcmd
 !validatelist Address
 ```
 
-## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>参数
+## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>Parameters
 
 
-<span id="_______Address______"></span><span id="_______address______"></span><span id="_______ADDRESS______"></span> *Address*   
+<span id="_______Address______"></span><span id="_______address______"></span><span id="_______ADDRESS______"></span>*地址*   
 双向链接列表的地址。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 <table>
 <colgroup>
@@ -59,7 +58,7 @@ ms.locfileid: "63327971"
 <a name="remarks"></a>备注
 -------
 
-若要停止执行，请按 Ctrl + Break （在 WinDbg) 或 Ctrl + C （中 KD)。
+若要停止执行，请在 WinDbg) 中按 Ctrl + Break (，或按 Ctrl + C (KD) 。
 
  
 

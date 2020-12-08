@@ -1,15 +1,14 @@
 ---
 title: NDIS 筛选器驱动程序开发路线图
 description: NDIS 筛选器驱动程序开发路线图
-ms.assetid: 346dae93-4cb7-4cb5-a2cf-41be9809fec2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8ac87801faa7d3d4a8d6aa8cadf7c28ee50cf5fb
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 7288c7edf9f4f9bde4a273a697f8f95e184a86c7
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91734248"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96833307"
 ---
 # <a name="roadmap-for-developing-ndis-filter-drivers"></a>NDIS 筛选器驱动程序开发路线图
 
@@ -33,7 +32,7 @@ ms.locfileid: "91734248"
 
 - 步骤3：确定其他 Windows 驱动程序设计决策。
 
-  有关如何进行其他 Windows 设计决策的详细信息，请参阅 [创建可靠的内核模式驱动程序](../kernel/creating-reliable-kernel-mode-drivers.md)、 [64 位驱动程序的编程问题](../kernel/porting-your-driver-to-64-bit-windows.md)以及 [创建国际 INF 文件](../install/creating-international-inf-files.md)。
+  有关如何进行其他 Windows 设计决策的详细信息，请参阅 [创建可靠 Kernel-Mode 驱动程序](../kernel/creating-reliable-kernel-mode-drivers.md)、 [64 位驱动程序的编程问题](../kernel/porting-your-driver-to-64-bit-windows.md)以及 [创建国际 INF 文件](../install/creating-international-inf-files.md)。
 
 - 步骤4：了解 Windows 驱动程序的生成、测试和调试过程和工具。
 

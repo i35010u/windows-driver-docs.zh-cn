@@ -1,15 +1,14 @@
 ---
 title: 在 UMDF 1.x 驱动程序中读取设备注册表和写入到设备注册表
 description: 在 UMDF 1.x 驱动程序中读取设备注册表和写入到设备注册表
-ms.assetid: A0640E60-B0DF-4CAD-B292-CC1875EF7F7D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f6e8075eb2aa7c52b2d95581bc1699217b268819
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 74f805060a4a936261ed7549113a3909c2e7bffe
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89184581"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96833251"
 ---
 # <a name="reading-and-writing-to-device-registers-in-umdf-1x-drivers"></a>在 UMDF 1.x 驱动程序中读取设备注册表和写入到设备注册表
 

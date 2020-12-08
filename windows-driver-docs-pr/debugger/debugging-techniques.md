@@ -1,31 +1,30 @@
 ---
 title: 调试方法
-description: 本部分介绍两种类型的调试技术标准和专用。
-ms.assetid: 7de0283e-82fe-4443-bb11-e6378d2bb533
+description: 本部分讨论了两种类型的调试技术：标准和专用化。
 keywords:
 - 调试技术
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a73b42ea5b6e8036a08f63fddd8a8810c4418638
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8596a21017c1832d19dac092311e6b54a55abf4f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63350580"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96833681"
 ---
 # <a name="debugging-techniques"></a>调试方法
 
 
-本部分介绍两种类型的调试技术： 标准和专用。 标准的技术适用于大多数调试方案中，且示例包括设置断点、 检查调用堆栈和查找内存泄漏。 专业的技术应用于特定的技术或类型的代码和示例： 插调试、 调试、 内核模式驱动程序框架和 RPC 调试。
+本部分介绍两种类型的调试技术：标准和专用化。 标准技术适用于大多数调试方案，例如，设置断点、检查调用堆栈和查找内存泄漏。 专用技术适用于特定技术或代码类型，示例即插即用调试、内核模式驱动程序框架调试和 RPC 调试。
 
 ## <span id="ddk_debugging_techniques_dbg"></span><span id="DDK_DEBUGGING_TECHNIQUES_DBG"></span>
 
 
-您可以了解以下各节。
+可在以下各节中了解详细信息。
 
-[标准调试技术](standard-debugging-techniques.md)
+[标准调试方法](standard-debugging-techniques.md)
 
-[专用的调试技术](specialized-debugging-techniques.md)
+[专业调试方法](specialized-debugging-techniques.md)
 
  
 

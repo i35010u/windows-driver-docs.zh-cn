@@ -1,7 +1,6 @@
 ---
 title: vadump
-description: Vadump 扩展显示所有的虚拟内存范围和其相应的保护信息。
-ms.assetid: b13aa852-7333-41fc-ad66-4386040522d8
+description: Vadump 扩展显示所有虚拟内存范围及其相应的保护信息。
 keywords:
 - vadump Windows 调试
 ms.date: 05/23/2017
@@ -12,29 +11,29 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 827b41c8afbd9188f9c41edd072e50012abecb11
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2e264e1800f26f5ca5bb348b8b74496267f18c88
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63323480"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96833739"
 ---
 # <a name="vadump"></a>!vadump
 
 
-**！ Vadump**扩展插件都会显示所有的虚拟内存范围和其相应的保护信息。
+**！ Vadump** 扩展显示所有虚拟内存范围及其相应的保护信息。
 
 ```dbgcmd
     !vadump [-v] 
 ```
 
-## <a name="span-idddkvadumpdbgspanspan-idddkvadumpdbgspanparameters"></a><span id="ddk__vadump_dbg"></span><span id="DDK__VADUMP_DBG"></span>参数
+## <a name="span-idddk__vadump_dbgspanspan-idddk__vadump_dbgspanparameters"></a><span id="ddk__vadump_dbg"></span><span id="DDK__VADUMP_DBG"></span>参数
 
 
-<span id="_______-v______"></span><span id="_______-V______"></span> **-v**   
-将导致显示以包括有关每个原始的分配区域的信息。 因为在区域内的各个地址可以分配内存后更改其保护 (通过**VirtualProtect**，例如)，此较大区域的原始保护状态可能不相同，每个在区域中的范围。
+<span id="_______-v______"></span><span id="_______-V______"></span>**-v**   
+使显示也包括有关每个原始分配区域的信息。 由于在 **VirtualProtect** 分配内存后，区域内的单个地址可能会更改其保护，例如) ，此较大区域的原始保护状态可能不同于区域内每个范围的 (。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 <table>
 <colgroup>
@@ -55,14 +54,14 @@ ms.locfileid: "63323480"
 
  
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-若要查看单个虚拟地址的内存保护信息，请使用[ **！ vprot**](-vprot.md)。 有关内存保护的信息，请参阅*Microsoft Windows Internals*由 Mark Russinovich 和 David solomon 合著。
+若要查看单个虚拟地址的内存保护信息，请使用 [**！ vprot**](-vprot.md)。 有关内存保护的信息，请参阅 Russinovich 和 David 所罗门群岛的 *Microsoft Windows 内部机制* 。
 
 <a name="remarks"></a>备注
 -------
 
-下面是一个示例：
+以下是示例：
 
 ```dbgcmd
 0:000> !vadump
@@ -79,13 +78,13 @@ Type:              00020000  MEM_PRIVATE
 .........
 ```
 
-在此显示中的状态行显示指定 BaseAddress 开始的内存范围的状态。 可能的状态的值为内存优化\_提交、 内存优化\_免费版和内存优化\_保留。
+在此显示中，"状态" 行显示从指定 BaseAddress 开始的内存范围状态。 可能的状态值包括 MEM \_ COMMIT、mem \_ FREE 和 mem \_ RESERVE。
 
-保护行显示此内存范围内的保护状态。 可能的保护的值为页面\_NOACCESS，页面\_READONLY，页面\_READWRITE，页面\_EXECUTE，页\_EXECUTE\_读取、 页\_EXECUTE\_读写页面\_WRITECOPY，页\_EXECUTE\_WRITECOPY 和页\_防护。
+保护行显示此内存范围的保护状态。 可能的保护值为 PAGE \_ NOACCESS、page \_ READONLY、page \_ READWRITE、PAGE \_ execute、PAGE \_ execute \_ READ、page \_ execute \_ READWRITE、page \_ WRITECOPY、page \_ execute \_ WRITECOPY 和 page \_ GUARD。
 
-类型行显示的内存类型。 可能的值为内存优化\_图像、 内存优化\_映射，以及内存优化\_专用。
+"类型" 行显示内存类型。 可能的值包括 MEM \_ 映像、内存 \_ 映射和内存 \_ 专用。
 
-下面是一个示例使用 **-v**参数：
+下面是使用 **-v** 参数的示例：
 
 ```dbgcmd
 0:000> !vadump -v
@@ -105,7 +104,7 @@ Type:              00020000  MEM_PRIVATE
 .........
 ```
 
-当 **-v** AllocationProtect 行显示的默认的用于创建整个区域时使用的保护。 保护线显示为此特定地址实际的保护。
+使用 **-v** 时，"AllocationProtect" 行显示创建整个区域时使用的默认保护。 "保护" 行显示了此特定地址的实际保护。
 
  
 

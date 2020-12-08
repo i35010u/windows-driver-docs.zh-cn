@@ -1,22 +1,21 @@
 ---
 title: WDI_TLV_SSID_LIST
 description: WDI_TLV_SSID_LIST 是未使用的 TLV。
-ms.assetid: 931EEA38-C380-4647-AAE6-25A7CFE39101
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_SSID_LIST 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: c160aa8cd517e67b6872652a067a7bea5d053b85
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8b23a02801f931049206f741f022a3291d0464ef
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63330425"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96834161"
 ---
-# <a name="wditlvssidlist"></a>WDI\_TLV\_SSID\_LIST
+# <a name="wdi_tlv_ssid_list"></a>WDI \_ TLV \_ SSID \_ 列表
 
 
-WDI\_TLV\_SSID\_列表是未使用的 TLV。
+WDI \_ tlv \_ SSID \_ LIST 是未使用的 tlv。
 
 <a name="requirements"></a>要求
 ------------
@@ -33,10 +32,10 @@ WDI\_TLV\_SSID\_列表是未使用的 TLV。
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
-<td><p>Windows Server 2016</p></td>
+<td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Wditypes.hpp</td>
 </tr>
 </tbody>

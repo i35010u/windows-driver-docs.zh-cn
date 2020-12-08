@@ -1,15 +1,14 @@
 ---
 title: Windows 8 的 WFP 更改
 description: Windows 8 的 WFP 更改
-ms.assetid: B83EC5A5-6169-49AB-A7EC-F2078AA0735E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6871cb9806bd1f60d4658b2d12895452dc621226
-ms.sourcegitcommit: f8619f20a0903dd64f8641a5266ecad6df5f1d57
+ms.openlocfilehash: 0c323d65909918d37a4acd2add86e76963abdd66
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91423586"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96834067"
 ---
 # <a name="wfp-changes-for-windows-8"></a>Windows 8 的 WFP 更改
 

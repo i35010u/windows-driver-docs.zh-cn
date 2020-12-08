@@ -1,7 +1,6 @@
 ---
 title: FSCTL_REQUEST_BATCH_OPLOCK 控制代码
 description: FSCTL \_ 请求 \_ 批处理 \_ oplock 控制代码请求) 文件上的批处理机会锁 (OPLOCK。
-ms.assetid: e73f6cbf-c288-4c1e-99a8-682f7c78a72d
 keywords:
 - FSCTL_REQUEST_BATCH_OPLOCK 控制代码可安装的文件系统驱动程序
 topic_type:
@@ -14,32 +13,32 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a0f466684659988e34596a156a336e796e912602
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: a37d1f6786008a4e0bb4cfa4dccf9acf94154bb8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89063372"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96833013"
 ---
 # <a name="fsctl_request_batch_oplock-control-code"></a>FSCTL \_ 请求 \_ 批处理 \_ OPLOCK 控制代码
 
 
-**FSCTL \_ 请求 \_ 批处理 \_ oplock**控制代码请求) 文件上的批处理机会锁 (OPLOCK。
+**FSCTL \_ 请求 \_ 批处理 \_ oplock** 控制代码请求) 文件上的批处理机会锁 (OPLOCK。
 
 若要处理此控制代码，微筛选器将使用以下参数调用 [**FltOplockFsctrl**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltoplockfsctrl) 。 文件系统或旧筛选器驱动程序调用 [**FsRtlOplockFsctrl**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtloplockfsctrl)。
 
 有关机会锁定和 FSCTL \_ 请求 \_ 批处理 \_ OPLOCK 控制代码的详细信息，请参阅 Microsoft Windows SDK 文档。
 
-**参数**
+**Parameters**
 
 <a href="" id="oplock"></a>*机会*  
 文件的不透明 oplock 对象指针。
 
 <a href="" id="callbackdata"></a>*CallbackData*  
-仅[**FltOplockFsctrl**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltoplockfsctrl) 。 为 IRP MJ [** \_ \_ **](/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_callback_data) \_ \_ 文件 \_ 系统 \_ 控制 FSCTL 请求 (FLT 回调数据) 结构的回叫数据。 操作的 *FsControlCode* 参数必须是 FSCTL \_ 请求 \_ 批处理 \_ OPLOCK。
+仅 [**FltOplockFsctrl**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltoplockfsctrl) 。 为 IRP MJ [**\_ \_**](/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_callback_data) \_ \_ 文件 \_ 系统 \_ 控制 FSCTL 请求 (FLT 回调数据) 结构的回叫数据。 操作的 *FsControlCode* 参数必须是 FSCTL \_ 请求 \_ 批处理 \_ OPLOCK。
 
 <a href="" id="irp"></a>*Irp*  
-仅[**FsRtlOplockFsctrl**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtloplockfsctrl) 。 Irp \_ MJ \_ 文件 \_ 系统 \_ 控件 FSCTL 请求。 操作的 *FsControlCode* 参数必须是 FSCTL \_ 请求 \_ 批处理 \_ OPLOCK。
+仅 [**FsRtlOplockFsctrl**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtloplockfsctrl) 。 Irp \_ MJ \_ 文件 \_ 系统 \_ 控件 FSCTL 请求。 操作的 *FsControlCode* 参数必须是 FSCTL \_ 请求 \_ 批处理 \_ OPLOCK。
 
 <a href="" id="opencount"></a>*OpenCount*  
 文件的用户句柄数。
@@ -59,7 +58,7 @@ ms.locfileid: "89063372"
 <thead>
 <tr class="header">
 <th align="left">术语</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -96,7 +95,7 @@ ms.locfileid: "89063372"
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**FLT \_ 回调 \_ 数据**](/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_callback_data)

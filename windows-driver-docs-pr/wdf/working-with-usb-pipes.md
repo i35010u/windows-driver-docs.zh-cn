@@ -1,7 +1,6 @@
 ---
 title: 使用 USB 管道
 description: 使用 USB 管道
-ms.assetid: d5422ff2-de1e-4a77-8b3c-0b2917b1d9ca
 keywords:
 - framework 对象 WDK KMDF，USB 管道对象
 - USB 管道 WDK KMDF
@@ -19,12 +18,12 @@ keywords:
 - 输出管道 WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bd3d683f8a4a12e0f61ba64ffc862e447fb9d51d
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 08c38c7a48c93c93a16bc573feed8000243c320d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89185817"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96833909"
 ---
 # <a name="working-with-usb-pipes"></a>使用 USB 管道
 
@@ -82,7 +81,7 @@ ms.locfileid: "89185817"
 
 -   异步和连续读取数据
 
-    *连续的读取器*是一个框架提供的机制，用于确保读取请求始终可用于 USB 管道。 此机制可保证驱动程序始终准备好从提供异步、未经请求的输入流的设备接收数据。 例如，网络接口卡 (NIC 的驱动程序) 可能使用连续读取器来接收输入数据。
+    *连续的读取器* 是一个框架提供的机制，用于确保读取请求始终可用于 USB 管道。 此机制可保证驱动程序始终准备好从提供异步、未经请求的输入流的设备接收数据。 例如，网络接口卡 (NIC 的驱动程序) 可能使用连续读取器来接收输入数据。
 
     若要为输入管道配置连续读取器，驱动程序的 [*EvtDevicePrepareHardware*](/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware) 回调函数必须调用 [**WdfUsbTargetPipeConfigContinuousReader**](/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetpipeconfigcontinuousreader) 方法。 此方法将一组读取请求排队给设备的 i/o 目标。
 
@@ -174,13 +173,13 @@ ms.locfileid: "89185817"
 
 如果 KMDF 驱动程序通过发送 i/o 请求（包含 URBs）与 USB 管道通信，则驱动程序可以调用以下方法：
 
-<a href="" id="---------wdfusbtargetpipesendurbsynchronously--kmdf-only-"></a>[**WdfUsbTargetPipeSendUrbSynchronously (KMDF 仅) **](/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetpipesendurbsynchronously)  
+<a href="" id="---------wdfusbtargetpipesendurbsynchronously--kmdf-only-"></a>[**WdfUsbTargetPipeSendUrbSynchronously (KMDF 仅)**](/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetpipesendurbsynchronously)  
 同步发送包含 URB 的 i/o 请求。
 
-<a href="" id="---------wdfusbtargetpipeformatrequestforurb--kmdf-only-"></a>[**WdfUsbTargetPipeFormatRequestForUrb (KMDF 仅) **](/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetpipeformatrequestforurb)  
+<a href="" id="---------wdfusbtargetpipeformatrequestforurb--kmdf-only-"></a>[**WdfUsbTargetPipeFormatRequestForUrb (KMDF 仅)**](/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetpipeformatrequestforurb)  
 设置包含 URB 的 i/o 请求的格式。 驱动程序可以调用 [**WdfRequestSend**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestsend) 来同步或异步发送请求。
 
-<a href="" id="---------wdfusbtargetpipewdmgetpipehandle--kmdf-only-"></a>[**WdfUsbTargetPipeWdmGetPipeHandle (KMDF 仅) **](/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetpipewdmgetpipehandle)  
+<a href="" id="---------wdfusbtargetpipewdmgetpipehandle--kmdf-only-"></a>[**WdfUsbTargetPipeWdmGetPipeHandle (KMDF 仅)**](/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetpipewdmgetpipehandle)  
 返回设备的 USBD 管道句柄。 一些 URBs 需要此句柄。
 
  

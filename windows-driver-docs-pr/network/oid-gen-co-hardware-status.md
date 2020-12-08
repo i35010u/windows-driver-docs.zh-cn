@@ -1,17 +1,16 @@
 ---
 title: OID_GEN_CO_HARDWARE_STATUS
-description: 本主题介绍 OID_GEN_CO_HARDWARE_STATUS 对象标识符（OID）。
-ms.assetid: b846622a-a082-41e8-b32b-74c111b31f69
+description: 本主题介绍) OID_GEN_CO_HARDWARE_STATUS 对象标识符 (OID。
 keywords:
 - OID_GEN_CO_HARDWARE_STATUS
 ms.date: 11/02/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7241b2a9568c895298bf587ab1d2442714e1f36c
-ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
+ms.openlocfilehash: 3917c7bc723ac06da5e1fb0d5e9e699373db7bac
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85917963"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96834357"
 ---
 # <a name="oid_gen_co_hardware_status"></a>OID_GEN_CO_HARDWARE_STATUS
 
@@ -34,5 +33,5 @@ Closing。
 
 ## <a name="requirements"></a>要求
 
-**版本**： Windows Vista 和更高版本的**标头**： Ntddndis （包括 Ndis .h）
+**版本**： Windows Vista 和更高版本的 **标头**： Ntddndis (包括 Ndis .h) 
 

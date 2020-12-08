@@ -1,19 +1,18 @@
 ---
 title: 移动套餐载入
 description: 集成移动计划所需的步骤概述
-ms.assetid: fdfd1ed4-c143-4c7a-9ee9-d71189194bbe
 keywords:
 - Windows Mobile 计划移动运营商载入
 ms.date: 07/31/2019
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
-ms.openlocfilehash: f44300a13a1b0bf6814ae70dff66b03f240043ab
-ms.sourcegitcommit: e6247811ff9a07070547af3d89705dae33a2f465
+ms.openlocfilehash: 858af0d0fdb5b139a8b77bc8a6d8e8fea3ea3345
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/23/2020
-ms.locfileid: "91026406"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96832941"
 ---
 # <a name="mobile-plans-onboarding-overview"></a>移动计划载入概述
 
@@ -21,7 +20,7 @@ ms.locfileid: "91026406"
 
 移动计划载入是由四个阶段组成的项目：
 
-| 阶段 | 说明 |
+| 阶段 | 描述 |
 | --- | --- |
 | **可行性** | 移动运营商评估移动计划解决方案，以确定项目的可行性和范围。 可根据业务需求评估多种方法和 [方案](mobile-plans-scenarios.md) 。 操作员将查看可用文档，并与指定的 Microsoft 联系人合作，根据需要处理问题，与时间范围保持一致，并提交以开始工作。 |
 | **开发** | 移动运营商根据上面定义的方案实现其解决方案的组件部分。 在此阶段，还可以根据需要启用 Windows 和移动计划配置。 |

@@ -1,25 +1,24 @@
 ---
 title: 编写简单的 WDF 驱动程序
-description: 本主题介绍将内核模式驱动程序框架写入 (KMDF) 驱动程序所需的最少功能。 在 UMDF 版本2中开始编写用户模式驱动程序框架 (UMDF) 驱动程序时，需要使用相同的最小功能。
-ms.assetid: 6225b81c-e0da-473a-ba38-24846436dae7
+description: 本主题介绍编写 Kernel-Mode Driver Framework (KMDF) 驱动程序所需的最少功能。 在 UMDF 版本2中开始编写 User-Mode Driver Framework (UMDF) 驱动程序时，需要使用相同的最小功能。
 keywords:
 - 内核模式驱动程序 WDK KMDF，编写简单的驱动程序
 - KMDF WDK，编写简单的驱动程序
-- 内核模式驱动程序框架 WDK，编写简单的驱动程序
+- Kernel-Mode Driver Framework WDK，编写简单的驱动程序
 - 基于框架的驱动程序 WDK KMDF，编写简单的驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ae5e4c916f396dc01ef40f57c4c3334b3afd5ed5
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 39bbf50dfb23c523ef39445d1de5007a3ad59090
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89185819"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96833913"
 ---
 # <a name="writing-a-simple-wdf-driver"></a>编写简单的 WDF 驱动程序
 
 
-本主题介绍将内核模式驱动程序框架写入 (KMDF) 驱动程序所需的最少功能。 在 UMDF 版本2中开始编写用户模式驱动程序框架 (UMDF) 驱动程序时，需要使用相同的最小功能。
+本主题介绍编写 Kernel-Mode Driver Framework (KMDF) 驱动程序所需的最少功能。 在 UMDF 版本2中开始编写 User-Mode Driver Framework (UMDF) 驱动程序时，需要使用相同的最小功能。
 
 
 
@@ -28,7 +27,7 @@ ms.locfileid: "89185819"
 
 每个基于框架的驱动程序都包含一个 [**DriverEntry**](./driverentry-for-kmdf-drivers.md) 例程和一组事件回调函数，框架在发生特定于对象的事件时将调用该函数。 例如，基于框架的简单驱动程序可能由以下内容组成：
 
--   [**DriverEntry**](./driverentry-for-kmdf-drivers.md)例程，在加载驱动程序并调用[**WdfDriverCreate**](/windows-hardware/drivers/ddi/wdfdriver/nf-wdfdriver-wdfdrivercreate)时调用。
+-   [**DriverEntry**](./driverentry-for-kmdf-drivers.md)例程，在加载驱动程序并调用 [**WdfDriverCreate**](/windows-hardware/drivers/ddi/wdfdriver/nf-wdfdriver-wdfdrivercreate)时调用。
 
 -   一个 [*EvtDriverDeviceAdd*](/windows-hardware/drivers/ddi/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add) 事件回调函数，当即插即用 (PnP) 管理器使用与驱动程序支持的硬件 id 匹配的硬件标识符 (ID) 报告设备检测时，框架将调用该函数。
 

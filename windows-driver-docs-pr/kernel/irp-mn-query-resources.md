@@ -2,16 +2,15 @@
 title: IRP_MN_QUERY_RESOURCES
 description: PnP 管理器使用此 IRP 获取设备的启动配置资源。总线驱动程序必须为需要硬件资源的子设备处理此请求。 函数和筛选器驱动程序不处理此 IRP。
 ms.date: 08/12/2017
-ms.assetid: b9a6f06b-07d9-4539-bd41-21cdccdc4b25
 keywords:
-- IRP_MN_QUERY_RESOURCES 内核模式驱动程序体系结构
+- IRP_MN_QUERY_RESOURCES Kernel-Mode 驱动程序体系结构
 ms.localizationpriority: medium
-ms.openlocfilehash: bc34f15fb133f661dc8f75ee48a513575c7ce29a
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 0364cb3145f8630aab71dc83f631563450c6b7c8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104076"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96834491"
 ---
 # <a name="irp_mn_query_resources"></a>IRP \_ MN \_ 查询 \_ 资源
 
@@ -20,7 +19,7 @@ PnP 管理器使用此 IRP 获取设备的启动配置资源。
 
 总线驱动程序必须为需要硬件资源的子设备处理此请求。 函数和筛选器驱动程序不处理此 IRP。
 
-## <a name="value"></a>值
+## <a name="value"></a>“值”
 
 0x0A
 
@@ -51,7 +50,7 @@ PnP 管理器在 \_ 任意线程上下文中以 IRQL 被动级别发送此 IRP�
 
 处理此 IRP 的总线驱动程序将 **irp- &gt; IoStatus** 设置为状态 " \_ 成功" 或相应的 "错误" 状态。
 
-成功时，总线驱动程序将 ** &gt; IoStatus** 设置为指向包含所请求信息的 [**CM \_ 资源列表 \_ **](/windows-hardware/drivers/ddi/wdm/ns-wdm-_cm_resource_list) 的指针。 出现错误时，总线驱动程序将 **Irp- &gt; IoStatus** 设置为零。
+成功时，总线驱动程序将 **&gt; IoStatus** 设置为指向包含所请求信息的 [**CM \_ 资源列表 \_**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_cm_resource_list) 的指针。 出现错误时，总线驱动程序将 **Irp- &gt; IoStatus** 设置为零。
 
 <a name="operation"></a>操作
 ---------

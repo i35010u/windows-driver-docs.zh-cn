@@ -1,17 +1,16 @@
 ---
 title: NDIS_STATUS_WWAN_SLOT_INFO
 description: 微型端口驱动程序使用 NDIS_STATUS_WWAN_SLOT_INFO 通知来通知 MB 服务完成了上一个 OID_WWAN_SLOT_INFO 查询请求。
-ms.assetid: FA1E16E4-56A3-4401-875F-D75DD01FE75D
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 NDIS_STATUS_WWAN_SLOT_INFO 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 7ce3cf2a2fe20f4c90fc60f46c5a29a55136c591
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 8e64c21ecefd11d4f5599edf71f5fa9adf347737
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89217276"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96832617"
 ---
 # <a name="ndis_status_wwan_slot_info"></a>NDIS \_ 状态 \_ WWAN \_ 槽 \_ 信息
 
@@ -33,7 +32,7 @@ ms.locfileid: "89217276"
 <tbody>
 <tr class="odd">
 <td><p>版本</p></td>
-<td><p>Windows 10 版本1703</p></td>
+<td><p>Windows 10 版本 1703</p></td>
 </tr>
 <tr class="even">
 <td><p>标头</p></td>
@@ -42,7 +41,7 @@ ms.locfileid: "89217276"
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [OID \_ WWAN \_ 槽 \_ 信息](./oid-wwan-slot-info-status.md)

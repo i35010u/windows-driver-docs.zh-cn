@@ -1,23 +1,22 @@
 ---
 title: Windows 筛选平台常量
 description: 本部分介绍 Windows 筛选平台常数。
-ms.assetid: 9ebf1db2-fae2-427d-9c9d-6fae707da55a
 keywords:
 - Windows 筛选平台常量网络驱动程序
 ms.date: 11/07/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f106f520f6d0a119b011bcd00f29841bbd38af86
-ms.sourcegitcommit: e2de6b9ffb5c7356deb864f9da879533f49b25bf
+ms.openlocfilehash: 9b3d5a529ef47a632cef67eefe0a4eaf85628b0c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/03/2020
-ms.locfileid: "91702644"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96834053"
 ---
 # <a name="windows-filtering-platform-constants"></a>Windows 筛选平台常量
 
 本部分介绍 Windows 筛选平台标注驱动程序中使用的常量。
 
-## <a name="in-this-section"></a>在此部分中
+## <a name="in-this-section"></a>在本节中
 
 [内置的标注标识符](built-in-callout-identifiers.md)
 

@@ -1,41 +1,40 @@
 ---
-title: PROPSETID\_VIDCAP\_CROSSBAR
-description: PROPSETID\_VIDCAP\_CROSSBAR
-ms.assetid: a2ed126c-75ee-4346-845e-9f675ca34416
+title: PROPSETID \_ VIDCAP \_ 横线
+description: PROPSETID \_ VIDCAP \_ 横线
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c7549c59fae62b8a0af905aa2ccce1244a23eac8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: eac10a096017091dc9c59fea27e00457b61f7fa0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63377761"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96833953"
 ---
-# <a name="propsetidvidcapcrossbar"></a>PROPSETID\_VIDCAP\_CROSSBAR
+# <a name="propsetid_vidcap_crossbar"></a>PROPSETID \_ VIDCAP \_ 横线
 
 
 ## <span id="ddk_propsetid_vidcap_crossbar_ks"></span><span id="DDK_PROPSETID_VIDCAP_CROSSBAR_KS"></span>
 
 
-PROPSETID\_VIDCAP\_纵横制属性设置控件路由视频和音频信号的设备。 上一个常规的切换矩阵，其中 N 输入和 M 输出建模纵横制。 输入任何的信号可路由到一个或多个输出，尽管实际的硬件实现可能会允许此常规路由功能的一个子集。 十字条可用于路由数字或模拟信号。 单个纵横制可以路由视频和音频信号。 （可选） 视频插针可指示到视频插针相关的音频 pin。
+PROPSETID \_ VIDCAP \_ 纵横比属性集控制路由视频和音频信号的设备。 该纵横比在具有 N 个输入和 M 个输出的常规切换矩阵上建模。 可以将任何输入信号路由到一个或多个输出，但实际的硬件实现可能只允许使用此常规路由功能的一个子集。 可以使用纵横制来路由数字或模拟信号。 单个纵横条可以路由视频和音频信号。 视频 pin （可选）可以指示与视频 pin 相关的音频 pin。
 
-KSPROPERTY\_VIDCAP\_中的十字条枚举*ksmedia.h*指定此集的属性。
+\_Ksmedia 中的 KSPROPERTY VIDCAP \_ 纵横 *ksmedia.h* 数枚举指定此集的属性。
 
-支持设置此属性是可选的应仅由十字条设备的微型驱动程序实现。
+对此属性集的支持是可选的，并且应仅由纵横比的微型驱动程序设备来实现。
 
-纵横制捕获微型驱动程序需要实现以下属性：
+要实现以下属性，需要执行纵横制捕获微型驱动程序：
 
-[**KSPROPERTY\_CROSSBAR\_CAN\_ROUTE**](ksproperty-crossbar-can-route.md)
+[**KSPROPERTY \_ 横线 \_ 可以 \_ 路由**](ksproperty-crossbar-can-route.md)
 
-[**KSPROPERTY\_CROSSBAR\_CAPS**](ksproperty-crossbar-caps.md)
+[**KSPROPERTY \_ 横线 \_ 帽**](ksproperty-crossbar-caps.md)
 
-[**KSPROPERTY\_CROSSBAR\_PININFO**](ksproperty-crossbar-pininfo.md)
+[**KSPROPERTY \_ 横线 \_ PININFO**](ksproperty-crossbar-pininfo.md)
 
-[**KSPROPERTY\_CROSSBAR\_ROUTE**](ksproperty-crossbar-route.md)
+[**KSPROPERTY \_ 横线 \_ 路由**](ksproperty-crossbar-route.md)
 
-### <a name="span-iddirectshowinterfacespanspan-iddirectshowinterfacespandirectshow-interface"></a><span id="directshow_interface"></span><span id="DIRECTSHOW_INTERFACE"></span>DirectShow 接口
+### <a name="span-iddirectshow_interfacespanspan-iddirectshow_interfacespandirectshow-interface"></a><span id="directshow_interface"></span><span id="DIRECTSHOW_INTERFACE"></span>DirectShow 接口
 
-DirectShow **IAMCrossbar**接口 （请参阅 Microsoft Windows SDK 中的 DirectShow 文档） 提供对此集的属性的访问。
+DirectShow **IAMCrossbar** 接口 (参阅 Microsoft Windows SDK 中的 directshow 文档) 提供对此集的属性的访问权限。
 
  
 

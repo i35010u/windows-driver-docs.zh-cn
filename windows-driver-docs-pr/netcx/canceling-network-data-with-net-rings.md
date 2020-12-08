@@ -1,18 +1,17 @@
 ---
 title: 使用净环取消网络数据
 description: 本主题介绍 NetAdapterCx 客户端驱动程序如何使用净环和网络环迭代器来取消网络数据。
-ms.assetid: 009CC1D7-5168-4D7B-9284-04F922D37434
 keywords:
 - NetAdapterCx，NetAdapterCx 取消数据包队列
 ms.date: 11/01/2019
 ms.localizationpriority: medium
 ms.custom: Vib
-ms.openlocfilehash: 432e6de2d9e884c2c33aa4c957ad97cfd2bf7b96
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 24b79e92e94ec03c2ca85c15224aaa882e6b4e8e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89212207"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96834389"
 ---
 # <a name="canceling-network-data-with-net-rings"></a>使用网环取消网络数据
 

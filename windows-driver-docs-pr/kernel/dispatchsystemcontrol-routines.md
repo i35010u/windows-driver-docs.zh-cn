@@ -1,7 +1,6 @@
 ---
 title: DispatchSystemControl 例程
 description: DispatchSystemControl 例程
-ms.assetid: b885a4a3-a9b6-423c-83bb-ee502724b0d0
 keywords:
 - 调度例程 WDK 内核，DispatchSystemControl 例程
 - 系统控制调度例程 WDK 内核
@@ -9,12 +8,12 @@ keywords:
 - DispatchSystemControl 例程
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6b1eb54ed9299f6859f47fcf05e37633ec2d8ca3
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: aa884664f4e4c816c99ccb3cfd83e0534752eff4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89189789"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96833435"
 ---
 # <a name="dispatchsystemcontrol-routines"></a>DispatchSystemControl 例程
 

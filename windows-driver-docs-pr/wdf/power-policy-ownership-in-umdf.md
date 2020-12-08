@@ -1,19 +1,18 @@
 ---
 title: UMDF 中的电源策略所有权
 description: UMDF 中的电源策略所有权
-ms.assetid: cf543259-3401-4f3b-a492-53940cea07f3
 keywords:
 - 电源策略所有权 WDK UMDF
 - 电源策略所有权 WDK UMDF，概述
 - 电源管理 WDK UMDF，电源策略所有权
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cbde5b0c6b985dc8ce23842a2ced46fd04b102a9
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: adedf679012a9d3674ba4312448930869c4755a9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89185711"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96832901"
 ---
 # <a name="power-policy-ownership-in-umdf"></a>UMDF 中的电源策略所有权
 
@@ -56,9 +55,9 @@ HKR,,"WinUsbPowerPolicyOwnershipDisabled",0x00010001,1
 
 有关电源策略所有者责任的详细信息，请参阅以下主题：
 
--   [支持基于 UMDF 的驱动程序中的空闲电源](supporting-idle-power-down-in-umdf-drivers.md)
+-   [支持基于 UMDF 的驱动程序中的空闲 Power-Down](supporting-idle-power-down-in-umdf-drivers.md)
 
--   [支持基于 UMDF 的驱动程序中的系统唤醒](supporting-system-wake-up-in-umdf-drivers.md)
+-   [支持基于 UMDF 的驱动程序中的系统 Wake-Up](supporting-system-wake-up-in-umdf-drivers.md)
 
 -   [UMDF 中设备空闲和唤醒行为的用户控件](user-control-of-device-idle-and-wake-behavior-in-umdf.md)
 

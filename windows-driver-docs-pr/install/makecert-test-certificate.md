@@ -1,23 +1,22 @@
 ---
 title: MakeCert 测试证书
 description: MakeCert 测试证书
-ms.assetid: 17f63c42-a563-4a57-a3be-ac3b2e97ee3b
 keywords:
 - MakeCert test 证书 WDK
 - 数字证书 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bd08d4902adcd404cab6904fb91c0bbc924b9ffd
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 40907b8c96900a93a473c95504b640d5a30c98e4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89097393"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96834509"
 ---
 # <a name="makecert-test-certificate"></a>MakeCert 测试证书
 
 
-MakeCert 测试证书是使用[**MakeCert**](../devtest/makecert.md)工具创建的[x.509 数字证书](digital-certificates.md)。 MakeCert 测试证书是一个自签名根证书，可用于对[驱动程序包的](driver-packages.md)[目录文件](catalog-files.md)进行测试签名或通过在驱动程序文件中嵌入签名来对驱动程序文件进行测试签名。
+MakeCert 测试证书是使用 [**MakeCert**](../devtest/makecert.md)工具创建的 [x.509 数字证书](digital-certificates.md)。 MakeCert 测试证书是一个自签名根证书，可用于对[驱动程序包的](driver-packages.md)[目录文件](catalog-files.md)进行测试签名或通过在驱动程序文件中嵌入签名来对驱动程序文件进行测试签名。
 
 若要了解有关创建 MakeCert 测试证书的详细信息，请参阅 [**创建测试证书**](creating-test-certificates.md)。
 

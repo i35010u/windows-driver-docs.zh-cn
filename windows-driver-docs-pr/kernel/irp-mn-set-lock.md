@@ -2,16 +2,15 @@
 title: IRP_MN_SET_LOCK
 description: 总线驱动程序必须为其子设备处理此 IRP， (支持设备锁定的子 PDOs) 。 函数和筛选器驱动程序不处理此请求。
 ms.date: 08/12/2017
-ms.assetid: d4e09527-f817-4eb5-b0f5-7584de8888b1
 keywords:
-- IRP_MN_SET_LOCK 内核模式驱动程序体系结构
+- IRP_MN_SET_LOCK Kernel-Mode 驱动程序体系结构
 ms.localizationpriority: medium
-ms.openlocfilehash: 5083b4e24f9b029e7903fafa6edfeeb0a6c77563
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 1b146b38b8441eb86e16f043c757eed43720d9fc
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106938"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96834457"
 ---
 # <a name="irp_mn_set_lock"></a>IRP \_ MN \_ 设置 \_ 锁定
 
@@ -37,7 +36,7 @@ PnP 管理器在 \_ 任意线程上下文中以 IRQL 被动级别发送此 IRP�
 ## <a name="input-parameters"></a>输入参数
 
 
-[**IO \_ 堆栈 \_ 位置**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_stack_location)结构的**SetLock**成员是一个布尔值，指定是否将 () 或解锁 (FALSE) 设备。
+[**IO \_ 堆栈 \_ 位置**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_stack_location)结构的 **SetLock** 成员是一个布尔值，指定是否将 () 或解锁 (FALSE) 设备。
 
 ## <a name="output-parameters"></a>输出参数
 

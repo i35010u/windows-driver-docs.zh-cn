@@ -1,9 +1,8 @@
 ---
-title: usb3kd hub_info
-description: Device_info usb3kd 命令显示有关 USB 3.0 树中的集线器的信息。
-ms.assetid: B46B48C1-C14A-410D-9C34-F8AB1640682C
+title: usb3kd.hub_info
+description: Usb3kd.device_info 命令显示有关 USB 3.0 树中的集线器的信息。
 keywords:
-- usb3kd hub_info Windows 调试
+- usb3kd.hub_info Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 5b414af24ccb233911587e186315384c76ab40ff
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: bc9ce8d0759f12006a2ed5ff5972891dd246b18d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89206601"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96833895"
 ---
 # <a name="usb3kdhub_info"></a>！ usb3kd \_ 信息
 
 
-[**！ Usb3kd \_ info**](-usb3kd-device-info.md)命令显示有关[USB 3.0 树](usb-3-extensions.md#usb-3-tree)中的集线器的信息。
+[**！ Usb3kd \_ info**](-usb3kd-device-info.md)命令显示有关 [USB 3.0 树](usb-3-extensions.md#usb-3-tree)中的集线器的信息。
 
 ```dbgcmd
 !usb3kd.hub_info DeviceExtension

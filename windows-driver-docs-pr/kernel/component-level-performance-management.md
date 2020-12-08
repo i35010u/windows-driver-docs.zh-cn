@@ -1,15 +1,14 @@
 ---
 title: 组件级性能状态管理
 description: 从 Windows 10 开始，电源管理框架 (PoFx) 使驱动程序能够为设备中的单个组件定义一组或多组单独的可调整性能状态。
-ms.assetid: D5341D6D-7C71-43CB-9C70-7E939B32C33F
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: fd6a625ac4967b33c711e59493ba15a4918960b1
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: a315a98724efbe4823c41ed5105ea062052fdb94
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89189831"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96833467"
 ---
 # <a name="component-level-performance-state-management"></a>组件级性能状态管理
 
@@ -28,7 +27,7 @@ ms.locfileid: "89189831"
 -   它为设备驱动程序提供了一种标准方法，通知 PEP 有关性能状态更改的信息，以便 PEP 采取适当的措施。
 -   它为驱动程序提供了一种标准方法，通知操作系统 Windows 性能分析器中的日志记录和分析的性能状态更改 (WPA) ，无需每个驱动程序都有自定义插件。
 
-## <a name="introduction-to-the-pofx-api-for-component-level-performance-states"></a>组件级性能状态的 PoFX API 简介
+## <a name="introduction-to-the-pofx-api-for-component-level-performance-states"></a>Component-Level 性能状态的 PoFX API 简介
 
 
 PoFx 使设备可以为每个组件定义以下类型的性能状态：

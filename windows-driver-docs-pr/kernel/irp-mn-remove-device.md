@@ -2,23 +2,22 @@
 title: IRP_MN_REMOVE_DEVICE
 description: 了解 "IRP_MN_REMOVE_DEVICE" 内核模式驱动程序体系结构。 所有 PnP 驱动程序都必须处理此 IRP。
 ms.date: 08/12/2017
-ms.assetid: 0d733cbd-2da8-48a5-afc6-e1e6b8f507a1
 keywords:
-- IRP_MN_REMOVE_DEVICE 内核模式驱动程序体系结构
+- IRP_MN_REMOVE_DEVICE Kernel-Mode 驱动程序体系结构
 ms.localizationpriority: medium
-ms.openlocfilehash: 5a5445a433a7c95d1581eec4585579885d9c5b3a
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 7cd2c75fd2f45e091e66051381874aa537db2e72
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91732973"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96834463"
 ---
 # <a name="irp_mn_remove_device"></a>IRP \_ MN \_ 删除 \_ 设备
 
 
 所有 PnP 驱动程序都必须处理此 IRP。
 
-## <a name="value"></a>值
+## <a name="value"></a>“值”
 
 0x02
 
@@ -84,7 +83,7 @@ PnP 管理器在 \_ 系统线程的上下文中以 IRQL 被动级别发送此 IR
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**IoInvalidateDeviceRelations**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioinvalidatedevicerelations)

@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ COPY \_ MACROVISION
 description: KSPROPERTY \_ COPY \_ MACROVISION 属性指示数据流的 MACROVISION 级别。
-ms.assetid: 6863bcf6-06bc-4bd2-896e-43c083aa07d5
 keywords:
 - KSPROPERTY_COPY_MACROVISION 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2862f8b6b7c8ecaf99a72502313516cf14c59e42
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: e1c6cd6419408d21e3f318fc9e464498d1f52a82
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102728"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96832559"
 ---
 # <a name="ksproperty_copy_macrovision"></a>KSPROPERTY \_ COPY \_ MACROVISION
 
@@ -84,7 +83,7 @@ KSPROPERTY \_ COPY \_ MACROVISION 属性指示数据流的 MACROVISION 级别。
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KS \_ 复制 \_ MACROVISION**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-_ks_copy_macrovision)

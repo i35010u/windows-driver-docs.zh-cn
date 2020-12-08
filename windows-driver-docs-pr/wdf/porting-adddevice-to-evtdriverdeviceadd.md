@@ -1,20 +1,19 @@
 ---
 title: 将 AddDevice 移植到 EvtDriverDeviceAdd
 description: 将 AddDevice 移植到 EvtDriverDeviceAdd
-ms.assetid: 8FCFDA98-621E-415E-83D7-0371F55DD8A8
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 405f834f04dea9809ce4ad4d97a02786a652fb29
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: fa4df03cd86fd31704b522bf2f0a6664e8304140
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104358"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96832909"
 ---
 # <a name="porting-adddevice-to-evtdriverdeviceadd"></a>将 AddDevice 移植到 EvtDriverDeviceAdd
 
 
-支持即插即用的每个内核模式驱动程序框架 (KMDF) 或用户模式驱动程序框架 (UMDF) 驱动程序必须具有 [*EvtDriverDeviceAdd*](/windows-hardware/drivers/ddi/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add) 回调，该回调等效于 WDM 驱动程序的 [*AddDevice*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_add_device) 函数。
+每个 Kernel-Mode Driver Framework (KMDF) 或 User-Mode Driver Framework (支持) 的 UMDF 即插即用驱动程序必须具有 [*EvtDriverDeviceAdd*](/windows-hardware/drivers/ddi/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add) 回调，该回调等效于 WDM 驱动程序的 [*AddDevice*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_add_device) 函数。
 
 WDM [*AddDevice*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_add_device) 函数创建设备对象，创建设备接口，并初始化 WMI，还在驱动程序的设备扩展中初始化大量变量。 WDM 驱动程序通常会在调用 [*DispatchPnP*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch) 函数来处理 [**IRP \_ MN \_ 启动 \_ 设备**](../kernel/irp-mn-start-device.md) 请求之前，延迟创建 i/o 队列和中断对象。
 
@@ -43,7 +42,7 @@ KMDF 总线驱动程序通常会创建多个设备对象：其角色的 FDO 作�
 
 WDM 驱动程序创建 [**设备 \_ 对象**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_device_object) 结构来表示每个设备对象，并将设备对象附加到即插即用设备堆栈。 基于框架的驱动程序还会创建设备对象，这些对象通过使用 WDFDEVICE 句柄来引用。
 
-在 WDF 驱动程序调用所需的初始化方法后，它会为设备对象设置特性 (通常是上下文区域的大小和类型) 然后调用 [**WdfDeviceCreate**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicecreate) 创建设备对象。 **WdfDeviceCreate**创建 WDFDEVICE 对象和基础 WDM 设备对象，将 WDM**设备 \_ 对象**附加到设备堆栈，并返回 WDFDEVICE 对象的句柄。 [** \_ **](/windows-hardware/drivers/ddi/wdm/ns-wdm-_device_object)
+在 WDF 驱动程序调用所需的初始化方法后，它会为设备对象设置特性 (通常是上下文区域的大小和类型) 然后调用 [**WdfDeviceCreate**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicecreate) 创建设备对象。 **WdfDeviceCreate** 创建 WDFDEVICE 对象和基础 WDM 设备对象，将 WDM **设备 \_ 对象** 附加到设备堆栈，并返回 WDFDEVICE 对象的句柄。 [**\_**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_device_object)
 
 ## <a name="additional-evtdriverdeviceadd-tasks"></a>其他 EvtDriverDeviceAdd 任务
 

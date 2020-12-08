@@ -1,11 +1,10 @@
 ---
 title: vad
-description: Vad 扩展显示的虚拟地址说明符 (VAD) 的详细信息或 Vad 树。
-ms.assetid: 96bd5a38-016d-4ce9-b128-cc730577be45
+description: Vad 扩展显示虚拟地址描述符 (VAD) 或 Vad 树的详细信息。
 keywords:
-- 虚拟地址说明符 (VAD)
-- VAD （虚拟地址描述符）
-- 地址，虚拟地址说明符 (VAD)
+- '虚拟地址描述符 (VAD) '
+- 'VAD (虚拟地址描述符) '
+- '地址，虚拟地址描述符 (VAD) '
 - vad Windows 调试
 ms.date: 05/23/2017
 topic_type:
@@ -15,46 +14,46 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: b79e0b54bc1134b84cf3d1b9402861e668836a71
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4b1723c8474f78d720c260d3fbaa57c4565b8188
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63323491"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96833848"
 ---
 # <a name="vad"></a>!vad
 
 
-**！ Vad**扩展显示的虚拟地址说明符 (VAD) 的详细信息或 Vad 树。
+**！ Vad** 扩展显示虚拟地址描述符 (vad) 或 vad 树的详细信息。
 
--   显示一个虚拟地址说明符 (VAD) 的详细信息
--   显示 Vad 树的详细信息。
--   显示有关特定的用户模式模块 Vad 信息并提供可用于加载该模块的符号的字符串。
+-   显示 (VAD 的一个虚拟地址描述符的详细信息) 
+-   显示 Vad 的树的详细信息。
+-   显示有关特定用户模式模块的 Vad 的信息，并提供可用于加载该模块的符号的字符串。
 
 ```dbgcmd
 !vad VAD-Root [Flag]
 !vad Address 1
 ```
 
-## <a name="span-idddkvaddbgspanspan-idddkvaddbgspanparameters"></a><span id="ddk__vad_dbg"></span><span id="DDK__VAD_DBG"></span>参数
+## <a name="span-idddk__vad_dbgspanspan-idddk__vad_dbgspanparameters"></a><span id="ddk__vad_dbg"></span><span id="DDK__VAD_DBG"></span>参数
 
 
-<span id="_______VAD-Root______"></span><span id="_______vad-root______"></span><span id="_______VAD-ROOT______"></span> *VAD-Root*   
-要显示的 VAD 树的根的地址。
+<span id="_______VAD-Root______"></span><span id="_______vad-root______"></span><span id="_______VAD-ROOT______"></span>*VAD-根*   
+要显示的 VAD 树的根地址。
 
-<span id="_______Flag______"></span><span id="_______flag______"></span><span id="_______FLAG______"></span> *Flag*   
-指定在窗体显示。 可能值的包括：
+<span id="_______Flag______"></span><span id="_______flag______"></span><span id="_______FLAG______"></span>*标志*   
+指定显示的窗体。 可能的值包括：
 
 <span id="0"></span>0  
-在基于整个 VAD 树*VAD 根*显示。 （这是默认值）。
+此时将显示基于 *VAD* 的整个 VAD 树。  (这是默认值。 ) 
 
 <span id="1"></span>1  
-通过指定 VAD *VAD 根*显示。 显示将包含更详细的分析。
+仅显示由 *VAD* 指定的 VAD。 显示将包括更详细的分析。
 
-<span id="_______Address______"></span><span id="_______address______"></span><span id="_______ADDRESS______"></span> *Address*   
-在用户模式模块的虚拟地址范围中的地址。
+<span id="_______Address______"></span><span id="_______address______"></span><span id="_______ADDRESS______"></span>*地址*   
+用户模式模块的虚拟地址范围内的地址。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 <table>
 <colgroup>
@@ -75,18 +74,18 @@ ms.locfileid: "63323491"
 
  
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-有关虚拟地址描述符信息，请参阅*Microsoft Windows Internals*、 Mark Russinovich 和 David solomon 合著的。 
+有关虚拟地址描述符的详细信息，请参阅 Russinovich 和 David 所罗门群岛上的 *Microsoft Windows 内部机制*。 
 
 <a name="remarks"></a>备注
 -------
 
-可以使用找到的地址的任何进程 VAD 根目录[ **！ 过程**](-process.md)命令。
+使用 [**！ process**](-process.md) 命令可找到任何进程的 VAD 的根地址。
 
-**！ Vad**命令时需要加载已分页内存不足的用户模式模块的符号可以提供帮助。 有关详细信息，请参阅[映射符号时 PEB 是分页出](mapping-symbols-when-the-peb-is-paged-out.md)。
+当你需要为已分页出内存的用户模式模块加载符号时， **！ vad** 命令会很有帮助。 有关详细信息，请参阅 [在 PEB 被分页时映射符号](mapping-symbols-when-the-peb-is-paged-out.md)。
 
-下面是举例 **！ vad**扩展：
+下面是 **！ vad** 扩展的一个示例：
 
 ```dbgcmd
 kd> !vad 824bc2f8

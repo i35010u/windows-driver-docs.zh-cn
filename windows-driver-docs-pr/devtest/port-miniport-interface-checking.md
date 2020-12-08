@@ -1,17 +1,16 @@
 ---
 title: 端口/微型端口接口检查
 description: 端口/微型端口接口检查
-ms.assetid: ad6c4762-354d-446d-bcda-a2e99c37c589
 keywords:
 - 端口/微型端口接口检查
 ms.date: 09/14/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c576efbb58411d5209a8e6d182dce0474b9f0ac3
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 4b75e8bf17dce64a300d2e589f612bd712eef921
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89382405"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96832805"
 ---
 # <a name="portminiport-interface-checking"></a>端口/微型端口接口检查
 
@@ -23,7 +22,7 @@ ms.locfileid: "89382405"
 
 * **在命令行中**
 
-    在命令行中，端口微型端口接口检查由 **0x0x00010000 (位 16) **表示。 例如：
+    在命令行中，端口微型端口接口检查由 **0x0x00010000 (位 16)** 表示。 例如：
     
     `verifier /flags 0x00010000 /driver MyDriver.sys`
 

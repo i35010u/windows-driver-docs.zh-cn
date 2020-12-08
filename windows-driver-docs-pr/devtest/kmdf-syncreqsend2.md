@@ -1,7 +1,6 @@
 ---
 title: 'SyncReqSend2 规则 (kmdf) '
 description: SyncReqSend2 规则指定同步请求发送的超时值设置为非零值。
-ms.assetid: c72b909f-6160-47da-8e7e-84e0dea785c2
 ms.date: 05/21/2018
 keywords:
 - 'SyncReqSend2 规则 (kmdf) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 0973485f3301bec436e7802127bdbcadcbb40357
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: b4154bb8a5751a97ba52b128ca171ca9994f1b63
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90101620"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96833075"
 ---
 # <a name="syncreqsend2-rule-kmdf"></a>SyncReqSend2 规则 (kmdf) 
 
 
-**SyncReqSend2**规则指定同步请求发送的超时值设置为非零值。
+**SyncReqSend2** 规则指定同步请求发送的超时值设置为非零值。
 
 如果驱动程序调用 [**WdfRequestSend**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestsend) ，但未在请求选项中设置有效的超时，则在硬件没有及时响应的情况下，线程可能会停止。
 

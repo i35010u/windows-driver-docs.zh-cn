@@ -1,7 +1,6 @@
 ---
 title: 'PdoInitFreeDeviceCallback 规则 (kmdf) '
 description: PdoInitFreeDeviceCallback 规则指定当驱动程序调用任何框架设备对象初始化函数时，驱动程序必须调用 WdfDeviceInitFree （如果出现错误）。
-ms.assetid: ec38eccc-435e-4758-8bf1-27b062cf2a18
 ms.date: 05/21/2018
 keywords:
 - 'PdoInitFreeDeviceCallback 规则 (kmdf) '
@@ -12,19 +11,19 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 0ede81fcf39e59ebdf974c361a329d8193139320
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 1cf56e9c7fe545191a3f3d845ad6478fac6dc96d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103818"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96833557"
 ---
 # <a name="pdoinitfreedevicecallback-rule-kmdf"></a>PdoInitFreeDeviceCallback 规则 (kmdf) 
 
 
-**PdoInitFreeDeviceCallback**规则指定当驱动程序调用任何框架设备对象初始化函数时，驱动程序必须调用[**WdfDeviceInitFree**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceinitfree) （如果出现错误）。
+**PdoInitFreeDeviceCallback** 规则指定当驱动程序调用任何框架设备对象初始化函数时，驱动程序必须调用 [**WdfDeviceInitFree**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceinitfree) （如果出现错误）。
 
-如果驱动程序在初始化新框架设备对象时遇到错误，并且驱动程序从对[**WdfPdoInitAllocate**](/windows-hardware/drivers/ddi/wdfpdo/nf-wdfpdo-wdfpdoinitallocate)的调用接收到[WDFDEVICE \_ INIT](../wdf/wdfdevice_init.md)结构，则驱动程序必须调用[**WdfDeviceInitFree**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceinitfree)。
+如果驱动程序在初始化新框架设备对象时遇到错误，并且驱动程序从对 [**WdfPdoInitAllocate**](/windows-hardware/drivers/ddi/wdfpdo/nf-wdfpdo-wdfpdoinitallocate)的调用接收到 [WDFDEVICE \_ INIT](../wdf/wdfdevice_init.md)结构，则驱动程序必须调用 [**WdfDeviceInitFree**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceinitfree)。
 
 **驱动程序模型： KMDF**
 

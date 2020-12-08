@@ -1,7 +1,6 @@
 ---
 title: 启动设备
 description: 启动设备
-ms.assetid: c52588cf-04c8-420d-a68e-a8754a65d546
 keywords:
 - PnP WDK 内核，启动设备
 - 即插即用 WDK 内核，启动设备
@@ -11,12 +10,12 @@ keywords:
 - 未能启动 WDK PnP
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9d5a9516792fbb8963b6e48e1bc1d84f29b21718
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: f81549fa7a9704d8f8f9ac0f579db8427ab9be31
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89185501"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96834409"
 ---
 # <a name="starting-a-device"></a>启动设备
 

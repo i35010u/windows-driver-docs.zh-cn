@@ -4,12 +4,12 @@ title: 验证通用 Windows 驱动程序
 description: 可以使用 ApiValidator.exe 工具验证驱动程序调用的 API 是否对通用 Windows 驱动程序有效。
 ms.date: 04/28/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: ac4385dd79ff9613c717c6d4c0b7fdfc7a5643d1
-ms.sourcegitcommit: c899ded3f345d000a1bdcd970891d663e8bf32d4
+ms.openlocfilehash: 4884b563166d4128960744e5e00ca1bb89d0b0d8
+ms.sourcegitcommit: f86e44d595be2c9e4efe3c196f6c0a9c71f4231e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93035462"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96470528"
 ---
 # <a name="validating-windows-drivers"></a>验证 Windows 驱动程序
 
@@ -25,6 +25,21 @@ ms.locfileid: "93035462"
 * 遵循 [Windows 驱动程序入门](getting-started-with-windows-drivers.md)中的[驱动程序包隔离](driver-isolation.md)要求
 
 如需了解更多详情，请参阅[通过命令行运行 InfVerif](../devtest/running-infverif-from-the-command-line.md)。
+
+### <a name="targeting-current-and-earlier-versions-of-windows"></a>面向当前版本的 Windows 和早期版本的 Windows
+
+InfVerif 的每次运行测试单个规则集，例如 `/w`（Windows 驱动程序兼容性）或 `/k`（硬件开发人员中心提交）。  如果你的 INF 包含较新版本的 Windows 中引入的语法，并且你还想要将以前的 Windows 版本作为目标，请使用 [INF 修饰](../install/inf-manufacturer-section.md)来标记特定版本的 INF 项，然后多次运行 InfVerif，例如：
+
+```inf
+infverif /k <INF file>
+infverif /w NTAMD64.10.0.0.<build number where w is a requirement> <INF file>
+```
+
+如果没有错误，则 INF 满足 Windows 驱动程序的[驱动程序包隔离](driver-isolation.md)要求。
+
+例如，从 Windows 10 版本 1809 开始，[INF AddEventProvider 指令](../install/inf-addeventprovider-directive.md)可供使用。 若要在一个面向 Windows 10 版本 1809 之前的 OS 版本的 INF 中使用此指令，请修饰使用旧 INF 语法（用于注册 ETW 事件提供程序）的安装部分和使用已更新语法的安装部分。
+
+有关演示如何使用 OS 修饰的示例代码，请参阅[适用于一个或多个目标操作系统的示例 INF 模型部分](../install/sample-inf-models-sections-for-one-or-more-target-operating-system.md)。
 
 ## <a name="driver-verifier-driver-isolation-checks"></a>驱动程序验证器驱动程序隔离检查
 

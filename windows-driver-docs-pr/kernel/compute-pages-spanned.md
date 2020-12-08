@@ -1,15 +1,14 @@
 ---
 title: Windows 内核的已过时宏
 description: 本主题概述了以下已过时的宏
-ms.assetid: b102355e-f40b-438e-92ef-371814e0c074
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: bd3bad98449009b89cd515c1baff12768a416493
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: f3a30e0d738de0721a214fc66d4ec9db7684f939
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106062"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96833461"
 ---
 # <a name="windows-kernel-obsolete-macros"></a>Windows 内核的已过时宏
 

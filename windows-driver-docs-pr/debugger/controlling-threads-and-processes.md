@@ -1,17 +1,16 @@
 ---
 title: 控制线程和进程
 description: 控制线程和进程
-ms.assetid: 6182ca34-ee5e-47e9-82fe-29266397e3a8
 keywords:
 - 调试器引擎 API、线程和进程
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0cb2679b603f6923ebffd4fa674ecf3f3e122611
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: bcca7b0c69448a00626618c2135eb5ea539caef5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89213041"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96833685"
 ---
 # <a name="controlling-threads-and-processes"></a>控制线程和进程
 
@@ -29,7 +28,7 @@ ms.locfileid: "89213041"
 
 可以使用 [**SetImplicitProcessDataOffset**](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugsystemobjects4-setimplicitprocessdataoffset)更改隐式进程。 若要确定隐式进程，请使用 [**GetImplicitProcessDataOffset**](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugsystemobjects4-getimplicitprocessdataoffset)。
 
-**注意**   在实时内核调试会话期间设置[断点](multiprocessor-syntax.md#breakpoints)时，调试器引擎会将断点的虚拟地址传递给目标，目标将设置断点。 在这种情况下，仅在处理断点时使用目标的进程上下文;隐式进程的值是不相关的。
+**注意**   在实时内核调试会话期间设置 [断点](multiprocessor-syntax.md#breakpoints) 时，调试器引擎会将断点的虚拟地址传递给目标，目标将设置断点。 在这种情况下，仅在处理断点时使用目标的进程上下文;隐式进程的值是不相关的。
 
  
 
@@ -39,13 +38,13 @@ ms.locfileid: "89213041"
 
 并非所有寄存器都由隐式线程确定。 当隐式线程发生变化时，一些寄存器将保持不变。
 
-**警告**   隐式进程和隐式线程是独立的。 如果隐式线程不属于隐式进程，则隐式线程的用户和会话状态将位于错误的虚拟地址空间中，尝试访问此信息会导致错误或提供错误的结果。 访问内核内存时不会出现此问题，因为内核内存地址在所有虚拟地址空间中都是固定的。 因此，可以独立于隐式进程访问位于核心内存中的隐式线程的信息。
+**警告**   隐式进程和隐式线程是独立的。 如果隐式线程不属于隐式进程，则隐式线程的用户和会话状态将位于错误的虚拟地址空间中，尝试访问此信息会导致错误或提供错误的结果。 访问内核内存时不会出现此问题，因为内核内存地址在所有虚拟地址空间中都是固定的。 因此，可以独立于隐式进程访问位于核心内存中的隐式线程的信息。
 
  
 
 ### <a name="span-idthreadsspanspan-idthreadsspanthreads"></a><span id="threads"></span><span id="THREADS"></span>线程
 
-*引擎线程 ID*由调试器引擎用来标识每个操作系统线程和一个目标的每个虚拟线程。
+*引擎线程 ID* 由调试器引擎用来标识每个操作系统线程和一个目标的每个虚拟线程。
 
 当目标停止时，每个线程还会有一个相对于其所属进程的索引。 对于任何进程，进程中第一个线程的索引为零，最后一个线程的索引为进程中的线程数减一。 可以通过使用 [**GetNumberThreads**](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugsystemobjects4-getnumberthreads)找到当前进程中的线程数。 可以使用 [**GetTotalNumberThreads**](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugsystemobjects4-gettotalnumberthreads)查找当前目标中所有进程中的线程总数。
 

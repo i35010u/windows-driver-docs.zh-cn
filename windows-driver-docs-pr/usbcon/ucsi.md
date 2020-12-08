@@ -3,12 +3,12 @@ description: Microsoft 提供与 USB 类型 C 连接器系统软件接口 (UCSI)
 title: USB 类型 C 连接器系统软件接口 (UCSI) 驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: High
-ms.openlocfilehash: 91366d40621d767e3a2bcd57086875e92544ea1f
-ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
+ms.openlocfilehash: 79b8a30b27887f0fc778cd965e5426e28620af8b
+ms.sourcegitcommit: 4d3ce2916e688901f2a62fac5a9494607c03923e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90009813"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96335954"
 ---
 # <a name="usb-type-c-connector-system-software-interface-ucsi-driver"></a>USB 类型 C 连接器系统软件接口 (UCSI) 驱动程序
 
@@ -23,13 +23,13 @@ ms.locfileid: "90009813"
 
 **Windows 版本**
 
--   Windows 10 桌面版（家庭版、专业版、企业版和教育版）
+-   Windows 10 桌面版（家庭版、专业版、企业版和教育版）
 -   Windows 10 移动版
 
 **官方规范**
 
--   [UCSI 的 Intel BIOS 实现](https://go.microsoft.com/fwlink/p/?LinkId=760658)
--   [USB 类型 C 连接器系统软件接口规范](https://go.microsoft.com/fwlink/p/?LinkId=703713)
+-   [UCSI 的 Intel BIOS 实现](https://www.intel.com/content/www/us/en/products/docs/io/universal-serial-bus/bios-implementation-of-ucsi.html)
+-   [USB 类型 C 连接器系统软件接口规范](https://www.intel.com/content/www/us/en/products/docs/io/universal-serial-bus/usb-type-c-ucsi-spec.html)
 -   [硬件设计：适用于带有嵌入式控制器的系统的 USB 类型 C 组件](hardware-design-of-a-usb-type-c-system.md#emb)
 
 
@@ -57,13 +57,13 @@ Microsoft 为 ACPI 传输提供与 USB 类型 C 连接器系统软件接口 (UCS
 
     USB 主机端驱动程序是适用于与 EHCI 或 XHCI 兼容的 USB 主机控制器的一组驱动程序。 如果角色切换驱动程序枚举主机角色，则会加载驱动程序。 如果主机控制器不符合规范，则可以使用 [USB 主机控制器扩展 (UCX) 编程接口](/previous-versions/windows/hardware/drivers/mt188009(v=vs.85))来写入自定义驱动程序。 有关信息，请参阅[为 USB 主机控制器开发 Windows 驱动程序](developing-windows-drivers-for-usb-host-controllers.md)。
 
-    请注意，    并非[所有 USB 设备类](supported-usb-classes.md)在 Windows 10 移动版上都受支持。
+    请注意，并非[所有 USB 设备类](supported-usb-classes.md)在 Windows 10 移动版上都受支持。
 
      
 
 -   **USB 连接器管理器**
 
-    Microsoft 提供带有 Windows (UcmUcsiCx.sys) 的 UCSI 随机驱动程序，它实现了在 [USB Type-C 连接器系统软件接口规范](https://go.microsoft.com/fwlink/p/?LinkId=703713)中定义的功能。 该规范介绍了 UCSI 的功能，并说明了硬件组件设计师、系统组装商和设备驱动程序开发人员的寄存器和数据结构。
+    Microsoft 提供带有 Windows (UcmUcsiCx.sys) 的 UCSI 随机驱动程序，它实现了在 [USB Type-C 连接器系统软件接口规范](https://www.intel.com/content/www/us/en/products/docs/io/universal-serial-bus/usb-type-c-ucsi-spec.html)中定义的功能。 该规范介绍了 UCSI 的功能，并说明了硬件组件设计师、系统组装商和设备驱动程序开发人员的寄存器和数据结构。
 
     此驱动程序适用于具有嵌入式控制器的系统。 此驱动程序是 Microsoft 提供的 USB 连接器管理器类扩展驱动程序 (Ucmcx.sys) 的客户端。 驱动程序处理任务（例如，启动对固件的请求）以更改数据或电源角色，并获取向用户提供故障排除消息所需的信息。
 
@@ -84,7 +84,7 @@ Microsoft 为 ACPI 传输提供与 USB 类型 C 连接器系统软件接口 (UCS
     -   支持的提供程序功能更改
     -   协商的电源级别更改
 
-有关在 BIOS 中实现 UCSI 所需的任务的信息，请参阅 [UCSI 的 Intel BIOS 实现](https://go.microsoft.com/fwlink/p/?LinkId=760658)。
+有关在 BIOS 中实现 UCSI 所需的任务的信息，请参阅 [UCSI 的 Intel BIOS 实现](https://www.intel.com/content/www/us/en/products/docs/io/universal-serial-bus/bios-implementation-of-ucsi.html)。
 
 ## <a name="example-flow-for-ucsi"></a>UCSI 的示例流
 

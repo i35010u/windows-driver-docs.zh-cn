@@ -2,23 +2,22 @@
 title: IRP_MN_QUERY_STOP_DEVICE
 description: 了解 "IRP_MN_QUERY_STOP_DEVICE" 内核模式驱动程序体系结构。 所有 PnP 驱动程序都必须处理此 IRP。
 ms.date: 08/12/2017
-ms.assetid: 22f58964-23a0-4307-a748-9c1620e30871
 keywords:
-- IRP_MN_QUERY_STOP_DEVICE 内核模式驱动程序体系结构
+- IRP_MN_QUERY_STOP_DEVICE Kernel-Mode 驱动程序体系结构
 ms.localizationpriority: medium
-ms.openlocfilehash: a7496870afc1aedd874065e695a71e14a7905939
-ms.sourcegitcommit: 2aedb606f9f14e74687f0d3da60e14fc6ffffa7e
+ms.openlocfilehash: 3ba11413a2d246e81d237294941ff582ceb88d15
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91544406"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96834481"
 ---
 # <a name="irp_mn_query_stop_device"></a>IRP \_ MN \_ 查询 \_ 停止 \_ 设备
 
 
 所有 PnP 驱动程序都必须处理此 IRP。
 
-## <a name="value"></a>值
+## <a name="value"></a>“值”
 
 0x05
 
@@ -39,12 +38,12 @@ PnP 管理器在 \_ 系统线程的上下文中以 IRQL 被动级别发送此 IR
 ## <a name="input-parameters"></a>输入参数
 
 
-None
+无
 
 ## <a name="output-parameters"></a>输出参数
 
 
-None
+无
 
 ## <a name="io-status-block"></a>I/o 状态块
 
@@ -53,7 +52,7 @@ None
 
 总线驱动程序可以将 **irp &gt; IoStatus** 设置为状态 \_ 资源 \_ 需求 \_ 更改为指示 Irp 成功，同时还要求 PNP 管理器在发送停止 Irp 之前再次查询设备的资源要求。
 
-<a name="operation"></a>Operation
+<a name="operation"></a>操作
 ---------
 
 此 IRP 首先由设备堆栈顶部的驱动程序处理，然后向下传递到堆栈中的每个较低的驱动程序。

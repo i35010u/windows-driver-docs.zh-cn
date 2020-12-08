@@ -1,7 +1,6 @@
 ---
 title: 将 GUID 映射到 OID 和微型端口驱动程序状态
 description: 将 GUID 映射到 OID 和微型端口驱动程序状态
-ms.assetid: b3c9bb40-2906-4059-b9fa-06f6ababd3f2
 keywords:
 - WMI WDK 网络，Guid
 - Oid WDK 网络，WMI
@@ -9,12 +8,12 @@ keywords:
 - Windows Management Instrumentation WDK 网络，Guid
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bf679e3904e358c9250d2acf395d5823360b2a57
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: f91664968d2a9afadb40de93f209b15789e9ee63
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89207519"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96833349"
 ---
 # <a name="mapping-of-guids-to-oids-and-miniport-driver-status"></a>将 GUID 映射到 OID 和微型端口驱动程序状态
 

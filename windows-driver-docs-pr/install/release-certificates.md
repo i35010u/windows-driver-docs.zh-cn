@@ -1,7 +1,6 @@
 ---
 title: 发布证书
 description: 发布证书
-ms.assetid: 61bd5002-b3b6-4f11-b0c2-80eeaf2fec39
 keywords:
 - 公共版本驱动程序签名 WDK，发行证书
 - 发布签名 WDK，发布证书
@@ -9,12 +8,12 @@ keywords:
 - 证书 WDK，发行版
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6b5ffae874546dad2f684dd7a365c54d31802ed2
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: b9d13217500bb6cad3f9c7d5449ce12553eee2e1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91732815"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96833487"
 ---
 # <a name="release-certificates"></a>发布证书
 

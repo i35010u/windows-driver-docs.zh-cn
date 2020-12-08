@@ -1,15 +1,14 @@
 ---
 title: 移植 WMI
 description: 移植 WMI
-ms.assetid: 10843A15-3F6F-4DB5-A43B-4D9964DD3312
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 04153eeadd054bb4bba424bb065da3b491ad50f5
-ms.sourcegitcommit: 057b72e8a44ba8f4282e072edc7be0b7e9341d2a
+ms.openlocfilehash: e6c6a6f04f5bc344a58e595a5281fe79ad91b8dd
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "89412486"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96832905"
 ---
 # <a name="porting-wmi"></a>移植 WMI
 

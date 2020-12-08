@@ -1,15 +1,14 @@
 ---
 title: 总线驱动程序的启动顺序
 description: 总线驱动程序的启动顺序
-ms.assetid: 689746F4-E1A5-40BA-9FC4-29B0702D6E3E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e0a1dbfb78dca14d1ec92e9258f752e78fce8374
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 8b60c4bc23bd3bbbb52d2c5aeccb3666cbae4bec
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89190323"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96832895"
 ---
 # <a name="power-up-sequence-for-a-bus-driver"></a>总线驱动程序的启动顺序
 

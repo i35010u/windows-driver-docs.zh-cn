@@ -1,15 +1,14 @@
 ---
 title: MobileBroadbandInfo XML 架构定义
 description: MobileBroadbandInfo XML 架构定义
-ms.assetid: 4d4a8f0a-99e5-429b-bc56-fdc4818b0a91
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d654974d6f5b214c2d425348f03cadad833eb9cd
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: 14cf12b6fa7502c6cc4c0d4943b0ad44a216e96d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89402796"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96832917"
 ---
 # <a name="mobilebroadbandinfo-xml-schema-definition"></a>MobileBroadbandInfo XML 架构定义
 

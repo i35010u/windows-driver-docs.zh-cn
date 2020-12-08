@@ -1,7 +1,6 @@
 ---
 title: ndiskd. get-netadapter
 description: Ndiskd. get-netadapter 扩展显示有关在系统上处于活动状态的 NDIS 微型端口或网络适配器的信息。
-ms.assetid: 7D55F7CE-5DDB-4C80-8C27-F619F2FB7F15
 keywords:
 - ndiskd get-netadapter Windows 调试
 ms.date: 06/23/2020
@@ -12,16 +11,16 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 75b9f404085fd1ca832798411aad2f266a20682b
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 18c7b403f42765848ea43b09592eb02f55e86416
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89211291"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96833235"
 ---
 # <a name="ndiskdnetadapter"></a>!ndiskd.netadapter
 
-**！ Ndiskd get-netadapter**扩展显示有关在系统上处于活动状态的 NDIS 微型端口或网络适配器的信息。 如果在没有参数的情况下运行此命令，！ ndiskd 将显示所有网络适配器的列表。
+**！ Ndiskd get-netadapter** 扩展显示有关在系统上处于活动状态的 NDIS 微型端口或网络适配器的信息。 如果在没有参数的情况下运行此命令，！ ndiskd 将显示所有网络适配器的列表。
 
 ```console
      !ndiskd.netadapter [-handle <x>] [-basic] [-diag] [-state] [-bindings] 
@@ -63,7 +62,7 @@ NDIS 小型端口的句柄。
 显示微型端口分配的计时器对象。
 
 <span id="_______-rst______"></span><span id="_______-RST______"></span>*-rst*   
-显示接收端限制状态。
+显示 Receive-Side 限制状态。
 
 <span id="_______-pm______"></span><span id="_______-PM______"></span>*-pm*   
 显示电源管理状态和功能。
@@ -154,7 +153,7 @@ Ndiskd.dll
 
 通过单击微型端口驱动程序的句柄或输入 **！ ndiskd**，你现在可以看到该设备上的所有 NDIS 状态。 这对于解决网络驱动程序或查明问题在网络堆栈中的位置非常有用。 例如，可以查看驱动程序的数据路径状态，并查看其是否已连接。
 
-在此网络适配器报表的底部，可以单击多个其他链接来浏览其他信息，如任何挂起的 Oid 以及任务卸载的状态。 这些链接对应于 **！ ndiskd. get-netadapter**的许多参数。
+在此网络适配器报表的底部，可以单击多个其他链接来浏览其他信息，如任何挂起的 Oid 以及任务卸载的状态。 这些链接对应于 **！ ndiskd. get-netadapter** 的许多参数。
 
 ```console
 3: kd> !ndiskd.netadapter ffffdf80140c71a0
@@ -232,7 +231,7 @@ MORE INFORMATION
     Diagnostic log
 ```
 
-例如，使用 **！ ndiskd** 作为进一步调试的开始位置，单击报表底部的 "驱动程序处理程序" 链接可查看此网络适配器的微型端口驱动程序的所有已注册驱动程序回调处理程序的列表。 在下面的示例中，单击链接会导致！ ndiskd 与此网络适配器的微型端口驱动程序的句柄一起运行[**！ ndiskd。**](-ndiskd-minidriver.md) 微型端口驱动程序是 kdnic 4.2 及其句柄 ffffdf801418d650。
+例如，使用 **！ ndiskd** 作为进一步调试的开始位置，单击报表底部的 "驱动程序处理程序" 链接可查看此网络适配器的微型端口驱动程序的所有已注册驱动程序回调处理程序的列表。 在下面的示例中，单击链接会导致！ ndiskd 与此网络适配器的微型端口驱动程序的句柄一起运行 [**！ ndiskd。**](-ndiskd-minidriver.md) 微型端口驱动程序是 kdnic 4.2 及其句柄 ffffdf801418d650。
 
 ```console
 3: kd> !ndiskd.minidriver ffffdf801418d650 -handlers
@@ -265,7 +264,7 @@ HANDLERS
 
 你现在可以单击每个处理程序右侧的 "最佳实践" 链接，以在该处理程序上设置一个断点来调试特定的问题。 例如，如果数据路径中存在挂起，你可以调查驱动程序的 SendNetBufferListsHandler 或 ReturnNetBufferListsHandler。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [网络驱动程序设计指南](../network/index.md)
 
@@ -273,7 +272,7 @@ HANDLERS
 
 [调试网络堆栈](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-175-Debugging-the-Network-Stack)
 
-[**NDIS 扩展 ( # A0) **](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 扩展 ( # A0)**](ndis-extensions--ndiskd-dll-.md)
 
 [**!ndiskd.help**](-ndiskd-help.md)
 

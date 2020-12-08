@@ -1,20 +1,19 @@
 ---
 title: 在 UMDF 1.x 驱动程序中使用 USB 管道
 description: 在 UMDF 1.x 驱动程序中使用 USB 管道
-ms.assetid: face26da-fa79-4d32-8ad1-9e8022bb23b3
 keywords:
 - UMDF WDK，USB 管道
-- 用户模式驱动程序框架 WDK，USB 管道
+- User-Mode Driver Framework WDK，USB 管道
 - 用户模式驱动程序 WDK UMDF，USB 管道
 - USB 管道 WDK UMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 49ec09f7ebdcc1d2f84d83d3420cce95b5e52a56
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: e0dbe3362ac99a6247ab658053dcd3666f5a37ad
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89185843"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96833921"
 ---
 # <a name="working-with-usb-pipes-in-umdf-1x-drivers"></a>在 UMDF 1.x 驱动程序中使用 USB 管道
 
@@ -68,7 +67,7 @@ ms.locfileid: "89185843"
 
 -   同步和持续地读取数据。
 
-    *连续的读取器*是一个框架提供的机制，可确保读取请求始终可用于 USB 管道。 此机制保证驱动程序始终可以从提供异步、未经请求的输入流的设备接收数据。 例如，网络接口卡 (NIC 的驱动程序) 可能使用连续读取器来接收输入数据。
+    *连续的读取器* 是一个框架提供的机制，可确保读取请求始终可用于 USB 管道。 此机制保证驱动程序始终可以从提供异步、未经请求的输入流的设备接收数据。 例如，网络接口卡 (NIC 的驱动程序) 可能使用连续读取器来接收输入数据。
 
     若要为输入管道配置连续读取器，驱动程序的 [**IPnpCallbackHardware：： OnPrepareHardware**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-ipnpcallbackhardware-onpreparehardware) 回调函数必须调用 [**IWDFUsbTargetPipe2：： ConfigureContinuousReader**](/windows-hardware/drivers/ddi/wudfusb/nf-wudfusb-iwdfusbtargetpipe2-configurecontinuousreader) 方法。 此方法将一组读取请求排队给设备的 i/o 目标。
 
@@ -76,7 +75,7 @@ ms.locfileid: "89185843"
 
     每次从设备获取数据时，i/o 目标将完成读取请求，并且框架将调用以下两个回调函数之一： [**IUsbTargetPipeContinuousReaderCallbackReadComplete：： OnReaderCompletion**](/windows-hardware/drivers/ddi/wudfusb/nf-wudfusb-iusbtargetpipecontinuousreadercallbackreadcomplete-onreadercompletion) （如果 i/o 目标成功读取数据）或 [**IUsbTargetPipeContinuousReaderCallbackReadersFailed：： OnReaderFailure**](/windows-hardware/drivers/ddi/wudfusb/nf-wudfusb-iusbtargetpipecontinuousreadercallbackreadersfailed-onreaderfailure) （如果 i/o 目标报告错误）。
 
-    驱动程序调用[**IWDFUsbTargetPipe2：： ConfigureContinuousReader**](/windows-hardware/drivers/ddi/wudfusb/nf-wudfusb-iwdfusbtargetpipe2-configurecontinuousreader)后，除非调用了驱动程序的[**IUsbTargetPipeContinuousReaderCallbackReadersFailed：： OnReaderFailure**](/windows-hardware/drivers/ddi/wudfusb/nf-wudfusb-iusbtargetpipecontinuousreadercallbackreadersfailed-onreaderfailure)回调函数并返回**FALSE**，否则驱动程序无法使用[**IWDFIoRequest：： send**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest-send)向管道发送 i/o 请求。
+    驱动程序调用 [**IWDFUsbTargetPipe2：： ConfigureContinuousReader**](/windows-hardware/drivers/ddi/wudfusb/nf-wudfusb-iwdfusbtargetpipe2-configurecontinuousreader)后，除非调用了驱动程序的 [**IUsbTargetPipeContinuousReaderCallbackReadersFailed：： OnReaderFailure**](/windows-hardware/drivers/ddi/wudfusb/nf-wudfusb-iusbtargetpipecontinuousreadercallbackreadersfailed-onreaderfailure)回调函数并返回 **FALSE**，否则驱动程序无法使用 [**IWDFIoRequest：： send**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest-send)向管道发送 i/o 请求。
 
     在 UMDF 版本1.9 及更高版本中支持连续读取器。
 

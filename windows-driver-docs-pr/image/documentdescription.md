@@ -1,9 +1,8 @@
 ---
 title: DocumentDescription 元素
-description: 所需的 DocumentDescription 元素定义的所有说明属性属于当前标识的文档元素的基本创建信息。
-ms.assetid: e8889dc1-7b92-43aa-b4a6-4c5bb53e5076
+description: 必需的 DocumentDescription 元素定义所有与当前标识的文档元素的基本创建信息相关的说明属性。
 keywords:
-- DocumentDescription 元素成像设备
+- DocumentDescription 元素图像设备
 topic_type:
 - apiref
 api_name:
@@ -12,19 +11,19 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4df6672c915900a5b50affc0d4e0147ff21e34f1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 812418671f815cba8f2a22895753961582e7ce4d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63364545"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96833505"
 ---
 # <a name="documentdescription-element"></a>DocumentDescription 元素
 
 
-所需**DocumentDescription**元素定义的所有说明属性属于的当前标识的基本创建信息[**文档**](document.md)元素。
+必需的 **DocumentDescription** 元素定义所有与当前标识的 [**文档**](document.md) 元素的基本创建信息相关的说明属性。
 
-<a name="usage"></a>用法
+<a name="usage"></a>使用情况
 -----
 
 ```xml

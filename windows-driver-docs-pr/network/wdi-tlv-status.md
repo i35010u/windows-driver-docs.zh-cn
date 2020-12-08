@@ -1,22 +1,21 @@
 ---
 title: WDI_TLV_STATUS
-description: WDI_TLV_STATUS 是包含一个状态值 TLV。
-ms.assetid: 62A331EB-5765-41E9-A1CC-0CFF69BC4EF3
+description: WDI_TLV_STATUS 是包含状态值的 TLV。
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_STATUS 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 616f2b0dfb4c0c82bcab72004819d6b0c46fef29
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c2efc120ef6fc4c60f37a1a66c7c9d3f68628b39
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63330415"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96834141"
 ---
-# <a name="wditlvstatus"></a>WDI\_TLV\_状态
+# <a name="wdi_tlv_status"></a>WDI \_ TLV \_ 状态
 
 
-WDI\_TLV\_状态是包含一个状态值 TLV。
+WDI \_ tlv \_ 状态为 tlv，其中包含状态值。
 
 ## <a name="tlv-type"></a>TLV 类型
 
@@ -26,14 +25,14 @@ WDI\_TLV\_状态是包含一个状态值 TLV。
 ## <a name="length"></a>长度
 
 
-NDIS 的大小 （以字节为单位）\_状态。
+) NDIS 状态的大小 (以字节为单位） \_ 。
 
 ## <a name="values"></a>值
 
 
-| 在任务栏的搜索框中键入         | 描述             |
+| 类型         | 描述             |
 |--------------|-------------------------|
-| NDIS\_状态 | NDIS\_状态值。 |
+| NDIS \_ 状态 | NDIS \_ 状态值。 |
 
  
 
@@ -52,10 +51,10 @@ NDIS 的大小 （以字节为单位）\_状态。
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
-<td><p>Windows Server 2016</p></td>
+<td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Wditypes.hpp</td>
 </tr>
 </tbody>

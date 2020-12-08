@@ -1,18 +1,17 @@
 ---
 title: 线程和同步第三级别
 description: 线程和同步第三级别
-ms.assetid: 780d37d9-40c6-4737-9042-473810868227
 keywords:
 - 线程 WDK 显示，第三级
 - 同步 WDK 显示，第三级
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 41658f9fdfa42344089da4a9797806ba2dbfd293
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 91bc903f576f4b3c96e4e653631237e938b4673d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89063762"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96832719"
 ---
 # <a name="threading-and-synchronization-third-level"></a>线程和同步第三级别
 

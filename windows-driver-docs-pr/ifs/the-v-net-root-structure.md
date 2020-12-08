@@ -1,7 +1,6 @@
 ---
 title: V_NET_ROOT 结构
 description: V_NET_ROOT 结构
-ms.assetid: 866eba91-13b6-4b15-93de-4f627a635c92
 keywords:
 - 共享映射 WDK RDBSS
 - V_NET_ROOT 结构 WDK RDBSS
@@ -15,12 +14,12 @@ keywords:
 - 连接信息 WDK RDBSS
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 93aaf86daea0fffc5c9a038c0e6b17ddcd6052f8
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: d7a46dcc8475acd08040eb5c2a607a5fb111e368
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90717512"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96832681"
 ---
 # <a name="the-v_net_root-structure"></a>\_.Net \_ 根结构
 
@@ -35,7 +34,7 @@ ms.locfileid: "90717512"
 \;m:\server\share\d1\d2
 ```
 
-名称的格式取决于是否存在 ( "X：" 的本地设备，例如) 与此 \_ .Net \_ 根结构关联的。 如果本地驱动器映射 (d1 \\ d2，例如) ，则本地驱动器映射将作为此[**CreateFile**](/windows/win32/api/fileapi/nf-fileapi-createfilea) \_ .net 根结构上打开的每个 CreateFile 的前缀 \_ 。
+名称的格式取决于是否存在 ( "X：" 的本地设备，例如) 与此 \_ .Net \_ 根结构关联的。 如果本地驱动器映射 (d1 \\ d2，例如) ，则本地驱动器映射将作为此 [**CreateFile**](/windows/win32/api/fileapi/nf-fileapi-createfilea) \_ .net 根结构上打开的每个 CreateFile 的前缀 \_ 。
 
 \_.Net \_ 根结构还用于提供备用凭据。 这种类型的 \_ .Net 根结构的用途 \_ 是将备用凭据作为默认凭据传播到 NET \_ root。 为此，必须没有其他引用。
 

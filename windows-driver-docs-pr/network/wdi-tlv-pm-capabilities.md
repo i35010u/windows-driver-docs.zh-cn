@@ -1,17 +1,16 @@
 ---
 title: 'WDI_TLV_PM_CAPABILITIES (0x42) '
 description: WDI_TLV_PM_CAPABILITIES 是包含电源管理功能的 TLV。
-ms.assetid: DE8A5333-BE2B-4CBB-8C75-45ABBE35A635
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_PM_CAPABILITIES (0x42) 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 851fbc1cdd2272a83763a15f394f395b6d01607a
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 63fa5c6c40723797f325d69181cd412cec598a3e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90101656"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96834287"
 ---
 # <a name="wdi_tlv_pm_capabilities-0x42"></a>WDI \_ TLV \_ PM \_ 功能 (0x42) 
 
@@ -39,7 +38,7 @@ Sum (所有包含的元素的大小) 。
 <thead>
 <tr class="header">
 <th>类型</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -152,7 +151,7 @@ Sum (所有包含的元素的大小) 。
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
-<td><p>Windows Server 2016</p></td>
+<td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
 <td><p>标头</p></td>

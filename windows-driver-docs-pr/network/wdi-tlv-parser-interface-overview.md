@@ -1,15 +1,14 @@
 ---
 title: WDI TLV 分析器接口概述
 description: 本部分介绍 WDI TLV 分析程序接口的概述
-ms.assetid: FD204F24-0336-4A54-992C-ACF46565D8D1
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b09a90c159a7260b4e29c86f83b4d2976d9ddd1f
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: b0958f77c3a66755f1087f5965614be71843f6d3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89210039"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96834313"
 ---
 # <a name="wdi-tlv-parser-interface-overview"></a>WDI TLV 分析器接口概述
 
@@ -64,7 +63,7 @@ CleanupParsedWdiGetAdapterCapabilities(&adapterCapabilitiesParsed);
 
 调用 CleanupParse API 后，结构中的所有数据都无效。
 
-某些消息没有任何关联的数据。 为实现 API 的完整性，提供了适当命名的分析方法。 这些方法验证字节流是否为空。 为参数类型提供了 typedef，但如果使用调用方分配模型，则调用方也可以为 out 参数传递 NULL。 在所有情况下，分析器都通过返回常量空 parse 结构来避免任何分配。 调用方决不应向此返回空结构 (因此，唯一字段将命名为** \_ Reserved**) 。 这些消息记录为 "无附加数据"。 标头中的数据足够 "。
+某些消息没有任何关联的数据。 为实现 API 的完整性，提供了适当命名的分析方法。 这些方法验证字节流是否为空。 为参数类型提供了 typedef，但如果使用调用方分配模型，则调用方也可以为 out 参数传递 NULL。 在所有情况下，分析器都通过返回常量空 parse 结构来避免任何分配。 调用方决不应向此返回空结构 (因此，唯一字段将命名为 **\_ Reserved**) 。 这些消息记录为 "无附加数据"。 标头中的数据足够 "。
 
 ## <a name="message-direction"></a>消息方向
 

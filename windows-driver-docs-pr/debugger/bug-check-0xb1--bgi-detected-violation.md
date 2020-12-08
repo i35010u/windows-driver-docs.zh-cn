@@ -1,9 +1,8 @@
 ---
-title: Bug 检查说是 0xB1 BGI_DETECTED_VIOLATION
-description: BGI_DETECTED_VIOLATION bug 检查具有 0x000000B1 值。
-ms.assetid: B1DE8C2B-FBE3-4EFC-8DD8-4222AD5E1E36
+title: Bug 检查 0xB1 BGI_DETECTED_VIOLATION
+description: BGI_DETECTED_VIOLATION bug 检查的值为0x000000B1。
 keywords:
-- Bug 检查说是 0xB1 BGI_DETECTED_VIOLATION
+- Bug 检查 0xB1 BGI_DETECTED_VIOLATION
 - BGI_DETECTED_VIOLATION
 ms.date: 05/23/2017
 topic_type:
@@ -13,23 +12,23 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 0bf45b29f05e7013c3b7d079a19d4658ff1faf25
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: be785f97adf90311d4a2b4cb4fb2a25c23596439
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67519020"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96832847"
 ---
-# <a name="bug-check-0xb1-bgidetectedviolation"></a>Bug 检查 0xB1：BGI\_检测到\_冲突
+# <a name="bug-check-0xb1-bgi_detected_violation"></a>Bug 检查0xB1： BGI \_ 检测到 \_ 冲突
 
 
-BGI\_检测到\_冲突错误检查的值为 0x000000B1。
+BGI \_ 检测到 \_ 的冲突 bug 检查的值为0x000000B1。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题面向程序员。 如果您是在使用计算机时收到蓝屏错误代码的客户，请参阅[蓝屏错误疑难解答](https://www.windows.com/stopcode)。
 
 
-## <a name="bgidetectedviolation-parameters"></a>BGI\_检测到\_冲突参数
+## <a name="bgi_detected_violation-parameters"></a>BGI \_ 检测到的 \_ 冲突参数
 
 
 无

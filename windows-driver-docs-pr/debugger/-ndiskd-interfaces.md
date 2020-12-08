@@ -1,7 +1,6 @@
 ---
 title: ndiskd 接口
 description: Ndiskd 扩展显示有关网络接口的信息。
-ms.assetid: AC458FDF-CCB6-4A65-8C9C-38C436062017
 keywords:
 - ndiskd Windows 调试
 ms.date: 06/15/2020
@@ -12,16 +11,16 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 3bf85177d4cee8d2c062e7d1cedfe543d5a7fc8f
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 109908776099632273f7723b15698f658f0b5c35
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89216770"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96832873"
 ---
 # <a name="ndiskdinterfaces"></a>!ndiskd.interfaces
 
-**！ Ndiskd**扩展显示有关网络接口的信息。 如果运行不带参数的扩展，！ ndiskd 将显示所有网络接口的列表。
+**！ Ndiskd** 扩展显示有关网络接口的信息。 如果运行不带参数的扩展，！ ndiskd 将显示所有网络接口的列表。
 
 有关网络接口的详细信息，请参阅 [NDIS 网络接口](../network/ndis-network-interfaces2.md)。
 
@@ -117,7 +116,7 @@ STATE
     Refer to RFC 2863 for definitions of many of these terms
 ```
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [网络驱动程序设计指南](../network/index.md)
 
@@ -125,7 +124,7 @@ STATE
 
 [调试网络堆栈](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-175-Debugging-the-Network-Stack)
 
-[**NDIS 扩展 ( # A0) **](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 扩展 ( # A0)**](ndis-extensions--ndiskd-dll-.md)
 
 [**!ndiskd.help**](-ndiskd-help.md)
 

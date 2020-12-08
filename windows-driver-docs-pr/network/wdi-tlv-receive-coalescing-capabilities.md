@@ -1,17 +1,16 @@
 ---
 title: WDI_TLV_RECEIVE_COALESCING_CAPABILITIES
 description: WDI_TLV_RECEIVE_COALESCING_CAPABILITIES 是包含硬件辅助接收筛选器功能的 TLV。
-ms.assetid: 87BC1F55-90C6-4B22-9E8E-A54FF42515F3
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_RECEIVE_COALESCING_CAPABILITIES 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: cec4fa9135d910e3a5fde13cc94401e59df22716
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: d2fc7f69580454e7e049cbe4925c8bc44ee6974f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105872"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96834251"
 ---
 # <a name="wdi_tlv_receive_coalescing_capabilities"></a>WDI \_ TLV \_ 接收 \_ 合并 \_ 功能
 
@@ -39,7 +38,7 @@ Sum (所有包含的元素的大小) 。
 <thead>
 <tr class="header">
 <th>类型</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -86,7 +85,7 @@ Sum (所有包含的元素的大小) 。
 <dt>NDIS_RECEIVE_FILTER_LOOKAHEAD_SPLIT_SUPPORTED</dt>
 <dd><p>网络适配器支持 VM 队列，该队列在预测先行偏移量处拆分收到的传入数据包。 此偏移量等于或大于请求的预测先行大小。 网络适配器使用 DMA 将预测先行和后期预测数据传输到单独的共享内存段。</p>
 <div class="alert">
-<strong>注意</strong>   从 NDIS 6.30 开始，不再支持将数据包数据拆分为单独的预测先行缓冲区。 支持此版本的 NDIS 的微型端口驱动程序不能设置此标志。
+<strong>注意</strong>  从 NDIS 6.30 开始，不再支持将数据包数据拆分为单独的预测先行缓冲区。 支持此版本的 NDIS 的微型端口驱动程序不能设置此标志。
 </div>
 <div>
  
@@ -126,7 +125,7 @@ Sum (所有包含的元素的大小) 。
 <dt>NDIS_RECEIVE_FILTER_TEST_HEADER_FIELD_EQUAL_SUPPORTED</dt>
 <dd><p>网络适配器支持测试选定的标头字段，以确定它是否等于给定的值。</p>
 <div class="alert">
-<strong>注意</strong>   如果微型端口驱动程序支持 VMQ 或 SR-IOV 接口，则必须设置此标志。
+<strong>注意</strong>  如果微型端口驱动程序支持 VMQ 或 SR-IOV 接口，则必须设置此标志。
 </div>
 <div>
  
@@ -170,7 +169,7 @@ Sum (所有包含的元素的大小) 。
 <dt>NDIS_RECEIVE_FILTER_MAC_HEADER_DEST_ADDR_SUPPORTED</dt>
 <dd><p>网络适配器支持基于 MAC 标头中的目标 MAC 地址进行检查和筛选。</p>
 <div class="alert">
-<strong>注意</strong>   从 NDIS 6.30 开始，支持 VMQ 或 SR-IOV 接口的微型端口驱动程序必须设置此标志。
+<strong>注意</strong>  从 NDIS 6.30 开始，支持 VMQ 或 SR-IOV 接口的微型端口驱动程序必须设置此标志。
 </div>
 <div>
  
@@ -209,7 +208,7 @@ Sum (所有包含的元素的大小) 。
 <td>UINT32</td>
 <td>网络适配器支持的预测先行包缓冲区的最小大小（以字节为单位）。
 <div class="alert">
-<strong>注意</strong>   从 NDIS 6.30 开始，不再支持将数据包数据拆分为单独的预测先行缓冲区。 支持此版本的 NDIS 的微型端口驱动程序必须将此成员设置为零。
+<strong>注意</strong>  从 NDIS 6.30 开始，不再支持将数据包数据拆分为单独的预测先行缓冲区。 支持此版本的 NDIS 的微型端口驱动程序必须将此成员设置为零。
 </div>
 <div>
  
@@ -219,7 +218,7 @@ Sum (所有包含的元素的大小) 。
 <td>UINT32</td>
 <td>网络适配器支持的预测先行包缓冲区的最大大小（以字节为单位）。
 <div class="alert">
-<strong>注意</strong>   从 NDIS 6.30 开始，不再支持将数据包数据拆分为单独的预测先行缓冲区。 支持此版本的 NDIS 的微型端口驱动程序必须将此成员设置为零。
+<strong>注意</strong>  从 NDIS 6.30 开始，不再支持将数据包数据拆分为单独的预测先行缓冲区。 支持此版本的 NDIS 的微型端口驱动程序必须将此成员设置为零。
 </div>
 <div>
  
@@ -269,7 +268,7 @@ Sum (所有包含的元素的大小) 。
 <dt> NDIS_RECEIVE_FILTER_UDP_HEADER_DEST_PORT_SUPPORTED</dt>
 <dd><p>网络适配器支持对 UDP "目标端口" 字段进行接收筛选。</p>
 <div class="alert">
-<strong>注意</strong>   如果收到的 UDP 数据包包含 IPv4 选项或 IPv6 扩展标头，网络适配器可以自动删除接收的数据包，并将其视为未通过 UDP 筛选器测试。
+<strong>注意</strong>  如果收到的 UDP 数据包包含 IPv4 选项或 IPv6 扩展标头，网络适配器可以自动删除接收的数据包，并将其视为未通过 UDP 筛选器测试。
 </div>
 <div>
  
@@ -281,7 +280,7 @@ Sum (所有包含的元素的大小) 。
 <td>UINT32</td>
 <td>可为单个数据包合并筛选器指定的数据包标头字段上的最大测试数。 有关数据包合并的详细信息，请参阅 <a href="/windows-hardware/drivers/network/ndis-packet-coalescing" data-raw-source="[NDIS Packet Coalescing](./ndis-packet-coalescing.md)">NDIS 数据包合并</a>。
 <div class="alert">
-<strong>注意</strong>   支持数据包合并的网络适配器必须支持5个或更多可为单个数据包合并筛选器指定的数据包标头字段。 如果适配器不支持数据包合并，微型端口驱动程序必须将此值设置为零。
+<strong>注意</strong>  支持数据包合并的网络适配器必须支持5个或更多可为单个数据包合并筛选器指定的数据包标头字段。 如果适配器不支持数据包合并，微型端口驱动程序必须将此值设置为零。
 </div>
 <div>
  
@@ -291,7 +290,7 @@ Sum (所有包含的元素的大小) 。
 <td>UINT32</td>
 <td>网络适配器支持的数据包合并接收筛选器的最大数量。
 <div class="alert">
-<strong>注意</strong>   支持数据包合并的网络适配器必须支持10个或更多数据包合并筛选器。 如果适配器不支持数据包合并，微型端口驱动程序必须将此值设置为零。
+<strong>注意</strong>  支持数据包合并的网络适配器必须支持10个或更多数据包合并筛选器。 如果适配器不支持数据包合并，微型端口驱动程序必须将此值设置为零。
 </div>
 <div>
  
@@ -317,7 +316,7 @@ Sum (所有包含的元素的大小) 。
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
-<td><p>Windows Server 2016</p></td>
+<td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
 <td><p>标头</p></td>
@@ -326,7 +325,7 @@ Sum (所有包含的元素的大小) 。
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**NDIS \_ 接收 \_ 筛选器 \_ 功能**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_capabilities)

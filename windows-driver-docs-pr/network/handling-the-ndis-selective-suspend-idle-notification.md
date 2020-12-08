@@ -1,22 +1,21 @@
 ---
 title: 处理 NDIS 选择性挂起空闲通知
 description: 处理 NDIS 选择性挂起空闲通知
-ms.assetid: 02D13260-5816-4621-8527-E1E79C9AE975
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 78727b83a2e5f5375a9b05ae156c56cd10d3bee0
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 941aeb0c5a8fb97e01cfd016e71794dd7b7b14b2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89207965"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96833415"
 ---
 # <a name="handling-the-ndis-selective-suspend-idle-notification"></a>处理 NDIS 选择性挂起空闲通知
 
 
 如果发生以下事件之一，NDIS 将启动选择性挂起操作：
 
--   网络适配器处于非活动状态的时间超过了空闲超时期限。 此超时期限的持续时间由** \* SSIDLETIMEOUT**标准化 INF 关键字的值指定。 有关此关键字的详细信息，请参阅 [用于 NDIS 选择性挂起的标准化 INF 关键字](standardized-inf-keywords-for-ndis-selective-suspend.md)。
+-   网络适配器处于非活动状态的时间超过了空闲超时期限。 此超时期限的持续时间由 **\* SSIDLETIMEOUT** 标准化 INF 关键字的值指定。 有关此关键字的详细信息，请参阅 [用于 NDIS 选择性挂起的标准化 INF 关键字](standardized-inf-keywords-for-ndis-selective-suspend.md)。
 
     有关 NDIS 如何确定网络适配器处于空闲状态的详细信息，请参阅 [Ndis 如何检测空闲网络适配器](how-ndis-detects-idle-network-adapters.md)。
 
@@ -30,17 +29,17 @@ ms.locfileid: "89207965"
 
 本主题包括有关如何处理 NDIS 选择性挂起空闲通知的以下信息：
 
-[处理对*MiniportIdleNotification*的调用的准则](#guidelines-for-handling-the-call-to-miniportidlenotification)
+[处理对 *MiniportIdleNotification* 的调用的准则](#guidelines-for-handling-the-call-to-miniportidlenotification)
 
-[调用**NdisMIdleNotificationConfirm**的准则](#guidelines-for-the-call-to-ndismidlenotificationconfirm)
+[调用 **NdisMIdleNotificationConfirm** 的准则](#guidelines-for-the-call-to-ndismidlenotificationconfirm)
 
 [取消并完成 NDIS 选择性挂起空闲通知](#canceling-and-completing-an-ndis-selective-suspend-idle-notification)
 
-## <a name="guidelines-for-handling-the-call-to-miniportidlenotification"></a>处理对*MiniportIdleNotification*的调用的准则
+## <a name="guidelines-for-handling-the-call-to-miniportidlenotification"></a>处理对 *MiniportIdleNotification* 的调用的准则
 
 Ndis 和微型端口驱动程序在 NDIS 调用 [*MiniportIdleNotification*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_idle_notification)时执行以下步骤：
 
-1.  NDIS 调用 [*MiniportIdleNotification*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_idle_notification) 处理程序函数来通知驱动程序，基础网络适配器似乎处于空闲状态。 NDIS 将*MiniportIdleNotification*处理函数的*ForceIdle*参数设置为以下值之一：
+1.  NDIS 调用 [*MiniportIdleNotification*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_idle_notification) 处理程序函数来通知驱动程序，基础网络适配器似乎处于空闲状态。 NDIS 将 *MiniportIdleNotification* 处理函数的 *ForceIdle* 参数设置为以下值之一：
 
     -   当网络适配器处于非活动状态的时间超过空闲超时期限时，NDIS 会将 *ForceIdle* 参数设置为 **FALSE** 。
 
@@ -54,7 +53,7 @@ Ndis 和微型端口驱动程序在 NDIS 调用 [*MiniportIdleNotification*](/wi
 
 3.  如果微型端口驱动程序未拒绝空闲通知，则它必须执行任何特定于总线的操作，以便为选择性挂起操作准备网络适配器。 例如，USB 网络适配器的微型端口驱动程序执行以下步骤，以确定网络适配器是否可以转换为低功耗状态：
 
-    1.  微型端口驱动程序调用 [**IoCallDriver**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver) ，以发出 (IRP) USB 空闲请求的 i/o 请求， ([**IOCTL \_ 内部 \_ usb \_ \_ \_ **](/windows-hardware/drivers/ddi/usbioctl/ni-usbioctl-ioctl_internal_usb_submit_idle_notification) 向底层 usb 总线驱动程序提供) 。 在此 IRP 中，微型端口驱动程序必须指定回调和完成例程。
+    1.  微型端口驱动程序调用 [**IoCallDriver**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver) ，以发出 (IRP) USB 空闲请求的 i/o 请求， ([**IOCTL \_ 内部 \_ usb \_ \_ \_**](/windows-hardware/drivers/ddi/usbioctl/ni-usbioctl-ioctl_internal_usb_submit_idle_notification) 向底层 usb 总线驱动程序提供) 。 在此 IRP 中，微型端口驱动程序必须指定回调和完成例程。
 
         USB 总线驱动程序不会立即完成 IRP。 IRP 通过低功耗转换保持处于挂起状态。 如果发生以下任何事件，则总线驱动程序会在以后完成 IRP：
 
@@ -70,9 +69,9 @@ Ndis 和微型端口驱动程序在 NDIS 调用 [*MiniportIdleNotification*](/wi
 
 4.  当微型端口驱动程序完成网络适配器的准备以进行选择性挂起操作后，它将调用 [**NdisMIdleNotificationConfirm**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismidlenotificationconfirm)。 在此调用中，微型端口驱动程序指定网络适配器可以转换到的最低电源状态。
 
-    根据选择性挂起操作的总线要求，微型端口驱动程序会在调用[*MiniportIdleNotification*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_idle_notification)或在*MiniportIdleNotification*返回之后以异步方式调用[**NdisMIdleNotificationConfirm**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismidlenotificationconfirm) 。 例如，USB 网络适配器的微型端口驱动程序在 USB 空闲请求的回调例程的上下文中调用 **NdisMIdleNotificationConfirm** 。 USB 总线驱动程序在对 [**IoCallDriver**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver) 的调用的上下文中以同步方式调用回调例程，或在 *MiniportIdleNotification* 返回后异步调用。
+    根据选择性挂起操作的总线要求，微型端口驱动程序会在调用 [*MiniportIdleNotification*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_idle_notification)或在 *MiniportIdleNotification* 返回之后以异步方式调用 [**NdisMIdleNotificationConfirm**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismidlenotificationconfirm) 。 例如，USB 网络适配器的微型端口驱动程序在 USB 空闲请求的回调例程的上下文中调用 **NdisMIdleNotificationConfirm** 。 USB 总线驱动程序在对 [**IoCallDriver**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver) 的调用的上下文中以同步方式调用回调例程，或在 *MiniportIdleNotification* 返回后异步调用。
 
-5.  如果网络适配器可以转换为低功耗状态，微型端口驱动程序将 \_ 从对 MiniportIdleNotification 的调用返回 NDIS 状态 " \_ 挂起[*MiniportIdleNotification*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_idle_notification)"。
+5.  如果网络适配器可以转换为低功耗状态，微型端口驱动程序将 \_ 从对 MiniportIdleNotification 的调用返回 NDIS 状态 " \_ 挂起 [*MiniportIdleNotification*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_idle_notification)"。
 
     **注意**  微型端口驱动程序返回 NDIS \_ 状态 \_ "挂起"，因为在驱动程序调用 [**NdisMIdleNotificationComplete**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismidlenotificationcomplete)之前不会完成空闲通知。 微型端口驱动程序不得 \_ \_ 从 [*MiniportIdleNotification*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_idle_notification)返回 NDIS 状态成功。
 
@@ -84,11 +83,11 @@ Ndis 和微型端口驱动程序在 NDIS 调用 [*MiniportIdleNotification*](/wi
 
 -   微型端口驱动程序应处理已完成的发送数据包，并通过调用 [**NdisMSendNetBufferListsComplete**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsendnetbufferlistscomplete)将其指示到 NDIS。
 
-    **注意** 如果[*MiniportIdleNotification*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_idle_notification)返回 NDIS 状态 "挂起"，NDIS 不会调用驱动程序的[*MiniportSendNetBufferLists*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_send_net_buffer_lists)函数来发送数据包 \_ \_ 。
+    **注意** 如果 [*MiniportIdleNotification*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_idle_notification)返回 NDIS 状态 "挂起"，NDIS 不会调用驱动程序的 [*MiniportSendNetBufferLists*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_send_net_buffer_lists)函数来发送数据包 \_ \_ 。
 
 
 
-## <a name="guidelines-for-the-call-to-ndismidlenotificationconfirm"></a>调用**NdisMIdleNotificationConfirm**的准则
+## <a name="guidelines-for-the-call-to-ndismidlenotificationconfirm"></a>调用 **NdisMIdleNotificationConfirm** 的准则
 
 
 当微型端口驱动程序调用 [**NdisMIdleNotificationConfirm**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismidlenotificationconfirm)时，NDIS 和微型端口驱动程序请按照以下步骤操作：
@@ -99,19 +98,19 @@ Ndis 和微型端口驱动程序在 NDIS 调用 [*MiniportIdleNotification*](/wi
 
     当微型端口驱动程序处理 [**NDIS \_ PM \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_parameters) 结构的成员时，必须遵循以下准则：
 
-    -   如果[*MiniportIdleNotification*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_idle_notification)处理程序函数的*ForceIdle*参数设置为 FALSE，则 ndis 只 \_ \_ \_ \_ 在[**NDIS \_ pm \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_parameters)结构的**WakeUpFlags**成员中设置 ndis pm 选择性挂起已启用标志。 在这种情况下，当发生以下事件之一时，网络适配器可以发出唤醒事件信号：
+    -   如果 [*MiniportIdleNotification*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_idle_notification)处理程序函数的 *ForceIdle* 参数设置为 FALSE，则 ndis 只 \_ \_ \_ \_ 在 [**NDIS \_ pm \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_parameters)结构的 **WakeUpFlags** 成员中设置 ndis pm 选择性挂起已启用标志。 在这种情况下，当发生以下事件之一时，网络适配器可以发出唤醒事件信号：
 
         -   网络适配器接收与接收数据包筛选器匹配的数据包。 适配器配置为使用这些筛选器，通过 OID 设置 [oid \_ GEN \_ 当前 \_ 数据包 \_ 筛选器](./oid-gen-current-packet-filter.md)的请求。
 
         -   网络适配器检测需要由网络驱动程序堆栈处理的其他外部事件，例如当链接状态更改为 "媒体断开连接" 或 "媒体已连接" 时。
 
-    -   如果[*MiniportIdleNotification*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_idle_notification)处理程序函数的*ForceIdle*参数设置为**TRUE**，ndis 不会在 \_ \_ \_ \_ [**ndis \_ pm \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_parameters)结构的**WakeUpFlags**成员中设置 ndis pm 选择性挂起已启用标志。 在这种情况下，NDIS 会将 **ndis \_ PM \_ 参数** 结构中的其他成员设置为与 ndis 选择性挂起无关的唤醒事件。
+    -   如果 [*MiniportIdleNotification*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_idle_notification)处理程序函数的 *ForceIdle* 参数设置为 **TRUE**，ndis 不会在 \_ \_ \_ \_ [**ndis \_ pm \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_parameters)结构的 **WakeUpFlags** 成员中设置 ndis pm 选择性挂起已启用标志。 在这种情况下，NDIS 会将 **ndis \_ PM \_ 参数** 结构中的其他成员设置为与 ndis 选择性挂起无关的唤醒事件。
 
         **注意**  仅当符合 Always On 始终连接 (AOAC) 技术的系统正在转换为连接待机状态时，NDIS 才将 *ForceIdle* 参数设置为 **TRUE** 。
 
         驱动程序完成 OID 请求，其 NDIS \_ 状态为 \_ 成功。
 
-        **注意** 如果 NDIS \_ \_ \_ \_ 在[**Ndis \_ pm \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_parameters)结构的**WakeUpFlags**成员中设置 ndis pm 选择性挂起已启用标志，则它会直接向微型端口驱动程序发出[oid \_ pm \_ 参数](./oid-pm-parameters.md)的 oid 设置请求。 这允许 NDIS 通过网络驱动程序堆栈中的筛选器驱动程序绕过处理。
+        **注意** 如果 NDIS \_ \_ \_ \_ 在 [**Ndis \_ pm \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_parameters)结构的 **WakeUpFlags** 成员中设置 ndis pm 选择性挂起已启用标志，则它会直接向微型端口驱动程序发出 [oid \_ pm \_ 参数](./oid-pm-parameters.md)的 oid 设置请求。 这允许 NDIS 通过网络驱动程序堆栈中的筛选器驱动程序绕过处理。
 
 3.  在 oid 的 OID 设置请求成功完成后，NDIS 将向微型端口驱动程序发出 OID 集请求[oid \_ PNP \_ 设置 \_ 电源](./oid-pnp-set-power.md)。 [ \_ \_ ](./oid-pm-parameters.md)
 

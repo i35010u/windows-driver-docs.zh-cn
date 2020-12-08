@@ -1,7 +1,6 @@
 ---
 title: ndiskd.filterdriver
 description: Ndiskd. filterdriver 扩展显示有关 NDIS 筛选器驱动程序的信息。 如果运行不带任何参数的扩展，ndiskd 将显示所有筛选器驱动程序的列表。
-ms.assetid: 9FE3E885-98BC-4FCC-9E1C-DBECD070F92A
 keywords:
 - ndiskd filterdriver Windows 调试
 ms.date: 06/15/2020
@@ -12,16 +11,16 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 25431c83498442faf57570e3abded547e0763c15
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 3fa8a1c26da230143c654abaa6a23ecd3455fc30
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89216778"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96832549"
 ---
 # <a name="ndiskdfilterdriver"></a>!ndiskd.filterdriver
 
-**！ Ndiskd filterdriver**扩展显示有关 NDIS 筛选器驱动程序的信息。 如果运行不带参数的扩展，！ ndiskd 将显示所有筛选器驱动程序的列表。
+**！ Ndiskd filterdriver** 扩展显示有关 NDIS 筛选器驱动程序的信息。 如果运行不带参数的扩展，！ ndiskd 将显示所有筛选器驱动程序的列表。
 
 ```console
 !ndiskd.filterdriver -handle <x> [-filters] [-handlers] 
@@ -107,7 +106,7 @@ HANDLERS
     StatusHandler                          fffff80787d877c0  bp
 ```
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [网络驱动程序设计指南](../network/index.md)
 
@@ -115,6 +114,6 @@ HANDLERS
 
 [调试网络堆栈](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-175-Debugging-the-Network-Stack)
 
-[**NDIS 扩展 ( # A0) **](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 扩展 ( # A0)**](ndis-extensions--ndiskd-dll-.md)
 
 [**!ndiskd.help**](-ndiskd-help.md)

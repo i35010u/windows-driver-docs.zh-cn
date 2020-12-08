@@ -1,7 +1,6 @@
 ---
 title: usbkd.usbver
 description: Usbkd. usbver 命令显示 USB 驱动程序堆栈的 USBD 接口版本。
-ms.assetid: E3F5A971-64FB-4826-8DC0-59F3615C106A
 keywords:
 - usbkd usbver Windows 调试
 ms.date: 05/23/2017
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 11d60dcffa571a7ea1eb23c973bc98b098b27e79
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: d70d0451fb88a25db54328813fd8f17f07185b11
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89217915"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96833861"
 ---
 # <a name="usbkdusbver"></a>!usbkd.usbver
 
 
-**！ Usbkd. usbver**命令显示 USB 驱动程序堆栈的 USBD 接口版本。
+**！ Usbkd. usbver** 命令显示 USB 驱动程序堆栈的 USBD 接口版本。
 
 ```dbgcmd
 !usbkd.usbver
@@ -41,7 +40,7 @@ USBD 接口版本的值存储在变量中 `usbport!usbd_version` 。
 <a name="examples"></a>示例
 --------
 
-下面是 **！ usbkd**的输出示例。
+下面是 **！ usbkd** 的输出示例。
 
 ```dbgcmd
 1: kd> !usbkd.usbver

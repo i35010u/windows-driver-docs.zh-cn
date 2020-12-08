@@ -1,7 +1,6 @@
 ---
 title: 使用 USB 接口
 description: 使用 USB 接口
-ms.assetid: 6a1801e4-bd46-4a78-8c30-7dc62e41a37a
 keywords:
 - USB i/o 目标 WDK KMDF，USB 接口
 - USB 接口 WDK KMDF
@@ -10,12 +9,12 @@ keywords:
 - 备用 USB 接口设置 WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7cf1fa2090c3769fa2de8a9b49a94f49045ecb56
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: e885676742f58efd65abc32139f5369fcd02bd0d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89185838"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96833925"
 ---
 # <a name="working-with-usb-interfaces"></a>使用 USB 接口
 

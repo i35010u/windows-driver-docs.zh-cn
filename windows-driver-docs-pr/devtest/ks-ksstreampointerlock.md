@@ -1,7 +1,6 @@
 ---
 title: 'KsStreamPointerLock 规则 ( # A1'
 description: KsStreamPointerLock 规则指定内核流式处理 (KS) 微型端口驱动程序在正确的序列中使用 KsStreamPointerLock 和 KsStreamPointerUnlock 函数。
-ms.assetid: 365C8656-57F1-4774-9859-B67D64403BB3
 ms.date: 05/21/2018
 keywords:
 - 'KsStreamPointerLock 规则 ( # A1'
@@ -12,12 +11,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: b116b9ff6d2527e9934d2f11f14f0c6485fa449a
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: e279ff67aca7373acb70c47e7ec5b98b21c305b5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105622"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96832813"
 ---
 # <a name="ksstreampointerlock-rule-"></a>KsStreamPointerLock 规则 ( # A1
 

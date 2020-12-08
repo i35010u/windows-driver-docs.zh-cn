@@ -1,15 +1,14 @@
 ---
 title: WDI 消息结构
 description: 本部分介绍 WDI 命令消息的结构
-ms.assetid: 09663C5F-A458-479F-B450-A994486A6C18
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2e91dd5679798d294bb0876e28ccdeb86946ea44
-ms.sourcegitcommit: ec7bebe3f94536455e62b372c2a28fe69d1717f7
+ms.openlocfilehash: 409ed4748868325368259e2db0b3b090bbfc683e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93349655"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96834073"
 ---
 # <a name="wdi-message-structure"></a>WDI 消息结构
 
@@ -27,7 +26,7 @@ ms.locfileid: "93349655"
 |----------------------------|----------|-----------------------------------------------------------------------------------------------------------------------------------------------|
 | 类型                       | UINT16   | TLV 结构的类型。 如果不触发错误，则必须跳过无法识别的 TLV 类型。                                              |
 | 值缓冲区的长度 | UINT16   | 值缓冲区的大小（以字节为单位）。                                                                                                        |
-| 值                      | 位\[\] | 负载缓冲区，可包含结构、结构列表或其他 TLVs。 数据大小必须与预期长度完全匹配。 |
+| “值”                      | 位\[\] | 负载缓冲区，可包含结构、结构列表或其他 TLVs。 数据大小必须与预期长度完全匹配。 |
 
  
 
@@ -40,11 +39,11 @@ ms.locfileid: "93349655"
 
 在此示例中， [**WDI \_ TLV \_ 单播 \_ 算法 \_ 列表**](./wdi-tlv-unicast-algorithm-list.md) 定义为 WDI \_ 算法对的列表 \_ 。
 
-**类型** ： WDI \_ TLV \_ 单播 \_ 算法 \_ 列表
+**类型**： WDI \_ TLV \_ 单播 \_ 算法 \_ 列表
 
-**长度** ： N \* sizeof (WDI \_ 算法 \_ 对) 
+**长度**： N \* sizeof (WDI \_ 算法 \_ 对) 
 
-**值** ： WDI \_ 算法 \_ 对 \[ N\]
+**值**： WDI \_ 算法 \_ 对 \[ N\]
 
 
  

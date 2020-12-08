@@ -1,7 +1,6 @@
 ---
 title: 报告设备电源功能
 description: 报告设备电源功能
-ms.assetid: 67a504d0-2c41-4c74-a912-4f0771885f7d
 keywords:
 - 报告设备电源功能
 - 设备电源功能 WDK 内核
@@ -11,12 +10,12 @@ keywords:
 - I/o 请求数据包 WDK 电源管理
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 287fd4ea8816d6016b85be725a6a3b0b4d366bbd
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 0e02b4343e2b6aece318acfb7ebf009d57990af8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89189285"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96834427"
 ---
 # <a name="reporting-device-power-capabilities"></a>报告设备电源功能
 

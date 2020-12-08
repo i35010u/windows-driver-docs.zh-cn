@@ -1,17 +1,16 @@
 ---
 title: WDI_TLV_TCP_OFFLOAD_CAPABILITIES
 description: WDI_TLV_TCP_OFFLOAD_CAPABILITIES 是包含 TCP/IP 卸载功能的 TLV。
-ms.assetid: 9B3428CC-C9B4-4769-BD97-F25920C4AAF2
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_TCP_OFFLOAD_CAPABILITIES 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 53ef0d326b71bfbf67d04650516a3f2bd464e652
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: f187e0c704070e1cb7dab2a8bf56e1dd2e8cf823
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89214989"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96834139"
 ---
 # <a name="wdi_tlv_tcp_offload_capabilities"></a>WDI \_ TLV \_ TCP \_ 卸载 \_ 功能
 
@@ -25,7 +24,7 @@ WDI \_ tlv \_ tcp \_ 卸载 \_ 功能是包含 TCP/IP 卸载功能的 tlv。
 
 0xCA
 
-## <a name="length"></a>Length
+## <a name="length"></a>长度
 
 
 Sum (包含所有 TLVs 的大小的) 字节。
@@ -56,7 +55,7 @@ Sum (包含所有 TLVs 的大小的) 字节。
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
-<td><p>Windows Server 2016</p></td>
+<td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
 <td><p>标头</p></td>

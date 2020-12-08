@@ -1,17 +1,16 @@
 ---
 title: WFP 用户模式管理函数
 description: 本主题介绍 WFP 用户模式管理功能。
-ms.assetid: 14accd49-5b96-40e6-b9d7-6638a4e5c2dc
 keywords:
 - WFP 用户模式管理功能网络驱动程序
 ms.date: 11/07/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7988241192a1b5e16f11cce7e6027f9f27d3d127
-ms.sourcegitcommit: 3464f10ffa0727e38fbe225cfab52bb8c2bb1747
+ms.openlocfilehash: 87457ef15cc656d21e2f69fa7acc7203315fc8b5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93352986"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96834069"
 ---
 # <a name="wfp-user-mode-management-functions"></a>WFP 用户模式管理函数
 

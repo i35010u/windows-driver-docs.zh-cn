@@ -1,16 +1,15 @@
 ---
 title: OID_GEN_DIRECTED_FRAMES_XMIT
 description: 作为查询，OID_GEN_DIRECTED_FRAMES_XMIT OID 指定传输的未出现错误的定向数据包的数量。
-ms.assetid: 7863c5c5-618f-4e3c-9a50-3bfdcf00034d
 ms.date: 11/01/2019
 keywords: -从 Windows Vista 开始 OID_GEN_DIRECTED_FRAMES_XMIT 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 312643de698673a272793bb0f1f7452a49cf7b71
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 9329b450ff0e648c223a1198b5136805d4280bb9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89207203"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96833333"
 ---
 # <a name="oid_gen_directed_frames_xmit"></a>OID \_ 生成 \_ 定向 \_ 帧 \_ XMIT
 
@@ -57,7 +56,7 @@ ms.locfileid: "89207203"
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [OID \_ 生成 \_ 统计信息](oid-gen-statistics.md)

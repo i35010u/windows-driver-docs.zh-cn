@@ -1,7 +1,6 @@
 ---
 title: 计时器和工作线程管理
 description: 计时器和工作线程管理
-ms.assetid: b1feeb4a-0555-4ed6-a26c-ef2a5fc58280
 keywords:
 - RDBSS WDK 文件系统，工作线程管理
 - 重定向驱动器缓冲子系统 WDK 文件系统、工作线程管理
@@ -13,12 +12,12 @@ keywords:
 - 定期触发 WDK RDBSS
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2dc17d1fbdf84a200ded866527066602c900acd8
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 1f7e620ab6b07f644bbe016e6dd913cf88552e27
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107170"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96832679"
 ---
 # <a name="timer-and-worker-thread-management"></a>计时器和工作线程管理
 
@@ -44,7 +43,7 @@ RDBSS 为工作线程管理提供了多个计时器例程。 这些服务是为�
 <thead>
 <tr class="header">
 <th align="left">例程所返回的值</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>

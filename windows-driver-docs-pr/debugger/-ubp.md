@@ -1,7 +1,6 @@
 ---
 title: ubp
-description: Ubp 扩展用户空间中设置断点。
-ms.assetid: 1aaa6bec-59d3-4e37-a1c6-af3554da809f
+description: Ubp 扩展在用户空间中设置一个断点。
 keywords:
 - ubp Windows 调试
 ms.date: 05/23/2017
@@ -12,29 +11,29 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 9703b641e383cc2cf036817379b9b9e7373a6b48
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0cac469e816234e224c06b5bf02cb49eb742813f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63334156"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96833901"
 ---
 # <a name="ubp"></a>!ubp
 
 
-**！ Ubp**扩展用户空间中设置断点。
+**！ Ubp** extension 在用户空间中设置一个断点。
 
 ```dbgcmd
 !ubp Address 
 ```
 
-## <a name="span-idddkubpdbgspanspan-idddkubpdbgspanparameters"></a><span id="ddk__ubp_dbg"></span><span id="DDK__UBP_DBG"></span>参数
+## <a name="span-idddk__ubp_dbgspanspan-idddk__ubp_dbgspanparameters"></a><span id="ddk__ubp_dbg"></span><span id="DDK__UBP_DBG"></span>参数
 
 
-<span id="_______Address______"></span><span id="_______address______"></span><span id="_______ADDRESS______"></span> *Address*   
-设置断点的位置的用户空间中指定位置的十六进制虚拟地址。
+<span id="_______Address______"></span><span id="_______address______"></span><span id="_______ADDRESS______"></span>*地址*   
+指定用户空间中要设置断点的位置的十六进制虚拟地址。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 <table>
 <colgroup>
@@ -58,17 +57,17 @@ ms.locfileid: "63334156"
 <a name="remarks"></a>备注
 -------
 
-**！ Ubp**扩展用户空间中设置断点。 在实际的物理页上，而不仅仅是虚拟的页上设置断点。
+**！ Ubp** extension 在用户空间中设置一个断点。 断点在实际物理页上设置，而不只是在虚拟页上设置。
 
-设置物理断点将同时修改每个页上，结果不可预知的虚拟副本。 一个可能的结果是损坏的系统状态，可能是后跟的 bug 检查或其他系统发生崩溃。 因此，这些断点应谨慎，如果根本。
+设置物理断点会同时修改页面的每个虚拟副本，并产生不可预知的结果。 一个可能的结果是系统状态损坏，可能后跟 bug 检查或其他系统故障。 因此，应慎重使用这些断点（如果有）。
 
-此扩展不能用于已交换内存不足的页上设置断点。 如果页面交换内存不足后设置断点，断点将不再存在。
+此扩展不能用于在已交换内存的页面上设置断点。 如果在设置断点后将页面交换出内存，则断点将停止存在。
 
-不能页表或页目录中设置断点。
+不能在页表或页目录中设置断点。
 
-分配每个断点*断点号*。 若要了解分配的断点号，请使用[ **！ ubl**](-ubl.md)。 在创建时启用断点。 单步执行断点，您必须首先禁用它通过使用[ **！ ubd**](-ubd.md)。 若要清除断点，请使用[ **！ ubc**](-ubc.md)。
+为每个断点分配一个 *断点号*。 若要确定分配的断点号，请使用 [**！ ubl**](-ubl.md)。 断点在创建时启用。 若要逐过程执行断点，必须先使用 [**！ ubd**](-ubd.md)将其禁用。 若要清除断点，请使用 [**！ ubc**](-ubc.md)。
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
 [**!ubc**](-ubc.md)

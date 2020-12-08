@@ -1,22 +1,21 @@
 ---
 title: WDI_TLV_WAKE_PACKET_IPv4_TCP_SYNC
-description: WDI_TLV_WAKE_PACKET_IPv4_TCP_SYNC 是包含在 LAN IPv4 TCP 同步数据包信息 TLV。
-ms.assetid: C1237747-721C-4E44-B2BA-1B93E81174A8
+description: WDI_TLV_WAKE_PACKET_IPv4_TCP_SYNC 是包含 LAN 唤醒 TCP 同步数据包信息的 TLV。
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_WAKE_PACKET_IPv4_TCP_SYNC 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 7b2cf053aa39a45614166145fdbe021520e5e93e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c23924d057d70d0643ef484e29224b33b3dde53c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339952"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96834109"
 ---
-# <a name="wditlvwakepacketipv4tcpsync"></a>WDI\_TLV\_WAKE\_PACKET\_IPv4\_TCP\_SYNC
+# <a name="wdi_tlv_wake_packet_ipv4_tcp_sync"></a>WDI \_ TLV \_ 唤醒 \_ 数据包 \_ IPv4 \_ TCP \_ 同步
 
 
-WDI\_TLV\_唤醒\_数据包\_IPv4\_TCP\_同步是包含在 LAN IPv4 TCP 同步数据包信息 TLV。
+WDI \_ TLV \_ 唤醒 \_ 数据包 \_ IPv4 \_ tcp \_ sync 是包含 LAN 唤醒 tcp 同步数据包信息的 tlv。
 
 ## <a name="tlv-type"></a>TLV 类型
 
@@ -26,18 +25,18 @@ WDI\_TLV\_唤醒\_数据包\_IPv4\_TCP\_同步是包含在 LAN IPv4 TCP 同步�
 ## <a name="length"></a>长度
 
 
-所有包含的元素的大小的总和 （以字节为单位）。
+Sum (所有包含的元素的大小) 。
 
 ## <a name="values"></a>值
 
 
-| 在任务栏的搜索框中键入       | 描述                                                      |
+| 类型       | 描述                                                      |
 |------------|------------------------------------------------------------------|
-| UINT32     | 指定在 LAN 模式 id。                            |
-| UINT8\[4\] | TCP SYN 数据包中指定的 IPv4 源地址。         |
-| UINT8\[4\] | TCP SYN 数据包中指定的 IPv4 目标地址。    |
-| UINT16     | TCP SYN 数据包中指定的 TCP 源端口号。      |
-| UINT16     | TCP SYN 数据包中指定的 TCP 目标端口号。 |
+| UINT32     | 指定 LAN 唤醒模式 ID。                            |
+| UINT8 \[ 4\] | 指定 TCP SYN 数据包中的 IPv4 源地址。         |
+| UINT8 \[ 4\] | 指定 TCP SYN 数据包中的 IPv4 目标地址。    |
+| UINT16     | 指定 TCP SYN 数据包中的 TCP 源端口号。      |
+| UINT16     | 指定 TCP SYN 数据包中的 TCP 目标端口号。 |
 
  
 
@@ -56,10 +55,10 @@ WDI\_TLV\_唤醒\_数据包\_IPv4\_TCP\_同步是包含在 LAN IPv4 TCP 同步�
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
-<td><p>Windows Server 2016</p></td>
+<td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Wditypes.hpp</td>
 </tr>
 </tbody>

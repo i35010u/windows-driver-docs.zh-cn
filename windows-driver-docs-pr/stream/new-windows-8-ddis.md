@@ -1,15 +1,14 @@
 ---
 title: Windows 8 的新 AVStream 接口
-ms.assetid: B3C223BD-2A00-4B87-9D0E-557C0CA3F2DE
 description: 提供有关适用于 Windows 8 的新的或已更新的 AVStream 流媒体驱动程序接口的信息。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 464821ab9aa5362610cd527c93f99f08ee959cad
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 45e7944c8492c3f1c7c53acadf586d353f2e0cfc
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89192145"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96833247"
 ---
 # <a name="new-avstream-interfaces-for-windows-8"></a>Windows 8 的新 AVStream 接口
 

@@ -1,17 +1,16 @@
 ---
 title: 确定视频流停滞的原因
 description: 确定视频流停滞的原因
-ms.assetid: 959c2295-1ec3-48b0-aed9-93a81378372f
 keywords:
 - 内核流调试，视频流停止，原因
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d807db47a7cf7bc5da44346d0776422c65c63acf
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 3e4e04a4ed59a66fbb7156210326c6b849aaf1a9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89209371"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96833669"
 ---
 # <a name="determining-the-cause-of-a-video-stream-stall"></a>确定视频流停滞的原因
 

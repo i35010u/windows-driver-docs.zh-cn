@@ -1,7 +1,6 @@
 ---
 title: EXT \_ TDOP \_ 输出的 \_ 完整 \_ 值
 description: "\"调试\" 请求的 \"EXT TDOP OUTPUT\" 的 \" \\_ \\_ \\_ 完全值\" \\_ 子操作 \" \\_ \\_ ext \\_ 类型化 \\_ 数据 \\_ ANSI 请求\" 操作会打印指定类型化数据的类型和值。"
-ms.assetid: d64f7a38-c9ae-412f-985b-22115d772116
 keywords:
 - EXT_TDOP_OUTPUT_FULL_VALUE Windows 调试
 topic_type:
@@ -12,19 +11,19 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 751adb40a937710270833827bd9ab85eca48847d
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 076e9e27d8114bd437d90508a4c3616a9aadb460
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89211169"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96833671"
 ---
 # <a name="ext_tdop_output_full_value"></a>EXT \_ TDOP \_ 输出的 \_ 完整 \_ 值
 
 
-"调试" 请求的 "EXT TDOP OUTPUT" 的 " \_ \_ \_ 完全值" \_ 子操作 " [** \_ \_ ext \_ 类型化 \_ 数据 \_ ANSI**](debug-request-ext-typed-data-ansi.md)[**请求**](request.md) " 操作会打印指定类型化数据的类型和值。
+"调试" 请求的 "EXT TDOP OUTPUT" 的 " \_ \_ \_ 完全值" \_ 子操作 " [**\_ \_ ext \_ 类型化 \_ 数据 \_ ANSI**](debug-request-ext-typed-data-ansi.md)[**请求**](request.md) " 操作会打印指定类型化数据的类型和值。
 
-**参数**
+**Parameters**
 
 <span id="Operation"></span><span id="operation"></span><span id="OPERATION"></span>**运作**  
 \_对于此子操作，设置为 EXT TDOP \_ 输出 \_ \_ 的完整值。

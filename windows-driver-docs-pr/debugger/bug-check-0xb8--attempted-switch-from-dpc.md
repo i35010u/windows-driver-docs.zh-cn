@@ -1,7 +1,6 @@
 ---
 title: Bug 检查 0xB8 ATTEMPTED_SWITCH_FROM_DPC
-description: ATTEMPTED_SWITCH_FROM_DPC bug 检查具有 0x000000B8 值。 这表示延迟的过程调用 (DPC) 例程尝试进行非法操作。
-ms.assetid: 614b7be8-cec9-4dd9-b183-66db1790c31f
+description: ATTEMPTED_SWITCH_FROM_DPC bug 检查的值为0x000000B8。 这表明延迟的过程调用 (DPC) 例程尝试执行非法操作。
 keywords:
 - Bug 检查 0xB8 ATTEMPTED_SWITCH_FROM_DPC
 - ATTEMPTED_SWITCH_FROM_DPC
@@ -13,23 +12,23 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 1d09a235a5f9b3290418280efe445e4d0439ef52
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: 8dd82b12e7b12a16a819854eaa1afa227fa13e1f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67519010"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96832839"
 ---
-# <a name="bug-check-0xb8-attemptedswitchfromdpc"></a>Bug 检查 0xB8：尝试\_交换机\_FROM\_DPC
+# <a name="bug-check-0xb8-attempted_switch_from_dpc"></a>Bug 检查0xB8：尝试 \_ \_ 从 \_ DPC 切换
 
 
-已尝试\_交换机\_FROM\_DPC bug 检查的值为 0x000000B8。 这表示延迟的过程调用 (DPC) 例程尝试进行非法操作。
+\_ \_ 从 DPC BUG 检查尝试的开关的 \_ 值为0x000000B8。 这表明延迟的过程调用 (DPC) 例程尝试执行非法操作。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题面向程序员。 如果您是在使用计算机时收到蓝屏错误代码的客户，请参阅[蓝屏错误疑难解答](https://www.windows.com/stopcode)。
 
 
-## <a name="attemptedswitchfromdpc-parameters"></a>尝试\_交换机\_FROM\_DPC 参数
+## <a name="attempted_switch_from_dpc-parameters"></a>尝试 \_ \_ 从 \_ DPC 参数进行切换
 
 
 <table>
@@ -46,7 +45,7 @@ ms.locfileid: "67519010"
 <tbody>
 <tr class="odd">
 <td align="left"><p>1</p></td>
-<td align="left"><p>原始线程导致了故障</p></td>
+<td align="left"><p>导致故障的原始线程</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>2</p></td>
@@ -54,11 +53,11 @@ ms.locfileid: "67519010"
 </tr>
 <tr class="odd">
 <td align="left"><p>3</p></td>
-<td align="left"><p>原始线程堆栈地址</p></td>
+<td align="left"><p>原始线程的堆栈地址</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>4</p></td>
-<td align="left"><p>保留</p></td>
+<td align="left"><p>预留</p></td>
 </tr>
 </tbody>
 </table>
@@ -68,12 +67,12 @@ ms.locfileid: "67519010"
 <a name="cause"></a>原因
 -----
 
-一个等待操作，附加进程，或者，yield 试图从 DPC 例程。 这是非法操作。
+从 DPC 例程尝试等待操作、附加进程或收益。 这是非法操作。
 
-<a name="resolution"></a>分辨率
+<a name="resolution"></a>解决方法
 ----------
 
-导致错误的原始 DPC 例程中的代码将导致的堆栈跟踪。
+堆栈跟踪将导致导致错误的原始 DPC 例程中的代码。
 
  
 

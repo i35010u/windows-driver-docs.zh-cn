@@ -1,20 +1,19 @@
 ---
 title: 在 UMDF 1.x 驱动程序中使用 USB 接口
 description: 在 UMDF 1.x 驱动程序中使用 USB 接口
-ms.assetid: fc25e3b2-1631-445e-9340-a8cc92c68733
 keywords:
 - UMDF WDK，USB 接口
-- 用户模式驱动程序框架 WDK，USB 接口
+- User-Mode Driver Framework WDK，USB 接口
 - 用户模式驱动程序 WDK UMDF，USB 接口
 - USB 接口 WDK UMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7374fdf938601a13b5265da20cfef74a9b1788cd
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 183634f6ab0b75be36253e9715f1a0662ec20689
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89185847"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96833929"
 ---
 # <a name="working-with-usb-interfaces-in-umdf-1x-drivers"></a>在 UMDF 1.x 驱动程序中使用 USB 接口
 
@@ -59,7 +58,7 @@ UMDF 驱动程序可以调用 [**IWDFUsbInterface：： SelectSetting**](/window
 
 设备的备用设置必须连续编号（从零开始）。
 
-**重要提示**   选择某个设置会使有关该接口和终结点的任何信息失效。 因此，该驱动程序应再次获取此信息。 驱动程序还必须丢弃先前检索的任何 USB 管道对象并重新创建它们。
+**重要提示**   选择某个设置会使有关该接口和终结点的任何信息失效。 因此，该驱动程序应再次获取此信息。 驱动程序还必须丢弃先前检索的任何 USB 管道对象并重新创建它们。
 
  
 

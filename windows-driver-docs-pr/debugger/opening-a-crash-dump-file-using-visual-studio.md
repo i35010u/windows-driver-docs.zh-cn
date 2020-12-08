@@ -1,15 +1,14 @@
 ---
 title: 使用 Visual Studio 打开转储文件
 description: 使用 Visual Studio 打开转储文件的过程。
-ms.assetid: 3B7327FE-335F-46FB-94C3-75D5B52A295D
 ms.date: 05/11/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: fe1d32be48cf19fb2d3484a6f5cb6f0570123809
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 07dd5df2ac1f7b438ee0137b4599a5fea2d0d656
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89215720"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96833615"
 ---
 # <a name="opening-a-dump-file-using-visual-studio"></a>使用 Visual Studio 打开转储文件
 

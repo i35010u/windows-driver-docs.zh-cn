@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ 横线 \_ PININFO
 description: KSPROPERTY \_ 纵横制 \_ PININFO 属性检索由 pin 表示的物理连接类型，包括诸如数据流方向、中等 GUID () 和 pin 类型等设置。
-ms.assetid: d025b401-bc75-40d6-a367-1b98e065a48d
 keywords:
 - KSPROPERTY_CROSSBAR_PININFO 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6d04e5f649fee1d275a436fee233fc352fe95784
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 81cb2c6dab2fc0aee5a9cc7b7508ea400e5d0745
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102732"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96833973"
 ---
 # <a name="ksproperty_crossbar_pininfo"></a>KSPROPERTY \_ 横线 \_ PININFO
 
@@ -79,7 +78,7 @@ KSPROPERTY \_ 纵横制 \_ PININFO 属性检索由 pin 表示的物理连接类�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSPROPERTY**](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)

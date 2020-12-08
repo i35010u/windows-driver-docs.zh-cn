@@ -1,18 +1,17 @@
 ---
 title: 必需的 Dispatch 例程
 description: 必需的 Dispatch 例程
-ms.assetid: 9b760ac7-7f31-47ad-bf84-7d79c6b24ebd
 keywords:
 - 调度例程 WDK 内核，必需
 - 必需的调度例程 WDK 内核
 ms.date: 12/06/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: d56abd611db8f05bf19961dd0d315c9747926582
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: bc54508336395b9e137dee705d7b67603d308ba4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89189273"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96834429"
 ---
 # <a name="required-dispatch-routines"></a>必需的 Dispatch 例程
 

@@ -1,15 +1,14 @@
 ---
 title: 表数据源中的参数类型
 description: 表数据源中的参数类型
-ms.assetid: 034F171E-716F-4795-9B07-46A109052227
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9fd03548bd9009cfe6fb3208bcfc2da2a7020808
-ms.sourcegitcommit: f63852446e614c985a65f599cdfe788bdb0c6089
+ms.openlocfilehash: 9bb66bc0a18ab1c14620837a0e8ada07a9ee7c52
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87425733"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96833245"
 ---
 # <a name="parameter-types-in-table-data-sources"></a>表数据源中的参数类型
 

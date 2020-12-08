@@ -1,9 +1,8 @@
 ---
 title: /Debug 开关
-description: /Debug 转换来增强存储证书管理工具的报告的功能，并在 IEEE 1667 合规 USB 存储设备中存储有关身份验证接收器证书 (ASC) 的信息。
-ms.assetid: 9a7c8fd0-34a8-4f60-a8cb-d5777645f672
+description: 增强的存储证书管理工具的/Debug 交换机会报告有关身份验证接收器证书的功能和信息， (ASC) 存储在符合 IEEE 1667 的 USB 存储设备中。
 keywords:
-- / 调试开关驱动程序开发工具
+- /Debug 交换机驱动程序开发工具
 topic_type:
 - apiref
 api_name:
@@ -12,25 +11,25 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ea6712be11ed34a234460ee6088d2b81c349a40d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c5df1494d12739281de85e2448f14259f17f2d41
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63344013"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96833573"
 ---
 # <a name="debug-switch"></a>/Debug 开关
 
 
-/**调试**开关的增强存储证书管理工具的报告功能和 IEEE 1667 合规的 USB 存储设备中的身份验证接收器证书 (ASC) 存储有关的信息。 此报告包括以下几个部分：
+增强的存储证书管理工具的/**调试** 开关报告有关身份验证接收器证书的功能和信息， (ASC) 存储在符合 IEEE 1667 的 USB 存储设备中。 此报告包括以下部分：
 
--   用于哈希和签名算法。
+-   用于哈希和签名的算法。
 
 -   证书槽的总数。
 
--   已占用和空证书槽数。
+-   已占用和空证书槽的数目。
 
-**请注意**在本主题中，指定的 IEEE 1667 合规 USB 存储设备称为*目标设备*。
+**注意**  在本主题中，指定的与 IEEE 1667 兼容的 USB 存储设备称为 *目标设备*。
 
 
 
@@ -42,16 +41,16 @@ ms.locfileid: "63344013"
 ## <a name="span-idsubparametersspanspan-idsubparametersspanspan-idsubparametersspansubparameters"></a><span id="Subparameters"></span><span id="subparameters"></span><span id="SUBPARAMETERS"></span>子参数
 
 
-<span id="_______-Volume_______"></span><span id="_______-volume_______"></span><span id="_______-VOLUME_______"></span> **-卷：**   
-目标设备的卷名称。 此参数的格式的详细信息，请参阅[增强存储证书管理工具的概述](overview-of-the-enhanced-storage-certificate-management-tool.md)。
+<span id="_______-Volume_______"></span><span id="_______-volume_______"></span><span id="_______-VOLUME_______"></span>**-Volume：**   
+目标设备的卷名。 有关此参数的格式的详细信息，请参阅 [增强的存储证书管理工具概述](overview-of-the-enhanced-storage-certificate-management-tool.md)。
 
-**请注意**若要生成的 IEEE 1667 合规 USB 存储设备的当前连接到计算机的卷名称的列表，输入**EhStorCertMgrCmd /List**从命令行。
+**注意**  要生成当前连接到计算机的符合 IEEE 1667 的 USB 存储设备的卷名称列表，请在命令行中输入 **EhStorCertMgrCmd/list** 。
 
 
 
 ### <a name="span-idexamplespanspan-idexamplespanexample"></a><span id="example"></span><span id="EXAMPLE"></span>示例
 
-下面的示例显示了从生成的输出的摘录 **/debug**切换：
+下面的示例显示了 **/debug** 开关生成的输出的摘录：
 
 ```
 Execute Debug operation for specified volume name...

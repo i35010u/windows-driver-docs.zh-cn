@@ -1,18 +1,17 @@
 ---
 title: 非侵入式调试（用户模式）
 description: 非侵入式调试（用户模式）
-ms.assetid: 91f09fb1-9f5e-4081-89b3-78c95eada817
 keywords:
 - 进程，调试 noninvasively
 - noninvasive 调试
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4db06903aed68303255534bda068052d1f45dc3d
-ms.sourcegitcommit: 76681fc52a8a65fa4fe381582e7d5867e0527dae
+ms.openlocfilehash: fb60ce2d725ae1b22935da010481325ca14026f6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94688536"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96833655"
 ---
 # <a name="noninvasive-debugging-user-mode"></a>非侵入式调试（用户模式）
 

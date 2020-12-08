@@ -1,19 +1,18 @@
 ---
 title: 已检验版本 ASSERT
 description: 已检验版本 ASSERT
-ms.assetid: f002950d-6af9-42bb-9a1f-186873b09919
 keywords:
 - 检查生成 WDK，断言
 - 断言 WDK 检查生成
 - 错误 WDK 检查版本
 ms.date: 05/08/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 5fe5bc29b7d02365a831f968acebedb705630047
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 86da796895fa395c17e264bdd05c805853f2929f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90101602"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96832837"
 ---
 # <a name="checked-build-asserts"></a>已检验版本 ASSERT
 

@@ -1,18 +1,17 @@
 ---
 title: 文件图像文件路径
 description: 文件图像文件路径
-ms.assetid: d2a827b5-bba0-4840-8e74-5b24c9eb6a22
 keywords:
 - 文件图像文件路径
 - 可执行文件和路径，文件图像文件路径
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 85ac455b938b176ba8113cbea6a2597e29024b8f
-ms.sourcegitcommit: f610410e1500f0b0a4ca008b52679688ab51033d
+ms.openlocfilehash: fc9cd89aebeea7474f1c541fd2cb6da6bee9e1d5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/15/2020
-ms.locfileid: "88253101"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96833665"
 ---
 # <a name="file--image-file-path"></a>文件 | 映像文件路径
 
@@ -32,7 +31,7 @@ ms.locfileid: "88253101"
 
 选择 **"确定"** 以保存更改，或选择 " **取消** " 以放弃更改。
 
-如果选中 " **重新加载** " 复选框，则调试器将在您选择 **"确定"** 后重新加载所有加载的图像和符号文件。 此命令等效于使用 [**. reload.sql (Reload.sql Module) **](-reload--reload-module-.md) 命令。
+如果选中 " **重新加载** " 复选框，则调试器将在您选择 **"确定"** 后重新加载所有加载的图像和符号文件。 此命令等效于使用 [**. reload.sql (Reload.sql Module)**](-reload--reload-module-.md) 命令。
 
 还可以选择 " **浏览** " 以打开 " **浏览文件夹** " 对话框。
 

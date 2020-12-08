@@ -1,20 +1,19 @@
 ---
 title: WDM IRP 和 WDF 事件回调函数
 description: WDM IRP 和 WDF 事件回调函数
-ms.assetid: 9B9A01FD-AA15-4C30-B19D-2F6451014EAD
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6ccf4de8ba5d08b83132d5a8c662245763b694f9
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: d4126afd6505e8501a54b70b358fcc319754b59a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106672"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96833943"
 ---
 # <a name="wdm-irps-and-wdf-event-callback-functions"></a>WDM IRP 和 WDF 事件回调函数
 
 
-内核模式驱动程序框架 (KMDF) 和用户模式驱动程序框架 (UMDF) 支持 Windows Irp 的一个子集。 下表列出了主要的 WDM IRP 类型和相应的框架事件回调函数。 除非另外指定，否则回调同时适用于 KMDF 和 UMDF。
+Kernel-Mode Driver Framework (KMDF) 和 User-Mode Driver Framework (UMDF) 支持 Windows Irp 的一个子集。 下表列出了主要的 WDM IRP 类型和相应的框架事件回调函数。 除非另外指定，否则回调同时适用于 KMDF 和 UMDF。
 
 <table>
 <colgroup>
@@ -147,7 +146,7 @@ ms.locfileid: "90106672"
 
 下表按执行顺序列出了对应于 [**IRP \_ MJ \_ PNP**](../kernel/irp-mj-pnp.md)的次要 IRP 代码的 KMDF 回调。 箭头指示 WDM FDO 在传播到堆栈时是否处理 IRP。
 
-**注意**   在 KMDF 驱动程序中，即插即用和电源管理是集成的操作，驱动程序不会收到单个次要[**IRP \_ mj \_ PNP**](../kernel/irp-mj-pnp.md)或[**IRP \_ mj \_ power**](../kernel/irp-mj-power.md)请求。 相反，框架在开机时调用一组核心回调，并在关闭时调用相应的设置，并在此核心集之前和之后调用其他每个即插即用请求的回调。 有关显示通电和关机顺序的综合关系图，请参阅 [移植 PnP 和电源管理功能](porting-pnp-and-power-management-functionality.md)。
+**注意**   在 KMDF 驱动程序中，即插即用和电源管理是集成的操作，驱动程序不会收到单个次要 [**IRP \_ mj \_ PNP**](../kernel/irp-mj-pnp.md) 或 [**IRP \_ mj \_ power**](../kernel/irp-mj-power.md) 请求。 相反，框架在开机时调用一组核心回调，并在关闭时调用相应的设置，并在此核心集之前和之后调用其他每个即插即用请求的回调。 有关显示通电和关机顺序的综合关系图，请参阅 [移植 PnP 和电源管理功能](porting-pnp-and-power-management-functionality.md)。
 
  
 
@@ -316,7 +315,7 @@ ms.locfileid: "90106672"
 
 下表按执行顺序列出了对应于 [**IRP \_ MJ \_ 功能**](../kernel/irp-mj-power.md)的次要 IRP 代码的 KMDF 回调。 箭头指示 WDM FDO 在传播到堆栈时是否处理 IRP。
 
-**注意**   注意：在 KMDF 驱动程序中，即插即用和电源管理是集成的操作，驱动程序不会收到单个次要[**IRP \_ mj \_ PNP**](../kernel/irp-mj-pnp.md)或[**IRP \_ mj \_ power**](../kernel/irp-mj-power.md)请求。 相反，框架在开机时调用一组核心回调，并在关闭时调用相应的设置，并在此核心集之前和之后调用其他每个即插即用请求的回调。 有关显示通电和关机顺序的综合关系图，请参阅 [移植 PnP 和电源管理功能](porting-pnp-and-power-management-functionality.md)。
+**注意**   注意：在 KMDF 驱动程序中，即插即用和电源管理是集成的操作，驱动程序不会收到单个次要 [**IRP \_ mj \_ PNP**](../kernel/irp-mj-pnp.md) 或 [**IRP \_ mj \_ power**](../kernel/irp-mj-power.md) 请求。 相反，框架在开机时调用一组核心回调，并在关闭时调用相应的设置，并在此核心集之前和之后调用其他每个即插即用请求的回调。 有关显示通电和关机顺序的综合关系图，请参阅 [移植 PnP 和电源管理功能](porting-pnp-and-power-management-functionality.md)。
 
  
 

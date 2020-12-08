@@ -1,17 +1,16 @@
 ---
 title: 在函数驱动程序中启动设备
 description: 在函数驱动程序中启动设备
-ms.assetid: 148a3128-9cb1-4a2c-a62e-45199476d968
 keywords:
 - 函数驱动程序 WDK PnP
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f9e387f81c654693b5dd8c45f8974244e0031b31
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 72aba9c5a4eb3fb76543bb9a0d6b3021a16e3002
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89189455"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96834412"
 ---
 # <a name="starting-a-device-in-a-function-driver"></a>在函数驱动程序中启动设备
 
@@ -37,7 +36,7 @@ ms.locfileid: "89189455"
 
     清除 "驱动程序定义的保留 \_ 新 \_ 请求" 标志，并在 IRP 保留队列中启动 irp。 当首次启动设备时，以及在查询停止或停止 IRP 后重新启动设备时，驱动程序应执行此操作。 有关详细信息，请参阅 [在设备暂停时保留传入 irp](holding-incoming-irps-when-a-device-is-paused.md) 。
 
-4.  \[\]可以通过调用[**IoSetDeviceInterfaceState**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iosetdeviceinterfacestate)来启用设备的接口。
+4.  \[\]可以通过调用 [**IoSetDeviceInterfaceState**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iosetdeviceinterfacestate)来启用设备的接口。
 
     启用驱动程序以前在其 [*AddDevice*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_add_device) 例程中注册的接口（如果有） (或 INF 中，或由其他组件（如共同安装程序) ）。
 
@@ -51,11 +50,11 @@ ms.locfileid: "89189455"
 
     如果函数驱动程序在其启动操作期间遇到错误，则驱动程序会在 IRP 中设置错误状态，使用 IO 无增量调用 **IoCompleteRequest** ， \_ \_ 并从其 *DispatchPnP* 例程返回错误。
 
-    如果较低的驱动程序失败，IRP (**IoCallDriver**返回了错误) ，则函数驱动程序将使用 IO NO 增量调用**IoCompleteRequest** ， \_ \_ 并从其*DispatchPnP*例程返回**IoCallDriver**错误。 在这种情况下，函数驱动程序不会设置 ** &gt; IoStatus** ，因为状态已由 Irp 的低级驱动程序设置。
+    如果较低的驱动程序失败，IRP (**IoCallDriver** 返回了错误) ，则函数驱动程序将使用 IO NO 增量调用 **IoCompleteRequest** ， \_ \_ 并从其 *DispatchPnP* 例程返回 **IoCallDriver** 错误。 在这种情况下，函数驱动程序不会设置 **&gt; IoStatus** ，因为状态已由 Irp 的低级驱动程序设置。
 
-当函数驱动程序收到 **IRP \_ MN \_ START \_ 设备** 请求时，它应检查 **IrpSp- &gt; StartDevice. AllocatedResources** 和 IrpSp StartDevice 之间的结构 ** &gt; ，** 该结构分别描述了 PnP 管理器分配给设备的原始资源和已翻译资源。 驱动程序应将每个资源列表的副本作为调试辅助保存在设备扩展中。
+当函数驱动程序收到 **IRP \_ MN \_ START \_ 设备** 请求时，它应检查 **IrpSp- &gt; StartDevice. AllocatedResources** 和 IrpSp StartDevice 之间的结构 **&gt; ，** 该结构分别描述了 PnP 管理器分配给设备的原始资源和已翻译资源。 驱动程序应将每个资源列表的副本作为调试辅助保存在设备扩展中。
 
-资源列表是成对的 [**CM \_ 资源 \_ 列表**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_cm_resource_list) 结构，其中原始列表的每个元素对应于已翻译列表的同一个元素。 例如，如果**AllocatedResources** \[ 0 \] 描述了原始 i/o 端口范围，则**AllocatedResourcesTranslated** \[ 0 \] 描述转换后的相同范围。 每个翻译的资源都包含物理地址和资源的类型。
+资源列表是成对的 [**CM \_ 资源 \_ 列表**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_cm_resource_list) 结构，其中原始列表的每个元素对应于已翻译列表的同一个元素。 例如，如果 **AllocatedResources** \[ 0 \] 描述了原始 i/o 端口范围，则 **AllocatedResourcesTranslated** \[ 0 \] 描述转换后的相同范围。 每个翻译的资源都包含物理地址和资源的类型。
 
 如果 (**CmResourceTypeMemory**) 为驱动程序分配了已转换的内存资源，则它必须调用 [**MmMapIoSpace**](/windows-hardware/drivers/ddi/wdm/nf-wdm-mmmapiospace) 将物理地址映射到可通过其访问设备寄存器的虚拟地址。 若要使驱动程序以独立于平台的方式运行，应检查每个返回的已转换资源，并根据需要对其进行映射。
 
@@ -65,11 +64,11 @@ ms.locfileid: "89189455"
 
 2.  将 **IrpSp- &gt; StartDevice. AllocatedResourcesTranslated** 复制到设备扩展。
 
-3.  在循环中，检查 **AllocatedResourcesTranslated**中的每个描述符元素。 如果描述符资源类型为 **CmResourceTypeMemory**，则调用 **MmMapIoSpace**，同时传递已转换资源的物理地址和长度。
+3.  在循环中，检查 **AllocatedResourcesTranslated** 中的每个描述符元素。 如果描述符资源类型为 **CmResourceTypeMemory**，则调用 **MmMapIoSpace**，同时传递已转换资源的物理地址和长度。
 
-当驱动程序收到 **irp \_ MN \_ STOP \_ 设备**、 **irp \_ MN \_ REMOVE \_ 设备**或 **irp \_ MN \_ 意外 \_ 删除** 请求时，它必须通过在类似循环中调用 [**MmUnmapIoSpace**](/windows-hardware/drivers/ddi/wdm/nf-wdm-mmunmapiospace) 来释放映射。 如果该驱动程序必须失败**IRP \_ MN \_ 启动 \_ 设备**请求，则该驱动程序还应调用**MmUnmapIoSpace** 。
+当驱动程序收到 **irp \_ MN \_ STOP \_ 设备**、 **irp \_ MN \_ REMOVE \_ 设备** 或 **irp \_ MN \_ 意外 \_ 删除** 请求时，它必须通过在类似循环中调用 [**MmUnmapIoSpace**](/windows-hardware/drivers/ddi/wdm/nf-wdm-mmunmapiospace) 来释放映射。 如果该驱动程序必须失败 **IRP \_ MN \_ 启动 \_ 设备** 请求，则该驱动程序还应调用 **MmUnmapIoSpace** 。
 
-有关详细信息，请参阅 [将与总线相关的地址映射到虚拟地址](mapping-bus-relative-addresses-to-virtual-addresses.md) 。
+有关详细信息，请参阅 [将 Bus-Relative 地址映射到虚拟地址](mapping-bus-relative-addresses-to-virtual-addresses.md) 。
 
  
 

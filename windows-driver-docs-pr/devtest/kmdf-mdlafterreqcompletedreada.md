@@ -1,7 +1,6 @@
 ---
 title: 'MdlAfterReqCompletedReadA 规则 (kmdf) '
 description: MdlAfterReqCompletedReadA 规则指定在 EvtIoRead 回调函数中， (MDL) 对象的内存描述符列表无法在 i/o 请求完成后访问。
-ms.assetid: 3e7c40a0-882e-45eb-8cf1-bee1096379ad
 ms.date: 05/21/2018
 keywords:
 - 'MdlAfterReqCompletedReadA 规则 (kmdf) '
@@ -12,19 +11,19 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: fbd8daee945d2bdeb8a8b0d2449c7e2a76311e01
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: acb266fe15a688221c88a2e8d0f439f75b838b87
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102256"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96833099"
 ---
 # <a name="mdlafterreqcompletedreada-rule-kmdf"></a>MdlAfterReqCompletedReadA 规则 (kmdf) 
 
 
-**MdlAfterReqCompletedReadA**规则指定在[*EvtIoRead*](/windows-hardware/drivers/ddi/wdfio/nc-wdfio-evt_wdf_io_queue_io_read)回调函数中， (MDL) 对象的内存描述符列表无法在 i/o 请求完成后访问。
+**MdlAfterReqCompletedReadA** 规则指定在 [*EvtIoRead*](/windows-hardware/drivers/ddi/wdfio/nc-wdfio-evt_wdf_io_queue_io_read)回调函数中， (MDL) 对象的内存描述符列表无法在 i/o 请求完成后访问。
 
-在驱动程序的*EvtIoRead*回调函数中，无法在对 i/o 请求调用[**WdfRequestComplete**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcomplete)、 [**WdfRequestCompleteWithInformation**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcompletewithinformation)或[**WdfRequestCompleteWithPriorityBoost**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcompletewithpriorityboost)后访问通过调用[**WdfRequestRetrieveOutputWdmMdl**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestretrieveoutputwdmmdl)方法检索到的请求缓冲区。
+在驱动程序的 *EvtIoRead* 回调函数中，无法在对 i/o 请求调用 [**WdfRequestComplete**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcomplete)、 [**WdfRequestCompleteWithInformation**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcompletewithinformation)或 [**WdfRequestCompleteWithPriorityBoost**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcompletewithpriorityboost)后访问通过调用 [**WdfRequestRetrieveOutputWdmMdl**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestretrieveoutputwdmmdl)方法检索到的请求缓冲区。
 
 此规则考虑以下功能：
 

@@ -1,7 +1,6 @@
 ---
 title: ndiskd.netreport
 description: Ndiskd. netreport 扩展会生成整个网络堆栈的可视报表。
-ms.assetid: 0FC134A8-8D91-4299-8D15-4E8EDD9ED855
 keywords:
 - ndiskd netreport Windows 调试
 ms.date: 06/23/2020
@@ -12,16 +11,16 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: eb9cf483edaa82665d9647dc7394052e5cb813ab
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: fa0276f338533f3b3bfbf7d5963744cbaf36b826
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89211305"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96833239"
 ---
 # <a name="ndiskdnetreport"></a>!ndiskd.netreport
 
-**！ Ndiskd netreport**扩展生成整个网络堆栈的视觉报表。 报表 **！ ndiskd** 将生成一个 HTML 文件，它将为你显示指向其位置的链接。 该 HTML 文件包含有关网络堆栈的详细信息，因此，如果需要共享它进行分析，可以通过电子邮件发送该文件，而无需发送大型故障转储文件。
+**！ Ndiskd netreport** 扩展生成整个网络堆栈的视觉报表。 报表 **！ ndiskd** 将生成一个 HTML 文件，它将为你显示指向其位置的链接。 该 HTML 文件包含有关网络堆栈的详细信息，因此，如果需要共享它进行分析，可以通过电子邮件发送该文件，而无需发送大型故障转储文件。
 
 ```console
 !ndiskd.netreport [-outputpath <str>] [-jsononly] 
@@ -79,7 +78,7 @@ NETWORK STACK REPORT
 
 ![网络调试报表数据流](images/!ndiskd-netreport-activesystem-dataflows.png)
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [网络驱动程序设计指南](../network/index.md)
 
@@ -87,7 +86,7 @@ NETWORK STACK REPORT
 
 [调试网络堆栈](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-175-Debugging-the-Network-Stack)
 
-[**NDIS 扩展 ( # A0) **](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 扩展 ( # A0)**](ndis-extensions--ndiskd-dll-.md)
 
 [**!ndiskd.help**](-ndiskd-help.md)
 

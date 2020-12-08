@@ -1,7 +1,6 @@
 ---
-title: 面向连接的 NDIS 上用于 TAPI 的非 WAN 特定扩展
+title: Connection-Oriented NDIS 上用于 TAPI 的非 WAN 特定扩展
 description: 用于通过面向连接的 NDIS 支持电话服务的非 WAN 特定扩展
-ms.assetid: be677971-8c4a-435a-81b1-ff1ad9d849b4
 keywords:
 - CoNDIS WAN 驱动程序 WDK 网络，TAPI 服务
 - telephonic services WDK WAN，非 WAN 特定扩展
@@ -10,12 +9,12 @@ keywords:
 - 面向连接的 NDIS WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 28f902ee49ed82c486925fdf3e3a4240b57f2d8a
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 79fe41eaf2689743654a8f7e336d4232ed5843b3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89211031"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96833337"
 ---
 # <a name="non-wan-specific-extensions-to-support-telephonic-services-over-connection-oriented-ndis"></a>用于通过面向连接的 NDIS 支持电话服务的非 WAN 特定扩展
 
@@ -31,7 +30,7 @@ NDIS/TAPI 转换 Oid 如下所示：
 
 -   [OID \_ CO \_ TAPI \_ 转换 \_ TAPI \_ CALLPARAMS](./oid-co-tapi-translate-tapi-callparams.md)
 
-    此 OID 请求调用管理器或 MCM 将客户端提供的 TAPI 调用参数转换为 NDIS 调用参数。 客户端通常使用调用管理器或 MCM 返回的 NDIS 调用参数作为输入 (格式设置为) 到[**NdisClMakeCall**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisclmakecall)的[**联合 \_ 调用 \_ 参数**](/previous-versions/windows/hardware/network/ff545384(v=vs.85))结构。 客户端使用 **NdisClMakeCall** 启动面向连接的调用。
+    此 OID 请求调用管理器或 MCM 将客户端提供的 TAPI 调用参数转换为 NDIS 调用参数。 客户端通常使用调用管理器或 MCM 返回的 NDIS 调用参数作为输入 (格式设置为) 到 [**NdisClMakeCall**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisclmakecall)的 [**联合 \_ 调用 \_ 参数**](/previous-versions/windows/hardware/network/ff545384(v=vs.85))结构。 客户端使用 **NdisClMakeCall** 启动面向连接的调用。
 
 -   [OID \_ CO \_ TAPI \_ 转换 \_ NDIS \_ CALLPARAMS](./oid-co-tapi-translate-ndis-callparams.md)
 
@@ -39,7 +38,7 @@ NDIS/TAPI 转换 Oid 如下所示：
 
 -   [OID \_ 联合 \_ TAPI \_ 转换 \_ SAP](./oid-co-tapi-translate-tapi-sap.md)
 
-    此 OID 请求一个调用管理器或 MCM，以从客户端提供的 TAPI 调用参数中准备一个或多个 NDIS Sap。 客户端通常使用由呼叫管理器或 MCM 返回的 NDIS SAP 作为) 到[**NdisClRegisterSap**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisclregistersap)的[**共同 \_ SAP**](/previous-versions/windows/hardware/network/ff545392(v=vs.85))结构的输入 (，并使用客户端注册要在其上接收传入调用的 sap。
+    此 OID 请求一个调用管理器或 MCM，以从客户端提供的 TAPI 调用参数中准备一个或多个 NDIS Sap。 客户端通常使用由呼叫管理器或 MCM 返回的 NDIS SAP 作为) 到 [**NdisClRegisterSap**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisclregistersap)的 [**共同 \_ SAP**](/previous-versions/windows/hardware/network/ff545392(v=vs.85))结构的输入 (，并使用客户端注册要在其上接收传入调用的 sap。
 
  
 

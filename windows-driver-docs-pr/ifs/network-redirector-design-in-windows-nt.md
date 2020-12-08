@@ -1,19 +1,18 @@
 ---
 title: Windows NT 中的网络重定向程序设计
 description: Windows NT 中的网络重定向程序设计
-ms.assetid: 1feb43a3-ee65-4446-b38b-8b3f9188f43d
 keywords:
-- 网络重定向程序 WDK、 Windows NT
-- 重定向程序驱动程序 WDK、 Windows NT
-- 内核网络重定向程序 WDK、 Windows NT
+- 网络重定向 WDK，Windows NT
+- 重定向程序驱动程序 WDK、Windows NT
+- 内核网络重定向 WDK、Windows NT
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ec0c50183bb7820bab4d93114102aa6d203f9606
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9f772152e7b27770b2a8e2310f2ce2f41028bc9d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63352874"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96832701"
 ---
 # <a name="network-redirector-design-in-windows-nt"></a>Windows NT 中的网络重定向程序设计
 
@@ -21,9 +20,9 @@ ms.locfileid: "63352874"
 ## <span id="ddk_network_redirector_design_in_windows_nt_if"></span><span id="DDK_NETWORK_REDIRECTOR_DESIGN_IN_WINDOWS_NT_IF"></span>
 
 
-随时间而变化的网络重定向程序实现的内核模式驱动程序的体系结构。 通常将网络重定向程序的通用模型基于 Microsoft 网络 （LAN 管理器客户端） 的客户端实现内核驱动程序体系结构中。 在 Windows NT 3.0 中引入的原始方案使用没有共享的组件和限制。 此模型通常称为原始 rdr 驱动程序模型 （rdr 已重定向程序的缩写词）。 提供从操作系统没有特殊支持是为了简化编写网络重定向程序的过程。 每个内核模式驱动程序实现的所有函数所需的网络重定向程序。 因此，每个内核驱动程序将包括大量的代码与 I/O 管理器、 缓存管理器和内存管理器之间的交互。 每个网络重定向程序 （LAN 管理器、 NetWare 和 NFS，例如） 安装在 Windows 上必须实现所有这些函数本身。 这种设计模型使用的驱动程序通过 Windows NT 4.0 网络重定向程序。 下面是此体系结构，具有多个重定向程序的关系图。
+为网络重定向程序实现内核模式驱动程序的体系结构在一段时间内已发生更改。 通常，网络重定向器的一般模型基于实现 Microsoft 网络的客户端内核驱动程序的体系结构 (LAN Manager 客户端) 。 Windows NT 3.0 中引入的原始方案使用的不是共享组件，并且受到限制。 此模型通常称为原始 rdr 驱动程序模型 (rdr 是重定向程序) 的缩写。 未提供操作系统的特殊支持来简化写入网络重定向程序的过程。 每个内核模式驱动程序都实现了网络重定向器所需的所有功能。 因此，每个内核驱动程序都将包含大量的代码，用于与 i/o 管理器、缓存管理器和内存管理器进行交互。 ) 例如，在 Windows 上安装的每个网络重定向器 (都必须实现所有这些功能。 此设计模型用于通过 Windows NT 4.0 的网络重定向器驱动程序。 下面是此体系结构的关系图，其中包含多个重定向器。
 
-![说明在 windows nt 中的网络重定向程序设计的关系图](images/redir-01.png)
+![说明 windows nt 中的网络重定向程序设计的示意图](images/redir-01.png)
 
  
 

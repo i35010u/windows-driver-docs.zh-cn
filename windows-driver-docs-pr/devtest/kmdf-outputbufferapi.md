@@ -1,6 +1,5 @@
 ---
 title: 'OutputBufferAPI 规则 (kmdf) '
-ms.assetid: 868f08f8-b6c1-480e-a47e-de7b0c138b98
 ms.date: 05/21/2018
 description: '了解详细信息： OutputBufferAPI 规则 (kmdf) '
 keywords:
@@ -12,12 +11,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 8b1f1158f2747ff86765b5092a03f9588253ef98
-ms.sourcegitcommit: f47c072e88dce59daba1231027b60eb56bd2cde9
+ms.openlocfilehash: 24999704647ecc47ad9bb4daeb88b28e65752cb1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92689353"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96833081"
 ---
 # <a name="outputbufferapi-rule-kmdf"></a>OutputBufferAPI 规则 (kmdf) 
 

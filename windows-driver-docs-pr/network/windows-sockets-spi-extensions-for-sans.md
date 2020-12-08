@@ -1,18 +1,17 @@
 ---
 title: 适用于 SAN 的 Windows Sockets SPI 扩展
 description: 适用于 SAN 的 Windows Sockets SPI 扩展
-ms.assetid: 08f51612-2e2b-439a-8318-43884086828c
 keywords:
 - SAN 服务提供商 WDK，扩展
 - 扩展 WDK San
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 59de6f7b40f751691bf08117037ab28d245d32e0
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: a670d814598211680a562a3b89d4c15daa711fb5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89218282"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96834027"
 ---
 # <a name="windows-sockets-spi-extensions-for-sans"></a>适用于 SAN 的 Windows Sockets SPI 扩展
 
@@ -24,7 +23,7 @@ ms.locfileid: "89218282"
 
 除了 **WSPStartupEx** 函数之外，本部分中列出的扩展函数由 Windows 套接交换机检索。 若要检索每个扩展函数的入口点，Windows 套接字开关将调用 SAN 服务提供程序的 [**WSPIoctl**](/previous-versions/windows/hardware/network/ff566296(v=vs.85)) 函数，并传递 SIO \_ 获取 \_ 扩展 \_ 函数 \_ 指针命令代码以及其值标识这些扩展函数之一的 GUID。
 
-SAN 服务提供程序必须实现以下所有扩展函数，但 **WSPRdmaRead** 和 **WSPMemoryRegistrationCacheCallback** 函数除外。 如果 SAN 服务提供程序不支持**WSPRdmaRead**或**WSPMemoryRegistrationCacheCallback**扩展函数，则在 Windows 套接交换机向**WSPRdmaRead**或**WSPMemoryRegistrationCacheCallback**请求入口点时，其**WSPIoctl**函数必须返回错误 WSAEOPNOTSUPP。
+SAN 服务提供程序必须实现以下所有扩展函数，但 **WSPRdmaRead** 和 **WSPMemoryRegistrationCacheCallback** 函数除外。 如果 SAN 服务提供程序不支持 **WSPRdmaRead** 或 **WSPMemoryRegistrationCacheCallback** 扩展函数，则在 Windows 套接交换机向 **WSPRdmaRead** 或 **WSPMemoryRegistrationCacheCallback** 请求入口点时，其 **WSPIoctl** 函数必须返回错误 WSAEOPNOTSUPP。
 
 <a href="" id="wspstartupex"></a>[**WSPStartupEx**](/previous-versions/windows/hardware/network/ff566321(v=vs.85))  
 启动 Windows 套接字交换机对 SAN 服务提供程序的使用。

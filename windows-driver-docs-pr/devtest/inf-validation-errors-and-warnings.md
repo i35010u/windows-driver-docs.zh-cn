@@ -1,15 +1,14 @@
 ---
 title: INF 验证错误和警告
 description: Microsoft Visual Studio 执行的自动 INF 验证会导致驱动程序安装错误和警告。
-ms.assetid: E021D8F8-BFDA-4F71-B8EA-0997096761FB
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 541da0901881b28f02ef580cd96f92f1f409fbe8
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 7f4f4e4f68fb9105e45067949b9e7176ad484f00
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102484"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96833145"
 ---
 # <a name="inf-validation-errors-and-warnings"></a>INF 验证错误和警告
 
@@ -236,7 +235,7 @@ AddService = ,2
 ## <a name="universal-inf-1300-1319"></a>通用 INF (1300-1319) 
 
 >[!IMPORTANT]
->如果未收到任何错误或警告（范围 13*xx*中的错误号），则驱动程序 INF 文件是通用的。
+>如果未收到任何错误或警告（范围 13 *xx* 中的错误号），则驱动程序 INF 文件是通用的。
 
 以下错误和警告与 INF 可配置性相关：
 
@@ -244,7 +243,7 @@ AddService = ,2
 <thead>
 <tr>
 <th>错误/警告代码</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>

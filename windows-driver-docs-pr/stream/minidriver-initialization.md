@@ -1,7 +1,6 @@
 ---
 title: 微型驱动程序初始化
 description: 微型驱动程序初始化
-ms.assetid: 5aa4e2c6-5848-45fe-8a89-686aae7e85e6
 keywords:
 - 初始化流式处理微型驱动程序 WDK Windows 2000 内核
 - Stream.sys 类驱动程序 WDK Windows 2000 内核，初始化微型驱动程序
@@ -9,12 +8,12 @@ keywords:
 - 微型驱动程序 WDK Windows 2000 内核流式处理，初始化
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 481dc1023ab1358ac7ed4d275dcf7680d49eda01
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: bb6553012d7ddf00858353572bcc6b752249a918
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89185859"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96833273"
 ---
 # <a name="minidriver-initialization"></a>微型驱动程序初始化
 

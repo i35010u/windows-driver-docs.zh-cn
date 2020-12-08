@@ -1,7 +1,6 @@
 ---
 title: Windows 网络体系结构和 OSI 模型
 description: Windows 网络体系结构和 OSI 模型
-ms.assetid: d57cadc7-c443-441d-b693-d85ffabe9f7f
 keywords:
 - OSI 参考模型 WDK 网络
 - 传输层 WDK 网络
@@ -12,12 +11,12 @@ keywords:
 ms.date: 09/04/2020
 ms.localizationpriority: medium
 ms.custom: contperfq1
-ms.openlocfilehash: a8b9475cec17b594c690e41f0ecc98a39fc4fa9f
-ms.sourcegitcommit: 79a54c0aea8e30e38e0e3227078a12cc64ad3a3c
+ms.openlocfilehash: 00fad4b7cc1ab827b3844f922a88e2af8ddc154c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89475033"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96834059"
 ---
 # <a name="windows-network-architecture-and-the-osi-model"></a>Windows 网络体系结构和 OSI 模型
 

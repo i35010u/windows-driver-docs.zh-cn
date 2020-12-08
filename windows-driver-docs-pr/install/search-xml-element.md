@@ -1,7 +1,6 @@
 ---
 title: search XML 元素
 description: search XML 元素
-ms.assetid: 34eff240-a96a-4b73-a001-5ea698e9f7ae
 keywords:
 - 搜索 XML 元素设备和驱动程序安装
 topic_type:
@@ -12,12 +11,12 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: e2a54b8de3979161026c1d54b6e0bed8068f7e22
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 71896dfee120a14a1432db9da0b642457d44b3ca
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89096613"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96834501"
 ---
 # <a name="search-xml-element"></a>search XML 元素
 
@@ -67,7 +66,7 @@ ms.locfileid: "89096613"
 
 ### <a name="remarks"></a><a href="" id="comments"></a>注释
 
-下面的代码示例演示一个**搜索**元素，该元素包含一个指定*I386*子目录的**子目录**XML 元素。 DPInst 将以递归方式在 DPInst 工作目录的*i386*子目录中搜索[驱动程序包](./driver-packages.md)。 指定自定义子目录的文本以粗体显示。
+下面的代码示例演示一个 **搜索** 元素，该元素包含一个指定 *I386* 子目录的 **子目录** XML 元素。 DPInst 将以递归方式在 DPInst 工作目录的 *i386* 子目录中搜索 [驱动程序包](./driver-packages.md)。 指定自定义子目录的文本以粗体显示。
 
 ```cpp
 <dpinst>
@@ -79,11 +78,11 @@ ms.locfileid: "89096613"
 </dpinst>
 ```
 
-**注意**   由于不允许使用重复的子元素，因此**搜索**元素**的每个子元素都必须**是唯一的。
+**注意** 由于不允许使用重复的子元素，因此 **搜索** 元素 **的每个子元素都必须** 是唯一的。
 
  
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**dpinst**](dpinst-xml-element.md)

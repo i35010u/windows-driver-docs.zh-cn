@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ BDA \_ RF \_ 调谐器 \_ 带宽
 description: 客户端使用 KSPROPERTY \_ BDA \_ RF \_ 调谐器 \_ 带宽来控制调谐器节点的带宽设置。
-ms.assetid: 34feb05d-c1dc-4ce1-86bf-d7d33920befd
 keywords:
 - KSPROPERTY_BDA_RF_TUNER_BANDWIDTH 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7a3214523aa2966eb861c84764ecd920e5ebcfd3
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 83c3ffbdee1b20761deb49413d0c55c49f5bed61
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89188379"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96832563"
 ---
 # <a name="ksproperty_bda_rf_tuner_bandwidth"></a>KSPROPERTY \_ BDA \_ RF \_ 调谐器 \_ 带宽
 
@@ -90,7 +89,7 @@ KSP **NodeId** \_ 节点的节点标识号指定调谐器节点的标识符。
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSP \_ 节点**](/windows-hardware/drivers/ddi/ks/ns-ks-ksp_node)

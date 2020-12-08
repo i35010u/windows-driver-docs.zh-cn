@@ -1,13 +1,12 @@
 ---
 title: AV/C 连接方案
 description: AV/C 连接方案
-ms.assetid: 392f996c-47aa-4ceb-adf9-0c8fd114a511
 keywords:
 - 连接 WDK AV/C
 - AV/C WDK，连接方案
 - 数字视频 WDK AV/C
 - DV WDK AV/C
-- 机顶盒 WDK AV/C
+- Set-Top Box WDK AV/C
 - STB WDK AV/C
 - TV WDK AV/C
 - 电视 WDK AV/C
@@ -18,12 +17,12 @@ keywords:
 - 外部插头连接 WDK AV/C
 ms.date: 06/15/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 1e543cc456cd84000168ceba19f9d89fd0f0fbdc
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: d44b88bc19024b1158b06f452a75ceefa2cb5fba
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89186843"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96834009"
 ---
 # <a name="avc-connection-scenarios"></a>AV/C 连接方案
 
@@ -33,18 +32,18 @@ ms.locfileid: "89186843"
 
 有两种常规连接类型与 AV/C 单元和子单元连接相关：
 
-- *一种连接，其中，外部设备连接到主计算机，并且计算机可以控制连接，但它不是连接的一部分*。 此连接类型不使用任何基于主机的内存。 相反，连接是包含设备的无内存介质，主机只充当控制器。 此类连接的一个示例是机顶盒的调谐器子组 (STB) ，它将数据直接流式传输到数字电视的 "监视" 子组，而不会在计算机上处理数据流。
+- *一种连接，其中，外部设备连接到主计算机，并且计算机可以控制连接，但它不是连接的一部分*。 此连接类型不使用任何基于主机的内存。 相反，连接是包含设备的无内存介质，主机只充当控制器。 此类连接的一个示例是 Set-Top (框的调谐器子) ，它将数据直接流式传输到数字电视的 "监视" 子单位，而不会在计算机上处理数据流。
 
-- *一种连接，其中，外部设备通过使用标准介质连接到主计算机，并使用缓冲区将数据从设备复制到主计算机的内存*。 这种连接类型的一个示例是将数据流式传输到计算机的数字视频 (DV) 设备，稍后处理数据。 *Msdv.sys*驱动程序在 DV 设备和主计算机) 之间使用这种类型的连接 (。
+- *一种连接，其中，外部设备通过使用标准介质连接到主计算机，并使用缓冲区将数据从设备复制到主计算机的内存*。 这种连接类型的一个示例是将数据流式传输到计算机的数字视频 (DV) 设备，稍后处理数据。 *Msdv.sys* 驱动程序在 DV 设备和主计算机) 之间使用这种类型的连接 (。
 
-在 *Avc.sys* 中为 Windows Vista 实现的改进连接管理适用于第一种连接类型，在该连接中，设备可以响应 AV/C 命令进行内部连接。 *Avc.sys*中改进的连接管理可以在同一 IEEE 1394 总线) 上的两个磁带子单元连接之间建立端到端连接，如果设备支持 AV/c CCM 协议 (。
+在 *Avc.sys* 中为 Windows Vista 实现的改进连接管理适用于第一种连接类型，在该连接中，设备可以响应 AV/C 命令进行内部连接。 *Avc.sys* 中改进的连接管理可以在同一 IEEE 1394 总线) 上的两个磁带子单元连接之间建立端到端连接，如果设备支持 AV/c CCM 协议 (。
 
 > [!NOTE]
 > *Avc.sys* 不支持 (内存缓冲区) 的第二种连接类型。 但是，连接的内存缓冲区类型遵循 [IEC 61883](../ieee/iec-61883-client-drivers.md) 协议，并受同一堆栈中的底层 *61883.sys* 驱动程序的支持 (在这种情况下，计算机涉及到内存缓冲区连接) 。
 
 ## <a name="supported-connection-scenarios-in-windows-vista"></a>Windows Vista 中支持的连接方案
 
-四种方案 (1 到 4) 表示单元 *内部*连接。 这些连接完全包含在一个 AV/C 单元中。 其他四个方案 (5 到 8) 表示单元 *间*的连接。 这些连接介于两个不同的 AV/C 单元之间。
+四种方案 (1 到 4) 表示单元 *内部* 连接。 这些连接完全包含在一个 AV/C 单元中。 其他四个方案 (5 到 8) 表示单元 *间* 的连接。 这些连接介于两个不同的 AV/C 单元之间。
 
 以下主题讨论了8种不同的 AV/C 连接管理方案，以及 [**AVCCONNECTINFO**](/windows-hardware/drivers/ddi/avc/ns-avc-_avcconnectinfo) 结构成员的各个值：
 

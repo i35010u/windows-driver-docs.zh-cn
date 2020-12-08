@@ -1,7 +1,6 @@
 ---
 title: 使用 USB 设备
-description: 本主题介绍内核模式驱动程序框架 (KMDF) 的操作，或从版本2开始的用户模式驱动程序框架 (UMDF) 驱动程序的操作可以使用 Windows 驱动程序框架所提供的 USB 设备对象方法 (WDF) 来执行。
-ms.assetid: 8e06f3c4-1a58-4b9f-ae89-ff4e37eb8f0a
+description: 本主题介绍从版本2开始 Kernel-Mode Driver Framework (KMDF) 或 User-Mode Driver Framework (UMDF) 驱动程序的操作可以使用 Windows 驱动程序框架所提供的 USB 设备对象方法 (WDF) 来执行。
 keywords:
 - USB i/o 目标 WDK KMDF，framework USB 设备对象
 - framework 对象 WDK KMDF，USB 设备对象
@@ -17,17 +16,17 @@ keywords:
 - 设备对象 WDK KMDF
 ms.date: 06/24/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 320c8827d2bc6d1bb50c7b76728b2bb41451d505
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: ca321473065f5421def7e6ca46061052dd20138f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89185837"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96833933"
 ---
 # <a name="working-with-usb-devices"></a>使用 USB 设备
 
 
-本主题介绍内核模式驱动程序框架 (KMDF) 的操作，或从版本2开始的用户模式驱动程序框架 (UMDF) 驱动程序的操作可以使用 Windows 驱动程序框架所提供的 USB 设备对象方法 (WDF) 来执行。
+本主题介绍从版本2开始 Kernel-Mode Driver Framework (KMDF) 或 User-Mode Driver Framework (UMDF) 驱动程序的操作可以使用 Windows 驱动程序框架所提供的 USB 设备对象方法 (WDF) 来执行。
 
 它包含以下部分：
 
@@ -36,7 +35,7 @@ ms.locfileid: "89185837"
 -   [获取设备信息](#obtaining-device-information)
 -   [获取 USB 描述符](#obtaining-a-device-s-unicode-strings)
 -   [发送控件传输](#sending-a-control-transfer)
--   [重置和重启设备端口](#resetting-and-power-cycling-a-device-s-port)
+-   [重置并 Power-Cycling 设备端口](#resetting-and-power-cycling-a-device-s-port)
 -   [将 URB 发送到设备](#sending-a-urb-to-a-device)
 
 有关编写简单的基于 KMDF 的 USB 客户端驱动程序的分步说明，请参阅 [如何编写第一个 usb 客户端驱动程序 (KMDF) ](/windows-hardware/drivers/ddi/index)。
@@ -44,7 +43,7 @@ ms.locfileid: "89185837"
 ## <a name="creating-a-usb-device-object"></a><a href="" id="creating-a-framework-usb-device-object"></a> 创建 USB 设备对象
 
 
-若要使用框架的 USB i/o 目标对象 (WDFUSBDEVICE、WDFUSBINTERFACE 和 WDFUSBPIPE) ，你的客户端驱动程序必须先调用 [**WdfUsbTargetDeviceCreateWithParameters**](/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdevicecreatewithparameters) ，才能创建 USB 设备对象。 通常，驱动程序从其[*EvtDevicePrepareHardware*](/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware)回调函数调用**WdfUsbTargetDeviceCreateWithParameters** 。
+若要使用框架的 USB i/o 目标对象 (WDFUSBDEVICE、WDFUSBINTERFACE 和 WDFUSBPIPE) ，你的客户端驱动程序必须先调用 [**WdfUsbTargetDeviceCreateWithParameters**](/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdevicecreatewithparameters) ，才能创建 USB 设备对象。 通常，驱动程序从其 [*EvtDevicePrepareHardware*](/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware)回调函数调用 **WdfUsbTargetDeviceCreateWithParameters** 。
 
 当驱动程序调用 [**WdfUsbTargetDeviceCreateWithParameters**](/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdevicecreatewithparameters)时，框架会创建一个 WDFUSBDEVICE 对象，并将其与表示该 USB 设备的 FDO 相关联。 方法返回新的框架 USB 设备对象的句柄，USB 客户端驱动程序可使用该对象与物理设备通信。
 
@@ -82,10 +81,10 @@ ms.locfileid: "89185837"
 <a href="" id="wdfusbtargetdeviceretrieveinformation"></a>[**WdfUsbTargetDeviceRetrieveInformation**](/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdeviceretrieveinformation)  
 检索与 USB 设备关联的版本和功能信息。
 
-<a href="" id="wdfusbtargetdeviceisconnectedsynchronous--kmdf-only-"></a>[**WdfUsbTargetDeviceIsConnectedSynchronous (KMDF 仅) **](/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdeviceisconnectedsynchronous)  
+<a href="" id="wdfusbtargetdeviceisconnectedsynchronous--kmdf-only-"></a>[**WdfUsbTargetDeviceIsConnectedSynchronous (KMDF 仅)**](/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdeviceisconnectedsynchronous)  
 确定设备是否已连接。
 
-<a href="" id="wdfusbtargetdeviceretrievecurrentframenumber--kmdf-only-"></a>[**WdfUsbTargetDeviceRetrieveCurrentFrameNumber (KMDF 仅) **](/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdeviceretrievecurrentframenumber)  
+<a href="" id="wdfusbtargetdeviceretrievecurrentframenumber--kmdf-only-"></a>[**WdfUsbTargetDeviceRetrieveCurrentFrameNumber (KMDF 仅)**](/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdeviceretrievecurrentframenumber)  
 检索当前的 USB 帧号。
 
 ## <a name="getting-usb-descriptors"></a><a href="" id="obtaining-a-device-s-unicode-strings"></a>获取 USB 描述符
@@ -121,7 +120,7 @@ ms.locfileid: "89185837"
 
 有关相关信息，请参阅 [如何发送 USB 控件传输](/windows-hardware/drivers/ddi/index)。
 
-## <a name="resetting-and-power-cycling-a-devices-port"></a><a href="" id="resetting-and-power-cycling-a-device-s-port"></a> 重置和重启设备端口
+## <a name="resetting-and-power-cycling-a-devices-port"></a><a href="" id="resetting-and-power-cycling-a-device-s-port"></a> 重置并 Power-Cycling 设备端口
 
 
 你的驱动程序可以调用以下方法来重置或重启设备连接到的 USB 端口：
@@ -129,10 +128,10 @@ ms.locfileid: "89185837"
 <a href="" id="---------wdfusbtargetdeviceresetportsynchronously"></a>[**WdfUsbTargetDeviceResetPortSynchronously**](/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdeviceresetportsynchronously)  
 同步发送用于重置设备 USB 端口的请求。
 
-<a href="" id="---------wdfusbtargetdevicecycleportsynchronously--kmdf-only-"></a>[**WdfUsbTargetDeviceCyclePortSynchronously (KMDF 仅) **](/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdevicecycleportsynchronously)  
+<a href="" id="---------wdfusbtargetdevicecycleportsynchronously--kmdf-only-"></a>[**WdfUsbTargetDeviceCyclePortSynchronously (KMDF 仅)**](/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdevicecycleportsynchronously)  
 以同步方式将请求发送到设备的 USB 端口。
 
-<a href="" id="---------wdfusbtargetdeviceformatrequestforcycleport--kmdf-only-"></a>[**WdfUsbTargetDeviceFormatRequestForCyclePort (KMDF 仅) **](/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdeviceformatrequestforcycleport)  
+<a href="" id="---------wdfusbtargetdeviceformatrequestforcycleport--kmdf-only-"></a>[**WdfUsbTargetDeviceFormatRequestForCyclePort (KMDF 仅)**](/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdeviceformatrequestforcycleport)  
 格式化请求以对设备的 USB 端口进行电源重启。 驱动程序必须调用 [**WdfRequestSend**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestsend) 以同步或异步发送请求。
 
 有关相关信息，请参阅 [如何从 USB 管道中恢复错误](../usbcon/index.md)。
@@ -142,19 +141,19 @@ ms.locfileid: "89185837"
 
 如果 KMDF 驱动程序通过发送 i/o 请求（其中包含 URBs）与 USB 设备通信，则驱动程序可以调用以下方法：
 
-<a href="" id="wdfusbtargetdevicecreateurb--kmdf-only-"></a>[**WdfUsbTargetDeviceCreateUrb (KMDF 仅) **](/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdevicecreateurb)  
+<a href="" id="wdfusbtargetdevicecreateurb--kmdf-only-"></a>[**WdfUsbTargetDeviceCreateUrb (KMDF 仅)**](/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdevicecreateurb)  
  (URB) 分配 USB 请求块。 在调用 [**WdfUsbTargetDeviceCreateUrb**](/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdevicecreateurb)之前，驱动程序必须调用 [**WdfUsbTargetDeviceCreateWithParameters**](/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdevicecreatewithparameters)。
 
-<a href="" id="wdfusbtargetdevicecreateisochurb--kmdf-only-"></a>[**WdfUsbTargetDeviceCreateIsochUrb (KMDF 仅) **](/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdevicecreateisochurb)  
+<a href="" id="wdfusbtargetdevicecreateisochurb--kmdf-only-"></a>[**WdfUsbTargetDeviceCreateIsochUrb (KMDF 仅)**](/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdevicecreateisochurb)  
 分配 (URB) 的同步 USB 请求块。 在调用 [**WdfUsbTargetDeviceCreateIsochUrb**](/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdevicecreateisochurb)之前，驱动程序必须调用 [**WdfUsbTargetDeviceCreateWithParameters**](/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdevicecreatewithparameters)。
 
-<a href="" id="---------wdfusbtargetdevicesendurbsynchronously--kmdf-only-"></a>[**WdfUsbTargetDeviceSendUrbSynchronously (KMDF 仅) **](/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdevicesendurbsynchronously)  
+<a href="" id="---------wdfusbtargetdevicesendurbsynchronously--kmdf-only-"></a>[**WdfUsbTargetDeviceSendUrbSynchronously (KMDF 仅)**](/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdevicesendurbsynchronously)  
 同步发送包含 URB 的 i/o 请求。
 
-<a href="" id="---------wdfusbtargetdeviceformatrequestforurb--kmdf-only-"></a>[**WdfUsbTargetDeviceFormatRequestForUrb (KMDF 仅) **](/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdeviceformatrequestforurb)  
+<a href="" id="---------wdfusbtargetdeviceformatrequestforurb--kmdf-only-"></a>[**WdfUsbTargetDeviceFormatRequestForUrb (KMDF 仅)**](/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdeviceformatrequestforurb)  
 设置包含 URB 的 i/o 请求的格式。 驱动程序必须调用 [**WdfRequestSend**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestsend) 以同步或异步发送请求。
 
-<a href="" id="---------wdfusbtargetdevicewdmgetconfigurationhandle--kmdf-only-"></a>[**WdfUsbTargetDeviceWdmGetConfigurationHandle (KMDF 仅) **](/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdevicewdmgetconfigurationhandle)  
+<a href="" id="---------wdfusbtargetdevicewdmgetconfigurationhandle--kmdf-only-"></a>[**WdfUsbTargetDeviceWdmGetConfigurationHandle (KMDF 仅)**](/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdevicewdmgetconfigurationhandle)  
 返回设备的 USBD 配置句柄。 一些 URBs 需要此句柄。
 
 有关 URBs 的一般概念背景，请参阅 [分配和生成 URBs](../usbcon/how-to-add-xrb-support-for-client-drivers.md)。

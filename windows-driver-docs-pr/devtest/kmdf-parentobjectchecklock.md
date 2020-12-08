@@ -1,7 +1,6 @@
 ---
 title: 'ParentObjectCheckLock 规则 (kmdf) '
 description: ParentObjectCheckLock 规则指定驱动程序应调用 WdfWaitLockCreate，并将 WdfSpinLockCreate 设置为父对象。
-ms.assetid: 01B47113-F949-4B38-982A-D13AF0EE68E0
 ms.date: 05/21/2018
 keywords:
 - 'ParentObjectCheckLock 规则 (kmdf) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 233ec3aa7ab39205becda7f7d2d0d8be4367dd1a
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 7cd24f05742a041cef31af4e192971383d8cea5f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103822"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96833559"
 ---
 # <a name="parentobjectchecklock-rule-kmdf"></a>ParentObjectCheckLock 规则 (kmdf) 
 
 
-**ParentObjectCheckLock**规则指定驱动程序应调用[**WdfWaitLockCreate**](/windows-hardware/drivers/ddi/wdfsync/nf-wdfsync-wdfwaitlockcreate) ，并将[**WdfSpinLockCreate**](/windows-hardware/drivers/ddi/wdfsync/nf-wdfsync-wdfspinlockcreate)设置为父对象。
+**ParentObjectCheckLock** 规则指定驱动程序应调用 [**WdfWaitLockCreate**](/windows-hardware/drivers/ddi/wdfsync/nf-wdfsync-wdfwaitlockcreate) ，并将 [**WdfSpinLockCreate**](/windows-hardware/drivers/ddi/wdfsync/nf-wdfsync-wdfspinlockcreate)设置为父对象。
 
 **驱动程序模型： KMDF**
 

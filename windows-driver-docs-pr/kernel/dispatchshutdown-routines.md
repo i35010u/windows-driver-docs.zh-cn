@@ -1,7 +1,6 @@
 ---
 title: DispatchShutdown 例程
 description: DispatchShutdown 例程
-ms.assetid: e0d4ed56-a614-4dc8-9bb2-abfe38f05946
 keywords:
 - IRP_MJ_SHUTDOWN i/o 函数代码
 - 调度例程 WDK 内核，DispatchShutdown 例程
@@ -9,12 +8,12 @@ keywords:
 - 关闭调度例程 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 54d241945d13fb43c55a9319d1574775854be59c
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 86e64583726c00e9f43736c99875fa10cdd50cb7
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89189521"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96833437"
 ---
 # <a name="dispatchshutdown-routines"></a>DispatchShutdown 例程
 

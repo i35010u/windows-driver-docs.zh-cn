@@ -1,7 +1,6 @@
 ---
 title: usbkd.usbusb2ep
 description: Usbkd. usbusb2ep 命令显示 usbport _USB2_EP 结构中的信息。
-ms.assetid: 0298D7A2-C121-4B09-8542-CCD10323D573
 keywords:
 - usbkd usbusb2ep Windows 调试
 ms.date: 05/23/2017
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 09ec03e2ec8292050e1eacae4168c026d2e6450e
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: e371258016b985e1461e810d49bc7feb654b12ed
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89217919"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96833865"
 ---
 # <a name="usbkdusbusb2ep"></a>!usbkd.usbusb2ep
 
 
-**！ Usbkd. usbusb2ep**命令显示 usbport 中的信息 **！ \_USB2 \_ 企业**结构。
+**！ Usbkd. usbusb2ep** 命令显示 usbport 中的信息 **！ \_USB2 \_ 企业** 结构。
 
 ```dbgcmd
 !usbkd.usbusb2ep StructAddr

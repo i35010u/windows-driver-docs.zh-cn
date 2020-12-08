@@ -1,15 +1,14 @@
 ---
 title: 呈现开销提高
-ms.assetid: 92B282D6-0D04-4352-AE03-E0A7A43711E7
 description: 对内部交换缓冲区的改进，以减少 GPU 处理负载
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3db9b57122c994d496782f26d1577978039ff6ad
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 9da372a053e012dca3165782bef91f4cc54cd881
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90715154"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96833057"
 ---
 # <a name="present-overhead-improvements"></a>呈现开销提高
 
@@ -21,8 +20,8 @@ ms.locfileid: "90715154"
 
 以下参考主题介绍如何在显示微型端口驱动程序和用户模式显示驱动程序中实现此功能：
 
--   [*pfnPresent1 (D3D) *](/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_present1)
--   [*pfnPresent1 (DXGI) *](/windows-hardware/drivers/ddi/dxgiddi/ns-dxgiddi-dxgi1_3_ddi_base_functions)
+-   [*pfnPresent1 (D3D)*](/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_present1)
+-   [*pfnPresent1 (DXGI)*](/windows-hardware/drivers/ddi/dxgiddi/ns-dxgiddi-dxgi1_3_ddi_base_functions)
 -   [**D3DDDIARG \_ PRESENT1**](/windows-hardware/drivers/ddi/d3dumddi/ns-d3dumddi-_d3dddiarg_present1)
 -   [**D3DDDIARG \_ PRESENTSURFACE**](/windows-hardware/drivers/ddi/d3dumddi/ns-d3dumddi-d3dddiarg_presentsurface)
 -   [**D3DKMT \_ 组合 \_ PRESENTHISTORYTOKEN**](/windows-hardware/drivers/ddi/d3dkmthk/ns-d3dkmthk-_d3dkmt_composition_presenthistorytoken)
@@ -43,14 +42,14 @@ ms.locfileid: "90715154"
 - **DXGI \_ 格式 \_ A8 \_ UNORM**
 - **DXGI \_ FORMAT \_ R8 \_ UNORM**
 - **DXGI \_ FORMAT \_ R8G8 \_ UNORM**
-- **DXGI \_ 格式 \_ BC1 无格式 \_\\***
-- **DXGI \_ FORMAT \_ BC1 \_ UNORM**
+- **DXGI \_格式 \_ \_ BC1 \\ 无格式** _
+- _ *DXGI \_ FORMAT \_ BC1 \_ UNORM**
 - **DXGI \_ FORMAT \_ BC1 \_ UNORM \_ SRGB**
-- **DXGI \_ 格式 \_ BC2 无格式 \_\\***
-- **DXGI \_ FORMAT \_ BC2 \_ UNORM**
+- **DXGI \_格式 \_ \_ BC2 \\ 无格式** _
+- _ *DXGI \_ FORMAT \_ BC2 \_ UNORM**
 - **DXGI \_ FORMAT \_ BC2 \_ UNORM \_ SRGB**
-- **DXGI \_ 格式 \_ BC3 无格式 \_\\***
-- **DXGI \_ FORMAT \_ BC3 \_ UNORM**
+- **DXGI \_格式 \_ \_ BC3 \\ 无格式** _
+- _ *DXGI \_ FORMAT \_ BC3 \_ UNORM**
 - **DXGI \_ FORMAT \_ BC3 \_ UNORM \_ SRGB**
 
 此外，如果驱动程序在 Direct3D 功能级别9硬件上支持 Microsoft Direct3D 11 及更高版本，则这些驱动程序应支持 **DXGI \_ 格式 \_ L8 \_ UNORM** 占位符格式。 **DXGI \_格式 \_ L8 \_ UNORM** 在功能上等同于 **D3DDDIFMT \_ L8** 格式。

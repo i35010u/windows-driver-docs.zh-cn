@@ -1,7 +1,6 @@
 ---
 title: 'ParentObjectCheck 规则 (kmdf) '
 description: ParentObjectCheck 规则指定驱动程序应调用 WdfMemoryCreate，并使用 WDF \_ 对象属性结构来指定父对象 \_ 。
-ms.assetid: E0597996-9067-40C3-8DE9-1048B2227F07
 ms.date: 05/21/2018
 keywords:
 - 'ParentObjectCheck 规则 (kmdf) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 0a3231d88c9aa843f710e5b81c97540dc56dc14e
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 56483e9c0636c6a4411efd82953b5892b7b0a744
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103826"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96833563"
 ---
 # <a name="parentobjectcheck-rule-kmdf"></a>ParentObjectCheck 规则 (kmdf) 
 
 
-**ParentObjectCheck**规则指定驱动程序应调用[**WdfMemoryCreate**](/windows-hardware/drivers/ddi/wdfmemory/nf-wdfmemory-wdfmemorycreate) ，并使用[**WDF \_ 对象 \_ 属性**](/windows-hardware/drivers/ddi/wdfobject/ns-wdfobject-_wdf_object_attributes)结构来指定父对象。 如果驱动程序没有为 framework 内存对象设置父对象，则该框架会将该驱动程序设置为默认父级，因此，除非驱动程序显式删除框架内存对象，否则该驱动程序对象将保留在内存中，直到驱动程序对象卸载。
+**ParentObjectCheck** 规则指定驱动程序应调用 [**WdfMemoryCreate**](/windows-hardware/drivers/ddi/wdfmemory/nf-wdfmemory-wdfmemorycreate) ，并使用 [**WDF \_ 对象 \_ 属性**](/windows-hardware/drivers/ddi/wdfobject/ns-wdfobject-_wdf_object_attributes)结构来指定父对象。 如果驱动程序没有为 framework 内存对象设置父对象，则该框架会将该驱动程序设置为默认父级，因此，除非驱动程序显式删除框架内存对象，否则该驱动程序对象将保留在内存中，直到驱动程序对象卸载。
 
 **驱动程序模型： KMDF**
 

@@ -1,15 +1,14 @@
 ---
 title: Ctrpp 任务
 description: Windows 驱动程序工具包 (WDK) 提供 Ctrpp 任务，以便在使用 MSBuild 构建驱动程序时可以运行 ctrpp.exe 工具。
-ms.assetid: DB457500-5BFF-4488-95EB-EEB3F63947C1
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7074c474c90dd4c69c689c5e10dc07f203aef9fc
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: c9858fb9ddec1d81ed68e1c49a055b3118199fa2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89384337"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96832821"
 ---
 # <a name="ctrpp-task"></a>Ctrpp 任务
 
@@ -54,7 +53,7 @@ ctrpp.exe –ch "c:\test\abc.h" a.manifest
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">源</td>
+<td align="left">Source</td>
 <td align="left">@ (Ctrpp) </td>
 <td align="left"></td>
 <td align="left">必需的 ITaskItem 参数。 指定要处理的计数器清单。</td>

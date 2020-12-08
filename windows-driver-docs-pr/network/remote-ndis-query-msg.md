@@ -1,15 +1,14 @@
 ---
 title: REMOTE_NDIS_QUERY_MSG
 description: 如果需要在设备上查询设备的特性、统计信息或状态，则会将此消息从主机发送到远程 NDIS 设备。
-ms.assetid: 9cf79495-a115-49ce-a0cf-fa4fa2183a8a
 ms.date: 07/31/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fb8e627cafcea86402c3db1bc66ef630162baa9a
-ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
+ms.openlocfilehash: a4e21e19cafdcad3f006c46b1675e2badc78e1a3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88969594"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96833311"
 ---
 # <a name="remote_ndis_query_msg"></a>远程 \_ NDIS \_ 查询 \_ 消息
 
@@ -28,7 +27,7 @@ ms.locfileid: "88969594"
 <th>Offset</th>
 <th>大小</th>
 <th>字段</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -89,7 +88,7 @@ ms.locfileid: "88969594"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Version</p></td>
+<td><p>版本</p></td>
 <td><p>在 Microsoft Windows XP 和更高版本的 Windows 操作系统中可用。 在 Windows 2000 中也可以作为可再发行二进制文件。</p></td>
 </tr>
 <tr class="even">

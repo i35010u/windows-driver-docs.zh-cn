@@ -1,7 +1,6 @@
 ---
 title: ndiskd.netpacket
 description: Ndiskd. netpacket 扩展显示 NET_PACKET 结构的相关信息。
-ms.assetid: 304BA2CF-B6BC-452C-8543-9B872054AA9E
 keywords:
 - ndiskd netpacket Windows 调试
 ms.date: 06/17/2020
@@ -12,16 +11,16 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: c13c68ae75adb19d9dc9dcc17e2a4df46088003a
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 86668267e6361883e46e93b13d849e60fa8a687c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89211287"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96833231"
 ---
 # <a name="ndiskdnetpacket"></a>!ndiskd.netpacket
 
-**！ Ndiskd netpacket**扩展显示有关[网络 \_ 数据包](/windows-hardware/drivers/ddi/packet/ns-packet-_net_packet)结构的信息。
+**！ Ndiskd netpacket** 扩展显示有关 [网络 \_ 数据包](/windows-hardware/drivers/ddi/packet/ns-packet-_net_packet)结构的信息。
 
 有关网络适配器 WDF 类扩展的详细信息 (NetAdapterCx) ，请参阅 [网络适配器 Wdf Class extension (Cx) ](../netcx/index.md)。
 
@@ -53,14 +52,14 @@ Ndiskd.dll
 
 ### <a name="examples"></a>示例
 
-**注意**   请参阅[对象摘要](../netcx/summary-of-netadaptercx-objects.md)，以查看说明网络 \_ 数据包对象与 NetAdapterCx 中的其他对象的关系的关系图。
+**注意**  请参阅 [对象摘要](../netcx/summary-of-netadaptercx-objects.md) ，以查看说明网络 \_ 数据包对象与 NetAdapterCx 中的其他对象的关系的关系图。
 
 若要获取网络数据包的句柄 \_ ，请执行以下步骤：
 
 1. 运行 [**！ ndiskd. get-netadapter**](-ndiskd-netadapter.md) 扩展。
 2. 单击安装了 NetAdapterCx 驱动程序的 Get-netadapter 的句柄。
 3. 单击 Get-netadapter 的 GET-NETADAPTER 对象右侧的 "详细信息" 链接，以运行 [**！ ndiskd. cxadapter**](-ndiskd-cxadapter.md) 扩展。
-4. 输入包含 *-数据路径*参数的 **！ cxadapter**命令，以查看 get-netadapter 的数据路径队列。
+4. 输入包含 *-数据路径* 参数的 **！ cxadapter** 命令，以查看 get-netadapter 的数据路径队列。
 5. 单击其中一个数据路径队列的句柄。
 6. 单击该数据路径队列的环形缓冲区的句柄。
 7. 单击环形缓冲区详细信息底部的 "列出所有元素" 链接，查看其包含的元素。
@@ -141,7 +140,7 @@ Ndiskd.dll
     ffffd102303e8352  00 fc   
 ```
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [网络驱动程序设计指南](../network/index.md)
 
@@ -149,7 +148,7 @@ Ndiskd.dll
 
 [调试网络堆栈](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-175-Debugging-the-Network-Stack)
 
-[**NDIS 扩展 ( # A0) **](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 扩展 ( # A0)**](ndis-extensions--ndiskd-dll-.md)
 
 [**!ndiskd.help**](-ndiskd-help.md)
 

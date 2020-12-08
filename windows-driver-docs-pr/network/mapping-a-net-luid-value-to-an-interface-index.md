@@ -1,7 +1,6 @@
 ---
 title: 将 NET_LUID 值映射到接口索引
 description: 将 NET_LUID 值映射到接口索引
-ms.assetid: a535d886-186e-4abe-9ca0-ebef262614b3
 keywords:
 - NDIS 网络接口 WDK，NET_LUID
 - 网络接口 WDK，NET_LUID
@@ -12,12 +11,12 @@ keywords:
 - 本地唯一标识符 WDK 网络接口
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6d3cb2ce39a6f0d7aaefb5d328beca2a28d51f9b
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 22810620951e9a318d464be0563b6f40b19de525
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90715738"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96833359"
 ---
 # <a name="mapping-a-net_luid-value-to-an-interface-index"></a>将 NET \_ LUID 值映射到接口索引
 

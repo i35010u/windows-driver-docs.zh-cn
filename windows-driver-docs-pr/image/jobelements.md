@@ -1,9 +1,8 @@
 ---
 title: JobElements 元素
-description: 所需的 JobElements 元素包含的所有客户端请求通过 GetJobElementsRequest 调用与作业相关的元素。
-ms.assetid: ac7d8749-272d-4817-bc80-8f220e06436c
+description: 必需的 JobElements 元素包含客户端通过调用 GetJobElementsRequest 请求的所有与作业相关的元素。
 keywords:
-- JobElements 元素成像设备
+- JobElements 元素图像设备
 topic_type:
 - apiref
 api_name:
@@ -12,19 +11,19 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 67b813edd306d7e84411a45927cd8cbe50eb5a97
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0847267d3b31134a9e043a1315cb1a1ede40998e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63363449"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96834543"
 ---
 # <a name="jobelements-element"></a>JobElements 元素
 
 
-所需**JobElements**元素包含的所有客户端请求通过调用与作业相关的元素[ **GetJobElementsRequest**](getjobelementsrequest.md)。
+必需的 **JobElements** 元素包含客户端通过调用 [**GetJobElementsRequest**](getjobelementsrequest.md)请求的所有与作业相关的元素。
 
-<a name="usage"></a>用法
+<a name="usage"></a>使用情况
 -----
 
 ```xml
@@ -52,7 +51,7 @@ ms.locfileid: "63363449"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><a href="elementdata-for-jobelements-element.md" data-raw-source="[&lt;strong&gt;ElementData for parent JobElements&lt;/strong&gt;](elementdata-for-jobelements-element.md)"><strong>对于父 JobElements ElementData</strong></a></p></td>
+<td><p><a href="elementdata-for-jobelements-element.md" data-raw-source="[&lt;strong&gt;ElementData for parent JobElements&lt;/strong&gt;](elementdata-for-jobelements-element.md)"><strong>ElementData for parent JobElements</strong></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -79,12 +78,12 @@ ms.locfileid: "63363449"
 <a name="remarks"></a>备注
 -------
 
-WSD 扫描服务将返回**JobElements**中的元素[ **GetJobElementsResponse**](getjobelementsresponse.md)。
+WSD 扫描服务返回 [**GetJobElementsResponse**](getjobelementsresponse.md)中的 **JobElements** 元素。
 
 ## <a name="see-also"></a>请参阅
 
 
-[**对于父 JobElements ElementData**](elementdata-for-jobelements-element.md)
+[**ElementData for parent JobElements**](elementdata-for-jobelements-element.md)
 
 [**GetJobElementsRequest**](getjobelementsrequest.md)
 

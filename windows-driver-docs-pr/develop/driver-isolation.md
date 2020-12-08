@@ -4,12 +4,12 @@ description: 此页面介绍了驱动程序隔离，这是 Windows 驱动程序�
 ms.date: 10/01/2019
 ms.assetid: 3955fb29-ee49-4c3e-ac6d-700dcba3f884
 ms.localizationpriority: medium
-ms.openlocfilehash: be6f29b61c3e23094c38e572a463ec5c5839385c
-ms.sourcegitcommit: c589753b18e418cf7e86cbdbc1135e07f6f50d0d
+ms.openlocfilehash: 1c68739068ca02257666a285d72e43fe1f2d5c65
+ms.sourcegitcommit: f07ec44e8224c98f132988dfccb79ec118f9eeb6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92079614"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96535112"
 ---
 # <a name="driver-package-isolation"></a>驱动程序包隔离
 
@@ -216,7 +216,7 @@ HKR, Parameters, ExampleValue, 0x00010001, 1
 
 如果需要写入与设备相关的文件，这些文件应相对于通过 OS API 提供的句柄或文件路径进行存储。 例如，特定于该设备的配置文件就是一个应存储在此处的文件类型。
 
-* [**IoGetDeviceDirectory**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetdevicedirectory) (WDM)
+* [IoGetDeviceDirectory](/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetdevicedirectory) (WDM)，DirectoryType 参数设置为 DeviceDirectoryData  
 * [**WdfDeviceRetrieveDeviceDirectoryString**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceretrievedevicedirectorystring) (WDF)
 
 ### <a name="service-file-state"></a>服务文件状态
@@ -225,9 +225,10 @@ Win32 和驱动程序服务均读取和写入关于本身的状态。
 
 若要访问服务自己的内部状态值，该服务需使用下列选项之一： 
 
-* [**IoGetDriverDirectory**](/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetdriverdirectory) (WDM)
-* [**IoGetDriverDirectory**](/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetdriverdirectory) (KMDF)
+* [IoGetDriverDirectory](/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetdriverdirectory) (WDM)，DirectoryType 参数设置为 DeviceDirectoryData  
+* [IoGetDriverDirectory](/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetdriverdirectory) (KMDF)，DirectoryType 参数设置为 DeviceDirectoryData  
 * [**WdfDriverRetrieveDriverDataDirectoryString**](/windows-hardware/drivers/ddi/content/wdfdriver/nf-wdfdriver-wdfdriverretrievedriverdatadirectorystring) (UMDF)
+* [GetServiceDirectory](/windows/win32/api/winsvc/nf-winsvc-getservicedirectory)（Win32 服务），eDirectoryType 参数设置为 ServiceDirectoryPersistentState  
 
 若要与其他组件共享服务的内部状态，请使用受控制的、受版本控制的接口，而不是直接注册表或文件读取。
 

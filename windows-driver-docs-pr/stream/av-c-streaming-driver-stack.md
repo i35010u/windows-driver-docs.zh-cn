@@ -1,22 +1,21 @@
 ---
 title: AV/C 流式处理驱动程序堆栈
 description: AV/C 流式处理驱动程序堆栈
-ms.assetid: 2584c74c-ddd6-43cc-9a8c-cd7f43802c4c
 keywords:
-- AV/C WDK，Stream 筛选器驱动程序
-- Stream 筛选器驱动程序 WDK AV/C
-- Avcstrm.sys 流式处理筛选器驱动程序 WDK，驱动程序堆栈
+- AV/C WDK，流筛选器驱动程序
+- 流筛选器驱动程序 WDK AV/C
+- Avcstrm.sys 流筛选器驱动程序 WDK，驱动程序堆栈
 - 驱动程序堆栈 WDK AV/C 流式处理
 - 堆栈 WDK AV/C 流式处理
-- 对等互连驱动程序堆栈 WDK AV/C 的流式处理
+- 对等驱动程序堆栈 WDK AV/C 流式处理
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4f1eadd02bc0876658d4b0d1aae2522a1e60c191
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: de6ee9dbea0e28e05b057c7ef52e5e295fcab2bd
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63323548"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96833989"
 ---
 # <a name="avc-streaming-driver-stack"></a>AV/C 流式处理驱动程序堆栈
 
@@ -24,25 +23,25 @@ ms.locfileid: "63323548"
 
 
 
-Windows 将加载*Avcstrm.sys*子单元驱动程序的功能的设备对象 (FDO) 和创建相应的物理设备对象 (PDO) 之间*Avc.sys*。 *Avcstrm.sys*之间的单个子单元驱动程序和功能驱动程序，驻留*Avc.sys*。 *Avcstrm.sys*作为子单元驱动程序的较低级别筛选器驱动程序进行安装，以便提供其流式处理服务。 提供的流式处理服务的接口*Avcstrm.sys* WDM 体系结构的支持的 I/O 控制 (IOCTL) 函数的列表，使用的 I/O 请求数据包 (IRP) 模型为基础。 *Avcstrm.sys*可以提供服务基于 Stream 类或 AVStream 接口的子单元驱动程序。 AVStream 驱动程序模型是要使用的首选的接口。 下图说明了在何处*Avcstrm.sys*适合 AV/C 驱动程序堆栈。
+Windows (FDO) 和 *)* 创建的 (PDOAvc.sys，在子实体驱动程序的功能设备对象之间加载 *Avcstrm.sys* 。 *Avcstrm.sys* 位于单个子单位驱动程序和函数驱动程序之间， *Avc.sys*。 *Avcstrm.sys* 作为更低级别的筛选器驱动程序安装到子单元驱动程序，以便提供其流式处理服务。 *Avcstrm.sys* 提供的流式处理服务的接口基于 WDM 体系结构所使用的 i/o 请求包 (IRP) 模型，以及 (IOCTL) 函数的支持 i/o 控件列表。 *Avcstrm.sys* 可以为基于 Stream 类或 AVStream 接口的子单位驱动程序服务。 AVStream 驱动程序模型是要使用的首选接口。 下图说明 *Avcstrm.sys* 适合 AV/C 驱动程序堆栈的位置。
 
-![说明使用 avcstrm.sys 低筛选器驱动程序的对等方 av/c 驱动程序堆栈的关系图](images/avcsdiag.gif)
+![使用 avcstrm.sys 低筛选器驱动程序说明对等 av/c 驱动程序堆栈的关系图](images/avcsdiag.gif)
 
-*Avcstrm.sys*格式识别。 它必须知道的数据格式的流式处理的数据，例如 SDDV 或 MPEG2TS，才能正确同步之间建立连接的源和目标设备。 使用给定的格式信息*Avcstrm.sys*然后可与 AV/C 子单元的驱动程序通过 61883 协议驱动程序将接收或传输数据。 因为*Avcstrm.sys*格式识别，它必须经过更新以添加不同的格式 （例如，服务包或新操作系统系统版本）。 目前，SDDV 和 MPEG2TS 格式是实现的唯一格式。
+*Avcstrm.sys* 是可识别格式的。 它必须知道流式处理数据（如 SDDV 或 MPEG2TS）的数据格式，以便在源和目标设备之间建立正确的同步连接。 使用给定的格式信息， *Avcstrm.sys* 可以通过61883协议驱动程序通过协议驱动程序与 AV/C 子单位的驱动程序进行交互，以接收或传输数据。 由于 *Avcstrm.sys* 是可识别格式的，因此必须将其更新以添加不同的格式 (例如，Service Pack 或新的操作系统版本) 。 目前，只有 SDDV 和 MPEG2TS 格式实现了格式。
 
-在将来*Avcstrm.sys*可能会扩展到：
+将来， *Avcstrm.sys* 可能会扩展到：
 
 -   查询数据格式
 
--   执行数据交集 （协商两个插针之间的数据格式）
+-    (在两个 pin 之间协商数据格式来执行数据交集) 
 
--   是时钟的访问接口
+-   是时钟提供商
 
 -   获取和设置流式处理属性
 
-目前，每个子单元驱动程序必须实现上述操作。
+目前，每个子单位驱动程序必须实现前面的操作。
 
-AV/C 流式处理筛选器驱动程序执行这一次不是时间戳数据。 时钟提供程序需要的时间戳的数据，以及提供当前流的时间。 如果它是一个时钟提供程序，则子单元驱动程序必须时间戳数据。
+AV/C 流式处理筛选器驱动程序此时没有时间戳数据。 时钟提供程序需要提供数据的时间戳，并提供当前的流时间。 如果数据为时钟提供程序，则子单位驱动程序必须将数据时间戳。
 
  
 

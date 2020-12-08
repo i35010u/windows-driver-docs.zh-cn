@@ -1,9 +1,8 @@
 ---
 title: JobDescription 元素
-description: 所需的 JobDescription 元素包含当前标识作业的基本创建信息。
-ms.assetid: 78b77a9b-2fe9-4261-996b-970e97c4c0a9
+description: 必需的 JobDescription 元素包含当前标识作业的基本创建信息。
 keywords:
-- JobDescription 元素成像设备
+- JobDescription 元素图像设备
 topic_type:
 - apiref
 api_name:
@@ -12,19 +11,19 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e7acf05250ae0afebce5d3fbc54e486079b74b31
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9191b462cf5717b6c18ce74008d6bb5e4da6cac3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63363355"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96834547"
 ---
 # <a name="jobdescription-element"></a>JobDescription 元素
 
 
-所需**JobDescription**元素包含当前标识作业的基本创建信息。
+必需的 **JobDescription** 元素包含当前标识作业的基本创建信息。
 
-<a name="usage"></a>用法
+<a name="usage"></a>使用情况
 -----
 
 ```xml
@@ -88,7 +87,7 @@ ms.locfileid: "63363355"
 <a name="remarks"></a>备注
 -------
 
-客户端设置的值为所有**JobDescription**子元素并将其在提交[ **CreateScanJobRequest** ](createscanjobrequest.md)操作。
+客户端设置所有 **JobDescription** 子元素的值，并在 [**CreateScanJobRequest**](createscanjobrequest.md) 操作中提交这些值。
 
 ## <a name="see-also"></a>请参阅
 

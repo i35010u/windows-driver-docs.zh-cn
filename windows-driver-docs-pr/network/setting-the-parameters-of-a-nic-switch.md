@@ -1,15 +1,14 @@
 ---
 title: 设置 NIC 交换机的参数
 description: 设置 NIC 交换机的参数
-ms.assetid: 79B4B0B7-32AB-4AE4-ACD2-CE17C93573BA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9bc53903941337c692f4cc1e1973f1593381ef59
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 4f5a70e06995d23cb36703cd50d682f50bb997e0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89214422"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96832597"
 ---
 # <a name="setting-the-parameters-of-a-nic-switch"></a>设置 NIC 交换机的参数
 
@@ -20,17 +19,17 @@ ms.locfileid: "89214422"
 
 只能更改 NIC 交换机的有限子集的配置参数。 过量驱动程序通过设置 [**NDIS \_ NIC \_ 交换机 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_parameters) 结构的以下成员来指定要更改的参数：
 
--   **SwitchId**成员设置为将更改其参数的 NIC 交换机的标识符。
+-   **SwitchId** 成员设置为将更改其参数的 NIC 交换机的标识符。
 
-    **注意**   从 Windows Server 2012 开始，SR-IOV 接口仅支持网络适配器上的一个 NIC 交换机。 此开关称为 " *默认 NIC 交换机*"。 **SwitchId**成员必须设置为 NDIS \_ 默认 \_ 交换机 \_ ID。
+    **注意**  从 Windows Server 2012 开始，SR-IOV 接口仅支持网络适配器上的一个 NIC 交换机。 此开关称为 " *默认 NIC 交换机*"。 **SwitchId** 成员必须设置为 NDIS \_ 默认 \_ 交换机 \_ ID。
 
      
 
--   在 \_ \_ flags 成员中设置相应的 NDIS NIC 交换机 \_ 参数 \_ *Xxx* \_ 更改**Flags**标志。 仅当在 Ntddndis 中定义了相应的 NDIS nic 交换机[** \_ \_ \_ **](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_parameters) \_ \_ \_ 参数 \_ *Xxx* \_ changed 标志时，才能更改 NDIS nic 交换机参数结构的成员。
+-   在 \_ \_ flags 成员中设置相应的 NDIS NIC 交换机 \_ 参数 \_ *Xxx* \_ 更改 **Flags** 标志。 仅当在 Ntddndis 中定义了相应的 NDIS nic 交换机 [**\_ \_ \_**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_parameters) \_ \_ \_ 参数 \_ *Xxx* \_ changed 标志时，才能更改 NDIS nic 交换机参数结构的成员。
 
 -   [**Ndis \_ nic \_ 交换机 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_parameters)结构的成员（该结构对应于 \_ \_ \_ flags 成员中已更改的 ndis nic 交换机参数 XXX）已 \_ *Xxx* \_ 设置为要更改的 NIC 交换机配置参数。 **Flags**
 
-    **注意**   从 Windows Server 2012 开始，只能通过 oid [ \_ nic \_ 交换机 \_ 参数](./oid-nic-switch-parameters.md)的 oid 集请求更改[**NDIS \_ nic \_ 交换机 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_parameters)结构的**SwitchName**成员。
+    **注意** 从 Windows Server 2012 开始，只能通过 oid [ \_ nic \_ 交换机 \_ 参数](./oid-nic-switch-parameters.md)的 oid 集请求更改 [**NDIS \_ nic \_ 交换机 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_parameters)结构的 **SwitchName** 成员。
 
      
 
@@ -44,11 +43,11 @@ ms.locfileid: "89214422"
 
     如果返回此状态代码，NDIS 还会在注册表中更新 NIC 交换机配置信息。 但是，发出 OID 集请求的过量驱动程序必须重新初始化网络适配器，以使更改生效。
 
-    **注意**   支持静态 NIC 创建和配置的 PF 微型端口驱动程序可以返回 NDIS \_ 状态 REINIT，这 \_ \_ 是为了确保重新初始化适配器以使新参数生效。
+    **注意**  支持静态 NIC 创建和配置的 PF 微型端口驱动程序可以返回 NDIS \_ 状态 REINIT，这 \_ \_ 是为了确保重新初始化适配器以使新参数生效。
 
      
 
--   如果 PF 微型端口驱动程序无法应用 OID 中请求的更改，则它必须使 OID 失败，并返回相应的 NDIS \_ 状态 \_ *Xxx*代码。
+-   如果 PF 微型端口驱动程序无法应用 OID 中请求的更改，则它必须使 OID 失败，并返回相应的 NDIS \_ 状态 \_ *Xxx* 代码。
 
     在这种情况下，NDIS 不会更新注册表中的 NIC 交换机配置信息。
 

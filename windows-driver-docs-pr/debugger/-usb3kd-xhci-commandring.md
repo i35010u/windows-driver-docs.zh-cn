@@ -1,9 +1,8 @@
 ---
-title: usb3kd xhci_commandring
-description: Xhci_commandring usb3kd 扩展显示与 USB 3.0 主机控制器关联的命令环形数据结构的相关信息。
-ms.assetid: 3099F3F1-B881-4BBD-90F5-59DC2DFECF3B
+title: usb3kd.xhci_commandring
+description: Usb3kd.xhci_commandring 扩展显示与 USB 3.0 主机控制器关联的命令环形数据结构的相关信息。
 keywords:
-- usb3kd xhci_commandring Windows 调试
+- usb3kd.xhci_commandring Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,12 +11,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: f97a7cbfc9ca79023d46fe03636540d2967b9346
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: abd26ce92666e7372cc1ad2675aa14542cc2d65c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89206833"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96832543"
 ---
 # <a name="usb3kdxhci_commandring"></a>！ usb3kd. xhci \_ commandring
 

@@ -1,15 +1,14 @@
 ---
 title: 64 位和 WIA
 description: 64 位和 WIA
-ms.assetid: 392e60c7-2ad6-4a71-83de-5e5ac550dc8b
 ms.date: 08/25/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 976dfa258004c4084198283737d42ea04804a2fd
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: ba01313d057079fb87675dcb47eef00618a8ff73
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89191979"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96833521"
 ---
 # <a name="64-bit-and-wia"></a>64 位和 WIA
 

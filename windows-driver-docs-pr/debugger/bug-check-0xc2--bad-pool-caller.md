@@ -1,7 +1,6 @@
 ---
 title: Bug 检查 0xC2 BAD_POOL_CALLER
 description: BAD_POOL_CALLER bug 检查的值为0x000000C2。 这表示当前线程发出错误的池请求。
-ms.assetid: 64803335-ab93-4c4d-9b30-2ec15a13303f
 keywords:
 - Bug 检查 0xC2 BAD_POOL_CALLER
 - BAD_POOL_CALLER
@@ -13,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: de1c3be63dc92dc0040815b8aac4c0a3fe99ebf0
-ms.sourcegitcommit: 9e13d3fbc74bb75335c4d2927c55b0085e46b0ea
+ms.openlocfilehash: 1369eca1971ffa1df1fb53b19b0b21a1b6afc9ac
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/16/2020
-ms.locfileid: "94639035"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96833701"
 ---
 # <a name="bug-check-0xc2-bad_pool_caller"></a>Bug 检查0xC2：错误的 \_ 池 \_ 调用方
 
@@ -240,4 +239,4 @@ ms.locfileid: "94639035"
 
 **Windows 内存诊断**
 
-具体而言，对于内存池损坏的情况，请运行 Windows 内存诊断工具，尝试将物理内存作为一个原因进行隔离。 在 "控制面板" 搜索框中键入 "内存"，然后选择 " **诊断计算机的内存问题** "。运行测试后，使用事件查看器查看系统日志下的结果。 查找“内存诊断结果”条目以查看结果  。
+具体而言，对于内存池损坏的情况，请运行 Windows 内存诊断工具，尝试将物理内存作为一个原因进行隔离。 在 "控制面板" 搜索框中键入 "内存"，然后选择 " **诊断计算机的内存问题**"。运行测试后，使用事件查看器查看系统日志下的结果。 查找“内存诊断结果”条目以查看结果  。

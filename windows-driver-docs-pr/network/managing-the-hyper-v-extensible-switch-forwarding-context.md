@@ -1,15 +1,14 @@
 ---
 title: 管理 Hyper-V 可扩展交换机转发上下文
 description: 管理 Hyper-V 可扩展交换机转发上下文
-ms.assetid: 63FBEBFA-BD57-4350-89C3-9F0FAAA18973
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0b00ee5fdc9051d947ba805de46fc11e23f6ec7a
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 25bee5a199c702ffbf98040fd20250327f135f10
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89207529"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96833383"
 ---
 # <a name="managing-the-hyper-v-extensible-switch-forwarding-context"></a>管理 Hyper-V 可扩展交换机转发上下文
 
@@ -63,7 +62,7 @@ ms.locfileid: "89207529"
 <a href="" id="updatenetbufferlistdestinations"></a>[*UpdateNetBufferListDestinations*](/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_update_net_buffer_list_destinations)  
 提交扩展对包的一个或多个可扩展交换机目标端口所做的修改。 此函数使用这些更改来更新包的 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list_context) 结构的转发上下文。
 
-**注意** 转发扩展将目标端口的更改提交到转发上下文后，不能删除目标端口，并且只能更改目标端口的[**NDIS \_ 交换机 \_ 端口 \_ 目标**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_switch_port_destination)结构的**IsExcluded**成员。 有关详细信息，请参阅 [排除数据包传递到可扩展交换机目标端口](excluding-packet-delivery-to-extensible-switch-destination-ports.md)。
+**注意** 转发扩展将目标端口的更改提交到转发上下文后，不能删除目标端口，并且只能更改目标端口的 [**NDIS \_ 交换机 \_ 端口 \_ 目标**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_switch_port_destination)结构的 **IsExcluded** 成员。 有关详细信息，请参阅 [排除数据包传递到可扩展交换机目标端口](excluding-packet-delivery-to-extensible-switch-destination-ports.md)。
 
 ## <a name="related-topics"></a>相关主题
 

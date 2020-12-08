@@ -1,18 +1,17 @@
 ---
 title: AV/C 客户端驱动程序
 description: AV/C 客户端驱动程序
-ms.assetid: 70d98c31-2da6-455b-91d8-59bed306b574
 keywords:
 - AVStream WDK，AV/C
 - AV/C WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6adacb6183a4599a0a3d3c72a5f248aeb5774626
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 0d5d57b9cfbc06311b5461582799fa232bd4ec86
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89186851"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96834013"
 ---
 # <a name="avc-client-drivers"></a>AV/C 客户端驱动程序
 
@@ -34,9 +33,9 @@ Microsoft 在 Windows XP 及更高版本的操作系统中 (AV/C) 协议提供�
 
 -   MPEG2-TS (61883-4 规范) 
 
-根据设备的功能，可以使用 *Avcstrm.sys* 中提供的可选支持来帮助进行流式处理 SDDV 和/或 MPEG2 TS 数据。 如果 *Avcstrm.sys* 不支持你的设备使用的格式，则可以使用 *61883.sys*提供的连接管理和数据流式处理功能，该功能位于驱动程序堆栈中。
+根据设备的功能，可以使用 *Avcstrm.sys* 中提供的可选支持来帮助进行流式处理 SDDV 和/或 MPEG2 TS 数据。 如果 *Avcstrm.sys* 不支持你的设备使用的格式，则可以使用 *61883.sys* 提供的连接管理和数据流式处理功能，该功能位于驱动程序堆栈中。
 
-子单位驱动程序应遵循 [Windows 驱动模型](../kernel/introduction-to-wdm.md) (WDM) 体系结构。 子单位驱动程序可以使用 Stream 类接口或 AVStream 接口。 AVStream 是用于开发子单位驱动程序的首选界面。 流类接口已过时，Microsoft 已不再进行进一步的开发。 有关这两个接口的详细信息，请参阅 [AV/C 内核流式处理接口和 KS 代理插件](av-c-kernel-streaming-interface-and-kernel-streaming-proxy-plug-ins.md)。
+子单位驱动程序应遵循 [Windows 驱动模型](../kernel/introduction-to-wdm.md) (WDM) 体系结构。 子单位驱动程序可以使用 Stream 类接口或 AVStream 接口。 AVStream 是用于开发子单位驱动程序的首选界面。 流类接口已过时，Microsoft 已不再进行进一步的开发。 有关这两个接口的详细信息，请参阅 [AV/C Kernel-Streaming Interface AND KS Proxy 插件](av-c-kernel-streaming-interface-and-kernel-streaming-proxy-plug-ins.md)。
 
 有关如何编写 AV/C 子单位驱动程序的详细信息，请参阅 [av/c 概述](av-c-overview.md)。 有关如何使用 *Avcstrm.sys* 来协助流式传输数据的详细信息，请参阅 [AV/C 流式处理概述](av-c-streaming-overview.md)。
 

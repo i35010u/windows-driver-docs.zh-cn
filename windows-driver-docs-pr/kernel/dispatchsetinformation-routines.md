@@ -1,7 +1,6 @@
 ---
 title: DispatchSetInformation 例程
 description: DispatchSetInformation 例程
-ms.assetid: 9fb56504-32a7-47b0-b731-df1dc74ce861
 keywords:
 - 调度例程 WDK 内核，DispatchSetInformation 例程
 - DispatchSetInformation 例程
@@ -9,12 +8,12 @@ keywords:
 - IRP_MJ_SET_INFORMATION i/o 函数代码
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 35381076fa99b06c54890659c0533d525e427345
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: ec784ba22df963b950d776045667a8d52ca45baa
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90716876"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96833443"
 ---
 # <a name="dispatchsetinformation-routines"></a>DispatchSetInformation 例程
 

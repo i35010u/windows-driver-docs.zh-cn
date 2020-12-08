@@ -1,7 +1,6 @@
 ---
 title: usbkd.usbhubs
 description: Usbkd. usbhubs 命令显示有关 USB 集线器的信息。
-ms.assetid: 88642A67-5105-45A4-8374-7E4D01FFAEB6
 keywords:
 - usbkd usbhubs Windows 调试
 ms.date: 05/23/2017
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: b59e69f5c78e6321900a630c8fe60b757771303d
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 382bf05fee36e3eee74908824b90e2d3e0c65771
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89207361"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96833213"
 ---
 # <a name="usbkdusbhubs"></a>!usbkd.usbhubs
 
 
-**！ Usbkd. usbhubs**命令显示有关 USB 集线器的信息。
+**！ Usbkd. usbhubs** 命令显示有关 USB 集线器的信息。
 
 ```dbgcmd
 !usbkd.usbhubs a[v]

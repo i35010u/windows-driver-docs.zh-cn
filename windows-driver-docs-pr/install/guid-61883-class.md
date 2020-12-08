@@ -1,7 +1,6 @@
 ---
 title: GUID_61883_CLASS
 description: GUID_61883_CLASS
-ms.assetid: 3380c42c-3ac4-4d71-9a1b-581ef8c7b57a
 keywords:
 - GUID_61883_CLASS 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: e5c6422da564c90296724626e8b1d16a088259cd
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 76d487a8e344f1f44efd38d65881ecb3c62058e7
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89095715"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96833497"
 ---
 # <a name="guid_61883_class"></a>GUID_61883_CLASS
 
@@ -78,7 +77,7 @@ ms.locfileid: "89095715"
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**BUS1394_CLASS_GUID**](bus1394-class-guid.md)

@@ -1,9 +1,8 @@
 ---
 title: DeviceSettings 元素
-description: 所需的 DeviceSettings 元素描述扫描设备的基本功能。
-ms.assetid: d12d25f0-fa94-4840-bb1a-cc1a5352767c
+description: 必需的 DeviceSettings 元素描述扫描设备的基本功能。
 keywords:
-- DeviceSettings 元素成像设备
+- DeviceSettings 元素图像设备
 topic_type:
 - apiref
 api_name:
@@ -12,19 +11,19 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b9c36595743fb3004ba75f143e447496d8c421df
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: dedae53b3f8586d6d75d3c0490f3605f1cf628d4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63364549"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96833511"
 ---
 # <a name="devicesettings-element"></a>DeviceSettings 元素
 
 
-所需**DeviceSettings**元素描述扫描设备的基本功能。
+必需的 **DeviceSettings** 元素描述扫描设备的基本功能。
 
-<a name="usage"></a>用法
+<a name="usage"></a>使用情况
 -----
 
 ```xml
@@ -103,7 +102,7 @@ ms.locfileid: "63364549"
 <a name="remarks"></a>备注
 -------
 
-**DeviceSettings**元素包含支持的值可以设置中的图像处理选项的许多[ **ScanTicket** ](scanticket.md)扫描操作的元素。 客户端可以使用中返回的值**DeviceSettings**若要创建有效**ScanTicket**元素。
+**DeviceSettings** 元素包含多个可在 [**ScanTicket**](scanticket.md)元素中为扫描操作设置的支持的值。 客户端可以使用 **DeviceSettings** 中返回的值来创建有效的 **ScanTicket** 元素。
 
 ## <a name="see-also"></a>请参阅
 

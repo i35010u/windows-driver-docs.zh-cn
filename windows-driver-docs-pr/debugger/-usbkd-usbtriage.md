@@ -1,7 +1,6 @@
 ---
 title: usbkd.usbtriage
 description: Usbkd. usbtriage 命令显示 USB 驱动程序和设备对象的列表。
-ms.assetid: F71F0913-00E1-4647-8AAA-121C6BD6FD36
 keywords:
 - usbkd usbtriage Windows 调试
 ms.date: 05/23/2017
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 23df527e9e3aa290a0668af8d3e38c29c66d8c16
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 915feb953d8dd09c8e5ee098b272304264ff559a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89217927"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96833883"
 ---
 # <a name="usbkdusbtriage"></a>!usbkd.usbtriage
 
 
-**！ Usbkd. usbtriage**命令显示 USB 驱动程序和设备对象的列表。
+**！ Usbkd. usbtriage** 命令显示 USB 驱动程序和设备对象的列表。
 
 ```dbgcmd
 !usbkd.usbtriage

@@ -1,27 +1,26 @@
 ---
 title: 管理数字签名或代码签名密钥
 description: 管理数字签名或代码签名密钥
-ms.assetid: 3aaa713b-c964-4a1e-9b2c-dee66cb4c4b2
 keywords:
 - 驱动程序签名 WDK，加密密钥
-- 签名的驱动程序 WDK，加密密钥
+- 为驱动程序签名 WDK、加密密钥
 - 数字签名 WDK，加密密钥
 - 签名 WDK，加密密钥
 - 加密 WDK 驱动程序签名
 - 密钥 WDK 驱动程序签名
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 568f0568e9054f6b22a50707be718e94559c5c82
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5049e3d10b69ee417e0ad86218f520b47fda1105
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63378425"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96834503"
 ---
 # <a name="managing-the-digital-signature-or-code-signing-keys"></a>管理数字签名或代码签名密钥
 
 
-是的 Authenticode 签名过程核心的加密密钥必须保护且发布者的最有价值的资产那样悉心对待。 这些密钥表示组织的标识。 使用这些密钥签署的任何代码显示给 Windows 好像它包含可抵达组织的有效数字签名。 如果密钥被盗，它们可以用于通过欺骗手段签署恶意代码，而且可能会导致传递包含特洛伊木马的代码或病毒似乎来源于合法发行商。
+验证码签名过程核心的加密密钥必须受到良好保护，并与发布者最有价值的资产进行处理。 这些密钥表示组织的标识。 使用这些密钥签署的任何代码都显示给 Windows，就好像它包含可抵达组织的有效数字签名一样。 如果密钥被盗，它们可能会被用来欺诈恶意代码，并可能导致传递包含特洛伊木马的代码或看似来自合法发行者的病毒。
 
 
  

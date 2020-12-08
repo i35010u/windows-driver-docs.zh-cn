@@ -1,7 +1,6 @@
 ---
 title: Inf2Cat
 description: 'Inf2Cat ( # A0) 是一个命令行工具，用于确定是否可以为指定的 Windows 版本列表对驱动程序包的 INF 文件进行数字签名。'
-ms.assetid: 5d85058e-4051-4321-a4c1-b1a71d232b7f
 keywords:
 - Inf2Cat 驱动程序开发工具
 topic_type:
@@ -12,12 +11,12 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cb0b2d869177d7b705162aae7bc03a612641f0d2
-ms.sourcegitcommit: 372464be981a39781c71049126f36891cb5d0cad
+ms.openlocfilehash: b3ac2b4b03caab032cac4241e0df8d46a99032b0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91646083"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96833135"
 ---
 # <a name="inf2cat"></a>Inf2Cat
 
@@ -50,7 +49,7 @@ Inf2Cat 工具位于 Program Files \\ Windows 工具包 \\ 8.0 \\ Bin \\ x86 或
 
 ### <a name="oswindowsversionlist"></a>/os：*WindowsVersionList*
   
-将 Inf2Cat 配置为验证 [驱动程序包的](../install/driver-packages.md) INF 文件是否符合 *WindowsVersionList*指定的 Windows 版本的签名要求。 *WindowsVersionList* 是一个以逗号分隔的列表，其中包含一个或多个以下版本标识符。
+将 Inf2Cat 配置为验证 [驱动程序包的](../install/driver-packages.md) INF 文件是否符合 *WindowsVersionList* 指定的 Windows 版本的签名要求。 *WindowsVersionList* 是一个以逗号分隔的列表，其中包含一个或多个以下版本标识符。
 
 |Windows 版本|版本标识符|
 |--- |--- |
@@ -139,7 +138,7 @@ Inf2Cat 工具已替换 Windows Vista 之前的 WDK 版本中包含的 Signabili
 
 Inf2Cat 工具将检查 [驱动程序包](../install/driver-packages.md) 的 .inf 文件中的结构错误，并验证驱动程序包是否可以进行数字签名。 只有在 INF 文件中引用的所有文件都存在并且源文件位于正确的位置时，才能对驱动程序包进行签名。 如果无法对 INF 文件进行签名，或者如果它包含结构性错误，则驱动程序包可能未正确安装，或者在安装过程中可能会错误地显示 "驱动程序签名警告" 对话框。
 
-只有在驱动程序包的 INF 文件中指定了目录文件，并且目录文件适用于一个或多个指定的 Windows 版本时，Inf2Cat 才会生成 [目录](../install/catalog-files.md) 文件。 如果 INF 文件的 [**Inf 版本部分**](../install/inf-version-section.md) 仅提供 CatalogFile =*filename.cat* 指令，则该目录文件适用于整个驱动程序包。 为了支持[跨平台安装](../install/creating-inf-files-for-multiple-platforms-and-operating-systems.md)，INF 文件应包含 CatalogFile。*PlatformExtension* =*unique-filename.cat*指令。
+只有在驱动程序包的 INF 文件中指定了目录文件，并且目录文件适用于一个或多个指定的 Windows 版本时，Inf2Cat 才会生成 [目录](../install/catalog-files.md) 文件。 如果 INF 文件的 [**Inf 版本部分**](../install/inf-version-section.md) 仅提供 CatalogFile =*filename.cat* 指令，则该目录文件适用于整个驱动程序包。 为了支持 [跨平台安装](../install/creating-inf-files-for-multiple-platforms-and-operating-systems.md)，INF 文件应包含 CatalogFile。*PlatformExtension* =*unique-filename.cat* 指令。
 
 有关对驱动程序包进行签名的详细信息，请参阅 [驱动程序签名](../install/driver-signing.md)。
 

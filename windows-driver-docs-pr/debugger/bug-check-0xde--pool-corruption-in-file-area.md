@@ -1,7 +1,6 @@
 ---
 title: Bug 检查 0xDE POOL_CORRUPTION_IN_FILE_AREA
-description: POOL_CORRUPTION_IN_FILE_AREA bug 检查具有 0x000000DE 值。 这表示一个驱动程序损坏了用来存放目标为磁盘的页池内存。
-ms.assetid: 6394e0fa-76ee-4924-8aa3-d10a4d57c6e8
+description: POOL_CORRUPTION_IN_FILE_AREA bug 检查的值为0x000000DE。 这表明驱动程序具有已损坏的池内存，用于存放目标为磁盘的页面。
 keywords:
 - Bug 检查 0xDE POOL_CORRUPTION_IN_FILE_AREA
 - POOL_CORRUPTION_IN_FILE_AREA
@@ -13,23 +12,23 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: afbd74a9760a9a835b14b9eaf25651c50cda255d
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: 26a98536c3dbdf48155c552fb185aa437d907749
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67518838"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96833205"
 ---
-# <a name="bug-check-0xde-poolcorruptioninfilearea"></a>Bug 检查 0xDE：池\_损坏\_IN\_文件\_区域
+# <a name="bug-check-0xde-pool_corruption_in_file_area"></a>Bug 检查0xDE： \_ \_ \_ 文件区域中的池损坏 \_
 
 
-在池中\_损坏\_IN\_文件\_区域 bug 检查的值为 0x000000DE。 这表示一个驱动程序损坏了用来存放目标为磁盘的页池内存。
+\_ \_ 文件区域 bug 检查中的池损坏的 \_ \_ 值为0x000000DE。 这表明驱动程序具有已损坏的池内存，用于存放目标为磁盘的页面。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题面向程序员。 如果您是在使用计算机时收到蓝屏错误代码的客户，请参阅[蓝屏错误疑难解答](https://www.windows.com/stopcode)。
 
 
-## <a name="poolcorruptioninfilearea-parameters"></a>池\_损坏\_IN\_文件\_区域参数
+## <a name="pool_corruption_in_file_area-parameters"></a>\_ \_ \_ 文件 \_ 区域参数中的池损坏
 
 
 无
@@ -37,7 +36,7 @@ ms.locfileid: "67518838"
 <a name="cause"></a>原因
 -----
 
-当内存管理器取消引用该文件时，它发现这种损坏池内存中。
+当内存管理器取消对该文件的引用时，它会在池内存中发现此损坏。
 
  
 

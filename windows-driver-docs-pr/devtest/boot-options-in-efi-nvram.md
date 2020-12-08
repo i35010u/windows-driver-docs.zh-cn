@@ -1,7 +1,6 @@
 ---
 title: EFI NVRAM 中的启动选项
 description: 具有可扩展固件接口 (EFI 的计算机在 NVRAM 中) 固件存储启动选项，但即使关闭计算机，也会保留其状态。
-ms.assetid: 99247d03-1723-4a2b-8ef4-c1f39687642f
 keywords:
 - NVRAM 启动选项 WDK
 - EFI NVRAM 启动选项 WDK
@@ -10,12 +9,12 @@ keywords:
 - Itanium 处理器启动选项 WDK
 ms.date: 07/03/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: d9f0e182d81f234b29c3200c69dcbd6973653e2d
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 997e39ac978450b55732183e096e943c4c8a23c0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89384379"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96833571"
 ---
 # <a name="boot-options-in-efi-nvram"></a>EFI NVRAM 中的启动选项
 

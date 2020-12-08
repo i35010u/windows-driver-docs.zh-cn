@@ -1,42 +1,41 @@
 ---
 title: METransformNeedInput
-description: METransformNeedInput 事件指示设备转换需要一个输入。
-ms.assetid: AACD80F6-90A1-4338-AE5B-4A9248747949
+description: METransformNeedInput 事件表示设备转换需要输入。
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6d40168ae5fd48a8e5da49aa04aefbdabfd3cb24
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0dd5536d93b7403f1af668a42a6a62b6edfd7e79
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63348404"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96832553"
 ---
 # <a name="metransformneedinput"></a>METransformNeedInput
 
 
-**METransformNeedInput**事件指示设备转换需要一个输入。
+**METransformNeedInput** 事件表示设备转换需要输入。
 
-## <a name="span-idwhensentspanspan-idwhensentspanspan-idwhensentspanwhen-sent"></a><span id="When_sent"></span><span id="when_sent"></span><span id="WHEN_SENT"></span>发送时
+## <a name="span-idwhen_sentspanspan-idwhen_sentspanspan-idwhen_sentspanwhen-sent"></a><span id="When_sent"></span><span id="when_sent"></span><span id="WHEN_SENT"></span>发送时间
 
 
-当设备转换需要输入生成的输出时发送此事件。 通常情况下，异步 Mft 使用此消息可获取输入的示例进行处理并生成一个输出示例。
+当设备转换需要输入来生成输出时，会发送此事件。 通常，async MFTs 使用此消息获取用于处理和生成输出示例的输入示例。
 
-## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>参数
+## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>Parameters
 
 
 | 参数              | 描述                                                                                                   |
 |------------------------|---------------------------------------------------------------------------------------------------------------|
-| **输入的流索引** | 作为 IMFMediaEvent 属性存储中发送的输入的流索引**MF\_事件\_MFT\_输入\_流\_ID**。 |
+| **输入流索引** | 输入流索引作为 **MF \_ 事件 \_ MFT \_ 输入 \_ 流 \_ ID** 发送到 IMFMediaEvent 属性存储中。 |
 
  
 
 ## <a name="remarks"></a>备注
 
 
-此事件将不处理设备转换管理器 (DTM) 由于以下原因：
+由于以下原因，设备转换管理器不会将此事件处理 (DTM) ：
 
--   Devproxy 不具有任何输入插针
--   即使设备 MFT 具有输入插针，它是 Devproxy 输出可用时自动送入示例。 因此，没有需要设备 MFT 请求的示例。 DTM 会忽略此请求。
+-   Devproxy 没有任何输入插针
+-   即使设备 MFT 有输入插针，它也会在 Devproxy 的输出中提供，自动送入样本。 因此，不需要设备 MFT 来请求示例。 DTM 将忽略此请求。
 
  
 

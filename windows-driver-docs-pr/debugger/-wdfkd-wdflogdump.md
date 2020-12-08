@@ -1,7 +1,6 @@
 ---
 title: wdfkd.wdflogdump
 description: Wdfkd. wdflogdump 扩展显示 KMDF 驱动程序或 UMDF 2 驱动程序的项中的网络内记录器日志记录（如果有）。
-ms.assetid: da03fafe-4cc8-4da6-9795-828e69e0df20
 keywords:
 - wdfkd wdflogdump Windows 调试
 ms.date: 05/23/2017
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 0585ce68206cfe545fc9d2547c2070c7e108973e
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 2221781a3691f20fb877df62c4d4795921b26413
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91734305"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96833723"
 ---
 # <a name="wdfkdwdflogdump"></a>!wdfkd.wdflogdump
 
 
-**！ Wdfkd wdflogdump**扩展显示 KMDF 驱动程序或 UMDF 2 驱动程序的项中的 "网络中" 记录记录器日志记录（如果有）。 可以将此命令与 [完整内存转储](complete-memory-dump.md)、 [内核内存转储](kernel-memory-dump.md)或 [实时内核模式目标](live-kernel-mode-targets.md)结合使用。
+**！ Wdfkd wdflogdump** 扩展显示 KMDF 驱动程序或 UMDF 2 驱动程序的项中的 "网络中" 记录记录器日志记录（如果有）。 可以将此命令与 [完整内存转储](complete-memory-dump.md)、 [内核内存转储](kernel-memory-dump.md)或 [实时内核模式目标](live-kernel-mode-targets.md)结合使用。
 
 KMDF
 
@@ -58,7 +57,7 @@ KMDF
 
 **-f** 只显示框架日志。
 
-**-** *LogAddress*显示特定的驱动程序日志。 如果使用此选项，则必须提供 LogAddress。
+**-** *LogAddress* 显示特定的驱动程序日志。 如果使用此选项，则必须提供 LogAddress。
 
 UMDF
 

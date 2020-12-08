@@ -1,19 +1,18 @@
 ---
 title: 移动计划系统体系结构
 description: 移动计划系统体系结构
-ms.assetid: 76ea00c3-87b2-48ac-9a6a-ac794c0d7b88
 keywords:
 - Windows Mobile 计划移动运营商
 ms.date: 07/31/2019
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
-ms.openlocfilehash: 6e10c1cfbce0b8edfc1a52eaf44b547f7c81f7f7
-ms.sourcegitcommit: e6247811ff9a07070547af3d89705dae33a2f465
+ms.openlocfilehash: 5ce7e7f12e1486c1ab76e00d7ee8412ff29e56ac
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/23/2020
-ms.locfileid: "91026403"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96832939"
 ---
 # <a name="mobile-plans-system-architecture"></a>移动计划系统体系结构
 

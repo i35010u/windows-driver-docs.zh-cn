@@ -1,15 +1,14 @@
 ---
 title: JavaScript 调试器示例脚本
 description: 本主题提供有关用户和内核模式 JavaScript 代码示例的信息，如数据筛选即插即用设备树示例。
-ms.assetid: F477430B-10C7-4039-9C5F-25556C306643
 ms.date: 02/27/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 096f60f375f7f8c71c3ae5b9d1afd4efdfa50003
-ms.sourcegitcommit: f610410e1500f0b0a4ca008b52679688ab51033d
+ms.openlocfilehash: e896b23bad1fa6df7bca7f73e4f66369bbdf77ff
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/15/2020
-ms.locfileid: "88252915"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96833183"
 ---
 # <a name="javascript-debugger-example-scripts"></a>JavaScript 调试器示例脚本
 
@@ -51,13 +50,13 @@ function sayHi()
 }
 ```
 
-3. 使用 [**load (负载扩展 DLL) **](-load---loadby--load-extension-dll-.md) 命令加载 JavaScript 提供程序。
+3. 使用 [**load (负载扩展 DLL)**](-load---loadby--load-extension-dll-.md) 命令加载 JavaScript 提供程序。
 
 ```dbgcmd
 0:000> .load jsprovider.dll
 ```
 
-4. 使用 [**scriptrun (运行脚本) **](-scriptrun--run-script-.md)命令加载和执行脚本。 Scriptrun 命令将在 root/top 和函数名称 *initializeScript* 和 *invokeScript*下运行代码。
+4. 使用 [**scriptrun (运行脚本)**](-scriptrun--run-script-.md)命令加载和执行脚本。 Scriptrun 命令将在 root/top 和函数名称 *initializeScript* 和 *invokeScript* 下运行代码。
 
 ```dbgcmd
 0:000> .scriptrun c:\WinDbg\Scripts\HelloWorld.js
@@ -708,7 +707,7 @@ ffffb60758e21810  ffffb60757a67c60
 ## <a name="span-idtitlespanspan-idtitlespanspan-idtitlespanfind-an-application-title-user-mode"></a><span id="Title"></span><span id="title"></span><span id="TITLE"></span> (用户模式下查找应用程序标题) 
 
 
-此示例将循环访问调试器的当前进程中的所有线程，查找包含* \_ \_ mainCRTStartup*的帧，然后在 CRT 的启动期间返回 StartupInfo 中的字符串。 此脚本显示 JavaScript 中的迭代、字符串操作和 LINQ 查询的示例。
+此示例将循环访问调试器的当前进程中的所有线程，查找包含 *\_ \_ mainCRTStartup* 的帧，然后在 CRT 的启动期间返回 StartupInfo 中的字符串。 此脚本显示 JavaScript 中的迭代、字符串操作和 LINQ 查询的示例。
 
 此脚本旨在支持用户模式调试。
 

@@ -1,15 +1,14 @@
 ---
 title: 环回 NDIS 数据包
 description: 环回 NDIS 数据包
-ms.assetid: 85967cd6-6945-46d1-8872-7b000689b6db
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 81ecbc5cc6aad1438bc80415363e9ed9e2c22126
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: bc141e097d20d4700bed048cc5f29c2b7203242e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89213963"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96833391"
 ---
 # <a name="looping-back-ndis-packets"></a>环回 NDIS 数据包
 
@@ -17,7 +16,7 @@ ms.locfileid: "89213963"
 
 
 
-如果 \_ \_ \_ \_ \_ 已设置[**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)结构的**NblFlags**成员中的 NDIS NBL 标志为环回数据包标志，则数据包是环回数据包。 协议驱动程序和筛选器驱动程序可以选中此标志来确定数据包是否为环回数据包。
+如果 \_ \_ \_ \_ \_ 已设置 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)结构的 **NblFlags** 成员中的 NDIS NBL 标志为环回数据包标志，则数据包是环回数据包。 协议驱动程序和筛选器驱动程序可以选中此标志来确定数据包是否为环回数据包。
 
 如果满足以下三个条件，NDIS 会将数据包循环回来：
 
@@ -33,7 +32,7 @@ ms.locfileid: "89213963"
         -   有多个到小型端口适配器的绑定。
         -   有一个附加到微型端口适配器的筛选器模块和一个已注册接收处理程序的筛选器模块。
 
-    3.  调用方设置 \_ \_ \_ \_ \_ [**NdisSendNetBufferLists**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndissendnetbufferlists)函数的*SendFlags*参数中的 "NDIS 发送标志检查" 标记。
+    3.  调用方设置 \_ \_ \_ \_ \_ [**NdisSendNetBufferLists**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndissendnetbufferlists)函数的 *SendFlags* 参数中的 "NDIS 发送标志检查" 标记。
 
 3.  数据包是可接受的，该数据包筛选器集具有用于微型端口适配器的 [oid 生成 \_ \_ 当前 \_ 数据包 \_ 筛选器](./oid-gen-current-packet-filter.md) oid。 下面是一些示例：
     -   如果数据包是直接数据包，则数据包中的目标地址必须与微型端口适配器的 MAC 地址匹配。
@@ -51,7 +50,7 @@ ms.locfileid: "89213963"
 
 1.  协议绑定在 \_ \_ \_ 数据包筛选器中设置 NDIS 数据包类型 NO \_ LOCAL，而不是数据包的原始发件人。
 
-2.  协议绑定是原始发送方，但对 \_ \_ \_ \_ \_ [**NdisSendNetBufferLists**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndissendnetbufferlists)函数的调用中未在*SendFlags*参数中设置环回的 NDIS 发送标志检查。
+2.  协议绑定是原始发送方，但对 \_ \_ \_ \_ \_ [**NdisSendNetBufferLists**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndissendnetbufferlists)函数的调用中未在 *SendFlags* 参数中设置环回的 NDIS 发送标志检查。
 
 下图显示了环回算法的逻辑流。
 

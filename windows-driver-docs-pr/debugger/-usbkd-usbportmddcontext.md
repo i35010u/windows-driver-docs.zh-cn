@@ -1,7 +1,6 @@
 ---
 title: usbkd.usbportmddcontext
 description: Usbkd. usbportmddcontext 命令显示 USBPORT 上下文数据，前提是该数据存在于 Bug 检查0xFE 生成的故障转储中。
-ms.assetid: 774C7EAE-A33E-49A6-956F-C0791134C221
 keywords:
 - usbkd usbportmddcontext Windows 调试
 ms.date: 05/23/2017
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: bad899e0432147908304e73bb917d305608e4377
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 57a8691048b4cc98f6c880f03d89acdde79ff97f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89208741"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96833891"
 ---
 # <a name="usbkdusbportmddcontext"></a>!usbkd.usbportmddcontext
 
 
-如果在由于[**Bug 检查 0xFE**](bug-check-0xfe--bugcode-usb-driver.md)生成的故障转储中存在**usbkd usbportmddcontext**命令，则该命令将显示 USBPORT 上下文数据。
+如果在由于 [**Bug 检查 0xFE**](bug-check-0xfe--bugcode-usb-driver.md)生成的故障转储中存在 **usbkd usbportmddcontext** 命令，则该命令将显示 USBPORT 上下文数据。
 
 ```dbgcmd
 !usbkd.usbportmddcontext

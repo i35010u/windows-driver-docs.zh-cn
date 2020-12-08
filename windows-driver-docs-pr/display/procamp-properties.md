@@ -1,17 +1,16 @@
 ---
 title: ProcAmp 属性
 description: ProcAmp 属性
-ms.assetid: 412c9144-dd52-4b36-bea1-b17c9c2c95b3
 keywords:
 - ProcAmp WDK DirectX VA，属性
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 111248c032d2b79f14bea32e8956582a53879727
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: d72d7e10cd72d058b4506b4d943e42ae8356f4fd
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89066446"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96833047"
 ---
 # <a name="procamp-properties"></a>ProcAmp 属性
 

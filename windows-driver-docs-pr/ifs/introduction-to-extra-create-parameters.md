@@ -1,15 +1,14 @@
 ---
 title: 额外 Create 参数简介
 description: 额外 Create 参数简介
-ms.assetid: e32aeec6-1a0a-4d21-8358-89d9fc0a15eb
 ms.date: 10/16/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: f02e7ce65e9f1f2b4558d9b38e7da9cd4a9f2922
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 89fb25a912e88612bc79a5fd9f371ede0f8aa4a8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89088474"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96834563"
 ---
 # <a name="introduction-to-extra-create-parameters"></a>额外 Create 参数简介
 

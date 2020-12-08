@@ -1,15 +1,14 @@
 ---
 title: MobileBroadbandInfo
 description: MobileBroadbandInfo
-ms.assetid: 02279e23-becd-49ef-8981-6afb8e5aab91
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0dc46291ca5572d3300887d1b87af8b4914ac1c4
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: 712abcd7d6dce51f449ceeff8d17c7d0db870ecd
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89403512"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96832913"
 ---
 # <a name="mobilebroadbandinfo"></a>MobileBroadbandInfo
 
@@ -42,7 +41,7 @@ MobileBroadbandInfo 元素是 [MOBILEBROADBANDINFO XML 架构](mobilebroadbandin
 <thead>
 <tr class="header">
 <th>元素</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>

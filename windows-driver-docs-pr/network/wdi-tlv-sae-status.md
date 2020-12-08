@@ -1,18 +1,17 @@
 ---
 title: WDI_TLV_SAE_STATUS
 description: WDI_TLV_SAE_STATUS 是一种 TLV，其中包含等于 (SAE) 身份验证失败错误状态的同时身份验证。
-ms.assetid: 7B6B8D4B-35B4-4AEA-A969-4BB514AB968E
 ms.date: 02/15/2019
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_SAE_STATUS 网络驱动程序
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: b503c897d1872bb54447f2c919c14e1bfa5bcb15
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 987f43c4528c1c65cd2a6a8686905a90cb92e139
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89213117"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96834213"
 ---
 # <a name="wdi_tlv_sae_status"></a>WDI_TLV_SAE_STATUS
 
@@ -24,13 +23,13 @@ ms.locfileid: "89213117"
 
 0x14C
 
-## <a name="length"></a>Length
+## <a name="length"></a>长度
 
 UINT32) 的大小 (以字节为单位）。
 
 ## <a name="values"></a>值
 
-| 类型 | 说明 |
+| 类型 | 描述 |
 | --- | --- |
 | [**WDI_SAE_STATUS**](/windows-hardware/drivers/ddi/wditypes/ne-wditypes-_wdi_sae_status) | SAE authentication 失败错误状态。 |
 

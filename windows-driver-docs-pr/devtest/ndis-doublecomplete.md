@@ -1,7 +1,6 @@
 ---
 title: 'DoubleComplete 规则 (ndis) '
 description: DoubleComplete 规则指定 NDIS 驱动程序不得 (OID) 请求中多次完成对象标识符。
-ms.assetid: b79aaf92-3536-4409-ac8d-420a5999409c
 ms.date: 05/21/2018
 keywords:
 - 'DoubleComplete 规则 (ndis) '
@@ -12,12 +11,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 8207d8dfd9186fe55d4fe38c6838198fd4019c54
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: fbc5adbcb05103a7397501c08d3f9e4483c28377
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107478"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96832809"
 ---
 # <a name="doublecomplete-rule-ndis"></a>DoubleComplete 规则 (ndis) 
 

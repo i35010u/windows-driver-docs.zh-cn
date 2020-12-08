@@ -1,7 +1,6 @@
 ---
 title: 'CompleteRequestStatusCheck 规则 (wdm) '
 description: CompleteRequestStatusCheck 规则验证 IRP 中的 i/o 状态值是否与下部驱动程序返回的状态值匹配。
-ms.assetid: 3B61137E-1D10-443B-A653-B32D638B17DB
 ms.date: 05/21/2018
 keywords:
 - 'CompleteRequestStatusCheck 规则 (wdm) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: b563e5b37740354bee346952fe9260911453eaf7
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 4b065b7eabc10fd9c2e6481a1e633ee5edc38c02
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105106"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96832497"
 ---
 # <a name="completerequeststatuscheck-rule-wdm"></a>CompleteRequestStatusCheck 规则 (wdm) 
 
 
-**CompleteRequestStatusCheck**规则验证 IRP 中的 i/o 状态值是否与下部驱动程序返回的状态值匹配。
+**CompleteRequestStatusCheck** 规则验证 IRP 中的 i/o 状态值是否与下部驱动程序返回的状态值匹配。
 
 如果 IRP 状态为 "挂起"，则驱动程序的调度例程不应完成 IRP \_ 。
 

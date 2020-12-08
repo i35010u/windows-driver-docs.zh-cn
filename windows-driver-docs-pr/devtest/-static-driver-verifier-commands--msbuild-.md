@@ -1,15 +1,14 @@
 ---
 title: 静态驱动程序验证程序命令 (MSBuild)
 description: 用于静态驱动程序验证程序的命令
-ms.assetid: F0663631-AD7B-4BFE-8E07-7BB2FFC72911
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e9fb57d3bff8b106898cf13a0ab4283c63245a5c
-ms.sourcegitcommit: d38530f16bdf17715d7d26dfe6d501aa62ec37fd
+ms.openlocfilehash: 5c9e84759aff78d118c579474531cc363511da59
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92210620"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96833139"
 ---
 # <a name="static-driver-verifier-commands-msbuild"></a>静态驱动程序验证程序命令 (MSBuild)
 
@@ -22,12 +21,12 @@ ms.locfileid: "92210620"
 msbuild /t:sdv /p:Inputs="Parameters" ProjectFile /p:Configuration=configuration /p:Platform=platform
 ```
 
-您必须选择一个发布配置 (例如， **/p： configuration = "Windows 7 Release"**) 。 有关支持的版本配置的列表，请参阅 [构建驱动程序](../develop/building-a-driver.md)。 对于 x86) 或**x64** (，平台可以是**win32** (例如， **/p： Platform = Win32**) 。
+您必须选择一个发布配置 (例如， **/p： configuration = "Windows 7 Release"**) 。 有关支持的版本配置的列表，请参阅 [构建驱动程序](../develop/building-a-driver.md)。 对于 x86) 或 **x64** (，平台可以是 **win32** (例如， **/p： Platform = Win32**) 。
 
 >[!NOTE]
 >务必检查计算机的电源管理计划，以确保在分析期间计算机不会进入睡眠状态。
 
-## <a name="parameters"></a>parameters
+## <a name="parameters"></a>参数
 
 ### <a name="scan"></a>/**检测**
 
@@ -45,7 +44,7 @@ msbuild /t:sdv /p:Inputs="Parameters" ProjectFile /p:Configuration=configuration
 
 使用指定规则列表文件中的规则启动验证。 只能列出一个带有此参数的文件。 在规则列表文件中，每一行都可以是一个规则的名称，也可以是 () 的通配符 \* ，这表示所有 SDV 规则。  运行 **/check：*RuleList*. sdv** 命令，并指定驱动程序的 Visual Studio 项目文件 (\* .vcxproj) 。
 
-<em>RuleList</em>**. sdv** 是 [规则列表文件](static-driver-verifier-rule-list-file.md)的完全限定路径和文件名。 文件必须具有扩展名 **sdv** 。 除非文件位于本地目录中，否则路径是必需的。 如果路径或文件名包含空格，则必须将 RuleList 括起来<em>。</em>用引号引起来的**sdv** 。
+<em>RuleList</em>**. sdv** 是 [规则列表文件](static-driver-verifier-rule-list-file.md)的完全限定路径和文件名。 文件必须具有扩展名 **sdv** 。 除非文件位于本地目录中，否则路径是必需的。 如果路径或文件名包含空格，则必须将 RuleList 括起来 <em>。</em>用引号引起来的 **sdv** 。
 
 如果在不指定规则的情况下指定 **/check：** 选项，则会使用驱动程序模型的默认规则集运行 SDV。
 
@@ -83,7 +82,7 @@ msbuild /t:sdv /p:Inputs="Parameters" ProjectFile /p:Configuration=configuration
 
 正在运行 **msbuild/t：/sdv p：/输入 =/？** 如果没有参数，则显示 SDV 命令的用法。
 
-**/Clean**命令删除 SDV 用于创建用于验证的静态驱动程序验证程序报告显示的文件。 运行此命令后，将不再提供用于验证的静态驱动程序验证程序报告显示。
+**/Clean** 命令删除 SDV 用于创建用于验证的静态驱动程序验证程序报告显示的文件。 运行此命令后，将不再提供用于验证的静态驱动程序验证程序报告显示。
 
 ## <a name="examples"></a>示例
 

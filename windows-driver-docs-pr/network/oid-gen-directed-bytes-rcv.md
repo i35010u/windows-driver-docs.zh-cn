@@ -1,16 +1,15 @@
 ---
 title: OID_GEN_DIRECTED_BYTES_RCV
 description: 作为查询，OID_GEN_DIRECTED_BYTES_RCV OID 指定接收的数据包中的字节数，接收时不出现错误。
-ms.assetid: 435941b5-647f-4c5f-84ef-7b4b832c452e
 ms.date: 11/01/2019
 keywords: -从 Windows Vista 开始 OID_GEN_DIRECTED_BYTES_RCV 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: c883c737de52eac95e075b092ad4a3f9ac185a43
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: b9aa9751a4c18ae4fa0390ce65d0d729a16b5823
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89217997"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96833335"
 ---
 # <a name="oid_gen_directed_bytes_rcv"></a>OID \_ 生成 \_ 定向 \_ 字节 \_ RCV
 
@@ -57,7 +56,7 @@ ms.locfileid: "89217997"
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [OID \_ 生成 \_ 统计信息](oid-gen-statistics.md)

@@ -1,7 +1,6 @@
 ---
 title: SM \_ GetBindingCapability 函数
 description: SM \_ GetBindingCapability 方法检索所指示的端口的绑定功能。
-ms.assetid: 11b7df8b-2694-4c49-a97a-ed475f3e841f
 keywords:
 - SM_GetBindingCapability 函数存储设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: d728bdafb26e1d79bf14e9a53eb4f55a6b5a2508
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: ea73e39e24852d848b4461a55504ec107e78aa3c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89188471"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96832589"
 ---
 # <a name="sm_getbindingcapability-function"></a>SM \_ GetBindingCapability 函数
 
@@ -31,9 +30,9 @@ SM \_ GetBindingCapability 方法检索所指示的端口的绑定功能。
 
 ```ManagedCPlusPlus
 void SM_GetBindingCapability(
-   [in, HBAType("HBA_WWN")] uint8                 HbaPortWWN[8],
-   [in, HBAType("HBA_WWN")] uint8                 DomainPortWWN[8],
-   [out, HBA_STATUS_QUALIFIERS] HBA_STATUS        HBAStatus,
+   [in, HBAType("HBA_WWN")] uint8                 HbaPortWWN[8],
+   [in, HBAType("HBA_WWN")] uint8                 DomainPortWWN[8],
+   [out, HBA_STATUS_QUALIFIERS] HBA_STATUS        HBAStatus,
    [out, HBAType("SMHBA_BIND_CAPABILITY")] uint32 HBAType
 );
 ```
@@ -58,7 +57,7 @@ HBA 及其小型小型驱动程序的功能，提供与永久性绑定相关的�
 
 不适用于 WMI 方法。
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 SM \_ GetBindingSupport 方法返回当前启用的绑定功能，而 sm \_ GetBindingCapability 方法指示该端口的绑定功能，而无需引用是否启用特定的绑定。 此 WMI 方法属于 MS \_ SM \_ TargetInformationMethods WMI 类。
@@ -77,7 +76,7 @@ SM \_ GetBindingSupport 方法返回当前启用的绑定功能，而 sm \_ GetB
 <td align="left">台式机</td>
 </tr>
 <tr class="even">
-<td align="left"><p>Header</p></td>
+<td align="left"><p>标头</p></td>
 <td align="left">Hbapiwmi</td>
 </tr>
 </tbody>

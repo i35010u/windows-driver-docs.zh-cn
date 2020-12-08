@@ -1,7 +1,6 @@
 ---
 title: 'CriticalRegions 规则 (wdm) '
 description: CriticalRegions 规则指定在调用 KeLeaveCriticalRegion 之前驱动程序必须调用 KeEnterCriticalRegion，并且驱动程序会在对 KeEnterCriticalRegion 的任何后续调用之前调用 KeLeaveCriticalRegion。 允许 (嵌套调用。 ) 。
-ms.assetid: 5976e24b-ca1c-440e-97c8-ccc2015d1172
 ms.date: 05/21/2018
 keywords:
 - 'CriticalRegions 规则 (wdm) '
@@ -12,21 +11,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 6c128b3ddaced2981e6aba0f1f8943e3e7e02742
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 665c639daf70581da79a5faf3fd66d2de966e224
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103610"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96832489"
 ---
 # <a name="criticalregions-rule-wdm"></a>CriticalRegions 规则 (wdm) 
 
 
-**CriticalRegions**规则指定在调用[**KeLeaveCriticalRegion**](/windows-hardware/drivers/ddi/ntddk/nf-ntddk-keleavecriticalregion)之前驱动程序必须调用[**KeEnterCriticalRegion**](/windows-hardware/drivers/ddi/ntddk/nf-ntddk-keentercriticalregion) ，并且驱动程序会在对**KeEnterCriticalRegion**的任何后续调用之前调用**KeLeaveCriticalRegion** 。 允许 (嵌套调用。 ) 
+**CriticalRegions** 规则指定在调用 [**KeLeaveCriticalRegion**](/windows-hardware/drivers/ddi/ntddk/nf-ntddk-keleavecriticalregion)之前驱动程序必须调用 [**KeEnterCriticalRegion**](/windows-hardware/drivers/ddi/ntddk/nf-ntddk-keentercriticalregion) ，并且驱动程序会在对 **KeEnterCriticalRegion** 的任何后续调用之前调用 **KeLeaveCriticalRegion** 。 允许 (嵌套调用。 ) 
 
 此规则还指定驱动程序调用 **KeLeaveCriticalRegion** ，以便在其返回之前，重新启用 (apc) 的常规内核异步过程调用。
 
-**KeEnterCriticalRegion**和**KeLeaveCriticalRegion**的 WDK 文档说明了这些函数的调用方可以以 IRQL &lt; = APC \_ 级别运行。 在这种情况下，此规则将强制实施最佳做法建议。
+**KeEnterCriticalRegion** 和 **KeLeaveCriticalRegion** 的 WDK 文档说明了这些函数的调用方可以以 IRQL &lt; = APC \_ 级别运行。 在这种情况下，此规则将强制实施最佳做法建议。
 
 **驱动程序模型： WDM**
 

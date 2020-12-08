@@ -1,17 +1,16 @@
 ---
 title: WDI_TLV_SEND_ACTION_FRAME_RESPONSE_PARAMETERS
 description: WDI_TLV_SEND_ACTION_FRAME_RESPONSE_PARAMETERS 是包含 OID_WDI_TASK_SEND_RESPONSE_ACTION_FRAME 的参数的 TLV。
-ms.assetid: F062F8A2-EEEF-4EFC-AEC8-F1D7AB13C899
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_SEND_ACTION_FRAME_RESPONSE_PARAMETERS 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 2ecffffc8c5caf5687072f260a8d649beef16abc
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: dd755ac4803e02126e09516d627ccd7c1a357a71
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89209569"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96834175"
 ---
 # <a name="wdi_tlv_send_action_frame_response_parameters"></a>WDI \_ TLV \_ 发送 \_ 操作 \_ 帧 \_ 响应 \_ 参数
 
@@ -23,7 +22,7 @@ WDI \_ tlv \_ 发送 \_ 操作 \_ 帧 \_ 响应 \_ 参数是一个 TLV，其中�
 
 0xE2
 
-## <a name="length"></a>Length
+## <a name="length"></a>长度
 
 
 Sum (所有包含的元素的大小) 。
@@ -31,7 +30,7 @@ Sum (所有包含的元素的大小) 。
 ## <a name="values"></a>值
 
 
-| 类型                                              | 说明                                                                                                                                     |
+| 类型                                              | 描述                                                                                                                                     |
 |---------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------|
 | WDI \_ 信道 \_ 号 (UINT32)                      | 要将操作帧发送到的通道，还会按确认后停留时间中指定的频率进行逗留。                                    |
 | WDI \_ 波段 \_ ID (UINT32)                             | 要在其上发送操作帧的带区的 ID。                                                                                           |
@@ -56,7 +55,7 @@ Sum (所有包含的元素的大小) 。
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
-<td><p>Windows Server 2016</p></td>
+<td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
 <td><p>标头</p></td>

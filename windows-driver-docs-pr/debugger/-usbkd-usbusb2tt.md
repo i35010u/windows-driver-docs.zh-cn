@@ -1,7 +1,6 @@
 ---
 title: usbkd.usbusb2tt
 description: Usbkd. usbusb2tt 命令显示 usbport _TT 结构中的信息。
-ms.assetid: 0020C59D-EC86-4820-8882-F801C0C7936E
 keywords:
 - usbkd usbusb2tt Windows 调试
 ms.date: 05/23/2017
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 2be6fc51b099e10e41cf8de8c351667c16a63ecf
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 66bdc735d67cdff18a6f3dbfc4e318287541e97a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89217917"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96833857"
 ---
 # <a name="usbkdusbusb2tt"></a>!usbkd.usbusb2tt
 
 
-**！ Usbkd. usbusb2tt**命令显示 usbport 中的信息 **！ \_TT**结构。
+**！ Usbkd. usbusb2tt** 命令显示 usbport 中的信息 **！ \_TT** 结构。
 
 ```dbgcmd
 !usbkd.usbusb2tt StructAddr

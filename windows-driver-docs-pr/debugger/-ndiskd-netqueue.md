@@ -1,7 +1,6 @@
 ---
 title: ndiskd.netqueue
 description: Ndiskd. netqueue 扩展显示有关 NETTXQUEUE 或 NETRXQUEUE 对象的信息。
-ms.assetid: 101F29AA-5CEE-41F8-A3EC-AA2E74B8E074
 keywords:
 - ndiskd netqueue Windows 调试
 ms.date: 06/17/2020
@@ -12,16 +11,16 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 2d3e05fdf8fc4bad999972dba1c10458b93e4b9b
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 27ee6335977759101fdf4daf42d02b22a1708c8e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89211289"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96833905"
 ---
 # <a name="ndiskdnetqueue"></a>!ndiskd.netqueue
 
-**！ Ndiskd netqueue**扩展显示有关 NETTXQUEUE 或 NETRXQUEUE 对象的信息。
+**！ Ndiskd netqueue** 扩展显示有关 NETTXQUEUE 或 NETRXQUEUE 对象的信息。
 
 有关网络适配器 WDF 类扩展的详细信息 (NetAdapterCx) ，请参阅 [网络适配器 Wdf Class extension (Cx) ](../netcx/index.md)。
 
@@ -43,14 +42,14 @@ Ndiskd.dll
 
 ### <a name="examples"></a>示例
 
-**注意**   若要查看说明 NETTXQUEUE 和 NETRXQUEUE 对象与 NetAdapterCx 中其他对象的关系的关系图，请参阅[对象的摘要](../netcx/summary-of-netadaptercx-objects.md)。
+**注意**  若要查看说明 NETTXQUEUE 和 NETRXQUEUE 对象与 NetAdapterCx 中其他对象的关系的关系图，请参阅 [对象的摘要](../netcx/summary-of-netadaptercx-objects.md) 。
 
 若要获取 NETTXQUEUE 或 NETRXQUEUE 的句柄，请执行以下步骤：
 
 1. 运行 [**！ ndiskd. get-netadapter**](-ndiskd-netadapter.md) 扩展。
 2. 单击安装了 NetAdapterCx 驱动程序的 Get-netadapter 的句柄。
 3. 单击 Get-netadapter 的 GET-NETADAPTER 对象右侧的 "详细信息" 链接，以运行 [**！ ndiskd. cxadapter**](-ndiskd-cxadapter.md) 扩展。
-4. 输入包含 *-数据路径*参数的 **！ cxadapter**命令，以查看 get-netadapter 的数据路径队列。
+4. 输入包含 *-数据路径* 参数的 **！ cxadapter** 命令，以查看 get-netadapter 的数据路径队列。
 
 有关此过程的详细信息，请参阅 **！ ndiskd. cxadapter** 主题中的示例。
 在下面的示例中，查找此 GET-NETADAPTER 的 NETTXQUEUE，ffffd1022f512700 的句柄。
@@ -92,7 +91,7 @@ DATAPATH QUEUES
     EvtQueueCancel                         fffff800341598d8   RtEthSample+98d8
 ```
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [网络驱动程序设计指南](../network/index.md)
 
@@ -100,7 +99,7 @@ DATAPATH QUEUES
 
 [调试网络堆栈](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-175-Debugging-the-Network-Stack)
 
-[**NDIS 扩展 ( # A0) **](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 扩展 ( # A0)**](ndis-extensions--ndiskd-dll-.md)
 
 [**!ndiskd.help**](-ndiskd-help.md)
 
