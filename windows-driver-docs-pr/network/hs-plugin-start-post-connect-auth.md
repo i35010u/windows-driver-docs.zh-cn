@@ -1,35 +1,34 @@
 ---
 title: HS_PLUGIN_START_POST_CONNECT_AUTH 函数
 description: 调用 HS_PLUGIN_START_POST_CONNECT_AUTH 函数来执行任何需要的连接后身份验证，以通过网络对设备进行身份验证。
-ms.assetid: f52236fc-2afd-46e2-ae88-7c4fa10f8d59
 keywords:
 - typedef DWORD (WINAPI HS_PLUGIN_START_POST_CONNECT_AUTH 从 Windows Vista 开始) 函数网络驱动程序
 ms.date: 07/31/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 51600a8658d7edc5f74bea8b731a8033ffa38e97
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: 13c9c585a4e9005c15b0cb6f6b2911d107ff28c6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89402996"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96810011"
 ---
 # <a name="hs_plugin_start_post_connect_auth-function"></a>HS \_ 插件 \_ 启动 \_ 后 \_ 连接 \_ 身份验证功能
 
 [!include[Wi-Fi Hotspot Offloading deprecation](../includes/wi-fi-hotspot-offloading-deprecation.md)]
 
 
-**HS \_ 插件会 \_ 启动 \_ post \_ \_ AUTH**功能，以执行在网络上对设备进行身份验证所需的任何连接后身份验证。
+**HS \_ 插件会 \_ 启动 \_ post \_ \_ AUTH** 功能，以执行在网络上对设备进行身份验证所需的任何连接后身份验证。
 
 <a name="syntax"></a>语法
 ------
 
 ```ManagedCPlusPlus
  typedef DWORD (WINAPI *HS_PLUGIN_START_POST_CONNECT_AUTH)(
-  _In_ DWORD                 dwConnectionId,
-  _In_ HS_CONNECTION_CONTEXT *pConnectContext,
-  _In_ HS_SIM_DATA           *pSIMData,
-  _In_ HS_NETWORK_IDENTITY   *pNetworkIdentity,
-  _In_ HS_NETWORK_PROFILE    *pNetworkProfile
+  _In_ DWORD                 dwConnectionId,
+  _In_ HS_CONNECTION_CONTEXT *pConnectContext,
+  _In_ HS_SIM_DATA           *pSIMData,
+  _In_ HS_NETWORK_IDENTITY   *pNetworkIdentity,
+  _In_ HS_NETWORK_PROFILE    *pNetworkProfile
 );
 ```
 
@@ -39,16 +38,16 @@ ms.locfileid: "89402996"
 *dwConnectionId* \[中\]  
 网络连接的唯一标识符。
 
-* \* pConnectContext* \[\]  
+*\* pConnectContext* \[\]  
 指向一个 [**HS \_ 连接 \_ 上下文**](hs-connection-context.md) 结构的指针，该结构包含插件进行后连接身份验证所需的信息。
 
-* \* pSIMData* \[\]  
+*\* pSIMData* \[\]  
 一个指向 [**HS \_ sim \_ 数据**](hs-sim-data.md) 结构的指针，该数据包包含插件要求的 sim 中的信息，用于连接后身份验证。
 
-* \* pNetworkIdentity* \[\]  
+*\* pNetworkIdentity* \[\]  
 指向网络的 [**HS \_ 网络 \_ 标识**](hs-network-identity.md) 结构的指针。
 
-* \* pNetworkProfile* \[\]  
+*\* pNetworkProfile* \[\]  
 指向包含网络配置文件的 [**HS \_ 网络 \_ 配置文件**](hs-network-profile.md) 结构的指针。
 
 <a name="return-value"></a>返回值
@@ -77,13 +76,13 @@ ms.locfileid: "89402996"
 <td><p>Windows 10 移动版</p></td>
 </tr>
 <tr class="even">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Hotspotoffloadplugin (包含 Hotspotoffloadplugin) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**HS \_ 连接 \_ 上下文**](hs-connection-context.md)

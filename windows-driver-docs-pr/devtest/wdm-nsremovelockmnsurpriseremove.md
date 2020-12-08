@@ -1,7 +1,6 @@
 ---
 title: 'NsRemoveLockMnSurpriseRemove 规则 (wdm) '
 description: NsRemoveLockMnSurpriseRemove 规则验证 \_ \_ 当 \_ \_ 使用 minorFunction IRP \_ MN \_ SUPRISE 删除处理 IRP MJ PNP 请求时，驱动程序是否未返回状态 \_ 。 此规则仅适用于 FDO 和 FIDO 驱动程序。
-ms.assetid: A7F444B1-615F-4DE2-B1AF-C179C5103DD9
 ms.date: 05/21/2018
 keywords:
 - 'NsRemoveLockMnSurpriseRemove 规则 (wdm) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 356842db5f71b1bd843db8dabf549c8b68f0babd
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 9b297fbfb6ef2405a15f6584b63b7f2ed9463d0e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107430"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96811031"
 ---
 # <a name="nsremovelockmnsurpriseremove-rule-wdm"></a>NsRemoveLockMnSurpriseRemove 规则 (wdm) 
 
 
-**NsRemoveLockMnSurpriseRemove**规则验证 \_ \_ 当 \_ \_ 使用 MINORFUNCTION IRP \_ MN \_ SUPRISE 删除处理 IRP MJ PNP 请求时，驱动程序是否未返回状态 \_ 。 此规则仅适用于 FDO 和 FIDO 驱动程序。
+**NsRemoveLockMnSurpriseRemove** 规则验证 \_ \_ 当 \_ \_ 使用 MINORFUNCTION IRP \_ MN \_ SUPRISE 删除处理 IRP MJ PNP 请求时，驱动程序是否未返回状态 \_ 。 此规则仅适用于 FDO 和 FIDO 驱动程序。
 
 **驱动程序模型： WDM**
 

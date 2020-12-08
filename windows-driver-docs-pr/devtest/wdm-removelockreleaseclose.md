@@ -1,7 +1,6 @@
 ---
 title: 'RemoveLockReleaseClose 规则 (wdm) '
 description: 规则 RemoveLockReleaseClose 验证是否在严格替换中使用对 IoAcquireRemoveLock 和 IoReleaseRemoveLock 的调用。 而且，在调度例程结束时，驱动程序不应持有删除锁定。
-ms.assetid: C59C1DF7-9359-4F7D-9477-8FAEF0714421
 ms.date: 05/21/2018
 keywords:
 - 'RemoveLockReleaseClose 规则 (wdm) '
@@ -12,12 +11,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: d92ad025914d55108de9e4f9b2d65c44fc89a963
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 65ad8c5c2b4812f1e76cf70bb782efb42b0a12a3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104234"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96810871"
 ---
 # <a name="removelockreleaseclose-rule-wdm"></a>RemoveLockReleaseClose 规则 (wdm) 
 

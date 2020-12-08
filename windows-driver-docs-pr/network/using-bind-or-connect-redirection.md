@@ -1,15 +1,14 @@
 ---
 title: 使用绑定或连接重定向
 description: 使用绑定或连接重定向
-ms.assetid: 6b27a9ad-53e9-4e80-bf03-79665f8a82a0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 89b15f8a1060b78030f3d9c72a032e4bd96df289
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: cbca1d5c3a6bb31f3ee7becaadd3f79210f522f6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90715518"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96809909"
 ---
 # <a name="using-bind-or-connect-redirection"></a>使用绑定或连接重定向
 
@@ -18,13 +17,13 @@ Windows 筛选平台的连接/绑定重定向功能 (WFP) 使应用程序层强�
 
 此功能在 Windows 7 及更高版本中可用。
 
-**注意**   \_ [WFP 驱动程序示例](https://go.microsoft.com/fwlink/p/?LinkId=618934)中的 ClassifyFunctions ProxyCallouts 模块包含的代码演示了连接/绑定重定向。
+**注意** \_ [WFP 驱动程序示例](https://go.microsoft.com/fwlink/p/?LinkId=618934) 中的 ClassifyFunctions ProxyCallouts 模块包含的代码演示了连接/绑定重定向。
 
  
 
 WFP 连接重定向标注可重定向应用程序的连接请求，使应用程序可以连接到代理服务而不是原始目标。 代理服务有两个套接字：一个用于重定向的原始连接，另一个用于新代理的出站连接。
 
-WFP 重定向记录是不透明数据的缓冲区，WFP 必须在 FWPM 层的出站代理连接上设置，这是在 ** \_ 层 ale authentication authentication \_ \_ \_ Connect \_ 重定向 \_ V4** 和 **FWPM \_ 层 \_ ale \_ \_ \_ \_ ** authentication authentication
+WFP 重定向记录是不透明数据的缓冲区，WFP 必须在 FWPM 层的出站代理连接上设置，这是在 **\_ 层 ale authentication authentication \_ \_ \_ Connect \_ 重定向 \_ V4** 和 **FWPM \_ 层 \_ ale \_ \_ \_ \_** authentication authentication
 
 由于可以使用绑定重定向，因此不需要在连接重定向中支持本地地址和端口修改。 不支持在连接重定向过程中更改本地地址和端口。
 
@@ -45,7 +44,7 @@ WFP 重定向记录是不透明数据的缓冲区，WFP 必须在 FWPM 层的出
 重定向层仅适用于 windows 7 和更高版本的 Windows。 支持这些层分类的标注驱动程序必须使用 [**FwpsCalloutRegister1**](/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpscalloutregister1) 或更高版本注册，而不是使用较旧的 [**FwpsCalloutRegister0**](/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpscalloutregister0) 函数。
 
 > [!IMPORTANT]
-> 重定向不可用于所有类型的网络流量。 以下列表显示了重定向支持的数据包类型：
+> 重定向不可用于所有类型的网络流量。 以下列表显示了重定向支持的数据包类型：
 > - TCP
 > - UDP
 > - 不带标头包含选项的原始 UDPv4
@@ -67,7 +66,7 @@ WFP 重定向记录是不透明数据的缓冲区，WFP 必须在 FWPM 层的出
 
 4.  调用 [**FwpsAcquireWritableLayerDataPointer0**](/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpsacquirewritablelayerdatapointer0) 可获取调用 [classifyFn](/windows-hardware/drivers/ddi/_netvista/) 的层的可写数据结构。 将 *writableLayerData* out 参数强制转换为与该层对应的结构， [**FWPS \_ 绑定 \_ REQUEST0**](/windows-hardware/drivers/ddi/fwpsk/ns-fwpsk-_fwps_bind_request0) 或 [**FWPS \_ CONNECT \_ REQUEST0**](/windows-hardware/drivers/ddi/fwpsk/ns-fwpsk-_fwps_connect_request0)。
 
-    从 Windows 8 开始，如果标注驱动程序重定向到本地服务，则必须调用[**FwpsRedirectHandleCreate0**](/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpsredirecthandlecreate0)来填充[**FWPS \_ 连接 \_ REQUEST0**](/windows-hardware/drivers/ddi/fwpsk/ns-fwpsk-_fwps_connect_request0)结构的**localRedirectHandle**成员，才能使本地代理正常工作。
+    从 Windows 8 开始，如果标注驱动程序重定向到本地服务，则必须调用 [**FwpsRedirectHandleCreate0**](/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpsredirecthandlecreate0)来填充 [**FWPS \_ 连接 \_ REQUEST0**](/windows-hardware/drivers/ddi/fwpsk/ns-fwpsk-_fwps_connect_request0)结构的 **localRedirectHandle** 成员，才能使本地代理正常工作。
 
 5.  根据需要对层数据进行更改：
 
@@ -98,7 +97,7 @@ WFP 重定向记录是不透明数据的缓冲区，WFP 必须在 FWPM 层的出
                           RtlUshortByteSwap(params->proxyPort));
         ```
 
-    3.  如果你的标注驱动程序重定向到本地服务，则它应在[**FWPS \_ CONNECT \_ REQUEST0**](/windows-hardware/drivers/ddi/fwpsk/ns-fwpsk-_fwps_connect_request0)结构的**localRedirectTargetPID**成员中设置本地代理 PID。
+    3.  如果你的标注驱动程序重定向到本地服务，则它应在 [**FWPS \_ CONNECT \_ REQUEST0**](/windows-hardware/drivers/ddi/fwpsk/ns-fwpsk-_fwps_connect_request0)结构的 **localRedirectTargetPID** 成员中设置本地代理 PID。
     4.  如果你的标注驱动程序重定向到本地服务，则它应设置 FwpsRedirectHandleCreate0 在 FWPS **localRedirectHandle** \_ CONNECT REQUEST0 结构的 localRedirectHandle 成员中返回的重定向句柄 \_ 。
 
 6.  调用 [**FwpsApplyModifiedLayerData0**](/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpsapplymodifiedlayerdata0) 以应用对数据所做的更改。
@@ -163,7 +162,7 @@ WFP 重定向记录是不透明数据的缓冲区，WFP 必须在 FWPM 层的出
 
 6.  调用 [**FwpsAcquireWritableLayerDataPointer0**](/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpsacquirewritablelayerdatapointer0) 可获取调用 [classifyFn](/windows-hardware/drivers/ddi/_netvista/) 的层的可写数据结构。 将 *writableLayerData* out 参数强制转换为与该层对应的结构， [**FWPS \_ 绑定 \_ REQUEST0**](/windows-hardware/drivers/ddi/fwpsk/ns-fwpsk-_fwps_bind_request0) 或 [**FWPS \_ CONNECT \_ REQUEST0**](/windows-hardware/drivers/ddi/fwpsk/ns-fwpsk-_fwps_connect_request0)。
 
-    从 Windows 8 开始，如果标注驱动程序在本地重定向，则必须调用[**FwpsRedirectHandleCreate0**](/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpsredirecthandlecreate0)来填充[**FWPS \_ CONNECT \_ REQUEST0**](/windows-hardware/drivers/ddi/fwpsk/ns-fwpsk-_fwps_connect_request0)结构的**localRedirectHandle**成员，以使代理工作。
+    从 Windows 8 开始，如果标注驱动程序在本地重定向，则必须调用 [**FwpsRedirectHandleCreate0**](/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpsredirecthandlecreate0)来填充 [**FWPS \_ CONNECT \_ REQUEST0**](/windows-hardware/drivers/ddi/fwpsk/ns-fwpsk-_fwps_connect_request0)结构的 **localRedirectHandle** 成员，以使代理工作。
 
 7.  在私有上下文结构中存储任何标注特定的上下文信息，如以下示例中所示：
 
@@ -223,14 +222,14 @@ if(connectRequest->previousVersion->modifierFilterId != filterId)
 
 -   **FWPS \_元数据 \_ 字段 \_ 原始 \_ 目标** 包含流的原始目标地址。
 
-[**FWPS \_ CONNECT \_ REQUEST0**](/windows-hardware/drivers/ddi/fwpsk/ns-fwpsk-_fwps_connect_request0)结构包含名为**localRedirectTargetPID**的成员。 要使任何环回 connect 重定向有效，必须用负责重定向流的进程的 PID 来填充此字段。 此数据与引擎在 ALE 授权连接层上传递的数据相同， **FWPS \_ 元数据 \_ 字段 \_ 本地 \_ 重定向 \_ 目标 \_ ID**。
+[**FWPS \_ CONNECT \_ REQUEST0**](/windows-hardware/drivers/ddi/fwpsk/ns-fwpsk-_fwps_connect_request0)结构包含名为 **localRedirectTargetPID** 的成员。 要使任何环回 connect 重定向有效，必须用负责重定向流的进程的 PID 来填充此字段。 此数据与引擎在 ALE 授权连接层上传递的数据相同， **FWPS \_ 元数据 \_ 字段 \_ 本地 \_ 重定向 \_ 目标 \_ ID**。
 
-从 Windows 8 开始，代理服务需要对代理服务的原始终结点发出 [**SIO \_ 查询 \_ wfp \_ 连接 \_ 重定向 \_ 记录**](./sio-query-wfp-connection-redirect-records.md) 和 [**SIO \_ 查询 \_ wfp \_ 连接 \_ 重定向 \_ 上下文**](./sio-query-wfp-connection-redirect-context.md) IOCTLs，使用 [**WSAIoctl**](/windows/win32/api/winsock2/nf-winsock2-wsaioctl)。 此外，必须在新的 (代理) 套接字上，使用**WSAIoctl**对[**SIO \_ SET \_ WFP \_ 连接 \_ 重定向 \_ 记录**](./sio-set-wfp-connection-redirect-records.md)IOCTL 发出。
+从 Windows 8 开始，代理服务需要对代理服务的原始终结点发出 [**SIO \_ 查询 \_ wfp \_ 连接 \_ 重定向 \_ 记录**](./sio-query-wfp-connection-redirect-records.md) 和 [**SIO \_ 查询 \_ wfp \_ 连接 \_ 重定向 \_ 上下文**](./sio-query-wfp-connection-redirect-context.md) IOCTLs，使用 [**WSAIoctl**](/windows/win32/api/winsock2/nf-winsock2-wsaioctl)。 此外，必须在新的 (代理) 套接字上，使用 **WSAIoctl** 对 [**SIO \_ SET \_ WFP \_ 连接 \_ 重定向 \_ 记录**](./sio-set-wfp-connection-redirect-records.md)IOCTL 发出。
 
 ## <a name="related-topics"></a>相关主题
 
 
-[与版本无关的 WFP 名称并面向特定版本的 Windows](/windows/desktop/FWP/wfp-version-independent-names-and-targeting-specific-versions-of-windows)
+[WFP Version-Independent 名称和面向特定版本的 Windows](/windows/desktop/FWP/wfp-version-independent-names-and-targeting-specific-versions-of-windows)
 
  
 

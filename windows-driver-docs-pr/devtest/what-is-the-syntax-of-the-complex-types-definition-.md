@@ -1,15 +1,14 @@
 ---
 title: 复杂类型定义的语法是什么
 description: 复杂类型定义的语法是什么
-ms.assetid: c378839a-3714-4b4e-94a6-d3e1dcf8a610
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 551ac6f7ef1f27bcf55069e9b9d8fb410ca31cd4
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: ed495178b28ec5cbdc068d511c11012768dba130
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89384402"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96810699"
 ---
 # <a name="what-is-the-syntax-of-the-complex-types-definition"></a>复杂类型定义的语法是什么？
 
@@ -34,7 +33,7 @@ DEFINE_CPLX_TYPE(.*ls, WPP_LOGXWCS, const xwcs_t&, ItemPWString,"s", _xwcs_t_, 0
 WPP 使用此字段来标识复杂类型。 例如， **。 \*ls**。
 
 <span id="HelperMacroName"></span><span id="helpermacroname"></span><span id="HELPERMACRONAME"></span>*HelperMacroName*  
-一个帮助器宏，它以长度/地址对的格式将参数转换为可变长度数组。 **TraceMessage**函数需要此格式的变量参数列表中的每个条目。
+一个帮助器宏，它以长度/地址对的格式将参数转换为可变长度数组。 **TraceMessage** 函数需要此格式的变量参数列表中的每个条目。
 
 若要正确设置参数的格式，必须在 helper 宏的定义中使用 [**WPP \_ LOGPAIR**](/previous-versions/windows/hardware/previsioning-framework/ff556197(v=vs.85)) 宏，如以下示例中所示：
 
@@ -42,7 +41,7 @@ WPP 使用此字段来标识复杂类型。 例如， **。 \*ls**。
 #define HelperMacroName(x) WPP_LOGPAIR(length, x)
 ```
 
-**注意**   根据要实现的跟踪逻辑，可能需要使用多个 WPP LOGPAIR 宏来定义宏 \_ 。
+**注意**  根据要实现的跟踪逻辑，可能需要使用多个 WPP LOGPAIR 宏来定义宏 \_ 。
 
  
 
@@ -56,7 +55,7 @@ WPP 使用此字段来标识复杂类型。 例如， **。 \*ls**。
 指定 WPP 预处理器可识别的格式说明符，如 **"s"**。
 
 <span id="TypeSignature"></span><span id="typesignature"></span><span id="TYPESIGNATURE"></span>*TypeSignature*  
-追加到函数名称的字符串，用于将它与复杂类型相关联。 下划线之间必须有一个或多个字符。 例如， ** \_ xwcs \_ t \_ **。
+追加到函数名称的字符串，用于将它与复杂类型相关联。 下划线之间必须有一个或多个字符。 例如， **\_ xwcs \_ t \_**。
 
 <span id="Priority"></span><span id="priority"></span><span id="PRIORITY"></span>*大事*  
 此元素是保留元素，且必须设置为零。
@@ -111,7 +110,7 @@ struct xwcs_t {
 };
 ```
 
-现在，添加一个宏，将数据类型组合为 **xwstr \_ t**类型的字符串，如下所示：
+现在，添加一个宏，将数据类型组合为 **xwstr \_ t** 类型的字符串，如下所示：
 
 ```
 #define WPP_LOGXWCS(x) WPP_LOGPAIR(2, &(x)._len) WPP_LOGPAIR((x)._len, (x)._buf)

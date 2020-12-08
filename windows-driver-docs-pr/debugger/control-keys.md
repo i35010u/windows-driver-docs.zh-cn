@@ -1,18 +1,17 @@
 ---
 title: 控制键
 description: 控制键
-ms.assetid: 48a0b379-1911-4f43-9288-db9c4d55e0bd
 keywords:
-- 控制键
-- 控制键，完成列表
+- Ctrl 键
+- 控制键，完整列表
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 63fe10fc533876213afe44d3f6ed35f62c2725f1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: cd472bce69af089b807deb70fac726d5c0bcdff3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63375553"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96809705"
 ---
 # <a name="control-keys"></a>控制键
 
@@ -20,11 +19,11 @@ ms.locfileid: "63375553"
 ## <span id="ddk_control_keys_dbg"></span><span id="DDK_CONTROL_KEYS_DBG"></span>
 
 
-引用的本部分介绍可以在调试器中使用的各种控制密钥。
+引用的此部分讨论可在调试器中使用的各种控件键。
 
-这些控制密钥工作在 KD 且在某些情况下，CDB。 其中许多也适用于 WinDbg （而不只是 CTRL 使用 CTRL + ALT 键）。
+这些控制键适用于 KD 和（在某些情况下为 CDB）。 其中的许多也在 WinDbg (使用 CTRL + ALT 键，而不是只使用 CTRL) 。
 
-WinDbg 还使用 ctrl、 ALT 键和 F 键作为键盘快捷方式来切换菜单选项。 请参阅[键盘快捷方式](keyboard-shortcuts.md)有关它们的含义的列表。
+WinDbg 还使用 CTRL 键、ALT 键和 F 键作为快捷键来切换菜单选项。 有关其含义的列表，请参阅 [快捷键](keyboard-shortcuts.md) 。
 
  
 

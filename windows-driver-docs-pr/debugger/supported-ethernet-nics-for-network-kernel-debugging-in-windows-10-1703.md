@@ -1,15 +1,14 @@
 ---
 title: Windows 10 版本 1703 (Redstone 2) 版本15063中的网络内核调试支持的以太网 Nic
 description: 了解当目标计算机运行的是 Windows 10 版本1703时，通过以太网网络电缆进行内核调试。
-ms.assetid: 3A84C721-EB58-4B32-AAA6-764494190D30
 ms.date: 06/03/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 93eadb111ef5216001c1aea0c945eaf84019778e
-ms.sourcegitcommit: 372464be981a39781c71049126f36891cb5d0cad
+ms.openlocfilehash: dd8d66b5dcdb947dc4b43098d18390cd123e50ae
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91646093"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96809664"
 ---
 # <a name="supported-ethernet-nics-for-network-kernel-debugging-in-windows-10-version-1703-redstone-2-build-15063"></a>Windows 10 版本 1703 (Redstone 2) 版本15063中的网络内核调试支持的以太网 Nic
 

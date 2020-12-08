@@ -1,27 +1,26 @@
 ---
-title: MSiSCSI\_DiscoveryOperations WMI 类
-description: MSiSCSI\_DiscoveryOperations WMI 类
-ms.assetid: 6d626158-8c92-483e-95b7-c0b9fc897c66
+title: MSiSCSI \_ DISCOVERYOPERATIONS WMI 类
+description: MSiSCSI \_ DISCOVERYOPERATIONS WMI 类
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 2e72af484c8bfd13ca0b6da8f9272cb8563f8140
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6ceef9c85510e0992427b3950bd60de62020e9d8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63361821"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96811427"
 ---
-# <a name="msiscsidiscoveryoperations-wmi-class"></a>MSiSCSI\_DiscoveryOperations WMI 类
+# <a name="msiscsi_discoveryoperations-wmi-class"></a>MSiSCSI \_ DISCOVERYOPERATIONS WMI 类
 
 
 ## <span id="ddk_msiscsi_discoveryoperations_wmi_class_kr"></span><span id="DDK_MSISCSI_DISCOVERYOPERATIONS_WMI_CLASS_KR"></span>
 
 
-MSiSCSI\_DiscoveryOperations WMI 类定义发起程序必须实现以支持发现操作的方法。 此类中定义，则不发布*Discover.mof*。
+MSiSCSI \_ DISCOVERYOPERATIONS WMI 类定义发起方为支持发现操作而必须实现的方法。 此类已取消发布，并在 *发现* 中定义。
 
-支持发现目标的发起程序必须实现 MSiSCSI\_DiscoveryOperations。
+支持目标发现的发起程序必须实现 MSiSCSI \_ DiscoveryOperations。
 
-属于此类的每个方法的托管的对象格式 (MOF) 语法所述的方法的参考页。 以下主题介绍了这些方法和其随附的结构：
+对于属于此类的每个方法，托管对象格式 (MOF) 语法在该方法的参考页中进行了介绍。 以下主题介绍了这些方法及其随附的结构：
 
 [ReportDiscoveredTargets](reportdiscoveredtargets.md)
 

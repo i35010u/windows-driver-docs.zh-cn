@@ -1,7 +1,6 @@
 ---
 title: 'MultRemoveLock 规则 (wdm) '
 description: MultRemoveLock 规则验证只通过一个唯一的删除锁定来调用 IoAcquireRemoveLock。 这是一个警告规则。
-ms.assetid: 902E3774-67A6-44B4-9904-71CE440CB8FA
 ms.date: 05/21/2018
 keywords:
 - 'MultRemoveLock 规则 (wdm) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 6d99ffa84a5769b6cd07d4896edc3ae30806e4d0
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: de72f5476a7f05f8725522781ceb23bb4f438e20
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107434"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96811037"
 ---
 # <a name="multremovelock-rule-wdm"></a>MultRemoveLock 规则 (wdm) 
 
 
-**MultRemoveLock**规则验证只通过一个唯一的删除锁定来调用[**IoAcquireRemoveLock**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioacquireremovelock) 。 这是一个警告规则。
+**MultRemoveLock** 规则验证只通过一个唯一的删除锁定来调用 [**IoAcquireRemoveLock**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioacquireremovelock) 。 这是一个警告规则。
 
 **驱动程序模型： WDM**
 

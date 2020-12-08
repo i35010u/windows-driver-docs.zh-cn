@@ -1,18 +1,17 @@
 ---
 title: 流同步
 description: 流同步
-ms.assetid: bbf589f1-ca4b-41a2-970d-b31c7761eb1a
 keywords:
 - 同步 WDK DVD 解码器
 - 流同步 WDK DVD 解码器
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6617b776b1e785edff086964649655817454cb33
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 9993cea0c1f297d4692add01d4ca48a85f818cf4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89187653"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96809836"
 ---
 # <a name="stream-synchronization"></a>流同步
 

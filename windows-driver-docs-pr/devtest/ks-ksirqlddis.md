@@ -1,7 +1,6 @@
 ---
 title: 'KsIrqlDDIs 规则 ( # A1'
 description: KsIrqlDDIs 规则指定内核流式处理 (KS) 微型端口驱动程序在正确的 IRQL 级别调用 KS DDIs。
-ms.assetid: 060CAFBC-3BA6-40C7-91A1-8AFCB082A683
 ms.date: 05/21/2018
 keywords:
 - 'KsIrqlDDIs 规则 ( # A1'
@@ -12,12 +11,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 971584623261024ab00f52b5e54e77c659f2efbf
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: beb6af22d02ca5ffde7a442f662311d931ab518f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105650"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96811173"
 ---
 # <a name="ksirqlddis-rule-"></a>KsIrqlDDIs 规则 ( # A1
 

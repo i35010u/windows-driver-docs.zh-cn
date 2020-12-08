@@ -1,17 +1,16 @@
 ---
 title: 压缩图片解码集
 description: 压缩图片解码集
-ms.assetid: 7d6e2050-663e-4370-a210-1d319cfbde6d
 keywords:
 - 压缩的图片解码设置 WDK DirectX VA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0b424a8d684218e72632aae2a7c08689a103dcb2
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 41e8bf08cdfcfdc4f40eb706f96a9f8946de527a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89065264"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96810219"
 ---
 # <a name="compressed-picture-decoding-set"></a>压缩图片解码集
 

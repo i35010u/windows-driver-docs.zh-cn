@@ -1,18 +1,17 @@
 ---
 title: 检查 PendingReturned 标志
 description: 检查 PendingReturned 标志
-ms.assetid: cdcdffb0-4210-4bf0-984e-b0c3234df129
 keywords:
 - IRP 完成例程 WDK 文件系统，PendingReturned 标志
 - PendingReturned 标志
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 43c6a67abb3980b44ab2768612953a7da80f0003
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 4e8f2b8e13016ce0793e52dde4340689083a275f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89065342"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96810045"
 ---
 # <a name="checking-the-pendingreturned-flag"></a>检查 PendingReturned 标志
 

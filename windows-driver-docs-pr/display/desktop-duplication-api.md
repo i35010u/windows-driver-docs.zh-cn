@@ -1,15 +1,14 @@
 ---
 title: 桌面复制
 description: Windows 8 引入了新的 Microsoft DirectX 图形基础结构 (DXGI) 的 API，使独立软件供应商 (Isv) 支持桌面协作和远程桌面访问方案。
-ms.assetid: 5D4CBEA1-3C13-4B5C-A43D-7E6DBBB1A80F
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 94075638f96aaa3f5ba4e3de60e87b68e246b7d6
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 5056a280c7e1d7eac9b0d76b9696c65a68ed9d9a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89065156"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96809557"
 ---
 # <a name="desktop-duplication"></a>桌面复制
 

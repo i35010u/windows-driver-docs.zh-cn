@@ -1,7 +1,6 @@
 ---
 title: 'SpinlockRelease 规则 (wdm) '
 description: SpinlockRelease 规则指定对 KeReleaseSpinLock 的调用是在严格替换 KeAcquireSpinLock 和 KeAcquireSpinLockRaiseToDpc 时进行的。
-ms.assetid: e001a818-03d4-4aa9-995a-6b99e1a7cee3
 ms.date: 05/21/2018
 keywords:
 - 'SpinlockRelease 规则 (wdm) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 0d96856c96bbf26a24a3f0c8df4543e61c2a0dd2
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 68a36a7b67b95feb5d3fbba37ce04341ca4f0899
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102868"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96810793"
 ---
 # <a name="spinlockrelease-rule-wdm"></a>SpinlockRelease 规则 (wdm) 
 
 
-**SpinlockRelease**规则指定对[**KeReleaseSpinLock**](/windows-hardware/drivers/ddi/wdm/nf-wdm-kereleasespinlock)的调用是在严格替换[**KeAcquireSpinLock**](/windows-hardware/drivers/ddi/wdm/nf-wdm-keacquirespinlock)和[**KeAcquireSpinLockRaiseToDpc**](/previous-versions/windows/hardware/drivers/ff551928(v=vs.85))时进行的。 也就是说，驱动程序必须在调用**KeAcquireSpinLock**或**KeAcquireSpinLockRaiseToDpc**后，在后续调用**KeAcquireSpinLock**或**KeAcquireSpinLockRaiseToDpc**之前调用**KeReleaseSpinLock** 。
+**SpinlockRelease** 规则指定对 [**KeReleaseSpinLock**](/windows-hardware/drivers/ddi/wdm/nf-wdm-kereleasespinlock)的调用是在严格替换 [**KeAcquireSpinLock**](/windows-hardware/drivers/ddi/wdm/nf-wdm-keacquirespinlock)和 [**KeAcquireSpinLockRaiseToDpc**](/previous-versions/windows/hardware/drivers/ff551928(v=vs.85))时进行的。 也就是说，驱动程序必须在调用 **KeAcquireSpinLock** 或 **KeAcquireSpinLockRaiseToDpc** 后，在后续调用 **KeAcquireSpinLock** 或 **KeAcquireSpinLockRaiseToDpc** 之前调用 **KeReleaseSpinLock** 。
 
 **驱动程序模型： WDM**
 

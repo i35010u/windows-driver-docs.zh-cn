@@ -1,7 +1,6 @@
 ---
 title: 跟踪提供程序
 description: 跟踪提供程序
-ms.assetid: 06fcb37b-6cc3-4e64-8f53-86634836c7bd
 keywords:
 - 跟踪提供程序 WDK
 - Windows WDK 的事件跟踪，提供程序
@@ -10,12 +9,12 @@ keywords:
 - 跟踪会话 WDK，提供程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1c7d977fcc01eabafa9336a1ff73629ad5e178bc
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 2b38bcc93e56a1561c59756e123b9b24667ce685
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89381911"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96809641"
 ---
 # <a name="trace-provider"></a>跟踪提供程序
 
@@ -23,7 +22,7 @@ ms.locfileid: "89381911"
 ## <span id="ddk_trace_provider_tools"></span><span id="DDK_TRACE_PROVIDER_TOOLS"></span>
 
 
-*跟踪提供程序*是用户模式应用程序或内核模式驱动程序的组件，它使用 Windows 的事件跟踪 (ETW) 技术来生成跟踪消息或跟踪事件。 通常，跟踪事件和消息报告提供程序的分离操作。 读取事件记录有助于了解提供程序在实际操作条件中所执行的操作。
+*跟踪提供程序* 是用户模式应用程序或内核模式驱动程序的组件，它使用 Windows 的事件跟踪 (ETW) 技术来生成跟踪消息或跟踪事件。 通常，跟踪事件和消息报告提供程序的分离操作。 读取事件记录有助于了解提供程序在实际操作条件中所执行的操作。
 
 [跟踪会话](trace-session.md)可包含多个跟踪提供程序。 这对于实现多个提供程序组件的跟踪驱动程序或应用程序特别有用，并用于跟踪多个驱动程序或交互的应用程序。
 

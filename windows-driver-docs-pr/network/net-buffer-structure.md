@@ -1,7 +1,6 @@
 ---
 title: NET_BUFFER 结构
 description: NET_BUFFER 结构
-ms.assetid: 6ba44aef-d4e6-4f18-8ae3-aebd8045791f
 keywords:
 - NET_BUFFER
 - 网络数据 WDK，结构
@@ -10,12 +9,12 @@ keywords:
 - NDIS_PACKET
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2b10f1ccfa67086d6fbc927703de2668f1124368
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: f41c722cca42af7fa83446252e25838647c7b001
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89213419"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96810003"
 ---
 # <a name="net_buffer-structure"></a>网络 \_ 缓冲区结构
 
@@ -29,7 +28,7 @@ NDIS 6.0 和更高版本的 [**网络 \_ 缓冲区**](/windows-hardware/drivers/
 
 ![阐释网络缓冲区结构中的字段的关系图 \-](images/netbuffer.png)
 
-NET \_ buffer 结构包含**NetBufferHeader**成员中的[**网络 \_ 缓冲区 \_ 标头**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_header)结构。 NET \_ buffer \_ 标头结构包含**NetBufferData**成员中的[**网络 \_ 缓冲区 \_ 数据**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_data)结构。 应使用 NDIS 宏来访问 NET \_ BUFFER 结构成员。 有关这些宏的完整列表，请参阅 [**NET \_ BUFFER**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer) structure 参考页。
+NET \_ buffer 结构包含 **NetBufferHeader** 成员中的 [**网络 \_ 缓冲区 \_ 标头**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_header)结构。 NET \_ buffer \_ 标头结构包含 **NetBufferData** 成员中的 [**网络 \_ 缓冲区 \_ 数据**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_data)结构。 应使用 NDIS 宏来访问 NET \_ BUFFER 结构成员。 有关这些宏的完整列表，请参阅 [**NET \_ BUFFER**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer) structure 参考页。
 
 某些 [**网络 \_ 缓冲区**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer) 结构成员仅由 NDIS 使用。 驱动程序通常使用的成员包括：
 
@@ -57,7 +56,7 @@ NET \_ buffer 结构包含**NetBufferHeader**成员中的[**网络 \_ 缓冲区 
 <a href="" id="currentmdloffset"></a>**CurrentMdlOffset**  
 指定由网络缓冲区结构的 **CurrentMdl** 成员指定的 MDL 中已用数据空间开始处的偏移量（以字节为单位） \_ 。
 
-下图显示了 **CurrentMdl**、 **CurrentMdlOffset**、 **数据偏移量**和 **DataLength** 成员与数据空间之间的关系。
+下图显示了 **CurrentMdl**、 **CurrentMdlOffset**、 **数据偏移量** 和 **DataLength** 成员与数据空间之间的关系。
 
 ![说明数据空间分配的关系图](images/netbufferdata-wmdl.png)
 
@@ -68,19 +67,19 @@ NDIS 提供了用于管理 MDL 链中的数据空间的函数。 驱动程序如
 以下术语和定义描述了 [**网络 \_ 缓冲区**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer) 数据空间的元素：
 
 <a href="" id="used-data-space"></a>已用数据空间  
-已*用数据空间*包含当前驱动程序当前正在使用的数据。 驱动程序使用撤回操作增加了 *使用的数据空间* ，并通过高级操作减少了 *使用的数据空间* 。
+已 *用数据空间* 包含当前驱动程序当前正在使用的数据。 驱动程序使用撤回操作增加了 *使用的数据空间* ，并通过高级操作减少了 *使用的数据空间* 。
 
 <a href="" id="unused-data-space"></a>未使用的数据空间  
 当前驱动程序当前未使用此数据空间。
 
 <a href="" id="total-data-size"></a>总数据大小  
-"总数据大小" 是所 *用数据空间* 和 *未使用数据空间*的大小之和。 若要计算总大小，请将 **数据偏移量** 添加到 **DataLength** 中。
+"总数据大小" 是所 *用数据空间* 和 *未使用数据空间* 的大小之和。 若要计算总大小，请将 **数据偏移量** 添加到 **DataLength** 中。
 
 <a href="" id="retreat"></a>撤回  
-撤回操作会增加所 *用数据空间*的大小。
+撤回操作会增加所 *用数据空间* 的大小。
 
 <a href="" id="advance"></a>进  
-高级操作将减小所 *用数据空间*的大小。
+高级操作将减小所 *用数据空间* 的大小。
 
  
 

@@ -1,7 +1,6 @@
 ---
 title: 'IrqlZwPassive 规则 (wdm) '
 description: IrqlZwPassive 规则指定仅当驱动程序在 IRQL PASSIVE_LEVEL 执行时才调用 ZwClose。
-ms.assetid: d31612ad-e869-4fc7-bc09-e5b4d5362585
 ms.date: 05/21/2018
 keywords:
 - 'IrqlZwPassive 规则 (wdm) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 5374365527f61c444df2487aa4b0604e78283a3f
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: ea5df6226fe06ad57cc3c44cc98264fa5eb2a6ed
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104240"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96811086"
 ---
 # <a name="irqlzwpassive-rule-wdm"></a>IrqlZwPassive 规则 (wdm) 
 
 
-**IrqlZwPassive**规则指定仅当驱动程序在 IRQL = 被动级别执行时才调用[**ZwClose**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntclose) \_ 。
+**IrqlZwPassive** 规则指定仅当驱动程序在 IRQL = 被动级别执行时才调用 [**ZwClose**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntclose) \_ 。
 
 **驱动程序模型： WDM**
 

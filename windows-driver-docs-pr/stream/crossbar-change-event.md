@@ -1,19 +1,18 @@
 ---
 title: 十字形更改事件
 description: 十字形更改事件
-ms.assetid: 67202a53-d981-47db-9bc1-7de18f9192aa
 keywords:
 - 十字形更改事件 WDK 视频捕获
 - 事件 WDK 视频捕获
 - EVENTSETID_CROSSBAR
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 00c54cff2c732d26d4de875db185ff64cd3ed6a7
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 5cbb7e1048918602648e9bc60ff45d19d5e41f4d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106232"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96811385"
 ---
 # <a name="crossbar-change-event"></a>十字形更改事件
 

@@ -1,18 +1,17 @@
 ---
 title: Windows 显示驱动程序模型 (WDDM) 的优势
 description: Windows 显示驱动程序模型 (WDDM) 的优势
-ms.assetid: 0e8cd1a9-7137-4fd2-91ab-56768713c9f1
 keywords:
 - 显示驱动程序模型 WDK Windows Vista，优点
 - Windows Vista 显示器驱动程序模型 WDK，优点
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 321d1fd962a2367d2666d3c4f0ac64e1265cfe64
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: f3e37a797c598bd06a337ba12e88039f8e23c2c1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90715376"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96810461"
 ---
 # <a name="benefits-of-the-windows-display-driver-model-wddm"></a>Windows 显示驱动程序模型 (WDDM) 的优势
 
@@ -22,7 +21,7 @@ ms.locfileid: "90715376"
 
 由于以下增强，使用 windows Vista (WDDM) （从 Windows Vista 开始提供），可以更轻松地创建显示驱动程序，而不是使用 [windows 2000 显示器驱动程序模型 (XDDM) ](windows-2000-display-driver-model-design-guide.md)。 此外，WDDM 驱动程序会导致更高的操作系统稳定性和安全性，因为更少的驱动程序代码在可访问系统地址空间并可能导致崩溃的内核模式下运行。
 
-**注意**   在 Windows 8 及更高版本上，XDDM 和 VGA 驱动程序将不会编译。 如果将显示硬件连接到 Windows 8 计算机，而该计算机上没有一个已认证为支持 WDDM 1.2 或更高版本的驱动程序，则系统默认为运行 Microsoft 基本显示驱动程序。
+**注意**  在 Windows 8 及更高版本上，XDDM 和 VGA 驱动程序将不会编译。 如果将显示硬件连接到 Windows 8 计算机，而该计算机上没有一个已认证为支持 WDDM 1.2 或更高版本的驱动程序，则系统默认为运行 Microsoft 基本显示驱动程序。
 
  
 

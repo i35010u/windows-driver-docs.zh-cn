@@ -1,18 +1,17 @@
 ---
 title: 定义 DirectX VA 设备类
 description: 定义 DirectX VA 设备类
-ms.assetid: a4b2ee88-747a-48c3-ba1d-2d605c46db58
 keywords:
 - DirectX 视频加速 WDK Windows 2000 显示，定义设备类
 - 设备类 WDK DirectX VA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3d2153fb633a240d1935dcc1321644e323e723c8
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: e2b614a27c8379cb470489bc6c3cc9545f8dfaf8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89064336"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96809615"
 ---
 # <a name="defining-directx-va-device-classes"></a>定义 DirectX VA 设备类
 

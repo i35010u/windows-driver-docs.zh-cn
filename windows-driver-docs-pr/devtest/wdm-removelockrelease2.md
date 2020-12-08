@@ -1,7 +1,6 @@
 ---
 title: 'RemoveLockRelease2 规则 (wdm) '
 description: 规则 RemoveLockRelease2 验证是否在严格替换中使用对 IoAcquireRemoveLock 和 IoReleaseRemoveLock 的调用。 而且，在调度例程结束时，驱动程序不应持有删除锁定。
-ms.assetid: 2569120A-9014-44C1-86F9-6C1ABACC2C34
 ms.date: 05/21/2018
 keywords:
 - 'RemoveLockRelease2 规则 (wdm) '
@@ -12,12 +11,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 70557a1fabb63786b8bbb23bc060c79c7337c468
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: cd9eb2bc2ac394e54c40132f828940d8b8a47b52
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90101676"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96810906"
 ---
 # <a name="removelockrelease2-rule-wdm"></a>RemoveLockRelease2 规则 (wdm) 
 

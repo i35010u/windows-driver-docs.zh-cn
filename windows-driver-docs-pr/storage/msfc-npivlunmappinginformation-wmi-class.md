@@ -1,22 +1,21 @@
 ---
 title: MSFC \_ NPIVLUNMAPPINGINFORMATION WMI 类
 description: MSFC \_ NPIVLUNMAPPINGINFORMATION WMI 类
-ms.assetid: F8BCDEDE-5EF3-464D-8592-5DF1878D3694
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 35f5f7338a60c0f6f9397c9921bf94b5073cd4ea
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 8e69a5948764680f205c2c97bb9a54dca379e690
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89188503"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96811457"
 ---
 # <a name="msfc_npivlunmappinginformation-wmi-class"></a>MSFC \_ NPIVLUNMAPPINGINFORMATION WMI 类
 
 
 WMI 客户端使用 MSFC \_ LUNMappingInformation 类将 LUN 检索到虚拟端口映射信息。
 
-MSFC \_ NPIVLUNMappingInformation 类在 *Npivwmi*中定义如下：
+MSFC \_ NPIVLUNMappingInformation 类在 *Npivwmi* 中定义如下：
 
 ```mof
 class MSFC_NPIVLUNMappingInformation  

@@ -1,24 +1,23 @@
 ---
 title: OID_WDI_GET_STATISTICS
 description: OID_WDI_GET_STATISTICS 请求 IHV 组件返回 MAC 和 PHY 层统计信息。
-ms.assetid: 55c36869-ce85-42fe-877b-07aefb669b56
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 OID_WDI_GET_STATISTICS 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: f407ec33f6c5c695b3f6cefcce4434edd21b15ca
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 9efc1880d2c07be7094d83fb9905d61eb4f7b3de
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89215839"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96809975"
 ---
 # <a name="oid_wdi_get_statistics"></a>OID \_ WDI \_ 获取 \_ 统计信息
 
 
 OID \_ WDI \_ 获取 \_ IHV 组件返回 MAC 和 PHY 层统计信息请求的统计信息。
 
-| 作用域 | 设置序列化任务 | 正常执行时间 (秒)  |
+| 范围 | 设置序列化任务 | 正常执行时间 (秒)  |
 |-------|--------------------------|---------------------------------|
 | 端口  | 不支持的设置        | 1                               |
 
@@ -55,7 +54,7 @@ MAC 统计信息必须全部按端口维护。 还必须按端口维护 PHY 统�
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
-<td><p>Windows Server 2016</p></td>
+<td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
 <td><p>标头</p></td>

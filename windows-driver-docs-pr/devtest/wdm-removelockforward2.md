@@ -1,7 +1,6 @@
 ---
 title: 'RemoveLockForward2 规则 (wdm) '
 description: 在将 IRP 转发到另一台设备时，RemoveLockForward2 规则验证对 IoAcquireRemoveLock 和 IoReleaseRemoveLock 的调用是否正确使用。
-ms.assetid: 1C04BCCF-5458-4524-88EF-AF5216588AC3
 ms.date: 05/21/2018
 keywords:
 - 'RemoveLockForward2 规则 (wdm) '
@@ -12,12 +11,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 03ce9f4816f66a316947e469ad31538a479f495b
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: d41a64373e1c2d6686fe8f8fe83e75ddbf5de785
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107036"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96810935"
 ---
 # <a name="removelockforward2-rule-wdm"></a>RemoveLockForward2 规则 (wdm) 
 

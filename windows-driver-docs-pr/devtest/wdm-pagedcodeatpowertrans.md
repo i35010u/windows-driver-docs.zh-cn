@@ -1,7 +1,6 @@
 ---
 title: 'PagedCodeAtPowerTrans 规则 (wdm) '
 description: PagedCodeAtPowerTrans 规则指定在 \_ 响应系统 irp mj Power irp 时，驱动程序不应调用分页 \_ \_ 的代码 (irp \_ MN \_ 设置 \_ POWER) ，以及到设备 IRP \_ mj \_ power irp (irp \_ MN \_ 设置 \_ 电源) 。
-ms.assetid: D94B0E13-9640-4FBF-B1E7-AF8DFED42542
 ms.date: 05/21/2018
 keywords:
 - 'PagedCodeAtPowerTrans 规则 (wdm) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 2657c22e94d570b7b784e6be7a92b83987899f68
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 5653d099622855b1334610805182a7fbc3a3ea82
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105442"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96811025"
 ---
 # <a name="pagedcodeatpowertrans-rule-wdm"></a>PagedCodeAtPowerTrans 规则 (wdm) 
 
 
-**PagedCodeAtPowerTrans**规则指定在响应系统 irp Mj power irp 时，驱动程序不应调用[**分页的 \_ 代码**](../kernel/mm-bad-pointer.md) \_ \_ (irp \_ MN \_ 设置 \_ power) ，以及到设备 IRP \_ mj \_ power irp (irp \_ MN \_ 设置 \_ 电源) 。
+**PagedCodeAtPowerTrans** 规则指定在响应系统 irp Mj power irp 时，驱动程序不应调用 [**分页的 \_ 代码**](../kernel/mm-bad-pointer.md) \_ \_ (irp \_ MN \_ 设置 \_ power) ，以及到设备 IRP \_ mj \_ power irp (irp \_ MN \_ 设置 \_ 电源) 。
 
 **驱动程序模型： WDM**
 

@@ -1,7 +1,6 @@
 ---
 title: 'PendedCompletedRequestEx 规则 (wdm) '
 description: PendedCompletedRequestEx 规则指定，驱动程序不应为挂起的 IRP 调用 IoCompleteRequest。
-ms.assetid: CC65275D-DB67-428D-842A-82DB7EFA1969
 ms.date: 05/21/2018
 keywords:
 - 'PendedCompletedRequestEx 规则 (wdm) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: fa45bc2a0c011cded67831c662e3729e6d465ea9
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 4cb28eb20f4829dc4cebd7518c992f30c227b355
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105050"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96810997"
 ---
 # <a name="pendedcompletedrequestex-rule-wdm"></a>PendedCompletedRequestEx 规则 (wdm) 
 
 
-**PendedCompletedRequestEx**规则指定，驱动程序不应为挂起的 IRP 调用[**IoCompleteRequest**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocompleterequest) 。
+**PendedCompletedRequestEx** 规则指定，驱动程序不应为挂起的 IRP 调用 [**IoCompleteRequest**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocompleterequest) 。
 
 **驱动程序模型： WDM**
 

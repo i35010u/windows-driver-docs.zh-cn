@@ -1,17 +1,16 @@
 ---
 title: 关键节超时
 description: 关键节超时
-ms.assetid: 736ec6e9-e822-49aa-8f1c-7e5e43779dbd
 keywords:
-- 关键部分中，调试临界区的超时
+- 临界区，调试临界区超时
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 90563b4284a138aae520e14b6da72bf2e82d90a2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e832d46d1555e8f212e7e4b48cc91f0ec8644685
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63374439"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96809703"
 ---
 # <a name="critical-section-time-outs"></a>关键节超时
 
@@ -19,15 +18,15 @@ ms.locfileid: "63374439"
 ## <span id="ddk_critical_section_time_outs_dbg"></span><span id="DDK_CRITICAL_SECTION_TIME_OUTS_DBG"></span>
 
 
-可以通过显示例程的堆栈跟踪标识关键部分的超时**RtlpWaitForCriticalSection**堆栈顶部附近。 另一个不同的关键部分超时是可能的死锁的应用程序错误。 若要正确地调试临界区的超时，CDB 或 WinDbg 是必需的。
+可以通过堆栈跟踪来识别临界区超时，该堆栈跟踪显示堆栈顶部附近的例程 **RtlpWaitForCriticalSection** 。 另一种关键的关键部分超时是可能的死锁应用程序错误。 若要正确调试关键节超时，则需要 CDB 或 WinDbg。
 
-与资源的超时，一样 **！ ntsdexts.locks**扩展将提供当前持有的锁和他们自己的线程的列表。 与不同资源的超时，给定的线程 Id 不是立即有用的。 这些是系统不会映射到使用 CDB 的线程号直接的 Id。
+与资源超时一样， **！ ntsdexts** 扩展将提供当前持有的锁的列表以及拥有它们的线程。 与资源超时不同，提供的线程 Id 并不会立即发挥作用。 这些是不直接映射到 CDB 使用的线程号的系统 Id。
 
-正如使用<strong>ExpWaitForResource * Xxx</strong><em>，锁定标识符是第一个参数 **RtlpWaitForCriticalSection</em>*。 继续跟踪在一系列等待，直到找到一个循环或最后一个线程不会等待关键节超时。
+与 <strong>ExpWaitForResource * Xxx</strong>一样 <em>，lock 标识符是 **RtlpWaitForCriticalSection</em>的第一个参数*。 继续跟踪等待链，直到找到循环或最后一个线程未等待临界区超时。
 
-### <a name="span-idexampleofdebuggingacriticaltimeoutspanspan-idexampleofdebuggingacriticaltimeoutspanexample-of-debugging-a-critical-time-out"></a><span id="example_of_debugging_a_critical_time_out"></span><span id="EXAMPLE_OF_DEBUGGING_A_CRITICAL_TIME_OUT"></span>示例中的调试关键超时
+### <a name="span-idexample_of_debugging_a_critical_time_outspanspan-idexample_of_debugging_a_critical_time_outspanexample-of-debugging-a-critical-time-out"></a><span id="example_of_debugging_a_critical_time_out"></span><span id="EXAMPLE_OF_DEBUGGING_A_CRITICAL_TIME_OUT"></span>调试关键超时的示例
 
-首先显示的堆栈：
+首先显示堆栈：
 
 ```dbgcmd
 0:024> kb
@@ -44,7 +43,7 @@ ChildEBP RetAddr  Args to Child
 0569fff4 00000000 00000000 00000024 00000024 csrsrv!_CsrApiRequestThread+0x4ff 
 ```
 
-现在，使用[ **！ ntsdexts.locks** ](-locks---ntsdexts-locks-.md)要查找的关键部分的扩展名：
+现在使用 [**！ ntsdexts**](-locks---ntsdexts-locks-.md) 扩展查找临界区：
 
 ```dbgcmd
 0:024> !locks 
@@ -54,7 +53,7 @@ RecursionCount     1
 OwningThread       88         // here's the owning thread ID 
 EntryCount         11c
 ContentionCount    135
-*** Locked
+**_ Locked
 
 CritSec winsrv!_gcsUserSrv+0 at 5ffa91b4     //second critical section found below 
 
@@ -63,10 +62,10 @@ RecursionCount     1
 OwningThread       6d         // second owning thread 
 EntryCount         1d6c
 ContentionCount    1d47
-*** Locked 
+_*_ Locked 
 ```
 
-现在搜索具有的 ID 号 0x6D 的线程：
+现在搜索 ID 号为0x6D 的线程：
 
 ```dbgcmd
 0:024> ~ 
@@ -97,7 +96,7 @@ ContentionCount    1d47
  24  id: 16.bd   Teb 7ff5d000 Unfrozen 
 ```
 
-线程 21 拥有第一个关键部分。 确保在活动线程，并获取堆栈跟踪：
+线程21拥有第一个关键部分。 使其成为活动线程并获取堆栈跟踪：
 
 ```dbgcmd
 0:024> ~21s
@@ -119,7 +118,7 @@ ChildEBP RetAddr  Args to Child
 0556fff4 00000000 00000000 00000024 00000024 csrsrv!_CsrApiRequestThread+0x4ff 
 ```
 
-线程 6 拥有第二个关键部分。 检查以及其堆栈：
+线程6拥有第二个关键部分。 还检查其堆栈：
 
 ```dbgcmd
 0:021> ~6s
@@ -135,7 +134,7 @@ ChildEBP RetAddr  Args to Child
 01ecfff4 00000000 00000000 00000024 00000024 csrsrv!_CsrApiRequestThread+0x4ff 
 ```
 
-线程 21 **RtlpWaitForCriticalSection**其堆栈顶部附近。 线程 6 却没有。 使线程 21 是问题所在。
+线程21在其堆栈顶部附近有 _ *RtlpWaitForCriticalSection**。 线程6不能。 因此，线程21就是原因所在。
 
  
 

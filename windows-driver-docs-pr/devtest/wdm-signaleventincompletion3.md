@@ -1,7 +1,6 @@
 ---
 title: 'SignalEventInCompletion3 规则 (wdm) '
 description: SignalEventInCompletion3 规则指定在处理异步 IRP 时，如果设置了 Irp-PendingReturned 标志，驱动程序需要在完成例程中调用 KeSetEvent。
-ms.assetid: 1FCEB660-A156-4B70-9121-FF166C629FF8
 ms.date: 05/21/2018
 keywords:
 - 'SignalEventInCompletion3 规则 (wdm) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 2511f6b3022963cdabaec062f0b83254995d7fd5
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 7df856c607f02cee699602c07977b252fb100c40
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102440"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96810805"
 ---
 # <a name="signaleventincompletion3-rule-wdm"></a>SignalEventInCompletion3 规则 (wdm) 
 
 
-**SignalEventInCompletion3**规则指定在处理异步 IRP 时，如果设置了**IRP- &gt; PendingReturned**标志，驱动程序需要在完成例程中调用[**KeSetEvent**](/windows-hardware/drivers/ddi/wdm/nf-wdm-kesetevent) 。
+**SignalEventInCompletion3** 规则指定在处理异步 IRP 时，如果设置了 **IRP- &gt; PendingReturned** 标志，驱动程序需要在完成例程中调用 [**KeSetEvent**](/windows-hardware/drivers/ddi/wdm/nf-wdm-kesetevent) 。
 
 在这种情况下，将不会调用完成例程。
 

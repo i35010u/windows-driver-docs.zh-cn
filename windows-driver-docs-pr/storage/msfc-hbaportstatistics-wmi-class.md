@@ -1,15 +1,14 @@
 ---
 title: MSFC \_ HBAPORTSTATISTICS WMI 类
 description: MSFC \_ HBAPORTSTATISTICS WMI 类
-ms.assetid: 275e4a50-6500-4a23-a0ae-ddd232da42f0
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 57f3907fb7d5b91c58c84bc10565ff46631c03cc
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 54765b75d99a56412ab16002f7b16abfbb548f04
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89185895"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96811459"
 ---
 # <a name="msfc_hbaportstatistics-wmi-class"></a>MSFC \_ HBAPORTSTATISTICS WMI 类
 
@@ -19,7 +18,7 @@ ms.locfileid: "89185895"
 
 WMI 客户端使用 MSFC \_ HBAPortStatistics 类来查询 hba 微型端口驱动程序，以获取与 hba 上端口相关的统计信息。
 
-MSFC \_ HBAPPortStatistics 类在 *Hbaapi*中定义如下：
+MSFC \_ HBAPPortStatistics 类在 *Hbaapi* 中定义如下：
 
 ```cpp
 class MSFC_HBAPortStatistics

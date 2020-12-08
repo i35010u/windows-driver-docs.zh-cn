@@ -1,7 +1,6 @@
 ---
 title: 确定顶点缓冲区数据格式
 description: 确定顶点缓冲区数据格式
-ms.assetid: e10604f9-e800-40ff-a0e1-0f9389340e9c
 keywords:
 - 顶点格式 WDK Direct3D
 - 灵活顶点格式 WDK Direct3D
@@ -10,12 +9,12 @@ keywords:
 - Direct3D WDK Windows 2000 显示，灵活顶点格式
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9a212b553de23f285aef33cffd9b8df02e96c749
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 13353b92d4c3ae350749320dd181c71cae67498f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89063546"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96809521"
 ---
 # <a name="determining-the-vertex-buffer-data-format"></a>确定顶点缓冲区数据格式
 
@@ -33,7 +32,7 @@ ms.locfileid: "89063546"
 
 ### <a name="span-idfvf_texture_dimensionspanspan-idfvf_texture_dimensionspanfvf-texture-dimension"></a><span id="fvf_texture_dimension"></span><span id="FVF_TEXTURE_DIMENSION"></span>FVF 纹理尺寸
 
-驱动程序应根据 \_ DIRECTX SDK 文档) 中所述的 D3DTEXTURETRANSFORMFLAGS 纹理坐标计数标志 (D3DTTFF 计数 *n*来确定纹理的维度。 计数标志的数量表示存在多少纹理坐标。 请注意，这并不一定等于纹理本身的维度，如以下各节中所述。
+驱动程序应根据 \_ DIRECTX SDK 文档) 中所述的 D3DTEXTURETRANSFORMFLAGS 纹理坐标计数标志 (D3DTTFF 计数 *n* 来确定纹理的维度。 计数标志的数量表示存在多少纹理坐标。 请注意，这并不一定等于纹理本身的维度，如以下各节中所述。
 
 ### <a name="span-idnonprojected_texturesspanspan-idnonprojected_texturesspannonprojected-textures"></a><span id="nonprojected_textures"></span><span id="NONPROJECTED_TEXTURES"></span>Nonprojected 纹理
 
@@ -53,7 +52,7 @@ ms.locfileid: "89063546"
 
 ### <a name="span-idddk_fvf_vertex_data_components_ggspanspan-idddk_fvf_vertex_data_components_ggspanfvf-vertex-data-components"></a><span id="ddk_fvf_vertex_data_components_gg"></span><span id="DDK_FVF_VERTEX_DATA_COMPONENTS_GG"></span>FVF 顶点数据组件
 
-驱动程序通过分析[**D3DHAL \_ DRAWPRIMITIVES2DATA**](/windows-hardware/drivers/ddi/d3dhal/ns-d3dhal-_d3dhal_drawprimitives2data)结构的**dwVertexType**成员中指定的标志来确定哪些组件是存在的。 下表显示了可在 **dwVertexType** 中设置的位域以及它们标识的组件：
+驱动程序通过分析 [**D3DHAL \_ DRAWPRIMITIVES2DATA**](/windows-hardware/drivers/ddi/d3dhal/ns-d3dhal-_d3dhal_drawprimitives2data)结构的 **dwVertexType** 成员中指定的标志来确定哪些组件是存在的。 下表显示了可在 **dwVertexType** 中设置的位域以及它们标识的组件：
 
 <table>
 <colgroup>
@@ -62,7 +61,7 @@ ms.locfileid: "89063546"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">值</th>
+<th align="left">“值”</th>
 <th align="left">含义</th>
 </tr>
 </thead>
@@ -134,19 +133,19 @@ Direct3D 始终发送 *x、y、z* 和 *w* 值;其余数据只会根据应用程�
 
 1.  位置 (*x、y、z 和 w*)  (必需) 
 
-    第一个顶点组件是四个 D3DVALUEs，用于标识顶点的位置。 Direct3D 始终 \_ 在 **dwVertexType**中设置 D3DFVF XYZRHW 位。
+    第一个顶点组件是四个 D3DVALUEs，用于标识顶点的位置。 Direct3D 始终 \_ 在 **dwVertexType** 中设置 D3DFVF XYZRHW 位。
 
 2.  漫射色 (可选) 。
 
-    如果存在，则此组件为 D3DCOLOR 值，该值指定此顶点的漫射颜色。 \_当存在此组件时，Direct3D 在**dwVertexType**中设置 D3DFVF 漫射位。
+    如果存在，则此组件为 D3DCOLOR 值，该值指定此顶点的漫射颜色。 \_当存在此组件时，Direct3D 在 **dwVertexType** 中设置 D3DFVF 漫射位。
 
 3.   (可选) 的反射颜色。
 
-    如果存在，则此组件为指定该顶点的反射颜色的 D3DCOLOR 值。 \_当存在此组件时，Direct3D 在**dwVertexType**中设置 D3DFVF 反光位。
+    如果存在，则此组件为指定该顶点的反射颜色的 D3DCOLOR 值。 \_当存在此组件时，Direct3D 在 **dwVertexType** 中设置 D3DFVF 反光位。
 
 4.  纹理数据 (可选) 。
 
-    此部分根据纹理的维度而有所不同。 对于纹理中的每个维度，D3DVALUE 指定每个 *u*、 *v*、 *w*或 *q* 组件 (查看 FVF 纹理尺寸) 的说明。 例如，如果使用的是 2D nonprojected 纹理，则需要为每个纹理指定顶点的 *u，v 值（* 最多8个纹理）。 存在*u，v*对的数量为*n*，其中*n*对应于 \_ **dwVertexType**中设置的 D3DFVF TEX*n*标志。 例如，如果 D3DFVF \_ TEX3 设置为 **dwVertexType**，则每个顶点都提供三个 *u，v* 对。
+    此部分根据纹理的维度而有所不同。 对于纹理中的每个维度，D3DVALUE 指定每个 *u*、 *v*、 *w* 或 *q* 组件 (查看 FVF 纹理尺寸) 的说明。 例如，如果使用的是 2D nonprojected 纹理，则需要为每个纹理指定顶点的 *u，v 值（* 最多8个纹理）。 存在 *u，v* 对的数量为 *n*，其中 *n* 对应于 \_ **dwVertexType** 中设置的 D3DFVF TEX *n* 标志。 例如，如果 D3DFVF \_ TEX3 设置为 **dwVertexType**，则每个顶点都提供三个 *u，v* 对。
 
 FVF 数据始终紧密打包;也就是说，没有在顶点缓冲区中显式指定的组件上浪费内存。 例如，当 **dwVertexType** 为 (D3DFVF \_ XYZRHW |D3DFVF \_ TEX2) ，纹理维度为2d，缓冲区中的每个顶点都包含八个紧密打包的 D3DVALUEs。 它们指定两种纹理的位置 (*x、y、z、w*) 和纹理坐标 (tu ₀、tv ₀、tu ₁、tv ₁) 如下图所示：
 

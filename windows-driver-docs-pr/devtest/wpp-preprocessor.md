@@ -1,7 +1,6 @@
 ---
 title: WPP 预处理器
 description: WPP 预处理器
-ms.assetid: 92bcb2c4-f6de-4704-8f5c-9a2e5901616a
 keywords:
 - Windows 软件跟踪预处理器 WDK，选项
 - WPP 软件跟踪 WDK，选项
@@ -12,12 +11,12 @@ keywords:
 - WPP 软件跟踪 WDK，生成过程
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 29e7cc4820c6f71a35879000e4c80078c15f346d
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: dc8968dbb360a237c45578b6c701a396b6dfdde2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90101576"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96810651"
 ---
 # <a name="wpp-preprocessor"></a>WPP 预处理器
 
@@ -36,9 +35,9 @@ ms.locfileid: "90101576"
 3.  在 " **常规**" 下，将 " **运行 WPP** " 选项设置为 **"是"**。
 4.  在 " **命令行**" 下，你可以添加下面的选项来自定义跟踪行为。
 
-    例如，在 **WPP 跟踪**下，可以指定单个 **扫描配置数据** 文件。
+    例如，在 **WPP 跟踪** 下，可以指定单个 **扫描配置数据** 文件。
 
-    如果需要提供多个配置文件，例如，要指定自定义数据类型，请使用 **-scan**选项在**命令行**中引用该文件，例如：
+    如果需要提供多个配置文件，例如，要指定自定义数据类型，请使用 **-scan** 选项在 **命令行** 中引用该文件，例如：
 
     ```
     -scan:"$(KMDF_INC_PATH)\$(KMDF_VER_PATH)\WdfTraceEnums.h"
@@ -61,7 +60,7 @@ ms.locfileid: "90101576"
 <thead>
 <tr class="header">
 <th align="left">WPP 跟踪选项</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -111,7 +110,7 @@ ms.locfileid: "90101576"
 <p>此选项与 <strong>/d</strong> (定义宏) 编译器选项相同。 包含此方法是为了确保定义在 TMH 文件的开头有效。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>跟踪内核模式组件</p></td>
+<td align="left"><p>跟踪 Kernel-Mode 组件</p></td>
 <td align="left"><p><strong>-公里</strong></p></td>
 <td align="left"><p>定义跟踪内核模式组件的 WPP_KERNEL_MODE 宏。 默认情况下，只跟踪用户模式组件。</p></td>
 </tr>
@@ -145,7 +144,7 @@ ms.locfileid: "90101576"
 <tr class="header">
 <th align="left">WPP 跟踪选项</th>
 <th align="left">TraceWPP 命令选项</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -207,7 +206,7 @@ ms.locfileid: "90101576"
 <tr class="header">
 <th align="left">WPP 跟踪选项</th>
 <th align="left">TraceWPP 命令选项</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>

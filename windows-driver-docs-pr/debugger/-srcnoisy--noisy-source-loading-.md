@@ -1,9 +1,8 @@
 ---
 title: .srcnoisy（干扰性源加载）
-description: 可通过.srcnoisy 命令控制源文件加载的详细级别。
-ms.assetid: c57e0d0a-7903-455a-9a92-fab75f10ca80
+description: Srcnoisy 命令控制源文件加载的详细级别。
 keywords:
-- 可通过.srcnoisy （干扰源加载） Windows 调试
+- srcnoisy (噪音源加载) Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,39 +11,39 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: aac70c4217d3cfef3f58b2b52aeabe4435d8f385
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ab5ee52a281f8f0d6291eb0f19f836a978a92f19
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63334248"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96811243"
 ---
 # <a name="srcnoisy-noisy-source-loading"></a>.srcnoisy（干扰性源加载）
 
 
-**可通过.srcnoisy**命令控制源文件加载的详细级别。
+**Srcnoisy** 命令控制源文件加载的详细级别。
 
 ```dbgcmd
 .srcnoisy [Options]
 ```
 
-## <a name="span-idddkmetanoisysourceloadingdbgspanspan-idddkmetanoisysourceloadingdbgspanparameters"></a><span id="ddk_meta_noisy_source_loading_dbg"></span><span id="DDK_META_NOISY_SOURCE_LOADING_DBG"></span>参数
+## <a name="span-idddk_meta_noisy_source_loading_dbgspanspan-idddk_meta_noisy_source_loading_dbgspanparameters"></a><span id="ddk_meta_noisy_source_loading_dbg"></span><span id="DDK_META_NOISY_SOURCE_LOADING_DBG"></span>参数
 
 
-<span id="_______Options______"></span><span id="_______options______"></span><span id="_______OPTIONS______"></span> *选项*   
+<span id="_______Options______"></span><span id="_______options______"></span><span id="_______OPTIONS______"></span>*选项*   
 可以是下列选项之一：
 
 <span id="0"></span>0  
-禁止显示多出的信息。
+禁用显示额外消息。
 
 <span id="1"></span>1  
-显示源文件加载和卸载的进度有关的信息。
+显示有关源文件的加载和卸载进度的信息。
 
 <span id="2"></span>2  
-显示的符号文件加载和卸载进度有关的信息。
+显示有关符号文件的加载和卸载进度的信息。
 
-<span id="3"></span>3  
-显示通过选项 1 和 2 显示的所有信息。
+<span id="3"></span>三维空间  
+显示选项1和2显示的所有信息。
 
 ### <a name="span-idenvironmentspanspan-idenvironmentspanspan-idenvironmentspanenvironment"></a><span id="Environment"></span><span id="environment"></span><span id="ENVIRONMENT"></span>环境
 
@@ -55,16 +54,16 @@ ms.locfileid: "63334248"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>模式</strong></p></td>
-<td align="left"><p>用户模式下，内核模式</p></td>
+<td align="left"><p><strong>交货</strong></p></td>
+<td align="left"><p>用户模式，内核模式</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>目标</strong></p></td>
-<td align="left"><p>实时、 崩溃转储</p></td>
+<td align="left"><p>实时，故障转储</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>平台</strong></p></td>
-<td align="left"><p>全部</p></td>
+<td align="left"><p>all</p></td>
 </tr>
 </tbody>
 </table>
@@ -74,9 +73,9 @@ ms.locfileid: "63334248"
 <a name="remarks"></a>备注
 -------
 
-不带任何参数，**可通过.srcnoisy**将显示干扰源加载的当前状态。
+不带参数的 **srcnoisy** 将显示当前加载噪音源的状态。
 
-不将干扰源加载与干扰性的符号加载-由控制相混淆[ **！ 符号干扰**](-sym.md)扩展和通过其他方式的控制[SYMOPT\_调试](symbol-options.md#symopt-debug)设置。
+不应将干扰性源加载与干扰符号加载相混淆，这是由 [**！符号干扰**](-sym.md) 扩展和控制 [SYMOPT \_ 调试](symbol-options.md#symopt-debug) 设置的其他方式控制的。
 
  
 

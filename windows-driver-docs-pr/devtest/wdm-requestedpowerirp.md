@@ -1,7 +1,6 @@
 ---
 title: 'RequestedPowerIrp 规则 (wdm) '
 description: RequestedPowerIrp 规则指定驱动程序调用 PoRequestPowerIrp，并将 \ Irp 指针变量设置为 NULL。
-ms.assetid: 4ac70417-b111-4450-8886-63ae6b9d832e
 ms.date: 05/21/2018
 keywords:
 - 'RequestedPowerIrp 规则 (wdm) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: cf6932c55b32def55c76685e70d447253e08ab4a
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 7a3db64cccc9e78b834936c6d440f2961c8154af
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102460"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96810821"
 ---
 # <a name="requestedpowerirp-rule-wdm"></a>RequestedPowerIrp 规则 (wdm) 
 
 
-**RequestedPowerIrp**规则指定驱动程序调用[**PoRequestPowerIrp**](/windows-hardware/drivers/ddi/wdm/nf-wdm-porequestpowerirp) ，并将 `*Irp` 指针变量设置为**NULL**。
+**RequestedPowerIrp** 规则指定驱动程序调用 [**PoRequestPowerIrp**](/windows-hardware/drivers/ddi/wdm/nf-wdm-porequestpowerirp) ，并将 `*Irp` 指针变量设置为 **NULL**。
 
 由于 [**PoRequestPowerIrp**](/windows-hardware/drivers/ddi/wdm/nf-wdm-porequestpowerirp) 返回的指针不可靠，因此驱动程序不应检索或使用此值。
 

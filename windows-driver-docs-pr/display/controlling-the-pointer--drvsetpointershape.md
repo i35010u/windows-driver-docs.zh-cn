@@ -1,7 +1,6 @@
 ---
 title: 控制指针 DrvSetPointerShape
 description: 控制指针 DrvSetPointerShape
-ms.assetid: 14d782de-5da8-40e9-a3e3-91d2588146e0
 keywords:
 - 绘图指针 WDK Windows 2000 显示
 - 显示驱动程序 WDK Windows 2000，指针
@@ -11,12 +10,12 @@ keywords:
 - 改变指针 WDK Windows 2000 显示的形状
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0a547bcd2df13cf2f293f38af58793dd0775f79e
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 27c827e9eb0f525fd26c65ace803206be1519d55
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90715364"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96810123"
 ---
 # <a name="controlling-the-pointer-drvsetpointershape"></a>控制指针：DrvSetPointerShape
 

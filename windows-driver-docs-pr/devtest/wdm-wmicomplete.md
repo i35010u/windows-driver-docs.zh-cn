@@ -1,7 +1,6 @@
 ---
 title: 'WmiComplete 规则 (wdm) '
 description: WmiComplete 规则指定在处理 WMI 次要 IRP 时，驱动程序会在从 DispatchSystemControl 例程返回之前调用 IoCompleteRequest。
-ms.assetid: 3908da96-beb1-4651-b41b-06f849b72000
 ms.date: 05/21/2018
 keywords:
 - 'WmiComplete 规则 (wdm) '
@@ -12,19 +11,19 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: af94acfbc9542b332c78fc61ac285630cd32d82e
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: f1c5877b73ce007794e050552283317dc4f1958a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106118"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96810747"
 ---
 # <a name="wmicomplete-rule-wdm"></a>WmiComplete 规则 (wdm) 
 
 
-**WmiComplete**规则指定在处理[**WMI 次要 IRP**](../kernel/wmi-minor-irps.md)时，驱动程序会在从[**DispatchSystemControl**](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)例程返回之前调用[**IoCompleteRequest**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocompleterequest) 。
+**WmiComplete** 规则指定在处理 [**WMI 次要 IRP**](../kernel/wmi-minor-irps.md)时，驱动程序会在从 [**DispatchSystemControl**](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)例程返回之前调用 [**IoCompleteRequest**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocompleterequest) 。
 
-*Wmi 次要 IRP*是具有 WMI 次要函数代码的[**IRP \_ MJ \_ 系统 \_ 控制**](../kernel/irp-mj-system-control.md)请求。
+*Wmi 次要 IRP* 是具有 WMI 次要函数代码的 [**IRP \_ MJ \_ 系统 \_ 控制**](../kernel/irp-mj-system-control.md)请求。
 
 有关处理 WMI 次要 Irp 的详细信息，请参阅 [**WDM 驱动程序的 Wmi 要求**](../kernel/wmi-requirements-for-wdm-drivers.md)、 [**处理 wmi 请求**](../kernel/handling-wmi-requests.md)、 [**Windows Management Instrumentation 例程**](/windows-hardware/drivers/ddi/index)和 [**WMI 库支持例程**](/windows-hardware/drivers/ddi/index)。
 
@@ -67,5 +66,5 @@ ms.locfileid: "90106118"
 
 [**WmiForward**](wdm-wmiforward.md) 
 [**WDM 驱动程序**](../kernel/wmi-requirements-for-wdm-drivers.md) 
- 的 WMI 要求[**处理 WMI 请求**](../kernel/handling-wmi-requests.md) 
+ 的 WMI 要求 [**处理 WMI 请求**](../kernel/handling-wmi-requests.md) 
 [**WMI 库支持例程**](/windows-hardware/drivers/ddi/index)

@@ -1,15 +1,14 @@
 ---
 title: MSFC \_ TARGETEVENT WMI 类
 description: MSFC \_ TARGETEVENT WMI 类
-ms.assetid: 251f7526-98e6-495d-a987-83257e968bb8
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 50d1cbdd32bfc30ca13c8f8af2064dcbc1fc23e0
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 37c48634c4e3d1bf55ceb8c436028d7d0f2f2e4d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89187801"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96811453"
 ---
 # <a name="msfc_targetevent-wmi-class"></a>MSFC \_ TARGETEVENT WMI 类
 
@@ -19,7 +18,7 @@ ms.locfileid: "89187801"
 
 WMI 提供程序使用 MSFC \_ TARGETEVENT WMI 类来报告目标事件。
 
-MSFC \_ TargetEvent 类在 *Hbaapi*中定义如下：
+MSFC \_ TargetEvent 类在 *Hbaapi* 中定义如下：
 
 ```cpp
 class MSFC_TargetEvent : WmiEvent {

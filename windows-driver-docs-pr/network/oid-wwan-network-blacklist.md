@@ -1,16 +1,15 @@
 ---
 title: OID_WWAN_NETWORK_BLACKLIST
 description: OID_WWAN_NETWORK_BLACKLIST 获取或设置有关移动宽带 (MBB) 设备的网络黑名单的信息。
-ms.assetid: CD5F0913-73E4-4A04-BB56-76A59D886FF1
 ms.date: 08/21/2018
 keywords: -从 Windows Vista 开始 OID_WWAN_NETWORK_BLACKLIST 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: c8a406adf09eb3e1000322f29694f4070856a49c
-ms.sourcegitcommit: 29c2e6dd8a3de3c11822d990adf1edd774f8a136
+ms.openlocfilehash: b20442b5d317be61903604cfc283afba2f1a3901
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91230007"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96809965"
 ---
 # <a name="oid_wwan_network_blacklist"></a>OID_WWAN_NETWORK_BLACKLIST
 

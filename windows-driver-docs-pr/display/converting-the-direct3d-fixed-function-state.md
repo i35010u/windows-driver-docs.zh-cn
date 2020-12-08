@@ -1,7 +1,6 @@
 ---
 title: 转换 Direct3D 固定函数状态
 description: 转换 Direct3D 固定函数状态
-ms.assetid: bc93d65e-ac16-470d-8c52-db8b1cc74456
 keywords:
 - 用户模式显示驱动程序 WDK Windows Vista，转换 Direct3D fixed 函数状态
 - fixed 函数状态转换 WDK 显示
@@ -14,12 +13,12 @@ keywords:
 - 呈现状态 WDK 显示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f4f394675d3ed68e3c9f287f4093051f933beaba
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 5c7eb97ae5bb8db0abc1f5c5055ca517829d6e3c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89064900"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96810113"
 ---
 # <a name="converting-the-direct3d-fixed-function-state"></a>转换 Direct3D 固定函数状态
 
@@ -60,11 +59,11 @@ ms.locfileid: "89064900"
 
     当驱动程序支持像素着色器版本2.0 或更高版本时，硬件顶点处理使用固定函数像素着色器转换器。
 
-    **注意**   对于 DirectX 8.0 之前的 DirectX 版本，将在*Ddraw.dll*中实现着色器映射代码的固定函数。
+    **注意**   对于 DirectX 8.0 之前的 DirectX 版本，将在 *Ddraw.dll* 中实现着色器映射代码的固定函数。
 
      
 
-### <a name="span-idunused_user_mode_display_driver_functionsspanspan-idunused_user_mode_display_driver_functionsspanunused-user-mode-display-driver-functions"></a><span id="unused_user_mode_display_driver_functions"></span><span id="UNUSED_USER_MODE_DISPLAY_DRIVER_FUNCTIONS"></span>未使用的用户模式显示驱动程序函数
+### <a name="span-idunused_user_mode_display_driver_functionsspanspan-idunused_user_mode_display_driver_functionsspanunused-user-mode-display-driver-functions"></a><span id="unused_user_mode_display_driver_functions"></span><span id="UNUSED_USER_MODE_DISPLAY_DRIVER_FUNCTIONS"></span>未使用的 User-Mode 显示驱动程序函数
 
 当启用固定函数顶点着色器转换器时，Direct3D 运行时不调用以下 [用户模式显示驱动程序函数](/windows-hardware/drivers/ddi/index) ：
 

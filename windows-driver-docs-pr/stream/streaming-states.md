@@ -1,7 +1,6 @@
 ---
 title: 流式处理状态
 description: 流式处理状态
-ms.assetid: 1030e5cd-441b-4f6a-8f6a-21ce11aaca96
 keywords:
 - 视频捕获 WDK AVStream，流状态
 - 捕获视频 WDK AVStream，流状态
@@ -13,12 +12,12 @@ keywords:
 - 运行状态 WDK 视频捕获
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f7239fd8e7f9b34e8dfb22843cd8bb4e5e6289e
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: dcedfcaaf4e658e3dd5cf37a955faaebc805df74
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89188341"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96809831"
 ---
 # <a name="streaming-states"></a>流式处理状态
 
@@ -33,7 +32,7 @@ ms.locfileid: "89188341"
 <thead>
 <tr class="header">
 <th>状态</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>

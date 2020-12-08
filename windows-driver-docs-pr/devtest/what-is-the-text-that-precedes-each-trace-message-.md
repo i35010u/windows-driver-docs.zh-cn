@@ -1,35 +1,34 @@
 ---
-title: 什么是前每条跟踪消息的文本
-description: 什么是前每条跟踪消息的文本
-ms.assetid: bff8eb0b-f571-405f-b930-3003e2c50621
+title: 每个跟踪消息前面的文本是什么
+description: 每个跟踪消息前面的文本是什么
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4aeffbafc960ad92289d51f5ae7738d4582851d4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1304275ddc7779dd0d86fe06eaa6200842f2fa08
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379131"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96810697"
 ---
 # <a name="what-is-the-text-that-precedes-each-trace-message"></a>每条跟踪消息前面的的文本是什么？
 
 
-[Tracefmt](tracefmt.md)并[TraceView](traceview.md)添加[跟踪消息前缀](trace-message-prefix.md)到它们格式化每条跟踪消息。 前缀是组成的跟踪消息有关的数据字符串。 Tracefmt 和 TraceView 输出中，可以查看该前缀。
+[Tracefmt](tracefmt.md) 和 [TraceView](traceview.md) 为其格式的每个跟踪消息添加一个 [跟踪消息前缀](trace-message-prefix.md) 。 前缀是由有关跟踪消息的数据组成的字符串。 可以在 Tracefmt 和 TraceView 输出中查看前缀。
 
-以下行显示跟踪消息前缀的默认语法：
+以下行显示了跟踪消息前缀的默认语法：
 
 ```
 [CPUNumber]ProcessID.ThreadID :: SystemTime [MessageGUIDFriendlyName]
 ```
 
-其中的默认值*MessageGUIDFriendlyName*是在其中的目录[跟踪提供程序](trace-provider.md)生成。
+其中， *MessageGUIDFriendlyName* 的默认值是在其中生成 [跟踪提供程序](trace-provider.md) 的目录。
 
-显示的前缀，使用值替换变量后下, 一行中从示例跟踪日志：
+带有替换变量的值的前缀在示例跟踪日志中显示为以下行：
 
 ```
 [0]0C40.0C3C::09/20/2004-14:41:31.625 [tracedrv]Hello, 1 Hi
 ```
 
-可以添加和删除数据元素由前缀创建或编辑 %跟踪\_格式\_前缀 %环境变量。
+可以通过创建或编辑% TRACE \_ FORMAT \_ prefix% 环境变量来添加和删除前缀中的数据元素。
 
-有关说明和一组可以包含 %跟踪的值中的数据元素\_格式\_前缀 %，请参阅[跟踪消息前缀](trace-message-prefix.md)。
+有关说明和可包含在% 跟踪格式前缀% 的值中的数据元素列表 \_ \_ ，请参阅 [跟踪消息前缀](trace-message-prefix.md)。

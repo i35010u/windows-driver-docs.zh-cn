@@ -1,7 +1,6 @@
 ---
 title: 'PendedCompletedRequest 规则 (wdm) '
 description: PendedCompletedRequest 规则指定，如果驱动程序在传入 IRP 上调用了 IoCompleteRequest，则驱动程序的调度例程不会 \_ 在 IRP 上返回 "挂起" 状态。
-ms.assetid: 875409b0-b91c-44e6-8240-c5e656b70048
 ms.date: 05/21/2018
 keywords:
 - 'PendedCompletedRequest 规则 (wdm) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 231986d1a7cf796c2b08daa7e4f651334d577e79
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 7802abd970fd4e140fafea93df4565e9c1760657
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104332"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96811017"
 ---
 # <a name="pendedcompletedrequest-rule-wdm"></a>PendedCompletedRequest 规则 (wdm) 
 
 
-**PendedCompletedRequest**规则指定， \_ 如果驱动程序在传入 irp 上调用了[**IoCompleteRequest**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocompleterequest) ，则驱动程序的调度例程不会在 IRP 上返回 "挂起" 状态。
+**PendedCompletedRequest** 规则指定， \_ 如果驱动程序在传入 irp 上调用了 [**IoCompleteRequest**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocompleterequest) ，则驱动程序的调度例程不会在 IRP 上返回 "挂起" 状态。
 
 如果驱动程序开始执行任何调度例程，则不会应用此规则。
 

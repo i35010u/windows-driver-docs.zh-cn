@@ -1,7 +1,6 @@
 ---
 title: 与子设备的驱动程序通信
 description: 与子设备的驱动程序通信
-ms.assetid: f1311941-bfba-44a4-867c-95fcbef19510
 keywords:
 - 视频微型端口驱动程序 WDK Windows 2000，子设备
 - 子设备 WDK 视频微型端口，与驱动程序通信
@@ -9,12 +8,12 @@ keywords:
 - IRP_MN_QUERY_INTERFACE
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 23906d3ad428fd579df691b9b4736eaea6859e67
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: ae6207949211ccf80bd4f0e7edf172ad60211d94
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89064390"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96810227"
 ---
 # <a name="communicating-with-the-driver-of-a-child-device"></a>与子设备的驱动程序通信
 

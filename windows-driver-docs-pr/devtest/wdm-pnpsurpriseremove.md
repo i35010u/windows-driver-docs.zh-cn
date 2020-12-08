@@ -1,7 +1,6 @@
 ---
 title: 'PnpSurpriseRemove 规则 (wdm) '
 description: PnpSurpriseRemove 规则指定在处理 IRP \_ MN \_ 意外删除请求时，驱动程序不调用 IoDeleteDevice 或 IoDetachDevice \_ 。
-ms.assetid: 58553c78-04c3-423c-bf68-69d5a8fbfa9b
 ms.date: 05/21/2018
 keywords:
 - 'PnpSurpriseRemove 规则 (wdm) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 0de30b1e61eb82f8745f76b124e07f30c4ca70b8
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 4e9917873c531aa28a07f0900cc5acf41d1fd5bc
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102786"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96810979"
 ---
 # <a name="pnpsurpriseremove-rule-wdm"></a>PnpSurpriseRemove 规则 (wdm) 
 
 
-**PnpSurpriseRemove**规则指定在处理[**IRP \_ MN \_ 意外 \_ 删除**](../kernel/irp-mn-surprise-removal.md)请求时，驱动程序不调用 IoDeleteDevice 或 IoDetachDevice。
+**PnpSurpriseRemove** 规则指定在处理 [**IRP \_ MN \_ 意外 \_ 删除**](../kernel/irp-mn-surprise-removal.md)请求时，驱动程序不调用 IoDeleteDevice 或 IoDetachDevice。
 
 PnP 管理器发送 [**IRP \_ MN \_ 意外 \_ 删除**](../kernel/irp-mn-surprise-removal.md) 请求，通知驱动程序设备不再可用于 i/o 操作，并且可能已从计算机上意外删除。
 

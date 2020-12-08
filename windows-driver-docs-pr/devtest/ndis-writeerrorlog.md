@@ -1,7 +1,6 @@
 ---
 title: 'WriteErrorLog 规则 (ndis) '
 description: WriteErrorLog 规则指定在 MiniportInitializeEx 函数中调用 NdisMAllocateSharedMemory 函数时，如果分配失败，驱动程序还应调用 NdisWriteErrorLogEntry。
-ms.assetid: b626f25a-3101-4c0a-b0a9-fef6ce964055
 ms.date: 05/21/2018
 keywords:
 - 'WriteErrorLog 规则 (ndis) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 67e47e43bf6944cb785818bdeec1fa06716830b6
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 2ccc3562a66833e0de9974b2b6a40ba87874bf9d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106282"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96811147"
 ---
 # <a name="writeerrorlog-rule-ndis"></a>WriteErrorLog 规则 (ndis) 
 
 
-WriteErrorLog 规则指定在*MiniportInitializeEx*函数中调用**NdisMAllocateSharedMemory**函数时，如果分配失败，驱动程序还应调用**NdisWriteErrorLogEntry** 。
+WriteErrorLog 规则指定在 *MiniportInitializeEx* 函数中调用 **NdisMAllocateSharedMemory** 函数时，如果分配失败，驱动程序还应调用 **NdisWriteErrorLogEntry** 。
 
 通常情况下，只要分配内存操作失败，就可以在日志中记录错误条目。 大多数分配操作都在 *MiniportInitializeEx* 回调函数中发生。 有关如何记录错误的详细信息，请参阅下面的代码示例。
 

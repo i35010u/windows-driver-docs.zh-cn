@@ -1,15 +1,14 @@
 ---
 title: 访问非驻留分配
 description: GPU 访问非常驻分配是非法的，将导致为生成错误的应用程序删除设备。
-ms.assetid: 698ECD53-861A-4750-B33C-DF0611B87829
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6f8c12e95508698c4eed28fd07e1cf8ec6078a65
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: e3604e33ea971145aa87c9676a680da6224548fb
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89063196"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96810578"
 ---
 # <a name="span-iddisplayaccess_to_non-resident_allocationspanaccess-to-non-resident-allocation"></a><span id="display.access_to_non-resident_allocation"></span>访问非驻留分配
 

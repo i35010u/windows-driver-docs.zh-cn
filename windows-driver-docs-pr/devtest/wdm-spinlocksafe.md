@@ -1,7 +1,6 @@
 ---
 title: 'SpinLockSafe 规则 (wdm) '
 description: SpinLockSafe 规则指定在保存旋转锁时不调用 IoStartNextPacket 和 IoCompleteRequest。
-ms.assetid: 64a18cb0-80a3-4830-a5b0-131fc1ebdf60
 ms.date: 05/21/2018
 keywords:
 - 'SpinLockSafe 规则 (wdm) '
@@ -12,19 +11,19 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 65c8026d27de7c8c7fd635133dd84ade65dd6a23
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: c8cf39c4af3545d91094bc37d1c11dd62566c6cf
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103940"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96810781"
 ---
 # <a name="spinlocksafe-rule-wdm"></a>SpinLockSafe 规则 (wdm) 
 
 
-**SpinLockSafe**规则指定在保存旋转锁时不调用[**IoStartNextPacket**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-iostartnextpacket)和[**IoCompleteRequest**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocompleterequest) 。
+**SpinLockSafe** 规则指定在保存旋转锁时不调用 [**IoStartNextPacket**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-iostartnextpacket)和 [**IoCompleteRequest**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocompleterequest) 。
 
-此规则还指定驱动程序在调用[**KeReleaseSpinLockFromDpcLevel**](/windows-hardware/drivers/ddi/wdm/nf-wdm-kereleasespinlockfromdpclevel)或[**KeReleaseSpinLock**](/windows-hardware/drivers/ddi/wdm/nf-wdm-kereleasespinlock)之前调用[**KeAcquireSpinLock**](/windows-hardware/drivers/ddi/wdm/nf-wdm-keacquirespinlock)或[**KeAcquireSpinLockAtDpcLevel**](/windows-hardware/drivers/ddi/wdm/nf-wdm-keacquirespinlockatdpclevel) ，并在调用[**IoAcquireCancelSpinLock**](/previous-versions/windows/hardware/drivers/ff549550(v=vs.85))之前调用[**IoReleaseCancelSpinLock**](/previous-versions/windows/hardware/drivers/ff548196(v=vs.85)) 。
+此规则还指定驱动程序在调用 [**KeReleaseSpinLockFromDpcLevel**](/windows-hardware/drivers/ddi/wdm/nf-wdm-kereleasespinlockfromdpclevel)或 [**KeReleaseSpinLock**](/windows-hardware/drivers/ddi/wdm/nf-wdm-kereleasespinlock)之前调用 [**KeAcquireSpinLock**](/windows-hardware/drivers/ddi/wdm/nf-wdm-keacquirespinlock)或 [**KeAcquireSpinLockAtDpcLevel**](/windows-hardware/drivers/ddi/wdm/nf-wdm-keacquirespinlockatdpclevel) ，并在调用 [**IoAcquireCancelSpinLock**](/previous-versions/windows/hardware/drivers/ff549550(v=vs.85))之前调用 [**IoReleaseCancelSpinLock**](/previous-versions/windows/hardware/drivers/ff548196(v=vs.85)) 。
 
 如果驱动程序包括嵌套的旋转锁，则静态驱动程序验证程序可以报告对该规则的错误冲突，即使已正确获取和释放这些旋转锁。
 

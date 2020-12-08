@@ -1,7 +1,6 @@
 ---
 title: 'RemoveLockReleaseDeviceControl 规则 (wdm) '
 description: RemoveLockReleaseDeviceControl 规则验证是否在严格替换中使用对 IoAcquireRemoveLock 和 IoReleaseRemoveLock 的调用。 而且，在调度例程结束时，驱动程序不应持有删除锁定。
-ms.assetid: 88D45CFD-E725-4EEE-AEC5-5209344662B6
 ms.date: 05/21/2018
 keywords:
 - 'RemoveLockReleaseDeviceControl 规则 (wdm) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 34fd484577db1693a9103d915572a0a56c23e285
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 4939c3572b603ba419d2d131111b9d028d54622f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105201"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96810857"
 ---
 # <a name="removelockreleasedevicecontrol-rule-wdm"></a>RemoveLockReleaseDeviceControl 规则 (wdm) 
 
 
-**RemoveLockReleaseDeviceControl**规则验证是否在严格替换中使用对[**IoAcquireRemoveLock**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioacquireremovelock)和[**IoReleaseRemoveLock**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioreleaseremovelock)的调用。 而且，在调度例程结束时，驱动程序不应持有删除锁定。
+**RemoveLockReleaseDeviceControl** 规则验证是否在严格替换中使用对 [**IoAcquireRemoveLock**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioacquireremovelock)和 [**IoReleaseRemoveLock**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioreleaseremovelock)的调用。 而且，在调度例程结束时，驱动程序不应持有删除锁定。
 
 **驱动程序模型： WDM**
 

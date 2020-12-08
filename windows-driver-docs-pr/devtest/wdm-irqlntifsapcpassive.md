@@ -1,7 +1,6 @@
 ---
 title: 'IrqlNtifsApcPassive 规则 (wdm) '
 description: IrqlNtifsApcPassive 规则指定，仅当该驱动程序以 IRQL = PASSIVE_LEVEL 或 IRQL <= APC_LEVEL 执行时，才调用该规则中列出的 DDIs。
-ms.assetid: EDBF30AD-D122-4FF0-ACF9-8701E92B0A06
 ms.date: 04/03/2020
 keywords:
 - 'IrqlNtifsApcPassive 规则 (wdm) '
@@ -12,16 +11,16 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: e537c9dd1be3ec9cc8a4e06fd39a6eb80b777743
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 33fdc2de68fea0b69ac638e358f8897b318c795c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105954"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96811115"
 ---
 # <a name="irqlntifsapcpassive-rule-wdm"></a>IrqlNtifsApcPassive 规则 (wdm) 
 
-**IrqlNtifsApcPassive**规则指定，仅当该驱动程序以 irql = PASSIVE_LEVEL 或 irql <= APC_LEVEL 执行时，才调用该规则中列出的 DDIs。
+**IrqlNtifsApcPassive** 规则指定，仅当该驱动程序以 irql = PASSIVE_LEVEL 或 irql <= APC_LEVEL 执行时，才调用该规则中列出的 DDIs。
 
 **驱动程序模型： WDM**
 

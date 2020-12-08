@@ -1,7 +1,6 @@
 ---
 title: 'KsIrqlDeviceCallbacks 规则 ( # A1'
 description: KsIrqlDeviceCallbacks 规则指定内核流式处理 (KS) 微型端口驱动程序从带有调用时其具有相同 IRQL 的 KS 设备回调函数返回。
-ms.assetid: 8C73EE2F-AA5B-478B-925A-C7DC4F6EFF6A
 ms.date: 05/21/2018
 keywords:
 - 'KsIrqlDeviceCallbacks 规则 ( # A1'
@@ -12,12 +11,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 83ecd35f0ceac8a6a9762f7e357e19e4dcede3c3
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 044d83ad33369e5cef26293f21a634a50b38b0ff
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105646"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96811169"
 ---
 # <a name="ksirqldevicecallbacks-rule-"></a>KsIrqlDeviceCallbacks 规则 ( # A1
 
@@ -32,7 +31,7 @@ KsIrqlDeviceCallbacks 规则指定内核流式处理 (KS) 微型端口驱动程�
 
 使用命令：
 
-**！ ruleinfo 0x81006** *RuleState*子*情况。*
+**！ ruleinfo 0x81006** *RuleState* 子 *情况。*
 
 在规则状态数据中，输入回调时， *OldIrql* 是 IRQL。 退出回调函数时， *NewIrql* 是 IRQL。
 

@@ -1,24 +1,23 @@
 ---
 title: 确定平台是移动平台还是桌面平台
 description: 确定平台是移动平台还是桌面平台
-ms.assetid: f0a553a4-a23b-45c8-abc5-b5014ba328ae
 keywords:
-- TMM WDK 显示、 确定移动或桌面
+- TMM WDK 显示，确定移动或桌面
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 420f26fddec527b63c539a6adfc647d6b8034f44
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 930f76c7ff274908a158a2bc3d86b3ae83e35303
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63342423"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96809513"
 ---
 # <a name="determining-whether-a-platform-is-mobile-or-desktop"></a>确定平台是移动平台还是桌面平台
 
 
-TMM 仅在移动计算机上运行，并自动在台式计算机上禁用。 硬件供应商应启用并使用自己专有的方法来输入台式计算机上的克隆视图。 它们应确定一个平台，以便它们可以避免使用其专有方法来输入移动计算机上的克隆视图，并改为使用 TMM 是移动。
+TMM 仅在移动计算机上运行，在台式计算机上自动禁用。 硬件供应商应该启用并使用自己的专有方法，在台式计算机上输入克隆视图。 他们应该确定平台是否为移动设备，以便它们可以避免使用其专用方法在移动计算机上输入克隆视图，并使用 TMM。
 
-硬件供应商可以使用以下代码以确定平台是否移动或桌面。 然后，平台可用的适当机制来输入克隆视图。
+硬件供应商可以使用以下代码来确定平台是移动版还是桌面版。 然后，平台可以使用适当的机制来输入克隆视图。
 
 ```cpp
 #include <Powrprof.h>   // For GetPwrCapabilities
@@ -58,7 +57,7 @@ TMM 仅在移动计算机上运行，并自动在台式计算机上禁用。 硬
     }
 ```
 
-有关在上述代码中调用的函数的信息，请参阅 Microsoft Windows SDK 文档。
+有关在前面的代码中调用的函数的信息，请参阅 Microsoft Windows SDK 文档。
 
  
 

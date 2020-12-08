@@ -1,7 +1,6 @@
 ---
 title: 'IrqlReturn 规则 (wdm) '
 description: IrqlReturn 规则指定驱动程序的调度例程在调用时返回的 IRQL 相同。
-ms.assetid: 1b2ef432-e3ba-4a01-b3df-839ff13b03f6
 ms.date: 05/21/2018
 keywords:
 - 'IrqlReturn 规则 (wdm) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 5b392888bce7247cb74bb5b77cf790042b1d0f62
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 023c44b9a2c935b63a98d0e079df25df0cdbed3a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107462"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96811103"
 ---
 # <a name="irqlreturn-rule-wdm"></a>IrqlReturn 规则 (wdm) 
 
 
-**IrqlReturn**规则指定驱动程序的调度例程在调用时返回的 IRQL 相同。 有关正确调用调度例程的 IRQLs 的详细信息，请参阅 [**调度例程和 IRQLs。**](../kernel/dispatch-routines-and-irqls.md)
+**IrqlReturn** 规则指定驱动程序的调度例程在调用时返回的 IRQL 相同。 有关正确调用调度例程的 IRQLs 的详细信息，请参阅 [**调度例程和 IRQLs。**](../kernel/dispatch-routines-and-irqls.md)
 
 **驱动程序模型： WDM**
 

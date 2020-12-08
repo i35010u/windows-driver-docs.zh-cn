@@ -1,7 +1,6 @@
 ---
 title: 'PendedCompletedRequest3 规则 (wdm) '
 description: PendedCompletedRequest3 规则指定挂起的 IRP 不应通过调用 IoCompleteRequest 来完成。
-ms.assetid: 051D8E8C-4C06-4497-A099-D038DC9152FA
 ms.date: 05/21/2018
 keywords:
 - 'PendedCompletedRequest3 规则 (wdm) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: b0d724783f517cbff5bef88d9093e13d905632d1
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 0342d39c588611a21ee6a4e1a372392bc3b45f69
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105946"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96810999"
 ---
 # <a name="pendedcompletedrequest3-rule-wdm"></a>PendedCompletedRequest3 规则 (wdm) 
 
 
-**PendedCompletedRequest3**规则指定挂起的 IRP 不应通过调用[**IoCompleteRequest**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocompleterequest)来完成。
+**PendedCompletedRequest3** 规则指定挂起的 IRP 不应通过调用 [**IoCompleteRequest**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocompleterequest)来完成。
 
 **驱动程序模型： WDM**
 

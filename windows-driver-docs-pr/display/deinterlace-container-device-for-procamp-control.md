@@ -1,19 +1,18 @@
 ---
 title: 用于 ProcAmp 控制的反交错容器设备
 description: 用于 ProcAmp 控制的反交错容器设备
-ms.assetid: ce179efe-9e92-4407-8e90-896e4b9a2e84
 keywords:
 - 容器设备 WDK DirectX VA
-- 取消隔行扫描 WDK DirectX va，因此 ProcAmp 控件
-- ProcAmp WDK DirectX va，因此取消隔行扫描容器设备
+- 取消隔行扫描 WDK DirectX VA，ProcAmp control
+- ProcAmp WDK DirectX VA，取消隔行扫描容器设备
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3357a55a9ca0edc9f24e89b44c28943a49eaca49
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3a47dc0270d2c685a330d12f22d5c9452f8c3f05
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63348901"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96809593"
 ---
 # <a name="deinterlace-container-device-for-procamp-control"></a>用于 ProcAmp 控制的反交错容器设备
 
@@ -21,11 +20,11 @@ ms.locfileid: "63348901"
 ## <span id="ddk_deinterlace_container_device_for_procamp_control_gg"></span><span id="DDK_DEINTERLACE_CONTAINER_DEVICE_FOR_PROCAMP_CONTROL_GG"></span>
 
 
-[ProcAmp 控制的函数的示例](sample-functions-for-procamp-control.md)因此需要先定义并创建取消隔行扫描容器设备只可以 DirectX VA 设备上下文中使用。
+[ProcAmp 控件的示例函数](sample-functions-for-procamp-control.md)只能在 DirectX VA 设备的上下文中使用，因此必须首先定义和创建隔行扫描容器设备。
 
-[取消隔行扫描容器设备进行去隔行](deinterlace-container-device-for-deinterlacing.md)还可用 ProcAmp 控件来确定 ProcAmp 控制设备的功能 （如果该驱动程序支持 ProcAmp 控制调整）。 如果支持，驱动程序将创建 ProcAmp 控制设备，当 VMR 开始调用来执行此操作。
+如果驱动程序支持 ProcAmp 控件调整) ，则用于 [取消隔行扫描的隔行扫描容器设备](deinterlace-container-device-for-deinterlacing.md) 还可用于 ProcAmp 控件，以确定 ProcAmp 控制 (设备的功能。 如果支持，驱动程序将在 VMR 启动调用时创建 ProcAmp 控件设备。
 
-**请注意**  取消隔行扫描容器设备是软件构造并不表示任何包含的设备上起作用的硬件。
+**注意**   取消隔行扫描容器设备只是一种软件构造，不代表设备上包含的任何功能硬件。
 
  
 

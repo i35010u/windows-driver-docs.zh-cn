@@ -1,18 +1,17 @@
 ---
 title: 十字形属性
 description: 十字形属性
-ms.assetid: 41e46d45-90f8-4b0c-ab27-1fec4202b711
 keywords:
 - 横线属性 WDK 视频捕获
 - PROPSETID_VIDCAP_CROSSBAR
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a8fe8b1a13c892cc0288ee2e6f224458d04178ab
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: a3af6caecb166f0f8a94dadb11ea01440b7b6734
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106226"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96811381"
 ---
 # <a name="crossbar-properties"></a>十字形属性
 

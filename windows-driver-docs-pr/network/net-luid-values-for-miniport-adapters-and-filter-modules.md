@@ -1,7 +1,6 @@
 ---
 title: 微型端口适配器和筛选器模块的 NET_LUID 值
 description: 微型端口适配器和筛选器模块的 NET_LUID 值
-ms.assetid: d9135438-3399-4845-a28d-d445471cb41d
 keywords:
 - NDIS 网络接口 WDK，NET_LUID
 - 网络接口 WDK，NET_LUID
@@ -10,12 +9,12 @@ keywords:
 - 筛选器模块 WDK 网络，NET_LUID 值
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 59847364f7f8572623442a37c14ac3a785dfc668
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: b6d811edb47eb06d89ce459f2f1def255534a40f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90716320"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96809995"
 ---
 # <a name="net_luid-values-for-miniport-adapters-and-filter-modules"></a>\_微型端口适配器和筛选器模块的 NET LUID 值
 

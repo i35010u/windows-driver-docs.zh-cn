@@ -1,16 +1,15 @@
 ---
 title: OID_WWAN_PIN_EX
 description: OID_WWAN_PIN_EX 设置或返回与 (Pin) 的个人识别码相关的扩展信息。
-ms.assetid: 4D3D91B2-7B3C-4C8F-B98F-0F9999D04C03
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_WWAN_PIN_EX 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 204a0f72e3ac966d26480f3bba7c7b84b4207776
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 81b1047a6ea6369804d3c595317dd1dab96951f7
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89209289"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96809951"
 ---
 # <a name="oid_wwan_pin_ex"></a>OID \_ WWAN \_ PIN （ \_ EX）
 

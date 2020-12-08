@@ -1,7 +1,6 @@
 ---
 title: Bob 反交错机制
 description: Bob 反交错机制
-ms.assetid: 1735f9c6-ac83-4a6a-bc6f-4d4a193876dd
 keywords:
 - bob 取消隔行扫描 WDK DirectX VA，机械
 - 交错字段 WDK DirectX VA
@@ -9,12 +8,12 @@ keywords:
 - 取消隔行扫描 WDK DirectX VA，bob，机制
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1dd1e9ab752488ecf47a3ebd813cfdccc6da8463
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 39a6683964f5c049e29ace67245ee5bdbf4744c0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89065700"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96810441"
 ---
 # <a name="bob-deinterlacing-mechanics"></a>Bob 反交错机制
 
@@ -30,7 +29,7 @@ ms.locfileid: "89065700"
 
 ![阐释包含两个交错字段的图面的内存布局的关系图](images/deinterlace.png)
 
-如果视频示例包含两个交错字段，由[**DXVA \_ SampleFormat**](/windows-hardware/drivers/ddi/dxva/ne-dxva-_dxva_sampleformat)枚举的**DXVA \_ SampleFieldInterleavedEvenFirst**和**DXVA \_ SampleFieldInterleavedOddFirst**成员指定，则第二个字段的开始时间是使用[**rtStart \_ rtEnd**](/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_videosample)结构的**DXVA**成员和**VideoSample**成员计算的，如下所示：
+如果视频示例包含两个交错字段，由 [**DXVA \_ SampleFormat**](/windows-hardware/drivers/ddi/dxva/ne-dxva-_dxva_sampleformat)枚举的 **DXVA \_ SampleFieldInterleavedEvenFirst** 和 **DXVA \_ SampleFieldInterleavedOddFirst** 成员指定，则第二个字段的开始时间是使用 [**rtStart \_ rtEnd**](/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_videosample)结构的 **DXVA** 成员和 **VideoSample** 成员计算的，如下所示：
 
  (**rtStart**  +  **rtEnd**) /2
 

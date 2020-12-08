@@ -1,7 +1,6 @@
 ---
 title: 'RemoveLockQueryMnRemove 规则 (wdm) '
 description: RemoveLockQueryMnRemove 规则验证在 \_ \_ 使用 MinorFunction IRP \_ MN \_ 查询 \_ 删除 \_ 设备处理 IRP MJ PNP 时，对 IoAcquireRemoveLock 和 IoReleaseRemoveLock 的调用是否正确使用。
-ms.assetid: 593B8305-EA61-4857-9304-A8319A8E0017
 ms.date: 05/21/2018
 keywords:
 - 'RemoveLockQueryMnRemove 规则 (wdm) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 8e4bdd51ffd844144cfbba7314e803a04e241e15
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: d1fc94e30a8ee5b87d0a3fd8678f63055f307fab
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103249"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96810883"
 ---
 # <a name="removelockquerymnremove-rule-wdm"></a>RemoveLockQueryMnRemove 规则 (wdm) 
 
 
-**RemoveLockQueryMnRemove**规则验证在[**IoAcquireRemoveLock**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioacquireremovelock) [**IoReleaseRemoveLock**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioreleaseremovelock) \_ \_ 使用 MinorFunction IRP \_ MN \_ 查询 \_ 删除 \_ 设备处理 IRP MJ PNP 时，对 IoAcquireRemoveLock 和 IoReleaseRemoveLock 的调用是否正确使用。 在将 IRP 转发到堆栈之前，驱动程序应该获取删除锁定。
+**RemoveLockQueryMnRemove** 规则验证在 [**IoAcquireRemoveLock**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioacquireremovelock) [**IoReleaseRemoveLock**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioreleaseremovelock) \_ \_ 使用 MinorFunction IRP \_ MN \_ 查询 \_ 删除 \_ 设备处理 IRP MJ PNP 时，对 IoAcquireRemoveLock 和 IoReleaseRemoveLock 的调用是否正确使用。 在将 IRP 转发到堆栈之前，驱动程序应该获取删除锁定。
 
 此规则仅适用于 FDO 和 FIDO 驱动程序。
 
@@ -38,7 +37,7 @@ PnP 管理器通过堆栈发送查询删除。 当系统正在运行时，FDO �
     -   IRP \_ MN \_ SUPRISE \_ 删除
     -   IRP \_ MN \_ 删除 \_ 设备
 
-2.  调用[**IoDetachDevice**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iodetachdevice)或[**IoDeleteDevice**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iodeletedevice)之前应调用[**IoReleaseRemoveLockAndWait**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioreleaseremovelockandwait) 。  (这可确保在设备驱动程序) 中释放所有删除锁。
+2.  调用 [**IoDetachDevice**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iodetachdevice)或 [**IoDeleteDevice**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iodeletedevice)之前应调用 [**IoReleaseRemoveLockAndWait**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioreleaseremovelockandwait) 。  (这可确保在设备驱动程序) 中释放所有删除锁。
 
 **驱动程序模型： WDM**
 

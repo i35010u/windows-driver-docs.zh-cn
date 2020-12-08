@@ -1,31 +1,30 @@
 ---
 title: WdfObjectReference 宏
 description: WdfObjectReference 宏会递增指定框架对象的引用计数。
-ms.assetid: 8e024197-d366-4665-994b-4e03f559e017
 keywords:
 - WdfObjectReference 宏
 ms.date: 08/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5120b0ddbc7e59465fe0ddc69014036d33b10963
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 8dccc526e0608c8a613b3ea9405c9496182ffd4d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106532"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96809757"
 ---
 # <a name="wdfobjectreference-macro"></a>WdfObjectReference 宏
 
 
 \[适用于 KMDF 和 UMDF\]
 
-**WdfObjectReference**宏会递增指定框架对象的引用计数。
+**WdfObjectReference** 宏会递增指定框架对象的引用计数。
 
 <a name="syntax"></a>语法
 ------
 
 ```ManagedCPlusPlus
 VOID WdfObjectReference(
-  [in] WDFOBJECT Handle
+  [in] WDFOBJECT Handle
 );
 ```
 
@@ -42,12 +41,12 @@ VOID WdfObjectReference(
 
 如果驱动程序提供的对象句柄无效，则会发生 bug 检查。
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 如果驱动程序调用 **WdfObjectReference** 来递增引用计数，则驱动程序必须调用 [**WdfObjectDereference**](wdfobjectdereference.md) 来减小计数。
 
-驱动程序可以调用[**WdfObjectReferenceWithTag**](wdfobjectreferencewithtag.md)或[**WdfObjectReferenceActual**](/windows-hardware/drivers/ddi/wdfobject/nf-wdfobject-wdfobjectreferenceactual)，而不是调用**WdfObjectReference**。
+驱动程序可以调用 [**WdfObjectReferenceWithTag**](wdfobjectreferencewithtag.md)或 [**WdfObjectReferenceActual**](/windows-hardware/drivers/ddi/wdfobject/nf-wdfobject-wdfobjectreferenceactual)，而不是调用 **WdfObjectReference**。
 
 有关对象引用计数的详细信息，请参阅 [框架对象生命周期](./framework-object-life-cycle.md)。
 

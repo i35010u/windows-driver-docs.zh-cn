@@ -1,7 +1,6 @@
 ---
 title: 调试 \_ 请求 \_ 获取 \_ 其他 \_ 创建 \_ 选项控制代码
 description: "\"调试 \\_ 请求 \\_ 获取 \\_ 其他 \\_ 创建 \\_ 选项\" 请求操作返回默认进程创建选项。"
-ms.assetid: ad4c98d9-ca4e-4ee3-a177-2fe04a8f22e2
 keywords:
 - DEBUG_REQUEST_GET_ADDITIONAL_CREATE_OPTIONS 控制代码 Windows 调试
 topic_type:
@@ -12,12 +11,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c20656086a9737f66a666992c87ab6b6730b0519
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 78210cc7566d5487acb4f9ddeae8287806ae5470
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89217885"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96809701"
 ---
 # <a name="debug_request_get_additional_create_options-control-code"></a>调试 \_ 请求 \_ 获取 \_ 其他 \_ 创建 \_ 选项控制代码
 
@@ -31,7 +30,7 @@ ms.locfileid: "89217885"
 未使用。
 
 <span id="OutBuffer"></span><span id="outbuffer"></span><span id="OUTBUFFER"></span>*OutBuffer*  
-默认进程创建选项。 进程创建选项的类型为 "调试" " [** \_ 创建 \_ 进程 \_ 选项**](/windows-hardware/drivers/ddi/dbgeng/ns-dbgeng-_debug_create_process_options)"。
+默认进程创建选项。 进程创建选项的类型为 "调试" " [**\_ 创建 \_ 进程 \_ 选项**](/windows-hardware/drivers/ddi/dbgeng/ns-dbgeng-_debug_create_process_options)"。
 
 <a name="remarks"></a>备注
 -------

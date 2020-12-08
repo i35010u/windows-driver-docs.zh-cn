@@ -1,7 +1,6 @@
 ---
 title: 视频微型端口驱动程序中的总线主控 DMA
 description: 视频微型端口驱动程序中的总线主控 DMA
-ms.assetid: fe6c2e16-d222-4948-b1df-34ed8d57d9d8
 keywords:
 - 视频微型端口驱动程序 WDK Windows 2000，主线-主 DMA
 - 总线主控 DMA WDK 音频视频微型端口
@@ -12,12 +11,12 @@ keywords:
 - 基于数据包的 DMA WDK 视频微型端口，概述
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: eafa3c789b7ba461bf1f395399756c0f8479c312
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 69d602206ef6d2eb4782d32d6d5d9a5ebed3f2cc
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89065286"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96810409"
 ---
 # <a name="bus-master-dma-in-video-miniport-drivers"></a>视频微型端口驱动程序中的总线主控 DMA
 

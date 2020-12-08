@@ -1,17 +1,16 @@
 ---
 title: WDF_DECLARE_CONTEXT_TYPE_WITH_NAME 宏
 description: WDF_DECLARE_CONTEXT_TYPE_WITH_NAME 宏为驱动程序的对象特定上下文空间创建一个具有指定名称的访问器方法。
-ms.assetid: e5911bd2-6976-4a91-b9ba-befa7ec93103
 keywords:
 - WDF_DECLARE_CONTEXT_TYPE_WITH_NAME 宏
 ms.date: 08/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5332bb722b9256323030ba2b172f5974c67dce62
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 7000662052ccc3aca8d86fc3b903aa920ef48d20
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89185701"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96809789"
 ---
 # <a name="wdf_declare_context_type_with_name-macro"></a>WDF_DECLARE_CONTEXT_TYPE_WITH_NAME 宏
 
@@ -116,7 +115,7 @@ pMyContext = RequestGetMyContext(Request);
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**WdfObjectGetTypedContext**](wdfobjectgettypedcontext.md)

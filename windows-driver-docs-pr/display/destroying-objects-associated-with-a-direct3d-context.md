@@ -1,19 +1,18 @@
 ---
 title: 销毁与 Direct3D 上下文关联的对象
 description: 销毁与 Direct3D 上下文关联的对象
-ms.assetid: b464eb31-6062-4c0c-90a2-2de39b5a85ac
 keywords:
 - 内存泄漏 WDK DirectX 9。0
 - 上下文 WDK Direct3D、DirectX 9。0
 - 销毁与上下文 WDK DirectX 9.0 相关的对象
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0c82680b1f191d5255aeda5b1236ea6508404312
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: e0021d55882027b78a0c9af9d59b32f382b2332d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89065914"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96809545"
 ---
 # <a name="destroying-objects-associated-with-a-direct3d-context"></a>销毁与 Direct3D 上下文关联的对象
 

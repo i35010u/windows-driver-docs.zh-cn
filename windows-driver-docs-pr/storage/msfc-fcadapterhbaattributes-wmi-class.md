@@ -1,15 +1,14 @@
 ---
 title: MSFC \_ FCADAPTERHBAATTRIBUTES WMI 类
 description: MSFC \_ FCADAPTERHBAATTRIBUTES WMI 类
-ms.assetid: fa0ff9c2-e7cc-4000-bd18-ade953e57dcc
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 9c66cd6d8c9b86974c367b610a42bf5e6a53a834
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: cc854c1dc88203602062ac663e5f6085129feb72
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89184087"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96811471"
 ---
 # <a name="msfc_fcadapterhbaattributes-wmi-class"></a>MSFC \_ FCADAPTERHBAATTRIBUTES WMI 类
 
@@ -19,7 +18,7 @@ ms.locfileid: "89184087"
 
 支持 T11 委员会 *光纤通道 HBA API* 规范的 hba 微型端口驱动程序使用 MSFC \_ FCAdapterHBAAttributes WMI 类来公开与光纤通道适配器关联的属性信息。
 
-MSFC \_ FCAdapterHBAAttributes 类在 *Hbaapi*中定义如下：
+MSFC \_ FCAdapterHBAAttributes 类在 *Hbaapi* 中定义如下：
 
 ```cpp
 class MSFC_FCAdapterHBAAttributes {

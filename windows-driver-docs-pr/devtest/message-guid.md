@@ -1,22 +1,21 @@
 ---
 title: 消息 GUID
 description: 消息 GUID
-ms.assetid: 3a51d730-61a4-44d9-aaf6-117736412efe
 keywords:
 - 消息 Guid WDK
 - Guid WDK 软件跟踪
 - 标识符 WDK 软件跟踪
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cb759d48be2b7aedc7bf7b5f961de876c2645ac2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: cab9a1ec56def3d0597a2a41f5a1850e47a4d0ba
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391340"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96811153"
 ---
 # <a name="message-guid"></a>消息 GUID
 
-一个*消息 GUID*，或*解码 GUID*，是从特定的提供程序分配到的跟踪消息的 GUID。 作为文件的名称的使用的同一个 GUID[跟踪消息格式 (TMF) 文件](trace-message-format-file.md)（.tmf 扩展名） 用于存储这些消息的格式设置说明。
+*消息 guid*（即 *解码 guid*）是分配给来自特定提供程序的跟踪消息的 guid。 同一 GUID 用作 [跟踪消息格式的文件名， (TMF) 文件](trace-message-format-file.md) ( 扩展) ，用于存储这些消息的格式设置说明。
 
-事件跟踪 Windows (ETW) 使用消息的 GUID 将跟踪消息与正确的 TMF 文件相关联。 有关如何执行此操作的详细信息，请参阅[Tracepdb](tracepdb.md)。
+Windows (ETW) 的事件跟踪使用消息 GUID 将跟踪消息与正确的 TMF 文件相关联。 有关如何执行此操作的详细信息，请参阅 [Tracepdb](tracepdb.md)。

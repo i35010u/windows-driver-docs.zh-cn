@@ -1,7 +1,6 @@
 ---
 title: WSDBIT 测试环境
 description: WSDBIT 测试环境
-ms.assetid: 6fa6f6f7-859a-4424-a71d-600f82b23f89
 keywords:
 - WSDBIT 工具 WDK，测试环境
 - WSDAPI 基本互操作性工具 WDK，测试环境
@@ -17,12 +16,12 @@ keywords:
 - WSDAPI 基本互操作性工具 WDK、用于测试的设备
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1814b0c3974f79724bf81ec5ce6316c99235bb7c
-ms.sourcegitcommit: 9b3dec2f2cd9a7ed9b340b4794ce6ff4134d8ebe
+ms.openlocfilehash: a66f5f4ea5e590e2c69d4b72dd647d8edc687d69
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/07/2020
-ms.locfileid: "91787665"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96810631"
 ---
 # <a name="wsdbit-testing-environment"></a>WSDBIT 测试环境
 
@@ -61,7 +60,7 @@ ms.locfileid: "91787665"
 
 ### <a name="simpleservice"></a>SimpleService
 
-**SimpleService**服务有四种方法：
+**SimpleService** 服务有四种方法：
 
 - **单向** 方法是将整数作为参数的单向方法。
 
@@ -73,7 +72,7 @@ ms.locfileid: "91787665"
 
 ### <a name="attachmentservice"></a>AttachmentService
 
-**AttachmentService**服务发送和接收附件。 要发送和接收的附件数据在 \\ 互操作目录中包含为两个单独的文件： `Image1.jpg` 和 `Image2.jpg` 。 此服务有两种方法：
+**AttachmentService** 服务发送和接收附件。 要发送和接收的附件数据在 \\ 互操作目录中包含为两个单独的文件： `Image1.jpg` 和 `Image2.jpg` 。 此服务有两种方法：
 
 - **OneWayAttachment** 是一种单向方法，其中附件作为参数。
 
@@ -81,7 +80,7 @@ ms.locfileid: "91787665"
 
 ### <a name="eventingservice"></a>EventingService
 
-**EventingService**服务有两种可订阅的事件：
+**EventingService** 服务有两种可订阅的事件：
 
 - **SimpleEvent** 是没有参数的事件。
 

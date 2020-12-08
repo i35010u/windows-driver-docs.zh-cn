@@ -1,7 +1,6 @@
 ---
 title: 'NsRemoveLockMnRemove 规则 (wdm) '
 description: '\_ \_ 当 \_ \_ 使用 MinorFunction IRP \_ MN \_ REMOVE 设备处理 IRP MJ PNP 时，NsRemoveLockMnRemove 规则将验证驱动程序是否未返回状态 \_ 。 此规则仅适用于 FDO 和 FIDO 驱动程序。'
-ms.assetid: 1151343D-9CFD-4808-A885-D477F199C004
 ms.date: 05/21/2018
 keywords:
 - 'NsRemoveLockMnRemove 规则 (wdm) '
@@ -12,12 +11,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 07cf839dfd563c2ed6c5d3fb305bf5de5712d3ed
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 0f8f7d5782ff84fc68ecb126a965535cd48ea0a2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107432"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96811033"
 ---
 # <a name="nsremovelockmnremove-rule-wdm"></a>NsRemoveLockMnRemove 规则 (wdm) 
 

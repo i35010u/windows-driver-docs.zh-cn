@@ -1,7 +1,6 @@
 ---
 title: 'PowerIrpDDIs 规则 (wdm) '
 description: PowerIrpDDIs 规则指定当驱动程序使用 IRP MN 设置的电源处理系统或设备 IRP \_ MJ \_ 功能时 \_ \_ \_ ，它不应调用只能在被动级别调用的 DDIs \_ 。
-ms.assetid: C56C73E5-75D6-427A-8582-24D6B1404A70
 ms.date: 05/21/2018
 keywords:
 - 'PowerIrpDDIs 规则 (wdm) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 64f7363bd81a76375b6eb6b11425d42f33803ebc
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 944d365255de1d8c9936bb8369ade1e406b79721
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106142"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96810969"
 ---
 # <a name="powerirpddis-rule-wdm"></a>PowerIrpDDIs 规则 (wdm) 
 
 
-**PowerIrpDDIs**规则指定当驱动程序使用 irp MN 设置的电源处理系统或设备 IRP \_ MJ 功能时 \_ \_ \_ \_ ，它不应调用只能在被动级别调用的 DDIs \_ 。
+**PowerIrpDDIs** 规则指定当驱动程序使用 irp MN 设置的电源处理系统或设备 IRP \_ MJ 功能时 \_ \_ \_ \_ ，它不应调用只能在被动级别调用的 DDIs \_ 。
 
 **驱动程序模型： WDM**
 

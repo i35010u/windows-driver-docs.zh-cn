@@ -1,15 +1,14 @@
 ---
 title: 上下文分配
 description: 若要为上下文的上下文保存区分配内存，内核模式驱动程序可以通过 DxgkCbCreateContextAllocation 使用上下文分配。
-ms.assetid: DAD08E7F-13F9-4648-A24C-DD9FBA6D490F
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: df12b2e1bf01e2a3769ef7a518ab412a0257382d
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: d9306c26e90f651b6df37a0426ba9c5c7135dfad
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89064374"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96810149"
 ---
 # <a name="context-allocation"></a>上下文分配
 
@@ -28,7 +27,7 @@ ms.locfileid: "89064374"
 
 上下文分配将映射到与指定上下文关联的应用程序 GPU 虚拟地址空间。
 
-**注意**   当上下文分配直接映射到应用程序 GPU 虚拟地址空间时，驱动程序应注意不要公开特权信息。
+**注意**  当上下文分配直接映射到应用程序 GPU 虚拟地址空间时，驱动程序应注意不要公开特权信息。
 
  
 

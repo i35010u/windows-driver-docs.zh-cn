@@ -1,18 +1,17 @@
 ---
 title: 从显示驱动程序调用 COPP DDI
 description: 从显示驱动程序调用 COPP DDI
-ms.assetid: d91d8a62-f212-4ae7-be61-b973d6495880
 keywords:
 - 调用 COPP DDI WDK DirectX VA
 - COPP WDK DirectX VA，从显示器驱动程序调用
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 64b8067f66f0afb7fef1306cce364fd5910886fb
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 9e897d1f4418a039e783c3ec42ae952cdded24fa
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90715696"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96810389"
 ---
 # <a name="calling-the-copp-ddi-from-the-display-driver"></a>从显示驱动程序调用 COPP DDI
 

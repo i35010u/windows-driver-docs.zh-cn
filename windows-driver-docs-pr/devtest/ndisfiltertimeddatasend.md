@@ -1,7 +1,6 @@
 ---
 title: 'NdisFilterTimedDataSend 规则 (ndis) '
 description: NdisFilterTimedDataSend 规则验证 NDIS 筛选器驱动程序在超时前是否通过 FilterSendNetBufferLists 函数完成了发送请求。
-ms.assetid: 0D04DF73-4391-4668-8F6C-023BEE5A7F08
 ms.date: 05/21/2018
 keywords:
 - 'NdisFilterTimedDataSend 规则 (ndis) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 16fc8ceb9f7e6050bee0ae083904244158a55759
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: d75d42eef114e33e072cbef916ce61243aeb1619
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105116"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96811135"
 ---
 # <a name="ndisfiltertimeddatasend-rule-ndis"></a>NdisFilterTimedDataSend 规则 (ndis) 
 
 
-**NdisFilterTimedDataSend**规则验证 NDIS 筛选器驱动程序在超时前是否通过[*FilterSendNetBufferLists*](/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_send_net_buffer_lists)函数完成了发送请求。
+**NdisFilterTimedDataSend** 规则验证 NDIS 筛选器驱动程序在超时前是否通过 [*FilterSendNetBufferLists*](/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_send_net_buffer_lists)函数完成了发送请求。
 
 您可以使用内核调试器来帮助确定问题的原因。 检查 PendingNbl 的规则 \_ 状态，该状态指向最早的挂起 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)。 使用 [**！ ndiskd**](../debugger/-ndiskd-nbl.md) 调试程序扩展。 有关使用调试器的信息，请参阅 [Windows 调试](../debugger/index.md)。
 

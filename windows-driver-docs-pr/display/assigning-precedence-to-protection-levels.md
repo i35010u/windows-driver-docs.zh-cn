@@ -1,7 +1,6 @@
 ---
 title: 将优先顺序分配到保护级别
 description: 将优先顺序分配到保护级别
-ms.assetid: 87a63d30-4aa2-4835-87bc-1acb062bde26
 keywords:
 - 保护级别，WDK 显示，分配优先级
 - 保护级别 WDK 显示，ACP 优先级
@@ -10,12 +9,12 @@ keywords:
 - 保护级别 WDK 显示，DPCP 优先级
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e7781a79e6ae7b5d0ecf7e9c4ffc5451e420181c
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 4ac5a7152e42000ca7ae023161ca11fc281fa500
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89067344"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96810483"
 ---
 # <a name="assigning-precedence-to-protection-levels"></a>将优先顺序分配到保护级别
 
@@ -106,7 +105,7 @@ Microsoft DirectX graphics 内核子系统 (*Dxgkrnl.sys*) 可以对显示微型
 
  
 
-**注意**   需要) 再分发控制标志 (需要的 DXGKMDT \_ OPM \_ 再分发 \_ 控制， \_ 但不会影响 CGMS-优先级值。 例如， (DXGKMDT \_ OPM \_ CGMSA \_ 复制 \_ 一 \_ 代 |DXGKMDT \_ OPM \_ \_ \_) 需要与 DXGKMDT \_ OPM \_ CGMSA \_ 复制 \_ 一 \_ 代相同的优先级值。
+**注意**   需要) 再分发控制标志 (需要的 DXGKMDT \_ OPM \_ 再分发 \_ 控制， \_ 但不会影响 CGMS-优先级值。 例如， (DXGKMDT \_ OPM \_ CGMSA \_ 复制 \_ 一 \_ 代 |DXGKMDT \_ OPM \_ \_ \_) 需要与 DXGKMDT \_ OPM \_ CGMSA \_ 复制 \_ 一 \_ 代相同的优先级值。
 
  
 

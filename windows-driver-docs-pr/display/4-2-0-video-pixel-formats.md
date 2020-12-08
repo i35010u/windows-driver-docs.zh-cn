@@ -1,7 +1,6 @@
 ---
 title: 4 2 0 视频像素格式
 description: 4 2 0 视频像素格式
-ms.assetid: fb83336b-ff71-4f54-b833-324da60e7f9e
 keywords:
 - 未压缩的视频像素格式 WDK DirectX VA
 - 未压缩的视频 WDK DirectX VA 的像素格式
@@ -10,12 +9,12 @@ keywords:
 - 4 2 0 视频 WDK DirectX VA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 40a331c34a7e87f758e315d9435a8119b8e060ce
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 0f49c5e212e3c20e01e17ce15a93e9f774f9e790
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89064412"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96810591"
 ---
 # <a name="420-video-pixel-formats"></a>4:2:0 视频像素格式
 
@@ -23,7 +22,7 @@ ms.locfileid: "89064412"
 
 若要解码压缩的4:2:0 视频，请使用以下未压缩的像素格式之一。
 
-| 像素格式 | 说明 |
+| 像素格式 | 描述 |
 | ------------ | ----------- |
 | YUY2 | 如 [4:2:2 视频像素格式](4-2-2-video-pixel-formats.md)中所述，例外情况除外，只为每个实际 4:2:0 Cb 和 cr 示例行生成两行输出 Cb 和 cr 示例。 每对输出行中的第二行通常是第一行的副本，或使用下一对的第一行的样本对第一行中的样本求平均值来生成。 |
 | UYVY | 如 [4:2:2 视频像素格式](4-2-2-video-pixel-formats.md)中所述，例外情况除外，只为每个实际 4:2:0 Cb 和 cr 示例行生成两行输出 Cb 和 cr 示例。 每对输出行中的第二行通常是第一行的副本，或使用下一对的第一行的样本对第一行中的样本求平均值来生成。 |

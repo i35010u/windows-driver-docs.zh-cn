@@ -1,15 +1,14 @@
 ---
 title: 区分 Windows 7 显示驱动程序的 SKU
 description: 区分 Windows 7 显示驱动程序的 SKU
-ms.assetid: 3cf72bd5-21bc-4a7f-8c2f-98f8e70d8248
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 24d694b09dd6ab5b137d3672fe2f69072934a3b0
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 1d68cdfdb6945c6e3822e218f0fcb3bb27806d9a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89063136"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96809509"
 ---
 # <a name="differentiating-the-sku-for-windows-7-display-drivers"></a>区分 Windows 7 显示驱动程序的 SKU
 

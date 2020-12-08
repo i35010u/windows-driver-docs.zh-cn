@@ -1,19 +1,18 @@
 ---
 title: 访问多重采样主图面
 description: 访问多重采样主图面
-ms.assetid: 5d83699c-45ae-46d1-8804-1a18bfbc203f
 keywords:
 - DirectX 8.0 发行说明 WDK Windows 2000 显示，多级显示，访问主要图面
 - 以多级显示方式呈现 WDK DirectX 8.0，访问主要图面
 - 呈现 multisamples WDK DirectX 8.0，访问主要图面
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 24c09daf490c4e5895fc16bd0fde766d26a7e92c
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 127e18fbd7cdd135bc1c120ffc980806360f1b12
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90716964"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96810569"
 ---
 # <a name="accessing-a-multisampled-primary-surface"></a>访问多重采样主图面
 
@@ -31,7 +30,7 @@ Direct3D 运行时阻止高性能 CPU 访问多级采样缓冲区。 但是，�
 
 应用程序调用 **IDirect3DDevice8** 接口的 cursor 方法还可导致 [*DdBlt*](/windows/win32/api/ddrawint/nc-ddrawint-pdd_surfcb_blt) 调用以多级采样主要目标为目标。 这些 *DdBlt* 调用必须处理从单个像素样本游标数据到多级采样主数据的转换。
 
-有关 **IDirect3DDevice8**的详细信息，请参阅 DIRECTX 8.0 SDK 文档。
+有关 **IDirect3DDevice8** 的详细信息，请参阅 DIRECTX 8.0 SDK 文档。
 
  
 

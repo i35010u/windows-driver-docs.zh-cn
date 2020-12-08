@@ -1,24 +1,23 @@
 ---
 title: WDFDEVICE_INIT 结构
 description: WDFDEVICE_INIT 结构是由框架定义和分配的不透明结构。
-ms.assetid: 38a8d316-6d66-4c1a-bb1c-93e2893542e8
 keywords:
 - WDFDEVICE_INIT 结构
 ms.date: 02/23/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 19c6ae29eabe2058da4e0c131f9513fe7525837b
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: abadda09f518ca177a3ff6944a93b6c90fda293e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89191983"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96809775"
 ---
 # <a name="wdfdevice_init-structure"></a>WDFDEVICE_INIT 结构
 
 
 \[适用于 KMDF 和 UMDF\]
 
-**WDFDEVICE_INIT**结构是由框架定义和分配的不透明结构。
+**WDFDEVICE_INIT** 结构是由框架定义和分配的不透明结构。
 
 <a name="syntax"></a>语法
 ------
@@ -43,11 +42,11 @@ struct WDFDEVICE_INIT {
 
 调用初始化函数后，驱动程序必须调用 [**WdfDeviceCreate**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicecreate) 来创建框架设备对象。
 
-如果驱动程序已通过调用[**WdfPdoInitAllocate**](/windows-hardware/drivers/ddi/wdfpdo/nf-wdfpdo-wdfpdoinitallocate)或[**WdfControlDeviceInitAllocate**](/windows-hardware/drivers/ddi/wdfcontrol/nf-wdfcontrol-wdfcontroldeviceinitallocate)接收到**WDFDEVICE_INIT**结构，并且驱动程序收到调用初始化函数的错误，则驱动程序必须调用[**WdfDeviceInitFree**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceinitfree)而不是[**WdfDeviceCreate**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicecreate)。
+如果驱动程序已通过调用 [**WdfPdoInitAllocate**](/windows-hardware/drivers/ddi/wdfpdo/nf-wdfpdo-wdfpdoinitallocate)或 [**WdfControlDeviceInitAllocate**](/windows-hardware/drivers/ddi/wdfcontrol/nf-wdfcontrol-wdfcontroldeviceinitallocate)接收到 **WDFDEVICE_INIT** 结构，并且驱动程序收到调用初始化函数的错误，则驱动程序必须调用 [**WdfDeviceInitFree**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceinitfree)而不是 [**WdfDeviceCreate**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicecreate)。
 
-你的驱动程序在成功调用[**WdfDeviceCreate**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicecreate)之后不得调用[**WdfDeviceInitFree**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceinitfree) 。
+你的驱动程序在成功调用 [**WdfDeviceCreate**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicecreate)之后不得调用 [**WdfDeviceInitFree**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceinitfree) 。
 
-**WDFDEVICE_INIT**的结构在版本1.0 和更高版本的 KMDF 中可用。
+**WDFDEVICE_INIT** 的结构在版本1.0 和更高版本的 KMDF 中可用。
 
 
 <a name="requirements"></a>要求

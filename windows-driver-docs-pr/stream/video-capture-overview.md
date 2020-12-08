@@ -1,42 +1,41 @@
 ---
 title: 视频捕获概述
 description: 视频捕获概述
-ms.assetid: 3f299905-beab-48e2-b5c9-9850452115c6
 keywords:
-- 有关视频捕获的视频捕获 WDK AVStream
+- 视频捕获 WDK AVStream，关于视频捕获
 - 捕获有关视频捕获的视频 WDK AVStream
 - 视频捕获 WDK AVStream
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c2b6819daba4ab50acccf93fe2047ea7f40c7046
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 611c76f997306b87092be530ab0c83ab632e6a37
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63377772"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96809807"
 ---
 # <a name="video-capture-overview"></a>视频捕获概述
 
 
-视频捕获微型驱动程序与 AVStream 的 Stream 类任一接口来控制生成的视频数据，以及辅助数据，例如电视音频流的或作为主要的硬件设备 / 调频调谐器功能。 供应商编写到视频捕获微型驱动程序：
+视频捕获微型驱动程序与 Stream 类接口的 AVStream 进行交互，以控制主要生成视频数据流流的硬件设备，以及辅助数据，如电视音频或 AM/调频调谐器功能。 供应商编写视频捕获微型驱动程序：
 
--   从数字和模拟视频源，例如，IEEE 1394、 USB、 S-视频、 压缩和未压缩视频流和 RCA 插孔视频中捕获。
+-   从数字和模拟视频源（如 IEEE 1394、USB、S-视频和 RCA 视频插孔）捕获压缩的未压缩视频流。
 
--   捕获垂直遮蔽的间隔 (VBI) 数据。
+-   捕获垂直消隐间隔 (VBI) 数据。
 
--   捕获辅助数据流，如电视的音频或 AM / 调频调谐器音频。
+-   捕获辅助数据流，如电视音频或 AM/调频调谐器音频。
 
 -   捕获时间码。
 
--   控制视频端口和捕获从视频端口的流视频。
+-   控制视频端口并捕获视频端口流中的视频。
 
--   控制与视频流，例如电视/广播调谐器，信号路由设备 （纵横制）、 电视音频控件和视频压缩程序关联的设备。
+-   控制与视频流关联的设备，如电视/收音机调谐器、信号路由设备 (crossbars) 、电视音频控制和视频 compressors。
 
--   控制摄像头属性，如缩放、 平移和焦点。
+-   控制缩放、平移和焦点等照相机属性。
 
--   控制视频属性，如色调、 饱和度、 亮度和清晰度。
+-   控制视频属性，如色调、饱和度、亮度和清晰度。
 
--   提供了 WDM 流式处理 （适用于内核模式） 和 （适用于用户模式） 的 DirectShow 兼容性。
+-   为内核模式提供 WDM 流式处理 () 和 DirectShow (，) 兼容性。
 
  
 

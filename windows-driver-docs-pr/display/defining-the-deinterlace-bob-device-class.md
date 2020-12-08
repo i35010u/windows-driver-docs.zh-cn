@@ -1,18 +1,17 @@
 ---
 title: 定义反交错 Bob 设备类
 description: 定义反交错 Bob 设备类
-ms.assetid: 1efe0a08-c3aa-4083-a19f-96e5ba94d517
 keywords:
-- 取消隔行扫描 WDK DirectX VA bob
-- bob 去隔行 WDK DirectX VA
+- 取消隔行扫描 WDK DirectX VA，bob
+- bob 取消隔行扫描 WDK DirectX VA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d7845cb8019d32368980e189bab971a3a3801ef9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c29c1364c6347dd0f3e075bbceb98f6b755cc5b1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327965"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96809595"
 ---
 # <a name="defining-the-deinterlace-bob-device-class"></a>定义反交错 Bob 设备类
 
@@ -20,7 +19,7 @@ ms.locfileid: "63327965"
 ## <span id="ddk_defining_the_deinterlace_bob_device_class_gg"></span><span id="DDK_DEFINING_THE_DEINTERLACE_BOB_DEVICE_CLASS_GG"></span>
 
 
-使用下面的示例代码来定义取消隔行扫描 bob 设备类：
+使用以下示例代码定义隔行扫描 bob 设备类：
 
 ```cpp
 // Deinterlace bob device class.

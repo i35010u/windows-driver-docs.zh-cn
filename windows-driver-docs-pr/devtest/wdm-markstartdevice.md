@@ -1,7 +1,6 @@
 ---
 title: 'MarkStartDevice 规则 (wdm) '
 description: MarkStartDevice 规则指定驱动程序 pends IRP \_ MN \_ \_ 正确启动设备 IRP。 此规则仅适用于 FDO 和 FIDO 驱动程序。
-ms.assetid: ABFE062D-37A7-4931-961C-76092D7C05B7
 ms.date: 05/21/2018
 keywords:
 - 'MarkStartDevice 规则 (wdm) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 6762da9d94c5d1e12d2278b6d53a168901ca6ff7
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 08f4e732afdf0e4933c7d7346bc95ac7193796c8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107284"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96811041"
 ---
 # <a name="markstartdevice-rule-wdm"></a>MarkStartDevice 规则 (wdm) 
 
 
-**MarkStartDevice**规则指定驱动程序 pends irp \_ MN \_ \_ 正确启动设备 IRP。 此规则仅适用于 FDO 和 FIDO 驱动程序。
+**MarkStartDevice** 规则指定驱动程序 pends irp \_ MN \_ \_ 正确启动设备 IRP。 此规则仅适用于 FDO 和 FIDO 驱动程序。
 
 **驱动程序模型： WDM**
 

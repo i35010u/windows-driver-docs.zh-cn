@@ -1,24 +1,23 @@
 ---
-title: 什么是软件跟踪的性能成本
-description: 什么是软件跟踪的性能成本
-ms.assetid: 4337a619-58aa-4ad2-8873-6cbf5d84d074
+title: 软件跟踪的性能成本是多少
+description: 软件跟踪的性能成本是多少
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5b4ead4614d0640f0ecd41a0b11d4884ecc4ec3b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f2abbc2e13f471f8e040f5c8c89cd07877a1d1d2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63386364"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96810705"
 ---
 # <a name="what-is-the-performance-cost-of-software-tracing"></a>软件跟踪的性价比如何？
 
 
-一般情况下，软件跟踪的性能成本是非常小。 代码最小化、 有效地管理缓冲区和消息写入二进制格式。 此外，这将显著的性能降低，格式化跟踪消息会推迟到用户选择的格式和显示跟踪消息。
+通常，软件跟踪的性能成本非常小。 代码已最小化，缓冲区会有效地进行管理，并以二进制格式编写消息。 此外，格式化跟踪消息（这是一种大性能排出）会推迟，直到用户选择格式化和显示跟踪消息。
 
-当你使用[WPP 软件跟踪](wpp-software-tracing.md)宏，以将软件添加到驱动程序跟踪，没有几乎没有任何性能开销，除非跟踪会话启用的提供程序。
+使用 [WPP 软件跟踪](wpp-software-tracing.md) 宏将软件跟踪添加到驱动程序时，几乎没有任何性能开销，除非为跟踪会话启用了提供程序。
 
-WPP 宏量与三个条件检查中 If 语句与软件跟踪代码。 这些检查可防止除非启用的提供程序生成任何跟踪消息。 WPP 宏生成以下形式的代码：
+在软件跟踪代码的 If 语句中，WPP 宏的数量为三个条件检查。 除非启用了提供程序，否则这些检查将阻止生成任何跟踪消息。 WPP 宏生成以下形式的代码：
 
 ```
 If (WPP_CHECK_INIT && WPP_LEVEL_FLAGS_ENABLED) {
@@ -26,9 +25,9 @@ If (WPP_CHECK_INIT && WPP_LEVEL_FLAGS_ENABLED) {
 }
 ```
 
-在此生成的代码，WPP\_检查\_INIT 包含一个条件检查。 WPP\_级别\_标志\_已启用包含一个条件检查，如果您只有一个级别或标记筛选器。 否则为 WPP\_级别\_标志\_已启用包括两个条件检查。
+在此生成的代码中，WPP \_ 检查 \_ INIT 包含一个条件检查。 \_ \_ \_ 如果只有一个级别或标志筛选器，则启用 WPP 级别标志，其中包含一个条件检查。 否则， \_ 启用 WPP 级别 \_ 标志， \_ 其中包含两个条件检查。
 
-有关详细信息，了解如何排除 WPP\_检查\_INIT 检查更好的性能，请参阅[可以优化 WPP 宏生成之前跟踪的条件检查？](can-i-optimize-the-conditional-checks-that-the-wpp-macros-produce-befo.md)。
+有关如何排除 WPP \_ 检查 \_ INIT 检查以获得更好性能的详细信息，请参阅是否 [可以优化 wpp 宏在跟踪之前生成的条件检查](can-i-optimize-the-conditional-checks-that-the-wpp-macros-produce-befo.md)。
 
 > [!NOTE]
-> 如果使用 WPP 软件跟踪之外的方法在您的驱动程序中实施软件跟踪，则可能存在某些性能成本。 效果取决于实现方法。
+> 如果使用 WPP 软件跟踪以外的方法来实现驱动程序中的软件跟踪，则可能会产生一些性能开销。 此效果取决于实现方法。

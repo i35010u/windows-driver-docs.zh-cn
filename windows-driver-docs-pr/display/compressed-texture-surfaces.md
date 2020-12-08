@@ -1,24 +1,23 @@
 ---
 title: 压缩纹理图面
 description: 压缩纹理图面
-ms.assetid: 72096a2a-5a4b-4800-bd99-6d403c54889d
 keywords:
-- 绘制压缩纹理 WDK DirectDraw 有关压缩的纹理图面
-- 显示 DirectDraw 压缩纹理 WDK Windows 2000，关于压缩的纹理图面
-- 有关压缩的纹理图面压缩的纹理图面 WDK DirectDraw
-- WDK DirectDraw，压缩的纹理的图面
-- 纹理 WDK DirectDraw 压缩
+- 绘制压缩纹理 WDK DirectDraw，关于压缩纹理图面
+- DirectDraw 压缩纹理 WDK Windows 2000 显示，关于压缩纹理图面
+- 压缩纹理面 WDK DirectDraw，关于压缩纹理图面
+- 表面 WDK DirectDraw，压缩纹理
+- 纹理 WDK DirectDraw，压缩
 - 绘制压缩纹理 WDK DirectDraw
 - DirectDraw 压缩纹理 WDK Windows 2000 显示
-- 压缩的纹理的 WDK DirectDraw 图面
+- 压缩的纹理面 WDK DirectDraw
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 337c54f5856085967ce86b6b567369a881eba7d3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d459215c0eac7a155c45e1c0cbd07f2141d8b81c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63362157"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96810215"
 ---
 # <a name="compressed-texture-surfaces"></a>压缩纹理图面
 
@@ -26,9 +25,9 @@ ms.locfileid: "63362157"
 ## <span id="ddk_compressed_texture_surfaces_gg"></span><span id="DDK_COMPRESSED_TEXTURE_SURFACES_GG"></span>
 
 
-图面可以包含要用于纹理三维对象的位图。 若要减少的纹理占用的内存量，Microsoft DirectDraw 支持压缩的纹理图面。
+图面可包含用于纹理3D 对象的位图。 为了减少纹理使用的内存量，Microsoft DirectDraw 支持纹理图面的压缩。
 
-**请注意**  添加了任何新的回调以支持压缩的纹理图面。 DirectDraw 将压缩的纹理图面有关的信息传递给驱动程序通过现有的驱动程序回调。
+**注意**   尚未添加新的回调来支持压缩的纹理图面。 DirectDraw 通过现有的驱动程序回调将有关压缩纹理图面的信息传递给驱动程序。
 
  
 
@@ -41,19 +40,19 @@ ms.locfileid: "63362157"
 <thead>
 <tr class="header">
 <th align="left">FOURCC</th>
-<th align="left">描述</th>
+<th align="left">说明</th>
 <th align="left">Alpha
 <div>
  
 </div>
-自左乘？</th>
+预乘?</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p>DXT1</p></td>
-<td align="left"><p>不透明 / 一位 alpha</p></td>
-<td align="left"><p>不可用</p></td>
+<td align="left"><p>不透明/一位 alpha</p></td>
+<td align="left"><p>空值</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>DXT2</p></td>
@@ -67,12 +66,12 @@ ms.locfileid: "63362157"
 </tr>
 <tr class="even">
 <td align="left"><p>DXT4</p></td>
-<td align="left"><p>内插的 alpha</p></td>
+<td align="left"><p>内插 alpha</p></td>
 <td align="left"><p>是</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>DXT5</p></td>
-<td align="left"><p>内插的 alpha</p></td>
+<td align="left"><p>内插 alpha</p></td>
 <td align="left"><p>否</p></td>
 </tr>
 </tbody>
@@ -80,9 +79,9 @@ ms.locfileid: "63362157"
 
  
 
-在前面显示了五种类型的驱动程序应支持的压缩纹理。
+上面显示了驱动程序应支持的五种压缩纹理类型。
 
-有关压缩的纹理的格式的详细信息，请参阅**压缩纹理格式**DirectDraw SDK 文档中。
+有关压缩纹理格式的详细信息，请参阅 DirectDraw SDK 文档中的 **压缩纹理格式** 。
 
  
 

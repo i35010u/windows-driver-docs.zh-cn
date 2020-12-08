@@ -1,20 +1,19 @@
 ---
 title: 裁剪已转换的顶点
 description: 裁剪已转换的顶点
-ms.assetid: 33b03264-780e-4b05-a108-6d1a017e8c27
 keywords:
-- 显示 DirectX 8.0 发行说明 WDK Windows 2000，剪辑已转换的顶点
-- pretransformed 的顶点 WDK DirectX 8.0
-- 剪辑 WDK DirectX 8.0
-- 剪辑 WDK DirectX 8.0 的顶点
+- DirectX 8.0 发行说明 WDK Windows 2000 显示，剪切转换的顶点
+- pretransformed 顶点 WDK DirectX 8。0
+- 剪辑 WDK DirectX 8。0
+- 顶点剪辑 WDK DirectX 8。0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c1ced8e7305e8c15daa07fd1032ed51eaef4043c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3eeb521117811382780bbc089c121bb58c9ea283
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63354282"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96810303"
 ---
 # <a name="clipping-transformed-vertices"></a>裁剪已转换的顶点
 
@@ -22,9 +21,9 @@ ms.locfileid: "63354282"
 ## <span id="ddk_clipping_transformed_vertices_gg"></span><span id="DDK_CLIPPING_TRANSFORMED_VERTICES_GG"></span>
 
 
-Direct3D 8.0 运行时完全支持通过两 pretransformed 顶点的剪辑**DrawPrimitive**并**ProcessVertices** API 调用。 此剪辑包含用户定义剪辑平面和 Z，X 和 Y 的视区扩展盘区。 但是，在运行时不保证 posttransformed 顶点的剪辑。 运行时传递 posttransformed 的顶点数据直接从应用程序到驱动程序。 这并不意味着一个驱动程序所需完全剪辑 posttransformed 的顶点数据。 新的功能标志 D3DPMISCCAPS\_CLIPTLVERTS 已添加对 DirectX 8.0。 如果驱动程序设置此标志**PrimitiveMiscCaps** D3DCAPS8 结构，该应用程序的字段可以假定该驱动程序完全剪辑到 Z 和 X 和 Y 视区扩展盘区 posttransformed 的顶点数据。 Posttransformed 数据永远不会支持用户定义的剪辑平面的剪辑。 该驱动程序不会设置此标志，该应用程序是否需要执行剪切的 posttransformed 数据到 Z 盘区和 （至少） 的防护外区中 X 和 Y。
+Direct3D 8.0 运行时完全支持通过 **DrawPrimitive** 和 **ProcessVertices** API 调用来剪裁 pretransformed 顶点。 此剪辑包括用户定义的剪辑平面以及 Z 和 X 和 Y 视区区。 但是，运行时不保证 posttransformed 顶点的剪裁。 Posttransformed 顶点数据由运行时从应用程序直接传递给驱动程序。 这并不意味着需要使用驱动程序来完全剪裁 posttransformed 顶点数据。 已为 DirectX 8.0 添加了新功能标志 D3DPMISCCAPS \_ CLIPTLVERTS。 如果驱动程序在 D3DCAPS8 结构的 **PrimitiveMiscCaps** 字段中设置此标志，则应用程序可以假定驱动程序将 posttransformed 顶点数据完全剪辑到 Z 和 X 和 Y 视区区。 Posttransformed 数据不支持剪辑到用户定义的剪辑平面。 如果驱动程序未设置此标志，则需要应用程序将 posttransformed 数据剪裁到 Z 区，并 (至少) X 和 Y 中的防护带区。
 
-请务必注意，运行时不会验证应用程序已正确剪辑 posttransformed 的数据。 它是驱动程序的责任，以确保，崩溃或挂起不会发生时设置此标志，如果传递未剪辑或错误地裁剪后的数据。
+请注意，运行时不会验证应用程序是否已正确剪裁 posttransformed 数据，这一点很重要。 如果在设置此标志时传递了未剪辑或错误剪切的数据，则驱动程序的责任是确保不会发生崩溃或挂起。
 
  
 

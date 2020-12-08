@@ -1,16 +1,15 @@
 ---
 title: NDIS_STATUS_WWAN_SMS_STATUS
 description: 微型端口驱动程序使用 NDIS_STATUS_WWAN_SMS_STATUS 通知来通知 MB 服务以下事件 MB 设备的消息存储已满。新的 SMS 文本消息已到达，新消息与 MessageIndex 驱动程序相对应，还可以使用此通知发送未经请求的事件。此通知使用 NDIS_WWAN_SMS_STATUS 结构。
-ms.assetid: 65553a3f-57af-49ef-a3b7-ed35df0a319d
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 NDIS_STATUS_WWAN_SMS_STATUS 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: d031cb87d8e80802c54e3f99e257f13c087d28be
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: a38fc2e0478630a78d2a26eda0db2f6f02802f5a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89213877"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96809999"
 ---
 # <a name="ndis_status_wwan_sms_status"></a>NDIS \_ 状态 \_ WWAN \_ SMS \_ 状态
 
@@ -19,7 +18,7 @@ ms.locfileid: "89213877"
 
 -   MB 设备的消息存储已满。
 
--   已到达新的短信消息，其中包含与 *MessageIndex*相对应的新消息。
+-   已到达新的短信消息，其中包含与 *MessageIndex* 相对应的新消息。
 
 小型端口驱动程序还可以通过此通知发送未经请求的事件。
 
@@ -52,7 +51,7 @@ ms.locfileid: "89213877"
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**NDIS \_ WWAN \_ SMS \_ 状态**](/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_sms_status)

@@ -1,7 +1,6 @@
 ---
 title: 使用启动参数
 description: 使用启动参数
-ms.assetid: f249f312-cfc5-41b2-ad67-75497a929e35
 keywords:
 - 启动条目 WDK
 - 启动选项 WDK，启动参数
@@ -14,16 +13,16 @@ keywords:
 - Boot.ini 文件 WDK，启动参数
 ms.date: 06/04/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 893aacd257d1333bf1163d5f34faf388c3c1330d
-ms.sourcegitcommit: 0a0b75d93130b6c5854279607cd0aac099f65fd5
+ms.openlocfilehash: d9dd705650426c91c8c66421a7ed1f8a0fe5d26e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84428344"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96811125"
 ---
 # <a name="using-boot-parameters"></a>使用启动参数
 
-通常，驱动程序开发人员和测试人员需要添加、删除和更改启动项的参数，以便在可变条件下测试其驱动程序。 本部分介绍几个常见方案，并提供在 Boot.ini 文件和 NVRAM 中配置启动参数的策略。
+通常，驱动程序开发人员和测试人员需要添加、删除和更改启动项的参数，以便在可变条件下测试其驱动程序。 本部分介绍几个常见方案，并建议在 Boot.ini 文件和 NVRAM 中配置启动参数的策略。
 
 > [!NOTE]
 > 在 Windows 10 版本1803之前，已检查的生成在较早版本的 Windows 上可用。

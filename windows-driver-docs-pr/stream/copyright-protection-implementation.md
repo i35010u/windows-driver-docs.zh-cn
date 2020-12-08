@@ -1,7 +1,6 @@
 ---
 title: 实施版权保护
 description: 实施版权保护
-ms.assetid: 42d91ad3-615a-461a-846b-4876ac8decea
 keywords:
 - DVD 解码器微型驱动程序 WDK，版权保护
 - 解码器微型驱动程序 WDK DVD，版权保护
@@ -16,12 +15,12 @@ keywords:
 - 身份验证 WDK DVD 解码器
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2ef010a5faa40d326a84a1c2d490486237c254bc
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: cf8fb08d29b8d131b52efcd84da15661eeda8277
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104848"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96811395"
 ---
 # <a name="copyright-protection-implementation"></a>实施版权保护
 
@@ -44,8 +43,8 @@ Microsoft 提供的软件有助于内容编码系统 (CSS) 方案所需的身份
 </colgroup>
 <thead>
 <tr class="header">
-<th>属性</th>
-<th>说明</th>
+<th>properties</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>

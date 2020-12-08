@@ -1,19 +1,18 @@
 ---
 title: 如何记录到全局记录器会话
 description: 如何记录到全局记录器会话
-ms.assetid: b5efea00-39cd-4df3-aac4-ade9126f69ed
 keywords:
 - 全局记录器跟踪会话 WDK，日志记录
 - 启动时全局记录器跟踪会话 WDK，日志记录
 - 在启动过程中记录 WDK 跟踪
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b2fdb29df4f9b1fbb0b726c2fc7aee9731837125
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: f2241fed72b8aa7c25d453d4ecd989e1beda337b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89384831"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96809661"
 ---
 # <a name="how-to-log-to-the-global-logger-session"></a>如何记录到全局记录器会话
 
@@ -39,9 +38,9 @@ ms.locfileid: "89384831"
 
 3. 在 **HKLM \\ System \\ CurrentControlSet \\ control \\ WMI \\ GlobalLogger** 子项下，为跟踪提供程序的 [控件 GUID](control-guid.md) 添加一个名为的子项。 在 Windows Vista 和更高版本的 Windows 中，必须将控件 GUID 括在大括号中， ( {} ) 。
 
-   **Tracelog GlobalLogger**命令将**GlobalLogger**子项添加到注册表。 **ControlGUID**子项将驱动程序建立为全局记录器跟踪会话的[跟踪提供程序](trace-provider.md)。
+   **Tracelog GlobalLogger** 命令将 **GlobalLogger** 子项添加到注册表。 **ControlGUID** 子项将驱动程序建立为全局记录器跟踪会话的 [跟踪提供程序](trace-provider.md)。
 
-   例如，若要将 Tracedrv 示例驱动程序配置为在运行 Windows XP 的计算机上记录到全局记录器跟踪会话，请添加一个名为 for Tracedrv control GUID、d58c126f-b309-11d1-969e-0000f875a5bc： **HKLM \\ SYSTEM \\ CurrentControlSet \\ control \\ WMI \\ GlobalLogger \\ d58c126f-b309-11d1-969e-0000f875a5bc**的子项。
+   例如，若要将 Tracedrv 示例驱动程序配置为在运行 Windows XP 的计算机上记录到全局记录器跟踪会话，请添加一个名为 for Tracedrv control GUID、d58c126f-b309-11d1-969e-0000f875a5bc： **HKLM \\ SYSTEM \\ CurrentControlSet \\ control \\ WMI \\ GlobalLogger \\ d58c126f-b309-11d1-969e-0000f875a5bc** 的子项。
 
    [TraceDrv](https://github.com/Microsoft/Windows-driver-samples/tree/master/general/tracing/tracedriver)是设计用于软件跟踪的示例驱动程序，位于 GitHub 上的 [Windows 驱动程序示例](https://github.com/Microsoft/Windows-driver-samples) 存储库中。
 
@@ -57,7 +56,7 @@ ms.locfileid: "89384831"
    <tr class="header">
    <th align="left">条目名称</th>
    <th align="left">数据类型</th>
-   <th align="left">说明</th>
+   <th align="left">描述</th>
    </tr>
    </thead>
    <tbody>
@@ -84,7 +83,7 @@ ms.locfileid: "89384831"
 
 5.  重新启动系统。 这会启动全局记录器跟踪会话。
 
-测试完成后，删除**ControlGUID**子项，或在**GlobalLogger**子项中将**Start**条目的值设置为0。 如果不这样做，则每次重新启动系统时，全局记录器会话都将运行，并且驱动程序将记录到其中。
+测试完成后，删除 **ControlGUID** 子项，或在 **GlobalLogger** 子项中将 **Start** 条目的值设置为0。 如果不这样做，则每次重新启动系统时，全局记录器会话都将运行，并且驱动程序将记录到其中。
 
 ### <a name="span-idcommentsspanspan-idcommentsspancomments"></a><span id="comments"></span><span id="COMMENTS"></span>提出
 

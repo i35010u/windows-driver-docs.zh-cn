@@ -1,19 +1,18 @@
 ---
 title: BGRA 扫描输出支持
 description: BGRA 扫描输出支持
-ms.assetid: 88ef5de7-59cc-4a8a-aaf7-74489a7ac0ab
 keywords:
 - Direct3D 版本 10.1 WDK Windows 7 显示，BGRA 扫描支持
 - BGRA 扫描支持 WDK Windows 7 显示
 - 扫描支持 WDK Windows 7 显示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ad58c77fb1a32ee2676c8b76b4e374788a5e8cf6
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: b4686429d05abbf36b886f7a78b5e9137c3dafc6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89067478"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96810453"
 ---
 # <a name="bgra-scan-out-support"></a>BGRA 扫描输出支持
 

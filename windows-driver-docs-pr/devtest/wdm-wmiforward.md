@@ -1,7 +1,6 @@
 ---
 title: 'WmiForward 规则 (wdm) '
 description: WmiForward 规则指定当需要转发时，驱动程序必须转发 WMI 次要 Irp。
-ms.assetid: c62f37d2-ebd5-4705-9590-d1bf17137802
 ms.date: 05/21/2018
 keywords:
 - 'WmiForward 规则 (wdm) '
@@ -12,23 +11,23 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 91e8c84bbf97504a649d571a5afeb39292159c75
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 2ec131bb8263493106d7d5c3b4471efeaab2750f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103166"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96810739"
 ---
 # <a name="wmiforward-rule-wdm"></a>WmiForward 规则 (wdm) 
 
 
-**WmiForward**规则指定当需要转发时，驱动程序必须转发[**WMI 次要 irp**](../kernel/wmi-minor-irps.md) 。
+**WmiForward** 规则指定当需要转发时，驱动程序必须转发 [**WMI 次要 irp**](../kernel/wmi-minor-irps.md) 。
 
-具体而言，当驱动程序调用 [**WmiSystemControl**](/windows-hardware/drivers/ddi/wmilib/nf-wmilib-wmisystemcontrol) 并且 *IrpDisposition* 参数的值为 **IrpForward**时，驱动程序必须调用 [**IoCallDriver**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver) 或 [**PoCallDriver**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-pocalldriver) ，以便在从调度例程返回之前转发 IRP。
+具体而言，当驱动程序调用 [**WmiSystemControl**](/windows-hardware/drivers/ddi/wmilib/nf-wmilib-wmisystemcontrol) 并且 *IrpDisposition* 参数的值为 **IrpForward** 时，驱动程序必须调用 [**IoCallDriver**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver) 或 [**PoCallDriver**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-pocalldriver) ，以便在从调度例程返回之前转发 IRP。
 
 此规则不适用于总线驱动程序。
 
-*Wmi 次要 IRP*是具有 WMI 次要函数代码的[**IRP \_ MJ \_ 系统 \_ 控制**](../kernel/irp-mj-system-control.md)请求。
+*Wmi 次要 IRP* 是具有 WMI 次要函数代码的 [**IRP \_ MJ \_ 系统 \_ 控制**](../kernel/irp-mj-system-control.md)请求。
 
 有关处理 WMI 次要 Irp 的详细信息，请参阅 [**WDM 驱动程序的 Wmi 要求**](../kernel/wmi-requirements-for-wdm-drivers.md)、 [**处理 wmi 请求**](../kernel/handling-wmi-requests.md)、 [**Windows Management Instrumentation 例程**](/windows-hardware/drivers/ddi/index)和 [**WMI 库支持例程**](/windows-hardware/drivers/ddi/index)。
 
@@ -69,5 +68,5 @@ ms.locfileid: "90103166"
 --------
 
 [**WDM 驱动程序**](../kernel/wmi-requirements-for-wdm-drivers.md) 
- 的 WMI 要求[**处理 WMI 请求**](../kernel/handling-wmi-requests.md) 
+ 的 WMI 要求 [**处理 WMI 请求**](../kernel/handling-wmi-requests.md) 
 [**WMI 库支持例程**](/windows-hardware/drivers/ddi/index)

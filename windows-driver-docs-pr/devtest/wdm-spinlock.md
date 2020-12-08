@@ -1,7 +1,6 @@
 ---
 title: '旋转锁规则 (wdm) '
 description: 旋转锁规则指定在调用 KeAcquireSpinLock 之后，驱动程序调用 KeReleaseSpinLock，然后再调用 KeAcquireSpinLock 或 KeAcquireSpinLockRaiseToDpc。
-ms.assetid: 3add467d-72b9-439f-b9a3-68f3d1e5b772
 ms.date: 05/21/2018
 keywords:
 - '旋转锁规则 (wdm) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: ef3c67607c7e6ba9c95e1c0c6ebc6b67cf64e877
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: a05f82e2821dcff6047c0a029c128e52e29e845d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105194"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96810803"
 ---
 # <a name="spinlock-rule-wdm"></a>旋转锁规则 (wdm) 
 
 
-**旋转锁**规则指定在调用[**KeAcquireSpinLock**](/windows-hardware/drivers/ddi/wdm/nf-wdm-keacquirespinlock)之后，驱动程序调用[**KeReleaseSpinLock**](/windows-hardware/drivers/ddi/wdm/nf-wdm-kereleasespinlock) ，然后再调用**KeAcquireSpinLock**或[**KeAcquireSpinLockRaiseToDpc**](/previous-versions/windows/hardware/drivers/ff551928(v=vs.85))。
+**旋转锁** 规则指定在调用 [**KeAcquireSpinLock**](/windows-hardware/drivers/ddi/wdm/nf-wdm-keacquirespinlock)之后，驱动程序调用 [**KeReleaseSpinLock**](/windows-hardware/drivers/ddi/wdm/nf-wdm-kereleasespinlock) ，然后再调用 **KeAcquireSpinLock** 或 [**KeAcquireSpinLockRaiseToDpc**](/previous-versions/windows/hardware/drivers/ff551928(v=vs.85))。
 
 如果嵌套调用正在获取和释放不同资源的锁，则允许嵌套调用。 用于获取或释放相同资源的锁的嵌套调用违反了此规则。
 

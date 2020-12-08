@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ VPCONFIG \_ SETCONNECTINFO
 description: KSPROPERTY \_ VPCONFIG \_ SETCONNECTINFO 属性设置视频端口配置和用户定义的连接信息。 它是指向 KSPROPERTY \_ VPCONFIG GETCONNECTINFO 属性返回的 DDVIDEOPORTCONNECT 结构的数组的指针 \_ 。
-ms.assetid: 120f6889-cd67-4c05-b4b8-adab3efd7f2c
 keywords:
 - KSPROPERTY_VPCONFIG_SETCONNECTINFO 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f404e9f347a740c0d11b63332c7d70d913d9fb4c
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 29423e429e30b33e583663d72ec3defeb8d8b9cb
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106674"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96811351"
 ---
 # <a name="ksproperty_vpconfig_setconnectinfo"></a>KSPROPERTY \_ VPCONFIG \_ SETCONNECTINFO
 
@@ -79,7 +78,7 @@ KSPROPERTY \_ VPCONFIG \_ SETCONNECTINFO 属性设置视频端口配置和用户
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**DDVIDEOPORTCONNECT**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-_ddvideoportconnect)

@@ -1,17 +1,16 @@
 ---
 title: WDF_OBJECT_ATTRIBUTES_SET_CONTEXT_TYPE 宏
 description: WDF_OBJECT_ATTRIBUTES_SET_CONTEXT_TYPE 宏会将对象的驱动程序定义的上下文信息插入对象的 WDF_OBJECT_ATTRIBUTES 结构。
-ms.assetid: cac8b8f4-cc6b-4e6c-ad0b-dee58e4673ff
 keywords:
 - WDF_OBJECT_ATTRIBUTES_SET_CONTEXT_TYPE 宏
 ms.date: 08/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 33746657b1b35c13f70ef58eaa8881ad4bcc17d3
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: f0af9f1c4fba83cda4686f1d9747482f4483f939
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89192741"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96809791"
 ---
 # <a name="wdf_object_attributes_set_context_type-macro"></a>WDF_OBJECT_ATTRIBUTES_SET_CONTEXT_TYPE 宏
 
@@ -81,7 +80,7 @@ void WDF_OBJECT_ATTRIBUTES_SET_CONTEXT_TYPE(
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**WDF_DECLARE_CONTEXT_TYPE**](wdf-declare-context-type.md)

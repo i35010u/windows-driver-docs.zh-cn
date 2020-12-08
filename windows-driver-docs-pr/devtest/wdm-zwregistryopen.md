@@ -1,6 +1,5 @@
 ---
 title: 'ZwRegistryOpen 规则 (wdm) '
-ms.assetid: c98682c3-0d38-4d5b-9649-7574106f9ce3
 ms.date: 05/21/2018
 description: '了解详细信息： ZwRegistryOpen 规则 (wdm) '
 keywords:
@@ -12,12 +11,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 4feb78f1e6f98b2a83a816e4024ceaf2bc1a40be
-ms.sourcegitcommit: f47c072e88dce59daba1231027b60eb56bd2cde9
+ms.openlocfilehash: 1b036397b92a6e263d5641c7ae1c72dd60e803a1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92689372"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96810735"
 ---
 # <a name="zwregistryopen-rule-wdm"></a>ZwRegistryOpen 规则 (wdm) 
 

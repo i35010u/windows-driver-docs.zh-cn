@@ -1,7 +1,6 @@
 ---
 title: 压缩图片解码
 description: 压缩图片解码
-ms.assetid: 61633a15-72e4-49a4-9a42-684bde21df9e
 keywords:
 - 压缩的图片解码 WDK DirectX VA
 - 图片解码 WDK DirectX VA，已压缩
@@ -10,12 +9,12 @@ keywords:
 - 压缩的图片解码 WDK DirectX VA，关于压缩图片解码
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0c3f8ec088e8f7a33af42bf88b93e3481a17de3e
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 7eb72c6d1e0efd748b5060ca975700227bc7a204
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89064912"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96810217"
 ---
 # <a name="compressed-picture-decoding"></a>压缩图片解码
 

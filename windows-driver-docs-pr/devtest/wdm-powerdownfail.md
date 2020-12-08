@@ -1,7 +1,6 @@
 ---
 title: 'PowerDownFail 规则 (wdm) '
 description: PowerDownFail 规则指定在设备关机时，FDO 或 FIDO 驱动程序不应使 IRP \_ MN \_ 设置 \_ 电源请求失败。 此规则仅适用于 FDO 和 FIDO 驱动程序。
-ms.assetid: 1C4CFF0D-E1E3-48CE-9F5A-C02BF95973C7
 ms.date: 05/21/2018
 keywords:
 - 'PowerDownFail 规则 (wdm) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: fcc278f7d5b004dbede30b6ee64bd487a7857267
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 1ca16e50a695775a1a6b8aaee83500a9419a2bb0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102779"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96810977"
 ---
 # <a name="powerdownfail-rule-wdm"></a>PowerDownFail 规则 (wdm) 
 
 
-**PowerDownFail**规则指定在设备关机时，FDO 或 FIDO 驱动程序不应使 IRP \_ MN \_ 设置 \_ 电源请求失败。 此规则仅适用于 FDO 和 FIDO 驱动程序。
+**PowerDownFail** 规则指定在设备关机时，FDO 或 FIDO 驱动程序不应使 IRP \_ MN \_ 设置 \_ 电源请求失败。 此规则仅适用于 FDO 和 FIDO 驱动程序。
 
 **驱动程序模型： WDM**
 

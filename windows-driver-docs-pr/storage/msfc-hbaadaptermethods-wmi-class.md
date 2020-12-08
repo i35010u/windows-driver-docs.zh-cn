@@ -1,27 +1,26 @@
 ---
-title: MSFC\_HBAAdapterMethods WMI 类
-description: MSFC\_HBAAdapterMethods WMI 类
-ms.assetid: 2fb2b055-475e-47bf-bd36-3901120e8992
+title: MSFC \_ HBAADAPTERMETHODS WMI 类
+description: MSFC \_ HBAADAPTERMETHODS WMI 类
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: ba9f998b7732db7d2173a1a1f53c0aebdfbbd619
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c2c714e96355d3b9ce25a69aece9d89fa0358c23
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63378984"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96811465"
 ---
-# <a name="msfchbaadaptermethods-wmi-class"></a>MSFC\_HBAAdapterMethods WMI 类
+# <a name="msfc_hbaadaptermethods-wmi-class"></a>MSFC \_ HBAADAPTERMETHODS WMI 类
 
 
 ## <span id="ddk_msfc_hbaadaptermethods_wmi_class_kr"></span><span id="DDK_MSFC_HBAADAPTERMETHODS_WMI_CLASS_KR"></span>
 
 
-HBA 微型端口驱动程序支持 T11 委员会*光纤通道 HBA API*规范使用 MSFC\_HBAAdapterMethods 类以提供服务添加到 WMI 客户端的光纤通道的样式。 光纤通道服务定义 T11 委员会*光纤通道 HBA API*规范。
+支持 T11 委员会 *光纤通道 HBA API* 规范的 hba 微型端口驱动程序使用 MSFC \_ HBAADAPTERMETHODS 类向 WMI 客户端提供光纤通道样式服务。 光纤通道服务由 T11 委员会 *光纤通道 HBA API* 规范定义。
 
-此 WMI 类都有无数据块，并因此 WMI 工具套件生成保存属于类的方法的参数数据结构但不会生成对应于类本身的结构。
+此 WMI 类没有数据块，因此 WMI 工具套件会生成包含属于类的方法的参数数据的结构，但不会生成与类本身对应的结构。
 
-每个方法都属于此类的 MOF 语法所述的方法的参考页。 以下部分介绍了这些方法和其随附的结构：
+此类的每个方法的 MOF 语法在方法的参考页中进行了介绍。 以下各节介绍了这些方法及其随附的结构：
 
 [**GetDiscoveredPortAttributes**](getdiscoveredportattributes.md)
 

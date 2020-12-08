@@ -1,7 +1,6 @@
 ---
 title: 'PowerDownAllocate 规则 (wdm) '
 description: PowerDownAllocate 规则指定 FDO 和 FIDO 驱动程序在处理 IRP \_ MN \_ \_ 为从 S0 到 \ S1 的 SystemPowerState 转换处理 IRP 设置电源请求时不应分配内存 .。。S5 \。
-ms.assetid: 01737B5F-C1DF-4012-85F2-E9B7517EA53A
 ms.date: 05/21/2018
 keywords:
 - 'PowerDownAllocate 规则 (wdm) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: a84b94f084ad21bad6fa2d9a81848a812d73560b
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: c6f61e5239ef5b1d9b4fecc56f762a84eda55359
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102783"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96810981"
 ---
 # <a name="powerdownallocate-rule-wdm"></a>PowerDownAllocate 规则 (wdm) 
 
 
-**PowerDownAllocate**规则指定 FDO 和 FIDO 驱动程序在处理 IRP \_ MN \_ \_ 为从 s0 到 S1 的**SystemPowerState**转换处理 IRP 设置电源请求时不应分配内存 \[ .。。S5 \] 。
+**PowerDownAllocate** 规则指定 FDO 和 FIDO 驱动程序在处理 IRP \_ MN \_ \_ 为从 s0 到 S1 的 **SystemPowerState** 转换处理 IRP 设置电源请求时不应分配内存 \[ .。。S5 \] 。
 
 此规则仅适用于 FDO 和 FIDO 驱动程序。
 

@@ -1,15 +1,14 @@
 ---
 title: XpsConverter
 description: 'XPS 转换器 ( # A0) 是一个命令行工具，用于将 XML 纸张规格 (XPS) 文档从 Microsoft XPS (MSXPS) 转换为标准 OpenXPS。'
-ms.assetid: A51F818E-AECD-4EBD-99AC-F3BD026C19D6
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d78be9def3508eaf2312aaa514dbb6bf1bef8786
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: f8ff3b8551ae8be5edb68dc84c311ea6c83f19d0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105550"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96810607"
 ---
 # <a name="xpsconverter"></a>XpsConverter
 
@@ -48,7 +47,7 @@ XPS 转换器 ( # A0) 是一个命令行工具，用于将 XML 纸张规格 (XPS
     XpsConverter /OpenXPS /InputFile=Text.xps /OutputFile=Test.oxps
     ```
 
-    安装 WDK 时，XpsConverter.exe 文件位于% programfiles% \\ Windows 工具包 \\ 8.1 \\ \\ * &lt; &gt; * bin 或% programfiles (86 \\ \\ \\ \\ * &lt; &gt; *) % windows 工具包 8.1 bin 目录。
+    安装 WDK 时，XpsConverter.exe 文件位于% programfiles% \\ Windows 工具包 \\ 8.1 \\ \\ *&lt; &gt;* bin 或% programfiles (86 \\ \\ \\ \\ *&lt; &gt;*) % windows 工具包 8.1 bin 目录。
 
 ## <a name="span-idxpsconverter_command_syntaxspanspan-idxpsconverter_command_syntaxspanspan-idxpsconverter_command_syntaxspanxpsconverter-command-syntax"></a><span id="XpsConverter_Command_Syntax"></span><span id="xpsconverter_command_syntax"></span><span id="XPSCONVERTER_COMMAND_SYNTAX"></span>XpsConverter 命令语法
 
@@ -74,7 +73,7 @@ XPS 转换器 ( # A0) 是一个命令行工具，用于将 XML 纸张规格 (XPS
 <thead>
 <tr class="header">
 <th align="left">参数</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -116,7 +115,7 @@ XPS 转换器 ( # A0) 是一个命令行工具，用于将 XML 纸张规格 (XPS
 ## <a name="span-idremarksspanspan-idremarksspanspan-idremarksspanremarks"></a><span id="Remarks"></span><span id="remarks"></span><span id="REMARKS"></span>备注
 
 
-你可以使用 **isXPS.exe (Isxps.exe 一致性工具) ** 来测试文件对 XPS 的符合性，以及 (OPC) 规范的开放打包约定。
+你可以使用 **isXPS.exe (Isxps.exe 一致性工具)** 来测试文件对 XPS 的符合性，以及 (OPC) 规范的开放打包约定。
 
 ## <a name="span-idexamplesspanspan-idexamplesspanspan-idexamplesspanexamples"></a><span id="Examples"></span><span id="examples"></span><span id="EXAMPLES"></span>示例
 

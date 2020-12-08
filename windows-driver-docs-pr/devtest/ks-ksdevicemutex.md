@@ -1,7 +1,6 @@
 ---
 title: 'KsDeviceMutex 规则 ( # A1'
 description: KsDeviceMutex 规则指定内核流式处理端口驱动程序在正确的序列中使用 KsAcquireDevice 和 KsReleaseDevice。 也就是说，每次调用 KsAcquireDevice 时，都必须具有对 KsReleaseDevice 的相应调用。
-ms.assetid: 6F69B273-6780-4A01-8266-2B056E4F2C84
 ms.date: 05/21/2018
 keywords:
 - 'KsDeviceMutex 规则 ( # A1'
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 98130613ee10d191e7d65b2475d5f416b400e4c3
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 1a3617818b20e14afa3810906fd130b564a9b832
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105498"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96811190"
 ---
 # <a name="ksdevicemutex-rule-"></a>KsDeviceMutex 规则 ( # A1
 
 
-**KsDeviceMutex**规则指定内核流式处理端口驱动程序在正确的序列中使用[**KsAcquireDevice**](/windows-hardware/drivers/ddi/ks/nf-ks-ksacquiredevice)和[**KsReleaseDevice**](/windows-hardware/drivers/ddi/ks/nf-ks-ksreleasedevice) 。 也就是说，每次调用 **KsAcquireDevice** 时，都必须具有对 **KsReleaseDevice**的相应调用。
+**KsDeviceMutex** 规则指定内核流式处理端口驱动程序在正确的序列中使用 [**KsAcquireDevice**](/windows-hardware/drivers/ddi/ks/nf-ks-ksacquiredevice)和 [**KsReleaseDevice**](/windows-hardware/drivers/ddi/ks/nf-ks-ksreleasedevice) 。 也就是说，每次调用 **KsAcquireDevice** 时，都必须具有对 **KsReleaseDevice** 的相应调用。
 
 **驱动程序模型： KS**
 

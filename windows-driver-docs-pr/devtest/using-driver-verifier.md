@@ -1,15 +1,14 @@
 ---
 title: 使用驱动程序验证程序
 description: 使用驱动程序验证程序
-ms.assetid: 0b8da3f9-f22e-4ef4-afc7-5fe72dfa8043
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 552b85aade7125ee7f640665b7f59ddfa21912ce
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a4f55ce4ab2ec68038539c7b986ee9e23e62de42
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63341631"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96811119"
 ---
 # <a name="using-driver-verifier"></a>使用驱动程序验证程序
 
@@ -17,9 +16,9 @@ ms.locfileid: "63341631"
 ## <span id="ddk_using_driver_verifier_dbg"></span><span id="DDK_USING_DRIVER_VERIFIER_DBG"></span>
 
 
-可以激活、 配置和验证程序实用工具通过监视驱动程序验证程序。 此实用程序包含一个命令行接口和一个图形界面。
+驱动程序验证程序可以通过验证程序实用工具进行激活、配置和监视。 此实用程序包含命令行界面和图形界面。
 
-本部分包括：
+本节包括：
 
 [验证程序实用工具](the-verifier-utility.md)
 

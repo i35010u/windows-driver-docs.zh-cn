@@ -1,7 +1,6 @@
 ---
 title: 'RemoveLockForward 规则 (wdm) '
 description: RemoveLockForward 规则在将 IRP 转发到另一台设备时，验证是否正确使用了对 IoAcquireRemoveLock 和 IoReleaseRemoveLock 的调用。
-ms.assetid: F6566D68-C49F-46E4-A285-339E9855B9D7
 ms.date: 05/21/2018
 keywords:
 - 'RemoveLockForward 规则 (wdm) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 42f551b2d1f08b1a73b0e937a239932afb16cd94
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 24dbb59375d6c749de132fb1bf951396597c6892
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107038"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96810947"
 ---
 # <a name="removelockforward-rule-wdm"></a>RemoveLockForward 规则 (wdm) 
 
 
-**RemoveLockForward**规则在将 IRP 转发到另一台设备时，验证是否正确使用了对[**IoAcquireRemoveLock**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioacquireremovelock)和[**IoReleaseRemoveLock**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioreleaseremovelock)的调用。
+**RemoveLockForward** 规则在将 IRP 转发到另一台设备时，验证是否正确使用了对 [**IoAcquireRemoveLock**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioacquireremovelock)和 [**IoReleaseRemoveLock**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioreleaseremovelock)的调用。
 
 请注意，此规则不检查 IRP \_ MN \_ 删除 \_ 设备、irp \_ MN \_ 查询 \_ 设备或 irp \_ MN \_ SUPRISE \_ 删除 irp。
 

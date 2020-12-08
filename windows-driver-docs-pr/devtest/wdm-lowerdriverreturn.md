@@ -1,7 +1,6 @@
 ---
 title: 'LowerDriverReturn 规则 (wdm) '
 description: LowerDriverReturn 规则指定在使用 PoCallDriver 或 IoCallDriver 调用较低的驱动程序后，该驱动程序将从调用中保存返回状态，并将接收到的返回状态传递到调度例程。
-ms.assetid: 0b437591-c613-481a-a4f9-36a5cc208cb0
 ms.date: 05/21/2018
 keywords:
 - 'LowerDriverReturn 规则 (wdm) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: df85e13629ec2f418a4bd889ccb866afe3e34414
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: b785b1c44d8103cee539e9a7e10e0b1d10ba15a0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104236"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96811083"
 ---
 # <a name="lowerdriverreturn-rule-wdm"></a>LowerDriverReturn 规则 (wdm) 
 
 
-**LowerDriverReturn**规则指定在使用[**PoCallDriver**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-pocalldriver)或[**IoCallDriver**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver)调用较低的驱动程序后，该驱动程序将从调用中保存返回状态，并将接收到的返回状态传递到调度例程。
+**LowerDriverReturn** 规则指定在使用 [**PoCallDriver**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-pocalldriver)或 [**IoCallDriver**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver)调用较低的驱动程序后，该驱动程序将从调用中保存返回状态，并将接收到的返回状态传递到调度例程。
 
 如果驱动程序调用 [**IoCompleteRequest**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocompleterequest) 或 [**也**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iomarkirppending)，则不会应用这些条件。
 

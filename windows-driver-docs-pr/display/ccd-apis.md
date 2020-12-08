@@ -1,7 +1,6 @@
 ---
 title: CCD API
 description: 连接和配置显示 (CCD) Api
-ms.assetid: b71c1582-a91c-49d8-a3a3-d20f7746c354
 keywords:
 - 连接显示 WDK Windows 7 显示，CCD Api
 - 连接显示 WDK Windows Server 2008 R2 显示，CCD Api
@@ -11,12 +10,12 @@ keywords:
 - CCD Api WDK Windows Server 2008 R2 显示
 ms.date: 10/11/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 3bb98b9f7214f36d01b1b5e82eab41799b205df0
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 5def05a45d889575febbd4957d8a17e379217de3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90715852"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96810361"
 ---
 # <a name="ccd-apis"></a>CCD API
 

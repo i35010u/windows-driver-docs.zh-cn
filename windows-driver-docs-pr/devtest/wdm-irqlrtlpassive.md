@@ -1,7 +1,6 @@
 ---
 title: 'IrqlRtlPassive 规则 (wdm) '
 description: IrqlRtlPassive 规则指定仅当驱动程序在 IRQL 被动级别执行时才调用 RtlDeleteRegistryValue \_ 。
-ms.assetid: 0b88dc8a-f1cf-404c-85d6-a716a0bbbc01
 ms.date: 05/21/2018
 keywords:
 - 'IrqlRtlPassive 规则 (wdm) '
@@ -12,12 +11,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 529777c3f14f500aedf4dd5546b8ca3bc7863c7f
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 6a1e7affc59a8f332a1866dd09279ea8985db2f8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103094"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96811099"
 ---
 # <a name="irqlrtlpassive-rule-wdm"></a>IrqlRtlPassive 规则 (wdm) 
 

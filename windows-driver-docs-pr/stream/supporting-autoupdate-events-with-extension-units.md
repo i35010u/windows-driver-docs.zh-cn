@@ -1,29 +1,28 @@
 ---
 title: 支持扩展单元的自动更新事件
 description: 支持扩展单元的自动更新事件
-ms.assetid: 3dc75f48-adc7-4443-8090-2e61b3306798
 keywords:
 - 自动更新事件 WDK USB 视频类
-- 自动更新事件 WDK USB 视频类扩展单位
+- 自动更新事件 WDK USB 视频类，扩展单元
 - 事件 WDK USB 视频类
-- 事件 WDK USB 视频类，与扩展单位的自动更新
-- 扩展单位 WDK USB 视频类，示例
-- 示例代码 WDK USB 视频类，自动更新事件
+- 事件 WDK USB 视频类，随扩展单元自动更新
+- 扩展单元-WDK USB 视频类，示例
+- 示例代码 WDK USB 视频类、自动更新事件
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 904f7662fe10907f6dc2e11a250abf3e7a48b2c7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e28e27d7e4ec0a21450dc83557e52e6c4212e047
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63378516"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96809821"
 ---
 # <a name="supporting-autoupdate-events-with-extension-units"></a>支持扩展单元的自动更新事件
 
 
 本主题包含演示如何支持自动更新事件的示例代码。
 
-在应用程序源中，任意名为 TestApp.cpp 包括下面的代码：
+在应用程序源中包含名为 TestApp 的以下代码：
 
 ```cpp
 hEvent = CreateEvent(NULL, FALSE, FALSE, NULL);

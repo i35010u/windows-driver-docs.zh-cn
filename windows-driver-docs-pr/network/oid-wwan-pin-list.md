@@ -1,16 +1,15 @@
 ---
 title: OID_WWAN_PIN_LIST
 description: OID_WWAN_PIN_LIST 返回一个列表，其中列出了 MB 设备支持的所有不同类型的个人标识号 (引脚) ，以及每个 PIN 类型的其他详细信息，例如 PIN 长度 (最小和最大长度) 、PIN 格式、PIN 输入模式 (启用/禁用/不可用) 。 此 OID 还指定设备支持的每个 PIN 的当前模式。 不支持设置请求。 微型端口驱动程序必须异步处理查询请求，最初将 NDIS_STATUS_INDICATION_REQUIRED 返回到原始请求，稍后发送 NDIS_STATUS_WWAN_PIN_LIST 状态通知，其中包含一个 NDIS_WWAN_PIN_LIST 结构，以在完成查询请求时返回具有相应说明的 Pin 列表。
-ms.assetid: 76a1181c-974e-472d-ad15-d9c6208aa2b4
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_WWAN_PIN_LIST 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: fa704c508dcb042d3d15429c5b2a2fc8b50d371b
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 3ba737839fb72ebc33f8535191f7f03425a7f3ac
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89207887"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96809931"
 ---
 # <a name="oid_wwan_pin_list"></a>OID \_ WWAN \_ PIN \_ 列表
 
@@ -54,7 +53,7 @@ OID \_ WWAN \_ PIN \_ 列表返回一个列表，其中列出了 MB 设备支持
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**NDIS \_ WWAN \_ PIN \_ 列表**](/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_pin_list)

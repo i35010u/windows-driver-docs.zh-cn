@@ -1,7 +1,6 @@
 ---
 title: 在 AVStream 编解码器中支持动态格式更改
 description: 在 AVStream 编解码器中支持动态格式更改
-ms.assetid: ae222512-fd19-404a-aaf8-6fbfa2a3349e
 keywords:
 - 硬件编解码器支持 WDK AVStream，动态格式更改
 - 支持动态格式更改 WDK AVStream
@@ -9,12 +8,12 @@ keywords:
 - AVStream 硬件编解码器支持 WDK，支持动态格式更改
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d6ae8f820416a9a9952b1f84e82d790242a28fb6
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: c5b1995d82718167ac3c0f81645f9e393a51e756
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89192795"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96809819"
 ---
 # <a name="supporting-dynamic-format-changes-in-avstream-codecs"></a>在 AVStream 编解码器中支持动态格式更改
 
@@ -84,7 +83,7 @@ KSEVENT_SET PinEventTable[] =
 
 每个 pin 应在其 pin 描述符中公开此事件。 事件的类型为 KSEVENTF \_ 事件 \_ 句柄。
 
-驱动程序生成此事件之前，应根据当前所选的输入媒体类型设置 KS pin 的首选媒体类型。 为此，可以使用[** \_ KsEdit**](/windows-hardware/drivers/ddi/ks/nf-ks-_ksedit)函数来处理 pin 的描述符。
+驱动程序生成此事件之前，应根据当前所选的输入媒体类型设置 KS pin 的首选媒体类型。 为此，可以使用 [**\_ KsEdit**](/windows-hardware/drivers/ddi/ks/nf-ks-_ksedit)函数来处理 pin 的描述符。
 
 为了生成事件，驱动程序应调用 [**KsGenerateEvents**](/windows-hardware/drivers/ddi/ks/nf-ks-ksgenerateevents)。
 

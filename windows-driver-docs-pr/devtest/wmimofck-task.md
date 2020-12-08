@@ -1,15 +1,14 @@
 ---
 title: Wmimofck 任务
 description: Windows 驱动程序工具包 (WDK) 提供 Wmimofck 任务，因此，在使用 MSBuild 构建驱动程序时，可以运行 wmimofck.exe 工具。
-ms.assetid: 33C5C079-510F-4BD3-AEF1-F152E88E45C2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 231a12f8d8886b7a6703086b4f29437c22735c36
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 442cfef9326e9d1db32072d5ce0db20ce5bb9dda
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89383463"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96810661"
 ---
 # <a name="wmimofck-task"></a>Wmimofck 任务
 
@@ -179,7 +178,7 @@ Wmimofck.exe –h"b.h" b.bmf
 <tr class="odd">
 <td align="left"><strong>VBScriptTestOutputFile</strong>
 <p>可选的字符串参数。 将创建一个 VBScript 程序，该程序将查询 MOF 文件中指定的所有数据块和属性。</p></td>
-<td align="left">% (Wmimofck. VBScriptTestOutputFile) </td>
+<td align="left">% ( # B0 criptTestOutputFile) </td>
 <td align="left"><strong>-t</strong><em>Filename</em></td>
 </tr>
 <tr class="even">

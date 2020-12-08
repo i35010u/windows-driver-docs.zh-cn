@@ -1,15 +1,14 @@
 ---
 title: 如何运行驱动程序的代码分析
 description: 驱动程序代码分析提供有关源代码中可能缺陷的信息。 您可以手动运行代码分析，还可以在每次生成时自动运行代码分析。
-ms.assetid: BDD4EC2C-FB23-44BE-9A52-F98774AC7268
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9d9666ef7e7712825bea58ef7ca4d0959fd3ed3d
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 2925743737073f65eca199286de5e1e4e5fc8a5c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89384827"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96809659"
 ---
 # <a name="how-to-run-code-analysis-for-drivers"></a>如何运行驱动程序的代码分析
 
@@ -63,7 +62,7 @@ ms.locfileid: "89384827"
 ### <a name="to-suppress-warning-messages"></a>禁止显示警告消息
 
 1. 若要删除已报告缺陷的实例，请在 " **代码分析结果** " 窗口中选择行号和警告。
-2. 在警告的展开说明中，单击 " **操作**" " &gt; **禁止** &gt; **在源中**显示消息"。
+2. 在警告的展开说明中，单击 " **操作**" " &gt; **禁止** &gt; **在源中** 显示消息"。
 
    带有禁止显示说明符的杂注警告指令禁止仅对紧跟在 pragma warning 语句后面的代码行出现警告 \# 。
 
@@ -81,7 +80,7 @@ ms.locfileid: "89384827"
 
 1. 在记事本或其他文本编辑器中打开内核模式驱动程序的 Visual Studio 项目文件 ()  (或组件) 。
 2. **\<ItemDefinitionGroup\>** 为编译器添加新的 **\<ClCompile\>** 。
-3. 添加 **\<PREfastAdditionalOptions\>** 元素并设置**stacksize \<bytes\> **。 默认值为 **stacksize1024**。
+3. 添加 **\<PREfastAdditionalOptions\>** 元素并设置 **stacksize \<bytes\>**。 默认值为 **stacksize1024**。
 
 ```XML
      <ItemDefinitionGroup>

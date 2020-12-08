@@ -1,7 +1,6 @@
 ---
 title: 识别画笔
 description: 识别画笔
-ms.assetid: e6a7c008-50b2-4411-b8f8-99a3ca99e9f4
 keywords:
 - GDI WDK Windows 2000 显示，模式
 - 图形驱动程序 WDK Windows 2000 显示，模式
@@ -20,18 +19,18 @@ keywords:
 - 绘制 WDK GDI，画笔
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b0f3d17b2552eb07987901ae9a93203e86c90e73
-ms.sourcegitcommit: a44ade167cdfb541cf1818e9f9e3726f23f90b66
+ms.openlocfilehash: 84c55de8177cb724a77bdca7f469e39d3687b62b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94361585"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96810085"
 ---
 # <a name="realizing-brushes"></a>识别画笔
 
 ## <a name="how-to-realize-a-brush"></a>如何实现画笔
 
-输出线条、文本或填充的图形函数至少采用一个画笔作为参数。 画笔定义用于在指定图面上绘制图形对象的模式。 采用画笔的每个输出函数都需要一个 *画笔原点* 。 画笔原点提供设备图面上的像素坐标，使其与画笔图案的左上角像素对齐。 画笔模式 (平铺) ，以覆盖整个设备表面。
+输出线条、文本或填充的图形函数至少采用一个画笔作为参数。 画笔定义用于在指定图面上绘制图形对象的模式。 采用画笔的每个输出函数都需要一个 *画笔原点*。 画笔原点提供设备图面上的像素坐标，使其与画笔图案的左上角像素对齐。 画笔模式 (平铺) ，以覆盖整个设备表面。
 
 驱动程序可以支持以下函数来定义画笔：
 

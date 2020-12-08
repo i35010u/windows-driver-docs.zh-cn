@@ -1,15 +1,14 @@
 ---
 title: MSiSCSI \_ INITIATORINSTANCEFAILUREEVENT WMI 类
 description: MSiSCSI \_ INITIATORINSTANCEFAILUREEVENT WMI 类
-ms.assetid: 58ddfaf7-d2ec-4b06-8eef-f7b07285963d
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: f5cdae3121b0d530145f33793d15da65bb9815fc
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 7efa4be95704850d0d59ffa6c19168f96f3ad484
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89185889"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96811423"
 ---
 # <a name="msiscsi_initiatorinstancefailureevent-wmi-class"></a>MSiSCSI \_ INITIATORINSTANCEFAILUREEVENT WMI 类
 
@@ -21,7 +20,7 @@ ms.locfileid: "89185889"
 
 由于此类与存储微型端口驱动程序的特定实例相关联，因此微型端口驱动程序必须使用微型端口驱动程序管理 (PDO) 的特定物理设备对象的名称注册该类。
 
-MSiSCSI \_ InitiatorInstanceFailureEvent 类在 *管理 mof*中定义。
+MSiSCSI \_ InitiatorInstanceFailureEvent 类在 *管理 mof* 中定义。
 
 ```cpp
 class MSiSCSI_InitiatorInstanceFailureEvent : WMIEvent {

@@ -1,22 +1,21 @@
 ---
 title: WDF_PTR_GET_OFFSET 宏
-description: WDF_PTR_GET_OFFSET 宏中减去另一个地址中的地址，并返回结果的偏移量的值。
-ms.assetid: b5159207-ba5c-4924-a06e-725ccd3c8a12
+description: WDF_PTR_GET_OFFSET 宏从另一个地址减去一个地址，并返回生成的偏移量值。
 keywords:
 - WDF_PTR_GET_OFFSET 宏
 ms.date: 08/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b1782a7545ace74a23948ebd19b7bad579b04542
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1bde3d1f24310d1d71ae7f4fe06937d03deef430
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390832"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96809779"
 ---
-# <a name="wdfptrgetoffset-macro"></a>WDF_PTR_GET_OFFSET 宏
+# <a name="wdf_ptr_get_offset-macro"></a>WDF_PTR_GET_OFFSET 宏
 
 
-**WDF_PTR_GET_OFFSET**宏中减去另一个地址中的地址，并返回结果的偏移量的值。
+**WDF_PTR_GET_OFFSET** 宏从另一个地址减去一个地址，并返回生成的偏移量值。
 
 <a name="syntax"></a>语法
 ------
@@ -28,24 +27,24 @@ size_t WDF_PTR_GET_OFFSET(
 );
 ```
 
-<a name="parameters"></a>Parameters
+<a name="parameters"></a>参数
 ----------
 
 *_base*   
-指定要从起始地址中减去的值。
+指定要从起始地址减去的值。
 
 *_addr*   
-指定的起始地址。
+指定起始地址。
 
 <a name="return-value"></a>返回值
 ------------
 
-返回两个指定的地址之间的偏移量。
+返回两个指定地址之间的偏移量。
 
 <a name="remarks"></a>备注
 -------
 
-定义宏，如下所示：
+宏的定义如下：
 
 ```ManagedCPlusPlus
 #define WDF_PTR_GET_OFFSET(_base, _addr) \
@@ -63,19 +62,19 @@ size_t WDF_PTR_GET_OFFSET(
 <tbody>
 <tr class="odd">
 <td><p>目标平台</p></td>
-<td><a href="https://go.microsoft.com/fwlink/p/?linkid=531356" data-raw-source="[Universal](https://go.microsoft.com/fwlink/p/?linkid=531356)">世界</a></td>
+<td><a href="https://go.microsoft.com/fwlink/p/?linkid=531356" data-raw-source="[Universal](https://go.microsoft.com/fwlink/p/?linkid=531356)">通用</a></td>
 </tr>
 <tr class="even">
 <td><p>最低 KMDF 版本</p></td>
 <td><p>1.5</p></td>
 </tr>
 <tr class="odd">
-<td><p>最低 UMDF 版本</p></td>
+<td><p>最小 UMDF 版本</p></td>
 <td><p>2.0</p></td>
 </tr>
 <tr class="even">
-<td><p>Header</p></td>
-<td>Wdfcore.h （包括 Wdf.h）</td>
+<td><p>标头</p></td>
+<td>Wdfcore (包含 Wdf .h) </td>
 </tr>
 </tbody>
 </table>

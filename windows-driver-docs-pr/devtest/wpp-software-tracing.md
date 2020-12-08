@@ -1,7 +1,6 @@
 ---
 title: WPP 软件跟踪
 description: 本部分介绍如何使用 Windows 软件跟踪预处理器 (WPP) 来跟踪软件组件跟踪提供程序的操作。
-ms.assetid: dab776b3-bac9-4157-a530-6e48868ba900
 keywords:
 - Windows 软件跟踪预处理器 WDK
 - WPP 软件跟踪 WDK
@@ -13,12 +12,12 @@ keywords:
 - 跟踪 WDK，WPP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fbbb896434a2ea454e9f28198cf3a5306cfc6f93
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: c4bfc8adcbcdec3f634a9bdfe9daf91cb2ef12eb
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107184"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96810645"
 ---
 # <a name="wpp-software-tracing"></a>WPP 软件跟踪
 
@@ -80,7 +79,7 @@ Microsoft Windows 2000 和更高版本的 Windows 支持 WPP 软件跟踪。
 -   [WPP 预处理器](wpp-preprocessor.md)
 -   [WDF 驱动程序的跟踪和诊断能力](tracing-and-diagnosability-for-wdf-drivers.md)
 
-**注意**   Windows (ETW) 和 WPP 的事件跟踪支持大多数类型的内核模式驱动程序和用户模式驱动程序。 但 ETW 和 WPP 使用某些类型的驱动程序（如微型端口驱动程序）不可用的类型。 若要确定是否支持某个特定的驱动程序类型，请将基本的 WPP 宏添加到该驱动程序，如 [WPP \_ INIT \_ 跟踪](/previous-versions/windows/hardware/previsioning-framework/ff556191(v=vs.85)) 和 [wpp \_ 清除](/previous-versions/windows/hardware/previsioning-framework/ff556179(v=vs.85))。 如果代码由于未定义所使用的类型而无法编译，则 ETW 和 WPP 不能支持驱动程序类型。
+**注意**   Windows (ETW) 和 WPP 的事件跟踪支持大多数类型的内核模式驱动程序和用户模式驱动程序。 但 ETW 和 WPP 使用某些类型的驱动程序（如微型端口驱动程序）不可用的类型。 若要确定是否支持某个特定的驱动程序类型，请将基本的 WPP 宏添加到该驱动程序，如 [WPP \_ INIT \_ 跟踪](/previous-versions/windows/hardware/previsioning-framework/ff556191(v=vs.85)) 和 [wpp \_ 清除](/previous-versions/windows/hardware/previsioning-framework/ff556179(v=vs.85))。 如果代码由于未定义所使用的类型而无法编译，则 ETW 和 WPP 不能支持驱动程序类型。
 
 有关 ETW 的详细信息，请参阅 [Windows 事件跟踪](/windows-hardware/test/wpt/event-tracing-for-windows)。
 

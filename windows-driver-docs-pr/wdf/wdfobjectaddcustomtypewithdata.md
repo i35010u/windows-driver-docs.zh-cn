@@ -1,24 +1,23 @@
 ---
 title: WdfObjectAddCustomTypeWithData 宏
 description: WdfObjectAddCustomTypeWithData 宏将框架对象与自定义类型相关联，并选择性地将此对与数据缓冲区和事件回调函数相关联。
-ms.assetid: 237F9BAA-A2E2-4F20-B52E-8F093B326E45
 keywords:
 - WdfObjectAddCustomTypeWithData 宏
 ms.date: 08/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d41243825aae447d0da19f623fd3cee20f6bb15a
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: e204ddc1928e5f29b4f4b049b45ac450434f71ee
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89187319"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96809773"
 ---
 # <a name="wdfobjectaddcustomtypewithdata-macro"></a>WdfObjectAddCustomTypeWithData 宏
 
 
 \[适用于 KMDF 和 UMDF\]
 
-**WdfObjectAddCustomTypeWithData**宏将框架对象与自定义类型相关联，并选择性地将此对与数据缓冲区和事件回调函数相关联。
+**WdfObjectAddCustomTypeWithData** 宏将框架对象与自定义类型相关联，并选择性地将此对与数据缓冲区和事件回调函数相关联。
 
 <a name="syntax"></a>语法
 ------
@@ -54,7 +53,7 @@ NTSTATUS WdfObjectAddCustomTypeWithData(
 <a name="return-value"></a>返回值
 ------------
 
-如果操作成功，则**WdfObjectAddCustomTypeWithData**返回 STATUS_SUCCESS。 否则，此方法可能会返回以下值之一：
+如果操作成功，则 **WdfObjectAddCustomTypeWithData** 返回 STATUS_SUCCESS。 否则，此方法可能会返回以下值之一：
 
 <table>
 <colgroup>
@@ -89,7 +88,7 @@ NTSTATUS WdfObjectAddCustomTypeWithData(
 
  
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 如果你的驱动程序使用指向数据缓冲区的指针调用 **WdfObjectAddCustomTypeWithData** ，则驱动程序可以提供 [*EvtCleanupCallback*](/windows-hardware/drivers/ddi/wdfobject/nc-wdfobject-evt_wdf_object_context_cleanup) 或 [*EvtDestroyCallback*](/windows-hardware/drivers/ddi/wdfobject/nc-wdfobject-evt_wdf_object_context_destroy) 回调函数，以便在删除对象时解除分配内存缓冲区。
@@ -120,7 +119,7 @@ NTSTATUS WdfObjectAddCustomTypeWithData(
 <td><p>2.0</p></td>
 </tr>
 <tr class="even">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Wdfobject (包含 Wdf .h) </td>
 </tr>
 </tbody>

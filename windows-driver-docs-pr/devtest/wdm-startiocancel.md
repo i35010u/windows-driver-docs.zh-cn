@@ -1,7 +1,6 @@
 ---
 title: 'StartIoCancel 规则 (wdm) '
 description: StartIoCancel 规则指定，在使用非 NULLCancel 例程调用 IoSetCancelRoutine 之前，驱动程序不得调用 IoSetStartIoAttributes，并将 NonCancelable 参数设置为 FALSE。
-ms.assetid: 08fde0b1-4f4e-473a-9e07-3b39683a3a1b
 ms.date: 05/21/2018
 keywords:
 - 'StartIoCancel 规则 (wdm) '
@@ -12,19 +11,19 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 8509362485133e0380d2e449148cd079868c9d60
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 7f5b74ffca929e1992aa502d9f7be697db765f05
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103662"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96810758"
 ---
 # <a name="startiocancel-rule-wdm"></a>StartIoCancel 规则 (wdm) 
 
 
-**StartIoCancel**规则指定，在使用非**NULL**[**Cancel**](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_cancel)例程调用[**IoSetCancelRoutine**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iosetcancelroutine)之前，驱动程序不得调用[**IoSetStartIoAttributes**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-iosetstartioattributes) ，并将*NonCancelable*参数设置为**FALSE** 。
+**StartIoCancel** 规则指定，在使用非 **NULL**[**Cancel**](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_cancel)例程调用 [**IoSetCancelRoutine**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iosetcancelroutine)之前，驱动程序不得调用 [**IoSetStartIoAttributes**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-iosetstartioattributes) ，并将 *NonCancelable* 参数设置为 **FALSE** 。
 
-在注册[**取消**](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_cancel)例程之前，将*NonCancelable*参数设置为**FALSE**可能会导致取消争用情况。
+在注册 [**取消**](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_cancel)例程之前，将 *NonCancelable* 参数设置为 **FALSE** 可能会导致取消争用情况。
 
 由于驱动程序的 [**Cancel**](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_cancel) 例程必须包括对 [**IoReleaseCancelSpinLock**](/previous-versions/windows/hardware/drivers/ff549550(v=vs.85)) (的调用，以释放 i/o 管理器在调用 **取消** 例程) 之前获取的旋转锁，请考虑使用 **StartIoCancel** 规则和 [**CancelSpinLock**](wdm-cancelspinlock.md) 规则验证驱动程序。
 

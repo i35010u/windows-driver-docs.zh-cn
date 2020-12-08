@@ -1,16 +1,15 @@
 ---
 title: OID_WWAN_NETWORK_IDLE_HINT
 description: OID_WWAN_NETWORK_IDLE_HINT 将提示发送到网络接口，相关数据是否应在接口上处于活动状态或空闲状态。
-ms.assetid: 1FE758C1-543A-45B4-A377-336A1307689F
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_WWAN_NETWORK_IDLE_HINT 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 65b3ba47695d71388a899049e62bef3cae78e325
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: ea4a2ea7b4eb898af5061508a441b4efa89c0d73
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89212329"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96809963"
 ---
 # <a name="oid_wwan_network_idle_hint"></a>OID \_ WWAN \_ 网络 \_ 空闲 \_ 提示
 
@@ -41,7 +40,7 @@ OID \_ WWAN \_ 网络 \_ 空闲 \_ 提示向网络接口发送提示，指出数
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**NDIS \_ WWAN \_ 网络 \_ 空闲 \_ 提示**](/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_network_idle_hint)

@@ -1,19 +1,18 @@
 ---
 title: 硬件资源简介
 description: 硬件资源简介
-ms.assetid: 34350031-daae-4213-b157-086a7a55e05b
 keywords:
 - 启动配置 WDK KMDF
 - 逻辑配置 WDK KMDF
 - 硬件资源 WDK KMDF，关于硬件资源
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9079b5025710e78dae8b1921fe55511d362f88a2
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: d862e17efdc7936ea34325d1734f4073b781c6ed
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89184307"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96811319"
 ---
 # <a name="introduction-to-hardware-resources"></a>硬件资源简介
 
@@ -48,7 +47,7 @@ PnP 管理器检查修改的硬件要求列表，并确定哪些指定资源在�
 
 6.  PnP 管理器将设备的资源要求列表发送到驱动程序堆栈以供查看。 当列表沿驱动程序堆栈向下传递时，框架将调用每个函数和筛选器驱动程序的 [*EvtDeviceFilterRemoveResourceRequirements*](/windows-hardware/drivers/ddi/wdffdo/nc-wdffdo-evt_wdf_device_filter_resource_requirements) 回调函数。 当列表在堆栈中向上移动时，框架将调用每个函数和筛选器驱动程序的 [*EvtDeviceFilterAddResourceRequirements*](/windows-hardware/drivers/ddi/wdffdo/nc-wdffdo-evt_wdf_device_filter_resource_requirements) 回调函数。 这两个回调函数都可以 [修改资源需求列表](modifying-a-resource-requirements-list.md)。
 
-7.  PnP 管理器为设备创建资源列表，并将其发送到驱动程序堆栈进行查看。 框架调用每个函数和筛选器驱动程序的[*EvtDeviceRemoveAddedResources*](/windows-hardware/drivers/ddi/wdffdo/nc-wdffdo-evt_wdf_device_remove_added_resources)回调函数，该函数将删除驱动程序的*EvtDeviceFilterAddResourceRequirements*回调函数添加的[资源](modifying-a-resource-list.md)，从而使总线驱动程序不会尝试使用它们。
+7.  PnP 管理器为设备创建资源列表，并将其发送到驱动程序堆栈进行查看。 框架调用每个函数和筛选器驱动程序的 [*EvtDeviceRemoveAddedResources*](/windows-hardware/drivers/ddi/wdffdo/nc-wdffdo-evt_wdf_device_remove_added_resources)回调函数，该函数将删除驱动程序的 *EvtDeviceFilterAddResourceRequirements* 回调函数添加的 [资源](modifying-a-resource-list.md)，从而使总线驱动程序不会尝试使用它们。
 
 8.  框架从 PnP 管理器接收最终资源列表并存储。
 

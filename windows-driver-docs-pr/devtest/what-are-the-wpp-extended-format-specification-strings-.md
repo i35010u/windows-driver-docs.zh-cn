@@ -1,21 +1,20 @@
 ---
 title: 什么是 WPP 扩展格式规范字符串
 description: 什么是 WPP 扩展格式规范字符串
-ms.assetid: f05117c0-cb4b-483a-a141-08423555170a
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7eaacbf1e313a89dfa8a817eabb5c264f7d56d63
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 3d0626734ff2d2f92ec64f92dba62bffc11e0c7b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89382753"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96810713"
 ---
 # <a name="what-are-the-wpp-extended-format-specification-strings"></a>什么是 WPP 扩展格式规范字符串
 
-WPP 包括预定义格式规范字符串，你可以在跟踪消息中使用这些字符串，此外还可以使用为 **printf**定义的标准格式字符串。
+WPP 包括预定义格式规范字符串，你可以在跟踪消息中使用这些字符串，此外还可以使用为 **printf** 定义的标准格式字符串。
 
-可以使用 **%！标志！**， **%！FUNC！** **%！LEVEL！** [跟踪消息前缀](trace-message-prefix.md)和任何跟踪函数或宏（如[**DoTraceMessage**](/previous-versions/windows/hardware/previsioning-framework/ff544918(v=vs.85))）中的字符串。
+可以使用 **%！标志！**， **%！FUNC！** **%！LEVEL！** [跟踪消息前缀](trace-message-prefix.md)和任何跟踪函数或宏（如 [**DoTraceMessage**](/previous-versions/windows/hardware/previsioning-framework/ff544918(v=vs.85))）中的字符串。
 
 可以在任何跟踪函数中使用其他扩展字符串。
 
@@ -33,7 +32,7 @@ WPP 包括预定义格式规范字符串，你可以在跟踪消息中使用这�
 |%！ sid！|表示指向 (pSID) 的安全标识符的指针。 显示 SID。|
 |%!SRB!|表示指向 SCSI 请求块的指针。 显示块内容。|
 |%!SENSEDATA!|表示指向 SCSI SENSE_DATA 的指针。 显示探测数据。|
-|**GUID**| |
+|**Guid**| |
 |%!GUID.EMPTY!|表示指向 GUID (pGUID) 的指针。 显示指向的 GUID。|
 |%!CLSID!|类 ID。 表示指向类 ID GUID 的指针。 显示与 GUID 关联的字符串。 当设置跟踪消息的格式时，WPP 会在注册表中查找字符串。|
 |%!IID!|接口 ID。 表示指向接口 ID GUID 的指针。 显示与 GUID 关联的字符串。 当设置跟踪消息的格式时，WPP 会在注册表中查找字符串。|
@@ -48,7 +47,7 @@ WPP 包括预定义格式规范字符串，你可以在跟踪消息中使用这�
 |%!WINERROR.H!|表示一个 Windows 错误代码，并显示与该错误关联的字符串。|
 |%!HRESULT!|表示错误或警告，并以 HRESULT 格式显示代码。|
 |%!NTerror!|表示 Windows 错误并显示错误消息字符串。|
-|**网络**| |
+|**Network**| |
 |%!IPADDR!|表示指向 IP 地址的指针。 显示 IP 地址。|
 |%!口!|显示端口号。|
 |%!NETEVENT!|显示网络事件。|

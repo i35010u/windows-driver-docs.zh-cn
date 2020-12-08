@@ -1,18 +1,17 @@
 ---
 title: Alpha 混合数据加载
 description: Alpha 混合数据加载
-ms.assetid: d61fbb07-a6b0-4623-bb5b-1c1218f570ae
 keywords:
 - alpha-blend 数据加载 WDK DirectX VA
 - 混合图片 WDK DirectX VA，alpha-blend 数据加载
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7fb12392dcba760c85c126e6aefd33f2f2aca4c4
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 967f305fdeb22688c3dd744328e6a3ffb792af31
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89067482"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96810493"
 ---
 # <a name="alpha-blend-data-loading"></a>Alpha 混合数据加载
 

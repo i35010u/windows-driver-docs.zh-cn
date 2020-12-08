@@ -1,24 +1,23 @@
 ---
-title: '[Version] 部分指令'
-description: 本主题介绍中 INF [Version] 部分指令。
-ms.assetid: 76AC10DC-AECC-4C35-8BEE-4B2E8B06FEE0
+title: '[版本] 部分指令'
+description: 本主题介绍 INF 中的 [Version] 节指令。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e472b66ca51893a81e181c97fde57322f4960594
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f0839b8895bcddf2b8caeda79a16833aa3d77356
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391287"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96810593"
 ---
-# <a name="version-section-directives"></a>\[版本\]部分指令
+# <a name="version-section-directives"></a>\[版本 \] 部分指令
 
 
-本主题介绍 *\[版本\]* 部分 INF 中的指令。
+本主题介绍 INF 中的 *\[ 版本 \]* 节指令。
 
-收件箱的所有驱动程序不能引用 Layout.inf 文件。
+所有收件箱驱动程序不得引用布局 .inf 文件。
 
-收件箱的所有驱动程序不能引用任何目录文件。
+所有收件箱驱动程序不得引用任何编录文件。
 
 例如：
 
@@ -35,7 +34,7 @@ no line item for LayoutFile=layout.inf
 no line item for CatalogFile=delta.cat
 ```
 
-WHQL 显示器驱动程序不能引用 Layout.inf 文件。
+WHQL 显示驱动程序不得引用布局 .inf 文件。
 
 例如：
 

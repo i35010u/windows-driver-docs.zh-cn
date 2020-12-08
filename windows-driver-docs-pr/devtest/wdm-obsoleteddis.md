@@ -1,7 +1,6 @@
 ---
 title: 'ObsoleteDDIs 规则 (wdm) '
 description: ObsoleteDDIs 规则指定驱动程序不应调用 FsRtlPrivateLock。 此函数已过时。 改用 FsRtlFastLock。
-ms.assetid: 5C49270A-7AD1-4762-921E-7925006D0400
 ms.date: 05/21/2018
 keywords:
 - 'ObsoleteDDIs 规则 (wdm) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: ae5fadfddc6577fbce18045b2f77b8d2c15506ad
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 1670cbfebfbe964d11ff04b1ee82c012a93807de
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107426"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96811027"
 ---
 # <a name="obsoleteddis-rule-wdm"></a>ObsoleteDDIs 规则 (wdm) 
 
 
-**ObsoleteDDIs**规则指定驱动程序不应调用[**FsRtlPrivateLock**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtlprivatelock)。 此函数已过时。 改用 [**FsRtlFastLock**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-fsrtlfastlock) 。
+**ObsoleteDDIs** 规则指定驱动程序不应调用 [**FsRtlPrivateLock**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtlprivatelock)。 此函数已过时。 改用 [**FsRtlFastLock**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-fsrtlfastlock) 。
 
 **驱动程序模型： WDM**
 

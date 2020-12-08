@@ -1,22 +1,21 @@
 ---
 title: 跟踪代码中的 NULL 字符串会发生什么情况
 description: 跟踪代码中的 NULL 字符串会发生什么情况
-ms.assetid: a2226cbd-28cf-48eb-b129-5c4d12eb2564
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 07a917abc0a5ebbf24b6cc6883ad523bee12ada7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4e11dddd244256aec4b3a4b3d3067faf109e437f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63386387"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96810715"
 ---
 # <a name="what-happens-to-null-strings-in-tracing-code"></a>跟踪代码中的 NULL 字符串会发生什么情况？
 
 
-默认情况下，在此版本的 Windows Driver Kit (WDK) 中的跟踪组件搜索**NULL**函数中传递的参数中的字符串。 因此，不需要验证每个自变量，以防止**NULL**中引发异常的字符串。
+默认情况下，此版本 Windows 驱动程序工具包中的跟踪组件 (WDK) 搜索在函数中传递的参数中的 **空** 字符串。 因此，不必验证每个参数以防止 **空** 字符串导致异常。
 
-在早期版本的 WDK WPP\_检查\_有关\_NULL\_字符串宏执行此函数。 如果使用此版本的 WDK 生成内核模式驱动程序或用户模式应用程序，则可以从你的源代码中删除宏。
+在 WDK 的早期版本中，对 \_ \_ \_ NULL \_ 字符串宏执行此函数的 WPP 检查。 如果使用此版本的 WDK 构建内核模式驱动程序或用户模式应用程序，则可以从源代码中删除宏。
 
  
 

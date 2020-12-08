@@ -1,75 +1,74 @@
 ---
 title: 连接和配置显示
 description: 连接和配置显示
-ms.assetid: 8c16f99e-c7fd-46e2-b102-f5f0a297fbec
 keywords:
 - 显示 WDK Windows 7 显示
 - 显示 WDK Windows Server 2008 R2 显示
-- 显示 WDK Windows 7 显示连接
-- 显示 WDK Windows Server 2008 R2 显示连接
-- 显示 WDK Windows 7 显示配置
-- 显示 WDK Windows Server 2008 R2 显示配置
+- 显示 WDK Windows 7 显示，连接
+- 显示 WDK Windows Server 2008 R2 显示，连接
+- 显示 WDK Windows 7 显示，配置
+- 显示 WDK Windows Server 2008 R2 显示，配置
 - 连接显示 WDK Windows 7 显示
-- 连接显示 WDK Windows Server 2008 R2 显示
+- 连接显示 WDK Windows Server 2008 R2 显示器
 - 配置显示 WDK Windows 7 显示
 - 配置显示 WDK Windows Server 2008 R2 显示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 009254a44c1b873eea26023ec2ba5cc6c0dff709
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7b87ebe58232ce9d3b2e07e461197d939ad05b6d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327527"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96810173"
 ---
 # <a name="connecting-and-configuring-displays"></a>连接和配置显示
 
 
-本部分仅适用于 Windows 7 及更高版本、 和 Windows Server 2008 R2 和更高版本的 Microsoft Windows 操作系统。
+本部分仅适用于 Windows 7 和更高版本，以及 Windows Server 2008 R2 及更高版本的 Microsoft Windows 操作系统。
 
-新的连接和配置显示 (CCD) 中所述的 Win32 Api [CCD DDIs](ccd-ddis.md)提供更好地控制桌面显示安装程序。 它们还可用于使应用能够[纵向设备上正确显示](displaying-app-on-portrait-device.md)。 例如，在 Windows 7 之前的 Windows 版本，它是不可能使用设置克隆模式**ChangeDisplaySettingsEx**函数。 新的 CCD Api 将从使用 Windows 图形设备接口 (GDI) 概念类似视图名称和向移[Windows 显示器驱动程序模型 (WDDM)](windows-vista-display-driver-model-design-guide.md)概念，如适配器、 源和目标的标识符。
+新的连接和配置显示了在 [CCD DDIs](ccd-ddis.md) 中介绍的 (CCD) Win32 api，可更好地控制桌面显示器设置。 它们还可用于使您的应用程序 [在纵向设备上正确显示](displaying-app-on-portrait-device.md)。 例如，在 Windows 7 之前的 Windows 版本中，无法使用 **ChangeDisplaySettingsEx** 函数设置克隆模式。 新的 CCD Api 脱离了使用 Windows 图形设备接口 (GDI) 概念，如视图名称和面向 [Windows 的显示驱动程序模型 (WDDM) ](windows-vista-display-driver-model-design-guide.md) 概念，如适配器、源和目标标识符。
 
-显示控件面板、 新热键和热插拔检测 (HPD) 管理器可以使用 CCD Api。 Oem 可以使用 CCD Api，可用于其值的添加而不是使用专用驱动程序转义符的小程序。
+ (HPD) manager 的 "显示控制面板"、"新建热键" 和 "热插拔检测" 可以使用 CCD Api。 Oem 可以将 CCD Api 用于其值-添加 applet，而不是使用私有驱动程序转义。
 
 CCD Api 提供以下功能：
 
--   枚举是从当前连接的显示可能的显示路径。
+-   枚举当前连接的显示中可能的显示路径。
 
--   设置拓扑 （例如，克隆和扩展），布局信息、 解析、 方向和一个函数调用中的所有连接显示的纵横比。 通过对所有已连接显示在一个函数调用中执行多个设置，减少屏幕闪烁的数。
+-   设置拓扑 (例如，克隆和扩展一个函数调用中所有已连接显示器的) 、布局信息、分辨率、方向和纵横比。 通过对一个函数调用中的所有连接的显示执行多个设置，减少屏幕闪烁的次数。
 
--   添加或更新到持久性数据库的设置。
+-   添加或更新持久性数据库的设置。
 
--   将保留在数据库中的设置应用。
+-   应用保存在数据库中的设置。
 
--   使用最佳模式逻辑应用的最佳显示设置。
+-   使用最佳模式逻辑应用最佳显示设置。
 
--   使用最佳的拓扑逻辑应用连接显示的最佳拓扑。
+-   使用最佳拓扑逻辑应用所连接显示器的最佳拓扑。
 
--   启动或停止强制的输出。
+-   启动或停止强制输出。
 
--   允许 OEM 热密钥，以便使用新的操作系统持久性数据库。
+-   允许 OEM 热键使用新的操作系统持久性数据库。
 
-CCD Api 不能处理以下任务。 此外，CCD Api 不向后的兼容[Windows 2000 显示器驱动程序模型](windows-2000-display-driver-model-design-guide.md)。
+CCD Api 无法处理以下任务。 此外，CCD Api 与 [Windows 2000 显示驱动程序模型](windows-2000-display-driver-model-design-guide.md)不向后兼容。
 
--   替换的 API 集和专用驱动程序检测不到控制桌面以前提供的硬件供应商显示安装程序。
+-   替换硬件供应商先前提供的用于控制桌面显示器设置的 API 集和私有驱动程序转义符。
 
--   将传递到内核模式显示微型端口驱动程序的专用数据。
+-   将专用数据向下传递到内核模式显示微型端口驱动程序。
 
--   提供一组新的监视器控件 Api。
+-   提供一组新的监视控件 Api。
 
--   查询监视器功能，包括 EDID、 DDCCI，等等。
+-   查询监视器功能，其中包括 EDID、DDCCI 等。
 
--   提供一个上下文标识符，用于唯一地标识 CCD Api 从持久性数据库中检索的设置。
+-   提供用于唯一标识 CCD Api 从持久性数据库中检索的设置的上下文标识符。
 
--   尽管 CCD Api 允许调用方来获取和设置显示，但它们不提供任何功能来枚举给定路径中的可能的源模式。 已为 Windows 7 之前存在的 Api 提供的此功能。
+-   尽管 CCD Api 允许调用方获取和设置显示，但它们并不提供用于枚举给定路径中可能的源模式的任何功能。 Windows 7 之前存在的 Api 已经提供此功能。
 
-以下部分介绍了更详细地 CCD Api:
+以下部分更详细地介绍了 CCD Api：
 
 [CCD 概念](ccd-concepts.md)
 
-[CCD Api](ccd-apis.md)
+[CCD API](ccd-apis.md)
 
-**请注意**  除了使用 CCD Api 将桌面显示设置，硬件供应商必须修改其 Windows 7 [Windows 显示驱动程序模型 (WDDM)](windows-vista-display-driver-model-design-guide.md)支持 CCD 显示微型端口驱动程序。 在显示微型端口驱动程序中支持 CCD 的详细信息，请参阅[CCD DDIs](ccd-ddis.md)。
+**注意**   除了使用 CCD Api 设置桌面显示器，硬件供应商还必须修改其 Windows 7 [Windows 显示器驱动程序模型 (WDDM)](windows-vista-display-driver-model-design-guide.md) 显示微型端口驱动程序以支持 CCD。 有关在显示微型端口驱动程序中支持 CCD 的详细信息，请参阅 [CCD DDIs](ccd-ddis.md)。
 
  
 

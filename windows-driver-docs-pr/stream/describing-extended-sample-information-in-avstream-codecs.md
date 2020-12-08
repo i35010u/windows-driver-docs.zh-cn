@@ -1,17 +1,16 @@
 ---
 title: 描述 AVStream 编解码器中的扩展示例信息
 description: 描述 AVStream 编解码器中的扩展示例信息
-ms.assetid: 04447525-78f5-4c77-9a41-4e6e4729f729
 keywords:
 - AVStream 硬件编解码器支持 WDK，扩展示例信息
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9c3896b87bab2b24e3bb5721a59702e5091e7be9
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 4aa73f69651540f808cc0252806d7a17b2d2301c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89184165"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96811361"
 ---
 # <a name="describing-extended-sample-information-in-avstream-codecs"></a>描述 AVStream 编解码器中的扩展示例信息
 

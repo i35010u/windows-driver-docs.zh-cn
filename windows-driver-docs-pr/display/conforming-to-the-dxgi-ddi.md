@@ -1,7 +1,6 @@
 ---
 title: 符合 DXGI DDI
 description: 符合 DXGI DDI
-ms.assetid: 1c789f57-003e-4b29-9a81-dbf194670664
 keywords:
 - Direct3D 版本 11 WDK Windows 7 显示，DXGI DDI 一致性
 - Direct3D 版本 11 WDK Windows Server 2008 R2 显示，DXGI DDI 一致性
@@ -11,12 +10,12 @@ keywords:
 - DXGI DDI 一致性 WDK Windows Server 2008 R2 显示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b3b393269a49c889762f44a7d49bd0f1cf334492
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: aa5fd9b89304861fee010926962945a4b94e8c92
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91733700"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96810177"
 ---
 # <a name="conforming-to-the-dxgi-ddi"></a>符合 DXGI DDI
 

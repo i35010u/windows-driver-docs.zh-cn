@@ -1,26 +1,25 @@
 ---
-title: 在 XDDM 视频微型端口驱动程序
+title: XDDM 中的视频微型端口驱动程序
 description: Windows 2000 显示驱动程序模型中的视频微型端口驱动程序
-ms.assetid: 3a540bfe-f340-4f12-acee-323b97683074
 keywords:
-- 微型端口驱动程序 WDK Windows 2000
-- Windows 2000 显示器驱动程序模型 WDK，微型端口驱动程序
-- 显示驱动程序 WDK Windows 2000，微型端口驱动程序
+- 视频微型端口驱动程序 WDK Windows 2000
+- Windows 2000 显示器驱动程序型号 WDK，视频微型端口驱动程序
+- 显示驱动程序 WDK Windows 2000、视频微型端口驱动程序
 ms.date: 12/06/2018
 ms.localizationpriority: medium
 ms.custom: seodec18
-ms.openlocfilehash: cff2555e06d6593de3ecd491104ec3d2dcadfe53
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0a97bba241cb26df2d924638747bfe347d11b2fa
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63389645"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96810061"
 ---
 # <a name="video-miniport-drivers-in-the-windows-2000-display-driver-model"></a>Windows 2000 显示驱动程序模型中的视频微型端口驱动程序
 
-本部分介绍的微型端口驱动程序，它是 Microsoft Windows 2000 显示器驱动程序模型的一部分的角色。 微型端口驱动程序不是 Windows Vista 显示器驱动程序模型的一部分。
+本部分介绍视频微型端口驱动程序的角色，它是 Microsoft Windows 2000 显示器驱动程序模型的一部分。 视频微型端口驱动程序不是 Windows Vista 显示器驱动程序模型的一部分。
 
-有关两个显示驱动程序模型之间的差异的详细信息，请参阅[Windows 2000 显示器驱动程序模型](windows-2000-display-driver-model-design-guide.md)。
+有关这两种显示器驱动程序模型之间的差异的详细信息，请参阅 [Windows 2000 显示器驱动程序模型](windows-2000-display-driver-model-design-guide.md)。
 
  
 

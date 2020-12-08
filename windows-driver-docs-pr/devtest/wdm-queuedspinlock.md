@@ -1,7 +1,6 @@
 ---
 title: 'QueuedSpinLock 规则 (wdm) '
 description: QueuedSpinLock 规则指定在调用 KeReleaseInStackQueuedSpinLock 之前，驱动程序调用 KeAcquireInStackQueuedSpinLock，并且驱动程序会在对 KeAcquireInStackQueuedSpinLock 的任何后续调用之前调用 KeReleaseInStackQueuedSpinLock。
-ms.assetid: a34a3f9f-4b7a-4a63-b498-62adcd4fffee
 ms.date: 05/21/2018
 keywords:
 - 'QueuedSpinLock 规则 (wdm) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 2aaa7ee647a748c25cc32bf4d2ba0e874330431b
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: f528c3dbcc339dc9303df0fac69b7f88de245232
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106132"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96810957"
 ---
 # <a name="queuedspinlock-rule-wdm"></a>QueuedSpinLock 规则 (wdm) 
 
 
-**QueuedSpinLock**规则指定在调用[**KeReleaseInStackQueuedSpinLock**](/windows-hardware/drivers/ddi/wdm/nf-wdm-kereleaseinstackqueuedspinlock)之前，驱动程序调用[**KeAcquireInStackQueuedSpinLock**](/previous-versions/windows/hardware/drivers/ff551899(v=vs.85)) ，并且驱动程序会在对**KeAcquireInStackQueuedSpinLock**的任何后续调用之前调用**KeReleaseInStackQueuedSpinLock** 。
+**QueuedSpinLock** 规则指定在调用 [**KeReleaseInStackQueuedSpinLock**](/windows-hardware/drivers/ddi/wdm/nf-wdm-kereleaseinstackqueuedspinlock)之前，驱动程序调用 [**KeAcquireInStackQueuedSpinLock**](/previous-versions/windows/hardware/drivers/ff551899(v=vs.85)) ，并且驱动程序会在对 **KeAcquireInStackQueuedSpinLock** 的任何后续调用之前调用 **KeReleaseInStackQueuedSpinLock** 。
 
 如果它们正在获取和释放不同的资源，则允许嵌套调用。 用于获取或释放相同资源的嵌套调用违反了此规则。
 

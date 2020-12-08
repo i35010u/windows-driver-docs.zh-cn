@@ -1,17 +1,16 @@
 ---
 title: 默认时钟
 description: 默认时钟
-ms.assetid: 8c1a51e5-238b-446a-8f20-3fe1b82020b5
 keywords:
 - 默认时钟，WDK 内核流式处理
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c72835d2e6f13454305345c9e2f3d4e6f8b56337
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: bb7ae8d46fc282bf22ec277c973f5f6936e1cbba
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89187249"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96811363"
 ---
 # <a name="default-clocks"></a>默认时钟
 
@@ -19,7 +18,7 @@ ms.locfileid: "89187249"
 
 
 
-内核流式处理微型驱动程序可以调用 [**KsAllocateDefaultClockEx**](/windows-hardware/drivers/ddi/ks/nf-ks-ksallocatedefaultclockex) 来分配和初始化默认时钟结构。 或者，它们可以调用 [**KsAllocateDefaultClock**](/windows-hardware/drivers/ddi/ks/nf-ks-ksallocatedefaultclock)，它是 **KsAllocateDefaultClockEx** 的包装器，其中包含 nonclock 成员的默认参数。 使用**KsAllocateDefaultClockEx**后调用[**KsCreateDefaultClock**](/windows-hardware/drivers/ddi/ks/nf-ks-kscreatedefaultclock)以初始化默认时钟。
+内核流式处理微型驱动程序可以调用 [**KsAllocateDefaultClockEx**](/windows-hardware/drivers/ddi/ks/nf-ks-ksallocatedefaultclockex) 来分配和初始化默认时钟结构。 或者，它们可以调用 [**KsAllocateDefaultClock**](/windows-hardware/drivers/ddi/ks/nf-ks-ksallocatedefaultclock)，它是 **KsAllocateDefaultClockEx** 的包装器，其中包含 nonclock 成员的默认参数。 使用 **KsAllocateDefaultClockEx** 后调用 [**KsCreateDefaultClock**](/windows-hardware/drivers/ddi/ks/nf-ks-kscreatedefaultclock)以初始化默认时钟。
 
 默认时钟支持 [KSPROPSETID \_ 时钟](./kspropsetid-clock.md)，可以像筛选器 pin 提供的任何其他时钟一样访问。 不过，基础数据结构由筛选器 pin 创建，并由该 pin 共享以及所创建时钟的任何实例。 时钟依赖于 pin 来更新共享结构中的当前状态和其他元素。 默认时钟处理通知请求和时钟查询。
 

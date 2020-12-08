@@ -1,15 +1,14 @@
 ---
 title: 使用 NDIS 6.40 数据结构
 description: 为 NDIS 6.40 更新了以下结构和枚举。
-ms.assetid: 99E71C21-023A-4E17-B689-89FB2C3A404E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 422abfa981c49b369846f3d023b29715c256de42
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: f3d71fa10ec37d7511b678709d12291760df488f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89211561"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96809885"
 ---
 # <a name="using-ndis-640-data-structures"></a>使用 NDIS 6.40 数据结构
 

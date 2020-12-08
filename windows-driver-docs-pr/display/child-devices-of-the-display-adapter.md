@@ -1,7 +1,6 @@
 ---
 title: 显示适配器的子设备
 description: 显示适配器的子设备
-ms.assetid: 9fd20e1a-db98-4571-8fc4-6d33fd0e2f16
 keywords:
 - 视频显示网络 WDK 显示，显示适配器子设备
 - VidPN WDK 显示，显示适配器子设备
@@ -9,12 +8,12 @@ keywords:
 - 显示适配器子设备 WDK 视频呈现网络
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cbe606b2fade72f74f7c1313cb562b4964ee17ba
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 25833a20bc8a8917cef8ab67d2d98e8e2255a6ba
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89064920"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96810319"
 ---
 # <a name="child-devices-of-the-display-adapter"></a>显示适配器的子设备
 

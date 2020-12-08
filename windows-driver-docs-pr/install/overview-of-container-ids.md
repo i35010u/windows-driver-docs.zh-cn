@@ -1,17 +1,16 @@
 ---
 title: 容器 ID 概述
 description: 容器 ID 概述
-ms.assetid: fb7a4a31-01f9-4f7e-a35c-9076c7d73a29
 keywords:
 - 容器 Id WDK，关于
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fdc7cadb6c9383a15d7a114dd81fb821254bfa57
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: e8358958334c5600d3a0aa67901df3c8c884c7f1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89095899"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96810021"
 ---
 # <a name="overview-of-container-ids"></a>容器 ID 概述
 

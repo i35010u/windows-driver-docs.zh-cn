@@ -1,15 +1,14 @@
 ---
 title: MSiSCSI \_ CONNECTIONSTATISTICS WMI 类
 description: MSiSCSI \_ CONNECTIONSTATISTICS WMI 类
-ms.assetid: f12dfa6a-0999-40a3-9e15-bb65dc086911
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 1f18ee0d15afde3027c08f75df38ae3ec2fce8d5
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 34e8d60eb4b7c53f043f0d6e238a30f067806cee
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89193193"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96811431"
 ---
 # <a name="msiscsi_connectionstatistics-wmi-class"></a>MSiSCSI \_ CONNECTIONSTATISTICS WMI 类
 
@@ -86,7 +85,7 @@ class MSiSCSI_ConnectionStatistics : Win32_PerfRawData {
 targetname_#:#
 ```
 
-第一个数字符号 (\#) 是[**MSiSCSI \_ ConnectionStatistics**](/windows-hardware/drivers/ddi/iscsiprf/ns-iscsiprf-_msiscsi_connectionstatistics)结构的**USID**成员中的值，第二个数字符号 (\#) 是此类的**CID**成员中的值。
+第一个数字符号 (\#) 是 [**MSiSCSI \_ ConnectionStatistics**](/windows-hardware/drivers/ddi/iscsiprf/ns-iscsiprf-_msiscsi_connectionstatistics)结构的 **USID** 成员中的值，第二个数字符号 (\#) 是此类的 **CID** 成员中的值。
 
  
 

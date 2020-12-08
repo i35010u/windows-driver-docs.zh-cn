@@ -1,7 +1,6 @@
 ---
 title: 设备接口类概述
 description: 设备接口类概述
-ms.assetid: e463e3f0-cbc8-490e-a7c4-4837d43c20e3
 keywords:
 - 接口类 WDK 设备安装
 - 设备接口 WDK 设备安装
@@ -9,12 +8,12 @@ keywords:
 - 设备接口类 WDK 设备安装
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3473ca5221ff00338069861101e88976c3a2e88b
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 0ac6fa5acd8ecc068d21cfeb93b949ae177ba582
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89097319"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96810009"
 ---
 # <a name="overview-of-device-interface-classes"></a>设备接口类概述
 
@@ -30,7 +29,7 @@ ms.locfileid: "89097319"
 
 每个设备接口类都与一个 GUID 关联。 系统为特定于设备的标头文件中的常见设备接口类定义 Guid。 供应商可以创建其他设备接口类。
 
-例如，三种不同类型的鼠标设备可以是同一设备接口类的成员，即使一个设备是通过 USB 端口连接，另一个通过串行端口，第三个则通过红外端口。 每个驱动程序将其设备注册为 GUID_DEVINTERFACE_MOUSE 接口类的成员。 此 GUID 在头文件 *Ntddmou*中定义。
+例如，三种不同类型的鼠标设备可以是同一设备接口类的成员，即使一个设备是通过 USB 端口连接，另一个通过串行端口，第三个则通过红外端口。 每个驱动程序将其设备注册为 GUID_DEVINTERFACE_MOUSE 接口类的成员。 此 GUID 在头文件 *Ntddmou* 中定义。
 
 通常，驱动程序只注册一个接口类。 但是，如果设备的驱动程序的专用功能超出为其标准接口类定义的功能，则可能还会注册其他类。 例如，可以装入的磁盘的驱动程序应注册其磁盘接口类 (GUID_DEVINTERFACE_DISK) 和可装入设备类 (MOUNTDEV_MOUNTED_DEVICE_GUID) 。
 

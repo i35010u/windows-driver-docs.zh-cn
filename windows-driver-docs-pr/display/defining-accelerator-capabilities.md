@@ -1,7 +1,6 @@
 ---
 title: 定义加速器功能
 description: 定义加速器功能
-ms.assetid: 1f590cfd-74b8-4a08-848d-fcbb2c0c9486
 keywords:
 - DirectX 视频加速 WDK Windows 2000 显示，加速器功能
 - 视频加速 WDK DirectX，加速器功能
@@ -9,12 +8,12 @@ keywords:
 - 受限配置文件 WDK DirectX VA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bc34214ccb0f1afcfac974dc757521084da3dc30
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: bc73636db34a41000284ee5c57ac26d09927b791
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89065496"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96809619"
 ---
 # <a name="defining-accelerator-capabilities"></a>定义加速器功能
 
@@ -32,7 +31,7 @@ ms.locfileid: "89065496"
 
 ### <a name="span-idnonrestricted_operationspanspan-idnonrestricted_operationspanspan-idnonrestricted_operationspannonrestricted-operation"></a><span id="Nonrestricted_Operation"></span><span id="nonrestricted_operation"></span><span id="NONRESTRICTED_OPERATION"></span>Nonrestricted 操作
 
-如果在 DirectX VA 中，将使用不严格符合受限配置文件的加速器，则必须将[**DXVA \_ ConnectMode**](/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_connectmode)结构的**WRestrictedMode**成员设置为0xffff，以指示这种情况缺乏限制。
+如果在 DirectX VA 中，将使用不严格符合受限配置文件的加速器，则必须将 [**DXVA \_ ConnectMode**](/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_connectmode)结构的 **WRestrictedMode** 成员设置为0xffff，以指示这种情况缺乏限制。
 
 允许使用 **bDXVA \_ Func** 变量的所有已定义值。
 

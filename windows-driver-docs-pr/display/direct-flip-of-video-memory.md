@@ -1,18 +1,17 @@
 ---
 title: 视频内存的直接交替
 description: 直接翻转功能允许对组合模型进行特殊优化，以减少功率消耗。
-ms.assetid: 00A8FCB1-966A-4176-9840-7EB5BA300C8B
 keywords:
 - 直接翻转
 - DirectFlip
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9aedd3fc4a28465732a29082621b0010330bb608
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 6f1b56f9a56042fd6e660bf5229900abe9c28619
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103926"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96809501"
 ---
 # <a name="direct-flip-of-video-memory"></a>视频内存的直接交替
 
@@ -58,7 +57,7 @@ ms.locfileid: "90103926"
 这些函数和结构是适用于 Windows 8 的新功能或更新的：
 
 -   [*CheckDirectFlipSupport*](/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_checkdirectflipsupport)
--   [*CheckDirectFlipSupport (D3D11 \_ 1) *](/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_checkdirectflipsupport)
+-   [*CheckDirectFlipSupport (D3D11 \_ 1)*](/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_checkdirectflipsupport)
 -   [*DxgkDdiSetVidPnSourceAddress*](/previous-versions/windows/hardware/drivers/ff560767(v=vs.85))
 -   [**D3D11 \_ 1 \_ DDI \_ CHECK \_ 直接 \_ 翻转 \_ 标志**](/windows-hardware/drivers/ddi/d3d10umddi/ne-d3d10umddi-d3d11_1_ddi_check_direct_flip_flags)
 -   [**D3DDDI \_ 检查 \_ 直接 \_ 翻转 \_ 标志**](/windows-hardware/drivers/ddi/d3dumddi/ne-d3dumddi-d3dddi_check_direct_flip_flags)

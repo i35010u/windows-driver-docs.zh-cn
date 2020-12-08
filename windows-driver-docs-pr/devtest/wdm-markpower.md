@@ -1,7 +1,6 @@
 ---
 title: 'MarkPower 规则 (wdm) '
 description: MarkPower 规则指定 irp \_ MJ \_ POWER with irp \_ MN \_ 将 \_ SystemPowerState irp 的 power 设置为 "正在挂起"。 此规则仅适用于 FDO 和 FIDO 驱动程序。
-ms.assetid: 2EF5F14B-F474-4583-B7AC-70142BC3D831
 ms.date: 05/21/2018
 keywords:
 - 'MarkPower 规则 (wdm) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: e27b64b472df2a9f9ce2f95b3a27fa54405a0d74
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: f91e10ea83a65096aad7967bbf6a9a6fdb3576e6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103454"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96811061"
 ---
 # <a name="markpower-rule-wdm"></a>MarkPower 规则 (wdm) 
 
 
-**MarkPower**规则指定 irp \_ MJ \_ power With irp \_ MN \_ 将 \_ **SystemPowerState** irp 的 power 设置为 "正在挂起"。 此规则仅适用于 FDO 和 FIDO 驱动程序。
+**MarkPower** 规则指定 irp \_ MJ \_ power With irp \_ MN \_ 将 \_ **SystemPowerState** irp 的 power 设置为 "正在挂起"。 此规则仅适用于 FDO 和 FIDO 驱动程序。
 
 **驱动程序模型： WDM**
 

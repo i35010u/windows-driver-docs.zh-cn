@@ -1,15 +1,14 @@
 ---
 title: USB H.264 视频摄像机支持
 description: 从 Windows 8 开始，支持 (编码器/解码器) 的 h.264 视频编解码器。
-ms.assetid: EB73E2B2-B34E-4DC1-807A-4990A54E6E8D
 ms.date: 06/19/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 02c32934e3f3732806186eacfed07090e4551d69
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: c490a2d01818c32df0920c86518842dc643c1094
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89191743"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96811327"
 ---
 # <a name="usb-h264-video-cameras-support"></a>USB H-p 视频相机支持
 

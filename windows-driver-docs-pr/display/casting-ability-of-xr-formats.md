@@ -1,7 +1,6 @@
 ---
 title: XR 格式的强制转换功能
 description: XR 格式的强制转换功能
-ms.assetid: 18f9ce6e-df8e-4e57-b86f-338baadcb1b2
 keywords:
 - Direct3D 版本 10.1 WDK Windows 7 显示，XR 格式强制转换功能
 - 扩展格式 WDK Windows 7 显示，XR 格式强制转换功能
@@ -10,12 +9,12 @@ keywords:
 - 转换能力 WDK Windows 7 显示，XR 格式
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 63084c43d37948b79b798ba8f6609cfc4408d83c
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: d254814916903e2b240331687c170165e40ab377
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89067464"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96810367"
 ---
 # <a name="casting-ability-of-xr-formats"></a>XR 格式的强制转换功能
 

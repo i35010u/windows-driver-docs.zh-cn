@@ -1,7 +1,6 @@
 ---
 title: 'MarkingInterlockedQueuedIrps 规则 (wdm) '
 description: MarkingInterlockedQueuedIrps 规则指定，驱动程序将 IRP 正确地标记为 "挂起"，然后将其以联锁方式排队以进行进一步处理。
-ms.assetid: a065b28f-f02a-45af-b9d9-754a36519b99
 ms.date: 05/21/2018
 keywords:
 - 'MarkingInterlockedQueuedIrps 规则 (wdm) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 529e625bc393b618f4d612912fb46617b88bc201
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 1ae67325215efebaca2b8860c5ece8c177fbca01
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103478"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96811079"
 ---
 # <a name="markinginterlockedqueuedirps-rule-wdm"></a>MarkingInterlockedQueuedIrps 规则 (wdm) 
 
 
-**MarkingInterlockedQueuedIrps**规则指定，驱动程序将 IRP 正确地标记为 "挂起"，然后将其以联锁方式排队以进行进一步处理。
+**MarkingInterlockedQueuedIrps** 规则指定，驱动程序将 IRP 正确地标记为 "挂起"，然后将其以联锁方式排队以进行进一步处理。
 
 此规则还指定驱动程序调用 [**也**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iomarkirppending) ，并将 irp 正确地标记为 "挂起"，然后调用以下任何函数将 irp 添加到联锁队列：
 

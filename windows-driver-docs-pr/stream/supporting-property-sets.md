@@ -1,7 +1,6 @@
 ---
 title: 支持属性集
 description: 支持属性集
-ms.assetid: 49a3e3e6-3a09-4202-a2cb-df65806d3336
 keywords:
 - Stream.sys 类驱动程序 WDK Windows 2000 内核，属性集
 - 流式处理微型驱动程序 WDK Windows 2000 内核，属性集
@@ -9,12 +8,12 @@ keywords:
 - 属性集 WDK 流式处理微型驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 349a767367a6510be6a965f5ae2bb8b57dec605e
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 9e1998d500912703f98df646e17952c9e8c3b7ff
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89188337"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96809817"
 ---
 # <a name="supporting-property-sets"></a>支持属性集
 
@@ -22,7 +21,7 @@ ms.locfileid: "89188337"
 
 
 
-这两个微型驱动程序均为整体，而单个流可以接收属性请求。 微型驱动程序提供其在[**HW \_ STREAM \_ 标头**](/windows-hardware/drivers/ddi/strmini/ns-strmini-_hw_stream_header)的**DevicePropertiesArray**中支持的属性集。 每个流都提供它在该流的[**HW \_ 流 \_ 信息**](/windows-hardware/drivers/ddi/strmini/ns-strmini-_hw_stream_information)结构的**StreamPropertiesArray**中支持的属性集。
+这两个微型驱动程序均为整体，而单个流可以接收属性请求。 微型驱动程序提供其在 [**HW \_ STREAM \_ 标头**](/windows-hardware/drivers/ddi/strmini/ns-strmini-_hw_stream_header)的 **DevicePropertiesArray** 中支持的属性集。 每个流都提供它在该流的 [**HW \_ 流 \_ 信息**](/windows-hardware/drivers/ddi/strmini/ns-strmini-_hw_stream_information)结构的 **StreamPropertiesArray** 中支持的属性集。
 
 微型驱动程序定义了一个通过 [**KSPROPERTY \_ 集**](/windows-hardware/drivers/ddi/ks/ns-ks-ksproperty_set) 数据结构处理的属性集，该结构将指向 [**KSPROPERTY \_ 项**](/windows-hardware/drivers/ddi/ks/ns-ks-ksproperty_item) 结构的数组，其中每个属性集中的一个属性。 如果 KSPROPERTY 项的 **GetSupported** 成员 \_ 为 **TRUE**，则微型驱动程序支持获取属性数据。 如果 KSPROPERTY 项的 **SetSupported** 成员 \_ 为 **TRUE**，则微型驱动程序支持设置属性数据。
 

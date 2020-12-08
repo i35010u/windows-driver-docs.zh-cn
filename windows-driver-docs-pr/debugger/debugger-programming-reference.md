@@ -1,15 +1,14 @@
 ---
 title: 调试器编程参考
 description: 本主题介绍编程参考主题。
-ms.assetid: 3CBD0E5F-AACA-49B5-B324-5E76BDC71283
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c3ef938d8723a31cd2e0e0d1c017513b791a00bc
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 14fdcf9c44d43e83b427a0adfed834495b56d41d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89211189"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96809689"
 ---
 # <a name="debugger-programming-reference"></a>调试器编程参考
 

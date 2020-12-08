@@ -1,19 +1,18 @@
 ---
 title: 公用缓冲区总线主控 DMA
 description: 公用缓冲区总线主控 DMA
-ms.assetid: 4758e084-1d9e-4e17-8627-05edc6b664ba
 keywords:
 - 总线主控 DMA WDK 音频视频微型端口，公共缓冲区
 - DMA 总线-主 WDK 视频微型端口，公共缓冲区
 - 常见缓冲区 DMA WDK 视频微型端口，说明
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 89d3c960ca84a94890a40045621829f2040a9f49
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: ab69f2cb3051c41b714809a377908bf5b8c84eff
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89067454"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96810243"
 ---
 # <a name="common-buffer-bus-master-dma"></a>公用缓冲区总线主控 DMA
 

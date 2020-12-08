@@ -1,7 +1,6 @@
 ---
 title: 'PendedCompletedRequest2 规则 (wdm) '
 description: PendedCompletedRequest2 规则指定调用 IoCallDriver 或 PoCallDriver 后需要等待，因为调度例程可以完成挂起的 IRP。
-ms.assetid: 738B9DEE-D7D4-4E6A-AE2D-F363F1255E8A
 ms.date: 05/21/2018
 keywords:
 - 'PendedCompletedRequest2 规则 (wdm) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 022379a31dec571310e0c340bd4ede9b49ee5a2d
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 5d8bb073517d147508edaa4c76ca8d30f896f1d9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106876"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96811007"
 ---
 # <a name="pendedcompletedrequest2-rule-wdm"></a>PendedCompletedRequest2 规则 (wdm) 
 
 
-**PendedCompletedRequest2**规则指定调用[**IoCallDriver**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver)或[**PoCallDriver**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-pocalldriver)后需要等待，因为调度例程可以完成挂起的 IRP。
+**PendedCompletedRequest2** 规则指定调用 [**IoCallDriver**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver)或 [**PoCallDriver**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-pocalldriver)后需要等待，因为调度例程可以完成挂起的 IRP。
 
 **驱动程序模型： WDM**
 

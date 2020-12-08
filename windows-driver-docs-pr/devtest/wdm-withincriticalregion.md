@@ -1,7 +1,6 @@
 ---
 title: 'WithinCriticalRegion 规则 (wdm) '
 description: WithinCriticalRegion 规则指定仅在调用 KeEnterCriticalRegion 之后和调用 KeLeaveCriticalRegion 之前，对特定同步函数的调用才会出现。
-ms.assetid: 9b74b868-6025-4e81-b5ba-21e0da734cd9
 ms.date: 05/21/2018
 keywords:
 - 'WithinCriticalRegion 规则 (wdm) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 240e8a35f161835d852c6adb7e859e592c81f2b9
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 6546f09911e5e7b7efae062bd3c913aeaed59a08
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106122"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96810749"
 ---
 # <a name="withincriticalregion-rule-wdm"></a>WithinCriticalRegion 规则 (wdm) 
 
 
-**WithinCriticalRegion**规则指定仅在调用[**KeEnterCriticalRegion**](/windows-hardware/drivers/ddi/ntddk/nf-ntddk-keentercriticalregion)之后和调用[**KeLeaveCriticalRegion**](/windows-hardware/drivers/ddi/ntddk/nf-ntddk-keleavecriticalregion)之前，对特定同步函数的调用才会出现。
+**WithinCriticalRegion** 规则指定仅在调用 [**KeEnterCriticalRegion**](/windows-hardware/drivers/ddi/ntddk/nf-ntddk-keentercriticalregion)之后和调用 [**KeLeaveCriticalRegion**](/windows-hardware/drivers/ddi/ntddk/nf-ntddk-keleavecriticalregion)之前，对特定同步函数的调用才会出现。
 
 受影响的同步函数如下所示：
 

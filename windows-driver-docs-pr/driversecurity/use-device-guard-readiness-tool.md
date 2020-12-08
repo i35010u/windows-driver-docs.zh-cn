@@ -1,15 +1,14 @@
 ---
 title: 评估 HVCI 驱动程序兼容性
 description: 请按照以下步骤来评估驱动程序代码的要求 HVCI 驱动程序兼容性。
-ms.assetid: ''
 ms.date: 05/26/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: b35719d06ec03c5103b3309731499817604f77cc
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 678e4da1ad7d9608a77c2f378962b25bd80d071d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107024"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96810054"
 ---
 # <a name="evaluate-hvci-driver-compatibility"></a>评估 HVCI 驱动程序兼容性
 
@@ -141,7 +140,7 @@ DGReadiness 工具旨在检查多种需求，用于创建支持各种安全增�
 
     准备工具是一个 PowerShell 脚本。 若要使用准备工具脚本，请打开管理员 PowerShell 脚本。
 
-    如果尚未将执行策略设置为允许运行脚本，则应手动设置该策略，如下所示。
+    如果 Execution-Policy 尚未设置为允许正在运行的脚本，则应按如下所示手动设置该脚本。
 
     ```powershell
     Set-ExecutionPolicy Unrestricted
@@ -171,7 +170,7 @@ DGReadiness 工具旨在检查多种需求，用于创建支持各种安全增�
 
     屏幕的输出为彩色编码。
 
-    |       类别    |  说明                                                                                      |
+    |       Category    |  描述                                                                                      |
     |-------------------|---------------------------------------------------------------------------------------------------|
     | 红色-错误      | 元素缺失或未配置，将阻止启用和使用 DG/CG。                |
     | 黄色-警告 | 此设备可用于启用和使用 DG/CG，但不会有更多的安全优势。 |
@@ -248,7 +247,7 @@ DGReadiness 工具旨在检查多种需求，用于创建支持各种安全增�
 </tr>
 
 <tr class="odd">
-<td align="left"><p>执行写入部分</p></td>
+<td align="left"><p>Execute-Write 部分</p></td>
 <td align="left"><p>映像包含可执行文件和可写部分。</p>
 </td>
 </tr>

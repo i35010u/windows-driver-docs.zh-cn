@@ -1,7 +1,6 @@
 ---
 title: 'StorPortPerfOpts 规则 (storport) '
 description: 此规则验证传递到 StorPortInitializePerfOpts 的 PerfConfigData 参数是否不为 NULL。
-ms.assetid: 0BF93331-28D5-442D-8D27-B1F21DC0F5EA
 ms.date: 05/21/2018
 keywords:
 - 'StorPortPerfOpts 规则 (storport) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: f58a12380e8b945c4c7e1d091d5a39975d6bdbc1
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: c5447e33b6d8396c5b05b23a39db3b009136fe71
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105230"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96809645"
 ---
 # <a name="storportperfopts-rule-storport"></a>StorPortPerfOpts 规则 (storport) 
 
 
-此规则验证传递到**StorPortInitializePerfOpts**的**PerfConfigData**参数是否不为 NULL。
+此规则验证传递到 **StorPortInitializePerfOpts** 的 **PerfConfigData** 参数是否不为 NULL。
 
 **驱动程序模型： Storport**
 

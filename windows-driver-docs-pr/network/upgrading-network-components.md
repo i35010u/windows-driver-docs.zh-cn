@@ -1,7 +1,6 @@
 ---
 title: 网络组件的升级过程
 description: 网络组件的升级过程
-ms.assetid: ddd1eda0-7bed-44e7-8636-8db3508825f5
 keywords:
 - 网络组件升级 WDK
 - 升级网络组件 WDK
@@ -9,12 +8,12 @@ keywords:
 - 升级网络组件 WDK，关于升级网络组件
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4d31f2a478874f750d0b7297018760642fa560c9
-ms.sourcegitcommit: db9d058a9e592d4c47c67fc14f04f0ddc3aa92af
+ms.openlocfilehash: 630222f32bc10658881290af30d80ee6d3c05250
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91989820"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96809911"
 ---
 # <a name="process-for-upgrading-network-components"></a>网络组件的升级过程
 
@@ -22,7 +21,7 @@ ms.locfileid: "91989820"
 
 
 
-**注意**   Microsoft Windows XP (Service Pack 1 \[ SP1 \] 及更高版本) 、Microsoft windows Server 2003 和更高版本的操作系统不支持供应商提供的网络升级。
+**注意**  Microsoft Windows XP (Service Pack 1 \[ SP1 \] 及更高版本) 、Microsoft windows Server 2003 和更高版本的操作系统不支持供应商提供的网络升级。
 
  
 

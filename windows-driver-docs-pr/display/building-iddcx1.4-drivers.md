@@ -1,18 +1,17 @@
 ---
 title: 构建 IddCx 1.4 驱动程序
 description: 如何生成 IddCx 版本1.4 间接显示驱动程序
-ms.assetid: 4e065381-f1cd-401a-9844-f85eaf414b5f
 ms.date: 09/28/2020
 keywords:
 - 生成间接显示驱动程序，版本1。4
 - 生成 IDDs，版本1。4
 ms.localizationpriority: medium
-ms.openlocfilehash: 509bec15f5bc608f60a497cbee3c8831696ef22d
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 29c8aefc4961ff23196886b52d1657f6b8655de2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91734303"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96810422"
 ---
 # <a name="building-iddcx-14-drivers"></a>构建 IddCx 1.4 驱动程序
 
@@ -22,7 +21,7 @@ ms.locfileid: "91734303"
 
 * 使用 [Windows 驱动程序工具包](../download-the-wdk.md) (WDK) 中的 IddCx 1.4 标头和库，生成和链接驱动程序。
 * 在生成环境中将 IDDCX_MINIMUM_VERSION_REQUIRED 设置为3。 这会告知操作系统生成驱动程序所用的最低 IddCx 版本，在本例中为1.3。
-* 初始化 IddCx 结构时，请使用相应的 *XXX*_INIT 宏。 例如，使用 IDD_CX_CLIENT_CONFIG_INIT ( # A1 宏来初始化 IDD_CX_CLIENT_CONFIG 结构。 宏使用运行时代码将 "大小" 字段设置为运行驱动程序的 IddCx 版本的正确大小。
+* 初始化 IddCx 结构时，请使用相应的 *XXX* _INIT 宏。 例如，使用 IDD_CX_CLIENT_CONFIG_INIT ( # A1 宏来初始化 IDD_CX_CLIENT_CONFIG 结构。 宏使用运行时代码将 "大小" 字段设置为运行驱动程序的 IddCx 版本的正确大小。
 * 使用 IDD_IS_FIELD_AVAILABLE ( # A1 宏来确定从 IddCx 传递到驱动程序的结构是否已定义该字段。 注意： IddCx 1.4 未将从 IddCx 传递的任何现有结构扩展到驱动程序，因此不需要在 IddCx 1.4 中使用此宏。
 * 使用 IDD_IS_FUNCTION_AVAILABLE ( # A1 宏来确定给定的 IddCx 函数在运行驱动程序的操作系统上是否可用。 例如，使用 IDD_IS_FUNCTION_AVAILABLE (IddCxAdapterSetRenderAdapter) 来确定此操作系统是否支持 IddCxAdapterSetRenderAdapter ( # A3。
 
@@ -40,7 +39,7 @@ ms.locfileid: "91734303"
 | 2004 (20H1)  | 1.4  | 1.0-1.3 和 1.4 ( * )  |
 | 空值         | 1.6  | 1.0-1.3 和 1.4 ( * )  |
 
-**\*** IddCx 1.4 和更高版本的 IDD 需要使用动态宏（如 IDD_IS_FUNCTION_AVAILABLE ( # A1）来决定运行时可以调用的操作系统功能。 这些动态宏是在 *iddcx*中定义的。
+**\** _ IddCx 1.4 和更高版本的 IDD 需要使用动态宏（如 IDD_IS_FUNCTION_AVAILABLE ( # A1）来决定运行时可以调用的操作系统功能。 这些动态宏是在 _iddcx 中定义的。
 
 若要支持所有可能的 Windows 版本：
 

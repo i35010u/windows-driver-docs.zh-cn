@@ -1,28 +1,27 @@
 ---
 title: XpsAnalyzer 输出
 description: XpsAnalyzer 输出
-ms.assetid: eb9c024a-05fd-4dc8-a1bf-6164ee94f853
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5b293a46f5d79bd83ad5f5939230a356cb41ac1d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d2922d0dd07234948aa0152ab2bdd5a8a2861c3d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63358043"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96810623"
 ---
 # <a name="xpsanalyzer-output"></a>XpsAnalyzer 输出
 
 
-下面是 XPS 分析报表的示例。 在此示例中，执行 XpsAnalyzer 工具，如下所示：
+下面是 XPS 分析报表的一个示例。 在此示例中，执行了 XpsAnalyzer 工具，如下所示：
 
 ```
 XpsAnalyzer /XpsFile:c:\temp\SampleXpsFile.xps
 ```
 
-下面显示了文件 SampleFile.xps 分析报表：
+下面显示了 Samplefile.txt 文件的分析报告：
 
-c:\\temp\\SampleXpsFile.xps
+c： \\ temp \\ SampleXpsFile
 
 <table>
 <colgroup>
@@ -33,12 +32,12 @@ c:\\temp\\SampleXpsFile.xps
 <tbody>
 <tr class="odd">
 <td align="left"><p>规则</p></td>
-<td align="left"><p>ReplTest1</p></td>
-<td align="left"><p>Location</p></td>
+<td align="left"><p>“值”</p></td>
+<td align="left"><p>位置</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>CompressionOption</p></td>
-<td align="left"><p>正常</p></td>
+<td align="left"><p>一般</p></td>
 <td align="left"><p>/Documents/1/Pages/1.fpage</p></td>
 </tr>
 <tr class="odd">
@@ -83,7 +82,7 @@ c:\\temp\\SampleXpsFile.xps
 </tr>
 <tr class="odd">
 <td align="left"><p>FontType</p></td>
-<td align="left"><p>经过模糊处理</p></td>
+<td align="left"><p>obfuscated</p></td>
 <td align="left"><p>/Documents/1/Pages/1.fpage</p></td>
 </tr>
 <tr class="even">
@@ -133,7 +132,7 @@ c:\\temp\\SampleXpsFile.xps
 </tr>
 <tr class="odd">
 <td align="left"><p>PageDimension</p></td>
-<td align="left"><p>816,1056</p></td>
+<td align="left"><p>816、1056</p></td>
 <td align="left"><p>/Documents/1/Pages/1.fpage</p></td>
 </tr>
 <tr class="even">

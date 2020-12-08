@@ -1,116 +1,115 @@
 ---
 title: 公共和专用符号
 description: 公共和专用符号
-ms.assetid: 61ed583d-8b97-4929-8d86-1a6353c13304
 keywords:
-- 公共符号
-- 符号专用
+- 符号，公共
+- 符号，专用
 - 公共符号
 - 私有符号
 - 零售符号
 - 导出符号
 - 符号文件，完整符号文件
-- 符号文件，去除的符号文件
-- 完整的符号文件
+- 符号文件，去除符号文件
+- 完整符号文件
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: aac67a9dad14bc4d34712c74c29861144592aff8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2e79a689272a052210923b13b00dd50cb692aef8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63362389"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96811203"
 ---
 # <a name="public-and-private-symbols"></a>公共和专用符号
 
 
-链接器生成的全尺寸.pdb 或.dbg 符号文件后，它包含两个不同集合的信息：*私有符号数据*和一个*公共符号表*。 这些集合的区别在于它们所包含的项和存储有关每个项的信息的列表。
+当完整大小的 .pdb 或 dbg 符号文件由链接器生成时，它包含两个不同的信息集合： *私有符号数据* 和 *公共符号表*。 这些集合在它们所包含的项列表和它们存储的有关每个项的信息之间有所不同。
 
-私有符号数据包括以下各项：
+私有符号数据包括以下项：
 
 -   函数
 
 -   全局变量
 
--   本地变量
+-   局部变量
 
--   有关用户定义的结构、 类和数据类型的信息
+-   有关用户定义的结构、类和数据类型的信息
 
--   源文件和在该文件中每个二进制指令相对应的行号的名称
+-   源文件的名称和该文件中对应于每个二进制指令的行号
 
 公共符号表包含较少的项：
 
--   函数 (声明的函数除外**静态**)
+-   函数 (声明为 **静态** 的函数除外) 
 
--   指定为全局变量**extern** （和任何其他全局变量可见跨多个对象文件）
+-   指定为 **extern** (的全局变量和在多个对象文件中可见的任何其他全局变量) 
 
-作为一般规则，公共符号表包含完全到另一个源文件从可访问这些项。 只能在一个可见项的对象文件--例如**静态**函数、 变量仅在单个源文件，全局和本地变量-不包含公共符号表中。
+作为一般规则，公共符号表完全包含可从一个源文件访问另一个源文件的那些项。 仅在一个对象文件中可见的项（例如 **静态** 函数、仅在单个源文件内全局的变量和局部变量）不包含在公共符号表中。
 
-这两个集合的数据也存在差异包括每个项中的信息。 将私有符号数据中包含的每个项通常包含以下信息：
+这两个数据集合在每个项的信息中也有所不同。 对于私有符号数据中包含的每个项，通常会包含以下信息：
 
 -   项的名称
 
--   虚拟内存中的项的地址
+-   虚拟内存中项的地址
 
--   每个函数的帧指针省略 (FPO) 记录
+-   帧指针省略每个函数 (FPO) 记录
 
--   数据类型的每个变量、 结构和函数
+-   每个变量、结构和函数的数据类型
 
--   类型和每个函数的参数的名称
+-   每个函数的参数的类型和名称
 
--   每个本地变量的作用域
+-   每个局部变量的范围
 
 -   与每个源文件中的每行关联的符号
 
-但是，公共符号表将存储仅包括在其中每个项有关的以下信息：
+另一方面，公共符号表仅存储有关其中包含的每个项的下列信息：
 
 -   项的名称。
 
--   其模块的虚拟内存空间中的项的地址。 对于函数，这是其入口点的地址。
+-   其模块的虚拟内存空间中的项的地址。 对于函数，这是它的入口点地址。
 
--   每个函数的帧指针省略 (FPO) 记录。
+-   帧指针省略每个函数 (FPO) 记录。
 
-换而言之，公共符号数据可以认为的两种方式中的私有符号数据的子集： 它包含一个较短列表的项，并且它也包含有关每个项更少信息。 例如，公共符号数据不完全包括本地变量。 每个本地变量包含仅在私有符号数据中，使用其地址、 数据类型和作用域。 函数，但是，将包含私有符号数据和公共符号表中，但私有符号数据包括函数名称、 地址、 FPO 记录、 输入的参数名称和类型和输出类型，包括公共符号表只是函数名称、 地址和 FPO 记录。
+换句话说，可以通过两种方式将公共符号数据视为私有符号数据的一个子集：它包含较短的项列表，还包含有关每个项的更少信息。 例如，公共符号数据根本不包含局部变量。 每个局部变量只包含在私有符号数据中，其地址、数据类型和作用域。 另一方面，函数同时包含在私有符号数据和公共符号表中，但当私有符号数据包括函数名、地址、FPO 记录、输入参数名称和类型以及输出类型时，公共符号表只包括函数名称、地址和 FPO 记录。
 
-没有私有符号数据和公共符号表之间的另一个差异。 许多公共符号表中的项具有的名称*修饰*与前缀、 后缀，或两者。 这些修饰添加由 C 编译器，C++编译器和 MASM 组装器。 典型的前缀包含下划线或字符串的一系列 **\_ \_imp\_** （指定导入的函数）。 典型的后缀包含一个或多个 at 符号 ( **@** ) 后接地址或其他标识字符串。 链接器使用这些修饰来消除歧义符号，因为很可能是该函数名称或全局变量名无法重复多个不同的模块。 这些修饰是公共符号表是专用的符号数据的子集的一般规则的例外。
+私有符号数据和公共符号表之间还有一个不同之处。 公共符号表中的许多项的名称都是使用前缀、后缀或两者 *修饰* 的名称。 这些修饰由 C 编译器、c + + 编译器和 MASM 组装器添加。 典型前缀包括一系列下划线或字符串 **\_ \_ imp \_** (指定导入的函数) 。 典型后缀包含一个或多个 at 符号 ( **@** ) 后跟地址或其他标识字符串。 链接器使用这些装饰器来区分符号，因为函数名称或全局变量名称可能会在不同的模块之间重复出现。 这些修饰是一般规则的一个例外，公共符号表是私有符号数据的一个子集。
 
-### <a name="span-idfull_symbol_files_and_stripped_symbol_filesspanspan-idfull_symbol_files_and_stripped_symbol_filesspanfull-symbol-files-and-stripped-symbol-files"></a><span id="full_symbol_files_and_stripped_symbol_files"></span><span id="FULL_SYMBOL_FILES_AND_STRIPPED_SYMBOL_FILES"></span>完整的符号文件和去除的符号文件
+### <a name="span-idfull_symbol_files_and_stripped_symbol_filesspanspan-idfull_symbol_files_and_stripped_symbol_filesspanfull-symbol-files-and-stripped-symbol-files"></a><span id="full_symbol_files_and_stripped_symbol_files"></span><span id="FULL_SYMBOL_FILES_AND_STRIPPED_SYMBOL_FILES"></span>完整符号文件和去除符号文件
 
-一个*完整符号文件*包含私有符号数据和公共符号表。 这种文件有时称为*私有符号文件*，但此名称是具有误导性，此类文件包含专用和公共符号。
+*完整的符号文件* 同时包含 private 符号数据和公共符号表。 这种类型的文件有时称为 *private 符号文件*，但此名称具有误导性，这种文件包含私有和公共符号。
 
-一个*符号文件中去除*是只包含公共符号表的较小的文件或在某些情况下，只有公共符号表的子集。 此文件有时称为*公共符号文件*。
+*去除符号文件* 是只包含公共符号表的较小文件，在某些情况下，它只包含公共符号表的子集。 此文件有时称为 *公共符号文件*。
 
 ### <a name="span-idcreating_full_and_stripped_symbol_filesspanspan-idcreating_full_and_stripped_symbol_filesspancreating-full-and-stripped-symbol-files"></a><span id="creating_full_and_stripped_symbol_files"></span><span id="CREATING_FULL_AND_STRIPPED_SYMBOL_FILES"></span>创建完整和去除符号文件
 
-如果您使用 Visual Studio 的二进制文件生成时，可以创建任一完整或去除符号文件。 在生成时二进制文件的"调试版本"，Visual Studio 通常会创建完整符号文件。 当构建"零售版本"，Visual Studio 通常创建没有符号文件，但完整或去除设置了适当的选项会创建符号文件。
+如果通过 Visual Studio 生成二进制文件，则可以创建完整或去除的符号文件。 生成二进制文件的 "调试版本" 时，Visual Studio 通常会创建完整的符号文件。 生成 "零售版" 时，Visual Studio 通常不创建任何符号文件，但如果设置了正确的选项，则将创建完整或去除的符号文件。
 
-如果生成二进制文件的位置与生成实用工具，它将创建完整的符号文件。
+如果用生成实用工具生成二进制文件，实用工具将创建完整的符号文件。
 
-使用 BinPlace 工具，可以从完整符号文件创建去除的符号文件。 使用最常用的 BinPlace 选项时 ( **-a-x-s-n**)，去除的符号文件后列出的目录中放置 **-s**开关，并且完整的符号文件放在目录中列出后 **-n**切换。 当 BinPlace 去除的符号文件时，去除和完整版本的文件有完全相同的签名和其他标识信息。 这可以使用任一版本进行调试。
+使用 BinPlace 工具，可以从完整的符号文件创建一个去除的符号文件。 如果使用最常见的 BinPlace 选项 (**--x-n**) ，则会将去除的符号文件放置在 **-s** 开关之后列出的目录中，并将完整的符号文件放在 **-n** 开关之后列出的目录中。 当 BinPlace 去除某个符号文件时，会为该文件的去除文件和完整版本提供相同的签名和其他标识信息。 这允许你使用任一版本进行调试。
 
-使用 PDBCopy 工具，您可以创建去除的符号文件从完整符号文件通过删除私有符号数据。 PDBCopy 还可以删除指定的公共符号表的子集。 有关详细信息，请参阅[PDBCopy](pdbcopy.md)。
+使用 Pdbcopy.exe 工具，可以通过删除私有符号数据从完整的符号文件创建一个去除的符号文件。 Pdbcopy.exe 还可以删除公共符号表的指定子集。 有关详细信息，请参阅 [pdbcopy.exe](pdbcopy.md)。
 
-使用 SymChk 工具，可以确定的符号文件是否包含私有符号。 有关详细信息，请参阅[SymChk](symchk.md)。
+使用 SymChk 工具，可以确定符号文件是否包含私有符号。 有关详细信息，请参阅 [SymChk](symchk.md)。
 
 ### <a name="span-idviewing_public_and_private_symbols_in_the_debuggerspanspan-idviewing_public_and_private_symbols_in_the_debuggerspanviewing-public-and-private-symbols-in-the-debugger"></a><span id="viewing_public_and_private_symbols_in_the_debugger"></span><span id="VIEWING_PUBLIC_AND_PRIVATE_SYMBOLS_IN_THE_DEBUGGER"></span>查看调试器中的公共和私有符号
 
-可以使用 WinDbg、 KD 或 CDB 来查看的符号。 当以下这些调试器之一有权访问完整的符号文件时，它具有专用的符号数据中所列的信息和公共符号表中列出的信息。 更多详细的私有符号数据，而公共符号数据包含符号修饰。
+可以使用 WinDbg、KD 或 CDB 来查看符号。 当这些调试器中的一个具有访问完整符号文件的权限时，它将包含在私有符号数据中列出的信息以及公共符号表中列出的信息。 私有符号数据更详细，而公共符号数据包含符号修饰。
 
-访问私有符号时, 始终使用专用的符号数据是因为这些符号不包含公共符号表中。 这些符号永远不会进行修饰。
+访问私有符号时，始终使用私有符号数据，因为公共符号表中不包含这些符号。 从不修饰这些符号。
 
-在访问公共符号时，调试器的行为取决于某些[符号选项](symbol-options.md):
+访问公共符号时，调试器的行为取决于某些 [符号选项](symbol-options.md)：
 
--   当[SYMOPT\_UNDNAME](symbol-options.md#symopt-undname)选项设置为 on，显示的公共符号名称时，可能不会包含修饰。 此外，搜索的符号时，将忽略修饰。 关闭此选项后，显示公共符号时，会显示修饰和修饰在搜索中使用。 在任何情况下，永远不会进行修饰私有符号。 此选项是在默认情况下，所有调试器中。
+-   当 [SYMOPT \_ UNDNAME](symbol-options.md#symopt-undname) 选项为 on 时，当显示公共符号的名称时，将不包括修饰。 而且，在搜索符号时，将忽略修饰。 如果此选项为 off，则在显示公共符号时显示修饰，在搜索中使用修饰。 在任何情况下，都不会修饰私有符号。 默认情况下，在所有调试器中启用此选项。
 
--   当[SYMOPT\_PUBLICS\_仅](symbol-options.md#symopt-publics-only)选项设置为 on，私有符号数据将被忽略，且使用仅公共符号表。 默认情况下，在所有调试器情况下，此选项处于关闭状态。
+-   当 [SYMOPT \_ \_ 仅 PUBLICS](symbol-options.md#symopt-publics-only) 选项为 on 时，将忽略 private 符号数据，并且仅使用公共符号表。 默认情况下，此选项在所有调试器中处于关闭状态。
 
--   当[SYMOPT\_否\_PUBLICS](symbol-options.md#symopt-no-publics)选项设置为 on，公共符号表将被忽略，并搜索和符号信息使用单独的专用符号数据。 默认情况下，在所有调试器情况下，此选项处于关闭状态。
+-   当 [SYMOPT \_ NO \_ PUBLICS](symbol-options.md#symopt-no-publics) 选项为 on 时，将忽略公共符号表，并且搜索和符号信息单独使用私有符号数据。 默认情况下，此选项在所有调试器中处于关闭状态。
 
--   当[SYMOPT\_自动\_PUBLICS](symbol-options.md#symopt-auto-publics)选项设置为 on (和这两个 SYMOPT\_PUBLICS\_仅和 SYMOPT\_否\_PUBLICS 处于关闭状态)，第一个符号私有符号数据中执行搜索。 如果在其中找到所需的符号，则搜索将终止。 如果没有，则搜索公共符号表。 由于公共符号表包含专用的数据中的符号的子集，通常这会导致公共符号表被忽略。
+-   当 [SYMOPT \_ AUTO \_ PUBLICS](symbol-options.md#symopt-auto-publics) 选项 (，且仅 SYMOPT \_ PUBLICS \_ 和 SYMOPT \_ NO \_ PUBLICS 都不) 时，将在私有符号数据中执行第一个符号搜索。 如果在此处找到所需的符号，则搜索将终止。 否则，会搜索公共符号表。 由于公共符号表包含专用数据中的符号子集，因此这通常会导致忽略公共符号表。
 
--   当 SYMOPT\_PUBLICS\_仅，SYMOPT\_否\_PUBLICS 和 SYMOPT\_自动\_PUBLICS 选项是所有关闭的每个搜索私有符号数据和公共符号表符号所需的时间。 但是，当在这两个位置中找到匹配项，将使用私有符号数据中的匹配项。 因此，在此实例中的行为等同于何时 SYMOPT\_自动\_PUBLICS 处于打开状态，只不过使用 SYMOPT\_自动\_PUBLICS 可能会导致符号搜索发生这种情况会稍微快一些。
+-   如果仅 SYMOPT \_ PUBLICS \_ 、SYMOPT \_ NO \_ PUBLICS 和 SYMOPT \_ AUTO \_ PUBLICS 选项均为 off，则每次需要符号时都会搜索私有符号数据和公共符号表。 但是，如果在这两个位置都找到匹配项，则使用私有符号数据中的匹配项。 因此，此实例中的行为与 SYMOPT \_ auto PUBLICS 为 on 时的行为相同 \_ ，不同之处在于使用 SYMOPT \_ 自动 \_ PUBLICS 可能导致符号搜索稍微快一些。
 
-下面是在其中一个示例命令[ **（检查符号） x** ](x--examine-symbols-.md)使用三次。 第一次，使用默认符号选项，并因此信息来自私有符号数据。 请注意，这包括有关数组的地址、 大小和数据类型的信息**typingString**。 接下来，命令.symopt + 4000 使用，从而导致调试器忽略私有符号数据。 当**x**命令，然后再次运行，请使用公共符号表; 这一次没有任何大小和数据类型信息**typingString**。 最后，使用命令.symopt 2，这将导致调试器包括修饰。 当**x**命令将运行此最后一次，函数名称的修饰版本 **\_typingString**，所示。
+下面是一个示例，其中，命令 [**x (检查符号)**](x--examine-symbols-.md) 使用三次。 第一次使用默认的符号选项，因此，信息是从私有符号数据中获取的。 请注意，这包括有关数组 **typingString** 的地址、大小和数据类型的信息。 接下来，使用 symopt + 4000，使调试器忽略私有符号数据。 然后再次运行 **x** 命令时，将使用公共符号表;此时， **typingString** 没有大小和数据类型信息。 最后，使用 symopt-2，这会使调试器包含修饰。 在最后一次运行 **x** 命令时，将显示函数名 **\_ typingString** 的修饰版本。
 
 ```dbgcmd
 0:000> x /t /d *!*typingstring* 
@@ -127,11 +126,11 @@ ms.locfileid: "63362389"
 00434420 <NoType> TimeTest!_typingString = <no type information> 
 ```
 
-### <a name="span-idviewing_public_and_private_symbols_with_the_dbh_toolspanspan-idviewing_public_and_private_symbols_with_the_dbh_toolspanviewing-public-and-private-symbols-with-the-dbh-tool"></a><span id="viewing_public_and_private_symbols_with_the_dbh_tool"></span><span id="VIEWING_PUBLIC_AND_PRIVATE_SYMBOLS_WITH_THE_DBH_TOOL"></span>查看公共和私有符号使用 DBH 工具
+### <a name="span-idviewing_public_and_private_symbols_with_the_dbh_toolspanspan-idviewing_public_and_private_symbols_with_the_dbh_toolspanviewing-public-and-private-symbols-with-the-dbh-tool"></a><span id="viewing_public_and_private_symbols_with_the_dbh_tool"></span><span id="VIEWING_PUBLIC_AND_PRIVATE_SYMBOLS_WITH_THE_DBH_TOOL"></span>通过 THIS->DBH 工具查看公共和私有符号
 
-若要查看的符号的另一种方法是使用[DBH 工具](dbh.md)。 DBH 使用相同的符号选项作为调试器。 调试程序，如 DBH 离开[SYMOPT\_PUBLICS\_仅](symbol-options.md#symopt-publics-only)并[SYMOPT\_否\_PUBLICS](symbol-options.md#symopt-no-publics)是关闭的默认值，并关闭[SYMOPT\_UNDNAME](symbol-options.md#symopt-undname)并[SYMOPT\_自动\_PUBLICS](symbol-options.md#symopt-auto-publics)在默认情况下。 通过命令行选项或通过 DBH 命令，可以重写这些默认值。
+查看符号的另一种方法是使用 [this->dbh 工具](dbh.md)。 THIS->DBH 使用与调试器相同的符号选项。 与调试器类似，THIS->DBH [ \_ \_ 仅保留 SYMOPT PUBLICS](symbol-options.md#symopt-publics-only) ，默认情况下， [SYMOPT 不会关闭 \_ \_ PUBLICS](symbol-options.md#symopt-no-publics) ，并且默认情况下，将 [SYMOPT \_ UNDNAME](symbol-options.md#symopt-undname) 和 [SYMOPT \_ 自动 \_ PUBLICS](symbol-options.md#symopt-auto-publics) 打开。 可以通过命令行选项或 THIS->DBH 命令重写这些默认值。
 
-下面是在其中一个示例 DBH 命令**addr 414fe0**使用三次。 第一次，使用默认符号选项，并因此信息来自私有符号数据。 请注意，这包含有关该函数的地址、 大小和数据类型的信息**fgets**。 接下来，使用命令 symopt +4000，这将导致 DBH 忽略私有符号数据。 当**addr 414fe0**然后再次运行，公共使用符号表; 这一次没有函数的大小和数据类型信息**fgets**。 最后，使用命令 symopt-2，这将导致 DBH 包括修饰。 当**addr 414fe0**是运行此最后一次，函数名称的修饰版本 **\_fgets**，所示。
+下面是一个示例，其中使用了 THIS->DBH 命令 **addr 414fe0** 三次。 第一次使用默认的符号选项，因此，信息是从私有符号数据中获取的。 请注意，这包括有关函数 **fgets** 的地址、大小和数据类型的信息。 接下来，使用命令 symopt + 4000，这将导致 THIS->DBH 忽略私有符号数据。 当 **地址 414fe0** 再次运行时，将使用公共符号表;这一次没有函数 **fgets** 的大小和数据类型信息。 最后，使用命令 symopt-2，这将导致 THIS->DBH 包含修饰。 在最后一次运行 **地址 414fe0** 时，将显示函数名称 **\_ fgets** 的修饰版本。
 
 ```dbgcmd
 pid:4308 mod:TimeTest[400000]: addr 414fe0

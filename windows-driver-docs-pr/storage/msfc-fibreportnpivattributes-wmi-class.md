@@ -1,22 +1,21 @@
 ---
 title: MSFC \_ FIBREPORTNPIVATTRIBUTES WMI 类
 description: MSFC \_ FIBREPORTNPIVATTRIBUTES WMI 类
-ms.assetid: A778E00A-476C-4763-B652-3312B7913F9C
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: dd270a3966ba4aa10b5042c482db80369c1158a7
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: aef81205892d3788bc30644dd100957de275bc38
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89184077"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96811467"
 ---
 # <a name="msfc_fibreportnpivattributes-wmi-class"></a>MSFC \_ FIBREPORTNPIVATTRIBUTES WMI 类
 
 
 WMI 客户端使用 MSFC \_ FibrePortNPIVAttributes 类来检索有关为物理端口创建的虚拟端口的信息。
 
-MSFC \_ FibrePortNPIVAttributes 类在 *Npivwmi*中定义如下：
+MSFC \_ FibrePortNPIVAttributes 类在 *Npivwmi* 中定义如下：
 
 ```mof
 class MSFC_FibrePortNPIVAttributes   

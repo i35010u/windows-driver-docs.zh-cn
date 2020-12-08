@@ -1,25 +1,24 @@
 ---
 title: 反交错和帧速率转换
 description: 反交错和帧速率转换
-ms.assetid: 73435a68-532a-4a15-b2b9-a6165cadb8fe
 keywords:
 - DirectX 视频加速 WDK Windows 2000 显示，帧速率转换
 - 视频加速 WDK DirectX，帧速率转换
 - VA WDK DirectX，帧速率转换
-- DirectX 视频加速 WDK Windows 2000 显示，请去隔行
-- 视频加速 WDK DirectX 去隔行
-- VA WDK DirectX 去隔行
-- 去隔行 WDK DirectX VA
+- DirectX 视频加速 WDK Windows 2000 显示，取消隔行扫描
+- 视频加速 WDK DirectX，取消隔行扫描
+- VA WDK DirectX，取消隔行扫描
+- 取消隔行扫描 WDK DirectX VA
 - 帧速率转换 WDK DirectX VA
-- 逐行 WDK DirectX va，因此有关去隔行扫描
+- 取消隔行扫描 WDK DirectX VA，关于取消隔行扫描
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e31311751b166968cf89e08fb39eac0c4be0e425
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3ac789f78ce4385aaf867ce6db21364ae6cd7615
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63348906"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96809571"
 ---
 # <a name="deinterlacing-and-frame-rate-conversion"></a>反交错和帧速率转换
 
@@ -27,35 +26,35 @@ ms.locfileid: "63348906"
 ## <span id="ddk_deinterlacing_and_frame_rate_conversion_gg"></span><span id="DDK_DEINTERLACING_AND_FRAME_RATE_CONVERSION_GG"></span>
 
 
-DirectDraw 和图形设备驱动程序之间 DDI 扩展了 DirectX VA 使用 DirectDraw DDI 和 Direct3D DDI 的内核模式部分支持的视频内容的去隔行和帧速率转换。 取消隔行扫描和帧速率转换接口的所有视频演示文稿机制无关。
+DirectDraw 和图形设备驱动程序之间的 DDI 扩展了 DirectX VA，以支持视频内容的取消隔行扫描和帧速率转换，方法是使用 DirectDraw DDI 和 Direct3D DDI 的内核模式部分。 取消隔行扫描和帧速率转换接口与所有视频演示机制无关。
 
-去隔行或帧速率转换过程的输出始终是渐进式帧。
+取消隔行扫描或帧速率转换过程的输出始终为渐进帧。
 
 若要使用此接口，必须满足以下要求：
 
--   Deinterlaced 的输出必须以物理方式位于目标 DirectDraw 图面。 此要求可以阻止所有硬件覆盖解决方案。
+-   Deinterlaced 输出必须位于目标 DirectDraw 表面中。 此要求会排除所有硬件覆盖解决方案。
 
--   图形引擎和硬件 overlay，如果存在，必须支持至少 bob 和 weave 实现去隔行功能。
+-   图形引擎和硬件覆盖（如果存在）必须支持最少 bob 和编织取消隔行扫描功能。
 
 -   此 DDI 适用于 Microsoft Windows XP SP1 和更高版本。
 
-本部分介绍以下主题：
+本部分涵盖了以下主题：
 
-[取消隔行扫描模式](deinterlace-modes.md)
+[反交错模式](deinterlace-modes.md)
 
 [帧速率转换模式](frame-rate-conversion-modes.md)
 
-[Bob 去隔行](bob-deinterlacing.md)
+[Bob 反交错](bob-deinterlacing.md)
 
-[映射到 DirectDraw 和 DirectX VA DDI 取消隔行扫描](mapping-the-deinterlace-ddi-to-directdraw-and-directx-va.md)
+[将反交错 DDI 映射到 DirectDraw 和 DirectX VA](mapping-the-deinterlace-ddi-to-directdraw-and-directx-va.md)
 
-[取消隔行扫描和帧速率转换的视频内容](video-content-for-deinterlace-and-frame-rate-conversion.md)
+[要进行反交错和帧速率转换的视频内容](video-content-for-deinterlace-and-frame-rate-conversion.md)
 
-[在 64 位操作系统上去隔行](deinterlacing-on-64-bit-operating-systems.md)
+[64 位操作系统上的反交错](deinterlacing-on-64-bit-operating-systems.md)
 
-[组合去隔行和视频子流组合](combining-deinterlacing-and-video-substream-compositing.md)
+[合并反交错和视频子流合成内容](combining-deinterlacing-and-video-substream-compositing.md)
 
-[有关去隔行示例函数](sample-functions-for-deinterlacing.md)
+[反交错的示例函数](sample-functions-for-deinterlacing.md)
 
  
 

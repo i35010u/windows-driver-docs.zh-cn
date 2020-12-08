@@ -1,15 +1,14 @@
 ---
 title: 反交错 DDI
 description: 反交错 DDI
-ms.assetid: 06b85f76-950a-4a9b-af6b-ded823bfda6a
 ms.date: 01/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: ade165c445f7fb86324dd90d39b2359bf7f71057
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 22c4b018347bf189d6081b05d8a820e86cf869cc
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89064048"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96809591"
 ---
 # <a name="deinterlace-ddi"></a>反交错 DDI
 

@@ -1,7 +1,6 @@
 ---
 title: 创建和销毁上下文
 description: 创建和销毁上下文
-ms.assetid: 31462b0a-ed06-4138-ab91-7ec98bc5ff14
 keywords:
 - 上下文 WDK Direct3D，创建
 - 上下文 WDK Direct3D，销毁
@@ -10,12 +9,12 @@ keywords:
 - 销毁上下文 WDK Direct3D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 324ec4e0079ac28e2ae9442976096b0dfefe0627
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 6f1ed717e6bce154cff9a89fb168c5a68d08cfeb
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90715352"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96810103"
 ---
 # <a name="creating-and-destroying-a-context"></a>创建和销毁上下文
 

@@ -1,18 +1,17 @@
 ---
 title: OID_WWAN_NITZ
 description: OID_WWAN_NITZ 用于使用网络标识和时区 (NITZ) 查询当前网络时间。
-ms.assetid: 5AC5842E-CBD1-47E0-88D2-D3F58CC6F142
 ms.date: 04/11/2019
 keywords:
 - 从 Windows Vista 开始 OID_WWAN_NITZ 网络驱动程序
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 018e11bb956b36f749dd94ded031efd38cee3f49
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 22198c826fb01331921a12463fc27fcede706af2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89216140"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96809957"
 ---
 # <a name="oid_wwan_nitz"></a>OID_WWAN_NITZ
 
@@ -30,7 +29,7 @@ OID_WWAN_NITZ 用于使用网络标识和时区 (NITZ) 查询当前网络时间�
 
 **版本**： Windows 10，版本 1903 **头**： Ntddndis (包括 Ndis .h) 
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [MB NITZ 支持](mb-nitz-support.md)
 

@@ -1,15 +1,14 @@
 ---
 title: WDDM 驱动程序的调试提示
 description: 介绍 WDDM 驱动程序的调试技术
-ms.assetid: 48380bfc-ebf9-42fa-9b90-c65991ea69ef
 ms.date: 07/17/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: b89c07239af7dc72ca596406c30c00aecd18f59e
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 17f2560623e410b1f7dc3f05774ac03240d33aea
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89063542"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96809633"
 ---
 # <a name="debugging-tips-for-wddm-drivers"></a>WDDM 驱动程序的调试提示
 

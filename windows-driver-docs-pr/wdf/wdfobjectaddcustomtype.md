@@ -1,24 +1,23 @@
 ---
 title: WdfObjectAddCustomType 宏
 description: WdfObjectAddCustomType 宏将框架对象与自定义类型关联。
-ms.assetid: 750CF669-A436-4571-B474-D5447E0AA64F
 keywords:
 - WdfObjectAddCustomType 宏
 ms.date: 08/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 65bb413376a538f5f9e0b5694cbea8bae90f90e4
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: ab6682490572bc13016cf543fca3ccd7fe5ca47b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89189699"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96809771"
 ---
 # <a name="wdfobjectaddcustomtype-macro"></a>WdfObjectAddCustomType 宏
 
 
 \[适用于 KMDF 和 UMDF\]
 
-**WdfObjectAddCustomType**宏将框架对象与自定义类型关联。
+**WdfObjectAddCustomType** 宏将框架对象与自定义类型关联。
 
 <a name="syntax"></a>语法
 ------
@@ -42,7 +41,7 @@ NTSTATUS WdfObjectAddCustomType(
 <a name="return-value"></a>返回值
 ------------
 
-如果操作成功，则**WdfObjectAddCustomType**返回 STATUS_SUCCESS。 否则，此方法可能会返回以下值之一：
+如果操作成功，则 **WdfObjectAddCustomType** 返回 STATUS_SUCCESS。 否则，此方法可能会返回以下值之一：
 
 <table>
 <colgroup>
@@ -77,7 +76,7 @@ NTSTATUS WdfObjectAddCustomType(
 
  
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 **WdfObjectAddCustomType** 是 [**WdfObjectAddCustomTypeWithData**](wdfobjectaddcustomtypewithdata.md)的简化版本。
@@ -143,7 +142,7 @@ End:
 <td><p>2.0</p></td>
 </tr>
 <tr class="even">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Wdfobject (包含 Wdf .h) </td>
 </tr>
 </tbody>

@@ -1,7 +1,6 @@
 ---
 title: 'MarkIrpPending 规则 (wdm) '
 description: MarkIrpPending 规则指定每当驱动程序调度例程调用也时，驱动程序在 \_ 调度例程结束时返回状态 "挂起"。 有关免费规范，请参阅 MarkIrpPending2。
-ms.assetid: cbf5484e-2806-4df6-bdfb-98acfe5d214c
 ms.date: 05/21/2018
 keywords:
 - 'MarkIrpPending 规则 (wdm) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 996e7c1670d0ed616d295f1985c37ef66123cb01
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 2895b0fdc4bb64a20edd0c0f6b573ca5e3aa7c73
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103468"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96811065"
 ---
 # <a name="markirppending-rule-wdm"></a>MarkIrpPending 规则 (wdm) 
 
 
-**MarkIrpPending**规则指定每当驱动程序调度例程调用[**也**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iomarkirppending)时，驱动程序在 \_ 调度例程结束时返回状态 "挂起"。 有关免费规范，请参阅 [**MarkIrpPending2**](wdm-markirppending2.md) 。
+**MarkIrpPending** 规则指定每当驱动程序调度例程调用 [**也**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iomarkirppending)时，驱动程序在 \_ 调度例程结束时返回状态 "挂起"。 有关免费规范，请参阅 [**MarkIrpPending2**](wdm-markirppending2.md) 。
 
 **驱动程序模型： WDM**
 

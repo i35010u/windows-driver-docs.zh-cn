@@ -1,19 +1,18 @@
 ---
 title: 安装 PSHED 插件
 description: 安装 PSHED 插件
-ms.assetid: a7f75bc0-b87a-42fa-bc46-f68b3dc31d2d
 keywords:
 - PSHED 插件 WDK WHEA，安装
 - 平台特定硬件错误驱动程序插件 WDK WHEA，安装
 - WHEA WDK，安装 PSHED 插件
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a44d81192409a63a5500ff5f6ee010059f32cd3e
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 84fa82722e50a99a11fbd2e522465cb118976b55
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89213078"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96809738"
 ---
 # <a name="installing-pshed-plug-ins"></a>安装 PSHED 插件
 

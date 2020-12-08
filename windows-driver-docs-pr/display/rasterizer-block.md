@@ -1,15 +1,14 @@
 ---
 title: 光栅器块
 description: 光栅器块
-ms.assetid: 115c265d-0264-4a8a-b07b-710438394c68
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4354894572ed85d657a0c3c47e13e8fae45f5075
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: baeca6f6090a9cb90514cafbc477a90f4f4c9fbd
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89063489"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96810095"
 ---
 # <a name="rasterizer-block"></a>光栅器块
 

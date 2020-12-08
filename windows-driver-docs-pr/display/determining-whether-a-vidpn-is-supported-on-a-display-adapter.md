@@ -1,7 +1,6 @@
 ---
 title: 确定显示适配器上的 VidPN 支持
 description: 本主题介绍了显示微型端口驱动程序如何确定显示适配器是否支持 (VidPN) 特定视频显示网络。
-ms.assetid: ebf001fb-e445-4534-8e89-60e1b06b2d6e
 keywords:
 - 视频显示网络 WDK 显示，确定是否受支持
 - VidPN WDK 显示，确定是否支持
@@ -10,12 +9,12 @@ keywords:
 ms.date: 12/06/2018
 ms.localizationpriority: medium
 ms.custom: seodec18
-ms.openlocfilehash: 743e80644a11ca4f00e01cf0e0ecfa2dbff2bfcc
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: f570d21f4fa2b785a832657a2605da26c20c0108
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89063536"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96809511"
 ---
 # <a name="determining-vidpn-support-on-a-display-adapter"></a>确定显示适配器上的 VidPN 支持
 

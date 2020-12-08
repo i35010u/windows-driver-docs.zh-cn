@@ -1,7 +1,6 @@
 ---
 title: 'KsInvalidStreamPointer 规则 (ks) '
 description: 此规则验证 KS 微型端口驱动程序是否提供有效的 KS 流指针作为函数参数。
-ms.assetid: C9BBF9A6-3F0A-4494-BA13-A9CD55969979
 ms.date: 04/01/2020
 keywords:
 - 'KsInvalidStreamPointer 规则 (ks) '
@@ -12,12 +11,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 6346a3762c3d6a79013dc6956da5ba50f4ed92bf
-ms.sourcegitcommit: cfd4d8ee889c6a3feed79ae112662f6c095b6a36
+ms.openlocfilehash: a87dd870ff3de0d4301d28e9ff1037c8abf0ba90
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94417449"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96811175"
 ---
 # <a name="ksinvalidstreampointer-rule-ks"></a>KsInvalidStreamPointer 规则 (ks) 
 
@@ -29,7 +28,7 @@ ms.locfileid: "94417449"
 
 **驱动程序模型： KS**
 
-**Bug 检查 () 发现此规则** ： [**bug 检查0XC4：驱动程序 \_ 验证器 \_ 检测到 \_ 违反**](../debugger/bug-check-0xc4--driver-verifier-detected-violation.md) (0x0008100C) 
+**Bug 检查 () 发现此规则**： [**bug 检查0XC4：驱动程序 \_ 验证器 \_ 检测到 \_ 违反**](../debugger/bug-check-0xc4--driver-verifier-detected-violation.md) (0x0008100C) 
 
 
 <a name="example"></a>示例

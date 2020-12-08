@@ -1,7 +1,6 @@
 ---
 title: 'RemoveLockForwardRead2 规则 (wdm) '
 description: 当使用 IoCallDriver 将 IRP 转发到另一台设备时，RemoveLockForwardRead2 规则将验证是否正确地使用了对 IoAcquireRemoveLock 和 IoReleaseRemoveLock 的调用。
-ms.assetid: 0C9284A5-6B32-469D-BF0D-1D1B74CADE46
 ms.date: 05/21/2018
 keywords:
 - 'RemoveLockForwardRead2 规则 (wdm) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 0a10abd3facf0160eed446d6230a4e0ba03e5d72
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 570a832f4000bae243dc506ad6780a4416c7f040
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104318"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96810913"
 ---
 # <a name="removelockforwardread2-rule-wdm"></a>RemoveLockForwardRead2 规则 (wdm) 
 
 
-当使用[**IoCallDriver**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver)将 IRP 转发到另一台设备时， **RemoveLockForwardRead2**规则将验证是否正确地使用了对[**IoAcquireRemoveLock**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioacquireremovelock)和[**IoReleaseRemoveLock**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioreleaseremovelock)的调用。
+当使用 [**IoCallDriver**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver)将 IRP 转发到另一台设备时， **RemoveLockForwardRead2** 规则将验证是否正确地使用了对 [**IoAcquireRemoveLock**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioacquireremovelock)和 [**IoReleaseRemoveLock**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioreleaseremovelock)的调用。
 
 **驱动程序模型： WDM**
 

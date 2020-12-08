@@ -1,17 +1,16 @@
 ---
 title: SIO_WSK_QUERY_IDEAL_SEND_BACKLOG
 description: SIO_WSK_QUERY_IDEAL_SEND_BACKLOG
-ms.assetid: 8d05b1dc-9dbf-4726-9eaf-721d1fb8282e
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 SIO_WSK_QUERY_IDEAL_SEND_BACKLOG 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 508427b31f09c896586beebaccd4d458f0f752bc
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 34885e5e0a7a9b2d9690f1d59a8269532ea387ce
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89212763"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96809921"
 ---
 # <a name="sio_wsk_query_ideal_send_backlog"></a>SIO \_ WSK \_ 查询 \_ 理想的 \_ 发送 \_ 积压
 
@@ -32,7 +31,7 @@ SIO \_ WSK \_ 查询理想的 " \_ \_ 发送 \_ 积压工作套接字 I/O 控制
 <thead>
 <tr class="header">
 <th>参数</th>
-<th>值</th>
+<th>“值”</th>
 </tr>
 </thead>
 <tbody>

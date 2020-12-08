@@ -1,6 +1,5 @@
 ---
 title: 'KsProcessingMutex 规则 ( # A1'
-ms.assetid: AD73B241-7B08-4E48-94A1-B6BDE78590E6
 ms.date: 05/21/2018
 description: '了解详细信息： KsProcessingMutex 规则 ( # A1'
 keywords:
@@ -12,12 +11,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 69cd9100c19e76c5e3d68bacbccf25d3ba0f8a0a
-ms.sourcegitcommit: f47c072e88dce59daba1231027b60eb56bd2cde9
+ms.openlocfilehash: ec3833fddc27c552e9acc96730fa2474a6aff1be
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92689412"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96811157"
 ---
 # <a name="ksprocessingmutex-rule-"></a>KsProcessingMutex 规则 ( # A1
 
@@ -30,7 +29,7 @@ KsProcessingMutex 规则指定一个 KS 微型端口驱动程序按正确的顺�
 
 **驱动程序模型： KS**
 
-**Bug 检查 () 发现此规则** ： [**bug 检查0XC4：驱动程序 \_ 验证器 \_ 检测到 \_ 违反**](../debugger/bug-check-0xc4--driver-verifier-detected-violation.md) (0x0008100B) 
+**Bug 检查 () 发现此规则**： [**bug 检查0XC4：驱动程序 \_ 验证器 \_ 检测到 \_ 违反**](../debugger/bug-check-0xc4--driver-verifier-detected-violation.md) (0x0008100B) 
 
 
 <a name="how-to-test"></a>如何测试
@@ -57,7 +56,7 @@ KsProcessingMutex 规则指定一个 KS 微型端口驱动程序按正确的顺�
 
  
 
-<a name="see-also"></a>另请参阅
+<a name="see-also"></a>请参阅
 --------
 
 [在 AVStream 中处理互斥](../stream/processing-mutex-in-avstream.md)

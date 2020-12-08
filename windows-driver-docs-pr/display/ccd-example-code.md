@@ -1,7 +1,6 @@
 ---
 title: CCD 示例伪代码
 description: 使用 CCD Api 设置克隆视图的示例伪代码
-ms.assetid: 8ca2c7c4-8e6f-4e4f-9234-eb3e5dc164cc
 keywords:
 - 连接显示 WDK Windows 7 显示，CCD Api，示例代码
 - 连接显示 WDK Windows Server 2008 R2 display、CCD Api、示例代码
@@ -11,18 +10,18 @@ keywords:
 - CCD Api WDK Windows Server 2008 R2 显示，示例代码
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b984ccb50b880966892d681e31e76f6df0c27d3a
-ms.sourcegitcommit: 0d89fc46058efb2ebc6ed9bd8f638c3f8cc1a678
+ms.openlocfilehash: 82d8588abc792a16be9876e86355e3e2346bda52
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86459235"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96810351"
 ---
 # <a name="ccd-example-pseudocode"></a>CCD 示例伪代码
 
 本部分仅适用于 Windows 7 和更高版本，以及 windows Server 2008 R2 及更高版本的 Windows 操作系统。
 
-下面的伪代码演示如何使用连接和配置显示（CCD） Api 来设置克隆视图：
+下面的伪代码演示了如何使用 (CCD) Api 的连接和配置显示来设置克隆视图：
 
 ```cpp
 SetCloneView

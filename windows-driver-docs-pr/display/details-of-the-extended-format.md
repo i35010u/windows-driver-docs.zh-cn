@@ -1,18 +1,17 @@
 ---
 title: 扩展格式的详细信息
 description: 扩展格式的详细信息
-ms.assetid: e9cd2bc7-99c1-4aca-91b0-9faefa4a856d
 keywords:
 - Direct3D 版本 10.1 WDK Windows 7 显示，扩展格式
 - 扩展格式 WDK Windows 7 显示
 ms.date: 09/10/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: e7b7e18aeab6185850d9fd550d7e934c2e61630d
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 0c9e96174390c6ed02f8d86834c1a4aecb977517
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89065494"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96809533"
 ---
 # <a name="details-of-the-extended-format"></a>扩展格式的详细信息
 

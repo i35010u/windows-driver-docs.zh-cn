@@ -1,18 +1,17 @@
 ---
 title: 管理 NDIS 网络接口
 description: 管理 NDIS 网络接口
-ms.assetid: b4c61b8a-a3ef-449d-9bce-853d91911dc4
 keywords:
 - NDIS 网络接口 WDK，管理
 - 网络接口 WDK，管理
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: aae2cb572a3504cd3d605093b94115dc249d84f3
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: e99695e0200c3017fbc8c746c779d6ab256925df
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90715740"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96810005"
 ---
 # <a name="managing-ndis-network-interfaces"></a>管理 NDIS 网络接口
 

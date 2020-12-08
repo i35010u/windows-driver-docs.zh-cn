@@ -1,17 +1,16 @@
 ---
 title: NDIS 6.1 中的 NetDMA 更新
 description: NDIS 6.1 中的 NetDMA 更新
-ms.assetid: ec19ac6e-78b3-4da5-baef-e02fc9947c0e
 keywords:
 - NetDMA WDK 网络，关于 NetDMA 接口
 ms.date: 01/09/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 7d91ee556d825e54bd77e39e2109f721c8835d58
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: e3c29e1012602e8fcd36496f49fe889b736a333c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89210667"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96809993"
 ---
 # <a name="netdma-updates-in-ndis-61"></a>NDIS 6.1 中的 NetDMA 更新
 

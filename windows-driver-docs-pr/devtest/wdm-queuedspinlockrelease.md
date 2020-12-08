@@ -1,7 +1,6 @@
 ---
 title: 'QueuedSpinLockRelease 规则 (wdm) '
 description: QueuedSpinLockRelease 规则指定在严格替换中使用对 KeAcquireInStackQueuedSpinLock 和 KeReleaseInStackQueuedSpinLock 的调用。
-ms.assetid: 1d6ec912-ca38-4e8c-93c7-1c7aa4792676
 ms.date: 05/21/2018
 keywords:
 - 'QueuedSpinLockRelease 规则 (wdm) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: d87d02955beb1150b0c671d8bd0aa6639b66f1b3
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 9553e2932a99afad6e38745e5bb96980f904193f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106130"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96810955"
 ---
 # <a name="queuedspinlockrelease-rule-wdm"></a>QueuedSpinLockRelease 规则 (wdm) 
 
 
-**QueuedSpinLockRelease**规则指定在严格替换中使用对[**KeAcquireInStackQueuedSpinLock**](/previous-versions/windows/hardware/drivers/ff551899(v=vs.85))和[**KeReleaseInStackQueuedSpinLock**](/windows-hardware/drivers/ddi/wdm/nf-wdm-kereleaseinstackqueuedspinlock)的调用。
+**QueuedSpinLockRelease** 规则指定在严格替换中使用对 [**KeAcquireInStackQueuedSpinLock**](/previous-versions/windows/hardware/drivers/ff551899(v=vs.85))和 [**KeReleaseInStackQueuedSpinLock**](/windows-hardware/drivers/ddi/wdm/nf-wdm-kereleaseinstackqueuedspinlock)的调用。
 
 而且，在调度或取消例程结束时，驱动程序不应持有排队的旋转锁。
 

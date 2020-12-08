@@ -1,7 +1,6 @@
 ---
 title: WHEA 硬件错误事件
 description: WHEA 硬件错误事件
-ms.assetid: c9f88e3b-3915-4a77-8d60-f0f3da514abc
 keywords:
 - 事件 WDK WHEA，关于事件
 - Windows 硬件错误体系结构 WDK，事件
@@ -12,12 +11,12 @@ keywords:
 - 事件 WDK WHEA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d2f3bc17a235e6d1a2571d1d01e67cba914247b4
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 216283bdf74bc2d3f30e521854054da68fffac2f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89216296"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96811297"
 ---
 # <a name="whea-hardware-error-events"></a>WHEA 硬件错误事件
 

@@ -1,19 +1,18 @@
 ---
 title: 时间码属性
 description: 时间码属性
-ms.assetid: e8359778-8cc6-4f19-b869-f9597dae0502
 keywords:
 - 时间码属性 WDK 视频捕获
 - PROPSETID_TIMECODE_READER
 - 磁带时间码属性 WDK 视频捕获
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 28225842151a6f616fbd25deeea79cd1ff75c29b
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 87d72a700b8c9fd049f0c70d6adb98ba88d9bb5a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104898"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96811330"
 ---
 # <a name="timecode-properties"></a>时间码属性
 

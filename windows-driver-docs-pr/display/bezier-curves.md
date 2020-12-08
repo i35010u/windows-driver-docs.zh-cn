@@ -1,7 +1,6 @@
 ---
 title: 贝塞尔曲线
 description: 贝塞尔曲线
-ms.assetid: 322ff79b-e5b8-4247-99eb-1aa3779216ef
 keywords:
 - GDI WDK Windows 2000 显示器、曲线、贝塞尔
 - 图形驱动程序 WDK Windows 2000 显示器、曲线、贝塞尔
@@ -10,12 +9,12 @@ keywords:
 - 贝塞尔曲线 WDK GDI
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2f0a5ba58a27f4497ac05947ca9ef46ba6ee5ee9
-ms.sourcegitcommit: abe7fe9f3fbee8d12641433eeab623a4148ffed3
+ms.openlocfilehash: 855cb172fb1972463125240c42252204c3cad7d5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92185252"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96810455"
 ---
 # <a name="bezier-curves"></a>贝塞尔曲线
 

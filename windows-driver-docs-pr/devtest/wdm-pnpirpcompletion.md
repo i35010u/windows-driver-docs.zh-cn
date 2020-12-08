@@ -1,7 +1,6 @@
 ---
 title: 'PnpIrpCompletion 规则 (wdm) '
 description: PnpIrpCompletion 规则验证 FDO 驱动程序是否将 PnP Irp 传递到低级驱动程序。
-ms.assetid: 32b2ed2c-4222-4d93-8323-3ad442a14d9d
 ms.date: 05/21/2018
 keywords:
 - 'PnpIrpCompletion 规则 (wdm) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 149caa568ed6dddb4f480811da3f0ef8e456d400
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 850e62d198fbb78c65ac1773a7a41c4b758cf6a6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105044"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96810993"
 ---
 # <a name="pnpirpcompletion-rule-wdm"></a>PnpIrpCompletion 规则 (wdm) 
 
 
-**PnpIrpCompletion**规则验证 FDO 驱动程序是否将 PnP irp 传递到低级驱动程序。
+**PnpIrpCompletion** 规则验证 FDO 驱动程序是否将 PnP irp 传递到低级驱动程序。
 
 此规则不适用于总线驱动程序。
 

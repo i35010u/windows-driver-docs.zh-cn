@@ -1,30 +1,29 @@
 ---
 title: 从 BGR8888 转换为 XR_BIAS
 description: 从 BGR8888 转换为 XR_BIAS
-ms.assetid: 53145cfe-d344-4242-b124-ddb507d876ad
 keywords:
 - Direct3D 版本 10.1 WDK Windows 7 显示，将 BGR8888 转换为 XR_BIAS
-- 扩展的格式 WDK Windows 7 显示，将 BGR8888 转换为 XR_BIAS
-- 将 BGR8888 转换为 XR_BIAS WDK Windows 7 显示
+- 扩展格式 WDK Windows 7 显示，将 BGR8888 转换为 XR_BIAS
+- 将 BGR8888 转换为 XR_BIAS WDK Windows 7 显示器
 - BGR8888 WDK Windows 7 显示
-- BGR8888 WDK Windows 7 显示，转换为 XR_BIAS
+- BGR8888 WDK Windows 7 显示，转换到 XR_BIAS
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9acd50bbd2bc5e56628e27d3f529f039fff17e73
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 52f9e7306e153d19957b5c1b7c013865c8ea6e9a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63368631"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96810119"
 ---
-# <a name="conversion-from-bgr8888-to-xrbias"></a>从 BGR8888 转换为 XR\_偏差
+# <a name="conversion-from-bgr8888-to-xr_bias"></a>从 BGR8888 到 XR 偏向的转换 \_
 
 
-本部分仅适用于 Windows 7 和更高版本的操作系统。
+本部分仅适用于 Windows 7 及更高版本的操作系统。
 
-从 BGR8888 类型格式的转换 (例如，DXGI\_格式\_B8G8R8A8\_UNORM) 到 XR\_偏移是无损。
+从 BGR8888 格式转换 (例如，DXGI \_ FORMAT \_ B8G8R8A8 \_ UNORM) 为 \_ 无损。
 
-510 的比例因子显式选择提供 BGR8888 类型格式和 XR 之间的完全可逆转转换\_偏置没有导致附近 0.5 的非线性跳转将隐含 511 的比例因子。
+缩放比例510显式选择为在 BGR8888 类型格式和 XR 偏差之间提供完全可逆的转换， \_ 而不会导致缩放系数为511的0.5 附近的非线性跳跃。
 
  
 

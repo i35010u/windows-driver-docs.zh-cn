@@ -1,7 +1,6 @@
 ---
 title: 'StartIoRecursion 规则 (wdm) '
 description: StartIoRecursion 规则指定如果驱动程序的 StartIo 例程包括对 IoStartNextPacket 的调用，则驱动程序必须先调用 IoSetStartIoAttributes，并将 DeferredStartIo 属性设置为 TRUE。 否则，可能会导致无限递归。
-ms.assetid: 997df0a3-1222-435d-9c61-e97a2b6185cf
 ms.date: 05/21/2018
 keywords:
 - 'StartIoRecursion 规则 (wdm) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 8ac56803d56af2b2ee5151340023cd132f79c1b4
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 60001f8c288dda8dea2cfa1da3bf623bfeb65849
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104300"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96810751"
 ---
 # <a name="startiorecursion-rule-wdm"></a>StartIoRecursion 规则 (wdm) 
 
 
-**StartIoRecursion**规则指定如果驱动程序的[**StartIo**](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_startio)例程包括对[**IoStartNextPacket**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-iostartnextpacket)的调用，则驱动程序必须先调用[**IoSetStartIoAttributes**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-iosetstartioattributes) ，并将*DeferredStartIo*属性设置为**TRUE**。 否则，可能会导致无限递归。
+**StartIoRecursion** 规则指定如果驱动程序的 [**StartIo**](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_startio)例程包括对 [**IoStartNextPacket**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-iostartnextpacket)的调用，则驱动程序必须先调用 [**IoSetStartIoAttributes**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-iosetstartioattributes) ，并将 *DeferredStartIo* 属性设置为 **TRUE**。 否则，可能会导致无限递归。
 
 **驱动程序模型： WDM**
 

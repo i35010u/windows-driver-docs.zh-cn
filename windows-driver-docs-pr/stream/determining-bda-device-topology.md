@@ -1,7 +1,6 @@
 ---
 title: 确定 BDA 设备拓扑
 description: 确定 BDA 设备拓扑
-ms.assetid: fdac317e-d4fc-47c9-87d3-bec597f758f5
 keywords:
 - 方法设置 WDK BDA，BDA 设备拓扑
 - 属性设置 WDK BDA，BDA 设备拓扑
@@ -11,12 +10,12 @@ keywords:
 - 模板筛选器拓扑，WDK BDA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 56057682f986365397b299a70e1b4310099f1daa
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 7d2a537102ba7afcc7dfd3f018ff7d8f60c15d56
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89185405"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96811357"
 ---
 # <a name="determining-bda-device-topology"></a>确定 BDA 设备拓扑
 
@@ -32,7 +31,7 @@ BDA 设备拓扑由已连接的节点网络组成，其中每个节点都代表�
 
 -   KSPROPERTY \_ BDA \_ 节点 \_ 类型
 
-    节点类型表示筛选器中可能的功能节点。 "KSPROPERTY \_ BDA \_ 节点 \_ 类型" 属性返回一个列表，其中列出了 BDA 微型驱动程序的筛选器实例提供的所有节点类型。 微型驱动程序分配任意值来标识节点类型。 通常，微型驱动程序使用微型驱动程序的节点类型列表中每个元素的索引作为每个节点类型的值。 BDA 微型驱动程序将节点说明 GUID 分配给每个节点类型。 *Bdamedia*中定义了网络提供程序当前支持的节点类型的说明 guid。 此节点说明向网络提供商指示节点的功能。 在模板拓扑中，节点类型只能出现一次。 不过，特定类型的多个节点可能具有相同的节点说明 GUID。 这允许在筛选器拓扑中的多个位置进行特定信号转换，同时允许网络提供程序明确标识单个拓扑节点。
+    节点类型表示筛选器中可能的功能节点。 "KSPROPERTY \_ BDA \_ 节点 \_ 类型" 属性返回一个列表，其中列出了 BDA 微型驱动程序的筛选器实例提供的所有节点类型。 微型驱动程序分配任意值来标识节点类型。 通常，微型驱动程序使用微型驱动程序的节点类型列表中每个元素的索引作为每个节点类型的值。 BDA 微型驱动程序将节点说明 GUID 分配给每个节点类型。 *Bdamedia* 中定义了网络提供程序当前支持的节点类型的说明 guid。 此节点说明向网络提供商指示节点的功能。 在模板拓扑中，节点类型只能出现一次。 不过，特定类型的多个节点可能具有相同的节点说明 GUID。 这允许在筛选器拓扑中的多个位置进行特定信号转换，同时允许网络提供程序明确标识单个拓扑节点。
 
 -   KSPROPERTY \_ BDA \_ 引脚 \_ 类型
 

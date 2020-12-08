@@ -1,16 +1,15 @@
 ---
 title: OID_WWAN_PIN
 description: OID_WWAN_PIN 设置或返回与 (Pin) 的个人识别码相关的信息。
-ms.assetid: 5c93ffe0-8067-4022-ba8e-e528e44692e6
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_WWAN_PIN 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 3691cb7bf136ee6c9ce911f8160735ce86796ca9
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 3c0a5191abd9be8b40e98e8a78faa2e4041f017b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89207881"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96809929"
 ---
 # <a name="oid_wwan_pin"></a>OID \_ WWAN \_ PIN
 
@@ -34,11 +33,11 @@ Windows 7 微型端口驱动程序应使用 OID \_ WWAN \_ PIN。 Windows 8 微�
 
 在微型端口驱动程序初始化过程中，如果启用了 PIN1，则 MB 服务不会继续进行注册。
 
-小型端口驱动程序提供一个 PIN 值，该值由最终用户在**PinAction.Pin** \_ \_ \_ 处理集请求时在 NDIS WWAN 集 PIN 结构的 PinAction 成员中输入。 仅当 PIN 值与 SIM 卡中存储的值匹配时，才应由微型端口驱动程序处理请求。 否则，微型端口驱动程序应使设置请求失败，状态代码为 WWAN \_ 状态 \_ 失败。
+小型端口驱动程序提供一个 PIN 值，该值由最终用户在 **PinAction.Pin** \_ \_ \_ 处理集请求时在 NDIS WWAN 集 PIN 结构的 PinAction 成员中输入。 仅当 PIN 值与 SIM 卡中存储的值匹配时，才应由微型端口驱动程序处理请求。 否则，微型端口驱动程序应使设置请求失败，状态代码为 WWAN \_ 状态 \_ 失败。
 
 基于 CDMA 的设备必须将电源设备锁定报告为 PIN1。
 
-对于所有受支持的 PIN 类型，微型端口驱动程序必须支持 *WwanPinOperationEnter* 操作。 此外，如果支持 PIN1，微型端口驱动程序必须支持 *WwanPinOperationEnable*、 *WwanPinOperationDisable*和 *WwanPinOperationChange* 操作。
+对于所有受支持的 PIN 类型，微型端口驱动程序必须支持 *WwanPinOperationEnter* 操作。 此外，如果支持 PIN1，微型端口驱动程序必须支持 *WwanPinOperationEnable*、 *WwanPinOperationDisable* 和 *WwanPinOperationChange* 操作。
 
 如果在 PIN 类型锁定时尝试 pin 类型的 PIN 禁用操作，微型端口驱动程序可以使用所需的 WWAN 状态 PIN 来使请求失败， \_ \_ \_ 也可以成功完成请求。 如果微型端口驱动程序已成功完成请求，则禁用操作还应解除锁定。
 
@@ -66,7 +65,7 @@ Windows 7 微型端口驱动程序应使用 OID \_ WWAN \_ PIN。 Windows 8 微�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**NDIS \_ WWAN \_ PIN \_ 信息**](/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_pin_info)

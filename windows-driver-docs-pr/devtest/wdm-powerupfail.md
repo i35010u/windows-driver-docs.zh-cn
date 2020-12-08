@@ -1,7 +1,6 @@
 ---
 title: 'PowerUpFail 规则 (wdm) '
 description: PowerUpFail 规则指定在设备开启时，FDO 或 FIDO 驱动程序不应使 IRP \_ MN \_ 设置 \_ 电源请求失败。
-ms.assetid: 48998C82-91F6-42F9-AF7A-4E5ECAB823E1
 ms.date: 05/21/2018
 keywords:
 - 'PowerUpFail 规则 (wdm) '
@@ -12,12 +11,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: cc3dd2045dfe3f5204e8fab8595e1e8483104d3f
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: a7ccb213308482412fcc5edbafb049aa5e27a393
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106136"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96810963"
 ---
 # <a name="powerupfail-rule-wdm"></a>PowerUpFail 规则 (wdm) 
 

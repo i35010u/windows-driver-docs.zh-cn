@@ -1,7 +1,6 @@
 ---
 title: .nvload（NatVis 卸载）
 description: Nvunload 命令从调试器环境中卸载 NatVis 文件。
-ms.assetid: E63BE2B5-291B-4F78-98FF-C1D7663A184E
 keywords:
 - nvunload (NatVis 卸载) Windows 调试
 ms.date: 05/23/2017
@@ -12,12 +11,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: cdefa291c1441d68753461aaf71d42888e4e1636
-ms.sourcegitcommit: 878a1cb0149dc18ccbd31774e12bad76084dfa24
+ms.openlocfilehash: 85169b28918765a144568803c82638a3a3cd225d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94937793"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96811287"
 ---
 # <a name="nvunload-natvis-unload"></a>.nvload（NatVis 卸载）
 

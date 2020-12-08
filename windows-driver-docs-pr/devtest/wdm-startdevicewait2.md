@@ -1,7 +1,6 @@
 ---
 title: 'StartDeviceWait2 规则 (wdm) '
 description: StartDeviceWait2 规则指定驱动程序不应在启动设备 IRP 的上下文中调用 KeWaitForSingleObject。
-ms.assetid: 91FA37EE-120D-4D70-A818-EC5F70288DB7
 ms.date: 05/21/2018
 keywords:
 - 'StartDeviceWait2 规则 (wdm) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: f3bb376afff920d5a1c84e82224f52e08e6f764e
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 485f1b8e2fea825678f5af05a39e7a43e09c2cb2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103934"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96810775"
 ---
 # <a name="startdevicewait2-rule-wdm"></a>StartDeviceWait2 规则 (wdm) 
 
 
-**StartDeviceWait2**规则指定驱动程序不应在启动设备 IRP 的上下文中调用[**KeWaitForSingleObject**](/windows-hardware/drivers/ddi/wdm/nf-wdm-kewaitforsingleobject) 。
+**StartDeviceWait2** 规则指定驱动程序不应在启动设备 IRP 的上下文中调用 [**KeWaitForSingleObject**](/windows-hardware/drivers/ddi/wdm/nf-wdm-kewaitforsingleobject) 。
 
 **驱动程序模型： WDM**
 

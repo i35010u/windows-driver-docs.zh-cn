@@ -1,17 +1,16 @@
 ---
 title: XML 参考
 description: XML 参考
-ms.assetid: 54ACDF08-D3EA-4AAD-AE5D-4E2FC4D40E87
 keywords:
 - 设备元数据 XML 引用
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5c75b071e97112c956ab9737dc9dfc137e4fa159
-ms.sourcegitcommit: e2de6b9ffb5c7356deb864f9da879533f49b25bf
+ms.openlocfilehash: f0a661caebc24534dbd2c7e00eec8b7816fc37af
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/03/2020
-ms.locfileid: "91702654"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96810627"
 ---
 # <a name="xml-reference"></a>XML 参考
 

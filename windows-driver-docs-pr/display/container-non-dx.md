@@ -1,15 +1,14 @@
 ---
 title: 对非 DX API 的容器支持
 description: 非 DX Api 必须更直接与驱动程序和内核交互，因此它们的复杂性更高
-ms.assetid: 6c4a6974-c67b-4710-80c6-48a5b378e088
 ms.date: 05/07/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 39fb5755097b2d38fc5d8451db89895a55793687
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: d4269ccd67d34bcd5982cf804a896fd8aa347738
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90717380"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96810159"
 ---
 # <a name="container-support-for-non-dx-apis"></a>对非 DX API 的容器支持
 
@@ -42,7 +41,7 @@ Windows 10 增加了明显影响非 DX Api 的功能，以及它们依赖的更�
 如果第二个名称为空，则文件名与在 (排除子目录) 的驱动程序存储区中的名称相同。
 这使得驱动程序可以在主机驱动程序存储和来宾中具有不同的名称。
 
-**CopyToVmWhenNewer**和**CopyToVmWhenNewerWow64**图形适配器注册表子项下列出的文件仅在满足 "较新的" 条件时覆盖目标文件。
+**CopyToVmWhenNewer** 和 **CopyToVmWhenNewerWow64** 图形适配器注册表子项下列出的文件仅在满足 "较新的" 条件时覆盖目标文件。
 
 在 Windows 10 版本2004中，"更新" 条件比较了两部分信息：
 

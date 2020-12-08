@@ -1,7 +1,6 @@
 ---
 title: 'PnpRemove 规则 (wdm) '
 description: PnpRemove 规则指定驱动程序无法完成 IRP \_ MN \_ 意外 \_ 删除、irp \_ MN \_ 取消 \_ 删除 \_ 设备、irp \_ MN \_ cancel \_ 停止 \_ 设备或 irp \_ MN \_ 删除 \_ 设备请求失败。
-ms.assetid: 2713F943-36A2-41B9-B9C0-86FC06B22443
 ms.date: 05/21/2018
 keywords:
 - 'PnpRemove 规则 (wdm) '
@@ -12,20 +11,20 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: bbc08655c9dc1c531f7cb7c599b7e6a8c7a53b2f
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: e9511fb947a0196bce1965b51d06aaf59b1402ce
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102816"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96810989"
 ---
 # <a name="pnpremove-rule-wdm"></a>PnpRemove 规则 (wdm) 
 
 
-**PnpRemove**规则指定驱动程序无法完成 IRP \_ MN \_ 意外 \_ 删除、irp \_ MN \_ 取消 \_ 删除 \_ 设备、irp \_ MN \_ cancel \_ 停止 \_ 设备或 irp \_ MN \_ 删除 \_ 设备请求失败。
+**PnpRemove** 规则指定驱动程序无法完成 IRP \_ MN \_ 意外 \_ 删除、irp \_ MN \_ 取消 \_ 删除 \_ 设备、irp \_ MN \_ cancel \_ 停止 \_ 设备或 irp \_ MN \_ 删除 \_ 设备请求失败。
 
 > [!NOTE]
-> 在 Windows 8.1 中，可以使用[驱动程序验证程序](./driver-verifier.md)测试**PnpRemove**规则。 此规则当前不可用于 [静态驱动程序验证程序](./static-driver-verifier.md)。
+> 在 Windows 8.1 中，可以使用 [驱动程序验证程序](./driver-verifier.md)测试 **PnpRemove** 规则。 此规则当前不可用于 [静态驱动程序验证程序](./static-driver-verifier.md)。
 
  
 

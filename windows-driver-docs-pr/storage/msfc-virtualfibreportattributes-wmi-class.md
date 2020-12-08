@@ -1,22 +1,21 @@
 ---
 title: MSFC \_ VIRTUALFIBREPORTATTRIBUTES WMI 类
 description: MSFC \_ VIRTUALFIBREPORTATTRIBUTES WMI 类
-ms.assetid: D605D63F-0EBF-44C0-8ADE-729F2DE48487
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: dce0c1d542fdc1de3449a6207e4aef9a19dea105
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 1a41960b5bfbba9a44c1a4fa184280fbb2164965
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89192655"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96811441"
 ---
 # <a name="msfc_virtualfibreportattributes-wmi-class"></a>MSFC \_ VIRTUALFIBREPORTATTRIBUTES WMI 类
 
 
 WMI 客户端使用 MSFC \_ VirtualFibrePortAttributes 类检索虚拟端口的属性。
 
-MSFC \_ VirtualFibrePortAttributes 类在 *Npivwmi*中定义如下：
+MSFC \_ VirtualFibrePortAttributes 类在 *Npivwmi* 中定义如下：
 
 ```mof
 class MSFC_VirtualFibrePortAttributes  

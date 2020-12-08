@@ -1,15 +1,14 @@
 ---
 title: 跟踪示例在哪里
 description: 跟踪示例在哪里
-ms.assetid: 68882242-4956-4492-b3ac-e93b67a993a2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c2d160cb368c32a5d72c44c67220640164f5c357
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 1056c8be155c455ccf4767c43fab9fc50bdfcbd9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89383215"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96810677"
 ---
 # <a name="where-are-the-tracing-samples"></a>跟踪示例位于何处？
 

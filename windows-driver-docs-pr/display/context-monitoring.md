@@ -1,15 +1,14 @@
 ---
 title: 上下文监视
 description: 监视的隔离对象是一种高级的防护防护形式，它允许 CPU 核心或图形处理单元 (GPU) 引擎在特定的防护对象上发出信号或等待，允许在 GPU 引擎之间或跨 CPU 核心和 GPU 引擎进行非常灵活的同步。
-ms.assetid: B593FC24-3F8B-4C8A-BBF9-8EF88B748536
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e4364fef87b546dfdf9504c12da94d1eeb219dfd
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: fbdfb3ad3360dd9e95760f4a4afb73808e635c51
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104702"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96810147"
 ---
 # <a name="context-monitoring"></a>上下文监视
 
@@ -19,7 +18,7 @@ ms.locfileid: "90104702"
 ## <a name="span-id_monitored_fence_creationspanspan-id_monitored_fence_creationspanspan-id_monitored_fence_creationspan-monitored-fence-creation"></a><span id="_Monitored_fence_creation"></span><span id="_monitored_fence_creation"></span><span id="_MONITORED_FENCE_CREATION"></span> 监视的防护创建
 
 
-受监视的隔离对象是通过使用新的同步对象类型**D3DDDI \_ 监视的 \_ 防护**来调用[*CreateSynchronizationObjectCb*](/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_createsynchronizationobjectcb)回调创建的。
+受监视的隔离对象是通过使用新的同步对象类型 **D3DDDI \_ 监视的 \_ 防护** 来调用 [*CreateSynchronizationObjectCb*](/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_createsynchronizationobjectcb)回调创建的。
 
 将创建一个监视的防护对象以及以下属性：
 
@@ -35,8 +34,8 @@ ms.locfileid: "90104702"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Item</th>
-<th align="left">说明</th>
+<th align="left">项</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>

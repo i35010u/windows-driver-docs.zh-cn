@@ -1,7 +1,6 @@
 ---
 title: 'RemoveLock 规则 (wdm) '
 description: RemoveLock 规则指定正确使用对 IoAcquireRemoveLock 和 IoReleaseRemoveLock 的调用。 此外，在 IRP \_ mj \_ PNP 或 IRP \_ mj POWER 例程的末尾 \_ ，驱动程序不应包含 RemoveLock。
-ms.assetid: 8FEBE04B-7823-46FC-B493-D98778114748
 ms.date: 05/21/2018
 keywords:
 - 'RemoveLock 规则 (wdm) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: daf9f09f78326681d316b05d49c568a7855544a7
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 1808b08bc48cceb13d46c7c3c4f68b1780c47449
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106128"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96810951"
 ---
 # <a name="removelock-rule-wdm"></a>RemoveLock 规则 (wdm) 
 
 
-**RemoveLock**规则指定正确使用对[**IoAcquireRemoveLock**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioacquireremovelock)和[**IoReleaseRemoveLock**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioreleaseremovelock)的调用。 此外，在 IRP \_ mj \_ PNP 或 IRP \_ mj POWER 例程的末尾 \_ ，驱动程序不应包含 **RemoveLock**。
+**RemoveLock** 规则指定正确使用对 [**IoAcquireRemoveLock**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioacquireremovelock)和 [**IoReleaseRemoveLock**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioreleaseremovelock)的调用。 此外，在 IRP \_ mj \_ PNP 或 IRP \_ mj POWER 例程的末尾 \_ ，驱动程序不应包含 **RemoveLock**。
 
 **驱动程序模型： WDM**
 

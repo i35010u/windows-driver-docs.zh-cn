@@ -1,7 +1,6 @@
 ---
 title: 'KsIrqlPinCallbacks 规则 ( # A1'
 description: KsIrqlPinCallbacks 规则指定内核流 (KS) 微型端口驱动程序从一个 KS Pin 回调函数返回，该函数与调用时使用的 IRQL 相同。
-ms.assetid: B2C1413A-9B94-499A-A15C-A943065F7CA1
 ms.date: 05/21/2018
 keywords:
 - 'KsIrqlPinCallbacks 规则 ( # A1'
@@ -12,12 +11,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: e92f442461e3653dc0f7708ea4d10e6c9dcbc826
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 880d3486ef366ab7ab6edbc2b3d1eacf8bf93902
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105638"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96811161"
 ---
 # <a name="ksirqlpincallbacks-rule-"></a>KsIrqlPinCallbacks 规则 ( # A1
 
@@ -32,7 +31,7 @@ KsIrqlPinCallbacks 规则指定内核流 (KS) 微型端口驱动程序从一个 
 
 使用命令：
 
-**！ ruleinfo 0x81008** *RuleState*子*情况。*
+**！ ruleinfo 0x81008** *RuleState* 子 *情况。*
 
 在规则状态数据中，输入回调时， *OldIrql* 是 IRQL。 退出回调函数时， *NewIrql* 是 IRQL。
 

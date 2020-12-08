@@ -1,15 +1,14 @@
 ---
 title: 其他建议的配置集
 description: 其他建议的配置集
-ms.assetid: f79e4edc-74c7-4b28-aefe-5ba933ff06c3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d8a0b40abc31f917b4b27145ce81363e3aa5aa34
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 2947ca89117858c9d1320da507f8f90eba4d56ef
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89063179"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96810533"
 ---
 # <a name="additional-encouraged-configuration-set"></a>其他建议的配置集
 

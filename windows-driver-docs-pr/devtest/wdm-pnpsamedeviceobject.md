@@ -1,7 +1,6 @@
 ---
 title: 'PnpSameDeviceObject 规则 (wdm) '
 description: PnpSameDeviceObject 规则指定驱动程序使用指向有效目标设备对象的指针调用 IoAttachDeviceToDeviceStack。
-ms.assetid: 9430962c-7430-445b-b598-57ce7f34cd45
 ms.date: 05/21/2018
 keywords:
 - 'PnpSameDeviceObject 规则 (wdm) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: cb4f0b87d7ceecaa0350d152a4cea301784b28e2
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 9b59d3168c78d758a19da3f9d760396824ae10fd
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105096"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96810991"
 ---
 # <a name="pnpsamedeviceobject-rule-wdm"></a>PnpSameDeviceObject 规则 (wdm) 
 
 
-**PnpSameDeviceObject**规则指定驱动程序使用指向有效目标设备对象的指针调用[**IoAttachDeviceToDeviceStack**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioattachdevicetodevicestack) 。
+**PnpSameDeviceObject** 规则指定驱动程序使用指向有效目标设备对象的指针调用 [**IoAttachDeviceToDeviceStack**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioattachdevicetodevicestack) 。
 
 如果指向的设备对象不是标准的，则驱动程序与此规则冲突。 此规则可确保驱动程序正确地附加到设备堆栈。
 

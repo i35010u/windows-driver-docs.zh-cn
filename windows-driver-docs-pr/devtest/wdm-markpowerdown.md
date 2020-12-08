@@ -1,7 +1,6 @@
 ---
 title: 'MarkPowerDown 规则 (wdm) '
 description: MarkPowerDown 规则指定 IRP \_ MJ \_ 使用 irp \_ MN \_ \_ 为 SystemPowerState IRP 设置 power for IRP 从 s0 到 \ S1 .。。S5 \ 挂起。
-ms.assetid: 5C35F607-1550-4B48-8325-8A01D522786F
 ms.date: 05/21/2018
 keywords:
 - 'MarkPowerDown 规则 (wdm) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 62af0289f9325c307b580a5d625c47af962047d6
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 97cf1b154937868c5fdd3c2dbeda452c347e14b6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103072"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96811071"
 ---
 # <a name="markpowerdown-rule-wdm"></a>MarkPowerDown 规则 (wdm) 
 
 
-**MarkPowerDown**规则指定 irp \_ MJ \_ 使用 irp \_ MN \_ \_ 为 SystemPowerState IRP 设置 power for **SystemPowerState** IRP 从 s0 到 \[ S1 .。。S5 \] 挂起。
+**MarkPowerDown** 规则指定 irp \_ MJ \_ 使用 irp \_ MN \_ \_ 为 SystemPowerState IRP 设置 power for **SystemPowerState** IRP 从 s0 到 \[ S1 .。。S5 \] 挂起。
 
 此规则仅适用于 FDO 和 FIDO 驱动程序。
 

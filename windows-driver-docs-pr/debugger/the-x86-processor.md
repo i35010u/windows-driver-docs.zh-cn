@@ -1,16 +1,15 @@
 ---
 title: x86 处理器
-description: 本部分介绍 x86 处理器
-ms.assetid: 9827d7d3-4b7e-43dd-98c0-0b437bf4bd67
-keywords: x86 处理器，i386 处理器"
+description: 本部分提供有关 x86 处理器的信息
+keywords: x86 处理器，i386 处理器 "
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a07663b1168dd88b9e858719cb7024c57987610d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f1a7f464541181adfbaea4dc1114f338ee56b004
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63365975"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96811195"
 ---
 # <a name="the-x86-processor"></a>x86 处理器
 
@@ -18,11 +17,11 @@ ms.locfileid: "63365975"
 ## <span id="ddk_the_x86_processor_dbg"></span><span id="DDK_THE_X86_PROCESSOR_DBG"></span>
 
 
-本部分包括：
+本节包括：
 
 [x86 体系结构](x86-architecture.md)
 
-[x86 说明](x86-instructions.md)
+[x86 指令](x86-instructions.md)
 
 [带批注的 x86 反汇编](annotated-x86-disassembly.md)
 

@@ -1,22 +1,21 @@
 ---
 title: WDF_PTR_ADD_OFFSET 宏
 description: WDF_PTR_ADD_OFFSET 宏将偏移值添加到地址，并返回生成的地址。
-ms.assetid: 21402be4-ef71-4828-b588-d178d66472e5
 keywords:
 - WDF_PTR_ADD_OFFSET 宏
 ms.date: 08/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c2a8e0ebf83afde8456a51312cd71dca8b83e2df
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: e90ce35958b164743db71b6e7752a3ccfc61af14
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89187749"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96809783"
 ---
 # <a name="wdf_ptr_add_offset-macro"></a>WDF_PTR_ADD_OFFSET 宏
 
 
-**WDF_PTR_ADD_OFFSET**宏将偏移值添加到地址，并返回生成的地址。
+**WDF_PTR_ADD_OFFSET** 宏将偏移值添加到地址，并返回生成的地址。
 
 <a name="syntax"></a>语法
 ------

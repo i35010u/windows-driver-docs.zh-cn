@@ -1,7 +1,6 @@
 ---
 title: 'MarkQueryRelations 规则 (wdm) '
 description: MarkQueryRelations 规则指定驱动程序应挂起 IRP \_ MN \_ 查询 \_ 设备 \_ 关系 IRP。
-ms.assetid: A40EA428-D715-46E6-B11E-2F316647184E
 ms.date: 05/21/2018
 keywords:
 - 'MarkQueryRelations 规则 (wdm) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: ba2e13fc4ba4258f9b3d37ffd079a88a9641f12f
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 5f40eb6a8965506cf9a89aa34bce94f19e8259ea
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105372"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96811057"
 ---
 # <a name="markqueryrelations-rule-wdm"></a>MarkQueryRelations 规则 (wdm) 
 
 
-**MarkQueryRelations**规则指定驱动程序应挂起 IRP \_ MN \_ 查询 \_ 设备 \_ 关系 IRP。
+**MarkQueryRelations** 规则指定驱动程序应挂起 IRP \_ MN \_ 查询 \_ 设备 \_ 关系 IRP。
 
 此规则仅适用于处理 **RemovalRelations** 请求时总线驱动程序的 FDO 和 FIDO 设备对象。
 

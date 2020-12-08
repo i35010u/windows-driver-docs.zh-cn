@@ -1,7 +1,6 @@
 ---
 title: 'TargetRelationNeedsRef 规则 (wdm) '
 description: TargetRelationNeedsRef 规则指定在处理 TargetDeviceRelation 查询时，驱动程序的 DispatchPnP 例程调用以下函数之一来引用子设备的 PDO ObReferenceObjectObReferenceObjectByHandleObReferenceObjectByPointer。
-ms.assetid: a341ff7a-1b36-4dfc-9e73-8268ed5b9a78
 ms.date: 05/21/2018
 keywords:
 - 'TargetRelationNeedsRef 规则 (wdm) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 0d687603b23940643362480f132933f30d07a667
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 771a834be64da61b1a0763a8dc5a28997b30f082
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107460"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96810753"
 ---
 # <a name="targetrelationneedsref-rule-wdm"></a>TargetRelationNeedsRef 规则 (wdm) 
 
 
-**TargetRelationNeedsRef**规则指定在处理*TargetDeviceRelation*查询时，驱动程序的[**DispatchPnP**](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)例程调用以下函数之一来引用子设备的 PDO：
+**TargetRelationNeedsRef** 规则指定在处理 *TargetDeviceRelation* 查询时，驱动程序的 [**DispatchPnP**](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)例程调用以下函数之一来引用子设备的 PDO：
 
 -   [**ObReferenceObject**](/windows-hardware/drivers/ddi/wdm/nf-wdm-obfreferenceobject)
 
@@ -30,9 +29,9 @@ ms.locfileid: "90107460"
 
 -   [**ObReferenceObjectByPointer**](/windows-hardware/drivers/ddi/wdm/nf-wdm-obreferenceobjectbypointer)
 
-仅当驱动程序通过将 `Irp->IoStatus.Information` 指针设置为新的非**空** 值来完成 IRP 时，此规则才适用。 当驱动程序将 IRP 传递到较低的驱动程序时，它不会应用。
+仅当驱动程序通过将 `Irp->IoStatus.Information` 指针设置为新的非 **空** 值来完成 IRP 时，此规则才适用。 当驱动程序将 IRP 传递到较低的驱动程序时，它不会应用。
 
-此规则不指定哪些值是的有效值 `Irp->IoStatus.Information` 。 仅当驱动程序更改值并且新值不为 **NULL**时，才应用此规则。 有效的值是指向设备 \_ 关系结构的指针，该结构包含请求的关系信息。
+此规则不指定哪些值是的有效值 `Irp->IoStatus.Information` 。 仅当驱动程序更改值并且新值不为 **NULL** 时，才应用此规则。 有效的值是指向设备 \_ 关系结构的指针，该结构包含请求的关系信息。
 
 此规则仅适用于总线驱动程序。
 

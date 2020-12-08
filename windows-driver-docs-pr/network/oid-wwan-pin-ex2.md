@@ -1,18 +1,17 @@
 ---
 title: OID_WWAN_PIN_EX2
 description: OID_WWAN_PIN_EX2 访问 UICC 线性固定或循环文件，其结构类型为 WwanUiccFileStructureCyclic 或 WwanUiccFileStructureLinear。
-ms.assetid: F5D0A1B8-4D7E-469A-B738-2965D254868E
 ms.date: 04/10/2019
 keywords:
 - 从 Windows Vista 开始 OID_WWAN_PIN_EX2 网络驱动程序
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 7264cb8a6c78e6f430a6def162ba75e1158223c3
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: ff989a4e34041253825177e666e1bbdff3240b08
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89207891"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96809943"
 ---
 # <a name="oid_wwan_pin_ex2"></a>OID_WWAN_PIN_EX2
 
@@ -34,7 +33,7 @@ OID_WWAN_PIN_EX2 设置或返回与 (Pin) 的个人识别码相关的扩展信�
 
 **版本**： Windows 10，版本 1903 **头**： Ntddndis (包括 Ndis .h) 
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [MB UICC 应用程序和文件系统访问权限](mb-uicc-application-and-file-system-access.md)
 

@@ -1,19 +1,18 @@
 ---
 title: CCD DDI
 description: CCD DDI
-ms.assetid: dde0e0b0-d6d0-4ca7-ae7e-427a650c080f
 keywords:
 - '微型端口驱动程序 WDK 显示、连接和配置显示 (CCD ") '
 - 连接和配置显示 (CCD) WDK 显示
 - CCD (连接和配置显示) WDK 显示
 ms.date: 10/11/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 55c06b51eceb7643a4db0f9aa1f18df7d78d84b8
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: b406a7b12669350d312bcf75e02f70f47d18c382
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89067338"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96810359"
 ---
 # <a name="ccd-ddis"></a>CCD DDI
 

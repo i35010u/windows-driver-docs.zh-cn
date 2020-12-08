@@ -1,7 +1,6 @@
 ---
 title: 'SafeStrings 规则 (wdm) '
 description: SafeStrings 规则指定驱动程序只调用那些保护系统免受无意或恶意入侵的字符串操作函数。 驱动程序的这些安全字符串函数是在 Ntstrsafe.h 而中定义的。
-ms.assetid: 77e949cf-b184-4235-80c4-4718d4808d11
 ms.date: 05/21/2018
 keywords:
 - 'SafeStrings 规则 (wdm) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 1f8357f5ca0c4ed8a7a17ec6e024ea95c7d56b1a
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: fd8cffff420293f84c3c00653d47460911f92995
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102452"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96810813"
 ---
 # <a name="safestrings-rule-wdm"></a>SafeStrings 规则 (wdm) 
 
 
-**SafeStrings**规则指定驱动程序只调用那些保护系统免受无意或恶意入侵的字符串操作函数。 驱动程序的这些安全字符串函数是在 Ntstrsafe.h 而中定义的。
+**SafeStrings** 规则指定驱动程序只调用那些保护系统免受无意或恶意入侵的字符串操作函数。 驱动程序的这些安全字符串函数是在 Ntstrsafe.h 而中定义的。
 
 若要遵守此规则，请使用被视为对于内核模式驱动程序安全的字符串函数。 安全字符串函数及其替换的 unsafe 函数在 [**使用安全字符串函数**](../kernel/using-safe-string-functions.md)中列出。 有两组安全字符串函数。 一组安全字符串函数用于在 Ntstrsafe.h 而) 中定义 (内核模式代码。 另一组安全字符串函数在用户模式应用程序中使用，并在 Strsafe 中定义。
 

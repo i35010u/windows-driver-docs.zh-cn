@@ -1,7 +1,6 @@
 ---
 title: 'KsFilterMutex 规则 ( # A1'
 description: KsFilterMutex 规则指定一个 KS 微型端口驱动程序获取并按正确的顺序释放筛选器互斥体。
-ms.assetid: 09927C42-2F05-49F6-AFE1-E45049ED2805
 ms.date: 05/21/2018
 keywords:
 - 'KsFilterMutex 规则 ( # A1'
@@ -12,12 +11,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: f06520a776cff77fe0e4ba745d2250228b270199
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 3f46bc8448870ab1eae43a6bbdd9fed2e48a3753
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105494"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96811177"
 ---
 # <a name="ksfiltermutex-rule-"></a>KsFilterMutex 规则 ( # A1
 
@@ -56,7 +55,7 @@ KsFilterMutex 规则指定一个 KS 微型端口驱动程序获取并按正确�
 
  
 
-**验证程序/domain ks** \[*选项* \]**/driver** * &lt; yourdriver &gt; *另请参阅
+**验证程序/domain ks** \[*选项* \]**/driver** *&lt; yourdriver &gt;* 另请参阅
 --------
 
 [AVStream 中的筛选器控件互斥](../stream/filter-control-mutex-in-avstream.md)

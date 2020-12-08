@@ -1,7 +1,6 @@
 ---
 title: 'IrqlObPassive 规则 (wdm) '
 description: IrqlObPassive 规则指定仅当驱动程序在 IRQL PASSIVE_LEVEL 执行时才调用 ObReferenceObjectByHandle。
-ms.assetid: 724125f0-a50f-4ebb-903f-86ceff672b5d
 ms.date: 05/21/2018
 keywords:
 - 'IrqlObPassive 规则 (wdm) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: eb31249af83d3a87797bc464dba714cb0e62cdf7
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: cbc6bdc8c7ebed2d1d79cbdc97f16cfbbf913d8a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107142"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96811107"
 ---
 # <a name="irqlobpassive-rule-wdm"></a>IrqlObPassive 规则 (wdm) 
 
 
-**IrqlObPassive**规则指定仅当驱动程序在 IRQL = 被动级别执行时才调用[**ObReferenceObjectByHandle**](/windows-hardware/drivers/ddi/wdm/nf-wdm-obreferenceobjectbyhandle) \_ 。
+**IrqlObPassive** 规则指定仅当驱动程序在 IRQL = 被动级别执行时才调用 [**ObReferenceObjectByHandle**](/windows-hardware/drivers/ddi/wdm/nf-wdm-obreferenceobjectbyhandle) \_ 。
 
 **驱动程序模型： WDM**
 

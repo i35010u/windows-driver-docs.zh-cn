@@ -1,7 +1,6 @@
 ---
 title: 'StorPortPassiveFromHwInit 规则 (storport) '
 description: 如果可以直接从 HW 适配器控件入口点调用硬件初始化入口点，则不应在 Storport 驱动程序的 HW 初始化入口点中调用 StorPortEnablePassiveInitialization。
-ms.assetid: F6AD52D5-4964-4406-AF5F-2820273D337C
 ms.date: 05/21/2018
 keywords:
 - 'StorPortPassiveFromHwInit 规则 (storport) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: cdba747ec5904aaa3c86e8944607d27544af0af6
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 2f232eeb978835a008f38e9e31c4e4a9be26ee13
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105236"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96809651"
 ---
 # <a name="storportpassivefromhwinit-rule-storport"></a>StorPortPassiveFromHwInit 规则 (storport) 
 
 
-如果可以直接从 HW 适配器控件入口点调用硬件初始化入口点，则不应在 Storport 驱动程序的 HW 初始化入口点中调用**StorPortEnablePassiveInitialization** 。
+如果可以直接从 HW 适配器控件入口点调用硬件初始化入口点，则不应在 Storport 驱动程序的 HW 初始化入口点中调用 **StorPortEnablePassiveInitialization** 。
 
 **驱动程序模型： Storport**
 

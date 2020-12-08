@@ -1,18 +1,17 @@
 ---
 title: Bob 反交错算法
 description: Bob 反交错算法
-ms.assetid: ef3220bd-841d-4187-bc86-11b999eae2bd
 keywords:
 - bob 取消隔行扫描 WDK DirectX VA，算法
 - 取消隔行扫描 WDK DirectX VA，bob，算法
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 635f62fdc042afebc9a53503eec330881277f6df
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 3bff89cc93cb2eefe9dda53f9506c7853ea965f9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89065704"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96810447"
 ---
 # <a name="bob-deinterlacing-algorithm"></a>Bob 反交错算法
 

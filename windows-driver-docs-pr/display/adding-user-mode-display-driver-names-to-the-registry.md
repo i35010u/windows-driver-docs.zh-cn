@@ -1,19 +1,18 @@
 ---
 title: 将用户模式显示驱动程序名称添加到注册表
 description: 将用户模式显示驱动程序名称添加到注册表
-ms.assetid: 52f98ce5-4458-4058-9134-f57e4b56377f
 keywords:
 - INF 文件 WDK 显示，用户模式驱动程序名称
 - 用户模式显示驱动程序 WDK Windows Vista，添加到注册表的名称
 - 注册表 WDK 显示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 92e2e87a252646deb10483585abb9c02b2cfb5e0
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 98d98230d229e47609d94570093540638cd3a308
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89063182"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96810539"
 ---
 # <a name="adding-user-mode-display-driver-names-to-the-registry"></a>将用户模式显示驱动程序名称添加到注册表
 

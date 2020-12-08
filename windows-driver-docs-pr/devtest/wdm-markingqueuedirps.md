@@ -1,7 +1,6 @@
 ---
 title: 'MarkingQueuedIrps 规则 (wdm) '
 description: MarkingQueuedIrps 规则指定，驱动程序为 IRP 调用也，该 IRP 需要在持有自旋锁的情况下进行进一步处理。 仅当驱动程序将 IRP 添加到驱动程序管理的队列时，此规则才适用。
-ms.assetid: 3a70ba52-c62f-4574-9a2e-4ba7aed82529
 ms.date: 05/21/2018
 keywords:
 - 'MarkingQueuedIrps 规则 (wdm) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 14df28d0a9ffce120d9bf98fdd5b8b481b6d7130
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 01c28315a6bfc00a48bf486d2f6941166b98985f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103476"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96811069"
 ---
 # <a name="markingqueuedirps-rule-wdm"></a>MarkingQueuedIrps 规则 (wdm) 
 
 
-**MarkingQueuedIrps**规则指定，驱动程序为 IRP 调用[**也**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iomarkirppending)，该 IRP 需要在持有自旋锁的情况下进行进一步处理。 仅当驱动程序将 IRP 添加到驱动程序管理的队列时，此规则才适用。
+**MarkingQueuedIrps** 规则指定，驱动程序为 IRP 调用 [**也**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iomarkirppending)，该 IRP 需要在持有自旋锁的情况下进行进一步处理。 仅当驱动程序将 IRP 添加到驱动程序管理的队列时，此规则才适用。
 
 具体而言，只有在发生以下 *所有* 事件时，驱动程序才会违反此规则。
 

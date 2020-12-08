@@ -1,15 +1,14 @@
 ---
 title: 为视频信号配置保护
 description: 为视频信号配置保护
-ms.assetid: 557fc95b-1cf5-4b6d-b256-fe2db29ec0fa
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 111238e426219a936a9aeb35ae86f5959bf1ff91
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 58db92205476985aa2027e129269d20e32199246
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89064898"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96810179"
 ---
 # <a name="configuring-protection-for-the-video-signal"></a>为视频信号配置保护
 

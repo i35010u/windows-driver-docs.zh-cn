@@ -1,7 +1,6 @@
 ---
 title: 在不同 AV/C 单元中的两个单元插头之间的连接
 description: 在不同 AV/C 单元中的两个单元插头之间的连接
-ms.assetid: b9c45304-33a2-4d02-9c38-1d124a33f0f2
 keywords:
 - 连接 WDK AV/C
 - AV/C WDK，连接方案
@@ -9,19 +8,19 @@ keywords:
 - AVCPRECONNECTINFO
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 89f77d14a178a80afbd15baacdf26606af00938d
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 9adf0450ace2c14d082c7dbac114ff2093d5c13d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89190611"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96811419"
 ---
 # <a name="connections-between-two-unit-plugs-in-different-avc-units"></a>在不同 AV/C 单元中的两个单元插头之间的连接
 
 
 方案7和8表示一个单元中的子单位与不同单元中的子单位之间的连接，其中目标不支持一个 AV/C 单元内的单元连接。 这些类型的连接需要 **信号源** ，并 **输入** CCM 命令。
 
-方案7和8描述了在其[**AVCPRECONNECTINFO**](/windows-hardware/drivers/ddi/avc/ns-avc-_avcpreconnectinfo)结构的**标志**成员中设置了**KSPIN \_ 标志 \_ AVC \_ PCRONLY**标志的子单位源或目标插头，该标志由*Avc.sys*转换为子地址的0xff。
+方案7和8描述了在其 [**AVCPRECONNECTINFO**](/windows-hardware/drivers/ddi/avc/ns-avc-_avcpreconnectinfo)结构的 **标志** 成员中设置了 **KSPIN \_ 标志 \_ AVC \_ PCRONLY** 标志的子单位源或目标插头，该标志由 *Avc.sys* 转换为子地址的0xff。
 
 ### <a name="scenario-7"></a>**方案7**
 

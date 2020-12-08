@@ -1,6 +1,5 @@
 ---
 title: 'ZwRegistryCreate 规则 (wdm) '
-ms.assetid: 7855d9f0-c8f2-42a3-941b-623038c03840
 ms.date: 05/21/2018
 description: '了解详细信息： ZwRegistryCreate 规则 (wdm) '
 keywords:
@@ -12,12 +11,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 39d98a209f509f8b85c3309df026ec52ef4891ba
-ms.sourcegitcommit: f47c072e88dce59daba1231027b60eb56bd2cde9
+ms.openlocfilehash: 87e9a4a6e43a5ba2e5bbc275b72c060edc77e715
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92689375"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96810737"
 ---
 # <a name="zwregistrycreate-rule-wdm"></a>ZwRegistryCreate 规则 (wdm) 
 

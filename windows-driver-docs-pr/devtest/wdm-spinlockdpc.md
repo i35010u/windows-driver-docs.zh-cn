@@ -1,7 +1,6 @@
 ---
 title: 'SpinLockDpc 规则 (wdm) '
 description: SpinLockDpc 规则指定对 KeAcquireSpinLock 或 KeAcquireSpinLockRaiseToDpc 和 KeReleaseSpinLock 的调用必须在严格替换中进行。
-ms.assetid: 24fa6db6-83b5-4586-8965-5dabdbc897d1
 ms.date: 05/21/2018
 keywords:
 - 'SpinLockDpc 规则 (wdm) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: c4726c65840404baeb805a4e7b4daa088c6fe6f8
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: e654617d810a47b77f8dcfc4a5a80102d6aa7e71
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102436"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96810801"
 ---
 # <a name="spinlockdpc-rule-wdm"></a>SpinLockDpc 规则 (wdm) 
 
 
-**SpinLockDpc**规则指定对[**KeAcquireSpinLock**](/windows-hardware/drivers/ddi/wdm/nf-wdm-keacquirespinlock)或[**KeAcquireSpinLockRaiseToDpc**](/previous-versions/windows/hardware/drivers/ff551928(v=vs.85))和[**KeReleaseSpinLock**](/windows-hardware/drivers/ddi/wdm/nf-wdm-kereleasespinlock)的调用必须在严格替换中进行。 也就是说，在调用 **KeAcquireSpinLock** 或 **KeAcquireSpinLockRaiseToDpc**之后，驱动程序必须先调用 **KeReleaseSpinLock** ，然后再调用 **KeAcquireSpinLock** 或 **KeAcquireSpinLockRaiseToDpc**。
+**SpinLockDpc** 规则指定对 [**KeAcquireSpinLock**](/windows-hardware/drivers/ddi/wdm/nf-wdm-keacquirespinlock)或 [**KeAcquireSpinLockRaiseToDpc**](/previous-versions/windows/hardware/drivers/ff551928(v=vs.85))和 [**KeReleaseSpinLock**](/windows-hardware/drivers/ddi/wdm/nf-wdm-kereleasespinlock)的调用必须在严格替换中进行。 也就是说，在调用 **KeAcquireSpinLock** 或 **KeAcquireSpinLockRaiseToDpc** 之后，驱动程序必须先调用 **KeReleaseSpinLock** ，然后再调用 **KeAcquireSpinLock** 或 **KeAcquireSpinLockRaiseToDpc**。
 
 而且，在调度或取消例程结束时，驱动程序不应保存旋转锁。
 

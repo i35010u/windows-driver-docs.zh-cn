@@ -1,18 +1,17 @@
 ---
 title: 将 Windows NT 4.0 微型端口驱动程序转换为 Windows 2000 版本
 description: 将 Windows NT 4.0 微型端口驱动程序转换为 Windows 2000 版本
-ms.assetid: a55192c6-3de4-4433-8825-3393f2bce04a
 keywords:
 - 视频微型端口驱动程序 WDK Windows 2000、多个 Windows 版本、转换 Windows NT 4.0 驱动程序
 - 转换视频微型端口驱动程序 WDK Windows 2000
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3e807b9f46c74965475449a1e652365c9ffded84
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 0a71c0012118462c2662651e5450b888e8058d96
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89065674"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96810121"
 ---
 # <a name="converting-a-windows-nt-40-miniport-driver-to-windows-2000"></a>将 Windows NT 4.0 微型端口驱动程序转换为 Windows 2000 版本
 
@@ -24,7 +23,7 @@ ms.locfileid: "89065674"
 
 -   请参阅 [ (Windows 2000) 型号的视频微型端口驱动程序中的即插即用和电源管理 ](plug-and-play-and-power-management-in-video-miniport-drivers--windows-.md) ，以获取必须实现的新函数的列表。 请确保将 [**视频 \_ HW \_ 初始化 \_ 数据**](/windows-hardware/drivers/ddi/video/ns-video-_video_hw_initialization_data) 的新成员初始化为指向这些新函数。
 
--   在[**DriverEntry**](./driverentry-of-video-miniport-driver.md)函数中更新对[**VideoPortInitialize**](/windows-hardware/drivers/ddi/video/nf-video-videoportinitialize)的调用。 第四个参数 (*HwContext*) 在 Windows 2000 和更高版本上必须为 **NULL** 。
+-   在 [**DriverEntry**](./driverentry-of-video-miniport-driver.md)函数中更新对 [**VideoPortInitialize**](/windows-hardware/drivers/ddi/video/nf-video-videoportinitialize)的调用。 第四个参数 (*HwContext*) 在 Windows 2000 和更高版本上必须为 **NULL** 。
 
 -   更新 [*HwVidFindAdapter*](/windows-hardware/drivers/ddi/video/nc-video-pvideo_hw_find_adapter) 函数。 对于可枚举总线上的设备，必须更改 *HwVidFindAdapter* ，如下所示：
 

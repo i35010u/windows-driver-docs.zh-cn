@@ -1,7 +1,6 @@
 ---
 title: 'PagedCode 规则 (wdm) '
 description: PagedCode 规则指定 \_ 仅当驱动程序以 IRQL APC 级别执行时，驱动程序才调用分页代码宏 \_ 。
-ms.assetid: de272bc2-8391-41b1-9526-3e135a586258
 ms.date: 05/21/2018
 keywords:
 - 'PagedCode 规则 (wdm) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 79292f38c1d38d0c10cf02a46ff436d3f612a7f3
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 5710779e4145f5065defcd36034f6eb61029bd23
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106274"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96811021"
 ---
 # <a name="pagedcode-rule-wdm"></a>PagedCode 规则 (wdm) 
 
 
-**PagedCode**规则指定仅当驱动程序以**IRQL &lt; = APC \_ 级别**执行时，驱动程序才调用[**分页 \_ 代码**](../kernel/mm-bad-pointer.md)宏。
+**PagedCode** 规则指定仅当驱动程序以 **IRQL &lt; = APC \_ 级别** 执行时，驱动程序才调用 [**分页 \_ 代码**](../kernel/mm-bad-pointer.md)宏。
 
 **驱动程序模型： WDM**
 

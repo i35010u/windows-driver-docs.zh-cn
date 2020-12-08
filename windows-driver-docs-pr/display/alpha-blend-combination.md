@@ -1,7 +1,6 @@
 ---
 title: Alpha 混合组合
 description: Alpha 混合组合
-ms.assetid: 567810da-ad8d-4ceb-b914-868632384d09
 keywords:
 - alpha-blend 组合 WDK DirectX VA
 - 混合图片 WDK DirectX VA
@@ -9,12 +8,12 @@ keywords:
 - 混合图片 WDK DirectX VA，关于 alpha blend 组合
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: af6c3a40ade8b8b7994d8583cf9793cc2ea35185
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: f56836a60ad903430e157ca927f6c3bda38b2fcd
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102866"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96810499"
 ---
 # <a name="alpha-blend-combination"></a>Alpha 混合组合
 
@@ -24,7 +23,7 @@ ms.locfileid: "90102866"
 
 当 [bDXVA \_ Func 变量](bdxva-func-variable.md) 等于3时，指定的操作是一个 alpha blend 组合。 Alpha blend 组合采用最后加载的 alpha blend 源信息，并将其与参考图片组合在一起，创建要显示的混合图片。
 
-[**DXVA \_ BufferDescription**](/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_bufferdescription)结构的**dwTypeIndex**成员指定的 alpha blend 组合缓冲区用于根据源图片和 alpha 混合信息生成混合图片。 如果源和目标图片的格式不是4:4:4，则每秒 (示例，例如，将 AYUV alpha 混合表面或等效项中图形的第一个、第三个、第五个、第五个和第五个) 信息应用于垂直或水平方向的 (低分辨率) 源色度信息，以产生混合结果。
+[**DXVA \_ BufferDescription**](/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_bufferdescription)结构的 **dwTypeIndex** 成员指定的 alpha blend 组合缓冲区用于根据源图片和 alpha 混合信息生成混合图片。 如果源和目标图片的格式不是4:4:4，则每秒 (示例，例如，将 AYUV alpha 混合表面或等效项中图形的第一个、第三个、第五个、第五个和第五个) 信息应用于垂直或水平方向的 (低分辨率) 源色度信息，以产生混合结果。
 
 以下结构用于实现 alpha blend 组合。
 
@@ -36,7 +35,7 @@ ms.locfileid: "90102866"
 <thead>
 <tr class="header">
 <th align="left">结构</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>

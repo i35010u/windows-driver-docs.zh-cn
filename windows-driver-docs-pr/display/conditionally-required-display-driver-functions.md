@@ -1,17 +1,16 @@
 ---
 title: 在不同条件下需要的显示驱动程序函数
 description: 在不同条件下需要的显示驱动程序函数
-ms.assetid: c2de7e48-2ce6-466f-947e-bdac1d4fe422
 keywords:
 - 图形 DDI 函数 WDK Windows 2000 显示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 07d48e6277561b8860ba4e0c551384b7fdd5691f
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 410d1b7bb3eae81fe0f436bd015c83db4971e635
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90716044"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96810193"
 ---
 # <a name="conditionally-required-display-driver-functions"></a>在不同条件下需要的显示驱动程序函数
 
@@ -29,7 +28,7 @@ ms.locfileid: "90716044"
 <thead>
 <tr class="header">
 <th align="left">函数</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -50,7 +49,7 @@ ms.locfileid: "90716044"
 
  
 
-**注意**   为任何给定的图面序列化驱动程序调用。
+**注意**   为任何给定的图面序列化驱动程序调用。
 
  
 
@@ -64,7 +63,7 @@ ms.locfileid: "90716044"
 <thead>
 <tr class="header">
 <th align="left">函数</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>

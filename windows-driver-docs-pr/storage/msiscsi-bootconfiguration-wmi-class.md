@@ -1,15 +1,14 @@
 ---
 title: MSiSCSI \_ BOOTCONFIGURATION WMI 类
 description: MSiSCSI \_ BOOTCONFIGURATION WMI 类
-ms.assetid: 5ca350ba-8689-46c2-8313-8f523354db98
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 3efb9eecbbb3599b0fa4de286d289b6072a175ad
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: d1cdeb59e1deaeed3ab4da94bbb8a8a03bf0ce30
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89188805"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96811435"
 ---
 # <a name="msiscsi_bootconfiguration-wmi-class"></a>MSiSCSI \_ BOOTCONFIGURATION WMI 类
 
@@ -19,7 +18,7 @@ ms.locfileid: "89188805"
 
 MSiSCSI \_ BOOTCONFIGURATION WMI 类描述如何配置启动设备。
 
-此类在 *配置*中定义为，如下所示。
+此类在 *配置* 中定义为，如下所示。
 
 ```cpp
 class MSiSCSI_BootConfiguration {

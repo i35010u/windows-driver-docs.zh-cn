@@ -1,15 +1,14 @@
 ---
 title: 显示设备的容器 ID 支持
 description: 介绍容器 ID 支持，显示嵌入到显示或监视设备内的设备的可视表示形式。
-ms.assetid: 3149C156-34F4-4C55-AE77-1CC40C2B35BC
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: db394cbcd34330d9cbed0a9c2f4b84ae04bc3e4f
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 26c5603a420b0be53cd9d3e2415dd8124b331939
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91732883"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96810171"
 ---
 # <a name="container-id-support-for-displays"></a>显示设备的容器 ID 支持
 
@@ -22,7 +21,7 @@ ms.locfileid: "91732883"
 
 **驱动程序实现-完整图形和显示**：必需
 
-** [WHCK](/windows-hardware/test/hlk/windows-hardware-lab-kit)要求和测试**：[监视器容器 ID 的功能测试](/windows-hardware/test/hlk/testref/2f657caa-368c-4531-8cec-8faf475125f4)
+**[WHCK](/windows-hardware/test/hlk/windows-hardware-lab-kit)要求和测试**：[监视器容器 ID 的功能测试](/windows-hardware/test/hlk/testref/2f657caa-368c-4531-8cec-8faf475125f4)
 
 
  

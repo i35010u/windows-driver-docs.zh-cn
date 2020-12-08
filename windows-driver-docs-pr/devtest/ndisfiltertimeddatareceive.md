@@ -1,7 +1,6 @@
 ---
 title: 'NdisFilterTimedDataReceive 规则 (ndis) '
 description: NdisFilterTimedDataReceive 规则验证 NDIS 筛选器驱动程序在超时前是否通过 FilterReceiveNetBufferLists 函数完成了接收请求。
-ms.assetid: B7B557F5-2D41-4F1F-9DE6-6BE23860A39E
 ms.date: 05/21/2018
 keywords:
 - 'NdisFilterTimedDataReceive 规则 (ndis) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: e2acd0fe673134970e5a5ae26af7ca2f623412cc
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 25d4ff4128a78785cbc0a79c752c44b385cbbc28
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106276"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96811141"
 ---
 # <a name="ndisfiltertimeddatareceive-rule-ndis"></a>NdisFilterTimedDataReceive 规则 (ndis) 
 
 
-**NdisFilterTimedDataReceive**规则验证 NDIS 筛选器驱动程序在超时前是否通过[*FilterReceiveNetBufferLists*](/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_receive_net_buffer_lists)函数完成了接收请求。
+**NdisFilterTimedDataReceive** 规则验证 NDIS 筛选器驱动程序在超时前是否通过 [*FilterReceiveNetBufferLists*](/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_receive_net_buffer_lists)函数完成了接收请求。
 
 您可以使用内核调试器来帮助确定问题的原因。 检查 PendingNbl 的规则 \_ 状态，该状态指向最早的挂起 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)。 使用 [**！ ndiskd**](../debugger/-ndiskd-nbl.md) 调试程序扩展。 有关使用调试器的信息，请参阅 [Windows 调试](../debugger/index.md)。
 

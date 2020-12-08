@@ -1,23 +1,22 @@
 ---
-title: MSFC\_FibrePortHBAMethods WMI 类
-description: MSFC\_FibrePortHBAMethods WMI 类
-ms.assetid: 7c9f5c94-0c50-4a7a-b05e-41e93409d1e3
+title: MSFC \_ FIBREPORTHBAMETHODS WMI 类
+description: MSFC \_ FIBREPORTHBAMETHODS WMI 类
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: a34c437755478a3ef9d6ed145daccee9b43960e4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 316ea0a47b3f6ca6272ae8861f5d5ef0df3112d2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63362273"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96811469"
 ---
-# <a name="msfcfibreporthbamethods-wmi-class"></a>MSFC\_FibrePortHBAMethods WMI 类
+# <a name="msfc_fibreporthbamethods-wmi-class"></a>MSFC \_ FIBREPORTHBAMETHODS WMI 类
 
 
 ## <span id="ddk_msfc_fibreporthbamethods_wmi_class_kr"></span><span id="DDK_MSFC_FIBREPORTHBAMETHODS_WMI_CLASS_KR"></span>
 
 
-HBA 微型端口驱动程序支持 T11 委员会*光纤通道 HBA API*规范使用 MSFC\_FibrePortHBAMethods 类公开的光纤通道端口可以执行的操作。 此类定义只是一种方法， **ResetStatistics**:
+支持 T11 委员会 *光纤通道 HBA API* 规范的 hba 微型端口驱动程序使用 MSFC \_ FibrePortHBAMethods 类公开可对光纤通道端口执行的操作。 此类仅定义了一个方法 **ResetStatistics**：
 
 ```cpp
 class MSFC_FibrePortHBAMethods
@@ -30,7 +29,7 @@ class MSFC_FibrePortHBAMethods
 };
 ```
 
-**ResetStatistics**方法需要任何输入或输出缓冲区。 微型端口驱动程序应执行任何内容是在这种方法重置所需端口统计信息。 应为每个端口的此类的一个实例。
+**ResetStatistics** 方法不需要输入或输出缓冲区。 小型端口驱动程序应执行此方法中需要的任何操作以重置端口统计信息。 每个端口都应有此类的一个实例。
 
  
 

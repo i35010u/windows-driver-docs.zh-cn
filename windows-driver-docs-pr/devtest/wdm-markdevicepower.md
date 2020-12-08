@@ -1,7 +1,6 @@
 ---
 title: 'MarkDevicePower 规则 (wdm) '
 description: MarkDevicePower 规则指定 irp \_ MJ \_ POWER with irp \_ MN \_ 将 \_ SystemPowerState irp 的 power 设置为 "正在挂起"。
-ms.assetid: 5B46FF9C-C955-4D10-86FB-17BDC57E17B6
 ms.date: 05/21/2018
 keywords:
 - 'MarkDevicePower 规则 (wdm) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: d3d509c92f8d59fd6ec7ed51a70cbaeff76672e2
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 8fa3ebb368edfc0280c33288c096c4115f165dd6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103480"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96811075"
 ---
 # <a name="markdevicepower-rule-wdm"></a>MarkDevicePower 规则 (wdm) 
 
 
-**MarkDevicePower**规则指定 irp \_ MJ \_ power With IRP \_ MN \_ 将 \_ SystemPowerState irp 的 power 设置为 "正在挂起"。
+**MarkDevicePower** 规则指定 irp \_ MJ \_ power With IRP \_ MN \_ 将 \_ SystemPowerState irp 的 power 设置为 "正在挂起"。
 
 此规则仅适用于 FDO 和 FIDO 驱动程序。
 

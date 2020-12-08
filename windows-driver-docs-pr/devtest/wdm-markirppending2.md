@@ -1,7 +1,6 @@
 ---
 title: 'MarkIrpPending2 规则 (wdm) '
 description: MarkIrpPending2 规则指定如果派单例程返回状态 \_ "挂起"，则它已调用也或将 IRP 传递到较低的驱动程序。 有关免费规范，请参阅 MarkIrpPending。
-ms.assetid: 91e22348-f5f3-4ba0-b8dd-ec0aa4b1df5e
 ms.date: 05/21/2018
 keywords:
 - 'MarkIrpPending2 规则 (wdm) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: d7dfa7a52967a7dc3eb784e9edb78927df026164
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 51fc4dafa396bbdd54446932b55c0864de5bb7c6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103462"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96811063"
 ---
 # <a name="markirppending2-rule-wdm"></a>MarkIrpPending2 规则 (wdm) 
 
 
-**MarkIrpPending2**规则指定如果派单例程返回状态 \_ "挂起"，则它已调用[**也**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iomarkirppending)或将 IRP 传递到较低的驱动程序。 有关免费规范，请参阅 [**MarkIrpPending**](wdm-markirppending.md) 。
+**MarkIrpPending2** 规则指定如果派单例程返回状态 \_ "挂起"，则它已调用 [**也**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iomarkirppending)或将 IRP 传递到较低的驱动程序。 有关免费规范，请参阅 [**MarkIrpPending**](wdm-markirppending.md) 。
 
 **驱动程序模型： WDM**
 

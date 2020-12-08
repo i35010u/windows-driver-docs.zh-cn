@@ -1,18 +1,17 @@
 ---
 title: 将 IOCTL 传送到视频微型端口驱动程序
 description: 将 IOCTL 传送到视频微型端口驱动程序
-ms.assetid: 9f9ad20e-d8cf-485d-adad-c04eeb40b705
 keywords:
 - 视频微型端口驱动程序 WDK Windows 2000，IOCTLs
 - IOCTLs WDK Windows 2000 显示器
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cd53b414d013950eb7f001885956796a353ecd88
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: f776eac545733e8ca8bb867b88ca4a07a7c1c13d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90716318"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96810235"
 ---
 # <a name="communicating-ioctls-to-the-video-miniport-driver"></a>将 IOCTL 传送到视频微型端口驱动程序
 

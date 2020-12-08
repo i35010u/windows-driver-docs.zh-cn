@@ -1,19 +1,18 @@
 ---
 title: 命令和顶点缓冲区
 description: 命令和顶点缓冲区
-ms.assetid: e23013d2-d545-42e5-9787-e4a90921153b
 keywords:
 - 命令缓冲区 WDK Direct3D
 - 顶点缓冲 WDK Direct3D
 - 缓冲 WDK Direct3D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 81e1f49082d08615721f9f5e9b21e2aa30a5d334
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: f15ebdfc13e9fee257fff6da0652f63f47942d6f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89067458"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96810255"
 ---
 # <a name="command-and-vertex-buffers"></a>命令和顶点缓冲区
 
@@ -27,7 +26,7 @@ ms.locfileid: "89067458"
 
 如果设置了 D3DHALDP2 \_ USERMEMVERTICES 标志，则由用户内存指针指定顶点缓冲区。 否则，顶点缓冲区为 DirectDrawSurface，可以是 API 级别的执行缓冲区、内部隐式顶点缓冲区或 API 级别的顶点缓冲区。
 
-顶点缓冲区 API 可以创建、销毁、锁定和解锁顶点缓冲区，并且可以使用 **IDirect3DVertexBuffer7：:P rocessvertices** 方法处理从源到目标缓冲区的顶点。 **IDirect3DDevice7：:D rawprimitivevb**和**IDirect3DDevice7：:D rawindexedprimitivevb**方法是主要的 API 级别调用。 还可以优化顶点缓冲区，但不能锁定优化的顶点缓冲区。 有关这三种方法的说明，请参阅 Direct3D SDK 文档。
+顶点缓冲区 API 可以创建、销毁、锁定和解锁顶点缓冲区，并且可以使用 **IDirect3DVertexBuffer7：:P rocessvertices** 方法处理从源到目标缓冲区的顶点。 **IDirect3DDevice7：:D rawprimitivevb** 和 **IDirect3DDevice7：:D rawindexedprimitivevb** 方法是主要的 API 级别调用。 还可以优化顶点缓冲区，但不能锁定优化的顶点缓冲区。 有关这三种方法的说明，请参阅 Direct3D SDK 文档。
 
  
 
