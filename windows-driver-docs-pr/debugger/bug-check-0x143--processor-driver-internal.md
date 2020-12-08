@@ -1,7 +1,6 @@
 ---
 title: Bug 检查 0x143 PROCESSOR_DRIVER_INTERNAL
-description: PROCESSOR_DRIVER_INTERNAL bug 检查具有 0x00000143 值。 这表示处理器电源管理 (PPM) 驱动程序遇到错误。
-ms.assetid: B61A1DF1-4454-4418-866F-FD9EC96F6906
+description: PROCESSOR_DRIVER_INTERNAL bug 检查的值为0x00000143。 这表明处理器电源管理 (PPM) 驱动程序遇到错误。
 keywords:
 - Bug 检查 0x143 PROCESSOR_DRIVER_INTERNAL
 - PROCESSOR_DRIVER_INTERNAL
@@ -13,31 +12,31 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: aa15bbc76f1edbb64668ee63f03f67623cd1ba22
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: 9637a2ea19da32edcc370490072a2600573680e9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67520163"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96824291"
 ---
-# <a name="bug-check-0x143-processordriverinternal"></a>Bug 检查 0x143：处理器\_驱动程序\_内部
+# <a name="bug-check-0x143-processor_driver_internal"></a>Bug 检查0x143： \_ 内部处理器驱动程序 \_
 
 
-处理器\_驱动程序\_内部 bug 检查的值为 0x00000143。 这表示处理器电源管理 (PPM) 驱动程序遇到错误。
+处理器 \_ 驱动程序 \_ 内部 bug 检查的值为0x00000143。 这表明处理器电源管理 (PPM) 驱动程序遇到错误。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题面向程序员。 如果您是在使用计算机时收到蓝屏错误代码的客户，请参阅[蓝屏错误疑难解答](https://www.windows.com/stopcode)。
 
 
-## <a name="processordriverinternal-parameters"></a>处理器\_驱动程序\_内部参数
+## <a name="processor_driver_internal-parameters"></a>处理器 \_ 驱动程序 \_ 内部参数
 
 
 | 参数 | 描述                                                              |
 |-----------|--------------------------------------------------------------------------|
-| 1         | 1-power 引擎 Plugin(PEP) 无法接受所需的通知    |
+| 1         | 1-Power Engine 插件 (PEP) 无法接受所需的通知    |
 | 2         | PEP 运行时通知类型                                            |
-| 3         | 指向通知消息                                          |
-| 4         | 到处理器的设备上下文的指针 (FDO\_数据) 发出通知 |
+| 3         | 指向通知消息的指针                                          |
+| 4         | 指向处理器设备上下文的指针 (\_ 发出通知) FDO 数据 |
 
  
 
@@ -55,25 +54,25 @@ ms.locfileid: "67520163"
 <tbody>
 <tr class="odd">
 <td align="left">1</td>
-<td align="left">2-power 引擎插件 (PEP) 返回了无效的处理器空闲的状态</td>
+<td align="left">2-Power Engine 插件 (PEP) 返回无效处理器空闲状态</td>
 </tr>
 <tr class="even">
 <td align="left">2</td>
-<td align="left"><p>类型的无效状态</p>
-<p>0x0:PEP 请求过多处理器，用于协调空闲状态</p>
-参数 3 的处理器数请求指向处理器设备上下文 (FDO_DATA) 的参与协调空闲转换参数 4-
-<p>0x1:PEP 请求的处理器处于空闲状态无效</p>
-参数 3 的空闲状态索引请求参数 4-指向无效的空闲状态所对应的处理器的设备上下文 (FDO_DATA)
-<p>0x2:PEP 请求处于空闲状态无效的平台</p>
-参数 3-平台空闲状态索引请求参数 4-指向无效的空闲状态所对应的处理器的设备上下文 (FDO_DATA)</td>
+<td align="left"><p>无效状态的类型</p>
+<p>0x0： PEP 请求的处理器太多，无法协调空闲状态</p>
+参数 3-请求参与协调空闲转换的处理器数参数 4-指向处理器设备上下文的指针 (FDO_DATA) 
+<p>0x1： PEP 请求的处理器处于无效空闲状态</p>
+参数 3-空闲状态索引请求的参数 4-指向处理器设备上下文的指针 (与无效空闲状态相对应的 FDO_DATA) 
+<p>0x2： PEP 请求平台处于无效的空闲状态</p>
+参数 3-平台空闲状态索引请求的参数 4-指向处理器设备上下文的指针 (与无效空闲状态相对应的 FDO_DATA) </td>
 </tr>
 <tr class="odd">
 <td align="left">3</td>
-<td align="left">引用参数 2</td>
+<td align="left">请参阅参数2</td>
 </tr>
 <tr class="even">
 <td align="left">4</td>
-<td align="left">引用参数 2</td>
+<td align="left">请参阅参数2</td>
 </tr>
 </tbody>
 </table>
@@ -83,7 +82,7 @@ ms.locfileid: "67520163"
 <a name="cause"></a>原因
 -----
 
-处理器驱动程序检测到的提示错误检测到的不可调和条件。 这可能会发生期间处理器空闲和性能状态更改执行，这可能涉及其他此类的实体具有内核，HAL 和引擎插件 (PEP)。 从检测错误的信息将帮助您识别违反了其处理其他实体中的处理器驱动程序所做的假设。 在其他实体中可能存在的根本原因和转储文件可能会泄漏来确定检测的错误的原因的详细信息。
+处理器驱动程序检测到 irreconcilable 条件，这会提示它进行错误检查。 在处理器空闲和性能状态更改执行期间可能会发生这种情况，这可能涉及到其他实体，例如内核、HAL 和 Power Engine 插件)  (PEP。 来自错误检查的信息将帮助识别处理器驱动程序在处理其他实体时所做的假设。 根本原因可能是其他实体中的，转储文件可能会显示详细信息以确定错误检查的原因。
 
  
 

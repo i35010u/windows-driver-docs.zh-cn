@@ -1,7 +1,6 @@
 ---
 title: KSCATEGORY_AUDIO_GFX
 description: KSCATEGORY_AUDIO_GFX
-ms.assetid: 6346d7c6-9ea9-450f-af6a-44dec22bf936
 keywords:
 - KSCATEGORY_AUDIO_GFX 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: a5d9cdfcd6f2f97418315c3790c39e876981369e
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 25c1d21c3434964e8c1718988726d12ce12a3d62
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89095495"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96824067"
 ---
 # <a name="kscategory_audio_gfx"></a>KSCATEGORY_AUDIO_GFX
 

@@ -1,24 +1,23 @@
 ---
 title: eHS_UPDATE_RESULT 枚举
 description: EHS_UPDATE_RESULT 枚举指示 "检查更新" 请求的结果。
-ms.assetid: 7b9b8ddc-3101-466a-9640-b936f6d14de4
 keywords:
 - 从 Windows Vista 开始 eHS_UPDATE_RESULT 枚举网络驱动程序
 ms.date: 07/31/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c4263c4043eb148486d9ac9f4e2ea501913fa154
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: cfe8d949a812cc6a29b29d5f06d15e58233dde95
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89403482"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96823947"
 ---
 # <a name="ehs_update_result-enumeration"></a>eHS \_ 更新 \_ 结果枚举
 
 [!include[Wi-Fi Hotspot Offloading deprecation](../includes/wi-fi-hotspot-offloading-deprecation.md)]
 
 
-**EHS \_ UPDATE \_ 结果**枚举指示 "检查更新" 请求的结果。
+**EHS \_ UPDATE \_ 结果** 枚举指示 "检查更新" 请求的结果。
 
 <a name="syntax"></a>语法
 ------
@@ -66,13 +65,13 @@ typedef enum _eHS_UPDATE_RESULT {
 <td><p>Windows 10 移动版</p></td>
 </tr>
 <tr class="even">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Hotspotoffloadplugin (包含 Hotspotoffloadplugin) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**HS \_ 主机 \_ 更新 \_ 配置 \_ 完成**](hs-host-update-configuration-completion.md)

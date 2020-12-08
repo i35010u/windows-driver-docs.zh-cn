@@ -1,17 +1,16 @@
 ---
 title: 按物理地址访问内存
 description: 按物理地址访问内存
-ms.assetid: 248871dc-dac0-413e-8971-2ee2c2fe5290
 keywords:
-- 访问内存的物理地址
+- 物理地址，访问内存
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 21c56460649584f009fd49636646ea3620fa3380
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ecf71d628537754721a6126b0f6260b010d543c6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63351885"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96824367"
 ---
 # <a name="accessing-memory-by-physical-address"></a>按物理地址访问内存
 
@@ -19,17 +18,17 @@ ms.locfileid: "63351885"
 ## <span id="ddk_debugging_bios_code_dbg"></span><span id="DDK_DEBUGGING_BIOS_CODE_DBG"></span>
 
 
-若要读取的物理地址，请使用[ **！ db**](-db---dc---dd---dp---dq---du---dw.md)， **！ dc**， **！ dd**， **！ dp**， **！ du**，并 **！ dw**扩展命令。
+若要读取物理地址，请使用 [**！ db**](-db---dc---dd---dp---dq---du---dw.md)， **！ dc**， **！ dd**， **！ dp**， **！ du**，！ **dw** 扩展命令。
 
-若要写入的物理地址，请使用[ **！ eb** ](-eb---ed.md)并 **！ ed**扩展命令。
+若要写入物理地址，请使用 [**！ eb**](-eb---ed.md) 和 **！ ed** 扩展命令。
 
-[ **Fp （填充物理内存）** ](f--fp--fill-memory-.md)命令写入到的物理内存范围，一种模式写下去，直到该区域已满。
+[**Fp (填充物理内存)**](f--fp--fill-memory-.md)命令将模式写入物理内存范围，请重复此模式直到范围已满。
 
-当您使用 WinDbg 在内核模式下时，还可以读取或写入到直接从物理内存[内存窗口](memory-window.md)。
+在内核模式下使用 WinDbg 时，还可以从 " [内存" 窗口](memory-window.md)直接读取或写入物理内存。
 
-若要搜索的一段数据或一系列数据的物理内存，请使用[ **！ 搜索**](-search.md)扩展命令。
+若要在物理内存中搜索数据片段或数据范围，请使用 [**！ search**](-search.md) extension 命令。
 
-此外，有关物理地址的详细信息，请参阅[转换到物理地址的虚拟地址](converting-virtual-addresses-to-physical-addresses.md)。
+此外，有关物理地址的详细信息，请参阅 [将虚拟地址转换为物理地址](converting-virtual-addresses-to-physical-addresses.md)。
 
  
 

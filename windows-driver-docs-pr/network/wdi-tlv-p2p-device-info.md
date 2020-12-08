@@ -1,22 +1,21 @@
 ---
 title: WDI_TLV_P2P_DEVICE_INFO
-description: WDI_TLV_P2P_DEVICE_INFO 是 TLV 包含 Wi-Fi Direct 设备信息。
-ms.assetid: 6B68F334-4C21-4088-AD47-9EB41F9A1CB8
+description: WDI_TLV_P2P_DEVICE_INFO 是包含 Wi-Fi 直接设备信息的 TLV。
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_P2P_DEVICE_INFO 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 4e61453cab034cd04021aa4151560da2dc1ee950
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 660a9896d79798032589a14a0050b0b1cc3ac600
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63366339"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96823709"
 ---
-# <a name="wditlvp2pdeviceinfo"></a>WDI\_TLV\_P2P\_DEVICE\_INFO
+# <a name="wdi_tlv_p2p_device_info"></a>WDI \_ TLV \_ P2P \_ 设备 \_ 信息
 
 
-WDI\_TLV\_P2P\_设备\_信息是包含 Wi-Fi Direct 设备信息 TLV。
+WDI \_ tlv \_ P2P \_ 设备 \_ 信息是包含 Wi-Fi 直接设备信息的 tlv。
 
 ## <a name="tlv-type"></a>TLV 类型
 
@@ -26,15 +25,15 @@ WDI\_TLV\_P2P\_设备\_信息是包含 Wi-Fi Direct 设备信息 TLV。
 ## <a name="length"></a>长度
 
 
-所有的大小 （以字节为单位） 总和包含 TLVs。
+Sum (包含所有 TLVs 的大小的) 字节。
 
 ## <a name="values"></a>值
 
 
-| 在任务栏的搜索框中键入                                                                                  | 允许多个 TLV 实例 | 可选 | 描述                                                                                                              |
+| 类型                                                                                  | 允许多个 TLV 实例 | 可选 | 说明                                                                                                              |
 |---------------------------------------------------------------------------------------|--------------------------------|----------|--------------------------------------------------------------------------------------------------------------------------|
-| [**WDI\_TLV\_P2P\_DEVICE\_INFO\_PARAMETERS**](wdi-tlv-p2p-device-info-parameters.md) |                                |          | 设备信息，包括 Wi-Fi Direct 设备地址、 受支持的配置方法和主要设备类型。 |
-| [**WDI\_TLV\_P2P\_DEVICE\_NAME**](wdi-tlv-p2p-device-name.md)                        |                                |          | 此设备的设备名称。                                                                                         |
+| [**WDI \_ TLV \_ P2P \_ 设备 \_ 信息 \_ 参数**](wdi-tlv-p2p-device-info-parameters.md) |                                |          | 设备信息，包括 Wi-Fi 直接设备地址、支持的配置方法和主要设备类型。 |
+| [**WDI \_ TLV \_ P2P \_ 设备 \_ 名称**](wdi-tlv-p2p-device-name.md)                        |                                |          | 此设备的设备名称。                                                                                         |
 
  
 
@@ -53,10 +52,10 @@ WDI\_TLV\_P2P\_设备\_信息是包含 Wi-Fi Direct 设备信息 TLV。
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
-<td><p>Windows Server 2016</p></td>
+<td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Wditypes.hpp</td>
 </tr>
 </tbody>

@@ -1,20 +1,19 @@
 ---
 title: 调试内存泄漏-DRIVER_VERIFIER_DETECTED_VIOLATION (C4) 0x62
 description: 卸载驱动程序时，驱动程序验证器会生成 Bug 检查 0xC4 DRIVER_VERIFIER_DETECTED_VIOLATION，其中参数1的值为0x62。
-ms.assetid: CDBE9A18-4126-4AD7-8E53-6D75DCA8B022
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6773a31469355e0525ab96fbb1cdab5e707eb6b2
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: baf8758d634852c899e0e7efe3e537ea8f88ef82
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89383965"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96824249"
 ---
 # <a name="debugging-memory-leaks---driver_verifier_detected_violation-c4-0x62"></a>调试内存泄漏-驱动程序 \_ 验证器 \_ 检测到 \_ 违反 (C4) ：0x62
 
 
-[驱动程序验证](driver-verifier.md) 程序生成 Bug 检查0xC4：当驱动程序卸载时，如果不首先释放其所有池分配，则驱动 [**程序 \_ 验证器 \_ 检测到 \_ **](../debugger/bug-check-0xc4--driver-verifier-detected-violation.md) 与0x62 的参数1值冲突。 Unfreed 内存分配 (也称为内存泄漏) 导致操作系统性能降低的常见原因。 这会使系统池分段并最终导致系统崩溃。
+[驱动程序验证](driver-verifier.md) 程序生成 Bug 检查0xC4：当驱动程序卸载时，如果不首先释放其所有池分配，则驱动 [**程序 \_ 验证器 \_ 检测到 \_**](../debugger/bug-check-0xc4--driver-verifier-detected-violation.md) 与0x62 的参数1值冲突。 Unfreed 内存分配 (也称为内存泄漏) 导致操作系统性能降低的常见原因。 这会使系统池分段并最终导致系统崩溃。
 
 如果将内核调试器连接到运行 [驱动程序验证](driver-verifier.md)程序的测试计算机，则当驱动程序验证器检测到冲突时，Windows 将中断调试器并显示错误的简短说明。
 
@@ -61,12 +60,12 @@ Arg4: 00000003, total # of (paged+nonpaged) allocations that weren't freed.
     that were leaked that caused the bugcheck.
 ```
 
-[**Bug 检查0xC4：驱动程序 \_ 验证器 \_ 检测到 \_ **](../debugger/bug-check-0xc4--driver-verifier-detected-violation.md)与参数 1 (Arg1) 值为0x62 的冲突，如下所述：
+[**Bug 检查0xC4：驱动程序 \_ 验证器 \_ 检测到 \_**](../debugger/bug-check-0xc4--driver-verifier-detected-violation.md)与参数 1 (Arg1) 值为0x62 的冲突，如下所述：
 
 驱动程序 \_ 验证程序 \_ 检测到 \_ 违反 (C4) Arg1 Arg2 Arg3 Arg4 导致驱动程序验证程序标志0X62 驱动程序名称。
 保留未释放的总分配数，包括分页池和非分页池。
 卸载驱动程序时，不首先释放其池分配。 在 Windows 8.1 中，如果卸载驱动程序时未首先释放 ([**IO \_ 工作**](../kernel/eprocess.md) 项) 已使用 [**IoAllocateWorkItem**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioallocateworkitem)分配的工作项，则也会发生此 bug 检查。 仅当 [池跟踪](pool-tracking.md) 选项处于活动状态时，才会发生带有此参数的 bug 检查。
- (**verifier**) 中指定[池跟踪](pool-tracking.md)。 池跟踪选项启用了标准标志 (**verifier/标准** ) 。
+ (**verifier**) 中指定 [池跟踪](pool-tracking.md)。 池跟踪选项启用了标准标志 (**verifier/标准** ) 。
  
 
 ### <a name="use-the-verifier-3-extension-command-to-find-out-about-the-pool-allocations"></a>使用！ verifier 3 扩展命令了解池分配
@@ -149,7 +148,7 @@ Summary of All Verifier Statistics
 
 例如，驱动程序 MyDriver.sys 有两个内存分配，一个尚未正确释放的 i/o 工作项。 每个列表显示当前分配的地址、大小、所使用的池标记，以及在其中进行分配请求的驱动程序代码中的地址。 如果为所述的驱动程序加载符号，它还将显示调用方地址旁边的函数名称。
 
-在显示的标记中，地址 0x8645a000) 处的分配仅有一个 ( (**mdrv**) 提供。 只要驱动程序验证器验证的驱动程序调用[**IoAllocateMdl**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioallocatemdl)，就会使用标记**VMdl** 。 同样，每当驱动程序验证程序验证的驱动程序发出请求以使用[**IoAllocateWorkItem**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioallocateworkitem)分配工作项时，就会使用标记**Vfwi** 。
+在显示的标记中，地址 0x8645a000) 处的分配仅有一个 ( (**mdrv**) 提供。 只要驱动程序验证器验证的驱动程序调用 [**IoAllocateMdl**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioallocatemdl)，就会使用标记 **VMdl** 。 同样，每当驱动程序验证程序验证的驱动程序发出请求以使用 [**IoAllocateWorkItem**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioallocateworkitem)分配工作项时，就会使用标记 **Vfwi** 。
 
 ### <a name="if-you-have-symbols-you-can-locate-where-in-the-source-files-the-memory-allocations-occurred"></a>如果你具有符号，则可以在源文件中的何处发生内存分配
 
@@ -173,7 +172,7 @@ d:\coding\wdmdrivers\mydriver\handleioctl.c(72)+0xa
 
 启用池跟踪后，驱动程序验证器还会保留内核空间中所进行的所有内存分配的循环日志。 默认情况下，将保留最新的 65536 (0x10000) 分配。 进行新分配时，将覆盖日志中最早的分配。 如果在发生故障之前最近进行了分配，则可以获取有关分配的其他信息，而不是如上所示，特别是在分配时内核堆栈的线程地址和帧。
 
-可以使用命令 **！ verifier 0x80** *AddressOfPoolAllocation*访问此日志。 请注意，这会列出所有分配并在日志中释放此特定地址。 若要取消或停止显示日志历史记录，请使用键盘快捷键： **ctrl + Break** with WinDbg，使用 **ctrl + C** with KD。
+可以使用命令 **！ verifier 0x80** *AddressOfPoolAllocation* 访问此日志。 请注意，这会列出所有分配并在日志中释放此特定地址。 若要取消或停止显示日志历史记录，请使用键盘快捷键： **ctrl + Break** with WinDbg，使用 **ctrl + C** with KD。
 
 ```
 kd> !verifier 0x80 0x982a8fe0
@@ -258,7 +257,7 @@ Pool block 9a836fd0, Size 00000030, Thread 88758740
 
 [静态驱动程序验证程序](static-driver-verifier.md) 是一种工具，它通过模拟各种代码路径的行使来扫描 Windows 驱动程序源代码，并报告可能的问题。 静态驱动程序验证程序是一个出色的开发时实用工具，可帮助确定这些类型的问题。
 
-对于你可以使用的其他技术（包括不涉及驱动程序验证程序的方案），请参阅 [查找内核模式的内存泄漏](../debugger/finding-a-kernel-mode-memory-leak.md)。
+对于你可以使用的其他方法，包括不涉及驱动程序验证程序的方案，请参阅 [查找内存泄漏 Kernel-Mode](../debugger/finding-a-kernel-mode-memory-leak.md)。
 
 ## <a name="related-topics"></a>相关主题
 

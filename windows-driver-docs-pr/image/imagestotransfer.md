@@ -1,9 +1,8 @@
 ---
 title: ImagesToTransfer 元素
-description: 可选 ImagesToTransfer 元素指定的映像扫描当前作业的数量。
-ms.assetid: d3f06104-17a5-41e4-ab80-1228ee342b7d
+description: 可选的 ImagesToTransfer 元素指定要扫描的当前作业的映像数。
 keywords:
-- ImagesToTransfer 元素成像设备
+- ImagesToTransfer 元素图像设备
 topic_type:
 - apiref
 api_name:
@@ -12,19 +11,19 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6ae87936af242793afcd036876a1a33700edf3bc
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 90522b4d4f628a99de7efb5df7f650b6423d70ea
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63343924"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96824127"
 ---
 # <a name="imagestotransfer-element"></a>ImagesToTransfer 元素
 
 
-可选**ImagesToTransfer**元素指定的映像扫描当前作业的数量。
+可选的 **ImagesToTransfer** 元素指定要扫描的当前作业的映像数。
 
-<a name="usage"></a>用法
+<a name="usage"></a>使用情况
 -----
 
 ```xml
@@ -48,9 +47,9 @@ ms.locfileid: "63343924"
 </colgroup>
 <thead>
 <tr class="header">
-<th>特性</th>
-<th>在任务栏的搜索框中键入</th>
-<th>必需</th>
+<th>属性</th>
+<th>类型</th>
+<th>必须</th>
 <th>描述</th>
 </tr>
 </thead>
@@ -60,21 +59,21 @@ ms.locfileid: "63343924"
 <td><p>xs:string</p></td>
 <td><p>否</p></td>
 <td><p></p>
-<p>可选。 一个布尔值，必须为 0，为 false，1 或 true。<strong>falsetrue</strong></p></td>
+<p>可选。 必须为0、false、1或 true 的布尔值。<strong>falsetrue</strong></p></td>
 </tr>
 <tr class="even">
-<td><p><strong><strong>Override</strong></strong></p></td>
+<td><p><strong><strong>忽略</strong></strong></p></td>
 <td><p>xs:string</p></td>
 <td><p>否</p></td>
 <td><p></p>
-<p>可选。 一个布尔值，必须为 0，为 false，1 或 true。<strong>falsetrue</strong></p></td>
+<p>可选。 必须为0、false、1或 true 的布尔值。<strong>falsetrue</strong></p></td>
 </tr>
 <tr class="odd">
 <td><p><strong><strong>UsedDefault</strong></strong></p></td>
 <td><p>xs:string</p></td>
 <td><p>否</p></td>
 <td><p></p>
-<p>可选。 一个布尔值，必须为 0，为 false，1 或 true。<strong>falsetrue</strong></p></td>
+<p>可选。 必须为0、false、1或 true 的布尔值。<strong>falsetrue</strong></p></td>
 </tr>
 </tbody>
 </table>
@@ -82,12 +81,12 @@ ms.locfileid: "63343924"
 <a name="text-value"></a>文本值
 ----------
 
-必需。 从 0 到 2147483648 范围内的整数。
+必需。 介于0到2147483648之间的整数。
 
 ## <a name="child-elements"></a>子元素
 
 
-没有子元素。
+没有任何子元素。
 
 ## <a name="parent-elements"></a>父元素
 
@@ -114,15 +113,15 @@ ms.locfileid: "63343924"
 <a name="remarks"></a>备注
 -------
 
-**ImagesToTransfer**扫描设备具有可以包含的媒体比当前作业的更多页文档送纸器时，值很有用。
+扫描设备具有的文档送纸器可以包含比当前作业更多的介质页面时， **ImagesToTransfer** 值非常有用。
 
-如果值为 0，设备会扫描可用于所选的输入源中指定的所有页面[ **InputSource** ](inputsource.md)元素。 如果输入的源**辊**或**电影**，值为 0 中**ImagesToTransfer**会产生单个映像获取。 如果输入的源**ADF**或**ADFDuplex**，值为 0 中**ImagesToTransfer**指示该设备应获取图像，直到送纸器为空。
+如果该值为0，则设备将扫描在 [**InputSource**](inputsource.md) 元素中指定的所选输入源的可用页数。 如果输入源为 **影印** 或 **胶片**，则 **ImagesToTransfer** 中的值为0将生成单个图像采集。 如果输入源为 **ADF** 或 **ADFDuplex**，则 **ImagesToTransfer** 中的值为0，表示设备应获取图像，直到送纸器为空。
 
-当设备获取中的映像**ADFDuplex**，媒体的每一端表示单个图像。 为指定的奇数的值时**ADFDuplex**，设备将获取仅前方的媒体的最后一个表。
+当设备从 **ADFDuplex** 获取图像时，介质的每一侧都表示一个图像。 如果为 **ADFDuplex** 指定了奇数值，设备将仅获取最后一张纸的前端。
 
-客户端可以指定可选**MustHonor**属性时，才**ImagesToTransfer**元素包含在**CreateScanJobRequest**层次结构。 有关详细信息**MustHonor**及其使用情况，请参阅[ **CreateScanJobRequest**](createscanjobrequest.md)。
+仅当 **ImagesToTransfer** 元素包含在 **CreateScanJobRequest** 层次结构内时，客户端才能指定可选的 **MustHonor** 属性。 有关 **MustHonor** 及其用法的详细信息，请参阅 [**CreateScanJobRequest**](createscanjobrequest.md)。
 
-WSD 扫描服务可以指定可选**重写**并**UsedDefault**属性时，才**ImagesToTransfer**元素包含在**DocumentFinalParameters**层次结构。 有关详细信息**重写**并**UsedDefault**及其使用情况，请参阅[ **DocumentFinalParameters**](documentfinalparameters.md)。
+仅当 **ImagesToTransfer** 元素包含在 **DocumentFinalParameters** 层次结构中时，WSD 扫描服务才能指定可选 **Override** 和 **UsedDefault** 属性。 有关 **Override** 和 **UsedDefault** 及其用法的详细信息，请参阅 [**DocumentFinalParameters**](documentfinalparameters.md)。
 
 ## <a name="see-also"></a>请参阅
 

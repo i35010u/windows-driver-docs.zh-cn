@@ -1,7 +1,6 @@
 ---
 title: COPP 命令
 description: COPP 命令
-ms.assetid: c745b7d9-be59-45f9-90f5-0a7ecef0a292
 keywords:
 - 复制保护 WDK COPP，命令
 - 视频复制保护 WDK COPP，命令
@@ -10,12 +9,12 @@ keywords:
 - 命令 WDK COPP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fbc091793d3e899a10bbbcbffecdc134e20b2cf2
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: d43778c8e32c2f03e4af28a1f9c92996281952cd
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89064892"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96824231"
 ---
 # <a name="copp-commands"></a>COPP 命令
 

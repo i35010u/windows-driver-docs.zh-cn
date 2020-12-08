@@ -1,17 +1,16 @@
 ---
 title: 检索 OPM DDI
 description: 检索 OPM DDI
-ms.assetid: 84218245-f5f3-4a6f-88ed-9cd5db224e30
 keywords:
 - OPM WDK 显示，检索 DDI
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 45e12c67dc55458d405b6edf03ff79af182bc99d
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: a5115d42ec743796dc9c402ff39e0415193b868c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106614"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96824185"
 ---
 # <a name="retrieving-the-opm-ddi"></a>检索 OPM DDI
 
@@ -32,7 +31,7 @@ ms.locfileid: "90106614"
    <tr class="header">
    <th align="left">成员名称</th>
    <th align="left">成员类型</th>
-   <th align="left">值</th>
+   <th align="left">“值”</th>
    </tr>
    </thead>
    <tbody>
@@ -71,7 +70,7 @@ ms.locfileid: "90106614"
 
 4. 如果显示微型端口驱动程序不支持 OPM 接口，则 [**DxgkDdiQueryInterface**](/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgkddi_query_interface) 必须返回 \_ 不 \_ 受支持的状态。
 
-   如果显示微型端口驱动程序支持 OPM，则[**DxgkDdiQueryInterface**](/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgkddi_query_interface)会将在[**查询 \_ 接口**](/windows-hardware/drivers/ddi/video/ns-video-_query_interface)的**接口**成员中收到的[**DXGK \_ OPM \_ 接口**](/windows-hardware/drivers/ddi/dispmprt/ns-dispmprt-_dxgk_opm_interface)结构与下表中的值初始化。
+   如果显示微型端口驱动程序支持 OPM，则 [**DxgkDdiQueryInterface**](/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgkddi_query_interface)会将在 [**查询 \_ 接口**](/windows-hardware/drivers/ddi/video/ns-video-_query_interface)的 **接口** 成员中收到的 [**DXGK \_ OPM \_ 接口**](/windows-hardware/drivers/ddi/dispmprt/ns-dispmprt-_dxgk_opm_interface)结构与下表中的值初始化。
 
    **成员名称、类型和值：**
 
@@ -88,12 +87,12 @@ ms.locfileid: "90106614"
    <span id="InterfaceReference"></span><span id="interfacereference"></span><span id="INTERFACEREFERENCE"></span>**InterfaceReference**  
    键入 PINTERFACE \_ 引用
 
-   指向显示微型端口驱动程序的 **InterfaceReference** 例程的指针 (有关 **InterfaceReference**的信息，请参阅 [**接口**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_interface) 结构的 "备注" 部分。 ) 
+   指向显示微型端口驱动程序的 **InterfaceReference** 例程的指针 (有关 **InterfaceReference** 的信息，请参阅 [**接口**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_interface) 结构的 "备注" 部分。 ) 
 
    <span id="InterfaceDereference"></span><span id="interfacedereference"></span><span id="INTERFACEDEREFERENCE"></span>**InterfaceDereference**  
    键入 PINTERFACE \_ 取消引用
 
-   指向显示微型端口驱动程序的 **InterfaceDereference** 例程的指针 (有关 **InterfaceDereference**的信息，请参阅 [**接口**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_interface) 结构的 "备注" 部分。 ) 
+   指向显示微型端口驱动程序的 **InterfaceDereference** 例程的指针 (有关 **InterfaceDereference** 的信息，请参阅 [**接口**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_interface) 结构的 "备注" 部分。 ) 
 
    <span id="DxgkDdiOPMGetCertificateSize"></span><span id="dxgkddiopmgetcertificatesize"></span><span id="DXGKDDIOPMGETCERTIFICATESIZE"></span>**DxgkDdiOPMGetCertificateSize**  
    键入 DXGKDDI \_ OPM \_ 获取 \_ 证书 \_ 大小
@@ -140,5 +139,5 @@ ms.locfileid: "90106614"
 
    一个指针，指向显示微型端口驱动程序的 [**DxgkDdiOPMDestroyProtectedOutput**](/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgkddi_opm_destroy_protected_output) 函数
 
-5. 当使用 OPM 接口完成显示微型端口驱动程序时，驱动程序将调用其 **InterfaceDereference** 例程。 在调用[**DxgkDdiRemoveDevice**](/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgkddi_remove_device)函数之前，驱动程序应调用**InterfaceDereference** 。
+5. 当使用 OPM 接口完成显示微型端口驱动程序时，驱动程序将调用其 **InterfaceDereference** 例程。 在调用 [**DxgkDdiRemoveDevice**](/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgkddi_remove_device)函数之前，驱动程序应调用 **InterfaceDereference** 。
 

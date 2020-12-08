@@ -1,7 +1,6 @@
 ---
 title: 登记对象
 description: 登记对象
-ms.assetid: 80e61475-4bb7-4eaa-b9f1-ff95eac9bc77
 keywords:
 - 登记 WDK KTM
 - 登记 WDK KTM，对象
@@ -11,17 +10,17 @@ keywords:
 - 登记对象 WDK KTM
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c78218799150da1d46a188499da402b72d1b3050
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: be329dc1bbee63f7ed40c89091a600ecf1152377
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89187179"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96824017"
 ---
 # <a name="enlistment-objects"></a>登记对象
 
 
-*征用对象*表示资源管理器在事务中的[*登记*](transaction-processing-terms.md#ktm-term-enlistment)。 在资源管理器可以接收有关事务事件的通知之前，资源管理器必须调用 [**ZwCreateEnlistment**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ntcreateenlistment) 来创建对事务的登记。
+*征用对象* 表示资源管理器在事务中的 [*登记*](transaction-processing-terms.md#ktm-term-enlistment)。 在资源管理器可以接收有关事务事件的通知之前，资源管理器必须调用 [**ZwCreateEnlistment**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ntcreateenlistment) 来创建对事务的登记。
 
 KTM 提供一组可供内核模式资源管理器调用的 [登记对象例程](/windows-hardware/drivers/ddi/index) 。 KTM 还提供用户模式应用程序可以调用的一组类似的用户模式例程。 有关用户模式例程的详细信息，请参阅 Microsoft Windows SDK。
 

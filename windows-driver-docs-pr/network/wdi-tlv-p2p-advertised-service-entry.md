@@ -1,17 +1,16 @@
 ---
 title: WDI_TLV_P2P_ADVERTISED_SERVICE_ENTRY
 description: WDI_TLV_P2P_ADVERTISED_SERVICE_ENTRY 是包含播发服务项的 TLV。
-ms.assetid: C9BBA5D4-EC51-4D03-B997-A95B3168E64F
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_P2P_ADVERTISED_SERVICE_ENTRY 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 7625f0689deb96e2e7367d01204ce8eb9287afb6
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 89985c3defd5f6f11149b1ae5076625a5a29bf47
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89218294"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96823797"
 ---
 # <a name="wdi_tlv_p2p_advertised_service_entry"></a>WDI \_ TLV \_ P2P \_ 播发 \_ 服务 \_ 条目
 
@@ -23,7 +22,7 @@ WDI \_ tlv \_ P2P \_ 播发 \_ 服务 \_ 项是包含播发服务项的 tlv。
 
 0xFC
 
-## <a name="length"></a>Length
+## <a name="length"></a>长度
 
 
 Sum (包含所有 TLVs 的大小的) 字节。
@@ -57,7 +56,7 @@ Sum (包含所有 TLVs 的大小的) 字节。
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
-<td><p>Windows Server 2016</p></td>
+<td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
 <td><p>标头</p></td>

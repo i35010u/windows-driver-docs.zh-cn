@@ -1,20 +1,19 @@
 ---
 title: METransformHaveOutput
 description: METransformHaveOutput 事件表示设备转换在其某个输出流上有一个就绪的示例。
-ms.assetid: 1CD11A3C-8181-4AF2-9AB3-10B04668CF1C
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: add9408eea081f4e80f7f09bcc189685101836a5
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 803f3e19b313a211b5f671bd7124a42edc3fe7fc
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89185577"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96824411"
 ---
 # <a name="metransformhaveoutput"></a>METransformHaveOutput
 
 
-**METransformHaveOutput**事件表示设备转换在其某个输出流上有一个就绪的示例。
+**METransformHaveOutput** 事件表示设备转换在其某个输出流上有一个就绪的示例。
 
 ## <a name="span-idwhen_sentspanspan-idwhen_sentspanspan-idwhen_sentspanwhen-sent"></a><span id="When_sent"></span><span id="when_sent"></span><span id="WHEN_SENT"></span>发送时间
 
@@ -23,7 +22,7 @@ ms.locfileid: "89185577"
 
 当 Devproxy 引发 METransformHaveOutput 时，DTM 会调用 ProcessOutput 上的 Devproxy。 生成的示例会送入设备 MFT 的相应输入。
 
-当设备 MFT 引发 **METransformHaveOutput**时，DTM 会将事件中继到设备源。 设备源将在设备转换管理器上调用进程输出，此操作将路由到设备 MFT。 因此，该示例将由设备源选取，并将进入媒体管道。
+当设备 MFT 引发 **METransformHaveOutput** 时，DTM 会将事件中继到设备源。 设备源将在设备转换管理器上调用进程输出，此操作将路由到设备 MFT。 因此，该示例将由设备源选取，并将进入媒体管道。
 
 ## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>Parameters
 

@@ -1,16 +1,15 @@
 ---
 title: OID_WWAN_LTE_ATTACH_CONFIG
 description: OID_WWAN_LTE_ATTACH_CONFIG 允许操作系统查询或设置插入的 SIM 提供程序的默认 LTE 附加上下文 (MCC/MNC 对) 。
-ms.assetid: 7E753513-D6A2-4B67-9AED-83A695C39D3C
 ms.date: 08/22/2018
 keywords: -从 Windows Vista 开始 OID_WWAN_LTE_ATTACH_CONFIG 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: ace5f9fd4ebb802f0b8826a6996294fc23670e43
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 5900181adda8e384792914387ce8b91f66348a67
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89210103"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96823817"
 ---
 # <a name="oid_wwan_lte_attach_config"></a>OID_WWAN_LTE_ATTACH_CONFIG
 
@@ -30,7 +29,7 @@ OID_WWAN_LTE_ATTACH_CONFIG 允许操作系统查询或设置插入的 SIM 提供
 
 **版本**： Windows 10，版本 1703 **头**： Ntddndis (包括 Ndis .h) 
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [MB LTE 附加操作](mb-lte-attach-operations.md)
 

@@ -1,7 +1,6 @@
 ---
 title: D3DKMT \_ WDDM \_ 1 \_ 3 \_ 大写字母结构
 description: 了解 D3DKMT \_ WDDM \_ 1 \_ 3 \_ cap 结构，该结构保留供系统使用。 请勿在您的驱动程序中使用。
-ms.assetid: 53DB51B2-482C-4A1D-AD03-FEB73B77F9A9
 keywords:
 - D3DKMT_WDDM_1_3_CAPS 结构显示设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 01/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 9f8c46780dcb674532c94e8723ae408a820cbb55
-ms.sourcegitcommit: fc94eb0d5a41ef81c1b3ab91ad725386db0be0c2
+ms.openlocfilehash: 3ac46a9eb4df14f93b27b75c6a5b064627b85507
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91603619"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96824211"
 ---
 # <a name="d3dkmt_wddm_1_3_caps-structure"></a>D3DKMT \_ WDDM \_ 1 \_ 3 \_ 大写字母结构
 
@@ -54,7 +53,7 @@ typedef struct _D3DKMT_WDDM_1_3_CAPS {
 
 **SupportPowerManagementPStates**
 
-**保护**
+Reserved 
 
 <a name="requirements"></a>要求
 ------------
@@ -67,7 +66,7 @@ typedef struct _D3DKMT_WDDM_1_3_CAPS {
 <tbody>
 <tr class="odd">
 <td align="left"><p>最低受支持的客户端</p></td>
-<td align="left"><p>Windows 8.1</p></td>
+<td align="left"><p>Windows 8.1</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>最低受支持的服务器</p></td>

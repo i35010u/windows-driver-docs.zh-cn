@@ -1,7 +1,6 @@
 ---
 title: 访问数据缓冲区的方法
 description: 访问数据缓冲区的方法
-ms.assetid: f95a0aec-65f9-44c9-8ae5-11bb4d832752
 keywords:
 - I/o WDK 内核，数据缓冲区
 - 数据缓冲区 WDK i/o
@@ -12,12 +11,12 @@ keywords:
 - 传输数据 WDK 内核，数据缓冲区访问
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8770763d0c3f8d6b46ebb01897220d8b590f0d16
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 4ecf24773089da091343ac3843c418da76b41e4b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89187915"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96823967"
 ---
 # <a name="methods-for-accessing-data-buffers"></a>访问数据缓冲区的方法
 

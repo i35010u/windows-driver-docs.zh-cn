@@ -1,7 +1,6 @@
 ---
 title: 设备对象的 SDDL
 description: 设备对象的 SDDL
-ms.assetid: c0e4432a-4429-4ecd-a2e5-f93a9e3caf48
 keywords:
 - 设备对象 WDK 内核，安全性
 - 安全 WDK 设备对象
@@ -11,12 +10,12 @@ keywords:
 - 安全描述符 WDK 设备对象
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6bc8411075578aa53e2a51de31dbfa5ce228b5c0
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 41089b35c4555e2b930fca067c03ccc57fefc5ae
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103438"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96823963"
 ---
 # <a name="sddl-for-device-objects"></a>设备对象的 SDDL
 
@@ -28,14 +27,14 @@ ms.locfileid: "90103438"
 
 尽管 INF 文件支持全部 SDDL，但 **IoCreateDeviceSecure** 例程仅支持语言的子集。 此处定义了此子集。
 
-设备对象的 SDDL 字符串的格式为 "D:P"，后跟一个或多个 " (;" 形式的表达式。*Access*;;;*SID*) "。 *SID*值指定一个安全标识符，该标识符确定*访问*值适用的目标 (例如，用户或组) 。 *访问*值指定 SID 允许的访问权限。 *访问*和*SID*的值如下所示。
+设备对象的 SDDL 字符串的格式为 "D:P"，后跟一个或多个 " (;" 形式的表达式。*Access*;;;*SID*) "。 *SID* 值指定一个安全标识符，该标识符确定 *访问* 值适用的目标 (例如，用户或组) 。 *访问* 值指定 SID 允许的访问权限。 *访问* 和 *SID* 的值如下所示。
 
-**注意**   使用 SDDL 作为设备对象时，驱动程序必须针对 Wdmsec 进行链接。
+**注意**  使用 SDDL 作为设备对象时，驱动程序必须针对 Wdmsec 进行链接。
 
  
 
 <a href="" id="access"></a>*Access*  
-指定用于确定允许的访问权限的 [**访问 \_ 掩码**](access-mask.md) 值。 此值可以是以 "0x*hex*" 形式表示的十六进制值，也可以是表示访问权限的由两个字母构成的符号代码组成的序列。
+指定用于确定允许的访问权限的 [**访问 \_ 掩码**](access-mask.md) 值。 此值可以是以 "0x *hex*" 形式表示的十六进制值，也可以是表示访问权限的由两个字母构成的符号代码组成的序列。
 
 以下代码可用于指定一般访问权限。
 
@@ -122,7 +121,7 @@ ms.locfileid: "90103438"
 <thead>
 <tr class="header">
 <th>SID</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -162,7 +161,7 @@ ms.locfileid: "90103438"
 <tbody>
 <tr class="odd">
 <td><p>BA</p></td>
-<td><p>Administrators</p>
+<td><p>管理员</p>
 <p>计算机上的内置 Administrators 组。</p></td>
 </tr>
 <tr class="even">
@@ -190,7 +189,7 @@ ms.locfileid: "90103438"
 <thead>
 <tr class="header">
 <th>SID</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -219,7 +218,7 @@ ms.locfileid: "90103438"
 <thead>
 <tr class="header">
 <th>SID</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -255,7 +254,7 @@ ms.locfileid: "90103438"
 <thead>
 <tr class="header">
 <th>SID</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -268,9 +267,9 @@ ms.locfileid: "90103438"
 </tr>
 <tr class="even">
 <td><p>UD</p></td>
-<td><p>用户模式驱动程序</p>
-<p>此 SID 授予对用户模式驱动程序的访问权限。 目前，此 SID 只包含为用户模式驱动程序框架编写的驱动程序， (UMDF) 。 从 Windows 8 开始可以使用此 SID。</p>
-<p>在早期版本的 Windows 中，如果不能识别 "UD" 缩写，则必须指定该 SID 的完全限定形式 (S-1-5-84-0-0-0-0-0) ，才能授予对 UMDF 驱动程序的访问权限。 有关详细信息，请参阅在用户模式驱动程序框架中 <a href="/windows-hardware/drivers/wdf/controlling-device-access" data-raw-source="[Controlling Device Access](../wdf/controlling-device-access.md)">控制设备访问</a> 文档。</p></td>
+<td><p>User-Mode 驱动程序</p>
+<p>此 SID 授予对用户模式驱动程序的访问权限。 目前，此 SID 只包含为 User-Mode Driver Framework 编写的驱动程序 (UMDF) 。 从 Windows 8 开始可以使用此 SID。</p>
+<p>在早期版本的 Windows 中，如果不能识别 "UD" 缩写，则必须指定该 SID 的完全限定形式 (S-1-5-84-0-0-0-0-0) ，才能授予对 UMDF 驱动程序的访问权限。 有关详细信息，请参阅 User-Mode Driver Framework 文档中的 <a href="/windows-hardware/drivers/wdf/controlling-device-access" data-raw-source="[Controlling Device Access](../wdf/controlling-device-access.md)">控制设备访问权限</a> 。</p></td>
 </tr>
 </tbody>
 </table>

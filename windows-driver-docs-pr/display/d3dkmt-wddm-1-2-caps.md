@@ -1,7 +1,6 @@
 ---
 title: D3DKMT \_ WDDM \_ 1 \_ 2 \_ 大写结构
 description: 了解 D3DKMT \_ WDDM \_ 1 \_ 2 \_ cap 结构，该结构保留供系统使用。 请勿在您的驱动程序中使用。
-ms.assetid: 0cd26fad-4772-4631-81fc-da2ddb7dc9a1
 keywords:
 - D3DKMT_WDDM_1_2_CAPS 结构显示设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 01/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: c9b2951216d73921585b1ee51690d970c6e2275b
-ms.sourcegitcommit: fc94eb0d5a41ef81c1b3ab91ad725386db0be0c2
+ms.openlocfilehash: 018e86f5b2df5a464f4c38165955fb8ba3e84509
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91603584"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96824215"
 ---
 # <a name="d3dkmt_wddm_1_2_caps-structure"></a>D3DKMT \_ WDDM \_ 1 \_ 2 \_ 大写结构
 
@@ -46,7 +45,7 @@ typedef struct _D3DKMT_WDDM_1_2_CAPS {
       UINT SupportSurpriseRemovalInHibernation  :1;
       UINT Reserved  :22;
     };
-    UINT   Value;
+    UINT   Value;
   };
 } D3DKMT_WDDM_1_2_CAPS;
 ```
@@ -76,9 +75,9 @@ typedef struct _D3DKMT_WDDM_1_2_CAPS {
 
 **SupportSurpriseRemovalInHibernation**
 
-**保护**
+Reserved 
 
-**值**
+值
 
 <a name="requirements"></a>要求
 ------------

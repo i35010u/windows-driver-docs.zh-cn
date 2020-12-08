@@ -1,9 +1,8 @@
 ---
 title: JobSummary 元素
-description: 可选 JobSummary 元素包含有关扫描作业的摘要。
-ms.assetid: db81cad5-d157-403c-b3a4-1e5f91f858da
+description: 可选的 JobSummary 元素包含有关扫描作业的摘要。
 keywords:
-- JobSummary 元素成像设备
+- JobSummary 元素图像设备
 topic_type:
 - apiref
 api_name:
@@ -12,19 +11,19 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b3fcd642a6fc31146f9f0d7abb4b5c2cbf1ce60a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8fb878c8789b1cb0f4a4216fd1469395ad290c60
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63348755"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96824129"
 ---
 # <a name="jobsummary-element"></a>JobSummary 元素
 
 
-可选**JobSummary**元素包含有关扫描作业的摘要。
+可选的 **JobSummary** 元素包含有关扫描作业的摘要。
 
-<a name="usage"></a>用法
+<a name="usage"></a>使用情况
 -----
 
 ```xml
@@ -97,9 +96,9 @@ ms.locfileid: "63348755"
 <a name="remarks"></a>备注
 -------
 
-如果父元素的**JobSummary**元素是[ **ActiveJobs**](activejobs.md)， **JobSummary**包含一个作业的相关信息的摘要这是在扫描设备中当前处于活动状态。
+如果 **JobSummary** 元素的父元素是 [**ActiveJobs**](activejobs.md)，则 **JobSummary** 将包含扫描设备中当前活动的一个作业的相关信息摘要。
 
-如果父元素是[ **JobHistory**](jobhistory.md)， **JobSummary**包含有关单一、 最近已完成作业内扫描设备的信息的摘要。
+如果父元素为 [**JobHistory**](jobhistory.md)，则 **JobSummary** 包含有关扫描设备中单个最近完成的作业的信息摘要。
 
 ## <a name="see-also"></a>请参阅
 

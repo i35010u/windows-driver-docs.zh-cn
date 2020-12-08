@@ -1,7 +1,6 @@
 ---
 title: 从 COPP 函数返回错误代码
 description: 从 COPP 函数返回错误代码
-ms.assetid: a42fba73-59b2-4106-ba2b-9e96cd8524c8
 keywords:
 - 复制保护 WDK COPP，错误代码
 - 视频复制保护 WDK COPP，错误代码
@@ -10,12 +9,12 @@ keywords:
 - 错误代码 WDK COPP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 68cc80615ee6ff1d6545ac4d4bd8f1989f7a7a63
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: c8cfbf84734cf13505c2e32a00c672c2bcf6c9a2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90715450"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96824167"
 ---
 # <a name="returning-error-codes-from-copp-functions"></a>从 COPP 函数返回错误代码
 
@@ -24,7 +23,7 @@ ms.locfileid: "90715450"
 
 [COPP DDI](sample-functions-for-copp.md)可以返回以下类型的错误代码：
 
--   *Winerror.h*头文件中定义的错误代码，对所有 Windows 应用程序都是通用的。 这些 Windows 错误代码以 E 前缀开头 \_ 。
+-   *Winerror.h* 头文件中定义的错误代码，对所有 Windows 应用程序都是通用的。 这些 Windows 错误代码以 E 前缀开头 \_ 。
 
 -   在 *ddraw* 头文件中定义的错误代码，并且对于 DirectDraw 是唯一的。 这些 DirectDraw 错误代码以 DDERR 前缀开头 \_ 。
 
@@ -34,7 +33,7 @@ ms.locfileid: "90715450"
 
 -   E \_ 意外
 
-    显示驱动程序处于无效状态。 例如，在[*COPPKeyExchange*](./coppkeyexchange.md)函数之前调用了[*COPPSequenceStart*](./coppsequencestart.md)函数。
+    显示驱动程序处于无效状态。 例如，在 [*COPPKeyExchange*](./coppkeyexchange.md)函数之前调用了 [*COPPSequenceStart*](./coppsequencestart.md)函数。
 
 -   E \_ INVALIDARG
 
@@ -48,7 +47,7 @@ COPP DDI 可以返回 E \_ FAIL 和 DDERR \_ 一般错误代码; 但是，由于
 
 每个 COPP 函数的 "备注" 部分指定 \_ COPP 函数可以报告的 DDERR 错误代码。 不应要求 COPP DDI 返回任何其他 DDERR \_ 错误代码。
 
-在将视频微型端口驱动程序中的 COPP DDI 传播到显示驱动程序时，不应使用来自 [**EngDeviceIoControl**](/windows/win32/api/winddi/nf-winddi-engdeviceiocontrol) 函数的返回值，因为 Windows 内核会将从 IOCTL 返回的错误值处理到 **EngDeviceIoControl**。 相反，应通过**EngDeviceIoControl**的*lpInBuffer*参数传递错误消息。 有关详细信息，请参阅 [从显示器驱动程序调用 COPP DDI](calling-the-copp-ddi-from-the-display-driver.md) 和 [COPP 视频微型端口驱动程序模板](copp-video-miniport-driver-template.md) 中的示例代码和 [执行 COPP 操作](performing-copp-operations-example.md)。
+在将视频微型端口驱动程序中的 COPP DDI 传播到显示驱动程序时，不应使用来自 [**EngDeviceIoControl**](/windows/win32/api/winddi/nf-winddi-engdeviceiocontrol) 函数的返回值，因为 Windows 内核会将从 IOCTL 返回的错误值处理到 **EngDeviceIoControl**。 相反，应通过 **EngDeviceIoControl** 的 *lpInBuffer* 参数传递错误消息。 有关详细信息，请参阅 [从显示器驱动程序调用 COPP DDI](calling-the-copp-ddi-from-the-display-driver.md) 和 [COPP 视频微型端口驱动程序模板](copp-video-miniport-driver-template.md) 中的示例代码和 [执行 COPP 操作](performing-copp-operations-example.md)。
 
  
 

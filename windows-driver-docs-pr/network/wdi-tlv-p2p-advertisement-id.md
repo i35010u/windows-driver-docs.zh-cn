@@ -1,22 +1,21 @@
 ---
 title: WDI_TLV_P2P_ADVERTISEMENT_ID
-description: WDI_TLV_P2P_ADVERTISEMENT_ID 是 TLV 包含唯一标识服务实例的 ID。
-ms.assetid: 04F8200C-54A3-4B2F-9EDF-15E2BBB19201
+description: WDI_TLV_P2P_ADVERTISEMENT_ID 是包含唯一标识服务实例的 ID 的 TLV。
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_P2P_ADVERTISEMENT_ID 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: ac3c5d8b59cc7b527d93a12f1878b3d7c19ccae0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e1b60f8527aaf6b6a6a016f1f10d7e175c7cbbe3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63353131"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96823781"
 ---
-# <a name="wditlvp2padvertisementid"></a>WDI\_TLV\_P2P\_ADVERTISEMENT\_ID
+# <a name="wdi_tlv_p2p_advertisement_id"></a>WDI \_ TLV \_ P2P \_ 播发 \_ ID
 
 
-WDI\_TLV\_P2P\_播发\_ID 是 TLV 包含唯一标识服务实例的 ID。
+WDI \_ tlv \_ P2P \_ 播发 \_ ID 是一个 tlv，其中包含唯一标识服务实例的 ID。
 
 ## <a name="tlv-type"></a>TLV 类型
 
@@ -26,14 +25,14 @@ WDI\_TLV\_P2P\_播发\_ID 是 TLV 包含唯一标识服务实例的 ID。
 ## <a name="length"></a>长度
 
 
-UINT32 大小 （以字节为单位）。
+UINT32) 的大小 (以字节为单位）。
 
 ## <a name="values"></a>值
 
 
-| 在任务栏的搜索框中键入   | 描述                                        |
+| 类型   | 描述                                        |
 |--------|----------------------------------------------------|
-| UINT32 | 唯一地标识服务实例的 ID。 |
+| UINT32 | 唯一标识服务实例的 ID。 |
 
  
 
@@ -52,10 +51,10 @@ UINT32 大小 （以字节为单位）。
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
-<td><p>Windows Server 2016</p></td>
+<td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Wditypes.hpp</td>
 </tr>
 </tbody>

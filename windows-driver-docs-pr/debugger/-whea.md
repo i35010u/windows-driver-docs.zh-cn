@@ -1,7 +1,6 @@
 ---
 title: whea
 description: Whea 扩展显示顶级 Windows 硬件错误体系结构 (WHEA) 信息。
-ms.assetid: 5d621507-74e7-4a43-8600-88dca29e461d
 keywords:
 - whea Windows 调试
 ms.date: 05/23/2017
@@ -12,12 +11,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 31059c33e36e96c7c6ab866b9bffd93e68db1c5a
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 0dcf204866606e53bcb973cac85acab303b37519
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89217416"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96823577"
 ---
 # <a name="whea"></a>!whea
 
@@ -41,15 +40,15 @@ ms.locfileid: "89217416"
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>Windows 2000</strong></p></td>
-<td align="left"><p>Unavailable</p></td>
+<td align="left"><p>不可用</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>Windows XP</strong></p></td>
-<td align="left"><p>Unavailable</p></td>
+<td align="left"><p>不可用</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>Windows Server 2003</strong></p></td>
-<td align="left"><p>Unavailable</p></td>
+<td align="left"><p>不可用</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>Windows Vista 及更高版本</strong></p></td>
@@ -64,7 +63,7 @@ ms.locfileid: "89217416"
 
 ### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-[**！ Errrec**](-errrec.md)和[**！ errpkt**](-errpkt.md)扩展可用于显示其他 WHEA 信息。 有关 WHEA 的常规信息，请参阅 Windows 驱动程序工具包中的 [Windows 硬件错误体系结构 (WHEA) ](../whea/index.md) (WDK) 文档。
+[**！ Errrec**](-errrec.md)和 [**！ errpkt**](-errpkt.md)扩展可用于显示其他 WHEA 信息。 有关 WHEA 的常规信息，请参阅 Windows 驱动程序工具包中的 [Windows 硬件错误体系结构 (WHEA) ](../whea/index.md) (WDK) 文档。
 
 <a name="remarks"></a>备注
 -------

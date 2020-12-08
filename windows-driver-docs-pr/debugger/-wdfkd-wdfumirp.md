@@ -1,9 +1,8 @@
 ---
 title: wdfkd.wdfumirp
-description: Wdfkd.wdfumirp 扩展显示有关用户模式下 I/O 请求数据包 (UM IRP) 的信息。
-ms.assetid: 8706E8F6-A387-48A9-AF14-ED2C0F94AD98
+description: Wdfkd wdfumirp 扩展显示有关用户模式 i/o 请求包 (UM IRP) 的信息。
 keywords:
-- wdfkd.wdfumirp Windows 调试
+- wdfkd wdfumirp Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,53 +11,53 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 39c9546381135db9ecd25c765062e5177896d71d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 983c8c6826f087319cd359faf3be1ece605b7d6b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63323150"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96823623"
 ---
 # <a name="wdfkdwdfumirp"></a>!wdfkd.wdfumirp
 
 
-**！ Wdfkd.wdfumirp**扩展显示有关用户模式下 I/O 请求数据包 (UM IRP) 的信息。
+**！ Wdfkd wdfumirp** 扩展显示有关用户模式 i/o 请求数据包 (UM IRP) 的信息。
 
 ```dbgcmd
 !wdfkd.wdfumirp Address
 ```
 
-## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>参数
+## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>Parameters
 
 
-<span id="_______Address______"></span><span id="_______address______"></span><span id="_______ADDRESS______"></span> *Address*   
-指定的地址 UM IRP 以显示有关的信息。 可以使用[ **！ wdfkd.wdfumirps** ](-wdfkd-wdfumirps.md)以获取 UM Irp 中的地址[隐式过程](controlling-threads-and-processes.md)。
+<span id="_______Address______"></span><span id="_______address______"></span><span id="_______ADDRESS______"></span>*地址*   
+指定要显示其相关信息的 UM IRP 的地址。 可以使用！ wdfumirps 获取 [隐式进程](controlling-threads-and-processes.md)中 UM irp 的地址 [**wdfkd。**](-wdfkd-wdfumirps.md)
 
-## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 
 Wdfkd.dll
 
-## <a name="span-idframeworksspanspan-idframeworksspanspan-idframeworksspanframeworks"></a><span id="Frameworks"></span><span id="frameworks"></span><span id="FRAMEWORKS"></span>框架
+## <a name="span-idframeworksspanspan-idframeworksspanspan-idframeworksspanframeworks"></a><span id="Frameworks"></span><span id="frameworks"></span><span id="FRAMEWORKS"></span>协作
 
 
 UMDF 2
 
-## <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+## <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
 
-有关详细信息，请参阅[内核模式驱动程序框架调试](kernel-mode-driver-framework-debugging.md)。
+有关详细信息，请参阅 [内核模式驱动程序框架调试](kernel-mode-driver-framework-debugging.md)。
 
 <a name="remarks"></a>备注
 -------
 
-在内核模式调试会话中或在用户模式下调试会话附加到 UMDF 主机进程 (wudfhost.exe)，可以使用此命令。
+可以在内核模式调试会话中或在附加到 UMDF 主机进程 ( # A0) 的用户模式调试会话中使用此命令。
 
-此命令显示相同的信息作为用户模式命令[ **！ wudfext.umirp**](-wudfext-umirp.md)。
+此命令显示与用户模式命令 [**！ wudfext**](-wudfext-umirp.md)相同的信息。
 
-可以使用[ **！ 过程**](-process.md)若要获取所有 UMDF 主机进程，，和一系列可以使用[ **.process** ](-process--set-process-context-.md)之一设置隐式的进程UMDF 主机进程。 有关详细示例，请参阅[ **！ wdfkd.wdfumdevstacks**](-wdfkd-wdfumdevstacks.md)。
+您可以使用 [**！进程**](-process.md) 获取所有 umdf 主机进程的列表，并且可以使用 [**. 进程**](-process--set-process-context-.md) 将隐式进程设置为一个 umdf 主机进程。 有关详细示例，请参阅 [**！ wdfkd. wdfumdevstacks**](-wdfkd-wdfumdevstacks.md)。
 
-以下示例演示如何使用[ **！ wdfkd.wdfumirps** ](-wdfkd-wdfumirps.md)并 **！ wdfkd.wdfumirp**来显示单独的 UM IRP 有关的信息。
+下面演示了如何使用 [**！ wdfkd**](-wdfkd-wdfumirps.md) 和 **！ wdfkd** 显示有关单个 UM IRP 的信息。
 
 ```dbgcmd
 0: kd> !wdfkd.wdfumirps

@@ -1,16 +1,15 @@
 ---
 title: OID_WWAN_ENUMERATE_DEVICE_SERVICES
 description: OID_WWAN_ENUMERATE_DEVICE_SERVICES 返回微型端口驱动程序所支持的设备服务的列表。NDIS_STATUS_WWAN_DEVICE_SERVICE_SUPPORTED_COMMANDS 状态通知，其中包含提供受支持的设备服务 Guid 列表的 NDIS_WWAN_SUPPORTED_DEVICE_SERVICES 结构。
-ms.assetid: 12AB2235-DDF8-44CB-BD3D-61D0FFCB4080
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_WWAN_ENUMERATE_DEVICE_SERVICES 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 1c5ba6e964da6d8e21f79b5b0e4ffcc886a4a2ed
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: f38a6cbd5e6a8b56489d832c46ca4a74704fce5e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89214508"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96823823"
 ---
 # <a name="oid_wwan_enumerate_device_services"></a>OID \_ WWAN \_ 枚举 \_ 设备 \_ 服务
 
@@ -41,7 +40,7 @@ OID \_ WWAN \_ 枚举 \_ 设备 \_ 服务返回微型端口驱动程序所支持
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**NDIS \_ 状态 \_ WWAN \_ 设备 \_ 服务 \_ 支持的 \_ 命令**](./ndis-status-wwan-device-service-supported-commands.md)

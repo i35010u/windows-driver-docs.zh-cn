@@ -1,9 +1,8 @@
 ---
 title: JobToken 元素
-description: 所需的 JobToken 元素包含一个新的扫描作业的设备创建令牌。
-ms.assetid: 09446fc0-074a-4f54-93fa-55b4dd467fad
+description: 必需的 JobToken 元素包含用于新扫描作业的设备创建的令牌。
 keywords:
-- JobToken 元素成像设备
+- JobToken 元素图像设备
 topic_type:
 - apiref
 api_name:
@@ -12,19 +11,19 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2d022c3307f292691c292c1a5eeea8e10178172d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4b2a5c6fde0811ce85983f9fa18e1f312ed85cbb
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63384546"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96824119"
 ---
 # <a name="jobtoken-element"></a>JobToken 元素
 
 
-所需**JobToken**元素包含一个新的扫描作业的设备创建令牌。
+必需的 **JobToken** 元素包含用于新扫描作业的设备创建的令牌。
 
-<a name="usage"></a>用法
+<a name="usage"></a>使用情况
 -----
 
 ```xml
@@ -41,12 +40,12 @@ ms.locfileid: "63384546"
 <a name="text-value"></a>文本值
 ----------
 
-必需。 任何有效字符的字符串。
+必需。 任何有效的字符串。
 
 ## <a name="child-elements"></a>子元素
 
 
-没有子元素。
+没有任何子元素。
 
 ## <a name="parent-elements"></a>父元素
 
@@ -73,7 +72,7 @@ ms.locfileid: "63384546"
 <a name="remarks"></a>备注
 -------
 
-**JobToken**元素搭配[ **JobId** ](jobid.md)元素来唯一地表示特定扫描作业。 **JobToken**传递给扫描设备[ **RetrieveImageRequest** ](retrieveimagerequest.md)操作元素以启用该设备以验证扫描请求者实际创建扫描作业。
+**JobToken** 元素与 [**JobId**](jobid.md)元素配对，以唯一表示特定扫描作业。 **JobToken** 会传递到 [**RetrieveImageRequest**](retrieveimagerequest.md) 操作元素中的扫描设备，以使设备能够验证扫描请求者是否确实创建了扫描作业。
 
 ## <a name="see-also"></a>请参阅
 

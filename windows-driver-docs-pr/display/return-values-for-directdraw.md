@@ -1,7 +1,6 @@
 ---
 title: DirectDraw 的返回值
 description: DirectDraw 的返回值
-ms.assetid: da4cc7d7-6826-48aa-96c6-004e31fc3e3e
 keywords:
 - 返回值 WDK DirectDraw
 - 绘制 WDK DirectDraw，返回值
@@ -9,12 +8,12 @@ keywords:
 - 错误 WDK DirectDraw
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7f24244f30386fe1a810a95c38a858c33b7b3fc9
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 1768ec6933ed007d15e112a8bf3d12a68fddd6ee
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89066670"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96824177"
 ---
 # <a name="return-values-for-directdraw"></a>DirectDraw 的返回值
 
@@ -22,11 +21,11 @@ ms.locfileid: "89066670"
 ## <span id="ddk_return_values_for_directdraw_gg"></span><span id="DDK_RETURN_VALUES_FOR_DIRECTDRAW_GG"></span>
 
 
-下表列出了由 [DirectDraw 驱动程序提供的函数](/windows-hardware/drivers/ddi/index)可返回的值。 DDHAL \_ DRIVER \_ *Xxx*值实际上在 DWORD 返回值中返回。 在 \_ \_ 特定函数的参数指向的结构的**ddRVal**成员中返回 DD OK 值和 DDERR*Xxx*错误代码。
+下表列出了由 [DirectDraw 驱动程序提供的函数](/windows-hardware/drivers/ddi/index)可返回的值。 DDHAL \_ DRIVER \_ *Xxx* 值实际上在 DWORD 返回值中返回。 在 \_ \_ 特定函数的参数指向的结构的 **ddRVal** 成员中返回 DD OK 值和 DDERR *Xxx* 错误代码。
 
 有关每个函数可以返回的特定错误代码，请参阅参考部分中的函数说明。 有关错误代码和返回值的完整列表，请参阅 DirectDraw 标头文件 *ddraw* 和 *dxmini* 。 请注意，错误代码由负值表示，不能组合使用。
 
-DirectDraw 驱动程序中的函数必须返回两个返回代码之一： DDHAL \_ 驱动程序已 \_ 处理或 DDHAL \_ driver \_ NOTHANDLED。 如果驱动程序返回 DDHAL \_ 驱动程序已 \_ 处理，则它还必须返回 DD \_ OK 或 *ddraw*中列出的错误代码之一。 DirectDraw 驱动程序中的函数可以返回下表中的代码。 这些代码在 *ddraw*中定义。
+DirectDraw 驱动程序中的函数必须返回两个返回代码之一： DDHAL \_ 驱动程序已 \_ 处理或 DDHAL \_ driver \_ NOTHANDLED。 如果驱动程序返回 DDHAL \_ 驱动程序已 \_ 处理，则它还必须返回 DD \_ OK 或 *ddraw* 中列出的错误代码之一。 DirectDraw 驱动程序中的函数可以返回下表中的代码。 这些代码在 *ddraw* 中定义。
 
 <table>
 <colgroup>
@@ -66,14 +65,14 @@ DirectDraw 驱动程序中的函数必须返回两个返回代码之一： DDHAL
 </tr>
 <tr class="odd">
 <td align="left"><p>DDERR_UNSUPPORTED</p></td>
-<td align="left"><p>该操作不受支持。</p></td>
+<td align="left"><p>此操作不受支持。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-在[视频微型端口驱动程序](video-miniport-drivers-in-the-windows-2000-display-driver-model.md)中实现的[DxApi 函数](/windows-hardware/drivers/ddi/index)将返回下表中的其中一个代码。 这些代码在 *dxmini*中定义。
+在[视频微型端口驱动程序](video-miniport-drivers-in-the-windows-2000-display-driver-model.md)中实现的[DxApi 函数](/windows-hardware/drivers/ddi/index)将返回下表中的其中一个代码。 这些代码在 *dxmini* 中定义。
 
 <table>
 <colgroup>
@@ -101,7 +100,7 @@ DirectDraw 驱动程序中的函数必须返回两个返回代码之一： DDHAL
 </tr>
 <tr class="even">
 <td align="left"><p>DXERR_UNSUPPORTED</p></td>
-<td align="left"><p>该操作不受支持。</p></td>
+<td align="left"><p>此操作不受支持。</p></td>
 </tr>
 </tbody>
 </table>

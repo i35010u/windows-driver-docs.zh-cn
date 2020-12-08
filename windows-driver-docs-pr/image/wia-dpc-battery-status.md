@@ -1,9 +1,8 @@
 ---
-title: WIA\_DPC\_电池\_状态
-description: WIA\_DPC\_电池\_STATUS 属性定义剩下要运行照相机设备的电池电量的百分比。
-ms.assetid: d6e50c77-9c30-4091-9d6e-7215907ba87b
+title: WIA \_ DPC \_ 电池 \_ 状态
+description: WIA \_ DPC \_ 电池 \_ 状态属性定义了用于操作照相机设备的电池电量的百分比。
 keywords:
-- WIA_DPC_BATTERY_STATUS 成像设备
+- WIA_DPC_BATTERY_STATUS 图像设备
 topic_type:
 - apiref
 api_name:
@@ -14,31 +13,31 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 677b50e28c9b68acf85a35b15a3431399ac1f524
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d47bcedba3e3674262e9768f52b6bd95d364e6dc
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63382304"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96824477"
 ---
-# <a name="wiadpcbatterystatus"></a>WIA\_DPC\_电池\_状态
+# <a name="wia_dpc_battery_status"></a>WIA \_ DPC \_ 电池 \_ 状态
 
 
-WIA\_DPC\_电池\_STATUS 属性定义剩下要运行照相机设备的电池电量的百分比。
+WIA \_ DPC \_ 电池 \_ 状态属性定义了用于操作照相机设备的电池电量的百分比。
 
 ## <span id="ddk_wia_dpc_battery_status_si"></span><span id="DDK_WIA_DPC_BATTERY_STATUS_SI"></span>
 
 
-属性类型：VT\_I4
+属性类型： VT \_ I4
 
-有效值：WIA\_PROP\_NONE
+有效值： WIA " \_ \_ 无"
 
 访问权限：只读
 
 <a name="remarks"></a>备注
 -------
 
-值 WIA\_DPC\_电池\_STATUS 属性应为介于 0 到 100 的整数。 应用程序读取此属性以确定电池剩余寿命的摄像机设备。
+WIA \_ DPC \_ 电池状态属性的值 \_ 应为0到100之间的整数。 应用程序读取此属性以确定相机设备的剩余电池寿命。
 
 <a name="requirements"></a>要求
 ------------
@@ -50,12 +49,12 @@ WIA\_DPC\_电池\_STATUS 属性定义剩下要运行照相机设备的电池电�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Version</p></td>
-<td><p>在 Windows Vista 和更高版本操作系统中已过时，并应不再使用。 但是，此属性仍定义 Windows Vista 中与应用程序和用于 Windows Server 2003、 Windows XP 和早期版本的 Windows 设备的兼容性。</p></td>
+<td><p>版本</p></td>
+<td><p>在 Windows Vista 和更高版本的操作系统中已过时，不应再使用。 但是，在 Windows Vista 中仍定义此属性，以与为 Windows Server 2003、Windows XP 和 windows 的早期版本设计的应用程序和设备兼容。</p></td>
 </tr>
 <tr class="even">
-<td><p>Header</p></td>
-<td>Wiadef.h （包括 Wiadef.h）</td>
+<td><p>标头</p></td>
+<td>Wiadef (包含 Wiadef) </td>
 </tr>
 </tbody>
 </table>

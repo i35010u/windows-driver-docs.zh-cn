@@ -1,7 +1,6 @@
 ---
 title: BCDEdit /debug
-description: /Debug boot 选项启用或禁用与指定启动项或当前启动项关联的 Windows 操作系统的内核调试。
-ms.assetid: 013ec247-f2ca-4918-9dfa-8b1348d0b4e5
+description: /debug 启动选项可启用或禁用与指定的启动项目或当前启动项目关联的 Windows 操作系统的内核调试。
 ms.date: 04/22/2019
 keywords:
 - BCDEdit/debug 驱动程序开发工具
@@ -12,12 +11,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 82dcf1312deaca56622c3c33c2ff1214dbebccf9
-ms.sourcegitcommit: f2fbb6e54e085e9329288cee49860fe380be9c4c
+ms.openlocfilehash: 7ae796c2441a635a37fe9a72619e7d6e82e9d05b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91778777"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96824269"
 ---
 # <a name="bcdedit-debug"></a>BCDEdit /debug
 

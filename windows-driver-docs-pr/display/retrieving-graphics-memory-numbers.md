@@ -1,15 +1,14 @@
 ---
 title: 检索图形内存数字
 description: 检索图形内存数字
-ms.assetid: ec704093-ad9a-4717-8e9e-537a2848b1c7
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0c0c9bc8e3b7f28dd0379513ab98d8db743255d8
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 2e8a67dc91f3f2f201ca1e6acbbf47ea48458214
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90715130"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96824205"
 ---
 # <a name="retrieving-graphics-memory-numbers"></a>检索图形内存数字
 

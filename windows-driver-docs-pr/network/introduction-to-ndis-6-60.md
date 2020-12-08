@@ -1,15 +1,14 @@
 ---
 title: NDIS 6.60 简介
 description: 本部分介绍了 NDIS 6.60，并介绍了 NDIS 6.50 中的更改。 NDIS 6.60 包含在 Windows 10、版本1607和 Windows Server 2016 及更高版本中。
-ms.assetid: AFDFD1CD-2E07-4A4F-82E2-5E6C5AABD5A3
 ms.date: 06/01/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6da8fe659e29684e9c8f6c6c8d0405a74ad96a30
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: fd586172bf973243fdf7509d48261b24983b0f3a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89206414"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96823859"
 ---
 # <a name="introduction-to-ndis-660"></a>NDIS 6.60 简介
 

@@ -1,7 +1,6 @@
 ---
 title: 映射连接拓扑
 description: 映射连接拓扑
-ms.assetid: f11ffc48-a117-4b75-bc19-7a3762e6ba19
 keywords:
 - 方法设置 WDK BDA，映射连接拓扑
 - 属性设置 WDK BDA，映射连接拓扑
@@ -11,12 +10,12 @@ keywords:
 - BDA_TEMPLATE_CONNECTION
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cc9389e13c27645bfee7e1cc81b88a6a0ec2f610
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 0ac86e0fc89abfa846c346f7f23ef2e2e4aa3fb8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89185861"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96823675"
 ---
 # <a name="mapping-connection-topology"></a>映射连接拓扑
 
@@ -24,7 +23,7 @@ ms.locfileid: "89185861"
 
 
 
-为了使 BDA 支持库代表 BDA 微型驱动程序向第3环中的应用程序提供属性和方法，BDA 微型驱动程序必须提供其连接拓扑到 BDA 支持库的映射。 BDA 微型驱动程序提供 [**bda \_ 模板 \_ 连接**](/windows-hardware/drivers/ddi/bdatypes/ns-bdatypes-_bda_template_connection) 结构数组中的此映射。 当 BDA 微型驱动程序 \_ \_ 调用[**BdaCreateFilterFactory**](/windows-hardware/drivers/ddi/bdasup/nf-bdasup-bdacreatefilterfactory)支持函数时，它会在[**KSTOPOLOGY \_ 连接**](/windows-hardware/drivers/ddi/ks/ns-ks-kstopology_connection)结构数组中传递此 bda 模板连接数组。 有关详细信息，请参阅 [启动 BDA 微型驱动程序](starting-a-bda-minidriver.md) 。 此数组提供了可在筛选器之间或筛选器与相邻筛选器之间进行的节点和 pin 类型之间的所有可能连接的表示形式。
+为了使 BDA 支持库代表 BDA 微型驱动程序向第3环中的应用程序提供属性和方法，BDA 微型驱动程序必须提供其连接拓扑到 BDA 支持库的映射。 BDA 微型驱动程序提供 [**bda \_ 模板 \_ 连接**](/windows-hardware/drivers/ddi/bdatypes/ns-bdatypes-_bda_template_connection) 结构数组中的此映射。 当 BDA 微型驱动程序 \_ \_ 调用 [**BdaCreateFilterFactory**](/windows-hardware/drivers/ddi/bdasup/nf-bdasup-bdacreatefilterfactory)支持函数时，它会在 [**KSTOPOLOGY \_ 连接**](/windows-hardware/drivers/ddi/ks/ns-ks-kstopology_connection)结构数组中传递此 bda 模板连接数组。 有关详细信息，请参阅 [启动 BDA 微型驱动程序](starting-a-bda-minidriver.md) 。 此数组提供了可在筛选器之间或筛选器与相邻筛选器之间进行的节点和 pin 类型之间的所有可能连接的表示形式。
 
 然后，网络提供程序筛选器可以对 \_ \_ \_ BDA 微型驱动程序的筛选器实例上设置的 [KSPROPSETID \_ BdaTopology](./kspropsetid-bdatopology.md) 属性请求 KSPROPERTY 的 bda 模板连接属性请求，以检索微型驱动程序的连接拓扑。 BDA 微型驱动程序将调用 [**BdaPropertyTemplateConnections**](/windows-hardware/drivers/ddi/bdasup/nf-bdasup-bdapropertytemplateconnections) 支持函数，该函数将返回筛选器的模板连接列表， (BDA \_ 模板 \_ 连接结构在 KSTOPOLOGY 连接结构数组中) \_ 。 BDA \_ 模板连接结构的成员 \_ 识别连接的以下对节点和固定类型：
 

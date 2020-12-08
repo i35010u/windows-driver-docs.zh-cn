@@ -1,19 +1,18 @@
 ---
 title: 创建 IEEE 1394 虚拟设备
 description: 创建 IEEE 1394 虚拟设备
-ms.assetid: 5b6a4d7a-e116-4a68-a1f8-fd561fbc0495
 keywords:
 - 模拟驱动程序 WDK IEEE 1394 总线
 - 硬件仿真驱动程序 WDK IEEE 1394 总线
 - 虚拟设备 WDK IEEE 1394 总线
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 44e398c1fedda4bdd045ff645feaccedb09c3c8a
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 0fad592f23acdd9d88137621ffaae193b132ff97
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89382259"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96824143"
 ---
 # <a name="creating-ieee-1394-virtual-devices"></a>创建 IEEE 1394 虚拟设备
 

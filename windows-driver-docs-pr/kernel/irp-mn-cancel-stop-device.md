@@ -2,23 +2,22 @@
 title: IRP_MN_CANCEL_STOP_DEVICE
 description: 了解 "IRP_MN_CANCEL_STOP_DEVICE" 内核模式驱动程序体系结构。 所有 PnP 驱动程序都必须处理此 IRP。
 ms.date: 08/12/2017
-ms.assetid: 7047c266-84b4-4260-ad75-d56c87c8c9ef
 keywords:
-- IRP_MN_CANCEL_STOP_DEVICE 内核模式驱动程序体系结构
+- IRP_MN_CANCEL_STOP_DEVICE Kernel-Mode 驱动程序体系结构
 ms.localizationpriority: medium
-ms.openlocfilehash: 8f778181d7660cf2f00cb3d5545a536db00eea7c
-ms.sourcegitcommit: 2aedb606f9f14e74687f0d3da60e14fc6ffffa7e
+ms.openlocfilehash: 579d3de079e707d3cb8780838d839fe1778b4252
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91544422"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96823997"
 ---
 # <a name="irp_mn_cancel_stop_device"></a>IRP \_ MN \_ 取消 \_ 停止 \_ 设备
 
 
 所有 PnP 驱动程序都必须处理此 IRP。
 
-## <a name="value"></a>值
+## <a name="value"></a>“值”
 
 0x06
 
@@ -37,19 +36,19 @@ PnP 管理器在 \_ 系统线程的上下文中以 IRQL 被动级别发送此 IR
 ## <a name="input-parameters"></a>输入参数
 
 
-None
+无
 
 ## <a name="output-parameters"></a>输出参数
 
 
-None
+无
 
 ## <a name="io-status-block"></a>I/o 状态块
 
 
 对于此 IRP，驱动程序必须将 **irp &gt; IoStatus** 设置为状态 " \_ 成功"。 如果驱动程序未通过此 IRP，则设备处于不一致状态。
 
-<a name="operation"></a>Operation
+<a name="operation"></a>操作
 ---------
 
 此 IRP 必须首先由设备的父总线驱动程序处理，然后由设备堆栈中的每个更高的驱动程序处理。

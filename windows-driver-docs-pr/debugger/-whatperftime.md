@@ -1,7 +1,6 @@
 ---
 title: whatperftime
-description: Whatperftime 扩展将标准时间值转换为高分辨率性能计数器的值。
-ms.assetid: ff11a51f-4e25-4cf3-be19-d38361c441e9
+description: Whatperftime 扩展将高分辨率性能计数器值转换为标准时间值。
 keywords:
 - 性能计数
 - whatperftime Windows 调试
@@ -13,29 +12,29 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: bee6ad77a46605e333075c1f43e7ea53648567b1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 48464d91ddd48646a2f18493be4c37bd3413881f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327957"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96823579"
 ---
 # <a name="whatperftime"></a>!whatperftime
 
 
-**！ Whatperftime**扩展将高分辨率性能计数器的值转换为标准时间值。
+**！ Whatperftime** extension 将高分辨率性能计数器值转换为标准时间值。
 
 ```dbgcmd
 !whatperftime Count
 ```
 
-## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>参数
+## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>Parameters
 
 
-<span id="_______Count______"></span><span id="_______count______"></span><span id="_______COUNT______"></span> *Count*   
-性能计数器的时钟值。
+<span id="_______Count______"></span><span id="_______count______"></span><span id="_______COUNT______"></span>*计数*   
+性能计数器时钟值。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 <table>
 <colgroup>
@@ -59,9 +58,9 @@ ms.locfileid: "63327957"
 <a name="remarks"></a>备注
 -------
 
-可以使用 **！ whatperftime**若要通过调用检索的值转换**QueryPerformanceCounter**。 在软件跟踪还找到性能计数器时间值。
+可以使用 **！ whatperftime** 转换通过调用 **QueryPerformanceCounter** 检索到的值。 性能计数器时间值也可在软件跟踪中找到。
 
-输出显示为*HH:MM:SS.mmm*。 下面是一个示例：
+输出显示为 *HH： MM： SS*。 以下是示例：
 
 ```dbgcmd
 kd> !whatperftime 304589

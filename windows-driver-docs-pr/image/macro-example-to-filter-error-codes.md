@@ -1,22 +1,21 @@
 ---
 title: 用于筛选错误代码的宏示例
 description: 用于筛选错误代码的宏示例
-ms.assetid: 68aa0a75-82c7-4dd9-8f8f-eca5de6ea102
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3f2f6ccd212cfcefbfb4c36956a4b51ac8a9a167
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6be0d0ba5b4118d11318db15133906dd42bd49e8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63373914"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96824095"
 ---
 # <a name="macro-example-to-filter-error-codes"></a>用于筛选错误代码的宏示例
 
 > [!IMPORTANT]  
-> WSD 占领功能已弃用，将在 2018年中删除所有与 WSD 占领相关文档。
+> 已弃用 WSD 争取冠军宝座功能，并且2018中将删除所有与 WSD 争取冠军宝座相关的文档。
 
-下面的宏示例筛选器的通信失败错误代码。
+下面的宏示例筛选通信失败错误代码。
 
 ```cpp
 //

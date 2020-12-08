@@ -1,7 +1,6 @@
 ---
 title: .while
 description: While 标记的行为类似于 C 中的 while 关键字。
-ms.assetid: bc38357d-b17a-4a26-840e-1b4b90986154
 keywords:
 - 。 Windows 调试时
 ms.date: 05/23/2017
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: dce9ecea7b81bcdf2ea0aaff8114591eaf6175f1
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 90b6458cc15a9d0f3a63a4c70b6d3edaf337d1be
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89217414"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96823575"
 ---
 # <a name="while"></a>.while
 
 
-**While**标记的行为类似于 C 中的**while**关键字。
+**While** 标记的行为类似于 C 中的 **while** 关键字。
 
 ```dbgcmd
 .while (Condition) { Commands } 
@@ -44,7 +43,7 @@ ms.locfileid: "89217414"
 <a name="remarks"></a>备注
 -------
 
-[**Break**](https://support.microsoft.com/help/833721/available-switch-options-for-the-windows-xp-and-the-windows-server-200)和[**. continue**](-continue.md)标记可用于退出或重新启动*命令*块。
+[**Break**](https://support.microsoft.com/help/833721/available-switch-options-for-the-windows-xp-and-the-windows-server-200)和 [**. continue**](-continue.md)标记可用于退出或重新启动 *命令* 块。
 
  
 

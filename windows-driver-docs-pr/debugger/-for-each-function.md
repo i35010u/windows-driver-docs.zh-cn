@@ -1,7 +1,6 @@
 ---
 title: for_each_function
-description: For_each_function 扩展中指定的模块，其名称与指定的模式匹配执行每个函数的调试器命令。
-ms.assetid: D51C3562-3D49-4528-A208-71A8756EBC8E
+description: For_each_function 扩展为指定模块中的每个函数执行一个调试器命令，其名称与指定的模式匹配。
 keywords:
 - for_each_function Windows 调试
 ms.date: 05/23/2017
@@ -12,36 +11,36 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: d9699254771ad1784fd6009d97c46639f41ad429
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b6ff0929ec446d58b96c5ddf38bc89c35415dd49
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63336644"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96823651"
 ---
-# <a name="foreachfunction"></a>!for\_each\_function
+# <a name="for_each_function"></a>！对于 \_ 每个 \_ 函数
 
 
-**！ 有关\_每个\_函数**扩展执行每个函数的调试程序命令中指定的模块，其名称与指定的模式匹配。
+**对于 \_ 每个 \_ 函数** 扩展，将为指定模块中的每个函数执行一个调试器命令，其名称与指定的模式匹配。
 
 ```dbgcmd
 !for_each_function -m:ModuleName -p:Pattern -c:CommandString
 !for_each_function -?
 ```
 
-## <a name="span-idddkvaddbgspanspan-idddkvaddbgspanparameters"></a><span id="ddk__vad_dbg"></span><span id="DDK__VAD_DBG"></span>参数
+## <a name="span-idddk__vad_dbgspanspan-idddk__vad_dbgspanparameters"></a><span id="ddk__vad_dbg"></span><span id="DDK__VAD_DBG"></span>参数
 
 
-<span id="_______-m_ModuleName______"></span><span id="_______-m_modulename______"></span><span id="_______-M_MODULENAME______"></span> -m:*ModuleName*   
-指定模块名称。 此名称通常是不带文件扩展名的文件名称。 在某些情况下，模块名称明显不同于的文件的名称。
+<span id="_______-m_ModuleName______"></span><span id="_______-m_modulename______"></span><span id="_______-M_MODULENAME______"></span> -m：*ModuleName*   
+指定模块名称。 此名称通常是没有文件扩展名的文件名。 在某些情况下，模块名称与文件名明显不同。
 
-<span id="-p_Pattern______"></span><span id="-p_pattern______"></span><span id="-P_PATTERN______"></span>-p:*模式*   
+<span id="-p_Pattern______"></span><span id="-p_pattern______"></span><span id="-P_PATTERN______"></span>-p：*Pattern*   
 指定要匹配的模式。
 
-<span id="_______-c_CommandString______"></span><span id="_______-c_commandstring______"></span><span id="_______-C_COMMANDSTRING______"></span> -c:*CommandString*   
-指定要执行的每个函数中指定的模块，与模式匹配的调试器命令。
+<span id="_______-c_CommandString______"></span><span id="_______-c_commandstring______"></span><span id="_______-C_COMMANDSTRING______"></span> -c：*command.commandstring*   
+为指定模块中与模式匹配的每个函数指定要执行的调试器命令。
 
-可以使用中的以下别名*CommandString*。
+可以在 *command.commandstring* 中使用以下别名。
 
 <table>
 <colgroup>
@@ -51,29 +50,29 @@ ms.locfileid: "63336644"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">别名</th>
+<th align="left">Alias</th>
 <th align="left">数据类型</th>
-<th align="left">ReplTest1</th>
+<th align="left">值</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>@#SymbolName</p></td>
+<td align="left"><p>@ #SymbolName</p></td>
 <td align="left"><p>string</p></td>
 <td align="left"><p>符号名称。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>@#SymbolAddress</p></td>
+<td align="left"><p>@ #SymbolAddress</p></td>
 <td align="left"><p>ULONG64</p></td>
-<td align="left"><p>符号地址中。</p></td>
+<td align="left"><p>符号地址。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>@#ModName</p></td>
+<td align="left"><p>@ #ModName</p></td>
 <td align="left"><p>string</p></td>
-<td align="left"><p>模块名称。</p></td>
+<td align="left"><p>模块名。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>@#FunctionName</p></td>
+<td align="left"><p>@ #FunctionName</p></td>
 <td align="left"><p>string</p></td>
 <td align="left"><p>函数名称。</p></td>
 </tr>
@@ -85,14 +84,14 @@ ms.locfileid: "63336644"
 <span id="_______-_______"></span> -?   
 显示此扩展的帮助。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 Ext.dll
 
 <a name="remarks"></a>备注
 -------
 
-下面的示例演示如何列出所有函数名称，请在 PCI 模块中，与模式匹配\*读取\*。
+下面的示例演示如何列出 PCI 模块中与读取的模式匹配的所有函数名称 \* \* 。
 
 ```dbgcmd
 1: kd> !for_each_function -m:pci -p:*read* -c:.echo @#FunctionName
@@ -111,11 +110,11 @@ PciReadDeviceConfigEx
 PciReadSlotConfig
 ```
 
-如果别名不是前面和后面的空白区域，您必须将放在别名[ **${}别名解释器**](-------alias-interpreter-.md)令牌。
+如果别名后面不跟空格，则必须将该别名放入 [**$ {} alias 解释**](-------alias-interpreter-.md) 器标记中。
 
-下面的示例演示如何列出其函数名称与模式匹配的所有模块中的所有符号\*CreateFile\*。 @ 别名\#ModuleName 前面没有空格。 因此，放置在[ **${}别名解释器**](-------alias-interpreter-.md)令牌。
+下面的示例演示如何列出所有模块中其函数名称与模式 CreateFile 匹配的所有符号 \* \* 。 别名 @ \# ModuleName 前面没有空格。 因此，将其放入 [**$ {} Alias 解释**](-------alias-interpreter-.md) 器标记中。
 
-**请注意**  不要混淆 @\#ModuleName 别名 @\#ModName 别名。 @\#ModuleName 别名属于[ **！ 有关\_每个\_模块**](-for-each-module.md)扩展，和 @\#ModName 别名属于 **！有关\_每个\_函数**扩展。
+**注意**  不要将 @ \# ModuleName 别名与 @ \# ModName 别名混淆。 @ \# ModuleName 别名属于 [**\_ 每个 \_ 模块**](-for-each-module.md) 扩展的！，@ \# ModName 别名属于 **\_ 每个 \_ 函数** 扩展的！。
 
  
 
@@ -137,7 +136,7 @@ mrxsmb10!MRxSmbFinishLongNameCreateFile
 srv!SrvIoCreateFile
 ```
 
-可以将一系列命令放在命令文件，并使用[  **$$ &gt; &lt; （运行脚本文件）** ](-----------------------a---run-script-file-.md)执行这些命令为每个匹配的函数模式。 假定一个名为 Commands.txt 文件包含以下命令：
+您可以在命令文件中放置一系列命令，并使用 [**$$ &gt; &lt; (运行脚本文件)**](-----------------------a---run-script-file-.md)为每个与模式匹配的函数执行这些命令。 假设名为 Commands.txt 的文件包含以下命令：
 
 ```dbgcmd
 .echo
@@ -145,7 +144,7 @@ srv!SrvIoCreateFile
 u @#SymbolAddress L1
 ```
 
-在以下示例中，Commands.text 文件中的命令执行的每个函数，在 PCI 模块中，与模式匹配\*读取\*。
+在下面的示例中，为 PCI 模块中的每个函数执行了文本文件中的命令，该文件与读取的模式匹配 \* \* 。
 
 ```dbgcmd
 1: kd> !for_each_function -m:pci -p:*read* -c:$$><Commands.txt
@@ -161,10 +160,10 @@ fffff880`00f7c044 48895c2408      mov     qword ptr [rsp+8],rbx
 ...
 ```
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[**!for\_each\_module**](-for-each-module.md)
+[**！对于 \_ 每个 \_ 模块**](-for-each-module.md)
 
  
 

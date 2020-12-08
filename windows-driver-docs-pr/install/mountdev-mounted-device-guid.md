@@ -1,7 +1,6 @@
 ---
 title: MOUNTDEV_MOUNTED_DEVICE_GUID
 description: MOUNTDEV_MOUNTED_DEVICE_GUID
-ms.assetid: 48d127ed-414b-40bb-8a35-6472c8783b81
 keywords:
 - MOUNTDEV_MOUNTED_DEVICE_GUID 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 24f4fc5c1a324a1bbff5216eca68135b6b3ccb3c
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: c1b1f9cdc4adef6cbeb6df165cf41870ca34a816
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91733959"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96824059"
 ---
 # <a name="mountdev_mounted_device_guid"></a>MOUNTDEV_MOUNTED_DEVICE_GUID
 
@@ -33,7 +32,7 @@ ms.locfileid: "91733959"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">属性</th>
+<th align="left">Attribute</th>
 <th align="left">设置</th>
 </tr>
 </thead>
@@ -74,7 +73,7 @@ WDK 中的存储 [示例](https://go.microsoft.com/fwlink/p/?LinkId=618052) 包�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**GUID_DEVINTERFACE_VOLUME**](guid-devinterface-volume.md)

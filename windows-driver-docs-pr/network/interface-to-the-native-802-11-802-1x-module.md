@@ -1,25 +1,24 @@
 ---
 title: 与本机 802.11 802.1X 模块对接
 description: 与本机 802.11 802.1X 模块对接
-ms.assetid: 8af78e5b-c9d9-4f07-8f07-f4a156ffdb9e
 keywords:
 - 后关联操作 WDK 本机 802.11 IHV 扩展 DLL
 - 802.1 x 模块 WDK 网络
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 564b5ef0a3e44ff84b52924b8b616aaaab42d96f
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 7f0bbbd478ff33139964189d9e83dcf2196f7c94
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89209301"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96823875"
 ---
 # <a name="interface-to-the-native-80211-8021x-module"></a>与本机 802.11 802.1X 模块对接
 
 
 
 
- 
+ 
 
 操作系统 \_ \_ \_ \_ 从本机802.11 微型端口驱动程序接收到 NDIS 状态 DOT11 关联完成指示后，它将调用 [*Dot11ExtIhvPerformPostAssociate*](/windows-hardware/drivers/ddi/wlanihv/nc-wlanihv-dot11extihv_perform_post_associate) 函数以通过 IHV 扩展 DLL 启动后关联操作。
 
@@ -41,9 +40,9 @@ ms.locfileid: "89209301"
 
     -   显示 802.1 X 身份验证配置的 "属性" 页。 此信息包括用于身份验证的 EAP 算法。
     -   提示用户输入凭据。
-    -   将 EAPOL 启动数据包发送到 AP，以启动 802.1 X 身份验证。
+    -   向 AP 发送 EAPOL-Start 数据包，以启动 802.1 X 身份验证。
 
-    在对[*Dot11ExtIhvPerformPostAssociate*](/windows-hardware/drivers/ddi/wlanihv/nc-wlanihv-dot11extihv_perform_post_associate)的调用或函数调用返回后，IHV 扩展 DLL 可以调用**Dot11ExtStartOneX** 。
+    在对 [*Dot11ExtIhvPerformPostAssociate*](/windows-hardware/drivers/ddi/wlanihv/nc-wlanihv-dot11extihv_perform_post_associate)的调用或函数调用返回后，IHV 扩展 DLL 可以调用 **Dot11ExtStartOneX** 。
 
 -   仅在本机802.11 微型端口驱动程序完成与 AP 的关联操作之后，才能调用 [**Dot11ExtStartOneX**](/windows-hardware/drivers/ddi/wlanihv/nc-wlanihv-dot11ext_onex_start) 函数。 在这种情况下，如果存在以下任何情况，则 IHV 扩展 DLL 不得调用 **Dot11ExtStartOneX** 函数：
     -   在操作系统调用 [*Dot11ExtIhvPerformPostAssociate*](/windows-hardware/drivers/ddi/wlanihv/nc-wlanihv-dot11extihv_perform_post_associate)之前。 当微型端口驱动程序成功完成关联操作后，操作系统将调用此函数。 有关此操作的详细信息，请参阅 [关联运算](/previous-versions/windows/hardware/wireless/association-operations)。
@@ -52,13 +51,13 @@ ms.locfileid: "89209301"
 -   当 802.1 X authentication 操作正在进行时，IHV 扩展 DLL 可以通过调用 [**Dot11ExtStopOneX**](/windows-hardware/drivers/ddi/wlanihv/nc-wlanihv-dot11ext_onex_stop)来取消操作。
 
 -   当 802.1 X authentication 操作正在进行时，IHV 扩展 DLL 必须调用 [**Dot11ExtProcessOneXPacket**](/windows-hardware/drivers/ddi/wlanihv/nc-wlanihv-dot11ext_process_onex_packet) 将 EAPOL 数据包转发给操作系统进行处理。
-    **注意**   IHV 扩展 DLL 负责处理从 AP 收到的 EAPOL 密钥包。 DLL 不能通过调用 [**Dot11ExtProcessOneXPacket**](/windows-hardware/drivers/ddi/wlanihv/nc-wlanihv-dot11ext_process_onex_packet)将这些数据包传递到操作系统。
+    **注意**  IHV 扩展 DLL 负责处理从 AP 收到 EAPOL-Key 数据包。 DLL 不能通过调用 [**Dot11ExtProcessOneXPacket**](/windows-hardware/drivers/ddi/wlanihv/nc-wlanihv-dot11ext_process_onex_packet)将这些数据包传递到操作系统。
 
-     
+     
 
--   802.1 X authentication 操作完成后，操作系统将调用 [*Dot11ExtIhvOneXIndicateResult*](/windows-hardware/drivers/ddi/wlanihv/nc-wlanihv-dot11extihv_onex_indicate_result) IHV 处理程序函数。 调用此函数后，IHV 扩展 DLL 负责处理从该 AP 接收的所有 EAPOL 数据包，如用于派生密码密钥的 EAPOL 密钥包。
+-   802.1 X authentication 操作完成后，操作系统将调用 [*Dot11ExtIhvOneXIndicateResult*](/windows-hardware/drivers/ddi/wlanihv/nc-wlanihv-dot11extihv_onex_indicate_result) IHV 处理程序函数。 调用此函数后，IHV 扩展 DLL 负责处理从 AP 收到的所有 EAPOL 数据包，如用于派生密码密钥的 EAPOL-Key 数据包。
 
--   如果 802.1 X authentication 操作已成功完成，操作系统会将 MPPE 发送键值传递到[*Dot11ExtIhvOneXIndicateResult*](/windows-hardware/drivers/ddi/wlanihv/nc-wlanihv-dot11extihv_onex_indicate_result)的*pDot11MsOneXResultParams*参数所指向的[**DOT11 \_ MSONEX \_ 结果 \_ 参数**](/windows-hardware/drivers/ddi/wlanihv/ns-wlanihv-_dot11_msonex_result_params)结构。 DOT11 MSONEX 结果参数的 **pbMPPESendKey** 成员指向的 MPPE 发送密钥值 \_ \_ \_ 是通过身份验证过程派生的，并且在向 AP 发送 EAPOL 密钥数据包时由 IHV 扩展 DLL 使用。 此密钥已加密，应通过调用 Windows SDK 中所述的 **CryptUnprotectData** 函数进行解密。
+-   如果 802.1 X authentication 操作已成功完成，操作系统会将 MPPE 发送键值传递到 [*Dot11ExtIhvOneXIndicateResult*](/windows-hardware/drivers/ddi/wlanihv/nc-wlanihv-dot11extihv_onex_indicate_result)的 *pDot11MsOneXResultParams* 参数所指向的 [**DOT11 \_ MSONEX \_ 结果 \_ 参数**](/windows-hardware/drivers/ddi/wlanihv/ns-wlanihv-_dot11_msonex_result_params)结构。 DOT11 MSONEX 结果参数的 **pbMPPESendKey** 成员指向的 MPPE 发送密钥值 \_ \_ \_ 是通过身份验证过程派生的，并且在向 AP 发送 EAPOL-Key 数据包时由 IHV 扩展 DLL 使用。 此密钥已加密，应通过调用 Windows SDK 中所述的 **CryptUnprotectData** 函数进行解密。
 
 -   用于派生密码密钥的算法依赖于独立硬件供应商 (IHV) 的实现。 IHV 扩展 DLL 可支持标准密钥派生算法，如 IEEE 802.11 i-2004 标准的子句8.5 中定义的算法，还可以支持专用密钥派生算法。
 
@@ -76,6 +75,6 @@ ms.locfileid: "89209301"
 
 ![说明在后期关联操作过程中 ihv 扩展 dll 启动 802.1 x authentication 操作时的事件序列的关系图](images/ihv-ext-802.1x.png)
 
- 
+ 
 
- 
+ 

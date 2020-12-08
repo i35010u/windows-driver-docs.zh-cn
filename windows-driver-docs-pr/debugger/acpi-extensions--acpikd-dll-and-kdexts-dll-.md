@@ -1,19 +1,18 @@
 ---
 title: ACPI 扩展（Acpikd.dll 和 Kdexts.dll）
 description: ACPI 扩展（Acpikd.dll 和 Kdexts.dll）
-ms.assetid: 1b1df290-b65b-4066-baf5-0f283990467f
 keywords:
-- ACPI 调试扩展 （acpikd.dll 和 kdexts.dll）
-- acpikd.dll （ACPI 扩展）
-- 扩展中 ACPI
+- 'ACPI 调试，扩展 ( # A0 和 kdexts.dll) '
+- 'acpikd.dll (ACPI 扩展) '
+- 扩展，ACPI
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bb6a01e38925275c3b2c48a05dadfddc4ff5eb9f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 696bebadc4fd9ba96d7e7da1f337b554a5cfca31
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63353221"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96824353"
 ---
 # <a name="acpi-extensions-acpikddll-and-kdextsdll"></a>ACPI 扩展（Acpikd.dll 和 Kdexts.dll）
 
@@ -21,10 +20,10 @@ ms.locfileid: "63353221"
 ## <span id="ddk_acpi_extensions_acpikd_dll_and_kdexts_dll__dbg"></span><span id="DDK_ACPI_EXTENSIONS_ACPIKD_DLL_AND_KDEXTS_DLL__DBG"></span>
 
 
-可用于调试 （高级配置和电源接口） 的 ACPI BIOS 代码的扩展命令可以找到 Acpikd.dll 和 Kdexts.dll 中。
+可在 Acpikd.dll 和 Kdexts.dll 找到用于调试 ACPI (高级配置和电源接口) BIOS 代码的扩展命令。
 
 
-调试扩展 ACPI 的一些可在 Winxp\\Acpikd.dll，而其他人可在 Winxp\\Kdexts.dll。
+可以在 WinxpAcpikd.dll 中找到某些 ACPI 调试扩展 \\ ，而其他一些可在 WinxpKdexts.dll 中找到 \\ 。
 
  
 

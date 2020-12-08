@@ -1,15 +1,14 @@
 ---
 title: 设备和驱动程序安装路线图
 description: 设备和驱动程序安装路线图
-ms.assetid: d6cb6d8c-226f-4b6f-989a-36184236f826
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 19c22ecfb16d9344140acc5afa4071f8024dc0c7
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: cff8aa558f56241bfdac0e0303e2634d40206104
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89094963"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96824437"
 ---
 # <a name="roadmap-for-device-and-driver-installation"></a>设备和驱动程序安装路线图
 

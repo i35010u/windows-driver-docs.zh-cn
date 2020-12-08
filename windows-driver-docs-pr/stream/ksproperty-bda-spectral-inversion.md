@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ BDA \_ SPECTRAL \_ 反转
 description: 客户端使用 KSPROPERTY \_ BDA \_ SPECTRAL \_ 反转来控制某个解调器节点 SPECTRAL 反转的设置。
-ms.assetid: a51dee0b-4a45-4159-978b-27ff6e2333e2
 keywords:
 - KSPROPERTY_BDA_SPECTRAL_INVERSION 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c28c1c4db93ba4e22cd875e8ae3aa22c8fbab8fa
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: ea913bf9eec2e01af65db26be66ed737f65b8310
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89192397"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96823701"
 ---
 # <a name="ksproperty_bda_spectral_inversion"></a>KSPROPERTY \_ BDA \_ SPECTRAL \_ 反转
 
@@ -84,7 +83,7 @@ KSP **NodeId** \_ 节点的节点标识号指定了解调器节点的标识符�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSP \_ 节点**](/windows-hardware/drivers/ddi/ks/ns-ks-ksp_node)

@@ -1,7 +1,6 @@
 ---
-title: BCDEdit/displayorder
+title: BCDEdit /displayorder
 description: Displayorder 命令将设置启动管理器使用的显示顺序。
-ms.assetid: 6e2fcde1-f2f8-434d-80d5-d74f32831bfe
 ms.date: 09/23/2020
 keywords:
 - BCDEdit/displayorder 驱动程序开发工具
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: fbe747ce32b9e7232b28d6f2df2871d66196a6b4
-ms.sourcegitcommit: f2fbb6e54e085e9329288cee49860fe380be9c4c
+ms.openlocfilehash: 029d312151b7d52d0537526595e7d0dd00befffb
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91778974"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96824267"
 ---
-<a name="bcdedit-displayorder"></a>BCDEdit/displayorder
+<a name="bcdedit-displayorder"></a>BCDEdit /displayorder
 ============
 
-**/Displayorder**命令将设置启动管理器使用的显示顺序。
+**/Displayorder** 命令将设置启动管理器使用的显示顺序。
 
 ``` syntax
 bcdedit /displayorder <id> [...] [ /addfirst | /addlast | /remove ]

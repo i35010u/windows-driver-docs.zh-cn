@@ -1,20 +1,19 @@
 ---
 title: 调试 DRIVER_VERIFIER_DETECTED_VIOLATION (C4) 0x20002-0x20022
 description: 如果选择了 "DDI 相容性检查" 选项，并且驱动程序验证器检测到该驱动程序违反了某个 DDI 符合性规则，则驱动程序验证程序会生成 Bug 检查 0xC4 DRIVER_VERIFIER_DETECTED_VIOLATION (，参数1等于特定符合性规则) 的标识符。
-ms.assetid: 9817AC4B-2BE8-44AC-8C9B-DED5EF0A7DD8
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 66d5247f0558c6bcaa3548051358664543bc361c
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 105a18da3122a6ffde363aaaa9d8f168a7b202fd
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89383979"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96824253"
 ---
 # <a name="debugging-ddi-compliance-bugs---driver_verifier_detected_violation-c4-0x20002---0x20022"></a>调试 DDI 相容性错误-驱动程序 \_ 验证器 \_ 检测到 \_ 违反 (C4) ： 0x20002-0x20022
 
 
-如果选择了 " [DDI 相容性检查](ddi-compliance-checking.md) " 选项，并且驱动程序验证器检测到该驱动程序违反了某个 DDI 符合性规则，则 [驱动程序验证](driver-verifier.md) 器将生成 [**BUG 检查0xC4：驱动程序验证器 \_ \_ 检测到 \_ **](../debugger/bug-check-0xc4--driver-verifier-detected-violation.md) 与参数1等于特定符合性规则的标识符) 的冲突 (。
+如果选择了 " [DDI 相容性检查](ddi-compliance-checking.md) " 选项，并且驱动程序验证器检测到该驱动程序违反了某个 DDI 符合性规则，则 [驱动程序验证](driver-verifier.md) 器将生成 [**BUG 检查0xC4：驱动程序验证器 \_ \_ 检测到 \_**](../debugger/bug-check-0xc4--driver-verifier-detected-violation.md) 与参数1等于特定符合性规则的标识符) 的冲突 (。
 
 DDI 符合性规则确保驱动程序正确与 Windows 操作系统内核交互。 例如，这些规则验证驱动程序是否在函数所需的 IRQL 上进行了函数调用，或驱动程序是否正确获取并释放了自旋锁。 本部分介绍用于调试这些冲突的一些示例策略。
 
@@ -99,7 +98,7 @@ MSDN_LINK: https://go.microsoft.com/fwlink/p/?linkid=216021
 
 ### <a name="use-the-analyze-v-command-to-identify-the-location-of-the-violation-in-source-code"></a>使用！分析-v 命令在源代码中标识冲突的位置
 
-捕获到此冲突时，驱动程序验证程序会立即错误检查系统。 **！分析**输出将显示当前的 IRQL、当前堆栈、对分配内存进行调用的点，并且如果启用源代码的 **！分析– v** (用于详细) 输出，还会显示发出分配请求的源文件和行号：
+捕获到此冲突时，驱动程序验证程序会立即错误检查系统。 **！分析** 输出将显示当前的 IRQL、当前堆栈、对分配内存进行调用的点，并且如果启用源代码的 **！分析– v** (用于详细) 输出，还会显示发出分配请求的源文件和行号：
 
 ```
 CURRENT_IRQL:  10

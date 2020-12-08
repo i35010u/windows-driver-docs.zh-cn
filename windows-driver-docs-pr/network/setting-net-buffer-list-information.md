@@ -1,19 +1,18 @@
 ---
 title: 设置 NET_BUFFER_LIST 信息
 description: 设置 NET_BUFFER_LIST 信息
-ms.assetid: 28f50ab4-043b-47bb-af70-e8c892288f21
 keywords:
 - NET_BUFFER_LIST
 - 标头-数据拆分 WDK，NET_BUFFER_LIST
 - 标志 WDK 标头-数据拆分
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3ff87cb8f240186ee494b6491c9300256d97431b
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: f519942b27f305b2e8ae96f317d7b1801e75558e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89214442"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96823801"
 ---
 # <a name="setting-net_buffer_list-information"></a>设置网络 \_ 缓冲区 \_ 列表信息
 
@@ -21,9 +20,9 @@ ms.locfileid: "89214442"
 
 
 
-标头-数据拆分提供程序必须在用于接收指示的[**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)结构的**NblFlags**成员中设置标头数据拆分标志。 对于拆分框架，NIC 还必须在每个[**网络 \_ 缓冲区**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer)结构的**DataPhysicalAddress**成员中提供接收帧的数据部分的物理地址。
+标头-数据拆分提供程序必须在用于接收指示的 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)结构的 **NblFlags** 成员中设置标头数据拆分标志。 对于拆分框架，NIC 还必须在每个 [**网络 \_ 缓冲区**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer)结构的 **DataPhysicalAddress** 成员中提供接收帧的数据部分的物理地址。
 
-**注意**   微型端口驱动程序可以设置 NET buffer 结构的**DataPhysicalAddress**成员 \_ ，即使 net \_ 缓冲区与拆分框架无关。 在这种情况下， **DataPhysicalAddress** 包含标头 MDL 的物理地址。
+**注意**  微型端口驱动程序可以设置 NET buffer 结构的 **DataPhysicalAddress** 成员 \_ ，即使 net \_ 缓冲区与拆分框架无关。 在这种情况下， **DataPhysicalAddress** 包含标头 MDL 的物理地址。
 
  
 

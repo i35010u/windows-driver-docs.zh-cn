@@ -1,9 +1,8 @@
 ---
-title: 高度元素
-description: 高度元素指定扫描设备支持需要高度的扫描程序配置元素的高度值。
-ms.assetid: 1161c92e-e135-4921-b55d-b27e98d5caec
+title: Height 元素
+description: Height 元素指定扫描设备对需要高度的扫描程序配置元素所支持的高度值。
 keywords:
-- 高度元素成像设备
+- 高度元素图像处理设备
 topic_type:
 - apiref
 api_name:
@@ -12,19 +11,19 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9c4690d6ff1a964e37038e1a8a0b7f135108475a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 84ae70cedec8c0b17f0aa6290b31217fcb682408
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63330270"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96824131"
 ---
-# <a name="height-element"></a>高度元素
+# <a name="height-element"></a>Height 元素
 
 
-**高度**元素指定扫描设备支持需要高度的扫描程序配置元素的高度值。
+**Height** 元素指定扫描设备对需要高度的扫描程序配置元素所支持的高度值。
 
-<a name="usage"></a>用法
+<a name="usage"></a>使用情况
 -----
 
 ```xml
@@ -47,26 +46,26 @@ ms.locfileid: "63330270"
 </colgroup>
 <thead>
 <tr class="header">
-<th>特性</th>
-<th>在任务栏的搜索框中键入</th>
-<th>必需</th>
+<th>属性</th>
+<th>类型</th>
+<th>必须</th>
 <th>描述</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><strong><strong>Override</strong></strong></p></td>
+<td><p><strong><strong>忽略</strong></strong></p></td>
 <td><p>xs:string</p></td>
 <td><p>否</p></td>
 <td><p></p>
-<p>可选。 一个布尔值，必须为 0，为 false，1 或 true。<strong>falsetrue</strong></p></td>
+<p>可选。 必须为0、false、1或 true 的布尔值。<strong>falsetrue</strong></p></td>
 </tr>
 <tr class="even">
 <td><p><strong><strong>UsedDefault</strong></strong></p></td>
 <td><p>xs:string</p></td>
 <td><p>否</p></td>
 <td><p></p>
-<p>可选。 布尔值为 0，false、 1 或 true。<strong>falsetrue</strong></p></td>
+<p>可选。 布尔值0、false、1或 true。<strong>falsetrue</strong></p></td>
 </tr>
 </tbody>
 </table>
@@ -79,7 +78,7 @@ ms.locfileid: "63330270"
 ## <a name="child-elements"></a>子元素
 
 
-没有子元素。
+没有任何子元素。
 
 ## <a name="parent-elements"></a>父元素
 
@@ -95,7 +94,7 @@ ms.locfileid: "63330270"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><a href="heights.md" data-raw-source="[&lt;strong&gt;Heights&lt;/strong&gt;](heights.md)"><strong>高度</strong></a></p></td>
+<td><p><a href="heights.md" data-raw-source="[&lt;strong&gt;Heights&lt;/strong&gt;](heights.md)"><strong>Heights</strong></a></p></td>
 </tr>
 <tr class="even">
 <td><p><a href="inputmediasize.md" data-raw-source="[&lt;strong&gt;InputMediaSize&lt;/strong&gt;](inputmediasize.md)"><strong>InputMediaSize</strong></a></p></td>
@@ -115,18 +114,18 @@ ms.locfileid: "63330270"
 <a name="remarks"></a>备注
 -------
 
-值**高度**元素取决于其父元素。 有关详细信息是否**高度**是必需还是可选和有关其可能的值，请参阅合适的父值。
+**Height** 元素的值取决于其父元素。 若要详细了解 **高度** 是必需的还是可选的以及有关其可能值的详细信息，请参阅相应的父值。
 
 [**DocumentFinalParameters**](documentfinalparameters.md)
 
-WSD 扫描服务可以指定可选**重写**并**UsedDefault**属性时，才**高度**元素包含在**DocumentFinalParameters**层次结构。 有关详细信息**重写**并**UsedDefault**及其使用情况，请参阅[ **DocumentFinalParameters**](documentfinalparameters.md)。
+仅当 **Height** 元素包含在 **DocumentFinalParameters** 层次结构中时，WSD 扫描服务才能指定 optional **Override** 和 **UsedDefault** 属性。 有关 **Override** 和 **UsedDefault** 及其用法的详细信息，请参阅 [**DocumentFinalParameters**](documentfinalparameters.md)。
 
 ## <a name="see-also"></a>请参阅
 
 
 [**DocumentFinalParameters**](documentfinalparameters.md)
 
-[**高度**](heights.md)
+[**Heights**](heights.md)
 
 [**InputMediaSize**](inputmediasize.md)
 
@@ -136,7 +135,7 @@ WSD 扫描服务可以指定可选**重写**并**UsedDefault**属性时，才**�
 
 [**PlatenOpticalResolution**](platenopticalresolution.md)
 
-[**Width**](width.md)
+[**宽度**](width.md)
 
  
 

@@ -1,7 +1,6 @@
 ---
 title: BCDEdit /emssettings
 description: /Emssettings 选项为计算机设置全局紧急管理服务 (EMS) 设置。 若要启用或禁用 EMS，请使用/ems 选项。 对于任何启动项，/emssettings 选项不会启用或禁用 EMS。
-ms.assetid: 010e852d-ff97-4280-b35b-f1881e249e42
 ms.date: 07/03/2018
 keywords:
 - BCDEdit/emssettings 驱动程序开发工具
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 769e1114d4681226479f068183ce8401c4ab90b3
-ms.sourcegitcommit: f2fbb6e54e085e9329288cee49860fe380be9c4c
+ms.openlocfilehash: c2bb3ae6c83f69834a822e4aa05c42c940b84a1b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91778769"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96824263"
 ---
 # <a name="bcdedit-emssettings"></a>BCDEdit /emssettings
 
 
-**/Emssettings**选项为计算机设置全局紧急管理服务 (EMS) 设置。 若要启用或禁用 EMS，请使用 **/ems** 选项。 对于任何启动项， **/emssettings** 选项不会启用或禁用 EMS。
+**/Emssettings** 选项为计算机设置全局紧急管理服务 (EMS) 设置。 若要启用或禁用 EMS，请使用 **/ems** 选项。 对于任何启动项， **/emssettings** 选项不会启用或禁用 EMS。
 
 语法 
 
@@ -43,7 +42,7 @@ ms.locfileid: "91778769"
 指定要用作 EMS 端口的串行端口。 不应将此参数与 **BIOS** 选项一起指定。
 
 **EMSBAUDRATE：** *波特率*   
-指定用于 EMS 的串行波特率。 不应将此命令与 BIOS 一起指定。 *波特率*是可选的，默认值为 9600 bps。
+指定用于 EMS 的串行波特率。 不应将此命令与 BIOS 一起指定。 *波特率* 是可选的，默认值为 9600 bps。
 
 ### <a name="comments"></a>注释
 

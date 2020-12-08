@@ -1,18 +1,17 @@
 ---
 title: 全局热量管理
 description: 了解 GUID_THERMAL_COOLING_INTERFACE 驱动程序接口及其在全局热量管理中的使用方式。
-ms.assetid: 3CBF44B2-891A-4B68-97F6-3563EC0D5122
 keywords:
 - 全局热量管理
 - 散热
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b50edd411d07009d1339923af747eade4d040f2a
-ms.sourcegitcommit: f1d6c2d0cdbecdc69ba65ed3b530755fc73c8e5e
+ms.openlocfilehash: 27bace1c14adb6c67f4728a0f361ffb2cb16f29f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91590397"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96824011"
 ---
 # <a name="global-thermal-management"></a>全局热量管理 
 

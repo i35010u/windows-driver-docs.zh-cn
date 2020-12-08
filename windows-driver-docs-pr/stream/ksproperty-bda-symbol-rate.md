@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ BDA \_ 符号 \_ 速率
 description: 客户端使用 KSPROPERTY \_ BDA \_ 符号 \_ 速率来控制某个解调器节点的符号速率。
-ms.assetid: 11e2e020-3037-4a68-a8d6-c68efd86a518
 keywords:
 - KSPROPERTY_BDA_SYMBOL_RATE 流媒体设备
 topic_type:
@@ -12,12 +11,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 66a0f81309b96e4fa26da1f4ea780b284af69ff1
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 3219bee0b5c402736d54daacf25c1a9eac5b8278
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89192401"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96823699"
 ---
 # <a name="ksproperty_bda_symbol_rate"></a>KSPROPERTY \_ BDA \_ 符号 \_ 速率
 
@@ -66,7 +65,7 @@ ms.locfileid: "89192401"
 
 KSP **NodeId** \_ 节点的节点标识号指定了解调器节点的标识符。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSP \_ 节点**](/windows-hardware/drivers/ddi/ks/ns-ks-ksp_node)

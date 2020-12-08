@@ -1,7 +1,6 @@
 ---
 title: 使用 SetupAPI 验证驱动程序验证码签名
 description: 使用 SetupAPI 验证驱动程序验证码签名
-ms.assetid: 2019d77d-2d98-4bae-8d9d-aa41e47f3811
 keywords:
 - Setupapi.log 函数 WDK，验证签名
 - Authenticode 签名 WDK
@@ -11,12 +10,12 @@ keywords:
 - 检查 Authenticode 签名
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bef01cf96873fe824f2d09a42a64bca6593f636d
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: eef26ed006f92104941e39cf07f47a368b59e20d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91732723"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96824055"
 ---
 # <a name="using-setupapi-to-verify-driver-authenticode-signatures"></a>使用 SetupAPI 验证驱动程序验证码签名
 
@@ -30,11 +29,11 @@ ms.locfileid: "91732723"
 
 检查 DNF_AUTHENTICODE_SIGNED 标志。
 
-如果驱动程序具有有效的 Authenticode 签名，则 Windows 将此标志设置为驱动程序节点[**SP_DRVINSTALL_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-sp_drvinstall_params)结构的**Flags**成员。  (还应注意，如果驱动程序具有 [WHQL 版本签名](whql-release-signature.md)（如果它是系统提供的驱动程序）或具有 Authenticode 签名，则 Windows 将设置 DNF_INF_IS_SIGNED 标志。 ) 
+如果驱动程序具有有效的 Authenticode 签名，则 Windows 将此标志设置为驱动程序节点 [**SP_DRVINSTALL_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-sp_drvinstall_params)结构的 **Flags** 成员。  (还应注意，如果驱动程序具有 [WHQL 版本签名](whql-release-signature.md)（如果它是系统提供的驱动程序）或具有 Authenticode 签名，则 Windows 将设置 DNF_INF_IS_SIGNED 标志。 ) 
 
 ### <a name="to-verify-that-an-inf-file-has-a-valid-authenticode-signature"></a>验证 INF 文件是否具有有效的 Authenticode 签名
 
-1.  调用 [INF 文件处理函数](inf-file-processing-functions.md) **SetupVerifyInfFile**。
+1.  调用 [INF 文件处理函数](inf-file-processing-functions.md) **SetupVerifyInfFile**。
 
 2.  检查函数返回的错误代码。
 
@@ -48,9 +47,9 @@ ms.locfileid: "91732723"
 
 如果 INF 文件具有有效的 Authenticode 签名，则 **SetupVerifyInfFile** 还会在 SP_INF_SIGNER_INFO 输出结构中返回以下信息：
 
--   **DigitalSigner**成员设置为签名者的名称。
+-   **DigitalSigner** 成员设置为签名者的名称。
 
--   **CatalogFile**成员设置为相应的已签名目录文件的完整路径。
+-   **CatalogFile** 成员设置为相应的已签名目录文件的完整路径。
 
 但请注意， **SetupVerifyInfFile** 不返回 **DigitalSignerVersion** 成员中的版本。
 
@@ -60,11 +59,11 @@ ms.locfileid: "91732723"
 
 **SetupScanFileQueue** 将 SPFILENOTIFY_QUEUESCAN_SIGNERINFO 请求发送到调用方的回调例程，并传递指向 FILEPATHS_SIGNERINFO 结构的指针。 如果使用有效的验证码签名对文件进行签名，则在调用文件的回调例程之前，函数会将错误代码设置为相应的 ERROR_AUTHENTICODE_Xxx 值。 函数还在 FILEPATHS_SIGNERINFO 结构中设置以下信息：
 
--   **DigitalSigner**成员设置为签名者的名称。
+-   **DigitalSigner** 成员设置为签名者的名称。
 
--   **CatalogFile**成员设置为相应的已签名目录文件的完整路径。
+-   **CatalogFile** 成员设置为相应的已签名目录文件的完整路径。
 
 但请注意，版本不是在 **版本** 成员中设置的。
 
-**SetupScanFileQueue** 按照本主题中前面所述的 **SetupVerifyInfFile**设置 ERROR_AUTHENTICODE_Xxx 错误代码。
+**SetupScanFileQueue** 按照本主题中前面所述的 **SetupVerifyInfFile** 设置 ERROR_AUTHENTICODE_Xxx 错误代码。
 

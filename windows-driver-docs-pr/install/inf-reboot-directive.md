@@ -1,7 +1,6 @@
 ---
 title: INF Reboot 指令
 description: 重新启动指令表明在安装完成后应通知调用方重新启动系统。
-ms.assetid: 0E2640EA-921D-4677-82EF-EF9707254E66
 keywords:
 - INF 重新启动指令设备和驱动程序安装
 topic_type:
@@ -12,16 +11,16 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 55b353237d0365d441ccdceaeb8d7edab646f581
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 7525538779236b8862cad13236339885ecec0905
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90714622"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96824075"
 ---
 # <a name="inf-reboot-directive"></a>INF Reboot 指令
 
-**重新启动**指令表明在安装完成后应通知调用方重新启动系统。
+**重新启动** 指令表明在安装完成后应通知调用方重新启动系统。
 
 ```inf
 [DDInstall]
@@ -29,7 +28,7 @@ ms.locfileid: "90714622"
 Reboot
 ```
 
-**警告**   仅当在** \[ \] DDInstall**节中直接指定时才处理**Reboot**指令。
+**警告** 仅当在 **\[ \] DDInstall** 节中直接指定时才处理 **Reboot** 指令。
 
  
 

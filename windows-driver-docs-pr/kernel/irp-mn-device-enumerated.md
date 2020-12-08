@@ -2,23 +2,22 @@
 title: IRP_MN_DEVICE_ENUMERATED
 description: PnP 管理器使用此 i/o 请求数据包 (IRP) 通知总线驱动程序，设备对象存在并且已由即插即用管理器完全枚举。
 ms.date: 08/12/2017
-ms.assetid: 50ECF6E1-4FC6-4EEA-BACF-EBAD0329DA2E
 keywords:
-- IRP_MN_DEVICE_ENUMERATED 内核模式驱动程序体系结构
+- IRP_MN_DEVICE_ENUMERATED Kernel-Mode 驱动程序体系结构
 ms.localizationpriority: medium
-ms.openlocfilehash: e1ba7f2e9be89d20c047c34cc143398c90956e6a
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: a81dfdd0f5cec545728de4c3b8f3ca70a3b72be5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89190677"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96823981"
 ---
 # <a name="irp_mn_device_enumerated"></a>IRP \_ MN \_ 设备已 \_ 枚举
 
 
 PnP 管理器使用此 i/o 请求数据包 (IRP) 通知总线驱动程序，设备对象存在并且已由即插即用管理器完全枚举。
 
-## <a name="value"></a>值
+## <a name="value"></a>“值”
 
 0x19
 
@@ -50,7 +49,7 @@ PnP 管理器会在用户模式被枚举 GUID 设备通知之前发送此 IRP \_
 <a name="operation"></a>操作
 ---------
 
-**Irp \_ MN \_ 设备 \_ 枚举**的 irp 将发送到总线驱动程序的 PDO，指示总线驱动程序 pdo 存在。
+**Irp \_ MN \_ 设备 \_ 枚举** 的 irp 将发送到总线驱动程序的 PDO，指示总线驱动程序 pdo 存在。
 
 ## <a name="sending-the-irp"></a>发送 IRP
 
@@ -77,7 +76,7 @@ PnP 管理器会在用户模式被枚举 GUID 设备通知之前发送此 IRP \_
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [即插即用次要 IRP](plug-and-play-minor-irps.md)

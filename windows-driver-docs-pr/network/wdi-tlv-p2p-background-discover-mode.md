@@ -1,22 +1,21 @@
 ---
 title: WDI_TLV_P2P_BACKGROUND_DISCOVER_MODE
-description: WDI_TLV_P2P_BACKGROUND_DISCOVER_MODE 是包含 Wi-fi Direct 后台发现模式参数的 TLV。
-ms.assetid: 987DB282-A992-497F-98B5-0D3DD477B91C
+description: WDI_TLV_P2P_BACKGROUND_DISCOVER_MODE 是包含 Wi-Fi 直接后台发现模式参数的 TLV。
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_P2P_BACKGROUND_DISCOVER_MODE 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 4a0af619f02151e351ee600f20bb37f25f97db0b
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: a624361488758f4c6217543e11b7f99bc928613e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105660"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96823757"
 ---
 # <a name="wdi_tlv_p2p_background_discover_mode"></a>WDI \_ TLV \_ P2P \_ 后台 \_ 发现 \_ 模式
 
 
-WDI \_ tlv \_ P2P \_ 后台 \_ 发现 \_ 模式是包含 wi-fi Direct 后台发现模式参数的 tlv。
+WDI \_ tlv \_ P2P \_ 后台 \_ 发现 \_ 模式是包含 Wi-Fi 直接后台发现模式参数的 tlv。
 
 ## <a name="tlv-type"></a>TLV 类型
 
@@ -39,7 +38,7 @@ Sum (所有包含的元素的大小) 。
 <thead>
 <tr class="header">
 <th>类型</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -76,7 +75,7 @@ Sum (所有包含的元素的大小) 。
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
-<td><p>Windows Server 2016</p></td>
+<td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
 <td><p>标头</p></td>

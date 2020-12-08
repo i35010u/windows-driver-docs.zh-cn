@@ -1,22 +1,21 @@
 ---
 title: WDI_TLV_P2P_DEVICE_NAME
-description: WDI_TLV_P2P_DEVICE_NAME 是 TLV 包含设备名称。
-ms.assetid: 7FB04079-7F82-4D7B-95BA-45B5832B36C0
+description: WDI_TLV_P2P_DEVICE_NAME 是包含设备名称的 TLV。
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_P2P_DEVICE_NAME 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: ddf8dc3c5803ff805b49d3b36b8a656c25f4cce7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: d72969f3afaf6c087bb11af470220214bf1c30ea
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526166"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96823707"
 ---
-# <a name="wditlvp2pdevicename"></a>WDI\_TLV\_P2P\_DEVICE\_NAME
+# <a name="wdi_tlv_p2p_device_name"></a>WDI \_ TLV \_ P2P \_ 设备 \_ 名称
 
 
-WDI\_TLV\_P2P\_设备\_名称是包含设备名称 TLV。
+WDI \_ tlv \_ P2P \_ DEVICE \_ name 是包含设备名称的 tlv。
 
 ## <a name="tlv-type"></a>TLV 类型
 
@@ -26,14 +25,14 @@ WDI\_TLV\_P2P\_设备\_名称是包含设备名称 TLV。
 ## <a name="length"></a>长度
 
 
-UINT8 元素的数组大小 （以字节为单位）。 该数组必须包含一个或多个元素。
+UINT8 元素数组的大小 (以字节为单位) 。 数组必须包含1个或多个元素。
 
 ## <a name="values"></a>值
 
 
-| 在任务栏的搜索框中键入      | 描述                                                               |
+| 类型      | 描述                                                               |
 |-----------|---------------------------------------------------------------------------|
-| UINT8\[\] | 指定设备的设备名称 UINT8 元素的数组。 |
+| UINT8\[\] | UINT8 元素的数组，用于指定设备的设备名称。 |
 
  
 
@@ -52,7 +51,7 @@ UINT8 元素的数组大小 （以字节为单位）。 该数组必须包含一
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
-<td><p>Windows Server 2016</p></td>
+<td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
 <td><p>标头</p></td>

@@ -1,7 +1,6 @@
 ---
 title: wmitrace.logdump
 description: Wmitrace. logdump 扩展显示跟踪会话的跟踪缓冲区的内容。 可以限制显示以跟踪来自指定提供程序的消息。
-ms.assetid: 073338c6-68c4-4ae0-b69e-392256277236
 keywords:
 - wmitrace logdump Windows 调试
 ms.date: 05/23/2017
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 52fa154f18df3514eec81102791f34c08dbe4113
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: a58411c8e59f23cc1bb89e07f171d18622b7314f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89209879"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96823533"
 ---
 # <a name="wmitracelogdump"></a>!wmitrace.logdump
 
 
-**！ Wmitrace logdump**扩展显示跟踪会话的跟踪缓冲区的内容。 可以限制显示以跟踪来自指定提供程序的消息。
+**！ Wmitrace logdump** 扩展显示跟踪会话的跟踪缓冲区的内容。 可以限制显示以跟踪来自指定提供程序的消息。
 
 ```dbgcmd
 !wmitrace.logdump [-t Count] [{LoggerID|LoggerName} [GUIDFile]] 
@@ -56,13 +55,13 @@ ms.locfileid: "89209879"
 <a name="remarks"></a>备注
 -------
 
-在 Windows 软件跟踪预处理器 (WPP) 软件跟踪时，跟踪会话缓冲区用于存储跟踪消息，直到它们被刷新到日志文件或跟踪使用者实时显示。 **！ Wmitrace logdump**扩展显示物理内存中缓冲区的内容。 显示将显示在调试器命令窗口中。
+在 Windows 软件跟踪预处理器 (WPP) 软件跟踪时，跟踪会话缓冲区用于存储跟踪消息，直到它们被刷新到日志文件或跟踪使用者实时显示。 **！ Wmitrace logdump** 扩展显示物理内存中缓冲区的内容。 显示将显示在调试器命令窗口中。
 
 此扩展在发生崩溃时恢复最新的跟踪特别有用，并显示崩溃转储文件中存储的跟踪。
 
 使用此扩展之前，请使用 [**！ wmitrace; searchpath**](-wmitrace-searchpath.md) 或 [**！ wmitrace**](-wmitrace-tmffile.md) 来指定跟踪消息格式的文件。 系统使用跟踪消息格式文件来设置缓冲区中的二进制跟踪消息的格式，以便可以将它们显示为可读文本。
 
-**注意**   如果驱动程序使用的是 UMDF 1.11 版或更高版本，则不需要使用[**！ wmitrace**](-wmitrace-searchpath.md)或[**tmffile**](-wmitrace-tmffile.md)。
+**注意**  如果驱动程序使用的是 UMDF 1.11 版或更高版本，则不需要使用 [**！ wmitrace**](-wmitrace-searchpath.md) 或 [**tmffile**](-wmitrace-tmffile.md)。
 
  
 

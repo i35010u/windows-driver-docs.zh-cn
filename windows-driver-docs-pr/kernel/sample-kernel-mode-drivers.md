@@ -1,18 +1,17 @@
 ---
 title: 示例内核模式驱动程序
 description: 示例内核模式驱动程序
-ms.assetid: 09d08e07-e991-458f-aedf-018a0dd20af5
 keywords:
 - 内核模式驱动程序 WDK，示例
 - 示例驱动程序 WDK 内核模式
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f5809de9d1056e3abf8e453eb2e8e6e9e2c7b968
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: acb24e49a8c4c5b0abe5ddd7315e2e47b2c656b3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89402836"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96823965"
 ---
 # <a name="sample-kernel-mode-drivers"></a>示例内核模式驱动程序
 
@@ -42,7 +41,7 @@ WDK 提供各种示例内核模式驱动程序。 安装 WDK 后， `src\general
 
 演示如何使用 [取消安全 IRP 队列](cancel-safe-irp-queues.md)。
 
-[echo](https://github.com/Microsoft/Windows-driver-samples/tree/master/general/echo)
+[**echo**](https://github.com/Microsoft/Windows-driver-samples/tree/master/general/echo)
 
 [**引发**](https://github.com/Microsoft/Windows-driver-samples/tree/master/general/event)  
 
@@ -82,12 +81,12 @@ RegFltr 示例演示如何编写注册表筛选器驱动程序。
 
 [**UMDF 驱动程序主干示例**](https://github.com/Microsoft/Windows-driver-samples/tree/master/general/umdfSkeleton)
 
-此示例演示如何使用用户模式驱动程序框架的第1版来编写最小的驱动程序。
+此示例演示如何使用 User-Mode Driver Framework 版本1编写最小的驱动程序。
 
 [**HID 设备的 FIREFLY KMDF 筛选器驱动程序**](https://github.com/Microsoft/Windows-driver-samples/tree/master/hid/firefly) 除了说明如何编写筛选器驱动程序外，此示例还演示如何使用远程 i/o 目标接口以内核模式打开 HID 集合，并发送 IOCTL 请求来设置和获取功能报告，以及应用程序如何使用 WMI 接口将命令发送到筛选器驱动程序。
 
 目录的其他子目录 `\src` 包含用于各种硬件类型的内核模式驱动程序的示例代码。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 GitHub 上的[Microsoft Windows 驱动程序示例](https://github.com/Microsoft/Windows-driver-samples)

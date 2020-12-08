@@ -1,15 +1,14 @@
 ---
 title: 运行默认的 Finish-Install 操作
 description: 运行默认的 Finish-Install 操作
-ms.assetid: a66d418e-9a66-4c11-854d-6e597ffa01f7
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 274653bfc07beb4afe8567b74b71cc2f76587ec7
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: b23de084b39940b97679b174ee178ef3a19051d3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89094945"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96824427"
 ---
 # <a name="running-the-default-finish-install-action"></a>运行默认的 Finish-Install 操作
 

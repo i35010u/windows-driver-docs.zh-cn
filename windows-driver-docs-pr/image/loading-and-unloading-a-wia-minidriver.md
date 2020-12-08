@@ -1,15 +1,14 @@
 ---
 title: 加载和卸载 WIA 微型驱动程序
 description: 加载和卸载 WIA 微型驱动程序
-ms.assetid: a5f930c3-f92c-498a-a334-b5eb60fbd61b
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8be876aca78a8b8cb10ee5fe5e00d8ff300b217e
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 625c3b143ef79da383d9558d34b4d2c7471e878e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90717162"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96824111"
 ---
 # <a name="loading-and-unloading-a-wia-minidriver"></a>加载和卸载 WIA 微型驱动程序
 
@@ -23,11 +22,11 @@ ms.locfileid: "90717162"
 
 2.  获取已安装设备的端口名称，使此驱动程序可以调用 [**CreateFile**](/windows/win32/api/fileapi/nf-fileapi-createfilea) (记录在 Microsoft Windows SDK) 上的相应端口上，以访问设备。 这是通过调用 [**IStiDeviceControl：： GetMyDevicePortName**](/windows-hardware/drivers/ddi/stiusd/nf-stiusd-istidevicecontrol-getmydeviceportname) 方法来完成的。
 
-3.  读取设备安装过程中写入的特定于设备的注册表设置。 这可以通过使用传递到**IStiUSD：： Initialize**的*hParametersKey*参数来完成。
+3.  读取设备安装过程中写入的特定于设备的注册表设置。 这可以通过使用传递到 **IStiUSD：： Initialize** 的 *hParametersKey* 参数来完成。
 
-首次加载驱动程序时，WIA 服务将调用 **IStiUSD：： Initialize** 方法。 当客户端使用旧版 STI DDIs 并调用[**IStillImage：： CreateDevice**](/previous-versions/windows/hardware/drivers/ff543778(v=vs.85))方法时，也会调用**IStiUSD：： Initialize**方法。
+首次加载驱动程序时，WIA 服务将调用 **IStiUSD：： Initialize** 方法。 当客户端使用旧版 STI DDIs 并调用 [**IStillImage：： CreateDevice**](/previous-versions/windows/hardware/drivers/ff543778(v=vs.85))方法时，也会调用 **IStiUSD：： Initialize** 方法。
 
-**IStiUSD：： Initialize**方法应初始化 WIA 驱动程序和设备以供使用。 WIA 驱动程序可以在以后需要时存储 **IStiDeviceControl** 接口指针。 在存储此接口之前，必须先调用 [**IStiDeviceControl：： AddRef**](/windows-hardware/drivers/ddi/stiusd/nf-stiusd-istidevicecontrol-addref) 方法。 如果不需要存储接口，则将其忽略。 如果*尚未先*调用**IStiDeviceControl：： AddRef** ，请不要释放**IStiDeviceControl**接口。 这可能会导致不可预知的结果。 需要 [ISTIDEVICECONTROL COM 接口](istidevicecontrol-com-interface.md) ，才能获取有关设备端口的信息。 可以通过调用**IStiDeviceControl：： GetMyDevicePortName**方法来获取对[**CreateFile**](/windows/win32/api/fileapi/nf-fileapi-createfilea)函数的调用中使用的端口名称。 对于共享端口上的设备，如串行端口设备，不建议在 **IStiUSD：： Initialize** 中打开端口。 仅应在对 **IStiUSD：： LockDevice**的调用中打开端口。 应在内部控制端口的关闭，以提供快速访问。  (在 **IStiUSD：： LockDevice** 和 **IStiUSD：： UnLockDevice** 中打开和关闭的操作非常低效。 **CreateFile** 可能会导致设备出现慢且无法响应用户的延迟。 ) 
+**IStiUSD：： Initialize** 方法应初始化 WIA 驱动程序和设备以供使用。 WIA 驱动程序可以在以后需要时存储 **IStiDeviceControl** 接口指针。 在存储此接口之前，必须先调用 [**IStiDeviceControl：： AddRef**](/windows-hardware/drivers/ddi/stiusd/nf-stiusd-istidevicecontrol-addref) 方法。 如果不需要存储接口，则将其忽略。 如果 *尚未先* 调用 **IStiDeviceControl：： AddRef** ，请不要释放 **IStiDeviceControl** 接口。 这可能会导致不可预知的结果。 需要 [ISTIDEVICECONTROL COM 接口](istidevicecontrol-com-interface.md) ，才能获取有关设备端口的信息。 可以通过调用 **IStiDeviceControl：： GetMyDevicePortName** 方法来获取对 [**CreateFile**](/windows/win32/api/fileapi/nf-fileapi-createfilea)函数的调用中使用的端口名称。 对于共享端口上的设备，如串行端口设备，不建议在 **IStiUSD：： Initialize** 中打开端口。 仅应在对 **IStiUSD：： LockDevice** 的调用中打开端口。 应在内部控制端口的关闭，以提供快速访问。  (在 **IStiUSD：： LockDevice** 和 **IStiUSD：： UnLockDevice** 中打开和关闭的操作非常低效。 **CreateFile** 可能会导致设备出现慢且无法响应用户的延迟。 ) 
 
 如果 WIA 驱动程序不能支持同一设备端口上的多个 [**CreateFile**](/windows/win32/api/fileapi/nf-fileapi-createfilea) 调用，则应调用 **IStiDeviceControl：： GetMyDeviceOpenMode** 方法。
 
@@ -155,9 +154,9 @@ STDMETHODIMP CWIADevice::Initialize(
 }
 ```
 
-WIA 服务在成功调用**IStiUSD：： Initialize**方法后调用[**IStiUSD：： GetCapabilities**](/windows-hardware/drivers/ddi/stiusd/nf-stiusd-istiusd-getcapabilities) 。 **IStiUSD：： GetCapabilities** 提供 [**STI \_ USD \_ CAP**](/windows-hardware/drivers/ddi/stiusd/ns-stiusd-_sti_usd_caps) 结构，其中包含 STI 版本信息，WIA 支持标志 (位标志，指示驱动程序功能) 和所有事件要求。
+WIA 服务在成功调用 **IStiUSD：： Initialize** 方法后调用 [**IStiUSD：： GetCapabilities**](/windows-hardware/drivers/ddi/stiusd/nf-stiusd-istiusd-getcapabilities) 。 **IStiUSD：： GetCapabilities** 提供 [**STI \_ USD \_ CAP**](/windows-hardware/drivers/ddi/stiusd/ns-stiusd-_sti_usd_caps) 结构，其中包含 STI 版本信息，WIA 支持标志 (位标志，指示驱动程序功能) 和所有事件要求。
 
-下面的示例演示 **IStiUSD：： GetCapabilities**的实现。
+下面的示例演示 **IStiUSD：： GetCapabilities** 的实现。
 
 ```cpp
 /********************************************************************\

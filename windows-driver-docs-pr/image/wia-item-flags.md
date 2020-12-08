@@ -1,15 +1,14 @@
 ---
 title: WIA 项标志
 description: WIA 项标志
-ms.assetid: 2b96bc23-705b-47f0-811c-1cb4a8be8b34
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f9a161b0403496e96ee1b324ac99f29e21b5abd5
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: cdfe421127dc6bf0ff60274d355c22ed11f2ef0b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89189695"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96824091"
 ---
 # <a name="wia-item-flags"></a>WIA 项标志
 
@@ -24,7 +23,7 @@ WIA 项标志用于帮助对特定 WIA 项的内容或支持的行为进行分�
 <a href="" id="item-status-flags"></a>项状态标志  
 报告 WIA 项的当前状态的标志。
 
-例如： **WiaItemTypeDisconnected**、 **WiaItemTypeDeleted**等。
+例如： **WiaItemTypeDisconnected**、 **WiaItemTypeDeleted** 等。
 
 <a href="" id="item-data-representation-usage-flags"></a>项数据表示/用法标志  
 报告 WIA 项表示或可以在传输时生成的数据的标志。

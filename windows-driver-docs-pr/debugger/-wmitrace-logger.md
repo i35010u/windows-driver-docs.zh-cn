@@ -1,9 +1,8 @@
 ---
-title: wmitrace.logger
-description: Wmitrace.logger 扩展显示有关跟踪会话，包括会话配置数据的数据。 此扩展不显示在会话期间生成的跟踪消息。
-ms.assetid: 2bc456db-3e97-49f8-9c57-75ee5fee0f9d
+title: wmitrace 记录器
+description: Wmitrace 扩展显示有关跟踪会话的数据，包括会话配置数据。 此扩展不显示在会话过程中生成的跟踪消息。
 keywords:
-- wmitrace.logger Windows 调试
+- wmitrace Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,47 +11,47 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 0e3224872752045ad29a6f0c57a70d638050cd40
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c6e67ed767f79980883b73218fb75981918e3768
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327365"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96823535"
 ---
 # <a name="wmitracelogger"></a>!wmitrace.logger
 
 
-**！ Wmitrace.logger**扩展显示有关跟踪会话，包括会话配置数据的数据。 此扩展不显示在会话期间生成的跟踪消息。
+**！ Wmitrace** 扩展显示有关跟踪会话的数据，包括会话配置数据。 此扩展不显示在会话过程中生成的跟踪消息。
 
 ```dbgcmd
 !wmitrace.logger [ LoggerID | LoggerName ]
 ```
 
-## <a name="span-idddkwmittraceloggerdbgspanspan-idddkwmittraceloggerdbgspanparameters"></a><span id="ddk__wmittrace_logger_dbg"></span><span id="DDK__WMITTRACE_LOGGER_DBG"></span>参数
+## <a name="span-idddk__wmittrace_logger_dbgspanspan-idddk__wmittrace_logger_dbgspanparameters"></a><span id="ddk__wmittrace_logger_dbg"></span><span id="DDK__WMITTRACE_LOGGER_DBG"></span>参数
 
 
-<span id="_______LoggerID______"></span><span id="_______loggerid______"></span><span id="_______LOGGERID______"></span> *LoggerID*   
-指定跟踪会话。 *LoggerID*是一个系统将分配到计算机上每个跟踪会话的序号。 如果未不指定任何参数，则使用跟踪会话 id 等于 1。
+<span id="_______LoggerID______"></span><span id="_______loggerid______"></span><span id="_______LOGGERID______"></span>*LoggerID*   
+指定跟踪会话。 *LoggerID* 是系统分配给计算机上每个跟踪会话的序号。 如果未指定参数，则使用 ID 等于1的跟踪会话。
 
-<span id="_______LoggerName______"></span><span id="_______loggername______"></span><span id="_______LOGGERNAME______"></span> *LoggerName*   
-指定跟踪会话。 *LoggerName*时的文本名称为指定开始跟踪会话时。
+<span id="_______LoggerName______"></span><span id="_______loggername______"></span><span id="_______LOGGERNAME______"></span>*LoggerName*   
+指定跟踪会话。 *LoggerName* 是启动跟踪会话时指定的文本名称。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
-此扩展插件导出的 Wmitrace.dll。
+此扩展由 Wmitrace.dll 导出。
 
-此扩展是在 Windows 2000 和更高版本的 Windows 中可用。 如果你想要 Windows 2000 中使用此扩展，您必须先将复制 Wmitrace.dll 文件的 Windows 调试工具安装目录的 winxp 子目录到 w2kfre 子目录。
+此扩展在 windows 2000 和更高版本的 Windows 中可用。 如果要将此扩展与 Windows 2000 一起使用，必须先将 Wmitrace.dll 文件从 Windows 的调试工具安装目录的 winxp 子目录复制到 w2kfre 子目录。
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-事件跟踪的概念概述，请参阅 Microsoft Windows SDK。
+有关事件跟踪的概念性概述，请参阅 Microsoft Windows SDK。
 
 <a name="remarks"></a>备注
 -------
 
-此扩展用于性能日志和事件，不能的人工可读的显示格式。 若要跟踪消息显示在跟踪会话缓冲区中，标头数据，以及使用[ **！ wmitrace.logdump**](-wmitrace-logdump.md)。
+此扩展是为性能日志和事件而设计的，不能在用户可读的显示中对其进行格式化。 若要在跟踪会话缓冲区中显示跟踪消息以及标头数据，请使用 [**！ wmitrace. logdump**](-wmitrace-logdump.md)。
 
-若要查找的跟踪会话的记录器 ID，请使用[ **！ wmitrace.strdump** ](-wmitrace-strdump.md)扩展。 或者，您可以使用 Tracelog 命令 tracelog-l 列出跟踪会话及其基本属性，包括记录器 id。
+若要查找跟踪会话的记录器 ID，请使用 [**！ wmitrace**](-wmitrace-strdump.md) 扩展名。 另外，还可以使用 Tracelog 命令 Tracelog-l 来列出跟踪会话及其基本属性，其中包括记录器 ID。
 
  
 

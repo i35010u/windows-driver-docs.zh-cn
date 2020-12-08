@@ -1,9 +1,8 @@
 ---
 title: wmitrace.dumpminievent
-description: Wmitrace.dumpminievent 扩展将显示在转储文件中存储的系统事件日志跟踪片段。
-ms.assetid: 94debe5f-d125-44d0-99c4-90d8794525df
+description: Wmitrace. dumpminievent 扩展显示系统事件日志跟踪片段，该片段存储在转储文件中。
 keywords:
-- wmitrace.dumpminievent Windows 调试
+- wmitrace dumpminievent Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 2881cbcef477c2b111d43cf0e40ee55566614813
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7df4cd508a33e9082d22c7506380fca9f5d8fe7f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63344938"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96823557"
 ---
 # <a name="wmitracedumpminievent"></a>!wmitrace.dumpminievent
 
 
-**！ Wmitrace.dumpminievent**扩展插件都会显示在转储文件中存储的系统事件日志跟踪片段。
+**！ Wmitrace dumpminievent** 扩展显示系统事件日志跟踪片段，该片段存储在转储文件中。
 
 ```dbgcmd
 !wmitrace.dumpminievent
@@ -31,22 +30,22 @@ ms.locfileid: "63344938"
 ## <span id="ddk__wmitrace_strdump_dbg"></span><span id="DDK__WMITRACE_STRDUMP_DBG"></span>
 
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
-此扩展插件导出的 Wmitrace.dll。
+此扩展由 Wmitrace.dll 导出。
 
-此扩展是在 Windows Vista Service Pack 1 (SP1) 和更高版本的 Windows 中可用。
+此扩展在 Windows Vista Service Pack 1 (SP1) 和更高版本的 Windows 中可用。
 
-仅调试小型转储文件或完整转储文件时，此扩展很有用。
+此扩展仅在调试小型转储文件或完整转储文件时才有用。
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-事件跟踪的概念概述，请参阅 Microsoft Windows SDK。 有关跟踪工具的信息，请参阅 Windows Driver Kit (WDK)。
+有关事件跟踪的概念性概述，请参阅 Microsoft Windows SDK。 有关跟踪工具的信息，请参阅 Windows 驱动程序工具包 (WDK) 。
 
 <a name="remarks"></a>备注
 -------
 
-*系统事件日志跟踪片断*是最后一个缓冲区的系统事件日志中的内容的副本。 **！ Wmitrace.dumpminievent**扩展事件日志格式显示其内容。
+*系统事件日志跟踪片段* 是系统事件日志的最后一个缓冲区的内容副本。 **！ Wmitrace dumpminievent** 扩展以事件日志格式显示其内容。
 
  
 

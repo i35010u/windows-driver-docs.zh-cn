@@ -1,15 +1,14 @@
 ---
 title: Locale
 description: Locale
-ms.assetid: 1cf8d075-a1b3-4554-83d5-71fd5059c1c4
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4e244c37a274d0679b10731ee3224d063cc75c84
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: 0e1774bba7779b6b737e2cc19f9d909dd1053fb3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89403354"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96824429"
 ---
 # <a name="locale"></a>Locale
 
@@ -41,8 +40,8 @@ Locale 元素指定服务元数据包的区域设置。 服务元数据包可以
 <tr class="header">
 <th>Attribute</th>
 <th>类型</th>
-<th>必选</th>
-<th>说明</th>
+<th>必须</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -73,13 +72,13 @@ Locale 元素指定服务元数据包的区域设置。 服务元数据包可以
 <thead>
 <tr class="header">
 <th>元素</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><p><a href="metadatakey.md" data-raw-source="[MetadataKey](metadatakey.md)">MetadataKey</a></p></td>
-<td><p><a href="metadatakey.md" data-raw-source="[MetadataKey](metadatakey.md)">MetadataKey</a>元素指定设备元数据包的属性。 其中包括：</p>
+<td><p><a href="metadatakey.md" data-raw-source="[MetadataKey](metadatakey.md)">MetadataKey</a>元素指定设备元数据包的属性。 这些功能包括以下这些：</p>
 <ul>
 <li><p>设备支持的每个硬件功能的标识符。</p></li>
 <li><p>包中的文本字符串的语言特定区域设置。</p></li>
@@ -108,11 +107,12 @@ Locale 元素指定服务元数据包的区域设置。 服务元数据包可以
 ## <a name="span-idremarksspanspan-idremarksspanspan-idremarksspanremarks"></a><span id="Remarks"></span><span id="remarks"></span><span id="REMARKS"></span>备注
 
 
--   区域设置元素可以是* &lt; 语言 &gt; * - * &lt; 区域 &gt; * (例如 en-us) 或* &lt; language &gt; * (，如 en) 。 如果设置了* &lt; 语言 &gt; * ，则包适用于所有* &lt; 语言 &gt; *区域设置。 例如，EN 适用于 EN-US 和 ZH-CN。
+-   区域设置元素可以是 *&lt; 语言 &gt;* - *&lt; 区域 &gt;* (例如 en-us) 或 *&lt; language &gt;* (，如 en) 。 如果设置了 *&lt; 语言 &gt;* ，则包适用于所有 *&lt; 语言 &gt;* 区域设置。 例如，EN 适用于 EN-US 和 ZH-CN。
 
 -   若要将元数据包指定为计算机当前区域设置的默认值，请将 **默认** 属性设置为 **true** (1) 。
 
-    **注意**   对于一个服务，只应将**默认**属性设置为**true** (1) 。 否则，操作系统会随机选择服务的元数据包。
+    **注意**  
+    对于一个服务，只应将 **默认** 属性设置为 **true** (1) 。 否则，操作系统会随机选择服务的元数据包。
 
      
 

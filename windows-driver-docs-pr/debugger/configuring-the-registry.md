@@ -1,19 +1,18 @@
 ---
 title: 配置注册表
 description: 配置注册表
-ms.assetid: 69a1dd39-c4aa-491d-9e28-fd1661ec9a7a
 keywords:
 - SymProxy，注册表
 - ProxyCfg 和 SymProxy
 - Netsh 和 SymProxy
 ms.date: 03/12/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 5453a38b46b66b1654375ccf69079e32d79f9d3e
-ms.sourcegitcommit: a0e6830b125a86ac0a0da308d5bf0091e968b787
+ms.openlocfilehash: e89bfcc0ba4aa9ada01861a01dff2456b806b573
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86557768"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96823485"
 ---
 # <a name="configuring-the-registry"></a>配置注册表
 
@@ -24,7 +23,7 @@ SymProxy 将其设置存储在此注册表项中。
 HKLM/Software/Microsoft/Symbol Server Proxy
 ```
 
-此注册表项控制要从中查找要在网站中存储的符号的位置、日志记录级别以及 SymProxy 是否使用到网络的直接连接进行操作。 可以通过运行随 Windows 调试工具提供的 SymProxy 注册工具（Symproxy）来创建此密钥。 在命令提示符处键入**symproxy** ，或在 Windows 资源管理器中双击它。
+此注册表项控制要从中查找要在网站中存储的符号的位置、日志记录级别以及 SymProxy 是否使用到网络的直接连接进行操作。 你可以通过运行 SymProxy 注册工具（随用于 Windows 调试工具 () Symproxy）来创建此密钥。 在命令提示符处键入 **symproxy** ，或在 Windows 资源管理器中双击它。
 
 这会为将以 "x" 为前缀的设置添加一些条目，以使其处于禁用状态。 若要启用设置，请删除所需设置前面的 "x"。
 
@@ -70,7 +69,7 @@ Symproxy 注册表文件使用符号的虚拟目录名称，并将符号路径�
 
 ### <a name="span-idweb_directoriesspanspan-idweb_directoriesspanweb-directories"></a><span id="web_directories"></span><span id="WEB_DIRECTORIES"></span>Web 目录
 
-对于在 IIS 中生成的、用作符号存储区的每个虚拟目录，你必须在以下注册表项的**Web 目录**子项下面设置一个注册表项。
+对于在 IIS 中生成的、用作符号存储区的每个虚拟目录，你必须在以下注册表项的 **Web 目录** 子项下面设置一个注册表项。
 
 ```reg
 HKLM/Software/Microsoft/Symbol Server Proxy
@@ -78,7 +77,7 @@ HKLM/Software/Microsoft/Symbol Server Proxy
 
 **编辑符号存储区虚拟目录的注册表项**
 
--   编辑**SymbolPath**的内容，使其包含 SymProxy 符号存储区使用的所有符号存储区。 如果正在使用多个符号存储区，请使用分号分隔它们。 每个值最多支持10个存储区。 HTTP 路径必须包含**https://前缀**，并且 UNC 路径必须包含 **\\\\** 前缀。
+-   编辑 **SymbolPath** 的内容，使其包含 SymProxy 符号存储区使用的所有符号存储区。 如果正在使用多个符号存储区，请使用分号分隔它们。 每个值最多支持10个存储区。 HTTP 路径必须包含 **https://前缀**，并且 UNC 路径必须包含 **\\\\** 前缀。
 
 例如，如果其中一个虚拟目录称为符号，并且它访问的符号存储位于 UNC 存储区 \\ \\ 符号 \\ 符号和 HTTP 存储区 https://msdl.microsoft.com/download/symbols 中，请创建以下注册表项。
 
@@ -86,7 +85,7 @@ HKLM/Software/Microsoft/Symbol Server Proxy
 HKLM/Software/Microsoft/Symbol Server Proxy/Web Directories/Symbols
 ```
 
-创建此密钥后，请将其**SymbolPath**编辑为 \\ \\ 符号 \\ 符号; <https://msdl.microsoft.com/download/symbols> 。 可在注册表编辑器的以下屏幕截图中查看。
+创建此密钥后，请将其 **SymbolPath** 编辑为 \\ \\ 符号 \\ 符号; <https://msdl.microsoft.com/download/symbols> 。 可在注册表编辑器的以下屏幕截图中查看。
 
 ![显示已修改 symbolpath 的注册表编辑器的屏幕截图](images/symproxy-registry.png)
 
@@ -147,7 +146,7 @@ C:\> wevtutil.exe uninstall-manifest %WINDIR%\system32\inetsrv\symproxy.man
 
 ### <a name="span-idevent_logspanspan-idevent_logspanspan-idevent_logspanevent-log"></a><span id="Event_Log"></span><span id="event_log"></span><span id="EVENT_LOG"></span>事件日志
 
-如果配置了 ETW，事件会作为事件记录在事件日志*Operational and Analytic*中的 "*应用程序和服务日志" \\ \\ \\ *下的 "运行" 和 "分析" 通道中。
+如果配置了 ETW，事件会作为事件记录在事件日志 *Operational and Analytic* 中的 "*应用程序和服务日志" \\ \\ \\* 下的 "运行" 和 "分析" 通道中。
 
 若要正确查看事件日志条目的消息，需要将 symproxy 文件的 "事件日志" 区域添加到注册表中：
 
@@ -205,7 +204,7 @@ SymProxy 从该位置获取其全局设置和上游符号存储区的符号路�
 
 ### <a name="span-idsymbol_server_proxy__keyspanspan-idsymbol_server_proxy__keyspanspan-idsymbol_server_proxy__keyspansymbol-server-proxy-key"></a><span id="Symbol_Server_Proxy__key"></span><span id="symbol_server_proxy__key"></span><span id="SYMBOL_SERVER_PROXY__KEY"></span>符号服务器代理密钥
 
-符号服务器代理注册表项支持以下全局设置（所有 REG \_ DWORD）。 可以通过回收应用程序池实时应用设置。 将创建一个新的 w3wp.exe 进程，并且它将读取新的值。 完成对旧 w3wp.exe 进程的所有挂起的请求后，旧的 w3wp.exe 进程将结束。 IIS 默认回收每1740分钟（29小时） w3wp.exe 处理。
+符号服务器代理注册表项支持 (所有 REG DWORD) 的以下全局设置 \_ 。 可以通过回收应用程序池实时应用设置。 将创建一个新的 w3wp.exe 进程，并且它将读取新的值。 完成对旧 w3wp.exe 进程的所有挂起的请求后，旧的 w3wp.exe 进程将结束。 IIS 默认回收每1740分钟 w3wp.exe 处理 (29 小时) 。
 
 <table>
 <colgroup>
@@ -215,7 +214,7 @@ SymProxy 从该位置获取其全局设置和上游符号存储区的符号路�
 <tbody>
 <tr class="odd">
 <td align="left">REG_DWORD</td>
-<td align="left">说明</td>
+<td align="left">描述</td>
 </tr>
 <tr class="odd">
 <td align="left">NoInternetProxy</td>
@@ -225,7 +224,7 @@ SymProxy 从该位置获取其全局设置和上游符号存储区的符号路�
 </tr>
 <tr class="even">
 <td align="left">NoFilePointers</td>
-<td align="left"><p>默认情况下，对于不存在的符号，SymProxy 将在请求的文件（在本地缓存中）旁查找文件 ptr 文件。 如果找到，它将返回由文件 ptr 文件指定的位置。 仅当 SymStore.exe 填充本地缓存时，此功能才是必需的。</p>
+<td align="left"><p>默认情况下，对于不存在的符号，SymProxy 将在本地缓存) 中查找所请求 (文件旁的文件。 如果找到，它将返回由文件 ptr 文件指定的位置。 仅当 SymStore.exe 填充本地缓存时，此功能才是必需的。</p>
 <p>创建 REG_DWORD： "NoFilePointers" 值以跳过查找。</p></td>
 </tr>
 <tr class="odd">
@@ -244,10 +243,10 @@ SymProxy 从该位置获取其全局设置和上游符号存储区的符号路�
 <p>未命中与基于 UTC 的时间相关联。 对该文件的后续请求会被立即拒绝 N 秒。</p>
 <p>第一次在 N 秒后对文件进行请求会导致重新查询上游符号存储。</p>
 <p>成功后，将返回符号文件并删除未命中。</p>
-<p>发生故障时，未命中会向前移动到当前时间（UTC），以启动新的超时时间。</p>
+<p>失败时，将会将未命中的时间向前移动到当前时间 (UTC) ，以启动新的超时时间段。</p>
 <p>使用 "未命中 <em> 的缓存" 计数器来监视未命中的情况。</p>
 <p><ul>
-    <li>未指定-（默认值）300秒/5 分钟</li>
+    <li>未指定- (默认) 300 秒/5 分钟</li>
     <li>0–功能已禁用</li>
     <li>N –超时持续时间为 N 秒</li>
    </ul>
@@ -258,7 +257,7 @@ SymProxy 从该位置获取其全局设置和上游符号存储区的符号路�
 <td align="left"><p>两次未命中期限检查。 将扫描未命中的缓存并删除早于 MissAgeTimeout 秒的记录。</p>
 <p>使用事件 ID 4 将当前统计信息保存到事件日志。</p>
 <p><ul>
-    <li>未指定-（默认值）3600秒/1 小时</li>
+    <li>未指定- (默认) 3600 秒/1 小时</li>
     <li>0–功能已禁用</li>
     <li>N –在 N 秒内的两次检查之间</li>
    </ul>
@@ -270,7 +269,7 @@ SymProxy 从该位置获取其全局设置和上游符号存储区的符号路�
 <p>FailurePeriod</p>
 <p>FailureBlackout</p></td>
 <td align="left"><p>使用掉电功能 termporarly 禁用无响应的上游符号存储。 掉电功能使用4个 REG_DWORD 值来定义行为。 默认情况下，该功能处于禁用状态。</p>
-<p>对于在符号路径中定义的每个上游符号存储区，会单独记录失败。 如果请求所用时间超过 FailureTimeout （msec），则失败计数将增加。</p>
+<p>对于在符号路径中定义的每个上游符号存储区，会单独记录失败。 如果请求所用的时间超过 FailureTimeout (毫秒) ，则失败计数将增加。</p>
 <p>在 FailurePeriod 秒后，符号路径标记为 "FailureCount"。 此时，所有请求都将被忽略，直到超过 FailureBlackout 秒。 超时后的第一个调用方测试上游符号存储区。 如果成功，将删除超时并允许请求。 如果失败，时间设置为现在 + FailureBlackout 秒。 在此之后，将再次测试上游符号存储区。</p></td>
 </tr>
 <tr class="even">
@@ -314,11 +313,11 @@ SymProxy 从该位置获取其全局设置和上游符号存储区的符号路�
 
 因此，你可能需要设置 HTTP 代理设置，以便该服务可以访问外部网络资源。 使用以下方法之一来配置这些设置：
 
--   使用 Netsh 工具（netsh.exe）。 有关说明，请在命令提示符窗口中键入以下内容：
+-   使用 Netsh 工具 ( # A0) 。 有关说明，请在命令提示符窗口中键入以下内容：
 
     ```console
     netsh winhttp -? 
     ```
 
-SymProxy 的默认行为是使用 ProxyCfg 或 Netsh 指定的任何 HTTP 代理。 如果未配置 HTTP 代理，SymProxy 将使用虚拟代理来允许访问 intranet 内的安全 HTTP 站点。 作为副作用，此方法阻止 SymProxy 使用到外部 Internet 的直接连接。 如果希望允许 SymProxy 使用直接连接到 Internet，请 \_ 在注册表的**符号服务器代理**密钥中创建一个名为**NoInternetProxy**的 "REG DWORD" 值。 将**NoInternetProxy**的值设置为1，并验证是否没有 ProxyCfg 指示的 HTTP 代理。
+SymProxy 的默认行为是使用 ProxyCfg 或 Netsh 指定的任何 HTTP 代理。 如果未配置 HTTP 代理，SymProxy 将使用虚拟代理来允许访问 intranet 内的安全 HTTP 站点。 作为副作用，此方法阻止 SymProxy 使用到外部 Internet 的直接连接。 如果希望允许 SymProxy 使用直接连接到 Internet，请 \_ 在注册表的 **符号服务器代理** 密钥中创建一个名为 **NoInternetProxy** 的 "REG DWORD" 值。 将 **NoInternetProxy** 的值设置为1，并验证是否没有 ProxyCfg 指示的 HTTP 代理。
 

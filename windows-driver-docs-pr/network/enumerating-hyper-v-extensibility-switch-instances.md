@@ -1,15 +1,14 @@
 ---
 title: 枚举 Hyper-V 可扩展交换机实例
 description: 枚举 Hyper-V 可扩展交换机实例
-ms.assetid: 1C4FE71E-689C-4BE8-BDA8-FFC318E37A26
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7cbc5721627ee7b03735ccc7fa2861654cc24034
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 9a2e8ae43cc51883fb5c24b9b11315f71cd88199
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89212189"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96823919"
 ---
 # <a name="enumerating-hyper-v-extensible-switch-instances"></a>枚举 Hyper-V 可扩展交换机实例
 

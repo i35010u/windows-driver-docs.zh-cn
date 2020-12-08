@@ -1,25 +1,24 @@
 ---
 title: 视频端口 DDI 支持
-description: 从 Windows 8 开始，基于在 Windows 2000 显示驱动程序模型 (XDDM) 一起显示驱动程序不会安装或运行，但 GDI 辅助功能驱动程序和远程显示器驱动程序将安装并运行。
-ms.assetid: 87A98A49-B01B-419D-B570-6ECA60E2C7AF
+description: 从 Windows 8 开始，基于 Windows 2000 显示器驱动程序模型显示驱动程序 (XDDM) 将不会安装或运行，但 GDI 辅助功能驱动程序和远程显示驱动程序将安装并运行。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d3e12ad56ee5992084db2ba72dfc4ddbb797689a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b39e94bab5c95df81c0f4116feefa44c3dbc14aa
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63389615"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96824161"
 ---
 # <a name="video-port-ddi-support"></a>视频端口 DDI 支持
 
 
-从 Windows 8 开始显示驱动程序基于[Windows 2000 显示驱动程序模型 (XDDM)](windows-2000-display-driver-model-design-guide.md)不会安装或运行，但[GDI 辅助功能驱动程序](mirror-drivers.md)和[远程显示器驱动程序](remote-display-drivers.md)将安装并运行。 对于这种情况都支持仅某些由视频端口驱动程序导出的函数。
+从 Windows 8 开始，基于 [windows 2000 显示器驱动程序模型显示驱动程序 (XDDM) ](windows-2000-display-driver-model-design-guide.md) 将不会安装或运行，但 [GDI 辅助功能驱动程序](mirror-drivers.md) 和 [远程显示驱动](remote-display-drivers.md) 程序将安装并运行。 对于这些方案，只支持视频端口驱动程序导出的某些函数。
 
-## <a name="span-idsupportedvideoportddisspanspan-idsupportedvideoportddisspanspan-idsupportedvideoportddisspansupported-video-port-ddis"></a><span id="Supported_Video_Port_DDIs"></span><span id="supported_video_port_ddis"></span><span id="SUPPORTED_VIDEO_PORT_DDIS"></span>受支持的视频端口 DDIs
+## <a name="span-idsupported_video_port_ddisspanspan-idsupported_video_port_ddisspanspan-idsupported_video_port_ddisspansupported-video-port-ddis"></a><span id="Supported_Video_Port_DDIs"></span><span id="supported_video_port_ddis"></span><span id="SUPPORTED_VIDEO_PORT_DDIS"></span>支持的视频端口 DDIs
 
 
-GDI 辅助功能驱动程序和远程显示驱动程序的情况下，从 Windows 8 仍支持以下系统实现视频端口驱动程序设备驱动程序接口 (DDIs) 开始。
+对于 GDI 辅助功能驱动程序和远程显示驱动程序方案，从 Windows 8 开始，仍支持以下系统实现的视频端口驱动程序设备驱动程序接口 (DDIs) 。
 
 -   VideoDebugPrint
 -   VideoPortAcquireDeviceLock
@@ -61,12 +60,12 @@ GDI 辅助功能驱动程序和远程显示驱动程序的情况下，从 Window
 -   VideoPortWaitForSingleObject
 -   VideoPortZeroMemory
 
-## <a name="span-idunsupportedvideoportddisspanspan-idunsupportedvideoportddisspanspan-idunsupportedvideoportddisspanunsupported-video-port-ddis"></a><span id="Unsupported_Video_Port_DDIs"></span><span id="unsupported_video_port_ddis"></span><span id="UNSUPPORTED_VIDEO_PORT_DDIS"></span>不支持的视频端口 DDIs
+## <a name="span-idunsupported_video_port_ddisspanspan-idunsupported_video_port_ddisspanspan-idunsupported_video_port_ddisspanunsupported-video-port-ddis"></a><span id="Unsupported_Video_Port_DDIs"></span><span id="unsupported_video_port_ddis"></span><span id="UNSUPPORTED_VIDEO_PORT_DDIS"></span>不支持的视频端口 DDIs
 
 
-有关 GDI 辅助功能驱动程序和远程显示驱动程序方案，不支持以下系统实现视频端口驱动程序 DDIs 开始 Windows 8。
+对于 GDI 辅助功能驱动程序和远程显示驱动程序方案，从 Windows 8 开始，不支持以下系统实现的视频端口驱动程序 DDIs。
 
-项标有星号 (\*) 适用于从 Windows 8 开始不再支持的硬件方案。
+用星号 () 标记的项 \* 适用于从 Windows 8 开始不再支持的硬件方案。
 
 -   VideoPortAllocateBuffer
 -   VideoPortAllocateCommonBuffer

@@ -1,7 +1,6 @@
 ---
 title: 驱动程序签名策略
 description: 驱动程序签名策略
-ms.assetid: c3ba672c-5bf2-4885-a85e-fa6d8a47ca54
 keywords:
 - 驱动程序签名 WDK，内核模式代码签名策略
 - 对驱动程序进行签名 WDK，内核模式代码签名策略
@@ -13,12 +12,12 @@ keywords:
 - 包数字签名 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 80be15b20691a41e152b2d18faa8e01e1c51a12a
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 715a4f01c1d823107d9b436fdac13a21809ce02d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89096333"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96824077"
 ---
 # <a name="driver-signing-policy"></a>驱动程序签名策略
 
@@ -27,7 +26,7 @@ ms.locfileid: "89096333"
 
 可以通过多种不同的方式将驱动程序提交到门户。  对于生产驱动程序，应按如下所述提交 HLK/HCK 测试日志。  对于仅限 Windows 10 客户端的系统进行测试，你可以提交用于 [证明签名](../dashboard/attestation-signing-a-kernel-driver-for-public-release.md)的驱动程序，这不需要进行 HLK 测试。  或者，你可以提交你的驱动程序以进行测试签名，如 [创建新的硬件提交](../dashboard/create-a-new-hardware-submission.md) 页中所述。
 
-## <a name="exceptions"></a>例外
+## <a name="exceptions"></a>异常
 
 如果满足以下任一条件，则仍允许交叉签名的驱动程序：
 

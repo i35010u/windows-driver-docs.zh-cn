@@ -1,17 +1,16 @@
 ---
 title: OID_TCP_TASK_IPSEC_DELETE_SA
 description: 本主题介绍) OID_TCP_TASK_IPSEC_DELETE_SA 对象标识符 (OID。
-ms.assetid: 5f3b1f30-ab44-4d1c-96ff-b70ae6cfe324
 keywords:
 - OID_TCP_TASK_IPSEC_DELETE_SA
 ms.date: 11/06/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2c61499d54166e3eb26c906bc667a7205d412841
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 8a97d2f57a41495367731942333a088262775d83
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89210107"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96823841"
 ---
 # <a name="oid_tcp_task_ipsec_delete_sa"></a>OID_TCP_TASK_IPSEC_DELETE_SA
 

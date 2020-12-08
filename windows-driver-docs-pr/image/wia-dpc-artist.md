@@ -1,9 +1,8 @@
 ---
-title: WIA\_DPC\_艺术家
-description: WIA\_DPC\_艺术家属性包含设备的所有者 （这是当前用户） 的名称。 设备使用此属性来填充它会捕获每个 EXIF 图像中的艺术家字段。
-ms.assetid: 72b10fee-39ba-4d2a-852f-c6ffac9bc0a8
+title: WIA \_ DPC \_ 艺术家
+description: WIA \_ DPC \_ 艺术家属性包含作为设备当前用户)  (所有者的名称。 设备使用此属性来填充它所捕获的每个 EXIF 图像中的 "艺术家" 字段。
 keywords:
-- WIA_DPC_ARTIST 成像设备
+- WIA_DPC_ARTIST 图像设备
 topic_type:
 - apiref
 api_name:
@@ -14,26 +13,26 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 57edeb588101d2c8876d7be2b7503c0554595dc8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4c095c0a30daf2ecda6c60b083640e122a6315e6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63353346"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96824478"
 ---
-# <a name="wiadpcartist"></a>WIA\_DPC\_艺术家
+# <a name="wia_dpc_artist"></a>WIA \_ DPC \_ 艺术家
 
 
-WIA\_DPC\_艺术家属性包含设备的所有者 （这是当前用户） 的名称。 设备使用此属性来填充它会捕获每个 EXIF 图像中的艺术家字段。
+WIA \_ DPC \_ 艺术家属性包含作为设备当前用户)  (所有者的名称。 设备使用此属性来填充它所捕获的每个 EXIF 图像中的 "艺术家" 字段。
 
 ## <span id="ddk_wia_dpc_artist_si"></span><span id="DDK_WIA_DPC_ARTIST_SI"></span>
 
 
-属性类型：VT\_BSTR
+属性类型： VT \_ BSTR
 
-有效值：WIA\_PROP\_NONE
+有效值： WIA " \_ \_ 无"
 
-访问权限：读取/写入
+访问权限：读/写
 
 <a name="requirements"></a>要求
 ------------
@@ -45,12 +44,12 @@ WIA\_DPC\_艺术家属性包含设备的所有者 （这是当前用户） 的�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Version</p></td>
-<td><p>在 Windows Vista 和更高版本操作系统中已过时，并应不再使用。 但是，此属性仍定义 Windows Vista 中与应用程序和专为 Windows Server 2003、 Windows XP 和早期版本的 Windows 操作系统的设备的兼容性。</p></td>
+<td><p>版本</p></td>
+<td><p>在 Windows Vista 和更高版本的操作系统中已过时，不应再使用。 但是，在 Windows Vista 中仍定义此属性，以与为 Windows Server 2003、Windows XP 和 windows 操作系统的以前版本设计的应用程序和设备兼容。</p></td>
 </tr>
 <tr class="even">
-<td><p>Header</p></td>
-<td>Wiadef.h （包括 Wiadef.h）</td>
+<td><p>标头</p></td>
+<td>Wiadef (包含 Wiadef) </td>
 </tr>
 </tbody>
 </table>

@@ -1,17 +1,16 @@
 ---
 title: 启用唤醒事件
 description: 启用唤醒事件
-ms.assetid: 48ed0f41-efa0-4040-8589-8d477c5ddd0e
 keywords:
 - 唤醒功能 WDK 网络，启用唤醒事件
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 44d8b65ef854f5b685deda54844d4bfe423312e8
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 11279bea9a87bc7cb01465e0edb7819c9561594f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89206465"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96823939"
 ---
 # <a name="enabling-wake-up-events"></a>启用唤醒事件
 

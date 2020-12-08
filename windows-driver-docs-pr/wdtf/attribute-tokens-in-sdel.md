@@ -1,18 +1,17 @@
 ---
 title: SDEL 中的特性标记
 description: 介绍用于定义目标设备和计算机的特征的 SDEL 特性标记。
-ms.assetid: C11d22D4-31E2-99E8-841F-A8249539A39F
 keywords:
 - SDEL
 - 特性标记
 ms.date: 09/03/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 4bef12d2b975c15e5432a81be941342ae9be6a54
-ms.sourcegitcommit: bd72676caf2bf5c9738c4081c778316919b85d30
+ms.openlocfilehash: cb532cce5bd2b707e2f9abf45bb5daadfa7d592e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89456646"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96823663"
 ---
 # <a name="attribute-tokens-in-sdel"></a>SDEL 中的特性标记
 
@@ -22,7 +21,7 @@ SDEL 语言使用目标属性令牌来定义目标设备和计算机的特征。
 
 下表描述了根命名空间中对所有目标有效的属性。
 
-|关键字|VARIANT 类型|说明|
+|关键字|VARIANT 类型|描述|
 |----|----|----|
 |类型|VT_BSTR|定义目标的类型。 此值可以是 "System" 或 "Device"。|
 
@@ -33,7 +32,7 @@ SDEL 语言使用目标属性令牌来定义目标设备和计算机的特征。
 >[!NOTE]
 >以下大多数属性都是通过 SetupDi Api 从操作系统检索的。 有关此 Api 的详细信息，请参阅 SetupDiGetDeviceRegistryProperty。
 
-|关键字|VARIANT 类型|说明|
+|关键字|VARIANT 类型|描述|
 |----|----|----|
 |地址|VT_I4|特定于类的 (或特定于总线的) 地址。|
 |BusNumber|VT_I4|设备的总线号。|
@@ -43,7 +42,7 @@ SDEL 语言使用目标属性令牌来定义目标设备和计算机的特征。
 |ClassGUID|VT_BSTR|设备的类（以 GUID 形式）。 使用本地化版本时，请使用此关键字而不是类字段。|
 |CompatIDs|VT_ARRAY 具有 VT_BSTR 的变体|为此设备定义的所有兼容 Id。|
 |ConfigFlags|VT_I4|设备的配置标志。|
-|说明|VT_BSTR|设备描述。|
+|描述|VT_BSTR|设备描述。|
 |DeviceID|VT_BSTR|设备标识符，包括设备的实例标识符。 此字符串是系统中每个设备的唯一字符串。|
 |DeviceStatusString|VT_BSTR|同时包含 StatusString 和 ProblemCodeString 中的一个字符串。|
 |DevInst|VT_I4|设备实例的不透明句柄。|
@@ -101,7 +100,7 @@ SDEL 语言使用目标属性令牌来定义目标设备和计算机的特征。
 
 下表描述了根命名空间中仅对系统类型目标有效的属性。
 
-|关键字|VARIANT 类型|说明|
+|关键字|VARIANT 类型|描述|
 |----|----|----|
 |IsPhantom|VT_BOOL|指定当前是否可以使用系统。|
 |IsRemote|VT_BOOL|指定目标是否为远程系统。|
@@ -117,13 +116,13 @@ SDEL 语言使用目标属性令牌来定义目标设备和计算机的特征。
 >[!NOTE]
 >磁盘命名空间中的大多数属性都是通过 IOCTL 从操作系统检索到磁盘本身。 有关详细信息，请参阅 [STORAGE_DEVICE_DESCRIPTOR](/windows-hardware/drivers/ddi/ntddstor/ns-ntddstor-_storage_device_descriptor)。
 
-|关键字|VARIANT 类型|说明|
+|关键字|VARIANT 类型|描述|
 |----|----|----|
 |BusType|VT_I4|STORAGE_DEVICE_DESCRIPTOR。BusType 字段。|
 |DeviceType|VT_I4|STORAGE_DEVICE_DESCRIPTOR。DeviceTypeModifier 字段。|
 |IsRemovable|VT_BOOL|指定设备是否包含可移动介质。|
 |IsCommandQueuing|VT_BOOL|STORAGE_DEVICE_DESCRIPTOR CommandQueueing 字段。|
-|Number|VT_UI4|磁盘编号 (可能与地址字段) 相同。|
+|数字|VT_UI4|磁盘编号 (可能与地址字段) 相同。|
 |ProductID|VT_BSTR|产品标识符。|
 |ProductRev|VT_BSTR|产品修订值。|
 |SerialNumber|VT_BSTR|序列号。|
@@ -134,11 +133,11 @@ SDEL 语言使用目标属性令牌来定义目标设备和计算机的特征。
 
 下表描述了只对卷设备有效的卷命名空间中的属性。
 
-|关键字|VARIANT 类型|说明|
+|关键字|VARIANT 类型|描述|
 |----|----|----|
 |启动|VT_BOOL|确定卷是否为启动分区。 值 VARIANT_TRUE 表示该卷是启动分区。 启动分区是包含 Windows 操作系统文件的分区。|
 |DeviceName|VT_BSTR|此卷的 MS-DOS 设备名称的当前映射。|
-|磁盘和分区|VT_BSTR|此卷的 MS-DOS 设备名称的当前映射。|
+|磁盘|VT_BSTR|此卷的 MS-DOS 设备名称的当前映射。|
 |DriveLetter|VT_BSTR|卷的驱动器号，包括尾随斜杠 (\\) 。|
 |ExtentCount|VT_I4|卷扩展的磁盘数。|
 |ExtentDiskNumbers|VT_ARRAY 具有 VT_I4 的变体|一个数组，其中包含卷所扩展到的每个 Disk：： Number 值。 数组具有 ExtentCount 的元素，且为0索引。 数组与另一个区区 * 数组具有相同的排序顺序。|
@@ -165,7 +164,7 @@ SDEL 语言使用目标属性令牌来定义目标设备和计算机的特征。
 
 下表描述了仅对电源设备有效的 Power 命名空间中的属性。
 
-|关键字|VARIANT 类型|说明|
+|关键字|VARIANT 类型|描述|
 |----|----|----|
 |SupportedDeviceUnits|VT_ARRAY 具有 VT_BSTR 的变体|可用于查询的 PowerUnit 命名空间数组。|
 
@@ -173,7 +172,7 @@ SDEL 语言使用目标属性令牌来定义目标设备和计算机的特征。
 
 下表描述了各种 PowerUnit 命名空间中的属性。
 
-|关键字|VARIANT 类型|说明|
+|关键字|VARIANT 类型|描述|
 |----|----|----|
 |SupportedStates|VT_ARRAY 具有 VT_BSTR 的变体|电源状态的命名空间数组 (C0 – C6，D0 – D3，F0 – F9，SWIS0 – SWIS3) |
 |CoveredStates|VT_ARRAY 具有 VT_BSTR 的变体|涵盖状态的命名空间数组。 仅包括具有非零命中计数的状态|
@@ -182,7 +181,7 @@ SDEL 语言使用目标属性令牌来定义目标设备和计算机的特征。
 
 下表描述了各种 PowerState 命名空间中的属性。
 
-|关键字|VARIANT 类型|说明|
+|关键字|VARIANT 类型|描述|
 |----|----|----|
 |点击次数|VT_UI4|在测试期间输入给定电源状态的次数。|
 |持续时间|VT_UI4|给定电源状态所用的时间段（以毫秒为单位）。|
@@ -204,7 +203,7 @@ SDEL 语言使用目标属性令牌来定义目标设备和计算机的特征。
 
 下表描述了各种 CAP (功能) 命名空间的属性。
 
-|关键字|VARIANT 类型|说明|
+|关键字|VARIANT 类型|描述|
 |----|----|----|
 |LockSupported|VT_BOOL|指定设备是否支持阻止设备弹出的物理设备锁定。  (CM_DEVCAP_LOCKSUPPORTED) |
 |EjectSupported|VT_BOOL|指定当系统处于 PowerSystemWorking 状态时，设备是否支持软件控制的设备弹出。  (CM_DEVCAP_EJECTSUPPORTED) |
@@ -221,7 +220,7 @@ SDEL 语言使用目标属性令牌来定义目标设备和计算机的特征。
 
 下表描述了各种 INF 命名空间中的属性。
 
-|关键字|VARIANT 类型|说明|
+|关键字|VARIANT 类型|描述|
 |----|----|----|
 |FileName|VT_BSTR|INF 文件名。|
 |FileNamePath|VT_BSTR|INF 文件名路径。|
@@ -233,7 +232,7 @@ SDEL 语言使用目标属性令牌来定义目标设备和计算机的特征。
 
 下表描述了各种网络命名空间中的属性。
 
-|关键字|VARIANT 类型|说明|
+|关键字|VARIANT 类型|描述|
 |----|----|----|
 |AdapterName|VT_BSTR|IP_ADAPTER_ADDRESSES 结构中的 AdapterName 字段。|
 |IPV6Address|VT_BSTR|IP_ADAPTER_ADDRESSES 结构中的 FirstUnicastAddress 字段。|
@@ -244,7 +243,7 @@ SDEL 语言使用目标属性令牌来定义目标设备和计算机的特征。
 |PrimaryWINSServer|VT_BSTR|IP_ADAPTER_ADDRESSES 结构中的 FirstWinsServerAddress 字段。|
 |FirstGatewayAddress|VT_BSTR|IP_ADAPTER_ADDRESSES 结构中的 FirstGatewayAddress 字段。|
 |ConnectionSpecificDNSSuffix|VT_BSTR|IP_ADAPTER_ADDRESSES 结构中的 DnsSuffix 字段|
-|说明|VT_BSTR|IP_ADAPTER_ADDRESSES 结构中的说明字段。|
+|描述|VT_BSTR|IP_ADAPTER_ADDRESSES 结构中的说明字段。|
 |FriendlyName|VT_BSTR|IP_ADAPTER_ADDRESSES 结构中的 FriendlyName 字段。|
 |PhysicalAddress|VT_BSTR|IP_ADAPTER_ADDRESSES 结构中的 MacAddress 字段|
 |Flags|VT_UI4|IP_ADAPTER_ADDRESSES 结构中的标志字段|
@@ -272,7 +271,7 @@ SDEL 语言使用目标属性令牌来定义目标设备和计算机的特征。
 
 下表描述了各种 OpticalMedia 命名空间中的属性。
 
-|关键字|VARIANT 类型|说明|
+|关键字|VARIANT 类型|描述|
 |----|----|----|
 |IsMediaPresent|VT_BOOL|如果介质存在或不在光学媒体设备中。|
 |类型|VT_UI4|从 IOCTL_CDROM_GET_CONFIGURATION GET_CONFIGURATION_HEADER 中返回的当前配置文件类型号。|
@@ -283,7 +282,7 @@ SDEL 语言使用目标属性令牌来定义目标设备和计算机的特征。
 
 下表描述了各种 StorageMedia 命名空间中的属性。
 
-|关键字|VARIANT 类型|说明|
+|关键字|VARIANT 类型|描述|
 |----|----|----|
 |DeviceType|VT_UI4|指定一个系统定义的 FILE_DEVICE_XXX 常数，表示设备的类型。|
 |DeviceTypeString|VT_BSTR|设备类型关联的字符串。|
@@ -295,7 +294,7 @@ SDEL 语言使用目标属性令牌来定义目标设备和计算机的特征。
 
 下表描述了各种 Windows 命名空间中的属性。
 
-|关键字|VARIANT 类型|说明|
+|关键字|VARIANT 类型|描述|
 |----|----|----|
 |IsDriverVerifierEnabled|VT_BOOL|如果为 True 或 False，则指示是否已对此设备的所有驱动程序启用至少具有标准设置的驱动程序验证程序。|
 |IsKernelDebugDevice|VT_BOOL|True 或 False，指示内核调试器是否正在使用此设备。|

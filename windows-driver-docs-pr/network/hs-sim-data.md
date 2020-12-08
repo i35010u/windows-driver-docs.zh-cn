@@ -1,25 +1,24 @@
 ---
 title: HS_SIM_DATA 结构
 description: HS_SIM_DATA 结构包含 SIM 卡中存储的信息。
-ms.assetid: 9e29a85e-e764-4841-b218-c63bba0ca9fa
 keywords:
 - 从 Windows Vista 开始 HS_SIM_DATA 结构网络驱动程序
 - 从 Windows Vista 开始 PHS_SIM_DATA 结构指针网络驱动程序
 ms.date: 07/31/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5357a1605032fc988e296ebfba2ed072da627c35
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: e3464aa420dc02f45c896b98c8af261c8236e6ba
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89402978"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96823891"
 ---
 # <a name="hs_sim_data-structure"></a>HS \_ SIM \_ 数据结构
 
 [!include[Wi-Fi Hotspot Offloading deprecation](../includes/wi-fi-hotspot-offloading-deprecation.md)]
 
 
-**HS \_ sim \_ 数据**结构包含 SIM 卡中存储的信息。
+**HS \_ sim \_ 数据** 结构包含 SIM 卡中存储的信息。
 
 <a name="syntax"></a>语法
 ------
@@ -58,7 +57,7 @@ SIM 卡中存储 (ICCID) 的集成卡标识符。
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Hotspotoffloadplugin (包含 Hotspotoffloadplugin) </td>
 </tr>
 </tbody>

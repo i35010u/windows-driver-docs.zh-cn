@@ -1,9 +1,8 @@
 ---
 title: wmitrace.eventlogdump
-description: Wmitrace.eventlogdump 扩展显示指定记录器的内容。 显示的格式与事件日志。
-ms.assetid: 27254b36-b413-45f0-9834-ff55fbb787c7
+description: Wmitrace. eventlogdump 扩展显示指定记录器的内容。 显示格式类似于事件日志。
 keywords:
-- wmitrace.eventlogdump Windows 调试
+- wmitrace eventlogdump Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,47 +11,47 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 401564686ba5d3c6e2447ebe3bbd222a32a2fc59
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ceffba914cccb6ad00c3ac377ba855a30542a6c2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332109"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96823540"
 ---
 # <a name="wmitraceeventlogdump"></a>!wmitrace.eventlogdump
 
 
-**！ Wmitrace.eventlogdump**扩展将显示指定记录器的内容。 显示的格式与事件日志。
+**！ Eventlogdump** 扩展显示指定记录器的内容 wmitrace。 显示格式类似于事件日志。
 
 ```dbgcmd
 !wmitrace.eventlogdump { LoggerID | LoggerName }
 ```
 
-## <a name="span-idddkwmitracestrdumpdbgspanspan-idddkwmitracestrdumpdbgspanparameters"></a><span id="ddk__wmitrace_strdump_dbg"></span><span id="DDK__WMITRACE_STRDUMP_DBG"></span>参数
+## <a name="span-idddk__wmitrace_strdump_dbgspanspan-idddk__wmitrace_strdump_dbgspanparameters"></a><span id="ddk__wmitrace_strdump_dbg"></span><span id="DDK__WMITRACE_STRDUMP_DBG"></span>参数
 
 
-<span id="_______LoggerID______"></span><span id="_______loggerid______"></span><span id="_______LOGGERID______"></span> *LoggerID*   
-指定跟踪会话。 *LoggerID*是一个系统将分配到计算机上每个跟踪会话的序号。
+<span id="_______LoggerID______"></span><span id="_______loggerid______"></span><span id="_______LOGGERID______"></span>*LoggerID*   
+指定跟踪会话。 *LoggerID* 是系统分配给计算机上每个跟踪会话的序号。
 
-<span id="_______LoggerName______"></span><span id="_______loggername______"></span><span id="_______LOGGERNAME______"></span> *LoggerName*   
-指定跟踪会话。 *LoggerName*时的文本名称为指定开始跟踪会话时。
+<span id="_______LoggerName______"></span><span id="_______loggername______"></span><span id="_______LOGGERNAME______"></span>*LoggerName*   
+指定跟踪会话。 *LoggerName* 是启动跟踪会话时指定的文本名称。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
-此扩展插件导出的 Wmitrace.dll。
+此扩展由 Wmitrace.dll 导出。
 
-此扩展是在 Windows 2000 和更高版本的 Windows 中可用。 如果你想要 Windows 2000 中使用此扩展，您必须先将复制 Wmitrace.dll 文件的 Windows 调试工具安装目录的 winxp 子目录到 w2kfre 子目录。
+此扩展在 windows 2000 和更高版本的 Windows 中可用。 如果要将此扩展与 Windows 2000 一起使用，必须先将 Wmitrace.dll 文件从 Windows 的调试工具安装目录的 winxp 子目录复制到 w2kfre 子目录。
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-事件跟踪的概念概述，请参阅 Microsoft Windows SDK。 有关跟踪工具的信息，请参阅 Windows Driver Kit (WDK)。
+有关事件跟踪的概念性概述，请参阅 Microsoft Windows SDK。 有关跟踪工具的信息，请参阅 Windows 驱动程序工具包 (WDK) 。
 
 <a name="remarks"></a>备注
 -------
 
-此扩展是类似于[ **！ wmitrace.logdump** ](-wmitrace-logdump.md)扩展，不同之处在于的输出 **！ wmitrace.eventlogdump**事件日志样式，和的输出格式 **！ wmitrace.logdump**格式化为 Windows 软件跟踪预处理器 (WPP) 样式。 应选择其格式适合于你想要显示的数据的扩展。
+此扩展类似于 [**！ wmitrace logdump**](-wmitrace-logdump.md) 扩展，只不过 **！ wmitrace** 的输出格式为事件日志样式，而 **！ wmitrace** 的输出格式设置为 WINDOWS 软件跟踪预处理器 (WPP) 样式。 应选择其格式适合于要显示的数据的扩展。
 
-若要查找的跟踪会话的记录器 ID，请使用[ **！ wmitrace.strdump** ](-wmitrace-strdump.md)扩展。 或者，您可以使用 Tracelog 命令 tracelog-l 列出跟踪会话及其基本属性，包括记录器 id。
+若要查找跟踪会话的记录器 ID，请使用 [**！ wmitrace**](-wmitrace-strdump.md) 扩展名。 另外，还可以使用 Tracelog 命令 Tracelog-l 来列出跟踪会话及其基本属性，其中包括记录器 ID。
 
  
 

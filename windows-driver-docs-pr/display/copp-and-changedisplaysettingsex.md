@@ -1,7 +1,6 @@
 ---
 title: COPP 和 ChangeDisplaySettingsEx
 description: COPP 和 ChangeDisplaySettingsEx
-ms.assetid: 5c729bfd-0758-4de5-9e81-a3279f8aab56
 keywords:
 - 复制保护 WDK COPP，ChangeDisplaySettingsEx
 - 视频复制保护 WDK COPP，ChangeDisplaySettingsEx
@@ -12,12 +11,12 @@ keywords:
 - ACP protection 类型 WDK COPP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3fcf595ebb2bb0de53fa528407a0fdc3fab029bd
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: af0388364dd43f0c4a8f566dcffa83b9ea30a386
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89067336"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96824237"
 ---
 # <a name="copp-and-changedisplaysettingsex"></a>COPP 和 ChangeDisplaySettingsEx
 

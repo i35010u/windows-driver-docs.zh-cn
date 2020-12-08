@@ -1,9 +1,8 @@
 ---
 title: wmitrace.dumpmini
-description: Wmitrace.dumpmini 扩展显示系统跟踪片断，它存储在转储文件。
-ms.assetid: c6b4c09f-3a73-4467-849b-8570477bc9af
+description: Wmitrace. dumpmini 扩展显示系统跟踪片段，它存储在转储文件中。
 keywords:
-- wmitrace.dumpmini Windows 调试
+- wmitrace dumpmini Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: ee4b78a48d3b20ee2a72f550f08da81499562f40
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1a6a0034805ffb4fd90ae9afae7425734dae25e4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63345913"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96823561"
 ---
 # <a name="wmitracedumpmini"></a>!wmitrace.dumpmini
 
 
-**！ Wmitrace.dumpmini**扩展显示系统跟踪片断，它存储在转储文件。
+**！ Wmitrace dumpmini** 扩展显示系统跟踪片段，它存储在转储文件中。
 
 ```dbgcmd
 !wmitrace.dumpmini
@@ -31,22 +30,22 @@ ms.locfileid: "63345913"
 ## <span id="ddk__wmitrace_strdump_dbg"></span><span id="DDK__WMITRACE_STRDUMP_DBG"></span>
 
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
-此扩展插件导出的 Wmitrace.dll。
+此扩展由 Wmitrace.dll 导出。
 
-此扩展是在 Windows Vista 和更高版本的 Windows 中可用。
+此扩展在 Windows Vista 和更高版本的 Windows 中可用。
 
-仅调试小型转储文件或完整转储文件时，此扩展很有用。
+此扩展仅在调试小型转储文件或完整转储文件时才有用。
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-事件跟踪的概念概述，请参阅 Microsoft Windows SDK。 有关跟踪工具的信息，请参阅 Windows Driver Kit (WDK)。
+有关事件跟踪的概念性概述，请参阅 Microsoft Windows SDK。 有关跟踪工具的信息，请参阅 Windows 驱动程序工具包 (WDK) 。
 
 <a name="remarks"></a>备注
 -------
 
-*系统跟踪片断*是系统上下文日志的最后一个缓冲区的内容的副本。 正常情况下，这是跟踪会话记录器 ID 为 2。
+*系统跟踪片段* 是系统上下文日志的最后一个缓冲区的内容副本。 在正常情况下，这是跟踪会话，其记录器 ID 为2。
 
  
 

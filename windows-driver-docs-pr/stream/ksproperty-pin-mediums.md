@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ PIN \_ 媒体
 description: 此属性返回由特定的 pin 工厂实例化的 pin 支持的媒体列表。
-ms.assetid: e92c7a3d-4f72-4818-9a26-0e82c20bdb4c
 keywords:
 - KSPROPERTY_PIN_MEDIUMS 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 834a995cd78487cc4e63d263cc3d38a50c81a354
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 18db051e44343ed5b531b6fb2e3624825ceeebfb
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104160"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96823697"
 ---
 # <a name="ksproperty_pin_mediums"></a>KSPROPERTY \_ PIN \_ 媒体
 
@@ -61,7 +60,7 @@ ms.locfileid: "90104160"
 
  
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 客户端使用此属性来请求由 pin 工厂实例化的 pin 支持的所有媒体的列表。 然后，客户端指定要在连接到 pin 时使用的实际媒介。

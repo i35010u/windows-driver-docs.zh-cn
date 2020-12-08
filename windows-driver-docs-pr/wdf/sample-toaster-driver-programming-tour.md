@@ -1,20 +1,19 @@
 ---
 title: 示例 Toaster 驱动程序编程指南
-description: 本主题提供了 Toaster 示例的代码演练，其中包含内核模式驱动程序框架 (KMDF) 和用户模式驱动程序框架 (UMDF) 驱动程序设计用于学习目的。
-ms.assetid: 5977AC09-AB53-4CA4-A35A-0E5A1FEE936F
+description: 本主题提供了 Toaster 示例的代码演练，其中包含 Kernel-Mode Driver Framework (KMDF) 和 User-Mode Driver Framework (UMDF) 驱动程序设计为学习目的。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8019ff90d605d72f1b73e6c56543e12fa802fbae
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 44ac3043600cb52999b4a35890ca624b777d9319
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107160"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96823669"
 ---
 # <a name="sample-toaster-driver-programming-tour"></a>示例 Toaster 驱动程序编程指南
 
 
-本主题提供了 [Toaster](https://go.microsoft.com/fwlink/p/?LinkId=618939) 示例的代码演练，其中包含内核模式驱动程序框架 (KMDF) 和用户模式驱动程序框架 (UMDF) 驱动程序设计用于学习目的。
+本主题提供了 [Toaster](https://go.microsoft.com/fwlink/p/?LinkId=618939) 示例的代码演练，其中包含 Kernel-Mode Driver FRAMEWORK (KMDF) 和 User-Mode Driver FRAMEWORK (UMDF) 驱动程序设计为学习目的。
 
 ## <a name="class-installer-and-coinstaller"></a>类安装程序和 Coinstaller
 
@@ -37,11 +36,11 @@ Tostrco1 项目演示如何编写 coinstaller DLL。 此 DLL 显示了如何基�
 
 KMDF 总线驱动程序为 toaster 总线控制器服务，枚举接通电源的设备，并执行总线级别电源管理。 总线驱动程序支持 D0 和 D3 电源状态。 它还具有 WMI 接口。 此目录包含两个显示 Toaster 总线驱动程序的两种不同实现的子目录。
 
-- **Static**
+- **静态**
 
   总线驱动程序的静态版本演示了如何使用静态子列表（每个设备提供一个）枚举子设备，该列表由框架提供。
 
-  利用*静态枚举*，驱动程序可以在初始化期间检测和报告设备是否存在，并具有对系统配置的后续更改的有限能力。
+  利用 *静态枚举*，驱动程序可以在初始化期间检测和报告设备是否存在，并具有对系统配置的后续更改的有限能力。
 
   如果设备或功能子单元连接的数量和类型是预先确定的并且是永久性的，并且不依赖于运行驱动程序的系统的配置，则总线驱动程序可以使用静态枚举。
 
@@ -57,7 +56,7 @@ KMDF 总线驱动程序为 toaster 总线控制器服务，枚举接通电源的
 
   调用 [**WdfDeviceCreate**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicecreate)之后，驱动程序将调用 [**WdfFdoAddStaticChild**](/windows-hardware/drivers/ddi/wdffdo/nf-wdffdo-wdffdoaddstaticchild) ，将子设备添加到子列表中。
 
-  由于驱动程序只应为预先确定和永久的设备配置使用静态子列表，因此，驱动程序通常不会在创建后修改静态子列表。 如果驱动程序确定子设备不可访问，则驱动程序可以调用 [**WdfPdoMarkMissing**](/windows-hardware/drivers/ddi/wdfpdo/nf-wdfpdo-wdfpdomarkmissing)。  (如果子设备可以访问但没有响应，则驱动程序应将[**WDF \_ 设备 \_ 状态**](/windows-hardware/drivers/ddi/wdfdevice/ns-wdfdevice-_wdf_device_state)结构的**失败**成员设置为**WdfTrue** ，然后调用[**WdfDeviceSetDeviceState**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicesetdevicestate)。 ) 
+  由于驱动程序只应为预先确定和永久的设备配置使用静态子列表，因此，驱动程序通常不会在创建后修改静态子列表。 如果驱动程序确定子设备不可访问，则驱动程序可以调用 [**WdfPdoMarkMissing**](/windows-hardware/drivers/ddi/wdfpdo/nf-wdfpdo-wdfpdomarkmissing)。  (如果子设备可以访问但没有响应，则驱动程序应将 [**WDF \_ 设备 \_ 状态**](/windows-hardware/drivers/ddi/wdfdevice/ns-wdfdevice-_wdf_device_state)结构的 **失败** 成员设置为 **WdfTrue** ，然后调用 [**WdfDeviceSetDeviceState**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicesetdevicestate)。 ) 
 
   若要在每次总线驱动程序启动时静态枚举子设备，可在 Toaster Bus 驱动程序的设备参数密钥中设置注册表值。
 
@@ -67,17 +66,17 @@ KMDF 总线驱动程序为 toaster 总线控制器服务，枚举接通电源的
 
   使用此注册表设置可以枚举的子设备的最大数目为10。 还可以通过 Toaster Bus Inf 文件配置此值。
 
-- **Dynamic**
+- **动态**
 
   总线驱动程序的动态版本演示了如何使用子列表对象枚举子设备。
 
-  使用*动态枚举*，驱动程序可以检测和报告在系统运行时连接到系统的设备的数量和类型的更改。
+  使用 *动态枚举*，驱动程序可以检测和报告在系统运行时连接到系统的设备的数量和类型的更改。
 
   如果连接到父设备的设备数取决于系统的配置，则总线驱动程序必须使用动态枚举。 其中一些设备可能始终连接到系统，某些设备可能会在系统运行时插入并拔下。
 
   例如，插入到系统 PCI 总线中的设备的数量和类型与系统相关，但它们是永久性的，除非用户关闭电源、打开机箱，并使用螺丝刀添加或删除设备。 另一方面，在系统运行时，用户可以通过插入或拔出电缆来添加或删除 USB 设备。
 
-  每次总线驱动程序标识子设备时，它必须将子设备的说明添加到子列表中。 驱动程序可以通过调用 [**WdfFdoGetDefaultChildList**](/windows-hardware/drivers/ddi/wdffdo/nf-wdffdo-wdffdogetdefaultchildlist)来使用框架提供的设备的默认子列表，也可以通过调用 [**WdfChildListCreate**](/windows-hardware/drivers/ddi/wdfchildlist/nf-wdfchildlist-wdfchildlistcreate)创建其他子列表来分组子列表。 此示例使用默认的子列表。 *子说明*由所需的*标识说明*和可选*地址说明*组成。
+  每次总线驱动程序标识子设备时，它必须将子设备的说明添加到子列表中。 驱动程序可以通过调用 [**WdfFdoGetDefaultChildList**](/windows-hardware/drivers/ddi/wdffdo/nf-wdffdo-wdffdogetdefaultchildlist)来使用框架提供的设备的默认子列表，也可以通过调用 [**WdfChildListCreate**](/windows-hardware/drivers/ddi/wdfchildlist/nf-wdfchildlist-wdfchildlistcreate)创建其他子列表来分组子列表。 此示例使用默认的子列表。 *子说明* 由所需的 *标识说明* 和可选 *地址说明* 组成。
 
   <table>
   <colgroup>
@@ -87,7 +86,7 @@ KMDF 总线驱动程序为 toaster 总线控制器服务，枚举接通电源的
   <thead>
   <tr class="header">
   <th align="left">术语</th>
-  <th align="left">说明</th>
+  <th align="left">描述</th>
   </tr>
   </thead>
   <tbody>
@@ -105,7 +104,7 @@ KMDF 总线驱动程序为 toaster 总线控制器服务，枚举接通电源的
 
 
 
-若要向子列表添加子级，驱动程序将为它找到的每个子设备调用 [**WdfChildListAddOrUpdateChildDescriptionAsPresent**](/windows-hardware/drivers/ddi/wdfchildlist/nf-wdfchildlist-wdfchildlistaddorupdatechilddescriptionaspresent) 。 此调用通知框架驱动程序已发现连接到父设备的子设备。 当你的驱动程序调用 **WdfChildListAddOrUpdateChildDescriptionAsPresent**时，它将提供标识说明并根据需要提供地址说明。
+若要向子列表添加子级，驱动程序将为它找到的每个子设备调用 [**WdfChildListAddOrUpdateChildDescriptionAsPresent**](/windows-hardware/drivers/ddi/wdfchildlist/nf-wdfchildlist-wdfchildlistaddorupdatechilddescriptionaspresent) 。 此调用通知框架驱动程序已发现连接到父设备的子设备。 当你的驱动程序调用 **WdfChildListAddOrUpdateChildDescriptionAsPresent** 时，它将提供标识说明并根据需要提供地址说明。
 
 驱动程序调用 [**WdfChildListAddOrUpdateChildDescriptionAsPresent**](/windows-hardware/drivers/ddi/wdfchildlist/nf-wdfchildlist-wdfchildlistaddorupdatechilddescriptionaspresent) 来报告新设备后，框架会通知 PnP 管理器新设备已存在。 然后，PnP 管理器将为新设备生成设备堆栈和驱动程序堆栈。 作为此过程的一部分，框架将调用总线驱动程序的 [*EvtChildListCreateDevice*](/windows-hardware/drivers/ddi/wdfchildlist/nc-wdfchildlist-evt_wdf_child_list_create_device) 回调函数。 此回调函数必须调用 [**WdfDeviceCreate**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicecreate) 来创建新设备的 PDO。
 
@@ -135,7 +134,7 @@ KMDF 总线驱动程序为 toaster 总线控制器服务，枚举接通电源的
 
 此示例演示如何使用远程 i/o 目标接口打开设备并在内核模式下执行 i/o。 此示例通过调用 [**IoRegisterPlugPlayNotification**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioregisterplugplaynotification)为 toaster 接口类注册 PnP 通知回调例程。 当 toaster 设备接通电源时，PnP 管理器将调用该回调。 在回调中，此示例创建一个远程目标，并使用回调数据中提供的符号链接打开该设备。
 
-此外，此示例还使用被动计时器演示对目标设备的异步读取和写入。 它还演示了如何通过[*EvtIoTargetQueryRemove*](/windows-hardware/drivers/ddi/wdfiotarget/nc-wdfiotarget-evt_wdf_io_target_query_remove) / [*EvtIoTargetRemoveCanceled*](/windows-hardware/drivers/ddi/wdfiotarget/nc-wdfiotarget-evt_wdf_io_target_remove_canceled) / 在 i/o 目标对象上注册 EvtIoTargetQueryRemove EvtIoTargetRemoveCanceled[*EvtIoTargetRemoveComplete*](/windows-hardware/drivers/ddi/wdfiotarget/nc-wdfiotarget-evt_wdf_io_target_remove_complete)来响应设备更改通知。 如果驱动程序与驱动程序未控制的另一台设备通信，则可以使用此方法。 使用 Wdftoastmon 将此驱动程序安装为根枚举设备。 使用与 toaster 总线驱动程序相同的安装步骤。
+此外，此示例还使用被动计时器演示对目标设备的异步读取和写入。 它还演示了如何通过 [*EvtIoTargetQueryRemove*](/windows-hardware/drivers/ddi/wdfiotarget/nc-wdfiotarget-evt_wdf_io_target_query_remove) / [*EvtIoTargetRemoveCanceled*](/windows-hardware/drivers/ddi/wdfiotarget/nc-wdfiotarget-evt_wdf_io_target_remove_canceled) / 在 i/o 目标对象上注册 EvtIoTargetQueryRemove EvtIoTargetRemoveCanceled [*EvtIoTargetRemoveComplete*](/windows-hardware/drivers/ddi/wdfiotarget/nc-wdfiotarget-evt_wdf_io_target_remove_complete)来响应设备更改通知。 如果驱动程序与驱动程序未控制的另一台设备通信，则可以使用此方法。 使用 Wdftoastmon 将此驱动程序安装为根枚举设备。 使用与 toaster 总线驱动程序相同的安装步骤。
 
 ## <a name="umdf-function-driver"></a>UMDF 函数驱动程序
 
@@ -155,6 +154,6 @@ WUDFToaster 驱动程序使用户应用程序 (toast/notify.exe) 打开由驱动
 
 此示例是 KMDF ToastMon 示例的 UMDF 版本。
 
-UMDF Toastmon 演示了如何使用 UMDF 通过用户模式驱动程序框架编写最小的驱动程序，并演示最佳做法。 驱动程序将在设备上成功加载 (根枚举或真正的硬件设备) 但具有最低 PnP 功能，并且不支持接收任何 i/o 操作。
+UMDF Toastmon 演示了如何使用 UMDF 通过 User-Mode Driver Framework 编写最小的驱动程序，并演示最佳做法。 驱动程序将在设备上成功加载 (根枚举或真正的硬件设备) 但具有最低 PnP 功能，并且不支持接收任何 i/o 操作。
 
 Toastmon 旨在用作一种学习工具，供你编写的其他 UMDF 驱动程序使用。

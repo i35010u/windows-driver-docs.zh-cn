@@ -1,9 +1,8 @@
 ---
 title: qd（退出和分离）
-description: Qd 命令将结束调试会话，并保持运行任何用户模式目标应用程序。
-ms.assetid: 3282c78b-6c4b-4c1b-a086-4890c3140ab9
+description: Qd 命令会结束调试会话，并使任何用户模式目标应用程序处于运行状态。
 keywords:
-- qd （Quit 和分离） Windows 调试
+- qd (退出并分离) Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: c0a1c615d108c8af8319764af5beb651255da28d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3058aa25bfc3c8c69b95435ef4a9d02e44ff663f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63387070"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96824285"
 ---
 # <a name="qd-quit-and-detach"></a>qd（退出和分离）
 
 
-**Qd**命令将结束调试会话，并保持运行任何用户模式目标应用程序。 （在 CDB 和 KD 中，此命令还将退出调试器本身。 在 WinDbg 中，此命令返回调试器到休眠模式。）
+**Qd** 命令会结束调试会话，并使任何用户模式目标应用程序处于运行状态。  (在 CDB 和 KD 中，此命令也会退出调试器本身。 在 WinDbg 中，此命令将调试器返回到休眠模式。 ) 
 
 ```dbgcmd
 qd 
@@ -40,12 +39,12 @@ qd
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>模式</strong></p></td>
-<td align="left"><p>仅限用户模式</p></td>
+<td align="left"><p><strong>交货</strong></p></td>
+<td align="left"><p>仅用户模式</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>目标</strong></p></td>
-<td align="left"><p>仅实时调试</p></td>
+<td align="left"><p>仅限实时调试</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>平台</strong></p></td>
@@ -59,9 +58,9 @@ qd
 <a name="remarks"></a>备注
 -------
 
-**Qd**命令从目标应用程序中分离，并结束调试会话，使目标仍在运行。 但是，仅在 Microsoft Windows XP 和更高版本的 Windows 上支持此命令。 在 Windows 2000 **qd**生成一条警告消息，并不起作用。
+**Qd** 命令与目标应用程序分离并结束调试会话，并使目标仍在运行。 但是，此命令仅在 Microsoft Windows XP 和更高版本的 Windows 上受支持。 在 Windows 2000 上， **qd** 将生成一条警告消息并且不起作用。
 
-当您在执行远程调试通过调试器时，不能使用**qd**命令从调试客户端。
+通过调试器执行远程调试时，无法从调试客户端使用 **qd** 命令。
 
  
 

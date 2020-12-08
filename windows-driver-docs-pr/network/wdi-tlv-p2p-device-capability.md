@@ -1,22 +1,21 @@
 ---
 title: WDI_TLV_P2P_DEVICE_CAPABILITY
-description: WDI_TLV_P2P_DEVICE_CAPABILITY 是 TLV 包含 Wi-Fi Direct 设备功能。
-ms.assetid: 490CA066-998F-4F15-AFC2-028299042496
+description: WDI_TLV_P2P_DEVICE_CAPABILITY 是包含 Wi-Fi 直接设备功能的 TLV。
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_P2P_DEVICE_CAPABILITY 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 86d861b334849837f3df3531b075a3d77f311654
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 33240a82f4c9be80acd9ac8342db671b496c57dd
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63349332"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96823731"
 ---
-# <a name="wditlvp2pdevicecapability"></a>WDI\_TLV\_P2P\_设备\_功能
+# <a name="wdi_tlv_p2p_device_capability"></a>WDI \_ TLV \_ P2P \_ 设备 \_ 功能
 
 
-WDI\_TLV\_P2P\_设备\_功能是包含 Wi-Fi Direct 设备功能 TLV。
+WDI \_ tlv \_ P2P \_ 设备 \_ 功能是包含 Wi-Fi 直接设备功能的 tlv。
 
 ## <a name="tlv-type"></a>TLV 类型
 
@@ -26,16 +25,16 @@ WDI\_TLV\_P2P\_设备\_功能是包含 Wi-Fi Direct 设备功能 TLV。
 ## <a name="length"></a>长度
 
 
-所有包含的元素的大小的总和 （以字节为单位）。
+Sum (所有包含的元素的大小) 。
 
 ## <a name="values"></a>值
 
 
-| 在任务栏的搜索框中键入   | 描述                                                                                                                     |
+| 类型   | 描述                                                                                                                     |
 |--------|---------------------------------------------------------------------------------------------------------------------------------|
-| UINT8  | 表 12 个 Wi-Fi Direct 技术规范中定义的 Wi-Fi Direct 设备功能的位图。            |
-| UINT8  | 当前设置由操作系统在更高版本的设备功能位图中的 Wi-Fi Direct 功能的位图。 |
-| UINT32 | 一个位掩码，指示启用哪些 WPS 版本。                                                                        |
+| UINT8  | Wi-Fi 直接设备功能的位图，如 Wi-Fi 直接技术规范的表12中所定义。            |
+| UINT8  | 上述设备功能位图中的 Wi-Fi 直接功能的位图，当前由操作系统设置。 |
+| UINT32 | 一个位掩码，指示启用了哪些 WPS 版本。                                                                        |
 
  
 
@@ -54,10 +53,10 @@ WDI\_TLV\_P2P\_设备\_功能是包含 Wi-Fi Direct 设备功能 TLV。
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
-<td><p>Windows Server 2016</p></td>
+<td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Wditypes.hpp</td>
 </tr>
 </tbody>

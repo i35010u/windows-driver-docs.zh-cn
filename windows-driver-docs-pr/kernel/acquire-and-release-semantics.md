@@ -1,7 +1,6 @@
 ---
 title: 获取和释放语义
 description: 获取和释放语义
-ms.assetid: a0852881-c33f-427a-be8a-5b9edac81f9a
 keywords:
 - 同步 WDK 内核，获取语义
 - 同步 WDK 内核，发布语义
@@ -10,12 +9,12 @@ keywords:
 - 语义 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0efc6d019b28a59a5b3c3d659c781b1a5597f727
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 677881fcf1715d1f93924f5b8aa7c3132619f92f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106198"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96824039"
 ---
 # <a name="acquire-and-release-semantics"></a>获取和释放语义
 
@@ -35,7 +34,7 @@ ms.locfileid: "90106198"
 
 从另一个处理器的角度来看，上述操作可能以任意顺序出现。 例如，另一个处理器可能会看到增量之前的增量 `b` `a` 。
 
-默认情况下，原子操作（如 **联锁 * Xxx*** 例程执行的操作）具有获取和释放语义。 但是，基于 Itanium 的处理器执行只获取或仅具有发布语义的操作比同时具有这两种语义的操作更快。 因此，系统为某些**联锁 * xxx*** 例程提供**互锁*Xxx*获取**和**互锁发布*Xxx*** 版本。
+默认情况下，原子操作（如 **联锁 * Xxx*** 例程执行的操作）具有获取和释放语义。 但是，基于 Itanium 的处理器执行只获取或仅具有发布语义的操作比同时具有这两种语义的操作更快。 因此，系统为某些 **联锁 * xxx*** 例程提供 **互锁 *Xxx* 获取** 和 **互锁发布 *Xxx*** 版本。
 
 例如， [**InterlockedIncrementAcquire**](/previous-versions/windows/hardware/drivers/ff547916(v=vs.85)) 例程使用获取语义来递增变量。 如果重写前面的代码示例，请执行以下操作：
 

@@ -1,22 +1,21 @@
 ---
 title: WDI_TLV_P2P_ATTRIBUTES
-description: WDI_TLV_P2P_ATTRIBUTES 是包含 Wi-Fi Direct 属性 TLV。
-ms.assetid: 2EC99A30-3D2F-4552-A763-B77E030B5CE5
+description: WDI_TLV_P2P_ATTRIBUTES 是包含 Wi-Fi 直接属性的 TLV。
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_P2P_ATTRIBUTES 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 757d6df8982cff18c5e7d556f9b41acd884d32a0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4e7973fa5ff05981a5a21640c93310b4cfc30914
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63353727"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96823765"
 ---
-# <a name="wditlvp2pattributes"></a>WDI\_TLV\_P2P\_ATTRIBUTES
+# <a name="wdi_tlv_p2p_attributes"></a>WDI \_ TLV \_ P2P \_ 属性
 
 
-WDI\_TLV\_P2P\_属性是包含 Wi-Fi Direct 属性 TLV。
+WDI \_ tlv \_ P2P \_ 属性是包含 Wi-Fi 直接属性的 tlv。
 
 ## <a name="tlv-type"></a>TLV 类型
 
@@ -26,15 +25,15 @@ WDI\_TLV\_P2P\_属性是包含 Wi-Fi Direct 属性 TLV。
 ## <a name="length"></a>长度
 
 
-所有的大小 （以字节为单位） 总和包含 TLVs。
+Sum (包含所有 TLVs 的大小的) 字节。
 
 ## <a name="values"></a>值
 
 
-| 在任务栏的搜索框中键入                                                                                  | 允许多个 TLV 实例 | 可选 | 描述                                       |
+| 类型                                                                                  | 允许多个 TLV 实例 | 可选 | 说明                                       |
 |---------------------------------------------------------------------------------------|--------------------------------|----------|---------------------------------------------------|
-| [**WDI\_TLV\_P2P\_CAPABILITIES**](wdi-tlv-p2p-capabilities.md)                       |                                |          | Wi-Fi Direct 的功能。                    |
-| [**WDI\_TLV\_P2P\_INTERFACE\_ADDRESS\_LIST**](wdi-tlv-p2p-interface-address-list.md) |                                |          | Wi-Fi Direct 接口的 MAC 地址的数组。 |
+| [**WDI \_ TLV \_ P2P \_ 功能**](wdi-tlv-p2p-capabilities.md)                       |                                |          | Wi-Fi 直接功能。                    |
+| [**WDI \_ TLV \_ P2P \_ INTERFACE \_ ADDRESS \_ LIST**](wdi-tlv-p2p-interface-address-list.md) |                                |          | Wi-Fi 直接接口 MAC 地址的数组。 |
 
  
 
@@ -53,10 +52,10 @@ WDI\_TLV\_P2P\_属性是包含 Wi-Fi Direct 属性 TLV。
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
-<td><p>Windows Server 2016</p></td>
+<td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Wditypes.hpp</td>
 </tr>
 </tbody>

@@ -1,22 +1,21 @@
 ---
 title: WDI_TLV_P2P_DEVICE_INFO_PARAMETERS
-description: WDI_TLV_P2P_DEVICE_INFO_PARAMETERS 是包含 Wi-Fi Direct 设备信息参数 TLV。
-ms.assetid: A0B1AC85-5F99-4674-A1C4-E25554BDD89F
+description: WDI_TLV_P2P_DEVICE_INFO_PARAMETERS 是包含 Wi-Fi 直接设备信息参数的 TLV。
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_P2P_DEVICE_INFO_PARAMETERS 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: c34165d616b00bed68c2d78ad056b02cc696c0c9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 782e8bfbb1314d36fc73509d7a7507150705e241
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63366347"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96823711"
 ---
-# <a name="wditlvp2pdeviceinfoparameters"></a>WDI\_TLV\_P2P\_DEVICE\_INFO\_PARAMETERS
+# <a name="wdi_tlv_p2p_device_info_parameters"></a>WDI \_ TLV \_ P2P \_ 设备 \_ 信息 \_ 参数
 
 
-WDI\_TLV\_P2P\_设备\_信息\_参数是包含 Wi-Fi Direct 设备信息参数 TLV。
+WDI \_ tlv \_ P2P \_ 设备 \_ 信息 \_ 参数是包含 Wi-Fi 直接设备信息参数的 tlv。
 
 ## <a name="tlv-type"></a>TLV 类型
 
@@ -26,18 +25,18 @@ WDI\_TLV\_P2P\_设备\_信息\_参数是包含 Wi-Fi Direct 设备信息参数 T
 ## <a name="length"></a>长度
 
 
-所有包含的元素的大小的总和 （以字节为单位）。
+Sum (所有包含的元素的大小) 。
 
 ## <a name="values"></a>值
 
 
-| 在任务栏的搜索框中键入       | 描述                                            |
+| 类型       | 描述                                            |
 |------------|--------------------------------------------------------|
-| UINT8\[6\] | Wi-Fi Direct 设备地址的对等方。           |
+| UINT8 \[ 6\] | 对等方的 Wi-Fi 直接设备地址。           |
 | UINT16     | 设备支持的配置方法。     |
-| UINT16     | 主要设备类型：主要类型类别标识符。    |
-| UINT8\[4\] | 主要设备类型：OUI 分配给此设备类型。 |
-| UINT16     | 主要设备类型：类型的子类别标识符。      |
+| UINT16     | 主要设备类型：主类型类别标识符。    |
+| UINT8 \[ 4\] | 主要设备类型：分配给此设备类型的 OUI。 |
+| UINT16     | 主要设备类型：子类别类型标识符。      |
 
  
 
@@ -56,10 +55,10 @@ WDI\_TLV\_P2P\_设备\_信息\_参数是包含 Wi-Fi Direct 设备信息参数 T
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
-<td><p>Windows Server 2016</p></td>
+<td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Wditypes.hpp</td>
 </tr>
 </tbody>

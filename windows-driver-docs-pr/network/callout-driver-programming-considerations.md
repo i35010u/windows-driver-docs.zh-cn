@@ -1,7 +1,6 @@
 ---
 title: 标注驱动程序编程注意事项
 description: 标注驱动程序编程注意事项
-ms.assetid: e470202a-bc3b-41ac-8156-8aac8cd976cd
 keywords:
 - Windows 筛选平台标注驱动程序 WDK，编程注意事项
 - 标注驱动程序 WDK Windows 筛选平台，编程注意事项
@@ -10,12 +9,12 @@ keywords:
 - 用户模式标注驱动程序 WDK Windows 筛选平台
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 029151229e9abc3c442f972c0584ddd55b401f75
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: d016183a625a1fd0aaa579137a8dd0c2f3005d3d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91734511"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96823961"
 ---
 # <a name="callout-driver-programming-considerations"></a>标注驱动程序编程注意事项
 
@@ -28,7 +27,7 @@ ms.locfileid: "91734511"
 
 ### <a name="choice-of-filtering-layer"></a>筛选层的选择
 
-标注驱动程序应筛选网络堆栈中可能最高的筛选层上的网络数据。 例如，如果所需的筛选任务可在流层处理，则不应在网络层实现。 有关驱动程序应使用的筛选层的建议的详细信息，请参阅开发与 ipsec [兼容的标注驱动程序](developing-ipsec-compatible-callout-drivers.md)。
+标注驱动程序应筛选网络堆栈中可能最高的筛选层上的网络数据。 例如，如果所需的筛选任务可在流层处理，则不应在网络层实现。 有关驱动程序应使用的筛选层的建议的详细信息，请参阅 [开发 IPsec-Compatible 标注驱动程序](developing-ipsec-compatible-callout-drivers.md)。
 
 ### <a name="blocking-at-the-application-layer-enforcement-ale-flow-established-layers"></a><a href="" id="blocking-at-the-application-layer-enforcement--ale--flow-established-l"></a>在应用程序层强制实施 (ALE) 流建立的层
 

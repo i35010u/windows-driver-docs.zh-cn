@@ -1,7 +1,6 @@
 ---
 title: swd
-description: Swd 扩展插件都会显示在指定的处理器，包括延迟的过程调用 (DPC) 和线程监视程序计时器状态的软件监视程序计时器状态。
-ms.assetid: 03532c7e-3bfc-4e37-8a0a-0a7c5a9963a8
+description: Swd 扩展显示指定处理器的软件监视程序计时器状态，包括延迟的过程调用 (DPC) 和线程的监视器计时器状态。
 keywords:
 - 监视程序计时器
 - swd Windows 调试
@@ -13,29 +12,29 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: b00f32e34ef8729dbd2f5a690d965c9113e49c68
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 785ae834923745cea2b29aed1317f68d001974f0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63334216"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96824385"
 ---
 # <a name="swd"></a>!swd
 
 
-**！ Swd**扩展插件都会显示在指定的处理器，包括延迟的过程调用 (DPC) 和线程监视程序计时器状态的软件监视程序计时器状态。
+**！ Swd** extension 显示指定处理器的软件监视程序计时器状态，包括延迟的过程调用 (DPC) 和线程的监视器计时器状态。
 
 ```dbgcmd
 !swd [Processor]
 ```
 
-## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>参数
+## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>Parameters
 
 
-<span id="_______Processor______"></span><span id="_______processor______"></span><span id="_______PROCESSOR______"></span> *Processor*   
-指定的处理器。 如果*处理器*是省略，目标计算机上的所有处理器的显示信息。
+<span id="_______Processor______"></span><span id="_______processor______"></span><span id="_______PROCESSOR______"></span>*处理器*   
+指定处理器。 如果省略了 *Processor* ，则显示目标计算机上的所有处理器的信息。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 <table>
 <colgroup>
@@ -59,7 +58,7 @@ ms.locfileid: "63334216"
 <a name="remarks"></a>备注
 -------
 
-监视程序计时器关闭或重新启动 Windows，如果 Windows 停止响应。 以秒为单位显示时间。
+如果 Windows 停止响应，监视计时器会关闭或重新启动 Windows。 时间以秒为单位显示。
 
  
 

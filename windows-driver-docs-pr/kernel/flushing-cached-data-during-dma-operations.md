@@ -1,7 +1,6 @@
 ---
 title: 执行 DMA 操作期间刷新缓存数据
 description: 执行 DMA 操作期间刷新缓存数据
-ms.assetid: 1b984b47-82cc-46b9-acad-73c5ed63e246
 keywords:
 - DMA 传输 WDK 内核，数据完整性
 - KeFlushIoBuffers
@@ -9,12 +8,12 @@ keywords:
 - 刷新缓存的数据
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3e1fa1200496c5b78c4c40f1df8fa64623ab0cfb
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 126c88863b81fa337ba7b3446792dda41d30e390
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89191669"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96824019"
 ---
 # <a name="flushing-cached-data-during-dma-operations"></a>执行 DMA 操作期间刷新缓存数据
 
@@ -24,7 +23,7 @@ ms.locfileid: "89191669"
 
 在某些平台中，处理器和系统 DMA 控制器 (或 bus 主机 DMA 适配器) 出现缓存一致性异常。 以下准则启用使用第1版或第2版 DMA 操作接口 (的驱动程序，请参阅 [**dma \_ 操作**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_dma_operations)) ，以便在所有支持的处理器体系结构中保持一致的缓存状态，包括不包含硬件以自动强制缓存一致性的体系结构。
 
-**注意**   本主题中的准则仅适用于使用 DMA 操作接口版本1和版本2的驱动程序。 使用此接口版本3的驱动程序必须遵循一组不同的准则。 有关详细信息，请参阅 [DMA 操作界面的版本 3](version-3-of-the-dma-operations-interface.md)。
+**注意**  本主题中的准则仅适用于使用 DMA 操作接口版本1和版本2的驱动程序。 使用此接口版本3的驱动程序必须遵循一组不同的准则。 有关详细信息，请参阅 [DMA 操作界面的版本 3](version-3-of-the-dma-operations-interface.md)。
 
  
 
@@ -44,7 +43,7 @@ ms.locfileid: "89191669"
 
 异步 DMA 读取或写入操作访问内存中的数据，而不是在处理器缓存中访问数据。 除非已通过在读取之前调用 **KeFlushIoBuffers** 刷新了此缓存，否则 DMA 操作传输到系统内存中的数据可能会使用陈旧数据覆盖（如果稍后刷新处理器缓存）。 除非已通过在写入之前调用 **KeFlushIoBuffers** 来刷新处理器缓存，否则此缓存中的数据可能比内存中的副本新。
 
-如果处理器和 DMA 控制器可以依靠来维护缓存一致性， **KeFlushIoBuffers**不会执行任何操作，因此，对此支持例程的调用在此类平台上几乎没有任何开销。
+如果处理器和 DMA 控制器可以依靠来维护缓存一致性， **KeFlushIoBuffers** 不会执行任何操作，因此，对此支持例程的调用在此类平台上几乎没有任何开销。
 
 如上图所示，由适配器对象表示的 DMA 控制器可以具有内部缓冲区。 此类 DMA 控制器可以将缓存的数据传输为固定大小的区块，一次通常有八个或更多字节。 此外，在每次传输操作之前，这些 DMA 控制器都可以等待它们的内部缓冲区已满。
 

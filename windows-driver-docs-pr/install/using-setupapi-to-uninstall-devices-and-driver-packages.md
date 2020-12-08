@@ -1,15 +1,14 @@
 ---
 title: 使用 SetupAPI 卸载设备和驱动程序包
 description: 使用 SetupAPI 卸载设备和驱动程序包
-ms.assetid: e170961b-5d12-43d5-b502-3b37e6421f6e
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8fbb41d8f1111ad1c5733b5babee6aaed5bc325d
-ms.sourcegitcommit: a44ade167cdfb541cf1818e9f9e3726f23f90b66
+ms.openlocfilehash: c691bf1826e4016dfced13a516a100fbf518011c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94361593"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96824053"
 ---
 # <a name="using-setupapi-to-uninstall-devices-and-driver-packages"></a>使用 SetupAPI 卸载设备和驱动程序包
 
@@ -20,7 +19,7 @@ ms.locfileid: "94361593"
 
 -   [设备安装功能](/previous-versions/ff541299(v=vs.85))
 
-*设备安装应用程序* 、 *共同安装* 程序和 *类* 安装程序可以使用这些功能来执行设备安装的自定义操作。 Setupapi.log 还支持卸载它所安装的设备和 [驱动程序包](driver-packages.md) 。
+*设备安装应用程序*、 *共同安装* 程序和 *类* 安装程序可以使用这些功能来执行设备安装的自定义操作。 Setupapi.log 还支持卸载它所安装的设备和 [驱动程序包](driver-packages.md) 。
 
 本主题介绍了使用 Setupapi.log 函数卸载设备和驱动程序包时可以遵循的过程。
 
@@ -28,13 +27,13 @@ ms.locfileid: "94361593"
 
 ### <a name="uninstalling-the-device"></a><a href="" id="uninstalling-the-device"></a> 卸载设备
 
-通过 [setupapi.log](setupapi.md) ，你可以使用以下方法卸载设备并从系统中删除设备节点 ( *devnode* ) ：
+通过 [setupapi.log](setupapi.md) ，你可以使用以下方法卸载设备并从系统中删除设备节点 (*devnode*) ：
 
 -   设备安装应用程序可以通过调用 [**SetupDiCallClassInstaller**](/windows/win32/api/setupapi/nf-setupapi-setupdicallclassinstaller) 函数来请求卸载设备。 当应用程序调用此函数以卸载设备时，它必须将 *InstallFunction* 参数设置为 [**DIF_REMOVE**](./dif-remove.md) 代码。  有关所有 DIF 代码的列表，请参阅 [设备安装函数](/previous-versions/ff541307(v=vs.85))。
 
     如果在 DIF_REMOVE 请求的处理过程中调用 [**SetupDiRemoveDevice**](/windows/win32/api/setupapi/nf-setupapi-setupdiremovedevice) ，则该函数将从系统中删除设备的 devnode。 它还会删除设备的硬件和软件注册表项，以及任何特定于硬件配置文件的注册表项， () 特定于配置的注册表项。
 
-    **请注意** ， **SetupDiRemoveDevice** 只能由类安装程序调用，而不能由设备安装应用程序调用。  
+    **请注意**，**SetupDiRemoveDevice** 只能由类安装程序调用，而不能由设备安装应用程序调用。  
 
     有关 DIF 代码的详细信息，请参阅 [处理 Dif 代码](handling-dif-codes.md)。
 

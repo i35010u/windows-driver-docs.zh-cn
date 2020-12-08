@@ -1,7 +1,6 @@
 ---
 title: D3DKMT \_ TDRDBGCTRL \_ 转义结构
 description: 了解 D3DKMT \_ TDRDBGCTRL \_ 转义结构，它是为系统使用而保留的。 请勿在您的驱动程序中使用。
-ms.assetid: dcb558ed-8072-4454-8aea-d966a65b5d63
 keywords:
 - D3DKMT_TDRDBGCTRL_ESCAPE 结构显示设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 01/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: d3b7d98fe6a968e7329fee3edce9260f9a9fc29a
-ms.sourcegitcommit: fc94eb0d5a41ef81c1b3ab91ad725386db0be0c2
+ms.openlocfilehash: fa0be695f17c1358505b6e574535d407de1d5fcb
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91603623"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96824217"
 ---
 # <a name="d3dkmt_tdrdbgctrl_escape-structure"></a>D3DKMT \_ TDRDBGCTRL \_ 转义结构
 

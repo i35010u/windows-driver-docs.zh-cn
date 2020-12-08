@@ -1,22 +1,21 @@
 ---
 title: WDI_TLV_P2P_CHANNEL_LIST_ATTRIBUTE
-description: WDI_TLV_P2P_CHANNEL_LIST_ATTRIBUTE 是 TLV，其中包含通道列表特性。
-ms.assetid: 2378AC49-1530-45E2-A7C8-FEAF5E6CDBE5
+description: WDI_TLV_P2P_CHANNEL_LIST_ATTRIBUTE 是包含通道列表属性的 TLV。
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_P2P_CHANNEL_LIST_ATTRIBUTE 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 3a3d1a6570bee286b0b1b915b660e9bdd6712b2c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: cc12091c1dde751a120b897979bd3843d3f72f9a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63345950"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96823745"
 ---
-# <a name="wditlvp2pchannellistattribute"></a>WDI\_TLV\_P2P\_CHANNEL\_LIST\_ATTRIBUTE
+# <a name="wdi_tlv_p2p_channel_list_attribute"></a>WDI \_ TLV \_ P2P \_ 通道 \_ 列表 \_ 属性
 
 
-WDI\_TLV\_P2P\_通道\_列表\_属性是包含通道列表特性 TLV。
+WDI \_ tlv \_ P2P \_ 通道 \_ 列表 \_ 属性是包含通道列表属性的 tlv。
 
 ## <a name="tlv-type"></a>TLV 类型
 
@@ -26,15 +25,15 @@ WDI\_TLV\_P2P\_通道\_列表\_属性是包含通道列表特性 TLV。
 ## <a name="length"></a>长度
 
 
-所有包含的元素的大小的总和 （以字节为单位）。
+Sum (所有包含的元素的大小) 。
 
 ## <a name="values"></a>值
 
 
-| 在任务栏的搜索框中键入                                                                          | 允许多个 TLV 实例 | 可选 | 描述              |
+| 类型                                                                          | 允许多个 TLV 实例 | 可选 | 说明              |
 |-------------------------------------------------------------------------------|--------------------------------|----------|--------------------------|
-| [**WDI\_TLV\_国家/地区\_区域\_列表**](wdi-tlv-country-region-list.md)        |                                |          | 国家/地区列表中。 |
-| [**WDI\_TLV\_P2P\_通道\_条目\_列表**](wdi-tlv-p2p-channel-entry-list.md) | X                              |          | 频道列表。    |
+| [**WDI \_ TLV \_ 国家/地区 \_ \_ 列表**](wdi-tlv-country-region-list.md)        |                                |          | 国家/地区列表。 |
+| [**WDI \_ TLV \_ P2P \_ 信道 \_ 条目 \_ 列表**](wdi-tlv-p2p-channel-entry-list.md) | X                              |          | 通道的列表。    |
 
  
 
@@ -53,10 +52,10 @@ WDI\_TLV\_P2P\_通道\_列表\_属性是包含通道列表特性 TLV。
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
-<td><p>Windows Server 2016</p></td>
+<td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Wditypes.hpp</td>
 </tr>
 </tbody>

@@ -1,7 +1,6 @@
 ---
 title: pmssa
-description: Pmssa 扩展显示指定的处理器最小状态保存区域 （也称为最小值 StateSave 区域）。
-ms.assetid: 55d605bd-0621-4366-8b37-62d462ee1f34
+description: Pmssa 扩展显示指定的处理器最低状态保存区域 (也称为 Min-StateSave 区域) 。
 keywords:
 - 处理器 minstate 保存区域
 - pmssa Windows 调试
@@ -13,35 +12,35 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: cd8c009c07d34b416a2f1542b236ca3fc40853ea
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 296f4457b7b8b086f77f2e1e762c6b5ca5ff636d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63335835"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96824393"
 ---
 # <a name="pmssa"></a>!pmssa
 
 
-**！ Pmssa**扩展显示指定的处理器最小状态保存区域 （也称为最小值 StateSave 区域）。
+**！ Pmssa** extension 显示指定的处理器最低状态保存区域 (也称为 Min-StateSave 区域) 。
 
-此扩展仅用于基于 Itanium 的目标计算机。
+此扩展只能与基于 Itanium 的目标计算机一起使用。
 
 ```dbgcmd
 !pmssa Address
 ```
 
-**重要**  此命令已被 Windows 调试器版本 10.0.14257 中不推荐使用和更高版本，并不再可用。
+**重要提示**  此命令在 Windows 调试器版本10.0.14257 和更高版本中已弃用，不再可用。
 
  
 
-## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>参数
+## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>Parameters
 
 
-<span id="_______Address______"></span><span id="_______address______"></span><span id="_______ADDRESS______"></span> *Address*   
-指定的处理器最小值 StateSave 区域的地址。
+<span id="_______Address______"></span><span id="_______address______"></span><span id="_______ADDRESS______"></span>*地址*   
+指定处理器 Min-StateSave 区域的地址。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 <table>
 <colgroup>

@@ -1,7 +1,6 @@
 ---
 title: 主时钟
 description: 主时钟
-ms.assetid: bdd228c1-a15f-4c08-8991-299a3f2e1ee8
 keywords:
 - 主时钟的 WDK 内核流式处理
 - 同步 WDK 内核流式处理
@@ -9,12 +8,12 @@ keywords:
 - 物理时间 WDK 内核流式处理
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 57dfbee5856cd1fd1c0ee23da6e2433c37c249a0
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: a91e26e5287e2bfe4f6d798bdee3d2587365fedd
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89187077"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96823673"
 ---
 # <a name="master-clocks"></a>主时钟
 

@@ -1,9 +1,8 @@
 ---
 title: JobTable 元素
-description: 所需的 JobTable 元素包含有关扫描作业的当前和历史信息。
-ms.assetid: 349ca443-5296-4200-884d-91fcdb222be4
+description: 必需的 JobTable 元素包含有关扫描作业的当前和历史信息。
 keywords:
-- JobTable 元素成像设备
+- JobTable 元素图像设备
 topic_type:
 - apiref
 api_name:
@@ -12,19 +11,19 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0464a2aab8fed830f5fb0fc65efc987274b729bf
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: bd02f135befac9342bfbf6dfc4bfffadbc6de972
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63373911"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96824125"
 ---
 # <a name="jobtable-element"></a>JobTable 元素
 
 
-所需**JobTable**元素包含有关扫描作业的当前和历史信息。
+必需的 **JobTable** 元素包含有关扫描作业的当前和历史信息。
 
-<a name="usage"></a>用法
+<a name="usage"></a>使用情况
 -----
 
 ```xml
@@ -68,7 +67,7 @@ ms.locfileid: "63373911"
 <a name="remarks"></a>备注
 -------
 
-WSD 扫描服务使用**JobTable**元素来跟踪所有当前和已完成扫描作业提交到 WSD 扫描服务。 在中跟踪当前作业[ **ActiveJobs** ](activejobs.md)子元素，则可以选择跟踪中的已完成的作业[ **JobHistory** ](jobhistory2.md)子元素。
+WSD 扫描服务使用 **JobTable** 元素跟踪提交到 WSD 扫描服务的所有当前和已完成的扫描作业。 当前作业是在 [**ActiveJobs**](activejobs.md) 子元素中跟踪的;可以选择在 [**JobHistory**](jobhistory2.md) 子元素中跟踪已完成的作业。
 
 ## <a name="see-also"></a>请参阅
 

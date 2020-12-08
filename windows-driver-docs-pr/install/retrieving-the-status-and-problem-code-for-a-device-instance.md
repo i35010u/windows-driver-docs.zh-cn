@@ -1,15 +1,14 @@
 ---
 title: 检索设备实例的状态和问题代码
 description: 检索设备实例的状态和问题代码
-ms.assetid: 22ca9ac2-fe67-427d-a6e4-f1d9cbbede52
 ms.date: 02/28/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 4827b1b485245ad357fd653dda9e8bab16c3a61a
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 1eb8527dcf2c6fb6eca8e0e6eb49ec5d874179ed
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90715086"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96824435"
 ---
 # <a name="retrieving-the-status-and-problem-code-for-a-device-instance"></a>检索设备实例的状态和问题代码
 
@@ -24,21 +23,21 @@ Windows Server 2003、Windows XP 和 Windows 2000 不支持统一属性模型的
 
 若要访问 Windows Server 2003、Windows XP 和 Windows 2000 上的设备实例的状态和问题代码，请调用 **CM_Get_DevNode_Status** 并提供以下参数：
 
--   将 *pulStatus* 设置为指向 ULONG 类型值的指针，该类型的值接收为设备实例设置的状态位标志。 Status 值可以是在 *Cfg*中定义前缀为 "DN_" 的任何位标志的组合。
+-   将 *pulStatus* 设置为指向 ULONG 类型值的指针，该类型的值接收为设备实例设置的状态位标志。 Status 值可以是在 *Cfg* 中定义前缀为 "DN_" 的任何位标志的组合。
 
--   将 *pulProblemNumber* 设置为指向 ULONG 类型值的指针，该类型的值接收为设备实例设置的问题号。 问题编号是在 *Cfg*中定义的前缀为 "CM_PROB_" 的常量之一。 仅当在*pulStatus*中设置 DN_HAS_PROBLEM 时， **CM_Get_DevNode_Status**才设置问题号。
+-   将 *pulProblemNumber* 设置为指向 ULONG 类型值的指针，该类型的值接收为设备实例设置的问题号。 问题编号是在 *Cfg* 中定义的前缀为 "CM_PROB_" 的常量之一。 仅当在 *pulStatus* 中设置 DN_HAS_PROBLEM 时， **CM_Get_DevNode_Status** 才设置问题号。
 
 -   将 *dnDevInst* 设置为要为其检索状态和问题代码的设备的设备实例句柄。
 
 -   将 *ulFlags* 设置为零。
 
-如果对 **CM_Get_DevNode_Status** 的调用成功，则 **CM_Get_DevNode_Status** 会检索设备实例的请求状态和问题代码，并返回 CR_SUCCESS。 如果函数调用失败， **CM_Get_DevNode_Status** 将返回一个错误代码，其中包含 *Cfgmgr32*中定义的前缀 "CR_"。
+如果对 **CM_Get_DevNode_Status** 的调用成功，则 **CM_Get_DevNode_Status** 会检索设备实例的请求状态和问题代码，并返回 CR_SUCCESS。 如果函数调用失败， **CM_Get_DevNode_Status** 将返回一个错误代码，其中包含 *Cfgmgr32* 中定义的前缀 "CR_"。
 
 ## <a name="using-device-manager-to-find-problem-code-and-problem-status-for-a-device"></a>使用设备管理器查找设备的问题代码和问题状态
 
 当 devnode 出现问题时，"**设备状态**" 字段中的 "**常规**" 选项卡上将显示问题代码。
 
-在设备管理器中设备的 "**详细信息**" 选项卡上的**属性**下拉列表中，"**问题状态**" 属性出现。
+在设备管理器中设备的 "**详细信息**" 选项卡上的 **属性** 下拉列表中，"**问题状态**" 属性出现。
 
 ## <a name="using-the-debugger-to-find-problem-code-and-problem-status-for-a-device"></a>使用调试器查找设备的问题代码和问题状态
 

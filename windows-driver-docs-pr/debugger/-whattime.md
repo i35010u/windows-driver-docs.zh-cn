@@ -1,9 +1,8 @@
 ---
 title: whattime
-description: Whattime 扩展将标准时间值转换为的计时周期计数。
-ms.assetid: c63e8bad-3a87-4209-b9f0-b6c433c294b2
+description: Whattime 扩展将滴答计数转换为标准时间值。
 keywords:
-- 时钟周期数
+- 时钟周期 (tick count)
 - whattime Windows 调试
 ms.date: 05/23/2017
 topic_type:
@@ -13,29 +12,29 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: ca6f8eb2d6e84afefbc253cdf59d474b0feaf2c9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6d13463ca5e38c67b6ab1334907ce2985ee3c352
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327959"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96823581"
 ---
 # <a name="whattime"></a>!whattime
 
 
-**！ Whattime**扩展将标准时间值转换为的计时周期计数。
+**！ Whattime** extension 将滴答计数转换为标准时间值。
 
 ```dbgcmd
 !whattime Ticks
 ```
 
-## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>参数
+## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>Parameters
 
 
-<span id="_______Ticks______"></span><span id="_______ticks______"></span><span id="_______TICKS______"></span> *计时周期数*   
+<span id="_______Ticks______"></span><span id="_______ticks______"></span><span id="_______TICKS______"></span>*刻度*   
 计时周期数。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 <table>
 <colgroup>
@@ -59,7 +58,7 @@ ms.locfileid: "63327959"
 <a name="remarks"></a>备注
 -------
 
-输出显示为*HH:MM:SS.mmm*。 下面是一个示例：
+输出显示为 *HH： MM： SS*。 以下是示例：
 
 ```dbgcmd
 kd> !whattime 29857ae4

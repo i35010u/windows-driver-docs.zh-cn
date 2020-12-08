@@ -1,17 +1,16 @@
 ---
-title: 最佳方案
+title: 最佳实践
 description: 最佳方案
-ms.assetid: c01b3fd9-7f4e-4d1a-a726-b31b0eebf094
 keywords:
-- 上下文 WDK 文件系统微筛选器，最佳做法
+- 上下文 WDK 文件系统微筛选器，最佳实践
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 34a915656bd3f24a05af4553aaa30818ba84f482
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 434c85df5b2f34e245edcb6db2abc18267ccfd40
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525866"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96824139"
 ---
 # <a name="best-practices"></a>最佳方案
 
@@ -19,9 +18,9 @@ ms.locfileid: "56525866"
 ## <span id="ddk_registering_the_minifilter_if"></span><span id="DDK_REGISTERING_THE_MINIFILTER_IF"></span>
 
 
-如果微筛选器驱动程序创建只有一个微筛选器驱动程序实例，每个卷，它应使用更好的性能实例上下文而不是卷的上下文。
+如果微筛选器驱动程序只为每个卷创建一个微筛选器驱动程序实例，则它应使用实例上下文而不是卷上下文来提高性能。
 
-微筛选器驱动程序还可以通过存储指向其流内的微筛选器驱动程序实例上下文的指针来提高性能或流句柄上下文。
+微筛选器驱动程序还可以通过将指向微筛选器驱动程序实例上下文的指针存储在其流或流句柄上下文中来提高性能。
 
  
 

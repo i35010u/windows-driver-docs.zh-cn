@@ -1,15 +1,14 @@
 ---
 title: 使用 KMDF 驱动程序的函数角色类型来声明函数
 description: 使用 KMDF 驱动程序的函数角色类型来声明函数
-ms.assetid: 73a408ba-0219-4fde-8dad-ca330e4e67c3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a2d90abc9d262fbfad6b0699440074fab3add84d
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: c0cc248e3703668a8a268aa32848c571bfa815a3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89383963"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96824247"
 ---
 # <a name="declaring-functions-by-using-function-role-types-for-kmdf-drivers"></a>使用 KMDF 驱动程序的函数角色类型来声明函数
 
@@ -72,7 +71,7 @@ EVT_WDF_FILE_CONTEXT_DESTROY_CALLBACK FileContextDestroy;
 EVT_WDF_DRIVER_DEVICE_ADD myEvtDriverDeviceAdd;
 ```
 
-当您实现函数 *myEvtDriverDeviceAdd*时，参数类型必须与由 .Evt \_ WDF \_ 驱动程序 \_ 设备 \_ ADD、WDFDRIVER 和 PWDFDEVICE INIT 使用的参数类型相匹配 \_ (参阅) 语法的 [*EvtDriverDeviceAdd*](/windows-hardware/drivers/ddi/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add) 例程。
+当您实现函数 *myEvtDriverDeviceAdd* 时，参数类型必须与由 .Evt \_ WDF \_ 驱动程序 \_ 设备 \_ ADD、WDFDRIVER 和 PWDFDEVICE INIT 使用的参数类型相匹配 \_ (参阅) 语法的 [*EvtDriverDeviceAdd*](/windows-hardware/drivers/ddi/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add) 例程。
 
 ```
 NTSTATUS

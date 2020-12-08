@@ -1,7 +1,6 @@
 ---
 title: Direct3D 驱动程序回调的返回代码
 description: Direct3D 驱动程序回调的返回代码
-ms.assetid: 033beb6e-5872-4cb3-8f39-459e2fff82cd
 keywords:
 - Direct3D WDK Windows 2000 显示，返回代码
 - 返回代码 WDK Direct3D
@@ -9,12 +8,12 @@ keywords:
 - 回调函数 WDK Direct3D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 425b9e220c2f2ed3b57f8821a4eef2990199288a
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: a977b41cf5d2bad3011d7030ab3dafd4d829846c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89067232"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96824183"
 ---
 # <a name="return-codes-for-direct3d-driver-callbacks"></a>Direct3D 驱动程序回调的返回代码
 
@@ -22,11 +21,11 @@ ms.locfileid: "89067232"
 ## <span id="ddk_return_codes_for_direct3d_driver_callbacks_gg"></span><span id="DDK_RETURN_CODES_FOR_DIRECT3D_DRIVER_CALLBACKS_GG"></span>
 
 
-下表列出了 [Direct3D 驱动程序提供的函数](/windows-hardware/drivers/ddi/index)可返回的值。 DDHAL \_ DRIVER \_ *Xxx*值实际上在 DWORD 返回值中返回。 \_ \_ *Xxx* \_ 在特定函数的参数指向的结构的**ddrval**成员中返回 D3D OK 值、D3DHAL xxx 值和 D3DERR*xxx*错误代码。
+下表列出了可以由 [Direct3D Driver-Supplied 函数](/windows-hardware/drivers/ddi/index)返回的值。 DDHAL \_ DRIVER \_ *Xxx* 值实际上在 DWORD 返回值中返回。 \_ \_ *Xxx* \_ 在特定函数的参数指向的结构的 **ddrval** 成员中返回 D3D OK 值、D3DHAL xxx 值和 D3DERR *xxx* 错误代码。
 
 有关每个函数可以返回的特定错误代码，请参阅参考部分中的函数和结构说明。 有关错误代码和返回 (值的 *完整列表，* 请参阅 Direct3D 标头文件 *d3dhal 和* ， *d3d8* 和 *d3d9* 用于 DirectX 版本8.0 和 9.0) 。 请注意，错误代码由负值表示，不能组合使用。
 
-Direct3D 驱动程序中的函数必须返回两个返回代码之一： DDHAL \_ 驱动程序已 \_ 处理或 DDHAL \_ driver \_ NOTHANDLED。 如果驱动程序返回 DDHAL \_ 驱动程序已 \_ 处理，则它还必须返回 d3d \_ OK 或 *d3d* 或 *d3dhal*中列出的值之一。 Direct3D 驱动程序中的函数可以返回下表中的值。 这些值在 *d3d .h* 和 *d3dhal*中定义。
+Direct3D 驱动程序中的函数必须返回两个返回代码之一： DDHAL \_ 驱动程序已 \_ 处理或 DDHAL \_ driver \_ NOTHANDLED。 如果驱动程序返回 DDHAL \_ 驱动程序已 \_ 处理，则它还必须返回 d3d \_ OK 或 *d3d* 或 *d3dhal* 中列出的值之一。 Direct3D 驱动程序中的函数可以返回下表中的值。 这些值在 *d3d .h* 和 *d3dhal* 中定义。
 
 <table>
 <colgroup>
@@ -35,7 +34,7 @@ Direct3D 驱动程序中的函数必须返回两个返回代码之一： DDHAL \
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">值</th>
+<th align="left">“值”</th>
 <th align="left">含义</th>
 </tr>
 </thead>

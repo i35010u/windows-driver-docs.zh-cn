@@ -1,15 +1,14 @@
 ---
 title: 应用程序通知简介
 description: 应用程序通知简介
-ms.assetid: c115eb29-8bd2-40f7-b979-cff386bdc9aa
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: cd5ddcf7dc0f90770b0d4ab11b3b4f4f560732f0
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: a1d5d7c0677f04b3c526b10f2a164007d4913429
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91733065"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96824425"
 ---
 # <a name="introduction-to-application-notification"></a>应用程序通知简介
 
@@ -18,7 +17,7 @@ ms.locfileid: "91733065"
 
 当将新的处理器或内存模块添加到硬件分区时，操作系统启动了新的处理器或内存设备后，操作系统会将此通知发送到用户模式应用程序。 对于新的处理器，操作系统在开始计划新处理器上的线程之前，不会将此消息发送给用户模式应用程序。
 
-**注意**   所有 PnP 通知都是异步的。 因此，用户模式应用程序在操作系统启动处理器或内存模块之前，可能不会收到这些通知。
+**注意**   所有 PnP 通知都是异步的。 因此，用户模式应用程序在操作系统启动处理器或内存模块之前，可能不会收到这些通知。
 
  
 

@@ -1,15 +1,14 @@
 ---
 title: 使用 DevCon 工具安装驱动程序包
 description: 使用 DevCon 工具安装驱动程序包
-ms.assetid: d77573e0-7866-46a5-88bc-c911bbd2a165
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9455eebfaf2f14cde29b44e29dcb66a84f89e503
-ms.sourcegitcommit: f5222e608f2853003175244505d5daa3465ac6b3
+ms.openlocfilehash: 5c7cae4a6fc52af1b27c23dd28ea7074b41becd3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88615071"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96824043"
 ---
 # <a name="using-the-devcon-tool-to-install-a-driver-package"></a>使用 DevCon 工具安装驱动程序包
 
@@ -18,7 +17,7 @@ ms.locfileid: "88615071"
 
 若要通过 DevCon 安装驱动程序包，请执行以下操作：
 
-1.  若要使用 DevCon 工具，用户必须是测试计算机上 Administrators 组的成员，并从提升的命令提示符运行 DevCon。 若要打开提升的命令提示符窗口，请创建 *Cmd.exe*的桌面快捷方式，选择并按住 (或右键单击 *Cmd.exe* 快捷方式) ，然后选择 " **以管理员身份运行**"。
+1.  若要使用 DevCon 工具，用户必须是测试计算机上 Administrators 组的成员，并从提升的命令提示符运行 DevCon。 若要打开提升的命令提示符窗口，请创建 *Cmd.exe* 的桌面快捷方式，选择并按住 (或右键单击 *Cmd.exe* 快捷方式) ，然后选择 " **以管理员身份运行**"。
 
 2.  在提升的命令提示符窗口中，输入以下内容：
 

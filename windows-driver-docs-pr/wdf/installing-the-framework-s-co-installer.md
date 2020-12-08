@@ -1,9 +1,8 @@
 ---
 title: 在 INF 文件中指定 KMDF 的共同安装程序
 description: 如果你的驱动程序包中包含共同安装程序，请阅读本主题，了解你必须在驱动程序的 INF 文件中提供的部分。
-ms.assetid: e4f476ad-1ab5-44e3-9368-7467479bda85
 keywords:
-- 内核模式驱动程序框架 WDK，安装驱动程序
+- Kernel-Mode Driver Framework WDK，安装驱动程序
 - 基于框架的驱动程序 WDK KMDF，安装
 - INF 文件 WDK KMDF，coinstallers
 - coinstallers WDK KMDF
@@ -12,12 +11,12 @@ keywords:
 - Wdf INF 文件部分 WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6ab5fee67220950bf135af58f9b5bcddeef40a02
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: f3df63c7843eb116c401b7bc470c87e79771d4ee
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91734395"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96823665"
 ---
 # <a name="specifying-the-kmdf-co-installer-in-an-inf-file"></a>在 INF 文件中指定 KMDF 的共同安装程序
 
@@ -37,7 +36,7 @@ INF <em>DDInstall</em>**。Wdf** 部分包含以下指令：
 
 *DriverService* 表示操作系统将分配给驱动程序的内核模式服务的名称， *Wdf-安装部分* 表示 INF 部分的名称，共同安装程序读取此部分以获取有关驱动程序的信息。
 
-*Wdf 安装节*标识的 INF 部分必须包含以下指令：
+*Wdf 安装节* 标识的 INF 部分必须包含以下指令：
 
 -   **KmdfLibraryVersion =** *WdfLibraryVersion*
 
@@ -54,15 +53,15 @@ KmdfLibraryVersion = 1.0
 
 可以使用 INX 文件和 [Stampinf](../devtest/stampinf.md) 工具避免为多个版本的框架创建多个 INF 文件。 有关 INX 文件的详细信息，请参阅[使用 INX 文件创建 INF 文件](using-inx-files-to-create-inf-files.md)。
 
-### <a name="sample-inf-ddinstallcoinstallers-and-ddinstallwdf-sections"></a><a href="" id="sample-inf-ddinstall-coinstallers-and-ddinstall-wdf-sections"></a>**示例 INF** ***DDInstall *。CoInstallers 和** * **DDInstall *。Wdf 部分**
+### <a name="sample-inf-_ddinstall_coinstallers-and-_ddinstall_wdf-sections"></a><a href="" id="sample-inf-ddinstall-coinstallers-and-ddinstall-wdf-sections"></a>**示例 INF** **_DDInstall_。CoInstallers 和** **_DDInstall_。Wdf 部分**
 
 下面的代码示例演示如何创建 INF <em>DDInstall</em>**。CoInstallers** 部分和 INF <em>DDInstall</em>**。** PnP 驱动程序的 INF 文件的 Wdf 部分。 该示例演示如何创建一个名为 *MyDevice* 的 inf 文件，该文件基于 [echo](/samples/browse/) 示例驱动程序的 *echo* 文件。 回显示例驱动程序位于 WDK 的示例目录中。
 
-若要创建*MyDevice*，必须将*echo*中的所有**echo \_ 设备**子字符串更改为适用于你的产品的名称。 下面的代码示例使用 **MyDevice**。
+若要创建 *MyDevice*，必须将 *echo* 中的所有 **echo \_ 设备** 子字符串更改为适用于你的产品的名称。 下面的代码示例使用 **MyDevice**。
 
 应尝试匹配 *Echo* 示例使用的部分布局。 换句话说，如有可能，请将与联合安装程序相关的部分结合在一起，以便更轻松地发现剪切和粘贴错误。
 
-在修改了 *echo*之前，安装共同安装程序的部分如下所示：
+在修改了 *echo* 之前，安装共同安装程序的部分如下所示：
 
 ```cpp
 =============== Top of Echo.inf ====================

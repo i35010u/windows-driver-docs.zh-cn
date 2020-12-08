@@ -1,7 +1,6 @@
 ---
 title: Bug 检查 0x14 CREATE_DELETE_LOCK_NOT_LOCKED
-description: CREATE_DELETE_LOCK_NOT_LOCKED bug 检查具有 0x00000014 值。检查此错误极少出现。
-ms.assetid: 5a0c44c8-c864-43c3-b4d8-15801c59a94b
+description: CREATE_DELETE_LOCK_NOT_LOCKED bug 检查的值为0x00000014。此 bug 检查很少出现。
 keywords:
 - Bug 检查 0x14 CREATE_DELETE_LOCK_NOT_LOCKED
 - CREATE_DELETE_LOCK_NOT_LOCKED
@@ -13,22 +12,22 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: c05047bc9735a9a8f53a45a06519669206041083
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: 245ed132703471431d0c726447336bacb16710bd
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67520201"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96824305"
 ---
-# <a name="bug-check-0x14-createdeletelocknotlocked"></a>Bug 检查 0x14：创建\_删除\_锁\_不\_已锁定
+# <a name="bug-check-0x14-create_delete_lock_not_locked"></a>Bug 检查0x14： \_ \_ \_ 未锁定创建删除 \_ 锁定
 
 
-创建\_删除\_锁\_不\_已锁定错误检查的值为 0x00000014。
+"创建 \_ 删除 \_ 锁定 \_ 未 \_ 锁定" bug 检查的值为 "0x00000014"。
 
-检查此错误极少出现。
+此 bug 检查很少出现。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题面向程序员。 如果您是在使用计算机时收到蓝屏错误代码的客户，请参阅[蓝屏错误疑难解答](https://www.windows.com/stopcode)。
 
 
  

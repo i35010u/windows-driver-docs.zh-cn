@@ -1,15 +1,14 @@
 ---
 title: ServiceDescription1
 description: ServiceDescription1
-ms.assetid: 4451c429-3b89-47d6-ba21-ab30919e5ff8
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 25941b159b7ab195bb9a0c83c0567dc649eef3b4
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: 899744bedf08efc916b7d4b34df5633f24f5cb5c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89403448"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96824419"
 ---
 # <a name="servicedescription1"></a>ServiceDescription1
 
@@ -52,7 +51,7 @@ ServiceDescription1 元素指定有关服务的描述性信息。 这适用于�
 <thead>
 <tr class="header">
 <th>元素</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>

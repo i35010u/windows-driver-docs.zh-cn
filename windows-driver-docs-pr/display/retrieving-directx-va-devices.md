@@ -1,18 +1,17 @@
 ---
 title: 检索 DirectX VA 设备
 description: 检索 DirectX VA 设备
-ms.assetid: 7af82243-7cb3-4e66-a6ee-3f4220baa459
 keywords:
 - DirectX 视频加速 WDK Windows 2000 显示，检索设备
 - 检索 DirectX VA 设备
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7a917e6c64fa416376220580f14b06e8d1ed2e20
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: aa51baf361ac1b0a8852410545ba8037a88aae7f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90715128"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96824207"
 ---
 # <a name="retrieving-directx-va-devices"></a>检索 DirectX VA 设备
 
@@ -20,7 +19,7 @@ ms.locfileid: "90715128"
 ## <span id="ddk_retrieving_directx_va_devices_gg"></span><span id="DDK_RETRIEVING_DIRECTX_VA_DEVICES_GG"></span>
 
 
-使用以下示例代码检索 DirectX VA 设备。 此代码是 [*DdMoCompGetGuids*](/windows/win32/api/ddrawint/nc-ddrawint-pdd_mocompcb_getguids) 回调函数的实现。 [**DD \_ MOTIONCOMPCALLBACKS**](/windows/win32/api/ddrawint/ns-ddrawint-dd_motioncompcallbacks)结构的**GetMoCompGuids**成员指向回调函数。
+使用以下示例代码检索 DirectX VA 设备。 此代码是 [*DdMoCompGetGuids*](/windows/win32/api/ddrawint/nc-ddrawint-pdd_mocompcb_getguids) 回调函数的实现。 [**DD \_ MOTIONCOMPCALLBACKS**](/windows/win32/api/ddrawint/ns-ddrawint-dd_motioncompcallbacks)结构的 **GetMoCompGuids** 成员指向回调函数。
 
 ```cpp
 DWORD g_dwDXVANumSupportedGUIDs = 4;

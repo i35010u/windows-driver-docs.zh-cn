@@ -1,9 +1,8 @@
 ---
 title: wdfkd.wdfumdevstacks
-description: Wdfkd.wdfumdevstacks 扩展隐式的过程中显示有关所有 UMDF 设备堆栈的信息。
-ms.assetid: 05D09B0D-4ED8-4333-B4BC-5BE28C63312C
+description: Wdfkd. wdfumdevstacks 扩展显示有关隐式进程中所有 UMDF 设备堆栈的信息。
 keywords:
-- wdfkd.wdfumdevstacks Windows 调试
+- wdfkd wdfumdevstacks Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,57 +11,57 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: dc189f5294c8de6a1ce9d10ecff28ffdfe2ad1e3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a74e456fa38a5b0f3ccda2f3d3c19bda8ce12ae9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63323396"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96823633"
 ---
 # <a name="wdfkdwdfumdevstacks"></a>!wdfkd.wdfumdevstacks
 
 
-**！ Wdfkd.wdfumdevstacks**扩展插件都会显示有关所有 UMDF 设备堆栈中的信息[隐式过程](controlling-threads-and-processes.md)。
+**！ Wdfkd wdfumdevstacks** 扩展显示有关 [隐式进程](controlling-threads-and-processes.md)中的所有 UMDF 设备堆栈的信息。
 
 ```dbgcmd
 !wdfkd.wdfumdevstacks [Flags] 
 ```
 
-## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>参数
+## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>Parameters
 
 
-<span id="_______Flags______"></span><span id="_______flags______"></span><span id="_______FLAGS______"></span> *标志*   
-可选。 指定要显示的信息的类型。 *标志*可以是以下位的任意组合。 默认值为 0x01。
+<span id="_______Flags______"></span><span id="_______flags______"></span><span id="_______FLAGS______"></span>*标志*   
+可选。 指定要显示的信息的类型。 *标志* 可以是以下位的任意组合。 默认值为0x01。
 
-<span id="Bit_0__0x01_"></span><span id="bit_0__0x01_"></span><span id="BIT_0__0X01_"></span>位 0 (0x01)  
-显示有关每个设备堆栈的详细的信息。
+<span id="Bit_0__0x01_"></span><span id="bit_0__0x01_"></span><span id="BIT_0__0X01_"></span>位 0 (0x01)   
+显示有关每个设备堆栈的详细信息。
 
-<span id="Bit_7__0x80_"></span><span id="bit_7__0x80_"></span><span id="BIT_7__0X80_"></span>7 位 (0x80)  
-显示内部框架有关的信息。
+<span id="Bit_7__0x80_"></span><span id="bit_7__0x80_"></span><span id="BIT_7__0X80_"></span>第7位 (0x80)   
+显示有关内部框架的信息。
 
-## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 
 Wdfkd.dll
 
-## <a name="span-idframeworksspanspan-idframeworksspanspan-idframeworksspanframeworks"></a><span id="Frameworks"></span><span id="frameworks"></span><span id="FRAMEWORKS"></span>框架
+## <a name="span-idframeworksspanspan-idframeworksspanspan-idframeworksspanframeworks"></a><span id="Frameworks"></span><span id="frameworks"></span><span id="FRAMEWORKS"></span>协作
 
 
 UMDF 2
 
-## <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+## <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
 
-有关详细信息，请参阅[内核模式驱动程序框架调试](kernel-mode-driver-framework-debugging.md)。
+有关详细信息，请参阅 [内核模式驱动程序框架调试](kernel-mode-driver-framework-debugging.md)。
 
 <a name="remarks"></a>备注
 -------
 
-在内核模式调试会话中或在用户模式下调试会话附加到 UMDF 主机进程 (wudfhost.exe)，可以使用此命令。
+可以在内核模式调试会话中或在附加到 UMDF 主机进程 ( # A0) 的用户模式调试会话中使用此命令。
 
-此命令显示相同的信息作为用户模式命令[ **！ wudfext.umdevstacks**](-wudfext-umdevstacks.md)。
+此命令显示与用户模式命令 [**！ wudfext**](-wudfext-umdevstacks.md)相同的信息。
 
-使用此命令之前，请使用[ **！ 过程**](-process.md)若要获取所有 UMDF 主机进程的列表。
+使用此命令之前，请使用 [**！进程**](-process.md) 获取所有 UMDF 主机进程的列表。
 
 ```dbgcmd
 0: kd> !process 0 0 wudfhost.exe
@@ -72,9 +71,9 @@ PROCESS ffffe00000c32900
     Image: WUDFHost.exe
 ```
 
-上面的输出显示是一个 UMDF 主机进程;也就是说，没有 wudfhost.exe 的一个实例。
+前面的输出显示有一个 UMDF 主机进程;也就是说，wudfhost.exe 有一个实例。
 
-接下来，使用[ **.process** ](-process--set-process-context-.md)到 wudfhost.exe 设置隐式的进程。
+接下来，使用 [**. 进程**](-process--set-process-context-.md) 将隐式进程设置为 wudfhost.exe。
 
 ```dbgcmd
 0: kd> .process /P ffffe00000c32900
@@ -82,7 +81,7 @@ Implicit process is now ffffe000`00c32900
 .cache forcedecodeptes done
 ```
 
-现在，使用 **！ wdfkd.wdfumdevstacks**隐式过程 (wudfhost.exe) 中显示的 UMDF 设备堆栈。
+现在，请使用 **！ wdfkd** 在隐式进程 ( # A0) 中显示 UMDF 设备堆栈。
 
 ```dbgcmd
 0: kd> !wdfkd.wdfumdevstacks
@@ -100,7 +99,7 @@ Number of device stacks: 1
       DevStack XFerMode: Deferred RW: Buffered CTL: Buffered
 ```
 
-上面的输出显示了隐式的过程中已有一个 UMDF 设备堆栈。 此外可以查看设备堆栈的一个设备对象 (数量的 UM 设备：1).
+前面的输出显示隐式进程中有一个 UMDF 设备堆栈。 你还可以看到设备堆栈有一个设备对象 (UM 设备的数量： 1) 。
 
  
 

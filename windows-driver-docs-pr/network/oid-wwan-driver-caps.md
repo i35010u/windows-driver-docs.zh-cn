@@ -1,16 +1,15 @@
 ---
 title: OID_WWAN_DRIVER_CAPS
 description: OID_WWAN_DRIVER_CAPS 返回微型端口驱动程序支持的 MB 驱动程序型号版本。
-ms.assetid: 2310a341-6899-44ad-8dfb-a13fd0c42dcb
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_WWAN_DRIVER_CAPS 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 6b5e38dc3edae640f48f2d01ed169a4123819151
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: d3e6d3c6a0b55c84446b77656ff43866b54ca6ca
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89217981"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96823825"
 ---
 # <a name="oid_wwan_driver_caps"></a>OID \_ WWAN \_ 驱动程序 \_ CAP
 
@@ -54,7 +53,7 @@ MB 驱动程序型号版本的当前版本由 WWAN \_ 主要 \_ 版本和 wwan \
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [MB 微型端口驱动程序初始化](./mb-miniport-driver-initialization.md)

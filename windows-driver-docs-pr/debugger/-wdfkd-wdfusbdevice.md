@@ -1,9 +1,8 @@
 ---
 title: wdfkd.wdfusbdevice
-description: 所有 USB 接口和配置管道，wdfkd.wdfusbdevice 扩展将显示有关指定 KMDF USB 设备对象，其中包括的信息。
-ms.assetid: 94e0a4ef-36a6-4a37-ac4a-5a2ee2678b9a
+description: Wdfkd. wdfusbdevice 扩展显示有关指定 KMDF USB 设备对象的信息，incuding 所有 USB 接口和配置的管道。
 keywords:
-- wdfkd.wdfusbdevice Windows 调试
+- wdfkd wdfusbdevice Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,48 +11,48 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: d83e17bdee8aa1aacae12a6f453856b192904a5c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e14138cb66d841dfd200f675b6aab40853a929ad
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63323305"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96823611"
 ---
 # <a name="wdfkdwdfusbdevice"></a>!wdfkd.wdfusbdevice
 
 
-！ Wdfkd.wdfusbdevice 扩展显示有关指定的内核模式驱动程序框架 (KMDF) USB 设备对象的信息。 此信息包括所有 USB 接口以及为每个接口配置的管道。
+！ Wdfkd; wdfusbdevice 扩展显示有关指定 Kernel-Mode Driver Framework (KMDF) USB 设备对象的信息。 此信息包括为每个接口配置的所有 USB 接口和管道。
 
 ```dbgcmd
 !wdfkd.wdfusbdevice Handle [Flags]
 ```
 
-## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>参数
+## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>Parameters
 
 
-<span id="_______Handle______"></span><span id="_______handle______"></span><span id="_______HANDLE______"></span> *句柄*   
-WDFUSBDEVICE 键入 USB 设备对象的句柄。
+<span id="_______Handle______"></span><span id="_______handle______"></span><span id="_______HANDLE______"></span>*句柄*   
+WDFUSBDEVICE 类型的 USB 设备对象的句柄。
 
-<span id="_______Flags______"></span><span id="_______flags______"></span><span id="_______FLAGS______"></span> *标志*   
-可选。 一个十六进制值，修改要返回的信息的类型。 默认值为 0x0。 标志可以是以下位的任意组合：
+<span id="_______Flags______"></span><span id="_______flags______"></span><span id="_______FLAGS______"></span>*标志*   
+可选。 用于修改要返回的信息类型的十六进制值。 默认值为0x0。 标志可以是以下位的任意组合：
 
-<span id="Bit_0__0x1_"></span><span id="bit_0__0x1_"></span><span id="BIT_0__0X1_"></span>位 0 (0x1)  
-显示将包括 I/O 目标的属性。
+<span id="Bit_0__0x1_"></span><span id="bit_0__0x1_"></span><span id="BIT_0__0X1_"></span>位 0 (0x1)   
+显示将包括 i/o 目标的属性。
 
-<span id="Bit_1__0x2_"></span><span id="bit_1__0x2_"></span><span id="BIT_1__0X2_"></span>位 1 (0x2)  
-显示将包括 I/O 目标为每个 USB 管道对象的属性。
+<span id="Bit_1__0x2_"></span><span id="bit_1__0x2_"></span><span id="BIT_1__0X2_"></span>位 1 (0x2)   
+显示将包括每个 USB 管道对象的 i/o 目标的属性。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 Wdfkd.dll
 
-### <a name="span-idframeworksspanspan-idframeworksspanspan-idframeworksspanframeworks"></a><span id="Frameworks"></span><span id="frameworks"></span><span id="FRAMEWORKS"></span>框架
+### <a name="span-idframeworksspanspan-idframeworksspanspan-idframeworksspanframeworks"></a><span id="Frameworks"></span><span id="frameworks"></span><span id="FRAMEWORKS"></span>协作
 
 KMDF 1，UMDF 2
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-有关详细信息，请参阅[内核模式驱动程序框架调试](kernel-mode-driver-framework-debugging.md)。
+有关详细信息，请参阅 [内核模式驱动程序框架调试](kernel-mode-driver-framework-debugging.md)。
 
  
 

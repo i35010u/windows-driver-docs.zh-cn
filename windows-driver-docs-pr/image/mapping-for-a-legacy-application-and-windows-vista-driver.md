@@ -1,15 +1,14 @@
 ---
 title: 适用于旧版应用程序和 Windows Vista 驱动程序的映射
 description: 适用于旧版应用程序和 Windows Vista 驱动程序的映射
-ms.assetid: 6f4ebcc7-ecf0-4e0b-bcef-e5b72dc472dc
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c0dd6c767a100f3b81f915d2bf3102eff175f29b
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 41a7712efef35b8a59c991265d8119bd23edb86f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105730"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96824097"
 ---
 # <a name="mapping-for-a-legacy-application-and-windows-vista-driver"></a>适用于旧版应用程序和 Windows Vista 驱动程序的映射
 

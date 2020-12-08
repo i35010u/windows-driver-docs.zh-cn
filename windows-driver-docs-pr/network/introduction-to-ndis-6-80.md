@@ -1,15 +1,14 @@
 ---
 title: NDIS 6.80 简介
 description: 本部分介绍了 NDIS 6.80，并介绍了 NDIS 6.70 中的更改。 NDIS 6.80 包含在 Windows 10 版本1709中。
-ms.assetid: 5E6E12BF-DE34-4CDD-84BB-7708A59134E9
 ms.date: 07/05/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 65da183716ba7992ba4d32bdbc045a7ea501ddc7
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: fd984977e998b38687a978184d282630b4d0e065
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89206421"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96823851"
 ---
 # <a name="introduction-to-ndis-680"></a>NDIS 6.80 简介
 

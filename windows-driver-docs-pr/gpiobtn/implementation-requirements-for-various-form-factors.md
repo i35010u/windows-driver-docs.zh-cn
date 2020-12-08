@@ -1,15 +1,14 @@
 ---
 title: 各种外形规格的实现需求
 description: 本主题介绍各种外形规格的实现要求。
-ms.assetid: F14E9811-B432-409B-B7AD-262C2DD76C25
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 9a20b9e3bc7e4490cf5e0515a28a9acd1d32ebda
-ms.sourcegitcommit: f8619f20a0903dd64f8641a5266ecad6df5f1d57
+ms.openlocfilehash: 742a141c0a61c13dafb44d2f0c77238efee62eba
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91424049"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96824165"
 ---
 # <a name="implementation-requirements-for-various-form-factors"></a>各种外形规格的实现需求
 

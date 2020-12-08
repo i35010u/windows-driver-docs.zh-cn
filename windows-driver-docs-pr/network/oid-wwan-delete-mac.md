@@ -1,16 +1,15 @@
 ---
 title: OID_WWAN_DELETE_MAC
 description: OID_WWAN_DELETE_MAC 要求微型端口驱动程序删除在 NDIS_WWAN_MAC_INFO 参数中指定的 NDIS 端口。
-ms.assetid: 3C992E0D-132E-4687-B38E-31409E1A9F54
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_WWAN_DELETE_MAC 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: a64872459ecae09f2b5dbd4fa32717178844fc1c
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 866db341208f91c931213812d647797225e0f821
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89215204"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96823843"
 ---
 # <a name="oid_wwan_delete_mac"></a>OID \_ WWAN \_ 删除 \_ MAC
 
@@ -52,7 +51,7 @@ OID \_ WWAN \_ 删除 \_ MAC 请求发送到删除默认端口将失败，并出
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [OID \_ WWAN \_ CREATE \_ MAC](oid-wwan-create-mac.md)

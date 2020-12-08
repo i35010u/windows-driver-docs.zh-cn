@@ -1,19 +1,18 @@
 ---
 title: COPP 设备定义模板代码
 description: COPP 设备定义模板代码
-ms.assetid: 86cafb33-f92a-4c5d-8a54-37aab5e79f37
 keywords:
 - COPP 设备 WDK DirectX VA
 - 复制保护 WDK COPP，COPP 设备
 - COPP WDK DirectX VA，COPP 设备
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d3910502765c9a12daed1639d4c70b71de4b9424
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: cd4460682efc3d60fcfe3334e55b70b21376b23a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63346924"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96824227"
 ---
 # <a name="copp-device-definition-template-code"></a>COPP 设备定义模板代码
 
@@ -21,9 +20,9 @@ ms.locfileid: "63346924"
 ## <span id="ddk_copp_device_definition_template_code_gg"></span><span id="DDK_COPP_DEVICE_DEFINITION_TEMPLATE_CODE_GG"></span>
 
 
-本部分仅适用于 Windows Server 2003 SP1 和更高版本，和 Windows XP SP2 及更高版本。
+本部分仅适用于 Windows Server 2003 SP1 及更高版本以及 Windows XP SP2 及更高版本。
 
-使用下面的示例代码来定义 COPP DirectX VA 设备对象。
+使用以下示例代码定义 COPP DirectX VA 设备对象。
 
 ```cpp
 #define COPP_OPENED                 0
